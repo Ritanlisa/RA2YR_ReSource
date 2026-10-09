@@ -92,7 +92,7 @@ public:
     int32_t     AudioSettings_field_08;       // 0x08
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Check(int a1);  // 0x7209B0
-    int ComputeTransform(int a1);  // 0x720E50
+    int ComputeTransform(int a1, int a2, int a3, int a4, int a5);  // 0x720E50
     // --- gap2 auto-generated stub declarations (END) ---
 };
 

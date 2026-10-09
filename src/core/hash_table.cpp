@@ -116,8 +116,8 @@ int SHA1::Compute(char *a2, int a1)
       v6 = 0; /*0x69da66*/
     }
     memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
-    IDA_LOBYTE(v7) = (8 * v5) >> 24; /*0x69da99*/
-    IDA_HIBYTE(v7) = v5 >> 13; /*0x69da9e*/
+    v7 = ((v7) & 0xFFFFFF00u) | ((unsigned int)((8 * v5) >> 24) & 0xFFu); /*0x69da99*/
+    v7 = ((v7) & 0xFFFF00FFu) | (((unsigned int)(v5 >> 13) & 0xFFu) << 8); /*0x69da9e*/
     v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
     SHA1::Transform(v13, v12); /*0x69dac3*/
     qmemcpy(&this->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/

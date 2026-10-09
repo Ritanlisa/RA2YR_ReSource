@@ -194,7 +194,7 @@ void FindGameDirectoryCD(const char* path) {
           if ( AlwaysFindYRCD(dword_89E414, 120) <= -1 ) /*0x47ac5c*/
             continue; /*0x47ac5c*/
           Str1[0] = dword_89E414 + 65; /*0x47ac6d*/
-          v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x47ac7a*/
+          v6 = (unsigned int *)(new unsigned char[8u]); /*0x47ac7a*/
           v6[1] = (unsigned int)(_strdup(Str1)); /*0x47ac82*/
           *v6 = 0; /*0x47ac85*/
           v7 = (unsigned int *)(CmdLine_NoCD); /*0x47ac8b*/
@@ -221,7 +221,7 @@ void FindGameDirectoryCD(const char* path) {
           if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD(Str1[0] - 65, 120) != 2 ) /*0x47acc9*/
             continue; /*0x47acc9*/
           v1 = 1; /*0x47accd*/
-          v6 = (unsigned int *)(RA2_OPNEW(8u)); /*0x47acd4*/
+          v6 = (unsigned int *)(new unsigned char[8u]); /*0x47acd4*/
           v6[1] = (unsigned int)(_strdup(Str1)); /*0x47ace0*/
           *v6 = 0; /*0x47ace3*/
           v7 = (unsigned int *)(CmdLine_NoCD); /*0x47ace9*/
@@ -264,7 +264,7 @@ void FindGameDirectoryCD(const char* path) {
         if ( AlwaysFindYRCD() <= -1 )
           continue;
         Str1[0] = ((unsigned int)(DataGlobal_87F7E8[31499]) & 0xFF) + 65;
-        v6 = (unsigned int *)RA2_OPNEW(8);
+        v6 = (unsigned int *)new unsigned char[8];
         v6[1] = (unsigned int)(_strdup(Str1));
         *v6 = 0;
         v7 = (unsigned int *)DataGlobal_87F7E8[31498];
@@ -291,7 +291,7 @@ LABEL_24:
         if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD() != 2 )
           continue;
         v1 = 1;
-        v6 = (unsigned int *)RA2_OPNEW(8);
+        v6 = (unsigned int *)new unsigned char[8];
         v6[1] = (unsigned int)(_strdup(Str1));
         *v6 = 0;
         v7 = (unsigned int *)DataGlobal_87F7E8[31498];
@@ -635,7 +635,7 @@ int InitSkirmishSettings() {
   int v1; // [esp+4h] [ebp-4h] BYREF
   (&dword_A8ED54)[127989] = TimerGetTicks();
   (&dword_A8ED54)[127990] = v1;
-  IDA_LOBYTE((&dword_A8ED54)[128024]) = 1;
+  (&dword_A8ED54)[128024] = (((&dword_A8ED54)[128024]) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu);
   return v1;
 }
 
@@ -852,7 +852,7 @@ int result; // eax
 {
   int result; // eax
 
-  IDA_LOWORD(stru_A8D600.q010) = 0; /*0x5da72b*/
+  stru_A8D600.q010 = ((stru_A8D600.q010) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x5da72b*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
     result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
   *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
@@ -1229,7 +1229,7 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
   }
   else
   {
-    int v7 = RA2_OPNEW(520);
+    int v7 = new unsigned char[520];
     swprintf((void *const)(v7 + 4), aMissingHs);
     Debug::Log();
     *(unsigned int *)v7 = dword_A8ED54[145549];

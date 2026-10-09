@@ -129,7 +129,7 @@ bool LocomotionClass::Process()
     *((unsigned __int64 *)this + 7) = qword_B077FC; /*0x69ec80*/
     *((unsigned int *)this + 16) = g_OverlayTypeConfig; /*0x69ec95*/
     *((unsigned int *)this + 17) = qword_B077FC; /*0x69ec9e*/
-    v3 = IDA_HIDWORD(qword_B077FC); /*0x69eca1*/
+    v3 = (unsigned int)((qword_B077FC) >> 32); /*0x69eca1*/
     *((unsigned int *)this + 20) = 0; /*0x69eca7*/
     *((unsigned int *)this + 19) = 0; /*0x69ecaa*/
     *((unsigned int *)this + 18) = v3; /*0x69ecad*/

@@ -283,7 +283,7 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
 
     // IDA: WM_LBUTTONDOWN — hit-test against button rects
     if (msg == WM_LBUTTONDOWN && d && d->state) {
-        POINT pt = { IDA_LOWORD(lParam), IDA_HIWORD(lParam) };
+        POINT pt = { (unsigned short)(lParam), (unsigned short)((lParam) >> 16) };
         for (int i = 0; i < 6; i++) {
             if (pt.x >= d->btnX && pt.x < d->btnX + d->btnW &&
                 pt.y >= d->btnPosY[i] && pt.y < d->btnPosY[i] + d->btnH) {
@@ -294,9 +294,9 @@ static INT_PTR CALLBACK MainMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPA
     }
 
     // IDA: WM_COMMAND — button clicked, set state based on control ID
-    if (msg == WM_COMMAND && IDA_HIWORD(wParam) == BN_CLICKED && d && d->state) {
+    if (msg == WM_COMMAND && (unsigned short)((wParam) >> 16) == BN_CLICKED && d && d->state) {
         for (auto& bd : kMainMenuBtns) {
-            if ((DWORD)bd.id == IDA_LOWORD(wParam)) { *d->state = (LONG)(bd.target); return 0; }
+            if ((DWORD)bd.id == (unsigned short)(wParam)) { *d->state = (LONG)(bd.target); return 0; }
         }
     }
 
@@ -544,7 +544,7 @@ static MenuState Campaign_Screen(int arg) {
                 dlg.finished = true; result = MenuState::MenuIdle; break;
             }
             if (msg.message == WM_LBUTTONDOWN)
-                dlg.OnMouseClick(IDA_LOWORD(msg.lParam), IDA_HIWORD(msg.lParam));
+                dlg.OnMouseClick((unsigned short)(msg.lParam), (unsigned short)((msg.lParam) >> 16));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
         dlg.OnRender(&dlgSurf, &text);
@@ -572,7 +572,7 @@ static LONG CampaignMenu_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lPar
 
     case WM_COMMAND: // IDA: case 0x111
         if (pState) {
-            switch (IDA_LOWORD(wParam)) {
+            switch ((unsigned short)(wParam)) {
             case IDC_STARTSCENARIO: *pState = 8;  return 0;  // Start Scenario
             case IDC_LOADGAME:      *pState = 9;  return 0;  // Load Game
             case IDC_NEWGAME:       *pState = 10; return 0;  // New Campaign
@@ -670,7 +670,7 @@ static void Credits_Screen() {
 static INT_PTR CALLBACK CreditsScreen_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
     LONG* pState = (LONG*)GetWindowLongPtrA(hDlg, 8);
     if (msg == WM_COMMAND && pState) {
-        switch (IDA_LOWORD(wParam)) {
+        switch ((unsigned short)(wParam)) {
         case IDC_CAMPBACK: *pState = 18; return 0; // back to main menu
         }
     }
@@ -685,7 +685,7 @@ static INT_PTR CALLBACK CreditsScreen_DlgProc(HWND hDlg, UINT msg, WPARAM wParam
 static INT_PTR CALLBACK CampaignSelect_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
     LONG* pState = (LONG*)GetWindowLongPtrA(hDlg, 8);
     if (msg == WM_COMMAND && pState) {
-        switch (IDA_LOWORD(wParam)) {
+        switch ((unsigned short)(wParam)) {
         case IDC_CAMPBACK: *pState = 18; return 0;
         }
     }
@@ -801,7 +801,7 @@ static INT_PTR CALLBACK NetworkOptions_DlgProc(HWND hDlg, UINT msg, WPARAM wPara
     // IDA: massive dialog proc handling socket port, destination address,
     // firewall settings, network card selection. Returns state to parent.
     if (msg == WM_COMMAND) {
-        switch (IDA_LOWORD(wParam)) {
+        switch ((unsigned short)(wParam)) {
         case 1: // OK — save network settings
         case 2: // Cancel
             SetWindowLongPtrA(hDlg, 8, 2); // signal parent to close
@@ -994,7 +994,7 @@ static INT_PTR CALLBACK Options_DialogProc(HWND hDlg, UINT msg, WPARAM wParam, L
 
     case WM_COMMAND:
         // IDA: handle button clicks
-        switch (IDA_LOWORD(wParam)) {
+        switch ((unsigned short)(wParam)) {
         case 1670: // Back button
             SetWindowLongPtrA(hDlg, 8, 1483); // signal parent
             return 0;
@@ -1012,7 +1012,7 @@ static INT_PTR CALLBACK Options_DialogProc(HWND hDlg, UINT msg, WPARAM wParam, L
             return 0;
         }
         // IDA: resolution combo changed (DlgItem 1773, CBN_SELCHANGE=1)
-        if (IDA_LOWORD(wParam) == 1773 && IDA_HIWORD(wParam) == 1) {
+        if ((unsigned short)(wParam) == 1773 && (unsigned short)((wParam) >> 16) == 1) {
             HWND hRes = GetDlgItem(hDlg, 1773);
             if (hRes) {
                 LRESULT sel = SendMessageA(hRes, 0x147, 0, 0); // CB_GETCURSEL
@@ -1092,7 +1092,7 @@ static INT_PTR CALLBACK HotkeyOptions_DlgProc(HWND hDlg, UINT msg, WPARAM wParam
         return 1;
 
     case WM_COMMAND:
-        switch (IDA_LOWORD(wParam)) {
+        switch ((unsigned short)(wParam)) {
         case 1670: // Back — save and close
             // IDA: write keyboard config to KEYBOARDMD.INI
             SetWindowLongPtrA(hDlg, 8, 1);
@@ -1218,7 +1218,7 @@ REVERSE(0x6ae3f0, "Skirmish::Setup_DlgProc: skirmish setup dialog", "Skirmish")
 static INT_PTR CALLBACK Skirmish_Setup_DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_COMMAND:
-        switch (IDA_LOWORD(wParam)) {
+        switch ((unsigned short)(wParam)) {
         case 1559: // Start Game
             SetWindowLongPtrA(hDlg, 8, 1559);
             return 0;
@@ -1227,8 +1227,8 @@ static INT_PTR CALLBACK Skirmish_Setup_DlgProc(HWND hDlg, UINT msg, WPARAM wPara
             return 0;
         }
         // IDA: combo box selection changes update tooltips for AI/side/color
-        if (IDA_HIWORD(wParam) == 1) { // CBN_SELCHANGE
-            uint16_t cid = IDA_LOWORD(wParam);
+        if ((unsigned short)((wParam) >> 16) == 1) { // CBN_SELCHANGE
+            uint16_t cid = (unsigned short)(wParam);
             // Map combo IDs to update actions
             if (cid >= 1291 && cid <= 1309) {
                 // Player/AI slot combo — show tooltip
@@ -1364,7 +1364,7 @@ static char ShowExitDialog() {
                 result = 0; dlg.finished = true; break;
             }
             if (msg.message == WM_LBUTTONDOWN)
-                dlg.OnMouseClick(IDA_LOWORD(msg.lParam), IDA_HIWORD(msg.lParam));
+                dlg.OnMouseClick((unsigned short)(msg.lParam), (unsigned short)((msg.lParam) >> 16));
             else { TranslateMessage(&msg); DispatchMessageA(&msg); }
         }
         dlg.OnRender(&dlgSurf, &text);

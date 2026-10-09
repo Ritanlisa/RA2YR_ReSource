@@ -496,7 +496,7 @@ int InitGlobal775B30()
 // IDA: 0x775D90  proposal: InitZero775D90
 // IDA: void __cdecl sub_775D90()
 //   dword_B72F38 = 0;
-//   RA2_OPDEL(dword_B72F40);
+//   delete[] (dword_B72F40);
 void InitZero775D90()
 {
 }
@@ -660,7 +660,7 @@ int InitZero77B860()
 // IDA: 0x77B920  proposal: InitGlobal77B920
 // IDA: void __cdecl sub_77B920()
 //   g_WOL_UserList = 0;
-//   RA2_OPDEL(dword_B778E0);
+//   delete[] (dword_B778E0);
 void InitGlobal77B920()
 {
 }
@@ -668,7 +668,7 @@ void InitGlobal77B920()
 // IDA: 0x77B960  proposal: InitGlobal77B960
 // IDA: void __cdecl sub_77B960()
 //   g_WOL_AuthPool = 0;
-//   RA2_OPDEL(dword_B73E18);
+//   delete[] (dword_B73E18);
 void InitGlobal77B960()
 {
 }
@@ -724,7 +724,7 @@ int InitZero7AF280()
 // IDA: void __cdecl sub_7B00B0()
 //   if ( dword_B77F54 )
 //   {
-//   RA2_OPDEL(dword_B77F54);
+//   delete[] (dword_B77F54);
 //   dword_B77F54 = 0;
 //   }
 void InitZero7B00B0()
@@ -735,7 +735,7 @@ void InitZero7B00B0()
 // IDA: void __cdecl sub_7B00F0()
 //   if ( dword_B77F60 )
 //   {
-//   RA2_OPDEL(dword_B77F60);
+//   delete[] (dword_B77F60);
 //   dword_B77F60 = 0;
 //   }
 void InitZero7B00F0()

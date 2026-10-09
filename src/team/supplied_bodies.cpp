@@ -290,7 +290,7 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
         *(void **)&this->vtable2 = (void *)a3; /*0x49f0b8 +4*/
 return (unsigned int *)this; /*0x49f0be*/
       }
-      *(void **)&this->vtable2 = (void *)RA2_OPNEW(4 * a2); /*0x49f0cd +4*/
+      *(void **)&this->vtable2 = (void *)new unsigned char[4 * a2]; /*0x49f0cd +4*/
       *(unsigned char *)&this->q00D = 1; /*0x49f0d0 +D*/
     }
 return (unsigned int *)this; /*0x49f0bd*/
@@ -751,7 +751,7 @@ int TeamClass::Create(int a1, int a2) {
     int *v5; // ebx
     FootClass *i; // esi
 
-    v4 = (int)RA2_OPNEW(0xA0u); /*0x6ecfba*/
+    v4 = (int)new unsigned char[0xA0u]; /*0x6ecfba*/
     if ( v4 ) /*0x6ecfc4*/
     {
       v4 = ((ra2::game::MissionClass *)v4)->Construct( /*0x6ecfdf*/
@@ -843,7 +843,7 @@ namespace gamemd {
 void * TeamClass::ProcessEvent(int a2) {
     this->Destructor(); /*0x6f0453*/
     if ( (a2 & 1) != 0 ) /*0x6f045d*/
-      RA2_OPDEL(this); /*0x6f0460*/
+      delete this; /*0x6f0460*/
     return this; /*0x6f046a*/
 }
 } // namespace gamemd
@@ -886,7 +886,7 @@ int TeamClass::CreateOneOf(int a2) {
       }
     }
     ; /*0x6f0a48 Debug::Log 无参载体缺席(G42.33 备注)*/
-    v6 = (int)RA2_OPNEW(0xA0u); /*0x6f0a52*/
+    v6 = (int)new unsigned char[0xA0u]; /*0x6f0a52*/
     if ( !v6 ) /*0x6f0a5c*/
       return 0; /*0x6f0a5c*/
     return (int)((ra2::game::MissionClass *)v6)->Construct((int)this, (int)OwnerHouse, 0); /*0x6f0a28*/
@@ -1176,7 +1176,7 @@ namespace gamemd {
 int TeamClass::AddToBuildQueue() {
     int result; // eax
 
-    IDA_LOBYTE(this->target) = 1; /*0x726723*/
+    this->target = ((this->target) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x726723*/
     result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x726727*/
     if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x726760*/
       || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
@@ -1214,7 +1214,7 @@ int TriggerClass::FireTrigger(void *a2) {
       v5 = (*((int (__stdcall **)(void **))*(void **)&nextTrigger->vtable2 + 4))((void **)((char *)nextTrigger + 4)); /*0x7267c0 member(+4) vt+0x10*/
       nextTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x7267c6*/
     }
-    IDA_LOBYTE(nextTrigger) = this->destroyed; /*0x7267cb*/
+    nextTrigger = ((nextTrigger) & 0xFFFFFF00u) | ((unsigned int)(this->destroyed) & 0xFFu); /*0x7267cb*/
     ((Power *)a2)->FlagProcess((int)nextTrigger); /*0x7267d1*/
     v6 = this->enabled; /*0x7267d6*/
     ((Power *)a2)->FlagProcess(v6); /*0x7267dc*/
@@ -1255,7 +1255,7 @@ void * TriggerTypeClass::Construct(void *Source) {
     *(void **)&this->vtable3 = 0; /*0x726cdf vfptr2*/
     *(void **)&this->vtable4 = 0; /*0x726ce6 vfptr3*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
-      || (IDA_BYTE1(g_BuildingLoadQueue_Array.align_E24) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || ((unsigned char)((g_BuildingLoadQueue_Array.align_E24) >> 8) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))((int *)g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2 + 8))(
            (int *)g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -1266,7 +1266,7 @@ void * TriggerTypeClass::Construct(void *Source) {
       *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) = (unsigned int)this; /*0x726d3d*/
     }
     if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x726d74*/
-      || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
+      || ((unsigned char)((g_BuildingLoadQueue_Array.LightGreenTint) >> 8) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
            (int *)&g_BuildingLoadQueue_Array.LightVisibility,
@@ -1278,7 +1278,7 @@ void * TriggerTypeClass::Construct(void *Source) {
     }
     this->idxArray = *(unsigned int *)FootClass_Array; /*0x726d99*/
     if ( *(int *)FootClass_Array < (&FootClass_Array)[1] /*0x726dd0*/
-      || (IDA_BYTE1((&FootClass_Array)[2]) || !(&FootClass_Array)[1])
+      || ((unsigned char)(((&FootClass_Array)[2]) >> 8) || !(&FootClass_Array)[1])
       && *(int *)&FootClass_Array > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(FootClass_Array + 8))(
            &FootClass_Array,
@@ -1577,7 +1577,7 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
     if ( a4 ) /*0x41e7ab*/
       return 0; /*0x41e7ab*/
   LABEL_17:
-    if ( *(unsigned int *)(this + 156) == 1 && IDA_LOBYTE(dword_A8B230_arr[374].referenceCount) == 1 || !*(unsigned char *)(this + 164) ) /*0x41e7cd*/
+    if ( *(unsigned int *)(this + 156) == 1 && (unsigned char)(dword_A8B230_arr[374].referenceCount) == 1 || !*(unsigned char *)(this + 164) ) /*0x41e7cd*/
       return 0; /*0x41e7d5*/
     if ( *(unsigned int *)&dword_A8B238 ) /*0x41e7df*/
     {
@@ -1818,7 +1818,7 @@ int CampaignClass::LoadFromINI() {
     *(unsigned int *)&this->scenario[52] = KeyCount; /*0x49db7c*/
     if ( KeyCount > 0 ) /*0x49db7f*/
     {
-      v5 = (int *)RA2_OPNEW(76 * KeyCount + 4); /*0x49db9a*/
+      v5 = (int *)new unsigned char[76 * KeyCount + 4]; /*0x49db9a*/
       if ( v5 ) /*0x49dba4*/
       {
         *v5 = KeyCount; /*0x49dba6*/
@@ -1867,7 +1867,7 @@ int CampaignClass::LoadFromINI() {
                  (INIClass *)this)->GetString((const char *)Destination, aCampaignname, 0, (char *)word_89F5D8, 128) )
           {
             StringCSF = GetStringCSF((wchar_t *)&word_89F5D8, 0, aDRa2mdpostCoop, 1048); /*0x49dca7*/
-            *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 4) = (int)RA2_OPNEW(0x102u); /*0x49dcb4*/
+            *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 4) = (int)new unsigned char[0x102u]; /*0x49dcb4*/
             v14 = *(wchar_t **)(*(unsigned int *)&this->scenario[48] + v2 + 4); /*0x49dcbb*/
             if ( v14 ) /*0x49dcc1*/
               wcscpy(v14, StringCSF); /*0x49dcc5*/
@@ -1880,11 +1880,11 @@ int CampaignClass::LoadFromINI() {
           ((String *)(String *)(*(unsigned int *)&this->scenario[48] + v2 + 72))->Assign_Alt((const char *)word_89F5D8); /*0x49dd2a*/
           ((INIClass *)/*0x49dd4d*/
             (INIClass *)this)->GetString((const char *)Destination, aCampaignai, (const char *)&g_INI_Key_Easy, (char *)word_89F5D8, 128);
-          *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 64) = (int)RA2_OPNEW(strlen((const char *)word_89F5D8) + 1); /*0x49dd71*/
+          *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 64) = (int)new unsigned char[strlen((const char *)word_89F5D8) + 1]; /*0x49dd71*/
           strcpy(*(char **)(*(unsigned int *)&this->scenario[48] + v2 + 64), (const char *)word_89F5D8); /*0x49dd8f*/
           *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2) = v68; /*0x49dd9b*/
           *(unsigned char *)(*(unsigned int *)&this->scenario[48] + v2 + 8) = Int_Overwrite; /*0x49dda5*/
-          *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) = (int)RA2_OPNEW(780 * Int_Overwrite); /*0x49ddc7*/
+          *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) = (int)new unsigned char[780 * Int_Overwrite]; /*0x49ddc7*/
           v15 = 1; /*0x49ddcb*/
           v67 = 1; /*0x49ddd2*/
           v69 = Int_Overwrite + 1; /*0x49ddd6*/
@@ -1908,7 +1908,7 @@ int CampaignClass::LoadFromINI() {
                 if ( v18 ) /*0x49dec7*/
                   strcpy((char *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) + v61 - 260), v18); /*0x49def1*/
               }
-              v19 = (int)RA2_OPNEW(0x18u); /*0x49df01*/
+              v19 = (int)new unsigned char[0x18u]; /*0x49df01*/
               if ( !v19 ) /*0x49df0a*/
                 goto LABEL_77; /*0x49df0a*/
               *(unsigned int *)(v19 + 4) = 0; /*0x49df10*/
@@ -1939,7 +1939,7 @@ int CampaignClass::LoadFromINI() {
                 v27 = v26; /*0x49dfc4*/
                 if ( v26 ) /*0x49dfcb*/
                 {
-                  v28 = (char *)RA2_OPNEW(strlen(v26) + 1); /*0x49dfe2*/
+                  v28 = (char *)new unsigned char[strlen(v26) + 1]; /*0x49dfe2*/
                   v62 = v28; /*0x49dfee*/
                   strcpy(v28, v27); /*0x49e001*/
                   v29 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 20) + v66 - 4); /*0x49e015*/
@@ -1964,7 +1964,7 @@ int CampaignClass::LoadFromINI() {
                 }
                 for ( i = strtok(0, Str_Sep); i; i = strtok(0, Str_Sep) ) /*0x49e06b*/
                 {
-                  v34 = (char *)RA2_OPNEW(strlen(i) + 1); /*0x49e082*/
+                  v34 = (char *)new unsigned char[strlen(i) + 1]; /*0x49e082*/
                   v63 = v34; /*0x49e08e*/
                   strcpy(v34, i); /*0x49e0a1*/
                   v35 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 20) + v66 - 4); /*0x49e0b5*/
@@ -1986,7 +1986,7 @@ int CampaignClass::LoadFromINI() {
                   *(unsigned int *)(*(unsigned int *)(v35 + 4) + 4 * v38) = (unsigned int)v34; /*0x49e0f5*/
                 }
               }
-              v39 = (int)RA2_OPNEW(0x18u); /*0x49e111*/
+              v39 = (int)new unsigned char[0x18u]; /*0x49e111*/
               if ( v39 ) /*0x49e121*/
               {
                 *(unsigned int *)(v39 + 4) = 0; /*0x49e127*/
@@ -2017,7 +2017,7 @@ int CampaignClass::LoadFromINI() {
                   v47 = v46; /*0x49e1db*/
                   if ( v46 ) /*0x49e1e2*/
                   {
-                    v48 = (char *)RA2_OPNEW(strlen(v46) + 1); /*0x49e1f9*/
+                    v48 = (char *)new unsigned char[strlen(v46) + 1]; /*0x49e1f9*/
                     v64 = v48; /*0x49e205*/
                     strcpy(v48, v47); /*0x49e218*/
                     v49 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 44) + v66 - 4); /*0x49e22c*/
@@ -2042,7 +2042,7 @@ int CampaignClass::LoadFromINI() {
                   }
                   for ( j = strtok(0, Str_Sep); j; j = strtok(0, Str_Sep) ) /*0x49e282*/
                   {
-                    v54 = (char *)RA2_OPNEW(strlen(j) + 1); /*0x49e299*/
+                    v54 = (char *)new unsigned char[strlen(j) + 1]; /*0x49e299*/
                     v65 = v54; /*0x49e2a5*/
                     strcpy(v54, j); /*0x49e2b8*/
                     v55 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 44) + v66 - 4); /*0x49e2cc*/
@@ -2106,7 +2106,7 @@ void * CampaignClass::Constructor(int a2, int a3) {
     *(void **)(char *)this = 0; /*0x49eceb vfptr(VectorClass)*/
       else
       {
-        *(void **)&this->vtable2 = (void *)RA2_OPNEW(4 * a2); /*0x49ed0c +4*/
+        *(void **)&this->vtable2 = (void *)new unsigned char[4 * a2]; /*0x49ed0c +4*/
         *(unsigned char *)&this->q00D = 1; /*0x49ed0f +D*/
       }
     }
@@ -2170,7 +2170,7 @@ void * ScriptTypeClass::Constructor(void *Source) {
     *(void **)&this->vtable4 = 0; /*0x6916e5 vfptr3*/
     v3 = *(unsigned int *)&FootClass_Array; /*0x6916ec*/
     if ( *(int *)&FootClass_Array < (&FootClass_Array)[6] /*0x69172e*/
-      || (IDA_BYTE1((&FootClass_Array)[7]) || !(&FootClass_Array)[6])
+      || ((unsigned char)(((&FootClass_Array)[7]) >> 8) || !(&FootClass_Array)[6])
       && *(int *)&FootClass_Array > 0
       && (v4 = (*(int (__thiscall **)(int *, int, unsigned int))((int *)&FootClass_Array + 4 + 8))(
                  &(&FootClass_Array)[4],
@@ -2289,7 +2289,7 @@ void * ScriptClass::ProcessEvent(int a2) {
     }
     ((AbstractClass *)(AbstractClass *)this)->~AbstractClass(); /*0x691f51*/
     if ( (a2 & 1) != 0 ) /*0x691f5b*/
-      RA2_OPDEL(this); /*0x691f5e*/
+      delete this; /*0x691f5e*/
     return this; /*0x691f68*/
 }
 } // namespace gamemd
@@ -2356,7 +2356,7 @@ int TActionClass::ctor() {
     }
     this->idxArray = v4; /*0x6dd0c4*/
     if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x6dd0fb*/
-      || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
+      || ((unsigned char)((g_BuildingLoadQueue_Array.LightGreenTint) >> 8) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
            (int *)&g_BuildingLoadQueue_Array.LightVisibility,
@@ -2367,7 +2367,7 @@ int TActionClass::ctor() {
       *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v6) = (unsigned int)this; /*0x6dd117*/
     }
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x6dd14e*/
-      || (IDA_BYTE1(g_BuildingLoadQueue_Array.align_E24) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || ((unsigned char)((g_BuildingLoadQueue_Array.align_E24) >> 8) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))((int *)g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2 + 8))(
            (int *)g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -2439,7 +2439,7 @@ void * TActionClass::Destructor(char a2) {
     this->TActionClass_field_6D = 0; /*0x6e4763*/
     ((AbstractClass *)(AbstractClass *)this)->~AbstractClass(); /*0x6e4767*/
     if ( (a2 & 1) != 0 ) /*0x6e4771*/
-      RA2_OPDEL(this); /*0x6e4774*/
+      delete this; /*0x6e4774*/
     return this; /*0x6e477e*/
 }
 } // namespace gamemd
@@ -2463,7 +2463,7 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
       {
         if ( (*(int (__thiscall **)(void *))(*(unsigned int *)CellFromArray + 44))(CellFromArray) == 11 ) /*0x6ec9d2*/
         {
-          v6 = IDA_BYTE1(v5->currentRank) & 1; /*0x6ec9e1*/
+          v6 = (unsigned char)((v5->currentRank) >> 8) & 1; /*0x6ec9e1*/
           v10[0] = 0; /*0x6ec9e3*/
           v10[1] = 0; /*0x6ec9ef*/
           ObjectCell = (int)((ObjectClass *)v5)->FindObjectCell((int)v10, v6); /*0x6ec9f7*/
@@ -3108,7 +3108,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
         v6 = *(unsigned int *)((*((int (__thiscall **)(FootClass *))*(void * *)&firstUnit->q021))(firstUnit) + 1532); /*0x6efa46*/
         if ( (uint8_t)((TechnoClass *)firstUnit)->IsDeployed() /*0x6efa71*/
           && ( *(unsigned char *)&firstUnit->isTeamLeader /*isTeamLeader@0x689*/ || (*((int (__thiscall **)(FootClass *))*(void * *)&firstUnit->q_B))(firstUnit) == 2)
-          && v6 > IDA_SLODWORD(v25) )
+          && v6 > ((int)(v25)) )
         {
           i = (HouseClass **)firstUnit; /*0x6efa73*/
           (v25) = (unsigned int)(v6); /*0x6efa75*/
@@ -3133,14 +3133,14 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
         v16 = v15[1] - v31; /*0x6efb0f*/
         v17 = v15[2]; /*0x6efb11*/
         IDA_LODWORD(v28) = *v15 - v10; /*0x6efb14*/
-        IDA_LODWORD(v25) = -v16; /*0x6efb1e*/
+        v25 = -v16; /*0x6efb1e*/
         v29 = v17; /*0x6efb22*/
         v23 = (double)(int)*(unsigned int *)&v28; /*0x6efb18 fild var_20(dx) -> fstp var_50 (G42.33 ICE 结构化)*/
         v22 = (double)(int)*(int *)&v25; /*0x6efb26 fild var_38(dy) -> fstp var_58*/
         Math::CalcAngle(v22, v23); /*0x6efb31*/
         v3 = (v3 - dbl_7E2820) * dbl_7E2818; /*0x6efb36 fsub pi/2, fmul -0x10000/2pi (G42.33 ICE 结构化)*/
         v14 = Math::RoundToInt(v3); /*0x6efb45*/
-        IDA_LOWORD(v25) = v14; /*0x6efb4a*/
+        v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(v14) & 0xFFFFu); /*0x6efb4a*/
       }
       else
       {
@@ -3149,7 +3149,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
         IDA_HIBYTE(v13) = v12; /*0x6efae3*/
         v14 = v13; /*0x6efaea*/
       }
-      IDA_LODWORD(v25) = v14 - 0x3FFF; /*0x6efb61*/
+      v25 = v14 - 0x3FFF; /*0x6efb61*/
       *(double *)&v25 = (double)(int)*(int *)&v25 * dbl_7E2810; /*0x6efb65 fild var_38 * -2pi/0x10000 -> fstp var_38 (弧度)*/
       IDA_LODWORD(v27) = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3444) << 8; /*0x6efb78 半径*/
       *(double *)&v28 = (double)(int)*(int *)&v27; /*0x6efb7c fild var_28(半径) -> fstp var_20 (G42.33 ICE 结构化)*/
@@ -3159,10 +3159,10 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
       IDA_LODWORD(v27) = v18; /*0x6efbae*/
       v3 = Math::ArcTan2(v25) * *(double *)&v28 + v30; /*0x6efbb2..0x6efbc0 ArcTan2 st * var_20(半径) + fiadd var_C(X中心) (G42.33 ICE 结构化)*/
       (v19) = ((v19) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF); /*0x6efbc2*/
-      IDA_LOWORD(v25) = v19 / 256; /*0x6efbd7*/
-      IDA_WORD1(v25) = IDA_SLODWORD(v27) / 256; /*0x6efbef*/
-      *(unsigned int *)v24 = IDA_LODWORD(v25); /*0x6efc01*/
-      IDA_LODWORD(v25) = 0; /*0x6efc0d*/
+      v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(v19 / 256) & 0xFFFFu); /*0x6efbd7*/
+      v25 = ((v25) & 0xFFFFu) | (((unsigned int)(IDA_SLODWORD(v27) / 256) & 0xFFFFu) << 16); /*0x6efbef*/
+      *(unsigned int *)v24 = ((unsigned int)(v25)); /*0x6efc01*/
+      v25 = 0; /*0x6efc0d*/
       v20 = ((int (__thiscall *)(HouseClass **))(*i)->occupiablesCount)(i); /*0x6efc1e*/
       *(unsigned int *)v24 = *(unsigned int *)((LayerClass *)&stru_87F5F0.__pad_58[416])->Pathfinding_Find( /*0x6efc4b 对象回声参去除*/
                           (int)&v27,
@@ -3342,7 +3342,7 @@ int TriggerClass::Construct(int a2) {
     *(unsigned int *)(this + 8) = 0; /*0x725fdb*/
     *(unsigned int *)(this + 12) = 0; /*0x725fe2*/
     if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x72601b*/
-      || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
+      || ((unsigned char)((g_BuildingLoadQueue_Array.LightGreenTint) >> 8) || !g_BuildingLoadQueue_Array.LightRedTint)
       && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
            (int *)&g_BuildingLoadQueue_Array.LightVisibility,
@@ -3353,7 +3353,7 @@ int TriggerClass::Construct(int a2) {
       *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = (unsigned int)this; /*0x726037*/
     }
     if ( g_BuildingLoadQueue_Array.unknown___2 < g_BuildingLoadQueue_Array.ExitCoord[2] /*0x72606e*/
-      || (IDA_BYTE1(g_BuildingLoadQueue_Array.FoundationOutside[0]) || !g_BuildingLoadQueue_Array.ExitCoord[2])
+      || ((unsigned char)((g_BuildingLoadQueue_Array.FoundationOutside[0]) >> 8) || !g_BuildingLoadQueue_Array.ExitCoord[2])
       && g_BuildingLoadQueue_Array.DeployFacing > 0
       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ExitCoord[0] + 8))(
            (int *)g_BuildingLoadQueue_Array.ExitCoord,
@@ -3401,7 +3401,7 @@ int TriggerClass::Create() {
     if ( dword_A8EAF8 <= 0 ) /*0x726643*/
     {
   LABEL_6:
-      v4 = (int)RA2_OPNEW(0x48u); /*0x72665c*/
+      v4 = (int)new unsigned char[0x48u]; /*0x72665c*/
       if ( v4 ) /*0x726668*/
         return ((TriggerClass *)v4)->Construct((int)this); /*0x726675*/
       return 0; /*0x726668*/
@@ -3472,7 +3472,7 @@ void * TriggerClass::CheckCondition(int a2) {
     }
     ((AbstractClass *)(AbstractClass *)this)->~AbstractClass(); /*0x726a53*/
     if ( (a2 & 1) != 0 ) /*0x726a5d*/
-      RA2_OPDEL(this); /*0x726a60*/
+      delete this; /*0x726a60*/
     return this; /*0x726a6a*/
 }
 } // namespace gamemd
@@ -3536,7 +3536,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
         goto LABEL_15; /*0x72736a*/
       }
   LABEL_11:
-      v7 = (TriggerTypeClass *)RA2_OPNEW(0xB4u); /*0x72734b*/
+      v7 = (TriggerTypeClass *)new unsigned char[0xB4u]; /*0x72734b*/
       if ( v7 ) /*0x727355*/
         v8 = (TriggerTypeClass *)((TriggerTypeClass *)v7)->Construct(v5); /*0x72735a*/
       else
@@ -3581,7 +3581,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
         v17 = v16; /*0x7274e0*/
         do /*0x727514*/
         {
-          v18 = (TActionClass *)RA2_OPNEW(0x58u); /*0x7274e4*/
+          v18 = (TActionClass *)new unsigned char[0x58u]; /*0x7274e4*/
           if ( v18 ) /*0x7274ee*/
             v19 = (TriggerTypeClass *)(new (v18) int); /*0x7274f7 TActionClass ctor 占位(G42.33 备注)*/
           else
@@ -3606,7 +3606,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
         v23 = v21; /*0x727564*/
         do /*0x7275a3*/
         {
-          v24 = (TActionClass *)RA2_OPNEW(0x94u); /*0x72756b*/
+          v24 = (TActionClass *)new unsigned char[0x94u]; /*0x72756b*/
           if ( v24 ) /*0x727575*/
             v25 = (ScriptAction *)((TActionClass *)v24)->ctor(); /*0x72757e*/
           else

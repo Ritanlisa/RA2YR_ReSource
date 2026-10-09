@@ -252,12 +252,12 @@ void DisplayClass::vt_entry_B0() {
 namespace gamemd {
 void FoggedObject_DrawVector::ddtor()
 {
-    if ( *(unsigned int *)&FoggedObject_DrawVector_field_0x04 && IDA_BYTE1(this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2b2d*/
+    if ( *(unsigned int *)&FoggedObject_DrawVector_field_0x04 && (unsigned char)((this->FoggedObject_DrawVector_field_0x0C) >> 8) ) /*0x4d2b2d*/
     {
-      RA2_OPDEL(*(void **)&FoggedObject_DrawVector_field_0x04); /*0x4d2b33*/
+      delete[] (*(void **)&FoggedObject_DrawVector_field_0x04); /*0x4d2b33*/
       *(unsigned int *)&FoggedObject_DrawVector_field_0x04 = 0; /*0x4d2b3b*/
     }
-    IDA_BYTE1(this->FoggedObject_DrawVector_field_0x0C) = 0; /*0x4d2b3e*/
+    this->FoggedObject_DrawVector_field_0x0C = ((this->FoggedObject_DrawVector_field_0x0C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x4d2b3e*/
     *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08 = 0; /*0x4d2b41*/
 }
 } // namespace gamemd
@@ -1050,7 +1050,7 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49a21b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a224*/
     if ( (a2 & 1) != 0 ) /*0x49a22a*/
-      RA2_OPDEL(this); /*0x49a22d*/
+      delete this; /*0x49a22d*/
     return this->__pad_0; /*0x49a237*/
 }
 } // namespace gamemd
@@ -1067,7 +1067,7 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
     this->m_C = 0; /*0x49a29b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a2a4*/
     if ( (a2 & 1) != 0 ) /*0x49a2aa*/
-      RA2_OPDEL(this); /*0x49a2ad*/
+      delete this; /*0x49a2ad*/
     return this->__pad_0; /*0x49a2b7*/
 }
 } // namespace gamemd
@@ -1084,7 +1084,7 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a2db*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a2e4*/
     if ( (a2 & 1) != 0 ) /*0x49a2ea*/
-      RA2_OPDEL(this); /*0x49a2ed*/
+      delete this; /*0x49a2ed*/
     return this->__pad_0; /*0x49a2f7*/
 }
 } // namespace gamemd
@@ -1101,7 +1101,7 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a31b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a324*/
     if ( (a2 & 1) != 0 ) /*0x49a32a*/
-      RA2_OPDEL(this); /*0x49a32d*/
+      delete this; /*0x49a32d*/
     return this->__pad_0; /*0x49a337*/
 }
 } // namespace gamemd
@@ -1118,7 +1118,7 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
     this->m_C = 0; /*0x49a47b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a484*/
     if ( (a2 & 1) != 0 ) /*0x49a48a*/
-      RA2_OPDEL(this); /*0x49a48d*/
+      delete this; /*0x49a48d*/
     return this->__pad_0; /*0x49a497*/
 }
 } // namespace gamemd
@@ -1135,7 +1135,7 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a4bb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a4c4*/
     if ( (a2 & 1) != 0 ) /*0x49a4ca*/
-      RA2_OPDEL(this); /*0x49a4cd*/
+      delete this; /*0x49a4cd*/
     return this->__pad_0; /*0x49a4d7*/
 }
 } // namespace gamemd
@@ -1152,7 +1152,7 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49a4fb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a504*/
     if ( (a2 & 1) != 0 ) /*0x49a50a*/
-      RA2_OPDEL(this); /*0x49a50d*/
+      delete this; /*0x49a50d*/
     return this->__pad_0; /*0x49a517*/
 }
 } // namespace gamemd
@@ -1169,7 +1169,7 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a53b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a544*/
     if ( (a2 & 1) != 0 ) /*0x49a54a*/
-      RA2_OPDEL(this); /*0x49a54d*/
+      delete this; /*0x49a54d*/
     return this->__pad_0; /*0x49a557*/
 }
 } // namespace gamemd
@@ -1186,7 +1186,7 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a57b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a584*/
     if ( (a2 & 1) != 0 ) /*0x49a58a*/
-      RA2_OPDEL(this); /*0x49a58d*/
+      delete this; /*0x49a58d*/
     return this->__pad_0; /*0x49a597*/
 }
 } // namespace gamemd
@@ -1203,7 +1203,7 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a5bb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a5c4*/
     if ( (a2 & 1) != 0 ) /*0x49a5ca*/
-      RA2_OPDEL(this); /*0x49a5cd*/
+      delete this; /*0x49a5cd*/
     return this->__pad_0; /*0x49a5d7*/
 }
 } // namespace gamemd
@@ -1220,7 +1220,7 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a5fb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a604*/
     if ( (a2 & 1) != 0 ) /*0x49a60a*/
-      RA2_OPDEL(this); /*0x49a60d*/
+      delete this; /*0x49a60d*/
     return this->__pad_0; /*0x49a617*/
 }
 } // namespace gamemd
@@ -1237,7 +1237,7 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49a63b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a644*/
     if ( (a2 & 1) != 0 ) /*0x49a64a*/
-      RA2_OPDEL(this); /*0x49a64d*/
+      delete this; /*0x49a64d*/
     return this->__pad_0; /*0x49a657*/
 }
 } // namespace gamemd
@@ -1254,7 +1254,7 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a6bb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a6c4*/
     if ( (a2 & 1) != 0 ) /*0x49a6ca*/
-      RA2_OPDEL(this); /*0x49a6cd*/
+      delete this; /*0x49a6cd*/
     return this->__pad_0; /*0x49a6d7*/
 }
 } // namespace gamemd
@@ -1271,7 +1271,7 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
     this->m_8 = 0; /*0x49a6fb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&Blitter_vftable; /*0x49a704*/
     if ( (a2 & 1) != 0 ) /*0x49a70a*/
-      RA2_OPDEL(this); /*0x49a70d*/
+      delete this; /*0x49a70d*/
     return this->__pad_0; /*0x49a717*/
 }
 } // namespace gamemd
@@ -1288,7 +1288,7 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49aa1b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49aa24*/
     if ( (a2 & 1) != 0 ) /*0x49aa2a*/
-      RA2_OPDEL(this); /*0x49aa2d*/
+      delete this; /*0x49aa2d*/
     return this->__pad_0; /*0x49aa37*/
 }
 } // namespace gamemd
@@ -1305,7 +1305,7 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49aa9b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49aaa4*/
     if ( (a2 & 1) != 0 ) /*0x49aaaa*/
-      RA2_OPDEL(this); /*0x49aaad*/
+      delete this; /*0x49aaad*/
     return this->__pad_0; /*0x49aab7*/
 }
 } // namespace gamemd
@@ -1322,7 +1322,7 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
     this->m_8 = 0; /*0x49aadb*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49aae4*/
     if ( (a2 & 1) != 0 ) /*0x49aaea*/
-      RA2_OPDEL(this); /*0x49aaed*/
+      delete this; /*0x49aaed*/
     return this->__pad_0; /*0x49aaf7*/
 }
 } // namespace gamemd
@@ -1339,7 +1339,7 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49ab1b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49ab24*/
     if ( (a2 & 1) != 0 ) /*0x49ab2a*/
-      RA2_OPDEL(this); /*0x49ab2d*/
+      delete this; /*0x49ab2d*/
     return this->__pad_0; /*0x49ab37*/
 }
 } // namespace gamemd
@@ -1356,7 +1356,7 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
     *((unsigned int *)this + 2) = 0; /*0x49ab5b*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&RLEBlitter_vftable; /*0x49ab64*/
     if ( (a2 & 1) != 0 ) /*0x49ab6a*/
-      RA2_OPDEL(this); /*0x49ab6d*/
+      delete this; /*0x49ab6d*/
     return this->__pad_0; /*0x49ab77*/
 }
 } // namespace gamemd
@@ -1375,7 +1375,7 @@ unsigned short * FrameSnapshot::Init()
     int v2; // edx
 
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91c4*/
-    IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91c7*/
+    this->FrameSnapshot_field_0x04 = ((this->FrameSnapshot_field_0x04) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x4c91c7*/
     v2 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644)); /*0x4c91cb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91d1*/
     *((unsigned int *)this + 2) = v2; /*0x4c91d4*/
@@ -1395,7 +1395,7 @@ unsigned short * FrameSnapshot::InitMax(int a2)
 
     result = this; /*0x4c91e0*/
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91e4*/
-    IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91e7*/
+    this->FrameSnapshot_field_0x04 = ((this->FrameSnapshot_field_0x04) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x4c91e7*/
     v3 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644)); /*0x4c91eb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91f1*/
     *((unsigned int *)this + 2) = v3; /*0x4c91f4*/
@@ -1403,8 +1403,8 @@ unsigned short * FrameSnapshot::InitMax(int a2)
     v4 = a2; /*0x4c91fb*/
     if ( a2 >= 127 ) /*0x4c9202*/
       v4 = 127; /*0x4c9204*/
-    IDA_LOBYTE(v5) = 0; /*0x4c9209*/
-    IDA_HIBYTE(v5) = v4; /*0x4c920b*/
+    v5 = ((v5) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x4c9209*/
+    v5 = ((v5) & 0xFFFF00FFu) | (((unsigned int)(v4) & 0xFFu) << 8); /*0x4c920b*/
     result[10] = v5; /*0x4c920d*/
     return result; /*0x4c9211*/
 }
@@ -1445,7 +1445,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
     if ( a2 ) /*0x4d2a1e*/
     {
       v5 = a3; /*0x4d2a24*/
-      IDA_LOBYTE(this->FoggedObject_DrawVector_field_0x0C) = 0; /*0x4d2a28*/
+      this->FoggedObject_DrawVector_field_0x0C = ((this->FoggedObject_DrawVector_field_0x0C) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x4d2a28*/
       if ( a3 ) /*0x4d2a2d*/
       {
         if ( a2 - 1 >= 0 ) /*0x4d2a6a*/
@@ -1466,7 +1466,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
       }
       else
       {
-        v6 = RA2_OPNEW(16 * a2); /*0x4d2a35*/
+        v6 = new unsigned char[16 * a2]; /*0x4d2a35*/
         if ( v6 ) /*0x4d2a3f*/
         {
           if ( a2 - 1 >= 0 ) /*0x4d2a46*/
@@ -1491,7 +1491,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
           v5 = 0; /*0x4d2a61*/
         }
       }
-      IDA_LOBYTE(this->FoggedObject_DrawVector_field_0x0C) = 1; /*0x4d2a83*/
+      this->FoggedObject_DrawVector_field_0x0C = ((this->FoggedObject_DrawVector_field_0x0C) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x4d2a83*/
       if ( v5 ) /*0x4d2a87*/
       {
         if ( *(unsigned int *)&FoggedObject_DrawVector_field_0x04 ) /*0x4d2a92*/
@@ -1516,15 +1516,15 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
             while ( m_8 ); /*0x4d2aca*/
             v3 = a2; /*0x4d2acc*/
           }
-          if ( IDA_BYTE1(this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2ad2*/
+          if ( (unsigned char)((this->FoggedObject_DrawVector_field_0x0C) >> 8) ) /*0x4d2ad2*/
           {
-            RA2_OPDEL(*(void **)&FoggedObject_DrawVector_field_0x04); /*0x4d2adb*/
+            delete[] (*(void **)&FoggedObject_DrawVector_field_0x04); /*0x4d2adb*/
             *(unsigned int *)&FoggedObject_DrawVector_field_0x04 = 0; /*0x4d2ae3*/
           }
         }
         *(unsigned int *)&FoggedObject_DrawVector_field_0x04 = v5; /*0x4d2aee*/
         *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08 = v3; /*0x4d2af4*/
-        IDA_BYTE1(this->FoggedObject_DrawVector_field_0x0C) = a3 == 0; /*0x4d2af7*/
+        this->FoggedObject_DrawVector_field_0x0C = ((this->FoggedObject_DrawVector_field_0x0C) & 0xFFFF00FFu) | (((unsigned int)(a3 == 0) & 0xFFu) << 8); /*0x4d2af7*/
         return 1; /*0x4d2afd*/
       }
       else
@@ -1548,7 +1548,7 @@ int FoggedObject_DrawVector::Read(unsigned int *a2)
     int m_8; // edx
     unsigned int *i; // ecx
 
-    if ( !IDA_LOBYTE(this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2b50*/
+    if ( !(unsigned char)(this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2b50*/
       return 0; /*0x4d2b5e*/
     m_8 = *(unsigned int *)&this->FoggedObject_DrawVector_field_0x08; /*0x4d2b64*/
     result = 0; /*0x4d2b67*/
@@ -1567,7 +1567,7 @@ int FoggedObject_DrawVector::Read(unsigned int *a2)
 namespace gamemd {
 unsigned int FoggedObject_DrawVector::Write(int a2)
 {
-    if ( IDA_LOBYTE(this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2ba0*/
+    if ( (unsigned char)(this->FoggedObject_DrawVector_field_0x0C) ) /*0x4d2ba0*/
       return (unsigned int)(a2 - *(unsigned int *)&FoggedObject_DrawVector_field_0x04) >> 4; /*0x4d2bb5*/
     else
       return 0; /*0x4d2ba7*/
@@ -1900,8 +1900,8 @@ unsigned int * PaletteClass::Load()
     v5 = v2 + 2; /*0x5cb5fc*/
     do /*0x5cb646*/
     {
-      IDA_LOBYTE(v10) = 4 * *(v5 - 2); /*0x5cb607*/
-      IDA_HIBYTE(v10) = 4 * *(v5 - 1); /*0x5cb611*/
+      v10 = ((v10) & 0xFFFFFF00u) | ((unsigned int)(4 * *(v5 - 2)) & 0xFFu); /*0x5cb607*/
+      v10 = ((v10) & 0xFFFF00FFu) | (((unsigned int)(4 * *(v5 - 1)) & 0xFFu) << 8); /*0x5cb611*/
       v6 = 4 * *v5; /*0x5cb617*/
       v7 = (char *)&stru_886080 + 3 * (v4 % 256); /*0x5cb62f*/
       ++v4; /*0x5cb636*/
@@ -1910,8 +1910,8 @@ unsigned int * PaletteClass::Load()
       v7[2] = v6; /*0x5cb643*/
     }
     while ( v4 < 256 ); /*0x5cb646*/
-    RA2_OPDEL(v2); /*0x5cb649*/
-    v8 = (ConvertClass *)RA2_OPNEW(0x188u); /*0x5cb653*/
+    delete[] (v2); /*0x5cb649*/
+    v8 = (ConvertClass *)new unsigned char[0x188u]; /*0x5cb653*/
     if ( v8 ) /*0x5cb65f*/
       v9 = ConvertClass::Construct(v8, (int)&stru_886080, (int)&stru_886080, (int)g_DSurface_Primary, 1, 0); /*0x5cb67d*/
     else
@@ -1982,7 +1982,7 @@ int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5)
     }
     else
     {
-      v11 = (wchar_t *)RA2_OPNEW(2 * (unsigned int)Stringa + 2); /*0x5d4078*/
+      v11 = (wchar_t *)new unsigned char[2 * (unsigned int)Stringa + 2]; /*0x5d4078*/
       TextRenderer::GetInstance(); /*0x5d407a*/
       v20 = Text::MeasureWidth((int)v9, 0); /*0x5d4099*/
       v12 = Text::MeasureWidth(*(unsigned int *)(*(unsigned int *)&v7 + 48), 0) - v20; /*0x5d40aa*/
@@ -1997,7 +1997,7 @@ int ScrollingText::AddLine(wchar_t *String, int a3, wchar_t *Source, int a5)
         wcscpy(v11, v9); /*0x5d40fb*/
         wcscat(v11, Source); /*0x5d4106*/
       }
-      RA2_OPDEL(v11); /*0x5d4127*/
+      delete[] (v11); /*0x5d4127*/
       wcscat(v9, Source); /*0x5d4132*/
       v7 = v18; /*0x5d4137*/
     }
@@ -2152,7 +2152,7 @@ int ColorSchemeClass::LoadAllSchemes(int a2)
               if ( v20 ) /*0x627c5b*/
               {
                 ColorScheme::Destructor(*(ColorScheme **)(v19 + 4 * v18)); /*0x627c5f*/
-                RA2_OPDEL(v20); /*0x627c65*/
+                delete[] (v20); /*0x627c65*/
                 result = j; /*0x627c6a*/
               }
             }
@@ -2273,7 +2273,7 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
         *((unsigned int *)this + 1) = a3; /*0x67c338*/
         return (unsigned int *)this; /*0x67c33e*/
       }
-      *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x67c34d*/
+      *((unsigned int *)this + 1) = new unsigned char[4 * a2]; /*0x67c34d*/
       *((unsigned char *)this + 13) = 1; /*0x67c350*/
     }
     return (unsigned int *)(this) /*0x67c33d*/;
@@ -2521,13 +2521,13 @@ int PaletteManager::Load(int a2)
       }
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1004] ) /*0x72b56b*/
       {
-        RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004]); /*0x72b56e*/
+        delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004]); /*0x72b56e*/
         v5 = *(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b573*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1004] = 0; /*0x72b57c*/
       }
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[996] ) /*0x72b589*/
       {
-        RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996]); /*0x72b58c*/
+        delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996]); /*0x72b58c*/
         v5 = *(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b591*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[996] = 0; /*0x72b59a*/
       }
@@ -2567,13 +2567,13 @@ int PaletteManager::Load(int a2)
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1004] ) /*0x72b5ff*/
     {
-      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004]); /*0x72b602*/
+      delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004]); /*0x72b602*/
       result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b607*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1004] = 0; /*0x72b60f*/
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[996] ) /*0x72b61d*/
     {
-      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996]); /*0x72b620*/
+      delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996]); /*0x72b620*/
       result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b625*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[996] = 0; /*0x72b62d*/
     }
@@ -2795,12 +2795,12 @@ int VoxelTypeClass::ReadINI(double a2)
             return 1; /*0x73e729*/
           }
           v11 = *((unsigned int *)this + 134); /*0x73e72a*/
-          IDA_LOBYTE(v66.ComPtr_field_0x04) = 1; /*0x73e730*/
+          v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x73e730*/
           if ( v11 ) /*0x73e737*/
           {
             (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*(unsigned int *)this + 1152))((gamemd::Class_7F5C70 *)(this), v11, 1); /*0x73e741*/
             TechnoClass::SetFocus((TechnoClass *)this, 0); /*0x73e74b*/
-            IDA_LOBYTE(v66.ComPtr_field_0x04) = 0; /*0x73e750*/
+            v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x73e750*/
           }
           v12 = *((unsigned int *)this + 433); /*0x73e755*/
           *((unsigned char *)this + 1746) = 0; /*0x73e75b*/
@@ -2965,7 +2965,7 @@ int VoxelTypeClass::ReadINI(double a2)
             v67 = v55 - v52[1]; /*0x73edff*/
             v68 = v56 - v52[2]; /*0x73ee0c*/
             Math::Sqrt((double)v68 * (double)v68 + (double)v67 * (double)v67 + (double)v54 * (double)v54); /*0x73ee2d*/
-            IDA_LOWORD(v57) = RoundToInt(v2); /*0x73ee35*/
+            v57 = ((v57) & 0xFFFF0000u) | ((unsigned int)(RoundToInt(v2)) & 0xFFFFu); /*0x73ee35*/
             if ( v57 > *(unsigned int *)&dword_8871E0->__pad_C3C[320] << 8 ) /*0x73ee4b*/
               goto LABEL_75; /*0x73ee4b*/
           }
@@ -2982,7 +2982,7 @@ int VoxelTypeClass::ReadINI(double a2)
             v67 = v34 - v31[1]; /*0x73ebcd*/
             v68 = v35 - v31[2]; /*0x73ebda*/
             Math::Sqrt((double)v68 * (double)v68 + (double)v67 * (double)v67 + (double)v33 * (double)v33); /*0x73ebfb*/
-            IDA_LOWORD(v36) = RoundToInt(v2); /*0x73ec03*/
+            v36 = ((v36) & 0xFFFF0000u) | ((unsigned int)(RoundToInt(v2)) & 0xFFFFu); /*0x73ec03*/
             if ( v36 > *(unsigned int *)&dword_8871E0->__pad_C3C[316] << 8 ) /*0x73ec19*/
               goto LABEL_75; /*0x73ec19*/
           }
@@ -3015,7 +3015,7 @@ int VoxelTypeClass::ReadINI(double a2)
               (double)v66.ComPtr_field_0x20 * (double)v66.ComPtr_field_0x20
             + (double)(v43 - v44) * (double)(v43 - v44)
             + (double)v67 * (double)v67);
-            IDA_LOWORD(v45) = RoundToInt(v2); /*0x73eccb*/
+            v45 = ((v45) & 0xFFFF0000u) | ((unsigned int)(RoundToInt(v2)) & 0xFFFFu); /*0x73eccb*/
             if ( v45 > 768 || v10 ) /*0x73ecd9*/
             {
               v46 = (int *)(v38 + 156); /*0x73ecdf*/
@@ -3023,11 +3023,11 @@ int VoxelTypeClass::ReadINI(double a2)
               v48 = *v46; /*0x73eceb*/
               v49 = v46[1]; /*0x73eced*/
               v74 = v46[2]; /*0x73ecf3*/
-              IDA_LOWORD(v66.ComPtr_field_0x04) = v48 / 256; /*0x73ed13*/
-              IDA_HIWORD(v66.ComPtr_field_0x04) = v49 / 256; /*0x73ed18*/
+              v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFF0000u) | ((unsigned int)(v48 / 256) & 0xFFFFu); /*0x73ed13*/
+              v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFFu) | (((unsigned int)(v49 / 256) & 0xFFFFu) << 16); /*0x73ed18*/
               *(unsigned int *)v66.__pad_0 = v66.ComPtr_field_0x04; /*0x73ed21*/
-              *(unsigned short *)v66.__pad_0 = IDA_LOWORD(v66.ComPtr_field_0x04) + *(unsigned short *)(v47 + 5656); /*0x73ed2f*/
-              *(unsigned short *)&v66.__pad_0[2] = *(unsigned short *)(v47 + 5660) + IDA_HIWORD(v66.ComPtr_field_0x04); /*0x73ed3b*/
+              *(unsigned short *)v66.__pad_0 = (unsigned short)(v66.ComPtr_field_0x04) + *(unsigned short *)(v47 + 5656); /*0x73ed2f*/
+              *(unsigned short *)&v66.__pad_0[2] = *(unsigned short *)(v47 + 5660) + (unsigned short)((v66.ComPtr_field_0x04) >> 16); /*0x73ed3b*/
               v66.ComPtr_field_0x08 = 0; /*0x73ed6b*/
               *(unsigned int *)v66.__pad_0 = *LayerClass::Pathfinding_Find( /*0x73ed7f*/
                                           (Type *)&dword_87F7E8,
@@ -3105,7 +3105,7 @@ int VoxelTypeClass::ReadINI(double a2)
       }
     }
     MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x73ef77*/
-    IDA_LOWORD(v65) = RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x73ef87*/
+    v65 = ((v65) & 0xFFFF0000u) | ((unsigned int)(RoundToInt(*((double *)MissionControl + 2) * 900.0)) & 0xFFFFu); /*0x73ef87*/
     return v65 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x73e62b*/
 }
 } // namespace gamemd
@@ -3118,12 +3118,12 @@ void VoxClass_Vector::getItem()
 
     v2 = *(void **)&this->m_1[3]; /*0x753656*/
     this->m_10 = 0; /*0x753659*/
-    if ( v2 && IDA_BYTE1(this->VoxClass_Vector_field_0x0C) ) /*0x753660*/
+    if ( v2 && (unsigned char)((this->VoxClass_Vector_field_0x0C) >> 8) ) /*0x753660*/
     {
-      RA2_OPDEL(v2); /*0x753666*/
+      delete[] (v2); /*0x753666*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x75366e*/
     }
-    IDA_BYTE1(this->VoxClass_Vector_field_0x0C) = 0; /*0x753671*/
+    this->VoxClass_Vector_field_0x0C = ((this->VoxClass_Vector_field_0x0C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x753671*/
     *(unsigned int *)&this->VoxClass_Vector_field_0x08 = 0; /*0x753674*/
 }
 } // namespace gamemd
@@ -3132,7 +3132,7 @@ void VoxClass_Vector::getItem()
 namespace gamemd {
 unsigned int VoxClass_Vector::getItemAt(int a2)
 {
-    if ( IDA_LOBYTE(this->VoxClass_Vector_field_0x0C) ) /*0x753680*/
+    if ( (unsigned char)(this->VoxClass_Vector_field_0x0C) ) /*0x753680*/
       return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x753695*/
     else
       return 0; /*0x753687*/
@@ -3150,12 +3150,12 @@ char VoxClass_Vector::removeItem(int a2, unsigned int *a3)
 
     if ( a2 ) /*0x75383c*/
     {
-      IDA_LOBYTE(this->VoxClass_Vector_field_0x0C) = 0; /*0x753842*/
+      this->VoxClass_Vector_field_0x0C = ((this->VoxClass_Vector_field_0x0C) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x753842*/
       if ( a3 ) /*0x753848*/
         v4 = a3; /*0x75385e*/
       else
-        v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x75385a*/
-      IDA_LOBYTE(this->VoxClass_Vector_field_0x0C) = 1; /*0x753862*/
+        v4 = (unsigned int *)new unsigned char[4 * a2]; /*0x75385a*/
+      this->VoxClass_Vector_field_0x0C = ((this->VoxClass_Vector_field_0x0C) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x753862*/
       if ( !v4 ) /*0x753866*/
         return 0; /*0x7538da*/
       if ( *(unsigned int *)&this->m_1[3] ) /*0x753868*/
@@ -3165,15 +3165,15 @@ char VoxClass_Vector::removeItem(int a2, unsigned int *a3)
           m_8 = a2; /*0x753876*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x75387c*/
           ++i; /*0x753881*/
-        if ( IDA_BYTE1(this->VoxClass_Vector_field_0x0C) ) /*0x75388e*/
+        if ( (unsigned char)((this->VoxClass_Vector_field_0x0C) >> 8) ) /*0x75388e*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x753899*/
+          delete[] (*(void **)&this->m_1[3]); /*0x753899*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x7538a1*/
         }
       }
       *(unsigned int *)&this->m_1[3] = v4; /*0x7538aa*/
       this->m_8 = a2; /*0x7538b2*/
-      IDA_BYTE1(this->VoxClass_Vector_field_0x0C) = a3 == 0; /*0x7538b5*/
+      this->VoxClass_Vector_field_0x0C = ((this->VoxClass_Vector_field_0x0C) & 0xFFFF00FFu) | (((unsigned int)(a3 == 0) & 0xFFu) << 8); /*0x7538b5*/
     }
     else
     {
@@ -3215,15 +3215,15 @@ unsigned int * VoxClass_Vector::findItem(char a2)
 
     v3 = *(void **)&this->m_1[3]; /*0x753963*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&VectorClass_VoxClass___vftable; /*0x753966*/
-    if ( v3 && IDA_BYTE1(this->VoxClass_Vector_field_0x0C) ) /*0x753970*/
+    if ( v3 && (unsigned char)((this->VoxClass_Vector_field_0x0C) >> 8) ) /*0x753970*/
     {
-      RA2_OPDEL(v3); /*0x753978*/
+      delete[] (v3); /*0x753978*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x753980*/
     }
-    IDA_BYTE1(this->VoxClass_Vector_field_0x0C) = 0; /*0x75398b*/
+    this->VoxClass_Vector_field_0x0C = ((this->VoxClass_Vector_field_0x0C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x75398b*/
     *(unsigned int *)&this->VoxClass_Vector_field_0x08 = 0; /*0x753991*/
     if ( (a2 & 1) != 0 ) /*0x753998*/
-      RA2_OPDEL(this); /*0x75399b*/
+      delete this; /*0x75399b*/
     return this->__pad_0; /*0x7539a5*/
 }
 } // namespace gamemd
@@ -3277,7 +3277,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
     }
     else
     {
-      *((unsigned int *)this + 4) = RA2_OPNEW(0x300u); /*0x758968*/
+      *((unsigned int *)this + 4) = new unsigned char[0x300u]; /*0x758968*/
       *((unsigned int *)this + 6) = 1; /*0x75896b*/
     }
     if ( a3 ) /*0x758984*/
@@ -3287,7 +3287,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
     }
     else
     {
-      *((unsigned int *)this + 5) = RA2_OPNEW(0x8000u); /*0x758993*/
+      *((unsigned int *)this + 5) = new unsigned char[0x8000u]; /*0x758993*/
       *((unsigned int *)this + 7) = 1; /*0x758996*/
     }
     return this->__pad_0; /*0x75899f*/
@@ -3305,7 +3305,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
     }
     else
     {
-      *((unsigned int *)this + 4) = RA2_OPNEW(0x300u); /*0x758968*/
+      *((unsigned int *)this + 4) = new unsigned char[0x300u]; /*0x758968*/
       *((unsigned int *)this + 6) = 1; /*0x75896b*/
     }
     if ( a3 ) /*0x758984*/
@@ -3315,7 +3315,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
     }
     else
     {
-      *((unsigned int *)this + 5) = RA2_OPNEW(0x8000u); /*0x758993*/
+      *((unsigned int *)this + 5) = new unsigned char[0x8000u]; /*0x758993*/
       *((unsigned int *)this + 7) = 1; /*0x758996*/
     }
     return this->__pad_0; /*0x75899f*/
@@ -3329,10 +3329,10 @@ void VoxelPalette::Reset()
     int result; // eax
 
     if ( *((unsigned int *)this + 6) ) /*0x7589c3*/
-      RA2_OPDEL(*((void **)this + 4)); /*0x7589ce*/
+      delete[] (*((void **)this + 4)); /*0x7589ce*/
     result = *((unsigned int *)this + 7); /*0x7589d6*/
     if ( result ) /*0x7589db*/
-      RA2_OPDEL(*((void **)this + 5)); /*0x7589e1*/
+      delete[] (*((void **)this + 5)); /*0x7589e1*/
     return result; /*0x7589e9*/
 }
 } // namespace gamemd
@@ -3593,7 +3593,7 @@ void Voxel_Section::Draw()
     *(unsigned int *)&_ESI->__pad_118[4] = unknown_18; /*0x75d73f*/
     v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x75d742*/
     if ( Items && v85.IsAllocated ) /*0x75d752*/
-      RA2_OPDEL(Items); /*0x75d755*/
+      delete[] (Items); /*0x75d755*/
     _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
                                            (bool *)a2,
                                            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
@@ -3618,14 +3618,14 @@ void Voxel_Section::Draw()
                        (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
                        aEmeffect,
                        v16);
-    IDA_BYTE4(v83) = _ESI->MindControl[0]; /*0x75d7ce*/
-    IDA_LODWORD(v83) = aMindcontrol; /*0x75d7cf*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->MindControl[0]) & 0xFFu) << 32); /*0x75d7ce*/
+    v83 = aMindcontrol; /*0x75d7cf*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d7d4*/
     _ESI->CLDisableRed[3] = Bool_Overwrite; /*0x75d7d5*/
     _ESI->MindControl[0] = INIClass::ReadBool_Overwrite( /*0x75d7e0*/
                              (int *)a2,
                              p_WarheadTypeClass_field_0x24,
-                             (unsigned __int8 *)IDA_LODWORD(v83),
+                             (unsigned __int8 *)((unsigned int)(v83)),
                              SBYTE4(v83));
     v18 = INIClass::ReadBool_Overwrite( /*0x75d7f5*/
             (int *)a2,
@@ -3635,14 +3635,14 @@ void Voxel_Section::Draw()
     v19 = _ESI->MindControl[2]; /*0x75d7fa*/
     _ESI->MindControl[1] = v18; /*0x75d800*/
     v20 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aIvanbomb, v19); /*0x75d80f*/
-    IDA_BYTE4(v83) = _ESI->MindControl[3]; /*0x75d81c*/
-    IDA_LODWORD(v83) = aElectricassaul; /*0x75d81d*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->MindControl[3]) & 0xFFu) << 32); /*0x75d81c*/
+    v83 = aElectricassaul; /*0x75d81d*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d822*/
     _ESI->MindControl[2] = v20; /*0x75d823*/
     _ESI->MindControl[3] = INIClass::ReadBool_Overwrite( /*0x75d82e*/
                              (int *)a2,
                              p_WarheadTypeClass_field_0x24,
-                             (unsigned __int8 *)IDA_LODWORD(v83),
+                             (unsigned __int8 *)((unsigned int)(v83)),
                              SBYTE4(v83));
     v21 = INIClass::ReadBool_Overwrite( /*0x75d843*/
             (int *)a2,
@@ -3652,14 +3652,14 @@ void Voxel_Section::Draw()
     v22 = _ESI->Parasite[1]; /*0x75d848*/
     _ESI->Parasite[0] = v21; /*0x75d84e*/
     v23 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aTemporal, v22); /*0x75d85d*/
-    IDA_BYTE4(v83) = _ESI->Parasite[2]; /*0x75d86a*/
-    IDA_LODWORD(v83) = aIslocomotor; /*0x75d86b*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->Parasite[2]) & 0xFFu) << 32); /*0x75d86a*/
+    v83 = aIslocomotor; /*0x75d86b*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d870*/
     _ESI->Parasite[1] = v23; /*0x75d871*/
     _ESI->Parasite[2] = INIClass::ReadBool_Overwrite( /*0x75d87c*/
                           (int *)a2,
                           p_WarheadTypeClass_field_0x24,
-                          (unsigned __int8 *)IDA_LODWORD(v83),
+                          (unsigned __int8 *)((unsigned int)(v83)),
                           SBYTE4(v83));
     GUID_Overwrite = (unsigned int *)INIClass::ReadGUID_Overwrite( /*0x75d8b2*/
                                  a2,
@@ -3673,62 +3673,62 @@ void Voxel_Section::Draw()
     *(unsigned int *)&_ESI->Parasite[3] = *GUID_Overwrite; /*0x75d8b9*/
     v25 = GUID_Overwrite[1]; /*0x75d8bb*/
     *(unsigned int *)&_ESI->__pad_15D[3] = v25; /*0x75d8be*/
-    IDA_LOBYTE(v25) = _ESI->Airstrike; /*0x75d8c1*/
+    v25 = ((v25) & 0xFFFFFF00u) | ((unsigned int)(_ESI->Airstrike) & 0xFFu); /*0x75d8c1*/
     v26 = GUID_Overwrite[2]; /*0x75d8c7*/
-    IDA_HIDWORD(v83) = v25; /*0x75d8ca*/
+    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(v25) & 0xFFFFFFFFull) << 32); /*0x75d8ca*/
     *(unsigned int *)&_ESI->__pad_15D[7] = v26; /*0x75d8cb*/
-    IDA_LODWORD(v83) = aAirstrike; /*0x75d8ce*/
+    v83 = aAirstrike; /*0x75d8ce*/
     v27 = GUID_Overwrite[3]; /*0x75d8d3*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d8d6*/
     *(unsigned int *)&_ESI->__pad_15D[11] = v27; /*0x75d8d9*/
     v28 = INIClass::ReadBool_Overwrite( /*0x75d8dc*/
             (int *)a2,
             p_WarheadTypeClass_field_0x24,
-            (unsigned __int8 *)IDA_LODWORD(v83),
+            (unsigned __int8 *)((unsigned int)(v83)),
             SBYTE4(v83));
-    IDA_BYTE4(v83) = IDA_BYTE1(_ESI->Airstrike); /*0x75d8e9*/
-    IDA_LODWORD(v83) = aPsychedelic; /*0x75d8ea*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)((unsigned char)((_ESI->Airstrike) >> 8)) & 0xFFu) << 32); /*0x75d8e9*/
+    v83 = aPsychedelic; /*0x75d8ea*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d8ef*/
-    IDA_LOBYTE(_ESI->Airstrike) = v28; /*0x75d8f0*/
+    _ESI->Airstrike = ((_ESI->Airstrike) & 0xFFFFFF00u) | ((unsigned int)(v28) & 0xFFu); /*0x75d8f0*/
     IDA_BYTE1(_ESI->Airstrike) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
                                (int *)a2,
                                p_WarheadTypeClass_field_0x24,
-                               (unsigned __int8 *)IDA_LODWORD(v83),
+                               (unsigned __int8 *)((unsigned int)(v83)),
                                SBYTE4(v83));
     v29 = INIClass::ReadBool_Overwrite( /*0x75d910*/
             (int *)a2,
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             aBombdisarm,
-            IDA_BYTE2(_ESI->Airstrike));
+            (unsigned char)((_ESI->Airstrike) >> 16));
     Paralyzes = _ESI->Paralyzes; /*0x75d915*/
-    IDA_BYTE2(_ESI->Airstrike) = v29; /*0x75d91b*/
+    _ESI->Airstrike = ((_ESI->Airstrike) & 0xFF00FFFFu) | (((unsigned int)(v29) & 0xFFu) << 16); /*0x75d91b*/
     v31 = INIClass::ReadInt_Overwrite( /*0x75d92a*/
             (bool *)a2,
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             aParalyzes,
             Paralyzes);
-    IDA_BYTE4(v83) = _ESI->Culling; /*0x75d937*/
-    IDA_LODWORD(v83) = aCulling; /*0x75d938*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->Culling) & 0xFFu) << 32); /*0x75d937*/
+    v83 = aCulling; /*0x75d938*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d93d*/
     _ESI->Paralyzes = v31; /*0x75d93e*/
     IDA_LOBYTE(_ESI->Culling) = INIClass::ReadBool_Overwrite( /*0x75d949*/
                               (int *)a2,
                               p_WarheadTypeClass_field_0x24,
-                              (unsigned __int8 *)IDA_LODWORD(v83),
+                              (unsigned __int8 *)((unsigned int)(v83)),
                               SBYTE4(v83));
     v32 = INIClass::ReadBool_Overwrite( /*0x75d95e*/
             (int *)a2,
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             aMakesdisguise,
-            IDA_BYTE1(_ESI->Culling));
-    v33 = IDA_BYTE2(_ESI->Culling); /*0x75d963*/
-    IDA_BYTE1(_ESI->Culling) = v32; /*0x75d969*/
+            (unsigned char)((_ESI->Culling) >> 8));
+    v33 = (unsigned char)((_ESI->Culling) >> 16); /*0x75d963*/
+    _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v32) & 0xFFu) << 8); /*0x75d969*/
     v34 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aNukemaker, v33); /*0x75d978*/
-    IDA_HIDWORD(v35) = *(unsigned int *)_ESI->__pad_FC; /*0x75d97d*/
-    IDA_BYTE2(_ESI->Culling) = v34; /*0x75d983*/
-    IDA_LODWORD(v35) = _ESI->WarheadTypeClass_field_0xF8; /*0x75d989*/
+    v35 = ((v35) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)_ESI->__pad_FC) & 0xFFFFFFFFull) << 32); /*0x75d97d*/
+    _ESI->Culling = ((_ESI->Culling) & 0xFF00FFFFu) | (((unsigned int)(v34) & 0xFFu) << 16); /*0x75d983*/
+    v35 = _ESI->WarheadTypeClass_field_0xF8; /*0x75d989*/
     INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aPronedamage, v35); /*0x75d999*/
-    Culling_high = IDA_HIBYTE(_ESI->Culling); /*0x75d99e*/
+    Culling_high = (unsigned char)((_ESI->Culling) >> 8); /*0x75d99e*/
     __asm { fstp qword ptr [esi+0F8h] } /*0x75d9a4*/
     *(double *)&_ESI->WarheadTypeClass_field_0xF8 = _RT1; /*0x75d9a4*/
     v38 = INIClass::ReadBool_Overwrite( /*0x75d9b3*/
@@ -3736,31 +3736,31 @@ void Voxel_Section::Draw()
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             aRadiation,
             Culling_high);
-    IDA_BYTE4(v83) = _ESI->PsychicDamage; /*0x75d9c0*/
-    IDA_LODWORD(v83) = aPsychicdamage; /*0x75d9c1*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->PsychicDamage) & 0xFFu) << 32); /*0x75d9c0*/
+    v83 = aPsychicdamage; /*0x75d9c1*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d9c6*/
-    IDA_HIBYTE(_ESI->Culling) = v38; /*0x75d9c7*/
+    _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v38) & 0xFFu) << 8); /*0x75d9c7*/
     IDA_LOBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
                                     (int *)a2,
                                     p_WarheadTypeClass_field_0x24,
-                                    (unsigned __int8 *)IDA_LODWORD(v83),
+                                    (unsigned __int8 *)((unsigned int)(v83)),
                                     SBYTE4(v83));
     v39 = INIClass::ReadBool_Overwrite( /*0x75d9e7*/
             (int *)a2,
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             aAffectsallies,
-            IDA_BYTE1(_ESI->PsychicDamage));
-    v40 = IDA_BYTE2(_ESI->PsychicDamage); /*0x75d9ec*/
-    IDA_BYTE1(_ESI->PsychicDamage) = v39; /*0x75d9f2*/
+            (unsigned char)((_ESI->PsychicDamage) >> 8));
+    v40 = (unsigned char)((_ESI->PsychicDamage) >> 16); /*0x75d9ec*/
+    _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFFFF00FFu) | (((unsigned int)(v39) & 0xFFu) << 8); /*0x75d9f2*/
     v41 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aBullets, v40); /*0x75da01*/
-    IDA_BYTE4(v83) = IDA_HIBYTE(_ESI->PsychicDamage); /*0x75da0e*/
-    IDA_LODWORD(v83) = aVeinhole; /*0x75da0f*/
+    v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)((unsigned char)((_ESI->PsychicDamage) >> 8)) & 0xFFu) << 32); /*0x75da0e*/
+    v83 = aVeinhole; /*0x75da0f*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75da14*/
-    IDA_BYTE2(_ESI->PsychicDamage) = v41; /*0x75da15*/
+    _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFF00FFFFu) | (((unsigned int)(v41) & 0xFFu) << 16); /*0x75da15*/
     IDA_HIBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75da20*/
                                     (int *)a2,
                                     p_WarheadTypeClass_field_0x24,
-                                    (unsigned __int8 *)IDA_LODWORD(v83),
+                                    (unsigned __int8 *)((unsigned int)(v83)),
                                     SBYTE4(v83));
     v42 = INIClass::ReadInt_Overwrite( /*0x75da35*/
             (bool *)a2,
@@ -3774,15 +3774,15 @@ void Voxel_Section::Draw()
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             aShakexhi,
             WarheadTypeClass_field_0x180);
-    IDA_HIDWORD(v83) = _ESI->WarheadTypeClass_field_0x184; /*0x75da5c*/
-    IDA_LODWORD(v83) = aShakeylo; /*0x75da5d*/
+    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(_ESI->WarheadTypeClass_field_0x184) & 0xFFFFFFFFull) << 32); /*0x75da5c*/
+    v83 = aShakeylo; /*0x75da5d*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75da62*/
     _ESI->WarheadTypeClass_field_0x180 = v44; /*0x75da63*/
     _ESI->WarheadTypeClass_field_0x184 = INIClass::ReadInt_Overwrite( /*0x75da6e*/
                                            (bool *)a2,
                                            p_WarheadTypeClass_field_0x24,
-                                           (unsigned __int8 *)IDA_LODWORD(v83),
-                                           IDA_SHIDWORD(v83));
+                                           (unsigned __int8 *)((unsigned int)(v83)),
+                                           (int)((v83) >> 32));
     v45 = INIClass::ReadInt_Overwrite( /*0x75da83*/
             (bool *)a2,
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
@@ -3795,15 +3795,15 @@ void Voxel_Section::Draw()
             (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
             (unsigned __int8 *)&g_INI_Key_TRUCKA.__pad_1584[76],
             v46);
-    IDA_HIDWORD(v83) = _ESI->WarheadTypeClass_field_0x1C8[0]; /*0x75daaa*/
-    IDA_LODWORD(v83) = &g_INI_Key_TRUCKA.__pad_1584[64]; /*0x75daab*/
+    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(_ESI->WarheadTypeClass_field_0x1C8[0]) & 0xFFFFFFFFull) << 32); /*0x75daaa*/
+    v83 = &g_INI_Key_TRUCKA.__pad_1584[64]; /*0x75daab*/
     p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75dab0*/
     _ESI->WarheadTypeClass_field_0x1C4[0] = v47; /*0x75dab1*/
     v48 = INIClass::ReadInt_Overwrite( /*0x75dab7*/
             (bool *)a2,
             p_WarheadTypeClass_field_0x24,
-            (unsigned __int8 *)IDA_LODWORD(v83),
-            IDA_SHIDWORD(v83));
+            (unsigned __int8 *)((unsigned int)(v83)),
+            (int)((v83) >> 32));
     _ESI->WarheadTypeClass_field_0x1C8[0] = v48; /*0x75dabe*/
     if ( v48 < 0 ) /*0x75dac4*/
       _ESI->WarheadTypeClass_field_0x1C8[0] = 0; /*0x75dac6*/
@@ -3857,17 +3857,17 @@ void Voxel_Section::Draw()
       if ( v54 ) /*0x75dbff*/
       {
         _ESI->WarheadTypeClass_field_0x190[0] = 0; /*0x75dc38*/
-        IDA_BYTE1(_ESI->MinDebris) = 0; /*0x75dc3f*/
+        _ESI->MinDebris = ((_ESI->MinDebris) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x75dc3f*/
       }
       else
       {
-        v55 = RA2_OPNEW(4 * Capacity); /*0x75dc05*/
+        v55 = new unsigned char[4 * Capacity]; /*0x75dc05*/
         _ESI->WarheadTypeClass_field_0x190[0] = v55; /*0x75dc0d*/
         if ( v55 ) /*0x75dc12*/
         {
           MaxDebris = _ESI->MaxDebris; /*0x75dc14*/
           v57 = 0; /*0x75dc17*/
-          IDA_BYTE1(_ESI->MinDebris) = 1; /*0x75dc1b*/
+          _ESI->MinDebris = ((_ESI->MinDebris) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); /*0x75dc1b*/
           if ( MaxDebris > 0 ) /*0x75dc1f*/
           {
             do /*0x75dc34*/
@@ -3888,7 +3888,7 @@ void Voxel_Section::Draw()
     *(unsigned int *)&_ESI->__pad_1A0[4] = v59; /*0x75dc5b*/
     v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dc5e*/
     if ( v60 && v85.IsAllocated ) /*0x75dc6e*/
-      RA2_OPDEL(v60); /*0x75dc71*/
+      delete[] (v60); /*0x75dc71*/
     v79 = 0; /*0x75dc88*/
     v80 = 0; /*0x75dc8b*/
     v81 = 1; /*0x75dc8e*/
@@ -3899,22 +3899,22 @@ void Voxel_Section::Draw()
       v80 = *(unsigned int *)_ESI->__pad_1B0; /*0x75dcad*/
       if ( v80 ) /*0x75dcb0*/
       {
-        v79 = (unsigned int *)RA2_OPNEW(4 * v80); /*0x75dcbe*/
+        v79 = (unsigned int *)new unsigned char[4 * v80]; /*0x75dcbe*/
         if ( v79 ) /*0x75dcc3*/
         {
           v61 = 0; /*0x75dcc8*/
-          for ( IDA_HIBYTE(v81) = 1; v61 < v80; ++v61 ) /*0x75dcd0*/
+          for ( v81 = ((v81) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); v61 < v80; ++v61 ) /*0x75dcd0*/
             v79[v61] = *((unsigned int *)&_ESI->WarheadTypeClass_field_0x1AC->AbstractClass + v61); /*0x75dcde*/
         }
       }
       else
       {
         v79 = 0; /*0x75dceb*/
-        IDA_HIBYTE(v81) = 0; /*0x75dcf2*/
+        v81 = ((v81) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x75dcf2*/
       }
     }
     p_WarheadTypeClass_field_0x24 = *(unsigned __int8 **)&_ESI->__pad_1B0[8]; /*0x75dd01*/
-    IDA_LODWORD(v83) = _ESI->WarheadTypeClass_field_0x1BC[0]; /*0x75dd0c*/
+    v83 = _ESI->WarheadTypeClass_field_0x1BC[0]; /*0x75dd0c*/
     v78 = (unsigned int)(void *)&TypeList_int_vftable; /*0x75dd0f*/
     inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&_ESI->WarheadTypeClass_field_0x24); /*0x75dd15*/
     IntList = (char *)INIClass::ReadIntList( /*0x75dd22*/
@@ -3927,8 +3927,8 @@ void Voxel_Section::Draw()
                         v80,
                         v81,
                         (int)p_WarheadTypeClass_field_0x24,
-                        IDA_SLODWORD(v83),
-                        IDA_SHIDWORD(v83));
+                        ((int)(v83)),
+                        (int)((v83) >> 32));
     v84 = IntList; /*0x75dd2d*/
     if ( &_ESI->__pad_1A0[8] != IntList ) /*0x75dd33*/
     {
@@ -3937,7 +3937,7 @@ void Voxel_Section::Draw()
       *(unsigned int *)_ESI->__pad_1B0 = v64; /*0x75dd45*/
       if ( v64 ) /*0x75dd48*/
       {
-        v65 = RA2_OPNEW(4 * v64); /*0x75dd52*/
+        v65 = new unsigned char[4 * v64]; /*0x75dd52*/
         _ESI->WarheadTypeClass_field_0x1AC = (CampaignClass *)v65; /*0x75dd5a*/
         if ( v65 ) /*0x75dd5f*/
         {
@@ -3969,7 +3969,7 @@ void Voxel_Section::Draw()
     *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
     v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_int_vftable; /*0x75ddb1*/
     if ( v69 && v85.IsAllocated ) /*0x75ddc1*/
-      RA2_OPDEL(v69); /*0x75ddc4*/
+      delete[] (v69); /*0x75ddc4*/
     if ( INIClass::GetString( /*0x75dde6*/
            (INIClass *)a2,
            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
@@ -3984,10 +3984,10 @@ void Voxel_Section::Draw()
       do /*0x75de58*/
       {
         v73 = strchr(v70, 37); /*0x75de14*/
-        IDA_HIDWORD(v83) = v70; /*0x75de1e*/
+        v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(v70) & 0xFFFFFFFFull) << 32); /*0x75de1e*/
         if ( v73 ) /*0x75de1f*/
         {
-          v84 = (char *)atoi((const char *)IDA_HIDWORD(v83)); /*0x75de26*/
+          v84 = (char *)atoi((const char *)(unsigned int)((v83) >> 32)); /*0x75de26*/
           __asm /*0x75de2d*/
           {
             fild [esp+14Ch+var_13C]
@@ -3996,14 +3996,14 @@ void Voxel_Section::Draw()
         }
         else
         {
-          atof((const char *)IDA_HIDWORD(v83)); /*0x75de39*/
+          atof((const char *)(unsigned int)((v83) >> 32)); /*0x75de39*/
         }
-        IDA_HIDWORD(v83) = Str; /*0x75de41*/
-        IDA_LODWORD(v83) = 0; /*0x75de46*/
+        v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(Str) & 0xFFFFFFFFull) << 32); /*0x75de41*/
+        v83 = 0; /*0x75de46*/
         __asm { fstp qword ptr [ebx] } /*0x75de48*/
         *v71++ = _RT1; /*0x75de48*/
         --v72; /*0x75de55*/
-        v70 = strtok((char *)IDA_LODWORD(v83), (const char *)IDA_HIDWORD(v83)); /*0x75de56*/
+        v70 = strtok((char *)((unsigned int)(v83)), (const char *)(unsigned int)((v83) >> 32)); /*0x75de56*/
       }
       while ( v72 ); /*0x75de58*/
     }
@@ -4056,7 +4056,7 @@ void Voxel_Section::Constructor()
       *((unsigned int *)this + 2) = v3; /*0x75e6dd*/
       if ( v3 ) /*0x75e6e0*/
       {
-        v4 = RA2_OPNEW(4 * v3); /*0x75e6e6*/
+        v4 = new unsigned char[4 * v3]; /*0x75e6e6*/
         this->Voxel_Section_field_0x04 = v4; /*0x75e6f0*/
         if ( v4 ) /*0x75e6f3*/
         {

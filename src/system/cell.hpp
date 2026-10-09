@@ -383,7 +383,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool DetermineTileType();  // 0x47CA80
     void UpdateAnimations();  // 0x47DD70
     void* FindBuilding(int a1);  // 0x47EBA0
-    void* GetCoords(void* a1);  // 0x480A30
+    CoordStruct* GetCoords(void* a1);  // 0x480A30 (G57W20M26 重类型: 消费方取坐标三元组)
     int InitRandomOffsets(int a1, int a2);  // 0x4814F0
     int SetThreatBounds(int a1, int a2);  // 0x481870
     int DamageAllObjects();  // 0x483480

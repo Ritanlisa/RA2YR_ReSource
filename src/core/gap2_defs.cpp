@@ -155,7 +155,7 @@ void CStreamClass::ClearBuffer() {
   *(unsigned int *)&this->CStreamClass_field_0x10 = 0; /*0x4a4ad9*/
   if ( v2 && (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF ) /*0x4a4ae0*/
   {
-    RA2_OPDEL(v2); /*0x4a4ae6*/
+    delete[] (v2); /*0x4a4ae6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4aee*/
   }
   (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF = 0; /*0x4a4af1*/
@@ -185,7 +185,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
     if ( a2 ) /*0x4a4cc8*/
       v4 = (unsigned int *)(a2); /*0x4a4cde*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a1); /*0x4a4cda*/
+      v4 = (unsigned int *)new unsigned char[4 * a1]; /*0x4a4cda*/
     (*(unsigned int *)&this->CStreamClass_field_0x0C) = ((*(unsigned int *)&this->CStreamClass_field_0x0C) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x4a4ce2*/
     if ( !v4 ) /*0x4a4ce6*/
       return 0; /*0x4a4d5a*/
@@ -198,7 +198,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
         ++i; /*0x4a4d01*/
       if ( (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF ) /*0x4a4d0e*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a4d19*/
+        delete[] (*(void **)&this->m_1[3]); /*0x4a4d19*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a4d21*/
       }
     }
@@ -243,7 +243,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
   if ( v3 && (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF ) /*0x4a4df0*/
   {
-    RA2_OPDEL(v3); /*0x4a4df8*/
+    delete[] (v3); /*0x4a4df8*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4e00*/
   }
   }
@@ -255,12 +255,12 @@ void LoadOptions::vt03() {
 
   v2 = *(void **)&this->m_1[3]; /*0x55a156*/
   this->max_entries = 0; /*0x55a159*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x55a160*/
+  if ( v2 && (unsigned char)((this->m_C) >> 8) ) /*0x55a160*/
   {
-    RA2_OPDEL(v2); /*0x55a166*/
+    delete[] (v2); /*0x55a166*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x55a16e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x55a171*/
+  this->m_C = ((this->m_C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x55a171*/
   this->m_8 = 0; /*0x55a174*/
 }
 }
@@ -442,7 +442,7 @@ void* StreamWrapper::QueryInterface(int a2)
       (**v5)((unsigned int)v5, 1); /*0x7b046e g57w10 r4*/
     ((OwnerDrawControl *)this)->InitVtable(); /*0x7b0472 g57w10 r4: 实例形态 (声明 0 参)*/
     if ( (a2 & 1) != 0 ) /*0x7b047c*/
-      RA2_OPDEL(this); /*0x7b047f*/
+      delete this; /*0x7b047f*/
     return (void *)this->__pad_0; /*0x7b0489 g57w10 r4: 生成器括号破损重组*/
 }
 }

@@ -121,14 +121,14 @@ bool IPXConnClass::initConnection(int a2, int a3, int a4, __int16 a5, int a6, in
 {
     CommBufferClass *v10; // eax
 
-    IDA_LOWORD(((ModemConnectionClass *)this)->PhoneNumber[3]) = a5; /*0x48be73*/
+    ((ModemConnectionClass *)this)->PhoneNumber[3] = ((((ModemConnectionClass *)this)->PhoneNumber[3]) & 0xFFFF0000u) | ((unsigned int)(a5) & 0xFFFFu); /*0x48be73*/
     ((ModemConnectionClass *)this)->PhoneNumber[4] = a6; /*0x48be7b*/
     *(unsigned int *)this->__pad_0 = &vt_ConnectionClass; /*0x48be83*/
     ((ModemConnectionClass *)this)->PhoneNumber[1] = a4 + 14; /*0x48be89*/
     ((ModemConnectionClass *)this)->PhoneNumber[5] = a7; /*0x48be8c*/
     ((ModemConnectionClass *)this)->PhoneNumber[6] = a8; /*0x48be8f*/
-    ((ModemConnectionClass *)this)->PhoneNumber[2] = RA2_OPNEW(a4 + 14); /*0x48be99*/
-    v10 = (CommBufferClass *)RA2_OPNEW(0x58u); /*0x48be9c*/
+    ((ModemConnectionClass *)this)->PhoneNumber[2] = new unsigned char[a4 + 14]; /*0x48be99*/
+    v10 = (CommBufferClass *)new unsigned char[0x58u]; /*0x48be9c*/
     if ( v10 ) /*0x48bea6*/
       this->PlayerIndex = (int)sub_48B0E0(v10, a2, a3, ((ModemConnectionClass *)this)->PhoneNumber[1], a9); /*0x48bec2*/
     else

@@ -12,7 +12,7 @@ class CellCoord
 {
 public:
     virtual ~CellCoord() = default;
-    static void* To_CellObj(void* a2, void* a3);  // 0x5657A0
+    static CellClass* To_CellObj(void* a2, void* a3);  // 0x5657A0 (G57W20M26 重类型: 消费方走 CellClass::copyFlags)
 };
 
 } // namespace gamemd

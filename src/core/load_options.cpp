@@ -114,7 +114,7 @@ int LoadOptions::Cleanup() {
 
   v2 = (unsigned int)(0);
   for ( this->extension = (const char *)(void *)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
-    RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
+    delete[] (*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
   v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
   p_is_active = (char *)(&this->is_active); /*0x5587c0*/
   (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
@@ -122,7 +122,7 @@ int LoadOptions::Cleanup() {
   *(unsigned int *)p_is_active = (unsigned int)((void *)&VectorClass_FileEntryClass___vftable); /*0x5587cb*/
   if ( result && p_is_active[13] ) /*0x5587d5*/
   {
-    RA2_OPDEL((void *)result); /*0x5587db*/
+    delete[] ((void *)result); /*0x5587db*/
     *((unsigned int *)p_is_active + 1) = 0; /*0x5587e3*/
   }
   }
@@ -280,12 +280,12 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
 
   if ( new_size ) /*0x55a1fc*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x55a206*/
+    this->m_C = ((this->m_C) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x55a206*/
     if ( out_buffer ) /*0x55a20c*/
       v4 = (unsigned int *)(out_buffer); /*0x55a222*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * new_size); /*0x55a21e*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x55a226*/
+      v4 = (unsigned int *)new unsigned char[4 * new_size]; /*0x55a21e*/
+    this->m_C = ((this->m_C) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x55a226*/
     if ( v4 ) /*0x55a22a*/
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x55a235*/
@@ -295,15 +295,15 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
           m_8 = new_size; /*0x55a243*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x55a249*/
           ++i; /*0x55a24e*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x55a25b*/
+        if ( (unsigned char)((this->m_C) >> 8) ) /*0x55a25b*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x55a266*/
+          delete[] (*(void **)&this->m_1[3]); /*0x55a266*/
           *(unsigned int *)&this->m_1[3] = 0; /*0x55a26e*/
         }
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x55a277*/
       this->m_8 = (unsigned int *)(new_size); /*0x55a27f*/
-      IDA_BYTE1(this->m_C) = out_buffer == 0; /*0x55a282*/
+      this->m_C = ((this->m_C) & 0xFFFF00FFu) | (((unsigned int)(out_buffer == 0) & 0xFFu) << 8); /*0x55a282*/
       return 1; /*0x55a288*/
     }
     else
@@ -319,12 +319,12 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
 }
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x55a2ad*/
+  if ( *(unsigned int *)&this->m_1[3] && (unsigned char)((this->m_C) >> 8) ) /*0x55a2ad*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x55a2b3*/
+    delete[] (*(void **)&this->m_1[3]); /*0x55a2b3*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x55a2bb*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x55a2be*/
+  this->m_C = ((this->m_C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x55a2be*/
   this->m_8 = 0; /*0x55a2c1*/
 }
 // 0x55a2d0
@@ -334,7 +334,7 @@ int LoadOptions::FindItem(FileEntryClass* const* a2)
     int m_8; // edx
     unsigned int *i; // ecx
 
-    if ( !IDA_LOBYTE(this->m_C) ) /*0x55a2d0*/
+    if ( !(unsigned char)(this->m_C) ) /*0x55a2d0*/
       return 0; /*0x55a2d8*/
     m_8 = (unsigned int)(this->m_8); /*0x55a2de*/
     result = 0; /*0x55a2e1*/
@@ -349,7 +349,7 @@ int LoadOptions::FindItem(FileEntryClass* const* a2)
 }
 // 0x55a310
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x55a310*/
+  if ( (unsigned char)(this->m_C) ) /*0x55a310*/
     return (unsigned int)(ptr - *(unsigned int *)&this->m_1[3]) >> 2; /*0x55a325*/
   else
     return 0; /*0x55a317*/

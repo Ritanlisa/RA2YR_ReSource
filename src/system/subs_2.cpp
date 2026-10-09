@@ -1135,7 +1135,7 @@ void InitGlobal53CA30()
 // IDA: 0x53CA50  proposal: InitGlobal53CA50
 // IDA: int sub_53CA50()
 //   dbl_A9FFA8 = dbl_A9FF80;
-//   return IDA_LODWORD(dbl_A9FF80);
+//   return ((unsigned int)(dbl_A9FF80));
 int InitGlobal53CA50()
 {
   return 0;

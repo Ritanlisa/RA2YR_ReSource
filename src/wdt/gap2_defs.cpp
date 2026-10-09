@@ -64,10 +64,10 @@ int State::SetIfChanged(int a1) {
   int v3; // edx
 
   result = a1; /*0x4f3a90*/
-  if ( (unsigned char)a1 != IDA_LOBYTE(this->AIPlayers) ) /*0x4f3a99*/
+  if ( (unsigned char)a1 != (unsigned char)(this->AIPlayers) ) /*0x4f3a99*/
   {
     v3 = *(unsigned int *)this->__pad_0; /*0x4f3a9b*/
-    IDA_LOBYTE(this->AIPlayers) = a1; /*0x4f3a9e*/
+    this->AIPlayers = ((this->AIPlayers) & 0xFFFFFF00u) | ((unsigned int)(a1) & 0xFFu); /*0x4f3a9e*/
     return (*(int (**)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
 }

@@ -228,7 +228,7 @@ namespace gamemd {
 unsigned int * SidebarClass::queryInterface(char a2) {
     ((GadgetClass*)(GadgetClass *)this)->Dtor(); /*0x6ac783*/
     if ( (a2 & 1) != 0 ) /*0x6ac78d*/
-      RA2_OPDEL(this); /*0x6ac790*/
+      delete this; /*0x6ac790*/
     return (unsigned int *)(char *)this; /*0x6ac79a field_0 基址*/
 }
 } // namespace gamemd
@@ -240,12 +240,12 @@ void ToolTipClass::ddtor() {
 
     v2 = *(void **)&this->m_1[3]; /*0x724c36*/
     this->m_10 = 0; /*0x724c39*/
-    if ( v2 && IDA_BYTE1(this->m_C) ) /*0x724c40*/
+    if ( v2 && (unsigned char)((this->m_C) >> 8) ) /*0x724c40*/
     {
-      RA2_OPDEL(v2); /*0x724c46*/
+      delete[] (v2); /*0x724c46*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x724c4e*/
     }
-    IDA_BYTE1(this->m_C) = 0; /*0x724c51*/
+    this->m_C = ((this->m_C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x724c51*/
     this->m_8 = 0; /*0x724c54*/
 }
 } // namespace gamemd
@@ -455,16 +455,16 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
     {
       if ( v19 < 8 ) /*0x43455c*/
       {
-        IDA_LOBYTE(v16) = (uint8_t)(v10 >> g_BitShift_Red) << g_BitShift_Green; /*0x43458e G42.33 b3 载体名*/
-        IDA_HIBYTE(v16) = (uint8_t)(v10 >> g_BitMask_Green) << g_BitMask_Blue; /*0x43459b*/
-        IDA_LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
-        IDA_BYTE2(v17.Color_field_00) = (uint8_t)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
+        v16 = ((v16) & 0xFFFFFF00u) | ((unsigned int)((uint8_t)(v10 >> g_BitShift_Red) << g_BitShift_Green) & 0xFFu); /*0x43458e G42.33 b3 载体名*/
+        v16 = ((v16) & 0xFFFF00FFu) | (((unsigned int)((uint8_t)(v10 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFFu) << 8); /*0x43459b*/
+        v17.Color_field_00 = ((v17.Color_field_00) & 0xFFFF0000u) | ((unsigned int)(v16) & 0xFFFFu); /*0x4345b1*/
+        v17.Color_field_00 = ((v17.Color_field_00) & 0xFF00FFFFu) | (((unsigned int)((uint8_t)(v10 >> g_BitShift_Blue) << g_BitMask_Red) & 0xFFu) << 16); /*0x4345ba*/
         ((Color*)&v17)->Lerp(v12, (int)(uint8_t *)&stru_A80220); /*0x4345be*/
-        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)((uint8_t)(IDA_BYTE2(v17.Color_field_00) >> g_BitMask_Red)) & 0xFFFF); /*0x4345ee*/
+        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)((uint8_t)((unsigned char)((v17.Color_field_00) >> 16) >> g_BitMask_Red)) & 0xFFFF); /*0x4345ee*/
         v11 = a6; /*0x43460e*/
-        *((unsigned short *)this + 18) = ((uint8_t)(IDA_LOBYTE(v17.Color_field_00) >> g_BitShift_Green) << g_BitShift_Red) /*0x434614*/
+        *((unsigned short *)this + 18) = ((uint8_t)((unsigned char)(v17.Color_field_00) >> g_BitShift_Green) << g_BitShift_Red) /*0x434614*/
                               | (v13 << g_BitShift_Blue)
-                              | ((uint8_t)(IDA_BYTE1(v17.Color_field_00) >> g_BitMask_Blue) << g_BitMask_Green);
+                              | ((uint8_t)((unsigned char)((v17.Color_field_00) >> 8) >> g_BitMask_Blue) << g_BitMask_Green);
       }
       v12 += 31; /*0x43461c*/
       ++v18; /*0x434620*/
@@ -1251,7 +1251,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           case 1344: /*0x46e0f7*/
             ReadChatMessage(&v129, a4); /*0x46e109*/
             DeleteAndZero::Alt((DeleteAndZero *)&v129); /*0x46e112*/
-            if ( IDA_HIWORD(uIDEvent) != 1281 ) /*0x46e120*/
+            if ( (unsigned short)((uIDEvent) >> 16) != 1281 ) /*0x46e120*/
               return 0; /*0x46e120*/
             v125 = 61680; /*0x46e13d*/
             nIDDlgItem = (int)Math::InitDegToRad; /*0x46e141*/
@@ -1357,7 +1357,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
                   (Color *)(*(unsigned int *)(*(unsigned int *)&((stru_B054D0_host *)&stru_B054D0)->m_1[3] + 4 * *(unsigned int *)(*(unsigned int *)WindowLongA + 40))
                           + 776),
                   (int)&v130);
-          IDA_LOWORD(v128) = *(unsigned short *)v86; /*0x46ef96*/
+          v128 = ((v128) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)v86) & 0xFFFFu); /*0x46ef96*/
           (((v128) >> 16) & 0xFF) = *(unsigned char *)(v86 + 2); /*0x46ef9e*/
           v87 = (uint8_t)v128 | (*(uint16_t *)((char *)&v128 + 1) << 8); /*0x46efd4*/
           v88 = (LPARAM)*WindowLongA; /*0x46efd6*/
@@ -1469,7 +1469,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
     if ( g_UIControlState ) /*0x46e084*/
     {
       ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x46e088*/
-      RA2_OPDEL(v7); /*0x46e08e*/
+      delete[] (v7); /*0x46e08e*/
       g_UIControlState = 0; /*0x46e096*/
     }
     KillTimer(hWnd, 1u); /*0x46e0a3*/
@@ -1482,7 +1482,7 @@ namespace gamemd {
 std::locale::facet *Constructor_CampaignScoreClass(CampaignScore *a1, char a2) {
     *(unsigned int *)a1->__pad_0 = 0; /*0x471509*/
     if ( (a2 & 1) != 0 ) /*0x47150f*/
-      RA2_OPDEL(a1); /*0x471512*/
+      delete[] (a1); /*0x471512*/
     return (std::locale::facet *)a1; /*0x47151c*/
 }
 } // namespace gamemd
@@ -1492,7 +1492,7 @@ namespace gamemd {
 std::locale::facet *Constructor_CampaignEndScoreClass(CampaignScore *a1, char a2) {
     *(unsigned int *)a1->__pad_0 = 0; /*0x471529*/
     if ( (a2 & 1) != 0 ) /*0x47152f*/
-      RA2_OPDEL(a1); /*0x471532*/
+      delete[] (a1); /*0x471532*/
     return (std::locale::facet *)a1; /*0x47153c*/
 }
 } // namespace gamemd
@@ -1502,7 +1502,7 @@ namespace gamemd {
 int CheckListClass::vt_method_488310(int a2) {
     int v3; // eax
 
-    v3 = (int)RA2_OPNEW(8u); /*0x488315*/
+    v3 = (int)new unsigned char[8u]; /*0x488315*/
     if ( !v3 ) /*0x48831f*/
       return ListClass::AddItem((ListClass *)this, 0); /*0x48833c*/
     *(unsigned int *)v3 = a2; /*0x488326*/
@@ -1560,7 +1560,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
           return; /*0x4883c3*/
       }
       ListClass::RemoveItem((ListClass *)this, v3); /*0x4883cf*/
-      RA2_OPDEL(v5); /*0x4883d5*/
+      delete[] (v5); /*0x4883d5*/
     }
 }
 } // namespace gamemd
@@ -1622,7 +1622,7 @@ namespace gamemd {
 unsigned int * ControlClass::QueryInterface(char a2) {
     GadgetClass::Dtor((GadgetClass *)this); /*0x48e663*/
     if ( (a2 & 1) != 0 ) /*0x48e66d*/
-      RA2_OPDEL(this); /*0x48e670*/
+      delete this; /*0x48e670*/
     return this->__pad_0; /*0x48e67a*/
 }
 } // namespace gamemd
@@ -1641,10 +1641,10 @@ int Checksum::AddString(uint8_t *a2) {
 // 0x4B4EE0
 namespace gamemd {
 int DropListClass::OnClick() {
-    if ( IDA_LOBYTE(this->DropListClass_field_0x48) ) /*0x4b4ee3*/
+    if ( (unsigned char)(this->DropListClass_field_0x48) ) /*0x4b4ee3*/
     {
       (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 36))((char *)this + 176); /*0x4b4ef6*/
-      IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4ef9*/
+      this->DropListClass_field_0x48 = ((this->DropListClass_field_0x48) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x4b4ef9*/
     }
     (*(void (__thiscall **)(char *))(this->q02C + 32))((char *)&this->q0446); /*0x4b4f09*/
     (*(void (__thiscall **)(int *))(this->DropListClass_field_0x50 + 32))((int *)&this->DropListClass_field_0x50); /*0x4b4f12*/
@@ -1679,10 +1679,10 @@ unsigned int * DropListClass::HitTest(int a2) {
 // 0x4B4F80
 namespace gamemd {
 int DropListClass::OnDblClick() {
-    if ( IDA_LOBYTE(this->DropListClass_field_0x48) ) /*0x4b4f83*/
+    if ( (unsigned char)(this->DropListClass_field_0x48) ) /*0x4b4f83*/
     {
       (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 36))((char *)this + 176); /*0x4b4f96*/
-      IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4f99*/
+      this->DropListClass_field_0x48 = ((this->DropListClass_field_0x48) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x4b4f99*/
     }
     (*(void (__thiscall **)(int *))(this->DropListClass_field_0x50 + 36))((int *)&this->DropListClass_field_0x50); /*0x4b4fa3*/
     return LinkClass::Destroy((GadgetClass *)this); /*0x4b4fad*/
@@ -1694,7 +1694,7 @@ namespace gamemd {
 unsigned int * EditClass::QueryInterface(char a2) {
     DropListClass::Constructor((DropListClass *)this); /*0x4b57d3*/
     if ( (a2 & 1) != 0 ) /*0x4b57dd*/
-      RA2_OPDEL(this); /*0x4b57e0*/
+      delete this; /*0x4b57e0*/
     return (unsigned int *)this; /*0x4b57ea*/
 }
 } // namespace gamemd
@@ -1900,7 +1900,7 @@ int InputManager::ProcessEvents() {
       while ( 1 ) /*0x4e18c4*/
       {
         (*(void (__thiscall **)(ShpButtonClass *, int))(*(unsigned int *)v1->__pad_0 + 108))(v1, v13); /*0x4e18c9*/
-        if ( !IDA_BYTE2(v1->Image) ) /*0x4e18cc*/
+        if ( !(unsigned char)((v1->Image) >> 16) ) /*0x4e18cc*/
         {
           if ( (*(int (__thiscall **)(ShpButtonClass *, int *, int, int, HWND, int))(*(unsigned int *)v1->__pad_0 + 128))( /*0x4e18e4*/
                  v1,
@@ -1948,7 +1948,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
       dword_8B3E90 = 0; /*0x4e1aa4*/
     LinkClass::Destruct((LinkClass *)this); /*0x4e1aac*/
     if ( (a2 & 1) != 0 ) /*0x4e1ab6*/
-      RA2_OPDEL(this); /*0x4e1ab9*/
+      delete this; /*0x4e1ab9*/
     return this->__pad_0; /*0x4e1ac3*/
 }
 } // namespace gamemd
@@ -2167,7 +2167,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           if ( !(&stru_A8EB00)[440] ) /*0x54fa0d*/
           {
             v13 = this->u32_318 - this->u32_314; /*0x54fa26*/
-            if ( (int)(256 - ((IDA_HIDWORD(v13) ^ v13) - IDA_HIDWORD(v13))) >= 3 ) /*0x54fa30*/
+            if ( (int)(256 - (((unsigned int)((v13) >> 32) ^ v13) - (unsigned int)((v13) >> 32))) >= 3 ) /*0x54fa30*/
             {
               EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa3c*/
               EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fa44*/
@@ -2181,7 +2181,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           if ( (&stru_A8EB00)[440] ) /*0x54fa5d*/
             goto LABEL_45; /*0x54fa5d*/
           v14 = this->u32_318 - this->u32_314; /*0x54fa76*/
-          if ( (int)(256 - ((IDA_HIDWORD(v14) ^ v14) - IDA_HIDWORD(v14))) >= 3 ) /*0x54fa80*/
+          if ( (int)(256 - (((unsigned int)((v14) >> 32) ^ v14) - (unsigned int)((v14) >> 32))) >= 3 ) /*0x54fa80*/
           {
             EventClass::Enqueue((EventClass *)this, 4u, 0); /*0x54fa88*/
             EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fa90*/
@@ -2193,7 +2193,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           if ( !(&stru_A8EB00)[440] ) /*0x54faac*/
           {
             v15 = this->u32_318 - this->u32_314; /*0x54fabc*/
-            if ( (int)(256 - ((IDA_HIDWORD(v15) ^ v15) - IDA_HIDWORD(v15))) >= 3 ) /*0x54facb*/
+            if ( (int)(256 - (((unsigned int)((v15) >> 32) ^ v15) - (unsigned int)((v15) >> 32))) >= 3 ) /*0x54facb*/
             {
               EventClass::Enqueue((EventClass *)this, 4u, 1); /*0x54fad3*/
               EventBuffer::Enqueue((EventBuffer *)this, x); /*0x54fadb*/
@@ -2239,7 +2239,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
     if ( !(&stru_A8EB00)[440] ) /*0x54f8c0*/
     {
       v9 = this->u32_318 - this->u32_314; /*0x54f8d9*/
-      if ( (int)(256 - ((IDA_HIDWORD(v9) ^ v9) - IDA_HIDWORD(v9))) >= 3 ) /*0x54f8e3*/
+      if ( (int)(256 - (((unsigned int)((v9) >> 32) ^ v9) - (unsigned int)((v9) >> 32))) >= 3 ) /*0x54f8e3*/
       {
         EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f8ef*/
   LABEL_17:
@@ -2338,7 +2338,7 @@ int ListClass::Destruct() {
     this->u32_D = 0; /*0x557673*/
     if ( v4 && this->u32_41 ) /*0x55767e*/
     {
-      RA2_OPDEL(v4); /*0x557684*/
+      delete[] (v4); /*0x557684*/
       this->u32_38 = 0; /*0x55768c*/
     }
     this->u32_41 = 0; /*0x557691*/
@@ -2395,7 +2395,7 @@ namespace gamemd {
 unsigned int * SliderClass::QueryInterface(char a2) {
     SliderClass::Destructor(this); /*0x558183*/
     if ( (a2 & 1) != 0 ) /*0x55818d*/
-      RA2_OPDEL(this); /*0x558190*/
+      delete this; /*0x558190*/
     return this->__pad_0; /*0x55819a*/
 }
 } // namespace gamemd
@@ -2425,7 +2425,7 @@ unsigned int * ListNode::Alloc(unsigned int *a2) {
 
     *((unsigned int *)this + 2) = 0; /*0x5a9a25*/
     *(unsigned int *)this = 1; /*0x5a9a2c G42.35: (ListNode)1 即原始写 1*/
-    v3 = (int)RA2_OPNEW(8u); /*0x5a9a32*/
+    v3 = (int)new unsigned char[8u]; /*0x5a9a32*/
     if ( v3 ) /*0x5a9a3c*/
     {
       *(unsigned short *)v3 = 0; /*0x5a9a3e*/
@@ -2453,7 +2453,7 @@ wchar_t ** ListBox::Constructor() {
 
     v1 = 0; /*0x5c1036*/
     (v6) = ((v6) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(0) << 32) /*0x5c103c*/
-    v3 = (MultiplayerTeam *)RA2_OPNEW(0xCu); /*0x5c1045*/
+    v3 = (MultiplayerTeam *)new unsigned char[0xCu]; /*0x5c1045*/
     if ( v3 ) /*0x5c104c*/
     {
       v1 = 1; /*0x5c1054*/
@@ -2518,8 +2518,8 @@ char FontClass::LoadFontResources(int16_t a2) {
       v7 = (unsigned char *)(EntireFile + 2); /*0x5d2f2c*/
       do /*0x5d2f7f*/
       {
-        IDA_LOBYTE(v19) = 4 * *(v7 - 2); /*0x5d2f3b*/
-        IDA_HIBYTE(v19) = 4 * *(v7 - 1); /*0x5d2f44*/
+        v19 = ((v19) & 0xFFFFFF00u) | ((unsigned int)(4 * *(v7 - 2)) & 0xFFu); /*0x5d2f3b*/
+        v19 = ((v19) & 0xFFFF00FFu) | (((unsigned int)(4 * *(v7 - 1)) & 0xFFu) << 8); /*0x5d2f44*/
         v8 = 4 * *v7; /*0x5d2f4d*/
         v9 = (char *)&stru_886080 + 3 * (v6 % 256); /*0x5d2f68*/
         ++v6; /*0x5d2f6f*/
@@ -2536,8 +2536,8 @@ char FontClass::LoadFontResources(int16_t a2) {
       *(unsigned int *)(this + 16) = ((4 * (uint8_t)v5[205]) >> g_BitMask_Blue << g_BitMask_Green) /*0x5d2fff*/
                              | ((4 * (uint8_t)v5[206]) >> g_BitMask_Red << g_BitShift_Blue)
                              | ((4 * (uint8_t)v5[204]) >> g_BitShift_Green_0 << g_BitShift_Red);
-      RA2_OPDEL(v5); /*0x5d3002*/
-      v12 = (unsigned int *)RA2_OPNEW(0x188u); /*0x5d300c*/
+      delete[] (v5); /*0x5d3002*/
+      v12 = (unsigned int *)new unsigned char[0x188u]; /*0x5d300c*/
       v13 = v12 ? (unsigned int *)(long)ConvertClass::Construct((void *)(long)v12, (int)&stru_886080, (int)&stru_886080, (int)(long)g_DSurface_Primary, 1, 0) : 0;
       *(unsigned int *)(this + 24) = (unsigned int)v13; /*0x5d303c*/
       if ( !v13 ) /*0x5d303f*/
@@ -2681,14 +2681,14 @@ int ListBox::AddEntries() {
     int v12; // eax
     int v13; // edx
 
-    v1 = (MPCombatTeam *)RA2_OPNEW(0xCu); /*0x5d6695*/
+    v1 = (MPCombatTeam *)new unsigned char[0xCu]; /*0x5d6695*/
     if ( v1 ) /*0x5d669f*/
       v2 = MPCombatTeam::Constructor(v1); /*0x5d66a8*/
     else
       v2 = 0; /*0x5d66ac*/
     MultiplayerGameMode_field_0x08 = this->MultiplayerGameMode_field_0x08; /*0x5d66b2*/
     if ( this->MultiplayerGameMode_field_0x10 < MultiplayerGameMode_field_0x08 /*0x5d66d7*/
-      || (IDA_BYTE1(this->MultiplayerGameMode_field_0x0C) || !MultiplayerGameMode_field_0x08)
+      || ((unsigned char)((this->MultiplayerGameMode_field_0x0C) >> 8) || !MultiplayerGameMode_field_0x08)
       && (MultiplayerGameMode_field_0x14 = this->MultiplayerGameMode_field_0x14, MultiplayerGameMode_field_0x14 > 0)
       && (*(uint8_t (__thiscall **)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
            (MultiplayerGameMode *)this,
@@ -2706,7 +2706,7 @@ int ListBox::AddEntries() {
       v9 = ListBox::Constructor((ListBox *)i); /*0x5d6705*/
       v10 = this->MultiplayerGameMode_field_0x08; /*0x5d6707*/
       if ( this->MultiplayerGameMode_field_0x10 < v10 /*0x5d6729*/
-        || (IDA_BYTE1(this->MultiplayerGameMode_field_0x0C) || !v10)
+        || ((unsigned char)((this->MultiplayerGameMode_field_0x0C) >> 8) || !v10)
         && (v11 = this->MultiplayerGameMode_field_0x14, v11 > 0)
         && (*(uint8_t (__thiscall **)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
              (MultiplayerGameMode *)this,
@@ -2911,7 +2911,7 @@ void ComboBoxOwnerDraw::SortItems() {
     int v12; // eax
     unsigned int *v13; // [esp+4h] [ebp-4h]
 
-    if ( IDA_LOBYTE(this->ComboBoxOwnerDraw_field_0x14) != 1 ) /*0x6252f8*/
+    if ( (unsigned char)(this->ComboBoxOwnerDraw_field_0x14) != 1 ) /*0x6252f8*/
     {
       ComboBoxOwnerDraw_field_0x08 = *(unsigned int *)this->ComboBoxOwnerDraw_field_0x08; /*0x625300*/
       v3 = *(unsigned int **)this->__pad_0; /*0x625303*/
@@ -2919,7 +2919,7 @@ void ComboBoxOwnerDraw::SortItems() {
       *(unsigned int *)this->ComboBoxOwnerDraw_field_0x08 = 2 * ComboBoxOwnerDraw_field_0x08; /*0x62530d*/
       v13 = v3; /*0x625310*/
       *(unsigned int *)this->ComboBoxOwnerDraw_field_0x0C = v4; /*0x625318*/
-      v5 = (void *)RA2_OPNEW(8 * ComboBoxOwnerDraw_field_0x08); /*0x625323*/
+      v5 = (void *)new unsigned char[8 * ComboBoxOwnerDraw_field_0x08]; /*0x625323*/
       v6 = 4 * *(unsigned int *)this->ComboBoxOwnerDraw_field_0x08; /*0x625328*/
       *(unsigned int *)this->__pad_0 = (unsigned int)(long)v5; /*0x62532f*/
       memset(v5, 0, v6); /*0x625334*/
@@ -2950,7 +2950,7 @@ void ComboBoxOwnerDraw::SortItems() {
         while ( v8 ); /*0x625377*/
         v3 = v13; /*0x625379*/
       }
-      RA2_OPDEL(v3); /*0x62537e*/
+      delete[] (v3); /*0x62537e*/
     }
 }
 } // namespace gamemd
@@ -3103,7 +3103,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     *((unsigned int *)this + 16) = 0; /*0x6b1b62*/
     if ( !a7 ) /*0x6b1b65*/
     {
-      v8 = (ShapeButtonClass *)RA2_OPNEW(0x60u); /*0x6b1b72*/
+      v8 = (ShapeButtonClass *)new unsigned char[0x60u]; /*0x6b1b72*/
       if ( v8 ) /*0x6b1b79*/
       {
         SliderClass_field_0x10 = *(unsigned int *)this->SliderClass_field_0x10; /*0x6b1b87*/
@@ -3116,7 +3116,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
         v10 = 0; /*0x6b1ba4*/
       }
       *((unsigned int *)this + 15) = (unsigned int)v10; /*0x6b1ba8*/
-      v11 = (ShapeButtonClass *)RA2_OPNEW(0x60u); /*0x6b1bb0*/
+      v11 = (ShapeButtonClass *)new unsigned char[0x60u]; /*0x6b1bb0*/
       if ( v11 ) /*0x6b1bb7*/
       {
         v33 = *(unsigned int *)this->SliderClass_field_0x10; /*0x6b1bc5*/
@@ -3250,7 +3250,7 @@ void ToolTipClass::updateString() {
     KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
     if ( *(unsigned int *)this->Position ) /*0x7240ca*/
       (*(void (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, (int *)&this->q018); /*0x7240db*/
-    RA2_OPDEL(*((void **)this + 147)); /*0x7240e5*/
+    delete[] (*((void **)this + 147)); /*0x7240e5*/
     this->u32_24C = 0; /*0x7240ea*/
     this->u32_250 = 0; /*0x7240f0*/
     this->u32_254 = 0; /*0x7240f6*/
@@ -3260,10 +3260,10 @@ void ToolTipClass::updateString() {
     {
       v4 = this->__pad_238; /*0x724117*/
       if ( *(unsigned int *)(v4 + 4 * i) ) /*0x72411d*/
-        RA2_OPDEL(*(void **)(v4 + 4 * i)); /*0x724125*/
+        delete[] (*(void **)(v4 + 4 * i)); /*0x724125*/
     }
     (*(void (__thiscall **)(char *))(this->__pad_234 + 12))((char *)this + 564); /*0x724146*/
-    RA2_OPDEL(*((void **)this + 147)); /*0x724150*/
+    delete[] (*((void **)this + 147)); /*0x724150*/
     this->u32_24C = 0; /*0x724155*/
     this->u32_250 = 0; /*0x72415b*/
     this->u32_254 = 0; /*0x724161*/
@@ -3273,7 +3273,7 @@ void ToolTipClass::updateString() {
     this->__pad_234 = 0; /*0x72417b*/
     if ( v5 && this->u32_241 ) /*0x724183*/
     {
-      RA2_OPDEL(v5); /*0x724189*/
+      delete[] (v5); /*0x724189*/
       this->__pad_238 = 0; /*0x724191*/
     }
     this->u32_241 = 0; /*0x724194*/
@@ -3469,7 +3469,7 @@ namespace gamemd {
 void * ToolTipClass::Destructor(char a2) {
     ToolTipClass::updateString((ToolTipClass *)this); /*0x724c13*/
     if ( (a2 & 1) != 0 ) /*0x724c1d*/
-      RA2_OPDEL(this); /*0x724c20*/
+      delete this; /*0x724c20*/
     return this; /*0x724c2a*/
 }
 } // namespace gamemd
@@ -3477,7 +3477,7 @@ void * ToolTipClass::Destructor(char a2) {
 // 0x724C60
 namespace gamemd {
 unsigned int ToolTipClass::write(int a2) {
-    if ( IDA_LOBYTE(this->m_C) ) /*0x724c60*/
+    if ( (unsigned char)(this->m_C) ) /*0x724c60*/
       return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x724c75*/
     else
       return 0; /*0x724c67*/
@@ -3523,7 +3523,7 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
     ComPtr::Release((ComPtr *)(this + 2)); /*0x765659*/
     ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x765660*/
     if ( (a2 & 1) != 0 ) /*0x76566a*/
-      RA2_OPDEL(this); /*0x76566d*/
+      delete this; /*0x76566d*/
     return (void **)this; /*0x765677*/
 }
 } // namespace gamemd
@@ -3595,7 +3595,7 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
       if ( a3 > v7 ) /*0x7b7370*/
         v8 = v7; /*0x7b7372*/
       v9 = 2 * v8; /*0x7b7380*/
-      v10 = (wchar_t *)RA2_OPNEW(2 * v7 + 4); /*0x7b7382*/
+      v10 = (wchar_t *)new unsigned char[2 * v7 + 4]; /*0x7b7382*/
       v11 = (wchar_t *)(v9 + *(unsigned int *)this->__pad_0); /*0x7b7388*/
       String = *v11; /*0x7b738b*/
       *v11 = 0; /*0x7b7390*/
@@ -3606,7 +3606,7 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
       String = a2; /*0x7b73bb*/
       wcscat(v10, &String); /*0x7b73c0*/
       wcscat(v10, (const wchar_t *)(*(unsigned int *)this->__pad_0 + v9)); /*0x7b73c9*/
-      RA2_OPDEL(*(void **)this->__pad_0); /*0x7b73d1*/
+      delete[] (*(void **)this->__pad_0); /*0x7b73d1*/
       *(unsigned int *)this->__pad_0 = (unsigned int)v10; /*0x7b73d9*/
       return 1; /*0x7b73db*/
     }
@@ -3619,7 +3619,7 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
         v4 = 1; /*0x7b7329*/
       else
         v4 = wcslen(&String) + 1; /*0x7b7326*/
-      v5 = (unsigned short *)RA2_OPNEW(2 * v4); /*0x7b7331*/
+      v5 = (unsigned short *)new unsigned char[2 * v4]; /*0x7b7331*/
       *(unsigned int *)this->__pad_0 = (unsigned int)v5; /*0x7b733d*/
       *v5 = 0; /*0x7b733f*/
       if ( &String ) /*0x7b7346*/

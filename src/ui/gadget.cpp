@@ -287,7 +287,7 @@ bool GadgetClass::ClearState(bool force)
 void GadgetClass::Show()
 {
     uint8_t* p = (uint8_t*)(this);
-    // IDA: vtable call to vfunc at +72 (update/redraw), set byte at +45 (=0x2D) to 1
+    // IDA: vtable call to vfunc at +72 (update/redraw), set byte at +45 (0x2D) to 1
     p[0x2D] = 1; // Visible flag at offset 0x2D
     // vtable[72/4=18]() — redraw callback, skipped for modern C++
 }

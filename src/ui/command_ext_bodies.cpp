@@ -95,7 +95,7 @@ char ScreenCapture::Frame()
       }
       if ( !*(unsigned int *)&g_MissionQueueFrame.waypoints[482] ) /*0x55cc6a*/
       {
-        *(unsigned int *)&g_MissionQueueFrame.waypoints[482] = RA2_OPNEW(4 * *(unsigned int *)&g_MissionQueueFrame.waypoints[430]); /*0x55cc89*/
+        *(unsigned int *)&g_MissionQueueFrame.waypoints[482] = new unsigned char[4 * *(unsigned int *)&g_MissionQueueFrame.waypoints[430]]; /*0x55cc89*/
         memset(*(void **)&g_MissionQueueFrame.waypoints[482], 0, 4 * *(unsigned int *)&g_MissionQueueFrame.waypoints[430]); /*0x55cc8f*/
         if ( !*(unsigned int *)&g_MissionQueueFrame.waypoints[482] ) /*0x55cc9b*/
           *(unsigned int *)((char *)&stru_A8EB00 + 381) = 0; /*0x55cc9d*/
@@ -174,7 +174,7 @@ char ScreenCapture::Frame()
             if ( *(unsigned int *)(*(unsigned int *)&g_MissionQueueFrame.waypoints[482] /*0x55cd81*/
                            + 4 * *(unsigned int *)&g_MissionQueueFrame.waypoints[486]) )
               goto LABEL_28; /*0x55cd81*/
-            v7 = RA2_OPNEW(0x20u); /*0x55cd8d*/
+            v7 = new unsigned char[0x20u]; /*0x55cd8d*/
             if ( v7 ) /*0x55cd94*/
             {
               v8 = v13; /*0x55cd96*/

@@ -87,8 +87,8 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
 
     this->headNode[0] = 0; /*0x47822e*/
     this->headNode[1] = 0; /*0x478231*/
-    IDA_LOBYTE(this->headNode[2]) = 1; /*0x478234*/
-    IDA_BYTE1(this->headNode[2]) = 0; /*0x478238*/
+    this->headNode[2] = ((this->headNode[2]) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x478234*/
+    this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x478238*/
     *(unsigned int *)this->__pad_0 = 0; /*0x47823b*/
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->__pad_0; /*0x478241*/
@@ -98,10 +98,10 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
     if ( !v3 ) /*0x478255*/
     {
       this->headNode[0] = 0; /*0x4782c6*/
-      IDA_BYTE1(this->headNode[2]) = 0; /*0x4782c9*/
+      this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x4782c9*/
       return this->__pad_0; /*0x4782cc*/
     }
-    v4 = (int)(RA2_OPNEW(3 * v3)); /*0x47825b*/
+    v4 = (int)(new unsigned char[3 * v3]); /*0x47825b*/
     if ( v4 ) /*0x478265*/
     {
       if ( v3 - 1 >= 0 ) /*0x47826c*/
@@ -128,7 +128,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int * a2) {
       return this->__pad_0; /*0x478289*/
     v7 = this->headNode[1]; /*0x47828b*/
     v8 = 0; /*0x47828e*/
-    IDA_BYTE1(this->headNode[2]) = 1; /*0x478292*/
+    this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); /*0x478292*/
     if ( v7 <= 0 ) /*0x478296*/
       return this->__pad_0; /*0x478296*/
     v9 = 0; /*0x478298*/
@@ -156,7 +156,7 @@ int CellClass::QuickPassable() {
     unsigned int v6[3]; // [esp+10h] [ebp-Ch] BYREF
 
     v1 = ((int16_t)this->smudgeTypeIndex << 8) + 128; /*0x48796f*/
-    v2 = ((int16_t)IDA_HIWORD(this->smudgeTypeIndex) << 8) + 128; /*0x487971*/
+    v2 = ((int16_t)(unsigned short)((this->smudgeTypeIndex) >> 16) << 8) + 128; /*0x487971*/
     v5[0] = 128; /*0x487973*/
     v5[1] = 128; /*0x487977*/
     inited = (int)((Isometric_shadow_c *)(void *)this)->InitTables(v5); /*0x487980 G42.34 T11: shadow carrier (misc_ext tree Isometric is 0-arg)*/
@@ -250,7 +250,7 @@ unsigned int * ScenarioClass::initAI(char a2) {
     *(unsigned int *)(void *)this = 0; /*0x5c0fe3*/
     ((MultiplayerGameMode *)(void *)this)->Dtor(); /*0x5c0fe9 G42.34 T11: 0-arg virtual (game_systems.hpp:472)*/
     if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
-      RA2_OPDEL(this); /*0x5c0ff6*/
+      delete this; /*0x5c0ff6*/
     return (unsigned int *)this; /*0x5c1000*/
 }
 } // namespace gamemd
@@ -308,21 +308,21 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
     this->FileClass = 0; /*0x432619 G42.34 T11: vftable install (generator-neutralized); FileClass is now a uint32 member (buffer_io_file.hpp)*/
     if ( FileBaseOffset ) /*0x432621*/
     {
-      if ( IDA_LOBYTE(this->BufferOffset) ) /*0x432623*/
+      if ( (unsigned char)(this->BufferOffset) ) /*0x432623*/
       {
-        RA2_OPDEL(FileBaseOffset); /*0x432629*/
+        delete[] (FileBaseOffset); /*0x432629*/
         IDA_LOBYTE(this->BufferOffset) = 0; /*0x432631*/
       }
       this->FileBaseOffset = 0; /*0x432634*/
     }
     this->BufferReadSize = 0; /*0x432639*/
-    IDA_BYTE1(this->BufferOffset) = 0; /*0x43263c*/
-    IDA_HIBYTE(this->BufferOffset) = 0; /*0x43263f*/
+    this->BufferOffset = ((this->BufferOffset) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x43263c*/
+    this->BufferOffset = ((this->BufferOffset) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x43263f*/
     IDA_LOBYTE(this->BufferSize) = 0; /*0x432642*/
-    IDA_BYTE1(this->BufferSize) = 0; /*0x432645*/
+    this->BufferSize = ((this->BufferSize) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x432645*/
     ((RawFileClass *)this)->Dtor(); /*0x432648*/
     if ( (a2 & 1) != 0 ) /*0x432652*/
-      RA2_OPDEL(this); /*0x432655*/
+      delete this; /*0x432655*/
     return &this->FileClass; /*0x43265f*/
 }
 } // namespace gamemd
@@ -346,13 +346,13 @@ void *** BufferIOFileClass::Constructor_BitFont(char a2) {
     if ( FilePointer ) /*0x434a5f*/
     {
       if ( FilePointer[6] ) /*0x434a61*/
-        RA2_OPDEL(FilePointer[6]); /*0x434a69*/
+        delete[] (FilePointer[6]); /*0x434a69*/
       if ( FilePointer[7] ) /*0x434a71*/
-        RA2_OPDEL(FilePointer[7]); /*0x434a79*/
-      RA2_OPDEL(FilePointer); /*0x434a82*/
+        delete[] (FilePointer[7]); /*0x434a79*/
+      delete[] (FilePointer); /*0x434a82*/
     }
     if ( (a2 & 1) != 0 ) /*0x434a91*/
-      RA2_OPDEL(this); /*0x434a94*/
+      delete this; /*0x434a94*/
     return (void ***)this; /*0x434a9e*/
 }
 } // namespace gamemd
@@ -374,7 +374,7 @@ unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     if ( v3 == (int)g_FogOfWarState ) /*0x435582*/
       g_FogOfWarState = 0; /*0x435584*/
     if ( (a2 & 1) != 0 ) /*0x435593*/
-      RA2_OPDEL(this); /*0x435596*/
+      delete this; /*0x435596*/
     return this->RawFileClass; /*0x4355a0*/
 }
 } // namespace gamemd
@@ -389,8 +389,8 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
 
     this->headNode[0] = 0; /*0x477f4d*/
     this->headNode[1] = 0; /*0x477f50*/
-    IDA_LOBYTE(this->headNode[2]) = 1; /*0x477f53*/
-    IDA_BYTE1(this->headNode[2]) = 0; /*0x477f57*/
+    this->headNode[2] = ((this->headNode[2]) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x477f53*/
+    this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x477f57*/
     *(unsigned int *)this->__pad_0 = 0; /*0x477f5a*/
     if ( this == (INIClass *)a2 ) /*0x477f60*/
       return this->__pad_0; /*0x477f60*/
@@ -400,16 +400,16 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
     if ( !v3 ) /*0x477f70*/
     {
       this->headNode[0] = 0; /*0x477fae*/
-      IDA_BYTE1(this->headNode[2]) = 0; /*0x477fb1*/
+      this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x477fb1*/
       return this->__pad_0; /*0x477fb4*/
     }
-    v4 =(int)RA2_OPNEW(4 * v3); /*0x477f76*/
+    v4 =(int)new unsigned char[4 * v3]; /*0x477f76*/
     this->headNode[0] = v4; /*0x477f80*/
     if ( !v4 ) /*0x477f83*/
       return this->__pad_0; /*0x477f83*/
     v5 = this->headNode[1]; /*0x477f85*/
     v6 = 0; /*0x477f88*/
-    IDA_BYTE1(this->headNode[2]) = 1; /*0x477f8c*/
+    this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); /*0x477f8c*/
     if ( v5 <= 0 ) /*0x477f90*/
       return this->__pad_0; /*0x477f90*/
     do /*0x477fa4*/
@@ -444,7 +444,7 @@ int * CellClass::GetScreenRect(int *a2) {
     int v20; // [esp+24h] [ebp-4h]
 
     v3 = (IDA_SLOWORD(this->smudgeTypeIndex) << 8) + 128; /*0x47ffab*/
-    v4 = (IDA_SHIWORD(this->smudgeTypeIndex) << 8) + 128; /*0x47ffb8*/
+    v4 = ((short)((this->smudgeTypeIndex) >> 16) << 8) + 128; /*0x47ffb8*/
     v19 = 0; /*0x47ffba*/
     v18 = (v4 / 256) << 8; /*0x47ffc4*/
     v17 = (v3 / 256) << 8; /*0x47ffde*/
@@ -577,8 +577,8 @@ int CellClass::DrawWithFlags(int a2, unsigned int *a3, int a4) {
 // 0x588C40
 namespace gamemd {
 unsigned short * CellClass::initCellData(unsigned short *a2) {
-    IDA_LOWORD(this->mapCoords[0]) += *a2; /*0x588c49*/
-    IDA_HIWORD(this->mapCoords[0]) += a2[1]; /*0x588c50*/
+    (unsigned short)(this->mapCoords[0]) += *a2; /*0x588c49*/
+    (unsigned short)((this->mapCoords[0]) >> 16) += a2[1]; /*0x588c50*/
     return (unsigned short *)this; /*0x588c54 G42.34 T11: CellClass* -> ushort* cast (cache returns this as _WORD*)*/
 }
 } // namespace gamemd
@@ -654,13 +654,13 @@ unsigned int * TacticalClass::DestroyVector(unsigned int *Block, char a2) {
     *Block = 0; /*0x5c0d86*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c0d90*/
     {
-      RA2_OPDEL(v3); /*0x5c0d98*/
+      delete[] (v3); /*0x5c0d98*/
       *(Block + 1) = 0; /*0x5c0da0*/
     }
     *((unsigned char *)Block + 13) = 0; /*0x5c0dab*/
     *(Block + 2) = 0; /*0x5c0db1*/
     if ( (a2 & 1) != 0 ) /*0x5c0db8*/
-      RA2_OPDEL(Block); /*0x5c0dbb*/
+      delete[] (Block); /*0x5c0dbb*/
     return Block; /*0x5c0dc5*/
 }
 } // namespace gamemd
@@ -725,7 +725,7 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
       v4 = ((unsigned int *)&this->visibleArea)[1] + v3; /*0x6d22bf G42.34 T11: visibleArea is RectangleStruct -- raw word view*/
       (v10[0]) = (unsigned int)(((unsigned int *)&this->visibleArea)[0] + *a3) /*0x6d22c1 G42.34 T11*/
       (v10[1]) = (unsigned int)(v4) /*0x6d22c5*/
-      v11 = (float)IDA_SLODWORD(v10[0]); /*0x6d22dc*/
+      v11 = (float)((int)(v10[0])); /*0x6d22dc*/
       v13 = 0; /*0x6d22e4*/
       v12 = (float)v4; /*0x6d22ec*/
       v5 = TransformMatrix3x4Point(v10, (float *)&this->TacticalClass_field_DE4, &v11); /*0x6d22f0 G42.34 T11: struct addr cast (was (float*)struct lvalue)*/

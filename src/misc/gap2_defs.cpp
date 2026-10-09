@@ -393,7 +393,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         v11 = this->m_State; /*0x515132*/
         v96[1] = *((unsigned int *)this + 10) / 256; /*0x515138*/
         *(unsigned int *)(v11 + 1368) = *(unsigned int *)v96; /*0x515141*/
-        IDA_LOBYTE(v10) = v95[0]; /*0x51514a*/
+        v10 = ((v10) & 0xFFFFFF00u) | ((unsigned int)(v95[0]) & 0xFFu); /*0x51514a*/
         *(unsigned int *)(this->m_State + 1596) = -1; /*0x51514e*/
         *(unsigned char *)(this->m_State + 1668) = v10; /*0x51515b*/
         *(unsigned char *)(this->m_State + 1669) = 0; /*0x515164*/
@@ -401,9 +401,9 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         *(unsigned int *)v96 = *(unsigned int *)(*(unsigned int *)v97 + 36); /*0x515178*/
         *(unsigned int *)v95 = *(unsigned int *)v96; /*0x515188*/
         v13 = v96[0] << 8; /*0x515195*/
-        v96[0] += IDA_LOWORD(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x51519b*/
+        v96[0] += (unsigned short)(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x51519b*/
         v14 = (v96[1] << 8) + 128; /*0x5151aa*/
-        v96[1] = v95[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v12 + 82]); /*0x5151b5*/
+        v96[1] = v95[1] + (unsigned short)((g_DDrawSurfaceManager.scenario[v12 + 82]) >> 16); /*0x5151b5*/
         v15 = (CellClass *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v96); /*0x5151d1*/
         Coords = CellClass::GetCoords(v15, &v108); /*0x5151d8*/
         v17 = Coords[1]; /*0x5151df*/
@@ -432,7 +432,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         v29 = *(unsigned int *)(*(unsigned int *)v97 + 40); /*0x51526f*/
         *(unsigned int *)v97 = *(unsigned int *)(*(unsigned int *)v97 + 448); /*0x51528d*/
         v102 = ((__int16)v29 << 8) + 128; /*0x515291*/
-        v103 = (IDA_SHIWORD(v29) << 8) + 128; /*0x5152a8*/
+        v103 = ((short)((v29) >> 16) << 8) + 128; /*0x5152a8*/
         v30 = Cell_GetGroundHeight(&v102); /*0x5152ac*/
         *(unsigned int *)(this->m_State + 1392) = v26 + (v30 - GroundHeight) / *(unsigned int *)v97; /*0x5152bd*/
         return 7; /*0x5152c3*/
@@ -445,8 +445,8 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
     }
     v33 = (unsigned short *)(*(int (__thiscall **)(int *, char *))(*m_State + 440))(m_State, v97); /*0x51534c*/
     v34 = v96[0] & 7; /*0x515355*/
-    v35 = v33[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v34 + 82]); /*0x515369*/
-    v3->m_Target.X = ((__int16)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[v34 + 82]) + *v33) << 8) + 128; /*0x515380*/
+    v35 = v33[1] + (unsigned short)((g_DDrawSurfaceManager.scenario[v34 + 82]) >> 16); /*0x515369*/
+    v3->m_Target.X = ((__int16)((unsigned short)(g_DDrawSurfaceManager.scenario[v34 + 82]) + *v33) << 8) + 128; /*0x515380*/
     *((unsigned int *)this + 10) = (v35 << 8) + 128; /*0x51538a*/
     *((unsigned int *)this + 11) = 0; /*0x515392*/
     v36 = Cell_GetGroundHeight((unsigned int *)this + 9); /*0x515395*/
@@ -738,7 +738,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
             v105 = *v58; /*0x515889*/
             v106 = v58[1]; /*0x515890*/
             v59 = *((unsigned int *)this + 8) - v58[2]; /*0x51589c*/
-            if ( (int)((IDA_HIDWORD(v59) ^ v59) - IDA_HIDWORD(v59)) < 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x5158ab*/
+            if ( (int)(((unsigned int)((v59) >> 32) ^ v59) - (unsigned int)((v59) >> 32)) < 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x5158ab*/
             {
               v108 = *v58; /*0x5158af*/
               v109 = v58[1]; /*0x5158b6*/
@@ -1017,8 +1017,8 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
       v33[2] = v31; /*0x516904*/
       v34 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)this->m_State + 72))(this->m_State, v68); /*0x51690c*/
       v35 = *(unsigned int *)(this->m_State + 1504) & 7; /*0x516939*/
-      (v60) = ((v60) & ~0xFFFF) | ((unsigned int)(*v34 / 256 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v35 + 82])) & 0xFFFF); /*0x516955*/
-      (v60) = ((v60) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v34[1] / 256 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v35 + 82])) & 0xFFFF) << 16) /*0x516961*/
+      (v60) = ((v60) & ~0xFFFF) | ((unsigned int)(*v34 / 256 + (unsigned short)(g_DDrawSurfaceManager.scenario[v35 + 82])) & 0xFFFF); /*0x516955*/
+      (v60) = ((v60) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v34[1] / 256 + (unsigned short)((g_DDrawSurfaceManager.scenario[v35 + 82]) >> 16)) & 0xFFFF) << 16) /*0x516961*/
       a2 = v60; /*0x516970*/
       if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&a2, 1) ) /*0x516974*/
       {
@@ -1034,7 +1034,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
           v65 = *v40; /*0x5169d9*/
           v66 = v40[1]; /*0x5169e5*/
           v41 = v40[2]; /*0x5169ed*/
-          v66 = (IDA_SHIWORD(a2) << 8) + 128; /*0x5169fd*/
+          v66 = ((short)((a2) >> 16) << 8) + 128; /*0x5169fd*/
           v65 = ((__int16)a2 << 8) + 128; /*0x516a13*/
           v67 = 0; /*0x516a17*/
           v62 = 0; /*0x516a1b*/
@@ -1059,7 +1059,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
               v63 = v47 - v45; /*0x516a8c*/
               v64 = v49; /*0x516a90*/
               Math_Sqrt((double)v46 * (double)v46 + (double)v49 * (double)v49 + (double)(v47 - v45) * (double)(v47 - v45)); /*0x516abc*/
-              IDA_LOWORD(v50) = Math_RoundToInt(v30); /*0x516ac4*/
+              v50 = ((v50) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v30)) & 0xFFFFu); /*0x516ac4*/
               if ( v50 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) /*0x516ade*/
                 && !(unsigned __int8)Team::AllMembersValid((Team *)this->m_State) )
               {
@@ -1067,7 +1067,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                 v65 = *v51; /*0x516af8*/
                 v66 = v51[1]; /*0x516aff*/
                 v52 = *((unsigned int *)this + 8) - v51[2]; /*0x516b0b*/
-                if ( (int)((IDA_HIDWORD(v52) ^ v52) - IDA_HIDWORD(v52)) < 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x516b1a*/
+                if ( (int)(((unsigned int)((v52) >> 32) ^ v52) - (unsigned int)((v52) >> 32)) < 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x516b1a*/
                 {
                   v65 = *v51; /*0x516b1e*/
                   v66 = v51[1]; /*0x516b25*/
@@ -1088,7 +1088,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                     v65 = *v53,
                     v66 = v53[1],
                     v54 = v53[2] / *(unsigned int *)((char *)&stru_A8EB00 + 1500) - v39->__pad_EC[47],
-                    (int)((IDA_HIDWORD(v54) ^ v54) - IDA_HIDWORD(v54)) <= 2) )
+                    (int)(((unsigned int)((v54) >> 32) ^ v54) - (unsigned int)((v54) >> 32)) <= 2) )
               {
                 v61 = 0; /*0x516bb0*/
               }
@@ -1104,7 +1104,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
     {
       v15 = dword_A8ED84; /*0x516690*/
       v16 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x51669c*/
-      IDA_LOWORD(v17) = Math_RoundToInt(v16); /*0x5166a2*/
+      v17 = ((v17) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v16)) & 0xFFFFu); /*0x5166a2*/
       v18 = v66; /*0x5166aa*/
       v19 = (unsigned int *)(this->m_State + 1600); /*0x5166ae*/
       *v19 = v15; /*0x5166b5*/
@@ -1128,7 +1128,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
       v63 = v22; /*0x516739*/
       v64 = v23; /*0x516741*/
       Math_Sqrt((double)v23 * (double)v23 + (double)v22 * (double)v22 + (double)v62 * (double)v62); /*0x516762*/
-      IDA_LOWORD(v24) = Math_RoundToInt(v16); /*0x51676a*/
+      v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v16)) & 0xFFFFu); /*0x51676a*/
       if ( v24 >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x51677b*/
         goto LABEL_28; /*0x51677b*/
       if ( (*(int (__thiscall **)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
@@ -1265,22 +1265,22 @@ int* Pathfinding::CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5) {
       v26[0] = a3; /*0x58397c*/
       v14 = a5; /*0x583983*/
       v15 = ((unsigned char)v12 - 2) & 7; /*0x58399b*/
-      (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[v13 + 82]) + (unsigned short)a3) & 0xFFFF); /*0x58399e*/
-      (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v13 + 82])) & 0xFFFF) << 16) /*0x5839aa*/
+      (v23) = ((v23) & ~0xFFFF) | ((unsigned int)((unsigned short)(g_DDrawSurfaceManager.scenario[v13 + 82]) + (unsigned short)a3) & 0xFFFF); /*0x58399e*/
+      (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((unsigned short)((a3) >> 16) + (unsigned short)((g_DDrawSurfaceManager.scenario[v13 + 82]) >> 16)) & 0xFFFF) << 16) /*0x5839aa*/
       v26[1] = v23; /*0x5839b3*/
       v16 = (unsigned short *)(4 * v15 + 9041544); /*0x5839b7*/
-      IDA_LOWORD(a3) = (unsigned short)a3 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v15 + 82]); /*0x5839cb*/
-      IDA_HIWORD(a3) += IDA_HIWORD(g_DDrawSurfaceManager.scenario[v15 + 82]); /*0x5839d7*/
+      a3 = ((a3) & 0xFFFF0000u) | ((unsigned int)((unsigned short)a3 + (unsigned short)(g_DDrawSurfaceManager.scenario[v15 + 82])) & 0xFFFFu); /*0x5839cb*/
+      (unsigned short)((a3) >> 16) += (unsigned short)((g_DDrawSurfaceManager.scenario[v15 + 82]) >> 16); /*0x5839d7*/
       (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(g_DDrawSurfaceManager.scenario[v13 + 82]) & 0xFFFF); /*0x5839e0*/
       v26[2] = a3; /*0x5839e3*/
       v26[3] = v24; /*0x5839ee*/
-      IDA_LOWORD(a3) = v24 + v15; /*0x5839f2*/
-      IDA_HIWORD(a3) = (((unsigned int)(v24) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v13 + 82]); /*0x583a03*/
+      a3 = ((a3) & 0xFFFF0000u) | ((unsigned int)(v24 + v15) & 0xFFFFu); /*0x5839f2*/
+      a3 = ((a3) & 0xFFFFu) | (((unsigned int)((((unsigned int)(v24) >> 16) & 0xFFFF) + (unsigned short)((g_DDrawSurfaceManager.scenario[v13 + 82]) >> 16)) & 0xFFFFu) << 16); /*0x583a03*/
       v26[4] = a3; /*0x583a0c*/
       (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(*v16) & 0xFFFF); /*0x583a10*/
       (v16) = ((v16) & ~0xFFFF) | ((unsigned int)((((unsigned int)(v24) >> 16) & 0xFFFF) + v16[1]) & 0xFFFF); /*0x583a1a*/
-      IDA_LOWORD(a3) = v24 + v15; /*0x583a1d*/
-      IDA_HIWORD(a3) = (unsigned short)v16; /*0x583a22*/
+      a3 = ((a3) & 0xFFFF0000u) | ((unsigned int)(v24 + v15) & 0xFFFFu); /*0x583a1d*/
+      a3 = ((a3) & 0xFFFFu) | (((unsigned int)((unsigned short)v16) & 0xFFFFu) << 16); /*0x583a22*/
       v26[5] = a3; /*0x583a2b*/
       v17 = 0; /*0x583a2f*/
       for ( i = (__int16 **)v26; ; ++i ) /*0x583a31*/
@@ -1288,7 +1288,7 @@ int* Pathfinding::CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5) {
         a3 = *i; /*0x583a43*/
         if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&a3, 1) ) /*0x583a47*/
         {
-          v19 = (__int16)a3 + IDA_SHIWORD(a3) * (*((unsigned int *)this + 62) + *((unsigned int *)this + 61) + 1); /*0x583a73*/
+          v19 = (__int16)a3 + (short)((a3) >> 16) * (*((unsigned int *)this + 62) + *((unsigned int *)this + 61) + 1); /*0x583a73*/
           if ( v19 >= 0 ) /*0x583a75*/
           {
             v20 = *((unsigned int *)this + 27); /*0x583a7b*/
@@ -1329,7 +1329,7 @@ int Movement::CompareAbsCoords(void* a2, void* a3) {
     v3 = *(short *)a3; /*0x5b29ca*/
     v4 = *(short *)a2; /*0x5b29cf*/
     Movement_field_00 = this->Movement_field_00; /*0x5b29d2*/
-    if ( abs16(*(short *)a3) < (int)abs16(IDA_LOWORD(this->Movement_field_00) - *(short *)a2) ) /*0x5b29f3*/
+    if ( abs16(*(short *)a3) < (int)abs16((unsigned short)(this->Movement_field_00) - *(short *)a2) ) /*0x5b29f3*/
     {
       if ( (__int16)(v4 - Movement_field_00) >= 0 ) /*0x5b2a06*/
         IDA_LOWORD(this->Movement_field_00) = Movement_field_00 + v3; /*0x5b2a19*/
@@ -1717,8 +1717,8 @@ int RulesClass::ReadCountryList() {
       __asm { fstp qword ptr [esi+1828h] } /*0x66d0aa*/
       *(double *)&this->ColorAdd[5] = _RT1; /*0x66d0aa*/
       Coord = INIClass_GetCoord(v19, (int)&v17, aRadiation, aRadcolor, (unsigned __int8 *)&this->ColorAdd[7]); /*0x66d0ca*/
-      IDA_LOWORD(this->ColorAdd[7]) = *(unsigned short *)Coord; /*0x66d0d2*/
-      IDA_BYTE2(this->ColorAdd[7]) = *(unsigned char *)(Coord + 2); /*0x66d0e1*/
+      this->ColorAdd[7] = ((this->ColorAdd[7]) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)Coord) & 0xFFFFu); /*0x66d0d2*/
+      this->ColorAdd[7] = ((this->ColorAdd[7]) & 0xFF00FFFFu) | (((unsigned int)(*(unsigned char *)(Coord + 2)) & 0xFFu) << 16); /*0x66d0e1*/
       v15 = this->ColorAdd[8]; /*0x66d0ea*/
       if ( INIClass::GetString(v19, aRadiation, aRadsitewarhead, &g_INI_DefaultBuffer, Destination, 128) ) /*0x66d0fe*/
       {
@@ -2038,7 +2038,7 @@ int RulesClass::LoadFromINI() {
       *(unsigned int *)&_ESI->__pad_240[120] = v336; /*0x66d63d*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66d646*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66d656*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66d659*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66d659*/
       LargeVisceroid = _ESI[1].LargeVisceroid; /*0x66d666*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aOretwinkle, &g_INI_DefaultBuffer, String, 128) ) /*0x66d683*/
         v6 = (UnitTypeClass *)AnimTypeClass::FindOrCreate(String); /*0x66d690*/
@@ -2078,7 +2078,7 @@ int RulesClass::LoadFromINI() {
       _ESI->BarrelDebris[0] = (int)v336; /*0x66d7b1*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x66d7ba*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66d7ca*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66d7cd*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66d7cd*/
       BarrelParticle = _ESI->BarrelParticle; /*0x66d7db*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBarrelparticle, &g_INI_DefaultBuffer, String, 128) ) /*0x66d7f5*/
         v11 = (ParticleSystemTypeClass *)BuildingTypeClass::LoadOrGet(String); /*0x66d802*/
@@ -2125,7 +2125,7 @@ int RulesClass::LoadFromINI() {
       _ESI->GUICheckboxSound = (int)v336; /*0x66d96a*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66d973*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66d983*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66d986*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66d986*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aDeadbodies, &g_INI_DefaultBuffer, String, 128) ) /*0x66d9aa*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66d9bf*/
@@ -2152,7 +2152,7 @@ int RulesClass::LoadFromINI() {
       _ESI->CheerSound = (int)v336; /*0x66da6c*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66da75*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66da85*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66da88*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66da88*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aMetallicdebris, &g_INI_DefaultBuffer, String, 128) ) /*0x66daad*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66dac2*/
@@ -2179,7 +2179,7 @@ int RulesClass::LoadFromINI() {
       _ESI->CrateMoneySound = (int)v336; /*0x66db6f*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66db78*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66db88*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66db8b*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66db8b*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBridgeexplosio, &g_INI_DefaultBuffer, String, 128) ) /*0x66dbb0*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66dbc5*/
@@ -2206,7 +2206,7 @@ int RulesClass::LoadFromINI() {
       _ESI->ImpactWaterSound = (int)v336; /*0x66dc72*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66dc7b*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66dc8b*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66dc8e*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66dc8e*/
       v20 = *(unsigned int **)&_ESI->__pad_240[88]; /*0x66dc9b*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aIonblast, &g_INI_DefaultBuffer, String, 128) ) /*0x66dcb8*/
         v21 = AnimTypeClass::FindOrCreate(String); /*0x66dcc5*/
@@ -2246,7 +2246,7 @@ int RulesClass::LoadFromINI() {
       *(unsigned int *)&_ESI->__pad_240[148] = v336; /*0x66ddf2*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66ddfb*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66de0b*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66de0e*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66de0e*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWeatherconbolt, &g_INI_DefaultBuffer, String, 128) ) /*0x66de33*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66de48*/
@@ -2273,7 +2273,7 @@ int RulesClass::LoadFromINI() {
       *(unsigned int *)&_ESI->__pad_240[176] = v336; /*0x66def5*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x66defe*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66df0e*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66df11*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66df11*/
       v26 = *(unsigned int **)&_ESI->__pad_240[180]; /*0x66df1e*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWeatherconbolt_0, &g_INI_DefaultBuffer, String, 128) ) /*0x66df3b*/
         v27 = AnimTypeClass::FindOrCreate(String); /*0x66df48*/
@@ -2647,7 +2647,7 @@ int RulesClass::LoadFromINI() {
       DynamicVector_field_0x1C->nextArrayIndex = *(unsigned int *)BuildingTypeClassPrerequisites[1].VectorClass; /*0x66e7b6*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e7bf*/
       if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e7cf*/
-        RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e7d2*/
+        delete[] (*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e7d2*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[308]); /*0x66e7e8*/
       v91 = LoadBuildingTypeClassPrerequisites( /*0x66e825*/
               (DynamicVectorClass *)&v332,
@@ -2669,7 +2669,7 @@ int RulesClass::LoadFromINI() {
       v92->nextArrayIndex = *(unsigned int *)v91[1].VectorClass; /*0x66e84a*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e853*/
       if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e863*/
-        RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e866*/
+        delete[] (*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e866*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[336]); /*0x66e87c*/
       v93 = LoadBuildingTypeClassPrerequisites( /*0x66e8b8*/
               (DynamicVectorClass *)&v332,
@@ -2691,7 +2691,7 @@ int RulesClass::LoadFromINI() {
       v94->nextArrayIndex = *(unsigned int *)v93[1].VectorClass; /*0x66e8dd*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e8e6*/
       if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e8f6*/
-        RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e8f9*/
+        delete[] (*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e8f9*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[364]); /*0x66e90f*/
       v95 = LoadBuildingTypeClassPrerequisites( /*0x66e94c*/
               (DynamicVectorClass *)&v332,
@@ -2713,7 +2713,7 @@ int RulesClass::LoadFromINI() {
       v96->nextArrayIndex = *(unsigned int *)v95[1].VectorClass; /*0x66e971*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e97a*/
       if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e98a*/
-        RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e98d*/
+        delete[] (*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e98d*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[392]); /*0x66e9a3*/
       v97 = LoadBuildingTypeClassPrerequisites( /*0x66e9df*/
               (DynamicVectorClass *)&v332,
@@ -2735,7 +2735,7 @@ int RulesClass::LoadFromINI() {
       v98->nextArrayIndex = *(unsigned int *)v97[1].VectorClass; /*0x66ea04*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66ea0d*/
       if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66ea1d*/
-        RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66ea20*/
+        delete[] (*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66ea20*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[420]); /*0x66ea36*/
       v99 = LoadBuildingTypeClassPrerequisites( /*0x66ea73*/
               (DynamicVectorClass *)&v332,
@@ -2757,7 +2757,7 @@ int RulesClass::LoadFromINI() {
       v100->nextArrayIndex = *(unsigned int *)v99[1].VectorClass; /*0x66ea98*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66eaa1*/
       if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66eab1*/
-        RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66eab4*/
+        delete[] (*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66eab4*/
       v101 = *(unsigned int *)&_ESI->__pad_240[784]; /*0x66eac2*/
       v331[1] = *(unsigned int *)&_ESI->__pad_240[788]; /*0x66eace*/
       v331[0] = v101; /*0x66eacf*/
@@ -2768,12 +2768,12 @@ int RulesClass::LoadFromINI() {
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aRevealbyheight,
-                                            IDA_BYTE2(_ESI->ElevationBonusCap[0]));
+                                            (unsigned char)((_ESI->ElevationBonusCap[0]) >> 16));
       IDA_HIBYTE(_ESI->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite( /*0x66eb1c*/
                                              (int *)v338,
                                              g_INI_Key_General,
                                              aAllowshroudeds,
-                                             IDA_HIBYTE(_ESI->ElevationBonusCap[0]));
+                                             (unsigned char)((_ESI->ElevationBonusCap[0]) >> 8));
       _ESI->GUIMainButtonSound = INIClass::ReadInt_Overwrite( /*0x66eb3c*/
                                    (bool *)v338,
                                    g_INI_Key_General,
@@ -2985,7 +2985,7 @@ int RulesClass::LoadFromINI() {
       _ESI->IceBreakingWeight[0] = (int)v336; /*0x66f079*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x66f082*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66f092*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66f095*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66f095*/
       v145 = INIClass::ReadInt_Overwrite((bool *)v338, g_INI_Key_General, aBridgevoxelmax, _ESI->VeteranRatio[1]); /*0x66f0b1*/
       v331[1] = 128; /*0x66f0ba*/
       _ESI->VeteranRatio[1] = v145; /*0x66f0bf*/
@@ -3038,7 +3038,7 @@ int RulesClass::LoadFromINI() {
                                         (bool *)v338,
                                         g_INI_Key_General,
                                         aCliffbackimpas,
-                                        IDA_SLOBYTE(_ESI->IncomingMessage));
+                                        ((signed char)(_ESI->IncomingMessage)));
       v156 = _ESI->PlacementDelay[0]; /*0x66f1f2*/
       v331[1] = _ESI->PlacementDelay[1]; /*0x66f1fe*/
       v331[0] = v156; /*0x66f1ff*/
@@ -3123,7 +3123,7 @@ int RulesClass::LoadFromINI() {
       _ESI->ThirdCrew = v336; /*0x66f42c*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_BuildingTypeClass_const___vftable; /*0x66f435*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66f445*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66f448*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66f448*/
       FlameDamage = _ESI->FlameDamage; /*0x66f455*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aGdigateone, &g_INI_DefaultBuffer, String, 128) ) /*0x66f472*/
         v169 = BuildingTypeClass::FindOrCreate(String); /*0x66f47f*/
@@ -3183,7 +3183,7 @@ int RulesClass::LoadFromINI() {
       _ESI->CMislWarhead = (WarheadTypeClass *)v336; /*0x66f668*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_BuildingTypeClass_const___vftable; /*0x66f671*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66f681*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66f684*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66f684*/
       V3EliteWarhead = _ESI->V3EliteWarhead; /*0x66f692*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aGdipowerplant, &g_INI_DefaultBuffer, String, 128) ) /*0x66f6af*/
         v180 = BuildingTypeClass::FindOrCreate(String); /*0x66f6bc*/
@@ -3263,7 +3263,7 @@ int RulesClass::LoadFromINI() {
       _ESI->BuildupTime[1] = (int)v336; /*0x66f8a4*/
       *(unsigned int *)&v332.__pad_20[4] = (unsigned int)(void *)&VectorClass_UnitTypeClass_const___vftable; /*0x66f8ad*/
       if ( v332.DynamicVector_field_0x28 && v333 ) /*0x66f8bd*/
-        RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66f8c0*/
+        delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66f8c0*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aHarvesterunit, &g_INI_DefaultBuffer, String, 128) ) /*0x66f8e5*/
       {
         UnitTypeVector::Construct((UnitTypeVector *)&v332, 0, 0); /*0x66f8fa*/
@@ -3292,7 +3292,7 @@ int RulesClass::LoadFromINI() {
       if ( v332.DynamicVector_field_0x28 ) /*0x66f9b8*/
       {
         if ( v333 ) /*0x66f9c0*/
-          RA2_OPDEL((void *)v332.DynamicVector_field_0x28); /*0x66f9c3*/
+          delete[] ((void *)v332.DynamicVector_field_0x28); /*0x66f9c3*/
       }
       CountryName = (int *)HouseTypeClass::ReadCountryName( /*0x66f9e4*/
                              (int)&v332,
@@ -3425,7 +3425,7 @@ int RulesClass::LoadFromINI() {
                                           (int *)v338,
                                           g_INI_Key_General,
                                           aCurleyshuffle,
-                                          IDA_BYTE1(_ESI->ElevationIncrement));
+                                          (unsigned char)((_ESI->ElevationIncrement) >> 8));
       IDA_LOBYTE(_ESI->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite( /*0x66fd79*/
                                                    (int *)v338,
                                                    g_INI_Key_General,
@@ -3476,12 +3476,12 @@ int RulesClass::LoadFromINI() {
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aNodaibuildswal,
-                                            IDA_BYTE1(_ESI->ElevationBonusCap[1]));
+                                            (unsigned char)((_ESI->ElevationBonusCap[1]) >> 8));
       IDA_BYTE2(_ESI->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite( /*0x66fe71*/
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aAibuildswalls,
-                                            IDA_BYTE2(_ESI->ElevationBonusCap[1]));
+                                            (unsigned char)((_ESI->ElevationBonusCap[1]) >> 16));
       VectorClass::Copy(&v329, &_ESI->__pad_C3C[1972]); /*0x66fe78*/
       v203 = (int *)INIClass::ReadIntList( /*0x66fe90*/
                       (INIClass *)v338,
@@ -3546,7 +3546,7 @@ int RulesClass::LoadFromINI() {
                                              (int *)v338,
                                              g_INI_Key_General,
                                              aUsemindefenser,
-                                             IDA_HIBYTE(_ESI->ElevationBonusCap[1]));
+                                             (unsigned char)((_ESI->ElevationBonusCap[1]) >> 8));
       *(unsigned int *)&_ESI->__pad_C3C[1364] = INIClass::ReadInt_Overwrite( /*0x66ff8d*/
                                             (bool *)v338,
                                             g_INI_Key_General,
@@ -3730,19 +3730,19 @@ int RulesClass::LoadFromINI() {
                                         v1,
                                         g_INI_Key_General,
                                         (unsigned __int8 *)aSlaveminerslav,
-                                        IDA_LODWORD(_ESI->ExtraUnitLight));
+                                        ((unsigned int)(_ESI->ExtraUnitLight)));
       IDA_LODWORD(_ESI->ExtraInfantryLight) = INIClass::ReadCoord( /*0x670324*/
                                             (double *)v338,
                                             v1,
                                             g_INI_Key_General,
                                             (unsigned __int8 *)aSlaveminerlong,
-                                            IDA_LODWORD(_ESI->ExtraInfantryLight));
+                                            ((unsigned int)(_ESI->ExtraInfantryLight)));
       IDA_LODWORD(_ESI->ExtraAircraftLight) = INIClass::ReadCoord( /*0x670344*/
                                             (double *)v338,
                                             v1,
                                             g_INI_Key_General,
                                             (unsigned __int8 *)aSlaveminerscan,
-                                            IDA_LODWORD(_ESI->ExtraAircraftLight));
+                                            ((unsigned int)(_ESI->ExtraAircraftLight)));
       *(unsigned int *)&_ESI->Paranoid = INIClass::ReadInt_Overwrite( /*0x670367*/
                                      (bool *)v338,
                                      g_INI_Key_General,
@@ -4384,7 +4384,7 @@ int RulesClass::LoadFromINI() {
                                           (int *)v338,
                                           g_INI_Key_General,
                                           aBlendedfog,
-                                          IDA_BYTE2(_ESI->ElevationIncrement));
+                                          (unsigned char)((_ESI->ElevationIncrement) >> 16));
       _ESI->AttackingAircraftSightRange = INIClass::ReadInt_Overwrite( /*0x670f33*/
                                             (bool *)v338,
                                             g_INI_Key_General,
@@ -4424,12 +4424,12 @@ int RulesClass::LoadFromINI() {
                                               (bool *)v338,
                                               g_INI_Key_General,
                                               aLightningscatt,
-                                              IDA_LODWORD(_ESI->EngineerCaptureLevel));
+                                              ((unsigned int)(_ESI->EngineerCaptureLevel)));
       IDA_LODWORD(_ESI->TalkBubbleTime) = INIClass::ReadInt_Overwrite( /*0x67102d*/
                                         (bool *)v338,
                                         g_INI_Key_General,
                                         aLightningcells,
-                                        IDA_LODWORD(_ESI->TalkBubbleTime));
+                                        ((unsigned int)(_ESI->TalkBubbleTime)));
       _ESI->RadDurationMultiple = INIClass::ReadInt_Overwrite( /*0x67104d*/
                                     (bool *)v338,
                                     g_INI_Key_General,
@@ -4478,7 +4478,7 @@ int RulesClass::LoadFromINI() {
       }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aPrismsupportmo, *(double *)v331); /*0x671169*/
       __asm { fmul ds:dbl_7E2AC0 } /*0x67116e*/
-      IDA_LOWORD(v279) = Math_RoundToInt(v1); /*0x671174*/
+      v279 = ((v279) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x671174*/
       *(unsigned int *)&_ESI->__pad_240[604] = v279; /*0x671179*/
       *(unsigned int *)&_ESI->__pad_240[608] = INIClass::ReadInt_Overwrite( /*0x671199*/
                                            (bool *)v338,
@@ -4528,7 +4528,7 @@ int RulesClass::LoadFromINI() {
       __asm { fild dword ptr [esi+4C4h] } /*0x6712ab*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketraiser, *(double *)v331); /*0x6712c4*/
-      IDA_LOWORD(v280) = Math_RoundToInt(v1); /*0x6712c9*/
+      v280 = ((v280) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x6712c9*/
       *(unsigned int *)&_ESI->__pad_240[644] = v280; /*0x6712ce*/
       __asm { fld dword ptr [esi+4C8h] } /*0x6712da*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
@@ -4593,7 +4593,7 @@ int RulesClass::LoadFromINI() {
       __asm { fild dword ptr [esi+4F8h] } /*0x671464*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislraiserate, *(double *)v331); /*0x67147e*/
-      IDA_LOWORD(v281) = Math_RoundToInt(v1); /*0x671483*/
+      v281 = ((v281) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x671483*/
       *(unsigned int *)&_ESI->__pad_240[696] = v281; /*0x671488*/
       __asm { fld dword ptr [esi+4FCh] } /*0x671493*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
@@ -4658,7 +4658,7 @@ int RulesClass::LoadFromINI() {
       __asm { fild dword ptr [esi+52Ch] } /*0x67161d*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislraiserate, *(double *)v331); /*0x671637*/
-      IDA_LOWORD(v282) = Math_RoundToInt(v1); /*0x67163c*/
+      v282 = ((v282) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x67163c*/
       *(unsigned int *)&_ESI->__pad_240[748] = v282; /*0x671641*/
       __asm { fld dword ptr [esi+4FCh] } /*0x67164d*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
@@ -4799,12 +4799,12 @@ int RulesClass::LoadFromINI() {
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventspee, *(double *)v331); /*0x6719c5*/
       __asm { fstp dword ptr [esi+80h] } /*0x6719ca*/
-      _ESI->InfantryExplode = (AnimTypeClass *)IDA_LODWORD(_RT1); /*0x6719ca*/
+      _ESI->InfantryExplode = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x6719ca*/
       __asm { fld dword ptr [esi+84h] } /*0x6719d0*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; int }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventrota, *(double *)v331); /*0x6719ea*/
       __asm { fstp dword ptr [esi+84h] } /*0x6719ef*/
-      _ESI->FlamingInfantry = (AnimTypeClass *)IDA_LODWORD(_RT1); /*0x6719ef*/
+      _ESI->FlamingInfantry = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x6719ef*/
       VectorClass::Copy(&v329, &_ESI->__pad_240[508]); /*0x671a01*/
       v303 = (int *)INIClass::ReadIntList( /*0x671a19*/
                       (INIClass *)v338,
@@ -4859,7 +4859,7 @@ int RulesClass::LoadFromINI() {
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventcolo, *(double *)v331); /*0x671ad2*/
       __asm { fstp dword ptr [esi+78h] } /*0x671ad7*/
-      _ESI->Wake = (AnimTypeClass *)IDA_LODWORD(_RT1); /*0x671ad7*/
+      _ESI->Wake = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x671ad7*/
       v306 = *(unsigned int *)&_ESI->__pad_C3C[1028]; /*0x671ae0*/
       v331[1] = *(unsigned int *)&_ESI->__pad_C3C[1032]; /*0x671aec*/
       v331[0] = v306; /*0x671aed*/
@@ -4984,12 +4984,12 @@ int RulesClass::LoadFromINI() {
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aEngineercaptur, *(double *)v331); /*0x671e0b*/
       __asm { fstp dword ptr [esi+17F8h] } /*0x671e10*/
-      _ESI->WallPenetratorThreshold[0] = IDA_SLODWORD(_RT1); /*0x671e10*/
+      _ESI->WallPenetratorThreshold[0] = ((int)(_RT1)); /*0x671e10*/
       __asm { fld dword ptr [esi+17FCh] } /*0x671e16*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aEngineercaptur, *(double *)v331); /*0x671e30*/
       __asm { fstp dword ptr [esi+17FCh] } /*0x671e35*/
-      _ESI->WallPenetratorThreshold[1] = IDA_SLODWORD(_RT1); /*0x671e35*/
+      _ESI->WallPenetratorThreshold[1] = ((int)(_RT1)); /*0x671e35*/
       *(unsigned __int64 *)&v332.DynamicVector_field_0x1C = *(unsigned int *)_ESI->LocalRadarColor; /*0x671e47*/
       __asm { fild qword ptr [esp+0D0h+var_C0.DynamicVector_field_0x1C] } /*0x671e53*/
       __asm
@@ -4999,13 +4999,13 @@ int RulesClass::LoadFromINI() {
       }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTalkbubbletime, *(double *)v331); /*0x671e71*/
       __asm { fmul ds:dbl_7E1728 } /*0x671e76*/
-      IDA_LOWORD(result) = Math_RoundToInt(v1); /*0x671e7c*/
+      result = ((result) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x671e7c*/
       *(unsigned int *)_ESI->LocalRadarColor = result; /*0x671e81*/
-      IDA_LOBYTE(result) = 1; /*0x671e83*/
+      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x671e83*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x671e90*/
+      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x671e90*/
     }
     return result; /*0x671e85*/
 }
@@ -5076,7 +5076,7 @@ int RulesClass::ReadDataList() {
         v4 = HouseTypeClass::Find(StringByIndex); /*0x672492*/
         if ( v4 == -1 ) /*0x67249a*/
         {
-          v5 = (SideClass *)RA2_OPNEW(0xB4u); /*0x6724a1*/
+          v5 = (SideClass *)new unsigned char[0xB4u]; /*0x6724a1*/
           if ( v5 ) /*0x6724ab*/
             v6 = SideClass::Construct(v5, (char *)StringByIndex); /*0x6724b5*/
           else
@@ -5112,7 +5112,7 @@ int RulesClass::ReadDataList() {
         v24 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x672533*/
         if ( !v9 && v27 ) /*0x672543*/
         {
-          RA2_OPDEL(v8); /*0x672546*/
+          delete[] (v8); /*0x672546*/
           Block = 0; /*0x67254e*/
         }
         v10 = v6[42]; /*0x672552*/
@@ -5944,7 +5944,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       __asm { fstp qword ptr [esi+10B8h] } /*0x673ce6*/
       *(double *)&this->__pad_C3C[1148] = _RT1; /*0x673ce6*/
       v73 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aAirstriplimit, v71); /*0x673cf8*/
-      ElevationIncrement_high = IDA_HIBYTE(this->ElevationIncrement); /*0x673cfd*/
+      ElevationIncrement_high = (unsigned char)((this->ElevationIncrement) >> 8); /*0x673cfd*/
       *(unsigned int *)&this->__pad_C3C[1156] = v73; /*0x673d03*/
       IDA_HIBYTE(this->ElevationIncrement) = INIClass::ReadBool_Overwrite( /*0x673d1d*/
                                            (int *)v103,
@@ -5957,7 +5957,7 @@ int RulesClass::ReadMultiplayerDefaults() {
                          aParanoid,
                          this->ElevationIncrement);
       IDA_HIDWORD(v76) = *(unsigned int *)&this->__pad_C3C[1144]; /*0x673d3d*/
-      IDA_LOBYTE(this->ElevationIncrement) = Bool_Overwrite; /*0x673d43*/
+      this->ElevationIncrement = ((this->ElevationIncrement) & 0xFFFFFF00u) | ((unsigned int)(Bool_Overwrite) & 0xFFu); /*0x673d43*/
       IDA_LODWORD(v76) = *(unsigned int *)&this->__pad_C3C[1140]; /*0x673d49*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aPoweremergency, v76); /*0x673d5f*/
       v77 = *(unsigned int *)&this->__pad_C3C[2084]; /*0x673d64*/
@@ -6013,11 +6013,11 @@ int RulesClass::ReadMultiplayerDefaults() {
                  aComputerbasede,
                  this->AlliedSurvivorDivisor);
       this->AlliedSurvivorDivisor = result; /*0x673e5b*/
-      IDA_LOBYTE(result) = 1; /*0x673e61*/
+      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x673e61*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x673e6e*/
+      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x673e6e*/
     }
     return result; /*0x673e63*/
 }
@@ -7795,7 +7795,7 @@ int RulesClass::SaveLoad_Prefix_0(int a1) {
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->SplashList[0] + 4 * i103)); /*0x6780dd*/
     for ( i104 = 0; i104 < this->ChronoRangeMinimum; ++i104 ) /*0x6780f7*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->ChronoDistanceFactor + 4 * i104)); /*0x678108*/
-    for ( i105 = 0; i105 < IDA_SLODWORD(this->AIMinorSuperReadyPercent); ++i105 ) /*0x678122*/
+    for ( i105 = 0; i105 < ((int)(this->AIMinorSuperReadyPercent)); ++i105 ) /*0x678122*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->SpyPowerBlackout + 4 * i105)); /*0x678133*/
     for ( i106 = 0; i106 < this->AutocreateTime[1]; ++i106 ) /*0x67814d*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->ReloadRate[0] + 4 * i106)); /*0x67815e*/
@@ -7933,7 +7933,7 @@ namespace gamemd {
 void* SuperClass::ProcessEvent(int a2) {
   SuperClass::CleanupMembers(); /*0x6ce223*/
   if ( (a2 & 1) != 0 ) /*0x6ce22d*/
-    RA2_OPDEL(this); /*0x6ce230*/
+    delete this; /*0x6ce230*/
   return this; /*0x6ce23a*/
 }
 }
@@ -7997,7 +7997,7 @@ int ThemeClass::Play(int a1) {
       ThemeClass_field_2C = (AudioSample *)this->ThemeClass_field_2C; /*0x720bdc*/
       if ( !ThemeClass_field_2C ) /*0x720be5*/
         goto LABEL_13; /*0x720be5*/
-      if ( IDA_BYTE1(this->m_Name[2]) && !AudioSample::IsBuffering(ThemeClass_field_2C) ) /*0x720bee*/
+      if ( (unsigned char)((this->m_Name[2]) >> 8) && !AudioSample::IsBuffering(ThemeClass_field_2C) ) /*0x720bee*/
         Audio::Release((Audio *)this->ThemeClass_field_2C); /*0x720bfa*/
       if ( !Audio::IsSoundPlaying((Audio *)this->ThemeClass_field_2C) || this->ThemeClass_field_04 != a2 )
       {
@@ -8012,7 +8012,7 @@ int ThemeClass::Play(int a1) {
           this->ThemeClass_field_04 = -1; /*0x720c5c*/
           this->m_Name[0] = -1; /*0x720c63*/
         }
-        IDA_BYTE1(this->m_Name[2]) = 0; /*0x720c6d*/
+        this->m_Name[2] = ((this->m_Name[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x720c6d*/
         if ( a2 != -1 && a2 != -3 )
         {
           if ( a2 <= -1 || this->m_Name[1] <= 0 ) /*0x720c8e*/
@@ -8074,7 +8074,7 @@ int ThemeClass::Play(int a1) {
             }
           }
           Debug::Log(); /*0x720de8*/
-          if ( IDA_LOBYTE(this->m_Name[2]) == 1 || *(unsigned char *)(*(unsigned int *)(this->m_Name[4] + 4 * a2) + 649) == 1 ) /*0x720e03*/
+          if ( (unsigned char)(this->m_Name[2]) == 1 || *(unsigned char *)(*(unsigned int *)(this->m_Name[4] + 4 * a2) + 649) == 1 ) /*0x720e03*/
   LABEL_47:
             this->m_Name[0] = a2; /*0x720e05*/
         }
@@ -8184,7 +8184,7 @@ int RulesClass::Reset() {
             if ( v9 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 220) ) /*0x74e761*/
             {
               *(unsigned int *)(*(unsigned int *)&this->__pad_A0[20] + 8 * v9) = *(unsigned int *)v7; /*0x74e772*/
-              v27 = *(__int16 *)(j + 38) - IDA_SHIWORD(this->GUIBuildSound); /*0x74e78e*/
+              v27 = *(__int16 *)(j + 38) - (short)((this->GUIBuildSound) >> 16); /*0x74e78e*/
               v26 = *v7 - SLOWORD(this->GUIBuildSound); /*0x74e792*/
               __asm /*0x74e796*/
               {

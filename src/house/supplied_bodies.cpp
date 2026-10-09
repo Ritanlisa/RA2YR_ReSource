@@ -600,7 +600,7 @@ void HouseClass::Update_TogglePower(double a2)
       *(unsigned int *)&v3[33].__pad_EC[20] = v42; /*0x4f8aeb*/
       v121 = *(TeamTypeVector *)&vftable; /*0x4f8af1*/  // G57w8: 解引用形（ptr->struct 值语义）
       if ( v44 && v123 ) /*0x4f8afd*/
-        RA2_OPDEL(v44); /*0x4f8b00*/
+        delete[] (v44); /*0x4f8b00*/
     }
   LABEL_135:
     if ( dword_A83D4C == (unsigned int)v3 ) /*0x4f8b0e*/  // G57w8 uint 桥
@@ -631,7 +631,7 @@ void HouseClass::Update_TogglePower(double a2)
                 fld qword ptr [eax+16A8h]
                 fmul ds:dbl_7E27F8
               }
-              IDA_LOWORD(v49) = Math::RoundToInt(a2); /*0x4f8bc0*/
+              v49 = ((v49) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x4f8bc0*/
               ProductionTimeMult = Rules::GetProductionTimeMult((Rules *)&dword_A8EB60, v49); /*0x4f8bcb*/
               *(unsigned int *)v47 = dword_A8ED84; /*0x4f8bd8*/
               *(unsigned int *)&v3[33].__pad_EC[76] = v119; /*0x4f8bde*/
@@ -682,7 +682,7 @@ void HouseClass::Update_TogglePower(double a2)
                       fld qword ptr [edx+14C0h]
                       fmul ds:dbl_7E27F8
                     }
-                    IDA_LOWORD(v61) = Math::RoundToInt(a2); /*0x4f8d2c*/
+                    v61 = ((v61) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x4f8d2c*/
                     v115 = v61; /*0x4f8d31*/
                     v114 = *(unsigned int *)&v3[134].__pad_90[4]; /*0x4f8d3d*/
                     StringCSF = GetStringCSF(aTxtLowPower, 0, g_Str_File_House_CPP, 2377); /*0x4f8d4f*/
@@ -695,7 +695,7 @@ void HouseClass::Update_TogglePower(double a2)
                     fld qword ptr [ecx+16A8h]
                     fmul ds:dbl_7E27F8
                   }
-                  IDA_LOWORD(v64) = Math::RoundToInt(a2); /*0x4f8d7d*/
+                  v64 = ((v64) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x4f8d7d*/
                   v65 = Rules::GetProductionTimeMult((Rules *)&dword_A8EB60, v64); /*0x4f8d88*/
                   *(unsigned int *)&v3[33].__pad_EC[48] = dword_A8ED84; /*0x4f8d99*/
                   *(unsigned int *)&v3[33].__pad_EC[52] = v119; /*0x4f8da3*/
@@ -712,7 +712,7 @@ void HouseClass::Update_TogglePower(double a2)
   LABEL_151:
             v53 = *(unsigned int *)&v3[1].__pad_38[56]; /*0x4f8bff*/
             Float4::Sum((int *)&v3[1].__pad_38[36]); /*0x4f8c0b*/
-            IDA_LOWORD(v54) = Math::RoundToInt(a2); /*0x4f8c10*/
+            v54 = ((v54) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x4f8c10*/
             if ( v53 - v54 < 30 && v53 > 50 ) /*0x4f8c21*/
             {
               _EAX = dword_8871E0; /*0x4f8c23*/
@@ -721,7 +721,7 @@ void HouseClass::Update_TogglePower(double a2)
                 fld qword ptr [eax+16A8h]
                 fmul ds:dbl_7E27F8
               }
-              IDA_LOWORD(v56) = Math::RoundToInt(a2); /*0x4f8c34*/
+              v56 = ((v56) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x4f8c34*/
               v57 = Rules::GetProductionTimeMult((Rules *)&dword_A8EB60, v56); /*0x4f8c3f*/
               *(unsigned int *)v47 = dword_A8ED84; /*0x4f8c4a*/
               *(unsigned int *)&v3[33].__pad_EC[76] = v119; /*0x4f8c50*/

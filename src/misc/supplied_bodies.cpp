@@ -322,7 +322,7 @@ int * AudioPool::ProcessQueue() {
               LinkedList_Init(v3); /*0x4051f3 0x407450 真形*/
               *(unsigned int *)((char *)v3 + 104) = 0; /*0x4051f8 +0x68 真值*/
               if ( *(int *)((char *)v3 + 8) < 0 ) /*0x405203 +8 符号位*/
-                RA2_OPDEL(v3); /*0x405206*/
+                delete[] (v3); /*0x405206*/
               else
                 PushFrontLinkedListAlt(dword_87E2A8, (int)v3); /*0x405218 本地真形*/
               --dword_87E28C; /*0x40521d*/
@@ -524,8 +524,8 @@ void AudioSample::InitLinkedList() {
         v4[5] = v5 - *(unsigned int *)(AudioSample_field_0x04 + 28); /*0x408878*/
         v4[4] &= ~2u; /*0x408880*/
         if ( *(unsigned int *)(AudioSample_field_0x04 + 16) ) /*0x408883*/
-          RA2_OPDEL(*(void **)(AudioSample_field_0x04 + 16)); /*0x40888b*/
-        RA2_OPDEL((void *)AudioSample_field_0x04); /*0x408894*/
+          delete[] (*(void **)(AudioSample_field_0x04 + 16)); /*0x40888b*/
+        delete[] ((void *)AudioSample_field_0x04); /*0x408894*/
         AudioSample_field_0x04 = *p_AudioSample_field_0x04; /*0x408899*/
       }
       while ( (int *)*p_AudioSample_field_0x04 != p_AudioSample_field_0x04 ); /*0x4088a0*/
@@ -573,7 +573,7 @@ void AudioSample::InitLinkedList() {
     }
     while ( v12 ); /*0x408906*/
     *p_AudioSample_field_0x10 += *((unsigned int *)this + 5); /*0x408913*/
-    RA2_OPDEL(this); /*0x408916*/
+    delete this; /*0x408916*/
 }
 } // namespace gamemd
 
@@ -1291,7 +1291,7 @@ void * BuildingLoadQueue::GetNext() {
           goto LABEL_10; /*0x6e6e4c*/
         if ( g_BuildingLoadQueue_Array ) /*0x6e6e50*/
         {
-          if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e6e59*/
+          if ( !(unsigned char)(g_BuildingLoadQueue_Array) ) /*0x6e6e59*/
           {
             qsort( /*0x6e6e6a*/
               g_BuildingLoadQueue_Array.TechnoTypeClass,
@@ -1300,7 +1300,7 @@ void * BuildingLoadQueue::GetNext() {
               (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
             vtable1 = g_BuildingLoadQueue_Array; /*0x6e6e6f*/
             g_BuildingLoadQueue_Array = 0; /*0x6e6e78*/
-            IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e6e82*/
+            g_BuildingLoadQueue_Array = ((g_BuildingLoadQueue_Array) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x6e6e82*/
           }
           *(unsigned int *)v8 = *(unsigned int *)this->__pad_0; /*0x6e6e96*/
           uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, (int *)v8); /*0x6e6e9a*/
@@ -1331,7 +1331,7 @@ void * BuildingLoadQueue::Find() {
     unsigned int *vtable0; // edi
     int v6; // esi
 
-    if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6f27*/
+    if ( (unsigned char)(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6f27*/
       return 0; /*0x6e6fe0*/
     vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f2d*/
     if ( !g_BuildingLoadQueue_Array ) /*0x6e6f37*/
@@ -1339,7 +1339,7 @@ void * BuildingLoadQueue::Find() {
     uniqueId = g_BuildingLoadQueue_Array; /*0x6e6f39*/
     if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6f49*/
       return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fdf*/
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array) ) /*0x6e6f56*/
+    if ( !(unsigned char)(g_BuildingLoadQueue_Array) ) /*0x6e6f56*/
     {
       qsort( /*0x6e6f67*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
@@ -1348,7 +1348,7 @@ void * BuildingLoadQueue::Find() {
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f6c*/
       g_BuildingLoadQueue_Array = 0; /*0x6e6f75*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array) = 1; /*0x6e6f7f*/
+      g_BuildingLoadQueue_Array = ((g_BuildingLoadQueue_Array) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x6e6f7f*/
     }
 
 // 0x6E6FF0
@@ -1361,7 +1361,7 @@ int BuildingLoadQueue::FindObject() {
     int v6; // esi
     void ***v7; // eax
 
-    if ( IDA_LOBYTE(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6ff7*/
+    if ( (unsigned char)(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6ff7*/
       return 0; /*0x6e70b8*/
     vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6ffd*/
     if ( !g_BuildingLoadQueue_Array ) /*0x6e7007*/

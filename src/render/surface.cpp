@@ -265,7 +265,7 @@ void DSurface::DetectPixelFormat(const DDPIXELFORMAT& pf)
     g_BitShift_Green = gShift;
     g_BitShift_Blue  = bShift;  // data: 0x8a0dd8
 
-    // Count bits set (= mask width)
+    // Count bits set (mask width)
     DWORD rT = rM, gT = gM, bT = bM;
     while (rWidth < 8 && (rT & 0x80)) { rT <<= 1; ++rWidth; }
     while (gWidth < 8 && (gT & 0x80)) { gT <<= 1; ++gWidth; }
@@ -775,13 +775,13 @@ bool DSurface::Blit(int *a2, int *a3, unsigned int *a4, int *a5, int *a6, int a7
     {
       v42 = 1; /*0x4bb19f*/
     }
-    if ( IDA_LOBYTE(this->DSurface_field_0x18) == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
+    if ( (unsigned char)(this->DSurface_field_0x18) == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
       v13 = 0; /*0x4bb1b3*/
     else
       v13 = a8; /*0x4bb1b7*/
     if ( !v42 /*0x4bb1f8*/
       && v13 == 1
-      && (!IDA_BYTE1(this->DSurface_field_0x18)
+      && (!(unsigned char)((this->DSurface_field_0x18) >> 8)
        || (*((unsigned __int8 (__thiscall **)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
       && a6[2] == a3[2]
       && a6[3] == a3[3] )

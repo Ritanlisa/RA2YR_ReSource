@@ -456,7 +456,7 @@ char MixFileClass::Bootstrap()
       RawFileClass::Dtor(&v18); /*0x5301f0*/
       if ( v3 ) /*0x5301f7*/
       {
-        v4 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5301ff*/
+        v4 = (MixFileClass *)new unsigned char[0x28u]; /*0x5301ff*/
         if ( v4 ) /*0x530209*/
         {
           v5 = MixFileClass::FromFile(v4, Buffer, (int)dword_886980); /*0x53021c*/
@@ -478,7 +478,7 @@ char MixFileClass::Bootstrap()
         }
       }
     }
-    v7 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x530292*/
+    v7 = (MixFileClass *)new unsigned char[0x28u]; /*0x530292*/
     if ( !v7 ) /*0x53029c*/
     {
       g_MixFile_RA2MD = 0; /*0x5302de*/
@@ -487,7 +487,7 @@ char MixFileClass::Bootstrap()
     g_MixFile_RA2MD = (int)MixFileClass::FromFile(v7, aRa2mdMix, (int)dword_886980); /*0x5302b1*/
     if ( !g_MixFile_RA2MD ) /*0x5302b6*/
       return 0; /*0x5302b6*/
-    v8 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5302ba*/
+    v8 = (MixFileClass *)new unsigned char[0x28u]; /*0x5302ba*/
     if ( !v8 ) /*0x5302c4*/
     {
       g_MixFile_RA2 = 0; /*0x5302ef*/
@@ -498,7 +498,7 @@ char MixFileClass::Bootstrap()
     if ( !v9 ) /*0x530300*/
       return 0; /*0x530300*/
     Debug::Log_0(); /*0x530307*/
-    v11 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x53030e*/
+    v11 = (MixFileClass *)new unsigned char[0x28u]; /*0x53030e*/
     if ( !v11 ) /*0x530318*/
     {
       g_MixFile_CACHEMD = 0; /*0x530375*/
@@ -508,7 +508,7 @@ char MixFileClass::Bootstrap()
     if ( !g_MixFile_CACHEMD || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCachemdMix) ) /*0x53033b*/
       return 0; /*0x53033b*/
     Debug::Log_0(); /*0x530349*/
-    v12 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x530350*/
+    v12 = (MixFileClass *)new unsigned char[0x28u]; /*0x530350*/
     if ( !v12 ) /*0x53035a*/
     {
       g_MixFile_CACHE = 0; /*0x530385*/
@@ -519,7 +519,7 @@ char MixFileClass::Bootstrap()
     if ( !v13 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCacheMix_0) ) /*0x5303a3*/
       return 0; /*0x5303a3*/
     Debug::Log_0(); /*0x5303b5*/
-    v14 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5303bc*/
+    v14 = (MixFileClass *)new unsigned char[0x28u]; /*0x5303bc*/
     if ( !v14 ) /*0x5303c6*/
     {
       g_MixFile_LOCALMD = 0; /*0x53040d*/
@@ -528,7 +528,7 @@ char MixFileClass::Bootstrap()
     g_MixFile_LOCALMD = (int)MixFileClass::FromFile(v14, aLocalmdMix, (int)dword_886980); /*0x5303db*/
     if ( !g_MixFile_LOCALMD ) /*0x5303e0*/
       return 0; /*0x5303e0*/
-    v15 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5303e8*/
+    v15 = (MixFileClass *)new unsigned char[0x28u]; /*0x5303e8*/
     if ( !v15 ) /*0x5303f2*/
     {
       g_MixFile_LOCAL = 0; /*0x53041d*/

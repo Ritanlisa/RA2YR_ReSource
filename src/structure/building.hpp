@@ -103,9 +103,9 @@ int Construct(int,int);  // 0x43B740
     CoordStruct* GetRallyPointCoord(CoordStruct* out) const;  // 0x6B0690
     CoordStruct* GetBuildCoordsAdjusted(CoordStruct* out) const;  // 0x459EF0
     void SetRallyPoint(CoordStruct* target);  // 0x443860
-    void MarkExitPath();  // 0x4A9650
+    int MarkExitPath(unsigned short *a2, int a3);  // 0x4A9650 (raw: this + _WORD* a2 + int a3[低字节 flag])
     bool CheckExitPath();  // 0x639CB0
-    unsigned int u32_118C;  // g57w11 r4 词表 (raw 0x4a9674 this+0x118C; 前名 airstrikeTintStage3 无 hand-tree 成员)
+    unsigned short *u32_118C;  // 0x118C 出口表基址 (G57W20M26 重类型: MarkExitPath 步进 v6[0]/v6[1])
     int RenderExitPosition(); // 0x453840 g57w11 r4: raw fn_45 int __thiscall (前 void 声明 C2556)
     // wrapper: delegates to BuildingClass::RenderExitPosition at 0x453840
     void ReassignFlagPosition();

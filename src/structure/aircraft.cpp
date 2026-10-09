@@ -64,7 +64,7 @@ int AircraftClass::Mission_Attack()
     int outInts[5];
 
     unsigned int weaponCtl = *(unsigned int *)this->vtable5;
-    unsigned char elevByte1 = IDA_BYTE1(((RulesClass *)dword_8871E0)->ElevationIncrement);
+    unsigned char elevByte1 = (unsigned char)((((RulesClass *)dword_8871E0)->ElevationIncrement) >> 8);
 
     switch (missionStatus)
     {
@@ -914,7 +914,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
             return 1;
         if (movementDestination == nullptr)
             return 1;
-        if (IDA_BYTE1(Type->ChargerBarrels[14]) != 0
+        if ((unsigned char)((Type->ChargerBarrels[14]) >> 8) != 0
          && movementDestination != nullptr
          && ((ObjectClass *)movementDestination)->whatAmI() == (AbstractType)11
          && (void *)this->q2B4 == (void *)this->GetCellCoords())

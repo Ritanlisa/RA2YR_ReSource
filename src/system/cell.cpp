@@ -351,7 +351,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v14 = 128; /*0x47e94f*/
     inited = (int)(((Isometric*)(IUnknown *)(this))->InitTables(&v13)); /*0x47e953*/
     v15 = ((int16_t)v18 << 8) + 128; /*0x47e962*/
-    v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
+    v16 = ((short)((v18) >> 16) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
     if ( !Cell::IsPassable((unsigned int *)((IUnknown *)(&v15))) /*0x47e9cf*/
       && (v19 = this->smudgeTypeIndex,
@@ -359,7 +359,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v14 = 128,
           v8 = Isometric::InitTables((IUnknown *)(this), &v13),
           v15 = ((int16_t)v19 << 8) + 128,
-          v16 = (IDA_SHIWORD(v19) << 8) + 128,
+          v16 = ((short)((v19) >> 16) << 8) + 128,
           v17 = v8,
           !Game::Stub3((int)((IUnknown *)((int)&v15))))
       || ((unsigned int *)(dword_A8B238))[0] )
@@ -792,8 +792,8 @@ void CellClass::ReduceTiberium(int amount)
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {
       v20 = i & 7; /*0x480bfa*/
-      (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v18 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82])) & 0xFFFF); /*0x480c1b*/
-      (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(*((unsigned short *)v18 + 1) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82])) & 0xFFFF) << 16); /*0x480c24*/
+      (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v18 + (unsigned short)(g_DDrawSurfaceManager.scenario[v20 + 82])) & 0xFFFF); /*0x480c1b*/
+      (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(*((unsigned short *)v18 + 1) + (unsigned short)((g_DDrawSurfaceManager.scenario[v20 + 82]) >> 16)) & 0xFFFF) << 16); /*0x480c24*/
       v23 = v23; /*0x480c33*/
       if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&v23) ) /*0x480c37*/
       {

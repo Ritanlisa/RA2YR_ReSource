@@ -86,7 +86,7 @@ void* CCFileClass::ReadEntireFile()
     if ( (*(unsigned __int8 (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
     {
       v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this); /*0x4a38a8*/
-      v2 = (void *)RA2_OPNEW(v3); /*0x4a38b0*/
+      v2 = (void *)new unsigned char[v3]; /*0x4a38b0*/
       if ( v2 ) /*0x4a38b7*/
         (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
     }

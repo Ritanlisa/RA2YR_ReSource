@@ -284,7 +284,7 @@ int AnimClass::UpdateProjectileTrajectory()
     {
       if ( *(unsigned int *)&((Coord *)(unsigned int)this->AnimClass_field_0xC8)[2].__pad_C[116] ) /*0x423987*/
       {
-        v6 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x42399b*/
+        v6 = (AnimClass *)new unsigned char[0x1C8u]; /*0x42399b*/
         if ( v6 ) /*0x4239a2*/
         {
           v7 = (int *)(*((int (__thiscall **)(AnimClass *, char *))this->AnimClass_field_0x0 + 18))(this, v25); /*0x4239bb*/
@@ -764,7 +764,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v55 = ((gamemd::Random *)(void *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State(); /*0x422310*/
           v58 = ((gamemd::Random *)(void *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State(); /*0x422324*/
           v28 = *(double *)(this->AnimClass_field_0xC8 + 792); /*0x42232e*/
-          IDA_LOWORD(v29) = Math::RoundToInt(v28); /*0x42233c*/
+          v29 = ((v29) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v28)) & 0xFFFFu); /*0x42233c*/
           v56 = (double)((int)abs32(v55) % v29) - *(double *)(this->AnimClass_field_0xC8 + 808); /*0x422375*/
           v63 = (double)((int)abs32(v58) % v29) - *(double *)(this->AnimClass_field_0xC8 + 808); /*0x422387*/
           v64 = v56; /*0x42238b*/
@@ -776,11 +776,11 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
             v64 = v30; /*0x4223b0*/
           }
           v31 = (double)(int)(70 - abs32(((gamemd::Random *)(void *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State() % 20)); /*0x4223e6*/
-          IDA_LOWORD(v32) = Math::RoundToInt(v31); /*0x4223f4*/
+          v32 = ((v32) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v31)) & 0xFFFFu); /*0x4223f4*/
           v69 = v32; /*0x4223fc*/
-          IDA_LOWORD(v33) = Math::RoundToInt(v31); /*0x42240b*/
+          v33 = ((v33) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v31)) & 0xFFFFu); /*0x42240b*/
           v70 = v33; /*0x422413*/
-          IDA_LOWORD(v34) = Math::RoundToInt((double)a3[2] - v31 * v65); /*0x422422*/
+          v34 = ((v34) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt((double)a3[2] - v31 * v65)) & 0xFFFFu); /*0x422422*/
           v71 = v34; /*0x422427*/
           ((gamemd::ObjectClass *)(void *)((ObjectClass *)this))->Deploy(); /*0x422433*/
           if ( this->AnimClass_field_0xCC ) /*0x422438*/
@@ -843,10 +843,10 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           v47 = ((gamemd::Random *)(void *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State(); /*0x422579*/
           v48 = this->AnimClass_field_0xC8; /*0x42257e*/
           v57 = v47; /*0x422584*/
-          IDA_LOWORD(v49) = Math::RoundToInt(*(double *)(v48 + 808) + *(double *)(v48 + 808)); /*0x422590*/
+          v49 = ((v49) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(v48 + 808) + *(double *)(v48 + 808))) & 0xFFFFu); /*0x422590*/
           v62 = v49; /*0x42259e*/
           v50 = (double)((int)abs32(v60) % v49) - *(double *)(v48 + 808); /*0x4225b2*/
-          IDA_LOWORD(v51) = Math::RoundToInt(v50); /*0x4225d0*/
+          v51 = ((v51) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v50)) & 0xFFFFu); /*0x4225d0*/
           v61 = (double)((int)abs32(v46) % v51) + *(double *)(v48 + 792); /*0x4225f8*/
           v52 = (double)((int)abs32(v57) % v62) - *(double *)(v48 + 808); /*0x422621*/
           v71 = v61; /*0x422627*/
@@ -1135,7 +1135,7 @@ int RadSiteClass::Radiate(int a1)
           v24 = *(unsigned int *)(v20 + 72); /*0x65bad6*/
           if ( v16 <= v24 ) /*0x65bada*/
           {
-            IDA_LODWORD(v23) = v24 - v16; /*0x65bade*/
+            v23 = v24 - v16; /*0x65bade*/
             v23 = (double)(v24 - v16) / (double)v24 * (double)*(int *)(v20 + 76); /*0x65baed*/
           }
           v17 = (double *)CellCoord::To_CellObj(&dword_87F7E8, v18); /*0x65bafb*/
@@ -1233,10 +1233,10 @@ int RadSiteClass::Deactivate(unsigned int *a1)
             v17 = Math::RoundToInt(v16); /*0x65bc65*/
             v18 = 0.0; /*0x65bc6e*/
             (v27) = (unsigned int)(v22[18]); /*0x65bc79*/
-            if ( v17 <= IDA_SLODWORD(v27) ) /*0x65bc7d*/
+            if ( v17 <= ((int)(v27)) ) /*0x65bc7d*/
             {
               v26 = ((unsigned int)(v27)) - v17; /*0x65bc83*/
-              v18 = (double)(((unsigned int)(v27)) - v17) / (double)IDA_SLODWORD(v27) * (double)(int)v22[19]; /*0x65bc8f*/
+              v18 = (double)(((unsigned int)(v27)) - v17) / (double)((int)(v27)) * (double)(int)v22[19]; /*0x65bc8f*/
             }
             v27 = v18 / (double)(int)v22[20] * v29; /*0x65bca3*/
             v19 = CellCoord::To_CellObj(&dword_87F7E8, v20); /*0x65bca7*/
@@ -1329,10 +1329,10 @@ int RadSiteClass::RadSiteClass::DecreaseRadiation()
           v16 = Math::RoundToInt(v15); /*0x65bdf8*/
           v17 = 0.0; /*0x65be01*/
           (v25) = (unsigned int)(v21[18]); /*0x65be0c*/
-          if ( v16 <= IDA_SLODWORD(v25) ) /*0x65be10*/
+          if ( v16 <= ((int)(v25)) ) /*0x65be10*/
           {
             v24 = ((unsigned int)(v25)) - v16; /*0x65be16*/
-            v17 = (double)(((unsigned int)(v25)) - v16) / (double)IDA_SLODWORD(v25) * (double)(int)v21[19]; /*0x65be22*/
+            v17 = (double)(((unsigned int)(v25)) - v16) / (double)((int)(v25)) * (double)(int)v21[19]; /*0x65be22*/
           }
           v25 = v17 / (double)(int)v21[20]; /*0x65be32*/
           v18 = CellCoord::To_CellObj(&dword_87F7E8, v19); /*0x65be36*/

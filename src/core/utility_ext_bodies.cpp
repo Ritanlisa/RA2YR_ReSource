@@ -48,12 +48,12 @@ int GraphicMenuImageItem::QueryInterface(char a2)
     if ( v3 ) /*0x4f384f*/
     {
       j_DeleteAndZero(v3); /*0x4f3853*/
-      RA2_OPDEL(v3); /*0x4f3859*/
+      delete[] (v3); /*0x4f3859*/
     }
     DeleteAndZero((ObjectClass *)((char *)this + 52)); /*0x4f3864*/
     GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f386b*/
     if ( (a2 & 1) != 0 ) /*0x4f3875*/
-      RA2_OPDEL(this); /*0x4f3878*/
+      delete this; /*0x4f3878*/
     return this; /*0x4f3882*/
 }
 // 0x49ef40
@@ -63,7 +63,7 @@ int StringVector::StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补
     int m_8; // edx
     unsigned int *i; // ecx
 
-    if ( !IDA_LOBYTE(this->StringVector_field_0x0C) ) /*0x49ef40*/
+    if ( !(unsigned char)(this->StringVector_field_0x0C) ) /*0x49ef40*/
       return 0; /*0x49ef48*/
     m_8 = this->StringVector_field_0x08; /*0x49ef4e*/
     result = 0; /*0x49ef51*/

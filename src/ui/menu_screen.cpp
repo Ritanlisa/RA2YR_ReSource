@@ -184,14 +184,14 @@ MenuResult ShowMainMenu()
 
             switch (msg.message) {
             case WM_LBUTTONDOWN: {
-                int mx = IDA_LOWORD(msg.lParam);
-                int my = IDA_HIWORD(msg.lParam);
+                int mx = (unsigned short)(msg.lParam);
+                int my = (unsigned short)((msg.lParam) >> 16);
                 menu.OnMouseClick(mx, my);
                 break;
             }
             case WM_MOUSEMOVE: {
-                int mx = IDA_LOWORD(msg.lParam);
-                int my = IDA_HIWORD(msg.lParam);
+                int mx = (unsigned short)(msg.lParam);
+                int my = (unsigned short)((msg.lParam) >> 16);
                 menu.OnMouseMove(mx, my);
                 break;
             }

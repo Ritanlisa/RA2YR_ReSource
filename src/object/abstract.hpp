@@ -49,11 +49,11 @@ class Checksummer;
 // CSP: IPersistStream matched via T1
 class IPersistStream : public IUnknown {
 public:
-    int ComputeTransform(void* a1, int a2, int a3, int a4);  // 0x6f3ad0 (G57W20M26 CSP 签名供给, 原 TechnoClass_ComputeTransform 词表)
+    int ComputeTransform(int a1, int a2, int a3, int a4, int a5);  // 0x6f3ad0 (G57W20M26 CSP 签名供给, 原 TechnoClass_ComputeTransform 词表)
     int SetAnim();  // 0x5f6060 (G57W20M26 CSP 签名供给, 原 ObjectClass_SetAnim 词表)
     int UpdateBuildState();  // 0x509700 (G57W20M26 CSP 签名供给, 原 HouseClass_UpdateBuildState 词表)
-    int ScanBuildLocation(void* a1, int a2, void* a3);  // 0x5060b0 (G57W20M26 CSP 签名供给, 原 HouseClass_ScanBuildLocation 词表)
-    int FindBestProductionBuilding(void* a1);  // 0x506b90 (G57W20M26 CSP 签名供给, 原 HouseClass_FindBestProductionBuilding 词表)
+    int ScanBuildLocation(int a1, int a2, int a3, int a4);  // 0x5060b0 (G57W20M26 CSP 签名供给, 原 HouseClass_ScanBuildLocation 词表)
+    int FindBestProductionBuilding(int a1, int a2);  // 0x506b90 (G57W20M26 CSP 签名供给, 原 HouseClass_FindBestProductionBuilding 词表)
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) = 0;
     virtual HRESULT __stdcall IsDirty() = 0;  // 0x7099D0
     virtual HRESULT __stdcall Load(IStream* stream) = 0;  // 0x55AA60

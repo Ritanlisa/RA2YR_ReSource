@@ -1407,17 +1407,17 @@ bool TechnoClass::CreateUnit()
           {
             v134 = *(double *)&_ESI->__pad_120[32]; /*0x423e08*/
             v135 = *(unsigned int *)&_ESI->__pad_120[40]; /*0x423e16*/
-            v23 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423e1f*/
+            v23 = (AnimClass *)new unsigned char[0x1C8u]; /*0x423e1f*/
             if ( v23 ) /*0x423e26*/
             {
               __asm { fld [esp+88h+var_60] } /*0x423e28*/
-              IDA_LOWORD(v24) = Math_RoundToInt(v1); /*0x423e2c*/
+              v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x423e2c*/
               __asm { fld [esp+88h+var_5C] } /*0x423e31*/
               AnimClass_field_0x9C = v24; /*0x423e35*/
-              IDA_LOWORD(v25) = Math_RoundToInt(v1); /*0x423e39*/
+              v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x423e39*/
               __asm { fld [esp+88h+var_58] } /*0x423e3e*/
               v137 = v25; /*0x423e42*/
-              IDA_LOWORD(v26) = Math_RoundToInt(v1); /*0x423e46*/
+              v26 = ((v26) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x423e46*/
               AnimClass_field_0xC8 = _ESI->AnimClass_field_0xC8; /*0x423e4b*/
               AnimClass_field_0xA4 = v26; /*0x423e5a*/
               ((::gamemd::AnimClass *)v23)->ctor( /*0x423e70*/
@@ -1432,14 +1432,14 @@ bool TechnoClass::CreateUnit()
             _EAX = _ESI->AnimClass_field_0xC8; /*0x423e75*/
             __asm { fld qword ptr [eax+2A8h] } /*0x423e8b*/
             v124 = *(unsigned int *)(_EAX + 816); /*0x423e91*/
-            IDA_LOWORD(v29) = Math_RoundToInt(v1); /*0x423e94*/
+            v29 = ((v29) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x423e94*/
             v30 = v29; /*0x423ea0*/
             Coords = (unsigned int *)Coord_GetCoords(&AnimClass_field_0x9C, 0); /*0x423ea2*/
             PlaySoundEffectAt(Coords, v30, v123, v124, 1, 0); /*0x423eab*/
             _EAX = _ESI->AnimClass_field_0xC8; /*0x423eb0*/
             __asm { fld qword ptr [eax+2A8h] } /*0x423eba*/
             v33 = *(unsigned int *)(_EAX + 816); /*0x423ec0*/
-            IDA_LOWORD(v34) = Math_RoundToInt(v1); /*0x423ec6*/
+            v34 = ((v34) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x423ec6*/
             *(unsigned int *)v132 = v33; /*0x423ecb*/
             v35 = v34; /*0x423ecf*/
             v36 = (int *)Coord_GetCoords(&AnimClass_field_0x9C, 0); /*0x423ed8*/
@@ -1448,7 +1448,7 @@ bool TechnoClass::CreateUnit()
         }
         else if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 854) ) /*0x423ce0*/
         {
-          v14 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423cea*/
+          v14 = (AnimClass *)new unsigned char[0x1C8u]; /*0x423cea*/
           if ( v14 ) /*0x423cf4*/
           {
             v15 = *p_AnimClass_field_0x9C; /*0x423cfa*/
@@ -1469,7 +1469,7 @@ bool TechnoClass::CreateUnit()
         }
         else
         {
-          v18 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423d46*/
+          v18 = (AnimClass *)new unsigned char[0x1C8u]; /*0x423d46*/
           if ( v18 ) /*0x423d50*/
           {
             AnimClass_field_0x9C = *p_AnimClass_field_0x9C; /*0x423d61*/
@@ -1477,7 +1477,7 @@ bool TechnoClass::CreateUnit()
             AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x423d76*/
             ((::gamemd::AnimClass *)v18)->ctor( (void *)dword_8871E0->InfantryBrute, &AnimClass_field_0x9C, 0, 1, (void *)0x600, 0, 0); /*0x423d89*/
           }
-          v19 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423d93*/
+          v19 = (AnimClass *)new unsigned char[0x1C8u]; /*0x423d93*/
           if ( v19 ) /*0x423d9d*/
           {
             v20 = *p_AnimClass_field_0x9C; /*0x423da3*/
@@ -1511,7 +1511,7 @@ bool TechnoClass::CreateUnit()
                 v42 = v41; /*0x423f8a*/
                 do /*0x423fc4*/
                 {
-                  v43 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423f91*/
+                  v43 = (AnimClass *)new unsigned char[0x1C8u]; /*0x423f91*/
                   if ( v43 ) /*0x423f9b*/
                     ((::gamemd::AnimClass *)v43)->ctor( /*0x423fbe*/
                       *(void **)(_ESI->AnimClass_field_0xC8 + 752),
@@ -1562,19 +1562,19 @@ bool TechnoClass::CreateUnit()
                     fstp st
                   }
                   Math::Sqrt(v127); /*0x42403e*/
-                  IDA_LOWORD(v49) = Math_RoundToInt(v1); /*0x424046*/
+                  v49 = ((v49) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x424046*/
                   if ( v49 <= *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 828) ) /*0x424057*/
                   {
                     v50 = i & 7; /*0x42407d*/
-                    v132[0] = AnimClass_field_0x9C / 256 + IDA_LOWORD((&dword_89F688)[v50]); /*0x424099*/
-                    v132[1] = v137 / 256 + IDA_HIWORD((&dword_89F688)[v50]); /*0x4240a8*/
+                    v132[0] = AnimClass_field_0x9C / 256 + (unsigned short)((&dword_89F688)[v50]); /*0x424099*/
+                    v132[1] = v137 / 256 + (unsigned short)(((&dword_89F688)[v50]) >> 16); /*0x4240a8*/
                     *(unsigned int *)&v132[2] = *(unsigned int *)v132; /*0x4240b7*/
                     v51 = (HouseClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v132[2]); /*0x4240c0*/
                     if ( (unsigned __int8)IsCoordValidMap((int)v51, 0) ) /*0x4240c6*/
                     {
                       if ( *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 824) ) /*0x4240d9*/
                       {
-                        v52 = (ObjectClass *)RA2_OPNEW(0xB0u); /*0x4240f1*/
+                        v52 = (ObjectClass *)new unsigned char[0xB0u]; /*0x4240f1*/
                         if ( v52 ) /*0x4240f8*/
                         {
                           *(unsigned int *)v133 = *(unsigned int *)&v51->vtable4[24]; /*0x42410c*/
@@ -1660,7 +1660,7 @@ bool TechnoClass::CreateUnit()
           v64 = *(unsigned int *)(v63 + 780); /*0x4242ca*/
           if ( v64 == 1 || !((int)dword_A8ED84 % v64) ) /*0x4242db*/
           {
-            v65 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4242eb*/
+            v65 = (AnimClass *)new unsigned char[0x1C8u]; /*0x4242eb*/
             if ( v65 ) /*0x4242f2*/
             {
               v66 = (int *)(*(int (__thiscall **)(AnimClass *, int *))(_ESI->AnimClass_field_0x0 + 72))( /*0x42430a*/
@@ -1685,7 +1685,7 @@ bool TechnoClass::CreateUnit()
     }
     if ( _ESI->__pad_194[7] ) /*0x42435f*/
       return (*(int (__thiscall **)(AnimClass *))(_ESI->AnimClass_field_0x0 + 248))(_ESI); /*0x424367*/
-    IDA_LOBYTE(result) = _ESI->__pad_194[8]; /*0x42436d*/
+    result = ((result) & 0xFFFFFF00u) | ((unsigned int)(_ESI->__pad_194[8]) & 0xFFu); /*0x42436d*/
     if ( result ) /*0x424375*/
 
     {
@@ -1698,7 +1698,7 @@ bool TechnoClass::CreateUnit()
       result = AnimClass_field_0x184 - 1; /*0x424390*/
       _ESI->AnimClass_field_0x184 = result; /*0x424393*/
       if ( !result ) /*0x424399*/
-        IDA_LOBYTE(result) = ProductionCompletionCallback((TechnoClass *)_ESI); /*0x4243a1*/
+        result = ((result) & 0xFFFFFF00u) | ((unsigned int)(ProductionCompletionCallback((TechnoClass *)_ESI)) & 0xFFu); /*0x4243a1*/
       return result; /*0x4243ad*/
     }
     result = (unsigned __int8)_ESI->__pad_7C[20]; /*0x4243ae*/
@@ -1731,11 +1731,11 @@ bool TechnoClass::CreateUnit()
       if ( *(unsigned int *)(v77 + 700) == -1 ) /*0x424481*/
         *(unsigned int *)(v77 + 700) = *(unsigned int *)(v77 + 704); /*0x424489*/
       result = (*(int (__thiscall **)(AnimClass *, int))(_ESI->AnimClass_field_0x0 + 292))(_ESI, 2); /*0x424495*/
-      IDA_LOBYTE(result) = _ESI->__pad_194[10]; /*0x42449b*/
+      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(_ESI->__pad_194[10]) & 0xFFu); /*0x42449b*/
       if ( !result )
 
       {
-        IDA_LOBYTE(result) = _ESI->__pad_118[2]; /*0x4244a9*/
+        result = ((result) & 0xFFFFFF00u) | ((unsigned int)(_ESI->__pad_118[2]) & 0xFFu); /*0x4244a9*/
         if ( !result )
 
         {
@@ -1793,7 +1793,7 @@ bool TechnoClass::CreateUnit()
           if ( (_AX & 0x100) != 0 || _ESI->__pad_194[4] ) /*0x42459e*/
             goto LABEL_120; /*0x42459e*/
           __asm { fld qword ptr [esi+188h] } /*0x4245ac*/
-          IDA_LOWORD(v87) = Math_RoundToInt(v1); /*0x4245b2*/
+          v87 = ((v87) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x4245b2*/
           v88 = v87; /*0x4245b7*/
           v89 = _ESI->AnimClass_field_0xC8; /*0x4245b9*/
           *(unsigned int *)v133 = v88; /*0x4245bf*/
@@ -1811,7 +1811,7 @@ bool TechnoClass::CreateUnit()
                             _ESI,
                             &AnimClass_field_0x9C);
           result = PlaySoundEffectAt(v91, v88, 0, v125, 1, 0); /*0x424647*/
-          IDA_LOBYTE(result) = _ESI->__pad_7C[20]; /*0x42464c*/
+          result = ((result) & 0xFFFFFF00u) | ((unsigned int)(_ESI->__pad_7C[20]) & 0xFFu); /*0x42464c*/
           if ( result ) /*0x424654*/
 
           {
@@ -1861,7 +1861,7 @@ bool TechnoClass::CreateUnit()
   LABEL_190:
               if ( !*(unsigned char *)(result + 881) ) /*0x42473a*/
               {
-                IDA_LOBYTE(result) = _ESI->__pad_120[0]; /*0x424744*/
+                result = ((result) & 0xFFFFFF00u) | ((unsigned int)(_ESI->__pad_120[0]) & 0xFFu); /*0x424744*/
                 if ( !result ) /*0x42474c*/
 
                   return result; /*0x42474c*/
@@ -1923,7 +1923,7 @@ bool TechnoClass::CreateUnit()
               _ESI->AnimClass_field_0xBC = (int)ProductionTimeMult; /*0x42490a*/
               _ESI->AnimClass_field_0xC0 = (int)ProductionTimeMult; /*0x42490d*/
               _ESI->AnimClass_field_0xAC = *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 692); /*0x42491f*/
-              IDA_LOBYTE(result) = ProductionCompletionCallback((TechnoClass *)_ESI); /*0x424925*/
+              result = ((result) & 0xFFFFFF00u) | ((unsigned int)(ProductionCompletionCallback((TechnoClass *)_ESI)) & 0xFFu); /*0x424925*/
               return result; /*0x424931*/
             }
             if ( *(unsigned int *)(v96 + 844) != -1 ) /*0x424938*/

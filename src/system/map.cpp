@@ -338,7 +338,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
         (v34) = ((v34) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(a2[1] / 256) & 0xFFFF) << 16); /*0x58811a*/
         v6 = (((unsigned int)(v34) >> 16) & 0xFFFF); /*0x588138*/
         v7 = a3[1] / 256; /*0x588141*/
-        v39 = IDA_SWORD1(v34) >= (unsigned __int16)v7 ? -1 : 1;
+        v39 = (short)((v34) >> 16) >= (unsigned __int16)v7 ? -1 : 1;
         while ( (unsigned short)v34 != IDA_WORD2(v34) || v6 != (unsigned short)v7 ) /*0x58815d*/
         {
           v8 = (__int16)v34 + (v6 << 9); /*0x58816c*/
@@ -381,10 +381,10 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
         {
           (v34) = ((v34) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v14 / 256) & 0xFFFF) << 16); /*0x588223*/
           v6 = (((unsigned int)(v34) >> 16) & 0xFFFF); /*0x588234*/
-          v17 = (__int16)v34 >= IDA_SWORD2(v34) ? -1 : 1;
+          v17 = (__int16)v34 >= (short)((v34) >> 32) ? -1 : 1;
           for ( i = v34; IDA___PAIR32__(i, v16) != *(unsigned int *)((char *)&v34 + 2); ((unsigned int)(v34) & 0xFFFF) = i ) /*0x58823d*/
           {
-            v19 = (__int16)i + (IDA_SWORD1(v34) << 9); /*0x588259*/
+            v19 = (__int16)i + ((short)((v34) >> 16) << 9); /*0x588259*/
             if ( v19 < 0x40000 && (v20 = *(unsigned int **)(dword_87F924 + 4 * v19)) != 0 ) /*0x58826f*/
             {
               v21 = v20; /*0x588271*/
