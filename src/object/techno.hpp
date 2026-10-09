@@ -549,7 +549,14 @@ public:
     virtual int CalcAnimDelay() const;  // 0x6FB080
     virtual int StepAnimFrame();  // 0x6FB010
     virtual int BeginFiringSequence();  // 0x709820
-    virtual int CompleteFactoryProduction();  // 0x709A40
+    virtual int CompleteFactoryProduction(int a2, int a3);  // 0x709A40 (IDA: thiscall(this,int,int))
+    // G57W20M26: canon 槽供给 (0x184/0x1E8/0x1F0/0x334, ProcessRepair 成员扫描段)
+    virtual int GetPrimaryOrFallback();  // vt+0x184
+    virtual int MissionDispatch(int a2, int a3);  // vt+0x1E8
+    virtual int SetState(int a2);  // vt+0x1F0
+    virtual int COMStub_Return0_205();  // vt+0x334
+    TechnoClass *GetVecTechnoMember(int a2);  // 0x65ad30 (原 Team::GetMember 误标; 体读 this+0xE4 vecTechno 数组)
+
     virtual int IsTimerExpired() const;  // 0x7099E0
     WeaponStruct* GetWeaponSlot(int index) const;  // 0x7177C0 (&Weapon[index] on the type; real owner TechnoTypeClass - ownership debt)
     virtual int GetTertiaryTargetOrFallback() const;  // 0x709060

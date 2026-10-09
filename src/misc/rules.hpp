@@ -319,6 +319,7 @@ public:
     int32_t              StormSound;
     TypeList<int32_t>    LightningSounds;
     int32_t              ShellButtonSlideSound;
+    int32_t              q70C;  // 0x70C (til 缺口; 0x447076/0x4470c3 mov edi,[eax+70Ch])
     uint32_t             align_754;
     double               WallBuildSpeedCoefficient;
     double               ChargeToDrainRatio;

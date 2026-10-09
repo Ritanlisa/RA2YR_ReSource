@@ -776,7 +776,7 @@
 // 0x6e87f0 | TaskForceClass::ExecuteAction
 
 // ---- Team (1) ----
-// 0x65ad30 | Team::GetMember
+// 0x65ad30 | TechnoClass::GetVecTechnoMember (原 Team::GetMember 误标: 体读 this+0xE4 vecTechno 数组, 82 处 receiver=BuildingClass)
 
 // ---- TechnoClass (3) ----
 // 0x702d40 | TechnoClass::RegisterKill
