@@ -65,7 +65,6 @@ namespace gamemd {
 int Random_Range(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 void sub_7DC720(int aP1);   // g57w11 r4: misc_ext.hpp:53 同形 (TU 未载 misc_ext; raw 0x44c1ef 调用形)
 int PlayHealthDependentBuildingAnim(...);   // g57w11 r4: raw 词表 (纯变参兜底)
-int TransformCell(...);   // g57w11 r4: raw 词表
 int To_Cell(...);   // g57w11 r4: raw 词表
 int Subtract(...);   // g57w11 r4: raw 词表
 int StartInvulnerability(...);   // g57w11 r4: raw 词表
@@ -74,8 +73,6 @@ int FacingClass_Set_SyncLog(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int LayerClass_Pathfinding_Find(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int AllMembersValid(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int ContainsValue(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindPlacementCellsAlt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindPosition(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int IonSensitivesShouldBeOffline(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 } // namespace gamemd
 // ---- g57b5 W5 end ----
@@ -160,7 +157,7 @@ struct Coord2D {
 };
 
 struct BuildingPlacement_site {   // g57a5 W2e: TU-local 站点壳改名（C2011 vs render_ext BuildingPlacement）
-    static void *FindPosition(void *a1, void *a2);  // g57w11 r4: raw 0x500200 (调用形实参 char* 适配)
+    static void *(void *a1)->FindPosition( void *a2);  // g57w11 r4: raw 0x500200 (调用形实参 char* 适配)
     static int ValidateType(void* self, int type, int mode);
 };
 #define BuildingPlacement BuildingPlacement_site
@@ -2405,7 +2402,7 @@ int BuildingClass::UpdateConstruction()
               if ( !(unsigned __int8)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) || this->Type->Hospital ) /*0x444d26*/
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x444d3c*/
-                *(unsigned int *)v193 = (unsigned int)(void *)(*(unsigned int *)BuildingPlacement::FindPosition(&v223, v244)); /*0x444d5f*/
+                *(unsigned int *)v193 = (unsigned int)(void *)(*(unsigned int *)BuildingPlacement::(&v223)->FindPosition( v244)); /*0x444d5f*/
                 if ( *(unsigned int *)v193 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x444d79*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x444db7*/
@@ -2528,7 +2525,7 @@ int BuildingClass::UpdateConstruction()
               if ( !(unsigned __int8)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) ) /*0x4448fe*/
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x44490f*/
-                *(unsigned int *)v196 = (unsigned int)(void *)(*(unsigned int *)BuildingPlacement::FindPosition(&v226, v244)); /*0x444932*/
+                *(unsigned int *)v196 = (unsigned int)(void *)(*(unsigned int *)BuildingPlacement::(&v226)->FindPosition( v244)); /*0x444932*/
                 if ( *(unsigned int *)v196 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x44494c*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x44496c*/
@@ -2705,7 +2702,7 @@ int BuildingClass::UpdateConstruction()
           ++dword_A8E7AC; /*0x443f63*/
           if ( HouseClass::IonSensitivesShouldBeOffline() ) /*0x443f6f*/
           {
-            PlacementCellsAlt = ((ObjectClass *)v4)->FindPlacementCellsAlt(&v231, (int)this); /*0x443f83 g57w10 r4: raw 0x703590 this=ObjectClass*/
+            PlacementCellsAlt = ((ObjectClass *)v4)->(&v231)->FindPlacementCellsAlt( (int)this); /*0x443f83 g57w10 r4: raw 0x703590 this=ObjectClass*/
             v17 = *(unsigned __int8 (__thiscall ***)(ObjectClass *, int *, int))v4; /*0x443f8a*/  // g57e2 W2
             bunkersCount = *PlacementCellsAlt; /*0x443f90*/
             v227[1] = 0; /*0x443f94*/
@@ -2810,7 +2807,7 @@ int BuildingClass::UpdateConstruction()
             }
             else
             {
-              *(unsigned int *)v203 = *((ObjectClass *)v4)->FindPlacementCellsAlt(&v228, (int)this); /*0x443ef1 g57w10 r4*/
+              *(unsigned int *)v203 = *((ObjectClass *)v4)->(&v228)->FindPlacementCellsAlt( (int)this); /*0x443ef1 g57w10 r4*/
               if ( *(unsigned int *)v203 == g_TerrainTypeTable ) /*0x443ef5*/
               {
                 (*((void (__thiscall **)(ObjectClass *, unsigned int, int))v4->vtable1 + 288))(v4, 0, 1); /*0x443f3c*/
@@ -7543,8 +7540,8 @@ int BuildingClass::ProductionDisplayUpdate()
               v42 = (int *)*Anims; /*0x43f715*/
               if ( *Anims ) /*0x43f715*/
               {
-                v43 = Matrix3x4::TransformCell( /*0x43f738*/
-                        (float *)g_TacticalClass_Instance,
+                v43 = Matrix3x4::(/*0x43f738*/
+                        (float *)g_TacticalClass_Instance)->TransformCell(
                         v111,
                         (int *)&v1->Type->__pad_F70[v4 + 12]);
                 v44 = Coord::Subtract((Coord *)v112, *v43 + v94, v95 + v43[1], v96 + v43[2]); /*0x43f761*/
