@@ -16,21 +16,18 @@ namespace gamemd {
 struct INIData;  // ini_class.hpp companion fwd (kept for decl compat)
 
 struct INIEntry {
-    const char* Key;
-    const char* Value;
-    INIEntry* Next;
-public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+// --- flat members (BEGIN) ---
+    unsigned int Key;  // 0x0
+    unsigned int Value;  // 0x4
+    INIEntry* Next;  // 0x8
+// --- flat members (END) ---
     int Write3Bytes(void* a1, void* a2, void* a3);  // 0x474C20
     int ReadColor(int a1, void* a2, void* a3, void* a4);  // 0x474C70
     int ReadAbilities(int a1, void* a2, void* a3, int a4);  // 0x477640
     int Write2Integers(void* a1, void* a2, void* a3);  // 0x5297E0
     bool Exists();  // 0x679F40
     int LookupByName();  // 0x74FEF0
-    // --- gap2 auto-generated stub declarations (END) ---
-    public:  // symbol-anchor
-    // === SYMBOL-ANCHOR (BEGIN) ===
     int GetTechnoType(unsigned __int8 *a2, unsigned __int8 *a3);  // 0x476eb0 -- INIEntry::GetTechnoType
-    // === SYMBOL-ANCHOR (END) ===
 };
 
 } // namespace gamemd

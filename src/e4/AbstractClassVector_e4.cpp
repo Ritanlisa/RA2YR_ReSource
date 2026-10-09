@@ -13,59 +13,53 @@
 namespace gamemd {
 int AbstractClassVector::Read(unsigned int * a2, void *a2_2)
 {
-
   int result; // eax
   int m_8; // edx
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x4e0440*/
+  if ( !IDA_LOBYTE(a2_2->m_C) ) /*0x4e0440*/
     return 0; /*0x4e0448*/
-  m_8 = this->m_8; /*0x4e044e*/
+  m_8 = a2_2->m_8; /*0x4e044e*/
   result = 0; /*0x4e0451*/
   if ( m_8 <= 0 ) /*0x4e0455*/
     return -1; /*0x4e046c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e045b*/
+  for ( i = *(_DWORD **)&a2_2->m_1[3]; *i != *a2_2; ++i ) /*0x4e045b*/
   {
     if ( ++result >= m_8 ) /*0x4e046a*/
       return -1; /*0x4e046a*/
   }
   return result; /*0x4e044a*/
-
 }
 } // namespace gamemd
 // 0x4E0480
 namespace gamemd {
 unsigned int AbstractClassVector::Write(int a2)
 {
-
-  if ( LOBYTE(this->m_C) ) /*0x4e0480*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e0495*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x4e0480*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x4e0495*/
   else
     return 0; /*0x4e0487*/
-
 }
 } // namespace gamemd
 // 0x4E0E80
 namespace gamemd {
 int AbstractClassVector::Construct(int aP1, int aP2)
 {
-
-  this->AbstractClassVector_field_0x04 = (unsigned char)(0);
-  this->AbstractClassVector_field_0x08 = (unsigned char)(aP1);
-  LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
-  BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x4e0e98*/
+  this->AbstractClassVector_field_0x04 = 0; /*0x4e0e8b*/
+  this->AbstractClassVector_field_0x08 = aP1; /*0x4e0e8e*/
+  IDA_LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
+  IDA_BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/
     {
-      this->AbstractClassVector_field_0x04 = (unsigned char)(aP2);
-return (int)this->__pad_0; /*0x4e0eae*/
+      this->AbstractClassVector_field_0x04 = aP2; /*0x4e0ea8*/
+      return this->__pad_0; /*0x4e0eae*/
     }
-    this->AbstractClassVector_field_0x04 = (unsigned char)(__2_YAPAXI_Z(4 * aP1)); /*0x4e0ebd*/
-    BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
+    this->AbstractClassVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x4e0ebd*/
+    IDA_BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
   }
-return (int)this->__pad_0; /*0x4e0ead*/
-
+  return this->__pad_0; /*0x4e0ead*/
 }
 } // namespace gamemd

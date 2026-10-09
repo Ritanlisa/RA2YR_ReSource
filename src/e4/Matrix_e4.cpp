@@ -13,76 +13,70 @@
 namespace gamemd {
 int Matrix3x4::Identity()
 {
-
-  ((unsigned int *)&this->m_Data)[0] = 1065353216; /*0x5ae867*/
-  ((unsigned int *)&this->m_Data)[1] = 0; /*0x5ae869*/
-  ((unsigned int *)&this->m_Data)[2] = 0; /*0x5ae86c*/
-  ((unsigned int *)&this->m_Data)[3] = 0; /*0x5ae86f*/
-  ((unsigned int *)&this->m_Data)[4] = 0; /*0x5ae872*/
-  ((unsigned int *)&this->m_Data)[5] = 1065353216; /*0x5ae875*/
-  ((unsigned int *)&this->m_Data)[6] = 0; /*0x5ae878*/
-  ((unsigned int *)&this->m_Data)[7] = 0; /*0x5ae87b*/
-  ((unsigned int *)&this->m_Data)[8] = 0; /*0x5ae87e*/
-  ((unsigned int *)&this->m_Data)[9] = 0; /*0x5ae881*/
-  ((unsigned int *)&this->m_Data)[10] = 1065353216; /*0x5ae884*/
-  ((unsigned int *)&this->m_Data)[11] = 0; /*0x5ae887*/
+  this->m_Data[0] = 1065353216; /*0x5ae867*/
+  this->m_Data[1] = 0; /*0x5ae869*/
+  this->m_Data[2] = 0; /*0x5ae86c*/
+  this->m_Data[3] = 0; /*0x5ae86f*/
+  this->m_Data[4] = 0; /*0x5ae872*/
+  this->m_Data[5] = 1065353216; /*0x5ae875*/
+  this->m_Data[6] = 0; /*0x5ae878*/
+  this->m_Data[7] = 0; /*0x5ae87b*/
+  this->m_Data[8] = 0; /*0x5ae87e*/
+  this->m_Data[9] = 0; /*0x5ae881*/
+  this->m_Data[10] = 1065353216; /*0x5ae884*/
+  this->m_Data[11] = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
-
 }
 } // namespace gamemd
 // 0x5AE980
 namespace gamemd {
 int Matrix3x4::Translate(float aP1)
 {
-
   int result; // eax
 
-  this->q00C = (unsigned int)(aP1)* *(float *)this + this->q00C; /*0x5ae989*/
-  this->q01C = (unsigned int)(aP1)* this->q010 + this->q01C; /*0x5ae996*/
-  this->q02C = (unsigned int)(aP1)* this->q020 + this->q02C; /*0x5ae9a3*/
+  this->q00C = aP1 * *(float *)this + this->q00C; /*0x5ae989*/
+  this->q01C = aP1 * this->q010 + this->q01C; /*0x5ae996*/
+  this->q02C = aP1 * this->q020 + this->q02C; /*0x5ae9a3*/
   return result; /*0x5ae9a6*/
-
 }
 } // namespace gamemd
 // 0x6D2360
 namespace gamemd {
 unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3)
 {
-
   float *v4; // eax
   int v5; // esi
   int v6; // eax
   int v8; // [esp+4h] [ebp-1Ch]
   float v9; // [esp+8h] [ebp-18h] BYREF
   float v10; // [esp+Ch] [ebp-14h]
-  unsigned int * v11;
+  int v11; // [esp+10h] [ebp-10h]
   float v12[3]; // [esp+14h] [ebp-Ch] BYREF
   int v13; // [esp+28h] [ebp+8h]
 
-  v13 = *(int *)aP2; /*0x6d2372*/
-  if ( v13 >= dword_B0CE30 || (v8 = aP2[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
+  v13 = *a3; /*0x6d2372*/
+  if ( v13 >= dword_B0CE30 || (v8 = a3[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
-    *aP1 = (unsigned int *)(dword_B0CE08);
-    aP1[1] = (unsigned int *)(dword_B0CE0C);
-    aP1[2] = (unsigned int *)(dword_B0CE10);
-    return (unsigned int *)(aP1);
+    *aP2 = dword_B0CE08; /*0x6d2404*/
+    aP2[1] = dword_B0CE0C; /*0x6d240c*/
+    aP2[2] = dword_B0CE10; /*0x6d2415*/
+    return aP2; /*0x6d23f7*/
   }
   else
   {
-    v9 = (unsigned int)(unsigned int *)((float)v13);
-    v11 = (unsigned int *)((int)((unsigned int *)(0)));
-    v10 = (unsigned int)(unsigned int *)((float)v8);
-    v4 = (float *)((unsigned int *)(TransformMatrix3x4Point( (AbstractClass *)(v12), (IUnknown *)((unsigned int *)this + 889), (IUnknown *)(&v9))));
-    v9 = (unsigned int)(unsigned int *)(*v4);
+    v9 = (float)v13; /*0x6d2398*/
+    v11 = 0; /*0x6d23a4*/
+    v10 = (float)v8; /*0x6d23ac*/
+    v4 = TransformMatrix3x4Point(v12, aP1 + 889, &v9); /*0x6d23b0*/
+    v9 = *v4; /*0x6d23b7*/
     v10 = v4[1]; /*0x6d23c2*/
-    v11 = (unsigned int *)(*((unsigned int *)v4 + 2)); /*0x6d23c9*/
+    v11 = *((_DWORD *)v4 + 2); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
-    *aP1 = v5; /*0x6d23e5*/
-    aP1[1] = v6; /*0x6d23e7*/
-    aP1[2] = (unsigned int *)(0); /*0x6d23ec*/
-    return (unsigned int *)(aP1); /*0x6d23ea*/
+    *aP2 = v5; /*0x6d23e5*/
+    aP2[1] = v6; /*0x6d23e7*/
+    aP2[2] = 0; /*0x6d23ec*/
+    return aP2; /*0x6d23ea*/
   }
-
 }
 } // namespace gamemd

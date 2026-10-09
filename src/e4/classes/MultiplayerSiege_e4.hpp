@@ -13,9 +13,6 @@ struct MultiplayerSiege {
     char MultiplayerSiege_field_08[4];  // 0x8
     char MultiplayerSiege_field_0C[4];  // 0xC
     char MultiplayerSiege_field_10[4];  // 0x10
-    unsigned int MultiplayerSiege_field_00;
-    unsigned int Debug;
-    unsigned int PlayerClass;
 // --- flat members (END) ---
     AbstractClass * * ProcessTurn(char a2);
     MultiplayerSiege * QueryInterface(char a2);

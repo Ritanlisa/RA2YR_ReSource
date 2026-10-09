@@ -17,8 +17,12 @@ struct E4Recv_476EA0 {
     unsigned int q598;  // 0x598
     unsigned int q774;  // 0x774
     unsigned int q5170;  // 0x5170
-    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q388226446628134;  // 0x388226446628134
 // --- flat members (END) ---
+    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     void sub_476EA0();  // 0x476EA0
 };
 } // namespace gamemd

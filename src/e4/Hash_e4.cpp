@@ -25,12 +25,12 @@ int sub_5C61E0()
 namespace gamemd {
 int sub_5E94D0()
 {
-  LPARAM * result;
+  int result; // eax
   LPARAM *v1; // edx
   LPARAM v2; // ecx
 
-  result = (LPARAM *)((int)((LPARAM *)(0)));
-  v1 = (LPARAM *)(&dword_A8DA90);
+  result = 0; /*0x5e94e5*/
+  v1 = &dword_A8DA90; /*0x5e94e7*/
   do /*0x5e9508*/
   {
     v2 = *v1; /*0x5e94ec*/
@@ -39,7 +39,7 @@ int sub_5E94D0()
     ++v1; /*0x5e94ff*/
   }
   while ( (int)v1 < (int)&dword_A8DAB0 ); /*0x5e9508*/
-  return (int)(result); /*0x5e950a*/
+  return result; /*0x5e950a*/
 }
 } // namespace gamemd
 
@@ -47,12 +47,12 @@ int sub_5E94D0()
 namespace gamemd {
 char sub_5E9580()
 {
-  LPARAM * v0;
+  int v0; // edx
   LPARAM *v1; // ecx
   LPARAM v2; // eax
 
-  v0 = (LPARAM *)((int)((LPARAM *)(0)));
-  v1 = (LPARAM *)(&dword_A8DA90);
+  v0 = 0; /*0x5e9595*/
+  v1 = &dword_A8DA90; /*0x5e9597*/
   while ( 1 ) /*0x5e959c*/
   {
     v2 = *v1; /*0x5e959c*/
@@ -61,9 +61,9 @@ char sub_5E9580()
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e95c2*/
         && v2 != g_Lobby_PlayerCount
         && v2 != g_Lobby_MaxPlayers
-        && (wchar_t *)v2 != (wchar_t *)(g_Lobby_PlayerReady)
-        && v0 == (LPARAM *)(g_MPCooperativeState)
-        && *(unsigned int *)(v2 + 107) == -1 )
+        && (wchar_t *)v2 != g_Lobby_PlayerReady
+        && v0 == g_MPCooperativeState
+        && *(_DWORD *)(v2 + 107) == -1 )
       {
         break; /*0x5e95c2*/
       }

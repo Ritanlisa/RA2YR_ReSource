@@ -6,6 +6,9 @@
 
 namespace gamemd {
 struct MapResourceClass {
+// --- flat members (BEGIN) ---
+    void* q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static int Constructor(void *aP1);  // 0x595740 raw: int Constructor(MapResourceClass*)
 };

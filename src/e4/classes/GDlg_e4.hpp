@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct GDlg {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static wchar_t * LoadLetterStrings();  // 0x4E5AC0 raw: wchar_t* GDlg_LoadLetterStrings() [cdecl no-this]
 };

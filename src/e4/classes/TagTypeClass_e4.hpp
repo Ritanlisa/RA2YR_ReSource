@@ -19,13 +19,13 @@ struct TagTypeClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
+    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
+    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char arrayIndex[4];  // 0x24
+    char persistence[4];  // 0x28
     bool q02B;  // 0x2B
-    unsigned int q098;
-    unsigned int q0A0;
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);
     AbstractTypeClass * Construct(char *aP1);

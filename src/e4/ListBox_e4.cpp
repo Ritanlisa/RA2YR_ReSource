@@ -17,12 +17,11 @@
 namespace gamemd {
 unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam)
 {
-
-  LRESULT (*v4)(HWND, UINT, WPARAM, LPARAM); // esi
+  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
   int v5; // eax
-  LRESULT (**v6)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (__stdcall **v6)(HWND, UINT, WPARAM, LPARAM); // eax
   HWND *v7; // eax
-  unsigned int *v8; // edi
+  _DWORD *v8; // edi
   LONG WindowLongA; // eax
   LONG v11; // ebx
   UINT v12; // ebp
@@ -31,7 +30,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   LONG v15; // ebx
   size_t v16; // esi
   char *v17; // ebp
-  uint16_t v18; // ax
+  unsigned __int16 v18; // ax
   HWND v19; // eax
   HWND v20; // esi
   HWND v21; // eax
@@ -51,7 +50,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   WPARAM v35; // [esp-8h] [ebp-1884h]
   HWND v36; // [esp-4h] [ebp-1880h]
   int v37; // [esp-4h] [ebp-1880h]
-  LRESULT (*lpPrevWndFunc)(HWND, UINT, WPARAM, LPARAM); // [esp+10h] [ebp-186Ch]
+  LRESULT (__stdcall *lpPrevWndFunc)(HWND, UINT, WPARAM, LPARAM); // [esp+10h] [ebp-186Ch]
   struct tagRECT v39; // [esp+14h] [ebp-1868h] BYREF
   HWND v40; // [esp+24h] [ebp-1858h] BYREF
   int v41; // [esp+28h] [ebp-1854h] BYREF
@@ -66,16 +65,16 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   lpPrevWndFunc = 0; /*0x6141a7*/
   if ( dword_AC1B4C ) /*0x6141ab*/
   {
-    v5 = *((unsigned int *)dword_AC1B48 + ((*(unsigned int (*)(void *))&dword_AC1B60)( (void *)(&hWnd)) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
+    v5 = *((_DWORD *)dword_AC1B48 + (dword_AC1B60(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
     if ( v5 ) /*0x6141d4*/
     {
       while ( *(HWND *)v5 != hWnd ) /*0x6141df*/
       {
-        v5 = *(unsigned int *)(v5 + 8); /*0x6141e1*/
+        v5 = *(_DWORD *)(v5 + 8); /*0x6141e1*/
         if ( !v5 ) /*0x6141e6*/
           goto LABEL_8; /*0x6141e6*/
       }
-      v6 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x6141ee*/
+      v6 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x6141ee*/
       if ( v6 ) /*0x6141f3*/
       {
         v4 = *v6; /*0x6141f5*/
@@ -83,26 +82,26 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       }
     }
   }
-LABEL_8:
+  LABEL_8:
   v40 = hWnd; /*0x6141fb*/
   if ( !dword_AC1B04 ) /*0x61420d*/
-    return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
-  v7 = (HWND *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)( (void *)(&v40)) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
+    return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
+  v7 = (HWND *)*((_DWORD *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
   if ( !v7 ) /*0x614233*/
-    return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
+    return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
   {
     v7 = (HWND *)v7[129]; /*0x61423d*/
     if ( !v7 ) /*0x614245*/
-      return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
+      return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
   }
-  v8 = (unsigned int *)(v7 + 1);
+  v8 = v7 + 1; /*0x61424d*/
   if ( v7 == (HWND *)-4 ) /*0x614252*/
-    return CallWindowProcA((WNDPROC)(v4), hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
+    return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
   if ( GetFocus() == hWnd && !v8[61] ) /*0x614297*/
   {
     v8[60] = 1; /*0x6142a1*/
-    SetFocus((HWND)(g_hWnd)); /*0x6142b2*/
+    SetFocus(g_hWnd); /*0x6142b2*/
   }
   WindowLongA = GetWindowLongA(hWnd, -16); /*0x6142c2*/
   v11 = WindowLongA; /*0x6142c8*/
@@ -120,32 +119,32 @@ LABEL_8:
     if ( GetFocus() == hWnd ) /*0x614380*/
     {
       v8[60] = 1; /*0x614382*/
-      SetFocus((HWND)(g_hWnd)); /*0x614392*/
+      SetFocus(g_hWnd); /*0x614392*/
     }
     if ( (v11 & 0x10000) == 0 ) /*0x61439e*/
       return 0; /*0x61439e*/
     v8[62] = 1; /*0x6143a4*/
     v15 = v11 & 0xFFFEFFFF; /*0x6143ae*/
-LABEL_47:
+  LABEL_47:
     SetWindowLongA(hWnd, -16, v15); /*0x61459c*/
     return 0; /*0x6145b9*/
   }
   if ( Msg == 7 ) /*0x6143bc*/
   {
-    SendMessageA( (HWND)(hWnd), 0xB1u, 0xFFFFFFFF, -1); /*0x6143cf*/
+    SendMessageA(hWnd, 0xB1u, 0xFFFFFFFF, -1); /*0x6143cf*/
     if ( !v8[61] ) /*0x6143d5*/
       PostMessageA(hWnd, 0x4B0u, 0, 0); /*0x6143f4*/
-LABEL_70:
+  LABEL_70:
     v29 = GetParent(hWnd); /*0x6147ee*/
     GetClassNameA(v29, ClassName, 32); /*0x614806*/
-    if ( !strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x61481d*/
+    if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x61481d*/
     {
       v30 = GetParent(hWnd); /*0x614858*/
       InvalidateRect(v30, 0, 0); /*0x61485b*/
     }
     InvalidateRect(hWnd, 0, 0); /*0x614869*/
     v13 = wParam; /*0x61486b*/
-    return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x61486b*/
+    return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x61486b*/
   }
   if ( Msg == 1205 || Msg == 1203 || Msg == 14 ) /*0x61441a*/
   {
@@ -158,17 +157,17 @@ LABEL_70:
     else if ( v12 == 1203 ) /*0x61493b*/
     {
       v32 = wParam; /*0x61493d*/
-      v33 = (const wchar_t *)(lParam); /*0x614944*/
-      wcsncpy( (wchar_t *)(lParam), (const wchar_t *)(String), wParam); /*0x614955*/
+      v33 = lParam; /*0x614944*/
+      wcsncpy(lParam, String, wParam); /*0x614955*/
       v33[v32 - 1] = 0; /*0x61495b*/
       return wcslen(v33); /*0x614962*/
     }
     else
     {
       v34 = (const char *)lParam; /*0x614977*/
-      CopyWideToChar((unsigned char *)(lParam), (char *)String, v13); /*0x614988*/
+      CopyWideToChar(lParam, (char *)String, v13); /*0x614988*/
       v34[v13 - 1] = 0; /*0x614992*/
-      return strlen( (const char *)(v34)); /*0x61499f*/
+      return strlen(v34); /*0x61499f*/
     }
   }
   else if ( Msg == 1204 || Msg == 1202 ) /*0x614432*/
@@ -176,8 +175,8 @@ LABEL_70:
     MultiByteStr[0] = 0; /*0x61489c*/
     v31 = (const WCHAR *)v8[10]; /*0x6148a1*/
     if ( v31 ) /*0x6148a6*/
-      WideCharToMultiByte( 0, 0, (LPCWCH)(v31), -1, (LPSTR)(MultiByteStr), 2048, 0, 0); /*0x6148c0*/
-    return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xCu, 0, (LPARAM)MultiByteStr); /*0x6148dc*/
+      WideCharToMultiByte(0, 0, v31, -1, MultiByteStr, 2048, 0, 0); /*0x6148c0*/
+    return CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)MultiByteStr); /*0x6148dc*/
   }
   else
   {
@@ -199,10 +198,10 @@ LABEL_70:
       }
       if ( Msg == 15 || Msg == 20 ) /*0x6145c4*/
       {
-        ScreenDialogToClient( (void *)((void *)(hWnd)), (void *)(&v42)); /*0x6145d5*/
+        ScreenDialogToClient(hWnd, &v42); /*0x6145d5*/
         v24 = GetParent(hWnd); /*0x6145e9*/
         GetClassNameA(v24, ClassName, 16); /*0x6145f0*/
-        v25 = strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) == 0; /*0x61462e*/
+        v25 = strcmp(ClassName, g_INI_Key_ComboBox) == 0; /*0x61462e*/
         if ( v12 == 15 && GetUpdateRect(hWnd, &v39, 0) ) /*0x614645*/
         {
           left = v42.left; /*0x61464f*/
@@ -222,9 +221,9 @@ LABEL_70:
         v37 = v8[50]; /*0x6146a5*/
         Rect.bottom = v42.bottom - top + 1; /*0x6146ad*/
         Rect.top = top; /*0x6146b5*/
-        SetupDialogRenderBuffer( (int *)(&Rect.left), (HWND)(hWnd), v37); /*0x6146b9*/
+        SetupDialogRenderBuffer(&Rect.left, hWnd, v37); /*0x6146b9*/
         if ( !v25 ) /*0x6146c0*/
-          DrawDialogGradient((int *)DSurface_Alternate,(int *)(&Rect.left), 2, -1); /*0x6146d0*/
+          DrawDialogGradient((int *)DSurface_Alternate, &Rect.left, 2, -1); /*0x6146d0*/
         v41 = 0; /*0x6146eb*/
         Memory_Helper_6149B0(hWnd, 5120, (int)&v41); /*0x6146f3*/
         v44.left = v42.left; /*0x614706*/
@@ -232,10 +231,12 @@ LABEL_70:
         v44.right = v42.right - v42.left + 1; /*0x614720*/
         v44.bottom = v42.bottom - v42.top + 1; /*0x614724*/
         v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
-        DrawTextRendererMultiline((IUnknown *)(/*0x614760*/
-          (unsigned int *)DSurface_Alternate),(int *)(&v44.left),(wchar_t *)(&unk_AC1E04),
-          (gamemd::ObjectClass *)(v41),
-          (unsigned int *)v8[25],
+        DrawTextRendererMultiline( /*0x614760*/
+          (_DWORD *)DSurface_Alternate,
+          &v44.left,
+          &unk_AC1E04,
+          v41,
+          (_DWORD *)v8[25],
           dword_AC18A4,
           v8 + 17,
           v8[14],
@@ -250,30 +251,30 @@ LABEL_70:
       if ( v12 == 512 ) /*0x614799*/
         return 1; /*0x6147aa*/
       if ( v12 != 256 && v12 != 257 && v12 != 260 && v12 != 261 && v12 != 262 && v12 != 263 && v12 != 8 && v12 != 513 ) /*0x6147e8*/
-        return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x6147e8*/
+        return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x6147e8*/
       goto LABEL_70; /*0x6147e8*/
     }
     if ( wParam == 13 ) /*0x614447*/
     {
       if ( (WindowLongA & 4) != 0 ) /*0x614450*/
       {
-        v16 = CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
-        v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
-        CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
-        strcat( (char *)(v17), (const char *)(String2)); /*0x6144b3*/
-        CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
-        __3_YAXPAX_Z(v17); /*0x6144ce*/
+        v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
+        v17 = (char *)RA2_OPNEW(v16); /*0x614486*/
+        CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
+        strcat(v17, String2); /*0x6144b3*/
+        CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
+        RA2_OPDEL(v17); /*0x6144ce*/
         v18 = GetWindowLongA(hWnd, -12); /*0x6144e0*/
         v36 = hWnd; /*0x6144f7*/
         v35 = v18 | 0x5010000; /*0x6144f8*/
         v19 = GetParent(hWnd); /*0x6144ff*/
-        SendMessageA( (HWND)(v19), 0x111u, v35, (LPARAM)((LPARAM)((LPARAM)v36))); /*0x614506*/
+        SendMessageA(v19, 0x111u, v35, (LPARAM)v36); /*0x614506*/
         return 0; /*0x614518*/
       }
-      return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x614450*/
+      return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x614450*/
     }
     if ( wParam != 9 ) /*0x61451e*/
-      return CallWindowProcA((WNDPROC)(lpPrevWndFunc), hWnd, v12, v13, (LPARAM)lParam); /*0x614899*/
+      return CallWindowProcA(lpPrevWndFunc, hWnd, v12, v13, (LPARAM)lParam); /*0x614899*/
     v20 = hWnd; /*0x614524*/
     v21 = GetParent(hWnd); /*0x61452c*/
     NextDlgTabItem = GetNextDlgTabItem(v21, v20, 0); /*0x614536*/
@@ -282,6 +283,5 @@ LABEL_70:
     SetFocus(v20); /*0x614543*/
     return 0; /*0x61454c*/
   }
-
 }
 } // namespace gamemd

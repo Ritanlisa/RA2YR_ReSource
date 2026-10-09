@@ -6,14 +6,13 @@
 namespace gamemd {
 
 struct Palette {
-    static int Preview_Generate(void *aP1, int a2, int a3, void *a4);  // 0x642130 raw: int __thiscall Palette::Preview_Generate(Palette*, char, int, size_t*)  // G57w10 r5 D-classbody supply (raw-anchored)
-
 // --- flat members (BEGIN) ---
     unsigned int m_Colors;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int Palette_6BitTo16Bit;
+    char Palette_field_400[4];  // 0x400
 // --- flat members (END) ---
+    static int Preview_Generate(void *aP1, int a2, int a3, void *a4);  // 0x642130 raw: int __thiscall Palette::Preview_Generate(Palette*, char, int, size_t*)  // G57w10 r5 D-classbody supply (raw-anchored)
     int CalcColorDistance(unsigned char * a2, void *a2_2);
     int FindClosestColor(Palette *a2);
     int LoadFile();

@@ -21,6 +21,13 @@ struct E4Recv_661960 {
     unsigned int q1908;  // 0x1908
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q1612552106354;  // 0x1612552106354
 // --- flat members (END) ---
     int sub_661960(short a2);  // 0x661960
 };

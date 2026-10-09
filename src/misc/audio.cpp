@@ -30,25 +30,25 @@ VocClass* VocClass::Find(const char* pName)
 // 0x7514d0
 int32_t VocClass::FindIndex(const char* pName)
 {
-    int v2; // esi
-    char *v3; // ecx
-    char *v4; // eax
+  int v2; // esi
+  char *v3; // ecx
+  char *v4; // eax
 
-    if ( !this ) /*0x7514d6*/
-      return -1; /*0x7514d6*/
-    v2 = 0; /*0x7514dd*/
-    if ( g_VocPlayState <= 0 ) /*0x7514e1*/
-      return -1; /*0x751515*/
-    while ( 1 )
-    {
-      v3 = (char *)**((unsigned int **)g_VocAudioConfig + v2); /*0x7514eb*/
-      v4 = v3 ? VocClass::GetSampleName(v3) : g_Str_Invalid_Voc;
-      if ( !_strcmpi((char *)this, v4) ) /*0x7514ff*/
-        break; /*0x7514ff*/
-      if ( ++v2 >= g_VocPlayState ) /*0x751513*/
-        return -1; /*0x751513*/
-    }
-    return v2; /*0x751515*/
+  if ( !pName ) /*0x7514d6*/
+    return -1; /*0x7514d6*/
+  v2 = 0; /*0x7514dd*/
+  if ( g_VocPlayState <= 0 ) /*0x7514e1*/
+    return -1; /*0x751515*/
+  while ( 1 )
+  {
+    v3 = (char *)**((_DWORD **)g_VocAudioConfig + v2); /*0x7514eb*/
+    v4 = v3 ? VocClass::GetSampleName(v3) : g_Str_Invalid_Voc;
+    if ( !_strcmpi((char *)pName, v4) ) /*0x7514ff*/
+      break; /*0x7514ff*/
+    if ( ++v2 >= g_VocPlayState ) /*0x751513*/
+      return -1; /*0x751513*/
+  }
+  return v2; /*0x751515*/
 }
 void VocClass::PlayGlobal(int32_t index, int32_t panning, float volume, AudioController* pCtrl)
 {
@@ -233,4 +233,3 @@ void AudioEventHandle::Stop() {
 
 } // namespace gamemd
 }  // L-fix: close namespace tail 1
-}

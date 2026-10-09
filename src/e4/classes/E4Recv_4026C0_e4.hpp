@@ -22,6 +22,19 @@ struct E4Recv_4026C0 {
     unsigned int q854;  // 0x854
     unsigned int q1328;  // 0x1328
     unsigned int q4904;  // 0x4904
+    unsigned int q8498;  // 0x8498
+    unsigned int q33944;  // 0x33944
+    unsigned int q211268;  // 0x211268
+    unsigned int q2167400;  // 0x2167400
+    unsigned int q35025920;  // 0x35025920
+    unsigned int q105223814;  // 0x105223814
+    unsigned int q36661650230;  // 0x36661650230
+    unsigned int q289927682390;  // 0x289927682390
+    unsigned int q3738255557168;  // 0x3738255557168
+    unsigned int q44638256243600;  // 0x44638256243600
+    unsigned int q971428544737640;  // 0x971428544737640
+    unsigned int q19249709858436608;  // 0x19249709858436608
+    unsigned int q28987824276165060104;  // 0x28987824276165060104
 // --- flat members (END) ---
     int sub_4026C0();  // 0x4026C0
 };

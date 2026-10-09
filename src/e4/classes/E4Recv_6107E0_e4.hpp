@@ -45,13 +45,36 @@ struct E4Recv_6107E0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q21768;  // 0x21768
+    unsigned int q22070;  // 0x22070
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q137064;  // 0x137064
+    unsigned int q153094;  // 0x153094
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1282934;  // 0x1282934
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q19409204;  // 0x19409204
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q423662084;  // 0x423662084
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q17773764740;  // 0x17773764740
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q1612549867328;  // 0x1612549867328
+    unsigned int q388269456126468;  // 0x388269456126468
+    unsigned int q254495797487494248;  // 0x254495797487494248
+    unsigned int q254497871881316690;  // 0x254497871881316690
+    unsigned int q687472098382617781378;  // 0x687472098382617781378
+    unsigned int q687472098382632281744;  // 0x687472098382632281744
 // --- flat members (END) ---
     unsigned int * sub_6107E0();  // 0x6107E0
-    // --- W16G3 supply (BEGIN) ---
     unsigned int u8_45;  // 0x45 @0x6107f6 (W16G3 raw-usage vocab)
     unsigned int u32_46;  // 0x46 @0x6107fc (W16G3 raw-usage vocab)
     unsigned int u32_47;  // 0x47 @0x610802 (W16G3 raw-usage vocab)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

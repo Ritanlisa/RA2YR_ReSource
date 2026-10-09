@@ -14,6 +14,9 @@ struct E4Recv_5CB790 {
     unsigned int q100;  // 0x100
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
 // --- flat members (END) ---
     int Vf24(int,  ...);    // G6 vtable slot dispatch
     unsigned int  WOL_Territory_UpdateDisplay(int a2);  // 0x5CB790

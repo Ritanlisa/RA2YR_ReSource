@@ -29,10 +29,6 @@ struct BlitTransXlatAlphaZRead_ushort {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_4;
-    unsigned int m_8;
 // --- flat members (END) ---
     BlitTransXlatAlphaZRead_ushort * Blit(unsigned int * Block, char a2);
     int AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9);

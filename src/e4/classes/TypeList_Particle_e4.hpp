@@ -14,10 +14,6 @@ struct TypeList_Particle {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     int GetIndex(int a2);  // 0x459FE0
     char AddRef(int a2);  // 0x45A180

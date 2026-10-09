@@ -14,101 +14,90 @@
 namespace gamemd {
 void Vector::Math_Vector2D_Magnitude()
 {
-
   double result; // st7
 
   result = (double)this->Vector_field_0x4; /*0x4c1b50*/
   Math::Sqrt((double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0 + result * result); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
-
 }
 }
 // 0x512D30
 namespace gamemd {
 int Vector::Cleanup()
 {
-
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x512d36*/
-  if ( result && BYTE1(this->m_C) ) /*0x512d3d*/
+  result = *(_DWORD *)&this->m_1[3]; /*0x512d36*/
+  if ( result && IDA_BYTE1(this->m_C) ) /*0x512d3d*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x512d43*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x512d4b*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x512d43*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x512d4b*/
   }
-  BYTE1(this->m_C) = 0; /*0x512d4e*/
+  IDA_BYTE1(this->m_C) = 0; /*0x512d4e*/
   this->m_8 = 0; /*0x512d51*/
   return result; /*0x512d54*/
-
 }
 }
 // 0x513100
 namespace gamemd {
 int Vector::Destructor()
 {
-
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x513106*/
-  if ( result && BYTE1(this->m_C) ) /*0x51310d*/
+  result = *(_DWORD *)&this->m_1[3]; /*0x513106*/
+  if ( result && IDA_BYTE1(this->m_C) ) /*0x51310d*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x513113*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x51311b*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x513113*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x51311b*/
   }
-  BYTE1(this->m_C) = 0; /*0x51311e*/
+  IDA_BYTE1(this->m_C) = 0; /*0x51311e*/
   this->m_8 = 0; /*0x513121*/
   return result; /*0x513124*/
-
 }
 }
 // 0x5AE890
 namespace gamemd {
 int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
-
   int result; // eax
 
-  *((float *)this + 3) = a3 * *((float *)this + 1) /*0x5ae8ab*/
-                       + a4 * *((float *)this + 2)
+  this->IsInitialized = a3 * this->q004 /*0x5ae8ab*/
+                       + a4 * this->q008
                        + a2 * *(float *)this
-                       + *((float *)this + 3);
-  *((float *)this + 7) = a2 * *((float *)this + 4) /*0x5ae8ca*/
-                       + a3 * *((float *)this + 5)
-                       + a4 * *((float *)this + 6)
-                       + *((float *)this + 7);
-  *((float *)this + 11) = a2 * *((float *)this + 8) /*0x5ae8e9*/
-                        + a3 * *((float *)this + 9)
-                        + a4 * *((float *)this + 10)
-                        + *((float *)this + 11);
+                       + this->IsInitialized;
+  this->u32_1C = a2 * this->q010 /*0x5ae8ca*/
+                       + a3 * this->u32_14
+                       + a4 * this->u32_18
+                       + this->u32_1C;
+  this->q00B = a2 * this->q008 /*0x5ae8e9*/
+                        + a3 * this->u32_24
+                        + a4 * this->q00A
+                        + this->q00B;
   return result; /*0x5ae8ec*/
-
 }
 }
 // 0x67ABE0
 namespace gamemd {
 int Vector::Cleanup2()
 {
-
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x67abe6*/
-  if ( result && BYTE1(this->m_C) ) /*0x67abed*/
+  result = *(_DWORD *)&this->m_1[3]; /*0x67abe6*/
+  if ( result && IDA_BYTE1(this->m_C) ) /*0x67abed*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x67abf3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x67abfb*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x67abf3*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x67abfb*/
   }
-  BYTE1(this->m_C) = 0; /*0x67abfe*/
+  IDA_BYTE1(this->m_C) = 0; /*0x67abfe*/
   this->m_8 = 0; /*0x67ac01*/
   return result; /*0x67ac04*/
-
 }
 }
 // 0x41C2E0
 namespace gamemd {
 unsigned short * Vector::ToFacingMath(unsigned short *a2)
 {
-
   int v2; // ecx
   double v3; // st7
   double v6; // [esp+0h] [ebp-14h]
@@ -117,12 +106,12 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
   _ESI = v2; /*0x41c2e4*/
   __asm /*0x41c2e9*/
   {
-//L-fix     fld qword ptr [esi+8]
-//L-fix     fld qword ptr [esi]
-//L-fix     fld st
-//L-fix     fmul st, st(1)
-//L-fix     fld st(2)
-//L-fix     fmul st, st(3)
+    fld qword ptr [esi+8]
+    fld qword ptr [esi]
+    fld st
+    fmul st, st(1)
+    fld st(2)
+    fmul st, st(3)
     faddp st(1), st
     fstp [esp+14h+var_14]; double
     fstp st
@@ -133,9 +122,8 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
   Math::CalcAngle(*(double *)(_ESI + 16), v7); /*0x41c31a*/
   __asm { fsub ds:dbl_7E2820 } /*0x41c31f*/
   __asm { fmul ds:dbl_7E2818 }
-  *(unsigned short *)a2 = Math::RoundToInt(v3); /*0x41c338*/
-  return (unsigned short *)((int)a2); /*0x41c337*/
-
+  *(_WORD *)this = Math::RoundToInt(v3); /*0x41c338*/
+  return (int)this; /*0x41c337*/
 }
 } // namespace gamemd
 
@@ -143,17 +131,15 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
 namespace gamemd {
 int Vector::Clear()
 {
-
   int result; // eax
 
-  LOBYTE(result) = *((unsigned char *)this + 8); /*0x43ae53*/
-  if ( (unsigned char)result ) /*0x43ae58*/
-    __3_YAXPAX_Z(*(void **)this); /*0x43ae5d*/
-  *(unsigned int *)this = 0; /*0x43ae65*/
-  *((unsigned int *)this + 1) = 0; /*0x43ae6b*/
-  *((unsigned char *)this + 8) = 0; /*0x43ae72*/
+  IDA_LOBYTE(result) = this->q008; /*0x43ae53*/
+  if ( (_BYTE)result ) /*0x43ae58*/
+    RA2_OPDEL(); /*0x43ae5d*/
+  *(_DWORD *)this = 0; /*0x43ae65*/
+  this->q004 = 0; /*0x43ae6b*/
+  this->q008 = 0; /*0x43ae72*/
   return result; /*0x43ae76*/
-
 }
 } // namespace gamemd
 
@@ -161,34 +147,32 @@ int Vector::Clear()
 namespace gamemd {
 int Vector::RemoveAt(int aP1)
 {
-
   char *Vector_field_0x10; // edx
-  AbstractClass * result;
+  int result; // eax
   char *v4; // edx
 
-  Vector_field_0x10 = (char *)((int)((char *)this->Vector_field_0x10));
-  result = (gamemd::AbstractClass *)(aP1); /*0x45ae13*/
-  if ( aP1 >= (int)(int)Vector_field_0x10 ) /*0x45ae19*/
+  Vector_field_0x10 = (char *)this->Vector_field_0x10; /*0x45ae10*/
+  result = aP1; /*0x45ae13*/
+  if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
-    LOBYTE(result) = 0; /*0x45ae3c*/
+    IDA_LOBYTE(result) = 0; /*0x45ae3c*/
   }
   else
   {
-    v4 = (char *)((unsigned int)(Vector_field_0x10 - 1));
-    this->Vector_field_0x10 = (unsigned int)(v4);
-    if ( aP1 < (int)(int)v4 ) /*0x45ae21*/
+    v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
+    this->Vector_field_0x10 = v4; /*0x45ae1e*/
+    if ( aP1 < (int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
-        *((unsigned int *)(unsigned int)(this->Vector_field_0x4)+ result - 1) = *((unsigned int *)(unsigned int)(this-)>Vector_field_0x4 + result); /*0x45ae2b*/
+        *((_DWORD *)this->Vector_field_0x4 + result - 1) = *((_DWORD *)this->Vector_field_0x4 + result); /*0x45ae2b*/
       }
-      while ( result < (gamemd::AbstractClass *)(int)this->Vector_field_0x10 ); /*0x45ae34*/
+      while ( result < (int)this->Vector_field_0x10 ); /*0x45ae34*/
     }
-    LOBYTE(result) = 1; /*0x45ae37*/
+    IDA_LOBYTE(result) = 1; /*0x45ae37*/
   }
-return (int)result; /*0x45ae39*/
-
+  return result; /*0x45ae39*/
 }
 } // namespace gamemd
 
@@ -196,31 +180,29 @@ return (int)result; /*0x45ae39*/
 namespace gamemd {
 void Vector::ReallocDynamic(int a2)
 {
-
   char *v3; // edi
   int i; // ecx
   int v5; // eax
-  unsigned int *v6; // edx
+  _DWORD *v6; // edx
   int v7; // eax
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *((unsigned int *)this + 2))); /*0x4d2e60*/
+  v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
-  for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+  for ( i = 0; i < v3->vtable2; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
-    v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x4d2e82*/
-    *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
+    v6 = (_DWORD *)(*(_DWORD *)v3 + 8 * i++); /*0x4d2e82*/
+    *(_DWORD *)&v3[v5] = *v6; /*0x4d2e87*/
   }
-  __3_YAXPAX_Z(*(void **)this); /*0x4d2e9b*/
-  v7 = a2 + *((unsigned int *)this + 2); /*0x4d2ea6*/
-  *(unsigned int *)this = (unsigned int)(v3); /*0x4d2ea8*/
-  *((unsigned int *)this + 2) = v7; /*0x4d2eaa*/
-  *((unsigned int *)this + 4) = 0; /*0x4d2ead*/
+  RA2_OPDEL(); /*0x4d2e9b*/
+  v7 = a2 + v3->vtable3; /*0x4d2ea6*/
+  *(_DWORD *)v3 = v3; /*0x4d2ea8*/
+  v3->vtable3 = v7; /*0x4d2eaa*/
+  v3->uniqueId = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
-
 }
 } // namespace gamemd
 
@@ -228,31 +210,27 @@ void Vector::ReallocDynamic(int a2)
 namespace gamemd {
 int Vector::Find(unsigned int * a2)
 {
-
   int v2; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
-  v2 = (unsigned int)this->q010; /*0x4e0550*/
+  v2 = this->q010; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
   }
   return result; /*0x4e0572*/
-
 }
 }
 // 0x76F0B0
 namespace gamemd {
 BOOL Vector::HasCapacity()
 {
-
-  return this->q008 < (void *)(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16)); /*0x76f0bd*/
-
+  return this->q008 < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16); /*0x76f0bd*/
 }
 } // namespace gamemd
 
@@ -260,14 +238,13 @@ BOOL Vector::HasCapacity()
 namespace gamemd {
 char Vector::Grow()
 {
-
   int v2; // eax
   int v4; // esi
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x7aeec4*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
+  v2 = *(_DWORD *)this->__pad_0; /*0x7aeec4*/
+  if ( *(_DWORD *)this->__pad_0 < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
@@ -276,17 +253,16 @@ char Vector::Grow()
     v6 = 10; /*0x7aeee1*/
     v4 = 10; /*0x7aeee9*/
   }
-  v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
-  memset( (void *)(v5), 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
+  v5 = (void *)RA2_OPNEW(4 * v4); /*0x7aeefc*/
+  memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->Vector_field_0x8 ) /*0x7aef13*/
   {
-    qmemcpy( (void *)(v5), (const void *)(this->Vector_field_0x8), 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
+    qmemcpy(v5, this->Vector_field_0x8, 4 * *(_DWORD *)this->__pad_0); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  __3_YAXPAX_Z((void *)(this->Vector_field_0x8)); /*0x7aef39*/
-  this->Vector_field_0x4 = (unsigned int)((void *)v4); /*0x7aef41*/
-  this->Vector_field_0x8 = (unsigned int)(v5); /*0x7aef44*/
+  RA2_OPDEL(this->Vector_field_0x8); /*0x7aef39*/
+  this->Vector_field_0x4 = (void *)v4; /*0x7aef41*/
+  this->Vector_field_0x8 = v5; /*0x7aef44*/
   return 1; /*0x7aeecf*/
-
 }
 } // namespace gamemd

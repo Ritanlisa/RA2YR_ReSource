@@ -16,6 +16,16 @@ struct E4Recv_580BC0 {
     unsigned int q1408;  // 0x1408
     unsigned int q5128;  // 0x5128
     unsigned int q5138;  // 0x5138
+    unsigned int q133010;  // 0x133010
+    unsigned int q1255810;  // 0x1255810
+    unsigned int q1257488;  // 0x1257488
+    unsigned int q19231880;  // 0x19231880
+    unsigned int q421676434;  // 0x421676434
+    unsigned int q1611689177458;  // 0x1611689177458
+    unsigned int q1611703603238;  // 0x1611703603238
+    unsigned int q388224393901144;  // 0x388224393901144
+    unsigned int q254491193000887958;  // 0x254491193000887958
+    unsigned int q687470288687413623128;  // 0x687470288687413623128
 // --- flat members (END) ---
     unsigned int *  FindMapSpawnCell(void * aP1);  // 0x580BC0
 };

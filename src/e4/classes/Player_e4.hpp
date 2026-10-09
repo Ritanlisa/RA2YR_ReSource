@@ -8,7 +8,11 @@ namespace gamemd {
 struct Player {
 // --- flat members (BEGIN) ---
     void* q004;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
     unsigned int u32_54;  // 0x54
+    unsigned int u32_70;  // 0x70
+    unsigned int u32_74;  // 0x74
 // --- flat members (END) ---
     int IsObserver();
     void BuildListString(wchar_t * Destination);

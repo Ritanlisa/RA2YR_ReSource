@@ -9,9 +9,6 @@ struct SyncDelay {
 // --- flat members (BEGIN) ---
     void* q010;  // 0x10
     void* q034;  // 0x34
-    unsigned int DDraw;
-    unsigned int Timer;
-    unsigned int Event;
 // --- flat members (END) ---
     bool Check(_DWORD *a2);
     signed int Start(void *a1, void *a2);

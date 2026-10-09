@@ -1077,106 +1077,15 @@ LABEL_290:
     case 0x72:
 // 0x6e4100
       return TActionClass::executePsychicDominatorAction(
-               (unsigned int *)a1,
-               (int)a5,
-               (int)v9,
-               (int)a5,
-               (IUnknown *)a8);
-    case 0x73:
-      return ((TActionClass *)(int *)a1)->executeGeneticMutatorAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x74:
-      return ((TActionClass *)(int *)a1)->executeGuardAreaAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x75:
-      EnqueueAsyncIOMovie(*(unsigned int *)(a1 + 144), 1);
-      return 1;
-    case 0x76:
-      return globalHelper_0E2C20((int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x77:
-      return ((TActionClass *)(unsigned int *)a1)->executePlaceBeaconAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
-    case 0x78:
-      return ((TActionClass *)(unsigned int *)a1)->executeJumpjetAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
-    case 0x79:
-      return ((TActionClass *)(unsigned int *)a1)->executeOpenGateAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
-    case 0x7A:
-      return ((TActionClass *)(unsigned int *)a1)->executeCloseGateAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
-    case 0x7B:
-      return ((TActionClass *)(unsigned int *)a1)->executeCaptureAction( a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
-    case 0x7C:
-      return ((TActionClass *)(unsigned int *)a1)->executeSabotageAction( a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
-    case 0x7D:
-      return ((TActionClass *)(int *)a1)->executeForceShieldAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x7E:
-  int v123; // [esp+0h] [ebp-250h]
-  unsigned int *v124; // [esp+4h] [ebp-24Ch]
-  int v125; // [esp+8h] [ebp-248h]
-      return CreateHouseClass((int)a5, v9, a5, (IUnknown *)a8, v123, v124, v125);
-    case 0x7F:
-      globalHelper_03B460(*(unsigned int *)(a1 + 144));
-      return 1;
-    case 0x80:
-      return ((TActionClass *)(int *)a1)->executePatrolAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x81:
-      return ((TActionClass *)(int *)a1)->executeIronCurtainAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x82:
-      return SmallFunc_6E3120((int)a5, v9, a5, (IUnknown *)a8, v123, v124, v125);
-    case 0x83:
-      return ((TActionClass *)a1)->executeEMPulseAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x84:
-      return ((TActionClass *)(int *)a1)->executeNukeAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x85:
-      return ((TActionClass *)(int *)a1)->executeSpyPlaneAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x86:
-      return ((TActionClass *)(int *)a1)->executeChronoSphereAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x87:
-      return ((TActionClass *)(int *)a1)->executeWeatherStormAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x88:
-      return globalHelper_0E4440(a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x89:
-      return ((TActionClass *)(int *)a1)->executeRevealAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x8A:
-      return globalHelper_0E4540(a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x8B:
-      return ((TActionClass *)(int *)a1)->executeLightningAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x8C:
-      return ((TActionClass *)(int *)a1)->executeDominatorAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x8D:
-      return globalHelper_0E44C0(a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x8E:
-      return ((TActionClass *)(unsigned int *)a1)->executeSelfDestructAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    case 0x8F:
-      return ((TActionClass *)(unsigned int *)a1)->executeExplodeAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
-    default:
-      return (AbstractClass * *)result;
-  }
-  while ( 1 )
-  {
-    v117 = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[44536] + 4 * v116);
-    if ( *(unsigned char *)(v117 + 144) )
-    {
-      if ( *(unsigned char *)(v117 + 116) )
       {
-        if ( !*(unsigned char *)(v117 + 129) )
-        {
-          unsigned int * v118 = *(unsigned int **)(v117 + 52);
-          if ( v118 )
-          {
-            if ( ((LinkedList_flat *)v118)->Contains( (IUnknown *)(a5)) )
-              break;
-          }
-        }
+        unsigned int v5; // esi
+
+        v5 = *(_DWORD *)&this->pad_6E[34]; /*0x6e4101*/
+        if ( v5 >= 4 || !(unsigned __int8)PlayerClass::HasPlayers((PlayerClass *)(3988 * v5 + 8916268)) ) /*0x6e4124*/
+          return 0; /*0x6e413e*/
+        SidebarClass::SwitchTab((int)&stru_87F5F0.__pad_58[416], v5); /*0x6e4133*/
+        return 1; /*0x6e413a*/
       }
-    }
-    if ( ++v116 >= *(int *)&((unsigned char *)&HouseClass_Player)[44548] )
-      return 0;
-  }
-  ((BuildingClass *)((BuildingTypeClass **)v117))->UnloadUnits(0, 0);
-  return 1;
-}
-
-} // namespace gamemd
-
-// 0x71CDA0
-namespace gamemd {
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
 
@@ -1203,7 +1112,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   v7 = v4; /*0x71cdba*/
   if ( ((char *)&g_BuildingLoadQueue_Array) ) /*0x71cdbe*/
   {
-    if ( !LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x71cdcb*/
+    if ( !IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x71cdcb*/
     {
       qsort( /*0x71cddc*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
@@ -1212,7 +1121,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       vtable1 = (void *)(((char *)&g_BuildingLoadQueue_Array)); /*0x71cde1*/
       ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x71cdea*/
-      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x71cdf4*/
+      IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
     v8 = BinaryArraySearch( (AbstractClass *)((int)g_BuildingLoadQueue_Array.TechnoTypeClass), (int)vtable1, (int *)(&v17)); /*0x71ce0a*/
@@ -1260,7 +1169,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 LABEL_16:
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = v14; /*0x71ceee*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = v2; /*0x71cefc*/
-      LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x71cf06*/
+      IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x71cf06*/
       ++((char *)&g_BuildingLoadQueue_Array); /*0x71cf0d*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1]); /*0x71cf1e*/
@@ -1269,63 +1178,61 @@ LABEL_16:
 
 }
 }
+}
+}
 // 0x71D000
 namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
-
-  unsigned int *v3; // ebp
+  _DWORD *v3; // ebp
   int v4; // edi
   int v5; // ebx
   int i; // esi
   int v7; // ecx
-  int16_t v8; // ax
-  unsigned char *v9; // eax
-  unsigned int *v10; // eax
+  __int16 v8; // ax
+  _BYTE *v9; // eax
+  _DWORD *v10; // eax
   int v11; // edi
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = a1; /*0x71d008*/
-  if ( !(uint8_t)((ObjectClass *)this)->Deploy() ) /*0x71d012*/
+  if ( !(unsigned __int8)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
   v4 = *v3 / 256; /*0x71d03e*/
   v5 = v3[1] / 256; /*0x71d041*/
   for ( i = 0; i < 8; ++i ) /*0x71d044*/
   {
     v7 = i & 7; /*0x71d048*/
-    v8 = HIWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d05d*/
-    LOWORD(aP2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
-    HIWORD(aP2) = v5 + v8; /*0x71d06d*/
-    a1 = (unsigned int *)(aP2); /*0x71d076*/
-    v9 = (unsigned char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a1); /*0x71d080*/
+    v8 = IDA_HIWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d05d*/
+    IDA_LOWORD(aP2) = v4 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
+    IDA_HIWORD(aP2) = v5 + v8; /*0x71d06d*/
+    a1 = aP2; /*0x71d076*/
+    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*((int (**)(char *))this->vtable1 + 43))( (char *)(v14)); /*0x71d0ab*/
-  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v10), (int *)(&this->TerrainClass_field_rect_D0[2])); /*0x71d0b8*/
-  v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
-  this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
+  v10 = (_DWORD *)(*((int (__stdcall **)(char *))this->vfptr + 43))(v14); /*0x71d0ab*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
+  v11 = *(_DWORD *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
+  this->TerrainClass_field_rect_D0[2] += *(_DWORD *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
   this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
-  if ( *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
+  if ( *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
-    if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/
-                              + 4 * *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->__pad_28[28])
+    if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 /*0x71d108*/
+                              + 4 * *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
                   + 681) )
     {
-      *(unsigned int *)&((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->__pad_28[28] = -1; /*0x71d123*/
-      ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v3)->powerup = 0; /*0x71d12b*/
+      *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
+      Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/
-
 }
 }
 // 0x71CF30
 namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-
-  return AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a1), (ObjectTypeClass *)(aP2)); /*0x71cf44*/
-
+  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71cf44*/
 }
 } // namespace gamemd
 
@@ -1333,9 +1240,7 @@ int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero()
 {
-
   return 224; /*0x71d2f5*/
-
 }
 } // namespace gamemd
 
@@ -1343,9 +1248,7 @@ int TerrainClass::MissionStubReturnZero()
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero2()
 {
-
   return 36; /*0x71d305*/
-
 }
 } // namespace gamemd
 
@@ -1353,7 +1256,6 @@ int TerrainClass::MissionStubReturnZero2()
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
 {
-
   if ( !a2 ) /*0x71d316*/
     return -2147467261; /*0x71d318*/
   *a2 = 237448654; /*0x71d326*/
@@ -1361,6 +1263,5 @@ int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
   a2[2] = -1610610249; /*0x71d337*/
   a2[3] = unk_7E974C; /*0x71d340*/
   return 0; /*0x71d31d*/
-
 }
 } // namespace gamemd

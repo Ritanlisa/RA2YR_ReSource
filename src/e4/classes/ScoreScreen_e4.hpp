@@ -13,22 +13,14 @@ struct ScoreScreen {
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
     unsigned int q00D;  // 0xD
+    bool q00E;  // 0xE
+    bool q00F;  // 0xF
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
-    unsigned int ScoreScreen_field_0x04;
-    unsigned int ScoreScreen_field_0x08;
-    unsigned int ScoreScreen_field_0x0C;
-    unsigned int ScoreScreen_field_0x10;
-    unsigned int ScoreScreen_field_0x14;
-    unsigned int ScoreScreen_field_0x18;
-    unsigned int *__pad_0;
-    unsigned int Audio;
-    unsigned int Debug;
-    unsigned int Timer;
 // --- flat members (END) ---
     unsigned int * Constructor(int aP1, int a3, int a4);
     unsigned int * LoadCountryFlags(int a2);

@@ -20,6 +20,16 @@ struct E4Recv_65A7E0 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
+    unsigned int q18758;  // 0x18758
+    unsigned int q25608;  // 0x25608
+    unsigned int q100184;  // 0x100184
+    unsigned int q1048964;  // 0x1048964
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q386352434;  // 0x386352434
+    unsigned int q15136531508;  // 0x15136531508
+    unsigned int q1448315393288;  // 0x1448315393288
+    unsigned int q356804764185224;  // 0x356804764185224
+    unsigned int q240520674221249060;  // 0x240520674221249060
 // --- flat members (END) ---
     unsigned int *  Helper_65A7E0(void * aP1);  // 0x65A7E0
 };

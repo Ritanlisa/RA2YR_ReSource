@@ -10,7 +10,6 @@
 namespace gamemd {
 HWND BINK::Background_Setup(HWND hDlg)
 {
-
   int result; // eax
   HWND v2; // esi
   int v3; // ecx
@@ -21,7 +20,7 @@ HWND BINK::Background_Setup(HWND hDlg)
   if ( result ) /*0x52b9c2*/
   {
     if ( (int)g_DisplayWidth > 800 ) /*0x52b9d2*/
-      v3 = (int)&(&g_DisplayWidth)[-13].LoadingScreen_field_0x20 / 2; /*0x52b9e2*/
+      v3 = (int)&g_DisplayWidth[-13].LoadingScreen_field_0x20 / 2; /*0x52b9e2*/
     else
       v3 = 0; /*0x52b9d4*/
     if ( (int)*(&g_DisplayWidth + 1) > 600 ) /*0x52b9ee*/
@@ -29,13 +28,12 @@ HWND BINK::Background_Setup(HWND hDlg)
     else
       v4 = 0; /*0x52b9f0*/
     SetWindowPos(v2, 0, v3, v4, -1, -1, 0xDu); /*0x52ba09*/
-    SendMessageA( (HWND)(v2), 0x4E3u, 1u, 0); /*0x52ba1f*/
-    if ( g_DisplayWidth   ==   (int)((int)640 )) /*0x52ba2b*/
-      return SendMessageA( (HWND)(v2), 0x4E4u, 0, (LPARAM)((LPARAM)((LPARAM)aRa2tsS))); /*0x52ba3a*/
+    SendMessageA(v2, 0x4E3u, 1u, 0); /*0x52ba1f*/
+    if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x52ba2b*/
+      return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x52ba3a*/
     else
-      return SendMessageA( (HWND)(v2), 0x4E4u, 0, (LPARAM)((LPARAM)((LPARAM)aRa2tsL))); /*0x52ba4c*/
+      return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x52ba4c*/
   }
-  return (HWND)(result); /*0x52ba3c*/
-
+  return result; /*0x52ba3c*/
 }
 } // namespace gamemd

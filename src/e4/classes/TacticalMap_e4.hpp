@@ -12,28 +12,13 @@ struct TacticalMap {
     char TacticalMap_field_00[4];  // 0x0
     char TacticalMap_field_04[4];  // 0x4
     unsigned int u32_8;  // 0x8
+    char TacticalMap_field_0C[4];  // 0xC
     char TacticalMap_field_10[4];  // 0x10
     unsigned int u32_14;  // 0x14
     float m_TintFactor;  // 0x18
+    unsigned char u8_19;  // 0x19
     char TacticalMap_field_1C[4];  // 0x1C
-    unsigned int TacticalMap_field_20;  // 0x20
-    unsigned int Tactical_field_0xA8;
-    unsigned int *__pad_11F;
-    unsigned int *__pad_AC;
-    unsigned int q104;
-    unsigned int u32_11B;
-    unsigned int u32_24;
-    unsigned int u32_6C0;
-    unsigned int vfptr;
-    unsigned int *Tactical_field_0x2;
-    unsigned int *Tactical_field_0x8;
-    unsigned int *Tactical_field_0xC;
-    unsigned int Tactical_field_0xDA4;
-    unsigned int Tactical_field_0xDB4;
-    unsigned int *__pad_0;
-    unsigned int *__pad_10;
-    unsigned int *__pad_34;
-    unsigned int *__pad_DA8;
+    char TacticalMap_field_20[4];  // 0x20
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
     _DWORD * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);

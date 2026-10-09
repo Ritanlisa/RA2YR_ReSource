@@ -11,8 +11,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct EventClass {
 // --- flat members (BEGIN) ---
     AbstractClass* q000;  // 0x0
-    unsigned char __pad_0[87];  // 0x0
-    unsigned char m_1[4];  // 0x1
+    unsigned int u32_2;  // 0x2
     unsigned int u32_3;  // 0x3
     void* q004;  // 0x4
     void* q008;  // 0x8
@@ -84,23 +83,6 @@ struct EventClass {
     unsigned int q1600;  // 0x1600
     void* q1634;  // 0x1634
     void* q16C0;  // 0x16C0
-    unsigned int EventClass_field_0x0;
-    unsigned int EventClass_field_0x24;
-    unsigned int EventClass_field_0x28;
-    unsigned int EventClass_field_0x30;
-    unsigned int EventClass_field_0x4;
-    unsigned int EventClass_field_0x44;
-    unsigned int EventClass_field_0x48;
-    unsigned int *EventClass_field_0x4C;
-    unsigned int EventClass_field_0x50;
-    unsigned int EventClass_field_0x54;
-    unsigned int *__pad_10;
-    unsigned int q0041;
-    unsigned int q007;
-    unsigned int EventClass_field_0xC;
-    unsigned int q0049;
-    unsigned char EventClass_field_0x38;  // 0x38
-    unsigned char *__pad_58;  // 0x58
 // --- flat members (END) ---
     int serializeEvent(void *a1_1);  // 0x48B390
     int SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0

@@ -21,6 +21,8 @@ struct E4Recv_430610 {
     unsigned int q1908;  // 0x1908
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     void sub_430610();  // 0x430610
 };

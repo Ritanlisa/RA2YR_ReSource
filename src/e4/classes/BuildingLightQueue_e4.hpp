@@ -2,9 +2,14 @@
 // e4 flat carrier wins, truth render_ext.hpp:821 vtable slot semantics)
 #pragma once
 
+#include "e4/classes/_fwd_e4.hpp"
+
 namespace gamemd {
 
 struct BuildingLightQueue {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     virtual ~BuildingLightQueue();
     virtual int RemoveEntry();  // 0x5FF2D0
 };

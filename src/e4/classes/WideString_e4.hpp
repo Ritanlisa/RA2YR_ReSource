@@ -8,19 +8,7 @@ namespace gamemd {
 struct CampaignScore;  // fix_fwd_type_supply
 struct WideString {
 // --- flat members (BEGIN) ---
-    unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
-    unsigned int u32_4C;  // 0x4C
-    unsigned int u32_434;  // 0x434
-    unsigned int u32_438;  // 0x438
-    unsigned int u32_43C;  // 0x43C
-    unsigned int u32_440;  // 0x440
-    unsigned int u32_444;  // 0x444
-    unsigned int u32_45C;  // 0x45C
-    unsigned int u32_468;  // 0x468
-    unsigned int u32_478;  // 0x478
+    unsigned char q000;  // 0x0
 // --- flat members (END) ---
     wchar_t * Trim();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     int Hash();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)

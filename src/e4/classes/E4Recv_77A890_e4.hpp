@@ -14,6 +14,12 @@ struct E4Recv_77A890 {
     unsigned int q630;  // 0x630
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
+    unsigned int q21768;  // 0x21768
+    unsigned int q137064;  // 0x137064
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
     int  sub_77A890(int a2);  // 0x77A890
 };

@@ -16,9 +16,8 @@ struct E4Recv_6D1570 {
     unsigned int q630;  // 0x630
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
-    unsigned int AbstractClass;
-    void* vtable1;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    void* vtable1;  // 0x0 (no offset truth)
     int Vf48(int,  ...);    // G6 vtable slot dispatch
     char sub_6D1570();  // 0x6D1570
 };

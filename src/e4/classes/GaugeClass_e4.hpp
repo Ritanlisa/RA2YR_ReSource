@@ -17,8 +17,8 @@ struct GaugeClass {
     char Enabled;  // 0x15
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
-    unsigned int *__pad_0;
-    unsigned int u32_2D;
+    bool q01D;  // 0x1D
+    unsigned int q01E;  // 0x1E
 // --- flat members (END) ---
     GaugeClass * QueryInterface(unsigned int * Block, char a2);
     int Draw(int a2);

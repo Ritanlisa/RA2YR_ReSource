@@ -33,78 +33,77 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
 int CCFileClass::Open(int a2)
 {
-    int result; // eax
-    const char *v4; // eax
+  int result; // eax
+  const char *v4; // eax
 
-    if ( *((unsigned int *)this + 26) == 1 ) /*0x473c5c*/
+  if ( this->u32_68 == 1 ) /*0x473c5c*/
+  {
+    result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473c5e*/
+  }
+  else
+  {
+    result = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->__tail_0 + 24))(this); /*0x473c69*/
+    if ( result ) /*0x473c6e*/
+
     {
-      result = 1; /*0x473c5e*/
+      this->u32_68 = 1; /*0x473c70*/
+      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473c73*/
     }
     else
     {
-      result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 24))(this); /*0x473c69*/
-      if ( result ) /*0x473c6e*/
-
+      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->__tail_0 + 4))(this); /*0x473c84*/
+      if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
       {
-        *((unsigned int *)this + 26) = 1; /*0x473c70*/
-        result = 1; /*0x473c73*/
+        this->u32_68 = 1; /*0x473c94*/
+        result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473c97*/
       }
       else
       {
-        v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 4))(this); /*0x473c84*/
-        if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
+        result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
+        if ( result ) /*0x473ca9*/
+
         {
-          *((unsigned int *)this + 26) = 1; /*0x473c94*/
-          result = 1; /*0x473c97*/
+          this->u32_68 = 1; /*0x473cab*/
+          result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473cae*/
         }
         else
         {
-          result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
-          if ( result ) /*0x473ca9*/
-
-          {
-            *((unsigned int *)this + 26) = 1; /*0x473cab*/
-            result = 1; /*0x473cae*/
-          }
-          else
-          {
-            *((unsigned int *)this + 26) = 2; /*0x473cb5*/
-            result = 0; /*0x473cbd*/
-          }
+          this->u32_68 = 2; /*0x473cb5*/
+          result = ((result) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x473cbd*/
         }
       }
     }
-    return result; /*0x473c60*/
+  }
+  return result; /*0x473c60*/
 }
 // 0x4a3890
 void* CCFileClass::ReadEntireFile()
 {
-    void *v2; // edi
-    size_t v3; // ebx
+  void *v2; // edi
+  size_t v3; // ebx
 
-    v2 = 0; /*0x4a3895*/
-    if ( (*(unsigned __int8 (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
-    {
-      v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this); /*0x4a38a8*/
-      v2 = (void *)new unsigned char[v3]; /*0x4a38b0*/
-      if ( v2 ) /*0x4a38b7*/
-        (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
-    }
-    return v2; /*0x4a38c4*/
+  v2 = 0; /*0x4a3895*/
+  if ( (*(unsigned __int8 (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)this->__tail_0 + 20))(this, 0) ) /*0x4a389a*/
+  {
+    v3 = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->__tail_0 + 44))(this); /*0x4a38a8*/
+    v2 = (void *)new unsigned char[v3]; /*0x4a38b0*/
+    if ( v2 ) /*0x4a38b7*/
+      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(_DWORD *)this->__tail_0 + 36))(this, v2, v3); /*0x4a38bf*/
+  }
+  return v2; /*0x4a38c4*/
 }
 REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // IDA 0x473CE0 -- CCFileClass::Reset
 // 0x473ce0
 int CCFileClass::Reset()
 {
-    Buffer *v2; // ecx
-    int result; // eax
+  Buffer *v2; // ecx
+  int result; // eax
 
-    v2 = (Buffer *)((char *)this + 88); /*0x473ce3*/
-    if ( v2 ) /*0x473ce8*/
-      Buffer::Init(v2, 0, 0); /*0x473cee*/
-    *((unsigned int *)this + 25) = 0; /*0x473cf5*/
-    result = CCFileClass::Close(this); /*0x473cfc*/
-    return result; /*0x473d01*/
-}  // L-fix: close namespace tail 1
+  v2 = (Buffer *)((char *)&this->CacheReadAhead8); /*0x473ce3*/
+  if ( v2 ) /*0x473ce8*/
+    Buffer::Init(v2, 0, 0); /*0x473cee*/
+  this->tail_19 = 0; /*0x473cf5*/
+  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(CCFileClass::Close(this)) & 0xFFu); /*0x473cfc*/
+  return result; /*0x473d01*/
 }

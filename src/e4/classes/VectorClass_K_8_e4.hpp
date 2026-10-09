@@ -35,16 +35,19 @@ struct VectorClass_K_8 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int CStreamClass_field_0x04;
-    unsigned int CStreamClass_field_0x08;
-    unsigned int CStreamClass_field_0x0C;
-    unsigned int CStreamClass_field_0x10;
-    unsigned int CStreamClass_field_0x14;
-    unsigned int CStreamClass_field_0x18;
-    unsigned int CStreamClass_field_0x1C;
-    unsigned int CStreamClass_field_0x20;
-    unsigned int *__pad_0;
-    unsigned int CStreamClass_field_0x24;
+    unsigned int q20848;  // 0x20848
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned char q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q22571209320;  // 0x22571209320
 // --- flat members (END) ---
     unsigned int * Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x4A2820
     int QueryInterface(int a1, const void * a2, unsigned int * a3);  // 0x6BEE50

@@ -15,30 +15,24 @@
 namespace gamemd {
 int GaugeClass::Stub()
 {
-
   return this->u32_D; /*0x4e30a3*/
-
 }
 } // namespace gamemd
 // 0x4E30B0
 namespace gamemd {
 int GaugeClass::Draw(int a2)
 {
-
   this->u32_2D = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/
-
 }
 } // namespace gamemd
 // 0x4E30D0
 namespace gamemd {
 GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
 {
-
-  ((GadgetClass *)((GadgetClass *)this))->Dtor(); /*0x4e30d3*/
+  GadgetClass::Dtor((GadgetClass *)Block); /*0x4e30d3*/
   if ( (a2 & 1) != 0 ) /*0x4e30dd*/
-    __3_YAXPAX_Z(this); /*0x4e30e0*/
-  return (gamemd::GaugeClass *)(this->__pad_0); /*0x4e30ea*/
-
+    RA2_OPDEL(Block); /*0x4e30e0*/
+  return Block->__pad_0; /*0x4e30ea*/
 }
 } // namespace gamemd

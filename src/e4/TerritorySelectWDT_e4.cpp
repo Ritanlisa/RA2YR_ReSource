@@ -32,8 +32,7 @@
 namespace gamemd {
 wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
 {
-
-  int * v2;
+  int v2; // esi
   int v3; // ebx
   int v4; // edi
   char *v5; // edi
@@ -45,97 +44,95 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   char *v12; // [esp+24h] [ebp-1Ch]
   void *v13; // [esp+28h] [ebp-18h] BYREF
   void **v14; // [esp+2Ch] [ebp-14h] BYREF
-  unsigned int *v15; // [esp+30h] [ebp-10h]
+  _DWORD *v15; // [esp+30h] [ebp-10h]
   void **v16; // [esp+34h] [ebp-Ch] BYREF
   int *v17; // [esp+38h] [ebp-8h]
   int v18; // [esp+3Ch] [ebp-4h]
 
-  v2 = (int *)(0);
-  v12 = (char *)((int *)(this));
+  v2 = 0; /*0x7665db*/
+  v12 = this; /*0x7665e0*/
   if ( !dword_B72770 ) /*0x7665e4*/
     InitWDTGameOptions(); /*0x7665e6*/
   v3 = 6; /*0x7665ef*/
-  unknown_libname_74( (void *)(&v11)); /*0x7665f4*/
-  v17 = (int *)(&stru_B72760); /*0x7665f9*/
+  unknown_libname_74(&v11); /*0x7665f4*/
+  v17 = &stru_B72760; /*0x7665f9*/
   v18 = 0; /*0x766601*/
-  v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x766605*/
+  v16 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766605*/
   do /*0x7666b0*/
   {
-    if ( !((uint8_t (*)(void ***))v16[1])(&v16) ) /*0x76661a*/
+    if ( !((unsigned __int8 (__thiscall *)(void ***))v16[1])(&v16) ) /*0x76661a*/
       break; /*0x76661f*/
     v4 = v17[1] + 8 * v18; /*0x766634*/
-    ((ComPtr *)(&v14))->Constructor(); /*0x766637*/
-    v14 = (void **)(&vt_rc_ptr); /*0x76663c*/
-    ((ComPtr *)(&v14))->Set(*(unsigned int *)(v4 + 4)); /*0x766648*/
-    if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766654*/
+    ComPtr::Constructor(&v14); /*0x766637*/
+    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76663c*/
+    ComPtr::Set(&v14, *(_DWORD *)(v4 + 4)); /*0x766648*/
+    if ( (v2 & v15[2]) == 0 ) /*0x766654*/
     {
       v5 = v12 + 8; /*0x76665c*/
-      if ( !(*(int (**)(unsigned int *, char *))(*v15 + 12))( (unsigned int *)(v15), v12 + 8) ) /*0x766660*/
+      if ( !(*(int (__thiscall **)(_DWORD *, char *))(*v15 + 12))(v15, v12 + 8) ) /*0x766660*/
       {
-v6 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x766678*/ v15, (void **)(&v13), (char *)(v5), (void **)(&v11));
-
-
-
-
-        ((WideString *)(&v11))->Reassign_Alt( (const wchar_t **)(v6)); /*0x766680*/
-        ((DeleteAndZero*)&v13)->Alt(); /*0x766689*/
+        v6 = (const wchar_t **)(*(int (__thiscall **)(_DWORD *, void **, char *, void **))(*v15 + 16))( /*0x766678*/
+                                 v15,
+                                 &v13,
+                                 v5,
+                                 &v11);
+        WideString::Reassign_Alt(&v11, v6); /*0x766680*/
+        DeleteAndZero::Alt(&v13); /*0x766689*/
         --v3; /*0x766692*/
-        (unsigned int)(v2)|= v15[2]; /*0x766693*/
+        v2 |= v15[2]; /*0x766693*/
       }
     }
-    v14 = (void **)(&vt_rc_ptr); /*0x76669a*/
-    ((ComPtr *)(&v14))->Release(); /*0x76669e*/
-    ((void (*)(void ***))v16[2])(&v16); /*0x7666ab*/
+    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76669a*/
+    ComPtr::Release(&v14); /*0x76669e*/
+    ((void (__thiscall *)(void ***))v16[2])(&v16); /*0x7666ab*/
   }
   while ( v3 ); /*0x7666b0*/
   v18 = 0; /*0x7666b8*/
   while ( v3 ) /*0x7666c0*/
   {
-    if ( !((uint8_t (*)(void ***))v16[1])(&v16) ) /*0x7666ce*/
+    if ( !((unsigned __int8 (__thiscall *)(void ***))v16[1])(&v16) ) /*0x7666ce*/
       break; /*0x7666d3*/
     v7 = v17[1] + 8 * v18; /*0x7666e8*/
-    ((ComPtr *)(&v14))->Constructor(); /*0x7666eb*/
-    v14 = (void **)(&vt_rc_ptr); /*0x7666f0*/
-    ((ComPtr *)(&v14))->Set(*(unsigned int *)(v7 + 4)); /*0x7666fc*/
-    if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766708*/
+    ComPtr::Constructor(&v14); /*0x7666eb*/
+    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7666f0*/
+    ComPtr::Set(&v14, *(_DWORD *)(v7 + 4)); /*0x7666fc*/
+    if ( (v2 & v15[2]) == 0 ) /*0x766708*/
     {
       v8 = v12 + 8; /*0x766710*/
-      if ( (*(int (**)(unsigned int *, char *))(*v15 + 12))( (unsigned int *)(v15), v12 + 8) != 2 ) /*0x76671a*/
+      if ( (*(int (__thiscall **)(_DWORD *, char *))(*v15 + 12))(v15, v12 + 8) != 2 ) /*0x76671a*/
       {
-v9 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x76672d*/ v15, (void **)(&v13), (char *)(v8), (void **)(&v11));
-
-
-
-
-        ((WideString *)(&v11))->Reassign_Alt( (const wchar_t **)(v9)); /*0x766735*/
-        ((DeleteAndZero*)&v13)->Alt(); /*0x76673e*/
+        v9 = (const wchar_t **)(*(int (__thiscall **)(_DWORD *, void **, char *, void **))(*v15 + 16))( /*0x76672d*/
+                                 v15,
+                                 &v13,
+                                 v8,
+                                 &v11);
+        WideString::Reassign_Alt(&v11, v9); /*0x766735*/
+        DeleteAndZero::Alt(&v13); /*0x76673e*/
         --v3; /*0x766747*/
-        (unsigned int)(v2)|= v15[2]; /*0x766748*/
+        v2 |= v15[2]; /*0x766748*/
       }
     }
-    v14 = (void **)(&vt_rc_ptr); /*0x76674f*/
-    ((ComPtr *)(&v14))->Release(); /*0x766753*/
-    ((void (*)(void ***))v16[2])(&v16); /*0x766760*/
+    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76674f*/
+    ComPtr::Release(&v14); /*0x766753*/
+    ((void (__thiscall *)(void ***))v16[2])(&v16); /*0x766760*/
   }
-  ((WideString *)(a2))->AssignFromPtr((const wchar_t **)&v11); /*0x766776*/
-  v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x76677f*/
-  ((DeleteAndZero*)&v11)->Alt(); /*0x766787*/
+  WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
+  v16 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76677f*/
+  DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
-
 }
 }
 // 0x7714B0
 namespace gamemd {
 void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
 {
-
   int v5; // eax
   int v6; // ebx
   int v7; // eax
   int v8; // eax
   int v9; // edi
   int v10; // edx
-  int vtable0; // ebx
+  int vfptr; // ebx
   int v12; // eax
   int v13; // eax
   int v14; // ecx
@@ -143,60 +140,60 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   int v16; // eax
   DeleteAndZero v17; // [esp+Ch] [ebp-10h] BYREF
 
-  v5 = *(unsigned int *)this->isUseless; /*0x7714c4*/
+  v5 = *(_DWORD *)this->isUseless; /*0x7714c4*/
   v6 = v5 - 1; /*0x7714c6*/
-  if ( v5 > (&this->targetLaserTimer)[0] ) /*0x7714c9*/
+  if ( v5 > this->targetLaserTimer[0] ) /*0x7714c9*/
   {
     do /*0x77150b*/
     {
-      v7 = *(unsigned int *)this->isUseless; /*0x7714cb*/
+      v7 = *(_DWORD *)this->isUseless; /*0x7714cb*/
       if ( v6 < v7 ) /*0x7714d3*/
       {
         v8 = v7 - 1; /*0x7714d5*/
         v9 = v6; /*0x7714d6*/
-        for ( *(unsigned int *)this->isUseless = v8; v9 < *(unsigned int *)this->isUseless; ++v9 ) /*0x7714e0*/
-          ((String*)/*0x7714f0*/
-            (String *)((&this->targetLaserTimer)[2] + 4 * v9))->Reassign(/*0x7714f0*/ (const char **)((&this->targetLaserTimer)[2] + 4 * v9 + 4));
+        for ( *(_DWORD *)this->isUseless = v8; v9 < *(_DWORD *)this->isUseless; ++v9 ) /*0x7714e0*/
+          String::Reassign( /*0x7714f0*/
+            (String *)(this->targetLaserTimer[2] + 4 * v9),
+            (const char **)(this->targetLaserTimer[2] + 4 * v9 + 4));
       }
       v10 = v6--; /*0x771506*/
     }
-    while ( v10 > (&this->targetLaserTimer)[0] ); /*0x77150b*/
+    while ( v10 > this->targetLaserTimer[0] ); /*0x77150b*/
   }
-  if ( !(&this->targetLaserTimer)[0] ) /*0x77150d*/
-    LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
-  unknown_libname_73( (void *)(&v17)); /*0x771522*/
-  vtable0 = (int)(this->vtable1); /*0x77152b*/
-  ((DeleteAndZero*)&v17)->Alt2(); /*0x77153b*/
-  v12 = (&this->primaryFacing)[6 * a2 + 1]; /*0x771540*/
+  if ( !this->targetLaserTimer[0] ) /*0x77150d*/
+    IDA_LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
+  unknown_libname_73(&v17); /*0x771522*/
+  vfptr = this->vfptr; /*0x77152b*/
+  DeleteAndZero::Alt2(&v17); /*0x77153b*/
+  v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
-    v13 = v12 == 1 ? 0 : Random::Range((Random *)(&Randomizer_Global), 0, v12 - 1);
-    if ( Map_Remove_770CE0(vtable0, *(unsigned int *)((&this->barrelFacing)[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
+    v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
+    if ( Map_Remove_770CE0(vfptr, *(_DWORD *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
-      if ( !(uint8_t)gamemd::Audio::IsPlaying() ) /*0x77157c*/
+      if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/
       {
-        (&this->secondaryFacing)[3] = TimerGetTicks(); /*0x771598*/
-        (&this->secondaryFacing)[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
-        (&this->secondaryFacing)[5] = a4; /*0x7715a5*/
+        this->secondaryFacing[3] = Timer::GetTicks(); /*0x771598*/
+        this->secondaryFacing[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
+        this->secondaryFacing[5] = a4; /*0x7715a5*/
       }
-      v14 = *(unsigned int *)this->unknown_short_3C8; /*0x7715a8*/
-      if ( *(unsigned int *)this->isUseless < v14 /*0x7715d9*/
-        || ((&this->isSinking)[0] || !v14)
-        && (v15 = *(unsigned int *)this->isALoaner, v15 > 0)
-        && (*(uint8_t (**)(int *, int, unsigned int))((&this->targetLaserTimer)[1] + 8))(
-             (int *)&(&this->targetLaserTimer)[1],
+      v14 = *(_DWORD *)this->unknown_short_3C8; /*0x7715a8*/
+      if ( *(_DWORD *)this->isUseless < v14 /*0x7715d9*/
+        || (this->isSinking[0] || !v14)
+        && (v15 = *(_DWORD *)this->isALoaner, v15 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(this->targetLaserTimer[1] + 8))(
+             &this->targetLaserTimer[1],
              v14 + v15,
              0) )
       {
-        v16 = *(unsigned int *)this->isUseless; /*0x7715e0*/
-        *(unsigned int *)this->isUseless = v16 + 1; /*0x7715eb*/
-        ((String *)((String *)((&this->targetLaserTimer)[2] + 4 * v16)))->Reassign((const char **)&v17); /*0x7715f4*/
+        v16 = *(_DWORD *)this->isUseless; /*0x7715e0*/
+        *(_DWORD *)this->isUseless = v16 + 1; /*0x7715eb*/
+        String::Reassign((String *)(this->targetLaserTimer[2] + 4 * v16), (const char **)&v17); /*0x7715f4*/
       }
       if ( a3 ) /*0x7715ff*/
-        ++(&this->targetLaserTimer)[0]; /*0x771601*/
+        ++this->targetLaserTimer[0]; /*0x771601*/
     }
   }
-  j_DeleteAndZero( (void *)((ObjectClass *)&v17)); /*0x77160b*/
-
+  DeleteAndZero((ObjectClass *)&v17); /*0x77160b*/
 }
 }

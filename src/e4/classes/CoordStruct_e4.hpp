@@ -10,8 +10,8 @@ struct CoordStruct {
     int X;  // 0x0
     int Y;  // 0x4
     int Z;  // 0x8
-    void* vfptr;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    void* vfptr;  // 0x0 (no offset truth)
     unsigned int * Set2(void* aP1, AbstractClass * aP2);  // 0x642740
 };
 #endif  // GAMEMD_E4_MATH_ALIASES (CoordStruct)

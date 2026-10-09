@@ -16,7 +16,6 @@ struct Lobby {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    unsigned int Network;
 // --- flat members (END) ---
     int BuildPlayerList();
     int InvalidatePlayerSlots(HWND hDlg);

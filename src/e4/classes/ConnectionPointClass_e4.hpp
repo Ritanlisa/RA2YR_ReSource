@@ -16,20 +16,10 @@ struct ConnectionPointClass {
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
+    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
+    bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
-    unsigned int ConnectionPointClass_field_0x04;
-    unsigned int ConnectionPointClass_field_0x08;
-    unsigned int ConnectionPointClass_field_0x0C;
-    unsigned int ConnectionPointClass_field_0x10;
-    unsigned int ConnectionPointClass_field_0x14;
-    unsigned int ConnectionPointClass_field_0x18;
-    unsigned int ConnectionPointClass_field_0x1C;
-    unsigned int ConnectionPointClass_field_0x20;
-    unsigned int *__pad_0;
-    unsigned int u32_24;
-    unsigned int u32_28;
-    unsigned int u32_29;
 // --- flat members (END) ---
     int EnumConnections(int a2);  // G42.41c: truth 0x4A0700
     int GetConnectionInterface(unsigned int * a1, int a2);

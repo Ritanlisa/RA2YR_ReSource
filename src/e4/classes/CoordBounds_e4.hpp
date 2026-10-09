@@ -6,6 +6,9 @@
 
 namespace gamemd {
 struct CoordBounds {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static __int64 Constructor(void *aP1, int a2, int a3);  // 0x403870 raw: __int64 Constructor(CoordBounds*, int, int)
 };

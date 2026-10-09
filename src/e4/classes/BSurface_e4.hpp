@@ -9,16 +9,11 @@ struct BSurface {
     void* vtable1;  // 0x0
     void* Width;  // 0x4
     int Height;  // 0x8
+    bool q00A;  // 0xA
     bool q00B;  // 0xB
     int LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
     unsigned char* Buffer;  // 0x14
-    unsigned int XSurface;
-    unsigned int q044;
-    unsigned int u32_18;
-    unsigned int u32_1C;
-    unsigned int u32_24;
-    unsigned int u32_4;
 // --- flat members (END) ---
     _DWORD * Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a6_1);  // 0x410CE0
     bool CreateTripleBuffer();  // 0x7B8C60
@@ -28,10 +23,7 @@ struct BSurface {
     BSurface * ScalarDtor(char * Block, char a2);  // 0x411650
     char Stub(int a1, int a2);
     unsigned int q_4;  // +0x4 flat supply (P5 provenance)
-    // --- W16G3 supply (BEGIN) ---
     unsigned int q058;  // @0x7b8cd9 (W16G3 raw-usage vocab)
     unsigned int u32_6C;  // @0x7b8d16 (W16G3 raw-usage vocab)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

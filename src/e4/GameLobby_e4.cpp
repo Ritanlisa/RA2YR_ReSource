@@ -50,7 +50,7 @@ char GameLobby_Setup(HWND hDlg, void * a2)
     }
     DlgItem = GetDlgItem(hDlg, v4); /*0x5ea201*/
     EnableWindow(DlgItem, 0); /*0x5ea206*/
-    SetupSkirmishPlayerSlots( (void *)((void *)(hDlg)), (void *)((void *)i), 0); /*0x5ea20e*/
+    SetupSkirmishPlayerSlots(hDlg, (void *)i, 0); /*0x5ea20e*/
   }
   if ( a2 )
   {
@@ -89,6 +89,6 @@ char GameLobby_Setup(HWND hDlg, void * a2)
   }
   v7 = GetDlgItem(hDlg, v6); /*0x5ea285*/
   EnableWindow(v7, 1); /*0x5ea28a*/
-  return SetupSkirmishPlayerSlots( (void *)((void *)(hDlg)), (void *)((void *)(a2)), (HWND)1); /*0x5ea297*/
+  return SetupSkirmishPlayerSlots(hDlg, a2, (HWND)1); /*0x5ea297*/
 }
 }

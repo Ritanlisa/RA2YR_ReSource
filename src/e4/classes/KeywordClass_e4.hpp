@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct KeywordClass {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static int FindOrCreate(void *aP1);  // 0x41CEF0 raw: int KeywordClass_FindOrCreate(char*)
 };

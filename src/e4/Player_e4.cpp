@@ -18,53 +18,50 @@
 namespace gamemd {
 void Player::BuildListString(wchar_t * Destination)
 {
-
   wchar_t **v2; // edi
   wchar_t *v3; // esi
   wchar_t **v4; // eax
   wchar_t *v5; // eax
   DeleteAndZero v6; // [esp+Ch] [ebp-Ch] BYREF
 
-  *(unsigned short *)Destination = 0; /*0x5e8dc8*/
+  *(_WORD *)Destination = 0; /*0x5e8dc8*/
   v2 = (wchar_t **)dword_A8DA90; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
     v3 = *v2; /*0x5e8dd2*/
-    unknown_libname_74( (void *)(&v6)); /*0x5e8dd8*/
+    unknown_libname_74(&v6); /*0x5e8dd8*/
     if ( !v3 /*0x5e8e17*/
       || v3 == (wchar_t *)g_HouseClass_ObserverFlags
       || v3 == (wchar_t *)g_Lobby_PlayerCount
-      || v3 == (wchar_t *)(g_Lobby_PlayerReady)
+      || v3 == g_Lobby_PlayerReady
       || v3 == (wchar_t *)g_Lobby_MaxPlayers
       || v3 == (wchar_t *)g_Lobby_PlayerTeam
       || v3 == (wchar_t *)g_Lobby_PlayerSide
       || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
-      GetPlayerTypeString( (gamemd::String *)((char **)&v6.DeleteAndZero_field_0x04), (wchar_t *)(v3)); /*0x5e8e2b*/
-      v4 = CharStringToWide((gamemd::ObjectClass *)((wchar_t **)&v6.DeleteAndZero_field_0x08), (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
-      ((WideString *)((void **)&v6))->Reassign_Alt((const wchar_t **)v4); /*0x5e8e42*/
-      ((DeleteAndZero*)(DeleteAndZero *)&v6.DeleteAndZero_field_0x08)->Alt(); /*0x5e8e4b*/
-      j_DeleteAndZero( (void *)((ObjectClass *)&v6.DeleteAndZero_field_0x04)); /*0x5e8e54*/
+      GetPlayerTypeString((char **)&v6.DeleteAndZero_field_0x04, v3); /*0x5e8e2b*/
+      v4 = CharStringToWide((wchar_t **)&v6.DeleteAndZero_field_0x08, (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
+      WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v6.DeleteAndZero_field_0x08); /*0x5e8e4b*/
+      DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
     }
     else
     {
-      ((WideString *)((void **)&v6))->Assign_Alt( (wchar_t *)(v3)); /*0x5e8e1e*/
+      WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
     }
-    v5 = (wchar_t *)(((WideString*)(wchar_t **)&v6)->GetOrEmpty());
+    v5 = WideString::GetOrEmpty((wchar_t **)&v6); /*0x5e8e5d*/
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
-    wcscat((wchar_t *)Destination,(const wchar_t *)(asc_8304FC)); /*0x5e8e6f*/
-    ((DeleteAndZero*)&v6)->Alt(); /*0x5e8e7b*/
+    wcscat((wchar_t *)Destination, asc_8304FC); /*0x5e8e6f*/
+    DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x5e8e89*/
-
 }
 } // namespace gamemd
 // 0x5E8BF0
 namespace gamemd {
 wchar_t * Player::FindByName(wchar_t * String2)
 {
-
   int v3; // ebp
   int v4; // esi
   const wchar_t *v5; // edi
@@ -79,8 +76,8 @@ wchar_t * Player::FindByName(wchar_t * String2)
     return (wchar_t *)g_Lobby_PlayerSide; /*0x5e8c62*/
   if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, (const wchar_t *)String2) ) /*0x5e8c74*/
     return (wchar_t *)g_Lobby_PlayerColor; /*0x5e8c80*/
-  if ( !wcscmp((const wchar_t *)(g_Lobby_PlayerReady), (const wchar_t *)String2) ) /*0x5e8c92*/
-return (wchar_t *)g_Lobby_PlayerReady; /*0x5e8c9e*/
+  if ( !wcscmp(g_Lobby_PlayerReady, (const wchar_t *)String2) ) /*0x5e8c92*/
+    return g_Lobby_PlayerReady; /*0x5e8c9e*/
   if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, (const wchar_t *)String2) ) /*0x5e8caf*/
     return (wchar_t *)g_Lobby_MaxPlayers; /*0x5e8cbb*/
   v3 = dword_A8DA84; /*0x5e8cc5*/
@@ -89,25 +86,22 @@ return (wchar_t *)g_Lobby_PlayerReady; /*0x5e8c9e*/
     return 0; /*0x5e8ced*/
   while ( 1 ) /*0x5e8cd8*/
   {
-    v5 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v4]; /*0x5e8cd8*/
+    v5 = (const wchar_t *)dword_A8DA78[v4]; /*0x5e8cd8*/
     if ( !wcscmp(v5, (const wchar_t *)String2) ) /*0x5e8cdc*/
       break; /*0x5e8cdc*/
     if ( ++v4 >= v3 ) /*0x5e8ceb*/
       return 0; /*0x5e8ceb*/
   }
   return (wchar_t *)v5; /*0x5e8c0e*/
-
 }
 } // namespace gamemd
 // 0x5E9440
 namespace gamemd {
 int Player::IsObserver()
 {
-
   return this /*0x5e9461*/
       && (this == (Player *)g_Lobby_PlayerTeam
        || this == (Player *)g_Lobby_PlayerSide
        || this == (Player *)g_Lobby_PlayerColor);
-
 }
 } // namespace gamemd

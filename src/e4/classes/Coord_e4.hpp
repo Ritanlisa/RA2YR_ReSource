@@ -25,39 +25,36 @@ struct Coord {
     unsigned int q050;  // 0x50
     unsigned char q054;  // 0x54
     unsigned char q058;  // 0x58
+    unsigned char q05C;  // 0x5C
     unsigned int u32_60;  // 0x60
     Coord * q064;  // 0x64
     Coord * q068;  // 0x68
     unsigned char q06C;  // 0x6C
+    unsigned char q070;  // 0x70
     unsigned int q080;  // 0x80
     unsigned char q084;  // 0x84
     unsigned char q088;  // 0x88
+    unsigned char q08C;  // 0x8C
     unsigned int u32_9C;  // 0x9C
     unsigned int q0A0;  // 0xA0
+    unsigned int q0A4;  // 0xA4
     unsigned int u32_B0;  // 0xB0
     unsigned int u32_B4;  // 0xB4
     unsigned char q0B8;  // 0xB8
+    unsigned char q0BC;  // 0xBC
     unsigned int u32_E0;  // 0xE0
+    unsigned char q0E4;  // 0xE4
     Coord * q100;  // 0x100
     Coord * q104;  // 0x104
     unsigned char q108;  // 0x108
+    unsigned char q10C;  // 0x10C
+    unsigned int u32_114;  // 0x114
     unsigned int q128;  // 0x128
     unsigned char q12C;  // 0x12C
     unsigned int q130;  // 0x130
     unsigned int q134;  // 0x134
     unsigned char q138;  // 0x138
     void* q13C;  // 0x13C
-    unsigned int *Coord_field_0x2;
-    unsigned int Coord_field_0x8;
-    unsigned int *__pad_0;
-    unsigned int *__pad_C;
-    unsigned int q01C;
-    unsigned int u32_1488;
-    unsigned int u32_1490;
-    unsigned int u32_1498;
-    unsigned int u32_14A4;
-    unsigned int Coord_field_0x13C;  // 0x13C
-    unsigned int u32_14A8;
 // --- flat members (END) ---
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
     unsigned int * ToCell(unsigned int *a2);  // G57w10-S raw 0x00413A30 IUnknown 占位清除

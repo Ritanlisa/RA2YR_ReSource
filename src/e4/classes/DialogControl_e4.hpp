@@ -11,15 +11,9 @@ struct DialogControl {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int *__pad_0;
-    unsigned int u32_1C;
-    unsigned int u32_1E;
-    unsigned int u32_40;
-    unsigned int u32_5C;
-    unsigned int u32_64;
-    unsigned int u32_68;
-    void* Image;  // 0x0 (no offset truth)
+    bool q00F;  // 0xF
 // --- flat members (END) ---
+    void* Image;  // 0x0 (no offset truth)
     int Hide();
     int IsHidden();
     int Show(void *a1, void *a2);

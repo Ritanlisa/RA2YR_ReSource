@@ -10,7 +10,6 @@
 namespace gamemd {
 unsigned int Time::GetElapsedMS()
 {
-
   DWORD Time; // eax
   unsigned int v1; // ecx
 
@@ -20,18 +19,16 @@ unsigned int Time::GetElapsedMS()
   else
     v1 = 3 * (Time - dword_8B3F14 - 1); /*0x4e24b3*/
   return v1 / 0x32; /*0x4e24c2*/
-
 }
 } // namespace gamemd
 // 0x777AC0
 namespace gamemd {
 int Time::FormatDate(char * Buffer)
 {
-
   int result; // eax
   struct _SYSTEMTIME SystemTime; // [esp+4h] [ebp-10h] BYREF
 
-  result = FileTimeToSystemTime((const FILETIME *)(&FileTime), &SystemTime); /*0x777ad0*/
+  result = FileTimeToSystemTime(&FileTime, &SystemTime); /*0x777ad0*/
   if ( result ) /*0x777ad8*/
     return sprintf( /*0x777b20*/
              Buffer,
@@ -43,6 +40,5 @@ int Time::FormatDate(char * Buffer)
              SystemTime.wMinute,
              SystemTime.wSecond);
   return result; /*0x777b28*/
-
 }
 } // namespace gamemd

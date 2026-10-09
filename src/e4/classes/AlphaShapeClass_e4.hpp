@@ -16,18 +16,11 @@ struct AlphaShapeClass {
     bool IsAllocated;  // 0x13
     unsigned int u32_14;  // 0x14
     unsigned char q018;  // 0x18
+    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
+    bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
-    unsigned int AlphaShapeClass_field_0x04;
-    unsigned int AlphaShapeClass_field_0x08;
-    unsigned int AlphaShapeClass_field_0x0C;
-    unsigned int AlphaShapeClass_field_0x24;
-    unsigned int *__pad_0;
-    unsigned int u32_28;
-    unsigned int u32_2C;
-    unsigned int u32_34;
-    unsigned int u32_3C;
 // --- flat members (END) ---
     AlphaShapeClass * SDDTOR(char a2, int aP0, int aP1);
     int SD_vt05(AbstractClass * aP0, int aP1);

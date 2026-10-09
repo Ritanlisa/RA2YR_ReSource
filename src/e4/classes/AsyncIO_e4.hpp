@@ -21,11 +21,8 @@ struct AsyncIO {
     unsigned int u32_5C;  // 0x5C
     unsigned int q064;  // 0x64
     unsigned int q080;  // 0x80
+    unsigned int q118;  // 0x118
     unsigned int q280;  // 0x280
-    unsigned int q0242;
-    unsigned int u32_180;
-    unsigned int u32_1C6;
-    unsigned int Timer;
 // --- flat members (END) ---
     char Shutdown();
     int Read();

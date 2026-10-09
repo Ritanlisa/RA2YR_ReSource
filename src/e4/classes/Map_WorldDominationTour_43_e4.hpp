@@ -19,7 +19,6 @@ struct Map_WorldDominationTour_43 {
     wchar_t * ddtor(void *a1_1);  // 0x76A4F0
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x76A770
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);  // 0x769D30
-    unsigned char m_1[4];  // 0x1
     int Read(unsigned int * a2, void *a2_2);  // 0x76A520
     unsigned int Write(int a2);  // 0x76A570
 };

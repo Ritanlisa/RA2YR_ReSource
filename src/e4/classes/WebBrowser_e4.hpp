@@ -8,17 +8,9 @@ struct WebBrowser {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int u32_4;  // 0x4
-    unsigned int q8;  // 0x8
+    void* q008;  // 0x8
     unsigned char q00C;  // 0xC
     void* q010;  // 0x10
-    unsigned int WebBrowser_field_0x8;
-    unsigned int *__pad_0;
-    unsigned int u32_40C;
-    unsigned int u32_42;
-    unsigned int q008;
-    unsigned int Debug;
-    unsigned int Dialog;
-    unsigned int field_8;
 // --- flat members (END) ---
     int LoadURLFromRegistry(const char * a2);  // 0x773600
     int ShowDialog();  // 0x773E90

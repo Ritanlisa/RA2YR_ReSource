@@ -13,11 +13,10 @@ struct MSPCXAnim {
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
     bool q00D;  // 0xD
+    bool q00E;  // 0xE
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned int u32_29;
-    unsigned char __pad_0;  // 0x0
 // --- flat members (END) ---
     MSPCXAnim * QueryInterface(char a2, int a3);
     int Stub();

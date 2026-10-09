@@ -10,9 +10,7 @@
 namespace gamemd {
 int EnumConnectionsClass::Skip(int a1)
 {
-
-  *((unsigned int *)a1 + 7) = 0; /*0x4a0184*/
+  *((_DWORD *)a1 + 7) = 0; /*0x4a0184*/
   return 0; /*0x4a018d*/
-
 }
 } // namespace gamemd

@@ -13,9 +13,16 @@ struct DDraw {
     unsigned int q064;  // 0x64
     unsigned int u32_70;  // 0x70
     unsigned int u32_74;  // 0x74
+    unsigned int u32_7C;  // 0x7C
     unsigned int q100;  // 0x100
-    unsigned int q18000;
-    unsigned int Debug;
+    unsigned int q274;  // 0x274
+    unsigned int q278;  // 0x278
+    unsigned int q628;  // 0x628
+    unsigned int u32_2664;  // 0x2664
+    void* q18000;  // 0x18000
+    void* q98304;  // 0x98304
+    void* q623364;  // 0x623364
+    void* q6435684;  // 0x6435684
 // --- flat members (END) ---
     char CheckCapabilities();
     int CapabilityCheck();

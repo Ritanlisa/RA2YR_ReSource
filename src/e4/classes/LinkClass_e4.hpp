@@ -10,7 +10,7 @@ struct LinkClass {
     void* vtable1;  // 0x0
     LinkClass* m_Next;  // 0x4
     LinkClass* m_Prev;  // 0x8
-    unsigned int *__pad_0;
+    char LinkClass_field_0C[4];  // 0xC
 // --- flat members (END) ---
     LinkClass * Destru_vt00(unsigned int * Block, char a2);
     int Destroy(void *a1);

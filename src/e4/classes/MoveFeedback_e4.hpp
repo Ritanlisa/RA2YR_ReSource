@@ -26,15 +26,10 @@ struct MoveFeedback {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
+// --- flat members (END) ---
     unsigned int PointerToIndex(int a2);  // 0x40B670 G42.33 b3 supplied-body sync
     int Show(int a2);  // 0x40B6F0 G42.33 b3 supplied-body sync
     int FindItem(unsigned int * a2);  // 0x40B930 G42.33 b3 supplied-body sync
-// --- flat members (END) ---
     _DWORD * Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5);
     DynamicVector * QueryInterface(char a2, int a1, int a3, int a4, int a5);
     char AddRef(int a2);

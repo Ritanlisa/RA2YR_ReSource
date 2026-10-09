@@ -9,18 +9,21 @@ namespace gamemd {
 struct ControlClass;  // fix_fwd_type_supply
 struct String {
 // --- flat members (BEGIN) ---
-    unsigned int q4;  // 0x4
-    unsigned int u16_6;  // 0x6
-    unsigned int q8;  // 0x8
+    unsigned int u32_1;  // 0x1
+    ObjectClass * ptr_4;  // 0x4
+    unsigned int u32_6;  // 0x6
+    ObjectClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_14;  // 0x14
     unsigned int q018;  // 0x18
+    unsigned int u32_1C;  // 0x1C
     unsigned int q024;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_2D;  // 0x2D
     unsigned int u32_34;  // 0x34
     unsigned int u32_38;  // 0x38
+    unsigned int u32_44;  // 0x44
     unsigned int q054;  // 0x54
     unsigned int u32_70;  // 0x70
     unsigned int q084;  // 0x84
@@ -34,11 +37,11 @@ struct String {
     unsigned int q1908;  // 0x1908
     unsigned int q5494;  // 0x5494
     unsigned int q6408;  // 0x6408
-    unsigned int *__pad_0;
-    unsigned int *m_3;
-    void* ptr_88;
-    void* ptr_4;
-    void* ptr_8;
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q17758713478;  // 0x17758713478
+    unsigned int q1612096550008;  // 0x1612096550008
+    unsigned int q388267565711368;  // 0x388267565711368
 // --- flat members (END) ---
     int AssignWideToChar(char *aP1, char *aP2);  // 0x49B760
     char * AllocAndCopy(RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0 thiscall (this=Destination, G42.33 b7: returns char*)

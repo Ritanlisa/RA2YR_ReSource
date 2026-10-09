@@ -13,23 +13,22 @@
 namespace gamemd {
 bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
 {
-
   const HANDLE *v3; // esi
   BOOL v5; // eax
 
-  v3 = (const HANDLE *)((unsigned int *)this + 7); /*0x664614*/
-  Debug::Log("Wait_For_Router_Shutdown - hRouterProcess = %d\n"); /*0x66461d G57c1: IDA 0x66461d push offset aWaitForRouterS*/
+  v3 = (const HANDLE *)(this + 7); /*0x664614*/
+  Debug::Log(); /*0x66461d*/
   if ( !*v3 ) /*0x664629*/
     return 1; /*0x664629*/
   if ( WaitForMultipleObjects(1u, v3, 0, dwMilliseconds) != 258 ) /*0x664644*/
   {
-    Debug::Log("Router not running\n"); /*0x6646a7 G57c1: IDA 0x6646a7 push offset aRouterNotRunni*/
+    Debug::Log(); /*0x6646a7*/
     *v3 = 0; /*0x6646af*/
     return 1; /*0x6646b5*/
   }
   if ( !aP2 ) /*0x66464c*/
     return 0; /*0x66464e*/
-  Debug::Log("***Router process still running - shutting it down***\n"); /*0x66465a G57c1: IDA 0x66465a push offset aRouterProcessS*/
+  Debug::Log(); /*0x66465a*/
   v5 = TerminateProcess(*v3, 0); /*0x664667*/
   if ( v5 ) /*0x664671*/
   {
@@ -39,9 +38,8 @@ bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
   else
   {
     GetLastError(); /*0x664674*/
-    Debug::Log("Failed to shut down router - error code %d - %s\n"); /*0x664680 G57c1: IDA 0x664680 push offset aFailedToShutDo*/
+    Debug::Log(); /*0x664680*/
     return 0; /*0x66468c*/
   }
-
 }
 } // namespace gamemd

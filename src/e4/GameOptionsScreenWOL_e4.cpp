@@ -23,7 +23,7 @@ int sub_798340()
   HANDLE *v0; // esi
   BOOL result; // eax
 
-  v0 = (HANDLE *)(&Handles);
+  v0 = &Handles; /*0x798348*/
   do /*0x79835b*/
     result = ResetEvent(*v0++); /*0x798350*/
   while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
@@ -40,8 +40,8 @@ char sub_72C060()
   if ( !byte_B0FD2D ) /*0x72c067*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c073*/
-      dword_B0FA4C = (unsigned int)(LoadFileSHP((char *)(off_844DA4),(bool *)((bool *)&byte_B0FD2C))); /*0x72c085*/
-    result = LoadPaletteSimple( (char *)(off_844DA8), (int *)(&dword_B0FD30), (unsigned int *)(&dword_B0FD34)); /*0x72c09a*/
+      dword_B0FA4C = LoadFileSHP(off_844DA4, (bool *)&byte_B0FD2C); /*0x72c085*/
+    result = LoadPaletteSimple(off_844DA8, &dword_B0FD30, &dword_B0FD34); /*0x72c09a*/
     byte_B0FD2D = 1; /*0x72c09f*/
   }
   return result; /*0x72c0a6*/
@@ -54,32 +54,32 @@ void sub_72C0B0()
 {
   void *v1; // esi
 
-  if ( &byte_B0FD2D ) /*0x72c0ba*/
+  if ( g_BuildingLoadQueue_Array.__pad_F70[1405] ) /*0x72c0ba*/
   {
-    if ( &byte_B0FD2C ) /*0x72c0c2*/
+    if ( g_BuildingLoadQueue_Array.__pad_F70[1404] ) /*0x72c0c2*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[668]; /*0x72c0c5*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[668] ) /*0x72c0cd*/
+      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[668] ) /*0x72c0cd*/
       {
-        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[668]))->Destroy(); /*0x72c0d1*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[668]); /*0x72c0d1*/
         RA2_OPDEL(v1); /*0x72c0d7*/
       }
-      &byte_B0FD2C = 0; /*0x72c0df*/
+      g_BuildingLoadQueue_Array.__pad_F70[1404] = 0; /*0x72c0df*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[668] = 0; /*0x72c0eb*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1408] ) /*0x72c0f3*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[668] = 0; /*0x72c0eb*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1408] ) /*0x72c0f3*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1408]); /*0x72c0f6*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1408] = 0; /*0x72c0fe*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1408] = 0; /*0x72c0fe*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412] ) /*0x72c10c*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1412] ) /*0x72c10c*/
     {
-      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1412])( /*0x72c112*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412],
+      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1412])( /*0x72c112*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1412],
         1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412] = 0; /*0x72c114*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1412] = 0; /*0x72c114*/
     }
   }
-  &byte_B0FD2D = 0; /*0x72c11a*/
+  g_BuildingLoadQueue_Array.__pad_F70[1405] = 0; /*0x72c11a*/
 }
 } // namespace gamemd

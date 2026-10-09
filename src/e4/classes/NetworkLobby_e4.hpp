@@ -5,12 +5,11 @@
 
 namespace gamemd {
 struct NetworkLobby {
-    static int UpdatePlayerList();  // 0x5DB9B0 raw: int NetworkLobby_UpdatePlayerList() [cdecl no-this]  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int UpdatePlayerList(void *aP1);  // 0x5DB9B0 1-arg ptr site form (NetworkLobby_e4 L1894)  // G57w10 r5 D-classbody supply (raw-anchored)
-
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    unsigned char __pad_0;  // 0x0
+    unsigned int u32_1;  // 0x1
+    unsigned int u32_2;  // 0x2
+    unsigned int u32_3;  // 0x3
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
@@ -20,13 +19,11 @@ struct NetworkLobby {
     unsigned char u8_1A;  // 0x1A
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
-    unsigned char NetworkLobby_field_0x8[1];  // 0x8
     unsigned int u32_24;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned char q038;  // 0x38
     unsigned char q03C;  // 0x3C
     unsigned char q03D;  // 0x3D
-    unsigned char __pad_3D[652];  // 0x3D
     unsigned int q040;  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48
@@ -60,13 +57,11 @@ struct NetworkLobby {
     unsigned int q688;  // 0x688
     void* q6AC;  // 0x6AC
     void* q6B0;  // 0x6B0
+// --- flat members (END) ---
+    static int UpdatePlayerList();  // 0x5DB9B0 raw: int NetworkLobby_UpdatePlayerList() [cdecl no-this]  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int UpdatePlayerList(void *aP1);  // 0x5DB9B0 1-arg ptr site form (NetworkLobby_e4 L1894)  // G57w10 r5 D-classbody supply (raw-anchored)
     unsigned int MessageHandler_ph;  // w18j3: filler renamed (no offset truth; canon NetworkLobby::MessageHandler is a method)
     static unsigned int MessageHandler(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-    unsigned int Debug;
-    unsigned int Dialog;
-    unsigned int Timer;
-    unsigned int Event;
-// --- flat members (END) ---
     int MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350
          INT_PTR DlgProc_Wnd(HWND hDlg, UINT msg, int nIDDlgItem, unsigned int lParam);  // 0x5DE520 (G42.35f: INT_PTR type vs DlgProc member name collision fixed)

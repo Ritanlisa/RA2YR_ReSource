@@ -10,17 +10,20 @@ namespace gamemd {
 #define GAMEMD_G2_ThemeClass_DEF 1
 struct ThemeClass {
 // --- flat members (BEGIN) ---
+    char ThemeClass_field_00[4];  // 0x0
     AbstractClass * ptr_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned char q010;  // 0x10
+    unsigned char u8_11;  // 0x11
     void* q014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
     void* q020;  // 0x20
+    unsigned int u32_21;  // 0x21
     void* q024;  // 0x24
-    unsigned int m_Name;
-    unsigned int Audio;
+    char ThemeClass_field_28[4];  // 0x28
+    char ThemeClass_field_2C[4];  // 0x2C
 // --- flat members (END) ---
     static int ClearQueues();
     char ReadThemeEntry(unsigned __int8 *** a2);

@@ -147,47 +147,46 @@ int DamageArea::ApplyScatter()
 namespace gamemd {
 int DamageArea::CheckOccupancyEligibility()
 {
-
-  unsigned int *v2; // esi
-  int (***v3)(unsigned int, void *, int *); // ecx
+  _DWORD *v2; // esi
+  int (__stdcall ***v3)(_DWORD, void *, int *); // ecx
   int v4; // eax
   int v5; // esi
   int v8; // [esp+18h] [ebp-8h] BYREF
   int v9; // [esp+1Ch] [ebp-4h] BYREF
 
-  v2 = (unsigned int *)this->u32_C; /*0x4d0187*/
+  v2 = (_DWORD *)this->u32_C; /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
-    if ( (*(int (**)(unsigned int))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
+    if ( (*(int (__thiscall **)(_DWORD))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
     {
-      if ( (*(int (**)(unsigned int *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
+      if ( (*(int (__stdcall **)(_DWORD *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
         return 0; /*0x4d01b0*/
     }
     else
     {
-      v2 = (unsigned int *)(0); /*0x4d019a*/
+      v2 = 0; /*0x4d019a*/
     }
   }
   if ( this->u32_51 || !this->u32_5C ) /*0x4d01c1*/
     return 1; /*0x4d01c6*/
-  if ( !v2 || !*(unsigned char *)(v2[433] + 3595) ) /*0x4d01d6*/
+  if ( !v2 || !*(_BYTE *)(v2[433] + 3595) ) /*0x4d01d6*/
   {
-    v3 = (int (***)(unsigned int, void *, int *))this->u32_C; /*0x4d01e4*/
+    v3 = (int (__stdcall ***)(_DWORD, void *, int *))this->u32_C; /*0x4d01e4*/
     v4 = 0; /*0x4d01e7*/
     v8 = 0; /*0x4d01eb*/
     if ( v3 ) /*0x4d01ef*/
     {
-      v5 = (**v3)((unsigned int)v3, &unk_822410, &v9); /*0x4d0204*/
+      v5 = (**v3)(v3, &unk_822410, &v9); /*0x4d0204*/
       if ( v5 >= 0 ) /*0x4d0208*/
       {
         v9 = v9; /*0x4d021c*/
-        Release3COM((gamemd::IUnknown **)((ObjectClass *)&v8)); /*0x4d0224*/
+        Release3COM((ObjectClass *)&v8); /*0x4d0224*/
         v4 = v9; /*0x4d0229*/
         v8 = v9; /*0x4d022c*/
       }
       else
       {
-        Release3COM((gamemd::IUnknown **)((ObjectClass *)&v8)); /*0x4d020e*/
+        Release3COM((ObjectClass *)&v8); /*0x4d020e*/
         v4 = 0; /*0x4d0213*/
         v8 = 0; /*0x4d0215*/
       }
@@ -195,11 +194,11 @@ int DamageArea::CheckOccupancyEligibility()
         sub_7DC720(v5); /*0x4d023d*/
       if ( v4 ) /*0x4d0248*/
       {
-        if ( !(*(int (**)(int))(*(unsigned int *)v4 + 24))(v4) ) /*0x4d024d*/
+        if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v4 + 24))(v4) ) /*0x4d024d*/
         {
           if ( !v8 ) /*0x4d025a*/
             sub_7DC720(-2147467261); /*0x4d0261*/
-          if ( !(*(int (**)(int))(*(unsigned int *)v8 + 28))(v8) ) /*0x4d026d*/
+          if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v8 + 28))(v8) ) /*0x4d026d*/
           {
             v4 = v8; /*0x4d0274*/
             goto LABEL_24; /*0x4d0278*/
@@ -208,33 +207,31 @@ int DamageArea::CheckOccupancyEligibility()
         v4 = v8; /*0x4d027a*/
       }
     }
-    if ( !*(unsigned int *)(this->u32_C + 764) ) /*0x4d0281*/
+    if ( !*(_DWORD *)(this->u32_C + 764) ) /*0x4d0281*/
     {
-LABEL_24:
+  LABEL_24:
       if ( v4 ) /*0x4d028d*/
-        (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4d0292*/
+        (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4d0292*/
       return 1; /*0x4d029c*/
     }
     if ( v4 ) /*0x4d029f*/
-      (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4d02a4*/
+      (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4d02a4*/
   }
   return 0; /*0x4d0295*/
-
 }
 } // namespace gamemd
 // 0x565660
 namespace gamemd {
-unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, int16_t * a3)
+unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, int16_t * a3)
 {
-
   int v3; // ebx
   int v4; // ebp
   int v5; // esi
-  int16_t v6; // di
+  __int16 v6; // di
   int v7; // eax
   int v8; // ecx
   int v9; // ecx
-  int16_t *v11; // [esp+20h] [ebp+8h]
+  __int16 *v11; // [esp+20h] [ebp+8h]
 
   v3 = this->u32_F4; /*0x565668*/
   v4 = this->u32_FC; /*0x56566f*/
@@ -246,10 +243,8 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, int16_t * a3)
     v9 = v8 - v5 + 1; /*0x565691*/
   else
     v9 = v8 - v5; /*0x565694*/
-  LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
-  HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
-  *a2 = (unsigned int)(v11); /*0x5656c2*/
-  return a2; /*0x5656bf*/
-
+  IDA_LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
+  IDA_HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
+  *v11 = v11; /*0x5656c2*/
 }
 } // namespace gamemd

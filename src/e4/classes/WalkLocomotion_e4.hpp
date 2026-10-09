@@ -59,15 +59,18 @@ struct WalkLocomotion {
     unsigned int q128;  // 0x128
     AbstractClass * q130;  // 0x130
     unsigned int q134;  // 0x134
-    unsigned int q140_a;  // 0x140
+    void* q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
     unsigned char q14C;  // 0x14C
     ObjectClass * q150;  // 0x150
     unsigned char q154;  // 0x154
     unsigned char q158;  // 0x158
+    unsigned char q15C;  // 0x15C
     unsigned char q160;  // 0x160
     unsigned char q164;  // 0x164
+    unsigned char q168;  // 0x168
+    unsigned int u32_180;  // 0x180
     void* q260;  // 0x260
     unsigned char q264;  // 0x264
     unsigned char q268;  // 0x268
@@ -80,6 +83,7 @@ struct WalkLocomotion {
     unsigned char q284;  // 0x284
     unsigned char q288;  // 0x288
     unsigned char q28C;  // 0x28C
+    unsigned char q290;  // 0x290
     unsigned char q2A8;  // 0x2A8
     unsigned char q2AC;  // 0x2AC
     unsigned char q2B0;  // 0x2B0
@@ -168,12 +172,6 @@ struct WalkLocomotion {
     unsigned char q1668;  // 0x1668
     unsigned char q1674;  // 0x1674
     void* q1768;  // 0x1768
-    unsigned int WalkLocomotion_field_0x40;
-    unsigned int WalkLocomotion_field_0x44;
-    unsigned int WalkLocomotion_field_0x58;
-    unsigned int q0042;
-    unsigned int u32_184;
-    unsigned int q140;
 // --- flat members (END) ---
     AbstractClass * * MoveTo(unsigned int *aP1, int aP3);  // 0x6A01A0
     char ProcessCollision(char a2, void *a2_2);  // 0x6A05F0 (W20M5: raw fn_6A.c char @<al; caller 0x69fc96 branches on result; main-tree locomotion.hpp:404 int)

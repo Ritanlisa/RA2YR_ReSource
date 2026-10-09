@@ -8,8 +8,10 @@ struct Particle {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
     unsigned int q040;  // 0x40
     unsigned int q044;  // 0x44
+    unsigned char q048;  // 0x48
     unsigned int q064;  // 0x64
     unsigned int q068;  // 0x68
     void* q06C;  // 0x6C

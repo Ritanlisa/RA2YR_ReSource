@@ -22,8 +22,6 @@ struct AnimClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
 struct Dialog {
-    static int TabControlPaint(int a1, int a2, int a3, int a4);  // 0x6137D0 raw: LRESULT __stdcall Dialog_TabControlPaint(HWND,UINT,WPARAM,LPARAM) fn-ptr site form  // G57w10 r5 D-classbody supply (raw-anchored)
-
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
@@ -46,9 +44,13 @@ struct Dialog {
     unsigned int q048;  // 0x48
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
+    unsigned int u32_5C;  // 0x5C
     void* q060;  // 0x60
     unsigned char q064;  // 0x64
     unsigned char q068;  // 0x68
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_78;  // 0x78
+    unsigned int u32_7C;  // 0x7C
     unsigned int q080;  // 0x80
     unsigned int q084;  // 0x84
     unsigned int u32_D0;  // 0xD0
@@ -69,32 +71,37 @@ struct Dialog {
     unsigned int u32_20C;  // 0x20C
     unsigned int u32_210;  // 0x210
     unsigned char q214;  // 0x214
+    unsigned char q218;  // 0x218
     unsigned int q240;  // 0x240
     unsigned char q244;  // 0x244
+    unsigned char q248;  // 0x248
     unsigned char q260;  // 0x260
     unsigned char q264;  // 0x264
+    unsigned char q268;  // 0x268
     CampaignClass* q304;  // 0x304
     unsigned char q308;  // 0x308
     unsigned char q30C;  // 0x30C
+    unsigned char q310;  // 0x310
     unsigned char q520;  // 0x520
     unsigned int q524;  // 0x524
     unsigned int q528;  // 0x528
     unsigned char q52C;  // 0x52C
+    unsigned char q530;  // 0x530
     unsigned int q594;  // 0x594
     unsigned char q598;  // 0x598
     unsigned char q59C;  // 0x59C
+    unsigned char q5A0;  // 0x5A0
     unsigned char q608;  // 0x608
     unsigned char q60C;  // 0x60C
+    unsigned char q610;  // 0x610
     unsigned int q630;  // 0x630
     unsigned char q634;  // 0x634
+    unsigned char q638;  // 0x638
     void* q6B4;  // 0x6B4
     unsigned char q6B8;  // 0x6B8
     void* q6C4;  // 0x6C4
-    unsigned int Dialog_field_0xC;
-    unsigned int *__pad_0;
-    unsigned int *__pad_10;
-    unsigned int Debug;
 // --- flat members (END) ---
+    static int TabControlPaint(int a1, int a2, int a3, int a4);  // 0x6137D0 raw: LRESULT __stdcall Dialog_TabControlPaint(HWND,UINT,WPARAM,LPARAM) fn-ptr site form  // G57w10 r5 D-classbody supply (raw-anchored)
     void DrawBackground();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     void MapDialogResource();  // 0x49F740
     int InitializeGameSettings();  // 0x5B5BC0

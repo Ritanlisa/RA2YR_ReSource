@@ -12,16 +12,13 @@ struct VoxelStruct;  // fix_fwd_type_supply
 #ifndef GAMEMD_E4_INIClass  // G42.57w14 twin-guard (shared w/ system/ini_class.hpp; first-include wins)
 #define GAMEMD_E4_INIClass 1
 struct INIClass {
-    static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640
-    static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);  // 0x528F00 raw: int ParseValue_Wide(INIClass*, unsigned __int8*, unsigned __int8*, wchar_t*, wchar_t*, size_t)
-
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char __tail_0[2];  // 0x0
     char headNode[12];  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC
     unsigned int q00D;  // 0xD
+    unsigned int u32_F;  // 0xF
     char sectionHead[12];  // 0x10
     unsigned int q014;  // 0x14
     unsigned int q018;  // 0x18
@@ -31,27 +28,15 @@ struct INIClass {
     VoxelStruct * q028;  // 0x28
     char INIClass_field_2C[4];  // 0x2C
     char unknown30[4];  // 0x30
+    bool needsSave_flag;  // 0x34
+    unsigned char q035;  // 0x35
+    unsigned int unknown38;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
-    unsigned int Capacity;
-    unsigned int IsAllocated;
-    unsigned int IsInitialized;
-    unsigned int Items;
-    unsigned int *__pad_0;
-    unsigned int *__pad_20;
-    unsigned int q0146;
-    unsigned int vtable0;
-
-    unsigned int unknown38;
-    unsigned int INISection;
-    unsigned int Debug;
-    unsigned int Event;
-
-
-
+// --- flat members (END) ---
+    static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640
+    static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);  // 0x528F00 raw: int ParseValue_Wide(INIClass*, unsigned __int8*, unsigned __int8*, wchar_t*, wchar_t*, size_t)
     void* LookupEnum_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon INIClass::LookupEnum is a method)
     static unsigned int LookupEnum(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-
-// --- flat members (END) ---
     static int ReadInt(void *aP0, void *a2, void *a3, int a4);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
     static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);  // G57w11: +static raw 0x00526810 __thiscall receiver-first (sibling G57w10-S form)

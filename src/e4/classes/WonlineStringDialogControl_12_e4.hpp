@@ -17,13 +17,6 @@ struct WonlineStringDialogControl_12 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int *__pad_0;
-    unsigned int __pad_9;
-    unsigned int m_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     void * Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2);  // 0x7AC630
     void ClearBuffer(void *a1_1);  // 0x7AC970

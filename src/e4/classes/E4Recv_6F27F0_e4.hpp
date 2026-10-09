@@ -18,6 +18,8 @@ struct E4Recv_6F27F0 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     unsigned int *  sub_6F27F0(int a2, unsigned int * a3);  // 0x6F27F0
 };

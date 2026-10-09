@@ -14,16 +14,12 @@ struct MovementAI {
     unsigned int u32_10;  // 0x10
     char MovementAI_field_14[4];  // 0x14
     char MovementAI_field_18[4];  // 0x18
-    unsigned int MovementAI_field_10;
-    unsigned int u32_100;
-    unsigned int u32_E4;
 // --- flat members (END) ---
     char Check();
     int IsPathMovementAllowed();
     int IsProgressAtEnd();
     int MainFootClass(char a2);  // 0x514f70
     int StepFootClass(int a1);  // 0x5164d0
-    unsigned int q01C;
     static int Begin(...);  // w16g4 C3861 static supply (raw 0x006F9E50)  // 0x1C
 };
 

@@ -16,18 +16,8 @@ struct GadgetClass {
     bool Visible;  // 0x14
     bool Enabled;  // 0x15
     unsigned int ID;  // 0x18
-    unsigned int Hovered;
-    unsigned int X0;
-    unsigned int *__pad_0;
-    unsigned int u32_28;
-    unsigned int LinkClass;
-
-    unsigned char ListClass_field_0x0C;  // 0xC
-    unsigned char ListClass_field_0x10;  // 0x10
-    unsigned char ListClass_field_0x14;  // 0x14
-    unsigned char ListClass_field_0x18;  // 0x18
-    void* Image;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    void* Image;  // 0x0 (no offset truth)
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM);
     AbstractClass * * SetTooltip(void * String);
     ControlClass Dtor();
@@ -40,6 +30,6 @@ struct GadgetClass {
     static int Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, char aP6);  // 0x4E12F0 G42.35 static-form sync (ui/supplied site 0x48E543; truth char a7)
     static int Dtor(void *aP0);
     static int TrackState(...);  // w16g4 C3861 static supply (Cls call-form)  // 0x4E1390 G42.35 static-form sync (ui/supplied sites 0x48E663)
-    };
+};
 
 } // namespace gamemd

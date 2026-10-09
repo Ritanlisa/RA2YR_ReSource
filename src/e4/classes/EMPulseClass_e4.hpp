@@ -16,8 +16,9 @@ struct EMPulseClass {
     bool IsAllocated;  // 0x13
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
+    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
-    unsigned int IterateCellsInRadius_slot;
+    bool q01D;  // 0x1D
 // --- flat members (END) ---
     static int IterateCellsInRadius(int pThis);  // G57w19k2 raw thiscall static-form supply (member IterateCellsInRadius -> IterateCellsInRadius_slot)
     EMPulseClass * CopyTo(void * a2, char a3);

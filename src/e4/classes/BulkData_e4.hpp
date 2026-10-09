@@ -8,8 +8,8 @@ namespace gamemd {
 
 struct BulkData {
 // --- flat members (BEGIN) ---
-    unsigned int Debug;
-    unsigned int SessionClass;
+    bool q051;  // 0x51
+    AbstractClass * ptr_144;  // 0x144
 // --- flat members (END) ---
     void InitMissionHashing();
 };

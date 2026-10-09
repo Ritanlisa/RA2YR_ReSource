@@ -9,9 +9,6 @@ struct E4Recv_763700 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
-    unsigned int q004;  // 0x4
-    unsigned int q008;  // 0x8
-    unsigned int q00D;  // 0xD
 // --- flat members (END) ---
     unsigned int * sub_763700(unsigned int * a2);  // 0x763700
 };

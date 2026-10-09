@@ -15,7 +15,6 @@ struct DynamicVectorClass_PAD {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1);  // 0x49E950
     int Clear(int a2);  // 0x49E9A0

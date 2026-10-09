@@ -7,6 +7,7 @@
 namespace gamemd {
 struct Timer {
 // --- flat members (BEGIN) ---
+    char u32_1;  // 0x1
     unsigned int u32_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -19,6 +20,10 @@ struct Timer {
     unsigned int u32_28;  // 0x28
     unsigned int q034;  // 0x34
     unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int u32_49;  // 0x49
     unsigned int u32_4C;  // 0x4C
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
@@ -73,16 +78,47 @@ struct Timer {
     unsigned int q1928;  // 0x1928
     unsigned int q1938;  // 0x1938
     unsigned int q5170;  // 0x5170
+    unsigned int u32_555C;  // 0x555C
+    unsigned int u32_5560;  // 0x5560
+    unsigned int u32_5568;  // 0x5568
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
-    unsigned int *__pad_0;
-    unsigned int *__pad_6;
-    unsigned int m_18;
-    // dup-member: unsigned int DisableHighPrecision;
+    unsigned int q20848;  // 0x20848
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q25664;  // 0x25664
+    unsigned int q33570;  // 0x33570
+    unsigned int q153094;  // 0x153094
+    unsigned int q153188;  // 0x153188
+    unsigned int q210288;  // 0x210288
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1389090;  // 0x1389090
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20482358;  // 0x20482358
+    unsigned int q20484240;  // 0x20484240
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541606464;  // 0x541606464
+    unsigned int q22571222354;  // 0x22571222354
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q2359835108180;  // 0x2359835108180
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q621877794996608;  // 0x621877794996608
+    unsigned int q621877867514214;  // 0x621877867514214
+    unsigned int q971428040484870;  // 0x971428040484870
+    unsigned int q441783186122958344;  // 0x441783186122958344
+    unsigned int q441783189658223124;  // 0x441783189658223124
+    unsigned int q1256072821702542066500;  // 0x1256072821702542066500
+    unsigned int q1256072821931073745188;  // 0x1256072821931073745188
+    unsigned int q22166920289552765214282120;  // 0x22166920289552765214282120
+// --- flat members (END) ---
     unsigned int ReadTSC_ph;  // w18j3: filler renamed (no offset truth; canon Timer::ReadTSC is a method)
     static unsigned int ReadTSC(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-// --- flat members (END) ---
     void * Start(int aP1);  // 0x46B640
     int StartDouble(double a2);  // 0x4A5240
     DWORD * Init(DWORD a2);  // 0x4F1B00

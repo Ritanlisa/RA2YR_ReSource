@@ -9,51 +9,12 @@ struct AudioQueue {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
+    unsigned int q008;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
-    unsigned int *AudioQueue_field_0x14;
-    unsigned int *__pad_0;
-    void* ptr_24;
-    unsigned int q3D0;
-    unsigned int q3F054;
-    unsigned int q3F058;
-    unsigned int q3F060;
-    unsigned int q3F064;
-    unsigned int u32_180;
-    unsigned int u32_1804;
-    unsigned int u32_2A0;
-    unsigned int u32_30;
-    unsigned int u32_3AC;
-    unsigned int u32_3B4;
-    unsigned int u32_3BC;
-    unsigned int u32_3C;
-    unsigned int u32_3C4;
-    unsigned int u32_48;
-    unsigned int u32_A80;
-    unsigned int u32_C6;
-    unsigned char u8_3B8;
-    unsigned int q0042;
-    unsigned int q020;
-    unsigned int q0204;
-    unsigned int q034;
-    unsigned int q040;
-    unsigned int q080;
-    unsigned int q3F05C;
-    unsigned int u32_146;
-    unsigned int u32_18;
-    unsigned int u32_28;
-    unsigned int u32_38;
-    unsigned int u32_3F06C;
-    unsigned int u32_3F070;
-    unsigned int u32_4C;
-    unsigned int u32_E0;
-    unsigned char u8_2D;
-    unsigned char u8_45;
-    unsigned int Audio;
-    unsigned int Timer;
-    void* Socket;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    void* Socket;  // 0x0 (no offset truth)
     unsigned int * CreateNode();  // 0x402AF0
     int FindBestChannel(int a1, int a2);  // 0x4035F0
     int FindByData();  // 0x752680
@@ -74,12 +35,9 @@ struct AudioQueue {
     static int ReleaseBuffers();  // 0x408270
     static int DrainAll();  // 0x750FA0
     int StopAllVoices();
-    // --- W16G3 supply (BEGIN) ---
     unsigned int u32_3F054;  // @0x7b2118 (W16G3 raw-usage vocab)
     unsigned int u32_3F058;  // @0x7b21b9 (W16G3 raw-usage vocab)
     unsigned int u32_3F060;  // @0x7b20fd (W16G3 raw-usage vocab)
     unsigned int u32_3F064;  // @0x7b219e (W16G3 raw-usage vocab)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

@@ -9,14 +9,6 @@
 namespace gamemd {
 struct SessionClass;  // fix_fwd_type_supply
 struct Object {
-    // G57w8 raw-vocab supply (fn_4F HouseClass 区域 til-Object 词表; usage-driven)
-    unsigned char __pad_B0[52];  // 0xB0
-    unsigned char *__pad_140;  // 0x140 slot witness
-    int vtable1;
-    char *attachedBomb;  // G57w8: [24] 下标载体  // G57w8 canon 0x38 词表
-    int vtable3;
-    unsigned int *vtable4;
-    unsigned char *ptr_2;
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
@@ -42,7 +34,9 @@ struct Object {
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
     unsigned int q068;  // 0x68
+    unsigned int u32_6C;  // 0x6C
     unsigned int q080;  // 0x80
+    unsigned int u32_81;  // 0x81
     unsigned char q084;  // 0x84
     void* q088;  // 0x88
     void* q08C;  // 0x8C
@@ -68,46 +62,36 @@ struct Object {
     unsigned char q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
+    unsigned char q14C;  // 0x14C
     unsigned int q150;  // 0x150
     unsigned char q154;  // 0x154
+    unsigned char q158;  // 0x158
     unsigned int q160;  // 0x160
     unsigned int q164;  // 0x164
     unsigned char q168;  // 0x168
     unsigned char q16C;  // 0x16C
     unsigned char q170;  // 0x170
     unsigned char q174;  // 0x174
+    unsigned char q178;  // 0x178
     void* q228;  // 0x228
     unsigned char q22C;  // 0x22C
     unsigned char q230;  // 0x230
     unsigned char q234;  // 0x234
+    unsigned char q238;  // 0x238
     unsigned int q244;  // 0x244
     unsigned int q248;  // 0x248
     unsigned char q24C;  // 0x24C
+    unsigned char q250;  // 0x250
     unsigned char q258;  // 0x258
     unsigned char q25C;  // 0x25C
     unsigned int q260;  // 0x260
     unsigned char q264;  // 0x264
+    unsigned char q268;  // 0x268
     void* q29C;  // 0x29C
-    unsigned int Object_field_0x13C;
-    unsigned int Object_field_0x30;
-    unsigned int Object_field_0xE4;
-    unsigned int Type;
-    unsigned int *__pad_EC;
-    unsigned int q03C6;
-    unsigned int q0442;
-    unsigned int q0A0;
-    unsigned int q0A4;
-    unsigned int u32_5788;
-    unsigned char *__pad_0;  // 0x0
-    unsigned char *Object_field_0x2;  // 0x2
-    unsigned char Object_field_0x8;  // 0x8
-    unsigned char *__pad_C;  // 0xC
-    unsigned char Object_field_0xAC;  // 0xAC
-    unsigned char Object_field_0xE8;  // 0xE8
+// --- flat members (END) ---
     char* attachedTag;  // g57w8: +N 指针算术载体  // 0x0 (no offset truth)
     char* nextObject;  // g57w8: 同上  // 0x0 (no offset truth)
     void* parachute;  // 0x0 (no offset truth)
-// --- flat members (END) ---
     int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
     int IsAlliedWithObjectHouse(int aP1);

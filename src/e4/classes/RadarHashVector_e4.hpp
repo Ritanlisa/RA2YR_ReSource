@@ -24,16 +24,6 @@ struct RadarHashVector {
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
-    unsigned int RadarHashVector_field_0x04;
-    unsigned int RadarHashVector_field_0x08;
-    unsigned int RadarHashVector_field_0x0C;
-    unsigned int RadarHashVector_field_0x10;
-    unsigned int RadarHashVector_field_0x14;
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     AbstractClass * * ComputeHashIndex(int a2, char * a3);
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);

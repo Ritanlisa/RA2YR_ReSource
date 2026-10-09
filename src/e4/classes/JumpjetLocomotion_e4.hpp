@@ -11,7 +11,7 @@ struct JumpjetLocomotion {
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
-    unsigned int qC;  // 0xC
+    void* q00C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
@@ -45,7 +45,6 @@ struct JumpjetLocomotion {
     int u32_80;  // 0x80
     unsigned char q084;  // 0x84
     unsigned char q085;  // 0x85
-    unsigned char __pad_85[4];  // 0x85
     ObjectClass* q088;  // 0x88
     void* q08C;  // 0x8C
     void* q090;  // 0x90
@@ -59,7 +58,6 @@ struct JumpjetLocomotion {
     unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned char q11F;  // 0x11F
-    unsigned int JumpjetLocomotion_field_0x8C;  // 0x8C
     unsigned char q120;  // 0x120
     unsigned int q124;  // 0x124
     int q128;  // 0x128
@@ -72,8 +70,11 @@ struct JumpjetLocomotion {
     ObjectClass * q150;  // 0x150
     unsigned char q154;  // 0x154
     unsigned char q158;  // 0x158
+    unsigned char q15C;  // 0x15C
     unsigned char q160;  // 0x160
     unsigned char q164;  // 0x164
+    unsigned char q168;  // 0x168
+    unsigned int u32_180;  // 0x180
     void* q260;  // 0x260
     unsigned char q264;  // 0x264
     unsigned char q268;  // 0x268
@@ -86,6 +87,7 @@ struct JumpjetLocomotion {
     unsigned char q284;  // 0x284
     unsigned char q288;  // 0x288
     unsigned char q28C;  // 0x28C
+    unsigned char q290;  // 0x290
     unsigned char q2A8;  // 0x2A8
     unsigned char q2AC;  // 0x2AC
     unsigned char q2B0;  // 0x2B0
@@ -106,8 +108,10 @@ struct JumpjetLocomotion {
     unsigned char q33C;  // 0x33C
     unsigned char q340;  // 0x340
     unsigned char q344;  // 0x344
+    unsigned char q348;  // 0x348
     unsigned char q350;  // 0x350
     unsigned char q354;  // 0x354
+    unsigned char q358;  // 0x358
     unsigned char q3D1;  // 0x3D1
     void* q428;  // 0x428
     void* q42C;  // 0x42C
@@ -197,17 +201,6 @@ struct JumpjetLocomotion {
     unsigned char q1674;  // 0x1674
     unsigned char q1710;  // 0x1710
     void* q1768;  // 0x1768
-    unsigned int JumpjetLocomotion_field_0x40;
-    unsigned int JumpjetLocomotion_field_0x44;
-    unsigned int JumpjetLocomotion_field_0x58;
-    unsigned int u32_184;
-    unsigned int v22;
-    unsigned int q00C;
-    unsigned char *__pad_C;  // 0xC
-    unsigned char *__pad_48;  // 0x48
-    unsigned char *__pad_5C;  // 0x5C
-    unsigned char JumpjetLocomotion_field_0x74;  // 0x74
-    unsigned char *__pad_78;  // 0x78
 // --- flat members (END) ---
     char MoveTo(int aP1, unsigned int *a2, int a3);  // G57w10-S raw 0x004B0AD0 IUnknown 占位清除
     AbstractClass * ProcessCollision(char a2, void *a2_2);  // 0x4B0F20

@@ -7,6 +7,7 @@ namespace gamemd {
 
 struct Config {
 // --- flat members (BEGIN) ---
+    char Config_field_00[4];  // 0x0
 // --- flat members (END) ---
     void SaveObserverMode();
 };

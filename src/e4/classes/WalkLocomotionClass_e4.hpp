@@ -17,15 +17,21 @@ struct WalkLocomotionClass {
     bool Dirty;  // 0x11
     void* vtable3;  // 0x18
     char Dest[12];  // 0x1C
+    bool q01D;  // 0x1D
     ILocomotion * q020;  // 0x20
     char HeadToCoord[12];  // 0x28
     bool q02B;  // 0x2B
+    ObjectClass * ptr_30;  // 0x30
     unsigned char q031;  // 0x31
+    ILocomotion * ptr_20;  // 0x32
+    unsigned int q033;  // 0x33
     bool IsMoving;  // 0x34
+    bool IsInProcessing;  // 0x35
+    bool IsReallyMoving;  // 0x36
+    bool q037;  // 0x37
+    ILocomotion * ptr_38;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int LocomotionClass;
-    unsigned int Piggybackee;
-    unsigned int *__pad_18;
+    unsigned int q03B;  // 0x3B
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);

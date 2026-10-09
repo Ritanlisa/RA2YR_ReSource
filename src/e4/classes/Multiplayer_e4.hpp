@@ -9,16 +9,20 @@ namespace gamemd {
 #define GAMEMD_G2_Multiplayer_DEF 1
 struct Multiplayer {
 // --- flat members (BEGIN) ---
+    unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char u8_C;  // 0xC
+    unsigned char u8_D;  // 0xD
     unsigned char q018;  // 0x18
     unsigned char q024;  // 0x24
-    unsigned int Screen;
-    unsigned int u32_42;
-    unsigned int u32_4;
-    unsigned int Debug;
-    unsigned int Timer;
-    unsigned int Event;
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_404;  // 0x404
+    unsigned int qA13;  // 0xA13
+    unsigned int q1028;  // 0x1028
+    unsigned int u32_284C;  // 0x284C
+    unsigned int q16694;  // 0x16694
+    unsigned int q418598;  // 0x418598
+    unsigned int q4294040;  // 0x4294040
 // --- flat members (END) ---
     unsigned int * CopyDataArray(unsigned int *aP1);
     void * FindStartPositions();

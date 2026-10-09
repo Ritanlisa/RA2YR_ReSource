@@ -19,10 +19,12 @@ struct FileSystem {
     unsigned int u32_30;  // 0x30
     unsigned int q048;  // 0x48
     void* q050;  // 0x50
+    unsigned int u32_60;  // 0x60
     void* q100;  // 0x100
     unsigned int q114;  // 0x114
-    const char * openFile(const char * a2);  // G42.41m: was misdeclared as data; truth 0x628110 = __thiscall method
+    void* q598;  // 0x598
 // --- flat members (END) ---
+    const char * openFile(const char * a2);  // G42.41m: was misdeclared as data; truth 0x628110 = __thiscall method
     int ProcessNextFileExtension();
     static void CleanupTrees();
     static void InitPipShapes();

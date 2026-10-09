@@ -6,6 +6,9 @@
 
 namespace gamemd {
 struct SubzoneHashVector {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static unsigned int * Construct(void *aP1, int a2, int a3);  // 0x58B070 raw: _DWORD* Construct(SubzoneHashVector*, int, int)
 };

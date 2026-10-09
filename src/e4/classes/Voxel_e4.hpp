@@ -38,6 +38,7 @@ struct Voxel {
     unsigned char q050;  // 0x50
     void* q054;  // 0x54
     unsigned char q058;  // 0x58
+    unsigned char q05C;  // 0x5C
     unsigned char q060;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
@@ -88,7 +89,7 @@ struct Voxel {
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124
     unsigned int q128;  // 0x128
-    unsigned char u8_12C;  // 0x12C
+    unsigned int u32_12C;  // 0x12C
     unsigned char u8_12D;  // 0x12D
     void* q130;  // 0x130
     unsigned char q134;  // 0x134
@@ -101,10 +102,12 @@ struct Voxel {
     unsigned int q150;  // 0x150
     unsigned char q154;  // 0x154
     unsigned char q158;  // 0x158
+    unsigned char q15C;  // 0x15C
     unsigned char q160;  // 0x160
     unsigned int q164;  // 0x164
     unsigned int q168;  // 0x168
     unsigned char q16C;  // 0x16C
+    unsigned char q170;  // 0x170
     unsigned int q180;  // 0x180
     unsigned int q184;  // 0x184
     unsigned int q188;  // 0x188
@@ -112,6 +115,7 @@ struct Voxel {
     unsigned char q190;  // 0x190
     unsigned char q194;  // 0x194
     unsigned char q198;  // 0x198
+    unsigned char q19C;  // 0x19C
     unsigned int u32_1A0;  // 0x1A0
     unsigned int u32_1A4;  // 0x1A4
     unsigned int u32_1A8;  // 0x1A8
@@ -156,6 +160,7 @@ struct Voxel {
     unsigned int q244;  // 0x244
     unsigned int q248;  // 0x248
     unsigned char q24C;  // 0x24C
+    unsigned char q250;  // 0x250
     unsigned int q260;  // 0x260
     AbstractClass * q264;  // 0x264
     unsigned int q268;  // 0x268
@@ -163,12 +168,14 @@ struct Voxel {
     unsigned char q270;  // 0x270
     unsigned char q274;  // 0x274
     unsigned char q278;  // 0x278
+    unsigned char q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
     unsigned char q28C;  // 0x28C
     unsigned char q290;  // 0x290
     unsigned char q294;  // 0x294
+    unsigned char q298;  // 0x298
     void* q2D8;  // 0x2D8
 // --- flat members (END) ---
     int BuildIndexTable();  // 0x748220

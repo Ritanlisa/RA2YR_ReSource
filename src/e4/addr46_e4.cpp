@@ -34,9 +34,7 @@
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-
-  this->m_0 = (int)&vt_CampaignScoreClass; /*0x46d350*/
-
+  this->m_0 = (int)&(void*)(void*)&CampaignScoreClass_vftable; /*0x46d350*/
 }
 } // namespace gamemd
 
@@ -47,7 +45,7 @@ bool sub_46D650()
   bool v0; // bl
   HWND v1; // eax
   HWND DlgItem; // eax
-  LPARAM * v3;
+  int v3; // ebp
   LPARAM *v4; // esi
   int v5; // ecx
   int v6; // edi
@@ -61,41 +59,41 @@ bool sub_46D650()
 
   if ( dword_A8D638 != 50 ) /*0x46d65b*/
     return 0; /*0x46d80a*/
-    Debug::Log("Decoding Campaign Options...\n") /*G57c1: IDA 0x46d666 push offset aDecodingCampai*/;
+  Debug::Log(); /*0x46d666*/
   v0 = dword_A8EB68 != (char)dword_A8D667; /*0x46d67f*/
   dword_A8EB68 = (char)dword_A8D667; /*0x46d686*/
-  v1 = (HWND)((Dialog*)(void *)0xBC6)->FindByHandle(); /*0x46d68b*/
+  v1 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46d68b*/
   if ( v1 ) /*0x46d692*/
   {
-    DlgItem = (HWND)((int)(GetDlgItem(v1, 1842)));
+    DlgItem = GetDlgItem(v1, 1842); /*0x46d69a*/
     if ( DlgItem ) /*0x46d6a2*/
       PostMessageA(DlgItem, 0x405u, 1u, dword_A8EB68); /*0x46d6b3*/
   }
-  v3 = (LPARAM *)((int)((LPARAM *)(0)));
-  v4 = (LPARAM *)(&dword_A8DA90);
+  v3 = 0; /*0x46d6bc*/
+  v4 = &dword_A8DA90; /*0x46d6be*/
   do /*0x46d7fd*/
   {
     v5 = *v4; /*0x46d6c3*/
     if ( *v4 && v5 != g_HouseClass_ObserverFlags && v5 != g_Lobby_PlayerCount ) /*0x46d6d7*/
     {
       v6 = *(v4 - 266); /*0x46d6d9*/
-      if ( ((SessionClass *)(v5))->GetOption() != v6 ) /*0x46d6e6*/
+      if ( SessionClass::GetOption(v5) != v6 ) /*0x46d6e6*/
         v0 = 1; /*0x46d6e8*/
-      ((SessionClass *)(*v4))->SetOption(v6); /*0x46d6ed*/
+      SessionClass::SetOption(*v4, v6); /*0x46d6ed*/
       v7 = *(v4 - 258); /*0x46d6f4*/
-      if ( ((SessionClass *)(*v4))->GetPlayerSide() != v7 ) /*0x46d701*/
+      if ( SessionClass::GetPlayerSide(*v4) != v7 ) /*0x46d701*/
         v0 = 1; /*0x46d703*/
-      ((SessionClass *)(*v4))->SetPlayerOption(v7); /*0x46d708*/
+      SessionClass::SetPlayerOption(*v4, v7); /*0x46d708*/
       v8 = *(v4 - 250); /*0x46d70f*/
-      if ( ((SessionClass *)(*v4))->GetPlayerColor() != v8 ) /*0x46d71c*/
+      if ( SessionClass::GetPlayerColor(*v4) != v8 ) /*0x46d71c*/
         v0 = 1; /*0x46d71e*/
-      ((SessionClass *)(*v4))->SetPlayerColor(v8); /*0x46d723*/
+      SessionClass::SetPlayerColor(*v4, v8); /*0x46d723*/
     }
-    ToWideStringChar((gamemd::IUnknown *)((char *)*v4)); /*0x46d72a*/
-    ((SessionClass *)(*v4))->GetPlayerColor(); /*0x46d733*/
-    ((SessionClass *)(*v4))->GetPlayerSide(); /*0x46d73b*/
-    ((SessionClass *)(*v4))->GetOption(); /*0x46d743*/
-        Debug::Log("Player %i %s: Start %i, Country %i, Color %i\n") /*G57c1: IDA 0x46d750 push offset aPlayerISStartI*/;
+    ToWideStringChar((char *)*v4); /*0x46d72a*/
+    SessionClass::GetPlayerColor(*v4); /*0x46d733*/
+    SessionClass::GetPlayerSide(*v4); /*0x46d73b*/
+    SessionClass::GetOption(*v4); /*0x46d743*/
+    Debug::Log(); /*0x46d750*/
     v9 = *(v4 - 242); /*0x46d755*/
     if ( *(v4 - 2557) != v9 ) /*0x46d766*/
       v0 = 1; /*0x46d768*/
@@ -116,7 +114,7 @@ bool sub_46D650()
     if ( *(v4 - 2533) != v13 ) /*0x46d7be*/
       v0 = 1; /*0x46d7c0*/
     *(v4 - 2533) = v13; /*0x46d7c2*/
-        Debug::Log("AI %i: Difficulty %i, Country %i, Color %i, Start %i, Ally %i\n") /*G57c1: IDA 0x46d7eb push offset aAiIDifficultyI*/;
+    Debug::Log(); /*0x46d7eb*/
     ++v4; /*0x46d7f3*/
     ++v3; /*0x46d7f6*/
   }
@@ -132,7 +130,7 @@ char sub_46D8B0()
   int v2; // edi
   const wchar_t **v3; // esi
   char *v4; // eax
-  uint8_t (**vtable0)(ObjectClass *, int); // esi
+  unsigned __int8 (__thiscall **vtable0)(ObjectClass *, int); // esi
   int PlayerSide; // eax
   int v8; // [esp-4h] [ebp-10h]
 
@@ -141,7 +139,7 @@ char sub_46D8B0()
   v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v4 = CharToWideString( (unsigned char *)(&stru_A8D600.__pad_34[8])); /*0x46d8c1*/
+    v4 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v3; /*0x46d8d6*/
@@ -151,54 +149,54 @@ char sub_46D8B0()
   }
   if ( v2 == -1 ) /*0x46d8eb*/
     return 0; /*0x46d8f2*/
-  if ( ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerSide() != *(unsigned int *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
+  if ( SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
     v1 = 1; /*0x46d909*/
   if ( dword_A8B23C ) /*0x46d913*/
   {
-    if ( (*((uint8_t (**)(ObjectClass *, unsigned int))dword_A8B23C->vtable1 + 7))( /*0x46d918*/
+    if ( (*((unsigned __int8 (__thiscall **)(ObjectClass *, _DWORD))dword_A8B23C->vfptr + 7))( /*0x46d918*/
            dword_A8B23C,
-           *(unsigned int *)&stru_A8D600.__pad_64[7]) )
+           *(_DWORD *)&stru_A8D600.__pad_64[7]) )
     {
-      ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerOption(*(int *)&stru_A8D600.__pad_64[7]); /*0x46d926*/
+      SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[7]); /*0x46d926*/
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      vtable0 = (uint8_t (**)(ObjectClass *, int))dword_A8B23C->AbstractClass; /*0x46d938*/
-      PlayerSide = ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerSide(); /*0x46d93a*/
+      vtable0 = (unsigned __int8 (__thiscall **)(ObjectClass *, int))dword_A8B23C->vfptr; /*0x46d938*/
+      PlayerSide = SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]); /*0x46d93a*/
       if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
-        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))( (gamemd::ObjectClass *)(dword_A8B23C)); /*0x46d958*/
-        ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerOption(v8); /*0x46d960*/
+        v8 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46d958*/
+        SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], v8); /*0x46d960*/
       }
     }
   }
-  if ( ((SessionClass *)((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerColor() != *(unsigned int *)stru_A8D600.Network_field_0x6F ) /*0x46d979*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(_DWORD *)stru_A8D600.Network_field_0x6F ) /*0x46d979*/
     v1 = 1; /*0x46d97b*/
   if ( IsAvailableColorhWnd(*(int *)stru_A8D600.Network_field_0x6F) ) /*0x46d97d*/
   {
-    if ( ((SessionClass *)((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerColor() != *(unsigned int *)stru_A8D600.Network_field_0x6F ) /*0x46d998*/
+    if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(_DWORD *)stru_A8D600.Network_field_0x6F ) /*0x46d998*/
     {
-      ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerColor(-2); /*0x46d9a3*/
+      SessionClass::SetPlayerColor((int *)dword_A8DA90[v2], -2); /*0x46d9a3*/
       v1 = 1; /*0x46d9a8*/
     }
   }
   else
   {
-    ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerColor(*(int *)stru_A8D600.Network_field_0x6F); /*0x46d9b9*/
+    SessionClass::SetPlayerColor((int *)dword_A8DA90[v2], *(int *)stru_A8D600.Network_field_0x6F); /*0x46d9b9*/
   }
-  if ( ((SessionClass *)((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerColor() != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x46d9d2*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.__pad_64[3] ) /*0x46d9d2*/
     v1 = 1; /*0x46d9d4*/
   if ( sub_4E50A0(*(int *)&stru_A8D600.__pad_64[3]) ) /*0x46d9d6*/
   {
-    if ( ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->GetOption() != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x46d9f1*/
+    if ( SessionClass::GetOption((int *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.__pad_64[3] ) /*0x46d9f1*/
     {
-      ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetOption(-2); /*0x46d9fc*/
+      SessionClass::SetOption((int *)dword_A8DA90[v2], -2); /*0x46d9fc*/
       return v1; /*0x46da06*/
     }
   }
   else
   {
-    ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetOption(*(int *)&stru_A8D600.__pad_64[3]); /*0x46da15*/
+    SessionClass::SetOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[3]); /*0x46da15*/
   }
   return v1; /*0x46d8e2*/
 }
@@ -207,86 +205,86 @@ char sub_46D8B0()
 namespace gamemd {
 void sub_46DA70()
 {
-  int v0; // ebx
-  int v1; // esi
-  int v2; // edi
-  size_t v3; // ebp
-  int v4; // esi
-  int v5; // eax
-  int *v6; // ecx
-  int v7; // edx
-  int v8; // ebp
-  int *v9; // ecx
-  int v10; // edx
-  int v11; // ebp
+  int nextArrayIndex; // ebx
+  int v2; // esi
+  int v3; // edi
+  size_t v4; // ebp
+  int v5; // esi
+  int v6; // eax
+  int *v7; // ecx
+  int v8; // edx
+  int v9; // ebp
+  int *v10; // ecx
+  int v11; // edx
+  int v12; // ebp
   int Count; // ebp
-  int v13; // ebp
   int v14; // ebp
-  int v15; // edi
+  int v15; // ebp
+  int v16; // edi
   int i; // [esp+8h] [ebp-8h]
-  int v17; // [esp+Ch] [ebp-4h]
+  int v18; // [esp+Ch] [ebp-4h]
 
-  v0 = HouseClass_Count; /*0x46da74*/
-  v1 = 0; /*0x46da7b*/
-  g_CampaignScoreFlags = 0; /*0x46da7f*/
-  v17 = HouseClass_Count; /*0x46da85*/
-  for ( i = 0; v1 < v0; i = v1 ) /*0x46da8d*/
+  nextArrayIndex = stru_A80220.nextArrayIndex; /*0x46da74*/
+  v2 = 0; /*0x46da7b*/
+  dword_A8D580 = 0; /*0x46da7f*/
+  v18 = stru_A80220.nextArrayIndex; /*0x46da85*/
+  for ( i = 0; v2 < nextArrayIndex; i = v2 ) /*0x46da8d*/
   {
-    v2 = *(unsigned int *)&HouseClass_Array->gap0[4 * v1]; /*0x46da9a*/
-    if ( v2 /*0x46dab7*/
-      && v2->attachedTag->q698 != 1
-      && (uint8_t)((House *)(*(void **)&HouseClass_Array->gap0[4 * v1]))->IsCurrentPlayer() )
+    v3 = *((_DWORD *)stru_A80220.vfptr3 + v2); /*0x46da9a*/
+    if ( v3 /*0x46dab7*/
+      && *(_BYTE *)(v3->u32_34 + 422) != 1
+      && (unsigned __int8)House::IsCurrentPlayer(*((House **)stru_A80220.vfptr3 + v2)) )
     {
-      v3 = g_CampaignScoreFlags++; /*0x46dacf*/
-      v4 = 28 * v3; /*0x46dae1*/
-      (&dword_A8D228)[28 * v3] = 0; /*0x46daea*/
-      wcscpy((wchar_t *)&unk_A8D1FC + 56 * v3, (const wchar_t *)(v2 + 90154)); /*0x46daf5*/
-      v5 = 0; /*0x46dafa*/
-      (&dword_A8D22C)[28 * v3] = 0; /*0x46daff*/
-      (&dword_A8D23C)[28 * v3] = 0; /*0x46db05*/
-      (&dword_A8D24C)[28 * v3] = 0; /*0x46db0b*/
-      (&dword_A8D25C)[28 * v3] = 0; /*0x46db11*/
-      (&dword_A8D224)[28 * v3] = v2->q16054; /*0x46db1d*/
-      if ( !v2->u8_1F5 ) /*0x46db23*/
+      v4 = dword_A8D580++; /*0x46dacf*/
+      v5 = 112 * v4; /*0x46dae1*/
+      *((_DWORD *)&dword_A8D228 + 28 * v4) = 0; /*0x46daea*/
+      wcscpy((wchar_t *)&unk_A8D1FC + 56 * v4, (const wchar_t *)(v3 + 90154)); /*0x46daf5*/
+      v6 = 0; /*0x46dafa*/
+      *((_DWORD *)&dword_A8D22C + 28 * v4) = 0; /*0x46daff*/
+      *((_DWORD *)&dword_A8D23C + 28 * v4) = 0; /*0x46db05*/
+      *((_DWORD *)&dword_A8D24C + 28 * v4) = 0; /*0x46db0b*/
+      dword_A8D25C[28 * v4] = 0; /*0x46db11*/
+      *((_DWORD *)&dword_A8D224 + 28 * v4) = *(_DWORD *)(v3 + 90196); /*0x46db1d*/
+      if ( !v3->u8_1F5 ) /*0x46db23*/
       {
-        ++(&dword_A8D228)[28 * v3]; /*0x46db34*/
-        v3 = v3; /*0x46db3a*/
+        ++*((_DWORD *)&dword_A8D228 + 28 * v4); /*0x46db34*/
+        v4 = v4; /*0x46db3a*/
       }
-      v6 = (int *)(v2 + 21476); /*0x46db40*/
-      v7 = 20; /*0x46db46*/
+      v7 = (int *)(v3 + 21476); /*0x46db40*/
+      v8 = 20; /*0x46db46*/
       do /*0x46db53*/
       {
-        v8 = *v6++; /*0x46db4b*/
-        v5 += v8; /*0x46db50*/
-        --v7; /*0x46db52*/
+        v9 = *v7++; /*0x46db4b*/
+        v6 += v9; /*0x46db50*/
+        --v8; /*0x46db52*/
       }
-      while ( v7 ); /*0x46db53*/
-      v9 = (int *)(v2 + 21560); /*0x46db55*/
-      v10 = 20; /*0x46db5b*/
+      while ( v8 ); /*0x46db53*/
+      v10 = (int *)(v3 + 21560); /*0x46db55*/
+      v11 = 20; /*0x46db5b*/
       do /*0x46db68*/
       {
-        v11 = *v9++; /*0x46db60*/
-        v5 += v11; /*0x46db65*/
-        --v10; /*0x46db67*/
+        v12 = *v10++; /*0x46db60*/
+        v6 += v12; /*0x46db65*/
+        --v11; /*0x46db67*/
       }
-      while ( v10 ); /*0x46db68*/
-      ((unsigned int *)(dword_A8D23C))[v4] = v5; /*0x46db6a*/
-      ((unsigned int *)(dword_A8D22C))[v4] = v2->u32_5488 + v2->u32_5434; /*0x46db84*/
-      Count = ((VectorClass *)((unsigned int *)(v2 + 21840)))->GetCount(); /*0x46db95*/
-      v13 = ((VectorClass *)((unsigned int *)(v2 + 21860)))->GetCount() + Count; /*0x46dba2*/
-      v14 = ((VectorClass *)((unsigned int *)(v2 + 21880)))->GetCount() + v13; /*0x46dbaf*/
-      ((unsigned int *)(dword_A8D24C))[v4] = v2->u32_5488 /*0x46dbc8*/
-                       + ((VectorClass *)((unsigned int *)(v2 + 21900)))->GetCount()
-                       + v14
-                       + v2->u32_5434;
-      v15 = v2->u32_54E8; /*0x46dbce*/
-      if ( v15 > 0 ) /*0x46dbd6*/
-        ((unsigned int *)(dword_A8D25C))[v4] += v15; /*0x46dbd8*/
-            Debug::Log("%s: %s\n Scheme: %d\n Lost = %d\n Kills = %d\n Built = %d\n Score = %d\n") /*G57c1: IDA 0x46dc1c push offset aSSSchemeDLostD*/;
-      v1 = i; /*0x46dc21*/
-      v0 = v17; /*0x46dc25*/
+      while ( v11 ); /*0x46db68*/
+      *(_DWORD *)((char *)&dword_A8D23C + v5) = v6; /*0x46db6a*/
+      *(_DWORD *)((char *)&dword_A8D22C + v5) = *(_DWORD *)(v3 + 21640) + *(_DWORD *)(v3 + 21556); /*0x46db84*/
+      Count = VectorClass::GetCount((VectorClass *)(v3 + 21840)); /*0x46db95*/
+      v14 = VectorClass::GetCount((VectorClass *)(v3 + 21860)) + Count; /*0x46dba2*/
+      v15 = VectorClass::GetCount((VectorClass *)(v3 + 21880)) + v14; /*0x46dbaf*/
+      *(_DWORD *)((char *)&dword_A8D24C + v5) = *(_DWORD *)(v3 + 21640) /*0x46dbc8*/
+                                              + VectorClass::GetCount((VectorClass *)(v3 + 21900))
+                                              + v15
+                                              + *(_DWORD *)(v3 + 21556);
+      v16 = *(_DWORD *)(v3 + 21736); /*0x46dbce*/
+      if ( v16 > 0 ) /*0x46dbd6*/
+        dword_A8D25C[v5 / 4u] += v16; /*0x46dbd8*/
+      Debug::Log(); /*0x46dc1c*/
+      v2 = i; /*0x46dc21*/
+      nextArrayIndex = v18; /*0x46dc25*/
     }
-    ++v1; /*0x46dc2c*/
+    ++v2; /*0x46dc2c*/
   }
 }
 }
@@ -297,7 +295,7 @@ BOOL sub_46DCC0(HWND hDlg, bool a2)
   int i; // edi
   BOOL result; // eax
   int v5; // eax
-  int DlgItem;
+  HWND DlgItem; // eax
   int ResourceID2CSF; // eax
   HWND v8; // eax
   int ResourceIDCSF; // eax
@@ -314,15 +312,15 @@ BOOL sub_46DCC0(HWND hDlg, bool a2)
         v5 = i != 1 ? -1 : 1042;
       else
         v5 = 1041; /*0x46dcef*/
-      DlgItem = (int)(GetDlgItem(hDlg, v5)); /*0x46dd09*/
-      EnableWindow((HWND)(DlgItem), a2); /*0x46dd17*/
-      ResourceID2CSF = GetResourceID2CSF((int)((void *)i)); /*0x46dd1f*/
+      DlgItem = GetDlgItem(hDlg, v5); /*0x46dd09*/
+      EnableWindow(DlgItem, a2); /*0x46dd17*/
+      ResourceID2CSF = GetResourceID2CSF((void *)i); /*0x46dd1f*/
       v8 = GetDlgItem(hDlg, ResourceID2CSF); /*0x46dd26*/
       EnableWindow(v8, a2); /*0x46dd2a*/
-      ResourceIDCSF = GetResourceIDCSF((int)((void *)i)); /*0x46dd32*/
+      ResourceIDCSF = GetResourceIDCSF((void *)i); /*0x46dd32*/
       v10 = GetDlgItem(hDlg, ResourceIDCSF); /*0x46dd39*/
       EnableWindow(v10, a2); /*0x46dd3d*/
-      ResourceID3CSF = GetResourceID3CSF((int)((void *)i)); /*0x46dd45*/
+      ResourceID3CSF = GetResourceID3CSF((void *)i); /*0x46dd45*/
       v12 = GetDlgItem(hDlg, ResourceID3CSF); /*0x46dd4c*/
       result = EnableWindow(v12, a2); /*0x46dd50*/
     }
@@ -335,11 +333,11 @@ namespace gamemd {
 void * EnableGameModeControls(HWND hDlg, bool a2)
 {
   int v4; // eax
-  int DlgItem;
+  HWND DlgItem; // eax
   int ResourceID2; // eax
-  int v7;
+  HWND v7; // eax
   int ResourceID; // eax
-  int v9;
+  HWND v9; // eax
   int ResourceID3; // eax
   HWND v11; // eax
   HWND result; // eax
@@ -349,19 +347,19 @@ void * EnableGameModeControls(HWND hDlg, bool a2)
     v4 = dword_A8DA8C != 1 ? -1 : 1042;
   else
     v4 = 1041; /*0x46dd81*/
-  DlgItem = (int)(GetDlgItem(hDlg, v4)); /*0x46dd9f*/
-  EnableWindow((HWND)(DlgItem), a2); /*0x46ddaf*/
-  ResourceID2 = GetResourceID2CSF((int)((void *)dword_A8DA8C)); /*0x46ddb7*/
-  v7 = (int)(GetDlgItem(hDlg, ResourceID2)); /*0x46ddbe*/
-  EnableWindow((HWND)(v7), a2); /*0x46ddc2*/
-  ResourceID = GetResourceIDCSF((int)((void *)dword_A8DA8C)); /*0x46ddca*/
-  v9 = (int)(GetDlgItem(hDlg, ResourceID)); /*0x46ddd1*/
-  EnableWindow((HWND)(v9), a2); /*0x46ddd5*/
-  ResourceID3 = GetResourceID3CSF((int)((void *)dword_A8DA8C)); /*0x46dddd*/
+  DlgItem = GetDlgItem(hDlg, v4); /*0x46dd9f*/
+  EnableWindow(DlgItem, a2); /*0x46ddaf*/
+  ResourceID2 = GetResourceID2CSF((void *)dword_A8DA8C); /*0x46ddb7*/
+  v7 = GetDlgItem(hDlg, ResourceID2); /*0x46ddbe*/
+  EnableWindow(v7, a2); /*0x46ddc2*/
+  ResourceID = GetResourceIDCSF((void *)dword_A8DA8C); /*0x46ddca*/
+  v9 = GetDlgItem(hDlg, ResourceID); /*0x46ddd1*/
+  EnableWindow(v9, a2); /*0x46ddd5*/
+  ResourceID3 = GetResourceID3CSF((void *)dword_A8DA8C); /*0x46dddd*/
   v11 = GetDlgItem(hDlg, ResourceID3); /*0x46dde4*/
   EnableWindow(v11, a2); /*0x46dde8*/
   result = (HWND)Settings::CheckString(); /*0x46ddea*/
-  if ( (unsigned char)result ) /*0x46ddf1*/
+  if ( (_BYTE)result ) /*0x46ddf1*/
   {
     result = GetDlgItem(hDlg, 1842); /*0x46ddf9*/
     v13 = result; /*0x46ddfb*/
@@ -371,7 +369,7 @@ void * EnableGameModeControls(HWND hDlg, bool a2)
       return (HWND)InvalidateRect(v13, 0, 0); /*0x46de0a*/
     }
   }
-  return (void *)result; /*0x46de10*/
+  return result; /*0x46de10*/
 }
 }
 // 0x46DE20
@@ -476,16 +474,14 @@ void * sub_46DE20(HWND hDlg, int nCmdShow)
   result = GetDlgItem(hDlg, 1128); /*0x46dfb7*/
   if ( result ) /*0x46dfbb*/
     return (HWND)ShowWindow(result, nCmdShow); /*0x46dfbf*/
-  return (void *)result; /*0x46dfc1*/
+  return result; /*0x46dfc1*/
 }
 }
 // 0x465CB0
 namespace gamemd {
 void ObjectClass::nullsub_7()
 {
-
   ; /*0x465cb0*/
-
 }
 } // namespace gamemd
 
@@ -493,9 +489,7 @@ void ObjectClass::nullsub_7()
 namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
-
-  return (gamemd::Iostream_init *)(this); /*0x465d82*/
-
+  return this; /*0x465d82*/
 }
 } // namespace gamemd
 
@@ -555,9 +549,9 @@ namespace gamemd {
 long long sub_4661A0()
 {
   double v0; // st7
-  int64_t result; // rax
+  __int64 result; // rax
 
-  v0 = Math::Sin((dbl_89DDD8 - dbl_89DE00)); /*0x4661b2*/
+  v0 = Math::Sin(dbl_89DDD8 - dbl_89DE00); /*0x4661b2*/
   result = Math::RoundToInt(v0 * dbl_89DDF8 * 0.5); /*0x4661c6*/
   dword_89DE70 = result; /*0x4661cb*/
   return result; /*0x4661d0*/
@@ -568,7 +562,7 @@ long long sub_4661A0()
 namespace gamemd {
 void sub_4661E0()
 {
-  dbl_89DE08 = Math::ArcTan(((double)dword_89DE70 * 0.00390625)); /*0x4661f7*/
+  dbl_89DE08 = Math::ArcTan((double)dword_89DE70 * 0.00390625); /*0x4661f7*/
 }
 } // namespace gamemd
 
@@ -576,7 +570,7 @@ void sub_4661E0()
 namespace gamemd {
 void sub_466210()
 {
-  dbl_89DE40 = Math::ArcTan(((double)(2 * dword_89DE70) / dbl_89DDF8)); /*0x466232*/
+  dbl_89DE40 = Math::ArcTan((double)(2 * dword_89DE70) / dbl_89DDF8); /*0x466232*/
 }
 } // namespace gamemd
 
@@ -584,7 +578,7 @@ void sub_466210()
 namespace gamemd {
 long long sub_466240()
 {
-  int64_t result; // rax
+  __int64 result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89DE70) + 0.5); /*0x46625b*/
   dword_89DE64 = result; /*0x466260*/
@@ -642,10 +636,10 @@ int sub_4662E0()
   dword_89DE20 = 0; /*0x4662ec*/
   byte_89DE24 = 1; /*0x4662f1*/
   byte_89DE25 = 0; /*0x4662f8*/
-  dword_89DE18 = (unsigned int)(int)&off_7E4678; /*0x4662fd*/
+  dword_89DE18 = (int)&off_7E4678; /*0x4662fd*/
   dword_89DE2C = 10; /*0x466307*/
   dword_89DE28 = 0; /*0x466311*/
-  return atexit((void (__cdecl *)(void))sub_466320); /*0x46631c*/
+  return atexit(sub_466320); /*0x46631c*/
 }
 } // namespace gamemd
 
@@ -655,7 +649,7 @@ void sub_466320()
 {
   if ( (byte_89DDD0 & 1) == 0 ) /*0x46632a*/
   {
-    dword_89DE18 = (int)&VectorClass_BulletClass___vftable; /*0x46632e*/
+    dword_89DE18 = (int)&(void*)(void*)&VectorClass_BulletClass___vftable; /*0x46632e*/
     byte_89DDD0 |= 1u; /*0x466341*/
     if ( dword_89DE1C ) /*0x466347*/
     {
@@ -686,12 +680,12 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   LPVOID v10; // esi
   LPVOID ppv; // [esp+8h] [ebp-4h] BYREF
 
-  ppv = (LPVOID)(0);
-  if ( CoCreateInstance(*(const IID *)&rclsid, 0, 7u,IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
+  ppv = 0; /*0x46b06a*/
+  if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3),(int)(aP4), a6,(char)( aP7)); /*0x46b0a6*/
-  return (LPVOID)((int)v10); /*0x46b07c*/
+  Particle::Init((int *)ppv, aP0, aP1, aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
+  return (int)v10; /*0x46b07c*/
 }
 } // namespace gamemd
 
@@ -762,11 +756,19 @@ void sub_46BA80()
 namespace gamemd {
 long long sub_46BAA0()
 {
-  double v0; // st7
-  int64_t result; // rax
+  int result; // eax
+  double v2; // [esp+0h] [ebp-8h]
 
-  v0 = Math::Sin((dbl_89DE78 - dbl_89DEA0)); /*0x46bab2*/
-  result = Math::RoundToInt(v0 * dbl_89DE98 * 0.5); /*0x46bac6*/
+  __asm /*0x46baa0*/
+  {
+    fld dbl_89DE78
+    fsub dbl_89DEA0
+  }
+  __asm { fstp [esp+8+var_8]; double }
+  Math::Sin(v2); /*0x46bab2*/
+  __asm { fmul dbl_89DE98 } /*0x46bab7*/
+  __asm { fmul ds:dbl_7E1738 }
+  (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a1)) & 0xFFFF); /*0x46bac6*/
   dword_89DEF0 = result; /*0x46bacb*/
   return result; /*0x46bad0*/
 }
@@ -776,7 +778,7 @@ long long sub_46BAA0()
 namespace gamemd {
 void sub_46BAE0()
 {
-  dbl_89DEA8 = Math::ArcTan(((double)dword_89DEF0 * 0.00390625)); /*0x46baf7*/
+  dbl_89DEA8 = Math::ArcTan((double)dword_89DEF0 * 0.00390625); /*0x46baf7*/
 }
 } // namespace gamemd
 
@@ -784,7 +786,7 @@ void sub_46BAE0()
 namespace gamemd {
 void sub_46BB10()
 {
-  dbl_89DEC0 = Math::ArcTan(((double)(2 * dword_89DEF0) / dbl_89DE98)); /*0x46bb32*/
+  dbl_89DEC0 = Math::ArcTan((double)(2 * dword_89DEF0) / dbl_89DE98); /*0x46bb32*/
 }
 } // namespace gamemd
 
@@ -792,7 +794,7 @@ void sub_46BB10()
 namespace gamemd {
 long long sub_46BB40()
 {
-  int64_t result; // rax
+  __int64 result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89DEF0) + 0.5); /*0x46bb5b*/
   dword_89DEE4 = result; /*0x46bb60*/
@@ -888,9 +890,9 @@ namespace gamemd {
 long long sub_46CA40()
 {
   double v0; // st7
-  int64_t result; // rax
+  __int64 result; // rax
 
-  v0 = Math::Sin((dbl_89DEF8 - dbl_89DF10)); /*0x46ca52*/
+  v0 = Math::Sin(dbl_89DEF8 - dbl_89DF10); /*0x46ca52*/
   result = Math::RoundToInt(v0 * dbl_89DF08 * 0.5); /*0x46ca66*/
   dword_89DF60 = result; /*0x46ca6b*/
   return result; /*0x46ca70*/
@@ -901,7 +903,7 @@ long long sub_46CA40()
 namespace gamemd {
 void sub_46CA80()
 {
-  dbl_89DF18 = Math::ArcTan(((double)dword_89DF60 * 0.00390625)); /*0x46ca97*/
+  dbl_89DF18 = Math::ArcTan((double)dword_89DF60 * 0.00390625); /*0x46ca97*/
 }
 } // namespace gamemd
 
@@ -909,7 +911,7 @@ void sub_46CA80()
 namespace gamemd {
 void sub_46CAB0()
 {
-  dbl_89DF30 = Math::ArcTan(((double)(2 * dword_89DF60) / dbl_89DF08)); /*0x46cad2*/
+  dbl_89DF30 = Math::ArcTan((double)(2 * dword_89DF60) / dbl_89DF08); /*0x46cad2*/
 }
 } // namespace gamemd
 
@@ -917,7 +919,7 @@ void sub_46CAB0()
 namespace gamemd {
 long long sub_46CAE0()
 {
-  int64_t result; // rax
+  __int64 result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89DF60) + 0.5); /*0x46cafb*/
   dword_89DF54 = result; /*0x46cb00*/
@@ -1013,9 +1015,9 @@ namespace gamemd {
 long long sub_46D1F0()
 {
   double v0; // st7
-  int64_t result; // rax
+  __int64 result; // rax
 
-  v0 = Math::Sin((dbl_89DF68 - dbl_89DFB0)); /*0x46d202*/
+  v0 = Math::Sin(dbl_89DF68 - dbl_89DFB0); /*0x46d202*/
   result = Math::RoundToInt(v0 * dbl_89DFA8 * 0.5); /*0x46d216*/
   dword_89E048 = result; /*0x46d21b*/
   return result; /*0x46d220*/
@@ -1026,7 +1028,7 @@ long long sub_46D1F0()
 namespace gamemd {
 void sub_46D230()
 {
-  dbl_89DFB8 = Math::ArcTan(((double)dword_89E048 * 0.00390625)); /*0x46d247*/
+  dbl_89DFB8 = Math::ArcTan((double)dword_89E048 * 0.00390625); /*0x46d247*/
 }
 } // namespace gamemd
 
@@ -1034,7 +1036,7 @@ void sub_46D230()
 namespace gamemd {
 void sub_46D260()
 {
-  dbl_89DFD8 = Math::ArcTan(((double)(2 * dword_89E048) / dbl_89DFA8)); /*0x46d282*/
+  dbl_89DFD8 = Math::ArcTan((double)(2 * dword_89E048) / dbl_89DFA8); /*0x46d282*/
 }
 } // namespace gamemd
 
@@ -1042,7 +1044,7 @@ void sub_46D260()
 namespace gamemd {
 long long sub_46D290()
 {
-  int64_t result; // rax
+  __int64 result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89E048) + 0.5); /*0x46d2ab*/
   dword_89E034 = result; /*0x46d2b0*/
@@ -1098,9 +1100,9 @@ int sub_46D310()
 namespace gamemd {
 __int64 sub_46D480(void * a1, void * a2)
 {
-  int64_t result; // rax
+  __int64 result; // rax
 
-  *((unsigned char *)&g_GameModeOptionState+ a2) = (((result) >> 32) & 0xFF); /*0x46d480*/
+  *((_BYTE *)&g_GameModeOptionState + a2) = (((result) >> 32) & 0xFF); /*0x46d480*/
   return result; /*0x46d486*/
 }
 }
@@ -1108,9 +1110,7 @@ __int64 sub_46D480(void * a1, void * a2)
 namespace gamemd {
 char E4Recv_46D490::sub_46D490()
 {
-
-  return *((unsigned char *)&g_GameModeOptionState + (unsigned int)this); /*0x46d496*/
-
+  return *((_BYTE *)&g_GameModeOptionState + (_DWORD)this); /*0x46d496*/
 }
 } // namespace gamemd
 
@@ -1136,13 +1136,479 @@ int sub_46D810()
     ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)&v2, 455, (wchar_t *)(1), (wchar_t *)dword_A8DA90); /*0x46d895*/
 // 0x541820
     return (int)(((Network *)(&unk_A8E9C0))->ReceiveLoop()); /*0x46d89f*/
-  }
-  return result; /*0x46d87d*/
-}
-} // namespace gamemd
+    {
+      void *Network_field_0xC; // ebx
+      void *v3; // edx
+      int v4; // ecx
+      int v5; // edi
+      bool v6; // zf
+      unsigned __int16 *v7; // ebp
+      int v8; // ecx
+      const char *v9; // eax
+      int v10; // edi
+      char *v11; // eax
+      __int16 v12; // ax
+      __int16 v13; // bp
+      int v14; // edx
+      int *v15; // ecx
+      int *v16; // eax
+      int PlayerName; // eax
+      int v18; // ebp
+      IPXManagerClass *v19; // ebx
+      char *v20; // eax
+      int *v21; // ecx
+      int v22; // ecx
+      int *v23; // edx
+      _WORD *v24; // ecx
+      char v25; // cl
+      int v26; // ebp
+      IPXManagerClass *v27; // edi
+      char LinkedIndex; // al
+      int v29; // eax
+      int v30; // edi
+      _DWORD *v31; // ecx
+      int i; // edi
+      int *v33; // ecx
+      int *v34; // eax
+      int *v35; // eax
+      int *v36; // ecx
+      int v37; // ecx
+      int v38; // ebp
+      int v39; // ecx
+      int v40; // ecx
+      IPXManagerClass *v41; // edi
+      int result; // eax
+      __int16 v43; // [esp+20h] [ebp-4CCh]
+      int v44; // [esp+20h] [ebp-4CCh]
+      Network *v45; // [esp+24h] [ebp-4C8h]
+      __int16 v46[2]; // [esp+34h] [ebp-4B8h] BYREF
+      Network v47[2]; // [esp+38h] [ebp-4B4h] BYREF
 
-// 0x46DA20
-namespace gamemd {
+      v47[0].Network_field_0x10 = (void *)1; /*0x541830*/
+      Waypoint::InitInvalid((Waypoint *)v47); /*0x541838*/
+      if ( *(_DWORD *)&stru_887598.isAliveFlag ) /*0x541844*/
+      {
+        while ( 1 ) /*0x541864*/
+        {
+          *(_DWORD *)v47[0].__pad_14 = 1024; /*0x541864*/
+          *(_DWORD *)&v47[0].__pad_14[4] = 128; /*0x54186c*/
+          *(_DWORD *)v46 = 0; /*0x541874*/
+          Network_field_0xC = (void *)(*(int (__thiscall **)(_DWORD, char *, char *, char *, char *, __int16 *))(**(_DWORD **)&stru_887598.isAliveFlag + 8))( /*0x541889*/
+                                        *(_DWORD *)&stru_887598.isAliveFlag,
+                                        &v47[0].__pad_87[45],
+                                        v47[0].__pad_14,
+                                        v47[0].__pad_34,
+                                        &v47[0].__pad_14[4],
+                                        v46);
+          v47[0].Network_field_0xC = Network_field_0xC; /*0x54188d*/
+          if ( !Network_field_0xC ) /*0x541891*/
+            goto LABEL_92; /*0x541891*/
+          v3 = *(void **)&v47[0].__pad_34[4]; /*0x54189b*/
+          v47[0].Network_field_0x0 = *(_DWORD *)v47[0].__pad_34; /*0x5418a6*/
+          v4 = *((_DWORD *)int + 18); /*0x5418aa*/
+          *((_DWORD *)int + 35) = &v47[0].__pad_87[45]; /*0x5418ad*/
+          v47[0].Network_field_0x4 = v3; /*0x5418b7*/
+          v47[0].Network_field_0x8 = *(void **)&v47[0].__pad_34[8]; /*0x5418bb*/
+          if ( *(_WORD *)&v47[0].__pad_87[45] == *(_WORD *)(v4 + 36) ) /*0x5418cb*/
+          {
+            if ( Network_Recv( /*0x5418ee*/
+                   (int)&v47[0].__pad_87[45],
+                   (int)&v47[0].__pad_87[45],
+                   (int)Network_field_0xC,
+                   (int)v47[0].__pad_34,
+                   v46[0]) )
+            {
+              goto LABEL_87; /*0x5418f5*/
+            }
+            if ( (*(int (__thiscall **)(_DWORD, char *, void *, Network *, _DWORD))(**((_DWORD **)int + 18) + 48))( /*0x541913*/
+                   *((_DWORD *)int + 18),
+                   &v47[0].__pad_87[45],
+                   Network_field_0xC,
+                   v47,
+                   *(_DWORD *)v46) )
+            {
+              if ( *(_DWORD *)&dword_A8B238 == 4 && byte_A8E2C8 ) /*0x541932*/
+              {
+                v5 = 0; /*0x54193d*/
+                v6 = dword_A8DA84 == 0; /*0x54193f*/
+                if ( dword_A8DA84 <= 0 ) /*0x541941*/
+                {
+      LABEL_14:
+                  if ( !v6 ) /*0x541980*/
+                  {
+                    Debug::Log(); /*0x54198b*/
+                    if ( (unsigned int)Network_field_0xC >= 0x10 /*0x5419ad*/
+                      && v47[0].__pad_87[47] != 2
+                      && (unsigned int)Network_field_0xC >= 0x3F )
+                    {
+                      v8 = *(_DWORD *)(*((_DWORD *)int + 35) + 16); /*0x5419bc*/
+                      if ( v8 == 39 || v8 == 41 || v8 == 13 ) /*0x5419cb*/
+                      {
+                        v9 = (const char *)(*((_DWORD *)int + 35) + 20); /*0x5419d3*/
+                        *(_DWORD *)&v47[0].__pad_14[8] = 0; /*0x5419d6*/
+                        *(_DWORD *)&v47[0].__pad_14[12] = 0; /*0x5419dc*/
+                        *(_DWORD *)&v47[0].Network_field_0x22[2] = 0; /*0x5419e4*/
+                        v47[0].Network_field_0x28[0] = 0; /*0x5419e9*/
+                        *(_DWORD *)v47[0].__pad_2C = 0; /*0x5419ee*/
+                        IDA_LOWORD(v47[0].Network_field_0x30[0]) = 0; /*0x5419f2*/
+                        strncpy(&v47[0].__pad_14[8], v9, 0x14u); /*0x5419f7*/
+                        v10 = 0; /*0x541a04*/
+                        if ( dword_A8DA84 > 0 ) /*0x541a08*/
+                        {
+                          while ( 1 ) /*0x541a1b*/
+                          {
+                            v11 = ToWideStringChar((char *)dword_A8DA78[v10]); /*0x541a1b*/
+                            if ( !_strcmpi(v11, &v47[0].__pad_14[8]) ) /*0x541a21*/
+                              break; /*0x541a21*/
+                            if ( ++v10 >= dword_A8DA84 ) /*0x541a35*/
+                              goto LABEL_87; /*0x541a35*/
+                          }
+                          if ( !(unsigned __int8)NetworkID::Compare((bool *)(dword_A8DA78[v10] + 40), (int)v47) /*0x541a67*/
+                            || *(_WORD *)(dword_A8DA78[v10] + 40) != v46[0] )
+                          {
+                            Debug::Log(); /*0x541a7d*/
+                            v12 = v46[0]; /*0x541a82*/
+                            v13 = *(&dword_A8E2B2 + v10); /*0x541a86*/
+                            *(&dword_A8E2B2 + v10) = v46[0]; /*0x541a91*/
+                            Network::reconnect( /*0x541aab*/
+                              (Network *)&stru_B052C0.__pad_0[16],
+                              *(_DWORD *)(dword_A8DA78[v10] + 111),
+                              v12);
+                            (*(void (__thiscall **)(_DWORD, Network *, __int16))(**((_DWORD **)int + 18) + 64))( /*0x541abb*/
+                              *((_DWORD *)int + 18),
+                              v47,
+                              v13);
+                            v14 = dword_A8DA78[v10]; /*0x541ac7*/
+                            IDA_LOWORD(v14) = *(_WORD *)(v14 + 40); /*0x541acc*/
+                            (*(void (__thiscall **)(_DWORD, Network *, int))(**((_DWORD **)int + 18) + 64))( /*0x541ad6*/
+                              *((_DWORD *)int + 18),
+                              v47,
+                              v14);
+                            v15 = (int *)(dword_A8DA78[v10] + 40); /*0x541ae5*/
+                            *v15 = v47[0].Network_field_0x0; /*0x541ae8*/
+                            v15[1] = (int)v47[0].Network_field_0x4; /*0x541aee*/
+                            v15[2] = (int)v47[0].Network_field_0x8; /*0x541af5*/
+                            Network::SetPort((Network *)(dword_A8DA78[v10] + 40), v46[0]); /*0x541b09*/
+                            NetworkManager::SetPlayerAddress( /*0x541b24*/
+                              (NetworkManager *)&stru_B052C0.__pad_0[16],
+                              *(_DWORD *)(dword_A8DA78[v10] + 111),
+                              (_DWORD *)(dword_A8DA78[v10] + 40));
+                            v16 = (int *)(dword_A8DA90[GameClass::FindPlayerName(v10)] + 40); /*0x541b3f*/
+                            *v16 = v47[0].Network_field_0x0; /*0x541b42*/
+                            v16[1] = (int)v47[0].Network_field_0x4; /*0x541b48*/
+                            v16[2] = (int)v47[0].Network_field_0x8; /*0x541b4f*/
+                            v43 = v46[0]; /*0x541b56*/
+                            PlayerName = GameClass::FindPlayerName(v10); /*0x541b5d*/
+                            Network::SetPort((Network *)(dword_A8DA90[PlayerName] + 40), v43); /*0x541b6c*/
+                            v18 = 0; /*0x541b74*/
+                            if ( *((int *)int + 17) > 0 ) /*0x541b78*/
+                            {
+                              v19 = int + 5; /*0x541b7a*/
+                              while ( 1 ) /*0x541b87*/
+                              {
+                                v20 = ToWideStringChar((char *)(v19->Socket + 104)); /*0x541b87*/
+                                if ( !_strcmpi(v20, &v47[0].__pad_14[8]) ) /*0x541b8d*/
+                                  break; /*0x541b8d*/
+                                ++v18; /*0x541b9c*/
+                                v19 = (IPXManagerClass *)((char *)v19 + 4); /*0x541b9d*/
+                                if ( v18 >= *((_DWORD *)int + 17) ) /*0x541ba2*/
+                                  goto LABEL_33; /*0x541ba2*/
+                              }
+                              v21 = (int *)(*((_DWORD *)int + v18 + 10) + 76); /*0x541bae*/
+                              *v21 = v47[0].Network_field_0x0; /*0x541bb1*/
+                              v21[1] = (int)v47[0].Network_field_0x4; /*0x541bb7*/
+                              v21[2] = (int)v47[0].Network_field_0x8; /*0x541bbe*/
+                              Network::SetPort((Network *)(*((_DWORD *)int + v18 + 10) + 76), v46[0]); /*0x541bcd*/
+                              Network::FormatAddress((Network *)(*((_DWORD *)int + v18 + 10) + 76), 0); /*0x541bdb*/
+                              Debug::Log(); /*0x541be7*/
+      LABEL_33:
+                              Network_field_0xC = v47[0].Network_field_0xC; /*0x541bef*/
+                            }
+                            if ( !IDA_BYTE2(stru_A8D600.Network_field_0xC) ) /*0x541bfa*/
+                            {
+                              if ( *((_DWORD *)int + 17) ) /*0x541c00*/
+                              {
+                                v22 = dword_A8DA78[v10]; /*0x541c16*/
+                                if ( stru_A80220.nextArrayIndex > *(_DWORD *)(v22 + 111) ) /*0x541c1c*/
+                                {
+                                  if ( SessionClass::IsValidHouse( /*0x541c36*/
+                                         (int)&dword_A8B238,
+                                         *((void **)stru_A80220.vfptr3 + *(_DWORD *)(v22 + 111))) )
+                                  {
+                                    Network::FormatAddress(v47, 0); /*0x541c49*/
+                                    Network::FormatAddress((Network *)(*((_DWORD *)int + 20) + 76), 0); /*0x541c57*/
+                                    Debug::Log(); /*0x541c69*/
+                                    v23 = (int *)(*((_DWORD *)int + 20) + 76); /*0x541c75*/
+                                    *v23 = v47[0].Network_field_0x0; /*0x541c7b*/
+                                    v23[1] = (int)v47[0].Network_field_0x4; /*0x541c81*/
+                                    v23[2] = (int)v47[0].Network_field_0x8; /*0x541c88*/
+                                    Network::SetPort((Network *)(*((_DWORD *)int + 20) + 76), v46[0]); /*0x541c96*/
+                                    stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0; /*0x541ca7*/
+                                    stru_A8BB1C.Network_field_0x8 = v47[0].Network_field_0x8; /*0x541cb1*/
+                                    stru_A8BB1C.Network_field_0x4 = v47[0].Network_field_0x4; /*0x541cbd*/
+                                    Network::SetPort(&stru_A8BB1C, v46[0]); /*0x541cc2*/
+                                    qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x541cd3*/
+                                    dword_A8DBAC = v47[0].Network_field_0x8; /*0x541ce8*/
+                                    Network::SetPort((Network *)&qword_A8DBA4, v46[0]); /*0x541cee*/
+                                    dword_A8DBBC = v46[0]; /*0x541cf8*/
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                else
+                {
+                  v7 = &dword_A8E2B2; /*0x541943*/
+                  while ( !(unsigned __int8)NetworkID::Compare((bool *)(dword_A8DA78[v5] + 40), (int)v47) || *v7 != v46[0] ) /*0x54196b*/
+                  {
+                    ++v5; /*0x541976*/
+                    ++v7; /*0x541977*/
+                    if ( v5 >= dword_A8DA84 ) /*0x54197c*/
+                    {
+                      v6 = dword_A8DA84 == 0; /*0x54197e*/
+                      goto LABEL_14; /*0x54197e*/
+                    }
+                  }
+                }
+              }
+              goto LABEL_87; /*0x54196b*/
+            }
+            ++*((_DWORD *)int + 41); /*0x54216c*/
+            goto LABEL_91; /*0x542178*/
+          }
+          v24 = (_WORD *)*((_DWORD *)int + 19); /*0x541d04*/
+          if ( *(_WORD *)&v47[0].__pad_87[45] == v24[18] ) /*0x541d0b*/
+          {
+            if ( !byte_A8DBA0 /*0x541d2c*/
+              || (*(int (__thiscall **)(_WORD *, char *, void *, Network *, _DWORD))(*(_DWORD *)v24 + 48))(
+                   v24,
+                   &v47[0].__pad_87[45],
+                   Network_field_0xC,
+                   v47,
+                   0) )
+            {
+              goto LABEL_87; /*0x541d31*/
+            }
+            ++*((_DWORD *)int + 41); /*0x542183*/
+      LABEL_91:
+            Debug::Log(); /*0x54218f*/
+            goto LABEL_92; /*0x54218f*/
+          }
+          if ( *(_WORD *)&v47[0].__pad_87[45] != *((_WORD *)int + 16) /*0x541d63*/
+            || Network_Recv(
+                 (int)&v47[0].__pad_87[45],
+                 (int)&v47[0].__pad_87[45],
+                 (int)Network_field_0xC,
+                 (int)v47[0].__pad_34,
+                 v46[0]) )
+          {
+            goto LABEL_87; /*0x541d6a*/
+          }
+          v25 = v47[0].__pad_87[47]; /*0x541d75*/
+          if ( byte_A8DBA0 && v47[0].__pad_87[48] == -1 ) /*0x541d87*/
+          {
+            if ( v47[0].__pad_87[47] == 2 ) /*0x541d90*/
+            {
+              (*(void (__thiscall **)(_DWORD, char *, void *))(**((_DWORD **)int + 20) + 12))( /*0x541da0*/
+                *((_DWORD *)int + 20),
+                &v47[0].__pad_87[45],
+                Network_field_0xC);
+            }
+            else if ( *((int *)int + 17) > 0 ) /*0x541dad*/
+            {
+              Network::FormatAddress(v47, 0); /*0x541e46*/
+              Debug::Log(); /*0x541e59*/
+              if ( !(*(int (__thiscall **)(_DWORD, char *, void *))(**((_DWORD **)int + 10) + 12))( /*0x541e6f*/
+                      *((_DWORD *)int + 10),
+                      &v47[0].__pad_87[45],
+                      Network_field_0xC) )
+              {
+                Network_field_0xC = 0; /*0x541e80*/
+                ++*((_DWORD *)int + 41); /*0x541e85*/
+                goto LABEL_74; /*0x541e91*/
+              }
+            }
+            goto LABEL_75; /*0x541da3*/
+          }
+          v26 = 0; /*0x541e99*/
+          if ( *((int *)int + 17) <= 0 ) /*0x541e9d*/
+          {
+      LABEL_60:
+            if ( *(_DWORD *)&dword_A8B238 == 4 /*0x541f4a*/
+              && !dword_A8E7AC
+              && *(int *)&stru_A8EB00.?[416] > 8
+              && !byte_A8DBA0
+              && (unsigned int)Network_field_0xC > 0xF
+              && v25 == 1
+              && v47[0].__pad_87[59] == 25 )
+            {
+              v29 = 1; /*0x541f56*/
+              v30 = v47[0].__pad_87[61]; /*0x541f5b*/
+              if ( dword_A8DA84 > 1 ) /*0x541f65*/
+              {
+                v31 = dword_A8DA78 + 1; /*0x541f71*/
+                while ( *(_DWORD *)(*v31 + 111) != v47[0].__pad_87[61] ) /*0x541f79*/
+                {
+                  ++v29; /*0x541f7f*/
+                  ++v31; /*0x541f80*/
+                  if ( v29 >= dword_A8DA84 ) /*0x541f85*/
+                    goto LABEL_86; /*0x541f85*/
+                }
+                v35 = (int *)(dword_A8DA78[v29] + 40); /*0x542113*/
+                v44 = v47[0].__pad_87[61]; /*0x542116*/
+                *v35 = v47[0].Network_field_0x0; /*0x542117*/
+                v35[1] = (int)v47[0].Network_field_0x4; /*0x54211d*/
+                v35[2] = (int)v47[0].Network_field_0x8; /*0x542124*/
+                if ( (*(int (__thiscall **)(IPXManagerClass *, int))(int->Socket + 24))(int, v44) != -1 ) /*0x542131*/
+                {
+                  v36 = (int *)(*((_DWORD *)int /*0x542143*/
+                                + (*(int (__thiscall **)(IPXManagerClass *, int))(int->Socket + 24))(int, v30)
+                                + 10)
+                              + 76);
+                  *v36 = v47[0].Network_field_0x0; /*0x542146*/
+                  v36[1] = (int)v47[0].Network_field_0x4; /*0x54214c*/
+                  v36[2] = (int)v47[0].Network_field_0x8; /*0x542153*/
+                }
+      LABEL_86:
+                Network_field_0xC = v47[0].Network_field_0xC; /*0x542156*/
+              }
+            }
+            goto LABEL_87; /*0x542156*/
+          }
+          v27 = int + 5; /*0x541e9f*/
+          while ( byte_A8DBA0 ) /*0x541ea9*/
+          {
+            LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], *(_DWORD *)(v27->Socket + 100)); /*0x541eb6*/
+            v25 = v47[0].__pad_87[47]; /*0x541ebb*/
+            if ( LinkedIndex == v47[0].__pad_87[48] ) /*0x541ec4*/
+              goto LABEL_72; /*0x541ec4*/
+            if ( !byte_A8DBA0 ) /*0x541ed1*/
+              break; /*0x541ed1*/
+      LABEL_59:
+            ++v26; /*0x541ef1*/
+            v27 = (IPXManagerClass *)((char *)v27 + 4); /*0x541ef5*/
+            if ( v26 >= *((_DWORD *)int + 17) ) /*0x541efa*/
+              goto LABEL_60; /*0x541efa*/
+          }
+          if ( !(unsigned __int8)GUID::Compare((char *)(v27->Socket + 76), (int)v47) ) /*0x541edd*/
+            break; /*0x541edd*/
+      LABEL_72:
+          if ( !(*(int (__thiscall **)(_DWORD, char *, void *))(**((_DWORD **)int + v26 + 10) + 12))( /*0x541f9b*/
+                  *((_DWORD *)int + v26 + 10),
+                  &v47[0].__pad_87[45],
+                  Network_field_0xC) )
+          {
+            Network_field_0xC = 0; /*0x541fa8*/
+            ++*((_DWORD *)int + 41); /*0x541fad*/
+      LABEL_74:
+            Debug::Log(); /*0x541fb9*/
+          }
+      LABEL_75:
+          if ( *(_DWORD *)&dword_A8B238 == 4 ) /*0x541fc8*/
+          {
+            if ( byte_A8DBA0 ) /*0x541fd5*/
+            {
+              if ( Network::processPacket((char *)v47, *((_DWORD *)int + 20) + 76) ) /*0x541fe6*/
+              {
+                for ( i = 1; i < dword_A8DA84; ++i ) /*0x541fff*/
+                {
+                  if ( (unsigned __int8)NetworkID::Compare((bool *)(dword_A8DA78[i] + 40), *((_DWORD *)int + 20) + 76) /*0x54203e*/
+                    && SessionClass::IsValidHouse(
+                         (int)&dword_A8B238,
+                         *((void **)stru_A80220.vfptr3 + *(_DWORD *)(dword_A8DA78[i] + 111))) )
+                  {
+                    Network::FormatAddress(v47, 0); /*0x542051*/
+                    Network::FormatAddress((Network *)(*((_DWORD *)int + 20) + 76), 0); /*0x54205f*/
+                    Debug::Log(); /*0x542071*/
+                    v33 = (int *)(dword_A8DA78[i] + 40); /*0x542085*/
+                    *v33 = v47[0].Network_field_0x0; /*0x542088*/
+                    v33[1] = (int)v47[0].Network_field_0x4; /*0x54208e*/
+                    v33[2] = (int)v47[0].Network_field_0x8; /*0x542095*/
+                    v34 = (int *)(*((_DWORD *)int + 20) + 76); /*0x54209f*/
+                    *v34 = v47[0].Network_field_0x0; /*0x5420a2*/
+                    v34[1] = (int)v47[0].Network_field_0x4; /*0x5420a8*/
+                    v34[2] = (int)v47[0].Network_field_0x8; /*0x5420af*/
+                    stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0; /*0x5420be*/
+                    qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x5420c3*/
+                    stru_A8BB1C.Network_field_0x4 = v47[0].Network_field_0x4; /*0x5420cd*/
+                    stru_A8BB1C.Network_field_0x8 = v47[0].Network_field_0x8; /*0x5420d3*/
+                    dword_A8DBAC = v47[0].Network_field_0x8; /*0x5420df*/
+                    NetworkManager::SetPlayerAddress( /*0x5420f6*/
+                      (NetworkManager *)&stru_B052C0.__pad_0[16],
+                      *(_DWORD *)(dword_A8DA78[i] + 111),
+                      v47);
+                  }
+                }
+              }
+            }
+          }
+      LABEL_87:
+          if ( !Network_field_0xC ) /*0x54215c*/
+            goto LABEL_92; /*0x54215c*/
+        }
+        v25 = v47[0].__pad_87[47]; /*0x541eea*/
+        goto LABEL_59; /*0x541eea*/
+      }
+      LABEL_92:
+      v37 = *((_DWORD *)int + 18); /*0x542197*/
+      v38 = 0; /*0x54219a*/
+      if ( v37 && *(_DWORD *)&stru_887598.isAliveFlag && !(*(int (__thiscall **)(int))(*(_DWORD *)v37 + 20))(v37) ) /*0x5421aa*/
+      {
+        (*(void (__thiscall **)(_DWORD))(**((_DWORD **)int + 18) + 24))(*((_DWORD *)int + 18)); /*0x5421b6*/
+        v47[0].Network_field_0x10 = 0; /*0x5421b9*/
+      }
+      if ( byte_A8DBA0 ) /*0x5421c4*/
+      {
+        v39 = *((_DWORD *)int + 19); /*0x5421c6*/
+        if ( v39 ) /*0x5421cb*/
+        {
+          if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v39 + 20))(v39) ) /*0x5421cf*/
+          {
+            (*(void (__thiscall **)(_DWORD))(**((_DWORD **)int + 19) + 24))(*((_DWORD *)int + 19)); /*0x5421db*/
+            v47[0].Network_field_0x10 = 0; /*0x5421de*/
+          }
+          if ( !byte_A8E2D0 ) /*0x5421e9*/
+            Network::ProcessAddressChange(v45); /*0x5421f0*/
+        }
+        if ( byte_A8DBA0 ) /*0x5421fc*/
+        {
+          v40 = *((_DWORD *)int + 20); /*0x5421fe*/
+          if ( v40 ) /*0x542203*/
+          {
+            if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v40 + 20))(v40) ) /*0x542207*/
+            {
+              Debug::Log(); /*0x542213*/
+              v47[0].Network_field_0x10 = 0; /*0x54221b*/
+            }
+          }
+        }
+      }
+      if ( *(_DWORD *)&stru_887598.isAliveFlag && *((int *)int + 17) > 0 ) /*0x54222a*/
+      {
+        v41 = int + 5; /*0x54222c*/
+        do /*0x542260*/
+        {
+          if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v41->Socket + 20))(v41->Socket) ) /*0x542233*/
+          {
+            v47[0].Network_field_0x10 = 0; /*0x54223a*/
+            *((_DWORD *)int + 42) = *(_DWORD *)(v41->Socket + 100); /*0x542249*/
+            Debug::Log(); /*0x54224f*/
+          }
+          ++v38; /*0x54225a*/
+          v41 = (IPXManagerClass *)((char *)v41 + 4); /*0x54225b*/
+        }
+        while ( v38 < *((_DWORD *)int + 17) ); /*0x542260*/
+      }
+      result = (int)v47[0].Network_field_0x10; /*0x542262*/
+      if ( v47[0].Network_field_0x10 ) /*0x542268*/
+        *((_DWORD *)int + 42) = -1; /*0x54226a*/
+      return result; /*0x542274*/
+    }
 LRESULT sub_46DA20(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
 {
   HWND DlgItem; // eax
@@ -1153,6 +1619,8 @@ LRESULT sub_46DA20(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
   return SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x46da5b*/
 }
 } // namespace gamemd
+}
+}
 
 // 0x46F810
 namespace gamemd {
@@ -1161,21 +1629,19 @@ int Lobby_GetPlayerColor(int a1)
   wchar_t *v2; // esi
 
   v2 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x46f814*/
-  if ( ((Player *)(v2))->IsObserver() ) /*0x46f81d*/
-    return g_abs_A8B2BC[a1]; /*0x46f826*/
+  if ( Player::IsObserver(v2) ) /*0x46f81d*/
+    return MEMORY[0xA8B2BC][a1]; /*0x46f826*/
   if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f836*/
     return -2; /*0x46f839*/
   if ( v2 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f846*/
     return -2; /*0x46f849*/
-  if ( v2 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x46f856*/
+  if ( v2 == g_Lobby_PlayerReady ) /*0x46f856*/
     return -2; /*0x46f859*/
   if ( v2 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f866*/
     return -2; /*0x46f869*/
-// 0x696f20
-  return ((SessionClass *)((int)v2))->GetPlayerColor(); /*0x46f82d*/
+  return SessionClass::GetPlayerColor((int)v2); /*0x46f82d*/
 }
-} // namespace gamemd
-
+}
 // 0x46F880
 namespace gamemd {
 int HouseClass_GetSideIndex(int a1)
@@ -1183,17 +1649,16 @@ int HouseClass_GetSideIndex(int a1)
   wchar_t *v2; // esi
 
   v2 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x46f884*/
-  if ( ((Player *)(v2))->IsObserver() ) /*0x46f88d*/
-    return g_abs_A8B2DC[a1]; /*0x46f896*/
+  if ( Player::IsObserver(v2) ) /*0x46f88d*/
+    return MEMORY[0xA8B2DC][a1]; /*0x46f896*/
   if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f8a6*/
     return -2; /*0x46f8a9*/
   if ( v2 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f8b6*/
     return -2; /*0x46f8b9*/
-  if ( v2 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x46f8c6*/
+  if ( v2 == g_Lobby_PlayerReady ) /*0x46f8c6*/
     return -2; /*0x46f8c9*/
   if ( v2 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f8d6*/
     return -2; /*0x46f8d9*/
-// 0x696f50
-  return ((SessionClass *)((int)v2))->GetOption(); /*0x46f89d*/
+  return SessionClass::GetOption((int)v2); /*0x46f89d*/
 }
-} // namespace gamemd
+}

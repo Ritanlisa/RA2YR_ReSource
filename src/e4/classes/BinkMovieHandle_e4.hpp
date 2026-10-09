@@ -18,10 +18,14 @@ struct BinkMovieHandle {
     int currentFrame;  // 0x14
     int totalFrames;  // 0x18
     int throttleCounter;  // 0x1C
+    bool frameDecoded;  // 0x20
+    unsigned char q021;  // 0x21
+    int dataSize;  // 0x24
+    unsigned int surfaceFlags;  // 0x28
     bool playing;  // 0x2C
+    bool memoryOwned;  // 0x2D
+    unsigned char q02E;  // 0x2E
     void* memoryBuffer;  // 0x30
-    unsigned int MovieHandle;
-    unsigned int tempPath2;
 // --- flat members (END) ---
     BOOL COMStub();
     BinkMovieHandle * QueryInterface(char a2);

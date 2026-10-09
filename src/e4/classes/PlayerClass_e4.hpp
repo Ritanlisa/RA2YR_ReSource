@@ -20,7 +20,6 @@ struct PlayerClass {
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     bool IsValidIndex(int a1);
     char AssignPlayerIndex();

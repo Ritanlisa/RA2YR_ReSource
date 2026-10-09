@@ -10,9 +10,6 @@ namespace gamemd {
 struct ScriptTypeClass;  // fix_fwd_type_supply
 
 struct ScriptClass {
-    static unsigned int * GetNextAction(void *aP1, void *a2);  // 0x691540 raw: _DWORD* GetNextAction(ScriptClass*, _DWORD*)
-    int ExecuteTriggers(int a2, char a3);  // 0x7265C0 (def team/supplied_bodies.cpp; W20M21e 迁属声明)
-
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -23,11 +20,17 @@ struct ScriptClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
+    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
+    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     ScriptTypeClass* buildingType;  // 0x24
+    char field28[4];  // 0x28
     bool q02B;  // 0x2B
+    char idxCurrentLine[4];  // 0x2C
 // --- flat members (END) ---
+    static unsigned int * GetNextAction(void *aP1, void *a2);  // 0x691540 raw: _DWORD* GetNextAction(ScriptClass*, _DWORD*)
+    int ExecuteTriggers(int a2, char a3);  // 0x7265C0 (def team/supplied_bodies.cpp; W20M21e 迁属声明)
     int LoadState(AbstractClass * aP0, int aP1);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn26();

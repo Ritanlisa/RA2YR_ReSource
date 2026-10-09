@@ -21,43 +21,34 @@
 namespace gamemd {
 char * Commands::AddRef(void *a1)  /* G57w9: raw 0x537A50 char *__thiscall */
 {
-
-  return (char *)(int32_t)(aMultiplayerdeb); /*0x537a55 G57w9 value-preserving cast*/
-
+  return aMultiplayerdeb; /*0x537a55*/
 }
 } // namespace gamemd
 // 0x537A60
 namespace gamemd {
 const wchar_t * Commands::ddtor()  /* G57w9: raw 0x537A60 */
 {
-
-  return (const wchar_t *)g_INI_Key_De; /*0x537a65 G57w9*/
-
+  return g_INI_Key_De; /*0x537a65*/
 }
 } // namespace gamemd
 // 0x537A70
 namespace gamemd {
 char ** Commands::Release(void *a1)  /* G57w9: raw 0x537A70 */
 {
-
-  return (char **)(int32_t)(&off_8278C0); /*0x537a75 G57w9 value-preserving cast*/
-
+  return &off_8278C0; /*0x537a75*/
 }
 } // namespace gamemd
 // 0x537A80
 namespace gamemd {
 void ** Commands::StubReturn8550640()
 {
-
   return &off_8278F0; /*0x537a85*/
-
 }
 } // namespace gamemd
 // 0x537A90
 namespace gamemd {
 int32_t Commands::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7)
 {
-
   char result; // al
 
   result = byte_A8B8B4; /*0x537a90*/
@@ -67,6 +58,5 @@ int32_t Commands::Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void
     byte_A8B8B5 = byte_A8B8B5 == 0; /*0x537aa3*/
   }
   return result; /*0x537aa8*/
-
 }
 } // namespace gamemd

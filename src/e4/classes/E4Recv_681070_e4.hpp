@@ -8,7 +8,6 @@ struct E4Recv_681070 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
-    unsigned int q070;  // 0x70
 // --- flat members (END) ---
     int sub_681070();  // 0x681070
 };

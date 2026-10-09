@@ -36,7 +36,7 @@ int sub_6F2040()
   result = dword_A8ECB0; /*0x6f2040*/
   for ( i = 0; i < dword_A8ECB0; ++i ) /*0x6f204a*/
   {
-    ((TeamTypeClass *)(*((unsigned int *)dword_A8ECA4 + i)))->ProcessTaskForce(); /*0x6f2054*/
+    TeamTypeClass::ProcessTaskForce(*((_DWORD *)dword_A8ECA4 + i)); /*0x6f2054*/
     result = dword_A8ECB0; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
@@ -46,7 +46,6 @@ int sub_6F2040()
 namespace gamemd {  // G42.18c ns repair
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
-
   int v6; // ebx
   int v7; // eax
   int v8; // edx
@@ -59,24 +58,23 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
   v6 = *a3; /*0x4371fa*/
-  v7 = (*((int (**)(void **))*a1 + 28))( (void **)(a1)); /*0x4371fc*/
-  v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
-  ((unsigned int *)&v11)[0] = *(unsigned int *)(a2 + 8); /*0x437205*/
-  ((unsigned int *)&v11)[0] = v8; /*0x437215*/
+  v7 = (*((int (__thiscall **)(void **))*a1 + 28))(a1); /*0x4371fc*/
+  v8 = *(_DWORD *)(a2 + 12); /*0x437202*/
+  v11.? = *(_DWORD *)(a2 + 8); /*0x437205*/
+  v11.? = v8; /*0x437215*/
   v11.LockCount = 0; /*0x437219*/
-  *(unsigned int *)v11.Surface =(unsigned int)(&XSurface_Vtable); /*0x437221*/
+  *(_DWORD *)v11.Surface = &XSurface_Vtable; /*0x437221*/
   v12 = v7; /*0x437229*/
-  ((Buffer*)((int)(Buffer *)v13))->Init(v6, v7 * v8 * ((char *)&v11)); /*0x43722d*/
+  Buffer::Init((Buffer *)v13, v6, v7 * v8 * v11.?); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
-  *(unsigned int *)v11.Surface =(unsigned int)(&BSurface_Vtable); /*0x43724b*/
+  *(_DWORD *)v11.Surface = &BSurface_Vtable; /*0x43724b*/
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
-  LOBYTE(v6) = (unsigned char)(((XSurface *)(&v11))->BlitPart( (void **)(v10), (void **)(a1), (void **)a2, 0, 1)); /*0x437270*/
-  ((Vector *)((int)v13))->Clear((int)((Vector *)((int)v13))); /*0x437272*/
+  IDA_LOBYTE(v6) = XSurface::BlitPart(&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
+  Vector::Clear((int)v13); /*0x437272*/
   return v6; /*0x4371e7*/
-
 }
 }  // G42.18c ns repair
 // 0x550240
@@ -88,7 +86,7 @@ char sub_550240()
 
   result = g_MissionQueueFrame.random[31]; /*0x550240*/
   for ( i = g_MissionQueueFrame.random[31] - 1; i >= 0; --i ) /*0x55024b*/
-    result = TacticalClass::RenderCells(*(TacticalClass **)(&dword_ABC828 + 4 * i)); /*0x550256*/
+    result = TacticalClass::RenderCells(*(TacticalClass **)(g_MissionQueueFrame.random[28] + 4 * i)); /*0x550256*/
   return result; /*0x55025e*/
 }
 } // namespace gamemd
@@ -97,13 +95,12 @@ char sub_550240()
 namespace gamemd {
 unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  unsigned int *v6; // eax
+  _DWORD *v6; // eax
 
-  v6 = (unsigned int *)(RA2_OPNEW(0x40u));
+  v6 = RA2_OPNEW(0x40u); /*0x5d81b2*/
   if ( v6 ) /*0x5d81bc*/
-// 0x5c6150
-    return MPBattleClass::MPManBattleClass( (const wchar_t **)(v6), (gamemd::MultiplayerManBattle *)(a1), (const char **)(a2), (gamemd::MultiplayerManBattle *)(a3), (char)(a4), (MultiplayerManBattle *)(a5), (void *)(a6)); /*0x5d81de*/
+    return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else
     return 0; /*0x5d81e6*/
 }
-} // namespace gamemd
+}

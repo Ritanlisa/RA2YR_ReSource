@@ -26,12 +26,12 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
   wchar_t *v6; // esi
   LRESULT v7; // edi
 
-  v5 = SendMessageA( (HWND)(hWnd), 0x149u, wParam, 0); /*0x624039*/
+  v5 = SendMessageA(hWnd, 0x149u, wParam, 0); /*0x624039*/
   if ( v5 <= 0 ) /*0x62403d*/
-    ((SafeDelete *)(a3))->Ptr(); /*0x624043*/
+    SafeDelete::Ptr(a3); /*0x624043*/
   v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x624055*/
-  v7 = SendMessageA( (HWND)(hWnd), 0x4C3u, wParam, (LPARAM)((LPARAM)((LPARAM)v6))); /*0x624061*/
-  ((WideString *)(a3))->Assign_Alt( (wchar_t *)(v6)); /*0x624068*/
+  v7 = SendMessageA(hWnd, 0x4C3u, wParam, (LPARAM)v6); /*0x624061*/
+  WideString::Assign_Alt(a3, v6); /*0x624068*/
   RA2_OPDEL(v6); /*0x62406e*/
   return v7; /*0x624078*/
 }
@@ -42,7 +42,7 @@ namespace gamemd {
 void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
 {
   HWND DlgItem; // ebp
-  wchar_t * v4;
+  HWND v4; // eax
   wchar_t *StringCSF; // eax
   HWND v6; // ebp
   wchar_t *v7; // eax
@@ -59,28 +59,28 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
   if ( a2 ) /*0x77a8e5*/
   {
     DlgItem = GetDlgItem(hDlg, 1576); /*0x77a8ef*/
-    SendMessageA( (HWND)(DlgItem), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)&g_INI_DefaultBuffer))); /*0x77a8fe*/
+    SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x77a8fe*/
     InvalidateRect(DlgItem, 0, 0); /*0x77a905*/
   }
-  v4 = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1775))));
-  SendMessageA( (HWND)(v4), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)&g_TypeClass_DefaultString))); /*0x77a920*/
-  StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_UnknownStats), 0,(const char *)(g_Str_File_WOLPersonaInformation_cpp), 892)); /*0x77a933*/
-  ((WideString *)((wchar_t **)&v16))->Assign( (wchar_t *)(StringCSF)); /*0x77a93d*/
+  v4 = GetDlgItem(hDlg, 1775); /*0x77a911*/
+  SendMessageA(v4, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x77a920*/
+  StringCSF = GetStringCSF(g_Str_GUI_UnknownStats, 0, g_Str_File_WOLPersonaInformation_cpp, 892); /*0x77a933*/
+  WideString::Assign((wchar_t **)&v16, StringCSF); /*0x77a93d*/
   v6 = GetDlgItem(hDlg, 1776); /*0x77a94e*/
-  v7 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a950*/
-  SendMessageA( (HWND)(v6), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v7))); /*0x77a95e*/
+  v7 = WideString::GetOrEmpty_Alt((wchar_t **)&v16); /*0x77a950*/
+  SendMessageA(v6, 0x4B2u, 0, (LPARAM)v7); /*0x77a95e*/
   v8 = GetDlgItem(hDlg, 1777); /*0x77a96c*/
-  v9 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a96e*/
-  SendMessageA( (HWND)(v8), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v9))); /*0x77a97c*/
+  v9 = WideString::GetOrEmpty_Alt((wchar_t **)&v16); /*0x77a96e*/
+  SendMessageA(v8, 0x4B2u, 0, (LPARAM)v9); /*0x77a97c*/
   v10 = GetDlgItem(hDlg, 1793); /*0x77a98a*/
-  v11 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a98c*/
-  SendMessageA( (HWND)(v10), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v11))); /*0x77a99a*/
+  v11 = WideString::GetOrEmpty_Alt((wchar_t **)&v16); /*0x77a98c*/
+  SendMessageA(v10, 0x4B2u, 0, (LPARAM)v11); /*0x77a99a*/
   v12 = GetDlgItem(hDlg, 1780); /*0x77a9a8*/
-  v13 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a9aa*/
-  SendMessageA( (HWND)(v12), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v13))); /*0x77a9b8*/
+  v13 = WideString::GetOrEmpty_Alt((wchar_t **)&v16); /*0x77a9aa*/
+  SendMessageA(v12, 0x4B2u, 0, (LPARAM)v13); /*0x77a9b8*/
   v14 = GetDlgItem(hDlg, 1781); /*0x77a9c6*/
-  v15 = (wchar_t *)(((WideString*)(wchar_t **)&v16)->GetOrEmpty_Alt()); /*0x77a9c8*/
-  SendMessageA( (HWND)(v14), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v15))); /*0x77a9d6*/
-  ((DeleteAndZero*)&v16)->Alt(); /*0x77a9dc*/
+  v15 = WideString::GetOrEmpty_Alt((wchar_t **)&v16); /*0x77a9c8*/
+  SendMessageA(v14, 0x4B2u, 0, (LPARAM)v15); /*0x77a9d6*/
+  DeleteAndZero::Alt(&v16); /*0x77a9dc*/
 }
 } // namespace gamemd

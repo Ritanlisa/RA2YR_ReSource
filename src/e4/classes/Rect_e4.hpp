@@ -8,18 +8,10 @@ namespace gamemd {
 
 struct Rect {
 // --- flat members (BEGIN) ---
-    int X;  // 0x0
-    int Y;  // 0x4
-    int Width;  // 0x8
-    int Height;  // 0xC
-    unsigned int u32_14;
-    unsigned int u32_18;
-    unsigned int u32_1C;
-
-    int left;  // 0x0
-    int top;  // 0x4
-    int right;  // 0x8
-    int bottom;  // 0xC
+    char X[4];  // 0x0
+    char Y[4];  // 0x4
+    char Width[4];  // 0x8
+    char Height[4];  // 0xC
 // --- flat members (END) ---
     _DWORD * Construct(unsigned int *aP1, int aP2, int aP3);
     BOOL Inflate(LPRECT lprc, int dx, int dy);

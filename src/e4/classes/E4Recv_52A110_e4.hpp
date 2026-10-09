@@ -9,7 +9,6 @@ struct E4Recv_52A110 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
-    unsigned int owningHouseIndex;
 // --- flat members (END) ---
     void * sub_52A110(float * a2, unsigned char * a3, float a4, float * a5);  // 0x52A110
 };

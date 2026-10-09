@@ -27,14 +27,6 @@ struct IPXGlobalConnClass {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int IPXGlobalConnClass_field_0x04;
-    unsigned int u32_CC;
-    unsigned int u32_D0;
-    unsigned int u32_D4;
-    unsigned int Debug;
-    unsigned int Timer;
-    unsigned int *__pad_0;
-    unsigned char IPXGlobalConnClass_field_0x20;  // 0x20
 // --- flat members (END) ---
     HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);
     IPXGlobalConnClass * QueryInterface(char a2);

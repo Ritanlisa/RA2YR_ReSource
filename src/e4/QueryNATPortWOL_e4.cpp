@@ -10,23 +10,21 @@
 namespace gamemd {
 unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
 {
-
   this->Items = 0; /*0x7aecdb*/
   this->Capacity = a2; /*0x7aecde*/
   this->IsInitialized = 1; /*0x7aece1*/
   this->IsAllocated = 0; /*0x7aece5*/
-  this->vtable1 = (void *)((unsigned int)(&vt_VectorClass)); /*0x7aece8*/
+  this->vfptr = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7aece8*/
   if ( a2 ) /*0x7aecee*/
   {
     if ( a3 ) /*0x7aecf6*/
     {
-      this->Items = (unsigned int)((void *)a3);
-      return (unsigned int *)(&this->vtable1); /*0x7aecfe*/
+      this->Items = (void *)a3; /*0x7aecf8*/
+      return &this->vfptr; /*0x7aecfe*/
     }
-    this->Items = (unsigned int)((void *)__2_YAPAXI_Z(4 * a2)); /*0x7aed0d*/
+    this->Items = (void *)RA2_OPNEW(4 * a2); /*0x7aed0d*/
     this->IsAllocated = 1; /*0x7aed10*/
   }
-  return (unsigned int *)(&this->vtable1); /*0x7aecfd*/
-
+  return &this->vfptr; /*0x7aecfd*/
 }
 } // namespace gamemd

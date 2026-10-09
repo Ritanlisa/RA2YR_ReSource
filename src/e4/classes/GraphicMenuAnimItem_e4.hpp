@@ -16,7 +16,6 @@ struct GraphicMenuAnimItem {
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     VectorCursor * Constructor(std::locale::facet *a1, char a2, void *a3, void *a4, void *a5);
 };

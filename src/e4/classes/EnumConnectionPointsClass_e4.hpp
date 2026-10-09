@@ -18,16 +18,13 @@ struct EnumConnectionPointsClass {
     int Count;  // 0x16
     unsigned char q018;  // 0x18
     unsigned int u32_19;  // 0x19
+    unsigned int q01A;  // 0x1A
     unsigned char q01C;  // 0x1C
+    bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     bool q02B;  // 0x2B
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     int Skip(int a1);
     int _vt06(unsigned int * a1, unsigned int * a2);

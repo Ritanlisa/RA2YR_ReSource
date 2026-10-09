@@ -7,6 +7,7 @@ namespace gamemd {
 struct E4Recv_49CCF0 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
@@ -28,6 +29,7 @@ struct E4Recv_49CCF0 {
     unsigned int M64;  // 0x64
     unsigned int q068;  // 0x68
     unsigned int M108;  // 0x6C
+    unsigned int u32_70;  // 0x70
     unsigned int M80;  // 0x80
     unsigned int M84;  // 0x84
     unsigned int q088;  // 0x88
@@ -40,6 +42,7 @@ struct E4Recv_49CCF0 {
     unsigned int q128;  // 0x128
     unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
+    unsigned int u32_1B0;  // 0x1B0
     unsigned int q260;  // 0x260
     unsigned int q264;  // 0x264
     unsigned int q280;  // 0x280
@@ -66,6 +69,57 @@ struct E4Recv_49CCF0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q21600;  // 0x21600
+    unsigned int q21768;  // 0x21768
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q25654;  // 0x25654
+    unsigned int q33398;  // 0x33398
+    unsigned int q33570;  // 0x33570
+    unsigned int q136704;  // 0x136704
+    unsigned int q137064;  // 0x137064
+    unsigned int q210288;  // 0x210288
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q1388914;  // 0x1388914
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q20482324;  // 0x20482324
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q422806914;  // 0x422806914
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q541598500;  // 0x541598500
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q36516995330;  // 0x36516995330
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q1612096536630;  // 0x1612096536630
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q1612552106354;  // 0x1612552106354
+    unsigned int q2359835005728;  // 0x2359835005728
+    unsigned int q2359835107954;  // 0x2359835107954
+    unsigned int q3732705727280;  // 0x3732705727280
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560290600;  // 0x388267560290600
+    unsigned int q388267565606448;  // 0x388267565606448
+    unsigned int q388269456126468;  // 0x388269456126468
+    unsigned int q971036362437248;  // 0x971036362437248
+    unsigned int q971428040484870;  // 0x971428040484870
+    unsigned int q254495664600278088;  // 0x254495664600278088
 // --- flat members (END) ---
     AbstractClass * * sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10);  // 0x49CCF0
 };

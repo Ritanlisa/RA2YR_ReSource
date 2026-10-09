@@ -10,8 +10,12 @@ struct AbstractTypeClass;  // fix_fwd_type_supply
 struct ColorScheme {
 // --- flat members (BEGIN) ---
     unsigned char data;  // 0x0
+    unsigned int u32_134;  // 0x134
+    unsigned int u32_138;  // 0x138
     unsigned int ID;  // 0x300
+    AbstractTypeClass* q304;  // 0x304
     unsigned int q308;  // 0x308
+    unsigned int u32_30C;  // 0x30C
 // --- flat members (END) ---
     int Destructor(void *a1);
 };

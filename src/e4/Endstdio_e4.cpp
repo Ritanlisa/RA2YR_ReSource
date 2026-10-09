@@ -9,6 +9,6 @@
 namespace gamemd {
 int sub_7CB255()
 {
-  return flsall((gamemd::MouseClass *)(1)); /*0x7cb25d*/
+  return flsall(1); /*0x7cb25d*/
 }
 } // namespace gamemd

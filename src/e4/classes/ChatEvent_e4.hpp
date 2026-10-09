@@ -1,9 +1,14 @@
 // GENERATED minimal flat class (fix_c2039_methods)
 #pragma once
 
+#include "e4/classes/_fwd_e4.hpp"
+
 namespace gamemd {
 
 struct ChatEvent {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     char ProcessStrings(char *a2, int a3, int a4, int a5);
 };
 

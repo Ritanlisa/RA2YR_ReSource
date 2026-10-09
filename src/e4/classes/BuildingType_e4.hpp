@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct BuildingType {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     int FindDefault();  // 0x4E3560
     int FindOwnerHouse();  // 0x510ED0
     int IsSpecialType();  // 0x510F60

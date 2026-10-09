@@ -8,14 +8,23 @@ struct Debug {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
+    unsigned char q018;  // 0x18
     unsigned int u32_24;  // 0x24
+    unsigned char q028;  // 0x28
     unsigned int q034;  // 0x34
     unsigned char q038;  // 0x38
+    unsigned char q03C;  // 0x3C
+    unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int u32_4C;  // 0x4C
+    unsigned char q050;  // 0x50
     unsigned int u32_58;  // 0x58
+    unsigned char q05C;  // 0x5C
     void* q0A0;  // 0xA0
-    unsigned int Debug_field_0xA0;
 // --- flat members (END) ---
     char ScrollText(const char *aP1);  // 0x5BD0D0
     int AccumFlags();  // 0x6E61F0

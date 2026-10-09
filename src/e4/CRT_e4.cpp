@@ -10,7 +10,7 @@
 namespace gamemd {
 int sub_7C5EE4()
 {
-  uint16_t v1; // [esp+Ah] [ebp-2h]
+  unsigned __int16 v1; // [esp+Ah] [ebp-2h]
 
   dword_822D80 = v1; /*0x7c5ef9*/
   return v1; /*0x7c5efe*/

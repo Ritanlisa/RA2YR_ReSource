@@ -15,10 +15,6 @@ struct ProgressTimer {
     unsigned char q00C;  // 0xC
     void* q010;  // 0x10
     void* q014;  // 0x14
-    unsigned char *__pad_0;  // 0x0
-    unsigned char ProgressTimer_field_0x8;  // 0x8
-    unsigned char ProgressTimer_field_0x10;  // 0x10
-    unsigned char ProgressTimer_field_0x14;  // 0x14
 // --- flat members (END) ---
     void* GetValue(void *aP1);  // W19K4: widen out-param to void* per raw 0x41A581 receiver-first (&v4 untyped)
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply

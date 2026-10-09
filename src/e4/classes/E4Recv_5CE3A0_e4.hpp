@@ -24,12 +24,16 @@ struct E4Recv_5CE3A0 {
     unsigned int q304;  // 0x304
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
+    unsigned int q22148;  // 0x22148
+    unsigned int q153094;  // 0x153094
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q2359835005720;  // 0x2359835005720
 // --- flat members (END) ---
     int sub_5CE3A0(int a2, int * a3);  // 0x5CE3A0
-    // --- W16G3 supply (BEGIN) ---
     void* attachedTag;  // (W16G3 @0x5ce44b)
     unsigned int attachedBomb;  // @0x5ce3e1 ClipRectIntersection slot (W16G3 raw-usage vocab)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

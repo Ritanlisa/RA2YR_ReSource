@@ -14,22 +14,9 @@ struct Vector {
     bool IsInitialized;  // 0xC
     unsigned char u8_D;  // 0xD
     void* q010;  // 0x10
-    unsigned int Vector_field_0x10;
-    unsigned int Vector_field_0x4;
-    unsigned int Vector_field_0x8;
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int u32_14;
-    unsigned int u32_18;
-    unsigned int u32_1C;
-    unsigned int u32_24;
-    // dup-member: unsigned int HasCapacity;
-    unsigned int Math_Vector2D_Magnitude;
+// --- flat members (END) ---
     void* Cl_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon Vector::Cl is a method)
     static unsigned int Cl(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-// --- flat members (END) ---
     int Cleanup();  // 0x512D30
     int Destructor();  // 0x513100
     int MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890

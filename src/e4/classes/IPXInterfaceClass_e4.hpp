@@ -12,46 +12,14 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct IPXInterfaceClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char __pad_0[87];  // 0x0
-    unsigned char m_1[4];  // 0x1
     bool Initialized;  // 0x4
+    unsigned short BoundSocket;  // 0x6
     unsigned int LocalNetwork;  // 0x8
+    unsigned int u16_A;  // 0xA
     unsigned char LocalNode;  // 0xC
     bool IsAllocated;  // 0xD
     void* Count;  // 0x10
-    unsigned int Socket;
-    unsigned int u32_18;
-    unsigned int u32_24;
-    unsigned int u32_3F2FC;
-    unsigned short m_10;  // 0x10
-    unsigned int u32_1C;
-    unsigned int u32_28;
-    unsigned int u32_4;
-    unsigned int u32_44;
-    unsigned int u32_45;
-    unsigned int u32_8;
-    unsigned int u32_80;
-    unsigned int u32_C;
-    unsigned int u32_30;
-    unsigned int u32_34;
-    unsigned int u32_38;
-    unsigned int u32_3C;
-    unsigned int u32_3F06C;
-    unsigned int u32_3F070;
-    unsigned int u32_40;
-    unsigned int u32_48;
-    unsigned int u32_4C;
-    unsigned int u32_3F050;
-    unsigned int u32_3F054;
-    unsigned int u32_3F05C;
-    unsigned int u32_3F060;
-    unsigned int u32_3F064;
-    unsigned int Destru_vt14;
-    unsigned int q018;
-    unsigned int u32_42;
-    unsigned int q048;
-    unsigned int m_C;  // 0xC
-    unsigned int m_8;  // 0x8
+    unsigned short tail_12;  // 0x12
 // --- flat members (END) ---
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
@@ -78,7 +46,6 @@ struct IPXInterfaceClass {
     void GetQueueSize();
     void StubReturnFalse(int a1, int a2);
     void getSocketCount();
-    // G42.40f: duplicate removed - unqualified SOCKET inside gamemd == gamemd::SOCKET (same as decl above)
     unsigned int q_70;  // +0x70 flat supply (P5 provenance)
     unsigned int q_30;  // +0x30 flat supply (P5 provenance)
     unsigned int q_40;  // +0x40 flat supply (P5 provenance)

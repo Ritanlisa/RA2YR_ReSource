@@ -18,6 +18,9 @@ struct E4Recv_634950 {
     unsigned int q628;  // 0x628
     unsigned int q5170;  // 0x5170
     unsigned int q5494;  // 0x5494
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
 // --- flat members (END) ---
     void sub_634950();  // 0x634950
 };

@@ -14,6 +14,11 @@ struct E4Recv_643720 {
     unsigned int q648;  // 0x648
     unsigned int q1608;  // 0x1608
     unsigned int q5640;  // 0x5640
+    unsigned int q22080;  // 0x22080
+    unsigned int q19409250;  // 0x19409250
+    unsigned int q423662160;  // 0x423662160
+    unsigned int q17773764960;  // 0x17773764960
+    unsigned int q254497871881323270;  // 0x254497871881323270
 // --- flat members (END) ---
     int  RenderBuildingProductionButton(int a2, void * aP2, void * aP3, int a5, char a6);  // 0x643720
 };

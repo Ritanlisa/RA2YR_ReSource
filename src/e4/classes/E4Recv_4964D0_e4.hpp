@@ -9,6 +9,7 @@ struct E4Recv_4964D0 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
+    unsigned int u32_10;  // 0x10
 // --- flat members (END) ---
     int sub_4964D0(int a2, int a3, unsigned __int8 *a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     unsigned char m_4[64];  // pad compile-supply (G41.47)

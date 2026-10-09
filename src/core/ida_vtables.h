@@ -24,12 +24,26 @@ extern void* BaseClass_vftable[1];
 extern void* BinkMovieHandle_vftable[1];
 extern void* BitFont_vftable[1];
 extern void* BitText_vftable[1];
+extern void* BlitPlainXlatAlpha_unsigned_short_vftable[1];
 extern void* BlitPlain_unsigned_char_vftable[1];
 extern void* BlitPlain_unsigned_short_vftable[1];
+extern void* BlitTransLucent25AlphaZReadWarp_unsigned_short_vftable[1];
 extern void* BlitTransLucent25AlphaZReadWrite_unsigned_short_vftable[1];
+extern void* BlitTransLucent25AlphaZRead_unsigned_short_vftable[1];
 extern void* BlitTransLucent25Alpha_unsigned_short_vftable[1];
+extern void* BlitTransLucent50AlphaZReadWarp_unsigned_short_vftable[1];
+extern void* BlitTransLucent50AlphaZReadWrite_unsigned_short_vftable[1];
+extern void* BlitTransLucent50AlphaZRead_unsigned_short_vftable[1];
+extern void* BlitTransLucent50Alpha_unsigned_short_vftable[1];
+extern void* BlitTransLucent75AlphaZReadWarp_unsigned_short_vftable[1];
+extern void* BlitTransLucent75AlphaZReadWrite_unsigned_short_vftable[1];
+extern void* BlitTransLucent75AlphaZRead_unsigned_short_vftable[1];
+extern void* BlitTransLucent75Alpha_unsigned_short_vftable[1];
+extern void* BlitTransXlatAlphaZReadWrite_unsigned_short_vftable[1];
 extern void* BlitTransXlatAlphaZRead_unsigned_short_vftable[1];
 extern void* BlitTransXlatAlpha_unsigned_short_vftable[1];
+extern void* BlitTransZRemapXlatAlphaZRead_unsigned_short_vftable[1];
+extern void* BlitTransZRemapXlatAlpha_unsigned_short_vftable[1];
 extern void* BlitTrans_unsigned_char_vftable[1];
 extern void* BlitTrans_unsigned_short_vftable[1];
 extern void* Blitter_vftable[1];
@@ -63,6 +77,7 @@ extern void* CommandClass_vftable[1];
 extern void* ConnManClass_vftable[1];
 extern void* ConnectionClass_vftable[1];
 extern void* ConnectionPointClass_vftable[1];
+extern void* ControlClass_vftable[1];
 extern void* ConvertClass_vftable[1];
 extern void* CounterClass_vftable[1];
 extern void* CreateGameDialogControl_vftable[1];
@@ -106,10 +121,10 @@ extern void* DynamicVectorClass_ColorScheme___vftable[1];
 extern void* DynamicVectorClass_CommandClass_const___vftable[1];
 extern void* DynamicVectorClass_ControlNode___vftable[1];
 extern void* DynamicVectorClass_ConvertClass___vftable[1];
-extern void* DynamicVectorClass_CoopCampaignClass___vftable[1];
 extern void* DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable[1];
 extern void* DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable[1];
 extern void* DynamicVectorClass_DiskLaserClass___vftable[1];
+extern void* DynamicVectorClass_DynamicVectorClass_char_____vftable[1];
 extern void* DynamicVectorClass_EBolt___vftable[1];
 extern void* DynamicVectorClass_EMPulseClass___vftable[1];
 extern void* DynamicVectorClass_EgoClass___vftable[1];
@@ -303,6 +318,7 @@ extern void* List_INIClass_INIEntry___vftable[1];
 extern void* List_INIClass_INISection___vftable[1];
 extern void* List_MixFileClass___vftable[1];
 extern void* LoadOptionsClass_vftable[1];
+extern void* LoadProgressMgr_vftable[1];
 extern void* LocomotionClass_vftable[1];
 extern void* LogicClass_vftable[1];
 extern void* MPCooperative_vftable[1];
@@ -329,6 +345,7 @@ extern void* Mouse_vftable[1];
 extern void* MouseClass_vftable[1];
 extern void* MovieHandle_vftable[1];
 extern void* MultiplayerBattle_vftable[1];
+extern void* MultiplayerBattleTeam_vftable[1];
 extern void* MultiplayerGameMode_vftable[1];
 extern void* MultiplayerGameMode_InitializerBase_vftable[1];
 extern void* MultiplayerGameMode_Initializer_FreeForAll_vftable[1];
@@ -342,6 +359,7 @@ extern void* MultiplayerObserverTeam_vftable[1];
 extern void* MultiplayerSiege_vftable[1];
 extern void* MultiplayerSiegeAttackerTeam_vftable[1];
 extern void* MultiplayerSiegeDefenderTeam_vftable[1];
+extern void* MultiplayerTeam_vftable[1];
 extern void* NeuronClass_vftable[1];
 extern void* Node_INIClass_INISection___vftable[1];
 extern void* NullModemClass_vftable[1];
@@ -353,7 +371,6 @@ extern void* OverlayTypeClass_vftable[1];
 extern void* OwnerDraw_DialogControl_vftable[1];
 extern void* OwnerDraw_SimpleDialogControl_vftable[1];
 extern void* PKStraw_vftable[1];
-extern void* PageUserCommandClass_vftable[1];
 extern void* ParasiteClass_vftable[1];
 extern void* ParticleClass_vftable[1];
 extern void* ParticleSystemClass_vftable[1];
@@ -365,6 +382,11 @@ extern void* PlayerProfile_vftable[1];
 extern void* PowerClass_vftable[1];
 extern void* ProgressScreenClass_vftable[1];
 extern void* RAMFileClass_vftable[1];
+extern void* RLEBlitTransLucent25Alpha_unsigned_short_vftable[1];
+extern void* RLEBlitTransLucent50Alpha_unsigned_short_vftable[1];
+extern void* RLEBlitTransLucent75Alpha_unsigned_short_vftable[1];
+extern void* RLEBlitTransXlatAlphaZRead_unsigned_short_vftable[1];
+extern void* RLEBlitTransXlatAlpha_unsigned_short_vftable[1];
 extern void* RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable[1];
 extern void* RLEBlitter_vftable[1];
 extern void* RadSiteClass_vftable[1];
@@ -419,9 +441,11 @@ extern void* TClassFactory_BulletTypeClass_vftable[1];
 extern void* TClassFactory_CStreamClass_vftable[1];
 extern void* TClassFactory_CampaignClass_vftable[1];
 extern void* TClassFactory_CaptureManagerClass_vftable[1];
+extern void* TClassFactory_CellClass_vftable[1];
 extern void* TClassFactory_DiskLaserClass_vftable[1];
 extern void* TClassFactory_DriveLocomotionClass_vftable[1];
 extern void* TClassFactory_DropPodLocomotionClass_vftable[1];
+extern void* TClassFactory_EMPulseClass_vftable[1];
 extern void* TClassFactory_FactoryClass_vftable[1];
 extern void* TClassFactory_FlyLocomotionClass_vftable[1];
 extern void* TClassFactory_FoggedObjectClass_vftable[1];
@@ -432,6 +456,7 @@ extern void* TClassFactory_InfantryClass_vftable[1];
 extern void* TClassFactory_InfantryTypeClass_vftable[1];
 extern void* TClassFactory_IsometricTileTypeClass_vftable[1];
 extern void* TClassFactory_JumpjetLocomotionClass_vftable[1];
+extern void* TClassFactory_LightSourceClass_vftable[1];
 extern void* TClassFactory_MechLocomotionClass_vftable[1];
 extern void* TClassFactory_NeuronClass_vftable[1];
 extern void* TClassFactory_OverlayTypeClass_vftable[1];
@@ -446,10 +471,14 @@ extern void* TClassFactory_ScriptClass_vftable[1];
 extern void* TClassFactory_ScriptTypeClass_vftable[1];
 extern void* TClassFactory_ShipLocomotionClass_vftable[1];
 extern void* TClassFactory_SideClass_vftable[1];
+extern void* TClassFactory_SlaveManagerClass_vftable[1];
 extern void* TClassFactory_SmudgeTypeClass_vftable[1];
 extern void* TClassFactory_SpawnManagerClass_vftable[1];
+extern void* TClassFactory_SuperClass_vftable[1];
+extern void* TClassFactory_SuperWeaponTypeClass_vftable[1];
 extern void* TClassFactory_TActionClass_vftable[1];
 extern void* TClassFactory_TEventClass_vftable[1];
+extern void* TClassFactory_Tactical_vftable[1];
 extern void* TClassFactory_TagClass_vftable[1];
 extern void* TClassFactory_TagTypeClass_vftable[1];
 extern void* TClassFactory_TaskForceClass_vftable[1];
@@ -457,6 +486,8 @@ extern void* TClassFactory_TeamClass_vftable[1];
 extern void* TClassFactory_TeamTypeClass_vftable[1];
 extern void* TClassFactory_TeleportLocomotionClass_vftable[1];
 extern void* TClassFactory_TemporalClass_vftable[1];
+extern void* TClassFactory_TerrainClass_vftable[1];
+extern void* TClassFactory_TerrainTypeClass_vftable[1];
 extern void* TClassFactory_TiberiumClass_vftable[1];
 extern void* TClassFactory_TriggerClass_vftable[1];
 extern void* TClassFactory_TriggerTypeClass_vftable[1];
@@ -775,109 +806,3 @@ extern void* rc_ptr_base_vftable[1];
 extern void* return_CD_vftable[1];
 
 } // namespace gamemd
-extern void* BlitPlainXlatAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitPlainXlatZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitPlainXlatZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitPlainXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* BlitPlainXlat_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransDarkenZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransDarkenZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransDarken_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent25AlphaZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent25AlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent25ZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent25ZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent25ZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent25_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50AlphaZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50AlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50AlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50Alpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50ZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50ZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50ZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent50_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75AlphaZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75AlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75AlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75Alpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75ZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75ZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75ZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransLucent75_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransRemapDest_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransRemapXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlatAlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlatMultWriteAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlatWriteAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlatZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlatZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransXlat_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlatAlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlatAlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlatAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlatZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlatZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* BlitTransZRemapXlat_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTranslucent50NonzeroAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTranslucent50ZeroAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* BlitTranslucentWriteAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* DynamicVectorClass_ButtonFadeEffect_vftable[1];  // gC_vftable3 supply
-extern void* DynamicVectorClass_CrossDissolveEffect_vftable[1];  // gC_vftable3 supply
-extern void* DynamicVectorClass_MultiplayerTeam_vftable[1];  // gC_vftable3 supply
-extern void* LoadProgressMgr_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransDarkenZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransDarkenZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransDarken_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25AlphaZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25AlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25AlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25Alpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25ZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25ZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25ZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent25_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50AlphaZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50AlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50AlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50Alpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50ZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50ZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50ZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent50_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75AlphaZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75AlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75AlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75Alpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75ZReadWarp_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75ZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75ZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransLucent75_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransRemapDestZReadWrite_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransRemapDestZRead_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransRemapDest_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransRemapXlatZReadWrite_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransRemapXlatZRead_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransRemapXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatAlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatAlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatAlpha_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatZReadWrite_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatZRead_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlatZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransXlat_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlatAlphaZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlatAlphaZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlatZReadWrite_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlatZReadWrite_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlatZRead_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlatZRead_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlat_unsigned_char_vftable[1];  // gC_vftable3 supply
-extern void* RLEBlitTransZRemapXlat_unsigned_short_vftable[1];  // gC_vftable3 supply
-extern void* ScoreTimeClass_vftable[1];  // gC_vftable3 supply
-extern void* VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass_vftable[1];  // gC_vftable3 supply
-extern void* VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry_vftable[1];  // gC_vftable3 supply

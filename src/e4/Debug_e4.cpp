@@ -18,71 +18,67 @@
 namespace gamemd {
 char Debug::ScrollText(const char * aP1)
 {
-
   char result; // al
   int v4; // eax
   int v5; // ebp
   int v6; // edx
   int v7; // edi
-  int v8; // ebx
   const char *v9; // eax
   int v10; // eax
-  unsigned int *v11; // [esp+4h] [ebp-10h]
+  _DWORD *v11; // [esp+4h] [ebp-10h]
   char *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
   const char *i; // [esp+10h] [ebp-4h]
   char v15; // [esp+18h] [ebp+4h]
 
-  result = BYTE2(g_MissionQueueFrame.localVariables[493]); /*0x5bd0d0*/
-  if ( BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd0dd*/
+  result = IDA_BYTE2(g_MissionQueueFrame.localVariables[493]); /*0x5bd0d0*/
+  if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd0dd*/
   {
-    v4 = *((unsigned int *)this + 2505); /*0x5bd0ef*/
-    v5 = *((unsigned int *)this + 2503) + v4; /*0x5bd108*/
-    v13 = *((unsigned int *)this + 2504) + *((unsigned int *)this + 2506); /*0x5bd10e*/
-    v6 = v4 + *((unsigned int *)this + 2507); /*0x5bd112*/
-    *((unsigned char *)this + 10036) = 0; /*0x5bd119*/
-    v7 = v5 + strlen((const char *)(aP1)); /*0x5bd127*/
+    v4 = this->u32_2724; /*0x5bd0ef*/
+    v5 = this->u32_271C + v4; /*0x5bd108*/
+    v13 = this->u32_2720 + this->u32_2728; /*0x5bd10e*/
+    v6 = v4 + this->u32_272C; /*0x5bd112*/
+    this->u32_2734 = 0; /*0x5bd119*/
+    v7 = v5 + strlen(aP1); /*0x5bd127*/
     if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
-    v8 = v5; /*0x5bd131*/
+    v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
       v12 = (char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
-      v9 = (const char *)(&aP1[-v5]); /*0x5bd15c*/
-      v11 = (unsigned int *)((char *)this + 4 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
+      v9 = &aP1[-v5]; /*0x5bd15c*/
+      v11 = (_DWORD *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
-        v15 = v9[v8]; /*0x5bd16f*/
-        *v12 = Debug_Helper((gamemd::ObjectClass *)(v15)); /*0x5bd187*/
-        *v11 = *((unsigned int *)this + 2500); /*0x5bd18f*/
+        v15 = v9[v5]; /*0x5bd16f*/
+        *v12 = Debug_Helper(v15); /*0x5bd187*/
+        *v11 = this->u32_2710; /*0x5bd18f*/
         if ( v15 == 10 ) /*0x5bd197*/
         {
-          v10 = *((unsigned int *)this + 2504); /*0x5bd199*/
-          *((unsigned int *)this + 2503) = 0; /*0x5bd19f*/
-          *((unsigned int *)this + 2504) = v10 + 1; /*0x5bd1aa*/
+          v10 = this->u32_2720; /*0x5bd199*/
+          this->u32_271C = 0; /*0x5bd19f*/
+          this->u32_2720 = v10 + 1; /*0x5bd1aa*/
         }
         else
         {
-          ++*((unsigned int *)this + 2503); /*0x5bd1b2*/
+          ++this->u32_271C; /*0x5bd1b2*/
         }
-        ++v8; /*0x5bd1c0*/
+        ++v5; /*0x5bd1c0*/
         v11 += 25; /*0x5bd1c9*/
         v12 += 25; /*0x5bd1cd*/
-        if ( v8 >= v7 ) /*0x5bd1d1*/
+        if ( v5 >= v7 ) /*0x5bd1d1*/
           break; /*0x5bd1d1*/
       }
     }
-    return ((Text *)this)->DrawRepeated( v5, v13, v7 - v5, 1); /*0x5bd1e0*/
+    return Text::DrawRepeated(v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
   return result; /*0x5bd1e8*/
-
 }
 }
 // 0x6E61F0
 namespace gamemd {
 int Debug::AccumFlags()
 {
-
   TriggerTypeClass *Debug_field_0xA0; // esi
   int i; // edi
   int Flags; // eax
@@ -94,18 +90,15 @@ int Debug::AccumFlags()
     Debug_field_0xA0 = Debug_field_0xA0->NextTrigger; /*0x6e6205*/
   }
   return i; /*0x6e6213*/
-
 }
 }
 // 0x4068E0
 namespace gamemd {
 int Debug::Log()
 {
-
   int result; // eax
 
   return result; /*0x4068e0*/
-
 }
 } // namespace gamemd
 
@@ -113,9 +106,7 @@ int Debug::Log()
 namespace gamemd {
 void Debug::Log_0(void *a1_1, void *a2_1)
 {
-
   ; /*0x4a4ac0*/
-
 }
 } // namespace gamemd
 
@@ -123,7 +114,6 @@ void Debug::Log_0(void *a1_1, void *a2_1)
 namespace gamemd {
 char Debug::Printf()
 {
-
   char result; // al
   char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
   va_list va; // [esp+10Ch] [ebp+Ch] BYREF
@@ -132,12 +122,11 @@ char Debug::Printf()
   result = byte_ABF23A; /*0x5bd1f0*/
   if ( byte_ABF23A ) /*0x5bd1fd*/
   {
-    vsprintf(Buffer,(const char *const )(Format), va); /*0x5bd214*/
+    vsprintf(Buffer, Format, va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
-    return Debug::ScrollText( (const char *)((const char)((const char *)(int)(Buffer)))); /*0x5bd230*/
+    return Debug::ScrollText(Buffer); /*0x5bd230*/
   }
   return result; /*0x5bd235*/
-
 }
 } // namespace gamemd
 
@@ -145,9 +134,9 @@ char Debug::Printf()
 namespace gamemd {
 char Debug_Helper(ObjectClass * aP0)
 {
-  ObjectClass * result;
+  char result; // al
 
-  result = (gamemd::ObjectClass *)((char)(aP0));
+  result = aP0; /*0x5bd360*/
   switch ( aP0 ) /*0x5bd366*/
   {
     case 10: /*0x5bd366*/
@@ -174,6 +163,6 @@ char Debug_Helper(ObjectClass * aP0)
     case -76: /*0x5bd366*/
       return 43; /*0x5bd3c0*/
   }
-  return (char)(result);
+  return result; /*0x5bd36a*/
 }
 } // namespace gamemd

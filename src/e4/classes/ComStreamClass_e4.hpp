@@ -24,14 +24,6 @@ struct ComStreamClass {
     unsigned char q034;  // 0x34
     unsigned char q038;  // 0x38
     unsigned char q03C;  // 0x3C
-    unsigned int ComStreamClass_field_0x04;
-    unsigned int ComStreamClass_field_0x08;
-    unsigned int ComStreamClass_field_0x0C;
-    unsigned int ComStreamClass_field_0x14;
-    unsigned int ComStreamClass_field_0x18;
-    unsigned int ComStreamClass_field_0x30;
-    unsigned int *__pad_0;
-    unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * readData();
     LONG AddRef(void *a1);

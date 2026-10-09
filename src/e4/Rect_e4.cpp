@@ -12,7 +12,6 @@
 namespace gamemd {
 int Rect::Union(LPRECT aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
 {
-
   LONG *v3; // edx
   struct tagRECT *v4; // ecx
   struct tagRECT *v5; // edi
@@ -30,33 +29,33 @@ int Rect::Union(LPRECT aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
   v15 = v4; /*0x487f4c*/
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
-    *(unsigned int *)v4 = *(unsigned int *)aP0; /*0x488012*/
+    *v4 = *aP0; /*0x488012*/
     return (int)v4; /*0x488026*/
   }
   else
   {
-    lprcDsta = (LPRECT)((gamemd::Rect*)aP0)->right; /*0x487f6a*/
-    if ( (int)lprcDsta <= 0 || (bottom = ((gamemd::Rect*)aP0)->bottom, bottom <= 0) ) /*0x487f79*/
+    lprcDsta = (LPRECT)aP0->right; /*0x487f6a*/
+    if ( (int)lprcDsta <= 0 || (bottom = aP0->bottom, bottom <= 0) ) /*0x487f79*/
     {
       v5->left = *v3; /*0x487ff0*/
       v5->top = v3[1]; /*0x487ff5*/
-      ((gamemd::Rect*)v5)->right = v3[2]; /*0x487ffb*/
-      ((gamemd::Rect*)v5)->bottom = v3[3]; /*0x488001*/
+      v5->right = v3[2]; /*0x487ffb*/
+      v5->bottom = v3[3]; /*0x488001*/
       return (int)v5; /*0x487fec*/
     }
     else
     {
       v7 = *v3; /*0x487f7b*/
-      left = ((gamemd::Rect*)aP0)->left; /*0x487f7d*/
+      left = aP0->left; /*0x487f7d*/
       v9 = v3[1]; /*0x487f80*/
       v10 = v3[2]; /*0x487f84*/
       v11 = v3[3]; /*0x487f87*/
-      if ( v7 > ((gamemd::Rect*)aP0)->left ) /*0x487f8c*/
+      if ( v7 > aP0->left ) /*0x487f8c*/
       {
         v10 += v7 - left; /*0x487f90*/
-        v7 = ((gamemd::Rect*)aP0)->left; /*0x487f92*/
+        v7 = aP0->left; /*0x487f92*/
       }
-      top = ((gamemd::Rect*)aP0)->top; /*0x487f94*/
+      top = aP0->top; /*0x487f94*/
       if ( v9 > top ) /*0x487f9d*/
       {
         v11 += v9 - top; /*0x487fa1*/
@@ -73,48 +72,41 @@ int Rect::Union(LPRECT aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
       return (int)v15; /*0x487fcf*/
     }
   }
-
 }
 } // namespace gamemd
 // 0x42E410
 namespace gamemd {
 _DWORD * Rect::Set(int aP1, int aP2, int aP3, int aP4)
 {
-
   this->X = aP1; /*0x42e41a*/
   this->Y = aP2; /*0x42e420*/
   this->Width = aP3; /*0x42e427*/
   this->Height = aP4; /*0x42e42a*/
-return (unsigned int *)&this->X; /*0x42e42d*/
-
+  return &this->X; /*0x42e42d*/
 }
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
 _DWORD * Rect::Construct(unsigned int *aP1, int aP2, int aP3)
 {
-
   this->X = *aP1; /*0x45a138*/
   this->Y = aP1[1]; /*0x45a141*/
   this->Width = aP2; /*0x45a148*/
   this->Height = aP3; /*0x45a14b*/
-return (_DWORD *)&this->X; /*0x45a14e*/
-
+  return &this->X; /*0x45a14e*/
 }
 } // namespace gamemd
 // 0x72A9E0
 namespace gamemd {
 BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
-
   int v3; // edx
-  unsigned int *v4; // ecx
+  _DWORD *v4; // ecx
 
   *v4 += v3; /*0x72a9e4*/
   v4[1] += v3; /*0x72a9eb*/
   v4[2] -= 2 * v3; /*0x72a9f6*/
   v4[3] -= 2 * v3; /*0x72a9fe*/
   return 2 * v3; /*0x72aa01*/
-
 }
 } // namespace gamemd

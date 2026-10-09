@@ -13,44 +13,22 @@ struct FoggedObjectClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
-    unsigned char __pad_5[356];  // 0x5
     void* vtable3;  // 0x8
-    unsigned char __tail_10;  // 0xA
-    unsigned int qC;  // 0xC
+    void* vtable4;  // 0xC
     int Count;  // 0x10
     unsigned int q011;  // 0x11
     bool IsInitialized;  // 0x12
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
+    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    unsigned char m_1[4];  // 0x1
+    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    int m_8;  // 0x8
+    char LastSight[4];  // 0x24
+    HouseClass* House;  // 0x28
     bool q02B;  // 0x2B
     char Cell[4];  // 0x2C
-    unsigned int q030;
-    unsigned int q034;
-    unsigned int q038;
-    unsigned int q040;
-    unsigned int q044;
-    unsigned int q048;
-    unsigned int q04C;
-    unsigned int q060;
-    unsigned int q064;
-    unsigned int u32_34;
-    unsigned int u32_38;
-    unsigned int u32_3C;
-    unsigned int u32_54;
-    unsigned int u32_58;
-    unsigned int u32_5C;
-    unsigned int u32_6C;
-    unsigned char u8_69;
-    unsigned int House;
-    unsigned int vtable4;
-    unsigned int LastSight;
-    unsigned int u32_64;
-    unsigned char __pad_0;  // 0x0
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     int InitTerrainFog(unsigned int *a2, int a3, int a4);  // G57w10-S raw 0x004D0C40 IUnknown 占位清除

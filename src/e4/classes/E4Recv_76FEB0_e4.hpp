@@ -13,6 +13,9 @@ struct E4Recv_76FEB0 {
     unsigned int q100;  // 0x100
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
 // --- flat members (END) ---
     void  TerritorySelectWDT_Process(int a2, void * aP2);  // 0x76FEB0
 };

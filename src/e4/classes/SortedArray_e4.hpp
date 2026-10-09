@@ -18,13 +18,6 @@ struct SortedArray {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned int u32_20;  // 0x20
-    unsigned int SortedArray_field_0x04;
-    unsigned int SortedArray_field_0x0C;
-    unsigned int SortedArray_field_0x10;
-    unsigned int *__pad_0;
-    unsigned int q0046;
-    unsigned int q040;
-
 // --- flat members (END) ---
     ObjectClass * * RemoveByKey(DynamicVector * aP1);
     int Append(DynamicVector * aP1, unsigned int * a2);

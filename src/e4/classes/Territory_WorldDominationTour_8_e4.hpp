@@ -14,14 +14,6 @@ struct Territory_WorldDominationTour_8 {
     unsigned char q014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int q01C;  // 0x1C
-    unsigned int *__pad_0;
-    unsigned int *__pad_C;
-    unsigned int field_18;
-    unsigned int field_1C;
-    unsigned int Audio;
-    unsigned int Timer;
-    // dup-member: unsigned int Open;
-    unsigned int Release;
 // --- flat members (END) ---
     int AddRef(char a2);  // 0x7718A0
     signed intRelease();  // 0x771900

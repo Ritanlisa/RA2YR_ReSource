@@ -7,6 +7,7 @@ namespace gamemd {
 
 struct Process {
 // --- flat members (BEGIN) ---
+    char Process_field_00[4];  // 0x0
 // --- flat members (END) ---
     bool WaitForExit(DWORD dwMilliseconds, char aP2);
 };

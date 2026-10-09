@@ -180,7 +180,7 @@ void* LoadFileSHP(char* Source, bool* a2) {
         v5 = (void*)0;                                                                         /*0x4a38f2*/
         if ((*(uint8_t(__thiscall**)(CCFileClass*, int))(*(uint32_t*)v8 + 20))((CCFileClass*)v8, 0)) {          /*0x4a38fd*/
             v6 = (size_t)(*(int(__thiscall**)(CCFileClass*))(*(uint32_t*)v8 + 44))((CCFileClass*)v8);          /*0x4a390f*/
-            v5 = __2_YAPAXI_Z((unsigned int)v6);                                               /*0x4a3917*/
+            v5 = new unsigned char[(unsigned int)v6];                                               /*0x4a3917*/
             v7 = (v5 == 0);                                                                    /*0x4a391c*/
             if (v5)                                                                            /*0x4a391e*/
                 (*(void(__thiscall**)(CCFileClass*, void*, size_t))(*(uint32_t*)v8 + 36))((CCFileClass*)v8, v5, v6); /*0x4a392a*/
@@ -188,7 +188,7 @@ void* LoadFileSHP(char* Source, bool* a2) {
             v7 = (v5 == 0);                                                                    /*0x4a392d*/
         }
         *a2 = !v7;                                                                             /*0x4a392f*/
-        *(uint32_t*)v8 = (uint32_t)&CCFileClass_vftable;      // CCFileClass base-dtor vftable install /*0x4a3938*/
+        *(uint32_t*)v8 = (uint32_t)(void*)&CCFileClass_vftable;      // CCFileClass base-dtor vftable install /*0x4a3938*/
         v9[3] = 0;                                                                             /*0x4a3940*/
         ((VectorClass<int>*)(void*)v9)->Clear();               // Vector::Clear @0x43AE50           /*0x4a3948*/
         *(uint32_t*)v8 = (uint32_t)&off_7E1668;                // CDFileClass vftable install       /*0x4a3951*/

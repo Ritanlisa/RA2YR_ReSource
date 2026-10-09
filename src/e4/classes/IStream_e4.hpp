@@ -8,7 +8,7 @@ namespace gamemd {
 struct IStream {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    unsigned int *__pad_0;
+    void* IStream_field_00;  // 0x4
 // --- flat members (END) ---
     int Read(void * pv, ULONG cb);  // COM truth: HRESULT __thiscall IStream::Read(this, void*, ULONG); old pstm param was double-counted receiver (G57e1 B3)
 };

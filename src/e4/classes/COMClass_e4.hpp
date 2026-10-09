@@ -34,16 +34,12 @@ struct COMClass {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     VectorCursor * disconnectPoint(unsigned int * Block, char a2);
     void * lockServer(rc_ptr_base * Block, char a2);
     static int RegisterAll(COMClass * aP1);  // G57w10-S raw 0x00490490 (was C2597 interim stub)
     unsigned int *m_1;  // G42.33 b3 flat-carrier vocab ([3] 索引基)
-    unsigned int m_C;  // G42.33 b3 flat-carrier vocab
-    unsigned int m_10;  // G42.33 b3 flat-carrier vocab
     unsigned int m_8;  // G42.35 C9 flat-carrier vocab (0x7656a5)
-    unsigned int field_18;  // G42.33 b3 flat-carrier vocab
     int RegisterAll();  // G42.33 b3 supplied-body sync (member form)
     unsigned int * releaseInterface();  // 0x765C70 G42.33 b3 supplied-body sync
     unsigned int * marshalInterface(char a2);  // 0x767C50 G42.33 b3 supplied-body sync
@@ -54,92 +50,6 @@ struct COMClass {
     char * createInstance(char a2);  // G42.33 b3 supplied-body sync
     unsigned int * getInterface(char a2);  // G42.33 b3 supplied-body sync
     void ** coUninitialize(char a2);  // G42.33 b3 supplied-body sync
-
-    unsigned int u32_54;  // G42.39 data supply
-
-    unsigned int u32_5C;  // G42.39 data supply
-
-    unsigned int u32_64;  // G42.39 data supply
-
-    unsigned int u32_68;  // G42.39 data supply
-
-    unsigned int u32_6C;  // G42.39 data supply
-
-    unsigned int u32_74;  // G42.39 data supply
-
-    unsigned int u32_78;  // G42.39 data supply
-
-    unsigned int u32_7C;  // G42.39 data supply
-
-
-    unsigned int u32_84;  // G42.39 data supply
-
-    unsigned int u32_88;  // G42.39 data supply
-
-    unsigned int u32_94;  // G42.39 data supply
-
-
-
-
-
-    unsigned int u32_AC;  // G42.39 data supply
-
-
-    unsigned int u32_B8;  // G42.39 data supply
-
-    unsigned int u32_BC;  // G42.39 data supply
-
-    unsigned int u32_C4;  // G42.39 data supply
-
-    unsigned int u32_C8;  // G42.39 data supply
-
-
-    unsigned int u32_D4;  // G42.39 data supply
-
-    unsigned int u32_D8;  // G42.39 data supply
-
-
-    unsigned int u32_E4;  // G42.39 data supply
-
-
-
-    unsigned int u32_F4;  // G42.39 data supply
-
-    unsigned int u32_F8;  // G42.39 data supply
-
-    unsigned int u32_FC;  // G42.39 data supply
-
-    unsigned int u32_104;  // G42.39 data supply
-
-    unsigned int u32_108;  // G42.39 data supply
-
-    unsigned int u32_10C;  // G42.39 data supply
-
-    unsigned int u32_114;  // G42.39 data supply
-
-    unsigned int u32_118;  // G42.39 data supply
-
-
-
-
-
-
-
-    unsigned int u32_13C;  // G42.39 data supply
-
-
-    unsigned int u32_148;  // G42.39 data supply
-
-    unsigned int u32_14C;  // G42.39 data supply
-
-
-
-
-
-
-
-
-    unsigned int u32_4;  // G42.39 data supply
 };
 
 } // namespace gamemd

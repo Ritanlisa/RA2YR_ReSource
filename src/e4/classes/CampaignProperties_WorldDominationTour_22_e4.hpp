@@ -13,15 +13,10 @@ struct CampaignProperties_WorldDominationTour_22 {
     int q008;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x5D2770
     int Read(unsigned int * a2, void *a2_2);  // 0x5D2900
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D2CA0
-    // dup-decl removed: BOOL AddRef();  // 0x76F0F0
     int Release(void *a1_1);  // 0x76F1A0
     int ddtor();  // 0x76F1B0
     unsigned int Write(int a2);  // 0x5D2940

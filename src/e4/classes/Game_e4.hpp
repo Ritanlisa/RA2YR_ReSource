@@ -64,9 +64,11 @@ struct Game {
     unsigned char q100;  // 0x100
     unsigned char q104;  // 0x104
     unsigned char q108;  // 0x108
+    unsigned char q10C;  // 0x10C
     unsigned int q114;  // 0x114
     unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
+    unsigned char q120;  // 0x120
     unsigned int q128;  // 0x128
     unsigned char q12C;  // 0x12C
     unsigned int q130;  // 0x130
@@ -74,6 +76,7 @@ struct Game {
     unsigned int u32_138;  // 0x138
     unsigned int u32_13C;  // 0x13C
     unsigned char q140;  // 0x140
+    unsigned char q144;  // 0x144
     void* q148;  // 0x148
     unsigned char q14C;  // 0x14C
     void* q150;  // 0x150
@@ -83,6 +86,10 @@ struct Game {
     unsigned char q178;  // 0x178
     void* q17C;  // 0x17C
     unsigned char q180;  // 0x180
+    unsigned int u32_1C8;  // 0x1C8
+    unsigned int u32_1CC;  // 0x1CC
+    unsigned int u32_210;  // 0x210
+    unsigned int u32_218;  // 0x218
     void* q248;  // 0x248
     void* q250;  // 0x250
     unsigned char q260;  // 0x260
@@ -111,12 +118,6 @@ struct Game {
     void* q680;  // 0x680
     unsigned char q684;  // 0x684
     void* q6F8;  // 0x6F8
-    unsigned int *__pad_0;
-    unsigned int *__pad_44;
-    unsigned int u32_C2;
-    unsigned int MixFileClass;
-    unsigned int Settings;
-    unsigned int Timer;
 // --- flat members (END) ---
     char LoadSaved();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     void initScenario(void *a1_1);  // 0x430980

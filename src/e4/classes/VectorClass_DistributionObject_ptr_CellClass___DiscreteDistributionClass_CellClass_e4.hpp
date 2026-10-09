@@ -10,7 +10,6 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    unsigned char __pad_0[87];  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC

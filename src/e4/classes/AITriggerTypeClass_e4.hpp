@@ -36,44 +36,6 @@ struct AITriggerTypeClass {
     unsigned int q03B;  // 0x3B
     unsigned char q03C;  // 0x3C
     unsigned int UINameLabel;  // 0x3D
-    unsigned int q0484;
-    unsigned int q04C2;
-    unsigned int q094;
-    unsigned int q098;
-    unsigned int q0A0;
-    unsigned int q0A8;
-    unsigned int q0AC;
-    unsigned int q0B0;
-    unsigned int q0D0;
-    unsigned int q0D8;
-    unsigned int q0DC;
-    unsigned int q0E0;
-    unsigned int u32_280;
-    unsigned int u32_500;
-    unsigned int u32_588;
-    unsigned int u32_D8;
-    unsigned int u32_E4;
-    unsigned char u8_D1;
-    unsigned int vtable46;
-    unsigned int q0B8;
-    unsigned int q0BC;
-    unsigned int q0C0;
-    unsigned int q0C4;
-    unsigned int q0C8;
-    unsigned int q0CC;
-    unsigned int q104;
-    unsigned int q108;
-    unsigned char u8_D2;
-    unsigned char u8_D3;
-    unsigned char u8_D4;
-    unsigned int AITriggerTypeClass_field_0x04;
-    unsigned int AITriggerTypeClass_field_0x08;
-    unsigned int AITriggerTypeClass_field_0x0C;
-    unsigned int *__pad_0;
-    unsigned int AbstractTypeClass;
-    unsigned char AITriggerTypeClass_field_0x18;  // 0x18
-    unsigned char AITriggerTypeClass_field_0x24;  // 0x24
-    unsigned char AITriggerTypeClass_field_0x28;  // 0x28
 // --- flat members (END) ---
     AITriggerTypeClass * ddtor(char a2);
     DynamicVector * * OwnerHouseOwns(unsigned int * a2, int a3);
@@ -86,12 +48,6 @@ struct AITriggerTypeClass {
     int IronCurtainCharged(int a1, int a2);
     int RegisterFailure();
     int RegisterSuccess();
-    unsigned char q0148;  // 0x148
-    unsigned int q0147;  // 0x147
-    unsigned char q0144;  // 0x144
-    unsigned char q0E8;  // 0xE8
-    unsigned int q0E4;  // 0xE4
-    unsigned char q09C;  // 0x9C
     AITriggerTypeClass * ddtor(unsigned int * Block, char a2);
 };
 

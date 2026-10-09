@@ -8,9 +8,6 @@ namespace gamemd {
 struct IPXInterfaceClass;  // fix_fwd_type_supply
 struct Game;  // fix_fwd_type_supply
 struct Scenario {
-    static int EndGame(void *aP1);  // 0x685DC0 raw: char __usercall Scenario::EndGame@<al>(Scenario*)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int EndGameFlow(void *aP1);  // 0x685670 raw: __int16 __usercall Scenario::EndGameFlow@<ax>(Scenario*)  // G57w10 r5 D-classbody supply (raw-anchored)
-
 // --- flat members (BEGIN) ---
     IPXInterfaceClass* q000;  // 0x0
     void* q004;  // 0x4
@@ -26,20 +23,10 @@ struct Scenario {
     void* q02C;  // 0x2C
     void* q030;  // 0x30
     void* q034;  // 0x34
-    unsigned int Scenario_field_0xC;  // 0xC
     void* q038;  // 0x38
-    unsigned int Scenario_field_0x10;  // 0x10
-    unsigned int Scenario_field_0x14;  // 0x14
-    void* Scenario_field_0x18;  // 0x18
     unsigned char q03C;  // 0x3C
     void* q040;  // 0x40
     void* q044;  // 0x44
-    unsigned int Scenario_field_0x1C;  // 0x1C
-    void* Scenario_field_0x20;  // 0x20
-    void* Scenario_field_0x24;  // 0x24
-    void* Scenario_field_0x28;  // 0x28
-    unsigned int Scenario_field_0x2C;  // 0x2C
-    unsigned int Scenario_field_0x30;  // 0x30
     void* q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
@@ -56,6 +43,7 @@ struct Scenario {
     void* q080;  // 0x80
     unsigned char q084;  // 0x84
     unsigned char q088;  // 0x88
+    unsigned char q08C;  // 0x8C
     unsigned int u32_90;  // 0x90
     unsigned int u32_94;  // 0x94
     unsigned int u32_98;  // 0x98
@@ -128,12 +116,9 @@ struct Scenario {
     unsigned char q1650;  // 0x1650
     unsigned char q1908;  // 0x1908
     void* q1910;  // 0x1910
-    unsigned char Scenario_field_0x34;  // 0x34
-    unsigned char Scenario_field_0x38;  // 0x38
-    unsigned char *__pad_3C;  // 0x3C
-    unsigned char __pad_84;  // 0x84
-    unsigned char *__pad_9C;  // 0x9C
 // --- flat members (END) ---
+    static int EndGame(void *aP1);  // 0x685DC0 raw: char __usercall Scenario::EndGame@<al>(Scenario*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int EndGameFlow(void *aP1);  // 0x685670 raw: __int16 __usercall Scenario::EndGameFlow@<ax>(Scenario*)  // G57w10 r5 D-classbody supply (raw-anchored)
     int ReadTeams();  // 0x44F820
     int CopyLocalScenarioData();  // 0x4C6180
     int ProcessSidebarUnits();  // 0x50D610

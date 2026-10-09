@@ -19,11 +19,6 @@ struct MSFrameAnim {
     unsigned char q014;  // 0x14
     int Count;  // 0x16
     MSVQAnim* q018;  // 0x18
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     void * QueryInterface(unsigned int * Block, char a2);  // 0x769BD0
     AbstractClass * * setFrameRate(int a2, unsigned int * a3);  // 0x769FE0

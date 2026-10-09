@@ -11,15 +11,18 @@ struct E4Recv_4349F0 {
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC
     unsigned int u32_10;  // 0x10
-    unsigned int __pad_14;  // 0x14 (G57w18j4: ctor write gap 0x10->0x18, live disasm 0x4349F0)
     unsigned int q018;  // 0x18
-    unsigned int referenceCount;  // 0x1C (was M28; mov [esi+1Ch],ebx @0x434a2b)
+    unsigned int M28;  // 0x1C
     unsigned int M32;  // 0x20
-    unsigned int occupant;  // 0x24 (was M24; word 7FFF@24h + word 3555@26h @0x434a0f/15)
-    unsigned int owningHouseIndex;  // 0x28 (was M38; dword 40h @0x434a1b)
-    unsigned int fallRate;  // 0x2C (was M44; dword 1 @0x434a34)
-    char nextObject[16];  // 0x30 (was q034; SetRect lprc lea [esi+30h] RECT16; absorbs old q034/M36/q038/M40)
-    unsigned char ambientSoundController[2];  // 0x40 (ctor bytes 0x40/0x41 @0x434a22/25; was M65 slot)
+    unsigned int M24;  // 0x24
+    unsigned int M38;  // 0x26
+    unsigned int q028;  // 0x28
+    unsigned int M44;  // 0x2C
+    unsigned int q034;  // 0x34
+    unsigned int M36;  // 0x36
+    unsigned int q038;  // 0x38
+    unsigned int M40;  // 0x40
+    unsigned int M65;  // 0x41
     unsigned int q044;  // 0x44
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
@@ -46,7 +49,35 @@ struct E4Recv_4349F0 {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q388226446628134;  // 0x388226446628134
 // --- flat members (END) ---
+    unsigned int __pad_14;  // 0x14 (G57w18j4: ctor write gap 0x10->0x18, live disasm 0x4349F0)
+    unsigned int referenceCount;  // 0x1C (was M28; mov [esi+1Ch],ebx @0x434a2b)
+    unsigned int occupant;  // 0x24 (was M24; word 7FFF@24h + word 3555@26h @0x434a0f/15)
+    unsigned int owningHouseIndex;  // 0x28 (was M38; dword 40h @0x434a1b)
+    unsigned int fallRate;  // 0x2C (was M44; dword 1 @0x434a34)
+    char nextObject[16];  // 0x30 (was q034; SetRect lprc lea [esi+30h] RECT16; absorbs old q034/M36/q038/M40)
+    unsigned char ambientSoundController[2];  // 0x40 (ctor bytes 0x40/0x41 @0x434a22/25; was M65 slot)
     BOOL sub_4349F0();  // 0x4349F0
 };
 } // namespace gamemd

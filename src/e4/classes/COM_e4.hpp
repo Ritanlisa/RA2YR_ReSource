@@ -7,6 +7,7 @@ namespace gamemd {
 
 struct COM {
 // --- flat members (BEGIN) ---
+    char COM_field_00[4];  // 0x0
 // --- flat members (END) ---
     LONG AddRef(int a1);
     LONG ReleaseRef(volatile LONG * a1);

@@ -38,11 +38,11 @@ struct Cell {
     unsigned char q034;  // 0x34
     void* q038;  // 0x38
     unsigned int q03B;  // 0x3B
+    unsigned int u32_3C;  // 0x3C
     unsigned char q03F;  // 0x3F
     unsigned char q040;  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned int q048;  // 0x48
-    unsigned char Cell_field_0x18[1];  // 0x18
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
     unsigned char q064;  // 0x64
@@ -53,6 +53,7 @@ struct Cell {
     unsigned char q078;  // 0x78
     unsigned char q07C;  // 0x7C
     unsigned int u32_80;  // 0x80
+    unsigned int u32_81;  // 0x81
     unsigned int q084;  // 0x84
     unsigned int q088;  // 0x88
     unsigned char q08C;  // 0x8C
@@ -60,14 +61,16 @@ struct Cell {
     unsigned char q094;  // 0x94
     unsigned char q098;  // 0x98
     unsigned char q09C;  // 0x9C
+    unsigned char q0A0;  // 0xA0
     unsigned int u32_A4;  // 0xA4
-    unsigned int Cell_field_0x68;  // 0x68
-    unsigned int Cell_field_0x6C;  // 0x6C
+    unsigned int q0A8;  // 0xA8
     unsigned int u32_AC;  // 0xAC
     unsigned char q0B0;  // 0xB0
     unsigned char q0B4;  // 0xB4
     unsigned char q0B8;  // 0xB8
+    unsigned char q0BC;  // 0xBC
     unsigned int u32_C4;  // 0xC4
+    unsigned char q0C8;  // 0xC8
     void* q0E4;  // 0xE4
     unsigned char q0E8;  // 0xE8
     unsigned int u32_EC;  // 0xEC
@@ -80,15 +83,15 @@ struct Cell {
     unsigned int u32_10C;  // 0x10C
     unsigned int q114;  // 0x114
     unsigned int q118;  // 0x118
+    unsigned int u32_11A;  // 0x11A
     unsigned char u8_11C;  // 0x11C
+    unsigned int u32_11E;  // 0x11E
     unsigned char q11F;  // 0x11F
     unsigned char q120;  // 0x120
     unsigned int u32_124;  // 0x124
     unsigned int q128;  // 0x128
     void* q12C;  // 0x12C
     unsigned int u32_12E;  // 0x12E
-    unsigned int Cell_field_0xF4;  // 0xF4
-    unsigned int Cell_field_0xF8;  // 0xF8
     unsigned int u32_12F;  // 0x12F
     unsigned char q130;  // 0x130
     unsigned int u32_131;  // 0x131
@@ -99,25 +102,32 @@ struct Cell {
     unsigned int q144;  // 0x144
     unsigned char q148;  // 0x148
     unsigned char q14C;  // 0x14C
+    unsigned char q150;  // 0x150
     unsigned char q160;  // 0x160
     unsigned char q164;  // 0x164
     unsigned int q168;  // 0x168
     unsigned char q16C;  // 0x16C
+    unsigned char q170;  // 0x170
     unsigned char q180;  // 0x180
     unsigned char q184;  // 0x184
+    unsigned char q188;  // 0x188
     unsigned char q194;  // 0x194
     unsigned char q198;  // 0x198
+    unsigned char q19C;  // 0x19C
     unsigned int u32_1A4;  // 0x1A4
-    unsigned int Cell_field_0x13C;  // 0x13C
     unsigned char q1A8;  // 0x1A8
     unsigned int u32_1AC;  // 0x1AC
     unsigned char q1B0;  // 0x1B0
     unsigned char q1B4;  // 0x1B4
+    unsigned char q1B8;  // 0x1B8
+    unsigned int u32_200;  // 0x200
     unsigned int u32_21C;  // 0x21C
+    unsigned char q220;  // 0x220
     void* q228;  // 0x228
     unsigned char q22C;  // 0x22C
     unsigned char q230;  // 0x230
     unsigned char q234;  // 0x234
+    unsigned char q238;  // 0x238
     void* q244;  // 0x244
     void* q248;  // 0x248
     void* q24C;  // 0x24C
@@ -132,23 +142,6 @@ struct Cell {
     unsigned char q288;  // 0x288
     void* q298;  // 0x298
     void* q29C;  // 0x29C
-    unsigned int Cell_field_0x0;
-    unsigned int *Cell_field_0x11B;
-    unsigned int Cell_field_0x140;
-    unsigned int Cell_field_0x38;
-    unsigned int Cell_field_0xE4;
-    unsigned int *__pad_1C;
-    unsigned int *__pad_3C;
-    unsigned int *__pad_70;
-    unsigned int *__pad_E8;
-    unsigned int *__pad_FC;
-    unsigned int u32_5A4;
-    unsigned int u32_6C4;
-    unsigned int u32_901;
-    unsigned int u32_11B;
-    unsigned int u32_140;
-    unsigned int u32_41A;
-    // dup-member: unsigned int HasOccupierBit;
 // --- flat members (END) ---
     TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
     int PosToIndex();  // 0x42B1C0

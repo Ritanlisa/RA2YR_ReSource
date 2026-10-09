@@ -8,12 +8,11 @@ namespace gamemd {
 
 struct AudioSettings {
 // --- flat members (BEGIN) ---
-    unsigned int Check_slot;
-    unsigned int ComputeTransform_slot;
-    unsigned int u32_44;
-    unsigned int u32_46;
-    unsigned int Audio;
-    unsigned int Debug;
+    bool m_Flag68;  // 0x0
+    bool m_Flag70;  // 0x1
+    unsigned char pad_02;  // 0x2
+    char AudioSettings_field_04[4];  // 0x4
+    char AudioSettings_field_08[4];  // 0x8
 // --- flat members (END) ---
     static int ComputeTransform(AudioSettings *pThis, unsigned int a2);  // G57w19k2 raw thiscall static-form supply (member ComputeTransform -> ComputeTransform_slot)
     static int Check(AudioSettings *pThis, unsigned int a2);  // G57w19k2 raw thiscall static-form supply (member Check -> Check_slot)

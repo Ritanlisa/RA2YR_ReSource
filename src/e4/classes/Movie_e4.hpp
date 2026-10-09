@@ -13,8 +13,8 @@ struct Movie {
     void* q008;  // 0x8
     bool q00B;  // 0xB
     void* q00C;  // 0xC
+    char u32_E;  // 0xE
     unsigned char q010;  // 0x10
-    unsigned int u32_14;  // 0x14
     void* q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
@@ -23,9 +23,9 @@ struct Movie {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int q38;  // 0x38
+    void* q038;  // 0x38
     unsigned char q03C;  // 0x3C
-    void *q40;  // 0x40
+    unsigned int q040;  // 0x40
     void* q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
@@ -36,7 +36,7 @@ struct Movie {
     unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
-    unsigned int q6C;  // 0x6C
+    void* q06C;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned char q074;  // 0x74
     unsigned int q080;  // 0x80
@@ -51,30 +51,17 @@ struct Movie {
     unsigned char q130;  // 0x130
     void* q134;  // 0x134
     unsigned int q150;  // 0x150
+    unsigned int u32_180;  // 0x180
+    unsigned int u32_1B0;  // 0x1B0
     unsigned int q260;  // 0x260
     void* q264;  // 0x264
     unsigned char q274;  // 0x274
     unsigned char q278;  // 0x278
     unsigned int q280;  // 0x280
     unsigned char tail_28D;  // 0x28D
-    unsigned int Movie_field_0xC;
-    unsigned int *__pad_10;
-    unsigned int *__pad_28;
-    unsigned int q0180;
-    unsigned int q058;
-    unsigned int q05C;
-    unsigned int q060;
-    unsigned int Movie_field_0x4;
-    unsigned int Movie_field_0x8;
-    unsigned int q038;
-    unsigned int q06C;
-    unsigned int q040;
-    unsigned int Audio;
-    unsigned int CampaignClass;
-    unsigned int Debug;
+// --- flat members (END) ---
     unsigned int PlayWrapper_ph;  // w18j3: filler renamed (no offset truth; canon Movie::PlayWrapper is a method)
     static unsigned int PlayWrapper(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-// --- flat members (END) ---
     AbstractClass * * SetupScreen(int aP1);
     struct CampaignClass * * GetSection(CCINIClass * aP1, CCINIClass * aP2);  // 0x49E3B0
     int Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a7, char a8, int aP1);

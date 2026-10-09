@@ -14,10 +14,6 @@ struct DynamicVectorClass_AnimType {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int *m_1;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);  // 0x525110
     VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x525010

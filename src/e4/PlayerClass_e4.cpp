@@ -12,43 +12,37 @@
 namespace gamemd {
 int PlayerClass::SetHouse(int a2)
 {
-
   char result; // al
 
-  result = (*(int (**)(MultiplayerTeam *, int))(*(unsigned int *)this->__pad_0 + 4))((MultiplayerTeam *)this, a2); /*0x5d8cbb*/
+  result = (*(int (__thiscall **)(MultiplayerTeam *, int))(*(_DWORD *)this->__pad_0 + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
-    *(unsigned int *)(((unsigned int *)(dword_A8DA78))[a2] + 107) = this->q008; /*0x5d8cd5*/
+    *(_DWORD *)(dword_A8DA78[a2] + 107) = this->q008; /*0x5d8cd5*/
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
-
 }
 } // namespace gamemd
 // 0x5D62C0
 namespace gamemd {
 char PlayerClass::AssignPlayerIndex()
 {
-
   int i; // esi
 
   for ( i = 0; i < dword_A8DA84; ++i ) /*0x5d62ca*/
   {
-    if ( ((SessionClass *)((int *)((unsigned int *)(dword_A8DA78))[i]))->GetPlayerSide() == -3 ) /*0x5d62dc*/
-      *(unsigned int *)(((unsigned int *)(dword_A8DA78))[i] + 107) = -1; /*0x5d62e7*/
+    if ( SessionClass::GetPlayerSide((int *)dword_A8DA78[i]) == -3 ) /*0x5d62dc*/
+      *(_DWORD *)(dword_A8DA78[i] + 107) = -1; /*0x5d62e7*/
     else
-      *(unsigned int *)(((unsigned int *)(dword_A8DA78))[i] + 107) = i; /*0x5d62f8*/
+      *(_DWORD *)(dword_A8DA78[i] + 107) = i; /*0x5d62f8*/
   }
   return 1; /*0x5d6307*/
-
 }
 } // namespace gamemd
 // 0x5D8C90
 namespace gamemd {
 bool PlayerClass::IsValidIndex(int a1)
 {
-
   return (int)a1 >= 0 && (int)a1 < dword_A8DA84; /*0x5d8ca2*/
-
 }
 } // namespace gamemd

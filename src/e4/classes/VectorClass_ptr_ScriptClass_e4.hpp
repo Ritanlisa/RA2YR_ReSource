@@ -29,12 +29,9 @@ struct VectorClass_ptr_ScriptClass {
     int FindItemIndex(unsigned int * a2);  // 0x40EA80
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x40EAB0
     DynamicVector * Constructor_VectorClass_ScriptClass___(unsigned int * Block, char a2);  // 0x40EB00
-    // --- W16G3 supply (BEGIN) ---
     char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
     unsigned int m_10;  // 0x10 vocab alias (Count)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

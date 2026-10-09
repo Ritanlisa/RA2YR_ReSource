@@ -34,7 +34,6 @@
 namespace gamemd {
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
-
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
   int i; // ebp
   int TileType; // edi
@@ -43,65 +42,63 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int Ticks; // edx
   int v9; // eax
   int v10; // ecx
-  unsigned int *v11; // edx
+  _DWORD *v11; // edx
 
-  Debug::Log("Stripping queue entries older than %d seconds. Num receive = %d\n"); /*0x540132 G57c1: IDA 0x540132 push offset aStrippingQueue*/
+  Debug::Log(); /*0x540132*/
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
-    TileType = ((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(i); /*0x540158*/
-    Debug::Log("i = %d\n"); /*0x54015a G57c1: IDA 0x54015a push offset aID*/
+    TileType = Terrain::GetTileType(IPXGlobalConnClass_field_0x04, i); /*0x540158*/
+    Debug::Log(); /*0x54015a*/
     if ( TileType ) /*0x540164*/
     {
-      Debug::Log("Checking packet %d\n"); /*0x540170 G57c1: IDA 0x540170 push offset aCheckingPacket*/
-      v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x540175*/
-      v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x540186*/
-      if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x540188*/
+      Debug::Log(); /*0x540170*/
+      v6 = *(_DWORD *)&stru_88732C.__pad_6[6]; /*0x540175*/
+      v7 = *(_DWORD *)&stru_88732C.__pad_6[14]; /*0x540186*/
+      if ( *(_DWORD *)&stru_88732C.__pad_6[6] != -1 ) /*0x540188*/
       {
-        Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x54019a*/
-        v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x54019c*/
-        v7 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5401a3*/
+        Ticks = Timer::GetTicks(); /*0x54019a*/
+        v6 = *(_DWORD *)&stru_88732C.__pad_6[6]; /*0x54019c*/
+        v7 += Ticks - *(_DWORD *)&stru_88732C.__pad_6[6]; /*0x5401a3*/
       }
-      if ( a2 + *(unsigned int *)(TileType + 4) >= v7 ) /*0x5401b0*/
+      if ( a2 + *(_DWORD *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
         if ( v6 != -1 ) /*0x54023d*/
-          ((gamemd::Timer *)this)->GetTicks(); /*0x540244*/
-        Debug::Log("Leaving global packet due to age of %d seconds\n"); /*0x54026f G57c1: IDA 0x54026f push offset aLeavingGlobalP*/
+          Timer::GetTicks(); /*0x540244*/
+        Debug::Log(); /*0x54026f*/
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
-          ((gamemd::Timer *)this)->GetTicks(); /*0x5401c0*/
-        Debug::Log("Stripping global packet due to age of %d seconds\n"); /*0x5401eb G57c1: IDA 0x5401eb push offset aStrippingGloba*/
+          Timer::GetTicks(); /*0x5401c0*/
+        Debug::Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
         v10 = this->u32_D4; /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
         {
-          v11 = (unsigned int *)this->q034; /*0x54020f*/
-          while ( *v11 != *(unsigned int *)(*(unsigned int *)(TileType + 12) + 4) ) /*0x540213*/
+          v11 = (_DWORD *)this->q034; /*0x54020f*/
+          while ( *v11 != *(_DWORD *)(*(_DWORD *)(TileType + 12) + 4) ) /*0x540213*/
           {
             ++v9; /*0x540215*/
             ++v11; /*0x540216*/
             if ( v9 >= v10 ) /*0x54021b*/
               goto LABEL_14; /*0x54021b*/
           }
-          *(unsigned int *)(this->q034 + 4 * v9) = -1; /*0x54021f*/
+          *(_DWORD *)(this->q034 + 4 * v9) = -1; /*0x54021f*/
         }
-LABEL_14:
-        ((PacketQueue *)((PacketQueue *)this->IPXGlobalConnClass_field_0x04))->ReleaseEntry(0, 0, i--, 0, 0); /*0x540226*/
+  LABEL_14:
+        PacketQueue::ReleaseEntry((PacketQueue *)this->IPXGlobalConnClass_field_0x04, 0, 0, i--, 0, 0); /*0x540226*/
       }
     }
     IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x54027b*/
   }
-  Debug::Log("Done stripping. Num receive = %d\n"); /*0x540296 G57c1: IDA 0x540296 push offset aDoneStrippingN*/
-
+  Debug::Log(); /*0x540296*/
 }
 } // namespace gamemd
 // 0x5403F0
 namespace gamemd {
 HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
 {
-
   IPXGlobalConnClass *v7; // ebp
   int v8; // esi
   int v9; // ebp
@@ -119,58 +116,58 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
 
   v7 = this; /*0x5403f4*/
   v16 = this; /*0x5403fc*/
-  ((Waypoint*)(Waypoint *)&v18)->InitInvalid(); /*0x540400*/
-  *(unsigned int *)v18.__pad_0 = *a3; /*0x540413*/
+  Waypoint::InitInvalid((Waypoint *)&v18); /*0x540400*/
+  *(_DWORD *)v18.__pad_0 = *a3; /*0x540413*/
   v18.NetworkID_field_0x04 = a3[1]; /*0x54041a*/
   v19 = a3[2]; /*0x540421*/
   if ( aP4 ) /*0x540425*/
   {
-    ((Network *)((Network *)a3))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x540431*/
-    v15 = *(int *)aP4; /*0x540442*/
-    ((NetworkID *)(&v18))->Assign((unsigned int *)(&v15), (int)v17, 0); /*0x54044c*/
+    Network::CopyAddress((Network *)a3, &v15, (int)v17); /*0x540431*/
+    v15 = *aP4; /*0x540442*/
+    NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
-  if ( *(unsigned int *)&dword_A8B238 == 4 && !(unsigned char)a6 && byte_A8DBA0 && LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) ) /*0x540477*/
+  if ( *(_DWORD *)&dword_A8B238 == 4 && !(_BYTE)a6 && byte_A8DBA0 && IDA_LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) ) /*0x540477*/
   {
     v8 = a2; /*0x540485*/
-    if ( !*(unsigned char *)(a2 + 3) ) /*0x540489*/
+    if ( !*(_BYTE *)(a2 + 3) ) /*0x540489*/
     {
       v20 = v18; /*0x5404a0*/
       v21 = v19; /*0x5404b6*/
-      ((Network *)((Network *)&v20))->CopyAddress((unsigned int *)(&v15), (int)v17); /*0x5404ba*/
-      ((NetworkID *)(&v20))->Assign((unsigned int *)(&v15), (int)v17, aP3); /*0x5404d2*/
+      Network::CopyAddress((Network *)&v20, &v15, (int)v17); /*0x5404ba*/
+      NetworkID::Assign(&v20, &v15, (int)v17, aP3); /*0x5404d2*/
       v9 = -1; /*0x5404dc*/
       v10 = 0; /*0x5404df*/
       if ( dword_A8DA84 > 0 ) /*0x5404e3*/
       {
-        while ( !(uint8_t)((GUID *)((char *)(((unsigned int *)dword_A8DA78)[v10] + 40)))->Compare((int)&v20) ) /*0x5404fd*/
+        while ( !(unsigned __int8)GUID::Compare((char *)(dword_A8DA78[v10] + 40), (int)&v20) ) /*0x5404fd*/
         {
           if ( ++v10 >= dword_A8DA84 ) /*0x540507*/
             goto LABEL_13; /*0x540507*/
         }
-        v9 = *(unsigned int *)(((unsigned int *)(dword_A8DA78))[v10] + 111); /*0x540514*/
+        v9 = *(_DWORD *)(dword_A8DA78[v10] + 111); /*0x540514*/
       }
-LABEL_13:
-      LinkedIndex = ((Factory *)((Factory *)&stru_B052C0[16]))->GetLinkedIndex(v9); /*0x540517*/
+  LABEL_13:
+      LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], v9); /*0x540517*/
       if ( !LinkedIndex ) /*0x540524*/
         LinkedIndex = 1; /*0x540526*/
       v7 = v16; /*0x540528*/
-      *(unsigned char *)(a2 + 3) = LinkedIndex; /*0x54052c*/
+      *(_BYTE *)(a2 + 3) = LinkedIndex; /*0x54052c*/
     }
     v18 = qword_A8DBA4; /*0x540540*/
-    v12 = *(unsigned int *)&dword_841F3C; /*0x54054a*/
+    v12 = *(_DWORD *)&dword_841F3C; /*0x54054a*/
     v19 = dword_A8DBAC; /*0x540554*/
-    if ( (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*(unsigned int *)dword_A8DA78 + 40) /*0x54057b*/
-      && (uint8_t)((NetworkID *)((bool *)v18.__pad_0))->Compare(*(unsigned int *)dword_A8DA78 + 40) )
+    if ( (unsigned __int8)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40) /*0x54057b*/
+      && (unsigned __int8)NetworkID::Compare((bool *)v18.__pad_0, *dword_A8DA78 + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
-      *(unsigned short *)(a2 + 12) = 0; /*0x540587*/
-      *(unsigned int *)(a2 + 8) = 0; /*0x54058d*/
+      *(_WORD *)(a2 + 12) = 0; /*0x540587*/
+      *(_DWORD *)(a2 + 8) = 0; /*0x54058d*/
     }
     else
     {
-      v12 = *(unsigned int *)&dword_A8DBBC; /*0x54059b*/
-      *(unsigned short *)(a2 + 12) = dword_841F3C; /*0x5405a4*/
-      *(unsigned int *)(a2 + 8) = 0; /*0x5405a8*/
+      v12 = *(_DWORD *)&dword_A8DBBC; /*0x54059b*/
+      *(_WORD *)(a2 + 12) = dword_841F3C; /*0x5405a4*/
+      *(_DWORD *)(a2 + 8) = 0; /*0x5405a8*/
     }
   }
   else
@@ -178,15 +175,15 @@ LABEL_13:
     v8 = a2; /*0x5405b0*/
     v12 = aP3; /*0x5405b4*/
     v13 = a2 + 8; /*0x5405b8*/
-    *(unsigned short *)(a2 + 12) = 0; /*0x5405bb*/
-    *(unsigned int *)(a2 + 8) = 0; /*0x5405c1*/
+    *(_WORD *)(a2 + 12) = 0; /*0x5405bb*/
+    *(_DWORD *)(a2 + 8) = 0; /*0x5405c1*/
   }
-  if ( *(unsigned int *)&dword_887628) /*0x5405cf*/
+  if ( *(_DWORD *)&stru_887598.isAliveFlag ) /*0x5405cf*/
   {
-    LOBYTE(v13) = LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) == 0; /*0x5405da*/
-    (*(void (**)(unsigned int, int, int, NetworkID *, int, int, int, int))(**(unsigned int **)&dword_887628/*0x5405f2*/
+    IDA_LOBYTE(v13) = IDA_LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) == 0; /*0x5405da*/
+    (*(void (__thiscall **)(_DWORD, int, int, NetworkID *, int, int, int, int))(**(_DWORD **)&stru_887598.isAliveFlag /*0x5405f2*/
                                                                               + 12))(
-      *(unsigned int *)&dword_887628,
+      *(_DWORD *)&stru_887598.isAliveFlag,
       v8,
       arg4,
       &v18,
@@ -195,15 +192,13 @@ LABEL_13:
       v13,
       v12);
   }
-  return (gamemd::HashTable_flat **)(1);
-
+  return 1; /*0x5405f5*/
 }
 } // namespace gamemd
 // 0x5400D0
 namespace gamemd {
 int IPXGlobalConnClass::CheckStatus()
 {
-
   int v2; // esi
   Terrain *IPXGlobalConnClass_field_0x04; // ecx
 
@@ -213,22 +208,20 @@ int IPXGlobalConnClass::CheckStatus()
   {
     do /*0x540104*/
     {
-      if ( (*(unsigned char *)((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(v2) & 2) != 0 ) /*0x5400e9*/
-        ((PacketQueue *)((PacketQueue *)this->IPXGlobalConnClass_field_0x04))->ReleaseEntry(0, 0, v2--, 0, 0); /*0x5400f7*/
+      if ( (*(_BYTE *)Terrain::GetTileType(IPXGlobalConnClass_field_0x04, v2) & 2) != 0 ) /*0x5400e9*/
+        PacketQueue::ReleaseEntry((PacketQueue *)this->IPXGlobalConnClass_field_0x04, 0, 0, v2--, 0, 0); /*0x5400f7*/
       IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x5400fd*/
       ++v2; /*0x540100*/
     }
     while ( v2 < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 ); /*0x540104*/
   }
   return 1; /*0x540106*/
-
 }
 } // namespace gamemd
 // 0x5402D0
 namespace gamemd {
 int IPXGlobalConnClass::Send()
 {
-
   int v2; // ebx
   int v3; // esi
   int IPXGlobalConnClass_field_0x04; // ecx
@@ -245,29 +238,27 @@ int IPXGlobalConnClass::Send()
   {
     do /*0x540332*/
     {
-      v5 = *(unsigned int *)((Terrain *)((Terrain *)IPXGlobalConnClass_field_0x04))->GetTileIndex(v3); /*0x5402ef*/
+      v5 = *(_DWORD *)Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v3); /*0x5402ef*/
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
-        ((Waypoint*)&v10)->InitInvalid(); /*0x5402fd*/
+        Waypoint::InitInvalid(&v10); /*0x5402fd*/
         v6 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x54030e*/
         v8 = 12; /*0x54031c*/
-        ((PacketQueue*)v6)->ExtractEntry( (void *)(&v10.__pad_0[12]), (unsigned int *)(&v9), v3--, (void *)(&v10), (unsigned int *)(&v8), 0); /*0x540324*/
+        PacketQueue::ExtractEntry(v6, &v10.__pad_0[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
       IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x54032b*/
       ++v3; /*0x54032e*/
     }
-    while ( v3 < *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x540332*/
+    while ( v3 < *(_DWORD *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x540332*/
   }
   return v2; /*0x540334*/
-
 }
 } // namespace gamemd
 // 0x540340
 namespace gamemd {
 int IPXGlobalConnClass::SendPacket(int a2, short a3)
 {
-
   int IPXGlobalConnClass_field_0x04; // ecx
   int v5; // ebp
   int v6; // esi
@@ -285,78 +276,69 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
     return 0; /*0x5403de*/
   do /*0x5403cd*/
   {
-    TileIndex = ((Terrain *)((Terrain *)IPXGlobalConnClass_field_0x04))->GetTileIndex(v6); /*0x54035f*/
+    TileIndex = Terrain::GetTileIndex((Terrain *)IPXGlobalConnClass_field_0x04, v6); /*0x54035f*/
     v8 = TileIndex; /*0x540364*/
-    if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
-      && *(unsigned int *)(TileIndex + 24)
-      && (uint8_t)((NetworkID *)((int)(*(bool **)(TileIndex + 28))))->Compare(a2)
-      && *(unsigned short *)(v8 + 32) == a3 )
+    if ( (*(_BYTE *)TileIndex & 2) == 0 /*0x540392*/
+      && *(_DWORD *)(TileIndex + 24)
+      && (unsigned __int8)NetworkID::Compare(*(bool **)(TileIndex + 28), a2)
+      && *(_WORD *)(v8 + 32) == a3 )
     {
-      ((Waypoint*)&v13)->InitInvalid(); /*0x540398*/
+      Waypoint::InitInvalid(&v13); /*0x540398*/
       v9 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x5403b3*/
       v11 = 12; /*0x5403b7*/
-      ((PacketQueue*)v9)->ExtractEntry( (void *)(&v13.__pad_0[12]), (unsigned int *)(&v12), v6--, (void *)(&v13), (unsigned int *)(&v11), 0); /*0x5403bf*/
+      PacketQueue::ExtractEntry(v9, &v13.__pad_0[12], &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }
     IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x5403c6*/
     ++v6; /*0x5403c9*/
   }
-  while ( v6 < *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x5403cd*/
+  while ( v6 < *(_DWORD *)(IPXGlobalConnClass_field_0x04 + 40) ); /*0x5403cd*/
   return v5; /*0x5403d2*/
-
 }
 } // namespace gamemd
 // 0x540610
 namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
-
-  return ConnectionClass::sendAck( (gamemd::AnimClass *)((int)this), (gamemd::AnimClass *)(a1), (AnimClass *)(aP2), (gamemd::AnimClass *)(aP3),  (void *)(aP4)); /*0x540629*/
-
+  return ConnectionClass::sendAck(a1, aP2, aP3, aP4); /*0x540629*/
 }
 } // namespace gamemd
 // 0x540630
 namespace gamemd {
 int IPXGlobalConnClass::ddtor(int a2, int a3)
 {
-
-  return ((ConnectionClass *)((ConnectionClass *)this))->receivePacket(a2, a3); /*0x54063f*/
-
+  return ConnectionClass::receivePacket(a2, a3); /*0x54063f*/
 }
 } // namespace gamemd
 // 0x540650
 namespace gamemd {
 int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
 {
-
-  return ((ConnectionClass *)((ConnectionClass *)this))->processTileUpdate( (void *)(a2), (signed int *)(a3)); /*0x54065f*/
-
+  return ConnectionClass::processTileUpdate(a2, a3); /*0x54065f*/
 }
 } // namespace gamemd
 // 0x540670
 namespace gamemd {
 IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 {
-
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)this + 52); /*0x540673*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_IPXGlobalConnClass; /*0x540679*/
+  v3 = (void *)this->q034; /*0x540673*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&IPXGlobalConnClass_vftable; /*0x540679*/
   if ( v3 ) /*0x540681*/
   {
-    __3_YAXPAX_Z(v3); /*0x540684*/
-    *((unsigned int *)this + 52) = 0; /*0x54068c*/
+    RA2_OPDEL(v3); /*0x540684*/
+    this->q034 = 0; /*0x54068c*/
   }
-  if ( *((unsigned int *)this + 51) ) /*0x540696*/
+  if ( this->u32_CC ) /*0x540696*/
   {
-    __3_YAXPAX_Z(*((void **)this + 51)); /*0x5406a1*/
-    *((unsigned int *)this + 51) = 0; /*0x5406a9*/
+    RA2_OPDEL(*((void **)&this->u32_141)); /*0x5406a1*/
+    this->u32_CC = 0; /*0x5406a9*/
   }
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_IPXConnClass; /*0x5406b5*/
-  ((ConnectionClass *)((ConnectionClass *)this))->dtor(); /*0x5406bb*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&IPXConnClass_vftable; /*0x5406b5*/
+  ConnectionClass::dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
-    __3_YAXPAX_Z(this); /*0x5406c8*/
-  return (gamemd::IPXGlobalConnClass *)(this->__pad_0); /*0x5406d2*/
-
+    RA2_OPDEL(); /*0x5406c8*/
+  return this->__pad_0; /*0x5406d2*/
 }
 } // namespace gamemd

@@ -10,20 +10,11 @@ struct IPXManagerClass {
     void* vtable1;  // 0x0
     bool Initialized;  // 0x4
     bool Active;  // 0x5
-    unsigned int Socket;
+    unsigned short tail_6;  // 0x6
+// --- flat members (END) ---
     unsigned int processPacket_ph;  // w18j3: filler renamed (no offset truth; canon IPXManagerClass::processPacket is a method)
     static unsigned int processPacket(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-    unsigned int q0080;
-    unsigned int q010;
-    unsigned int q014;
-    unsigned int q044;
-    unsigned int q048;
-    unsigned int u32_44;
-    unsigned int u32_48;
-    unsigned int u32_4C;
-    unsigned int u32_50;
     unsigned int u32_54;  // G42.40f supply (truth 0x5415F0: *((_DWORD*)this+21), cursor index)
-// --- flat members (END) ---
     IPXManagerClass * QueryInterface(char * Block, char a2);
     int ddtor(int a2, int a3, unsigned int * a4);
     int receivePacket(int a2);
@@ -32,12 +23,6 @@ struct IPXManagerClass {
     void StubReturnFalse(int a1, int a2);
     int destroyConnection();  // 0x540d60
     unsigned int * createConnection();  // 0x540d40
-    unsigned int u32_6C;  // 0x6C
-    unsigned int u32_68;  // 0x68
-    unsigned int u32_64;  // 0x64
-    unsigned int q050;  // 0x50
-    unsigned int q04C;  // 0x4C
-    unsigned int q028;  // 0x28
 };
 
 } // namespace gamemd

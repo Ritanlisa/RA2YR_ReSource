@@ -75,43 +75,15 @@ struct Sidebar {
     unsigned char q640;  // 0x640
     void* q774;  // 0x774
     void* q784;  // 0x784
+    unsigned int u32_7B0;  // 0x7B0
     unsigned int q800;  // 0x800
     unsigned int q808;  // 0x808
     unsigned char q824;  // 0x824
+    unsigned int u32_85C;  // 0x85C
+    unsigned int u32_860;  // 0x860
     unsigned int u32_868;  // 0x868
     unsigned int u32_870;  // 0x870
     unsigned int u32_878;  // 0x878
-    unsigned int Sidebar_field_0x4;
-    unsigned int Sidebar_field_0x8;
-    unsigned int *__pad_0;
-    unsigned int *__pad_14;
-    unsigned int *__pad_70;
-    unsigned int q53D0;
-    unsigned int q53D4;
-    unsigned int q53D8;
-    unsigned int u32_53AC;
-    unsigned int u32_53B0;
-    unsigned int u32_53B4;
-    unsigned int u32_53B8;
-    unsigned int u32_53BC;
-    unsigned int u32_53CC;
-    unsigned int u32_53D0;
-    unsigned int u32_53D1;
-    unsigned int u32_53D2;
-    unsigned int u32_53D3;
-    unsigned int u32_53D4;
-    unsigned int u32_53D8;
-    unsigned char u8_53D1;
-    unsigned char u8_53D2;
-    unsigned char u8_53D3;
-    unsigned int Sidebar_field_0x10;
-    unsigned int Sidebar_field_0xC;
-    unsigned int field_150C;
-    unsigned int __pad_1510;
-    unsigned int __pad_152C;
-    unsigned int __pad_1534;
-    unsigned int field_1530;
-    unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5);  // 0x4FA350
 int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);  // 0x005007a0 g57w12-r raw-sync (def-form)

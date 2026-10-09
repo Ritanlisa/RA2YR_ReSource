@@ -14,32 +14,29 @@
 namespace gamemd {
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
-
   int v1; // eax
   int result; // eax
   int v3; // edx
 
-  v1 = (int)(this->u32_1C - 1);
+  v1 = this->u32_1C - 1; /*0x408e73*/
   this->u32_1C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     this->u32_1C = 0; /*0x408e7b*/
-  result = (int)(this->m_RefCount); /*0x408e82*/
-  v3 = *(unsigned int *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
-  *(unsigned int *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
+  result = this->m_RefCount; /*0x408e82*/
+  v3 = *(_DWORD *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
+  *(_DWORD *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
-    result = (int)(this->m_RefCount);
-    *(unsigned int *)(this->m_RefCount + 152) = 0; /*0x408e97*/
+    result = this->m_RefCount; /*0x408e95*/
+    *(_DWORD *)(this->m_RefCount + 152) = 0; /*0x408e97*/
   }
-  return (gamemd::AbstractClass **)(result);
-
+  return result; /*0x408ea1*/
 }
 } // namespace gamemd
 // 0x46F6D0
 namespace gamemd {
 int Count::SetupAllCountriesLobby()
 {
-
   ObjectClass *v1; // ecx
   int **v2; // esi
   int ResourceID2CSF; // ebp
@@ -51,22 +48,22 @@ int Count::SetupAllCountriesLobby()
   int v10; // [esp+18h] [ebp-8h]
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
-  v1 = (ObjectClass *)(0); /*0x46f6da*/
+  v1 = 0; /*0x46f6da*/
   v2 = (int **)dword_A8DA90; /*0x46f6dc*/
   v10 = 0; /*0x46f6e2*/
   v8 = (int **)dword_A8DA90; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
-    ResourceID2CSF = GetResourceID2CSF((int)(v1)); /*0x46f6ef*/
+    ResourceID2CSF = GetResourceID2CSF(v1); /*0x46f6ef*/
     hWnd = GetDlgItem((HWND)this, ResourceID2CSF); /*0x46f700*/
     result = ShowWindow(hWnd, 0); /*0x46f704*/
     if ( result ) /*0x46f70c*/
     {
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
-      if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x46f730*/
-        v6 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))( (ObjectClass *)(dword_A8B23C)); /*0x46f737*/
-      if ( (uint8_t)((Player *)((Player *)v5))->IsObserver() ) /*0x46f73b*/
+      if ( dword_A8B23C && (*(_DWORD *)&dword_A8B238 == 3 || *(_DWORD *)&dword_A8B238 == 4) ) /*0x46f730*/
+        v6 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46f737*/
+      if ( (unsigned __int8)Player::IsObserver((Player *)v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
@@ -88,24 +85,22 @@ int Count::SetupAllCountriesLobby()
       }
       else
       {
-        PlayerSide = ((SessionClass *)(v5))->GetPlayerSide(); /*0x46f786*/
+        PlayerSide = SessionClass::GetPlayerSide(v5); /*0x46f786*/
       }
       if ( dword_A8B23C /*0x46f795*/
-&& !(*((uint8_t (**)(ObjectClass *, int))dword_A8B23C->vtable1 + 7))( (ObjectClass *)(dword_A8B23C), PlayerSide) )
-
-
+        && !(*((unsigned __int8 (__thiscall **)(ObjectClass *, int))dword_A8B23C->vfptr + 7))(dword_A8B23C, PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
-        if ( (uint8_t)((Player *)((Player *)v5))->IsObserver() ) /*0x46f7a0*/
+        if ( (unsigned __int8)Player::IsObserver((Player *)v5) ) /*0x46f7a0*/
         {
           *(v8 - 2557) = (int *)v6; /*0x46f7ad*/
         }
-        else if ( (uint8_t)IsKnownPointer((ObjectClass *)v5) ) /*0x46f7b7*/
+        else if ( (unsigned __int8)IsKnownPointer((ObjectClass *)v5) ) /*0x46f7b7*/
         {
-          ((SessionClass *)(*v8))->SetPlayerOption(v6); /*0x46f7c7*/
+          SessionClass::SetPlayerOption(*v8, v6); /*0x46f7c7*/
         }
       }
-      SetupLobbyCountryCombo((HWND)this, ResourceID2CSF, PlayerSide); /*0x46f7d3*/
+      SetupLobbyCountryCombo(ResourceID2CSF, PlayerSide); /*0x46f7d3*/
       result = ShowWindow(hWnd, 5); /*0x46f7df*/
       v2 = v8; /*0x46f7e5*/
     }
@@ -115,50 +110,41 @@ int Count::SetupAllCountriesLobby()
   }
   while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x46f7ff*/
   return result; /*0x46f805*/
-
 }
 } // namespace gamemd
 // 0x5F1EA0
 namespace gamemd {
 int32_t Count::GetCountQueue()
 {
-
   int v1; // eax
 
   v1 = this->u32_38; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
-    return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 40); /*0x5f1eaa*/
+    return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
     return 0; /*0x5f1eae*/
-
 }
 } // namespace gamemd
 // 0x76F080
 namespace gamemd {
 int32_t Count::Get()
 {
-
   return this->u32_4; /*0x76f083*/
-
 }
 } // namespace gamemd
 // 0x76F160
 namespace gamemd {
 int32_t Count::Release(void *a1)
 {
-
-  ++this->u32_8; /*0x76f162*/
-  return (int32_t)(this->m_RefCount); /*0x76f165*/
-
+  ++*((_DWORD *)a1 + 2); /*0x76f162*/
+  return a1->__pad_0; /*0x76f165*/
 }
 } // namespace gamemd
 // 0x76F170
 namespace gamemd {
 int32_t Count::ddtor()
 {
-
   --this->u32_8; /*0x76f172*/
-  return (int32_t)(this->m_RefCount); /*0x76f175*/
-
+  return this->__pad_0; /*0x76f175*/
 }
 } // namespace gamemd

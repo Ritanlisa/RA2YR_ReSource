@@ -12,13 +12,11 @@
 namespace gamemd {
 long long Display::CalculateDefaultSize()
 {
-
-  int64_t result; // rax
+  __int64 result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5); /*0x5d5a3b*/
   dword_ABFDC4 = result; /*0x5d5a40*/
   return result; /*0x5d5a46*/
-
 }
 } // namespace gamemd
 
@@ -26,7 +24,6 @@ long long Display::CalculateDefaultSize()
 namespace gamemd {
 int Display::GetViewport()
 {
-
   int *result; // eax
   int v2; // ecx
   int v3; // edx
@@ -42,7 +39,6 @@ int Display::GetViewport()
   result[1] = 0; /*0x72ad72*/
   result[2] = v3; /*0x72ad76*/
   result[3] = v4; /*0x72ad79*/
-  return (int)(result); /*0x72ad75*/
-
+  return result; /*0x72ad75*/
 }
 } // namespace gamemd

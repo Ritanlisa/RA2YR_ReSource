@@ -10,9 +10,7 @@
 namespace gamemd {
 _DWORD * CursorPositionCommandClass::Constructor()
 {
-
-  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_CursorPositionCommandClass); /*0x537e72*/
-return (unsigned int *)this->CommandClass; /*0x537e78*/
-
+  *(_DWORD *)this->__tail_0 = &(void*)(void*)&CursorPositionCommandClass_vftable; /*0x537e72*/
+  return this->__tail_0; /*0x537e78*/
 }
 } // namespace gamemd

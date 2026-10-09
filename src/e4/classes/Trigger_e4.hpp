@@ -31,27 +31,6 @@ struct Trigger {
     unsigned int q040;  // 0x40
     unsigned int u32_44;  // 0x44
     void* q048;  // 0x48
-    unsigned int Trigger_field_0x10;
-    unsigned int Trigger_field_0x2C;
-    unsigned int Trigger_field_0x4;
-    unsigned int Trigger_field_0x48;
-    unsigned int *__pad_0;
-    unsigned int *__pad_18;
-    unsigned int *__pad_30;
-    unsigned int *__pad_8;
-    void* ptr_470;
-    unsigned int q444;
-    unsigned int u32_1250;
-    unsigned int u32_1BC2;
-    unsigned int u32_1C46;
-    unsigned int u32_1C80;
-    unsigned int u32_1D04;
-    unsigned int u32_45C;
-    unsigned int u32_46C;
-    unsigned int u32_474;
-    unsigned int u32_478;
-    unsigned int u32_84;
-    unsigned int Timer;
 // --- flat members (END) ---
     int EnableOnce(char aP1);  // 0x554A60
     MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);  // 0x5CBD20

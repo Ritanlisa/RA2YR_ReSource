@@ -13,9 +13,7 @@
 namespace gamemd {
 int IPersistStream::StubReturn450()
 {
-
   return 450; /*0x5b2e55*/
-
 }
 } // namespace gamemd
 
@@ -23,9 +21,7 @@ int IPersistStream::StubReturn450()
 namespace gamemd {
 int IPersistStream::GetMaxSize()
 {
-
   return 450; /*0x5b2ef5*/
-
 }
 } // namespace gamemd
 
@@ -33,12 +29,10 @@ int IPersistStream::GetMaxSize()
 namespace gamemd {
 char IPersistStream::SetField(int a1)
 {
-
   if ( a1 == -1 ) /*0x5b36e3*/
     return 1; /*0x5b36e5*/
   else
-    return (&byte_A8E3AE)[32 * a1]; /*0x5b36eb*/
-
+    return byte_A8E3AE[32 * a1]; /*0x5b36eb*/
 }
 } // namespace gamemd
 
@@ -46,11 +40,9 @@ char IPersistStream::SetField(int a1)
 namespace gamemd {
 int IPersistStream::StubReturnFalse()
 {
-
   int result; // eax
 
   return result; /*0x5b3a50*/
-
 }
 } // namespace gamemd
 
@@ -58,9 +50,7 @@ int IPersistStream::StubReturnFalse()
 namespace gamemd {
 int IPersistStream::IsDirty(int a1, int a2)
 {
-
   return 0; /*0x7099d2*/
-
 }
 } // namespace gamemd
 
@@ -68,9 +58,7 @@ int IPersistStream::IsDirty(int a1, int a2)
 namespace gamemd {
 void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
 {
-
   ; /*0x709a30*/
-
 }
 } // namespace gamemd
 
@@ -78,9 +66,7 @@ void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
 namespace gamemd {
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
-
-  RadioClass::SaveState((int *)((RadioClass *)a0),(gamemd::RadioClass *)((int *)aP1), a3); /*0x70c25f*/
+  RadioClass::SaveState((RadioClass *)a0, (int *)aP1, a3); /*0x70c25f*/
   return 0; /*0x70c266*/
-
 }
 } // namespace gamemd

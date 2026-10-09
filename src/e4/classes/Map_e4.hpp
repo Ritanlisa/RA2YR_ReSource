@@ -6,7 +6,6 @@
 namespace gamemd {
 
 struct Map {
-    static int CanScroll(void *a1);  // [w14e3] raw 0x4F28B0 BOOL __thiscall Map::CanScroll
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     int Width;  // 0x4
@@ -14,7 +13,11 @@ struct Map {
     char* Name;  // 0xC
     char* Description;  // 0x10
     unsigned int* CellData;  // 0x14
+    int MaxPlayers;  // 0x18
+    bool AllowNaval;  // 0x1C
+    int refcount;  // 0x20
 // --- flat members (END) ---
+    static int CanScroll(void *a1);  // [w14e3] raw 0x4F28B0 BOOL __thiscall Map::CanScroll
     unsigned int IsCellFlag(int a1);
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };

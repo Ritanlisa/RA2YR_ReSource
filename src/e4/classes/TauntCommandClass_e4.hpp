@@ -8,9 +8,8 @@ namespace gamemd {
 struct TauntCommandClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void *q4;  // 0x4
-    unsigned int CommandClass;
-    unsigned int TauntCommandClass_field_00;
+    char TauntCommandClass_field_00[4];  // 0x4
+    char TauntCommandClass_field_04[4];  // 0x8
 // --- flat members (END) ---
     static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x536290 _DWORD *__thiscall TauntCommandClass::Construct(TauntCommandClass *this, int a2)
     char * AddRef();

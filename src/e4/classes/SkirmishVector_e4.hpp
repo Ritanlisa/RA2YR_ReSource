@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct SkirmishVector {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static char PushBack(void *aP1, void *a2);  // 0x5EEE40 raw: char PushBack(SkirmishVector*, _DWORD*)
 };

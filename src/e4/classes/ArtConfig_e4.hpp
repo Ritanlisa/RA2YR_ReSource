@@ -11,11 +11,8 @@ struct ArtConfig {
     unsigned char q004;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
+    INIClass * ptr_10;  // 0x10
     unsigned char q014;  // 0x14
-    unsigned int u32_18;
-    unsigned int u32_1C;
-    unsigned int u32_28;
 // --- flat members (END) ---
     int validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3);
     unsigned int * loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5);  // 0x5cc760

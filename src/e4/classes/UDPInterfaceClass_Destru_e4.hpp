@@ -25,8 +25,8 @@ struct UDPInterfaceClass_Destru {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    void* Socket;  // 0x0 (vtable slot)
 // --- flat members (END) ---
+    void* Socket;  // 0x0 (vtable slot)
     AbstractClass * * Bind(int a2);
     int COMStub();
     int COMStub_Ret2();

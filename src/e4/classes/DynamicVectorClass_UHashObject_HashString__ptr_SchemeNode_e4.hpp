@@ -15,11 +15,6 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     int HashEntryCompare(unsigned char * a2);  // 0x517590
     AbstractClass * * SetCapacity_0(int a2, char * a3);  // 0x6284A0

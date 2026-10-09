@@ -8,7 +8,7 @@ namespace gamemd {
 struct ScreenCaptureCommandClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int CommandClass;
+    char ScreenCaptureCommandClass_field_00[4];  // 0x4
 // --- flat members (END) ---
     char AddRef(void *a1);
     unsigned int * Constructor();

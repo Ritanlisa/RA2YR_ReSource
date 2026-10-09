@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct CellSystem {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static int UpdateVisibility(void *aP1);  // 0x578100 raw: int UpdateVisibility(CellSystem*)
 };

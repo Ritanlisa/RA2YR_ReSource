@@ -33,14 +33,6 @@ struct DynamicVector {
     void* q028;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
-    unsigned int DynamicVector_field_0x1;
-    unsigned int DynamicVector_field_0x10;
-    unsigned int DynamicVector_field_0x1C;
-    unsigned int DynamicVector_field_0x8;
-    unsigned int *__pad_0;
-    unsigned int *__pad_14;
-    unsigned int *__pad_20;
-    unsigned int *__pad_C;
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
     char AddItem(unsigned int *aP1);  // 0x413A70
@@ -156,7 +148,6 @@ struct DynamicVector {
     DynamicVector * Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2);
     wchar_t * ddtor(void *a1_1);  // 0x4EA390
     char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EB180
-
     char Remove(signed int Size, char * a3);
 };
 } // namespace gamemd

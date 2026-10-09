@@ -6,8 +6,6 @@
 namespace gamemd {
 
 struct COMObject {
-    static int Release(void *aP1);  // 0x437FC0 raw: int Release(COMObject*)
-
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
@@ -17,6 +15,7 @@ struct COMObject {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
+    unsigned int u32_1D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
@@ -30,11 +29,8 @@ struct COMObject {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int Hovered;
-    unsigned int Image;
-    unsigned int *__pad_0;
-    unsigned int vfptr;
 // --- flat members (END) ---
+    static int Release(void *aP1);  // 0x437FC0 raw: int Release(COMObject*)
     bool IsSameType(GScreenClass * aP0);
     int FindNextActive(unsigned char * a1);
     static int GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1);

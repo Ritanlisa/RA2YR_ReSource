@@ -52,9 +52,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 namespace gamemd {
 void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9, int a10, int a11, char a12)
 {
-  void * v13;
-  void * v14;
-  void * v15;
+  int v13; // eax
+  int v14; // ecx
+  int v15; // edi
   int v16; // ebx
   int v17; // eax
   int v18; // ecx
@@ -65,21 +65,23 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   char v23; // cl
   int v24; // esi
   int v25; // eax
-  unsigned int *v26; // eax
+  _DWORD *v26; // eax
   int v27; // edx
   int v28; // eax
   const void *v29; // eax
   int v30; // eax
   int v31; // eax
-  int16_t v32; // dx
-  float * v34;
+  __int16 v32; // dx
+  int v33; // esi
+  int v34; // ebx
   float *inited; // eax
   float *v36; // eax
-  unsigned int *Value; // eax
-  float * v38;
+  _DWORD *Value; // eax
+  int v38; // edi
   float *v39; // eax
   float *v40; // eax
   int v41; // eax
+  AudioStream *v42; // esi
   int result; // eax
   int v44; // esi
   int v45; // eax
@@ -89,292 +91,319 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   float v49; // [esp+B8h] [ebp-12Ch]
   float v50; // [esp+B8h] [ebp-12Ch]
   int v51; // [esp+BCh] [ebp-128h]
-  char v52; // [esp+CFh] [ebp-115h]
-  float v53; // [esp+D0h] [ebp-114h]
-  double v54; // [esp+D4h] [ebp-110h] BYREF
-  float v55; // [esp+DCh] [ebp-108h]
-  int v56; // [esp+E0h] [ebp-104h] BYREF
-  int v57; // [esp+E4h] [ebp-100h] BYREF
-  double v58; // [esp+E8h] [ebp-FCh]
-  float v59; // [esp+F0h] [ebp-F4h]
-  int v60; // [esp+F4h] [ebp-F0h] BYREF
-  void * v61;
-  unsigned int v62[2]; // [esp+FCh] [ebp-E8h] BYREF
-  void * v63;
-  void * v64;
-  unsigned int v65[4]; // [esp+10Ch] [ebp-D8h] BYREF
-  int v66; // [esp+11Ch] [ebp-C8h] BYREF
-  float v67[3]; // [esp+120h] [ebp-C4h] BYREF
-  float v68; // [esp+12Ch] [ebp-B8h] BYREF
-  unsigned int v69[3]; // [esp+130h] [ebp-B4h] BYREF
-  float v70[12]; // [esp+13Ch] [ebp-A8h] BYREF
-  float v71[12]; // [esp+16Ch] [ebp-78h] BYREF
-  unsigned short v72[12]; // [esp+19Ch] [ebp-48h] BYREF
-  unsigned char v73[48]; // [esp+1B4h] [ebp-30h] BYREF
+  float *v52; // [esp+BCh] [ebp-128h]
+  float *v53; // [esp+BCh] [ebp-128h]
+  float *v54; // [esp+BCh] [ebp-128h]
+  char v55; // [esp+CFh] [ebp-115h]
+  float v56; // [esp+D0h] [ebp-114h]
+  double v57; // [esp+D4h] [ebp-110h] BYREF
+  float v58; // [esp+DCh] [ebp-108h]
+  int v59; // [esp+E0h] [ebp-104h] BYREF
+  int v60; // [esp+E4h] [ebp-100h] BYREF
+  double v61; // [esp+E8h] [ebp-FCh]
+  float v62; // [esp+F0h] [ebp-F4h]
+  AudioStream *v63; // [esp+F4h] [ebp-F0h] BYREF
+  AudioStream *v64; // [esp+F8h] [ebp-ECh]
+  _DWORD v65[2]; // [esp+FCh] [ebp-E8h] BYREF
+  int v66; // [esp+104h] [ebp-E0h]
+  int v67; // [esp+108h] [ebp-DCh] BYREF
+  _DWORD v68[4]; // [esp+10Ch] [ebp-D8h] BYREF
+  int v69; // [esp+11Ch] [ebp-C8h] BYREF
+  int v70[3]; // [esp+120h] [ebp-C4h] BYREF
+  int Transform_field_00; // [esp+12Ch] [ebp-B8h] BYREF
+  float v72[3]; // [esp+130h] [ebp-B4h] BYREF
+  Transform v73[12]; // [esp+13Ch] [ebp-A8h] BYREF
+  int v74[12]; // [esp+16Ch] [ebp-78h] BYREF
+  ProgressTimer v75; // [esp+19Ch] [ebp-48h] BYREF
+  AudioConfig v76; // [esp+1B4h] [ebp-30h] BYREF
 
-  v13 = (void *)((int)((void *)((*(int (**)(unsigned char *))(*(unsigned int *)a1 + 108))((unsigned char *)a1))));
-  v14 = (void *)((int)((*((unsigned int *)a1 + 433))));
-  v15 = (void *)((unsigned int)(v13));
-  v61 = v13; /*0x73c60a*/
-  v52 = 1; /*0x73c60e*/
-  if ( *(unsigned int *)((unsigned int)(v14)+ 3644) != 8 || (*(uint8_t (**)(unsigned char *))(*(unsigned int *)a1 + 196))((unsigned char *)a1) ) /*0x73c621*/
+  v13 = (*(int (__thiscall **)(Class_7F5C70 *))(*(_DWORD *)a1 + 108))(a1); /*0x73c5ff*/
+  v14 = *((_DWORD *)a1 + 433); /*0x73c602*/
+  v15 = v13; /*0x73c608*/
+  v64 = (AudioStream *)v13; /*0x73c60a*/
+  v55 = 1; /*0x73c60e*/
+  if ( *(_DWORD *)(v14 + 3644) != 8 || (*(unsigned __int8 (__thiscall **)(Class_7F5C70 *))(*(_DWORD *)a1 + 196))(a1) ) /*0x73c621*/
     v16 = 0; /*0x73c649*/
   else
-    v16 = ((uint8_t)((unsigned int)((*(unsigned int *)((ProgressTimer*)((unsigned (unsigned int)(short)*)a1 + 452))->GetValue(&v60) >> 12) + 1) >> 1) + 1) /*0x73c644*/
+    v16 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(a1 + 904), &v63) >> 12) + 1) >> 1) /*0x73c644*/
+         + 1)
         & 7;
-  v17 = *((unsigned int *)a1 + 432); /*0x73c64b*/
+  v17 = *((_DWORD *)a1 + 432); /*0x73c64b*/
   if ( v17 >= 0 ) /*0x73c653*/
   {
-    v18 = *((unsigned int *)a1 + 433); /*0x73c655*/
-    v16 = v17 / 2 + *(unsigned int *)(v18 + 3632) + v16 * *(char *)(v18 + 3677); /*0x73c672*/
+    v18 = *((_DWORD *)a1 + 433); /*0x73c655*/
+    v16 = v17 / 2 + *(_DWORD *)(v18 + 3632) + v16 * *(char *)(v18 + 3677); /*0x73c672*/
     goto LABEL_21; /*0x73c674*/
   }
-  if ( !*((unsigned int *)a1 + 413) ) /*0x73c679*/
+  if ( !*((_DWORD *)a1 + 413) ) /*0x73c679*/
     sub_7DC720(-2147467261); /*0x73c688*/
-  if ( (*(uint8_t (**)(unsigned int))(**((unsigned int **)a1 + 413) + 16))(*((unsigned int *)a1 + 413)) /*0x73c6a3*/
-    || (v18 = *((unsigned int *)a1 + 433), *(unsigned int *)(v18 + 664)) )
+  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)a1 + 413) + 16))(*((_DWORD *)a1 + 413)) /*0x73c6a3*/
+    || (v18 = *((_DWORD *)a1 + 433), *(_DWORD *)(v18 + 664)) )
   {
-    v18 = *((unsigned int *)a1 + 433); /*0x73c702*/
-    v22 = v16 * *(char *)(v18 + 3676) + *((unsigned int *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
+    v18 = *((_DWORD *)a1 + 433); /*0x73c702*/
+    v22 = v16 * *(char *)(v18 + 3676) + *((_DWORD *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
   LABEL_20:
-    v16 = *(unsigned int *)(v18 + 3628) + v22; /*0x73c71d*/
+    v16 = *(_DWORD *)(v18 + 3628) + v22; /*0x73c71d*/
     goto LABEL_21; /*0x73c723*/
   }
-  v19 = *((unsigned int *)a1 + 438); /*0x73c6ad*/
+  v19 = *((_DWORD *)a1 + 438); /*0x73c6ad*/
   if ( v19 < 0 ) /*0x73c6b5*/
   {
-    if ( !a1[1718] ) /*0x73c6dd*/
+    if ( !*((_BYTE *)a1 + 1718) ) /*0x73c6dd*/
       goto LABEL_21; /*0x73c6dd*/
-    v21 = *(unsigned int *)(v18 + 3612); /*0x73c6df*/
+    v21 = *(_DWORD *)(v18 + 3612); /*0x73c6df*/
     if ( v21 ) /*0x73c6e7*/
     {
-      v16 = *(unsigned int *)(v18 + 3624) + v16 * v21; /*0x73c6fe*/
+      v16 = *(_DWORD *)(v18 + 3624) + v16 * v21; /*0x73c6fe*/
       goto LABEL_21; /*0x73c700*/
     }
     v22 = v16 * *(char *)(v18 + 3676); /*0x73c6f0*/
     goto LABEL_20; /*0x73c6f3*/
   }
-  v20 = v19 / *(unsigned int *)(v18 + 3620); /*0x73c6b8*/
-  if ( v20 >= *(unsigned int *)(v18 + 3616) - 1 ) /*0x73c6cd*/
-    v20 = *(unsigned int *)(v18 + 3616) - 1; /*0x73c6cf*/
-  v16 = v20 + *(unsigned int *)(v18 + 3636); /*0x73c6d1*/
+  v20 = v19 / *(_DWORD *)(v18 + 3620); /*0x73c6b8*/
+  if ( v20 >= *(_DWORD *)(v18 + 3616) - 1 ) /*0x73c6cd*/
+    v20 = *(_DWORD *)(v18 + 3616) - 1; /*0x73c6cf*/
+  v16 = v20 + *(_DWORD *)(v18 + 3636); /*0x73c6d1*/
   LABEL_21:
-  if ( *(unsigned char *)(v18 + 3233) ) /*0x73c725*/
+  if ( *(_BYTE *)(v18 + 3233) ) /*0x73c725*/
   {
-    v23 = ((int *)a1)[1060];
-    v63 = (void *)((unsigned int)((void *)((unsigned int)(a2))));
-    v64 = (void *)(a3);
+    v23 = *((_BYTE *)a1 + 1060); /*0x73c73a*/
+    v66 = a2; /*0x73c740*/
+    v67 = a3; /*0x73c74d*/
     if ( v23 ) /*0x73c751*/
-      v64 = (void *)((unsigned int)(a3)- 14); /*0x73c756*/
-    v24 = v15->nextArrayIndex; /*0x73c762*/
-    v25 = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))((unsigned char *)a1, 0); /*0x73c772*/
-    DrawToSurfaceSHP(/*0x73c7a7*/
-      g_DSurface_Hidden_2, g_FileSystem_THEATER_PAL, (gamemd::ConvertClass *)v15, v16 + v24 / 2, (ConvertClass *)(&v64), (ConvertClass *)(&a5), (ConvertClass *)(11777), 0, v25 - 2, (gamemd::ConvertClass *)(1000), 0, 0, 0, 0, 0, (gamemd::ConvertClass *)(v51));
-    v61 = (void *)((unsigned int)((void *)((int)((void *)(g_DSurface_Hidden_2)))));
-    g_DSurface_Hidden_2 = (int)((void *)(dword_B1D13C));
-    v63 = (void *)(128);
-    v62[1] = 128; /*0x73c7cd*/
-    v26 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))( dword_B1D13C, (unsigned int *)(v69)); /*0x73c7d8*/
-    v65[0] = *v26; /*0x73c7dd*/
-    v65[1] = v26[1]; /*0x73c7e4*/
-    v65[2] = v26[2]; /*0x73c7eb*/
+      v67 = a3 - 14; /*0x73c756*/
+    v24 = *(__int16 *)(v15 + 6); /*0x73c762*/
+    v25 = (*(int (__thiscall **)(Class_7F5C70 *, _DWORD))(*(_DWORD *)a1 + 748))(a1, 0); /*0x73c772*/
+    DrawToSurfaceSHP( /*0x73c7a7*/
+      (int)g_DSurface_Hidden_2,
+      (int)dword_87F6C4,
+      v15,
+      v16 + v24 / 2,
+      &v67,
+      &a5,
+      11777,
+      0,
+      v25 - 2,
+      1000,
+      0,
+      0,
+      0,
+      0,
+      0,
+      v51);
+    v64 = g_DSurface_Hidden_2; /*0x73c7bd*/
+    g_DSurface_Hidden_2 = (AudioStream *)dword_B1D13C; /*0x73c7c3*/
+    v66 = 128; /*0x73c7c9*/
+    v65[1] = 128; /*0x73c7cd*/
+    v26 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)dword_B1D13C + 120))(dword_B1D13C); /*0x73c7d8*/
+    v68[0] = *v26; /*0x73c7dd*/
+    v68[1] = v26[1]; /*0x73c7e4*/
+    v68[2] = v26[2]; /*0x73c7eb*/
     v27 = v26[3]; /*0x73c7ef*/
-    a1[1747] = 1; /*0x73c7f2*/
-    v65[3] = v27; /*0x73c804*/
-    dword_B1CFA8 = dword_B1CFA8; /*0x73c80e*/
-    dword_B1CFAC = dword_B1CFAC; /*0x73c818*/
-    dword_B1CFB0 = dword_B1CFB0; /*0x73c81e*/
-    dword_B1CFB4 = dword_B1CFB4; /*0x73c824*/
-    if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) ) /*0x73c83d*/
+    *((_BYTE *)a1 + 1747) = 1; /*0x73c7f2*/
+    v68[3] = v27; /*0x73c804*/
+    dword_B1CFC0 = dword_B1CFA8; /*0x73c80e*/
+    dword_B1CFC4 = dword_B1CFAC; /*0x73c818*/
+    dword_B1CFC8 = dword_B1CFB0; /*0x73c81e*/
+    dword_B1CFCC = dword_B1CFB4; /*0x73c824*/
+    if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) ) /*0x73c83d*/
     {
-      v28 = *((unsigned int *)a1 + 413); /*0x73c848*/
-      v66 = -1; /*0x73c84e*/
+      v28 = *((_DWORD *)a1 + 413); /*0x73c848*/
+      v69 = -1; /*0x73c84e*/
       if ( !v28 ) /*0x73c858*/
         sub_7DC720(-2147467261); /*0x73c85f*/
-v29 = (const void *)(*(int (**)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/ *((unsigned int *)a1 + 413), (unsigned char *)(v73), (int *)(&v66));
-
-
-
-      Transform::Copy( (const void *)(v70), (void *)(v29)); /*0x73c885*/
-      v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
-      ((Matrix3x4 *)(v70))->Translate(v46); /*0x73c8b2*/
-      v54 = (double)(int)((((unsigned int)((*(unsigned int *)((ProgressTimer*)((unsigned (unsigned int)(short)*)a1 + 464))->GetValue(&v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/
+      v29 = (const void *)(*(int (__stdcall **)(_DWORD, AudioConfig *, int *))(**((_DWORD **)a1 + 413) + 36))( /*0x73c87a*/
+                            *((_DWORD *)a1 + 413),
+                            &v76,
+                            &v69);
+      Transform::Copy(v73, v29); /*0x73c885*/
+      v46 = (float)(*(_DWORD *)(*((_DWORD *)a1 + 433) + 1824) / 8); /*0x73c8af*/
+      Matrix3x4::Translate(&v73[0].Transform_field_00, v46); /*0x73c8b2*/
+      v57 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(a1 + 928), &v59) >> 10) + 1) >> 1) /*0x73c8ee*/
+                         & 0x1F)
                         - 8)
           * -0.1963495408493621;
-      v47 = v54 /*0x73c91f*/
-          - ((unsigned int *)double)(int)((((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 452))->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F)
+      v47 = v57 /*0x73c91f*/
+          - (double)(int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(a1 + 904), &v60) >> 10) + 1) >> 1)
+                         & 0x1F)
                         - 8)
           * -0.1963495408493621;
-      ((Matrix2D *)(v70))->Rotate(v47); /*0x73c922*/
-      v68 = v70[3]; /*0x73c967*/
-      qmemcpy( (void *)(v71), (const void *)(v70), sizeof(v71)); /*0x73c96d*/
-      *(float *)&v69[1] = v70[11]; /*0x73c973*/
-      *(float *)&v58 = -v70[3]; /*0x73c977*/
-      *(float *)v69 = v70[7]; /*0x73c97f*/
-      *((float *)&v58 + 1) = -v70[7]; /*0x73c989*/
-      v54 = v58; /*0x73c995*/
-      v59 = -v70[11]; /*0x73c99b*/
-      v55 = v59; /*0x73c9b3*/
-      ((Matrix3x3 *)(v71))->Multiply((float *)&v54); /*0x73c9b7*/
-      if ( *((unsigned int *)a1 + 252) ) /*0x73c9bc*/
+      Matrix2D::Rotate(&v73[0].Transform_field_00, v47); /*0x73c922*/
+      Transform_field_00 = v73[3].Transform_field_00; /*0x73c967*/
+      qmemcpy(v74, v73, sizeof(v74)); /*0x73c96d*/
+      v72[1] = *(float *)&v73[11].Transform_field_00; /*0x73c973*/
+      *(float *)&v61 = -*(float *)&v73[3].Transform_field_00; /*0x73c977*/
+      v72[0] = *(float *)&v73[7].Transform_field_00; /*0x73c97f*/
+      *((float *)&v61 + 1) = -*(float *)&v73[7].Transform_field_00; /*0x73c989*/
+      v57 = v61; /*0x73c995*/
+      v62 = -*(float *)&v73[11].Transform_field_00; /*0x73c99b*/
+      v58 = v62; /*0x73c9b3*/
+      Matrix3x3::Multiply((int *)&v57, v72); /*0x73c9b7*/
+      if ( *((_DWORD *)a1 + 252) ) /*0x73c9bc*/
       {
         v48 = -*((float *)a1 + 251); /*0x73c9d6*/
-        Matrix3x4::Translate(v70, v48, unsigned int a1); /*0x73c9d9*/
+        Matrix3x4::Translate(&v73[0].Transform_field_00, v48); /*0x73c9d9*/
       }
-      v53 = (float)(*(unsigned int *)((*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))((unsigned char *)a1, 0) + 12) / -8); /*0x73ca08*/
-      v56 = *(unsigned int *)((*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))((unsigned char *)a1, 0) + 4) / -8; /*0x73ca30*/
-      v67[2] = v53; /*0x73ca3c*/
-      v67[1] = 0.0; /*0x73ca40*/
-      IDA_HIDWORD(v58) = 0; /*0x73ca44*/
-      *(float *)&v54 = (float)v56; /*0x73ca50*/
-      *(float *)&v58 = -*(float *)&v54; /*0x73ca62*/
-      v67[0] = *(float *)&v54; /*0x73ca6c*/
-      v59 = -v53; /*0x73ca74*/
-      v54 = (unsigned long)(IDA_LODWORD(v58)); /*0x73ca7c*/
-      v55 = v59; /*0x73ca84*/
-      ((Matrix3x3 *)(v71))->Multiply((float *)&v54); /*0x73ca90*/
-      v30 = *(unsigned int *)a1; /*0x73ca95*/
-      qmemcpy( (void *)(v72), (const void *)(unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
-      if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(unsigned char *, unsigned int))(v30 + 1016))((unsigned char *)a1, 0) + 160) + 670) ) /*0x73cabe*/
+      v56 = (float)(*(_DWORD *)((*(int (__thiscall **)(Class_7F5C70 *, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0) + 12) /*0x73ca08*/
+                  / -8);
+      v59 = *(_DWORD *)((*(int (__thiscall **)(Class_7F5C70 *, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
+      *(float *)&v70[2] = v56; /*0x73ca3c*/
+      v70[1] = 0; /*0x73ca40*/
+      IDA_HIDWORD(v61) = 0; /*0x73ca44*/
+      *(float *)&v57 = (float)v59; /*0x73ca50*/
+      *(float *)&v61 = -*(float *)&v57; /*0x73ca62*/
+      v70[0] = IDA_LODWORD(v57); /*0x73ca6c*/
+      v62 = -v56; /*0x73ca74*/
+      *(_QWORD *)&v57 = IDA_LODWORD(v61); /*0x73ca7c*/
+      v58 = v62; /*0x73ca84*/
+      Matrix3x3::Multiply((int *)&v57, v52); /*0x73ca90*/
+      v30 = *(_DWORD *)a1; /*0x73ca95*/
+      qmemcpy(&v75, a1 + 880, sizeof(v75)); /*0x73caaa*/
+      if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(Class_7F5C70 *, _DWORD))(v30 + 1016))(a1, 0) + 160) /*0x73cabe*/
+                    + 670) )
       {
-        v31 =((unsigned int *)int)(unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 7) + 1) >> 1)); /*0x73cae1*/
+        v31 = (unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(&v75, &v60) >> 7) + 1) >> 1); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
           IDA_LOBYTE(v31) = (char)(v31 - 64) / 3 + 64; /*0x73cb01*/
         IDA_LOBYTE(v32) = 0; /*0x73cb1e*/
         IDA_HIBYTE(v32) = v31; /*0x73cb27*/
-        IDA_LOWORD(v56) = v32; /*0x73cb2e*/
-        ((FacingClass*)&v56)->Set_SyncLog(unsigned int a1); /*0x73cb33*/
+        IDA_LOWORD(v59) = v32; /*0x73cb2e*/
+        FacingClass::Set_SyncLog(v75.__pad_0, &v59); /*0x73cb33*/
       }
-      if ( *((unsigned int *)a1 + 260) ) /*0x73cb38*/
+      if ( *((_DWORD *)a1 + 260) ) /*0x73cb38*/
       {
         v49 = -*((float *)a1 + 259); /*0x73cb52*/
-        Matrix3x4::Translate(v71, v49, unsigned int a1); /*0x73cb55*/
+        Matrix3x4::Translate(v74, v49); /*0x73cb55*/
       }
-      v56 =((unsigned int *)int)(unsigned int *)((((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
-      v50 = -((double)v56 * -0.1963495408493621); /*0x73cb91*/
-      Matrix3D::RotateZ(v71, v50); /*0x73cb94*/
-      ((Matrix3x3 *)(v71))->Multiply( (float *)(v67)); /*0x73cba5*/
-      ((Matrix3x3 *)(v71))->Multiply( (float *)(&v68)); /*0x73cbb6*/
-      if ( (((unsigned int)((*(unsigned int *)((ProgressTimer*)((unsigned (unsigned int)(short)*)a1 + 464))->GetValue(&v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
-        || (v52 = 1, (((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
+      v59 = (((unsigned int)((*ProgressTimer::GetValue(&v75, &v60) >> 10) + 1) >> 1) & 0x1F) - 8; /*0x73cb81*/
+      v50 = -((double)v59 * -0.1963495408493621); /*0x73cb91*/
+      Matrix3D::RotateZ(v74, v50); /*0x73cb94*/
+      Matrix3x3::Multiply(v70, v53); /*0x73cba5*/
+      Matrix3x3::Multiply(&Transform_field_00, v54); /*0x73cbb6*/
+      if ( (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(a1 + 928), &v60) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
+        || (v55 = 1,
+            (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(a1 + 928), &v59) >> 13) + 1) >> 1) & 3) == 3) )
       {
-        v52 = 0; /*0x73cbfa*/
+        v55 = 0; /*0x73cbfa*/
       }
-      v15 = (void *)((unsigned int)((void *)((int)(v61))));
+      v15 = (int)v64; /*0x73cbff*/
     }
-    a8 = a8; /*0x73cc03*/
-    (*(void (**)(unsigned char *, int, int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cc36*/
-      (unsigned char *)a1,
-      (int)v15,
+    v33 = a8; /*0x73cc03*/
+    (*(void (__thiscall **)(Class_7F5C70 *, int, int, _DWORD *, _DWORD *, _DWORD, int, _DWORD, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)a1 + 1292))( /*0x73cc36*/
+      a1,
+      v15,
       v16,
-      v62,
       v65,
+      v68,
       0,
       256,
       0,
       0,
       0,
-      (int)a8,
+      a8,
       0,
       0,
       0,
       0,
       0,
       10240);
-    if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) && !v52 ) /*0x73cc59*/
+    if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) && !v55 ) /*0x73cc59*/
     {
-      v34 = (float *)((int)((*(unsigned int *)a1)));
-      inited = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cc75*/
-      v36 = MultiplyMatrix3x4( (ObjectClass *)(v70), (float *)(inited), (float *)(v71)); /*0x73cc83*/
-      (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
+      v34 = *(_DWORD *)a1; /*0x73cc5b*/
+      inited = (float *)AudioConfig::InitDefault(&v76); /*0x73cc75*/
+      v36 = MultiplyMatrix3x4((float *)&v73[0].Transform_field_00, inited, (float *)v74); /*0x73cc83*/
+      (*(void (__thiscall **)(Class_7F5C70 *, int, _DWORD, int, _DWORD, _DWORD *, _DWORD *, float *, int, int, _DWORD))(v34 + 1296))( /*0x73cca8*/
         a1,
-        *((unsigned int *, unsigned int a1, unsigned int a8)a1 + 433) + 192,
+        *((_DWORD *)a1 + 433) + 192,
         0,
         -1,
         0,
+        v68,
         v65,
-        v62,
         v36,
-        a8,
+        v33,
         10240,
         0);
     }
-    Value = (unsigned int *)(((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue((unsigned int *)(&v57)));
-    (*(void (**)(unsigned char *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
-      (unsigned char *)a1,
-      (int)v15,
-      (((((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F) + 4) & 0x1F) + 8 * *(char *)(*((unsigned int *)a1 + 433) + 3676),
-      v62,
+    Value = ProgressTimer::GetValue((ProgressTimer *)(a1 + 928), &v60); /*0x73ccb9*/
+    (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int, _DWORD *, _DWORD *, _DWORD, int, _DWORD, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)a1 + 1292))( /*0x73cd08*/
+      a1,
+      v15,
+      (((((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F) + 4) & 0x1F) + 8 * *(char *)(*((_DWORD *)a1 + 433) + 3676),
       v65,
+      v68,
       0,
       256,
       0,
       0,
       0,
-      (int)a8,
+      v33,
       0,
       0,
       0,
       0,
       0,
       10272);
-    if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) ) /*0x73cd1e*/
+    if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) ) /*0x73cd1e*/
     {
-      if ( v52 ) /*0x73cd2b*/
+      if ( v55 ) /*0x73cd2b*/
       {
-        v38 = (float *)((int)((*(unsigned int *)a1)));
-        v39 = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cd47*/
-        v40 = MultiplyMatrix3x4( (ObjectClass *)(v70), (float *)(v39), (float *)(v71)); /*0x73cd55*/
-        (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
-          (unsigned char *)a1,
-          *((unsigned int *)a1 + 433) + 192,
+        v38 = *(_DWORD *)a1; /*0x73cd2d*/
+        v39 = (float *)AudioConfig::InitDefault(&v76); /*0x73cd47*/
+        v40 = MultiplyMatrix3x4((float *)&v73[0].Transform_field_00, v39, (float *)v74); /*0x73cd55*/
+        (*(void (__thiscall **)(Class_7F5C70 *, int, _DWORD, int, _DWORD, _DWORD *, _DWORD *, float *, int, int, _DWORD))(v38 + 1296))( /*0x73cd7a*/
+          a1,
+          *((_DWORD *)a1 + 433) + 192,
           0,
           -1,
           0,
+          v68,
           v65,
-          v62,
           v40,
-          (int)a8,
+          v33,
           10272,
           0);
       }
     }
-    v41 = (*(int (**)(unsigned char *, int))(*(unsigned int *)a1 + 1124))((unsigned char *)a1, (int)a8); /*0x73cd86*/
-    v60 = v60; /*0x73cd93*/
-    (*(void (**)(unsigned char *, int, int, int, int, int, int, int, int, int))(*(unsigned int *)a1 + 1372))( /*0x73cddb*/
-      (unsigned char *)a1,
-      v60,
-      (int)a2,
-      (int)a3,
-      (int)a4,
-      (int)a5,
-      (int)a6,
-      (int)a7,
+    v41 = (*(int (__thiscall **)(Class_7F5C70 *, int))(*(_DWORD *)a1 + 1124))(a1, v33); /*0x73cd86*/
+    v42 = v63; /*0x73cd93*/
+    (*(void (__thiscall **)(Class_7F5C70 *, AudioStream *, int, int, int, int, int, int, int, int))(*(_DWORD *)a1 /*0x73cddb*/
+                                                                                                  + 1372))(
+      a1,
+      v63,
+      a2,
+      a3,
+      a4,
+      a5,
+      a6,
+      a7,
       v41,
-      (int)a9);
-result = (*(int (**)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags))( /*0x73cdf0*/ g_DSurface_Hidden_2, (int *)(&dword_B1CFA8), 0);
-
-
-
-    g_DSurface_Hidden_2 = v60; /*0x73cdf3*/
-    a1[1747] = 0; /*0x73cdf9*/
+      a9);
+    result = (*(int (__thiscall **)(AudioStream *, int *, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x73cdf0*/
+               g_DSurface_Hidden_2,
+               &dword_B1CFC0,
+               0);
+    g_DSurface_Hidden_2 = v42; /*0x73cdf3*/
+    *((_BYTE *)a1 + 1747) = 0; /*0x73cdf9*/
   }
-  else if ( *(unsigned char *)(v18 + 3606) && ((TechnoClass *)(a1))->CheckTargetCell() && !((TechnoClass *)(a1))->ScanNeighborCells() ) /*0x73ce24*/
+  else if ( *(_BYTE *)(v18 + 3606) /*0x73ce24*/
+         && TechnoClass::CheckTargetCell((TechnoClass *)a1)
+         && !TechnoClass::ScanNeighborCells((TechnoClass *)a1) )
   {
-return (void *)(*(int (**)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
-             (unsigned char *)a1,
-             (int)v15,
+    return (*(int (__thiscall **)(Class_7F5C70 *, int, int, int *, int *, _DWORD, int, int, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1292))( /*0x73ce5e*/
+             a1,
+             v15,
              v16,
-             (int *)&a2,
-             (int *)&a4,
+             &a2,
+             &a4,
              0,
              256,
              -16,
              0,
              0,
-             (int)a8,
+             a8,
              0,
              0,
              0,
@@ -384,18 +413,18 @@ return (void *)(*(int (**)(unsigned char *, int, int, int *, int *, unsigned int
   }
   else
   {
-    v44 = *(unsigned int *)a1; /*0x73ce75*/
-    v45 = (*(int (**)(unsigned char *, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 752))( /*0x73ce89*/
-            (unsigned char *)a1,
+    v44 = *(_DWORD *)a1; /*0x73ce75*/
+    v45 = (*(int (__thiscall **)(Class_7F5C70 *, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 752))( /*0x73ce89*/
+            a1,
             0,
-            (int)a8,
+            a8,
             0,
             0,
             0,
             0,
             0,
             0);
-    return (*(int (__thiscall **)(unsigned char *, int, int, char *, char *, unsigned int, int, unsigned int, int))((unsigned char *)(v44 + 1292)))( /*0x73cead*/
+    return (*(int (__thiscall **)(Class_7F5C70 *, int, int, int *, char *, _DWORD, int, _DWORD, int))(v44 + 1292))( /*0x73cead*/
              a1,
              v15,
              v16,
@@ -406,6 +435,6 @@ return (void *)(*(int (**)(unsigned char *, int, int, int *, int *, unsigned int
              0,
              v45);
   }
-return (void *)result; /*0x73ce00*/
+  return result; /*0x73ce00*/
 }
 }

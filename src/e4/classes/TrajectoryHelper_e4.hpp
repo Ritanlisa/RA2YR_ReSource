@@ -7,6 +7,10 @@ namespace gamemd {
 
 struct TrajectoryHelper {
 // --- flat members (BEGIN) ---
+    void* q1850;  // 0x1850
+    void* q6224;  // 0x6224
+    void* q25124;  // 0x25124
+    void* q151844;  // 0x151844
 // --- flat members (END) ---
     unsigned int * FindFirstImpenetrableObstacle(unsigned int *a1, int *a2, int a3, void *a4);  // G57w10-S raw 0x004CC310 IUnknown 占位清除
     unsigned int * FindFirstObstacle(unsigned int *a1, int *a2, int a3, void *a4);  // G57w10-S raw 0x004CC100 IUnknown 占位清除

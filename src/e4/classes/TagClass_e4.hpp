@@ -14,10 +14,14 @@ struct TagClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
+    int uniqueId;  // 0x10
+    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
+    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
+    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TagTypeClass* buildingType;  // 0x24
     TriggerClass* firstTrigger;  // 0x28
@@ -27,10 +31,8 @@ struct TagClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     bool destroyed;  // 0x34
-    unsigned int u32_38;
-    unsigned int u32_3C;
-    unsigned int q011;
-    unsigned int uniqueId;
+    bool isExecuting;  // 0x35
+    unsigned char align36;  // 0x36
 // --- flat members (END) ---
     int Unlink();
     TagClass * ProcessTrigger(char a2);

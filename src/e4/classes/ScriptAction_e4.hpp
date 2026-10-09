@@ -8,14 +8,6 @@
 namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct ScriptAction {
-// G57w8 raw-vocab supply (usage-driven; offsets per til names)
-    void *__pad_0;  // 0x0 vfptr slot witness (raw *(u32*)this->__pad_0 + 8 vt call)
-    void **__pad_C;  // 0xC
-    unsigned char __pad_78[8];  // 0x78
-    int ScriptAction_field_0x14;  // 0x14
-    void *ScriptAction_field_0x8C;  // 0x8C
-    void *ScriptAction_field_0x94;  // 0x94
-    int ScriptAction_field_0x98;  // 0x98
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int u32_3;  // 0x3
@@ -29,26 +21,19 @@ struct ScriptAction {
     void* q014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
-    unsigned char __pad_1C[2];  // 0x1C
     unsigned int q020;  // 0x20
     void* q024;  // 0x24
-    unsigned char ScriptAction_field_0x4[1];  // 0x4
-    unsigned char ScriptAction_field_0x8[1];  // 0x8
     unsigned int u32_28;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char u8_2D;  // 0x2D
     void* q030;  // 0x30
-    unsigned char ScriptAction_field_0x10[1];  // 0x10
     unsigned char q034;  // 0x34
-    unsigned char ScriptAction_field_0x18[1];  // 0x18
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int u32_40;  // 0x40
-    unsigned int ScriptAction_field_0x24;  // 0x24
     unsigned int u32_44;  // 0x44
     unsigned int u32_48;  // 0x48
     AbstractClass* q04C;  // 0x4C
-    unsigned int ScriptAction_field_0x30;  // 0x30
     CampaignClass* q050;  // 0x50
     unsigned char q054;  // 0x54
     unsigned int q058;  // 0x58
@@ -69,7 +54,6 @@ struct ScriptAction {
     unsigned int q088;  // 0x88
     void* q08C;  // 0x8C
     ObjectClass* q090;  // 0x90
-    unsigned char __pad_90;  // 0x90
     void* q094;  // 0x94
     void* q098;  // 0x98
     unsigned char q09C;  // 0x9C
@@ -79,13 +63,12 @@ struct ScriptAction {
     unsigned char q0AC;  // 0xAC
     void* q0B0;  // 0xB0
 // --- flat members (END) ---
+    void *__pad_0;  // 0x0 vfptr slot witness (raw *(u32*)this->__pad_0 + 8 vt call)
     void*  InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11);  // 0x4C6860
     int CreatePlacementAction(unsigned int *a2, const void *a3);  // 0x633FA0
     unsigned int * GetCoords(unsigned int *a2);  // 0x6343C0
     unsigned int *  GetScreenPos(unsigned int * a2);  // 0x634400
     BOOL GetActionCoordinates(int a2, int a3, int a4);  // 0x634550
-    unsigned int ScriptAction_field_0xB0;  // 0xB0
-    unsigned int ScriptAction_field_0xA8;  // 0xA8
     unsigned int *  FindItemByValue(int a2);  // 0x6346B0
     int FindSquadMember(void *a1 = 0);  // 0x6349B0
     int FindBuildingMatch(unsigned int *a2);  // 0x634CC0

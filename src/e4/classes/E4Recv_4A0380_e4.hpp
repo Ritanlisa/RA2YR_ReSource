@@ -14,7 +14,7 @@ struct E4Recv_4A0380 {
     unsigned int M17;  // 0x11
     unsigned int M20;  // 0x14
     unsigned int q018;  // 0x18
-    void* p1C;  // regen name
+    unsigned int M28;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q028;  // 0x28
@@ -37,13 +37,16 @@ struct E4Recv_4A0380 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int EnumConnectionsClass_field_0x04;
-    unsigned int EnumConnectionsClass_field_0x08;
-    unsigned int EnumConnectionsClass_field_0x0C;
-    unsigned int EnumConnectionsClass_field_0x10;
-    unsigned int EnumConnectionsClass_field_0x14;
-    unsigned int *__pad_0;
-    unsigned int M28;
+    unsigned int q20848;  // 0x20848
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     unsigned int * sub_4A0380(unsigned int * a2);  // 0x4A0380
 };

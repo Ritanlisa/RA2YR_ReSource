@@ -11,8 +11,8 @@ struct DynamicVector;  // fix_fwd_type_supply
 #define GAMEMD_G2_Buffer_DEF 1
 struct Buffer {
 // --- flat members (BEGIN) ---
-    void *q0;  // 0x0
-    void *q4;  // 0x4
+    unsigned int Buffer_field_00;  // 0x0
+    unsigned int Buffer_field_04;  // 0x4
     unsigned int Buffer_field_08;  // 0x8
     unsigned int Buffer_field_0C;  // 0xC
     bool IsAllocated;  // 0xD
@@ -22,24 +22,8 @@ struct Buffer {
     unsigned int Buffer_field_1C;  // 0x1C
     unsigned int Buffer_field_20;  // 0x20
     unsigned int Buffer_field_24;  // 0x24
-    unsigned int Buffer_field_184;
-    unsigned int Buffer_field_188;
-    unsigned int Items;
-    unsigned int q008;
-    unsigned int q030;
-    unsigned int q744;
-    unsigned int q748;
-    unsigned int u32_1CF0;
-    unsigned int u32_28;
-    unsigned int u32_2C;
-    unsigned int u32_2E42;
-    unsigned int u32_88;
-    unsigned int Buffer_field_00;
-    unsigned int Buffer_field_04;
-    unsigned char m_1[16];  // G42.33 b3 flat-carrier vocab ([3] 索引基)
-    unsigned int m_C;  // G42.33 b3 flat-carrier vocab
-    unsigned int m_8;  // G42.33 b3 flat-carrier vocab
 // --- flat members (END) ---
+    unsigned char m_1[16];  // G42.33 b3 flat-carrier vocab ([3] 索引基)
     unsigned int * Init(int a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2, int a3, int aP1);
     int * RotateBufferCrypto(int * a2, int a3);
@@ -58,20 +42,6 @@ struct Buffer {
     static int AppendCellData(void *aP0, int aP1);  // G57a1 static-form mirror
     static void * FillCircularBufferScroll2(void *aP0, int aP1, int aP2);  // G57a1 static-form mirror
     static void * Constructor_VectorClass_ObjectClass___(void *aP0, int aP1, int aP2);  // G57a1 static-form mirror
-
-    unsigned int u32_158;  // G42.39 data supply
-
-    unsigned int u32_DC;  // G42.39 data supply
-
-    unsigned int u32_12C;  // G42.39 data supply
-
-    unsigned char Buffer_field_046;  // G42.39 data supply
-
-    unsigned char Buffer_field_047;  // G42.39 data supply
-
-    unsigned int u32_744;  // G42.39 data supply
-
-    unsigned int u32_748;  // G42.39 data supply
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

@@ -11,7 +11,6 @@
 namespace gamemd {
 int Input::OffsetToDirection()
 {
-
   double v1; // st7
   int v2; // edi
   int Input_field_00; // esi
@@ -21,8 +20,8 @@ int Input::OffsetToDirection()
   int v7; // [esp+10h] [ebp-8h]
   int v8; // [esp+14h] [ebp-4h]
 
-  v2 = (uint8_t)*((unsigned int *)this + 1); /*0x4810aa*/
-  Input_field_00 = (uint8_t)this->Input_field_00; /*0x4810b0*/
+  v2 = (unsigned __int8)this->u32_4; /*0x4810aa*/
+  Input_field_00 = (unsigned __int8)this->Input_field_00; /*0x4810b0*/
   v8 = v2 - 128; /*0x4810bf*/
   v7 = Input_field_00 - 128; /*0x4810c3*/
   __asm /*0x4810c7*/
@@ -39,15 +38,14 @@ int Input::OffsetToDirection()
     fstp st
   }
   Math::Sqrt(v6); /*0x4810e0*/
-  LOWORD(v4) = Math::RoundToInt(v1); /*0x4810e8*/
+  IDA_LOWORD(v4) = Math::RoundToInt(v1); /*0x4810e8*/
   if ( v4 < 60 ) /*0x4810f0*/
     return 0; /*0x4810f3*/
   result = Input_field_00 > 128; /*0x481104*/
   if ( v2 > 128 ) /*0x48110f*/
-    LOBYTE(result) = result | 2; /*0x481111*/
+    IDA_LOBYTE(result) = result | 2; /*0x481111*/
   if ( result ) /*0x481115*/
     ++result; /*0x48111e*/
   return result; /*0x4810f2*/
-
 }
 } // namespace gamemd

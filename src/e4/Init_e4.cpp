@@ -10,8 +10,6 @@
 namespace gamemd {
 void Init::StubPlaceholder()
 {
-
   ; /*0x60d430*/
-
 }
 } // namespace gamemd

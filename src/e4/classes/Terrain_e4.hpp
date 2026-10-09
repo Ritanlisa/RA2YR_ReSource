@@ -12,6 +12,7 @@ struct Terrain {
     unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
     void* q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -30,16 +31,20 @@ struct Terrain {
     unsigned char q050;  // 0x50
     void* q054;  // 0x54
     unsigned char q058;  // 0x58
+    unsigned char q05C;  // 0x5C
     unsigned int u32_60;  // 0x60
     void* q064;  // 0x64
     unsigned char q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
     unsigned char q070;  // 0x70
+    unsigned char q074;  // 0x74
     unsigned char q080;  // 0x80
     unsigned char q084;  // 0x84
     unsigned char q088;  // 0x88
+    unsigned char q08C;  // 0x8C
     unsigned char q090;  // 0x90
     unsigned char q094;  // 0x94
+    unsigned char q098;  // 0x98
     unsigned int u32_F4;  // 0xF4
     unsigned int u32_F8;  // 0xF8
     unsigned char q0FC;  // 0xFC
@@ -47,9 +52,11 @@ struct Terrain {
     unsigned char q104;  // 0x104
     unsigned int q108;  // 0x108
     unsigned char q10C;  // 0x10C
+    unsigned char q110;  // 0x110
     void* q114;  // 0x114
     unsigned char q118;  // 0x118
     unsigned char q11C;  // 0x11C
+    unsigned char q120;  // 0x120
     unsigned char q122;  // 0x122
     unsigned int u32_124;  // 0x124
     void* q128;  // 0x128
@@ -59,18 +66,6 @@ struct Terrain {
     unsigned char q138;  // 0x138
     void* q13C;  // 0x13C
     void* q140;  // 0x140
-    unsigned int Terrain_field_0x14;
-    unsigned int Terrain_field_0x24;
-    unsigned int Terrain_field_0x30;
-    unsigned int Terrain_field_0x34;
-    unsigned int Terrain_field_0x38;
-    unsigned int Terrain_field_0x40;
-    unsigned int Terrain_field_0x60;
-    unsigned int *__pad_18;
-    unsigned int *__pad_44;
-    unsigned int Terrain_field_0x13C;  // 0x13C
-    unsigned int __pad_68;
-    unsigned int outBuffer;  // 0x24
 // --- flat members (END) ---
     int GetTileIndex(int a2);  // 0x48B720
     int GetTileType(int aP1);  // 0x48B9E0

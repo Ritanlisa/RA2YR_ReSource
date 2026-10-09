@@ -16,7 +16,6 @@ struct AITriggerTypeClass_40 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x420370
     wchar_t * Seek(int a2, void *a2_2, void *a3_1);  // 0x4203C0

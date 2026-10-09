@@ -31,8 +31,8 @@ struct RandomMap {
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     void * ptr_30;  // 0x30
-    unsigned char u8_34;  // 0x34
-    unsigned char u8_35;  // 0x35
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_35;  // 0x35
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int u32_40;  // 0x40
@@ -43,6 +43,8 @@ struct RandomMap {
     unsigned char q04F;  // 0x4F
     void* q050;  // 0x50
     unsigned int q054;  // 0x54
+    unsigned int u32_58;  // 0x58
+    unsigned int u32_5C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
     unsigned int u32_68;  // 0x68
@@ -122,26 +124,6 @@ struct RandomMap {
     unsigned char u8_205;  // 0x205
     unsigned int u32_208;  // 0x208
     void* q20C;  // 0x20C
-    unsigned int RandomMap_field_0x10;
-    unsigned int RandomMap_field_0x14;
-    unsigned int RandomMap_field_0x18;
-    unsigned int RandomMap_field_0x1C;
-    unsigned int *RandomMap_field_0x2;
-    unsigned int RandomMap_field_0x20;
-    unsigned int *RandomMap_field_0x24;
-    unsigned int *RandomMap_field_0x28;
-    unsigned int *RandomMap_field_0x2C;
-    unsigned int RandomMap_field_0x30;
-    unsigned int *RandomMap_field_0x34;
-    unsigned int *RandomMap_field_0x38;
-    unsigned int *RandomMap_field_0x3C;
-    unsigned int *RandomMap_field_0x40;
-    unsigned int RandomMap_field_0x48;
-    unsigned int RandomMap_field_0x8;
-    unsigned int RandomMap_field_0xC;
-    unsigned int *__pad_0;
-    unsigned int *__pad_44;
-    unsigned int *__pad_4C;
 // --- flat members (END) ---
     int Check(void *a1_1, void *a2_1, void *a3_1);  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2);  // 0x58BF70

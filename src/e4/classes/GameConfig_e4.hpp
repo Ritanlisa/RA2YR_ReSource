@@ -14,6 +14,7 @@ struct GameConfig {
     unsigned char q000;  // 0x0
     Coord * ptr_4;  // 0x4
     unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
     CCINIClass * q038;  // 0x38
     unsigned char q03C;  // 0x3C
     void * ptr_41;  // 0x41
@@ -22,7 +23,6 @@ struct GameConfig {
     bool spawn_mode;  // 0xCE
     bool windowed;  // 0xCF
     bool enable_log;  // 0xD0
-    unsigned int *__pad_0;
 // --- flat members (END) ---
      char * Constructor();  // G57w10-S raw 0x5D67B0 char *__thiscall
     int  BuildChecksum(char * Buffer);  // 0x77E7A0

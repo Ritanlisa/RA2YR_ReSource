@@ -15,7 +15,7 @@ int sub_732210(int a1, const char * a2)
   int v3; // edi
   const char **i; // ebp
 
-  v2 = *(unsigned int *)(a1 + 16); /*0x732211*/
+  v2 = *(_DWORD *)(a1 + 16); /*0x732211*/
   v3 = 0; /*0x732218*/
   if ( v2 <= 0 ) /*0x732220*/
     return -1; /*0x732261*/

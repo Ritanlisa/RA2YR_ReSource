@@ -11,6 +11,7 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_ptr_IsometricTileClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
+    char u32_1;  // 0x1
     void* Items;  // 0x4
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
@@ -35,13 +36,10 @@ struct VectorClass_ptr_IsometricTileClass {
     void TryFreeAndClear();  // 0x40CC70
     unsigned int GetPtrOffset(int a2);  // 0x40CCA0
     int FindValue(unsigned int * a2);  // 0x40CF00
-    // --- W16G3 supply (BEGIN) ---
     char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
     unsigned int m_10;  // 0x10 vocab alias (Count)
     char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

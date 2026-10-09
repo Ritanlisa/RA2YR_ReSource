@@ -10,36 +10,36 @@ namespace gamemd {
 // 0x55a9b0
 HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
 {
-    char *v4; // ecx
-    char *v5; // ecx
+  char *v4; // ecx
+  char *v5; // ecx
 
-    if ( !a3 ) /*0x55a9b6*/
-      return -2147467261; /*0x55a9b8*/
-    *a3 = 0; /*0x55a9d9*/
-    if ( !memcmp((const void *)(a2), &IID_IUnknown, 0x10u) ) /*0x55a9df*/
-    {
-      if ( this ) /*0x55a9e5*/
-        v4 = &this->ILocomotion[4]; /*0x55a9e7*/
-      else
-        v4 = 0; /*0x55a9ec*/
-      *a3 = v4; /*0x55a9ee*/
-    }
-    if ( !memcmp((const void *)(a2), &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
-      *a3 = this; /*0x55aa03*/
-    if ( !memcmp(a2, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
-    {
-      if ( this ) /*0x55aa1a*/
-        v5 = &this->ILocomotion[4]; /*0x55aa1c*/
-      else
-        v5 = 0; /*0x55aa21*/
-      *a3 = v5; /*0x55aa23*/
-    }
-    if ( !memcmp((const void *)(a2), &IID_IPersist, 0x10u) ) /*0x55aa33*/
-      *a3 = this; /*0x55aa3a*/
-    if ( !*a3 ) /*0x55aa3c*/
-      return -2147467262; /*0x55aa41*/
-    (*(void (__stdcall **)(LocomotionClass *))(*(unsigned int *)this->ILocomotion + 4))(this); /*0x55aa4c*/
-    return 0; /*0x55a9bd*/
+  if ( !a3 ) /*0x55a9b6*/
+    return -2147467261; /*0x55a9b8*/
+  *a3 = 0; /*0x55a9d9*/
+  if ( !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
+  {
+    if ( this ) /*0x55a9e5*/
+      v4 = &this->ILocomotion[4]; /*0x55a9e7*/
+    else
+      v4 = 0; /*0x55a9ec*/
+    *a3 = v4; /*0x55a9ee*/
+  }
+  if ( !memcmp(a2, &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
+    *a3 = this; /*0x55aa03*/
+  if ( !memcmp(a2, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
+  {
+    if ( this ) /*0x55aa1a*/
+      v5 = &this->ILocomotion[4]; /*0x55aa1c*/
+    else
+      v5 = 0; /*0x55aa21*/
+    *a3 = v5; /*0x55aa23*/
+  }
+  if ( !memcmp(a2, &IID_IPersist, 0x10u) ) /*0x55aa33*/
+    *a3 = this; /*0x55aa3a*/
+  if ( !*a3 ) /*0x55aa3c*/
+    return -2147467262; /*0x55aa41*/
+  (*(void (__stdcall **)(LocomotionClass *))(*(_DWORD *)this->ILocomotion + 4))(this); /*0x55aa4c*/
+  return 0; /*0x55a9bd*/
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }
 
@@ -115,37 +115,36 @@ ZGradient __stdcall LocomotionClass::Z_Gradient() { return ZGradient::Deg90; }
 // 0x69ec50
 bool LocomotionClass::Process()
 {
-    int v2; // ecx
-    int v3; // ecx
+  int v2; // ecx
+  int v3; // ecx
 
-    LocomotionClass::Init(this); /*0x69ec53*/
-    *((unsigned int *)this + 7) = 0; /*0x69ec5d*/
-    *((unsigned int *)this + 8) = 0; /*0x69ec60*/
-    v2 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x69ec63*/
-    *((unsigned int *)this + 11) = 0; /*0x69ec69*/
-    *((unsigned int *)this + 9) = v2; /*0x69ec6c*/
-    *((unsigned int *)this + 12) = 0; /*0x69ec6f*/
-    *((unsigned int *)this + 13) = g_OverlayTypeConfig; /*0x69ec78*/
-    *((unsigned __int64 *)this + 7) = qword_B077FC; /*0x69ec80*/
-    *((unsigned int *)this + 16) = g_OverlayTypeConfig; /*0x69ec95*/
-    *((unsigned int *)this + 17) = qword_B077FC; /*0x69ec9e*/
-    v3 = (unsigned int)((qword_B077FC) >> 32); /*0x69eca1*/
-    *((unsigned int *)this + 20) = 0; /*0x69eca7*/
-    *((unsigned int *)this + 19) = 0; /*0x69ecaa*/
-    *((unsigned int *)this + 18) = v3; /*0x69ecad*/
-    *((unsigned int *)this + 21) = 0; /*0x69ecb3*/
-    *((unsigned int *)this + 22) = -1; /*0x69ecb6*/
-    *((unsigned int *)this + 23) = -1; /*0x69ecb9*/
-    *((unsigned char *)this + 96) = 0; /*0x69ecbc*/
-    *((unsigned char *)this + 97) = 0; /*0x69ecbf*/
-    *((unsigned char *)this + 98) = 0; /*0x69ecc2*/
-    *((unsigned char *)this + 99) = 0; /*0x69ecc5*/
-    *((unsigned char *)this + 100) = 0; /*0x69ecc8*/
-    *((unsigned char *)this + 101) = 1; /*0x69eccb*/
-    *((unsigned int *)this + 26) = 0; /*0x69eccf*/
-    *(unsigned int *)this->ILocomotion = (unsigned int)(void *)&ShipLocomotionClass_vftable; /*0x69ecd2*/
-    *(unsigned int *)&this->ILocomotion[4] = (unsigned int)(void *)&ShipLocomotionClass_vftable; /*0x69ecd8*/
-    *((unsigned int *)this + 6) = (unsigned int)&off_7F2D68; /*0x69ecdf*/
-    return (int)this->ILocomotion; /*0x69ece8*/
-} // namespace gamemd
+  LocomotionClass::Init(this); /*0x69ec53*/
+  this->u32_1C = 0; /*0x69ec5d*/
+  this->u32_8 = 0; /*0x69ec60*/
+  v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x69ec63*/
+  this->u32_2C = 0; /*0x69ec69*/
+  this->u32_24 = v2; /*0x69ec6c*/
+  this->LinkedTo = 0; /*0x69ec6f*/
+  this->u32_34 = g_OverlayTypeConfig; /*0x69ec78*/
+  this->u32_38 = qword_B077FC; /*0x69ec80*/
+  this->u32_10 = g_OverlayTypeConfig; /*0x69ec95*/
+  this->Dirty = qword_B077FC; /*0x69ec9e*/
+  v3 = (unsigned int)((qword_B077FC) >> 32); /*0x69eca1*/
+  this->u8_14 = 0; /*0x69eca7*/
+  this->u32_4C = 0; /*0x69ecaa*/
+  this->u32_48 = v3; /*0x69ecad*/
+  this->__pad_015 = 0; /*0x69ecb3*/
+  this->u32_58 = -1; /*0x69ecb6*/
+  this->u32_5C = -1; /*0x69ecb9*/
+  this->u32_60 = 0; /*0x69ecbc*/
+  this->u32_61 = 0; /*0x69ecbf*/
+  this->u32_62 = 0; /*0x69ecc2*/
+  this->u32_63 = 0; /*0x69ecc5*/
+  this->u32_64 = 0; /*0x69ecc8*/
+  this->u32_65 = 1; /*0x69eccb*/
+  this->u32_68 = 0; /*0x69eccf*/
+  *(_DWORD *)this->ILocomotion = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
+  *(_DWORD *)&this->ILocomotion[4] = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
+  this->u32_18 = &off_7F2D68; /*0x69ecdf*/
+  return (int)this->ILocomotion; /*0x69ece8*/
 }

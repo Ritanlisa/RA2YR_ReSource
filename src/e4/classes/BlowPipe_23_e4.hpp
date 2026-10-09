@@ -16,11 +16,6 @@ struct BlowPipe_23 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     void Clear(void *a1_1);  // 0x63DC80
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x63DCD0

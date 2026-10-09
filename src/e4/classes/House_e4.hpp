@@ -22,10 +22,9 @@ struct ParticleSystemClass;  // fix_fwd_type_supply
 struct AnimClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
 struct House {
-    unsigned char __pad_2B0[0x1A0];  // G42.33 b4 C2: flat-carrier vocab ([120] fn-ptr 槽覆盖 0x2B0..0x450)
 // --- flat members (BEGIN) ---
     HouseClass* q000;  // 0x0
-    unsigned char House_field_0x2[3];  // 0x2
+    unsigned int u32_1;  // 0x1
     void* q004;  // 0x4
     void* q008;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -39,21 +38,18 @@ struct House {
     unsigned int q028;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char q02D;  // 0x2D
-    unsigned char __pad_2D[64];  // 0x2D
     unsigned int u32_30;  // 0x30
     unsigned int u32_34;  // 0x34
     unsigned int q038;  // 0x38
-    void * ptr_40;  // 0x40 (G42.39: fwd hazard void*-ified)
+    AbstractClass * ptr_40;  // 0x40
     void * ptr_44;  // 0x44
-    unsigned char __pad_C[27];  // 0xC
     unsigned int u32_48;  // 0x48
-    unsigned char u8_4C;  // 0x4C
+    unsigned int u32_4C;  // 0x4C
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
     unsigned int u32_5C;  // 0x5C
     unsigned int q060;  // 0x60
-    void * q064;  // 0x64 (G42.39: fwd hazard void*-ified)
-    unsigned char House_field_0x29[4];  // 0x29
+    AbstractClass * q064;  // 0x64
     void * q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
     unsigned int u32_70;  // 0x70
@@ -75,9 +71,8 @@ struct House {
     unsigned int u32_E4;  // 0xE4
     unsigned int u32_E8;  // 0xE8
     unsigned int u32_EC;  // 0xEC
-    unsigned char __pad_7C[163];  // 0x7C
     unsigned int u32_F0;  // 0xF0
-    void * q100;  // 0x100
+    AbstractClass * q100;  // 0x100
     void * q104;  // 0x104
     unsigned int q108;  // 0x108
     unsigned int q114;  // 0x114
@@ -86,8 +81,8 @@ struct House {
     unsigned int u32_11A;  // 0x11A
     char u32_11B;  // 0x11B
     unsigned char u8_11C;  // 0x11C
-    unsigned char u8_11D;  // 0x11D
-    unsigned char u8_11E;  // 0x11E
+    unsigned int u32_11D;  // 0x11D
+    unsigned int u32_11E;  // 0x11E
     void* q120;  // 0x120
     unsigned char q124;  // 0x124
     unsigned int q128;  // 0x128
@@ -118,6 +113,7 @@ struct House {
     unsigned char u8_1ED;  // 0x1ED
     unsigned char q1F0;  // 0x1F0
     unsigned char q1F1;  // 0x1F1
+    unsigned int u32_1F6;  // 0x1F6
     unsigned int u32_1FC;  // 0x1FC
     unsigned int q200;  // 0x200
     unsigned int q204;  // 0x204
@@ -125,8 +121,9 @@ struct House {
     unsigned int u32_210;  // 0x210
     unsigned int u32_214;  // 0x214
     unsigned int u32_21C;  // 0x21C
-    void * ptr_220;  // 0x220
+    AbstractClass * ptr_220;  // 0x220
     unsigned int q228;  // 0x228
+    unsigned int u32_22C;  // 0x22C
     unsigned int q240;  // 0x240
     ProgressTimer * ptr_248;  // 0x248
     unsigned int u32_24C;  // 0x24C
@@ -185,13 +182,18 @@ struct House {
     unsigned int u32_45C;  // 0x45C
     unsigned int q460;  // 0x460
     AnimClass * ptr_468;  // 0x468
+    char u32_46C;  // 0x46C
+    unsigned int u32_470;  // 0x470
     unsigned int u32_474;  // 0x474
+    unsigned int u32_478;  // 0x478
     TimerStruct * ptr_480;  // 0x480
     unsigned int u32_504;  // 0x504
     unsigned int q508;  // 0x508
     void* q520;  // 0x520
-    unsigned int *__pad_3D7;
 // --- flat members (END) ---
+    unsigned char __pad_2B0[0x1A0];  // G42.33 b4 C2: flat-carrier vocab ([120] fn-ptr 槽覆盖 0x2B0..0x450)
+    void * ptr_40;  // 0x40 (G42.39: fwd hazard void*-ified)
+    void * q064;  // 0x64 (G42.39: fwd hazard void*-ified)
     int AnnounceUpgrade(int a2);
     unsigned int * GetStartCoords(unsigned int *aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500

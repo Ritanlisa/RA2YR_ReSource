@@ -11,11 +11,9 @@
 namespace gamemd {
 int E4Recv_659510::sub_659510(int a2, int a3)
 {
-
-  (&this->ambientSoundController)[3] = a2; /*0x659518*/
-  (&this->ambientSoundController)[4] = a3; /*0x65951b*/
+  this->ambientSoundController[3] = a2; /*0x659518*/
+  this->ambientSoundController[4] = a3; /*0x65951b*/
   return a2; /*0x65951e*/
-
 }
 } // namespace gamemd
 
@@ -23,9 +21,7 @@ int E4Recv_659510::sub_659510(int a2, int a3)
 namespace gamemd {
 int E4Recv_659530::sub_659530(int a2)
 {
-
-  (&this->customSound_controller)[0] = a2; /*0x659534*/
+  this->customSound_controller[0] = a2; /*0x659534*/
   return a2; /*0x659537*/
-
 }
 } // namespace gamemd

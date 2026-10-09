@@ -11,7 +11,6 @@
 namespace gamemd {
 int Progress::GetAverage()
 {
-
   int result; // eax
   int v2; // edx
   double v3; // st7
@@ -20,7 +19,7 @@ int Progress::GetAverage()
   v3 = 0.0; /*0x6433d5*/
   if ( v2 > 0 ) /*0x6433e1*/
   {
-    result = (int)&(&this->m_Values)[2]; /*0x6433e3*/
+    result = (int)&this->m_Values[2]; /*0x6433e3*/
     do /*0x6433ec*/
     {
       v3 = v3 + *(double *)result; /*0x6433e6*/
@@ -30,15 +29,12 @@ int Progress::GetAverage()
     while ( v2 ); /*0x6433ec*/
   }
   return result; /*0x6433f6*/
-
 }
 } // namespace gamemd
 // 0x643E90
 namespace gamemd {
 int Progress::GetWeighted(int a2)
 {
-
   return a2; /*0x643e9f*/
-
 }
 } // namespace gamemd

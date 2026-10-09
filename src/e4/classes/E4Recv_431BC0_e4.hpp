@@ -7,7 +7,6 @@ namespace gamemd {
 struct E4Recv_431BC0 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    void * vtable1;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -66,23 +65,44 @@ struct E4Recv_431BC0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int u32_42;
-    unsigned int u32_43;
-    unsigned int u32_44;
-    unsigned int u32_45;
-    unsigned int u32_46;
-    unsigned int u32_47;
-    unsigned int u32_48;
-    unsigned int u32_49;
-    unsigned int u32_80;
-    unsigned int vt_slot_20;
-    unsigned int vt_slot_24;
-    unsigned int vt_slot_28;
-    unsigned int vt_slot_36;
-    unsigned int vt_slot_40;
-    unsigned int vt_slot_44;
-    unsigned int vt_slot_52;
-    unsigned int vt_slot_64;
+    unsigned int q20848;  // 0x20848
+    unsigned int q21768;  // 0x21768
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q33570;  // 0x33570
+    unsigned int q137064;  // 0x137064
+    unsigned int q153094;  // 0x153094
+    unsigned int q210288;  // 0x210288
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q1612552106354;  // 0x1612552106354
+    unsigned int q2359835005720;  // 0x2359835005720
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560290600;  // 0x388267560290600
+    unsigned int q388269456126468;  // 0x388269456126468
+// --- flat members (END) ---
     unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     void* attachedTag;  // 0x0 (no offset truth)
     void* nextObject;  // 0x0 (no offset truth)
@@ -91,7 +111,6 @@ struct E4Recv_431BC0 {
     void* attachedBomb;  // 0x0 (no offset truth)
     void* owningHouseIndex;  // 0x0 (no offset truth)
     void* AbstractClass;  // 0x0 (no offset truth)
-// --- flat members (END) ---
     int Vf20(int,  ...);    // G6 vtable slot dispatch
     int Vf24(int,  ...);    // G6 vtable slot dispatch
     int Vf36(int,  ...);    // G6 vtable slot dispatch

@@ -17,30 +17,36 @@ struct SlaveManagerClass {
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
+    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
+    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
+    TechnoClass* master;  // 0x24
+    HouseClass* house;  // 0x28
     bool q02B;  // 0x2B
-    unsigned int slaveType;  // 0x30
+    HouseClass* slaveOwner;  // 0x2C
+    char slaveType[4];  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    unsigned int slaveCount;  // 0x34
+    char slaveCount[4];  // 0x34
+    unsigned int slaves;  // 0x38
     unsigned char q03A;  // 0x3A
-    unsigned int slaveVectorCount;  // 0x3C
-    unsigned int slaveVectorCapacity;  // 0x40
-    unsigned int creationFrame;  // 0x44
+    unsigned int q03B;  // 0x3B
+    char slaveVectorCount[4];  // 0x3C
+    unsigned int q03D;  // 0x3D
+    char slaveVectorCapacity[4];  // 0x40
+    bool q042;  // 0x42
+    char creationFrame[4];  // 0x44
     unsigned char u8_45;  // 0x45
     void* q048;  // 0x48
+    bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
-    unsigned int SlaveManagerClass_field_54;  // 0x54
-    unsigned int SlaveManagerClass_field_58;  // 0x58
-    unsigned int SlaveManagerClass_field_5C;  // 0x5C
-    unsigned int SlaveManagerClass_field_60;  // 0x60
-    unsigned int *__pad_48;
-    unsigned int house;
-    unsigned int q050;
-    unsigned int slaveOwner;
-    unsigned int slaves;
-    unsigned int master;
+    unsigned char q04F;  // 0x4F
+    void* q050;  // 0x50
+    char SlaveManagerClass_field_54[4];  // 0x54
+    char SlaveManagerClass_field_58[4];  // 0x58
+    char SlaveManagerClass_field_5C[4];  // 0x5C
+    char SlaveManagerClass_field_60[4];  // 0x60
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);

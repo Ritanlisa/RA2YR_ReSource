@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct Heap {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static void SiftDown(void *aP1, int a2);  // 0x5AD870 raw: void SiftDown(Heap*, int)
 };

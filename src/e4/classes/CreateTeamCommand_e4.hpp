@@ -23,6 +23,9 @@ struct ScatterCommandClass;  // fix_fwd_type_supply
 struct GuardCommandClass;  // fix_fwd_type_supply
 struct StopCommandClass;  // fix_fwd_type_supply
 struct DeployCommandClass {
+// --- flat members (BEGIN) ---
+    void* vtable1;  // 0x0
+// --- flat members (END) ---
     int vt02();
     unsigned int * performAction_148();
     unsigned int * performAction_153();

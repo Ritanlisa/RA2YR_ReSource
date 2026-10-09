@@ -16,48 +16,45 @@ namespace gamemd { int Name(...); }  // w18j2 raw call-form (variadic last resor
 namespace gamemd {
 bool CopyProtection::CheckLauncher()
 {
-
   HANDLE MutexA; // esi
   bool v1; // bl
 
-  ((gamemd::Debug*)aCopyprotection_0)->Log("COPYPROTECTION - Checking if launcher is running\n"); /*0x49f5c8 G57w12: IDA push seq @ 0x49f5c8*/
-  MutexA = CreateMutexA(0, 0, (LPCSTR)(Name)); /*0x49f5df*/
+  Debug::Log(aCopyprotection_0); /*0x49f5c8*/
+  MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
   v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
     CloseHandle(MutexA); /*0x49f5f8*/
   Debug::Log("result was %d\n", v1); /*0x49f60d*/
   return v1; /*0x49f617*/
-
 }
 } // namespace gamemd
 // 0x49F620
 namespace gamemd {
 char CopyProtection::NotifyLauncher()
 {
-
   DWORD v0; // edi
   HANDLE v1; // esi
   DWORD v2; // esi
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 
-  ((gamemd::Debug*)aCopyprotection_1)->Log("COPYPROTECTION - Notify launcher\n"); /*0x49f62c G57w12: IDA push seq @ 0x49f62c*/
+  Debug::Log(aCopyprotection_1); /*0x49f62c*/
   PeekMessageA(&Msg, 0, 0x400u, 0x400u, 0); /*0x49f647*/
   v0 = timeGetTime() + 60000; /*0x49f657*/
   if ( timeGetTime() < v0 ) /*0x49f661*/
   {
     while ( 1 ) /*0x49f678*/
     {
-      v1 = OpenEventA(2u, 1,(LPCSTR)(aD6e7fc9764f94d)); /*0x49f678*/
+      v1 = OpenEventA(2u, 1, aD6e7fc9764f94d); /*0x49f678*/
       if ( v1 ) /*0x49f67c*/
         break; /*0x49f67c*/
       Sleep(0); /*0x49f67f*/
       if ( timeGetTime() >= v0 ) /*0x49f689*/
         goto LABEL_9; /*0x49f689*/
     }
-    SetEvent( (void *)((void *)(v1))); /*0x49f690*/
+    SetEvent(v1); /*0x49f690*/
     CloseHandle(v1); /*0x49f697*/
-    ((gamemd::Debug*)aLauncherNotifi)->Log("Launcher notified.\n"); /*0x49f6a2 G57w12: IDA push seq @ 0x49f6a2*/
-    ((gamemd::Debug*)aWaitingForMess)->Log("Waiting for message from launcher.\n"); /*0x49f6ac G57w12: IDA push seq @ 0x49f6ac*/
+    Debug::Log(aLauncherNotifi); /*0x49f6a2*/
+    Debug::Log(aWaitingForMess); /*0x49f6ac*/
     v2 = timeGetTime() + 10000; /*0x49f6b8*/
     if ( timeGetTime() <= v2 ) /*0x49f6c2*/
     {
@@ -67,23 +64,20 @@ char CopyProtection::NotifyLauncher()
         if ( timeGetTime() > v2 ) /*0x49f6f0*/
           goto LABEL_9; /*0x49f6f0*/
       }
-      dword_89F75C = (unsigned int)(MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0));
+      dword_89F75C = MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0); /*0x49f723*/
       if ( dword_89F75C ) /*0x49f728*/
         return 1; /*0x49f72d*/
     }
   }
-LABEL_9:
-  ((gamemd::Debug*)aFailedToNotify)->Log("***** Failed to notify launcher!\n"); /*0x49f6f2 G57w12: IDA push seq @ 0x49f6f2*/
+  LABEL_9:
+  Debug::Log(aFailedToNotify); /*0x49f6f2*/
   return 0; /*0x49f701*/
-
 }
 } // namespace gamemd
 // 0x49F7A0
 namespace gamemd {
 char CopyProtection::CheckProtectedData()
 {
-
   return 1; /*0x49f7a2*/
-
 }
 } // namespace gamemd

@@ -16,7 +16,6 @@ struct IPersistStream {
     int StubReturn450();
     int StubReturnFalse();
     void Stub(BuildingTypeClass * aP0, int a2);
-    unsigned char __tail_0;  // 0x0
 };
 
 } // namespace gamemd

@@ -7,7 +7,6 @@
 namespace gamemd {
 struct VectorClass_Ptr {
 // --- flat members (BEGIN) ---
-    unsigned char __pad_0[87];  // 0x0
     AbstractClass * ptr_4;  // 0x4
     AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -23,10 +22,9 @@ struct VectorClass_Ptr {
     unsigned char q774;  // 0x774
     unsigned char q1908;  // 0x1908
     unsigned char q6408;  // 0x6408
-    unsigned int *__pad_5;
-    unsigned int *m_1;
-    unsigned int m_C;
-    unsigned int __tail_10;
+    unsigned char q25608;  // 0x25608
+    AbstractClass * q153094;  // 0x153094
+    unsigned char q1388694;  // 0x1388694
 // --- flat members (END) ---
     AbstractClass * * ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
 };

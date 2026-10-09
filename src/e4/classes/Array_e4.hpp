@@ -28,12 +28,14 @@ struct Array {
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
     unsigned char q058;  // 0x58
+    unsigned char q05C;  // 0x5C
     unsigned int q060;  // 0x60
     void* q064;  // 0x64
     void* q068;  // 0x68
     void* q06C;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned char q080;  // 0x80
+    unsigned int u32_81;  // 0x81
     unsigned int q084;  // 0x84
     unsigned char q090;  // 0x90
     unsigned int u32_CC;  // 0xCC
@@ -59,27 +61,14 @@ struct Array {
     void* q304;  // 0x304
     void* q308;  // 0x308
     unsigned char q324;  // 0x324
+    unsigned int u32_3D3;  // 0x3D3
+    unsigned int u32_520;  // 0x520
     void* q598;  // 0x598
     void* q608;  // 0x608
     unsigned char q628;  // 0x628
     unsigned char q630;  // 0x630
     unsigned int q774;  // 0x774
     void* q800;  // 0x800
-    unsigned int Array_field_0x10;
-    unsigned int Array_field_0x4;
-    unsigned int Array_field_0x800;
-    unsigned int Array_field_0xE4;
-    unsigned int *__pad_0;
-    unsigned int *__pad_8;
-    unsigned int *Array_field_0x3C;
-    unsigned int Array_field_0x40;
-    unsigned int q0044;
-    unsigned int q0045;
-    unsigned int q0046;
-    unsigned int q230;  // 0x230
-    unsigned char Array_field_0x2C;  // 0x2C
-    unsigned char Array_field_0x38;  // 0x38
-    unsigned char Array_field_0xE8;  // 0xE8
 // --- flat members (END) ---
     int GetClamped(int aP1);  // 0x634290
     int FindValue(int aP1);

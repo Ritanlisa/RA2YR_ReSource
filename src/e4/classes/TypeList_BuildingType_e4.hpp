@@ -11,6 +11,7 @@ struct TypeList_BuildingType {
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsAllocated;  // 0xD
+    unsigned int u32_34;  // 0x34
 // --- flat members (END) ---
     TypeList_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5AC650
 };

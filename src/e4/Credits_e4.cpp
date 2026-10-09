@@ -20,20 +20,19 @@
 namespace gamemd {
 char Credits::Screen()
 {
-
   HANDLE FirstFileA; // esi
   char *cAlternateFileName; // ebp
-  unsigned int *v2; // eax
-  unsigned int *v3; // esi
-  unsigned int *v4; // edi
+  _DWORD *v2; // eax
+  _DWORD *v3; // esi
+  _DWORD *v4; // edi
   char result; // al
-  unsigned int *v6; // eax
-  unsigned int *v7; // esi
-  unsigned int *v8; // edi
+  _DWORD *v6; // eax
+  _DWORD *v7; // esi
+  _DWORD *v8; // edi
   char v9; // [esp+Fh] [ebp-1B1h]
   HANDLE v10; // [esp+10h] [ebp-1B0h]
-  unsigned int v11[22]; // [esp+14h] [ebp-1ACh] BYREF
-  unsigned char v12[12]; // [esp+6Ch] [ebp-154h] BYREF
+  _DWORD v11[22]; // [esp+14h] [ebp-1ACh] BYREF
+  _BYTE v12[12]; // [esp+6Ch] [ebp-154h] BYREF
   int v13; // [esp+78h] [ebp-148h]
   struct _WIN32_FIND_DATAA FindFileData; // [esp+80h] [ebp-140h] BYREF
 
@@ -49,40 +48,40 @@ char Credits::Screen()
       cAlternateFileName = FindFileData.cAlternateFileName; /*0x52cbdc*/
       if ( !strlen(FindFileData.cAlternateFileName) ) /*0x52cbe3*/
         cAlternateFileName = FindFileData.cFileName; /*0x52cbea*/
-      ((CCFileClass*)v11)->Construct( (char *)(cAlternateFileName)); /*0x52cbf6*/
-      v2 = (unsigned int *)__2_YAPAXI_Z(0x58u); /*0x52cbfd*/
+      CCFileClass::Construct(v11, cAlternateFileName); /*0x52cbf6*/
+      v2 = RA2_OPNEW(0x58u); /*0x52cbfd*/
       v3 = v2; /*0x52cc02*/
       if ( v2 ) /*0x52cc09*/
       {
         v4 = v2 + 3; /*0x52cc0b*/
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
-        ((GenericList *)(v2 + 3))->Constructor(); /*0x52cc16*/
-        *v4 = (unsigned int)&vt_List;
+        GenericList::Constructor(v2 + 3); /*0x52cc16*/
+        *v4 = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x52cc1b*/
         v3[10] = 0; /*0x52cc21*/
         v3[11] = 0; /*0x52cc24*/
         v3[12] = 0; /*0x52cc27*/
-        *((unsigned char *)v3 + 52) = 0; /*0x52cc2a*/
+        *((_BYTE *)v3 + 52) = 0; /*0x52cc2a*/
         v3[14] = 0; /*0x52cc2d*/
         v3[15] = 0; /*0x52cc30*/
-        *((unsigned char *)v3 + 64) = 0; /*0x52cc33*/
-        *v3 = (unsigned int)&CCINIClass_Vtable; /*0x52cc36*/
+        *((_BYTE *)v3 + 64) = 0; /*0x52cc33*/
+        *v3 = &CCINIClass_Vtable; /*0x52cc36*/
       }
       else
       {
-        v3 = (unsigned int *)(0); /*0x52cc3e*/
+        v3 = 0; /*0x52cc3e*/
       }
-      CCINIClass::Load( (int)(v11), 0, 0); /*0x52cc49*/
+      CCINIClass::Load(v11, 0, 0); /*0x52cc49*/
       if ( !_strcmpi(cAlternateFileName, aBattlemdIni_0) ) /*0x52cc54*/
         v9 = 1; /*0x52cc60*/
-      ((CampaignClass *)v3)->LoadFromINIList(); /*0x52cc67*/
+      CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
-        (*(void (**)(unsigned int *, int))*v3)( (unsigned int *)(v3), 1); /*0x52cc76*/
-      v11[0] = &vt_CCFileClass; /*0x52cc7c*/
+        (*(void (__thiscall **)(_DWORD *, int))*v3)(v3, 1); /*0x52cc76*/
+      v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
-      ((Vector *)(v12))->Clear((int)((Vector *)(v12))); /*0x52cc88*/
+      Vector::Clear(v12); /*0x52cc88*/
       v11[0] = &off_7E1668; /*0x52cc91*/
-      ((BufferIOFileClass *)(v11))->Dtor(); /*0x52cc99*/
+      BufferIOFileClass::Dtor(v11); /*0x52cc99*/
       FirstFileA = v10; /*0x52cc9e*/
     }
   }
@@ -91,36 +90,35 @@ char Credits::Screen()
   result = v9; /*0x52ccc0*/
   if ( !v9 ) /*0x52ccc7*/
   {
-LABEL_15:
-    ((CCFileClass*)v11)->Construct(aBattlemdIni_0); /*0x52ccd6*/
-    v6 = (unsigned int *)__2_YAPAXI_Z(0x58u); /*0x52ccdd*/
+  LABEL_15:
+    CCFileClass::Construct(v11, aBattlemdIni_0); /*0x52ccd6*/
+    v6 = RA2_OPNEW(0x58u); /*0x52ccdd*/
     v7 = v6; /*0x52cce2*/
     if ( v6 ) /*0x52cce9*/
     {
       v8 = v6 + 3; /*0x52cceb*/
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
-      ((GenericList *)(v6 + 3))->Constructor(); /*0x52ccf6*/
-      *v8 = (unsigned int)&vt_List;
+      GenericList::Constructor(v6 + 3); /*0x52ccf6*/
+      *v8 = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x52ccff*/
       v7[10] = 0; /*0x52cd08*/
       v7[11] = 0; /*0x52cd0b*/
       v7[12] = 0; /*0x52cd0e*/
-      *((unsigned char *)v7 + 52) = 0; /*0x52cd11*/
+      *((_BYTE *)v7 + 52) = 0; /*0x52cd11*/
       v7[14] = 0; /*0x52cd14*/
       v7[15] = 0; /*0x52cd19*/
-      *((unsigned char *)v7 + 64) = 0; /*0x52cd1c*/
-      *v7 = (unsigned int)&CCINIClass_Vtable; /*0x52cd1f*/
-      CCINIClass::Load( (int)(v11), 0, 0); /*0x52cd25*/
-      ((CampaignClass *)v7)->LoadFromINIList(); /*0x52cd2c*/
-      (*(void (**)(unsigned int *, int))*v7)( (unsigned int *)(v7), 1); /*0x52cd37*/
+      *((_BYTE *)v7 + 64) = 0; /*0x52cd1c*/
+      *v7 = &CCINIClass_Vtable; /*0x52cd1f*/
+      CCINIClass::Load(v11, 0, 0); /*0x52cd25*/
+      CampaignClass::LoadFromINIList(v7); /*0x52cd2c*/
+      (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x52cd37*/
     }
-    v11[0] = &vt_CCFileClass; /*0x52cd3d*/
+    v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
-    ((Vector *)(v12))->Clear((int)((Vector *)(v12))); /*0x52cd49*/
+    Vector::Clear(v12); /*0x52cd49*/
     v11[0] = &off_7E1668; /*0x52cd52*/
-    return ((BufferIOFileClass *)(v11))->Dtor(); /*0x52cd5a*/
+    return BufferIOFileClass::Dtor(v11); /*0x52cd5a*/
   }
   return result; /*0x52cd5f*/
-
 }
 } // namespace gamemd

@@ -9,20 +9,18 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct FoggedObjectClass_42 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    unsigned char __pad_0;  // 0x0
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     int Count;  // 0x10
+// --- flat members (END) ---
     void* vtable1;  // 0x0 (no offset truth)
     void* vtable3;  // 0x0 (no offset truth)
     void* uniqueId;  // 0x0 (no offset truth)
     void* vtable2;  // 0x0 (no offset truth)
-// --- flat members (END) ---
     int FindItem(unsigned int * a2);  // 0x4E07B0
-    unsigned char m_1[4];  // 0x1
     unsigned int * loc_4E0D30(unsigned int * Block, char a2);  // 0x4E0D30
     void ClearBuffer(void *a1_1);  // 0x4E01F0
     int Seek(int a2, void *a2_2, void *a3_1);  // 0x4E0240

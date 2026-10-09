@@ -20,43 +20,41 @@
 namespace gamemd {
 void Main::CreateDialog()
 {
-
-  uint16_t v2; // cx
-  HWND Dialog_v; // eax
+  unsigned __int16 v2; // cx
+  HWND Dialog; // eax
   LONG i; // eax
   TechnoTypeClass *v5; // ecx
   int v6; // [esp+0h] [ebp-8h]
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x4e1d1d*/
-  Debug::Log("GameControls: GameSpeed = %d, ScrollRate = %d, Detail = %d\n"); /*0x4e1d25 G57c1: IDA 0x4e1d25 push offset aGamecontrolsGa*/
+  Debug::Log(); /*0x4e1d25*/
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
-  Dialog_v = (HWND)CreateDialog(v2, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameOptionsDlgProc, 0); /*0x4e1d47*/
-  this->Main_field_00 = (int)Dialog_v; /*0x4e1d4e*/
-  if ( Dialog_v ) /*0x4e1d50*/
+  Dialog = (HWND)CreateDialog(v2, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameOptionsDlgProc, 0); /*0x4e1d47*/
+  this->Main_field_00 = (int)Dialog; /*0x4e1d4e*/
+  if ( Dialog ) /*0x4e1d50*/
   {
-    SetWindowLongA(Dialog_v, 8, (LONG)&dwNewLong); /*0x4e1d5a*/
-    ((gamemd::Dialog *)((Dialog *)this->Main_field_00))->Show(); /*0x4e1d62*/
+    SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4e1d5a*/
+    Dialog::Show((Dialog *)this->Main_field_00); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
-      if ( (uint8_t)((gamemd::Dialog *)this)->PumpMessages() == 1 ) /*0x4e1d77*/
+      if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
-        LOBYTE(v5) = 0; /*0x4e1d8a*/
-        Process(v5, v6); /*0x4e1d8c*/
+        IDA_LOBYTE(v5) = 0; /*0x4e1d8a*/
+        ScreenSaver::Process(v5, v6); /*0x4e1d8c*/
       }
     }
     if ( i == 1 ) /*0x4e1d9d*/
     {
-      ((GameOptions*)(GameOptions *)this)->GameSpeedChanged(); /*0x4e1da1*/
-      ((ScenarioClass *)((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]))->SaveGameOptions(); /*0x4e1dab*/
+      GameOptions::GameSpeedChanged(); /*0x4e1da1*/
+      ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.vfptr[24]); /*0x4e1dab*/
     }
-    ((Dialog*)(gamemd::Dialog *)this->Main_field_00)->Destroy(); /*0x4e1db2*/
+    Dialog::Destroy((Dialog *)this->Main_field_00); /*0x4e1db2*/
   }
-  Debug::Log("GameControls: GameSpeed = %d, ScrollRate = %d, Detail = %d\n"); /*0x4e1dd0 G57c1: IDA 0x4e1dd0 push offset aGamecontrolsGa*/
-
+  Debug::Log(); /*0x4e1dd0*/
 }
 } // namespace gamemd

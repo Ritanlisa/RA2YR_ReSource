@@ -14,8 +14,6 @@ struct MultiplayerGameMode;  // fix_fwd_type_supply
 #ifndef GAMEMD_E4_CCINIClass  // G42.57w14 twin-guard (decoupled from INIClass macro; first-include wins)
 #define GAMEMD_E4_CCINIClass 1
 struct CCINIClass {
-    static int LoadAndVerifyDigest(void *aP1, int a2, char a3, char a4);  // 0x474320 raw: int LoadAndVerifyDigest(int*, int, char, char)
-
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
@@ -36,17 +34,13 @@ struct CCINIClass {
     unsigned int q03C;  // 0x3C
     bool ownsFile;  // 0x40
     unsigned int q044;  // 0x44
+    unsigned char padding45;  // 0x45
     unsigned char q048;  // 0x48
+    char CCINIClass_field_4C[4];  // 0x4C
     char unknown50[4];  // 0x50
     char unknown54[4];  // 0x54
-    unsigned int INIClass;
-    unsigned int __pad_41;
-    unsigned int v3;
-    unsigned int v4;
-    unsigned int *__pad_0;
-    unsigned int headNode;
-    unsigned int sectionHead;
 // --- flat members (END) ---
+    static int LoadAndVerifyDigest(void *aP1, int a2, char a3, char a4);  // 0x474320 raw: int LoadAndVerifyDigest(int*, int, char, char)
     AITriggerTypeClass * ReadInfantryTypeList(char * a1, int a2);
     IUnknown * WriteHouses();
     // dup-decl removed: // dup-decl removed: // dup-decl removed: MultiplayerGameMode * * Load(int a2, char a3, char a4);

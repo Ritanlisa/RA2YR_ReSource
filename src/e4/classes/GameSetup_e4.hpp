@@ -18,11 +18,10 @@ struct GameSetup {
     unsigned char u8_16;  // 0x16
     unsigned char u8_17;  // 0x17
     unsigned char q018;  // 0x18
-    unsigned int q0104;
+// --- flat members (END) ---
     static void DisplayPlayers(void *aP1);  // 0x5DAFE0 raw: void DisplayPlayers(GameSetup*) [ptr-receiver sites]
     static void DisplayPlayers();  // 0x5DAFE0 site 0x5dbeb6 renders 0-arg
     static void DisplayPlayers(int aP1);  // 0x5DAFE0 site 0x5de? renders int 1
-// --- flat members (END) ---
     AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
     int LookupDialogHash();
     static char FormatToString(GameSetup * aP1, unsigned __int8 *Block, char *a3, int a4, int a5, int a6);  // G57w10-S raw 0x00477510 (was C2597 interim stub)

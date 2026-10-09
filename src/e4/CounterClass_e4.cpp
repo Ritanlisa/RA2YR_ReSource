@@ -12,21 +12,19 @@
 namespace gamemd {
 CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
 {
-
   void *count; // eax
 
-  count = (void *)this->count; /*0x49fce3*/
-  this->items = (unsigned int)&vt_VectorClass; /*0x49fce6*/
-  if ( count && *((unsigned char *)this + 13) ) /*0x49fcf0*/
+  count = (void *)Block->count; /*0x49fce3*/
+  Block->items = &(void*)(void*)&VectorClass_int_vftable; /*0x49fce6*/
+  if ( count && *((_BYTE *)Block + 13) ) /*0x49fcf0*/
   {
-    __3_YAXPAX_Z(count); /*0x49fcf8*/
-    this->count = 0; /*0x49fd00*/
+    RA2_OPDEL(count); /*0x49fcf8*/
+    Block->count = 0; /*0x49fd00*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x49fd0b*/
-  *((unsigned int *)this + 2) = 0; /*0x49fd11*/
+  *((_BYTE *)Block + 13) = 0; /*0x49fd0b*/
+  *((_DWORD *)Block + 2) = 0; /*0x49fd11*/
   if ( (a2 & 1) != 0 ) /*0x49fd18*/
-    __3_YAXPAX_Z(this); /*0x49fd1b*/
-  return &this->items; /*0x49fd25*/
-
+    RA2_OPDEL(Block); /*0x49fd1b*/
+  return &Block->items; /*0x49fd25*/
 }
 } // namespace gamemd

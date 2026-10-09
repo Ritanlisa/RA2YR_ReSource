@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct ScriptQueue {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
     static int PushEntry(void *aP1);  // 0x6378B0 raw: int PushEntry(ScriptQueue*)
 };

@@ -37,10 +37,26 @@ struct E4Recv_74FAE0 {
     unsigned int q5430;  // 0x5430
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
+    unsigned int q22148;  // 0x22148
+    unsigned int q136530;  // 0x136530
+    unsigned int q153094;  // 0x153094
+    unsigned int q1271088;  // 0x1271088
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q422802258;  // 0x422802258
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q17758691928;  // 0x17758691928
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q1612096018728;  // 0x1612096018728
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q388267560290600;  // 0x388267560290600
+// --- flat members (END) ---
     void* owningHouseIndex;  // 0x0 (no offset truth)
     unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     void* attachedBomb;  // 0x0 (no offset truth)
-// --- flat members (END) ---
     AbstractClass * * sub_74FAE0();  // 0x74FAE0
 };
 } // namespace gamemd

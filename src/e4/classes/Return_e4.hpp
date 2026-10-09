@@ -7,6 +7,7 @@ namespace gamemd {
 
 struct Return {
 // --- flat members (BEGIN) ---
+    char Return_field_00[4];  // 0x0
 // --- flat members (END) ---
     static int HRESULT_Fail(BulletClass * aP0, int a2, int a3);
 };

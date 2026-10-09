@@ -19,25 +19,23 @@
 namespace gamemd {
 _DWORD * RadioClass::Release(void *a1)
 {
-
-  RadioClass::Constructor((gamemd::RadioClass *)((int)this)); /*0x65a753*/
-  (&this->radioLinks)[1] = 0; /*0x65a75a*/
-  (&this->radioLinks)[2] = 1; /*0x65a764*/
-  LOBYTE((&this->radioLinks)[3]) = 1; /*0x65a76e*/
-  BYTE1((&this->radioLinks)[3]) = 0; /*0x65a775*/
-  (&this->radioLinks)[0] = (int)&vt_VectorClass; /*0x65a77c*/
-  (&this->radioLinks)[1] =(unsigned int)__2_YAPAXI_Z(4u); /*0x65a78b*/
-  BYTE1((&this->radioLinks)[3]) = 1; /*0x65a791*/
-  this->vtable1 = (void *)((unsigned int)(&vt_RadioClass)); /*0x65a798*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a79e*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a7a5*/
-  ((unsigned int *)this)[0] = (unsigned int)(&vt_RadioClass); /*0x65a7ac*/
-  *(unsigned int *)(&this->radioLinks)[1] = 0; /*0x65a7be*/
-  this->lastCommands[0] = 0; /*0x65a7c4*/
-  this->lastCommands[1] = 0; /*0x65a7ca*/
-  this->lastCommands[2] = 0; /*0x65a7d2*/
-  return (_DWORD *)(this); /*0x65a7d8*/
-
+  RadioClass::Constructor((int)a1); /*0x65a753*/
+  a1->radioLinks[1] = 0; /*0x65a75a*/
+  a1->radioLinks[2] = 1; /*0x65a764*/
+  IDA_LOBYTE(a1->radioLinks[3]) = 1; /*0x65a76e*/
+  IDA_BYTE1(a1->radioLinks[3]) = 0; /*0x65a775*/
+  a1->radioLinks[0] = (int)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x65a77c*/
+  a1->radioLinks[1] = RA2_OPNEW(4u); /*0x65a78b*/
+  IDA_BYTE1(a1->radioLinks[3]) = 1; /*0x65a791*/
+  a1->vfptr = &(void*)(void*)&RadioClass_vftable; /*0x65a798*/
+  a1->vfptr1 = &(void*)(void*)&RadioClass_vftable; /*0x65a79e*/
+  a1->vfptr2 = &(void*)(void*)&RadioClass_vftable; /*0x65a7a5*/
+  a1->vfptr3 = &(void*)(void*)&RadioClass_vftable; /*0x65a7ac*/
+  *(_DWORD *)a1->radioLinks[1] = 0; /*0x65a7be*/
+  a1->lastCommands[0] = 0; /*0x65a7c4*/
+  a1->lastCommands[1] = 0; /*0x65a7ca*/
+  a1->lastCommands[2] = 0; /*0x65a7d2*/
+  return &a1->vfptr; /*0x65a7d8*/
 }
 } // namespace ra2
 
@@ -45,11 +43,9 @@ _DWORD * RadioClass::Release(void *a1)
 namespace gamemd {
 int RadioClass::ProcessCmd()
 {
-
-  if ( !((unsigned int *)this)[0] ) /*0x65aa83*/
-    (*((void (**)(RadioClass *, int))this->vtable1 + 160))(this, 3); /*0x65aa91*/
-  return ((ObjectClass *)((ObjectClass *)this))->Undeploy(); /*0x65aa9e*/
-
+  if ( !this->inLimbo ) /*0x65aa83*/
+    (*((void (__thiscall **)(RadioClass *, int))this->vfptr + 160))(this, 3); /*0x65aa91*/
+  return ObjectClass::Undeploy(); /*0x65aa9e*/
 }
 } // namespace ra2
 
@@ -57,7 +53,6 @@ int RadioClass::ProcessCmd()
 namespace gamemd {
 int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
-
   int result; // eax
   int i; // edi
   int v5; // eax
@@ -65,24 +60,23 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int v7; // ecx
   int v8; // eax
 
-  AbstractClass::COMStub_13( (void *)((int)this), (void *)((aP1))); /*0x65ab1a*/
-  Power::TimerProcess((&this->radioLinks)[2]); /*0x65ab28*/
-  result = (&this->radioLinks)[2]; /*0x65ab2d*/
+  AbstractClass::COMStub_13(aP1); /*0x65ab1a*/
+  Power::TimerProcess(this->radioLinks[2]); /*0x65ab28*/
+  result = this->radioLinks[2]; /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
   {
-    v5 = *(unsigned int *)((&this->radioLinks)[1] + 4 * i); /*0x65ab3f*/
+    v5 = *(_DWORD *)(this->radioLinks[1] + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
-      v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
+      v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(v6); /*0x65ab53*/
-      v7 = *(unsigned int *)((&this->radioLinks)[1] + 4 * i); /*0x65ab5e*/
-      v8 = (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7); /*0x65ab63*/
+      v7 = *(_DWORD *)(this->radioLinks[1] + 4 * i); /*0x65ab5e*/
+      v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 44))(v7); /*0x65ab63*/
       Power::TimerProcess(v8); /*0x65ab69*/
     }
-    result = (&this->radioLinks)[2]; /*0x65ab6e*/
+    result = this->radioLinks[2]; /*0x65ab6e*/
   }
   return result; /*0x65ab79*/
-
 }
 } // namespace ra2
 
@@ -90,46 +84,43 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 namespace gamemd {
 int RadioClass::LoadState(int aP1, int aP2)
 {
-
-  ObjectClass * v3;
-  ObjectClass * v4;
   int result; // eax
-  ObjectClass * v6;
+  int v6; // esi
   int v7; // esi
-  ObjectClass * v8;
+  int v8; // eax
   int v9; // esi
 
-  v3 = (gamemd::ObjectClass *)((int)(aP1));
-  v4 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(aP2))));
-  result = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x65ab8d*/
+  aP1 = aP1; /*0x65ab81*/
+  aP2 = aP2; /*0x65ab87*/
+  result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
-    v6 = (gamemd::ObjectClass *)((int)(v3 + 224));
-    if ( v3 != (gamemd::ObjectClass *)(-224) ) /*0x65aba2*/
+    v6 = aP1 + 224; /*0x65ab9a*/
+    if ( aP1 != -224 ) /*0x65aba2*/
     {
-      *(unsigned int *)(v3 + 228) = 0; /*0x65aba4*/
-      *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
-      *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
-      *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
-      *(unsigned int *)v6 = (unsigned int)(&vt_VectorClass); /*0x65abba*/
+      aP1->u32_39 = 0; /*0x65aba4*/
+      aP1->q03A = 0; /*0x65abab*/
+      aP1->q03B = 1; /*0x65abb2*/
+      *(_BYTE *)(aP1 + 237) = 0; /*0x65abb6*/
+      *(_DWORD *)v6 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x65abba*/
     }
-    result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))( (int)v4, (int *)(&aP2), 4, 0); /*0x65abcc*/
+    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(aP2->vtable4)(aP2, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
     {
-      (*(void (**)(int, int, unsigned int))(*(unsigned int *)v6 + 8))((int)v3 + 224, aP2, 0); /*0x65abde*/
-      v7 = (int)((gamemd::ObjectClass *)(0)); /*0x65abe1*/
-      v8 = (gamemd::ObjectClass *)(aP2); /*0x65abe3*/
+      (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v6 + 8))(aP1 + 224, aP2, 0); /*0x65abde*/
+      v7 = 0; /*0x65abe1*/
+      v8 = aP2; /*0x65abe3*/
       if ( aP2 <= 0 ) /*0x65abe9*/
       {
-LABEL_8:
+  LABEL_8:
         v9 = 0; /*0x65ac14*/
-        if ( (int)v8 > 0 ) /*0x65ac18*/
+        if ( v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
             ObjectPtr::RegisterForTracking( /*0x65ac29*/
               (int)&SwizzleManagerClass_Instance,
-              (int *)(*(unsigned int *)(v3 + 228) + 4 * v9++));
-          while ( v9 < (int)(aP2) ); /*0x65ac33*/
+              (int *)(aP1->u32_39 + 4 * v9++));
+          while ( v9 < aP2 ); /*0x65ac33*/
         }
         return 0; /*0x65ac35*/
       }
@@ -137,19 +128,18 @@ LABEL_8:
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (unsigned int)((*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))( (int)v4, (int *)(&aP1), 4, 0));
+          result = (*(int (__stdcall **)(int, int *, int, _DWORD))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/
           if ( result < 0 ) /*0x65abfc*/
             break; /*0x65abfc*/
-          *(unsigned int *)(*(unsigned int *)(v3 + 228) + 4 * v7) = (unsigned int)((gamemd::ObjectClass *)((unsigned int)(aP1))); /*0x65ac08*/
-          v8 = (gamemd::ObjectClass *)(aP2); /*0x65ac0b*/
-          if ( ++(int)(v7) >= (int)(aP2) ) /*0x65ac12*/
+          *(_DWORD *)(aP1->u32_39 + 4 * v7) = aP1; /*0x65ac08*/
+          v8 = aP2; /*0x65ac0b*/
+          if ( ++v7 >= aP2 ) /*0x65ac12*/
             goto LABEL_8; /*0x65ac12*/
         }
       }
     }
   }
   return result; /*0x65ac37*/
-
 }
 } // namespace ra2
 
@@ -157,24 +147,22 @@ LABEL_8:
 namespace gamemd {
 int RadioClass::FindLinkIndex(int a2)
 {
-
   int v2; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  v2 = (&this->radioLinks)[2]; /*0x65ad99*/
+  v2 = this->radioLinks[2]; /*0x65ad99*/
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
-  for ( i = (unsigned int *)(&this->radioLinks)[1]; *i != a2; ++i ) /*0x65ada5*/
+  for ( i = (_DWORD *)this->radioLinks[1]; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
       return -1; /*0x65adb5*/
   }
   return result; /*0x65adba*/
-
 }
 } // namespace ra2
 
@@ -182,22 +170,20 @@ int RadioClass::FindLinkIndex(int a2)
 namespace gamemd {
 int RadioClass::HasFreeLink()
 {
-
   int v1; // edx
   int v2; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
-  v1 = (&this->radioLinks)[2]; /*0x65adc0*/
+  v1 = this->radioLinks[2]; /*0x65adc0*/
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (unsigned int *)(&this->radioLinks)[1]; *i; ++i ) /*0x65adcc*/
+  for ( i = (_DWORD *)this->radioLinks[1]; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/
   }
   return 1; /*0x65ade1*/
-
 }
 } // namespace ra2
 
@@ -205,23 +191,21 @@ int RadioClass::HasFreeLink()
 namespace gamemd {
 void RadioClass::SetLinkCount(int a2)
 {
-
   int v3; // ebx
   int v4; // eax
 
-  v3 = (&this->radioLinks)[2]; /*0x65ae69*/
+  v3 = this->radioLinks[2]; /*0x65ae69*/
   if ( a2 > v3 ) /*0x65ae71*/
   {
-    (*(void (**)(int *, int, unsigned int))((&this->radioLinks)[0] + 8))((int *)this->radioLinks, a2, 0); /*0x65ae82*/
+    (*(void (__thiscall **)(int *, int, _DWORD))(this->radioLinks[0] + 8))(this->radioLinks, a2, 0); /*0x65ae82*/
     v4 = v3; /*0x65ae87*/
     do /*0x65ae9c*/
     {
       ++v4; /*0x65ae91*/
-      *(unsigned int *)((&this->radioLinks)[1] + 4 * v4 - 4) = 0; /*0x65ae94*/
+      *(_DWORD *)(this->radioLinks[1] + 4 * v4 - 4) = 0; /*0x65ae94*/
     }
     while ( v4 < a2 ); /*0x65ae9c*/
   }
-
 }
 } // namespace ra2
 
@@ -229,29 +213,27 @@ void RadioClass::SetLinkCount(int a2)
 namespace gamemd {
 int RadioClass::ExecuteAction(int aP1, char aP2)
 {
-
   int result; // eax
   int i; // ecx
   int v6; // eax
   int v7; // edx
-  unsigned int *v8; // eax
+  _DWORD *v8; // eax
 
-  ((Object *)((ObjectClass *)this))->Unlink(); /*0x65aacf*/
-  result = (&this->radioLinks)[2]; /*0x65aad4*/
+  Object::Unlink(); /*0x65aacf*/
+  result = this->radioLinks[2]; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {
-    v6 = (&this->radioLinks)[1]; /*0x65aae0*/
-    v7 = *(unsigned int *)(v6 + 4 * i); /*0x65aae6*/
-    v8 = (unsigned int *)(v6 + 4 * i); /*0x65aae9*/
-    if ( v7 == (int)(aP1) ) /*0x65aaee*/
+    v6 = this->radioLinks[1]; /*0x65aae0*/
+    v7 = *(_DWORD *)(v6 + 4 * i); /*0x65aae6*/
+    v8 = (_DWORD *)(v6 + 4 * i); /*0x65aae9*/
+    if ( v7 == aP1 ) /*0x65aaee*/
     {
       if ( aP2 ) /*0x65aaf2*/
         *v8 = 0; /*0x65aaf4*/
     }
-    result = (&this->radioLinks)[2]; /*0x65aafa*/
+    result = this->radioLinks[2]; /*0x65aafa*/
   }
   return result; /*0x65ab05*/
-
 }
 } // namespace gamemd
 
@@ -259,17 +241,16 @@ int RadioClass::ExecuteAction(int aP1, char aP2)
 namespace gamemd {
 int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
 {
-
   int result; // eax
   int v4; // edx
   int v5; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a0),(gamemd::ObjectTypeClass *)(aP1),(gamemd::ObjectTypeClass *)(aP2)); /*0x65ac52*/
+  result = AbstractClass::SaveLoad_Prefix((int *)a0, aP1, aP2); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
-    v4 = *(int *)aP1;
+    v4 = *aP1; /*0x65ac61*/
     aP2 = a0->radioLinks[2]; /*0x65ac6d*/
-    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)aP1, (int *)(&aP2), 4, 0); /*0x65ac71*/
+    result = aP1->GetVtable3(&aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/
     {
       v5 = 0; /*0x65ac7c*/
@@ -281,7 +262,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
       {
         while ( 1 ) /*0x65ac93*/
         {
-          result = (*(int (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
+          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*aP1 + 16))(aP1, a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
           if ( result < 0 ) /*0x65ac98*/
             break; /*0x65ac98*/
           if ( ++v5 >= aP2 ) /*0x65aca1*/
@@ -291,6 +272,5 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
     }
   }
   return result; /*0x65aca5*/
-
 }
 } // namespace gamemd

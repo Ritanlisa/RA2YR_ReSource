@@ -15,40 +15,10 @@ struct MSEngine {
     void* q008;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
-    void *qC;  // 0xC
+    unsigned int u32_C;  // 0xC
     void* IsAllocated;  // 0xD
     bool q00E;  // 0xE
     void* q010;  // 0x10
-    unsigned int MSEngine_field_0x4;
-    unsigned int MSEngine_field_0x8;
-    unsigned int *MSEngine_field_0xC;
-    unsigned int *__pad_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int q0040;
-    unsigned int q0042;
-    unsigned int q0043;
-    unsigned int q0046;
-    unsigned int q0084;
-    unsigned int q0108;
-    unsigned int q018;
-    unsigned int u32_18;
-    unsigned int u32_1C;
-    unsigned int u32_24;
-    unsigned int u32_25;
-    unsigned int u32_30;
-    unsigned int u32_39;
-    unsigned int u32_3C;
-    unsigned int u32_3D;
-    unsigned int u32_44;
-    unsigned int u32_48;
-    unsigned int u32_4C;
-    unsigned int u32_51;
-    unsigned int u32_C;
-    unsigned int SessionClass;
-    unsigned int Timer;
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, char * a3);  // 0x5ACD30
     AbstractClass * * SetCapacity(int a2, char * a3);  // 0x5ACED0

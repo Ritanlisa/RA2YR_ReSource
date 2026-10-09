@@ -14,7 +14,10 @@ struct TextRenderer {
     unsigned int u32_8;  // 0x8
     void* q00C;  // 0xC
     unsigned char q010;  // 0x10
+    char u32_14;  // 0x14
     void* q018;  // 0x18
+    char u32_1A;  // 0x1A
+    char u32_1B;  // 0x1B
     unsigned int u32_24;  // 0x24
     unsigned int u32_2C;  // 0x2C
     unsigned char q034;  // 0x34
@@ -22,10 +25,6 @@ struct TextRenderer {
     unsigned int q044;  // 0x44
     unsigned int u32_50;  // 0x50
     void* q054;  // 0x54
-    unsigned int u32_61;
-    unsigned int u32_70;
-    unsigned int u32_80;
-    unsigned int *__pad_4C;
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);
     int MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6);

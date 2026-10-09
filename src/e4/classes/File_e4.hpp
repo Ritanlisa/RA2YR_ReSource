@@ -9,8 +9,8 @@ struct File {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
-    unsigned int u16_6;  // 0x6
-    unsigned int q8;  // 0x8
+    unsigned int u32_6;  // 0x6
+    AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
     AbstractClass * ptr_10;  // 0x10
     unsigned int u32_14;  // 0x14
@@ -21,16 +21,6 @@ struct File {
     AbstractClass * ptr_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned char tail_2D;  // 0x2D
-    unsigned int BufferSize;
-    unsigned int *File_field_0x2;
-    unsigned int *__pad_0;
-    unsigned int *__pad_6;
-    unsigned int u32_42;
-    void* ptr_8;
-    unsigned int q004;
-    unsigned int q0146;
-    unsigned int q030;
-    unsigned int q034;
 // --- flat members (END) ---
     char IsReady(int a2);  // 0x431F10
     AbstractClass * LoadFont(char *Source);  // 0x433990

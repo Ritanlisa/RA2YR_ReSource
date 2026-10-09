@@ -8,17 +8,17 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractType_e4_e4.hpp"
 
 // 0x40DCB0
 namespace gamemd {
 char * AbstractType_e4::FindName()
 {
-
   int v1; // edx
-  AbstractType_e4 **v2; // eax
+  AbstractType **v2; // eax
 
   v1 = 0; /*0x40dcb0*/
-  v2 = (AbstractType_e4 **)dword_816EE4; /*0x40dcb2*/
+  v2 = (AbstractType **)dword_816EE4; /*0x40dcb2*/
   while ( *v2 != this ) /*0x40dcb9*/
   {
     v2 += 2; /*0x40dcbb*/
@@ -26,7 +26,6 @@ char * AbstractType_e4::FindName()
     if ( (int)v2 >= (int)&off_817134 ) /*0x40dcc4*/
       return (char *)&dword_817130; /*0x40dccb*/
   }
-  return (char *)((&off_816EE0)[2 * v1]);
-
+  return (&off_816EE0)[2 * v1]; /*0x40dccb*/
 }
 } // namespace gamemd

@@ -40,10 +40,28 @@ struct E4Recv_4A3270 {
     unsigned int q5494;  // 0x5494
     unsigned int q5510;  // 0x5510
     unsigned int q6408;  // 0x6408
-    unsigned int AbstractClass;
-    unsigned int estimatedHealth;
-    unsigned int isOnMap;
-    unsigned int health;
+    unsigned int q20848;  // 0x20848
+    unsigned int q21600;  // 0x21600
+    unsigned int q25608;  // 0x25608
+    unsigned int q136704;  // 0x136704
+    unsigned int q137078;  // 0x137078
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19347830;  // 0x19347830
+    unsigned int q422806914;  // 0x422806914
+    unsigned int q422869040;  // 0x422869040
+    unsigned int q17758713478;  // 0x17758713478
+    unsigned int q17759113280;  // 0x17759113280
+    unsigned int q1612096536630;  // 0x1612096536630
+    unsigned int q1612096550008;  // 0x1612096550008
+    unsigned int q1612107035264;  // 0x1612107035264
+    unsigned int q388267565606448;  // 0x388267565606448
+    unsigned int q388267565711368;  // 0x388267565711368
+    unsigned int q388269456183908;  // 0x388269456183908
+    unsigned int q254495664600278088;  // 0x254495664600278088
+    unsigned int q254495797487876360;  // 0x254495797487876360
 // --- flat members (END) ---
     void * sub_4A3270(int a2, int a3, int a4);  // 0x4A3270
 };

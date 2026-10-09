@@ -26,40 +26,37 @@ extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
 namespace gamemd {
 HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 {
-
   int *v2; // edi
   int v3; // ebx
   ILocomotion *Piggybackee; // eax
   LPVOID *p_Piggybackee; // esi
 
   v2 = pStm; /*0x69ee97*/
-  v3 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm); /*0x69eea2*/
+  v3 = SwizzleManager::SaveLoad((int *)a1->0, pStm); /*0x69eea2*/
   if ( v3 < 0 ) /*0x69eea6*/
     return v3; /*0x69eea6*/
   if ( a1 ) /*0x69eeaa*/
   {
     a1->Piggybackee = 0; /*0x69eeac*/
-    *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_ShipLocomotionClass;
-    *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_ShipLocomotionClass;
-    *(unsigned int *)a1->__pad_18 = (unsigned int)&off_7F2D68; /*0x69eec0*/
+    *(_DWORD *)a1->0 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb3*/
+    *(_DWORD *)&a1->0[4] = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb9*/
+    *(_DWORD *)a1->__pad_18 = &off_7F2D68; /*0x69eec0*/
   }
-  (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( (int *)(v2), (int **)(&pStm), 1, 0); /*0x69eed3*/
-  if ( !(unsigned char)pStm ) /*0x69eedc*/
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(*v2 + 12))(v2, &pStm, 1, 0); /*0x69eed3*/
+  if ( !(_BYTE)pStm ) /*0x69eedc*/
     return v3; /*0x69ef08*/
   Piggybackee = a1->Piggybackee; /*0x69eede*/
   p_Piggybackee = (LPVOID *)&a1->Piggybackee; /*0x69eee1*/
   if ( Piggybackee ) /*0x69eee6*/
-    (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))( (ILocomotion *)(Piggybackee)); /*0x69eeeb*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x69eeeb*/
   *p_Piggybackee = 0; /*0x69eef5*/
-  return OleLoadFromStream((LPSTREAM)v2, (void *)(&IID_ILocomotion), p_Piggybackee); /*0x69ef01*/
-
+  return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x69ef01*/
 }
 } // namespace gamemd
 // 0x69EF10
 namespace gamemd {
 HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
-
   IStream *v3; // esi
   ShipLocomotionClass *v4; // edi
   int IPersistStream; // ebx
@@ -71,89 +68,82 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int v12; // edx
 
   v3 = (IStream *)pPStm; /*0x69ef16*/
-  v4 =(gamemd::ShipLocomotionClass *)a1; /*0x69ef1b*/
-  IPersistStream = LoadIPersistStream((gamemd::LocomotionClass*)a1, pPStm, a3); /*0x69ef27*/
+  v4 = a1; /*0x69ef1b*/
+  IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x69ef27*/
   if ( IPersistStream < 0 ) /*0x69ef2b*/
     return IPersistStream; /*0x69ef2b*/
   if ( !v4->Piggybackee ) /*0x69ef36*/
   {
-    v12 = *(unsigned int *)v3->__pad_0; /*0x69efd3*/
-    LOBYTE(a3) = 0; /*0x69efdf*/
-    (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))( (IStream *)(v3), (int *)(&a3), 1, 0); /*0x69efe4*/
+    v12 = *(_DWORD *)v3->__pad_0; /*0x69efd3*/
+    IDA_LOBYTE(a3) = 0; /*0x69efdf*/
+    (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
     return IPersistStream; /*0x69efe8*/
   }
-  v6 = *(unsigned int *)v3->__pad_0; /*0x69ef3c*/
-  LOBYTE(a3) = 1; /*0x69ef48*/
-  (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))( (IStream *)(v3), (int *)(&a3), 1, 0); /*0x69ef4d*/
-  Piggybackee =(gamemd::ILocomotion *)v4->Piggybackee; /*0x69ef50*/
-  pPStm = (int *)(0); /*0x69ef53*/
+  v6 = *(_DWORD *)v3->__pad_0; /*0x69ef3c*/
+  IDA_LOBYTE(a3) = 1; /*0x69ef48*/
+  (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
+  Piggybackee = v4->Piggybackee; /*0x69ef50*/
+  pPStm = 0; /*0x69ef53*/
   if ( Piggybackee ) /*0x69ef5d*/
   {
-    v8 = (**(int (***)(ILocomotion *, void *, ShipLocomotionClass **))Piggybackee)( /*0x69ef6e*/
+    v8 = (**(int (__stdcall ***)(ILocomotion *, void *, ShipLocomotionClass **))Piggybackee)( /*0x69ef6e*/
            Piggybackee,
            &unk_820270,
-           (gamemd::ShipLocomotionClass **)&a1);
+           &a1);
     if ( v8 >= 0 ) /*0x69ef72*/
     {
       v9 = (int *)a1; /*0x69ef8b*/
       if ( pPStm ) /*0x69ef91*/
-        (*(void (**)(int *))(*pPStm + 8))( (int *)(pPStm)); /*0x69ef96*/
+        (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x69ef96*/
       pPStm = v9; /*0x69ef99*/
     }
     else
     {
-      ((Function *)((int *)&pPStm))->Method_4B4D60(); /*0x69ef78*/
-      pPStm = (int *)(0); /*0x69ef7d*/
+      Function::Method_4B4D60((int *)&pPStm); /*0x69ef78*/
+      pPStm = 0; /*0x69ef7d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x69efa7*/
       sub_7DC720(v8); /*0x69efaa*/
   }
-  v10 = OleSaveToStream( (LPPERSISTSTREAM)pPStm, (void *)(v3)); /*0x69efbb*/
+  v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3); /*0x69efbb*/
   if ( pPStm ) /*0x69efc3*/
-    (*(void (**)(int *))(*pPStm + 8))( (int *)(pPStm)); /*0x69efc8*/
+    (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x69efc8*/
   return v10; /*0x69efcd*/
-
 }
 } // namespace gamemd
 // 0x6A3E60
 namespace gamemd {
 int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
-
   if ( !a2 ) /*0x6a3e66*/
     return -2147467261; /*0x6a3e68*/
-  *(IID *)a2 = (unsigned int)g_CLSID_DriveLocomotion2; /*0x6a3e76*/
+  *(IID *)a2 = g_CLSID_DriveLocomotion2; /*0x6a3e76*/
   a2[3] = unk_7E9ABC; /*0x6a3e90*/
   return 0; /*0x6a3e6d*/
-
 }
 } // namespace gamemd
 // 0x6A42A0
 namespace gamemd {
 int ShipLocomotionClass::StubReturn112()
 {
-
   return 112; /*0x6a42a5*/
-
 }
 } // namespace gamemd
 // 0x6A42B0
 namespace gamemd {
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
-
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_ShipLocomotionClass;
-  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)&vt_ShipLocomotionClass;
-  *(unsigned int *)this->__pad_18 = (unsigned int)&off_7F2D68;
-  Piggybackee = (ILocomotion *)(this->Piggybackee); /*0x6a42c7*/
+  *(_DWORD *)Block->0 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
+  *(_DWORD *)&Block->0[4] = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
+  *(_DWORD *)Block->__pad_18 = &off_7F2D68; /*0x6a42c0*/
+  Piggybackee = Block->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
-    (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))( (ILocomotion *)(Piggybackee)); /*0x6a42d1*/
-  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x6a42d6*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
+  LocomotionClass::Construct((LocomotionClass *)Block); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    __3_YAXPAX_Z(this); /*0x6a42e3*/
-  return (gamemd::ShipLocomotionClass *)(this->LocomotionClass); /*0x6a42ed*/
-
+    RA2_OPDEL(Block); /*0x6a42e3*/
+  return Block->0; /*0x6a42ed*/
 }
 } // namespace gamemd

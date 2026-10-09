@@ -23,7 +23,7 @@ struct MPCooperative {
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int q14;  // 0x14
+    void* q014;  // 0x14
     int Count;  // 0x16
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -33,12 +33,11 @@ struct MPCooperative {
     void* q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int q38;  // 0x38
+    void* q038;  // 0x38
     unsigned int u32_3C;  // 0x3C
     void* q03F;  // 0x3F
     void* q040;  // 0x40
-    void* MPCooperative_field_0x4;  // 0x4
-    unsigned int q44;  // 0x44
+    MultiplayerGameMode* q044;  // 0x44
     void* q048;  // 0x48
     unsigned char u8_49;  // 0x49
     void* q04C;  // 0x4C
@@ -63,6 +62,7 @@ struct MPCooperative {
     unsigned char q08C;  // 0x8C
     unsigned char q090;  // 0x90
     unsigned char q094;  // 0x94
+    unsigned char q098;  // 0x98
     AnimClass* q09C;  // 0x9C
     ObjectClass* q0A0;  // 0xA0
     ObjectClass* q0A4;  // 0xA4
@@ -70,7 +70,6 @@ struct MPCooperative {
     unsigned char q0AC;  // 0xAC
     unsigned int u32_AD;  // 0xAD
     unsigned int u32_AE;  // 0xAE
-    unsigned int MPCooperative_field_0x6C;  // 0x6C
     unsigned int u32_AF;  // 0xAF
     unsigned char q0B0;  // 0xB0
     unsigned int u32_B1;  // 0xB1
@@ -100,7 +99,6 @@ struct MPCooperative {
     MultiplayerGameMode * q128;  // 0x128
     unsigned char q130;  // 0x130
     void* q134;  // 0x134
-    unsigned int MPCooperative_field_0xC4;  // 0xC4
     unsigned char q138;  // 0x138
     unsigned char q140;  // 0x140
     unsigned int q144;  // 0x144
@@ -119,6 +117,7 @@ struct MPCooperative {
     unsigned char q1A8;  // 0x1A8
     unsigned char q1AA;  // 0x1AA
     unsigned int u32_1AC;  // 0x1AC
+    unsigned int u32_1B0;  // 0x1B0
     unsigned char q200;  // 0x200
     unsigned char q210;  // 0x210
     void* q260;  // 0x260
@@ -138,11 +137,9 @@ struct MPCooperative {
     unsigned char q320;  // 0x320
     void * q324;  // 0x324
     unsigned int q328;  // 0x328
-    unsigned char __pad_328[17];  // 0x328
     unsigned char q32C;  // 0x32C
     unsigned char q330;  // 0x330
     unsigned char u8_331;  // 0x331
-    void* MPCooperative_field_0x264;  // 0x264
     unsigned char q334;  // 0x334
     unsigned int u32_338;  // 0x338
     CampaignClass* q33C;  // 0x33C
@@ -157,7 +154,6 @@ struct MPCooperative {
     void* q598;  // 0x598
     unsigned char q59C;  // 0x59C
     unsigned char q5A0;  // 0x5A0
-    unsigned int MPCooperative_field_0x324;  // 0x324
     unsigned char q5A4;  // 0x5A4
     unsigned char q5A8;  // 0x5A8
     void* q608;  // 0x608
@@ -166,7 +162,6 @@ struct MPCooperative {
     void* q61C;  // 0x61C
     unsigned char q620;  // 0x620
     unsigned int q628;  // 0x628
-    unsigned char MPCooperative_field_0x340;  // 0x340
     void* q630;  // 0x630
     unsigned char q634;  // 0x634
     void* q640;  // 0x640
@@ -200,28 +195,9 @@ struct MPCooperative {
     IPXManagerClass* q1030;  // 0x1030
     unsigned char q1060;  // 0x1060
     void* q11E4;  // 0x11E4
-    unsigned int MPCooperative_field_0x0;
-    unsigned int *__pad_18;
-    unsigned int q0088;
-    unsigned int q014;
-    unsigned int q038;
-    unsigned int q044;
-    unsigned int MPCooperative_field_0x38;
-    unsigned int MPCooperative_field_0x40;
-    unsigned int MPCooperative_field_0x48;
-    unsigned int MPCooperative_field_0x4C;
-    unsigned int MPCooperative_field_0x50;
-    unsigned int MPCooperative_field_0x54;
-    unsigned int MPCooperative_field_0x58;
-    unsigned int MPCooperative_field_0x5C;
-    unsigned int MPCooperative_field_0x60;
-    unsigned int MPCooperative_field_0x64;
-    unsigned int MPCooperative_field_0x68;
-    unsigned int MPCooperative___vt07;
-    unsigned int MPCooperative_validateMove;
+// --- flat members (END) ---
     void* COMStub;  // 0x0 (no offset truth)
     void* m_Enabled;  // 0x0 (no offset truth)
-// --- flat members (END) ---
     int processTurn(char * a2, char * a3);  // 0x49B660
     int BuildScoreEntries(int a2, CCINIClass * aP2);  // 0x49BCE0
     int WriteCoopSaveINI();  // 0x49BE40
@@ -229,7 +205,6 @@ struct MPCooperative {
 unsigned int * ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6);  // 0x005c1470 g57w12-r raw-sync (def-form)
     int Read(void *a1_1, void *a2_1);  // 0x5C18A0
     CampaignClass * * CopyTo();  // 0x5C1A10
-    // dup-decl removed: COM Stub();  // 0x5C1CB0
     int InitSession();  // 0x5C1CC0
     CampaignClass * * Seek(void *a1_1, void *a2_1, void *a3_1);  // 0x5C1DC0
     int Revert();  // 0x5C1FA0

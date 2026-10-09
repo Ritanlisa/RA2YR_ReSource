@@ -10,11 +10,9 @@
 namespace gamemd {
 bool E4Recv_6B8AF0::sub_6B8AF0(unsigned int * a2)
 {
-
   int v2; // eax
 
-  v2 = (int)this->AbstractClass ^ *a2; /*0x6b8af8*/
-  return !(unsigned char)v2 && (v2 & 0x7FF00) == 0; /*0x6b8b07*/
-
+  v2 = (int)this->vfptr ^ *a2; /*0x6b8af8*/
+  return !(_BYTE)v2 && (v2 & 0x7FF00) == 0; /*0x6b8b07*/
 }
 } // namespace gamemd

@@ -15,6 +15,7 @@ struct Building {
     unsigned int q024;  // 0x24
     unsigned int q034;  // 0x34
     unsigned int u32_44;  // 0x44
+    unsigned int u32_48;  // 0x48
     unsigned int q054;  // 0x54
     unsigned int q068;  // 0x68
     unsigned int u32_70;  // 0x70
@@ -31,10 +32,6 @@ struct Building {
     unsigned int q274;  // 0x274
     void* q2A4;  // 0x2A4
     unsigned int tail_2A8;  // 0x2A8
-    unsigned int *__pad_A4;
-    unsigned int *__pad_C;
-    unsigned int uniqueId0;
-    unsigned char Building_field_0xA0;  // 0xA0
 // --- flat members (END) ---
     AnimClass * * ComputePosition(int *aP1);  // 0x425D10
     int GetNthOfType();  // 0x485020

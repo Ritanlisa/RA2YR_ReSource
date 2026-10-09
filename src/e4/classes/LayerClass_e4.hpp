@@ -8,13 +8,13 @@ namespace gamemd {
 struct LayerClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int count;  // 0x4
+    char count[4];  // 0x4
     char capacity[4];  // 0x8
     char q00B[4];  // 0xB
+// --- flat members (END) ---
     void* Load_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LayerClass::Load is a method)
     static unsigned int Load(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* items;  // 0x0 (no offset truth)
-// --- flat members (END) ---
     int CellIteratorNext();
     int CellIteratorReset();
     int CoordinatesLegal(int16_t *aP1);

@@ -48,33 +48,33 @@ int AISelectTeamHouseClass(...);   // g57b5 W5: raw 自由函数词表 (纯变�
 namespace gamemd {
 char BaseClass::AddRef(int a2)
 {
-    int m_8; // edi
-    int v3; // esi
-    int v4; // edx
-    int v5; // eax
-    unsigned short *v6; // ecx
-    int v7; // edx
+  int m_8; // edi
+  int v3; // esi
+  int v4; // edx
+  int v5; // eax
+  _WORD *v6; // ecx
+  int v7; // edx
 
-    m_8 = this->m_8; /*0x42f49b*/
-    if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x42f4a0*/
+  m_8 = this->m_8; /*0x42f49b*/
+  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x42f4a0*/
+  {
+    v3 = 0; /*0x42f4a2*/
+    if ( m_8 <= 0 ) /*0x42f4a6*/
+      return 1; /*0x42f4e0*/
+    v4 = *(_DWORD *)(a2 + 4); /*0x42f4a8*/
+    v5 = *(_DWORD *)&this->m_1[3]; /*0x42f4ab*/
+    v6 = (_WORD *)(v4 + 4); /*0x42f4ae*/
+    v7 = v4 - v5; /*0x42f4b1*/
+    while ( *(_DWORD *)v5 == *(_DWORD *)(v7 + v5) && *(_WORD *)(v5 + 4) == *v6 && *(_WORD *)(v5 + 6) == v6[1] ) /*0x42f4cd*/
     {
-      v3 = 0; /*0x42f4a2*/
-      if ( m_8 <= 0 ) /*0x42f4a6*/
-        return 1; /*0x42f4e0*/
-      v4 = *(unsigned int *)(a2 + 4); /*0x42f4a8*/
-      v5 = *(unsigned int *)&this->m_1[3]; /*0x42f4ab*/
-      v6 = (unsigned short *)(v4 + 4); /*0x42f4ae*/
-      v7 = v4 - v5; /*0x42f4b1*/
-      while ( *(unsigned int *)v5 == *(unsigned int *)(v7 + v5) && *(unsigned short *)(v5 + 4) == *v6 && *(unsigned short *)(v5 + 6) == v6[1] ) /*0x42f4cd*/
-      {
-        ++v3; /*0x42f4cf*/
-        v6 += 8; /*0x42f4d0*/
-        v5 += 16; /*0x42f4d3*/
-        if ( v3 >= m_8 ) /*0x42f4d8*/
-          return 1; /*0x42f4d8*/
-      }
+      ++v3; /*0x42f4cf*/
+      v6 += 8; /*0x42f4d0*/
+      v5 += 16; /*0x42f4d3*/
+      if ( v3 >= m_8 ) /*0x42f4d8*/
+        return 1; /*0x42f4d8*/
     }
-    return 0; /*0x42f4da*/
+  }
+  return 0; /*0x42f4da*/
 }
 } // namespace gamemd
 
@@ -82,14 +82,14 @@ char BaseClass::AddRef(int a2)
 namespace gamemd {
 int BaseClass::Seek(int a2, int a3)
 {
-    int v3; // edx
+  int v3; // edx
 
-    v3 = *(unsigned int *)&this->m_1[3] + 16 * a3; /*0x42f3fa*/
-    *(unsigned int *)a2 = *(unsigned int *)v3; /*0x42f402*/
-    *(unsigned int *)(a2 + 4) = *(unsigned int *)(v3 + 4); /*0x42f407*/
-    *(unsigned char *)(a2 + 8) = *(unsigned char *)(v3 + 8); /*0x42f40d*/
-    *(unsigned int *)(a2 + 12) = *(unsigned int *)(v3 + 12); /*0x42f413*/
-    return a2; /*0x42f416*/
+  v3 = *(_DWORD *)&this->m_1[3] + 16 * a3; /*0x42f3fa*/
+  *(_DWORD *)a2 = *(_DWORD *)v3; /*0x42f402*/
+  *(_DWORD *)(a2 + 4) = *(_DWORD *)(v3 + 4); /*0x42f407*/
+  *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x42f40d*/
+  *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x42f413*/
+  return a2; /*0x42f416*/
 }
 } // namespace gamemd
 
@@ -97,26 +97,26 @@ int BaseClass::Seek(int a2, int a3)
 namespace gamemd {
 int HouseClass::createStartingUnits(int a2)
 {
-    int result; // eax
-    int v4; // esi
-    void **v5; // edi
+  int result; // eax
+  int v4; // esi
+  void **v5; // edi
 
-    result = this->grindersCount; /*0x431413*/
-    if ( result ) /*0x431418*/
+  result = this->grindersCount; /*0x431413*/
+  if ( result ) /*0x431418*/
+  {
+    result = 3 * a2; /*0x431421*/
+    v4 = 0; /*0x431424*/
+    v5 = &this->vfptr + 3 * a2; /*0x431426*/
+    do /*0x43143f*/
     {
-      result = 3 * a2; /*0x431421*/
-      v4 = 0; /*0x431424*/
-      v5 = (void **)(this + 3 * a2); /*0x431426*/  // G57w8 ptr 桥
-      do /*0x43143f*/
-      {
-        if ( *v5 ) /*0x43142a*/
-          result = ((Network *)this)->SendBeaconDelete(a2, v4); /*0x431433*/
-        ++v4; /*0x431438*/
-        ++v5; /*0x431439*/
-      }
-      while ( v4 < 3 ); /*0x43143f*/
+      if ( *v5 ) /*0x43142a*/
+        result = Network::SendBeaconDelete((Network *)this, a2, v4); /*0x431433*/
+      ++v4; /*0x431438*/
+      ++v5; /*0x431439*/
     }
-    return result; /*0x431444*/
+    while ( v4 < 3 ); /*0x43143f*/
+  }
+  return result; /*0x431444*/
 }
 } // namespace gamemd
 
@@ -124,32 +124,32 @@ int HouseClass::createStartingUnits(int a2)
 namespace gamemd {
 int HouseClass::GetFactoryProducing(int a2)
 {
-    int v2; // esi
-    int v4; // eax
-    int v5; // ecx
-    int Type; // eax
+  int v2; // esi
+  int v4; // eax
+  int v5; // ecx
+  int Type; // eax
 
-    v2 = 0; /*0x4f83ca*/
-    if ( *(int *)&stru_A83D50.__pad_C8[40] <= 0 ) /*0x4f83d1*/
-      return 0; /*0x4f841f*/
-    v4 = *(unsigned int *)&stru_A83D50.__pad_C8[28]; /*0x4f83d7*/
-    while ( 1 ) /*0x4f83dc*/
-    {
-      v5 = *(unsigned int *)(v4 + 4 * v2); /*0x4f83dc*/
-      if ( *(HouseClass **)(v5 + 108) == this ) /*0x4f83e2*/
-        break; /*0x4f83e2*/
+  v2 = 0; /*0x4f83ca*/
+  if ( *(int *)&stru_A83D50.__pad_C8[40] <= 0 ) /*0x4f83d1*/
+    return 0; /*0x4f841f*/
+  v4 = *(_DWORD *)&stru_A83D50.__pad_C8[28]; /*0x4f83d7*/
+  while ( 1 ) /*0x4f83dc*/
+  {
+    v5 = *(_DWORD *)(v4 + 4 * v2); /*0x4f83dc*/
+    if ( *(HouseClass **)(v5 + 108) == this ) /*0x4f83e2*/
+      break; /*0x4f83e2*/
   LABEL_7:
-      if ( ++v2 >= *(int *)&stru_A83D50.__pad_C8[40] ) /*0x4f8417*/
-        return 0; /*0x4f8417*/
-    }
-    if ( !AbstractClass::GetType((AbstractClass *)v5) /*0x4f8407*/
-      || (Type = AbstractClass::GetType(*(AbstractClass **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v2)),
-          (*(int (__thiscall **)(int))(*(unsigned int *)Type + 132))(Type) != a2) )
-    {
-      v4 = *(unsigned int *)&stru_A83D50.__pad_C8[28]; /*0x4f8409*/
-      goto LABEL_7; /*0x4f8409*/
-    }
-    return *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v2); /*0x4f8419*/
+    if ( ++v2 >= *(int *)&stru_A83D50.__pad_C8[40] ) /*0x4f8417*/
+      return 0; /*0x4f8417*/
+  }
+  if ( !AbstractClass::GetType((AbstractClass *)v5) /*0x4f8407*/
+    || (Type = AbstractClass::GetType(*(AbstractClass **)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v2)),
+        (*(int (__thiscall **)(int))(*(_DWORD *)Type + 132))(Type) != a2) )
+  {
+    v4 = *(_DWORD *)&stru_A83D50.__pad_C8[28]; /*0x4f8409*/
+    goto LABEL_7; /*0x4f8409*/
+  }
+  return *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v2); /*0x4f8419*/
 }
 } // namespace gamemd
 
@@ -161,10 +161,8 @@ void HouseClass::Update_TogglePower(double a2)
     Object *v3; // esi
     int v4; // ecx
     int v5; // eax
-    int v6; // ecx
     int v7; // edx
     int v8; // eax
-    int v9; // ecx
     int v10; // edx
     int v11; // eax
     int v12; // ecx
@@ -173,12 +171,10 @@ void HouseClass::Update_TogglePower(double a2)
     char v15; // al
     int v16; // edx
     int v17; // ecx
-    int v18; // edi
     int v19; // eax
     char v20; // al
     int v21; // edx
     int v22; // ecx
-    int v23; // edi
     int v24; // eax
     int v25; // ecx
     int v26; // eax
@@ -198,7 +194,6 @@ void HouseClass::Update_TogglePower(double a2)
     char v40; // al
     int i; // edi
     int v42; // ecx
-    int v43; // edx
     void *v44; // eax
     int v45; // edx
     int Object_field_0x13C; // eax
@@ -219,7 +214,6 @@ void HouseClass::Update_TogglePower(double a2)
     int v66; // edi
     int v67; // edx
     int v68; // eax
-    int v69; // edx
     int j; // ebx
     int v71; // edi
     int Status; // eax
@@ -245,13 +239,11 @@ void HouseClass::Update_TogglePower(double a2)
     int v92; // ecx
     int v93; // eax
     int v94; // edi
-    int v95; // ebx
     int *v96; // edi
     int v97; // edx
     int v98; // ecx
     int v99; // eax
     int v100; // edi
-    int v101; // ebx
     int v102; // eax
     int v103; // eax
     bool v104; // bl
@@ -265,7 +257,6 @@ void HouseClass::Update_TogglePower(double a2)
     int v112; // eax
     int v113; // ecx
     int v114; // [esp+10h] [ebp-6Ch]
-    int v115; // [esp+18h] [ebp-64h]
     HouseClass *v116; // [esp+20h] [ebp-5Ch]
     int v117; // [esp+34h] [ebp-48h] BYREF
     int Ticks; // [esp+38h] [ebp-44h] BYREF
@@ -288,9 +279,9 @@ void HouseClass::Update_TogglePower(double a2)
     }
     if ( v5 == 1 ) /*0x4f846f*/
     {
-      v6 = v119; /*0x4f8471*/
+      v119 = v119; /*0x4f8471*/
       *(unsigned int *)&v3[1].ptr_2[2] = dword_A8ED84; /*0x4f8477*/
-      v3[1].vtable3 = v6; /*0x4f847d*/
+      v3[1].vtable3 = v119; /*0x4f847d*/
       *(unsigned int *)v3[1].vtable4 = 0; /*0x4f8483*/
       v3[33].__pad_B0[40] = 1; /*0x4f8489*/
     }
@@ -305,9 +296,9 @@ void HouseClass::Update_TogglePower(double a2)
     }
     if ( v8 == 1 ) /*0x4f84b2*/
     {
-      v9 = v119; /*0x4f84ba*/
+      v119 = v119; /*0x4f84ba*/
       *(unsigned int *)&v3[1].vtable4[4] = dword_A8ED84; /*0x4f84c0*/
-      *(unsigned int *)&v3[1].vtable4[8] = v9; /*0x4f84c6*/
+      *(unsigned int *)&v3[1].vtable4[8] = v119; /*0x4f84c6*/
       *(unsigned int *)&v3[1].vtable4[12] = 0; /*0x4f84cc*/
       v3[33].__pad_B0[41] = 1; /*0x4f84d2*/
     }
@@ -371,15 +362,15 @@ void HouseClass::Update_TogglePower(double a2)
       v120 = 120; /*0x4f8618*/
       while ( (unsigned __int8)Audio::IsPlaying() ) /*0x4f861c*/
       {
-        v18 = v120; /*0x4f8629*/
+        v120 = v120; /*0x4f8629*/
         if ( Ticks != -1 ) /*0x4f8630*/
         {
           v19 = Timer_GetTicks() - Ticks; /*0x4f863b*/
-          if ( v19 >= v18 ) /*0x4f8641*/
+          if ( v19 >= v120 ) /*0x4f8641*/
             break; /*0x4f8641*/
-          v18 -= v19; /*0x4f8643*/
+          v120 -= v19; /*0x4f8643*/
         }
-        if ( !v18 ) /*0x4f8647*/
+        if ( !v120 ) /*0x4f8647*/
           break; /*0x4f8647*/
         Event::Dispatch(); /*0x4f8649*/
       }
@@ -436,15 +427,15 @@ void HouseClass::Update_TogglePower(double a2)
     v120 = 120; /*0x4f873f*/
     while ( (unsigned __int8)Audio::IsPlaying() ) /*0x4f8743*/
     {
-      v23 = v120; /*0x4f8753*/
+      v120 = v120; /*0x4f8753*/
       if ( Ticks != -1 ) /*0x4f8759*/
       {
         v24 = Timer_GetTicks() - Ticks; /*0x4f8764*/
-        if ( v24 >= v23 ) /*0x4f876a*/
+        if ( v24 >= v120 ) /*0x4f876a*/
           break; /*0x4f876a*/
-        v23 -= v24; /*0x4f876c*/
+        v120 -= v24; /*0x4f876c*/
       }
-      if ( !v23 ) /*0x4f8770*/
+      if ( !v120 ) /*0x4f8770*/
         break; /*0x4f8770*/
       Event::Dispatch(); /*0x4f8772*/
     }
@@ -546,13 +537,13 @@ void HouseClass::Update_TogglePower(double a2)
         if ( (!v33 || !*(unsigned int *)(v33 + 1444)) && !v34 ) /*0x4f89b7*/
         {
           v35 = 0; /*0x4f89bf*/
-          while ( !*(unsigned char *)(v32 + 129) ) /*0x4f89b9*/
+          while ( !v32->u32_81 ) /*0x4f89b9*/
           {
             v36 = v35++; /*0x4f89c5*/
             if ( v36 >= 5 ) /*0x4f89cb*/
               break; /*0x4f89cb*/
             v37 = *(unsigned int *)v32; /*0x4f89d6*/
-            v117 = *(unsigned int *)(v32 + 108); /*0x4f89d9*/
+            v117 = v32->u32_6C; /*0x4f89d9*/
             (*(void (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(v37 + 364))( /*0x4f89f0*/
               v32,
               &v117,
@@ -593,10 +584,10 @@ void HouseClass::Update_TogglePower(double a2)
           TeamClass_CreateOneOf(*((unsigned int *)Block + i), (TeamClass *)v3); /*0x4f8aad*/
       }
       v42 = *(unsigned int *)(*(unsigned int *)&dword_8871E0->__pad_FFC[352] + 4 * *(unsigned int *)&v3->__pad_140[68]); /*0x4f8ad2*/
-      v43 = v119; /*0x4f8ad5*/
+      v119 = v119; /*0x4f8ad5*/
       *(unsigned int *)&v3[33].__pad_EC[12] = dword_A8ED84; /*0x4f8ad9*/
       v44 = Block; /*0x4f8adf*/
-      *(unsigned int *)&v3[33].__pad_EC[16] = v43; /*0x4f8ae3*/
+      *(unsigned int *)&v3[33].__pad_EC[16] = v119; /*0x4f8ae3*/
       *(unsigned int *)&v3[33].__pad_EC[20] = v42; /*0x4f8aeb*/
       v121 = *(TeamTypeVector *)&vftable; /*0x4f8af1*/  // G57w8: 解引用形（ptr->struct 值语义）
       if ( v44 && v123 ) /*0x4f8afd*/
@@ -683,10 +674,10 @@ void HouseClass::Update_TogglePower(double a2)
                       fmul ds:dbl_7E27F8
                     }
                     v61 = ((v61) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x4f8d2c*/
-                    v115 = v61; /*0x4f8d31*/
+                    v61 = v61; /*0x4f8d31*/
                     v114 = *(unsigned int *)&v3[134].__pad_90[4]; /*0x4f8d3d*/
                     StringCSF = GetStringCSF(aTxtLowPower, 0, g_Str_File_House_CPP, 2377); /*0x4f8d4f*/
-                    MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, v114, 16454, v115, 0); /*0x4f8d5c*/
+                    MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, v114, 16454, v61, 0); /*0x4f8d5c*/
                     dword_A8F040 = 1; /*0x4f8d61*/
                   }
                   _ECX = dword_8871E0; /*0x4f8d6b*/
@@ -747,9 +738,9 @@ void HouseClass::Update_TogglePower(double a2)
       if ( (int)dword_A8ED84 - v67 >= v68 ) /*0x4f8dee*/
       {
   LABEL_173:
-        v69 = v119; /*0x4f8e00*/
+        v119 = v119; /*0x4f8e00*/
         *(unsigned int *)&v3[33].__pad_EC[24] = dword_A8ED84; /*0x4f8e0f*/
-        *(unsigned int *)&v3[33].__pad_EC[28] = v69; /*0x4f8e15*/
+        *(unsigned int *)&v3[33].__pad_EC[28] = v119; /*0x4f8e15*/
         *(unsigned int *)&v3[33].__pad_EC[32] = 90; /*0x4f8e1b*/
         v3->__pad_140[262] = 0; /*0x4f8e21*/
         goto LABEL_174; /*0x4f8e21*/
@@ -871,11 +862,11 @@ void HouseClass::Update_TogglePower(double a2)
         if ( v92 <= 0 ) /*0x4f9120*/
           goto LABEL_233; /*0x4f9120*/
         v94 = p_HarvesterLoadRate[1]; /*0x4f9122*/
-        v95 = v94; /*0x4f9125*/
-        while ( (v91 & *(unsigned int *)(*(unsigned int *)v95 + 1740)) == 0 ) /*0x4f912f*/
+        v94 = v94; /*0x4f9125*/
+        while ( (v91 & *(unsigned int *)(*(unsigned int *)v94 + 1740)) == 0 ) /*0x4f912f*/
         {
           ++v93; /*0x4f9131*/
-          v95 += 4; /*0x4f9132*/
+          v94 += 4; /*0x4f9132*/
           if ( v93 >= v92 ) /*0x4f9137*/
             goto LABEL_233; /*0x4f9137*/
         }
@@ -893,11 +884,11 @@ void HouseClass::Update_TogglePower(double a2)
         else
         {
           v100 = v96[1]; /*0x4f916d*/
-          v101 = v100; /*0x4f9170*/
-          while ( (v97 & *(unsigned int *)(*(unsigned int *)v101 + 1740)) == 0 ) /*0x4f917a*/
+          v100 = v100; /*0x4f9170*/
+          while ( (v97 & *(unsigned int *)(*(unsigned int *)v100 + 1740)) == 0 ) /*0x4f917a*/
           {
             ++v99; /*0x4f917c*/
-            v101 += 4; /*0x4f917d*/
+            v100 += 4; /*0x4f917d*/
             if ( v99 >= v98 ) /*0x4f9182*/
               goto LABEL_231; /*0x4f9182*/
           }

@@ -7,14 +7,13 @@ namespace gamemd {
 
 struct Theme {
 // --- flat members (BEGIN) ---
-    unsigned int q4;  // 0x4
+    AbstractClass * ptr_4;  // 0x4
     unsigned int u32_8;  // 0x8
+    unsigned int u32_11;  // 0x11
+    void* audioSample;  // 0x2C
     void* q044;  // 0x44
     void* q068;  // 0x68
     void* q104;  // 0x104
-    void* ptr_4;
-    unsigned int Audio;
-    unsigned int ThemeClass;
 // --- flat members (END) ---
     bool IsPlaying();
     int QueueSong(int aP1);

@@ -16,11 +16,6 @@ struct MapSeedClass_18 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     void ClearBuffer(void *a1_1);  // 0x5AC4C0
     int GetCell(int a2);  // 0x5AC510

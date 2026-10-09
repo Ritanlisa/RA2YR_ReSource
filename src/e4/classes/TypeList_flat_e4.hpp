@@ -11,7 +11,6 @@ struct DynamicVector;  // fix_fwd_type_supply
 
 struct TypeList_flat {
 // --- flat members (BEGIN) ---
-    unsigned char m_1[4];  // 0x1
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
@@ -19,9 +18,10 @@ struct TypeList_flat {
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
+    unsigned int u32_34;  // 0x34
+// --- flat members (END) ---
     void* DynamicVectorClass;  // 0x0 (no offset truth)
     void* unknown_18;  // 0x0 (no offset truth)
-// --- flat members (END) ---
 CCINIClass * BuildingTypeConstructor();
 CCINIClass * ConstructSmudge();
 CCINIClass * VoxelAnimConstructor();

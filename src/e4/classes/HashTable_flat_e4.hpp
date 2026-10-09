@@ -10,23 +10,20 @@ struct CampaignClass;  // fix_fwd_type_supply
 
 struct HashTable_flat {
 // --- flat members (BEGIN) ---
+    char u32_3;  // 0x3
     unsigned int u32_4;  // 0x4
+    char u32_6;  // 0x6
+    unsigned int u32_B;  // 0xB
     unsigned int u32_C;  // 0xC
     unsigned int u32_18;  // 0x18
-    unsigned int HashTable_field_0x04;
-    unsigned int HashTable_field_0x08;
-    unsigned int HashTable_field_0x0C;
-    unsigned int HashTable_field_0x14;
-    unsigned int HashTable_field_0x18;
-    unsigned int HashTable_field_0x20;
-    unsigned int HashTable_field_0x30;
-    unsigned int *__pad_0;
-    unsigned int q01C;
-    unsigned int u32_234;
-    unsigned int u32_238;
-    unsigned int u32_244;
-    unsigned int u32_250;
-    unsigned int u32_25C;
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
+    unsigned int u32_234;  // 0x234
+    unsigned int u32_238;  // 0x238
+    unsigned int u32_244;  // 0x244
+    unsigned int u32_250;  // 0x250
+    unsigned int u32_25C;  // 0x25C
+    unsigned int u32_8D0;  // 0x8D0
 // --- flat members (END) ---
 AbstractClass * * FindWOLHashTableEntry(const char ** a2, void * a3);
 AbstractClass * * Grow();

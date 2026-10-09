@@ -15,14 +15,14 @@ HWND sub_792EC0(int a1)
   HWND Current; // eax
   HWND result; // eax
 
-  v2 = (HWND)((Dialog*)(void *)0xC4)->FindByHandle(); /*0x792ec8*/
+  v2 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x792ec8*/
   if ( v2 ) /*0x792ecf*/
   {
     dword_B77DC8 &= ~a1; /*0x792edb*/
     if ( !dword_B77DC8 ) /*0x792ee1*/
-      CloseDialog( (HWND)(v2), 0); /*0x792ee7*/
+      CloseDialog(v2, 0); /*0x792ee7*/
   }
-    Current = ((Dialog *)this)->GetCurrent();
+  Current = Dialog::GetCurrent(); /*0x792eec*/
   result = GetDlgItem(Current, 1344); /*0x792ef7*/
   if ( result ) /*0x792f00*/
     return SetFocus(result); /*0x792f03*/

@@ -19,9 +19,7 @@
 namespace gamemd {
 int ComPtr::DestroyWrapper(int aP0, ObjectClass * aP1)
 {
-
   FindTerritoryWOL(aP1); /*0x76f00f*/
   return aP0; /*0x76f016*/
-
 }
 } // namespace gamemd

@@ -14,104 +14,98 @@
 namespace gamemd {
 __int16 EventQueue::Process()
 {
-
   int v2; // eax
 
-  if ( (*((unsigned int *)this + 198) + 1) % 256 != *((unsigned int *)this + 197) ) /*0x54f01e*/
+  if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = *((unsigned int *)this + 197); /*0x54f025*/
-  if ( v2 == *((unsigned int *)this + 198) ) /*0x54f033*/
+  v2 = this->q314; /*0x54f025*/
+  if ( v2 == this->q318 ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
-    return *((unsigned short *)this + v2 + 138); /*0x54f03a*/
-
+    return *((_WORD *)this + v2 + 138); /*0x54f03a*/
 }
 } // namespace gamemd
 // 0x54F050
 namespace gamemd {
 short EventQueue::Read()
 {
-
   int v2; // eax
   int v3; // ecx
   int v4; // edi
-  int16_t result; // ax
+  __int16 result; // ax
   int v6; // edx
-  uint16_t v7; // cx
+  unsigned __int16 v7; // cx
   int v8; // ebx
-  uint16_t v9; // dx
+  unsigned __int16 v9; // dx
   int v10; // ecx
-  int16_t v11; // dx
+  __int16 v11; // dx
 
   do /*0x54f086*/
   {
-    if ( (*((unsigned int *)this + 198) + 1) % 256 != *((unsigned int *)this + 197) ) /*0x54f06f*/
+    if ( (*((_DWORD *)this + 198) + 1) % 256 != *((_DWORD *)this + 197) ) /*0x54f06f*/
       MessageLoop(); /*0x54f071*/
-    v2 = *((unsigned int *)this + 197); /*0x54f076*/
+    v2 = *((_DWORD *)this + 197); /*0x54f076*/
   }
-  while ( v2 == *((unsigned int *)this + 198) || !*((unsigned short *)this + v2 + 138) ); /*0x54f086*/
+  while ( v2 == *((_DWORD *)this + 198) || !*((_WORD *)this + v2 + 138) ); /*0x54f086*/
   do /*0x54f0b3*/
   {
-    if ( !(uint8_t)EventQueue::CheckPosition(this) ) /*0x54f093*/
+    if ( !(unsigned __int8)EventQueue::CheckPosition(this) ) /*0x54f093*/
       MessageLoop(); /*0x54f09c*/
   }
-  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !((EventQueue*)this)->Check() ); /*0x54f0b3*/
-  v3 = *((unsigned int *)this + 197); /*0x54f0bd*/
-  v4 = *((unsigned int *)this + 198); /*0x54f0c3*/
+  while ( *((_DWORD *)this + 197) == *((_DWORD *)this + 198) || !EventQueue::Check(this) ); /*0x54f0b3*/
+  v3 = *((_DWORD *)this + 197); /*0x54f0bd*/
+  v4 = *((_DWORD *)this + 198); /*0x54f0c3*/
   result = 0; /*0x54f0c9*/
   if ( v3 != v4 ) /*0x54f0cd*/
   {
-    result = *((unsigned short *)this + v3 + 138); /*0x54f0cf*/
-    *((unsigned int *)this + 197) = (v3 + 1) % 256; /*0x54f0e8*/
+    result = *((_WORD *)this + v3 + 138); /*0x54f0cf*/
+    *((_DWORD *)this + 197) = (v3 + 1) % 256; /*0x54f0e8*/
   }
-  if ( (uint8_t)result == 1 || (uint8_t)result == 4 || (uint8_t)result == 2 ) /*0x54f106*/
+  if ( (unsigned __int8)result == 1 || (unsigned __int8)result == 4 || (unsigned __int8)result == 2 ) /*0x54f106*/
   {
-    v6 = *((unsigned int *)this + 197); /*0x54f108*/
+    v6 = *((_DWORD *)this + 197); /*0x54f108*/
     v7 = 0; /*0x54f10e*/
     if ( v6 != v4 ) /*0x54f112*/
     {
-      v7 = *((unsigned short *)this + v6 + 138); /*0x54f114*/
-      *((unsigned int *)this + 197) = (v6 + 1) % 256; /*0x54f12d*/
+      v7 = *((_WORD *)this + v6 + 138); /*0x54f114*/
+      *((_DWORD *)this + 197) = (v6 + 1) % 256; /*0x54f12d*/
     }
-    v8 = *((unsigned int *)this + 197); /*0x54f134*/
+    v8 = *((_DWORD *)this + 197); /*0x54f134*/
     v9 = 0; /*0x54f140*/
-    *(unsigned int *)this = v7; /*0x54f144*/
+    *(_DWORD *)this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
     {
-      v9 = *((unsigned short *)this + v8 + 138); /*0x54f148*/
-      *((unsigned int *)this + 197) = (v8 + 1) % 256; /*0x54f161*/
+      v9 = *((_WORD *)this + v8 + 138); /*0x54f148*/
+      *((_DWORD *)this + 197) = (v8 + 1) % 256; /*0x54f161*/
     }
-    *((unsigned int *)this + 3) = v7; /*0x54f16d*/
-    *((unsigned int *)this + 1) = v9; /*0x54f171*/
-    *((unsigned int *)this + 4) = v9; /*0x54f174*/
+    *((_DWORD *)this + 3) = v7; /*0x54f16d*/
+    *((_DWORD *)this + 1) = v9; /*0x54f171*/
+    *((_DWORD *)this + 4) = v9; /*0x54f174*/
   }
-  else if ( (uint8_t)result == 10 ) /*0x54f17e*/
+  else if ( (unsigned __int8)result == 10 ) /*0x54f17e*/
   {
-    v10 = *((unsigned int *)this + 197); /*0x54f180*/
+    v10 = *((_DWORD *)this + 197); /*0x54f180*/
     v11 = 0; /*0x54f186*/
     if ( v10 != v4 ) /*0x54f18a*/
     {
-      v11 = *((unsigned short *)this + v10 + 138); /*0x54f18c*/
-      *((unsigned int *)this + 197) = (v10 + 1) % 256; /*0x54f1a5*/
+      v11 = *((_WORD *)this + v10 + 138); /*0x54f18c*/
+      *((_DWORD *)this + 197) = (v10 + 1) % 256; /*0x54f1a5*/
     }
-    *((unsigned short *)this + 4) = v11; /*0x54f1ab*/
+    *((_WORD *)this + 4) = v11; /*0x54f1ab*/
   }
   return result; /*0x54f177*/
-
 }
 } // namespace gamemd
 // 0x54F650
 namespace gamemd {
 __int16 EventQueue::Check()
 {
-
   int v1; // eax
 
-  v1 = *((unsigned int *)this + 197); /*0x54f650*/
-  if ( v1 == *((unsigned int *)this + 198) ) /*0x54f65e*/
+  v1 = this->q314; /*0x54f650*/
+  if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else
-    return *((unsigned short *)this + v1 + 138); /*0x54f660*/
-
+    return *((_WORD *)this + v1 + 138); /*0x54f660*/
 }
 } // namespace gamemd

@@ -16,9 +16,13 @@ struct E4Recv_5D2650 {
     unsigned int q304;  // 0x304
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
-    unsigned int ambientSoundController;
-    unsigned int attachedTag;
-    unsigned int Audio;
+    unsigned int q20848;  // 0x20848
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q2359835005720;  // 0x2359835005720
+    unsigned int q388226446628134;  // 0x388226446628134
 // --- flat members (END) ---
     void* sub_5D2650(void * a2, int a3);  // 0x5D2650
 };

@@ -7,8 +7,7 @@ namespace gamemd {
 
 struct Window {
 // --- flat members (BEGIN) ---
-    unsigned int u32_18;
-    unsigned int u32_19;
+    char Window_field_00[4];  // 0x0
 // --- flat members (END) ---
     char ClampToScreen(int * a1);
     int IsVisible();

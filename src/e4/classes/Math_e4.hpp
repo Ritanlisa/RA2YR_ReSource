@@ -37,15 +37,27 @@ struct Math {
     unsigned int u32_5C;  // 0x5C
     unsigned int q064;  // 0x64
     unsigned int q068;  // 0x68
+    unsigned int u32_6D;  // 0x6D
+    unsigned int u32_6F;  // 0x6F
     unsigned int u32_74;  // 0x74
     unsigned int u32_7C;  // 0x7C
     unsigned int q080;  // 0x80
+    unsigned int q084;  // 0x84
     unsigned int u32_88;  // 0x88
+    unsigned int u32_8C;  // 0x8C
+    unsigned int u32_94;  // 0x94
+    unsigned int u32_9C;  // 0x9C
+    unsigned int u32_A4;  // 0xA4
+    unsigned int u32_A8;  // 0xA8
     unsigned int u32_AC;  // 0xAC
+    unsigned int u32_B4;  // 0xB4
     unsigned int u32_B8;  // 0xB8
     unsigned int u32_BC;  // 0xBC
+    unsigned int u32_C0;  // 0xC0
+    unsigned int u32_C2;  // 0xC2
     unsigned int u32_D4;  // 0xD4
     unsigned int u32_D8;  // 0xD8
+    unsigned int u32_DC;  // 0xDC
     unsigned int u32_E4;  // 0xE4
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
@@ -53,12 +65,39 @@ struct Math {
     unsigned int u32_10C;  // 0x10C
     unsigned int q114;  // 0x114
     unsigned int q128;  // 0x128
+    unsigned int u32_12C;  // 0x12C
+    unsigned int u32_12E;  // 0x12E
+    unsigned int u32_12F;  // 0x12F
     unsigned int q130;  // 0x130
-    unsigned int *__pad_0;
-    unsigned int field_4;
-    unsigned int field_8;
-    unsigned int u32_40;
-    unsigned int u32_41;
+    unsigned int u32_131;  // 0x131
+    unsigned int q260;  // 0x260
+    unsigned int q304;  // 0x304
+    unsigned int q598;  // 0x598
+    unsigned int q608;  // 0x608
+    unsigned int q630;  // 0x630
+    unsigned int q774;  // 0x774
+    unsigned int q1544;  // 0x1544
+    unsigned int q1584;  // 0x1584
+    unsigned int q1634;  // 0x1634
+    unsigned int q1908;  // 0x1908
+    unsigned int q5170;  // 0x5170
+    unsigned int q5444;  // 0x5444
+    unsigned int q5508;  // 0x5508
+    unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q21768;  // 0x21768
+    unsigned int q25608;  // 0x25608
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q1612096024928;  // 0x1612096024928
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350
    static int Sin(double a1);  // G57w10-S raw 0x4CAD50; G57w18j4 return int per raw int __cdecl (C2556 vs def)
@@ -68,8 +107,6 @@ struct Math {
    static double ArcTan(double a1);  // G57w10-S raw 0x4CADE0 (was C2597 interim stub)
     void InitArcTan();  // 0x473650
     static double ArcTan2_Table(double a1);  // G57w10-S raw 0x4CADB0 (was C2597 interim stub)
-    // G42.35a: IDA truth (0x5B2950/0x5B2990 decompiled heads) -- mechanical
-    // supply had filled both params with IUnknown* placeholders.
     unsigned int * Sub16(unsigned int * aP1, unsigned short * aP2);  // 0x5B2950
     bool Abs16Cmp(unsigned short * aP1, short * aP2);  // 0x5B2990
     static double ArcTan2(double a1);  // G57w10-S raw 0x4CAD00 (was C2597 interim stub)
@@ -82,13 +119,10 @@ static double Sqrt(double a1);  // G57w10-S raw 0x4CAC40 (was C2597 interim stub
     static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
     int Hypotenuse2D(void *a1_1);  // interim stub
-    // --- W16G3 supply (BEGIN) ---
     char __pad_28[4];  // @0x629a40 (W16G3 raw-usage vocab)
     unsigned int field_140;  // @0x421xxx (W16G3 raw-usage vocab)
     char vtable3[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q000[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q004[4];  // @0x425xxx (W16G3 raw-usage vocab)
-    // --- W16G3 supply (END) ---
-
 };
 } // namespace gamemd

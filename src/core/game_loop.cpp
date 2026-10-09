@@ -7,4 +7,3 @@ namespace gamemd {
 // 0x69bab0
 bool WTFMode::Init(int* mode) { (void)mode; return false; 
 } // namespace gamemd
-}

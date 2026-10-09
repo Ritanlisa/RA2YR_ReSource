@@ -9,8 +9,9 @@
 namespace gamemd {
 struct MixFileClass;  // fix_fwd_type_supply
 struct MixFile {
-    unsigned int Debug;
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     MixFileClass * * LoadAll();  // 0x530460
     AbstractClass * * LoadSide();  // 0x534FA0
     unsigned int *  Load(void * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x627590

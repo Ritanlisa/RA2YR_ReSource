@@ -16,7 +16,6 @@ struct VtableStub {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    unsigned int VtableStub_643E70;
 // --- flat members (END) ---
     char RetZero_eax_35(int a1);
     static void sub_643E70(void *aP1);  // 0x643E70 raw: VtableStub::643E70(_DWORD*) [name illegal in C++; corpus sub_ form]

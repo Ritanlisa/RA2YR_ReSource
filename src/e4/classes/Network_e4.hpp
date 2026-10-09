@@ -13,24 +13,20 @@ struct HashTable_flat;  // fix_fwd_type_supply
 struct Network {
 // --- flat members (BEGIN) ---
     WinModemClass* q000;  // 0x0
-    unsigned int q003;  // 0x3
     void* q004;  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC
     void* q010;  // 0x10
-    unsigned char Network_field_0x22;  // 0x22
+    char u32_13;  // 0x13
     unsigned char q014;  // 0x14
     unsigned int q018;  // 0x18
     unsigned int q01C;  // 0x1C
     unsigned char q020;  // 0x20
     void* q024;  // 0x24
-    unsigned char __pad_34[8];  // 0x34
-    unsigned char __pad_64[8];  // 0x64
     unsigned int u32_28;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned int u32_30;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int __pad_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int q040;  // 0x40
     void* q044;  // 0x44
@@ -41,8 +37,7 @@ struct Network {
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     void* q060;  // 0x60
-    unsigned char Network_field_0x6F;  // 0x6F
-    unsigned char __pad_73[1];  // 0x73
+    char u32_61;  // 0x61
     unsigned char q064;  // 0x64
     unsigned int q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
@@ -67,14 +62,12 @@ struct Network {
     unsigned char u8_B2;  // 0xB2
     unsigned char u8_B3;  // 0xB3
     unsigned char q0B4;  // 0xB4
-    unsigned int __pad_B6;  // 0xB6
     unsigned int u32_B8;  // 0xB8
     unsigned char u8_BC;  // 0xBC
     unsigned char u8_BD;  // 0xBD
     unsigned char u8_BE;  // 0xBE
     unsigned char u8_BF;  // 0xBF
     unsigned char q0C0;  // 0xC0
-    unsigned int __pad_C2;  // 0xC2
     unsigned char q0C4;  // 0xC4
     unsigned int u32_C8;  // 0xC8
     unsigned char q0CC;  // 0xCC
@@ -98,17 +91,20 @@ struct Network {
     unsigned int q114;  // 0x114
     unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
-    unsigned int __pad_124;  // 0x124
+    unsigned char q120;  // 0x120
     unsigned int q128;  // 0x128
     unsigned char q12C;  // 0x12C
     unsigned char q130;  // 0x130
     unsigned char q134;  // 0x134
+    unsigned char q138;  // 0x138
     unsigned int q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
+    unsigned char q14C;  // 0x14C
     unsigned int q150;  // 0x150
     unsigned char q154;  // 0x154
     unsigned char q158;  // 0x158
+    unsigned char q15C;  // 0x15C
     unsigned int q160;  // 0x160
     unsigned int q164;  // 0x164
     unsigned char q168;  // 0x168
@@ -133,16 +129,10 @@ struct Network {
     unsigned int u32_1F6;  // 0x1F6
     unsigned int u32_1F7;  // 0x1F7
     void* q1F8;  // 0x1F8
+// --- flat members (END) ---
     unsigned char __pad_87[0x171];  // 0x87 (array base, max idx 214)
-    unsigned int Network_field_0x0;
-    unsigned int q0084;
-    unsigned int Debug;
-    unsigned int Timer;
     unsigned int UpdateLatencyDisplay_ph;  // w18j3: filler renamed (no offset truth; canon Network::UpdateLatencyDisplay is a method)
     static unsigned int UpdateLatencyDisplay(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-    unsigned char Network_field_0x10;  // 0x10
-    unsigned char *__pad_14;  // 0x14
-// --- flat members (END) ---
     int SendBeaconDelete(int a2, int a3);  // 0x4311C0
     int SendBeacon(wchar_t *aP1, int a3, int a4, char a5);  // 0x431450
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x48D1E0

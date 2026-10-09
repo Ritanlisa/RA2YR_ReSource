@@ -14,56 +14,51 @@
 namespace gamemd {
 int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
-
   int v4; // eax
   int result; // eax
 
   v4 = this->u32_4C; /*0x540d80*/
   if ( v4 ) /*0x540d93*/
   {
-    *(unsigned int *)(v4 + 40) = a2; /*0x540d95*/
-    *(unsigned int *)(this->u32_4C + 44) = a3; /*0x540d9b*/
-    *(unsigned int *)(this->u32_4C + 48) = a4; /*0x540da1*/
+    *(_DWORD *)(v4 + 40) = a2; /*0x540d95*/
+    *(_DWORD *)(this->u32_4C + 44) = a3; /*0x540d9b*/
+    *(_DWORD *)(this->u32_4C + 48) = a4; /*0x540da1*/
   }
   result = this->u32_50; /*0x540da4*/
   if ( result ) /*0x540da9*/
   {
-    *(unsigned int *)(result + 40) = a2; /*0x540dab*/
+    *(_DWORD *)(result + 40) = a2; /*0x540dab*/
     result = this->u32_50; /*0x540dae*/
-    *(unsigned int *)(result + 44) = a3; /*0x540db1*/
-    *(unsigned int *)(this->u32_50 + 48) = a4; /*0x540db7*/
+    *(_DWORD *)(result + 44) = a3; /*0x540db1*/
+    *(_DWORD *)(this->u32_50 + 48) = a4; /*0x540db7*/
   }
   return result; /*0x540dba*/
-
 }
 } // namespace gamemd
 // 0x541040
 namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
-
-  IPXManagerClass * v2;
-  IPXManagerClass * result;
+  int v2; // edx
+  int result; // eax
   IPXManagerClass *i; // ecx
 
-  v2 = (::gamemd::IPXManagerClass *)((int)((::gamemd::IPXManagerClass *)(*((unsigned int *)this + 17))));
-  result = (::gamemd::IPXManagerClass *)((int)((::gamemd::IPXManagerClass *)(0)));
-  if ( (int)v2 <= 0 ) /*0x541049*/
+  v2 = this->u32_44; /*0x541040*/
+  result = 0; /*0x541043*/
+  if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
-  for ( i = (unsigned int *)this + 5; *(::gamemd::IPXManagerClass *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
+  for ( i = &this->Active; *(_DWORD *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
   {
-    if ( ++result >= (::gamemd::IPXManagerClass *)(int)(v2) ) /*0x54105f*/
+    if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
-  return (int)(result);
-
+  return result; /*0x541064*/
 }
 } // namespace gamemd
 // 0x541070
 namespace gamemd {
 int IPXManagerClass::receivePacket(int a2)
 {
-
   int v2; // edx
   int result; // eax
   IPXManagerClass *v4; // esi
@@ -72,7 +67,7 @@ int IPXManagerClass::receivePacket(int a2)
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
-LABEL_5:
+  LABEL_5:
     if ( a2 == this->u32_50 ) /*0x541091*/
     {
       return -4; /*0x541095*/
@@ -88,7 +83,7 @@ LABEL_5:
   }
   else
   {
-    v4 = (::gamemd::IPXManagerClass *)((unsigned int *)this + 5);
+    v4 = &this->Active; /*0x54107f*/
     while ( v4->Socket != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/
@@ -98,14 +93,12 @@ LABEL_5:
     }
   }
   return result; /*0x541093*/
-
 }
 } // namespace gamemd
 // 0x5415F0
 namespace gamemd {
-int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)  // G42.40f: param renamed back (was colliding with local v10)
+int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)  // G42.40f: param renamed back (was colliding with local v10)
 {
-
   int v5; // eax
   int v6; // ecx
   int v7; // eax
@@ -129,11 +122,11 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)  // G42.40f: param
     return 0; /*0x541661*/
   while ( 1 ) /*0x54162b*/
   {
-    v6 = *((unsigned int *)this + this->u32_54 + 10); /*0x54162b*/
-    v7 = (*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3); /*0x541631*/
+    v6 = *((_DWORD *)this + this->u32_54 + 10); /*0x54162b*/
+    v7 = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v6 + 16))(v6, a2, a3); /*0x541631*/
     v8 = this->u32_54; /*0x541634*/
-    v9 = *((unsigned int *)this + v8++ + 10); /*0x541637*/
-    v10 = *(unsigned int *)(v9 + 100); /*0x54163c*/
+    v9 = *((_DWORD *)this + v8++ + 10); /*0x541637*/
+    v10 = *(_DWORD *)(v9 + 100); /*0x54163c*/
     v11 = this->u32_44; /*0x54163f*/
     this->u32_54 = v8; /*0x541644*/
     if ( v8 >= v11 ) /*0x541647*/
@@ -143,29 +136,24 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)  // G42.40f: param
     if ( ++v13 >= v11 ) /*0x54165f*/
       return 0; /*0x54165f*/
   }
-  *a4 = v10; /*0x54166f*/
+  *v10 = v10; /*0x54166f*/
   return 1; /*0x541661*/
-
 }
 } // namespace gamemd
 // 0x543040
 namespace gamemd {
 void IPXManagerClass::StubReturnFalse(int a1, int a2)
 {
-
   ; /*0x543040*/
-
 }
 } // namespace gamemd
 // 0x5430E0
 namespace gamemd {
 IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
 {
-
-  IPXManagerClass::processPacket((char *)this); /*0x5430e3*/
+  IPXManagerClass::processPacket((char *)Block); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
-    __3_YAXPAX_Z(this); /*0x5430f0*/
-  return (::gamemd::IPXManagerClass *)((char *)this); /*0x5430fa*/
-
+    RA2_OPDEL(Block); /*0x5430f0*/
+  return (char *)Block; /*0x5430fa*/
 }
 } // namespace gamemd

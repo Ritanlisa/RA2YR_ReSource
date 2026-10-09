@@ -15,10 +15,6 @@ struct MSVQAnim {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
-    unsigned int MSVQAnim_field_0x1C;
-    unsigned int *__pad_0;
-    unsigned int u32_28;
-    unsigned int u32_2D;
 // --- flat members (END) ---
     MSVQAnim * QueryInterface(char a2);
     int Stub();

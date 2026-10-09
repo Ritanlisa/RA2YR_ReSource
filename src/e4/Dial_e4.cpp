@@ -13,19 +13,17 @@
 namespace gamemd {
 void Dial8Class_48::ClearBuffer(void *a1_1)
 {
-
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x4a7d26*/
-  this->m_10 = 0; /*0x4a7d29*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x4a7d30*/
+  v2 = *(void **)&a1_1->m_1[3]; /*0x4a7d26*/
+  a1_1->m_10 = 0; /*0x4a7d29*/
+  if ( v2 && IDA_BYTE1(a1_1->m_C) ) /*0x4a7d30*/
   {
-    __3_YAXPAX_Z(v2); /*0x4a7d36*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a7d3e*/
+    RA2_OPDEL(v2); /*0x4a7d36*/
+    *(_DWORD *)&a1_1->m_1[3] = 0; /*0x4a7d3e*/
   }
-  BYTE1(this->m_C) = 0; /*0x4a7d41*/
-  this->m_8 = 0; /*0x4a7d44*/
-
+  IDA_BYTE1(a1_1->m_C) = 0; /*0x4a7d41*/
+  a1_1->m_8 = 0; /*0x4a7d44*/
 }
 } // namespace gamemd
 
@@ -33,12 +31,10 @@ void Dial8Class_48::ClearBuffer(void *a1_1)
 namespace gamemd {
 unsigned int Dial8Class_48::PointerToIndex(int a2)
 {
-
-  if ( LOBYTE(this->m_C) ) /*0x4a7d50*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a7d65*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x4a7d50*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x4a7d65*/
   else
     return 0; /*0x4a7d57*/
-
 }
 } // namespace gamemd
 
@@ -46,9 +42,7 @@ unsigned int Dial8Class_48::PointerToIndex(int a2)
 namespace gamemd {
 int Dial8Class_48::Seek(int a2, void *a2_2, void *a3_1)
 {
-
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a7d7a*/
-
+  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x4a7d7a*/
 }
 } // namespace gamemd
 
@@ -56,21 +50,20 @@ int Dial8Class_48::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 char Dial8Class_48::AddRef(int a2)
 {
-
   int m_8; // esi
   int v3; // edx
-  unsigned int *v4; // eax
+  _DWORD *v4; // eax
   int v5; // ecx
 
   m_8 = this->m_8; /*0x4a7d82*/
-  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a7d8d*/
+  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x4a7d8d*/
   {
     v3 = 0; /*0x4a7d8f*/
     if ( m_8 <= 0 ) /*0x4a7d93*/
       return 1; /*0x4a7db3*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4a7d95*/
-    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a7d9b*/
-    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a7da4*/
+    v4 = *(_DWORD **)&this->m_1[3]; /*0x4a7d95*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4a7d9b*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4a7da4*/
     {
       ++v3; /*0x4a7da6*/
       ++v4; /*0x4a7da7*/
@@ -79,7 +72,6 @@ char Dial8Class_48::AddRef(int a2)
     }
   }
   return 0; /*0x4a7dae*/
-
 }
 } // namespace gamemd
 
@@ -87,37 +79,36 @@ char Dial8Class_48::AddRef(int a2)
 namespace gamemd {
 char Dial8Class_48::Release(int a2, unsigned int * a3)
 {
-
-  unsigned int *v4; // edi
+  _DWORD *v4; // edi
   int m_8; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4a7dcc*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4a7dd6*/
+    IDA_LOBYTE(this->m_C) = 0; /*0x4a7dd6*/
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
-      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a7dee*/
-    LOBYTE(this->m_C) = 1; /*0x4a7df6*/
+      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x4a7dee*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4a7e05*/
+      if ( *(_DWORD *)&this->m_1[3] ) /*0x4a7e05*/
       {
         m_8 = this->m_8; /*0x4a7e0c*/
         if ( a2 < m_8 ) /*0x4a7e11*/
           m_8 = a2; /*0x4a7e13*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a7e19*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x4a7e19*/
           ++i; /*0x4a7e1e*/
-        if ( BYTE1(this->m_C) ) /*0x4a7e2b*/
+        if ( IDA_BYTE1(this->m_C) ) /*0x4a7e2b*/
         {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a7e36*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4a7e3e*/
+          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a7e36*/
+          *(_DWORD *)&this->m_1[3] = 0; /*0x4a7e3e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a7e47*/
+      *(_DWORD *)&this->m_1[3] = v4; /*0x4a7e47*/
       this->m_8 = a2; /*0x4a7e4f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4a7e52*/
+      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4a7e52*/
       return 1; /*0x4a7e58*/
     }
     else
@@ -127,10 +118,9 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7e62*/
+    (*(void (__thiscall **)(_VectorClass_PAVDiskLaserClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4a7e62*/
     return 1; /*0x4a7e68*/
   }
-
 }
 } // namespace gamemd
 
@@ -138,15 +128,13 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void Dial8Class_48::ddtor()
 {
-
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4a7e7d*/
+  if ( *(_DWORD *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4a7e7d*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a7e83*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a7e8b*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a7e83*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x4a7e8b*/
   }
-  BYTE1(this->m_C) = 0; /*0x4a7e8e*/
+  IDA_BYTE1(this->m_C) = 0; /*0x4a7e8e*/
   this->m_8 = 0; /*0x4a7e91*/
-
 }
 } // namespace gamemd
 
@@ -154,24 +142,22 @@ void Dial8Class_48::ddtor()
 namespace gamemd {
 int Dial8Class_48::Read(unsigned int * a2, void *a2_2)
 {
-
   int result; // eax
   int m_8; // edx
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x4a7ea0*/
+  if ( !IDA_LOBYTE(a2_2->m_C) ) /*0x4a7ea0*/
     return 0; /*0x4a7ea8*/
-  m_8 = this->m_8; /*0x4a7eae*/
+  m_8 = a2_2->m_8; /*0x4a7eae*/
   result = 0; /*0x4a7eb1*/
   if ( m_8 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a7ebb*/
+  for ( i = *(_DWORD **)&a2_2->m_1[3]; *i != *a2_2; ++i ) /*0x4a7ebb*/
   {
     if ( ++result >= m_8 ) /*0x4a7eca*/
       return -1; /*0x4a7eca*/
   }
   return result; /*0x4a7eaa*/
-
 }
 } // namespace gamemd
 
@@ -179,12 +165,10 @@ int Dial8Class_48::Read(unsigned int * a2, void *a2_2)
 namespace gamemd {
 unsigned int Dial8Class_48::Write(int a2)
 {
-
-  if ( LOBYTE(this->m_C) ) /*0x4a7ee0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a7ef5*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x4a7ee0*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x4a7ef5*/
   else
     return 0; /*0x4a7ee7*/
-
 }
 } // namespace gamemd
 
@@ -192,48 +176,46 @@ unsigned int Dial8Class_48::Write(int a2)
 namespace gamemd {
 char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
 {
-
-  unsigned int *v4; // edi
+  _DWORD *v4; // edi
   int m_8; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x4a7f0c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4a7f12*/
+    IDA_LOBYTE(this->m_C) = 0; /*0x4a7f12*/
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
-      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4a7f2a*/
-    LOBYTE(this->m_C) = 1; /*0x4a7f32*/
+      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x4a7f2a*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x4a7f38*/
+    if ( *(_DWORD *)&this->m_1[3] ) /*0x4a7f38*/
     {
       m_8 = this->m_8; /*0x4a7f3f*/
       if ( a2 < m_8 ) /*0x4a7f44*/
         m_8 = a2; /*0x4a7f46*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a7f4c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x4a7f4c*/
         ++i; /*0x4a7f51*/
-      if ( BYTE1(this->m_C) ) /*0x4a7f5e*/
+      if ( IDA_BYTE1(this->m_C) ) /*0x4a7f5e*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4a7f69*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x4a7f71*/
+        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a7f69*/
+        *(_DWORD *)&this->m_1[3] = 0; /*0x4a7f71*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x4a7f7a*/
+    *(_DWORD *)&this->m_1[3] = v4; /*0x4a7f7a*/
     this->m_8 = a2; /*0x4a7f82*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4a7f85*/
+    IDA_BYTE1(this->m_C) = a3 == 0; /*0x4a7f85*/
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVDiskLaserClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
   }
   v7 = this->m_8; /*0x4a7f91*/
   if ( v7 < this->m_10 ) /*0x4a7f99*/
     this->m_10 = v7; /*0x4a7f9b*/
   return 1; /*0x4a7f9e*/
-
 }
 } // namespace gamemd
 
@@ -241,44 +223,40 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int Dial8Class_48::FindItem(unsigned int * a2)
 {
-
   int m_10; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   m_10 = this->m_10; /*0x4a7fb0*/
   result = 0; /*0x4a7fb3*/
   if ( m_10 <= 0 ) /*0x4a7fb8*/
     return -1; /*0x4a7fcf*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a7fbe*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a7fbe*/
   {
     if ( ++result >= m_10 ) /*0x4a7fcd*/
       return -1; /*0x4a7fcd*/
   }
   return result; /*0x4a7fd2*/
-
 }
 }
 // 0x4A8030
 namespace gamemd {
 VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 {
-
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4a8033*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4a8036*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x4a8040*/
+  v3 = *(void **)&Block->m_1[3]; /*0x4a8033*/
+  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
+  if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4a8040*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a8048*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a8050*/
+    RA2_OPDEL(v3); /*0x4a8048*/
+    *(_DWORD *)&Block->m_1[3] = 0; /*0x4a8050*/
   }
-  BYTE1(this->m_C) = 0; /*0x4a805b*/
-  this->m_8 = 0; /*0x4a8061*/
+  IDA_BYTE1(Block->m_C) = 0; /*0x4a805b*/
+  Block->m_8 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
-    __3_YAXPAX_Z(this); /*0x4a806b*/
-  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x4a8075*/
-
+    RA2_OPDEL(Block); /*0x4a806b*/
+  return Block->__pad_0; /*0x4a8075*/
 }
 } // namespace gamemd
 
@@ -286,21 +264,19 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2)
 {
-
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4a8083*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4a8086*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x4a8090*/
+  v3 = *(void **)&Block->m_1[3]; /*0x4a8083*/
+  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
+  if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4a8090*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a8098*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a80a0*/
+    RA2_OPDEL(v3); /*0x4a8098*/
+    *(_DWORD *)&Block->m_1[3] = 0; /*0x4a80a0*/
   }
-  BYTE1(this->m_C) = 0; /*0x4a80ab*/
-  this->m_8 = 0; /*0x4a80b1*/
+  IDA_BYTE1(Block->m_C) = 0; /*0x4a80ab*/
+  Block->m_8 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
-    __3_YAXPAX_Z(this); /*0x4a80bb*/
-  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4a80c5*/
-
+    RA2_OPDEL(Block); /*0x4a80bb*/
+  return Block->__pad_0; /*0x4a80c5*/
 }
 } // namespace gamemd

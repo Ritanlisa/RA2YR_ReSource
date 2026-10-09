@@ -18,19 +18,6 @@ struct BuildingPlacement {
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
-    unsigned int BuildingPlacement_field_0x04;
-    unsigned int BuildingPlacement_field_0x0C;
-    unsigned int BuildingPlacement_field_0x20;
-    unsigned int IsPlacementFlagSet_slot;
-    unsigned int Object_field_0x30;
-    unsigned int RenderBuildingPlacementShadow;
-    unsigned int *__pad_0;
-    unsigned int q0046;
-    unsigned int q054;
-    unsigned int u32_2C;
-    unsigned int u32_44;
-    unsigned int u32_48;
-    unsigned int u32_4C;
 // --- flat members (END) ---
     static bool IsPlacementFlagSet(BuildingPlacement *pThis, unsigned int a2, char a3);  // G57w19k2 raw thiscall static-form supply (member IsPlacementFlagSet -> IsPlacementFlagSet_slot)
     VectorClass_flat * * ProcessBuildingPlacementAction();

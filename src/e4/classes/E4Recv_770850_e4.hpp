@@ -9,12 +9,15 @@ struct E4Recv_770850 {
     unsigned int u32_18;  // 0x18
     unsigned int q024;  // 0x24
     unsigned int q054;  // 0x54
+    unsigned int u32_60;  // 0x60
     unsigned int q084;  // 0x84
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
-    unsigned int q00C;  // 0xC
-    unsigned int q010;  // 0x10
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
     void sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClass * aP4);  // 0x770850
 };

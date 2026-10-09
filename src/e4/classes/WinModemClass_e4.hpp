@@ -15,6 +15,7 @@ struct WinModemClass {
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q015;  // 0x15
+    unsigned int u32_17;  // 0x17
     unsigned int u32_18;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned int u32_20;  // 0x20
@@ -24,28 +25,7 @@ struct WinModemClass {
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
     unsigned char q038;  // 0x38
-    unsigned int q0080;
-    unsigned int q0146;
-    unsigned int q0242;
-    unsigned int q060;
-    unsigned int q068;
-    unsigned int u32_100;
-    unsigned int u32_180;
-    unsigned int u32_288;
-    unsigned int u32_58;
-    unsigned char u8_51;
-    unsigned int WinModemClass_field_0x04;
-    unsigned int WinModemClass_field_0x08;
-    unsigned int WinModemClass_field_0x0C;
-    unsigned int WinModemClass_field_0x10;
-    unsigned int WinModemClass_field_0x14;
-    unsigned int WinModemClass_field_0x18;
-    unsigned int q05C;
-    unsigned int AsyncIO;
-    unsigned int Debug;
-    unsigned int Timer;
-    unsigned int WinModemClass_field_0x2C;
-    unsigned char *__pad_0;  // 0x0
+    unsigned int u32_39;  // 0x39
 // --- flat members (END) ---
     AbstractClass * * Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
     WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
@@ -58,16 +38,6 @@ struct WinModemClass {
     int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
     int SaveToINI(const char * NumberOfBytesWritten, void * aP);
-
-    unsigned int u32_17;  // G42.39 data supply
-
-    unsigned int u32_51;  // G42.39 data supply
-
-    void * q0083;  // G42.39 data supply
-
-    unsigned int u32_64;  // G42.39 data supply
-
-    unsigned int u32_68;  // G42.39 data supply
 };
 
 } // namespace gamemd

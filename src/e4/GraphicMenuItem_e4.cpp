@@ -12,16 +12,14 @@
 namespace gamemd {
 void GraphicMenuItem::Dtor(void *a1)
 {
-
   ObjectClass *v1; // esi
 
-  v1 = (ObjectClass *)this->u32_C; /*0x4f3a71*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_GraphicMenuItem); /*0x4f3a76*/
+  v1 = (ObjectClass *)*((_DWORD *)a1 + 3); /*0x4f3a71*/
+  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&GraphicMenuItem_vftable; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
-    j_DeleteAndZero( (void *)(v1)); /*0x4f3a80*/
-    delete v1; /*0x4f3a86*/
+    j_DeleteAndZero(v1); /*0x4f3a80*/
+    RA2_OPDEL(v1); /*0x4f3a86*/
   }
-
 }
 } // namespace gamemd

@@ -11,44 +11,36 @@
 namespace gamemd {
 _DWORD * SelectTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
-
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
-  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_SelectTeamCommandClass); /*0x535fc9*/
-  return (_DWORD *)(this->CommandClass); /*0x535fcf*/
-
+  *(_DWORD *)this->CommandClass = &(void*)(void*)&SelectTeamCommandClass_vftable; /*0x535fc9*/
+  return this->CommandClass; /*0x535fcf*/
 }
 } // namespace gamemd
 // 0x535FE0
 namespace gamemd {
 char * SelectTeamCommand::AddRef()
 {
-
-  sprintf((char *const )((unsigned int *)((char *)&stru_A8EB00 + 2512)), "TeamSelect_%d", *(unsigned int *)&this->m_1[3]); /*0x535fee*/
-return (char *)(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535ffb*/
-
+  sprintf(&stru_A8EB00.?[2512], "TeamSelect_%d", *(_DWORD *)&this->m_1[3]); /*0x535fee*/
+  return &stru_A8EB00.?[2512]; /*0x535ffb*/
 }
 } // namespace gamemd
 // 0x536000
 namespace gamemd {
 wchar_t * SelectTeamCommand::Release()
 {
-
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x536005*/
-  StringCSF = GetStringCSF((wchar_t *)(aTxtSelectTeam), 0,(const char *)(g_Str_File_Init_CPP), 6292); /*0x536015*/
-  swprintf((wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x536020*/
-  return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x53602d*/
-
+  StringCSF = GetStringCSF(aTxtSelectTeam, 0, g_Str_File_Init_CPP, 6292); /*0x536015*/
+  swprintf((wchar_t *const)&stru_A8EB00.?[2672], (const size_t)StringCSF, v3); /*0x536020*/
+  return (wchar_t *)&stru_A8EB00.?[2672]; /*0x53602d*/
 }
 } // namespace gamemd
 // 0x536030
 namespace gamemd {
 wchar_t * SelectTeamCommand::ddtor()
 {
-
-  return GetStringCSF((wchar_t *)(g_Str_TXT_TEAM), 0,(const char *)(g_Str_File_Init_CPP), 6294); /*0x536046*/
-
+  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6294); /*0x536046*/
 }
 } // namespace gamemd

@@ -12,18 +12,16 @@
 namespace gamemd {
 int LCWStraw::Dtor(void *a1)
 {
-
   void *v2; // eax
   void *v3; // ecx
 
-  v2 = (void *)*((unsigned int *)this + 5); /*0x552453*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_LCWStraw); /*0x552456*/
-  __3_YAXPAX_Z(v2); /*0x55245d*/
-  v3 = (void *)*((unsigned int *)this + 6); /*0x552462*/
-  *((unsigned int *)this + 5) = 0; /*0x552465*/
-  __3_YAXPAX_Z(v3); /*0x55246d*/
-  *((unsigned int *)this + 6) = 0; /*0x552477*/
-  return ((Straw*)(Straw *)this)->Dtor(); /*0x552483*/
-
+  v2 = (void *)*((_DWORD *)a1 + 5); /*0x552453*/
+  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&LCWStraw_vftable; /*0x552456*/
+  RA2_OPDEL(v2); /*0x55245d*/
+  v3 = (void *)*((_DWORD *)a1 + 6); /*0x552462*/
+  *((_DWORD *)a1 + 5) = 0; /*0x552465*/
+  RA2_OPDEL(v3); /*0x55246d*/
+  *((_DWORD *)a1 + 6) = 0; /*0x552477*/
+  return Straw::Dtor((Straw *)a1); /*0x552483*/
 }
 } // namespace gamemd

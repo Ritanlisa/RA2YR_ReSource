@@ -5,8 +5,10 @@
 
 namespace gamemd {
 struct Display {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+// --- flat members (END) ---
     static int GetViewport(void *a1);  // [w14e3] raw 0x72AD20 int* __thiscall Display::GetViewport(Display*)
-    void* vfptr;  // minimal E2 declaration
     long long CalculateDefaultSize();  // 0x5D5A20
     int GetViewport();  // 0x72AD20
 };

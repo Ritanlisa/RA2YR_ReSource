@@ -15,7 +15,6 @@ struct SpawnManagerClass_25 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int Capacity;
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6B8160
     int SaveState(int a2);  // 0x6B81B0

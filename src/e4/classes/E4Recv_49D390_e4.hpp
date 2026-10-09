@@ -19,6 +19,12 @@ struct E4Recv_49D390 {
     unsigned int q628;  // 0x628
     unsigned int q5170;  // 0x5170
     unsigned int q5494;  // 0x5494
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q17758713478;  // 0x17758713478
+    unsigned int q1612096550008;  // 0x1612096550008
+    unsigned int q388267565711368;  // 0x388267565711368
 // --- flat members (END) ---
     int LoadCoopCampaignSave(IUnknown * aP1);  // 0x49D390
 };

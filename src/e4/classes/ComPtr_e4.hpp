@@ -16,17 +16,11 @@ struct ComPtr {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    unsigned int *__pad_0;
-
 // --- flat members (END) ---
     int DestroyWrapper(int aP0, ObjectClass * aP1);
      unsigned int * Constructor();  // was C2597 interim stub, := truth 0x0x65d430
     unsigned int ComPtr_field_0x04;  // G42.33 b4 alias (flat-carrier vocab)
     unsigned int ComPtr_field_0x10;  // G42.33 b4 alias (flat-carrier vocab)
-    unsigned int ComPtr_field_0x0C;  // G42.33 b7 alias
-    unsigned int ComPtr_field_0x18;  // G42.33 b7 alias
-    unsigned int ComPtr_field_0x20;  // G42.33 b7 alias
-    unsigned int ComPtr_field_0x1C;  // G42.33 b8 alias
      int Dtor();  // G57w10-S raw 0x006406F0 (was C2597 interim stub)
     static int Dtor(void *aP0);  // G42.35 static-form sync (ui/supplied site 0x46E088)
     static int Release_Alt(ComPtr * aP1);  // G57w10-S raw 0x004B4D50 (was C2597 interim stub)
@@ -40,10 +34,7 @@ struct ComPtr {
     static int DestroyWrapper(void *aP0, void *aP1);  // G57a1 static-form mirror
     static int Set(void *aP0, int aP2);  // G57a1 static-form mirror
     static int ReleaseSimple(void *aP0);  // G57a1 static-form mirror
-    // --- W16G3 supply (BEGIN) ---
     unsigned int ComPtr_field_0x08;  // 0x8 W16G3 alias (flat-carrier vocab, b4/b7/b8 precedent)
-    // --- W16G3 supply (END) ---
-
 };
 
 } // namespace gamemd

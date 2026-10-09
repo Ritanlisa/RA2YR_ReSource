@@ -11,6 +11,7 @@ struct INIClass;  // fix_fwd_type_supply
 struct VoxelAnimType {
 // --- flat members (BEGIN) ---
     unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_30;  // 0x30
     unsigned int q034;  // 0x34
@@ -44,24 +45,29 @@ struct VoxelAnimType {
     unsigned int q180;  // 0x180
     unsigned int q184;  // 0x184
     unsigned int q188;  // 0x188
+    unsigned int u32_1E8;  // 0x1E8
     unsigned int u32_1EC;  // 0x1EC
     unsigned int q200;  // 0x200
     unsigned int q204;  // 0x204
     SomeVoxelCache * q244;  // 0x244
     SomeVoxelCache * ptr_248;  // 0x248
     unsigned int u32_24C;  // 0x24C
+    TimerStruct * ptr_250;  // 0x250
     SomeVoxelCache * ptr_254;  // 0x254
     SomeVoxelCache * ptr_258;  // 0x258
     unsigned int u32_25C;  // 0x25C
     SomeVoxelCache * q260;  // 0x260
+    TimerStruct * ptr_264;  // 0x264
     SomeVoxelCache * ptr_268;  // 0x268
     unsigned int u32_26C;  // 0x26C
     SomeVoxelCache * ptr_270;  // 0x270
     SomeVoxelCache * ptr_274;  // 0x274
+    TimerStruct * ptr_278;  // 0x278
     unsigned int u32_27C;  // 0x27C
     SomeVoxelCache * ptr_280;  // 0x280
     SomeVoxelCache * ptr_284;  // 0x284
     SomeVoxelCache * ptr_288;  // 0x288
+    unsigned int u32_28C;  // 0x28C
     SomeVoxelCache * ptr_290;  // 0x290
     unsigned int q304;  // 0x304
     unsigned int q308;  // 0x308
@@ -98,6 +104,8 @@ struct VoxelAnimType {
     unsigned int u32_990;  // 0x990
     unsigned int u32_9E0;  // 0x9E0
     unsigned int u32_A30;  // 0xA30
+    unsigned int u32_CA1;  // 0xCA1
+    unsigned int u32_CD5;  // 0xCD5
     unsigned int q1030;  // 0x1030
     unsigned int q1170;  // 0x1170
     unsigned int q1298;  // 0x1298
@@ -145,11 +153,280 @@ struct VoxelAnimType {
     unsigned int q5508;  // 0x5508
     unsigned int q5520;  // 0x5520
     SomeVoxelCache * q5640;  // 0x5640
-    unsigned int u32_104;
-    unsigned int u32_105;
-    unsigned int u32_50C3;
-    unsigned int u32_106;
-    unsigned int u32_5205;
+    unsigned int q8214;  // 0x8214
+    unsigned int q8274;  // 0x8274
+    INIClass * q8278;  // 0x8278
+    unsigned int q8964;  // 0x8964
+    unsigned int q8968;  // 0x8968
+    unsigned int q9064;  // 0x9064
+    unsigned int q9288;  // 0x9288
+    unsigned int q13140;  // 0x13140
+    unsigned int q16708;  // 0x16708
+    unsigned int q17508;  // 0x17508
+    unsigned int q18260;  // 0x18260
+    unsigned int q18534;  // 0x18534
+    SomeVoxelCache * q20840;  // 0x20840
+    unsigned int q20848;  // 0x20848
+    unsigned int q21568;  // 0x21568
+    SomeVoxelCache * q21604;  // 0x21604
+    SomeVoxelCache * q21648;  // 0x21648
+    unsigned int q21768;  // 0x21768
+    SomeVoxelCache * q22070;  // 0x22070
+    SomeVoxelCache * q22080;  // 0x22080
+    SomeVoxelCache * q22118;  // 0x22118
+    unsigned int q25730;  // 0x25730
+    unsigned int q33300;  // 0x33300
+    INIClass * q33400;  // 0x33400
+    unsigned int q33570;  // 0x33570
+    unsigned int q36964;  // 0x36964
+    unsigned int q38710;  // 0x38710
+    unsigned int q78144;  // 0x78144
+    unsigned int q91794;  // 0x91794
+    unsigned int q98930;  // 0x98930
+    SomeVoxelCache * q133010;  // 0x133010
+    unsigned int q133170;  // 0x133170
+    SomeVoxelCache * q133184;  // 0x133184
+    SomeVoxelCache * q136530;  // 0x136530
+    SomeVoxelCache * q136708;  // 0x136708
+    unsigned int q136754;  // 0x136754
+    unsigned int q137064;  // 0x137064
+    SomeVoxelCache * q139544;  // 0x139544
+    unsigned int q153094;  // 0x153094
+    unsigned int q209664;  // 0x209664
+    unsigned int q209814;  // 0x209814
+    INIClass * q209920;  // 0x209920
+    unsigned int q210288;  // 0x210288
+    unsigned int q213350;  // 0x213350
+    unsigned int q217458;  // 0x217458
+    unsigned int q217634;  // 0x217634
+    unsigned int q223588;  // 0x223588
+    unsigned int q226578;  // 0x226578
+    unsigned int q229730;  // 0x229730
+    unsigned int q231184;  // 0x231184
+    unsigned int q483458;  // 0x483458
+    unsigned int q491844;  // 0x491844
+    unsigned int q595860;  // 0x595860
+    unsigned int q611478;  // 0x611478
+    unsigned int q624914;  // 0x624914
+    unsigned int q624944;  // 0x624944
+    unsigned int q628278;  // 0x628278
+    unsigned int q628354;  // 0x628354
+    SomeVoxelCache * q1255810;  // 0x1255810
+    SomeVoxelCache * q1257488;  // 0x1257488
+    unsigned int q1257840;  // 0x1257840
+    SomeVoxelCache * q1257860;  // 0x1257860
+    unsigned int q1257874;  // 0x1257874
+    SomeVoxelCache * q1271088;  // 0x1271088
+    SomeVoxelCache * q1271138;  // 0x1271138
+    SomeVoxelCache * q1271560;  // 0x1271560
+    SomeVoxelCache * q1271670;  // 0x1271670
+    unsigned int q1274118;  // 0x1274118
+    SomeVoxelCache * q1282918;  // 0x1282918
+    SomeVoxelCache * q1282934;  // 0x1282934
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q1389458;  // 0x1389458
+    unsigned int q2136084;  // 0x2136084
+    unsigned int q2175824;  // 0x2175824
+    unsigned int q2192948;  // 0x2192948
+    unsigned int q2241928;  // 0x2241928
+    unsigned int q2254200;  // 0x2254200
+    unsigned int q2266928;  // 0x2266928
+    unsigned int q2298244;  // 0x2298244
+    unsigned int q4790340;  // 0x4790340
+    unsigned int q5855328;  // 0x5855328
+    unsigned int q5857858;  // 0x5857858
+    unsigned int q6441284;  // 0x6441284
+    unsigned int q6455928;  // 0x6455928
+    unsigned int q6456148;  // 0x6456148
+    SomeVoxelCache * q19231880;  // 0x19231880
+    unsigned int q19232610;  // 0x19232610
+    SomeVoxelCache * q19232864;  // 0x19232864
+    unsigned int q19232884;  // 0x19232884
+    SomeVoxelCache * q19337528;  // 0x19337528
+    SomeVoxelCache * q19338864;  // 0x19338864
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q19349784;  // 0x19349784
+    SomeVoxelCache * q19409204;  // 0x19409204
+    SomeVoxelCache * q19409250;  // 0x19409250
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q20485208;  // 0x20485208
+    unsigned int q34821714;  // 0x34821714
+    unsigned int q34824324;  // 0x34824324
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q35084324;  // 0x35084324
+    unsigned int q35202178;  // 0x35202178
+    unsigned int q35203400;  // 0x35203400
+    unsigned int q35920168;  // 0x35920168
+    unsigned int q35996160;  // 0x35996160
+    unsigned int q36071720;  // 0x36071720
+    unsigned int q74652050;  // 0x74652050
+    unsigned int q104210994;  // 0x104210994
+    unsigned int q105124484;  // 0x105124484
+    unsigned int q105208104;  // 0x105208104
+    unsigned int q105210184;  // 0x105210184
+    SomeVoxelCache * q421676434;  // 0x421676434
+    unsigned int q421733904;  // 0x421733904
+    unsigned int q421734450;  // 0x421734450
+    SomeVoxelCache * q421734500;  // 0x421734500
+    SomeVoxelCache * q422802258;  // 0x422802258
+    unsigned int q422802694;  // 0x422802694
+    SomeVoxelCache * q422802728;  // 0x422802728
+    SomeVoxelCache * q422806930;  // 0x422806930
+    unsigned int q422807558;  // 0x422807558
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q422877060;  // 0x422877060
+    SomeVoxelCache * q423662084;  // 0x423662084
+    SomeVoxelCache * q423662160;  // 0x423662160
+    unsigned int q541610504;  // 0x541610504
+    unsigned int q880940820;  // 0x880940820
+    unsigned int q880952100;  // 0x880952100
+    INIClass * q880955458;  // 0x880955458
+    unsigned int q889733924;  // 0x889733924
+    unsigned int q891298168;  // 0x891298168
+    unsigned int q898761064;  // 0x898761064
+    unsigned int q899244384;  // 0x899244384
+    unsigned int q908543830;  // 0x908543830
+    unsigned int q1952784464;  // 0x1952784464
+    unsigned int q2455909974;  // 0x2455909974
+    unsigned int q4364241300;  // 0x4364241300
+    unsigned int q4380050438;  // 0x4380050438
+    unsigned int q4380050564;  // 0x4380050564
+    unsigned int q17741068548;  // 0x17741068548
+    unsigned int q17741071440;  // 0x17741071440
+    SomeVoxelCache * q17758691928;  // 0x17758691928
+    SomeVoxelCache * q17758693160;  // 0x17758693160
+    SomeVoxelCache * q17758710064;  // 0x17758710064
+    SomeVoxelCache * q17758713478;  // 0x17758713478
+    unsigned int q17759111304;  // 0x17759111304
+    SomeVoxelCache * q17773764740;  // 0x17773764740
+    SomeVoxelCache * q17773764960;  // 0x17773764960
+    SomeVoxelCache * q17773978754;  // 0x17773978754
+    unsigned int q36516923424;  // 0x36516923424
+    unsigned int q36516995328;  // 0x36516995328
+    unsigned int q36665768228;  // 0x36665768228
+    unsigned int q36795154758;  // 0x36795154758
+    unsigned int q36795590930;  // 0x36795590930
+    unsigned int q36917612644;  // 0x36917612644
+    unsigned int q38759777078;  // 0x38759777078
+    unsigned int q38794442800;  // 0x38794442800
+    unsigned int q108757795940;  // 0x108757795940
+    unsigned int q156054362484;  // 0x156054362484
+    unsigned int q289910621240;  // 0x289910621240
+    unsigned int q289910621540;  // 0x289910621540
+    unsigned int q289927160914;  // 0x289927160914
+    SomeVoxelCache * q1611689177458;  // 0x1611689177458
+    SomeVoxelCache * q1611703603238;  // 0x1611703603238
+    SomeVoxelCache * q1612096018728;  // 0x1612096018728
+    unsigned int q1612096024594;  // 0x1612096024594
+    SomeVoxelCache * q1612096024928;  // 0x1612096024928
+    unsigned int q1612096549238;  // 0x1612096549238
+    SomeVoxelCache * q1612096550008;  // 0x1612096550008
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q1612107417174;  // 0x1612107417174
+    SomeVoxelCache * q1612549859458;  // 0x1612549859458
+    SomeVoxelCache * q1612549867328;  // 0x1612549867328
+    SomeVoxelCache * q1612552046420;  // 0x1612552046420
+    unsigned int q2359840290710;  // 0x2359840290710
+    unsigned int q3732705260580;  // 0x3732705260580
+    INIClass * q3732712490098;  // 0x3732712490098
+    unsigned int q3738323812904;  // 0x3738323812904
+    unsigned int q3743417714520;  // 0x3743417714520
+    unsigned int q3743417714578;  // 0x3743417714578
+    unsigned int q3749898692164;  // 0x3749898692164
+    unsigned int q3750194481558;  // 0x3750194481558
+    unsigned int q3879856468088;  // 0x3879856468088
+    unsigned int q3880842962944;  // 0x3880842962944
+    unsigned int q18211573618434;  // 0x18211573618434
+    unsigned int q23503473878148;  // 0x23503473878148
+    unsigned int q23503478294854;  // 0x23503478294854
+    unsigned int q44637869969984;  // 0x44637869969984
+    unsigned int q44638250862868;  // 0x44638250862868
+    unsigned int q356804779788614;  // 0x356804779788614
+    SomeVoxelCache * q388224393901144;  // 0x388224393901144
+    SomeVoxelCache * q388226446627910;  // 0x388226446627910
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560289684;  // 0x388267560289684
+    SomeVoxelCache * q388267560290600;  // 0x388267560290600
+    SomeVoxelCache * q388267565606518;  // 0x388267565606518
+    SomeVoxelCache * q388267565685030;  // 0x388267565685030
+    SomeVoxelCache * q388267565711368;  // 0x388267565711368
+    SomeVoxelCache * q388287894414368;  // 0x388287894414368
+    unsigned int q621877981153040;  // 0x621877981153040
+    unsigned int q971036357428608;  // 0x971036357428608
+    unsigned int q971036362437234;  // 0x971036362437234
+    INIClass * q971036577824920;  // 0x971036577824920
+    unsigned int q971432003709188;  // 0x971432003709188
+    unsigned int q972192010552608;  // 0x972192010552608
+    unsigned int q973074573301080;  // 0x973074573301080
+    unsigned int q993513282371720;  // 0x993513282371720
+    unsigned int q6791775454856244;  // 0x6791775454856244
+    unsigned int q9939810391654728;  // 0x9939810391654728
+    unsigned int q9939810469365844;  // 0x9939810469365844
+    unsigned int q19247441582109510;  // 0x19247441582109510
+    unsigned int q19249709764192360;  // 0x19249709764192360
+    unsigned int q240520674579875348;  // 0x240520674579875348
+    SomeVoxelCache * q254491193000887958;  // 0x254491193000887958
+    unsigned int q254491193012949510;  // 0x254491193012949510
+    unsigned int q254491193019355458;  // 0x254491193019355458
+    SomeVoxelCache * q254491193019365648;  // 0x254491193019365648
+    SomeVoxelCache * q254495664512436534;  // 0x254495664512436534
+    unsigned int q254495664600789590;  // 0x254495664600789590
+    unsigned int q254495797656506514;  // 0x254495797656506514
+    SomeVoxelCache * q254497871881316690;  // 0x254497871881316690
+    SomeVoxelCache * q254497871881323270;  // 0x254497871881323270
+    SomeVoxelCache * q254497877294924648;  // 0x254497877294924648
+    unsigned int q680328743910278664;  // 0x680328743910278664
+    unsigned int q680328744094888500;  // 0x680328744094888500
+    INIClass * q680328753041262880;  // 0x680328753041262880
+    unsigned int q680634119190029974;  // 0x680634119190029974
+    unsigned int q690063640295395474;  // 0x690063640295395474
+    unsigned int q7458120637939352678;  // 0x7458120637939352678
+    unsigned int q7462877261608608324;  // 0x7462877261608608324
+    unsigned int q11040997813799700264;  // 0x11040997813799700264
+    unsigned int q11040997817420503108;  // 0x11040997817420503108
+    unsigned int q28987212385760613648;  // 0x28987212385760613648
+    unsigned int q28987813117248754754;  // 0x28987813117248754754
+    unsigned int q28987824272068649824;  // 0x28987824272068649824
+    SomeVoxelCache * q687470288687413623128;  // 0x687470288687413623128
+    unsigned int q687470288687716406544;  // 0x687470288687716406544
+    unsigned int q687470288687827604568;  // 0x687470288687827604568
+    SomeVoxelCache * q687470288687827670600;  // 0x687470288687827670600
+    SomeVoxelCache * q687471499340207580468;  // 0x687471499340207580468
+    SomeVoxelCache * q687471499340210910098;  // 0x687471499340210910098
+    SomeVoxelCache * q687471499344198730390;  // 0x687471499344198730390
+    unsigned int q687471499344204043664;  // 0x687471499344204043664
+    unsigned int q687471520442523608340;  // 0x687471520442523608340
+    SomeVoxelCache * q687472098382617781378;  // 0x687472098382617781378
+    SomeVoxelCache * q687472098382632281744;  // 0x687472098382632281744
+    unsigned int q1256072822674860413714;  // 0x1256072822674860413714
+    unsigned int q1918688943235408561764;  // 0x1918688943235408561764
+    INIClass * q1918688944297087477888;  // 0x1918688944297087477888
+    unsigned int q1919079949344699598098;  // 0x1919079949344699598098
+    unsigned int q1929523425371956447634;  // 0x1929523425371956447634
+    unsigned int q34338695267375924979320;  // 0x34338695267375924979320
+    unsigned int q191707216692481306812518;  // 0x191707216692481306812518
+    SomeVoxelCache * ptr_244;  // 0x7892384284641236346040642
+    unsigned int q7892384294215056122471748;  // 0x7892384294215056122471748
+    SomeVoxelCache * ptr_260;  // 0x7892385595979146198057112
+    unsigned int q7892385595979420865410660;  // 0x7892385595979420865410660
+    SomeVoxelCache * q7892385595979420866183494;  // 0x7892385595979420866183494
+    SomeVoxelCache * q7892385595979421172531234;  // 0x7892385595979421172531234
+    SomeVoxelCache * q7892386460461998597816854;  // 0x7892386460461998597816854
+    unsigned int q30338410638126317105977188;  // 0x30338410638126317105977188
+    INIClass * q30338410638414511541287048;  // 0x30338410638414511541287048
+    unsigned int q30480871942376209903817074;  // 0x30480871942376209903817074
+    unsigned int q1009833010642598552127615570;  // 0x1009833010642598552127615570
+    unsigned int q7764964212083746894088578328;  // 0x7764964212083746894088578328
+    unsigned int q7764964224652995632735752534;  // 0x7764964224652995632735752534
+    unsigned int q3818895191787163503299206279560;  // 0x3818895191787163503299206279560
+    INIClass * q3818895191787374644321973727304;  // 0x3818895191787374644321973727304
+    unsigned int q3818912535839270511650647987270;  // 0x3818912535839270511650647987270
+    unsigned int q3819068314310760866839926163794;  // 0x3819068314310760866839926163794
+    unsigned int q3823226056027304564447653341014;  // 0x3823226056027304564447653341014
+    unsigned int q325266758247012995257470784250678;  // 0x325266758247012995257470784250678
+    unsigned int q325272207763186290669763273250160;  // 0x325272207763186290669763273250160
+    unsigned int q1070227939959026026391011302189463570040;  // 0x1070227939959026026391011302189463570040
+    unsigned int q1070231726377442899799689227133337796960;  // 0x1070231726377442899799689227133337796960
 // --- flat members (END) ---
     AbstractClass * * LoadSection(const char *a2, int a3);  // 0x5F7A90
     AbstractClass * * LoadBarrel(const char *a2, int a3);  // 0x5F7DB0

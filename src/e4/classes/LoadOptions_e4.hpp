@@ -18,25 +18,23 @@ struct LoadOptions {
     void* Capacity;  // 0x8
     unsigned int q00C;  // 0xC
     void* IsAllocated;  // 0xD
+    unsigned int max_entries;  // 0x10
     bool IsInitialized;  // 0x12
     unsigned int q014;  // 0x14
+    FileEntryClass** entries;  // 0x18
     unsigned int count;  // 0x1C
+    unsigned char is_active;  // 0x20
+    unsigned char owns_memory;  // 0x21
     unsigned int q024;  // 0x24
+    int q028;  // 0x28
     unsigned char q02C;  // 0x2C
+    unsigned int u32_2D;  // 0x2D
+    unsigned char pad_2E;  // 0x2E
+    unsigned int capacity;  // 0x30
+    unsigned int grow_step;  // 0x34
+// --- flat members (END) ---
     unsigned int GetFlag252_ph;  // w18j3: filler renamed (no offset truth; canon LoadOptions::GetFlag252 is a method)
     static unsigned int GetFlag252(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-    unsigned int GetFlag98_slot;
-    unsigned int GetFlag99_slot;
-    unsigned int *__pad_0;
-    unsigned int __pad_4;
-    unsigned int m_0;
-    unsigned int *m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int q028;
-    unsigned int u32_2D;
-// --- flat members (END) ---
     static int GetFlag99(LoadOptions *pThis);  // G57w19k2 raw thiscall static-form supply (member GetFlag99 -> GetFlag99_slot)
     static int GetFlag98(LoadOptions *pThis);  // G57w19k2 raw thiscall static-form supply (member GetFlag98 -> GetFlag98_slot)
     DynamicVector * vt00(char a2, int a1);
@@ -63,8 +61,6 @@ struct LoadOptions {
     void SetMode(uint32_t);
      int Cleanup();  // G57w10-S raw 0x00558790 (was C2597 interim stub)
     static int Run(LoadOptions * aP1);  // G57w10-S raw 0x005587F0 (was C2597 interim stub)
-    // G42.35a: m_10[64] pad removed -- collides with generator-owned
-    // `unsigned int m_10;` in the flat block (C2040); no user anywhere.
     char Check();  // 0x559c20
 };
 #endif  // GAMEMD_CORE_OWNS_LOADOPTIONS

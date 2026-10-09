@@ -10,21 +10,16 @@ struct GenericNode;  // fix_fwd_type_supply
 struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
-    void *q4;  // 0x4
+    char m_count[4];  // 0x4
+    char Delegate_field_08[4];  // 0x8
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD
-    unsigned int Blowfish;
-    unsigned int Previous;
-    unsigned int Straw_field_0x04;
-    unsigned int *__pad_0;
-    unsigned int *__pad_14;
-    unsigned int field_10;
-    unsigned int field_18;
-    unsigned int field_1C;
-    unsigned int field_C;
-    unsigned int m_count;
-    unsigned int Delegate_field_08;
-    unsigned char Pipe_field_0x04;  // 0x4
+    char Delegate_field_10[4];  // 0x10
+    char Delegate_field_14[4];  // 0x14
+    void* m_straw;  // 0x18
+    void* m_pipe;  // 0x1C
+    char Delegate_field_20[4];  // 0x20
+    char Delegate_field_24[4];  // 0x24
 // --- flat members (END) ---
     GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);

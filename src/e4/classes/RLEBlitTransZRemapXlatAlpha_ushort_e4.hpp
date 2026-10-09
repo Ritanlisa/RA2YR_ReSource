@@ -19,10 +19,6 @@ struct RLEBlitTransZRemapXlatAlpha_ushort {
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int *__pad_0;
-    unsigned int m_4;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     RLEBlitTransZRemapXlatAlpha_ushort * QueryInterface(unsigned int * Block, char a2);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);

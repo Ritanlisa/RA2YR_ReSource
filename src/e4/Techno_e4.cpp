@@ -12,30 +12,26 @@
 namespace gamemd {
 int Techno::GetOwnerHouse()
 {
-
   int result; // eax
 
   result = this->u32_C4; /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
-    if ( ((BuildingType*)*(void **)((char *)&this->u32_500))->IsSpecialType() ) /*0x6f2083*/
-      return ((BuildingType*)*(void **)((char *)&this->u32_500))->FindOwnerHouse(); /*0x6f2093*/
+    if ( BuildingType::IsSpecialType(*(void **)(&this->u32_500)) ) /*0x6f2083*/
+      return BuildingType::FindOwnerHouse(*(void **)(&this->u32_500)); /*0x6f2093*/
     else
       return 0; /*0x6f2098*/
   }
   return result; /*0x6f2092*/
-
 }
 }
 // 0x70E360
 namespace gamemd {
 BuildingTypeClass * Techno::StartInvulnerability(int a2, int aP1, int a1)
 {
-
   int v3; // eax
 
-  v3 = ((TechnoClass *)this)->InvulnerabilityIntensity_SetContext( aP1); /*0x70e368*/
-  return (BuildingTypeClass *)(( TechnoClass *)this)->CalcFlashAlpha(v3) ; /*0x70e375*/
-
+  v3 = TechnoClass::InvulnerabilityIntensity_SetContext(this, a2); /*0x70e368*/
+  return TechnoClass::CalcFlashAlpha(v3); /*0x70e375*/
 }
 } // namespace gamemd

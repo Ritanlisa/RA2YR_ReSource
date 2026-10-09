@@ -9,7 +9,6 @@ struct E4Recv_529E70 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
-    unsigned int owningHouseIndex;
 // --- flat members (END) ---
     char ** sub_529E70(char ** a2, char * Source, char ** a4, char ** a5);  // 0x529E70
 };

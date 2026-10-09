@@ -38,10 +38,16 @@ struct E4Recv_4B56E0 {
     unsigned int M68;  // 0x68
     unsigned int q070;  // 0x70
     unsigned int M72;  // 0x72
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_78;  // 0x78
     unsigned int M80;  // 0x80
     unsigned int q084;  // 0x84
+    unsigned int u32_B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
+    unsigned int u32_B8;  // 0xB8
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
+    unsigned int u32_110;  // 0x110
     unsigned int q114;  // 0x114
     unsigned int q118;  // 0x118
     unsigned int q128;  // 0x128
@@ -71,6 +77,45 @@ struct E4Recv_4B56E0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q21768;  // 0x21768
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q33570;  // 0x33570
+    unsigned int q137064;  // 0x137064
+    unsigned int q153094;  // 0x153094
+    unsigned int q210288;  // 0x210288
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q17758713478;  // 0x17758713478
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q1612096550008;  // 0x1612096550008
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q1612552106354;  // 0x1612552106354
+    unsigned int q2359835005720;  // 0x2359835005720
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560290600;  // 0x388267560290600
+    unsigned int q388269456126468;  // 0x388269456126468
 // --- flat members (END) ---
     int sub_4B56E0(int a2);  // 0x4B56E0
 };

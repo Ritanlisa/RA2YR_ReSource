@@ -10,12 +10,8 @@ struct XSurface {
     void* vtable1;  // 0x0
     void* Width;  // 0x4
     void* Height;  // 0x8
+    bool q00A;  // 0xA
     int LockCount;  // 0xC
-    unsigned int Surface;
-    unsigned int *__pad_0;
-    unsigned int q010;
-    unsigned int q014;
-    unsigned int vt_slot_116;
 // --- flat members (END) ---
     XSurface * * Blit(int a2, void **a3, int arg8, int a5, unsigned int *a6, void **a4, int a8);
     XSurface * BlitPart(void **a2, void **a3, void **arg8, void **a4, int a6);

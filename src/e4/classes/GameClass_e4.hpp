@@ -10,11 +10,15 @@ struct Pipe;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct BufferIOFileClass;  // fix_fwd_type_supply
 struct PKPipe;  // fix_fwd_type_supply
-struct PKStrawClass {  // G42.39: e4-local minimal def (misc_ext tree def unreachable in e4 TUs)
+struct PKStrawClass {
+// --- flat members (BEGIN) ---
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+// --- flat members (END) ---
     int initGameMode(int a2, int a3);  // 0x437FD0
     int applyGameSettings2(int a2, int a3);  // G42.39 supply
     int QueryGameMode(int a2);  // G42.39 supply
-
     unsigned int * processFrame(int a2, int a3);  // G42.39 supply
     unsigned int * updateUI(int a2, int a3, void *a3_2);  // G42.39 supply
     int loadScenarioFiles(int aP1);  // G42.39 supply

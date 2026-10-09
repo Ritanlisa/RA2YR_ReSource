@@ -1,9 +1,18 @@
 // GENERATED minimal flat class (fix_c2039_methods)
 #pragma once
 
+#include "e4/classes/_fwd_e4.hpp"
+
 namespace gamemd {
 
 struct DynamicArray {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+// --- flat members (END) ---
     char Resize(int *a1, unsigned int *aP2);
     char Remove(int a2);  // 0x7acd60
     static char Grow(void *aP0);  // G42.33 b2 supply (static-form sync)

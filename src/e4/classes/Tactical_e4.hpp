@@ -20,13 +20,13 @@ struct MouseClass;  // fix_fwd_type_supply
 struct Tactical {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int q4;  // 0x4
+    void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    unsigned int qC;  // 0xC
-    void *q10;  // 0x10
+    void* vtable4;  // 0xC
+    unsigned int u32_10;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
-    void *q14;  // 0x14
+    unsigned int u32_14;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
@@ -60,10 +60,10 @@ struct Tactical {
     unsigned char q05C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned char q064;  // 0x64
-    void *q68;  // 0x68
-    unsigned int q6C;  // 0x6C
+    unsigned int q068;  // 0x68
+    ObjectClass* q06C;  // 0x6C
     unsigned char q070;  // 0x70
-    unsigned int u16_72;  // 0x72
+    unsigned int u32_72;  // 0x72
     bool q074;  // 0x74
     unsigned char q078;  // 0x78
     void* q07C;  // 0x7C
@@ -159,6 +159,8 @@ struct Tactical {
     unsigned int q1B1;  // 0x1B1
     unsigned int q1B5;  // 0x1B5
     unsigned char q1B9;  // 0x1B9
+    unsigned int u32_1BC;  // 0x1BC
+    unsigned int u32_1C4;  // 0x1C4
     unsigned int u32_1D0;  // 0x1D0
     AbstractTypeClass* q1D4;  // 0x1D4
     AbstractTypeClass* q1E0;  // 0x1E0
@@ -249,6 +251,7 @@ struct Tactical {
     FacingStruct* q370;  // 0x370
     void* q374;  // 0x374
     unsigned char q378;  // 0x378
+    unsigned int u32_37C;  // 0x37C
     unsigned int q380;  // 0x380
     char q384;  // 0x384
     ParticleSystemClass* q388;  // 0x388
@@ -270,6 +273,7 @@ struct Tactical {
     unsigned int q404;  // 0x404
     unsigned char q408;  // 0x408
     unsigned int q418;  // 0x418
+    unsigned int u32_41A;  // 0x41A
     void* q41C;  // 0x41C
     unsigned char q420;  // 0x420
     unsigned int q428;  // 0x428
@@ -399,6 +403,7 @@ struct Tactical {
     unsigned char q678;  // 0x678
     AbstractClass* q67C;  // 0x67C
     unsigned char q680;  // 0x680
+    unsigned char q684;  // 0x684
     AbstractClass* q688;  // 0x688
     AbstractClass* q68C;  // 0x68C
     unsigned char q690;  // 0x690
@@ -415,6 +420,7 @@ struct Tactical {
     unsigned char q6DC;  // 0x6DC
     unsigned int q6E0;  // 0x6E0
     unsigned int q6E4;  // 0x6E4
+    unsigned int u32_6E7;  // 0x6E7
     unsigned int q6E8;  // 0x6E8
     unsigned int q6EC;  // 0x6EC
     AbstractClass* q6F0;  // 0x6F0
@@ -573,6 +579,7 @@ struct Tactical {
     unsigned char qC5C;  // 0xC5C
     void* qC90;  // 0xC90
     unsigned char qC94;  // 0xC94
+    unsigned int u32_C9A;  // 0xC9A
     void* qCC8;  // 0xCC8
     unsigned char qCCC;  // 0xCCC
     void* qD38;  // 0xD38
@@ -597,23 +604,6 @@ struct Tactical {
     unsigned char qDA8;  // 0xDA8
     void* qDB0;  // 0xDB0
     ObjectClass* qDB4;  // 0xDB4
-    unsigned int *Tactical_field_0x11B;
-    unsigned int *__pad_10;
-    unsigned int *__pad_34;
-    unsigned int u32_146;
-    unsigned int q068;
-    unsigned int q06C;
-    unsigned int u32_10;
-    unsigned int u32_14;
-    unsigned int vtable2;
-    unsigned int vtable4;
-    unsigned int q2280;
-    unsigned int q4588;
-    unsigned int q4696;
-    unsigned char u8_1180;
-    unsigned char u8_1181;
-    unsigned int *__pad_0;
-    unsigned int field_24;
 // --- flat members (END) ---
     void * ConstructTacticalSurface();  // 0x42A6D0
     int CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a3, unsigned int *a4, int *a5, int a6, int a7);  // G57w10-S raw 0x00484050 IUnknown 占位清除

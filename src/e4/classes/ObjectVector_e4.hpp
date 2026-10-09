@@ -14,12 +14,6 @@ struct ObjectVector {
     bool IsAllocated;  // 0xD
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
-    unsigned int ObjectVector_field_0x04;
-    unsigned int ObjectVector_field_0x08;
-    unsigned int ObjectVector_field_0x0C;
-    unsigned int ObjectVector_field_0x10;
-    unsigned int ObjectVector_field_0x14;
-    unsigned int *__pad_0;
 // --- flat members (END) ---
     int Construct(int aP1, int aP2);
      void ddtor(ObjectVector * aP1);  // G57w10-S raw 0x40CDC0 (was C2597 interim stub)

@@ -9,7 +9,6 @@ struct DynamicVector;  // fix_fwd_type_supply
 struct DynamicVectorClass_ptr_NodeNameType {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    unsigned char m_1[4];  // 0x1
     void* Items;  // 0x4
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
@@ -24,6 +23,5 @@ struct DynamicVectorClass_ptr_NodeNameType {
     int GetSize(unsigned int * a2);  // 0x5C55C0
     DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5C58F0
     unsigned int Get(int a2, void *a2_2);  // 0x5C50A0
-    unsigned int m_10;  // 0x10
 };
 } // namespace gamemd

@@ -26,50 +26,33 @@
 namespace gamemd {  // G42.18c ns repair
 // 0x537DD0 site-form Constructor supply (W20L4 T2; forwards to ctor def)
 namespace gamemd {
-void * PageUserCommandClass::Constructor(void *aP1) { return new (aP1) PageUserCommandClass(); }
-}
-PageUserCommandClass::PageUserCommandClass()
-{
-
-  *(unsigned int *)this->CommandClass =(unsigned int)(&vt_PageUserCommandClass); /*0x537dd2*/
-  return; /*0x537dd8*/
-
-}
-}  // G42.18c ns repair
 // 0x537DE0
 namespace gamemd {  // G42.18c ns repair
 char * PageUserCommandClass::AddRef(void *a1)
 {
-
-  return (char *)(aPageuser); /*0x537de5*/
-
+  return aPageuser; /*0x537de5*/
 }
 }  // G42.18c ns repair
 // 0x537DF0
 namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::Release(void *a1)
 {
-
-  return GetStringCSF( (wchar_t *)(aTxtPageuser), 0, (const char *)(g_Str_File_Init_CPP), 7563); /*0x537e06*/
-
+  return GetStringCSF(aTxtPageuser, 0, g_Str_File_Init_CPP, 7563); /*0x537e06*/
 }
 }  // G42.18c ns repair
 // 0x537E10
 namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::ddtor()
 {
-
-  return GetStringCSF( (wchar_t *)(g_Str_TXT_INTERFACE), 0, (const char *)(g_Str_File_Init_CPP), 7565); /*0x537e26*/
-
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7565); /*0x537e26*/
 }
 }  // G42.18c ns repair
 // 0x537E30
 namespace gamemd {  // G42.18c ns repair
 wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
 {
-
-  return GetStringCSF( (wchar_t *)(aTxtPageuserDes), 0, (const char *)(g_Str_File_Init_CPP), 7567); /*0x537e46*/
-
+  return GetStringCSF(aTxtPageuserDes, 0, g_Str_File_Init_CPP, 7567); /*0x537e46*/
+}
 }
 // 0x537E50
 char PageUserCommandClass::Do(int a1)
@@ -81,5 +64,4 @@ char PageUserCommandClass::Do(int a1)
     return UI_Add(); /*0x537e59*/
   return result; /*0x537e5e*/
 
-}
 }  // G42.18c ns repair

@@ -9,8 +9,6 @@ namespace gamemd {
 struct Carryall {
 // --- flat members (BEGIN) ---
     char Carryall_field_00[4];  // 0x0
-    unsigned int Debug;
-    unsigned int audioController7;
 // --- flat members (END) ---
     FootClass * * MissionStateMachine();
 };
