@@ -141,6 +141,7 @@ class HouseClass : public AbstractClass
 {
     int getMovementSpeed(int, ...); // vtable slot +32
 public:
+    virtual int FindItemIndex_0();  // vt+0x18 (canon FindItemIndex_0; PR 0x44bfd9)
     static constexpr AbstractType kObjectDeriveId = AbstractType::House;
 
     enum { PlayerAtA = 4475, PlayerAtB, PlayerAtC, PlayerAtD, PlayerAtE, PlayerAtF, PlayerAtG, PlayerAtH };

@@ -203,6 +203,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitVtables(int a1);  // 0x4101C0
     int COMStub_AddRef();  // 0x410300
     int COMStub_Release(int a1);  // 0x410310 (IDA: int __stdcall(int), 76 xref)
+    unsigned int *GetInvalidCoord(void *a2);  // 0x44bf30 消费 (G57W20M26 供给)
     int ProcessPower();  // 0x410410
     int IsClean();  // 0x410450
     int* GetCoordsEx(int* outBuffer, AbstractClass* source);  // 0x4104F0

@@ -552,6 +552,7 @@ public:
     // G57W20M26: canon 槽供给 (0x184/0x1E8/0x1F0/0x334, ProcessRepair 成员扫描段)
     virtual int GetPrimaryOrFallback();  // vt+0x184
     virtual void MissionDispatch(int a2, int a3);  // vt+0x1E8
+    virtual int Stub(void *a2, int a3);  // vt+0x480 (canon)
     virtual int SetState(int a2);  // vt+0x1F0
     virtual int COMStub_Return0_205();  // vt+0x334
     TechnoClass *GetVecTechnoMember(int a2);  // 0x65ad30 (原 Team::GetMember 误标; 体读 this+0xE4 vecTechno 数组)

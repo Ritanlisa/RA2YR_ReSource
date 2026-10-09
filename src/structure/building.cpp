@@ -157,7 +157,7 @@ struct Coord2D {
 };
 
 struct BuildingPlacement_site {   // g57a5 W2e: TU-local 站点壳改名（C2011 vs render_ext BuildingPlacement）
-    static void *(void *a1)->FindPosition( void *a2);  // g57w11 r4: raw 0x500200 (调用形实参 char* 适配)
+    static void *FindPosition(void *a1, void *a2);  // g57w11 r4: raw 0x500200
     static int ValidateType(void* self, int type, int mode);
 };
 #define BuildingPlacement BuildingPlacement_site
@@ -3149,11 +3149,11 @@ void BuildingClass::SellUnit(int a2)
       ((VoxClass *)aEvaUnitsold)->FindAndPlay(-1); /*0x4d9f94*/
       PlayVocClass(dword_8871E0->RadarOn, 0x2000, 1.0, 0); /*0x4d9fb0 [Rules+0x6A4]*/
     }
-    result = this->vt_entry_2BC(); /*0x4d9fb9 vt+0x2BC*/
+    result = this->Vt46Thunk(); /*0x4d9fb9 vt+0x2BC*/
     ((HouseClass *)this->owner)->AddPower(result); /*0x4d9fc6 -- house.hpp:628 takes 1*/
-    this->vt_entry_3A0(); /*0x4d9fcf vt+0x3A0*/
-    this->vt_entry_D4(); /*0x4d9fd9 vt+0xD4*/
-    this->vt_entry_F8(); /*0x4d9fe3 vt+0xF8*/
+    this->ProcessDeploymentState(); /*0x4d9fcf vt+0x3A0*/
+    this->Sell(); /*0x4d9fd9 vt+0xD4*/
+    this->Destroy_0(); /*0x4d9fe3 vt+0xF8*/
   }
   return; /*0x4d9fe9*/
 }
@@ -3168,7 +3168,7 @@ void BuildingClass::HandleSellOrRepair()
   int v5; // edx
   unsigned char v7[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  this->vt_entry_124(2); /*0x70141a vt+0x124*/
+  this->ProductionDisplayUpdate(2); /*0x70141a vt+0x124*/
   v3 = this->Vt34Thunk()->Strength; /*0x70142a ret+0xA0*/
   this->health = v3; /*0x701432*/
   this->estimatedHealth = v3; /*0x701435*/
@@ -3693,7 +3693,7 @@ LABEL_231:
                   if ( v66->focus && !(unsigned __int8)House::IsCurrentPlayer((House *)v66->owner) ) /*0x44bea5*/
                   {
                     v66->MissionDispatch(2, 0); /*0x44beb5*/
-                    v66->vt_entry_480(v66->focus, 1);
+                    v66->Stub(v66->focus, 1);
                     v66->SetFocus(0); /*0x44bed0*/
                     this->ThunkTo159x4(3); /*0x44bedc*/
                     v66->queueUpToEnter = 0; /*0x44bee2*/
@@ -3702,7 +3702,7 @@ LABEL_231:
                   v146 = g_TerrainTypeTable; /*0x44befa*/
                   v67 = this->GetVecTechnoMember(0); /*0x44bf02*/
                   v68 = (unsigned int **)(*((int (__thiscall **)(BuildingClass *, int *, int, int))v151.m_Data + 309))( /*0x44bf13*/ this, &v151.m_Size, v67, v146);
-                  focus = this->Owner; /*0x44bf19*/
+                  focus = this->owner; /*0x44bf19*/
                   v70 = *v68; /*0x44bf1f*/
                   *(unsigned int *)&v151.m_Data = *(unsigned int *)&v70; /*0x44bf23*/
                   if ( focus ) /*0x44bf27*/
@@ -3715,7 +3715,7 @@ LABEL_231:
                   {
                     v66->MissionDispatch(2, 0); /*0x44bf87*/
                     v72 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (unsigned __int16 *)&v151.m_Data); /*0x44bf9a*/
-                    v66->vt_entry_480(v72, 1); /*0x44bfa2*/
+                    v66->Stub(v72, 1); /*0x44bfa2*/
                     this->ThunkTo159x4(3); /*0x44bfaf*/
                     v66->queueUpToEnter = 0; /*0x44bfb5*/
                     return 1; /*0x44bfc8*/
@@ -3958,7 +3958,7 @@ LABEL_231:
                   {
                     v106->MissionDispatch(2, 0); /*0x44c47a*/
                     v113 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (unsigned __int16 *)&v151.m_Data); /*0x44c48e*/
-                    v106->vt_entry_480(v113, 1); /*0x44c496*/
+                    v106->Stub(v113, 1); /*0x44c496*/
                     v106->SetFocus(0); /*0x44c49f*/
                     this->ThunkTo159x4(3); /*0x44c4ab*/
                     v106->queueUpToEnter = 0; /*0x44c4b1*/
@@ -3967,7 +3967,7 @@ LABEL_231:
                 else
                 {
                   v106->MissionDispatch(2, 0); /*0x44c3b5*/
-                  v106->vt_entry_480(v106->focus, 1);
+                  v106->Stub(v106->focus, 1);
                   v106->SetFocus(0); /*0x44c3d1*/
                   v106->queueUpToEnter = 0; /*0x44c3d6*/
                   this->ThunkTo159x4(3); /*0x44c3e3*/
