@@ -21,6 +21,15 @@ import json, re, sys
 from pathlib import Path
 from collections import defaultdict
 
+# DEPRECATED (T6 route census 2026-10-10): outputs (src/csp_canon/bodies/*.inc)
+# are step-4 tool metadata only — zero includers consume them. Still wired into
+# mcp_translate_server.tool_canon_regen (stale chain). Do NOT extend.
+# Body route = tools/csp_export/step4_bodies.py.
+print('DEPRECATED: backfill_completed.py bodies/*.inc output is tool metadata '
+      'with zero includers; still invoked only by '
+      'mcp_translate_server.tool_canon_regen (stale chain). '
+      'Do not extend — active route = step4_bodies.py.', file=sys.stderr)
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tools'))
 

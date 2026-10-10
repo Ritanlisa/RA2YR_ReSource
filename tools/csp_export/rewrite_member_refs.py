@@ -14,6 +14,15 @@ import json, re, sys
 from pathlib import Path
 from collections import defaultdict
 
+# DEPRECATED (T6 route census 2026-10-10): retired from the step-4 body route
+# (data-source conflict with regen_bodies_from_export, see step4_bodies.py).
+# Still wired into mcp_translate_server.tool_canon_regen (stale chain).
+# Do NOT extend. Body route = tools/csp_export/step4_bodies.py.
+print('DEPRECATED: rewrite_member_refs.py is retired from the step-4 body '
+      'route (conflicts with regen_bodies_from_export tree-landing); still '
+      'invoked only by mcp_translate_server.tool_canon_regen (stale chain). '
+      'Do not extend — active route = step4_bodies.py.', file=sys.stderr)
+
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = ROOT / '.omo' / 'ida_cache'
 OUTD = ROOT / 'src' / 'raw_decomp'
