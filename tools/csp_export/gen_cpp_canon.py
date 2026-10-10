@@ -9,7 +9,7 @@ Outputs:
   src/csp_canon/globals.hpp
   anchors/csp_canon_manifest.json   per-addr provenance
 """
-import json, re
+import json, re, sys
 from pathlib import Path
 from collections import defaultdict
 
@@ -178,7 +178,10 @@ all_classes -= {'gamemd', 'ra2'}  # re-apply: composite mtypes keys re-seed
 all_classes |= set(J(ROOT / 'tools/member_lookup.json').keys())
 all_classes -= {'gamemd', 'ra2'}  # re-apply after every |= (G42.57ax)
 canon_of = {}
-for c in all_classes:
+# RC1/I13: iterate in sorted order -- `set` iteration order is PYTHONHASHSEED
+# dependent, which made the setdefault first-wins attribution
+# non-deterministic across processes (T4 evidence: CampaignScore flip).
+for c in sorted(all_classes):
     cc = canon(c) or c
     canon_of.setdefault(cc, c)
 
@@ -279,7 +282,7 @@ for ai, s in func_sig.items():
             continue
     free_funcs[ai] = s
 
-PLACEHOLDER_RE = re.compile(r'^(vtable\d*|vt_?\d+|.*_field_0x[0-9A-Fa-f]+.*|field_.*|__pad.*|__align.*|align_.*|q[0-9A-F]{3}.*)$')
+PLACEHOLDER_RE = re.compile(r'^(vtable\d*|vt_?\d+|.*_field_0x[0-9A-Fa-f]+.*|field_.*|__pad.*|__align.*|align_.*|q[0-9A-F]{3}.*|u(?:8|16|32|64)_[0-9A-F]+)$')
 # member_lookup src markers written by later evidence campaigns (ctor write-map
 # adjudications, e.g. G16 focus/owner) -- these OUTRANK no-evidence member_types
 # names, which are CSP-era bulk-sync residue (audit 2026-09-21: 8,771 no-evidence
@@ -289,6 +292,13 @@ ADJUDICATED_SRC_RE = re.compile(r'adjudic|ctor[-_]adjud|g1[5-9]|write[-_]map', r
 
 def _is_placeholder(n):
     return bool(PLACEHOLDER_RE.match(n or ''))
+
+
+# RC1: members emitted WITHOUT a semantic name (placeholder family, or no
+# name at all) -- the generator refuses to invent `q%03X` fillers and
+# reports these instead (fail loud).  Keyed (class, offset): build_members
+# runs more than once per class (fwd-decl pass, emission pass, mtab pass).
+unresolved_members = {}
 
 
 # math.hpp-owned alias types: their CSP-merged "layouts" are call-site
@@ -425,13 +435,27 @@ def build_members(cc):
             n = ident(n, '')
         else:
             n = ''
-        if not n or n in used:
-            base = 'q%03X' % o
-            n2, i = base, 2
-            while n2 in used:
-                n2 = base + '_' + str(i)
+        if n and n in used:
+            # semantic-name collision (two evidence sources claim one
+            # name): deterministic dedup suffix keeps the semantic root
+            # (RC1: placeholder fill is forbidden)
+            n2, i = n + '_d', 2
+            while n2 in used or n2 in out_names:
+                n2 = '%s_%d' % (n, i)
                 i += 1
             n = n2
+        if not n:
+            # RC1 contract (plan project-optimization.md #8): NO placeholder
+            # fill.  A member with no semantic name from any evidence source
+            # is dropped here; the gap/padding pass below reconstructs the
+            # exact layout span as anonymous __pad filler, and the fact
+            # lands in the unresolved report (process exits non-zero).
+            unresolved_members.setdefault(
+                (cc, o), {'class': cc, 'offset': o,
+                          'size': m.get('size') or 4, 'type': t,
+                          'orig_name': nm or '',
+                          'reason': 'no semantic member name in any source'})
+            continue
         sz = mo.get('size') if mt_has_ev else m['size']
         if n in out_names:
             # G32: O(1) incremental name-set — the old `{e[2] for e in out}`
@@ -917,4 +941,21 @@ for cc in sorted(canon_of):
 Path(ROOT / 'anchors/csp_canon_members.json').write_text(
     json.dumps(mtab, indent=0, ensure_ascii=False), encoding='utf-8')
 print('members table written:', len(mtab))
+
+# RC1 contract: placeholders were refused, not emitted -- report them and
+# fail loud so the pipeline cannot proceed on invented names.
+if unresolved_members:
+    rpt_dir = ROOT / '.omo' / 'unresolved_reports'
+    rpt_dir.mkdir(parents=True, exist_ok=True)
+    rpt = rpt_dir / 'gen_cpp_canon.unresolved.json'
+    entries = [unresolved_members[k] for k in sorted(unresolved_members)]
+    rpt.write_text(json.dumps({
+        '_meta': {'generator': 'gen_cpp_canon.py',
+                  'policy': 'rc1-no-placeholder-fill', 'total': len(entries)},
+        'unresolved': entries}, indent=1), encoding='utf-8')
+    print('UNRESOLVED REPORT: %s (%d members without semantic names; '
+          'emitted as anonymous layout filler)' % (rpt, len(entries)))
+    print('FAIL LOUD: exit 1 -- supply semantic names (N1 priority chain) '
+          'and regenerate.')
+    sys.exit(1)
 print('DONE')

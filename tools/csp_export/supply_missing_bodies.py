@@ -6,16 +6,24 @@ snapshot + header declaration but NO definition anywhere in src/ — the
 Step-4 body regen replaced existing bodies only and never landed these.
 
 For each (name, addr) in the supply list:
+  0. RC1 CSP-authority gate: the address must exist in
+     anchors/csp_canon_manifest.json with the SAME, semantic (non-
+     placeholder) name.  Unnamed / `sub_XXXXXX` / mismatching entries are
+     REJECTED to the unresolved report -- never landed as a malformed
+     `int sub_XXX(...)` definition line.
   1. locate the class's header (decl hpp) and the namespace chain in force
      at the class (ra2::game vs gamemd)
-  2. take the cache pseudocode; transform (operator new/delete, IDA_*
-     bitfield vocab, #NNN type ids); extract the body
+  2. take the cache pseudocode; RC1 truth-ify (operator new/delete,
+     bitfield-extraction -> width-exact C++, __PAIR*__ inline, qmemcpy ->
+     memcpy; MEMORY[/JUMPOUT/flag-read forms REFUSED); extract the body
   3. def signature from the CACHE (types are til-authoritative); explicit
      `this` param dropped; CC keyword stripped
   4. land `// 0xADDR + namespace-wrapped def` in <module>/supplied_bodies.cpp
      where module = the decl hpp's parent dir
 
 Idempotent: a landing file is skipped for addrs already present in it.
+RC1: any rejected function lands in .omo/unresolved_reports/
+supply_missing_bodies.unresolved.json and the process exits non-zero.
 Dry run by default; --apply writes.
 
 Usage: python tools/csp_export/supply_missing_bodies.py [--apply]
@@ -25,19 +33,21 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _ida_vocab import find_refusals, truthify, type_ids
+
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
 APPLY = '--apply' in sys.argv
 LIST = ROOT / '.omo' / 'g98_supply_list.json'
 CACHE = ROOT / '.omo' / 'ida_cache'
+MANIFEST = ROOT / 'anchors' / 'csp_canon_manifest.json'
 
-# ---- transforms (mirrors regen_bodies_from_export.py) ----
-DEC_NEWDEL = re.compile(r'\b__(2_YAPAXI_Z|3_YAXPAX_Z)\s*\(')
-IDA_VOCAB_RE = re.compile(
-    r'\b(BYTE[0-8]|WORD[0-7]|LOWORD|HIWORD|LOBYTE|HIBYTE|LODWORD|HIDWORD|'
-    r'SHIWORD|SLOBYTE|SHLOBYTE|SLODWORD|SHIDWORD|SWORD0|SWORD1|SWORD2|'
-    r'SWORD3|SWWORD|__PAIR16__|__PAIR32__|__PAIR64__)\(')
-TYPE_ID = re.compile(r'([ \s(\*&<>,]|^)#(\d+)')
+# RC1: names that are placeholders, not identities.  A definition line is
+# CSP-authoritative or it is not written.
+BAD_NAME_RE = re.compile(
+    r'^(?:.*::)?(?:sub_[0-9A-Fa-f]{4,}|q[0-9A-F]{3}\w*|u(?:8|16|32|64)_[0-9A-F]+'
+    r'|__pad.*|__align.*|field_.*|vtable\d*|vt_?\d+|j_|nullsub_\d*)$')
 
 CC_KW = {'__thiscall', '__stdcall', '__cdecl', '__fastcall'}
 USER_CC_RE = re.compile(r'__(?:userpurge|usercall)(?:@<[^>]*>)?\s*')
@@ -65,11 +75,9 @@ def _vt_name(cls):
 
 
 def transform(code):
-    code = DEC_NEWDEL.sub(
-        lambda m: ('RA2_OPNEW(' if m.group(1).startswith('2_')
-                   else 'RA2_OPDEL('), code)
-    code = IDA_VOCAB_RE.sub(lambda m: 'IDA_' + m.group(1) + '(', code)
-    code = TYPE_ID.sub(lambda m: m.group(1) + 'void', code)
+    # RC1: truth-ify IDA vocabulary inline -- no IDA_-prefixed shims.
+    code = truthify(code)
+    code = type_ids(code)
 
     def _vt(m):
         n = _vt_name(m.group(1))
@@ -145,6 +153,20 @@ def def_head_from_cache(code, want_name):
     return ret, qname, params
 
 
+_HPP_CONTENT = {}
+
+
+def _hpp_text(p):
+    """Cached hpp content: find_class_header is called once per class, and
+    re-reading the ~3,300-file tree per class is O(classes x tree)."""
+    if p not in _HPP_CONTENT:
+        try:
+            _HPP_CONTENT[p] = p.read_text(encoding='utf-8', errors='replace')
+        except OSError:
+            _HPP_CONTENT[p] = ''
+    return _HPP_CONTENT[p]
+
+
 def find_class_header(cls, method):
     """hpp declaring `class/struct cls` with a `method(` decl; returns
     (path, namespace_chain)."""
@@ -153,10 +175,7 @@ def find_class_header(cls, method):
         s = str(p)
         if any(x in s for x in ('_generated', 'csp_canon', '_gap2')):
             continue
-        try:
-            t = p.read_text(encoding='utf-8', errors='replace')
-        except OSError:
-            continue
+        t = _hpp_text(p)
         if cls is not None:
             if not re.search(r'\b(?:class|struct)\s+' + re.escape(cls) + r'\b', t):
                 continue
@@ -170,12 +189,49 @@ def find_class_header(cls, method):
 def main():
     supply = json.load(open(LIST, encoding='utf-8'))
     print('supply list:', len(supply))
+    try:
+        manifest = json.loads(MANIFEST.read_text(encoding='utf-8'))
+    except (OSError, json.JSONDecodeError) as e:
+        print('FATAL: CSP canon manifest unreadable (%s) -- cannot '
+              'establish signature authority.' % MANIFEST)
+        sys.exit(2)
     landings = {}     # target file -> [blocks]
     stats = {'ok': 0, 'no-header': 0, 'sig-unparse': 0, 'body-unparse': 0,
-             'multi-header': 0, 'dup': 0}
+             'multi-header': 0, 'dup': 0,
+             'no-manifest': 0, 'name-mismatch': 0, 'placeholder-name': 0,
+             'refused-vocab': 0}
+    rejected = {}
     hdr_cache = {}
     for name, addr in supply:
-        cp = CACHE / ('func_0x%X.json' % int(addr, 16))
+        ai = int(addr, 16)
+        mkey = '0x%08X' % ai
+        rec = manifest.get(mkey)
+        if rec is None:
+            stats['no-manifest'] += 1
+            rejected.setdefault(
+                'no-manifest', []).append(
+                {'name': name, 'addr': '0x%X' % ai,
+                 'reason': 'no anchors/csp_canon_manifest.json entry '
+                           '(no CSP signature authority)'})
+            continue
+        mname = rec.get('name') or ''
+        if mname != name:
+            stats['name-mismatch'] += 1
+            rejected.setdefault(
+                'name-mismatch', []).append(
+                {'name': name, 'addr': '0x%X' % ai, 'manifest_name': mname,
+                 'reason': 'supply name differs from CSP-authoritative '
+                           'manifest name'})
+            continue
+        if not mname or BAD_NAME_RE.match(mname):
+            stats['placeholder-name'] += 1
+            rejected.setdefault(
+                'placeholder-name', []).append(
+                {'name': name, 'addr': '0x%X' % ai,
+                 'reason': 'placeholder/unnamed identity -- a malformed '
+                           '`int sub_XXX(...)` def line would be produced'})
+            continue
+        cp = CACHE / ('func_0x%X.json' % ai)
         try:
             code = json.load(open(cp, encoding='utf-8')).get('decompiled', '')
         except (OSError, json.JSONDecodeError):
@@ -195,8 +251,7 @@ def main():
             stats['multi-header'] += 1
             # prefer the hpp whose class body mentions the method the most
             cands = sorted(cands, key=lambda c: -len(re.findall(
-                r'\b' + re.escape(method) + r'\s*\(',
-                c[0].read_text(encoding='utf-8', errors='replace'))))
+                r'\b' + re.escape(method) + r'\s*\(', _hpp_text(c[0]))))
         hp, ns = cands[0]
         dh = def_head_from_cache(code, name)
         if not dh:
@@ -206,6 +261,14 @@ def main():
         body = body_from_pseudo(transform(code))
         if body is None:
             stats['body-unparse'] += 1
+            continue
+        refusals = find_refusals(body)
+        if refusals:
+            stats['refused-vocab'] += 1
+            rejected.setdefault(
+                'refused-vocab', []).append(
+                {'name': name, 'addr': '0x%X' % ai, 'patterns': refusals,
+                 'reason': 'untruth-ifiable IDA constructs (RC1 policy)'})
             continue
         module = hp.parent
         target = module / 'supplied_bodies.cpp'
@@ -223,6 +286,19 @@ def main():
     print('stats:', stats)
     for t, blocks in sorted(landings.items()):
         print('  %-46s %d block(s)' % (t.relative_to(ROOT), len(blocks)))
+    n_rejected = sum(len(v) for v in rejected.values())
+    if n_rejected:
+        rpt_dir = ROOT / '.omo' / 'unresolved_reports'
+        rpt_dir.mkdir(parents=True, exist_ok=True)
+        rpt = rpt_dir / 'supply_missing_bodies.unresolved.json'
+        rpt.write_text(json.dumps({
+            '_meta': {'generator': 'supply_missing_bodies.py',
+                      'policy': 'rc1-csp-authoritative-or-reject',
+                      'total_rejected': n_rejected, 'apply': APPLY},
+            'rejected': rejected}, indent=1), encoding='utf-8')
+        print('UNRESOLVED REPORT: %s (%d functions rejected)' %
+              (rpt, n_rejected))
+        print('FAIL LOUD: exit 1')
     if APPLY:
         for t, blocks in landings.items():
             old = t.read_text(encoding='utf-8', errors='replace') \
@@ -239,6 +315,7 @@ def main():
             print('appended %d -> %s' % (len(fresh), t.relative_to(ROOT)))
     else:
         print('DRYRUN -- pass --apply')
+    sys.exit(1 if n_rejected else 0)
 
 
 if __name__ == '__main__':

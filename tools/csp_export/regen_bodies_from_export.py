@@ -12,10 +12,28 @@ Per cpp definition (annotation `// 0xADDR` + def line):
   - fresh pseudocode exists -> body := pseudocode (outer braces stripped,
     re-indented 2 spaces), def line kept (canon signature authority)
   - no fresh pseudocode / decompile failed -> body kept, logged
+
+RC1 output contract (plan project-optimization.md #8 -- generator-side
+clean-output ruling; see tools/csp_export/_ida_vocab.py):
+  - IDA vocabulary is TRUTH-IFIED inline (bitfield extraction family ->
+    width-exact C++ dereference/index forms, __PAIR*__ -> inline assembly
+    expression, qmemcpy -> memcpy, __2/3_YAPAX.. -> operator new/delete).
+    No IDA_-prefixed macro vocabulary is emitted; nothing relies on the
+    ida_compat.h shims.
+  - pseudocode containing constructs that CANNOT be truth-ified
+    (MEMORY[..] absolute addressing, JUMPOUT, __CFSHL__/__CFSHR__/__OFS__/
+    __CF__ flag reads) is REFUSED: the previous body is kept, the function
+    lands in the unresolved report (.omo/unresolved_reports/
+    regen_bodies.unresolved.json) AND the process exits non-zero.
+    Silent prefixing / silent shimming is forbidden.
+
 Every decision lands in .omo/regen_bodies_manifest.json (addr -> action,
-old/new line counts) so nothing is overwritten silently.
+old/new line counts) so nothing is overwritten silently.  When --files
+restricts the run (golden cohort) the manifest is written to
+regen_bodies_manifest.cohort.json instead, preserving the full-run record.
 
 Usage: python tools/csp_export/regen_bodies_from_export.py [--apply]
+       [--files rel/path1.cpp,rel/path2.cpp]
 """
 import json
 import re
@@ -24,11 +42,25 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _blockspan import brace_delta
+from _ida_vocab import (find_refusals, truthify, type_ids)
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
 EXPORT = ROOT / 'decompile-results' / 'full_export' / 'src'
 APPLY = '--apply' in sys.argv
+FILES_FILTER = None
+for _a in sys.argv:
+    if _a.startswith('--files='):
+        FILES_FILTER = [
+            str(Path(x.strip()).as_posix()) if Path(x.strip()).is_absolute()
+            else Path(x.strip()).as_posix().replace('\\', '/')
+            for x in _a.split('=', 1)[1].split(',') if x.strip()]
+    elif _a == '--files':
+        idx = sys.argv.index(_a)
+        if idx + 1 < len(sys.argv):
+            FILES_FILTER = [
+                Path(x.strip()).as_posix().replace('\\', '/')
+                for x in sys.argv[idx + 1].split(',') if x.strip()]
 
 ADDR_LINE = re.compile(r'^//\s*0x([0-9A-Fa-f]{6,8})\s*$')
 BLOCK_HEAD = re.compile(r'^// =+$')
@@ -64,35 +96,16 @@ for p in sorted(EXPORT.glob('*.cpp')):
 
 print('fresh pseudocode blocks:', len(pseudo))
 
-
-DEC_NEWDEL = re.compile(r'\b__(2_YAPAXI_Z|3_YAXPAX_Z)\s*\(')
-
-
-def dec_newdel(code):
-    return DEC_NEWDEL.sub(
-        lambda m: ('RA2_OPNEW(' if m.group(1).startswith('2_')
-                   else 'RA2_OPDEL('), code)
-
-
-IDA_VOCAB_RE = re.compile(
-    r'\b(BYTE[0-8]|WORD[0-7]|LOWORD|HIWORD|LOBYTE|HIBYTE|LODWORD|HIDWORD|SHIWORD|SLOBYTE|SHLOBYTE|SLODWORD|SHIDWORD|SWORD0|SWORD1|SWORD2|SWORD3|SWWORD'
-    r'|__PAIR16__|__PAIR32__|__PAIR64__)\(')
-
-
-def ida_vocab(code):
-    """IDA bitfield macros -> IDA_-prefixed forms (ida_compat.h).
-
-    <winnt.h> defines LOBYTE/BYTE1/... with different semantics and rvalue-
-    only shapes; IDA bodies use them as lvalues, so the raw names must never
-    win — everything goes through the IDA_* spellings."""
-    return IDA_VOCAB_RE.sub(lambda m: 'IDA_' + m.group(1) + '(', code)
-
-
-TYPE_ID = re.compile(r'([ \s(\*&<>,]|^)#(\d+)')
-
-
-def type_ids(code):
-    return TYPE_ID.sub(lambda m: m.group(1) + 'void', code)
+target_files = None
+if FILES_FILTER:
+    target_files = set()
+    for rel in FILES_FILTER:
+        ap = ROOT / rel
+        if not ap.exists():
+            print('FATAL: --files entry does not exist: %s' % rel)
+            sys.exit(2)
+        target_files.add(ap.resolve())
+    print('cohort filter: %d file(s)' % len(target_files))
 
 
 def body_from_pseudo(code):
@@ -118,9 +131,12 @@ def body_from_pseudo(code):
 
 
 manifest = {}
-tot_rep = tot_keep = 0
+unresolved = {}
+tot_rep = tot_keep = tot_unres = 0
 for p in sorted(SRC.rglob('*.cpp')):
     if '_generated' in str(p):
+        continue
+    if target_files is not None and p.resolve() not in target_files:
         continue
     try:
         lines = p.read_text(encoding='latin-1').split('\n')
@@ -156,10 +172,26 @@ for p in sorted(SRC.rglob('*.cpp')):
             i += 1
             continue
         code = pseudo.get(addr)
-        if code:
-            code = type_ids(dec_newdel(ida_vocab(code)))
-        new_body = body_from_pseudo(code) if code else None
         rel = str(p.relative_to(ROOT)).replace('\\', '/')
+        if code:
+            # RC1: extract the RAW body first; refusal verdicts reference
+            # IDA's original vocabulary; truth-ification runs on the body
+            # only (never the signature line).
+            raw_body = body_from_pseudo(code)
+            refusals = find_refusals(raw_body) if raw_body else {}
+            if refusals:
+                manifest['%X' % addr] = {
+                    'file': rel, 'action': 'unresolved',
+                    'reason': 'untruth-ifiable IDA constructs (RC1 policy)',
+                    'patterns': refusals}
+                unresolved['0x%X' % addr] = {
+                    'file': rel, 'patterns': refusals}
+                tot_unres += 1
+                i = k + 1
+                continue
+            new_body = type_ids(truthify(raw_body)) if raw_body else None
+        else:
+            new_body = None
         if new_body is None:
             manifest['%X' % addr] = {'file': rel, 'action': 'kept',
                                      'reason': 'no fresh pseudocode'}
@@ -254,11 +286,29 @@ for p in sorted(SRC.rglob('*.cpp')):
 
 print('bodies replaced:', tot_rep)
 print('bodies kept (no fresh code):', tot_keep)
+print('bodies UNRESOLVED (refused, RC1 policy):', tot_unres)
 manifest['_meta'] = {'replaced': tot_rep, 'kept': tot_keep,
-                     'apply': APPLY}
+                     'unresolved': tot_unres, 'apply': APPLY,
+                     'files_filter': FILES_FILTER,
+                     'policy': 'rc1-truthify-or-refuse'}
+if tot_unres:
+    rpt_dir = ROOT / '.omo' / 'unresolved_reports'
+    rpt_dir.mkdir(parents=True, exist_ok=True)
+    rpt = rpt_dir / 'regen_bodies.unresolved.json'
+    rpt.write_text(json.dumps({
+        '_meta': {'generator': 'regen_bodies_from_export.py',
+                  'policy': 'rc1-truthify-or-refuse', 'apply': APPLY,
+                  'files_filter': FILES_FILTER, 'total': tot_unres},
+        'unresolved': unresolved}, indent=1), encoding='utf-8')
+    print('UNRESOLVED REPORT: %s (%d functions refused)' % (rpt, tot_unres))
+    print('FAIL LOUD: exit 1 -- resolve the constructs upstream or land them'
+          ' via a policy-sanctioned path.')
 if APPLY:
-    (ROOT / '.omo' / 'regen_bodies_manifest.json').write_text(
+    man_name = ('regen_bodies_manifest.cohort.json' if FILES_FILTER
+                else 'regen_bodies_manifest.json')
+    (ROOT / '.omo' / man_name).write_text(
         json.dumps(manifest, indent=1), encoding='utf-8')
-    print('manifest written')
+    print('manifest written: .omo/%s' % man_name)
 else:
     print('DRY RUN (use --apply)')
+sys.exit(1 if tot_unres else 0)

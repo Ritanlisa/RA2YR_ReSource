@@ -11,9 +11,14 @@ if(WIN32)
 # /MP: enable multi-process MSVC compilation (parallel translation units)
 endif()
 
-# IDA Hex-Rays pseudocode vocabulary (bitfield macros, qmemcpy, ...) forced
-# into every TU: regen_bodies_from_export lands IDA output verbatim as bodies.
-# /FI runs before every source; header is self-contained.
+# Core compat layer (src/core/ida_compat.h), force-included into every TU.
+# RC1 (plan project-optimization.md #8): the header is SHRUNK to true-
+# semantics surface only (typedefs, register pseudo-vars, true-math
+# intrinsics, generated externs). The IDA pseudocode vocabulary is NO
+# LONGER defined here: tools/csp_export/_ida_vocab.py truth-ifies it
+# inline at generation time, and any legacy dirty body still using the old
+# vocabulary is a COMPILE ERROR -- dirty generator output can no longer
+# compile silently.
 if(WIN32)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /FI\"${CMAKE_SOURCE_DIR}/src/core/ida_compat.h\"")
 endif()
