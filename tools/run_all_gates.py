@@ -34,6 +34,12 @@ gates = [
     ("fail-closed",    ["tools/check_fail_closed.py"]),
     ("code-standards", ["tools/check_translated_functions.py"]),
     ("ida-artifact",   ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
+    # RC2 (project-optimization #9): HARD gate over generated/mechanical
+    # code, independent of ida_compat.h. Rejects shim-vocabulary tokens,
+    # placeholder member accesses, malformed sub_XXX defs, raw pointer
+    # casts, plus cross-table naming pollution (ratcheted baseline in
+    # tools/quality_gate_baseline.json). No e4 exemption, scans all src/**.
+    ("generated-quality", ["tools/check_generated_quality.py"]),
     ("oo-translation", ["tools/check_oo_translation.py"]),
     # exec-flow worker count: measured per-worker steady RSS is ~2.5GB
     # (signals.json + member_lookup.json parsed per spawn worker), so 4
