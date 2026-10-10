@@ -1,0 +1,4515 @@
+{
+ "_meta": {
+  "source": "decompile-results/full_export/src (asm-trace comments)",
+  "rule": "INIClass__* call + key push + member store-back paired with default load (Read*_Overwrite semantics)",
+  "stats": {
+   "anonymous_fn": 356,
+   "beyond_layout": 71,
+   "extracted": 328,
+   "ini_calls": 1867,
+   "keyed": 1027,
+   "local_store": 39,
+   "no_default_pair": 92,
+   "no_key": 484,
+   "no_store": 497
+  },
+  "unknown_class_samples": {},
+  "classes": 18,
+  "members": 316,
+  "weak_multi_downgraded": {
+   "GameSettings.Options": 8,
+   "GameSettings.Video": 5,
+   "ScenarioClass.Header": 6,
+   "ScenarioClass.Basic": 10
+  }
+ },
+ "classes": {
+  "AircraftTypeClass": {
+   "3580": {
+    "key": "Carryall",
+    "name": "Carryall",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CCAA",
+      "store-only"
+     ]
+    ]
+   },
+   "3588": {
+    "key": "SpawnDelay",
+    "name": "SpawnDelay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CD49",
+      "store-only"
+     ]
+    ]
+   },
+   "3592": {
+    "key": "Rotors",
+    "name": "Rotors",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CCCD",
+      "store-only"
+     ]
+    ]
+   },
+   "3593": {
+    "key": "CustomRotor",
+    "name": "CustomRotor",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CCEA",
+      "store-only"
+     ]
+    ]
+   },
+   "3594": {
+    "key": "Landable",
+    "name": "Landable",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CC5C",
+      "store-only"
+     ]
+    ]
+   },
+   "3595": {
+    "key": "FlyBy",
+    "name": "FlyBy",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CD63",
+      "store-only"
+     ]
+    ]
+   },
+   "3596": {
+    "key": "FlyBack",
+    "name": "FlyBack",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CD7D",
+      "store-only"
+     ]
+    ]
+   },
+   "3597": {
+    "key": "AirportBound",
+    "name": "AirportBound",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CC76",
+      "store-only"
+     ]
+    ]
+   },
+   "3598": {
+    "key": "Fighter",
+    "name": "Fighter",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AircraftTypeClass.cpp",
+      "0x41CC90",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "AnimTypeClass": {
+   "556": {
+    "key": "Theater",
+    "name": "Theater",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427DAF",
+      "store-only"
+     ]
+    ]
+   },
+   "567": {
+    "key": "NewTheater",
+    "name": "NewTheater",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427DCC",
+      "store-only"
+     ]
+    ]
+   },
+   "692": {
+    "key": "Damage",
+    "name": "Damage",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "Start"
+    ],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427FAF",
+      "store-only"
+     ]
+    ]
+   },
+   "696": {
+    "key": "LoopStart",
+    "name": "LoopStart",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427FFD",
+      "store-only"
+     ]
+    ]
+   },
+   "700": {
+    "key": "LoopEnd",
+    "name": "LoopEnd",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428017",
+      "store-only"
+     ]
+    ]
+   },
+   "708": {
+    "key": "LoopCount",
+    "name": "LoopCount",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428031",
+      "store-only"
+     ]
+    ]
+   },
+   "712": {
+    "key": "Next",
+    "name": "Next",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428059",
+      "store-only"
+     ]
+    ]
+   },
+   "724": {
+    "key": "DetailLevel",
+    "name": "DetailLevel",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428089",
+      "store-only"
+     ]
+    ]
+   },
+   "728": {
+    "key": "TranslucencyDetailLevel",
+    "name": "TranslucencyDetailLevel",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x4280A3",
+      "store-only"
+     ]
+    ]
+   },
+   "732": {
+    "key": "RandomLoopDelay",
+    "name": "RandomLoopDelay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x4280D4",
+      "store-only"
+     ]
+    ]
+   },
+   "748": {
+    "key": "Translucency",
+    "name": "Translucency",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x4280F9",
+      "store-only"
+     ]
+    ]
+   },
+   "756": {
+    "key": "SpawnCount",
+    "name": "SpawnCount",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x42821C",
+      "store-only"
+     ]
+    ]
+   },
+   "824": {
+    "key": "TiberiumSpawnType",
+    "name": "TiberiumSpawnType",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428292",
+      "store-only"
+     ]
+    ]
+   },
+   "828": {
+    "key": "TiberiumSpreadRadius",
+    "name": "TiberiumSpreadRadius",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x42826A",
+      "store-only"
+     ]
+    ]
+   },
+   "832": {
+    "key": "YSortAdjust",
+    "name": "YSortAdjust",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428147",
+      "store-only"
+     ]
+    ]
+   },
+   "844": {
+    "key": "MakeInfantry",
+    "name": "MakeInfantry",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x4281C4",
+      "store-only"
+     ]
+    ]
+   },
+   "853": {
+    "key": "IsVeins",
+    "name": "IsVeins",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428250",
+      "store-only"
+     ]
+    ]
+   },
+   "854": {
+    "key": "IsMeteor",
+    "name": "IsMeteor",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428236",
+      "store-only"
+     ]
+    ]
+   },
+   "855": {
+    "key": "TiberiumChainReaction",
+    "name": "TiberiumChainReaction",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427F61",
+      "store-only"
+     ]
+    ]
+   },
+   "856": {
+    "key": "IsTiberium",
+    "name": "IsTiberium",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x428113",
+      "store-only"
+     ]
+    ]
+   },
+   "857": {
+    "key": "HideIfNoOre",
+    "name": "HideIfNoOre",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x42812D",
+      "store-only"
+     ]
+    ]
+   },
+   "865": {
+    "key": "AltPalette",
+    "name": "AltPalette",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427E0F",
+      "store-only"
+     ]
+    ]
+   },
+   "866": {
+    "key": "Normalized",
+    "name": "Normalized",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427E77",
+      "store-only"
+     ]
+    ]
+   },
+   "872": {
+    "key": "DoubleThick",
+    "name": "DoubleThick",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427E29",
+      "store-only"
+     ]
+    ]
+   },
+   "873": {
+    "key": "Flat",
+    "name": "Flat",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427E43",
+      "store-only"
+     ]
+    ]
+   },
+   "874": {
+    "key": "Translucent",
+    "name": "Translucent",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427E91",
+      "store-only"
+     ]
+    ]
+   },
+   "875": {
+    "key": "Scorch",
+    "name": "Scorch",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427EAB",
+      "store-only"
+     ]
+    ]
+   },
+   "876": {
+    "key": "Flamer",
+    "name": "Flamer",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427E5D",
+      "store-only"
+     ]
+    ]
+   },
+   "877": {
+    "key": "Crater",
+    "name": "Crater",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427EC5",
+      "store-only"
+     ]
+    ]
+   },
+   "878": {
+    "key": "ForceBigCraters",
+    "name": "ForceBigCraters",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427EDF",
+      "store-only"
+     ]
+    ]
+   },
+   "879": {
+    "key": "Sticky",
+    "name": "Sticky",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427EF9",
+      "store-only"
+     ]
+    ]
+   },
+   "880": {
+    "key": "PingPong",
+    "name": "PingPong",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427F13",
+      "store-only"
+     ]
+    ]
+   },
+   "881": {
+    "key": "Reverse",
+    "name": "Reverse",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427F2D",
+      "store-only"
+     ]
+    ]
+   },
+   "882": {
+    "key": "Shadow",
+    "name": "Shadow",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427D3B",
+      "store-only"
+     ]
+    ]
+   },
+   "883": {
+    "key": "PsiWarning",
+    "name": "PsiWarning",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "AnimTypeClass.cpp",
+      "0x427F47",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "BulletTypeClass": {
+   "660": {
+    "key": "Airburst",
+    "name": "Airburst",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C193",
+      "store-only"
+     ]
+    ]
+   },
+   "661": {
+    "key": "Floater",
+    "name": "Floater",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46BFD9",
+      "store-only"
+     ]
+    ]
+   },
+   "662": {
+    "key": "SubjectToCliffs",
+    "name": "SubjectToCliffs",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46BFF3",
+      "store-only"
+     ]
+    ]
+   },
+   "663": {
+    "key": "SubjectToElevation",
+    "name": "SubjectToElevation",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C00D",
+      "store-only"
+     ]
+    ]
+   },
+   "664": {
+    "key": "SubjectToWalls",
+    "name": "SubjectToWalls",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C027",
+      "store-only"
+     ]
+    ]
+   },
+   "665": {
+    "key": "VeryHigh",
+    "name": "VeryHigh",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C041",
+      "store-only"
+     ]
+    ]
+   },
+   "666": {
+    "key": "Shadow",
+    "name": "Shadow",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C05B",
+      "store-only"
+     ]
+    ]
+   },
+   "667": {
+    "key": "Arcing",
+    "name": "Arcing",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46BFBF",
+      "store-only"
+     ]
+    ]
+   },
+   "668": {
+    "key": "Dropping",
+    "name": "Dropping",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C075",
+      "store-only"
+     ]
+    ]
+   },
+   "669": {
+    "key": "Level",
+    "name": "Level",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C08F",
+      "store-only"
+     ]
+    ]
+   },
+   "670": {
+    "key": "Inviso",
+    "name": "Inviso",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C0A9",
+      "store-only"
+     ]
+    ]
+   },
+   "671": {
+    "key": "Proximity",
+    "name": "Proximity",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C0C3",
+      "store-only"
+     ]
+    ]
+   },
+   "672": {
+    "key": "Ranged",
+    "name": "Ranged",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C0DD",
+      "store-only"
+     ]
+    ]
+   },
+   "673": {
+    "key": "Rotates",
+    "name": "Rotates",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C26B",
+      "store-only"
+     ]
+    ]
+   },
+   "674": {
+    "key": "Inaccurate",
+    "name": "Inaccurate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C0F7",
+      "store-only"
+     ]
+    ]
+   },
+   "675": {
+    "key": "FlakScatter",
+    "name": "FlakScatter",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C111",
+      "store-only"
+     ]
+    ]
+   },
+   "678": {
+    "key": "Degenerates",
+    "name": "Degenerates",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C15F",
+      "store-only"
+     ]
+    ]
+   },
+   "679": {
+    "key": "Bouncy",
+    "name": "Bouncy",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C179",
+      "store-only"
+     ]
+    ]
+   },
+   "680": {
+    "key": "AnimPalette",
+    "name": "AnimPalette",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C3ED",
+      "store-only"
+     ]
+    ]
+   },
+   "681": {
+    "key": "FirersPalette",
+    "name": "FirersPalette",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C373",
+      "store-only"
+     ]
+    ]
+   },
+   "704": {
+    "key": "Vertical",
+    "name": "Vertical",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C359",
+      "store-only"
+     ]
+    ]
+   },
+   "720": {
+    "key": "Elasticity",
+    "name": "Elasticity",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46BF71",
+      "store-only"
+     ]
+    ]
+   },
+   "728": {
+    "key": "Trailer",
+    "name": "Trailer",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C219",
+      "store-only"
+     ]
+    ]
+   },
+   "740": {
+    "key": "SpawnDelay",
+    "name": "SpawnDelay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C249",
+      "store-only"
+     ]
+    ]
+   },
+   "748": {
+    "key": "Scalable",
+    "name": "Scalable",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C1C7",
+      "store-only"
+     ]
+    ]
+   },
+   "759": {
+    "key": "Flat",
+    "name": "Flat",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "BulletTypeClass.cpp",
+      "0x46C28D",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "GameSettings": {
+   "12": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA6FE",
+      "store-only"
+     ]
+    ]
+   },
+   "16": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA727",
+      "store-only"
+     ]
+    ]
+   },
+   "20": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA750",
+      "store-only"
+     ]
+    ]
+   },
+   "24": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA78C",
+      "store-only"
+     ]
+    ]
+   },
+   "29": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA7E1",
+      "store-only"
+     ]
+    ]
+   },
+   "30": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA818",
+      "store-only"
+     ]
+    ]
+   },
+   "31": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA84F",
+      "store-only"
+     ]
+    ]
+   },
+   "32": {
+    "key": "Options",
+    "name": "Options",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA886",
+      "store-only"
+     ]
+    ]
+   },
+   "36": {
+    "key": "Video",
+    "name": "Video",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA8BD",
+      "store-only"
+     ]
+    ]
+   },
+   "40": {
+    "key": "Video",
+    "name": "Video",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA8D8",
+      "store-only"
+     ]
+    ]
+   },
+   "52": {
+    "key": "Video",
+    "name": "Video",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA905",
+      "store-only"
+     ]
+    ]
+   },
+   "53": {
+    "key": "Video",
+    "name": "Video",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA951",
+      "store-only"
+     ]
+    ]
+   },
+   "54": {
+    "key": "Video",
+    "name": "Video",
+    "count": 2,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FA98B",
+      "store-only"
+     ],
+     [
+      "GameSettings.cpp",
+      "0x5FA9A8",
+      "store-only"
+     ]
+    ]
+   },
+   "68": {
+    "key": "Audio",
+    "name": "Audio",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FAB14",
+      "store-only"
+     ]
+    ]
+   },
+   "69": {
+    "key": "Audio",
+    "name": "Audio",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FAB92",
+      "store-only"
+     ]
+    ]
+   },
+   "70": {
+    "key": "Audio",
+    "name": "Audio",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "GameSettings.cpp",
+      "0x5FAB53",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "HouseClass": {
+   "464": {
+    "key": "IQ",
+    "name": "IQ",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500DA2",
+      "store-only"
+     ]
+    ]
+   },
+   "468": {
+    "key": "TechLevel",
+    "name": "TechLevel",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500B9B",
+      "store-only"
+     ]
+    ]
+   },
+   "476": {
+    "key": "Credits",
+    "name": "Credits",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500BB4",
+      "store-only"
+     ]
+    ]
+   },
+   "493": {
+    "key": "PlayerControl",
+    "name": "PlayerControl",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500BD6",
+      "store-only"
+     ]
+    ]
+   },
+   "22108": {
+    "key": "RatioAITriggerTeam",
+    "name": "RatioAITriggerTeam",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500D20",
+      "store-only"
+     ]
+    ]
+   },
+   "22112": {
+    "key": "RatioTeamAircraft",
+    "name": "RatioTeamAircraft",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500D39",
+      "store-only"
+     ]
+    ]
+   },
+   "22116": {
+    "key": "RatioTeamInfantry",
+    "name": "RatioTeamInfantry",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500D52",
+      "store-only"
+     ]
+    ]
+   },
+   "22120": {
+    "key": "RatioTeamUnits",
+    "name": "RatioTeamUnits",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseClass.cpp",
+      "0x500D6B",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "HouseTypeClass": {
+   "420": {
+    "key": "Prefix",
+    "name": "Prefix",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseTypeClass.cpp",
+      "0x51196B",
+      "store-only"
+     ]
+    ]
+   },
+   "421": {
+    "key": "Multiplay",
+    "name": "Multiplay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseTypeClass.cpp",
+      "0x511A70",
+      "store-only"
+     ]
+    ]
+   },
+   "422": {
+    "key": "MultiplayPassive",
+    "name": "MultiplayPassive",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseTypeClass.cpp",
+      "0x511A8A",
+      "store-only"
+     ]
+    ]
+   },
+   "423": {
+    "key": "WallOwner",
+    "name": "WallOwner",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseTypeClass.cpp",
+      "0x511AA4",
+      "store-only"
+     ]
+    ]
+   },
+   "424": {
+    "key": "SmartAI",
+    "name": "SmartAI",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "HouseTypeClass.cpp",
+      "0x511ABE",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "InfantryTypeClass": {
+   "3580": {
+    "key": "Pip",
+    "name": "Pip",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5240E3",
+      "store-only"
+     ]
+    ]
+   },
+   "3584": {
+    "key": "OccupyPip",
+    "name": "OccupyPip",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5240FD",
+      "store-only"
+     ]
+    ]
+   },
+   "3588": {
+    "key": "OccupyWeapon",
+    "name": "OccupyWeapon",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524125",
+      "store-only"
+     ]
+    ]
+   },
+   "3616": {
+    "key": "EliteOccupyWeapon",
+    "name": "EliteOccupyWeapon",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x52415E",
+      "store-only"
+     ]
+    ]
+   },
+   "3756": {
+    "key": "Cyborg",
+    "name": "Cyborg",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5243B8",
+      "store-only"
+     ]
+    ]
+   },
+   "3757": {
+    "key": "NotHuman",
+    "name": "NotHuman",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5243D2",
+      "store-only"
+     ]
+    ]
+   },
+   "3758": {
+    "key": "Ivan",
+    "name": "Ivan",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5244C3",
+      "store-only"
+     ]
+    ]
+   },
+   "3760": {
+    "key": "DetectionDistance",
+    "name": "DetectionDistance",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524511",
+      "store-only"
+     ]
+    ]
+   },
+   "3764": {
+    "key": "Occupier",
+    "name": "Occupier",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5244DD",
+      "store-only"
+     ]
+    ]
+   },
+   "3765": {
+    "key": "Assaulter",
+    "name": "Assaulter",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5244F7",
+      "store-only"
+     ]
+    ]
+   },
+   "3768": {
+    "key": "HarvestRate",
+    "name": "HarvestRate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x52452B",
+      "store-only"
+     ]
+    ]
+   },
+   "3772": {
+    "key": "Fearless",
+    "name": "Fearless",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524475",
+      "store-only"
+     ]
+    ]
+   },
+   "3774": {
+    "key": "Infiltrate",
+    "name": "Infiltrate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5244A9",
+      "store-only"
+     ]
+    ]
+   },
+   "3775": {
+    "key": "Fraidycat",
+    "name": "Fraidycat",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x52448F",
+      "store-only"
+     ]
+    ]
+   },
+   "3776": {
+    "key": "TiberiumProof",
+    "name": "TiberiumProof",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524593",
+      "store-only"
+     ]
+    ]
+   },
+   "3778": {
+    "key": "C4",
+    "name": "C4",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524545",
+      "store-only"
+     ]
+    ]
+   },
+   "3779": {
+    "key": "Engineer",
+    "name": "Engineer",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524579",
+      "store-only"
+     ]
+    ]
+   },
+   "3780": {
+    "key": "Agent",
+    "name": "Agent",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5245AD",
+      "store-only"
+     ]
+    ]
+   },
+   "3781": {
+    "key": "Thief",
+    "name": "Thief",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5245C7",
+      "store-only"
+     ]
+    ]
+   },
+   "3782": {
+    "key": "VehicleThief",
+    "name": "VehicleThief",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5245E1",
+      "store-only"
+     ]
+    ]
+   },
+   "3783": {
+    "key": "Doggie",
+    "name": "Doggie",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x5245FB",
+      "store-only"
+     ]
+    ]
+   },
+   "3784": {
+    "key": "Deployer",
+    "name": "Deployer",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "InfantryTypeClass.cpp",
+      "0x524615",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "MissionClass": {
+   "24": {
+    "key": "AARate",
+    "name": "AARate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "MissionClass.cpp",
+      "0x5B38DD",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "ObjectTypeClass": {
+   "160": {
+    "key": "Strength",
+    "name": "Strength",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F94E2",
+      "store-only"
+     ]
+    ]
+   },
+   "488": {
+    "key": "NoSpawnAlt",
+    "name": "NoSpawnAlt",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9446",
+      "store-only"
+     ]
+    ]
+   },
+   "500": {
+    "key": "AmbientSound",
+    "name": "AmbientSound",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F93E4",
+      "store-only"
+     ]
+    ]
+   },
+   "529": {
+    "key": "AlternateArcticArt",
+    "name": "AlternateArcticArt",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9460",
+      "store-only"
+     ]
+    ]
+   },
+   "556": {
+    "key": "Theater",
+    "name": "Theater",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F95F4",
+      "store-only"
+     ]
+    ]
+   },
+   "557": {
+    "key": "Crushable",
+    "name": "Crushable",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9412",
+      "store-only"
+     ]
+    ]
+   },
+   "558": {
+    "key": "Bombable",
+    "name": "Bombable",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F942C",
+      "store-only"
+     ]
+    ]
+   },
+   "559": {
+    "key": "RadarInvisible",
+    "name": "RadarInvisible",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F947A",
+      "store-only"
+     ]
+    ]
+   },
+   "560": {
+    "key": "Selectable",
+    "name": "Selectable",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9494",
+      "store-only"
+     ]
+    ]
+   },
+   "561": {
+    "key": "LegalTarget",
+    "name": "LegalTarget",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F94AE",
+      "store-only"
+     ]
+    ]
+   },
+   "562": {
+    "key": "Insignificant",
+    "name": "Insignificant",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9516",
+      "store-only"
+     ]
+    ]
+   },
+   "563": {
+    "key": "Immune",
+    "name": "Immune",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F94FC",
+      "store-only"
+     ]
+    ]
+   },
+   "566": {
+    "key": "Voxel",
+    "name": "Voxel",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F962E",
+      "store-only"
+     ]
+    ]
+   },
+   "567": {
+    "key": "NewTheater",
+    "name": "NewTheater",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9611",
+      "store-only"
+     ]
+    ]
+   },
+   "568": {
+    "key": "HasRadialIndicator",
+    "name": "HasRadialIndicator",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9530",
+      "store-only"
+     ]
+    ]
+   },
+   "569": {
+    "key": "IgnoresFirestorm",
+    "name": "IgnoresFirestorm",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F956F",
+      "store-only"
+     ]
+    ]
+   },
+   "570": {
+    "key": "UseLineTrail",
+    "name": "UseLineTrail",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F9592",
+      "store-only"
+     ]
+    ]
+   },
+   "576": {
+    "key": "LineTrailColor",
+    "name": "LineTrailColor",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "LineTrailColorDecrement"
+    ],
+    "evidence": [
+     [
+      "ObjectTypeClass.cpp",
+      "0x5F95B4",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "OverlayTypeClass": {
+   "668": {
+    "key": "CellAnim",
+    "name": "CellAnim",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE88A",
+      "store-only"
+     ]
+    ]
+   },
+   "672": {
+    "key": "DamageLevels",
+    "name": "DamageLevels",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE8BE",
+      "store-only"
+     ]
+    ]
+   },
+   "676": {
+    "key": "Strength",
+    "name": "Strength",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE7C6",
+      "store-only"
+     ]
+    ]
+   },
+   "680": {
+    "key": "Wall",
+    "name": "Wall",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE7E0",
+      "store-only"
+     ]
+    ]
+   },
+   "681": {
+    "key": "Tiberium",
+    "name": "Tiberium",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE7FA",
+      "store-only"
+     ]
+    ]
+   },
+   "682": {
+    "key": "Crate",
+    "name": "Crate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE814",
+      "store-only"
+     ]
+    ]
+   },
+   "683": {
+    "key": "CrateTrigger",
+    "name": "CrateTrigger",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE82E",
+      "store-only"
+     ]
+    ]
+   },
+   "684": {
+    "key": "NoUseTileLandType",
+    "name": "NoUseTileLandType",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "RadarColor"
+    ],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE968",
+      "store-only"
+     ]
+    ]
+   },
+   "685": {
+    "key": "IsVeinholeMonster",
+    "name": "IsVeinholeMonster",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE982",
+      "store-only"
+     ]
+    ]
+   },
+   "686": {
+    "key": "IsVeins",
+    "name": "IsVeins",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE99C",
+      "store-only"
+     ]
+    ]
+   },
+   "688": {
+    "key": "Explodes",
+    "name": "Explodes",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE848",
+      "store-only"
+     ]
+    ]
+   },
+   "689": {
+    "key": "ChainReaction",
+    "name": "ChainReaction",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE9B6",
+      "store-only"
+     ]
+    ]
+   },
+   "690": {
+    "key": "Overrides",
+    "name": "Overrides",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE862",
+      "store-only"
+     ]
+    ]
+   },
+   "691": {
+    "key": "DrawFlat",
+    "name": "DrawFlat",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE9D0",
+      "store-only"
+     ]
+    ]
+   },
+   "692": {
+    "key": "IsRubble",
+    "name": "IsRubble",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FEA04",
+      "store-only"
+     ]
+    ]
+   },
+   "693": {
+    "key": "IsARock",
+    "name": "IsARock",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "OverlayTypeClass.cpp",
+      "0x5FE9EA",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "ParticleTypeClass": {
+   "672": {
+    "key": "XVelocity",
+    "name": "XVelocity",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x64521A",
+      "store-only"
+     ]
+    ]
+   },
+   "676": {
+    "key": "YVelocity",
+    "name": "YVelocity",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645234",
+      "store-only"
+     ]
+    ]
+   },
+   "680": {
+    "key": "MinZVelocity",
+    "name": "MinZVelocity",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x64524E",
+      "store-only"
+     ]
+    ]
+   },
+   "684": {
+    "key": "ZVelocityRange",
+    "name": "ZVelocityRange",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645268",
+      "store-only"
+     ]
+    ]
+   },
+   "712": {
+    "key": "ColorList",
+    "name": "ColorList",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x644FA7",
+      "store-only"
+     ]
+    ]
+   },
+   "732": {
+    "key": "MaxDC",
+    "name": "MaxDC",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x644FF5",
+      "store-only"
+     ]
+    ]
+   },
+   "736": {
+    "key": "MaxEC",
+    "name": "MaxEC",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x64500F",
+      "store-only"
+     ]
+    ]
+   },
+   "744": {
+    "key": "Damage",
+    "name": "Damage",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645029",
+      "store-only"
+     ]
+    ]
+   },
+   "748": {
+    "key": "StartFrame",
+    "name": "StartFrame",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x64507C",
+      "store-only"
+     ]
+    ]
+   },
+   "752": {
+    "key": "NumLoopFrames",
+    "name": "NumLoopFrames",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645096",
+      "store-only"
+     ]
+    ]
+   },
+   "756": {
+    "key": "Translucency",
+    "name": "Translucency",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x6450B0",
+      "store-only"
+     ]
+    ]
+   },
+   "760": {
+    "key": "WindEffect",
+    "name": "WindEffect",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x6450CA",
+      "store-only"
+     ]
+    ]
+   },
+   "772": {
+    "key": "Deacc",
+    "name": "Deacc",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "Radius"
+    ],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645108",
+      "store-only"
+     ]
+    ]
+   },
+   "776": {
+    "key": "DeleteOnStateLimit",
+    "name": "DeleteOnStateLimit",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x64513C",
+      "store-only"
+     ]
+    ]
+   },
+   "777": {
+    "key": "EndStateAI",
+    "name": "EndStateAI",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645157",
+      "store-only"
+     ]
+    ]
+   },
+   "778": {
+    "key": "StartStateAI",
+    "name": "StartStateAI",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x645172",
+      "store-only"
+     ]
+    ]
+   },
+   "779": {
+    "key": "StateAIAdvance",
+    "name": "StateAIAdvance",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x64518D",
+      "store-only"
+     ]
+    ]
+   },
+   "780": {
+    "key": "FinalDamageState",
+    "name": "FinalDamageState",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x6452F9",
+      "store-only"
+     ]
+    ]
+   },
+   "781": {
+    "key": "Translucent25State",
+    "name": "Translucent25State",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x6451C5",
+      "store-only"
+     ]
+    ]
+   },
+   "782": {
+    "key": "Translucent50State",
+    "name": "Translucent50State",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x6451A9",
+      "store-only"
+     ]
+    ]
+   },
+   "783": {
+    "key": "Normalized",
+    "name": "Normalized",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ParticleTypeClass.cpp",
+      "0x6451DF",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "RulesClass": {
+   "28": {
+    "key": "Buildable",
+    "name": "Buildable",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "FloatBeach"
+    ],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674216",
+      "store-only"
+     ]
+    ]
+   },
+   "84": {
+    "key": "BarrelExplode",
+    "name": "BarrelExplode",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D6BF",
+      "store-only"
+     ]
+    ]
+   },
+   "116": {
+    "key": "BarrelParticle",
+    "name": "BarrelParticle",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D7F5",
+      "store-only"
+     ]
+    ]
+   },
+   "148": {
+    "key": "Wake",
+    "name": "Wake",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D86F",
+      "store-only"
+     ]
+    ]
+   },
+   "152": {
+    "key": "NukeTakeOff",
+    "name": "NukeTakeOff",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D831",
+      "store-only"
+     ]
+    ]
+   },
+   "1036": {
+    "key": "TurnRate",
+    "name": "TurnRate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674407",
+      "store-only"
+     ]
+    ]
+   },
+   "1040": {
+    "key": "Speed",
+    "name": "Speed",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674427",
+      "store-only"
+     ]
+    ]
+   },
+   "1056": {
+    "key": "Climb",
+    "name": "Climb",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "CruiseHeight"
+    ],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x67444E",
+      "store-only"
+     ]
+    ]
+   },
+   "1080": {
+    "key": "WobbleDeviation",
+    "name": "WobbleDeviation",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "WobblesPerSecond"
+    ],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6744D9",
+      "store-only"
+     ]
+    ]
+   },
+   "3980": {
+    "key": "NukeWarhead",
+    "name": "NukeWarhead",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x668FFF",
+      "store-only"
+     ]
+    ]
+   },
+   "3984": {
+    "key": "NukeProjectile",
+    "name": "NukeProjectile",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66903E",
+      "store-only"
+     ]
+    ]
+   },
+   "3988": {
+    "key": "NukeDown",
+    "name": "NukeDown",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66907C",
+      "store-only"
+     ]
+    ]
+   },
+   "3992": {
+    "key": "MutateWarhead",
+    "name": "MutateWarhead",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6690BB",
+      "store-only"
+     ]
+    ]
+   },
+   "3996": {
+    "key": "MutateExplosionWarhead",
+    "name": "MutateExplosionWarhead",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6690FA",
+      "store-only"
+     ]
+    ]
+   },
+   "4000": {
+    "key": "EMPulseWarhead",
+    "name": "EMPulseWarhead",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x669138",
+      "store-only"
+     ]
+    ]
+   },
+   "4004": {
+    "key": "EMPulseProjectile",
+    "name": "EMPulseProjectile",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x669177",
+      "store-only"
+     ]
+    ]
+   },
+   "5172": {
+    "key": "MaxIQLevels",
+    "name": "MaxIQLevels",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674277",
+      "store-only"
+     ]
+    ]
+   },
+   "5176": {
+    "key": "SuperWeapons",
+    "name": "SuperWeapons",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674297",
+      "store-only"
+     ]
+    ]
+   },
+   "5180": {
+    "key": "Production",
+    "name": "Production",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6742B6",
+      "store-only"
+     ]
+    ]
+   },
+   "5184": {
+    "key": "GuardArea",
+    "name": "GuardArea",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6742D6",
+      "store-only"
+     ]
+    ]
+   },
+   "5188": {
+    "key": "RepairSell",
+    "name": "RepairSell",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6742F6",
+      "store-only"
+     ]
+    ]
+   },
+   "5192": {
+    "key": "AutoCrush",
+    "name": "AutoCrush",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674315",
+      "store-only"
+     ]
+    ]
+   },
+   "5200": {
+    "key": "ContentScan",
+    "name": "ContentScan",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674355",
+      "store-only"
+     ]
+    ]
+   },
+   "5204": {
+    "key": "Aircraft",
+    "name": "Aircraft",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674374",
+      "store-only"
+     ]
+    ]
+   },
+   "5208": {
+    "key": "Harvester",
+    "name": "Harvester",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x674394",
+      "store-only"
+     ]
+    ]
+   },
+   "5212": {
+    "key": "SellBack",
+    "name": "SellBack",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x6743B4",
+      "store-only"
+     ]
+    ]
+   },
+   "6148": {
+    "key": "RadDurationMultiple",
+    "name": "RadDurationMultiple",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66CFB1",
+      "store-only"
+     ]
+    ]
+   },
+   "6152": {
+    "key": "RadApplicationDelay",
+    "name": "RadApplicationDelay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66CFD1",
+      "store-only"
+     ]
+    ]
+   },
+   "6156": {
+    "key": "RadLevelMax",
+    "name": "RadLevelMax",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66CFF0",
+      "store-only"
+     ]
+    ]
+   },
+   "6160": {
+    "key": "RadLevelDelay",
+    "name": "RadLevelDelay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D010",
+      "store-only"
+     ]
+    ]
+   },
+   "6164": {
+    "key": "RadLightDelay",
+    "name": "RadLightDelay",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D030",
+      "store-only"
+     ]
+    ]
+   },
+   "6196": {
+    "key": "RadSiteWarhead",
+    "name": "RadSiteWarhead",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D0FE",
+      "store-only"
+     ]
+    ]
+   },
+   "6200": {
+    "key": "ElevationIncrement",
+    "name": "ElevationIncrement",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D183",
+      "store-only"
+     ]
+    ]
+   },
+   "6224": {
+    "key": "AlliedWallTransparency",
+    "name": "AlliedWallTransparency",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "RulesClass.cpp",
+      "0x66D223",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "ScenarioClass": {
+   "4396": {
+    "key": "Header",
+    "name": "Header",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689EC3",
+      "store-only"
+     ]
+    ]
+   },
+   "4400": {
+    "key": "Header",
+    "name": "Header",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689EE1",
+      "store-only"
+     ]
+    ]
+   },
+   "4404": {
+    "key": "Header",
+    "name": "Header",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689EFF",
+      "store-only"
+     ]
+    ]
+   },
+   "4408": {
+    "key": "Header",
+    "name": "Header",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689F1D",
+      "store-only"
+     ]
+    ]
+   },
+   "4412": {
+    "key": "Header",
+    "name": "Header",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689F3B",
+      "store-only"
+     ]
+    ]
+   },
+   "4580": {
+    "key": "Header",
+    "name": "Header",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689F59",
+      "store-only"
+     ]
+    ]
+   },
+   "5172": {
+    "key": "AltNextScenario",
+    "name": "AltNextScenario",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "Intro"
+    ],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x689FF4",
+      "store-only"
+     ]
+    ]
+   },
+   "5176": {
+    "key": "Brief",
+    "name": "Brief",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A02A",
+      "store-only"
+     ]
+    ]
+   },
+   "5184": {
+    "key": "Lose",
+    "name": "Lose",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A066",
+      "store-only"
+     ]
+    ]
+   },
+   "5188": {
+    "key": "Action",
+    "name": "Action",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A084",
+      "store-only"
+     ]
+    ]
+   },
+   "5192": {
+    "key": "PostScore",
+    "name": "PostScore",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A0A2",
+      "store-only"
+     ]
+    ]
+   },
+   "5196": {
+    "key": "PreMapSelect",
+    "name": "PreMapSelect",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A0C0",
+      "store-only"
+     ]
+    ]
+   },
+   "5200": {
+    "key": "Name",
+    "name": "Name",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x686DE7",
+      "store-only"
+     ]
+    ]
+   },
+   "7296": {
+    "key": "CarryOverCap",
+    "name": "CarryOverCap",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A1B2",
+      "store-only"
+     ]
+    ]
+   },
+   "7300": {
+    "key": "Percent",
+    "name": "Percent",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A2A2",
+      "store-only"
+     ]
+    ]
+   },
+   "13477": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A248",
+      "store-only"
+     ]
+    ]
+   },
+   "13484": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A11A",
+      "store-only"
+     ]
+    ]
+   },
+   "13485": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A0FC",
+      "store-only"
+     ]
+    ]
+   },
+   "13486": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A1D0",
+      "store-only"
+     ]
+    ]
+   },
+   "13487": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A1EE",
+      "store-only"
+     ]
+    ]
+   },
+   "13488": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A20C",
+      "store-only"
+     ]
+    ]
+   },
+   "13489": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A22A",
+      "store-only"
+     ]
+    ]
+   },
+   "13490": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A266",
+      "store-only"
+     ]
+    ]
+   },
+   "13492": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A284",
+      "store-only"
+     ]
+    ]
+   },
+   "13500": {
+    "key": "Basic",
+    "name": "Basic",
+    "count": 1,
+    "confidence": "weak-multi",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A0DE",
+      "store-only"
+     ]
+    ]
+   },
+   "13520": {
+    "key": "StartingDropships",
+    "name": "StartingDropships",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x68A2C0",
+      "store-only"
+     ]
+    ]
+   },
+   "13724": {
+    "key": "InitTime",
+    "name": "InitTime",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "ScenarioClass.cpp",
+      "0x686C25",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "TerrainTypeClass": {
+   "664": {
+    "key": "Foundation",
+    "name": "Foundation",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71DF79",
+      "store-only"
+     ]
+    ]
+   },
+   "672": {
+    "key": "AnimationRate",
+    "name": "AnimationRate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71E047",
+      "store-only"
+     ]
+    ]
+   },
+   "680": {
+    "key": "AnimationProbability",
+    "name": "AnimationProbability",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "TemperateOccupationBits"
+    ],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71E066",
+      "store-only"
+     ]
+    ]
+   },
+   "684": {
+    "key": "SnowOccupationBits",
+    "name": "SnowOccupationBits",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71E09A",
+      "store-only"
+     ]
+    ]
+   },
+   "688": {
+    "key": "WaterBound",
+    "name": "WaterBound",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71DF22",
+      "store-only"
+     ]
+    ]
+   },
+   "689": {
+    "key": "SpawnsTiberium",
+    "name": "SpawnsTiberium",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71DF3C",
+      "store-only"
+     ]
+    ]
+   },
+   "690": {
+    "key": "IsFlammable",
+    "name": "IsFlammable",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71DF56",
+      "store-only"
+     ]
+    ]
+   },
+   "691": {
+    "key": "IsAnimated",
+    "name": "IsAnimated",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71E02D",
+      "store-only"
+     ]
+    ]
+   },
+   "692": {
+    "key": "IsVeinhole",
+    "name": "IsVeinhole",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TerrainTypeClass.cpp",
+      "0x71DEF6",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "TiberiumClass": {
+   "156": {
+    "key": "Spread",
+    "name": "Spread",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TiberiumClass.cpp",
+      "0x721A8B",
+      "store-only"
+     ]
+    ]
+   },
+   "168": {
+    "key": "Growth",
+    "name": "Growth",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TiberiumClass.cpp",
+      "0x721AC6",
+      "store-only"
+     ]
+    ]
+   },
+   "184": {
+    "key": "GrowthPercentage",
+    "name": "GrowthPercentage",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "Value"
+    ],
+    "evidence": [
+     [
+      "TiberiumClass.cpp",
+      "0x721AE7",
+      "store-only"
+     ]
+    ]
+   },
+   "188": {
+    "key": "Power",
+    "name": "Power",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TiberiumClass.cpp",
+      "0x721B1B",
+      "store-only"
+     ]
+    ]
+   },
+   "224": {
+    "key": "Image",
+    "name": "Image",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "TiberiumClass.cpp",
+      "0x721C49",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "UnitTypeClass": {
+   "3596": {
+    "key": "Passive",
+    "name": "Passive",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747829",
+      "store-only"
+     ]
+    ]
+   },
+   "3597": {
+    "key": "CrateGoodie",
+    "name": "CrateGoodie",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747660",
+      "store-only"
+     ]
+    ]
+   },
+   "3598": {
+    "key": "Harvester",
+    "name": "Harvester",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7476AE",
+      "store-only"
+     ]
+    ]
+   },
+   "3599": {
+    "key": "Weeder",
+    "name": "Weeder",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7476C8",
+      "store-only"
+     ]
+    ]
+   },
+   "3602": {
+    "key": "DeployToFire",
+    "name": "DeployToFire",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x74767A",
+      "store-only"
+     ]
+    ]
+   },
+   "3603": {
+    "key": "IsSimpleDeployer",
+    "name": "IsSimpleDeployer",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747694",
+      "store-only"
+     ]
+    ]
+   },
+   "3604": {
+    "key": "IsTilter",
+    "name": "IsTilter",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x74771A",
+      "store-only"
+     ]
+    ]
+   },
+   "3605": {
+    "key": "UseTurretShadow",
+    "name": "UseTurretShadow",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7477D3",
+      "store-only"
+     ]
+    ]
+   },
+   "3606": {
+    "key": "TooBigToFitUnderBridge",
+    "name": "TooBigToFitUnderBridge",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x74775F",
+      "store-only"
+     ]
+    ]
+   },
+   "3607": {
+    "key": "CanBeach",
+    "name": "CanBeach",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x74785D",
+      "store-only"
+     ]
+    ]
+   },
+   "3608": {
+    "key": "SmallVisceroid",
+    "name": "SmallVisceroid",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747877",
+      "store-only"
+     ]
+    ]
+   },
+   "3609": {
+    "key": "LargeVisceroid",
+    "name": "LargeVisceroid",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747891",
+      "store-only"
+     ]
+    ]
+   },
+   "3610": {
+    "key": "CarriesCrate",
+    "name": "CarriesCrate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747734",
+      "store-only"
+     ]
+    ]
+   },
+   "3611": {
+    "key": "NonVehicle",
+    "name": "NonVehicle",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7478AB",
+      "store-only"
+     ]
+    ]
+   },
+   "3612": {
+    "key": "StandingFrames",
+    "name": "StandingFrames",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7478DC",
+      "store-only"
+     ]
+    ]
+   },
+   "3616": {
+    "key": "DeathFrames",
+    "name": "DeathFrames",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7478F9",
+      "store-only"
+     ]
+    ]
+   },
+   "3620": {
+    "key": "DeathFrameRate",
+    "name": "DeathFrameRate",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747916",
+      "store-only"
+     ]
+    ]
+   },
+   "3624": {
+    "key": "StartStandFrame",
+    "name": "StartStandFrame",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747A29",
+      "store-only"
+     ]
+    ]
+   },
+   "3628": {
+    "key": "StartWalkFrame",
+    "name": "StartWalkFrame",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747A46",
+      "store-only"
+     ]
+    ]
+   },
+   "3632": {
+    "key": "StartFiringFrame",
+    "name": "StartFiringFrame",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747A63",
+      "store-only"
+     ]
+    ]
+   },
+   "3636": {
+    "key": "StartDeathFrame",
+    "name": "StartDeathFrame",
+    "count": 1,
+    "confidence": "paired",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747A80",
+      "paired"
+     ]
+    ]
+   },
+   "3640": {
+    "key": "MaxDeathCounter",
+    "name": "MaxDeathCounter",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x747A9D",
+      "store-only"
+     ]
+    ]
+   },
+   "3644": {
+    "key": "Facings",
+    "name": "Facings",
+    "count": 1,
+    "confidence": "paired",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x74795C",
+      "paired"
+     ]
+    ]
+   },
+   "3676": {
+    "key": "WalkFrames",
+    "name": "WalkFrames",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x7477F1",
+      "store-only"
+     ]
+    ]
+   },
+   "3677": {
+    "key": "FiringFrames",
+    "name": "FiringFrames",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "UnitTypeClass.cpp",
+      "0x74780F",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "VoxelAnimTypeClass": {
+   "660": {
+    "key": "Normalized",
+    "name": "Normalized",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B08D",
+      "store-only"
+     ]
+    ]
+   },
+   "661": {
+    "key": "Translucent",
+    "name": "Translucent",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B0A7",
+      "store-only"
+     ]
+    ]
+   },
+   "664": {
+    "key": "ShareBarrelData",
+    "name": "ShareBarrelData",
+    "count": 2,
+    "confidence": "store-only",
+    "alt_keys": [
+     "VoxelIndex"
+    ],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B274",
+      "store-only"
+     ]
+    ]
+   },
+   "668": {
+    "key": "Duration",
+    "name": "Duration",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B178",
+      "store-only"
+     ]
+    ]
+   },
+   "720": {
+    "key": "IsMeteor",
+    "name": "IsMeteor",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B0DB",
+      "store-only"
+     ]
+    ]
+   },
+   "724": {
+    "key": "Spawns",
+    "name": "Spawns",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B207",
+      "store-only"
+     ]
+    ]
+   },
+   "728": {
+    "key": "SpawnCount",
+    "name": "SpawnCount",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B239",
+      "store-only"
+     ]
+    ]
+   },
+   "740": {
+    "key": "BounceAnim",
+    "name": "BounceAnim",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B33C",
+      "store-only"
+     ]
+    ]
+   },
+   "748": {
+    "key": "TrailerAnim",
+    "name": "TrailerAnim",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B3BA",
+      "store-only"
+     ]
+    ]
+   },
+   "752": {
+    "key": "Damage",
+    "name": "Damage",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B3E7",
+      "store-only"
+     ]
+    ]
+   },
+   "756": {
+    "key": "DamageRadius",
+    "name": "DamageRadius",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B401",
+      "store-only"
+     ]
+    ]
+   },
+   "764": {
+    "key": "AttachedSystem",
+    "name": "AttachedSystem",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B46C",
+      "store-only"
+     ]
+    ]
+   },
+   "768": {
+    "key": "IsTiberium",
+    "name": "IsTiberium",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "VoxelAnimTypeClass.cpp",
+      "0x74B0C1",
+      "store-only"
+     ]
+    ]
+   }
+  },
+  "WarheadTypeClass": {
+   "152": {
+    "key": "AmbientDamage",
+    "name": "AmbientDamage",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7720C1",
+      "store-only"
+     ]
+    ]
+   },
+   "156": {
+    "key": "Burst",
+    "name": "Burst",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7722C9",
+      "store-only"
+     ]
+    ]
+   },
+   "164": {
+    "key": "Damage",
+    "name": "Damage",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7722E3",
+      "store-only"
+     ]
+    ]
+   },
+   "180": {
+    "key": "Range",
+    "name": "Range",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772331",
+      "store-only"
+     ]
+    ]
+   },
+   "184": {
+    "key": "MinimumRange",
+    "name": "MinimumRange",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x77234B",
+      "store-only"
+     ]
+    ]
+   },
+   "272": {
+    "key": "OccupantAnim",
+    "name": "OccupantAnim",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7725B5",
+      "store-only"
+     ]
+    ]
+   },
+   "280": {
+    "key": "OpenToppedAnim",
+    "name": "OpenToppedAnim",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7725EE",
+      "store-only"
+     ]
+    ]
+   },
+   "304": {
+    "key": "IsSonic",
+    "name": "IsSonic",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7720DB",
+      "store-only"
+     ]
+    ]
+   },
+   "305": {
+    "key": "Spawner",
+    "name": "Spawner",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7720F5",
+      "store-only"
+     ]
+    ]
+   },
+   "306": {
+    "key": "LimboLaunch",
+    "name": "LimboLaunch",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x77210F",
+      "store-only"
+     ]
+    ]
+   },
+   "307": {
+    "key": "DecloakToFire",
+    "name": "DecloakToFire",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772129",
+      "store-only"
+     ]
+    ]
+   },
+   "308": {
+    "key": "CellRangefinding",
+    "name": "CellRangefinding",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772143",
+      "store-only"
+     ]
+    ]
+   },
+   "309": {
+    "key": "FireOnce",
+    "name": "FireOnce",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x77215D",
+      "store-only"
+     ]
+    ]
+   },
+   "310": {
+    "key": "NeverUse",
+    "name": "NeverUse",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772177",
+      "store-only"
+     ]
+    ]
+   },
+   "311": {
+    "key": "RevealOnFire",
+    "name": "RevealOnFire",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772191",
+      "store-only"
+     ]
+    ]
+   },
+   "312": {
+    "key": "TerrainFire",
+    "name": "TerrainFire",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7721AB",
+      "store-only"
+     ]
+    ]
+   },
+   "313": {
+    "key": "SabotageCursor",
+    "name": "SabotageCursor",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7721C5",
+      "store-only"
+     ]
+    ]
+   },
+   "314": {
+    "key": "MigAttackCursor",
+    "name": "MigAttackCursor",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7721DF",
+      "store-only"
+     ]
+    ]
+   },
+   "315": {
+    "key": "DisguiseFireOnly",
+    "name": "DisguiseFireOnly",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7721F9",
+      "store-only"
+     ]
+    ]
+   },
+   "316": {
+    "key": "DisguiseFakeBlinkTime",
+    "name": "DisguiseFakeBlinkTime",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x77227B",
+      "store-only"
+     ]
+    ]
+   },
+   "320": {
+    "key": "InfiniteMindControl",
+    "name": "InfiniteMindControl",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772213",
+      "store-only"
+     ]
+    ]
+   },
+   "321": {
+    "key": "FireWhileMoving",
+    "name": "FireWhileMoving",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x77222D",
+      "store-only"
+     ]
+    ]
+   },
+   "322": {
+    "key": "DrainWeapon",
+    "name": "DrainWeapon",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772247",
+      "store-only"
+     ]
+    ]
+   },
+   "323": {
+    "key": "FireInTransport",
+    "name": "FireInTransport",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772261",
+      "store-only"
+     ]
+    ]
+   },
+   "324": {
+    "key": "Suicide",
+    "name": "Suicide",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x772295",
+      "store-only"
+     ]
+    ]
+   },
+   "326": {
+    "key": "Supress",
+    "name": "Supress",
+    "count": 1,
+    "confidence": "store-only",
+    "alt_keys": [],
+    "evidence": [
+     [
+      "WarheadTypeClass.cpp",
+      "0x7722AF",
+      "store-only"
+     ]
+    ]
+   }
+  }
+ }
+}

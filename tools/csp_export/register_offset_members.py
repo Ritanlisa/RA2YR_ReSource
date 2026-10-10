@@ -361,16 +361,28 @@ print('members to upgrade:', len(upgrades))
 if '--align-ml' in sys.argv:
     # name-align member_lookup to the canon table (the rewriter emits canon
     # names into cpp; the verifier resolves via ml — they must agree)
+    # N1: alignment is placeholder-filling ONLY -- a semantic ml name is
+    # never overwritten by the canon value (and vice versa conflicts are a
+    # provenance matter, not an alignment side effect).  Existing `src`
+    # markers are preserved.
     import json as _json
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from _provenance import is_placeholder as _is_ph
     canon = _json.loads((ROOT / 'anchors' / 'csp_canon_members.json')
                         .read_text(encoding='utf-8'))
-    aligned = 0
+    aligned = refused_semantic = 0
     for cls, cc in canon.items():
         members = ml.setdefault(cls, {})
         names = mbn.setdefault(cls, {})
         for off, info in (cc.get('members') or {}).items():
             nm = info.get('name')
             if not nm:
+                continue
+            try:
+                if int(off) >= 2 ** 40:
+                    continue
+            except (TypeError, ValueError):
                 continue
             ent = members.get(off)
             if ent is None:
@@ -379,12 +391,18 @@ if '--align-ml' in sys.argv:
                 names[nm] = int(off)
                 aligned += 1
             elif ent.get('name') != nm:
-                old = ent.get('name')
-                ent['name'] = nm
-                names.pop(old, None)
-                names[nm] = int(off)
-                aligned += 1
-    print('ml names aligned to canon:', aligned)
+                if _is_ph(ent.get('name') or ''):
+                    old = ent.get('name')
+                    ent['name'] = nm
+                    if not ent.get('type'):
+                        ent['type'] = info.get('type')
+                    names.pop(old, None)
+                    names[nm] = int(off)
+                    aligned += 1
+                else:
+                    refused_semantic += 1
+    print('ml placeholders aligned to canon:', aligned,
+          '| semantic names protected:', refused_semantic)
     if APPLY and aligned:
         import json as _json
         (ROOT / 'tools' / 'member_lookup.json').write_text(

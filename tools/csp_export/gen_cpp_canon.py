@@ -289,6 +289,30 @@ PLACEHOLDER_RE = re.compile(r'^(vtable\d*|vt_?\d+|.*_field_0x[0-9A-Fa-f]+.*|fiel
 # mt offsets, 453 name conflicts, 176 sitting on adjudicated offsets).
 ADJUDICATED_SRC_RE = re.compile(r'adjudic|ctor[-_]adjud|g1[5-9]|write[-_]map', re.I)
 
+# N1: the single naming-provenance authority (anchors/name_provenance.json).
+# Its ini/yrpp/step6/git-history winners rank ABOVE the 4-tier base below;
+# the 4-tier base itself is unchanged for binary-evidence/auto decisions.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _provenance import (  # noqa: E402
+    RANK as PROV_RANK, load_provenance as _prov_load,
+    member_source_of as _prov_member,
+)
+_PROV = _prov_load()
+
+
+def _prov_winner(cc, o):
+    """Higher-than-binary provenance winner name for (cc, o) or None."""
+    pv = _prov_member(_PROV, cc, o)
+    if not pv:
+        return None
+    nm = pv.get('name') or ''
+    if not nm or PLACEHOLDER_RE.match(nm):
+        return None
+    if PROV_RANK.get(pv.get('source'), PROV_RANK['placeholder']) \
+            <= PROV_RANK['git-history']:
+        return nm
+    return None
+
 
 def _is_placeholder(n):
     return bool(PLACEHOLDER_RE.match(n or ''))
@@ -390,13 +414,20 @@ def build_members(cc):
         mlm = mlc.get(o) or {}
         mt_has_ev = bool(mo.get('evidence'))
         ml_adjudicated = bool(ADJUDICATED_SRC_RE.match(mlm.get('src') or ''))
-        # ---- name adjudication (4-tier precedence, mechanical) ----
+        # ---- name adjudication (6-tier precedence, N1 + 4-tier base) ----
+        # 0. name_provenance ini/yrpp/step6/git-history winners (N1 order:
+        #    INI reader key > YRpp > Step-6 > git history)
         # 1. member_types WITH evidence  = binary truth (member_set channel)
         # 2. member_lookup ADJUDICATED   = later evidence campaign result
         # 3. semantic name beats placeholder (either direction)
         # 4. fill order (db > til layouts > mt > mbn > ml) stands on ties
         nm = m['name']
-        if mo.get('name') and mt_has_ev:
+        prov_named = False
+        pw = _prov_winner(cc, o)
+        if pw:
+            nm = pw
+            prov_named = True
+        elif mo.get('name') and mt_has_ev:
             nm = mo['name']
         elif ml_adjudicated and mlm.get('name'):
             nm = mlm['name']
@@ -407,9 +438,10 @@ def build_members(cc):
                 nm = mo['name']  # both semantic: mt (CSP base) stands
         # ---- byte-noise filter: unnamed/unadjudicated unaligned offsets are
         # type_map byte-granularity observation residue, never a real member;
-        # the padding fill reconstructs the gap ----
+        # the padding fill reconstructs the gap (provenance-named members
+        # carry real evidence and are never byte noise) ----
         if (o % 4 and (not nm or _is_placeholder(nm)) and not mt_has_ev
-                and not ml_adjudicated and not in_vptr(o)):
+                and not ml_adjudicated and not prov_named and not in_vptr(o)):
             continue
         if in_vptr(o):
             k = vptr_offs.index(o) if o in vptr_offs else None

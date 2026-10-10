@@ -1555,21 +1555,62 @@ def tool_member_set(cls, offset, name, mtype, size=4, evidence="manual",
     """Mechanical evidence entry into the CSP member layer. Writes
     anchors/member_types.json (authoritative anchor, consumed by
     gen_cpp_canon as override) + tools/member_lookup.json + signals
-    _member_by_name sync. Run canon_regen afterwards."""
+    _member_by_name sync + anchors/name_provenance.json write-through
+    (N1: the single naming merge point). Run canon_regen afterwards.
+
+    N1 guard: an existing entry / provenance winner whose name outranks the
+    incoming one (priority ini>yrpp>step6>git-history>binary-evidence>auto)
+    is never overwritten -- overwrite=true only beats equal-or-lower ranks
+    (placeholders always yield)."""
     if not cls or not name:
         return {"error": "need cls and name"}
     try:
         off = int(str(offset), 0)
     except ValueError:
         return {"error": "offset must be int/0xNN"}
+    from csp_export._provenance import (RANK, load_provenance,
+                                        write_provenance, name_rank)
+    from csp_export.gen_name_provenance import marker_to_source
+
+    def _rank(nm, ev):
+        return name_rank(nm, marker_to_source(ev))
+
     mt_p = PROJECT_ROOT / "anchors" / "member_types.json"
     ml_p = PROJECT_ROOT / "tools" / "member_lookup.json"
     sp = PROJECT_ROOT / "signals.json"
     mt = json.loads(mt_p.read_text(encoding="utf-8"))
     key = "%s+0x%X" % (cls, off)
-    if key in mt and not overwrite:
-        return {"error": "entry exists", "key": key, "existing": mt[key],
-                "hint": "pass overwrite=true to replace (evidence beats stale)"}
+    prov = load_provenance()
+    pkey = "%s|%d" % (cls, off)
+    pv = (prov.get("members") or {}).get(pkey)
+    existing = mt.get(key)
+    if (existing or pv) and not overwrite:
+        return {"error": "entry exists", "key": key, "existing": existing,
+                "provenance_winner": pv,
+                "hint": ("pass overwrite=true to replace (higher-priority "
+                         "evidence beats lower)")}
+    if overwrite:
+        # N1: high-priority names are never displaced by low-priority ones
+        incoming_rank = _rank(name, evidence)
+        for label, ename, esrc in (
+                ("existing", (existing or {}).get("name"),
+                 (existing or {}).get("evidence")),
+                ("provenance", (pv or {}).get("name"),
+                 (pv or {}).get("source"))):
+            if not ename:
+                continue
+            old_rank = (name_rank(ename, marker_to_source(esrc))
+                        if label == "existing"
+                        else name_rank(ename, esrc))
+            if old_rank < incoming_rank:
+                return {"error": "provenance guard: higher-priority name "
+                                 "cannot be overwritten",
+                        "key": key, "guard": label,
+                        "existing_name": ename,
+                        "existing_rank": old_rank,
+                        "incoming_name": name,
+                        "incoming_rank": incoming_rank,
+                        "priority": RANK}
     entry = {"name": name, "type": mtype or "void*", "size": size,
              "confidence": "ANCHORED", "evidence": evidence}
     mt[key] = entry
@@ -1584,6 +1625,12 @@ def tool_member_set(cls, offset, name, mtype, size=4, evidence="manual",
     mbn = sig.setdefault("_member_by_name", {}).setdefault(cls, {})
     mbn[name] = off
     write_signals_atomic(sig)
+    # N1 write-through: provenance is the single merge point -- every
+    # accepted member_set is recorded with its source rank.
+    prov.setdefault("members", {})[pkey] = {
+        "name": name, "source": marker_to_source(evidence),
+        "note": "tool_member_set evidence=%r" % evidence}
+    write_provenance(prov, meta_extra={"last_writer": "tool_member_set"})
     return {"ok": True, "key": key, "entry": entry,
             "note": "run canon_regen to propagate into classes.hpp/members/"
                     "raw_decomp/bodies"}
