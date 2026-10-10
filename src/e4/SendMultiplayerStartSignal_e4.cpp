@@ -11,16 +11,16 @@
 #include "e4/e4_protos.h"
 
 // 0x5E23A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 LRESULT sub_5E23A0()
 {
   HWND Current; // eax
   HWND DlgItem; // eax
 
-  Current = Dialog::GetCurrent(); /*0x5e23a0*/
+  Current = (HWND)(Dialog::GetCurrent());
   DlgItem = GetDlgItem(Current, 1439); /*0x5e23ab*/
   return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x5e23c1*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x7A27D0

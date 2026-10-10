@@ -12,20 +12,22 @@
 #include "e4/classes/Object_e4.hpp"
 
 // 0x5361A0
-namespace gamemd {
-_DWORD * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
+namespace gamemd {  // G42.18 ns repair
+unsigned int * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
-  this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
-  *(_DWORD *)this->CommandClass = &(void*)(void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
-  return this->CommandClass; /*0x5361af*/
+
+  a2_2->CenterTeamCommand_field_00 = a2_2; /*0x5361a6*/
+  *(unsigned int *)a2_2->CommandClass = &CenterTeamCommandClass::`vftable'; /*0x5361a9*/
+  return a2_2->CommandClass; /*0x5361af*/
+
 }
 } // namespace gamemd
 // 0x5361C0
 namespace gamemd {
 char * CenterTeamCommand::AddRef()
 {
-  sprintf(&stru_A8EB00.?[2512], "TeamCenter_%d", *(_DWORD *)&this->m_1[3]); /*0x5361ce*/
-  return &stru_A8EB00.?[2512]; /*0x5361db*/
+  sprintf(&((unsigned int *)&stru_A8EB00)[2512], "TeamCenter_%d", *(unsigned int *)&this->m_1[3]); /*0x5361ce*/
+  return &((unsigned int *)&stru_A8EB00)[2512]; /*0x5361db*/
 }
 } // namespace gamemd
 // 0x5361E0
@@ -35,9 +37,9 @@ wchar_t * CenterTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *(const wchar_t **)&this->m_1[3]; /*0x5361e5*/
-  StringCSF = GetStringCSF(aTxtCenterTeam, 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
-  swprintf((wchar_t *const)&stru_A8EB00.?[2672], (const size_t)StringCSF, v3); /*0x536200*/
-  return (wchar_t *)&stru_A8EB00.?[2672]; /*0x53620d*/
+  v3 = *(const wchar_t **)&this-((unsigned int *)(>m_1))[3]; /*0x5361e5*/
+  StringCSF = GetStringCSF((wchar_t *)(aTxtCenterTeam), 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
+  swprintf((wchar_t *const)&((unsigned int *)&stru_A8EB00)[2672], (const size_t)StringCSF, v3); /*0x536200*/
+  return (wchar_t *)&((unsigned int *)&stru_A8EB00)[2672]; /*0x53620d*/
 }
 } // namespace gamemd

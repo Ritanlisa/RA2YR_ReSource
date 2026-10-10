@@ -8,10 +8,9 @@ namespace gamemd {
 struct FileStraw {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
 // --- flat members (END) ---
-    int Destructor();
-    int Open(int a2, char a3);
+    int Destructor(void *a1 = 0);
+    int Open(int a2, char a3, void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -14,25 +14,21 @@ struct VectorClass_ptr_VoxelAnimTypeClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector * Constructor_VectorClass_VoxelAnimTypeClass___(unsigned int * Block, char a2);  // 0x4F0B60
-    DynamicVector * Constructor_VectorClass_IsometricTileTypeClass___(unsigned int * Block, char a2);  // 0x4F0C00
-    int Get(void *a1_1);  // 0x4E8FC0
-    unsigned int Get(int a2);  // 0x4E8FF0
-    int Get(int a2, void *a2_2);  // 0x4E9010
+    DynamicVector *  Constructor_VectorClass_VoxelAnimTypeClass___(char a2);  // 0x4F0B60
+    DynamicVector *  Constructor_VectorClass_IsometricTileTypeClass___(char a2);  // 0x4F0C00
+    int Get(void *a1_1, void *a1 = 0);  // 0x4E8FC0
     void Destroy_0();  // 0x4E9020
-    unsigned int GetItemIndex_0(int a2);  // 0x4E9050
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x4EE6A0
-    char Release(int a2, unsigned int * a3);  // 0x4EE6E0
-    void Remove(void *a1_1);  // 0x4EE790
-    int GetSize(unsigned int * a2);  // 0x4EE7C0
-    unsigned int LoadTypeData(int a2);  // 0x4EE800
-    char SetCapacity(int a2, unsigned int * a3);  // 0x4EE820
-    int FindItemIndex(unsigned int * a2);  // 0x4EE8D0
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EEA80
-    int FindItemIndex_0(unsigned int * a2);  // 0x4EEB30
-    VectorClass_flat * Constructor_VectorClass_VoxelAnimTypeClass___(unsigned int * Block, char a2);  // 0x4F0B10
+    unsigned int  GetItemIndex_0(int a2);  // 0x4E9050
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EE6A0
+    char  Release(int a2, unsigned int * a3);  // 0x4EE6E0
+    void Remove(void *a1_1, void *a1 = 0);  // 0x4EE790
+    int  GetSize(unsigned int * a2);  // 0x4EE7C0
+    unsigned int  LoadTypeData(int a2);  // 0x4EE800
+    char  SetCapacity(int a2, unsigned int * a3);  // 0x4EE820
+    int  FindItemIndex(unsigned int * a2);  // 0x4EE8D0
+    char  SetCapacity_0(int a2, unsigned int * a3);  // 0x4EEA80
+    int  FindItemIndex_0(unsigned int * a2);  // 0x4EEB30
 };
 } // namespace gamemd

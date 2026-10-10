@@ -13,11 +13,11 @@ struct Rect {
     char Width[4];  // 0x8
     char Height[4];  // 0xC
 // --- flat members (END) ---
-    _DWORD * Construct(unsigned int *aP1, int aP2, int aP3);
+    unsigned int * Construct(unsigned int *aP1, int aP2, int aP3, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0);
     BOOL Inflate(LPRECT lprc, int dx, int dy);
     unsigned int * Set(int aP1, int aP2, int aP3, int aP4);
     int Union(LPRECT lprcDst, const RECT *lprcSrc1, const RECT *lprcSrc2);  // G57w10-S raw 0x00487F40 IUnknown 占位清除
-    int SetRedraw(char a2); // N_fix R5 supply (cache truth)
+    int SetRedraw(char a1);
 };
 
 } // namespace gamemd

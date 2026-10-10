@@ -923,7 +923,7 @@ extern int DataGlobal_B048D4;  // data: 0xB048D4
 extern int DataGlobal_B730E8;  // data: 0xB730E8
 extern int DataGlobal_B78160;  // data: 0xB78160  (WWMouseClass::processFrame -1 sentinel scalar)
 extern int Delimiter;  // data: 0x817F70
-extern int Destination;  // data: 0xA8B8E0
+extern int Destination[];  // data: 0xA8B8E0
 extern int Direction_X_Offsets;  // data: 0x89F688
 extern int Direction_Y_Offsets;  // data: 0x89F6A0
 extern int DSurface_Alternate;  // data: 0x887310
@@ -15779,3 +15779,5 @@ extern unsigned int unk_B76230;   // data: 0xB76230 (0x7A94FB)
 extern unsigned int dword_8367C8; // data: 0x8367C8 BuildingDebris 记录表基 (0x631D4C)
 extern unsigned int dword_820334; // data: 0x820334 剧场文件名指针表 (0x4B6C78)
 extern unsigned int dword_820324; // data: 0x820324 剧场文件名指针表 (0x4B6D3D)
+// ---- G29.5 generated declarations for residual MEMORY sites ----
+

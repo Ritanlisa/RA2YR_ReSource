@@ -21,13 +21,13 @@ struct INIEntry {
     unsigned int Value;  // 0x4
     INIEntry* Next;  // 0x8
 // --- flat members (END) ---
-    int Write3Bytes(void* a1, void* a2, void* a3);  // 0x474C20
-    int ReadColor(int a1, void* a2, void* a3, void* a4);  // 0x474C70
-    int ReadAbilities(int a1, void* a2, void* a3, int a4);  // 0x477640
-    int Write2Integers(void* a1, void* a2, void* a3);  // 0x5297E0
-    bool Exists();  // 0x679F40
-    int LookupByName();  // 0x74FEF0
-    int GetTechnoType(unsigned __int8 *a2, unsigned __int8 *a3);  // 0x476eb0 -- INIEntry::GetTechnoType
+    int  Write3Bytes(uint8_t * Block, char * a3, uint8_t * a4);  // 0x474C20
+    int  ReadColor(int a2, uint8_t * a3, uint8_t * a4, uint8_t * a5);  // 0x474C70
+    int  ReadAbilities(int a2, uint8_t * a3, uint8_t * a4, int a5);  // 0x477640
+    int  Write2Integers(uint8_t * Block, char * a3, unsigned int * a4);  // 0x5297E0
+    bool  Exists(uint8_t * a2, uint8_t * a3);  // 0x679F40
+    int LookupByName(void *a1 = 0);  // 0x74FEF0
+    int  GetTechnoType(uint8_t * a2, uint8_t * a3);  // 0x476eb0
 };
 
 } // namespace gamemd

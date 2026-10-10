@@ -10,12 +10,11 @@ namespace gamemd {
 struct NetworkAddress {
 // --- flat members (BEGIN) ---
     unsigned int m_IP;  // 0x0
-    unsigned int u32_4;  // 0x4
     unsigned short pad_06;  // 0x6
 // --- flat members (END) ---
-    static int Assign(void *aP0, void *aP1, int aP2, int aP3);  // 0x53ECE0 G42.33 b10 static-form sync
+    static int  Assign(unsigned int * a2, int a3, int16_t a4);  // 0x53ECE0
     void* m_Port;  // 0x0 (no offset truth)
-    unsigned int * Assign(unsigned int *a2, int a3, __int16 a4);  // G57w10-S raw 0x0053ECE0 IUnknown 占位清除
+    unsigned int * Assign(unsigned int *a2, int a3, int16_t a4);  // G57w10-S raw 0x0053ECE0 IUnknown 占位清除
 };
 #endif  // GAMEMD_G2_NetworkAddress_DEF
 

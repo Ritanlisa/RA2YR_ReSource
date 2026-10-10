@@ -13,14 +13,13 @@ struct VectorClass_ptr_SideClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int Get(int a2, void *a2_2);  // 0x4E8AD0
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x4EC560
-    char Release(int a2, unsigned int * a3);  // 0x4EC5A0
-    void Remove(void *a1_1);  // 0x4EC650
-    int GetSize(unsigned int * a2);  // 0x4EC680
-    unsigned int GetCapacity(int a2);  // 0x4EC6C0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F0250
+    int  Get(int a2, void *a1 = 0);  // 0x4E8AD0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EC560
+    char  Release(int a2, unsigned int * a3);  // 0x4EC5A0
+    void Remove(void *a1_1, void *a1 = 0);  // 0x4EC650
+    int  GetSize(unsigned int * a2);  // 0x4EC680
+    unsigned int  GetCapacity(int a2);  // 0x4EC6C0
+    VectorClass_flat *  QueryInterface(char a2);  // 0x4F0250
 };
 } // namespace gamemd

@@ -32,7 +32,7 @@ public:
     virtual ~SelectTeamCommand() = default;  // 0x536030
 
     // IDA 0x48B2A0 area
-    virtual _DWORD * Construct();  // 0x535FC0
+    virtual unsigned int * Construct();  // 0x535FC0
     virtual int32_t AddRef();  // 0x535FE0
     virtual int32_t Release();  // 0x536000
     // wrapper: delegates to SelectTeamCommand::Release at 0x536000
@@ -61,7 +61,7 @@ public:
     virtual ~AddTeamCommand() = default;  // 0x536120
 
     // IDA 0x48B2A0 area
-    virtual _DWORD * Construct();  // 0x5360B0
+    virtual unsigned int * Construct();  // 0x5360B0
     virtual int32_t AddRef();  // 0x5360D0
     virtual int32_t Release();  // 0x5360F0
     // wrapper: delegates to AddTeamCommand::Release at 0x5360F0
@@ -88,7 +88,7 @@ public:
     TauntCommandClass() = default;
     virtual ~TauntCommandClass() = default;  // 0x536300
 
-    virtual _DWORD * Construct();  // 0x536290
+    virtual unsigned int * Construct();  // 0x536290
     virtual int32_t AddRef();  // 0x5362B0
     virtual int32_t Release();  // 0x5362D0
     // wrapper: delegates to TauntCommandClass::Release at 0x5362D0
@@ -115,7 +115,7 @@ public:
     PageUserCommandClass() = default;
     virtual ~PageUserCommandClass() = default;  // 0x537E10
 
-    virtual _DWORD * Construct();  // 0x537DD0 (PageUserCommandClass real ctor, sets vftable)
+    virtual unsigned int * Construct();  // 0x537DD0 (PageUserCommandClass real ctor, sets vftable)
     virtual int32_t AddRef();  // 0x537DE0
     virtual int32_t Release();  // 0x537DF0
     // wrapper: delegates to PageUserCommandClass::Release at 0x537DF0
@@ -144,7 +144,7 @@ public:
     virtual ~DeleteCommandClass() = default;  // 0x537F50
 
     // wrapper: delegates to DeleteCommandClass::ddtor at 0x537F50
-    virtual _DWORD * Construct();
+    virtual unsigned int * Construct();
     virtual int32_t AddRef();  // 0x537F20
     virtual int32_t Release();  // 0x537F30
     // wrapper: delegates to DeleteCommandClass::Release at 0x537F30
@@ -173,7 +173,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CenterTeamCommand() = default;
 
-    virtual _DWORD * Construct();  // 0x5361A0
+    virtual unsigned int * Construct();  // 0x5361A0
     virtual int32_t AddRef();  // 0x5361C0
     virtual int32_t Release();  // 0x5361E0
     // wrapper: delegates to CenterTeamCommand::Release at 0x5361E0
@@ -198,7 +198,7 @@ public:
     ScreenCaptureCommandClass() = default;
     virtual ~ScreenCaptureCommandClass() = default;  // 0x537B60
 
-    virtual _DWORD * Constructor();  // 0x537B40
+    virtual unsigned int * Constructor();  // 0x537B40
     virtual int32_t AddRef();  // 0x537B50
     virtual wchar_t ddtor();  // 0x537B60
     // wrapper: delegates to ScreenCaptureCommandClass::ddtor at 0x537B60
@@ -218,7 +218,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CursorPositionCommandClass() = default;
 
-    virtual _DWORD * Constructor();  // 0x537E70
+    virtual unsigned int * Constructor();  // 0x537E70
     // wrapper: delegates to CursorPositionCommandClass::Constructor at 0x537E70
     virtual const char* GetName() const override;
     // wrapper: delegates to CursorPositionCommandClass::Constructor at 0x537E70
@@ -263,7 +263,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CursorAnim() = default;
 
-    virtual void Load(); // 0x6D1800
+    int Load(); // 0x6D1800
 
 };
 // 3 methods in IDA

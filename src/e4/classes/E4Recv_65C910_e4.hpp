@@ -10,6 +10,6 @@ struct E4Recv_65C910 {
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
     void* AbstractClass;  // 0x0 (no offset truth)
-    int sub_65C910(ObjectClass * aP1, int a3);  // 0x65C910
+    int  sub_65C910(int a2, int a3);  // 0x65C910
 };
 } // namespace gamemd

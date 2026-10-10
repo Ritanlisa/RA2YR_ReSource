@@ -8,20 +8,15 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 struct SlaveManagerClass_25 {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    int q008;  // 0x8
-    bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    int q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6B13B0
-    int Seek(int a2, void *a2_2, void *a3_1);  // 0x6B1400
-    char AddRef(int a2);  // 0x6B1470
-    char Release(int a2, unsigned int * a3);  // 0x6B15F0
-    int Read(unsigned int * a2, void *a2_2);  // 0x6B16A0
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x6B1980
-    unsigned int Write(int a2);  // 0x6B13E0
+    int  Seek(int a2);  // 0x6B1400
+    char  AddRef(int a2);  // 0x6B1470
+    char  Release(int a2, unsigned int * a3);  // 0x6B15F0
+    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x6B16A0
+    DynamicVector *  QueryInterface(char a2);  // 0x6B1980
+    unsigned int  Write(int a2);  // 0x6B13E0
 };
 } // namespace gamemd

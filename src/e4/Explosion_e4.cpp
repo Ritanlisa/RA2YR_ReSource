@@ -8,28 +8,30 @@
 #include "e4/classes/Event_e4.hpp"
 
 // 0x53DDA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char Explosion::RemoveItem(int a2, void *a2_2)
 {
+
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *((_DWORD *)a2_2 + 4); /*0x53dda0*/
+  v2 = *((unsigned int *)a2_2 + 4); /*0x53dda0*/
   v3 = a2_2; /*0x53dda3*/
   if ( a2_2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/
   v4 = v2 - 1; /*0x53ddab*/
-  *((_DWORD *)a2_2 + 4) = v4; /*0x53ddae*/
+  *((unsigned int *)a2_2 + 4) = v4; /*0x53ddae*/
   if ( a2_2 < v4 ) /*0x53ddb1*/
   {
     do /*0x53ddc4*/
     {
       ++v3; /*0x53ddb7*/
-      *(_DWORD *)(*((_DWORD *)a2_2 + 1) + 4 * v3 - 4) = *(_DWORD *)(*((_DWORD *)a2_2 + 1) + 4 * v3); /*0x53ddbb*/
+      *(unsigned int *)(*((unsigned int *)a2_2 + 1) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)a2_2 + 1) + 4 * v3); /*0x53ddbb*/
     }
-    while ( v3 < *((_DWORD *)a2_2 + 4) ); /*0x53ddc4*/
+    while ( v3 < *((unsigned int *)a2_2 + 4) ); /*0x53ddc4*/
   }
   return 1; /*0x53ddc9*/
+
 }
 } // namespace gamemd

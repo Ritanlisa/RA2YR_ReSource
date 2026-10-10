@@ -9,11 +9,7 @@ struct E4Recv_634360 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M16;  // 0x10
-    unsigned int q034;  // 0x34
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q153094;  // 0x153094
 // --- flat members (END) ---
-    BOOL sub_634360(int a2);  // 0x634360
+    BOOL  sub_634360(int a2);  // 0x634360
 };
 } // namespace gamemd

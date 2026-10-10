@@ -100,7 +100,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetIfChanged(int a1);  // 0x4F3A90
     // --- gap2 auto-generated stub declarations (END) ---
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
 };
 
 class Map
@@ -237,7 +237,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     virtual void Record(const char* event);
-    virtual void Clear();
+    int Clear();
 
     struct Entry
     {

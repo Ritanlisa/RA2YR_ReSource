@@ -9,15 +9,14 @@ namespace gamemd {
 #define GAMEMD_E4_OWNS_PROGRESSTIMER 1  // G42.36: order-independent pair
 struct ProgressTimer {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned int u32_4;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q010;  // 0x10
-    void* q014;  // 0x14
+
 // --- flat members (END) ---
-    void* GetValue(void *aP1);  // W19K4: widen out-param to void* per raw 0x41A581 receiver-first (&v4 untyped)
+    void* GetValue(void *aP1);
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
+    static double ProgressTimer_field_0x10(...);  // plateau: C2039/C3861 stub
+    static double ProgressTimer_field_0x14(...);  // plateau: C2039/C3861 stub
+    static double ProgressTimer_field_0x8(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_CORE_OWNS_PROGRESSTIMER
 

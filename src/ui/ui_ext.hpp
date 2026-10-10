@@ -131,7 +131,7 @@ class Menu
 {
 public:
     // IDA 0x48B2A0 area
-     void Reset();  // 0x4C6140
+     int Reset();  // 0x4C6140
 
     static int32_t  s_MenuState;    // 0x00
 };
@@ -455,7 +455,7 @@ public:
     uint8_t CheckListClass_field_0x48[4];
     uint8_t CheckListClass_field_0x4C[4];
     uint8_t CheckListClass_field_0x50[4];
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned int u32_16C;  // 0x16C
     unsigned int u32_174;  // 0x174
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
@@ -621,7 +621,7 @@ public:
     virtual void Hide();  // 0x4E1450
     virtual void Show();  // 0x4E1460
     virtual bool IsHidden();  // 0x4E1470
-    virtual void Constructor();  // 0x623340
+    void* Constructor();  // 0x623340
 
     uint8_t DialogControl_field_0x04[4];
     uint8_t DialogControl_field_0x08[4];
@@ -677,7 +677,7 @@ public:
     uint8_t DropListClass_field_0x50[4];
     unsigned int q02C;  // 0x2C
     unsigned int q0446;  // 0x446
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned int q030;  // 0x30
     unsigned int u32_BC;  // 0xBC
     unsigned int u32_C4;  // 0xC4
@@ -687,7 +687,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int KillFocus();  // 0x4B4FF0
     int GetItemData();  // 0x4B5010
     int AddItem();  // 0x4B50A0
-    int Open(char a2, _DWORD *a3, char *a4);  // 0x4B50C0
+    int Open(char a2, unsigned int *a3, char *a4);  // 0x4B50C0
     int RemoveItem(int a1, int a2);  // 0x4B54E0
     void OnKeyDown(void* a1);  // 0x4B5530
     int ScrollUp();  // 0x4B55B0
@@ -803,14 +803,14 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~InputManager() = default;
 
-    virtual unsigned int * FindBestHitElement(int a2, int a3); // 0x4E15A0 (G42.35: def truth _DWORD* thiscall 2-arg)
+    virtual unsigned int * FindBestHitElement(int a2, int a3); // 0x4E15A0 (G42.35: def truth unsigned int* thiscall 2-arg)
     virtual int ProcessEvents(); // 0x4E1640 (G42.35: def truth int thiscall)
     static unsigned int * FindBestHitElement(void *aP0, int aP1, int aP2);  // 0x4E15A0 G42.35 static-form sync (ui/supplied site 0x4E16DF)
     virtual void EnqueueInputEvent(); // 0x54F2F0 (member truth 4-arg thiscall)
     static char EnqueueInputEvent(void *aP0, unsigned short aP1, short aP2, short aP3, char aP4);  // 0x54F2F0 G42.35 static-form sync (ui/supplied sites 0x54FA0D+)
     virtual char PushInputEvent(int16_t a2); // 0x54F670 (G42.35 def truth)
     static char PushInputEvent(void *aP0, int16_t aP1);  // 0x54F670 G42.35 static-form sync (ui/supplied sites 0x54F996)
-    virtual int WndProc(HWND a1, UINT a2, WPARAM a3, unsigned int a4); // 0x54F790 (G42.35 def truth)
+    virtual int WndProc(HWND a1, UINT, WPARAM, unsigned int a4); // 0x54F790 (G42.35 def truth)
 
     uint8_t InputManager_field_0x04[4];
     uint8_t InputManager_field_0x08[4];

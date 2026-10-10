@@ -7,8 +7,7 @@ namespace gamemd {
 
 struct ShroudClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     int UpdateVisibility(int *aP1);
 };

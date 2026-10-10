@@ -28,7 +28,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int GetTechnoType(unsigned __int8 *a2, unsigned __int8 *a3);  // 0x476eb0 -- INIEntry::GetTechnoType
+    int GetTechnoType(uint8_t *a2, uint8_t *a3);  // 0x476eb0 -- INIEntry::GetTechnoType
     // === SYMBOL-ANCHOR (END) ===
 };
 
@@ -59,7 +59,7 @@ struct GenericList {
     unsigned int u32_14;  // ml offset 20
     unsigned int u32_18;  // ml offset 24
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    unsigned int * Constructor();  // 0x52ACE0  G42.34: ret sync to cache truth (_DWORD* __thiscall)
+    unsigned int * Constructor();  // 0x52ACE0  G42.34: ret sync to cache truth (unsigned int* __thiscall)
     // --- gap2 auto-generated stub declarations (END) ---
 };
 #endif  // GAMEMD_G2_GenericList_DEF
@@ -101,7 +101,7 @@ protected:
     uint32_t   unknown38;            // +0x2C
     uint32_t   INIClass_field_3C;            // +0x30
     int *      __pad_20;             // G42.34 T11: IDA til ptr member -- findSection truth 0x52AF00 writes *(uint*)__pad_20 = a8 and *(uint*)&__pad_20[4] = a6
-    unsigned int * __pad_0;          // G42.34 T11: IDA til ptr member -- ctor bodies write *(uint*)__pad_0 = vftable and return this->__pad_0 as _DWORD* (0x478220/0x477F40/0x52AF50 truth)
+    unsigned int * __pad_0;          // G42.34 T11: IDA til ptr member -- ctor bodies write *(uint*)__pad_0 = vftable and return this->__pad_0 as unsigned int* (0x478220/0x477F40/0x52AF50 truth)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* loadFile(int a1);  // 0x43ADC0
     int WriteDigest(int a1, int a2);  // 0x474430
@@ -181,7 +181,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    static int BinarySearchSection(void* aP1, void* a2);  // 0x526810 G57w15f3: static receiver-first per raw __thiscall (INIClass* this, unsigned __int8 *a2)
+    static int BinarySearchSection(void* aP1, void* a2);  // 0x526810 G57w15f3: static receiver-first per raw __thiscall (INIClass* this, uint8_t *a2)
     int GetKeyCount(int a1);  // 0x526960 -- INIClass::GetKeyCount
     int GetStringByIndex(int a1, int a2);  // 0x526cc0 -- INIClass::GetStringByIndex
     // === SYMBOL-ANCHOR (END) ===

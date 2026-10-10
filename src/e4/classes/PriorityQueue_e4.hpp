@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct PriorityQueue {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int Add(int aP1);
-    static int Pop(...);  // w16g4 C3861 static supply (raw 0x005AC960)
+    int Add(int aP1, void *a1 = 0, void *a2 = 0);
+    static int Pop(...);
 };
 
 } // namespace gamemd

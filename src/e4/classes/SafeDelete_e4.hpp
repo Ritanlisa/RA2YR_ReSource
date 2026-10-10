@@ -7,10 +7,9 @@ namespace gamemd {
 
 struct SafeDelete {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int Ptr();
+    int Ptr(void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -34,19 +34,18 @@ int Hash::InsertOrdered(void* table, const void* entry, int a2)
   int result; // eax
 
   result = (*(int (__thiscall **)(GScreenClass *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
-  if ( result ) /*0x4f441d*/
-
+  if ( (unsigned char)result ) /*0x4f441d*/
   {
-    result = 0; /*0x4f441f*/
+    (*((unsigned char *)&(result))) = 0; /*0x4f441f*/
   }
-  else if ( *(_DWORD *)&stru_A8EB00.?[880] ) /*0x4f442c*/
+  else if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] ) /*0x4f442c*/
   {
-    result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a2 + 16))(a2, *(_DWORD *)&stru_A8EB00.?[880]); /*0x4f4433*/
-    result = 1; /*0x4f4436*/
+    result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a2 + 16))(a2, *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880]); /*0x4f4433*/
+    (*((unsigned char *)&(result))) = 1; /*0x4f4436*/
   }
   else
   {
-    *(_DWORD *)&stru_A8EB00.?[880] = a2; /*0x4f443c*/
+    *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] = a2; /*0x4f443c*/
     return 1; /*0x4f4442*/
   }
   return result; /*0x4f4421*/
@@ -57,7 +56,7 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
   int *v5; // edi
   int v6; // ebx
 
-  this->q000[0] = 0; /*0x69d96f*/
+  this->__pad_0[0] = 0; /*0x69d96f*/
   SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
   a3 = a3; /*0x69d977*/
   if ( a3 ) /*0x69d97d*/
@@ -87,21 +86,21 @@ int SHA1::Compute(char *a2, int a1)
   int v4; // ebx
   unsigned int v5; // ebx
   int v6; // edx
-  unsigned __int16 v7; // cx
+  uint16_t v7; // cx
   int *p_SHA1_field_0x04; // ecx
   int v9; // esi
   unsigned int v10; // eax
   unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
   int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( a1->q000[0] ) /*0x69d9e9*/
-    qmemcpy(a1, &a1->u32_4, 0x14u); /*0x69d9fb*/
-  v3 = *((_DWORD *)a1 + 12); /*0x69d9fd*/
-  v4 = *((_DWORD *)a1 + 11); /*0x69da00*/
-  qmemcpy(v13, (char *)a1 + 52, sizeof(v13)); /*0x69da14*/
+  if ( a1->__pad_0[0] ) /*0x69d9e9*/
+    memcpy(a1, &a1->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
+  v3 = *((unsigned int *)a1 + 12); /*0x69d9fd*/
+  v4 = *((unsigned int *)a1 + 11); /*0x69da00*/
+  memcpy(v13, (char *)a1 + 52, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
-  *((_BYTE *)v13 + v3) = 0x80; /*0x69da29*/
-  qmemcpy(v12, a1 + 1, sizeof(v12)); /*0x69da2e*/
+  *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
+  memcpy(v12,(const void *)(a1 + 1), sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
     v6 = v3 + 1; /*0x69da6a*/
@@ -114,22 +113,22 @@ int SHA1::Compute(char *a2, int a1)
     v6 = 0; /*0x69da66*/
   }
   memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
-  v7 = ((v7) & 0xFFFFFF00u) | ((unsigned int)((8 * v5) >> 24) & 0xFFu); /*0x69da99*/
-  v7 = ((v7) & 0xFFFF00FFu) | (((unsigned int)(v5 >> 13) & 0xFFu) << 8); /*0x69da9e*/
+  (*((unsigned char *)&(v7))) = (8 * v5) >> 24; /*0x69da99*/
+  (*(((unsigned char *)&(v7)) + (sizeof(v7) - 1))) = v5 >> 13; /*0x69da9e*/
   v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
   SHA1::Transform(v13, v12); /*0x69dac3*/
-  qmemcpy(&a1->u32_4, v12, 0x14u); /*0x69dad6*/
-  p_SHA1_field_0x04 = &a1->u32_4; /*0x69dad8*/
+  memcpy(&a1->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
+  p_SHA1_field_0x04 = &a1->SHA1_field_0x04; /*0x69dad8*/
   v9 = 5; /*0x69dada*/
   do /*0x69db0b*/
   {
     v10 = *p_SHA1_field_0x04++; /*0x69dadf*/
     --v9; /*0x69db07*/
-    *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | (((((unsigned int)(v10) >> 16) & 0xFFFF) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+    *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | (((*(((unsigned short *)&(v10)) + 1)) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
-  a1->q000[0] = 1; /*0x69db18*/
-  qmemcpy(a1, &a1->u32_4, 0x14u); /*0x69db1c*/
+  a1->__pad_0[0] = 1; /*0x69db18*/
+  memcpy(a1, &a1->SHA1_field_0x04, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30
@@ -162,11 +161,11 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   unsigned int v26; // ebx
   int v27; // edx
   int result; // eax
-  _DWORD *v29; // [esp+10h] [ebp-160h]
+  unsigned int *v29; // [esp+10h] [ebp-160h]
   int v30; // [esp+14h] [ebp-15Ch]
   int v31; // [esp+18h] [ebp-158h]
-  _DWORD v32[5]; // [esp+1Ch] [ebp-154h] BYREF
-  _BYTE v33[8]; // [esp+30h] [ebp-140h] BYREF
+  unsigned int v32[5]; // [esp+1Ch] [ebp-154h] BYREF
+  unsigned char v33[8]; // [esp+30h] [ebp-140h] BYREF
   char v34; // [esp+38h] [ebp-138h] BYREF
 
   v2 = a1; /*0x69db30*/
@@ -174,11 +173,11 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   do /*0x69db76*/
   {
     v4 = *v2++; /*0x69db49*/
-    v5 = (((unsigned int)(v4) >> 24) & 0xFF) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
-    v4 = 0; /*0x69db69*/
-    (((v4) >> 8) & 0xFF) = (((v4) >> 16) & 0xFF); /*0x69db6b*/
+    v5 = (*(((unsigned char *)&(v4)) + (sizeof(v4) - 1))) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
+    (*((unsigned char *)&(v4))) = 0; /*0x69db69*/
+    (((unsigned char *)&(v4))[1]) = (((unsigned char *)&(v4))[2]); /*0x69db6b*/
     --v3; /*0x69db71*/
-    *(int *)((char *)v2 + v33 - (_BYTE *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
+    *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (uint16_t)v4 | v5; /*0x69db72*/
   }
   while ( v3 ); /*0x69db76*/
   v6 = (int *)&v34; /*0x69db78*/
@@ -194,13 +193,13 @@ int SHA1::Transform(int *a1, unsigned int *a2)
   }
   while ( v7 ); /*0x69dba2*/
   v11 = 0; /*0x69dbb4*/
-  qmemcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
+  memcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
   v12 = v32[1]; /*0x69dbb8*/
   v13 = v32[2]; /*0x69dbbc*/
   v14 = v32[3]; /*0x69dbc0*/
   v15 = v32[0]; /*0x69dbc4*/
   v31 = 0; /*0x69dbcc*/
-  v29 = v33; /*0x69dbd0*/
+  v29 = (unsigned int *)(v33); /*0x69dbd0*/
   do
   {
     if ( v11 >= 20 ) /*0x69dbd7*/
@@ -340,7 +339,7 @@ static const uint32_t crc32_table[256] = {
 
 // IDA 0x69E000: Compute
 // 0x4a1fb0
-uint32_t CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
+uint32_t CRC32::Compute(uint8_t *a1, int a2, int a3)
 {
   int v4; // edx
   unsigned int v5; // eax
@@ -353,7 +352,7 @@ uint32_t CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
     v6 = v4 + 1; /*0x4a1fbf*/
     do /*0x4a1fde*/
     {
-      v5 = CRC32_Table[*a1++ ^ (unsigned __int8)v5] ^ (v5 >> 8); /*0x4a1fda*/
+      v5 = CRC32_Table[*a1++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
       --v6; /*0x4a1fdd*/
     }
     while ( v6 ); /*0x4a1fde*/

@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x75A790
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char AnimSystem::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   int i; // edx
@@ -21,10 +21,10 @@ char AnimSystem::Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6
   {
     v1 = i >> 3; /*0x75a79e*/
     v2 = ~(1 << (i & 7)) & byte_B45BA8[i >> 3]; /*0x75a7a9*/
-    byte_B45BA8[v1] = v2; /*0x75a7af*/
+    ((unsigned int *)(byte_B45BA8))[v1] = v2; /*0x75a7af*/
   }
-  result = byte_B45BA8[0] | 0x40; /*0x75a7bd*/
-  byte_B45BA8[0] |= 0x40u; /*0x75a7bf*/
+  result = ((unsigned int *)(byte_B45BA8))[0] | 0x40; /*0x75a7bd*/
+  ((unsigned int *)(byte_B45BA8))[0] |= 0x40u; /*0x75a7bf*/
   return result; /*0x75a7bc*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -7,12 +7,9 @@ namespace gamemd {
 
 struct GameOptions {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
+
 // --- flat members (END) ---
-    static int GetEntry();  // 0x777B50 raw: int GameOptions_GetEntry() [cdecl no-this]
+    static int GetEntry();
     char GameSpeedChanged();
     int __thiscall SaveLoad(int *a2);
 };

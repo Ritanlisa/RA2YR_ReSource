@@ -7,10 +7,10 @@
 #include "e4/e4_protos.h"
 
 // 0x4F4C20
-namespace gamemd {
-_BYTE * Byte::Zero()
+namespace gamemd {  // G42.18 ns repair
+unsigned char * Byte::Zero()
 {
-  IDA_LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/
-  return this; /*0x4f4c25*/
-}
+  (*((unsigned char *)&(this->Byte_field_00))) = 0; /*0x4f4c22*/
+  return (unsigned char *)(this); /*0x4f4c25*/
+}  // G42.18 ns repair
 } // namespace gamemd

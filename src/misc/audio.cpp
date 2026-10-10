@@ -41,8 +41,8 @@ int32_t VocClass::FindIndex(const char* pName)
     return -1; /*0x751515*/
   while ( 1 )
   {
-    v3 = (char *)**((_DWORD **)g_VocAudioConfig + v2); /*0x7514eb*/
-    v4 = v3 ? VocClass::GetSampleName(v3) : g_Str_Invalid_Voc;
+    v3 = (char *)**((unsigned int **)g_VocAudioConfig + v2); /*0x7514eb*/
+    v4 = (char *)(v3 ? VocClass::GetSampleName(v3) : g_Str_Invalid_Voc);
     if ( !_strcmpi((char *)pName, v4) ) /*0x7514ff*/
       break; /*0x7514ff*/
     if ( ++v2 >= g_VocPlayState ) /*0x751513*/

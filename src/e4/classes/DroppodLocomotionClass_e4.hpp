@@ -17,17 +17,6 @@ struct DroppodLocomotionClass {
     void* q1554;  // 0x1554
     void* q5188;  // 0x5188
     void* q5460;  // 0x5460
-    void* q21600;  // 0x21600
-    void* q133234;  // 0x133234
-    void* q136704;  // 0x136704
-    void* q19234870;  // 0x19234870
-    void* q421742704;  // 0x421742704
-    void* q422806914;  // 0x422806914
-    void* q1611704472694;  // 0x1611704472694
-    void* q1612096536630;  // 0x1612096536630
-    void* q388267565606448;  // 0x388267565606448
-    void* q254495664600278088;  // 0x254495664600278088
-    void* q687470288706016221574;  // 0x687470288706016221574
 // --- flat members (END) ---
 
     int Owner;  // 0x8 (canon-mt)
@@ -48,11 +37,13 @@ struct DropPodLocomotionClass {
     ILocomotion * Piggybackee;  // 0x2C (til int 4B; COM interface ptr semantics per H4 verdict)
 // --- methods (defs in e4/DroppodLocomotionClass_e4.cpp; sig=csp raw fn_4B.c) ---
     int ILoco_Process(DropPodLocomotionClass * a1);  // 0x4B5B70 vt+64
-    int ddtor(int a1, unsigned int * a2);  // 0x4B6200 vt+12
-    HRESULT BeginMove(DropPodLocomotionClass * a1, int * pStm);  // 0x4B6240 vt+20
-    HRESULT UpdateMovement(DropPodLocomotionClass * a1, int * pPStm, int a3);  // 0x4B62C0 vt+24
+    int  ddtor(unsigned int * a2);  // 0x4B6200
+    HRESULT  BeginMove(int * pStm);  // 0x4B6240
+    HRESULT  UpdateMovement(int * pPStm, int a3);  // 0x4B62C0
     int StubReturn48();  // 0x4B66E0 vt+36
-    void * ProcessMove(char a2);  // 0x4B66F0 vt+32
+    void *  ProcessMove(char a2);  // 0x4B66F0
+    static double Owner(...);  // plateau: C2039/C3861 stub
+    static double RefCount(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 } // namespace gamemd

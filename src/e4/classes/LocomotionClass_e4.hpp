@@ -10,11 +10,8 @@ struct LocomotionClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
-    unsigned int u32_8;  // 0x8
     FootClass* LinkedTo;  // 0xC
-    unsigned int u32_10;  // 0x10
     bool Dirty;  // 0x11
-    unsigned char u8_14;  // 0x14
 // --- flat members (END) ---
     LocomotionClass * ProcessMove(char a2);
     int CheckBridgeBlock();
@@ -22,9 +19,9 @@ struct LocomotionClass {
     int Initialize();
     int ProcessData();
     int Update(void *a1, void *a2, void *a3, void *a4);
-    int Init();
+    int Init(void *a1 = 0, void *a2 = 0);
     void * UpdateAll();
-    void Construct();
+    int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int Owner;  // 0x8 (ml)
     char Powered[1];  // 0x10 (ml)
     int RefCount;  // 0x14 (ml)
@@ -32,7 +29,7 @@ struct LocomotionClass {
     unsigned char __pad_89;  // 0x89 (offset-truth)
     unsigned char q015;  // 0x15 (offset-truth)
     bool q074;  // 0x74 (ml)
-    unsigned int u32_18;  // 0x18 (offset-truth)
+    void* ;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
@@ -55,6 +52,20 @@ struct LocomotionClass {
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
+    static double CurrentHeight(...);  // plateau: C2039/C3861 stub
+    static double DestinationCoords(...);  // plateau: C2039/C3861 stub
+    static double DestinationReached(...);  // plateau: C2039/C3861 stub
+    static double ILocomotion(...);  // plateau: C2039/C3861 stub
+    static double IsMoving(...);  // plateau: C2039/C3861 stub
+    static double Piggybackee(...);  // plateau: C2039/C3861 stub
+    static double TurnRate(...);  // plateau: C2039/C3861 stub
+    static double __pad_008(...);  // plateau: C2039/C3861 stub
+    static double __pad_010(...);  // plateau: C2039/C3861 stub
+    static double __pad_012(...);  // plateau: C2039/C3861 stub
+    static double __pad_74(...);  // plateau: C2039/C3861 stub
+    static double u32_50(...);  // plateau: C2039/C3861 stub
+    static double u32_54(...);  // plateau: C2039/C3861 stub
+    static double unknown_91(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

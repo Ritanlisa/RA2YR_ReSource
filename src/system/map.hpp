@@ -329,8 +329,8 @@ protected:
     int FreeAllCells();  // 0x565b00 -- MapClass::FreeAllCells
     void* InitAllCells();  // 0x565bc0 -- MapClass::InitAllCells
     int RevealArea0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x5673a0 -- MapClass::RevealArea0
-    void FillRevealBuffer(int a1, int a2);  // 0x5683c0 -- MapClass::FillRevealBuffer
-    void ApplyOverlayReveal(int a1, int a2);  // 0x5687f0 -- MapClass::ApplyOverlayReveal
+    int FillRevealBuffer(int a1, int a2);  // 0x5683c0 -- MapClass::FillRevealBuffer
+    int ApplyOverlayReveal(int a1, int a2);  // 0x5687f0 -- MapClass::ApplyOverlayReveal
     int PostProcessReveal(int a1);  // 0x568bb0 -- MapClass::PostProcessReveal
     int DecompressCellData(int a1);  // 0x56b3f0 -- MapClass::DecompressCellData
     int GetTileIndex(int a1, int a2, int a3);  // 0x56d230 -- MapClass::GetTileIndex

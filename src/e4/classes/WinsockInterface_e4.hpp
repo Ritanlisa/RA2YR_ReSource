@@ -9,221 +9,29 @@
 namespace gamemd {
 struct WinsockInterface {
 // --- flat members (BEGIN) ---
-    void * ptr_4;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_1C;  // 0x1C
-    unsigned int u32_2C;  // 0x2C
-    unsigned int u32_38;  // 0x38
-    unsigned int u32_48;  // 0x48
-    unsigned int u32_5C;  // 0x5C
-    unsigned int u32_60;  // 0x60
-    unsigned int u32_98;  // 0x98
-    unsigned int u32_12C;  // 0x12C
-    unsigned int q150;  // 0x150
-    unsigned int u32_164;  // 0x164
-    unsigned int u32_17C;  // 0x17C
-    unsigned int u32_1C0;  // 0x1C0
-    unsigned int u32_254;  // 0x254
-    unsigned int u32_2E8;  // 0x2E8
-    unsigned int q300;  // 0x300
-    unsigned int q338;  // 0x338
-    unsigned int q380;  // 0x380
-    unsigned int u32_3AC;  // 0x3AC
-    unsigned int u32_3B4;  // 0x3B4
-    unsigned int u32_3B8;  // 0x3B8
-    unsigned int u32_3BC;  // 0x3BC
-    unsigned int u32_3C0;  // 0x3C0
-    unsigned int u32_3D0;  // 0x3D0
-    unsigned int u32_3D4;  // 0x3D4
-    unsigned int u32_3D8;  // 0x3D8
-    unsigned int q448;  // 0x448
-    unsigned int q744;  // 0x744
-    unsigned int q768;  // 0x768
-    unsigned int q824;  // 0x824
-    unsigned int q940;  // 0x940
-    unsigned int q948;  // 0x948
-    unsigned int q960;  // 0x960
-    unsigned int q980;  // 0x980
-    unsigned int q984;  // 0x984
-    unsigned int u32_DF0;  // 0xDF0
-    unsigned int u32_EE0;  // 0xEE0
-    unsigned int q1430;  // 0x1430
-    unsigned int q1860;  // 0x1860
-    unsigned int q2054;  // 0x2054
-    unsigned int q2084;  // 0x2084
-    unsigned int q2198;  // 0x2198
-    unsigned int q2368;  // 0x2368
-    unsigned int q2390;  // 0x2390
-    unsigned int q2400;  // 0x2400
-    unsigned int q3568;  // 0x3568
-    unsigned int q3808;  // 0x3808
-    unsigned int q5168;  // 0x5168
-    unsigned int q6240;  // 0x6240
-    unsigned int q6294;  // 0x6294
-    unsigned int u32_64D4;  // 0x64D4
-    unsigned int q8324;  // 0x8324
-    unsigned int q8600;  // 0x8600
-    unsigned int q9064;  // 0x9064
-    unsigned int q9078;  // 0x9078
-    unsigned int q9104;  // 0x9104
-    unsigned int q9250;  // 0x9250
-    unsigned int q9270;  // 0x9270
-    unsigned int q14344;  // 0x14344
-    unsigned int u32_1935C;  // 0x1935C
-    unsigned int q20840;  // 0x20840
-    unsigned int q33398;  // 0x33398
-    unsigned int q33570;  // 0x33570
-    unsigned int q34304;  // 0x34304
-    unsigned int q36964;  // 0x36964
-    unsigned int q36984;  // 0x36984
-    unsigned int q37124;  // 0x37124
-    unsigned int q37398;  // 0x37398
-    unsigned int q37478;  // 0x37478
-    unsigned int q37488;  // 0x37488
-    unsigned char u8_3F068;  // 0x3F068
-    unsigned int u32_3F06C;  // 0x3F06C
-    unsigned int q79474;  // 0x79474
-    unsigned int q92518;  // 0x92518
-    unsigned int q103260;  // 0x103260
-    unsigned int q133184;  // 0x133184
-    unsigned int q151890;  // 0x151890
-    unsigned int q152118;  // 0x152118
-    unsigned int q153618;  // 0x153618
-    unsigned int q210288;  // 0x210288
-    unsigned int q210290;  // 0x210290
-    unsigned int q213764;  // 0x213764
-    unsigned int q223588;  // 0x223588
-    unsigned int q223620;  // 0x223620
-    unsigned int q226200;  // 0x226200
-    unsigned int q226390;  // 0x226390
-    unsigned int q226424;  // 0x226424
-    unsigned int q226440;  // 0x226440
-    unsigned int q534358;  // 0x534358
-    unsigned int q599320;  // 0x599320
-    unsigned int q1257860;  // 0x1257860
-    unsigned int q1382544;  // 0x1382544
-    unsigned int q1384728;  // 0x1384728
-    unsigned int q1390104;  // 0x1390104
-    unsigned int q2163344;  // 0x2163344
-    unsigned int q2176868;  // 0x2176868
-    unsigned int q2241928;  // 0x2241928
-    unsigned int q2242080;  // 0x2242080
-    unsigned int q2250098;  // 0x2250098
-    unsigned int q2253860;  // 0x2253860
-    unsigned int q2253888;  // 0x2253888
-    unsigned char q2457938;  // 0x2457938
-    unsigned int q5456728;  // 0x5456728
-    unsigned int q5870368;  // 0x5870368
-    unsigned int q19232864;  // 0x19232864
-    unsigned int q20465448;  // 0x20465448
-    unsigned int q20513028;  // 0x20513028
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q35009348;  // 0x35009348
-    unsigned int q35088488;  // 0x35088488
-    unsigned int q35920168;  // 0x35920168
-    unsigned int q35922048;  // 0x35922048
-    unsigned int q35992338;  // 0x35992338
-    unsigned char q38107448;  // 0x38107448
-    unsigned int q38107458;  // 0x38107458
-    unsigned int q75564418;  // 0x75564418
-    unsigned int q387405414;  // 0x387405414
-    unsigned int q421734500;  // 0x421734500
-    unsigned int q541419378;  // 0x541419378
-    unsigned int q541480008;  // 0x541480008
-    unsigned int q889750664;  // 0x889750664
-    unsigned int q898761064;  // 0x898761064
-    unsigned int q898768968;  // 0x898768968
-    unsigned int q899126294;  // 0x899126294
-    unsigned int q899232610;  // 0x899232610
-    unsigned int q899233430;  // 0x899233430
-    unsigned int q899233590;  // 0x899233590
-    unsigned char q940602440;  // 0x940602440
-    unsigned int q1968587800;  // 0x1968587800
-    unsigned int q2286109810;  // 0x2286109810
-    unsigned int q22570074120;  // 0x22570074120
-    unsigned int q22583776854;  // 0x22583776854
-    unsigned int q36516995330;  // 0x36516995330
-    unsigned int q36660511058;  // 0x36660511058
-    unsigned int q36665886308;  // 0x36665886308
-    unsigned int q36917612644;  // 0x36917612644
-    unsigned int q36917643624;  // 0x36917643624
-    unsigned int q36927857300;  // 0x36927857300
-    unsigned int q36928955920;  // 0x36928955920
-    unsigned int q36928959888;  // 0x36928959888
-    unsigned char q39734748224;  // 0x39734748224
-    unsigned int q156078601030;  // 0x156078601030
-    unsigned int q2359816569120;  // 0x2359816569120
-    unsigned int q3732705727280;  // 0x3732705727280
-    unsigned int q3738324984584;  // 0x3738324984584
-    unsigned int q3749898692164;  // 0x3749898692164
-    unsigned int q3750169506560;  // 0x3750169506560
-    unsigned int q3750187325728;  // 0x3750187325728
-    unsigned int q3750187341110;  // 0x3750187341110
-    unsigned int q3750187341960;  // 0x3750187341960
-    unsigned char q3947954995748;  // 0x3947954995748
-    unsigned int q18215568738130;  // 0x18215568738130
-    unsigned int q22550592759058;  // 0x22550592759058
-    unsigned int q356826207171330;  // 0x356826207171330
-    unsigned int q388226446627910;  // 0x388226446627910
-    unsigned int q621872696281218;  // 0x621872696281218
-    unsigned int q971036362437248;  // 0x971036362437248
-    unsigned int q971428040484870;  // 0x971428040484870
-    unsigned int q971428040484950;  // 0x971428040484950
-    unsigned int q971432022001028;  // 0x971432022001028
-    unsigned int q972623673108534;  // 0x972623673108534
-    unsigned int q973073852425568;  // 0x973073852425568
-    unsigned int q973074353772328;  // 0x973074353772328
-    unsigned int q973074353887584;  // 0x973074353887584
-    unsigned char q1007673761421128;  // 0x1007673761421128
-    unsigned int q6792050149392688;  // 0x6792050149392688
-    unsigned int q9663631628537944;  // 0x9663631628537944
-    unsigned int q9939862146798130;  // 0x9939862146798130
-    unsigned int q240522987648258864;  // 0x240522987648258864
-    unsigned int q254491193019365648;  // 0x254491193019365648
-    unsigned int q441782838256734744;  // 0x441782838256734744
-    unsigned int q441783164189885490;  // 0x441783164189885490
-    unsigned int q441971279847905094;  // 0x441971279847905094
-    unsigned int q680398137311381840;  // 0x680398137311381840
-    unsigned int q680895907142718824;  // 0x680895907142718824
-    unsigned int q680895954407596840;  // 0x680895954407596840
-    unsigned int q1155005316996403590;  // 0x1155005316996403590
-    unsigned int q7463033035587921544;  // 0x7463033035587921544
-    unsigned int q11041003438949892400;  // 0x11041003438949892400
-    unsigned int q664452812406725642340;  // 0x664452812406725642340
-    unsigned int q687470288687827670600;  // 0x687470288687827670600
-    unsigned int q1256072819367807046800;  // 0x1256072819367807046800
-    unsigned int q1256211887070555164820;  // 0x1256211887070555164820
-    unsigned int q1918720483828242683030;  // 0x1918720483828242683030
-    unsigned int q1918971495035384121174;  // 0x1918971495035384121174
-    unsigned int q1919079943005747120164;  // 0x1919079943005747120164
-    unsigned int q1919079948306098819970;  // 0x1919079948306098819970
-    unsigned int q1919079948309058696514;  // 0x1919079948309058696514
-    unsigned int q34351310588650699494724;  // 0x34351310588650699494724
-    unsigned int q77981742711710451714130;  // 0x77981742711710451714130
-    unsigned int q80355171025265267123200;  // 0x80355171025265267123200
-    unsigned int q22166920160758621519610514;  // 0x22166920160758621519610514
-    unsigned int q22167398780533645298255904;  // 0x22167398780533645298255904
-    unsigned int q30339269227405040516469108;  // 0x30339269227405040516469108
-    unsigned int q30341344823317072561963364;  // 0x30341344823317072561963364
-    unsigned int q30341344824777468700866898;  // 0x30341344824777468700866898
-    unsigned int q30341344824777469107725588;  // 0x30341344824777469107725588
-    unsigned int q30341344824777469108512354;  // 0x30341344824777469108512354
-    unsigned int q98023659988544626256524050;  // 0x98023659988544626256524050
-    unsigned int q2313286420836543851196924208;  // 0x2313286420836543851196924208
-    unsigned int q590014315544203439240645730678;  // 0x590014315544203439240645730678
-    unsigned int q2700705942184002190578653944068;  // 0x2700705942184002190578653944068
-    unsigned char q12043365377286206177413795296098;  // 0x12043365377286206177413795296098
-    unsigned int q12043365377286206177413795299408;  // 0x12043365377286206177413795299408
-    unsigned int q711402171662093850265714047468040;  // 0x711402171662093850265714047468040
-    unsigned int q462116020240695835118841959122404984;  // 0x462116020240695835118841959122404984
-    unsigned char q23947915533656951676710082575950504088;  // 0x23947915533656951676710082575950504088
-    unsigned int q6109118586777777243947151930346775798368644;  // 0x6109118586777777243947151930346775798368644
-    unsigned int q70038689147714988453813665640080491013040438;  // 0x70038689147714988453813665640080491013040438
+    unsigned int *m_1;  // 0x1
+    HashTable * ptr_4;  // 0x4
+    int m_18;  // 0x18
+    unsigned int m_FC1B;  // 0xFC1B
 // --- flat members (END) ---
-    void * ProcessPacket(int a2);  // 0x770270
-    int Init();  // 0x7B1DE0
+    void *  ProcessPacket(int a2);  // 0x770270
+    int Init(void *a1 = 0, void *a2 = 0);  // 0x7B1DE0
     unsigned char m_1[64];  // pad compile-supply (G41.47)
-    int m_3F068;  // 0x3F068 (ml)
-    unsigned int q000;  // 0x0 (canon-mt)
+    unsigned int *q000;  // 0x0 (canon-mt)
+    static double q092(...);  // plateau: C2039/C3861 stub
+    static double q338(...);  // plateau: C2039/C3861 stub
+    static double u32_1C(...);  // plateau: C2039/C3861 stub
+    static double u32_3AC(...);  // plateau: C2039/C3861 stub
+    static double u32_3B4(...);  // plateau: C2039/C3861 stub
+    static double u32_3BC(...);  // plateau: C2039/C3861 stub
+    static double u32_3C0(...);  // plateau: C2039/C3861 stub
+    static double u32_3D0(...);  // plateau: C2039/C3861 stub
+    static double u32_3D4(...);  // plateau: C2039/C3861 stub
+    static double u32_3D8(...);  // plateau: C2039/C3861 stub
+    static double u32_48(...);  // plateau: C2039/C3861 stub
+    static double u32_60(...);  // plateau: C2039/C3861 stub
+    static double u32_98(...);  // plateau: C2039/C3861 stub
+    static double u32_C(...);  // plateau: C2039/C3861 stub
+    static double u32_EE0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

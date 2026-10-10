@@ -35,16 +35,16 @@ struct DynamicVectorClass_flat {
     unsigned char q074;  // 0x74
     unsigned char __pad_078;  // 0x78
     int q080;  // 0x80
-unsigned int * AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2);
+unsigned int * AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2, void *a1 = 0);
 unsigned int * BuildingTypeConstructor(int a2, int a3);
-unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6);
+unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6, void *a1 = 0, void *a7 = 0, void *a8 = 0);
 unsigned int * Copy(DynamicVector * aP1, void *a2);
 int Destroy(void *a1);
     void* VectorClass;  // 0x0 (no offset truth)
 int Destroy_Alt();
     void* vtable1;  // 0x0 (no offset truth)
     int BuildIndexTable();
-    AbstractClass * RenderFrame();
+    AbstractClass * RenderFrame(void *a1 = 0);
     int Projection_Setup();
     void * * SortDepth(void * aP1, int a3, void *a3_2);
     int ProcessColor(unsigned int *a2, float *a3);

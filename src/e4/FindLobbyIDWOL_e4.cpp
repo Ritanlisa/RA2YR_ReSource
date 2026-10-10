@@ -8,9 +8,9 @@
 #include "e4/e4_protos.h"
 
 // 0x7B0210
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int * sub_7B0210()
 {
-  return &dword_B77F58; /*0x7b0215*/
-}
+  return (int *)(&dword_B77F58);
+}  // G42.18 ns repair
 } // namespace gamemd

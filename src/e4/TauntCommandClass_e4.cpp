@@ -21,20 +21,22 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x536290
-namespace gamemd {
-_DWORD * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
+namespace gamemd {  // G42.18 ns repair
+unsigned int * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6)
 {
-  this->TauntCommandClass_field_00 = a2; /*0x536296*/
-  *(_DWORD *)this->__tail_0 = &(void*)(void*)&TauntCommandClass_vftable; /*0x536299*/
-  return this->__tail_0; /*0x53629f*/
+
+  a2_2->TauntCommandClass_field_00 = a2_2; /*0x536296*/
+  *(unsigned int *)a2_2->CommandClass = &TauntCommandClass::`vftable'; /*0x536299*/
+  return a2_2->CommandClass; /*0x53629f*/
+
 }
 } // namespace gamemd
 // 0x5362B0
 namespace gamemd {
 char * TauntCommandClass::AddRef()
 {
-  sprintf(&stru_A8EB00.?[2512], "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
-  return &stru_A8EB00.?[2512]; /*0x5362cb*/
+  sprintf(&((unsigned int *)&stru_A8EB00)[2512], "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
+  return &((unsigned int *)&stru_A8EB00)[2512]; /*0x5362cb*/
 }
 } // namespace gamemd
 // 0x5362D0
@@ -45,15 +47,15 @@ wchar_t * TauntCommandClass::Release()
   const wchar_t *TauntCommandClass_field_00; // [esp-4h] [ebp-4h]
 
   TauntCommandClass_field_00 = (const wchar_t *)this->TauntCommandClass_field_00; /*0x5362d5*/
-  StringCSF = GetStringCSF(aTxtTauntNumber, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
-  swprintf((wchar_t *const)&stru_A8EB00.?[2672], (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
-  return (wchar_t *)&stru_A8EB00.?[2672]; /*0x5362fd*/
+  StringCSF = GetStringCSF((wchar_t *)(aTxtTauntNumber), 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
+  swprintf((wchar_t *const)&((unsigned int *)&stru_A8EB00)[2672], (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
+  return (wchar_t *)&((unsigned int *)&stru_A8EB00)[2672]; /*0x5362fd*/
 }
 } // namespace gamemd
 // 0x536300
 namespace gamemd {
 wchar_t TauntCommandClass::ddtor()
 {
-  return GetStringCSF(aTxtTaunt, 0, g_Str_File_Init_CPP, 6405); /*0x536316*/
+  return GetStringCSF((wchar_t *)(aTxtTaunt), 0, g_Str_File_Init_CPP, 6405); /*0x536316*/
 }
 } // namespace gamemd

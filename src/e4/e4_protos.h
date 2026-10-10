@@ -314,13 +314,13 @@ extern AbstractClass * * CreateUnitOnCompletion();
 extern AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2);
 extern void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a3, int a4);
 extern AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2);
-extern char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, char a5);
+extern char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, char a5, void * aNoDigestHereMa);
 extern AbstractClass * * GenerateRangeRingTextures(void *a1 = 0);
 extern AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2);
 extern int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2);
 extern char InsertGameSettings(unsigned char * a1, char a2);  // 0x781FB0 truth (G42.33 b2)
 extern void *LoadFileSHP(char *aP0, bool *aP1);  // 0x4A38D0 IDA truth (G57e1)
-extern char PlayerSkirmishSlotHandler(HWND a1 = 0, int a2 = 0, LPARAM a3 = 0, int a4 = 0);
+extern AbstractClass * * PlayerSkirmishSlotHandler(HWND a1, int a2, LPARAM, int a4);
 extern AbstractClass * * PopulateWOLLobbyListBox(void *a1 = 0);
 extern AbstractClass * * ProcessSelectionExperience(void *a1 = 0);
 extern AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3);
@@ -339,7 +339,7 @@ extern BitFont * * DrawHUD(void *a1 = 0);
 extern BuildingClass * ToCoordPixel(unsigned int * a1, unsigned int * a2);
 extern CCINIClass * UI_Load_72F4A0();
 extern CCINIClass * UI_Load_72F4E0();
-extern int BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2);  // G42.33 b9: DlgProc LRESULT truth (call 0x6c900c)
+extern CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2);  // G42.33 b9: DlgProc LRESULT truth (call 0x6c900c)
 extern CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11);
 extern CampaignScore * FormatWideString(wchar_t ** a1, const wchar_t * a2);
 extern Coord * * AssignWOLPlayerSide(const char ** a1, int a2);
@@ -373,7 +373,7 @@ extern HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2);
 extern HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2);
 extern HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2);
 extern HWND CacheDialogInvalidate(void *a1 = 0, void *a2 = 0);
-extern HWND Create(int template_id, DLGPROC dlg_proc, LPARAM lParam);
+extern HWND Create(int template_id, DLGPROC dlg_proc, LPARAM lParam, void *a4 = 0);
 extern HWND GetCurrent();
 extern HashTable_flat * * LoadNetworkShareStrings();
 extern LPARAM * InitGameDropdownColors(void *a1 = 0);
@@ -397,10 +397,10 @@ extern ScenarioClass * * ComputeMapCameraBounds(void *a1 = 0);
 extern TextLabelResult RenderTextLabel(TextLabelResult* out, int surfaceObj, int strObj, int* textBounds, int totalWidth, int16_t flags, int xPos, int yPos);
 extern WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2);
 extern XSurface * GetBitShift_Blue();
-extern bool ClipLine(int start[2], int end[2], int clip_rect[4]);
+extern int ClipLine(IUnknown * aP0, int * a1, int * a2);
 extern bool DeployScriptActionPlane(int a1, int edx0);
 extern bool FogOfWar_Get(IUnknown * aP0);
-extern bool GameFrameLoop();
+extern bool GameFrameLoop(void *a1 = 0);
 extern int GetDialogDefaultButton(int a1 = 0, HWND a2 = 0);
 extern bool GetField(HWND hWnd, void *a2 = 0);
 extern bool IsAvailableColorhWnd(int a1);
@@ -445,7 +445,7 @@ extern float * QuaternionMathMultiply(ObjectClass * aP0, float *a1, float *a2);
 extern float * TransformMatrix3x4Point(AbstractClass * aP0, IUnknown * aP1, IUnknown * aP2);
 extern float * sub_6460C0(float *a0, ObjectClass * aP1);
 extern int * ComputeSpiralOffset(int * a1, int a2);
-extern int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3);
+extern int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3, void *a5 = 0);
 extern VocClass * StartAudioController(AudioMixer * ecx0, AudioSource *a2);
 extern int AlwaysFindYRCD();
 extern int Audio_Process_7C0530(int a1, int edx0, int a3);
@@ -459,7 +459,7 @@ extern int EnumProtocolsA(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 extern char FindBuddyList(unsigned char *a1, char a2);
 extern int FindBuildingAnimByName(AbstractClass * aP0, int a2);
 extern int FindExecutableA(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-extern int GameLoopMessagePump(MSG* msg, UINT wMsgFilterMin, UINT wMsgFilterMax, HWND hWnd, UINT flags);
+extern void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg);
 extern int GameOptions_GetEntry();
 extern int GetBitMask_Blue();
 extern int GetBitMask_Green();
@@ -476,7 +476,7 @@ extern int HandleMultiplayerMapSelection(void);
 extern int Hash_Check_5E94D0(int a1);
 extern int Hash_Check_5E9580(int a1);
 extern int HitDialogTest(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-extern int ImageList_DragShowNolock(void *a1 = 0);
+extern int ImageList_DragShowNolock(BOOL fShow);
 extern int IsDialogControlVisible(int a1 = 0, HWND a2 = 0);
 extern int LoadSHPFile(int lpBuffer, char* Source);
 extern int MapSkirmishDialogPlayerToControl(HWND a1 = 0, int a2 = 0);
@@ -490,17 +490,17 @@ extern int Release3COM(IUnknown** a1);
 extern int RequestBufferMixer(VolumeStruct* volume, int rate);
 extern int RevokeActiveObject(void *a1 = 0, void *a2 = 0);
 extern int RoundToInt(double value);
-extern int RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3);  // 0x6241F0 __fastcall 3-arg truth (G42.33 b3)
+extern int RunDialog(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM);  // 0x6241F0 __fastcall 3-arg truth (G42.33 b3)
 extern int SetDialogActiveFlag(int a1 = 0, char a2 = 0);
 extern int SetEvent(void *a1 = 0);
 extern int SetRateMixerSample(unsigned int * a0, int a2, unsigned int a3, ObjectClass * aP3);
 extern int SetupSampleAudioMixer(int * a0, ObjectClass * aP1);
 extern int SetupSkirmishPlayerSlots(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-extern int SetupSkirmishSpawnLocations(HWND a1 = 0, int a2 = 0, int a3 = 0);
+extern int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3);
 extern int ShowDialogConfirm(void *aP0 = 0, void *aP1 = 0, void *aP2 = 0, void *aP3 = 0);  // 0x5E2CD0 fastcall 4-arg truth (G42.33 b4)
 extern int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);
 extern int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6);
-extern int UpdateMultiplayerLobbySlots(HWND a1 = 0, ObjectClass *a2 = 0, int a3 = 0);
+extern int UpdateMultiplayerLobbySlots(HWND hDlg, ObjectClass *a2, int nIDDlgItem);
 extern int UpdateSurfaceAnimations(int a1, int aP1, int a3, int a4);
 extern int __stdcall WSAAsyncSelect(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent);  // 0x7c89bc wsock32 导入 4 参真值 (IAT slot e4_globals_decls.hpp:2381 同形; disasm 0x7b1bdb/0x7b1c1f/0x7b3a55 各 4 push) W13-B g57w13b
 extern int WSACleanup();
@@ -513,7 +513,7 @@ extern int getsockopt(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, vo
 extern int globalHelper_0C9DBD(int a1, CCINIClass * aP1, int a3);
 extern unsigned int htonl(unsigned int a1);  // 0x7C8962 thunk DWORD arg (G42.33 b3 truth)
 extern int htons(void *a1 = 0);
-extern int ntoainet();
+extern int ntoainet(void *a1 = 0);
 extern int ntohl(void *a1 = 0);
 extern int ntohs(void *a1 = 0);
 extern int recvfrom(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0);
@@ -530,7 +530,7 @@ extern int sub_407040(int a1);
 extern int sub_408500(int a1, unsigned int * a2);
 extern int sub_40A900(int a1);
 extern int sub_4125F0();
-extern int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7);
+extern int sub_491100(ObjectClass * a1, char a2, int a3, ObjectClass * a4, short a5, char a6, short a7);
 extern int sub_4A44F0(void *a1 = 0);
 extern int sub_4F1B80(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 extern int timeBeginPeriod(void *a1 = 0);
@@ -569,7 +569,7 @@ extern int ComputeDistortionVariant(float a1);  // G57w10-S raw 0x4CB150 int __s
 extern void ComputeNetworkFrameCRC(void *a1 = 0);
 extern int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2);
 extern void DSP_AudioProcess(AudioStream * aP0, int a2, char a3);
-extern int DecodeBitmapRGB(Pipe * aP0, int aP1, unsigned char *a2, int a4);
+extern int DecodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4);
 extern int DecodeBlockLCW(AbstractClass * aP0, int aP1, unsigned char *a2, unsigned int *a3, int a5);
 extern void Destroy(HWND hWnd);
 extern void DestroyHashTableINIClass(void * ini);
@@ -580,14 +580,14 @@ extern void DrawPowerBarForPlayers(HWND hDlg);
 extern int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9);
 extern int DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15);  // G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000)
 extern int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned);
-extern int EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char *a2, int a4);
+extern int EncodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4);
 extern char FillComboBoxSides(HWND hDlg, int nIDDlgItem);
 extern bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem);
 extern int FillScoreScreenStats(IUnknown * Destination, char a2);
 extern int FindBuildingByTiberiumType(int aP0);
 extern int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3);
 extern void FloodFillRandomMapTerrain(int a1, int a2, int a3);
-extern int FormatHotkeyDisplayString(__int16 a1, wchar_t *a2);
+extern int FormatHotkeyDisplayString(__int16, wchar_t *a2);
 extern void GenerateLightningStormGlow(void *a1 = 0);
 extern char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3);
 extern void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2);
@@ -605,10 +605,10 @@ extern char Object_Calc(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
 extern char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6);
 extern char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6);
 extern char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6);
-extern char Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
-extern int Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
-extern int Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
-extern int Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
+extern char Object_Calc_7DF280(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8);
+extern int Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8);
+extern int Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8);
+extern int Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8);
 extern int OpenURLWOL(INIClass * a1, int a2);
 extern unsigned int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // G57w4: raw 0x41d926 uses retval
 extern int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4);
@@ -651,14 +651,14 @@ extern int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a
 extern bool Weapon_Update(void * a1, void * a2);
 extern int WriteAudioStreamToFile(int aP0, FILE *a1, signed int arg0, char *a3);
 extern int closesocket(void *a1 = 0);
-extern int flsall(void *aP0);  // G57w10-S IDA _flsall@0x7CB25E int; raw _fflush return flsall(0)
+extern int flsall(int aP0);  // G57w10-S IDA _flsall@0x7CB25E int; raw _fflush return flsall(0)
 extern int j_DeleteAndZero(void *a1 = 0);  // G57w10-S DeleteAndZero@0x7B46F0 eax=旧指针(raw 调用侧用返回值)
 extern void nullsub_15();
 extern void nullsub_192(int a1);
 extern void nullsub_2(void *a1 = 0);
 extern int nullsub_24(void *a1 = 0);
 extern void nullsub_29(void *a1 = 0);
-extern void nullsub_37();
+extern void nullsub_37(void *a1 = 0);
 extern void nullsub_48();
 extern void nullsub_57(void *a1 = 0);
 extern void nullsub_6();
@@ -720,7 +720,7 @@ extern int DlgProcLoadGame_Load_696C40(ObjectClass * aP0);  // G42.57w9 supply (
 // removed G42.57w9: DrawScoreScreenStats -- defined in e4 TU (reverted to C3861, no net regress)
 // removed G42.57w9: DrawTechnoDeployCircle -- defined in e4 TU (reverted to C3861, no net regress)
 // removed G42.57w9: DrawUnitExperiencePopup -- clash in E4Recv_7336C0_e4.hpp
-extern char Event_Process(ObjectClass * aP0, __int16 a2);  // G42.57w9 supply (raw ObjectClass::Event_Process@0x54f530)
+extern char Event_Process(ObjectClass * aP0, __int16);  // G42.57w9 supply (raw ObjectClass::Event_Process@0x54f530)
 // removed G42.57w9: ExchangeMultiplayerGameInfo -- defined in e4 TU (reverted to C3861, no net regress)
 extern _DWORD * ExecuteActionPlanManager_Helper(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper@0x633ac0)
 extern int ExecuteActionPlanManager_Helper_636EB0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_636EB0@0x636eb0)
@@ -817,7 +817,7 @@ extern int Render_Render_556B70(ObjectClass * aP0);  // G42.57w9 supply (raw Obj
 extern _DWORD * Render_Render_556C00(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Render_Render_556C00@0x556c00)
 extern _DWORD * Render_Render_6345A0(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::Render_Render_6345A0@0x6345a0)
 extern int RequestMatchWOL_Helper(void);  // G42.57w9 supply (raw RequestMatchWOL_Helper@0x7b0370)
-extern int RespawnStartingBuildings(HouseClass * aP0);  // G42.57w9 supply (raw HouseClass::RespawnStartingBuildings@0x50d320)
+extern int RespawnStartingBuildings(HouseClass * aP0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // G42.57w9 supply (raw HouseClass::RespawnStartingBuildings@0x50d320)
 // removed G42.57w9: SaveMultiplayerLobbySettings -- defined in e4 TU (reverted to C3861, no net regress)
 extern int ScenarioPropertyReadCOM(int aP0, int a2);  // G42.57w9 supply (raw ObjectClass::ScenarioPropertyReadCOM@0x681840)
 // removed G42.57w9: SeedInitRNG -- clash in E4Recv_65C6D0_e4.hpp
@@ -1053,7 +1053,7 @@ extern char ** ToWideStringCharAlt(char **a1, const wchar_t **a2);
 // (CreateDialog proto removed: collides with the SDK extern "C" CreateDialogA; callers fall back to the SDK decl)
 extern int ValidateStringContains(const char **a1, const char *a2, char *Control);
 extern int SendNetworkHeartbeat(int a1, int a2, int a3, int a4);
-extern int SkirmishDialogProc(HWND hDlg, int a2, uint16_t a3, HWND a4);
+extern int SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4);
 extern int RefreshLobbyPlayerSlots(unsigned int a1);
 extern void SetGlobalFlag(char a1);
 extern char * sub_48DFD0(unsigned int a1);
@@ -1276,4 +1276,79 @@ extern double _fltin2(void * aP0, const char * aP1);  // CRT internal (G42.33 b8
 } // namespace gamemd
 namespace gamemd {
 extern int Event_Process_625C00(void * aP0, int aP1);  // 0x625C00 (G42.33 b8)
+} // namespace gamemd
+
+// G42.12 F1: mangled template pseudo-types used in vtable casts
+namespace gamemd {
+struct _DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour;
+struct _DynamicVectorClass_PAUButtonFadeEffect;
+struct _DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass;
+struct _DynamicVectorClass_PAUCrossDissolveEffect;
+struct _DynamicVectorClass_PAUHWND;
+struct _DynamicVectorClass_PAUIConnectionPoint;
+struct _DynamicVectorClass_PAUKamikazeControl;
+struct _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass;
+struct _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass;
+struct _DynamicVectorClass_PAUTileInsertType_IsometricTileTypeClass;
+struct _DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass;
+struct _DynamicVectorClass_PAU_DDSURFACEDESC;
+struct _DynamicVectorClass_PAU_WIN32_FIND_DATAA;
+struct _DynamicVectorClass_PAUtConnInfoStruct;
+struct _DynamicVectorClass_PAVAircraftClass;
+struct _DynamicVectorClass_PAVAlphaLightingRemapClass;
+struct _DynamicVectorClass_PAVAnimClass;
+struct _DynamicVectorClass_PAVBombClass;
+struct _DynamicVectorClass_PAVBuildingClass;
+struct _DynamicVectorClass_PAVBuildingTypeClass;
+struct _DynamicVectorClass_PAVCellClass;
+struct _DynamicVectorClass_PAVColorScheme;
+struct _DynamicVectorClass_PAVDiskLaserClass;
+struct _DynamicVectorClass_PAVEventClass;
+struct _DynamicVectorClass_PAVFileEntryClass;
+struct _DynamicVectorClass_PAVLightConvertClass;
+struct _DynamicVectorClass_PAVLineTrail;
+struct _DynamicVectorClass_PAVMSAnimEntry;
+struct _DynamicVectorClass_PAVMSSfxEntry;
+struct _DynamicVectorClass_PAVMSTextEntry;
+struct _DynamicVectorClass_PAVMapSelection;
+struct _DynamicVectorClass_PAVMapStage;
+struct _DynamicVectorClass_PAVMixFileClass;
+struct _DynamicVectorClass_PAVParticleClass;
+struct _DynamicVectorClass_PAVPlanningNodeClass;
+struct _DynamicVectorClass_PAVPlanningTokenClass;
+struct _DynamicVectorClass_PAVScriptClass;
+struct _DynamicVectorClass_PAVSmudgeClass;
+struct _DynamicVectorClass_PAVTechnoClass;
+struct _DynamicVectorClass_PAVTechnoTypeClass;
+struct _DynamicVectorClass_PAVTerrainClass;
+struct _DynamicVectorClass_PAVWarheadTypeClass;
+struct _VectorClass_PAUBuildChoiceClass_HouseClass;
+struct _VectorClass_PAUConnectionListStruct_OwnerTalkClass;
+struct _VectorClass_PAUHWND;
+struct _VectorClass_PAUIConnectionPoint;
+struct _VectorClass_PAUKamikazeControl;
+struct _VectorClass_PAU_DDSURFACEDESC;
+struct _VectorClass_PAU_WIN32_FIND_DATAA;
+struct _VectorClass_PAUtConnInfoStruct;
+struct _VectorClass_PAVAbstractClass;
+struct _VectorClass_PAVAlphaLightingRemapClass;
+struct _VectorClass_PAVBombClass;
+struct _VectorClass_PAVCoopCampaignClass;
+struct _VectorClass_PAVDiskLaserClass;
+struct _VectorClass_PAVEventClass;
+struct _VectorClass_PAVFileEntryClass;
+struct _VectorClass_PAVFoggedObjectClass;
+struct _VectorClass_PAVFootClass;
+struct _VectorClass_PAVGraphicMenuItem;
+struct _VectorClass_PAVMSAnimEntry;
+struct _VectorClass_PAVMapStage;
+struct _VectorClass_PAVNeuronClass;
+struct _VectorClass_PAVPlanningBranchClass;
+struct _VectorClass_PAVScriptClass;
+struct _VectorClass_PAVSmudgeClass;
+struct _VectorClass_PAVSubTitle;
+struct _VectorClass_PAVTActionClass;
+struct _VectorClass_PAVTerrainClass;
+struct _VectorClass_PAVVeinholeMonsterClass;
+struct _VectorClass_PAV_DynamicVectorClass_PAD;
 } // namespace gamemd

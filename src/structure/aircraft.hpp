@@ -88,7 +88,7 @@ public:
     // === Phase 3: Flight Paths ===
     int MoveTo(int* a2, int a3);  // 0x414310 (G42.42f truth arity)
     int ValidateMovement();  // 0x417BD0
-    int CanEnterCell(__int16* a2, char a3, char a4);  // 0x417F80 (G42.42d truth arity)
+    int CanEnterCell(int16_t* a2, char a3, char a4);  // 0x417F80 (G42.42d truth arity)
 
     // === Phase 3: Landing ===
     int ProcessLanding(int a2, int a3);  // 0x41BA90 (G42.42d truth arity)
@@ -126,7 +126,7 @@ public:
 
     // === Phase 3: Stream ===
     virtual int LoadFromStream();  // 0x41B430
-    void Destruct();  // 0x414080
+    int Destruct();  // 0x414080
 
     // === Phase 3: Cursor & State ===
     virtual int GetActionOnObject();  // 0x417CC0

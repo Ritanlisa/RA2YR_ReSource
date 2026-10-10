@@ -184,50 +184,51 @@
 namespace gamemd { int sub_7719E0(...); }  // w18j2 raw call-form (variadic last resort)
 
 // 0x770270
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * WinsockInterface::ProcessPacket(int a2)
 {
+
   int v3; // ebp
   void **v4; // edi
   int v5; // ebx
-  _DWORD *v6; // edi
+  unsigned int *v6; // edi
   int v7; // ebp
 
   v3 = 6; /*0x77027a*/
-  v4 = (void **)(this + 4); /*0x77027f*/
-  *(_DWORD *)this = a2; /*0x770282*/
-  v5 = (int)(this + 8); /*0x770284*/
+  v4 = (void **)((unsigned char *)this + 4); /*0x77027f*/
+  *(unsigned int *)this = a2; /*0x770282*/
+  v5 = (int)((unsigned char *)this + 8); /*0x770284*/
   do /*0x7702b6*/
   {
     unknown_libname_73(v4); /*0x770289*/
-    Array::ForEach(v5, 24, 6, (int (__thiscall *)(int))sub_7719E0); /*0x770298*/
+    Array::ForEach(v5, 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
     String::Assign_Alt(v4, &g_INI_DefaultBuffer); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  v6 = this + 892; /*0x7702b8*/
+  v6 = (unsigned char *)this + 892; /*0x7702b8*/
   v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
-    *v6 = &(void*)(void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7702ce*/
+    *v6 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7702ce*/
     v6[5] = 10; /*0x7702d4*/
     v6[4] = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *((_DWORD *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
-  *((_DWORD *)this + 237) = 0; /*0x7702fc*/
-  *(this + 952) = 1; /*0x770305*/
-  *((_DWORD *)this + 239) = 0; /*0x77030c*/
-  VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
-  *((_DWORD *)this + 240) = &(void*)(void*)&DynamicVectorClass_Wstring_vftable; /*0x770317*/
-  *((_DWORD *)this + 245) = 10; /*0x77031d*/
-  *((_DWORD *)this + 244) = 0; /*0x770324*/
-  *((_DWORD *)this + 246) = 0; /*0x770327*/
+  *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
+  *((unsigned int *)this + 237) = 0; /*0x7702fc*/
+  *((unsigned char *)this + 952) = 1; /*0x770305*/
+  *((unsigned int *)this + 239) = 0; /*0x77030c*/
+  VectorClass::WstringConstructor((unsigned int *)this + 240, 0, 0); /*0x770312*/
+  *((unsigned int *)this + 240) = &DynamicVectorClass<Wstring>::`vftable'; /*0x770317*/
+  *((unsigned int *)this + 245) = 10; /*0x77031d*/
+  *((unsigned int *)this + 244) = 0; /*0x770324*/
+  *((unsigned int *)this + 246) = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
   String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
@@ -248,12 +249,14 @@ void * WinsockInterface::ProcessPacket(int a2)
   String::Reassign((char **)this + 186, (const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
+
 }
-}
+}  // G42.18 ns repair
 // 0x7B1DE0
 namespace gamemd {
 int WinsockInterface::Init()
 {
+
   int result; // eax
   int v3; // eax
   int v4; // edx
@@ -261,17 +264,18 @@ int WinsockInterface::Init()
   INT v6; // eax
   int v7; // ebp
   int *v8; // esi
+  INT v9; // ebx
   int v10; // eax
   struct WSAData *v11; // [esp+8h] [ebp-1008h]
   DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
-  _BYTE ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
+  unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
   char v14; // [esp+28h] [ebp-FE8h] BYREF
 
   Debug::Log(); /*0x7b1df3*/
-  if ( IDA_LOBYTE(this->m_3F068) ) /*0x7b1df8*/
+  if ( LOBYTE(this->m_3F068) ) /*0x7b1df8*/
   {
     result = Debug::Log(); /*0x7b1e0a*/
-    IDA_LOBYTE(result) = 1; /*0x7b1e12*/
+    LOBYTE(result) = 1; /*0x7b1e12*/
   }
   else
   {
@@ -280,19 +284,19 @@ int WinsockInterface::Init()
       byte_B7809C = 1; /*0x7b1e41*/
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    v3 = RA2_OPNEW(0x590u); /*0x7b1e53*/
-    v4 = *(_DWORD *)this->q000; /*0x7b1e58*/
+    v3 = __2_YAPAXI_Z(0x590u); /*0x7b1e53*/
+    v4 = *(unsigned int *)this->__pad_0; /*0x7b1e58*/
     v5 = (struct WSAData *)v3; /*0x7b1e5a*/
     v11 = (struct WSAData *)v3; /*0x7b1e61*/
-    this->u32_3F06C = -1; /*0x7b1e65*/
-    (*(void (__thiscall **)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
-    (*(void (__thiscall **)(WinsockInterface *))(*(_DWORD *)this->q000 + 24))(this); /*0x7b1e76*/
+    *((unsigned int *)this + 64539) = -1; /*0x7b1e65*/
+    (*(void (**)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
+    (*(void (**)(WinsockInterface *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
     if ( WSAStartup(0x101u, v5) ) /*0x7b1e8c*/
     {
       Debug::Log(); /*0x7b1e9b*/
-      RA2_OPDEL(v5); /*0x7b1ea1*/
-      IDA_LOBYTE(result) = 0; /*0x7b1ea9*/
+      __3_YAXPAX_Z(v5); /*0x7b1ea1*/
+      LOBYTE(result) = 0; /*0x7b1ea9*/
     }
     else
     {
@@ -300,13 +304,13 @@ int WinsockInterface::Init()
       if ( (unsigned __int8)v5->wVersion != 1 || ((v5->wVersion ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
         Debug::Log(); /*0x7b1fad*/
-        RA2_OPDEL(v5); /*0x7b1fb3*/
-        IDA_LOBYTE(result) = 0; /*0x7b1fbb*/
+        __3_YAXPAX_Z(v5); /*0x7b1fb3*/
+        LOBYTE(result) = 0; /*0x7b1fbb*/
       }
       else
       {
         Debug::Log(); /*0x7b1efa*/
-        *(_DWORD *)&this->m_1[3] = 546; /*0x7b1f0a*/
+        *(unsigned int *)&this->m_1[3] = 546; /*0x7b1f0a*/
         dwBufferLength = 4096; /*0x7b1f18*/
         v6 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v6 == -1 ) /*0x7b1f28*/
@@ -319,7 +323,7 @@ int WinsockInterface::Init()
           if ( v6 > 0 ) /*0x7b1f31*/
           {
             v8 = (int *)&v14; /*0x7b1f34*/
-            v6 = v6; /*0x7b1f38*/
+            v9 = v6; /*0x7b1f38*/
             do /*0x7b1f63*/
             {
               Debug::Log(); /*0x7b1f46*/
@@ -327,20 +331,21 @@ int WinsockInterface::Init()
               if ( *v8 && v10 != -1 && v7 >= v10 ) /*0x7b1f5b*/
                 v7 = *v8; /*0x7b1f5d*/
               v8 += 8; /*0x7b1f5f*/
-              --v6; /*0x7b1f62*/
+              --v9; /*0x7b1f62*/
             }
-            while ( v6 ); /*0x7b1f63*/
+            while ( v9 ); /*0x7b1f63*/
             if ( v7 != 0x7FFFFFFF && v7 > 400 ) /*0x7b1f74*/
-              *(_DWORD *)&this->m_1[3] = v7; /*0x7b1f76*/
+              *(unsigned int *)&this->m_1[3] = v7; /*0x7b1f76*/
             v5 = v11; /*0x7b1f79*/
           }
         }
-        IDA_LOBYTE(this->m_3F068) = 1; /*0x7b1f7e*/
-        RA2_OPDEL(v5); /*0x7b1f85*/
-        IDA_LOBYTE(result) = 1; /*0x7b1f8d*/
+        LOBYTE(this->m_3F068) = 1; /*0x7b1f7e*/
+        __3_YAXPAX_Z(v5); /*0x7b1f85*/
+        LOBYTE(result) = 1; /*0x7b1f8d*/
       }
     }
   }
   return result; /*0x7b1e14*/
+
 }
 }

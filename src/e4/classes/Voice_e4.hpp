@@ -46,7 +46,7 @@ struct Voice {
     unsigned int q2148;  // 0x2148
 // --- flat members (END) ---
     int DetachChannel();
-    int Stop();
+    int Stop(void *a1 = 0, void *a2 = 0);
     unsigned int u32_104;  // 0x104 (offset-truth)
 };
 #endif  // GAMEMD_G2_Voice_DEF

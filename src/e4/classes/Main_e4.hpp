@@ -42,13 +42,16 @@
 #ifdef CreateDialog
 #undef CreateDialog
 #endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
 namespace gamemd {
 
 struct Main {
 // --- flat members (BEGIN) ---
     char Main_field_00[4];  // 0x0
 // --- flat members (END) ---
-void CreateDialog();
+void CreateDialog(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 };
 
 } // namespace gamemd

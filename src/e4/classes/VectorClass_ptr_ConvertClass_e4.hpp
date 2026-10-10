@@ -16,26 +16,23 @@ struct VectorClass_ptr_ConvertClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
     unsigned int CapacityIncrement;  // 0x14
-    unsigned char q018;  // 0x18
-    void* q01C;  // 0x1C
+    unsigned int tail_18;  // 0x18
 // --- flat members (END) ---
-    void * Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
+    void *  Constructor_ConvertClass(char a2);  // 0x491210
     int MarkDirty();  // 0x4E1960
-    static void MarkDirty(void *aP0);  // 0x4E1960 G42.35 static-form sync (ui/supplied site 0x4E2540)
     int Destroy(void *a1_1);  // 0x491390
-    unsigned int GetItemIndex(int a2);  // 0x4913C0
-    int Get(int a2, void *a2_2);  // 0x4913E0
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x49AE80
-    char Release(int a2, unsigned int * a3);  // 0x49AEC0
-    void Remove(void *a1_1);  // 0x49AF70
-    int GetSize(unsigned int * a2);  // 0x49AFA0
-    unsigned int GetCapacity(int a2);  // 0x49AFE0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x49B000
-    int FindItemIndex(unsigned int * a2);  // 0x49B0B0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x49B0E0
-    DynamicVector * Constructor_VectorClass_ConvertClass___(unsigned int * Block, char a2);  // 0x49B130
+    unsigned int  GetItemIndex(int a2);  // 0x4913C0
+    int  Get(int a2, void *a1 = 0);  // 0x4913E0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x49AE80
+    char  Release(int a2, unsigned int * a3);  // 0x49AEC0
+    void Remove(void *a1_1, void *a1 = 0);  // 0x49AF70
+    int  GetSize(unsigned int * a2);  // 0x49AFA0
+    unsigned int  GetCapacity(int a2);  // 0x49AFE0
+    char  SetCapacity(int a2, unsigned int * a3);  // 0x49B000
+    int  FindItemIndex(unsigned int * a2);  // 0x49B0B0
+    VectorClass_flat *  QueryInterface(char a2);  // 0x49B0E0
+    DynamicVector *  Constructor_VectorClass_ConvertClass___(char a2);  // 0x49B130
 };
 } // namespace gamemd

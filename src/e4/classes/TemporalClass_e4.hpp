@@ -12,26 +12,19 @@ struct TemporalClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char creationFrame[4];  // 0x24
-    int q028;  // 0x28
-    bool q02B;  // 0x2B
-    void* q02C;  // 0x2C
     char TemporalClass_field_30[4];  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char TemporalClass_field_34[4];  // 0x34
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
-    int Constructor();
-    int GetWarpPerStep(int a2);
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
+    int GetWarpPerStep(int a2, void *a1 = 0);
     int LoadTemporal(AbstractClass * aP0, int aP1);
     int SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetTarget(AbstractClass * aP1);
@@ -45,6 +38,9 @@ struct TemporalClass {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4A8;  // 0x4A8 (offset-truth)
     unsigned char u32_A6;  // 0xA6 (offset-truth)
+    static double __pad_28(...);  // plateau: C2039/C3861 stub
+    static double u32_44(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

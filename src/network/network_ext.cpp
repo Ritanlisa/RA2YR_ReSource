@@ -19,18 +19,18 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
 {
   int v8; // eax
   int v9; // ecx
-  _DWORD v11[3]; // [esp+Ch] [ebp-Ch] BYREF
+  unsigned int v11[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   Waypoint::InitInvalid((Waypoint *)v11); /*0x53fbdc*/
-  *(_DWORD *)(this->q020 + 8) = 0; /*0x53fbe6*/
-  *(_WORD *)(this->q020 + 12) = 0; /*0x53fbec*/
-  *(_WORD *)this->q020 = this->q024; /*0x53fbf7*/
-  *(_BYTE *)(this->q020 + 2) = !a5 || !a4; /*0x53fc0d*/
-  *(_DWORD *)(this->q020 + 4) = *(_DWORD *)(this->q004 + 44); /*0x53fc22*/
+  *(unsigned int *)(this->IPXGlobalConnClass_field_0x20 + 8) = 0; /*0x53fbe6*/
+  *(unsigned short *)(this->IPXGlobalConnClass_field_0x20 + 12) = 0; /*0x53fbec*/
+  *(unsigned short *)this->IPXGlobalConnClass_field_0x20 = this->IPXGlobalConnClass_field_0x24; /*0x53fbf7*/
+  *(unsigned char *)(this->IPXGlobalConnClass_field_0x20 + 2) = !a5 || !a4; /*0x53fc0d*/
+  *(unsigned int *)(this->IPXGlobalConnClass_field_0x20 + 4) = *(unsigned int *)(this->IPXGlobalConnClass_field_0x04 + 44); /*0x53fc22*/
   if ( a7 ) /*0x53fc2b*/
-    *(_DWORD *)(this->q020 + 4) = a7; /*0x53fc30*/
-  *(_WORD *)(this->q020 + 14) = this->u32_B8; /*0x53fc3f*/
-  *(_BYTE *)(this->q020 + 3) = 0; /*0x53fc46*/
+    *(unsigned int *)(this->IPXGlobalConnClass_field_0x20 + 4) = a7; /*0x53fc30*/
+  *(unsigned short *)(this->IPXGlobalConnClass_field_0x20 + 14) = this->__pad_02E; /*0x53fc3f*/
+  *(unsigned char *)(this->IPXGlobalConnClass_field_0x20 + 3) = 0; /*0x53fc46*/
   if ( a4 ) /*0x53fc49*/
   {
     v8 = a4[1]; /*0x53fc4d*/
@@ -39,10 +39,10 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
     v11[1] = v8; /*0x53fc57*/
     v11[2] = v9; /*0x53fc5b*/
   }
-  qmemcpy((void *)(this->q020 + 16), a2, a3); /*0x53fc74*/
+  memcpy((void *)(this->IPXGlobalConnClass_field_0x20 + 16), a2, a3); /*0x53fc74*/
   return ConnectionClass::queueSendPacket( /*0x53fc99*/
-           (ConnectionClass *)this->q004,
-           (const void *)this->q020,
+           (ConnectionClass *)this->IPXGlobalConnClass_field_0x04,
+           (const void *)this->IPXGlobalConnClass_field_0x20,
            a3 + 16,
            v11,
            12,
@@ -52,23 +52,23 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
 void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw 真值补参 (a2,a3,a4)
 {
   int v5; // eax
-  _BYTE v7[6]; // [esp+8h] [ebp-110h] BYREF
-  unsigned __int8 v8; // [esp+Eh] [ebp-10Ah]
-  unsigned __int8 v9; // [esp+Fh] [ebp-109h]
-  unsigned __int8 v10; // [esp+10h] [ebp-108h]
-  unsigned __int8 v11; // [esp+11h] [ebp-107h]
-  unsigned __int8 v12; // [esp+12h] [ebp-106h]
+  unsigned char v7[6]; // [esp+8h] [ebp-110h] BYREF
+  uint8_t v8; // [esp+Eh] [ebp-10Ah]
+  uint8_t v9; // [esp+Fh] [ebp-109h]
+  uint8_t v10; // [esp+10h] [ebp-108h]
+  uint8_t v11; // [esp+11h] [ebp-107h]
+  uint8_t v12; // [esp+12h] [ebp-106h]
   int v13; // [esp+13h] [ebp-105h]
   char Buffer[256]; // [esp+18h] [ebp-100h] BYREF
 
   if ( !this->u32_3F068 ) /*0x7b0f50*/
     return 0; /*0x7b0f6c*/
-  v5 = IPXInterfaceClass::initSocket((_DWORD *)this, a2, (int)v7); /*0x7b0f7c*/
+  v5 = IPXInterfaceClass::initSocket((unsigned int *)this, a2, (int)v7); /*0x7b0f7c*/
   v5 = v5; /*0x7b0f81*/
   if ( v5 )
   {
     if ( v5 == 2 )
-      sprintf(Buffer, "?? ?? ?? ?? : %02x %02x %02x %02x %02x %02x", v8, v9, v10, v11, v12, (unsigned __int8)v13);
+      sprintf(Buffer, "?? ?? ?? ?? : %02x %02x %02x %02x %02x %02x", v8, v9, v10, v11, v12, (uint8_t)v13);
     else
       sprintf(
         Buffer,
@@ -82,7 +82,7 @@ void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw �
         v10,
         v11,
         v12,
-        (unsigned __int8)v13);
+        (uint8_t)v13);
     if ( (int)strlen(Buffer) >= a4 ) /*0x7b1078*/
       return 0; /*0x7b1084*/
     strcpy(a3, Buffer); /*0x7b10a5*/

@@ -38,7 +38,7 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
   buildingType = (HouseClass *)this->buildingType; /*0x726256*/
   if ( !nextTrigger ) /*0x72625b*/
     return HouseClass::HasType25Building(buildingType); /*0x72627d*/
-  return (unsigned __int8)HouseClass::HasType25Building(buildingType) /*0x726274*/
+  return (uint8_t)HouseClass::HasType25Building(buildingType) /*0x726274*/
       || TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger);
 }
 // 0x726290
@@ -51,7 +51,7 @@ bool TriggerClass::HasCrossesVerticalLineEvent() const
   buildingType = (HouseClass *)this->buildingType; /*0x726296*/
   if ( !nextTrigger ) /*0x72629b*/
     return HouseClass::HasType26Building(buildingType); /*0x7262bd*/
-  return (unsigned __int8)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
+  return (uint8_t)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
       || TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger);
 }
 bool TriggerClass::HasZoneEntryByEvent() const
@@ -131,7 +131,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
   if ( force_fire ) /*0x7264e7*/
     goto LABEL_16; /*0x7264e7*/
   v7 = 0; /*0x7264f0*/
-  v8 = this->buildingType->FirstEvent; /*0x7264f2*/
+  v8 = (gamemd::TriggerClass *)(this->buildingType->FirstEvent); /*0x7264f2*/
   if ( !v8 ) /*0x7264fa*/
     goto LABEL_16; /*0x7264fa*/
   do /*0x72658b*/
@@ -139,7 +139,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object, bool force_fire
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = source,
           Owner = HouseClass::FindOwner(*(HouseClass **)(this->buildingType->House + 180)),
-          TEventClass::Execute((TEventClass *)v8, event, Owner, object, (int *)(&this->abstractFlags2), (int)&persistent, v11)) )
+          TEventClass::Execute((int)((TEventClass *)v8), event, Owner, object, (int *)(&this->abstractFlags2), (int)&persistent, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
         this->house = TriggerClass::GetValue(v8); /*0x726561*/

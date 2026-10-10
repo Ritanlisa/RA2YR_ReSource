@@ -2274,3 +2274,15 @@ extern unsigned char g_abs_B76E58[1];  // data: 0xB76E58
 extern unsigned char g_abs_B76E5C[1];  // data: 0xB76E5C
 extern unsigned char g_abs_B76E60[1];  // data: 0xB76E60
 extern unsigned char g_abs_B780A0[1];  // data: 0xB780A0
+extern unsigned char g_abs_21C[1];  // data: 0x21C
+extern unsigned char g_abs_520[1];  // data: 0x520
+extern unsigned char g_abs_A83CDB[1];  // data: 0xA83CDB
+extern unsigned char g_abs_A8D111[1];  // data: 0xA8D111
+extern unsigned char g_abs_A8D112[1];  // data: 0xA8D112
+extern unsigned char g_abs_A8D7FC[1];  // data: 0xA8D7FC
+extern unsigned char g_abs_A8D7FE[1];  // data: 0xA8D7FE
+extern unsigned char g_abs_A8E2B4[1];  // data: 0xA8E2B4
+extern unsigned char g_abs_A8EAE6[1];  // data: 0xA8EAE6
+extern unsigned char g_abs_ABDDA4[1];  // data: 0xABDDA4
+extern unsigned char g_abs_ABDDA6[1];  // data: 0xABDDA6
+extern unsigned char g_abs_AC4C48[1];  // data: 0xAC4C48

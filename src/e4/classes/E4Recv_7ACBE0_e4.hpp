@@ -11,26 +11,7 @@ struct E4Recv_7ACBE0 {
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC
     unsigned int M20;  // 0x14
-    unsigned int q018;  // 0x18
-    unsigned int q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned int q128;  // 0x128
-    unsigned int q774;  // 0x774
-    unsigned int q1634;  // 0x1634
-    unsigned int q1908;  // 0x1908
-    unsigned int q5684;  // 0x5684
-    unsigned int q6408;  // 0x6408
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
-    char  ConnectAndLoginWOL_Connect_7ACBE0(void * a1, void * aP2);  // 0x7ACBE0
+    char  ConnectAndLoginWOL_Connect_7ACBE0(void * a2, char ** Block);  // 0x7ACBE0
 };
 } // namespace gamemd

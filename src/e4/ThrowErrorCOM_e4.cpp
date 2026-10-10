@@ -11,15 +11,17 @@
 #include "e4/classes/TiberiumClass_e4.hpp"
 
 // 0x7DCDC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
 {
-  this->u32_C = 0; /*0x7dcdc7*/
-  this->u32_4 = a2; /*0x7dcdcb*/
-  this->vfptr = (int)&(void*)(void*)&_com_error_vftable; /*0x7dcdd2*/
-  this->u32_8 = a3; /*0x7dcdda*/
+
+  *((unsigned int *)this + 3) = 0; /*0x7dcdc7*/
+  *((unsigned int *)this + 1) = a2; /*0x7dcdcb*/
+  this->vfptr = (int)&_com_error::`vftable'; /*0x7dcdd2*/
+  *((unsigned int *)this + 2) = a3; /*0x7dcdda*/
   if ( a3 && a4 ) /*0x7dcde4*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)a3 + 4))(a3); /*0x7dcde9*/
+    (*(void (**)(int))(*(unsigned int *)a3 + 4))(a3); /*0x7dcde9*/
   return &this->vfptr; /*0x7dcdee*/
+
 }
-}
+}  // G42.18 ns repair

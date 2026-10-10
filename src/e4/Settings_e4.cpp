@@ -8,12 +8,12 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x5E8760
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BOOL Settings::CheckString()
 {
   char *v0; // eax
 
-  v0 = CharToWideString(unk_A8B380); /*0x5e8765*/
-  return wcscmp((const wchar_t *)v0, word_A8D610) == 0; /*0x5e877d*/
-}
+  v0 = CharToWideString((unsigned char *)(unk_A8B380)); /*0x5e8765*/
+  return wcscmp((const wchar_t *)v0,(const wchar_t *)(word_A8D610)) == 0; /*0x5e877d*/
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -19,6 +19,7 @@ struct VoxelPaletteClass {
 // --- flat members (END) ---
     int ConvertFromFile(int a2);
     int LoadFromFile();
+    static double u32_8(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

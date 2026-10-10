@@ -6,44 +6,10 @@
 namespace gamemd {
 struct Particle {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int q040;  // 0x40
-    unsigned int q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned int q064;  // 0x64
-    unsigned int q068;  // 0x68
-    void* q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned int u32_74;  // 0x74
-    unsigned int u32_78;  // 0x78
-    unsigned int u32_84;  // 0x84
-    unsigned int q088;  // 0x88
-    void* q0AC;  // 0xAC
-    void* q0B0;  // 0xB0
-    unsigned char q0B4;  // 0xB4
     unsigned int Velocity;  // 0xC0
-    unsigned char q0C4;  // 0xC4
-    void* q0E0;  // 0xE0
-    unsigned char q0E4;  // 0xE4
-    unsigned int q100;  // 0x100
-    void* q108;  // 0x108
-    void* q10C;  // 0x10C
-    void* q110;  // 0x110
-    void* q114;  // 0x114
     unsigned int StateAIAdvance;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned int q120;  // 0x120
-    void* q128;  // 0x128
-    void* q12C;  // 0x12C
-    unsigned char u8_12D;  // 0x12D
     unsigned int StartStateAI;  // 0x12E
     unsigned int Translucency;  // 0x12F
-    unsigned char q133;  // 0x133
-    void* q150;  // 0x150
-    void* q154;  // 0x154
-    void* q158;  // 0x158
 // --- flat members (END) ---
     int Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7);  // 0x4664C0
     unsigned char q0043;  // 0x43 (offset-truth)
@@ -51,5 +17,18 @@ struct Particle {
     unsigned int q0084;  // 0x84 (offset-truth)
     unsigned char q0085;  // 0x85 (offset-truth)
     unsigned char q0087;  // 0x87 (offset-truth)
+    static double u32_10C(...);  // plateau: C2039/C3861 stub
+    static double u32_110(...);  // plateau: C2039/C3861 stub
+    static double u32_114(...);  // plateau: C2039/C3861 stub
+    static double u32_128(...);  // plateau: C2039/C3861 stub
+    static double u32_12C(...);  // plateau: C2039/C3861 stub
+    static double u32_12D(...);  // plateau: C2039/C3861 stub
+    static double u32_150(...);  // plateau: C2039/C3861 stub
+    static double u32_154(...);  // plateau: C2039/C3861 stub
+    static double u32_158(...);  // plateau: C2039/C3861 stub
+    static double u32_6C(...);  // plateau: C2039/C3861 stub
+    static double u32_AC(...);  // plateau: C2039/C3861 stub
+    static double u32_B0(...);  // plateau: C2039/C3861 stub
+    static double u32_E0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

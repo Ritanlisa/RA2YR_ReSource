@@ -156,7 +156,7 @@ public:  // g57c5 W4 supply slot
     struct Gap2Recv_429830 {
     int Items;  // G42.39a supply
     int u32_3C;  // G42.39a supply
-        double ComputeMovementWeight(int *a2, _DWORD *a3, char a4, int a5, int a6);  // W13-C raw-sync 0x429830 (raw: int* / _DWORD* / char / int / int)
+        double ComputeMovementWeight(int *a2, unsigned int *a3, char a4, int a5, int a6);  // W13-C raw-sync 0x429830 (raw: int* / unsigned int* / char / int / int)
 };
     struct Gap2Recv_42B210 {
         char ParsePathDirections(int a2, void* a3);  // G42.39 def-derived
@@ -420,7 +420,7 @@ public:  // g57c5 W4 supply slot
     int referenceCount;  // G42.39a supply
     int vtable1;  // G42.39a supply
     int vtable3;  // G42.39a supply
-        void UpdateFootFacing();  // G42.39 def-derived
+        int UpdateFootFacing();  // G42.39 def-derived
     };
     struct Gap2Recv_5175F0 {
     int AbstractClass_v;  // G42.39a supply
@@ -671,7 +671,7 @@ public:  // g57c5 W4 supply slot
     int attachedBomb[8];  // G42.39a supply (indexed usage)
     int fallRate;  // G42.39a supply
     int AbstractClass;  // G42.39a supply
-        void PlaceRandomWaypoints(int a2);  // G42.39 def-derived
+        int PlaceRandomWaypoints(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_595400 {
         char PlaceNeutralBuilding();  // G42.39 def-derived
@@ -1475,7 +1475,7 @@ public:  // g57c5 W4 supply slot
     int AbstractClass_v;  // G42.39a supply
     int u32_688;  // G42.39a supply
     int AbstractClass;  // G42.39a supply
-        void ParseAndApplyAlliances();  // G42.39 def-derived
+        int ParseAndApplyAlliances();  // G42.39 def-derived
     };
     struct Gap2Recv_69BBF0 {
         void Network_Disconnect_69BBF0(int a2);  // G42.39 def-derived
@@ -1545,7 +1545,7 @@ public:  // g57c5 W4 supply slot
     };
     struct Gap2Recv_6BAFA0 {
     int AbstractClass_v;  // G42.39a supply
-        void Render_Load_6BAFA0();  // G42.39 def-derived
+        int Render_Load_6BAFA0();  // G42.39 def-derived
     };
     struct Gap2Recv_6BB990 {
     int AbstractClass_v;  // G42.39a supply
@@ -2051,7 +2051,7 @@ public:  // g57c5 W4 supply slot
     int location[8];  // G42.39a supply (indexed usage)
     int passengers[8];  // G42.39a supply (indexed usage)
     int vtable2;  // G42.39a supply
-        void PropagateCellOccupancy();  // G42.39 def-derived
+        int PropagateCellOccupancy();  // G42.39 def-derived
     };
     struct Gap2Recv_722F00 {
     int fallRate;  // G42.39a supply
@@ -2061,7 +2061,7 @@ public:  // g57c5 W4 supply slot
     int u32_10C;  // G42.39a supply
     int u32_46;  // G42.39a supply
     int u8_45;  // G42.39a supply
-        void RebuildBuildingOccupancy();  // G42.39 def-derived
+        int RebuildBuildingOccupancy();  // G42.39 def-derived
     };
     struct Gap2Recv_724200 {
     int abstractFlags;  // G42.39a supply
@@ -2073,7 +2073,7 @@ public:  // g57c5 W4 supply slot
     int vtable26;  // G42.39a supply
     int vtable4;  // G42.39a supply
     int wasFallingDown;  // G42.39a supply
-        void HandleToolTipMessage(int a2);  // G42.39 def-derived
+        int HandleToolTipMessage(int a2);  // G42.39 def-derived
     };
     struct Gap2Recv_724510 {
     int cloakProgress[8];  // G42.39a supply (indexed usage)
@@ -2388,7 +2388,7 @@ public:  // g57c5 W4 supply slot
     int u32_494;  // G42.39a supply
     int u32_4AC;  // G42.39a supply
     int u32_50;  // G42.39a supply
-        void SelectionInitializeWOL();  // G42.39 def-derived
+        int SelectionInitializeWOL();  // G42.39 def-derived
     };
     struct Gap2Recv_76C970 {
     int u32_434;  // G42.39a supply
@@ -2688,7 +2688,7 @@ namespace gamemd {
         int *radioLinks;  // radioLinks[3] -> %d
         char *idleActionTimer;  // &idleActionTimer[2]
         char *animation;  // (AudioQueue*)animation / animation[6]
-        void *isDisguisedFlag;  // *(_DWORD*)isDisguisedFlag
+        void *isDisguisedFlag;  // *(unsigned int*)isDisguisedFlag
         int disguiseCreationFrame;  // %d
         int *infantryBlinkTimer;  // infantryBlinkTimer[0] -> %d
         int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3);  // 0x403a80  // G57w8 sig-sync (raw fn_40.c)

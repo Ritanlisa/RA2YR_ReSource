@@ -7,16 +7,22 @@ namespace gamemd {
 
 struct DeleteAndZero {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
+
 // --- flat members (END) ---
-    int Alt();
-    int Alt2();
-    void ** OrFree(char a2);
+    int Alt(void *a1 = 0);
+    int Alt2(void *a1 = 0);
+    void ** OrFree(char a2, void *a1 = 0);
     void* owningHouseIndex;  // 0x0 (no offset truth)
     void* customSound_controller;  // 0x0 (no offset truth)
     void* AbstractClass;  // 0x0 (base-subobject vocab, no offset truth)
+    static double DeleteAndZero_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double DeleteAndZero_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double nextArrayIndex(...);  // plateau: C2039/C3861 stub
+    static double occupant(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
+    static double vfptr2(...);  // plateau: C2039/C3861 stub
+    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -13,14 +13,14 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x5EE1B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Config::SaveObserverMode()
 {
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
 
   RawFileClass::Construct(v0, (int)aRa2mdIni); /*0x5ee1bc*/
-  INIClass::SetInt((char *)&dword_8870C0, (unsigned __int8 *)aMultiplayer, aObservermode, g_MenuStateFlags, 0); /*0x5ee1d8*/
-  INIClass::WriteDigest(&dword_8870C0, (int)v0, 0); /*0x5ee1e9*/
-  RawFileClass::Dtor(v0); /*0x5ee1f2*/
-}
+  INIClass::SetInt((gamemd::INIClass *)((char *)&dword_8870C0), (uint8_t *)aMultiplayer, aObservermode, g_MenuStateFlags, 0); /*0x5ee1d8*/
+  INIClass::WriteDigest((gamemd::INIClass *)(&dword_8870C0), (int)v0, 0); /*0x5ee1e9*/
+  ((RawFileClass *)(v0))->Dtor(); /*0x5ee1f2*/
+}  // G42.18 ns repair
 } // namespace gamemd

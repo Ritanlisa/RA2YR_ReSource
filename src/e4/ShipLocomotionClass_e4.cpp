@@ -23,7 +23,7 @@ extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
 
 
 // 0x69EE90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 {
   int *v2; // edi
@@ -38,20 +38,20 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1->Piggybackee = 0; /*0x69eeac*/
-    *(_DWORD *)a1->0 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb3*/
-    *(_DWORD *)&a1->0[4] = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb9*/
-    *(_DWORD *)a1->q018 = &off_7F2D68; /*0x69eec0*/
+    *(unsigned int *)a1->0 = &vt_ShipLocomotionClass; /*0x69eeb3*/
+    *(unsigned int *)&a1->0[4] = &vt_ShipLocomotionClass; /*0x69eeb9*/
+    *(unsigned int *)a1->__pad_18 = &off_7F2D68; /*0x69eec0*/
   }
-  (*(void (__stdcall **)(int *, int **, int, _DWORD))(*v2 + 12))(v2, &pStm, 1, 0); /*0x69eed3*/
-  if ( !(_BYTE)pStm ) /*0x69eedc*/
+  (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x69eed3*/
+  if ( !(unsigned char)pStm ) /*0x69eedc*/
     return v3; /*0x69ef08*/
   Piggybackee = a1->Piggybackee; /*0x69eede*/
   p_Piggybackee = (LPVOID *)&a1->Piggybackee; /*0x69eee1*/
   if ( Piggybackee ) /*0x69eee6*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x69eeeb*/
+    (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x69eeeb*/
   *p_Piggybackee = 0; /*0x69eef5*/
-  return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x69ef01*/
-}
+  return OleLoadFromStream((LPSTREAM)v2,(void *)(&IID_ILocomotion), p_Piggybackee); /*0x69ef01*/
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x69EF10
 namespace gamemd {
@@ -74,14 +74,14 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x69ef2b*/
   if ( !v4->Piggybackee ) /*0x69ef36*/
   {
-    v12 = *(_DWORD *)v3->q000; /*0x69efd3*/
-    IDA_LOBYTE(a3) = 0; /*0x69efdf*/
-    (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
+    v12 = *(unsigned int *)v3->__pad_0; /*0x69efd3*/
+    (*((unsigned char *)&(a3))) = 0; /*0x69efdf*/
+    (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
     return IPersistStream; /*0x69efe8*/
   }
-  v6 = *(_DWORD *)v3->q000; /*0x69ef3c*/
-  IDA_LOBYTE(a3) = 1; /*0x69ef48*/
-  (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
+  v6 = *(unsigned int *)v3->__pad_0; /*0x69ef3c*/
+  (*((unsigned char *)&(a3))) = 1; /*0x69ef48*/
+  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
   Piggybackee = v4->Piggybackee; /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
   if ( Piggybackee ) /*0x69ef5d*/
@@ -135,15 +135,15 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
 {
   ILocomotion *Piggybackee; // eax
 
-  *(_DWORD *)Block->0 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
-  *(_DWORD *)&Block->0[4] = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
-  *(_DWORD *)Block->q018 = &off_7F2D68; /*0x6a42c0*/
+  *(unsigned int *)Block->0 = &vt_ShipLocomotionClass; /*0x6a42b3*/
+  *(unsigned int *)&Block->0[4] = &vt_ShipLocomotionClass; /*0x6a42b9*/
+  *(unsigned int *)Block->__pad_18 = &off_7F2D68; /*0x6a42c0*/
   Piggybackee = Block->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
-    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x6a42d6*/
+    (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
+  ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    RA2_OPDEL(Block); /*0x6a42e3*/
+    operator delete((void *)(Block)); /*0x6a42e3*/
   return Block->0; /*0x6a42ed*/
 }
 } // namespace gamemd

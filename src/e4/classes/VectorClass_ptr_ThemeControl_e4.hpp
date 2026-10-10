@@ -14,20 +14,13 @@ struct VectorClass_ptr_ThemeControl {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Clear(int a2);  // 0x4E8530
-    char ddtor(int a2);  // 0x4EA2A0
-    char ddtor(int a2, unsigned int * a3);  // 0x4EA2E0
-    wchar_t * ddtor(void *a1_1);  // 0x4EA390
-    int GetSize(unsigned int * a2);  // 0x4EA3C0
-    unsigned int Get(int a2, void *a2_2);  // 0x4EA400
-    VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x4EF940
+    int  Clear(int a2);  // 0x4E8530
+    char  ddtor(int a2);  // 0x4EA2A0
+    int  GetSize(unsigned int * a2);  // 0x4EA3C0
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x4EA400
+    VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x4EF940
     int Constructor_VectorClass_ThemeControl___(void *a1_1);  // 0x7212B0
-    unsigned int Constructor_VectorClass_ThemeControl___(int a2);  // 0x7212E0
-    char Constructor_VectorClass_ThemeControl___(int a2, unsigned int * a3);  // 0x721300
-    int Constructor_VectorClass_ThemeControl___(unsigned int * a2);  // 0x7213B0
-    DynamicVector * Constructor_VectorClass_ThemeControl___(unsigned int * Block, char a2);  // 0x7213E0
 };
 } // namespace gamemd

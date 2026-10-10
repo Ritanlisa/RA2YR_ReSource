@@ -11,21 +11,7 @@ struct E4Recv_767E90 {
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC
     unsigned int M16;  // 0x10
-    unsigned int q018;  // 0x18
     unsigned int M24;  // 0x24
-    unsigned int q034;  // 0x34
-    unsigned int q054;  // 0x54
-    unsigned int q084;  // 0x84
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q774;  // 0x774
-    unsigned int q1908;  // 0x1908
-    unsigned int q6408;  // 0x6408
-    unsigned int q25608;  // 0x25608
-    unsigned int q153094;  // 0x153094
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
     unsigned int * sub_767E90();  // 0x767E90
 };

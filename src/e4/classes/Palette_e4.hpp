@@ -8,17 +8,16 @@ namespace gamemd {
 struct Palette {
 // --- flat members (BEGIN) ---
     unsigned int m_Colors;  // 0x0
-    unsigned int u32_4;  // 0x4
-    unsigned int u32_8;  // 0x8
     char Palette_field_400[4];  // 0x400
 // --- flat members (END) ---
-    static int Preview_Generate(void *aP1, int a2, int a3, void *a4);  // 0x642130 raw: int __thiscall Palette::Preview_Generate(Palette*, char, int, size_t*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int Preview_Generate(void *aP1, int a2, int a3, void *a4);
     int CalcColorDistance(unsigned char * a2, void *a2_2);
-    int FindClosestColor(Palette *a2);
+    int FindClosestColor(Palette *a2, void *a1 = 0);
     int LoadFile();
     unsigned char * ConvertIndices(int a2);
-    unsigned char * SixBitTo16Bit(char a2, char a3, char a4);  // 0x4355b0
+    unsigned char *  SixBitTo16Bit(char a2, char a3, char a4);  // 0x4355b0
     int LoadFile(char * Source);
+    unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4);  // plateau: def-aligned C2039/C2660
 };
 
 } // namespace gamemd

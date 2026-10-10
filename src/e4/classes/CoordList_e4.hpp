@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct CoordList {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     static unsigned int *__stdcall GetBounds(unsigned int * a1, int16_t * a2);
 };

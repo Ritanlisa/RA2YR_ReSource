@@ -7,14 +7,7 @@ namespace gamemd {
 
 struct TClassFactory_CampaignClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
+
 // --- flat members (END) ---
     int GetClassName();
     int GetSize(int a2, int a1, int a3, int a4);

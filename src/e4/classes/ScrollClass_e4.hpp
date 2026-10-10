@@ -13,7 +13,7 @@ struct ScrollClass {
     char m_MaxY[4];  // 0xC
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    short Read(char * Block, char a2);
+    short Read(char * Block, char a2, void *a1 = 0);
     int Scroll(int * a1, MouseClass * aP2);
 };
 

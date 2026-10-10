@@ -6,9 +6,9 @@
 namespace gamemd {
 struct GlobalArray {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
-    static int FindString(void *aP1);  // 0x422B20 raw: int FindString(GlobalArray*)
+    static int FindString(void *aP1);
 };
 } // namespace gamemd

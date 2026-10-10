@@ -7,9 +7,9 @@
 namespace gamemd {
 struct MultiMissionVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
-    static unsigned int * Constructor(void *aP1, int a2, int a3);  // 0x5EF0B0 raw: _DWORD* Constructor(MultiMissionVector*, int, int)
+    static unsigned int * Constructor(void *aP1, int a2, int a3);
 };
 } // namespace gamemd

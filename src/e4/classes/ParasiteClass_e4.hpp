@@ -14,37 +14,25 @@ struct ParasiteClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char creationFrame[4];  // 0x24
-    int q028;  // 0x28
-    bool q02B;  // 0x2B
-    void* q02C;  // 0x2C
     char ParasiteClass_field_30[4];  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char ParasiteClass_field_34[4];  // 0x34
-    unsigned int u32_38;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     char ParasiteClass_field_3C[4];  // 0x3C
-    unsigned int q03D;  // 0x3D
     char ParasiteClass_field_40[4];  // 0x40
-    bool q042;  // 0x42
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
     Coord * * Update(void *a1, void *a2, void *a3, void *a4);
     ParasiteClass(TechnoClass * aP1);
-    bool CanInfect(unsigned int * a2);
+    bool CanInfect(unsigned int *a2);
     int Attach(int * a2);
-    int CanExistOnVictimCell();
-    int Constructor();
+    int CanExistOnVictimCell(void *a1 = 0);
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int LoadParasite(int * a0, AbstractClass * aP1);
     int SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2);
     int ddtor(int a1, unsigned int * a2);
@@ -54,6 +42,10 @@ struct ParasiteClass {
     void * UpdateParasite(ParasiteClass * Block, char a2);
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_54;  // 0x54 (offset-truth)
+    static double ParasiteClass_field_38(...);  // plateau: C2039/C3861 stub
+    static double __pad_28(...);  // plateau: C2039/C3861 stub
+    static double u32_44(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

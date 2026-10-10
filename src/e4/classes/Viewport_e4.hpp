@@ -7,8 +7,7 @@ namespace gamemd {
 
 struct Viewport {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     static int Clear(void *a1 = 0);
 };

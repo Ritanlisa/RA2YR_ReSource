@@ -14,7 +14,6 @@ struct ConnectionClass {
     bool Active;  // 0x8
     unsigned int LastPacketTime;  // 0xC
     unsigned int PacketsSent;  // 0x10
-    unsigned int q011;  // 0x11
     unsigned int PacketsReceived;  // 0x14
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5);
@@ -23,12 +22,14 @@ struct ConnectionClass {
     int processTileUpdate(void *a2, signed int *a3);
     int receivePacket(int a2, int a3);
     int serviceSendQueue();
-    int initQueue(unsigned int a2);
+    int initQueue(unsigned int a2, void *a1 = 0);
     void dtor();
-     int queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);  // G57w10-S raw 0x0048B410 (was C2597 interim stub)
-    unsigned int q000;  // 0x0 (offset-truth)
+     int queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
+    static double PhoneNumber(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

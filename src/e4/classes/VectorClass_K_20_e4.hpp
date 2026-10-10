@@ -6,10 +6,9 @@
 namespace gamemd {
 struct VectorClass_K_20 {
     void* vfptr;  // minimal E2 declaration
-    int AddRef(int a1, const void * a2, unsigned int * a3);  // 0x6BF150
-    LONG AddRef(int a1);  // 0x6BF1C0
+    int  AddRef(void * a2, unsigned int * a3);  // 0x6BF150
     LONG Release(volatile LONG * Block);  // 0x6BF1E0
-    int ddtor(int a1, int a2, int a3, unsigned int * a4);  // 0x6BF210
-    int GetSize(int a1, int a2);  // 0x6BF290
+    int  ddtor(int a2, int a3, unsigned int * a4);  // 0x6BF210
+    int  GetSize(int a2);  // 0x6BF290
 };
 } // namespace gamemd

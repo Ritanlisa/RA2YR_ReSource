@@ -20,140 +20,19 @@ struct Coord;  // fix_fwd_type_supply
 
 struct Cell {
 // --- flat members (BEGIN) ---
-    Cell* q000;  // 0x0
-    void* q004;  // 0x4
-    unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned int u32_14;  // 0x14
-    unsigned int u32_18;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned int q01E;  // 0x1E
-    unsigned int q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int u16_26;  // 0x26
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned int q030;  // 0x30
-    unsigned char q034;  // 0x34
-    void* q038;  // 0x38
-    unsigned int q03B;  // 0x3B
-    unsigned int u32_3C;  // 0x3C
-    unsigned char q03F;  // 0x3F
-    unsigned char q040;  // 0x40
-    unsigned int u32_44;  // 0x44
-    unsigned int q048;  // 0x48
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q064;  // 0x64
-    void* q068;  // 0x68
-    void* q06C;  // 0x6C
-    unsigned int u32_70;  // 0x70
-    unsigned int u32_74;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned char q07C;  // 0x7C
-    unsigned int u32_80;  // 0x80
-    unsigned int u32_81;  // 0x81
-    unsigned int q084;  // 0x84
-    unsigned int q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    unsigned char q09C;  // 0x9C
-    unsigned char q0A0;  // 0xA0
-    unsigned int u32_A4;  // 0xA4
-    unsigned int q0A8;  // 0xA8
-    unsigned int u32_AC;  // 0xAC
-    unsigned char q0B0;  // 0xB0
-    unsigned char q0B4;  // 0xB4
-    unsigned char q0B8;  // 0xB8
-    unsigned char q0BC;  // 0xBC
-    unsigned int u32_C4;  // 0xC4
-    unsigned char q0C8;  // 0xC8
-    void* q0E4;  // 0xE4
-    unsigned char q0E8;  // 0xE8
-    unsigned int u32_EC;  // 0xEC
-    void* q0F4;  // 0xF4
-    void* q0F8;  // 0xF8
-    unsigned char q0FC;  // 0xFC
-    unsigned char q100;  // 0x100
-    void* q104;  // 0x104
-    void* q108;  // 0x108
-    unsigned int u32_10C;  // 0x10C
-    unsigned int q114;  // 0x114
-    unsigned int q118;  // 0x118
-    unsigned int u32_11A;  // 0x11A
-    unsigned char u8_11C;  // 0x11C
-    unsigned int u32_11E;  // 0x11E
-    unsigned char q11F;  // 0x11F
-    unsigned char q120;  // 0x120
-    unsigned int u32_124;  // 0x124
-    unsigned int q128;  // 0x128
-    void* q12C;  // 0x12C
-    unsigned int u32_12E;  // 0x12E
-    unsigned int u32_12F;  // 0x12F
-    unsigned char q130;  // 0x130
-    unsigned int u32_131;  // 0x131
-    void* q134;  // 0x134
-    unsigned char q138;  // 0x138
-    void* q13C;  // 0x13C
-    void* q140;  // 0x140
-    unsigned int q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q14C;  // 0x14C
-    unsigned char q150;  // 0x150
-    unsigned char q160;  // 0x160
-    unsigned char q164;  // 0x164
-    unsigned int q168;  // 0x168
-    unsigned char q16C;  // 0x16C
-    unsigned char q170;  // 0x170
-    unsigned char q180;  // 0x180
-    unsigned char q184;  // 0x184
-    unsigned char q188;  // 0x188
-    unsigned char q194;  // 0x194
-    unsigned char q198;  // 0x198
-    unsigned char q19C;  // 0x19C
-    unsigned int u32_1A4;  // 0x1A4
-    unsigned char q1A8;  // 0x1A8
-    unsigned int u32_1AC;  // 0x1AC
-    unsigned char q1B0;  // 0x1B0
-    unsigned char q1B4;  // 0x1B4
-    unsigned char q1B8;  // 0x1B8
-    unsigned int u32_200;  // 0x200
-    unsigned int u32_21C;  // 0x21C
-    unsigned char q220;  // 0x220
-    void* q228;  // 0x228
-    unsigned char q22C;  // 0x22C
-    unsigned char q230;  // 0x230
-    unsigned char q234;  // 0x234
-    unsigned char q238;  // 0x238
-    void* q244;  // 0x244
-    void* q248;  // 0x248
-    void* q24C;  // 0x24C
-    unsigned char q250;  // 0x250
-    unsigned char q258;  // 0x258
-    void* q260;  // 0x260
-    void* q264;  // 0x264
-    unsigned int q274;  // 0x274
-    unsigned int q278;  // 0x278
-    unsigned int q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q288;  // 0x288
-    void* q298;  // 0x298
-    void* q29C;  // 0x29C
+
 // --- flat members (END) ---
-    TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
-    int PosToIndex();  // 0x42B1C0
-    int CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
-    void ApplyDamage(int aP1, int a3, int a4, char aP4);
-    int GetNeighbourContent(unsigned int a2);  // 0x481810
+    TechnoClass * *  IsOccupied(int16_t * a2, char a3);  // 0x419B00
+    int PosToIndex(void *a1 = 0);  // 0x42B1C0
+    int  CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
+    int ApplyDamage(int aP1, int a3, int a4, char aP4);
+    int  GetNeighbourContent(unsigned int a2, void *a1 = 0);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
-    int IsValidHeight();  // 0x485060
-    int IsEmpty();  // 0x486380
+    int IsValidHeight(void *a1 = 0);  // 0x485060
+    int IsEmpty(void *a1 = 0);  // 0x486380
     int IsGroundTypeRange();  // 0x4865D0
-    int IsInRange();  // 0x486750
-    int IsInRange2();  // 0x486770
+    int IsInRange(void *a1 = 0);  // 0x486750
+    int IsInRange2(void *a1 = 0);  // 0x486770
     int IsShore();  // 0x4867B0
     int IsBuildableAdvanced();  // 0x486FF0
     int HasOccupierBit(char aP1);
@@ -161,25 +40,25 @@ struct Cell {
     long long GetTraversability();  // 0x487CB0
     int GetSlopeIndex();  // 0x487D50
     int IsBridge2();  // 0x487DF0
-    Coord * * IsValidDestination(short * a2);  // 0x4DCE80
-    int Exists(MouseClass * aP1);  // 0x5657E0
+    Coord * *  IsValidDestination(int16_t * a2);  // 0x4DCE80
+    int  Exists(int16_t * a2);  // 0x5657E0
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
-    static char UpdateTileType(__int16 *a1, int a2, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
-    static char SetTileType(__int16 *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
-    char IsPassableAllied(int a1, __int16 *a2);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
-    static HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
+    static char UpdateTileType(int16_t *a1, int a2, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
+    static char SetTileType(int16_t *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
+    char IsPassableAllied(int a1, int16_t *a2);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
+    static HouseClass * *  GetAdjacencyFlags(int a1);  // 0x579B70
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
-    static void * Clear(Cell * aP1);  // 0x5A9940 G57w15f3: static receiver-first per raw __thiscall (Cell *this); needed for legal fn-ptr cast at Array::ForEach call sites
-    int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
-    static void * CreateCrater(int a1, int a2, int a3, int a4, int a5);  // 0x6D2790 [w16g2] static + int params per raw __stdcall (no receiver)
-    static int GetAdjacentPassableMask(__int16 *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
-    unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
-    unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
+    static void * Clear(Cell * aP1);
+    int  IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
+    static void * CreateCrater(int a1, int a2, int a3, int a4, int a5);
+    static int GetAdjacentPassableMask(int16_t *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
+    unsigned short *  GetHeight(int * a2, int * a3);  // 0x4265B0
+    unsigned int *  GetWorldCoords(unsigned int * a2, int a3, void *a1 = 0);  // 0x68BD00
     BOOL IsPassableOffset(int aP1);  // 0x4870D0
-    int PosToLinearIndex(__int16 *a1);  // G57w10-S raw 0x0056BC50 IUnknown 占位清除
+    int PosToLinearIndex(int16_t *a1);  // G57w10-S raw 0x0056BC50 IUnknown 占位清除
     int DecodeFlags();  // 0x56CB80
-    static __int64 GetGroundHeight(unsigned int *a1);  // G57w10-S raw 0x00578080 (was C2597 interim stub)
+    int GetGroundHeight(unsigned int * a1);
     static int IsPassable(unsigned int *a1);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
     unsigned int q_4C4;  // +0x4C4 flat supply (final pass)
@@ -195,5 +74,29 @@ struct Cell {
     unsigned char u32_746;  // 0x746 (offset-truth)
     unsigned char u32_901;  // 0x901 (offset-truth)
     unsigned int u32_C0;  // 0xC0 (offset-truth)
+    static double Cell_field_0x0(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0x11B(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0x140(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0x38(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0x68(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0x6C(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0xE4(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0xF4(...);  // plateau: C2039/C3861 stub
+    static double Cell_field_0xF8(...);  // plateau: C2039/C3861 stub
+    static double __pad_1C(...);  // plateau: C2039/C3861 stub
+    static double __pad_3C(...);  // plateau: C2039/C3861 stub
+    static double __pad_70(...);  // plateau: C2039/C3861 stub
+    static double __pad_E8(...);  // plateau: C2039/C3861 stub
+    static double __pad_FC(...);  // plateau: C2039/C3861 stub
+    static double q024(...);  // plateau: C2039/C3861 stub
+    static double q384(...);  // plateau: C2039/C3861 stub
+    static double u32_24(...);  // plateau: C2039/C3861 stub
+    static double u32_26(...);  // plateau: C2039/C3861 stub
+    static double u32_44(...);  // plateau: C2039/C3861 stub
+    static double u32_46C(...);  // plateau: C2039/C3861 stub
+    static double u32_490(...);  // plateau: C2039/C3861 stub
+    static double u32_4A0(...);  // plateau: C2039/C3861 stub
+    static double u32_78(...);  // plateau: C2039/C3861 stub
+    static double u32_EC(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

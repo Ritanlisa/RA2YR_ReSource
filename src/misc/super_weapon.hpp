@@ -55,7 +55,7 @@ public:
     // returns type index: -1 = not found, -2 = "<none>" (binary returns v4[46], an int)
      int FindByName();                                                            // 0x5117D0 IDA: int __thiscall(this) -- this 即名字指针
     bool IsAvailable() const;                                                         // 0x4F6540
-    void Construct(const char* pID);  // 0x5113F0
+    int Construct(const char* pID);  // 0x5113F0
 
     // vtable helpers
     void SaveLoad_Prefix(IStream* stream);                                             // 0x6CE800
@@ -110,7 +110,7 @@ public:
     // wrapper: delegates to SuperClass::PowerDrainUpdate at 0x6CE020
     virtual int32_t objectSize() const override;
 
-    void Reset();                                                                    // 0x6CE0B0
+    int Reset();                                                                    // 0x6CE0B0
     bool SetOnHold(bool onHold);                                                     // 0x6CB4D0
     bool Grant(bool oneTime, bool announce, bool onHold);
     bool Lose();                                                                     // 0x6CB7B0
@@ -135,8 +135,8 @@ public:
     SuperClass(SuperWeaponTypeClass* pSWType, HouseClass* pOwner) noexcept;           // 0x6CAEC0 (Constructor)
 
     // lifecycle
-    void Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);  // 0x6CAEC0
-    void Construct();                                                                // 0x6CAF90
+    void* Constructor(SuperWeaponTypeClass* pSWType, HouseClass* pOwner);  // 0x6CAEC0
+    int Construct();                                                                // 0x6CAF90
     void CleanupMembers();                                                           // 0x6CB120
     void StartTimer(int32_t a2, int32_t a3, int32_t a4);  // 0x6CB560 (G42.33 批 3: 3 栈参真值, e4 载体同)
     void ExecuteAction(Action action);                                                // 0x6CDFF0

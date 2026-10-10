@@ -31,7 +31,7 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x6691E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Rules::ReadMiscINI()
 {
 
@@ -288,7 +288,7 @@ int Rules::ReadMiscINI()
   int v266; // [esp+CCh] [ebp-8h]
   int v267; // [esp+D0h] [ebp-4h]
   INIClass *v268; // [esp+D8h] [ebp+4h]
-}
+}  // G42.18 ns repair
 
 } // namespace gamemd
 
@@ -419,6 +419,7 @@ IUnknown * * Rules::ReadCombatINI()
 namespace gamemd {
 unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 {
+
   int v3; // eax
   int v4; // eax
   int v5; // ecx
@@ -426,54 +427,57 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 
   if ( this == (Rules *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (__thiscall **)(Rules *))(*(_DWORD *)this->q000 + 12))(this); /*0x67a57e*/
+  (*(void (**)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67a57e*/
   v3 = aP1[2]; /*0x67a581*/
-  *(_DWORD *)&this->m_5[3] = v3; /*0x67a586*/
+  *(unsigned int *)&this->m_5[3] = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
-    *(_DWORD *)&this->m_1[3] = 0; /*0x67a5d6*/
-    IDA_BYTE1(this->m_C) = 0; /*0x67a5dd*/
-  LABEL_8:
-    *(_DWORD *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
-    this->u32_14 = aP1[5]; /*0x67a5ea*/
-    return this->q000; /*0x67a5ed*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x67a5d6*/
+    BYTE1(this->m_C) = 0; /*0x67a5dd*/
+LABEL_8:
+    *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
+    *((unsigned int *)this + 5) = aP1[5]; /*0x67a5ea*/
+    return this->__pad_0; /*0x67a5ed*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x67a593*/
-  *(_DWORD *)&this->m_1[3] = v4; /*0x67a59b*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
+  *(unsigned int *)&this->m_1[3] = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
-  v5 = *(_DWORD *)&this->m_5[3]; /*0x67a5a2*/
+  v5 = *(unsigned int *)&this->m_5[3]; /*0x67a5a2*/
   v6 = 0; /*0x67a5a5*/
-  IDA_BYTE1(this->m_C) = 1; /*0x67a5a9*/
+  BYTE1(this->m_C) = 1; /*0x67a5a9*/
   if ( v5 <= 0 ) /*0x67a5ad*/
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a5b8*/
+    *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
-  while ( v6 < *(_DWORD *)&this->m_5[3] ); /*0x67a5c1*/
-  *(_DWORD *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
-  this->u32_14 = aP1[5]; /*0x67a5cc*/
-  return this->q000; /*0x67a5d1*/
+  while ( v6 < *(unsigned int *)&this->m_5[3] ); /*0x67a5c1*/
+  *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
+  *((unsigned int *)this + 5) = aP1[5]; /*0x67a5cc*/
+  return this->__pad_0; /*0x67a5d1*/
+
 }
 }
 // 0x5FB2E0
 namespace gamemd {
 char * Rules::GetProductionTimeMult(int aP1)
 {
+
   char *result; // eax
   int v3; // ecx
 
   result = (char *)aP1; /*0x5fb2e0*/
   if ( aP1 ) /*0x5fb2e6*/
   {
-    v3 = *(_DWORD *)this->q000; /*0x5fb2e8*/
+    v3 = *(unsigned int *)this->__pad_0; /*0x5fb2e8*/
     if ( aP1 >= 5 ) /*0x5fb2ed*/
       return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/
     else
       return (&(&off_832CEC)[8 * aP1])[v3]; /*0x5fb2f2*/
   }
   return result; /*0x5fb2f9*/
+
 }
 } // namespace gamemd

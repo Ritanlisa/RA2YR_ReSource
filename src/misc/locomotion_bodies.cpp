@@ -38,7 +38,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
     *a3 = this; /*0x55aa3a*/
   if ( !*a3 ) /*0x55aa3c*/
     return -2147467262; /*0x55aa41*/
-  (*(void (__stdcall **)(LocomotionClass *))(*(_DWORD *)this->ILocomotion + 4))(this); /*0x55aa4c*/
+  (*(void (__stdcall **)(LocomotionClass *))(*(unsigned int *)this->ILocomotion + 4))(this); /*0x55aa4c*/
   return 0; /*0x55a9bd*/
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }
@@ -120,20 +120,20 @@ bool LocomotionClass::Process()
 
   LocomotionClass::Init(this); /*0x69ec53*/
   this->u32_1C = 0; /*0x69ec5d*/
-  this->u32_8 = 0; /*0x69ec60*/
-  v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x69ec63*/
+  this->__pad_008 = 0; /*0x69ec60*/
+  v2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x69ec63*/
   this->u32_2C = 0; /*0x69ec69*/
   this->u32_24 = v2; /*0x69ec6c*/
   this->LinkedTo = 0; /*0x69ec6f*/
   this->u32_34 = g_OverlayTypeConfig; /*0x69ec78*/
   this->u32_38 = qword_B077FC; /*0x69ec80*/
-  this->u32_10 = g_OverlayTypeConfig; /*0x69ec95*/
+  this->__pad_010 = g_OverlayTypeConfig; /*0x69ec95*/
   this->Dirty = qword_B077FC; /*0x69ec9e*/
-  v3 = (unsigned int)((qword_B077FC) >> 32); /*0x69eca1*/
-  this->u8_14 = 0; /*0x69eca7*/
+  v3 = (*(((unsigned int *)&(qword_B077FC)) + 1)); /*0x69eca1*/
+  this->u32_50 = 0; /*0x69eca7*/
   this->u32_4C = 0; /*0x69ecaa*/
-  this->u32_48 = v3; /*0x69ecad*/
-  this->q015 = 0; /*0x69ecb3*/
+  this->__pad_012 = v3; /*0x69ecad*/
+  this->u32_54 = 0; /*0x69ecb3*/
   this->u32_58 = -1; /*0x69ecb6*/
   this->u32_5C = -1; /*0x69ecb9*/
   this->u32_60 = 0; /*0x69ecbc*/
@@ -143,8 +143,8 @@ bool LocomotionClass::Process()
   this->u32_64 = 0; /*0x69ecc8*/
   this->u32_65 = 1; /*0x69eccb*/
   this->u32_68 = 0; /*0x69eccf*/
-  *(_DWORD *)this->ILocomotion = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
-  *(_DWORD *)&this->ILocomotion[4] = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
+  *(unsigned int *)this->ILocomotion = 0; /*0x69ecd2*/
+  *(unsigned int *)&this->ILocomotion[4] = 0; /*0x69ecd8*/
   this->u32_18 = &off_7F2D68; /*0x69ecdf*/
   return (int)this->ILocomotion; /*0x69ece8*/
 }

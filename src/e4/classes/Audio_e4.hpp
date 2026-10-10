@@ -8,87 +8,26 @@
 namespace gamemd {
 struct Audio {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned int u32_4;  // 0x4
-    char u32_5;  // 0x5
-    unsigned int q008;  // 0x8
-    bool q00A;  // 0xA
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    void* q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned int u32_1C;  // 0x1C
-    unsigned int u32_20;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q026;  // 0x26
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    void* q034;  // 0x34
-    void* q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned int u32_40;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned int q050;  // 0x50
-    unsigned int u32_54;  // 0x54
-    unsigned char q060;  // 0x60
-    unsigned int q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned int u32_90;  // 0x90
-    unsigned char u8_A4;  // 0xA4
-    unsigned int u32_A8;  // 0xA8
-    unsigned int u32_AC;  // 0xAC
-    unsigned int u32_D4;  // 0xD4
-    unsigned int q100;  // 0x100
-    unsigned char q104;  // 0x104
-    unsigned int q128;  // 0x128
-    void* q130;  // 0x130
-    void* q134;  // 0x134
-    unsigned int u32_138;  // 0x138
-    unsigned int q144;  // 0x144
-    unsigned int u32_148;  // 0x148
-    unsigned int u32_14C;  // 0x14C
-    unsigned int q150;  // 0x150
-    unsigned char q164;  // 0x164
-    unsigned int q168;  // 0x168
-    unsigned char q260;  // 0x260
-    unsigned char q28E;  // 0x28E
-    unsigned int u32_2B4;  // 0x2B4
-    void* q304;  // 0x304
-    void* q308;  // 0x308
-    unsigned int q310;  // 0x310
-    unsigned int q324;  // 0x324
-    unsigned int q328;  // 0x328
-    unsigned int q360;  // 0x360
-    unsigned int q374;  // 0x374
-    unsigned int q530;  // 0x530
-    unsigned int q598;  // 0x598
-    unsigned int u32_5D4;  // 0x5D4
-    unsigned char q608;  // 0x608
-    unsigned char q650;  // 0x650
-    unsigned char q654;  // 0x654
-    unsigned int u32_6C4;  // 0x6C4
-    void* q710;  // 0x710
+
 // --- flat members (END) ---
-    static int IsMediumVolume(void *aP1);  // 0x74FF90 raw: int IsMediumVolume(int*)
+    static int IsMediumVolume(void *aP1);
     int GetChannelStatus(void *a1_1);  // 0x402720
     int ReleaseChannelRefs();  // 0x404D80
     int UpdatePlaybackPosition();  // 0x4054A0
-    void * ProcessMixerOutput(char * Source);  // 0x4063B0
-    int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
+    void *  ProcessMixerOutput(char * Source);  // 0x4063B0
+    int  ApplyFormatFlags(int * a1, void * a2);  // 0x406870
     int WaitForCallback();  // 0x4070B0
-    int Release();  // 0x407F40
-    int IsSoundPlaying();  // 0x408070
-    int CalcRate(int a2, int a3);  // 0x408540
-    int GetSampleSize();  // 0x409320
-    ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
-    char ** SetSoundFileName(char *Source, int a3);  // 0x5D5820
+    int Release(void *a1 = 0);  // 0x407F40
+    int IsSoundPlaying(void *a1 = 0);  // 0x408070
+    int  CalcRate(int a2, int a3);  // 0x408540
+    int GetSampleSize(void *a1 = 0);  // 0x409320
+    ObjectClass * *  ParseVolume(void * a2, void * a3);  // 0x5D0470
+    char **  SetSoundFileName(char * Source, int a3, void *a1 = 0);  // 0x5D5820
     int LoadWAVFiles(void *a1_1);  // 0x7207F0
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2);
     void * LoadSoundINI();  // 0x7513F0
     unsigned int GetSamplePosition(int aP1, int aP2);  // 0x7BD130
-    int InitChannels();  // 0x401080
+    int InitChannels(void *a1 = 0);  // 0x401080
     int FlushChannel(unsigned int ** Block);  // 0x404DD0
     int Shutdown(void *a1_1);  // 0x406D40
     static int IsSoundEnabled();  // 0x407000
@@ -97,11 +36,18 @@ struct Audio {
     static int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     static int IsPlaying(...);  // 0x7529E0
-    static int SetScoreVolume(Audio * aP1, float a2, int a3);  // G57w10-S raw 0x005FA4A0 (was C2597 interim stub)
-    static int SetSoundVolume(Audio * aP1, float a2, char a3);  // G57w10-S raw 0x005FA510 (was C2597 interim stub)
-    static int SetVoiceVolume(Audio * aP1, float a2, char a3);  // G57w10-S raw 0x005FA590 (was C2597 interim stub)
-    static int IsLoud(Audio * aP1);  // G57w10-S raw 0x00750010 (was C2597 interim stub)
+    static int SetScoreVolume(Audio * aP1, float a2, int a3);
+    static int SetSoundVolume(Audio * aP1, float a2, char a3);
+    static int SetVoiceVolume(Audio * aP1, float a2, char a3);
+    static int IsLoud(Audio * aP1);
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
     char __pad_10[4];  // 0x10 (ml)
+    static double Audio_field_0x14(...);  // plateau: C2039/C3861 stub
+    static double Audio_field_0x34(...);  // plateau: C2039/C3861 stub
+    static double Audio_field_0x38(...);  // plateau: C2039/C3861 stub
+    static double Audio_field_0xC(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double __pad_18(...);  // plateau: C2039/C3861 stub
+    static double __pad_3C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

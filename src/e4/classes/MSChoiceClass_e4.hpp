@@ -7,8 +7,7 @@ namespace gamemd {
 
 struct MSChoiceClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     char ** LoadFromINI(unsigned int *arg0, const char **aP2);
 };

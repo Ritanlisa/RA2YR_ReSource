@@ -23,7 +23,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x517070
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x517076*/
@@ -33,7 +33,7 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[2] = -1610610249; /*0x517097*/
   a2[3] = unk_7E9A4C; /*0x5170a0*/
   return 0; /*0x51707d*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5170B0
 namespace gamemd {
@@ -44,11 +44,11 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   v2 = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(_DWORD *)a1->0 = &(void*)(void*)&LocomotionClass_vftable; /*0x5170ce*/
-    *(_DWORD *)&a1->0[4] = &(void*)(void*)&LocomotionClass_vftable; /*0x5170d4*/
+    *(unsigned int *)a1->0 = &vt_LocomotionClass; /*0x5170ce*/
+    *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x5170d4*/
     FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
-    *(_DWORD *)a1->0 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e0*/
-    *(_DWORD *)&a1->0[4] = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e6*/
+    *(unsigned int *)a1->0 = &vt_HoverLocomotionClass; /*0x5170e0*/
+    *(unsigned int *)&a1->0[4] = &vt_HoverLocomotionClass; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }
@@ -64,11 +64,11 @@ int HoverLocomotionClass::StubReturn120()
 namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->0 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
-  *(_DWORD *)&Block->0[4] = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x5172d0*/
+  *(unsigned int *)Block->0 = &vt_HoverLocomotionClass; /*0x5172c3*/
+  *(unsigned int *)&Block->0[4] = &vt_HoverLocomotionClass; /*0x5172c9*/
+  ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
-    RA2_OPDEL(Block); /*0x5172dd*/
+    operator delete((void *)(Block)); /*0x5172dd*/
   return Block->0; /*0x5172e7*/
 }
 } // namespace gamemd

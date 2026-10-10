@@ -10,6 +10,6 @@ struct E4Recv_65C6D0 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    unsigned int *  SeedInitRNG(void * aP1);  // 0x65C6D0
+    unsigned int *  SeedInitRNG(int a2);  // 0x65C6D0
 };
 } // namespace gamemd

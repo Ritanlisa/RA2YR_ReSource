@@ -6,11 +6,10 @@
 namespace gamemd {
 
 struct Mission_e4 {
-    void* vfptr;
-    unsigned int u32_4;  // 0x4
+// --- flat members (BEGIN) ---
     AbstractClass * ptr_34;  // 0x34
-    unsigned int u32_888;  // 0x888
-    unsigned int u32_5564;  // 0x5564
+    AbstractClass * ptr_54;  // 0x54
+// --- flat members (END) ---
     char AssignTeamMemberMissions(ScriptClass * aP1, int a3);
     char ProcessUnitMissionAI();
     int ExecuteTechnoMissionAction();

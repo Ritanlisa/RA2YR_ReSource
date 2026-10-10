@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x4E24A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int Time::GetElapsedMS()
 {
   DWORD Time; // eax
@@ -19,7 +19,7 @@ unsigned int Time::GetElapsedMS()
   else
     v1 = 3 * (Time - dword_8B3F14 - 1); /*0x4e24b3*/
   return v1 / 0x32; /*0x4e24c2*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x777AC0
 namespace gamemd {

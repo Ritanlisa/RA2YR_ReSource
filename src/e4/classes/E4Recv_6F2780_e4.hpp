@@ -12,6 +12,6 @@ struct E4Recv_6F2780 {
     unsigned int M13;  // 0xD
 // --- flat members (END) ---
     int Vf12(int,  ...);    // G6 vtable slot dispatch
-    unsigned int *  Team_Helper_6F2780(void * aP1);  // 0x6F2780
+    unsigned int *  Team_Helper_6F2780(unsigned int * a2);  // 0x6F2780
 };
 } // namespace gamemd

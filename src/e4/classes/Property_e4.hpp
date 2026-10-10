@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct Property {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int GetField11();
-    int16_t Set(int16_t aP1);
+    int GetField11(void *a1 = 0);
+    int16_t Set(int16_t aP1, void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

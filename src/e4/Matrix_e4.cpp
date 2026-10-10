@@ -10,23 +10,23 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5AE860
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Matrix3x4::Identity()
 {
-  this->m_Data[0] = 1065353216; /*0x5ae867*/
-  this->m_Data[1] = 0; /*0x5ae869*/
-  this->m_Data[2] = 0; /*0x5ae86c*/
-  this->m_Data[3] = 0; /*0x5ae86f*/
-  this->m_Data[4] = 0; /*0x5ae872*/
-  this->m_Data[5] = 1065353216; /*0x5ae875*/
-  this->m_Data[6] = 0; /*0x5ae878*/
-  this->m_Data[7] = 0; /*0x5ae87b*/
-  this->m_Data[8] = 0; /*0x5ae87e*/
-  this->m_Data[9] = 0; /*0x5ae881*/
-  this->m_Data[10] = 1065353216; /*0x5ae884*/
-  this->m_Data[11] = 0; /*0x5ae887*/
+  this-((unsigned int *)(>m_Data))[0] = 1065353216; /*0x5ae867*/
+  *(unsigned int *)&this->q004 = 0; /*0x5ae869*/
+  this-((unsigned int *)(>m_Data))[2] = 0; /*0x5ae86c*/
+  this-((unsigned int *)(>m_Data))[3] = 0; /*0x5ae86f*/
+  this-((unsigned int *)(>m_Data))[4] = 0; /*0x5ae872*/
+  this-((unsigned int *)(>m_Data))[5] = 1065353216; /*0x5ae875*/
+  this-((unsigned int *)(>m_Data))[6] = 0; /*0x5ae878*/
+  this-((unsigned int *)(>m_Data))[7] = 0; /*0x5ae87b*/
+  this-((unsigned int *)(>m_Data))[8] = 0; /*0x5ae87e*/
+  this-((unsigned int *)(>m_Data))[9] = 0; /*0x5ae881*/
+  this-((unsigned int *)(>m_Data))[10] = 1065353216; /*0x5ae884*/
+  this-((unsigned int *)(>m_Data))[11] = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5AE980
 namespace gamemd {
@@ -34,9 +34,9 @@ int Matrix3x4::Translate(float aP1)
 {
   int result; // eax
 
-  this->q00C = aP1 * *(float *)this + this->q00C; /*0x5ae989*/
-  this->q01C = aP1 * this->q010 + this->q01C; /*0x5ae996*/
-  this->q02C = aP1 * this->q020 + this->q02C; /*0x5ae9a3*/
+  this->u32_C = aP1 * *(float *)this + this->u32_C; /*0x5ae989*/
+  this->u32_1C = aP1 * this->u32_10 + this->u32_1C; /*0x5ae996*/
+  this->u32_2C = aP1 * this->u32_20 + this->u32_2C; /*0x5ae9a3*/
   return result; /*0x5ae9a6*/
 }
 } // namespace gamemd
@@ -44,6 +44,7 @@ int Matrix3x4::Translate(float aP1)
 namespace gamemd {
 unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3)
 {
+
   float *v4; // eax
   int v5; // esi
   int v6; // eax
@@ -70,7 +71,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     v4 = TransformMatrix3x4Point(v12, aP1 + 889, &v9); /*0x6d23b0*/
     v9 = *v4; /*0x6d23b7*/
     v10 = v4[1]; /*0x6d23c2*/
-    v11 = *((_DWORD *)v4 + 2); /*0x6d23c9*/
+    v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
     *aP2 = v5; /*0x6d23e5*/
@@ -78,5 +79,6 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     aP2[2] = 0; /*0x6d23ec*/
     return aP2; /*0x6d23ea*/
   }
+
 }
 } // namespace gamemd

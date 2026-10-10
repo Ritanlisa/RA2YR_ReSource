@@ -19,7 +19,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x5E8D40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_5E8D40()
 {
   const wchar_t *v1; // ebx
@@ -39,7 +39,7 @@ int sub_5E8D40()
       return -1; /*0x5e8d84*/
   }
   return v2; /*0x5e8d4c*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5EA8E0
@@ -52,7 +52,7 @@ int sub_5EA8E0(int a1)
   v1 = *(&dword_A8DA90 + a1); /*0x5ea8e0*/
   result = 0; /*0x5ea8e7*/
   if ( v1 && (v1 == g_Lobby_PlayerTeam || v1 == g_Lobby_PlayerSide || v1 == g_Lobby_PlayerColor) /*0x5ea909*/
-    || *(_DWORD *)(v1 + 119) == 1 )
+    || *(unsigned int *)(v1 + 119) == 1 )
   {
     return 1; /*0x5ea90b*/
   }
@@ -72,11 +72,11 @@ int sub_5EA9B0(int a1)
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2BC][a1]; /*0x5ea9d3*/
+    return g_abs_A8B2BC[a1]; /*0x5ea9d3*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5ea9f9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
-    || v1 == g_Lobby_PlayerReady
+    || v1 == (wchar_t *)(g_Lobby_PlayerReady)
     || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
     return -2; /*0x5eaa02*/
@@ -96,11 +96,11 @@ int sub_5EAA10(int a1)
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2DC][a1]; /*0x5eaa33*/
+    return g_abs_A8B2DC[a1]; /*0x5eaa33*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaa59*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
-    || v1 == g_Lobby_PlayerReady
+    || v1 == (wchar_t *)(g_Lobby_PlayerReady)
     || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
     return -2; /*0x5eaa62*/
@@ -120,11 +120,11 @@ int sub_5EAA70(int a1)
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2FC][a1]; /*0x5eaa93*/
+    return g_abs_A8B2FC[a1]; /*0x5eaa93*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaab9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
-    || v1 == g_Lobby_PlayerReady
+    || v1 == (wchar_t *)(g_Lobby_PlayerReady)
     || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
     return -2; /*0x5eaac2*/
@@ -144,9 +144,9 @@ void sub_7A0E50()
   {
     v1 = *(wchar_t **)((char *)&dword_A8DA90 + i * 4); /*0x7a0e53*/
     if ( !v1 || !IsKnownPointer(v1) ) /*0x7a0e5d*/
-      dword_B76440[i] = -1; /*0x7a0e66*/
-    v2 = ToWideStringChar(*(char **)((char *)&dword_A8DA90 + i * 4)); /*0x7a0e76*/
-    SetGameOptionsPing(v2, dword_B76440[i]); /*0x7a0e83*/
+      ((unsigned int *)(dword_B76440))[i] = -1; /*0x7a0e66*/
+    v2 = ToWideStringChar((IUnknown *)(*(char **)((char *)&dword_A8DA90 + i * 4))); /*0x7a0e76*/
+    SetGameOptionsPing(v2, ((unsigned int *)(dword_B76440))[i]); /*0x7a0e83*/
   }
 }
 } // namespace gamemd

@@ -21,7 +21,7 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 
 // 0x4355B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
   this->m_Colors[0] = a2; /*0x4355ba*/
@@ -29,7 +29,7 @@ unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
   this->m_Colors[2] = a4; /*0x4355c3*/
   return this->m_Colors; /*0x4355c6*/
 }
-}
+}  // G42.18 ns repair
 // 0x642130
 namespace gamemd {
 AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void * a4)
@@ -43,7 +43,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   void *v12; // ebx
   int Width; // eax
   int v14; // ebp
-  unsigned __int16 Pixel; // ax
+  uint16_t Pixel; // ax
   int v16; // edi
   int v17; // ebx
   int v18; // esi
@@ -57,13 +57,13 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   int *v26; // esi
   int v27; // eax
   int v28; // ecx
-  unsigned __int16 v29; // ax
+  uint16_t v29; // ax
   int v30; // ebp
-  _WORD *v31; // edi
+  unsigned short *v31; // edi
   int v32; // ecx
-  __int64 v33; // rax
+  int64_t v33; // rax
   int v34; // ecx
-  __int64 v35; // rax
+  int64_t v35; // rax
   int v36; // ecx
   int v37; // eax
   size_t v38; // ebx
@@ -71,18 +71,18 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   int v40; // eax
   char v41; // [esp-8h] [ebp-80h]
   int v42; // [esp+8h] [ebp-70h]
-  _WORD *v43; // [esp+8h] [ebp-70h]
+  unsigned short *v43; // [esp+8h] [ebp-70h]
   int v44; // [esp+8h] [ebp-70h]
   int v45; // [esp+Ch] [ebp-6Ch]
   int v46; // [esp+Ch] [ebp-6Ch]
   char *Block; // [esp+10h] [ebp-68h]
-  _WORD *Blocka; // [esp+10h] [ebp-68h]
-  _DWORD *v49; // [esp+14h] [ebp-64h]
+  unsigned short *Blocka; // [esp+10h] [ebp-68h]
+  unsigned int *v49; // [esp+14h] [ebp-64h]
   int v50; // [esp+18h] [ebp-60h]
-  _BYTE *v51; // [esp+1Ch] [ebp-5Ch]
+  unsigned char *v51; // [esp+1Ch] [ebp-5Ch]
   int v52; // [esp+20h] [ebp-58h]
-  _BYTE *v53; // [esp+24h] [ebp-54h]
-  _DWORD v54[2]; // [esp+2Ch] [ebp-4Ch] BYREF
+  unsigned char *v53; // [esp+24h] [ebp-54h]
+  unsigned int v54[2]; // [esp+2Ch] [ebp-4Ch] BYREF
   int v55; // [esp+34h] [ebp-44h] BYREF
   int v56[3]; // [esp+38h] [ebp-40h] BYREF
   int v57; // [esp+44h] [ebp-34h] BYREF
@@ -91,21 +91,21 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   int Height; // [esp+50h] [ebp-28h]
   XSurface v61; // [esp+54h] [ebp-24h] BYREF
 
-  if ( !*(_DWORD *)a1->m_Colors ) /*0x642139*/
+  if ( !*(unsigned int *)a1->m_Colors ) /*0x642139*/
     return 0; /*0x642146*/
   v41 = v4; /*0x64214a*/
-  v7 = *(_DWORD *)a1->m_Colors; /*0x64214b*/
-  v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 128))(v7); /*0x642153*/
-  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v7 + 124))(v7, v8 / 2); /*0x642163*/
+  v7 = *(unsigned int *)a1->m_Colors; /*0x64214b*/
+  v8 = (*(int (**)(int))(*(unsigned int *)v7 + 128))(v7); /*0x642153*/
+  v9 = (*(int (**)(int, int))(*(unsigned int *)v7 + 124))(v7, v8 / 2); /*0x642163*/
   DSurface::Construct((char *)&v61.Width, v9 / 2, 0, 0, v41); /*0x642170*/
   v59 = 0; /*0x642181*/
-  v10 = *(_DWORD *)a1->m_Colors; /*0x642185*/
+  v10 = *(unsigned int *)a1->m_Colors; /*0x642185*/
   Height = v61.Height; /*0x642187*/
   v58 = 0; /*0x64218b*/
-  *(_DWORD *)v61.q000 = v61.LockCount; /*0x64218f*/
-  v11 = (*(int (__thiscall **)(int))(*(_DWORD *)v10 + 120))(v10); /*0x64219c*/
-  DSurface::BlitPart((DSurface *)&v61, (int)&v57, *(_DWORD *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
-  v12 = (void *)RA2_OPNEW(0x4000u); /*0x6421bb*/
+  *(unsigned int *)v61.__pad_0 = v61.LockCount; /*0x64218f*/
+  v11 = (*(int (**)(int))(*(unsigned int *)v10 + 120))(v10); /*0x64219c*/
+  ((DSurface *)((DSurface *)&v61))->BlitPart((int)&v57, *(unsigned int *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
+  v12 = (void *)operator new(0x4000u); /*0x6421bb*/
   memset(v12, 0, 0x4000u); /*0x6421c6*/
   v49 = v12; /*0x6421cd*/
   Block = 0; /*0x6421d1*/
@@ -125,10 +125,10 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
           v56[0] = v42; /*0x64220f*/
           Pixel = XSurface::GetPixel(&v61, &v55); /*0x642213*/
           v54[0] = v14; /*0x64222c*/
-          v16 = ((unsigned __int8)(Pixel >> g_BitShift_Red) << g_BitShift_Green_0) & 0xF0; /*0x642248*/
-          v17 = ((unsigned __int8)(Pixel >> g_BitMask_Green) << g_BitMask_Blue) & 0xF0; /*0x64225c*/
+          v16 = ((uint8_t)(Pixel >> g_BitShift_Red) << g_BitShift_Green_0) & 0xF0; /*0x642248*/
+          v17 = ((uint8_t)(Pixel >> g_BitMask_Green) << g_BitMask_Blue) & 0xF0; /*0x64225c*/
           v54[1] = v42; /*0x642268*/
-          v18 = ((unsigned __int8)(Pixel >> g_BitShift_Blue) << g_BitMask_Red) & 0xF0; /*0x64227f*/
+          v18 = ((uint8_t)(Pixel >> g_BitShift_Blue) << g_BitMask_Red) & 0xF0; /*0x64227f*/
           XSurface::SetPixel( /*0x6422b5*/
             &v61,
             v54,
@@ -152,12 +152,12 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   }
   DSurface::Unlock((DSurface *)&v61); /*0x642301*/
   v21 = a2; /*0x642306*/
-  v22 = RA2_OPNEW(2 * a2); /*0x642311*/
-  Blocka = (_WORD *)v22; /*0x642319*/
+  v22 = operator new(2 * a2); /*0x642311*/
+  Blocka = (unsigned short *)v22; /*0x642319*/
   v45 = 0; /*0x64231f*/
   if ( a2 > 0 ) /*0x642327*/
   {
-    v43 = (_WORD *)v22; /*0x642329*/
+    v43 = (unsigned short *)v22; /*0x642329*/
     do /*0x642370*/
     {
       v23 = -1; /*0x64232d*/
@@ -177,14 +177,14 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       while ( v25 < 4096 ); /*0x642349*/
       if ( v23 == -1 ) /*0x64234e*/
         break; /*0x64234e*/
-      *((_DWORD *)v12 + v23) = 0; /*0x642358*/
+      *((unsigned int *)v12 + v23) = 0; /*0x642358*/
       *v43 = v23; /*0x642360*/
       ++v45; /*0x642368*/
       ++v43; /*0x64236c*/
     }
     while ( v45 < a2 ); /*0x642370*/
   }
-  v53 = (_BYTE *)RA2_OPNEW(v61.Height * v61.Width); /*0x642384*/
+  v53 = (unsigned char *)operator new(v61.Height * v61.Width); /*0x642384*/
   v51 = v53; /*0x642388*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x642396*/
   v44 = 0; /*0x64239f*/
@@ -209,20 +209,20 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       v30 = 0; /*0x6423ed*/
       v46 = -1; /*0x6423ef*/
       v50 = 0xFFFF; /*0x6423f7*/
-      IDA_LOBYTE(v55) = (unsigned __int8)(v29 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x642408*/
-      IDA_BYTE1(v55) = (unsigned __int8)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
-      IDA_BYTE2(v55) = (unsigned __int8)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
+      (*((unsigned char *)&(v55))) = (uint8_t)(v29 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x642408*/
+      (((unsigned char *)&(v55))[1]) = (uint8_t)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
+      (((unsigned char *)&(v55))[2]) = (uint8_t)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
       if ( v21 > 0 ) /*0x642435*/
       {
         v31 = Blocka; /*0x642447*/
-        v32 = (unsigned __int8)v55; /*0x642451*/
-        v54[0] = IDA_BYTE1(v55); /*0x642460*/
+        v32 = (uint8_t)v55; /*0x642451*/
+        v54[0] = (((unsigned char *)&(v55))[1]); /*0x642460*/
         while ( 1 ) /*0x642490*/
         {
-          v33 = 16 * (*v31 & 0xF) - IDA_BYTE2(v55); /*0x642490*/
-          v34 = (IDA_HIDWORD(v33) ^ v33) - IDA_HIDWORD(v33) + abs32((((unsigned __int16)*v31 >> 4) & 0xF0) - v32); /*0x642499*/
+          v33 = 16 * (*v31 & 0xF) - (((unsigned char *)&(v55))[2]); /*0x642490*/
+          v34 = ((*(((unsigned int *)&(v33)) + 1)) ^ v33) - (*(((unsigned int *)&(v33)) + 1)) + abs32((((uint16_t)*v31 >> 4) & 0xF0) - v32); /*0x642499*/
           v35 = (*v31 & 0xF0) - v54[0]; /*0x6424a4*/
-          v36 = (IDA_HIDWORD(v35) ^ v35) - IDA_HIDWORD(v35) + v34; /*0x6424a9*/
+          v36 = ((*(((unsigned int *)&(v35)) + 1)) ^ v35) - (*(((unsigned int *)&(v35)) + 1)) + v34; /*0x6424a9*/
           if ( !v36 ) /*0x6424ab*/
             break; /*0x6424ab*/
           if ( v36 < v50 ) /*0x6424b1*/
@@ -237,7 +237,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
             v37 = v46; /*0x6424ca*/
             goto LABEL_31; /*0x6424ce*/
           }
-          v32 = (unsigned __int8)v55; /*0x642466*/
+          v32 = (uint8_t)v55; /*0x642466*/
         }
         v37 = v30; /*0x6424d0*/
   LABEL_31:
@@ -248,7 +248,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
         }
         v21 = a2; /*0x6424de*/
       }
-      IDA_LOBYTE(v37) = 0; /*0x6424ed*/
+      (*((unsigned char *)&(v37))) = 0; /*0x6424ed*/
   LABEL_36:
       *v51 = v37; /*0x6424fa*/
       v27 = v61.Width; /*0x642500*/
@@ -262,17 +262,17 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   DSurface::Unlock((DSurface *)&v61); /*0x64252f*/
   v38 = 2 * v21 + 12 + v61.Height * v61.Width; /*0x642545*/
   v54[0] = 2 * v21 + 12; /*0x642547*/
-  v39 = (int *)RA2_OPNEW(v38); /*0x642551*/
+  v39 = (int *)operator new(v38); /*0x642551*/
   *v39 = v61.Width; /*0x64255b*/
   v39[1] = v61.Height; /*0x642562*/
   v39[2] = v21; /*0x64256a*/
   v40 = v54[0]; /*0x642570*/
-  qmemcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
-  qmemcpy((char *)v39 + v40, v53, v61.Height * v61.Width); /*0x642595*/
-  RA2_OPDEL(Blocka); /*0x6425a3*/
-  RA2_OPDEL(v53); /*0x6425ad*/
-  RA2_OPDEL(v49); /*0x6425b7*/
-  *(_DWORD *)a3 = v38; /*0x6425c9*/
+  memcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
+  memcpy((char *)v39 + v40, v53, v61.Height * v61.Width); /*0x642595*/
+  operator delete((void *)(Blocka)); /*0x6425a3*/
+  operator delete((void *)(v53)); /*0x6425ad*/
+  operator delete((void *)(v49)); /*0x6425b7*/
+  *(unsigned int *)a3 = v38; /*0x6425c9*/
   Debug::Log(); /*0x6425cb*/
   DSurface::Destroy((DSurface *)&v61); /*0x6425d7*/
   return (int)v39; /*0x64213f*/
@@ -286,15 +286,15 @@ int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
   int v3; // edx
   int v4; // eax
 
-  v2 = IDA_LOBYTE(a2_2->m_Colors[0]) - *a2_2; /*0x661360*/
+  v2 = (*((unsigned char *)&(a2_2->u32_8))) - *(unsigned int *)(a2_2); /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
-    v2 = *a2_2 - IDA_LOBYTE(a2_2->m_Colors[0]); /*0x661364*/
-  v3 = IDA_BYTE1(a2_2->m_Colors[0]) - a2_2[1]; /*0x661370*/
+    v2 = *(unsigned int *)(a2_2) - (*((unsigned char *)&((&a2_2->m_Colors)[0]))); /*0x661364*/
+  v3 = (((unsigned char *)&(a2_2->m_Colors[0]))[1]) - a2_2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
-    v3 = a2_2[1] - IDA_BYTE1(a2_2->m_Colors[0]); /*0x661374*/
-  v4 = IDA_BYTE2(a2_2->m_Colors[0]) - a2_2[2]; /*0x661382*/
+    v3 = a2_2[1] - (((unsigned char *)&((&a2_2->m_Colors)[0]))[1]); /*0x661374*/
+  v4 = (((unsigned char *)&(a2_2->m_Colors[0]))[2]) - a2_2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
-    v4 = a2_2[2] - IDA_BYTE2(a2_2->m_Colors[0]); /*0x661386*/
+    v4 = a2_2[2] - (((unsigned char *)&((&a2_2->m_Colors)[0]))[2]); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
 }
 }  // G42.18c ns repair
@@ -305,7 +305,7 @@ int Palette::FindClosestColor(Palette *a2)
   int v2; // ebx
   int v3; // esi
   int v5; // eax
-  unsigned __int8 *v7; // [esp-4h] [ebp-18h]
+  uint8_t *v7; // [esp-4h] [ebp-18h]
   int v8; // [esp+10h] [ebp-4h]
 
   v2 = 0; /*0x626208*/
@@ -313,9 +313,9 @@ int Palette::FindClosestColor(Palette *a2)
   v3 = -1; /*0x62620f*/
   do /*0x626237*/
   {
-    v7 = (unsigned __int8 *)this; /*0x626218*/
+    v7 = (uint8_t *)this; /*0x626218*/
     this += 3; /*0x626219*/
-    v5 = Palette::CalcColorDistance(a2, v7); /*0x62621c*/
+    v5 = Palette::CalcColorDistance((unsigned char *)(a2), v7); /*0x62621c*/
     if ( v3 == -1 || v5 < v3 ) /*0x626228*/
     {
       v3 = v5; /*0x62622a*/
@@ -332,27 +332,27 @@ namespace gamemd {  // G42.18c ns repair
 unsigned char * Palette::ConvertIndices(int a2)
 {
   int v3; // ebx
-  _WORD *v4; // eax
-  _WORD *v5; // esi
-  __int16 *v6; // edi
+  unsigned short *v4; // eax
+  unsigned short *v5; // esi
+  int16_t *v6; // edi
 
-  IDA_LOBYTE(this->m_Colors[0]) = 0; /*0x632be9*/
+  (*((unsigned char *)&(this-((unsigned int *)(>m_Colors))[0]))) = 0; /*0x632be9*/
   v3 = Hash_Check_5C61E0(); /*0x632bf1*/
-  v4 = Hash_Check(); /*0x632bf3*/
+  v4 = (unsigned short *)(Hash_Check()); /*0x632bf3*/
   if ( v3 <= 0 ) /*0x632bfa*/
-    return this; /*0x632c31*/
+    return (unsigned char *)(this); /*0x632c31*/
   v5 = v4; /*0x632c02*/
-  v6 = (__int16 *)this->m_Colors + 1; /*0x632c04*/
+  v6 = (int16_t *)this->m_Colors + 1; /*0x632c04*/
   do /*0x632c23*/
   {
-    IDA_LOWORD(v4) = *v5; /*0x632c07*/
-    *v6 = ShiftBigIntAndScan(&stru_A8EB00.?[1], a2, (int)v4, 64); /*0x632c19*/
+    (*((unsigned short *)&(v4))) = *v5; /*0x632c07*/
+    *v6 = ShiftBigIntAndScan(&((unsigned int *)&stru_A8EB00)[1], a2, (int)v4, 64); /*0x632c19*/
     ++v5; /*0x632c1c*/
     ++v6; /*0x632c1f*/
     --v3; /*0x632c22*/
   }
   while ( v3 ); /*0x632c23*/
-  return this; /*0x632c2b*/
+  return (unsigned char *)(this); /*0x632c2b*/
 }
 }
 // 0x72B820
@@ -360,13 +360,13 @@ int Palette::LoadFile(char * Source)
 {
   if ( dword_B0FBA0 ) /*0x72b82b*/
   {
-    (**(void (__thiscall ***)(int, int))dword_B0FBA0)(dword_B0FBA0, 1); /*0x72b831*/
+    (**(void (***)(int, int))dword_B0FBA0)(dword_B0FBA0, 1); /*0x72b831*/
     dword_B0FBA0 = 0; /*0x72b833*/
   }
   if ( dword_B0FB9C ) /*0x72b844*/
   {
-    RA2_OPDEL(dword_B0FB9C); /*0x72b847*/
+    operator delete((void *)(dword_B0FB9C)); /*0x72b847*/
     dword_B0FB9C = 0; /*0x72b84f*/
   }
   return LoadPaletteSimple(Source, &dword_B0FB9C, &dword_B0FBA0); /*0x72b86a*/
-}  // G42.18c ns repair
+}

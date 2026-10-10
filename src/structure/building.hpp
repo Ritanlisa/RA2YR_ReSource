@@ -103,7 +103,7 @@ int Construct(int,int);  // 0x43B740
     CoordStruct* GetRallyPointCoord(CoordStruct* out) const;  // 0x6B0690
     CoordStruct* GetBuildCoordsAdjusted(CoordStruct* out) const;  // 0x459EF0
     void SetRallyPoint(CoordStruct* target);  // 0x443860
-    int MarkExitPath(unsigned short *a2, int a3);  // 0x4A9650 (raw: this + _WORD* a2 + int a3[低字节 flag])
+    int MarkExitPath(unsigned short *a2, int a3);  // 0x4A9650 (raw: this + unsigned short* a2 + int a3[低字节 flag])
     bool CheckExitPath();  // 0x639CB0
     unsigned short *u32_118C;  // 0x118C 出口表基址 (G57W20M26 重类型: MarkExitPath 步进 v6[0]/v6[1])
     int RenderExitPosition(); // 0x453840 g57w11 r4: raw fn_45 int __thiscall (前 void 声明 C2556)
@@ -122,7 +122,7 @@ int Construct(int,int);  // 0x43B740
     int StartProduction(int type_index);  // 0x447780
     void CheckState1();  // 0x4496B0
     void CompleteProduction();  // 0x639740
-    int ProductionDisplayUpdate(int a1);  // 0x43F180 (IDA: thiscall(_BYTE*,int))
+    int ProductionDisplayUpdate(int a1);  // 0x43F180 (IDA: thiscall(unsigned char*,int))
     void DisplayProductionFrame();  // 0x43D030
     bool ProductionCheck();  // 0x4513D0
 int CanAcceptType(int,int);  // 0x452670
@@ -201,7 +201,7 @@ int CanAcceptType(int,int);  // 0x452670
     void EnableStuff();  // 0x452410
     void ProcessPowerPlantEffect();  // 0x44E440
     void ProcessActiveUpdate();  // 0x44ACF0
-    void UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5, int a6, char a7);  // 0x429A90
+    void UpdatePowerAnimation(int a2, int16_t *a3, unsigned int *a4, int a5, int a6, char a7);  // 0x429A90
     void UpdatePowerAnim();  // 0x42ACF0
     int GetPowerFrame();  // 0x4566B0
 
@@ -233,7 +233,7 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Combat / Targeting
     void ProcessAttack();  // 0x442230
-    void AimTurret(_BYTE a2); // 0x424B50
+    void AimTurret(unsigned char a2); // 0x424B50
     void CalculateTurretAngle();  // 0x447B20
     int GetFacingToTarget();  // 0x445E50
     int GetTargetFacing();  // 0x44D7D0
@@ -375,7 +375,7 @@ int CanAcceptType(int,int);  // 0x452670
     void UnloadUnits();  // 0x457DE0
     void AnimateUnloadUnits();  // 0x4585C0
     void SpawnParticles();  // 0x459900
-    int ApplyFoundationDamage(unsigned short *a2, void *other);  // 0x45EE70 g57w11 r4: raw int(this,_WORD*,void*)
+    int ApplyFoundationDamage(unsigned short *a2, void *other);  // 0x45EE70 g57w11 r4: raw int(this,unsigned short*,void*)
     int AssignTarget_SyncLog(int syncFlag) override;  // 0x443B90
     void AssignDestination_SyncLog();  // 0x455D50
     void DecrementTypeCounter();  // 0x4FF980
@@ -398,7 +398,7 @@ int CanAcceptType(int,int);  // 0x452670
     void UpdateTerrainEffect();  // 0x455A80
     bool IsTiberiumCollectorEligible();  // 0x483620
     bool IsTiberiumSiloEligible();  // 0x483690
-    char UpdateBunker(double a2);  // 0x458E50 g57w11 r4: raw char@<al>(this,double@<st0>)
+    char UpdateBunker(double a2);  // 0x458E50 g57w11 r4: raw char(this,double)
     void EmptyBunker();  // 0x4595C0
     void MakeTraversable();  // 0x452540
     void RemoveLimpet();  // 0x4593A0
@@ -693,7 +693,7 @@ extern int MCVRedeploy;  // data: 0xA8B320
 // G42.32t: namespace Math block removed -- collides with class gamemd::Math (C2757)
 
 class SuperWeapon {
-void UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)
+int UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CreateUnits();  // 0x445F80
     int CreateNukePayload();  // 0x46B310

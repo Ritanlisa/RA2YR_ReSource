@@ -10,6 +10,6 @@ struct E4Recv_769C20 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    unsigned int *  Map_Load_769C20(void * aP1);  // 0x769C20
+    unsigned int *  Map_Load_769C20(int a2);  // 0x769C20
 };
 } // namespace gamemd

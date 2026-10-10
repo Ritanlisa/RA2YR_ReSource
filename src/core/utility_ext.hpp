@@ -88,7 +88,7 @@ public:
     int32_t     MoveFeedback_field_24;               // 0x24
     int32_t     MoveFeedback_field_28;               // 0x28
     int32_t     MoveFeedback_field_2C;               // 0x2C
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned char q00C;  // 0xC (canon-mt)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
@@ -224,7 +224,7 @@ public:
     // IDA 0x6C95E0
     int32_t GetField();  // 0x6C95E0
     // IDA 0x6C9890
-    _DWORD * Set(int32_t value);  // 0x6C9890
+    unsigned int * Set(int32_t value);  // 0x6C9890
     // IDA 0x6C98E0
     void Invoke();  // 0x6C98E0
 
@@ -330,9 +330,9 @@ public:
     Rect(int32_t x, int32_t y, int32_t w, int32_t h);
 
     // IDA 0x4D9C00 area
-    _DWORD * Set(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x42E410
+    unsigned int * Set(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x42E410
     // IDA 0x4D9C00 area
-    _DWORD * Construct(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x45A130
+    unsigned int * Construct(int32_t x, int32_t y, int32_t w, int32_t h);  // 0x45A130
     // IDA 0x4D9C00 area
     void Union(const Rect& other);  // 0x487F40
     // IDA 0x4D9C00 area
@@ -481,7 +481,7 @@ public:
      short Process(void* bink_player);  // 0x54F000
     static short Process(EventQueue *aP0);  // 0x54F000 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied site 0x4E167C)
     // IDA 0x54F000 area
-     void Read();  // 0x54F050
+     int Read();  // 0x54F050
     static unsigned short Read(void *aP0);  // 0x54F050 G42.35 static-form sync (truth short 0-arg thiscall; ui/supplied site 0x4E1692)
     // IDA 0x54F000 area
      bool Check();  // 0x54F650
@@ -828,7 +828,7 @@ public:
 
     virtual int RegisterAll(); // 0x490490 (g57w10 r4: raw fn_49 原型 int __thiscall RegisterAll; 前声明 stale)
     virtual int ReleaseRef(); // 0x65D670 (g57w10 r4: raw 原型 int; canon this=ReferenceCounted, TU 载体 COMClass)
-    virtual unsigned int* initInterface(char a2); // 0x65D6A0 (g57w10 r4: raw 原型 _DWORD*__(char); canon this=ReferenceCounted)
+    virtual unsigned int* initInterface(char a2); // 0x65D6A0 (g57w10 r4: raw 原型 unsigned int*__(char); canon this=ReferenceCounted)
     virtual int queryProperty(); // 0x765680 (g57w10 r4: raw 原型 int; canon this=WDT Conflict vector)
     virtual unsigned int setProperty(int a2); // 0x7656B0 (g57w10 r4: raw 原型 unsigned(int); canon this=WDT Conflict vector)
     // +17 more virtual methods
@@ -860,7 +860,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int registerObject(int a1, void* a2);  // 0x7659F0
     int unregisterObject(int a1);  // 0x765B10
     char* createInstance(char a2);  // 0x765BB0 (g57w10 r4: raw 原型 char*__(char))
-    unsigned int* getInterface(char a2);  // 0x765C20 (g57w10 r4: raw 原型 _DWORD*__(char); canon this=WDT vector)
+    unsigned int* getInterface(char a2);  // 0x765C20 (g57w10 r4: raw 原型 unsigned int*__(char); canon this=WDT vector)
     unsigned int * releaseInterface();  // 0x765C70
     void* connectPoint(int a1);  // 0x7669C0
     int enumConnections(int a1);  // 0x766A80
@@ -976,7 +976,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_10() = default;
 
-    virtual _DWORD * Construct(); // 0x6BFBC0
+    virtual unsigned int * Construct(); // 0x6BFBC0
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BFBC0)
 
@@ -989,7 +989,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_3() = default;
 
-    virtual _DWORD * Construct(); // 0x6BF140
+    virtual unsigned int * Construct(); // 0x6BF140
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF140)
 
@@ -1002,7 +1002,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_4() = default;
 
-    virtual _DWORD * Construct(); // 0x6BF2C0
+    virtual unsigned int * Construct(); // 0x6BF2C0
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF2C0)
 
@@ -1015,7 +1015,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_5() = default;
 
-    virtual _DWORD * Construct(); // 0x6BF440
+    virtual unsigned int * Construct(); // 0x6BF440
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF440)
 
@@ -1028,7 +1028,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_6() = default;
 
-    virtual _DWORD * Construct(); // 0x6BF5C0
+    virtual unsigned int * Construct(); // 0x6BF5C0
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF5C0)
 
@@ -1041,7 +1041,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_7() = default;
 
-    virtual _DWORD * Construct(); // 0x6BF740
+    virtual unsigned int * Construct(); // 0x6BF740
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF740)
 
@@ -1054,7 +1054,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_8() = default;
 
-    virtual _DWORD * Construct(); // 0x6BF8C0
+    virtual unsigned int * Construct(); // 0x6BF8C0
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF8C0)
 
@@ -1067,7 +1067,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClassFactory_9() = default;
 
-    virtual _DWORD * Construct(); // 0x6BFA40
+    virtual unsigned int * Construct(); // 0x6BFA40
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BFA40)
 
@@ -1482,7 +1482,7 @@ public:
 
     virtual void ComputeHashSHA1(); // 0x476D80
     virtual void InsertOrdered(); // 0x4F4410
-    virtual void Reset(); // 0x5565F0
+    int Reset(); // 0x5565F0
     static int Reset(void *aP0);  // 0x5565F0 G42.35 static-form sync (ui/supplied site 0x4B4F1C)
 
     uint8_t Hash_field_0x04[4];
@@ -1588,7 +1588,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashVector_UInt() = default;
 
-    virtual _DWORD * Construct(int a2, int a3); // 0x58AFF0 G42.35 C6 体签名
+    virtual unsigned int * Construct(int a2, int a3); // 0x58AFF0 G42.35 C6 体签名
 
 
     unsigned int Capacity;  // G42.39 data supply
@@ -1646,7 +1646,7 @@ public:
     unsigned char __pad_11B4[0x11D0 - 0x11B4];
     void (__thiscall **DisplayClass_field_0x0)(void *, unsigned int, int);  // G42.33 b4 C3: vt 槽词汇
     unsigned int DisplayClass_field_0x11D0;
-    unsigned char __pad_0;  // 0x0 G42.34 C5: vfptr 槽词汇 (CheckHumanPlayer 体)
+    unsigned char *__pad_0;  // 0x0 G42.34 C5: vfptr 槽词汇 (CheckHumanPlayer 体)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool HasPlayers();  // 0x6ABAC0
     int ProcessOccupancyUpdate(void* a1);  // 0x6D9FF0
@@ -1731,7 +1731,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Queue() = default;
 
-    virtual void GetNext(); // 0x407470
+    int GetNext(); // 0x407470
 
 };
 #endif  // GAMEMD_G2_Queue_DEF
@@ -1801,7 +1801,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ReferenceCounted() = default;
 
-    virtual void Constructor(); // 0x65D660
+    void* Constructor(); // 0x65D660
     static int Constructor(void *aP0);  // 0x65D660 G42.35 static-form sync (ui/supplied site 0x765660)
 
 };
@@ -1817,7 +1817,7 @@ public:
     virtual short Process(); // 0x69D960
     virtual void Compute(); // 0x69D9E0
     virtual void Transform(); // 0x69DB30
-    virtual void Reset(); // 0x69DFF0
+    int Reset(); // 0x69DFF0
     // +1 more virtual methods
 
     uint8_t SHA1_field_0x04[4];
@@ -1920,7 +1920,7 @@ public:
 
     virtual void Release(); // 0x49EE60
     virtual void ddtor(); // 0x49EF10
-    virtual void Add(_DWORD a2); // 0x49EF40
+    virtual void Add(unsigned int a2); // 0x49EF40
     virtual void Remove(); // 0x49EF80
     virtual void QueryInterface(); // 0x49EFA0
     // +2 more virtual methods
@@ -2002,7 +2002,7 @@ public:
     virtual ~Vector2() = default;
 
     virtual void NormalizeNonZero(); // 0x41C460
-    virtual void Subtract(); // 0x6DC4C0
+    int Subtract(); // 0x6DC4C0
 
     uint8_t Vector2_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6dc4d0)
@@ -2021,7 +2021,7 @@ public:
     virtual ~Vector3() = default;
 
     virtual void Magnitude(); // 0x41C3C0
-    virtual void Subtract(); // 0x437160
+    int Subtract(); // 0x437160
     virtual void AddAssign(); // 0x43A100
 
     uint8_t Vector3_field_0x04[4];
@@ -2063,7 +2063,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VectorClassUInt() = default;
 
-    virtual void Constructor(); // 0x42DC50
+    void* Constructor(); // 0x42DC50
     unsigned int * Constructor(int a2, int a3);  // 0x42DC50 G42.33 b3 supplied-body sync (2 参形)
     unsigned int * Constructor(int a2);  // G57w19k2 C2661 supply
 
@@ -2080,7 +2080,7 @@ class VectorCursor
 public:
     virtual ~VectorCursor() = default;  // 0x76F190
 
-    virtual _DWORD * Construct(int a2, int a3); // 0x76F0C0 G42.35 C9 体签名
+    virtual unsigned int * Construct(int a2, int a3); // 0x76F0C0 G42.35 C9 体签名
     virtual void HasNext(); // 0x76F0E0
     virtual void initCursor(); // 0x76F100
     virtual void updateCursor(); // 0x76F120
@@ -2116,3 +2116,4 @@ public:
 #endif  // GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
 
 } // namespace gamemd
+}  // fix_truncated_headers: restored closer // namespace gamemd

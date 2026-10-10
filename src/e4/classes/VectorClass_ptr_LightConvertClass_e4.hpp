@@ -14,19 +14,18 @@ struct VectorClass_ptr_LightConvertClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector * Constructor_VectorClass_LightConvertClass___(unsigned int * Block, char a2);  // 0x40C540
+    DynamicVector *  Constructor_VectorClass_LightConvertClass___(char a2);  // 0x40C540
     int Destroy(void *a1_1);  // 0x40C230
-    int Get(int a2, void *a2_2);  // 0x40C280
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x40C290
-    char Release(int a2, unsigned int * a3);  // 0x40C2D0
-    void Remove(void *a1_1);  // 0x40C380
-    int GetSize(unsigned int * a2);  // 0x40C3B0
-    unsigned int GetCapacity(int a2);  // 0x40C3F0
-    int FindItemIndex(unsigned int * a2);  // 0x40C4C0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x40C4F0
+    int  Get(int a2, void *a1 = 0);  // 0x40C280
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x40C290
+    char  Release(int a2, unsigned int * a3);  // 0x40C2D0
+    void Remove(void *a1_1, void *a1 = 0);  // 0x40C380
+    int  GetSize(unsigned int * a2);  // 0x40C3B0
+    unsigned int  GetCapacity(int a2);  // 0x40C3F0
+    int  FindItemIndex(unsigned int * a2);  // 0x40C4C0
+    VectorClass_flat *  QueryInterface(char a2);  // 0x40C4F0
     char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)

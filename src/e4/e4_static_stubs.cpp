@@ -20,3 +20,18 @@ namespace gamemd {
 
 } // namespace gamemd
 
+// GENERATED static-varargs stubs for C2597 no-def methods
+// (fix_member_static_calls.py). INTERIM: return 0 — same
+// fidelity as the tree-era return-0 stubs these replace.
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
+
+namespace gamemd {
+
+double MapClass::cells(...) { return 0; }
+double MapClass::cellsCount(...) { return 0; }
+double TagClass::firstTrigger(...) { return 0; }
+
+} // namespace gamemd
+

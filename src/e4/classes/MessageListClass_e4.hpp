@@ -13,20 +13,13 @@ struct MessageListClass {
     char TextColorIndex[4];  // 0xC
     char DisplayDuration[4];  // 0x10
     char MessageTimer[12];  // 0x14
-    unsigned int q018;  // 0x18
-    unsigned int q019;  // 0x19
-    unsigned int q01A;  // 0x1A
-    unsigned int q01C;  // 0x1C
     char MessageRect[16];  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int q028;  // 0x28
-    unsigned int q02C;  // 0x2C
     bool IsScrolling;  // 0x30
     unsigned char padding_after_scroll;  // 0x31
 // --- flat members (END) ---
-    static int AddMessage(MessageListClass * aP1, wchar_t *Source, int a3, wchar_t *a4, int a5, int a6, int a7, char a8);  // G57w10-S raw 0x005D3BA0 (was C2597 interim stub)
+    static int AddMessage(MessageListClass * aP1, wchar_t *Source, int a3, wchar_t *a4, int a5, int a6, int a7, char a8);
     int clearMessages(int a1, int a2, int a3, int a4, int a5);
-    static int CountCharsInWidth(...);  // w16g4 C3861 static supply (raw 0x00433F50)  // 0x72a440
+    static int CountCharsInWidth(...);
 };
 
 } // namespace gamemd

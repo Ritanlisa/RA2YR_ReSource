@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct ObjectPtr {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     static int __stdcall RegisterForTracking(...);
 };

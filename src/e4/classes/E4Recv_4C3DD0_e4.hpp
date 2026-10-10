@@ -9,6 +9,7 @@ struct E4Recv_4C3DD0 {
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    gamemd::AbstractClass * * sub_4C3DD0(int a2);  // 0x4C3DD0 (G42.35l: member named AbstractClass shadows the type)
+    gamemd::AbstractClass * * sub_4C3DD0(int a2);
+    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

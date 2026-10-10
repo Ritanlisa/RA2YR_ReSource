@@ -272,7 +272,7 @@ public:
     void MarkForRedraw();
     // design: no binary equivalent found in IDA
     void ChainReaction();
-    int Draw(int a2, _DWORD *a3, int a4) const;
+    int Draw(int a2, unsigned int *a3, int a4) const;
     void DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const;  // 0x4E2830
     void DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const;  // 0x557830
     int * GetScreenRect(int * out);  // 0x47FF80
@@ -375,7 +375,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool Get(void* a1);  // 0x452940
     int SetField2C();  // 0x45A170
     bool HasContent();  // 0x4722C0
-    void AddObject(void* a1);  // 0x4733A0
+    int AddObject(void* a1);  // 0x4733A0
     void DTOR();  // 0x47BB60
     void* Construct();  // 0x47BBF0
     void* FindInfantry(int a1);  // 0x47C550
@@ -471,7 +471,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* GetHeight(int a1, int a2);  // 0x4265b0 -- Cell::GetHeight
     int PosToIndex();  // 0x42b1c0 -- Cell::PosToIndex
     void* IsBridge();  // 0x47c520 -- Cell::IsBridge
-    void ApplyDamage(int a2, int a3, int a4, char a5);
+    int ApplyDamage(int a2, int a3, int a4, char a5);
     void* GetNeighbourContent(int a1);  // 0x481810 -- Cell::GetNeighbourContent
     int IsValidHeight();  // 0x485060 -- Cell::IsValidHeight
     bool IsEmpty();  // 0x486380 -- Cell::IsEmpty
@@ -489,8 +489,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool IsValidDestination(int a1);  // 0x4dce80 -- Cell::IsValidDestination
     bool Exists(int a1);  // 0x5657e0 -- Cell::Exists
     int DecodeFlags();  // 0x56cb80 -- Cell::DecodeFlags
-    int CoordToIndex(__int16 *a2);
-    int SetRadar(__int16 *a2);
+    int CoordToIndex(int16_t *a2);
+    int SetRadar(int16_t *a2);
     int GetTerrainMask(int a1, int a2);  // 0x57b210 -- Cell::GetTerrainMask
     void* Clear();  // 0x5a9940 -- Cell::Clear
     void* GetWorldCoords(int a1, int a2);  // 0x68bd00 -- Cell::GetWorldCoords

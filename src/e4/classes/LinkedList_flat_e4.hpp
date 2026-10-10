@@ -27,13 +27,13 @@ unsigned int * FindPrev();
 void * MoveNode(void * a2);
 void RelinkNode(int a2);
 int Remove(unsigned int * a2);
-    int PushFront(int a2); // N_fix R5 supply (cache truth)
-    int Prepend(int a2); // N_fix R5 supply (cache truth)
+    int PushFront(int a2);
+    int Prepend(int a2);
     unsigned int * Attach(int a2);
     int RemoveNode();
     int Pop();
     unsigned char __tail_0;  // 0x0 (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q004;  // 0x4 (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
     unsigned int q018;  // 0x18 (offset-truth)

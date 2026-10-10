@@ -7,30 +7,25 @@ namespace gamemd {
 
 struct LoadGame {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char u8_19;  // 0x19
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
+
 // --- flat members (END) ---
-    static wchar_t * CleanupArray(void *aP1);  // 0x54E6F0 raw: wchar_t* __thiscall LoadGame::CleanupArray(LoadGame*)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int ClearAllSlots(int aP1);  // 0x413800 raw: int __thiscall LoadGame::ClearAllSlots(LoadGame*) site int form (g_CellClassManager)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static wchar_t * CleanupArray(void *aP1);
+    static int ClearAllSlots(int aP1);
     int LoadBlock300(int a2);
     int LoadMagicAndAudio();
     int LoadPointArray(int a2);
     int LoadTriggerEvents();
-    char RemoveItem(int a2);
+    char RemoveItem(int a2, void *a1 = 0);
     int RestoreAudioState();
-    char Start();
-    static int LoadBlock68(LoadGame * aP1, int a2);  // G57w10-S raw 0x004C6320 (was C2597 interim stub)
+    char Start(void *a1 = 0, void *a2 = 0);
+    static int LoadBlock68(LoadGame * aP1, int a2);
+    static double LoadGame_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double LoadGame_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double LoadGame_field_0x14(...);  // plateau: C2039/C3861 stub
+    static double LoadGame_field_0x18(...);  // plateau: C2039/C3861 stub
+    static double LoadGame_field_0x1C(...);  // plateau: C2039/C3861 stub
+    static double LoadGame_field_0x20(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

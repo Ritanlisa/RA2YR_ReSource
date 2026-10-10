@@ -11,22 +11,6 @@ struct E4Recv_5D4430 {
     unsigned int M20;  // 0x14
     unsigned int M25;  // 0x19
     unsigned int M26;  // 0x1A
-    unsigned int q020;  // 0x20
-    unsigned int q038;  // 0x38
-    unsigned int q050;  // 0x50
-    unsigned int q080;  // 0x80
-    unsigned int q128;  // 0x128
-    unsigned int q134;  // 0x134
-    unsigned int q308;  // 0x308
-    unsigned int q1634;  // 0x1634
-    unsigned int q1910;  // 0x1910
-    unsigned int q5684;  // 0x5684
-    unsigned int q22148;  // 0x22148
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     int sub_5D4430();  // 0x5D4430
 };

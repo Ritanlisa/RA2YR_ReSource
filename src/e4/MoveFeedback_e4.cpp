@@ -22,9 +22,10 @@
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x7327D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int MoveFeedback::ProcessCommand()
 {
+
   char v1; // bl
   int result; // eax
   int v3; // esi
@@ -35,75 +36,78 @@ int MoveFeedback::ProcessCommand()
   int v8; // edx
   EventClass *v9; // eax
   int v10; // edi
+  int v11; // ebp
   int v12; // ebp
   int i; // edi
   int v14; // ecx
+  char v15; // [esp+13h] [ebp-9h]
+  int v17; // [esp+18h] [ebp-4h] BYREF
 
   v1 = g_MoveFeedback; /*0x7327d9*/
-  g_MoveFeedback = g_MoveFeedback; /*0x7327e8*/
+  v15 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
   if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x7327f5*/
   {
-    result = RA2_OPNEW(0x18u); /*0x7327fb*/
+    result = __2_YAPAXI_Z(0x18u); /*0x7327fb*/
     v3 = result; /*0x732800*/
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732814*/
-      v3->u32_14 = 10; /*0x73281a*/
-      v3->Items = 0; /*0x732821*/
+      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732814*/
+      *(unsigned int *)(v3 + 20) = 10; /*0x73281a*/
+      *(unsigned int *)(v3 + 16) = 0; /*0x732821*/
     }
     else
     {
       v3 = 0; /*0x732826*/
     }
-    v5 = *(_DWORD *)&stru_A8EB00.?[164]; /*0x732828*/
+    v5 = *(unsigned int *)&stru_A8EB00.?[164]; /*0x732828*/
     if ( *(int *)&stru_A8EB00.?[164] > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-        v6 = *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[152] + 4 * v4); /*0x73283b*/
+        v6 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[152] + 4 * v4); /*0x73283b*/
         result = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
-        if ( (_BYTE)result ) /*0x732847*/
+        if ( (unsigned char)result ) /*0x732847*/
         {
-          v7 = v3->Capacity; /*0x732849*/
-          result = v3->Items; /*0x73284c*/
+          v7 = *(unsigned int *)(v3 + 8); /*0x732849*/
+          result = *(unsigned int *)(v3 + 16); /*0x73284c*/
           if ( result < v7 /*0x732873*/
-            || ((IDA_LOBYTE(result) = v3->IsAllocated, (_BYTE)result) || !v7)
-            && (result = v3->u32_14, result > 0)
-            && (result = (*(int (__thiscall **)(int, int, _DWORD))(v3->Capacity)(v3, v7 + result, 0), (_BYTE)result) )
+            || ((LOBYTE(result) = *(unsigned char *)(v3 + 13), (unsigned char)result) || !v7)
+            && (result = *(unsigned int *)(v3 + 20), result > 0)
+            && (result = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v3 + 8))(v3, v7 + result, 0), (unsigned char)result) )
           {
-            result = v3->Items; /*0x732875*/
-            v8 = v3->Items; /*0x732878*/
-            v3->Items = result + 1; /*0x73287e*/
-            *(_DWORD *)(v8 + 4 * result) = v6; /*0x732881*/
+            result = *(unsigned int *)(v3 + 16); /*0x732875*/
+            v8 = *(unsigned int *)(v3 + 4); /*0x732878*/
+            *(unsigned int *)(v3 + 16) = result + 1; /*0x73287e*/
+            *(unsigned int *)(v8 + 4 * result) = v6; /*0x732881*/
           }
         }
         ++v4; /*0x732884*/
       }
       while ( v4 < v5 ); /*0x732887*/
     }
-    v1 = g_MoveFeedback; /*0x732889*/
+    v1 = v15; /*0x732889*/
   }
   else
   {
-    v9 = (EventClass *)RA2_OPNEW(0x18u); /*0x73288f*/
+    v9 = (EventClass *)__2_YAPAXI_Z(0x18u); /*0x73288f*/
     v3 = (int)v9; /*0x732894*/
     v10 = 0; /*0x732896*/
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7328a8*/
-      v3->u32_14 = 10; /*0x7328ae*/
-      v3->Items = 0; /*0x7328b5*/
+      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
+      *(unsigned int *)(v3 + 20) = 10; /*0x7328ae*/
+      *(unsigned int *)(v3 + 16) = 0; /*0x7328b5*/
     }
     else
     {
       v3 = 0; /*0x7328ba*/
     }
     result = GetHeightMap((ObjectClass *)g_TacticalClass_Instance); /*0x7328c2*/
-    result = result; /*0x7328c7*/
+    v11 = result; /*0x7328c7*/
     if ( result > 0 ) /*0x7328cb*/
     {
       do /*0x73290b*/
@@ -111,29 +115,30 @@ int MoveFeedback::ProcessCommand()
         result = GetCoordDataMap(v10); /*0x7328d4*/
         if ( result ) /*0x7328db*/
         {
-          if ( (*(_BYTE *)(result + 20) & 1) != 0 ) /*0x7328e7*/
+          if ( (*(unsigned char *)(result + 20) & 1) != 0 ) /*0x7328e7*/
           {
-            result = result; /*0x7328ef*/
+            v17 = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
-            if ( (_BYTE)result ) /*0x7328fa*/
-              result = DynamicVector::AddItem((DynamicVector *)v3, &result); /*0x732903*/
+            if ( (unsigned char)result ) /*0x7328fa*/
+              result = DynamicVector::AddItem((DynamicVector *)v3, &v17); /*0x732903*/
           }
         }
         ++v10; /*0x732908*/
       }
-      while ( v10 < result ); /*0x73290b*/
+      while ( v10 < v11 ); /*0x73290b*/
     }
   }
-  v12 = v3->Items; /*0x73290d*/
+  v12 = *(unsigned int *)(v3 + 16); /*0x73290d*/
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
-    v14 = *(_DWORD *)(v3->Items + 4 * i); /*0x732919*/
-    result = (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 332))(v14); /*0x73291e*/
+    v14 = *(unsigned int *)(*(unsigned int *)(v3 + 4) + 4 * i); /*0x732919*/
+    result = (*(int (**)(int))(*(unsigned int *)v14 + 332))(v14); /*0x73291e*/
   }
   if ( v3 ) /*0x73292b*/
-    result = (**(int (__thiscall ***)(int, int))v3)(v3, 1); /*0x732933*/
+    result = (**(int (***)(int, int))v3)(v3, 1); /*0x732933*/
   g_MoveFeedback = v1; /*0x732937*/
   return result; /*0x732935*/
+
 }
 } // namespace gamemd
 // 0x40B960
@@ -142,18 +147,18 @@ char MoveFeedback::AddRef(int a2)
 {
   int m_8; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x40b962*/
-  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x40b96d*/
+  m_8 = *(unsigned int *)&this->q008; /*0x40b962*/
+  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
   {
     v3 = 0; /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-    v4 = *(_DWORD **)&this->m_1[3]; /*0x40b975*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x40b97b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x40b984*/
+    v4 = *(unsigned int **)&this->q004; /*0x40b975*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
     {
       ++v3; /*0x40b986*/
       ++v4; /*0x40b987*/
@@ -170,13 +175,13 @@ int MoveFeedback::Draw(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x40bb90*/
+  m_10 = *(unsigned int *)&this->q010; /*0x40bb90*/
   result = 0; /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
-  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x40bb9e*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40bb9e*/
   {
     if ( ++result >= m_10 ) /*0x40bbad*/
       return -1; /*0x40bbad*/
@@ -188,20 +193,22 @@ int MoveFeedback::Draw(unsigned int * a2)
 namespace gamemd {
 DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, int a5)
 {
+
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x40bcb3*/
-  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40bcc0*/
+  v3 = *(void **)&a1->m_1[3]; /*0x40bcb3*/
+  *(unsigned int *)a1->__pad_0 = &VectorClass<TechnoClass *>::`vftable'; /*0x40bcb6*/
+  if ( v3 && BYTE1(a1->m_C) ) /*0x40bcc0*/
   {
-    RA2_OPDEL(v3); /*0x40bcc8*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x40bcd0*/
+    __3_YAXPAX_Z(v3); /*0x40bcc8*/
+    *(unsigned int *)&a1->m_1[3] = 0; /*0x40bcd0*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40bcdb*/
-  this->m_8 = 0; /*0x40bce1*/
-  if ( (a2 & 1) != 0 ) /*0x40bce8*/
-    RA2_OPDEL(); /*0x40bceb*/
-  return this->q000; /*0x40bcf5*/
+  BYTE1(a1->m_C) = 0; /*0x40bcdb*/
+  a1->m_8 = 0; /*0x40bce1*/
+  if ( (a1 & 1) != 0 ) /*0x40bce8*/
+    __3_YAXPAX_Z(a1); /*0x40bceb*/
+  return a1->__pad_0; /*0x40bcf5*/
+
 }
 } // namespace gamemd
 // 0x40BE50
@@ -210,23 +217,23 @@ void MoveFeedback::Destroy()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x40be56*/
-  this->m_10 = 0; /*0x40be59*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x40be60*/
+  v2 = *(void **)&this->q004; /*0x40be56*/
+  *(unsigned int *)&this->q010 = 0; /*0x40be59*/
+  if ( v2 && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x40be60*/
   {
-    RA2_OPDEL(v2); /*0x40be66*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x40be6e*/
+    operator delete((void *)(v2)); /*0x40be66*/
+    *(unsigned int *)&this->q004 = 0; /*0x40be6e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40be71*/
-  this->m_8 = 0; /*0x40be74*/
+  (((unsigned char *)&(*(unsigned int *)&this->q00C))[1]) = 0; /*0x40be71*/
+  *(unsigned int *)&this->q008 = 0; /*0x40be74*/
 }
 } // namespace gamemd
 // 0x40BE80
 namespace gamemd {
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x40be80*/
-    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x40be95*/
+  if ( (*((unsigned char *)&(*(unsigned int *)&this->q00C))) ) /*0x40be80*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x40be95*/
   else
     return 0; /*0x40be87*/
 }
@@ -235,46 +242,48 @@ unsigned int MoveFeedback::GetIndex2(int a2)
 namespace gamemd {
 char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+
+  unsigned int *v4; // edi
   int m_8; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x40c03c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x40c042*/
+    LOBYTE(this->m_C) = 0; /*0x40c042*/
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
-      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x40c05a*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x40c062*/
+      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x40c05a*/
+    LOBYTE(this->m_C) = 1; /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
-    if ( *(_DWORD *)&this->m_1[3] ) /*0x40c068*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x40c068*/
     {
       m_8 = this->m_8; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
-      if ( IDA_BYTE1(this->m_C) ) /*0x40c08e*/
+      if ( BYTE1(this->m_C) ) /*0x40c08e*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x40c099*/
-        *(_DWORD *)&this->m_1[3] = 0; /*0x40c0a1*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40c099*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x40c0a1*/
       }
     }
-    *(_DWORD *)&this->m_1[3] = v4; /*0x40c0aa*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x40c0aa*/
     this->m_8 = a2; /*0x40c0b2*/
-    IDA_BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
+    BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVCommandClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x40c0be*/
+    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c0be*/
   }
   v7 = this->m_8; /*0x40c0c1*/
   if ( v7 < this->m_10 ) /*0x40c0c9*/
     this->m_10 = v7; /*0x40c0cb*/
   return 1; /*0x40c0ce*/
+
 }
 } // namespace gamemd
 // 0x40C0E0
@@ -283,13 +292,13 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x40c0e0*/
+  m_10 = *(unsigned int *)&this->q010; /*0x40c0e0*/
   result = 0; /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
-  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x40c0ee*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40c0ee*/
   {
     if ( ++result >= m_10 ) /*0x40c0fd*/
       return -1; /*0x40c0fd*/
@@ -299,21 +308,23 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
 } // namespace gamemd
 // 0x40C160
 namespace gamemd {
-_DWORD * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5)
+unsigned int * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5)
 {
+
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x40c163*/
-  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40c170*/
+  v3 = *(void **)&Block->m_1[3]; /*0x40c163*/
+  *(unsigned int *)Block->__pad_0 = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x40c170*/
   {
-    RA2_OPDEL(v3); /*0x40c178*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x40c180*/
+    __3_YAXPAX_Z(v3); /*0x40c178*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x40c180*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40c18b*/
-  this->m_8 = 0; /*0x40c191*/
+  BYTE1(Block->m_C) = 0; /*0x40c18b*/
+  Block->m_8 = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
-    RA2_OPDEL(); /*0x40c19b*/
-  return this->q000; /*0x40c1a5*/
+    __3_YAXPAX_Z(Block); /*0x40c19b*/
+  return Block->__pad_0; /*0x40c1a5*/
+
 }
 } // namespace gamemd

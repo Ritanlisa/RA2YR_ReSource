@@ -26,14 +26,14 @@ namespace gamemd {
 int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
 {
   int result; // eax
-  _BYTE *v3; // eax
+  unsigned char *v3; // eax
   char HasPower; // bl
   int v5; // eax
   BuildingClass *v6; // edi
   int *Upgrades; // ecx
   int v8; // edx
   int v9; // eax
-  _BYTE *v10; // ecx
+  unsigned char *v10; // ecx
   int v11; // edx
   int v12; // eax
   int Status; // esi
@@ -44,19 +44,19 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
   int j; // [esp+Eh] [ebp-8h]
   int v19; // [esp+12h] [ebp-4h]
 
-  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(byte_A8E9A0) & 0xFFu); /*0x50af10*/
+  (*((unsigned char *)&(result))) = byte_A8E9A0; /*0x50af10*/
   if ( byte_A8E9A0 ) /*0x50af1d*/
   {
     v16 = dword_A83D4C == (Object *)ownerHouse; /*0x50af31*/
     result = 0; /*0x50af36*/
-    for ( i = 0; i < *((_DWORD *)ownerHouse + 153); ++i ) /*0x50af3a*/
+    for ( i = 0; i < *((unsigned int *)ownerHouse + 153); ++i ) /*0x50af3a*/
     {
-      v3 = *(_BYTE **)(*((_DWORD *)ownerHouse + 150) + 4 * result); /*0x50af4d*/
-      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !*((_BYTE *)ownerHouse + 501) ) /*0x50af70*/
+      v3 = *(unsigned char **)(*((unsigned int *)ownerHouse + 150) + 4 * result); /*0x50af4d*/
+      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !*((unsigned char *)ownerHouse + 501) ) /*0x50af70*/
         goto LABEL_55; /*0x50af78*/
       HasPower = 0; /*0x50af84*/
       v15 = 0; /*0x50af88*/
-      if ( !*((_BYTE *)ownerHouse + 501) ) /*0x50af7e*/
+      if ( !*((unsigned char *)ownerHouse + 501) ) /*0x50af7e*/
       {
         v5 = 0; /*0x50af99*/
         for ( j = 0; v5 < stru_A8EB00.vfptr[20]; j = ++v5 ) /*0x50afa1*/
@@ -65,14 +65,14 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
           if ( !v6->inLimbo && v6->isAliveFlag ) /*0x50afbe*/
           {
             v19 = (*((int (__stdcall **)(void **))v6->owner->vfptr1 + 4))(&v6->owner->vfptr1); /*0x50afe3*/
-            if ( v19 == (*(int (__stdcall **)(SuperWeapon *))(*((_DWORD *)ownerHouse + 1) + 16))(ownerHouse + 4) ) /*0x50aff0*/
+            if ( v19 == (*(int (__stdcall **)(SuperWeapon *))(*((unsigned int *)ownerHouse + 1) + 16))(ownerHouse + 4) ) /*0x50aff0*/
             {
               Upgrades = v6->Upgrades; /*0x50aff2*/
               v8 = 3; /*0x50aff8*/
               do /*0x50b02a*/
               {
                 v9 = *Upgrades; /*0x50affd*/
-                if ( *Upgrades && (*(_DWORD *)(v9 + 5872) == i || *(_DWORD *)(v9 + 5876) == i) ) /*0x50b015*/
+                if ( *Upgrades && (*(unsigned int *)(v9 + 5872) == i || *(unsigned int *)(v9 + 5876) == i) ) /*0x50b015*/
                 {
                   v15 = 1; /*0x50b019*/
                   if ( !HasPower ) /*0x50b01e*/
@@ -96,24 +96,24 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
           }
         }
       }
-      v10 = *(_BYTE **)(*(_DWORD *)(*((_DWORD *)ownerHouse + 150) + 4 * i) + 40); /*0x50b078*/
-      if ( v10[231] && !stru_A8B250.q000[19] ) /*0x50b099*/
+      v10 = *(unsigned char **)(*(unsigned int *)(*((unsigned int *)ownerHouse + 150) + 4 * i) + 40); /*0x50b078*/
+      if ( v10[231] && !stru_A8B250.__pad_0[19] ) /*0x50b099*/
         v15 = 0; /*0x50b09b*/
-      v11 = *((_DWORD *)ownerHouse + 5353); /*0x50b0a0*/
-      v12 = *((_DWORD *)ownerHouse + 5354); /*0x50b0a6*/
+      v11 = *((unsigned int *)ownerHouse + 5353); /*0x50b0a0*/
+      v12 = *((unsigned int *)ownerHouse + 5354); /*0x50b0a6*/
       if ( v11 < v12 && v12 && (!v11 || (double)*((int *)ownerHouse + 5353) / (double)*((int *)ownerHouse + 5354) < 1.0) ) /*0x50b0d3*/
         HasPower = 0; /*0x50b0d5*/
-      (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 64))(v10); /*0x50b0d9*/
+      (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/
       Status = HouseClass::GetStatus((HouseClass *)0x39, 0); /*0x50b0ea*/
-      if ( !v15 || *((_BYTE *)ownerHouse + 501) ) /*0x50b0f4*/
+      if ( !v15 || *((unsigned char *)ownerHouse + 501) ) /*0x50b0f4*/
       {
-        if ( !SuperClass::Lose(*(SuperClass **)(*((_DWORD *)ownerHouse + 150) + 4 * i)) || !dword_A83D4C ) /*0x50b179*/
+        if ( !SuperClass::Lose(*(SuperClass **)(*((unsigned int *)ownerHouse + 150) + 4 * i)) || !dword_A83D4C ) /*0x50b179*/
           goto LABEL_55; /*0x50b179*/
         if ( !v16 ) /*0x50b181*/
           goto LABEL_54; /*0x50b181*/
-        if ( *(_DWORD *)&stru_87F5F0.qE12[1438] == i ) /*0x50b18e*/
+        if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1438] == i ) /*0x50b18e*/
   LABEL_52:
-          *(_DWORD *)&stru_87F5F0.qE12[1438] = -1; /*0x50b190*/
+          *(unsigned int *)&stru_87F5F0.__pad_E12[1438] = -1; /*0x50b190*/
   LABEL_53:
         Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x50b19a*/
         goto LABEL_54; /*0x50b1a0*/
@@ -125,23 +125,23 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       else
       {
         v14 = i; /*0x50b108*/
-        if ( SuperWeapon::GetField10(*(SuperWeapon **)(*((_DWORD *)ownerHouse + 150) + 4 * i)) /*0x50b123*/
-          && (unsigned __int8)SuperClass::SetOnHold(*(_DWORD *)(*((_DWORD *)ownerHouse + 150) + 4 * i), 1) )
+        if ( SuperWeapon::GetField10(*(SuperWeapon **)(*((unsigned int *)ownerHouse + 150) + 4 * i)) /*0x50b123*/
+          && (uint8_t)SuperClass::SetOnHold(*(unsigned int *)(*((unsigned int *)ownerHouse + 150) + 4 * i), 1) )
         {
           goto LABEL_45; /*0x50b12a*/
         }
       }
-      if ( !HasPower || !(unsigned __int8)SuperClass::SetOnHold(*(_DWORD *)(*((_DWORD *)ownerHouse + 150) + 4 * v14), 0) ) /*0x50b141*/
+      if ( !HasPower || !(uint8_t)SuperClass::SetOnHold(*(unsigned int *)(*((unsigned int *)ownerHouse + 150) + 4 * v14), 0) ) /*0x50b141*/
         goto LABEL_55; /*0x50b148*/
   LABEL_45:
       if ( v16 ) /*0x50b150*/
       {
-        if ( *(_DWORD *)&stru_87F5F0.qE12[1438] == v14 ) /*0x50b158*/
+        if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1438] == v14 ) /*0x50b158*/
           goto LABEL_52; /*0x50b158*/
         goto LABEL_53; /*0x50b158*/
       }
   LABEL_54:
-      *((_BYTE *)ownerHouse + 508) = 1; /*0x50b1a5*/
+      *((unsigned char *)ownerHouse + 508) = 1; /*0x50b1a5*/
   LABEL_55:
       result = i + 1; /*0x50b1ac*/
     }

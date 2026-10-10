@@ -6,9 +6,9 @@
 namespace gamemd {
 struct AudioCodec {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
-    static char * Decode(unsigned char *a1, char *a2, int a3);  // 0x7C81DB raw: char* __cdecl AudioCodec_Decode(unsigned __int8*, char*, int)
+    static char * Decode(unsigned char *a1, char *a2, int a3);
 };
 } // namespace gamemd

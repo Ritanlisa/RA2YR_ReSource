@@ -7,9 +7,7 @@ namespace gamemd {
 
 struct SaveLoadDialog {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
+
 // --- flat members (END) ---
     bool DlgProc(void *a1 = 0);
 };

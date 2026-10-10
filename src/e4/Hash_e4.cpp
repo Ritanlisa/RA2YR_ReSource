@@ -6,11 +6,11 @@
 #include "e4/e4_protos.h"
 
 // 0x5C61D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * sub_5C61D0()
 {
   return &unk_82E174; /*0x5c61d5*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5C61E0
@@ -29,8 +29,8 @@ int sub_5E94D0()
   LPARAM *v1; // edx
   LPARAM v2; // ecx
 
-  result = 0; /*0x5e94e5*/
-  v1 = &dword_A8DA90; /*0x5e94e7*/
+  result = (LPARAM *)(0);
+  v1 = (LPARAM *)(&dword_A8DA90); /*0x5e94e7*/
   do /*0x5e9508*/
   {
     v2 = *v1; /*0x5e94ec*/
@@ -51,8 +51,8 @@ char sub_5E9580()
   LPARAM *v1; // ecx
   LPARAM v2; // eax
 
-  v0 = 0; /*0x5e9595*/
-  v1 = &dword_A8DA90; /*0x5e9597*/
+  v0 = (LPARAM *)(0);
+  v1 = (LPARAM *)(&dword_A8DA90); /*0x5e9597*/
   while ( 1 ) /*0x5e959c*/
   {
     v2 = *v1; /*0x5e959c*/
@@ -61,9 +61,9 @@ char sub_5E9580()
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e95c2*/
         && v2 != g_Lobby_PlayerCount
         && v2 != g_Lobby_MaxPlayers
-        && (wchar_t *)v2 != g_Lobby_PlayerReady
+        && (wchar_t *)v2 != (wchar_t *)(g_Lobby_PlayerReady)
         && v0 == g_MPCooperativeState
-        && *(_DWORD *)(v2 + 107) == -1 )
+        && *(unsigned int *)(v2 + 107) == -1 )
       {
         break; /*0x5e95c2*/
       }

@@ -15,10 +15,10 @@ struct Struct {
     int ZeroInitAndSetup(void *a1);
     int ZeroInitAndSetup_0();
     int ZeroInitAndSetup_0_0();
-    unsigned char * Zero3();
+    unsigned char * Zero3(void *a1 = 0);
     unsigned int * InitTriple256(unsigned int * a1);
-    static unsigned int * Zero25(Struct * aP1);  // G57w10-S raw 0x006D1810 (was C2597 interim stub)
-    wchar_t ** WideStringCopy(int a2);  // 0x6247d0
+    static unsigned int * Zero25(Struct * aP1);
+    wchar_t **  WideStringCopy(int a2);  // 0x6247d0
     unsigned int u32_14;  // 0x14 (offset-truth)
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)

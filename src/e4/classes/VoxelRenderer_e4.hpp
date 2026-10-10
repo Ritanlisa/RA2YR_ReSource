@@ -7,19 +7,16 @@ namespace gamemd {
 
 struct VoxelRenderer {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
+
 // --- flat members (END) ---
     int InitializeBuffers(int a2, unsigned int * a3, int a4);
     int ProjectVertex(float a2, float a3, float a4, char a5);
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
+    static double VoxelRenderer_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double VoxelRenderer_field_0x10(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -9,34 +9,26 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct RadarHashVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
     int Count;  // 0x16
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
 // --- flat members (END) ---
     AbstractClass * * ComputeHashIndex(int a2, char * a3);
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     char * Destructor(char a2);
     int FindItemIndex(unsigned int * a2);
-    int Read(unsigned int * a2, void *a2_2);
-    unsigned int * Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6);
+    int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
+    unsigned int * Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6, void *a1 = 0, void *a2 = 0, void *a7 = 0);
     unsigned int Write(int a2);
-    void ddtor();
-    unsigned char m_1;  // 0x1 (offset-truth)
+    void ddtor(void *a1 = 0);
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double q004(...);  // plateau: C2039/C3861 stub
+    static double q008(...);  // plateau: C2039/C3861 stub
+    static double q00C(...);  // plateau: C2039/C3861 stub
+    static double q010(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

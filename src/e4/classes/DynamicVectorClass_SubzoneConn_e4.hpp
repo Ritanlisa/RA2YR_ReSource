@@ -13,16 +13,15 @@ struct DynamicVectorClass_SubzoneConn {
     unsigned int Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    AbstractClass * * Release(int a2, char * a3);  // 0x589190
-    DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5890B0
-    int GetSize(unsigned int * a2);  // 0x5892D0
-    unsigned int Remove(int a2);  // 0x588CC0
+    AbstractClass * *  Release(int a2, char * a3);  // 0x589190
+    DynamicVector *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x5890B0
+    int  GetSize(unsigned int * a2);  // 0x5892D0
+    unsigned int  Remove(int a2, void *a1 = 0);  // 0x588CC0
     unsigned char __pad_5;  // 0x5 (offset-truth)
     unsigned char __tail_10;  // 0x10 (offset-truth)
-    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

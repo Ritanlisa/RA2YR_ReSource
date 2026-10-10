@@ -12,26 +12,19 @@ struct WalkLocomotionClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
+    void* Owner;  // 0x8
+    unsigned int Powered;  // 0x10
     bool Dirty;  // 0x11
+    int RefCount;  // 0x14
     void* vtable3;  // 0x18
     char Dest[12];  // 0x1C
-    bool q01D;  // 0x1D
-    ILocomotion * q020;  // 0x20
     char HeadToCoord[12];  // 0x28
-    bool q02B;  // 0x2B
     ObjectClass * ptr_30;  // 0x30
-    unsigned char q031;  // 0x31
     ILocomotion * ptr_20;  // 0x32
-    unsigned int q033;  // 0x33
     bool IsMoving;  // 0x34
     bool IsInProcessing;  // 0x35
     bool IsReallyMoving;  // 0x36
-    bool q037;  // 0x37
     ILocomotion * ptr_38;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
@@ -42,6 +35,7 @@ struct WalkLocomotionClass {
     int ddtor(int a1, unsigned int * a2);
     int Piggybackee;  // 0x38 (ml)
     unsigned int q018;  // 0x18 (offset-truth)
+    static double __pad_18(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

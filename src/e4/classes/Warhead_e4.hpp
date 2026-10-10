@@ -16,7 +16,7 @@ struct Warhead {
     bool q01B;  // 0x1B
     unsigned char q01C;  // 0x1C
     unsigned int q020;  // 0x20
-    unsigned int u32_24;  // 0x24
+    void* ;  // 0x24
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
     void* q034;  // 0x34
@@ -99,10 +99,6 @@ struct Warhead {
     unsigned int q5700;  // 0x5700
     void* q5778;  // 0x5778
     void* q6034;  // 0x6034
-    void* q8480;  // 0x8480
-    unsigned int q8600;  // 0x8600
-    void* q18070;  // 0x18070
-    unsigned int q139890;  // 0x139890
 // --- flat members (END) ---
     int ApplyDamage(ObjectClass * aP1);
     int ApplyPostDamageEffects();
@@ -110,6 +106,16 @@ struct Warhead {
     int ProcessDamageArea();
     int RemoveFromDamageList(int a2);
     unsigned char u32_C2;  // 0xC2 (offset-truth)
+    static double u32_28(...);  // plateau: C2039/C3861 stub
+    static double u32_34(...);  // plateau: C2039/C3861 stub
+    static double u32_3C(...);  // plateau: C2039/C3861 stub
+    static double u32_40(...);  // plateau: C2039/C3861 stub
+    static double u32_44(...);  // plateau: C2039/C3861 stub
+    static double u32_48(...);  // plateau: C2039/C3861 stub
+    static double u32_4C(...);  // plateau: C2039/C3861 stub
+    static double u32_50(...);  // plateau: C2039/C3861 stub
+    static double u32_54(...);  // plateau: C2039/C3861 stub
+    static double u32_F0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

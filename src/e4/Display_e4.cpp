@@ -9,15 +9,15 @@
 #include "e4/e4_protos.h"
 
 // 0x5D5A20
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 long long Display::CalculateDefaultSize()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5); /*0x5d5a3b*/
   dword_ABFDC4 = result; /*0x5d5a40*/
   return result; /*0x5d5a46*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x72AD20

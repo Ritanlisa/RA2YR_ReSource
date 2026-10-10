@@ -12,45 +12,35 @@ struct WaypointPathClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     unsigned int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     unsigned char NeedsSaveOrLink;  // 0x20
     char idxArray[4];  // 0x24
-    unsigned int u32_28;  // 0x28
-    bool q02B;  // 0x2B
-    unsigned int u32_2C;  // 0x2C
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    unsigned char q034;  // 0x34
-    unsigned int u32_35;  // 0x35
-    unsigned int q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    unsigned int q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     char waypointCount[4];  // 0x40
-    bool q042;  // 0x42
     char waypointCapacity[4];  // 0x44
     unsigned char WaypointClass_field_34;  // 0x48
     unsigned char WaypointClass_field_35;  // 0x49
     unsigned char pad_36;  // 0x4A
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
-    _DWORD * Construct(unsigned int aP1);
-    int Init();
+    unsigned int * Construct(unsigned int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    int Init(void *a1 = 0, void *a2 = 0);
     int LoadState(unsigned int * a1, int a2);
     int PowerDrainUpdate(int a2);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn51();
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
-    _DWORD * computePath(int a2, unsigned int *a3);
+    unsigned int * computePath(int a2, unsigned int *a3, void *a1 = 0);
     unsigned int q030;  // 0x30 (canon-mt)
     int waypoints[6];  // 0x28 (ml)
+    static double AbstractClass(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
+    static double vfptr2(...);  // plateau: C2039/C3861 stub
+    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

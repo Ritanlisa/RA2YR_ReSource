@@ -24,7 +24,7 @@
 #include "e4/classes/ParticleSystemClass_32_e4.hpp"
 
 // 0x5FB320
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
 
@@ -110,7 +110,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   int v81[3]; // [esp+74h] [ebp-B8h] BYREF
   int v82; // [esp+80h] [ebp-ACh]
   wchar_t lParam[64]; // [esp+ACh] [ebp-80h] BYREF
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5FC120
@@ -127,7 +127,7 @@ int sub_5FC120(int a1, int a2, int * a3)
   v4 = *a3; /*0x5fc12d*/
   while ( 1 ) /*0x5fc136*/
   {
-    v5 = *(_DWORD *)(a1 + 8 * (v3 / 2)); /*0x5fc136*/
+    v5 = *(unsigned int *)(a1 + 8 * (v3 / 2)); /*0x5fc136*/
     if ( v5 <= v4 ) /*0x5fc13e*/
       break; /*0x5fc13e*/
     v3 /= 2; /*0x5fc140*/

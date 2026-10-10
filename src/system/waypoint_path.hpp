@@ -47,7 +47,7 @@ public:
 
     // Methods
     void Init();                                             // 0x763730
-    void Construct();  // 0x763810
+    int Construct();  // 0x763810
     void PowerDrainUpdate();                                 // 0x763C00
     void LoadState(IStream*);                                // 0x763C70
     void SaveState(IStream*);                                // 0x763D90

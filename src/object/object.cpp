@@ -76,24 +76,23 @@ bool ObjectClass::Remove()
   int v3; // eax
   IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(this->q074[15]) & 0xFFu); /*0x5f44a4*/
-  if ( result ) /*0x5f44ac*/
-
+  (*((unsigned char *)&(result))) = this->__pad_74[15]; /*0x5f44a4*/
+  if ( (unsigned char)result ) /*0x5f44ac*/
   {
     v4 = this; /*0x5f44be*/
-    v3 = (*(int (__thiscall **)(_BYTE *, IUnknown **))(*(_DWORD *)&stru_A8EB00.?[212] + 16))(&stru_A8EB00.?[212], &v4); /*0x5f44c2*/
-    if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[228] ) /*0x5f44d2*/
+    v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[212] + 16))(&((unsigned int *)&stru_A8EB00)[212], &v4); /*0x5f44c2*/
+    if ( v3 != -1 && v3 < *(int *)&((unsigned int *)&stru_A8EB00)[228] ) /*0x5f44d2*/
     {
-      --*(_DWORD *)&stru_A8EB00.?[228]; /*0x5f44d7*/
+      --*(unsigned int *)&((unsigned int *)&stru_A8EB00)[228]; /*0x5f44d7*/
       for ( ; /*0x5f44dd*/
-            v3 < *(int *)&stru_A8EB00.?[228];
-            *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[216] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[216]
+            v3 < *(int *)&((unsigned int *)&stru_A8EB00)[228];
+            *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216]
                                                                                  + 4 * v3) )
       {
         ++v3; /*0x5f44e5*/
       }
     }
-    this->q074[15] = 0; /*0x5f44fc*/
+    this->__pad_74[15] = 0; /*0x5f44fc*/
     result = MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x5f4503*/
     if ( (IUnknown *)result == this ) /*0x5f450a*/
       return MapClass::SetScrollMode((int)&stru_87F5F0.__pad_58[416], 0); /*0x5f4513*/
@@ -114,19 +113,18 @@ int ObjectClass::Destroy()
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5f6616*/
   (*((void (__thiscall **)(ObjectClass *))this->vfptr + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
-  result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
+  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
-    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
-    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.ToTile + 8))(
+    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
-                   *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
-        result) )
-
+        (unsigned char)result) )
   {
-    result = (*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
-    *(_DWORD *)(*(_DWORD *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
+    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
+    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
   }
   return result; /*0x5f6680*/
 }
@@ -147,11 +145,10 @@ int ObjectClass::MarkForRedraw()
 {
   int result; // eax
 
-  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(this->q074[12]) & 0xFFu); /*0x5f4d10*/
-  if ( !result ) /*0x5f4d18*/
-
+  (*((unsigned char *)&(result))) = this->__pad_74[12]; /*0x5f4d10*/
+  if ( !(unsigned char)result ) /*0x5f4d18*/
   {
-    this->q074[12] = 1; /*0x5f4d1a*/
+    this->__pad_74[12] = 1; /*0x5f4d1a*/
     return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
   }
   return result; /*0x5f4d2d*/
@@ -251,7 +248,7 @@ ObjectClass::ObjectClass() noexcept
 // 0x405d40
 void AudioController::Stop()
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
   int v2; // esi
   int v3; // ecx
   int v4; // ebx
@@ -268,23 +265,23 @@ void AudioController::Stop()
       {
         if ( this->AudioController_field_08 == *(void **)(v2 + 36) /*0x405d93*/
           && this->AudioController_field_04 == *(void **)(v2 + 312)
-          && (*(_BYTE *)(v2 + 24) & 1) == 0 )
+          && (*(unsigned char *)(v2 + 24) & 1) == 0 )
         {
-          v3 = *(_DWORD *)(v2 + 176); /*0x405d99*/
-          if ( v3 && v2 == *(_DWORD *)(v3 + 192) ) /*0x405da9*/
+          v3 = *(unsigned int *)(v2 + 176); /*0x405d99*/
+          if ( v3 && v2 == *(unsigned int *)(v3 + 192) ) /*0x405da9*/
           {
-            if ( (*(_BYTE *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
+            if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
               Voice::Stop(v6); /*0x405db1*/
             AudioStream::ReleaseChannel(*(AudioStream **)(v2 + 176)); /*0x405dbc*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 192) = 0; /*0x405dc7*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 188) = 0; /*0x405dd3*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 180) = 0; /*0x405ddf*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 184) = 0; /*0x405deb*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 144) = 0; /*0x405df7*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 152) = 0; /*0x405e03*/
-            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 156) = 0; /*0x405e0f*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x405dc7*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x405dd3*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 180) = 0; /*0x405ddf*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 184) = 0; /*0x405deb*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 144) = 0; /*0x405df7*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 152) = 0; /*0x405e03*/
+            *(unsigned int *)(*(unsigned int *)(v2 + 176) + 156) = 0; /*0x405e0f*/
             result = this->AudioController_field_00; /*0x405e15*/
-            *(_DWORD *)(v2 + 176) = 0; /*0x405e19*/
+            *(unsigned int *)(v2 + 176) = 0; /*0x405e19*/
           }
           v4 = 0; /*0x405e26*/
           if ( *(int *)(v2 + 168) > 0 ) /*0x405e2a*/
@@ -297,14 +294,14 @@ void AudioController::Stop()
               ++v4; /*0x405e3f*/
               ++v5; /*0x405e40*/
             }
-            while ( v4 < *(_DWORD *)(v2 + 168) ); /*0x405e45*/
+            while ( v4 < *(unsigned int *)(v2 + 168) ); /*0x405e45*/
             result = this->AudioController_field_00; /*0x405e47*/
           }
-          *(_DWORD *)(v2 + 168) = 0; /*0x405e4c*/
-          *(_DWORD *)(v2 + 28) = 4; /*0x405e52*/
-          *(_DWORD *)(v2 + 312) = 0; /*0x405e59*/
-          *(_DWORD *)(v2 + 632) = 0; /*0x405e5f*/
-          *(_DWORD *)(v2 + 24) |= 1u; /*0x405e6b*/
+          *(unsigned int *)(v2 + 168) = 0; /*0x405e4c*/
+          *(unsigned int *)(v2 + 28) = 4; /*0x405e52*/
+          *(unsigned int *)(v2 + 312) = 0; /*0x405e59*/
+          *(unsigned int *)(v2 + 632) = 0; /*0x405e5f*/
+          *(unsigned int *)(v2 + 24) |= 1u; /*0x405e6b*/
         }
         *result = 0; /*0x405e6f*/
       }

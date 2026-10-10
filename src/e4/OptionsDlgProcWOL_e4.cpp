@@ -16,20 +16,20 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x623FC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
   LRESULT v5; // esi
   char *v6; // esi
   LRESULT v7; // edi
 
-  v5 = SendMessageA(aP0, 0x149u, wParam, 0); /*0x623fd9*/
+  v5 = SendMessageA((HWND)(aP0), 0x149u, wParam, 0); /*0x623fd9*/
   if ( v5 <= 0 ) /*0x623fdd*/
-    DeleteAndZero::Alt2(a2); /*0x623fe3*/
-  v6 = (char *)RA2_OPNEW(v5 + 2); /*0x623ff4*/
-  v7 = SendMessageA(aP0, 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
-  String::Assign_Alt(a2, v6); /*0x624007*/
-  RA2_OPDEL(v6); /*0x62400d*/
+    ((DeleteAndZero*)a2)->Alt2(); /*0x623fe3*/
+  v6 = (char *)operator new(v5 + 2); /*0x623ff4*/
+  v7 = SendMessageA((HWND)(aP0), 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
+  ((String *)(a2))->Assign_Alt(v6); /*0x624007*/
+  operator delete((void *)(v6)); /*0x62400d*/
   return v7; /*0x624017*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

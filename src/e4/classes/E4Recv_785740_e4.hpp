@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_785740 {
     void* vfptr;  // minimal E2 declaration
-    void LeaveChannelWOL();  // 0x785740
+    int LeaveChannelWOL();  // 0x785740
 };
 } // namespace gamemd

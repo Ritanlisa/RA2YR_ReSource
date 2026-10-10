@@ -11,9 +11,10 @@
 #include "e4/classes/AbstractType_e4_e4.hpp"
 
 // 0x40DCB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char * AbstractType_e4::FindName()
 {
+
   int v1; // edx
   AbstractType **v2; // eax
 
@@ -27,5 +28,6 @@ char * AbstractType_e4::FindName()
       return (char *)&dword_817130; /*0x40dccb*/
   }
   return (&off_816EE0)[2 * v1]; /*0x40dccb*/
+
 }
 } // namespace gamemd

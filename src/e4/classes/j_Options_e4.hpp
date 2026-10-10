@@ -6,8 +6,9 @@
 namespace gamemd {
 
 struct j_Options {
-    void* vfptr;
-    unsigned char q000;  // 0x0
+// --- flat members (BEGIN) ---
+
+// --- flat members (END) ---
     int j_Options_GetValue(const char ** dwNewLong);
 };
 

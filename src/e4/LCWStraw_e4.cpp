@@ -9,19 +9,19 @@
 #include "e4/classes/Straw_e4.hpp"
 
 // 0x552450
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int LCWStraw::Dtor(void *a1)
 {
   void *v2; // eax
   void *v3; // ecx
 
-  v2 = (void *)*((_DWORD *)a1 + 5); /*0x552453*/
-  *(_DWORD *)a1->q000 = &(void*)(void*)&LCWStraw_vftable; /*0x552456*/
-  RA2_OPDEL(v2); /*0x55245d*/
-  v3 = (void *)*((_DWORD *)a1 + 6); /*0x552462*/
-  *((_DWORD *)a1 + 5) = 0; /*0x552465*/
-  RA2_OPDEL(v3); /*0x55246d*/
-  *((_DWORD *)a1 + 6) = 0; /*0x552477*/
-  return Straw::Dtor((Straw *)a1); /*0x552483*/
-}
+  v2 = (void *)*((unsigned int *)a1 + 5); /*0x552453*/
+  *(unsigned int *)a1->__pad_0 = &vt_LCWStraw; /*0x552456*/
+  operator delete((void *)(v2)); /*0x55245d*/
+  v3 = (void *)*((unsigned int *)a1 + 6); /*0x552462*/
+  *((unsigned int *)a1 + 5) = 0; /*0x552465*/
+  operator delete((void *)(v3)); /*0x55246d*/
+  *((unsigned int *)a1 + 6) = 0; /*0x552477*/
+  return ((Straw *)((Straw *)a1))->Dtor(); /*0x552483*/
+}  // G42.18 ns repair
 } // namespace gamemd

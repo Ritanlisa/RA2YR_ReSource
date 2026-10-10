@@ -8,17 +8,6 @@ namespace gamemd {
 struct RLEBlitTransZRemapXlatAlpha_ushort {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
 // --- flat members (END) ---
     RLEBlitTransZRemapXlatAlpha_ushort * QueryInterface(unsigned int * Block, char a2);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
@@ -30,7 +19,11 @@ struct RLEBlitTransZRemapXlatAlpha_ushort {
     unsigned int m_4;  // 0x4 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double q004(...);  // plateau: C2039/C3861 stub
+    static double q008(...);  // plateau: C2039/C3861 stub
+    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

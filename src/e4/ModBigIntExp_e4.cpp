@@ -11,7 +11,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5C7EC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_5C7EC0(const void * a1, int a2)
 {
   int v2; // ebx
@@ -42,11 +42,11 @@ int sub_5C7EC0(const void * a1, int a2)
 
   v2 = a2; /*0x5c7ec1*/
   v3 = a2; /*0x5c7ed5*/
-  qmemcpy(&dword_ABF5B4, a1, v3 * 4); /*0x5c7eda*/
-  v4 = &dword_ABF5B0[v3]; /*0x5c7ee3*/
+  memcpy(&dword_ABF5B4, a1, v3 * 4); /*0x5c7eda*/
+  v4 = &((unsigned int *)(dword_ABF5B0))[v3]; /*0x5c7ee3*/
   v5 = v2; /*0x5c7ee9*/
-  v6 = &dword_ABF5B0[v3]; /*0x5c7eeb*/
-  if ( !dword_ABF5B0[v3] ) /*0x5c7eed*/
+  v6 = &((unsigned int *)(dword_ABF5B0))[v3]; /*0x5c7eeb*/
+  if ( !((unsigned int *)(dword_ABF5B0))[v3] ) /*0x5c7eed*/
   {
     while ( --v5 ) /*0x5c7ef2*/
     {
@@ -63,7 +63,7 @@ int sub_5C7EC0(const void * a1, int a2)
     goto LABEL_8; /*0x5c7f05*/
   }
   v9 = v5; /*0x5c7f07*/
-  v10 = dword_ABF5B0[v5]; /*0x5c7f09*/
+  v10 = ((unsigned int *)(dword_ABF5B0))[v5]; /*0x5c7f09*/
   v11 = 0x80000000; /*0x5c7f10*/
   v8 = 32 * v9; /*0x5c7f15*/
   if ( v10 >= 0 ) /*0x5c7f1a*/
@@ -76,7 +76,7 @@ int sub_5C7EC0(const void * a1, int a2)
     while ( (v10 & v11) == 0 ); /*0x5c7f21*/
   }
   LABEL_8:
-  dword_ABF6B8[0] = v8; /*0x5c7f23*/
+  ((unsigned int *)(dword_ABF6B8))[0] = v8; /*0x5c7f23*/
   dword_ABF59C = (v8 + 15) / 16; /*0x5c7f34*/
   v12 = v4; /*0x5c7f39*/
   if ( !*v4 ) /*0x5c7f3b*/
@@ -88,15 +88,15 @@ int sub_5C7EC0(const void * a1, int a2)
     }
     while ( !*--v12 ); /*0x5c7f4b*/
   }
-  v14 = 2; /*0x5c7f56*/
-  dword_ABF8C8 = dword_ABF5AC[v2]; /*0x5c7f5e*/
-  v15 = &dword_ABF8CC; /*0x5c7f67*/
-  dword_ABF8CC = dword_ABF5B0[v2]; /*0x5c7f6e*/
+  v14 = (int *)(2);
+  dword_ABF8C8 = ((unsigned int *)(dword_ABF5AC))[v2]; /*0x5c7f5e*/
+  v15 = (int *)(&dword_ABF8CC); /*0x5c7f67*/
+  dword_ABF8CC = ((unsigned int *)(dword_ABF5B0))[v2]; /*0x5c7f6e*/
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
   LABEL_16:
     v18 = v14; /*0x5c7f8b*/
-    v19 = dword_ABF8C4[v14]; /*0x5c7f8d*/
+    v19 = ((unsigned int *)(dword_ABF8C4))[v14]; /*0x5c7f8d*/
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
     if ( v19 >= 0 ) /*0x5c7f9e*/
@@ -118,14 +118,14 @@ int sub_5C7EC0(const void * a1, int a2)
     }
     v17 = 0; /*0x5c7f87*/
   }
-  dword_ABF8C4[0] = v17 - 32; /*0x5c7fb1*/
+  ((unsigned int *)(dword_ABF8C4))[0] = (int *)(v17 - 32);
   RotateBitBufferRight(&dword_ABF8C8, v17 - 32, 2); /*0x5c7fb7*/
   DivideBigInteger(&dword_ABF5A4, (char *)&dword_ABF8C8, 2); /*0x5c7fc8*/
   RotateBitBufferRight(&dword_ABF5A4, 1, 2); /*0x5c7fd9*/
   v21 = 2; /*0x5c7ff5*/
-  dword_ABF8C4[0] = (dword_ABF8C4[0] + 15) % 16 + 1; /*0x5c7ffa*/
+  ((unsigned int *)(dword_ABF8C4))[0] = (dword_ABF8C4[0] + 15) % 16 + 1; /*0x5c7ffa*/
   v22 = dword_ABF5A4 == -1; /*0x5c8006*/
-  v23 = &dword_ABF5A4; /*0x5c8007*/
+  v23 = (int *)(&dword_ABF5A4); /*0x5c8007*/
   ++dword_ABF5A4; /*0x5c800c*/
   for ( ; v22; v22 = (*v23)++ == -1 ) /*0x5c8012*/
   {
@@ -133,13 +133,13 @@ int sub_5C7EC0(const void * a1, int a2)
     if ( !--v21 ) /*0x5c8018*/
       break; /*0x5c8018*/
   }
-  v24 = 2; /*0x5c8027*/
-  v25 = &dword_ABF5A8; /*0x5c802e*/
+  v24 = (int *)(2);
+  v25 = (int *)(&dword_ABF5A8); /*0x5c802e*/
   if ( dword_ABF5A8 ) /*0x5c8033*/
   {
   LABEL_24:
     v27 = v24; /*0x5c8046*/
-    v28 = dword_ABF5A0[v24]; /*0x5c8048*/
+    v28 = ((unsigned int *)(dword_ABF5A0))[v24]; /*0x5c8048*/
     v29 = 0x80000000; /*0x5c804f*/
     v30 = 32 * v27; /*0x5c8054*/
     if ( v28 >= 0 ) /*0x5c8059*/
@@ -154,7 +154,7 @@ int sub_5C7EC0(const void * a1, int a2)
     if ( v30 > 0x20 ) /*0x5c8065*/
     {
       RotateBitBufferRight(&dword_ABF5A4, 1, 2); /*0x5c8073*/
-      --dword_ABF8C4[0]; /*0x5c8078*/
+      --((unsigned int *)(dword_ABF8C4))[0]; /*0x5c8078*/
     }
   }
   else
@@ -165,8 +165,8 @@ int sub_5C7EC0(const void * a1, int a2)
         goto LABEL_24; /*0x5c8040*/
     }
   }
-  IDA_LOWORD(dword_ABF6B4) = IDA_HIWORD(dword_ABF5A4); /*0x5c8091*/
-  IDA_LOWORD(dword_ABF5A0[0]) = dword_ABF5A4; /*0x5c8091*/
+  (*((unsigned short *)&(dword_ABF6B4))) = (*(((unsigned short *)&(dword_ABF5A4)) + 1)); /*0x5c8091*/
+  (*((unsigned short *)&(((unsigned int *)(dword_ABF5A0))[0]))) = dword_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
 }
-}
+}  // G42.18 ns repair

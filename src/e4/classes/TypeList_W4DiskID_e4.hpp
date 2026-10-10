@@ -12,7 +12,7 @@ struct TypeList_W4DiskID {
     char AddRef(int a2);
     char Release(int a2, unsigned int * a3);
     char addPlayer(int a2, unsigned int * a3);
-    int Read(unsigned int * a2, void *a2_2);
+    int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
     int Seek(int a2, void *a2_2, void *a3);
     int findPlayer(unsigned int * a2);
     unsigned int Write(int a2);

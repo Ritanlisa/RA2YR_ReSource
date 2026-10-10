@@ -21,45 +21,28 @@ struct TeamClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
     bool IsAllocated;  // 0x19
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TeamTypeClass* buildingType;  // 0x24
     ScriptClass* currentScript;  // 0x28
-    bool q02B;  // 0x2B
     HouseClass* owner;  // 0x2C
     HouseClass* target;  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     CellClass* spawnCell;  // 0x34
     unsigned int unknown38;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     AbstractClass* queuedFocus;  // 0x3C
-    unsigned int q03D;  // 0x3D
     AbstractClass* focus;  // 0x40
-    bool q042;  // 0x42
     char unknown44[4];  // 0x44
-    unsigned char q045;  // 0x45
-    void* q046;  // 0x46
     char totalObjects[4];  // 0x48
-    bool q04A;  // 0x4A
     char totalThreatValue[4];  // 0x4C
-    unsigned char q04F;  // 0x4F
     char creationFrame[4];  // 0x50
     FootClass* firstUnit;  // 0x54
     unsigned int ClosestMember;  // 0x56
     char guardAreaTimer[12];  // 0x58
-    unsigned char q05C;  // 0x5C
-    void * q060;  // 0x60
     char suspendTimer[12];  // 0x64
-    int q068;  // 0x68
-    void* q06C;  // 0x6C
     TagClass* tag;  // 0x70
     bool unknown74;  // 0x74
     bool unknown75;  // 0x75
@@ -82,22 +65,18 @@ struct TeamClass {
     bool unknown86;  // 0x86
     bool unknown87;  // 0x87
     char countObjects[24];  // 0x88
-    void* q08C;  // 0x8C
-    unsigned char q090;  // 0x90
-    void * ptr_94;  // 0x94
-    unsigned char u8_98;  // 0x98
-    void* q09C;  // 0x9C
+    VectorClass * ptr_94;  // 0x94
 // --- flat members (END) ---
-    static int SumMemberCounts(void *aP1);  // 0x6E8160 raw: int __thiscall TeamClass::SumMemberCounts(TeamClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SumMemberCounts(void *aP1);
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0);
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);
     AbstractClass * * UpdateMembers();
     BOOL Check(void *a1, void *a2, void *a3);
-    CampaignClass * * Cleanup(int aP1);
+    CampaignClass * * Cleanup(int aP1, void *a1 = 0);
     TeamClass * * ProcessScriptActions(unsigned int * a2, int a3);
     TeamTypeClass * * RecruitMember(int a2);
     TechnoClass * * RemoveAllMembers();
-    bool ValidateMember(TechnoClass * aP1, int * a2, char a4);
+    bool ValidateMember(int aP1, int *a2, char a4);
     char AddMember(int aP1, char aP2);
     char SelectMember(AbstractClass * aP1, void *a2);
     char SetField11(ScriptClass * aP1);
@@ -108,30 +87,30 @@ struct TeamClass {
     int DisbandTeam(int a2);
     int ExecuteAction(int a2, char a3);
     int FindByMemberType(int a2);
-    int GetLeaderIndex();
+    int GetLeaderIndex(void *a1 = 0);
     int GetMember(void *a1, void *a2);
     int HasAnyMemberFlagged();
     int LiberateMember_Start(int aP1, unsigned int a3, char aP3);
     int PowerDrainUpdate(int * a2);
     int ProcessMemberPositions();
-    int Reset(char aP1);
+    int Reset(char aP1, void *a1 = 0);
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn160();
     int StubReturn34();
     int UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoClass * aP3);
     int UpdateReadinessState();
-    static int Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int aP5);  // G57w11: +static+receiver raw 0x6E53A0 __thiscall(this,+5)
+    static int Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int aP5);
     int ddtor(int a1, unsigned int * a2);
     unsigned int * FindScriptAction(unsigned int * a2);
     unsigned int * GetNextScriptAction(unsigned int * a2);
-    void * FindOrCreate();
+    void * FindOrCreate(void *a1 = 0);
     void Destructor(void * a2);
     void MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2);
-    void Update(int a2);
+    void Update(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
     void* AttackCoordinator();
-    static int AddToBuildQueue(TeamClass * aP1);  // G57w10-S raw 0x00726720 (was C2597 interim stub)
-    static int CreateOneOf(TeamClass * aP1, TeamClass *a2);  // G57w10-S raw 0x006F09C0 (was C2597 interim stub)
+    static int AddToBuildQueue(TeamClass * aP1);
+    static int CreateOneOf(TeamClass * aP1, TeamClass *a2);
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
     static int LiberateMember_Start(void * aP1, int aP2, int aP3);  // G42.39a static-call supply
@@ -142,6 +121,16 @@ struct TeamClass {
     unsigned int u32_A8;  // 0xA8 (offset-truth)
     unsigned int u32_B0;  // 0xB0 (offset-truth)
     unsigned int u32_B4;  // 0xB4 (offset-truth)
+    static double AbstractClass(...);  // plateau: C2039/C3861 stub
+    static double u32_114(...);  // plateau: C2039/C3861 stub
+    static double u32_118(...);  // plateau: C2039/C3861 stub
+    static double u32_13C(...);  // plateau: C2039/C3861 stub
+    static double u32_AC(...);  // plateau: C2039/C3861 stub
+    static double u32_F4(...);  // plateau: C2039/C3861 stub
+    static double v4(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
+    static double vfptr2(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

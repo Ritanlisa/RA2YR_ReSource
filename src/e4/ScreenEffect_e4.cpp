@@ -8,11 +8,11 @@
 #include "e4/e4_protos.h"
 
 // 0x753AE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void ScreenEffect::Stub2()
 {
   ; /*0x753ae0*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x754B20
 namespace gamemd {
@@ -61,7 +61,7 @@ namespace gamemd {
 long long ScreenEffect::UpdateBob()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B730B0 - dbl_B730D8); /*0x7772b2*/
   result = Math::RoundToInt(v0 * dbl_B730D0 * 0.5); /*0x7772c6*/

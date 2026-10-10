@@ -72,9 +72,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 
 // 0x748220
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Voxel::BuildIndexTable()
 {
+
   int v1; // ebx
   int result; // eax
   int v4; // edx
@@ -94,10 +95,10 @@ int Voxel::BuildIndexTable()
   v1 = 0; /*0x748229*/
   if ( dword_B1D14C ) /*0x748230*/
   {
-    RA2_OPDEL(dword_B1D14C); /*0x748233*/
+    __3_YAXPAX_Z(dword_B1D14C); /*0x748233*/
     dword_B1D14C = 0; /*0x74823b*/
   }
-  result = RA2_OPNEW(0x1FFFCu); /*0x748246*/
+  result = __2_YAPAXI_Z(0x1FFFCu); /*0x748246*/
   dword_B1D14C = (void *)result; /*0x748250*/
   if ( result ) /*0x748255*/
   {
@@ -141,7 +142,7 @@ int Voxel::BuildIndexTable()
         {
           v9 = v8 | (unsigned __int16)result; /*0x748311*/
           v10 = v7 | v5 | (result++ << v13); /*0x748315*/
-          *((_WORD *)dword_B1D14C + v9) = v10; /*0x74831b*/
+          *((unsigned short *)dword_B1D14C + v9) = v10; /*0x74831b*/
         }
         while ( result < 32 ); /*0x748320*/
         v4 = ++v14; /*0x748326*/
@@ -150,16 +151,17 @@ int Voxel::BuildIndexTable()
       }
       v1 = i + 1; /*0x748334*/
     }
-    IDA_LOBYTE(result) = 1; /*0x748341*/
+    LOBYTE(result) = 1; /*0x748341*/
   }
   else
   {
-  LABEL_17:
-    IDA_LOBYTE(result) = 0; /*0x748348*/
+LABEL_17:
+    LOBYTE(result) = 0; /*0x748348*/
   }
   return result; /*0x748340*/
+
 }
-}
+}  // G42.18 ns repair
 // 0x754510
 namespace gamemd {
 AbstractClass * Voxel::RenderFrame()
@@ -167,7 +169,7 @@ AbstractClass * Voxel::RenderFrame()
   int v1; // edi
   char *v2; // esi
   int v3; // ebx
-  _DWORD *v4; // ecx
+  unsigned int *v4; // ecx
   char *v5; // eax
   int v6; // edx
   int v7; // eax
@@ -176,10 +178,10 @@ AbstractClass * Voxel::RenderFrame()
   char *v10; // ecx
   int v11; // ebx
   int v12; // edx
-  _DWORD ***v13; // esi
+  unsigned int ***v13; // esi
   int v14; // edi
   int v15; // esi
-  _DWORD ***v16; // edi
+  unsigned int ***v16; // edi
   float v17; // esi
   int v18; // eax
   int v19; // ebx
@@ -232,11 +234,11 @@ AbstractClass * Voxel::RenderFrame()
         v11 = v3 - v8; /*0x7545c2*/
         do /*0x7545dd*/
         {
-          v12 = *(_DWORD *)v9; /*0x7545c4*/
-          if ( *(float *)(*(_DWORD *)v9 + 36) > (double)*(float *)(*(_DWORD *)v10 + 36) ) /*0x7545d3*/
+          v12 = *(unsigned int *)v9; /*0x7545c4*/
+          if ( *(float *)(*(unsigned int *)v9 + 36) > (double)*(float *)(*(unsigned int *)v10 + 36) ) /*0x7545d3*/
           {
-            *(_DWORD *)v9 = *(_DWORD *)v10; /*0x7545d5*/
-            *(_DWORD *)v10 = v12; /*0x7545d7*/
+            *(unsigned int *)v9 = *(unsigned int *)v10; /*0x7545d5*/
+            *(unsigned int *)v10 = v12; /*0x7545d7*/
           }
           v10 += 4; /*0x7545d9*/
           --v11; /*0x7545dc*/
@@ -254,7 +256,7 @@ AbstractClass * Voxel::RenderFrame()
   {
     if ( v7 >= 0 ) /*0x7545ff*/
     {
-      v13 = (_DWORD ***)(4 * v7 + 11720740); /*0x754601*/
+      v13 = (unsigned int ***)(4 * v7 + 11720740); /*0x754601*/
       v14 = v7 + 1; /*0x754608*/
       do /*0x75461e*/
       {
@@ -270,7 +272,7 @@ AbstractClass * Voxel::RenderFrame()
     v15 = 0; /*0x754622*/
     if ( v3 > 0 ) /*0x754626*/
     {
-      v16 = (_DWORD ***)&unk_B2D824; /*0x754628*/
+      v16 = (unsigned int ***)&unk_B2D824; /*0x754628*/
       do /*0x754647*/
       {
         Voxel::ProcessColor(**v16, *v16, v25); /*0x754637*/
@@ -280,26 +282,26 @@ AbstractClass * Voxel::RenderFrame()
       while ( v15 < dword_B2D820 ); /*0x754647*/
     }
   }
-  IDA_LODWORD(v17) = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754666*/
+  (*((unsigned int *)&(v17))) = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754666*/
   v18 = Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4); /*0x754668*/
-  v19 = 128 - IDA_SLODWORD(v17) / 2; /*0x75467f*/
-  IDA_LODWORD(v17) += 8; /*0x754686*/
-  IDA_LODWORD(v20) = v18 + 8; /*0x754694*/
+  v19 = 128 - (*((signed int *)&(v17))) / 2; /*0x75467f*/
+  (*((unsigned int *)&(v17))) += 8; /*0x754686*/
+  (*((unsigned int *)&(v20))) = v18 + 8; /*0x754694*/
   v19 -= 4; /*0x75469a*/
   v26 = 128 - v18 / 2 - 4; /*0x75469d*/
   dword_B2FB64 = v26; /*0x7546a1*/
   dword_B2FB60 = v19; /*0x7546a8*/
-  dword_B2FB68 = IDA_LODWORD(v17); /*0x7546b1*/
+  dword_B2FB68 = (*((unsigned int *)&(v17))); /*0x7546b1*/
   dword_B2FB6C = v18 + 8; /*0x7546b9*/
-  IDA_LODWORD(v24) = Math::RoundToInt(v25[0]) - IDA_SLODWORD(v17) / 2; /*0x7546c8*/
+  (*((unsigned int *)&(v24))) = Math::RoundToInt(v25[0]) - (*((signed int *)&(v17))) / 2; /*0x7546c8*/
   v21 = Math::RoundToInt(v25[1]); /*0x7546d9*/
   v25[0] = v24; /*0x7546e8*/
-  IDA_LODWORD(v25[1]) = v21 - IDA_SLODWORD(v20) / 2; /*0x7546ec*/
+  (*((unsigned int *)&(v25[1]))) = v21 - (*((signed int *)&(v20))) / 2; /*0x7546ec*/
   v25[4] = v17; /*0x7546f4*/
   v25[5] = v20; /*0x7546f8*/
-  IDA_LODWORD(v25[2]) = v19; /*0x754707*/
-  IDA_LODWORD(v25[3]) = v26; /*0x75470b*/
-  qmemcpy(v25, 0x18u); /*0x75470f*/
+  (*((unsigned int *)&(v25[2]))) = v19; /*0x754707*/
+  (*((unsigned int *)&(v25[3]))) = v26; /*0x75470b*/
+  memcpy(v25, 0x18u); /*0x75470f*/
   return this; /*0x754711*/
 }
 }
@@ -392,7 +394,7 @@ int Voxel::Projection_Setup()
   v62 = 0; /*0x754cfc*/
   v63 = 0; /*0x754d04*/
   v64 = 1065353216; /*0x754d0c*/
-  v1 = Math::BuildRotationMatrix((float *)v66.q000, (float *)&v62, 0.785375); /*0x754d14*/
+  v1 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v62, 0.785375); /*0x754d14*/
   v2 = TransformMatrix3x4Point(v57, v1, (float *)&v59); /*0x754d1f*/
   v70[0] = *v2; /*0x754d26*/
   v70[1] = v2[1]; /*0x754d30*/
@@ -403,7 +405,7 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754d6c*/
   v60 = 0.0; /*0x754d74*/
   v61 = 1065353216; /*0x754d7c*/
-  v3 = Math::BuildRotationMatrix((float *)v66.q000, (float *)&v59, 2.3561251); /*0x754d84*/
+  v3 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 2.3561251); /*0x754d84*/
   v4 = TransformMatrix3x4Point(v57, v3, (float *)&v62); /*0x754d8f*/
   v67[0] = *v4; /*0x754d96*/
   v67[1] = v4[1]; /*0x754d9d*/
@@ -414,7 +416,7 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754dd9*/
   v60 = 0.0; /*0x754de1*/
   v61 = 1065353216; /*0x754de9*/
-  v5 = Math::BuildRotationMatrix((float *)v66.q000, (float *)&v59, 3.9268751); /*0x754df1*/
+  v5 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 3.9268751); /*0x754df1*/
   v6 = TransformMatrix3x4Point(v57, v5, (float *)&v62); /*0x754dfc*/
   v73[0] = *v6; /*0x754e03*/
   v73[1] = v6[1]; /*0x754e0d*/
@@ -426,7 +428,7 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754e36*/
   v60 = 0.0; /*0x754e3e*/
   v61 = 1065353216; /*0x754e46*/
-  v8 = Math::BuildRotationMatrix((float *)v66.q000, (float *)&v59, 5.4976249); /*0x754e61*/
+  v8 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 5.4976249); /*0x754e61*/
   v9 = TransformMatrix3x4Point(v57, v8, (float *)&v62); /*0x754e6c*/
   v71[0] = *v9; /*0x754e73*/
   v71[1] = v9[1]; /*0x754e7d*/
@@ -446,10 +448,10 @@ int Voxel::Projection_Setup()
   v69[2] = 0.0; /*0x754f0c*/
   Matrix3x4::Identity(&stru_B43F10); /*0x754f17*/
   v11 = v65; /*0x754f1c*/
-  qmemcpy(&unk_B43F40, Matrix3D::Constructor(&v66, 3.9268751, v65), 0x30u); /*0x754f3c*/
-  qmemcpy(&unk_B43F70, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x754f59*/
-  qmemcpy(&unk_B43FA0, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x754f76*/
-  qmemcpy(&unk_B43FD0, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x754f93*/
+  memcpy(&unk_B43F40, Matrix3D::Constructor(&v66, 3.9268751, v65), 0x30u); /*0x754f3c*/
+  memcpy(&unk_B43F70, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x754f59*/
+  memcpy(&unk_B43FA0, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x754f76*/
+  memcpy(&unk_B43FD0, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x754f93*/
   v12 = FromQuaternionAxisAngle(v58, v73, v11); /*0x754fa0*/
   Float4::Copy(flt_B44358, v57, v12); /*0x754fb0*/
   v13 = FromQuaternionAxisAngle(v58, v67, v11); /*0x754fbe*/
@@ -459,10 +461,10 @@ int Voxel::Projection_Setup()
   v15 = FromQuaternionAxisAngle(v58, v71, v11); /*0x755000*/
   Float4::Copy(flt_B44388, v57, v15); /*0x755010*/
   v16 = v75; /*0x755019*/
-  qmemcpy(&unk_B44000, Matrix3D::Constructor(&v66, 3.1415, v75), 0x30u); /*0x755038*/
-  qmemcpy(&unk_B44030, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x755055*/
-  qmemcpy(&unk_B44060, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x75506f*/
-  qmemcpy(&unk_B44090, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x75508c*/
+  memcpy(&unk_B44000, Matrix3D::Constructor(&v66, 3.1415, v75), 0x30u); /*0x755038*/
+  memcpy(&unk_B44030, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x755055*/
+  memcpy(&unk_B44060, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x75506f*/
+  memcpy(&unk_B44090, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x75508c*/
   v17 = FromQuaternionAxisAngle(v58, v68, v16); /*0x755099*/
   Float4::Copy(flt_B44398, v57, v17); /*0x7550a9*/
   v18 = FromQuaternionAxisAngle(v58, v72, v16); /*0x7550ba*/
@@ -471,10 +473,10 @@ int Voxel::Projection_Setup()
   Float4::Copy(flt_B443B8, v57, v19); /*0x7550eb*/
   v20 = FromQuaternionAxisAngle(v58, v69, v16); /*0x7550fc*/
   Float4::Copy(flt_B443C8, v57, v20); /*0x75510c*/
-  qmemcpy(&unk_B440C0, Matrix3D::Constructor(&v66, 3.1415, v16), 0x30u); /*0x75512d*/
-  qmemcpy(&unk_B440F0, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x75514a*/
-  qmemcpy(&unk_B44120, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x755164*/
-  qmemcpy(&unk_B44150, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x755181*/
+  memcpy(&unk_B440C0, Matrix3D::Constructor(&v66, 3.1415, v16), 0x30u); /*0x75512d*/
+  memcpy(&unk_B440F0, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x75514a*/
+  memcpy(&unk_B44120, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x755164*/
+  memcpy(&unk_B44150, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x755181*/
   v21 = FromQuaternionAxisAngle(v58, v68, v16); /*0x75518e*/
   Float4::Copy(flt_B443D8, v57, v21); /*0x75519e*/
   v22 = FromQuaternionAxisAngle(v58, v72, v16); /*0x7551af*/
@@ -483,10 +485,10 @@ int Voxel::Projection_Setup()
   Float4::Copy(flt_B443F8, v57, v23); /*0x7551e0*/
   v24 = FromQuaternionAxisAngle(v58, v69, v16); /*0x7551f1*/
   Float4::Copy(flt_B44408, v57, v24); /*0x755201*/
-  qmemcpy(&unk_B44180, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x755221*/
-  qmemcpy(&unk_B441B0, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x75523f*/
-  qmemcpy(&unk_B441E0, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x755259*/
-  qmemcpy(&unk_B44210, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755276*/
+  memcpy(&unk_B44180, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x755221*/
+  memcpy(&unk_B441B0, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x75523f*/
+  memcpy(&unk_B441E0, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x755259*/
+  memcpy(&unk_B44210, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755276*/
   v25 = FromQuaternionAxisAngle(v58, v68, v11); /*0x755283*/
   Float4::Copy(flt_B44418, v57, v25); /*0x755293*/
   v26 = FromQuaternionAxisAngle(v58, v72, v11); /*0x7552a4*/
@@ -508,51 +510,51 @@ int Voxel::Projection_Setup()
   do /*0x755459*/
   {
     Matrix3x4::Identity(&v76); /*0x755378*/
-    v54 = (double)IDA_SLODWORD(v65) * 0.024542969; /*0x75538f*/
+    v54 = (double)(*((signed int *)&(v65))) * 0.024542969; /*0x75538f*/
     Matrix2D::Rotate(v76.m_Data, v54); /*0x755392*/
     v62 = 1065353216; /*0x7553a7*/
     v63 = 0; /*0x7553af*/
     v64 = 0; /*0x7553b7*/
-    v30 = &flt_B432D8[v29]; /*0x7553bf*/
+    v30 = &((unsigned int *)(flt_B432D8))[v29]; /*0x7553bf*/
     v31 = TransformMatrix3x4Point(v57, (float *)v76.m_Data, (float *)&v62); /*0x7553c5*/
     *v30 = *v31; /*0x7553d4*/
-    v32 = *((_DWORD *)v31 + 1); /*0x7553d6*/
+    v32 = *((unsigned int *)v31 + 1); /*0x7553d6*/
     v61 = 0; /*0x7553d9*/
-    *((_DWORD *)v30 + 1) = v32; /*0x7553e1*/
+    *((unsigned int *)v30 + 1) = v32; /*0x7553e1*/
     v30[2] = v31[2]; /*0x7553e7*/
-    v33 = &flt_B444A0[v29]; /*0x7553f8*/
+    v33 = &((unsigned int *)(flt_B444A0))[v29]; /*0x7553f8*/
     *(float *)&v59 = *(float *)(v29 * 4 + 11809500) - 0.0; /*0x7553fa*/
-    v34 = 0.0 - flt_B432D8[v29]; /*0x755402*/
+    v34 = 0.0 - ((unsigned int *)(flt_B432D8))[v29]; /*0x755402*/
     *v33 = *(float *)&v59; /*0x755404*/
     v60 = v34; /*0x755406*/
     v33[1] = v60; /*0x75540e*/
-    *((_DWORD *)v33 + 2) = v61; /*0x755415*/
-    Math::BuildRotationMatrix((float *)v66.q000, &flt_B444A0[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
-    v35 = TransformMatrix3x4Point(v58, (float *)v66.q000, &flt_B432D8[v29]); /*0x755432*/
+    *((unsigned int *)v33 + 2) = v61; /*0x755415*/
+    Math::BuildRotationMatrix((float *)v66.__pad_0, &flt_B444A0[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
+    v35 = TransformMatrix3x4Point(v58, (float *)v66.__pad_0, &flt_B432D8[v29]); /*0x755432*/
     v29 += 3; /*0x755439*/
     *v30 = *v35; /*0x75543c*/
     v30[1] = v35[1]; /*0x755441*/
     v30[2] = v35[2]; /*0x755447*/
-    ++IDA_LODWORD(v65); /*0x755455*/
+    ++(*((unsigned int *)&(v65))); /*0x755455*/
   }
   while ( v29 < 768 ); /*0x755459*/
   Matrix3x4::Identity(&stru_B45188); /*0x755464*/
-  qmemcpy(&unk_B451B8, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755485*/
-  qmemcpy(&unk_B451E8, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x7554a2*/
-  qmemcpy(&unk_B45218, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x7554bf*/
-  qmemcpy(&unk_B45248, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x7554d9*/
-  qmemcpy(&unk_B45278, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x7554f6*/
-  qmemcpy(&unk_B452A8, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755513*/
-  qmemcpy(&unk_B452D8, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x755530*/
-  qmemcpy(&unk_B45308, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x75554d*/
-  qmemcpy(&unk_B45338, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x75556a*/
-  qmemcpy(&unk_B45368, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755586*/
-  qmemcpy(&unk_B45398, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x7555a4*/
-  qmemcpy(&unk_B453C8, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x7555c1*/
-  qmemcpy(&unk_B453F8, Matrix3D::Constructor(&v66, 3.9268751, v11), 0x30u); /*0x7555de*/
-  qmemcpy(&unk_B45428, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x7555fb*/
-  qmemcpy(&unk_B45458, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x755618*/
-  qmemcpy(&unk_B45488, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x755639*/
+  memcpy(&unk_B451B8, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755485*/
+  memcpy(&unk_B451E8, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x7554a2*/
+  memcpy(&unk_B45218, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x7554bf*/
+  memcpy(&unk_B45248, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x7554d9*/
+  memcpy(&unk_B45278, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x7554f6*/
+  memcpy(&unk_B452A8, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755513*/
+  memcpy(&unk_B452D8, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x755530*/
+  memcpy(&unk_B45308, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x75554d*/
+  memcpy(&unk_B45338, Matrix3D::Constructor(&v66, 3.9268751, v16), 0x30u); /*0x75556a*/
+  memcpy(&unk_B45368, Matrix3D::Constructor(&v66, 2.3561251, v16), 0x30u); /*0x755586*/
+  memcpy(&unk_B45398, Matrix3D::Constructor(&v66, 0.785375, v16), 0x30u); /*0x7555a4*/
+  memcpy(&unk_B453C8, Matrix3D::Constructor(&v66, 5.4976249, v16), 0x30u); /*0x7555c1*/
+  memcpy(&unk_B453F8, Matrix3D::Constructor(&v66, 3.9268751, v11), 0x30u); /*0x7555de*/
+  memcpy(&unk_B45428, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x7555fb*/
+  memcpy(&unk_B45458, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x755618*/
+  memcpy(&unk_B45488, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x755639*/
   Int4::Set2(&stru_B43188, 0, 0, 0, 1065353216); /*0x755646*/
   v36 = FromQuaternionAxisAngle(v58, v69, v11); /*0x755657*/
   Float4::Copy(flt_B43198, v57, v36); /*0x755667*/
@@ -599,7 +601,7 @@ int Voxel::Projection_Setup()
   Matrix3x3::RotateX(stru_B44318.m_Data, v55); /*0x7558e9*/
   v56 = -dbl_B44498; /*0x7558f7*/
   Matrix2D::Rotate(stru_B44318.m_Data, v56); /*0x7558ff*/
-  v52 = &stru_B450B8; /*0x755904*/
+  v52 = (gamemd::Matrix3x4 *)(&stru_B450B8); /*0x755904*/
   do /*0x755919*/
     result = Matrix3x4::Identity(v52++); /*0x75590b*/
   while ( (int)v52 < (int)&dword_B45178 ); /*0x755919*/
@@ -686,7 +688,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   float v98; // [esp+94h] [ebp-D4h]
   float v99; // [esp+98h] [ebp-D0h]
   float v100; // [esp+9Ch] [ebp-CCh]
-  _DWORD v101[4]; // [esp+A0h] [ebp-C8h] BYREF
+  unsigned int v101[4]; // [esp+A0h] [ebp-C8h] BYREF
   char v102[48]; // [esp+B0h] [ebp-B8h] BYREF
   float v103; // [esp+E0h] [ebp-88h]
   float v104; // [esp+E4h] [ebp-84h]
@@ -703,7 +705,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   int v115; // [esp+110h] [ebp-58h]
   int v116; // [esp+114h] [ebp-54h]
   int v117; // [esp+118h] [ebp-50h]
-  _DWORD v118[12]; // [esp+11Ch] [ebp-4Ch] BYREF
+  unsigned int v118[12]; // [esp+11Ch] [ebp-4Ch] BYREF
   char v119[16]; // [esp+14Ch] [ebp-1Ch] BYREF
   int v120; // [esp+15Ch] [ebp-Ch]
   int v121; // [esp+160h] [ebp-8h]
@@ -711,30 +713,30 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
 
   v4 = 0; /*0x755dbc*/
   if ( aP1->ptr_10 ) /*0x755dbe*/
-    RA2_OPDEL(aP1->ptr_10); /*0x755dc6*/
-  v5 = aP1->u32_14; /*0x755dce*/
+    operator delete((void *)(aP1->ptr_10)); /*0x755dc6*/
+  v5 = aP1->__pad_014; /*0x755dce*/
   aP1->ptr_10 = 0; /*0x755dd1*/
   if ( v5 ) /*0x755dd6*/
-    RA2_OPDEL(v5); /*0x755dd9*/
+    operator delete((void *)(v5)); /*0x755dd9*/
   v6 = aP1->ptr_18; /*0x755de1*/
-  aP1->u32_14 = 0; /*0x755de4*/
+  aP1->__pad_014 = 0; /*0x755de4*/
   if ( v6 ) /*0x755de9*/
-    RA2_OPDEL(v6); /*0x755dec*/
+    operator delete((void *)(v6)); /*0x755dec*/
   v7 = a3_2; /*0x755df4*/
   aP1->ptr_18 = 0; /*0x755dfb*/
-  if ( !(*(int (__thiscall **)(int, int))(a3_2->u32_1C)(a3_2, 1) ) /*0x755e09*/
+  if ( !(*(int (**)(int, int))(a3_2->__pad_01C)(a3_2, 1) ) /*0x755e09*/
     return 0; /*0x755e09*/
-  (*(void (__thiscall **)(int, char *, int))(a3_2->ptr_24)(a3_2, v113, 32); /*0x755e1d*/
+  (*(void (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v113, 32); /*0x755e1d*/
   v115 = v115; /*0x755e20*/
   v116 = v116; /*0x755e27*/
   v117 = v117; /*0x755e2e*/
-  aP1->u32_4 = v115; /*0x755e35*/
+  aP1->ptr_10 = v115; /*0x755e35*/
   aP1->ptr_8 = v116; /*0x755e3b*/
-  aP1->u32_C = v117; /*0x755e42*/
-  v11 = RA2_OPNEW(12 * v115); /*0x755e45*/
+  aP1->__pad_00C = v117; /*0x755e42*/
+  v11 = operator new(12 * v115); /*0x755e45*/
   v12 = aP1->ptr_8; /*0x755e4a*/
   aP1->ptr_10 = v11; /*0x755e4d*/
-  v13 = COERCE_FLOAT(RA2_OPNEW(164 * v12)); /*0x755e5c*/
+  v13 = COERCE_FLOAT(operator new(164 * v12)); /*0x755e5c*/
   v72 = v13; /*0x755e66*/
   if ( v13 == 0.0 ) /*0x755e6a*/
   {
@@ -745,7 +747,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
     v14 = v12 - 1; /*0x755e6c*/
     if ( v12 - 1 >= 0 ) /*0x755e71*/
     {
-      v15 = IDA_LODWORD(v13) + 64; /*0x755e73*/
+      v15 = (*((unsigned int *)&(v13))) + 64; /*0x755e73*/
       v16 = v14 + 1; /*0x755e76*/
       do /*0x755e8f*/
       {
@@ -758,117 +760,117 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
       v4 = 0; /*0x755e95*/
     }
   }
-  aP1->u32_14 = v13; /*0x755e9b*/
-  v17 = RA2_OPNEW(aP1->u32_C); /*0x755ea2*/
+  aP1->__pad_014 = v13; /*0x755e9b*/
+  v17 = operator new(aP1->__pad_00C); /*0x755ea2*/
   v18 = aP1->ptr_10; /*0x755ea7*/
   aP1->ptr_18 = v17; /*0x755eaf*/
   if ( !v18 ) /*0x755eb2*/
   {
   LABEL_67:
-    v71 = aP1->u32_14; /*0x756453*/
+    v71 = aP1->__pad_014; /*0x756453*/
     aP1->ptr_10 = 0; /*0x756456*/
     if ( v71 ) /*0x75645b*/
-      RA2_OPDEL(v71); /*0x75645e*/
+      operator delete((void *)(v71)); /*0x75645e*/
     v70 = aP1->ptr_18; /*0x756466*/
-    aP1->u32_14 = 0; /*0x756469*/
+    aP1->__pad_014 = 0; /*0x756469*/
     if ( !v70 ) /*0x75646e*/
       goto LABEL_71; /*0x75646e*/
     goto LABEL_70; /*0x75646e*/
   }
-  if ( !aP1->u32_14 || !v17 ) /*0x755ec3*/
+  if ( !aP1->__pad_014 || !v17 ) /*0x755ec3*/
   {
-    RA2_OPDEL(v18); /*0x75644b*/
+    operator delete((void *)(v18)); /*0x75644b*/
     goto LABEL_67; /*0x75644b*/
   }
   if ( a3_2 ) /*0x755ed0*/
   {
     VoxelPalette::Init(&unk_B2FB78, &g_VoxelColorPalette); /*0x755ee7*/
-    if ( (*(int (__thiscall **)(int, float *, int))(a3_2->ptr_24)(a3_2, &v72, 1) != 1 ) /*0x755efd*/
+    if ( (*(int (**)(int, float *, int))(a3_2->ptr_24)(a3_2, &v72, 1) != 1 ) /*0x755efd*/
     {
-      (*(void (__thiscall **)(int))(*(_DWORD *)a3_2 + 52))(a3_2); /*0x755f03*/
+      (*(void (**)(int))(*(unsigned int *)a3_2 + 52))(a3_2); /*0x755f03*/
       if ( aP1->ptr_10 ) /*0x755f06*/
-        RA2_OPDEL(aP1->ptr_10); /*0x755f0e*/
-      v19 = aP1->u32_14; /*0x755f16*/
+        operator delete((void *)(aP1->ptr_10)); /*0x755f0e*/
+      v19 = aP1->__pad_014; /*0x755f16*/
       aP1->ptr_10 = 0; /*0x755f19*/
       if ( v19 ) /*0x755f1e*/
-        RA2_OPDEL(v19); /*0x755f21*/
+        operator delete((void *)(v19)); /*0x755f21*/
       v20 = aP1->ptr_18; /*0x755f29*/
-      aP1->u32_14 = 0; /*0x755f2c*/
+      aP1->__pad_014 = 0; /*0x755f2c*/
       if ( !v20 ) /*0x755f31*/
         goto LABEL_32; /*0x755f31*/
       goto LABEL_31; /*0x755f31*/
     }
-    if ( (*(int (__thiscall **)(int, char *, int))(a3_2->ptr_24)(a3_2, v94, 1) != 1 ) /*0x755f46*/
+    if ( (*(int (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v94, 1) != 1 ) /*0x755f46*/
     {
-      (*(void (__thiscall **)(int))(*(_DWORD *)a3_2 + 52))(a3_2); /*0x755f4c*/
+      (*(void (**)(int))(*(unsigned int *)a3_2 + 52))(a3_2); /*0x755f4c*/
       if ( aP1->ptr_10 ) /*0x755f4f*/
-        RA2_OPDEL(aP1->ptr_10); /*0x755f57*/
-      v21 = aP1->u32_14; /*0x755f5f*/
+        operator delete((void *)(aP1->ptr_10)); /*0x755f57*/
+      v21 = aP1->__pad_014; /*0x755f5f*/
       aP1->ptr_10 = 0; /*0x755f62*/
       if ( v21 ) /*0x755f67*/
-        RA2_OPDEL(v21); /*0x755f6a*/
+        operator delete((void *)(v21)); /*0x755f6a*/
       v20 = aP1->ptr_18; /*0x755f72*/
-      aP1->u32_14 = 0; /*0x755f75*/
+      aP1->__pad_014 = 0; /*0x755f75*/
       if ( !v20 ) /*0x755f7a*/
         goto LABEL_32; /*0x755f7a*/
   LABEL_31:
-      RA2_OPDEL(v20); /*0x755f7c*/
+      operator delete((void *)(v20)); /*0x755f7c*/
   LABEL_32:
       aP1->ptr_18 = 0; /*0x755f85*/
       VoxelPalette::Reset(v118); /*0x755f8f*/
       return 0; /*0x755fa0*/
     }
-    v118[0] = IDA_LOBYTE(v72); /*0x755fb6*/
-    v118[1] = (unsigned __int8)v94[0]; /*0x755fbd*/
+    v118[0] = (*((unsigned char *)&(v72))); /*0x755fb6*/
+    v118[1] = (uint8_t)v94[0]; /*0x755fbd*/
     v23 = (char *)&unk_B2FB79; /*0x755fc4*/
     do /*0x755ff6*/
     {
-      (*(void (__thiscall **)(int, char *, int))(a3_2->ptr_24)(a3_2, v23 - 1, 1); /*0x755fd3*/
-      (*(void (__thiscall **)(int, char *, int))(a3_2->ptr_24)(a3_2, v23, 1); /*0x755fdd*/
-      (*(void (__thiscall **)(int, char *, int))(a3_2->ptr_24)(a3_2, v23 + 1, 1); /*0x755fea*/
+      (*(void (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v23 - 1, 1); /*0x755fd3*/
+      (*(void (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v23, 1); /*0x755fdd*/
+      (*(void (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v23 + 1, 1); /*0x755fea*/
       v23 += 3; /*0x755fed*/
     }
     while ( v23 < byte_B2FE79 ); /*0x755ff6*/
     if ( v114 > 1 ) /*0x756002*/
-      (*(void (__thiscall **)(int, unsigned int, int))(a3_2->ptr_28)(a3_2, 768 * v114 - 768, 1); /*0x756016*/
+      (*(void (**)(int, unsigned int, int))(a3_2->ptr_28)(a3_2, 768 * v114 - 768, 1); /*0x756016*/
     GenerateLightRemapTable(0, 0); /*0x756022*/
     VoxelPalette::Reset(v118); /*0x75602e*/
   }
   else
   {
-    (*(void (__thiscall **)(int, unsigned int, int))(a3_2->ptr_28)(a3_2, 770 * v114, 1); /*0x75604d*/
+    (*(void (**)(int, unsigned int, int))(a3_2->ptr_28)(a3_2, 770 * v114, 1); /*0x75604d*/
   }
-  if ( !aP1->u32_4 ) /*0x756055*/
+  if ( !aP1->ptr_10 ) /*0x756055*/
   {
   LABEL_43:
-    if ( (*(int (__thiscall **)(int, _DWORD, _DWORD))(a3_2->ptr_24)( /*0x7560b5*/
+    if ( (*(int (**)(int, unsigned int, unsigned int))(a3_2->ptr_24)( /*0x7560b5*/
            a3_2,
            aP1->ptr_18,
-           aP1->u32_C) == aP1->u32_C )
+           aP1->__pad_00C) == aP1->__pad_00C )
     {
       v28 = aP1->ptr_8; /*0x75612d*/
       v72 = 0.0; /*0x756134*/
       if ( !v28 ) /*0x756138*/
       {
   LABEL_59:
-        (*(void (__thiscall **)(int))(*(_DWORD *)v7 + 52))(v7); /*0x7563fe*/
+        (*(void (**)(int))(*(unsigned int *)v7 + 52))(v7); /*0x7563fe*/
         return 1; /*0x756414*/
       }
       v29 = 0; /*0x75613e*/
-      while ( (*(int (__thiscall **)(int, _DWORD *, int))(v7->ptr_24)(v7, v101, 92) == 92 ) /*0x756158*/
+      while ( (*(int (**)(int, unsigned int *, int))(v7->ptr_24)(v7, v101, 92) == 92 ) /*0x756158*/
       {
-        *(_BYTE *)(aP1->u32_14 + v29 + 160) = v109; /*0x756168*/
-        *(_BYTE *)(aP1->u32_14 + v29 + 161) = v110; /*0x756179*/
-        *(_BYTE *)(aP1->u32_14 + v29 + 162) = v111; /*0x75618a*/
-        *(_BYTE *)(aP1->u32_14 + v29 + 163) = v112; /*0x75619b*/
-        *(float *)(aP1->u32_14 + v29 + 12) = *(float *)&v101[3]; /*0x7561b3*/
-        qmemcpy((void *)(aP1->u32_14 + v29 + 16), (const void *)Matrix::Copy12Float(v102), 0x30u); /*0x7561d2*/
+        *(unsigned char *)(aP1->__pad_014 + v29 + 160) = v109; /*0x756168*/
+        *(unsigned char *)(aP1->__pad_014 + v29 + 161) = v110; /*0x756179*/
+        *(unsigned char *)(aP1->__pad_014 + v29 + 162) = v111; /*0x75618a*/
+        *(unsigned char *)(aP1->__pad_014 + v29 + 163) = v112; /*0x75619b*/
+        *(float *)(aP1->__pad_014 + v29 + 12) = *(float *)&v101[3]; /*0x7561b3*/
+        memcpy((void *)(aP1->__pad_014 + v29 + 16), (const void *)Matrix::Copy12Float(v102), 0x30u); /*0x7561d2*/
         v103 = v103; /*0x7561d4*/
         v104 = v104; /*0x7561db*/
         v105 = v105; /*0x7561e2*/
         v106 = v106; /*0x7561fe*/
         v106 = v106; /*0x756210*/
-        v33 = aP1->u32_14; /*0x756214*/
+        v33 = aP1->__pad_014; /*0x756214*/
         v107 = v107; /*0x756217*/
         v107 = v107; /*0x75621b*/
         v105 = v105; /*0x756226*/
@@ -881,7 +883,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         *(float *)(v34 + 4) = v107; /*0x75624a*/
         v86 = v104; /*0x75624d*/
         *(float *)(v34 + 8) = v36; /*0x756251*/
-        v37 = aP1->u32_14; /*0x756254*/
+        v37 = aP1->__pad_014; /*0x756254*/
         v87 = v105; /*0x75625d*/
         v38 = v37 + v29 + 76; /*0x756261*/
         v86 = v86; /*0x756265*/
@@ -890,7 +892,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v98 = v103; /*0x756271*/
         *(float *)(v38 + 4) = v86; /*0x756275*/
         *(float *)(v38 + 8) = v87; /*0x75627a*/
-        v41 = aP1->u32_14; /*0x75627d*/
+        v41 = aP1->__pad_014; /*0x75627d*/
         v99 = v104; /*0x756284*/
         v42 = v41 + v29 + 88; /*0x756288*/
         v99 = v99; /*0x75628c*/
@@ -901,7 +903,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v91 = v103; /*0x7562a7*/
         v92 = v107; /*0x7562af*/
         *(float *)(v42 + 8) = v100; /*0x7562b3*/
-        v45 = aP1->u32_14; /*0x7562b6*/
+        v45 = aP1->__pad_014; /*0x7562b6*/
         v93 = v105; /*0x7562bd*/
         v46 = v45 + v29 + 100; /*0x7562c5*/
         v92 = v92; /*0x7562c9*/
@@ -915,7 +917,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v50 = v50; /*0x7562e6*/
         v51 = v106; /*0x7562ea*/
         *(float *)(v46 + 8) = v93; /*0x7562ee*/
-        v52 = aP1->u32_14 + v29 + 112; /*0x7562f8*/
+        v52 = aP1->__pad_014 + v29 + 112; /*0x7562f8*/
         v53 = v48; /*0x7562fc*/
         v51 = v51; /*0x756300*/
         *(float *)v52 = v76; /*0x756304*/
@@ -924,7 +926,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v80 = v104; /*0x75630f*/
         v55 = v108; /*0x756313*/
         *(float *)(v52 + 8) = v54; /*0x756317*/
-        v56 = aP1->u32_14; /*0x75631a*/
+        v56 = aP1->__pad_014; /*0x75631a*/
         v55 = v55; /*0x756321*/
         v57 = v56 + v29 + 124; /*0x756325*/
         v80 = v80; /*0x756329*/
@@ -935,7 +937,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v83 = v104; /*0x75633c*/
         v60 = v108; /*0x756340*/
         *(float *)(v57 + 8) = v59; /*0x756344*/
-        v61 = aP1->u32_14 + v29 + 136; /*0x75634e*/
+        v61 = aP1->__pad_014 + v29 + 136; /*0x75634e*/
         v83 = v83; /*0x756355*/
         v60 = v60; /*0x756359*/
         *(float *)v61 = v82; /*0x75635d*/
@@ -946,7 +948,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v64 = v64; /*0x75636e*/
         v65 = v108; /*0x756372*/
         *(float *)(v61 + 8) = v63; /*0x756376*/
-        v66 = aP1->u32_14 + v29 + 148; /*0x756380*/
+        v66 = aP1->__pad_014 + v29 + 148; /*0x756380*/
         v65 = v65; /*0x756387*/
         *(float *)v66 = v88; /*0x75638b*/
         v67 = v65; /*0x756391*/
@@ -954,18 +956,18 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
         v7 = a3_2; /*0x756398*/
         v29 += 164; /*0x75639f*/
         *(float *)(v66 + 8) = v67; /*0x7563a5*/
-        *(_DWORD *)(aP1->u32_14 + v29 - 164) = aP1->ptr_18 + v101[0]; /*0x7563b7*/
-        *(_DWORD *)(aP1->u32_14 + v29 - 160) = aP1->ptr_18 + v101[1]; /*0x7563cd*/
+        *(unsigned int *)(aP1->__pad_014 + v29 - 164) = aP1->ptr_18 + v101[0]; /*0x7563b7*/
+        *(unsigned int *)(aP1->__pad_014 + v29 - 160) = aP1->ptr_18 + v101[1]; /*0x7563cd*/
         v72 = v72; /*0x7563e1*/
-        *(_DWORD *)(aP1->u32_14 + v29 - 156) = aP1->ptr_18 + v101[2]; /*0x7563e7*/
+        *(unsigned int *)(aP1->__pad_014 + v29 - 156) = aP1->ptr_18 + v101[2]; /*0x7563e7*/
         v69 = aP1->ptr_8; /*0x7563ee*/
-        IDA_LODWORD(v72) = IDA_LODWORD(v72) + 1; /*0x7563f4*/
-        if ( IDA_LODWORD(v72) + 1 >= v69 ) /*0x7563f8*/
+        (*((unsigned int *)&(v72))) = (*((unsigned int *)&(v72))) + 1; /*0x7563f4*/
+        if ( (*((unsigned int *)&(v72))) + 1 >= v69 ) /*0x7563f8*/
           goto LABEL_59; /*0x7563f8*/
       }
       if ( aP1->ptr_10 ) /*0x756417*/
-        RA2_OPDEL(aP1->ptr_10); /*0x75641f*/
-      v25 = aP1->u32_14; /*0x756427*/
+        operator delete((void *)(aP1->ptr_10)); /*0x75641f*/
+      v25 = aP1->__pad_014; /*0x756427*/
       aP1->ptr_10 = 0; /*0x75642a*/
       if ( v25 ) /*0x75642f*/
         goto LABEL_63; /*0x75642f*/
@@ -973,49 +975,49 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
     else
     {
       if ( aP1->ptr_10 ) /*0x7560b7*/
-        RA2_OPDEL(aP1->ptr_10); /*0x7560c1*/
-      v25 = aP1->u32_14; /*0x7560c9*/
+        operator delete((void *)(aP1->ptr_10)); /*0x7560c1*/
+      v25 = aP1->__pad_014; /*0x7560c9*/
       aP1->ptr_10 = 0; /*0x7560cc*/
       if ( v25 ) /*0x7560d1*/
   LABEL_63:
-        RA2_OPDEL(v25); /*0x756431*/
+        operator delete((void *)(v25)); /*0x756431*/
     }
     v70 = aP1->ptr_18; /*0x75643a*/
-    aP1->u32_14 = 0; /*0x75643d*/
+    aP1->__pad_014 = 0; /*0x75643d*/
     if ( !v70 ) /*0x756442*/
     {
   LABEL_71:
       aP1->ptr_18 = 0; /*0x756479*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)v7 + 52))(v7); /*0x756480*/
+      (*(void (**)(int))(*(unsigned int *)v7 + 52))(v7); /*0x756480*/
       return 0; /*0x756486*/
     }
   LABEL_70:
-    RA2_OPDEL(v70); /*0x756470*/
+    operator delete((void *)(v70)); /*0x756470*/
     goto LABEL_71; /*0x756471*/
   }
   v24 = 0; /*0x756057*/
-  while ( (*(int (__thiscall **)(int, char *, int))(a3_2->ptr_24)(a3_2, v119, 28) == 28 ) /*0x75606d*/
+  while ( (*(int (**)(int, char *, int))(a3_2->ptr_24)(a3_2, v119, 28) == 28 ) /*0x75606d*/
   {
     ++v4; /*0x756079*/
-    *(_DWORD *)(aP1->ptr_10 + v24) = v120; /*0x75607a*/
-    *(_DWORD *)(aP1->ptr_10 + v24 + 4) = v121; /*0x756087*/
-    *(_BYTE *)(aP1->ptr_10 + v24 + 8) = v122; /*0x756095*/
+    *(unsigned int *)(aP1->ptr_10 + v24) = v120; /*0x75607a*/
+    *(unsigned int *)(aP1->ptr_10 + v24 + 4) = v121; /*0x756087*/
+    *(unsigned char *)(aP1->ptr_10 + v24 + 8) = v122; /*0x756095*/
     v24 += 12; /*0x75609c*/
-    if ( v4 >= aP1->u32_4 ) /*0x7560a1*/
+    if ( v4 >= aP1->ptr_10 ) /*0x7560a1*/
       goto LABEL_43; /*0x7560a1*/
   }
   if ( aP1->ptr_10 ) /*0x7560dc*/
-    RA2_OPDEL(aP1->ptr_10); /*0x7560e6*/
-  v26 = aP1->u32_14; /*0x7560ee*/
+    operator delete((void *)(aP1->ptr_10)); /*0x7560e6*/
+  v26 = aP1->__pad_014; /*0x7560ee*/
   aP1->ptr_10 = 0; /*0x7560f1*/
   if ( v26 ) /*0x7560f6*/
-    RA2_OPDEL(v26); /*0x7560f9*/
+    operator delete((void *)(v26)); /*0x7560f9*/
   v27 = aP1->ptr_18; /*0x756101*/
-  aP1->u32_14 = 0; /*0x756104*/
+  aP1->__pad_014 = 0; /*0x756104*/
   if ( v27 ) /*0x756109*/
-    RA2_OPDEL(v27); /*0x75610c*/
+    operator delete((void *)(v27)); /*0x75610c*/
   aP1->ptr_18 = 0; /*0x756114*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)a3_2 + 52))(a3_2); /*0x75611b*/
+  (*(void (**)(int))(*(unsigned int *)a3_2 + 52))(a3_2); /*0x75611b*/
   return 0; /*0x755f94*/
 }
 }
@@ -1023,6 +1025,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
 namespace gamemd {
 int Voxel::ProcessColor(unsigned int *a2, float *a3)
 {
+
   int v4; // ebx
   int v5; // esi
   unsigned __int8 v6; // dl
@@ -1038,7 +1041,7 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
   unsigned __int8 v16; // [esp+14h] [ebp-40h]
   float v17; // [esp+14h] [ebp-40h]
   unsigned __int8 v18; // [esp+1Ch] [ebp-38h]
-  _DWORD v19[6]; // [esp+20h] [ebp-34h] BYREF
+  unsigned int v19[6]; // [esp+20h] [ebp-34h] BYREF
   __int16 v20; // [esp+38h] [ebp-1Ch]
   __int16 v21; // [esp+3Ah] [ebp-1Ah]
   __int16 v22; // [esp+3Ch] [ebp-18h]
@@ -1057,18 +1060,18 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
   float *v35; // [esp+58h] [ebp+4h]
   float v36; // [esp+5Ch] [ebp+8h]
 
-  v4 = this->u32_14[0] + 164 * (a2[2] + *(_DWORD *)(this->u32_10[0] + 12 * a2[1])); /*0x7565b8*/
+  v4 = this->Voxel_field_0x14[0] + 164 * (a2[2] + *(unsigned int *)(this->Voxel_field_0x10[0] + 12 * a2[1])); /*0x7565b8*/
   v5 = 9 * a2[3]; /*0x7565be*/
-  v16 = *(_BYTE *)(v4 + 161); /*0x7565cd*/
-  v6 = *(_BYTE *)(v4 + 162); /*0x7565d1*/
-  v32 = *(_BYTE *)(v4 + 160); /*0x7565db*/
+  v16 = *(unsigned char *)(v4 + 161); /*0x7565cd*/
+  v6 = *(unsigned char *)(v4 + 162); /*0x7565d1*/
+  v32 = *(unsigned char *)(v4 + 160); /*0x7565db*/
   v18 = v6; /*0x7565e3*/
   v33 = v16; /*0x7565e7*/
   v34 = v6; /*0x7565eb*/
-  v19[0] = *(_DWORD *)v4; /*0x7565f1*/
-  v19[1] = *(_DWORD *)(v4 + 4); /*0x7565f8*/
+  v19[0] = *(unsigned int *)v4; /*0x7565f1*/
+  v19[1] = *(unsigned int *)(v4 + 4); /*0x7565f8*/
   v7 = 3 * dword_8468C4[v5]; /*0x756605*/
-  v19[2] = *(_DWORD *)(v4 + 8); /*0x756608*/
+  v19[2] = *(unsigned int *)(v4 + 8); /*0x756608*/
   v8 = (float *)&a2[v7 + 10]; /*0x75660c*/
   v35 = (float *)&a2[3 * dword_8468CC[v5] + 10]; /*0x756630*/
   v9 = (float *)&a2[3 * dword_8468D0[v5] + 10]; /*0x756637*/
@@ -1101,32 +1104,34 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
     v13 |= 2u; /*0x756822*/
   if ( dword_B43184 ) /*0x75682c*/
     v13 |= 4u; /*0x75682e*/
-  if ( !*(_BYTE *)(v4 + 163) ) /*0x756831*/
+  if ( !*(unsigned char *)(v4 + 163) ) /*0x756831*/
     v13 |= 8u; /*0x75683b*/
-  IDA_LOBYTE(result) = ((char (__usercall *)@<al>(int@<ebx>, int@<edi>, int))funcs_756843[v13])(v4, (int)v8, (int)v19); /*0x756843*/
+  LOBYTE(result) = ((char (__usercall *)@<al>(int@<ebx>, int@<edi>, int))funcs_756843[v13])(v4, (int)v8, (int)v19); /*0x756843*/
   return result; /*0x75684d*/
+
 }
 }
 // 0x75C240
 namespace gamemd {
 void* Voxel::DrawHelper(IUnknown * aP1)
 {
-  int *u32_28; // ebx
-  int *q00C; // ecx
+
+  int *Voxel_field_0x28; // ebx
+  int *Voxel_field_0xC; // ecx
   int v6; // ecx
   int v7; // eax
   int v8; // ebx
   int v9; // ebp
-  _WORD *v10; // eax
+  unsigned short *v10; // eax
   int v11; // ecx
   int v12; // ebp
   int v13; // ebx
-  _WORD *v14; // eax
+  unsigned short *v14; // eax
   int v15; // eax
-  _DWORD *v16; // ebx
+  unsigned int *v16; // ebx
   CellClass *v17; // eax
   int v18; // eax
-  _DWORD *v19; // ebp
+  unsigned int *v19; // ebp
   CellClass *v20; // eax
   int v21; // ebx
   CellClass *v22; // eax
@@ -1144,23 +1149,23 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   int v35; // [esp+10h] [ebp-18h] BYREF
   int v36; // [esp+14h] [ebp-14h]
   int v37; // [esp+18h] [ebp-10h]
-  _DWORD v38[3]; // [esp+1Ch] [ebp-Ch] BYREF
+  unsigned int v38[3]; // [esp+1Ch] [ebp-Ch] BYREF
   char v39; // [esp+2Ch] [ebp+4h]
 
-  u32_28 = this->u32_28; /*0x75c251*/
-  if ( this->u32_28[0] == g_AsyncMovieState /*0x75c26e*/
-    && this->u32_2C[0] == g_MovieFrameState1
-    && *(_DWORD *)this->__pad_30 == g_MovieFrameState2 )
+  Voxel_field_0x28 = this->Voxel_field_0x28; /*0x75c251*/
+  if ( this->Voxel_field_0x28[0] == g_AsyncMovieState /*0x75c26e*/
+    && this->Voxel_field_0x2C[0] == g_MovieFrameState1
+    && *(unsigned int *)this->__pad_30 == g_MovieFrameState2 )
   {
-    q00C = (int *)this->q00C; /*0x75c278*/
-    v35 = q00C[39]; /*0x75c287*/
-    v36 = q00C[40]; /*0x75c28e*/
-    v37 = q00C[41]; /*0x75c295*/
-    (*(void (__stdcall **)(int *))(*q00C + 244))(&v35); /*0x75c2a0*/
+    Voxel_field_0xC = (int *)this->Voxel_field_0xC; /*0x75c278*/
+    v35 = Voxel_field_0xC[39]; /*0x75c287*/
+    v36 = Voxel_field_0xC[40]; /*0x75c28e*/
+    v37 = Voxel_field_0xC[41]; /*0x75c295*/
+    (*(void (**)(int *))(*Voxel_field_0xC + 244))(&v35); /*0x75c2a0*/
   }
   else
   {
-    (*(void (__stdcall **)(int *))(*(_DWORD *)this->q00C + 244))(this->u32_28); /*0x75c276*/
+    (*(void (**)(int *))(*(unsigned int *)this->Voxel_field_0xC + 244))(this->Voxel_field_0x28); /*0x75c276*/
   }
   v39 = 0; /*0x75c2aa*/
   v38[0] = *aP1; /*0x75c2b3*/
@@ -1169,49 +1174,49 @@ void* Voxel::DrawHelper(IUnknown * aP1)
   v38[2] = aP1[2]; /*0x75c2c3*/
   if ( v6 == g_AsyncMovieState && aP1[1] == g_MovieFrameState1 && aP1[2] == g_MovieFrameState2 )
   {
-    *u32_28 = *aP1; /*0x75c5b7*/
-    this->u32_2C[0] = aP1[1]; /*0x75c5bc*/
-    *(_DWORD *)this->__pad_30 = aP1[2]; /*0x75c5c2*/
+    *Voxel_field_0x28 = *aP1; /*0x75c5b7*/
+    this->Voxel_field_0x2C[0] = aP1[1]; /*0x75c5bc*/
+    *(unsigned int *)this->__pad_30 = aP1[2]; /*0x75c5c2*/
   }
   else
   {
-    if ( (*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 388))(this->q00C) == 8 /*0x75c33c*/
-      || (*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 388))(this->q00C) == 9
-      || (*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 388))(this->q00C) == 7
-      || (*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 388))(this->q00C) == 11
-      || (*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 388))(this->q00C) == 25 )
+    if ( (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 8 /*0x75c33c*/
+      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 9
+      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 7
+      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 11
+      || (*(int (**)(int))(*(unsigned int *)this->Voxel_field_0xC + 388))(this->Voxel_field_0xC) == 25 )
     {
-      v7 = this->q00C; /*0x75c342*/
-      v8 = v7->u32_5A4; /*0x75c345*/
+      v7 = this->Voxel_field_0xC; /*0x75c342*/
+      v8 = *(unsigned int *)(v7 + 1444); /*0x75c345*/
       if ( v8 ) /*0x75c34d*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v8 + 44))(v7->u32_5A4) == 1 ) /*0x75c359*/
+        if ( (*(int (**)(unsigned int))(*(unsigned int *)v8 + 44))(*(unsigned int *)(v7 + 1444)) == 1 ) /*0x75c359*/
         {
           v34 = aP1[1] / 256; /*0x75c37e*/
           v9 = *aP1 / 256; /*0x75c385*/
-          v10 = (_WORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v8 + 440))(v8, &v35); /*0x75c388*/
-          if ( *v10 == (_WORD)v9 && v10[1] == v34 ) /*0x75c39c*/
+          v10 = (unsigned short *)(*(int (**)(int, int *))(*(unsigned int *)v8 + 440))(v8, &v35); /*0x75c388*/
+          if ( *v10 == (unsigned short)v9 && v10[1] == v34 ) /*0x75c39c*/
             v39 = 1; /*0x75c39e*/
         }
       }
-      v11 = *(_DWORD *)(this->q00C + 1444); /*0x75c3a6*/
-      *(_DWORD *)v11 = v11; /*0x75c3ae*/
+      v11 = *(unsigned int *)(this->Voxel_field_0xC + 1444); /*0x75c3a6*/
+      *(unsigned int *)v32 = v11; /*0x75c3ae*/
       if ( v11 ) /*0x75c3b2*/
       {
-        if ( (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 2 ) /*0x75c3bc*/
+        if ( (*(int (**)(int))(*(unsigned int *)v11 + 44))(v11) == 2 ) /*0x75c3bc*/
         {
           v12 = *aP1 / 256; /*0x75c3e4*/
           v13 = aP1[1] / 256; /*0x75c3e7*/
-          v14 = (_WORD *)(*(int (__thiscall **)(char *, int *))(**(_DWORD **)v11 + 440))(*(char **)v11, &v35); /*0x75c3ea*/
-          if ( *v14 == (_WORD)v12 && v14[1] == (_WORD)v13 ) /*0x75c3f9*/
+          v14 = (unsigned short *)(*(int (**)(char *, int *))(**(unsigned int **)v32 + 440))(*(char **)v32, &v35); /*0x75c3ea*/
+          if ( *v14 == (unsigned short)v12 && v14[1] == (unsigned short)v13 ) /*0x75c3f9*/
             v39 = 1; /*0x75c3fb*/
         }
       }
-      v15 = this->q00C; /*0x75c400*/
-      v16 = v15->u32_5A4; /*0x75c403*/
+      v15 = this->Voxel_field_0xC; /*0x75c400*/
+      v16 = *(unsigned int **)(v15 + 1444); /*0x75c403*/
       if ( v16 ) /*0x75c40b*/
       {
-        if ( (*(int (__thiscall **)(_DWORD))(*v16 + 44))(v15->u32_5A4) == 6 ) /*0x75c417*/
+        if ( (*(int (**)(unsigned int))(*v16 + 44))(*(unsigned int *)(v15 + 1444)) == 6 ) /*0x75c417*/
         {
           v17 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x75c41f*/
           if ( Cell::IsBridge((Cell *)v17) == v16 ) /*0x75c42d*/
@@ -1219,26 +1224,26 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         }
       }
     }
-    v18 = *(_DWORD *)(this->q00C + 732); /*0x75c439*/
+    v18 = *(unsigned int *)(this->Voxel_field_0xC + 732); /*0x75c439*/
     if ( v18 )
     {
-      if ( *(_DWORD *)(v18 + 728) )
+      if ( *(unsigned int *)(v18 + 728) )
       {
-        v19 = (_DWORD *)this->q00C; /*0x75c44b*/
+        v19 = (unsigned int *)this->Voxel_field_0xC; /*0x75c44b*/
         v35 = 0; /*0x75c44f*/
         v36 = 0; /*0x75c453*/
         v20 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x75c463*/
         if ( Object::FindClosestObjectCell((Object *)v20, &v35, 0, 0) == v19[183] )
         {
-          v21 = v19 ? ((*(int (__thiscall **)(_DWORD *))(*v19 + 44))(v19) == 15 ? (unsigned int)v19 : 0) : 0;
+          v21 = v19 ? ((*(int (**)(unsigned int *))(*v19 + 44))(v19) == 15 ? (unsigned int)v19 : 0) : 0;
           v22 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x75c49a*/
-          if ( BuildingClass::CheckBridge(*(BuildingClass **)(*(_DWORD *)(this->q00C + 732) + 728), v21, v22) ) /*0x75c4b0*/
+          if ( BuildingClass::CheckBridge(*(BuildingClass **)(*(unsigned int *)(this->Voxel_field_0xC + 732) + 728), v21, v22) ) /*0x75c4b0*/
             v39 = 1; /*0x75c4b9*/
         }
       }
     }
     if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v38)->flags[0] & 0x100) == 0 /*0x75c513*/
-      || (v23 = (int *)(this->q00C + 156),
+      || (v23 = (int *)(this->Voxel_field_0xC + 156),
           v35 = *v23,
           v36 = v23[1],
           v24 = v23[2],
@@ -1249,49 +1254,51 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     }
     v25 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition((ObjectPlacement *)v25, &v35, v38, v39, v33, 0); /*0x75c541*/
-    u32_28 = this->u32_28; /*0x75c548*/
-    this->u32_28[0] = *v26; /*0x75c54d*/
-    this->u32_2C[0] = v26[1]; /*0x75c552*/
-    v31 = this->q00C; /*0x75c55b*/
-    *(_DWORD *)this->__pad_30 = v26[2]; /*0x75c562*/
-    v27 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], this->u32_28); /*0x75c565*/
+    Voxel_field_0x28 = this->Voxel_field_0x28; /*0x75c548*/
+    this->Voxel_field_0x28[0] = *v26; /*0x75c54d*/
+    this->Voxel_field_0x2C[0] = v26[1]; /*0x75c552*/
+    v31 = this->Voxel_field_0xC; /*0x75c55b*/
+    *(unsigned int *)this->__pad_30 = v26[2]; /*0x75c562*/
+    v27 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], this->Voxel_field_0x28); /*0x75c565*/
     if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v27, v31) ) /*0x75c56c*/
     {
-      v28 = this->q00C; /*0x75c575*/
-      if ( !v28->u32_81 ) /*0x75c578*/
+      v28 = this->Voxel_field_0xC; /*0x75c575*/
+      if ( !*(unsigned char *)(v28 + 129) ) /*0x75c578*/
       {
-        *u32_28 = g_AsyncMovieState; /*0x75c58a*/
-        this->u32_2C[0] = g_MovieFrameState1; /*0x75c592*/
-        *(_DWORD *)this->__pad_30 = g_MovieFrameState2; /*0x75c59b*/
-        if ( !v28->u32_90 ) /*0x75c59e*/
+        *Voxel_field_0x28 = g_AsyncMovieState; /*0x75c58a*/
+        this->Voxel_field_0x2C[0] = g_MovieFrameState1; /*0x75c592*/
+        *(unsigned int *)this->__pad_30 = g_MovieFrameState2; /*0x75c59b*/
+        if ( !*(unsigned char *)(v28 + 144) ) /*0x75c59e*/
           return 0; /*0x75c5b0*/
       }
     }
   }
-  if ( *u32_28 == g_AsyncMovieState /*0x75c5e7*/
-    && u32_28[1] == g_MovieFrameState1
-    && u32_28[2] == g_MovieFrameState2 )
+  if ( *Voxel_field_0x28 == g_AsyncMovieState /*0x75c5e7*/
+    && Voxel_field_0x28[1] == g_MovieFrameState1
+    && Voxel_field_0x28[2] == g_MovieFrameState2 )
   {
-    v30 = (int *)this->q00C; /*0x75c602*/
+    v30 = (int *)this->Voxel_field_0xC; /*0x75c602*/
     v35 = v30[39]; /*0x75c611*/
     v36 = v30[40]; /*0x75c618*/
     v37 = v30[41]; /*0x75c61f*/
-    (*(void (__thiscall **)(int *, int *))(*v30 + 240))(v30, &v35); /*0x75c62a*/
+    (*(void (**)(int *, int *))(*v30 + 240))(v30, &v35); /*0x75c62a*/
     return 0; /*0x75c632*/
   }
   else
   {
-    (*(void (__thiscall **)(int, int *))(*(_DWORD *)this->q00C + 240))( /*0x75c5f1*/
-      this->q00C,
-      u32_28);
+    (*(void (**)(int, int *))(*(unsigned int *)this->Voxel_field_0xC + 240))( /*0x75c5f1*/
+      this->Voxel_field_0xC,
+      Voxel_field_0x28);
     return 1; /*0x75c5f9*/
   }
+
 }
 }
 // 0x75EDF0
 namespace gamemd {
 int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
+
   __int64 v5; // rax
   int v6; // esi
   int v7; // ecx
@@ -1300,16 +1307,16 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
   int v10; // esi
   int result; // eax
 
-  v5 = word_B46254[(int)this->q130 /*0x75ee44*/
-                 + (unsigned __int16)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->q0CC - aP2)]];
-  IDA_LODWORD(v5) = (IDA_HIDWORD(v5) ^ v5) - IDA_HIDWORD(v5); /*0x75ee47*/
-  v6 = dword_B46648[(_DWORD)v5]; /*0x75ee50*/
-  IDA_WORD2(v5) = a4[*(_DWORD *)&this->q134[4 * v5 + 212]]; /*0x75ee57*/
-  v7 = ((v6 * (unsigned __int8)((unsigned __int8)(IDA_WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue)) >> 8) /*0x75eeb8*/
-     + (unsigned __int8)((unsigned __int8)(IDA_WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue);
-  v8 = ((v6 * (unsigned __int8)((unsigned __int8)(IDA_WORD2(v5) >> g_BitShift_Blue) << g_BitMask_Red)) >> 8) /*0x75eec6*/
-     + (unsigned __int8)((unsigned __int8)(IDA_WORD2(v5) >> g_BitShift_Blue) << g_BitMask_Red);
-  v9 = (unsigned __int8)((unsigned __int8)(IDA_WORD2(v5) >> g_BitShift_Red) << g_BitShift_Green_0); /*0x75eec8*/
+  v5 = word_B46254[(int)this->Voxel_field_0x130 /*0x75ee44*/
+                 + (unsigned __int16)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->Voxel_field_0xCC - aP2)]];
+  LODWORD(v5) = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x75ee47*/
+  v6 = dword_B46648[(unsigned int)v5]; /*0x75ee50*/
+  WORD2(v5) = a4[*(unsigned int *)&this->__pad_134[4 * v5 + 212]]; /*0x75ee57*/
+  v7 = ((v6 * (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue)) >> 8) /*0x75eeb8*/
+     + (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue);
+  v8 = ((v6 * (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitShift_Blue) << g_BitMask_Red)) >> 8) /*0x75eec6*/
+     + (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitShift_Blue) << g_BitMask_Red);
+  v9 = (unsigned __int8)((unsigned __int8)(WORD2(v5) >> g_BitShift_Red) << g_BitShift_Green_0); /*0x75eec8*/
   if ( v8 > 255 ) /*0x75eed3*/
     v8 = 255; /*0x75eed5*/
   v10 = 255; /*0x75eee0*/
@@ -1318,75 +1325,78 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
   result = v8 >> g_BitMask_Red << g_BitShift_Blue; /*0x75ef07*/
   *a4 = (v9 >> g_BitShift_Green_0 << g_BitShift_Red) | result | (v10 >> g_BitMask_Blue << g_BitMask_Green); /*0x75ef19*/
   return result; /*0x75ef1c*/
+
 }
 }
 // 0x75F140
 namespace gamemd {
 int Voxel::loadSectionData()
 {
+
   int v2; // eax
   int v3; // edx
   int v4; // ecx
   char *v5; // eax
   int result; // eax
 
-  v2 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75f14e*/
-  *(_DWORD *)&this->q134[120] = -v2; /*0x75f159*/
-  *(_DWORD *)&this->q134[124] = 1 - v2; /*0x75f164*/
-  *(_DWORD *)&this->q134[132] = v2 + 1; /*0x75f16a*/
-  *(_DWORD *)&this->q134[136] = v2; /*0x75f176*/
-  *(_DWORD *)&this->q134[140] = v2 - 1; /*0x75f17c*/
-  v3 = *(_DWORD *)&this->q134[152]; /*0x75f182*/
+  v2 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75f14e*/
+  *(unsigned int *)&this->__pad_134[120] = -v2; /*0x75f159*/
+  *(unsigned int *)&this->__pad_134[124] = 1 - v2; /*0x75f164*/
+  *(unsigned int *)&this->__pad_134[132] = v2 + 1; /*0x75f16a*/
+  *(unsigned int *)&this->__pad_134[136] = v2; /*0x75f176*/
+  *(unsigned int *)&this->__pad_134[140] = v2 - 1; /*0x75f17c*/
+  v3 = *(unsigned int *)&this->__pad_134[152]; /*0x75f182*/
   v4 = -1 - v2; /*0x75f188*/
-  *(_DWORD *)&this->q134[212] = 0; /*0x75f18c*/
-  *(_DWORD *)&this->q134[216] = 0; /*0x75f192*/
-  v5 = &this->q134[4 * v3 + 120]; /*0x75f198*/
-  *(_DWORD *)&this->q134[128] = 1; /*0x75f19f*/
-  *(_DWORD *)&this->q134[144] = -1; /*0x75f1a9*/
-  *(_DWORD *)&this->q134[148] = v4; /*0x75f1b3*/
-  *(_DWORD *)&this->q134[220] = *(_DWORD *)v5; /*0x75f1bb*/
-  *(_DWORD *)&this->q134[224] = *(_DWORD *)v5; /*0x75f1c3*/
-  *(_DWORD *)&this->q134[228] = *(_DWORD *)v5; /*0x75f1cb*/
-  *(_DWORD *)&this->q134[232] = *(_DWORD *)v5; /*0x75f1d3*/
-  *(_DWORD *)&this->q134[236] = *(_DWORD *)v5; /*0x75f1db*/
-  *(_DWORD *)&this->q134[240] = 2 * *(_DWORD *)v5; /*0x75f1e5*/
-  *(_DWORD *)&this->q134[244] = 2 * *(_DWORD *)v5; /*0x75f1ef*/
-  *(_DWORD *)&this->q134[248] = 2 * *(_DWORD *)v5; /*0x75f1f9*/
-  *(_DWORD *)&this->q134[252] = 3 * *(_DWORD *)v5; /*0x75f204*/
-  *(_DWORD *)&this->q134[256] = 3 * *(_DWORD *)v5; /*0x75f20f*/
-  result = 3 * *(_DWORD *)v5; /*0x75f217*/
-  *(_DWORD *)&this->q134[260] = result; /*0x75f21a*/
+  *(unsigned int *)&this->__pad_134[212] = 0; /*0x75f18c*/
+  *(unsigned int *)&this->__pad_134[216] = 0; /*0x75f192*/
+  v5 = &this->__pad_134[4 * v3 + 120]; /*0x75f198*/
+  *(unsigned int *)&this->__pad_134[128] = 1; /*0x75f19f*/
+  *(unsigned int *)&this->__pad_134[144] = -1; /*0x75f1a9*/
+  *(unsigned int *)&this->__pad_134[148] = v4; /*0x75f1b3*/
+  *(unsigned int *)&this->__pad_134[220] = *(unsigned int *)v5; /*0x75f1bb*/
+  *(unsigned int *)&this->__pad_134[224] = *(unsigned int *)v5; /*0x75f1c3*/
+  *(unsigned int *)&this->__pad_134[228] = *(unsigned int *)v5; /*0x75f1cb*/
+  *(unsigned int *)&this->__pad_134[232] = *(unsigned int *)v5; /*0x75f1d3*/
+  *(unsigned int *)&this->__pad_134[236] = *(unsigned int *)v5; /*0x75f1db*/
+  *(unsigned int *)&this->__pad_134[240] = 2 * *(unsigned int *)v5; /*0x75f1e5*/
+  *(unsigned int *)&this->__pad_134[244] = 2 * *(unsigned int *)v5; /*0x75f1ef*/
+  *(unsigned int *)&this->__pad_134[248] = 2 * *(unsigned int *)v5; /*0x75f1f9*/
+  *(unsigned int *)&this->__pad_134[252] = 3 * *(unsigned int *)v5; /*0x75f204*/
+  *(unsigned int *)&this->__pad_134[256] = 3 * *(unsigned int *)v5; /*0x75f20f*/
+  result = 3 * *(unsigned int *)v5; /*0x75f217*/
+  *(unsigned int *)&this->__pad_134[260] = result; /*0x75f21a*/
   return result; /*0x75f220*/
+
 }
 }
 // 0x75F4C0
 namespace gamemd {
 CellStruct * * Voxel::renderSection(ObjectClass * aP1)
 {
-  __int16 *v3; // eax
+  int16_t *v3; // eax
   int v4; // edx
   char *v5; // esi
   int v6; // eax
   int v7; // ecx
   int v8; // edx
 
-  v3 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], aP1); /*0x75f4cd*/
-  v4 = *(_DWORD *)&this->q134[188]; /*0x75f4d2*/
-  v5 = &this->q134[188]; /*0x75f4d8*/
+  v3 = (int16_t *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(aP1); /*0x75f4cd*/
+  v4 = *(unsigned int *)&this->__pad_134[188]; /*0x75f4d2*/
+  v5 = &this->__pad_134[188]; /*0x75f4d8*/
   aP1 = v3; /*0x75f4de*/
-  v6 = (*(int (__thiscall **)(char *, __int16 **))(v4 + 16))(v5, &aP1); /*0x75f4e9*/
+  v6 = (*(int (**)(char *, int16_t **))(v4 + 16))(v5, &aP1); /*0x75f4e9*/
   if ( v6 == -1 ) /*0x75f4ef*/
   {
-    v7 = *((_DWORD *)v5 + 2); /*0x75f4f1*/
-    if ( *((_DWORD *)v5 + 4) < v7 /*0x75f51b*/
-      || ((IDA_LOBYTE(v6) = v5[13], (_BYTE)v6) || !v7)
-      && (v6 = *((_DWORD *)v5 + 5), v6 > 0)
-      && (IDA_LOBYTE(v6) = (*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)v5 + 8))(v5, v7 + v6, 0), (_BYTE)v6) )
+    v7 = *((unsigned int *)v5 + 2); /*0x75f4f1*/
+    if ( *((unsigned int *)v5 + 4) < v7 /*0x75f51b*/
+      || (((*((unsigned char *)&(v6))) = v5[13], (unsigned char)v6) || !v7)
+      && (v6 = *((unsigned int *)v5 + 5), v6 > 0)
+      && ((*((unsigned char *)&(v6))) = (*(int (**)(char *, int, unsigned int))(*(unsigned int *)v5 + 8))(v5, v7 + v6, 0), (unsigned char)v6) )
     {
-      v6 = *((_DWORD *)v5 + 4); /*0x75f51d*/
-      v8 = *((_DWORD *)v5 + 1); /*0x75f520*/
-      *((_DWORD *)v5 + 4) = v6 + 1; /*0x75f526*/
-      *(_DWORD *)(v8 + 4 * v6) = aP1; /*0x75f52d*/
+      v6 = *((unsigned int *)v5 + 4); /*0x75f51d*/
+      v8 = *((unsigned int *)v5 + 1); /*0x75f520*/
+      *((unsigned int *)v5 + 4) = v6 + 1; /*0x75f526*/
+      *(unsigned int *)(v8 + 4 * v6) = aP1; /*0x75f52d*/
     }
   }
   return v6; /*0x75f530*/
@@ -1406,22 +1416,22 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
   int v11; // ebx
   int v12; // eax
   int v13; // eax
-  _WORD *v14; // edi
+  unsigned short *v14; // edi
   int v15; // edx
-  _DWORD *v16; // ecx
+  unsigned int *v16; // ecx
   int v17; // eax
   int v18; // eax
   int v19; // ecx
-  unsigned __int16 *v20; // ebx
-  _WORD *v21; // edi
-  __int64 v22; // rax
+  uint16_t *v20; // ebx
+  unsigned short *v21; // edi
+  int64_t v22; // rax
   int v23; // ebp
   int v24; // eax
   int m; // ebp
   int v26; // eax
   int v27; // ebx
   int v28; // eax
-  _DWORD *v29; // eax
+  unsigned int *v29; // eax
   int v30; // ecx
   int v31; // eax
   int v32; // edi
@@ -1429,19 +1439,19 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
   int v34; // ebx
   int v35; // eax
   int v36; // ecx
-  _WORD *v37; // edi
+  unsigned short *v37; // edi
   int v38; // ecx
   int v39; // eax
   int v40; // ebp
-  _WORD *v41; // edi
-  unsigned __int16 *v42; // ecx
-  __int64 v43; // rax
+  unsigned short *v41; // edi
+  uint16_t *v42; // ecx
+  int64_t v43; // rax
   int j; // ebx
   int v45; // ebp
   int v46; // eax
   int v47; // ecx
   int v48; // edx
-  _DWORD *v49; // eax
+  unsigned int *v49; // eax
   int v50; // ebx
   int v51; // ebp
   int i; // edi
@@ -1456,10 +1466,10 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
   int v61; // [esp+14h] [ebp-30h]
   int v63; // [esp+14h] [ebp-30h]
   char *v64; // [esp+18h] [ebp-2Ch]
-  _WORD *v65; // [esp+18h] [ebp-2Ch]
-  _WORD *SamplePosition; // [esp+18h] [ebp-2Ch]
-  unsigned __int16 *v67; // [esp+18h] [ebp-2Ch]
-  _WORD *v68; // [esp+18h] [ebp-2Ch]
+  unsigned short *v65; // [esp+18h] [ebp-2Ch]
+  unsigned short *SamplePosition; // [esp+18h] [ebp-2Ch]
+  uint16_t *v67; // [esp+18h] [ebp-2Ch]
+  unsigned short *v68; // [esp+18h] [ebp-2Ch]
   int v69; // [esp+1Ch] [ebp-28h]
   StreamClass *v70; // [esp+20h] [ebp-24h]
   int v71; // [esp+20h] [ebp-24h]
@@ -1473,13 +1483,13 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
   int v81; // [esp+38h] [ebp-Ch]
   int v83; // [esp+3Ch] [ebp-8h]
   int v85; // [esp+40h] [ebp-4h]
-  unsigned __int16 v86; // [esp+48h] [ebp+4h]
-  unsigned __int16 v87; // [esp+48h] [ebp+4h]
+  uint16_t v86; // [esp+48h] [ebp+4h]
+  uint16_t v87; // [esp+48h] [ebp+4h]
   int v88; // [esp+48h] [ebp+4h]
-  _DWORD *v90; // [esp+4Ch] [ebp+8h]
+  unsigned int *v90; // [esp+4Ch] [ebp+8h]
 
   v58 = ZCoordToScreenY(this->WaveClass_field_168); /*0x75faa8*/
-  v74 = (*(int (__thiscall **)(AudioStream *, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 92))( /*0x75fab9*/
+  v74 = (*(int (**)(AudioStream *, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 92))( /*0x75fab9*/
           g_DSurface_Hidden_2,
           0,
           0);
@@ -1494,11 +1504,11 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
     v6 = aP1[1] - this->WaveClass_field_17C; /*0x75fb09*/
     v57 = *aP1 - this->WaveClass_field_178; /*0x75fb17*/
     v6 = v6; /*0x75fb1b*/
-    ProcessVoxelVertexData((_DWORD *)(&this->WaveClass_field_12C8), (int *)(&this->WaveClass_field_1506)); /*0x75fb1f*/
-    if ( this->q1A8 ) /*0x75fb24*/
+    ProcessVoxelVertexData((unsigned int *)(&this->WaveClass_field_12C8), (int *)(&this->WaveClass_field_1506)); /*0x75fb1f*/
+    if ( this->WaveClass_field_1A8_d ) /*0x75fb24*/
     {
-      v7 = this->q1A0; /*0x75fb48*/
-      v8 = (char *)DSurface_ViewBounds.q004 + this->q1A4 + v6; /*0x75fb4e*/
+      v7 = this->WaveClass_field_1A0_d; /*0x75fb48*/
+      v8 = (char *)DSurface_ViewBounds.field_4 + this->WaveClass_field_1A4_d + v6; /*0x75fb4e*/
       v61 = (int)v8; /*0x75fb50*/
       v9 = (int)&v8[v7 - 1]; /*0x75fb54*/
       if ( v9 >= a2[3] + a2[1] ) /*0x75fb5a*/
@@ -1511,20 +1521,20 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
         v64 = &v8[v7 - 1]; /*0x75fb5c*/
       }
       Voxel::loadSectionData(); /*0x75fb6a*/
-      v10 = this->q1CC; /*0x75fb6f*/
+      v10 = this->WaveClass_field_1CC_d; /*0x75fb6f*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x75fb81*/
       {
-        SamplePosition = (_WORD *)Audio::GetSamplePosition( /*0x75fe6e*/
+        SamplePosition = (unsigned short *)Audio::GetSamplePosition( /*0x75fe6e*/
                                     (int *)g_ZBufferDescriptor,
                                     0,
-                                    v8 - (char *)DSurface_ViewBounds.q004);
-        v35 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 124))(g_DSurface_Hidden_2); /*0x75fe74*/
-        IDA_HIWORD(v36) = IDA_HIWORD(g_ZBufferDescriptor); /*0x75fe77*/
-        v81 = v9 - (_DWORD)v8; /*0x75fe88*/
+                                    v8 - (char *)DSurface_ViewBounds.field_4);
+        v35 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x75fe74*/
+        (*(((unsigned short *)&(v36)) + 1)) = (*(((unsigned short *)&(g_ZBufferDescriptor)) + 1)); /*0x75fe77*/
+        v81 = v9 - (unsigned int)v8; /*0x75fe88*/
         m_Stream = g_ZBufferDescriptor[2].m_Stream; /*0x75fe90*/
-        if ( (unsigned int)&SamplePosition[v35 + (_DWORD)m_Stream * (v9 - (_DWORD)v8 + 1)] >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x75fea6*/
+        if ( (unsigned int)&SamplePosition[v35 + (unsigned int)m_Stream * (v9 - (unsigned int)v8 + 1)] >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x75fea6*/
         {
-          IDA_LOWORD(v36) = IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v9; /*0x76000b*/
+          (*((unsigned short *)&(v36))) = (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))) - v9; /*0x76000b*/
           v46 = v9; /*0x76000e*/
           v56 = v9; /*0x760012*/
           v47 = v36 - v58 - 2; /*0x760016*/
@@ -1537,23 +1547,23 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               v48 = v4[1]; /*0x760030*/
               if ( v46 >= v48 + 2 && v46 <= v48 + v4[3] - 2 ) /*0x760047*/
               {
-                v49 = (_DWORD *)(this->q1A8 + v73); /*0x760060*/
+                v49 = (unsigned int *)(this->WaveClass_field_1A8_d + v73); /*0x760060*/
                 v50 = v49[1] + v57; /*0x76006a*/
                 if ( v50 >= *v4 + v4[2] - 2 ) /*0x76006e*/
                   v50 = *v4 + v4[2] - 2; /*0x760070*/
                 v60 = v57 + *v49; /*0x76007f*/
                 if ( v60 <= *v4 + 2 ) /*0x760083*/
                   v60 = *v4 + 2; /*0x760085*/
-                v68 = (_WORD *)(v74 /*0x7600b4*/
+                v68 = (unsigned short *)(v74 /*0x7600b4*/
                               + 2
                               * (v50
                                + v56
-                               * ((*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) >> 1)));
-                v51 = v56 - (unsigned int)DSurface_ViewBounds.q004; /*0x7600c0*/
+                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1)));
+                v51 = v56 - (unsigned int)DSurface_ViewBounds.field_4; /*0x7600c0*/
                 v50 = v50; /*0x7600c4*/
                 for ( i = abs32(v56 - v6 - this->WaveClass_field_17C); v50 >= v60; --v68 ) /*0x7600d5*/
                 {
-                  if ( *(_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v50, v51) > (unsigned __int16)v88 ) /*0x7600f0*/
+                  if ( *(unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v50, v51) > (uint16_t)v88 ) /*0x7600f0*/
                     Voxel::BlendShadowColor(v50, v57, i, v68); /*0x760100*/
                   --v50; /*0x76010e*/
                   --v50; /*0x76010f*/
@@ -1574,11 +1584,11 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
         }
         else
         {
-          v83 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75feb9*/
-          v37 = (_WORD *)(v74 + 2 * v9 * v83); /*0x75feca*/
-          v90 = (_DWORD *)(this->q1A8 + 8 * v81); /*0x75fed8*/
-          v87 = IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v9 - v58 - 2; /*0x75fef0*/
-          v38 = Audio::GetSamplePosition((int *)g_ZBufferDescriptor, 0, v9 - (unsigned int)DSurface_ViewBounds.q004); /*0x75ff03*/
+          v83 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75feb9*/
+          v37 = (unsigned short *)(v74 + 2 * v9 * v83); /*0x75feca*/
+          v90 = (unsigned int *)(this->WaveClass_field_1A8_d + 8 * v81); /*0x75fed8*/
+          v87 = (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))) - v9 - v58 - 2; /*0x75fef0*/
+          v38 = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(0, v9 - (unsigned int)DSurface_ViewBounds.field_4); /*0x75ff03*/
           v39 = v9; /*0x75ff05*/
           v55 = v9; /*0x75ff09*/
           if ( v9 >= (int)v8 ) /*0x75ff0d*/
@@ -1594,10 +1604,10 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
                 if ( v59 <= v79 ) /*0x75ff5a*/
                   v59 = v79; /*0x75ff5c*/
                 v41 = &v37[v40]; /*0x75ff68*/
-                v42 = (unsigned __int16 *)(2 * v40 + v38); /*0x75ff6a*/
+                v42 = (uint16_t *)(2 * v40 + v38); /*0x75ff6a*/
                 v67 = v42; /*0x75ff76*/
                 v43 = v39 - v6 - this->WaveClass_field_17C; /*0x75ff7a*/
-                for ( j = (IDA_HIDWORD(v43) ^ v43) - IDA_HIDWORD(v43); v40 >= v59; v67 = v42 ) /*0x75ff87*/
+                for ( j = ((*(((unsigned int *)&(v43)) + 1)) ^ v43) - (*(((unsigned int *)&(v43)) + 1)); v40 >= v59; v67 = v42 ) /*0x75ff87*/
                 {
                   if ( *v42 > v87 ) /*0x75ff91*/
                   {
@@ -1621,18 +1631,18 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               v55 = v39; /*0x75fff4*/
               if ( v39 < (int)v8 ) /*0x75fff8*/
                 break; /*0x75fff8*/
-              v38 -= 2 * (_DWORD)m_Stream; /*0x75ff15*/
+              v38 -= 2 * (unsigned int)m_Stream; /*0x75ff15*/
             }
           }
         }
       }
       else
       {
-        v86 = IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v58 - (_WORD)v8 - 2; /*0x75fba4*/
-        v11 = Audio::GetSamplePosition((int *)g_ZBufferDescriptor, 0, v8 - (char *)DSurface_ViewBounds.q004); /*0x75fbb6*/
-        v12 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 124))(g_DSurface_Hidden_2); /*0x75fbba*/
+        v86 = (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))) - v58 - (unsigned short)v8 - 2; /*0x75fba4*/
+        v11 = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(0, v8 - (char *)DSurface_ViewBounds.field_4); /*0x75fbb6*/
+        v12 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x75fbba*/
         v70 = g_ZBufferDescriptor[2].m_Stream; /*0x75fbc8*/
-        if ( (unsigned int)(v11 + 2 * (v12 + (_DWORD)v70 * (v9 - v61 + 1))) >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x75fbe7*/
+        if ( (unsigned int)(v11 + 2 * (v12 + (unsigned int)v70 * (v9 - v61 + 1))) >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x75fbe7*/
         {
           v27 = v61; /*0x75fd07*/
           v54 = v61; /*0x75fd0d*/
@@ -1644,7 +1654,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               v28 = v4[1]; /*0x75fd1f*/
               if ( v27 >= v28 + 2 && v27 <= v28 + v4[3] - 2 ) /*0x75fd36*/
               {
-                v29 = (_DWORD *)(this->q1A8 + v71); /*0x75fd49*/
+                v29 = (unsigned int *)(this->WaveClass_field_1A8_d + v71); /*0x75fd49*/
                 v30 = *v4; /*0x75fd4b*/
                 v63 = v57 + v29[1]; /*0x75fd64*/
                 if ( v63 >= *v4 + v4[2] - 2 ) /*0x75fd68*/
@@ -1654,19 +1664,19 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
                 if ( v31 > v30 + 2 ) /*0x75fd7b*/
                   v32 = v31; /*0x75fd7d*/
                 v32 = v32; /*0x75fd95*/
-                v65 = (_WORD *)(v74 /*0x75fda3*/
+                v65 = (unsigned short *)(v74 /*0x75fda3*/
                               + 2
                               * (v32
                                + v27
-                               * ((*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) >> 1)));
-                v33 = v27 - (unsigned int)DSurface_ViewBounds.q004; /*0x75fdad*/
-                v85 = v27 - (unsigned int)DSurface_ViewBounds.q004; /*0x75fdb7*/
+                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1)));
+                v33 = v27 - (unsigned int)DSurface_ViewBounds.field_4; /*0x75fdad*/
+                v85 = v27 - (unsigned int)DSurface_ViewBounds.field_4; /*0x75fdb7*/
                 v34 = abs32(v27 - v6 - this->WaveClass_field_17C); /*0x75fdc6*/
                 if ( v32 <= v63 ) /*0x75fdca*/
                 {
                   while ( 1 ) /*0x75fdd2*/
                   {
-                    if ( *(_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v32, v33) > v86 ) /*0x75fdeb*/
+                    if ( *(unsigned short *)((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(v32, v33) > v86 ) /*0x75fdeb*/
                       Voxel::BlendShadowColor(v32, v57, v34, v65); /*0x75fdfb*/
                     ++v32; /*0x75fe09*/
                     ++v32; /*0x75fe0a*/
@@ -1689,11 +1699,11 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
         }
         else
         {
-          v13 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75fbf8*/
+          v13 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1; /*0x75fbf8*/
           v13 = v13; /*0x75fc05*/
-          v14 = (_WORD *)(v74 + 2 * v61 * v13); /*0x75fc09*/
+          v14 = (unsigned short *)(v74 + 2 * v61 * v13); /*0x75fc09*/
           v15 = v61; /*0x75fc0c*/
-          v16 = *(_DWORD **)(&this->WaveClass_field_1544); /*0x75fc10*/
+          v16 = *(unsigned int **)(&this->WaveClass_field_1544); /*0x75fc10*/
           v16 = v16; /*0x75fc18*/
           for ( k = v61; v15 <= v9; k = v15 ) /*0x75fc20*/
           {
@@ -1707,13 +1717,13 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               v19 = v79; /*0x75fc56*/
               if ( v18 > v79 ) /*0x75fc5c*/
                 v19 = v18; /*0x75fc5e*/
-              v20 = (unsigned __int16 *)(2 * v19 + v11); /*0x75fc67*/
+              v20 = (uint16_t *)(2 * v19 + v11); /*0x75fc67*/
               v21 = &v14[v19]; /*0x75fc69*/
               v22 = v15 - v6 - this->WaveClass_field_17C; /*0x75fc7b*/
               v22 = v22; /*0x75fc7c*/
               v24 = v19; /*0x75fc7e*/
               v75 = v19; /*0x75fc82*/
-              for ( m = (IDA_HIDWORD(v22) ^ v22) - IDA_HIDWORD(v22); v24 <= v17; v75 = v24 ) /*0x75fc8e*/
+              for ( m = ((*(((unsigned int *)&(v22)) + 1)) ^ v22) - (*(((unsigned int *)&(v22)) + 1)); v24 <= v17; v75 = v24 ) /*0x75fc8e*/
               {
                 if ( *v20 > v86 ) /*0x75fc98*/
                 {
@@ -1732,7 +1742,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               v13 = v13; /*0x75fcce*/
             }
             v14 += v13; /*0x75fcd6*/
-            v11 += 2 * (_DWORD)v70; /*0x75fcd9*/
+            v11 += 2 * (unsigned int)v70; /*0x75fcd9*/
             --v86; /*0x75fce6*/
             v16 = v16 + 2; /*0x75fcee*/
             ++v15; /*0x75fcf1*/
@@ -1741,19 +1751,20 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
         }
       }
     }
-    (*(void (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 96))(g_DSurface_Hidden_2); /*0x760157*/
-    if ( this->q1A8 ) /*0x76015a*/
+    (*(void (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 96))(g_DSurface_Hidden_2); /*0x760157*/
+    if ( this->WaveClass_field_1A8_d ) /*0x76015a*/
     {
-      RA2_OPDEL(*(void **)(&this->WaveClass_field_1544)); /*0x760167*/
-      this->q1A8 = 0; /*0x76016f*/
+      operator delete((void *)(*(void **)(&this->WaveClass_field_1544))); /*0x760167*/
+      this->WaveClass_field_1A8_d = 0; /*0x76016f*/
     }
   }
 }
 }
 // 0x760190
 namespace gamemd {
-int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
+int Voxel::BlendColor(int a2, int aP2, int arg8, unsigned short *a4)
 {
+
   __int64 v5; // rax
   int v6; // eax
   unsigned __int16 v7; // dx
@@ -1762,12 +1773,12 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
   int v10; // eax
   int result; // eax
 
-  v5 = word_B45E68[(int)this->q130 /*0x7601d9*/
-                 + (unsigned __int16)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->q0CC - aP2)]];
-  v6 = (IDA_HIDWORD(v5) ^ v5) - IDA_HIDWORD(v5); /*0x7601dc*/
+  v5 = word_B45E68[(int)this->Voxel_field_0x130 /*0x7601d9*/
+                 + (unsigned __int16)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->Voxel_field_0xCC - aP2)]];
+  v6 = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x7601dc*/
   if ( v6 >= 9 ) /*0x7601e1*/
     v6 = 9; /*0x7601e3*/
-  v7 = a4[*(_DWORD *)&this->q134[4 * v6 + 212]]; /*0x7601fb*/
+  v7 = a4[*(unsigned int *)&this->__pad_134[4 * v6 + 212]]; /*0x7601fb*/
   v8 = dword_B46648[v6]; /*0x760256*/
   v9 = (((unsigned __int8)((unsigned __int8)(v7 >> g_BitShift_Red) << g_BitShift_Green_0) * (v8 / 2)) >> 8) /*0x76027d*/
      + (unsigned __int8)((unsigned __int8)(v7 >> g_BitShift_Red) << g_BitShift_Green_0);
@@ -1783,12 +1794,14 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
       | result
       | (v9 >> g_BitShift_Green_0 << g_BitShift_Red);
   return result; /*0x7602d3*/
+
 }
 }
 // 0x7609E0
 namespace gamemd {
 AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
 {
+
   Voxel *v3; // ebx
   char *v4; // ebp
   int v5; // esi
@@ -1796,12 +1809,12 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
   int SamplePosition; // edi
   int v8; // eax
   int v9; // ecx
-  _WORD *v10; // ebp
+  unsigned short *v10; // ebp
   int v11; // eax
   int v12; // edx
   int v13; // ecx
-  _WORD *v14; // edi
-  _WORD *v15; // ebp
+  unsigned short *v14; // edi
+  unsigned short *v15; // ebp
   int v16; // esi
   int v17; // esi
   int v18; // edx
@@ -1810,20 +1823,20 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
   bool v21; // zf
   int v22; // edi
   int v23; // eax
-  _DWORD *v24; // eax
+  unsigned int *v24; // eax
   int v25; // edx
   int v26; // esi
   int v27; // eax
   int v28; // eax
   int v29; // ebp
-  _WORD *v30; // edi
+  unsigned short *v30; // edi
   int v31; // eax
   int v32; // edx
   int v33; // eax
   int i; // [esp+8h] [ebp-40h]
   int v35; // [esp+8h] [ebp-40h]
   int v36; // [esp+Ch] [ebp-3Ch]
-  _WORD *v37; // [esp+10h] [ebp-38h]
+  unsigned short *v37; // [esp+10h] [ebp-38h]
   int v38; // [esp+10h] [ebp-38h]
   int v39; // [esp+14h] [ebp-34h]
   int v40; // [esp+14h] [ebp-34h]
@@ -1840,14 +1853,14 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
   int pad_0; // [esp+38h] [ebp-10h]
   int v53; // [esp+38h] [ebp-10h]
   int v54; // [esp+3Ch] [ebp-Ch]
-  _DWORD *v55; // [esp+4Ch] [ebp+4h]
+  unsigned int *v55; // [esp+4Ch] [ebp+4h]
   int *v56; // [esp+50h] [ebp+8h]
 
   v3 = this; /*0x7609e9*/
-  if ( stru_A8EB00.vfptr[30] == 2 ) /*0x7609f3*/
+  if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x7609f3*/
   {
-    v42 = ZCoordToScreenY(*(_DWORD *)&this->q0A0[28]); /*0x760a0a*/
-    v39 = (*(int (__thiscall **)(AudioStream *, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 92))( /*0x760a1b*/
+    v42 = ZCoordToScreenY(*(unsigned int *)&this->__pad_A0[28]); /*0x760a0a*/
+    v39 = (*(int (**)(AudioStream *, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 92))( /*0x760a1b*/
             g_DSurface_Hidden_2,
             0,
             0);
@@ -1857,24 +1870,24 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
       v48 = aP2[3] + v47; /*0x760a45*/
       v50 = *aP2; /*0x760a4c*/
       v49 = *aP2 + aP2[2]; /*0x760a56*/
-      v4 = (char *)DSurface_ViewBounds.q004 + a1[1] - *(_DWORD *)v3->__pad_D0; /*0x760a69*/
-      v41 = *a1 - (unsigned int)v3->q0CC; /*0x760a77*/
-      ProcessVoxelVertexData(&v3->q134[20], (int *)&v3->q134[108]); /*0x760a7b*/
-      if ( *(_DWORD *)&v3->q134[116] ) /*0x760a80*/
+      v4 = (char *)DSurface_ViewBounds.field_4 + a1[1] - *(unsigned int *)v3->__pad_D0; /*0x760a69*/
+      v41 = *a1 - (unsigned int)v3->Voxel_field_0xCC; /*0x760a77*/
+      ProcessVoxelVertexData(&v3->__pad_134[20], (int *)&v3->__pad_134[108]); /*0x760a7b*/
+      if ( *(unsigned int *)&v3->__pad_134[116] ) /*0x760a80*/
       {
-        v5 = (int)&v4[*(_DWORD *)&v3->q134[112]]; /*0x760aa0*/
-        v36 = *(_DWORD *)&v3->q134[108] + v5 - 1; /*0x760aaa*/
+        v5 = (int)&v4[*(unsigned int *)&v3->__pad_134[112]]; /*0x760aa0*/
+        v36 = *(unsigned int *)&v3->__pad_134[108] + v5 - 1; /*0x760aaa*/
         if ( v36 >= aP2[3] + aP2[1] ) /*0x760aae*/
           v36 = aP2[3] + aP2[1]; /*0x760ab0*/
-        IDA_LOWORD(v4) = IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v42; /*0x760aca*/
+        LOWORD(v4) = LOWORD(g_ZBufferDescriptor[1].Stream_field_10) - v42; /*0x760aca*/
         v6 = (int)&v4[-v5 - 2]; /*0x760ad3*/
-        v55 = (_DWORD *)v6; /*0x760ad6*/
+        v55 = (unsigned int *)v6; /*0x760ad6*/
         SamplePosition = Audio::GetSamplePosition( /*0x760ae5*/
                            (int *)g_ZBufferDescriptor,
                            0,
-                           v5 - (unsigned int)DSurface_ViewBounds.q004);
-        v8 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 124))(g_DSurface_Hidden_2); /*0x760ae9*/
-        pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->q000; /*0x760aff*/
+                           v5 - (unsigned int)DSurface_ViewBounds.field_4);
+        v8 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x760ae9*/
+        pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x760aff*/
         if ( (unsigned int)(SamplePosition + 2 * (v8 + pad_0 * (v36 - v5 + 1))) >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x760b13*/
         {
           v22 = v5; /*0x760d15*/
@@ -1887,7 +1900,7 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
               v23 = aP2[1]; /*0x760d2f*/
               if ( v22 >= v23 + 2 && v22 <= v23 + aP2[3] - 2 ) /*0x760d46*/
               {
-                v24 = (_DWORD *)(*(_DWORD *)&v3->q134[116] + v38); /*0x760d5a*/
+                v24 = (unsigned int *)(*(unsigned int *)&v3->__pad_134[116] + v38); /*0x760d5a*/
                 v25 = *aP2; /*0x760d5c*/
                 v44 = v41 + v24[1]; /*0x760d6c*/
                 if ( v44 >= aP2[2] + *aP2 - 2 ) /*0x760d70*/
@@ -1896,19 +1909,19 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
                 v27 = v41 + *v24; /*0x760d7b*/
                 if ( v27 > v25 + 2 ) /*0x760d7f*/
                   v26 = v27; /*0x760d81*/
-                v28 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2); /*0x760d8b*/
-                v29 = v35 - (unsigned int)DSurface_ViewBounds.q004; /*0x760da3*/
+                v28 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2); /*0x760d8b*/
+                v29 = v35 - (unsigned int)DSurface_ViewBounds.field_4; /*0x760da3*/
                 v53 = v26; /*0x760da5*/
-                v30 = (_WORD *)(v39 + 2 * (v26 + v22 * (v28 >> 1))); /*0x760da9*/
-                v54 = v35 - (unsigned int)DSurface_ViewBounds.q004; /*0x760db2*/
+                v30 = (unsigned short *)(v39 + 2 * (v26 + v22 * (v28 >> 1))); /*0x760da9*/
+                v54 = v35 - (unsigned int)DSurface_ViewBounds.field_4; /*0x760db2*/
                 if ( v26 <= v44 ) /*0x760db6*/
                 {
                   v45 = v44 - v26 + 1; /*0x760dbf*/
                   do /*0x760ee0*/
                   {
-                    if ( *(_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v53, v29) > (unsigned __int16)v55 ) /*0x760ddc*/
+                    if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v53, v29) > (unsigned __int16)v55 ) /*0x760ddc*/
                     {
-                      v31 = *(_DWORD *)&v3->q134[156]; /*0x760deb*/
+                      v31 = *(unsigned int *)&v3->__pad_134[156]; /*0x760deb*/
                       v32 = (unsigned __int8)((unsigned __int8)(*v30 >> g_BitShift_Red) << g_BitShift_Green_0) /*0x760e5b*/
                           + (char)(v31 >> 2);
                       v33 = (unsigned __int8)((unsigned __int8)(*v30 >> g_BitShift_Blue) << g_BitMask_Red) /*0x760e64*/
@@ -1935,7 +1948,7 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
               }
               v6 += 0xFFFF; /*0x760ef6*/
               ++v22; /*0x760efc*/
-              v55 = (_DWORD *)v6; /*0x760f02*/
+              v55 = (unsigned int *)v6; /*0x760f02*/
               v35 = v22; /*0x760f06*/
               v38 += 8; /*0x760f0a*/
             }
@@ -1944,10 +1957,10 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
         }
         else
         {
-          v9 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) >> 1; /*0x760b2a*/
+          v9 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1; /*0x760b2a*/
           v51 = v9; /*0x760b2e*/
-          v10 = (_WORD *)(v39 + 2 * v5 * v9); /*0x760b35*/
-          v56 = *(int **)&v3->q134[116]; /*0x760b42*/
+          v10 = (unsigned short *)(v39 + 2 * v5 * v9); /*0x760b35*/
+          v56 = *(int **)&v3->__pad_134[116]; /*0x760b42*/
           v11 = v5; /*0x760b46*/
           for ( i = v5; v11 <= v36; i = v11 ) /*0x760b4e*/
           {
@@ -1959,7 +1972,7 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
               v13 = v41 + *v56; /*0x760b86*/
               if ( v13 <= v50 ) /*0x760b8e*/
                 v13 = v50; /*0x760b90*/
-              v14 = (_WORD *)(2 * v13 + SamplePosition); /*0x760b95*/
+              v14 = (unsigned short *)(2 * v13 + SamplePosition); /*0x760b95*/
               v15 = &v10[v13]; /*0x760b97*/
               v37 = v14; /*0x760b9b*/
               v16 = v13; /*0x760b9f*/
@@ -1971,7 +1984,7 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
                 {
                   if ( *v14 > (unsigned __int16)v55 ) /*0x760bbc*/
                   {
-                    v17 = *(_DWORD *)&v3->q134[156]; /*0x760bcb*/
+                    v17 = *(unsigned int *)&v3->__pad_134[156]; /*0x760bcb*/
                     v18 = (unsigned __int8)((unsigned __int8)(*v15 >> g_BitShift_Red) << g_BitShift_Green_0) /*0x760c33*/
                         + (char)(v17 >> 2);
                     v19 = (unsigned __int8)((unsigned __int8)(*v15 >> g_BitShift_Blue) << g_BitMask_Red) /*0x760c48*/
@@ -2005,24 +2018,26 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
             SamplePosition += 2 * pad_0; /*0x760ce9*/
             ++v11; /*0x760cf3*/
             v56 += 2; /*0x760cf4*/
-            IDA_LOWORD(v55) = (_WORD)v55 - 1; /*0x760cfe*/
+            LOWORD(v55) = (unsigned short)v55 - 1; /*0x760cfe*/
           }
         }
       }
-      (*(void (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 96))(g_DSurface_Hidden_2); /*0x760f1c*/
-      if ( *(_DWORD *)&v3->q134[116] ) /*0x760f1f*/
+      (*(void (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 96))(g_DSurface_Hidden_2); /*0x760f1c*/
+      if ( *(unsigned int *)&v3->__pad_134[116] ) /*0x760f1f*/
       {
-        RA2_OPDEL(*(void **)&v3->q134[116]); /*0x760f2c*/
-        *(_DWORD *)&v3->q134[116] = 0; /*0x760f34*/
+        __3_YAXPAX_Z(*(void **)&v3->__pad_134[116]); /*0x760f2c*/
+        *(unsigned int *)&v3->__pad_134[116] = 0; /*0x760f34*/
       }
     }
   }
+
 }
 }
 // 0x7610F0
 namespace gamemd {
 void* Voxel::FaceBlit()
 {
+
   Voxel *v2; // ebp
   int v3; // eax
   double v4; // st7
@@ -2037,7 +2052,7 @@ void* Voxel::FaceBlit()
   int v13; // ebx
   void *v14; // eax
   int v15; // edx
-  _WORD *v16; // eax
+  unsigned short *v16; // eax
   unsigned int v17; // edx
   int v18; // eax
   double v19; // st7
@@ -2050,7 +2065,7 @@ void* Voxel::FaceBlit()
   int v26; // eax
   int v27; // eax
   int v28; // eax
-  _WORD *v29; // eax
+  unsigned short *v29; // eax
   int v30; // [esp-8h] [ebp-80h]
   int v31; // [esp-8h] [ebp-80h]
   int v32; // [esp-8h] [ebp-80h]
@@ -2075,126 +2090,128 @@ void* Voxel::FaceBlit()
   Coord3D v51; // [esp+60h] [ebp-18h] BYREF
   Color v52; // [esp+6Ch] [ebp-Ch] BYREF
 
-  v2 = (Voxel *)&this->q134[188]; /*0x761105*/
-  (*(void (__thiscall **)(char *))(*(_DWORD *)&this->q134[188] + 12))(&this->q134[188]); /*0x76110d*/
+  v2 = (Voxel *)&this->__pad_134[188]; /*0x761105*/
+  (*(void (**)(char *))(*(unsigned int *)&this->__pad_134[188] + 12))(&this->__pad_134[188]); /*0x76110d*/
   if ( this->__pad_D0[92] ) /*0x761110*/
   {
-    v3 = *(_DWORD *)&this->q0A0[20]; /*0x76111e*/
+    v3 = *(unsigned int *)&this->__pad_A0[20]; /*0x76111e*/
     i = 0.050000001; /*0x76112b*/
     v38[0] = v3 / 256; /*0x761146*/
-    v4 = 0.050000001 * 0.5 + *(double *)&this->q134[4]; /*0x761158*/
-    v38[1] = *(_DWORD *)&this->q0A0[24] / 256; /*0x761167*/
-    *(_DWORD *)v36 = *(_DWORD *)v38; /*0x761172*/
+    v4 = 0.050000001 * 0.5 + *(double *)&this->__pad_134[4]; /*0x761158*/
+    v38[1] = *(unsigned int *)&this->__pad_A0[24] / 256; /*0x761167*/
+    *(unsigned int *)v36 = *(unsigned int *)v38; /*0x761172*/
     if ( v4 >= 0.050000001 ) /*0x761179*/
     {
       do /*0x76129b*/
       {
         v5 = i; /*0x76117f*/
-        IDA_LOWORD(v6) = Math::RoundToInt(i); /*0x76119d*/
+        LOWORD(v6) = Math::RoundToInt(i); /*0x76119d*/
         v33 = v6; /*0x7611a8*/
-        IDA_LOWORD(v7) = Math::RoundToInt(v5); /*0x7611b5*/
+        LOWORD(v7) = Math::RoundToInt(v5); /*0x7611b5*/
         v30 = v7; /*0x7611c0*/
-        IDA_LOWORD(v8) = Math::RoundToInt(v5); /*0x7611cd*/
+        LOWORD(v8) = Math::RoundToInt(v5); /*0x7611cd*/
         v9 = Coord3D::Set(&v49, v8, v30, v33); /*0x7611e0*/
         v10 = *v9; /*0x7611e2*/
         v11 = v9[1]; /*0x7611e4*/
-        v50.q008 = v9[2]; /*0x7611ea*/
+        v50.Coord3D_field_0x08 = v9[2]; /*0x7611ea*/
         v12 = v11; /*0x7611f7*/
         v13 = v10 / 256; /*0x76120d*/
         v39 = *(void **)CellStruct::Set((CellStruct *)&v41, v10 / 256, v11 / 256); /*0x76121e*/
         if ( *(void **)v36 != v39 ) /*0x761222*/
         {
-          *(_DWORD *)v36 = *(_DWORD *)CellStruct::Set((CellStruct *)&v40, v13, v12 / 256); /*0x761247*/
+          *(unsigned int *)v36 = *(unsigned int *)CellStruct::Set((CellStruct *)&v40, v13, v12 / 256); /*0x761247*/
           v14 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x76124b*/
-          v15 = *(_DWORD *)v2->q000; /*0x761250*/
-          *(_DWORD *)v38 = v14; /*0x761253*/
-          if ( (*(int (__thiscall **)(Voxel *, __int16 *))(v15 + 16))(v2, v38) == -1 ) /*0x761264*/
+          v15 = *(unsigned int *)v2->__pad_0; /*0x761250*/
+          *(unsigned int *)v38 = v14; /*0x761253*/
+          if ( (*(int (**)(Voxel *, __int16 *))(v15 + 16))(v2, v38) == -1 ) /*0x761264*/
             Voxel::freeSectionMemory(v2, v38); /*0x76126d*/
         }
         i = i + 0.050000001; /*0x76127c*/
       }
-      while ( 0.050000001 * 0.5 + *(double *)&this->q134[4] >= i ); /*0x76129b*/
+      while ( 0.050000001 * 0.5 + *(double *)&this->__pad_134[4] >= i ); /*0x76129b*/
     }
   }
   else
   {
-    *(_DWORD *)v36 = *(_DWORD *)CellStruct::Set( /*0x7612e0*/
+    *(unsigned int *)v36 = *(unsigned int *)CellStruct::Set( /*0x7612e0*/
                                   (CellStruct *)&v41,
-                                  *(_DWORD *)&this->__pad_D0[44] / 256,
-                                  *(_DWORD *)&this->__pad_D0[48] / 256);
-    *(_DWORD *)v38 = *(_DWORD *)CellStruct::Set( /*0x761312*/
+                                  *(unsigned int *)&this->__pad_D0[44] / 256,
+                                  *(unsigned int *)&this->__pad_D0[48] / 256);
+    *(unsigned int *)v38 = *(unsigned int *)CellStruct::Set( /*0x761312*/
                                   (CellStruct *)&v41,
-                                  *(_DWORD *)&this->__pad_D0[56] / 256,
-                                  *(_DWORD *)&this->__pad_D0[60] / 256);
+                                  *(unsigned int *)&this->__pad_D0[56] / 256,
+                                  *(unsigned int *)&this->__pad_D0[60] / 256);
     v16 = CellStruct::Set( /*0x76133c*/
             (CellStruct *)&v41,
-            *(_DWORD *)&this->q0A0[32] / 256,
-            *(_DWORD *)&this->q0A0[36] / 256);
-    v17 = *(_DWORD *)&this->q134[12]; /*0x761349*/
-    *(_DWORD *)v37 = *(_DWORD *)v16; /*0x761355*/
-    for ( i = COERCE_DOUBLE(IDA___PAIR64__(*(_DWORD *)&this->q134[16], v17)); /*0x761376*/
-          0.050000001 * 0.5 + *(double *)&this->q134[4] >= i;
+            *(unsigned int *)&this->__pad_A0[32] / 256,
+            *(unsigned int *)&this->__pad_A0[36] / 256);
+    v17 = *(unsigned int *)&this->__pad_134[12]; /*0x761349*/
+    *(unsigned int *)v37 = *(unsigned int *)v16; /*0x761355*/
+    for ( i = COERCE_DOUBLE(__PAIR64__(*(unsigned int *)&this->__pad_134[16], v17)); /*0x761376*/
+          0.050000001 * 0.5 + *(double *)&this->__pad_134[4] >= i;
           i = i + 0.050000001 )
     {
-      v49.q008 = dword_B46250; /*0x761392*/
-      v18 = *(_DWORD *)&this->q134[152]; /*0x761396*/
-      *(_DWORD *)v49.q000 = dword_B46248; /*0x76139c*/
-      v49.q004 = dword_B4624C; /*0x7613a2*/
+      v49.Coord3D_field_0x08 = dword_B46250; /*0x761392*/
+      v18 = *(unsigned int *)&this->__pad_134[152]; /*0x761396*/
+      *(unsigned int *)v49.__pad_0 = dword_B46248; /*0x76139c*/
+      v49.Coord3D_field_0x04 = dword_B4624C; /*0x7613a2*/
       if ( v18 < 4 ) /*0x7613a6*/
       {
         v19 = i; /*0x7613ac*/
-        IDA_LOWORD(v20) = Math::RoundToInt(i); /*0x7613ca*/
+        LOWORD(v20) = Math::RoundToInt(i); /*0x7613ca*/
         v34 = v20; /*0x7613d5*/
-        IDA_LOWORD(v21) = Math::RoundToInt(v19); /*0x7613e2*/
+        LOWORD(v21) = Math::RoundToInt(v19); /*0x7613e2*/
         v31 = v21; /*0x7613ed*/
-        IDA_LOWORD(v22) = Math::RoundToInt(v19); /*0x7613fa*/
+        LOWORD(v22) = Math::RoundToInt(v19); /*0x7613fa*/
         v49 = *(Coord3D *)Coord3D::Set(&v50, v22, v31, v34); /*0x761411*/
-        v40 = *(float *)CellStruct::Set((CellStruct *)&v42, *(_DWORD *)v49.q000 / 256, v49.q004 / 256); /*0x76144f*/
-        if ( *(_DWORD *)v36 != IDA_LODWORD(v40) ) /*0x761453*/
+        v40 = *(float *)CellStruct::Set((CellStruct *)&v42, *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76144f*/
+        if ( *(unsigned int *)v36 != LODWORD(v40) ) /*0x761453*/
         {
-          *(_DWORD *)v36 = *(_DWORD *)CellStruct::Set( /*0x761498*/
+          *(unsigned int *)v36 = *(unsigned int *)CellStruct::Set( /*0x761498*/
                                         (CellStruct *)&v43,
-                                        *(_DWORD *)v49.q000 / 256,
-                                        v49.q004 / 256);
+                                        *(unsigned int *)v49.__pad_0 / 256,
+                                        v49.Coord3D_field_0x04 / 256);
           v23 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x76149c*/
-          v24 = *(_DWORD *)v2->q000; /*0x7614a1*/
+          v24 = *(unsigned int *)v2->__pad_0; /*0x7614a1*/
           v39 = v23; /*0x7614a4*/
-          if ( (*(int (__thiscall **)(Voxel *, void **))(v24 + 16))(v2, &v39) == -1 ) /*0x7614b5*/
+          if ( (*(int (**)(Voxel *, void **))(v24 + 16))(v2, &v39) == -1 ) /*0x7614b5*/
             Voxel::freeSectionMemory(v2, &v39); /*0x7614be*/
         }
       }
       v25 = i; /*0x7614c3*/
       v40 = i; /*0x7614c7*/
-      IDA_LOWORD(v26) = Math::RoundToInt(i); /*0x7614e5*/
+      LOWORD(v26) = Math::RoundToInt(i); /*0x7614e5*/
       v35 = v26; /*0x7614f0*/
-      IDA_LOWORD(v27) = Math::RoundToInt(v25); /*0x7614fd*/
+      LOWORD(v27) = Math::RoundToInt(v25); /*0x7614fd*/
       v32 = v27; /*0x761508*/
-      IDA_LOWORD(v28) = Math::RoundToInt(v25); /*0x761515*/
+      LOWORD(v28) = Math::RoundToInt(v25); /*0x761515*/
       v49 = *(Coord3D *)Coord3D::Set(&v51, v28, v32, v35); /*0x76152c*/
-      v41 = *(_DWORD *)CellStruct::Set((CellStruct *)&v44, *(_DWORD *)v49.q000 / 256, v49.q004 / 256); /*0x76156e*/
+      v41 = *(unsigned int *)CellStruct::Set((CellStruct *)&v44, *(unsigned int *)v49.__pad_0 / 256, v49.Coord3D_field_0x04 / 256); /*0x76156e*/
       if ( (unsigned __int8)Coord::Compare2D((Coord *)v37, &v41) ) /*0x761572*/
       {
-        *(_DWORD *)v37 = *Coord::ToCell((Coord *)&v49, v45); /*0x761592*/
-        Voxel::renderSection(v37); /*0x761596*/
+        *(unsigned int *)v37 = *Coord::ToCell((Coord *)&v49, v45); /*0x761592*/
+        Voxel::renderSection(this, v37); /*0x761596*/
       }
-      if ( *(int *)&this->q134[152] >= 4 ) /*0x7615a1*/
+      if ( *(int *)&this->__pad_134[152] >= 4 ) /*0x7615a1*/
       {
         v49 = *(Coord3D *)Color::RGBFromFloat(&v52, (int)&this->__pad_D0[56], v40); /*0x7615ba*/
         v29 = Coord::ToCell((Coord *)&v49, v46); /*0x7615d5*/
         if ( (unsigned __int8)Coord::Compare2D((Coord *)v38, v29) ) /*0x7615df*/
         {
-          *(_DWORD *)v38 = *Coord::ToCell((Coord *)&v49, v47); /*0x7615ff*/
-          Voxel::renderSection(v38); /*0x761603*/
+          *(unsigned int *)v38 = *Coord::ToCell((Coord *)&v49, v47); /*0x7615ff*/
+          Voxel::renderSection(this, v38); /*0x761603*/
         }
       }
     }
   }
+
 }
 }
 // 0x761640
 namespace gamemd {
 int Voxel::SectionProject(int * a2, int a3)
 {
+
   double v3; // st7
   int v6; // eax
   float v7; // eax
@@ -2235,7 +2252,7 @@ int Voxel::SectionProject(int * a2, int a3)
   float v45; // eax
   int v46; // eax
   float v47; // edx
-  _DWORD *v48; // eax
+  unsigned int *v48; // eax
   int v49; // eax
   int v50; // eax
   int result; // eax
@@ -2334,7 +2351,7 @@ int Voxel::SectionProject(int * a2, int a3)
     dword_B45E64 = 0; /*0x7619ba*/
     atexit(nullsub_46); /*0x7619c0*/
   }
-  _ESI = *(_DWORD *)&this->q0A0[16]; /*0x7619cb*/
+  _ESI = *(unsigned int *)&this->__pad_A0[16]; /*0x7619cb*/
   __asm { fld ds:flt_7F6BB4[esi*4] } /*0x7619d6*/
   v61 = *a2; /*0x7619dd*/
   __asm /*0x7619e3*/
@@ -2354,8 +2371,8 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v7) = Math::RoundToInt(v3); /*0x761a0b*/
-  v8 = *(_DWORD *)(a3 + 4); /*0x761a10*/
+  LOWORD(v7) = Math::RoundToInt(v3); /*0x761a0b*/
+  v8 = *(unsigned int *)(a3 + 4); /*0x761a10*/
   v56 = v7; /*0x761a13*/
   v79 = v8; /*0x761a17*/
   __asm /*0x761a1b*/
@@ -2366,9 +2383,9 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v9) = Math::RoundToInt(v3); /*0x761a29*/
+  LOWORD(v9) = Math::RoundToInt(v3); /*0x761a29*/
   v57 = v9; /*0x761a2e*/
-  IDA_LODWORD(v59) = *(_DWORD *)(a3 + 8); /*0x761a35*/
+  LODWORD(v59) = *(unsigned int *)(a3 + 8); /*0x761a35*/
   __asm /*0x761a39*/
   {
     fild dword ptr [esp+0C8h+var_B4+4]
@@ -2377,11 +2394,11 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v10) = Math::RoundToInt(v3); /*0x761a47*/
+  LOWORD(v10) = Math::RoundToInt(v3); /*0x761a47*/
   __asm { fstp st } /*0x761a54*/
   __asm { fstp st }
   v64 = v56; /*0x761a5a*/
-  v65 = IDA_LODWORD(v57); /*0x761a5e*/
+  v65 = LODWORD(v57); /*0x761a5e*/
   v66 = v10; /*0x761a62*/
   if ( !_ESI ) /*0x761a66*/
     v66 = v10 + 50; /*0x761a6b*/
@@ -2398,7 +2415,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v11) = Math::RoundToInt(v3); /*0x761a96*/
+  LOWORD(v11) = Math::RoundToInt(v3); /*0x761a96*/
   __asm { fild [esp+0C8h+var_9C] } /*0x761a9b*/
   v12 = v11; /*0x761a9f*/
   __asm /*0x761aa1*/
@@ -2408,7 +2425,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v13) = Math::RoundToInt(v3); /*0x761aab*/
+  LOWORD(v13) = Math::RoundToInt(v3); /*0x761aab*/
   __asm { fild [esp+0C8h+var_98] } /*0x761ab0*/
   v14 = v13; /*0x761ab4*/
   __asm /*0x761ab6*/
@@ -2418,15 +2435,15 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v15) = Math::RoundToInt(v3); /*0x761ac0*/
+  LOWORD(v15) = Math::RoundToInt(v3); /*0x761ac0*/
   v61 = v12; /*0x761ac9*/
   __asm { fstp st } /*0x761acd*/
   v63 = v15; /*0x761acf*/
   v62 = v14; /*0x761ad9*/
   __asm { fstp st } /*0x761add*/
-  IDA_LODWORD(v59) = v12 - IDA_LODWORD(v64); /*0x761adf*/
+  LODWORD(v59) = v12 - LODWORD(v64); /*0x761adf*/
   __asm { fild dword ptr [esp+0C8h+var_B4+4] } /*0x761ae5*/
-  IDA_LODWORD(v59) = v14 - v65; /*0x761ae9*/
+  LODWORD(v59) = v14 - v65; /*0x761ae9*/
   __asm /*0x761af0*/
   {
     fild dword ptr [esp+0D0h+var_B4+4]
@@ -2441,32 +2458,32 @@ int Voxel::SectionProject(int * a2, int a3)
     fstp st
   }
   Math::Sqrt(v52); /*0x761b09*/
-  IDA_LOWORD(v16) = Math::RoundToInt(v3); /*0x761b11*/
-  IDA_LODWORD(v59) = v16; /*0x761b1a*/
-  *(_DWORD *)&this->q0A0[20] = v12; /*0x761b27*/
-  *(_DWORD *)&this->q0A0[24] = v62; /*0x761b2d*/
-  *(_DWORD *)&this->q0A0[28] = v63; /*0x761b34*/
-  (*(void (__thiscall **)(Voxel *, char *))(*(_DWORD *)this->q000 + 436))(this, &this->q0A0[20]); /*0x761b3b*/
+  LOWORD(v16) = Math::RoundToInt(v3); /*0x761b11*/
+  LODWORD(v59) = v16; /*0x761b1a*/
+  *(unsigned int *)&this->__pad_A0[20] = v12; /*0x761b27*/
+  *(unsigned int *)&this->__pad_A0[24] = v62; /*0x761b2d*/
+  *(unsigned int *)&this->__pad_A0[28] = v63; /*0x761b34*/
+  (*(void (**)(Voxel *, char *))(*(unsigned int *)this->__pad_0 + 436))(this, &this->__pad_A0[20]); /*0x761b3b*/
   v17 = v64; /*0x761b41*/
   v18 = v65; /*0x761b45*/
-  *(_DWORD *)&this->q134[20] = 6; /*0x761b55*/
-  *(float *)&this->q0A0[32] = v17; /*0x761b60*/
+  *(unsigned int *)&this->__pad_134[20] = 6; /*0x761b55*/
+  *(float *)&this->__pad_A0[32] = v17; /*0x761b60*/
   v19 = v66; /*0x761b62*/
-  *(_DWORD *)&this->q0A0[36] = v18; /*0x761b66*/
-  *(_DWORD *)&this->q134[24] = &this->q134[28]; /*0x761b6f*/
-  *(_DWORD *)&this->q0A0[40] = v19; /*0x761b75*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, (int *)&this->q0CC); /*0x761b83*/
+  *(unsigned int *)&this->__pad_A0[36] = v18; /*0x761b66*/
+  *(unsigned int *)&this->__pad_134[24] = &this->__pad_134[28]; /*0x761b6f*/
+  *(unsigned int *)&this->__pad_A0[40] = v19; /*0x761b75*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, (int *)&this->Voxel_field_0xCC); /*0x761b83*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v64, (int *)&this->__pad_D0[4]); /*0x761b9a*/
-  v20 = *(_DWORD *)&this->q134[24]; /*0x761b9f*/
+  v20 = *(unsigned int *)&this->__pad_134[24]; /*0x761b9f*/
   __asm { fild dword ptr [esp+0C8h+var_B4+4] } /*0x761ba7*/
-  *(_DWORD *)(v20 + 8) = *(_DWORD *)&this->__pad_D0[4]; /*0x761bab*/
-  *(_DWORD *)(v20 + 12) = *(_DWORD *)&this->__pad_D0[8]; /*0x761bb1*/
-  v21 = *(_DWORD *)&this->q134[24]; /*0x761bb4*/
-  *(_DWORD *)(v21 + 32) = this->q0CC; /*0x761bbc*/
+  *(unsigned int *)(v20 + 8) = *(unsigned int *)&this->__pad_D0[4]; /*0x761bab*/
+  *(unsigned int *)(v20 + 12) = *(unsigned int *)&this->__pad_D0[8]; /*0x761bb1*/
+  v21 = *(unsigned int *)&this->__pad_134[24]; /*0x761bb4*/
+  *(unsigned int *)(v21 + 32) = this->Voxel_field_0xCC; /*0x761bbc*/
   __asm { fld st } /*0x761bc2*/
-  *(_DWORD *)(v21 + 36) = *(_DWORD *)this->__pad_D0; /*0x761bc4*/
+  *(unsigned int *)(v21 + 36) = *(unsigned int *)this->__pad_D0; /*0x761bc4*/
   __asm { fld st } /*0x761bcd*/
-  _EAX = 48 * *(_DWORD *)&this->q0A0[16]; /*0x761bd2*/
+  _EAX = 48 * *(unsigned int *)&this->__pad_A0[16]; /*0x761bd2*/
   __asm /*0x761bd5*/
   {
     fadd dword ptr [eax+0B45DA8h]
@@ -2523,7 +2540,7 @@ int Voxel::SectionProject(int * a2, int a3)
   __asm { fstp dword ptr [esp+0C8h+var_B4] }
   v73 = v56; /*0x761cc5*/
   v74 = v57; /*0x761cc9*/
-  IDA_LODWORD(v59) = v66 - v63; /*0x761cdf*/
+  LODWORD(v59) = v66 - v63; /*0x761cdf*/
   __asm /*0x761ce7*/
   {
     fild dword ptr [esp+0C8h+var_B4+4]
@@ -2532,7 +2549,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fmul st, st(2)
   }
   __asm { fdiv st, st(3) }
-  IDA_LODWORD(v59) = IDA_LODWORD(v64) - v61; /*0x761d03*/
+  LODWORD(v59) = LODWORD(v64) - v61; /*0x761d03*/
   __asm /*0x761d0a*/
   {
     fadd st, st(1)
@@ -2558,7 +2575,7 @@ int Voxel::SectionProject(int * a2, int a3)
     fild dword ptr [esp+0D0h+var_B4+4]
     fst [esp+0D0h+var_BC]
   }
-  IDA_LODWORD(v59) = v65 - v62; /*0x761d4e*/
+  LODWORD(v59) = v65 - v62; /*0x761d4e*/
   __asm /*0x761d52*/
   {
     fild dword ptr [esp+0D0h+var_B4+4]
@@ -2649,7 +2666,7 @@ int Voxel::SectionProject(int * a2, int a3)
   }
   v74 = v28[1]; /*0x761e8e*/
   v75 = v28[2]; /*0x761e95*/
-  IDA_LOWORD(v29) = Math::RoundToInt(v3); /*0x761e99*/
+  LOWORD(v29) = Math::RoundToInt(v3); /*0x761e99*/
   __asm { fild [esp+0C8h+var_9C] } /*0x761e9e*/
   v30 = v29; /*0x761ea2*/
   __asm /*0x761ea4*/
@@ -2657,93 +2674,95 @@ int Voxel::SectionProject(int * a2, int a3)
     fst [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_60]
   }
-  IDA_LOWORD(v31) = Math::RoundToInt(v3); /*0x761eac*/
+  LOWORD(v31) = Math::RoundToInt(v3); /*0x761eac*/
   __asm { fld [esp+0C8h+var_5C] } /*0x761eb1*/
   v57 = v31; /*0x761eb5*/
-  IDA_LOWORD(v32) = Math::RoundToInt(v3); /*0x761eb9*/
+  LOWORD(v32) = Math::RoundToInt(v3); /*0x761eb9*/
   v33 = v57; /*0x761ebe*/
   __asm /*0x761eca*/
   {
     fld st
     fadd [esp+0C8h+var_88]
   }
-  *(_DWORD *)&this->__pad_D0[44] = v30; /*0x761ed0*/
+  *(unsigned int *)&this->__pad_D0[44] = v30; /*0x761ed0*/
   *(float *)&this->__pad_D0[48] = v33; /*0x761ed2*/
-  *(_DWORD *)&this->__pad_D0[52] = v32; /*0x761ed5*/
-  IDA_LOWORD(v34) = Math::RoundToInt(v3); /*0x761ed8*/
+  *(unsigned int *)&this->__pad_D0[52] = v32; /*0x761ed5*/
+  LOWORD(v34) = Math::RoundToInt(v3); /*0x761ed8*/
   __asm /*0x761edd*/
   {
     fld [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_84]
   }
   v35 = v34; /*0x761ee5*/
-  IDA_LOWORD(v36) = Math::RoundToInt(v3); /*0x761ee7*/
+  LOWORD(v36) = Math::RoundToInt(v3); /*0x761ee7*/
   __asm { fld [esp+0C8h+var_80] } /*0x761eec*/
   v57 = v36; /*0x761ef0*/
-  IDA_LOWORD(v37) = Math::RoundToInt(v3); /*0x761ef4*/
-  *(_DWORD *)&this->__pad_D0[56] = v35; /*0x761eff*/
+  LOWORD(v37) = Math::RoundToInt(v3); /*0x761ef4*/
+  *(unsigned int *)&this->__pad_D0[56] = v35; /*0x761eff*/
   __asm /*0x761f09*/
   {
     fld st
     fadd [esp+0C8h+var_7C]
   }
   *(float *)&this->__pad_D0[60] = v57; /*0x761f0f*/
-  *(_DWORD *)&this->__pad_D0[64] = v37; /*0x761f12*/
-  IDA_LOWORD(v38) = Math::RoundToInt(v3); /*0x761f15*/
+  *(unsigned int *)&this->__pad_D0[64] = v37; /*0x761f12*/
+  LOWORD(v38) = Math::RoundToInt(v3); /*0x761f15*/
   __asm /*0x761f1a*/
   {
     fld [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_78]
   }
   v39 = v38; /*0x761f22*/
-  IDA_LOWORD(v40) = Math::RoundToInt(v3); /*0x761f24*/
+  LOWORD(v40) = Math::RoundToInt(v3); /*0x761f24*/
   __asm { fld [esp+0C8h+var_74] } /*0x761f29*/
   v57 = v40; /*0x761f2d*/
-  IDA_LOWORD(v41) = Math::RoundToInt(v3); /*0x761f31*/
+  LOWORD(v41) = Math::RoundToInt(v3); /*0x761f31*/
   v42 = v57; /*0x761f36*/
   __asm { fadd [esp+0C8h+var_70] } /*0x761f40*/
-  *(_DWORD *)&this->__pad_D0[68] = v39; /*0x761f44*/
+  *(unsigned int *)&this->__pad_D0[68] = v39; /*0x761f44*/
   *(float *)&this->__pad_D0[72] = v42; /*0x761f46*/
-  *(_DWORD *)&this->__pad_D0[76] = v41; /*0x761f49*/
-  IDA_LOWORD(v43) = Math::RoundToInt(v3); /*0x761f4c*/
+  *(unsigned int *)&this->__pad_D0[76] = v41; /*0x761f49*/
+  LOWORD(v43) = Math::RoundToInt(v3); /*0x761f4c*/
   __asm /*0x761f51*/
   {
     fld [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_6C]
   }
   v44 = v43; /*0x761f59*/
-  IDA_LOWORD(v45) = Math::RoundToInt(v3); /*0x761f5b*/
+  LOWORD(v45) = Math::RoundToInt(v3); /*0x761f5b*/
   __asm { fld [esp+0C8h+var_68] } /*0x761f60*/
   v57 = v45; /*0x761f64*/
-  IDA_LOWORD(v46) = Math::RoundToInt(v3); /*0x761f68*/
+  LOWORD(v46) = Math::RoundToInt(v3); /*0x761f68*/
   v47 = v57; /*0x761f6d*/
-  *(_DWORD *)&this->__pad_D0[80] = v44; /*0x761f77*/
+  *(unsigned int *)&this->__pad_D0[80] = v44; /*0x761f77*/
   *(float *)&this->__pad_D0[84] = v47; /*0x761f85*/
-  *(_DWORD *)&this->__pad_D0[88] = v46; /*0x761f88*/
+  *(unsigned int *)&this->__pad_D0[88] = v46; /*0x761f88*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[44], (int *)&this->__pad_D0[12]); /*0x761f91*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[56], (int *)&this->__pad_D0[20]); /*0x761faa*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[68], (int *)&this->__pad_D0[28]); /*0x761fc3*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[80], (int *)&this->__pad_D0[36]); /*0x761fdc*/
-  v48 = *(_DWORD **)&this->q134[24]; /*0x761fe1*/
-  *v48 = *(_DWORD *)&this->__pad_D0[12]; /*0x761fe9*/
-  v48[1] = *(_DWORD *)&this->__pad_D0[16]; /*0x761fee*/
-  v49 = *(_DWORD *)&this->q134[24]; /*0x761ff1*/
-  *(_DWORD *)(v49 + 16) = *(_DWORD *)&this->__pad_D0[20]; /*0x761ff9*/
-  *(_DWORD *)(v49 + 20) = *(_DWORD *)&this->__pad_D0[24]; /*0x761fff*/
-  v50 = *(_DWORD *)&this->q134[24]; /*0x762002*/
-  *(_DWORD *)(v50 + 24) = *(_DWORD *)&this->__pad_D0[36]; /*0x76200e*/
-  *(_DWORD *)(v50 + 28) = *(_DWORD *)&this->__pad_D0[40]; /*0x762017*/
-  result = *(_DWORD *)&this->q134[24]; /*0x76201a*/
-  *(_DWORD *)(result + 40) = *(_DWORD *)&this->__pad_D0[28]; /*0x762026*/
-  *(_DWORD *)(result + 44) = *(_DWORD *)&this->__pad_D0[32]; /*0x762034*/
-  qmemcpy(&this->q134[164], (const void *)(*(_DWORD *)&this->q134[160] + 928), 0x18u); /*0x762049*/
+  v48 = *(unsigned int **)&this->__pad_134[24]; /*0x761fe1*/
+  *v48 = *(unsigned int *)&this->__pad_D0[12]; /*0x761fe9*/
+  v48[1] = *(unsigned int *)&this->__pad_D0[16]; /*0x761fee*/
+  v49 = *(unsigned int *)&this->__pad_134[24]; /*0x761ff1*/
+  *(unsigned int *)(v49 + 16) = *(unsigned int *)&this->__pad_D0[20]; /*0x761ff9*/
+  *(unsigned int *)(v49 + 20) = *(unsigned int *)&this->__pad_D0[24]; /*0x761fff*/
+  v50 = *(unsigned int *)&this->__pad_134[24]; /*0x762002*/
+  *(unsigned int *)(v50 + 24) = *(unsigned int *)&this->__pad_D0[36]; /*0x76200e*/
+  *(unsigned int *)(v50 + 28) = *(unsigned int *)&this->__pad_D0[40]; /*0x762017*/
+  result = *(unsigned int *)&this->__pad_134[24]; /*0x76201a*/
+  *(unsigned int *)(result + 40) = *(unsigned int *)&this->__pad_D0[28]; /*0x762026*/
+  *(unsigned int *)(result + 44) = *(unsigned int *)&this->__pad_D0[32]; /*0x762034*/
+  qmemcpy(&this->__pad_134[164], (const void *)(*(unsigned int *)&this->__pad_134[160] + 928), 0x18u); /*0x762049*/
   return result; /*0x76204b*/
+
 }
 }
 // 0x762070
 namespace gamemd {
 AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
 {
+
   double v3; // st7
   int v6; // eax
   float v7; // eax
@@ -2783,7 +2802,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   float v44; // eax
   int v45; // eax
   float v46; // edx
-  _DWORD *v47; // eax
+  unsigned int *v47; // eax
   int v48; // eax
   int v49; // eax
   int result; // eax
@@ -2883,7 +2902,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     dword_B45D5C = 0; /*0x7623ea*/
     atexit(nullsub_47); /*0x7623f0*/
   }
-  _ESI = *(_DWORD *)&this->q0A0[16]; /*0x7623fb*/
+  _ESI = *(unsigned int *)&this->__pad_A0[16]; /*0x7623fb*/
   __asm { fld ds:flt_7F6BB4[esi*4] } /*0x762406*/
   v61 = *a2; /*0x76240d*/
   __asm /*0x762413*/
@@ -2903,7 +2922,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v7) = Math::RoundToInt(v3); /*0x76243b*/
+  LOWORD(v7) = Math::RoundToInt(v3); /*0x76243b*/
   v8 = *(float *)(a3 + 4); /*0x762440*/
   v56 = v7; /*0x762443*/
   v67 = v8; /*0x762447*/
@@ -2915,9 +2934,9 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v9) = Math::RoundToInt(v3); /*0x762459*/
+  LOWORD(v9) = Math::RoundToInt(v3); /*0x762459*/
   v57 = v9; /*0x76245e*/
-  IDA_LODWORD(v59) = *(_DWORD *)(a3 + 8); /*0x762465*/
+  LODWORD(v59) = *(unsigned int *)(a3 + 8); /*0x762465*/
   __asm /*0x762469*/
   {
     fild dword ptr [esp+0C8h+var_B4+4]
@@ -2926,11 +2945,11 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v10) = Math::RoundToInt(v3); /*0x762477*/
+  LOWORD(v10) = Math::RoundToInt(v3); /*0x762477*/
   __asm { fstp st } /*0x762484*/
   __asm { fstp st }
   v64 = v56; /*0x76248a*/
-  v65 = IDA_LODWORD(v57); /*0x76248e*/
+  v65 = LODWORD(v57); /*0x76248e*/
   v66 = v10; /*0x762492*/
   if ( !_ESI ) /*0x762496*/
     v66 = v10 + 50; /*0x76249b*/
@@ -2947,7 +2966,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v11) = Math::RoundToInt(v3); /*0x7624c6*/
+  LOWORD(v11) = Math::RoundToInt(v3); /*0x7624c6*/
   __asm { fild [esp+0C8h+var_9C] } /*0x7624cb*/
   v12 = v11; /*0x7624cf*/
   __asm /*0x7624d1*/
@@ -2957,7 +2976,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v13) = Math::RoundToInt(v3); /*0x7624db*/
+  LOWORD(v13) = Math::RoundToInt(v3); /*0x7624db*/
   __asm { fild [esp+0C8h+var_98] } /*0x7624e0*/
   v14 = v13; /*0x7624e4*/
   __asm /*0x7624e6*/
@@ -2967,7 +2986,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fmul st, st(2)
     faddp st(1), st
   }
-  IDA_LOWORD(v15) = Math::RoundToInt(v3); /*0x7624f0*/
+  LOWORD(v15) = Math::RoundToInt(v3); /*0x7624f0*/
   v61 = v12; /*0x7624fd*/
   __asm /*0x762503*/
   {
@@ -2975,9 +2994,9 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fstp st
   }
   v62 = v14; /*0x762507*/
-  IDA_LODWORD(v59) = v12 - IDA_LODWORD(v64); /*0x76250b*/
+  LODWORD(v59) = v12 - LODWORD(v64); /*0x76250b*/
   __asm { fild dword ptr [esp+0C8h+var_B4+4] } /*0x76250f*/
-  IDA_LODWORD(v59) = v14 - v65; /*0x762518*/
+  LODWORD(v59) = v14 - v65; /*0x762518*/
   v63 = v15; /*0x76251c*/
   __asm /*0x762520*/
   {
@@ -2993,15 +3012,15 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fstp st
   }
   Math::Sqrt(v51); /*0x762539*/
-  IDA_LODWORD(v59) = v12 - IDA_LODWORD(v64); /*0x762556*/
+  LODWORD(v59) = v12 - LODWORD(v64); /*0x762556*/
   __asm /*0x76255a*/
   {
     fstp [esp+0D0h+var_88]
     fild dword ptr [esp+0D0h+var_B4+4]
   }
-  IDA_LODWORD(v59) = v14 - v65; /*0x762562*/
+  LODWORD(v59) = v14 - v65; /*0x762562*/
   __asm { fild dword ptr [esp+0D0h+var_B4+4] } /*0x76256a*/
-  IDA_LODWORD(v59) = v63 - v66; /*0x762570*/
+  LODWORD(v59) = v63 - v66; /*0x762570*/
   __asm /*0x762574*/
   {
     fstp [esp+0D0h+var_B8]
@@ -3022,27 +3041,27 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fstp st
   }
   Math::Sqrt(v52); /*0x76259d*/
-  IDA_LOWORD(v16) = Math::RoundToInt(v3); /*0x7625a5*/
+  LOWORD(v16) = Math::RoundToInt(v3); /*0x7625a5*/
   v60 = v16; /*0x7625ae*/
-  *(_DWORD *)&this->q0A0[20] = v12; /*0x7625bb*/
-  *(_DWORD *)&this->q0A0[24] = v62; /*0x7625c1*/
-  *(_DWORD *)&this->q0A0[28] = v63; /*0x7625c8*/
-  (*(void (__thiscall **)(Voxel *, char *))(*(_DWORD *)this->q000 + 436))(this, &this->q0A0[20]); /*0x7625cf*/
+  *(unsigned int *)&this->__pad_A0[20] = v12; /*0x7625bb*/
+  *(unsigned int *)&this->__pad_A0[24] = v62; /*0x7625c1*/
+  *(unsigned int *)&this->__pad_A0[28] = v63; /*0x7625c8*/
+  (*(void (**)(Voxel *, char *))(*(unsigned int *)this->__pad_0 + 436))(this, &this->__pad_A0[20]); /*0x7625cf*/
   v17 = v64; /*0x7625d5*/
   v18 = v65; /*0x7625d9*/
-  *(_DWORD *)&this->q134[20] = 4; /*0x7625e3*/
-  *(float *)&this->q0A0[32] = v17; /*0x7625ed*/
+  *(unsigned int *)&this->__pad_134[20] = 4; /*0x7625e3*/
+  *(float *)&this->__pad_A0[32] = v17; /*0x7625ed*/
   v19 = v66; /*0x7625ef*/
-  *(_DWORD *)&this->q0A0[36] = v18; /*0x7625f3*/
-  *(_DWORD *)&this->q134[24] = &this->q134[76]; /*0x7625fc*/
-  *(_DWORD *)&this->q0A0[40] = v19; /*0x762602*/
-  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, (int *)&this->q0CC); /*0x762617*/
+  *(unsigned int *)&this->__pad_A0[36] = v18; /*0x7625f3*/
+  *(unsigned int *)&this->__pad_134[24] = &this->__pad_134[76]; /*0x7625fc*/
+  *(unsigned int *)&this->__pad_A0[40] = v19; /*0x762602*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v61, (int *)&this->Voxel_field_0xCC); /*0x762617*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v64, (int *)&this->__pad_D0[4]); /*0x76262e*/
   __asm { fld [esp+0C8h+var_88] } /*0x762633*/
-  IDA_LOWORD(v20) = Math::RoundToInt(v3); /*0x762637*/
-  IDA_LODWORD(v59) = v20; /*0x76263c*/
+  LOWORD(v20) = Math::RoundToInt(v3); /*0x762637*/
+  LODWORD(v59) = v20; /*0x76263c*/
   __asm { fild dword ptr [esp+0C8h+var_B4+4] } /*0x762646*/
-  _EAX = 48 * *(_DWORD *)&this->q0A0[16]; /*0x76264d*/
+  _EAX = 48 * *(unsigned int *)&this->__pad_A0[16]; /*0x76264d*/
   __asm /*0x762650*/
   {
     fld st
@@ -3102,7 +3121,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   }
   v71 = v56; /*0x76273e*/
   __asm { fstp dword ptr [esp+0C8h+var_B4] } /*0x76274c*/
-  IDA_LODWORD(v59) = v66 - v63; /*0x762750*/
+  LODWORD(v59) = v66 - v63; /*0x762750*/
   __asm /*0x762758*/
   {
     fild dword ptr [esp+0C8h+var_B4+4]
@@ -3113,7 +3132,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   }
   v72 = v57; /*0x762779*/
   __asm { fdiv st, st(2) } /*0x76277d*/
-  IDA_LODWORD(v59) = IDA_LODWORD(v64) - v61; /*0x76278a*/
+  LODWORD(v59) = LODWORD(v64) - v61; /*0x76278a*/
   __asm /*0x76278e*/
   {
     fadd st, st(1)
@@ -3139,7 +3158,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fild dword ptr [esp+0D0h+var_B4+4]
     fst [esp+0D0h+var_BC]
   }
-  IDA_LODWORD(v59) = v65 - v62; /*0x7627cf*/
+  LODWORD(v59) = v65 - v62; /*0x7627cf*/
   __asm /*0x7627d3*/
   {
     fild dword ptr [esp+0D0h+var_B4+4]
@@ -3230,7 +3249,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   }
   v72 = v27[1]; /*0x76290f*/
   v73 = v27[2]; /*0x762916*/
-  IDA_LOWORD(v28) = Math::RoundToInt(v3); /*0x76291a*/
+  LOWORD(v28) = Math::RoundToInt(v3); /*0x76291a*/
   __asm { fild [esp+0C8h+var_9C] } /*0x76291f*/
   v29 = v28; /*0x762923*/
   __asm /*0x762925*/
@@ -3238,87 +3257,88 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
     fst [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_68]
   }
-  IDA_LOWORD(v30) = Math::RoundToInt(v3); /*0x76292d*/
+  LOWORD(v30) = Math::RoundToInt(v3); /*0x76292d*/
   __asm { fld [esp+0C8h+var_64] } /*0x762932*/
   v57 = v30; /*0x762936*/
-  IDA_LOWORD(v31) = Math::RoundToInt(v3); /*0x76293a*/
+  LOWORD(v31) = Math::RoundToInt(v3); /*0x76293a*/
   v32 = v57; /*0x76293f*/
   __asm /*0x76294b*/
   {
     fld st
     fadd [esp+0C8h+var_84]
   }
-  *(_DWORD *)&this->__pad_D0[44] = v29; /*0x762951*/
+  *(unsigned int *)&this->__pad_D0[44] = v29; /*0x762951*/
   *(float *)&this->__pad_D0[48] = v32; /*0x762953*/
-  *(_DWORD *)&this->__pad_D0[52] = v31; /*0x762956*/
-  IDA_LOWORD(v33) = Math::RoundToInt(v3); /*0x762959*/
+  *(unsigned int *)&this->__pad_D0[52] = v31; /*0x762956*/
+  LOWORD(v33) = Math::RoundToInt(v3); /*0x762959*/
   __asm /*0x76295e*/
   {
     fld [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_80]
   }
   v34 = v33; /*0x762966*/
-  IDA_LOWORD(v35) = Math::RoundToInt(v3); /*0x762968*/
+  LOWORD(v35) = Math::RoundToInt(v3); /*0x762968*/
   __asm { fld [esp+0C8h+var_7C] } /*0x76296d*/
   v57 = v35; /*0x762971*/
-  IDA_LOWORD(v36) = Math::RoundToInt(v3); /*0x762975*/
-  *(_DWORD *)&this->__pad_D0[56] = v34; /*0x762980*/
+  LOWORD(v36) = Math::RoundToInt(v3); /*0x762975*/
+  *(unsigned int *)&this->__pad_D0[56] = v34; /*0x762980*/
   __asm /*0x76298a*/
   {
     fld st
     fadd [esp+0C8h+var_60]
   }
   *(float *)&this->__pad_D0[60] = v57; /*0x762990*/
-  *(_DWORD *)&this->__pad_D0[64] = v36; /*0x762993*/
-  IDA_LOWORD(v37) = Math::RoundToInt(v3); /*0x762996*/
+  *(unsigned int *)&this->__pad_D0[64] = v36; /*0x762993*/
+  LOWORD(v37) = Math::RoundToInt(v3); /*0x762996*/
   __asm /*0x76299b*/
   {
     fld [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_5C]
   }
   v38 = v37; /*0x7629a3*/
-  IDA_LOWORD(v39) = Math::RoundToInt(v3); /*0x7629a5*/
+  LOWORD(v39) = Math::RoundToInt(v3); /*0x7629a5*/
   __asm { fld [esp+0C8h+var_58] } /*0x7629aa*/
   v57 = v39; /*0x7629ae*/
-  IDA_LOWORD(v40) = Math::RoundToInt(v3); /*0x7629b2*/
+  LOWORD(v40) = Math::RoundToInt(v3); /*0x7629b2*/
   v41 = v57; /*0x7629b7*/
   __asm { fadd [esp+0C8h+var_78] } /*0x7629c1*/
-  *(_DWORD *)&this->__pad_D0[68] = v38; /*0x7629c5*/
+  *(unsigned int *)&this->__pad_D0[68] = v38; /*0x7629c5*/
   *(float *)&this->__pad_D0[72] = v41; /*0x7629c7*/
-  *(_DWORD *)&this->__pad_D0[76] = v40; /*0x7629ca*/
-  IDA_LOWORD(v42) = Math::RoundToInt(v3); /*0x7629cd*/
+  *(unsigned int *)&this->__pad_D0[76] = v40; /*0x7629ca*/
+  LOWORD(v42) = Math::RoundToInt(v3); /*0x7629cd*/
   __asm /*0x7629d2*/
   {
     fld [esp+0C8h+var_A4]
     fadd [esp+0C8h+var_74]
   }
   v43 = v42; /*0x7629da*/
-  IDA_LOWORD(v44) = Math::RoundToInt(v3); /*0x7629dc*/
+  LOWORD(v44) = Math::RoundToInt(v3); /*0x7629dc*/
   __asm { fld [esp+0C8h+var_70] } /*0x7629e1*/
   v57 = v44; /*0x7629e5*/
-  IDA_LOWORD(v45) = Math::RoundToInt(v3); /*0x7629e9*/
+  LOWORD(v45) = Math::RoundToInt(v3); /*0x7629e9*/
   v46 = v57; /*0x7629ee*/
-  *(_DWORD *)&this->__pad_D0[80] = v43; /*0x7629f8*/
+  *(unsigned int *)&this->__pad_D0[80] = v43; /*0x7629f8*/
   *(float *)&this->__pad_D0[84] = v46; /*0x762a06*/
-  *(_DWORD *)&this->__pad_D0[88] = v45; /*0x762a09*/
+  *(unsigned int *)&this->__pad_D0[88] = v45; /*0x762a09*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[44], (int *)&this->__pad_D0[12]); /*0x762a12*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[56], (int *)&this->__pad_D0[20]); /*0x762a2b*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[68], (int *)&this->__pad_D0[28]); /*0x762a44*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, &this->__pad_D0[80], (int *)&this->__pad_D0[36]); /*0x762a5d*/
-  v47 = *(_DWORD **)&this->q134[24]; /*0x762a62*/
-  *v47 = *(_DWORD *)&this->__pad_D0[12]; /*0x762a6a*/
-  v47[1] = *(_DWORD *)&this->__pad_D0[16]; /*0x762a6f*/
-  v48 = *(_DWORD *)&this->q134[24]; /*0x762a72*/
-  *(_DWORD *)(v48 + 8) = *(_DWORD *)&this->__pad_D0[20]; /*0x762a7a*/
-  *(_DWORD *)(v48 + 12) = *(_DWORD *)&this->__pad_D0[24]; /*0x762a80*/
-  v49 = *(_DWORD *)&this->q134[24]; /*0x762a83*/
-  *(_DWORD *)(v49 + 16) = *(_DWORD *)&this->__pad_D0[36]; /*0x762a8f*/
-  *(_DWORD *)(v49 + 20) = *(_DWORD *)&this->__pad_D0[40]; /*0x762a98*/
-  result = *(_DWORD *)&this->q134[24]; /*0x762a9b*/
-  *(_DWORD *)(result + 24) = *(_DWORD *)&this->__pad_D0[28]; /*0x762aa7*/
-  *(_DWORD *)(result + 28) = *(_DWORD *)&this->__pad_D0[32]; /*0x762ab5*/
-  qmemcpy(&this->q134[164], (const void *)(*(_DWORD *)&this->q134[160] + 928), 0x18u); /*0x762aca*/
+  v47 = *(unsigned int **)&this->__pad_134[24]; /*0x762a62*/
+  *v47 = *(unsigned int *)&this->__pad_D0[12]; /*0x762a6a*/
+  v47[1] = *(unsigned int *)&this->__pad_D0[16]; /*0x762a6f*/
+  v48 = *(unsigned int *)&this->__pad_134[24]; /*0x762a72*/
+  *(unsigned int *)(v48 + 8) = *(unsigned int *)&this->__pad_D0[20]; /*0x762a7a*/
+  *(unsigned int *)(v48 + 12) = *(unsigned int *)&this->__pad_D0[24]; /*0x762a80*/
+  v49 = *(unsigned int *)&this->__pad_134[24]; /*0x762a83*/
+  *(unsigned int *)(v49 + 16) = *(unsigned int *)&this->__pad_D0[36]; /*0x762a8f*/
+  *(unsigned int *)(v49 + 20) = *(unsigned int *)&this->__pad_D0[40]; /*0x762a98*/
+  result = *(unsigned int *)&this->__pad_134[24]; /*0x762a9b*/
+  *(unsigned int *)(result + 24) = *(unsigned int *)&this->__pad_D0[28]; /*0x762aa7*/
+  *(unsigned int *)(result + 28) = *(unsigned int *)&this->__pad_D0[32]; /*0x762ab5*/
+  qmemcpy(&this->__pad_134[164], (const void *)(*(unsigned int *)&this->__pad_134[160] + 928), 0x18u); /*0x762aca*/
   return result; /*0x762acc*/
+
 }
 }
 // 0x762AF0
@@ -3334,7 +3354,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   int v8; // edi
   int v9; // ebp
   int v10; // ebx
-  _DWORD *v11; // eax
+  unsigned int *v11; // eax
   int v12; // ebx
   int v13; // ebp
   int v14; // eax
@@ -3353,7 +3373,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   int v27; // eax
   int v28; // edi
   int v29; // eax
-  _DWORD *v30; // ecx
+  unsigned int *v30; // ecx
   double v31; // st7
   int v32; // eax
   int v33; // edi
@@ -3372,7 +3392,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   double v49; // st7
   int v50; // eax
   int v52; // eax
-  _DWORD *v53; // ecx
+  unsigned int *v53; // ecx
   double v54; // st7
   int v55; // eax
   int v57; // eax
@@ -3398,21 +3418,21 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   int v85[3]; // [esp+30h] [ebp-Ch] BYREF
 
   if ( *(double *)(&this->WaveClass_field_1282) - *(double *)(&this->WaveClass_field_12C0) > 0.1 && !this->WaveClass_field_15C ) /*0x762b18*/
-    this->q12D = 1; /*0x762b22*/
-  IDA_LOWORD(v2) = Math::RoundToInt(1.0 / 0.050000001); /*0x762b35*/
+    this->WaveClass_field_12D_d = 1; /*0x762b22*/
+  (*((unsigned short *)&(v2))) = Math::RoundToInt(1.0 / 0.050000001); /*0x762b35*/
   if ( this->Cells == v2 && this->WaveClass_field_15C == 3 ) /*0x762b49*/
   {
-    v3 = this->q134; /*0x762b4b*/
+    v3 = this->WaveClass_field_134_d; /*0x762b4b*/
     this->Cells = 64; /*0x762b51*/
-    this->q134 = v3 + 1; /*0x762b5c*/
+    this->WaveClass_field_134_d = v3 + 1; /*0x762b5c*/
   }
   v4 = this->WaveClass_field_158; /*0x762b62*/
   if ( !v4 ) /*0x762b6a*/
     goto LABEL_13; /*0x762b6a*/
-  v5 = this->q1D4; /*0x762b70*/
+  v5 = this->Owner_d; /*0x762b70*/
   if ( !v5 ) /*0x762b78*/
     goto LABEL_13; /*0x762b78*/
-  IDA_LOWORD(v6) = Math::RoundToInt(1.0 / 0.050000001); /*0x762b8a*/
+  (*((unsigned short *)&(v6))) = Math::RoundToInt(1.0 / 0.050000001); /*0x762b8a*/
   if ( this->Cells == v6 ) /*0x762b95*/
     goto LABEL_13; /*0x762b95*/
   if ( v5->target != v4 ) /*0x762ba1*/
@@ -3421,9 +3441,9 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   {
     v7 = v5 + 156; /*0x762bc0*/
     v8 = v5->location; /*0x762bc4*/
-    v9 = *(_DWORD *)(v7 + 4); /*0x762bc6*/
-    v10 = *(_DWORD *)(v7 + 8); /*0x762bc9*/
-    v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(&this->WaveClass_field_F02) + 88))( /*0x762bd1*/
+    v9 = *(unsigned int *)(v7 + 4); /*0x762bc6*/
+    v10 = *(unsigned int *)(v7 + 8); /*0x762bc9*/
+    v11 = (unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(&this->WaveClass_field_F02) + 88))( /*0x762bd1*/
                       this->WaveClass_field_158,
                       v85);
     v12 = v10 - v11[2]; /*0x762bdb*/
@@ -3432,13 +3452,13 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
     v12 = v12; /*0x762be6*/
     v13 = v13; /*0x762bea*/
     Math::Sqrt((double)v82 * (double)v82 + (double)v12 * (double)v12 + (double)v13 * (double)v13); /*0x762c16*/
-    IDA_LOWORD(v14) = Math::RoundToInt(1.0 / 0.050000001); /*0x762c1e*/
+    (*((unsigned short *)&(v14))) = Math::RoundToInt(1.0 / 0.050000001); /*0x762c1e*/
     v14 = v14; /*0x762c23*/
     if ( dbl_B45D80 * 6.0 < (double)v14 ) /*0x762c3e*/
     {
   LABEL_13:
       this->Facing = 0; /*0x762c40*/
-      this->q12D = 1; /*0x762c47*/
+      this->WaveClass_field_12D_d = 1; /*0x762c47*/
     }
   }
   if ( this->Facing ) /*0x762c4e*/
@@ -3446,24 +3466,24 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
     if ( this->WaveClass_field_15C != 3 ) /*0x762c69*/
       goto LABEL_21; /*0x762c69*/
     v15 = this->WaveClass_field_158; /*0x762c6f*/
-    if ( v15 && (*(int (__thiscall **)(int))(*(_DWORD *)v15 + 44))(v15) == 1 ) /*0x762c81*/
+    if ( v15 && (*(int (**)(int))(*(unsigned int *)v15 + 44))(v15) == 1 ) /*0x762c81*/
     {
       v16 = this->WaveClass_field_158; /*0x762c97*/
-      v17 = (*(int (__thiscall **)(_DWORD, int *, _DWORD, _DWORD, _DWORD))(**(_DWORD **)(&this->WaveClass_field_1648) + 176))( /*0x762ca9*/
-              this->q1D4,
+      v17 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(&this->WaveClass_field_1648) + 176))( /*0x762ca9*/
+              this->Owner_d,
               v85,
               0,
               0,
               0);
-      v18 = (int *)(*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v16 + 88))(v16, &v14, v17); /*0x762cb9*/
+      v18 = (int *)(*(int (**)(int, int *, int))(*(unsigned int *)v16 + 88))(v16, &v14, v17); /*0x762cb9*/
       Voxel::LightRender(v18, 0); /*0x762cbf*/
       goto LABEL_22; /*0x762cc4*/
     }
     if ( this->WaveClass_field_15C == 3 ) /*0x762ccf*/
     {
-      v19 = this->q1D4; /*0x762cd7*/
-      v20 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->WaveClass_field_F02) + 88))(this->WaveClass_field_158); /*0x762ce8*/
-      v21 = (int *)(*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int))(v19->suspendedMission)( /*0x762d05*/
+      v19 = this->Owner_d; /*0x762cd7*/
+      v20 = (*(int (**)(unsigned int))(**(unsigned int **)(&this->WaveClass_field_F02) + 88))(this->WaveClass_field_158); /*0x762ce8*/
+      v21 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int))(v19->suspendedMission)( /*0x762d05*/
                      v19,
                      &v14,
                      0,
@@ -3476,9 +3496,9 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
     else
     {
   LABEL_21:
-      v22 = this->q1D4; /*0x762d1b*/
-      v23 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->WaveClass_field_F02) + 88))(this->WaveClass_field_158); /*0x762d2c*/
-      v24 = (int *)(*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int))(v22->suspendedMission)( /*0x762d49*/
+      v22 = this->Owner_d; /*0x762d1b*/
+      v23 = (*(int (**)(unsigned int))(**(unsigned int **)(&this->WaveClass_field_F02) + 88))(this->WaveClass_field_158); /*0x762d2c*/
+      v24 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int))(v22->suspendedMission)( /*0x762d49*/
                      v22,
                      &v14,
                      0,
@@ -3498,57 +3518,57 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
       *(double *)(&this->WaveClass_field_1282) = v48; /*0x762f83*/
       if ( v48 > 0.98 ) /*0x762f94*/
       {
-        this->q138 = 0; /*0x762f96*/
-        this->q13C = 1072693248; /*0x762fa0*/
+        this->WaveClass_field_138_d = 0; /*0x762f96*/
+        this->WaveClass_field_13C_d = 1072693248; /*0x762fa0*/
       }
       v49 = *(double *)(&this->WaveClass_field_1282); /*0x762faa*/
-      IDA_LOWORD(v50) = Math::RoundToInt(v49); /*0x762fca*/
+      (*((unsigned short *)&(v50))) = Math::RoundToInt(v49); /*0x762fca*/
       v50 = v50; /*0x762fd5*/
-      IDA_LOWORD(v52) = Math::RoundToInt(v49); /*0x762fe3*/
-      v53 = *(_DWORD **)(&this->WaveIntensity2); /*0x762fe8*/
+      (*((unsigned short *)&(v52))) = Math::RoundToInt(v49); /*0x762fe3*/
+      v53 = *(unsigned int **)(&this->WaveIntensity2); /*0x762fe8*/
       *v53 = v50; /*0x762ff0*/
       v53[1] = v52; /*0x762ff4*/
       v54 = *(double *)(&this->WaveClass_field_1282); /*0x762ff7*/
-      IDA_LOWORD(v55) = Math::RoundToInt(v54); /*0x763017*/
+      (*((unsigned short *)&(v55))) = Math::RoundToInt(v54); /*0x763017*/
       v55 = v55; /*0x763022*/
-      IDA_LOWORD(v57) = Math::RoundToInt(v54); /*0x763030*/
-      v58 = this->q14C; /*0x763035*/
-      *(_DWORD *)(v58 + 8) = v55; /*0x76303d*/
-      *(_DWORD *)(v58 + 12) = v57; /*0x763042*/
+      (*((unsigned short *)&(v57))) = Math::RoundToInt(v54); /*0x763030*/
+      v58 = this->WaveClass_field_14C_d; /*0x763035*/
+      *(unsigned int *)(v58 + 8) = v55; /*0x76303d*/
+      *(unsigned int *)(v58 + 12) = v57; /*0x763042*/
       v59 = *(double *)(&this->WaveClass_field_1282); /*0x763045*/
-      IDA_LOWORD(v60) = Math::RoundToInt(v59); /*0x763065*/
+      (*((unsigned short *)&(v60))) = Math::RoundToInt(v59); /*0x763065*/
       v60 = v60; /*0x763070*/
-      IDA_LOWORD(v62) = Math::RoundToInt(v59); /*0x76307e*/
-      v63 = this->q14C; /*0x763083*/
-      *(_DWORD *)(v63 + 16) = v60; /*0x76308b*/
-      *(_DWORD *)(v63 + 20) = v62; /*0x763090*/
+      (*((unsigned short *)&(v62))) = Math::RoundToInt(v59); /*0x76307e*/
+      v63 = this->WaveClass_field_14C_d; /*0x763083*/
+      *(unsigned int *)(v63 + 16) = v60; /*0x76308b*/
+      *(unsigned int *)(v63 + 20) = v62; /*0x763090*/
     }
-    if ( this->q12D && 0.050000001 * 0.5 + *(double *)(&this->WaveClass_field_1282) >= *(double *)(&this->WaveClass_field_12C0) ) /*0x7630be*/
+    if ( this->WaveClass_field_12D_d && 0.050000001 * 0.5 + *(double *)(&this->WaveClass_field_1282) >= *(double *)(&this->WaveClass_field_12C0) ) /*0x7630be*/
     {
       v64 = *(double *)(&this->WaveClass_field_12C0) + 0.050000001; /*0x7630ca*/
       *(double *)(&this->WaveClass_field_12C0) = v64; /*0x7630d6*/
       if ( !v66 ) /*0x7630e1*/
         goto LABEL_31; /*0x7630e1*/
-      IDA_LOWORD(v67) = Math::RoundToInt(v64); /*0x763111*/
+      (*((unsigned short *)&(v67))) = Math::RoundToInt(v64); /*0x763111*/
       v67 = v67; /*0x76311c*/
-      IDA_LOWORD(v69) = Math::RoundToInt(v64); /*0x76312a*/
-      v70 = this->q14C; /*0x76312f*/
-      *(_DWORD *)(v70 + 24) = v67; /*0x763137*/
-      *(_DWORD *)(v70 + 28) = v69; /*0x76313c*/
+      (*((unsigned short *)&(v69))) = Math::RoundToInt(v64); /*0x76312a*/
+      v70 = this->WaveClass_field_14C_d; /*0x76312f*/
+      *(unsigned int *)(v70 + 24) = v67; /*0x763137*/
+      *(unsigned int *)(v70 + 28) = v69; /*0x76313c*/
       v71 = *(double *)(&this->WaveClass_field_12C0); /*0x76313f*/
-      IDA_LOWORD(v72) = Math::RoundToInt(v71); /*0x76315f*/
+      (*((unsigned short *)&(v72))) = Math::RoundToInt(v71); /*0x76315f*/
       v72 = v72; /*0x76316a*/
-      IDA_LOWORD(v74) = Math::RoundToInt(v71); /*0x763178*/
-      v75 = this->q14C; /*0x76317d*/
-      *(_DWORD *)(v75 + 32) = v72; /*0x763185*/
-      *(_DWORD *)(v75 + 36) = v74; /*0x76318a*/
+      (*((unsigned short *)&(v74))) = Math::RoundToInt(v71); /*0x763178*/
+      v75 = this->WaveClass_field_14C_d; /*0x76317d*/
+      *(unsigned int *)(v75 + 32) = v72; /*0x763185*/
+      *(unsigned int *)(v75 + 36) = v74; /*0x76318a*/
       v76 = *(double *)(&this->WaveClass_field_12C0); /*0x76318d*/
-      IDA_LOWORD(v77) = Math::RoundToInt(v76); /*0x7631ad*/
+      (*((unsigned short *)&(v77))) = Math::RoundToInt(v76); /*0x7631ad*/
       v77 = v77; /*0x7631b8*/
-      IDA_LOWORD(v79) = Math::RoundToInt(v76); /*0x7631c6*/
-      v80 = this->q14C; /*0x7631cb*/
-      *(_DWORD *)(v80 + 40) = v77; /*0x7631d3*/
-      *(_DWORD *)(v80 + 44) = v79; /*0x7631d8*/
+      (*((unsigned short *)&(v79))) = Math::RoundToInt(v76); /*0x7631c6*/
+      v80 = this->WaveClass_field_14C_d; /*0x7631cb*/
+      *(unsigned int *)(v80 + 40) = v77; /*0x7631d3*/
+      *(unsigned int *)(v80 + 44) = v79; /*0x7631d8*/
     }
     goto LABEL_42; /*0x7631d8*/
   }
@@ -3558,25 +3578,25 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
     *(double *)(&this->WaveClass_field_1282) = v25; /*0x762d95*/
     if ( v25 > 0.98 ) /*0x762da6*/
     {
-      this->q138 = 0; /*0x762da8*/
-      this->q13C = 1072693248; /*0x762db2*/
+      this->WaveClass_field_138_d = 0; /*0x762da8*/
+      this->WaveClass_field_13C_d = 1072693248; /*0x762db2*/
     }
     v26 = *(double *)(&this->WaveClass_field_1282); /*0x762dbc*/
-    IDA_LOWORD(v27) = Math::RoundToInt(v26); /*0x762ddc*/
+    (*((unsigned short *)&(v27))) = Math::RoundToInt(v26); /*0x762ddc*/
     v27 = v27; /*0x762de7*/
-    IDA_LOWORD(v29) = Math::RoundToInt(v26); /*0x762df5*/
-    v30 = *(_DWORD **)(&this->WaveIntensity2); /*0x762dfa*/
+    (*((unsigned short *)&(v29))) = Math::RoundToInt(v26); /*0x762df5*/
+    v30 = *(unsigned int **)(&this->WaveIntensity2); /*0x762dfa*/
     *v30 = v27; /*0x762e02*/
     v30[1] = v29; /*0x762e06*/
     v31 = *(double *)(&this->WaveClass_field_1282); /*0x762e09*/
-    IDA_LOWORD(v32) = Math::RoundToInt(v31); /*0x762e29*/
+    (*((unsigned short *)&(v32))) = Math::RoundToInt(v31); /*0x762e29*/
     v32 = v32; /*0x762e34*/
-    IDA_LOWORD(v34) = Math::RoundToInt(v31); /*0x762e42*/
-    v35 = this->q14C; /*0x762e47*/
-    *(_DWORD *)(v35 + 8) = v32; /*0x762e4f*/
-    *(_DWORD *)(v35 + 12) = v34; /*0x762e54*/
+    (*((unsigned short *)&(v34))) = Math::RoundToInt(v31); /*0x762e42*/
+    v35 = this->WaveClass_field_14C_d; /*0x762e47*/
+    *(unsigned int *)(v35 + 8) = v32; /*0x762e4f*/
+    *(unsigned int *)(v35 + 12) = v34; /*0x762e54*/
   }
-  if ( !this->q12D || 0.050000001 * 0.5 + *(double *)(&this->WaveClass_field_1282) < *(double *)(&this->WaveClass_field_12C0) ) /*0x762e82*/
+  if ( !this->WaveClass_field_12D_d || 0.050000001 * 0.5 + *(double *)(&this->WaveClass_field_1282) < *(double *)(&this->WaveClass_field_12C0) ) /*0x762e82*/
   {
   LABEL_42:
     Voxel::FaceBlit(); /*0x7631db*/
@@ -3587,22 +3607,22 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   if ( !v38 ) /*0x762ea5*/
   {
   LABEL_31:
-    (*(void (__thiscall **)(int))(*(_DWORD *)&this->WaveClass_field_10C8))(this); /*0x762ea7*/
+    (*(void (**)(int))(*(unsigned int *)&this->WaveClass_field_10C8))(this); /*0x762ea7*/
     return; /*0x762eba*/
   }
-  IDA_LOWORD(v39) = Math::RoundToInt(v36); /*0x762ed5*/
+  (*((unsigned short *)&(v39))) = Math::RoundToInt(v36); /*0x762ed5*/
   v39 = v39; /*0x762ee0*/
-  IDA_LOWORD(v41) = Math::RoundToInt(v36); /*0x762eee*/
-  v42 = this->q14C; /*0x762ef3*/
-  *(_DWORD *)(v42 + 16) = v39; /*0x762efb*/
-  *(_DWORD *)(v42 + 20) = v41; /*0x762f00*/
+  (*((unsigned short *)&(v41))) = Math::RoundToInt(v36); /*0x762eee*/
+  v42 = this->WaveClass_field_14C_d; /*0x762ef3*/
+  *(unsigned int *)(v42 + 16) = v39; /*0x762efb*/
+  *(unsigned int *)(v42 + 20) = v41; /*0x762f00*/
   v43 = *(double *)(&this->WaveClass_field_12C0); /*0x762f03*/
-  IDA_LOWORD(v44) = Math::RoundToInt(v43); /*0x762f23*/
+  (*((unsigned short *)&(v44))) = Math::RoundToInt(v43); /*0x762f23*/
   v44 = v44; /*0x762f2e*/
-  IDA_LOWORD(v46) = Math::RoundToInt(v43); /*0x762f3c*/
-  v47 = this->q14C; /*0x762f41*/
-  *(_DWORD *)(v47 + 24) = v44; /*0x762f4b*/
-  *(_DWORD *)(v47 + 28) = v46; /*0x762f50*/
+  (*((unsigned short *)&(v46))) = Math::RoundToInt(v43); /*0x762f3c*/
+  v47 = this->WaveClass_field_14C_d; /*0x762f41*/
+  *(unsigned int *)(v47 + 24) = v44; /*0x762f4b*/
+  *(unsigned int *)(v47 + 28) = v46; /*0x762f50*/
   Voxel::FaceBlit(); /*0x762f53*/
 }
 }
@@ -3610,31 +3630,33 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
 namespace gamemd {
 int Voxel::freeSectionMemory(unsigned int * a2)
 {
-  int q008; // ecx
+
+  int Voxel_field_0x8; // ecx
   int v4; // eax
   int v6; // eax
   int v7; // edx
 
-  q008 = this->q008; /*0x763333*/
-  if ( this->u32_10[0] >= q008 ) /*0x76333b*/
+  Voxel_field_0x8 = this->Voxel_field_0x8; /*0x763333*/
+  if ( this->Voxel_field_0x10[0] >= Voxel_field_0x8 ) /*0x76333b*/
   {
-    if ( !IDA_BYTE1(this->q00C) && q008 ) /*0x763346*/
+    if ( !BYTE1(this->Voxel_field_0xC) && Voxel_field_0x8 ) /*0x763346*/
       return 0; /*0x763346*/
-    v4 = this->u32_14[0]; /*0x763348*/
+    v4 = this->Voxel_field_0x14[0]; /*0x763348*/
     if ( v4 <= 0 /*0x763358*/
-      || !(*(unsigned __int8 (__thiscall **)(Voxel *, int, _DWORD))(*(_DWORD *)this->q000 + 8))(
+      || !(*(unsigned __int8 (**)(Voxel *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
             this,
-            q008 + v4,
+            Voxel_field_0x8 + v4,
             0) )
     {
       return 0; /*0x76335f*/
     }
   }
-  v6 = this->u32_10[0]; /*0x763365*/
-  v7 = this->u32_4[0]; /*0x763368*/
-  this->u32_10[0] = v6 + 1; /*0x76336e*/
-  *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x763378*/
+  v6 = this->Voxel_field_0x10[0]; /*0x763365*/
+  v7 = this->Voxel_field_0x4[0]; /*0x763368*/
+  this->Voxel_field_0x10[0] = v6 + 1; /*0x76336e*/
+  *(unsigned int *)(v7 + 4 * v6) = *a2; /*0x763378*/
   return 1; /*0x763361*/
+
 }
 }
 // 0x7DF9C0
@@ -3647,18 +3669,18 @@ int Voxel::FacePixelBuffer(int * a1)
   int *v4; // edi
   int v5; // eax
   int v6; // ebx
-  _WORD *v7; // edi
+  unsigned short *v7; // edi
   int *v8; // ebp
   int v9; // ebx
   int v10; // edi
   int result; // eax
-  _BYTE *v12; // edi
+  unsigned char *v12; // edi
   int v13; // ecx
   int v14; // ebp
   unsigned int v15; // ebx
   int v16; // eax
-  _BYTE *v17; // edi
-  _BYTE *i; // edi
+  unsigned char *v17; // edi
+  unsigned char *i; // edi
   unsigned int v19; // eax
   int v20; // edx
   int *v21; // [esp-14h] [ebp-2Ch]
@@ -3666,16 +3688,16 @@ int Voxel::FacePixelBuffer(int * a1)
   int v23; // [esp+Ch] [ebp-Ch]
   int savedregs; // [esp+18h] [ebp+0h] BYREF
 
-  v1 = *((__int16 *)a1 + 21); /*0x7df9cf*/
-  v2 = *((__int16 *)a1 + 22); /*0x7df9d3*/
-  v3 = *((unsigned __int8 *)a1 + 50); /*0x7df9d9*/
+  v1 = *((int16_t *)a1 + 21); /*0x7df9cf*/
+  v2 = *((int16_t *)a1 + 22); /*0x7df9d3*/
+  v3 = *((uint8_t *)a1 + 50); /*0x7df9d9*/
   v4 = g_VoxelOffsetTable; /*0x7df9dc*/
   v5 = 0; /*0x7df9e1*/
   v6 = 0; /*0x7df9e3*/
   do /*0x7df9fb*/
   {
-    *(_WORD *)v4 = v5; /*0x7df9ea*/
-    v7 = (_WORD *)v4 + 1; /*0x7df9ed*/
+    *(unsigned short *)v4 = v5; /*0x7df9ea*/
+    v7 = (unsigned short *)v4 + 1; /*0x7df9ed*/
     v5 += v1; /*0x7df9f0*/
     *v7 = v6; /*0x7df9f2*/
     v4 = (int *)(v7 + 1); /*0x7df9f5*/
@@ -3685,48 +3707,48 @@ int Voxel::FacePixelBuffer(int * a1)
   while ( v3 ); /*0x7df9fb*/
   v8 = &savedregs; /*0x7df9fd*/
   v23 = a1[6]; /*0x7dfa06*/
-  IDA_BYTE1(v3) = *((_BYTE *)a1 + 49); /*0x7dfa09*/
+  (((unsigned char *)&(v3))[1]) = *((unsigned char *)a1 + 49); /*0x7dfa09*/
   do /*0x7dfa51*/
   {
     *(v8 - 1) = a1[3]; /*0x7dfa0f*/
     *(v8 - 2) = *(v8 - 3); /*0x7dfa15*/
-    IDA_LOBYTE(v3) = *((_BYTE *)a1 + 48); /*0x7dfa18*/
+    (*((unsigned char *)&(v3))) = *((unsigned char *)a1 + 48); /*0x7dfa18*/
     do /*0x7dfa3b*/
     {
       a1[6] = *(v8 - 3); /*0x7dfa1e*/
       v9 = *a1; /*0x7dfa26*/
-      v10 = *(_DWORD *)(*a1 + 4 * a1[3]); /*0x7dfa28*/
+      v10 = *(unsigned int *)(*a1 + 4 * a1[3]); /*0x7dfa28*/
       if ( v10 >= 0 ) /*0x7dfa2b*/
       {
         v22 = v3; /*0x7dfa61*/
         v21 = v8; /*0x7dfa62*/
-        v12 = (_BYTE *)(a1[2] + v10); /*0x7dfa65*/
-        v13 = *((unsigned __int8 *)a1 + 50); /*0x7dfa68*/
-        IDA_LOWORD(v9) = *((_WORD *)a1 + 13); /*0x7dfa6b*/
+        v12 = (unsigned char *)(a1[2] + v10); /*0x7dfa65*/
+        v13 = *((uint8_t *)a1 + 50); /*0x7dfa68*/
+        (*((unsigned short *)&(v9))) = *((unsigned short *)a1 + 13); /*0x7dfa6b*/
         v15 = v9 << 16; /*0x7dfa6f*/
         v14 = *(int *)((char *)a1 + 42); /*0x7dfa72*/
-        IDA_LOWORD(v15) = *((_WORD *)a1 + 12); /*0x7dfa75*/
+        (*((unsigned short *)&(v15))) = *((unsigned short *)a1 + 12); /*0x7dfa75*/
         while ( 1 ) /*0x7dfa79*/
         {
           v16 = 0; /*0x7dfa79*/
           if ( !v13 ) /*0x7dfa7e*/
             break; /*0x7dfa7e*/
-          IDA_LOBYTE(v16) = *v12; /*0x7dfa80*/
+          (*((unsigned char *)&(v16))) = *v12; /*0x7dfa80*/
           v17 = v12 + 1; /*0x7dfa82*/
-          IDA_LOBYTE(v13) = v13 - v16; /*0x7dfa83*/
+          (*((unsigned char *)&(v13))) = v13 - v16; /*0x7dfa83*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7dfa85*/
-          IDA_BYTE1(v13) = *v17; /*0x7dfa8c*/
-          for ( i = v17 + 1; IDA_BYTE1(v13); g_VoxelRenderBuffer[v19] = g_VoxelColorPalette[v20] ) /*0x7dfa91*/
+          (((unsigned char *)&(v13))[1]) = *v17; /*0x7dfa8c*/
+          for ( i = v17 + 1; (((unsigned char *)&(v13))[1]); g_VoxelRenderBuffer[v19] = g_VoxelColorPalette[v20] ) /*0x7dfa91*/
           {
-            IDA_LOBYTE(v13) = v13 - 1; /*0x7dfa95*/
-            v19 = IDA_HIWORD(v15); /*0x7dfa97*/
-            v20 = (unsigned __int8)i[1]; /*0x7dfa9c*/
-            IDA_LOBYTE(v19) = IDA_BYTE1(v15); /*0x7dfa9f*/
-            IDA_BYTE1(v20) = g_VoxelShadeTable[v20]; /*0x7dfaa1*/
-            IDA_LOBYTE(v20) = *i; /*0x7dfaa7*/
+            (*((unsigned char *)&(v13))) = v13 - 1; /*0x7dfa95*/
+            v19 = (*(((unsigned short *)&(v15)) + 1)); /*0x7dfa97*/
+            v20 = (uint8_t)i[1]; /*0x7dfa9c*/
+            (*((unsigned char *)&(v19))) = (((unsigned char *)&(v15))[1]); /*0x7dfa9f*/
+            (((unsigned char *)&(v20))[1]) = g_VoxelShadeTable[v20]; /*0x7dfaa1*/
+            (*((unsigned char *)&(v20))) = *i; /*0x7dfaa7*/
             v15 += v14; /*0x7dfaa9*/
             i += 2; /*0x7dfaab*/
-            --IDA_BYTE1(v13); /*0x7dfaae*/
+            --(((unsigned char *)&(v13))[1]); /*0x7dfaae*/
           }
           v12 = i + 1; /*0x7dfabe*/
         }
@@ -3735,15 +3757,15 @@ int Voxel::FacePixelBuffer(int * a1)
       }
       *(v8 - 3) += *(int *)((char *)a1 + 30); /*0x7dfa30*/
       a1[3] += a1[4]; /*0x7dfa36*/
-      IDA_LOBYTE(v3) = v3 - 1; /*0x7dfa39*/
+      (*((unsigned char *)&(v3))) = v3 - 1; /*0x7dfa39*/
     }
-    while ( (_BYTE)v3 ); /*0x7dfa3b*/
+    while ( (unsigned char)v3 ); /*0x7dfa3b*/
     *(v8 - 3) = a1[9] + *(v8 - 2); /*0x7dfa43*/
     result = a1[5] + *(v8 - 1); /*0x7dfa49*/
     a1[3] = result; /*0x7dfa4c*/
-    --IDA_BYTE1(v3); /*0x7dfa4f*/
+    --(((unsigned char *)&(v3))[1]); /*0x7dfa4f*/
   }
-  while ( IDA_BYTE1(v3) ); /*0x7dfa51*/
+  while ( (((unsigned char *)&(v3))[1]) ); /*0x7dfa51*/
   return result; /*0x7dfa55*/
 }
 }
@@ -3757,35 +3779,35 @@ int Voxel::FacePixelBufferEx(int a1)
   int *v4; // edi
   int v5; // eax
   int v6; // ebx
-  _WORD *v7; // edi
+  unsigned short *v7; // edi
   int *v8; // ebp
   int v9; // ebx
   int v10; // edi
   int result; // eax
-  unsigned __int8 *v12; // edi
+  uint8_t *v12; // edi
   int v13; // ecx
   int v14; // ebp
   unsigned int v15; // ebx
-  unsigned __int8 *i; // edi
+  uint8_t *i; // edi
   unsigned int v17; // eax
   int v18; // edx
-  unsigned __int8 *v19; // edi
+  uint8_t *v19; // edi
   int v20; // eax
   int *v21; // [esp-14h] [ebp-2Ch]
   int v22; // [esp-10h] [ebp-28h]
   int v23; // [esp+Ch] [ebp-Ch]
   int savedregs; // [esp+18h] [ebp+0h] BYREF
 
-  v1 = *(__int16 *)(a1 + 42); /*0x7dfaef*/
-  v2 = *(__int16 *)(a1 + 44); /*0x7dfaf3*/
-  v3 = *(unsigned __int8 *)(a1 + 50); /*0x7dfaf9*/
+  v1 = *(int16_t *)(a1 + 42); /*0x7dfaef*/
+  v2 = *(int16_t *)(a1 + 44); /*0x7dfaf3*/
+  v3 = *(uint8_t *)(a1 + 50); /*0x7dfaf9*/
   v4 = g_VoxelOffsetTable; /*0x7dfafc*/
   v5 = 0; /*0x7dfb01*/
   v6 = 0; /*0x7dfb03*/
   do /*0x7dfb1b*/
   {
-    *(_WORD *)v4 = v5; /*0x7dfb0a*/
-    v7 = (_WORD *)v4 + 1; /*0x7dfb0d*/
+    *(unsigned short *)v4 = v5; /*0x7dfb0a*/
+    v7 = (unsigned short *)v4 + 1; /*0x7dfb0d*/
     v5 += v1; /*0x7dfb10*/
     *v7 = v6; /*0x7dfb12*/
     v4 = (int *)(v7 + 1); /*0x7dfb15*/
@@ -3794,63 +3816,63 @@ int Voxel::FacePixelBufferEx(int a1)
   }
   while ( v3 ); /*0x7dfb1b*/
   v8 = &savedregs; /*0x7dfb1d*/
-  v23 = *(_DWORD *)(a1 + 24); /*0x7dfb26*/
-  IDA_BYTE1(v3) = *(_BYTE *)(a1 + 49); /*0x7dfb29*/
+  v23 = *(unsigned int *)(a1 + 24); /*0x7dfb26*/
+  (((unsigned char *)&(v3))[1]) = *(unsigned char *)(a1 + 49); /*0x7dfb29*/
   do /*0x7dfb72*/
   {
-    *(v8 - 1) = *(_DWORD *)(a1 + 12); /*0x7dfb2f*/
+    *(v8 - 1) = *(unsigned int *)(a1 + 12); /*0x7dfb2f*/
     *(v8 - 2) = *(v8 - 3); /*0x7dfb35*/
-    IDA_LOBYTE(v3) = *(_BYTE *)(a1 + 48); /*0x7dfb38*/
+    (*((unsigned char *)&(v3))) = *(unsigned char *)(a1 + 48); /*0x7dfb38*/
     do /*0x7dfb5c*/
     {
-      *(_DWORD *)(a1 + 24) = *(v8 - 3); /*0x7dfb3e*/
-      v9 = *(_DWORD *)(a1 + 4); /*0x7dfb46*/
-      v10 = *(_DWORD *)(v9 + 4 * *(_DWORD *)(a1 + 12)); /*0x7dfb49*/
+      *(unsigned int *)(a1 + 24) = *(v8 - 3); /*0x7dfb3e*/
+      v9 = *(unsigned int *)(a1 + 4); /*0x7dfb46*/
+      v10 = *(unsigned int *)(v9 + 4 * *(unsigned int *)(a1 + 12)); /*0x7dfb49*/
       if ( v10 >= 0 ) /*0x7dfb4c*/
       {
         v22 = v3; /*0x7dfb81*/
         v21 = v8; /*0x7dfb82*/
-        v12 = (unsigned __int8 *)(*(_DWORD *)(a1 + 8) + v10); /*0x7dfb85*/
-        v13 = *(unsigned __int8 *)(a1 + 50); /*0x7dfb88*/
-        IDA_LOWORD(v9) = *(_WORD *)(a1 + 26); /*0x7dfb8b*/
+        v12 = (uint8_t *)(*(unsigned int *)(a1 + 8) + v10); /*0x7dfb85*/
+        v13 = *(uint8_t *)(a1 + 50); /*0x7dfb88*/
+        (*((unsigned short *)&(v9))) = *(unsigned short *)(a1 + 26); /*0x7dfb8b*/
         v15 = v9 << 16; /*0x7dfb8f*/
-        v14 = *(_DWORD *)(a1 + 42); /*0x7dfb92*/
-        IDA_LOWORD(v15) = *(_WORD *)(a1 + 24); /*0x7dfb95*/
+        v14 = *(unsigned int *)(a1 + 42); /*0x7dfb92*/
+        (*((unsigned short *)&(v15))) = *(unsigned short *)(a1 + 24); /*0x7dfb95*/
         while ( v13 ) /*0x7dfb9c*/
         {
-          IDA_BYTE1(v13) = *v12; /*0x7dfb9e*/
-          for ( i = v12 - 1; IDA_BYTE1(v13); g_VoxelRenderBuffer[v17] = g_VoxelColorPalette[v18] ) /*0x7dfba3*/
+          (((unsigned char *)&(v13))[1]) = *v12; /*0x7dfb9e*/
+          for ( i = v12 - 1; (((unsigned char *)&(v13))[1]); g_VoxelRenderBuffer[v17] = g_VoxelColorPalette[v18] ) /*0x7dfba3*/
           {
-            IDA_LOBYTE(v13) = v13 - 1; /*0x7dfba7*/
-            v17 = IDA_HIWORD(v15); /*0x7dfba9*/
+            (*((unsigned char *)&(v13))) = v13 - 1; /*0x7dfba7*/
+            v17 = (*(((unsigned short *)&(v15)) + 1)); /*0x7dfba9*/
             v18 = *i; /*0x7dfbae*/
-            IDA_LOBYTE(v17) = IDA_BYTE1(v15); /*0x7dfbb0*/
-            IDA_BYTE1(v18) = g_VoxelShadeTable[v18]; /*0x7dfbb2*/
-            IDA_LOBYTE(v18) = *(i - 1); /*0x7dfbb8*/
+            (*((unsigned char *)&(v17))) = (((unsigned char *)&(v15))[1]); /*0x7dfbb0*/
+            (((unsigned char *)&(v18))[1]) = g_VoxelShadeTable[v18]; /*0x7dfbb2*/
+            (*((unsigned char *)&(v18))) = *(i - 1); /*0x7dfbb8*/
             v15 += v14; /*0x7dfbbb*/
             i -= 2; /*0x7dfbbd*/
-            --IDA_BYTE1(v13); /*0x7dfbc0*/
+            --(((unsigned char *)&(v13))[1]); /*0x7dfbc0*/
           }
           v19 = i - 1; /*0x7dfbd0*/
           v20 = *v19; /*0x7dfbd3*/
           v12 = v19 - 1; /*0x7dfbd5*/
-          IDA_LOBYTE(v13) = v13 - v20; /*0x7dfbd6*/
+          (*((unsigned char *)&(v13))) = v13 - v20; /*0x7dfbd6*/
           v15 += g_VoxelOffsetTable[v20]; /*0x7dfbd8*/
         }
         v8 = v21; /*0x7dfbe1*/
         v3 = v22; /*0x7dfbe2*/
       }
-      *(v8 - 3) += *(_DWORD *)(a1 + 30); /*0x7dfb51*/
-      *(_DWORD *)(a1 + 12) += *(_DWORD *)(a1 + 16); /*0x7dfb57*/
-      IDA_LOBYTE(v3) = v3 - 1; /*0x7dfb5a*/
+      *(v8 - 3) += *(unsigned int *)(a1 + 30); /*0x7dfb51*/
+      *(unsigned int *)(a1 + 12) += *(unsigned int *)(a1 + 16); /*0x7dfb57*/
+      (*((unsigned char *)&(v3))) = v3 - 1; /*0x7dfb5a*/
     }
-    while ( (_BYTE)v3 ); /*0x7dfb5c*/
-    *(v8 - 3) = *(_DWORD *)(a1 + 36) + *(v8 - 2); /*0x7dfb64*/
-    result = *(_DWORD *)(a1 + 20) + *(v8 - 1); /*0x7dfb6a*/
-    *(_DWORD *)(a1 + 12) = result; /*0x7dfb6d*/
-    --IDA_BYTE1(v3); /*0x7dfb70*/
+    while ( (unsigned char)v3 ); /*0x7dfb5c*/
+    *(v8 - 3) = *(unsigned int *)(a1 + 36) + *(v8 - 2); /*0x7dfb64*/
+    result = *(unsigned int *)(a1 + 20) + *(v8 - 1); /*0x7dfb6a*/
+    *(unsigned int *)(a1 + 12) = result; /*0x7dfb6d*/
+    --(((unsigned char *)&(v3))[1]); /*0x7dfb70*/
   }
-  while ( IDA_BYTE1(v3) ); /*0x7dfb72*/
+  while ( (((unsigned char *)&(v3))[1]) ); /*0x7dfb72*/
   return result; /*0x7dfb76*/
 }
 }
@@ -3864,17 +3886,17 @@ int Voxel::FacePixelBuffer3(int * a1)
   int *v4; // edi
   int v5; // eax
   int v6; // ebx
-  _WORD *v7; // edi
+  unsigned short *v7; // edi
   int *v8; // ebp
   int v9; // ebx
   int v10; // edi
   int result; // eax
-  _BYTE *v12; // edi
+  unsigned char *v12; // edi
   int v13; // ecx
   int v14; // ebp
   unsigned int v15; // ebx
   int v16; // eax
-  _BYTE *v17; // edi
+  unsigned char *v17; // edi
   char *i; // edi
   unsigned int v19; // eax
   char v20; // dl
@@ -3883,17 +3905,17 @@ int Voxel::FacePixelBuffer3(int * a1)
   int v23; // [esp+Ch] [ebp-Ch]
   int savedregs; // [esp+18h] [ebp+0h] BYREF
 
-  v1 = *((__int16 *)a1 + 21); /*0x7dfc0f*/
-  v2 = *((__int16 *)a1 + 22); /*0x7dfc13*/
+  v1 = *((int16_t *)a1 + 21); /*0x7dfc0f*/
+  v2 = *((int16_t *)a1 + 22); /*0x7dfc13*/
   v3 = 255; /*0x7dfc17*/
-  IDA_LOBYTE(v3) = -1 - *((_BYTE *)a1 + 50); /*0x7dfc1c*/
+  (*((unsigned char *)&(v3))) = -1 - *((unsigned char *)a1 + 50); /*0x7dfc1c*/
   v4 = g_VoxelOffsetTable; /*0x7dfc1f*/
   v5 = 0; /*0x7dfc24*/
   v6 = 0; /*0x7dfc26*/
   do /*0x7dfc3e*/
   {
-    *(_WORD *)v4 = v5; /*0x7dfc2d*/
-    v7 = (_WORD *)v4 + 1; /*0x7dfc30*/
+    *(unsigned short *)v4 = v5; /*0x7dfc2d*/
+    v7 = (unsigned short *)v4 + 1; /*0x7dfc30*/
     v5 += v1; /*0x7dfc33*/
     *v7 = v6; /*0x7dfc35*/
     v4 = (int *)(v7 + 1); /*0x7dfc38*/
@@ -3903,46 +3925,46 @@ int Voxel::FacePixelBuffer3(int * a1)
   while ( v3 ); /*0x7dfc3e*/
   v8 = &savedregs; /*0x7dfc40*/
   v23 = a1[6]; /*0x7dfc49*/
-  IDA_BYTE1(v3) = *((_BYTE *)a1 + 49); /*0x7dfc4c*/
+  (((unsigned char *)&(v3))[1]) = *((unsigned char *)a1 + 49); /*0x7dfc4c*/
   do /*0x7dfc94*/
   {
     *(v8 - 1) = a1[3]; /*0x7dfc52*/
     *(v8 - 2) = *(v8 - 3); /*0x7dfc58*/
-    IDA_LOBYTE(v3) = *((_BYTE *)a1 + 48); /*0x7dfc5b*/
+    (*((unsigned char *)&(v3))) = *((unsigned char *)a1 + 48); /*0x7dfc5b*/
     do /*0x7dfc7e*/
     {
       a1[6] = *(v8 - 3); /*0x7dfc61*/
       v9 = *a1; /*0x7dfc69*/
-      v10 = *(_DWORD *)(*a1 + 4 * a1[3]); /*0x7dfc6b*/
+      v10 = *(unsigned int *)(*a1 + 4 * a1[3]); /*0x7dfc6b*/
       if ( v10 >= 0 ) /*0x7dfc6e*/
       {
         v22 = v3; /*0x7dfca1*/
         v21 = v8; /*0x7dfca2*/
-        v12 = (_BYTE *)(a1[2] + v10); /*0x7dfca5*/
-        v13 = *((unsigned __int8 *)a1 + 50); /*0x7dfca8*/
-        IDA_LOWORD(v9) = *((_WORD *)a1 + 13); /*0x7dfcab*/
+        v12 = (unsigned char *)(a1[2] + v10); /*0x7dfca5*/
+        v13 = *((uint8_t *)a1 + 50); /*0x7dfca8*/
+        (*((unsigned short *)&(v9))) = *((unsigned short *)a1 + 13); /*0x7dfcab*/
         v15 = v9 << 16; /*0x7dfcaf*/
         v14 = *(int *)((char *)a1 + 42); /*0x7dfcb2*/
-        IDA_LOWORD(v15) = *((_WORD *)a1 + 12); /*0x7dfcb5*/
+        (*((unsigned short *)&(v15))) = *((unsigned short *)a1 + 12); /*0x7dfcb5*/
         while ( 1 ) /*0x7dfcb9*/
         {
           v16 = 0; /*0x7dfcb9*/
           if ( !v13 ) /*0x7dfcbe*/
             break; /*0x7dfcbe*/
-          IDA_LOBYTE(v16) = *v12; /*0x7dfcc0*/
+          (*((unsigned char *)&(v16))) = *v12; /*0x7dfcc0*/
           v17 = v12 + 1; /*0x7dfcc2*/
-          IDA_LOBYTE(v13) = v13 - v16; /*0x7dfcc3*/
+          (*((unsigned char *)&(v13))) = v13 - v16; /*0x7dfcc3*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7dfcc5*/
-          IDA_BYTE1(v13) = *v17; /*0x7dfccc*/
-          for ( i = v17 + 1; IDA_BYTE1(v13); g_VoxelRenderBuffer[v19] = v20 ) /*0x7dfcd1*/
+          (((unsigned char *)&(v13))[1]) = *v17; /*0x7dfccc*/
+          for ( i = v17 + 1; (((unsigned char *)&(v13))[1]); g_VoxelRenderBuffer[v19] = v20 ) /*0x7dfcd1*/
           {
-            IDA_LOBYTE(v13) = v13 - 1; /*0x7dfcd5*/
-            v19 = IDA_HIWORD(v15); /*0x7dfcd7*/
+            (*((unsigned char *)&(v13))) = v13 - 1; /*0x7dfcd5*/
+            v19 = (*(((unsigned short *)&(v15)) + 1)); /*0x7dfcd7*/
             v20 = *i; /*0x7dfcda*/
-            IDA_LOBYTE(v19) = IDA_BYTE1(v15); /*0x7dfcdc*/
+            (*((unsigned char *)&(v19))) = (((unsigned char *)&(v15))[1]); /*0x7dfcdc*/
             ++i; /*0x7dfcde*/
             v15 += v14; /*0x7dfcdf*/
-            --IDA_BYTE1(v13); /*0x7dfce1*/
+            --(((unsigned char *)&(v13))[1]); /*0x7dfce1*/
           }
           v12 = i + 1; /*0x7dfceb*/
         }
@@ -3951,15 +3973,15 @@ int Voxel::FacePixelBuffer3(int * a1)
       }
       *(v8 - 3) += *(int *)((char *)a1 + 30); /*0x7dfc73*/
       a1[3] += a1[4]; /*0x7dfc79*/
-      IDA_LOBYTE(v3) = v3 - 1; /*0x7dfc7c*/
+      (*((unsigned char *)&(v3))) = v3 - 1; /*0x7dfc7c*/
     }
-    while ( (_BYTE)v3 ); /*0x7dfc7e*/
+    while ( (unsigned char)v3 ); /*0x7dfc7e*/
     *(v8 - 3) = a1[9] + *(v8 - 2); /*0x7dfc86*/
     result = a1[5] + *(v8 - 1); /*0x7dfc8c*/
     a1[3] = result; /*0x7dfc8f*/
-    --IDA_BYTE1(v3); /*0x7dfc92*/
+    --(((unsigned char *)&(v3))[1]); /*0x7dfc92*/
   }
-  while ( IDA_BYTE1(v3) ); /*0x7dfc94*/
+  while ( (((unsigned char *)&(v3))[1]) ); /*0x7dfc94*/
   return result; /*0x7dfc98*/
 }
 }
@@ -3985,7 +4007,7 @@ int Voxel::SetProjectionAngle(float a1)
   dword_887424 = 0; /*0x754c88*/
   v3[0] = *(float *)&dword_887470 * -6.0; /*0x754c8e*/
   dword_887428 = 0; /*0x754c96*/
-  dword_887420 = IDA_LODWORD(v3[0]); /*0x754c9b*/
+  dword_887420 = (*((unsigned int *)&(v3[0]))); /*0x754c9b*/
   return 0; /*0x754ca1*/
 }
 } // namespace gamemd
@@ -3996,10 +4018,10 @@ int Voxel::InitDistanceTable()
 {
   double v1; // st7
   int v2; // ebp
-  __int16 *v3; // edi
+  int16_t *v3; // edi
   int i; // esi
-  __int16 *v5; // esi
-  __int16 *v6; // esi
+  int16_t *v5; // esi
+  int16_t *v6; // esi
   int *v7; // ecx
   int result; // eax
   double v9; // [esp+0h] [ebp-20h]

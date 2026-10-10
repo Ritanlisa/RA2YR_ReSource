@@ -7,6 +7,6 @@ namespace gamemd {
 struct BlitTransDarken;  // fix_fwd_type_supply
 struct E4Recv_499F60 {
     void* vfptr;  // minimal E2 declaration
-    BlitTransDarken * ___Gfacet_locale_std__UAEPAXI_Z_26(char a2);  // 0x499F60
+    BlitTransDarken *  ___Gfacet_locale_std__UAEPAXI_Z_26(char a2);  // 0x499F60
 };
 } // namespace gamemd

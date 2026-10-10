@@ -49,7 +49,7 @@ class PassengersClass {
 public:
     int32_t     NumPassengers;
     FootClass*  FirstPassenger;
-    void AddObject(ObjectClass *a2);  // 0x4733a0 (CellClass::AddObject 同体向量加, passengers@0x114 thiscall)
+    int AddObject(ObjectClass *a2);  // 0x4733a0 (CellClass::AddObject 同体向量加, passengers@0x114 thiscall)
 };
 
 struct VeterancyStruct {
@@ -507,7 +507,7 @@ public:
     virtual int PickAlternateTarget();  // 0x708E00
     virtual int SelectRandomTarget();  // 0x708EB0
     virtual int GetSecondaryTargetOrFallback() const;  // 0x709020
-    virtual int SetPositionAnimated(unsigned int* a2 = nullptr);  // 0x4DB810 (g57w10 raw: int(this,_DWORD*))
+    virtual int SetPositionAnimated(unsigned int* a2 = nullptr);  // 0x4DB810 (g57w10 raw: int(this,unsigned int*))
     virtual int GetTargetCellCenter(AbstractClass* target);  // 0x4DBA50
     virtual int ComputeSpeedFactor();  // 0x4DAFC0
     virtual int ComputeSpeedFactorEx();  // 0x4DB1A0

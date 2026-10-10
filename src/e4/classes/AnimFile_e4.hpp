@@ -10,15 +10,10 @@ namespace gamemd {
 struct AnimFile {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
 // --- flat members (END) ---
     AnimFile * QueryInterface(void * Block, char a2);
     char * Stub();
+    static double q368(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_ANIMFILE_DECLARED
 

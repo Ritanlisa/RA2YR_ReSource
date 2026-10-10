@@ -9,26 +9,7 @@ namespace gamemd {
 struct BlitTransXlatAlphaZRead_ushort {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
     AbstractClass * ptr_8;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
 // --- flat members (END) ---
     BlitTransXlatAlphaZRead_ushort * Blit(unsigned int * Block, char a2);
     int AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9);
@@ -50,10 +31,12 @@ struct BlitTransXlatAlphaZRead_ushort {
     std::locale::facet * Constructor_Blitter_2(char a2);
     unsigned short * Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
     unsigned short * Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
-    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_4;  // 0x4 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double q004(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -30,13 +30,13 @@ extern char a02dSD02d[];  // data: 0x840070 truth(IDA G42.57w9)
 
 
 // 0x5FA440
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void AudioSettings::SetFlag70(char a2)
 {
   this->u32_46 = a2; /*0x5fa444*/
   a2 = a2; /*0x5fa447*/
   Debug::Log(); /*0x5fa463*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5FA470
 namespace gamemd {
@@ -51,12 +51,13 @@ void AudioSettings::SetFlag68(char a2)
 namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
+
   int result; // eax
   BOOL IsSoundEnabled; // ebx
   HWND DlgItem; // eax
   HWND v7; // edi
   LPARAM v8; // eax
-  void (__stdcall *v9)(HWND, BOOL); // ebp
+  void (*v9)(HWND, BOOL); // ebp
   HWND v10; // eax
   HWND v11; // edi
   LPARAM v12; // eax
@@ -138,12 +139,12 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         SendMessageA(v7, 0x406u, 1u, 655360); /*0x6b639b*/
         v8 = Math::RoundToInt(flt_A8EBA0 * 10.0 + 0.5); /*0x6b63af*/
         SendMessageA(v7, 0x405u, 1u, v8); /*0x6b63bd*/
-        v9 = (void (__stdcall *)(HWND, BOOL))EnableWindow; /*0x6b63bf*/
+        v9 = (void (*)(HWND, BOOL))EnableWindow; /*0x6b63bf*/
         EnableWindow(v7, IsSoundEnabled); /*0x6b63c7*/
       }
       else
       {
-        v9 = (void (__stdcall *)(HWND, BOOL))EnableWindow; /*0x6b63cb*/
+        v9 = (void (*)(HWND, BOOL))EnableWindow; /*0x6b63cb*/
       }
       v10 = GetDlgItem(hDlg, 1330); /*0x6b63de*/
       v11 = v10; /*0x6b63e4*/
@@ -239,7 +240,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         }
         break;
       case 0x531u: /*0x6b6733*/
-        if ( !IDA_HIWORD(a3) ) /*0x6b67b1*/
+        if ( !HIWORD(a3) ) /*0x6b67b1*/
         {
           v27 = GetDlgItem(hDlg, 1328); /*0x6b67c0*/
           v28 = v27; /*0x6b67c6*/
@@ -278,7 +279,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   }
   if ( (unsigned __int16)a3 == 1333 ) /*0x6b68a9*/
   {
-    if ( !IDA_HIWORD(a3) ) /*0x6b69c8*/
+    if ( !HIWORD(a3) ) /*0x6b69c8*/
     {
       Theme::Stop(&unk_A83D10, 1); /*0x6b69d4*/
       Theme::QueueSong((int)&unk_A83D10, -3); /*0x6b69e0*/
@@ -286,7 +287,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     }
     return 0; /*0x6b69e5*/
   }
-  if ( (unsigned __int16)a3 != 1670 || IDA_HIWORD(a3) ) /*0x6b68ba*/
+  if ( (unsigned __int16)a3 != 1670 || HIWORD(a3) ) /*0x6b68ba*/
     return 0; /*0x6b69ec*/
   v33 = GetDlgItem(hDlg, 1327); /*0x6b68cf*/
   if ( v33 ) /*0x6b68d9*/
@@ -314,7 +315,8 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
     Audio::SetVoiceVolume((float *)dword_A8EB60, v42, 0); /*0x6b69a5*/
   }
-  *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
+  *(unsigned int *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/
+
 }
 } // namespace gamemd

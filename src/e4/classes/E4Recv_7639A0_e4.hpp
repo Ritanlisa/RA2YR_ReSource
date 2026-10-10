@@ -10,32 +10,6 @@ struct E4Recv_7639A0 {
     unsigned int M36;  // 0x24
     unsigned int M48;  // 0x30
     unsigned int M56;  // 0x38
-    unsigned int q048;  // 0x48
-    unsigned int q054;  // 0x54
-    unsigned int q084;  // 0x84
-    unsigned int q114;  // 0x114
-    unsigned int q134;  // 0x134
-    unsigned int q308;  // 0x308
-    unsigned int q630;  // 0x630
-    unsigned int q774;  // 0x774
-    unsigned int q1584;  // 0x1584
-    unsigned int q1908;  // 0x1908
-    unsigned int q1910;  // 0x1910
-    unsigned int q5508;  // 0x5508
-    unsigned int q6408;  // 0x6408
-    unsigned int q21768;  // 0x21768
-    unsigned int q25608;  // 0x25608
-    unsigned int q137064;  // 0x137064
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
     char  sub_7639A0(unsigned int * a2);  // 0x7639A0
 };

@@ -101,10 +101,10 @@ LightConvertClass::LightConvertClass(
 #include "core/ddraw_init.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ConvertRGB24to556(...);  // raw 007DE200: unsigned int __cdecl __spoils<ecx> ConvertRGB24to556(int a1, _WORD *a2, __m64 a3, __m64 a4
-    int ConvertRGB24to565(...);  // raw 007DEBBA: unsigned int __cdecl __spoils<ecx> ConvertRGB24to565(int a1, _WORD *a2, __m64 a3, __m64 a4
-    int ConvertRGB24to655(...);  // raw 007DE87A: unsigned int __cdecl __spoils<ecx> ConvertRGB24to655(int a1, _WORD *a2, __m64 a3, __m64 a4
-    int ConvertRGB24toRGB565(...);  // raw 007DE53A: unsigned int __cdecl __spoils<ecx> ConvertRGB24toRGB565(int a1, _WORD *a2, __m64 a3, __m64
+    int ConvertRGB24to556(...);  // raw 007DE200: unsigned int __cdecl __spoils<ecx> ConvertRGB24to556(int a1, unsigned short *a2, __m64, __m64 a4
+    int ConvertRGB24to565(...);  // raw 007DEBBA: unsigned int __cdecl __spoils<ecx> ConvertRGB24to565(int a1, unsigned short *a2, __m64, __m64 a4
+    int ConvertRGB24to655(...);  // raw 007DE87A: unsigned int __cdecl __spoils<ecx> ConvertRGB24to655(int a1, unsigned short *a2, __m64, __m64 a4
+    int ConvertRGB24toRGB565(...);  // raw 007DE53A: unsigned int __cdecl __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short *a2, __m64, __m64
 } // namespace gamemd
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {
@@ -130,18 +130,18 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   int v11; // ebp
   int v12; // edi
   int v13; // ebp
-  _WORD *v14; // edi
+  unsigned short *v14; // edi
   int v15; // esi
   int v16; // ecx
   int v17; // edx
   int v18; // eax
   int v19; // ebp
-  unsigned __int8 *v20; // ecx
+  uint8_t *v20; // ecx
   int v21; // edi
   int v22; // esi
   int v23; // edx
   int v24; // edx
-  _WORD *v25; // ecx
+  unsigned short *v25; // ecx
   int v26; // [esp+10h] [ebp-28h]
   int v27; // [esp+14h] [ebp-24h]
   int v28; // [esp+18h] [ebp-20h]
@@ -152,16 +152,16 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   int v33; // [esp+2Ch] [ebp-Ch]
   int v34; // [esp+30h] [ebp-8h]
   int v35; // [esp+34h] [ebp-4h]
-  _WORD *v36; // [esp+3Ch] [ebp+4h]
+  unsigned short *v36; // [esp+3Ch] [ebp+4h]
   int v37; // [esp+40h] [ebp+8h]
   int v38; // [esp+44h] [ebp+Ch]
   int v39; // [esp+48h] [ebp+10h]
 
-  v6 = this->q16C; /*0x556098*/
+  v6 = this->u32_16C; /*0x556098*/
   if ( v6 >= 1 )
   {
-    if ( !this->q190 ) /*0x5560a8*/
-      this->q190 = &unk_829C20; /*0x5560b2*/
+    if ( !this->u32_190 ) /*0x5560a8*/
+      this->u32_190 = &unk_829C20; /*0x5560b2*/
     v7 = red; /*0x5560bc*/
     if ( red == -1 )
     {
@@ -187,40 +187,40 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     {
       if ( v7 == -1 ) /*0x556128*/
       {
-        v7 = this->q1A4; /*0x55612a*/
+        v7 = this->u32_1A4; /*0x55612a*/
         v12 = this->u32_1AC; /*0x556130*/
-        v11 = this->q1A8; /*0x556136*/
+        v11 = this->u32_1A8; /*0x556136*/
       }
       else
       {
-        this->q1A4 = v7; /*0x556145*/
-        this->q1A8 = v11; /*0x55614b*/
+        this->u32_1A4 = v7; /*0x556145*/
+        this->u32_1A8 = v11; /*0x55614b*/
         this->u32_1AC = v12; /*0x556151*/
       }
-      this->u8_1B0 = 1; /*0x55613c*/
+      this->u32_1B0 = 1; /*0x55613c*/
     }
     else
     {
       if ( v7 == -1 ) /*0x556163*/
       {
-        v7 = this->q198; /*0x556165*/
-        v11 = this->q19C; /*0x55616b*/
+        v7 = this->u32_198; /*0x556165*/
+        v11 = this->u32_19C; /*0x55616b*/
         v12 = this->u32_1A0; /*0x556171*/
       }
       else
       {
-        this->q198 = v7; /*0x556179*/
-        this->q19C = v11; /*0x55617f*/
+        this->u32_198 = v7; /*0x556179*/
+        this->u32_19C = v11; /*0x55617f*/
         this->u32_1A0 = v12; /*0x556185*/
       }
-      this->u8_1B0 = 0; /*0x55618b*/
+      this->u32_1B0 = 0; /*0x55618b*/
     }
     v32 = Math::RoundToInt((double)(1000 * v7) * 0.065536); /*0x5561b1*/
     v34 = Math::RoundToInt((double)(1000 * v11) * 0.065536); /*0x5561d5*/
     v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
-    v14 = *(_WORD **)(&this->q0908); /*0x55621e*/
+    v14 = *(unsigned short **)(this + 368); /*0x55621e*/
     v31 = (30 * v6 / 200 - 1) & ((30 * v6 / 200 - 1 <= 0) - 1); /*0x55623a*/
     if ( v31 >= (v6 - 1) >> 1 ) /*0x55623e*/
       v31 = (v6 - 1) >> 1; /*0x556240*/
@@ -252,38 +252,38 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         {
           case 0: /*0x5562de*/
             ConvertRGB24toRGB565( /*0x5562f8*/
-              this->q188,
+              this->u32_188,
               v14,
-              __SPAIR64__(v16, v15),
-              __SPAIR64__(v18, v17),
-              this->q190);
+              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
+              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
+              this->u32_190);
             v14 += 256; /*0x556300*/
             break; /*0x556306*/
           case 1: /*0x5562de*/
             ConvertRGB24to655( /*0x55631e*/
-              this->q188,
+              this->u32_188,
               v14,
-              __SPAIR64__(v16, v15),
-              __SPAIR64__(v18, v17),
-              this->q190);
+              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
+              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
+              this->u32_190);
             v14 += 256; /*0x556326*/
             break; /*0x55632c*/
           case 2: /*0x5562de*/
             ConvertRGB24to556( /*0x556344*/
-              this->q188,
+              this->u32_188,
               v14,
-              __SPAIR64__(v16, v15),
-              __SPAIR64__(v18, v17),
-              this->q190);
+              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
+              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
+              this->u32_190);
             v14 += 256; /*0x55634c*/
             break; /*0x556352*/
           case 3: /*0x5562de*/
             ConvertRGB24to565( /*0x55636a*/
-              this->q188,
+              this->u32_188,
               v14,
-              __SPAIR64__(v16, v15),
-              __SPAIR64__(v18, v17),
-              this->q190);
+              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
+              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
+              this->u32_190);
             v14 += 256; /*0x556372*/
             break; /*0x556378*/
           default:
@@ -292,8 +292,8 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
             v19 = 1; /*0x556389*/
             while ( 1 ) /*0x5563bb*/
             {
-              v20 = (unsigned __int8 *)(this->q188 + 3 * (v19 % 256)); /*0x5563bb*/
-              if ( *(_BYTE *)(this->q190 + v19) ) /*0x55639a*/
+              v20 = (uint8_t *)(this->u32_188 + 3 * (v19 % 256)); /*0x5563bb*/
+              if ( *(unsigned char *)(this->u32_190 + v19) ) /*0x55639a*/
               {
                 v21 = (v15 * *v20) >> 16; /*0x5563d7*/
                 v22 = (v37 * v20[1]) >> 16; /*0x5563da*/
@@ -328,7 +328,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         v13 = 2 * v32 + v33; /*0x5564ae*/
         v27 += 2 * v34; /*0x5564c3*/
         v28 += 2 * v35; /*0x5564d3*/
-        v6 = this->q16C; /*0x5564d7*/
+        v6 = this->u32_16C; /*0x5564d7*/
         v29 += 0x10000; /*0x5564dd*/
         ++v26; /*0x5564e5*/
         v33 = v13; /*0x5564eb*/

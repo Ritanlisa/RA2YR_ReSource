@@ -13,14 +13,13 @@ struct VectorClass_ptr_CCINIClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int Clear(int a2);  // 0x538510
-    char AddRef(int a2);  // 0x538520
-    char Remove(int a2, unsigned int * a3);  // 0x538560
+    int  Clear(int a2);  // 0x538510
+    char  AddRef(int a2);  // 0x538520
+    char  Remove(int a2, unsigned int * a3);  // 0x538560
     wchar_t * ddtor(void *a1_1);  // 0x538610
-    int GetSize(unsigned int * a2);  // 0x538640
-    unsigned int Get(int a2, void *a2_2);  // 0x538680
-    VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x538A90
+    int  GetSize(unsigned int * a2);  // 0x538640
+    unsigned int  Get(int a2, void *a1 = 0);  // 0x538680
+    VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x538A90
 };
 } // namespace gamemd

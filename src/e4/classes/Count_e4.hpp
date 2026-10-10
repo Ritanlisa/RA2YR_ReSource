@@ -22,12 +22,12 @@ public:
     unsigned int u32_1C;    // 0x1C (raw Count::DecrementRefCountsAudio *(this+7))
     unsigned int u32_38;    // 0x38 (raw Count::GetCountQueue *(this+14))
 
-    AbstractClass * * DecrementRefCountsAudio();  // 0x408E70 raw __thiscall
-    int SetupAllCountriesLobby();                 // 0x46F6D0 raw __thiscall BOOL
-    int32_t GetCountQueue();                      // 0x5F1EA0 raw __thiscall
-    int32_t Get();                                // 0x76F080 raw __thiscall
-    int32_t Release(void *a1);                    // 0x76F160 raw __thiscall
-    int32_t ddtor();                              // 0x76F170 raw __thiscall
+    AbstractClass * * DecrementRefCountsAudio(void *a1 = 0);
+    int SetupAllCountriesLobby();
+    int32_t GetCountQueue(void *a1 = 0);
+    int32_t Get(void *a1 = 0, void *a2 = 0);
+    int32_t Release(void *a1 = 0);
+    int32_t ddtor(void *a1 = 0);
 };
 
 } // namespace gamemd

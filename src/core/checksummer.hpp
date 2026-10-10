@@ -9,8 +9,8 @@ namespace gamemd {
 class Checksummer {
 public:
 void Add_WORD(uint16_t);
-    void Add_float(float value);
-    void Add_double(double value);
+    int Add_float(float value);
+    int Add_double(double value);
     int Add_Buffer(const uint8_t* buf, int len);
     int HashString(const char* str);
 };

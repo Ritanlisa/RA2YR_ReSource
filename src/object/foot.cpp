@@ -18,7 +18,7 @@ namespace gamemd { int House(...); }  // w18j2 raw call-form (variadic last reso
 namespace gamemd { int MapClass(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int StartAudioController(...);  // raw 00750D40: VocClass *__fastcall StartAudioController(_DWORD *a1, AudioSource *a2)
+    int StartAudioController(...);  // raw 00750D40: VocClass *__fastcall StartAudioController(unsigned int *a1, AudioSource *a2)
 } // namespace gamemd
 class Mixer;  // W13-C fwd (misc/audio_ext.hpp:115 载体; (Mixer*) cast 用法)
 extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同形)
@@ -147,7 +147,7 @@ FootClass::FootClass() noexcept
 bool FootClass::MovementAI()
 {
   char result; // al
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   double *v4; // eax
   int v5; // edi
   int v6; // eax
@@ -179,8 +179,8 @@ bool FootClass::MovementAI()
   int v33; // eax
   int (__thiscall **v34)(FootClass *); // edx
   int v35; // eax
-  void (__thiscall **v36)(FootClass *, int *, int, _DWORD); // edx
-  int (__stdcall ***v37)(_DWORD, int *, __int16 *); // eax
+  void (__thiscall **v36)(FootClass *, int *, int, unsigned int); // edx
+  int (__stdcall ***v37)(unsigned int, int *, int16_t *); // eax
   int *locomotor; // ebp
   int v39; // edi
   int v40; // eax
@@ -188,7 +188,7 @@ bool FootClass::MovementAI()
   FootClass *parasiteEatingMe; // esi
   int v43; // [esp+54h] [ebp-30h]
   int Traversability; // [esp+70h] [ebp-14h] BYREF
-  __int16 v45[2]; // [esp+74h] [ebp-10h] BYREF
+  int16_t v45[2]; // [esp+74h] [ebp-10h] BYREF
   int v46; // [esp+78h] [ebp-Ch] BYREF
   int v47; // [esp+7Ch] [ebp-8h]
   int v48; // [esp+80h] [ebp-4h]
@@ -198,28 +198,28 @@ bool FootClass::MovementAI()
   if ( !result ) /*0x4da548*/
     return result; /*0x4da548*/
   this->FootClass_field_bool_6B3 = 0; /*0x4da54e*/
-  if ( !(*(_DWORD *)&stru_A8EB00.?[416] % *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6152)) /*0x4da593*/
-    && !*(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3383)
-    && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 21))(this)
+  if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6152)) /*0x4da593*/
+    && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3383)
+    && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 21))(this)
     && !this->inLimbo )
   {
-    v3 = (_DWORD *)(*((int (__thiscall **)(FootClass *, int *))this->vfptr + 18))(this, &v46); /*0x4da5a8*/
-    Traversability = ((Traversability) & 0xFFFF0000u) | ((unsigned int)(*v3 / 256) & 0xFFFFu); /*0x4da5bb*/
-    Traversability = ((Traversability) & 0xFFFFu) | (((unsigned int)(v3[1] / 256) & 0xFFFFu) << 16); /*0x4da5d3*/
-    *(_DWORD *)v45 = Traversability; /*0x4da5dc*/
+    v3 = (unsigned int *)(*((int (__thiscall **)(FootClass *, int *))this->vfptr + 18))(this, &v46); /*0x4da5a8*/
+    (*((unsigned short *)&(Traversability))) = *v3 / 256; /*0x4da5bb*/
+    (*(((unsigned short *)&(Traversability)) + 1)) = v3[1] / 256; /*0x4da5d3*/
+    *(unsigned int *)v45 = Traversability; /*0x4da5dc*/
     v4 = (double *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v45); /*0x4da5e6*/
     Traversability = Cell::GetTraversability(v4); /*0x4da5f4*/
     if ( Traversability > 0 ) /*0x4da5f8*/
     {
-      v5 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x4da5fe*/
-      IDA_LOWORD(v6) = Math::RoundToInt((double)Traversability * *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] /*0x4da60a*/
+      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4da5fe*/
+      (*((unsigned short *)&(v6))) = Math::RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
                                                                        + 6168));
       Traversability = v6; /*0x4da610*/
-      result = (*((int (__thiscall **)(FootClass *, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))this->vfptr + 91))( /*0x4da629*/
+      result = (*((int (__thiscall **)(FootClass *, int *, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int))this->vfptr + 91))( /*0x4da629*/
                  this,
                  &Traversability,
                  0,
-                 v5->q1834,
+                 v5->RadSiteWarhead_d,
                  0,
                  0,
                  1,
@@ -230,28 +230,28 @@ bool FootClass::MovementAI()
   }
   if ( !this->isInPlayfield ) /*0x4da63b*/
   {
-    if ( *(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3434) ) /*0x4da64d*/
+    if ( *(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3434) ) /*0x4da64d*/
     {
       v7 = (*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this); /*0x4da65b*/
-      if ( (unsigned __int8)Type::CheckAmbiguity((Type *)&stru_87F5F0.__pad_58[416], v7, 1) ) /*0x4da667*/
+      if ( (uint8_t)Type::CheckAmbiguity((Type *)&stru_87F5F0.__pad_58[416], v7, 1) ) /*0x4da667*/
         this->isInPlayfield = 1; /*0x4da670*/
     }
   }
   if ( !this->locomotor[0] ) /*0x4da677*/
     sub_7DC720(-2147467261); /*0x4da684*/
-  if ( (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da6bb*/
-    && (*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 21))(this)
-    && (unsigned __int8)HouseClass::IsAlliedWith((void *)this->owner, (void *)dword_A83D4C) )
+  if ( (*(uint8_t (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da6bb*/
+    && (*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 21))(this)
+    && (uint8_t)HouseClass::IsAlliedWith((void *)this->owner, (void *)dword_A83D4C) )
   {
     v8 = this->sightTimer[0]; /*0x4da6c8*/
     v9 = this->sightTimer[2]; /*0x4da6ce*/
     if ( v8 != -1 ) /*0x4da6d7*/
     {
-      if ( *(_DWORD *)&stru_A8EB00.?[416] - v8 >= v9 ) /*0x4da6e3*/
+      if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v8 >= v9 ) /*0x4da6e3*/
       {
   LABEL_21:
-        (*((void (__thiscall **)(FootClass *, _DWORD, _DWORD, _DWORD, _DWORD))this->vfptr + 291))(this, 0, 0, 0, 0); /*0x4da6ef*/
-        (*((void (__thiscall **)(FootClass *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))this->vfptr + 290))( /*0x4da706*/
+        (*((void (__thiscall **)(FootClass *, unsigned int, unsigned int, unsigned int, unsigned int))this->vfptr + 291))(this, 0, 0, 0, 0); /*0x4da6ef*/
+        (*((void (__thiscall **)(FootClass *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))this->vfptr + 290))( /*0x4da706*/
           this,
           0,
           0,
@@ -284,23 +284,23 @@ bool FootClass::MovementAI()
         v14 = (*((int (__thiscall **)(FootClass *))this->vfptr + 114))(this); /*0x4da784*/
         v47 = v47; /*0x4da78a*/
         this->lastSightHeight = v14; /*0x4da78e*/
-        this->sightTimer[0] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x4da79e*/
+        this->sightTimer[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4da79e*/
         this->sightTimer[1] = v47; /*0x4da7a4*/
         this->sightTimer[2] = 15; /*0x4da7aa*/
         goto LABEL_25; /*0x4da7aa*/
       }
-      v9 -= *(_DWORD *)&stru_A8EB00.?[416] - v8; /*0x4da6e5*/
+      v9 -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v8; /*0x4da6e5*/
     }
     if ( v9 ) /*0x4da6e9*/
       goto LABEL_25; /*0x4da6e9*/
     goto LABEL_21; /*0x4da6e9*/
   }
   LABEL_25:
-  if ( !(*(_DWORD *)&stru_A8EB00.?[416] % 16) /*0x4da7d8*/
-    && (*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 21))(this)
-    && *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this) + 60) )
+  if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % 16) /*0x4da7d8*/
+    && (*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 21))(this)
+    && *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this) + 60) )
   {
-    v43 = *(_DWORD *)(*((int (__thiscall **)(FootClass *, __int16 *))this->vfptr + 110))(this, v45); /*0x4da7f2*/
+    v43 = *(unsigned int *)(*((int (__thiscall **)(FootClass *, int16_t *))this->vfptr + 110))(this, v45); /*0x4da7f2*/
     v16 = (*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this); /*0x4da7f8*/
     TeamClass::Update_0(*(TeamClass **)(v16 + 60), 59, (int)this, v43, 0, 0); /*0x4da801*/
   }
@@ -308,14 +308,14 @@ bool FootClass::MovementAI()
   if ( !this->locomotor[0] /*0x4da850*/
     || this->isSinking
     || this->isFallingDown
-    || this->rockerLinkedUnit && !*(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1682)
+    || this->rockerLinkedUnit && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1682)
     || this->inLimbo )
   {
     goto LABEL_67; /*0x4da856*/
   }
   if ( !this->locomotor[0] ) /*0x4da85c*/
     sub_7DC720(-2147467261); /*0x4da869*/
-  result = (*(int (__stdcall **)(int))(*(_DWORD *)this->locomotor[0] + 64))(this->locomotor[0]); /*0x4da877*/
+  result = (*(int (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 64))(this->locomotor[0]); /*0x4da877*/
   if ( this->isAliveFlag )
   {
     if ( this )
@@ -324,38 +324,38 @@ bool FootClass::MovementAI()
       v18 = 0; /*0x4da88a*/
     if ( !this->locomotor[0] ) /*0x4da8a0*/
       sub_7DC720(-2147467261); /*0x4da8ad*/
-    if ( ((*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da934*/
-       && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 118))(this)
+    if ( ((*(uint8_t (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da934*/
+       && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 118))(this)
        || this->target
-       && *(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 912)
+       && *(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 912)
        && v18
        && !FootClass::updateScanRange(v18))
-      && !(*(_DWORD *)&stru_A8EB00.?[416]
-         % *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 660))
-      && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 117))(this)
-      && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 118))(this)
+      && !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]
+         % *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 660))
+      && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 117))(this)
+      && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 118))(this)
       && !this->isAttackedByLocomotor )
     {
       goto LABEL_66; /*0x4da934*/
     }
-    if ( *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 664) ) /*0x4da94a*/
+    if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 664) ) /*0x4da94a*/
     {
       if ( !this->locomotor[0] ) /*0x4da952*/
         sub_7DC720(-2147467261); /*0x4da95f*/
-      if ( !(*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da9af*/
-        && !(*(_DWORD *)&stru_A8EB00.?[416]
-           % *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 664))
-        && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 117))(this)
-        && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 118))(this)
+      if ( !(*(uint8_t (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da9af*/
+        && !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]
+           % *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 664))
+        && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 117))(this)
+        && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 118))(this)
         && !this->isAttackedByLocomotor )
       {
         goto LABEL_66; /*0x4da9af*/
       }
     }
-    if ( *(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1709) /*0x4da9f3*/
+    if ( *(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1709) /*0x4da9f3*/
       && (*((int (__thiscall **)(FootClass *))this->vfptr + 114))(this) > 0
-      && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 117))(this)
-      && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 118))(this)
+      && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 117))(this)
+      && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 118))(this)
       && !this->isAttackedByLocomotor )
     {
   LABEL_66:
@@ -366,12 +366,12 @@ bool FootClass::MovementAI()
     {
       if ( !this->locomotor[0] ) /*0x4daa09*/
         sub_7DC720(-2147467261); /*0x4daa16*/
-      if ( !(*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)this->locomotor[0] + 128))(this->locomotor[0]) ) /*0x4daa24*/
+      if ( !(*(uint8_t (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) ) /*0x4daa24*/
         goto LABEL_136; /*0x4daa24*/
     }
     if ( this->isFallingDown /*0x4daa5c*/
       || this->isCrashing
-      || this->rockerLinkedUnit && *(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1682) )
+      || this->rockerLinkedUnit && *(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1682) )
     {
   LABEL_136:
       if ( this->FootClass_field_bool_53C ) /*0x4daafa*/
@@ -402,7 +402,7 @@ bool FootClass::MovementAI()
         v20 = vtable0[33](this) + 1268; /*0x4daac5*/
         v21 = Random::State(&Randomizer_Global); /*0x4daacb*/
         StartAudioControllerAt( /*0x4daae2*/
-          *(_DWORD *)(*(_DWORD *)(v20 + 4) + 4 * (v21 % *(_DWORD *)(v20 + 16))),
+          *(unsigned int *)(*(unsigned int *)(v20 + 4) + 4 * (v21 % *(unsigned int *)(v20 + 16))),
           &v46,
           (int **)this->audioController7);
         this->FootClass_field_bool_53C = 1; /*0x4daae7*/
@@ -413,7 +413,7 @@ bool FootClass::MovementAI()
     if ( isFallingDown != this->wasFallingDown ) /*0x4dab4a*/
     {
       if ( isFallingDown /*0x4dab67*/
-        && *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1356) != -1
+        && *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1356) != -1
         && this->isBomb )
       {
         v46 = this->location[0]; /*0x4dab7c*/
@@ -421,7 +421,7 @@ bool FootClass::MovementAI()
         v24 = (int (__thiscall **)(FootClass *))this->vfptr; /*0x4dab89*/
         v48 = this->location[2]; /*0x4dab8e*/
         v25 = v24[33](this); /*0x4dab92*/
-        StartAudioControllerAt(*(_DWORD *)(v25 + 1356), &v46, 0); /*0x4daba0*/
+        StartAudioControllerAt(*(unsigned int *)(v25 + 1356), &v46, 0); /*0x4daba0*/
         this->wasFallingDown = this->isFallingDown; /*0x4dabab*/
       }
       else
@@ -434,24 +434,24 @@ bool FootClass::MovementAI()
     {
       if ( isSinking ) /*0x4dabdd*/
       {
-        if ( *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1364) != -1 ) /*0x4dabf3*/
+        if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1364) != -1 ) /*0x4dabf3*/
         {
           v46 = this->location[0]; /*0x4dac02*/
           v47 = this->location[1]; /*0x4dac0b*/
           v27 = (int (__thiscall **)(FootClass *))this->vfptr; /*0x4dac0f*/
           v48 = this->location[2]; /*0x4dac14*/
           v28 = v27[33](this); /*0x4dac18*/
-          StartAudioControllerAt(*(_DWORD *)(v28 + 1364), &v46, 0); /*0x4dac26*/
+          StartAudioControllerAt(*(unsigned int *)(v28 + 1364), &v46, 0); /*0x4dac26*/
         }
-        if ( *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1352) == -1 ) /*0x4dac3b*/
+        if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1352) == -1 ) /*0x4dac3b*/
         {
-          if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 520) != -1 ) /*0x4dac86*/
+          if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 520) != -1 ) /*0x4dac86*/
           {
             v46 = this->location[0]; /*0x4dac94*/
             v47 = this->location[1]; /*0x4dac9b*/
             v48 = this->location[2]; /*0x4daca9*/
             StartAudioControllerAt( /*0x4dacb7*/
-              *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 520),
+              *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 520),
               &v46,
               (int **)this->audioController7);
           }
@@ -463,7 +463,7 @@ bool FootClass::MovementAI()
           v29 = (int (__thiscall **)(FootClass *))this->vfptr; /*0x4dac5b*/
           v48 = this->location[2]; /*0x4dac60*/
           v30 = v29[33](this); /*0x4dac66*/
-          StartAudioControllerAt(*(_DWORD *)(v30 + 1352), &v46, (int **)this->audioController7); /*0x4dac74*/
+          StartAudioControllerAt(*(unsigned int *)(v30 + 1352), &v46, (int **)this->audioController7); /*0x4dac74*/
         }
       }
       else if ( !this->FootClass_field_bool_53C ) /*0x4dacbe*/
@@ -478,24 +478,24 @@ bool FootClass::MovementAI()
       if ( isCrashing ) /*0x4dacf3*/
       {
         Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4dad01*/
-        if ( *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1360) != -1 /*0x4dad1f*/
-          && (unsigned __int8)House::IsHumanPlayer((House *)this->owner) )
+        if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1360) != -1 /*0x4dad1f*/
+          && (uint8_t)House::IsHumanPlayer((House *)this->owner) )
         {
           v46 = this->location[0]; /*0x4dad35*/
           v47 = this->location[1]; /*0x4dad3e*/
           v32 = (int (__thiscall **)(FootClass *))this->vfptr; /*0x4dad42*/
           v48 = this->location[2]; /*0x4dad47*/
           v33 = v32[33](this); /*0x4dad4b*/
-          StartAudioControllerAt(*(_DWORD *)(v33 + 1360), &v46, 0); /*0x4dad59*/
+          StartAudioControllerAt(*(unsigned int *)(v33 + 1360), &v46, 0); /*0x4dad59*/
         }
-        if ( *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1348) != -1 ) /*0x4dad6f*/
+        if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1348) != -1 ) /*0x4dad6f*/
         {
           v46 = this->location[0]; /*0x4dad7e*/
           v34 = (int (__thiscall **)(FootClass *))this->vfptr; /*0x4dad82*/
           v47 = this->location[1]; /*0x4dad87*/
           v48 = this->location[2]; /*0x4dad8e*/
           v35 = v34[33](this); /*0x4dad94*/
-          StartAudioControllerAt(*(_DWORD *)(v35 + 1348), &v46, (int **)this->audioController7); /*0x4dada2*/
+          StartAudioControllerAt(*(unsigned int *)(v35 + 1348), &v46, (int **)this->audioController7); /*0x4dada2*/
         }
       }
       else if ( !this->FootClass_field_bool_53C ) /*0x4dada9*/
@@ -508,34 +508,34 @@ bool FootClass::MovementAI()
     v47 = this->location[1]; /*0x4dade1*/
     v48 = this->location[2]; /*0x4dade8*/
     StartAudioController(&v46, (int **)this->audioController7); /*0x4dadf0*/
-    if ( (stru_A8EB00.?[416] & 0x3F) == 0x3F /*0x4dae37*/
+    if ( (((unsigned int *)&stru_A8EB00)[416] & 0x3F) == 0x3F /*0x4dae37*/
       && !this->movementDestination
       && !this->onBridge
-      && !*(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this) + 284)
-      && (*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 172))(this)
+      && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this) + 284)
+      && (*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 172))(this)
       && !(*((int (__thiscall **)(FootClass *))this->vfptr + 114))(this) )
     {
-      v36 = (void (__thiscall **)(FootClass *, int *, int, _DWORD))this->vfptr; /*0x4dae41*/
+      v36 = (void (__thiscall **)(FootClass *, int *, int, unsigned int))this->vfptr; /*0x4dae41*/
       v46 = 0; /*0x4dae4d*/
       v47 = 0; /*0x4dae51*/
       v48 = 0; /*0x4dae55*/
       v36[93](this, &v46, 1, 0); /*0x4dae59*/
     }
-    v37 = (int (__stdcall ***)(_DWORD, int *, __int16 *))this->locomotor[0]; /*0x4dae5f*/
+    v37 = (int (__stdcall ***)(unsigned int, int *, int16_t *))this->locomotor[0]; /*0x4dae5f*/
     locomotor = this->locomotor; /*0x4dae65*/
     v39 = 0; /*0x4dae6b*/
     if ( v37 )
     {
       v40 = (**v37)(v37, &stru_818E00.VoxelCaches[17], v45); /*0x4dae7e*/
-      v39 = v40 < 0 ? 0 : *(_DWORD *)v45;
+      v39 = v40 < 0 ? 0 : *(unsigned int *)v45;
       if ( v40 < 0 && v40 != -2147467262 ) /*0x4dae99*/
         sub_7DC720(v40); /*0x4dae9c*/
-      if ( v39 && (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)v39 + 20))(v40 < 0 ? 0 : *(_DWORD *)v45) )
+      if ( v39 && (*(uint8_t (__stdcall **)(unsigned int))(*(unsigned int *)v39 + 20))(v40 < 0 ? 0 : *(unsigned int *)v45) )
       {
         if ( *locomotor ) /*0x4daeaf*/
-          (*(void (__stdcall **)(int))(*(_DWORD *)*locomotor + 8))(*locomotor); /*0x4daeb9*/
+          (*(void (__stdcall **)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4daeb9*/
         *locomotor = 0; /*0x4daebc*/
-        (*(void (__stdcall **)(int, int *))(*(_DWORD *)v39 + 16))(v39, this->locomotor); /*0x4daec3*/
+        (*(void (__stdcall **)(int, int *))(*(unsigned int *)v39 + 16))(v39, this->locomotor); /*0x4daec3*/
       }
     }
     v41 = (int (__thiscall **)(FootClass *))this->vfptr; /*0x4daec6*/
@@ -547,7 +547,7 @@ bool FootClass::MovementAI()
     if ( parasiteEatingMe ) /*0x4daee9*/
       result = (*((int (__thiscall **)(ParasiteClass *))parasiteEatingMe->parasiteImUsing->vfptr + 23))(parasiteEatingMe->parasiteImUsing); /*0x4daef3*/
     if ( v39 ) /*0x4daef8*/
-      return (*(char (__stdcall **)(int))(*(_DWORD *)v39 + 8))(v39); /*0x4daefd*/
+      return (*(char (__stdcall **)(int))(*(unsigned int *)v39 + 8))(v39); /*0x4daefd*/
   }
   return result; /*0x4daf00*/
 }
@@ -592,17 +592,17 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
   bool v12; // bl
   bool v13; // al
 
-  if ( !*(_DWORD *)(a1 + 692) && !(unsigned __int8)House::IsCurrentPlayer(*(House **)(a1 + 540)) ) /*0x7092aa*/
+  if ( !*(unsigned int *)(a1 + 692) && !(uint8_t)House::IsCurrentPlayer(*(House **)(a1 + 540)) ) /*0x7092aa*/
   {
     if ( a1 ) /*0x7092b5*/
     {
-      if ( (*(_BYTE *)(a1 + 20) & 4) != 0 ) /*0x7092c3*/
+      if ( (*(unsigned char *)(a1 + 20) & 4) != 0 ) /*0x7092c3*/
       {
-        v3 = *(_DWORD *)(a1 + 1492); /*0x7092c5*/
+        v3 = *(unsigned int *)(a1 + 1492); /*0x7092c5*/
         if ( v3 ) /*0x7092cd*/
         {
-          v4 = *(_DWORD *)(v3 + 36); /*0x7092cf*/
-          if ( !*(_BYTE *)(v4 + 175) && *(_BYTE *)(v4 + 173) && *(_DWORD *)(a1 + 172) == 2 ) /*0x7092ec*/
+          v4 = *(unsigned int *)(v3 + 36); /*0x7092cf*/
+          if ( !*(unsigned char *)(v4 + 175) && *(unsigned char *)(v4 + 173) && *(unsigned int *)(a1 + 172) == 2 ) /*0x7092ec*/
             return 1; /*0x7092ec*/
         }
       }
@@ -611,30 +611,30 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
   result = FootClass::CanEnterBuilding((FootClass *)a1); /*0x7092f4*/
   if ( !result ) /*0x7092fb*/
     return result; /*0x7092fb*/
-  if ( *(_DWORD *)(a1 + 172) == 2 )
+  if ( *(unsigned int *)(a1 + 172) == 2 )
   {
-    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3434) ) /*0x709317*/
     {
-      if ( !a1 || (*(_BYTE *)(a1 + 20) & 4) == 0 ) /*0x709331*/
+      if ( !a1 || (*(unsigned char *)(a1 + 20) & 4) == 0 ) /*0x709331*/
         return 0; /*0x709338*/
-      if ( *(_DWORD *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x709349*/
+      if ( *(unsigned int *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 444))(a1) ) /*0x709349*/
       {
         v6 = *(FactoryClass **)(a1 + 1300); /*0x70934b*/
         if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
           return 1; /*0x709360*/
       }
     }
-    if ( *(_DWORD *)(a1 + 172) == 2 )
+    if ( *(unsigned int *)(a1 + 172) == 2 )
     {
       if ( a1 )
       {
-        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 )
+        if ( (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 1 )
         {
-          if ( *(_BYTE *)(*(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+          if ( *(unsigned char *)(*(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
                         + 3603) )
           {
-            v7 = (*(_BYTE *)(a1 + 20) & 4) != 0 ? a1 : 0;
-            if ( *(_DWORD *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x7093bc*/
+            v7 = (*(unsigned char *)(a1 + 20) & 4) != 0 ? a1 : 0;
+            if ( *(unsigned int *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 444))(a1) ) /*0x7093bc*/
             {
               v8 = *(FactoryClass **)(a1 + 1300); /*0x7093be*/
               if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
@@ -645,22 +645,22 @@ bool FootClass::CanEnterCell(uint32_t a) { return false;
       }
     }
   }
-  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+  if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
     return 1; /*0x7093df*/
-  if ( *(_DWORD *)(a1 + 172) != 5 ) /*0x7093f0*/
+  if ( *(unsigned int *)(a1 + 172) != 5 ) /*0x7093f0*/
     return 0; /*0x7093f7*/
-  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 996))(a1, a2); /*0x709403*/
-  v10 = (int *)(*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v9 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (int *)(*(int (__thiscall **)(int, int))(*(unsigned int *)a1 + 1016))(a1, v9); /*0x70940a*/
   v12 = 0; /*0x709424*/
   if ( v10 ) /*0x709412*/
   {
     v11 = *v10; /*0x709414*/
     if ( v11 ) /*0x709418*/
     {
-      if ( *(_BYTE *)(v11 + 336) ) /*0x70941a*/
+      if ( *(unsigned char *)(v11 + 336) ) /*0x70941a*/
         v12 = 1; /*0x709412*/
     }
   }
-  v13 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 740))(a1, *(_DWORD *)(a1 + 692)) == v9; /*0x70943d*/
+  v13 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 740))(a1, *(unsigned int *)(a1 + 692)) == v9; /*0x70943d*/
   return !v12 || !v13; /*0x709450*/
-} // namespace ra2
+}

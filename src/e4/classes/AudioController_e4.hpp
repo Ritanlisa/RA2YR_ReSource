@@ -9,21 +9,19 @@ namespace gamemd {
 struct AudioController {
 // --- flat members (BEGIN) ---
     unsigned int AudioController_field_00;  // 0x0
-    unsigned int u32_2;  // 0x2
     void* AudioController_field_04;  // 0x4
     void* AudioController_field_08;  // 0x8
     void* AudioController_field_0C;  // 0xC
-    unsigned char q010;  // 0x10
 // --- flat members (END) ---
     int LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5);
     void GetVolume();
-     int Init();  // G57w10-S raw 0x00405BE0 (was C2597 interim stub)
+     int Init();
     int CleanupStream();  // 0x4023f0
     int UpdatePlayback();  // 0x402330
     int AdvanceQueue();  // 0x4022c0
-    unsigned int * Stop();  // 0x405d40
-    int * Constructor();  // 0x402040
-    static void Init(void * aP0);  // G42.33 b9 static-form (call site 0x6c90a2)
+    unsigned int * Stop(void *a1 = 0, void *a2 = 0);  // 0x405d40
+    int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x402040
+    static void Init(void * aP0);
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

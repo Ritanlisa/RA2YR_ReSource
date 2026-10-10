@@ -8,8 +8,7 @@ namespace gamemd {
 struct VectorClass_ptr_InfantryClass {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
-    unsigned char u8_D;  // 0xD
 // --- flat members (END) ---
-    void Remove(void *a1_1);  // 0x45A4D0
+    void Remove(void *a1_1, void *a1 = 0);  // 0x45A4D0
 };
 } // namespace gamemd

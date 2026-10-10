@@ -9,7 +9,7 @@ struct Mixer {
 // --- flat members (BEGIN) ---
     char Mixer_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int ReleaseChannel();
+    int ReleaseChannel(void *a1 = 0);
     static int RequestAllBuffers();
     unsigned int u32_4;  // 0x4 (offset-truth)
     unsigned int u32_8;  // 0x8 (offset-truth)

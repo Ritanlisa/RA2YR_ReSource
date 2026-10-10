@@ -60,7 +60,7 @@ public:
     void LiberateMember(FootClass* foot, int idx = -1, uint8_t count = 0);
     void LiberateMember_Start(FootClass* foot, int idx, uint8_t count);  // 0x6EA870
     void RecruitMember(FootClass* foot, int idx);                                        // 0x6EAA90
-    void AddMember(FootClass* foot);                                                     // 0x6EA500
+    int AddMember(FootClass* foot);                                                     // 0x6EA500
     // G42.33: binary 0x6ED002 call form AddMember(this, FootClass*, int) -- overload
     int AddMember(FootClass* foot, int flag);  // 2-arg form (supplied-bodies carrier)
     bool ValidateMember(FootClass* foot);                                                // 0x6EA610
@@ -84,7 +84,7 @@ public:
     void UpdateReadinessState();                                                         // 0x6EA3E0
     void UpdateBuildQueue();                                                             // 0x6367B0
     void ProcessMemberPositions();                                                       // 0x6EBF50
-    void WakeUpAllMembers();                                                             // 0x6EC3A0
+    int WakeUpAllMembers();                                                             // 0x6EC3A0
     void Check();                                                                        // 0x6915B0
 
     // coordination
@@ -101,7 +101,7 @@ public:
     static int CountActiveTeamsForType(TeamTypeClass* type);                              // 0x5095D0
     static TeamClass* FindByMemberType(TechnoTypeClass* type);                             // 0x635A40
     void DisbandTeam();                                                                  // 0x577BB0
-    void Reset();                                                                        // 0x635DB0
+    int Reset();                                                                        // 0x635DB0
     void Cleanup();                                                                      // 0x636B50
     void Destructor();                                                                   // 0x6E8DE0
     void DeployUnit(FootClass* foot);                                                     // 0x62A260
@@ -164,7 +164,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SelectAreaAttackTarget(int a1, int a2);  // 0x6EE310
     void ProcessTeamMovement(int a1, int a2);  // 0x6EE3F0
     void SelectBestMember(int a1, int a2);  // 0x6EE5C0
-    void* ScoreMember(unsigned int* a1, int a2, int a3);  // 0x6EEEA0 IDA: _DWORD* 首参
+    void* ScoreMember(unsigned int* a1, int a2, int a3);  // 0x6EEEA0 IDA: unsigned int* 首参
     void PlayMemberAnimation(int a1, int a2);  // 0x6EF610
     void SelectDeploymentTarget(int a1, int a2);  // 0x6EFA10
     void CheckMemberSuperWeapon(int a1, int a2);  // 0x6F0130

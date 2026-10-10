@@ -24,38 +24,38 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x4E3560
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BuildingType::FindDefault()
 {
   int result; // eax
 
   result = 0; /*0x4e3560*/
   if ( this == (BuildingType *)-2 ) /*0x4e3565*/
-    return HashTable::Find(&g_DialogHashTable, off_844AE8, 0); /*0x4e3573*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AE8), 0); /*0x4e3573*/
   if ( !this ) /*0x4e357b*/
-    return HashTable::Find(&g_DialogHashTable, off_844AF0, 0); /*0x4e358a*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AF0), 0); /*0x4e358a*/
   if ( this == (BuildingType *)1 ) /*0x4e3593*/
-    return HashTable::Find(&g_DialogHashTable, off_844AF4, 0); /*0x4e35a3*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AF4), 0); /*0x4e35a3*/
   if ( this == (BuildingType *)2 ) /*0x4e35ac*/
-    return HashTable::Find(&g_DialogHashTable, off_844AF8, 0); /*0x4e35bb*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AF8), 0); /*0x4e35bb*/
   if ( this == (BuildingType *)3 ) /*0x4e35c4*/
-    return HashTable::Find(&g_DialogHashTable, off_844AFC, 0); /*0x4e35d4*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AFC), 0); /*0x4e35d4*/
   if ( this == (BuildingType *)4 ) /*0x4e35dd*/
-    return HashTable::Find(&g_DialogHashTable, off_844B00, 0); /*0x4e35ed*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844B00), 0); /*0x4e35ed*/
   if ( this == (BuildingType *)5 ) /*0x4e35f6*/
-    return HashTable::Find(&g_DialogHashTable, off_844B04, 0); /*0x4e3605*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844B04), 0); /*0x4e3605*/
   if ( this == (BuildingType *)6 ) /*0x4e360e*/
-    return HashTable::Find(&g_DialogHashTable, off_844B08, 0); /*0x4e361e*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844B08), 0); /*0x4e361e*/
   if ( this == (BuildingType *)7 ) /*0x4e3627*/
-    return HashTable::Find(&g_DialogHashTable, off_844B0C, 0); /*0x4e3637*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844B0C), 0); /*0x4e3637*/
   if ( this == (BuildingType *)8 ) /*0x4e3640*/
-    return HashTable::Find(&g_DialogHashTable, off_844B10, 0); /*0x4e364f*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844B10), 0); /*0x4e364f*/
   if ( this == (BuildingType *)-3 ) /*0x4e3658*/
-    return HashTable::Find(&g_DialogHashTable, off_844AEC, 0); /*0x4e3668*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AEC), 0); /*0x4e3668*/
   if ( this == (BuildingType *)9 ) /*0x4e3671*/
-    return HashTable::Find(&g_DialogHashTable, off_844B14, 0); /*0x4e3681*/
+    return HashTable::Find(&g_DialogHashTable,(const char *)(off_844B14), 0); /*0x4e3681*/
   return result; /*0x4e3578*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x510ED0
@@ -110,7 +110,7 @@ int BuildingType::IsSpecialType()
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = this == (BuildingType *)4475 /*0x510fa3*/
+  (*((unsigned char *)&(result))) = this == (BuildingType *)4475 /*0x510fa3*/
                 || this == (BuildingType *)4476
                 || this == (BuildingType *)4477
                 || this == (BuildingType *)4478
@@ -129,6 +129,6 @@ int BuildingType::Init(unsigned int a2)
   if ( a2 >= 0x10 ) /*0x68c036*/
     return -1; /*0x68c047*/
   else
-    return *((_DWORD *)this + a2 + 1120); /*0x68c03d*/
+    return *((unsigned int *)this + a2 + 1120); /*0x68c03d*/
 }
 } // namespace gamemd

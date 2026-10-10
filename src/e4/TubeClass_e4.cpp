@@ -11,26 +11,26 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x7281A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int TubeClass::LoadState(AbstractClass * aP0, int aP1)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x7281ab*/
+  result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x7281ab*/
   if ( result >= 0 ) /*0x7281b2*/
   {
     if ( aP0 ) /*0x7281b6*/
     {
       AbstractClass::Constructor((AbstractClass *)aP0); /*0x7281ba*/
-      aP0->vfptr = &(void*)(void*)&TubeClass_vftable; /*0x7281bf*/
-      aP0->vfptr1 = &(void*)(void*)&TubeClass_vftable; /*0x7281c5*/
-      aP0->vfptr2 = &(void*)(void*)&TubeClass_vftable; /*0x7281cc*/
-      aP0->vfptr3 = &(void*)(void*)&TubeClass_vftable; /*0x7281d3*/
+      aP0->vfptr = &vt_TubeClass; /*0x7281bf*/
+      aP0->vfptr1 = &vt_TubeClass; /*0x7281c5*/
+      aP0->vfptr2 = &vt_TubeClass; /*0x7281cc*/
+      aP0->vfptr3 = &vt_TubeClass; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }
   return result; /*0x7281dc*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x7281E0

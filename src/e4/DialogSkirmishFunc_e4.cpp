@@ -31,7 +31,7 @@ namespace gamemd {
 } // namespace gamemd
 
 // 0x6ACEE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void DialogSkirmishFunc_UpdateMultiEngineer(Session *hWnd, int nIDDlgItem, int a3, int a4)
 {
   HWND DlgItem; // eax
@@ -632,5 +632,5 @@ LABEL_153:
         return;
     }
   }
-}
+}  // G42.18 ns repair
 } // namespace gamemd

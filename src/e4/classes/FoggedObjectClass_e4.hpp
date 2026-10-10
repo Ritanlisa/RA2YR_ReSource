@@ -16,18 +16,14 @@ struct FoggedObjectClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int Count;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsInitialized;  // 0x12
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char LastSight[4];  // 0x24
     HouseClass* House;  // 0x28
-    bool q02B;  // 0x2B
     char Cell[4];  // 0x2C
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
@@ -37,13 +33,13 @@ struct FoggedObjectClass {
     FoggedObjectClass * ddtor(char a2, int a3);
     HouseClass * * PowerDrainUpdate(int a2);
     char AddRef(int a2);
-    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3);
+    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3, void *a1 = 0);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
     int InitBuildingFog(unsigned int * a2, int a3, int a4);
     int LoadTypeData(int * a1, int a2);
-    int Read(unsigned int * a2, void *a2_2);
+    int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
     int   SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * CheckVisibility(unsigned int * a2);
     unsigned int u32_34;  // 0x34 (offset-truth)
@@ -51,8 +47,12 @@ struct FoggedObjectClass {
     unsigned int u32_3C;  // 0x3C (offset-truth)
     unsigned int u32_54;  // 0x54 (offset-truth)
     unsigned int u32_58;  // 0x58 (offset-truth)
-    unsigned int u32_5C;  // 0x5C (offset-truth)
+    void* ;  // 0x5C (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
+    static double AbstractClass(...);  // plateau: C2039/C3861 stub
+    static double LastSight2(...);  // plateau: C2039/C3861 stub
+    static double u32_44(...);  // plateau: C2039/C3861 stub
+    static double u32_74(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

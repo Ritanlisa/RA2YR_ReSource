@@ -10,29 +10,7 @@ struct E4Recv_77A9F0 {
     unsigned int M16;  // 0x10
     unsigned int M28;  // 0x1C
     unsigned int M32;  // 0x20
-    unsigned int q028;  // 0x28
-    unsigned int q034;  // 0x34
-    unsigned int q040;  // 0x40
-    unsigned int q050;  // 0x50
-    unsigned int q064;  // 0x64
-    unsigned int q080;  // 0x80
-    unsigned int q100;  // 0x100
-    unsigned int q128;  // 0x128
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q598;  // 0x598
-    unsigned int q1634;  // 0x1634
-    unsigned int q5170;  // 0x5170
-    unsigned int q5684;  // 0x5684
-    unsigned int q20848;  // 0x20848
-    unsigned int q22148;  // 0x22148
-    unsigned int q153094;  // 0x153094
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
-    void  FillPersonaInfoWOL(HWND hDlg, void * aP2, void * a3);  // 0x77A9F0
+    int  FillPersonaInfoWOL(HWND hDlg, char ** a3, void * a4);  // 0x77A9F0
 };
 } // namespace gamemd

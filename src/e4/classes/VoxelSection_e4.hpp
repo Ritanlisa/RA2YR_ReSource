@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct VoxelSection {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    int GetInfo(int a2, int a3);
+    int GetInfo(int a2, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

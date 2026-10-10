@@ -12,9 +12,15 @@ AbstractType __stdcall AirstrikeClass::whatAmI() const { return kObjectDeriveId;
 int AirstrikeClass::objectSize() const { return 0; }
 void AirstrikeClass::calculateChecksum(void* checksum) const {}
 // 0x41dc50
-bool AirstrikeClass::StubReturnFalse() const { return false; }
+bool AirstrikeClass::StubReturnFalse() const
+{
+  ; /*0x41dc50*/
+}
 // 0x41dd40
-int AirstrikeClass::StubReturn71() const { return 71; }
+int AirstrikeClass::StubReturn71() const
+{
+  return 71; /*0x41dd45*/
+}
 // 0x41dd30
 int AirstrikeClass::StubReturn96() const { return 96; }
 }

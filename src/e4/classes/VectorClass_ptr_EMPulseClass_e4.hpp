@@ -14,20 +14,19 @@ struct VectorClass_ptr_EMPulseClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
     int Destroy(void *a1_1);  // 0x4C5B60
-    unsigned int GetItemIndex(int a2);  // 0x4C5B90
-    int Get(int a2, void *a2_2);  // 0x4C5BB0
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x4C5BC0
-    char Release(int a2, unsigned int * a3);  // 0x4C5C00
-    void Remove(void *a1_1);  // 0x4C5CB0
-    int GetSize(unsigned int * a2);  // 0x4C5CE0
-    unsigned int GetCapacity(int a2);  // 0x4C5D20
-    char SetCapacity(int a2, unsigned int * a3);  // 0x4C5D40
-    int FindItemIndex(unsigned int * a2);  // 0x4C5DF0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4C5E20
-    DynamicVector * Constructor_VectorClass_EMPulseClass___(unsigned int * Block, char a2);  // 0x4C5E70
+    unsigned int  GetItemIndex(int a2);  // 0x4C5B90
+    int  Get(int a2, void *a1 = 0);  // 0x4C5BB0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4C5BC0
+    char  Release(int a2, unsigned int * a3);  // 0x4C5C00
+    void Remove(void *a1_1, void *a1 = 0);  // 0x4C5CB0
+    int  GetSize(unsigned int * a2);  // 0x4C5CE0
+    unsigned int  GetCapacity(int a2);  // 0x4C5D20
+    char  SetCapacity(int a2, unsigned int * a3);  // 0x4C5D40
+    int  FindItemIndex(unsigned int * a2);  // 0x4C5DF0
+    VectorClass_flat *  QueryInterface(char a2);  // 0x4C5E20
+    DynamicVector *  Constructor_VectorClass_EMPulseClass___(char a2);  // 0x4C5E70
 };
 } // namespace gamemd

@@ -7,7 +7,6 @@ namespace gamemd {
 
 struct Map {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
     int Width;  // 0x4
     int Height;  // 0x8
     char* Name;  // 0xC

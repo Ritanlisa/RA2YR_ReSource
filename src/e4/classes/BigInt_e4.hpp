@@ -7,13 +7,10 @@ namespace gamemd {
 
 struct BigInt {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
+
 // --- flat members (END) ---
-    int __thiscall DecryptBlock(char *Src, int a3, char *a4);
-    int __thiscall RSAOperation(char *Src, int a3, char *a4);
+    int __thiscall DecryptBlock(char *Src, int a3, char *a4, void *a1 = 0);
+    int __thiscall RSAOperation(char *Src, int a3, char *a4, void *a1 = 0);
 };
 
 } // namespace gamemd

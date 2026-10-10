@@ -19,7 +19,7 @@ struct SHPStruct
     // unmatched: no callgraph reference and no git history record
     virtual ~SHPStruct();
 
-    void Load();
+    int Load();
     // unmatched: no callgraph reference and no git history record
     void Unload();
 

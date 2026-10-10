@@ -7,10 +7,9 @@ namespace gamemd {
 
 struct WDTObject {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int GetAndClearFlag();
+    int GetAndClearFlag(void *a1 = 0);
     int GetSize();  // 0x76bfa0
 };
 

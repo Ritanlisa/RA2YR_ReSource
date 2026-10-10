@@ -14,20 +14,9 @@ struct VectorClass_ptr_IonBlastClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector * Constructor_VectorClass_IonBlastClass___(unsigned int * Block, char a2);  // 0x53DD50
-    int Get(void *a1_1);  // 0x53DA40
-    unsigned int Get(int a2);  // 0x53DA70
-    int Get(int a2, void *a2_2);  // 0x53DA90
-    char Constructor_VectorClass_IonBlastClass___(int a2, void *a2_2, void *a3_1);  // 0x53DAA0
-    char Constructor_VectorClass_IonBlastClass___(int a2, unsigned int * a3);  // 0x53DAE0
-    void Constructor_VectorClass_IonBlastClass___(void *a1_1);  // 0x53DB90
-    int Constructor_VectorClass_IonBlastClass___(unsigned int * a2);  // 0x53DBC0
-    unsigned int Constructor_VectorClass_IonBlastClass___(int a2);  // 0x53DC00
-    char Constructor_VectorClass_IonBlastClass___(int a2, unsigned int * a3);  // 0x53DC20
-    int Constructor_VectorClass_IonBlastClass___(unsigned int * a2);  // 0x53DCD0
-    VectorClass_flat * Constructor_VectorClass_IonBlastClass___(unsigned int * Block, char a2);  // 0x53DD00
+    DynamicVector *  Constructor_VectorClass_IonBlastClass___(char a2);  // 0x53DD50
+    int Get(void *a1_1, void *a1 = 0);  // 0x53DA40
 };
 } // namespace gamemd

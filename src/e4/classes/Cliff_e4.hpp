@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Cliff {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     static char __stdcall ProcessTransitions(int a1, int a2);
 };

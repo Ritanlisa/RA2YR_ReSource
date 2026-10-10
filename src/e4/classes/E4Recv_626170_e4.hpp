@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_626170 {
     void* vfptr;  // minimal E2 declaration
-    unsigned char sub_626170(ObjectClass * aP1, int a3);  // 0x626170
+    unsigned char  sub_626170(uint8_t a2, int a3);  // 0x626170
 };
 } // namespace gamemd

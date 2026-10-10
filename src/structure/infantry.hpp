@@ -45,7 +45,7 @@ public:
     int ProcessDeployAction(int deploy_type, bool a3, bool a4);  // 0x51D6F0
     int ProcessIdleDeploy();  // 0x5200B0
     bool CanInitiateDeploy();  // 0x521B60
-    bool CanDeployAtCell(short* a2, short* a3);  // 0x5221D0 (g57w10 raw: bool(this, __int16* a2, __int16* a3))
+    bool CanDeployAtCell(short* a2, short* a3);  // 0x5221D0 (g57w10 raw: bool(this, int16_t* a2, int16_t* a3))
     bool CheckDeployPath();  // 0x521EB0
     int CreateDeployLocomotor(int a2, int a3, int a4);  // 0x522FE0
     bool StartBombDeploy(char a2); // 0x522C00

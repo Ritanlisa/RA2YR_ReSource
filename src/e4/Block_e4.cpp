@@ -7,14 +7,14 @@
 #include "e4/e4_protos.h"
 
 // 0x6260D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * Block::Copy(const void * a2, void *a2_2)
 {
   void *result; // eax
 
   result = a2_2; /*0x6260d5*/
   if ( a2_2 != a2_2 ) /*0x6260d9*/
-    qmemcpy(a2_2, a2_2, 0x300u); /*0x6260e3*/
+    memcpy(a2_2, a2_2, 0x300u); /*0x6260e3*/
   return result; /*0x6260e6*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

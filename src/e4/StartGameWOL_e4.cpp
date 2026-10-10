@@ -8,12 +8,14 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x7ACB90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char E4Recv_7ACB90::StartGameWOL_Start_7ACB90(void* aP1, int a3)
 {
-  if ( a3 < 0 || a3 >= (int)this->vfptr ) /*0x7acb9b*/
+
+  if ( a3 < 0 || a3 >= (int)this->AbstractClass ) /*0x7acb9b*/
     return 0; /*0x7acbbc*/
-  qmemcpy(aP1, (char *)this->vfptr2 + 108 * a3, 0x6Cu); /*0x7acbb3*/
+  qmemcpy(aP1, (char *)this->? + 108 * a3, 0x6Cu); /*0x7acbb3*/
   return 1; /*0x7acbb8*/
+
 }
 } // namespace gamemd

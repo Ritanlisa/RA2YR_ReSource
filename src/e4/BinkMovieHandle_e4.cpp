@@ -18,9 +18,10 @@
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x432AB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
 {
+
   int *v3; // eax
   int v4; // ebp
   int v5; // esi
@@ -35,13 +36,13 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
   int v14; // esi
   int v16; // [esp+14h] [ebp-20h]
   int v18; // [esp+20h] [ebp-14h]
-  _BYTE v19[16]; // [esp+24h] [ebp-10h] BYREF
+  unsigned char v19[16]; // [esp+24h] [ebp-10h] BYREF
   int v20; // [esp+3Ch] [ebp+8h]
 
   v3 = *(int **)(v11 + 4); /*0x432ab3*/
   v4 = v3[1]; /*0x432ac3*/
   v5 = *v3; /*0x432ac7*/
-  v6 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(v11 + 12) + 120))(*(_DWORD *)(v11 + 12), v19); /*0x432ad8*/
+  v6 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(v11 + 12) + 120))(*(unsigned int *)(v11 + 12), v19); /*0x432ad8*/
   result = 0; /*0x432ade*/
   v8 = v6[2]; /*0x432ae0*/
   v9 = 0; /*0x432ae3*/
@@ -77,7 +78,7 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
     v12 = v20 + v11 - a3_2; /*0x432b94*/
   if ( v12 < 1 ) /*0x432b99*/
   {
-  LABEL_18:
+LABEL_18:
     v13 = 0; /*0x432ba7*/
     v14 = 0; /*0x432ba9*/
   }
@@ -88,17 +89,19 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
     v13 = v5; /*0x432ba1*/
     v14 = v12; /*0x432ba3*/
   }
-  *(_DWORD *)(v11 + 16) = result; /*0x432bb2*/
-  *(_DWORD *)(v11 + 20) = v9; /*0x432bb4*/
-  *(_DWORD *)(v11 + 24) = v13; /*0x432bb7*/
-  *(_DWORD *)(v11 + 28) = v14; /*0x432bba*/
+  *(unsigned int *)(v11 + 16) = result; /*0x432bb2*/
+  *(unsigned int *)(v11 + 20) = v9; /*0x432bb4*/
+  *(unsigned int *)(v11 + 24) = v13; /*0x432bb7*/
+  *(unsigned int *)(v11 + 28) = v14; /*0x432bba*/
   return result; /*0x432bbd*/
+
 }
 } // namespace gamemd
 // 0x433060
 namespace gamemd {
-_DWORD * BinkMovieHandle::CopyFrameToSurface()
+unsigned int * BinkMovieHandle::CopyFrameToSurface()
 {
+
   DSurface *width; // edi
   int v3; // ebx
   int v4; // ebp
@@ -120,32 +123,33 @@ _DWORD * BinkMovieHandle::CopyFrameToSurface()
     v3 = Rect.left + this->height; /*0x4330a7*/
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
     width = (DSurface *)this->width; /*0x4330b0*/
-    BinkMovie::AdjustSurfaceFormat((int)width); /*0x4330b4*/
-    v12 = (*((int (__thiscall **)(DSurface *, _DWORD, _DWORD))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
+    BinkMovie::AdjustSurfaceFormat((BinkMovie *)this, (int)width); /*0x4330b4*/
+    v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
-      v10 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
-      v5 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
+      v10 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
+      v5 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
       BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, (int)this->renderTarget | 0x80000000); /*0x4330fe*/
-  LABEL_6:
-      (*((void (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
+LABEL_6:
+      (*((void (**)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
     }
   }
   else
   {
     currentFrame = this->currentFrame; /*0x433103*/
     height = this->height; /*0x433109*/
-    BinkMovie::AdjustSurfaceFormat(this->width); /*0x43310d*/
-    v7 = (*((int (__thiscall **)(DSurface *, _DWORD, _DWORD))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
+    BinkMovie::AdjustSurfaceFormat((BinkMovie *)this, this->width); /*0x43310d*/
+    v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
-      v11 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
-      v8 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
+      v11 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
+      v8 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
       BinkCopyToBuffer(this->tempPath, v7, v11, v8, height, currentFrame, (int)this->renderTarget | 0x80000000); /*0x433155*/
       goto LABEL_6; /*0x433155*/
     }
   }
-  return BinkMovie::BlitToTarget((int)width); /*0x43316a*/
+  return BinkMovie::BlitToTarget((BinkMovie *)this, (int)width); /*0x43316a*/
+
 }
 } // namespace gamemd
 // 0x432BD0
@@ -166,7 +170,7 @@ int BinkMovieHandle::InitFromFile(void *a1, void *a2)
   int result; // eax
 
   g_MissionQueueFrame.localVariables[605] = (int)this; /*0x5c0550*/
-  result = BinkMovie::Play((BinkMovie *)this->height); /*0x5c0559*/
+  result = ((BinkMovie *)((BinkMovie *)this->height))->Play(); /*0x5c0559*/
   g_MissionQueueFrame.localVariables[605] = 0; /*0x5c055e*/
   return result; /*0x5c0568*/
 }
@@ -175,7 +179,7 @@ int BinkMovieHandle::InitFromFile(void *a1, void *a2)
 namespace gamemd {
 BOOL BinkMovieHandle::COMStub()
 {
-  return BinkMovie::IsAtEnd((BinkMovieHandle *)this->height);
+  return ((BinkMovie *)((BinkMovieHandle *)this->height))->IsAtEnd();
 }
 } // namespace gamemd
 // 0x5C0580
@@ -193,9 +197,9 @@ int BinkMovieHandle::Release(void *a1)
   int result; // eax
 
   height = a1->height; /*0x433021*/
-  result = BinkWait(*(_DWORD *)(height + 4)); /*0x433027*/
+  result = BinkWait((void *)(*(unsigned int *)(height + 4))); /*0x433027*/
   if ( !result ) /*0x43302f*/
-    *(_BYTE *)(height + 45) = 1; /*0x433031*/
+    *(unsigned char *)(height + 45) = 1; /*0x433031*/
   return result; /*0x433036*/
 }
 } // namespace gamemd
@@ -203,7 +207,7 @@ int BinkMovieHandle::Release(void *a1)
 namespace gamemd {
 int BinkMovieHandle::Pause(int a2, int a3)
 {
-  return BinkMovieHandle::RenderFrameClipped(this->height, a2, a3); /*0x5c05b2*/
+  return BinkMovieHandle::RenderFrameClipped(this->height, a2,(void *)(a3)); /*0x5c05b2*/
 }
 } // namespace gamemd
 // 0x5C05C0
@@ -217,7 +221,7 @@ int BinkMovieHandle::RenderLoop(int a2, void *a2_2, void *a3, void *a4)
 namespace gamemd {
 int BinkMovieHandle::AdjustSurfaceFormat(int a2, void *a2_2)
 {
-  return BinkMovieHandle::Check((BinkMovieHandle *)a2_2->height, a2_2); /*0x5c05dd*/
+  return ((BinkMovieHandle *)((BinkMovieHandle *)a2_2->height))->Check(a2_2); /*0x5c05dd*/
 }
 } // namespace gamemd
 // 0x5C05E0
@@ -225,32 +229,34 @@ namespace gamemd {
 unsigned int BinkMovieHandle::BlitToTarget(void *a1, void *a2)
 {
   return 0x3E8 /*0x432c06*/
-       / (unsigned int)(*(_DWORD *)(*(_DWORD *)(this->height + 4) + 20) / *(_DWORD *)(*(_DWORD *)(this->height + 4) + 24));
+       / (unsigned int)(*(unsigned int *)(*(unsigned int *)(this->height + 4) + 20) / *(unsigned int *)(*(unsigned int *)(this->height + 4) + 24));
 }
 } // namespace gamemd
 // 0x5C05F0
 namespace gamemd {
 unsigned int * BinkMovieHandle::Close(void *a1, void *a2)
 {
-  return BinkMovieHandle::CopyFrameToSurface((BinkMovieHandle *)this->height);
+  return ((BinkMovieHandle *)((BinkMovieHandle *)this->height))->CopyFrameToSurface();
 }
 } // namespace gamemd
 // 0x5C0A30
 namespace gamemd {
 BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
+
   BinkMovie *height; // edi
 
   height = (BinkMovie *)this->height; /*0x5c0a34*/
-  *(_DWORD *)this->MovieHandle = &(void*)(void*)&BinkMovieHandle_vftable; /*0x5c0a37*/
+  *(unsigned int *)this->MovieHandle = &BinkMovieHandle::`vftable'; /*0x5c0a37*/
   if ( height ) /*0x5c0a3f*/
   {
     BinkMovie::Stop(height); /*0x5c0a43*/
-    RA2_OPDEL(height); /*0x5c0a49*/
+    __3_YAXPAX_Z(height); /*0x5c0a49*/
   }
-  *(_DWORD *)this->MovieHandle = &(void*)(void*)&MovieHandle_vftable; /*0x5c0a55*/
+  *(unsigned int *)this->MovieHandle = &MovieHandle::`vftable'; /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
-    RA2_OPDEL(); /*0x5c0a60*/
+    __3_YAXPAX_Z(this); /*0x5c0a60*/
   return this->MovieHandle; /*0x5c0a6a*/
+
 }
 } // namespace gamemd

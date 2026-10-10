@@ -20,18 +20,19 @@
 #include "e4/classes/AudioTimer_e4.hpp"
 
 // 0x5BF450
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char AsyncIO::Shutdown()
 {
+
   int v1; // esi
-  _DWORD *i; // eax
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  unsigned int *i; // eax
+  void (***v3)(unsigned int, int); // ecx
   char result; // al
 
   v1 = 0; /*0x5bf459*/
   for ( i = AsyncIO_Instance; v1 < g_AsyncIOState; ++v1 ) /*0x5bf462*/
   {
-    v3 = (void (__thiscall ***)(_DWORD, int))i[v1]; /*0x5bf464*/
+    v3 = (void (***)(unsigned int, int))i[v1]; /*0x5bf464*/
     if ( v3 ) /*0x5bf469*/
     {
       (**v3)(v3, 1); /*0x5bf473*/
@@ -41,13 +42,13 @@ char AsyncIO::Shutdown()
   g_AsyncIOState = 0; /*0x5bf487*/
   if ( i && byte_B45B65 ) /*0x5bf495*/
   {
-    RA2_OPDEL(i); /*0x5bf498*/
+    __3_YAXPAX_Z(i); /*0x5bf498*/
     AsyncIO_Instance = 0; /*0x5bf4a0*/
   }
   result = g_MissionQueueFrame.localVariables[566]; /*0x5bf4a6*/
   byte_B45B65 = 0; /*0x5bf4ab*/
   dword_B45B60 = 0; /*0x5bf4b3*/
-  if ( IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf4b9*/
+  if ( LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf4b9*/
   {
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
@@ -55,9 +56,10 @@ char AsyncIO::Shutdown()
     RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf4d5*/
     RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf4e5*/
     result = AudioMixer::Pump(); /*0x5bf4ea*/
-    IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
+    LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
   }
   return result; /*0x5bf4f5*/
+
 }
 } // namespace gamemd
 // 0x774BC0
@@ -71,17 +73,17 @@ int AsyncIO::WaitCompletion()
   int v9; // [esp+10h] [ebp-10h]
   int v10; // [esp+18h] [ebp-8h]
 
-  Ticks = Timer::GetTicks(); /*0x774bcf*/
-  v2 = this->u8_51; /*0x774bd3*/
+  Ticks = TimerGetTicks(); /*0x774bcf*/
+  v2 = this->u32_51; /*0x774bd3*/
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
-    Ticks = Timer::GetTicks(); /*0x774bf4*/
+    Ticks = TimerGetTicks(); /*0x774bf4*/
     v10 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
     {
-      if ( GetOverlappedResult(*(HANDLE *)(&this->q0242), (LPOVERLAPPED)(&this->u32_180), &NumberOfBytesTransferred, 0) /*0x774c29*/
+      if ( GetOverlappedResult(*(unsigned int *)((char *)&this->q146 + 42), (LPOVERLAPPED)((char *)&this->q092 + 94), &NumberOfBytesTransferred, 0) /*0x774c29*/
         || GetLastError() != 996 )
       {
         break; /*0x774c29*/
@@ -89,16 +91,16 @@ int AsyncIO::WaitCompletion()
       v9 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
-        v4 = Timer::GetTicks() - Ticks; /*0x774c41*/
+        v4 = TimerGetTicks() - Ticks; /*0x774c41*/
         if ( v4 >= v9 ) /*0x774c47*/
           break; /*0x774c47*/
         v9 -= v4; /*0x774c49*/
       }
     }
     while ( v9 ); /*0x774c4d*/
-    this->u8_51 = 0; /*0x774c4f*/
+    this->u32_51 = 0; /*0x774c4f*/
   }
-  return ResetEvent(*(HANDLE *)(&this->u32_1C6)); /*0x774c60*/
+  return ResetEvent(*(unsigned int *)((char *)&this->q129 + 7)); /*0x774c60*/
 }
 } // namespace gamemd
 // 0x5BF500
@@ -109,8 +111,8 @@ int AsyncIO::Read()
 
   result = g_AsyncIOState; /*0x5bf500*/
   if ( g_AsyncIOState > 0 ) /*0x5bf507*/
-    return (*(int (__thiscall **)(_DWORD, AsyncIO *))(**(_DWORD **)AsyncIO_Instance + 12))( /*0x5bf515*/
-             *(_DWORD *)AsyncIO_Instance,
+    return (*(int (**)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
+             *(unsigned int *)AsyncIO_Instance,
              this);
   return result; /*0x5bf518*/
 }

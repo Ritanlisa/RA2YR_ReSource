@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_492D80 {
     void* vfptr;  // minimal E2 declaration
-    int sub_492D80(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x492D80
+    int  sub_492D80(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x492D80
     // --- W16G3 supply (BEGIN) ---
     char __pad_0[4];  // 0x0 @0x492daa (W16G3 raw-usage vocab)
     // --- W16G3 supply (END) ---

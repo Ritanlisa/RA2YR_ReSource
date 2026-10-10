@@ -33,7 +33,7 @@ struct Vector2D
     Vector2D& operator-=(const Vector2D& rhs);
     // W16G3 static receiver-first forms (raw __thiscall; TU sites call Cls::Set(&v,x,y));
     // decls only -- hpp-impl gate; defs live in cpp translation rounds
-    static void* Set(void* aP0, T a2, T a3);
+    static void* Set(void* aP0, T, T);
     static void* Add(void* aP0, void* aP1, void* aP2);
 
 
@@ -146,7 +146,7 @@ std::ostream& operator<<(std::ostream& os, const Vector2D<T>& v);
 struct Matrix3D
 {
     float Data[12] = {};  // data: 0x840b4c
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned int q080;  // 0x80
     unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float 元素词表)
     unsigned int u32_8;   // 0x8 (raw fld [esi+8])

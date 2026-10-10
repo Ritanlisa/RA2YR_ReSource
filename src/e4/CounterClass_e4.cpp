@@ -9,22 +9,22 @@
 #include "e4/e4_protos.h"
 
 // 0x49FCE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
 {
   void *count; // eax
 
   count = (void *)Block->count; /*0x49fce3*/
-  Block->items = &(void*)(void*)&VectorClass_int_vftable; /*0x49fce6*/
-  if ( count && *((_BYTE *)Block + 13) ) /*0x49fcf0*/
+  Block->items = &vt_VectorClass; /*0x49fce6*/
+  if ( count && *((unsigned char *)Block + 13) ) /*0x49fcf0*/
   {
-    RA2_OPDEL(count); /*0x49fcf8*/
+    operator delete((void *)(count)); /*0x49fcf8*/
     Block->count = 0; /*0x49fd00*/
   }
-  *((_BYTE *)Block + 13) = 0; /*0x49fd0b*/
-  *((_DWORD *)Block + 2) = 0; /*0x49fd11*/
+  *((unsigned char *)Block + 13) = 0; /*0x49fd0b*/
+  *((unsigned int *)Block + 2) = 0; /*0x49fd11*/
   if ( (a2 & 1) != 0 ) /*0x49fd18*/
-    RA2_OPDEL(Block); /*0x49fd1b*/
+    operator delete((void *)(Block)); /*0x49fd1b*/
   return &Block->items; /*0x49fd25*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

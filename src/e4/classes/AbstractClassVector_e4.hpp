@@ -7,22 +7,18 @@ namespace gamemd {
 
 struct AbstractClassVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
 // --- flat members (END) ---
-    int Read(unsigned int * a2, void *a2_2);
-    int Construct(int aP1, int aP2);
+    int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
+    int Construct(int aP1, int aP2, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     unsigned int Write(int a2);
-     void ddtor(AbstractClassVector * aP1);  // G57w10-S raw 0x4E0410 (was C2597 interim stub)
-    unsigned char m_1;  // 0x1 (offset-truth)
+     void ddtor(AbstractClassVector * aP1);
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+    static double AbstractClassVector_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double AbstractClassVector_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double AbstractClassVector_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

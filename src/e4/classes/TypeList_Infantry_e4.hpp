@@ -14,21 +14,22 @@ struct TypeList_Infantry {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void ddtor();  // 0x5128A0
-    unsigned int GetIndex(int a2);  // 0x5128D0
-    int Clear(int a2);  // 0x5128F0
-    TypeList_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5129F0
-    char AddRef(int a2);  // 0x512C40
-    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x512E20
-    char Remove(int a2, unsigned int * a3);  // 0x512E70
-    int GetSize(unsigned int * a2);  // 0x512F70
-    DynamicVector * Constructor_0(unsigned int * Block, char a2, void *a3_1);  // 0x5131F0
-    DynamicVector * Constructor_1(unsigned int * Block, char a2);  // 0x5135C0
+    void ddtor(void *a1 = 0);  // 0x5128A0
+    unsigned int  GetIndex(int a2);  // 0x5128D0
+    int  Clear(int a2);  // 0x5128F0
+    TypeList_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x5129F0
+    char  AddRef(int a2);  // 0x512C40
+    DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x512E20
+    char  Remove(int a2, unsigned int * a3);  // 0x512E70
+    int  GetSize(unsigned int * a2);  // 0x512F70
+    DynamicVector *  Constructor_0(char a2);  // 0x5131F0
+    DynamicVector *  Constructor_1(char a2);  // 0x5135C0
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double m_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

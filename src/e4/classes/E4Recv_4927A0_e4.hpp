@@ -9,6 +9,6 @@ struct E4Recv_4927A0 {
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
-    int sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x4927A0
+    int  sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x4927A0
 };
 } // namespace gamemd

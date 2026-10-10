@@ -7,17 +7,13 @@ namespace gamemd {
 
 struct DialogControl {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_C;  // 0xC
-    bool q00F;  // 0xF
+
 // --- flat members (END) ---
     void* Image;  // 0x0 (no offset truth)
     int Hide();
     int IsHidden();
     int Show(void *a1, void *a2);
-    unsigned int * Constructor();
+    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned char u32_1E;  // 0x1E (offset-truth)
     unsigned int u32_40;  // 0x40 (offset-truth)
@@ -25,6 +21,8 @@ struct DialogControl {
     unsigned int u32_64;  // 0x64 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_90;  // 0x90 (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double u32_3C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

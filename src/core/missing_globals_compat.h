@@ -34,13 +34,21 @@ extern "C" int ____F_m_badAllocExceptionPtr_tr1_std__A__YAXXZ(...);
 
 namespace gamemd {
 
+extern unsigned char * stru_B782B8;
+
+// G41.27: corpus-undeclared FUNCTIONS (mined from C3861) --
+// permissive prototypes; real decls live in e4_protos.h
+int loc_443714(...);
+int loc_5BB260(...);
+int loc_5DAF20(...);
+int loc_626261(...);
 
 // CRT/RTTI/FILE compat stubs (blockers #30/#31/#33/#35)
 // IDA pseudo-intrinsics (bit-reinterpretation; value-safe casts)
-#define COERCE_UNSIGNED_INT64(x) ((unsigned long)(x))
+#define COERCE_UNSIGNED_INT64(x) ((unsigned long long)(x))
 #define COERCE_DOUBLE(x) (*(double *)&(x))
 #define COERCE_FLOAT(x) (*(float *)&(x))
-#define COERCE_INT64(x) ((long)(x))
+#define COERCE_INT64(x) ((long long)(x))
 #define COERCE_UNSIGNED_INT(x) ((unsigned int)(x))
 #define COERCE_INT(x) ((int)(x))
 

@@ -12,13 +12,13 @@
 #include "e4/classes/MapClass_e4.hpp"
 
 // 0x5C61A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block, char a2)
 {
-  Block->MultiplayerManBattle_field_00 = (int)&(void*)(void*)&MultiplayerManBattle_vftable; /*0x5c61a3*/
+  Block->MultiplayerManBattle_field_00 = (int)&vt_MultiplayerManBattle; /*0x5c61a3*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)Block); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
-    RA2_OPDEL(Block); /*0x5c61b6*/
+    operator delete((void *)(Block)); /*0x5c61b6*/
   return &Block->MultiplayerManBattle_field_00; /*0x5c61c0*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

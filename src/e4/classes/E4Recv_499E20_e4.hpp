@@ -7,6 +7,6 @@ namespace gamemd {
 struct RLEBlitTransXlatZRead;  // fix_fwd_type_supply
 struct E4Recv_499E20 {
     void* vfptr;  // minimal E2 declaration
-    RLEBlitTransXlatZRead * ___Gfacet_locale_std__UAEPAXI_Z_16(char a2);  // 0x499E20
+    RLEBlitTransXlatZRead *  ___Gfacet_locale_std__UAEPAXI_Z_16(char a2);  // 0x499E20
 };
 } // namespace gamemd

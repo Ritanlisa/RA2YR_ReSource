@@ -1,0 +1,17 @@
+// GENERATED flat e4 class (mechanical, supply_e4_class_decls)
+#pragma once
+
+#include "e4/classes/_fwd_e4.hpp"
+
+namespace gamemd {
+
+struct _VectorClass_PAVParticleClass {
+    void* vfptr;
+    AbstractClass * ParticleSystemClass__vt_02_(int a2, unsigned int * a3);
+    int ParticleSystemClass_vt_04_free_(gamemd::_VectorClass_PAVParticleClass *a1, int * a2)  // G57w17h4 receiver-first (raw this=_VectorClass_PAVParticleClass);
+    unsigned int * ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, char a2);
+    unsigned int ParticleSystemClass_vt_05_free_(gamemd::_VectorClass_PAVParticleClass *a1, int a2)  // G57w17h4 receiver-first (raw this=_VectorClass_PAVParticleClass);
+    void ParticleSystemClass__vt_03_();
+};
+
+} // namespace gamemd

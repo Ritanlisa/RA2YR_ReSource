@@ -31,7 +31,7 @@
 #include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x7586F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 {
   int v5; // esi
@@ -55,7 +55,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   float v24; // [esp+38h] [ebp-4h]
   float v25; // [esp+44h] [ebp+8h]
 
-  v5 = dword_8469E0[a4]; /*0x758702*/
+  v5 = ((unsigned int *)(dword_8469E0))[a4]; /*0x758702*/
   v16 = *a1 + *a2; /*0x75870c*/
   v17 = a2[1] + a1[1]; /*0x758716*/
   v6 = a2[2] + a1[2]; /*0x75871d*/
@@ -76,7 +76,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
     v24 = v18 / v7; /*0x75877c*/
     v8 = v24; /*0x758780*/
   }
-  v9 = dword_8469F4[a4]; /*0x75879c*/
+  v9 = ((unsigned int *)(dword_8469F4))[a4]; /*0x75879c*/
   v10 = 0; /*0x7587a3*/
   v21 = v8; /*0x7587a7*/
   if ( v9 > 0 ) /*0x7587ab*/
@@ -93,9 +93,9 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
         v12 = 0.0; /*0x75881d*/
       v14 = v12 + v25; /*0x758823*/
       if ( v14 >= 0.0 ) /*0x758832*/
-        g_VoxelShadeTable[v10] = Math::RoundToInt(v14 * 16.0); /*0x75884a*/
+        ((unsigned int *)(g_VoxelShadeTable))[v10] = Math::RoundToInt(v14 * 16.0); /*0x75884a*/
       else
-        g_VoxelShadeTable[v10] = 0; /*0x758836*/
+        ((unsigned int *)(g_VoxelShadeTable))[v10] = 0; /*0x758836*/
       ++v10; /*0x758850*/
       v11 += 3; /*0x758851*/
     }
@@ -105,7 +105,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   byte_B45A8E = 16; /*0x758866*/
   byte_B45A8D = 16; /*0x75886b*/
   return 16; /*0x75885c*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x75AEC0
 namespace gamemd {

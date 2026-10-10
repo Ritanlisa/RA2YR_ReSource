@@ -10,9 +10,9 @@ class Camera
 {
 public:
     // IDA 0x48B2A0 area
-    __int64 UpdateTilt();  // 0x58B600 (raw truth: __int64; render_ext decl was wrong)
+    int64_t UpdateTilt();
     // IDA 0x48B2A0 area
-    void StubReturnFalse();  // 0x58B7B0 (raw truth: void; render_ext decl was wrong)
+    void StubReturnFalse();
     // IDA 0x48B2A0 area
     void StubReturnVoid();  // 0x58B7C0
     // IDA 0x48B2A0 area
@@ -23,6 +23,7 @@ public:
     CoordStruct m_Target;       // 0x0C
     int32_t     m_Zoom;         // 0x18
     float       m_Tilt;         // 0x1C
+    void StubReturn();  // plateau: def-aligned C2039/C2660
 };
 
 } // namespace gamemd

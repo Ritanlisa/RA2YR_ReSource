@@ -9,7 +9,7 @@
 #include "e4/e4_protos.h"
 
 // 0x6F2070
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Techno::GetOwnerHouse()
 {
   int result; // eax
@@ -17,14 +17,14 @@ int Techno::GetOwnerHouse()
   result = this->u32_C4; /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
-    if ( BuildingType::IsSpecialType(*(void **)(&this->u32_500)) ) /*0x6f2083*/
-      return BuildingType::FindOwnerHouse(*(void **)(&this->u32_500)); /*0x6f2093*/
+    if ( BuildingType::IsSpecialType(*(unsigned int *)((char *)&this->q296 + 138)) ) /*0x6f2083*/
+      return ((BuildingType *)(*(unsigned int *)((char *)&this->q296 + 138)))->FindOwnerHouse(); /*0x6f2093*/
     else
       return 0; /*0x6f2098*/
   }
   return result; /*0x6f2092*/
 }
-}
+}  // G42.18 ns repair
 // 0x70E360
 namespace gamemd {
 BuildingTypeClass * Techno::StartInvulnerability(int a2, int aP1, int a1)

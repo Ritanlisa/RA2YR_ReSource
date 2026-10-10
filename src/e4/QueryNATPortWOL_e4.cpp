@@ -7,24 +7,26 @@
 #include "e4/e4_protos.h"
 
 // 0x7AECD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
 {
+
   this->Items = 0; /*0x7aecdb*/
   this->Capacity = a2; /*0x7aecde*/
   this->IsInitialized = 1; /*0x7aece1*/
   this->IsAllocated = 0; /*0x7aece5*/
-  this->vfptr = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7aece8*/
+  this->vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7aece8*/
   if ( a2 ) /*0x7aecee*/
   {
     if ( a3 ) /*0x7aecf6*/
     {
       this->Items = (void *)a3; /*0x7aecf8*/
-      return &this->vfptr; /*0x7aecfe*/
+      return &this->vtable0; /*0x7aecfe*/
     }
-    this->Items = (void *)RA2_OPNEW(4 * a2); /*0x7aed0d*/
+    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x7aed0d*/
     this->IsAllocated = 1; /*0x7aed10*/
   }
-  return &this->vfptr; /*0x7aecfd*/
+  return &this->vtable0; /*0x7aecfd*/
+
 }
 } // namespace gamemd

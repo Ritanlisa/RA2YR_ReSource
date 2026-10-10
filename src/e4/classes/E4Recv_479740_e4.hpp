@@ -7,6 +7,6 @@ namespace gamemd {
 struct E4Recv_479740 {
     unsigned int Debug;
     void* vfptr;  // minimal E2 declaration
-    AbstractClass * * sub_479740(DWORD BytesReturned);  // 0x479740
+    AbstractClass * *  sub_479740(DWORD BytesReturned);  // 0x479740
 };
 } // namespace gamemd

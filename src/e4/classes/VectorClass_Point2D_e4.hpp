@@ -14,19 +14,16 @@ struct VectorClass_Point2D {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    unsigned int * Count(unsigned int * a2, int a3);  // 0x5D05F0
-    char Set(int a2, void *a2_2);  // 0x5D07F0
-    char Set(int a2, unsigned int * a3);  // 0x5D0850
-    void Set(void *a1_1, void *a2_1, void *a3_1);  // 0x5D0920
-    int GetSize(unsigned int * a2);  // 0x5D0950
-    unsigned int GetCapacity(int a2);  // 0x5D09A0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D16C0
+    unsigned int *  Count(unsigned int * a2, int a3);  // 0x5D05F0
+    char  Set(int a2, void *a1 = 0, void *a3 = 0);  // 0x5D07F0
+    int  GetSize(unsigned int * a2);  // 0x5D0950
+    unsigned int  GetCapacity(int a2);  // 0x5D09A0
+    VectorClass_flat *  QueryInterface(char a2);  // 0x5D16C0
     int Destroy(void *a1_1);  // 0x5D2780
-    unsigned int GetItemIndex(int a2);  // 0x5D27B0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x5D2BC0
-    int FindItemIndex(unsigned int * a2);  // 0x5D2C70
-    DynamicVector * Constructor_VectorClass_MSSfx___(unsigned int * Block, char a2);  // 0x5D2D90
+    unsigned int  GetItemIndex(int a2);  // 0x5D27B0
+    char  SetCapacity(int a2, unsigned int * a3);  // 0x5D2BC0
+    int  FindItemIndex(unsigned int * a2);  // 0x5D2C70
+    DynamicVector *  Constructor_VectorClass_MSSfx___(char a2);  // 0x5D2D90
 };
 } // namespace gamemd

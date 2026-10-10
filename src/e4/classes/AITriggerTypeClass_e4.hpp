@@ -14,27 +14,8 @@ struct AITriggerTypeClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
-    unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned int u32_28;  // 0x28
-    bool q02B;  // 0x2B
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    unsigned char q03C;  // 0x3C
     unsigned int UINameLabel;  // 0x3D
 // --- flat members (END) ---
     AITriggerTypeClass * ddtor(char a2);
@@ -55,6 +36,13 @@ struct AITriggerTypeClass {
     unsigned int u32_BC;  // 0xBC (offset-truth)
     unsigned int u32_D8;  // 0xD8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
+    static double AITriggerTypeClass_field_0x18(...);  // plateau: C2039/C3861 stub
+    static double AITriggerTypeClass_field_0x24(...);  // plateau: C2039/C3861 stub
+    static double AITriggerTypeClass_field_0x28(...);  // plateau: C2039/C3861 stub
+    static double u32_C0(...);  // plateau: C2039/C3861 stub
+    static double u32_C4(...);  // plateau: C2039/C3861 stub
+    static double u32_C8(...);  // plateau: C2039/C3861 stub
+    static double u32_E8(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

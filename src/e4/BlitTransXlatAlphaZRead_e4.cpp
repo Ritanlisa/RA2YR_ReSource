@@ -10,65 +10,65 @@
 #include "e4/classes/BlitTransLucent25AlphaZReadWrite_ushort_e4.hpp"
 
 // 0x494920
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
-  _WORD *result; // eax
+  unsigned short *result; // eax
   int v12; // edi
-  unsigned __int8 v13; // dl
-  _WORD *v14; // [esp+18h] [ebp+18h]
+  uint8_t v13; // dl
+  unsigned short *v14; // [esp+18h] [ebp+18h]
 
   result = a6; /*0x494924*/
   if ( a4 > 0 ) /*0x49492a*/
   {
-    v12 = *(_DWORD *)&stru_87E790.q0D8[60]; /*0x494938*/
-    v14 = (_WORD *)a4; /*0x49493e*/
+    v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494938*/
+    v14 = (unsigned short *)a4; /*0x49493e*/
     do /*0x49499a*/
     {
       v13 = *a2++; /*0x494942*/
       if ( v13 && *result ) /*0x49494d*/
       {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(_WORD *)(this->m_4 + 2 * v13) >> 1)); /*0x494978*/
-        v12 = *(_DWORD *)&stru_87E790.q0D8[60]; /*0x49497b*/
+        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(*(unsigned int *)&this->q004 + 2 * v13) >> 1)); /*0x494978*/
+        v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x49497b*/
       }
       ++result; /*0x494984*/
       ++a1; /*0x494987*/
-      if ( (unsigned int)result >= *(_DWORD *)(v12 + 28) ) /*0x49498c*/
-        result = (_WORD *)((char *)result - v12->Height); /*0x49498e*/
-      v14 = (_WORD *)((char *)v14 - 1); /*0x494996*/
+      if ( (unsigned int)result >= *(unsigned int *)(v12 + 28) ) /*0x49498c*/
+        result = (unsigned short *)((char *)result - v12->Height); /*0x49498e*/
+      v14 = (unsigned short *)((char *)v14 - 1); /*0x494996*/
     }
     while ( v14 ); /*0x49499a*/
   }
   return result; /*0x4949a0*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x494A40
 namespace gamemd {
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
-  _WORD *result; // eax
+  unsigned short *result; // eax
   int v12; // edi
-  unsigned __int8 v13; // dl
-  _WORD *v14; // [esp+18h] [ebp+18h]
+  uint8_t v13; // dl
+  unsigned short *v14; // [esp+18h] [ebp+18h]
 
   result = a6; /*0x494a44*/
   if ( a4 > 0 ) /*0x494a4a*/
   {
-    v12 = *(_DWORD *)&stru_87E790.q0D8[60]; /*0x494a58*/
-    v14 = (_WORD *)a4; /*0x494a5e*/
+    v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494a58*/
+    v14 = (unsigned short *)a4; /*0x494a5e*/
     do /*0x494aba*/
     {
       v13 = *a2++; /*0x494a62*/
       if ( v13 && !*result ) /*0x494a6d*/
       {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(_WORD *)(this->m_4 + 2 * v13) >> 1)); /*0x494a98*/
-        v12 = *(_DWORD *)&stru_87E790.q0D8[60]; /*0x494a9b*/
+        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(*(unsigned int *)&this->q004 + 2 * v13) >> 1)); /*0x494a98*/
+        v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494a9b*/
       }
       ++result; /*0x494aa4*/
       ++a1; /*0x494aa7*/
-      if ( (unsigned int)result >= *(_DWORD *)(v12 + 28) ) /*0x494aac*/
-        result = (_WORD *)((char *)result - v12->Height); /*0x494aae*/
-      v14 = (_WORD *)((char *)v14 - 1); /*0x494ab6*/
+      if ( (unsigned int)result >= *(unsigned int *)(v12 + 28) ) /*0x494aac*/
+        result = (unsigned short *)((char *)result - v12->Height); /*0x494aae*/
+      v14 = (unsigned short *)((char *)v14 - 1); /*0x494ab6*/
     }
     while ( v14 ); /*0x494aba*/
   }
@@ -79,6 +79,7 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned 
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
 {
+
   int v11; // eax
   int result; // eax
   Stream *v13; // ebp
@@ -100,27 +101,29 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
-        *a2 = *(_WORD *)(*(_DWORD *)&this->m_1[3] + 2 * ((unsigned __int8)*a3 | v17[*a7])); /*0x494bf9*/
+        *a2 = *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((unsigned __int8)*a3 | v17[*a7])); /*0x494bf9*/
         v13 = g_ZBufferDescriptor; /*0x494bfc*/
       }
       ++a2; /*0x494c06*/
       ++a3; /*0x494c0a*/
       if ( (unsigned int)a6 >= v13[1].Stream_field_08 ) /*0x494c13*/
         a6 = (unsigned __int16 *)((char *)a6 - v13[1].Stream_field_0C); /*0x494c15*/
-      if ( (unsigned int)++a7 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x494c23*/
-        a7 = (unsigned __int16 *)((char *)a7 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x494c25*/
+      if ( (unsigned int)++a7 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x494c23*/
+        a7 = (unsigned __int16 *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x494c25*/
       result = (int)v16 - 1; /*0x494c2c*/
       v16 = (unsigned __int16 *)((char *)v16 - 1); /*0x494c2d*/
     }
     while ( v16 ); /*0x494c31*/
   }
   return result; /*0x494c34*/
+
 }
 } // namespace gamemd
 // 0x494C40
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
 {
+
   int v12; // eax
   int result; // eax
   Stream *v14; // ebp
@@ -142,28 +145,30 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
-        *a2 = a10 | *(_WORD *)(*(_DWORD *)&this->m_1[3] + 2 * ((unsigned __int8)*a3 | v18[*a7])); /*0x494cde*/
+        *a2 = a10 | *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((unsigned __int8)*a3 | v18[*a7])); /*0x494cde*/
         v14 = g_ZBufferDescriptor; /*0x494ce1*/
       }
       ++a2; /*0x494ceb*/
       ++a3; /*0x494cef*/
       if ( (unsigned int)a6 >= v14[1].Stream_field_08 ) /*0x494cf8*/
         a6 = (unsigned __int16 *)((char *)a6 - v14[1].Stream_field_0C); /*0x494cfa*/
-      if ( (unsigned int)++a7 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x494d08*/
-        a7 = (unsigned __int16 *)((char *)a7 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x494d0a*/
+      if ( (unsigned int)++a7 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x494d08*/
+        a7 = (unsigned __int16 *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x494d0a*/
       result = (int)v17 - 1; /*0x494d11*/
       v17 = (unsigned __int16 *)((char *)v17 - 1); /*0x494d12*/
     }
     while ( v17 ); /*0x494d16*/
   }
   return result; /*0x494d19*/
+
 }
 } // namespace gamemd
 // 0x494D20
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTransXlatAlphaZRead_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x494d4a*/
+
+  return (*(int (**)(_BlitTransXlatAlphaZRead_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494d4a*/
            this,
            a2,
            a3,
@@ -173,13 +178,15 @@ int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x494D50
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTransXlatAlphaZRead_G *, int, int, int, int, int, int, int, _DWORD, int))(*(_DWORD *)this->q000 + 8))( /*0x494d7f*/
+
+  return (*(int (**)(_BlitTransXlatAlphaZRead_G *, int, int, int, int, int, int, int, unsigned int, int))(*(unsigned int *)this->__pad_0 + 8))( /*0x494d7f*/
            this,
            a2,
            a3,
@@ -190,13 +197,15 @@ int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int 
            a8,
            0,
            a9);
+
 }
 } // namespace gamemd
 // 0x494890
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x4948ba*/
+
+  return (*(int (**)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4948ba*/
            this,
            a2,
            a3,
@@ -206,13 +215,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x4948C0
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x4948ea*/
+
+  return (*(int (**)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4948ea*/
            this,
            a2,
            a3,
@@ -222,13 +233,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x4948F0
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x49491a*/
+
+  return (*(int (**)(_BlitTranslucentWriteAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x49491a*/
            this,
            a2,
            a3,
@@ -238,13 +251,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x4949B0
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x4949da*/
+
+  return (*(int (**)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x4949da*/
            this,
            a2,
            a3,
@@ -254,13 +269,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x4949E0
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x494a0a*/
+
+  return (*(int (**)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494a0a*/
            this,
            a2,
            a3,
@@ -270,13 +287,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x494A10
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x494a3a*/
+
+  return (*(int (**)(_BlitTranslucent50NonzeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494a3a*/
            this,
            a2,
            a3,
@@ -286,13 +305,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x494AD0
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_8(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x494afa*/
+
+  return (*(int (**)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494afa*/
            this,
            a2,
            a3,
@@ -302,13 +323,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_8(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x494B00
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_9(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x494b2a*/
+
+  return (*(int (**)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494b2a*/
            this,
            a2,
            a3,
@@ -318,13 +341,15 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_9(int a2, int a3, int a4, int a5, 
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x494B30
 namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::CallBlit0_10(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x494b5a*/
+
+  return (*(int (**)(_BlitTranslucent50ZeroAlpha_G *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 4))( /*0x494b5a*/
            this,
            a2,
            a3,
@@ -334,46 +359,55 @@ int BlitTransXlatAlphaZRead_ushort::CallBlit0_10(int a2, int a3, int a4, int a5,
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd
 // 0x49A3A0
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
 {
-  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a3a9*/
+
+  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a3a9*/
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
-    RA2_OPDEL(); /*0x49a3b2*/
+    __3_YAXPAX_Z(this); /*0x49a3b2*/
   return (std::locale::facet *)this; /*0x49a3bc*/
+
 }
 } // namespace gamemd
 // 0x49A3C0
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
 {
-  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a3c9*/
+
+  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a3c9*/
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
-    RA2_OPDEL(); /*0x49a3d2*/
+    __3_YAXPAX_Z(this); /*0x49a3d2*/
   return (std::locale::facet *)this; /*0x49a3dc*/
+
 }
 } // namespace gamemd
 // 0x49A3E0
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
 {
-  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a3e9*/
+
+  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a3e9*/
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
-    RA2_OPDEL(); /*0x49a3f2*/
+    __3_YAXPAX_Z(this); /*0x49a3f2*/
   return (std::locale::facet *)this; /*0x49a3fc*/
+
 }
 } // namespace gamemd
 // 0x49A400
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
 {
-  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a409*/
+
+  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a409*/
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
-    RA2_OPDEL(); /*0x49a412*/
+    __3_YAXPAX_Z(this); /*0x49a412*/
   return (std::locale::facet *)this; /*0x49a41c*/
+
 }
 } // namespace gamemd
 // 0x49A420
@@ -382,13 +416,13 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
 {
   void *m_8; // eax
 
-  m_8 = (void *)Block->m_8; /*0x49a428*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&BlitTransXlatAlphaZRead_unsigned_short_vftable; /*0x49a42b*/
+  m_8 = (void *)Block->ptr_8; /*0x49a428*/
+  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
   FractalNoise::Dtor(m_8); /*0x49a432*/
-  Block->m_8 = 0; /*0x49a43b*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a444*/
+  *(unsigned int *)&Block->ptr_8 = 0; /*0x49a43b*/
+  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    RA2_OPDEL(Block); /*0x49a44d*/
-  return Block->q000; /*0x49a457*/
+    operator delete((void *)(Block)); /*0x49a44d*/
+  return Block->__pad_0; /*0x49a457*/
 }
 } // namespace gamemd

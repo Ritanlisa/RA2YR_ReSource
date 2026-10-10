@@ -58,7 +58,7 @@ public:
     void DecideUnitFate(FootClass*);                                   // 0x4723B0
     bool NeedsToDrawLinks() const;                                     // 0x472640
     void DrawLinks();                                                  // 0x472160
-    void AddMember(TechnoClass*);                                      // 0x6EA4F0
+    int AddMember(TechnoClass*);                                      // 0x6EA4F0
 
     // Save/Load
     void LoadFromStream(IStream*);                                     // 0x472720

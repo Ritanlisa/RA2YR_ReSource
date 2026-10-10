@@ -24,25 +24,28 @@
 #include "e4/classes/Options_e4.hpp"
 
 // 0x5B9750
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int NetworkGameSetup::ReadRulesUnknown()
 {
+
   int result; // eax
 
-  result = (int)GetDlgItem(*(HWND *)this->q000, 1363); /*0x5b975b*/
+  result = (int)GetDlgItem(*(HWND *)this->__pad_0, 1363); /*0x5b975b*/
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
-    *(_DWORD *)&stru_A8B250.q000[40] = result; /*0x5b9775*/
-    IDA_BYTE1(this->q008) = 1; /*0x5b977a*/
+    *(unsigned int *)&stru_A8B250.__pad_0[40] = result; /*0x5b9775*/
+    BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
+
 }
 } // namespace gamemd
 // 0x5BA970
 namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
+
   char *v3; // eax
   unsigned int v4; // edi
   HWND DlgItem; // esi
@@ -58,14 +61,14 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     v9 = 0; /*0x5ba99c*/
     v8[0] = 104; /*0x5ba9a8*/
     strcpy((char *)&v8[1], unk_A8B380); /*0x5ba9c4*/
-    IDA_LOBYTE(v8[6]) = dword_A8B394; /*0x5ba9d4*/
+    LOBYTE(v8[6]) = dword_A8B394; /*0x5ba9d4*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
     Stream::WriteBlock((int *)&unk_A8EA70, (int)v8, 250, 1); /*0x5ba9f1*/
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5ba9fb*/
     v3 = CharToWideString(unk_A8B380); /*0x5baa05*/
     v4 = dword_A8B394; /*0x5baa0d*/
     Format = (wchar_t *)v3; /*0x5baa19*/
-    DlgItem = GetDlgItem(*(HWND *)this->q000, 1343); /*0x5baa23*/
+    DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/
     {
       if ( v4 >= 8 ) /*0x5baa2b*/
@@ -76,6 +79,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5baa66*/
     }
   }
+
 }
 } // namespace gamemd
 // 0x5BB560
@@ -84,7 +88,7 @@ unsigned int * NetworkGameSetup::DeleteComPtr(unsigned int * Block, char a2)
 {
   ComPtr::Dtor((ComPtr *)Block); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    RA2_OPDEL(Block); /*0x5bb570*/
-  return Block->q000; /*0x5bb57a*/
+    operator delete((void *)(Block)); /*0x5bb570*/
+  return Block->__pad_0; /*0x5bb57a*/
 }
 } // namespace gamemd

@@ -9,5 +9,6 @@ struct E4Recv_5A1C70 {
     unsigned int u32_3C;  // 0x3C
 // --- flat members (END) ---
     int sub_5A1C70();  // 0x5A1C70
+    static double ambientSoundController(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

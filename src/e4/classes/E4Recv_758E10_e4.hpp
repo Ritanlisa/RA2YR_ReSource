@@ -8,11 +8,7 @@ struct E4Recv_758E10 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M16;  // 0x10
-    unsigned int q034;  // 0x34
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q153094;  // 0x153094
 // --- flat members (END) ---
-    char sub_758E10(float a2, float a3, float a4);  // 0x758E10
+    char  sub_758E10(float a2, float a3, float a4);  // 0x758E10
 };
 } // namespace gamemd

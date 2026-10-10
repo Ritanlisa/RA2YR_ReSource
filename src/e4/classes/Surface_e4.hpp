@@ -11,8 +11,6 @@ struct Surface {
     void* vtable1;  // 0x0
     int Width;  // 0x4
     int Height;  // 0x8
-    char u32_9;  // 0x9
-    unsigned int u32_B;  // 0xB
 // --- flat members (END) ---
     void* BytesPerPixel;  // 0x0 (no offset truth)
     AbstractClass * * LoadToSurfaceSHP(char *Source);
@@ -28,7 +26,7 @@ struct Surface {
     int PixelToIndex(unsigned int * a2);
     int RenderRadar();
     int  TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5);
-    unsigned int * Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6);
+    unsigned int * Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6, void *a1 = 0, void *a2 = 0, void *a7 = 0);
     unsigned int * CopyRect(int *aP1);
     unsigned int *  GetRect(unsigned int * a2);
     void   RenderToSurfaceVoxel(unsigned int * a2, int * a3);
@@ -36,7 +34,7 @@ struct Surface {
     LPDIRECTDRAW CreateSurfacePalette(AbstractClass * Src);
     unsigned int u32_10A;  // @0x7bd6f2 (W16G3 raw-usage vocab)
     unsigned int u32_1A8;  // @0x7bdxxx (W16G3 raw-usage vocab)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_104;  // 0x104 (offset-truth)
     unsigned int u32_1224;  // 0x1224 (offset-truth)
     unsigned int u32_1228;  // 0x1228 (offset-truth)
@@ -46,6 +44,10 @@ struct Surface {
     unsigned int u32_1244;  // 0x1244 (offset-truth)
     unsigned int u32_1490;  // 0x1490 (offset-truth)
     unsigned int u32_1498;  // 0x1498 (offset-truth)
+    static double LockCount(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double u32_24C(...);  // plateau: C2039/C3861 stub
+    static double u32_6D3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

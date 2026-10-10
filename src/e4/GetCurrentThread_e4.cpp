@@ -8,9 +8,9 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x7DCEE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GetCurrentThread_0()
 {
-  return GetCurrentThread();
+  return (int)(GetCurrentThread());
 }
-}
+}  // G42.18 ns repair

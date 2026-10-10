@@ -14,7 +14,7 @@ struct Player {
     unsigned int u32_70;  // 0x70
     unsigned int u32_74;  // 0x74
 // --- flat members (END) ---
-    int IsObserver();
+    int IsObserver(void *a1 = 0);
     void BuildListString(wchar_t * Destination);
 wchar_t * FindByName(wchar_t * String2);
     void RandomAssign();  // 0x69b8c0

@@ -104,7 +104,7 @@ int sub_4C5470()
 }
 
 // ==== BACKFILL 0x004C59F0  EMPulseClass::ddtor  cls=EMPulseClass  sig=csp  renamed_refs=0  residual=- ====
-int EMPulseClass::ddtor(unsigned int *a2)  // G42 sig-sync: IDA int __stdcall ddtor(this,_DWORD*) (1 param; def had phantom a1)
+int EMPulseClass::ddtor(unsigned int *a2)  // G42 sig-sync: IDA int __stdcall ddtor(this,_DWORD*) (1 param; def had phantom)
 {
   if ( !a2 ) /*0x4c59f6*/
     return -2147467261; /*0x4c59f8*/

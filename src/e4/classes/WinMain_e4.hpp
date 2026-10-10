@@ -43,23 +43,10 @@ struct WinMain {
     unsigned int u32_2924;  // 0x2924
     unsigned int q5760;  // 0x5760
     unsigned int q5764;  // 0x5764
-    unsigned int q9764;  // 0x9764
-    unsigned int q10508;  // 0x10508
-    unsigned int q10520;  // 0x10520
-    unsigned int q22368;  // 0x22368
-    unsigned int q38774;  // 0x38774
-    unsigned int q66710;  // 0x66710
-    unsigned int q66824;  // 0x66824
-    unsigned int q66838;  // 0x66838
-    unsigned int q66848;  // 0x66848
-    unsigned int q419590;  // 0x419590
-    unsigned int q419600;  // 0x419600
 // --- flat members (END) ---
     LSTATUS CleanupResource();
     int Constructor_VectorClass_Wstring_();
     static unsigned int * ShutdownCleanup(...);
-    unsigned char u32_10642;  // 0x10642 (offset-truth)
-    unsigned char u32_106C6;  // 0x106C6 (offset-truth)
     unsigned int u32_2A00;  // 0x2A00 (offset-truth)
 };
 

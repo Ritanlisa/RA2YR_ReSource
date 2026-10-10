@@ -7,9 +7,10 @@
 #include "e4/e4_protos.h"
 
 // 0x52B9B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 HWND BINK::Background_Setup(HWND hDlg)
 {
+
   int result; // eax
   HWND v2; // esi
   int v3; // ecx
@@ -20,11 +21,11 @@ HWND BINK::Background_Setup(HWND hDlg)
   if ( result ) /*0x52b9c2*/
   {
     if ( (int)g_DisplayWidth > 800 ) /*0x52b9d2*/
-      v3 = (int)&g_DisplayWidth[-13].q020 / 2; /*0x52b9e2*/
+      v3 = (int)&g_DisplayWidth[-13].LoadingScreen_field_0x20 / 2; /*0x52b9e2*/
     else
       v3 = 0; /*0x52b9d4*/
     if ( (int)*(&g_DisplayWidth + 1) > 600 ) /*0x52b9ee*/
-      v4 = (int)&(*(&g_DisplayWidth + 1))[-10].q028 / 2; /*0x52b9fc*/
+      v4 = (int)&(*(&g_DisplayWidth + 1))[-10].LoadingScreen_field_0x28 / 2; /*0x52b9fc*/
     else
       v4 = 0; /*0x52b9f0*/
     SetWindowPos(v2, 0, v3, v4, -1, -1, 0xDu); /*0x52ba09*/
@@ -35,5 +36,6 @@ HWND BINK::Background_Setup(HWND hDlg)
       return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x52ba4c*/
   }
   return result; /*0x52ba3c*/
+
 }
 } // namespace gamemd

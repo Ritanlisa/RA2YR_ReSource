@@ -16,7 +16,7 @@ struct Frame {
     void* q024;  // 0x24
 // --- flat members (END) ---
     static TechnoTypeClass * Present(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8);
-    TechnoTypeClass * Init();
+    TechnoTypeClass * Init(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

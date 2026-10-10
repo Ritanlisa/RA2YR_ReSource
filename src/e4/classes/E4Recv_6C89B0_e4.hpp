@@ -10,6 +10,6 @@ struct E4Recv_6C89B0 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    void * sub_6C89B0(size_t Size);  // 0x6C89B0 G42.33 b9 return void* (truth)
+    void * sub_6C89B0(size_t Size);
 };
 } // namespace gamemd

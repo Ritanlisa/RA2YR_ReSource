@@ -22,15 +22,15 @@
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x420DA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int AlphaShapeClass::SD_vt13(int a2)
 {
-  AbstractClass::ProcessPower(); /*0x420da9*/
+  this->AbstractClass::ProcessPower(); /*0x420da9*/
   Power::TimerProcess(this->u32_28); /*0x420db4*/
   Power::TimerProcess(this->u32_2C); /*0x420dbf*/
-  Power::TimerProcess(this->vtable4); /*0x420dca*/
+  Power::TimerProcess((int)(this->vtable4)); /*0x420dca*/
   return Power::TimerProcess(this->u32_34); /*0x420dda*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x420E40
 namespace gamemd {
@@ -38,7 +38,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int Prefix; // eax
 
-  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->q000, a1, aP2); /*0x420e4f*/
+  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x420e4f*/
   return Prefix >= 0 ? 0 : Prefix;
 }
 } // namespace gamemd
@@ -47,36 +47,41 @@ namespace gamemd {
 int AlphaShapeClass::SD_vt10(int a2, int a3)
 {
 
-  a2 = a2; /*0x420e70*/
-  if ( a2 == this->q024 ) /*0x420e79*/
-    this->u32_3C = 1; /*0x420e7b*/
+  int result; // eax
+
+  result = a2; /*0x420e70*/
+  if ( a2 == this->AlphaShapeClass_field_0x24 ) /*0x420e79*/
+    *((unsigned char *)this + 60) = 1; /*0x420e7b*/
+  return result; /*0x420e7f*/
+
 }
 } // namespace gamemd
 // 0x421730
 namespace gamemd {
 AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
+
   int v3; // eax
   int v4; // eax
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)this->q000 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42173d*/
-  this->AlphaShapeClass_field_0x04 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x421743*/
-  this->AlphaShapeClass_field_0x08 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x42174a*/
-  this->AlphaShapeClass_field_0x0C = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x421751*/
-  v6 = this; /*0x42175f*/
-  v3 = (*(int (__thiscall **)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
+  *(unsigned int *)aP0->__pad_0 = &AlphaShapeClass::`vftable'; /*0x42173d*/
+  aP0->AlphaShapeClass_field_0x04 = (int)&AlphaShapeClass::`vftable'; /*0x421743*/
+  aP0->AlphaShapeClass_field_0x08 = (int)&AlphaShapeClass::`vftable'; /*0x42174a*/
+  aP0->AlphaShapeClass_field_0x0C = (int)&AlphaShapeClass::`vftable'; /*0x421751*/
+  v6 = aP0; /*0x42175f*/
+  v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
     do /*0x421796*/
     {
       ++v3; /*0x421786*/
-      *((_DWORD *)dword_88A0F4 + v3 - 1) = *((_DWORD *)dword_88A0F4 + v3); /*0x42178a*/
+      *((unsigned int *)dword_88A0F4 + v3 - 1) = *((unsigned int *)dword_88A0F4 + v3); /*0x42178a*/
     }
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
-  v6 = this; /*0x4217a8*/
-  v4 = (*(int (__thiscall **)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
+  v6 = aP0; /*0x4217a8*/
+  v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
          &g_BuildingLoadQueue_Array.PowerBonus,
          &v6);
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4217bc*/
@@ -84,37 +89,38 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4217c1*/
     for ( ; /*0x4217c7*/
           v4 < g_BuildingLoadQueue_Array.Foundation[0];
-          *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain
+          *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
                                                                                      + 4 * v4) )
     {
       ++v4; /*0x4217cf*/
     }
   }
-  AbstractClass::DTOR(); /*0x4217e3*/
-  if ( (a2 & 1) != 0 ) /*0x4217ed*/
-    RA2_OPDEL(); /*0x4217f0*/
-  return this->q000; /*0x4217fa*/
+  AbstractClass::DTOR((AbstractClass *)aP0); /*0x4217e3*/
+  if ( (aP0 & 1) != 0 ) /*0x4217ed*/
+    __3_YAXPAX_Z(aP0); /*0x4217f0*/
+  return aP0->__pad_0; /*0x4217fa*/
+
 }
 } // namespace gamemd
 namespace gamemd {
-int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
+int  AlphaShapeClass::SD_vt05(int aP1)
 {
 
   int Prefix_0; // edi
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0,(gamemd::AbstractClass *)(aP1)); 
+  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(this,(gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x420df5*/
   {
-    if ( aP0 ) /*0x420df9*/
+    if ( this ) /*0x420df9*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)aP0->q000 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
-      aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
-      aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
-      aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/
+      AbstractClass::InitVtables((AbstractClass *)this, (int)&aP1); /*0x420e02*/
+      *(unsigned int *)this->q000 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
+      this->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
+      this->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
+      this->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->q024)); /*0x420e2b*/
-    *((unsigned int *)aP0 + 14) = 0; /*0x420e30*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&this->q024)); /*0x420e2b*/
+    this->u32_38 = 0; /*0x420e30*/
   }
   return Prefix_0; /*0x420e39*/
 

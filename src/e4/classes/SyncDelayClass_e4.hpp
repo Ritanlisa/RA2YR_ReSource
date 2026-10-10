@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct SyncDelayClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    char ProcessNetworkSync();
+    char ProcessNetworkSync(void *a1 = 0);
 };
 
 } // namespace gamemd

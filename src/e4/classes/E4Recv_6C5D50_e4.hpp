@@ -6,7 +6,7 @@
 namespace gamemd {
 struct E4Recv_6C5D50 {
     void* vfptr;  // minimal E2 declaration
-    int CreateTClassFactory_NeuronClass();  // 0x6C5D50
+    int  CreateTClassFactory_NeuronClass(void * a2, unsigned int * a3);  // 0x6C5D50
     int CreateTClassFactory_NeuronClass(void * a2, void * a3);
 };
 } // namespace gamemd

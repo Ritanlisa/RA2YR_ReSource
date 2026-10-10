@@ -12,18 +12,18 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { INT_PTR sub_775B40(HWND a1, UINT a2, WPARAM a3, LPARAM a4); }  // w18j2 raw 0x00775B40
+namespace gamemd { INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM); }  // w18j2 raw 0x00775B40
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aCombodropwin[];  // data: 0x8357a0 truth(IDA G42.57w9)
 
 
 // 0x5D6350
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int DialogClass::GetFlag(void *a1)
 {
-  return *((_BYTE *)a1 + 52); /*0x5d6353*/
+  return *((unsigned char *)a1 + 52); /*0x5d6353*/
 }
-}
+}  // G42.18 ns repair
 // 0x775BC0
 namespace gamemd {
 int DialogClass::Reposition(int hWnd, int a2)
@@ -80,6 +80,7 @@ int DialogClass::Reposition(int hWnd, int a2)
 namespace gamemd {
 ATOM DialogClass::RegisterWinClasses()
 {
+
   int result; // eax
   WNDCLASSA WndClass; // [esp+0h] [ebp-28h] BYREF
 
@@ -103,8 +104,9 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.hInstance = g_hInstance; /*0x60d4f4*/
     memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
     WndClass.lpszClassName = g_INI_Key_NewEdit; /*0x60d508*/
-    IDA_LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
+    LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
   }
   return result; /*0x60d515*/
+
 }
 } // namespace gamemd

@@ -4292,7 +4292,7 @@ void sub_6F2B20();  // 0x6f2b20
 int globalHelper_0F6030(int a1, int a2, int a3);  // 0x6f6030
 int SelectTechnoClassAreaTarget(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x6f8960
 void SelectTargetByWeight(int a1, int a2);  // 0x709550
-void SetGlobalFlag(int a1);  // 0x70d180
+int SetGlobalFlag(int a1);  // 0x70d180
 int IsNonNullPtr();  // 0x70e240
 void UpdateTimedStateMachine(int a1);  // 0x70e920
 int RevealTechnoClassRadarEvent();  // 0x70f120
@@ -4696,7 +4696,7 @@ int sub_734600();  // 0x734600
 int sub_734620();  // 0x734620
 int WideMessageBox();  // 0x734fe0
 int BulkCharToWide(int a1, int a2, int a3);  // 0x735060
-void CopyWideToChar(int a1, int a2, int a3);  // 0x735090
+int CopyWideToChar(int a1, int a2, int a3);  // 0x735090
 void* ToWideStringChar(int a1);  // 0x7350c0
 void* CharToWideString(int a1);  // 0x735120
 void sub_735180();  // 0x735180

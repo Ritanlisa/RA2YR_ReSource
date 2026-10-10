@@ -12,7 +12,7 @@
 #include "e4/classes/AbstractClassVector_e4.hpp"
 
 // 0x5D7030
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char AI_CreateMCV(MultiplayerGameMode *self)
 {
   HouseClass *v3; // edi
@@ -21,17 +21,17 @@ char AI_CreateMCV(MultiplayerGameMode *self)
   int *v6; // eax
   int *v7; // esi
   int v8; // ebx
-  _DWORD *StartCoords; // eax
-  __int16 *CurrentOption; // eax
-  _DWORD v11[3]; // [esp+8h] [ebp-Ch] BYREF
+  unsigned int *StartCoords; // eax
+  int16_t *CurrentOption; // eax
+  unsigned int v11[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  if ( !stru_A8B250.q000[8] ) /*0x5d703c*/
+  if ( !stru_A8B250.__pad_0[8] ) /*0x5d703c*/
     return 1; /*0x5d7045*/
   v3 = (HouseClass *)this; /*0x5d704d*/
-  v4 = BuildingClass::FindBySWType((BuildingClass *)this, *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2848); /*0x5d705e*/
+  v4 = BuildingClass::FindBySWType((BuildingClass *)this, *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848); /*0x5d705e*/
   if ( v4 ) /*0x5d7062*/
   {
-    v5 = (int *)RA2_OPNEW(0x8E8u); /*0x5d7069*/
+    v5 = (int *)operator new(0x8E8u); /*0x5d7069*/
     if ( v5 ) /*0x5d7073*/
     {
       v6 = (int *)UnitClass::Construct(v5, v4, v3); /*0x5d7079*/
@@ -40,15 +40,15 @@ char AI_CreateMCV(MultiplayerGameMode *self)
       {
         v8 = *v6; /*0x5d7085*/
         StartCoords = HouseClass::GetStartCoords(v3, v11); /*0x5d7090*/
-        if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
+        if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/
-        CurrentOption = (__int16 *)HouseClass::GetCurrentOption(v3, &this); /*0x5d70b6*/
-        if ( FindInfantryDeployPosition(v7, CurrentOption, 1) ) /*0x5d70bf*/
+        CurrentOption = (int16_t *)HouseClass::GetCurrentOption(v3, &this); /*0x5d70b6*/
+        if ( FindInfantryDeployPosition(v7,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5d70bf*/
           return 1; /*0x5d70cf*/
-        (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/
+        (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/
       }
     }
   }
   return 0; /*0x5d703e*/
 }
-}
+}  // G42.18 ns repair

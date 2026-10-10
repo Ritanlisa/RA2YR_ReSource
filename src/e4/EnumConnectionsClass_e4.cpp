@@ -7,10 +7,10 @@
 #include "e4/e4_protos.h"
 
 // 0x4A0180
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int EnumConnectionsClass::Skip(int a1)
 {
-  *((_DWORD *)a1 + 7) = 0; /*0x4a0184*/
+  *((unsigned int *)a1 + 7) = 0; /*0x4a0184*/
   return 0; /*0x4a018d*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

@@ -15,74 +15,64 @@ struct INIClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     char headNode[12];  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned int q00D;  // 0xD
-    unsigned int u32_F;  // 0xF
     char sectionHead[12];  // 0x10
-    unsigned int q014;  // 0x14
-    unsigned int q018;  // 0x18
     char sectionCount[4];  // 0x1C
-    unsigned int u32_20;  // 0x20
-    unsigned int q024;  // 0x24
-    VoxelStruct * q028;  // 0x28
     char INIClass_field_2C[4];  // 0x2C
     char unknown30[4];  // 0x30
     bool needsSave_flag;  // 0x34
-    unsigned char q035;  // 0x35
     unsigned int unknown38;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
 // --- flat members (END) ---
     static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640
-    static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);  // 0x528F00 raw: int ParseValue_Wide(INIClass*, unsigned __int8*, unsigned __int8*, wchar_t*, wchar_t*, size_t)
+    static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);
     void* LookupEnum_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon INIClass::LookupEnum is a method)
-    static unsigned int LookupEnum(...);  // w18j3 C2597 static-call supply (w16g4 convention)
-    static int ReadInt(void *aP0, void *a2, void *a3, int a4);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
-    int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
-    static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);  // G57w11: +static raw 0x00526810 __thiscall receiver-first (sibling G57w10-S form)
-    static int GetKeyCount(INIClass * aP1, void *a2);  // [w16g2] static receiver-first per raw __thiscall 0x526960 (INIClass* this, u8* section)
+    static unsigned int LookupEnum(...);
+    static int ReadInt(String *a2, String *a3, int a4);
+    int ReadCoord(double *a1, double a2, uint8_t *a3, uint8_t *a4, int a5, int aP2, int aP1, int aP3);
+    static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
+    int GetKeyCount(INIClass * aP1, void *a2);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(uint8_t *aP1, uint8_t *a2, int a4);
-    static int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);  // [w16g2] static receiver-first per raw __thiscall 0x526CC0 (INIClass* this, u8* section, int index)
-    int ReadInt(void *a2, void *a3, int a4);  // W19K4: widen to void* per raw 3-arg thiscall (call sites pass char**/String*)
+    int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);
+    int ReadInt(void *a2, void *a3, int a4);
     int WOLobby_Play(const char *a1, const char *a2, int a3);
     int sub_44FE60();
     INIClass();
-    static void * Constructor(void *aP1);  // 0x535AA0 raw: _DWORD *__thiscall INIClass::INIClass(INIClass*) -- site form (W20L4 T2)
-    static unsigned int GetString(void *a2, void *a3, void *a4, void *a5, int Count);  // W19K4: widen to void* per raw 0x528A10 5-arg thiscall
-    void SetGameOptionsPing();
-    static int ClearSection(INIClass * aP1, int a2, unsigned __int8 *a3);  // G57w10-S raw 0x005257C0 (was C2597 interim stub)
-    static int GetBase64Data(INIClass * aP1, char *a2, int a3, size_t Size);  // G57w10-S raw 0x00526FB0 (was C2597 interim stub)
-    static int GetPipIdx(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, int a4);  // G57w10-S raw 0x004748A0 (was C2597 interim stub)
-    static int GetStringEx(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, wchar_t *String, size_t Count);  // G57w10-S raw 0x00529160 (was C2597 interim stub)
-    static int LoadFile(INIClass * aP1, int a2, char a3);  // G57w10-S raw 0x00525A60 (was C2597 interim stub)
-    static char ReadBase64Data(INIClass * aP1, unsigned __int8 *Block, int a3, signed int Size);  // G57w10-S raw 0x00526E80 (was C2597 interim stub)
-    static int ReadBool_Overwrite(void * aP1, unsigned __int8 *a2, unsigned __int8 *a3, char a4);  // G57w10-S raw 0x005295F0 (was C2597 interim stub)
-    static int ReadDouble_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, double a4);  // G57w10-S raw 0x005283D0 (was C2597 interim stub)
-    static int ReadRGBColorList(INIClass * aP1, int a2, unsigned __int8 *a3, unsigned __int8 *a4, void **a5, void *a6, int a7, __int16 a8, int a9, int a10, int a11);  // G57w10-S raw 0x00476B20 (was C2597 interim stub)
-    static int ResetSection(INIClass * aP1);  // G57w10-S raw 0x00526B00 (was C2597 interim stub)
-    static char SetBool(INIClass * aP1, unsigned __int8 *Block, char *a3, char a4);  // G57w10-S raw 0x00529560 (was C2597 interim stub)
-    static char SetRect(INIClass * aP1, unsigned __int8 *Block, char *a3, unsigned int *a4);  // G57w10-S raw 0x00527C10 (was C2597 interim stub)
-    static int WriteDigest(INIClass * aP1, int a2, char a3);  // G57w10-S raw 0x00474430 (was C2597 interim stub)
-    static int GetCoord(INIClass * aP1, int a2, unsigned __int8 *a3, unsigned __int8 *a4, unsigned __int8 *a5);  // G57w10-S raw 0x00474B50 (was C2597 interim stub)
-    static int * ReadPoint3D_Overwrite(INIClass * aP1, int *a2, unsigned __int8 *a3, int a4, unsigned int *a5);  // G57w10-S raw 0x00529CA0 (was C2597 interim stub)
-    static int SetHouseName(INIClass * aP1, unsigned __int8 *Block, char *a3, void *a4);  // G57w10-S raw 0x00475610 (was C2597 interim stub)
-    static int * GetCoord2(INIClass * aP1, int *a2, unsigned __int8 *a3, unsigned __int8 *a4, int *a5);  // G57w10-S raw 0x00476420 (was C2597 interim stub)
-    static char SetIntFormat(INIClass * aP1, char **a2, char **a3, int a4, int a5);  // G57w10-S raw 0x00527640 (was C2597 interim stub)
-    static void ReadTokenizedPair(INIClass * aP1, unsigned int *a2, char **a3, void *a4, int a5, char **a6);  // G57w10-S raw 0x007710B0 (was C2597 interim stub)
-    static int SaveToPipe(INIClass * aP1, int a2);  // G57w10-S raw 0x00526420 (was C2597 interim stub)
-static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (was C2597 interim stub)
-    char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
-    static int SetInt(INIClass * aP1, unsigned __int8 *Block, char *a3, int a4, int a5);  // G57w10-S raw 0x005275C0 (was C2597 interim stub)
-    int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00
-    static int ReadInt_Overwrite(void * aP1, unsigned __int8 *a2, unsigned __int8 *a3, int a4);  // G57w10-S raw 0x005276D0 (was C2597 interim stub)
-    unsigned int * GetCoordPair(unsigned int *a2, char *Source, char **a4, unsigned int *a5);  // 0x529a30
-    int ReadDifficultyModifiers(); // N_fix R5 supply (cache truth)
-    int FindKey(char **a2); // N_fix R5 supply (cache truth)
-    unsigned int * GetRect(_DWORD *a2, char **a3, char **a4, int *a5); // N_fix R5 supply (cache truth)
-    int SetDouble(unsigned __int8 *Block, char *a3, double a4); // N_fix R5 supply (cache truth)
-    char SetString(unsigned __int8 *Block, char *a3, char *Source); // N_fix R5 supply (cache truth)
-    void MapDialogResource();
+    static void * Constructor(void *aP1);
+    static unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count);
+    void SetGameOptionsPing(void *a1 = 0);
+    static int ClearSection(INIClass * aP1, int a2, uint8_t *a3);
+    static int GetBase64Data(INIClass * aP1, char *a2, int a3, size_t Size);
+    static int GetPipIdx(INIClass * aP1, uint8_t *a2, uint8_t *a3, int a4);
+    static int GetStringEx(INIClass * aP1, uint8_t *a2, uint8_t *a3, wchar_t *String, size_t Count);
+    static int LoadFile(INIClass * aP1, int a2, char a3);
+    static char ReadBase64Data(INIClass * aP1, uint8_t *Block, int a3, signed int Size);
+    static int ReadBool_Overwrite(void * aP1, uint8_t *a2, uint8_t *a3, char a4);
+    static int ReadDouble_Overwrite(INIClass * aP1, uint8_t *a2, uint8_t *a3, double a4);
+    static int ReadRGBColorList(INIClass * aP1, int a2, uint8_t *a3, uint8_t *a4, void **a5, void *a6, int a7, int16_t a8, int a9, int a10, int a11);
+    static int ResetSection(INIClass * aP1);
+    static char SetBool(INIClass * aP1, uint8_t *Block, char *a3, char a4);
+    static char SetRect(INIClass * aP1, uint8_t *Block, char *a3, unsigned int *a4);
+    static int WriteDigest(INIClass * aP1, int a2, char a3);
+    static int GetCoord(INIClass * aP1, int a2, uint8_t *a3, uint8_t *a4, uint8_t *a5);
+    static int * ReadPoint3D_Overwrite(INIClass * aP1, int *a2, uint8_t *a3, int a4, unsigned int *a5);
+    static int SetHouseName(INIClass * aP1, uint8_t *Block, char *a3, void *a4);
+    static int * GetCoord2(INIClass * aP1, int *a2, uint8_t *a3, uint8_t *a4, int *a5);
+    static char SetIntFormat(INIClass * aP1, char **a2, char **a3, int a4, int a5);
+    static void ReadTokenizedPair(INIClass * aP1, unsigned int *a2, char **a3, void *a4, int a5, char **a6);
+    static int SaveToPipe(INIClass * aP1, int a2);
+static int WriteToString(INIClass * aP1, int a2);
+    char **  GetStringByIndexEx(char ** a2, char ** a3, int a4);  // 0x526d90
+    static int SetInt(INIClass * aP1, uint8_t *Block, char *a3, int a4, int a5);
+    int ReadString(char **a1, char **a2, char **a3, int a4);  // 0x528c00
+    static int ReadInt_Overwrite(void * aP1, uint8_t *a2, uint8_t *a3, int a4);
+    unsigned int *  GetCoordPair(unsigned int * a2, char * Source, char ** a4, unsigned int * a5);  // 0x529a30
+    int ReadDifficultyModifiers(void *a1 = 0);
+    int FindKey(char **a2);
+    unsigned int * GetRect(unsigned int *a2, char **a3, char **a4, int *a5);
+    int SetDouble(uint8_t *Block, char *a3, double a4);
+    char SetString(uint8_t *Block, char *a3, char *Source, void *a1 = 0);
+    void MapDialogResource(void *a1 = 0);
     int InitializeGameSettings();
     int RunModemDialing(int a2, int a3, char a4);
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM);
@@ -92,36 +82,38 @@ static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (w
     AbstractClass * * InitWindow(int a1, int a2);
     AbstractClass * * InitializeControls(HWND hWnd, LPARAM);
     AbstractClass * * DestroyDialogSystem();
-    AbstractClass * * Resize();
+    AbstractClass * * Resize(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     AbstractClass * * DrawBackground(HWND hWnd);
-    int Destroy();
+    int Destroy(void *a1 = 0);
     CampaignClass * * CleanupTree();
     int UpdateControlState(unsigned int * a2, unsigned int * a3);
     AbstractClass * * GrowBuffer();
-    AbstractClass * * BindGadgetData(int *a2, char *Block);
+    AbstractClass * * BindGadgetData(int *a2, char *Block, void *a1 = 0);
     INIClass * * ReadMultiplayerDialogSettings();
     int FindByHandle();
     int GetCurrent();
-    int SideIDToIndex();
+    int SideIDToIndex(void *a1 = 0);
     int OptionIDToIndex();
     int FindGameUI();
     HWND ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2);
-    int MapPlayerIDToIndex();
+    int MapPlayerIDToIndex(void *a1 = 0);
     unsigned int CheckButtonState();
-    BOOL EnumAndCleanup();
+    BOOL EnumAndCleanup(void *a1 = 0);
     BOOL SubclassEditControl(HWND hWnd, LPARAM);
     HWND Show();
-    char PumpMessages();
-    int FindByPtr();
-    BOOL GetField();
+    char PumpMessages(void *a1 = 0);
+    int FindByPtr(void *a1 = 0);
+    BOOL GetField(void *a1 = 0, void *a2 = 0);
     HWND RestoreParent();
     char UpdateGameUI();
     HWND CloseAll();
-    unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
+    unsigned int GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
     static int ParseValue(...);  // w18j2 C3861 static supply
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q020;  // 0x20 (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double __pad_20(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_E4_INIClass
 

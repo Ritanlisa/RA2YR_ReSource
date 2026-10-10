@@ -13,10 +13,10 @@ struct Checksummer {
     unsigned char buffer;  // 0xC
 // --- flat members (END) ---
     int Add_Buffer(uint8_t * state, int a3);
-    static int Add_Buffer(void *aP0, unsigned char *aP1, int aP2);  // 0x4A1DE0 G42.35 static-form sync (ui/supplied site 0x4A1DCC)
+    static int Add_Buffer(void *aP0, unsigned char *aP1, int aP2);
     int Add_double(int a2, int a3);
     int Add_float(int a2);
-    static int Add_WORD(Checksummer * aP1, __int16 a2);  // G57w10-S raw 0x004A1D30 (was C2597 interim stub)
+    static int Add_WORD(Checksummer * aP1, int16_t a2);
 };
 
 } // namespace gamemd

@@ -10,19 +10,7 @@ struct RLEBlitTransXlat;  // fix_fwd_type_supply
 struct BlitTransLucent25AlphaZReadWrite_ushort {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
     AbstractClass * ptr_8;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
 // --- flat members (END) ---
     BlitTransLucent25AlphaZReadWrite_ushort * Blit(unsigned int * Block, char a2);
     RLEBlitTransXlat * Constructor_RLEBlitter(char a2);
@@ -36,7 +24,9 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
     unsigned char m_2;  // 0x2 (offset-truth)
     unsigned int m_4;  // 0x4 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double q004(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

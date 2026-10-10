@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct ShapeButton {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int Draw(int a2);
-    int SetShape(int a2, int a3, int a4);
+    int Draw(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    int SetShape(int a2, int a3, int a4, void *a1 = 0);
 };
 
 } // namespace gamemd

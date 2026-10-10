@@ -30,31 +30,22 @@ struct SaveGame {
     void* q2304;  // 0x2304
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
-    void* q8964;  // 0x8964
-    unsigned int q22148;  // 0x22148
-    unsigned int q153094;  // 0x153094
-    void* q217458;  // 0x217458
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
-    void* q36795154758;  // 0x36795154758
-    void* q3743417714520;  // 0x3743417714520
-    void* q972192010552608;  // 0x972192010552608
 // --- flat members (END) ---
-    int LoadArrayData(int * a2);  // 0x4391C0
-    int WriteDataArray(int * a2);  // 0x54E750
+    int  LoadArrayData(int * a2);  // 0x4391C0
+    int  WriteDataArray(int * a2);  // 0x54E750
     int SaveTriggerEvents();  // 0x6607D0
-    char Start();  // 0x67D300
+    char Start(void *a1 = 0, void *a2 = 0);  // 0x67D300
     int LoadMainGameState();  // 0x67F7E0
     int LoadVeinholeData();  // 0x74ED60
     int SaveAudioQueueItems();  // 0x751620
     int CountLinkedList(void *a1_1);  // 0x4073B0
-    int SaveIteratedData(int a2);  // 0x413850
-    int SaveBlock68(int a2);  // 0x4C6340
-    int WriteObject(int a1, int a2);  // 0x513CB0
-    bool SaveAudioData(int a2);  // 0x69B560
-    int VtableDispatch(int a2);  // 0x721010
+    int  SaveIteratedData(int a2);  // 0x413850
+    int  SaveBlock68(int a2);  // 0x4C6340
+    int  WriteObject(int a2);  // 0x513CB0
+    bool  SaveAudioData(int a2);  // 0x69B560
+    int  VtableDispatch(int a2);  // 0x721010
     int WriteMagicHeader();  // 0x7533B0
-    unsigned int q000;  // 0x0 (canon-mt)
+    unsigned int *q000;  // 0x0 (canon-mt)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

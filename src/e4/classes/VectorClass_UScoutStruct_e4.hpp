@@ -13,14 +13,13 @@ struct VectorClass_UScoutStruct {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int Clear(int a2, int a3);  // 0x50E620
-    char AddRef(int a2);  // 0x50F1B0
-    char Release(int a2, char * a3);  // 0x50F210
+    int  Clear(int a2, int a3);  // 0x50E620
+    char  AddRef(int a2);  // 0x50F1B0
+    char  Release(int a2, char * a3);  // 0x50F210
     wchar_t * ddtor(void *a1_1);  // 0x50F300
-    int GetSize(int a2);  // 0x50F330
-    unsigned int GetCapacity(int a2);  // 0x50F380
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5101D0
+    int  GetSize(int a2);  // 0x50F330
+    unsigned int  GetCapacity(int a2);  // 0x50F380
+    VectorClass_flat *  QueryInterface(char a2);  // 0x5101D0
 };
 } // namespace gamemd

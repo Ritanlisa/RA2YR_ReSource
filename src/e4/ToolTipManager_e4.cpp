@@ -14,26 +14,28 @@
 #include "e4/classes/ToolTipClass_e4.hpp"
 
 // 0x724AA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char ToolTipManager::addRef(int a1)
 {
   return 1; /*0x724aa2*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x724B80
 namespace gamemd {
 int ToolTipManager::ddtor(char a2)
 {
+
   int result; // eax
 
   if ( a2 == 1 ) /*0x724b89*/
-    ToolTipClass::initString(); /*0x724b8b*/
+    ToolTipClass::initString((ToolTipClass *)this); /*0x724b8b*/
   result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (*(int (__thiscall **)(ToolTipManager *, int *))(*(_DWORD *)&this->IsVisible + 16))( /*0x724b9f*/
+    return (*(int (**)(ToolTipManager *, int *))(*(unsigned int *)&this->IsVisible + 16))( /*0x724b9f*/
              this,
              &this->DisplayTimer[1]);
   return result; /*0x724ba2*/
+
 }
 } // namespace gamemd
 // 0x724BB0
@@ -56,17 +58,17 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x724f43*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
-  if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x724f50*/
+  v3 = *(void **)&Block->Items; /*0x724f43*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x724f46*/
+  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x724f50*/
   {
-    RA2_OPDEL(v3); /*0x724f58*/
-    *(_DWORD *)&Block->m_1[3] = 0; /*0x724f60*/
+    operator delete((void *)(v3)); /*0x724f58*/
+    Block->Items = (unsigned int)(0); /*0x724f60*/
   }
-  IDA_BYTE1(Block->m_C) = 0; /*0x724f6b*/
-  Block->m_8 = 0; /*0x724f71*/
+  (((unsigned char *)&(Block->m_C))[1]) = 0; /*0x724f6b*/
+  Block->Capacity = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
-    RA2_OPDEL(Block); /*0x724f7b*/
-  return Block->q000; /*0x724f85*/
+    operator delete((void *)(Block)); /*0x724f7b*/
+  return Block->__pad_0; /*0x724f85*/
 }
 } // namespace gamemd

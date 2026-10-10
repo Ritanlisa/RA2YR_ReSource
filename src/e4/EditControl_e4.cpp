@@ -7,7 +7,7 @@
 #include "e4/e4_protos.h"
 
 // 0x7781B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_7781B0(short a1)
 {
   int v1; // eax
@@ -16,9 +16,9 @@ int sub_7781B0(short a1)
   char v5; // [esp+2h] [ebp-6h]
   WCHAR WideCharStr[2]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( IDA_HIBYTE(a1) ) /*0x7781b6*/
+  if ( (*(((unsigned char *)&(a1)) + (sizeof(a1) - 1))) ) /*0x7781b6*/
   {
-    MultiByteStr = IDA_HIBYTE(a1); /*0x7781c1*/
+    MultiByteStr = (*(((unsigned char *)&(a1)) + (sizeof(a1) - 1))); /*0x7781c1*/
     v4 = a1; /*0x7781c1*/
     v5 = 0; /*0x7781c5*/
   }
@@ -28,6 +28,6 @@ int sub_7781B0(short a1)
     v4 = 0; /*0x7781d0*/
   }
   v1 = MultiByteToWideChar(0, 0, &MultiByteStr, strlen(&MultiByteStr), WideCharStr, 1); /*0x7781f3*/
-  return v1 == 1 ? *(_DWORD *)WideCharStr : 0;
+  return v1 == 1 ? *(unsigned int *)WideCharStr : 0;
 }
-}
+}  // G42.18 ns repair

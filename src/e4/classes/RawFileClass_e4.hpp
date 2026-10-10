@@ -17,17 +17,17 @@ struct RawFileClass {
     int FileSize;  // 0x8
     void* Handle;  // 0xC
     unsigned int FileName;  // 0x10
-    unsigned int u32_11;  // 0x11
     char FileTimeDateLo[2];  // 0x14
     char FileTimeDateHi[2];  // 0x16
     bool FileNameAllocated;  // 0x18
     unsigned char tail_19;  // 0x19
 // --- flat members (END) ---
     int Close(int a2, int a3);
-    int Dtor();
-     unsigned int * Construct(int a2);  // G57w10-S raw 0x0065CA80 (was C2597 interim stub)
-    int Write(); // N_fix R5 supply (cache truth)
+    int Dtor(void *a1 = 0);
+     unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    int Write(void *a1 = 0);
     char __tail_0[4];  // 0x0 (ml)
+    static double CacheReadAhead(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_RawFileClass_DEF
 

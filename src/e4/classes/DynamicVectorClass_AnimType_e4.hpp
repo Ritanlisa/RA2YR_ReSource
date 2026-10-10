@@ -13,15 +13,15 @@ struct DynamicVectorClass_AnimType {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    AbstractClass * * Release(int a2, unsigned int * a3);  // 0x525110
-    VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x525010
+    AbstractClass * *  Release(int a2, unsigned int * a3);  // 0x525110
+    VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x525010
     int  GetSize(unsigned int * a2);  // 0x5251F0
-    unsigned int Remove(int a2);  // 0x525230
-    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int  Remove(int a2, void *a1 = 0);  // 0x525230
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

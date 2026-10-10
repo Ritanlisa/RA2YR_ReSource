@@ -12,7 +12,6 @@ struct TypeList {
     void* vtable1;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    char q00B[4];  // 0xB
     void* IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
@@ -21,30 +20,23 @@ struct TypeList {
     int unknown_18;  // 0x18
 // --- flat members (END) ---
     void* DynamicVectorClass;  // 0x0 vfptr (raw member name; TiberiumClass_e4.cpp v24 site 0x721c21)
-    unsigned int Items;              // 0x4  (til VectorClass.Items)
-    unsigned int Capacity;           // 0x8  (til VectorClass.Capacity)
-    unsigned char IsInitialized;     // 0xC  (til VectorClass.IsInitialized char[1])
-    unsigned char IsAllocated;       // 0xD  (til VectorClass.IsAllocated char[1])
     unsigned char __tail_E[2];       // 0xE  (til VectorClass tail char[2]; 布局守卫: 4+4+1+1+2+4+4=20 取代 q004[20])
-    int Count;                       // 0x10 (til DynamicVectorClass.Count)
-    int CapacityIncrement;           // 0x14 (til DynamicVectorClass.CapacityIncrement)
-    int unknown_18;            // 0x18 (canon char[4] int; site 0x721c10)
-    static unsigned int * Copy(TypeList *aP1, void *a2);  // 0x478720 raw: _DWORD* Copy(TypeList*, _DWORD*)
-    static unsigned int * TechnoTypeConstructor(TypeList *aP1, int a2, int a3);  // 0x478790
-    static unsigned int * CopyConstructor(TypeList *aP1, void *a2);  // 0x513740
-    static unsigned int * AnimTypeCopy(TypeList *aP1, void *a2);  // 0x5255F0
+    static unsigned int * Copy(TypeList *aP1, void *a2);
+    static unsigned int *  TechnoTypeConstructor(int a2, int a3);  // 0x478790
+    static unsigned int *  CopyConstructor(unsigned int * a2);  // 0x513740
+    static unsigned int *  AnimTypeCopy(unsigned int * a2);  // 0x5255F0
     static unsigned int * BuildingTypeConstructor(TypeList *aP1);  // 0x5AC400
-    static unsigned int * BuildingTypeCopy(TypeList *aP1, void *a2);  // 0x5AD660
+    static unsigned int *  BuildingTypeCopy(unsigned int * a2);  // 0x5AD660
     static void InfantryCleanup(TypeList *aP1);  // 0x67A030
-    static int * CopyFull(TypeList *aP1, int *a2);  // 0x67A090
-    static int * CopyAircraft(TypeList *aP1, int *a2);  // 0x67A110
-    static int * CopyInfantry(TypeList *aP1, int *a2);  // 0x67A290
+    static int *  CopyFull(int * a2);  // 0x67A090
+    static int *  CopyAircraft(int * a2);  // 0x67A110
+    static int *  CopyInfantry(int * a2);  // 0x67A290
     static unsigned int * VoxelAnimConstructor(TypeList *aP1);  // 0x67A390
     static unsigned int * Construct(TypeList *aP1);  // 0x67A4F0
     static unsigned int * ConstructSmudge(TypeList *aP1);  // 0x67A600
     static unsigned int * InfantryConstructor(TypeList *aP1);  // 0x67A820
-    static unsigned int * CopyVoxelAnim(TypeList *aP1, void *a2);  // 0x67C1F0
-    static unsigned int * ParticleConstructor(TypeList *aP1, int a2, int a3);  // 0x717C70
-    static char PushBack(TypeList *aP1, void *a2);  // 0x717CD0
+    static unsigned int *  CopyVoxelAnim(unsigned int * a2);  // 0x67C1F0
+    static unsigned int *  ParticleConstructor(int a2, int a3);  // 0x717C70
+    static char  PushBack(unsigned int * a2);  // 0x717CD0
 };
 } // namespace gamemd

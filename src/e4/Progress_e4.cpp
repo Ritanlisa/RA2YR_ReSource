@@ -8,7 +8,7 @@
 #include "e4/classes/PsyDom_e4.hpp"
 
 // 0x6433D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Progress::GetAverage()
 {
   int result; // eax
@@ -19,7 +19,7 @@ int Progress::GetAverage()
   v3 = 0.0; /*0x6433d5*/
   if ( v2 > 0 ) /*0x6433e1*/
   {
-    result = (int)&this->m_Values[2]; /*0x6433e3*/
+    result = (int)&this-((unsigned int *)(>m_Values))[2]; /*0x6433e3*/
     do /*0x6433ec*/
     {
       v3 = v3 + *(double *)result; /*0x6433e6*/
@@ -29,7 +29,7 @@ int Progress::GetAverage()
     while ( v2 ); /*0x6433ec*/
   }
   return result; /*0x6433f6*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x643E90
 namespace gamemd {

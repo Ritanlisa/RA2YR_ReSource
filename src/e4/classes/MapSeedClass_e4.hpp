@@ -8,20 +8,9 @@ namespace gamemd {
 struct MapSeedClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    int u32_4;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
     unsigned int M16;  // 0x16
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
     char owns_memory;  // 0x21
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
     unsigned int pad_2E;  // 0x2E
 // --- flat members (END) ---
     MapSeedClass * * PlaceBuildingClusters(MapSeedClass * aP1);
@@ -34,11 +23,26 @@ struct MapSeedClass {
     char PlaceCityBlockVariant(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
     char PlaceCityBlockDiagonal(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
     char PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
-    static int Constructor(int aP1);  // 0x595680 raw: int Constructor(int this) [raw int-this; site v10 int]
-    unsigned char m_1;  // 0x1 (offset-truth)
+    static int Constructor(int aP1);
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double MapSeedClass_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x10(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x14(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x18(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x1C(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x20(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x24(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x28(...);  // plateau: C2039/C3861 stub
+    static double MapSeedClass_field_0x2C(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double q008(...);  // plateau: C2039/C3861 stub
+    static double q00C(...);  // plateau: C2039/C3861 stub
+    static double u32_4(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

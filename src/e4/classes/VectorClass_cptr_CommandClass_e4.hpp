@@ -10,14 +10,13 @@ struct VectorClass_cptr_CommandClass {
     void* Items;  // 0x4
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x40BEF0
-    int Capacity(int a2);  // 0x40BEA0
-    char GetAt(int a2);  // 0x40BEB0
+    char  Release(int a2, unsigned int * a3);  // 0x40BEF0
+    int  Capacity(int a2);  // 0x40BEA0
+    char  GetAt(int a2);  // 0x40BEB0
     void SetAt();  // 0x40BFA0
-    int GetSize(unsigned int * a2);  // 0x40BFD0
-    unsigned int GetCapacity(int a2);  // 0x40C010
+    int  GetSize(unsigned int * a2);  // 0x40BFD0
+    unsigned int  GetCapacity(int a2);  // 0x40C010
     char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)

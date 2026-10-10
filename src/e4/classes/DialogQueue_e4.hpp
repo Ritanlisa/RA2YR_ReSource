@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct DialogQueue {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int PushEntry(void *a1);
-    int RemoveEntry();
+    int PushEntry(void *a1, void *a2 = 0, void *a3 = 0, void *a4 = 0);
+    int RemoveEntry(void *a1 = 0);
 };
 
 } // namespace gamemd

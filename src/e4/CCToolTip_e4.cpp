@@ -14,13 +14,13 @@
 #include "e4/classes/ToolTipClass_e4.hpp"
 
 // 0x7784A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->q000 = &(void*)(void*)&CCToolTip_vftable; /*0x7784a3*/
+  *(unsigned int *)Block->__pad_0 = &vt_CCToolTip; /*0x7784a3*/
   ToolTipClass::updateString((ToolTipClass *)Block); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
-    RA2_OPDEL(Block); /*0x7784b6*/
-  return Block->q000; /*0x7784c0*/
-}
+    operator delete((void *)(Block)); /*0x7784b6*/
+  return Block->__pad_0; /*0x7784c0*/
+}  // G42.18 ns repair
 } // namespace gamemd

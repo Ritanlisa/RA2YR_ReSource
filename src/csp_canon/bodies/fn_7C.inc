@@ -3049,7 +3049,7 @@ char _hw_cw(int a1)
 }
 
 // ==== BACKFILL 0x007CC0A5  __abstract_sw  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-char _abstract_sw(unsigned int a1)  // G42.33 b24: param restored (body decodes a1)
+char _abstract_sw(unsigned int a1)  // G42.33 b24: param restored (body decodes)
 {
   char result; // al
 

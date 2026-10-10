@@ -8,25 +8,15 @@ namespace gamemd {
 struct ListClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_8;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned int u32_D;  // 0xD
-    unsigned int u32_10;  // 0x10
-    unsigned char q014;  // 0x14
     char Enabled;  // 0x15
-    unsigned int u32_18;  // 0x18
-    unsigned int q019;  // 0x19
-    unsigned int q01A;  // 0x1A
-    bool q01B;  // 0x1B
-    unsigned int u32_1C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
 // --- flat members (END) ---
-    int Destruct();
-    int Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x557230
+    int Destruct(void *a1 = 0);
+    int Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, void *a1 = 0);  // 0x557230
     ControlClass * * CheckListClass__vt_19_(char a2, int a3, unsigned int * a4);
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double ListClass_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double ListClass_field_0x10(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

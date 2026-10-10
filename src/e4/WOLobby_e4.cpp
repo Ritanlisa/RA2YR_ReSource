@@ -37,15 +37,16 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x5E3850
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int INIClass::WOLobby_Play(const char *a1, const char *a2, int a3)
 {
+
   LPVOID v2; // ebx
   int result; // eax
   int i; // esi
   char *v6; // eax
   char v7[108]; // [esp+14h] [ebp-234h] BYREF
-  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
+  unsigned int v8[113]; // [esp+80h] [ebp-1C8h] BYREF
   __int16 v9; // [esp+244h] [ebp-4h]
   char v10; // [esp+246h] [ebp-2h]
 
@@ -54,7 +55,7 @@ int INIClass::WOLobby_Play(const char *a1, const char *a2, int a3)
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36], a1); /*0x5e3892*/
-    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
+    return (*(int (**)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
   {
@@ -73,15 +74,16 @@ int INIClass::WOLobby_Play(const char *a1, const char *a2, int a3)
       if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
       {
         Debug::Log(); /*0x5e3974*/
-        Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(_DWORD *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
+        Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
         Event::Dispatch(); /*0x5e39a5*/
       }
       result = dword_A8DA84; /*0x5e39aa*/
     }
   }
   return result; /*0x5e38a6*/
+
 }
-}
+}  // G42.18 ns repair
 // 0x78F7F0
 namespace gamemd {  // G42.18c ns repair
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
@@ -255,7 +257,7 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
 
 // 0x791B10
 namespace gamemd {  // G42.18c ns repair
-int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
+int WOLobby::ChatDlgProc(HWND hDlg, UINT, WPARAM, HWND hWnd)
 {
 
   int result; // eax
@@ -350,7 +352,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 
 // 0x603F60
 namespace gamemd {
-wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
+wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
   wchar_t *v7; // [esp+10h] [ebp-4h] BYREF
@@ -375,8 +377,8 @@ char sub_72BAC0()
   if ( !byte_B0FD51 ) /*0x72bac7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bad3*/
-      dword_B0FB2C = LoadFileSHP(off_844DBC, (bool *)&byte_B0FD50); /*0x72bae5*/
-    result = LoadPaletteSimple(off_844DC0, &dword_B0FD54, &dword_B0FD58); /*0x72bafa*/
+      dword_B0FB2C = (unsigned int)(LoadFileSHP((char *)(off_844DBC), (bool *)&byte_B0FD50)); /*0x72bae5*/
+    result = LoadPaletteSimple((char *)(off_844DC0), &dword_B0FD54, &dword_B0FD58); /*0x72bafa*/
     byte_B0FD51 = 1; /*0x72baff*/
   }
   return result; /*0x72bb06*/
@@ -389,33 +391,33 @@ void sub_72BB10()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.qF70[1441] ) /*0x72bb1a*/
+  if ( g_BuildingLoadQueue_Array.__pad_F70[1441] ) /*0x72bb1a*/
   {
-    if ( g_BuildingLoadQueue_Array.qF70[1440] ) /*0x72bb22*/
+    if ( g_BuildingLoadQueue_Array.__pad_F70[1440] ) /*0x72bb22*/
     {
-      v1 = *(void **)&g_BuildingLoadQueue_Array.qF70[892]; /*0x72bb25*/
-      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[892] ) /*0x72bb2d*/
+      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x72bb25*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.qF70[892]); /*0x72bb31*/
-        RA2_OPDEL(v1); /*0x72bb37*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]); /*0x72bb31*/
+        operator delete((void *)(v1)); /*0x72bb37*/
       }
-      g_BuildingLoadQueue_Array.qF70[1440] = 0; /*0x72bb3f*/
+      g_BuildingLoadQueue_Array.__pad_F70[1440] = 0; /*0x72bb3f*/
     }
-    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[892] = 0; /*0x72bb4b*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1444] ) /*0x72bb53*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
     {
-      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.qF70[1444]); /*0x72bb56*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1444] = 0; /*0x72bb5e*/
+      operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1444])); /*0x72bb56*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1448] ) /*0x72bb6c*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1448])( /*0x72bb72*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1448],
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
         1);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1448] = 0; /*0x72bb74*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
     }
   }
-  g_BuildingLoadQueue_Array.qF70[1441] = 0; /*0x72bb7a*/
+  g_BuildingLoadQueue_Array.__pad_F70[1441] = 0; /*0x72bb7a*/
 }
 } // namespace gamemd
 
@@ -429,20 +431,20 @@ CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 
   if ( wParam == -1 ) /*0x78109d*/
   {
-    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
+    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
   }
   else
   {
     v5 = SendMessageA(a2, 0x199u, wParam, 0); /*0x7810af*/
     if ( v5 >= 0 && v5 < (int)dword_B77900 ) /*0x7810c1*/
     {
-      qmemcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
+      memcpy(v7, (char *)dword_B77908 + 108 * v5, sizeof(v7)); /*0x7810ee*/
       FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
-      return a1; /*0x7810ff*/
+      return (gamemd::CampaignScore *)(a1); /*0x7810ff*/
     }
-    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
+    StringCSF = GetStringCSF((wchar_t *)(aSttLobbylistus), 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
   }
-  WideString::Assign((WideString *)a1, StringCSF); /*0x78111b*/
-  return a1; /*0x7810fb*/
+  ((WideString *)((WideString *)a1))->Assign(StringCSF); /*0x78111b*/
+  return (gamemd::CampaignScore *)(a1); /*0x7810fb*/
 }
 } // namespace gamemd

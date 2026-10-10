@@ -28,7 +28,7 @@ ScriptActionNode* ScriptClass::GetNextAction(
 {
   ScriptTypeClass *buildingType; // edx
   int idxCurrentLine; // ecx
-  _DWORD *result; // eax
+  unsigned int *result; // eax
 
   buildingType = this->buildingType; /*0x691540*/
   idxCurrentLine = this->idxCurrentLine; /*0x691543*/

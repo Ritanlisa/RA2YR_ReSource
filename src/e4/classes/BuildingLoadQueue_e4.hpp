@@ -7,12 +7,9 @@ namespace gamemd {
 
 struct BuildingLoadQueue {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
+
 // --- flat members (END) ---
-    void * Find();
+    void * Find(void *a1 = 0, void *a2 = 0);
     void * GetNext(void *a1 = 0);
 };
 

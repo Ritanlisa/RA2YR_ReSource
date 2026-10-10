@@ -47,7 +47,7 @@ public:
 
     // Construction
     SpawnManagerClass(TechnoClass*, HouseClass*, HouseClass*, int, int); // 0x6B6C90 (Construct)
-    void Constructor();                                          // 0x6B6EA0
+    void* Constructor();                                          // 0x6B6EA0
     void Constructor_SpawnManagerClass();                        // 0x6B7010
     void Constructor_6B83A0(int);                                // 0x6B83A0
     void ddtor();  // 0x6B7ED0

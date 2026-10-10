@@ -24,7 +24,7 @@ struct VoxLib
 {
     void Start();
     bool Loaded();
-    void Clear();
+    int Clear();
     // unmatched: no callgraph reference and no git history record
     void InitLimits(
         int32_t hva_min_x, int32_t hva_min_y, int32_t hva_min_z,

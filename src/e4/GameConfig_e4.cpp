@@ -34,9 +34,10 @@
 #include "e4/classes/GameOptions_e4.hpp"
 
 // 0x5E84D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char * GameConfig::ComputeCRC()
 {
+
   unsigned int v0; // ebx
   int *v1; // ebp
   int v2; // edx
@@ -47,7 +48,7 @@ char * GameConfig::ComputeCRC()
   int v7; // ebp
   char *v8; // ebp
   int *v10; // [esp+10h] [ebp-104h]
-  _BYTE v11[256]; // [esp+14h] [ebp-100h] BYREF
+  unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
   v0 = 0; /*0x5e84e8*/
   qmemcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
@@ -83,10 +84,11 @@ char * GameConfig::ComputeCRC()
     }
   }
   while ( v2 > 0 ); /*0x5e854a*/
-  v8 = (char *)RA2_OPNEW(0xCu); /*0x5e8553*/
+  v8 = (char *)__2_YAPAXI_Z(0xCu); /*0x5e8553*/
   sprintf(v8, "%08X", v0); /*0x5e855c*/
   qmemcpy(&unk_ABE050, v11, 0x100u); /*0x5e8572*/
   return v8; /*0x5e8574*/
+
 }
 } // namespace gamemd
 
@@ -100,13 +102,13 @@ int GameConfig::ComputeHash()
   int v3; // eax
   int v4; // eax
   void *v6[3]; // [esp+10h] [ebp-C4h] BYREF
-  _DWORD v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
+  unsigned int v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
   char v8; // [esp+44h] [ebp-90h]
   int v9; // [esp+48h] [ebp-8Ch]
   int v10; // [esp+4Ch] [ebp-88h]
   char v11; // [esp+50h] [ebp-84h]
-  _DWORD v12[22]; // [esp+68h] [ebp-6Ch] BYREF
-  _BYTE v13[12]; // [esp+C0h] [ebp-14h] BYREF
+  unsigned int v12[22]; // [esp+68h] [ebp-6Ch] BYREF
+  unsigned char v13[12]; // [esp+C0h] [ebp-14h] BYREF
   int v14; // [esp+CCh] [ebp-8h]
 
   v0 = Hash::ComputeHashSHA1(dword_887048); /*0x679da5*/
@@ -125,22 +127,22 @@ int GameConfig::ComputeHash()
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
   GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x679dfa*/
+  v7[0] = &vt_List; /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
-  v6[0] = &CCINIClass_Vtable; /*0x679e23*/
+  v6[0] = (unsigned int)&CCINIClass_Vtable; /*0x679e23*/
   CCFileClass::Construct(v12, g_Str_File_CoopCampMD_ini); /*0x679e2b*/
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = &(void*)(void*)&CCFileClass_vftable; /*0x679e60*/
+  v12[0] = &vt_CCFileClass; /*0x679e60*/
   v14 = 0; /*0x679e68*/
   Vector::Clear((int)v13); /*0x679e6f*/
-  v12[0] = &off_7E1668; /*0x679e78*/
-  BufferIOFileClass::Dtor(v12); /*0x679e80*/
+  v12[0] = (unsigned int)&off_7E1668; /*0x679e78*/
+  ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
   HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
   return dword_B053B4 + v0; /*0x679e97*/
 }
@@ -150,57 +152,63 @@ int GameConfig::ComputeHash()
 namespace gamemd {
 void GameConfig::Constructor()
 {
+
+  GameConfig *v1; // edi
   int v2; // eax
   int v3; // esi
   CCFileClass v6; // [esp+Ch] [ebp-6Ch] BYREF
   char v7[12]; // [esp+64h] [ebp-14h] BYREF
   int v8; // [esp+70h] [ebp-8h]
 
-  if ( !*(_DWORD *)&this->q000[56] ) /*0x5d67bd*/
+  v1 = this; /*0x5d67b5*/
+  if ( !*(unsigned int *)&this->__pad_0[56] ) /*0x5d67bd*/
   {
-    v2 = RA2_OPNEW(0x58u); /*0x5d67c9*/
+    v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
     if ( v2 ) /*0x5d67d5*/
     {
-      *(_DWORD *)(v2 + 4) = 0; /*0x5d67de*/
-      *(_DWORD *)(v2 + 8) = 0; /*0x5d67e1*/
-      *(_DWORD *)(v2 + 20) = 0; /*0x5d67e6*/
-      *(_DWORD *)(v2 + 24) = 0; /*0x5d67e9*/
-      *(_DWORD *)(v2 + 16) = &(void*)(void*)&GenericNode_vftable; /*0x5d67ec*/
+      *(unsigned int *)(v2 + 4) = 0; /*0x5d67de*/
+      *(unsigned int *)(v2 + 8) = 0; /*0x5d67e1*/
+      *(unsigned int *)(v2 + 20) = 0; /*0x5d67e6*/
+      *(unsigned int *)(v2 + 24) = 0; /*0x5d67e9*/
+      *(unsigned int *)(v2 + 16) = &GenericNode::`vftable'; /*0x5d67ec*/
       GenericNode::Constructor((GenericNode *)(v2 + 28)); /*0x5d67f2*/
-      v3->q00C = &(void*)(void*)&GenericList_vftable; /*0x5d67fa*/
+      *(unsigned int *)(v3 + 12) = &GenericList::`vftable'; /*0x5d67fa*/
       LinkedList::Prepend((LinkedList *)(v3 + 16), v3 + 28); /*0x5d6801*/
-      v3->q00C = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x5d680a*/
-      v3->q028 = 0; /*0x5d6811*/
-      v3->q02C = 0; /*0x5d6814*/
-      v3->q030 = 0; /*0x5d6817*/
-      v3->q034 = 0; /*0x5d681a*/
-      v3->q038 = 0; /*0x5d681d*/
-      v3->q03C = 0; /*0x5d6820*/
-      v3->ownsFile = 0; /*0x5d6823*/
-      *(_DWORD *)v3 = &CCINIClass_Vtable; /*0x5d6826*/
+      v1 = this; /*0x5d6806*/
+      *(unsigned int *)(v3 + 12) = &List<INIClass::INISection *>::`vftable'; /*0x5d680a*/
+      *(unsigned int *)(v3 + 40) = 0; /*0x5d6811*/
+      *(unsigned int *)(v3 + 44) = 0; /*0x5d6814*/
+      *(unsigned int *)(v3 + 48) = 0; /*0x5d6817*/
+      *(unsigned char *)(v3 + 52) = 0; /*0x5d681a*/
+      *(unsigned int *)(v3 + 56) = 0; /*0x5d681d*/
+      *(unsigned int *)(v3 + 60) = 0; /*0x5d6820*/
+      *(unsigned char *)(v3 + 64) = 0; /*0x5d6823*/
+      *(unsigned int *)v3 = &CCINIClass_Vtable; /*0x5d6826*/
     }
     else
     {
       v3 = 0; /*0x5d682f*/
     }
-    *(_DWORD *)&this->q000[56] = v3; /*0x5d6839*/
-    CCFileClass::Construct2(&v6, (char **)&this->q000[44]); /*0x5d683c*/
+    *(unsigned int *)&v1->__pad_0[56] = v3; /*0x5d6839*/
+    CCFileClass::Construct2(&v6, (char **)&v1->__pad_0[44]); /*0x5d683c*/
     if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
-      CCINIClass::Load(*(CCINIClass **)&this->q000[56], (int)&v6, 0, 0); /*0x5d685a*/
-    *(_DWORD *)v6.__tail_0 = &(void*)(void*)&CCFileClass_vftable; /*0x5d6863*/
+      CCINIClass::Load(*(CCINIClass **)&v1->__pad_0[56], (int)&v6, 0, 0); /*0x5d685a*/
+    *(unsigned int *)v6.CDFileClass = &CCFileClass::`vftable'; /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
-    *(_DWORD *)v6.__tail_0 = &off_7E1668; /*0x5d6878*/
+    *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
   }
-  return *(char **)&this->q000[56]; /*0x5d6888*/
+  return *(char **)&v1->__pad_0[56]; /*0x5d6888*/
+
 }
 }
 // 0x77E7A0
 namespace gamemd {  // G42.18c ns repair
 int  GameConfig::BuildChecksum(char * Buffer)
 {
+
   int v2; // ecx
   int *v3; // eax
   int v4; // esi
@@ -229,5 +237,6 @@ int  GameConfig::BuildChecksum(char * Buffer)
   v9 = Hash_Check_5E94D0(v6); /*0x77e7f8*/
   Entry = GameOptions::GetEntry(); /*0x77e7fa*/
   return sprintf(Buffer, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12); /*0x77e80e*/
+
 }
 }  // G42.18c ns repair

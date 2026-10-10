@@ -26,32 +26,22 @@ struct AnimTypeClass {
     int MiddleFrameHeight;  // 0x12
     bool IsAllocated;  // 0x13
     double abstractFlags;  // 0x14
-    unsigned char q015;  // 0x15
     SHPStruct* nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     int NeedsSaveOrLink;  // 0x20
     int LoopStart;  // 0x24
     int LoopEnd;  // 0x28
-    bool q02B;  // 0x2B
     int End;  // 0x2C
     int LoopCount;  // 0x30
-    unsigned char q031;  // 0x31
     int Start;  // 0x32
     AnimTypeClass* Next;  // 0x34
     int SpawnsParticle;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     int zero_3C;  // 0x3C
     unsigned char UINameLabel;  // 0x3D
     int DetailLevel;  // 0x40
-    bool q042;  // 0x42
     int TranslucencyDetailLevel;  // 0x44
     char RandomLoopDelay[4];  // 0x48
-    bool q04A;  // 0x4A
     char RandomRate[4];  // 0x4C
-    unsigned char q04F;  // 0x4F
     int Translucency;  // 0x50
     AnimTypeClass* Spawns;  // 0x54
     int SpawnCount;  // 0x58
@@ -62,14 +52,7 @@ struct AnimTypeClass {
     AnimTypeClass* TrailerAnim;  // 0x6C
     int TrailerSeperation;  // 0x70
     double Elasticity;  // 0x74
-    unsigned char q078;  // 0x78
     double MinZVel;  // 0x7C
-    int q080;  // 0x80
-    AnimTypeClass* q084;  // 0x84
-    int q088;  // 0x88
-    void* q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
-    unsigned int q094;  // 0x94
     unsigned int tail_95;  // 0x95
     int StopSound;  // 0x96
     ObjectClass * ptr_98;  // 0x98
@@ -78,97 +61,14 @@ struct AnimTypeClass {
     int Strength;  // 0xA0
     void * Image;  // 0xA4
     char ImageAllocated;  // 0xA8
-    unsigned char q0A9;  // 0xA9
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
     void * AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
     unsigned int TurretVoxel;  // 0xB4
     unsigned int BarrelVoxel;  // 0xB8
-    unsigned char q0B9;  // 0xB9
     unsigned char ChargerTurrets;  // 0xBC
-    unsigned int q0C3;  // 0xC3
-    void* q0C4;  // 0xC4
-    unsigned char q0C7;  // 0xC7
-    unsigned int u32_C8;  // 0xC8
-    unsigned int q0C9;  // 0xC9
-    void* q0CC;  // 0xCC
-    unsigned char q0D0;  // 0xD0
-    unsigned char u8_D1;  // 0xD1
-    unsigned char u8_D2;  // 0xD2
-    unsigned char u8_D3;  // 0xD3
-    unsigned char u8_D4;  // 0xD4
-    void* q0D8;  // 0xD8
-    unsigned int u32_DC;  // 0xDC
-    void* q0E0;  // 0xE0
-    unsigned int u32_E4;  // 0xE4
-    AbstractClass* q0E8;  // 0xE8
-    unsigned int q0EC;  // 0xEC
-    void* q0F0;  // 0xF0
-    void* q0F4;  // 0xF4
-    void* q0F7;  // 0xF7
-    OverlayTypeClass* q0F8;  // 0xF8
-    unsigned int q0F9;  // 0xF9
-    unsigned char q0FB;  // 0xFB
-    ObjectClass* q0FC;  // 0xFC
     AnimTypeClass* BounceAnim;  // 0x100
     unsigned char ChargerBarrels;  // 0x104
-    AnimTypeClass* q108;  // 0x108
-    unsigned int q10C;  // 0x10C
-    DynamicVector* q110;  // 0x110
-    unsigned int q111;  // 0x111
-    unsigned int q114;  // 0x114
-    unsigned int q118;  // 0x118
-    unsigned int q11C;  // 0x11C
-    unsigned int q120;  // 0x120
-    double q124;  // 0x124
-    unsigned int q128;  // 0x128
-    unsigned int q12C;  // 0x12C
-    unsigned int q130;  // 0x130
-    unsigned int q134;  // 0x134
-    unsigned int q138;  // 0x138
-    unsigned int q13C;  // 0x13C
-    unsigned int q140;  // 0x140
-    unsigned int q144;  // 0x144
-    unsigned int q148;  // 0x148
     unsigned char NoSpawnAlt;  // 0x14C
-    unsigned char q14D;  // 0x14D
-    unsigned int q150;  // 0x150
-    unsigned char q154;  // 0x154
-    void* q158;  // 0x158
-    unsigned char q15C;  // 0x15C
-    int q160;  // 0x160
-    unsigned int q162;  // 0x162
-    void * q164;  // 0x164
-    unsigned char q166;  // 0x166
-    char q168;  // 0x168
-    bool q16B;  // 0x16B
-    void* q16C;  // 0x16C
-    unsigned char q16D;  // 0x16D
-    unsigned int q16F;  // 0x16F
-    unsigned char q170;  // 0x170
-    unsigned char q174;  // 0x174
-    unsigned int q180;  // 0x180
-    unsigned int q184;  // 0x184
-    unsigned char q188;  // 0x188
-    unsigned int q190;  // 0x190
-    unsigned int q194;  // 0x194
-    unsigned char q198;  // 0x198
-    unsigned char q19D;  // 0x19D
-    bool q1A1;  // 0x1A1
-    unsigned int q1A2;  // 0x1A2
-    unsigned int q1A5;  // 0x1A5
-    unsigned int q1A7;  // 0x1A7
-    unsigned char q1AB;  // 0x1AB
-    unsigned int q1AC;  // 0x1AC
-    unsigned int q1B0;  // 0x1B0
-    unsigned int q1B1;  // 0x1B1
-    unsigned int q1B5;  // 0x1B5
-    unsigned char q1B9;  // 0x1B9
-    AbstractTypeClass* q1D4;  // 0x1D4
-    AbstractTypeClass* q1E0;  // 0x1E0
-    ConnectionPointClass* q1E8;  // 0x1E8
-    unsigned char q1E9;  // 0x1E9
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
@@ -192,95 +92,46 @@ struct AnimTypeClass {
     bool IgnoresFirestorm;  // 0x209
     bool UseLineTrail;  // 0x20A
     char LineTrailColor[4];  // 0x20C
-    unsigned char q210;  // 0x210
-    char q211;  // 0x211
-    char q212;  // 0x212
+    unsigned char AlternateArcticArt_d;  // 0x211
+    unsigned char ArcticArtInUse_d;  // 0x212
     unsigned char AlphaImageFile;  // 0x213
-    unsigned int q214;  // 0x214
-    AbstractClass* q218;  // 0x218
-    AbstractClass* q21C;  // 0x21C
-    unsigned int q220;  // 0x220
-    void* q224;  // 0x224
-    unsigned int q228;  // 0x228
-    char q22C;  // 0x22C
-    char q22D;  // 0x22D
-    char q22E;  // 0x22E
-    char q22F;  // 0x22F
-    char q230;  // 0x230
-    char q231;  // 0x231
-    char q232;  // 0x232
-    char q233;  // 0x233
-    char q234;  // 0x234
-    char q235;  // 0x235
-    char q236;  // 0x236
-    bool q237;  // 0x237
-    char q238;  // 0x238
-    char q239;  // 0x239
-    char q23A;  // 0x23A
-    unsigned char q23B;  // 0x23B
-    bool q23D;  // 0x23D
-    unsigned char q23E;  // 0x23E
+    char Theater_d;  // 0x22C
+    unsigned char Insignificant_d;  // 0x232
+    unsigned char Voxel_d;  // 0x236
+    bool NewTheater_d;  // 0x237
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
-    unsigned int q248;  // 0x248
-    SomeVoxelCache* q24C;  // 0x24C
-    void* q254;  // 0x254
-    unsigned char q258;  // 0x258
-    SomeVoxelCache* q25C;  // 0x25C
-    unsigned char q260;  // 0x260
-    char q264[4];  // 0x264
-    unsigned int q268;  // 0x268
-    SomeVoxelCache* q26C;  // 0x26C
-    SomeVoxelCache* q270;  // 0x270
-    int q274;  // 0x274
-    char q278[4];  // 0x278
-    SomeVoxelCache* q27C;  // 0x27C
-    unsigned int q280;  // 0x280
-    unsigned int q284;  // 0x284
-    unsigned int q288;  // 0x288
-    char q28C[4];  // 0x28C
-    unsigned char q290;  // 0x290
     int MiddleFrameIndex;  // 0x294
     int MiddleFrameWidth;  // 0x298
-    int q29C;  // 0x29C
-    AbstractTypeClass* q2A0;  // 0x2A0
+    int MiddleFrameHeight_d;  // 0x29C
     unsigned char AnimTypeClass_field_2A4;  // 0x2A4
-    unsigned char q2A5;  // 0x2A5
     double Damage;  // 0x2A8
-    AbstractTypeClass* q2AC;  // 0x2AC
     int Rate;  // 0x2B0
-    int q2B4;  // 0x2B4
-    int q2B8;  // 0x2B8
-    int q2BC;  // 0x2BC
-    int q2C0;  // 0x2C0
-    int q2C4;  // 0x2C4
-    AnimTypeClass* q2C8;  // 0x2C8
-    int q2CC;  // 0x2CC
+    int Damage_d;  // 0x2B4
+    int LoopStart_d;  // 0x2B8
+    int LoopEnd_d;  // 0x2BC
+    int End_d;  // 0x2C0
+    int LoopCount_d;  // 0x2C4
+    AnimTypeClass* Next_d;  // 0x2C8
+    int SpawnsParticle_d;  // 0x2CC
     int NumParticles;  // 0x2D0
-    int q2D4;  // 0x2D4
-    int q2D8;  // 0x2D8
-    char q2DC[8];  // 0x2DC
-    AbstractTypeClass* q2E0;  // 0x2E0
-    char q2E4[8];  // 0x2E4
-    AbstractTypeClass* q2E8;  // 0x2E8
-    int q2EC;  // 0x2EC
-    AnimTypeClass* q2F0;  // 0x2F0
-    int q2F4;  // 0x2F4
-    int q2F8;  // 0x2F8
-    int q2FC;  // 0x2FC
-    AnimTypeClass* q300;  // 0x300
-    AnimTypeClass* q304;  // 0x304
-    AnimTypeClass* q308;  // 0x308
-    unsigned int q30A;  // 0x30A
-    int q30C;  // 0x30C
-    double q310;  // 0x310
-    void* q314;  // 0x314
-    double q318;  // 0x318
-    unsigned int u32_31C;  // 0x31C
+    int DetailLevel_d;  // 0x2D4
+    int TranslucencyDetailLevel_d;  // 0x2D8
+    char RandomLoopDelay_d[8];  // 0x2DC
+    char RandomRate_d[8];  // 0x2E4
+    int Translucency_d;  // 0x2EC
+    AnimTypeClass* Spawns_d;  // 0x2F0
+    int SpawnCount_d;  // 0x2F4
+    int Report_d;  // 0x2F8
+    int StopSound_d;  // 0x2FC
+    AnimTypeClass* BounceAnim_d;  // 0x300
+    AnimTypeClass* ExpireAnim_d;  // 0x304
+    AnimTypeClass* TrailerAnim_d;  // 0x308
+    int TrailerSeperation_d;  // 0x30C
+    double Elasticity_d;  // 0x310
+    double MinZVel_d;  // 0x318
     double AnimTypeClass_field_double_320;  // 0x320
-    unsigned int q324;  // 0x324
     double MaxXYVel;  // 0x328
-    void* q32C;  // 0x32C
     WarheadTypeClass* Warhead;  // 0x330
     int DamageRadius;  // 0x334
     OverlayTypeClass* TiberiumSpawnType;  // 0x338
@@ -306,7 +157,6 @@ struct AnimTypeClass {
     bool AltPalette;  // 0x361
     bool Normalized;  // 0x362
     char Layer[4];  // 0x364
-    bool q366;  // 0x366
     bool DoubleThick;  // 0x368
     bool Flat;  // 0x369
     bool Translucent;  // 0x36A
@@ -322,34 +172,38 @@ struct AnimTypeClass {
     bool ShouldFogRemove;  // 0x374
     unsigned char tail_375;  // 0x375
 // --- flat members (END) ---
-    AnimTypeClass * * FindOrCreate();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
+    AnimTypeClass * * FindOrCreate(char *Source);
     static AnimTypeClass * * FindOrCreate(char *Source);
     AnimTypeClass * ddtor(char a2, int aP0, int aP1, int aP2, int a1, int a3);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
     char GetLoopCount(int a2);
     char Stub(int a1, int a2);
-    int FindIndex();
+    int FindIndex(void *a1 = 0);
     int GetAnimData(int a2, int a3);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetDamage();
     int GetObjectSize();
     int LoadFromINI(uint8_t *** a2, void *a2_2);
-    int LookupByName();
+    int LookupByName(void *a1 = 0);
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(INIClass * aP1, unsigned char * a2, void * Layer);
+    int ReadINIString(INIClass * aP1, unsigned char * a2, void * Layer, void *a1 = 0);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     int Thunk_AnimTypeClass_sub_428E40();
     int Thunk_AnimTypeClass_sub_428E50();
-    AnimTypeClass * Construct(char *aP1);
-    unsigned int * Construct2(char *Source);
+    AnimTypeClass * Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    unsigned int * Construct2(char *Source, void *a1 = 0);
     void* GetWarhead(int a2);
     AnimTypeClass * * FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3);
-    int ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsigned int a2);
+    int ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2);
     char Flat_flag[1];  // 0x369 (ml)
     char __pad_98[3];  // 0x98 (ml)
     unsigned int q024;  // 0x24 (offset-truth)
+    static double ObjectTypeClass(...);  // plateau: C2039/C3861 stub
+    static double __pad_24(...);  // plateau: C2039/C3861 stub
+    static double __pad_2A0(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

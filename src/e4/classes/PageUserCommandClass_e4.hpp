@@ -15,10 +15,10 @@ struct PageUserCommandClass {
     char * AddRef(void *a1);
     char Do(int a1);
 PageUserCommandClass();
-    static void * Constructor(void *aP1);  // 0x537DD0 raw: _DWORD *__thiscall PageUserCommandClass::PageUserCommandClass(PageUserCommandClass*) -- site form (W20L4 T2)
-    wchar_t * Read(void *a1, void *a2);
+    static void * Constructor(void *aP1);
+    wchar_t * Read(void *a1, void *a2, void *a3 = 0);
     wchar_t * Release(void *a1);
-    wchar_t * ddtor();
+    wchar_t * ddtor(void *a1 = 0);
 };
 
 } // namespace gamemd

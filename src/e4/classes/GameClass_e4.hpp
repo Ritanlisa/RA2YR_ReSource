@@ -13,22 +13,20 @@ struct PKPipe;  // fix_fwd_type_supply
 struct PKStrawClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
 // --- flat members (END) ---
-    int initGameMode(int a2, int a3);  // 0x437FD0
+    int  initGameMode(int a2, int a3, void *a1 = 0);  // 0x437FD0
     int applyGameSettings2(int a2, int a3);  // G42.39 supply
     int QueryGameMode(int a2);  // G42.39 supply
-    unsigned int * processFrame(int a2, int a3);  // G42.39 supply
+    unsigned int * processFrame(int a2, int a3, void *a1 = 0);  // G42.39 supply
     unsigned int * updateUI(int a2, int a3, void *a3_2);  // G42.39 supply
     int loadScenarioFiles(int aP1);  // G42.39 supply
     int FrameLoop(int a2);  // G42.39 supply
     int FindOpenSlot();  // G42.39 supply
-    int GetRelatedObject();  // G42.39 supply
+    int GetRelatedObject(void *a1 = 0);  // G42.39 supply
     void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // G42.39 supply
     int ReadEncryptedStream(char * a2, signed int Size);  // G42.39 supply
     int initPlayerData(const char **a2);  // G42.39 supply
-    ObjectClass * * Shutdown(void *a1_1);  // G42.39 supply
+    static ObjectClass * * Shutdown(void *a1_1);  // G42.39 supply
     int ReadVersionFile();  // G42.39 supply
     int ReadVersionFile2();  // G42.39 supply
     void ReadVersionString();  // G42.39 supply
@@ -48,13 +46,13 @@ struct PKStrawClass {
 };
 struct GameClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned char *q000;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u16_A;  // 0xA
     unsigned char q00B;  // 0xB
     unsigned int u32_C;  // 0xC
-    Straw * q010;  // 0x10
+    int ;  // 0x10
     Pipe * ptr_14;  // 0x14
     unsigned int u32_18;  // 0x18
     CampaignClass * ptr_20;  // 0x20
@@ -115,33 +113,32 @@ struct GameClass {
     unsigned int Timer;
     unsigned int Event;
     unsigned int Network_ph;  // w18j3: filler renamed (no offset truth; canon GameClass::Network is a method)
-    static unsigned int Network(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    static unsigned int Network(...);
     unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
-    int initGameMode(int a2, int a3);  // 0x437FD0
-    _DWORD * processFrame(int a2, int a3);  // 0x4381D0
-    unsigned int * updateUI(int a2, int a3, void *a3_2);  // 0x438300
-    int loadScenarioFiles(int aP1);  // 0x5D2260
-    int FrameLoop(int a2);  // 0x5D2410
+    unsigned int *  processFrame(int a2, int a3);  // 0x4381D0
+    unsigned int * updateUI(int a2, int a3_2);  // 0x438300
+    int  loadScenarioFiles(int a2);  // 0x5D2260
+    int  FrameLoop(int a2);  // 0x5D2410
     int FindOpenSlot();  // 0x5D6370
     int GetRelatedObject();  // 0x631D30
-    void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
-    int ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
-    int initPlayerData(const char **a2);  // 0x69AE10
+    void *  WriteEncryptedStream(char * Src, int a3);  // 0x632DC0
+    int  ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
+    int  initPlayerData(void * a2);  // 0x69AE10
     static ObjectClass * * Shutdown(void *a1_1);  // 0x6BEC60
     int ReadVersionFile();  // 0x74F960
     int ReadVersionFile2();  // 0x74FA20
     void ReadVersionString();  // 0x74FC80
-    int processNetworkPacket(void * Src, signed int Size);  // 0x7BA3C0
-    unsigned int * saveGameState(char a2);  // 0x631F40
-    int * initDisplay(char a2);  // 0x4AECA0
+    int  processNetworkPacket(void * Src, signed int Size);  // 0x7BA3C0
+    unsigned int *  saveGameState(char a2);  // 0x631F40
+    int *  initDisplay(char a2);  // 0x4AECA0
     static void InitDifficultyButtons();  // 0x5E8AE0
-    PKPipe * validateGameFile(unsigned int * Block, char a2);  // 0x632FF0
-    PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // 0x633370
+    PKPipe *  validateGameFile(char a2);  // 0x632FF0
+    PKStrawClass *  applyGameSettings(char a2);  // 0x633370
     wchar_t * GetDifficultyString();  // 0x5E99C0
-    int loadGameState(int a2);  // 0x632FE0
-    int parseGameOptions(int a2);  // 0x633360
-    int FindPlayerName(int a1);  // 0x69BC60
+    int  loadGameState(int a2);  // 0x632FE0
+    int  parseGameOptions(int a2);  // 0x633360
+    int  FindPlayerName(int a1);  // 0x69BC60
     int initPlayerData(const char **a2, void * aStandard_0);
     wchar_t * GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno);
 };

@@ -15450,3 +15450,51 @@ extern unsigned int unk_B76230;   // data: 0xB76230 (0x7A94FB)
 extern unsigned int dword_8367C8; // data: 0x8367C8 BuildingDebris 记录表基 (0x631D4C)
 extern unsigned int dword_820334; // data: 0x820334 剧场文件名指针表 (0x4B6C78)
 extern unsigned int dword_820324; // data: 0x820324 剧场文件名指针表 (0x4B6D3D)
+extern unsigned char vt_Base64Pipe[4];  // data: 0x7EB774
+extern unsigned char vt_Base64Straw[4];  // data: 0x7EB764
+extern unsigned char vt_BufferIOFileClass[4];  // data: 0x7E3A2C
+extern unsigned char vt_CD[4];  // data: 0x7E4C30
+extern unsigned char vt_CacheStraw[4];  // data: 0x7EB754
+extern unsigned char vt_CellClass[4];  // data: 0x7E4EC0
+extern unsigned char vt_DisplayClass[4];  // data: 0x7E6114
+extern unsigned char vt_DisplayClassTacticalClass[4];
+extern unsigned char vt_DynamicVectorClass[4];
+extern unsigned char vt_DynamicVectorClassTRect[4];
+extern unsigned char vt_FilePipe[4];  // data: 0x7E4DA0
+extern unsigned char vt_INIClassINIEntry[4];
+extern unsigned char vt_INIClassINISection[4];
+extern unsigned char vt_MultiplayerGameModeInitializer[4];
+extern unsigned char vt_MultiplayerGameModeInitializerBase[4];
+extern unsigned char vt_Node[4];
+extern unsigned char vt_OwnerDrawDialogControl[4];
+extern unsigned char vt_PlayerProfile[4];  // data: 0x7F74F4
+extern unsigned char vt_PowerClass[4];  // data: 0x7EFF54
+extern unsigned char vt_RadarClassRTacticalClass[4];
+extern unsigned char vt_ScrollClass[4];  // data: 0x7F108C
+extern unsigned char vt_SidebarClass[4];  // data: 0x7F3058
+extern unsigned char vt_SidebarClassSBGadgetClass[4];
+extern unsigned char vt_SidebarClassStripClassSelectClass[4];
+extern unsigned char vt_TClassFactory[4];
+extern unsigned char vt_VectorClass[4];
+extern unsigned char vt_VectorCursorGraphicMenuItemDynamicVectorClass[4];
+extern unsigned char vt_VectorCursorTRectVectorClassTRect[4];
+extern unsigned char vt_VeinholeMonsterClass[4];  // data: 0x7F667C
+extern unsigned char vt_WorldDominationTourCampaign[4];
+extern unsigned char vt_WorldDominationTourCampaignProperties[4];
+extern unsigned char vt_WorldDominationTourConflict[4];
+extern unsigned char vt_WorldDominationTourFactionSelectDialogControl[4];
+extern unsigned char vt_WorldDominationTourFlagGameOption[4];
+extern unsigned char vt_WorldDominationTourGameOption[4];
+extern unsigned char vt_WorldDominationTourHistory[4];
+extern unsigned char vt_WorldDominationTourMap[4];
+extern unsigned char vt_WorldDominationTourMapSizeGameOption[4];
+extern unsigned char vt_WorldDominationTourSelection[4];
+extern unsigned char vt_WorldDominationTourState[4];
+extern unsigned char vt_WorldDominationTourTerritory[4];
+extern unsigned char vt_WorldDominationTourValueGameOption[4];
+extern unsigned char vt_WorldDominationTourVoicesAnim[4];
+extern unsigned char vt___non_rtti_object[4];  // data: 0x7F95D0
+extern unsigned char vt__com_error[4];  // data: 0x7FA498
+extern unsigned char vt_bad_cast[4];  // data: 0x7F9660
+extern unsigned char vt_rc_ptrWorldDominationTourValueGameOption[4];
+extern unsigned char vt_returnCD[4];

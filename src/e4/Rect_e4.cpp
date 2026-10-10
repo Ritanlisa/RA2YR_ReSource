@@ -9,8 +9,8 @@
 #include "e4/e4_protos.h"
 
 // 0x487F40
-namespace gamemd {
-int Rect::Union(LPRECT aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
+namespace gamemd {  // G42.18 ns repair
+int Rect::Union(LPRECT, const RECT *lprcSrc1, const RECT *lprcSrc2)
 {
   LONG *v3; // edx
   struct tagRECT *v4; // ecx
@@ -72,11 +72,11 @@ int Rect::Union(LPRECT aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
       return (int)v15; /*0x487fcf*/
     }
   }
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x42E410
 namespace gamemd {
-_DWORD * Rect::Set(int aP1, int aP2, int aP3, int aP4)
+unsigned int * Rect::Set(int aP1, int aP2, int aP3, int aP4)
 {
   this->X = aP1; /*0x42e41a*/
   this->Y = aP2; /*0x42e420*/
@@ -87,13 +87,15 @@ _DWORD * Rect::Set(int aP1, int aP2, int aP3, int aP4)
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
-_DWORD * Rect::Construct(unsigned int *aP1, int aP2, int aP3)
+unsigned int * Rect::Construct(unsigned int *aP1, int aP2, int aP3)
 {
+
   this->X = *aP1; /*0x45a138*/
   this->Y = aP1[1]; /*0x45a141*/
   this->Width = aP2; /*0x45a148*/
   this->Height = aP3; /*0x45a14b*/
   return &this->X; /*0x45a14e*/
+
 }
 } // namespace gamemd
 // 0x72A9E0
@@ -101,7 +103,7 @@ namespace gamemd {
 BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
   int v3; // edx
-  _DWORD *v4; // ecx
+  unsigned int *v4; // ecx
 
   *v4 += v3; /*0x72a9e4*/
   v4[1] += v3; /*0x72a9eb*/

@@ -579,10 +579,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetBoundingSize();  // 0x5f6bd0 -- ObjectClass::GetBoundingSize
     int IsAboveScreenMargin();  // 0x5f6c10 -- ObjectClass::IsAboveScreenMargin
     int CreateInstance();  // 0x5f6dc0 -- ObjectClass::CreateInstance
-    int FindClosestObjectCell(_DWORD *a2, char a3, int a4);
+    int FindClosestObjectCell(unsigned int *a2, char a3, int a4);
     int FindObjectCell(int a1, int a2);  // 0x47c5a0 -- Object::FindObjectCell
     int IsAlliedWithObjectHouse(int a2);
-    bool IsAlliedWithObjectSimpleHouse(void *a1);  // 0x4f9af0 gB truth: _BYTE* a2 -- Object::IsAlliedWithObjectSimpleHouse
+    bool IsAlliedWithObjectSimpleHouse(void *a1);  // 0x4f9af0 gB truth: unsigned char* a2 -- Object::IsAlliedWithObjectSimpleHouse
     void* RemoveObjectArray();  // 0x53e420 -- Object::RemoveObjectArray
     void* FindNearestObjectAtCell(int a1);  // 0x56c210 -- Object::FindNearestObjectAtCell
     int Unlink();  // 0x5f5230 -- Object::Unlink

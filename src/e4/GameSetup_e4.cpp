@@ -20,20 +20,21 @@
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x60D320
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GameSetup::LookupDialogHash()
 {
+
   GameSetup **v1; // eax
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !*(_DWORD *)&g_DialogPool.q208[60] ) /*0x60d32c*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = *(GameSetup ***)(*(_DWORD *)&g_DialogPool.q208[56] /*0x60d34d*/
+  v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
                       + 4
-                      * ((*(int (__thiscall **)(GameSetup **))&g_DialogPool.q208[80])(&v4)
-                       & ((1 << g_DialogPool.q208[68]) - 1)));
+                      * ((*(int (**)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
+                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
@@ -47,6 +48,7 @@ int GameSetup::LookupDialogHash()
     return v3[27]; /*0x60d375*/
   else
     return 0; /*0x60d366*/
+
 }
 } // namespace gamemd
 // 0x698F90
@@ -58,18 +60,18 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
-  INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(_DWORD *)this, 0); /*0x698fae*/
-  INIClass::SetInt(aP1, Block, aScenindex, this->q004, 0); /*0x698fc1*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(unsigned int *)this, 0); /*0x698fae*/
+  INIClass::SetInt(aP1, Block, aScenindex, this->u32_4, 0); /*0x698fc1*/
   INIClass::SetInt(aP1, Block, g_INI_Key_GameSpeed, this->ptr_8, 0); /*0x698fd4*/
-  INIClass::SetInt(aP1, Block, g_INI_Key_Credits, this->q00C, 0); /*0x698fe7*/
-  INIClass::SetInt(aP1, Block, g_INI_Key_UnitCount, this->q010, 0); /*0x698ffa*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_ShortGame, this->q014); /*0x69900b*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_SuperWeaponsAllowed, this->u8_15); /*0x69901c*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, this->u8_16); /*0x69902d*/
-  INIClass::SetBool(aP1, Block, aMcvrepacks, this->u8_17); /*0x69903e*/
-  INIClass::SetBool(aP1, Block, aCratesappear, this->q018); /*0x69904f*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_Credits, this->__pad_00C, 0); /*0x698fe7*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_UnitCount, this->u32_10, 0); /*0x698ffa*/
+  INIClass::SetBool(aP1, Block, g_INI_Key_ShortGame, this->u32_14); /*0x69900b*/
+  INIClass::SetBool(aP1, Block, g_INI_Key_SuperWeaponsAllowed, this->u32_15); /*0x69901c*/
+  INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, this->u32_16); /*0x69902d*/
+  INIClass::SetBool(aP1, Block, aMcvrepacks, this->u32_17); /*0x69903e*/
+  INIClass::SetBool(aP1, Block, aCratesappear, this->u32_18); /*0x69904f*/
   v4 = 1; /*0x699054*/
-  v5 = (int *)(&this->q0104); /*0x699059*/
+  v5 = (int *)((char *)&this->q095 + 27); /*0x699059*/
   do /*0x69908e*/
   {
     sprintf(Buffer, "Slot%02d", v4); /*0x699067*/

@@ -44,7 +44,7 @@ extern unsigned int dword_A8D608;  // data: 0xa8d608 truth(IDA G42.57w9)
 
 
 // 0x5FA620
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GameSettings::Read()
 {
   double v1; // st7
@@ -69,7 +69,7 @@ int GameSettings::Read()
   wchar_t *v27; // eax
   int v28; // eax
   int v29; // eax
-  __int16 v30; // ax
+  int16_t v30; // ax
   int v31; // ecx
   wchar_t **v33; // [esp-4h] [ebp-1ACh]
   double v34; // [esp+0h] [ebp-1A8h]
@@ -81,134 +81,110 @@ int GameSettings::Read()
 
   _ESI = this; /*0x5fa62f*/
   Debug::Log(); /*0x5fa636*/
-  *(_DWORD *)_ESI = INIClass::ReadInt_Overwrite( /*0x5fa65b*/
-                      (bool *)&DSurface_ViewBounds.q0FC[36],
-                      (unsigned __int8 *)g_INI_Key_Options,
-                      (unsigned __int8 *)g_INI_Key_GameSpeed,
-                      *(_DWORD *)_ESI);
+  *(unsigned int *)_ESI = INIClass::ReadInt_Overwrite( /*0x5fa65b*/
+                      (bool *)&DSurface_ViewBounds.__pad_FC[36],
+                      (uint8_t *)g_INI_Key_Options,
+                      (uint8_t *)g_INI_Key_GameSpeed,
+                      *(unsigned int *)_ESI);
   Debug::Log(); /*0x5fa65d*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5fa678*/
-                    (bool *)&DSurface_ViewBounds.q0FC[36],
-                    (unsigned __int8 *)g_INI_Key_Options,
-                    (unsigned __int8 *)aDifficulty,
-                    *(_DWORD *)&_ESI[4]);
-  *(_DWORD *)&_ESI[4] = Int_Overwrite; /*0x5fa680*/
+                    (bool *)&DSurface_ViewBounds.__pad_FC[36],
+                    (uint8_t *)g_INI_Key_Options,
+                    (uint8_t *)aDifficulty,
+                    *(unsigned int *)&_ESI[4]);
+  *(unsigned int *)&_ESI[4] = Int_Overwrite; /*0x5fa680*/
   if ( Int_Overwrite >= 4 ) /*0x5fa683*/
     Int_Overwrite = 4; /*0x5fa685*/
-  *(_DWORD *)&_ESI[4] = Int_Overwrite; /*0x5fa68c*/
-  *(_DWORD *)&_ESI[4] = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
+  *(unsigned int *)&_ESI[4] = Int_Overwrite; /*0x5fa68c*/
+  *(unsigned int *)&_ESI[4] = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
   Debug::Log(); /*0x5fa6a0*/
   v4 = INIClass::ReadInt_Overwrite( /*0x5fa6bb*/
-         (bool *)&DSurface_ViewBounds.q0FC[36],
-         (unsigned __int8 *)g_INI_Key_Options,
-         (unsigned __int8 *)aCampdifficulty,
-         *(_DWORD *)&_ESI[8]);
-  *(_DWORD *)&_ESI[8] = v4; /*0x5fa6c3*/
+         (bool *)&DSurface_ViewBounds.__pad_FC[36],
+         (uint8_t *)g_INI_Key_Options,
+         (uint8_t *)aCampdifficulty,
+         *(unsigned int *)&_ESI[8]);
+  *(unsigned int *)&_ESI[8] = v4; /*0x5fa6c3*/
   if ( v4 >= 2 ) /*0x5fa6c6*/
     v4 = 2; /*0x5fa6c8*/
-  *(_DWORD *)&_ESI[8] = v4; /*0x5fa6cf*/
-  *(_DWORD *)&_ESI[8] = v4 <= 0 ? 0 : v4;
+  *(unsigned int *)&_ESI[8] = v4; /*0x5fa6cf*/
+  *(unsigned int *)&_ESI[8] = v4 <= 0 ? 0 : v4;
   Debug::Log(); /*0x5fa6e3*/
-  *(_DWORD *)&_ESI[12] = INIClass::ReadInt_Overwrite( /*0x5fa709*/
-                           (bool *)&DSurface_ViewBounds.q0FC[36],
-                           (unsigned __int8 *)g_INI_Key_Options,
-                           (unsigned __int8 *)aScrollmethod,
-                           *(_DWORD *)&_ESI[12]);
+  *(unsigned int *)&_ESI[12] = INIClass::ReadInt_Overwrite( /*0x5fa709*/
+                           (bool *)&DSurface_ViewBounds.__pad_FC[36],
+                           (uint8_t *)g_INI_Key_Options,
+                           (uint8_t *)aScrollmethod,
+                           *(unsigned int *)&_ESI[12]);
   Debug::Log(); /*0x5fa70c*/
-  *(_DWORD *)&_ESI[16] = INIClass::ReadInt_Overwrite( /*0x5fa732*/
-                           (bool *)&DSurface_ViewBounds.q0FC[36],
-                           (unsigned __int8 *)g_INI_Key_Options,
-                           (unsigned __int8 *)aScrollrate,
-                           *(_DWORD *)&_ESI[16]);
+  *(unsigned int *)&_ESI[16] = INIClass::ReadInt_Overwrite( /*0x5fa732*/
+                           (bool *)&DSurface_ViewBounds.__pad_FC[36],
+                           (uint8_t *)g_INI_Key_Options,
+                           (uint8_t *)aScrollrate,
+                           *(unsigned int *)&_ESI[16]);
   Debug::Log(); /*0x5fa735*/
   _ESI[20] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa75a*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
-                             (unsigned __int8 *)g_INI_Key_Options,
-                             (unsigned __int8 *)aAutoscroll,
-                             *(_BYTE *)&_ESI[20]);
+                             (int *)&DSurface_ViewBounds.__pad_FC[36],
+                             (uint8_t *)g_INI_Key_Options,
+                             (uint8_t *)aAutoscroll,
+                             *(unsigned char *)&_ESI[20]);
   Debug::Log(); /*0x5fa771*/
   v5 = INIClass::ReadInt_Overwrite( /*0x5fa78c*/
-         (bool *)&DSurface_ViewBounds.q0FC[36],
-         (unsigned __int8 *)g_INI_Key_Options,
-         (unsigned __int8 *)g_INI_Key_DetailLevel,
-         *(_DWORD *)&_ESI[24]);
-  *(_DWORD *)&_ESI[24] = v5; /*0x5fa794*/
+         (bool *)&DSurface_ViewBounds.__pad_FC[36],
+         (uint8_t *)g_INI_Key_Options,
+         (uint8_t *)g_INI_Key_DetailLevel,
+         *(unsigned int *)&_ESI[24]);
+  *(unsigned int *)&_ESI[24] = v5; /*0x5fa794*/
   if ( v5 >= 2 ) /*0x5fa797*/
     v5 = 2; /*0x5fa799*/
-  *(_DWORD *)&_ESI[24] = v5; /*0x5fa7a0*/
-  *(_DWORD *)&_ESI[24] = v5 <= 0 ? 0 : v5;
+  *(unsigned int *)&_ESI[24] = v5; /*0x5fa7a0*/
+  *(unsigned int *)&_ESI[24] = v5 <= 0 ? 0 : v5;
   Debug::Log(); /*0x5fa7b4*/
-  _ESI[28] = (GameSettings)1; /*0x5fa7c3*/
+  _ESI[28] = (gamemd::GameSettings)((GameSettings)1); /*0x5fa7c3*/
   Debug::Log(); /*0x5fa7c6*/
   _ESI[29] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa7e6*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
-                             (unsigned __int8 *)g_INI_Key_Options,
-                             (unsigned __int8 *)aSidebarcameote,
-                             *(_BYTE *)&_ESI[29]);
+                             (int *)&DSurface_ViewBounds.__pad_FC[36],
+                             (uint8_t *)g_INI_Key_Options,
+                             (uint8_t *)aSidebarcameote,
+                             *(unsigned char *)&_ESI[29]);
   Debug::Log(); /*0x5fa7fd*/
   _ESI[30] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa81d*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
-                             (unsigned __int8 *)g_INI_Key_Options,
-                             (unsigned __int8 *)aUnitactionline,
-                             *(_BYTE *)&_ESI[30]);
+                             (int *)&DSurface_ViewBounds.__pad_FC[36],
+                             (uint8_t *)g_INI_Key_Options,
+                             (uint8_t *)aUnitactionline,
+                             *(unsigned char *)&_ESI[30]);
   Debug::Log(); /*0x5fa834*/
   _ESI[31] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa854*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
-                             (unsigned __int8 *)g_INI_Key_Options,
-                             (unsigned __int8 *)aShowhidden,
-                             *(_BYTE *)&_ESI[31]);
+                             (int *)&DSurface_ViewBounds.__pad_FC[36],
+                             (uint8_t *)g_INI_Key_Options,
+                             (uint8_t *)aShowhidden,
+                             *(unsigned char *)&_ESI[31]);
   Debug::Log(); /*0x5fa86b*/
   _ESI[32] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa88b*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
-                             (unsigned __int8 *)g_INI_Key_Options,
-                             (unsigned __int8 *)aTooltips,
-                             *(_BYTE *)&_ESI[32]);
+                             (int *)&DSurface_ViewBounds.__pad_FC[36],
+                             (uint8_t *)g_INI_Key_Options,
+                             (uint8_t *)aTooltips,
+                             *(unsigned char *)&_ESI[32]);
   Debug::Log(); /*0x5fa8a2*/
-  v6 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/
-         (bool *)&DSurface_ViewBounds.q0FC[36],
-         g_INI_Key_Video,
-         (unsigned __int8 *)g_INI_Key_ScreenWidth,
-         *(_DWORD *)&_ESI[36]);
-  v7 = *(_DWORD *)&_ESI[40]; /*0x5fa8c2*/
-  *(_DWORD *)&_ESI[36] = v6; /*0x5fa8c5*/
-  *(_DWORD *)&_ESI[40] = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/
-                           (bool *)&DSurface_ViewBounds.q0FC[36],
-                           g_INI_Key_Video,
-                           (unsigned __int8 *)g_INI_Key_ScreenHeight,
-                           v7);
+    v6 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/          (bool *)&DSurface_ViewBounds.__pad_FC[36],(uint8_t *)(g_INI_Key_Video),          (uint8_t *)g_INI_Key_ScreenWidth,          *(unsigned int *)&_ESI[36]);
+  v7 = *(unsigned int *)&_ESI[40]; /*0x5fa8c2*/
+  *(unsigned int *)&_ESI[36] = v6; /*0x5fa8c5*/
+    *(unsigned int *)&_ESI[40] = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/                            (bool *)&DSurface_ViewBounds.__pad_FC[36],(uint8_t *)(g_INI_Key_Video),                            (uint8_t *)g_INI_Key_ScreenHeight,                            v7);
   Debug::Log(); /*0x5fa8ea*/
-  Bool_Overwrite = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa905*/
-                                   (int *)&DSurface_ViewBounds.q0FC[36],
-                                   g_INI_Key_Video,
-                                   (unsigned __int8 *)aStretchmovies,
-                                   *(_BYTE *)&_ESI[52]);
+    Bool_Overwrite = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa905*/                                    (int *)&DSurface_ViewBounds.__pad_FC[36],(uint8_t *)(g_INI_Key_Video),                                    (uint8_t *)aStretchmovies,                                    *(unsigned char *)&_ESI[52]);
   _ESI[52] = Bool_Overwrite; /*0x5fa90c*/
   v9 = Bool_Overwrite == 1 && g_DDraw_AllowStretchBlits == 1; /*0x5fa919*/
-  _ESI[52] = (GameSettings)v9; /*0x5fa91f*/
+  _ESI[52] = (gamemd::GameSettings)((GameSettings)v9); /*0x5fa91f*/
   Debug::Log(); /*0x5fa936*/
-  _ESI[53] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa956*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
-                             g_INI_Key_Video,
-                             aAllowhiresmode,
-                             *(_BYTE *)&_ESI[53]);
+    _ESI[53] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa956*/                              (int *)&DSurface_ViewBounds.__pad_FC[36],(uint8_t *)(g_INI_Key_Video),                              aAllowhiresmode,                              *(unsigned char *)&_ESI[53]);
   Debug::Log(); /*0x5fa96d*/
-  stru_A8EB00.?[383] = INIClass::ReadBool_Overwrite( /*0x5fa990*/
-                         (int *)&DSurface_ViewBounds.q0FC[36],
-                         g_INI_Key_Video,
-                         aAllowmodetoggl,
-                         stru_A8EB00.?[383]);
-  v10 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa9a8*/
-                        (int *)&DSurface_ViewBounds.q0FC[36],
-                        g_INI_Key_Video,
-                        aAllowvramsideb,
-                        *(_BYTE *)&_ESI[54]);
+    ((unsigned int *)&stru_A8EB00)[383] = INIClass::ReadBool_Overwrite( /*0x5fa990*/                          (int *)&DSurface_ViewBounds.__pad_FC[36],(uint8_t *)(g_INI_Key_Video),                          aAllowmodetoggl,                          ((unsigned int *)&stru_A8EB00)[383]);
+    v10 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa9a8*/                         (int *)&DSurface_ViewBounds.__pad_FC[36],(uint8_t *)(g_INI_Key_Video),                         aAllowvramsideb,                         *(unsigned char *)&_ESI[54]);
   __asm { fld dword ptr [esi+38h] } /*0x5fa9ad*/
   _ESI[54] = v10; /*0x5fa9b8*/
   __asm { fstp [esp+1A8h+var_1A8]; double } /*0x5fa9bb*/
   INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
-    (double *)&DSurface_ViewBounds.q0FC[36],
+    (double *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Audio,
-    (unsigned __int8 *)aSoundvolume,
+    (uint8_t *)aSoundvolume,
     v34);
   __asm /*0x5fa9cd*/
   {
@@ -226,7 +202,7 @@ int GameSettings::Read()
   __asm { fst dword ptr [esi+38h] } /*0x5fa9e2*/
   *(float *)&_ESI[56] = _ET1; /*0x5fa9e2*/
   __asm { fmul ds:flt_7EF38C } /*0x5fa9e5*/
-  IDA_LOWORD(v13) = Math::RoundToInt(v1); /*0x5fa9eb*/
+  (*((unsigned short *)&(v13))) = Math::RoundToInt(v1); /*0x5fa9eb*/
   EndBufferMixer((int *)g_MixerChannel_Score, v13); /*0x5fa9f8*/
   __asm { fld dword ptr [esi+38h] } /*0x5fa9fd*/
   __asm { fstp [esp+1A8h+var_1A8] }
@@ -234,9 +210,9 @@ int GameSettings::Read()
   __asm { fld dword ptr [esi+3Ch] } /*0x5faa10*/
   __asm { fstp [esp+1A8h+var_1A8]; double }
   INIClass::ReadDouble_Overwrite( /*0x5faa28*/
-    (double *)&DSurface_ViewBounds.q0FC[36],
+    (double *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Audio,
-    (unsigned __int8 *)aVoicevolume,
+    (uint8_t *)aVoicevolume,
     v36);
   __asm /*0x5faa2d*/
   {
@@ -254,14 +230,14 @@ int GameSettings::Read()
   __asm { fst dword ptr [esi+3Ch] } /*0x5faa42*/
   *(float *)&_ESI[60] = _ET1; /*0x5faa42*/
   __asm { fmul ds:dbl_7EAA50 } /*0x5faa45*/
-  IDA_LOWORD(v16) = Math::RoundToInt(v1); /*0x5faa4b*/
+  (*((unsigned short *)&(v16))) = Math::RoundToInt(v1); /*0x5faa4b*/
   ThemeClass::GetField(v16); /*0x5faa52*/
   __asm /*0x5faa57*/
   {
     fld dword ptr [esi+3Ch]
     fmul ds:flt_7EF38C
   }
-  IDA_LOWORD(v17) = Math::RoundToInt(v1); /*0x5faa60*/
+  (*((unsigned short *)&(v17))) = Math::RoundToInt(v1); /*0x5faa60*/
   EndBufferMixer((int *)g_MixerChannel_Voice, v17); /*0x5faa6d*/
   __asm { fld dword ptr [esi+3Ch] } /*0x5faa72*/
   __asm { fstp [esp+1A8h+var_1A8] }
@@ -269,9 +245,9 @@ int GameSettings::Read()
   __asm { fld dword ptr [esi+40h] } /*0x5faa85*/
   __asm { fstp [esp+1A8h+var_1A8]; double }
   INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
-    (double *)&DSurface_ViewBounds.q0FC[36],
+    (double *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Audio,
-    (unsigned __int8 *)aScorevolume,
+    (uint8_t *)aScorevolume,
     v38);
   __asm /*0x5faaa2*/
   {
@@ -289,45 +265,45 @@ int GameSettings::Read()
   __asm { fst dword ptr [esi+40h] } /*0x5faab7*/
   *(float *)&_ESI[64] = _ET1; /*0x5faab7*/
   __asm { fmul ds:flt_7EF38C } /*0x5faaba*/
-  IDA_LOWORD(v20) = Math::RoundToInt(v1); /*0x5faac0*/
+  (*((unsigned short *)&(v20))) = Math::RoundToInt(v1); /*0x5faac0*/
   EndBufferMixer((int *)g_MixerChannel_Theme, v20); /*0x5faacd*/
   __asm /*0x5faad2*/
   {
     fld dword ptr [esi+40h]
     fmul ds:dbl_7EAA50
   }
-  IDA_LOWORD(v21) = Math::RoundToInt(v1); /*0x5faadb*/
+  (*((unsigned short *)&(v21))) = Math::RoundToInt(v1); /*0x5faadb*/
   TechnoTypeClass::CheckFlag((TechnoTypeClass *)&unk_A83D10, v21); /*0x5faae6*/
   __asm { fld dword ptr [esi+40h] } /*0x5faaeb*/
   __asm { fstp [esp+1A8h+var_1A8] }
   Debug::Log(); /*0x5faaf9*/
   v22 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fab14*/
-                        (int *)&DSurface_ViewBounds.q0FC[36],
+                        (int *)&DSurface_ViewBounds.__pad_FC[36],
                         g_INI_Key_Audio,
-                        (unsigned __int8 *)aIsscorerepeat,
-                        *(_BYTE *)&_ESI[68]);
+                        (uint8_t *)aIsscorerepeat,
+                        *(unsigned char *)&_ESI[68]);
   _ESI[68] = v22; /*0x5fab19*/
   byte_A83D20 = v22; /*0x5fab1c*/
   Debug::Log(); /*0x5fab38*/
   v23 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fab53*/
-                        (int *)&DSurface_ViewBounds.q0FC[36],
+                        (int *)&DSurface_ViewBounds.__pad_FC[36],
                         g_INI_Key_Audio,
-                        (unsigned __int8 *)aIsscoreshuffle,
-                        *(_BYTE *)&_ESI[70]);
+                        (uint8_t *)aIsscoreshuffle,
+                        *(unsigned char *)&_ESI[70]);
   _ESI[70] = v23; /*0x5fab58*/
   byte_A83D22 = v23; /*0x5fab5b*/
   Debug::Log(); /*0x5fab77*/
   _ESI[69] = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fabb8*/
-                             (int *)&DSurface_ViewBounds.q0FC[36],
+                             (int *)&DSurface_ViewBounds.__pad_FC[36],
                              g_INI_Key_Audio,
-                             (unsigned __int8 *)aIngamemusic,
-                             *(_BYTE *)&_ESI[69]);
-  *(_DWORD *)&_ESI[76] = -1; /*0x5fabbb*/
-  *(_DWORD *)&_ESI[80] = -1; /*0x5fabbe*/
+                             (uint8_t *)aIngamemusic,
+                             *(unsigned char *)&_ESI[69]);
+  *(unsigned int *)&_ESI[76] = -1; /*0x5fabbb*/
+  *(unsigned int *)&_ESI[80] = -1; /*0x5fabbe*/
   INIClass::ParseValue_Wide( /*0x5fabc1*/
-    (INIClass *)&DSurface_ViewBounds.q0FC[36],
+    (INIClass *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Network,
-    (unsigned __int8 *)aNetid,
+    (uint8_t *)aNetid,
     &g_TypeClass_DefaultString,
     String,
     0xC8u);
@@ -346,55 +322,55 @@ int GameSettings::Read()
     v26 = wcstok(String, asc_82083C, v41); /*0x5fabf8*/
     if ( v26 ) /*0x5fac02*/
     {
-      *(_DWORD *)&_ESI[76] = wcstol(v26, 0, 10) - 1; /*0x5fac16*/
+      *(unsigned int *)&_ESI[76] = wcstol(v26, 0, 10) - 1; /*0x5fac16*/
       v27 = wcstok(0, asc_82083C, v33); /*0x5fac19*/
       if ( v27 ) /*0x5fac23*/
-        *(_DWORD *)&_ESI[80] = wcstol(v27, 0, 10) - 1; /*0x5fac33*/
+        *(unsigned int *)&_ESI[80] = wcstol(v27, 0, 10) - 1; /*0x5fac33*/
     }
   }
-  v28 = *(_DWORD *)&_ESI[76]; /*0x5fac36*/
+  v28 = *(unsigned int *)&_ESI[76]; /*0x5fac36*/
   if ( v28 < -1 || v28 >= 8 ) /*0x5fac40*/
-    *(_DWORD *)&_ESI[76] = -1; /*0x5fac42*/
-  v29 = *(_DWORD *)&_ESI[80]; /*0x5fac45*/
+    *(unsigned int *)&_ESI[76] = -1; /*0x5fac42*/
+  v29 = *(unsigned int *)&_ESI[80]; /*0x5fac45*/
   if ( v29 < -1 || v29 >= 8 ) /*0x5fac4f*/
-    *(_DWORD *)&_ESI[80] = -1; /*0x5fac51*/
-  *(_WORD *)&_ESI[72] = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
-                          (bool *)&DSurface_ViewBounds.q0FC[36],
+    *(unsigned int *)&_ESI[80] = -1; /*0x5fac51*/
+  *(unsigned short *)&_ESI[72] = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
+                          (bool *)&DSurface_ViewBounds.__pad_FC[36],
                           g_INI_Key_Audio,
-                          (unsigned __int8 *)aSoundlatency,
-                          *(unsigned __int16 *)&_ESI[72]);
+                          (uint8_t *)aSoundlatency,
+                          *(uint16_t *)&_ESI[72]);
   Debug::Log(); /*0x5fac7e*/
   v30 = INIClass::ReadInt_Overwrite( /*0x5fac9c*/
-          (bool *)&DSurface_ViewBounds.q0FC[36],
+          (bool *)&DSurface_ViewBounds.__pad_FC[36],
           g_INI_Key_Network,
-          (unsigned __int8 *)g_INI_Key_Socket,
-          *(unsigned __int16 *)&_ESI[74]);
-  v40 = *(_DWORD *)&_ESI[84]; /*0x5faca9*/
-  *(_WORD *)&_ESI[74] = v30; /*0x5facb4*/
-  *(_DWORD *)&_ESI[84] = INIClass::ReadInt_Overwrite( /*0x5facbd*/
-                           (bool *)&DSurface_ViewBounds.q0FC[36],
+          (uint8_t *)g_INI_Key_Socket,
+          *(uint16_t *)&_ESI[74]);
+  v40 = *(unsigned int *)&_ESI[84]; /*0x5faca9*/
+  *(unsigned short *)&_ESI[74] = v30; /*0x5facb4*/
+  *(unsigned int *)&_ESI[84] = INIClass::ReadInt_Overwrite( /*0x5facbd*/
+                           (bool *)&DSurface_ViewBounds.__pad_FC[36],
                            g_INI_Key_Network,
-                           (unsigned __int8 *)aNetcard,
+                           (uint8_t *)aNetcard,
                            v40);
   INIClass::GetString( /*0x5facda*/
-    (INIClass *)&DSurface_ViewBounds.q0FC[36],
+    (INIClass *)&DSurface_ViewBounds.__pad_FC[36],
     g_INI_Key_Network,
-    (unsigned __int8 *)g_INI_Key_DestNet,
+    (uint8_t *)g_INI_Key_DestNet,
     &g_INI_DefaultBuffer,
     (char *)&_ESI[88],
     64);
   Debug::Log(); /*0x5face4*/
-  IDA_LOBYTE(v31) = _ESI[29]; /*0x5face9*/
+  (*((unsigned char *)&(v31))) = _ESI[29]; /*0x5face9*/
   nullsub_36(v31); /*0x5facf5*/
-  SetGlobalFlag(*(_BYTE *)&_ESI[30]); /*0x5facfd*/
+  SetGlobalFlag(*(unsigned char *)&_ESI[30]); /*0x5facfd*/
   return (int)GameSettings::ParseNetworkAddress((const char *)_ESI); /*0x5fad09*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5FB050
 namespace gamemd {
 void * GameSettings::ParseNetworkAddress()
 {
-  unsigned __int16 v2; // ax
+  uint16_t v2; // ax
   const char *v3; // esi
   char *result; // eax
   size_t v5; // kr04_4
@@ -404,8 +380,8 @@ void * GameSettings::ParseNetworkAddress()
   char v9; // [esp+8h] [ebp-1Ch] BYREF
   int v10; // [esp+Ch] [ebp-18h] BYREF
   int v11; // [esp+10h] [ebp-14h] BYREF
-  __int16 v12; // [esp+14h] [ebp-10h]
-  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
+  int16_t v12; // [esp+14h] [ebp-10h]
+  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
   v2 = this->u32_4A; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
@@ -416,12 +392,12 @@ void * GameSettings::ParseNetworkAddress()
   {
     Network::GetField(unk_A8E9C0, v2 + 0x4000); /*0x5fb079*/
   }
-  v3 = &this->u32_160; /*0x5fb07e*/
+  v3 = ((char *)&this->q056 + 2); /*0x5fb07e*/
   result = 0; /*0x5fb086*/
   v5 = strlen(v3) + 1; /*0x5fb088*/
   if ( v5 != 1 ) /*0x5fb08d*/
   {
-    v6 = (char *)RA2_OPNEW(v5); /*0x5fb09a*/
+    v6 = (char *)operator new(v5); /*0x5fb09a*/
     strcpy(v6, v3); /*0x5fb0b8*/
     v7 = 0; /*0x5fb0c1*/
     result = strtok(v6, asc_826598); /*0x5fb0c3*/
@@ -430,7 +406,7 @@ void * GameSettings::ParseNetworkAddress()
       do /*0x5fb10f*/
       {
         sscanf(result, "%x", &v9); /*0x5fb0de*/
-        *((_BYTE *)&v10 + v7++) = v9; /*0x5fb0ef*/
+        *((unsigned char *)&v10 + v7++) = v9; /*0x5fb0ef*/
         result = strtok(0, asc_826598); /*0x5fb105*/
       }
       while ( result ); /*0x5fb10f*/
@@ -454,13 +430,15 @@ void * GameSettings::ParseNetworkAddress()
 namespace gamemd {
 int GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
 {
+
   int result; // eax
 
   result = a2; /*0x721290*/
   if ( a2 >= 255 ) /*0x721299*/
     result = 255; /*0x72129b*/
-  this->vfptr3 = result; /*0x7212a0*/
+  volume->ObjectTypeClass[3] = result; /*0x7212a0*/
   return result; /*0x7212a3*/
+
 }
 } // namespace gamemd
 // 0x7931A0
@@ -476,7 +454,7 @@ char * GameSettings::FindFlagged()
   for ( i = (char *)dword_B77908; ; i += 108 ) /*0x7931af*/
   {
     if ( v0 >= 0 && v0 < (int)dword_B77900 ) /*0x7931bb*/
-      qmemcpy(&byte_B777B0, i, 0x6Cu); /*0x7931c9*/
+      memcpy(&byte_B777B0, i, 0x6Cu); /*0x7931c9*/
     if ( (byte_B777B0 & 1) != 0 ) /*0x7931d2*/
       break; /*0x7931d2*/
     if ( ++v0 >= (int)dword_B77900 ) /*0x7931da*/

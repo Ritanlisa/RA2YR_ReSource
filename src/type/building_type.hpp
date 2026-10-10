@@ -337,7 +337,7 @@ public:
     int UpdatePower();  // 0x464b30 -- BuildingTypeClass::UpdatePower
     int SaveLoad_Prefix();  // 0x465010 -- BuildingTypeClass::SaveLoad_Prefix
     int SaveLoad_Prefix_0();  // 0x465300 -- BuildingTypeClass::SaveLoad_Prefix_0
-    void IsPowered();  // 0x465af0 -- BuildingTypeClass::IsPowered
+    int IsPowered();  // 0x465af0 -- BuildingTypeClass::IsPowered
     int GetAuxField();  // 0x465db0 -- BuildingTypeClass::GetAuxField
     int FindAnimByName(int a1, int a2, int a3);  // 0x474a90 -- BuildingTypeClass::FindAnimByName
     void* loadBuildingProperty_b_5478850(int a1, int a2);  // 0x478850 -- BuildingTypeClass::loadBuildingProperty_b_5478850

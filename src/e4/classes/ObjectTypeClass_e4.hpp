@@ -27,157 +27,33 @@ struct ObjectTypeClass {
     int Strength;  // 0x12
     bool IsAllocated;  // 0x13
     bool abstractFlags;  // 0x14
-    unsigned char q015;  // 0x15
     SHPStruct* Image;  // 0x16
     SHPStruct* nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     char referenceCount[4];  // 0x1C
-    bool q01D;  // 0x1D
     char NeedsSaveOrLink[4];  // 0x20
     char BarrelVoxel[4];  // 0x24
-    char u32_27;  // 0x27
     char ChargerTurrets_0x12[4];  // 0x28
-    bool q02B;  // 0x2B
     char ChargerBarrels_0x12[4];  // 0x2C
-    char u32_2D;  // 0x2D
-    char u32_2E;  // 0x2E
-    char u32_2F;  // 0x2F
     bool NoSpawnAlt;  // 0x30
-    unsigned char q031;  // 0x31
     char TurretVoxel[4];  // 0x32
-    unsigned char q034;  // 0x34
-    int u32_38;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     void* zero_3C;  // 0x3C
     unsigned char UINameLabel;  // 0x3D
-    char q040[4];  // 0x40
-    bool q042;  // 0x42
-    unsigned int u32_44;  // 0x44
-    unsigned int u32_48;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int u32_4C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    unsigned int u32_50;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q05D;  // 0x5D
     void * UIName;  // 0x60
     unsigned char Name;  // 0x64
-    unsigned int q068;  // 0x68
-    ObjectClass* q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    bool q074;  // 0x74
-    unsigned char q078;  // 0x78
-    char u32_7B;  // 0x7B
-    void* q07C;  // 0x7C
-    char u32_7D;  // 0x7D
-    unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned int u32_88;  // 0x88
-    void* q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
-    char u32_91;  // 0x91
-    unsigned int q094;  // 0x94
     unsigned int tail_95;  // 0x95
-    Color* q098;  // 0x98
-    unsigned int u32_9A;  // 0x9A
     unsigned char unused_9B;  // 0x9B
     char Armor[4];  // 0x9C
-    char u32_9D;  // 0x9D
-    char u32_9F;  // 0x9F
-    int q0A0;  // 0xA0
-    char u32_A1;  // 0xA1
-    char u32_A2;  // 0xA2
-    SHPStruct* q0A4;  // 0xA4
+    int Strength_d;  // 0xA0
+    SHPStruct* Image_d;  // 0xA4
     bool ImageAllocated;  // 0xA8
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
     SHPStruct* AlphaImage;  // 0xAC
     char MainVoxel[4];  // 0xB0
-    char q0B4[4];  // 0xB4
-    char q0B8[4];  // 0xB8
-    unsigned char q0B9;  // 0xB9
+    char TurretVoxel_d[4];  // 0xB4
+    char BarrelVoxel_d[4];  // 0xB8
     char ChargerTurrets[72];  // 0xBC
-    char u32_C0;  // 0xC0
-    unsigned int q0C3;  // 0xC3
-    CampaignClass* q0C4;  // 0xC4
-    unsigned int u32_C8;  // 0xC8
-    void* q0CC;  // 0xCC
-    unsigned char q0D0;  // 0xD0
-    unsigned int u32_D4;  // 0xD4
-    void* q0D8;  // 0xD8
-    unsigned int u32_DC;  // 0xDC
-    void* q0E0;  // 0xE0
-    unsigned int u32_E4;  // 0xE4
-    AbstractClass* q0E8;  // 0xE8
-    unsigned int q0EC;  // 0xEC
-    void* q0F0;  // 0xF0
-    void* q0F4;  // 0xF4
-    void* q0F7;  // 0xF7
-    OverlayTypeClass* q0F8;  // 0xF8
-    unsigned int q0F9;  // 0xF9
-    unsigned char q0FB;  // 0xFB
-    ObjectClass* q0FC;  // 0xFC
-    unsigned int q100;  // 0x100
     char ChargerBarrels[72];  // 0x104
-    unsigned int q108;  // 0x108
-    unsigned int q10C;  // 0x10C
-    DynamicVector* q110;  // 0x110
-    unsigned int q111;  // 0x111
-    unsigned int q114;  // 0x114
-    unsigned int q118;  // 0x118
-    unsigned int q11C;  // 0x11C
-    unsigned int q120;  // 0x120
-    unsigned int q124;  // 0x124
-    unsigned int q128;  // 0x128
-    unsigned int q12C;  // 0x12C
-    unsigned int q130;  // 0x130
-    unsigned int q134;  // 0x134
-    unsigned int q138;  // 0x138
-    unsigned int q13C;  // 0x13C
-    unsigned int q140;  // 0x140
-    unsigned int q144;  // 0x144
-    unsigned int q148;  // 0x148
-    bool q14C;  // 0x14C
-    unsigned char q14D;  // 0x14D
-    unsigned int q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned int u32_158;  // 0x158
-    unsigned char q15C;  // 0x15C
-    int q160;  // 0x160
-    unsigned int q162;  // 0x162
-    void * q164;  // 0x164
-    unsigned char q166;  // 0x166
-    char q168;  // 0x168
-    bool q16B;  // 0x16B
-    void* q16C;  // 0x16C
-    unsigned char q16D;  // 0x16D
-    unsigned int q16F;  // 0x16F
-    unsigned char q170;  // 0x170
-    unsigned char q174;  // 0x174
-    char q180[4];  // 0x180
-    char q184[4];  // 0x184
-    char q188[4];  // 0x188
-    unsigned int q190;  // 0x190
-    unsigned int q194;  // 0x194
-    unsigned char q198;  // 0x198
-    unsigned int q199;  // 0x199
-    unsigned char q19D;  // 0x19D
-    bool q1A1;  // 0x1A1
-    unsigned int q1A2;  // 0x1A2
-    unsigned int q1A5;  // 0x1A5
-    unsigned int q1A7;  // 0x1A7
-    unsigned char q1AB;  // 0x1AB
-    unsigned int q1AC;  // 0x1AC
-    unsigned int q1B0;  // 0x1B0
-    unsigned int q1B1;  // 0x1B1
-    unsigned int q1B5;  // 0x1B5
-    unsigned char q1B9;  // 0x1B9
-    AbstractTypeClass* q1D4;  // 0x1D4
-    AbstractTypeClass* q1E0;  // 0x1E0
-    ConnectionPointClass* q1E8;  // 0x1E8
+    bool NoSpawnAlt_d;  // 0x14C
+    ConnectionPointClass* NoSpawnAlt_2;  // 0x1E8
     int MaxDimension;  // 0x1EC
     int CrushSound;  // 0x1F0
     int AmbientSound;  // 0x1F4
@@ -201,72 +77,43 @@ struct ObjectTypeClass {
     bool IgnoresFirestorm;  // 0x209
     bool UseLineTrail;  // 0x20A
     char LineTrailColor[4];  // 0x20C
-    unsigned char q210;  // 0x210
-    bool q211;  // 0x211
-    bool q212;  // 0x212
+    bool AlternateArcticArt_d;  // 0x211
+    bool ArcticArtInUse_d;  // 0x212
     char AlphaImageFile;  // 0x213
-    unsigned int q214;  // 0x214
-    AbstractClass* q218;  // 0x218
-    AbstractClass* q21C;  // 0x21C
-    unsigned int q220;  // 0x220
-    void* q224;  // 0x224
-    unsigned int q228;  // 0x228
-    unsigned int u32_22B;  // 0x22B
-    bool q22C;  // 0x22C
-    bool q22D;  // 0x22D
-    bool q22E;  // 0x22E
-    bool q22F;  // 0x22F
-    bool q230;  // 0x230
-    bool q231;  // 0x231
-    bool q232;  // 0x232
-    bool q233;  // 0x233
-    bool q234;  // 0x234
-    bool q235;  // 0x235
-    bool q236;  // 0x236
-    bool q237;  // 0x237
-    bool q238;  // 0x238
-    bool q239;  // 0x239
-    bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
-    unsigned int u32_23C;  // 0x23C
-    bool q23D;  // 0x23D
-    int LineTrailColorDecrement;  // 0x240
+    bool Theater_d;  // 0x22C
+    bool Crushable_d;  // 0x22D
+    bool Bombable_d;  // 0x22E
+    bool RadarInvisible_d;  // 0x22F
+    bool Selectable_d;  // 0x230
+    bool LegalTarget_d;  // 0x231
+    bool Insignificant_d;  // 0x232
+    bool Immune_d;  // 0x233
+    bool IsLogic_d;  // 0x234
+    bool AllowCellContent_d;  // 0x235
+    bool Voxel_d;  // 0x236
+    bool NewTheater_d;  // 0x237
+    bool HasRadialIndicator_d;  // 0x238
+    bool IgnoresFirestorm_d;  // 0x239
+    bool UseLineTrail_d;  // 0x23A
+    char LineTrailColor_d[3];  // 0x23B
+    int LineTrailColor_2;  // 0x240
     char VoxelCaches_4[80];  // 0x244
-    SomeVoxelCache* q248;  // 0x248
-    SomeVoxelCache* q24C;  // 0x24C
-    unsigned int u32_250;  // 0x250
-    SomeVoxelCache* q254;  // 0x254
-    SomeVoxelCache* q258;  // 0x258
-    SomeVoxelCache* q25C;  // 0x25C
-    SomeVoxelCache* q260;  // 0x260
-    char q264[4];  // 0x264
-    SomeVoxelCache* q268;  // 0x268
-    SomeVoxelCache* q26C;  // 0x26C
-    SomeVoxelCache* q270;  // 0x270
-    SomeVoxelCache* q274;  // 0x274
-    char q278[4];  // 0x278
-    SomeVoxelCache* q27C;  // 0x27C
-    SomeVoxelCache* q280;  // 0x280
-    SomeVoxelCache* q284;  // 0x284
-    SomeVoxelCache* q288;  // 0x288
-    char q28C[4];  // 0x28C
-    SomeVoxelCache* q290;  // 0x290
 // --- flat members (END) ---
     void* TechnoTypeClass;  // 0x0 (no offset truth)
-    AbstractClass * * Load2DArt();
+    AbstractClass * * Load2DArt(void *a1 = 0);
     BOOL loadTypeMember_5717AE0();
     BulletTypeClass * FindOrCreate(ObjectClass * Source);
     ObjectTypeClass * Destru_vt08(char a2);
     SHPStruct * * SelectArtOrAlt();
-    SomeVoxelCache * * Destruct();
+    SomeVoxelCache * * Destruct(void *a1 = 0);
     char ReadBool(INIClass * Block, INIClass * aP2, int a4);
     char ReadBool2(INIClass * Block, INIClass * aP2, short * a4);
     char ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4);
     char ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3);
     int ConstructFull(char *aP1);
-    int CreateInstance(int aP1, int aP2);
+    int CreateInstance(int aP1, int aP2, void *a1 = 0);
     int DeserializeArrays();
-    int FindByName();
+    int FindByName(void *a1 = 0);
     int FreeLoaderBuffer();
     static int LoadCleanup(ObjectTypeClass *aP1, int a2);  // G57w10-S raw 0x005F9720 IUnknown 占位清除
     static int LoadExtras(CCINIClass * aP0, void * _38C, unsigned char *** a2);  // G57w11: double→void*（__userpurge st0 伪影；raw 调用侧 0x41cc3b/0x5240c4 传 ini 指针）
@@ -293,17 +140,17 @@ struct ObjectTypeClass {
     int loadTypeMember_5717AB0(int a2);
     int loadTypeMember_5717AD0();
     unsigned char ** ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5);
-    unsigned int * CheckFlag(int aP1);  // 0x717BF0 IDA truth: _DWORD* __thiscall(this, int); old ObjectTypeClass* param was double-counted receiver (G57e1 B3)
-    BulletTypeClass * Construct(int aP1);
+    unsigned int * CheckFlag(int aP1);
+    BulletTypeClass * Construct(int aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
     unsigned int * vt_entry_7C(unsigned int * a1);
     void CleanupWeapons();
     void ReleaseWaveAndString(void *a1);
-    int SetRTTI71();
+    int SetRTTI71(void *a1 = 0);
     void UnloadPipsSHP();
-    void* LoadFromINI(uint8_t ***aP1);
+    void* LoadFromINI(uint8_t ***aP1, void *a1 = 0);
     ObjectTypeClass * Destru_vt08(void * Block, char a2);
     int VoxelCaches[20];  // 0x244 (ml)
     unsigned int q0400;  // 0x400 (offset-truth)
@@ -316,6 +163,52 @@ struct ObjectTypeClass {
     unsigned char u32_387;  // 0x387 (offset-truth)
     unsigned char u32_389;  // 0x389 (offset-truth)
     unsigned char u32_D41;  // 0xD41 (offset-truth)
+    static double AttachedSystem(...);  // plateau: C2039/C3861 stub
+    static double BounceAnim(...);  // plateau: C2039/C3861 stub
+    static double ExpireAnim(...);  // plateau: C2039/C3861 stub
+    static double NoSpawnAlt3(...);  // plateau: C2039/C3861 stub
+    static double NoSpawnAlt4(...);  // plateau: C2039/C3861 stub
+    static double NoSpawnAlt5(...);  // plateau: C2039/C3861 stub
+    static double NoSpawnAlt6(...);  // plateau: C2039/C3861 stub
+    static double Spawns(...);  // plateau: C2039/C3861 stub
+    static double TrailerAnim(...);  // plateau: C2039/C3861 stub
+    static double Warhead(...);  // plateau: C2039/C3861 stub
+    static double __pad_099(...);  // plateau: C2039/C3861 stub
+    static double __pad_14D(...);  // plateau: C2039/C3861 stub
+    static double q056(...);  // plateau: C2039/C3861 stub
+    static double u32_22B(...);  // plateau: C2039/C3861 stub
+    static double u32_23C(...);  // plateau: C2039/C3861 stub
+    static double u32_23D(...);  // plateau: C2039/C3861 stub
+    static double u32_248(...);  // plateau: C2039/C3861 stub
+    static double u32_24C(...);  // plateau: C2039/C3861 stub
+    static double u32_250(...);  // plateau: C2039/C3861 stub
+    static double u32_278(...);  // plateau: C2039/C3861 stub
+    static double u32_28C(...);  // plateau: C2039/C3861 stub
+    static double u32_98(...);  // plateau: C2039/C3861 stub
+    static double u32_9A(...);  // plateau: C2039/C3861 stub
+    static double uniqueId0(...);  // plateau: C2039/C3861 stub
+    static double uniqueId1(...);  // plateau: C2039/C3861 stub
+    static double uniqueId2(...);  // plateau: C2039/C3861 stub
+    static double uniqueId3(...);  // plateau: C2039/C3861 stub
+    static double uniqueId4(...);  // plateau: C2039/C3861 stub
+    static double uniqueId5(...);  // plateau: C2039/C3861 stub
+    static double uniqueId6(...);  // plateau: C2039/C3861 stub
+    static double uniqueId7(...);  // plateau: C2039/C3861 stub
+    static double uniqueId8(...);  // plateau: C2039/C3861 stub
+    static double uniqueId9(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
+    static double vfptr2(...);  // plateau: C2039/C3861 stub
+    static double vfptr3(...);  // plateau: C2039/C3861 stub
+    static double vtable49(...);  // plateau: C2039/C3861 stub
+    static double zero_3C0(...);  // plateau: C2039/C3861 stub
+    static double zero_3C1(...);  // plateau: C2039/C3861 stub
+    static double zero_3C2(...);  // plateau: C2039/C3861 stub
+    static double zero_3C4(...);  // plateau: C2039/C3861 stub
+    static double zero_3C5(...);  // plateau: C2039/C3861 stub
+    static double zero_3C6(...);  // plateau: C2039/C3861 stub
+    static double zero_3C7(...);  // plateau: C2039/C3861 stub
+    static double zero_3C9(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

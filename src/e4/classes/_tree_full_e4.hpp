@@ -253,11 +253,11 @@ struct _;
 #define GAMEMD_G2_AudioChannel_DEF 1
 struct AudioChannel {
     void* vfptr;
-    unsigned char q000;  // 0x0
+    unsigned char *q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     int DeactivatePlay();  // 0x402600
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned char DynamicVector_field_0x1;  // 0x1 (offset-truth supply)
     void * ptr_10;  // 0x10 (offset-truth supply)
     void * ptr_18;  // 0x18 (offset-truth supply)
@@ -272,7 +272,7 @@ struct AudioChannel {
 #endif  // GAMEMD_G2_AudioChannel_DEF
 
 struct CampaignScore {
-    static int LoadCampaignScoreAssetsGame(void *aP1);  // 0x72D300 raw: int __thiscall CampaignScore::LoadCampaignScoreAssetsGame(CampaignScore*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int LoadCampaignScoreAssetsGame(void *aP1);
 
     void* vfptr;
     unsigned int u32_A2;  // 0xA2
@@ -281,7 +281,7 @@ struct CampaignScore {
     void* onBridge;  // 0x0 (no offset truth)
     unsigned char __pad_9[4];  // 0x9
     void* isFallingDown;  // 0x0 (no offset truth)
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     void* inOpenToppedTransport;  // 0x0 (no offset truth)
     void* wasFallingDown;  // 0x0 (no offset truth)
 };
@@ -302,11 +302,11 @@ struct DynamicVectorClass {
     bool IsAllocated;  // 0xD
     int Count;  // 0x10
     int CapacityIncrement;  // 0x14
-    unsigned int * Construct(int a2, int a3);  // 0x477db0
+    unsigned int *  Construct(int a2, int a3);  // 0x477db0
     static int Destroy_Alt(void *aP0);  // A_c2039 R5 static-form sync
-    unsigned int * Copy(unsigned int *a2);  // 0x4779e0
-    unsigned int * AnimTypeConstructor(int a2, int a3);  // 0x525250
-    static int Destroy(void *aP1);  // W16G3 DVC Destroy supply (RandomMap 0x5959aa / TypeList 0x5ad682)
+    unsigned int *  Copy(unsigned int * a2);  // 0x4779e0
+    unsigned int *  AnimTypeConstructor(int a2, int a3);  // 0x525250
+    static int Destroy(void *aP1);
 
 };
 #endif
@@ -411,7 +411,7 @@ struct Gap2Recv_402F60 {
     unsigned int q5684;  // 0x5684
     unsigned int q6294;  // 0x6294
     LineTrail * q6438;  // 0x6438
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
 };
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
@@ -435,9 +435,9 @@ struct HashTable {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     static int Shrink2(void *aP0);  // A_c2039 R5 static-form sync
-    static int Shrink(void *aP0);  // G42.33 b2 static-form sync (HashMap::Shrink vocab)
+    static int Shrink(void *aP0);
     static int LookupString(void *aP0, const char **a2, unsigned int *a3);  // G42.33 b2 static-form sync
-    static int ComputeIndex_2(int *aP1, int aP2);  // G42.33 b2 static-form sync (HashMap vocab)
+    static int ComputeIndex_2(int *aP1, int aP2);
     static int Grow2(void *aP0);  // A_c2039 R5 static-form sync
     // G57a1: CleanupAndResize/RebuildEx/FindString vocab fields moved to
     // static-method form below -- corpus calls them static-style.
@@ -460,26 +460,26 @@ struct HashTable {
     unsigned char q04C;  // 0x4C
     void* FindOrCreate2;  // 0x0 (no offset truth)
     static int ComputeHash(void *aP0, int a2);  // A_c2039 R5 static-form sync
-    static int Rebuild(void *aP0);  // G42.33 b4 static-form sync (RebuildEx vocab)
+    static int Rebuild(void *aP0);
     unsigned char q050;  // 0x50
     int LookupAndMark();  // 0x608440
     static int Get(void *aP0, IUnknown * aP1, IUnknown * aP2);  // A_c2039 R5 static-form sync
-    int BinarySearchAlt(int *a2);  // 0x52b4f0
-    int BinarySearch(int *a2);  // 0x52b390
+    int  BinarySearchAlt(int * a2);  // 0x52b4f0
+    int  BinarySearch(int * a2);  // 0x52b390
     char * DestroyHashTableINIClass();  // 0x5256f0
     static int FindChunk(void *aP0, char * Str1, void * a2, CCINIClass * aP3);  // A_c2039 R5 static-form sync
     static int Remove(void *aP0, int a2);  // A_c2039 R5 static-form sync
     static int Find(void *aP0, const char * a1, ConvertClass * aP2);  // A_c2039 R5 static-form sync
-    static int Lookup(void *aP0, const char **aP1, unsigned int *aP2);  // G57a1 static-form sync (CComObject 0x7ab9xx sites)
-    static int Grow(void *aP0);  // G57a1 static-form sync (CComObject 0x7ab9d7+)
-    static int Rebuild2(void *aP0);  // G57a1 static-form sync (Dialog 0x624fa9)
-    static int Clear(int aP0);  // G57a1 static-form sync (addr60 0x600555)
-    static int RemoveHashTableEntry(void *aP0, int aP2);  // G57a1 static-form sync (addr6B 0x6ba01c)
-    static int FindWOLHashTableEntry(void *aP0, const char **aP1, unsigned int *aP2);  // G57a1 static-form sync (addr79 0x79ccf4)
-    static int CleanupAndResize(void *aP0);  // G57a1 field->static-form sync (addr79 0x79e755)
-    static int RebuildEx(void *aP0);  // G57a1 field->static-form sync (HashTable_e4 0x6b9718)
-    static int FindString(void *aP0, const char *aP1, unsigned int *aP2);  // G57a1 field->static-form sync (File_e4 0x76ad45+)
-    unsigned char __pad_0;  // 0x0
+    static int Lookup(void *aP0, const char **aP1, unsigned int *aP2);
+    static int Grow(void *aP0);
+    static int Rebuild2(void *aP0);
+    static int Clear(int aP0);
+    static int RemoveHashTableEntry(void *aP0, int aP2);
+    static int FindWOLHashTableEntry(void *aP0, const char **aP1, unsigned int *aP2);
+    static int CleanupAndResize(void *aP0);
+    static int RebuildEx(void *aP0);
+    static int FindString(void *aP0, const char *aP1, unsigned int *aP2);
+    unsigned char *__pad_0;  // 0x0
 };
 #endif  // GAMEMD_TREE_UNIVERSE (HashTable)
 
@@ -487,24 +487,24 @@ struct HashTable {
 struct KeywordType {
     void* vfptr;
     void* FindOrCreate2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon KeywordType::FindOrCreate2 is a method)
-    static unsigned int FindOrCreate2(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    static unsigned int FindOrCreate2(...);
 };
 #endif  // GAMEMD_TREE_UNIVERSE (KeywordType)
 
 struct Locomotor {
     void* vfptr;
     char Locomotor_field_00[4];  // 0x0
-    static int GetSpeed(void *aP1);  // 0x426630 raw: int __thiscall GetSpeed(Locomotor*)
+    static int GetSpeed(void *aP1);
 };
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct MSAnim {
-    static int Reset(void *aP1, int a2);  // 0x5CC6A0 raw: int __thiscall MSAnim::Reset(MSAnim*, int)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int Reset(void *aP1, int a2);
 
     void* vfptr;
     void* vtable1;  // 0x0
-    int GetField(unsigned int a2);  // 0x5cb840
-    int SetField(unsigned int a2);  // 0x5cb860
+    int  GetField(unsigned int a2);  // 0x5cb840
+    int  SetField(unsigned int a2);  // 0x5cb860
     void* vftable;  // 0x0 (no offset truth)
 };
 #endif  // GAMEMD_TREE_UNIVERSE (MSAnim)
@@ -513,7 +513,7 @@ struct MSAnim {
 struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
-    static void * Constructor(void *aP1, void *a2, int a3, int a4, int a5, int a6, char a7, int a8);  // 0x5CB6D0 raw: void* Constructor(MSShapeAnim*, char**, int, int, int, int, char, int)
+    static void * Constructor(void *aP1, void *a2, int a3, int a4, int a5, int a6, char a7, int a8);
     void* vftable;  // 0x0 (no offset truth)
     int EnableOnce(char aP1);
     MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);
@@ -527,23 +527,22 @@ struct MSShapeAnim {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
-    static int CleanupAudioAndRefs(void *aP1);  // 0x4389B0 raw: int __thiscall ObjectClass::CleanupAudioAndRefs(ObjectClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int CheckFlagD0(void *aP1, int a2);  // 0x5F6CB0 raw: int __thiscall ObjectClass::CheckFlagD0(ObjectClass*, int)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int CheckFlagD0(void *aP1, void *a2);  // 0x5F6CB0 ptr-2nd site form (TerrainClass v71)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int CalcDrawRect(void *aP1);  // 0x5F4B10 raw: int __thiscall ObjectClass::CalcDrawRect(ObjectClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static int GetTypeVt41(void *aP1);  // 0x70F090 raw: int __thiscall ObjectClass::GetTypeVt41(ObjectClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int CleanupAudioAndRefs(void *aP1);
+    static int CheckFlagD0(void *aP1, int a2);
+    static int CalcDrawRect(void *aP1);
+    static int GetTypeVt41(void *aP1);
 
-    static int DetectCloaked(void *a1);  // G42.33 supply (direct call @0x76108F, ObjectClass__DetectCloaked)
-    char Release();  // 0x6241C0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
-    void nullsub_40();  // 0x6C9F00 G42.33 b9 member-form (def in addr6C)
-    void nullsub_231();  // 0x6CE5D0-ish G42.33 b12 member-form (def in addr6C)
+    static int DetectCloaked(void *a1);
+    char Release();
+    int nullsub_40();
+    void nullsub_231();
     void j_Exception_Destructor();  // 0x7CA9AF G42.33 b9 member-form sync
     void j_Exception_Destructor_2();  // 0x7CAA00 G42.33 b9 member-form sync
     void j_Exception_Destructor_3();  // G42.33 b9 member-form sync
-    ObjectClass * sub_7CA993(void * Block, char a2);  // 0x7CA993 ___G scalar deleting dtor (G42.33 b24 member-form)
-    ObjectClass * sub_7CA9E4(void * Block, char a2);  // 0x7CA9E4 ___G scalar deleting dtor (G42.33 b24 member-form)
-    ObjectClass * sub_7CAC13(void * Block, char a2);  // 0x7CAC13 ___G scalar deleting dtor (G42.33 b24 member-form)
-    int GetMember01();  // 0x6241D0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
+    ObjectClass * sub_7CA993(void * Block, char a2);
+    ObjectClass * sub_7CA9E4(void * Block, char a2);
+    ObjectClass * sub_7CAC13(void * Block, char a2);
+    int GetMember01();
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char __pad_0[29];  // 0x0
@@ -639,9 +638,9 @@ struct ObjectClass {
     static int ProductionCompletionCallback(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
     static int LoadFromStream_Common(void *aP0, FootClass * aP1, LPSTREAM pStm);  // A_c2039 R5 static-form sync
     void* IsCliffWall_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ObjectClass::IsCliffWall is a method)
-    static unsigned int IsCliffWall(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    static unsigned int IsCliffWall(...);
     void* IsBelowScreen_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ObjectClass::IsBelowScreen is a method)
-    static unsigned int IsBelowScreen(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    static unsigned int IsBelowScreen(...);
     static int HasLinkedObject(int aP0);  // A_c2039 R5 static-form sync
     int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
     static int CreateUnitOnCompletion(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
@@ -660,12 +659,12 @@ struct ObjectClass {
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
     int GetLandHeight();  // 0x5f5f00
-    int SetTriggerTarget(int a2);  // 0x485250
+    int  SetTriggerTarget(int a2);  // 0x485250
     int updateStateFlags();  // 0x4e02c0
     int processDeath();  // 0x74cd60
-    char SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4);  // 0x4d7d50
+    char  SpawnInfantry(int a2, int16_t * a3, int16_t * a4, void ** a5);  // 0x4d7d50
     int processPointerInvalid();  // 0x483610
-    int SetAnim(int a2);  // 0x5f6060
+    int  SetAnim(int a2);  // 0x5f6060
     int GetSizeMax();  // 0x4103e0
     int processDamage();  // 0x6a5000
     void* vtable0;  // 0x0 (no offset truth)
@@ -674,14 +673,14 @@ struct ObjectClass {
     bool IsInitialized;  // 0x12
     int HouseClass__vt_02_(void *aP0, int a2, unsigned int * a3);  // A_c2039 R5 static-form sync
     void* ClearAndFree3;  // 0x0 (no offset truth)
-    int SetPositionXY(int a2, int a3);  // 0x4e1a40
-    unsigned int * Init(int a2);  // 0x5f3b50
+    int  SetPositionXY(int a2, int a3);  // 0x4e1a40
+    unsigned int *  Init(int a2);  // 0x5f3b50
     int IsHeightAboveThreshold();  // 0x5f6b90
-    int DistanceTo(int a2);  // 0x5f6360
-    int * CalcTargetFacing(int *a2, int a3);  // 0x5f3db0
+    int  DistanceTo(int a2);  // 0x5f6360
+    int *  CalcTargetFacing(int * a2, int a3);  // 0x5f3db0
     unsigned int * ctor();  // 0x5f3900
     unsigned char ShapeButtonClass_field_0x04;  // 0x4
-    int StepCleanup(void *a2);  // 0x5f3e50
+    int  StepCleanup(void * a2);  // 0x5f3e50
     int ClearFlags2();  // 0x401170
     void* vt_GameOption;  // 0x0 (no offset truth)
     void* vt_FlagGameOption;  // 0x0 (no offset truth)
@@ -695,7 +694,7 @@ struct ObjectClass {
     int FreeResources();  // 0x5f1960
     int Dtor();  // 0x5f3b80
     int Undeploy();  // 0x5f4d30
-    char SetReference(int a2);  // 0x5f5b50
+    char  SetReference(int a2);  // 0x5f5b50
     unsigned char ShapeButtonClass_field_0x08;  // 0x8
     void sub_550080(ObjectClass ** Block);
     int DrawPowerBarForPlayers(HWND hDlg);
@@ -729,7 +728,7 @@ struct ObjectClass {
     int nullsub_28();
     void nullsub_29();
     void nullsub_86();
-    void nullsub_84();
+    int nullsub_84();
     gamemd::AbstractClass * * sub_764A20();
     int sub_632A70(int a2, int a3, ObjectClass * aP3);
     void nullsub_51();
@@ -739,7 +738,7 @@ struct ObjectClass {
     int sub_407160();
     unsigned int * sub_408460(size_t Size);
     void ** sub_40B010(void ** Block, char a2);
-    void nullsub_57();
+    int nullsub_57();
     ObjectClass * sub_40E4A0(void ** Block, char a2);
     gamemd::AbstractClass * * Destroy2();
     char sub_776670(LPARAM lParam);
@@ -807,22 +806,22 @@ struct ObjectClass {
     unsigned int q_610;  // +0x610 flat supply (CSP-fed)
     unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
     unsigned int q_1200;  // +0x1200 flat supply (CSP-fed)
-    int sub_4F2280(int a2, int a3);  // 0x4F2280
-    int sub_4F26E0(int a2);  // 0x4F26E0
-    int sub_4F2770(int a2);  // 0x4F2770
-    int sub_5CE0C0(int a2, unsigned int * a3);  // 0x5CE0C0
-    int sub_632D60(int a2);  // 0x632D60
+    int  sub_4F2280(int a2, int a3);  // 0x4F2280
+    int  sub_4F26E0(int a2);  // 0x4F26E0
+    int  sub_4F2770(int a2);  // 0x4F2770
+    int  sub_5CE0C0(int a2, unsigned int * a3);  // 0x5CE0C0
+    int  sub_632D60(int a2);  // 0x632D60
     void sub_633B20();  // 0x633B20
     int sub_633B30();  // 0x633B30
     int sub_633B40();  // 0x633B40
     int sub_633B70();  // 0x633B70
     int sub_633B80();  // 0x633B80
     int sub_634700();  // 0x634700
-    int sub_6347A0(int a2);  // 0x6347A0
+    int  sub_6347A0(int a2);  // 0x6347A0
     int sub_635210();  // 0x635210
     int sub_69B690();  // 0x69B690
     char sub_726780();  // 0x726780
-    char sub_728540(int a2);  // 0x728540
+    char  sub_728540(int a2);  // 0x728540
     char sub_736C10();  // 0x736C10
     int sub_77D3F0();  // 0x77D3F0
     // --- W16G3 supply (BEGIN) ---
@@ -843,19 +842,19 @@ struct ObjectClass {
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct ShapeButtonClass {
     void* vfptr;
-    unsigned char __pad_0;  // 0x0
-    static int Destructor(void *aP1);  // 0x69DDC0 raw: int Destructor(int this)
+    unsigned char *__pad_0;  // 0x0
+    static int Destructor(void *aP1);
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
     void* Constructor_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ShapeButtonClass::Constructor is a method)
-    static unsigned int Constructor(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    static unsigned int Constructor(...);
 };
 #endif  // GAMEMD_TREE_UNIVERSE (ShapeButtonClass)
 
 struct State {
     void* vfptr;
     int Players;  // 0x4
-    static int SetIfChanged(void *aP1, int a2);  // 0x4F3A90 raw: int SetIfChanged(State*, int)
+    static int SetIfChanged(void *aP1, int a2);
     int AIPlayers;  // 0x8
     int GameSpeed;  // 0xC
     int StartingCredits;  // 0x10
@@ -881,46 +880,43 @@ struct State {
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
     static void Cleanup3(int a1);  // [w14e3] raw 0x5EED00 void __thiscall VectorClass_Cleanup3
-    static void * CopyConstructor(void *aP1, void *a2);  // 0x512FA0 raw: _DWORD* __thiscall VectorClass::CopyConstructor(VectorClass*, _DWORD*)  // G57w10 r5 D-classbody supply (raw-anchored)
-    static char PushBack(void *aP1, void *a2);  // 0x5132F0 raw: char __thiscall VectorClass::PushBack(DynamicVectorClass*, _DWORD*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static void * CopyConstructor(void *aP1, void *a2);
+    static char PushBack(void *aP1, void *a2);
 
-    static unsigned int * ConstructorWithVtable(void *aP1, int a2, int a3);  // 0x45AD80 raw
-    static unsigned int * ConstructorWithVtable(int a1, int a2);  // 0x45AD80 site-form (receiver elided)
+    static unsigned int *  ConstructorWithVtable(int a2, int a3);  // 0x45AD80
 
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC (G57W14E1 til supply)
     void* ClearAndFree2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon VectorClass::ClearAndFree2 is a method)
-    static unsigned int ClearAndFree2(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    static unsigned int ClearAndFree2(...);
     void* vfptr;
     unsigned int tail_E;  // 0xE
     int Shrink();  // 0x7ae730
-    unsigned int * CopyBuilding(unsigned int *a2);  // 0x67b180
-    int Append(unsigned int *a2);  // 0x63e540
-    unsigned int * Copy(unsigned int *a2);  // 0x4777b0
-    unsigned int * WstringConstructor(int a2, unsigned int *a3);  // 0x69d7c0
-    unsigned int * BuildingTypeConstructor(int a2, int a3);  // 0x5105a0
-    int RemoveItem(int a2);  // 0x55bae0
+    unsigned int *  CopyBuilding(unsigned int * a2);  // 0x67b180
+    int  Append(unsigned int * a2);  // 0x63e540
+    unsigned int *  WstringConstructor(int a2, unsigned int * a3);  // 0x69d7c0
+    unsigned int *  BuildingTypeConstructor(int a2, int a3);  // 0x5105a0
+    int  RemoveItem(int a2);  // 0x55bae0
     int Cleanup2();  // 0x63e140
-    unsigned int * ConstructHSV(int a2, int a3);  // 0x628df0
-    int RemoveAt(int a2);  // 0x6ce2d0
-    int EraseAt(int a2);  // 0x63e900
-    unsigned int * CopyDefault(unsigned int *a2);  // 0x525060
+    unsigned int *  ConstructHSV(int a2, int a3);  // 0x628df0
+    int  RemoveAt(int a2);  // 0x6ce2d0
+    int  EraseAt(int a2);  // 0x63e900
+    unsigned int *  CopyDefault(unsigned int * a2);  // 0x525060
     int Destroy();  // 0x477d20
     bool IsAllocated;  // 0x13
     int GetCount();  // 0x49fb60
-    unsigned int * CellConstructor(int a2, int a3);  // 0x42fcb0
+    unsigned int *  CellConstructor(int a2, int a3);  // 0x42fcb0
     void* vtable0;  // 0x0 (no offset truth)
-    unsigned int * Construct(int a2, int a3);  // 0x477be0
-    unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
+    unsigned int *  BuildingConstructor(int a2, int a3);  // 0x510550
     void* vtable1;  // 0x0 (no offset truth)
     AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3);
     // --- W16G3 supply (BEGIN) ---
-    static int CleanupTyped(int aP1);  // W16G3 static-form supply (VectorClass_e4 0x4a0c4e etc.)
-    static int ClearAndFree3(int aP1);  // W16G3 static-form supply (addr4F/addr6F)
-    static int ClearAndFree4(int aP1);  // W16G3 static-form supply (HouseTypeClass_e4 0x51202d)
-    static int ResizeEx(void *aP1, int a2, int a3);  // W16G3 static-form supply (RandomMap 0x58c859)
-    static int Cleanup(void *aP1);  // W16G3 static-form supply (TechnoTypeClass_e4)
+    static int CleanupTyped(int aP1);
+    static int ClearAndFree3(int aP1);
+    static int ClearAndFree4(int aP1);
+    static int ResizeEx(void *aP1, int a2, int a3);
+    static int Cleanup(void *aP1);
     // --- W16G3 supply (END) ---
 
 };
@@ -929,7 +925,7 @@ struct VectorClass {
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct VectorCursor_uint_DynamicVectorClass_uint {
     void* vfptr;
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
 };
 #endif  // GAMEMD_TREE_UNIVERSE (VectorCursor_uint_DynamicVectorClass_uint)
 
@@ -1033,11 +1029,9 @@ struct _VectorClass_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, 
 // AnimTypeList  size=4  (TiberiumClass_e4.cpp C2027 carrier)
 struct AnimTypeList {
     unsigned char q000[4];  // 0x0
-    static void Constructor(AnimTypeList *aP1);  // 0x67A470; G42.35 static-form (qualified site 0x721FF9)
 };
 // VoxelAnimTypeVector  size=4  (TechnoTypeClass_e4.cpp C2027 carrier)
 struct VoxelAnimTypeVector {
     unsigned char q000[4];  // 0x0
-    static int Constructor(VoxelAnimTypeVector *aP1, void *a2);  // 0x67C310; G42.35 static-form (qualified site 0x710BEE)
 };
 } // namespace gamemd

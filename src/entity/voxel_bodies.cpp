@@ -15,6 +15,6 @@ HvaFile::HvaFile() : FrameCount(0), LimbCount(0), Transforms(nullptr), LimbNames
 
 HvaFile::~HvaFile() { delete[] Transforms; if (LimbNames) { for (int i = 0; i < LimbCount; ++i) delete[] LimbNames[i]; delete[] LimbNames; } }
 
-// g57b5 W2r4: 0x55A730 体移除 — raw 头=Turret::GetTransform(LocomotionClass*,float*,_DWORD*)
+// g57b5 W2r4: 0x55A730 体移除 — raw 头=Turret::GetTransform(LocomotionClass*,float*,unsigned int*)
 // 与 voxel.hpp:64 HvaFile::GetTransform(int,int) 站点错配（名字碰撞误落）；重翻译债。
 } // namespace gamemd

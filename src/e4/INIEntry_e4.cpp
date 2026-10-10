@@ -12,7 +12,7 @@
 #include "e4/classes/TypeClass_e4.hpp"
 
 // 0x476EB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
 {
   int ExitCellByName; // eax
@@ -24,17 +24,17 @@ int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
   INIClass::GetString(aP1, a2, g_Str__none_, (char *)Destination, 128); /*0x476ed5*/
   ExitCellByName = Factory::FindExitCellByName((Factory *)Destination); /*0x476ede*/
   if ( ExitCellByName != -1 ) /*0x476ee6*/
-    return *((_DWORD *)dword_A8E34C + ExitCellByName); /*0x476eef*/
+    return *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x476eef*/
   Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)Destination); /*0x476eff*/
   if ( Index != -1 ) /*0x476f07*/
-    return *((_DWORD *)dword_A83CE4 + Index); /*0x476f10*/
-  v6 = TypeClass::FindByName(Destination); /*0x476f20*/
+    return *((unsigned int *)dword_A83CE4 + Index); /*0x476f10*/
+  v6 = (int)(TypeClass::FindByName(Destination)); /*0x476f20*/
   if ( v6 != -1 ) /*0x476f28*/
-    return *((_DWORD *)dword_A8B21C + v6); /*0x476f31*/
+    return *((unsigned int *)dword_A8B21C + v6); /*0x476f31*/
   IndexByName = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)Destination); /*0x476f41*/
   if ( IndexByName == -1 ) /*0x476f49*/
     return 0; /*0x476f5e*/
   else
-    return *((_DWORD *)dword_A83C6C + IndexByName); /*0x476f52*/
-}
+    return *((unsigned int *)dword_A83C6C + IndexByName); /*0x476f52*/
+}  // G42.18 ns repair
 } // namespace gamemd

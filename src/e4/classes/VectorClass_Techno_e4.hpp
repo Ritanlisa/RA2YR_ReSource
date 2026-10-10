@@ -11,10 +11,9 @@ struct VectorClass_Techno {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
     wchar_t * ddtor(void *a1_1);  // 0x40BA50
-    int GetSize(unsigned int * a2);  // 0x40BA80
-    unsigned int GetCapacity(int a2);  // 0x40BAC0
+    int  GetSize(unsigned int * a2);  // 0x40BA80
+    unsigned int  GetCapacity(int a2);  // 0x40BAC0
 };
 } // namespace gamemd

@@ -61,7 +61,7 @@ public:
     bool Enabled = true; // custom (binary: Disabled @ +0x1E)
     uint32_t ID = 0;     // custom (binary: GadgetFlag Flags @ +0x20)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void Construct(int x, int y, int w, int h, unsigned flags, bool isSticky);  // 0x4E12F0
+    int Construct(int x, int y, int w, int h, unsigned flags, bool isSticky);  // 0x4E12F0
     bool ClearState(bool force);  // 0x4E1550
     unsigned int * QueryInterface(char a1);  // 0x4E1A60 G42.35 def-truth sync (dtor-form body in ui/supplied)
     int InitControls();  // 0x557BE0

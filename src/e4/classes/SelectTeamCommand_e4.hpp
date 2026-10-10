@@ -11,11 +11,11 @@ struct SelectTeamCommand {
     char SelectTeamCommand_field_00[4];  // 0x4
     char SelectTeamCommand_field_04[4];  // 0x8
 // --- flat members (END) ---
-    static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x535FC0 _DWORD *__thiscall SelectTeamCommand::Construct(SelectTeamCommand *this, int a2)
+    static unsigned int * Construct(void *aP1, int a2);
     char * AddRef();
-    wchar_t * Release();
-    wchar_t * ddtor();
-    unsigned char m_1;  // 0x1 (offset-truth)
+    wchar_t * Release(void *a1 = 0);
+    wchar_t * ddtor(void *a1 = 0);
+    unsigned char *m_1;  // 0x1 (offset-truth)
 };
 
 } // namespace gamemd

@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct NetworkID {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     int16_t Assign(unsigned int *a2, int a3, int16_t a4);
-    int Compare(int a2);
+    int Compare(int a2, void *a1 = 0);
 };
 
 } // namespace gamemd

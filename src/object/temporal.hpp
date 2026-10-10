@@ -32,7 +32,7 @@ public:
 
     // Construction
     TemporalClass();                                             // 0x71A4E0
-    void Constructor();                                          // 0x71A450
+    void* Constructor();                                          // 0x71A450
     void ddtor();  // 0x71A720
 
     // Methods

@@ -11,7 +11,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x6915F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ScriptClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x6915f6*/
@@ -21,7 +21,7 @@ int ScriptClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610655148; /*0x691617*/
   a2[3] = unk_7E97AC; /*0x691620*/
   return 0; /*0x6915fd*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x691630
@@ -36,10 +36,10 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
-      aP0->vfptr = &(void*)(void*)&ScriptClass_vftable; /*0x691654*/
-      aP0->vfptr1 = &(void*)(void*)&ScriptClass_vftable; /*0x69165a*/
-      aP0->vfptr2 = &(void*)(void*)&ScriptClass_vftable; /*0x691661*/
-      aP0->vfptr3 = &(void*)(void*)&ScriptClass_vftable; /*0x691668*/
+      aP0->vfptr = &vt_ScriptClass; /*0x691654*/
+      aP0->vfptr1 = &vt_ScriptClass; /*0x69165a*/
+      aP0->vfptr2 = &vt_ScriptClass; /*0x691661*/
+      aP0->vfptr3 = &vt_ScriptClass; /*0x691668*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/

@@ -8,20 +8,15 @@ namespace gamemd {
 struct TypeList_flat;  // fix_fwd_type_supply
 struct HouseTypeClass_28 {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    int q008;  // 0x8
-    bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    int q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
-    wchar_t * ddtor();  // 0x512990
-    int Seek(int a2, void *a2_2, void *a3_1);  // 0x5129E0
-    TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x512A90
-    char AddRef(int a2);  // 0x5133E0
-    char Release(int a2, unsigned int * a3);  // 0x513610
-    int Read(unsigned int * a2, void *a2_2);  // 0x513710
-    unsigned int Write(int a2);  // 0x5129C0
+    wchar_t * ddtor(void *a1 = 0);  // 0x512990
+    int  Seek(int a2);  // 0x5129E0
+    TypeList_flat *  QueryInterface(char a2);  // 0x512A90
+    char  AddRef(int a2);  // 0x5133E0
+    char  Release(int a2, unsigned int * a3);  // 0x513610
+    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x513710
+    unsigned int  Write(int a2);  // 0x5129C0
 };
 } // namespace gamemd

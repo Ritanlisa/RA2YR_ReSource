@@ -9,17 +9,7 @@ struct E4Recv_643720 {
     unsigned int vfptr;  // 0x0
     unsigned int M97;  // 0x61
     unsigned int M120;  // 0x78
-    unsigned int q120;  // 0x120
-    unsigned int q288;  // 0x288
-    unsigned int q648;  // 0x648
-    unsigned int q1608;  // 0x1608
-    unsigned int q5640;  // 0x5640
-    unsigned int q22080;  // 0x22080
-    unsigned int q19409250;  // 0x19409250
-    unsigned int q423662160;  // 0x423662160
-    unsigned int q17773764960;  // 0x17773764960
-    unsigned int q254497871881323270;  // 0x254497871881323270
 // --- flat members (END) ---
-    int  RenderBuildingProductionButton(int a2, void * aP2, void * aP3, int a5, char a6);  // 0x643720
+    int  RenderBuildingProductionButton(int a2, int a3, int * a4, int a5, char a6);  // 0x643720
 };
 } // namespace gamemd

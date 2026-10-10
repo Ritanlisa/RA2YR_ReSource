@@ -7,10 +7,10 @@
 #include "e4/e4_protos.h"
 
 // 0x537E70
-namespace gamemd {
-_DWORD * CursorPositionCommandClass::Constructor()
+namespace gamemd {  // G42.18 ns repair
+unsigned int * CursorPositionCommandClass::Constructor()
 {
-  *(_DWORD *)this->__tail_0 = &(void*)(void*)&CursorPositionCommandClass_vftable; /*0x537e72*/
-  return this->__tail_0; /*0x537e78*/
-}
+  *(unsigned int *)this->__tail_0 = (unsigned int)(&vt_CursorPositionCommandClass); /*0x537e72*/
+  return (unsigned int *)(this->__tail_0); /*0x537e78*/
+}  // G42.18 ns repair
 } // namespace gamemd

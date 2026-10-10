@@ -37,13 +37,13 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !ppv ) /*0x410267*/
     return -2147467261; /*0x410269*/
   *ppv = 0; /*0x410286*/
-  if ( !memcmp(iid, &IID_IUnknown, 0x10u) ) /*0x410290*/
+  if ( !memcmp((const void *)(iid), &IID_IUnknown, 0x10u) ) /*0x410290*/
     *ppv = thisa; /*0x410294*/
-  if ( !memcmp(iid, &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
+  if ( !memcmp((const void *)(iid), &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
     *ppv = thisa; /*0x4102a9*/
-  if ( !memcmp(iid, &IID_IPersist, 0x10u) ) /*0x4102b9*/
+  if ( !memcmp((const void *)(iid), &IID_IPersist, 0x10u) ) /*0x4102b9*/
     *ppv = thisa; /*0x4102be*/
-  if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
+  if ( !memcmp((const void *)(iid), &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
     if ( thisa ) /*0x4102d6*/
       p_vtable1 = &thisa->vfptr1; /*0x4102d8*/
@@ -115,14 +115,14 @@ void AbstractClass::createId() {
 CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const
 {
   int *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (int *)(*(int (__thiscall **)(AbstractClass *, _BYTE *))(out->vfptr + 72))(out, v3); /*0x41054e*/
+  v1 = (gamemd::CoordStruct *)((int *)(*(int (__thiscall **)(AbstractClass *, unsigned char *))(out->vfptr + 72))(out, v3));
   out->vfptr = (void *)*v1; /*0x410558*/
   out[1].vfptr = (void *)v1[1]; /*0x41055d*/
   out[2].vfptr = (void *)v1[2]; /*0x410564*/
-  return (int)out; /*0x410560*/
+  return (gamemd::CoordStruct *)((int)out); /*0x410560*/
 }
 // src-model helper kept for the existing callers (techno.cpp): the pointer
 // flavor simply forwards to the virtual GetCoords above.

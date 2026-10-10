@@ -14,14 +14,15 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x614190
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam)
 {
-  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
+
+  LRESULT (*v4)(HWND, UINT, WPARAM, LPARAM); // esi
   int v5; // eax
-  LRESULT (__stdcall **v6)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (**v6)(HWND, UINT, WPARAM, LPARAM); // eax
   HWND *v7; // eax
-  _DWORD *v8; // edi
+  unsigned int *v8; // edi
   LONG WindowLongA; // eax
   LONG v11; // ebx
   UINT v12; // ebp
@@ -50,7 +51,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   WPARAM v35; // [esp-8h] [ebp-1884h]
   HWND v36; // [esp-4h] [ebp-1880h]
   int v37; // [esp-4h] [ebp-1880h]
-  LRESULT (__stdcall *lpPrevWndFunc)(HWND, UINT, WPARAM, LPARAM); // [esp+10h] [ebp-186Ch]
+  LRESULT (*lpPrevWndFunc)(HWND, UINT, WPARAM, LPARAM); // [esp+10h] [ebp-186Ch]
   struct tagRECT v39; // [esp+14h] [ebp-1868h] BYREF
   HWND v40; // [esp+24h] [ebp-1858h] BYREF
   int v41; // [esp+28h] [ebp-1854h] BYREF
@@ -65,16 +66,16 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   lpPrevWndFunc = 0; /*0x6141a7*/
   if ( dword_AC1B4C ) /*0x6141ab*/
   {
-    v5 = *((_DWORD *)dword_AC1B48 + (dword_AC1B60(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
+    v5 = *((unsigned int *)dword_AC1B48 + (dword_AC1B60(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
     if ( v5 ) /*0x6141d4*/
     {
       while ( *(HWND *)v5 != hWnd ) /*0x6141df*/
       {
-        v5 = *(_DWORD *)(v5 + 8); /*0x6141e1*/
+        v5 = *(unsigned int *)(v5 + 8); /*0x6141e1*/
         if ( !v5 ) /*0x6141e6*/
           goto LABEL_8; /*0x6141e6*/
       }
-      v6 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x6141ee*/
+      v6 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x6141ee*/
       if ( v6 ) /*0x6141f3*/
       {
         v4 = *v6; /*0x6141f5*/
@@ -82,11 +83,11 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       }
     }
   }
-  LABEL_8:
+LABEL_8:
   v40 = hWnd; /*0x6141fb*/
   if ( !dword_AC1B04 ) /*0x61420d*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
-  v7 = (HWND *)*((_DWORD *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
+  v7 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
   if ( !v7 ) /*0x614233*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
@@ -125,7 +126,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       return 0; /*0x61439e*/
     v8[62] = 1; /*0x6143a4*/
     v15 = v11 & 0xFFFEFFFF; /*0x6143ae*/
-  LABEL_47:
+LABEL_47:
     SetWindowLongA(hWnd, -16, v15); /*0x61459c*/
     return 0; /*0x6145b9*/
   }
@@ -134,7 +135,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
     SendMessageA(hWnd, 0xB1u, 0xFFFFFFFF, -1); /*0x6143cf*/
     if ( !v8[61] ) /*0x6143d5*/
       PostMessageA(hWnd, 0x4B0u, 0, 0); /*0x6143f4*/
-  LABEL_70:
+LABEL_70:
     v29 = GetParent(hWnd); /*0x6147ee*/
     GetClassNameA(v29, ClassName, 32); /*0x614806*/
     if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x61481d*/
@@ -232,11 +233,11 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
         v44.bottom = v42.bottom - v42.top + 1; /*0x614724*/
         v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
         DrawTextRendererMultiline( /*0x614760*/
-          (_DWORD *)DSurface_Alternate,
+          (unsigned int *)DSurface_Alternate,
           &v44.left,
           &unk_AC1E04,
           v41,
-          (_DWORD *)v8[25],
+          (unsigned int *)v8[25],
           dword_AC18A4,
           v8 + 17,
           v8[14],
@@ -259,11 +260,11 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       if ( (WindowLongA & 4) != 0 ) /*0x614450*/
       {
         v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
-        v17 = (char *)RA2_OPNEW(v16); /*0x614486*/
+        v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
         strcat(v17, String2); /*0x6144b3*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
-        RA2_OPDEL(v17); /*0x6144ce*/
+        __3_YAXPAX_Z(v17); /*0x6144ce*/
         v18 = GetWindowLongA(hWnd, -12); /*0x6144e0*/
         v36 = hWnd; /*0x6144f7*/
         v35 = v18 | 0x5010000; /*0x6144f8*/
@@ -283,5 +284,6 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
     SetFocus(v20); /*0x614543*/
     return 0; /*0x61454c*/
   }
+
 }
 } // namespace gamemd

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct SlaveControlVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned int * Constructor(int a2, int a3, void *a1 = 0);
 };

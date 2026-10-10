@@ -141,7 +141,7 @@ protected:
     int m_8;  // G57w8 raw-vocab (0x40D75F this->m_8)
     unsigned int u32_5564;  // G57w8 raw-vocab (0x40D286 this->u32_5564)
     unsigned int m_C;  // 0xC
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     int u32_8;  // 0x8
     unsigned int q010;  // 0x10
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
@@ -149,8 +149,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitMouse(int a1, char a2);  // 0x40D290
     void initCursor();  // 0x40D540
     int updateCursorState(int a1);  // 0x40D570
-    char selectCursor(int a2, _DWORD *a3);
-    int getCursorFrame(_DWORD *a2);
+    char selectCursor(int a2, unsigned int *a3);
+    int getCursorFrame(unsigned int *a2);
     void* applyCursorSettings(int a1);  // 0x40D850
     int GetPosition();  // 0x5BDAA0
     int SetPosition(int a1);  // 0x5BDAB0

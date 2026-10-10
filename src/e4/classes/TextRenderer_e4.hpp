@@ -9,25 +9,10 @@ struct TriggerTypeClass;  // fix_fwd_type_supply
 
 struct TextRenderer {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    unsigned int u32_8;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    char u32_14;  // 0x14
-    void* q018;  // 0x18
-    char u32_1A;  // 0x1A
-    char u32_1B;  // 0x1B
-    unsigned int u32_24;  // 0x24
-    unsigned int u32_2C;  // 0x2C
-    unsigned char q034;  // 0x34
-    unsigned int q040;  // 0x40
-    unsigned int q044;  // 0x44
-    unsigned int u32_50;  // 0x50
-    void* q054;  // 0x54
+
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);
-    int MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6);
+    int MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, void *a1 = 0);
     static unsigned int * Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8);
     static void * GetInstance();
     void * MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4, int aP0, int aP2, int aP3, int a6, int a7, int a8, int aP8);
@@ -45,6 +30,9 @@ struct TextRenderer {
     unsigned int u32_80;  // 0x80 (offset-truth)
     unsigned char u32_86;  // 0x86 (offset-truth)
     unsigned char u32_87;  // 0x87 (offset-truth)
+    static double u32_50(...);  // plateau: C2039/C3861 stub
+    static double u32_68(...);  // plateau: C2039/C3861 stub
+    static double u32_6C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

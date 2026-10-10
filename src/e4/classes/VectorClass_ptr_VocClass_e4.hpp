@@ -14,20 +14,9 @@ struct VectorClass_ptr_VocClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1);  // 0x7518D0
-    unsigned int Get(int a2);  // 0x751900
-    int Get(int a2, void *a2_2);  // 0x751920
-    char Constructor_VectorClass_VocClass___(int a2, void *a2_2, void *a3_1);  // 0x751930
-    char Constructor_VectorClass_VocClass___(int a2, unsigned int * a3);  // 0x751970
-    void Constructor_VectorClass_VocClass___(void *a1_1);  // 0x751A20
-    int Constructor_VectorClass_VocClass___(unsigned int * a2);  // 0x751A50
-    unsigned int Constructor_VectorClass_VocClass___(int a2);  // 0x751A90
-    char Constructor_VectorClass_VocClass___(int a2, unsigned int * a3);  // 0x751AB0
-    int Constructor_VectorClass_VocClass___(unsigned int * a2);  // 0x751B60
-    VectorClass_flat * Constructor_VectorClass_VocClass___(unsigned int * Block, char a2);  // 0x751B90
-    DynamicVector * Constructor_VectorClass_VocClass___(unsigned int * Block, char a2);  // 0x751BE0
+    int Get(void *a1_1, void *a1 = 0);  // 0x7518D0
+    char  Constructor_VectorClass_VocClass___(int a2);  // 0x751930
 };
 } // namespace gamemd

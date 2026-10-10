@@ -15,12 +15,12 @@ namespace gamemd {
 } // namespace gamemd
 
 // 0x76EFE0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * WOL::QueryInterface(char a2)
 {
   SelectionInitializeWOL(); /*0x76efe3*/
   if ( (a2 & 1) != 0 ) /*0x76efed*/
-    RA2_OPDEL(); /*0x76eff0*/
+    operator delete((void *)(this)); /*0x76eff0*/
   return this; /*0x76effa*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

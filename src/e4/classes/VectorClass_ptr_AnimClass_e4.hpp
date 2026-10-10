@@ -13,13 +13,12 @@ struct VectorClass_ptr_AnimClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int Clear(int a2);  // 0x4E89B0
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x4EBE40
-    char Release(int a2, unsigned int * a3);  // 0x4EBE80
-    void Remove(void *a1_1);  // 0x4EBF30
-    int GetSize(unsigned int * a2);  // 0x4EBF60
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F0070
+    int  Clear(int a2);  // 0x4E89B0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EBE40
+    char  Release(int a2, unsigned int * a3);  // 0x4EBE80
+    void Remove(void *a1_1, void *a1 = 0);  // 0x4EBF30
+    int  GetSize(unsigned int * a2);  // 0x4EBF60
+    VectorClass_flat *  QueryInterface(char a2);  // 0x4F0070
 };
 } // namespace gamemd

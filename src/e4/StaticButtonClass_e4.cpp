@@ -14,19 +14,21 @@
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 
 // 0x6C6880
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
+
   void *v3; // eax
 
-  v3 = (void *)this->q00C; /*0x6c6883*/
-  *(_DWORD *)this->q000 = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6886*/
+  v3 = (void *)*((unsigned int *)this + 12); /*0x6c6883*/
+  *(unsigned int *)this->__pad_0 = &StaticButtonClass::`vftable'; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
-    RA2_OPDEL(v3); /*0x6c6891*/
-  Vector::Clear((int)&this->q00C6); /*0x6c689c*/
-  GadgetClass::Dtor(); /*0x6c68a3*/
+    __3_YAXPAX_Z(v3); /*0x6c6891*/
+  Vector::Clear((int)(unsigned int *)this + 36); /*0x6c689c*/
+  GadgetClass::Dtor((ShpButtonClass *)this); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
-    RA2_OPDEL(); /*0x6c68b0*/
-  return this->q000; /*0x6c68ba*/
+    __3_YAXPAX_Z(this); /*0x6c68b0*/
+  return this->__pad_0; /*0x6c68ba*/
+
 }
 } // namespace gamemd

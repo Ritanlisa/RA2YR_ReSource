@@ -8,13 +8,13 @@
 #include "e4/classes/Network_e4.hpp"
 
 // 0x6B7BB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int UnitClass::ProcessIdleOrders()
 {
   int result; // eax
   int v3; // edi
   int v4; // eax
-  _DWORD *v5; // eax
+  unsigned int *v5; // eax
   int v6; // [esp+Ch] [ebp-8h]
 
   v3 = 0; /*0x6b7bb7*/
@@ -22,17 +22,17 @@ int UnitClass::ProcessIdleOrders()
   {
     do /*0x6b7c21*/
     {
-      v4 = *(_DWORD *)(this->ambientSoundController[0] + 4 * v3); /*0x6b7bc6*/
-      if ( *(_DWORD *)(v4 + 4) == 2 ) /*0x6b7bcd*/
+      v4 = *(unsigned int *)(this->ambientSoundController[0] + 4 * v3); /*0x6b7bc6*/
+      if ( *(unsigned int *)(v4 + 4) == 2 ) /*0x6b7bcd*/
       {
-        v5 = *(_DWORD **)v4; /*0x6b7bcf*/
-        if ( *(_BYTE *)(v5[433] + 3432) ) /*0x6b7bd7*/
+        v5 = *(unsigned int **)v4; /*0x6b7bcf*/
+        if ( *(unsigned char *)(v5[433] + 3432) ) /*0x6b7bd7*/
         {
-          UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *(_DWORD **)&this->bombVisible); /*0x6b7beb*/
-          g_MissionQueueFrame.nextScenario[0] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b7bfa*/
+          UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *(unsigned int **)&this->bombVisible); /*0x6b7beb*/
+          g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b7bfa*/
           g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
           g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
-          UnitClass::ClearTargetRef(**(_DWORD **)(this->ambientSoundController[0] + 4 * v3)); /*0x6b7c16*/
+          UnitClass::ClearTargetRef(**(unsigned int **)(this->ambientSoundController[0] + 4 * v3)); /*0x6b7c16*/
         }
       }
       result = this->ambientSoundController[3]; /*0x6b7c1b*/
@@ -42,7 +42,7 @@ int UnitClass::ProcessIdleOrders()
   }
   this->estimatedHealth = 0; /*0x6b7c26*/
   this->health = 0; /*0x6b7c29*/
-  *(_DWORD *)&this->bombVisible = 0; /*0x6b7c2c*/
+  *(unsigned int *)&this->bombVisible = 0; /*0x6b7c2c*/
   return result; /*0x6b7c2f*/
 }
-}
+}  // G42.18 ns repair

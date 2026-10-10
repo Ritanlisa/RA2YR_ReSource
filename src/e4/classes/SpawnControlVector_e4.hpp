@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct SpawnControlVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    unsigned int * Constructor(int a2, int a3, void *a1 = 0);
+    unsigned int * Constructor(int a2, int a3, void *a1 = 0, void *a4 = 0);
 };
 
 } // namespace gamemd

@@ -45,7 +45,7 @@ public:
 
     // Construction
     SlaveManagerClass(TechnoClass*, HouseClass*, HouseClass*, int, int);
-    void Constructor(int, int);                                  // 0x6AF360
+    void* Constructor(int, int);                                  // 0x6AF360
     void Constructor_SlaveManagerClass(int, int);                // 0x6AF4A0
     void ddtor();  // 0x6B1130
 

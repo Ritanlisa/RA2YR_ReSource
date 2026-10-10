@@ -12,7 +12,6 @@ struct BitTextClass {
     void* vtable1;  // 0x0
     char m_CharWidth[4];  // 0x4
     CampaignClass * ptr_8;  // 0x8
-    unsigned int u32_C;  // 0xC
 // --- flat members (END) ---
     int ParseFontData(char * Source, void *a2);
     unsigned int * LoadFont();

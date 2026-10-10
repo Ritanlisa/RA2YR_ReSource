@@ -11,20 +11,7 @@ struct E4Recv_5A9980 {
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC
     unsigned int M16;  // 0x10
-    unsigned int q018;  // 0x18
-    unsigned int q024;  // 0x24
-    unsigned int q034;  // 0x34
-    unsigned int q054;  // 0x54
-    unsigned int q084;  // 0x84
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q774;  // 0x774
-    unsigned int q1908;  // 0x1908
-    unsigned int q6408;  // 0x6408
-    unsigned int q25608;  // 0x25608
-    unsigned int q153094;  // 0x153094
-    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
-    unsigned int * sub_5A9980(int a2, unsigned int * a3, int a4, unsigned int * a5, int a6);  // 0x5A9980
+    unsigned int *  sub_5A9980(int a2, unsigned int * a3, int a4, unsigned int * a5, int a6);  // 0x5A9980
 };
 } // namespace gamemd

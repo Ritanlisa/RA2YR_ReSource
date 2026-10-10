@@ -18,14 +18,9 @@ struct Super {
     void* q1908;  // 0x1908
     void* q5170;  // 0x5170
     void* q6408;  // 0x6408
-    void* q20848;  // 0x20848
-    void* q25608;  // 0x25608
-    void* q1257874;  // 0x1257874
-    void* q1388694;  // 0x1388694
-    void* q19232884;  // 0x19232884
-    void* q20481684;  // 0x20481684
-    void* q541595268;  // 0x541595268
 // --- flat members (END) ---
-    int GetDefaultTimer();  // 0x6CC260
+    int GetDefaultTimer(void *a1 = 0);  // 0x6CC260
+    static double field_24(...);  // plateau: C2039/C3861 stub
+    static double field_28(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

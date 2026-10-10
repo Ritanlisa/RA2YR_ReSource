@@ -20,18 +20,7 @@ struct E4Recv_42CCD0 {
     unsigned int q1584;  // 0x1584
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
-    unsigned int q21768;  // 0x21768
-    unsigned int q137064;  // 0x137064
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q1612096024928;  // 0x1612096024928
-    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
-    AbstractClass * * sub_42CCD0(int a2);  // 0x42CCD0
+    AbstractClass * *  sub_42CCD0(int a2);  // 0x42CCD0
 };
 } // namespace gamemd

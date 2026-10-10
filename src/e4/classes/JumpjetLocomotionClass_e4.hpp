@@ -18,68 +18,43 @@ struct JumpjetLocomotionClass {
     void* LinkedTo;  // 0xC
     void* Powered;  // 0x10
     char Dirty;  // 0x11
-    unsigned short q012;  // 0x12
     void* RefCount;  // 0x14
     void* vtable3;  // 0x18
     char Speed[4];  // 0x1C
-    bool q01D;  // 0x1D
     char Climb[4];  // 0x20
     float Crash;  // 0x24
     float Height;  // 0x28
-    bool q02B;  // 0x2B
     char Accel[4];  // 0x2C
     float Wobbles;  // 0x30
-    unsigned char q031;  // 0x31
-    unsigned int q033;  // 0x33
     float Deviation;  // 0x34
-    bool q037;  // 0x37
     char NoWobbles[1];  // 0x38
-    char q039[4];  // 0x39
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    bool q03C;  // 0x3C
+    bool NoWobbles_d;  // 0x3C
     unsigned char unknown_3D;  // 0x3D
     unsigned char unknown_3E;  // 0x3E
     unsigned char unknown_3F;  // 0x3F
     char DestinationCoords[12];  // 0x40
-    bool q042;  // 0x42
-    unsigned int q044;  // 0x44
     ILocomotion * ptr_48;  // 0x48
-    bool q04A;  // 0x4A
     bool IsMoving;  // 0x4C
     unsigned char unknown_4D;  // 0x4D
     unsigned char unknown_4E;  // 0x4E
     unsigned char unknown_4F;  // 0x4F
     char CurrentState[4];  // 0x50
-    unsigned char u8_53;  // 0x53
-    unsigned char q054;  // 0x54
-    unsigned int q058;  // 0x58
-    unsigned int q05C;  // 0x5C
-    unsigned char q060;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned int q068;  // 0x68
     void* unknown_6C;  // 0x6C
     unsigned char unknown_6D;  // 0x6D
     unsigned char unknown_6E;  // 0x6E
     unsigned char unknown_6F;  // 0x6F
     int CurrentHeight;  // 0x70
-    unsigned char q074;  // 0x74
-    unsigned int q078;  // 0x78
-    unsigned int u32_7C;  // 0x7C
-    unsigned char q080;  // 0x80
     unsigned char unknown_84;  // 0x84
     unsigned char unknown_85;  // 0x85
     unsigned char unknown_86;  // 0x86
     unsigned char unknown_87;  // 0x87
     char DestinationReached[1];  // 0x88
-    void* q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
     unsigned char unknown_91;  // 0x91
     unsigned char unknown_92;  // 0x92
     unsigned char unknown_93;  // 0x93
     ILocomotion* Piggybackee;  // 0x94
 // --- flat members (END) ---
-    int Update2(void * a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
+    int Update2(void * a2);
     AbstractClass * * FindClosestOccupiableCell();
     BOOL CheckWindowsErrorWrapper_0(int a2);
     BOOL ComputeFloatExpression(int a1);
@@ -189,12 +164,12 @@ struct JumpjetLocomotionClass {
     char UpdateFacingDirection_2(int a1, int a2);
     char UpdateFacingDirection_3(int a1, int a2);
     char UpdateFacingDirection_4(int a1, int a2);
-    double ComputeVectorLengthMetric();
+    double ComputeVectorLengthMetric(void *a1 = 0);
     float * ComputeAudio3DRotation(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_0(int a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_1(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeVoxelMatrix(int a1, float * a2, unsigned int * a3);
-    void* AdjustClimbFacing(unsigned int *a2);
+    void* AdjustClimbFacing(unsigned int *a2, void *a1 = 0);
     int CheckAttachStatus();
     int CheckState(TunnelLocomotionClass * aP0);
     int CheckState2(int a1, int a2);
@@ -310,7 +285,7 @@ struct JumpjetLocomotionClass {
     int loc_6A4330(int a1, void *a2, void *a3);
     long long ComputeFloatExpression_1(int a1);
     unsigned int * CalculateBobOffset(int a1, unsigned int * a2);
-    unsigned int * ClampToCellBounds(unsigned int *a2, __int16 *a3, char a4);  // G57w10-S raw 0x00586AC0 IUnknown 占位清除
+    unsigned int * ClampToCellBounds(unsigned int *a2, int16_t *a3, char a4);  // G57w10-S raw 0x00586AC0 IUnknown 占位清除
     unsigned int * ConvertCoordToCell(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3);
     unsigned int * ConvertCoordToCell_2(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3);
     unsigned int * GetConditionedCoordinate(unsigned int * a1, unsigned int * a2);
@@ -364,6 +339,7 @@ struct JumpjetLocomotionClass {
     void* Update2(void * a1, void * a2);
     JumpjetLocomotionClass * ProcessAttach(int * Block, char a2);
     TeleportLocomotionClass * ConstructLocomotor(ILocomotion ** Block, char a2);
+    static double vtable26(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

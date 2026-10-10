@@ -9,19 +9,6 @@ struct E4Recv_7767F0 {
     unsigned int vfptr;  // 0x0
     unsigned int M16;  // 0x10
     unsigned int M28;  // 0x1C
-    unsigned int q028;  // 0x28
-    unsigned int q034;  // 0x34
-    unsigned int q040;  // 0x40
-    unsigned int q064;  // 0x64
-    unsigned int q100;  // 0x100
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q598;  // 0x598
-    unsigned int q5170;  // 0x5170
-    unsigned int q20848;  // 0x20848
-    unsigned int q153094;  // 0x153094
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q19232884;  // 0x19232884
 // --- flat members (END) ---
     unsigned int sub_7767F0();  // 0x7767F0
 };

@@ -10,7 +10,6 @@ struct XSurface {
     void* vtable1;  // 0x0
     void* Width;  // 0x4
     void* Height;  // 0x8
-    bool q00A;  // 0xA
     int LockCount;  // 0xC
 // --- flat members (END) ---
     XSurface * * Blit(int a2, void **a3, int arg8, int a5, unsigned int *a6, void **a4, int a8);
@@ -32,13 +31,14 @@ struct XSurface {
     int entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6);
     int vt_entry_40(int a1);
     int vt_entry_68();
-    void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5_len, int a6, int a7, int a8, int a9, int a10);
-    static int Fill(XSurface * aP1, int a2);  // G57w10-S raw 0x007BBAB0 (was C2597 interim stub)
-    static int GetPixel(XSurface * aP1, unsigned int *a2);  // G57w10-S raw 0x007BAE60 (was C2597 interim stub)
-    static int SetPixel(XSurface * aP1, unsigned int *a2, __int16 a3);  // G57w10-S raw 0x007BAEB0 (was C2597 interim stub)
-    void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10);
-    static int BlitWhole(...);  // w16g4 C3861 static supply (raw 0x004C1A90)
-    unsigned int q000;  // 0x0 (offset-truth)
+    void* WalkLine();
+    static int Fill(XSurface * aP1, int a2);
+    static int GetPixel(XSurface * aP1, unsigned int *a2);
+    static int SetPixel(XSurface * aP1, unsigned int *a2, int16_t a3);
+    void* WalkLine();
+    static int BlitWhole(...);
+    unsigned int *q000;  // 0x0 (offset-truth)
+    static double Surface(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

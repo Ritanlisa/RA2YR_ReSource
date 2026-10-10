@@ -7,19 +7,8 @@ namespace gamemd {
 struct E4Recv_6262F0 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    unsigned int u32_18;  // 0x18
-    unsigned int q024;  // 0x24
-    unsigned int q054;  // 0x54
-    unsigned int q084;  // 0x84
     unsigned int M256;  // 0x100
-    unsigned int q598;  // 0x598
-    unsigned int q774;  // 0x774
-    unsigned int q5170;  // 0x5170
-    unsigned int q20848;  // 0x20848
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q388226446628134;  // 0x388226446628134
 // --- flat members (END) ---
-    int sub_6262F0(int a2);  // 0x6262F0
+    int  sub_6262F0(int a2);  // 0x6262F0
 };
 } // namespace gamemd

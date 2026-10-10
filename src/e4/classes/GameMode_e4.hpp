@@ -11,8 +11,8 @@ struct GameMode_e4 {
     unsigned int q054;  // 0x54
     unsigned int u32_FC;  // 0xFC
 // --- flat members (END) ---
-    int IsValid(unsigned int a2);  // 0x5D5DE0
-    unsigned int ReadFlagsFromINI(unsigned int * aP1);  // 0x6B8CA0
+    int  IsValid(unsigned int a2);  // 0x5D5DE0
+    unsigned int  ReadFlagsFromINI(unsigned int * a2);  // 0x6B8CA0
     unsigned int ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids);
 };
 } // namespace gamemd

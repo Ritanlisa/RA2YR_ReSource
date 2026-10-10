@@ -14,19 +14,9 @@ struct VectorClass_ptr_SpotLightClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    DynamicVector * Constructor_VectorClass_SpotLightClass___(unsigned int * Block, char a2);  // 0x6002D0
-    unsigned int GetItemIndex(int a2);  // 0x5FFFF0
-    int Constructor_VectorClass_SpotLightClass___(int a2, void *a2_2);  // 0x600010
-    char Constructor_VectorClass_SpotLightClass___(int a2, void *a2_2, void *a3_1);  // 0x600020
-    char Constructor_VectorClass_SpotLightClass___(int a2, unsigned int * a3);  // 0x600060
-    void Constructor_VectorClass_SpotLightClass___(void *a1_1);  // 0x600110
-    int Constructor_VectorClass_SpotLightClass___(unsigned int * a2);  // 0x600140
-    unsigned int Constructor_VectorClass_SpotLightClass___(int a2);  // 0x600180
-    char Constructor_VectorClass_SpotLightClass___(int a2, unsigned int * a3);  // 0x6001A0
-    int Constructor_VectorClass_SpotLightClass___(unsigned int * a2);  // 0x600250
-    VectorClass_flat * Constructor_VectorClass_SpotLightClass___(unsigned int * Block, char a2);  // 0x600280
+    DynamicVector *  Constructor_VectorClass_SpotLightClass___(char a2);  // 0x6002D0
+    unsigned int  GetItemIndex(int a2);  // 0x5FFFF0
 };
 } // namespace gamemd

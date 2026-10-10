@@ -7,19 +7,15 @@ namespace gamemd {
 struct WebBrowser {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int u32_4;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q010;  // 0x10
 // --- flat members (END) ---
-    int LoadURLFromRegistry(const char * a2);  // 0x773600
-    int ShowDialog();  // 0x773E90
+    int  LoadURLFromRegistry(void * a2);  // 0x773600
+    int ShowDialog(void *a1 = 0);  // 0x773E90
     int GoForward();  // 0x7740A0
     bool OpenURL(void *a1_1);  // 0x551630
     int QueryInterface();  // 0x773A40
     int AddRef(void *a1_1);  // 0x773AA0
     int Release(void *a1_1);  // 0x773AB0
-    int Write();  // 0x773B10
+    int Write(void *a1 = 0);  // 0x773B10
     int Clone();  // 0x773BC0
     int Navigate();  // 0x773D20
     int GoBack();  // 0x773D40
@@ -33,8 +29,10 @@ struct WebBrowser {
     int UnlockRegion();  // 0x773BA0
     int COMStub_Return0();  // 0x773B00
     int WebBrowser___vt03();
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_40C;  // 0x40C (offset-truth)
     unsigned char u32_42;  // 0x42 (offset-truth)
+    static double WebBrowser_field_0x8(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

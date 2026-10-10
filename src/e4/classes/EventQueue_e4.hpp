@@ -22,10 +22,12 @@ struct EventQueue {
     void* q1938;  // 0x1938
     void* q6440;  // 0x6440
 // --- flat members (END) ---
-    static int CheckPosition(EventQueue *pThis);  // G57w19k2 raw thiscall static-form supply (member CheckPosition -> CheckPosition_slot)
-    __int16 Check();
-    __int16 Process();
-    short Read();
+    static int CheckPosition(EventQueue *pThis);
+    int16_t Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    int16_t Process(void *a1 = 0);
+    short Read(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    static double u32_314(...);  // plateau: C2039/C3861 stub
+    static double u32_318(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

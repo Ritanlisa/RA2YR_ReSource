@@ -16,28 +16,28 @@
 #include "e4/classes/AudioSample_e4.hpp"
 
 // 0x4080F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char ThemeManager::ProcessCallback(void *a1)
 {
   int v2; // ebp
-  unsigned __int64 v3; // rax
-  unsigned __int64 v4; // kr00_8
+  uint64_t v3; // rax
+  uint64_t v4; // kr00_8
 
   v2 = Audio::Callback(); /*0x4080fa*/
-  IDA_LODWORD(v3) = *((_DWORD *)a1 + 5); /*0x4080fc*/
-  v4 = *(_QWORD *)(v3 + 32) + IDA___PAIR64__(IDA_HIDWORD(v3), v2); /*0x408104*/
-  while ( (*(_BYTE *)(a1 + 12) & 1) != 0 ) /*0x408107*/
+  (*((unsigned int *)&(v3))) = *((unsigned int *)a1 + 5); /*0x4080fc*/
+  v4 = *(unsigned long long *)(v3 + 32) + (((unsigned long)(unsigned int)(v2)) | ((unsigned long)(unsigned int)((*(((unsigned int *)&(v3)) + 1))) << 32)); /*0x408104*/
+  while ( (*(unsigned char *)((unsigned int)(a1)+ 12) & 1) != 0 ) /*0x408107*/
   {
-    IDA_LODWORD(v3) = *((_DWORD *)a1 + 5); /*0x40810d*/
-    if ( *(_DWORD *)(v3 + 20) == *(_DWORD *)(v3 + 24) ) /*0x408118*/
+    (*((unsigned int *)&(v3))) = *((unsigned int *)a1 + 5); /*0x40810d*/
+    if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
-    IDA_LODWORD(v3) = Audio::Callback(); /*0x40811a*/
+    (*((unsigned int *)&(v3))) = Audio::Callback(); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
       break; /*0x408127*/
-    IDA_LOBYTE(v3) = Event::Dispatch(); /*0x408129*/
+    (*((unsigned char *)&(v3))) = Event::Dispatch(); /*0x408129*/
   }
   return v3; /*0x408130*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x720770
 namespace gamemd {
@@ -48,17 +48,17 @@ void ThemeManager::Cleanup()
   int v4; // eax
   ThemeClass *v5; // ecx
 
-  while ( this->q024 > 0 ) /*0x720778*/
+  while ( this->u32_24 > 0 ) /*0x720778*/
   {
-    RA2_OPDEL(**((void ***)this + 6)); /*0x720780*/
-    v2 = this->q024; /*0x720785*/
+    operator delete((void *)(**(unsigned int *)&this->u32_18)); /*0x720780*/
+    v2 = this->u32_24; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
       v3 = v2 - 1; /*0x72078f*/
       v4 = 0; /*0x720792*/
-      for ( this->q024 = v3; /*0x720799*/
-            v4 < this->q024;
-            *(_DWORD *)(this->u32_18 + 4 * v4 - 4) = *(_DWORD *)(this->u32_18 + 4 * v4) )
+      for ( this->u32_24 = v3; /*0x720799*/
+            v4 < this->u32_24;
+            *(unsigned int *)(this->u32_18 + 4 * v4 - 4) = *(unsigned int *)(this->u32_18 + 4 * v4) )
       {
         ++v4; /*0x72079e*/
       }
@@ -68,9 +68,9 @@ void ThemeManager::Cleanup()
   if ( v5 ) /*0x7207b9*/
   {
     ThemeClass::RequestBuffer(v5); /*0x7207bb*/
-    ThemeManager::ProcessCallback(*((ThemeManager **)this + 11)); /*0x7207c3*/
-    Audio::Release(*((Audio **)this + 11)); /*0x7207cb*/
-    AudioSample::Destructor(*((AudioSample **)this + 11)); /*0x7207d3*/
+    ThemeManager::ProcessCallback(*(unsigned int *)&this->u32_2C); /*0x7207c3*/
+    Audio::Release(*(unsigned int *)&this->u32_2C); /*0x7207cb*/
+    AudioSample::Destructor(*(unsigned int *)&this->u32_2C); /*0x7207d3*/
     this->u32_2C = 0; /*0x7207d8*/
   }
 }

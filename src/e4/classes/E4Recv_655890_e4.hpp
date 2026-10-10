@@ -11,5 +11,6 @@ struct E4Recv_655890 {
 // --- flat members (END) ---
     int Vf251(int,  ...);    // G6 vtable slot dispatch
     int sub_655890();  // 0x655890
+    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

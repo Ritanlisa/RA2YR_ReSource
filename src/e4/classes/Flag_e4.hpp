@@ -7,13 +7,14 @@ namespace gamemd {
 
 struct Flag {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
+
 // --- flat members (END) ---
     int IsNot2();
-    static int IsNot2(void *aP0);  // G57a1 static-form sync (CComObject 0x7aba26+)
-    int IsZero();
+    static int IsNot2(void *aP0);
+    int IsZero(void *a1 = 0);
+    static double Flag_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double Flag_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

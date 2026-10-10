@@ -8,7 +8,7 @@
 #include "e4/e4_protos.h"
 
 // 0x401F90
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int32_t RefCount::Decrement()
 {
   int result; // eax
@@ -18,30 +18,33 @@ int32_t RefCount::Decrement()
   if ( result < 0 ) /*0x401f99*/
     this->u32_C = 0; /*0x401f9b*/
   return result; /*0x401fa2*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x49FA00
 namespace gamemd {
 int RefCount::Increment(int a2)
 {
+
   int v3; // edi
+  int i; // eax
   int RefCount_field_04; // ecx
 
-  v3 = this->u32_8; /*0x49fa09*/
+  v3 = *((unsigned int *)this + 2); /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
-  LABEL_5:
-    ++*(_DWORD *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
+LABEL_5:
+    ++*(unsigned int *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
     RefCount_field_04 = this->RefCount_field_04; /*0x49fa4d*/
-    ++this->RefCount_field_04; /*0x49fa51*/
-    return *(_DWORD *)(RefCount_field_04 + 4 * a2); /*0x49fa59*/
+    ++*((unsigned int *)this + 4); /*0x49fa51*/
+    return *(unsigned int *)(RefCount_field_04 + 4 * a2); /*0x49fa59*/
   }
-  if ( (*(unsigned __int8 (__thiscall **)(RefCount *, int, _DWORD))(this->m_RefCount + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
+  if ( (*(unsigned __int8 (**)(RefCount *, int, unsigned int))(this->m_RefCount + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
   {
-    for ( v3 = v3; v3 < this->u32_8; *(_DWORD *)(this->RefCount_field_04 + 4 * v3 - 4) = 0 ) /*0x49fa28*/
-      ++v3; /*0x49fa2d*/
+    for ( i = v3; i < *((unsigned int *)this + 2); *(unsigned int *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
+      ++i; /*0x49fa2d*/
     goto LABEL_5; /*0x49fa3b*/
   }
   return 0; /*0x49fa40*/
+
 }
 } // namespace gamemd

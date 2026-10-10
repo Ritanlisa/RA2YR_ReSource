@@ -11,28 +11,33 @@ struct FileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
 // --- flat members (END) ---
-    static int BufferedWriter(FileClass *pThis, char *lpBuffer, DWORD nNumberOfBytesToWrite);  // G57w19k2 raw thiscall static-form supply (member BufferedWriter -> BufferedWriter_slot)
+    static int BufferedWriter(FileClass *pThis, char *lpBuffer, DWORD nNumberOfBytesToWrite);
     char Stub(int a1);
-    int Close();
-    int GetState();
-    int Open(int a2);
-    int Read(char *aP1, signed int aP2);
+    int Close(void *a1 = 0, void *a2 = 0);
+    int GetState(void *a1 = 0);
+    int Open(int a2, void *a1 = 0, void *a3 = 0);
+    int Read(char *aP1, signed int aP2, void *a1 = 0);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
-    const char* SetFileName(char *aP1);
-    int SetState(void *a1);
+    const char* SetFileName(char *aP1, void *a1 = 0);
+    int SetState(void *a1, void *a2 = 0);
     int StubReturnFalse();
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
     unsigned int * loc_401950();
-     int Load(FileClass * aP1, const char * a2);  // G57w10-S raw 0x473D10 (was C2597 interim stub)
-    int Write2(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x65cdd0
-    int Open2(const CHAR *a2);  // 0x65cb50
-    static const char * SetName(void * aP0, char * aP1);  // 0x65CAC0 thiscall static-form sync (G42.33 b3)
-    int Delete();  // 0x65d190
-    int CloseHandle();  // 0x65cca0
-    int OpenWithCDSearch(char *Source); // N_fix R5 supply (cache truth)
+     int Load(FileClass * aP1, const char * a2, void *a1 = 0, void *a3 = 0);
+    int  Write2(int lpBuffer, DWORD nNumberOfBytesToWrite, void *a1 = 0);  // 0x65cdd0
+    int  Open2(void * a2, void *a1 = 0);  // 0x65cb50
+    static const char * SetName(void * aP0, char * aP1);
+    int Delete(void *a1 = 0);  // 0x65d190
+    int CloseHandle(void *a1 = 0);  // 0x65cca0
+    int OpenWithCDSearch(char *Source);
     char __tail_0[4];  // 0x0 (ml)
     unsigned int u32_58;  // 0x58 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
+    static double FileName(...);  // plateau: C2039/C3861 stub
+    static double FileNameAllocated(...);  // plateau: C2039/C3861 stub
+    static double FilePointer(...);  // plateau: C2039/C3861 stub
+    static double FileTimeDateLo(...);  // plateau: C2039/C3861 stub
+    static double Handle(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 

@@ -19,31 +19,34 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x697AD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void BulkData::InitMissionHashing()
 {
+
   DWORD v2; // eax
   char *inited; // eax
+  const char *v4; // esi
   unsigned int v5; // ebx
   DWORD Time; // [esp+10h] [ebp-4h] BYREF
 
-  SessionClass::LoadMissionList(); /*0x697ad7*/
+  SessionClass::LoadMissionList((SessionClass *)this); /*0x697ad7*/
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash(&Time, v2); /*0x697af1*/
   inited = Object_Init_7CBC11(aPath); /*0x697afb*/
-  inited = inited; /*0x697b00*/
+  v4 = inited; /*0x697b00*/
   if ( inited ) /*0x697b07*/
   {
     v5 = 0; /*0x697b10*/
     if ( strlen(inited) ) /*0x697b12*/
     {
       do /*0x697b35*/
-        ComputeHash(&Time, inited[v5++]); /*0x697b21*/
-      while ( v5 < strlen(inited) ); /*0x697b35*/
+        ComputeHash(&Time, v4[v5++]); /*0x697b21*/
+      while ( v5 < strlen(v4) ); /*0x697b35*/
     }
   }
-  this->ptr_144 = Time; /*0x697b41*/
+  *((unsigned int *)this + 81) = Time; /*0x697b41*/
   Debug::Log(); /*0x697b47*/
+
 }
 } // namespace gamemd

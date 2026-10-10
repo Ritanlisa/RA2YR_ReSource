@@ -14,7 +14,7 @@ namespace gamemd
 #ifndef GAMEMD_G2_NETWORK_FLAT_DEF  // G57w10: receiver-stru carrier (stru_A8D600/A8BB1C), twin-guarded vs e4 Network_e4.hpp
 #define GAMEMD_G2_NETWORK_FLAT_DEF 1
 struct Network {
-    unsigned int q000;   // 0x0
+    unsigned int *q000;   // 0x0
     unsigned int q004;   // 0x4
     unsigned int q008;   // 0x8
     unsigned int q00C;   // 0xC
@@ -42,7 +42,7 @@ public:
     MultiplayerSiege() = default;
 
     // IDA 0x48B2A0 area
-    void Read();  // 0x5CA680
+    int Read();  // 0x5CA680
     // IDA 0x48B2A0 area
     void Write();  // 0x5CA6D0
     // IDA 0x48B2A0 area
@@ -51,7 +51,7 @@ public:
     void Process();
     // IDA 0x48B2A0 area
     // design: no binary equivalent found in IDA
-    void Reset();
+    int Reset();
     // IDA 0x48B2A0 area
     // design: no binary equivalent found in IDA
     bool IsActive() const;
@@ -311,7 +311,7 @@ class MultiplayerModeVector
 public:
     virtual ~MultiplayerModeVector() = default;  // 0x5D88B0
 
-    virtual void Destruct();  // 0x5D88B0
+    int Destruct();  // 0x5D88B0
 
 };
 // 1 methods in IDA
@@ -320,7 +320,7 @@ class MultiplayerModeVector2
 public:
     virtual ~MultiplayerModeVector2() = default;  // 0x5D8900
 
-    virtual void Destruct();  // 0x5D8900
+    int Destruct();  // 0x5D8900
 
 };
 // 2 methods in IDA
@@ -365,7 +365,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MultiplayerTeam() = default;
 
-    virtual void Constructor(); // 0x5D8C50
+    void* Constructor(); // 0x5D8C50
     static wchar_t ** Constructor(void *aP0, const wchar_t **aP1, wchar_t *aP2);  // 0x5D8C50 G42.35 static-form sync (ui/supplied site 0x5C1062)
     virtual void Destructor(); // 0x5D8C80
 
@@ -378,7 +378,7 @@ class MultiplayerTeamVector
 public:
     virtual ~MultiplayerTeamVector() = default;  // 0x5D8860
 
-    virtual void Destruct();  // 0x5D8860
+    int Destruct();  // 0x5D8860
 
 };
 // 1 methods in IDA
@@ -531,7 +531,7 @@ public:
     virtual void IsPlayerInGame(); // 0x69B600
 
     uint8_t NetworkSession_field_0x04[4];
-    unsigned int __pad_0; // 0x0  gB member supply
+    unsigned int *__pad_0; // 0x0  gB member supply
 };
 #endif  // GAMEMD_G2_NetworkSession_DEF
 // 1 methods in IDA
@@ -591,7 +591,7 @@ public:
     int Bind(int a1);  // 0x7b3450 -- UDPInterfaceClass_Destru::Bind
     int Receive();  // 0x7b3890 -- UDPInterfaceClass_Destru::Receive
     int CheckStatus();  // 0x7b3900 -- UDPInterfaceClass_Destru::CheckStatus
-    void Reset(int a1, int a2);  // 0x7b3920 -- UDPInterfaceClass_Destru::Reset
+    int Reset(int a1, int a2);  // 0x7b3920 -- UDPInterfaceClass_Destru::Reset
     int GetStatistics(int a1);  // 0x7b4100 -- UDPInterfaceClass_Destru::GetStatistics
     int COMStub();  // 0x7b4140 -- UDPInterfaceClass_Destru::COMStub
     // === SYMBOL-ANCHOR (END) ===

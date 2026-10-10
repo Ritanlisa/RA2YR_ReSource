@@ -9,7 +9,7 @@ namespace gamemd {
 #define GAMEMD_G2_AudioIndex_DEF 1
 struct AudioIndex {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned int *__fastcall GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3);
 };

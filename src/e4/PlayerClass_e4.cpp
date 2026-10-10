@@ -9,18 +9,20 @@
 #include "e4/e4_protos.h"
 
 // 0x5D8CB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int PlayerClass::SetHouse(int a2)
 {
+
   char result; // al
 
-  result = (*(int (__thiscall **)(MultiplayerTeam *, int))(*(_DWORD *)this->q000 + 4))(this, a2); /*0x5d8cbb*/
+  result = (*(int (**)(MultiplayerTeam *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
-    *(_DWORD *)(dword_A8DA78[a2] + 107) = this->q008; /*0x5d8cd5*/
+    *(unsigned int *)(dword_A8DA78[a2] + 107) = *((unsigned int *)this + 2); /*0x5d8cd5*/
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
+
 }
 } // namespace gamemd
 // 0x5D62C0
@@ -32,9 +34,9 @@ char PlayerClass::AssignPlayerIndex()
   for ( i = 0; i < dword_A8DA84; ++i ) /*0x5d62ca*/
   {
     if ( SessionClass::GetPlayerSide((int *)dword_A8DA78[i]) == -3 ) /*0x5d62dc*/
-      *(_DWORD *)(dword_A8DA78[i] + 107) = -1; /*0x5d62e7*/
+      *(unsigned int *)(dword_A8DA78[i] + 107) = -1; /*0x5d62e7*/
     else
-      *(_DWORD *)(dword_A8DA78[i] + 107) = i; /*0x5d62f8*/
+      *(unsigned int *)(dword_A8DA78[i] + 107) = i; /*0x5d62f8*/
   }
   return 1; /*0x5d6307*/
 }

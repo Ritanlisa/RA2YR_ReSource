@@ -8,24 +8,26 @@
 #include "e4/classes/ParasiteClass_e4.hpp"
 
 // 0x69D870
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
 {
+
   this->Items = 0; /*0x69d87b*/
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  this->vfptr = &(void*)(void*)&VectorClass_HouseClass___vftable; /*0x69d888*/
+  this->vtable0 = &VectorClass<HouseClass *>::`vftable'; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
     {
       this->Items = (void *)a3; /*0x69d898*/
-      return &this->vfptr; /*0x69d89e*/
+      return &this->vtable0; /*0x69d89e*/
     }
-    this->Items = (void *)RA2_OPNEW(4 * a2); /*0x69d8ad*/
+    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
     this->IsAllocated = 1; /*0x69d8b0*/
   }
-  return &this->vfptr; /*0x69d89d*/
+  return &this->vtable0; /*0x69d89d*/
+
 }
 } // namespace gamemd

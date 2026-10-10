@@ -26,7 +26,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x639FD0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int NetworkClass::ExecutePlanningModeCmd()
 {
   char v1; // al
@@ -42,7 +42,7 @@ int NetworkClass::ExecutePlanningModeCmd()
       StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
   LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
-      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a09e*/
     }
   }
   else if ( v1 == 6 ) /*0x639fff*/
@@ -52,7 +52,7 @@ int NetworkClass::ExecutePlanningModeCmd()
       byte_AC4C08 = 1; /*0x63a01f*/
       v3 = GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
-      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
+      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
   else if ( v1 == 7 && !byte_AC4C08 ) /*0x63a05c*/
@@ -61,44 +61,44 @@ int NetworkClass::ExecutePlanningModeCmd()
     StringCSF = GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
-  return PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
+  return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
-}
+}  // G42.18 ns repair
 // 0x6FFE00
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
 {
-  _BYTE *WaypointCoords; // eax
+  unsigned char *WaypointCoords; // eax
   int result; // eax
   char *v3; // edi
-  _BYTE v4[8]; // [esp+8h] [ebp-78h] BYREF
+  unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
   char v5[108]; // [esp+10h] [ebp-70h] BYREF
-  __int16 v6; // [esp+7Ch] [ebp-4h]
+  int16_t v6; // [esp+7Ch] [ebp-4h]
   char v7; // [esp+7Eh] [ebp-2h]
-  unsigned __int8 v8; // [esp+84h] [ebp+4h]
+  uint8_t v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
-  EventClass::Add(v5, (int)dword_A83D4C->q030, v8, *(_DWORD *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  EventClass::Add(v5, (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
-  if ( (_BYTE)result ) /*0x6ffe40*/
+  if ( (unsigned char)result ) /*0x6ffe40*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
-    IDA_LOBYTE(result) = 0; /*0x6ffe4b*/
+    (*((unsigned char *)&(result))) = 0; /*0x6ffe4b*/
   }
   else
   {
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
     {
       v3 = (char *)&byte_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
-      qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
+      memcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
-      *(_WORD *)v3 = v6; /*0x6ffe7e*/
+      *(unsigned short *)v3 = v6; /*0x6ffe7e*/
       v3[2] = v7; /*0x6ffe80*/
       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
-      dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
+      dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
       result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
     }
-    IDA_LOBYTE(result) = 1; /*0x6ffeae*/
+    (*((unsigned char *)&(result))) = 1; /*0x6ffeae*/
   }
   return result; /*0x6ffe4d*/
 }
@@ -112,20 +112,20 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET v3; // eax
   SOCKET result; // eax
 
-  v2 = (HWND)(g_hWnd);
-  v3 = this->u32_3F06C; /*0x7b1c59*/
+  v2 = g_hWnd; /*0x7b1c53*/
+  v3 = *((unsigned int *)this + 64539); /*0x7b1c59*/
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {
-    WSAAsyncSelect(v3, (HWND)(g_hWnd), 0, 0); /*0x7b1c6e*/
-    v2 = (HWND)(g_hWnd); /*0x7b1c73*/
+    WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/
+    v2 = g_hWnd; /*0x7b1c73*/
   }
-  result = this->u32_3F070; /*0x7b1c79*/
+  result = *((unsigned int *)this + 64540); /*0x7b1c79*/
   if ( result != -1 ) /*0x7b1c83*/
   {
     if ( v2 ) /*0x7b1c87*/
-      return (AnimClass * *)WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
+      return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
   }
-  return (::gamemd::AnimClass **)(result); /*0x7b1c7f*/
+  return result; /*0x7b1c7f*/
 
 }
 }

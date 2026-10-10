@@ -8,42 +8,42 @@
 #include "e4/classes/ColorStruct_e4.hpp"
 
 // 0x427290
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char * AnimFile::Stub()
 {
-  return (char *)this + 1292; /*0x427296*/
-}
+  return (char *)((char *)&this->q368 + 420); /*0x427296*/
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4272A0
 namespace gamemd {
 AnimFile * AnimFile::QueryInterface(void * Block, char a2)
 {
   char v3; // al
-  void (__thiscall ***v4)(_DWORD, int); // ecx
+  void (***v4)(unsigned int, int); // ecx
 
-  v3 = *((_BYTE *)Block + 137); /*0x4272a6*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&AnimFile_vftable; /*0x4272ac*/
+  v3 = *((unsigned char *)Block + 137); /*0x4272a6*/
+  *(unsigned int *)Block->__pad_0 = &vt_AnimFile; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
-    (*(void (__thiscall **)(_DWORD))(**((_DWORD **)Block + 33) + 52))(*((_DWORD *)Block + 33)); /*0x4272be*/
-    *((_BYTE *)Block + 137) = 0; /*0x4272c1*/
+    (*(void (**)(unsigned int))(**((unsigned int **)Block + 33) + 52))(*((unsigned int *)Block + 33)); /*0x4272be*/
+    *((unsigned char *)Block + 137) = 0; /*0x4272c1*/
   }
-  v4 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)Block + 899); /*0x4272c7*/
-  *((_DWORD *)Block + 33) = 0; /*0x4272cd*/
+  v4 = (void (***)(unsigned int, int))*((unsigned int *)Block + 899); /*0x4272c7*/
+  *((unsigned int *)Block + 33) = 0; /*0x4272cd*/
   if ( v4 ) /*0x4272d5*/
   {
     (**v4)(v4, 1); /*0x4272db*/
-    *((_DWORD *)Block + 899) = 0; /*0x4272dd*/
+    *((unsigned int *)Block + 899) = 0; /*0x4272dd*/
   }
-  if ( *((_DWORD *)Block + 900) ) /*0x4272e3*/
+  if ( *((unsigned int *)Block + 900) ) /*0x4272e3*/
   {
-    RA2_OPDEL(*((void **)Block + 900)); /*0x4272ee*/
-    *((_DWORD *)Block + 900) = 0; /*0x4272f6*/
+    operator delete((void *)(*((void **)Block + 900))); /*0x4272ee*/
+    *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
-  *((_BYTE *)Block + 136) = 0; /*0x427300*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&Animate_vftable; /*0x427308*/
+  *((unsigned char *)Block + 136) = 0; /*0x427300*/
+  *(unsigned int *)Block->__pad_0 = &vt_Animate; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
-    RA2_OPDEL(Block); /*0x427311*/
+    operator delete((void *)(Block)); /*0x427311*/
   return Block; /*0x42731b*/
 }
 } // namespace gamemd

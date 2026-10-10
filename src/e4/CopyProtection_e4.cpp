@@ -13,20 +13,20 @@
 namespace gamemd { int Name(...); }  // w18j2 raw call-form (variadic last resort)
 
 // 0x49F5C0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 bool CopyProtection::CheckLauncher()
 {
   HANDLE MutexA; // esi
   bool v1; // bl
 
   Debug::Log(aCopyprotection_0); /*0x49f5c8*/
-  MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
+  MutexA = CreateMutexA(0, 0,(LPCSTR)(Name)); /*0x49f5df*/
   v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
     CloseHandle(MutexA); /*0x49f5f8*/
   Debug::Log("result was %d\n", v1); /*0x49f60d*/
   return v1; /*0x49f617*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x49F620
 namespace gamemd {

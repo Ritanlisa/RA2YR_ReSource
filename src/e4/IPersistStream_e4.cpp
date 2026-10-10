@@ -10,11 +10,11 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x5B2E50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int IPersistStream::StubReturn450()
 {
   return 450; /*0x5b2e55*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x5B2EF0
@@ -66,7 +66,7 @@ void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
 namespace gamemd {
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
-  RadioClass::SaveState((RadioClass *)a0, (int *)aP1, a3); /*0x70c25f*/
+  RadioClass::SaveState((int *)((RadioClass *)a0), (int *)aP1, a3); /*0x70c25f*/
   return 0; /*0x70c266*/
 }
 } // namespace gamemd

@@ -23,14 +23,11 @@ struct DialogClass {
     unsigned int q208;  // 0x208
     void* q304;  // 0x304
     unsigned int q520;  // 0x520
-    void* q153094;  // 0x153094
-    unsigned int q628354;  // 0x628354
-    void* q22571209318;  // 0x22571209318
 // --- flat members (END) ---
-    static unsigned int * CopyTemplateStruct(void *aP1, void *a2);  // 0x623610 raw: _DWORD* CopyTemplateStruct(DialogClass*, _DWORD*)
-    static ATOM RegisterWinClasses();  // 0x60D450 G42.33 b3 static-form sync (broken ATOMRegisterWinClasses decl; RegisterWinClasses field vocab removed: name collision, zero field uses)
+    static unsigned int * CopyTemplateStruct(void *aP1, void *a2);
+    static ATOM RegisterWinClasses();
     int GetFlag(void *a1);
-    static int Reposition(int hWnd, int a2);
+    int Reposition(int hWnd, int a2);
 };
 
 } // namespace gamemd

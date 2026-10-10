@@ -8,19 +8,16 @@ namespace gamemd {
 struct MovementAI {
 // --- flat members (BEGIN) ---
     char m_Target[12];  // 0x0
-    void* q004;  // 0x4
-    unsigned int u32_8;  // 0x8
     char m_State[4];  // 0xC
-    unsigned int u32_10;  // 0x10
     char MovementAI_field_14[4];  // 0x14
     char MovementAI_field_18[4];  // 0x18
 // --- flat members (END) ---
-    char Check();
+    char Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     int IsPathMovementAllowed();
     int IsProgressAtEnd();
-    int MainFootClass(char a2);  // 0x514f70
-    int StepFootClass(int a1);  // 0x5164d0
-    static int Begin(...);  // w16g4 C3861 static supply (raw 0x006F9E50)  // 0x1C
+    int  MainFootClass(char a2);  // 0x514f70
+    int  StepFootClass(int a2, void *a1 = 0);  // 0x5164d0
+    static int Begin(...);
     unsigned int u32_100;  // 0x100 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
 };

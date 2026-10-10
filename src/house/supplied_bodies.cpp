@@ -52,20 +52,20 @@ char BaseClass::AddRef(int a2)
   int v3; // esi
   int v4; // edx
   int v5; // eax
-  _WORD *v6; // ecx
+  unsigned short *v6; // ecx
   int v7; // edx
 
   m_8 = this->m_8; /*0x42f49b*/
-  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x42f4a0*/
+  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x42f4a0*/
   {
     v3 = 0; /*0x42f4a2*/
     if ( m_8 <= 0 ) /*0x42f4a6*/
       return 1; /*0x42f4e0*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x42f4a8*/
-    v5 = *(_DWORD *)&this->m_1[3]; /*0x42f4ab*/
-    v6 = (_WORD *)(v4 + 4); /*0x42f4ae*/
+    v4 = *(unsigned int *)(a2 + 4); /*0x42f4a8*/
+    v5 = *(unsigned int *)&this->m_1[3]; /*0x42f4ab*/
+    v6 = (unsigned short *)(v4 + 4); /*0x42f4ae*/
     v7 = v4 - v5; /*0x42f4b1*/
-    while ( *(_DWORD *)v5 == *(_DWORD *)(v7 + v5) && *(_WORD *)(v5 + 4) == *v6 && *(_WORD *)(v5 + 6) == v6[1] ) /*0x42f4cd*/
+    while ( *(unsigned int *)v5 == *(unsigned int *)(v7 + v5) && *(unsigned short *)(v5 + 4) == *v6 && *(unsigned short *)(v5 + 6) == v6[1] ) /*0x42f4cd*/
     {
       ++v3; /*0x42f4cf*/
       v6 += 8; /*0x42f4d0*/
@@ -84,11 +84,11 @@ int BaseClass::Seek(int a2, int a3)
 {
   int v3; // edx
 
-  v3 = *(_DWORD *)&this->m_1[3] + 16 * a3; /*0x42f3fa*/
-  *(_DWORD *)a2 = *(_DWORD *)v3; /*0x42f402*/
-  *(_DWORD *)(a2 + 4) = *(_DWORD *)(v3 + 4); /*0x42f407*/
-  *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x42f40d*/
-  *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x42f413*/
+  v3 = *(unsigned int *)&this->m_1[3] + 16 * a3; /*0x42f3fa*/
+  *(unsigned int *)a2 = *(unsigned int *)v3; /*0x42f402*/
+  *(unsigned int *)(a2 + 4) = *(unsigned int *)(v3 + 4); /*0x42f407*/
+  *(unsigned char *)(a2 + 8) = *(unsigned char *)(v3 + 8); /*0x42f40d*/
+  *(unsigned int *)(a2 + 12) = *(unsigned int *)(v3 + 12); /*0x42f413*/
   return a2; /*0x42f416*/
 }
 } // namespace gamemd
@@ -132,10 +132,10 @@ int HouseClass::GetFactoryProducing(int a2)
   v2 = 0; /*0x4f83ca*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] <= 0 ) /*0x4f83d1*/
     return 0; /*0x4f841f*/
-  v4 = *(_DWORD *)&stru_A83D50.__pad_C8[28]; /*0x4f83d7*/
+  v4 = *(unsigned int *)&stru_A83D50.__pad_C8[28]; /*0x4f83d7*/
   while ( 1 ) /*0x4f83dc*/
   {
-    v5 = *(_DWORD *)(v4 + 4 * v2); /*0x4f83dc*/
+    v5 = *(unsigned int *)(v4 + 4 * v2); /*0x4f83dc*/
     if ( *(HouseClass **)(v5 + 108) == this ) /*0x4f83e2*/
       break; /*0x4f83e2*/
   LABEL_7:
@@ -143,13 +143,13 @@ int HouseClass::GetFactoryProducing(int a2)
       return 0; /*0x4f8417*/
   }
   if ( !AbstractClass::GetType((AbstractClass *)v5) /*0x4f8407*/
-    || (Type = AbstractClass::GetType(*(AbstractClass **)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v2)),
-        (*(int (__thiscall **)(int))(*(_DWORD *)Type + 132))(Type) != a2) )
+    || (Type = AbstractClass::GetType(*(AbstractClass **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v2)),
+        (*(int (__thiscall **)(int))(*(unsigned int *)Type + 132))(Type) != a2) )
   {
-    v4 = *(_DWORD *)&stru_A83D50.__pad_C8[28]; /*0x4f8409*/
+    v4 = *(unsigned int *)&stru_A83D50.__pad_C8[28]; /*0x4f8409*/
     goto LABEL_7; /*0x4f8409*/
   }
-  return *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v2); /*0x4f8419*/
+  return *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v2); /*0x4f8419*/
 }
 } // namespace gamemd
 
@@ -360,7 +360,7 @@ void HouseClass::Update_TogglePower(double a2)
     {
       Ticks = Timer_GetTicks(); /*0x4f8614*/
       v120 = 120; /*0x4f8618*/
-      while ( (unsigned __int8)Audio::IsPlaying() ) /*0x4f861c*/
+      while ( (uint8_t)Audio::IsPlaying() ) /*0x4f861c*/
       {
         v120 = v120; /*0x4f8629*/
         if ( Ticks != -1 ) /*0x4f8630*/
@@ -381,8 +381,8 @@ void HouseClass::Update_TogglePower(double a2)
         {
           if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x4f86c0*/
             && dword_A8B23C
-            && (*(unsigned __int8 (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)
-            && (*(unsigned __int8 (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 8))(dword_A8B23C) )
+            && (*(uint8_t (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)
+            && (*(uint8_t (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 8))(dword_A8B23C) )
           {
             v20 = v3->q140[172]; /*0x4f86ce*/
             if ( !*(unsigned int *)&dword_A8B238 ) /*0x4f86d4*/
@@ -425,7 +425,7 @@ void HouseClass::Update_TogglePower(double a2)
   LABEL_70:
     Ticks = Timer_GetTicks(); /*0x4f8732*/
     v120 = 120; /*0x4f873f*/
-    while ( (unsigned __int8)Audio::IsPlaying() ) /*0x4f8743*/
+    while ( (uint8_t)Audio::IsPlaying() ) /*0x4f8743*/
     {
       v120 = v120; /*0x4f8753*/
       if ( Ticks != -1 ) /*0x4f8759*/
@@ -485,7 +485,7 @@ void HouseClass::Update_TogglePower(double a2)
     if ( dword_A83D4C->nextObject == v3->nextObject
       && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4)
       && dword_A8B23C
-      && !(*(unsigned __int8 (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) )
+      && !(*(uint8_t (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) )
     {
       if ( (byte_A8F03C & 1) == 0 ) /*0x4f8873*/
       {
@@ -509,7 +509,7 @@ void HouseClass::Update_TogglePower(double a2)
     {
       Ticks = 0; /*0x4f8956*/
       v119 = 0; /*0x4f895a*/
-      v30 = (Object *)CellCoord_To_CellObj((void *)&dword_87F7E8, (__int16 *)&v3[31].q140[320]); /*0x4f895e*/
+      v30 = (Object *)CellCoord_To_CellObj((void *)&dword_87F7E8, (int16_t *)&v3[31].q140[320]); /*0x4f895e*/
       ClosestObjectCell = ObjectClass_FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
       v32 = ClosestObjectCell; /*0x4f896a*/
       if ( ClosestObjectCell ) /*0x4f896e*/

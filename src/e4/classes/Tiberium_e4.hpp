@@ -12,12 +12,8 @@ struct Tiberium {
     void* q134;  // 0x134
     void* q308;  // 0x308
     void* q1910;  // 0x1910
-    void* q1388834;  // 0x1388834
-    void* q20482100;  // 0x20482100
-    void* q621877794377990;  // 0x621877794377990
-    void* q1256072821702336448534;  // 0x1256072821702336448534
 // --- flat members (END) ---
-    int ProcessGrowth(int a2, MapResourceClass * aP2, char _140);  // 0x59D510
-    VectorClass_flat * * CalculateSpread(MouseClass * aP1, MapResourceClass * aP2, short * a3, int a5, MouseClass * aP5, MapResourceClass * aP6, double * a7);  // 0x59E740
+    int  ProcessGrowth(int a2, double a3, char a4);  // 0x59D510
+    VectorClass_flat * *  CalculateSpread(int a2, int16_t * a3, int16_t * a4, int a5, char * a6, double * a7, double * a8);  // 0x59E740
 };
 } // namespace gamemd

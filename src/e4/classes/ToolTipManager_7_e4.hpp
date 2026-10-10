@@ -12,6 +12,6 @@ struct ToolTipManager_7 {
     int Capacity;  // 0x8
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x724F40
+    DynamicVector *  QueryInterface(char a2);  // 0x724F40
 };
 } // namespace gamemd

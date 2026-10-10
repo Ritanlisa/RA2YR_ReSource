@@ -23,24 +23,18 @@ struct SuperWeaponTypeClass {
     char abstractFlags[4];  // 0x14
     char ImpatientVoice[4];  // 0x16
     char nextArrayIndex[4];  // 0x18
-    unsigned int q01A;  // 0x1A
     char referenceCount[4];  // 0x1C
-    bool q01D;  // 0x1D
     SHPStruct* NeedsSaveOrLink;  // 0x20
     char ActionValue[4];  // 0x24
     char SpecialSound[4];  // 0x28
-    bool q02B;  // 0x2B
     char StartSound[4];  // 0x2C
     BuildingTypeClass* AuxBuilding;  // 0x30
-    unsigned char q031;  // 0x31
     SHPStruct* SidebarImage;  // 0x32
     char SidebarImageFile_0x18;  // 0x34
     unsigned char zero_E4;  // 0x35
     bool UseChargeDrain;  // 0x36
     bool IsPowered;  // 0x37
     bool DisableableFromShell;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     char zero_3C[1];  // 0x3C
     unsigned char UINameLabel;  // 0x3D
     bool AIDefendAgainst;  // 0x40
@@ -49,78 +43,44 @@ struct SuperWeaponTypeClass {
     char PreDependent[4];  // 0x44
     bool ShowTimer;  // 0x48
     bool ManualControl;  // 0x49
-    bool q04A;  // 0x4A
     float Range;  // 0x4C
-    unsigned char q04F;  // 0x4F
     char LineMultiplier[4];  // 0x50
-    bool q054;  // 0x54
-    void* q057;  // 0x57
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q05D;  // 0x5D
     void * UIName;  // 0x60
     unsigned char Name;  // 0x64
-    char q068[4];  // 0x68
-    ObjectClass* q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    bool q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q07C;  // 0x7C
-    char q080[4];  // 0x80
-    bool q084;  // 0x84
-    unsigned char q088;  // 0x88
-    void* q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
-    unsigned int q094;  // 0x94
     unsigned int tail_95;  // 0x95
     char ArrayIndex[4];  // 0x98
     WeaponTypeClass* WeaponType;  // 0x9C
     char RechargeVoice[4];  // 0xA0
-    char q0A4[4];  // 0xA4
-    char q0A8[4];  // 0xA8
-    unsigned char q0A9;  // 0xA9
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
+    char ChargingVoice_d[4];  // 0xA4
+    char ImpatientVoice_d[4];  // 0xA8
     char SuspendVoice[4];  // 0xAC
     char RechargeTime[4];  // 0xB0
     BuildingTypeClass* Type;  // 0xB4
-    SHPStruct* q0B8;  // 0xB8
-    unsigned char q0B9;  // 0xB9
-    char q0BC[4];  // 0xBC
-    char q0C0[4];  // 0xC0
-    unsigned int q0C3;  // 0xC3
-    char q0C4[4];  // 0xC4
-    BuildingTypeClass* q0C8;  // 0xC8
+    SHPStruct* SidebarImage_d;  // 0xB8
+    char ActionValue_d[4];  // 0xBC
+    char SpecialSound_d[4];  // 0xC0
+    char StartSound_d[4];  // 0xC4
+    BuildingTypeClass* AuxBuilding_d;  // 0xC8
     char SidebarImageFile;  // 0xCC
-    unsigned char q0D0;  // 0xD0
-    unsigned int u32_D4;  // 0xD4
-    void* q0D8;  // 0xD8
-    void* q0DC;  // 0xDC
-    void* q0E0;  // 0xE0
-    unsigned char q0E4;  // 0xE4
-    bool q0E5;  // 0xE5
-    bool q0E6;  // 0xE6
-    bool q0E7;  // 0xE7
+    unsigned char zero_E4_d;  // 0xE4
+    bool UseChargeDrain_d;  // 0xE5
+    bool IsPowered_d;  // 0xE6
+    bool DisableableFromShell_d;  // 0xE7
     char FlashSidebarTabFrames[4];  // 0xE8
-    bool q0EC;  // 0xEC
-    bool q0ED;  // 0xED
-    bool q0EE;  // 0xEE
-    unsigned char q0EF;  // 0xEF
-    char q0F0[4];  // 0xF0
-    bool q0F4;  // 0xF4
-    bool q0F5;  // 0xF5
-    unsigned char q0F6;  // 0xF6
-    void* q0F7;  // 0xF7
-    float q0F8;  // 0xF8
-    unsigned int q0F9;  // 0xF9
-    unsigned char q0FB;  // 0xFB
-    char q0FC[4];  // 0xFC
+    bool AIDefendAgainst_d;  // 0xEC
+    bool PreClick_d;  // 0xED
+    bool PostClick_d;  // 0xEE
+    char PreDependent_d[4];  // 0xF0
+    bool ShowTimer_d;  // 0xF4
+    bool ManualControl_d;  // 0xF5
+    float Range_d;  // 0xF8
+    char LineMultiplier_d[4];  // 0xFC
 // --- flat members (END) ---
     AbstractClass * * IsAvailable();
     unsigned int * SDDTOR(char a2);
-    int FindByName();
+    int FindByName(void *a1 = 0);
     int FindFirstOfAction();
-    int FindOrCreate(INIClass * aP1, unsigned char * a2, CCINIClass * aP3);
+    int FindOrCreate(INIClass * a2, unsigned char * a3, CCINIClass * a4);
     int SD_vt03(int a1, unsigned int * a2);
     int SD_vt11();
     int SD_vt12();
@@ -130,8 +90,8 @@ struct SuperWeaponTypeClass {
     int SaveLoad_Prefix(int a1, int a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     SuperWeaponTypeClass(void * aP1);
-    int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4);
-    int Construct(char *aP1);
+    int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4, void *a1 = 0);
+    int Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     void* SD_vt25(unsigned char *** aP1);
     unsigned int q024;  // 0x24 (offset-truth)
     unsigned int q100;  // 0x100 (ml)
@@ -166,6 +126,10 @@ struct SuperWeaponTypeClass {
     unsigned int u32_158;  // 0x158 (offset-truth)
     unsigned int u32_178;  // 0x178 (offset-truth)
     unsigned int u32_17C;  // 0x17C (offset-truth)
+    static double MouseOverObject(...);  // plateau: C2039/C3861 stub
+    static double __pad_5558(...);  // plateau: C2039/C3861 stub
+    static double u32_15C(...);  // plateau: C2039/C3861 stub
+    static double u32_160(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

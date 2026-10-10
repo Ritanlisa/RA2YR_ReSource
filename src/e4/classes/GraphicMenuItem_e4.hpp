@@ -8,11 +8,9 @@ namespace gamemd {
 struct GraphicMenuItem {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
 // --- flat members (END) ---
     void Dtor(void *a1);
-    static unsigned int * Constructor(void *aP1, void *a2);  // 0x4F3A50 raw (ptr-a2 form; site 0x4f2f21)
-    static unsigned int * Constructor(void *aP1, int a2);  // 0x4F3A50 raw (int-a2 form; site 0x4f3c50)
+    static unsigned int * Constructor(void *aP1, void *a2);
 };
 
 } // namespace gamemd

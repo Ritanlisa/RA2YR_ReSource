@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct Char {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    int Swap(char aP1);
+    int Swap(char aP1, void *a1 = 0);
 };
 
 } // namespace gamemd

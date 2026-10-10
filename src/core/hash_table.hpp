@@ -31,7 +31,7 @@ public:
     static int InsertOrdered(void* table, const void* entry, int a2); // 0x4F4410
 
     // IDA 0x69D8C0 area
-    void Reset();
+    int Reset();
 
     uint32_t    hash_state_0;       // 0x00
     uint32_t    hash_state_4;       // 0x04
@@ -92,7 +92,7 @@ public:
     CRC32();
 
     // IDA 0x69E000
-    static uint32_t Compute(unsigned __int8 *a1, int a2, int a3); // 0x4A1FB0
+    static uint32_t Compute(uint8_t *a1, int a2, int a3); // 0x4A1FB0
 
     uint32_t    m_CRC;          // 0x00
     uint32_t    m_Count;        // 0x04

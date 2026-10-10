@@ -34,13 +34,15 @@ struct Mouse {
     unsigned int u32_5560;
     unsigned int u32_5568;
     void* vfptr;  // minimal E2 declaration
-    int SetBounds(const void *aP1);  // 0x4A8BF0
-    int SetCursor(int aP1, char aP2);  // 0x5BDC80
-    HWND ReleaseCapture();  // 0x6938C0
-    void DrawCursor(int *aP1, int aP2, int a4);
+    int  SetBounds(void * a2, void *a1 = 0);  // 0x4A8BF0
+    int  SetCursor(int a2, char a3, void *a1 = 0);  // 0x5BDC80
+    HWND ReleaseCapture(void *a1 = 0);  // 0x6938C0
+    void DrawCursor(int * aP1, int aP2, int a4);
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
-    BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
-    static int IsButtonDown(unsigned int a1);  // 0x54F5C0 G42.35 static-form sync (truth __stdcall; ui/supplied sites 0x4E1761+)
+    BOOL  IsButtonDown(uint8_t a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400
+    static double u32_4C(...);  // plateau: C2039/C3861 stub
+    static double u32_50(...);  // plateau: C2039/C3861 stub
+    static double u32_54(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -7,22 +7,22 @@
 #include "e4/e4_protos.h"
 
 // 0x67C0B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x67c0b3*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
-  if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x67c0c0*/
+  v3 = *(void **)&Block->q004; /*0x67c0b3*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x67c0b6*/
+  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x67c0c0*/
   {
-    RA2_OPDEL(v3); /*0x67c0c8*/
-    *(_DWORD *)&Block->m_1[3] = 0; /*0x67c0d0*/
+    operator delete((void *)(v3)); /*0x67c0c8*/
+    *(unsigned int *)&Block->q004 = 0; /*0x67c0d0*/
   }
-  IDA_BYTE1(Block->m_C) = 0; /*0x67c0db*/
-  Block->m_8 = 0; /*0x67c0e1*/
+  (((unsigned char *)&(*(unsigned int *)&Block->q00C))[1]) = 0; /*0x67c0db*/
+  *(unsigned int *)&Block->q008 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
-    RA2_OPDEL(Block); /*0x67c0eb*/
-  return Block->q000; /*0x67c0f5*/
-}
+    operator delete((void *)(Block)); /*0x67c0eb*/
+  return Block->__pad_0; /*0x67c0f5*/
+}  // G42.18 ns repair
 } // namespace gamemd

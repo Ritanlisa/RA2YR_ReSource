@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct Matrix {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     unsigned int * Copy12Float(int a2);
-    int Scale(float a2);
+    int Scale(float a2, void *a1 = 0);
 };
 
 } // namespace gamemd

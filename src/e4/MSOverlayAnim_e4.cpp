@@ -7,11 +7,11 @@
 #include "e4/e4_protos.h"
 
 // 0x5CEB50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void MSOverlayAnim::StubReturnFalse(int a1)
 {
   ; /*0x5ceb50*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5CEB80
 namespace gamemd {
@@ -19,17 +19,17 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*((_DWORD *)Block + 7); /*0x5ceb83*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&MSShapeAnim_vftable; /*0x5ceb86*/
-  if ( v3 && *((_BYTE *)Block + 60) ) /*0x5ceb90*/
+  v3 = (void *)*((unsigned int *)Block + 7); /*0x5ceb83*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSShapeAnim; /*0x5ceb86*/
+  if ( v3 && *((unsigned char *)Block + 60) ) /*0x5ceb90*/
   {
-    RA2_OPDEL(v3); /*0x5ceb98*/
-    *((_DWORD *)Block + 7) = 0; /*0x5ceba0*/
-    *((_BYTE *)Block + 60) = 0; /*0x5ceba7*/
+    operator delete((void *)(v3)); /*0x5ceb98*/
+    *((unsigned int *)Block + 7) = 0; /*0x5ceba0*/
+    *((unsigned char *)Block + 60) = 0; /*0x5ceba7*/
   }
-  *(_DWORD *)Block->q000 = &(void*)(void*)&MSAnim_vftable; /*0x5cebaf*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
-    RA2_OPDEL(Block); /*0x5cebba*/
-  return Block->q000; /*0x5cebc4*/
+    operator delete((void *)(Block)); /*0x5cebba*/
+  return Block->__pad_0; /*0x5cebc4*/
 }
 } // namespace gamemd

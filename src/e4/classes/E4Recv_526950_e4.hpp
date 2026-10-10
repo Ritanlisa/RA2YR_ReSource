@@ -8,18 +8,6 @@ struct E4Recv_526950 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M44;  // 0x2C
-    unsigned int q044;  // 0x44
-    unsigned int q068;  // 0x68
-    unsigned int q104;  // 0x104
-    unsigned int q260;  // 0x260
-    unsigned int q608;  // 0x608
-    unsigned int q1544;  // 0x1544
-    unsigned int q5444;  // 0x5444
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q1612096024928;  // 0x1612096024928
 // --- flat members (END) ---
     int sub_526950();  // 0x526950
 };

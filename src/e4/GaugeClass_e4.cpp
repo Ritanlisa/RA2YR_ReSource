@@ -12,11 +12,11 @@
 #include "e4/classes/ControlClass_e4.hpp"
 
 // 0x4E30A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GaugeClass::Stub()
 {
-  return this->u32_D; /*0x4e30a3*/
-}
+  return this->u32_34; /*0x4e30a3*/
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4E30B0
 namespace gamemd {
@@ -32,7 +32,7 @@ GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
 {
   GadgetClass::Dtor((GadgetClass *)Block); /*0x4e30d3*/
   if ( (a2 & 1) != 0 ) /*0x4e30dd*/
-    RA2_OPDEL(Block); /*0x4e30e0*/
-  return Block->q000; /*0x4e30ea*/
+    operator delete((void *)(Block)); /*0x4e30e0*/
+  return Block->__pad_0; /*0x4e30ea*/
 }
 } // namespace gamemd

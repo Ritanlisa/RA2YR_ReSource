@@ -13,14 +13,13 @@ struct VectorClass_ptr_PendingCellClass_LightSourceClass {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int Get(int a2, void *a2_2);  // 0x5552B0
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x555520
-    char Release(int a2, unsigned int * a3);  // 0x555560
-    void Remove(void *a1_1);  // 0x555610
-    int GetSize(unsigned int * a2);  // 0x555640
-    unsigned int GetCapacity(int a2);  // 0x555680
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x555820
+    int  Get(int a2, void *a1 = 0);  // 0x5552B0
+    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x555520
+    char  Release(int a2, unsigned int * a3);  // 0x555560
+    void Remove(void *a1_1, void *a1 = 0);  // 0x555610
+    int  GetSize(unsigned int * a2);  // 0x555640
+    unsigned int  GetCapacity(int a2);  // 0x555680
+    VectorClass_flat *  QueryInterface(char a2);  // 0x555820
 };
 } // namespace gamemd

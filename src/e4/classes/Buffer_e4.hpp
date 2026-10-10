@@ -11,7 +11,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 #define GAMEMD_G2_Buffer_DEF 1
 struct Buffer {
 // --- flat members (BEGIN) ---
-    unsigned int Buffer_field_00;  // 0x0
+    void* ;  // 0x0
     unsigned int Buffer_field_04;  // 0x4
     unsigned int Buffer_field_08;  // 0x8
     unsigned int Buffer_field_0C;  // 0xC
@@ -24,7 +24,7 @@ struct Buffer {
     unsigned int Buffer_field_24;  // 0x24
 // --- flat members (END) ---
     unsigned char m_1[16];  // G42.33 b3 flat-carrier vocab ([3] 索引基)
-    unsigned int * Init(int a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
+    unsigned int * Init(int a2, int Size);
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2, int a3, int aP1);
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers();
@@ -32,10 +32,10 @@ struct Buffer {
     unsigned int * Init(int a2, int Size);
     void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
     int Cleanup();  // 0x42f7c0
-    int UpdateVolumeSettings();  // 0x40A6D0 G42.33 b3 supplied-body sync
-    char * FillCircularBufferScroll(int a2, int a3, unsigned short a4);  // 0x410ED0 G42.33 b3 supplied-body sync
-    _DWORD * Init(int a2, int Size, int aP2, int aP3, int aP1);
-    static unsigned int * Init(Buffer * aP1, int a2, int Size);  // G57w10-S raw 0x0043AD00 (was C2597 interim stub)
+    int UpdateVolumeSettings(void *a1 = 0);  // 0x40A6D0 G42.33 b3 supplied-body sync
+    char *  FillCircularBufferScroll(int a2, int a3, uint16_t a4);  // 0x410ED0
+    unsigned int * Init(int a2, int Size, int aP2, int aP3, int aP1);
+    static unsigned int * Init(Buffer * aP1, int a2, int Size);
     static int Cleanup(void *aP0);  // G57a1 static-form mirror
     static int AllocateCodecFrameBuffers(void *aP0);  // G57a1 static-form mirror
     static int * RotateBufferCrypto(void *aP0, int aP1);  // G57a1 static-form mirror
@@ -48,6 +48,10 @@ struct Buffer {
     unsigned int u32_744;  // 0x744 (offset-truth)
     unsigned int u32_748;  // 0x748 (offset-truth)
     unsigned int u32_88;  // 0x88 (offset-truth)
+    static double Items(...);  // plateau: C2039/C3861 stub
+    static double __pad_008(...);  // plateau: C2039/C3861 stub
+    static double u32_168(...);  // plateau: C2039/C3861 stub
+    static double u32_AC(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

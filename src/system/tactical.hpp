@@ -51,8 +51,7 @@ struct ColorScheme;
 // CSP: TacticalClass matched via T3
 class TacticalClass : public AbstractClass
 {
-public:
-    static constexpr AbstractType kObjectDeriveId = AbstractType::TacticalMap;
+public: static constexpr AbstractType kObjectDeriveId = (const int)(AbstractType::TacticalMap);
 
     // design: inline accessor, inlined at all call sites
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;
@@ -127,7 +126,7 @@ int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-
 
     // Cell visibility
     void CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk);  // 0x480350
-    unsigned int * PixelToCellCheck(int * a1);  // 0x653760  G42.34: sig sync to cache truth (_DWORD* __thiscall(this, int*)); tree Point2D form had no callers
+    unsigned int * PixelToCellCheck(int * a1);  // 0x653760  G42.34: sig sync to cache truth (unsigned int* __thiscall(this, int*)); tree Point2D form had no callers
     CellStruct ScreenToCellLookup(const Point2D& screen) const;  // 0x656750
     bool IsOccupiedByTechno(const CellStruct& cell) const;  // 0x6DA380
     bool CheckUnitOverlap(const CellStruct& cell, int facing) const;  // 0x6D9B50
@@ -138,7 +137,7 @@ int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-
     void ProcessMouseClick(int x, int y);  // 0x6539D0
 
     // Helpers
-    unsigned int * TransformPixel(unsigned int * a1, unsigned int * a2);  // 0x6D2280  G42.34: sig sync to cache truth (_DWORD* __thiscall(this, _DWORD*, _DWORD*)); tree Point2D form had no callers
+    unsigned int * TransformPixel(unsigned int * a1, unsigned int * a2);  // 0x6D2280  G42.34: sig sync to cache truth (unsigned int* __thiscall(this, unsigned int*, unsigned int*)); tree Point2D form had no callers
     uint32_t InterpolateColor(uint32_t elapsed_ms);  // 0x631E50
     bool DecrementCounter(uint32_t delta); // 0x631EE0
     void MapSpecialDrawMode();  // 0x70F0B0
@@ -254,7 +253,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     char CompareVector(int a1);  // 0x5C0AD0
     int ReallocVector(int a1, void* a2);  // 0x5C0C50
     int FindInVector(void* a1);  // 0x5C0D00
-    unsigned int * DestroyVector(unsigned int * a1, char a2);  // 0x5C0D80  G42.34: sig sync to cache truth (_DWORD* __thiscall(_DWORD *Block, char))
+    unsigned int * DestroyVector(unsigned int * a1, char a2);  // 0x5C0D80  G42.34: sig sync to cache truth (unsigned int* __thiscall(unsigned int *Block, char))
     int processInput(int a1);  // 0x5D4AD0
     void* saveConfig(int a1);  // 0x631E30
     void FreeResources();  // 0x655A90

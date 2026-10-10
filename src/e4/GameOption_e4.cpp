@@ -9,10 +9,12 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x69ACC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GameOption::GetField()
 {
-  return *(_DWORD *)this->q18C; /*0x69acc8*/
+
+  return *(unsigned int *)this->field_18C; /*0x69acc8*/
+
 }
 } // namespace gamemd
 // 0x69ACD0
@@ -25,7 +27,7 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   if ( aP1 ) /*0x69acd9*/
   {
     result = wcsncpy((wchar_t *)Destination, aP1, 0x2Cu); /*0x69acdf*/
-    *(_WORD *)&Destination->q000[86] = 0; /*0x69ace7*/
+    *(unsigned short *)&Destination->__pad_0[86] = 0; /*0x69ace7*/
   }
   else
   {
@@ -43,13 +45,13 @@ void * GameOption::SetDigest(char *aP1)
 
   if ( aP1 ) /*0x69ad89*/
   {
-    result = strncpy(&this->u32_570, aP1, 0x20u); /*0x69ad95*/
-    *(&this->u32_949) = 0; /*0x69ad9d*/
+    result = strncpy(((char *)&this->q148 + 20), aP1, 0x20u); /*0x69ad95*/
+    this->u32_5EC = 0; /*0x69ad9d*/
   }
   else
   {
-    result = (char *)(strlen(g_Str_No_Digest) + 1); /*0x69adb3*/
-    qmemcpy(&this->u32_570, g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
+    result = (char *)(strlen((const char *)(g_Str_No_Digest)) + 1); /*0x69adb3*/
+    memcpy(((char *)&this->q148 + 20),(const void *)(g_Str_No_Digest), (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
 }
@@ -58,6 +60,7 @@ void * GameOption::SetDigest(char *aP1)
 namespace gamemd {
 char GameOption::CheckDuplicate()
 {
+
   LPARAM *v0; // eax
 
   v0 = &dword_A8DA90; /*0x5e9566*/
@@ -67,5 +70,6 @@ char GameOption::CheckDuplicate()
       return 1; /*0x5e957b*/
   }
   return 0; /*0x5e957b*/
+
 }
 } // namespace gamemd

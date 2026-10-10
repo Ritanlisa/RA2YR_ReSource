@@ -7,10 +7,9 @@ namespace gamemd {
 
 struct OptionQueue {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned int u32_1;  // 0x1
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    int PushEntry(void * a2);
+    int PushEntry(void * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
 };
 
 } // namespace gamemd

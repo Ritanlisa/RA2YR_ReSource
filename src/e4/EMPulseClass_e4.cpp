@@ -9,11 +9,11 @@
 #include "e4/classes/Cell_e4.hpp"
 
 // 0x4C5AA0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int EMPulseClass::StubReturn52()
 {
   return 52; /*0x4c5aa5*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4C5AB0
 namespace gamemd {
@@ -29,27 +29,27 @@ EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
   int v3; // eax
   EMPulseClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)a3->q000 = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ac4*/
-  a3->EMPulseClass_field_0x04 = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5aca*/
-  a3->EMPulseClass_field_0x08 = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad1*/
-  a3->EMPulseClass_field_0x0C = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad8*/
+  *(unsigned int *)a3->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
+  a3->EMPulseClass_field_0x04 = (int)&vt_EMPulseClass; /*0x4c5aca*/
+  a3->EMPulseClass_field_0x08 = (int)&vt_EMPulseClass; /*0x4c5ad1*/
+  a3->EMPulseClass_field_0x0C = (int)&vt_EMPulseClass; /*0x4c5ad8*/
   if ( byte_A8E9A0 ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
-  v5 = a3; /*0x4c5b06*/
-  v3 = (*(int (__thiscall **)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
+  v5 = (gamemd::EMPulseClass *)(a3); /*0x4c5b06*/
+  v3 = (*(int (**)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
   if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
   {
     do /*0x4c5b3d*/
     {
       ++v3; /*0x4c5b2d*/
-      *((_DWORD *)dword_8A3874 + v3 - 1) = *((_DWORD *)dword_8A3874 + v3); /*0x4c5b31*/
+      *((unsigned int *)dword_8A3874 + v3 - 1) = *((unsigned int *)dword_8A3874 + v3); /*0x4c5b31*/
     }
     while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
   }
-  AbstractClass::DTOR((AbstractClass *)a3); /*0x4c5b41*/
+  ((AbstractClass *)((AbstractClass *)a3))->DTOR(); /*0x4c5b41*/
   if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
-    RA2_OPDEL(a3); /*0x4c5b4e*/
-  return (void **)a3; /*0x4c5b58*/
+    operator delete((void *)(a3)); /*0x4c5b4e*/
+  return (gamemd::EMPulseClass *)((void **)a3); /*0x4c5b58*/
 }
 } // namespace gamemd

@@ -15,7 +15,7 @@ extern char a0Dd_0[];  // data: 0x84e594 truth(IDA G42.57w9)
 
 
 // 0x7B7E40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * Format)
 {
   size_t v5; // eax
@@ -24,16 +24,16 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
 
   swprintf(String, (const size_t)a0Dd_0, Format); /*0x7b7e58*/
   swprintf(String, (const size_t)String, a1); /*0x7b7e68*/
-  *aP0 = 0; /*0x7b7e76*/
+  *(_DWORD *)aP0 = 0; /*0x7b7e76*/
   if ( String ) /*0x7b7e7c*/
     v5 = wcslen(String) + 1; /*0x7b7e8b*/
   else
     v5 = 1; /*0x7b7e8e*/
-  v6 = (wchar_t *)RA2_OPNEW(2 * v5); /*0x7b7e96*/
+  v6 = (wchar_t *)operator new(2 * v5); /*0x7b7e96*/
   *aP0 = v6; /*0x7b7ea2*/
   *v6 = 0; /*0x7b7ea4*/
   if ( String ) /*0x7b7eab*/
-    wcscpy(*aP0, String); /*0x7b7eb5*/
-  return aP0; /*0x7b7ebf*/
-}
+    wcscpy((wchar_t *)(*aP0), String); /*0x7b7eb5*/
+  return (wchar_t **)(aP0); /*0x7b7ebf*/
+}  // G42.18 ns repair
 } // namespace gamemd

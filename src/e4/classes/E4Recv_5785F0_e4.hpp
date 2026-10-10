@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_5785F0 {
     void* vfptr;  // minimal E2 declaration
-    bool  IsCoordVisibleMap(void * aP1);  // 0x5785F0
+    bool  IsCoordVisibleMap(unsigned int * a2);  // 0x5785F0
 };
 } // namespace gamemd

@@ -15,36 +15,21 @@ struct SpawnManagerClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TechnoClass* owner;  // 0x24
     unsigned int IsAllocated;  // 0x25
     HouseClass* spawnOwner;  // 0x28
-    bool q02B;  // 0x2B
     HouseClass* spawnType;  // 0x2C
     char spawnCount[4];  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char SpawnManagerClass_field_34[4];  // 0x34
-    unsigned int spawns;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
+    void* ;  // 0x38
     char spawnVectorCount[4];  // 0x3C
-    unsigned int q03D;  // 0x3D
     char spawnVectorCapacity[4];  // 0x40
-    bool q042;  // 0x42
     char creationFrame[4];  // 0x44
-    unsigned char u8_45;  // 0x45
-    void* q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    void* q050;  // 0x50
     char SpawnManagerClass_field_54[4];  // 0x54
     char SpawnManagerClass_field_58[4];  // 0x58
     char SpawnManagerClass_field_5C[4];  // 0x5C
@@ -65,10 +50,17 @@ struct SpawnManagerClass {
     int StubReturn116();
     int StubReturn65();
     int ddtor(int a1, unsigned int * a2);
-    unsigned int * Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2);
+    unsigned int * Constructor_6B83A0(int aP1, int aP2);
     void Constructor_SpawnManagerClass();
-    void* Constructor(void *a1, void *a2, void *a3);
+    void* Constructor(void *a1, void *a2, void *a3, void *a4 = 0);
     SpawnManagerClass * ProcessEvent(void * Block, char a2);
+    static double __pad_048(...);  // plateau: C2039/C3861 stub
+    static double __pad_48(...);  // plateau: C2039/C3861 stub
+    static double u32_45(...);  // plateau: C2039/C3861 stub
+    static double u32_4C(...);  // plateau: C2039/C3861 stub
+    static double uniqueId0(...);  // plateau: C2039/C3861 stub
+    static double vtable24(...);  // plateau: C2039/C3861 stub
+    static double vtable46(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct Triple {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    unsigned int * Set(int a2, int a3, int a4);
+    unsigned int * Set(int aP1, int aP2, int aP3);
     char __tail_0[4];  // 0x0 (ml)
 };
 

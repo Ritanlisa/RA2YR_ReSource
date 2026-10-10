@@ -18,43 +18,35 @@ struct TriggerClass {
     int uniqueId;  // 0x10
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
-    bool q017;  // 0x17
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TriggerTypeClass* buildingType;  // 0x24
     TriggerClass* nextTrigger;  // 0x28
-    bool q02B;  // 0x2B
     HouseClass* house;  // 0x2C
     bool destroyed;  // 0x30
     unsigned char align31;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char timer[12];  // 0x34
-    TriggerClass* q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    AbstractClass* q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     unsigned int occuredEvents;  // 0x40
-    bool q042;  // 0x42
     bool enabled;  // 0x44
     unsigned char align45;  // 0x45
 // --- flat members (END) ---
     static char FindByEventType(char a1);
-    int GetValue();
+    int GetValue(void *a1 = 0, void *a2 = 0);
     int LoadTrigger(AbstractClass * aP0, int aP1);
     char RegisterEvent(int a2, int a3, char a4, char a5, int a6);
     int SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn38();
     int StubReturn72();
     int ddtor(int a1, unsigned int * a2);
-    static void NotifyLocalChanged(TriggerClass * aP1, int a2);  // G57w10-S raw 0x007263D0 (was C2597 interim stub)
-    char EvaluateCondition(TriggerClass *a2, unsigned int *a3, char a4);  // 0x41e720
+    static void NotifyLocalChanged(TriggerClass * aP1, int a2);
+    char  EvaluateCondition(void * a2, unsigned int * a3, char a4, void *a1 = 0);  // 0x41e720
     int ProcessEvents();  // 0x726e00
     int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);
     unsigned int u32_54;  // 0x54 (offset-truth)
+    static double abstractFlags2(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -7,17 +7,19 @@ namespace gamemd {
 
 struct MPBattleClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    bool q00A;  // 0xA
-    bool q00B;  // 0xB
-    bool q00D;  // 0xD
-    bool q00E;  // 0xE
-    bool q010;  // 0x10
-    bool q014;  // 0x14
-    unsigned char q015;  // 0x15
-    bool q020;  // 0x20
+    unsigned int MPGameModeClass_field_4;  // 0x4
+    int MPTeams;  // 0x8
+    int CSFTitle;  // 0xC
+    int CSFTooltip;  // 0x10
+    int MPModeIndex;  // 0x14
+    int INIFilename;  // 0x18
+    int MapFilter;  // 0x1C
+    unsigned int AIAllowed;  // 0x20
+    int INI;  // 0x24
+    unsigned int AlliesAllowed;  // 0x28
+    unsigned int WOLTourney;  // 0x29
+    unsigned int WOLClanTourney;  // 0x2A
+    unsigned int MustAlly;  // 0x2B
 // --- flat members (END) ---
     int areTeamChangesAllowed();
     int drawTeamDropdown();
@@ -62,6 +64,7 @@ struct MPBattleClass {
     void validateOwner();
     void validatePlayer();
     void validateStartPosition();
+    static double MPGameModeClass(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

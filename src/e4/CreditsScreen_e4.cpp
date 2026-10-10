@@ -23,11 +23,12 @@
 #include "e4/classes/Time_e4.hpp"
 
 // 0x531A00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
+
   int result; // eax
-  _DWORD *WindowLongA; // eax
+  unsigned int *WindowLongA; // eax
   HWND DlgItem; // esi
   wchar_t *String; // eax
   char *ModuleVersion; // eax
@@ -45,10 +46,10 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
-  WindowLongA = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x531a38*/
+  WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
   if ( a2 == 273 ) /*0x531a44*/
   {
-    if ( (_WORD)a3 && (unsigned __int16)a3 <= 2u ) /*0x531c19*/
+    if ( (unsigned short)a3 && (unsigned __int16)a3 <= 2u ) /*0x531c19*/
       *WindowLongA = (unsigned __int16)a3; /*0x531c1b*/
     return 0; /*0x531c1b*/
   }
@@ -85,6 +86,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   CreditsScreen::Init(Buffer); /*0x531bea*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
   return 0; /*0x531bfe*/
+
 }
 } // namespace gamemd
 // 0x4A3C00

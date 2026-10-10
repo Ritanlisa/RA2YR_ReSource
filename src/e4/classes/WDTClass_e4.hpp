@@ -7,10 +7,9 @@ namespace gamemd {
 
 struct WDTClass {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
-    int GetCellType(unsigned int a2);
+    int GetCellType(unsigned int a2, void *a1 = 0);
 };
 
 } // namespace gamemd

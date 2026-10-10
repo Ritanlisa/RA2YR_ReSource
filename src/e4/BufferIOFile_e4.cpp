@@ -12,23 +12,27 @@
 #include "e4/classes/TabClass_e4.hpp"
 
 // 0x47A9D0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BufferIOFile::Constructor(char *Source)
 {
-  BufferIOFileClass::Constructor(); /*0x47a9d3*/
-  IDA_LOBYTE(this->m_54) = 0; /*0x47a9df*/
-  *(_DWORD *)this->q000 = &off_7E1668; /*0x47a9e3*/
-  FileClass::OpenWithCDSearch(Source); /*0x47a9e9*/
-  return this->q000; /*0x47a9f0*/
+
+  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47a9d3*/
+  LOBYTE(this->m_54) = 0; /*0x47a9df*/
+  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47a9e3*/
+  FileClass::OpenWithCDSearch((CDFileClass *)this, Source); /*0x47a9e9*/
+  return this->__pad_0; /*0x47a9f0*/
+
 }
-}
+}  // G42.18 ns repair
 // 0x47AA30
 namespace gamemd {
 int BufferIOFile::Init()
 {
-  BufferIOFileClass::Constructor(); /*0x47aa33*/
-  IDA_LOBYTE(this->m_54) = 0; /*0x47aa38*/
-  *(_DWORD *)this->q000 = &off_7E1668; /*0x47aa3c*/
-  return this->q000; /*0x47aa44*/
+
+  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa33*/
+  LOBYTE(this->m_54) = 0; /*0x47aa38*/
+  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47aa3c*/
+  return this->__pad_0; /*0x47aa44*/
+
 }
 }

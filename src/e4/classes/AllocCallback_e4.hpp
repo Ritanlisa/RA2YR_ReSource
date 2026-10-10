@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct AllocCallback {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     static unsigned int *__cdecl Dispatch(int a1, int a2, unsigned int * Block, int Size, void *a3 = 0);
 };

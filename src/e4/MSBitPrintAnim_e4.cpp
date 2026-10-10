@@ -17,14 +17,14 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5CED10
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
 {
-  *(_DWORD *)Block->q000 = &(void*)(void*)&MSBitPrintAnim_vftable; /*0x5ced16*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSBitPrintAnim; /*0x5ced16*/
   DeleteAndZero::Alt((DeleteAndZero *)((char *)Block + 28)); /*0x5ced1c*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&MSAnim_vftable; /*0x5ced25*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5ced25*/
   if ( (a2 & 1) != 0 ) /*0x5ced2d*/
-    RA2_OPDEL(Block); /*0x5ced30*/
-  return (void **)Block; /*0x5ced3a*/
-}
+    operator delete((void *)(Block)); /*0x5ced30*/
+  return (gamemd::MSBitPrintAnim *)((void **)Block); /*0x5ced3a*/
+}  // G42.18 ns repair
 } // namespace gamemd

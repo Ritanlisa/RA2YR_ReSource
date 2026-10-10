@@ -10,10 +10,6 @@ struct E4Recv_710750 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
     unsigned int M16;  // 0x10
-    unsigned int q034;  // 0x34
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q153094;  // 0x153094
 // --- flat members (END) ---
     char  sub_710750(int a2);  // 0x710750
 };

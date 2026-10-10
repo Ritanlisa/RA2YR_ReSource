@@ -16,22 +16,20 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x63F7B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void PowerClass_Stub()
 {
   RadarClass::Destru_vt05(); /*0x63f7b0*/
 }
-}
+}  // G42.18 ns repair
 // 0x63F7E0
 void PowerClass::checkLowPower()
 {
-byte_AC4E78 = 0; /*0x63f7fc*/
-byte_AC4E78 = 0; /*0x63f7fc*/
 
   RadarClass::Destru_vt50(); /*0x63f7e0*/
   if ( byte_AC4E78 ) /*0x63f7ec*/
   {
-    RA2_OPDEL( (void *)(dword_AC4E74) ); /*0x63f7f4*/
+    __3_YAXPAX_Z(dword_AC4E74); /*0x63f7f4*/
     byte_AC4E78 = 0; /*0x63f7fc*/
   }
 

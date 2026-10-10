@@ -33,7 +33,7 @@ public:
 
     // Construction
     ParasiteClass();                                             // 0x6292B0
-    void Constructor();                                          // 0x629210
+    void* Constructor();                                          // 0x629210
     void ddtor();  // 0x6296D0
 
     // Parasite logic

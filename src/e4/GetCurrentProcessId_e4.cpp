@@ -8,9 +8,9 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x7DCF22
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GetCurrentProcessId_0()
 {
-  return GetCurrentProcessId();
+  return (int)(GetCurrentProcessId());
 }
-}
+}  // G42.18 ns repair

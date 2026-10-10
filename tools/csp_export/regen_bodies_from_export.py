@@ -222,14 +222,27 @@ for p in sorted(SRC.rglob('*.cpp')):
         k = j
         depth = 0
         started = False
+        hit_annot = False
         while k < len(lines):
+            # T5 (I36 routing): a subsequent definition annotation ENDS this
+            # span when the current def has not opened any region yet.  The
+            # glued-def injury family (one-liner def `Ret Fn() {}` followed
+            # by orphan statements and/or the NEXT function's annotation+def)
+            # used to make the walker swallow the next function into the
+            # replacement span.  Orphan garbage inside [j, k) is replaced by
+            # the fresh body; the next function is left untouched.
+            if k > j and not started and ADDR_LINE.match(lines[k].strip()):
+                hit_annot = True
+                break
             depth += brace_delta(lines[k])
             if not started and brace_delta(lines[k]) > 0:
                 started = True
             if started and depth <= 0:
                 break
             k += 1
-        if not started or k >= len(lines):
+        if hit_annot:
+            k -= 1                  # span stops before the next annotation
+        elif not started or k >= len(lines):
             i += 1
             continue
         code = pseudo.get(addr)
@@ -319,6 +332,16 @@ for p in sorted(SRC.rglob('*.cpp')):
         # line, which the span consumed) get the opener re-emitted
         def_line = lines[j]
         indent = re.match(r'\s*', lines[j]).group(0)
+        # T5 (I36 routing): self-balanced one-liner defs (`Ret Fn() {}`,
+        # the glued-def injury shape) must NOT pass through unchanged --
+        # the emitter below appends a closing brace but (correctly) no
+        # opener for brace-bearing def lines, which used to net -1 and
+        # trip the RC3 guard.  Normalize: strip the inline body, emit the
+        # fresh body between proper braces.
+        if brace_delta(def_line) == 0 and '{' in def_line:
+            stripped = re.sub(r'\s*\{[^{}]*\}\s*$', '', def_line).rstrip()
+            if stripped:
+                def_line = stripped
         body_lines = [(indent + '  ' + bl[2:]).rstrip()
                       if bl.strip() else ''
                       for bl in new_body.split('\n')]

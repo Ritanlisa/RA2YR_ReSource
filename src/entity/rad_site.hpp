@@ -58,9 +58,9 @@ public:
     int Add(int a2); // 0x65B530
     // 0x65B580 Activate
     void Activate();
-    double GetRadLevelAt(short *a2);  // 0x65B8F0 g57w11 r4: raw double(this,__int16*a2)
+    double GetRadLevelAt(short *a2);  // 0x65B8F0 g57w11 r4: raw double(this,int16_t*a2)
     int Radiate(int a1);  // 0x65B9C0 g57w11 r4: raw __fastcall(int) 折合
-    int Deactivate(unsigned int *a1);  // 0x65BB50 g57w11 r4: raw __fastcall(_DWORD*) 折合
+    int Deactivate(unsigned int *a1);  // 0x65BB50 g57w11 r4: raw __fastcall(unsigned int*) 折合
     void DecreaseRadiation();  // 0x65BD00
     void DecreaseLight();  // 0x65BE90
 

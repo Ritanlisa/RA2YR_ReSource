@@ -7,8 +7,7 @@ namespace gamemd {
 
 struct Conditions {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     bool CheckResult(int a2);
 };

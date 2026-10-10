@@ -17,21 +17,16 @@ struct BaseClass {
     char baseNodeCapacity[4];  // 0x8
     char percentBuilt[4];  // 0xC
     bool IsAllocated;  // 0xD
-    void* cells24;  // 0x10
+    CellStruct* cells24;  // 0x10
     char cells24Count[4];  // 0x14
     int Count;  // 0x16
     char cells24Capacity[4];  // 0x18
-    void* cells38;  // 0x1C
+    CellStruct* cells38;  // 0x1C
     char cells38Count[4];  // 0x20
     char cells38Capacity[4];  // 0x24
     char center[4];  // 0x28
     unsigned char unknown54;  // 0x2C
-    unsigned int q030;  // 0x30
-    unsigned int q034;  // 0x34
-    void * ptr_38;  // 0x38
-    unsigned int q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned int q048;  // 0x48
+    VectorClass * ptr_38;  // 0x38
     HouseClass* owner;  // 0x4C
 // --- flat members (END) ---
     int LoadArrayFields(unsigned int * a1, int a2);

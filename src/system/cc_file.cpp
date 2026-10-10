@@ -10,7 +10,7 @@
 #include "e4/classes/File_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LookupFileInfoCache(...);  // raw 005B4430: char __fastcall FileInfoCache_Lookup(const char *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4, _
+    int LookupFileInfoCache(...);  // raw 005B4430: char __fastcall FileInfoCache_Lookup(const char *a1, unsigned int *a2, unsigned int *a3, unsigned int *a4, _
 } // namespace gamemd
 
 namespace gamemd
@@ -38,38 +38,36 @@ int CCFileClass::Open(int a2)
 
   if ( this->u32_68 == 1 ) /*0x473c5c*/
   {
-    result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473c5e*/
+    (*((unsigned char *)&(result))) = 1; /*0x473c5e*/
   }
   else
   {
-    result = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->__tail_0 + 24))(this); /*0x473c69*/
-    if ( result ) /*0x473c6e*/
-
+    result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 24))(this); /*0x473c69*/
+    if ( (unsigned char)result ) /*0x473c6e*/
     {
       this->u32_68 = 1; /*0x473c70*/
-      result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473c73*/
+      (*((unsigned char *)&(result))) = 1; /*0x473c73*/
     }
     else
     {
-      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->__tail_0 + 4))(this); /*0x473c84*/
+      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 4))(this); /*0x473c84*/
       if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
       {
         this->u32_68 = 1; /*0x473c94*/
-        result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473c97*/
+        (*((unsigned char *)&(result))) = 1; /*0x473c97*/
       }
       else
       {
         result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
-        if ( result ) /*0x473ca9*/
-
+        if ( (unsigned char)result ) /*0x473ca9*/
         {
           this->u32_68 = 1; /*0x473cab*/
-          result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x473cae*/
+          (*((unsigned char *)&(result))) = 1; /*0x473cae*/
         }
         else
         {
           this->u32_68 = 2; /*0x473cb5*/
-          result = ((result) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x473cbd*/
+          (*((unsigned char *)&(result))) = 0; /*0x473cbd*/
         }
       }
     }
@@ -83,12 +81,12 @@ void* CCFileClass::ReadEntireFile()
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
-  if ( (*(unsigned __int8 (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)this->__tail_0 + 20))(this, 0) ) /*0x4a389a*/
+  if ( (*(uint8_t (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->__tail_0 + 20))(this, 0) ) /*0x4a389a*/
   {
-    v3 = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->__tail_0 + 44))(this); /*0x4a38a8*/
-    v2 = (void *)new unsigned char[v3]; /*0x4a38b0*/
+    v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 44))(this); /*0x4a38a8*/
+    v2 = (void *)operator new(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
-      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(_DWORD *)this->__tail_0 + 36))(this, v2, v3); /*0x4a38bf*/
+      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->__tail_0 + 36))(this, v2, v3); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }
@@ -100,10 +98,10 @@ int CCFileClass::Reset()
   Buffer *v2; // ecx
   int result; // eax
 
-  v2 = (Buffer *)((char *)&this->CacheReadAhead8); /*0x473ce3*/
+  v2 = (unsigned char)((Buffer *)((char *)&this->CacheReadAhead8));
   if ( v2 ) /*0x473ce8*/
     Buffer::Init(v2, 0, 0); /*0x473cee*/
   this->tail_19 = 0; /*0x473cf5*/
-  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(CCFileClass::Close(this)) & 0xFFu); /*0x473cfc*/
+  (*((unsigned char *)&(result))) = CCFileClass::Close(this); /*0x473cfc*/
   return result; /*0x473d01*/
 }

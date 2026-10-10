@@ -20,106 +20,43 @@ struct WarheadTypeClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* q010;  // 0x10
     unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
     bool IsAllocated;  // 0x13
-    unsigned int AnimList;  // 0x14
+    void* ;  // 0x14
     int DeformTreshold;  // 0x16
     char InfDeath[4];  // 0x18
     float CellSpread;  // 0x1C
-    bool q01D;  // 0x1D
-    float CellInset;  // 0x20
-    float q024;  // 0x24
+    void* ;  // 0x20
     bool CausesDelayKill;  // 0x28
     int DelayKillFrames;  // 0x2C
     float DelayKillAtMax;  // 0x30
-    unsigned char q031;  // 0x31
     float CombatLightSize;  // 0x34
     float PercentAtMax;  // 0x36
     ParticleTypeClass* Particle;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     bool Wall;  // 0x3C
     bool WallAbsoluteDestroyer;  // 0x3D
     bool PenetratesBunker;  // 0x3E
     bool Wood;  // 0x3F
     bool Tiberium;  // 0x40
-    bool q042;  // 0x42
-    bool q043;  // 0x43
-    int q044;  // 0x44
-    float q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
+    unsigned int pad_44;  // 0x44
     void * UIName;  // 0x60
     unsigned int Name;  // 0x64
-    unsigned int u32_68;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    bool q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q07C;  // 0x7C
-    unsigned int u32_80;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned int u32_88;  // 0x88
-    unsigned char q08A;  // 0x8A
-    void* q08C;  // 0x8C
-    unsigned int u32_90;  // 0x90
-    unsigned int q094;  // 0x94
     unsigned int tail_95;  // 0x95
     int AmbientDamage;  // 0x98
-    unsigned int u32_9C;  // 0x9C
-    unsigned int q0A0;  // 0xA0
+    unsigned int pad_99;  // 0x99
+    unsigned int Burst;  // 0x9C
+    unsigned int pad_9D;  // 0x9D
     int Damage;  // 0xA4
-    unsigned int u32_A8;  // 0xA8
-    unsigned char q0A9;  // 0xA9
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
-    unsigned int u32_AC;  // 0xAC
-    unsigned char q0AF;  // 0xAF
-    unsigned int u32_B0;  // 0xB0
-    void* q0B8;  // 0xB8
-    unsigned char q0B9;  // 0xB9
-    unsigned char q0BD;  // 0xBD
-    unsigned int q0C3;  // 0xC3
-    void* q0C4;  // 0xC4
-    unsigned char q0C7;  // 0xC7
-    void* q0CC;  // 0xCC
-    unsigned char q0D0;  // 0xD0
-    AnimClass* q0D4;  // 0xD4
-    void* q0D8;  // 0xD8
-    void* q0DC;  // 0xDC
-    void* q0E0;  // 0xE0
-    AbstractClass* q0E4;  // 0xE4
-    AbstractClass* q0E8;  // 0xE8
-    unsigned int q0EC;  // 0xEC
-    unsigned char q0F0;  // 0xF0
-    void* q0F4;  // 0xF4
-    void* q0F7;  // 0xF7
-    void* q0F8;  // 0xF8
-    unsigned int q0F9;  // 0xF9
-    unsigned char q0FB;  // 0xFB
-    void* q0FC;  // 0xFC
-    unsigned int q100;  // 0x100
-    unsigned int q104;  // 0x104
-    CampaignClass* q108;  // 0x108
-    unsigned int q10C;  // 0x10C
-    unsigned char q110;  // 0x110
-    unsigned int q111;  // 0x111
-    unsigned int q114;  // 0x114
-    unsigned char q118;  // 0x118
-    unsigned int q11C;  // 0x11C
-    unsigned int q120;  // 0x120
-    unsigned int q124;  // 0x124
-    unsigned int q128;  // 0x128
+    unsigned int pad_A5;  // 0xA5
+    void* MinimumRange;  // 0xB8
+    unsigned char OccupantAnim;  // 0x110
+    unsigned int OpenToppedAnim;  // 0x118
+    unsigned int pad_124;  // 0x124
     bool UseSparkParticles;  // 0x12A
-    unsigned int q12C;  // 0x12C
+    unsigned int pad_12B;  // 0x12B
     bool IsRailgun;  // 0x12D
+    unsigned int pad_12E;  // 0x12E
     bool IsSonic;  // 0x130
     bool Spawner;  // 0x131
     bool LimboLaunch;  // 0x132
@@ -133,16 +70,15 @@ struct WarheadTypeClass {
     bool MigAttackCursor;  // 0x13A
     bool DisguiseFireOnly;  // 0x13B
     int DisguiseFakeBlinkTime;  // 0x13C
+    unsigned int pad_13D;  // 0x13D
     bool InfiniteMindControl;  // 0x140
     bool FireWhileMoving;  // 0x141
     bool DrainWeapon;  // 0x142
     bool FireInTransport;  // 0x143
-    unsigned int q144;  // 0x144
-    unsigned int u32_145;  // 0x145
+    unsigned int Suicide;  // 0x144
     bool Supress;  // 0x146
-    unsigned int u32_147;  // 0x147
     bool Charges;  // 0x148
-    bool WarheadTypeClass_field_bool_149;  // 0x149
+    char WarheadTypeClass_field_bool_149;  // 0x149
     bool DiskLaser;  // 0x14A
     bool Sonic;  // 0x14B
     bool Fire;  // 0x14C
@@ -162,16 +98,9 @@ struct WarheadTypeClass {
     bool Temporal;  // 0x15A
     bool IsLocomotor;  // 0x15B
     char Locomotor[4];  // 0x15C
-    unsigned char q160;  // 0x160
-    unsigned int q162;  // 0x162
-    unsigned int q164;  // 0x164
-    unsigned char q166;  // 0x166
-    unsigned int q168;  // 0x168
-    bool q16B;  // 0x16B
     bool Airstrike;  // 0x16C
     bool Psychedelic;  // 0x16D
     bool BombDisarm;  // 0x16E
-    unsigned int q16F;  // 0x16F
     int Paralyzes;  // 0x170
     bool Culling;  // 0x174
     bool MakesDisguise;  // 0x175
@@ -181,34 +110,10 @@ struct WarheadTypeClass {
     bool AffectsAllies;  // 0x179
     bool Bullets;  // 0x17A
     bool Veinhole;  // 0x17B
-    int q17C;  // 0x17C
-    int q180;  // 0x180
-    int q184;  // 0x184
-    int q188;  // 0x188
-    unsigned int DebrisTypes;  // 0x18C
-    unsigned int q190;  // 0x190
+    void* ;  // 0x18C
     int MaxDebris;  // 0x194
     int MinDebris;  // 0x198
-    unsigned int u32_199;  // 0x199
     unsigned int unused_1CC;  // 0x19C
-    unsigned char q1A0;  // 0x1A0
-    bool q1A1;  // 0x1A1
-    unsigned int q1A2;  // 0x1A2
-    unsigned int q1A5;  // 0x1A5
-    unsigned int q1A7;  // 0x1A7
-    unsigned int u32_1A8;  // 0x1A8
-    unsigned char q1AB;  // 0x1AB
-    CampaignClass* q1AC;  // 0x1AC
-    unsigned int q1B0;  // 0x1B0
-    unsigned int q1B1;  // 0x1B1
-    unsigned int u32_1B4;  // 0x1B4
-    unsigned int q1B5;  // 0x1B5
-    unsigned int u32_1B8;  // 0x1B8
-    unsigned char q1B9;  // 0x1B9
-    unsigned int q1BC;  // 0x1BC
-    unsigned char q1C0;  // 0x1C0
-    unsigned int q1C4;  // 0x1C4
-    unsigned int q1C8;  // 0x1C8
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
@@ -219,9 +124,9 @@ struct WarheadTypeClass {
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    int Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6);  // G42.35f: ida truth 0x75CEC0 int return
-    TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x524FC0 (G42.35f supply)
-    WarheadTypeClass * parseAnimations(char * Block, char a2);  // 0x52AE00 (G42.35f supply)
+    int Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a1 = 0, void *a7 = 0, void *a8 = 0);  // G42.35f: ida truth 0x75CEC0 int return
+    TypeList_flat * QueryInterface(unsigned int * Block, char a2);
+    WarheadTypeClass * parseAnimations(char * Block, char a2);
     int FindOrCreate(ObjectClass * Source);
     int GetDamage(int a2, int a3);
     int GetObjectSize();
@@ -236,13 +141,48 @@ struct WarheadTypeClass {
     void * parseModifiers(char a2);
     void GetClassIdentifier();
     void* ProcessPower(int * a2, void *a2_2);
-    int Deform;  // 0x0 (ml)
-    unsigned char m_1;  // 0x1 (offset-truth)
+    void* ;  // 0x0 (ml)
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_680;  // 0x680 (offset-truth)
+    static double AnimList6(...);  // plateau: C2039/C3861 stub
+    static double WarheadTypeClass_field_0x10(...);  // plateau: C2039/C3861 stub
+    static double WarheadTypeClass_field_0x4(...);  // plateau: C2039/C3861 stub
+    static double WarheadTypeClass_field_0x8(...);  // plateau: C2039/C3861 stub
+    static double WarheadTypeClass_field_0xC(...);  // plateau: C2039/C3861 stub
+    static double __pad_010(...);  // plateau: C2039/C3861 stub
+    static double __pad_024(...);  // plateau: C2039/C3861 stub
+    static double __pad_048(...);  // plateau: C2039/C3861 stub
+    static double __pad_0680(...);  // plateau: C2039/C3861 stub
+    static double __pad_128(...);  // plateau: C2039/C3861 stub
+    static double __pad_160(...);  // plateau: C2039/C3861 stub
+    static double __pad_190(...);  // plateau: C2039/C3861 stub
+    static double __pad_1A0(...);  // plateau: C2039/C3861 stub
+    static double u32_104(...);  // plateau: C2039/C3861 stub
+    static double u32_114(...);  // plateau: C2039/C3861 stub
+    static double u32_12C(...);  // plateau: C2039/C3861 stub
+    static double u32_145(...);  // plateau: C2039/C3861 stub
+    static double u32_147(...);  // plateau: C2039/C3861 stub
+    static double u32_164(...);  // plateau: C2039/C3861 stub
+    static double u32_168(...);  // plateau: C2039/C3861 stub
+    static double u32_17C(...);  // plateau: C2039/C3861 stub
+    static double u32_184(...);  // plateau: C2039/C3861 stub
+    static double u32_188(...);  // plateau: C2039/C3861 stub
+    static double u32_199(...);  // plateau: C2039/C3861 stub
+    static double u32_1A8(...);  // plateau: C2039/C3861 stub
+    static double u32_1AC(...);  // plateau: C2039/C3861 stub
+    static double u32_1B0(...);  // plateau: C2039/C3861 stub
+    static double u32_1B4(...);  // plateau: C2039/C3861 stub
+    static double u32_1B5(...);  // plateau: C2039/C3861 stub
+    static double u32_1B8(...);  // plateau: C2039/C3861 stub
+    static double u32_1BC(...);  // plateau: C2039/C3861 stub
+    static double u32_1C4(...);  // plateau: C2039/C3861 stub
+    static double u32_1C8(...);  // plateau: C2039/C3861 stub
+    static double vtable21(...);  // plateau: C2039/C3861 stub
+    static double vtable26(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

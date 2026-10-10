@@ -10,7 +10,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x5B1960
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x5b1966*/
@@ -18,7 +18,7 @@ int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
   *(IID *)a2 = g_CLSID_TunnelLocomotion; /*0x5b1976*/
   a2[3] = unk_7E9AAC; /*0x5b1990*/
   return 0; /*0x5b196d*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x5B19A0
 namespace gamemd {
@@ -31,8 +31,8 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *(_DWORD *)a1->0 = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b19b8*/
-      *(_DWORD *)&a1->0[4] = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b19be*/
+      *(unsigned int *)a1->0 = &vt_MechLocomotionClass; /*0x5b19b8*/
+      *(unsigned int *)&a1->0[4] = &vt_MechLocomotionClass; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -49,11 +49,11 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->0 = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
-  *(_DWORD *)&Block->0[4] = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
-  LocomotionClass::Construct((LocomotionClass *)Block); /*0x5b1b60*/
+  *(unsigned int *)Block->0 = &vt_MechLocomotionClass; /*0x5b1b53*/
+  *(unsigned int *)&Block->0[4] = &vt_MechLocomotionClass; /*0x5b1b59*/
+  ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    RA2_OPDEL(Block); /*0x5b1b6d*/
+    operator delete((void *)(Block)); /*0x5b1b6d*/
   return Block->0; /*0x5b1b77*/
 }
 } // namespace gamemd

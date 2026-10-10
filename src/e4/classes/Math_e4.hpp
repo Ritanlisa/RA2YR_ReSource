@@ -84,37 +84,23 @@ struct Math {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int q20848;  // 0x20848
-    unsigned int q21768;  // 0x21768
-    unsigned int q25608;  // 0x25608
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q1612096024928;  // 0x1612096024928
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350
-   static int Sin(double a1);  // G57w10-S raw 0x4CAD50; G57w18j4 return int per raw int __cdecl (C2556 vs def)
-    static float * BuildRotationMatrix(float * aP1, float * a2, float a3);  // 0x5AE750 G57w15f3: static receiver-first per raw __thiscall (float* this, float* a2, float a3) — was 6-param garbage arity
-    int DistSq2D(TechnoClass * aP1);  // 0x5F6560
-    unsigned int * QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
-   static double ArcTan(double a1);  // G57w10-S raw 0x4CADE0 (was C2597 interim stub)
+   static int Sin(double a1);
+    static float * BuildRotationMatrix(float *a2, float a3);
+    int DistSq2D(unsigned int *aP1);  // 0x5F6560
+    unsigned int *  QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
+   static double ArcTan(double a1);
     void InitArcTan();  // 0x473650
-    static double ArcTan2_Table(double a1);  // G57w10-S raw 0x4CADB0 (was C2597 interim stub)
-    unsigned int * Sub16(unsigned int * aP1, unsigned short * aP2);  // 0x5B2950
-    bool Abs16Cmp(unsigned short * aP1, short * aP2);  // 0x5B2990
-    static double ArcTan2(double a1);  // G57w10-S raw 0x4CAD00 (was C2597 interim stub)
-static double CalcAngle(double a1, double a2);  // G57w10-S raw 0x4CAE30 (was C2597 interim stub)
-    static int InitDegToRad();  // G57w10-S raw 0x40FFFF (was C2597 interim stub)
-    static double SinCos(double a1);  // G57w10-S raw 0x4CACB0 (was C2597 interim stub)
-    static int RoundToInt(double a1);  // G57w10-S raw 0x7C5F00 (was C2597 interim stub)
-static double Sqrt(double a1);  // G57w10-S raw 0x4CAC40 (was C2597 interim stub)
+    static double ArcTan2_Table(double a1);
+    unsigned int *  Sub16(unsigned int * a2, unsigned short * a3);  // 0x5B2950
+    bool  Abs16Cmp(unsigned short * a2, int16_t * a3);  // 0x5B2990
+    static double ArcTan2(double a1);
+static double CalcAngle(double a1, double a2);
+    static int InitDegToRad();
+    static double SinCos(double a1);
+    static int RoundToInt(double a1);
+static double Sqrt(double a1);
     static double Cos(...);  // C2597/C2039 interim stub
     static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
@@ -124,5 +110,6 @@ static double Sqrt(double a1);  // G57w10-S raw 0x4CAC40 (was C2597 interim stub
     char vtable3[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q000[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q004[4];  // @0x425xxx (W16G3 raw-usage vocab)
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

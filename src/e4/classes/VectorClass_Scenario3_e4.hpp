@@ -8,19 +8,7 @@ namespace gamemd {
 struct VectorClass_Scenario3 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
-    unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
-    unsigned char u8_D;  // 0xD
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    unsigned char q054;  // 0x54
-    unsigned char q084;  // 0x84
-    unsigned char q774;  // 0x774
-    unsigned char q1908;  // 0x1908
-    unsigned char q6408;  // 0x6408
-    unsigned char q25608;  // 0x25608
-    unsigned char q1388694;  // 0x1388694
 // --- flat members (END) ---
-    AbstractClass * * ResizeAndCopy(int a2, unsigned int * a3);  // 0x5D8590
+    AbstractClass * *  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5D8590
 };
 } // namespace gamemd

@@ -91,7 +91,7 @@ public:
     virtual bool SetCapacity(int capacity, T* mem = nullptr);
 
     // 0x46B750 — VectorClass::Clear [vtable slot 3] (base)
-    virtual void Clear();
+    int Clear();
 
     // 0x46B780 — VectorClass::FindItemIndex [vtable slot 4] (base, scans Capacity)
     virtual int FindItemIndex(const T& item) const;
@@ -143,7 +143,7 @@ public:
 
     // 0x46B5E0 — DynamicVectorClass::Clear [vtable slot 3 override]
     // Resets Count=0 first, then frees Items (flat; mirrors the binary order).
-    void Clear() override;
+    int Clear() override;
 
     // 0x4E9B50 — DynamicVectorClass::FindItemIndex [vtable slot 4 override]
     // Scans Count (NOT Capacity); returns -1 when Count<=0. There is NO

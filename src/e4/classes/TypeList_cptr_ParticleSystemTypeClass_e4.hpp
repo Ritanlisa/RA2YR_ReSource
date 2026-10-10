@@ -13,15 +13,14 @@ struct TypeList_cptr_ParticleSystemTypeClass {
     unsigned int Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
     void GetClassIdentifier();  // 0x459F90
-    unsigned int LoadTypeData(int a2);  // 0x459FC0
-    char Add(int a2, unsigned int * a3, void *a3_2);  // 0x45A300
-    int Remove(unsigned int * a2);  // 0x45A3B0
-    TypeList_flat * QueryInterface(unsigned int * Block, char a2);  // 0x717B70
-    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int  LoadTypeData(int a2);  // 0x459FC0
+    char  Add(int a2, unsigned int * a3, void *a1 = 0);  // 0x45A300
+    int  Remove(unsigned int * a2, void *a1 = 0);  // 0x45A3B0
+    TypeList_flat *  QueryInterface(char a2);  // 0x717B70
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)

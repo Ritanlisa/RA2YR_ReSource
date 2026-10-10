@@ -13,8 +13,9 @@ struct CommandClass {
 // --- flat members (END) ---
     int AddAction(ToolTipManager * aP1, void *a2);
     int BuildBar();
-    static int BinarySearchAction(CommandClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00724FC0 (was C2597 interim stub)
-    static bool executeAction(CommandClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00724FA0 (was C2597 interim stub)
+    static int BinarySearchAction(CommandClass * aP1, unsigned int *a2);
+    static bool executeAction(CommandClass * aP1, unsigned int *a2);
+    static double u32_94(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_CommandClass_DEF
 

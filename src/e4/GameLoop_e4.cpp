@@ -9,9 +9,9 @@
 #include "e4/classes/GameClass_e4.hpp"
 
 // 0x77D710
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GameLoop::Thunk()
 {
-  return Game::ProcessIdle();
+  return (int)(Game::ProcessIdle());
 }
-}
+}  // G42.18 ns repair

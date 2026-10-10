@@ -8,6 +8,6 @@
 namespace gamemd {
 struct E4Recv_7C8B38 {
     void* vfptr;  // minimal E2 declaration
-    ObjectClass * sub_7C8B38(int a2);  // 0x7C8B38
+    ObjectClass *  sub_7C8B38(int a2);  // 0x7C8B38
 };
 } // namespace gamemd

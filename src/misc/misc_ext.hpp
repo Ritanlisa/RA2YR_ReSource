@@ -91,7 +91,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void sub_452820();
     // IDA 0x452820 area
-     void ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);  // 0x4690B0
+     int ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);  // 0x4690B0
     // IDA 0x452820 area
     // design: static function, no direct binary match in IDA
     static bool IsLocomotor();
@@ -134,7 +134,7 @@ class UnholyAlliance
 {
 public:
     // IDA 0x48B2A0 area
-    void Read();  // 0x5CB3F0
+    int Read();  // 0x5CB3F0
     // IDA 0x48B2A0 area
     void Write();  // 0x5CB400
     // IDA 0x48B2A0 area
@@ -320,7 +320,7 @@ class CoordUtil
 {
 public:
     // IDA 0x48B2A0 area
-    void Set2(int32_t x, int32_t y, int32_t z);
+    int Set2(int32_t x, int32_t y, int32_t z);
 
     int32_t     X;              // 0x00
     int32_t     Y;              // 0x04
@@ -444,7 +444,7 @@ public:
     // wrapper: delegates to InputManager_ProcessEvents::StubReturnFalse at 0x4AEBD0
     void Process();
     // wrapper: delegates to InputManager_ProcessEvents::StubReturnFalse at 0x4AEBD0
-    void Clear();
+    int Clear();
 
     int32_t     m_RefCount;     // 0x00
     int32_t     InputManager_ProcessEvents_field_04;       // 0x04
@@ -467,7 +467,7 @@ virtual int GetClassIdentifier(unsigned int *a2);  // 0x41E500 (G42 sig-sync: ID
     virtual int LoadTypeData(int a2); // 0x41E540 (G42 sig-sync: IDA 1-arg; def quarantined to stub in misc_ext.cpp)
     virtual int SaveToINI(int *a2, int a3); // 0x41E5C0 (G42 sig-sync: IDA 2-arg)
     virtual int ProcessPower(int *a2);
-    virtual bool EnemyHouseOwns(int a2, _DWORD *a3);
+    virtual bool EnemyHouseOwns(int a2, unsigned int *a3);
     // +11 more virtual methods
 
     uint8_t AITriggerTypeClass_field_0x04[4];
@@ -559,7 +559,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AnimSequence() = default;
 
-    virtual unsigned __int8 **Parse(); // 0x523D00 (truth u8** __thiscall; g57w20m1 C2556)
+    virtual uint8_t **Parse(); // 0x523D00 (truth u8** __thiscall; g57w20m1 C2556)
 
 };
 #ifndef GAMEMD_E4_AnimTypeList  // G57w8: e4 flat carrier wins in e4 TUs (C2011 vs _tree_full_e4.hpp G57e1 carrier)
@@ -678,7 +678,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Coord3D() = default;
     unsigned int* Set(int a2, int a3, int a4); // 0x437090 (G42 sig-sync: def)
-    virtual int Equals(unsigned int *a2); // 0x459F60 (G42 sig-sync: IDA int(this,_DWORD*))
+    virtual int Equals(unsigned int *a2); // 0x459F60 (G42 sig-sync: IDA int(this,unsigned int*))
     unsigned int* Add(unsigned int *a2, unsigned int *a3); // 0x6CE240 (G42 sig-sync: def)
 
     uint32_t Coord3D_field_0x04; // G42: scalar per IDA til (array form broke Add/Equals arithmetic)
@@ -733,7 +733,7 @@ public:
     int VoxelAnimClass_field_0x0;   // 0x0 (vtable 安装站 0x749434)
     int VoxelAnimClass_field_0x4;   // 0x4 (0x74943a; GenerateUniqueID 0x74944e 经此)
     int VoxelAnimClass_field_0x8;   // 0x8 (0x749440)
-    char __pad_C[16];               // 0xC (til 名; raw 0x749447 *(_DWORD*)this->__pad_C)
+    char __pad_C[16];               // 0xC (til 名; raw 0x749447 *(unsigned int*)this->__pad_C)
     int VoxelAnimClass_field_0x1C;  // 0x1C
     char __pad_20[116];             // 0x20
     int VoxelAnimClass_field_0x94;  // 0x94
@@ -758,7 +758,7 @@ public:
 
     virtual int IterateCellsInRadius(); // 0x4C58C0 (G42 sig-sync: IDA int(this); def quarantined)
     int Stat(unsigned int * a2); // 0x4C59A0 (G42 sig-sync: def)
-    virtual int ddtor(unsigned int *a2); // 0x4C59F0 (G42 sig-sync: IDA int(this,_DWORD*))
+    virtual int ddtor(unsigned int *a2); // 0x4C59F0 (G42 sig-sync: IDA int(this,unsigned int*))
     virtual int Write(int a2); // 0x4C5A30 (G42 sig-sync: IDA int(this,int); def quarantined)
     virtual int Seek(int *a2, int a3); // 0x4C5A80 (G42 sig-sync: IDA int(this,int*,int); def quarantined)
     // +3 more virtual methods
@@ -894,7 +894,7 @@ public:
     virtual void Release(int a2, unsigned int * a3);  // 0x512C80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void AddType(unsigned int * a2);  // 0x512D60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Remove(int a2);  // 0x512DA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Construct(int a2, int a3);  // 0x512DC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x512DC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +3 more virtual methods
 
     uint8_t InfantryTypeVector_field_0x04[4];
@@ -1041,7 +1041,7 @@ public:
     virtual void ddtor(); // 0x69C500
     virtual void Write(int a2);  // 0x69C560 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Release(int a2, unsigned int * a3);  // 0x69CBC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Read(const char ** a2);  // 0x69CD00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Read(const char ** a2);  // 0x69CD00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +2 more virtual methods
 
     uint8_t MapFile_field_0x04[4];
@@ -1152,7 +1152,7 @@ class MapSizeGameOption_WorldDominationTour
 public:
     virtual ~MapSizeGameOption_WorldDominationTour() = default;  // 0x767800
 
-    virtual void Read(); // 0x767740
+    int Read(); // 0x767740
     virtual int ddtor();  // G42 sig-sync: table lookup return // 0x767800
     virtual void QueryInterface(char a2);  // 0x7678C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
@@ -1241,7 +1241,7 @@ class RadarHashVector
 public:
     virtual ~RadarHashVector();  // 0x658A70
 
-    virtual void Clear(); // 0x658890
+    int Clear(); // 0x658890
     virtual void GetCount(int a2);  // 0x6588C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Seek(unsigned int * a2, int a3);  // 0x6588E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual char AddRef(int a2);  // 0x658910 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
@@ -1394,7 +1394,7 @@ public:
     virtual ~ShroudClass() = default;
 
     virtual void UpdateVisibility(int *aP1);  // 0x567230 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Reset(IUnknown * aP1);  // 0x577AB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Reset(IUnknown * aP1);  // 0x577AB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t ShroudClass_field_0x04[4];
 };
@@ -1406,7 +1406,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SpawnControlVector() = default;
 
-    virtual void Constructor(int a2, int a3);  // 0x6B8880 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x6B8880 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -1416,7 +1416,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SuperClassVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x510500 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x510500 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 5 methods in IDA
@@ -1476,7 +1476,7 @@ public:
 
     virtual int AddRefCOM(); // 0x6C00C0
     virtual int Release(); // 0x6C00E0
-    virtual void CreateInstanceCOM(); // 0x6C0110
+    int CreateInstanceCOM(); // 0x6C0110
     virtual int AdjustRefCOM(); // 0x6C0190
     virtual int AddRef(); // 0x6C0240
     // +3 more virtual methods
@@ -1582,7 +1582,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Actions() = default;
 
-    virtual void Reset(int * a1, MouseClass * aP2);  // 0x5BDDC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Reset(int * a1, MouseClass * aP2);  // 0x5BDDC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -1602,7 +1602,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AircraftTypeVector() = default;
 
-    virtual void Constructor(int a2, int a3);  // 0x513990 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x513990 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 10 methods in IDA
@@ -1636,7 +1636,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AngerVector() = default;
 
-    virtual void Construct(int a2, unsigned int * a3);  // 0x5106E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, unsigned int * a3);  // 0x5106E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -1666,7 +1666,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ArmorType() = default;
 
-    virtual void FindIndex(CCINIClass * aP1, uint8_t * a2, Armor);  // 0x4753F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int FindIndex(CCINIClass * aP1, uint8_t * a2, Armor);  // 0x4753F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual int LookupByName();  // G42 sig-sync: returns index // 0x772A50
 
     uint8_t ArmorType_field_0x04[4];
@@ -1724,7 +1724,7 @@ public:
 
     virtual void Release(int a2, char * a3);  // 0x42F9C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void ddtor(); // 0x42FAB0
-    virtual void Read(int a2);  // 0x42FAE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Read(int a2);  // 0x42FAE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Write(int a2);  // 0x42FB30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void QueryInterface(unsigned int * Block, char a2);  // 0x42FB50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
@@ -1743,7 +1743,7 @@ public:
     virtual void ArrayArithmetic(int * a1, char * a2, unsigned int * a3, int a4);  // 0x5C6FE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void DecryptBlock(Pipe * aP1, Pipe * aP2, Pipe * aP3);  // 0x632740 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void RSAOperation(AbstractClass * Src, int a3, char * a4);  // 0x632870 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Compare(int a2);  // 0x632BC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    bool Compare(int a2);  // 0x632BC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t BigInt_field_0x04[4];
     uint8_t BigInt_field_0x08[4];
@@ -1799,7 +1799,7 @@ public:
     virtual void Draw(int a2, int a3, int a4);  // 0x438000 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void DrawAlt(int a2, int a3, int a4);  // 0x438030 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void AddRef(); // 0x438060
-    virtual void Read(BombClass * aP1, signed int Size);  // 0x4380A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Read(BombClass * aP1, signed int Size);  // 0x4380A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void QueryInterface(int * Block, char a2);  // 0x632F90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t BlowPipe_field_0x04[4];
@@ -1827,7 +1827,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BoolVector() = default;
 
-    virtual void Construct(MapClass * aP1, MapClass * aP2);  // 0x510920 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(MapClass * aP1, MapClass * aP2);  // 0x510920 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -1970,7 +1970,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CDROM() = default;
 
-    void DeviceIoControl(HANDLE hDevice, int a2);  // 0x47A3F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    BOOL DeviceIoControl(HANDLE hDevice, int a2);  // 0x47A3F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void LockVolume(ObjectClass * aP0, AnimClass * aP1, uint8_t a3, DWORD BytesReturned, int16_t a5);  // 0x47A6F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t CDROM_field_0x04[4];
@@ -1991,7 +1991,7 @@ class CellClassVector
 public:
     virtual ~CellClassVector() = default;  // 0x5AD570
 
-    virtual void Destruct(unsigned int * Block, char a2);  // 0x5AD570 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Destruct(unsigned int * Block, char a2);  // 0x5AD570 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // G42.36: CellCoord moved to core/cellcoord.hpp (top include)
@@ -2003,7 +2003,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CellLand() = default;
 
-    virtual void IsBuildable(); // 0x4863D0
+    int IsBuildable(); // 0x4863D0
 
 };
 // 1 methods in IDA
@@ -2065,7 +2065,7 @@ class ClassFactory_CStream
 public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ClassFactory_CStream() = default;
-    _DWORD * Construct(); // 0x6BEE40 (G42 sig-sync: def)
+    unsigned int * Construct(); // 0x6BEE40 (G42 sig-sync: def)
 
 };
 // 1 methods in IDA
@@ -2075,7 +2075,7 @@ class ClassFactory_Wave
 public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ClassFactory_Wave() = default;
-    _DWORD * Construct(); // 0x6BEFC0 (G42 sig-sync: def)
+    unsigned int * Construct(); // 0x6BEFC0 (G42 sig-sync: def)
 
 };
 // 1 methods in IDA
@@ -2143,7 +2143,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Compression() = default;
 
-    virtual void Read(AbstractClass * aP1, IUnknown * aP2);  // 0x55C350 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Read(AbstractClass * aP1, IUnknown * aP2);  // 0x55C350 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 2 methods in IDA
@@ -2203,7 +2203,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ConnectionPointVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x5105F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x5105F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 3 methods in IDA
@@ -2259,7 +2259,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Dial8Class() = default;
 
-    virtual void Constructor(ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5, int a7);  // 0x4A53B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5, int a7);  // 0x4A53B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void SetValue(unsigned int a2, ControlClass * aP2, int a4);  // 0x4A5660 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual int GetValue(); // 0x4A57B0
     virtual void QueryInterface(unsigned int * Block, char a2);  // 0x4A59A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
@@ -2320,7 +2320,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DistributionVector_BuildingType() = default;
 
-    virtual void Construct(int a2, unsigned int * a3);  // 0x510970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, unsigned int * a3);  // 0x510970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 5 methods in IDA
@@ -2370,7 +2370,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicVectorArray() = default;
 
-    virtual void Constructor(int a2, int a3, int a4);  // 0x628070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3, int a4);  // 0x628070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -2636,7 +2636,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Int64() = default;
 
-    virtual void Equal(IUnknown * aP1);  // 0x517310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Equal(IUnknown * aP1);  // 0x517310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 2 methods in IDA
@@ -2647,7 +2647,7 @@ public:
     virtual ~IntDynamicVector() = default;
 
     virtual void QueryInterface(unsigned int * Block, char a2);  // 0x477B10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Construct(ObjectTypeClass * aP1);  // 0x717BD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(ObjectTypeClass * aP1);  // 0x717BD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t IntDynamicVector_field_0x04[4];
 };
@@ -2727,7 +2727,7 @@ class LCWPipe
 public:
     virtual ~LCWPipe() = default;  // 0x552060
 
-    virtual void Constructor(int a2, int a3);  // 0x551FF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x551FF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Destructor(); // 0x552060
 
     uint8_t LCWPipe_field_0x04[4];
@@ -2750,7 +2750,7 @@ class LCWStraw
 public:
     virtual ~LCWStraw() = default; // 0x552450
 
-    virtual void Constructor(int a2, int a3);  // 0x5523E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x5523E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Destructor(); // 0x552450
 
     uint8_t LCWStraw_field_0x04[4];
@@ -2771,7 +2771,7 @@ class LZOPipe
 public:
     virtual ~LZOPipe() = default; // 0x55C310
 
-    virtual void Constructor(int a2, TechnoTypeClass * aP2);  // 0x55C2B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, TechnoTypeClass * aP2);  // 0x55C2B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Destructor(); // 0x55C310
 
     uint8_t LZOPipe_field_0x04[4];
@@ -2794,7 +2794,7 @@ class LZOStraw
 public:
     virtual ~LZOStraw() = default; // 0x55C780
 
-    virtual void Constructor(int a2, int a3);  // 0x55C720 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x55C720 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Destructor(); // 0x55C780
 
     uint8_t LZOStraw_field_0x04[4];
@@ -2889,9 +2889,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSAnim() = default;
 
-    void GetField(unsigned int a2);  // 0x5CB840 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    bool GetField(unsigned int a2);  // 0x5CB840 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void SetField(unsigned int a2);  // 0x5CB860 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Reset(int a2);  // 0x5CC6A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Reset(int a2);  // 0x5CC6A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t MSAnim_field_0x04[4];
     uint8_t MSAnim_field_0x08[4];
@@ -2922,7 +2922,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSBitPrintAnim() = default;
 
-    virtual void Construct(const wchar_t ** a1, MSAnim * aP2, MPCooperative * aP3);  // 0x5CD330 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(const wchar_t ** a1, MSAnim * aP2, MPCooperative * aP3);  // 0x5CD330 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Update(unsigned int * a2);  // 0x5CD3D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Stub(); // 0x5CD400
     virtual void SetText(int a2, unsigned int * a3);  // 0x5CD410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
@@ -2948,7 +2948,7 @@ public:
     virtual ~MSChoiceClass() = default;
 
     virtual void LoadFromINI(unsigned int *arg0, const char **aP2);  // 0x5CF8E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void DeleteAndZero(ObjectClass * aP1);  // 0x5D0290 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int DeleteAndZero(ObjectClass * aP1);  // 0x5D0290 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t MSChoiceClass_field_0x04[4];
 };
@@ -2979,7 +2979,7 @@ public:
     virtual void Constructor_MSFont(); // 0x5D2E30
     virtual void Release(int16_t * a2);  // 0x5D3170 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual char AddRef(uint8_t szSrc);  // 0x5D31D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    void Create(int * a2, uint8_t szSrc, int a4, int a5, int a6, int a7);  // 0x5D3250 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    HWND Create(int * a2, uint8_t szSrc, int a4, int a5, int a6, int a7);  // 0x5D3250 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual short ddtor(int a2, unsigned short *a3, int a4, int a5, int a6);  // 0x5D3330 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +1 more virtual methods
 
@@ -3027,7 +3027,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSPCXAnim() = default;
 
-    virtual void Construct(ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, char a5);  // 0x5CE640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, char a5);  // 0x5CE640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual int Load(unsigned int * a2, unsigned int * a3);  // 0x5CE7D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Draw(int * a2, int * a3);  // 0x5CE8C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     void SetPalette(int a2);  // G42 sig-sync: def
@@ -3056,7 +3056,7 @@ public:
     virtual void SetText(int a2, unsigned int * a3);  // 0x5CDC50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Draw(int a2, int * a3);  // 0x5CDEE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Update(unsigned int * a2);  // 0x5CE2B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Clear(); // 0x5CE300
+    int Clear(); // 0x5CE300
     virtual void QueryInterface(void ** Block, char a2);  // 0x5CED40 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +1 more virtual methods
 
@@ -3087,8 +3087,8 @@ class MSShapeAnim
 public:
     virtual ~MSShapeAnim() = default;  // 0x5CEBD0
 
-    virtual void Constructor(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, MSShapeAnim * aP4, int a6, MSShapeAnim * aP6, MSShapeAnim * aP7);  // 0x5CB6D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Destruct(unsigned int * Block, char a2);  // 0x5CEBD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, MSShapeAnim * aP4, int a6, MSShapeAnim * aP6, MSShapeAnim * aP7);  // 0x5CB6D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Destruct(unsigned int * Block, char a2);  // 0x5CEBD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t MSShapeAnim_field_0x04[4];
 };
@@ -3100,7 +3100,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSVQAnim() = default;
 
-    virtual void Construct(char ** a2, int a3, int a4, unsigned int * a5, char a6);  // 0x5CCA20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(char ** a2, int a3, int a4, unsigned int * a5, char a6);  // 0x5CCA20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a);  // 0x5CCC30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     static unsigned int * ConstructMSVQAnimHidden(void *aP0, char **aP1, int *aP2, int aP3, char aP4);  // 0x5CCC30 G42.33 b3 static-form sync
     virtual int Load(int a2, unsigned int * a3);  // 0x5CCE90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
@@ -3202,7 +3202,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MultiMissionVector() = default;
 
-    virtual void Constructor(int a2, int a3);  // 0x5EF0B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x5EF0B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -3499,7 +3499,7 @@ public:
     virtual ~PowerBar() = default;
 
     virtual int CalcFill(); // 0x63F850
-    virtual void ComputeFill(PowerClass * aP0, ObjectClass * aP1, ObjectClass * aP2);  // 0x63F960 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int ComputeFill(PowerClass * aP0, ObjectClass * aP1, ObjectClass * aP2);  // 0x63F960 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t PowerBar_field_0x04[4];
 };
@@ -3679,7 +3679,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScalarDtor() = default;
 
-    virtual void DeleteAndZero(void ** Block, char a2);  // 0x7AD310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int DeleteAndZero(void ** Block, char a2);  // 0x7AD310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -3689,7 +3689,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoutVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x510780 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x510780 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -3754,7 +3754,7 @@ public:
     virtual ~ShapeButtonClass() = default;
 
     virtual int Init(); // 0x69DCF0
-    virtual void Constructor(ControlClass * aP1, ShapeButtonClass * aP2, ShapeButtonClass * aP3, ControlClass * aP4, int a6, int a7, char a8);  // 0x69DD30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(ControlClass * aP1, ShapeButtonClass * aP2, ShapeButtonClass * aP3, ControlClass * aP4, int a6, int a7, char a8);  // 0x69DD30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     static unsigned char * Constructor(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6, char aP7);  // 0x69DD30 G42.35 static-form sync (ui/supplied sites 0x557292/0x5572AF)
     virtual void Destructor(); // 0x69DDC0
     static int Destructor(void *aP0);  // 0x69DDC0 G42.35 static-form sync (ui/supplied sites 0x557663/0x55766B)
@@ -3800,7 +3800,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SlaveControlVector() = default;
 
-    virtual void Constructor(int a2, int a3);  // 0x6B1AB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x6B1AB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -3823,7 +3823,7 @@ public:
     virtual void Release(int a2, unsigned int * a3);  // 0x67AEB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void AddSmudge(unsigned int * a2);  // 0x67AF90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Remove(int a2);  // 0x67AFD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Construct(int a2, int a3);  // 0x67AFF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x67AFF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Add(CCINIClass * aP1);  // 0x67B100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +1 more virtual methods
 
@@ -3918,7 +3918,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StartingTechnoVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x510690 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x510690 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -3986,7 +3986,7 @@ public:
     virtual ~Subzone() = default;
 
     virtual void BuildGraph(IUnknown * aP2);  // 0x581F90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Constructor(int a2, int a3);  // 0x589100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x589100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void CopyDataFrom(int a2);  // 0x58A500 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t Subzone_field_0x04[4];
@@ -3998,7 +3998,7 @@ class SubzoneConnectionVector
 public:
     virtual ~SubzoneConnectionVector() = default;  // 0x40B070
 
-    virtual void Destruct(unsigned int * Block, char a2);  // 0x40B070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Destruct(unsigned int * Block, char a2);  // 0x40B070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void ClearAndFree(); // 0x588D60
     virtual void FindByCoord(int a2);  // 0x589C10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
@@ -4013,7 +4013,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SubzoneHashVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x58B070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x58B070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -4022,7 +4022,7 @@ class SubzoneTrackingVector
 public:
     virtual ~SubzoneTrackingVector() = default;  // 0x58A5B0
 
-    virtual void Destruct(unsigned int * Block, char a2);  // 0x58A5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Destruct(unsigned int * Block, char a2);  // 0x58A5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 2 methods in IDA
@@ -4048,7 +4048,7 @@ public:
     virtual void Register(); // 0x6CF0F0
     virtual void Here_I_Am(SwizzleManagerClass * aP0, AbstractClass * aP1, AbstractClass * aP2);  // 0x6CF2C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void ConvertNodes(); // 0x6CF350
-    virtual void Clear(int a1, unsigned int * a2);  // 0x6CF410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Clear(int a1, unsigned int * a2);  // 0x6CF410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Process(SwizzleManagerClass * aP0, const void * a1, unsigned int * a2);  // 0x6CF430 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +5 more virtual methods
 
@@ -5063,7 +5063,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TagClassVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x510640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x510640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -5094,8 +5094,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TechnoTypeVector() = default;
 
-    virtual void Constructor(int a2, int a3);  // 0x4CABF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Construct(int a2, int a3);  // 0x68C200 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x4CABF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x68C200 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t TechnoTypeVector_field_0x04[4];
 };
@@ -5116,7 +5116,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TerrainTypeVector() = default;
 
-    virtual void Construct(int a2, int a3);  // 0x67B370 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x67B370 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -5171,7 +5171,7 @@ public:
     virtual int LookupMapTile(); // 0x58D0A0
     virtual void BuildNodes(); // 0x58D620
     virtual void AnalyzeTileConnectivity(); // 0x58E5D0
-    virtual void Constructor(ObjectClass * aP1, ObjectClass * aP2);  // 0x5AD740 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(ObjectClass * aP1, ObjectClass * aP2);  // 0x5AD740 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t TileSystem_field_0x04[4];
     uint8_t TileSystem_field_0x08[4];
@@ -5197,7 +5197,7 @@ public:
     virtual ~ToggleClass() = default;
 
     virtual void QueryInterface(unsigned int * Block, char a2);  // 0x4B5810 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Construct(ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5);  // 0x723E60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5);  // 0x723E60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t ToggleClass_field_0x04[4];
 };
@@ -5243,7 +5243,7 @@ public:
     virtual void Release(int a2, unsigned int * a3);  // 0x513050 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Add(unsigned int * a2);  // 0x513130 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Remove(int a2);  // 0x513170 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Construct(int a2, int a3);  // 0x513190 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(int a2, int a3);  // 0x513190 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     // +2 more virtual methods
 
     uint8_t UnitTypeVector_field_0x04[4];
@@ -5288,8 +5288,8 @@ class VeinholeMonsterClass
 public:
     virtual ~VeinholeMonsterClass() = default;  // 0x74F2D0
 
-    virtual void Construct(AbstractClass * aP1);  // 0x74C420 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Constructor(IUnknown * aP1);  // 0x74C5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Construct(AbstractClass * aP1);  // 0x74C420 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(IUnknown * aP1);  // 0x74C5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void UpdateGrowth(); // 0x74CE50
     virtual void ProcessExpansion(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x74D5D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void PlaceGrowth(); // 0x74E930
@@ -5322,7 +5322,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VersionInfo() = default;
 
-    virtual void Read(); // 0x74F760
+    int Read(); // 0x74F760
 
 };
 // 2 methods in IDA
@@ -5386,7 +5386,7 @@ public:
     virtual void ToggleTeamMode(ObjectClass * aP1, ObjectClass * aP2);  // 0x7693F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void ProcessTerritorySelection(unsigned int * a1, ObjectClass * aP2);  // 0x76D180 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void ReviewHistory(); // 0x76E4F0
-    virtual void Constructor(ObjectClass * aP1);  // 0x76F030 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(ObjectClass * aP1);  // 0x76F030 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
     uint8_t WDTGame_field_0x04[4];
     uint8_t WDTGame_field_0x08[4];
@@ -5446,7 +5446,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WaypointPath() = default;
 
-    virtual void Constructor(rc_ptr_base * aP1, rc_ptr_base * aP2);  // 0x5A9A70 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(rc_ptr_base * aP1, rc_ptr_base * aP2);  // 0x5A9A70 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -5471,7 +5471,7 @@ class WinModemClass
 {
 public:
     virtual ~WinModemClass() = default;  // 0x7754A0
-    _DWORD * Construct(); // 0x774120 (G42 sig-sync: def)
+    unsigned int * Construct(); // 0x774120 (G42 sig-sync: def)
     virtual char AddRef(const char * a2, DWORD a3, BYTE a4, BYTE a5, char a6);  // 0x774410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void Release(int a2);  // 0x7748A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
     virtual void GetClassIdentifier(DWORD a1);  // 0x7748B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
@@ -5532,7 +5532,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WordVector() = default;
 
-    virtual void Constructor(int a2, int a3);  // 0x42DD60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void* Constructor(int a2, int a3);  // 0x42DD60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 // 1 methods in IDA
@@ -5582,7 +5582,7 @@ class ZoneConnectionVector
 public:
     virtual ~ZoneConnectionVector() = default;  // 0x58A3D0
 
-    virtual void Destruct(unsigned int * Block, char a2);  // 0x58A3D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Destruct(unsigned int * Block, char a2);  // 0x58A3D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
 
 };
 

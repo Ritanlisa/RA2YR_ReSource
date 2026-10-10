@@ -9,7 +9,7 @@ extern HINSTANCE g_hInstance;  // data: 0xb732f0
 int  InitGame(bool no_cd);  // 0x52BA60
 // unmatched: no callgraph reference and no git history record
 bool SpawnModeEnter();
-void MainGame();  // 0x48CCC0
+char MainGame();  // 0x48CCC0
 
 // unmatched: no callgraph reference and no git history record
 bool GameLoopInit(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd);

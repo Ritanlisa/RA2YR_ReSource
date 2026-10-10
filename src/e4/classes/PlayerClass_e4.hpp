@@ -8,23 +8,14 @@ namespace gamemd {
 
 struct PlayerClass {
 // --- flat members (BEGIN) ---
-    AbstractClass* q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
+
 // --- flat members (END) ---
     bool IsValidIndex(int a1);
     char AssignPlayerIndex();
     int SetHouse(int a2);
-    int HasPlayers();  // 0x6abac0
+    int HasPlayers(void *a1 = 0);  // 0x6abac0
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double u32_8(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

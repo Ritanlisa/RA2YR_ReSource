@@ -12,7 +12,7 @@ struct RefCount {
     char m_RefCount[4];  // 0x0
     char RefCount_field_04[4];  // 0x4
 // --- flat members (END) ---
-    int32_t Decrement();
+    int32_t Decrement(void *a1 = 0);
     int Increment(int a2);
     unsigned int u32_8;  // 0x8 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)

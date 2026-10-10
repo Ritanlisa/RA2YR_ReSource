@@ -14,19 +14,18 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    AbstractClass * * Release(int a2, int * a3);  // 0x4E0840
-    AbstractClass * * SetCapacity(int a2, int * a3);  // 0x4E0B10
-    char AddRef(int a2);  // 0x4E07E0
-    int FindItemIndex(unsigned int * a2);  // 0x4E0CA0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4E0D80
-    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x4E0E20
-    unsigned int * Clear(unsigned int * a2, int a3);  // 0x4E0250
-    unsigned int GetCapacity(int a2);  // 0x4E09E0
+    AbstractClass * *  Release(int a2, int * a3);  // 0x4E0840
+    AbstractClass * *  SetCapacity(int a2, int * a3);  // 0x4E0B10
+    char  AddRef(int a2);  // 0x4E07E0
+    int  FindItemIndex(unsigned int * a2);  // 0x4E0CA0
+    VectorClass_flat *  QueryInterface(char a2);  // 0x4E0D80
+    DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x4E0E20
+    unsigned int *  Clear(unsigned int * a2, int a3);  // 0x4E0250
+    unsigned int  GetCapacity(int a2);  // 0x4E09E0
     int Destroy(void *a1_1);  // 0x4E0AB0
-    unsigned int GetItemIndex(int a2);  // 0x4E0AF0
+    unsigned int  GetItemIndex(int a2);  // 0x4E0AF0
     wchar_t * ddtor(void *a1_1);  // 0x4E0950
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
@@ -34,6 +33,7 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
 };
 
 struct _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass {
-    void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize(unsigned int * a2);  // 0x4E0990
+    void  VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize(unsigned int * a2);  // 0x4E0990
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

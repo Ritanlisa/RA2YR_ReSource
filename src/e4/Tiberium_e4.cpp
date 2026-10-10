@@ -32,7 +32,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x59D510
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
 {
 
@@ -144,7 +144,7 @@ int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
   double v138; // [esp+F0h] [ebp-40h]
   double v139; // [esp+F8h] [ebp-38h]
   int64_t v141; // [esp+108h] [ebp-28h]
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x59E740

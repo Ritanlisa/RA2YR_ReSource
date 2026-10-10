@@ -7,16 +7,16 @@ namespace gamemd {
 
 struct ObjectVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
 // --- flat members (END) ---
-    int Construct(int aP1, int aP2);
-     void ddtor(ObjectVector * aP1);  // G57w10-S raw 0x40CDC0 (was C2597 interim stub)
+    int Construct(int aP1, int aP2, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+     void ddtor(ObjectVector * aP1);
+    static double ObjectVector_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double ObjectVector_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double ObjectVector_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double ObjectVector_field_0x10(...);  // plateau: C2039/C3861 stub
+    static double ObjectVector_field_0x14(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

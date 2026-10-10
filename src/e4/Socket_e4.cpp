@@ -18,8 +18,8 @@
 #include "e4/classes/SpawnManagerClass_e4.hpp"
 
 // 0x7B2630
-namespace gamemd {
-int Socket::ConfigureBuffers(SOCKET aP1)
+namespace gamemd {  // G42.18 ns repair
+int Socket::ConfigureBuffers(SOCKET)
 {
   SOCKET v2; // esi
   int result; // eax
@@ -33,7 +33,7 @@ int Socket::ConfigureBuffers(SOCKET aP1)
   if ( setsockopt(v2, 0xFFFF, 4097, byte_84DD9C, 4) == -1 ) /*0x7b2699*/
     WSAGetLastError(); /*0x7b269b*/
   result = Debug::Log(); /*0x7b26a6*/
-  IDA_LOBYTE(result) = 1; /*0x7b26ae*/
+  (*((unsigned char *)&(result))) = 1; /*0x7b26ae*/
   return result; /*0x7b26b0*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

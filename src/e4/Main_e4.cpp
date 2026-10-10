@@ -17,9 +17,10 @@
 #include "e4/classes/GameOptions_e4.hpp"
 
 // 0x4E1D00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Main::CreateDialog()
 {
+
   unsigned __int16 v2; // cx
   HWND Dialog; // eax
   LONG i; // eax
@@ -32,7 +33,7 @@ void Main::CreateDialog()
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
-  Dialog = (HWND)CreateDialog(v2, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameOptionsDlgProc, 0); /*0x4e1d47*/
+  Dialog = (HWND)CreateDialog(v2, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameOptionsDlgProc, 0); /*0x4e1d47*/
   this->Main_field_00 = (int)Dialog; /*0x4e1d4e*/
   if ( Dialog ) /*0x4e1d50*/
   {
@@ -44,17 +45,18 @@ void Main::CreateDialog()
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
-        IDA_LOBYTE(v5) = 0; /*0x4e1d8a*/
+        LOBYTE(v5) = 0; /*0x4e1d8a*/
         ScreenSaver::Process(v5, v6); /*0x4e1d8c*/
       }
     }
     if ( i == 1 ) /*0x4e1d9d*/
     {
-      GameOptions::GameSpeedChanged(); /*0x4e1da1*/
-      ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.vfptr[24]); /*0x4e1dab*/
+      GameOptions::GameSpeedChanged((GameOptions *)this); /*0x4e1da1*/
+      ScenarioClass::SaveGameOptions((ScenarioClass *)&stru_A8EB00.ObjectTypeClass[24]); /*0x4e1dab*/
     }
     Dialog::Destroy((Dialog *)this->Main_field_00); /*0x4e1db2*/
   }
   Debug::Log(); /*0x4e1dd0*/
+
 }
 } // namespace gamemd

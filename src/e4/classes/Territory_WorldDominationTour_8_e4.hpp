@@ -6,23 +6,21 @@
 namespace gamemd {
 struct Territory_WorldDominationTour_8 {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned int q004;  // 0x4
-    unsigned int q008;  // 0x8
-    unsigned int q00C;  // 0xC
     int Ticks;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned int u32_18;  // 0x18
-    unsigned int q01C;  // 0x1C
 // --- flat members (END) ---
-    int AddRef(char a2);  // 0x7718A0
+    int  AddRef(char a2);  // 0x7718A0
     signed intRelease();  // 0x771900
-    signed int ddtor();  // 0x771950
-    int Read(int a2, int a3);  // 0x771970
-    void Write(int a2, int a3);  // 0x771980
-    wchar_t * Close(int a2, void *a2_2);  // 0x7719D0
-    unsigned int * QueryInterface(unsigned int * Block, char a2);  // 0x771A30
+    signed int ddtor(void *a1 = 0);  // 0x771950
+    int  Read(int a2, int a3, void *a1 = 0);  // 0x771970
+    void  Write(int a2, int a3);  // 0x771980
+    wchar_t *  Close(int a2, void *a1 = 0);  // 0x7719D0
+    unsigned int *  QueryInterface(char a2);  // 0x771A30
     unsigned int * Seek(unsigned int * a1, void *a2_1, void *a3_1);  // 0x771990
     unsigned int * Open(void *a1_1, void *a2_1, void *a3_1);  // 0x7719C0
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double __pad_C(...);  // plateau: C2039/C3861 stub
+    static double field_1C(...);  // plateau: C2039/C3861 stub
+    static double field_4(...);  // plateau: C2039/C3861 stub
+    static double field_8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

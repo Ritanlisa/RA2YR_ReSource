@@ -134,33 +134,12 @@ struct SuperWeapon {
     unsigned int u32_5600;  // 0x5600
     unsigned int q5788;  // 0x5788
     void* q6120;  // 0x6120
-    unsigned int q8560;  // 0x8560
-    void* q14148;  // 0x14148
-    unsigned int q21408;  // 0x21408
-    unsigned int q21414;  // 0x21414
-    unsigned int q21648;  // 0x21648
-    unsigned int q21748;  // 0x21748
-    unsigned int q22408;  // 0x22408
-    void* q24598;  // 0x24598
-    void* q24864;  // 0x24864
-    unsigned int q34144;  // 0x34144
-    void* q82248;  // 0x82248
-    void* q82450;  // 0x82450
-    unsigned int q136200;  // 0x136200
-    unsigned int q136210;  // 0x136210
-    unsigned int q136214;  // 0x136214
-    void* q136754;  // 0x136754
-    void* q148888;  // 0x148888
-    void* q149604;  // 0x149604
-    unsigned int q213094;  // 0x213094
-    unsigned int q1270288;  // 0x1270288
-    unsigned int q1270290;  // 0x1270290
-    unsigned int q1271670;  // 0x1271670
 // --- flat members (END) ---
-    static int SerializeSuperWeaponState(void *aP1);  // 0x539AE0 raw: int __thiscall SuperWeapon::SerializeSuperWeaponState(SuperWeapon*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SerializeSuperWeaponState(void *aP1);
     char GetField10();
-    char FireSuperWeaponHouseClass(int a2, int a3);  // 0x4fae50
+    char  FireSuperWeaponHouseClass(int a2, int a3, void *a1 = 0);  // 0x4fae50
     int UpdateSuperWeaponsOwnedHouseClass();  // 0x50af10
+    static double u32_28(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

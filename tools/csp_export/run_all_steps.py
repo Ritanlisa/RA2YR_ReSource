@@ -43,6 +43,20 @@ def assert_braces_balanced():
     print('[gate] 花括号平衡断言: ALL PASS')
 
 
+def assert_defs_monotonic():
+    """RC3 gate (plan #10): function-definition count never decreases.
+    Ratchet baseline is machine-local (tools/*.json gitignore policy).
+    BOOTSTRAP (no baseline) passes loudly; a lost definition exits 1 with
+    the address named."""
+    r = subprocess.run([sys.executable, str(ROOT / 'tools'
+                                                / 'check_def_count.py')],
+                       cwd=str(ROOT))
+    if r.returncode != 0:
+        print('!! def-count monotonic gate FAILED (rc=%d) — 链停止'
+              % r.returncode)
+        sys.exit(r.returncode)
+
+
 def main():
     extra = [a for a in sys.argv[1:]]
     only = None
@@ -63,6 +77,7 @@ def main():
             sys.exit(r.returncode)
         if s == 'step4_bodies.py':
             assert_braces_balanced()
+            assert_defs_monotonic()
     print('======== ALL STEPS DONE ========')
 
 

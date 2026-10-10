@@ -13,19 +13,19 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x76F180
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 unsigned int * VectorCursor::Release(void *a1)
 {
-  ++*((_DWORD *)a1 + 2); /*0x76f182*/
-  return a1->q000; /*0x76f185*/
-}
+  ++*((unsigned int *)a1 + 2); /*0x76f182*/
+  return a1->__pad_0; /*0x76f185*/
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x76F190
 namespace gamemd {
 unsigned int * VectorCursor::ddtor(void *a1)
 {
-  --*((_DWORD *)a1 + 2); /*0x76f192*/
-  return a1->q000; /*0x76f195*/
+  --*((unsigned int *)a1 + 2); /*0x76f192*/
+  return a1->__pad_0; /*0x76f195*/
 }
 } // namespace gamemd
 // 0x4F42D0
@@ -43,7 +43,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
   int v4; // edx
   int v5; // eax
 
-  if ( ((unsigned __int8)dword_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
+  if ( ((uint8_t)dword_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
   {
     v3 = this->u32_4; /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/

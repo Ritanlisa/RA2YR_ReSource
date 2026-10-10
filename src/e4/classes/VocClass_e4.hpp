@@ -10,17 +10,8 @@ namespace gamemd {
 struct VocClass {
 // --- flat members (BEGIN) ---
     char Header[12];  // 0x0
-    unsigned int u32_4;  // 0x4
-    void* q008;  // 0x8
-    int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
     char Type[4];  // 0x14
     char Volume[32];  // 0x18
-    unsigned int u32_1C;  // 0x1C
-    char q020[4];  // 0x20
-    char q024[4];  // 0x24
-    unsigned int q028;  // 0x28
-    unsigned int q034;  // 0x34
     unsigned int VocClass_field_38;  // 0x38
     unsigned int VocClass_field_3C;  // 0x3C
     char Priority[4];  // 0x40
@@ -35,10 +26,6 @@ struct VocClass {
     char MaxFDelta[4];  // 0x64
     char VShift[4];  // 0x68
     char Name;  // 0x6C
-    unsigned int u32_7C;  // 0x7C
-    char q080[4];  // 0x80
-    float q084;  // 0x84
-    char q088[4];  // 0x88
     unsigned int VocClass_field_8C;  // 0x8C
     unsigned int VocClass_field_90;  // 0x90
     unsigned int VocClass_field_94;  // 0x94
@@ -50,16 +37,6 @@ struct VocClass {
     unsigned int VocClass_field_AC;  // 0xAC
     void* pVoiceChannel;  // 0xB0
     char SampleIndex[128];  // 0xB4
-    void* q0BC;  // 0xBC
-    unsigned int u32_FC;  // 0xFC
-    char q100[4];  // 0x100
-    char q104[4];  // 0x104
-    char q108;  // 0x108
-    char q114[4];  // 0x114
-    char q118[4];  // 0x118
-    unsigned int q124;  // 0x124
-    char q128[4];  // 0x128
-    unsigned int q130;  // 0x130
     char NumSamples[4];  // 0x134
     char Attack[4];  // 0x138
     char Decay[4];  // 0x13C
@@ -67,12 +44,12 @@ struct VocClass {
     unsigned int VocClass_field_144;  // 0x144
 // --- flat members (END) ---
     char * GetSampleNameByIndex(int a1);
-    int FindByName();
-    int Release();
-     int Check();  // G57w10-S raw 0x00406170 (was C2597 interim stub)
-    static int FindIndex(VocClass * aP1);  // G57w10-S raw 0x007514D0 (was C2597 interim stub)
-    char * GetSampleName(); // N_fix R5 supply (cache truth)
-    char LoadFromINI(CCINIClass * aP1);  // G42.39 supply
+    int FindByName(void *a1 = 0);
+    int Release(void *a1 = 0);
+     int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    static int FindIndex(VocClass * aP1);
+    char * GetSampleName(void *a1 = 0);
+    char LoadFromINI(CCINIClass * aP1, void *a1 = 0);  // G42.39 supply
     unsigned int u32_278;  // 0x278 (offset-truth)
 };
 #endif  // GAMEMD_G2_VocClass_DEF

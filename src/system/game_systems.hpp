@@ -54,7 +54,7 @@ public:
     unsigned int u32_8;  // 0x8 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
     unsigned char u32_D;  // 0xD (offset-truth)
-    unsigned int q000;  // 0x0 (canon-mt)
+    unsigned int *q000;  // 0x0 (canon-mt)
 };
 
 // ============================================================================
@@ -93,7 +93,7 @@ class GameSettings
 {
 public:
     // IDA 0x5FB050
-     void Read();  // 0x5FA620
+     int Read();  // 0x5FA620
     // IDA 0x5FB050 area
     // design: static function, no direct binary match in IDA
     static void sub_5FB050();
@@ -254,7 +254,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameLobby() = default;
 
-    virtual int DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6); // 0x5E1CA0  // g57c5 W5f: raw int 真值同步 (C2562)
+    virtual int DlgProc(int a2, HWND hWnd, UINT, WPARAM, unsigned int a6); // 0x5E1CA0  // g57c5 W5f: raw int 真值同步 (C2562)
 
 };
 // 2 methods in IDA
@@ -266,7 +266,7 @@ public:
     virtual ~GameOption_WorldDominationTour() = default;
 
     virtual void QueryInterface(); // 0x766A60
-    virtual void Constructor(); // 0x767300
+    void* Constructor(); // 0x767300
 
     uint8_t GameOption_WorldDominationTour_field_0x04[4];
 };
@@ -287,7 +287,7 @@ public:
     uint8_t GameOptions_field_0x08[4];
     uint8_t GameOptions_field_0x0C[4];
 public:  // g57c5 W4b supply slot
-    unsigned char __pad_0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
+    unsigned char *__pad_0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 // 2 methods in IDA
 class GameOptionsClass
@@ -355,7 +355,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameState() = default;
 
-    virtual void Reset(); // 0x680FF0
+    int Reset(); // 0x680FF0
 
 };
 // 12 methods in IDA
@@ -397,7 +397,7 @@ class LoadProgressMgr
 public:
     virtual ~LoadProgressMgr() = default; // 0x552AA0
 
-    virtual void GetInstance(); // 0x552A40
+    int GetInstance(); // 0x552A40
     virtual void Destroy(); // 0x552AA0
     virtual void ReleaseBuffer(); // 0x554370
 
@@ -424,7 +424,7 @@ public:
 
     virtual void RenderLoop(); // 0x4B6C30
     virtual void InitVtable(); // 0x4BA2F0
-    virtual void Constructor(); // 0x4BA340
+    void* Constructor(); // 0x4BA340
     virtual void RenderProgressBackground(); // 0x643400
     virtual void Render(); // 0x643AE0
     // +1 more virtual methods
@@ -493,7 +493,7 @@ class MultiplayerGameMode
 public:
     virtual ~MultiplayerGameMode() = default;  // 0x5D5D20
 
-    virtual void Construct(); // 0x5D5B60
+    int Construct(); // 0x5D5B60
     virtual void Dtor(); // 0x5D5D20
     virtual void GetFirst(); // 0x5D5E10
     virtual void ListGet(); // 0x5D5ED0
@@ -531,8 +531,8 @@ public:
     virtual ~SaveLoadDialog() = default;
 
     virtual void DlgProc(); // 0x558DD0
-    virtual void LookupDialogHash(); // 0x608380
-    virtual void FindDialogTemplate(); // 0x6083E0
+    int LookupDialogHash(); // 0x608380
+    int FindDialogTemplate(); // 0x6083E0
 
     uint8_t SaveLoadDialog_field_0x04[4];
     uint8_t SaveLoadDialog_field_0x08[4];
@@ -560,7 +560,7 @@ public:
     virtual ~SkirmishMapGen() = default;
 
     virtual void DlgProc(); // 0x596300
-    virtual void LookupDialogHash(); // 0x6067A0
+    int LookupDialogHash(); // 0x6067A0
 
     uint8_t SkirmishMapGen_field_0x04[4];
 };

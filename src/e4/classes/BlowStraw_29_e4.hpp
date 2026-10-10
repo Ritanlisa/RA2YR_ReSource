@@ -8,19 +8,15 @@ namespace gamemd {
 struct TabClass;  // fix_fwd_type_supply
 struct BlowStraw_29 {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned int q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned int q194;  // 0x194
-    unsigned int q198;  // 0x198
+
 // --- flat members (END) ---
     int Seek(int *aP1, unsigned int *a2);  // 0x6D0680
-    TabClass * Read(char * Block, char a2);  // 0x5BE9E0
+    TabClass *  Read(char a2, void *a1 = 0, void *a3 = 0);  // 0x5BE9E0
     unsigned int u32_5538;  // 0x5538 (offset-truth)
     unsigned int u32_5540;  // 0x5540 (offset-truth)
     unsigned int u32_5544;  // 0x5544 (offset-truth)
     unsigned char u32_5545;  // 0x5545 (offset-truth)
+    static double TabClass_field_0x0(...);  // plateau: C2039/C3861 stub
+    static double __pad_5298(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

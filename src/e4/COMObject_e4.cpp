@@ -12,19 +12,19 @@
 #include "e4/classes/IPersistStream_e4.hpp"
 
 // 0x4E1A00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int COMObject::FindNextActive(unsigned char * a1)
 {
   if ( !a1 ) /*0x4e1a02*/
     return 0; /*0x4e1a16*/
-  while ( !IDA_LOBYTE(a1->Image) ) /*0x4e1a09*/
+  while ( !(*((unsigned char *)&(a1->Image))) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (__thiscall **)(ShpButtonClass *))(*(_DWORD *)a1->q000 + 4))(a1); /*0x4e1a10*/
+    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
   return 1; /*0x4e1a18*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x4E30C0
 namespace gamemd {
@@ -50,7 +50,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
-  return *(_DWORD *)&stru_A8EB00.?[880] == (*(int (__thiscall **)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
+  return *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
 }
 } // namespace gamemd
 // 0x55AB40
@@ -59,7 +59,7 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x55ab47*/
     return -2147467261; /*0x55ab49*/
-  *a2 = (*(int (__thiscall **)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
+  *a2 = (*(int (**)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
   a2[1] = 0; /*0x55ab60*/
   return 0; /*0x55ab4e*/
 }
@@ -94,7 +94,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
-  return (*(int (__thiscall **)(int))(*(_DWORD *)a1->q008 + 1336))(a1->q008); /*0x55ad1f*/
+  return (*(int (**)(int))(*(unsigned int *)a1->field_8 + 1336))(a1->field_8); /*0x55ad1f*/
 }
 } // namespace gamemd
 // 0x5F9970
@@ -122,7 +122,7 @@ int COMObject::QueryInterface2(const void * a2, unsigned int * a3)
     *v4 = a2; /*0x6c0096*/
   if ( !*v4 ) /*0x6c0098*/
     return -2147467262; /*0x6c00a0*/
-  (*(void (__stdcall **)(const void *))(*(_DWORD *)a2 + 4))(a2); /*0x6c00ac*/
+  (*(void (__stdcall **)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c00ac*/
   return 0; /*0x6c005e*/
 }
 } // namespace gamemd

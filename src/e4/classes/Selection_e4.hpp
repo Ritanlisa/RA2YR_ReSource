@@ -14,7 +14,7 @@ struct Selection {
     unsigned char pad_05;  // 0x5
 // --- flat members (END) ---
     bool GetFlag(void *a1);
-    static bool GetFlag();  // G42.33 b4 C2: static-form sync (0 参调用形)
+    static bool GetFlag();
     int ClearGlobals();
     int SetCurrent();
 };

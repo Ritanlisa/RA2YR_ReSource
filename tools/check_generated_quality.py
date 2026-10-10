@@ -258,6 +258,7 @@ def load_member_types():
 def load_name_provenance():
     """Returns (set_of_names, note). Accepted shapes:
     {"names": [..]} | {"provenance": {name: record}} | [str] | [{"name":..}]
+    | N1 authority {"members"/"functions"/"variables": {key: {"name": ..}}}
     Unrecognized/unreadable -> raise ValueError (caller exits 2)."""
     with open(NAME_PROVENANCE, "r", encoding="utf-8") as f:
         raw = json.load(f)
@@ -268,6 +269,21 @@ def load_name_provenance():
         items = list(raw["provenance"].keys())
     elif isinstance(raw, list):
         items = raw
+    elif isinstance(raw, dict) and any(
+            isinstance(raw.get(k), dict)
+            for k in ("members", "functions", "variables", "classes")):
+        # N1 provenance authority (gen_name_provenance.py): per-entity
+        # records carrying the winning semantic name.
+        items = []
+        for sec in ("members", "functions", "variables", "classes"):
+            sect = raw.get(sec)
+            if not isinstance(sect, dict):
+                continue
+            for rec in sect.values():
+                if isinstance(rec, dict) and isinstance(rec.get("name"), str):
+                    items.append(rec)
+                elif isinstance(rec, str):
+                    items.append(rec)
     else:
         raise ValueError(f"unrecognized top-level shape: {type(raw).__name__}")
     for it in items:

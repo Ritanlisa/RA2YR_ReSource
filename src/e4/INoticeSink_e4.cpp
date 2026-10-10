@@ -7,9 +7,9 @@
 #include "e4/e4_protos.h"
 
 // 0x410210
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int INoticeSink::Dispatch(int a1, void *a2, void *a3, void *a4, void *a5)
 {
-  return (*(int (__thiscall **)(char *))(*((_DWORD *)this - 1) + 44))((char *)this - 4); /*0x41021d*/
-}
+  return (*(int (**)(char *))(*((unsigned int *)this - 1) + 44))((char *)this - 4); /*0x41021d*/
+}  // G42.18 ns repair
 } // namespace gamemd

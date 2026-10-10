@@ -19,49 +19,13 @@ struct AbstractTypeClass {
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
-    char q01C[4];  // 0x1C
-    bool q01D;  // 0x1D
+    char referenceCount_d[4];  // 0x1C
     bool NeedsSaveOrLink;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int u32_28;  // 0x28
-    bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q031;  // 0x31
     bool needsSave;  // 0x32
-    unsigned char q034;  // 0x34
-    unsigned int q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     unsigned char zero_3C;  // 0x3C
     char UINameLabel;  // 0x3D
-    unsigned int q040;  // 0x40
-    bool q042;  // 0x42
-    unsigned int q044;  // 0x44
-    unsigned int q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q05D;  // 0x5D
-    unsigned int UIName;  // 0x60
+    void* ;  // 0x60
     char Name;  // 0x64
-    unsigned int q068;  // 0x68
-    ObjectClass* q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    bool q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q07C;  // 0x7C
-    unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    void* q088;  // 0x88
-    void* q08C;  // 0x8C
-    unsigned char q090;  // 0x90
-    unsigned int q094;  // 0x94
     unsigned char tail_95;  // 0x95
 // --- flat members (END) ---
     char UINameLabel[32];  // 0x3D char[32] ml g7-til-merge (G57w4)
@@ -71,15 +35,15 @@ struct AbstractTypeClass {
     void* houseTypesCount;  // 0x0 (no offset truth)
     AbstractTypeClass * ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1);
     BOOL NameEquals(void *a2);
-    char WriteINI(char *aP1);
+    char WriteINI(char *aP1, void *a1 = 0);
     int AddSampleVocClass();
-    int Constructor(char *aP1);
-    int Dtor();
+    int Constructor(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    int Dtor(void *a1 = 0);
     int GetData(void *a1);
     int GetType(int a1);
-    int Init(int aP1);
-    int LoadFromINI(unsigned __int8 ***aP1);
-    int ProcessPower(int *aP1);
+    int Init(int aP1, void *a1 = 0);
+    int LoadFromINI(uint8_t ***aP1, void *a1 = 0);
+    int ProcessPower(int *aP1, void *a1 = 0);
     int SetType();
     int StubReturnFalse();
     int Validate();
@@ -96,8 +60,22 @@ struct AbstractTypeClass {
     void sub_4065D0();
     void sub_4065E0();
     void sub_406640();
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q008;  // 0x8 (offset-truth)
+    static double TaskForceClass_field_0x4(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double __pad_024(...);  // plateau: C2039/C3861 stub
+    static double __pad_24(...);  // plateau: C2039/C3861 stub
+    static double __pad_8(...);  // plateau: C2039/C3861 stub
+    static double nextArrayIndex1(...);  // plateau: C2039/C3861 stub
+    static double u32_94(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
+    static double vfptr2(...);  // plateau: C2039/C3861 stub
+    static double vfptr3(...);  // plateau: C2039/C3861 stub
+    static double vtable34(...);  // plateau: C2039/C3861 stub
+    static double vtable35(...);  // plateau: C2039/C3861 stub
+    static double vtable46(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

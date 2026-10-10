@@ -23,12 +23,9 @@ struct BuildingLight {
     unsigned int q304;  // 0x304
     void* q1634;  // 0x1634
     void* q5684;  // 0x5684
-    void* q22148;  // 0x22148
-    void* q1283474;  // 0x1283474
-    void* q19412084;  // 0x19412084
 // --- flat members (END) ---
-    Coord * * CalculateShading(__m64);
-    int CalcIntensity(double a1);  // G57w10-S raw 0x004CAD80 (was C2597 interim stub)
+    Coord * * CalculateShading(__m64 a2);
+    int CalcIntensity(double a1);
     Coord * * CalculateShading(__m64, void * a1, void * a2);
 };
 } // namespace gamemd

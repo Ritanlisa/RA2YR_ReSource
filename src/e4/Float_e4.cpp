@@ -9,18 +9,18 @@
 #include "e4/e4_protos.h"
 
 // 0x6C9690
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 float Float::Accumulate(float value, int index)
 {
   *((float *)this + index) = value + *((float *)this + index); /*0x6c969b*/
   return index; /*0x6c969e*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6C96B0
 namespace gamemd {
 int Float::SubtractClamped(float aP1, int aP2)
 {
-  __int16 v3; // fps
+  int16_t v3; // fps
   double v4; // st7
   bool v5; // c0
   char v6; // c2
@@ -32,7 +32,7 @@ int Float::SubtractClamped(float aP1, int aP2)
   v5 = v4 < aP1; /*0x6c96b7*/
   v6 = 0; /*0x6c96b7*/
   v7 = v4 == aP1; /*0x6c96b7*/
-  IDA_LOWORD(result) = v3; /*0x6c96bb*/
+  (*((unsigned short *)&(result))) = v3; /*0x6c96bb*/
   if ( v4 >= aP1 ) /*0x6c96c0*/
     v9 = *((float *)this + aP2) - aP1; /*0x6c96d7*/
   else

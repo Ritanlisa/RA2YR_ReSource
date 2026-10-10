@@ -186,7 +186,7 @@ virtual void vt_entry_534(int);  // 0x41C130
     virtual int MoveToWeed();  // 0x4DDB90
     virtual bool CheckHeightDiff() const;  // 0x4DDC40
     virtual int ValidateTargetCell();  // 0x4DDC60
-    virtual int HandleCursorWithCheck(__int16* a2, char a3, char a4);  // 0x4DDDE0 (G42.42d truth arity)
+    virtual int HandleCursorWithCheck(int16_t* a2, char a3, char a4);  // 0x4DDDE0 (G42.42d truth arity)
     virtual void ProcessMissionState();  // 0x4DDF90
     virtual int ValidateFoundation(); // 0x4DE580
     virtual int PreDestroy();  // 0x4DE5D0

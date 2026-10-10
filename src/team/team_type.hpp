@@ -49,7 +49,7 @@ public:
     void ddtor();  // 0x6F20D0
 
     // Methods
-    void Construct(); // 0x4C98B0
+    int Construct(); // 0x4C98B0
     void Check();                                            // 0x6EF5F0
     void CreateScriptType(TechnoClass*);                     // 0x691C00
     void DestroyAllInstances();                              // 0x6F0A70

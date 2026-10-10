@@ -8,16 +8,18 @@
 #include "e4/e4_protos.h"
 
 // 0x7B7110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 wchar_t MSPrintAnim::GetCharAt(size_t a2)
 {
+
   int result; // eax
 
-  result = wcslen(*(const wchar_t **)this->q000); /*0x7b7116*/
+  result = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7116*/
   if ( a2 >= result ) /*0x7b7124*/
-    IDA_LOWORD(result) = 0; /*0x7b7130*/
+    LOWORD(result) = 0; /*0x7b7130*/
   else
-    IDA_LOWORD(result) = *(_WORD *)(*(_DWORD *)this->q000 + 2 * a2); /*0x7b7129*/
+    LOWORD(result) = *(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * a2); /*0x7b7129*/
   return result; /*0x7b7128*/
+
 }
 } // namespace gamemd

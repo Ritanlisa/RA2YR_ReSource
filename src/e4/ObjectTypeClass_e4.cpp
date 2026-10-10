@@ -44,9 +44,10 @@ namespace gamemd {
 } // namespace gamemd
 
 // 0x46C790
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
 {
+
   int v2; // esi
   BulletTypeClass *v3; // eax
 
@@ -55,18 +56,19 @@ BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
   v2 = 0; /*0x46c7bd*/
   if ( dword_A83C90 <= 0 ) /*0x46c7c1*/
   {
-  LABEL_6:
-    v3 = (BulletTypeClass *)RA2_OPNEW(0x2F8u); /*0x46c7e6*/
+LABEL_6:
+    v3 = (BulletTypeClass *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
       return BulletTypeClass::Construct(v3, Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
-  while ( _strcmpi((char *)(*((_DWORD *)dword_A83C84 + v2) + 36), Source) ) /*0x46c7da*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A83C84 + v2) + 36), Source) ) /*0x46c7da*/
   {
     if ( ++v2 >= dword_A83C90 ) /*0x46c7e4*/
       goto LABEL_6; /*0x46c7e4*/
   }
-  return (_BYTE *)*((_DWORD *)dword_A83C84 + v2); /*0x46c7ff*/
+  return (unsigned char *)*((unsigned int *)dword_A83C84 + v2); /*0x46c7ff*/
+
 }
 } // namespace gamemd
 // 0x473980
@@ -101,7 +103,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   if ( INIClass::GetString((INIClass *)this, aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
   v4 = 0; /*0x474964*/
-  v5 = &off_81B9B0; /*0x474966*/
+  v5 = (char **)(&off_81B9B0); /*0x474966*/
   while ( _strcmpi(Destination, *v5) ) /*0x47497d*/
   {
     v5 += 2; /*0x47497f*/
@@ -127,7 +129,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   }
   else
   {
-    v4 = (char *)(*((_DWORD *)dword_A8E334 + a4) + 36); /*0x474f65*/
+    v4 = (char *)(*((unsigned int *)dword_A8E334 + a4) + 36); /*0x474f65*/
   }
   INIClass::GetString(a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
@@ -137,6 +139,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 namespace gamemd {
 int ObjectTypeClass::ConstructFull(char *aP1)
 {
+
   int *v3; // eax
   int v4; // ecx
   int *v5; // eax
@@ -145,22 +148,22 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
-  AbstractTypeClass::Constructor(aP1); /*0x5f709c*/
-  v3 = &this->u32_C8; /*0x5f70a3*/
-  this->q098 = 0; /*0x5f70a9*/
-  this->q264 = 0; /*0x5f70af*/
-  this->u32_9A = 0; /*0x5f70b5*/
-  *(&this->vtable49) = 0; /*0x5f70bb*/
-  *(&this->uniqueId0) = 0; /*0x5f70c1*/
-  *(&this->uniqueId1) = 0; /*0x5f70c7*/
-  this->ImageAllocated = 0; /*0x5f70cd*/
-  *(&this->uniqueId3) = 0; /*0x5f70d3*/
-  *(&this->uniqueId4) = 0; /*0x5f70d9*/
-  *(&this->uniqueId5) = 0; /*0x5f70df*/
-  *(&this->uniqueId6) = 0; /*0x5f70e5*/
-  *(&this->uniqueId7) = 0; /*0x5f70eb*/
-  *(&this->uniqueId8) = 0; /*0x5f70f1*/
-  *(&this->uniqueId9) = 0; /*0x5f70f7*/
+  AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
+  v3 = (char *)this + 50; /*0x5f70a3*/
+  *((unsigned char *)this + 152) = 0; /*0x5f70a9*/
+  *((unsigned char *)this + 153) = 0; /*0x5f70af*/
+  *((unsigned char *)this + 154) = 0; /*0x5f70b5*/
+  *((char *)this + 39) = 0; /*0x5f70bb*/
+  *((char *)this + 40) = 0; /*0x5f70c1*/
+  *((char *)this + 41) = 0; /*0x5f70c7*/
+  *((unsigned char *)this + 168) = 0; /*0x5f70cd*/
+  *((char *)this + 43) = 0; /*0x5f70d3*/
+  *((char *)this + 44) = 0; /*0x5f70d9*/
+  *((char *)this + 45) = 0; /*0x5f70df*/
+  *((char *)this + 46) = 0; /*0x5f70e5*/
+  *((char *)this + 47) = 0; /*0x5f70eb*/
+  *((char *)this + 48) = 0; /*0x5f70f1*/
+  *((char *)this + 49) = 0; /*0x5f70f7*/
   v4 = 18; /*0x5f70fd*/
   do /*0x5f710b*/
   {
@@ -170,7 +173,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
-  v5 = &this->u32_158; /*0x5f710d*/
+  v5 = (char *)this + 86; /*0x5f710d*/
   v6 = 18; /*0x5f7113*/
   do /*0x5f7121*/
   {
@@ -180,59 +183,59 @@ int ObjectTypeClass::ConstructFull(char *aP1)
     --v6; /*0x5f7120*/
   }
   while ( v6 ); /*0x5f7121*/
-  this->q1E8 = 0; /*0x5f712e*/
-  *(&this->NoSpawnAlt3) = 0; /*0x5f7134*/
-  *(&this->NoSpawnAlt4) = -1; /*0x5f713a*/
-  *(&this->NoSpawnAlt5) = -1; /*0x5f7140*/
-  this->ImageFile_0x19 = 0; /*0x5f7146*/
-  this->q211 = 0; /*0x5f7148*/
-  this->q212 = 0; /*0x5f714e*/
-  this->AlphaImageFile = 0; /*0x5f7156*/
-  this->q22E = 1; /*0x5f715c*/
-  this->q230 = 1; /*0x5f7162*/
-  this->q231 = 1; /*0x5f7168*/
-  this->q235 = 1; /*0x5f716e*/
-  this->q22C = 0; /*0x5f7176*/
-  this->q22D = 0; /*0x5f717c*/
-  this->q22F = 0; /*0x5f7182*/
-  this->q232 = 0; /*0x5f7188*/
-  this->q233 = 0; /*0x5f718e*/
-  this->q234 = 0; /*0x5f7194*/
-  this->q236 = 0; /*0x5f719a*/
-  this->q237 = 0; /*0x5f71a0*/
-  this->q238 = 0; /*0x5f71a6*/
-  this->q239 = 0; /*0x5f71ac*/
-  this->q23A = 0; /*0x5f71b2*/
-  this->q23B = 0x80; /*0x5f71b8*/
-  this->u32_23C = 0x80; /*0x5f71be*/
-  this->q23D = 0x80; /*0x5f71c4*/
-  *(&this->u32_384) = 16; /*0x5f71ca*/
-  *(&this->u32_385) = 0; /*0x5f71d4*/
-  *(&this->u32_386) = 0; /*0x5f71da*/
-  *(&this->u32_387) = 0; /*0x5f71e0*/
-  this->u32_250 = 0; /*0x5f71e6*/
-  *(&this->u32_389) = 0; /*0x5f71ec*/
-  *(&this->zero_3C0) = 0; /*0x5f71f2*/
-  *(&this->zero_3C1) = 0; /*0x5f71f8*/
-  *(&this->zero_3C2) = 0; /*0x5f71fe*/
-  this->q264 = 0; /*0x5f7204*/
-  *(&this->zero_3C4) = 0; /*0x5f720a*/
-  *(&this->zero_3C5) = 0; /*0x5f7213*/
-  *(&this->zero_3C6) = 0; /*0x5f7219*/
-  *(&this->zero_3C7) = 0; /*0x5f721f*/
-  this->q278 = 0; /*0x5f7225*/
-  *(&this->zero_3C9) = 0; /*0x5f722b*/
-  *(&this->q0400) = 0; /*0x5f7231*/
-  *(&this->q0401) = 0; /*0x5f7237*/
-  *(&this->q0402) = 0; /*0x5f723d*/
-  this->q28C = 0; /*0x5f7243*/
-  *(&this->q0404) = 0; /*0x5f7249*/
-  *this = (int)&(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7251*/
-  this->vtable2 = (int)&(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7258*/
-  this->vtable3 = (int)&(void*)(void*)&ObjectTypeClass_vftable; /*0x5f725f*/
-  this->vtable4 = (int)&(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7266*/
-  if ( &this->BarrelVoxel != &this->NoSpawnAlt6 ) /*0x5f726d*/
-    qmemcpy(&this->ImageFile_0x19, &this->BarrelVoxel, 0x19u); /*0x5f7274*/
+  *((unsigned char *)this + 488) = 0; /*0x5f712e*/
+  *((char *)this + 123) = 0; /*0x5f7134*/
+  *((char *)this + 124) = -1; /*0x5f713a*/
+  *((char *)this + 125) = -1; /*0x5f7140*/
+  *((unsigned char *)this + 504) = 0; /*0x5f7146*/
+  *((unsigned char *)this + 529) = 0; /*0x5f7148*/
+  *((unsigned char *)this + 530) = 0; /*0x5f714e*/
+  *((unsigned char *)this + 531) = 0; /*0x5f7156*/
+  *((unsigned char *)this + 558) = 1; /*0x5f715c*/
+  *((unsigned char *)this + 560) = 1; /*0x5f7162*/
+  *((unsigned char *)this + 561) = 1; /*0x5f7168*/
+  *((unsigned char *)this + 565) = 1; /*0x5f716e*/
+  *((unsigned char *)this + 556) = 0; /*0x5f7176*/
+  *((unsigned char *)this + 557) = 0; /*0x5f717c*/
+  *((unsigned char *)this + 559) = 0; /*0x5f7182*/
+  *((unsigned char *)this + 562) = 0; /*0x5f7188*/
+  *((unsigned char *)this + 563) = 0; /*0x5f718e*/
+  *((unsigned char *)this + 564) = 0; /*0x5f7194*/
+  *((unsigned char *)this + 566) = 0; /*0x5f719a*/
+  *((unsigned char *)this + 567) = 0; /*0x5f71a0*/
+  *((unsigned char *)this + 568) = 0; /*0x5f71a6*/
+  *((unsigned char *)this + 569) = 0; /*0x5f71ac*/
+  *((unsigned char *)this + 570) = 0; /*0x5f71b2*/
+  *((unsigned char *)this + 571) = 0x80; /*0x5f71b8*/
+  *((unsigned char *)this + 572) = 0x80; /*0x5f71be*/
+  *((unsigned char *)this + 573) = 0x80; /*0x5f71c4*/
+  *((char *)this + 144) = 16; /*0x5f71ca*/
+  *((char *)this + 145) = 0; /*0x5f71d4*/
+  *((char *)this + 146) = 0; /*0x5f71da*/
+  *((char *)this + 147) = 0; /*0x5f71e0*/
+  *((unsigned char *)this + 592) = 0; /*0x5f71e6*/
+  *((char *)this + 149) = 0; /*0x5f71ec*/
+  *((char *)this + 150) = 0; /*0x5f71f2*/
+  *((char *)this + 151) = 0; /*0x5f71f8*/
+  *((char *)this + 152) = 0; /*0x5f71fe*/
+  *((unsigned char *)this + 612) = 0; /*0x5f7204*/
+  *((char *)this + 154) = 0; /*0x5f720a*/
+  *((char *)this + 155) = 0; /*0x5f7213*/
+  *((char *)this + 156) = 0; /*0x5f7219*/
+  *((char *)this + 157) = 0; /*0x5f721f*/
+  *((unsigned char *)this + 632) = 0; /*0x5f7225*/
+  *((char *)this + 159) = 0; /*0x5f722b*/
+  *((char *)this + 160) = 0; /*0x5f7231*/
+  *((char *)this + 161) = 0; /*0x5f7237*/
+  *((char *)this + 162) = 0; /*0x5f723d*/
+  *((unsigned char *)this + 652) = 0; /*0x5f7243*/
+  *((char *)this + 164) = 0; /*0x5f7249*/
+  *this = (int)&ObjectTypeClass::`vftable'; /*0x5f7251*/
+  *((char *)this + 1) = (int)&ObjectTypeClass::`vftable'; /*0x5f7258*/
+  *((char *)this + 2) = (int)&ObjectTypeClass::`vftable'; /*0x5f725f*/
+  *((char *)this + 3) = (int)&ObjectTypeClass::`vftable'; /*0x5f7266*/
+  if ( (char *)this + 9 != (char *)this + 126 ) /*0x5f726d*/
+    qmemcpy((char *)this + 126, (char *)this + 9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x18u); /*0x5f7292*/
@@ -242,35 +245,37 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   {
     Destination[0] = 0; /*0x5f7280*/
   }
-  if ( Destination != (char *)&this->u32_D41 ) /*0x5f72aa*/
+  if ( Destination != (char *)this + 531 ) /*0x5f72aa*/
   {
-    qmemcpy((char *)&this->AlphaImageFile, Destination, 0x18u); /*0x5f72b5*/
-    this->u32_22B = v10; /*0x5f72b7*/
+    qmemcpy((char *)this + 531, Destination, 0x18u); /*0x5f72b5*/
+    *((unsigned char *)this + 555) = v10; /*0x5f72b7*/
   }
   if ( dword_AC1428 < dword_AC1420 /*0x5f72ee*/
     || (byte_AC1425 || !dword_AC1420)
     && dword_AC142C > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_AC1418 + 8))(
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_AC1418 + 8))(
          &dword_AC1418,
          dword_AC142C + dword_AC1420,
          0) )
   {
     v7 = dword_AC1428++; /*0x5f72fb*/
-    *((_DWORD *)dword_AC141C + v7) = this; /*0x5f730a*/
+    *((unsigned int *)dword_AC141C + v7) = this; /*0x5f730a*/
   }
   return (int)this; /*0x5f730f*/
+
 }
 } // namespace gamemd
 // 0x5F7320
 namespace gamemd {
 BulletTypeClass * ObjectTypeClass::Construct(int aP1)
 {
+
   int *v3; // eax
   int v4; // edx
   char *v5; // eax
   int v6; // edx
 
-  AbstractTypeClass::Init(aP1); /*0x5f7328*/
+  AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
   v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
@@ -282,12 +287,12 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  v5 = &this->q14D[11]; /*0x5f734b*/
+  v5 = &this->__pad_14D[11]; /*0x5f734b*/
   v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
-    *(_DWORD *)v5 = 0; /*0x5f7356*/
-    *((_DWORD *)v5 + 1) = 0; /*0x5f7358*/
+    *(unsigned int *)v5 = 0; /*0x5f7356*/
+    *((unsigned int *)v5 + 1) = 0; /*0x5f7358*/
     v5 += 8; /*0x5f735b*/
     --v6; /*0x5f735e*/
   }
@@ -295,86 +300,90 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
   this->VoxelCaches[0] = 0; /*0x5f7361*/
   this->VoxelCaches[1] = 0; /*0x5f7367*/
   this->VoxelCaches[2] = 0; /*0x5f736d*/
-  IDA_LOBYTE(this->VoxelCaches[3]) = 0; /*0x5f7373*/
+  LOBYTE(this->VoxelCaches[3]) = 0; /*0x5f7373*/
   this->VoxelCaches[4] = 0; /*0x5f7379*/
   this->VoxelCaches[5] = 0; /*0x5f737f*/
   this->VoxelCaches[6] = 0; /*0x5f7385*/
   this->VoxelCaches[7] = 0; /*0x5f738b*/
-  IDA_LOBYTE(this->VoxelCaches[8]) = 0; /*0x5f7391*/
+  LOBYTE(this->VoxelCaches[8]) = 0; /*0x5f7391*/
   this->VoxelCaches[9] = 0; /*0x5f7397*/
   this->VoxelCaches[10] = 0; /*0x5f739d*/
   this->VoxelCaches[11] = 0; /*0x5f73a3*/
   this->VoxelCaches[12] = 0; /*0x5f73a9*/
-  IDA_LOBYTE(this->VoxelCaches[13]) = 0; /*0x5f73af*/
+  LOBYTE(this->VoxelCaches[13]) = 0; /*0x5f73af*/
   this->VoxelCaches[14] = 0; /*0x5f73b5*/
   this->VoxelCaches[15] = 0; /*0x5f73bb*/
   this->VoxelCaches[16] = 0; /*0x5f73c1*/
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
-  IDA_LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
+  LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->vfptr = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73d9*/
-  this->vfptr1 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73df*/
-  this->vfptr2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
-  this->vfptr3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73ed*/
-  return &this->vfptr; /*0x5f73f6*/
+  this->AbstractTypeClass = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
+  this->? = &ObjectTypeClass::`vftable'; /*0x5f73df*/
+  this->? = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
+  this->? = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  return &this->AbstractTypeClass; /*0x5f73f6*/
+
 }
 } // namespace gamemd
 // 0x5F7400
 namespace gamemd {
 SomeVoxelCache * * ObjectTypeClass::Destruct()
 {
+
   int v2; // eax
   ObjectTypeClass *v3; // edi
   int v4; // ebx
   ObjectTypeClass *v5; // edi
   int v6; // ebx
+  int v8; // [esp+Ch] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f740b*/
-  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7411*/
-  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7418*/
-  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f741f*/
-  v2 = (*(int (__thiscall **)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &this); /*0x5f7435*/
+  *(unsigned int *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
+  *((unsigned int *)this + 1) = &ObjectTypeClass::`vftable'; /*0x5f7411*/
+  *((unsigned int *)this + 2) = &ObjectTypeClass::`vftable'; /*0x5f7418*/
+  *((unsigned int *)this + 3) = &ObjectTypeClass::`vftable'; /*0x5f741f*/
+  v8 = this; /*0x5f7431*/
+  v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
     {
       ++v2; /*0x5f7458*/
-      *((_DWORD *)dword_AC141C + v2 - 1) = *((_DWORD *)dword_AC141C + v2); /*0x5f745c*/
+      *((unsigned int *)dword_AC141C + v2 - 1) = *((unsigned int *)dword_AC141C + v2); /*0x5f745c*/
     }
     while ( v2 < dword_AC1428 ); /*0x5f7468*/
   }
-  if ( this->ImageAllocated && this->q0A4 ) /*0x5f7476*/
+  if ( *((unsigned char *)this + 168) && *((unsigned int *)this + 41) ) /*0x5f7476*/
   {
-    RA2_OPDEL(*(void **)(&this->q0404)); /*0x5f7481*/
-    this->q0A4 = 0; /*0x5f7489*/
-    this->ImageAllocated = 0; /*0x5f748f*/
+    __3_YAXPAX_Z(*(void **)((char *)this + 164)); /*0x5f7481*/
+    *((unsigned int *)this + 41) = 0; /*0x5f7489*/
+    *((unsigned char *)this + 168) = 0; /*0x5f748f*/
   }
-  ObjectTypeClass::CleanupWeapons(); /*0x5f7497*/
-  RA2_OPDEL(*(void **)(&this->q1000)); /*0x5f74a3*/
-  this->q280 = 0; /*0x5f74a8*/
-  this->q284 = 0; /*0x5f74ae*/
-  this->q288 = 0; /*0x5f74b4*/
-  this->q28C = 0; /*0x5f74ba*/
-  this->q290 = 0; /*0x5f74c0*/
-  RA2_OPDEL(*(void **)(&this->q0F80)); /*0x5f74cd*/
-  this->q26C = 0; /*0x5f74d2*/
-  this->q270 = 0; /*0x5f74d8*/
-  this->q274 = 0; /*0x5f74de*/
-  this->q278 = 0; /*0x5f74e4*/
-  this->q27C = 0; /*0x5f74ea*/
-  RA2_OPDEL(*(void **)(&this->q0F00)); /*0x5f74f7*/
-  this->q258 = 0; /*0x5f74fc*/
-  this->q25C = 0; /*0x5f7502*/
-  this->q260 = 0; /*0x5f7508*/
-  this->q264 = 0; /*0x5f750e*/
-  this->q268 = 0; /*0x5f7514*/
-  RA2_OPDEL(*(void **)(&this->q0E80)); /*0x5f7521*/
-  this->VoxelCaches_4 = 0; /*0x5f7526*/
-  this->q248 = 0; /*0x5f752c*/
-  this->q24C = 0; /*0x5f7532*/
-  this->u32_250 = 0; /*0x5f7538*/
-  this->q254 = 0; /*0x5f753e*/
-  v3 = (ObjectTypeClass *)(&this->u32_C08); /*0x5f7547*/
+  ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
+  __3_YAXPAX_Z(*(void **)((char *)this + 640)); /*0x5f74a3*/
+  *((unsigned int *)this + 160) = 0; /*0x5f74a8*/
+  *((unsigned int *)this + 161) = 0; /*0x5f74ae*/
+  *((unsigned int *)this + 162) = 0; /*0x5f74b4*/
+  *((unsigned char *)this + 652) = 0; /*0x5f74ba*/
+  *((unsigned int *)this + 164) = 0; /*0x5f74c0*/
+  __3_YAXPAX_Z(*(void **)((char *)this + 620)); /*0x5f74cd*/
+  *((unsigned int *)this + 155) = 0; /*0x5f74d2*/
+  *((unsigned int *)this + 156) = 0; /*0x5f74d8*/
+  *((unsigned int *)this + 157) = 0; /*0x5f74de*/
+  *((unsigned char *)this + 632) = 0; /*0x5f74e4*/
+  *((unsigned int *)this + 159) = 0; /*0x5f74ea*/
+  __3_YAXPAX_Z(*(void **)((char *)this + 600)); /*0x5f74f7*/
+  *((unsigned int *)this + 150) = 0; /*0x5f74fc*/
+  *((unsigned int *)this + 151) = 0; /*0x5f7502*/
+  *((unsigned int *)this + 152) = 0; /*0x5f7508*/
+  *((unsigned char *)this + 612) = 0; /*0x5f750e*/
+  *((unsigned int *)this + 154) = 0; /*0x5f7514*/
+  __3_YAXPAX_Z(*(void **)((char *)this + 580)); /*0x5f7521*/
+  *((unsigned int *)this + 145) = 0; /*0x5f7526*/
+  *((unsigned int *)this + 146) = 0; /*0x5f752c*/
+  *((unsigned int *)this + 147) = 0; /*0x5f7532*/
+  *((unsigned char *)this + 592) = 0; /*0x5f7538*/
+  *((unsigned int *)this + 149) = 0; /*0x5f753e*/
+  v3 = (ObjectTypeClass *)((char *)this + 488); /*0x5f7547*/
   v4 = 18; /*0x5f754d*/
   do /*0x5f755d*/
   {
@@ -383,7 +392,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
     --v4; /*0x5f755c*/
   }
   while ( v4 ); /*0x5f755d*/
-  v5 = (ObjectTypeClass *)(&this->u32_884); /*0x5f755f*/
+  v5 = (ObjectTypeClass *)((char *)this + 344); /*0x5f755f*/
   v6 = 18; /*0x5f7565*/
   do /*0x5f7575*/
   {
@@ -392,10 +401,11 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
     --v6; /*0x5f7574*/
   }
   while ( v6 ); /*0x5f7575*/
-  ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_4C2)); /*0x5f757d*/
-  ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_484)); /*0x5f7588*/
-  ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_446)); /*0x5f7593*/
-  return AbstractTypeClass::Dtor(); /*0x5f759f*/
+  ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)((char *)this + 192)); /*0x5f757d*/
+  ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)((char *)this + 184)); /*0x5f7588*/
+  ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)((char *)this + 176)); /*0x5f7593*/
+  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x5f759f*/
+
 }
 } // namespace gamemd
 // 0x5F77F0
@@ -431,7 +441,7 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPBRD_SHP ) /*0x5f7807*/
     {
-      v1 = *(_DWORD *)(FileSystem_PIPBRD_SHP - 4); /*0x5f7809*/
+      v1 = *(unsigned int *)(FileSystem_PIPBRD_SHP - 4); /*0x5f7809*/
       v2 = (void *)(FileSystem_PIPBRD_SHP - 4); /*0x5f780c*/
       v3 = 9 * v1; /*0x5f780f*/
       v4 = v1 - 1; /*0x5f7812*/
@@ -447,7 +457,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v6 ); /*0x5f7826*/
       }
-      RA2_OPDEL(v2); /*0x5f7829*/
+      operator delete((void *)(v2)); /*0x5f7829*/
     }
     byte_AC1488 = 0; /*0x5f7831*/
   }
@@ -455,7 +465,7 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS_SHP ) /*0x5f7847*/
     {
-      v7 = *(_DWORD *)(FileSystem_PIPS_SHP - 4); /*0x5f7849*/
+      v7 = *(unsigned int *)(FileSystem_PIPS_SHP - 4); /*0x5f7849*/
       v8 = (void *)(FileSystem_PIPS_SHP - 4); /*0x5f784c*/
       v9 = 9 * v7; /*0x5f784f*/
       v10 = v7 - 1; /*0x5f7852*/
@@ -471,7 +481,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v12 ); /*0x5f7866*/
       }
-      RA2_OPDEL(v8); /*0x5f7869*/
+      operator delete((void *)(v8)); /*0x5f7869*/
     }
     byte_AC1489 = 0; /*0x5f7871*/
   }
@@ -479,7 +489,7 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS2_SHP ) /*0x5f7887*/
     {
-      v13 = *(_DWORD *)(FileSystem_PIPS2_SHP - 4); /*0x5f7889*/
+      v13 = *(unsigned int *)(FileSystem_PIPS2_SHP - 4); /*0x5f7889*/
       v14 = (void *)(FileSystem_PIPS2_SHP - 4); /*0x5f788c*/
       v15 = 9 * v13; /*0x5f788f*/
       v16 = v13 - 1; /*0x5f7892*/
@@ -495,7 +505,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v18 ); /*0x5f78a6*/
       }
-      RA2_OPDEL(v14); /*0x5f78a9*/
+      operator delete((void *)(v14)); /*0x5f78a9*/
     }
     byte_AC148A = 0; /*0x5f78b1*/
   }
@@ -503,7 +513,7 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_TALKBUBL_SHP ) /*0x5f78c7*/
     {
-      v19 = *(_DWORD *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78c9*/
+      v19 = *(unsigned int *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78c9*/
       v20 = (void *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78cc*/
       v21 = 9 * v19; /*0x5f78cf*/
       v22 = v19 - 1; /*0x5f78d2*/
@@ -519,7 +529,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v24 ); /*0x5f78e6*/
       }
-      RA2_OPDEL(v20); /*0x5f78e9*/
+      operator delete((void *)(v20)); /*0x5f78e9*/
     }
     byte_AC148B = 0; /*0x5f78f1*/
   }
@@ -538,19 +548,19 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v8; // dl
   int v9; // eax
   int result; // eax
-  __int16 v11; // cx
+  int16_t v11; // cx
   char Destination[24]; // [esp+8h] [ebp-220h] BYREF
   char v13; // [esp+20h] [ebp-208h]
   char Source; // [esp+24h] [ebp-204h] BYREF
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( *(&this->q0D09) && *((_DWORD *)dword_A8B230 + 1174) == 1 && !*(&this->q0408) ) /*0x5f9096*/
+  if ( this->AlternateArcticArt_d && *((unsigned int *)dword_A8B230 + 1174) == 1 && !*(&this->uniqueId8) ) /*0x5f9096*/
   {
-    if ( !*(&this->u32_D40) ) /*0x5f90a0*/
+    if ( !this->ArcticArtInUse_d ) /*0x5f90a0*/
     {
       v2 = &this->ImageFile_0x19; /*0x5f90ab*/
-      sprintf(Buffer, off_832AE8, &this->u32_C84); /*0x5f90bf*/
+      sprintf(Buffer, off_832AE8, &this->TurretVoxel4); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
         strncpy(Destination, Buffer, 0x18u); /*0x5f90e7*/
@@ -562,24 +572,24 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
       }
       if ( Destination != v2 ) /*0x5f90fa*/
       {
-        qmemcpy(v2, Destination, 0x18u); /*0x5f9105*/
-        *(&this->q0D08) = v13; /*0x5f9107*/
+        memcpy(v2, Destination, 0x18u); /*0x5f9105*/
+        this->u32_840 = v13; /*0x5f9107*/
       }
-      *(&this->u32_D40) = 1; /*0x5f9108*/
+      this->ArcticArtInUse_d = 1; /*0x5f9108*/
     }
   }
   else
   {
-    *(&this->u32_D40) = 0; /*0x5f9112*/
+    this->ArcticArtInUse_d = 0; /*0x5f9112*/
   }
   _makepath(&Source, 0, 0, &this->ImageFile_0x19, Ext); /*0x5f912e*/
-  if ( *(&this->u32_DC6) ) /*0x5f9133*/
+  if ( this->Theater_d ) /*0x5f9133*/
   {
-    _makepath(&Source, 0, 0, &this->ImageFile_0x19, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)dword_A8B230 + 1174)); /*0x5f9169*/
+    _makepath(&Source, 0, 0, &this->ImageFile_0x19, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)dword_A8B230 + 1174)); /*0x5f9169*/
   }
-  else if ( *(&this->q0E07) ) /*0x5f9173*/
+  else if ( this->NewTheater_d ) /*0x5f9173*/
   {
-    v3 = *((_DWORD *)dword_A8B230 + 1174); /*0x5f9183*/
+    v3 = *((unsigned int *)dword_A8B230 + 1174); /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
     {
       v4 = Source; /*0x5f918e*/
@@ -592,43 +602,43 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
         v15 = byte_7E1BCE[112 * v3]; /*0x5f91dd*/
     }
   }
-  if ( *(&this->q0408) && this->q0A4 ) /*0x5f91eb*/
-    RA2_OPDEL(*((void **)&this->uniqueId1)); /*0x5f91f6*/
-  v6 = *(_DWORD *)this; /*0x5f91fe*/
-  this->q0A4 = 0; /*0x5f9203*/
-  *(&this->q0408) = 0; /*0x5f920d*/
-  if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
-    || (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) == 5 )
+  if ( *(&this->uniqueId8) && this->Image_d ) /*0x5f91eb*/
+    operator delete((void *)(*((void **)&this->uniqueId1))); /*0x5f91f6*/
+  v6 = *(unsigned int *)this; /*0x5f91fe*/
+  this->Image_d = 0; /*0x5f9203*/
+  *(&this->uniqueId8) = 0; /*0x5f920d*/
+  if ( (*(int (**)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
+    || (*(int (**)(char *))(*(unsigned int *)&this->uniqueId4))(this) == 5 )
   {
     v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
-    this->q0A4 = v9; /*0x5f926e*/
+    this->Image_d = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
     v15 = 71; /*0x5f9276*/
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) != 30 /*0x5f9241*/
-    && (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) != 37 )
+  if ( (*(int (**)(char *))(*(unsigned int *)&this->uniqueId4))(this) != 30 /*0x5f9241*/
+    && (*(int (**)(char *))(*(unsigned int *)&this->uniqueId4))(this) != 37 )
   {
     v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
-    this->q0A4 = v7; /*0x5f9250*/
+    this->Image_d = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
       v15 = 71; /*0x5f9258*/
       v8 = 0; /*0x5f925d*/
   LABEL_40:
-      this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
+      this->Image_d = SearchMIXFile(&Source, v8); /*0x5f927d*/
     }
   }
   LABEL_41:
-  result = this->q0A4; /*0x5f928c*/
+  result = this->Image_d; /*0x5f928c*/
   if ( result ) /*0x5f9294*/
   {
     v11 = result->vtable3; /*0x5f9296*/
-    IDA_LOWORD(result) = result->vtable2; /*0x5f929a*/
-    if ( v11 <= (__int16)result ) /*0x5f92a1*/
-      result = (__int16)result; /*0x5f92a8*/
+    (*((unsigned short *)&(result))) = result->vtable2; /*0x5f929a*/
+    if ( v11 <= (int16_t)result ) /*0x5f92a1*/
+      result = (int16_t)result; /*0x5f92a8*/
     else
       result = v11; /*0x5f92a3*/
     if ( result <= 8 ) /*0x5f92ae*/
@@ -642,6 +652,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
 namespace gamemd {
 void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
 {
+
   int CrushSound; // edi
   int Index; // eax
   int AmbientSound; // edi
@@ -682,17 +693,17 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   strcpy(Source, this->ImageFile); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
     (INIClass *)aP1,
-    (unsigned __int8 *)this->q024,
+    (unsigned __int8 *)this->?,
     (unsigned __int8 *)g_INI_Key_Image,
     Source,
     this->ImageFile,
     25);
   v34 = (int)strcpy(Source, this->AlphaImageFile); /*0x5f9366*/
-  INIClass::GetString((INIClass *)aP1, (unsigned __int8 *)this->q024, aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
+  INIClass::GetString((INIClass *)aP1, (unsigned __int8 *)this->?, aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
   CrushSound = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
          (INIClass *)aP1,
-         (unsigned __int8 *)this->q024,
+         (unsigned __int8 *)this->?,
          aCrushsound,
          &g_INI_DefaultBuffer,
          (char *)&Destination,
@@ -706,7 +717,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   AmbientSound = this->AmbientSound; /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
           (INIClass *)aP1,
-          (unsigned __int8 *)this->q024,
+          (unsigned __int8 *)this->?,
           aAmbientsound,
           &g_INI_DefaultBuffer,
           (char *)&Destination,
@@ -717,113 +728,116 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   }
   Crushable = this->Crushable; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aCrushable, Crushable); /*0x5f9412*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aCrushable, Crushable); /*0x5f9412*/
   Bombable = this->Bombable; /*0x5f941f*/
   this->Crushable = Bool_Overwrite; /*0x5f9426*/
-  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aBombable, Bombable); /*0x5f9431*/
-  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aNospawnalt, this->q14D[155]); /*0x5f9446*/
+  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aBombable, Bombable); /*0x5f9431*/
+  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aNospawnalt, this->__pad_14D[155]); /*0x5f9446*/
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
-  this->q14D[155] = v9; /*0x5f9451*/
-  v11 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
+  this->__pad_14D[155] = v9; /*0x5f9451*/
+  v11 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
   RadarInvisible = this->RadarInvisible; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
   this->RadarInvisible = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                            (int *)aP1,
-                           (unsigned __int8 *)this->q024,
+                           (unsigned __int8 *)this->?,
                            aRadarinvisible,
                            RadarInvisible);
-  v12 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aSelectable, this->Selectable); /*0x5f9494*/
+  v12 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aSelectable, this->Selectable); /*0x5f9494*/
   LegalTarget = this->LegalTarget; /*0x5f9499*/
   this->Selectable = v12; /*0x5f949f*/
-  v14 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aLegaltarget, LegalTarget); /*0x5f94ae*/
+  v14 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aLegaltarget, LegalTarget); /*0x5f94ae*/
   v29 = this->Armor[0]; /*0x5f94bb*/
   this->LegalTarget = v14; /*0x5f94c2*/
-  this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (unsigned __int8 *)this->q024, g_INI_Key_Armor, v29); /*0x5f94cd*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)this->q024, aStrength, this->Strength); /*0x5f94e2*/
+  this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (unsigned __int8 *)this->?, g_INI_Key_Armor, v29); /*0x5f94cd*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)this->?, aStrength, this->Strength); /*0x5f94e2*/
   Immune = this->Immune; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
-  v17 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aImmune, Immune); /*0x5f94fc*/
+  v17 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aImmune, Immune); /*0x5f94fc*/
   Insignificant = this->Insignificant; /*0x5f9509*/
   this->Immune = v17; /*0x5f9510*/
   this->Insignificant = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                           (int *)aP1,
-                          (unsigned __int8 *)this->q024,
+                          (unsigned __int8 *)this->?,
                           aInsignificant,
                           Insignificant);
   this->HasRadialIndicator = INIClass::ReadBool_Overwrite( /*0x5f9549*/
                                (int *)aP1,
-                               (unsigned __int8 *)this->q024,
+                               (unsigned __int8 *)this->?,
                                aHasradialindic,
                                this->HasRadialIndicator);
   Coord = INIClass::GetCoord( /*0x5f954f*/
             (INIClass *)aP1,
             (int)&v34,
-            (unsigned __int8 *)this->q024,
+            (unsigned __int8 *)this->?,
             aRadialcolor,
             (unsigned __int8 *)this->__pad_98);
   IgnoresFirestorm = this->IgnoresFirestorm; /*0x5f9557*/
-  *(_WORD *)this->__pad_98 = *(_WORD *)Coord; /*0x5f955d*/
-  this->__pad_98[2] = *(_BYTE *)(Coord + 2); /*0x5f956c*/
-  v20 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aIgnoresfiresto, IgnoresFirestorm); /*0x5f956f*/
+  *(unsigned short *)this->__pad_98 = *(unsigned short *)Coord; /*0x5f955d*/
+  this->__pad_98[2] = *(unsigned char *)(Coord + 2); /*0x5f956c*/
+  v20 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aIgnoresfiresto, IgnoresFirestorm); /*0x5f956f*/
   UseLineTrail = this->UseLineTrail; /*0x5f9580*/
   this->IgnoresFirestorm = v20; /*0x5f958c*/
   this->UseLineTrail = INIClass::ReadBool_Overwrite( /*0x5f959d*/
-                         (int *)&DSurface_ViewBounds.q0FC[228],
+                         (int *)&DSurface_ViewBounds.__pad_FC[228],
                          (unsigned __int8 *)this->ImageFile,
                          aUselinetrail,
                          UseLineTrail);
   v21 = INIClass::GetCoord( /*0x5f95b4*/
-          (INIClass *)&DSurface_ViewBounds.q0FC[228],
+          (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
           (int)&v34,
           (unsigned __int8 *)this->ImageFile,
           aLinetrailcolor,
           (unsigned __int8 *)this->LineTrailColor);
-  *(_WORD *)this->LineTrailColor = *(_WORD *)v21; /*0x5f95bc*/
+  *(unsigned short *)this->LineTrailColor = *(unsigned short *)v21; /*0x5f95bc*/
   LineTrailColorDecrement = this->LineTrailColorDecrement; /*0x5f95cd*/
-  this->LineTrailColor[2] = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
+  this->LineTrailColor[2] = *(unsigned char *)(v21 + 2); /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
-          (bool *)&DSurface_ViewBounds.q0FC[228],
+          (bool *)&DSurface_ViewBounds.__pad_FC[228],
           (unsigned __int8 *)this->ImageFile,
           aLinetrailcolor_0,
           LineTrailColorDecrement);
   Theater = this->Theater; /*0x5f95dc*/
   this->LineTrailColorDecrement = v22; /*0x5f95e2*/
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
-          (int *)&DSurface_ViewBounds.q0FC[228],
+          (int *)&DSurface_ViewBounds.__pad_FC[228],
           (unsigned __int8 *)this->ImageFile,
           (unsigned __int8 *)g_INI_Key_Theater,
           Theater);
   NewTheater = this->NewTheater; /*0x5f9604*/
   this->Theater = v24; /*0x5f960b*/
   this->NewTheater = INIClass::ReadBool_Overwrite( /*0x5f9616*/
-                       (int *)&DSurface_ViewBounds.q0FC[228],
+                       (int *)&DSurface_ViewBounds.__pad_FC[228],
                        (unsigned __int8 *)this->ImageFile,
                        aNewtheater,
                        NewTheater);
   v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
-          (int *)&DSurface_ViewBounds.q0FC[228],
+          (int *)&DSurface_ViewBounds.__pad_FC[228],
           (unsigned __int8 *)this->ImageFile,
           aVoxel,
           this->Voxel);
   this->Voxel = v25; /*0x5f9634*/
-  if ( !v25 && (*((int (__thiscall **)(ObjectTypeClass *))this->vfptr + 11))(this) != 5 ) /*0x5f9649*/
-    ObjectTypeClass::Load2DArt(); /*0x5f964d*/
+  if ( !v25 && (*((int (**)(ObjectTypeClass *))this->AbstractTypeClass + 11))(this) != 5 ) /*0x5f9649*/
+    ObjectTypeClass::Load2DArt((char *)this); /*0x5f964d*/
   if ( this->AlphaImageFile[0] ) /*0x5f9652*/
   {
     _makepath((char *)&Destination.Name[5], 0, 0, this->AlphaImageFile, Ext); /*0x5f9674*/
     this->AlphaImage = (SHPStruct *)SearchMIXFile((char *)&Destination.Name[5], 0); /*0x5f968a*/
   }
   return 1; /*0x5f9690*/
+
 }
 } // namespace gamemd
 // 0x5F9710
 namespace gamemd {
 int ObjectTypeClass::SetRTTI71()
 {
+
   int result; // eax
 
-  IDA_BYTE1(this->vfptr) = 71; /*0x5f9710*/
+  BYTE1(this->AbstractTypeClass) = 71; /*0x5f9710*/
   return result; /*0x5f9714*/
+
 }
 } // namespace gamemd
 // 0x5F9720
@@ -841,11 +855,11 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   int v10; // ecx
   char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
 
-  RA2_OPDEL((void *)aP0->VoxelCaches[0]); /*0x5f973e*/
+  operator delete((void *)((void *)aP0->VoxelCaches[0])); /*0x5f973e*/
   aP0->VoxelCaches[0] = 0; /*0x5f974e*/
   aP0->VoxelCaches[1] = 0; /*0x5f9750*/
   aP0->VoxelCaches[2] = 0; /*0x5f9753*/
-  IDA_LOBYTE(aP0->VoxelCaches[3]) = 0; /*0x5f9756*/
+  (*((unsigned char *)&(aP0->VoxelCaches[3]))) = 0; /*0x5f9756*/
   aP0->VoxelCaches[4] = 0; /*0x5f9759*/
   ObjectTypeClass::FreeLoaderBuffer((ObjectTypeClass *)&aP0->VoxelCaches[5]); /*0x5f975c*/
   ObjectTypeClass::FreeLoaderBuffer((ObjectTypeClass *)&aP0->VoxelCaches[10]); /*0x5f9767*/
@@ -854,45 +868,45 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   if ( v2 ) /*0x5f977f*/
   {
     WaveClass::Destroy((WaveClass *)aP0->MainVoxel[0]); /*0x5f9783*/
-    RA2_OPDEL(v2); /*0x5f9789*/
+    operator delete((void *)(v2)); /*0x5f9789*/
   }
   v3 = (String *)aP0->TurretVoxel[0]; /*0x5f9791*/
   aP0->MainVoxel[0] = 0; /*0x5f9797*/
   if ( v3 ) /*0x5f979f*/
   {
-    String::Release(v3); /*0x5f97a3*/
-    RA2_OPDEL(v3); /*0x5f97a9*/
+    ((String *)(v3))->Release(); /*0x5f97a3*/
+    operator delete((void *)(v3)); /*0x5f97a9*/
   }
   v4 = (WaveClass *)aP0->BarrelVoxel[0]; /*0x5f97b1*/
   aP0->TurretVoxel[0] = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
   {
     WaveClass::Destroy(v4); /*0x5f97c3*/
-    RA2_OPDEL(v4); /*0x5f97c9*/
+    operator delete((void *)(v4)); /*0x5f97c9*/
   }
   v5 = (String *)aP0->ChargerTurrets[0]; /*0x5f97d1*/
   aP0->BarrelVoxel[0] = 0; /*0x5f97d7*/
   if ( v5 ) /*0x5f97df*/
   {
-    String::Release(v5); /*0x5f97e3*/
-    RA2_OPDEL(v5); /*0x5f97e9*/
+    ((String *)(v5))->Release(); /*0x5f97e3*/
+    operator delete((void *)(v5)); /*0x5f97e9*/
   }
   v6 = (WaveClass *)aP0->ChargerTurrets[1]; /*0x5f97f1*/
   aP0->ChargerTurrets[0] = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
   {
     WaveClass::Destroy(v6); /*0x5f9803*/
-    RA2_OPDEL(v6); /*0x5f9809*/
+    operator delete((void *)(v6)); /*0x5f9809*/
   }
   v7 = (String *)aP0->ChargerTurrets[2]; /*0x5f9811*/
   aP0->ChargerTurrets[1] = 0; /*0x5f9817*/
   if ( v7 ) /*0x5f981f*/
   {
-    String::Release(v7); /*0x5f9823*/
-    RA2_OPDEL(v7); /*0x5f9829*/
+    ((String *)(v7))->Release(); /*0x5f9823*/
+    operator delete((void *)(v7)); /*0x5f9829*/
   }
   aP0->ChargerTurrets[2] = 0; /*0x5f9833*/
-  ObjectTypeClass::CleanupWeapons((char *)aP0); /*0x5f9839*/
+  ((ObjectTypeClass *)((char *)aP0))->CleanupWeapons(); /*0x5f9839*/
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x5f9847*/
   if ( result >= 0 ) /*0x5f984e*/
   {
@@ -904,7 +918,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       aP0->VoxelCaches[0] = 0; /*0x5f986a*/
       aP0->VoxelCaches[1] = 0; /*0x5f986c*/
       aP0->VoxelCaches[2] = 0; /*0x5f986f*/
-      IDA_LOBYTE(aP0->VoxelCaches[3]) = 0; /*0x5f9872*/
+      (*((unsigned char *)&(aP0->VoxelCaches[3]))) = 0; /*0x5f9872*/
       aP0->VoxelCaches[4] = 0; /*0x5f9875*/
     }
     if ( aP0 != (ObjectTypeClass *)-600 ) /*0x5f9880*/
@@ -912,7 +926,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       aP0->VoxelCaches[5] = 0; /*0x5f9882*/
       aP0->VoxelCaches[6] = 0; /*0x5f9884*/
       aP0->VoxelCaches[7] = 0; /*0x5f9887*/
-      IDA_LOBYTE(aP0->VoxelCaches[8]) = 0; /*0x5f988a*/
+      (*((unsigned char *)&(aP0->VoxelCaches[8]))) = 0; /*0x5f988a*/
       aP0->VoxelCaches[9] = 0; /*0x5f988d*/
     }
     if ( aP0 != (ObjectTypeClass *)-620 ) /*0x5f9898*/
@@ -920,7 +934,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       aP0->VoxelCaches[10] = 0; /*0x5f989a*/
       aP0->VoxelCaches[11] = 0; /*0x5f989c*/
       aP0->VoxelCaches[12] = 0; /*0x5f989f*/
-      IDA_LOBYTE(aP0->VoxelCaches[13]) = 0; /*0x5f98a2*/
+      (*((unsigned char *)&(aP0->VoxelCaches[13]))) = 0; /*0x5f98a2*/
       aP0->VoxelCaches[14] = 0; /*0x5f98a5*/
     }
     if ( aP0 != (ObjectTypeClass *)-640 ) /*0x5f98b0*/
@@ -928,7 +942,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       aP0->VoxelCaches[15] = 0; /*0x5f98b2*/
       aP0->VoxelCaches[16] = 0; /*0x5f98b4*/
       aP0->VoxelCaches[17] = 0; /*0x5f98b7*/
-      IDA_LOBYTE(aP0->VoxelCaches[18]) = 0; /*0x5f98ba*/
+      (*((unsigned char *)&(aP0->VoxelCaches[18]))) = 0; /*0x5f98ba*/
       aP0->VoxelCaches[19] = 0; /*0x5f98bd*/
     }
     aP0->MainVoxel[0] = 0; /*0x5f98c0*/
@@ -963,17 +977,18 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
 namespace gamemd {
 SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 {
+
   Object *v1; // eax
   int result; // eax
 
   v1 = dword_A83D4C; /*0x712040*/
   if ( !dword_A83D4C ) /*0x71204a*/
-    return *(_DWORD *)&this->?[1548]; /*0x7120bf*/
-  if ( dword_A83D4C[1].q00C[19] ) /*0x71204c*/
+    return *(unsigned int *)&this->?[1548]; /*0x7120bf*/
+  if ( dword_A83D4C[1].__pad_C[19] ) /*0x71204c*/
   {
-    if ( (*(int (__thiscall **)(TechnoTypeClass *))(this->vfptr[0] + 44))(this) == 16 ) /*0x712060*/
+    if ( (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) == 16 ) /*0x712060*/
     {
-      result = *(_DWORD *)&this->?[1580]; /*0x712062*/
+      result = *(unsigned int *)&this->?[1580]; /*0x712062*/
       if ( result ) /*0x71206a*/
       {
         if ( this->?[2986] ) /*0x71206c*/
@@ -983,16 +998,18 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     v1 = dword_A83D4C; /*0x712076*/
   }
   if ( !v1 /*0x7120a1*/
-    || !v1[1].q00C[20]
-    || (*(int (__thiscall **)(TechnoTypeClass *))(this->vfptr[0] + 44))(this) != 40
-    && ((*(int (__thiscall **)(TechnoTypeClass *))(this->vfptr[0] + 44))(this) != 7 || !*(_DWORD *)&this->?[804]) )
+    || !v1[1].__pad_C[20]
+    || (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 40
+    && ((*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 7
+     || !*(unsigned int *)&this->?[804]) )
   {
-    return *(_DWORD *)&this->?[1548]; /*0x7120a1*/
+    return *(unsigned int *)&this->?[1548]; /*0x7120a1*/
   }
-  result = *(_DWORD *)&this->?[1580]; /*0x7120ab*/
+  result = *(unsigned int *)&this->?[1580]; /*0x7120ab*/
   if ( !result || !this->?[2986] ) /*0x7120b5*/
-    return *(_DWORD *)&this->?[1548]; /*0x7120bd*/
+    return *(unsigned int *)&this->?[1548]; /*0x7120bd*/
   return result; /*0x7120c5*/
+
 }
 } // namespace gamemd
 // 0x712170
@@ -1435,19 +1452,19 @@ int ObjectTypeClass::DeserializeArrays()
   result = COMObject::GetSizeMaxWrapper(v19, v20); /*0x7170ac*/
   if ( result >= 0 ) /*0x7170b3*/
   {
-    v2 = 4 * *(_DWORD *)&v19[1].q14D[67] + 4 + *v20; /*0x7170c8*/
+    v2 = 4 * *(unsigned int *)&v19[1].__pad_14D[67] + 4 + *v20; /*0x7170c8*/
     *v20 = v2; /*0x7170ca*/
-    v3 = v2 + 4 * *(_DWORD *)&v19[1].q14D[95] + 4; /*0x7170d2*/
+    v3 = v2 + 4 * *(unsigned int *)&v19[1].__pad_14D[95] + 4; /*0x7170d2*/
     *v20 = v3; /*0x7170d6*/
-    v4 = v3 + 4 * *(_DWORD *)&v19[1].q14D[123] + 4; /*0x7170de*/
+    v4 = v3 + 4 * *(unsigned int *)&v19[1].__pad_14D[123] + 4; /*0x7170de*/
     *v20 = v4; /*0x7170e2*/
-    v5 = v4 + 4 * *(_DWORD *)&v19[1].q14D[151] + 4; /*0x7170ea*/
+    v5 = v4 + 4 * *(unsigned int *)&v19[1].__pad_14D[151] + 4; /*0x7170ea*/
     *v20 = v5; /*0x7170ee*/
-    v6 = v5 + 4 * *(_DWORD *)&v19[1].ImageFile[8] + 4; /*0x7170f6*/
+    v6 = v5 + 4 * *(unsigned int *)&v19[1].ImageFile[8] + 4; /*0x7170f6*/
     *v20 = v6; /*0x7170fa*/
-    v7 = v6 + 4 * *(_DWORD *)&v19[1].AlphaImageFile[9] + 4; /*0x717102*/
+    v7 = v6 + 4 * *(unsigned int *)&v19[1].AlphaImageFile[9] + 4; /*0x717102*/
     *v20 = v7; /*0x717106*/
-    v8 = v7 + 4 * *(_DWORD *)&v19[1].HasRadialIndicator + 4; /*0x71710e*/
+    v8 = v7 + 4 * *(unsigned int *)&v19[1].HasRadialIndicator + 4; /*0x71710e*/
     *v20 = v8; /*0x717112*/
     v9 = v8 + 4 * v19[1].VoxelCaches[4] + 4; /*0x71711a*/
     *v20 = v9; /*0x71711e*/
@@ -1455,15 +1472,15 @@ int ObjectTypeClass::DeserializeArrays()
     *v20 = v10; /*0x71712a*/
     v11 = v10 + 4 * v19[1].VoxelCaches[18] + 4; /*0x717132*/
     *v20 = v11; /*0x717136*/
-    v12 = v11 + 4 * *(_DWORD *)&v19[2].AlphaImageFile[1] + 4; /*0x71713e*/
+    v12 = v11 + 4 * *(unsigned int *)&v19[2].AlphaImageFile[1] + 4; /*0x71713e*/
     *v20 = v12; /*0x717142*/
-    v13 = v12 + 4 * *(_DWORD *)&v19[2].Selectable + 4; /*0x71714a*/
+    v13 = v12 + 4 * *(unsigned int *)&v19[2].Selectable + 4; /*0x71714a*/
     *v20 = v13; /*0x71714e*/
-    v14 = v13 + 4 * *(_DWORD *)&v19[1].Name[44] + 4; /*0x717156*/
+    v14 = v13 + 4 * *(unsigned int *)&v19[1].Name[44] + 4; /*0x717156*/
     *v20 = v14; /*0x71715a*/
     v15 = v14 + 4 * (int)v19[2].AlphaImage + 4; /*0x717162*/
     *v20 = v15; /*0x717166*/
-    v16 = v15 + 4 * *(_DWORD *)&v19[1].q14D[23] + 4; /*0x71716e*/
+    v16 = v15 + 4 * *(unsigned int *)&v19[1].__pad_14D[23] + 4; /*0x71716e*/
     *v20 = v16; /*0x717172*/
     v17 = v16 + 4 * (int)v19[1].AlphaImage + 4; /*0x71717a*/
     *v20 = v17; /*0x71717e*/
@@ -1479,55 +1496,59 @@ int ObjectTypeClass::DeserializeArrays()
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717820()
 {
+
   int v2; // eax
   const char *v3; // ecx
 
-  IDA_LOBYTE(v2) = this->__pad_DC8[8]; /*0x717823*/
+  LOBYTE(v2) = this->__pad_DC8[8]; /*0x717823*/
   v3 = &this->__pad_DC8[8]; /*0x717829*/
-  if ( (_BYTE)v2 ) /*0x717831*/
+  if ( (unsigned char)v2 ) /*0x717831*/
   {
     v2 = FileExtension::MapHandler(v3); /*0x717833*/
-    *(_DWORD *)&this->__pad_DC8[40] = v2; /*0x717838*/
+    *(unsigned int *)&this->__pad_DC8[40] = v2; /*0x717838*/
   }
   return v2; /*0x71783e*/
+
 }
 } // namespace gamemd
 // 0x717C00
 namespace gamemd {
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 {
+
   void *v3; // eax
   void *v4; // eax
   void *vtable2; // ecx
   int v6; // eax
 
   if ( this == (ObjectTypeClass *)a2 ) /*0x717c0a*/
-    return &this->vfptr; /*0x717c0a*/
-  (*((void (__thiscall **)(ObjectTypeClass *))this->vfptr + 3))(this); /*0x717c0e*/
+    return &this->AbstractTypeClass; /*0x717c0a*/
+  (*((void (**)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
   v3 = (void *)a2[2]; /*0x717c11*/
-  this->vfptr2 = v3; /*0x717c16*/
+  this->? = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
   {
-    this->vfptr1 = 0; /*0x717c5a*/
-    IDA_BYTE1(this->vfptr3) = 0; /*0x717c61*/
-    return &this->vfptr; /*0x717c65*/
+    this->? = 0; /*0x717c5a*/
+    BYTE1(this->?) = 0; /*0x717c61*/
+    return &this->AbstractTypeClass; /*0x717c65*/
   }
-  v4 = (void *)RA2_OPNEW(4 * (_DWORD)v3); /*0x717c23*/
-  this->vfptr1 = v4; /*0x717c2b*/
+  v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x717c23*/
+  this->? = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
-    return &this->vfptr; /*0x717c30*/
-  vtable2 = this->vfptr2; /*0x717c32*/
+    return &this->AbstractTypeClass; /*0x717c30*/
+  vtable2 = this->?; /*0x717c32*/
   v6 = 0; /*0x717c35*/
-  IDA_BYTE1(this->vfptr3) = 1; /*0x717c39*/
+  BYTE1(this->?) = 1; /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
-    return &this->vfptr; /*0x717c3d*/
+    return &this->AbstractTypeClass; /*0x717c3d*/
   do /*0x717c51*/
   {
-    *((_DWORD *)this->vfptr1 + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x717c48*/
+    *((unsigned int *)this->? + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x717c48*/
     ++v6; /*0x717c4e*/
   }
-  while ( v6 < (int)this->vfptr2 ); /*0x717c51*/
-  return &this->vfptr; /*0x717c55*/
+  while ( v6 < (int)this->? ); /*0x717c51*/
+  return &this->AbstractTypeClass; /*0x717c55*/
+
 }
 } // namespace gamemd
 // 0x41CBF0
@@ -1537,9 +1558,9 @@ unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
   int v1; // esi
 
   v1 = 2 * dword_889F58; /*0x41cbfc*/
-  *(_DWORD *)a1->vfptr = 256; /*0x41cc07*/
-  *(_DWORD *)&a1->vfptr[4] = 256; /*0x41cc09*/
-  *(_DWORD *)&a1->vfptr[8] = v1; /*0x41cc0c*/
+  *(unsigned int *)a1->vfptr = 256; /*0x41cc07*/
+  *(unsigned int *)&a1->vfptr[4] = 256; /*0x41cc09*/
+  *(unsigned int *)&a1->vfptr[8] = v1; /*0x41cc0c*/
   return a1->vfptr; /*0x41cc0f*/
 }
 } // namespace gamemd
@@ -1584,7 +1605,7 @@ unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned ch
   if ( INIClass::GetString((INIClass *)this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) ) /*0x474759*/
   {
     sscanf(Buffer, "%d,%d", &a4, &a3); /*0x474776*/
-    IDA_HIWORD(a4) = (_WORD)a3; /*0x47478e*/
+    (*(((unsigned short *)&(a4)) + 1)) = (unsigned short)a3; /*0x47478e*/
     *a2 = a4; /*0x47479a*/
     return a2; /*0x474785*/
   }
@@ -1669,7 +1690,7 @@ int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
   StringTable Destination[4]; // [esp+4h] [ebp-20h] BYREF
 
   Name = AbstractType::FindName(a4); /*0x475001*/
-  INIClass::GetString(aP1, a2, Name, Destination[0].q000, 32); /*0x475013*/
+  INIClass::GetString(aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
   return StringTable::Lookup(Destination); /*0x475021*/
 }
 } // namespace gamemd
@@ -1692,11 +1713,11 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
   int i; // ebp
   int v5; // eax
   int v6; // ecx
-  _BYTE v8[521]; // [esp+Ch] [ebp-20Ch] BYREF
-  __int16 v9; // [esp+215h] [ebp-3h]
+  unsigned char v8[521]; // [esp+Ch] [ebp-20Ch] BYREF
+  int16_t v9; // [esp+215h] [ebp-3h]
   char v10; // [esp+217h] [ebp-1h]
 
-  *(_DWORD *)&v8[8] = this; /*0x47624d*/
+  *(unsigned int *)&v8[8] = this; /*0x47624d*/
   v8[12] = g_INI_DefaultBuffer; /*0x476252*/
   memset(&v8[13], 0, 0x1FCu); /*0x476268*/
   v9 = 0; /*0x47626a*/
@@ -1707,9 +1728,9 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
       strcat(&v8[12], Str); /*0x4762a8*/
     v5 = aP3->vtable2; /*0x4762b1*/
     v8[4] = 0; /*0x4762b4*/
-    v6 = *(_DWORD *)(v5 + 4 * i); /*0x4762bc*/
-    v8[4] = IDA_HIBYTE(v6); /*0x4762c6*/
-    *(_DWORD *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
+    v6 = *(unsigned int *)(v5 + 4 * i); /*0x4762bc*/
+    v8[4] = (*(((unsigned char *)&(v6)) + (sizeof(v6) - 1))); /*0x4762c6*/
+    *(unsigned int *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
     strcat(&v8[12], (const char *)(System_Read_6E7330((ObjectClass *)v8) + 36)); /*0x4762fa*/
   }
   return INIClass::SetString(*(char **)&v8[8], Block, a2, &v8[12]); /*0x47632e*/
@@ -1783,8 +1804,8 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 namespace gamemd {
 int ObjectTypeClass::CreateInstance(int aP1, int aP2)
 {
-  if ( *(_DWORD *)&this->zero_3C ) /*0x5f1c30*/
-    return (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)&this->?[8] + 16))(*(_DWORD *)&this->?[8], aP1, aP2); /*0x5f1c4b*/
+  if ( *(unsigned int *)&this->zero_3C ) /*0x5f1c30*/
+    return (*(int (**)(unsigned int, int, int))(**(unsigned int **)&((unsigned int *)this)[8] + 16))(*(unsigned int *)&((unsigned int *)this)[8], aP1, aP2); /*0x5f1c4b*/
   else
     return 0; /*0x5f1c37*/
 }
@@ -1800,14 +1821,14 @@ void ObjectTypeClass::ReleaseWaveAndString(void *a1)
   if ( a1->vfptr ) /*0x5f61a4*/
   {
     WaveClass::Destroy((WaveClass *)a1->vfptr); /*0x5f61ac*/
-    RA2_OPDEL(vtable0); /*0x5f61b2*/
+    operator delete((void *)(vtable0)); /*0x5f61b2*/
   }
   vtable1 = (String *)a1->vfptr1; /*0x5f61ba*/
   a1->vfptr = 0; /*0x5f61bd*/
   if ( vtable1 ) /*0x5f61c5*/
   {
-    String::Release(vtable1); /*0x5f61c9*/
-    RA2_OPDEL(vtable1); /*0x5f61cf*/
+    ((String *)(vtable1))->Release(); /*0x5f61c9*/
+    operator delete((void *)(vtable1)); /*0x5f61cf*/
   }
   a1->vfptr1 = 0; /*0x5f61d7*/
 }
@@ -1837,33 +1858,33 @@ void ObjectTypeClass::CleanupWeapons()
   v2 = 18; /*0x5f808a*/
   do /*0x5f8107*/
   {
-    v3 = (void *)*((_DWORD *)v1 - 1); /*0x5f8091*/
+    v3 = (void *)*((unsigned int *)v1 - 1); /*0x5f8091*/
     if ( v3 ) /*0x5f8096*/
     {
-      WaveClass::Destroy(*((_DWORD *)v1 - 1)); /*0x5f809a*/
-      RA2_OPDEL(v3); /*0x5f80a0*/
-      *((_DWORD *)v1 - 1) = 0; /*0x5f80a8*/
+      WaveClass::Destroy(*((unsigned int *)v1 - 1)); /*0x5f809a*/
+      operator delete((void *)(v3)); /*0x5f80a0*/
+      *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
     v4 = *(void ***)v1; /*0x5f80ab*/
-    if ( *(_DWORD *)v1 ) /*0x5f80ab*/
+    if ( *(unsigned int *)v1 ) /*0x5f80ab*/
     {
-      String::Release(*(void ***)v1); /*0x5f80b3*/
-      RA2_OPDEL(v4); /*0x5f80b9*/
-      *(_DWORD *)v1 = 0; /*0x5f80c1*/
+      ((String *)(*(void ***)v1))->Release(); /*0x5f80b3*/
+      operator delete((void *)(v4)); /*0x5f80b9*/
+      *(unsigned int *)v1 = 0; /*0x5f80c1*/
     }
-    v5 = (void *)*((_DWORD *)v1 + 35); /*0x5f80c3*/
+    v5 = (void *)*((unsigned int *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
-      WaveClass::Destroy(*((_DWORD *)v1 + 35)); /*0x5f80cf*/
-      RA2_OPDEL(v5); /*0x5f80d5*/
-      *((_DWORD *)v1 + 35) = 0; /*0x5f80dd*/
+      WaveClass::Destroy(*((unsigned int *)v1 + 35)); /*0x5f80cf*/
+      operator delete((void *)(v5)); /*0x5f80d5*/
+      *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }
-    v6 = (void *)*((_DWORD *)v1 + 36); /*0x5f80e3*/
+    v6 = (void *)*((unsigned int *)v1 + 36); /*0x5f80e3*/
     if ( v6 ) /*0x5f80eb*/
     {
-      String::Release(*((void ***)v1 + 36)); /*0x5f80ef*/
-      RA2_OPDEL(v6); /*0x5f80f5*/
-      *((_DWORD *)v1 + 36) = 0; /*0x5f80fd*/
+      ((String *)(*((void ***)v1 + 36)))->Release(); /*0x5f80ef*/
+      operator delete((void *)(v6)); /*0x5f80f5*/
+      *((unsigned int *)v1 + 36) = 0; /*0x5f80fd*/
     }
     v1 += 8; /*0x5f8103*/
     --v2; /*0x5f8106*/
@@ -1877,7 +1898,7 @@ ObjectTypeClass * ObjectTypeClass::Destru_vt08(void * Block, char a2)
 {
   ObjectTypeClass::Destruct((int)Block); /*0x5f9ae3*/
   if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    RA2_OPDEL(Block); /*0x5f9af0*/
+    operator delete((void *)(Block)); /*0x5f9af0*/
   return Block; /*0x5f9afa*/
 }
 } // namespace gamemd
@@ -1885,13 +1906,15 @@ ObjectTypeClass * ObjectTypeClass::Destru_vt08(void * Block, char a2)
 namespace gamemd {
 int ObjectTypeClass::FreeLoaderBuffer()
 {
-  RA2_OPDEL(this->vfptr); /*0x5f9b66*/
-  this->vfptr = 0; /*0x5f9b70*/
-  this->vfptr1 = 0; /*0x5f9b72*/
-  this->vfptr2 = 0; /*0x5f9b75*/
-  IDA_LOBYTE(this->vfptr3) = 0; /*0x5f9b78*/
-  this->uniqueId = 0; /*0x5f9b7b*/
+
+  __3_YAXPAX_Z(this->AbstractTypeClass); /*0x5f9b66*/
+  this->AbstractTypeClass = 0; /*0x5f9b70*/
+  this->? = 0; /*0x5f9b72*/
+  this->? = 0; /*0x5f9b75*/
+  LOBYTE(this->?) = 0; /*0x5f9b78*/
+  this->? = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
+
 }
 } // namespace gamemd
 // 0x6E5E70
@@ -1908,7 +1931,7 @@ int ObjectTypeClass::FindByName()
     return 0; /*0x6e5eb8*/
   while ( 1 ) /*0x6e5e8a*/
   {
-    v3 = *((_DWORD *)dword_B0E784 + v2); /*0x6e5e8a*/
+    v3 = *((unsigned int *)dword_B0E784 + v2); /*0x6e5e8a*/
     if ( !_strcmpi((char *)(v3 + 36), (char *)this) || !_strcmpi((char *)(v3 + 100), (char *)this) ) /*0x6e5ea2*/
       break; /*0x6e5ea2*/
     if ( ++v2 >= g_MultiplayerCleanup ) /*0x6e5eb6*/
@@ -1921,103 +1944,123 @@ int ObjectTypeClass::FindByName()
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2)
 {
+
   if ( this != (ObjectTypeClass *)aP2 ) /*0x7179d7*/
   {
-    this->vfptr = (void *)*aP2; /*0x7179dd*/
-    this->vfptr1 = (void *)aP2[1]; /*0x7179e2*/
-    this->vfptr2 = (void *)aP2[2]; /*0x7179e8*/
-    this->vfptr3 = (void *)aP2[3]; /*0x7179ee*/
-    IDA_LOWORD(this->uniqueId) = *((_WORD *)aP2 + 8); /*0x7179f5*/
+    this->AbstractTypeClass = (void *)*aP2; /*0x7179dd*/
+    this->? = (void *)aP2[1]; /*0x7179e2*/
+    this->? = (void *)aP2[2]; /*0x7179e8*/
+    this->? = (void *)aP2[3]; /*0x7179ee*/
+    LOWORD(this->?) = *((unsigned short *)aP2 + 8); /*0x7179f5*/
   }
-  *(_DWORD *)aP1 = this->vfptr; /*0x717a01*/
-  aP1->ROF = this->vfptr1; /*0x717a06*/
-  aP1->VEIN_PROOF = this->vfptr2; /*0x717a0c*/
-  aP1->SENSORS = this->vfptr3; /*0x717a12*/
-  aP1->GUARD_AREA = this->uniqueId; /*0x717a1a*/
+  *(unsigned int *)aP1 = this->AbstractTypeClass; /*0x717a01*/
+  *(unsigned int *)(aP1 + 4) = this->?; /*0x717a06*/
+  *(unsigned int *)(aP1 + 8) = this->?; /*0x717a0c*/
+  *(unsigned int *)(aP1 + 12) = this->?; /*0x717a12*/
+  *(unsigned short *)(aP1 + 16) = this->?; /*0x717a1a*/
   return aP1; /*0x717a19*/
+
 }
 } // namespace gamemd
 // 0x717A30
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
-  this->vfptr = (void *)a2; /*0x717a34*/
+
+  this->AbstractTypeClass = (void *)a2; /*0x717a34*/
   return a2; /*0x717a36*/
+
 }
 } // namespace gamemd
 // 0x717A50
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
+
   int result; // eax
 
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
-  this->vfptr1 = (void *)result; /*0x717a5d*/
+  this->? = (void *)result; /*0x717a5d*/
   return result; /*0x717a60*/
+
 }
 } // namespace gamemd
 // 0x717A70
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A70()
 {
-  return (int)this->vfptr1; /*0x717a73*/
+
+  return (int)this->?; /*0x717a73*/
+
 }
 } // namespace gamemd
 // 0x717A80
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
+
   int result; // eax
 
   result = a2; /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
-  this->vfptr2 = (void *)result; /*0x717a8d*/
+  this->? = (void *)result; /*0x717a8d*/
   return result; /*0x717a90*/
+
 }
 } // namespace gamemd
 // 0x717AA0
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AA0()
 {
-  return (int)this->vfptr2; /*0x717aa3*/
+
+  return (int)this->?; /*0x717aa3*/
+
 }
 } // namespace gamemd
 // 0x717AB0
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
+
   int result; // eax
 
   result = a2; /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
-  this->vfptr3 = (void *)result; /*0x717abd*/
+  this->? = (void *)result; /*0x717abd*/
   return result; /*0x717ac0*/
+
 }
 } // namespace gamemd
 // 0x717AD0
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AD0()
 {
-  return (int)this->vfptr3; /*0x717ad3*/
+
+  return (int)this->?; /*0x717ad3*/
+
 }
 } // namespace gamemd
 // 0x717AE0
 namespace gamemd {
 BOOL ObjectTypeClass::loadTypeMember_5717AE0()
 {
-  return IDA_LOBYTE(this->vfptr) == 0; /*0x717ae9*/
+
+  return LOBYTE(this->AbstractTypeClass) == 0; /*0x717ae9*/
+
 }
 } // namespace gamemd
 // 0x717BF0
 namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(int aP1)
 {
-  this->vfptr = &(void*)(void*)&DynamicVectorClass_AnimTypeClass_const___vftable; /*0x717bf2*/
-  return &this->vfptr; /*0x717bf8*/
+
+  this->AbstractTypeClass = &DynamicVectorClass<AnimTypeClass const *>::`vftable'; /*0x717bf2*/
+  return &this->AbstractTypeClass; /*0x717bf8*/
+
 }
 } // namespace gamemd
 // 0x71CB90
@@ -2028,21 +2071,21 @@ int ObjectTypeClass::ReadDestroyAnim()
   int i; // ebx
   int v4; // esi
   int v5; // [esp+8h] [ebp-14h]
-  _BYTE v6[4]; // [esp+Ch] [ebp-10h] BYREF
+  unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
   char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
 
   INIClass::ClearSection((int)aTerrain, 0); /*0x71cb9f*/
   result = dword_A8E998; /*0x71cba4*/
   for ( i = 0; i < dword_A8E998; ++i ) /*0x71cbad*/
   {
-    v4 = *((_DWORD *)dword_A8E98C + i); /*0x71cbba*/
-    if ( v4 && !*(_BYTE *)(v4 + 129) ) /*0x71cbc1*/
+    v4 = *((unsigned int *)dword_A8E98C + i); /*0x71cbba*/
+    if ( v4 && !*(unsigned char *)(v4 + 129) ) /*0x71cbc1*/
     {
-      if ( *(_BYTE *)(v4 + 144) ) /*0x71cbcb*/
+      if ( *(unsigned char *)(v4 + 144) ) /*0x71cbcb*/
       {
-        v5 = *(_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v4 + 440))(v4, v6); /*0x71cbe6*/
-        sprintf(Buffer, "%d", (__int16)v5 + 1000 * IDA_SHIWORD(v5)); /*0x71cc09*/
-        INIClass::SetString((unsigned __int8 *)aTerrain, Buffer, (char *)(*(_DWORD *)(v4 + 200) + 36)); /*0x71cc29*/
+        v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
+        sprintf(Buffer, "%d", (int16_t)v5 + 1000 * (*((signed short *)(((unsigned char *)&(v5)) + 2)))); /*0x71cc09*/
+        INIClass::SetString((uint8_t *)aTerrain, Buffer, (char *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }
     }
     result = dword_A8E998; /*0x71cc2e*/

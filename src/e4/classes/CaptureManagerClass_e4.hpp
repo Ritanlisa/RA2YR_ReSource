@@ -18,40 +18,30 @@ struct CaptureManagerClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     void* uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsInitialized;  // 0x12
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     unsigned int controlNodes;  // 0x24
     char controlNodeCount[4];  // 0x28
-    bool q02B;  // 0x2B
     char controlNodeCapacity[4];  // 0x2C
     TechnoClass* owner;  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     HouseClass* originalOwner;  // 0x34
     bool CaptureManagerClass_field_30;  // 0x38
     bool CaptureManagerClass_field_31;  // 0x39
     unsigned char pad_32;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    void* q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
     unsigned char pad_42;  // 0x42
     char overloadLimit[4];  // 0x44
     char overloadCount[4];  // 0x48
-    bool q04A;  // 0x4A
     char linkCount[4];  // 0x4C
-    unsigned char q04F;  // 0x4F
     char CaptureManagerClass_field_2C[4];  // 0x50
 // --- flat members (END) ---
-    void DecideUnitFate(int aP1);
+    void DecideUnitFate(int aP1, void *a1 = 0);
     char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5);
     CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
@@ -63,7 +53,7 @@ struct CaptureManagerClass {
     char AddRef(int a2);
     char Release(int a2, unsigned int * a3);
     char SetCapacity(int a2, unsigned int * a3);
-    bool CanCapture(unsigned int *a2);
+    bool CanCapture(unsigned int *a2, void *a1 = 0);
     int CannotControlAnyMore();
     int Capture(unsigned int * a2);
     int DrawLinks(int a1, ...);
@@ -88,6 +78,8 @@ struct CaptureManagerClass {
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
     unsigned int u32_9C;  // 0x9C (offset-truth)
     unsigned int u32_A4;  // 0xA4 (offset-truth)
+    static double __pad_03C(...);  // plateau: C2039/C3861 stub
+    static double u32_31(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

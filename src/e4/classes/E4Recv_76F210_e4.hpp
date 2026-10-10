@@ -11,15 +11,6 @@ struct E4Recv_76F210 {
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC
     unsigned int M13;  // 0xD
-    unsigned int q018;  // 0x18
-    unsigned int q024;  // 0x24
-    unsigned int q054;  // 0x54
-    unsigned int q084;  // 0x84
-    unsigned int q774;  // 0x774
-    unsigned int q1908;  // 0x1908
-    unsigned int q6408;  // 0x6408
-    unsigned int q25608;  // 0x25608
-    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     unsigned int *  sub_76F210(int a2, int a3);  // 0x76F210
 };

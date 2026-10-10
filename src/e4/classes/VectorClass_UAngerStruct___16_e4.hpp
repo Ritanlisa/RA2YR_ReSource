@@ -9,19 +9,11 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorClass_UAngerStruct___16 {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned char u8_D;  // 0xD
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    unsigned char q054;  // 0x54
-    unsigned char q084;  // 0x84
 // --- flat members (END) ---
-    int Clear(int a2);  // 0x50E550
-    char ddtor(int a2);  // 0x50EC20
-    char ddtor(int a2, unsigned int * a3);  // 0x50EC60
-    wchar_t * ddtor(void *a1_1);  // 0x50ED10
-    int GetSize(unsigned int * a2);  // 0x50ED40
-    unsigned int GetCapacity(int a2);  // 0x50ED80
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x510090
+    int  Clear(int a2);  // 0x50E550
+    char  ddtor(int a2);  // 0x50EC20
+    int  GetSize(unsigned int * a2);  // 0x50ED40
+    unsigned int  GetCapacity(int a2);  // 0x50ED80
+    VectorClass_flat *  QueryInterface(char a2);  // 0x510090
 };
 } // namespace gamemd

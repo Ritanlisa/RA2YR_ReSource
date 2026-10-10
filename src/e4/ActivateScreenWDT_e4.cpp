@@ -12,37 +12,37 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x76F470
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3)
 {
-  int v5; // eax
+  void * v5;
   int v6; // esi
-  _DWORD *v7; // edi
+  unsigned int *v7; // edi
   int v8; // eax
 
-  v5 = RA2_OPNEW(0x14u); /*0x76f479*/
+  v5 = (int)(operator new(0x14u));
   v6 = v5; /*0x76f47e*/
   if ( v5 ) /*0x76f485*/
   {
-    v7 = (_DWORD *)(v5 + 8); /*0x76f488*/
-    *(_DWORD *)(v5 + 4) = 0; /*0x76f48d*/
-    *(_DWORD *)v5 = &(void*)(void*)&ReferenceCounted_vftable; /*0x76f494*/
+    v7 = (unsigned int *)(v5 + 8); /*0x76f488*/
+    *(unsigned int *)(v5 + 4) = 0; /*0x76f48d*/
+    *(unsigned int *)v5 = (unsigned int)(&vt_ReferenceCounted); /*0x76f494*/
     ComPtr::Constructor((ComPtr *)(v5 + 8)); /*0x76f49a*/
-    *v7 = &(void*)(void*)&rc_ptr_WDTState_vftable; /*0x76f49f*/
-    ComPtr::Set((ComPtr *)(v6 + 8), *(_DWORD *)(a2 + 4)); /*0x76f4ab*/
-    v6->q010 = 0; /*0x76f4b0*/
-    *(_DWORD *)v6 = &(void*)(void*)&WorldDominationTour_State_vftable; /*0x76f4b7*/
-    v8 = v6->q00C; /*0x76f4bd*/
-    if ( v8 && a3 < *(_DWORD *)(v8 + 36) ) /*0x76f4ce*/
-      v6->q010 = *(_DWORD *)(*(_DWORD *)(v8 + 68) + 4 * a3); /*0x76f4d6*/
+    *v7 = (unsigned int)(&vt_rc_ptr); /*0x76f49f*/
+    ComPtr::Set((ComPtr *)(v6 + 8), *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
+    *(unsigned int *)(v6 + 16) = 0; /*0x76f4b0*/
+    *(unsigned int *)v6 = &vt_WorldDominationTourState; /*0x76f4b7*/
+    v8 = *(unsigned int *)(v6 + 12); /*0x76f4bd*/
+    if ( v8 && a3 < *(unsigned int *)(v8 + 36) ) /*0x76f4ce*/
+      *(unsigned int *)(v6 + 16) = *(unsigned int *)(*(unsigned int *)(v8 + 68) + 4 * a3); /*0x76f4d6*/
   }
   else
   {
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  *(_DWORD *)a1->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x76f4e6*/
+  *(unsigned int *)a1->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76f4e6*/
   ComPtr::Set(a1, v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

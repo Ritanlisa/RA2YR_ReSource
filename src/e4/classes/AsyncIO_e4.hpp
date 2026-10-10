@@ -24,9 +24,9 @@ struct AsyncIO {
     unsigned int q118;  // 0x118
     unsigned int q280;  // 0x280
 // --- flat members (END) ---
-    char Shutdown();
-    int Read();
-    int WaitCompletion();
+    char Shutdown(void *a1 = 0);
+    int Read(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    int WaitCompletion(void *a1 = 0);
     unsigned char q0242;  // 0x242 (offset-truth)
     unsigned int u32_180;  // 0x180 (offset-truth)
     unsigned char u32_1C6;  // 0x1C6 (offset-truth)

@@ -9,14 +9,14 @@
 #include "e4/classes/WinModemClass_e4.hpp"
 
 // 0x4A5110
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Window::IsVisible()
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = this->u32_18 && this->u32_19; /*0x4a511e*/
+  (*((unsigned char *)&(result))) = this->u32_18 && this->u32_19; /*0x4a511e*/
   return result; /*0x4a5120*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x776D80
 namespace gamemd {
@@ -55,14 +55,14 @@ char Window::ClampToScreen(int * a1)
   result = GetSystemMetrics(17); /*0x776de0*/
   if ( a1[3] <= result ) /*0x776de5*/
   {
-    IDA_LOBYTE(result) = v1; /*0x776e08*/
+    (*((unsigned char *)&(result))) = v1; /*0x776e08*/
   }
   else
   {
     a1[1] += GetSystemMetrics(17) - a1[3]; /*0x776df7*/
     result = GetSystemMetrics(17); /*0x776dfa*/
     a1[3] = result; /*0x776dfc*/
-    IDA_LOBYTE(result) = 1; /*0x776dff*/
+    (*((unsigned char *)&(result))) = 1; /*0x776dff*/
   }
   return result; /*0x776e01*/
 }

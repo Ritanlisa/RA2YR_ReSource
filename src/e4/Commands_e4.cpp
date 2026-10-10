@@ -18,12 +18,12 @@
 #include "app/cmdline.hpp"
 
 // 0x537A50
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char * Commands::AddRef(void *a1)  /* G57w9: raw 0x537A50 char *__thiscall */
 {
   return aMultiplayerdeb; /*0x537a55*/
 }
-} // namespace gamemd
+}  // G42.18 ns repair
 // 0x537A60
 namespace gamemd {
 const wchar_t * Commands::ddtor()  /* G57w9: raw 0x537A60 */

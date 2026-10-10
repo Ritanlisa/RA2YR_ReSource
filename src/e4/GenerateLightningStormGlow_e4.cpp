@@ -6,7 +6,7 @@
 #include "e4/e4_protos.h"
 
 // 0x53D960
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_53D960(int a1, int a2)
 {
   signed int v3; // ecx
@@ -30,5 +30,5 @@ int sub_53D960(int a1, int a2)
   if ( a1 == -v3 ) /*0x53d9c5*/
     return 5 * v3 - a2 + v5; /*0x53d9cd*/
   return a1 + 7 * v3 + v5; /*0x53d972*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

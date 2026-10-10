@@ -13,36 +13,21 @@ struct SlaveManagerClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     TechnoClass* master;  // 0x24
-    HouseClass* house;  // 0x28
-    bool q02B;  // 0x2B
+    unsigned int ;  // 0x28
     HouseClass* slaveOwner;  // 0x2C
     char slaveType[4];  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char slaveCount[4];  // 0x34
-    unsigned int slaves;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
+    void* ;  // 0x38
     char slaveVectorCount[4];  // 0x3C
-    unsigned int q03D;  // 0x3D
     char slaveVectorCapacity[4];  // 0x40
-    bool q042;  // 0x42
     char creationFrame[4];  // 0x44
-    unsigned char u8_45;  // 0x45
-    void* q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    void* q050;  // 0x50
     char SlaveManagerClass_field_54[4];  // 0x54
     char SlaveManagerClass_field_58[4];  // 0x58
     char SlaveManagerClass_field_5C[4];  // 0x5C
@@ -51,11 +36,11 @@ struct SlaveManagerClass {
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);
     int AssignTask(AbstractClass * aP1);
-    int Check();
+    int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     int CheckIsOne();
-    int Constructor();
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int IsMasterHarvester();
-    int LostSlave(int aP1);
+    int LostSlave(int aP1, void *a1 = 0);
     int SaveManager(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetOwner(TechnoClass * aP1);
     int ShouldWakeUpNow();
@@ -66,10 +51,20 @@ struct SlaveManagerClass {
     int ddtor(int a1, unsigned int * a2);
     long long Calc2DDistance();
     void Constructor_SlaveManagerClass();
-    void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6);
+    void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6, void *a1 = 0, void *a2 = 0, void *a7 = 0);
     wchar_t * CreateSlave(wchar_t ** a2);
-    static int ProcessSlaves(SlaveManagerClass *aP1, int *p_SlaveManagerClass_field_5C, int a3);  // G57w10-S raw 0x006AF6C0 (was C2597 interim stub)
+    static int ProcessSlaves(SlaveManagerClass *aP1, int *p_SlaveManagerClass_field_5C, int a3);
     SlaveManagerClass * ProcessOrders(void * Block, char a2);
+    static double AbstractClass(...);  // plateau: C2039/C3861 stub
+    static double __pad_048(...);  // plateau: C2039/C3861 stub
+    static double __pad_48(...);  // plateau: C2039/C3861 stub
+    static double abstractFlags6(...);  // plateau: C2039/C3861 stub
+    static double nextArrayIndex0(...);  // plateau: C2039/C3861 stub
+    static double u32_45(...);  // plateau: C2039/C3861 stub
+    static double u32_AC(...);  // plateau: C2039/C3861 stub
+    static double uniqueId0(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vtable46(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

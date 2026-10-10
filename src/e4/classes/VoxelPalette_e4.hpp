@@ -7,8 +7,7 @@ namespace gamemd {
 
 struct VoxelPalette {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     unsigned int * Init(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int Reset(void *a1 = 0, void *a2 = 0);

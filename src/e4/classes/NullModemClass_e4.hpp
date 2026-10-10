@@ -9,9 +9,8 @@ struct NullModemClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     int PlayerIndex;  // 0x4
+    unsigned int m_5;  // 0x5
     void* Active;  // 0x8
-    bool q00A;  // 0xA
-    bool q00B;  // 0xB
     void* LastPacketTime;  // 0xC
     void* PacketsSent;  // 0x10
     void* PacketsReceived;  // 0x14
@@ -31,7 +30,7 @@ struct NullModemClass {
     int receiveData();
     int sendData();
     void * QueryInterface(char a2, int a1, int a3, int a4, int a5);
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
@@ -39,6 +38,11 @@ struct NullModemClass {
     unsigned char u32_51;  // 0x51 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
+    static double Active3(...);  // plateau: C2039/C3861 stub
+    static double ConnectionClass(...);  // plateau: C2039/C3861 stub
+    static double PlayerIndex4(...);  // plateau: C2039/C3861 stub
+    static double PlayerIndex9(...);  // plateau: C2039/C3861 stub
+    static double q206C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -7,15 +7,15 @@ namespace gamemd {
 
 struct IStream {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
     void* IStream_field_00;  // 0x4
 // --- flat members (END) ---
-    int Read(void * pv, ULONG cb);  // COM truth: HRESULT __thiscall IStream::Read(this, void*, ULONG); old pstm param was double-counted receiver (G57e1 B3)
+    int Read(void *a1 = 0, void *a2 = 0, void *a3 = 0);
 };
 
 
 // supplied (R_fix, C2039 IStreamVtbl x18): SaveGame_e4.cpp lpVtbl 载体
 struct IStreamVtbl {
     int Write(void *aP0, void *aP1, int aP2, int aP3);  // COM IStream::Write 形态
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

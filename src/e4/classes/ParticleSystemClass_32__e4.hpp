@@ -6,18 +6,16 @@
 namespace gamemd {
 struct ParticleSystemClass_32_ {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    void* q004;  // 0x4
     int Capacity;  // 0x8
-    void* q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    void* q010;  // 0x10
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
-    char ResizeDataArray(int a2, unsigned int * a3);  // 0x4EB8A0
-    int FindElementByValue(unsigned int * a2);  // 0x4EB950
-    unsigned int GetElementIndex(int a2);  // 0x4E8870
-    unsigned char m_1;  // 0x1 (offset-truth)
+    char  ResizeDataArray(int a2, unsigned int * a3);  // 0x4EB8A0
+    int  FindElementByValue(unsigned int * a2);  // 0x4EB950
+    unsigned int  GetElementIndex(int a2);  // 0x4E8870
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+    static double q004(...);  // plateau: C2039/C3861 stub
+    static double q00C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -14,33 +14,9 @@ struct E4Recv_697F10 {
     unsigned int M20;  // 0x14
     unsigned int M21;  // 0x15
     unsigned int M23;  // 0x17
-    unsigned int q018;  // 0x18
-    unsigned int q020;  // 0x20
     unsigned int M22;  // 0x22
     unsigned int M24;  // 0x24
-    unsigned int q034;  // 0x34
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned int q128;  // 0x128
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q774;  // 0x774
-    unsigned int q1634;  // 0x1634
-    unsigned int q1908;  // 0x1908
-    unsigned int q5684;  // 0x5684
-    unsigned int q6408;  // 0x6408
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q153094;  // 0x153094
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
-    int  ReadGameSettingsINI(void * aP1, int a1, unsigned int * a3, unsigned int * a4);  // 0x697F10
+    int  ReadGameSettingsINI(unsigned int * a2, int a3, unsigned int * a4, unsigned int * a5);  // 0x697F10
 };
 } // namespace gamemd

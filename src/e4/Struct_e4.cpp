@@ -14,16 +14,16 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x48B2A0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Struct::ClearAllMemberFlags()
 {
   int v1; // eax
   int v2; // esi
   int v3; // eax
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int result; // eax
   int v6; // esi
-  _DWORD *v7; // edi
+  unsigned int *v7; // edi
 
   v1 = this->u32_4; /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
@@ -40,19 +40,19 @@ int Struct::ClearAllMemberFlags()
     v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
-      *(_DWORD *)(v3 + this->u32_24) &= ~1u; /*0x48b2d2*/
-      *(_DWORD *)(v3 + this->u32_24) &= ~2u; /*0x48b2de*/
-      v4 = (_DWORD *)(v3 + this->u32_24); /*0x48b2e3*/
+      *(unsigned int *)(v3 + this->u32_24) &= ~1u; /*0x48b2d2*/
+      *(unsigned int *)(v3 + this->u32_24) &= ~2u; /*0x48b2de*/
+      v4 = (unsigned int *)(v3 + this->u32_24); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
       *v4 &= ~4u; /*0x48b2ee*/
-      *(_DWORD *)(v3 + this->u32_24 - 32) = 0; /*0x48b2f3*/
-      *(_DWORD *)(v3 + this->u32_24 - 28) = 0; /*0x48b2fa*/
-      *(_DWORD *)(v3 + this->u32_24 - 24) = 0; /*0x48b301*/
-      *(_DWORD *)(v3 + this->u32_24 - 20) = 0; /*0x48b308*/
-      *(_DWORD *)(v3 + this->u32_24 - 12) = 0; /*0x48b30f*/
-      *(_WORD *)(v3 + this->u32_24 - 4) = 0; /*0x48b316*/
-      *(_DWORD *)(this->u32_30 + 4 * v2 - 4) = 0; /*0x48b31e*/
+      *(unsigned int *)(v3 + this->u32_24 - 32) = 0; /*0x48b2f3*/
+      *(unsigned int *)(v3 + this->u32_24 - 28) = 0; /*0x48b2fa*/
+      *(unsigned int *)(v3 + this->u32_24 - 24) = 0; /*0x48b301*/
+      *(unsigned int *)(v3 + this->u32_24 - 20) = 0; /*0x48b308*/
+      *(unsigned int *)(v3 + this->u32_24 - 12) = 0; /*0x48b30f*/
+      *(unsigned short *)(v3 + this->u32_24 - 4) = 0; /*0x48b316*/
+      *(unsigned int *)(this->u32_30 + 4 * v2 - 4) = 0; /*0x48b31e*/
     }
     while ( v2 < this->u32_4 ); /*0x48b327*/
   }
@@ -63,16 +63,16 @@ int Struct::ClearAllMemberFlags()
     result = 0; /*0x48b332*/
     do /*0x48b37d*/
     {
-      *(_DWORD *)(result + this->u32_34) &= ~1u; /*0x48b33e*/
-      *(_DWORD *)(result + this->u32_34) &= ~2u; /*0x48b34a*/
-      v7 = (_DWORD *)(result + this->u32_34); /*0x48b34f*/
+      *(unsigned int *)(result + this->u32_34) &= ~1u; /*0x48b33e*/
+      *(unsigned int *)(result + this->u32_34) &= ~2u; /*0x48b34a*/
+      v7 = (unsigned int *)(result + this->u32_34); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
       *v7 &= ~4u; /*0x48b35a*/
-      *(_DWORD *)(this->u32_34 + result - 20) = 0; /*0x48b35f*/
-      *(_DWORD *)(this->u32_34 + result - 16) = 0; /*0x48b366*/
-      *(_DWORD *)(this->u32_34 + result - 8) = 0; /*0x48b36d*/
-      *(_DWORD *)(this->u32_40 + 4 * v6 - 4) = 0; /*0x48b374*/
+      *(unsigned int *)(this->u32_34 + result - 20) = 0; /*0x48b35f*/
+      *(unsigned int *)(this->u32_34 + result - 16) = 0; /*0x48b366*/
+      *(unsigned int *)(this->u32_34 + result - 8) = 0; /*0x48b36d*/
+      *(unsigned int *)(this->u32_40 + 4 * v6 - 4) = 0; /*0x48b374*/
     }
     while ( v6 < this->u32_8 ); /*0x48b37d*/
   }
@@ -81,23 +81,23 @@ int Struct::ClearAllMemberFlags()
   this->u32_4C = 0; /*0x48b387*/
   this->u32_54 = 0; /*0x48b38a*/
   return result; /*0x48b37f*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x48BF10
 namespace gamemd {
 int Struct::ZeroInitAndSetup(void *a1)
 {
   a1->PhoneNumber[7] = 0; /*0x48bf12*/
-  a1->PhoneNumber[8] = 0; /*0x48bf15*/
-  a1->PhoneNumber[9] = 0; /*0x48bf18*/
-  a1->PhoneNumber[10] = 0; /*0x48bf1b*/
-  *(_DWORD *)a1->Active = 0; /*0x48bf1e*/
+  (&a1->PhoneNumber)[8] = 0; /*0x48bf15*/
+  (&a1->PhoneNumber)[9] = 0; /*0x48bf18*/
+  (&a1->PhoneNumber)[10] = 0; /*0x48bf1b*/
+  *(unsigned int *)a1->Active = 0; /*0x48bf1e*/
   a1->LastPacketTime = 0; /*0x48bf21*/
   a1->PacketsSent = 0; /*0x48bf24*/
   a1->PacketsReceived = 0; /*0x48bf27*/
   a1->PhoneNumber[0] = 0; /*0x48bf2a*/
-  a1->PhoneNumber[11] = -1; /*0x48bf30*/
-  a1->PhoneNumber[12] = -1; /*0x48bf33*/
+  (&a1->PhoneNumber)[11] = -1; /*0x48bf30*/
+  (&a1->PhoneNumber)[12] = -1; /*0x48bf33*/
   return Struct::ClearAllMemberFlags((Struct *)a1->PlayerIndex);
 }
 } // namespace gamemd
@@ -105,10 +105,10 @@ int Struct::ZeroInitAndSetup(void *a1)
 namespace gamemd {
 unsigned char * Struct::Zero3()
 {
-  IDA_LOBYTE(this->Struct_field_00) = 0; /*0x4b9bd4*/
-  IDA_BYTE1(this->Struct_field_00) = 0; /*0x4b9bd6*/
-  IDA_BYTE2(this->Struct_field_00) = 0; /*0x4b9bd9*/
-  return this; /*0x4b9bdc*/
+  (*((unsigned char *)&(this->Struct_field_00))) = 0; /*0x4b9bd4*/
+  (((unsigned char *)&(this->Struct_field_00))[1]) = 0; /*0x4b9bd6*/
+  (((unsigned char *)&(this->Struct_field_00))[2]) = 0; /*0x4b9bd9*/
+  return (unsigned char *)(this); /*0x4b9bdc*/
 }
 } // namespace gamemd
 // 0x4085A0

@@ -8,12 +8,12 @@
 #include "e4/e4_protos.h"
 
 // 0x535A60
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int BufferIOFileClass::Destruct()
 {
-  *(_DWORD *)this->__tail_0 = &off_7E1668; /*0x535a60*/
+  *(unsigned int *)this->__tail_0 = (unsigned int)(&off_7E1668); /*0x535a60*/
   return BufferIOFileClass::Dtor();
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x65CA70
 namespace gamemd {

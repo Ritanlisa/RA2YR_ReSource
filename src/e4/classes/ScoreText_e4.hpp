@@ -7,11 +7,10 @@ namespace gamemd {
 
 struct ScoreText {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
+
 // --- flat members (END) ---
     void Show(void * a2, void *a1 = 0);
-    void ShowAlt(const wchar_t **aP1, int a3);
+    void ShowAlt(const wchar_t **aP1, int a3, void *a1 = 0);
 };
 
 } // namespace gamemd

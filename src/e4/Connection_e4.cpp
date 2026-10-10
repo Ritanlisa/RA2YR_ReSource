@@ -7,24 +7,28 @@
 #include "e4/e4_protos.h"
 
 // 0x5422F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Connection::GetSpeed()
 {
+
   if ( this->Initialized && this->Active ) /*0x5422f7*/
-    return *(_DWORD *)(*(_DWORD *)(this->q048 + 4) + 56); /*0x542304*/
+    return *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 18) + 4) + 56); /*0x542304*/
   else
     return 0; /*0x542308*/
+
 }
-}
+}  // G42.18 ns repair
 // 0x543090
 namespace gamemd {
 int Connection::Close()
 {
+
   int result; // eax
 
-  result = (int)this->q048; /*0x543090*/
+  result = (int)this->Connection_field_0x48; /*0x543090*/
   if ( result ) /*0x543095*/
-    *(_BYTE *)(result + 200) = 1; /*0x543097*/
+    *(unsigned char *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/
+
 }
 }

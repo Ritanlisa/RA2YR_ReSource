@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct IPersistStream {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    char SetField(int a1);
+    char SetField(int a1, void *a2 = 0);
     static int GetMaxSize();
     int GetSizeMax(int a0, RadioClass * aP1, int a3);
     int IsDirty(int a1, int a2);

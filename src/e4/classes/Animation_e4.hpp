@@ -106,13 +106,8 @@ struct Animation {
     unsigned int q6034;  // 0x6034
     unsigned int q6144;  // 0x6144
     char q7084;  // 0x7084
-    unsigned int q8480;  // 0x8480
-    void* q21650;  // 0x21650
-    unsigned char q24578;  // 0x24578
-    char q28804;  // 0x28804
-    void* q136784;  // 0x136784
 // --- flat members (END) ---
-    BuildingClass * * UpdateBuildingAnimations();
+    BuildingClass * * UpdateBuildingAnimations(void *a1 = 0);
     ObjectClass * * LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2);
     int GetProgress();
     long long UpdateBobOffset();
@@ -122,6 +117,7 @@ struct Animation {
     unsigned char u32_16C6;  // 0x16C6 (offset-truth)
     unsigned int u32_1A04;  // 0x1A04 (offset-truth)
     unsigned int u32_1A08;  // 0x1A08 (offset-truth)
+    static double q1046(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -8,11 +8,6 @@ namespace gamemd {
 struct CCToolTip {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
 // --- flat members (END) ---
     CCToolTip * QueryInterface(unsigned int * Block, char a2);
 };

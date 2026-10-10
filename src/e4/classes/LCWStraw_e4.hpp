@@ -8,7 +8,6 @@ namespace gamemd {
 struct LCWStraw {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
 // --- flat members (END) ---
     int Dtor(void *a1);
 };

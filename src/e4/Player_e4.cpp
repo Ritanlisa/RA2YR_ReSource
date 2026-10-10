@@ -15,16 +15,17 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5E8DC0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void Player::BuildListString(wchar_t * Destination)
 {
+
   wchar_t **v2; // edi
   wchar_t *v3; // esi
   wchar_t **v4; // eax
   wchar_t *v5; // eax
   DeleteAndZero v6; // [esp+Ch] [ebp-Ch] BYREF
 
-  *(_WORD *)Destination = 0; /*0x5e8dc8*/
+  *(unsigned short *)Destination = 0; /*0x5e8dc8*/
   v2 = (wchar_t **)dword_A8DA90; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
@@ -39,11 +40,11 @@ void Player::BuildListString(wchar_t * Destination)
       || v3 == (wchar_t *)g_Lobby_PlayerSide
       || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
-      GetPlayerTypeString((char **)&v6.q004, v3); /*0x5e8e2b*/
-      v4 = CharStringToWide((wchar_t **)&v6.q008, (const char **)&v6.q004); /*0x5e8e38*/
+      GetPlayerTypeString((char **)&v6.DeleteAndZero_field_0x04, v3); /*0x5e8e2b*/
+      v4 = CharStringToWide((wchar_t **)&v6.DeleteAndZero_field_0x08, (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
       WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v6.q008); /*0x5e8e4b*/
-      DeleteAndZero((ObjectClass *)&v6.q004); /*0x5e8e54*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v6.DeleteAndZero_field_0x08); /*0x5e8e4b*/
+      DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
     }
     else
     {
@@ -56,6 +57,7 @@ void Player::BuildListString(wchar_t * Destination)
     ++v2; /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&dword_A8DAB0 ); /*0x5e8e89*/
+
 }
 } // namespace gamemd
 // 0x5E8BF0

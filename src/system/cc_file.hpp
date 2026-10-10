@@ -31,7 +31,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     MemoryBuffer& operator=(MemoryBuffer&& other) noexcept;
 
-    void Clear() noexcept;
+    int Clear() noexcept;
 
     void* Buffer = nullptr;  // data: 0x8a3a08
     int Size = 0;
@@ -65,7 +65,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Destru_vt08(int a1, int a2);  // 0x401980
     unsigned int * Destru_vt00(char a1);  // 0x4019A0
-    void Create();  // 0x4309D0
+    HWND Create();  // 0x4309D0
     int SetName(char *Source);
     void* Construct(void* a1);  // 0x4739F0
     void* Construct2(void* a1);  // 0x473A30

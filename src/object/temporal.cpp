@@ -12,7 +12,10 @@ AbstractType __stdcall TemporalClass::whatAmI() const { return kObjectDeriveId; 
 int TemporalClass::objectSize() const { return 0; }
 void TemporalClass::calculateChecksum(void* checksum) const {}
 // 0x71b1a0
-int TemporalClass::StubReturn70() const { return 70; }
+int TemporalClass::StubReturn70() const
+{
+  return 70; /*0x71b1a5*/
+}
 // 0x71b190
 int TemporalClass::StubReturn80() const { return 80; }
 }

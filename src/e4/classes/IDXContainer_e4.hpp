@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct IDXContainer {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     int __fastcall LoadSample(int a1, int a2);
 };

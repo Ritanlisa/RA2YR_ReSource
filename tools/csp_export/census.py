@@ -1,6 +1,8 @@
 import re, sys
 from pathlib import Path
 sys.path.insert(0, 'tools/csp_export')
+# T5: fix_addr_violations absorbed into _absorbed/step4_bodies/
+sys.path.insert(0, 'tools/csp_export/_absorbed/step4_bodies')
 from fix_addr_violations import R_THIS1, R_THIS2, R_MEM
 VT_OPEN = re.compile(
     r'\(\s*\*+\s*\([^()]*\(\s*\*\s*\*\s*\)\s*\([^()]*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')

@@ -15,42 +15,26 @@ struct TeamTypeClass {
     int uniqueId;  // 0x10
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
-    bool q017;  // 0x17
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char TeamTypeClass_field_24[4];  // 0x24
     unsigned char TeamTypeClass_field_28;  // 0x28
     unsigned char pad_29;  // 0x29
-    bool q02B;  // 0x2B
     char TeamTypeClass_field_2C[4];  // 0x2C
-    bool q02F;  // 0x2F
     char TeamTypeClass_field_30[4];  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char TeamTypeClass_field_34[4];  // 0x34
     char TeamTypeClass_field_38[4];  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     char TeamTypeClass_field_3C[4];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
     unsigned int taskForce;  // 0x40
-    bool q042;  // 0x42
     char taskForceCount[4];  // 0x44
     char taskForceCapacity[4];  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char u8_4D;  // 0x4D
-    unsigned char q04F;  // 0x4F
-    unsigned int q050;  // 0x50
-    void* q054;  // 0x54
     char TeamTypeClass_field_58[4];  // 0x58
     unsigned char TeamTypeClass_field_5C;  // 0x5C
     unsigned char TeamTypeClass_field_5D;  // 0x5D
     unsigned char pad_5E;  // 0x5E
-    unsigned int u32_60;  // 0x60
     char TeamTypeClass_field_64[4];  // 0x64
     char TeamTypeClass_field_68[4];  // 0x68
     char TeamTypeClass_field_6C[4];  // 0x6C
@@ -60,13 +44,13 @@ struct TeamTypeClass {
 // --- flat members (END) ---
     unsigned int * FindOrCreateTaskForce(char *Source);  // G42.35f: ida truth 0x6E85F0 int* return
     AbstractClass * * GetMaxCount(CCINIClass * aP1);
-    char LoadFromINI(unsigned char *** aP1);  // G42.35f: ida truth 0x6F1090 = char __thiscall (uint8_t***)
+    char LoadFromINI(void *a1 = 0, void *a2 = 0);
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
     int Check(int a2, void *a2_2, void *a3);
-    int Construct();
+    int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int DestroyAllInstances();
-    int FindByName();
+    int FindByName(void *a1 = 0);
     int FindFirstInstance();
     int FlashAllInstances(AnimClass * aP1);
     int GetAuxField();
@@ -77,7 +61,7 @@ struct TeamTypeClass {
     int GetTypeIdentifier();
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int ProcessTaskForce();
+    int ProcessTaskForce(void *a1 = 0);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     unsigned int * CreateScriptType(char *Source);  // G42.35f: ida truth 0x691C00 int* return
@@ -91,8 +75,17 @@ struct TeamTypeClass {
     unsigned char u32_A7;  // 0xA7 (offset-truth)
     unsigned char u32_A9;  // 0xA9 (offset-truth)
     unsigned char u32_AA;  // 0xAA (offset-truth)
-    unsigned int u32_C8;  // 0xC8 (offset-truth)
+    void* ;  // 0xC8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
+    static double TeamTypeClass_field_60(...);  // plateau: C2039/C3861 stub
+    static double __pad_4C(...);  // plateau: C2039/C3861 stub
+    static double u32_A8(...);  // plateau: C2039/C3861 stub
+    static double u32_AB(...);  // plateau: C2039/C3861 stub
+    static double u32_AC(...);  // plateau: C2039/C3861 stub
+    static double u32_AF(...);  // plateau: C2039/C3861 stub
+    static double u32_B1(...);  // plateau: C2039/C3861 stub
+    static double u32_C4(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

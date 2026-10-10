@@ -8,29 +8,10 @@ struct BombClass;  // fix_fwd_type_supply
 struct E4Recv_6A93F0 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    unsigned int u32_8;  // 0x8
-    unsigned int u32_14;  // 0x14
     unsigned int M28;  // 0x1C
-    unsigned int q020;  // 0x20
-    unsigned int q028;  // 0x28
     unsigned int M56;  // 0x38
-    unsigned int q040;  // 0x40
-    unsigned int q050;  // 0x50
-    unsigned int q064;  // 0x64
-    unsigned int q080;  // 0x80
-    unsigned int q100;  // 0x100
-    unsigned int q128;  // 0x128
-    unsigned int q134;  // 0x134
-    unsigned int q308;  // 0x308
-    unsigned int q598;  // 0x598
-    unsigned int q1910;  // 0x1910
-    unsigned int q5170;  // 0x5170
-    unsigned int q20848;  // 0x20848
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q20482100;  // 0x20482100
 // --- flat members (END) ---
     BombClass * * sub_6A93F0();  // 0x6A93F0
+    static double attachedBomb(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

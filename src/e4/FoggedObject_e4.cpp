@@ -13,82 +13,86 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4D2DB0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
 {
+
   AbstractClass *v4; // ebx
   int v5; // eax
+  int v6; // ecx
   int v8; // eax
   int v9; // ecx
+  int v10; // edx
 
   v4 = 0; /*0x4d2db9*/
-  this->ptr_4 = 0; /*0x4d2dbd*/
-  this->u32_8 = aP1; /*0x4d2dc0*/
-  this->u32_C = 1; /*0x4d2dc3*/
-  this->u32_D = 0; /*0x4d2dc7*/
-  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
+  this->FoggedObject_field_0x4 = 0; /*0x4d2dbd*/
+  *((unsigned int *)this + 2) = aP1; /*0x4d2dc0*/
+  *((unsigned char *)this + 12) = 1; /*0x4d2dc3*/
+  *((unsigned char *)this + 13) = 0; /*0x4d2dc7*/
+  *(unsigned int *)this->__pad_0 = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
-    return this->q000; /*0x4d2e38*/
+    return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = RA2_OPNEW(16 * aP1); /*0x4d2e07*/
+    v8 = __2_YAPAXI_Z(16 * aP1); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( aP1 - 1 >= 0 ) /*0x4d2e18*/
       {
         v9 = v8 + 8; /*0x4d2e1a*/
-        aP1 = aP1; /*0x4d2e1d*/
+        v10 = aP1; /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
-          *(_DWORD *)(v9 - 8) = 0; /*0x4d2e1e*/
-          *(_DWORD *)(v9 - 4) = 0; /*0x4d2e21*/
-          *(_BYTE *)v9 = 0; /*0x4d2e24*/
-          *(_DWORD *)(v9 + 4) = 0; /*0x4d2e26*/
+          *(unsigned int *)(v9 - 8) = 0; /*0x4d2e1e*/
+          *(unsigned int *)(v9 - 4) = 0; /*0x4d2e21*/
+          *(unsigned char *)v9 = 0; /*0x4d2e24*/
+          *(unsigned int *)(v9 + 4) = 0; /*0x4d2e26*/
           v9 += 16; /*0x4d2e29*/
-          --aP1; /*0x4d2e2c*/
+          --v10; /*0x4d2e2c*/
         }
-        while ( aP1 ); /*0x4d2e2d*/
+        while ( v10 ); /*0x4d2e2d*/
       }
       v4 = (AbstractClass *)v8; /*0x4d2e2f*/
     }
-    this->ptr_4 = v4; /*0x4d2e31*/
-    this->u32_D = 1; /*0x4d2e34*/
-    return this->q000; /*0x4d2e34*/
+    this->FoggedObject_field_0x4 = v4; /*0x4d2e31*/
+    *((unsigned char *)this + 13) = 1; /*0x4d2e34*/
+    return this->__pad_0; /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
   {
     v5 = aP2 + 8; /*0x4d2de1*/
-    aP1 = aP1; /*0x4d2de4*/
+    v6 = aP1; /*0x4d2de4*/
     do /*0x4d2df4*/
     {
-      *(_DWORD *)(v5 - 8) = 0; /*0x4d2de5*/
-      *(_DWORD *)(v5 - 4) = 0; /*0x4d2de8*/
-      *(_BYTE *)v5 = 0; /*0x4d2deb*/
-      *(_DWORD *)(v5 + 4) = 0; /*0x4d2ded*/
+      *(unsigned int *)(v5 - 8) = 0; /*0x4d2de5*/
+      *(unsigned int *)(v5 - 4) = 0; /*0x4d2de8*/
+      *(unsigned char *)v5 = 0; /*0x4d2deb*/
+      *(unsigned int *)(v5 + 4) = 0; /*0x4d2ded*/
       v5 += 16; /*0x4d2df0*/
-      --aP1; /*0x4d2df3*/
+      --v6; /*0x4d2df3*/
     }
-    while ( aP1 ); /*0x4d2df4*/
+    while ( v6 ); /*0x4d2df4*/
   }
-  this->ptr_4 = (AbstractClass *)aP2; /*0x4d2df6*/
-  return this->q000; /*0x4d2dfb*/
+  this->FoggedObject_field_0x4 = (AbstractClass *)aP2; /*0x4d2df6*/
+  return this->__pad_0; /*0x4d2dfb*/
+
 }
-}
+}  // G42.18 ns repair
 // 0x4D2D10
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4d2d13*/
-  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
-  if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4d2d20*/
+  v3 = *(void **)&Block->q004; /*0x4d2d13*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d16*/
+  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x4d2d20*/
   {
-    RA2_OPDEL(v3); /*0x4d2d28*/
-    *(_DWORD *)&Block->m_1[3] = 0; /*0x4d2d30*/
+    operator delete((void *)(v3)); /*0x4d2d28*/
+    *(unsigned int *)&Block->q004 = 0; /*0x4d2d30*/
   }
-  IDA_BYTE1(Block->m_C) = 0; /*0x4d2d3b*/
-  Block->m_8 = 0; /*0x4d2d41*/
+  (((unsigned char *)&(*(unsigned int *)&Block->q00C))[1]) = 0; /*0x4d2d3b*/
+  *(unsigned int *)&Block->q008 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
-    RA2_OPDEL(Block); /*0x4d2d4b*/
-  return Block->q000; /*0x4d2d55*/
+    operator delete((void *)(Block)); /*0x4d2d4b*/
+  return Block->__pad_0; /*0x4d2d55*/
 }

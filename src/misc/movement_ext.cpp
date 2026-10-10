@@ -14,11 +14,11 @@ void MoveFeedback::ClearBuffer()
 
   v2 = *(void **)&this->m_1[3]; /*0x40b646*/
   this->m_10 = 0; /*0x40b649*/
-  if ( v2 && (unsigned char)((this->m_C) >> 8) ) /*0x40b650*/
+  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x40b650*/
   {
-    delete[] (v2); /*0x40b656*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x40b65e*/
+    operator delete((void *)(v2)); /*0x40b656*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x40b65e*/
   }
-  this->m_C = ((this->m_C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x40b661*/
+  (((unsigned char *)&(this->m_C))[1]) = 0; /*0x40b661*/
   this->m_8 = 0; /*0x40b664*/
 }

@@ -9,11 +9,7 @@ struct E4Recv_593030 {
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
     unsigned int M16;  // 0x10
-    unsigned int q034;  // 0x34
-    unsigned int q130;  // 0x130
-    unsigned int q304;  // 0x304
-    unsigned int q153094;  // 0x153094
 // --- flat members (END) ---
-    char  PlaceMapSeedCityBlockDiagonal(int16_t * a2, int16_t * a3, void * aP2);  // 0x593030
+    char  PlaceMapSeedCityBlockDiagonal(int16_t * a2, int16_t * a3, void * a4);  // 0x593030
 };
 } // namespace gamemd

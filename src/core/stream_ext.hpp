@@ -188,7 +188,7 @@ class Byte
 {
 public:
     // IDA 0x48B2A0 area
-     _BYTE * Zero(void* ptr, int32_t count);  // 0x4F4C20
+     unsigned char * Zero(void* ptr, int32_t count);  // 0x4F4C20
 
     int32_t     Byte_field_00;       // 0x00
 };
@@ -201,7 +201,7 @@ class TextBuffer
 {
 public:
     // IDA 0x5BCC90
-     _DWORD * Init(int32_t buffer);  // 0x5BCC90
+     unsigned int * Init(int32_t buffer);  // 0x5BCC90
 
     static char*    s_Buffer;       // 0x00
     static int32_t  s_BufferSize;   // 0x04
@@ -320,14 +320,14 @@ public:
     unsigned char m_1[4];  // 0x1
     unsigned int m_C;  // 0xC
     int m_8;  // 0x8
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
     unsigned int m_10;  // 0x10
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     BOOL IsEmpty(int a2);
     void ClearBuffer();  // 0x4A4AD0
     int PointerToIndex(int a1);  // 0x4A4B00
     int CopyItems(int a1, void* a2);  // 0x4A4CB0
-    int FindItem(_DWORD *a2);
+    int FindItem(unsigned int *a2);
     void* Constructor_VectorClass__DDSURFACEDESC___(int a1);  // 0x4A4DE0
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
@@ -380,7 +380,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* QueryInterface(int a1);  // 0x7B0440
     // --- gap2 auto-generated stub declarations (END) ---
-    unsigned char __pad_0;  // 0x0
+    unsigned char *__pad_0;  // 0x0
 
     unsigned int u32_18;  // G42.39 data supply
 };

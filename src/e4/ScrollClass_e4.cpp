@@ -17,12 +17,12 @@
 #include "e4/classes/ScriptTypeClass_e4.hpp"
 
 // 0x6922E0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
   TacticalClass::ProcessView(); /*0x6922e3*/
-  return BlowStraw_29::Seek(a1, aP2); /*0x6922f9*/
-}
+  return BlowStraw_29::Seek(a1,(unsigned int *)(aP2)); /*0x6922f9*/
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {
@@ -42,7 +42,7 @@ char * ScrollClass::Read(char * Block, char a2)
   while ( v4 ); /*0x693916*/
   RadarClass::Destruct((RadarClass *)Block); /*0x69391a*/
   if ( (a2 & 1) != 0 ) /*0x693924*/
-    RA2_OPDEL(Block); /*0x693927*/
+    operator delete((void *)(Block)); /*0x693927*/
   return (char *)Block; /*0x69392f*/
 }
 } // namespace gamemd

@@ -51,17 +51,18 @@ extern unsigned char aRadarcolor;  // data: 0x833528 truth(IDA G42.57w9)
 
 
 // 0x5FE250
-namespace gamemd {  // G42.18c ns repair
+namespace gamemd {  // G42.18 ns repair
 OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 {
+
   int v3; // eax
   bool v4; // zf
   int v5; // ecx
   OverlayTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull(aP1); /*0x5fe259*/
-  this->Strength_2 = 1; /*0x5fe265*/
-  *(_DWORD *)&this->Wall = 1; /*0x5fe26b*/
+  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x5fe259*/
+  this->Strength = 1; /*0x5fe265*/
+  *(unsigned int *)&this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
   this->RadarColor[1] = 1; /*0x5fe277*/
   this->LandType[0] = -1; /*0x5fe280*/
@@ -81,41 +82,41 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->__tail_2B5[0] = 0; /*0x5fe2d8*/
   this->__tail_2B5[1] = 0; /*0x5fe2de*/
   this->__tail_2B5[2] = 0; /*0x5fe2e4*/
-  this->u32_2B8 = 0; /*0x5fe2ea*/
-  this->vfptr = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe2f1*/
-  this->vfptr1 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe2f7*/
-  this->vfptr2 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe2fd*/
-  this->vfptr3 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe304*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vfptr1); /*0x5fe30b*/
-  this->RadarInvisible = 1; /*0x5fe310*/
-  this->Selectable = 0; /*0x5fe317*/
-  this->Insignificant = 1; /*0x5fe31d*/
-  this->AllowCellContent = 0; /*0x5fe324*/
-  v3 = *(_DWORD *)&stru_A83D50.q03C[4]; /*0x5fe32a*/
-  if ( *(int *)&stru_A83D50.q03C[4] < (int)stru_A83D50.q038 /*0x5fe368*/
-    || (stru_A83D50.q03C[1] || !stru_A83D50.q038)
-    && *(int *)&stru_A83D50.q03C[8] > 0
-    && (v4 = (*((unsigned __int8 (__thiscall **)(void **, char *, _DWORD))stru_A83D50.q030 + 2))(
-               &stru_A83D50.q030,
-               (char *)stru_A83D50.q038 + *(_DWORD *)&stru_A83D50.q03C[8],
+  *((unsigned char *)this + 696) = 0; /*0x5fe2ea*/
+  this->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
+  this->? = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
+  this->? = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
+  this->? = &OverlayTypeClass::`vftable'; /*0x5fe304*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
+  this->? = 1; /*0x5fe310*/
+  this->? = 0; /*0x5fe317*/
+  this->? = 1; /*0x5fe31d*/
+  this->? = 0; /*0x5fe324*/
+  v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fe32a*/
+  if ( *(int *)&stru_A83D50.__pad_3C[4] < (int)stru_A83D50.SuperClass_field_0x38 /*0x5fe368*/
+    || (stru_A83D50.__pad_3C[1] || !stru_A83D50.SuperClass_field_0x38)
+    && *(int *)&stru_A83D50.__pad_3C[8] > 0
+    && (v4 = (*((unsigned __int8 (**)(void **, char *, unsigned int))stru_A83D50.SuperClass_field_0x30 + 2))(
+               &stru_A83D50.SuperClass_field_0x30,
+               (char *)stru_A83D50.SuperClass_field_0x38 + *(unsigned int *)&stru_A83D50.__pad_3C[8],
                0) == 0,
-        v3 = *(_DWORD *)&stru_A83D50.q03C[4],
+        v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4],
         !v4) )
   {
-    *(_DWORD *)&stru_A83D50.q03C[4] = v3 + 1; /*0x5fe36d*/
-    *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * v3) = this; /*0x5fe377*/
-    v3 = *(_DWORD *)&stru_A83D50.q03C[4]; /*0x5fe37a*/
+    *(unsigned int *)&stru_A83D50.__pad_3C[4] = v3 + 1; /*0x5fe36d*/
+    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3) = this; /*0x5fe377*/
+    v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
   if ( v3 <= 0 ) /*0x5fe383*/
   {
-  LABEL_11:
+LABEL_11:
     this->LandType[0] = -1; /*0x5fe397*/
-    return &this->vfptr; /*0x5fe3a0*/
+    return &this->ObjectTypeClass; /*0x5fe3a0*/
   }
   else
   {
-    v6 = *(OverlayTypeClass ***)stru_A83D50.q034; /*0x5fe385*/
+    v6 = *(OverlayTypeClass ***)stru_A83D50.__pad_34; /*0x5fe385*/
     while ( *v6 != this ) /*0x5fe38d*/
     {
       ++v5; /*0x5fe38f*/
@@ -124,8 +125,9 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
         goto LABEL_11; /*0x5fe395*/
     }
     this->LandType[0] = v5; /*0x5fe3a7*/
-    return &this->vfptr; /*0x5fe3ad*/
+    return &this->ObjectTypeClass; /*0x5fe3ad*/
   }
+
 }
 }  // G42.18c ns repair
 // 0x5FE770
@@ -142,7 +144,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   char v10; // cl
   char v11; // al
   int DamageLevels; // ebp
-  _DWORD *v13; // eax
+  unsigned int *v13; // eax
   AnimTypeClass *CellAnim; // eax
   int Coord; // eax
   char v16; // al
@@ -161,47 +163,47 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)a2); /*0x5fe783*/
-  if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)aP1, a2) ) /*0x5fe78b*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)aP1))->LoadFromINI(a2) ) /*0x5fe78b*/
     return 0; /*0x5fea1f*/
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                                  (OverlayTypeClass *)a2,
-                                 (unsigned __int8 *)aP1->q024,
+                                 (uint8_t *)aP1->__pad_24,
                                  aLand,
                                  (unsigned int)aP1->CellAnim);
-  v4 = *(_DWORD *)&aP1->Wall; /*0x5fe7b1*/
+  v4 = *(unsigned int *)&aP1->Wall; /*0x5fe7b1*/
   aP1->CellAnim = INIString; /*0x5fe7b7*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (unsigned __int8 *)aP1->q024, aStrength, v4); /*0x5fe7c6*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)aP1->__pad_24, aStrength, v4); /*0x5fe7c6*/
   NoUseTileLandType = aP1->NoUseTileLandType; /*0x5fe7d3*/
-  *(_DWORD *)&aP1->Wall = Int_Overwrite; /*0x5fe7da*/
+  *(unsigned int *)&aP1->Wall = Int_Overwrite; /*0x5fe7da*/
   aP1->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
                               (int *)a2,
-                              (unsigned __int8 *)aP1->q024,
+                              (uint8_t *)aP1->__pad_24,
                               g_INI_Key_Wall,
                               NoUseTileLandType);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5fe7fa*/
                      (int *)a2,
-                     (unsigned __int8 *)aP1->q024,
-                     (unsigned __int8 *)g_INI_Key_Tiberium,
+                     (uint8_t *)aP1->__pad_24,
+                     (uint8_t *)g_INI_Key_Tiberium,
                      aP1->IsVeinholeMonster);
   IsVeins = aP1->IsVeins; /*0x5fe7ff*/
   aP1->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aCrate, IsVeins); /*0x5fe814*/
+  v8 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aCrate, IsVeins); /*0x5fe814*/
   ImageLoaded = aP1->ImageLoaded; /*0x5fe821*/
   aP1->IsVeins = v8; /*0x5fe828*/
   aP1->ImageLoaded = INIClass::ReadBool_Overwrite( /*0x5fe833*/
                         (int *)a2,
-                        (unsigned __int8 *)aP1->q024,
+                        (uint8_t *)aP1->__pad_24,
                         aCratetrigger,
                         ImageLoaded);
-  v9 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aExplodes, aP1->IsRubble); /*0x5fe848*/
+  v9 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aExplodes, aP1->IsRubble); /*0x5fe848*/
   v10 = aP1->RadarColor[0]; /*0x5fe84d*/
   aP1->IsRubble = v9; /*0x5fe853*/
-  v11 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aOverrides, v10); /*0x5fe862*/
+  v11 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aOverrides, v10); /*0x5fe862*/
   DamageLevels = aP1->DamageLevels; /*0x5fe867*/
   aP1->RadarColor[0] = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
          (INIClass *)a2,
-         (unsigned __int8 *)aP1->q024,
+         (uint8_t *)aP1->__pad_24,
          aCellanim,
          &g_INI_DefaultBuffer,
          Destination,
@@ -211,12 +213,12 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   else
   {
-    v13 = (_DWORD *)DamageLevels; /*0x5fe89e*/
+    v13 = (unsigned int *)DamageLevels; /*0x5fe89e*/
   }
   aP1->DamageLevels = (int)v13; /*0x5fe8a0*/
   aP1->Strength_2 = INIClass::ReadInt_Overwrite( /*0x5fe8c3*/
-                       (bool *)&DSurface_ViewBounds.q0FC[228],
-                       (unsigned __int8 *)aP1->ImageFile,
+                       (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                       (uint8_t *)aP1->ImageFile,
                        aDamagelevels,
                        aP1->Strength_2);
   if ( aP1->IsVeinholeMonster ) /*0x5fe8c9*/
@@ -234,29 +236,29 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   Coord = INIClass::GetCoord( /*0x5fe947*/
             (INIClass *)a2,
             (int)&v28,
-            (unsigned __int8 *)aP1->q024,
+            (uint8_t *)aP1->__pad_24,
             aRadarcolor,
-            (unsigned __int8 *)&aP1->__tail_2B5[1]);
-  *(_WORD *)&aP1->__tail_2B5[1] = *(_WORD *)Coord; /*0x5fe94f*/
+            (uint8_t *)&aP1->__tail_2B5[1]);
+  *(unsigned short *)&aP1->__tail_2B5[1] = *(unsigned short *)Coord; /*0x5fe94f*/
   Explodes = aP1->Explodes; /*0x5fe95e*/
-  *((_BYTE *)aP1 + 696) = *(_BYTE *)(Coord + 2); /*0x5fe965*/
-  v16 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aNousetilelandt, Explodes); /*0x5fe968*/
+  *((unsigned char *)aP1 + 696) = *(unsigned char *)(Coord + 2); /*0x5fe965*/
+  v16 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aNousetilelandt, Explodes); /*0x5fe968*/
   ChainReaction = aP1->ChainReaction; /*0x5fe96d*/
   aP1->Explodes = v16; /*0x5fe973*/
-  v18 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aIsveinholemons, ChainReaction); /*0x5fe982*/
+  v18 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsveinholemons, ChainReaction); /*0x5fe982*/
   Overrides = aP1->Overrides; /*0x5fe98f*/
   aP1->ChainReaction = v18; /*0x5fe996*/
-  aP1->Overrides = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aIsveins, Overrides); /*0x5fe9a1*/
-  v19 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aChainreaction, aP1->IsARock); /*0x5fe9b6*/
+  aP1->Overrides = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsveins, Overrides); /*0x5fe9a1*/
+  v19 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aChainreaction, aP1->IsARock); /*0x5fe9b6*/
   v20 = aP1->RadarColor[1]; /*0x5fe9bb*/
   aP1->IsARock = v19; /*0x5fe9c1*/
-  v21 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aDrawflat, v20); /*0x5fe9d0*/
+  v21 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aDrawflat, v20); /*0x5fe9d0*/
   v27 = aP1->__tail_2B5[0]; /*0x5fe9dd*/
   aP1->RadarColor[1] = v21; /*0x5fe9e4*/
-  aP1->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aIsarock, v27); /*0x5fe9ef*/
+  aP1->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsarock, v27); /*0x5fe9ef*/
   aP1->RadarColor[2] = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
                           (int *)a2,
-                          (unsigned __int8 *)aP1->q024,
+                          (uint8_t *)aP1->__pad_24,
                           aIsrubble,
                           aP1->RadarColor[2]);
   return 1; /*0x5fea11*/
@@ -266,6 +268,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 namespace gamemd {  // G42.18c ns repair
 ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
+
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
@@ -275,37 +278,39 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
-      a1->vfptr = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb21*/
-      a1->vfptr1 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb27*/
-      a1->vfptr2 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb2e*/
-      a1->vfptr3 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb35*/
+      a1->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5feb21*/
+      a1->? = &OverlayTypeClass::`vftable'; /*0x5feb27*/
+      a1->? = &OverlayTypeClass::`vftable'; /*0x5feb2e*/
+      a1->? = &OverlayTypeClass::`vftable'; /*0x5feb35*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->DamageLevels); /*0x5feb56*/
     if ( !a1->DrawFlat ) /*0x5feb5b*/
     {
-      if ( a1->Theater ) /*0x5feb69*/
+      if ( a1->? ) /*0x5feb69*/
       {
-        _makepath(&v3[1], 0, 0, a1->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5feba1*/
+        _makepath(&v3[1], 0, 0, a1->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5feba1*/
       }
       else
       {
-        _makepath(&v3[1], 0, 0, a1->ImageFile, Ext); /*0x5febc0*/
+        _makepath(&v3[1], 0, 0, a1->?, Ext); /*0x5febc0*/
         TheaterObjectTypeClassSpecificID(&v3[1], dword_A8B230[130].uniqueId); /*0x5febd7*/
       }
-      if ( !a1->Image ) /*0x5febdc*/
-        a1->Image = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x5febf1*/
+      if ( !a1->? ) /*0x5febdc*/
+        a1->? = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x5febf1*/
     }
     return 0; /*0x5febf7*/
   }
   return result; /*0x5febf9*/
+
 }
 }  // G42.18c ns repair
 // 0x5FEDE0
 namespace gamemd {  // G42.18c ns repair
 AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
+
   void *result; // eax
   SHPStruct *v3; // edi
   CCFileClass v4; // [esp+4h] [ebp-26Ch] BYREF
@@ -313,93 +318,96 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   int v6; // [esp+68h] [ebp-208h]
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
-  result = this->Image; /*0x5fede9*/
+  result = this->?; /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
-    if ( this->Theater ) /*0x5fee13*/
+    if ( this->? ) /*0x5fee13*/
     {
-      _makepath(Buffer, 0, 0, this->ImageFile, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
+      _makepath(Buffer, 0, 0, this->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
     }
-    else if ( this->NewTheater ) /*0x5fee59*/
+    else if ( this->? ) /*0x5fee59*/
     {
-      _makepath(Buffer, 0, 0, this->ImageFile, Ext); /*0x5fee78*/
+      _makepath(Buffer, 0, 0, this->?, Ext); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
     v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
-    this->Image = v3; /*0x5feeb1*/
+    this->? = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
-      this->ImageAllocated = 1; /*0x5feeb9*/
-    *(_DWORD *)v4.__tail_0 = &(void*)(void*)&CCFileClass_vftable; /*0x5feec4*/
+      this->? = 1; /*0x5feeb9*/
+    *(unsigned int *)v4.CDFileClass = &CCFileClass::`vftable'; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
-    *(_DWORD *)v4.__tail_0 = &off_7E1668; /*0x5feedd*/
+    *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
     return v3; /*0x5feeea*/
   }
   return result; /*0x5feeed*/
+
 }
 }  // G42.18c ns repair
 // 0x6440A0
 namespace gamemd {  // G42.18c ns repair
 unsigned int *  OverlayTypeClass::Construct(char *aP1)
 {
+
   void *v3; // eax
 
-  ObjectTypeClass::ConstructFull(aP1); /*0x6440a9*/
+  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
-  *(_DWORD *)&this->RadarColor[2] = -1; /*0x6440b9*/
-  this->u32_2B8 = -1; /*0x6440bf*/
-  IDA_LOBYTE(this->CellAnim) = 0; /*0x6440c5*/
+  *(unsigned int *)&this->RadarColor[2] = -1; /*0x6440b9*/
+  *((unsigned int *)this + 174) = -1; /*0x6440bf*/
+  LOBYTE(this->CellAnim) = 0; /*0x6440c5*/
   this->DamageLevels = 1; /*0x6440cb*/
-  this->Strength_2 = 0; /*0x6440d5*/
-  *(_DWORD *)&this->Wall = 50; /*0x6440db*/
-  *(_DWORD *)&this->NoUseTileLandType = 0; /*0x6440e5*/
-  *(_DWORD *)&this->Explodes = 0; /*0x6440eb*/
-  *(_DWORD *)&this->IsRubble = 0; /*0x6440f1*/
-  this->u32_2BC = 0; /*0x6440fc*/
-  this->MainVoxel = 0; /*0x644102*/
-  this->u32_2C4 = 0; /*0x644108*/
-  this->u32_2C8 = -1717986918; /*0x64410e*/
-  this->TurretVoxel = -1717986918; /*0x644114*/
-  this->u32_2D8 = 0; /*0x64411a*/
-  this->BarrelVoxel = 0; /*0x644120*/
-  this->u32_2E8 = 0; /*0x644126*/
-  this->ChargerTurrets = 0; /*0x64412c*/
-  this->u32_2F8 = 0; /*0x644132*/
-  this->u32_2CC = 1069128089; /*0x64413b*/
-  this->u32_2D4 = 1067030937; /*0x644145*/
-  this->u32_2DC = 1077477376; /*0x64414f*/
-  this->q0B9 = 0; /*0x644159*/
-  this->u32_2EC = 0; /*0x64415f*/
-  this->u32_2F4 = 0; /*0x644165*/
-  this->u32_2FC = 0; /*0x64416b*/
-  this->u32_300 = 0; /*0x644171*/
-  this->u32_304 = 0; /*0x644177*/
-  this->u32_308 = 0; /*0x64417d*/
-  this->u32_309 = 0; /*0x644183*/
-  this->u32_30A = 0; /*0x644189*/
-  this->u32_30B = 0; /*0x644190*/
-  this->q0C3 = 0; /*0x644196*/
-  this->vfptr = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64419c*/
-  this->vfptr1 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441a2*/
-  this->vfptr2 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441a8*/
-  this->vfptr3 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441af*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vfptr1); /*0x6441b6*/
-  if ( (int)stru_A83D50.q028 < *(int *)&stru_A83D50.q014[12] /*0x6441ef*/
-    || (IDA_BYTE1(stru_A83D50.q024) || !*(_DWORD *)&stru_A83D50.q014[12])
-    && (int)stru_A83D50.q02C > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, char *, _DWORD))(*(_DWORD *)&stru_A83D50.q014[4] + 8))(
-         &stru_A83D50.q014[4],
-         (char *)stru_A83D50.q02C + *(_DWORD *)&stru_A83D50.q014[12],
+  this->Strength = 0; /*0x6440d5*/
+  *(unsigned int *)&this->Wall = 50; /*0x6440db*/
+  *(unsigned int *)&this->NoUseTileLandType = 0; /*0x6440e5*/
+  *(unsigned int *)&this->Explodes = 0; /*0x6440eb*/
+  *(unsigned int *)&this->IsRubble = 0; /*0x6440f1*/
+  *((unsigned int *)this + 175) = 0; /*0x6440fc*/
+  *((unsigned int *)this + 176) = 0; /*0x644102*/
+  *((unsigned int *)this + 177) = 0; /*0x644108*/
+  *((unsigned int *)this + 178) = -1717986918; /*0x64410e*/
+  *((unsigned int *)this + 180) = -1717986918; /*0x644114*/
+  *((unsigned int *)this + 182) = 0; /*0x64411a*/
+  *((unsigned int *)this + 184) = 0; /*0x644120*/
+  *((unsigned int *)this + 186) = 0; /*0x644126*/
+  *((unsigned int *)this + 188) = 0; /*0x64412c*/
+  *((unsigned int *)this + 190) = 0; /*0x644132*/
+  *((unsigned int *)this + 179) = 1069128089; /*0x64413b*/
+  *((unsigned int *)this + 181) = 1067030937; /*0x644145*/
+  *((unsigned int *)this + 183) = 1077477376; /*0x64414f*/
+  *((unsigned int *)this + 185) = 0; /*0x644159*/
+  *((unsigned int *)this + 187) = 0; /*0x64415f*/
+  *((unsigned int *)this + 189) = 0; /*0x644165*/
+  *((unsigned int *)this + 191) = 0; /*0x64416b*/
+  *((unsigned int *)this + 192) = 0; /*0x644171*/
+  *((unsigned int *)this + 193) = 0; /*0x644177*/
+  *((unsigned char *)this + 776) = 0; /*0x64417d*/
+  *((unsigned char *)this + 777) = 0; /*0x644183*/
+  *((unsigned char *)this + 778) = 0; /*0x644189*/
+  *((unsigned char *)this + 779) = 0; /*0x644190*/
+  *((unsigned char *)this + 780) = 0; /*0x644196*/
+  this->ObjectTypeClass = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
+  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
+  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
+  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6441b6*/
+  if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
+    || (BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(unsigned int *)&stru_A83D50.__pad_14[12])
+    && (int)stru_A83D50.SuperClass_field_0x2C > 0
+    && (*(unsigned __int8 (**)(char *, char *, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 8))(
+         &stru_A83D50.__pad_14[4],
+         (char *)stru_A83D50.SuperClass_field_0x2C + *(unsigned int *)&stru_A83D50.__pad_14[12],
          0) )
   {
-    v3 = stru_A83D50.q028++; /*0x6441fc*/
-    *(_DWORD *)(*(_DWORD *)&stru_A83D50.q014[8] + 4 * (_DWORD)v3) = this; /*0x64420b*/
+    v3 = stru_A83D50.SuperClass_field_0x28++; /*0x6441fc*/
+    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = this; /*0x64420b*/
   }
-  this->IsLogic = 1; /*0x64420e*/
-  return &this->vfptr; /*0x644217*/
+  this->? = 1; /*0x64420e*/
+  return &this->ObjectTypeClass; /*0x644217*/
+
 }
 }  // G42.18c ns repair
 // 0x4754B0
@@ -411,7 +419,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
 
   v5 = sub_48DFD0(a4); /*0x4754cd*/
   if ( INIClass::GetString((INIClass *)this, a2, a3, v5, Destination, 128) ) /*0x4754e5*/
-    return OverlayTypeClass::LookupByName((OverlayTypeClass *)Destination); /*0x4754f2*/
+    return ((OverlayTypeClass *)((OverlayTypeClass *)Destination))->LookupByName(); /*0x4754f2*/
   else
     return a4; /*0x475502*/
 }
@@ -426,7 +434,7 @@ int OverlayTypeClass::LookupByName()
   if ( !_strcmpi(g_Str__none_, (char *)this) || !this ) /*0x48df99*/
     return -1; /*0x48dfbe*/
   v2 = 0; /*0x48df9b*/
-  v3 = off_81DA28; /*0x48df9d*/
+  v3 = (char **)(off_81DA28); /*0x48df9d*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48dfb0*/
   {
     ++v3; /*0x48dfb2*/
@@ -441,6 +449,7 @@ int OverlayTypeClass::LookupByName()
 namespace gamemd {  // G42.18c ns repair
 int * OverlayTypeClass::GetTile(int a1)
 {
+
   if ( (byte_AC15E8 & 1) == 0 ) /*0x5fe4cb*/
   {
     byte_AC15E8 |= 1u; /*0x5fe4e6*/
@@ -449,15 +458,16 @@ int * OverlayTypeClass::GetTile(int a1)
     atexit(nullsub_213); /*0x5fe50a*/
   }
   return &dword_AC1640; /*0x5fe518*/
+
 }
 }  // G42.18c ns repair
 // 0x5FE530
 namespace gamemd {  // G42.18c ns repair
-bool OverlayTypeClass::GetType(__int16 *aP2, int a3)
+bool OverlayTypeClass::GetType(int16_t *aP2, int a3)
 {
   Object *v4; // eax
 
-  v4 = (Object *)RA2_OPNEW(0xB0u); /*0x5fe538*/
+  v4 = (Object *)operator new(0xB0u); /*0x5fe538*/
   return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
 }
 }  // G42.18c ns repair
@@ -467,7 +477,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 {
   Object *v3; // eax
 
-  v3 = (Object *)RA2_OPNEW(0xB0u); /*0x5fe578*/
+  v3 = (Object *)operator new(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
     return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
   else
@@ -478,14 +488,15 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 namespace gamemd {  // G42.18c ns repair
 void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
 {
+
   char *v4; // edx
   int v5; // eax
   int v6[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v4 = (char *)DSurface_ViewBounds.q004 + a2[1] + 15; /*0x5fe5c1*/
+  v4 = (char *)DSurface_ViewBounds.field_4 + a2[1] + 15; /*0x5fe5c1*/
   v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
-  v5 = (*((int (__thiscall **)(OverlayTypeClass *))this->vfptr + 39))(this); /*0x5fe5f3*/
+  v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
     (int)g_DSurface_Hidden_2,
     *(int *)&stru_87F5F0.__pad_58[112],
@@ -503,6 +514,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
     0,
     0,
     0);
+
 }
 }  // G42.18c ns repair
 // 0x5FEA30
@@ -519,27 +531,29 @@ unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass
 namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::PowerDrainUpdate(int * a2)
 {
+
   int v3; // ecx
   int v4; // edx
   int v5; // eax
   int v6; // ecx
   int v7; // edx
 
-  AbstractTypeClass::ProcessPower(a2); /*0x5fea59*/
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
-  Power::TimerProcess(this->Strength_2); /*0x5fea83*/
-  Power::TimerProcess(*(_DWORD *)&this->Wall); /*0x5fea91*/
-  IDA_LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
+  Power::TimerProcess(this->Strength); /*0x5fea83*/
+  Power::TimerProcess(*(unsigned int *)&this->Wall); /*0x5fea91*/
+  LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
   Power::FlagProcess((Power *)a2, v3); /*0x5fea9f*/
-  IDA_LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
+  LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x5feaad*/
-  IDA_LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
+  LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
   Power::FlagProcess((Power *)a2, v5); /*0x5feabb*/
-  IDA_LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
+  LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
   Power::FlagProcess((Power *)a2, v6); /*0x5feac9*/
-  IDA_LOBYTE(v7) = this->IsRubble; /*0x5feace*/
+  LOBYTE(v7) = this->IsRubble; /*0x5feace*/
   return Power::FlagProcess((Power *)a2, v7); /*0x5feadc*/
+
 }
 }  // G42.18c ns repair
 // 0x5FEC10
@@ -571,6 +585,7 @@ int OverlayTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
 {
+
   MixFileClass *v4; // eax
   int DamageLevels; // ecx
   int v6; // esi
@@ -579,37 +594,38 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int PixelData; // ecx
   __int16 v11; // [esp+4h] [ebp-4h]
 
-  v4 = (MixFileClass *)(*((int (__thiscall **)(OverlayTypeClass *))this->vfptr + 39))(this); /*0x5fed06*/
+  v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fed06*/
   if ( v4 /*0x5fed28*/
     || (DamageLevels = this->DamageLevels) != 0
-    && (v4 = (MixFileClass *)(*(int (__thiscall **)(int))(*(_DWORD *)DamageLevels + 156))(DamageLevels)) != 0 )
+    && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
   {
     v6 = this->LandType[0]; /*0x5fed2e*/
     if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
     {
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
-      *(_WORD *)a2 = *(_WORD *)PixelData; /*0x5fedad*/
-      *(_BYTE *)(a2 + 2) = *(_BYTE *)(PixelData + 2); /*0x5fedb4*/
+      *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
+      *(unsigned char *)(a2 + 2) = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
       return a2; /*0x5feda4*/
     }
     else
     {
       v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
-      v11 = *(_WORD *)v7; /*0x5fed67*/
-      v8 = IDA_HIBYTE(*(_WORD *)v7); /*0x5fed6f*/
-      IDA_BYTE1(a3) = v7->Blowfish; /*0x5fed73*/
-      IDA_LOBYTE(a3) = v11; /*0x5fed7b*/
-      *(_WORD *)a2 = a3; /*0x5fed86*/
-      *(_BYTE *)(a2 + 2) = v8; /*0x5fed8a*/
+      v11 = *(unsigned short *)v7; /*0x5fed67*/
+      v8 = HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
+      BYTE1(a3) = *(unsigned char *)(v7 + 2); /*0x5fed73*/
+      LOBYTE(a3) = v11; /*0x5fed7b*/
+      *(unsigned short *)a2 = a3; /*0x5fed86*/
+      *(unsigned char *)(a2 + 2) = v8; /*0x5fed8a*/
       return a2; /*0x5fed77*/
     }
   }
   else
   {
-    *(_WORD *)a2 = 0; /*0x5fedd2*/
-    *(_BYTE *)(a2 + 2) = 0; /*0x5fedd6*/
+    *(unsigned short *)a2 = 0; /*0x5fedd2*/
+    *(unsigned char *)(a2 + 2) = 0; /*0x5fedd6*/
     return a2; /*0x5fedbb*/
   }
+
 }
 }  // G42.18c ns repair
 // 0x5FEF00
@@ -634,37 +650,33 @@ int OverlayTypeClass::GetAuxField()
 }
 }  // G42.18c ns repair
 // 0x5FEF30
-namespace gamemd {  // G57w10-S ns repair (G42.18c 先例)
-OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
-{
-
+namespace gamemd {  
+// G57w10-S ns repair (G42.18c 先例)
   int v3; // eax
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable1 = (void *)&vt_OverlayTypeClass; /*0x5fef36*/
-  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef3c*/
-  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef43*/
-  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef4a*/
-  AbstractClass::AnnounceExpiredPointer(1); /*0x5fef51*/
+    this->ObjectTypeClass = &vt_OverlayTypeClass;
+    ((unsigned int *)this)[0] = &vt_OverlayTypeClass;
+    ((unsigned int *)this)[0] = &vt_OverlayTypeClass;
+    ((unsigned int *)this)[0] = &vt_OverlayTypeClass;
+  AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
-  v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.q030 + 4))( /*0x5fef6a*/
-         &stru_A83D50.q030,
+  v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
+         &stru_A83D50.SuperClass_field_0x30,
          &v5);
-  if ( v3 != -1 && v3 < *(int *)&stru_A83D50.q03C[4] ) /*0x5fef7a*/
+  if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fef7a*/
   {
-    --*(unsigned int *)&stru_A83D50.q03C[4]; /*0x5fef7f*/
+    --*(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fef7f*/
     for ( ; /*0x5fef85*/
-          v3 < *(int *)&stru_A83D50.q03C[4];
-          *(unsigned int *)(*(unsigned int *)stru_A83D50.q034 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)stru_A83D50.q034
+          v3 < *(int *)&stru_A83D50.__pad_3C[4];
+          *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
                                                                                 + 4 * v3) )
     {
       ++v3; /*0x5fef8d*/
     }
   }
-  ((ObjectTypeClass *)((int)this))->Destruct(); /*0x5fefa1*/
+  ObjectTypeClass::Destruct(); /*0x5fefa1*/
   if ( (a2 & 1) != 0 ) /*0x5fefab*/
-    RA2_OPDEL(); /*0x5fefae*/
-  return this; /*0x5fefb8*/
-
-}
+    operator delete((void *)(this)); /*0x5fefae*/
+    return &this->ObjectTypeClass;
 }

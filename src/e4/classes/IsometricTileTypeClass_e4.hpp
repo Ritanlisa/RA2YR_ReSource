@@ -13,36 +13,11 @@ struct IsometricTileTypeClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsInitialized;  // 0x12
     bool IsAllocated;  // 0x13
-    unsigned char q014;  // 0x14
-    unsigned char q015;  // 0x15
     int Count;  // 0x16
-    unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
-    unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned char q020;  // 0x20
     unsigned int alignmentPadding;  // 0x21
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    bool q02B;  // 0x2B
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q031;  // 0x31
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    unsigned char q03C;  // 0x3C
     unsigned int UINameLabel;  // 0x3D
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
 // --- flat members (END) ---
     AbstractClass * * LoadTypeData(int * a1, int a2);
     DynamicVector * Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5);
@@ -59,15 +34,20 @@ struct IsometricTileTypeClass {
     unsigned int * Constructor_0(int a2, int a3);
     unsigned int PointerToIndex(int a2);
     void ClearBuffer(void *a1);
-    static int CleanupMembers(IsometricTileTypeClass * aP1);  // G57w10-S raw 0x00544A70 (was C2597 interim stub)
-    unsigned char m_1;  // 0x1 (offset-truth)
+    static int CleanupMembers(IsometricTileTypeClass * aP1);
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_294;  // 0x294 (offset-truth)
     unsigned int u32_2BC;  // 0x2BC (offset-truth)
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
+    static double IsometricTileTypeClass_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double IsometricTileTypeClass_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double IsometricTileTypeClass_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double q010(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

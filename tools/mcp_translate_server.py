@@ -1458,12 +1458,16 @@ def tool_canon_regen(async_mode=False):
         jid = submit_job("canon_regen", tool_canon_regen)
         return {"ok": True, "job_id": jid, "note": "poll with job_status"}
     stages = []
+    # T5: step4-side fixers absorbed into _absorbed/step4_bodies/; per-name
+    # path resolution keeps this chain working for both layouts.
+    ABS4 = CSP_EXPORT / "_absorbed" / "step4_bodies"
     for script in ("gen_cpp_canon.py", "rewrite_member_refs.py",
                    "backfill_completed.py", "rewrite_pending_blocks.py",
                    "normalize_blocks.py", "lower_temp_decls.py",
                    "fix_addr_violations.py"):
+        home = ABS4 if (ABS4 / script).exists() else CSP_EXPORT
         proc = subprocess.run(
-            [sys.executable, str(CSP_EXPORT / script)],
+            [sys.executable, str(home / script)],
             capture_output=True, text=True, encoding="utf-8",
             errors="replace", timeout=1200, cwd=str(PROJECT_ROOT))
         out = (proc.stdout or "") + (proc.stderr or "")

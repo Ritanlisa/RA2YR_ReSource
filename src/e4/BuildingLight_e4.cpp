@@ -21,11 +21,12 @@
 #include "e4/classes/PingPongBuffer_e4.hpp"
 
 // 0x5FF850
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
 {
-  _DWORD *v2; // ecx
-  _DWORD *v3; // ebp
+
+  unsigned int *v2; // ecx
+  unsigned int *v3; // ebp
   int v4; // ebx
   unsigned int v5; // eax
   int v6; // edx
@@ -53,9 +54,9 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
   int v28; // ecx
   int v29; // edx
   char v31; // [esp+13h] [ebp-81h] BYREF
-  _BYTE *v32; // [esp+14h] [ebp-80h]
+  unsigned char *v32; // [esp+14h] [ebp-80h]
   unsigned __int16 *v33; // [esp+18h] [ebp-7Ch]
-  _BYTE *v34; // [esp+1Ch] [ebp-78h]
+  unsigned char *v34; // [esp+1Ch] [ebp-78h]
   int v35; // [esp+20h] [ebp-74h]
   int v36; // [esp+24h] [ebp-70h]
   int i; // [esp+28h] [ebp-6Ch]
@@ -63,8 +64,8 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
   AudioStream *v39; // [esp+30h] [ebp-64h]
   int v40; // [esp+34h] [ebp-60h]
   unsigned __int16 *v41; // [esp+38h] [ebp-5Ch] BYREF
-  _BYTE *v42; // [esp+3Ch] [ebp-58h] BYREF
-  _DWORD *v43; // [esp+40h] [ebp-54h]
+  unsigned char *v42; // [esp+3Ch] [ebp-58h] BYREF
+  unsigned int *v43; // [esp+40h] [ebp-54h]
   unsigned __int8 v44; // [esp+44h] [ebp-50h]
   unsigned __int8 v45; // [esp+45h] [ebp-4Fh]
   unsigned __int8 v46; // [esp+46h] [ebp-4Eh]
@@ -80,29 +81,29 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
   v43 = v2; /*0x5ff85c*/
   v4 = v2[5] & 0xF; /*0x5ff863*/
   if ( (v2[5] & 0xE) != 0 /*0x5ff879*/
-    || (v5 = PingPongBuffer::GetWriteOffset(), *(_DWORD *)&g_MissionQueueFrame.waypoints[282] >= v5) )
+    || (v5 = PingPongBuffer::GetWriteOffset(), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
   {
-    IDA_LOBYTE(v5) = Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3, v47); /*0x5ff88b*/
-    if ( (_BYTE)v5 ) /*0x5ff892*/
+    LOBYTE(v5) = Coord::To_Screen((Coord *)g_TacticalClass_Instance, v3, v47); /*0x5ff88b*/
+    if ( (unsigned char)v5 ) /*0x5ff892*/
     {
-      if ( ((int)dword_A8B230->vfptr & 0x1000) == 0 || (IDA_LOBYTE(v5) = Game::Stub3((int)v3), !(_BYTE)v5) ) /*0x5ff8b2*/
+      if ( ((int)dword_A8B230->vtable0 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3((int)v3), !(unsigned char)v5) ) /*0x5ff8b2*/
       {
         v52[0] = v47[0] - 128; /*0x5ff8c9*/
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
-        v53[1] = (int)DSurface_ViewBounds.q004; /*0x5ff8e6*/
+        v53[1] = (int)DSurface_ViewBounds.field_4; /*0x5ff8e6*/
         v6 = v3[3]; /*0x5ff8ed*/
-        v53[3] = *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x5ff8f0*/
+        v53[3] = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x5ff8f0*/
         v7 = byte_83358C[v6]; /*0x5ff8ff*/
         v52[1] = v47[1] - 64; /*0x5ff906*/
         v39 = g_DSurface_Hidden_2; /*0x5ff912*/
         v52[2] = 255; /*0x5ff916*/
         v52[3] = 127; /*0x5ff91e*/
-        v53[2] = *(_DWORD *)DSurface_ViewBounds.q008; /*0x5ff925*/
+        v53[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x5ff925*/
         if ( v7 < 64 ) /*0x5ff92c*/
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
-        v8 = *(_DWORD *)g_DSurface_Hidden_2->q000; /*0x5ff946*/
+        v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
         v40 = dword_AC1698[v7]; /*0x5ff94a*/
-        v9 = (*(int (__thiscall **)(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
+        v9 = (*(int (**)(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
         v48[1] = 0; /*0x5ff95e*/
         v51[0] = 0; /*0x5ff962*/
@@ -113,8 +114,8 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
         v31 = 0; /*0x5ff9a7*/
         v50 = 127; /*0x5ff9ac*/
         v51[3] = 127; /*0x5ff9b0*/
-        IDA_LOBYTE(v5) = CalcSurfaceBlitRects((int)v39, v53, v52, v40, v51, v48, &v31, (int *)&v41, (int *)&v42); /*0x5ff9b7*/
-        if ( (_BYTE)v5 ) /*0x5ff9be*/
+        LOBYTE(v5) = CalcSurfaceBlitRects((int)v39, v53, v52, v40, v51, v48, &v31, (int *)&v41, (int *)&v42); /*0x5ff9b7*/
+        if ( (unsigned char)v5 ) /*0x5ff9be*/
         {
           v10 = v41; /*0x5ff9c4*/
           v33 = v41; /*0x5ff9d6*/
@@ -122,7 +123,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
           v32 = v42; /*0x5ff9de*/
           if ( v4 ) /*0x5ff9e2*/
           {
-  LABEL_23:
+LABEL_23:
             v11 = v3[5]; /*0x5ffb1c*/
             if ( (v11 & 1) != 0 ) /*0x5ffb21*/
             {
@@ -135,7 +136,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                   for ( i = 0; i < v12; ++i ) /*0x5ffb41*/
                   {
                     v13 = *v32 == 0; /*0x5ffb4e*/
-                    IDA_LOBYTE(v35) = *v32++; /*0x5ffb50*/
+                    LOBYTE(v35) = *v32++; /*0x5ffb50*/
                     if ( !v13 ) /*0x5ffb58*/
                     {
                       v14 = *v10; /*0x5ffb62*/
@@ -170,7 +171,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                   for ( j = 0; j < v15; ++j ) /*0x5ffc92*/
                   {
                     v13 = *v32 == 0; /*0x5ffc9f*/
-                    IDA_LOBYTE(v35) = *v32++; /*0x5ffca1*/
+                    LOBYTE(v35) = *v32++; /*0x5ffca1*/
                     if ( !v13 ) /*0x5ffca9*/
                     {
                       v16 = *v10; /*0x5ffcaf*/
@@ -227,7 +228,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                   for ( j = 0; j < v23; ++j ) /*0x5ffe15*/
                   {
                     v13 = *v32 == 0; /*0x5ffe22*/
-                    IDA_LOBYTE(v35) = *v32++; /*0x5ffe24*/
+                    LOBYTE(v35) = *v32++; /*0x5ffe24*/
                     if ( !v13 ) /*0x5ffe2c*/
                     {
                       v24 = *v10; /*0x5ffe32*/
@@ -295,22 +296,23 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                 goto LABEL_23;
             }
           }
-          (*(void (__thiscall **)(AudioStream *))(*(_DWORD *)v39->q000 + 96))(v39); /*0x5fff6b*/
-          IDA_LOBYTE(v5) = (*(char (__thiscall **)(int))(*(_DWORD *)v40 + 96))(v40); /*0x5fff74*/
+          (*(void (**)(AudioStream *))(*(unsigned int *)v39->__pad_0 + 96))(v39); /*0x5fff6b*/
+          LOBYTE(v5) = (*(char (**)(int))(*(unsigned int *)v40 + 96))(v40); /*0x5fff74*/
         }
       }
     }
   }
   return v5; /*0x5fff77*/
+
 }
+}  // G42.18 ns repair
 // 0x4CAD80
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 double BuildingLight::CalcIntensity(double a1)
 {
   int v1; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt((a1 + 1.0) * -2048.0); /*0x4cad90*/
+  (*((unsigned short *)&(v1))) = Math::RoundToInt((a1 + 1.0) * -2048.0); /*0x4cad90*/
   return 4 * v1; /*0x4cada1*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
-}

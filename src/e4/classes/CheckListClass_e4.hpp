@@ -8,43 +8,16 @@ namespace gamemd {
 struct CheckListClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned char q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned char q014;  // 0x14
     char Enabled;  // 0x15
     int Count;  // 0x16
-    unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
-    bool q01B;  // 0x1B
-    unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
-    unsigned int u32_20;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned int q02D;  // 0x2D
-    unsigned char q030;  // 0x30
-    unsigned char q031;  // 0x31
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned int u32_48;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
 // --- flat members (END) ---
-    int vt_method_488310(int a2);  // 0x488310
-    int Clear();  // 0x488350
-    int ScrollUp(int a2);  // 0x488360
-    void GetSelected(wchar_t *String2);  // 0x488380
-    int SetItemData(wchar_t *String2);  // 0x4883F0
+    int  vt_method_488310(int a2);  // 0x488310
+    int Clear(void *a1 = 0);  // 0x488350
+    int  ScrollUp(int a2);  // 0x488360
+    void  GetSelected(void * String2);  // 0x488380
+    int  SetItemData(void * String2);  // 0x4883F0
     int COMStub();
     int COMStub_Return0();
     int ddtor(int a2);
@@ -54,6 +27,7 @@ struct CheckListClass {
     CheckListClass * sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);
     unsigned int u32_118;  // 0x118 (offset-truth)
     unsigned int u32_B8;  // 0xB8 (offset-truth)
+    static double subList1(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

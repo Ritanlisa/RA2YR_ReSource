@@ -9,7 +9,7 @@ struct BINK {
 // --- flat members (BEGIN) ---
     char BINK_field_00[4];  // 0x0
 // --- flat members (END) ---
-    static HWND Background_Setup(HWND hDlg);  // 0x52B9B0 (G42.36: was mis-modeled as data member)
+    HWND Background_Setup(HWND hDlg);
 };
 
 } // namespace gamemd

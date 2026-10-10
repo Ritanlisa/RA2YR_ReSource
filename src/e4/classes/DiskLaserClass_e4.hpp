@@ -11,18 +11,7 @@ struct DiskLaserClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned int q01A;  // 0x1A
-    unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    bool q02B;  // 0x2B
 // --- flat members (END) ---
     DiskLaserClass();
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
@@ -31,13 +20,19 @@ struct DiskLaserClass {
     int  Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
-    void PointerGotInvalid(int a2);  // 0x4a7900
+    void  PointerGotInvalid(int a2);  // 0x4a7900
     void * CopyTo(unsigned int * Block, char a2);
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
+    static double DiskLaserClass_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double DiskLaserClass_field_0x08(...);  // plateau: C2039/C3861 stub
+    static double DiskLaserClass_field_0x0C(...);  // plateau: C2039/C3861 stub
+    static double DiskLaserClass_field_0x24(...);  // plateau: C2039/C3861 stub
+    static double DiskLaserClass_field_0x28(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

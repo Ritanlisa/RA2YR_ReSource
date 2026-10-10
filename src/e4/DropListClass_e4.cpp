@@ -10,7 +10,7 @@
 #include "e4/classes/DropPodLocomotionClass_e4.hpp"
 
 // 0x4B5030
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 wchar_t DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 {
   int v3; // ecx
@@ -23,24 +23,24 @@ wchar_t DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 
   v4 = (wchar_t **)v3; /*0x4b5032*/
   v5 = (int *)(v3 + 176); /*0x4b503a*/
-  result = (wchar_t *)(*(int (__thiscall **)(int))(*(_DWORD *)(v3 + 176) + 148))(v3 + 176); /*0x4b5042*/
+  result = (wchar_t *)(*(int (**)(int))(*(unsigned int *)(v3 + 176) + 148))(v3 + 176); /*0x4b5042*/
   if ( this >= (DropListClass *)result ) /*0x4b504e*/
   {
     *v4[13] = 0; /*0x4b5089*/
   }
   else
   {
-    (*(void (__thiscall **)(int *, DropListClass *, int))(*v5 + 184))(v5, this, a2); /*0x4b5056*/
+    (*(void (**)(int *, DropListClass *, int))(*v5 + 184))(v5, this, a2); /*0x4b5056*/
     v7 = *v5; /*0x4b505e*/
-    v8 = (*((int (__thiscall **)(wchar_t **))*v4 + 41))(v4); /*0x4b5062*/
+    v8 = (*((int (**)(wchar_t **))*v4 + 41))(v4); /*0x4b5062*/
     v9 = (const wchar_t *)v5->GetClamped(v8); /*0x4b506b*/
-    return wcscpy(v4[13], v9); /*0x4b5076*/
+    return (wchar_t)(wcscpy(v4[13], v9)); /*0x4b5076*/
   }
-  return result; /*0x4b507f*/
+  return (wchar_t)(result);
 }
-}
+}  // G42.18 ns repair
 // 0x4B55A0
 int DropListClass::COMStub()
 {
-  return this->q034; /*0x4b55a3*/
+  return this->u32_34; /*0x4b55a3*/
 }

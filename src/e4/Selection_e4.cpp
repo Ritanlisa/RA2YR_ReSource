@@ -12,15 +12,15 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x731D00
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int Selection::SetCurrent()
 {
   int result; // eax
 
-  *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
-  IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x731d06*/
+  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
+  (*((unsigned char *)&(g_BuildingLoadQueue_Array.QueueingCell[0]))) = 0; /*0x731d06*/
   return result; /*0x731d0d*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 // 0x732D00
 namespace gamemd {

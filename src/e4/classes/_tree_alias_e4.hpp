@@ -14,7 +14,7 @@ namespace gamemd {
 // call it static-style with (MapClass_Instance*, coord*) — interim stub.
 struct CellCoord {
     void* vfptr;
-    void* To_CellObj(int16_t *a2);
+    void* To_CellObj(int16_t *a3);
 };
 
 } // namespace gamemd

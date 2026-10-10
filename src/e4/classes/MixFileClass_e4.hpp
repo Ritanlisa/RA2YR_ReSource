@@ -14,28 +14,23 @@ struct MixFileClass {
     void* Previous;  // 0x4
     bool Blowfish;  // 0x8
     bool Encryption;  // 0x9
-    unsigned char q00A;  // 0xA
     int CountFiles;  // 0xC
-    unsigned int u32_D;  // 0xD
     int FileSize;  // 0x10
-    unsigned char u8_11;  // 0x11
-    unsigned char u8_12;  // 0x12
     int FileStartOffset;  // 0x14
     MixHeaderData* Headers;  // 0x18
-    unsigned int q01C;  // 0x1C
-    int q020;  // 0x20
     int MixFileClass_field_24;  // 0x24
     unsigned char* MemoryData;  // 0x28
     int MemoryDataSize;  // 0x2C
 // --- flat members (END) ---
-    static int GetPixelData(void *aP1, int a2, unsigned int a3);  // 0x69E860 raw: int GetPixelData(MixFileClass*, int, unsigned int)
+    static int GetPixelData(void *aP1, int a2, unsigned int a3);
     void CleanupCache();
     void DestroyCache();
-    static void * CacheNode_Dtor(MixFileClass * aP1, char a2);  // G57w10-S raw 0x0069E930 (was C2597 interim stub)
-    unsigned int * FromFile(char *aP1, int a3);  // was C2597 interim stub, := truth 0x0x5b3c20
-    static int GetSubFile(MixFileClass * aP1, unsigned int a2);  // G57w10-S raw 0x0069E740 (was C2597 interim stub)
-    static char ** LoadSubFile(MixFileClass * aP1);  // G57w10-S raw 0x0069E580 (was C2597 interim stub)
+    static void * CacheNode_Dtor(MixFileClass * aP1, char a2);
+    unsigned int * FromFile(char *a1, int a2);  // was C2597 interim stub, := truth 0x0x5b3c20
+    static int GetSubFile(MixFileClass * aP1, unsigned int a2);
+    static char ** LoadSubFile(MixFileClass * aP1);
     void sub_5B3F50();  // 0x5B3F50
+    static double GetMixPool(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

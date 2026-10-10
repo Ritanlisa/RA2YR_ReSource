@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct Lightning {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    int Draw(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
+    int Draw(int a2, int a3, int a4, int a5, int a6, int a7, int a8, void *a1 = 0);
 };
 
 } // namespace gamemd

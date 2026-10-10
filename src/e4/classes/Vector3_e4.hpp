@@ -7,12 +7,10 @@ namespace gamemd {
 
 struct Vector3 {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
+
 // --- flat members (END) ---
-    int AddAssign(float *a2);
-    int * Subtract(int *a2, unsigned int *a3);
+    int AddAssign(float *a2, void *a1 = 0);
+    int * Subtract(int *a2, unsigned int *a3, void *a1 = 0, void *a4 = 0);
     int Magnitude();  // 0x41c3c0
     double q008;  // G42.39 data supply (Sqrt operand)
     double q040;  // G42.39 data supply (Sqrt operand)

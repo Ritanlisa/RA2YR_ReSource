@@ -24,9 +24,10 @@
 #include "e4/classes/ControlClass_e4.hpp"
 
 // 0x6D1770
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
+
   unsigned int v2; // eax
   ShapeButtonClass *v3; // ecx
   unsigned int v5; // eax
@@ -40,7 +41,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
       v3 = &stru_B0C1C0 + 8 * v2; /*0x6d1796*/
       if ( v3 ) /*0x6d179e*/
       {
-        if ( !IDA_BYTE1(v3[3].q008) ) /*0x6d17a0*/
+        if ( !BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
           GadgetClass::Show((GadgetClass *)v3); /*0x6d17a7*/
       }
     }
@@ -54,7 +55,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
       v6 = &stru_B0C1C0 + 8 * v5; /*0x6d17d4*/
       if ( v6 ) /*0x6d17dc*/
       {
-        if ( IDA_BYTE1(v6[3].q008) ) /*0x6d17de*/
+        if ( BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/
           GadgetClass::Hide((GadgetClass *)v6); /*0x6d17e5*/
       }
     }
@@ -64,6 +65,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
   {
     return 0; /*0x6d17ef*/
   }
+
 }
 } // namespace gamemd
 // 0x72DDB0
@@ -89,7 +91,7 @@ char MouseClass::LoadCursors()
     LoadPaletteSimple(off_844BE4, &dword_B0FBC8, &dword_B0FBCC); /*0x72dea4*/
     LoadPaletteSimple(off_844BE8, &dword_B0FBD0, &dword_B0FBD4); /*0x72deb9*/
     LoadPaletteSimple(off_844BEC, &dword_B0FBD8, &dword_B0FBDC); /*0x72dece*/
-    result = SetupMouseClassResources(g_DisplayWidth, MEMORY[0x8A00A8]); /*0x72dedf*/
+    result = SetupMouseClassResources(g_DisplayWidth, g_abs_8A00A8); /*0x72dedf*/
     byte_B0FBE0 = 1; /*0x72dee4*/
   }
   return result; /*0x72deeb*/

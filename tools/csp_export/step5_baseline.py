@@ -92,8 +92,15 @@ def main():
     run('register_offset_members.py', '--align-ml', '--apply',
         grep=('aligned',))
     # (rewrite_member_refs 已退役 — 数据源唯一化, 见 step4)
-    run('fix_addr_violations.py', '--no-verify', '--workers', '8',
-        grep=('real functions fixed',))
+    # T5: fix_addr_violations absorbed into _absorbed/step4_bodies/
+    A4 = TOOLS / '_absorbed' / 'step4_bodies' / 'fix_addr_violations.py'
+    r = subprocess.run([sys.executable, str(A4), '--no-verify',
+                        '--workers', '8'],
+                       capture_output=True, text=True, encoding='utf-8',
+                       errors='replace', cwd=str(ROOT))
+    for ln in ((r.stdout or '') + (r.stderr or '')).split('\n'):
+        if 'real functions fixed' in ln:
+            print('   ', ln.strip())
 
     print('[step5] a2. 编译门 (计划变更: Step5 必须通过编译)')
     build_cfg = 'Release'

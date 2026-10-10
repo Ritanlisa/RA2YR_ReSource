@@ -11,10 +11,10 @@ struct TauntCommandClass {
     char TauntCommandClass_field_00[4];  // 0x4
     char TauntCommandClass_field_04[4];  // 0x8
 // --- flat members (END) ---
-    static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x536290 _DWORD *__thiscall TauntCommandClass::Construct(TauntCommandClass *this, int a2)
+    static unsigned int * Construct(void *aP1, int a2);
     char * AddRef();
-    wchar_t * Release();
-    wchar_t * ddtor();
+    wchar_t * Release(void *a1 = 0);
+    wchar_t * ddtor(void *a1 = 0);
 };
 
 } // namespace gamemd

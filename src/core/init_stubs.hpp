@@ -101,7 +101,7 @@ bool MixFileLoadAll();  // 0x530460
 void MoviePlay(int a1, int a2, int a3, int a4);  // 0x5BED40
 
 // IDA 0x5312A0 -- ShowLoadingScreen
-void ShowLoadingScreen();  // 0x5312A0
+int ShowLoadingScreen();  // 0x5312A0
 
 // IDA 0x52CB90 -- Credits::Screen
 void CreditsScreen();  // 0x52CB90

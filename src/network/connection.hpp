@@ -60,7 +60,7 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GetSpeed();  // 0x5422f0 -- Connection::GetSpeed
     // === SYMBOL-ANCHOR (END) ===
-    unsigned int __pad_0; // 0x0  gB member supply
+    unsigned int *__pad_0; // 0x0  gB member supply
     void dtor();  // gB sig supply @cache
 };
 
@@ -83,7 +83,7 @@ virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
     uint32_t  RemoteAddress[3];
     uint16_t  RemoteSocket;
     uint8_t   padding[2];
-    unsigned int __pad_0; // 0x0  gB member supply
+    unsigned int *__pad_0; // 0x0  gB member supply
 };
 
 // CSP: IPXManagerClass matched via T1

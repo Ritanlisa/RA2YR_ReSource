@@ -19,80 +19,35 @@ struct WeaponTypeClass {
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
     int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned int q028;  // 0x28
-    bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    unsigned char q034;  // 0x34
-    unsigned int q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     char zero_3C;  // 0x3C
     unsigned char UINameLabel;  // 0x3D
-    unsigned int q040;  // 0x40
-    bool q042;  // 0x42
-    unsigned int q044;  // 0x44
-    unsigned int q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q05D;  // 0x5D
     void * UIName;  // 0x60
     unsigned char Name;  // 0x64
-    unsigned int q068;  // 0x68
-    ObjectClass* q06C;  // 0x6C
-    unsigned int u32_70;  // 0x70
-    bool q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q07C;  // 0x7C
-    unsigned int q080;  // 0x80
-    unsigned int q084;  // 0x84
-    void* q088;  // 0x88
-    void* q08C;  // 0x8C
-    unsigned char q090;  // 0x90
-    unsigned int q094;  // 0x94
     unsigned char tail_95;  // 0x95
     int AmbientDamage;  // 0x98
     BulletTypeClass* Burst;  // 0x9C
     int Projectile;  // 0xA0
     int Damage;  // 0xA4
     WarheadTypeClass* Speed;  // 0xA8
-    unsigned char q0A9;  // 0xA9
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
     int Warhead;  // 0xAC
     int ROF;  // 0xB0
     int Range;  // 0xB4
     unsigned int MinimumRange;  // 0xB8
-    unsigned char q0B9;  // 0xB9
     unsigned char Report;  // 0xBC
     unsigned int Anim;  // 0xC0
-    unsigned int q0C3;  // 0xC3
     AnimTypeClass* OccupantAnim;  // 0xC4
     AnimTypeClass* AssaultAnim;  // 0xC8
-    unsigned char u8_C9;  // 0xC9
     AnimTypeClass* OpenToppedAnim;  // 0xCC
     ParticleSystemTypeClass* AttachedParticleSystem;  // 0xD0
     char LaserInnerColor[4];  // 0xD4
     char LaserOuterColor[4];  // 0xD7
-    unsigned char q0D8;  // 0xD8
     char LaserOuterSpread[4];  // 0xDA
-    CampaignClass* q0DC;  // 0xDC
     bool UseFireParticles;  // 0xDD
     bool UseSparkParticles;  // 0xDE
     bool OmniFire;  // 0xDF
@@ -113,7 +68,7 @@ struct WeaponTypeClass {
     bool MigAttackCursor;  // 0xEE
     bool DisguiseFireOnly;  // 0xEF
     int DisguiseFakeBlinkTime;  // 0xF0
-    bool q0F4;  // 0xF4
+    bool InfiniteMindControl;  // 0xF4
     bool FireWhileMoving;  // 0xF5
     bool DrainWeapon;  // 0xF6
     bool FireInTransport;  // 0xF7
@@ -136,70 +91,38 @@ struct WeaponTypeClass {
     bool IsRadBeam;  // 0x108
     bool IsRadEruption;  // 0x109
     int RadLevel;  // 0x10C
-    bool q110;  // 0x110
-    unsigned int q111;  // 0x111
-    AnimTypeClass* q114;  // 0x114
-    AnimTypeClass* q118;  // 0x118
-    ParticleSystemTypeClass* q11C;  // 0x11C
-    char q120[3];  // 0x120
-    unsigned int u32_121;  // 0x121
+    bool IsMagBeam;  // 0x110
+    AnimTypeClass* AssaultAnim_d;  // 0x114
+    AnimTypeClass* OpenToppedAnim_d;  // 0x118
+    char LaserInnerColor_d[3];  // 0x120
     Color * ptr_122;  // 0x122
-    char q123[3];  // 0x123
-    unsigned int q124;  // 0x124
     Color * ptr_125;  // 0x125
-    char q126[3];  // 0x126
     Color * ptr_127;  // 0x127
-    unsigned int q128;  // 0x128
-    bool q129;  // 0x129
-    bool q12A;  // 0x12A
-    bool q12B;  // 0x12B
-    bool q12C;  // 0x12C
-    bool q12D;  // 0x12D
-    bool q12E;  // 0x12E
-    bool q12F;  // 0x12F
-    bool q130;  // 0x130
-    bool q131;  // 0x131
-    bool q132;  // 0x132
-    bool q133;  // 0x133
-    bool q134;  // 0x134
-    bool q135;  // 0x135
-    bool q136;  // 0x136
-    bool q137;  // 0x137
-    bool q138;  // 0x138
-    bool q139;  // 0x139
-    bool q13A;  // 0x13A
-    bool q13B;  // 0x13B
-    int q13C;  // 0x13C
-    bool q140;  // 0x140
-    bool q141;  // 0x141
-    bool q142;  // 0x142
-    bool q143;  // 0x143
-    bool q144;  // 0x144
-    bool q145;  // 0x145
-    bool q146;  // 0x146
-    bool q147;  // 0x147
-    bool q148;  // 0x148
-    bool q149;  // 0x149
-    bool q14A;  // 0x14A
-    bool q14B;  // 0x14B
-    bool q14C;  // 0x14C
-    bool q14D;  // 0x14D
-    char q14E;  // 0x14E
-    bool q14F;  // 0x14F
-    bool q150;  // 0x150
-    bool q151;  // 0x151
-    bool q152;  // 0x152
-    bool q153;  // 0x153
-    bool q154;  // 0x154
-    bool q155;  // 0x155
-    int q158;  // 0x158
-    bool q15C;  // 0x15C
+    bool UseFireParticles_d;  // 0x129
+    bool IsSonic_d;  // 0x130
+    bool Spawner_d;  // 0x131
+    bool LimboLaunch_d;  // 0x132
+    bool DecloakToFire_d;  // 0x133
+    bool CellRangefinding_d;  // 0x134
+    bool NeverUse_d;  // 0x136
+    bool RevealOnFire_d;  // 0x137
+    bool InfiniteMindControl_d;  // 0x140
+    bool FireWhileMoving_d;  // 0x141
+    bool Suicide_d;  // 0x144
+    bool Supress_d;  // 0x146
+    bool Camera_d;  // 0x147
+    bool Charges_d;  // 0x148
+    bool IsLaser_d;  // 0x149
+    bool AreaFire_d;  // 0x150
+    bool IsElectricBolt_d;  // 0x151
+    bool DrawBoltAsLaser_d;  // 0x152
+    bool IsAlternateColor_d;  // 0x153
     unsigned char tail_15D;  // 0x15D
 // --- flat members (END) ---
     WeaponTypeClass * ddtor(char a2);
     char ReadTrajectoryData(uint8_t * Block, char * a3, int a4);
     char  ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Block, int a6, int16_t a7, int a8, int a9, int a10);
-    int CalculateSpeed();
+    int CalculateSpeed(void *a1 = 0);
     int Destructor(void *a1);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
@@ -207,13 +130,15 @@ struct WeaponTypeClass {
     int Process(ObjectClass * Source);
     int ProcessPower(int * a2, void *a2_2);
     unsigned int * Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5);
-    unsigned int * loadWeaponProperties(int aP1);
-    void * Create();
+    unsigned int * loadWeaponProperties(int aP1, void *a1 = 0);
+    void * Create(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     void * Create(AbstractClass * Source);
     WeaponTypeClass * ddtor(void ** Block, char a2);
     int DownReport[7];  // 0xD8 (ml)
     bool InfiniteMindControl;  // 0xF4 (canon-mt)
     bool IsMagBeam;  // 0x110 (canon-mt)
+    static double AbstractTypeClass(...);  // plateau: C2039/C3861 stub
+    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -8,25 +8,25 @@
 #include "e4/classes/CenterTeamCommand_e4.hpp"
 
 // 0x72E1B0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int * sub_72E1B0(int a1, int a2)
 {
-  RA2_OPDEL(dword_B0FC10); /*0x72e1bd*/
+  operator delete((void *)(dword_B0FC10)); /*0x72e1bd*/
   dword_B0FC10 = 0; /*0x72e1cb*/
-  RA2_OPDEL(dword_B0FC14); /*0x72e1d1*/
+  operator delete((void *)(dword_B0FC14)); /*0x72e1d1*/
   dword_B0FC14 = 0; /*0x72e1dc*/
-  RA2_OPDEL(dword_B0FC18); /*0x72e1e3*/
+  operator delete((void *)(dword_B0FC18)); /*0x72e1e3*/
   dword_B0FC18 = 0; /*0x72e1ed*/
-  RA2_OPDEL(dword_B0FC1C); /*0x72e1f4*/
+  operator delete((void *)(dword_B0FC1C)); /*0x72e1f4*/
   dword_B0FC1C = 0; /*0x72e1ff*/
-  RA2_OPDEL(dword_B0FC20); /*0x72e206*/
+  operator delete((void *)(dword_B0FC20)); /*0x72e206*/
   dword_B0FC20 = 0; /*0x72e211*/
-  RA2_OPDEL(dword_B0FC24); /*0x72e218*/
+  operator delete((void *)(dword_B0FC24)); /*0x72e218*/
   dword_B0FC24 = 0; /*0x72e222*/
-  RA2_OPDEL(dword_B0FC28); /*0x72e229*/
+  operator delete((void *)(dword_B0FC28)); /*0x72e229*/
   dword_B0FC28 = 0; /*0x72e234*/
-  RA2_OPDEL(dword_B0FC2C); /*0x72e23b*/
+  operator delete((void *)(dword_B0FC2C)); /*0x72e23b*/
   dword_B0FC2C = 0; /*0x72e245*/
   return SetupMouseClassResources(a1, a2); /*0x72e24d*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

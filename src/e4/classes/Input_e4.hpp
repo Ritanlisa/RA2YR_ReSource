@@ -9,7 +9,7 @@ struct Input {
 // --- flat members (BEGIN) ---
     char Input_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int OffsetToDirection();
+    int OffsetToDirection(void *a1 = 0);
     unsigned int u32_4;  // 0x4 (offset-truth)
 };
 

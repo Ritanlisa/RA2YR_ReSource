@@ -15,10 +15,10 @@
 #include "e4/classes/OwnerDrawControl_e4.hpp"
 
 // 0x77D1F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 {
-  *(_DWORD *)this->q000 = &off_7F7624; /*0x77d1f0*/
-  OwnerDrawControl::InitVtable(); /*0x77d1f6*/
-}
+  *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7F7624); /*0x77d1f0*/
+  this->OwnerDrawControl::InitVtable(); /*0x77d1f6*/
+}  // G42.18 ns repair
 } // namespace gamemd

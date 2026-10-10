@@ -9,7 +9,7 @@ struct Type {
 // --- flat members (BEGIN) ---
     char Type_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int CheckAmbiguity(int a2, char a3);
+    int CheckAmbiguity(int a2, char a3, void *a1 = 0);
     unsigned int u32_100;  // 0x100 (offset-truth)
     unsigned int u32_104;  // 0x104 (offset-truth)
     unsigned int u32_108;  // 0x108 (offset-truth)

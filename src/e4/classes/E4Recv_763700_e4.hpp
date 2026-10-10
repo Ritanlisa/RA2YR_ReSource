@@ -10,6 +10,6 @@ struct E4Recv_763700 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    unsigned int * sub_763700(unsigned int * a2);  // 0x763700
+    unsigned int *  sub_763700(unsigned int * a2);  // 0x763700
 };
 } // namespace gamemd

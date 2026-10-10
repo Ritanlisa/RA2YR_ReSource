@@ -25,16 +25,16 @@ struct TypeList_flat {
 CCINIClass * BuildingTypeConstructor();
 CCINIClass * ConstructSmudge();
 CCINIClass * VoxelAnimConstructor();
-DynamicVector * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
+DynamicVector * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
 TypeList_flat * QueryInterface(unsigned int * Block, char a2);
 char AddRef(int a2);
-char PushBack(VectorClass_flat * aP1);
+char PushBack(VectorClass_flat * aP1, void *a1 = 0);
 char Release(int a2, unsigned int * a3);
 int * CopyAircraft(VectorClass_flat * aP1);
 int * CopyInfantry(CCINIClass * aP1);
 int Clear(int a2);
 int GetSize(unsigned int * a2);
-unsigned int * AnimTypeCopy(VectorClass_flat * aP1);
+unsigned int * AnimTypeCopy(VectorClass_flat * aP1, void *a1 = 0);
 unsigned int * BuildingTypeCopy(VectorClass_flat * aP1);
 unsigned int * Copy(unsigned int * a2, void *a2_2);
 unsigned int * CopyConstructor(VectorClass_flat * aP1);
@@ -44,9 +44,9 @@ unsigned int * ParticleConstructor(int a2, int a3);
 unsigned int * TechnoTypeConstructor(int a2, int a3);
 unsigned int GetCapacity(int a2);
 void InfantryCleanup();
-void ddtor();
+void ddtor(void *a1 = 0);
     int * CopyFull(VectorClass * aP1);
-    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)

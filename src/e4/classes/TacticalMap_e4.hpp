@@ -11,17 +11,14 @@ struct TacticalMap {
 // --- flat members (BEGIN) ---
     char TacticalMap_field_00[4];  // 0x0
     char TacticalMap_field_04[4];  // 0x4
-    unsigned int u32_8;  // 0x8
     char TacticalMap_field_0C[4];  // 0xC
     char TacticalMap_field_10[4];  // 0x10
-    unsigned int u32_14;  // 0x14
     float m_TintFactor;  // 0x18
-    unsigned char u8_19;  // 0x19
     char TacticalMap_field_1C[4];  // 0x1C
     char TacticalMap_field_20[4];  // 0x20
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
-    _DWORD * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6);
+    unsigned int * Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     void DrawCursor(void *a1, void *a2, void *a3, void *a4);
     int DrawOccupiedRegion();
     void Redraw();
@@ -29,7 +26,7 @@ struct TacticalMap {
     unsigned int FillScanlinesOpaque(int a2, int a3, int aP3, int a5);
     void MultiplyByScalar(ObjectClass * aP1, void *a2);
     void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
-     int Render(int a2, int a3, int a4);  // G57w10-S raw 0x006D3D10 (was C2597 interim stub)
+     int Render(int a2, int a3, int a4, void *a1 = 0);
     AbstractClass * * TacticalMap_Render(int a2);
     unsigned int q_80;  // +0x80 flat supply (P5 provenance)
     unsigned int q_A0;  // +0xA0 flat supply (P5 provenance)
@@ -46,6 +43,10 @@ struct TacticalMap {
     unsigned int u32_2B0;  // 0x2B0 (offset-truth)
     unsigned int u32_2B4;  // 0x2B4 (offset-truth)
     unsigned int u32_2B8;  // 0x2B8 (offset-truth)
+    static double Tactical_field_0xA8(...);  // plateau: C2039/C3861 stub
+    static double Tactical_field_0xDA4(...);  // plateau: C2039/C3861 stub
+    static double __pad_11F(...);  // plateau: C2039/C3861 stub
+    static double __pad_AC(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -75,7 +75,7 @@ public:
     int DrawOccupiedRegion();  // 0x6da180 -- TacticalMap::DrawOccupiedRegion
     int FillScanlinesOpaque(int a1, int a2, int a3, int a4);  // 0x7bcfb0 -- TacticalMap::FillScanlinesOpaque
     // === SYMBOL-ANCHOR (END) ===
-    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned char q008;  // 0x8 (canon-mt)
 };
 
@@ -406,7 +406,7 @@ class BlitPlainXlatAlpha_ushort
 public:
     virtual ~BlitPlainXlatAlpha_ushort() = default;  // 0x493D60
 
-    virtual void AddRef(int a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned __int16 *a7, int a8, int a9); // 0x493CC0
+    virtual void AddRef(int a2, uint8_t *a3, int a4, int a5, int a6, uint16_t *a7, int a8, int a9); // 0x493CC0
     virtual void ddtor();  // 0x493D60
     virtual void Release(); // 0x493D90
     virtual void Blit(const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2, class Surface* src, const RectangleStruct& dest_rect, const RectangleStruct& src_rect, bool option1, bool option2, int a2, int a3, unsigned int *a4, int a5, int a6, int a7, char a8); // 0x493DC0  // g57b5 W4
@@ -841,7 +841,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildingLoadQueue() = default;
 
-    virtual void GetNext(); // 0x6E6E20
+    int GetNext(); // 0x6E6E20
     virtual void Find(); // 0x6E6F20
     virtual void FindObject(); // 0x6E6FF0
     virtual int FindBuilding(); // 0x6E7A80  // G42.35 def-truth sync
@@ -1449,7 +1449,7 @@ public:
     virtual ~VoxelPalette() = default;
 
     virtual unsigned int* Init(int a2, int a3); // 0x758950  // G42.35 def-truth sync
-    virtual void Reset(); // 0x7589C0
+    int Reset(); // 0x7589C0
 
     uint8_t VoxelPalette_field_0x04[4];
 };
@@ -1508,7 +1508,7 @@ public:
     virtual ~Voxel_Section() = default;
 
     virtual void Draw(); // 0x75D3A0
-    virtual void Constructor(); // 0x75E6B0
+    void* Constructor(); // 0x75E6B0
 
     uint8_t Voxel_Section_field_0x04[4];
 };

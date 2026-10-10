@@ -8,13 +8,7 @@ struct E4Recv_5851B0 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M112;  // 0x70
-    unsigned int q274;  // 0x274
-    unsigned int q628;  // 0x628
-    unsigned int q5494;  // 0x5494
-    unsigned int q17758713478;  // 0x17758713478
-    unsigned int q1612096550008;  // 0x1612096550008
-    unsigned int q388267565711368;  // 0x388267565711368
 // --- flat members (END) ---
-    int  BuildTileAdjacencyTable(void * aP1);  // 0x5851B0
+    int  BuildTileAdjacencyTable(int * a2);  // 0x5851B0
 };
 } // namespace gamemd

@@ -40,7 +40,7 @@ public:
     void StartMission();                                         // 0x41D830
     void SpawnAircraft();                                        // 0x41D860
     void ReassignTarget();                                       // 0x41DA20
-    void RemoveAircraft(TechnoClass*);                           // 0x41DC80
+    int RemoveAircraft(TechnoClass*);                           // 0x41DC80
     void CopyTo(AirstrikeClass*);                                // 0x41DD50
     void UpdateAll();                                            // 0x420E90
     void Stat(IStream*);                                         // 0x41D6E0

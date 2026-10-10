@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct Checksum {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    int AddString(uint8_t *a2);
+    int AddString(uint8_t *a2, void *a1 = 0);
 };
 
 } // namespace gamemd

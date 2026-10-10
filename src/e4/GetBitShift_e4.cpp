@@ -6,11 +6,11 @@
 #include "e4/e4_protos.h"
 
 // 0x4BBC30
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int GetBitShift_Red()
 {
   return g_BitShift_Red; /*0x4bbc35*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
 
 // 0x4BBC40
@@ -25,6 +25,6 @@ int GetBitShift_Green()
 namespace gamemd {
 XSurface * GetBitShift_Blue()
 {
-  return g_BitShift_Blue; /*0x4bbc75*/
+  return (gamemd::XSurface *)(g_BitShift_Blue);
 }
 } // namespace gamemd

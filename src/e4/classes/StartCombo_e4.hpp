@@ -6,9 +6,9 @@
 namespace gamemd {
 struct StartCombo {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+    unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
     unsigned char q000[4];  // 0x0 (canon size filler)
-    static int IDToIndex(void *aP1);  // 0x4E4230 raw: int IDToIndex(StartCombo*)
+    static int IDToIndex(void *aP1);
 };
 } // namespace gamemd

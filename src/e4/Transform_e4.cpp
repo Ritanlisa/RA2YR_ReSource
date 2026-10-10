@@ -7,10 +7,10 @@
 #include "e4/e4_protos.h"
 
 // 0x5AE610
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 void * Transform::Copy(const void * a2, void *a2_2)
 {
-  qmemcpy(a2_2, a2_2, 0x30u); /*0x5ae61f*/
+  memcpy(a2_2, a2_2, 0x30u); /*0x5ae61f*/
   return a2_2; /*0x5ae621*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd

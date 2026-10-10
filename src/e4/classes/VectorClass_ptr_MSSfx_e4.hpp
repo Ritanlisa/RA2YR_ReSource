@@ -14,23 +14,13 @@ struct VectorClass_ptr_MSSfx {
     void* Capacity;  // 0x8
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
-    unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1);  // 0x5D2720
-    unsigned int Get(int a2);  // 0x5D2750
-    int Get(int a2, void *a2_2);  // 0x5D27D0
-    char FindItemIndex(int a2);  // 0x5D27E0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x5D2820
+    int Get(void *a1_1, void *a1 = 0);  // 0x5D2720
+    char  FindItemIndex(int a2);  // 0x5D27E0
+    char  SetCapacity(int a2, unsigned int * a3);  // 0x5D2820
     void Destroy_0();  // 0x5D28D0
-    char Constructor_VectorClass_MSAnim___(int a2, unsigned int * a3);  // 0x5D2960
-    int Constructor_VectorClass_MSAnim___(unsigned int * a2);  // 0x5D2A10
-    char Constructor_VectorClass_MSAnim___(int a2, void *a2_2, void *a3_1);  // 0x5D2A40
-    char Constructor_VectorClass_MSAnim___(int a2, unsigned int * a3);  // 0x5D2A80
-    void Constructor_VectorClass_MSAnim___(void *a1_1);  // 0x5D2B30
-    int Constructor_VectorClass_MSAnim___(unsigned int * a2);  // 0x5D2B60
-    unsigned int Constructor_VectorClass_MSAnim___(int a2);  // 0x5D2BA0
-    DynamicVector * Constructor_VectorClass_MSAnim___(unsigned int * Block, char a2);  // 0x5D2CF0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D2D40
+    char  Constructor_VectorClass_MSAnim___(int a2, unsigned int * a3);  // 0x5D2960
+    VectorClass_flat *  QueryInterface(char a2);  // 0x5D2D40
 };
 } // namespace gamemd

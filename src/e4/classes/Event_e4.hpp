@@ -6,10 +6,10 @@
 namespace gamemd {
 struct Event {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
+
 // --- flat members (END) ---
     static int Dispatch();  // 0x48D080
-    bool IsValidActionType();  // 0x601360
+    bool IsValidActionType(void *a1 = 0);  // 0x601360
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);
 };
 } // namespace gamemd

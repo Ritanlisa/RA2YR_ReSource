@@ -22,7 +22,7 @@ struct ThemeManager {
     unsigned int q104;  // 0x104
 // --- flat members (END) ---
     char ProcessCallback(void *a1);
-    void Cleanup();
+    void Cleanup(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

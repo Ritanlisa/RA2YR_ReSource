@@ -23,32 +23,23 @@ struct TiberiumClass {
     double abstractFlags;  // 0x14
     char Growth[4];  // 0x16
     char nextArrayIndex[4];  // 0x18
-    unsigned int q01A;  // 0x1A
     char referenceCount[4];  // 0x1C
-    bool q01D;  // 0x1D
     char NeedsSaveOrLink[4];  // 0x20
     char objectTypeFlags[4];  // 0x24
     unsigned int owningHouseIndex;  // 0x28
-    bool q02B;  // 0x2B
     OverlayTypeClass* fallRate;  // 0x2C
-    char q030[4];  // 0x30
-    unsigned char q031;  // 0x31
+    int nextObject_d;  // 0x30
     char Power[4];  // 0x32
     char attachedTag[4];  // 0x34
     char Color[4];  // 0x36
     void* attachedBomb;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
     char ambientSoundController[20];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
     char TiberiumClass_field_F4[4];  // 0x40
-    bool q042;  // 0x42
     char TiberiumClass_field_F8[4];  // 0x44
     unsigned char alignmentPadding69_3;  // 0x45
     char TiberiumClass_field_FC[4];  // 0x48
-    bool q04A;  // 0x4A
     char SpreadTimer[4];  // 0x4C
-    unsigned char q04F;  // 0x4F
     char customSound_controller[20];  // 0x50
     unsigned char alignmentPadding75_3;  // 0x51
     char NumImages[4];  // 0x52
@@ -72,19 +63,16 @@ struct TiberiumClass {
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned char alignmentPadding99_2;  // 0x76
-    unsigned int q078;  // 0x78
     unsigned int visibilityFlags;  // 0x7C
     bool needsRedraw;  // 0x80
-    bool q081;  // 0x81
-    bool q082;  // 0x82
-    bool q083;  // 0x83
+    unsigned char inLimbo_d;  // 0x81
+    unsigned char inOpenToppedTransport_d;  // 0x82
+    unsigned char isSelected_d;  // 0x83
     bool hasParachute;  // 0x84
     unsigned char alignmentPadding85;  // 0x85
     AnimClass* parachute;  // 0x88
     bool onBridge;  // 0x8C
     bool isFallingDown;  // 0x8D
-    bool q08E;  // 0x8E
-    bool q08F;  // 0x8F
     bool isAliveFlag;  // 0x90
     unsigned char alignmentPadding91;  // 0x91
     unsigned int lastLayer;  // 0x94
@@ -92,49 +80,32 @@ struct TiberiumClass {
     void* isInLogic;  // 0x98
     bool isVisible;  // 0x99
     unsigned short alignmentPadding99;  // 0x9A
-    char location[12];  // 0x9C
-    unsigned int q0A4;  // 0xA4
-    LineTrail* lineTrailer;  // 0xA8
-    unsigned char q0A9;  // 0xA9
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
+    LineTrail* Growth_d;  // 0xA8
     char ArrayIndex[4];  // 0xAC
+    char Spread_d[4];  // 0xB0
     double SpreadPercentage;  // 0xB4
-    unsigned int q0B8;  // 0xB8
-    unsigned char q0B9;  // 0xB9
-    char q0BC[4];  // 0xBC
-    double GrowthPercentage;  // 0xC0
-    unsigned int q0C3;  // 0xC3
-    void* q0C4;  // 0xC4
+    unsigned int GrowthPercentage;  // 0xB8
+    char Power_d[4];  // 0xBC
+    double GrowthPercentage_d;  // 0xC0
     char Value[4];  // 0xC8
-    char q0CC[4];  // 0xCC
-    char q0D0[4];  // 0xD0
-    unsigned int q0D1;  // 0xD1
+    char Power_2[4];  // 0xCC
+    char Color_d[4];  // 0xD0
     unsigned int Debris;  // 0xD4
     OverlayTypeClass* Image;  // 0xD8
     char NumFrames[4];  // 0xDC
-    char q0E0[4];  // 0xE0
-    unsigned int q0E4;  // 0xE4
-    unsigned int q0E8;  // 0xE8
-    char q0EC[4];  // 0xEC
+    char Image_d[4];  // 0xE0
+    char TiberiumClass_field_EC_d[4];  // 0xEC
     char TiberiumClass_field_F0[4];  // 0xF0
-    char q0F4[4];  // 0xF4
-    void* q0F7;  // 0xF7
-    char q0F8[4];  // 0xF8
-    unsigned int q0F9;  // 0xF9
-    unsigned char q0FB;  // 0xFB
-    char q0FC[4];  // 0xFC
-    char q100[12];  // 0x100
+    char TiberiumClass_field_F4_d[4];  // 0xF4
+    char TiberiumClass_field_F8_d[4];  // 0xF8
+    char TiberiumClass_field_FC_d[4];  // 0xFC
+    char SpreadTimer_d[12];  // 0x100
     char GrowthTimer[4];  // 0x104
-    char q108[4];  // 0x108
-    char q10C[4];  // 0x10C
-    char q110[4];  // 0x110
-    unsigned int q111;  // 0x111
-    char q114[4];  // 0x114
+    char TiberiumClass_field_10C_d[4];  // 0x10C
+    char TiberiumClass_field_110_d[4];  // 0x110
+    char TiberiumClass_field_114_d[4];  // 0x114
     char TiberiumClass_field_118[4];  // 0x118
-    char q11C[12];  // 0x11C
-    unsigned int q120;  // 0x120
-    unsigned int q124;  // 0x124
+    char GrowthTimer_d[12];  // 0x11C
 // --- flat members (END) ---
     AbstractClass * * SaveLoad_Prefix(int a1, int a2);
     char LoadFromINI(uint8_t *** aP1, void *a2);
@@ -144,8 +115,12 @@ struct TiberiumClass {
     int ddtor(int a1, unsigned int * a2);
     TiberiumClass(ObjectClass * aP1);
     int Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // def-aligned
-    static char Grow(TiberiumClass * aP1, unsigned short *a2);  // G57w10-S raw 0x0059C920 (was C2597 interim stub)
+    static char Grow(TiberiumClass * aP1, unsigned short *a2);
     char __pad_E4[8];  // 0xE4 (ml)
+    static double vfptr(...);  // plateau: C2039/C3861 stub
+    static double vfptr1(...);  // plateau: C2039/C3861 stub
+    static double vfptr2(...);  // plateau: C2039/C3861 stub
+    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

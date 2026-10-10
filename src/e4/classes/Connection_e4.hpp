@@ -6,21 +6,12 @@
 namespace gamemd {
 struct Connection {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned int q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    void* q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned int q040;  // 0x40
-    void* q048;  // 0x48
+
 // --- flat members (END) ---
     void* Active;  // 0x0 (no offset truth)
     int GetSpeed();  // 0x5422F0
-    int Close();  // 0x543090
+    int Close(void *a1 = 0, void *a2 = 0);  // 0x543090
+    static double Initialized(...);  // plateau: C2039/C3861 stub
+    static double u32_48(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

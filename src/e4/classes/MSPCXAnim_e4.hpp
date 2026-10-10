@@ -8,19 +8,10 @@ namespace gamemd {
 struct MSPCXAnim {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    bool q00B;  // 0xB
-    unsigned char q00C;  // 0xC
-    bool q00D;  // 0xD
-    bool q00E;  // 0xE
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
 // --- flat members (END) ---
     MSPCXAnim * QueryInterface(char a2, int a3);
     int Stub();
-    static unsigned int * Construct(void *aP1, void *a2, int a3, void *a4, char a5);  // 0x5CE640 raw: _DWORD* Construct(MSPCXAnim*, const char**, int, _DWORD*, char)
+    static unsigned int * Construct(void *aP1, void *a2, int a3, void *a4, char a5);
     unsigned char u32_29;  // 0x29 (offset-truth)
 };
 

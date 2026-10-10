@@ -7,68 +7,22 @@
 namespace gamemd {
 struct Coord {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char u8_D;  // 0xD
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned int q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned int q028;  // 0x28
-    int u32_2C;  // 0x2C
-    unsigned int q034;  // 0x34
     Coord * ptr_40;  // 0x40
     Coord * ptr_44;  // 0x44
-    unsigned int q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned int u32_60;  // 0x60
-    Coord * q064;  // 0x64
-    Coord * q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned int q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned int u32_9C;  // 0x9C
-    unsigned int q0A0;  // 0xA0
-    unsigned int q0A4;  // 0xA4
-    unsigned int u32_B0;  // 0xB0
-    unsigned int u32_B4;  // 0xB4
-    unsigned char q0B8;  // 0xB8
-    unsigned char q0BC;  // 0xBC
-    unsigned int u32_E0;  // 0xE0
-    unsigned char q0E4;  // 0xE4
-    Coord * q100;  // 0x100
-    Coord * q104;  // 0x104
-    unsigned char q108;  // 0x108
-    unsigned char q10C;  // 0x10C
-    unsigned int u32_114;  // 0x114
-    unsigned int q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    unsigned int q130;  // 0x130
-    unsigned int q134;  // 0x134
-    unsigned char q138;  // 0x138
-    void* q13C;  // 0x13C
 // --- flat members (END) ---
-    int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
+    int  ToGridIndex(int a2, int a3, int a4);  // 0x4138C0
     unsigned int * ToCell(unsigned int *a2);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
-    void * Subtract(int aP1, int aP2, int aP3);  // 0x41C230
-    int Length();  // 0x41C380
-    static unsigned int * GetCoords(int * outCoords, void *a2_1);  // 0x4399A0
-    void * Scale(float aP1);  // 0x43A0D0
-    void * To_Cell(unsigned int *aP1);  // 0x565730
-    int Compare2D(unsigned short * a2, void *a2_2);  // 0x5AC370
-    void * WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4);  // 0x6557F0
+    void * Subtract(int aP1, int aP2, int aP3, void *a1 = 0);  // 0x41C230
+    int Length(void *a1 = 0);  // 0x41C380
+    static unsigned int *  GetCoords(unsigned int * a2);  // 0x4399A0
+    void *  Scale(float a2, void *a1 = 0);  // 0x43A0D0
+    void *  To_Cell(unsigned int * a2);  // 0x565730
+    int  Compare2D(unsigned short * a2, void *a1 = 0);  // 0x5AC370
+    void *  WorldToScreen(int * a2, int * a3, char a4);  // 0x6557F0
     AbstractClass * * To_Screen(unsigned int *a2, int *a3);  // 0x6D2140
-    void * Divide(int * a2, int a3);  // 0x710700
+    void *  Divide(int * a2, int a3);  // 0x710700
     static int * To_ScreenRaw(int *aP0, unsigned int *aP1);
-    long long ScaleToScreenY();  // 0x6D2120
+    long long ScaleToScreenY(void *a1 = 0);  // 0x6D2120
     void initScenario(void *a1_1);
     int SendCampaignOptions();
     AbstractClass * * DestroyAllObjects();
@@ -80,15 +34,15 @@ struct Coord {
     unsigned char ManageGameSpeed();
     unsigned int * LockMutex(void * aP1, void * aP2);  // G42.39: IUnknown global-fwd hazard
     void * * SerializeGameSaveState();  // G42.39: template-type hazard
-    int validateScenario(unsigned int *a2);
+    int validateScenario(unsigned int *a2, void *a1 = 0);
     void EncodeGameSetupState(char * Buffer);
-    Coord * * ProcessIdle();
+    Coord * * ProcessIdle(void *a1 = 0);
     AbstractClass * * SetupWOLTournament();
     int loadCampaignData(void *a1_1);
     int Stub3(int a1);
     char ResetFlags();
     int ResetReadyStates();
-    int readIniSettings();
+    int readIniSettings(void *a1 = 0);
     char LoadMultiplayerScoreAssets();
     void * shutdownGame();
     char InitializeToolTipColor();
@@ -102,5 +56,16 @@ struct Coord {
     unsigned int u32_1498;  // 0x1498 (offset-truth)
     unsigned int u32_14A4;  // 0x14A4 (offset-truth)
     unsigned int u32_14A8;  // 0x14A8 (offset-truth)
+    static double Coord_field_0x13C(...);  // plateau: C2039/C3861 stub
+    static double Coord_field_0x2(...);  // plateau: C2039/C3861 stub
+    static double Coord_field_0x8(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double __pad_C(...);  // plateau: C2039/C3861 stub
+    static double q000(...);  // plateau: C2039/C3861 stub
+    static double q004(...);  // plateau: C2039/C3861 stub
+    static double q008(...);  // plateau: C2039/C3861 stub
+    static double q00C(...);  // plateau: C2039/C3861 stub
+    static double q018(...);  // plateau: C2039/C3861 stub
+    static double u32_140(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

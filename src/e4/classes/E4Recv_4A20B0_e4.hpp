@@ -11,6 +11,6 @@ struct E4Recv_4A20B0 {
     unsigned int q054;  // 0x54
     unsigned int q084;  // 0x84
 // --- flat members (END) ---
-    int sub_4A20B0(Straw * aP1, int aP2);  // 0x4A20B0
+    int  sub_4A20B0(uint8_t * a2, int a3);  // 0x4A20B0
 };
 } // namespace gamemd

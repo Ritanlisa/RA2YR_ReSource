@@ -16,17 +16,17 @@
 #include "e4/classes/Random_e4.hpp"
 
 // 0x53EC40
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 int sub_53EC40(unsigned char a1, char a2)
 {
   int result; // eax
 
   result = dword_AA0444; /*0x53ec40*/
   if ( dword_AA0444 )
-    word_AA0168[a1] = a2 != 0 ? 0 : 0x8000;
+    ((unsigned int *)(word_AA0168))[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
 }
-}
+}  // G42.18 ns repair
 // 0x6149B0
 namespace gamemd {
 size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
@@ -59,12 +59,12 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   {
     v5 = dword_AC1B60(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *((_DWORD *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
+    v6 = *((unsigned int *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/
       {
-        v6 = *(_DWORD *)(v6 + 8); /*0x6149fb*/
+        v6 = *(unsigned int *)(v6 + 8); /*0x6149fb*/
         if ( !v6 ) /*0x614a00*/
           goto LABEL_8; /*0x614a00*/
       }
@@ -84,11 +84,11 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   *lpWideCharStr = 0; /*0x614a6d*/
   MultiByteToWideChar(0, 0, lParam, -1, v19, cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/
-    *a4 = _mbsnccnt((const unsigned __int8 *)lParam, v8); /*0x614a8a*/
+    *a4 = _mbsnccnt((const uint8_t *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   v10 = wcslen(v9); /*0x614a9d*/
-  v11 = RA2_OPNEW(2 * v10 + 6); /*0x614aab*/
+  v11 = operator new(2 * v10 + 6); /*0x614aab*/
   memset(v11, 0, 2 * v10 + 6); /*0x614ab9*/
   v12 = 0; /*0x614abd*/
   if ( v10 > 0 ) /*0x614ac6*/
@@ -114,11 +114,12 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   }
   v17 = lpWideCharStr; /*0x614afe*/
   wcscpy(lpWideCharStr, (const wchar_t *)v11); /*0x614b04*/
-  RA2_OPDEL(v11); /*0x614b0a*/
+  operator delete((void *)(v11)); /*0x614b0a*/
   return wcslen(v17); /*0x614b18*/
 }
+}
 // 0x58C6F0
-namespace gamemd {
+namespace gamemd {  // G42.18 ns repair
 double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 {
   double v3; // st7
@@ -154,16 +155,15 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   if ( v4 > 3.141592653589793 ) /*0x58c7a0*/
     v11 = 6.283185307179586 - v4; /*0x58c7aa*/
   return (double)(unsigned int)Random::State(&unk_ABE890) * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9; /*0x58c7ee*/
-}
+}  // G42.18 ns repair
 } // namespace gamemd
-}
 
 // 0x5C0E90
 namespace gamemd {  // G42.18c ns repair
 char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
 {
-  if ( Block && IDA_HIBYTE(a5) ) /*0x5c0e9e*/
-    RA2_OPDEL(Block); /*0x5c0ea1*/
+  if ( Block && (*(((unsigned char *)&(a5)) + (sizeof(a5) - 1))) ) /*0x5c0e9e*/
+    operator delete((void *)(Block)); /*0x5c0ea1*/
   return 0; /*0x5c0eab*/
 }
 }  // G42.18c ns repair
@@ -171,8 +171,8 @@ char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int
 namespace gamemd {  // G42.18c ns repair
 char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
 {
-  if ( Block && IDA_HIBYTE(a4) ) /*0x5c0fae*/
-    RA2_OPDEL(Block); /*0x5c0fb1*/
+  if ( Block && (*(((unsigned char *)&(a4)) + (sizeof(a4) - 1))) ) /*0x5c0fae*/
+    operator delete((void *)(Block)); /*0x5c0fb1*/
   return 0; /*0x5c0fbb*/
 }
 }
@@ -180,4 +180,4 @@ char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, in
 int Memory::Alloc76()
 {
   return System_Handle(76, 0); /*0x731cee*/
-}  // G42.18c ns repair
+}

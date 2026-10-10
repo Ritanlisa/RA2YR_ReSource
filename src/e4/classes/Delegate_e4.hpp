@@ -13,7 +13,6 @@ struct Delegate {
     char m_count[4];  // 0x4
     char Delegate_field_08[4];  // 0x8
     bool m_allocated;  // 0xC
-    unsigned char q00D;  // 0xD
     char Delegate_field_10[4];  // 0x10
     char Delegate_field_14[4];  // 0x14
     void* m_straw;  // 0x18
@@ -25,19 +24,28 @@ struct Delegate {
     int * ClearVectorAndStraw(char a2);
     int * DestroyPipe(char a2);
     int * DestroyStraw(char a2);
-    int Invoke(int a2, int aP2);
+    int Invoke(int a2, int aP2, void *a1 = 0);
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);
-    unsigned int * GetField();
-    int Dispatch(int aP1, int aP2);
-    int Set(int a2);
-    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int * GetField(void *a1 = 0, void *a2 = 0);
+    int Dispatch(int aP1, int aP2, void *a1 = 0, void *a2 = 0);
+    int Set(int a2, void *a1 = 0, void *a3 = 0);
+    unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q004;  // 0x4 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
     unsigned int q010;  // 0x10 (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
     unsigned int q018;  // 0x18 (offset-truth)
+    static double Blowfish(...);  // plateau: C2039/C3861 stub
+    static double Previous(...);  // plateau: C2039/C3861 stub
+    static double Straw_field_0x04(...);  // plateau: C2039/C3861 stub
+    static double __pad_0(...);  // plateau: C2039/C3861 stub
+    static double __pad_14(...);  // plateau: C2039/C3861 stub
+    static double field_10(...);  // plateau: C2039/C3861 stub
+    static double field_18(...);  // plateau: C2039/C3861 stub
+    static double field_1C(...);  // plateau: C2039/C3861 stub
+    static double field_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd
