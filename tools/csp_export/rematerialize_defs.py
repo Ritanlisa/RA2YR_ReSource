@@ -21,13 +21,31 @@ Repair is whole-def and deterministic:
 Targets: defs whose anchor multiset has EXTRAS vs the cache (the
 duplication marker). Optional --all-defs for every def in scope files.
 
+RC3 content-preservation guard (plan project-optimization.md #10):
+  * per-function manifest .omo/rematerialize_defs_manifest.json records
+    addr -> {file, action, old_body_sha256, new_body_sha256} for every
+    rematerialized def -- an audit ledger of what each body was.
+  * a def is only replaced when the replacement is PROVEN PRESENT: the
+    rebuilt body has non-hollow content and balanced braces.  A non-hollow
+    old body is never replaced by a hollow/unbalanced one -- the def is
+    refused (kept), listed in .omo/unresolved_reports/
+    rematerialize_defs.lossguard.json and the process exits non-zero.
+  * every whole-file write first backs the original bytes up to
+    .omo/rematerialize_defs_backup/<rel-path>.pre (fix_dupdef_corpses
+    pattern; earliest pre-run state preserved) -- restorable.
+  * the leftover `if touched or True:` write gate (L267 vintage) is gone:
+    files are rewritten only when the content actually changed, so the
+    pass is idempotent and files_changed no longer over-counts.
+
 Usage: python tools/csp_export/rematerialize_defs.py [--apply]
 """
 import glob
+import hashlib
 import json
 import bisect
 import os
 import re
+import shutil
 import sys
 from collections import Counter
 
@@ -35,6 +53,30 @@ APPLY = '--apply' in sys.argv
 ALL_DEFS = '--all-defs' in sys.argv
 ANCHOR = re.compile(r'/\*0x([0-9a-fA-F]+)\*/')
 DEF_HEAD = re.compile(r'^[^/]*?\b([A-Za-z_]\w*)::\s*~?\w+\s*\(([^)]*)\)')
+BAK = '.omo' + os.sep + 'rematerialize_defs_backup'
+
+
+def _core(text):
+    """Content of `text` with comments and whitespace stripped -- the
+    hollow-detection truth (an anchor/comment-only body is hollow)."""
+    t = re.sub(r'/\*.*?\*/', '', text, flags=re.S)
+    t = re.sub(r'//[^\n]*', '', t)
+    return re.sub(r'\s+', '', t)
+
+
+def _sha(text):
+    return hashlib.sha256(
+        text.encode('utf-8', errors='replace')).hexdigest()
+
+
+def _backup_before_write(p):
+    """RC3: byte-exact pre-run backup before a whole-file rewrite
+    (earliest state kept -- fix_dupdef_corpses pattern)."""
+    bdir = os.path.join(BAK, os.path.dirname(p))
+    os.makedirs(bdir, exist_ok=True)
+    b = os.path.join(bdir, os.path.basename(p) + '.pre')
+    if not os.path.exists(b):
+        shutil.copyfile(p, b)
 
 TOKEN_MAP = [
     (re.compile(r'\b__thiscall\s+'), ''),
@@ -182,13 +224,14 @@ def corpus_params(head_params):
 
 stats = Counter()
 files_changed = 0
+manifest = {}
+lossguard = {}
 files = (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
          + glob.glob('src/system/gap2*.cpp'))
 for p in files:
     raw = open(p, encoding='utf-8', errors='replace').read()
     lines = raw.split('\n')
     out = list(lines)
-    touched = False
     i = 0
     while i < len(lines):
         hm = DEF_HEAD.search(lines[i])
@@ -222,6 +265,8 @@ for p in files:
                 if am:
                     addr = int(am.group(1), 16)
                     break
+        mkey = ('%X' % addr) if addr is not None else \
+            'NOADDR@%s:%d' % (p.replace('\\', '/'), i + 1)
         if addr is not None:
             dec = enc_cache(addr)
             want = Counter(a.lower() for a in ANCHOR.findall(dec)) if dec else None
@@ -255,23 +300,78 @@ for p in files:
                             factor, elem = this_scale(sig_head)
                             body = scale_body(body, factor, elem)
                     body = normalize_double_cast(body)
-                    for k2 in range(i, j + 1):
-                        out[k2] = None
-                    if bi == i:   # gap2 style: `Cls::Mth(...) {`
-                        out[i] = '\n'.join([lines[i]] + body.split('\n')) + '\n}'
-                    else:         # e4 style: brace on its own next line
-                        out[i] = lines[i] + '\n{\n' + body + '\n}'
-                    touched = True
-                    stats['remat' if damaged else 'remat-all'] += 1
+                    # RC3 loss guard: replacement must be PROVEN PRESENT
+                    # (non-hollow content, balanced braces) before a
+                    # non-hollow old body is discarded.
+                    old_block_text = '\n'.join(block)
+                    old_core = _core(old_block_text)
+                    new_core = _core(body)
+                    balanced = body.count('{') == body.count('}')
+                    if old_core and (not new_core or not balanced):
+                        reason = ('replacement body is hollow (RC3 loss '
+                                  'guard: old body had real content)'
+                                  if not new_core else
+                                  'unbalanced replacement body (RC3 loss '
+                                  'guard)')
+                        stats['refused-loss-guard'] += 1
+                        manifest[mkey] = {
+                            'file': p.replace('\\', '/'),
+                            'action': 'refused-loss-guard',
+                            'reason': reason,
+                            'old_body_sha256': _sha(old_block_text)}
+                        lossguard[mkey] = {
+                            'file': p.replace('\\', '/'), 'reason': reason,
+                            'old_body_head': '\n'.join(block[1:9])}
+                    else:
+                        if bi == i:   # gap2 style: `Cls::Mth(...) {`
+                            new_block = '\n'.join(
+                                [lines[i]] + body.split('\n')) + '\n}'
+                            out[i] = new_block
+                        else:         # e4 style: brace on its own next line
+                            new_block = lines[i] + '\n{\n' + body + '\n}'
+                            out[i] = new_block
+                        for k2 in range(i + 1, j + 1):
+                            out[k2] = None
+                        stats['remat' if damaged else 'remat-all'] += 1
+                        manifest[mkey] = {
+                            'file': p.replace('\\', '/'),
+                            'action': 'remat' if damaged else 'remat-all',
+                            'old_body_sha256': _sha(old_block_text),
+                            'new_body_sha256': _sha(new_block)}
         i = j + 1
-    if touched or True:
-        final = [x for x in out if x is not None]
-        text2 = normalize_double_cast('\n'.join(final))
-        if text2 != raw or touched:
-            files_changed += 1
-            if APPLY:
-                open(p, 'w', encoding='utf-8', newline='').write(text2)
+    final = [x for x in out if x is not None]
+    text2 = normalize_double_cast('\n'.join(final))
+    if text2 != raw:
+        files_changed += 1
+        if APPLY:
+            _backup_before_write(p)
+            open(p, 'w', encoding='utf-8', newline='').write(text2)
 print('files changed:', files_changed)
 print(dict(stats))
+if APPLY:
+    os.makedirs('.omo', exist_ok=True)
+    with open('.omo/rematerialize_defs_manifest.json', 'w',
+              encoding='utf-8') as f:
+        json.dump({'_meta': {'generator': 'rematerialize_defs.py',
+                             'policy': 'rc3-loss-guard (plan #10)',
+                             'apply': True, 'all_defs': ALL_DEFS,
+                             'files_changed': files_changed,
+                             'stats': dict(stats)},
+                   'defs': manifest}, f, indent=1)
+    print('manifest written: .omo/rematerialize_defs_manifest.json')
+if lossguard:
+    os.makedirs(os.path.join('.omo', 'unresolved_reports'), exist_ok=True)
+    rpt = os.path.join('.omo', 'unresolved_reports',
+                       'rematerialize_defs.lossguard.json')
+    with open(rpt, 'w', encoding='utf-8') as f:
+        json.dump({'_meta': {'generator': 'rematerialize_defs.py',
+                             'policy': 'rc3-loss-guard (plan #10)',
+                             'apply': APPLY, 'total': len(lossguard)},
+                   'refused': lossguard}, f, indent=1)
+    print('LOSS GUARD REPORT: %s (%d def(s) would lose their body -- '
+          'previous body KEPT)' % (rpt, len(lossguard)))
+    print('FAIL LOUD: exit 1 -- a non-hollow body must never be replaced '
+          'by a hollow/unproven one.')
 if not APPLY:
     print('(dry run -- pass --apply)')
+sys.exit(1 if lossguard else 0)

@@ -32,11 +32,33 @@ old/new line counts) so nothing is overwritten silently.  When --files
 restricts the run (golden cohort) the manifest is written to
 regen_bodies_manifest.cohort.json instead, preserving the full-run record.
 
+RC3 content-preservation guard (plan project-optimization.md #10):
+  - before ANY body is replaced the previous body span is hashed and the
+    replacement is checked "proven present" (non-hollow content AND a
+    brace-balanced emitted block).  A non-hollow old body is never
+    replaced by a hollow/unbalanced one: the function is refused, lands
+    in the per-function loss report
+    (.omo/unresolved_reports/regen_bodies.lossguard.json) and the process
+    exits non-zero.  This closes the 1,484-body loss mechanism (empty /
+    trivial Hex-Rays blocks used to land as `{}` wholesale replacements).
+  - every decision in .omo/regen_bodies_manifest.json carries per-function
+    body hashes (old_body_sha256 / new_body_sha256) so any post-hoc audit
+    can prove what each function's body was before/after the run.
+  - every whole-file write first backs the original bytes up to
+    .omo/regen_bodies_from_export_backup/<rel-path>.pre (fix_dupdef_
+    corpses pattern; earliest pre-run state preserved) -- restorable.
+  - `--src=<dir>` / `--export=<dir>` overrides exist for sandboxed QA
+    (default: <repo>/src, decompile-results/full_export/src).
+
 Usage: python tools/csp_export/regen_bodies_from_export.py [--apply]
        [--files rel/path1.cpp,rel/path2.cpp]
+       [--src=DIR] [--export=DIR]
 """
+import hashlib
 import json
+import os
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -47,10 +69,15 @@ from _ida_vocab import (find_refusals, truthify, type_ids)
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
 EXPORT = ROOT / 'decompile-results' / 'full_export' / 'src'
+BAK = ROOT / '.omo' / 'regen_bodies_from_export_backup'
 APPLY = '--apply' in sys.argv
 FILES_FILTER = None
 for _a in sys.argv:
-    if _a.startswith('--files='):
+    if _a.startswith('--src='):
+        SRC = Path(_a.split('=', 1)[1])
+    elif _a.startswith('--export='):
+        EXPORT = Path(_a.split('=', 1)[1])
+    elif _a.startswith('--files='):
         FILES_FILTER = [
             str(Path(x.strip()).as_posix()) if Path(x.strip()).is_absolute()
             else Path(x.strip()).as_posix().replace('\\', '/')
@@ -64,6 +91,39 @@ for _a in sys.argv:
 
 ADDR_LINE = re.compile(r'^//\s*0x([0-9A-Fa-f]{6,8})\s*$')
 BLOCK_HEAD = re.compile(r'^// =+$')
+
+
+def _core(text):
+    """Content of `text` with comments and whitespace stripped -- the
+    hollow-detection truth (an anchor/comment-only body is hollow)."""
+    t = re.sub(r'/\*.*?\*/', '', text, flags=re.S)
+    t = re.sub(r'//[^\n]*', '', t)
+    return re.sub(r'\s+', '', t)
+
+
+def _sha(text):
+    return hashlib.sha256(
+        text.encode('utf-8', errors='replace')).hexdigest()
+
+
+def _backup_before_write(p):
+    """RC3: whole-file writes are preceded by a byte-exact backup of the
+    original (earliest pre-run state kept -- fix_dupdef_corpses pattern).
+    Backups are keyed by the scanned tree (<src-root>/<rel-path>), so a
+    sandboxed `--src` run can never occupy (and thereby suppress) the
+    real tree's backup slot."""
+    src_root = SRC.resolve()
+    try:
+        tree = src_root.relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        tree = re.sub(r'[^A-Za-z0-9_.-]', '_', str(src_root))
+    rel = Path(tree) / p.relative_to(SRC)
+    bdir = BAK / rel.parent
+    bdir.mkdir(parents=True, exist_ok=True)
+    b = bdir / (p.name + '.pre')
+    if not b.exists():
+        shutil.copyfile(p, b)
+
 
 # ---- load fresh export: addr -> pseudocode text ----
 pseudo = {}
@@ -132,7 +192,8 @@ def body_from_pseudo(code):
 
 manifest = {}
 unresolved = {}
-tot_rep = tot_keep = tot_unres = 0
+lossguard = {}
+tot_rep = tot_keep = tot_unres = tot_refused = 0
 for p in sorted(SRC.rglob('*.cpp')):
     if '_generated' in str(p):
         continue
@@ -180,10 +241,12 @@ for p in sorted(SRC.rglob('*.cpp')):
             raw_body = body_from_pseudo(code)
             refusals = find_refusals(raw_body) if raw_body else {}
             if refusals:
+                old_span = '\n'.join(lines[j + 1:k + 1])
                 manifest['%X' % addr] = {
                     'file': rel, 'action': 'unresolved',
                     'reason': 'untruth-ifiable IDA constructs (RC1 policy)',
-                    'patterns': refusals}
+                    'patterns': refusals, 'old_span_sha256': _sha(old_span),
+                    'new_span_sha256': _sha(old_span)}
                 unresolved['0x%X' % addr] = {
                     'file': rel, 'patterns': refusals}
                 tot_unres += 1
@@ -193,8 +256,11 @@ for p in sorted(SRC.rglob('*.cpp')):
         else:
             new_body = None
         if new_body is None:
+            old_span = '\n'.join(lines[j + 1:k + 1])
             manifest['%X' % addr] = {'file': rel, 'action': 'kept',
-                                     'reason': 'no fresh pseudocode'}
+                                     'reason': 'no fresh pseudocode',
+                                     'old_span_sha256': _sha(old_span),
+                                     'new_span_sha256': _sha(old_span)}
             tot_keep += 1
             i = k + 1
             continue
@@ -273,13 +339,45 @@ for p in sorted(SRC.rglob('*.cpp')):
         net = sum(brace_delta(l) for l in repl)
         for _ in range(net):
             repl.append(indent + '}')
+        # RC3 loss guard: a replacement must be PROVEN PRESENT before the
+        # old body is discarded -- non-hollow emitted body content AND a
+        # brace-balanced emitted block.  A non-hollow old body is never
+        # replaced by a hollow one (the 1,484-body loss mechanism); an
+        # unbalanced block (def line closing scopes it never opened) is
+        # refused regardless of the old body, it would corrupt the TU.
+        # Spans are hashed WITHOUT the def line (old: body + trailing
+        # orphan closers; new: emitted body_lines) so the hollow check and
+        # the manifest hashes describe body content, not the signature.
+        old_span = '\n'.join(lines[j + 1:k + 1])
+        new_body_text = '\n'.join(body_lines)
+        repl_net = sum(brace_delta(l) for l in repl)
+        if repl_net != 0 or (_core(old_span) and not _core(new_body_text)):
+            if repl_net:
+                reason = ('unbalanced replacement block (net %+d braces)'
+                          % repl_net)
+            else:
+                reason = ('replacement body is hollow (RC3 loss guard: '
+                          'old body had real content)')
+            manifest['%X' % addr] = {
+                'file': rel, 'action': 'refused-loss-guard',
+                'reason': reason, 'old_lines': old_len,
+                'old_body_sha256': _sha(old_span)}
+            lossguard['0x%X' % addr] = {
+                'file': rel, 'reason': reason, 'old_lines': old_len,
+                'old_body_head': '\n'.join(lines[j + 1:k + 1][:8])}
+            tot_refused += 1
+            i = k + 1
+            continue
         lines[j:k + 1] = repl
         manifest['%X' % addr] = {'file': rel, 'action': 'replaced',
                                  'old_lines': old_len,
-                                 'new_lines': len(repl) - 1}
+                                 'new_lines': len(repl) - 1,
+                                 'old_body_sha256': _sha(old_span),
+                                 'new_body_sha256': _sha(new_body_text)}
         tot_rep += 1
         i = j + len(repl)
     if lines != orig and APPLY:
+        _backup_before_write(p)
         # tree convention is latin-1; fresh pseudocode may carry exotic
         # chars from IDA string literals -> replace, never crash
         p.write_bytes('\n'.join(lines).encode('latin-1', errors='replace'))
@@ -287,10 +385,25 @@ for p in sorted(SRC.rglob('*.cpp')):
 print('bodies replaced:', tot_rep)
 print('bodies kept (no fresh code):', tot_keep)
 print('bodies UNRESOLVED (refused, RC1 policy):', tot_unres)
+print('bodies REFUSED by RC3 loss guard:', tot_refused)
 manifest['_meta'] = {'replaced': tot_rep, 'kept': tot_keep,
-                     'unresolved': tot_unres, 'apply': APPLY,
+                     'unresolved': tot_unres, 'lossguard_refused': tot_refused,
+                     'apply': APPLY,
                      'files_filter': FILES_FILTER,
-                     'policy': 'rc1-truthify-or-refuse'}
+                     'policy': 'rc1-truthify-or-refuse + rc3-loss-guard'}
+if tot_refused:
+    rpt_dir = ROOT / '.omo' / 'unresolved_reports'
+    rpt_dir.mkdir(parents=True, exist_ok=True)
+    rpt = rpt_dir / 'regen_bodies.lossguard.json'
+    rpt.write_text(json.dumps({
+        '_meta': {'generator': 'regen_bodies_from_export.py',
+                  'policy': 'rc3-loss-guard (plan #10)', 'apply': APPLY,
+                  'files_filter': FILES_FILTER, 'total': tot_refused},
+        'refused': lossguard}, indent=1), encoding='utf-8')
+    print('LOSS GUARD REPORT: %s (%d function(s) would lose their body -- '
+          'previous body KEPT)' % (rpt, tot_refused))
+    print('FAIL LOUD: exit 1 -- a non-hollow body must never be replaced '
+          'by a hollow/unproven one.')
 if tot_unres:
     rpt_dir = ROOT / '.omo' / 'unresolved_reports'
     rpt_dir.mkdir(parents=True, exist_ok=True)
@@ -311,4 +424,4 @@ if APPLY:
     print('manifest written: .omo/%s' % man_name)
 else:
     print('DRY RUN (use --apply)')
-sys.exit(1 if tot_unres else 0)
+sys.exit(1 if (tot_unres or tot_refused) else 0)
