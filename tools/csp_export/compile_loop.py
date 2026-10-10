@@ -40,13 +40,16 @@ def build():
 
 def supply(log):
     """returns total mechanical additions from the error log"""
-    inc = sh([sys.executable, str(TOOLS / 'supply_includes_from_errors.py'),
+    # RC4: step2-side fixers absorbed into _absorbed/step2_decl/ (plan
+    # project-optimization.md #11); same single definitions, new location.
+    A = TOOLS / '_absorbed' / 'step2_decl'
+    inc = sh([sys.executable, str(A / 'supply_includes_from_errors.py'),
               str(log), '--apply'])
-    mem = sh([sys.executable, str(TOOLS / 'supply_members_from_errors.py'),
+    mem = sh([sys.executable, str(A / 'supply_members_from_errors.py'),
               str(log), '--apply'])
-    pro = sh([sys.executable, str(TOOLS / 'supply_protos_from_errors.py'),
+    pro = sh([sys.executable, str(A / 'supply_protos_from_errors.py'),
               str(log), '--apply'])
-    ghp = sh([sys.executable, str(TOOLS / 'fix_ghost_params.py'),
+    ghp = sh([sys.executable, str(A / 'fix_ghost_params.py'),
               str(log), '--apply'])
     tf = sh([sys.executable, str(TOOLS / 'gen_tree_full_e4.py'),
              str(log), '--apply'])

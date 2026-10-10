@@ -45,9 +45,6 @@ def main():
     print('[step4] a3. 花括号 sanitizer (单一权威, 修 regen 残留不平衡)')
     run('fix_leaks_general.py', '--apply',
         grep=('close-braces', 'files changed'))
-    print('[step4] a4. IDA 词汇 + 空返回擦洗 (kept 体覆盖)')
-    run('rewrite_ida_vocab.py', '--apply',
-        grep=('vocab rewrites',))
     print('[step4] a4b. //DUPDEF 注释尸块清除 (G42.57 W20 用户指令: 不留 stub 尸块)')
     run('fix_dupdef_corpses.py', '--apply',
         grep=('corpses removed',))
