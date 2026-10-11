@@ -209,17 +209,55 @@ for p in files:
             print('NEW: ' + new_head.strip()[:120])
     # sync header decls in the TU's own flat headers
     if header_decls:
+        # T4c flip-flop fix: the sync used to lock onto the TU's FIRST
+        # e4/classes include (and break); multi-include corpus files synced
+        # into the WRONG header, so a cache-rewritten def left its own
+        # header decl unsynced -- fix_def_decl_arity_unify then re-inflated
+        # decl := def + defaulted fillers and the (def_heads, arity_unify)
+        # pair flip-flopped with period 2 forever (S5 never converged).
+        # Authority alignment: a def rewritten to cache truth carries its
+        # decl with it -- target each def's OWN class header, falling back
+        # to the first-include header (old behavior) when it does not exist.
+        inc_hpp = None
         for ln2 in lines[:60]:
             im = re.search(r'#include\s+"e4/classes/(\w+)_e4\.hpp"', ln2)
-            if not im:
-                continue
-            hpp = 'src/e4/classes/%s_e4.hpp' % im.group(1)
+            if im:
+                inc_hpp = 'src/e4/classes/%s_e4.hpp' % im.group(1)
+                break
+        by_hpp = {}
+        for (cls, mth), params in header_decls.items():
+            own = 'src/e4/classes/%s_e4.hpp' % cls
+            tgt = own if os.path.exists(own) else inc_hpp
+            if tgt:
+                by_hpp.setdefault(tgt, {})[(cls, mth)] = params
+        for hpp, keys in sorted(by_hpp.items()):
             if not os.path.exists(hpp):
                 continue
             htxt = open(hpp, encoding='utf-8', errors='replace').read()
             hlines = htxt.split('\n')
             hchanged = False
+            # class context per line: these flat headers host SEVERAL
+            # structs, so method-name-only keying cross-contaminates
+            # same-named methods (every class has a ddtor) -- the same
+            # tracking rule fix_def_decl_arity_unify uses for its decl walk.
+            line_cls = []
+            cur_cls = None
+            for hl0 in hlines:
+                sm0 = re.match(r'\s*struct\s+(\w+)\s*\{', hl0)
+                if sm0:
+                    cur_cls = sm0.group(1)
+                line_cls.append(cur_cls)
             for hi, hl in enumerate(hlines):
+                # idempotence guard: pure comment lines are dead text and
+                # must never be processed.  The dm regex below matches
+                # method names inside comment text, so without this guard
+                # comment-marked lines got "rewritten" every pass -- the
+                # dup markers grew one '// dup-decl removed: ' layer per
+                # pass (T4c: 8x nesting), and '// fused-garbage: ...'
+                # growth lines grew one layer per run (the last 2-file
+                # period-2 flip).  Rewriting live decls is the only job.
+                if hl.strip().startswith('//'):
+                    continue
                 # repair mangled decls from an earlier pass (`intRead(` ->
                 # `int Read(`: the type word fused with the method name)
                 hl2 = re.sub(
@@ -230,20 +268,30 @@ for p in files:
                     hlines[hi] = hl2
                     hchanged = True
                 hl = hl2
-                dm = re.search(r'[\w\s\*&]+\b(~?\w+)\s*\(', hl)
-                if not dm or 'class' in hl or 'struct' in hl:
+                # comment-truncate before matching (RC4-L60 lesson: any
+                # decl-line parser must stop at '//') -- dm otherwise
+                # matches method names inside trailing-comment text and
+                # "rewrites" dead lines forever (e.g. a mangled
+                # `} // namespace gamvoid Destroy(); ...` closer grew one
+                # comment layer per pass -- the last S5 churner).
+                code = hl.split('//', 1)[0]
+                dm = re.search(r'[\w\s\*&]+\b(~?\w+)\s*\(', code)
+                if not dm or 'class' in code or 'struct' in code:
                     continue
                 key = None
-                for (cls, mth) in header_decls:
-                    if dm.group(1) == mth:
+                for (cls, mth) in keys:
+                    if dm.group(1) == mth and cls == line_cls[hi]:
                         key = (cls, mth)
                         break
                 if not key:
                     continue
-                # duplicate-decl guard: if another line already declares
-                # the same method, drop THIS duplicate entirely (C2535)
-                twins = [x for x in hlines if x is not hl and not x.strip().startswith('//')
-                         and re.search(r'\b%s\s*\(' % re.escape(key[1]), x)]
+                # duplicate-decl guard: if another line of the SAME class
+                # already declares the method, drop THIS duplicate (C2535)
+                twins = [x for x, lc in zip(hlines, line_cls)
+                         if x is not hl and lc == line_cls[hi]
+                         and not x.strip().startswith('//')
+                         and re.search(r'\b%s\s*\(' % re.escape(key[1]),
+                                       x.split('//', 1)[0])]
                 if twins:
                     hlines[hi] = '    // dup-decl removed: ' + hl.strip()
                     hchanged = True
@@ -256,7 +304,7 @@ for p in files:
                 if ci >= 0:
                     tail = '  ' + hl[ci:].strip()
                 new_hl = '%s %s(%s);%s' % (ret.rstrip(), key[1],
-                                           header_decls[key], tail)
+                                           keys[key], tail)
                 if new_hl != hl:
                     hlines[hi] = new_hl
                     hchanged = True
@@ -264,7 +312,9 @@ for p in files:
             if hchanged and APPLY:
                 open(hpp, 'w', encoding='utf-8',
                      newline='').write('\n'.join(hlines))
-            break
+            # no break: every target header must be scanned -- the original
+            # first-include break is what left multi-class TUs (the whole
+            # T4c flip set) with unsynced decls
     if touched:
         files_changed += 1
         if APPLY:

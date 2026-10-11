@@ -107,8 +107,13 @@ def main():
             if len(cparams) < len(dparams):
                 continue
             # unify: decl := def params + defaulted fillers to cparams count
+            # T4c fix: taken anchors on the DEF only.  The old set also took
+            # the decl's current filler names -- but the rewrite DISCARDS
+            # the decl's params (decl := def + fillers), so the old filler
+            # name was avoid-then-freed every pass and the drawn name
+            # alternated a2_1 <-> a2_2 forever (period-2, S5 never converged
+            # on ~105 flat headers even after the def-side was stable).
             taken = {param_name(x) for x in dparams if param_name(x)}
-            taken |= {param_name(x) for x in cparams if param_name(x)}
 
             def filler(j):
                 # RC4 idempotency: ONE name sequence shared by decl+def

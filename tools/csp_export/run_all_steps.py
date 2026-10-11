@@ -3,8 +3,16 @@
 
 用法:
   python tools/csp_export/run_all_steps.py [--fresh-export] [--no-commit]
-    --fresh-export  Step3 清状态全量重导 (重做场景)
-    --no-commit     Step5 只报告不提交
+                                          [--mechanical-only]
+    --fresh-export     Step3 清状态全量重导 (重做场景)
+    --no-commit        Step5 只报告不提交
+    --mechanical-only  机械幂等模式 (T4c 解耦, plan task 16 blocker ③):
+                       只跑 Step1-4 (+ step4 后的花括号/def-count 机械门)
+                       + census / census_hollow_bodies, 不进 Step5 —
+                       编译门、抽样验证、提交全部排除 (树在 T14 编译收敛前
+                       按设计是红的; 机械幂等证明 = step1-4 产物哈希 +
+                       census, 不需要编译门)。--skip-compile-gate 为同义
+                       别名。默认 (无此旗标) 全量含编译门, 行为不变。
 
 各步细节见 step1_csp.py / step2_canon.py / step3_export.py /
 step4_bodies.py / step5_baseline.py 的 docstring。
@@ -62,7 +70,10 @@ def main():
     only = None
     if '--only' in extra:
         only = extra[extra.index('--only') + 1]
-    for s in STEPS:
+    mechanical = ('--mechanical-only' in extra
+                  or '--skip-compile-gate' in extra)
+    steps = STEPS[:-1] if mechanical else STEPS
+    for s in steps:
         if only and only not in s:
             continue
         print(f'======== {s} ========')
@@ -78,7 +89,23 @@ def main():
         if s == 'step4_bodies.py':
             assert_braces_balanced()
             assert_defs_monotonic()
-    print('======== ALL STEPS DONE ========')
+    if mechanical:
+        print('======== census (mechanical-only: step5 compile gate / '
+              'sampling / commit excluded — T14 owns the compile gate) '
+              '========')
+        for c in ('census.py', 'census_hollow_bodies.py'):
+            print(f'---- {c} ----')
+            r = subprocess.run([sys.executable,
+                                str(ROOT / 'tools' / 'csp_export' / c)],
+                               cwd=str(ROOT))
+            if r.returncode != 0:
+                print(f'!! {c} 退出码 {r.returncode} — 链停止')
+                sys.exit(r.returncode)
+        print('======== MECHANICAL STEPS DONE '
+              '(run without --mechanical-only for the step5 compile gate) '
+              '========')
+    else:
+        print('======== ALL STEPS DONE ========')
 
 
 if __name__ == '__main__':

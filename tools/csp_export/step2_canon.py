@@ -21,6 +21,19 @@ log 驱动的 stage 需要 census 输入: --log <path> 传入 (如 .omo/tu_error
 无条件运行 — 收敛树上为 no-op。硬编码 .omo census/cache 输入的 stage 在
 输入缺席时同样跳过并记账 (fresh clone 不硬失败)。
 
+S1 N1 债 ratchet (T4c blocker ①): gen_cpp_canon 保持 RC1 fail-loud 契约
+(占位成员拒绝发射 + 报告 + exit 1)。该 rc=1 在 T10 命名前是已知债
+(264K 占位成员), step2 采用 step4 同款 accounted-debt 策略 (I45/I61:
+容忍只绑 rc==1, 崩溃码永不入账):
+  * rc==1 + fresh 报告, total <= baseline + slack  -> 记账放行
+  * rc==1 + total 低于 baseline                    -> ratchet 自动收紧
+  * rc==1 + total 超出 baseline + slack            -> FAIL (真债务增长)
+  * rc==1 而无 fresh 报告                          -> FAIL (拒绝猜测)
+  * 其他退出码                                     -> FAIL (崩溃非债)
+baseline 机器本地 (tools/step2_n1_baseline.json, 同 def_count_baseline 的
+gitignore 政策), 首跑 BOOTSTRAP 大声记账。SLACK 覆盖 step1 注册抖动
+(I62: ~±10/次, 跨日实测漂移 267), RA2_STEP2_N1_SLACK 可覆盖。
+
 stage 退出码非零 → 记账; 全部 stage 跑完后若存在失败, step2 以非零退出
 (fail-closed, 与 run_all_steps 的链停止语义一致)。
 
@@ -29,8 +42,12 @@ stage 实现在 _absorbed/step2_decl/*.py (单一权威, 禁止再复制逻辑)�
 """
 import argparse
 import hashlib
+import json
+import os
+import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -93,16 +110,80 @@ G3_SIGAUTH = [
     ('fix_static_this_mismatch', True, (), None),
     ('fix_c2671_static_decls', True, (), None),
 ]
-S5_MAX_ROUNDS = 3
+# T4c: 3 -> 5.  The block converges monotonically (per-round diffs shrink
+# 180 -> 22 -> 2 on the first post-HEAD run, probe evidence) but a fresh
+# tree needs more than 3 settling rounds for the big first-pass churn.
+# Semantics unchanged: PASS still requires a byte fixpoint.
+S5_MAX_ROUNDS = 5
+
+# ---- S1 N1-debt ratchet (accounted-debt policy, step4 parity) ------------
+N1_BASELINE = ROOT / 'tools' / 'step2_n1_baseline.json'
+N1_REPORT = (ROOT / '.omo' / 'unresolved_reports'
+             / 'gen_cpp_canon.unresolved.json')
+N1_SLACK = int(os.environ.get('RA2_STEP2_N1_SLACK', '512'))
+S1_ACCOUNT = ROOT / '.omo' / 'step2_stage_account.json'
 
 
-def _run_stage(name, args):
-    """Run one absorbed stage (subprocess, cwd=ROOT) and return (rc, tail)."""
-    r = subprocess.run([sys.executable, str(DEC / (name + '.py')), *args],
-                       cwd=str(ROOT), capture_output=True, text=True,
-                       encoding='utf-8', errors='replace', timeout=600)
-    out = ((r.stdout or '') + (r.stderr or '')).strip().splitlines()
-    return r.returncode, out[-2:] if out else []
+def _n1_baseline_read():
+    try:
+        return int(json.loads(
+            N1_BASELINE.read_text(encoding='utf-8'))['total'])
+    except (OSError, ValueError, KeyError):
+        return None
+
+
+def _n1_baseline_write(total):
+    N1_BASELINE.write_text(
+        json.dumps({'schema': 'step2-n1-ratchet/v1', 'total': total},
+                   indent=1), encoding='utf-8')
+
+
+def _n1_report_total(t0):
+    """Placeholder count from a FRESH RC1 unresolved report, else None.
+
+    _meta (with 'total') sits at the head of the report, so a bounded
+    head-read avoids parsing the ~170MB entry body on every run."""
+    try:
+        if not N1_REPORT.exists() or N1_REPORT.stat().st_mtime < t0:
+            return None
+        with N1_REPORT.open('r', encoding='utf-8', errors='replace') as f:
+            head = f.read(4096)
+        m = re.search(r"'total':\s*(\d+)", head)
+        if m:
+            return int(m.group(1))
+        return int(json.loads(N1_REPORT.read_text(encoding='utf-8'))
+                   ['_meta']['total'])
+    except (OSError, ValueError, KeyError):
+        return None
+
+
+def _is_transient_lock(out):
+    """L92: Defender real-time scan locks freshly-written files for seconds
+    after a write storm -- surfaces as rc=1 + PermissionError [Errno 13].
+    A transient lock must not fail the chain; retried with backoff."""
+    return ('PermissionError' in out and '[Errno 13]' in out)
+
+
+def _run_stage(name, args, retries=5):
+    """Run one absorbed stage (subprocess, cwd=ROOT) and return (rc, tail).
+    Errno 13 (transient Defender lock, L92) is retried with backoff; any
+    other failure returns immediately."""
+    delay = 1.0
+    for attempt in range(1, retries + 1):
+        r = subprocess.run([sys.executable, str(DEC / (name + '.py')), *args],
+                           cwd=str(ROOT), capture_output=True, text=True,
+                           encoding='utf-8', errors='replace', timeout=600)
+        full = (r.stdout or '') + (r.stderr or '')
+        out = full.strip().splitlines()
+        tail = out[-2:] if out else []
+        if (r.returncode == 0 or not _is_transient_lock(full)
+                or attempt == retries):
+            return r.returncode, tail
+        print(f'  - {name}: Errno 13 transient lock, retry '
+              f'{attempt}/{retries - 1} in {delay:.0f}s')
+        time.sleep(delay)
+        delay *= 2
+    return r.returncode, tail
 
 
 def _src_hash():
@@ -125,14 +206,79 @@ def main():
     args = ap.parse_args()
 
     failures = []
+    s1_accounted = []
     logargs = [args.log] if args.log else []
 
     if not args.skip_s1:
         print('[step2] S1 gen_cpp_canon')
-        r = subprocess.run([sys.executable,
-                            str(ROOT / 'tools/csp_export/gen_cpp_canon.py')],
-                           cwd=str(ROOT))
-        if r.returncode != 0:
+        t0 = time.time()
+        delay = 1.0
+        for attempt in range(1, 6):
+            r = subprocess.run([sys.executable,
+                                str(ROOT / 'tools/csp_export/'
+                                    'gen_cpp_canon.py')],
+                               cwd=str(ROOT), capture_output=True,
+                               text=True, encoding='utf-8',
+                               errors='replace', timeout=900)
+            s1_out = (r.stdout or '') + (r.stderr or '')
+            # RC1 fail-loud stays visible on the console (placeholders are
+            # never silent -- only their chain-fatality is ratcheted).
+            for ln in s1_out.split('\n'):
+                if 'UNRESOLVED REPORT' in ln or 'FAIL LOUD' in ln:
+                    print('  |', ln.strip())
+            if r.returncode == 0 or not _is_transient_lock(s1_out) \
+                    or attempt == 5:
+                break
+            print(f'  - S1: Errno 13 transient lock, retry '
+                  f'{attempt}/4 in {delay:.0f}s')
+            time.sleep(delay)
+            delay *= 2
+        if r.returncode == 0:
+            print('  - S1: ok')
+        elif r.returncode == 1:
+            # RC1 fail-loud contract: the generator refuses placeholders,
+            # writes the report and exits 1.  step2 accounts that known N1
+            # debt with a ratchet (fail only on INCREASE) -- the placeholders
+            # stay loud (report + accounting), the chain is not chain-fatal
+            # on the documented pre-T10 baseline (T4c blocker ①, I62).
+            total = _n1_report_total(t0)
+            if total is None:
+                print('  !! S1: rc=1 without a fresh unresolved report — '
+                      'refusing to guess (fail-closed)')
+                failures.append(('S1 gen_cpp_canon', 'no fresh N1 report'))
+            else:
+                base = _n1_baseline_read()
+                if base is None:
+                    _n1_baseline_write(total)
+                    print(f'  - S1: [account] N1 placeholder debt {total} — '
+                          'BOOTSTRAP ratchet baseline (RC1 report stays loud)')
+                    s1_accounted.append({'stage': 'S1 gen_cpp_canon',
+                                         'event': 'bootstrap',
+                                         'total': total})
+                elif total < base:
+                    _n1_baseline_write(total)
+                    print(f'  - S1: [account] N1 debt {base} -> {total} '
+                          '(decreased; ratchet tightened)')
+                    s1_accounted.append({'stage': 'S1 gen_cpp_canon',
+                                         'event': 'tighten',
+                                         'from': base, 'to': total})
+                elif total <= base + N1_SLACK:
+                    print(f'  - S1: [account] N1 placeholder debt {total} '
+                          f'(baseline {base}, +{total - base} within slack '
+                          f'{N1_SLACK}) — known N1 debt, chain lives')
+                    s1_accounted.append({'stage': 'S1 gen_cpp_canon',
+                                         'event': 'accounted',
+                                         'total': total, 'baseline': base})
+                else:
+                    print(f'  !! S1: N1 debt INCREASED {base} -> {total} '
+                          f'(+{total - base} > slack {N1_SLACK}) — supply '
+                          'semantic names or re-adjudicate the baseline')
+                    failures.append((
+                        'S1 gen_cpp_canon',
+                        f'N1 debt increased {base} -> {total}'))
+        else:
+            # T8 hardening (I45/I61): tolerance binds to the documented
+            # refuse exit (1).  A crash code is never 'known debt'.
             failures.append(('S1 gen_cpp_canon', r.returncode))
     else:
         print('[step2] S1 skipped (--skip-s1)')
@@ -169,18 +315,31 @@ def main():
               f'(re-run {len(applied)} applied stages, <= {S5_MAX_ROUNDS} rounds)')
         stable = False
         for rnd in range(1, S5_MAX_ROUNDS + 1):
-            h1 = _src_hash()
+            h0 = _src_hash()
+            hprev = h0
+            movers = []
             for name in applied:
                 _run_stage(name, logargs + ['--apply'])
-            if _src_hash() == h1:
+                hnow = _src_hash()
+                if hnow != hprev:
+                    movers.append(name)
+                hprev = hnow
+            if hprev == h0:
                 print(f'[step2] S5 PASS: round {rnd} byte-identical (fixpoint)')
                 stable = True
                 break
-            print(f'[step2] S5 round {rnd}: tree changed, re-running')
+            # per-stage mover attribution (diagnostic only; the PASS/FAIL
+            # criterion stays the round-boundary byte comparison)
+            print(f'[step2] S5 round {rnd}: tree changed (movers: '
+                  + (', '.join(movers) if movers else 'none') + ')')
         if not stable:
             print('[step2] S5 FAIL: no byte fixpoint within '
                   f'{S5_MAX_ROUNDS} rounds')
             failures.append(('S5 idempotency', 'non-convergent'))
+
+    if s1_accounted:
+        S1_ACCOUNT.write_text(json.dumps(s1_accounted, indent=1),
+                              encoding='utf-8')
 
     print(f'[step2] canon 声明流水线完成: stages applied={len(applied)} '
           f'failures={len(failures)}')
