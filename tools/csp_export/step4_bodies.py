@@ -282,13 +282,15 @@ def _g_loop():
         run('fix_c2352_recv.py', LOG, '--apply', script_dir=A,
             grep=('rewritten', 'receivers'))
         run('fix_c2660_max_arity.py', LOG, '--apply',
-            check=False, policy='account', grep=('extended', 'decls'))
+            check=False, policy='account', script_dir=A,
+            grep=('extended', 'decls'))
         run('fix_c2660_protos_arity.py', LOG, '--apply',
-            check=False, policy='account', grep=('extended', 'protos'))
+            check=False, policy='account', script_dir=A,
+            grep=('extended', 'protos'))
         run('fix_plateau.py', LOG, '--apply', script_dir=A,
             grep=('repaired', 'sites'))
         run('fix_scalar_indexed_members.py', LOG, '--apply',
-            check=False, policy='account',
+            check=False, policy='account', script_dir=A,
             grep=('declarations', 'members'))
         # post-fixer brace safety (single authority, cheap idempotent pass)
         run('fix_leaks_general.py', '--apply', script_dir=A,
