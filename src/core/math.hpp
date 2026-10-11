@@ -201,3 +201,23 @@ double Deg2Rad(double deg) noexcept;
 double Rad2Deg(double rad) noexcept;
 
 } // namespace gamemd::math
+
+namespace gamemd::Math
+{
+
+// Table-lookup math primitives from the original binary.
+// NOT std::sqrt/std::atan equivalents: both quantize through small tables and
+// carry the original's deliberate inaccuracies (RMG terrain shape depends on them).
+// Both rely on the process-global FPU rounding mode being chop-toward-zero
+// (_control87(_RC_CHOP) at startup), matching the original's fstp/_ftol semantics.
+double Sqrt(double x);    // 0x4CAC40
+double ArcTan(double x);  // 0x4CADE0
+
+// design: not a binary function — models the x87 `fyl2x` used inline at
+// 0x598126 (inside Random::Gaussian) under the process-global PC=53/RC=chop.
+// The real fyl2x is not correctly rounded (native x87 measurement: 7/20000
+// inputs land 1 ulp below the exact chopped value), so this implements the
+// unique deterministic semantics: exact ln(s) truncated toward zero to double.
+double LogChop(double s);
+
+} // namespace gamemd::Math
