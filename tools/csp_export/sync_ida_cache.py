@@ -7,6 +7,13 @@ stale — C++ and IDA sides then parse DIFFERENT texts and every CFG
 mismatches. This script rewrites each cache entry's `decompiled` from the
 fresh export block so both sides parse byte-identical pseudocode.
 
+I52 (T7/T8): verify_execution_flow.py:_cache_path reads the UNPADDED name
+`func_0x%X.json` while this script historically wrote only the PADDED
+`func_0x%08X.json` -- sync updates were invisible to the verifier.  Fix:
+entries are now written under BOTH names (unpadded = the verifier's
+canonical form; padded kept for gen_link_stubs.py).  Reads prefer the
+unpadded file and fall back to padded for legacy comparison.
+
 Usage: python tools/csp_export/sync_ida_cache.py [--apply]
 """
 import json
@@ -21,6 +28,12 @@ CACHE = ROOT / '.omo' / 'ida_cache'
 APPLY = '--apply' in sys.argv
 
 BLOCK_HEAD = re.compile(r'^// =+$')
+
+
+def cache_paths(addr):
+    """[unpadded (verifier canonical), padded (legacy)] — I52 dual-name."""
+    return [CACHE / ('func_0x%X.json' % addr),
+            CACHE / ('func_0x%08X.json' % addr)]
 
 blocks = {}
 for p in sorted(EXPORT.glob('*.cpp')):
@@ -56,13 +69,17 @@ print('fresh blocks:', len(blocks))
 CACHE.mkdir(exist_ok=True)
 updated = kept = 0
 for addr, (code, name) in blocks.items():
-    cf = CACHE / ('func_0x%08X.json' % addr)
+    unpadded, padded = cache_paths(addr)
     code_n = code + '\n'
-    if cf.exists():
-        try:
-            old = json.loads(cf.read_text(encoding='utf-8'))
-        except Exception:
-            old = {}
+    old = None
+    for cf in (unpadded, padded):
+        if cf.exists():
+            try:
+                old = json.loads(cf.read_text(encoding='utf-8'))
+                break
+            except Exception:
+                old = None
+    if old is not None:
         if (old.get('decompiled') or '').strip() == code.strip():
             kept += 1
             continue
@@ -77,8 +94,11 @@ for addr, (code, name) in blocks.items():
                'src': 'full_export sync (step3 redo)'}
     updated += 1
     if APPLY:
-        cf.write_text(json.dumps(rec, ensure_ascii=False, indent=1),
-                      encoding='utf-8')
+        # I52 dual-name write: unpadded (verify_execution_flow /
+        # audit_completed_quality) + padded (gen_link_stubs legacy form)
+        for cf in (unpadded, padded):
+            cf.write_text(json.dumps(rec, ensure_ascii=False, indent=1),
+                          encoding='utf-8')
 
 print(f'cache updated: {updated}, identical kept: {kept}')
 print('APPLIED' if APPLY else 'DRY RUN (use --apply)')
