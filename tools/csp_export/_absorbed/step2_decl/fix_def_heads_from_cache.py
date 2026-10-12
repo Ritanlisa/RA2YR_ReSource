@@ -181,6 +181,31 @@ for p in files:
         header_decls[(cls, mth)] = ', '.join('%s %s' % (t, n) for t, n in src)
         if [x[1] for x in src] == cur_n and len(src) == len(cur_n):
             continue                   # head already in sync (decl still recorded)
+        # I70: a SHRINK (cache truth names fewer params than the corpus
+        # head) must not orphan body references to the removed params --
+        # the positional rename map below only covers the surviving
+        # prefix, so any body use of a removed name (a3_2 et al) becomes
+        # a C2065 on the next build, every chain run.  Detect body
+        # references to the removed tail and REJECT the shrink (keep the
+        # wider, compiling head); rename/extend paths are unaffected.
+        if len(src) < len(cur_n):
+            d = 0
+            j = i
+            while j < len(out) and j < i + 4000:
+                d += out[j].count('{') - out[j].count('}')
+                if j > i and d <= 0:
+                    break
+                j += 1
+            dangling = sorted({o for o in cur_n[len(src):]
+                               if any(re.search(r'\b%s\b' % re.escape(o), out[k])
+                                      for k in range(i + 1, j))})
+            if dangling:
+                stats['shrink-rejected'] = stats.get('shrink-rejected', 0) + 1
+                if SAMPLE and shown[0] < 8:
+                    shown[0] += 1
+                    print('--- shrink-rejected %s:%d dangling=%s'
+                          % (p, i + 1, dangling))
+                continue
         # body param rename: old head names -> cache names (word-boundary,
         # within this def's brace-matched span)
         new_param_str = ', '.join('%s %s' % (t, n) for t, n in src)
