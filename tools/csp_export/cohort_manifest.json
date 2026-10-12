@@ -1,0 +1,2293 @@
+{
+ "schema": "reverse-cohort/v1",
+ "fixture": false,
+ "generated_utc": "2026-10-12T04:42:46Z",
+ "git_head": "1191482a05b6a1988dc77446002f4e138e3176be",
+ "tree_dirty_relevant": true,
+ "generator_mirror": {
+  "marker_regex": "REVERSE\\(\\s*(0x[0-9A-Fa-f]+)\\s*,\\s*\"([^\"]*)\"\\s*,\\s*\"([^\"]*)\"\\s*\\)",
+  "scan_dirs": [
+   "src",
+   "app"
+  ],
+  "comment_line_markers_skipped": true,
+  "unquoted_mode_args_invisible": true,
+  "log_sections": [
+   "Different",
+   "Captures",
+   "Same",
+   "NoneCalls"
+  ],
+  "per_function_call_cap": 50
+ },
+ "binaries": {
+  "gamemd_exe": {
+   "path": "D:/RA2MD\\gamemd.exe",
+   "exists": true,
+   "size": 4813072,
+   "sha256": "7b8a068535d6af06845edf95ae829b113d00c02909330e16f197426cd7db94b6",
+   "mtime_utc": "2005-03-17T16:53:46Z"
+  },
+  "hook_dll": {
+   "path": "D:/RA2MD\\hook_dll.dll",
+   "exists": true,
+   "size": 833024,
+   "sha256": "e45c3ffae6c1c741be29ba2f9e56748e0268b83eca26641f3b6095005ad9415d",
+   "mtime_utc": "2026-06-25T05:21:38Z"
+  },
+  "syringe_exe": {
+   "path": "D:/RA2MD\\Syringe.exe",
+   "exists": true,
+   "size": 425472,
+   "sha256": "6b565056909f6c4066c4199d35080bb6d36217123608080f9ed02585d19c4e8e",
+   "mtime_utc": "2024-07-28T11:26:34Z"
+  },
+  "exe_map": {
+   "path": "D:\\RA2YR_ReSource\\decompile-results\\gamemd.exe.map",
+   "exists": true,
+   "size": 5182905,
+   "sha256": "3901d78ed71ffb40ec0177f6993b1a1b2d357ad19b15096dac1e978f3bcdb5c3",
+   "mtime_utc": "2026-07-06T02:44:33Z"
+  }
+ },
+ "counts": {
+  "cohort": 0,
+  "capture_hooks": 0,
+  "none_markers": 358,
+  "invisible_markers": 6,
+  "duplicate_markers": 0
+ },
+ "cohort": [],
+ "capture_hooks": [],
+ "none_markers": [
+  {
+   "addr": "0x006C8C40",
+   "name": "Timer::GetTicks",
+   "file": "src/core/init_game.cpp",
+   "line": 128
+  },
+  {
+   "addr": "0x004355B0",
+   "name": "Palette::SixBitTo16Bit",
+   "file": "src/core/init_game.cpp",
+   "line": 138
+  },
+  {
+   "addr": "0x004A38D0",
+   "name": "LoadFileSHP",
+   "file": "src/core/init_game.cpp",
+   "line": 162
+  },
+  {
+   "addr": "0x0048D080",
+   "name": "Event::Dispatch",
+   "file": "src/core/init_game.cpp",
+   "line": 202
+  },
+  {
+   "addr": "0x005B40B0",
+   "name": "SearchMIXFile",
+   "file": "src/core/init_game.cpp",
+   "line": 363
+  },
+  {
+   "addr": "0x0052BA60",
+   "name": "InitGame",
+   "file": "src/core/init_game.cpp",
+   "line": 428
+  },
+  {
+   "addr": "0x004134A0",
+   "name": "GadgetGrid::InsertItem",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 9
+  },
+  {
+   "addr": "0x004135D0",
+   "name": "GadgetGrid::RemoveItem",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 15
+  },
+  {
+   "addr": "0x0041F230",
+   "name": "AITriggerTypeClass::HouseCredits",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 21
+  },
+  {
+   "addr": "0x0046CB60",
+   "name": "CampaignClass::CampaignClass",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 27
+  },
+  {
+   "addr": "0x0046CC90",
+   "name": "CampaignSelect::LookupByName",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 33
+  },
+  {
+   "addr": "0x0046CCD0",
+   "name": "CampaignClass::GetMapData",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 39
+  },
+  {
+   "addr": "0x0046CE10",
+   "name": "CampaignClass::LoadFromINIList",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 45
+  },
+  {
+   "addr": "0x0046CF80",
+   "name": "CampaignClass::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 51
+  },
+  {
+   "addr": "0x0046CFC0",
+   "name": "CampaignClass::Stat",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 57
+  },
+  {
+   "addr": "0x0046D000",
+   "name": "CampaignClass::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 63
+  },
+  {
+   "addr": "0x0046D050",
+   "name": "CampaignClass::Seek",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 69
+  },
+  {
+   "addr": "0x0046D070",
+   "name": "CampaignClass::StubReturn928",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 75
+  },
+  {
+   "addr": "0x0046D080",
+   "name": "CampaignClass::StubReturn10",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 81
+  },
+  {
+   "addr": "0x0046D090",
+   "name": "CampaignClass::DTOR",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 87
+  },
+  {
+   "addr": "0x0046D4A0",
+   "name": "Game::SendCampaignOptions",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 93
+  },
+  {
+   "addr": "0x0046DFD0",
+   "name": "CampaignScore::DialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 99
+  },
+  {
+   "addr": "0x0046FC00",
+   "name": "CampaignScore::ProcessScreen",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 105
+  },
+  {
+   "addr": "0x00470D30",
+   "name": "CampaignScreen::Init",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 111
+  },
+  {
+   "addr": "0x00471420",
+   "name": "CampaignScore::InitScoreScreenData",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 117
+  },
+  {
+   "addr": "0x00471500",
+   "name": "CampaignScore::Constructor_CampaignScoreClass",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 123
+  },
+  {
+   "addr": "0x00471520",
+   "name": "CampaignScore::Constructor_CampaignEndScoreClass",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 129
+  },
+  {
+   "addr": "0x0049C0D0",
+   "name": "LoadCampaignCoopSave",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 135
+  },
+  {
+   "addr": "0x0049C5A0",
+   "name": "CampaignClass::SaveProgress",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 141
+  },
+  {
+   "addr": "0x0049CCF0",
+   "name": "DecodeCampaignPlayerName",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 147
+  },
+  {
+   "addr": "0x0049D390",
+   "name": "LoadCoopCampaignSave",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 153
+  },
+  {
+   "addr": "0x0049D680",
+   "name": "SerializeCampaignOptions",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 159
+  },
+  {
+   "addr": "0x0049DB00",
+   "name": "CampaignClass::LoadFromINI",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 165
+  },
+  {
+   "addr": "0x0049E400",
+   "name": "CampaignClass::FindMission",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 171
+  },
+  {
+   "addr": "0x0049E4F0",
+   "name": "CampaignClass::GetValue",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 177
+  },
+  {
+   "addr": "0x0049ECD0",
+   "name": "CampaignClass::Constructor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 183
+  },
+  {
+   "addr": "0x0049F090",
+   "name": "CampaignClass::Constructor_0",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 189
+  },
+  {
+   "addr": "0x0049F740",
+   "name": "Dialog::MapDialogResource",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 195
+  },
+  {
+   "addr": "0x004A3C00",
+   "name": "CreditsScreen::Init",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 201
+  },
+  {
+   "addr": "0x004C3D00",
+   "name": "CreditsPower::DrawCreditsTextLine",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 207
+  },
+  {
+   "addr": "0x004C6140",
+   "name": "Menu::Reset",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 213
+  },
+  {
+   "addr": "0x004C83E0",
+   "name": "DialogFunc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 219
+  },
+  {
+   "addr": "0x004E12F0",
+   "name": "GadgetClass::Construct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 225
+  },
+  {
+   "addr": "0x004E1390",
+   "name": "GadgetClass::Dtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 231
+  },
+  {
+   "addr": "0x004E1450",
+   "name": "DialogControl::Hide",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 237
+  },
+  {
+   "addr": "0x004E1460",
+   "name": "DialogControl::Show",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 243
+  },
+  {
+   "addr": "0x004E1470",
+   "name": "DialogControl::IsHidden",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 249
+  },
+  {
+   "addr": "0x004E1550",
+   "name": "GadgetClass::ClearState",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 255
+  },
+  {
+   "addr": "0x004E48E0",
+   "name": "MapSkirmishDialogPlayerToControl",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 261
+  },
+  {
+   "addr": "0x004E49A0",
+   "name": "SetupSkirmishSpawnLocations",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 267
+  },
+  {
+   "addr": "0x004E4EC0",
+   "name": "Dialog::SideIDToIndex",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 273
+  },
+  {
+   "addr": "0x004E59A0",
+   "name": "Dialog::OptionIDToIndex",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 279
+  },
+  {
+   "addr": "0x004E5E20",
+   "name": "SetupLobbyPlayerSlotDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 285
+  },
+  {
+   "addr": "0x004E8A20",
+   "name": "VectorClass_ptr_CampaignClass::Destroy",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 291
+  },
+  {
+   "addr": "0x004E8A50",
+   "name": "VectorClass_ptr_CampaignClass::GetItemIndex",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 297
+  },
+  {
+   "addr": "0x004E8A70",
+   "name": "VectorClass_ptr_CampaignClass::Get",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 303
+  },
+  {
+   "addr": "0x004E8A80",
+   "name": "VectorClass_ptr_CampaignClass::Destroy_0",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 309
+  },
+  {
+   "addr": "0x004E8AB0",
+   "name": "VectorClass_ptr_CampaignClass::GetItemIndex_0",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 315
+  },
+  {
+   "addr": "0x004EC300",
+   "name": "VectorClass_ptr_CampaignClass::Add",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 321
+  },
+  {
+   "addr": "0x004EC340",
+   "name": "VectorClass_ptr_CampaignClass::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 327
+  },
+  {
+   "addr": "0x004EC3F0",
+   "name": "VectorClass_ptr_CampaignClass::Remove",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 333
+  },
+  {
+   "addr": "0x004EC420",
+   "name": "VectorClass_ptr_CampaignClass::GetSize",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 339
+  },
+  {
+   "addr": "0x004EC460",
+   "name": "VectorClass_ptr_CampaignClass::GetCapacity",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 345
+  },
+  {
+   "addr": "0x004EC480",
+   "name": "VectorClass_ptr_CampaignClass::SetCapacity",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 351
+  },
+  {
+   "addr": "0x004EC530",
+   "name": "VectorClass_ptr_CampaignClass::FindItemIndex",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 357
+  },
+  {
+   "addr": "0x004EC6E0",
+   "name": "VectorClass_ptr_CampaignClass::SetCapacity_0",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 363
+  },
+  {
+   "addr": "0x004EC790",
+   "name": "VectorClass_ptr_CampaignClass::FindItemIndex_0",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 369
+  },
+  {
+   "addr": "0x004F0200",
+   "name": "VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignClass___",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 375
+  },
+  {
+   "addr": "0x004F02A0",
+   "name": "VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass___",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 381
+  },
+  {
+   "addr": "0x004F1840",
+   "name": "ShowGameDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 387
+  },
+  {
+   "addr": "0x004F1CA0",
+   "name": "LoadFromINIGraphicMenu",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 393
+  },
+  {
+   "addr": "0x004F2300",
+   "name": "ProcessGraphicMenu",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 399
+  },
+  {
+   "addr": "0x004F2C70",
+   "name": "ParseINIAnimGadgetDefinition",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 405
+  },
+  {
+   "addr": "0x004F3090",
+   "name": "GraphicMenuAnimItem::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 411
+  },
+  {
+   "addr": "0x004F3140",
+   "name": "ParseINIGadgetDefinition",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 417
+  },
+  {
+   "addr": "0x004F3640",
+   "name": "GraphicMenuImageItem::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 423
+  },
+  {
+   "addr": "0x004F3690",
+   "name": "GraphicMenuImageItem::Load",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 429
+  },
+  {
+   "addr": "0x004F37A0",
+   "name": "GraphicMenuImageItem::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 435
+  },
+  {
+   "addr": "0x004F3A50",
+   "name": "GraphicMenuItem::Constructor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 441
+  },
+  {
+   "addr": "0x004F3A70",
+   "name": "GraphicMenuItem::Dtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 447
+  },
+  {
+   "addr": "0x004F3AD0",
+   "name": "GraphicMenuAnimItem::StubReturnFalse",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 453
+  },
+  {
+   "addr": "0x004F3AE0",
+   "name": "GraphicMenuAnimItem::Stub",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 459
+  },
+  {
+   "addr": "0x004F3AF0",
+   "name": "GraphicMenuItem_Destru::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 465
+  },
+  {
+   "addr": "0x004F3B00",
+   "name": "GraphicMenuAnimItem::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 471
+  },
+  {
+   "addr": "0x004F3EE0",
+   "name": "GraphicMenuShortcutItem::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 477
+  },
+  {
+   "addr": "0x004F3FD0",
+   "name": "GraphicMenuAnimItem::Constructor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 483
+  },
+  {
+   "addr": "0x00510FB0",
+   "name": "PlayerSlot::NameToDialogID",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 489
+  },
+  {
+   "addr": "0x0052CB90",
+   "name": "Credits::Screen",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 495
+  },
+  {
+   "addr": "0x0052D640",
+   "name": "CampaignMenu::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 501
+  },
+  {
+   "addr": "0x0052D9A0",
+   "name": "MenuSelect",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 507
+  },
+  {
+   "addr": "0x0052EC00",
+   "name": "CampaignSelect::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 513
+  },
+  {
+   "addr": "0x00531A00",
+   "name": "CreditsScreen::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 519
+  },
+  {
+   "addr": "0x00531CC0",
+   "name": "MainMenu::Screen",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 525
+  },
+  {
+   "addr": "0x00531F60",
+   "name": "MainMenu::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 531
+  },
+  {
+   "addr": "0x0053E730",
+   "name": "IsMessageDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 537
+  },
+  {
+   "addr": "0x00557BE0",
+   "name": "GadgetClass::InitControls",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 543
+  },
+  {
+   "addr": "0x00558810",
+   "name": "ShowSaveLoadDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 549
+  },
+  {
+   "addr": "0x00558DD0",
+   "name": "SaveLoadDialog::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 555
+  },
+  {
+   "addr": "0x005596A0",
+   "name": "LoadSaveDialog::FillList",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 561
+  },
+  {
+   "addr": "0x00561400",
+   "name": "VideoSettingsDialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 567
+  },
+  {
+   "addr": "0x00596300",
+   "name": "SkirmishMapGen::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 573
+  },
+  {
+   "addr": "0x005AE460",
+   "name": "CampaignClass::ReleaseSubobjectsAndDestruct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 579
+  },
+  {
+   "addr": "0x005B49B0",
+   "name": "ModemGuest::Dialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 585
+  },
+  {
+   "addr": "0x005B4B10",
+   "name": "GameSetupDialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 591
+  },
+  {
+   "addr": "0x005B4EE0",
+   "name": "ModemGuest::InitDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 597
+  },
+  {
+   "addr": "0x005B5BC0",
+   "name": "Dialog::InitializeGameSettings",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 603
+  },
+  {
+   "addr": "0x005B7090",
+   "name": "Game::StartModemMultiplayer",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 609
+  },
+  {
+   "addr": "0x005B77E0",
+   "name": "ModemHost::Dialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 615
+  },
+  {
+   "addr": "0x005B82F0",
+   "name": "ModemHost::InitDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 621
+  },
+  {
+   "addr": "0x005C1090",
+   "name": "MultiplayerBattleTeam::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 627
+  },
+  {
+   "addr": "0x005C10B0",
+   "name": "MultiplayerBattleTeam::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 633
+  },
+  {
+   "addr": "0x005C21D0",
+   "name": "CampaignCoop::Setup",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 639
+  },
+  {
+   "addr": "0x005C2500",
+   "name": "Campaign::SetupMovie",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 645
+  },
+  {
+   "addr": "0x005C5120",
+   "name": "CoopCampaignVector::Seek",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 651
+  },
+  {
+   "addr": "0x005C55F0",
+   "name": "CoopCampaignVector::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 657
+  },
+  {
+   "addr": "0x005C5630",
+   "name": "CoopCampaignVector::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 663
+  },
+  {
+   "addr": "0x005C56E0",
+   "name": "CoopCampaignVector::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 669
+  },
+  {
+   "addr": "0x005C5710",
+   "name": "CoopCampaignVector::Read",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 675
+  },
+  {
+   "addr": "0x005C5750",
+   "name": "CoopCampaignVector::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 681
+  },
+  {
+   "addr": "0x005C5A80",
+   "name": "CoopCampaignVector::Construct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 687
+  },
+  {
+   "addr": "0x005C60D0",
+   "name": "ShowConfirmDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 693
+  },
+  {
+   "addr": "0x005C94C0",
+   "name": "MultiplayerObserverTeam::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 699
+  },
+  {
+   "addr": "0x005CA110",
+   "name": "Game::GetMultiplayerScoreScreenBar",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 705
+  },
+  {
+   "addr": "0x005CA680",
+   "name": "MultiplayerSiege::Read",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 711
+  },
+  {
+   "addr": "0x005CA6D0",
+   "name": "MultiplayerSiege::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 717
+  },
+  {
+   "addr": "0x005CA7E0",
+   "name": "MultiplayerSiege::StubReturnFalse",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 723
+  },
+  {
+   "addr": "0x005CA800",
+   "name": "MultiplayerSiege::ProcessTurn",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 729
+  },
+  {
+   "addr": "0x005CA9B0",
+   "name": "MultiplayerSiege::CheckStatus",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 735
+  },
+  {
+   "addr": "0x005CAAC0",
+   "name": "MultiplayerSiege::GetResult",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 741
+  },
+  {
+   "addr": "0x005CAE70",
+   "name": "MultiplayerSiegeDefenderTeam::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 747
+  },
+  {
+   "addr": "0x005CF760",
+   "name": "CampaignClass::DeleteAndZero",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 753
+  },
+  {
+   "addr": "0x005CF810",
+   "name": "CampaignClass::Check",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 759
+  },
+  {
+   "addr": "0x005D2770",
+   "name": "CampaignProperties_WorldDominationTour_22::Seek",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 765
+  },
+  {
+   "addr": "0x005D2900",
+   "name": "CampaignProperties_WorldDominationTour_22::Read",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 771
+  },
+  {
+   "addr": "0x005D2940",
+   "name": "CampaignProperties_WorldDominationTour_22::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 777
+  },
+  {
+   "addr": "0x005D2E00",
+   "name": "CampaignClass::Constructor_1",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 783
+  },
+  {
+   "addr": "0x005D3490",
+   "name": "Dialog::ShowMessageBox",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 789
+  },
+  {
+   "addr": "0x005D4D50",
+   "name": "MessageLoop",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 795
+  },
+  {
+   "addr": "0x005D4E70",
+   "name": "DialogQueue::PushEntry",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 801
+  },
+  {
+   "addr": "0x005D4ED0",
+   "name": "DialogQueue::RemoveEntry",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 807
+  },
+  {
+   "addr": "0x005D5DC0",
+   "name": "Dialog::GetModeNeg2",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 813
+  },
+  {
+   "addr": "0x005D5DD0",
+   "name": "Dialog::GetMode3",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 819
+  },
+  {
+   "addr": "0x005D6350",
+   "name": "DialogClass::GetFlag",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 825
+  },
+  {
+   "addr": "0x005D8100",
+   "name": "VectorClass_ptr_MultiplayerTeam::Get",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 831
+  },
+  {
+   "addr": "0x005D82F0",
+   "name": "VectorClass_ptr_MultiplayerTeam::Add",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 837
+  },
+  {
+   "addr": "0x005D8330",
+   "name": "VectorClass_ptr_MultiplayerTeam::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 843
+  },
+  {
+   "addr": "0x005D83E0",
+   "name": "VectorClass_ptr_MultiplayerTeam::Remove",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 849
+  },
+  {
+   "addr": "0x005D8410",
+   "name": "VectorClass_ptr_MultiplayerTeam::GetSize",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 855
+  },
+  {
+   "addr": "0x005D8450",
+   "name": "VectorClass_ptr_MultiplayerTeam::GetCapacity",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 861
+  },
+  {
+   "addr": "0x005D86D0",
+   "name": "GameInit::InitMultiplayerModes",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 867
+  },
+  {
+   "addr": "0x005D8860",
+   "name": "MultiplayerTeamVector::Destruct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 873
+  },
+  {
+   "addr": "0x005D88B0",
+   "name": "MultiplayerModeVector::Destruct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 879
+  },
+  {
+   "addr": "0x005D8900",
+   "name": "MultiplayerModeVector2::Destruct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 885
+  },
+  {
+   "addr": "0x005D89F0",
+   "name": "MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 891
+  },
+  {
+   "addr": "0x005DBF50",
+   "name": "UpdateMultiplayerPlayerOptions",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 897
+  },
+  {
+   "addr": "0x005DD8A0",
+   "name": "SynchronizeMultiplayerGameStart",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 903
+  },
+  {
+   "addr": "0x005DF180",
+   "name": "SkirmishDialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 909
+  },
+  {
+   "addr": "0x005E26C0",
+   "name": "Dialog::FindGameUI",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 915
+  },
+  {
+   "addr": "0x005E2700",
+   "name": "Dialog::ShowMessage",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 921
+  },
+  {
+   "addr": "0x005E2790",
+   "name": "Dialog::ShowStatusText",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 927
+  },
+  {
+   "addr": "0x005E2CD0",
+   "name": "ShowDialogConfirm",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 933
+  },
+  {
+   "addr": "0x005E2EF0",
+   "name": "SetDialogPlayerName",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 939
+  },
+  {
+   "addr": "0x005E2F60",
+   "name": "Dialog::ShowPlayerName",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 944
+  },
+  {
+   "addr": "0x005E3D10",
+   "name": "SetupNetworkLobbyDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 950
+  },
+  {
+   "addr": "0x005E6920",
+   "name": "SkirmishSetup::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 956
+  },
+  {
+   "addr": "0x005E7160",
+   "name": "HandleMultiplayerMapSelection",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 962
+  },
+  {
+   "addr": "0x005E9950",
+   "name": "Dialog::MapPlayerIDToIndex",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 968
+  },
+  {
+   "addr": "0x005E9E70",
+   "name": "SetupSkirmishPlayerSlots",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 974
+  },
+  {
+   "addr": "0x005EB7B0",
+   "name": "UpdateMultiplayerLobbySlots",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 980
+  },
+  {
+   "addr": "0x005EBC00",
+   "name": "DisableCampaignSlots",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 986
+  },
+  {
+   "addr": "0x005EC030",
+   "name": "MultiplayerLobby::FillSlots",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 991
+  },
+  {
+   "addr": "0x005EC9F0",
+   "name": "PlayerSkirmishSlotHandler",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 997
+  },
+  {
+   "addr": "0x005ED400",
+   "name": "SaveMultiplayerLobbySettings",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1003
+  },
+  {
+   "addr": "0x005EE350",
+   "name": "Dialog::RefreshDialogsGame",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1009
+  },
+  {
+   "addr": "0x005EEE40",
+   "name": "SkirmishVector::PushBack",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1015
+  },
+  {
+   "addr": "0x005EF4E0",
+   "name": "Network::ModemConnectionDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1021
+  },
+  {
+   "addr": "0x005F0070",
+   "name": "CleanupCampaignResources",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1027
+  },
+  {
+   "addr": "0x005F2950",
+   "name": "Dialog::RunModemDialing",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1033
+  },
+  {
+   "addr": "0x005F3450",
+   "name": "Dialog::CheckButtonState",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1039
+  },
+  {
+   "addr": "0x00600630",
+   "name": "Gadget::InitProperties",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1045
+  },
+  {
+   "addr": "0x00600C70",
+   "name": "NavigateDialogTab",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1051
+  },
+  {
+   "addr": "0x00600CA0",
+   "name": "ValidateDialogEvent",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1057
+  },
+  {
+   "addr": "0x006015E0",
+   "name": "CtlDialogColorHandler",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1063
+  },
+  {
+   "addr": "0x00601D20",
+   "name": "ValidateDialogControl",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1069
+  },
+  {
+   "addr": "0x00602490",
+   "name": "IsValidActionDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1075
+  },
+  {
+   "addr": "0x00602AE0",
+   "name": "Dialog::IsSpecialTemplate",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1081
+  },
+  {
+   "addr": "0x00602DD0",
+   "name": "IsDialogControlHidden",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1087
+  },
+  {
+   "addr": "0x00603040",
+   "name": "LoadCampaignMissionData",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1093
+  },
+  {
+   "addr": "0x006035F0",
+   "name": "DispatchDialogControlAction",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1099
+  },
+  {
+   "addr": "0x00603870",
+   "name": "GetDialogControlSHP",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1105
+  },
+  {
+   "addr": "0x00603AA0",
+   "name": "IsDialogWindowClass",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1110
+  },
+  {
+   "addr": "0x00603D30",
+   "name": "CacheDialogInvalidate",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1116
+  },
+  {
+   "addr": "0x00604060",
+   "name": "GetSkirmishMenuOwnerName",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1122
+  },
+  {
+   "addr": "0x006040B0",
+   "name": "DlgSkirmishMenuProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1128
+  },
+  {
+   "addr": "0x00606740",
+   "name": "SetDialogActiveFlag",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1134
+  },
+  {
+   "addr": "0x00606800",
+   "name": "Dialog::MapControlToAction",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1140
+  },
+  {
+   "addr": "0x00607FD0",
+   "name": "Dialog::StopBink",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1146
+  },
+  {
+   "addr": "0x00608070",
+   "name": "Dialog::IdleProcess",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1152
+  },
+  {
+   "addr": "0x00608260",
+   "name": "SkirmishSetup::PlayButtonClickAnim",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1158
+  },
+  {
+   "addr": "0x00608380",
+   "name": "SaveLoadDialog::LookupDialogHash",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1164
+  },
+  {
+   "addr": "0x006083E0",
+   "name": "SaveLoadDialog::FindDialogTemplate",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1170
+  },
+  {
+   "addr": "0x00608500",
+   "name": "ControlDialogHandler",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1176
+  },
+  {
+   "addr": "0x00608CD0",
+   "name": "IsDialogControlVisible",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1182
+  },
+  {
+   "addr": "0x00609730",
+   "name": "GetDialogDefaultButton",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1188
+  },
+  {
+   "addr": "0x00609E20",
+   "name": "FilterDialogButtonAction",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1194
+  },
+  {
+   "addr": "0x0060A330",
+   "name": "Dialog::HandleTabKey",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1200
+  },
+  {
+   "addr": "0x0060A5B0",
+   "name": "Dialog::DispatchEvent",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1206
+  },
+  {
+   "addr": "0x0060AAA0",
+   "name": "Dialog::EnumAndCleanup",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1212
+  },
+  {
+   "addr": "0x0060AAB0",
+   "name": "GadgetClass::FindByWindow",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1218
+  },
+  {
+   "addr": "0x0060B950",
+   "name": "Control::RepositionControlsDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1224
+  },
+  {
+   "addr": "0x0060C0C0",
+   "name": "RepositionDialogControls",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1230
+  },
+  {
+   "addr": "0x0060C4A0",
+   "name": "SkirmishDialog::ResizeDialogAndEnum",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1236
+  },
+  {
+   "addr": "0x0060C540",
+   "name": "Control::CheckControlTypeDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1242
+  },
+  {
+   "addr": "0x0060CBA0",
+   "name": "CampaignScore::LookupDialogHash",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1248
+  },
+  {
+   "addr": "0x0060CC00",
+   "name": "CampaignScore::FindDialogTemplate",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1254
+  },
+  {
+   "addr": "0x0060CF00",
+   "name": "Control::CreateControlDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1260
+  },
+  {
+   "addr": "0x0060D380",
+   "name": "Campaign::Screen",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1266
+  },
+  {
+   "addr": "0x0060D450",
+   "name": "DialogClass::RegisterWinClasses",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1272
+  },
+  {
+   "addr": "0x0060F320",
+   "name": "Dialog::SubclassEditControl",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1278
+  },
+  {
+   "addr": "0x0060F4B0",
+   "name": "InitializeDialogControls",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1284
+  },
+  {
+   "addr": "0x0060F760",
+   "name": "Dialog::InitWindow",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1290
+  },
+  {
+   "addr": "0x0060F9A0",
+   "name": "Dialog::InitializeControls",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1296
+  },
+  {
+   "addr": "0x00610360",
+   "name": "Dialog::DestroyDialogSystem",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1302
+  },
+  {
+   "addr": "0x00610570",
+   "name": "DestroyDialogChildWindow",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1308
+  },
+  {
+   "addr": "0x006137D0",
+   "name": "Dialog::TabControlPaint",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1314
+  },
+  {
+   "addr": "0x0061F210",
+   "name": "InitDialogCountryIcons",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1320
+  },
+  {
+   "addr": "0x006213A0",
+   "name": "Dialog::Resize",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1326
+  },
+  {
+   "addr": "0x006223C0",
+   "name": "DestroyDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1332
+  },
+  {
+   "addr": "0x00622650",
+   "name": "CreateDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1338
+  },
+  {
+   "addr": "0x00622720",
+   "name": "Dialog::Destroy",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1344
+  },
+  {
+   "addr": "0x00622800",
+   "name": "Dialog::Show",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1350
+  },
+  {
+   "addr": "0x00622820",
+   "name": "SetupDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1356
+  },
+  {
+   "addr": "0x00622B50",
+   "name": "BaseDialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1362
+  },
+  {
+   "addr": "0x00623120",
+   "name": "Dialog::PumpMessages",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1368
+  },
+  {
+   "addr": "0x00623340",
+   "name": "DialogControl::Constructor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1374
+  },
+  {
+   "addr": "0x006233A0",
+   "name": "Dialog::CleanupTree",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1380
+  },
+  {
+   "addr": "0x00623560",
+   "name": "GadgetClass::SetTooltip",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1386
+  },
+  {
+   "addr": "0x00623610",
+   "name": "DialogClass::CopyTemplateStruct",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1392
+  },
+  {
+   "addr": "0x00623E40",
+   "name": "GetDialogText",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1398
+  },
+  {
+   "addr": "0x00624110",
+   "name": "SimpleDialogControl::Constructor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1404
+  },
+  {
+   "addr": "0x006241F0",
+   "name": "RunDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1410
+  },
+  {
+   "addr": "0x00624930",
+   "name": "Dialog::UpdateControlState",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1416
+  },
+  {
+   "addr": "0x00624BE0",
+   "name": "Dialog::GrowBuffer",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1422
+  },
+  {
+   "addr": "0x00624CA0",
+   "name": "Dialog::BindGadgetData",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1428
+  },
+  {
+   "addr": "0x00630C10",
+   "name": "PhoneEditorDialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1434
+  },
+  {
+   "addr": "0x006586D0",
+   "name": "ShowDiplomacyDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1440
+  },
+  {
+   "addr": "0x00663DB0",
+   "name": "LaunchMultiplayerHost",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1446
+  },
+  {
+   "addr": "0x00671EA0",
+   "name": "Dialog::ReadMultiplayerDialogSettings",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1452
+  },
+  {
+   "addr": "0x00672AE0",
+   "name": "RulesClass::ReadMultiplayerDefaults",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1458
+  },
+  {
+   "addr": "0x00684370",
+   "name": "WaitForMultiplayerLoadSync",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1464
+  },
+  {
+   "addr": "0x00688380",
+   "name": "Multiplayer::FindStartPositions",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1470
+  },
+  {
+   "addr": "0x0068C2B0",
+   "name": "Multiplayer::CopyDataArray",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1476
+  },
+  {
+   "addr": "0x00695FD0",
+   "name": "NetworkDialog::InitModemSettings",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1482
+  },
+  {
+   "addr": "0x006964C0",
+   "name": "NetworkDialog::Dispatch",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1488
+  },
+  {
+   "addr": "0x00696610",
+   "name": "NetworkDialog::UpdateListBox",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1494
+  },
+  {
+   "addr": "0x00698CB0",
+   "name": "Game::DumpMultiplayerGameInfo",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1500
+  },
+  {
+   "addr": "0x00699450",
+   "name": "ScenarioClass::SaveMultiplayerSettings",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1506
+  },
+  {
+   "addr": "0x0069AE90",
+   "name": "Multiplayer::ShowProgress",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1512
+  },
+  {
+   "addr": "0x006D1770",
+   "name": "MouseClass::ToggleContextGadget",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1518
+  },
+  {
+   "addr": "0x00723EA0",
+   "name": "GadgetClass::Show",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1524
+  },
+  {
+   "addr": "0x00723EB0",
+   "name": "GadgetClass::Hide",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1530
+  },
+  {
+   "addr": "0x00723EC0",
+   "name": "GadgetClass::ProcessMouseOver",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1536
+  },
+  {
+   "addr": "0x0072D300",
+   "name": "CampaignScore::LoadCampaignScoreAssetsGame",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1542
+  },
+  {
+   "addr": "0x0072D460",
+   "name": "CampaignScore::LoadScreenAssets",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1548
+  },
+  {
+   "addr": "0x0072D730",
+   "name": "Game::LoadMultiplayerScoreAssets",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1554
+  },
+  {
+   "addr": "0x00764B90",
+   "name": "CampaignConstructorWDT",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1560
+  },
+  {
+   "addr": "0x007656D0",
+   "name": "Campaign_WorldDominationTour_16::Seek",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1566
+  },
+  {
+   "addr": "0x00765700",
+   "name": "Campaign_WorldDominationTour_24::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1572
+  },
+  {
+   "addr": "0x00765710",
+   "name": "Campaign_WorldDominationTour_16::Constructor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1578
+  },
+  {
+   "addr": "0x00765740",
+   "name": "Campaign_WorldDominationTour_16::Constructor_0",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1584
+  },
+  {
+   "addr": "0x00765770",
+   "name": "Campaign_WorldDominationTour_16::Constructor_1",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1590
+  },
+  {
+   "addr": "0x007657F0",
+   "name": "Campaign_WorldDominationTour_16::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1596
+  },
+  {
+   "addr": "0x00765840",
+   "name": "Campaign_WorldDominationTour_16::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1602
+  },
+  {
+   "addr": "0x00765960",
+   "name": "Campaign_WorldDominationTour_16::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1608
+  },
+  {
+   "addr": "0x00765990",
+   "name": "Campaign_WorldDominationTour_16::Read",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1614
+  },
+  {
+   "addr": "0x007659D0",
+   "name": "Campaign_WorldDominationTour_16::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1620
+  },
+  {
+   "addr": "0x00765B40",
+   "name": "Campaign_WorldDominationTour_24::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1626
+  },
+  {
+   "addr": "0x00765B50",
+   "name": "_VectorCursor_V_rc_ptr_VConflict_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1632
+  },
+  {
+   "addr": "0x0076F0F0",
+   "name": "CampaignProperties_WorldDominationTour_22::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1638
+  },
+  {
+   "addr": "0x0076F1A0",
+   "name": "CampaignProperties_WorldDominationTour_22::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1644
+  },
+  {
+   "addr": "0x0076F1B0",
+   "name": "CampaignProperties_WorldDominationTour_22::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1650
+  },
+  {
+   "addr": "0x00773E90",
+   "name": "WebBrowser::ShowDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1656
+  },
+  {
+   "addr": "0x00775690",
+   "name": "ScreenDialogToClient",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1662
+  },
+  {
+   "addr": "0x00775700",
+   "name": "CreateDialogIndirect",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1668
+  },
+  {
+   "addr": "0x007757E0",
+   "name": "CloseDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1674
+  },
+  {
+   "addr": "0x00775940",
+   "name": "Dialog::FindByHandle",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1680
+  },
+  {
+   "addr": "0x007759B0",
+   "name": "Dialog::FindByPtr",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1686
+  },
+  {
+   "addr": "0x007759E0",
+   "name": "MessageDialogLoopAlt",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1692
+  },
+  {
+   "addr": "0x00775B10",
+   "name": "Dialog::GetCurrent",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1698
+  },
+  {
+   "addr": "0x00775B20",
+   "name": "Dialog::GetCurrentType",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1704
+  },
+  {
+   "addr": "0x00775BA0",
+   "name": "Dialog::GetField",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1710
+  },
+  {
+   "addr": "0x00775BC0",
+   "name": "DialogClass::Reposition",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1716
+  },
+  {
+   "addr": "0x00776490",
+   "name": "HitDialogTest",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1722
+  },
+  {
+   "addr": "0x00777060",
+   "name": "Dialog::RestoreParent",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1728
+  },
+  {
+   "addr": "0x00777080",
+   "name": "SetDialogParent",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1734
+  },
+  {
+   "addr": "0x0077A700",
+   "name": "GadgetClass::TrackState",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1740
+  },
+  {
+   "addr": "0x0077D820",
+   "name": "Dialog::UpdateGameUI",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1746
+  },
+  {
+   "addr": "0x0077D840",
+   "name": "ShowWOLLobbyDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1752
+  },
+  {
+   "addr": "0x0077D940",
+   "name": "Network::IsMultiplayerActive",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1758
+  },
+  {
+   "addr": "0x007983E0",
+   "name": "Setup2DlgProcMultiplayer",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1764
+  },
+  {
+   "addr": "0x007988C0",
+   "name": "GameModeDlgProcMultiplayer",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1770
+  },
+  {
+   "addr": "0x00799D10",
+   "name": "Dialog::CloseAll",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1776
+  },
+  {
+   "addr": "0x0079D720",
+   "name": "WOLLoginDialogProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1782
+  },
+  {
+   "addr": "0x0079DB50",
+   "name": "ChatDialog::DlgProc",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1788
+  },
+  {
+   "addr": "0x0079F140",
+   "name": "GameOptionsScreenWOL",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1794
+  },
+  {
+   "addr": "0x007AC630",
+   "name": "WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1800
+  },
+  {
+   "addr": "0x007AC970",
+   "name": "WonlineStringDialogControl_12::ClearBuffer",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1806
+  },
+  {
+   "addr": "0x007AC9A0",
+   "name": "WonlineStringDialogControl_12::PointerToIndex",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1812
+  },
+  {
+   "addr": "0x007AC9C0",
+   "name": "WonlineStringDialogControl_12::Seek",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1818
+  },
+  {
+   "addr": "0x007AD090",
+   "name": "WonlineStringDialogControl_12::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1824
+  },
+  {
+   "addr": "0x007AD0D0",
+   "name": "WonlineStringDialogControl_12::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1830
+  },
+  {
+   "addr": "0x007AD180",
+   "name": "WonlineStringDialogControl_12::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1836
+  },
+  {
+   "addr": "0x007AD1B0",
+   "name": "WonlineStringDialogControl_12::Read",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1842
+  },
+  {
+   "addr": "0x007AD1F0",
+   "name": "WonlineStringDialogControl_12::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1848
+  },
+  {
+   "addr": "0x007AD210",
+   "name": "WonlineStringDialogControl_12::SetCapacity",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1854
+  },
+  {
+   "addr": "0x007AD2C0",
+   "name": "WonlineStringDialogControl_12::FindItem",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1860
+  },
+  {
+   "addr": "0x007AD3C0",
+   "name": "WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfoStruct___",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1866
+  },
+  {
+   "addr": "0x007AD440",
+   "name": "WonlineStringDialogControl_28::ddtor",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1872
+  },
+  {
+   "addr": "0x007AD460",
+   "name": "WonlineStringDialogControl_28::Read",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1878
+  },
+  {
+   "addr": "0x007AD480",
+   "name": "WonlineStringDialogControl_28::Write",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1884
+  },
+  {
+   "addr": "0x007AD610",
+   "name": "WonlineStringDialogControl_28::StubReturnFalse",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1890
+  },
+  {
+   "addr": "0x007AD620",
+   "name": "WonlineStringDialogControl_28::AddRef",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1896
+  },
+  {
+   "addr": "0x007AD640",
+   "name": "WonlineStringDialogControl_28::Release",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1902
+  },
+  {
+   "addr": "0x007AFB90",
+   "name": "StartWDTCampaign",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1908
+  },
+  {
+   "addr": "0x007C866E",
+   "name": "EndDialog",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1914
+  },
+  {
+   "addr": "0x007C8680",
+   "name": "DialogBoxParamA",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1920
+  },
+  {
+   "addr": "0x007C8686",
+   "name": "DialogBoxIndirectParamA",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1926
+  },
+  {
+   "addr": "0x007C86F2",
+   "name": "GetMenu",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1932
+  },
+  {
+   "addr": "0x007C8704",
+   "name": "CreateDialogParamA",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1938
+  },
+  {
+   "addr": "0x007C8722",
+   "name": "IsDialogMessageA",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1944
+  },
+  {
+   "addr": "0x007C87A0",
+   "name": "CreateDialogIndirectParamA",
+   "file": "src/core/menu_globals_gen.cpp",
+   "line": 1950
+  },
+  {
+   "addr": "0x0055D360",
+   "name": "GameFrameLoop",
+   "file": "src/core/menu_select.cpp",
+   "line": 68
+  },
+  {
+   "addr": "0x0055CFD0",
+   "name": "GameFrameCheck",
+   "file": "src/core/menu_select.cpp",
+   "line": 70
+  },
+  {
+   "addr": "0x0048C8B0",
+   "name": "MainGameFrame",
+   "file": "src/core/menu_select.cpp",
+   "line": 72
+  },
+  {
+   "addr": "0x0052FEC0",
+   "name": "Screen::Capture",
+   "file": "src/core/menu_select.cpp",
+   "line": 90
+  },
+  {
+   "addr": "0x004F4780",
+   "name": "Frame::Present",
+   "file": "src/core/menu_select.cpp",
+   "line": 94
+  },
+  {
+   "addr": "0x0055FAA0",
+   "name": "Options::Screen_Save",
+   "file": "src/core/menu_select.cpp",
+   "line": 733
+  },
+  {
+   "addr": "0x00560480",
+   "name": "NetworkOptions::DlgProc",
+   "file": "src/core/menu_select.cpp",
+   "line": 799
+  },
+  {
+   "addr": "0x0055FC80",
+   "name": "Options::Screen_Dialog",
+   "file": "src/core/menu_select.cpp",
+   "line": 832
+  },
+  {
+   "addr": "0x00618D40",
+   "name": "Options::DialogProc",
+   "file": "src/core/menu_select.cpp",
+   "line": 913
+  },
+  {
+   "addr": "0x005FB320",
+   "name": "HotkeyOptions::DlgProc",
+   "file": "src/core/menu_select.cpp",
+   "line": 1079
+  },
+  {
+   "addr": "0x0061EF70",
+   "name": "FormatHotkeyDisplayString",
+   "file": "src/core/menu_select.cpp",
+   "line": 1126
+  },
+  {
+   "addr": "0x005FBEF0",
+   "name": "ShowHotkeyOptionsDialog",
+   "file": "src/core/menu_select.cpp",
+   "line": 1169
+  },
+  {
+   "addr": "0x006B6230",
+   "name": "ShowAudioSettingsDialog",
+   "file": "src/core/menu_select.cpp",
+   "line": 1194
+  },
+  {
+   "addr": "0x0053F1F0",
+   "name": "Multiplayer::Screen",
+   "file": "src/core/menu_select.cpp",
+   "line": 1204
+  },
+  {
+   "addr": "0x006AE3F0",
+   "name": "Skirmish::Setup_DlgProc",
+   "file": "src/core/menu_select.cpp",
+   "line": 1217
+  },
+  {
+   "addr": "0x006AE6E0",
+   "name": "Skirmish::SetupGame",
+   "file": "src/core/menu_select.cpp",
+   "line": 1255
+  },
+  {
+   "addr": "0x006ACEE0",
+   "name": "DialogSkirmishFunc_UpdateMultiEngineer",
+   "file": "src/core/menu_select.cpp",
+   "line": 1274
+  },
+  {
+   "addr": "0x006AE2C0",
+   "name": "ShowSkirmishSetupScreen",
+   "file": "src/core/menu_select.cpp",
+   "line": 1285
+  },
+  {
+   "addr": "0x0048CCC0",
+   "name": "MainGame",
+   "file": "src/core/menu_select.cpp",
+   "line": 1552
+  },
+  {
+   "addr": "0x00530000",
+   "name": "LoadExpansionMixFiles",
+   "file": "src/misc/rules.cpp",
+   "line": 45
+  },
+  {
+   "addr": "0x00410260",
+   "name": "AbstractClass::QueryInterface",
+   "file": "src/object/abstract.cpp",
+   "line": 29
+  },
+  {
+   "addr": "0x00421B60",
+   "name": "ClipRectIntersection",
+   "file": "src/render/surface.cpp",
+   "line": 83
+  },
+  {
+   "addr": "0x007BC2B0",
+   "name": "ClipLine",
+   "file": "src/render/surface.cpp",
+   "line": 157
+  },
+  {
+   "addr": "0x004C1A90",
+   "name": "DSurface::BlitWhole",
+   "file": "src/render/surface.cpp",
+   "line": 334
+  },
+  {
+   "addr": "0x00473C50",
+   "name": "CCFileClass::Open",
+   "file": "src/system/cc_file.cpp",
+   "line": 32
+  },
+  {
+   "addr": "0x00473CE0",
+   "name": "CCFileClass::Reset",
+   "file": "src/system/cc_file.cpp",
+   "line": 93
+  },
+  {
+   "addr": "0x005301A0",
+   "name": "MixFileClass::Bootstrap",
+   "file": "src/system/mix_file.cpp",
+   "line": 426
+  }
+ ],
+ "invisible_markers": [
+  {
+   "addr": "0x0052F620",
+   "file": "src/app/cmdline.cpp",
+   "line": 15,
+   "raw": "REVERSE(0x52F620, \"ParseCommandLine: full CLI parser (1531B)\", false)"
+  },
+  {
+   "addr": "0x0052F620",
+   "file": "src/app/cmdline.cpp",
+   "line": 16,
+   "raw": "REVERSE(0x52f620, \"ParseCommandLine: IDA verified\", false) // auto-marked completed"
+  },
+  {
+   "addr": "0x006BB9A0",
+   "file": "src/app/main.cpp",
+   "line": 8,
+   "raw": "REVERSE(0x6bb9a0, \"WinMain: IDA verified\", false) // auto-marked completed"
+  },
+  {
+   "addr": "0x0052F620",
+   "file": "app/cmdline.cpp",
+   "line": 15,
+   "raw": "REVERSE(0x52F620, \"ParseCommandLine: full CLI parser (1531B)\", false)"
+  },
+  {
+   "addr": "0x0052F620",
+   "file": "app/cmdline.cpp",
+   "line": 16,
+   "raw": "REVERSE(0x52f620, \"ParseCommandLine: IDA verified\", false) // auto-marked completed"
+  },
+  {
+   "addr": "0x006BB9A0",
+   "file": "app/main.cpp",
+   "line": 8,
+   "raw": "REVERSE(0x6bb9a0, \"WinMain: IDA verified\", false) // auto-marked completed"
+  }
+ ],
+ "duplicate_markers": [],
+ "accounting_snapshot": {
+  "signals": {
+   "functions": 19078,
+   "completed_true": 12679,
+   "translated_true": 9670,
+   "done_true": 0
+  },
+  "backfill": {
+   "total": 12679,
+   "by_status": {
+    "direct": 5492,
+    "downgrade": 4891,
+    "needs-retranslation": 29,
+    "no-cls": 1241,
+    "no-body": 1020,
+    "renamed": 6
+   }
+  }
+ },
+ "rules": {
+  "sections": {
+   "Different": "function with >=1 logged call whose RE return != original; lands here on ANY single mismatch",
+   "Captures": "Capture-mode hook records; input/output observation only, NO comparison -- never counted as Same",
+   "Same": "Inject/Replace hook, >=1 logged call, zero mismatches among logged calls; coverage = first <=50 calls per function (write_entry cap)",
+   "NoneCalls": "marker never invoked in the run; no behavioral evidence"
+  },
+  "completed_is_not_same": true,
+  "done_requires": "cohort member AND log section Same AND this parser exit 0",
+  "order": "compile -> verify(exec-flow) -> compare(runtime) -> complete",
+  "join_for_same_member": {
+   "code_record": "backfill status in {direct, renamed} with body_file",
+   "verify_record": "signals note contains verify PASS, or verified_after_reopen=true",
+   "complete_record": "signals completed=true"
+  },
+  "exit_codes": {
+   "0": "CERTIFIED",
+   "2": "MANIFEST/USAGE",
+   "3": "EVIDENCE-INSUFFICIENT",
+   "4": "COMPARISON-MISMATCH",
+   "5": "ACCOUNTING-VIOLATION"
+  }
+ }
+}
