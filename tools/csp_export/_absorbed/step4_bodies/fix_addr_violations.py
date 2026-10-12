@@ -263,10 +263,18 @@ def real_mem_rewrite(text, cls, env=None):
                  (mtab.get(this_cls) or {}).get('members', {}).items()
                  if mm.get('name')}
         var_info = {}   # var -> ('rel', K) | ('cls', C)
+        # I64: the `&` on the this->M branch is LOAD-BEARING. With `&?`
+        # a member VALUE read (`v = this->M`, M a pointer member) was
+        # recorded as an address-of member ('rel', off(M)), so later
+        # `*(v + N)` composed to this+off(M)+N and minted u32_ fillers
+        # for offsets that are the member's POINTED-TO data, not layout
+        # (gap2_global_defs.cpp Team_Helper: v4 = this->M22048 read the
+        # array base value; the loop write *(v6+4) through v6 = v4+8*i
+        # became `this->u32_5624 = 1` -- silent semantic corruption).
         assign_re = re.compile(
             r'^\s*([a-z]\w*)\s*=\s*(?:\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)\s*)?'
             r'(?:\(?\s*this\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)'
-            r'|&?\s*\(?\s*this->([A-Za-z_]\w*))')
+            r'|&\s*\(?\s*this->([A-Za-z_]\w*))')
         ebp_decl_re = re.compile(
             r'^\s*(?:int|_DWORD|unsigned int|char|_BYTE|long|unsigned long|'
             r'short|unsigned short)\s+([a-z]\w*)\s*;.*//\s*ebp')
@@ -305,7 +313,14 @@ def real_mem_rewrite(text, cls, env=None):
                 out_lines.append(tln)
                 continue
             # var-to-var alias: propagate the source's tracking (v3 = v2)
-            im2 = re.match(r'^\s*([a-z]\w*)\s*=\s*([a-z]\w*)\s*[;)]?', tln)
+            # I64: anchored -- `v6 = v4 + 8 * i` matched as a pure alias
+            # `v6 = v4` here (unanchored [;)]? let any suffix through),
+            # silently dropping the variable offset so *(v6 + 4) composed
+            # to a FIXED member and minted u32_ fillers (0x504882 loop
+            # write became `this->u32_5624 = 1`).  A real alias ends the
+            # statement right after the source var.
+            im2 = re.match(r'^\s*([a-z]\w*)\s*=\s*([a-z]\w*)\s*(?:;|\)|$)',
+                           tln)
             if im2 and im2.group(2) in var_info:
                 var_info[im2.group(1)] = var_info[im2.group(2)]
                 out_lines.append(tln)
