@@ -43,12 +43,12 @@ from collections import defaultdict, deque, Counter
 
 try:
     import idaapi, idautils, idc, ida_funcs, ida_bytes, ida_xref, ida_ua
-    import ida_segment, ida_name, ida_nalt, ida_idp, ida_typeinf
+    import ida_segment, ida_name, ida_nalt, ida_idp, ida_typeinf, ida_lines
 except ImportError:
     # 离线导入（verify_extract_output.py 复用纯逻辑时 IDA 不可用）
     idaapi = idautils = idc = ida_funcs = None
     ida_bytes = ida_xref = ida_ua = ida_segment = None
-    ida_name = ida_nalt = ida_idp = ida_typeinf = None
+    ida_name = ida_nalt = ida_idp = ida_typeinf = ida_lines = None
 
 # ============================================================
 # 0. Environment config (F1: PROJ_ROOT 基于 __file__ 解析)
@@ -78,6 +78,20 @@ DRY_RUN = (
     or "--dry-run" in getattr(idc, "ARGV", [])
     or os.environ.get("RA2YR_DRY_RUN") == "1"
 )
+
+# X2: 采样范围（T14X_SAMPLE_RANGE="0xSTART-0xEND"，默认关闭）——小样本验证专用。
+# 设置时: 骨架锁 CC / 约束主循环 / 调用图 只处理 [START,END) 内的函数；导出产物
+# 加 .sample 后缀（raw_constraints.rtti.sample.json / call_graph.rtti.sample.json /
+# extracted_cc.sample.json），manifest 写 type_infer_run_manifest.sample.json ——
+# 不触碰生产产物。生产运行必须确保该环境变量已清除（py_eval os.environ.pop）。
+SAMPLE_RANGE = None
+_sr_env = os.environ.get("T14X_SAMPLE_RANGE")
+if _sr_env and "-" in _sr_env:
+    try:
+        _sr_a, _sr_b = _sr_env.strip().split("-", 1)
+        SAMPLE_RANGE = (int(_sr_a, 16), int(_sr_b, 16))
+    except ValueError:
+        SAMPLE_RANGE = None
 
 # signals.json 提前加载（Step 2 CC 判定 / Step 6 命名 / Step 8 改名保护共用）
 SIG_SYMBOLS = {}
@@ -1508,6 +1522,431 @@ _B6_REG_STRONG = frozenset({
 })
 
 
+# ============================================================
+# X2 (2026-10-12): MEMBER_ACCESS / PTR_ARITH —— 成员访问 + 指针算术约束
+# （纯逻辑，模块级定义，离线可导入测试：test_x2_member_ptr.py）
+# 设计基线（用户裁决 Q1: gamemd.exe 为唯一可信数据源; X2 任务书 D1-D7）:
+#   - MEMBER_ACCESS 基址命名复用函数 this 聚合变量 <func>:this（D1）——
+#     原始寄存器名与 this 域无 ASSIGN 边连通（既有 _has_to 守卫抑制入口
+#     `mov reg, ecx` 的 ASSIGN 边），引擎无法从裸寄存器解析类；<func>:this
+#     经 FUNC_PARAM / 成员 ASSIGN / vtable 锚链在 CSP 图中解析类。
+#   - class_regs 保守追踪（D2）: 仅 thiscall 函数以 this 别名集为种子；
+#     仅 `mov R, S`（双 32 位寄存器）传播；一切其它写（含子寄存器写）杀除。
+#     过杀安全（丢覆盖），漏杀危险（假类指针）→ 宁多勿少。
+#   - MEMBER_ACCESS 只认 [B] / [B±imm]（无索引寄存器）；lea 不发射（无
+#     访问宽度语义，D3——地址计算走 PTR_ARITH）；宽度 1/2/4，qword(8)/
+#     不可判定不发射（计入 skipped_width8 / width_unknown unresolved）。
+#   - PTR_ARITH（D4）: add/sub/lea/imul/shl，寄存器限 eax/ebx/ecx/edx/esi/edi；
+#     复合 lea [B+idx*S+off] 发射两条边（ADD 与 SCALE——同一 to 的多条边
+#     语义为"可加贡献"）；门控 = from/to ∈ mem_base_regs（函数内任一内存
+#     操作数基址寄存器集，pre-scan 构建）。
+# ============================================================
+
+_X2_P6 = frozenset({"eax", "ebx", "ecx", "edx", "esi", "edi"})
+
+_X2_SUBREG = {
+    "al": "eax", "ah": "eax", "ax": "eax",
+    "bl": "ebx", "bh": "ebx", "bx": "ebx",
+    "cl": "ecx", "ch": "ecx", "cx": "ecx",
+    "dl": "edx", "dh": "edx", "dx": "edx",
+    "si": "esi", "di": "edi", "bp": "ebp", "sp": "esp",
+}
+
+# 简单内存操作数: [B] / [B+imm] / [B-imm]（无索引寄存器；imm = 0x.. / ..h / 裸 hex/dec）
+_X2_MEM_SIMPLE = re.compile(
+    r"^\[\s*([a-z]{2,3})\s*"
+    r"(?:([+-])\s*((?:0x[0-9a-f]+)|(?:[0-9a-f]+h)|(?:[0-9a-f]+)))?\s*\]$"
+)
+# 索引形式: [B+idx*S(±off)] / [idx*S(±off)]
+_X2_MEM_INDEX = re.compile(
+    r"^\[\s*(?:([a-z]{2,3})\s*\+\s*)?([a-z]{2,3})\s*\*\s*([1248])\s*"
+    r"(?:([+-])\s*((?:0x[0-9a-f]+)|(?:[0-9a-f]+h)|(?:[0-9a-f]+)))?\s*\]$"
+)
+# 双寄存器: [B1+B2]
+_X2_MEM_TWOREG = re.compile(r"^\[\s*([a-z]{2,3})\s*\+\s*([a-z]{2,3})\s*\]$")
+_X2_SEG_PREFIX = re.compile(r"^(?:cs|ds|es|fs|gs|ss):")
+
+
+def _x2_strip_size_prefix(txt):
+    """X2: 剥离段前缀与 size 前缀；返回 (body, size_word|None)。
+
+    IDA 9.2 形态: `dword ptr [esi+21Ch]` / `byte ptr [esi+4]`；
+    段前缀（`ds:`）可出现于 size 前或后——循环剥离直至稳定。
+    """
+    t = (txt or "").strip().lower()
+    pfx = None
+    for _ in range(3):
+        t2 = _X2_SEG_PREFIX.sub("", t)
+        m = _RE_SIZE_PREFIX.match(t2)
+        if m:
+            pfx = m.group(1)
+            t2 = t2[m.end():]
+        if t2 == t:
+            break
+        t = t2
+    return t, pfx
+
+
+def _x2_parse_num(s):
+    """X2: 位移/立即数字面量解析（IDA 形态: `21Ch` / `0x21C` / `4`）。
+
+    含 a-f 无后缀按 hex（IDA 对 hex 恒带 h 或 0x，此处兜底）；≥0x80000000
+    归一为 32 位有符号（负位移语义）。不可解析 → None。
+    """
+    if not s:
+        return None
+    s = s.strip()
+    try:
+        low = s.lower()
+        if low.startswith("0x"):
+            v = int(s, 16)
+        elif low.endswith("h"):
+            v = int(s[:-1], 16)
+        elif re.search(r"[a-f]", low):
+            v = int(s, 16)
+        else:
+            v = int(s, 10)
+    except ValueError:
+        return None
+    if v >= 0x80000000:
+        v -= 0x100000000
+    return v
+
+
+def _x2_parse_mem_operand(txt):
+    """X2: 内存操作数解析（纯逻辑；size 前缀须先经 _x2_strip_size_prefix 剥离）。
+
+    返回:
+      ("simple", base, off)                  —— [B] / [B±imm]
+      ("index", base|None, idx, scale, off)  —— [B+idx*S(±off)] / [idx*S(±off)]
+      ("tworeg", b1, b2)                     —— [B1+B2]
+      None                                   —— 非内存操作数 / 未识别形态
+    """
+    txt = (txt or "").strip().lower()
+    m = _X2_MEM_SIMPLE.match(txt)
+    if m:
+        base = m.group(1)
+        if base not in X86_REGS:
+            return None
+        off = 0
+        if m.group(2):
+            n = _x2_parse_num(m.group(3))
+            if n is None:
+                return None
+            off = n if m.group(2) == "+" else -n
+        return ("simple", base, off)
+    m = _X2_MEM_INDEX.match(txt)
+    if m:
+        base, idx, scale = m.group(1), m.group(2), int(m.group(3))
+        if idx not in X86_REGS or (base and base not in X86_REGS):
+            return None
+        off = 0
+        if m.group(4):
+            n = _x2_parse_num(m.group(5))
+            if n is None:
+                return None
+            off = n if m.group(4) == "+" else -n
+        return ("index", base, idx, scale, off)
+    m = _X2_MEM_TWOREG.match(txt)
+    if m:
+        if m.group(1) not in X86_REGS or m.group(2) not in X86_REGS:
+            return None
+        return ("tworeg", m.group(1), m.group(2))
+    return None
+
+
+def _x2_mem_operand_base(txt):
+    """X2: 内存操作数基址寄存器（pre-scan 用）——`[B...` 的首寄存器。"""
+    body, _ = _x2_strip_size_prefix(txt)
+    m = re.match(r"^\[\s*([a-z]{2,3})(?![a-z])", body)
+    if m and m.group(1) in X86_REGS:
+        return m.group(1)
+    return None
+
+
+def _x2_reg_size(r):
+    """X2: 寄存器名 → 访问字节宽（1/2/4）；非通用寄存器 → None。"""
+    r = (r or "").strip().lower()
+    if r in ("al", "ah", "bl", "bh", "cl", "ch", "dl", "dh"):
+        return 1
+    if r in ("ax", "bx", "cx", "dx", "si", "di", "bp", "sp"):
+        return 2
+    if r in ("eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"):
+        return 4
+    return None
+
+
+# 无 size 前缀时默认 4 字节的助记（32 位代码 dword 主路径；D3）
+_X2_DEFAULT4_MNEMS = frozenset({
+    "mov", "add", "sub", "adc", "sbb", "and", "or", "xor", "cmp", "test",
+    "inc", "dec", "neg", "not", "xchg", "push", "call", "jmp", "shl", "shr",
+    "sar", "sal", "rol", "ror", "imul", "fld", "fst", "fstp",
+})
+
+
+def _x2_mem_width(op_txt, other_txt, mnem):
+    """X2: 内存操作数访问宽度（1/2/4/8）；不可判定 → None。
+
+    优先级（D3）: 显式 size 前缀 > movzx/movsx 源前缀 > 对侧寄存器宽度 >
+    助记默认（32 位 dword=4）。qword=8 由调用方计 skipped_width8 后跳过。
+    """
+    _body, pfx = _x2_strip_size_prefix(op_txt)
+    if pfx == "byte":
+        return 1
+    if pfx == "word":
+        return 2
+    if pfx == "dword":
+        return 4
+    if pfx == "qword":
+        return 8
+    if mnem in ("movzx", "movsx", "movsxd"):
+        if other_txt:
+            _ob, opfx = _x2_strip_size_prefix(other_txt)
+            if opfx == "byte":
+                return 1
+            if opfx == "word":
+                return 2
+        return None  # 源宽度必须显式——缺前缀不臆测
+    if other_txt:
+        _ob, _ = _x2_strip_size_prefix(other_txt)
+        _sz = _x2_reg_size(_ob)
+        if _sz in (1, 2, 4):
+            return _sz
+    if mnem in _X2_DEFAULT4_MNEMS:
+        return 4
+    return None
+
+
+def _x2_imm_int(t):
+    """X2: 立即数文本 → int（`_is_imm_text` 命中后使用；不可解析 → None）。"""
+    if not t:
+        return None
+    s = t.strip()
+    neg = s.startswith("-")
+    if neg:
+        s = s[1:]
+    v = _x2_parse_num(s)
+    if v is None:
+        return None
+    if neg:
+        v = -abs(v)
+    return v
+
+
+def _x2_disasm_text(ea):
+    """X2: 反汇编文本（去颜色标签；采样证据用）。离线/失败 → ""。"""
+    try:
+        return ida_lines.tag_remove(idc.generate_disasm_line(ea, 0) or "")
+    except Exception:
+        return ""
+
+
+def _x2_reg_writes(mnem, op0, op1):
+    """X2 (D2): 指令写寄存器集合（保守，宁多勿少）。
+
+    返回 32 位父寄存器名 frozenset。子寄存器写（al/ax/...）映射到父。
+    call 清 caller-saved（eax/ecx/edx）；div/idiv/mul 清 eax/edx；
+    cdq→edx；xchg 双写；fnstsw→eax；f 系其余只读；jcc/cmp/test/push 只读；
+    未知助记默认杀 op0（过杀安全）。lea 在 _B4_WRITES_OP0 内（内部指针杀除）。
+    """
+    o0 = (op0 or "").strip().lower()
+    o1 = (op1 or "").strip().lower()
+    if o0.startswith("offset "):
+        o0 = o0[7:].strip()
+    if o1.startswith("offset "):
+        o1 = o1[7:].strip()
+    p0 = _X2_SUBREG.get(o0, o0 if o0 in _REG32_NAMES else None)
+    p1 = _X2_SUBREG.get(o1, o1 if o1 in _REG32_NAMES else None)
+    if mnem == "call":
+        return frozenset(("eax", "ecx", "edx"))
+    if mnem in ("div", "idiv"):
+        w = {"eax", "edx"}
+        if p0:
+            w.add(p0)
+        return frozenset(w)
+    if mnem == "mul":
+        return frozenset(("eax", "edx"))
+    if mnem == "imul":
+        if o1:
+            return frozenset((p0,)) if p0 else frozenset()
+        return frozenset(("eax", "edx"))
+    if mnem == "cdq":
+        return frozenset(("edx",))
+    if mnem == "cwde":
+        return frozenset(("eax",))
+    if mnem in ("cpuid", "rdtsc"):
+        return frozenset(("eax", "ebx", "ecx", "edx"))
+    if mnem == "xchg":
+        w = set()
+        if p0:
+            w.add(p0)
+        if p1:
+            w.add(p1)
+        return frozenset(w)
+    if mnem in ("fnstsw", "fstsw"):
+        return frozenset(("eax",))
+    if mnem in ("fnsave", "frstor"):
+        return frozenset(("eax", "ebx", "ecx", "edx"))
+    if mnem in ("cmp", "test", "push", "nop", "int3", "hlt", "leave",
+                "ret", "retn", "wait", "fwait", "bt", "prefetch",
+                "prefetchnta", "ud2"):
+        return frozenset()
+    if mnem.startswith("j"):
+        return frozenset()
+    if mnem.startswith("f"):
+        return frozenset()
+    if mnem in _B4_WRITES_OP0 or mnem.startswith("set") or mnem.startswith("cmov"):
+        return frozenset((p0,)) if p0 else frozenset()
+    # 保守默认: 未知助记按写 op0 处理（过杀安全）
+    return frozenset((p0,)) if p0 else frozenset()
+
+
+def _x2_update_class_regs(class_regs, mnem, op0, op1, reset_to=None):
+    """X2 (D2): 类指针寄存器集线性扫描更新（纯逻辑）。返回新集合。
+
+    传播: 仅 `mov R, S`（双 32 位寄存器，无子寄存器/内存/偏移）且 S ∈ 集合。
+    杀除: _x2_reg_writes 全集（先杀后传播——杀前集合判定 S 归属，自拷
+    `mov R, R` 保持 R）。
+    块终结重置（2026-10-12 小样本实证修复）: 早期退出尾声（`pop esi/edi` +
+    `retn`）在直序扫描中会误杀别名寄存器，导致 retn 之后（跳转目标块——
+    别名实际仍活）的成员访问全部漏发射。`ret/retn/int3/hlt/ud2` 的线性
+    后继必为跳转目标（该路径从不经过 ret），此时重置到函数入口别名集
+    （reset_to，None 时不重置）。`jmp` 不重置——其线性后继可能真属于
+    同路径（杀后 jmp 再用的情景），重置会产生假阳性（D2 宁过杀）。
+    """
+    if reset_to is not None and mnem in ("ret", "retn", "int3", "hlt", "ud2"):
+        return set(reset_to)
+    w = _x2_reg_writes(mnem, op0, op1)
+    prev = class_regs
+    if w:
+        class_regs = class_regs - w
+    if mnem == "mov" and op0 and op1:
+        o0 = op0.strip().lower()
+        o1 = op1.strip().lower()
+        if o0 in _X2_P6 and o1 in _X2_P6 and o1 in prev:
+            class_regs = class_regs | {o0}
+    return class_regs
+
+
+def _x2_scan_insn(mnem, op0, op1, op2, class_regs, mem_base_regs,
+                  this_var, param0_regs, addr_hex):
+    """X2: 单指令 MEMBER_ACCESS / PTR_ARITH 扫描（纯逻辑，离线可测）。
+
+    返回 (edges, unresolved, width8)：
+      edges       —— 追加型约束 dict 列表（addr 已填）
+      unresolved  —— [(reason, base, off)]（未发射的 [B±imm]/索引形态）
+      width8      —— qword 宽度命中数（1|2|4 词汇外，跳过）
+    设计纪律: 纯追加——不读不写既有 c/既有分支状态；调用方在主循环
+    B4/A0-S2 之后调用（D5，防 _has_to 误判抑制 *def@ 写点标记）。
+    """
+    edges = []
+    unresolved = []
+    width8 = 0
+    if not op0 or mnem in ("nop", "int3"):
+        return edges, unresolved, width8
+    ops = [op0, op1]
+    if op2:
+        ops.append(op2)
+
+    # ---- MEMBER_ACCESS: 仅 [B] / [B±imm]（无索引），B ∈ class_regs；lea 跳过 ----
+    if mnem != "lea":
+        for _i, _raw in enumerate(ops):
+            if not _raw or "[" not in _raw:
+                continue
+            _parsed = _x2_parse_mem_operand(_x2_strip_size_prefix(_raw)[0])
+            if not _parsed:
+                continue
+            if _parsed[0] != "simple":
+                if _parsed[0] == "index":
+                    unresolved.append(("index_form", _parsed[1] or _parsed[2],
+                                       _parsed[-1]))
+                else:  # tworeg: [B1+B2] 非成员直访形态
+                    unresolved.append(("tworeg", _parsed[1], 0))
+                continue
+            _base, _off = _parsed[1], _parsed[2]
+            if _base in class_regs:
+                if not _a1_valid_member_off(_off):
+                    unresolved.append(("bad_disp", _base, _off))
+                    continue
+                _other = ops[1 - _i] if _i < 2 else ops[0]
+                _w = _x2_mem_width(_raw, _other, mnem)
+                if _w == 8:
+                    width8 += 1
+                    continue
+                if _w not in (1, 2, 4):
+                    unresolved.append(("width_unknown", _base, _off))
+                    continue
+                edges.append({
+                    "type": "MEMBER_ACCESS",
+                    "base": this_var,
+                    "offset": _off,
+                    "width": _w,
+                    "addr": addr_hex,
+                })
+            else:
+                if _base in ("esp", "ebp"):
+                    unresolved.append(("esp_ebp_base", _base, _off))
+                elif _base in param0_regs:
+                    unresolved.append(("param0_alias", _base, _off))
+                else:
+                    unresolved.append(("other_reg", _base, _off))
+
+    # ---- PTR_ARITH （D4: 寄存器限 6 个 GPR；门控 from/to ∈ mem_base_regs） ----
+    if mnem in ("add", "sub") and op0 and op1:
+        _r0, _r1 = op0.strip().lower(), op1.strip().lower()
+        if _r0 in _X2_P6 and _r0 in mem_base_regs:
+            _op = "ADD" if mnem == "add" else "SUB"
+            if _r1 in _X2_P6:
+                edges.append({"type": "PTR_ARITH", "from": _r0, "op": _op,
+                              "imm": _r1, "to": _r0, "addr": addr_hex})
+            elif _is_imm_text(_r1):
+                _iv = _x2_imm_int(_r1)
+                if _iv is not None:
+                    edges.append({"type": "PTR_ARITH", "from": _r0, "op": _op,
+                                  "imm": _iv, "to": _r0, "addr": addr_hex})
+    elif mnem == "lea" and op0 and op1:
+        _r0 = op0.strip().lower()
+        if _r0 in _X2_P6:
+            _parsed = _x2_parse_mem_operand(_x2_strip_size_prefix(op1)[0])
+            _gate = _r0 in mem_base_regs
+            if _parsed and _parsed[0] == "simple":
+                _b, _off = _parsed[1], _parsed[2]
+                if _off != 0 and _b in _X2_P6 and (_gate or _b in mem_base_regs):
+                    edges.append({"type": "PTR_ARITH", "from": _b,
+                                  "op": "ADD" if _off > 0 else "SUB",
+                                  "imm": abs(_off), "to": _r0, "addr": addr_hex})
+            elif _parsed and _parsed[0] == "index":
+                _b, _idx, _s, _off = _parsed[1], _parsed[2], _parsed[3], _parsed[4]
+                if _idx in _X2_P6 and (_gate or (_b and _b in mem_base_regs)):
+                    # 复合 [B+idx*S+off]: 两条边（同一 to 的可加贡献）
+                    edges.append({"type": "PTR_ARITH", "from": _idx, "op": "SCALE",
+                                  "imm": _s, "to": _r0, "addr": addr_hex})
+                    if _b and _b in _X2_P6:
+                        edges.append({"type": "PTR_ARITH", "from": _b, "op": "ADD",
+                                      "imm": _off, "to": _r0, "addr": addr_hex})
+            elif _parsed and _parsed[0] == "tworeg":
+                _b1, _b2 = _parsed[1], _parsed[2]
+                if _b1 in _X2_P6 and _b2 in _X2_P6 and \
+                        (_gate or _b1 in mem_base_regs or _b2 in mem_base_regs):
+                    edges.append({"type": "PTR_ARITH", "from": _b1, "op": "ADD",
+                                  "imm": _b2, "to": _r0, "addr": addr_hex})
+    elif mnem == "imul" and op0 and op1:
+        _r0, _r1 = op0.strip().lower(), op1.strip().lower()
+        if _r0 in _X2_P6 and _r0 in mem_base_regs and _is_imm_text(_r1):
+            _iv = _x2_imm_int(_r1)
+            if _iv is not None and _iv > 0:
+                edges.append({"type": "PTR_ARITH", "from": _r0, "op": "SCALE",
+                              "imm": _iv, "to": _r0, "addr": addr_hex})
+    elif mnem in ("shl", "sal") and op0 and op1:
+        _r0, _r1 = op0.strip().lower(), op1.strip().lower()
+        if _r0 in _X2_P6 and _r0 in mem_base_regs:
+            _iv = _x2_imm_int(_r1)
+            if _iv is not None and 1 <= _iv <= 8:
+                edges.append({"type": "PTR_ARITH", "from": _r0, "op": "SCALE",
+                              "imm": 1 << _iv, "to": _r0, "addr": addr_hex})
+    return edges, unresolved, width8
+
+
 def _operand_member_disp(txt, val):
     """B2: 操作数真实位移提取（纯逻辑，离线可测）。
 
@@ -1812,6 +2251,34 @@ RUN_MANIFEST = {
     "membership_conflict_count": 0,
     "membership_checked_classes": 0,
     "membership_offsets_checked": 0,
+    # ============================================================
+    # X2 (2026-10-12): MEMBER_ACCESS / PTR_ARITH 新种类（成员访问 + 指针算术）。
+    # 背景: 旧 9 类无成员访问种类 → 成员 offset/type 由 member_lookup/
+    # member_types 表喂入而非 CSP 求解。X2 从二进制发射结构化成员访问证据:
+    #   MEMBER_ACCESS {base, offset, width, addr}——base=函数 this 聚合变量
+    #     （<func>:this，引擎可经 FUNC_PARAM/vtable 锚解析类），仅当基址
+    #     寄存器被保守追踪证明持 this 指针时发射（class_regs，见主循环）。
+    #   PTR_ARITH {from, op:ADD|SUB|SCALE, imm, to, addr}——指针/索引算术
+    #     （add/sub/lea/imul/shl），供 offset/array 区分。
+    # 计数口径（D7）: constraint_kind_counts 在导出前全量统计；下述键在
+    # 主循环内累计；*_samples cap 50（含反汇编文本，供人工核对）。
+    # ============================================================
+    "constraint_kind_counts": {},
+    "member_access_count": 0,
+    "member_access_widths": {"1": 0, "2": 0, "4": 0},
+    "member_access_skipped_width8": 0,
+    "member_access_offset0": 0,
+    "member_access_funcs": 0,
+    "member_access_samples": [],
+    # D6: 基址未证明为类指针的 [B±imm] 访问——一律不发射，只计数 + 采样。
+    # reasons: esp_ebp_base（栈帧基址，非候选）/ param0_alias / other_reg /
+    # index_form（[B+idx*S] 数组形态）/ bad_disp / width_unknown / tworeg
+    "member_access_unresolved_count": 0,
+    "member_access_unresolved_reasons": {},
+    "member_access_unresolved_samples": [],
+    "ptr_arith_count": 0,
+    "ptr_arith_ops": {"ADD": 0, "SUB": 0, "SCALE": 0},
+    "ptr_arith_samples": [],
     "errors": [],
 }
 
@@ -1825,7 +2292,9 @@ print(
 def _write_manifest():
     manifest_dir = os.path.join(PROJ_ROOT, ".omo")
     os.makedirs(manifest_dir, exist_ok=True)
-    manifest_path = os.path.join(manifest_dir, "type_infer_run_manifest.json")
+    # X2: 采样运行写独立文件名（不覆盖生产 manifest）
+    _sfx = ".sample" if SAMPLE_RANGE else ""
+    manifest_path = os.path.join(manifest_dir, f"type_infer_run_manifest{_sfx}.json")
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(RUN_MANIFEST, f, indent=2)
     return manifest_path
@@ -2381,6 +2850,8 @@ def _run_main():
         seg = ida_segment.getseg(func_ea)
         if not seg or ida_segment.get_segm_name(seg) != ".text":
             continue
+        if SAMPLE_RANGE and not (SAMPLE_RANGE[0] <= func_ea < SAMPLE_RANGE[1]):
+            continue
         func_addr_str = f"0x{func_ea:08X}"
 
         real_cc, stack_arg_count = detect_calling_convention(func_ea)
@@ -2703,6 +3174,8 @@ def _run_main():
         seg = ida_segment.getseg(func_ea)
         if not seg or ida_segment.get_segm_name(seg) != ".text":
             continue
+        if SAMPLE_RANGE and not (SAMPLE_RANGE[0] <= func_ea < SAMPLE_RANGE[1]):
+            continue
 
         func_name = ida_funcs.get_func_name(func_ea) or f"sub_{func_ea:X}"
         func_addr_str = f"0x{func_ea:08X}"
@@ -2759,6 +3232,23 @@ def _run_main():
         param0_regs = set()
         this_regs = _collect_this_regs(func)
         param0_regs.update(this_regs)
+
+        # X2 (D2/D4): 类指针寄存器集（仅 thiscall 以 this 别名集为种子；
+        # this_regs 含 ecx 及入口 `mov reg, ecx` 别名——限 6 GPR）+
+        # 函数内存基址寄存器集（pre-scan，PTR_ARITH 门控用）。
+        x2_class_regs = (set(this_regs) & _X2_P6) if is_thiscall else set()
+        _x2_entry_regs = frozenset(x2_class_regs)  # 块终结（ret/retn）重置目标
+        x2_mem_base_regs = set()
+        _x2ps = func_ea
+        while _x2ps < end and _x2ps != idaapi.BADADDR:
+            for _x2opn in (0, 1, 2):
+                _x2ot = idc.print_operand(_x2ps, _x2opn)
+                if _x2ot and "[" in _x2ot:
+                    _x2ob = _x2_mem_operand_base(_x2ot)
+                    if _x2ob:
+                        x2_mem_base_regs.add(_x2ob)
+            _x2ps = idc.next_head(_x2ps, end)
+        _x2_ma_seen = False  # member_access_funcs 计数（本函数首条 MEMBER_ACCESS）
 
         while ea < end:
             mnem, op0, op1 = (
@@ -3556,6 +4046,63 @@ def _run_main():
                 func_write_seen[func_addr_str] += 1
                 if c is not None or len(constraints) > nc_pre:
                     func_write_produced[func_addr_str] += 1
+
+            # ============================================================
+            # X2 (D5 位置纪律): MEMBER_ACCESS / PTR_ARITH 发射——必须在 B4
+            # _has_to 检查（constraints[nc_pre:] 扫 to）与 A0-S2 写点指标
+            # 之后。PTR_ARITH 携带 to=<reg> 会被 _has_to 误判为"本指令已
+            # 产生约束"→ 抑制 *def@ ASSIGN 写点标记 → 现有 9 类计数回退。
+            # 此处纯追加：不触碰 c / 既有分支 / 既有计数。
+            # ============================================================
+            _x2_edges, _x2_unres, _x2_w8 = _x2_scan_insn(
+                mnem, op0, op1, (idc.print_operand(ea, 2) if op1 else ""),
+                x2_class_regs, x2_mem_base_regs, f"{func_addr_str}:this",
+                param0_regs, f"0x{ea:X}",
+            )
+            if _x2_edges:
+                for _x2e in _x2_edges:
+                    if _x2e["type"] == "MEMBER_ACCESS":
+                        RUN_MANIFEST["member_access_count"] += 1
+                        _wkey = str(_x2e["width"])
+                        RUN_MANIFEST["member_access_widths"][_wkey] = (
+                            RUN_MANIFEST["member_access_widths"].get(_wkey, 0) + 1)
+                        if _x2e["offset"] == 0:
+                            RUN_MANIFEST["member_access_offset0"] += 1
+                        if not _x2_ma_seen:
+                            _x2_ma_seen = True
+                            RUN_MANIFEST["member_access_funcs"] += 1
+                        if len(RUN_MANIFEST["member_access_samples"]) < 50:
+                            _x2s = dict(_x2e)
+                            _x2s["disasm"] = _x2_disasm_text(ea)
+                            RUN_MANIFEST["member_access_samples"].append(_x2s)
+                    else:  # PTR_ARITH
+                        RUN_MANIFEST["ptr_arith_count"] += 1
+                        _okey = _x2e["op"]
+                        RUN_MANIFEST["ptr_arith_ops"][_okey] = (
+                            RUN_MANIFEST["ptr_arith_ops"].get(_okey, 0) + 1)
+                        if len(RUN_MANIFEST["ptr_arith_samples"]) < 50:
+                            _x2s = dict(_x2e)
+                            _x2s["disasm"] = _x2_disasm_text(ea)
+                            RUN_MANIFEST["ptr_arith_samples"].append(_x2s)
+                constraints.extend(_x2_edges)
+            if _x2_w8:
+                RUN_MANIFEST["member_access_skipped_width8"] += _x2_w8
+            if _x2_unres:
+                RUN_MANIFEST["member_access_unresolved_count"] += len(_x2_unres)
+                _x2rr = RUN_MANIFEST["member_access_unresolved_reasons"]
+                for _x2r, _x2b, _x2o in _x2_unres:
+                    _x2rr[_x2r] = _x2rr.get(_x2r, 0) + 1
+                    if len(RUN_MANIFEST["member_access_unresolved_samples"]) < 50:
+                        RUN_MANIFEST["member_access_unresolved_samples"].append({
+                            "addr": f"0x{ea:X}", "reason": _x2r, "base": _x2b,
+                            "off": _x2o,
+                            "disasm": _x2_disasm_text(ea)})
+            # X2 (D2): class_regs 状态更新（发射之后——本指令的写不回改
+            # 自身发射；读在写前 = 正确直序语义）。ret/retn 等块终结处
+            # 重置为入口别名集（小样本实证：早期退出尾声 pop 误杀别名）。
+            x2_class_regs = _x2_update_class_regs(
+                x2_class_regs, mnem, op0, op1, _x2_entry_regs)
+
             if mnem not in ("nop", "int3"):
                 prev_ea, prev_mnem, prev_ops = ea, mnem, [op0] + ([op1] if op1 else [])
             ea = idc.next_head(ea, end)
@@ -3673,6 +4220,8 @@ def _run_main():
         seg = ida_segment.getseg(func_ea)
         if not seg or ida_segment.get_segm_name(seg) != ".text":
             continue
+        if SAMPLE_RANGE and not (SAMPLE_RANGE[0] <= func_ea < SAMPLE_RANGE[1]):
+            continue
         callees = []
         ea, end = func_ea, ida_funcs.get_func(func_ea).end_ea
         while ea < end:
@@ -3709,14 +4258,25 @@ def _run_main():
 
         _xlog("phases 1-4 complete: constraints=%d call_graph=%d cc=%d" % (
             len(constraints), len(call_graph), len(func_real_cc)))
+        # X2 (D7): 全种类直方图 + 采样运行标记 + X2 计数 trace（证据追溯）
+        RUN_MANIFEST["constraint_kind_counts"] = dict(
+            sorted(Counter(c.get("type") for c in constraints).items()))
+        if SAMPLE_RANGE:
+            RUN_MANIFEST["x2_sample_range"] = "0x%X-0x%X" % SAMPLE_RANGE
+        _xlog("x2: member_access=%d ptr_arith=%d unresolved=%d width8=%d" % (
+            RUN_MANIFEST["member_access_count"], RUN_MANIFEST["ptr_arith_count"],
+            RUN_MANIFEST["member_access_unresolved_count"],
+            RUN_MANIFEST["member_access_skipped_width8"]))
         _cdir_x = os.path.join(PROJ_ROOT, "tools", "type_infer", "constraints")
         os.makedirs(_cdir_x, exist_ok=True)
 
+        # X2: 采样运行产物加 .sample 后缀（不覆盖生产产物）
+        _sfx = ".sample" if SAMPLE_RANGE else ""
         _seeds_x = [c for c in constraints if c.get("type") == "TYPE_SEED"]
         _edges_x = [c for c in constraints if c.get("type") != "TYPE_SEED"]
-        _cpath_x = os.path.join(_cdir_x, "raw_constraints.rtti.json")
+        _cpath_x = os.path.join(_cdir_x, f"raw_constraints.rtti{_sfx}.json")
         _total_x = len(_seeds_x) + len(_edges_x)
-        _xlog("streaming raw_constraints.rtti.json total=%d" % _total_x)
+        _xlog("streaming raw_constraints.rtti%s.json total=%d" % (_sfx, _total_x))
         with open(_cpath_x, "w", encoding="utf-8") as _f:
             _f.write(
                 '{"description": "Type constraints (RTTI re-anchored extractor, '
@@ -3737,7 +4297,7 @@ def _run_main():
             _f.write("]}")
         _xlog("raw_constraints.rtti.json written size=%d" % os.path.getsize(_cpath_x))
 
-        _gpath_x = os.path.join(_cdir_x, "call_graph.rtti.json")
+        _gpath_x = os.path.join(_cdir_x, f"call_graph.rtti{_sfx}.json")
         with open(_gpath_x, "w", encoding="utf-8") as _f:
             _f.write('{"graph": {')
             _first_x = True
@@ -3754,7 +4314,7 @@ def _run_main():
             "func_stack_args": {k: v for k, v in func_stack_args.items()},
             "func_real_arg_count": {k: v for k, v in func_real_arg_count.items()},
         }
-        _ccpath_x = os.path.join(PROJ_ROOT, ".omo", "extracted_cc.json")
+        _ccpath_x = os.path.join(PROJ_ROOT, ".omo", f"extracted_cc{_sfx}.json")
         with open(_ccpath_x, "w", encoding="utf-8") as _f:
             json.dump(_cc_x, _f, indent=1)
         _xlog("extracted_cc.json written funcs=%d" % len(_cc_x["func_real_cc"]))
