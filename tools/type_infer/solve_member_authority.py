@@ -271,6 +271,27 @@ class Solver:
         self._var_cls_cache[var_name] = c
         return c
 
+    # ── X2b: MA base → class resolution ───────────────────────────────────
+    def resolve_base(self, base_str):
+        """X2b: MEMBER_ACCESS base 变量 → 类解析（按 base 形态分通道）。
+
+        通道:
+          `<fn>:this`             → resolve_func（this 域三通道，X3 原语义）
+          `<fn>::param0`          → tm[`<fn>::param0`]（param0 变量 join）
+          `<fn>:this.member(0xN)` → tm 成员变量（成员 CSP 类型 = 指向类;
+                                    `obj->member->member` 链，X2b 新增）
+          `<fn>::param0.member(0xN)` → 同上（param0 链）
+        返回 (class|None, channel, base_kind, func_hex)——base_kind ∈
+        {"this","param0","chain"}；不可解析 → (None, "unresolved_"+kind, kind, fh)。
+        """
+        fh = base_str.split(":")[0]
+        if ".member(" in base_str:
+            return (self.resolve_var(base_str), "chain_var", "chain", fh)
+        if base_str.endswith("::param0"):
+            return (self.resolve_var(base_str), "param0_var", "param0", fh)
+        cls, chan = self.resolve_func(fh)
+        return (cls, chan, "this", fh)
+
     # ── authority build ───────────────────────────────────────────────────
     def build_authority(self):
         members = {}  # (cls, off) -> entry
@@ -296,15 +317,22 @@ class Solver:
 
         # ── (a) MEMBER_ACCESS ──
         ma_unresolved = defaultdict(list)  # func -> [addrs]
+        ma_unresolved_channels = Counter()  # X2b: 未解析行按 base 通道计数
         ma_rows_resolved = 0
+        ma_channel_rows = Counter()         # X2b: 全部行按 base 通道计数
+        ma_channel_resolved = Counter()
         for c in self.ma_rows:
             fh = c["base"].split(":")[0]
-            cls, chan = self.resolve_func(fh)
+            cls, chan, kind, _fh2 = self.resolve_base(c["base"])
+            ma_channel_rows[kind] += 1
             if not cls:
                 if len(ma_unresolved[fh]) < 6:
                     ma_unresolved[fh].append(c["addr"])
+                if kind != "this":
+                    ma_unresolved_channels[kind] += 1
                 continue
             ma_rows_resolved += 1
+            ma_channel_resolved[kind] += 1
             off = int(c["offset"])
             e = get_entry(cls, off)
             e["source_counts"]["member_access"] += 1
@@ -314,7 +342,15 @@ class Solver:
                 e["samples"].append({"func": fh, "addr": c["addr"], "w": int(c["width"]),
                                      "src": "member_access"})
             # lattice type via the member var (if the old channel typed it)
-            mv = self.tm.get(f"{fh}:this.member(0x{off:x})")
+            # X2b: 按 base 通道取正确的成员变量名——this 行取 <fh>:this.member(N)；
+            # param0 行取 <fh>::param0.member(N)；链式行的被访成员类型不在本函数
+            # 变量域（其类型证据由目标类自身的其它函数行携带）。
+            if kind == "chain":
+                mv = None
+            elif kind == "param0":
+                mv = self.tm.get(f"{fh}::param0.member(0x{off:x})")
+            else:
+                mv = self.tm.get(f"{fh}:this.member(0x{off:x})")
             if mv and mv.get("type"):
                 e["type_evidence"][mv["type"]] += 1
 
@@ -375,6 +411,9 @@ class Solver:
 
         self.ma_unresolved = ma_unresolved
         self.ma_rows_resolved = ma_rows_resolved
+        self.ma_channel_rows = ma_channel_rows
+        self.ma_channel_resolved = ma_channel_resolved
+        self.ma_unresolved_channels = ma_unresolved_channels
         self.b_stats = {
             "rows_this": b_rows_this, "rows_p0": b_rows_p0,
             "distinct_this": len(b_this_seen), "distinct_p0": len(b_p0_seen),
@@ -622,11 +661,12 @@ class Solver:
             else:
                 unresolved.append(fh)
         rows_res = rows_unres = 0
+        ch_rows = Counter()
         for c in self.ma_rows:
-            fh = c["base"].split(":")[0]
-            cls, _ = self.resolve_func(fh)
+            cls, _chan, kind, _fh2 = self.resolve_base(c["base"])
             if cls:
                 rows_res += 1
+                ch_rows[kind] += 1
             else:
                 rows_unres += 1
         # 切片：均布 400 函数（确定性）
@@ -647,6 +687,7 @@ class Solver:
             "row_resolution": {
                 "resolved": rows_res, "unresolved": rows_unres,
                 "rate": round(rows_res / len(self.ma_rows), 4) if self.ma_rows else 0,
+                "by_channel": {k: ch_rows[k] for k in sorted(ch_rows)},
             },
             "slice_400_funcs": {
                 "tested": len(slice_f), "resolved": s_res,
@@ -709,6 +750,14 @@ class Solver:
                 "ma_rows_unresolved": len(self.ma_rows) - self.ma_rows_resolved,
                 "ma_unresolved_funcs": len(self.ma_unresolved),
                 "resolution_conflicts": len(self.resolution_conflicts),
+                # X2b: base 通道分账（this / param0 / chain 行数 + 解析数 +
+                # 非 this 通道未解析行数——逐条归因残余类解析缺口）
+                "ma_channel_rows": {k: self.ma_channel_rows[k]
+                                    for k in sorted(self.ma_channel_rows)},
+                "ma_channel_resolved": {k: self.ma_channel_resolved[k]
+                                        for k in sorted(self.ma_channel_resolved)},
+                "ma_unresolved_chain_rows": self.ma_unresolved_channels.get("chain", 0),
+                "ma_unresolved_param0_rows": self.ma_unresolved_channels.get("param0", 0),
             },
             "composition": {
                 "member_access": sum(1 for e in entries

@@ -1829,7 +1829,8 @@ def _x2_update_class_regs(class_regs, mnem, op0, op1, reset_to=None):
 
 
 def _x2_scan_insn(mnem, op0, op1, op2, class_regs, mem_base_regs,
-                  this_var, param0_regs, addr_hex):
+                  this_var, param0_regs, addr_hex,
+                  class_state=None, this_regs=None, param0_emit=False):
     """X2: 单指令 MEMBER_ACCESS / PTR_ARITH 扫描（纯逻辑，离线可测）。
 
     返回 (edges, unresolved, width8)：
@@ -1838,6 +1839,16 @@ def _x2_scan_insn(mnem, op0, op1, op2, class_regs, mem_base_regs,
       width8      —— qword 宽度命中数（1|2|4 词汇外，跳过）
     设计纪律: 纯追加——不读不写既有 c/既有分支状态；调用方在主循环
     B4/A0-S2 之后调用（D5，防 _has_to 误判抑制 *def@ 写点标记）。
+
+    X2b (2026-10-12) 可选扩展（默认 None/False = X2 行为逐字节不变）:
+      class_state —— {reg: base_chain}（链式成员基址，见 _x2b_update）：
+        base 取 class_state[_base]（`<fh>:this` / `<fh>:this.member(0xN)` /
+        `<fh>::param0.member(0xN)`）——取代固定 this_var。供离线测试保持
+        class_regs 路径。
+      this_regs   —— 入口 this 别名集（param0 分支排他条件：reg ∉ this_regs，
+        与 ASSIGN 的 elif 分支一致）。
+      param0_emit —— True 时对 param0 别名基址发射 MEMBER_ACCESS
+        base=`<fh>::param0`（与 ASSIGN param0.member 通道同语义）。
     """
     edges = []
     unresolved = []
@@ -1864,7 +1875,48 @@ def _x2_scan_insn(mnem, op0, op1, op2, class_regs, mem_base_regs,
                     unresolved.append(("tworeg", _parsed[1], 0))
                 continue
             _base, _off = _parsed[1], _parsed[2]
-            if _base in class_regs:
+            if class_state is not None:
+                _tracked = _base in class_state
+                _base_name = class_state.get(_base)
+            else:
+                _tracked = _base in class_regs
+                _base_name = this_var
+            if _tracked:
+                if not _a1_valid_member_off(_off):
+                    unresolved.append(("bad_disp", _base, _off))
+                    continue
+                # X2b: 链式基址的 vptr 读/虚调用抑制（链基址 ≠ this/param0
+                # 对象基址时）: offset 0 = 指向对象的 vptr 读取；call/jmp 目标
+                # = vtable 槽（虚调用）——二者都不是数据成员访问。此抑制仅
+                # 作用于链式基址；this/param0 基址行为与 X2 完全一致。
+                if class_state is not None and _base_name is not None and \
+                        ".member(" in _base_name:
+                    if _off == 0:
+                        unresolved.append(("chain_vptr_or_first", _base, _off))
+                        continue
+                    if mnem in ("call", "jmp"):
+                        unresolved.append(("chain_call_target", _base, _off))
+                        continue
+                _other = ops[1 - _i] if _i < 2 else ops[0]
+                _w = _x2_mem_width(_raw, _other, mnem)
+                if _w == 8:
+                    width8 += 1
+                    continue
+                if _w not in (1, 2, 4):
+                    unresolved.append(("width_unknown", _base, _off))
+                    continue
+                edges.append({
+                    "type": "MEMBER_ACCESS",
+                    "base": _base_name,
+                    "offset": _off,
+                    "width": _w,
+                    "addr": addr_hex,
+                })
+            elif param0_emit and _base in param0_regs and \
+                    _base not in (this_regs or ()):
+                # X2b: param0 通道——与 ASSIGN `elif reg in param0_regs`
+                # 分支同语义（reg ∉ this_regs；类由求解器经 <fh>::param0
+                # 变量 join 解析，与 <fh>:this 同机制）。
                 if not _a1_valid_member_off(_off):
                     unresolved.append(("bad_disp", _base, _off))
                     continue
@@ -1878,7 +1930,7 @@ def _x2_scan_insn(mnem, op0, op1, op2, class_regs, mem_base_regs,
                     continue
                 edges.append({
                     "type": "MEMBER_ACCESS",
-                    "base": this_var,
+                    "base": this_var[:-5] + "::param0",
                     "offset": _off,
                     "width": _w,
                     "addr": addr_hex,
@@ -1945,6 +1997,179 @@ def _x2_scan_insn(mnem, op0, op1, op2, class_regs, mem_base_regs,
                 edges.append({"type": "PTR_ARITH", "from": _r0, "op": "SCALE",
                               "imm": 1 << _iv, "to": _r0, "addr": addr_hex})
     return edges, unresolved, width8
+
+
+# ============================================================
+# X2b (2026-10-12): Q2 驱动的发射覆盖扩展 + 假阳性控制
+# （纯逻辑，模块级定义，离线可导入测试）
+#
+# 扩展来源 = X3 的 Q2 缺陷清单（.omo/evidence/optimization/x3/）:
+#   E1 类指针寄存器宇宙 +ebp（_X2P6 排除 ebp 是系统缺陷：MSVC6 /Oy 下
+#      `mov ebp, ecx` 即 this 别名，ASSIGN 通道已含 ebp，MA 从未追踪 →
+#      2,952/4,264 采样 (b) 缺失站点的主因）。
+#   E2 链式成员基址（mem-load provenance）: `mov R, [T+off]`（T ∈ 已追踪
+#      且 chain=this，宽度 4）→ R 的 base = `<fh>:this.member(0xN)`；
+#      param0 侧同理（`<fh>::param0.member(0xN)`）。求解器经成员变量
+#      CSP 类型解析链式类（obj->member->member）。
+#   E3 param0 通道: `[B±imm]`（B ∈ param0_regs 且 B ∉ this_regs，与
+#      ASSIGN `elif` 分支同条件）→ base=`<fh>::param0`。
+#   E4 栈槽溢出追踪: `mov [slot], R`（R ∈ 追踪集）→ 槽持有 R 的链；
+#      `mov R, [slot]`（R ∈ this_regs）→ R 继承槽链（保存/重载 this 的
+#      标准形态；槽被非追踪值覆写即失效）。
+#   假阳性控制（I96）:
+#     FP-A 未对齐宽访问（width≥2 且 offset%width≠0）→ 排除（对象成员
+#          必然自然对齐；非对齐宽访问 = 字节流/缓冲基址强信号）。
+#     FP-B 窄宽连读（同链全 width1 且偏移含 {0,1}）→ 排除（缓冲基址
+#          字符扫描：String::To_Waypoint / String::Trim 型）。
+#     FP-C 密集未对齐宽访问（链内未对齐宽占比 ≥25%）→ 整链排除
+#          （EventClass 事件字节流：同链 [esi+2]w1/[esi+3]w4 混写型）。
+#   排除 = 降级（进 member_access_excluded_* 账，可查可回溯），非静默删除。
+# ============================================================
+
+# E1: 类指针追踪宇宙（+ebp；esp 永不入——栈指针非对象）。
+_X2B_CREG = _X2_P6 | {"ebp"}
+# FP-C 阈值: 链内未对齐宽访问占比 ≥ 25% → 整链判字节流。
+_X2B_STREAM_DENSITY = 0.25
+# 栈槽操作数形态: [esp±N] / [ebp±N]（IDA 文本，已小写）。
+_X2B_SLOT_RE = re.compile(r"^\[\s*(esp|ebp)\s*([+-])\s*((?:0x)?[0-9a-f]+h?)\s*\]$")
+# FP 排除账全量累积（同 IDB 对照对账；EXTRACT_ONLY 导出到 .omo/）
+X2B_EXCLUDED_ROWS = []
+
+
+def _x2b_slot_key(op_txt):
+    """X2b: 栈槽操作数 → 归一槽键（`esp-4ch` 形态）；非裸栈槽 → None。"""
+    s = (op_txt or "").strip().lower()
+    m = _X2B_SLOT_RE.match(s)
+    if not m:
+        return None
+    base, sign, num = m.group(1), m.group(2), m.group(3)
+    try:
+        if num.startswith("0x"):
+            v = int(num, 16)
+        elif num.endswith("h"):
+            v = int(num[:-1], 16)
+        else:
+            v = int(num, 10)
+    except ValueError:
+        return None
+    return f"{base}{sign}{v:x}"
+
+
+def _x2b_update(state, slots, mnem, op0, op1, reset_to, this_regs,
+                param0_regs, fh):
+    """X2b: 类指针追踪状态机（纯逻辑）。返回 (state, slots) 新 dict。
+
+    state: {reg: base_chain}；slots: {slot_key: base_chain}。
+    语义与 ASSIGN 通道对齐（谁会被记成 this.member/param0.member 决定
+    MA 可发射域）:
+      - 追踪宇宙 _X2B_CREG（+ebp，E1）；仅 thiscall 以入口别名集为种子。
+      - 杀除 = _x2_reg_writes 全集（子寄存器写映射父寄存器）。
+      - `mov R, S`（双追踪宇宙）S ∈ state → R 继承链。
+      - E4: `mov [slot], R`（R ∈ state）→ 槽=链；否则槽失效。
+        `mov R, [slot]`（R ∈ this_regs）且槽有链 → R 继承链。
+      - E2: `mov R, [T+off]`（simple 形态、宽度 4）:
+          T ∈ state 且链=this 且 T ∈ this_regs → 链=this.member(0xN)；
+          T ∈ param0_regs 且 T ∉ this_regs → 链=param0.member(0xN)。
+        （要求 T ∈ this_regs / param0_regs 是因为 ASSIGN 通道只在这些
+        条件下物化对应 member 变量——变量不存在则求解器无法解析。）
+      - 块终结重置（L122 语义保留）: ret/retn/int3/hlt/ud2 → 入口链集。
+    """
+    if mnem in ("ret", "retn", "int3", "hlt", "ud2"):
+        return ({r: f"{fh}:this" for r in reset_to}, {})
+    st = dict(state)
+    sl = slots
+    w = _x2_reg_writes(mnem, op0, op1)
+    for r in w:
+        st.pop(r, None)
+    if mnem != "mov" or not op0 or not op1:
+        return st, sl
+    o0 = op0.strip().lower()
+    o1 = op1.strip().lower()
+    if o0.startswith("offset "):
+        o0 = o0[7:].strip()
+    if o1.startswith("offset "):
+        o1 = o1[7:].strip()
+    # E4: 槽写/槽读
+    s0 = _x2b_slot_key(o0)
+    s1 = _x2b_slot_key(o1)
+    if s0 is not None:
+        if o1 in state:
+            sl = dict(sl)
+            sl[s0] = state[o1]
+        else:
+            sl = dict(sl)
+            sl.pop(s0, None)
+    if o0 in _X2B_CREG and s1 is not None:
+        if o0 in this_regs and s1 in sl:
+            st[o0] = sl[s1]
+    # 寄存器传播
+    if o0 in _X2B_CREG and o1 in _X2B_CREG and o1 in state:
+        st[o0] = state[o1]
+    # E2: 链式成员基址（X2b v2: off==0 不建链——`mov R, [T+0]` 在多数类中
+    # 是 vptr 装载（多态类 offset 0 = vtable 指针），其后续 [R+slot] 是虚调用；
+    # 建链会把 vtable 槽当成员（0x417FE0/0x414BB0 样本实证 515 链行中
+    # ~320 为 call 目标 + ~100 为 off0 vptr 读）。POD 成员 0 指针链的
+    # 覆盖损失按残差记账。）
+    if o0 in _X2B_CREG and "[" in o1:
+        p = _x2_parse_mem_operand(_x2_strip_size_prefix(o1)[0])
+        if p and p[0] == "simple":
+            T, off = p[1], p[2]
+            if off != 0 and _a1_valid_member_off(off):
+                wd = _x2_mem_width(o1, o0, mnem)
+                if wd == 4:
+                    if T in state and state[T] == f"{fh}:this" and T in this_regs:
+                        st[o0] = "%s:this.member(0x%x)" % (fh, off)
+                    elif T in param0_regs and T not in this_regs:
+                        st[o0] = "%s::param0.member(0x%x)" % (fh, off)
+    return st, sl
+
+
+def _x2b_apply_fp_rules(rows):
+    """X2b (I96): 假阳性判别规则（纯逻辑）。
+
+    rows: [(edge, ea)]（同一函数内的缓冲行；edge 含 base/offset/width）。
+    返回 (kept, excluded)，excluded = {"reason": [(edge, ea), ...]}。
+    规则按顺序: FP-A 未对齐宽 → FP-C 密集未对齐整链 → FP-B 窄宽连读。
+    仅对本函数缓冲行生效；排除是显式降级（有账可查），不是静默丢弃。
+    """
+    kept = []
+    excl_a, excl_b, excl_c = [], [], []
+    unaligned_chains = set()
+    for e, ea in rows:
+        if e["width"] >= 2 and e["offset"] % e["width"] != 0:
+            excl_a.append((e, ea))
+            unaligned_chains.add(e["base"])
+        else:
+            kept.append((e, ea))
+    # FP-C: 链内未对齐宽占比 ≥ 阈值 → 整链字节流
+    by_chain = {}
+    for e, ea in rows:
+        by_chain.setdefault(e["base"], []).append((e, ea))
+    stream_chains = set()
+    for chain, rs in by_chain.items():
+        unal = sum(1 for e, _ea in rs
+                   if e["width"] >= 2 and e["offset"] % e["width"] != 0)
+        if unal and (float(unal) / len(rs)) >= _X2B_STREAM_DENSITY:
+            stream_chains.add(chain)
+    kept2 = []
+    for e, ea in kept:
+        if e["base"] in stream_chains:
+            excl_c.append((e, ea))
+        else:
+            kept2.append((e, ea))
+    # FP-B: 同链全 width1 且偏移含 {0,1} → 字符扫描/缓冲基址
+    groups = {}
+    for e, ea in kept2:
+        groups.setdefault(e["base"], []).append((e, ea))
+    kept3 = []
+    for chain, rs in groups.items():
+        offs = {e["offset"] for e, _ea in rs}
+        if all(e["width"] == 1 for e, _ea in rs) and 0 in offs and 1 in offs:
+            excl_b.extend(rs)
+        else:
+            kept3.extend(rs)
+    return kept3, {"unaligned_wide": excl_a, "byte_scan_narrow": excl_b,
+                   "byte_stream_group": excl_c}
 
 
 def _operand_member_disp(txt, val):
@@ -2276,6 +2501,17 @@ RUN_MANIFEST = {
     "member_access_unresolved_count": 0,
     "member_access_unresolved_reasons": {},
     "member_access_unresolved_samples": [],
+    # X2b (2026-10-12): Q2 驱动扩展 + I96 假阳性控制。
+    #   member_access_chained_count —— base=`<fh>:this.member(0xN)` 链式行
+    #   member_access_param0_count  —— base=`<fh>::param0` param0 通道行
+    #   member_access_excluded_*    —— FP 判别降级账（未对齐宽访问 /
+    #     窄宽连读字符扫描 / 密集未对齐字节流整链）；排除行不进约束集，
+    #     但计数+采样可查（非静默丢弃）。
+    "member_access_chained_count": 0,
+    "member_access_param0_count": 0,
+    "member_access_excluded_count": 0,
+    "member_access_excluded_reasons": {},
+    "member_access_excluded_samples": [],
     "ptr_arith_count": 0,
     "ptr_arith_ops": {"ADD": 0, "SUB": 0, "SCALE": 0},
     "ptr_arith_samples": [],
@@ -3236,7 +3472,13 @@ def _run_main():
         # X2 (D2/D4): 类指针寄存器集（仅 thiscall 以 this 别名集为种子；
         # this_regs 含 ecx 及入口 `mov reg, ecx` 别名——限 6 GPR）+
         # 函数内存基址寄存器集（pre-scan，PTR_ARITH 门控用）。
-        x2_class_regs = (set(this_regs) & _X2_P6) if is_thiscall else set()
+        # X2b (E1): 追踪宇宙扩为 _X2B_CREG（+ebp——MSVC6 /Oy 下 ebp 常持
+        # this；ASSIGN 通道已把 `mov ebp, ecx` 计入 this_regs，MA 从未
+        # 追踪 = Q2 (b) 缺口主因）。状态改为 {reg: base_chain} dict +
+        # 栈槽映射（E4）；链式基址命名语义见 _x2b_update。
+        x2_class_regs = (set(this_regs) & _X2B_CREG) if is_thiscall else set()
+        x2_state = {r: f"{func_addr_str}:this" for r in x2_class_regs}
+        x2_slots = {}
         _x2_entry_regs = frozenset(x2_class_regs)  # 块终结（ret/retn）重置目标
         x2_mem_base_regs = set()
         _x2ps = func_ea
@@ -3249,6 +3491,7 @@ def _run_main():
                         x2_mem_base_regs.add(_x2ob)
             _x2ps = idc.next_head(_x2ps, end)
         _x2_ma_seen = False  # member_access_funcs 计数（本函数首条 MEMBER_ACCESS）
+        _x2_ma_buf = []      # X2b: 本函数 MA 行缓冲（FP 判别后统一落盘）
 
         while ea < end:
             mnem, op0, op1 = (
@@ -4053,28 +4296,19 @@ def _run_main():
             # 之后。PTR_ARITH 携带 to=<reg> 会被 _has_to 误判为"本指令已
             # 产生约束"→ 抑制 *def@ ASSIGN 写点标记 → 现有 9 类计数回退。
             # 此处纯追加：不触碰 c / 既有分支 / 既有计数。
+            # X2b: MA 行进本函数缓冲（FP 判别在函数末统一执行）；PA 行
+            # 保持 inline 追加（零改动——同 IDB 对照 PA 应逐字节稳定）。
             # ============================================================
             _x2_edges, _x2_unres, _x2_w8 = _x2_scan_insn(
                 mnem, op0, op1, (idc.print_operand(ea, 2) if op1 else ""),
-                x2_class_regs, x2_mem_base_regs, f"{func_addr_str}:this",
+                None, x2_mem_base_regs, f"{func_addr_str}:this",
                 param0_regs, f"0x{ea:X}",
+                class_state=x2_state, this_regs=this_regs, param0_emit=True,
             )
             if _x2_edges:
                 for _x2e in _x2_edges:
                     if _x2e["type"] == "MEMBER_ACCESS":
-                        RUN_MANIFEST["member_access_count"] += 1
-                        _wkey = str(_x2e["width"])
-                        RUN_MANIFEST["member_access_widths"][_wkey] = (
-                            RUN_MANIFEST["member_access_widths"].get(_wkey, 0) + 1)
-                        if _x2e["offset"] == 0:
-                            RUN_MANIFEST["member_access_offset0"] += 1
-                        if not _x2_ma_seen:
-                            _x2_ma_seen = True
-                            RUN_MANIFEST["member_access_funcs"] += 1
-                        if len(RUN_MANIFEST["member_access_samples"]) < 50:
-                            _x2s = dict(_x2e)
-                            _x2s["disasm"] = _x2_disasm_text(ea)
-                            RUN_MANIFEST["member_access_samples"].append(_x2s)
+                        _x2_ma_buf.append((_x2e, ea))
                     else:  # PTR_ARITH
                         RUN_MANIFEST["ptr_arith_count"] += 1
                         _okey = _x2e["op"]
@@ -4084,7 +4318,7 @@ def _run_main():
                             _x2s = dict(_x2e)
                             _x2s["disasm"] = _x2_disasm_text(ea)
                             RUN_MANIFEST["ptr_arith_samples"].append(_x2s)
-                constraints.extend(_x2_edges)
+                        constraints.append(_x2e)
             if _x2_w8:
                 RUN_MANIFEST["member_access_skipped_width8"] += _x2_w8
             if _x2_unres:
@@ -4100,14 +4334,56 @@ def _run_main():
             # X2 (D2): class_regs 状态更新（发射之后——本指令的写不回改
             # 自身发射；读在写前 = 正确直序语义）。ret/retn 等块终结处
             # 重置为入口别名集（小样本实证：早期退出尾声 pop 误杀别名）。
-            x2_class_regs = _x2_update_class_regs(
-                x2_class_regs, mnem, op0, op1, _x2_entry_regs)
+            # X2b: 扩展状态机（+ebp / 链式成员基址 / param0 load / 栈槽）。
+            x2_state, x2_slots = _x2b_update(
+                x2_state, x2_slots, mnem, op0, op1, _x2_entry_regs,
+                this_regs, param0_regs, func_addr_str)
 
             if mnem not in ("nop", "int3"):
                 prev_ea, prev_mnem, prev_ops = ea, mnem, [op0] + ([op1] if op1 else [])
             ea = idc.next_head(ea, end)
             if ea == idaapi.BADADDR:
                 break
+
+        # X2b: 本函数 MA 行 FP 判别后统一落盘（I96 降级账入 manifest；
+        # 现有 9 类与 PA 行已在指令序内 inline 追加——不受影响）。
+        if _x2_ma_buf:
+            _x2b_kept, _x2b_excl = _x2b_apply_fp_rules(_x2_ma_buf)
+            for _x2e, _ea_b in _x2b_kept:
+                RUN_MANIFEST["member_access_count"] += 1
+                _wkey = str(_x2e["width"])
+                RUN_MANIFEST["member_access_widths"][_wkey] = (
+                    RUN_MANIFEST["member_access_widths"].get(_wkey, 0) + 1)
+                if _x2e["offset"] == 0:
+                    RUN_MANIFEST["member_access_offset0"] += 1
+                if _x2e["base"] != f"{func_addr_str}:this":
+                    if ".member(" in _x2e["base"]:
+                        RUN_MANIFEST["member_access_chained_count"] += 1
+                    elif _x2e["base"].endswith("::param0"):
+                        RUN_MANIFEST["member_access_param0_count"] += 1
+                if not _x2_ma_seen:
+                    _x2_ma_seen = True
+                    RUN_MANIFEST["member_access_funcs"] += 1
+                if len(RUN_MANIFEST["member_access_samples"]) < 50:
+                    _x2s = dict(_x2e)
+                    _x2s["disasm"] = _x2_disasm_text(_ea_b)
+                    RUN_MANIFEST["member_access_samples"].append(_x2s)
+                constraints.append(_x2e)
+            for _x2r in ("unaligned_wide", "byte_scan_narrow", "byte_stream_group"):
+                _lst = _x2b_excl.get(_x2r) or []
+                if not _lst:
+                    continue
+                RUN_MANIFEST["member_access_excluded_count"] += len(_lst)
+                _x2er = RUN_MANIFEST["member_access_excluded_reasons"]
+                _x2er[_x2r] = _x2er.get(_x2r, 0) + len(_lst)
+                for _x2e, _ea_b in _lst:
+                    _x2e_full = dict(_x2e)
+                    _x2e_full["reason"] = _x2r
+                    X2B_EXCLUDED_ROWS.append(_x2e_full)
+                    if len(RUN_MANIFEST["member_access_excluded_samples"]) < 50:
+                        _x2s = dict(_x2e_full)
+                        _x2s["disasm"] = _x2_disasm_text(_ea_b)
+                        RUN_MANIFEST["member_access_excluded_samples"].append(_x2s)
 
     # B12 (param 入口绑定补全, 后置遍历): 调用方 CALL_ARG 证据 (paramN) 与
     # 被调方 FUNC_PARAM 绑定不对称（调用方推 param1 20K 次 vs 被调方绑定 4K
@@ -4321,6 +4597,13 @@ def _run_main():
 
         RUN_MANIFEST["extract_only_mode"] = True
         RUN_MANIFEST["b10_return_src_edges"] = RUN_MANIFEST.get("return_src_edges_b10", 0)
+        # X2b: FP 排除账全量落盘（同 IDB 对照对账 / 逐条可回溯；.sample 同后缀）
+        _x2b_excl_path = os.path.join(
+            PROJ_ROOT, ".omo", f"member_access_excluded{_sfx}.json")
+        with open(_x2b_excl_path, "w", encoding="utf-8") as _f:
+            json.dump(X2B_EXCLUDED_ROWS, _f, ensure_ascii=False, indent=1)
+        _xlog("x2b excluded rows written=%d (%s)" % (
+            len(X2B_EXCLUDED_ROWS), _x2b_excl_path))
         _mp_x = _write_manifest()
         _xlog("manifest written: " + _mp_x)
         _xlog("EXTRACT_ONLY COMPLETE")
