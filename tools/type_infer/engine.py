@@ -1305,9 +1305,15 @@ class TypeInferenceEngine:
                             callee_ret_id = self._resolve_callee_return_var(callee_name)
                             if callee_ret_id is not None:
                                 self.return_out[callee_ret_id].add(fid)
-                else:
+                elif ctype in ("ASSIGN", "RETURN", "STACK_VAR",
+                               "FUNC_PARAM", "STACK_ACCESS"):
                     # T9 v3: value edges are DIRECTED source→destination
                     self.adjacency[fid].add(tid)
+                # else: X3 (I91 ①) — MEMBER_ACCESS / PTR_ARITH (and any
+                # future unknown kind) build NO type adjacency. PTR_ARITH's
+                # from/to register pairs describe address arithmetic; wiring
+                # them into the value graph joins index(int) with class-typed
+                # destinations (spurious meets/TOP). Layout-evidence only.
 
         # Combined UNDIRECTED reachability for confidence BFS: every
         # channel (value / param / return) is real evidence connectivity.
@@ -1528,6 +1534,17 @@ class TypeInferenceEngine:
                 # Stack load (stack→reg) / store (reg→stack), oriented
                 # by the extractor — directed join at the destination.
                 self.adjacency[fid].add(tid)
+
+            elif ctype in ("MEMBER_ACCESS", "PTR_ARITH"):
+                # X3 (I91 ①): layout-evidence kinds (X2 binary member access
+                # + pointer arithmetic) — explicitly NOT fed into the type
+                # propagation graph. PTR_ARITH's from/to register pairs would
+                # create value edges joining index(int) with class-typed
+                # destinations (spurious meets / TOP pollution); their
+                # semantics are layout, consumed by the X3 solver. (These rows
+                # are also placeholder-scoped in scope_vars.build_scoped_index
+                # — this branch is the second, explicit line of defense.)
+                continue
 
         # ── Set anchor labels on equivalence classes ──
         for anchor in self.anchors:

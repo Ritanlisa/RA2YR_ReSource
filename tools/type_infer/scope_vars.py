@@ -108,6 +108,11 @@ def _detect_writes(constraints: list[dict], func_addrs: list[int]) -> dict:
         RETURN_TO    — call return value stored in register (mov eax, call_result)
         STACK_ACCESS — stack load into register (mov ecx, [ebp+8])
 
+    X3 (I91 ②): PTR_ARITH.to=<reg> is intentionally NOT a write point —
+    address arithmetic carries no type-flow semantics; the write-kind set
+    stays the four kinds above (layout evidence only, consumed by the X3
+    member solver, not by the type graph).
+
     Stack write rules (``to`` starts with ``stack_``):
         FUNC_PARAM   — parameter stored to stack slot
         STACK_VAR    — local stack variable initialization
@@ -300,7 +305,15 @@ def build_scoped_index(
 
         c_from = c.get("from")
         c_to = c.get("to")
-        if c_from is None or c_to is None:
+        c_kind = c.get("type", "")
+        # X3 (I91 ①): MEMBER_ACCESS / PTR_ARITH are X2 layout-evidence kinds,
+        # NOT type-flow edges — excluded from variable registration exactly
+        # like TYPE_SEED placeholders. Registering PTR_ARITH's from/to as SSA
+        # vars would only add isolated junk to the variable universe (and any
+        # adjacency consumer would join index(int) with destination(reg));
+        # MEMBER_ACCESS has no from/to at all. The X3 solver scopes register
+        # operands ad hoc via _scope_one_var when it needs them.
+        if c_kind in ("MEMBER_ACCESS", "PTR_ARITH") or c_from is None or c_to is None:
             # TYPE_SEED 等无向条目：占位保持与 constraints 的索引对齐，
             # engine 侧 var_to_id.get(None) → None → skip，不会产生变量
             scoped_names.append((None, None))
@@ -378,6 +391,13 @@ def build_adjacency(constraints: list[dict], result: dict) -> dict[str, set[str]
                 adj[ret_var].add(sf)
         elif ctype == "CALL_VTABLE":
             # vtable dispatch: no direct variable connection
+            pass
+        elif ctype in ("MEMBER_ACCESS", "PTR_ARITH"):
+            # X3 (I91 ①): layout-evidence kinds (X2) build NO type adjacency.
+            # The generic else-branch would connect PTR_ARITH from↔to
+            # bidirectionally — e.g. SCALE idx(int)↔dst(reg) or ADD/sub walks
+            # — joining unrelated value domains into spurious meets. These
+            # kinds are consumed only by the X3 member-layout solver.
             pass
         else:
             # ASSIGN, RETURN, STACK_VAR, FUNC_PARAM, CALL_ARG,
