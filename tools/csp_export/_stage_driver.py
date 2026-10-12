@@ -428,11 +428,15 @@ class StageDriver:
                           .read_text(encoding='utf-8'))
         files = meta['files']
         n_copy = n_del = 0
+        # I65: rollback copies/unlinks hit Defender locks on freshly
+        # written files (Errno 13 observed); bounded retry, same
+        # semantics as _write_retry (shared helper, permanent shim form).
+        from _write_retry import retry
         for rp in files:
             src = ck / rp
             dst = self.root / rp
             dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
+            retry(shutil.copy2, src, dst)
             n_copy += 1
         # delete leftovers created during the failed stage (scope dirs only)
         for spec in out_specs:
@@ -444,7 +448,7 @@ class StageDriver:
                     if q.is_file():
                         rel = q.relative_to(self.root).as_posix()
                         if rel not in files:
-                            q.unlink()
+                            retry(q.unlink)
                             n_del += 1
         # verify
         bad = [rp for rp in files

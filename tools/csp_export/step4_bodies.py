@@ -675,6 +675,13 @@ def _run_stage(driver, sd, plan_only=False, superseded=()):
 
 
 def main():
+    # I65/I72/I77: AV-lock retry wrappers installed once at chain entry --
+    # the permanent form of the T4c sitecustomize shim.  Defender locks
+    # files written seconds earlier by a sibling battery stage; the
+    # wrappers cover every battery script's write points (Path.write_* /
+    # shutil.copy2 / write-mode open / io.open) without per-script edits.
+    import _write_retry
+    _write_retry.install()
     skip = ()
     no_cache = False
     fresh = False
