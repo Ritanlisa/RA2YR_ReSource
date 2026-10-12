@@ -2,6 +2,8 @@
 
 namespace gamemd {
 
+struct Randomizer;  // defined in system/scenario.hpp
+
 // === Section 0x0810000 - .data (142 globals) ===
 
 extern void (*First)(); // data: 0x815DA8
@@ -959,7 +961,11 @@ extern uint32_t g_RandomMap_TerrainState; // data: 0xABDF94
 extern uint32_t g_RandomMap_TileData; // data: 0xABDFA0
 extern uint8_t g_TileSystemInit; // data: 0xABDFB8
 extern void* g_Map_TiberiumConfig; // data: 0xABE154
-extern uint32_t g_Randomizer; // data: 0xABE890
+extern Randomizer g_Randomizer; // data: 0xABE890
+// R250 seeding Feistel round keys (binary has 20 dwords per table; only the
+// first 4 are ever read — inner loop bound is CMP EBX,0x10 at 0x65C748)
+extern const uint32_t g_RNGSeedKey1[4]; // data: 0x839644
+extern const uint32_t g_RNGSeedKey2[4]; // data: 0x839694
 extern uint32_t g_MapCellHeight_Value; // data: 0xABED04
 extern uint32_t g_MapCellCount; // data: 0xABED08
 extern void* g_MapTileArray; // data: 0xABED10
