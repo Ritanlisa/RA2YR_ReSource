@@ -96,10 +96,10 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/DiskSpace_e4.hpp"  // w18j2 C3861 DiskSpace:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CheckAvailable(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CheckAvailable(); }  // x4:empty@0x48dd50
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DlgProcLoadGame_Load(...);  // raw 006967B0: int __thiscall DlgProcLoadGame_Load(ObjectClass *this)
+    int DlgProcLoadGame_Load(ObjectClass *p_this);  // x4:ida@0x6967b0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aBasic_0[];  // data: 0x83f488 truth(IDA G42.57w9)

@@ -18,7 +18,6 @@
 #include "e4/classes/E4Recv_7B6280_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int _expandtime(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 
 // 0x49B760
 namespace gamemd {  // G42.18 ns repair

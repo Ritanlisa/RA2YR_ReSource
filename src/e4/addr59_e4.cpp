@@ -61,8 +61,8 @@
 #include "e4/classes/j_Options_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int PlaceNeutralBuilding(...);  // raw 00595400: char __thiscall PlaceNeutralBuilding(TechnoClass *this)
-    int PlaceRandomWaypoints(...);  // raw 00594870: void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
+    int PlaceNeutralBuilding(TechnoClass *p_this);  // x4:ida@0x595400
+    int PlaceRandomWaypoints(int p0);  // x4:signals@0x594870
 } // namespace gamemd
 
 // 0x5904B0

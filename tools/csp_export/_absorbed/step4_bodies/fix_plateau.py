@@ -25,6 +25,19 @@ STUBS = E4 / 'e4_static_stubs.cpp'
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 
+# X4: signature authority resolver; the `(...)` plateau stub path is deleted
+# -- no def and no authority signature -> loud skip (Q4 gap).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from signature_authority import Authority  # noqa: E402
+
+_au = []
+
+
+def au():
+    if not _au:
+        _au.append(Authority(ROOT))
+    return _au[0]
+
 TXT = Path(LOG).read_bytes().decode('utf-8', errors='replace') if LOG else ''
 mtab = json.loads((ROOT / 'anchors' / 'csp_canon_members.json')
                   .read_text(encoding='utf-8', errors='replace'))
@@ -78,7 +91,7 @@ for p in sorted(E4.glob('*.cpp')):
 # ================================================================
 # apply to e4 headers: add method declarations
 # ================================================================
-n_decl = n_void_fix = n_hdr = 0
+n_decl = n_void_fix = n_hdr = n_skipped = 0
 hdr_fixes = {}   # path -> list of (cls, decl_lines)
 void_fixes = {}  # path -> list of (old_ln, new_ln)
 
@@ -128,7 +141,17 @@ for (cls, mth), count in sorted(method_groups.items()):
             ret = 'int'
         decl = '    %s %s(%s);  // plateau: def-aligned C2039/C2660' % (ret, mth, params)
     else:
-        decl = '    static double %s(...);  // plateau: C2039/C3861 stub' % mth
+        # X4: resolve a COMPLETE prototype from the authority; no def and no
+        # signature -> loud skip (Q4 gap), never a `...` stub.
+        r = au().resolve(name=mth, prefer_cls=cls)
+        if r is None or r.params is None:
+            print('  !! [x4] no signature for %s::%s -- plateau stub '
+                  'skipped (Q4 gap)' % (cls, mth))
+            n_skipped += 1
+            continue
+        ret = r.ret if r.ret and r.ret != 'unknown' else 'double'
+        decl = ('    static %s %s(%s);  // plateau: C2039/C3861 resolved '
+                '%s@%s' % (ret, mth, r.params, r.provenance, r.addr or ''))
     anchor = txt.rfind('};')
     if anchor < 0:
         continue
@@ -149,6 +172,7 @@ if APPLY:
 # ================================================================
 print(f'plateau fixer: {len(method_groups)} C2039/C2660 groups, '
       f'{len(void_ret)} C2562 groups')
-print(f'  method decls added: {n_decl} in {len(hdr_fixes)} headers')
+print(f'  method decls added: {n_decl} in {len(hdr_fixes)} headers '
+      f'({n_skipped} skipped, Q4 gaps)')
 print(f'  void->int ret fixes: {n_void_fix}')
 print('APPLIED' if APPLY else 'DRY RUN (use --apply)')

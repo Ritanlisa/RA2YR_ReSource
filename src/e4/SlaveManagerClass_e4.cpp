@@ -22,7 +22,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int ProcessDeployAction(...); }  // w16g4 raw call-form
+namespace gamemd { int ProcessDeployAction(ObjectClass *p_this); }  // x4:ida@0x6afd60
 
 // 0x522D00
 namespace gamemd {  // G42.18 ns repair

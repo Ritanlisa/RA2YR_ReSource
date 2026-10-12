@@ -84,12 +84,12 @@
 #include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int MainWindowProc_Helper_724000(...); }  // w16g4 raw call-form
-namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int MainWindowProc_Helper_724000(int p0); }  // x4:signals@0x724000
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LoadAccountInfoWOL_Load(...);  // raw 00779690: void *__thiscall LoadAccountInfoWOL_Load( ReferenceCounted *this, const char **a2, int a3,
-    int StartWDTCampaign(...);  // raw 007AFB90: BOOL __usercall StartWDTCampaign(char a1, char a2, int a3)
+    int LoadAccountInfoWOL_Load(const char** p0, int p1, char p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, char p11, const int** p12, const int** p13);  // x4:signals@0x779690
+    int StartWDTCampaign();  // x4:empty@0x7afb90
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aDisconnects[];  // data: 0x849fa8 truth(IDA G42.57w9)

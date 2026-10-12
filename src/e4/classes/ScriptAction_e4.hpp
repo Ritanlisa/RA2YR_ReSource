@@ -42,6 +42,5 @@ struct ScriptAction {
     bool SetField10();  // 0x637DB0
     static int ClassifyAction(int *a1, char *a2);  // 0x638CE0
     void *  CopyStructField(void * a2, void * a3);  // 0x6E47C0
-    static double ScriptAction_field_0x18(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -57,9 +57,9 @@
 #include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TacticalClass_e4.hpp"  // G42.36 C2027 supply
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int SetLocalToByID(...); }
-namespace gamemd { int AnnounceReady(...); }
-namespace gamemd { int PlayWaypointEffect(...); }
+namespace gamemd { int SetLocalToByID(unsigned int p0, char p1); }  // x4:signals@0x689910
+namespace gamemd { int AnnounceReady(BuildingClass *p_this); }  // x4:ida@0x452260
+namespace gamemd { int PlayWaypointEffect(int p0, int p1, int p2, int p3); }  // x4:signals@0x6e0490
 
 // 0x6DD8B0
 namespace gamemd {  // G42.18 ns repair

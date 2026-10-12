@@ -10,6 +10,5 @@ struct E4Recv_696AE0 {
     unsigned int M152;  // 0x98
 // --- flat members (END) ---
     HWND sub_696AE0();  // 0x696AE0
-    static double isInLogic(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

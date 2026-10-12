@@ -29,10 +29,5 @@ struct Trigger {
     unsigned int u32_470;  // 0x470 (offset-truth)
     unsigned int u32_478;  // 0x478 (offset-truth)
     unsigned int u32_84;  // 0x84 (offset-truth)
-    static double Trigger_field_0x48(...);  // plateau: C2039/C3861 stub
-    static double __pad_0084(...);  // plateau: C2039/C3861 stub
-    static double __pad_116C(...);  // plateau: C2039/C3861 stub
-    static double __pad_494(...);  // plateau: C2039/C3861 stub
-    static double q1160(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

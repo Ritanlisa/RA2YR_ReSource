@@ -8,7 +8,6 @@ struct E4Recv_549830 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
-    int Vf156(int,  ...);    // G6 vtable slot dispatch
     int  sub_549830(int a2, void ** a3, int a4, int a5);  // 0x549830
 };
 } // namespace gamemd

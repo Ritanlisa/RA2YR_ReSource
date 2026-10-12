@@ -12,7 +12,6 @@ struct E4Recv_5EF010 {
     unsigned int M20;  // 0x14
     unsigned int M24;  // 0x24
 // --- flat members (END) ---
-    int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_5EF010();  // 0x5EF010
 };
 } // namespace gamemd

@@ -83,9 +83,6 @@ struct RadioClass {
     unsigned int * Release(void *a1);
     void SetLinkCount(int a2);
      int Constructor(RadioClass * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
-    static double GetVtable3(...);  // plateau: C2039/C3861 stub
-    static double q0E4(...);  // plateau: C2039/C3861 stub
-    static double u32_E8(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

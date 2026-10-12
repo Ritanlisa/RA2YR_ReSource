@@ -62,23 +62,23 @@ extern int globalHelper_005F80;  // 词表 (canon 无条目, int 兜底) L5928
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Random_Range(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Random_Range(int p0, int p1);  // x4:signals@0x65c7e0
 void sub_7DC720(int aP1);   // g57w11 r4: misc_ext.hpp:53 同形 (TU 未载 misc_ext; raw 0x44c1ef 调用形)
-int PlayHealthDependentBuildingAnim(...);   // g57w11 r4: raw 词表 (纯变参兜底)
-int To_Cell(...);   // g57w11 r4: raw 词表
-int Subtract(...);   // g57w11 r4: raw 词表
-int StartInvulnerability(...);   // g57w11 r4: raw 词表
-int Set2(...);   // g57w11 r4: raw 词表
-int FacingClass_Set_SyncLog(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_Pathfinding_Find(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AllMembersValid(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ContainsValue(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int PlayHealthDependentBuildingAnim(TechnoClass *p_this);  // x4:ida@0x458330
+int To_Cell(int* p0);  // x4:signals@0x565730
+int Subtract(int p0, int p1, int p2);  // x4:signals@0x41c230
+int StartInvulnerability(int p0);  // x4:signals@0x70e360
+int Set2(int* p0);  // x4:signals@0x45aea0
+int FacingClass_Set_SyncLog(int* p0);  // x4:signals@0x4c9300
+int LayerClass_Pathfinding_Find(int* p0, int p1, int* p2, int16_t* p3, int p4, int p5, int p6, int p7, int p8, int p9, char p10, char p11, char p12, char p13, int16_t* p14, char p15, char p16);  // x4:signals@0x56dc20
+int AllMembersValid(Team *p_this);  // x4:ida@0x65ae30
+int ContainsValue(int p0);  // x4:signals@0x65adf0
 int IonSensitivesShouldBeOffline(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {
-    int *World_ToScreen(void *a1, ...);                // object/supplied_bodies:91 真形;
+    int *World_ToScreen(int* p0, int* p1);  // x4:signals@0x6d2070
     // ---- g57w11 r4 item3: raw IDA 渲染词汇壳 (调用形; 真实 this 链留证) ----
     struct Team { static bool AllMembersValid(void *a1); static int GetMember(void *a1, int a2); };   // raw 0x444177/0x44bb1b
     struct Locomotor { static int GetSpeed(void *a1); };            // raw 0x44b8ae

@@ -35,10 +35,5 @@ struct MSFrameAnim {
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
-    static double q010(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

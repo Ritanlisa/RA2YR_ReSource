@@ -14,7 +14,6 @@ struct GaugeClass {
     int Draw(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int Stub();
     unsigned char u32_2D;  // 0x2D (offset-truth)
-    static double u32_34(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

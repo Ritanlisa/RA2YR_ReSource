@@ -21,7 +21,6 @@ struct ColorListClass {
     unsigned int u32_170;  // 0x170 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_44;  // 0x44 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

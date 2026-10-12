@@ -48,9 +48,9 @@ namespace gamemd { char sub_49E740(int *a2); }  // w18j2 raw 0x0049E740
 namespace gamemd { char LoadCoopCampaignSave(char *Destination); }  // w18j2 raw 0x0049D390
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DecodeCampaignPlayerName(...);  // raw 0049CCF0: char __thiscall sub_49CCF0( int this, int a2, int a3, void *Block, int a5, int16_t a6, int
-    int LoadCampaignCoopSave(...);  // raw 0049C0D0: char __thiscall CampaignClass_LoadCoopSave(char *this)
-    int SerializeCampaignOptions(...);  // raw 0049D680: char __thiscall SerializeCampaignOptions(char *this)
+    int DecodeCampaignPlayerName(int p0, int p1, void* p2, int p3, int16_t p4, int p5, int p6, char* p7, char* p8);  // x4:signals@0x49ccf0
+    int LoadCampaignCoopSave(char *p_this);  // x4:ida@0x49c0d0
+    int SerializeCampaignOptions(char *p_this);  // x4:ida@0x49d680
 } // namespace gamemd
 
 // 0x49B660

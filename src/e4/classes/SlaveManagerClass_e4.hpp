@@ -55,16 +55,6 @@ struct SlaveManagerClass {
     wchar_t * CreateSlave(wchar_t ** a2);
     static int ProcessSlaves(SlaveManagerClass *aP1, int *p_SlaveManagerClass_field_5C, int a3);
     SlaveManagerClass * ProcessOrders(void * Block, char a2);
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double __pad_048(...);  // plateau: C2039/C3861 stub
-    static double __pad_48(...);  // plateau: C2039/C3861 stub
-    static double abstractFlags6(...);  // plateau: C2039/C3861 stub
-    static double nextArrayIndex0(...);  // plateau: C2039/C3861 stub
-    static double u32_45(...);  // plateau: C2039/C3861 stub
-    static double u32_AC(...);  // plateau: C2039/C3861 stub
-    static double uniqueId0(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vtable46(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

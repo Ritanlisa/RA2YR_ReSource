@@ -44,7 +44,7 @@ namespace gamemd { void nullsub_43(); }  // w18j2 raw 0x006DC400
 namespace gamemd { void nullsub_44(); }  // w18j2 raw 0x006DC410
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawTechnoDeployCircle(...);  // raw 00456980: char __fastcall sub_456980(char a1, char a2, int a3, int a4, int a5, int a6, float a7, cha
+    int DrawTechnoDeployCircle(char p0, char p1, int p2, int p3, int p4, int p5, float p6, char p7, char p8);  // x4:signals@0x456980
 } // namespace gamemd
 
 // 0x47F510

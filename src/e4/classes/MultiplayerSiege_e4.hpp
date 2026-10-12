@@ -21,7 +21,6 @@ struct MultiplayerSiege {
     char StubReturnFalse();
     short Read(void *a1, void *a2, void *a3 = 0);
     int Write(void ** a1);
-    static double MultiplayerSiege_field_00(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -33,7 +33,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int InvalidateTileRegionMap(...);  // raw 0056DB70: int __thiscall InvalidateTileRegionMap(ObjectClass *this, int16_t *a2)
+    int InvalidateTileRegionMap(int16_t* p0);  // x4:signals@0x56db70
 } // namespace gamemd
 // [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
 // usage: *(unsigned int*)v.q000 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)

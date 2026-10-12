@@ -10,7 +10,7 @@ struct PriorityQueue {
 
 // --- flat members (END) ---
     int Add(int aP1, void *a1 = 0, void *a2 = 0);
-    static int Pop(...);
+    static int Pop(PriorityQueue *p_this);  // x4:ida@0x5ac960
 };
 
 } // namespace gamemd

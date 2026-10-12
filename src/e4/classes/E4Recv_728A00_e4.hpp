@@ -18,6 +18,5 @@ struct E4Recv_728A00 {
     unsigned int M52;  // 0x52
 // --- flat members (END) ---
     int sub_728A00();  // 0x728A00
-    static double CurrentState(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

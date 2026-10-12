@@ -12,9 +12,5 @@ struct VectorClass_Ptr {
     AbstractClass * ptr_10;  // 0x10
 // --- flat members (END) ---
     AbstractClass * *  ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_5(...);  // plateau: C2039/C3861 stub
-    static double __tail_10(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

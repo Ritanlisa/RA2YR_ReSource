@@ -18,7 +18,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int GameListRenderWOL(...);  // raw 00781480: void GameListRenderWOL(ObjectClass *this)
+    int GameListRenderWOL(ObjectClass *p_this);  // x4:ida@0x781480
 } // namespace gamemd
 
 // 0x7AA870

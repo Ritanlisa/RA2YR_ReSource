@@ -79,12 +79,6 @@ struct ParticleClass {
     unsigned int q0184;  // 0x184 (offset-truth)
     unsigned char q0185;  // 0x185 (offset-truth)
     unsigned char q0186;  // 0x186 (offset-truth)
-    static double ParticleClass_field_0xAC(...);  // plateau: C2039/C3861 stub
-    static double ParticleClass_field_0xB4(...);  // plateau: C2039/C3861 stub
-    static double ParticleClass_field_0xB8(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_128(...);  // plateau: C2039/C3861 stub
-    static double __pad_28(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -27,7 +27,6 @@ struct RawFileClass {
      unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int Write(void *a1 = 0);
     char __tail_0[4];  // 0x0 (ml)
-    static double CacheReadAhead(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_RawFileClass_DEF
 

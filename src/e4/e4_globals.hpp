@@ -15379,7 +15379,7 @@ extern const char aYriiShp[];
 extern const char aYrm[];
 
 // G42.16: orphan global-func supply wiring (C3861 bare names)
-#include "_generated/global_funcs_variad.hpp"
+#include "_generated/global_funcs_decls.hpp"
 
 
 // G42.31 C2065 data supply (per-name guarded, idempotent):

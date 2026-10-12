@@ -25,36 +25,36 @@
 #include "system/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawToSurfaceSHP(...);  // raw 004AED70: int __fastcall DrawToSurfaceSHP( int a1, int a2, int a3, unsigned int a4, int *a5, int *a6
+    int DrawToSurfaceSHP(int p0, int p1, int p2, unsigned int p3, int* p4, int* p5, int p6, int p7, int p8, int p9, int p10, int p11, int p12, unsigned int p13, int p14, int p15);  // x4:signals@0x4aed70
 } // namespace gamemd
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int globalHelper_0D2ED0;  // 词表 (canon 无条目, int 兜底) L1087
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Coord_To_ScreenRaw(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_RenderCellFogOfWar(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Vector2_Subtract(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int RenderAlphaShapes(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int BuildingDebris_Init(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CellClass_GetScreenRect(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CellClass_GetTerrainFlag(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CellClass_InitRandomOffsets(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Coord3D_Set(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Coord_Subtract(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Coord_To_Screen(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Coord_To_ScreenRaw(int* p0, int* p1);  // x4:signals@0x6d1f10
+int TacticalClass_RenderCellFogOfWar(unsigned int* p0, int* p1);  // x4:signals@0x4801f0
+int Vector2_Subtract(int* p0);  // x4:signals@0x6dc4c0
+int RenderAlphaShapes(ObjectClass *p_this);  // x4:ida@0x421350
+int BuildingDebris_Init(int p0);  // x4:signals@0x631d40
+int CellClass_GetScreenRect(int* p0);  // x4:signals@0x47ff80
+int CellClass_GetTerrainFlag(int p0);  // x4:signals@0x5471f0
+int CellClass_InitRandomOffsets(int p0, int p1);  // x4:signals@0x4814f0
+int Coord3D_Set(int p0, int p1, int p2);  // x4:signals@0x437090
+int Coord_Subtract(int p0, int p1, int p2);  // x4:signals@0x41c230
+int Coord_To_Screen(int* p0, int* p1);  // x4:signals@0x6d2140
+int LayerClass_CoordinatesLegal(int16_t* p0);  // x4:signals@0x568300
 int PingPongBuffer_GetWriteOffset(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_CheckCellVisibility(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_DecrementCounter(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_DrawCellTerrainOverlay(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_DrawTerrain(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_InterpolateColor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_SetView(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TacticalClass_saveConfig(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TerrainClass_GenerateTexture(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Triple_Set(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ClipRectIntersection(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int TacticalClass_CheckCellVisibility(int* p0, int* p1, char p2);  // x4:signals@0x480350
+int TacticalClass_DecrementCounter(int p0);  // x4:signals@0x631ee0
+int TacticalClass_DrawCellTerrainOverlay(int* p0, int* p1);  // x4:signals@0x4802a0
+int TacticalClass_DrawTerrain(int* p0, int* p1);  // x4:signals@0x6d7c00
+int TacticalClass_InterpolateColor(int p0);  // x4:signals@0x631e50
+int TacticalClass_SetView(int p0, int p1, int16_t p2, int16_t p3, int16_t p4, int16_t p5);  // x4:signals@0x483e30
+int TacticalClass_saveConfig(int p0);  // x4:signals@0x631e30
+int TerrainClass_GenerateTexture(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, char p11, int p12, char p13, char p14, char p15, int p16);  // x4:signals@0x547cf0
+int Triple_Set(int p0, int p1, int p2);  // x4:signals@0x43a0b0
+int ClipRectIntersection(int* p0, int* p1, int* p2, int* p3, int* p4);  // x4:signals@0x421b60
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----

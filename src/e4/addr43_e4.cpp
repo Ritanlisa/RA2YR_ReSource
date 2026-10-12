@@ -42,7 +42,7 @@
 #include "e4/classes/Coord2D_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FontClass_e4.hpp"  // w18j2 C3861 FontClass:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int RenderGlyph(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int RenderGlyph(uint16_t p0, int p1, int p2, int p3); }  // x4:signals@0x434120
 
 // 0x431BC0
 namespace gamemd {  // G42.18 ns repair

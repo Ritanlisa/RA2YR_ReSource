@@ -69,13 +69,12 @@
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { BOOL RepositionDialogControls(HWND hWnd, HWND a2); }  // w18j2 raw 0x0060C0C0
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CountCharsInWidth(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int sub_55CBF0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CountCharsInWidth(uint16_t* p0, int p1, int p2, int p3); }  // x4:signals@0x433f50
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int InitializeDialogControls(...);  // raw 0060F4B0: char __fastcall InitializeDialogControls(HWND a1, LPARAM)
+    int InitializeDialogControls(HWND a1, LPARAM a2);  // x4:ida@0x60f4b0
 } // namespace gamemd
 
 // 0x620050

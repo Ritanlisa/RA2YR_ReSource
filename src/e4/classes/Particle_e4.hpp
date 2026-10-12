@@ -17,18 +17,5 @@ struct Particle {
     unsigned int q0084;  // 0x84 (offset-truth)
     unsigned char q0085;  // 0x85 (offset-truth)
     unsigned char q0087;  // 0x87 (offset-truth)
-    static double u32_10C(...);  // plateau: C2039/C3861 stub
-    static double u32_110(...);  // plateau: C2039/C3861 stub
-    static double u32_114(...);  // plateau: C2039/C3861 stub
-    static double u32_128(...);  // plateau: C2039/C3861 stub
-    static double u32_12C(...);  // plateau: C2039/C3861 stub
-    static double u32_12D(...);  // plateau: C2039/C3861 stub
-    static double u32_150(...);  // plateau: C2039/C3861 stub
-    static double u32_154(...);  // plateau: C2039/C3861 stub
-    static double u32_158(...);  // plateau: C2039/C3861 stub
-    static double u32_6C(...);  // plateau: C2039/C3861 stub
-    static double u32_AC(...);  // plateau: C2039/C3861 stub
-    static double u32_B0(...);  // plateau: C2039/C3861 stub
-    static double u32_E0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -22,12 +22,6 @@ struct CChatEventSink {
     int ProcessChatEvent();
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_84;  // 0x84 (offset-truth)
-    static double CChatEventSink_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double CChatEventSink_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double CChatEventSink_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double GetTypeInfo(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

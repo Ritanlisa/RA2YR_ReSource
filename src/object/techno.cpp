@@ -35,14 +35,14 @@ using ra2::game::AbstractClass;
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioSource;  // 词表 (canon 无条目, int 兜底) L1306
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {
-int Cell_CanPlaceBuilding(...);  // g57c5 W5 vocab
-int Cell_GetGroundHeight(...);  // g57c5 W5 vocab
-int ConstructionPositionTracker(...);  // g57c5 W5 vocab
-int Coord_GetCoords(...);  // g57c5 W5 vocab
-int CreateSmokeEffectAt(...);  // g57c5 W5 vocab
-int Math_RoundToInt(...);  // g57c5 W5 vocab
-int ObjectClass_DetectCloaked(...);  // g57c5 W5 vocab
-int PlaySoundEffectAt(...);  // g57c5 W5 vocab
+int Cell_CanPlaceBuilding(int* p0, int* p1);  // x4:signals@0x43b4c0
+int Cell_GetGroundHeight(int* p0);  // x4:signals@0x578080
+int ConstructionPositionTracker(TechnoClass *p_this);  // x4:ida@0x425670
+int Coord_GetCoords(int* p0);  // x4:signals@0x4399a0
+int CreateSmokeEffectAt(int p0, int p1, int p2, int p3, int p4, char p5, int p6);  // x4:signals@0x48a620
+int Math_RoundToInt(double p0);  // x4:signals@0x7c5f00
+int ObjectClass_DetectCloaked(TechnoClass *p_this);  // x4:ida@0x5f3e70
+int PlaySoundEffectAt(int* p0, int p1, int* p2, int p3, char p4, int p5);  // x4:signals@0x489280
 } }
 // ---- g57c5 W5 end ----
 extern int Coord;  // 词表 (canon 无条目, int 兜底) L1352
@@ -51,19 +51,19 @@ extern int byte_A8EB7F;  // 词表 (canon 无条目, int 兜底) L1323
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Cell_GetGroundHeight(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Coord_GetCoords(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CreateSmokeEffectAt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ObjectClass_DetectCloaked(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Cell_GetGroundHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Coord_GetCoords(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_DetectCloaked(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Cell_CanPlaceBuilding(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ConstructionPositionTracker(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetGroundHeight(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetNthOfType(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Math_RoundToInt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int PlaySoundEffectAt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Cell_GetGroundHeight(int* p0);  // x4:signals@0x578080
+int Coord_GetCoords(int* p0);  // x4:signals@0x4399a0
+int CreateSmokeEffectAt(int p0, int p1, int p2, int p3, int p4, char p5, int p6);  // x4:signals@0x48a620
+int ObjectClass_DetectCloaked(TechnoClass *p_this);  // x4:ida@0x5f3e70
+int Cell_GetGroundHeight(int* p0);  // x4:signals@0x578080
+int Coord_GetCoords(int* p0);  // x4:signals@0x4399a0
+int ObjectClass_DetectCloaked(TechnoClass *p_this);  // x4:ida@0x5f3e70
+int Cell_CanPlaceBuilding(int* p0, int* p1);  // x4:signals@0x43b4c0
+int ConstructionPositionTracker(TechnoClass *p_this);  // x4:ida@0x425670
+int GetGroundHeight(int* p0);  // x4:signals@0x578080
+int GetNthOfType(Building *p_this);  // x4:ida@0x485020
+int Math_RoundToInt(double p0);  // x4:signals@0x7c5f00
+int PlaySoundEffectAt(int* p0, int p1, int* p2, int p3, char p4, int p5);  // x4:signals@0x489280
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----

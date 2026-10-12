@@ -152,8 +152,8 @@ struct TacticalClass {
     int  ScrollView(char a2);  // 0x554af0
     AnimClass * SetObserverView(void *a1 = 0);
     int DrawTerrain(int *a2, unsigned int *a4);
-    static int FillScanlinesTransparent(...);
-    static int updateScroll(...);
+    static int FillScanlinesTransparent(int p0, int p1, int p2, int p3);  // x4:signals@0x411330
+    static int updateScroll(int p0, int p1);  // x4:signals@0x7343e0
     unsigned int uniqueId4;  // @0x6d7c19 (W16G3 raw-usage vocab)
     unsigned int uniqueId5;  // @0x6d7ccd (W16G3 raw-usage vocab)
     unsigned int abstractFlags6;  // @0x6d30a2 (W16G3 raw-usage vocab)
@@ -173,19 +173,6 @@ struct TacticalClass {
     unsigned int u32_11C0;  // 0x11C0 (offset-truth)
     unsigned int u32_11C4;  // 0x11C4 (offset-truth)
     unsigned int u32_11C8;  // 0x11C8 (offset-truth)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11B0(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11D0(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11D4(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11D8(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11DC(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11E0(...);  // plateau: C2039/C3861 stub
-    static double nextArrayIndex4(...);  // plateau: C2039/C3861 stub
-    static double u32_11B(...);  // plateau: C2039/C3861 stub
-    static double u32_11B0(...);  // plateau: C2039/C3861 stub
-    static double u32_11E(...);  // plateau: C2039/C3861 stub
-    static double u32_294(...);  // plateau: C2039/C3861 stub
-    static double u32_2E1(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

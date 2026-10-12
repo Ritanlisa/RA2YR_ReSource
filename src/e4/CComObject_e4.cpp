@@ -38,15 +38,15 @@
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/GadgetClass_e4.hpp"  // w18j2 C3861 GadgetClass:: supply
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int DlgProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4); }  // x4:ida@0x4f11b0
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int TrackState(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int TrackState(int p0, int p1); }  // x4:signals@0x77a700
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int GameListRenderWOL(...);  // raw 00781480: void GameListRenderWOL(ObjectClass *this)
-    int LeaveChannelWOL(...);  // raw 00785740: void __thiscall LeaveChannelWOL(const char *this)
+    int GameListRenderWOL(ObjectClass *p_this);  // x4:ida@0x781480
+    int LeaveChannelWOL(const char *p_this);  // x4:ida@0x785740
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern wchar_t aTxtPagefailed[];  // data: 0x84b034 truth(IDA G42.57w9)

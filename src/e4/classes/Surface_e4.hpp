@@ -44,10 +44,6 @@ struct Surface {
     unsigned int u32_1244;  // 0x1244 (offset-truth)
     unsigned int u32_1490;  // 0x1490 (offset-truth)
     unsigned int u32_1498;  // 0x1498 (offset-truth)
-    static double LockCount(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_24C(...);  // plateau: C2039/C3861 stub
-    static double u32_6D3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

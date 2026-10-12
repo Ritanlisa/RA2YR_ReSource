@@ -59,7 +59,7 @@
 #include "e4/classes/AnimFile_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int CreateFireAtSW(...);  // raw 0062E430: int __thiscall CreateFireAtSW(ObjectClass *this, int a2, int a3)
+    int CreateFireAtSW(int p0, int p1);  // x4:signals@0x62e430
 } // namespace gamemd
 
 // 0x420140

@@ -42,13 +42,6 @@ struct AirstrikeClass {
     int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2, int aP1, int aP0, int a1, int aP2);
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double a2(...);  // plateau: C2039/C3861 stub
-    static double u32_D0(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vtable22(...);  // plateau: C2039/C3861 stub
-    static double vtable26(...);  // plateau: C2039/C3861 stub
-    static double vtable33(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

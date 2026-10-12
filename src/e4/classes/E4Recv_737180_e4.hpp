@@ -18,8 +18,6 @@ struct E4Recv_737180 {
     unsigned int M1732;  // 0x6C4
     unsigned int M1748;  // 0x6D4
 // --- flat members (END) ---
-    int Vf1152(int,  ...);    // G6 vtable slot dispatch
-    int Vf440(int,  ...);    // G6 vtable slot dispatch
     int UpdateInfantryIdleWander();  // 0x737180
 };
 } // namespace gamemd

@@ -16,6 +16,5 @@ struct IStream {
 // supplied (R_fix, C2039 IStreamVtbl x18): SaveGame_e4.cpp lpVtbl 载体
 struct IStreamVtbl {
     int Write(void *aP0, void *aP1, int aP2, int aP3);  // COM IStream::Write 形态
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

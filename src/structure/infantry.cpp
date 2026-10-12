@@ -34,19 +34,18 @@ int ToCell(void* a1);  // g57c5 W5 vocab (csp)
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
 
-int CalcAngle(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CalcAngle(double p0, double p1);  // x4:signals@0x4cae30
 void* _GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(void* a1);  // g57w10 r4 item6: raw fn_52:959 IDA demangler 噪声名原样词表 (真调用目标待 live asm 考古)
-int Equal(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ComPtr_Release_Alt(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int InfantryClass_CanDeployAtCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int GetProductionTimeMult(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IonSensitivesShouldBeOffline(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Range(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int RoundToInt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int To_Cell(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int UpdateFootFacing(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Int64_Equal_vocab(...);   // g57w10: Int64::Equal(a,b) raw vocab (misc_ext Int64 twin-collides w/ MapSeed_e4)
+int Equal(Int64 *p_this, _DWORD *a2);  // x4:ida@0x517310
+int ComPtr_Release_Alt(ComPtr *p_this);  // x4:ida@0x4b4d50
+int InfantryClass_CanDeployAtCell(int16_t* p0, int16_t* p1);  // x4:signals@0x5221d0
+int LayerClass_IsWithinUsableArea(int16_t* p0, char p1);  // x4:signals@0x578460
+int GetProductionTimeMult(int p0);  // x4:signals@0x5fb2e0
+int IonSensitivesShouldBeOffline();  // x4:empty@0x53a130
+int Range(int p0, int p1);  // x4:signals@0x65c7e0
+int RoundToInt(double p0);  // x4:signals@0x7c5f00
+int To_Cell(int* p0);  // x4:signals@0x565730
+int UpdateFootFacing(TechnoClass *p_this);  // x4:ida@0x515ed0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----

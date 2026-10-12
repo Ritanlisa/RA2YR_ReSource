@@ -21,7 +21,6 @@ struct Isometric {
 // --- flat members (END) ---
     AbstractClass * InitTables(unsigned int *a2, void *a1 = 0);
     unsigned int u32_704;  // 0x704 (offset-truth)
-    static double u32_11C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

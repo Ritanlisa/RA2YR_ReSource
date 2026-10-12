@@ -144,8 +144,6 @@ struct HouseTypeClass {
     void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);
     AbstractClass * LoadFromINI(uint8_t *** aP1, void *a2);
     char pad_16D[58];  // 0x16D (ml)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double __pad_16D(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

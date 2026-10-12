@@ -11,7 +11,5 @@ struct E4Recv_633AC0 {
     unsigned int M116;  // 0x74
 // --- flat members (END) ---
     unsigned int * sub_633AC0();  // 0x633AC0
-    static double estimatedHealth(...);  // plateau: C2039/C3861 stub
-    static double isOnMap(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

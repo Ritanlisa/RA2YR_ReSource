@@ -31,12 +31,5 @@ struct VoxelAnimType {
     AbstractClass * *  LoadBarrel(void * a2, int a3);  // 0x5F7DB0
     int LoadAnim(void *a1 = 0);  // 0x5F8110
     unsigned int u32_104;  // 0x104 (offset-truth)
-    static double u32_1EC(...);  // plateau: C2039/C3861 stub
-    static double u32_3284(...);  // plateau: C2039/C3861 stub
-    static double u32_3354(...);  // plateau: C2039/C3861 stub
-    static double u32_B0(...);  // plateau: C2039/C3861 stub
-    static double u32_B4(...);  // plateau: C2039/C3861 stub
-    static double u32_B8(...);  // plateau: C2039/C3861 stub
-    static double u32_BC(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

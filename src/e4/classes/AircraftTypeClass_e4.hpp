@@ -425,16 +425,6 @@ struct AircraftTypeClass {
     int  LoadFromINI(ObjectTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
     int SaveToINI(void * a0, TechnoTypeClass * aP1, int a3);
-    static double TechnoTypeClass(...);  // plateau: C2039/C3861 stub
-    static double __pad_730(...);  // plateau: C2039/C3861 stub
-    static double u32_D2E(...);  // plateau: C2039/C3861 stub
-    static double u32_D35(...);  // plateau: C2039/C3861 stub
-    static double u32_D36(...);  // plateau: C2039/C3861 stub
-    static double u32_D38(...);  // plateau: C2039/C3861 stub
-    static double u32_D3B(...);  // plateau: C2039/C3861 stub
-    static double u32_D96(...);  // plateau: C2039/C3861 stub
-    static double u32_D97(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

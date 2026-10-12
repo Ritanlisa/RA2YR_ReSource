@@ -23,8 +23,8 @@ extern int i;  // 词表 (canon 无条目, int 兜底) L1010
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Add_Buffer(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Checksummer_Add_Buffer(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Add_Buffer(uint8_t* p0, int p1);  // x4:signals@0x4a1de0
+int Checksummer_Add_Buffer(uint8_t* p0, int p1);  // x4:signals@0x4a1de0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

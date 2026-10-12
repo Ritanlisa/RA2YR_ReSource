@@ -140,15 +140,5 @@ struct DynamicVector {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
-    static double DynamicVector_field_0x1(...);  // plateau: C2039/C3861 stub
-    static double DynamicVector_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double DynamicVector_field_0x1C(...);  // plateau: C2039/C3861 stub
-    static double DynamicVector_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_14(...);  // plateau: C2039/C3861 stub
-    static double __pad_20(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

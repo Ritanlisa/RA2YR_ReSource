@@ -43,11 +43,6 @@ struct IsometricTileTypeClass {
     unsigned int u32_294;  // 0x294 (offset-truth)
     unsigned int u32_2BC;  // 0x2BC (offset-truth)
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
-    static double IsometricTileTypeClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double IsometricTileTypeClass_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double IsometricTileTypeClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double q010(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

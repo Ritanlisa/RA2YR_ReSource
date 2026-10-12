@@ -10,6 +10,5 @@ struct E4Recv_74F620 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     void sub_74F620();  // 0x74F620
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

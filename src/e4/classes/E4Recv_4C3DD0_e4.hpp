@@ -10,6 +10,5 @@ struct E4Recv_4C3DD0 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     gamemd::AbstractClass * * sub_4C3DD0(int a2);
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -37,8 +37,6 @@ struct LightSourceClass {
     int Write(AbstractClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
     unsigned int * Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, void *a1 = 0);
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

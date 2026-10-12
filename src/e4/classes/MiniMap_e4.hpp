@@ -10,6 +10,5 @@ struct MiniMap {
 // --- flat members (END) ---
     unsigned char q000[8];  // 0x0 (canon size filler)
     static bool SavePreviewToINI(void *aP1, void *a2);
-    static double Render(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

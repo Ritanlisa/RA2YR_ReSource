@@ -83,13 +83,6 @@ struct VoxelAnimClass {
     int Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     VoxelAnimClass * DrawVoxel(void * Block, char a2);
     char __pad_98[104];  // 0x98 (ml)
-    static double OccupantAnim(...);  // plateau: C2039/C3861 stub
-    static double VoxelAnimClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double VoxelAnimClass_field_0x104(...);  // plateau: C2039/C3861 stub
-    static double VoxelAnimClass_field_0x10C(...);  // plateau: C2039/C3861 stub
-    static double VoxelAnimClass_field_0x114(...);  // plateau: C2039/C3861 stub
-    static double VoxelAnimClass_field_0x140(...);  // plateau: C2039/C3861 stub
-    static double __pad_12C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

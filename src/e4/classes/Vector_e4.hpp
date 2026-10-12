@@ -9,7 +9,6 @@ struct Vector {
     bool IsInitialized;  // 0xC
 // --- flat members (END) ---
     void* Cl_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon Vector::Cl is a method)
-    static unsigned int Cl(...);
     int Cleanup(void *a1 = 0, void *a2 = 0);  // 0x512D30
     int Destructor(void *a1 = 0);  // 0x513100
     int  MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
@@ -30,17 +29,5 @@ struct Vector {
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     void Math_Vector2D_Magnitude();  // plateau: def-aligned C2039/C2660
-    static double Vector_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double Vector_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double Vector_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_010(...);  // plateau: C2039/C3861 stub
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double u32_20(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
-    static double u32_8(...);  // plateau: C2039/C3861 stub
-    static double u8_D(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -140,7 +140,6 @@ struct ParticleTypeClass {
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
     void ParticleTypeClass_LoadFromINI(uint8_t *** aP1);  // plateau: def-aligned C2039/C2660
-    static double q010(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

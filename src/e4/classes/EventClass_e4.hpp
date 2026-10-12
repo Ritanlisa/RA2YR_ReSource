@@ -42,14 +42,5 @@ struct EventClass {
     int  GetState(int a1);  // 0x5F3440
     char __pad_10[5];  // 0x10 (ml)
     unsigned char q0041;  // 0x41 (offset-truth)
-    static double EventClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double EventClass_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double EventClass_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double EventClass_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double u32_3(...);  // plateau: C2039/C3861 stub
-    static double u32_7(...);  // plateau: C2039/C3861 stub
-    static double u32_8(...);  // plateau: C2039/C3861 stub
-    static double u32_B(...);  // plateau: C2039/C3861 stub
-    static double u32_F(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -10,7 +10,6 @@ struct Process {
     char Process_field_00[4];  // 0x0
 // --- flat members (END) ---
     bool WaitForExit(DWORD dwMilliseconds, char aP2);
-    static double q01C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

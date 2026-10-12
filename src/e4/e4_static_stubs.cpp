@@ -29,9 +29,6 @@ namespace gamemd {
 
 namespace gamemd {
 
-double MapClass::cells(...) { return 0; }
-double MapClass::cellsCount(...) { return 0; }
-double TagClass::firstTrigger(...) { return 0; }
 
 } // namespace gamemd
 

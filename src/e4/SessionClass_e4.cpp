@@ -55,7 +55,7 @@
 extern unsigned int dword_B780A0;  // w18j2 data: 0xB780A0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Network_Load(...);  // raw 005CF830: int __thiscall Network_Load(ObjectClass *this, char a2)
+    int Network_Load(char p0);  // x4:signals@0x5cf830
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aMissionsmdPkt[];  // data: 0x83f520 truth(IDA G42.57w9)

@@ -49,9 +49,6 @@ struct CampaignClass {
     void sub_48B1F0();
     CampaignClass * * sub_7B2E50();
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double q044(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

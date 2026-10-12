@@ -82,7 +82,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawScoreScreenStats(...);  // raw 0072E2D0: int __fastcall ScoreScreen_DrawStats(int *a1, int a2)
+    int DrawScoreScreenStats(int* p0, int p1);  // x4:signals@0x72e2d0
 } // namespace gamemd
 
 // 0x539760

@@ -42,7 +42,7 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 
 // 0x4F11B0
 namespace gamemd {  // G42.18 ns repair

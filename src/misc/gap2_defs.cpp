@@ -39,36 +39,36 @@ extern int aCountries;  // 词表 (canon 无条目, int 兜底) L1416
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int INIClass_GetCoord(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int INIClass_GetKeyCount(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int INIClass_GetStringByIndex(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int INIEntry_Exists(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Palette_SixBitTo16Bit(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int RulesClass_ReadColors(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ArcTan2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CalcAngle(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SinCos(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CellClass_DamageAllObjects(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Coord_Length(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Coord_Subtract(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FootClass_ClearSomeVector2(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FootClass_MovementStep(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int MovementAI_MainFootClass(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int MovementAI_MarkOccupiedPathCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int MovementAI_StepFootClass(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_GetLandHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AllMembersValid(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ApplyDamage(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindClosestObjectCell(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindObjectCell(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetNeighbourContent(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsAlliedWithObjectHouse(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsInRange(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsInRange2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsPassableAllied(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsWithinUsableArea(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int PlayVocClass(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int WakeUpAllMembers(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int INIClass_GetCoord(int p0, uint8_t* p1, uint8_t* p2, uint8_t* p3);  // x4:signals@0x474b50
+int INIClass_GetKeyCount(uint8_t* p0);  // x4:signals@0x526960
+int INIClass_GetStringByIndex(uint8_t* p0, int p1);  // x4:signals@0x526cc0
+int INIEntry_Exists(INIEntry *p_this, unsigned __int8 *a2, unsigned __int8 *a3);  // x4:ida@0x679f40
+int Palette_SixBitTo16Bit(char p0, char p1, char p2);  // x4:signals@0x4355b0
+int RulesClass_ReadColors(RulesClass *p_this);  // x4:ida@0x66d3a0
+int ArcTan2(double p0);  // x4:signals@0x4cad00
+int CalcAngle(double p0, double p1);  // x4:signals@0x4cae30
+int SinCos(double p0);  // x4:signals@0x4cacb0
+int CellClass_DamageAllObjects(CellClass *p_this);  // x4:ida@0x483480
+int Coord_Length(Coord *p_this);  // x4:ida@0x41c380
+int Coord_Subtract(int p0, int p1, int p2);  // x4:signals@0x41c230
+int FootClass_ClearSomeVector2(FootClass *p_this);  // x4:ida@0x4da2a0
+int FootClass_MovementStep(int p0, int p1, int p2, int p3, int p4, int p5);  // x4:signals@0x4d3920
+int MovementAI_MainFootClass(char p0);  // x4:signals@0x514f70
+int MovementAI_MarkOccupiedPathCell(MovementAI *p_this);  // x4:ida@0x5163b0
+int MovementAI_StepFootClass(int p0);  // x4:signals@0x5164d0
+int ObjectClass_GetLandHeight(ObjectClass *p_this);  // x4:ida@0x5f5f00
+int AllMembersValid(Team *p_this);  // x4:ida@0x65ae30
+int ApplyDamage(int* p0);  // x4:signals@0x4690b0
+int FindClosestObjectCell(int* p0, char p1, int p2);  // x4:signals@0x47c3d0
+int FindObjectCell(int* p0, char p1);  // x4:signals@0x47c5a0
+int GetNeighbourContent(unsigned int p0);  // x4:signals@0x481810
+int IsAlliedWithObjectHouse(int p0);  // x4:signals@0x4f9a90
+int IsInRange(Cell *p_this);  // x4:ida@0x486750
+int IsInRange2(Cell *p_this);  // x4:ida@0x486770
+int IsPassableAllied(int p0, int16_t* p1);  // x4:signals@0x578ad0
+int IsWithinUsableArea(int16_t* p0, char p1);  // x4:signals@0x578460
+int PlayVocClass(int p0, int p1, float p2, int p3);  // x4:signals@0x750920
+int WakeUpAllMembers(TeamClass *p_this);  // x4:ida@0x6ec3a0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----

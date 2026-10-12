@@ -126,18 +126,18 @@
 #include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CalcFill(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int ComputeFill(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-int ComputeFill(...);  // w18j2 ns-supply raw 0x0063F960 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-int CalcFill(...);  // w18j2 ns-supply raw 0x0063F850 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CalcFill(); }  // x4:empty@0x63f850
+namespace gamemd { int ComputeFill(int* p0, int* p1, int* p2); }  // x4:signals@0x63f960
+int ComputeFill(int* p0, int* p1, int* p2);  // x4:signals@0x63f960
+int CalcFill();  // x4:empty@0x63f850
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int ExecuteActionPlanManager_Helper_63DEC0(...); }  // w18j2 raw 0x0063DEC0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ExecuteActionPlanManager_Helper_63DEC0(int p0, int p1); }  // x4:signals@0x63dec0
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int UI_Pop_631500(...); }  // w16g4 raw call-form
+namespace gamemd { int UI_Pop_631500(ObjectClass *p_this); }  // x4:ida@0x631500
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int RenderScenarioActionLines2(...);  // raw 0063CAE0: int __thiscall RenderScenarioActionLines2(ObjectClass *this)
-    int Team_Helper_6342E0(...);  // raw 006342E0: int __thiscall Team_Helper_6342E0(ObjectClass *this, int a2, int a3)
+    int RenderScenarioActionLines2(ObjectClass *p_this);  // x4:ida@0x63cae0
+    int Team_Helper_6342E0(int p0, int p1);  // x4:signals@0x6342e0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_4;  // data: 0x836d60 truth(IDA G42.57w9)

@@ -50,13 +50,13 @@
 #include "e4/classes/VectorClass_e4.hpp"
 #include "e4/classes/_VectorClass_PAVParticleClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_4E6070(...); }  // w18j2 raw 0x004E6070 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_4E6070(int p0); }  // x4:signals@0x4e6070
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_6616B0(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_74F730(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_720960(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_5F15C0(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_5408F0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_6616B0(int p0); }  // x4:signals@0x6616b0
+namespace gamemd { int sub_74F730(int p0); }  // x4:signals@0x74f730
+namespace gamemd { int sub_720960(int p0); }  // x4:signals@0x720960
+namespace gamemd { int sub_5F15C0(int p0, int p1, int p2, int p3); }  // x4:signals@0x5f15c0
+namespace gamemd { int sub_5408F0(int p0, int p1, int p2, int p3, int p4, int p5); }  // x4:signals@0x5408f0
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char byte_8B40E0;  // data: 0x8b40e0 truth(IDA G42.57w9)
 extern unsigned char byte_8B40E1;  // data: 0x8b40e1 truth(IDA G42.57w9)

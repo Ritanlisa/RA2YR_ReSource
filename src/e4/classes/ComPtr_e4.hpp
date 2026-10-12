@@ -27,17 +27,6 @@ struct ComPtr {
     static int Set(void *aP0, int aP2);  // G57a1 static-form mirror
     static int ReleaseSimple(void *aP0);  // G57a1 static-form mirror
     unsigned int ComPtr_field_0x08;  // 0x8 W16G3 alias (flat-carrier vocab, b4/b7/b8 precedent)
-    static double ComPtr_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double ComPtr_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double ComPtr_field_0x1C(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
-    static double q014(...);  // plateau: C2039/C3861 stub
-    static double q018(...);  // plateau: C2039/C3861 stub
-    static double q01C(...);  // plateau: C2039/C3861 stub
-    static double q020(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

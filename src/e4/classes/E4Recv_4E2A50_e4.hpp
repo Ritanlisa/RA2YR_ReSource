@@ -16,7 +16,6 @@ struct E4Recv_4E2A50 {
     unsigned int M52;  // 0x52
     unsigned int M64;  // 0x64
 // --- flat members (END) ---
-    int Vf72(int,  ...);    // G6 vtable slot dispatch
     int  sub_4E2A50(int a2, int a3, int a4, int a5, int a6);  // 0x4E2A50
 };
 } // namespace gamemd

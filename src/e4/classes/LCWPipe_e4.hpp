@@ -14,7 +14,6 @@ struct LCWPipe {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_14;  // 0x14 (offset-truth)
     unsigned int u32_18;  // 0x18 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

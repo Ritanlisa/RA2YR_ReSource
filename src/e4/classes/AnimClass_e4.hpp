@@ -89,16 +89,6 @@ struct AnimClass {
     AnimClass * * ComputePosition(int *aP1);
     int ReleaseBuffers();
     unsigned int q00C;  // 0xC (offset-truth)
-    static double AnimClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double AnimClass_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double AnimClass_field_0x9C(...);  // plateau: C2039/C3861 stub
-    static double AnimClass_field_0xCC(...);  // plateau: C2039/C3861 stub
-    static double __pad_010(...);  // plateau: C2039/C3861 stub
-    static double __pad_080(...);  // plateau: C2039/C3861 stub
-    static double __pad_A0(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
-    static double q0C8(...);  // plateau: C2039/C3861 stub
-    static double q0CC(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

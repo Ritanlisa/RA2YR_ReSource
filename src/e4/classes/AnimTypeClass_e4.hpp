@@ -200,10 +200,6 @@ struct AnimTypeClass {
     char Flat_flag[1];  // 0x369 (ml)
     char __pad_98[3];  // 0x98 (ml)
     unsigned int q024;  // 0x24 (offset-truth)
-    static double ObjectTypeClass(...);  // plateau: C2039/C3861 stub
-    static double __pad_24(...);  // plateau: C2039/C3861 stub
-    static double __pad_2A0(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

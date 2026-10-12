@@ -62,9 +62,5 @@ struct String {
     unsigned char m_3;  // 0x3 (canon-mt)
     void * ptr_88;  // 0x88 (offset-truth)
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_14(...);  // plateau: C2039/C3861 stub
-    static double u32_1C(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

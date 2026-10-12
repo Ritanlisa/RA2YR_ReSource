@@ -64,15 +64,15 @@
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/PreviewClass_e4.hpp"  // w18j2 C3861 PreviewClass:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int ReadWaypoints(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
-namespace gamemd { int LoadFromINI(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
-namespace gamemd { int ParseValue(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
-namespace gamemd { int RenderMapPreview(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+namespace gamemd { int ReadWaypoints(int p0); }  // x4:signals@0x68bdc0
+namespace gamemd { int LoadFromINI(uint8_t*** p0); }  // x4:signals@0x410a60
+namespace gamemd { int ParseValue(unsigned int* p0, uint8_t* p1, uint8_t* p2, unsigned int* p3); }  // x4:signals@0x527cc0
+namespace gamemd { int RenderMapPreview(int p_this); }  // x4:ida@0x565090
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_4072B0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4072B0(int p0); }  // x4:signals@0x4072b0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int SeedInitRNG(...);  // raw 0065C6D0: unsigned int *__thiscall SeedInitRNG(ObjectClass *this, int a2)
+    int SeedInitRNG(int p0);  // x4:signals@0x65c6d0
 } // namespace gamemd
 
 // 0x58BB30

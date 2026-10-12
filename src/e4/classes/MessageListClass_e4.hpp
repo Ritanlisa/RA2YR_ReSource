@@ -19,7 +19,7 @@ struct MessageListClass {
 // --- flat members (END) ---
     static int AddMessage(MessageListClass * aP1, wchar_t *Source, int a3, wchar_t *a4, int a5, int a6, int a7, char a8);
     int clearMessages(int a1, int a2, int a3, int a4, int a5);
-    static int CountCharsInWidth(...);
+    static int CountCharsInWidth(uint16_t* p0, int p1, int p2, int p3);  // x4:signals@0x433f50
 };
 
 } // namespace gamemd

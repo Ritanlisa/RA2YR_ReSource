@@ -15,9 +15,5 @@ struct E4Recv_517110 {
     unsigned int M76;  // 0x4C
 // --- flat members (END) ---
     int sub_517110();  // 0x517110
-    static double ambientSoundController(...);  // plateau: C2039/C3861 stub
-    static double fallRate(...);  // plateau: C2039/C3861 stub
-    static double occupant(...);  // plateau: C2039/C3861 stub
-    static double owningHouseIndex(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

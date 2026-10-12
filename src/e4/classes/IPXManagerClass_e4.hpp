@@ -13,7 +13,7 @@ struct IPXManagerClass {
     unsigned short tail_6;  // 0x6
 // --- flat members (END) ---
     unsigned int processPacket_ph;  // w18j3: filler renamed (no offset truth; canon IPXManagerClass::processPacket is a method)
-    static unsigned int processPacket(...);
+    static unsigned int processPacket(char *p_this);  // x4:ida@0x5409f0
     unsigned int u32_54;  // G42.40f supply (truth 0x5415F0: *((unsigned int*)this+21), cursor index)
     IPXManagerClass * QueryInterface(char * Block, char a2);
     int ddtor(int a2, int a3, unsigned int * a4);

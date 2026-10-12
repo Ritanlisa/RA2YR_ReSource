@@ -11,7 +11,5 @@ struct E4Recv_6D4E00 {
     unsigned int M164;  // 0xA4
 // --- flat members (END) ---
     void sub_6D4E00();  // 0x6D4E00
-    static double location(...);  // plateau: C2039/C3861 stub
-    static double occupant(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

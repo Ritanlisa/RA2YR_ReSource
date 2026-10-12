@@ -74,17 +74,6 @@ struct DisplayClass {
     char __pad_11B4[28];  // 0x11B4 (ml)
     char __pad_41E[960];  // 0x41E (ml)
     unsigned int q008;  // 0x8 (offset-truth)
-    static double DecideAction(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11A8(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11B0(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x11D0(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x12C(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x130(...);  // plateau: C2039/C3861 stub
-    static double DisplayClass_field_0x140(...);  // plateau: C2039/C3861 stub
-    static double __pad_1198(...);  // plateau: C2039/C3861 stub
-    static double __pad_11AC(...);  // plateau: C2039/C3861 stub
-    static double __pad_34(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

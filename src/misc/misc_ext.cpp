@@ -57,28 +57,28 @@ extern int dword_ABD4B0;  // 词表 (canon 无条目, int 兜底) L1044
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int AbstractClass_SaveLoad_Prefix_0(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AbstractTypeClass_Init(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AbstractTypeClass_ProcessPower(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AnimFile_Check(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CSFClass_CopyString(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CSFClass_LoadMissingStrings(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Checksummer_Add_double(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectPtr_RegisterForTracking(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Power_FlagProcess(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Clear(...);  // g57w20m1: 放宽变参 (Vector::Clear 静态渲染站; 原 0 参站变参下仍合法)
-int Construct(...);  // g57w20m1: 放宽变参 (CCFileClass::Construct 站)
-int FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Open(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ParseCSFString(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Read(...);  // g57w20m1: 放宽变参 (CCFileClass::Read 站)
-int sub_4267F0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int sub_4270D0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AbstractClass_SaveLoad_Prefix_0(int* p0, int p1);  // x4:signals@0x410380
+int AbstractTypeClass_Init(int p0);  // x4:signals@0x410960
+int AbstractTypeClass_ProcessPower(int* p0);  // x4:signals@0x410be0
+int AnimFile_Check(int p0);  // x4:signals@0x426dd0
+int CSFClass_CopyString(CSFClass *p_this);  // x4:ida@0x595710
+int CSFClass_LoadMissingStrings(char *p_this);  // x4:ida@0x6977c0
+int Checksummer_Add_double(int p0, int p1);  // x4:signals@0x4a1d90
+int ObjectPtr_RegisterForTracking(int p0, int* p1);  // x4:signals@0x6cf240
+int Power_FlagProcess(int p0);  // x4:signals@0x4a1ca0
+int Clear(int p0, int p1);  // x4:signals@0x40b120
+int Construct(int p0, int p1, int p2, int p3);  // x4:signals@0x410ce0
+int FindIndex(AnimTypeClass *p_this);  // x4:ida@0x427cb0
+int Open(CCFileClass *p_this, const CHAR *a2);  // x4:ida@0x431f70
+int ParseCSFString(char *Source);  // x4:ida@0x734990
+int Read(int p0);  // x4:signals@0x42f5e0
+int sub_4267F0(UnitClass *p_this);  // x4:ida@0x4267f0
+int sub_4270D0(int a1, unsigned int a2, __int16 *a3, int a4, char *a5, int a6);  // x4:ida@0x4270d0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {
-    int INIClass_GetString(void *a1, ...);             // raw 0x523d26 INIClass::GetString (变参兜底);
+    int INIClass_GetString(uint8_t* p0, uint8_t* p1, char* p2, char* p3, int p4);  // x4:signals@0x528a10
     void BufferIOFileClass_Dtor(void *a1);           // raw 0x734942;
 } // namespace gamemd
 // ---- g57b5 W3 end ----
@@ -88,28 +88,28 @@ namespace gamemd {
 void ObjectClass_ctor(void *aP1);                       // ObjectClass::ctor @0x5F3900 静态渲染
 void ObjectClass_Deploy(void *aP1);                     // ObjectClass::Deploy @0x5F4EC0 静态渲染
 void *ObjectClass_GetCoords(void *aP1);                 // ObjectClass::GetCoords @0x5F5440 静态渲染
-void AnimClass_InitRotation(void *aP1, ...);            // AnimClass::InitRotation 静态渲染 (0x74981f/0x749663)
+void AnimClass_InitRotation(int* p0, int p1, int p2, int p3, int p4, int p5, int p6, int* p7, double p8);  // x4:signals@0x4397e0
 void Mixer_ReleaseChannel(void *aP1);                   // Mixer::ReleaseChannel 静态渲染 (0x74984e)
 void AudioFile_Stop(void *aP1);                         // AudioFile::Stop 静态渲染 (0x749859)
-int ParticleSystemClass_Constructor(...);               // ParticleSystemClass::Constructor 静态渲染 (返回值用 0x7498aa)
+int ParticleSystemClass_Constructor(int p0, int* p1, int p2, void* p3, int* p4, int p5);  // x4:signals@0x62dc50
 void *Coord_To_Cell(void *aP1, void *a2);               // Coord::To_Cell 静态渲染 (0x74988f/0x53cc7c/0x53cd7b; 2 参 void* 形 = Coord_e4.hpp:101 G42.39a supply 0x565730)
 int ScenarioClass_Is_Waypoint_Valid(void *aP1, int a2);             // @0x68BD80 静态渲染 (0x5e7f4f)
 void *ScenarioClass_Get_Waypoint_Location(void *aP1, void *a2, int a3); // @0x68BCC0 静态渲染 (0x5e7f69)
-int Load(...);                                          // FileClass::Load 静态渲染 (0x734777)
-int Reset(...);                                         // CCFileClass::Reset 静态渲染 (0x69a7f1)
+int Load(AnimFile *p_this);  // x4:ida@0x426a50
+int Reset(AudioStream *p_this);  // x4:ida@0x403820
 // ---- g57w20m4 W2: 词表追加 (锚点: ida_cache 站 /*0xADDR*/ + 供给文件行号) ----
-int AbstractClass_GenerateUniqueID(...);                // 0x410230 静态形 (e4 先例 BulletClass_e4.cpp:56; abstract.hpp:320)
+int AbstractClass_GenerateUniqueID(int p0);  // x4:signals@0x410230
 void AudioController_Init(void *aP1);                   // static Init(void*) G42.33 b9 (call site 0x6c90a2; AudioController_e4.hpp supply)
-int AbstractClass_ProcessPower(...);                    // 0x410410 静态渲染 (abstract.hpp:201 member 0 参形)
+int AbstractClass_ProcessPower(AbstractClass *p_this);  // x4:ida@0x410410
 void *AbstractClass_InitVtables(void *aP1, int a2);     // 0x4101C0 静态渲染 (abstract.hpp:198 member 1 参形)
-int StartAudioControllerAt(...);                        // 0x7509e0 (_generated/global_funcs.hpp:4804)
+int StartAudioControllerAt(int p0, int p1, int p2);  // x4:signals@0x7509e0
 void ThrowErrorCOM(int a1, int a2, int a3);              // 0x7dcd9c (_generated/global_funcs.hpp:6146; g57w20m7 sub_7DC720 真身依赖)
 void *Coord_To_Screen(void *aP1, void *a2, void *a3);   // 0x6D2140 Coord::To_Screen 静态渲染 (Coord_e4.hpp:71)
-void AnimClass_ctor(...);                               // AnimClass::ctor 静态渲染 (0x53ccce/0x53cd14/0x53cd62; C2027 前置声明消解)
-int PlaySoundEffectAt(...);                             // 0x489280 (_generated/global_funcs.hpp:869)
-int CreateSmokeEffectAt(...);                           // 0x48a620 (_generated/global_funcs.hpp:871)
-int Cell_Exists(...);                                   // Cell::Exists 0x5657E0 (csp_canon "int Exists(void*)"; 站 0x4c592a)
-int Random_State(...);                                  // Random::State 静态渲染 (utility_ext.hpp:1741 class Random 胜出 TREE TU twin-guard; 站 0x74967e 族; member State() 0 参 thiscall)
+void AnimClass_ctor(void* p0, int* p1, void* p2, int p3, void* p4, void* p5, char p6);  // x4:signals@0x421ea0
+int PlaySoundEffectAt(int* p0, int p1, int* p2, int p3, char p4, int p5);  // x4:signals@0x489280
+int CreateSmokeEffectAt(int p0, int p1, int p2, int p3, int p4, char p5, int p6);  // x4:signals@0x48a620
+int Cell_Exists(int16_t* p0);  // x4:signals@0x5657e0
+int Random_State(Random *p_this);  // x4:ida@0x65c780
 struct Host_87F5F0_c { unsigned char __pad_head[0x58]; unsigned char __pad_58[0xE12 - 0x58]; unsigned char qE12[0x800]; };  // g57w20m4: 0x87F5F0 MapClass 宿主 (G42.35 C7 supplied_bodies.cpp:132 同形; 0x58/0xE12 区段词汇)
 // ---- g57w20m4 W2 end ----
 // til AbstractClass 元素 (IDA live 2026-10-08: vtable0-3/uniqueId/abstractFlags/nextArrayIndex/referenceCount/NeedsSaveOrLink)

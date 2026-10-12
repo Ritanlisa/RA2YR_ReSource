@@ -109,18 +109,18 @@
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_226(); }  // w18j2 raw 0x006832B0
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int WriteINI(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int WriteINI(char* p0); }  // x4:signals@0x410b90
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_5CAF70(...); }  // w18j2 raw 0x005CAF70 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace OverlayClass { int WriteINI(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace gamemd { int sub_5CAF70(int p0); }  // x4:signals@0x5caf70
+namespace OverlayClass { int WriteINI(char* p0); }  // x4:signals@0x410b90
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_44FE60(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_4FCE00(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_44FE60(int p0); }  // x4:signals@0x44fe60
+namespace gamemd { int sub_4FCE00(int p0, int p1, int p2, int p3); }  // x4:signals@0x4fce00
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ReadAudioEventINI(...);  // raw 00727880: int __thiscall ReadAudioEventINI(INIClass *this)
-    int SaveTriggerTagsToINI(...);  // raw 006E5FE0: int __thiscall SaveTriggerTagsToINI(INIClass *this)
-    int nullsub_34(...);  // raw 00691B30: void nullsub_34()
+    int ReadAudioEventINI(INIClass *p_this);  // x4:ida@0x727880
+    int SaveTriggerTagsToINI(INIClass *p_this);  // x4:ida@0x6e5fe0
+    int nullsub_34();  // x4:empty@0x691b30
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aGascloudsys[];  // data: 0x83da90 truth(IDA G42.57w9)

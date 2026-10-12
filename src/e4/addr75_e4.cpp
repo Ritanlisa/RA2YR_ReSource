@@ -84,19 +84,18 @@
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { BOOL sub_75A120(int int a2, int *a3, int a4); }  // w18j2 raw 0x0075A120
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int RenderLoop(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int RenderLoop(int p0, int p1, int p2); }  // x4:signals@0x432e40
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int sub_405130(...); }
-namespace gamemd { int sub_405160(...); }
-namespace gamemd { int sub_405140(...); }
-namespace gamemd { int sub_4052E0(...); }
-namespace gamemd { int GetStringByIndex(...); }
-namespace gamemd { int _do_always_noconv_codecvt_base_std__MBE_NXZ_21(...); }
-namespace gamemd { int sub_4053E0(...); }
-namespace gamemd { int sub_405430(...); }
+namespace gamemd { int sub_405130(int p0); }  // x4:signals@0x405130
+namespace gamemd { int sub_405160(int p0); }  // x4:signals@0x405160
+namespace gamemd { int sub_405140(int p0); }  // x4:signals@0x405140
+namespace gamemd { int sub_4052E0(int p0); }  // x4:signals@0x4052e0
+namespace gamemd { int GetStringByIndex(uint8_t* p0, int p1); }  // x4:signals@0x526cc0
+namespace gamemd { int sub_4053E0(int p0); }  // x4:signals@0x4053e0
+namespace gamemd { int sub_405430(int p0); }  // x4:signals@0x405430
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int InitializeTileAudioOcclusion(...);  // raw 00756860: int __thiscall InitializeTileAudioOcclusion(ObjectClass *this, int a2, float *a3)
+    int InitializeTileAudioOcclusion(int p0, float* p1);  // x4:signals@0x756860
 } // namespace gamemd
 
 // 0x750920

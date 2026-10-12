@@ -15,8 +15,6 @@ struct VectorClass {
     unsigned int tail_E;  // 0xE
 // --- flat members (END) ---
     AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3);
-    static double Construct(...);  // plateau: C2039/C3861 stub
-    static double v6(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

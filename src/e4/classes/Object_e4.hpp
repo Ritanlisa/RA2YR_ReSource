@@ -37,15 +37,5 @@ struct Object {
     int StubReturn20();  // 0x5FDF50
     char __pad_EC[80];  // 0xEC (ml)
     unsigned int u32_5788;  // 0x5788 (offset-truth)
-    static double Object_field_0x13C(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0x2(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0x30(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0xAC(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0xE4(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0xE8(...);  // plateau: C2039/C3861 stub
-    static double Type(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

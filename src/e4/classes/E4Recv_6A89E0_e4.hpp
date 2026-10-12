@@ -12,7 +12,5 @@ struct E4Recv_6A89E0 {
     unsigned int M84;  // 0x54
 // --- flat members (END) ---
     int  sub_6A89E0(char a2);  // 0x6A89E0
-    static double ambientSoundController(...);  // plateau: C2039/C3861 stub
-    static double customSound_controller(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

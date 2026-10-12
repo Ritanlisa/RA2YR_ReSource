@@ -107,9 +107,6 @@ struct TerrainTypeClass {
     int LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0, void * aAnimationproba, void * aAnimationrate, void * aIsanimated, void * aIsflammable, void * aRadarcolor, void * aSnowoccupation, void * aSpawnstiberium, void * aTemperateoccup, void * aWaterbound);
     void* ;  // 0x2B8 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double ObjectTypeClass(...);  // plateau: C2039/C3861 stub
-    static double TemperateOccupationBits(...);  // plateau: C2039/C3861 stub
-    static double __pad_24(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

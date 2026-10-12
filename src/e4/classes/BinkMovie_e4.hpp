@@ -47,10 +47,5 @@ int IsAtEnd(void *a1_1); // def-aligned
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned char u32_2D;  // 0x2D (offset-truth)
     unsigned int u32_40;  // 0x40 (offset-truth)
-    static double BinkMovie_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double BinkMovie_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double BinkMovie_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

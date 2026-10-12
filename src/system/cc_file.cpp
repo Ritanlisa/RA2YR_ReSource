@@ -10,7 +10,7 @@
 #include "e4/classes/File_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LookupFileInfoCache(...);  // raw 005B4430: char __fastcall FileInfoCache_Lookup(const char *a1, unsigned int *a2, unsigned int *a3, unsigned int *a4, _
+    int LookupFileInfoCache(const char* p0, int* p1, int* p2, int* p3, int* p4);  // x4:signals@0x5b4430
 } // namespace gamemd
 
 namespace gamemd

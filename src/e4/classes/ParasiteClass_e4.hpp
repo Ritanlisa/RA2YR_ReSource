@@ -42,10 +42,6 @@ struct ParasiteClass {
     void * UpdateParasite(ParasiteClass * Block, char a2);
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_54;  // 0x54 (offset-truth)
-    static double ParasiteClass_field_38(...);  // plateau: C2039/C3861 stub
-    static double __pad_28(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

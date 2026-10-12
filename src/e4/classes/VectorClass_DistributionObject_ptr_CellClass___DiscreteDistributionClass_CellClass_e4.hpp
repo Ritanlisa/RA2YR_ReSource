@@ -34,6 +34,5 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
 
 struct _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass {
     void  VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize(unsigned int * a2);  // 0x4E0990
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

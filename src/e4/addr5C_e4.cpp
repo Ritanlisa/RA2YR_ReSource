@@ -59,15 +59,15 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int Destructor(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+namespace gamemd { int Destructor(AudioStream *p_this); }  // x4:ida@0x402550
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { unsigned int * sub_5CD690(int int *a2); }  // w18j2 raw 0x005CD690
-namespace MultiplayerTeam { int Destructor(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace MultiplayerTeam { int Destructor(AudioStream *p_this); }  // x4:ida@0x402550
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_5D30C0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_5D30C0(int p0, int p1, int p2); }  // x4:signals@0x5d30c0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ComputeModularInverse(...);  // raw 005C80A0: int __thiscall ComputeModularInverse(ObjectClass *this, unsigned short *a2, int a3)
+    int ComputeModularInverse(uint16_t* p0, int p1);  // x4:signals@0x5c80a0
 } // namespace gamemd
 
 // 0x5C00E0

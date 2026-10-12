@@ -16,8 +16,6 @@ struct MSVQAnim {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned char u32_2D;  // 0x2D (offset-truth)
-    static double MSVQAnim_field_0x1C(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

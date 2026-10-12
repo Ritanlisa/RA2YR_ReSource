@@ -116,10 +116,6 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     unsigned int u32_54F0;  // 0x54F0 (offset-truth)
     unsigned int u32_54F4;  // 0x54F4 (offset-truth)
     unsigned int u32_54FC;  // 0x54FC (offset-truth)
-    static double u32_114(...);  // plateau: C2039/C3861 stub
-    static double u32_118(...);  // plateau: C2039/C3861 stub
-    static double u32_13C(...);  // plateau: C2039/C3861 stub
-    static double u32_F4(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

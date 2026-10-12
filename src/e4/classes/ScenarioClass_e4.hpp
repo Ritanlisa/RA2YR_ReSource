@@ -165,7 +165,7 @@ struct ScenarioClass {
     static void DestroyAndClearVector(void *aP1);
     static char SaveToINI(int aP1, void *a2, int a3);
     void* LoadMap_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ScenarioClass::LoadMap is a method)
-    static unsigned int LoadMap(...);
+    static unsigned int LoadMap(char p0, int p1, double p2);  // x4:signals@0x686b20
     void* checkWinningConditions(char a2);
     static ScenarioClass * * CopyStartPositions(void *a1);
     int Constructor();
@@ -217,7 +217,6 @@ struct ScenarioClass {
      char SaveLoad_Prefix(int *dropshipUnitCounts);
     static void SaveLoad_Prefix_0(ScenarioClass * aP1, int a2);
     static int ShowMissionBriefing(ScenarioClass * aP1);
-    static double UpdateLighting(...);  // C2597 interim stub
     static int CheckExists(ScenarioClass * aP1, int a2);
     static wchar_t * InitTimer(ScenarioClass * aP1);
     int CalcMinShroudLevel();  // 0x588990
@@ -229,8 +228,7 @@ struct ScenarioClass {
     char * SetFileName(char *Source, void *a1 = 0);
     int LoadScenarioAndStart(char *Source, char a2, double a3, int aP1, void * a4);
     MSAnim * checkWinningConditions(unsigned int * Block, char a2);
-    static int ReadWaypoints(...);  // w18j2 C3861 static supply
-    static double SetLocalToByID(...);  // plateau: C2039/C3861 stub
+    static int ReadWaypoints(int p0);  // x4:signals@0x68bdc0
 };
 
 } // namespace gamemd

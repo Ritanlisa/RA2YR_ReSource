@@ -54,8 +54,6 @@ static int GetSize(CCFileClass * aP1);
     AudioController * * Close(void * a1);
     static int Cleanup(void *aP1);
     char __tail_0[4];  // 0x0 (ml)
-    static double __tail_0(...);  // plateau: C2039/C3861 stub
-    static double u32_68(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

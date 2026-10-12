@@ -29,6 +29,19 @@ STUBS = SRC / 'e4' / 'e4_static_stubs.cpp'
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 
+# X4: signature authority resolver; the `(...)` varargs stub path is deleted
+# -- no def and no authority signature -> loud skip (Q4 gap).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from signature_authority import Authority  # noqa: E402
+
+_au = []
+
+
+def au():
+    if not _au:
+        _au.append(Authority(ROOT))
+    return _au[0]
+
 TXT = Path(LOG).read_bytes().decode('utf-8', errors='replace') if LOG else ''
 ERR = re.compile(
     r'error C2597: .{0,60}?gamemd::(\w+)::(\w+)')
@@ -59,7 +72,7 @@ def find_def(cls, mth):
 MEMBER_LINE = re.compile(
     r'^[ \t]*(?:static\s+)?[A-Za-z_][\w\s\*<>,:&:]*?\b%s\s*;\s*$')
 
-n_member_removed = n_static = n_member_decl = 0
+n_member_removed = n_static = n_member_decl = n_skipped = 0
 stubs = []
 for (cls, mth) in sorted(groups):
     hp = E4C / ('%s_e4.hpp' % cls)
@@ -74,14 +87,22 @@ for (cls, mth) in sorted(groups):
     n_member_removed += n
     d = find_def(cls, mth)
     if d is None:
-        # c) static varargs stub
-        if ('static double %s(' % mth) not in txt:
+        # c) X4: complete prototype from authority, or loud skip (no `...`)
+        r = au().resolve(name=mth, prefer_cls=cls)
+        if r is None or r.params is None:
+            print('  !! [x4] no signature for %s::%s -- static stub '
+                  'skipped (Q4 gap)' % (cls, mth))
+            n_skipped += 1
+            continue
+        ret = r.ret if r.ret and r.ret != 'unknown' else 'double'
+        if ('static %s %s(' % (ret, mth)) not in txt:
             anchor = txt.rfind('};')
             if anchor < 0:
                 continue
-            txt = (txt[:anchor] + '    static double %s(...);  // C2597 '
-                   'interim stub\n' % mth + txt[anchor:])
-            stubs.append((cls, mth))
+            txt = (txt[:anchor] + '    static %s %s(%s);  // C2597 '
+                   'resolved %s@%s\n' % (ret, mth, r.params, r.provenance,
+                                         r.addr or '') + txt[anchor:])
+            stubs.append((cls, mth, ret, r.params))
             n_static += 1
     else:
         ret, params = d
@@ -109,10 +130,13 @@ if APPLY:
             '#include "e4/e4_protos.h"',
             '', 'namespace gamemd {', '']
     added = 0
-    for (cls, mth) in stubs:
+    for (cls, mth, ret, params) in stubs:
         if ('%s::%s(' % (cls, mth)) in existing:
             continue
-        body.append('double %s::%s(...) { return 0; }' % (cls, mth))
+        if ret == 'void':
+            body.append('void %s::%s(%s) {}' % (cls, mth, params))
+        else:
+            body.append('%s %s::%s(%s) { return 0; }' % (ret, cls, mth, params))
         added += 1
     body += ['', '} // namespace gamemd', '']
     if added:
@@ -121,5 +145,5 @@ if APPLY:
 
 print(f'C2597 groups: {len(groups)} | member lines removed: '
       f'{n_member_removed} | static stubs: {n_static} ({stub_txt}) | '
-      f'def-aligned decls: {n_member_decl}')
+      f'def-aligned decls: {n_member_decl} | skipped (Q4): {n_skipped}')
 print('APPLIED' if APPLY else 'DRY RUN (use --apply)')

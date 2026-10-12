@@ -33,9 +33,5 @@ struct File {
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned char u32_42;  // 0x42 (offset-truth)
     unsigned int u32_E0;  // 0xE0 (offset-truth)
-    static double BufferSize(...);  // plateau: C2039/C3861 stub
-    static double File_field_0x2(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_00C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

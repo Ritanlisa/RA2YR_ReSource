@@ -17,7 +17,7 @@ struct MovementAI {
     int IsProgressAtEnd();
     int  MainFootClass(char a2);  // 0x514f70
     int  StepFootClass(int a2, void *a1 = 0);  // 0x5164d0
-    static int Begin(...);
+    static int Begin(TechnoClass *p_this);  // x4:ida@0x6f9e50
     unsigned int u32_100;  // 0x100 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
 };

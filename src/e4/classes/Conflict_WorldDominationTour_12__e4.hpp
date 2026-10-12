@@ -12,11 +12,9 @@ struct Conflict_WorldDominationTour_12_ {
     AbstractClass * ptr_10;  // 0x10
 // --- flat members (END) ---
     int ReleaseBuffer(void *a1_1, void *a2_1);  // 0x766800
-     double Constructor_3(...);  // C2597 interim stub
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    static double u8_D(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

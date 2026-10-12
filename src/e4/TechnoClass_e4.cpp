@@ -58,14 +58,14 @@
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Matrix2D_e4.hpp"  // w18j2 C2065 Matrix2D:: supply
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int OwnerHasPower(...); }
-namespace gamemd { int checkEMPState(...); }
-namespace gamemd { int applyEMPulseDamage(...); }
-namespace gamemd { int processIronCurtainExpiry(...); }
-namespace gamemd { int BinarySearch(...); }
+namespace gamemd { int OwnerHasPower(TechnoClass *p_this); }  // x4:ida@0x70dc60
+namespace gamemd { int checkEMPState(TechnoClass *p_this); }  // x4:ida@0x70dce0
+namespace gamemd { int applyEMPulseDamage(TechnoClass *p_this); }  // x4:ida@0x70dcf0
+namespace gamemd { int processIronCurtainExpiry(int* p0); }  // x4:signals@0x746ea0
+namespace gamemd { int BinarySearch(int* p0); }  // x4:signals@0x52b390
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int BlitterCopySHP(...);  // raw 004373B0: char __fastcall SHP_Blitter_Copy( int *a1, unsigned int *a2, int *a3, int *a4, int a5, unsigned int *a
+    int BlitterCopySHP(int* p0, int* p1, int* p2, int* p3, int p4, int* p5, int* p6, int p7, int p8, int p9, int p10, int p11);  // x4:signals@0x4373b0
 } // namespace gamemd
 // [w14e3] fwd decl: nullsub_69 (raw 0x74FF40: void nullsub_69(ObjectClass *this))
 namespace gamemd { void nullsub_69(ObjectClass * a1); }

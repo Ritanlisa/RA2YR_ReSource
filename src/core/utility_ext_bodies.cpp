@@ -3,7 +3,7 @@
 #include "utility_ext.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int DeleteAndZero(...); }  // w16g4 raw call-form
+namespace gamemd { int DeleteAndZero(ObjectClass *p_this); }  // x4:ida@0x7b46f0
 namespace gamemd {
 // ---- g57c5 W5 vocab (declaration-only) ----
 void j_DeleteAndZero();  // g57c5 W5 vocab (csp)

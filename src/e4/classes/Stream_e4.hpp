@@ -63,9 +63,6 @@ struct Stream {
     unsigned int u32_544;  // 0x544 (offset-truth)
     unsigned int u32_548;  // 0x548 (offset-truth)
     unsigned int u32_54C;  // 0x54C (offset-truth)
-    static double Stream_field_10(...);  // plateau: C2039/C3861 stub
-    static double q070(...);  // plateau: C2039/C3861 stub
-    static double u32_10(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

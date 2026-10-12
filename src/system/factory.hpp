@@ -25,7 +25,6 @@ class TechnoTypeClass;
 
 class FactoryClass : public AbstractClass
 {
-    int IsClean(int, ...); // vtable slot +16
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::Factory;
 

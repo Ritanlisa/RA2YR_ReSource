@@ -101,8 +101,6 @@ static double CalcAngle(double a1, double a2);
     static double SinCos(double a1);
     static int RoundToInt(double a1);
 static double Sqrt(double a1);
-    static double Cos(...);  // C2597/C2039 interim stub
-    static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
     int Hypotenuse2D(void *a1_1);  // interim stub
     char __pad_28[4];  // @0x629a40 (W16G3 raw-usage vocab)
@@ -110,6 +108,5 @@ static double Sqrt(double a1);
     char vtable3[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q000[4];  // @0x425xxx (W16G3 raw-usage vocab)
     char q004[4];  // @0x425xxx (W16G3 raw-usage vocab)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

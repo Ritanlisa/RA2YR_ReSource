@@ -17,6 +17,5 @@ struct E4Recv_4880F0 {
     unsigned int M45;  // 0x2D
 // --- flat members (END) ---
     ConvertClass * *  sub_4880F0(int a2);  // 0x4880F0
-    static double fallRate(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

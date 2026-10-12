@@ -17,9 +17,5 @@ struct Waypoint {
     int  FindCell(unsigned int * a2);  // 0x763A50
     static char * To_String(int a1);
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double field_38(...);  // plateau: C2039/C3861 stub
-    static double q134(...);  // plateau: C2039/C3861 stub
-    static double u32_248(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

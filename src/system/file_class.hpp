@@ -132,7 +132,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 #define GAMEMD_G2_RawFileClass_DEF 1
 class RawFileClass : public FileClass
 {
-    int SetName(int, ...); // vtable slot +8
 public:
     virtual ~RawFileClass() override;  // 0x65CA00
 

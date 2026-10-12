@@ -9,7 +9,7 @@ struct ObjectPtr {
 // --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    static int __stdcall RegisterForTracking(...);
+    static int __stdcall RegisterForTracking(int p0, int* p1);  // x4:signals@0x6cf240
 };
 
 } // namespace gamemd

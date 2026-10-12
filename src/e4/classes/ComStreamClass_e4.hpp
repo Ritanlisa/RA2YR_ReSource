@@ -21,13 +21,6 @@ struct ComStreamClass {
     unsigned int * seekToPosition();
     void ** writeData(char a2);
     void flushStream();
-    static double ComStreamClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double ComStreamClass_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double ComStreamClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double ComStreamClass_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double ComStreamClass_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double ComStreamClass_field_0x30(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

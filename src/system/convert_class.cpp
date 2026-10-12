@@ -101,10 +101,10 @@ LightConvertClass::LightConvertClass(
 #include "core/ddraw_init.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ConvertRGB24to556(...);  // raw 007DE200: unsigned int __cdecl __spoils<ecx> ConvertRGB24to556(int a1, unsigned short *a2, __m64, __m64 a4
-    int ConvertRGB24to565(...);  // raw 007DEBBA: unsigned int __cdecl __spoils<ecx> ConvertRGB24to565(int a1, unsigned short *a2, __m64, __m64 a4
-    int ConvertRGB24to655(...);  // raw 007DE87A: unsigned int __cdecl __spoils<ecx> ConvertRGB24to655(int a1, unsigned short *a2, __m64, __m64 a4
-    int ConvertRGB24toRGB565(...);  // raw 007DE53A: unsigned int __cdecl __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short *a2, __m64, __m64
+    int ConvertRGB24to556(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5);  // x4:ida@0x7de200
+    int ConvertRGB24to565(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5);  // x4:ida@0x7debba
+    int ConvertRGB24to655(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5);  // x4:ida@0x7de87a
+    int ConvertRGB24toRGB565(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5);  // x4:ida@0x7de53a
 } // namespace gamemd
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {

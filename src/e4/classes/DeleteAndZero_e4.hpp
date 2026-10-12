@@ -15,14 +15,6 @@ struct DeleteAndZero {
     void* owningHouseIndex;  // 0x0 (no offset truth)
     void* customSound_controller;  // 0x0 (no offset truth)
     void* AbstractClass;  // 0x0 (base-subobject vocab, no offset truth)
-    static double DeleteAndZero_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double DeleteAndZero_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double nextArrayIndex(...);  // plateau: C2039/C3861 stub
-    static double occupant(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

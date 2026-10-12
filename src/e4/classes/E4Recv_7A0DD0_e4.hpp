@@ -16,6 +16,5 @@ struct E4Recv_7A0DD0 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     void sub_7A0DD0();  // 0x7A0DD0
-    static double occupant(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

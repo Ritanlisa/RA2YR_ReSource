@@ -45,8 +45,6 @@ struct TriggerClass {
     int ProcessEvents();  // 0x726e00
     int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);
     unsigned int u32_54;  // 0x54 (offset-truth)
-    static double abstractFlags2(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -74,15 +74,15 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int Constructor(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
-namespace WaypointPath { int Constructor(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Constructor(AudioController *p_this); }  // x4:ida@0x402040
+namespace WaypointPath { int Constructor(AudioController *p_this); }  // x4:ida@0x402040
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_4866D0(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_4866F0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4866D0(int p0); }  // x4:signals@0x4866d0
+namespace gamemd { int sub_4866F0(int p0); }  // x4:signals@0x4866f0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawIsoTile(...);  // raw 005A7FA0: int __fastcall IsoTile_Draw(int a1, unsigned short *a2, char a3)
-    int Object_Helper_5A99B0(...);  // raw 005A99B0: unsigned int *__thiscall Object_Helper_5A99B0(ObjectClass *this)
+    int DrawIsoTile(int p0, uint16_t* p1, char p2);  // x4:signals@0x5a7fa0
+    int Object_Helper_5A99B0(ObjectClass *p_this);  // x4:ida@0x5a99b0
 } // namespace gamemd
 
 // 0x5A1350

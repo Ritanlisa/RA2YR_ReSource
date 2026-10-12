@@ -14,7 +14,6 @@ struct GraphicMenuAnimItem {
 // --- flat members (END) ---
     VectorCursor * Constructor(std::locale::facet *a1, char a2, void *a3, void *a4, void *a5);
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

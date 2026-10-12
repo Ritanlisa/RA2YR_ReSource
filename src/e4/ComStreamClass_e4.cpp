@@ -31,7 +31,7 @@ namespace gamemd { struct rc_ptr { void* vfptr; }; }  // minimal E2 carrier (4B)
 
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int FillPersonaInfoWOL(...);  // raw 0077A9F0: void __thiscall WOL_FillPersonaInfo(int this, HWND hDlg, char **a3, wchar_t **a4)
+    int FillPersonaInfoWOL(int p_this, HWND hDlg, char **a3, wchar_t **a4);  // x4:ida@0x77a9f0
 } // namespace gamemd
 
 // 0x7A3D90

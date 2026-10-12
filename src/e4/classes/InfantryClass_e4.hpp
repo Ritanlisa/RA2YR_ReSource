@@ -393,7 +393,6 @@ struct InfantryClass {
     static int SlaveGiveMoney_RecordBalanceBefore(int aP1);
     static int SetMission(void *aP1);
     void* GetCursorOverObject_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon InfantryClass::GetCursorOverObject is a method)
-    static unsigned int GetCursorOverObject(...);
     AbstractClass * * ProcessDeploy(void ** a1);
     static int ScanTarget(int * a1);
     int SetField6();  // 0x5176A0 G42.33 b3 member-form sync
@@ -412,8 +411,6 @@ struct InfantryClass {
     int slaveOwner;  // 0x2DC (ml)
     int team;  // 0x5D4 (ml)
     int unknown_int_6E8;  // 0x6E8 (ml)
-    static double FootClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

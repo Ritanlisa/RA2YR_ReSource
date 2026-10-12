@@ -121,16 +121,6 @@ struct TeamClass {
     unsigned int u32_A8;  // 0xA8 (offset-truth)
     unsigned int u32_B0;  // 0xB0 (offset-truth)
     unsigned int u32_B4;  // 0xB4 (offset-truth)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double u32_114(...);  // plateau: C2039/C3861 stub
-    static double u32_118(...);  // plateau: C2039/C3861 stub
-    static double u32_13C(...);  // plateau: C2039/C3861 stub
-    static double u32_AC(...);  // plateau: C2039/C3861 stub
-    static double u32_F4(...);  // plateau: C2039/C3861 stub
-    static double v4(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

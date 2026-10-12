@@ -61,21 +61,5 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     unsigned char u32_117A;  // 0x117A (offset-truth)
     unsigned int u32_117C;  // 0x117C (offset-truth)
     unsigned char u32_146;  // 0x146 (offset-truth)
-    static double Tactical_field_0x11B(...);  // plateau: C2039/C3861 stub
-    static double __pad_010(...);  // plateau: C2039/C3861 stub
-    static double __pad_020(...);  // plateau: C2039/C3861 stub
-    static double q04C(...);  // plateau: C2039/C3861 stub
-    static double q074(...);  // plateau: C2039/C3861 stub
-    static double u32_14(...);  // plateau: C2039/C3861 stub
-    static double u32_24(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
-    static double u32_3C(...);  // plateau: C2039/C3861 stub
-    static double u32_64(...);  // plateau: C2039/C3861 stub
-    static double u32_68(...);  // plateau: C2039/C3861 stub
-    static double u32_6C(...);  // plateau: C2039/C3861 stub
-    static double u32_72(...);  // plateau: C2039/C3861 stub
-    static double u32_BC(...);  // plateau: C2039/C3861 stub
-    static double u32_E0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

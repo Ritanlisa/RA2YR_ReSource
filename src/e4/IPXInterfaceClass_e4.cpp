@@ -33,7 +33,7 @@
 #include "e4/classes/EventQueue_e4.hpp"  // G42.40f-c supply (Process call @0x7b25d4)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int gethostname(...);  // raw 007C89CE: // attributes: thunk int __stdcall gethostname(char *name, int namelen)
+    int gethostname(char* p0, int p1);  // x4:signals@0x7c89ce
 } // namespace gamemd
 
 // 0x7B0D90

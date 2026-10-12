@@ -28,8 +28,6 @@ struct ConnectionClass {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
-    static double PhoneNumber(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

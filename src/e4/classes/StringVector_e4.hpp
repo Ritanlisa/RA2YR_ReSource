@@ -22,11 +22,6 @@ struct StringVector {
     unsigned int *  QueryInterface(char a2);  // 0x49EFA0
     static unsigned int * Construct(StringVector * aP1, int a2, int a3);
     static char Insert(void *aP0, const char **aP1, int aP2);
-    static double StringVector_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double StringVector_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double m_8(...);  // plateau: C2039/C3861 stub
-    static double m_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

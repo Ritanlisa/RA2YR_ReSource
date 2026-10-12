@@ -36,7 +36,7 @@ using ra2::game::ObjectClass;
 #include "e4/classes/Radar_e4.hpp"  // w16g4 C3861 Radar:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int UpdateHouseClassAnger(...);  // raw 00504790: int __fastcall UpdateHouseClassAnger(unsigned int a1, int a2, int a3, int a4)
+    int UpdateHouseClassAnger(unsigned int p0, int p1, int p2, int p3);  // x4:signals@0x504790
 } // namespace gamemd
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
@@ -57,7 +57,7 @@ struct ScriptAction {  // fwd _fwd_e4.hpp:12322 completed TU-locally (raw 0x4f9c
 struct MessageListClass {  // fwd _fwd_e4.hpp:10397 completed TU-locally (raw 0x4fa... 8-arg call-form)
     static void *AddMessage(void *a1, int a2, int a3, void *a4, unsigned int a5, int a6, int a7, int a8);
 };
-const wchar_t *GetStringCSF(...);  // raw 0x734E60 4-arg call-form (def-aligned GetCSFString @core/globals.cpp)
+const wchar_t *GetStringCSF(int* p0, int* p1, const char* p2, int p3);  // x4:signals@0x734e60
 } // namespace gamemd
 // ---- g57w20l3 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 

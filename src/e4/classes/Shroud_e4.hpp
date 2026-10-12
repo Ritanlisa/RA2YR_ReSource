@@ -24,11 +24,6 @@ struct Shroud {
     unsigned int q1498;  // 0x1498 (offset-truth)
     unsigned int q149C;  // 0x149C (offset-truth)
     unsigned int q14A4;  // 0x14A4 (offset-truth)
-    static double RadarClass_field_0x1490(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x1494(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x1498(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x149C(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x14A4(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

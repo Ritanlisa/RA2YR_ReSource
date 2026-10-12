@@ -52,20 +52,6 @@ struct LocomotionClass {
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
-    static double CurrentHeight(...);  // plateau: C2039/C3861 stub
-    static double DestinationCoords(...);  // plateau: C2039/C3861 stub
-    static double DestinationReached(...);  // plateau: C2039/C3861 stub
-    static double ILocomotion(...);  // plateau: C2039/C3861 stub
-    static double IsMoving(...);  // plateau: C2039/C3861 stub
-    static double Piggybackee(...);  // plateau: C2039/C3861 stub
-    static double TurnRate(...);  // plateau: C2039/C3861 stub
-    static double __pad_008(...);  // plateau: C2039/C3861 stub
-    static double __pad_010(...);  // plateau: C2039/C3861 stub
-    static double __pad_012(...);  // plateau: C2039/C3861 stub
-    static double __pad_74(...);  // plateau: C2039/C3861 stub
-    static double u32_50(...);  // plateau: C2039/C3861 stub
-    static double u32_54(...);  // plateau: C2039/C3861 stub
-    static double unknown_91(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

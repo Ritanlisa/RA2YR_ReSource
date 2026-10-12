@@ -35,8 +35,8 @@
 #include "D:\RA2YR_ReSource\src\e4\minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ParseMovieSubtitles(...);  // raw 006C9F10: int __thiscall ParseMovieSubtitles(char *this, char *Source)
-    int nullsub_40(...);  // raw 006C9F00: void nullsub_40(ObjectClass *this)
+    int ParseMovieSubtitles(char* p0);  // x4:signals@0x6c9f10
+    int nullsub_40(int p0);  // x4:signals@0x6c9f00
 } // namespace gamemd
 
 // 0x432690

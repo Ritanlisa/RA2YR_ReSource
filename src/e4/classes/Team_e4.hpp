@@ -19,7 +19,5 @@ struct Team {
     int  GetMember(int a2, void *a1 = 0);  // 0x65AD30
     int AllMembersValid();
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double field_E4(...);  // plateau: C2039/C3861 stub
-    static double field_E8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

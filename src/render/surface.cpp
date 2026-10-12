@@ -9,8 +9,8 @@
 #include "app/cmdline.hpp"
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Rect_Set(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int XSurface_BlitPart(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Rect_Set(int p0, int p1, int p2, int p3);  // x4:signals@0x42e410
+int XSurface_BlitPart(void** p0, void** p1, void** p2, void** p3, int p4);  // x4:signals@0x7bbb90
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

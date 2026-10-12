@@ -77,13 +77,13 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int System_Get_751520(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_631FC0(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_631FE0(...); }  // w16g4 raw call-form
+namespace gamemd { int System_Get_751520(ObjectClass *p_this); }  // x4:ida@0x751520
+namespace gamemd { int sub_631FC0(int p0, int p1); }  // x4:signals@0x631fc0
+namespace gamemd { int sub_631FE0(int p0, int p1); }  // x4:signals@0x631fe0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int InitializeAudioSubsystem(...);  // raw 00406B10: int __thiscall InitializeAudioSubsystem(ObjectClass *this)
-    int LoadExpansionMixFiles(...);  // raw 00530000: char LoadExpansionMixFiles(ObjectClass *this)
+    int InitializeAudioSubsystem(ObjectClass *p_this);  // x4:ida@0x406b10
+    int LoadExpansionMixFiles(ObjectClass *p_this);  // x4:ida@0x530000
 } // namespace gamemd
 
 // 0x522100

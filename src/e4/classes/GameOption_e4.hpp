@@ -38,12 +38,11 @@ struct GameOption {
     unsigned int q5398;  // 0x5398
     unsigned int q5458;  // 0x5458
 // --- flat members (END) ---
-    static char CheckDuplicate(...);
+    static char CheckDuplicate();  // x4:empty@0x5e9560
     int GetField(void *a1 = 0, void *a2 = 0);
     int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
     void * SetDigest(char *aP1, void *a1 = 0);
     unsigned char u32_949;  // 0x949 (offset-truth)
-    static double field_18C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

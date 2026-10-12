@@ -26,40 +26,17 @@
 #include "e4/classes/E4Recv_7B9530_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int ctrlevent_capture_4(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 
 // MSVC6 CRT FILE layout (UCRT _iobuf opaque; W16G3, addr7C precedent)
 struct _iobuf_msvc6 { char *_ptr; int _cnt; char *_base; int _flag; int _file; int _charbuf; int _bufsiz; char *_tmpfname; };
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int _sopen(...); }
-namespace gamemd { int _lock_file2(...); }
-namespace gamemd { int _flswbuf(...); }
-namespace gamemd { int _lock_fhandle(...); }
-namespace gamemd { int _get_osfhandle(...); }
-namespace gamemd { int _unlock_fhandle(...); }
-namespace gamemd { int _amsg_exit(...); }
-namespace gamemd { int getSystemCP(...); }
-namespace gamemd { int setSBCS(...); }
-namespace gamemd { int setSBUpLow(...); }
-namespace gamemd { int CPtoLCID(...); }
-namespace gamemd { int __crtGetStringTypeW(...); }
-namespace gamemd { int _whiteout_0(...); }
-namespace gamemd { int _un_inc_0(...); }
+namespace gamemd { int _sopen(const char *FileName, int OpenFlag, int ShareFlag, ...); }  // x4:whitelist-ida
 // [w14e3] CRT/SEH vocab supply (g57b5-W5 variadic convention; raw call-form arities cited)
 // CPPEH_RECORD: IDA SEH pseudo-struct, usage-shaped (sibling def: addr7C_e4.cpp; fields used here:
 // ms_exc.old_esp / ms_exc.registration.TryLevel per 0x7D11C4-0x7D1280)
 struct CPPEH_RECORD { void *old_esp; struct { int TryLevel; } registration; };
 namespace gamemd {
-int __sbh_find_block(...);   // raw 0x7C93E8 call form __sbh_find_block(Block)
-int __sbh_alloc_block(...);  // raw 0x7C946E call form __sbh_alloc_block(a1)
-int __sbh_resize_block(...); // raw 0x7D0FA5 call form __sbh_resize_block(v5, aP0, v3)
-int write_char_0(...);       // raw 0x7D2368 call form write_char_0(v5, File, &v51)
-int get_int64_arg_0(...);    // raw 0x7D26AD call form get_int64_arg_0(&a3)
-int write_multi_char_0(...); // raw 0x7D281A call form write_multi_char_0(0x20u, n, File, p)
-int write_string_0(...);     // raw 0x7D2830 call form write_string_0(&v48, n, File, p)
-int _flsbuf(...);            // raw 0x7C8EF4 call form _flsbuf(0, &File)
-int _unlock_file2(...);      // raw 0x7CB12E call form _unlock_file2(1, &File)
-int gethostname(...);        // ws2_32 import, raw call form gethostname(name, len)
+int gethostname(char* p0, int p1);  // x4:signals@0x7c89ce
 } // namespace gamemd
 
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====

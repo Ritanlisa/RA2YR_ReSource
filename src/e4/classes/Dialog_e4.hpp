@@ -85,9 +85,5 @@ struct Dialog {
     static HWND CloseAll();  // 0x799D10
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM, void * a2);
     char __pad_10[24];  // 0x10 (ml)
-    static double Dialog_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_3C(...);  // plateau: C2039/C3861 stub
-    static double u32_3F(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

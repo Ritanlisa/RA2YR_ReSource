@@ -692,7 +692,6 @@ struct BuildingTypeClass {
     static AbstractClass * * FindOrCreateAlt(INIClass * Source);
     BuildingTypeClass * * ProcessEvent();
     int SaveLoad_Prefix_0();
-    static double __pad_F70(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

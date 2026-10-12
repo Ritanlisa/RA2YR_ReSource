@@ -487,7 +487,7 @@ struct HashTable {
 struct KeywordType {
     void* vfptr;
     void* FindOrCreate2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon KeywordType::FindOrCreate2 is a method)
-    static unsigned int FindOrCreate2(...);
+    static unsigned int FindOrCreate2(char *Source);  // x4:ida@0x524cb0
 };
 #endif  // GAMEMD_TREE_UNIVERSE (KeywordType)
 
@@ -638,9 +638,9 @@ struct ObjectClass {
     static int ProductionCompletionCallback(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
     static int LoadFromStream_Common(void *aP0, FootClass * aP1, LPSTREAM pStm);  // A_c2039 R5 static-form sync
     void* IsCliffWall_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ObjectClass::IsCliffWall is a method)
-    static unsigned int IsCliffWall(...);
+    static unsigned int IsCliffWall(ObjectClass *p_this);  // x4:ida@0x4ca130
     void* IsBelowScreen_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ObjectClass::IsBelowScreen is a method)
-    static unsigned int IsBelowScreen(...);
+    static unsigned int IsBelowScreen(IUnknown *p_this);  // x4:ida@0x5f6b60
     static int HasLinkedObject(int aP0);  // A_c2039 R5 static-form sync
     int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
     static int CreateUnitOnCompletion(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
@@ -847,7 +847,7 @@ struct ShapeButtonClass {
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
     void* Constructor_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ShapeButtonClass::Constructor is a method)
-    static unsigned int Constructor(...);
+    static unsigned int Constructor(int p0, int p1, int p2, int p3, int p4, int p5, char p6);  // x4:signals@0x69dd30
 };
 #endif  // GAMEMD_TREE_UNIVERSE (ShapeButtonClass)
 
@@ -889,7 +889,7 @@ struct VectorClass {
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC (G57W14E1 til supply)
     void* ClearAndFree2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon VectorClass::ClearAndFree2 is a method)
-    static unsigned int ClearAndFree2(...);
+    static unsigned int ClearAndFree2(int p_this);  // x4:ida@0x4a10a0
     void* vfptr;
     unsigned int tail_E;  // 0xE
     int Shrink();  // 0x7ae730

@@ -46,18 +46,5 @@ struct House {
     unsigned char u32_702;  // 0x702 (offset-truth)
     unsigned char u32_C6;  // 0xC6 (offset-truth)
     unsigned int u32_C8;  // 0xC8 (ml)
-    static double House_field_0x1EC(...);  // plateau: C2039/C3861 stub
-    static double House_field_0x29(...);  // plateau: C2039/C3861 stub
-    static double __pad_46C(...);  // plateau: C2039/C3861 stub
-    static double u32_116(...);  // plateau: C2039/C3861 stub
-    static double u32_11C(...);  // plateau: C2039/C3861 stub
-    static double u32_11D(...);  // plateau: C2039/C3861 stub
-    static double u32_11E(...);  // plateau: C2039/C3861 stub
-    static double u32_140(...);  // plateau: C2039/C3861 stub
-    static double u32_26(...);  // plateau: C2039/C3861 stub
-    static double u32_38(...);  // plateau: C2039/C3861 stub
-    static double u32_4C(...);  // plateau: C2039/C3861 stub
-    static double u32_90(...);  // plateau: C2039/C3861 stub
-    static double u32_EC(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

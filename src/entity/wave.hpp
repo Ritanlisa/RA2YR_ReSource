@@ -29,7 +29,6 @@ class CellClass;
 // CSP: WaveClass matched via T1
 class WaveClass : public ra2::game::ObjectClass
 {
-    int UpdateProductionDisplay(int, ...); // vtable slot +292
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Wave;
 

@@ -221,12 +221,12 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ObjectPlacement_e4.hpp"  // w18j2 C3861 ObjectPlacement:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CalcPosition(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CalcPosition(int p0, int p1, int p2); }  // x4:signals@0x412a40
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ConstructTeamMembers(...);  // raw 0065DD30: unsigned int *__thiscall ConstructTeamMembers(ObjectClass *this)
-    int Release2COM(...);  // raw 0045A160: int __thiscall Release2COM(ObjectClass *this)
-    int RenderProjectileTrail(...);  // raw 00659650: bool __thiscall RenderProjectileTrail(ObjectClass *this)
+    int ConstructTeamMembers(ObjectClass *p_this);  // x4:ida@0x65dd30
+    int Release2COM(ObjectClass *p_this);  // x4:ida@0x45a160
+    int RenderProjectileTrail(ObjectClass *p_this);  // x4:ida@0x659650
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)

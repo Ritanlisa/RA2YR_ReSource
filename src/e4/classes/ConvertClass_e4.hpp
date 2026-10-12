@@ -18,15 +18,6 @@ struct ConvertClass {
     char __pad_6[362];  // 0x6 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_17C;  // 0x17C (offset-truth)
-    static double Array(...);  // plateau: C2039/C3861 stub
-    static double ConvertClass_field_0x170(...);  // plateau: C2039/C3861 stub
-    static double ConvertClass_field_0x178(...);  // plateau: C2039/C3861 stub
-    static double ConvertClass_field_0x2(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_174(...);  // plateau: C2039/C3861 stub
-    static double u32_180(...);  // plateau: C2039/C3861 stub
-    static double u32_184(...);  // plateau: C2039/C3861 stub
-    static double vt_slot_16(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

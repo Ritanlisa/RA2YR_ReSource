@@ -35,18 +35,18 @@
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/SymbolTable_e4.hpp"  // G57w10 D supply
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int ReadPointerFromECX(...); }  // w18j2 raw call-form (variadic last resort)
+namespace gamemd { int ReadPointerFromECX(ObjectClass *p_this); }  // x4:ida@0x600660
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int sub_6B9450(...); }
+namespace gamemd { int sub_6B9450(int p0); }  // x4:signals@0x6b9450
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int UI_Get_60B350(...);  // raw 0060B350: BOOL __thiscall UI_Get_60B350(ObjectClass *this)
-    int UI_Get_60B420(...);  // raw 0060B420: BOOL __thiscall UI_Get_60B420(ObjectClass *this)
-    int UI_Get_60B550(...);  // raw 0060B550: BOOL __thiscall UI_Get_60B550(ObjectClass *this)
-    int UI_Get_60B610(...);  // raw 0060B610: BOOL __thiscall UI_Get_60B610(ObjectClass *this)
-    int UI_Get_60B7A0(...);  // raw 0060B7A0: char __thiscall UI_Get_60B7A0(ObjectClass *this)
-    int VtableStub_72D450(...);  // raw 0072D450: int VtableStub_72D450()
-    int VtableStub_72E280(...);  // raw 0072E280: int VtableStub_72E280()
+    int UI_Get_60B350(ObjectClass *p_this);  // x4:ida@0x60b350
+    int UI_Get_60B420(ObjectClass *p_this);  // x4:ida@0x60b420
+    int UI_Get_60B550(ObjectClass *p_this);  // x4:ida@0x60b550
+    int UI_Get_60B610(ObjectClass *p_this);  // x4:ida@0x60b610
+    int UI_Get_60B7A0(ObjectClass *p_this);  // x4:ida@0x60b7a0
+    int VtableStub_72D450();  // x4:empty@0x72d450
+    int VtableStub_72E280();  // x4:empty@0x72e280
 } // namespace gamemd
 
 // 0x600750

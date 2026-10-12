@@ -46,6 +46,5 @@ struct SaveGame {
     int  VtableDispatch(int a2);  // 0x721010
     int WriteMagicHeader();  // 0x7533B0
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

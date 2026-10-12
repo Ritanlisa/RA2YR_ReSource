@@ -56,16 +56,5 @@ struct Coord {
     unsigned int u32_1498;  // 0x1498 (offset-truth)
     unsigned int u32_14A4;  // 0x14A4 (offset-truth)
     unsigned int u32_14A8;  // 0x14A8 (offset-truth)
-    static double Coord_field_0x13C(...);  // plateau: C2039/C3861 stub
-    static double Coord_field_0x2(...);  // plateau: C2039/C3861 stub
-    static double Coord_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
-    static double q000(...);  // plateau: C2039/C3861 stub
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
-    static double q018(...);  // plateau: C2039/C3861 stub
-    static double u32_140(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

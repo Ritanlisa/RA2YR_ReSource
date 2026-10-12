@@ -37,7 +37,7 @@ struct FactoryClass {
 // --- flat members (END) ---
     static char RemoveItem(void *aP1, int a2);
     void* RemoveItemAt_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FactoryClass::RemoveItemAt is a method)
-    static unsigned int RemoveItemAt(...);
+    static unsigned int RemoveItemAt(int p0);  // x4:signals@0x63dfd0
     AbstractClass * * Stat(int * a2);
     static char GetFlag();
     char RemoveOneFromQueue(char a2);
@@ -65,16 +65,9 @@ struct FactoryClass {
     unsigned int * CompleteItem();  // 0x71abc0
     int *  RemoveFromArrays(char a2, void *a1 = 0);  // 0x63d9c0
     void * CopyTo(void ** Block, char a2);
-    static int FindOrCreate(...);  // w18j2 C3861 static supply
+    static int FindOrCreate(char *Source);  // x4:ida@0x6b5910
     char __pad_42[28];  // 0x42 (ml)
     unsigned int u32_288;  // 0x288 (offset-truth)
-    static double q02C(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
-    static double u32_58(...);  // plateau: C2039/C3861 stub
-    static double vtable21(...);  // plateau: C2039/C3861 stub
-    static double vtable22(...);  // plateau: C2039/C3861 stub
-    static double vtable23(...);  // plateau: C2039/C3861 stub
-    static double vtable24(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

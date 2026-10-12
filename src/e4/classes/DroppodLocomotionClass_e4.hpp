@@ -42,8 +42,6 @@ struct DropPodLocomotionClass {
     HRESULT  UpdateMovement(int * pPStm, int a3);  // 0x4B62C0
     int StubReturn48();  // 0x4B66E0 vt+36
     void *  ProcessMove(char a2);  // 0x4B66F0
-    static double Owner(...);  // plateau: C2039/C3861 stub
-    static double RefCount(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 } // namespace gamemd

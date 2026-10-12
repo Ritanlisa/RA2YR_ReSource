@@ -17,9 +17,5 @@ struct E4Recv_4A3270 {
     unsigned int M116;  // 0x74
 // --- flat members (END) ---
     void *  sub_4A3270(int a2, int a3, int a4);  // 0x4A3270
-    static double estimatedHealth(...);  // plateau: C2039/C3861 stub
-    static double health(...);  // plateau: C2039/C3861 stub
-    static double isOnMap(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

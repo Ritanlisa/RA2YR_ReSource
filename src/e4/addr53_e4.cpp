@@ -74,16 +74,16 @@
 #include "e4/classes/AudioFileClass_e4.hpp"  // w18j2 C3861 AudioFileClass:: supply
 #include "e4/classes/ChronoScreenEffect_e4.hpp"  // w18j2 C3861 ChronoScreenEffect:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int Release(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int DecrementCounter(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Release(VocClass *p_this); }  // x4:ida@0x4052f0
+namespace gamemd { int DecrementCounter(int p0); }  // x4:signals@0x631ee0
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int LoadTheaterClassMIX_Load(...); }
-namespace gamemd { int InitExtensionState(...); }
-namespace gamemd { int UpdateLighting(...); }
-namespace gamemd { int Strike2(...); }
-namespace gamemd { int AddMessage(...); }
-namespace gamemd { int Strike(...); }
-namespace gamemd { int Shutdown(...); }
+namespace gamemd { int LoadTheaterClassMIX_Load(const void* p0, int p1, int p2, int p3, int p4); }  // x4:signals@0x68c860
+namespace gamemd { int InitExtensionState(FileSystem *p_this); }  // x4:ida@0x6267a0
+namespace gamemd { int UpdateLighting(); }  // x4:empty@0x53c280
+namespace gamemd { int Strike2(int p0, int p1, int p2); }  // x4:signals@0x53a300
+namespace gamemd { int AddMessage(int* p0, int p1, int* p2, int p3, int p4, int p5, char p6); }  // x4:signals@0x5d3ba0
+namespace gamemd { int Strike(int p0); }  // x4:signals@0x53a140
+namespace gamemd { int Shutdown(Audio *p_this); }  // x4:ida@0x406d40
 
 // 0x530000
 namespace gamemd {  // G42.18 ns repair

@@ -435,14 +435,14 @@ struct FootClass {
 // --- flat members (END) ---
     int nextTeamMember;  // 0x5D8 (G57W14E1 til supply)
     unsigned int FindAITarget_ph;  // w18j3: filler renamed (no offset truth; canon FootClass::FindAITarget is a method)
-    static unsigned int FindAITarget(...);
+    static unsigned int FindAITarget(int* p0);  // x4:signals@0x4d6aa0
     void* movementDestination;  // 0x0 (no offset truth)
     void* HandleCursorWithCheck_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FootClass::HandleCursorWithCheck is a method)
-    static unsigned int HandleCursorWithCheck(...);
+    static unsigned int HandleCursorWithCheck(int16_t* p0, char p1, char p2);  // x4:signals@0x4ddde0
     void* OverrideMission_SyncLog_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FootClass::OverrideMission_SyncLog is a method)
-    static unsigned int OverrideMission_SyncLog(...);
+    static unsigned int OverrideMission_SyncLog(int p0, int p1, int p2);  // x4:signals@0x4d8f40
     void* ValidateMove_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FootClass::ValidateMove is a method)
-    static unsigned int ValidateMove(...);
+    static unsigned int ValidateMove(int p0, int* p1, char p2);  // x4:signals@0x4d74e0
     void* currentSpeed_percentage;  // 0x0 (no offset truth)
     void* unknown698;  // 0x0 (no offset truth)
     AbstractClass * Destruct(void *a1 = 0);
@@ -461,7 +461,7 @@ struct FootClass {
     int ClearPathIndex(void *a1 = 0);  // 0x4df0d0
     unsigned int * PostLoadInit(int a2);
     static BOOL checkPassability();
-    static int CheckAccelLimit(...);
+    static int CheckAccelLimit(int *p_this);  // x4:ida@0x750030
     char __pad_58C[20];  // 0x58C (ml)
     char __pad_5B0[20];  // 0x5B0 (ml)
     int currentJumpjetMapCoords;  // 0x564 (ml)
@@ -469,11 +469,7 @@ struct FootClass {
     int parasiteImUsing;  // 0x69C (ml)
     int team;  // 0x5D4 (ml)
     int unknownAbstractArray588;  // 0x588 (ml)
-    static double FootClass_field_abstract_array_5AC(...);  // plateau: C2039/C3861 stub
     char TeamClass_CheckCohesion(double a2);  // plateau: def-aligned C2039/C2660
-    static double TechnoClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

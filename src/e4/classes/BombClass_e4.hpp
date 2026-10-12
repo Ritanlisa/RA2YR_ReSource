@@ -42,9 +42,6 @@ struct BombClass {
     BombClass * * sub_56AF40(int a2);
     BombClass * * sub_56B250(int a2);
     unsigned int q_80;  // +0x80 flat supply (CSP-fed)
-    static double __pad_24(...);  // plateau: C2039/C3861 stub
-    static double __pad_48(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

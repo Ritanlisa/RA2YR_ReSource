@@ -38,8 +38,8 @@
 #include "e4/classes/TextGroup_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int BlitterRLEBlitSHP(...);  // raw 00437A10: char __fastcall BlitterRLEBlitSHP( int a1, CellStruct *a2, int *a3, int a4, unsigned int *a5, in
-    int GenerateImageThumbnail(...);  // raw 006547C0: int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, char a5)
+    int BlitterRLEBlitSHP(int p0, int* p1, int* p2, int p3, int* p4, int* p5, int* p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14);  // x4:signals@0x437a10
+    int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0x6547c0
 } // namespace gamemd
 
 // 0x411580

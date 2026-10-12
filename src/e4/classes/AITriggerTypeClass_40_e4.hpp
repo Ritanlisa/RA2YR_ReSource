@@ -28,7 +28,5 @@ struct AITriggerTypeClass_40 {
     unsigned int *m_10;  // supplied (C2039)
     unsigned int *m_8;  // supplied (C2039)
     unsigned int *m_C;  // supplied (C2039)
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

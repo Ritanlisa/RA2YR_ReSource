@@ -339,7 +339,6 @@ struct JumpjetLocomotionClass {
     void* Update2(void * a1, void * a2);
     JumpjetLocomotionClass * ProcessAttach(int * Block, char a2);
     TeleportLocomotionClass * ConstructLocomotor(ILocomotion ** Block, char a2);
-    static double vtable26(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -65,7 +65,7 @@ struct TerrainClass {
     char TerrainClass_field_rect_D0[16];  // 0xD0
 // --- flat members (END) ---
     void* GenerateTexture_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon TerrainClass::GenerateTexture is a method)
-    static unsigned int GenerateTexture(...);
+    static unsigned int GenerateTexture(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, char p11, int p12, char p13, char p14, char p15, int p16);  // x4:signals@0x547cf0
     AbstractClass * * ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2);
     int CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2);
     int MissionStubReturnZero();

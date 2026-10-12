@@ -184,12 +184,12 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Display_e4.hpp"  // w16g4 C3861 Display:: supply
 #include "e4/classes/Factory_e4.hpp"  // w16g4 C3861 Factory:: supply
 #include "e4/classes/Vector_e4.hpp"  // w16g4 C3861 Vector:: supply
-namespace Mission_e4 { int SetAndCall(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace Mission_e4 { int SetAndCall(int p0, int p1); }  // x4:signals@0x5bda80
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawTacticalFillScanline(...);  // raw 0063D910: char __fastcall DrawTacticalFillScanline(int a1, int a2, int a3, int a4, int a5, int a6)
-    int DrawTacticalLine2D(...);  // raw 0063D810: char __fastcall Tactical_DrawLine2D(int a1, int a2, int a3, int a4, int a5, int a6, char a
-    int PackRGBFromBytes(...);  // raw 0063DAD0: int __thiscall PackRGBFromBytes(ObjectClass *this)
+    int DrawTacticalFillScanline(int p0, int p1, int p2, int p3, int p4, int p5);  // x4:signals@0x63d910
+    int DrawTacticalLine2D(int p0, int p1, int p2, int p3, int p4, int p5, char p6);  // x4:signals@0x63d810
+    int PackRGBFromBytes(ObjectClass *p_this);  // x4:ida@0x63dad0
 } // namespace gamemd
 
 // 0x637DB0

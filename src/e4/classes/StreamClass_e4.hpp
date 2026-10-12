@@ -24,8 +24,6 @@ struct StreamClass {
     unsigned int ReadAndSeek(int aP1, int aP2, void *a1 = 0);
     BOOL IsInactive(IUnknown * aP0);
     char u32_5[4];  // @0x4114c9 decay (W16G3 raw-usage vocab)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_14(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

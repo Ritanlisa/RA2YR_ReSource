@@ -50,7 +50,7 @@
 #include "e4/classes/_DynamicVectorClass_PAUControlNode_e4.hpp"
 #include "e4/classes/_VectorClass_PAUControlNode_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_47A080(...); }  // w18j2 raw 0x0047A080 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_47A080(int p0, int p1); }  // x4:signals@0x47a080
 
 // 0x472A80
 namespace gamemd {  // G42.18 ns repair

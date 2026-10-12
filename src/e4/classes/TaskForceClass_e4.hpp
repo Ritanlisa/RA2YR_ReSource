@@ -41,14 +41,5 @@ struct TaskForceClass {
     int StubReturn212();  // 0x6E87E0
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q008;  // 0x8 (offset-truth)
-    static double TaskForceClass_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double TaskForceClass_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double TaskForceClass_field_0x98(...);  // plateau: C2039/C3861 stub
-    static double TaskForceClass_field_0x9C(...);  // plateau: C2039/C3861 stub
-    static double TaskForceClass_field_0xA4(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_28(...);  // plateau: C2039/C3861 stub
-    static double __pad_8(...);  // plateau: C2039/C3861 stub
-    static double __pad_A0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

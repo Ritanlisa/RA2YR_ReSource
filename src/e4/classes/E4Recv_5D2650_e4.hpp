@@ -11,7 +11,5 @@ struct E4Recv_5D2650 {
     unsigned int M64;  // 0x40
 // --- flat members (END) ---
     void*  sub_5D2650(void * a2, int a3);  // 0x5D2650
-    static double ambientSoundController(...);  // plateau: C2039/C3861 stub
-    static double attachedTag(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

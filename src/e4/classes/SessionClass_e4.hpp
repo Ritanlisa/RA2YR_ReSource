@@ -159,7 +159,6 @@ struct SessionClass {
     char unknown_2854[2180];  // 0x2854 (W13A til SessionClass size 12508 tail; compile-stride carrier, appended at end)
     char __pad_50[272];  // 0x50 (ml)
     int unknown_14;  // 0x14 (ml)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

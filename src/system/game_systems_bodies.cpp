@@ -17,22 +17,22 @@ namespace gamemd { int Hash_Compute(unsigned int *a1, int a2); }  // w18j2 raw 0
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Hash_Compute(unsigned int *a1, int a2); }  // w18j2 raw 0x0064DE80
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int Rebuild(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int OrFree(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Rebuild(int** p0); }  // x4:signals@0x6234b0
+namespace gamemd { int OrFree(char p0); }  // x4:signals@0x624480
 namespace gamemd { int Hash_Compute(unsigned int *a1, int a2); }  // w18j2 raw 0x0064DE80
-namespace gamemd { int Rebuild2(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int Alt(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace HashTable { int Rebuild2(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace HashTable { int ComputeHash(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Rebuild2(HashTable *p_this); }  // x4:ida@0x625830
+namespace gamemd { int Alt(DeleteAndZero *p_this); }  // x4:ida@0x7b6760
+namespace HashTable { int Rebuild2(HashTable *p_this); }  // x4:ida@0x625830
+namespace HashTable { int ComputeHash(int* p0, int p1); }  // x4:signals@0x64de80
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int DrawDialogGradient(...); }  // w16g4 raw call-form
-namespace gamemd { int PrintFontLayout(...); }  // w16g4 raw call-form
-namespace gamemd { int unknown_libname_74(...); }  // w16g4 raw call-form
+namespace gamemd { int DrawDialogGradient(int* p0, int* p1, int p2, int p3); }  // x4:signals@0x6208f0
+namespace gamemd { int PrintFontLayout(int p0, uint16_t* p1, int* p2, int* p3, int p4, char p5, int p6, int p7, int p8, int p9); }  // x4:signals@0x621040
+namespace gamemd { int unknown_libname_74(_DWORD *p_this); }  // x4:ida@0x7b66c0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention)
 namespace gamemd {
-int Tooltip_Enable(...);  // [w14e3] raw 0x4E1FA9 Tooltip::Enable (flattened name)
-int AddPower(...);  // [w14e3] raw 0x4F9950 HouseClass::AddPower (unqualified call form)
-int SetCombatPower(...);  // [w14e3] raw 0x4F6EC0 HouseClass::SetCombatPower (unqualified call form)
+int Tooltip_Enable(char p0);  // x4:signals@0x7241a0
+int AddPower(int p0);  // x4:signals@0x4f9950
+int SetCombatPower(int p0);  // x4:signals@0x4f6ec0
 }
 extern int PropertyReadBoolCOM(int a1, int a2, char a3);  // W13-C raw 0x682A90 COM_Property_ReadBool
 extern int WriteIntCOM(int a1, int a2, int a3);  // W13-C raw 0x682E10 COM_WriteInt
@@ -58,62 +58,62 @@ extern int g_Str_TXT_OK;  // 词表 (canon 无条目, int 兜底) L654
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int GameOptions_Load_6829A0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int PropertyBagReadCOM(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ReadStringCOM(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SetBufferParamsCOM(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Dialog_ShowMessageBox(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ShowMessageBox(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CopyWideToChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GameOptions_Load_6829A0(int* p0, int p1, int p2);  // x4:signals@0x6829a0
+int PropertyBagReadCOM(int* p0, int p1, int p2);  // x4:signals@0x682b80
+int ReadStringCOM(int *a1, int a2, LPCCH lpMultiByteStr);  // x4:ida@0x682880
+int SetBufferParamsCOM(int* p0, int p1, int* p2);  // x4:signals@0x682f00
+int Dialog_ShowMessageBox(int p0, uint16_t* p1, uint16_t* p2, uint16_t* p3, uint16_t* p4, int p5);  // x4:signals@0x5d3490
+int ShowMessageBox(int p0, uint16_t* p1, uint16_t* p2, uint16_t* p3, uint16_t* p4, int p5);  // x4:signals@0x5d3490
+int CopyWideToChar(uint8_t* p0, char* p1, int p2);  // x4:signals@0x735090
 int Debug_Log(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int EventClass_Add2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ReadPlayerCountMap(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SetGlobalFlag(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int TacticalClass_Initialize(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int EventClass_Add2(int p0, uint8_t p1, int p2);  // x4:signals@0x4c6720
+int ReadPlayerCountMap(int p0);  // x4:signals@0x5e6520
+int SetGlobalFlag(char p0);  // x4:signals@0x70d180
+int TacticalClass_Initialize(TacticalClass *p_this);  // x4:ida@0x4ae450
 int timeGetTime(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AssignPlayerColor(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AssignPlayerSide(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CountryCombo_IDToIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int EnablePlayerSlotControls(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AssignPlayerColor(HWND hDlg, StartCombo *nIDDlgItem);  // x4:ida@0x5e9c00
+int AssignPlayerSide(HWND hDlg, Dialog *nIDDlgItem);  // x4:ida@0x5e9ce0
+int CountryCombo_IDToIndex(CountryCombo *p_this);  // x4:ida@0x4e3830
+int EnablePlayerSlotControls(HWND hDlg, unsigned __int8 a2);  // x4:ida@0x5edde0
 wchar_t *GameClass_GetDifficultyString(void *a1);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GameLobby_Setup(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GameLobby_Setup(HWND hDlg, void *a2);  // x4:ida@0x5ea180
 int GameSetup_DisplayPlayers(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 wchar_t *GameSetup_GetColorTooltip(void *a1);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetComboBoxSelected(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetComboBoxSelectedDefault(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetComboBoxSelectedRaw(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetComboBoxSelectedRaw2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetResourceID2CSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetResourceID3CSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetResourceID4CSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetResourceIDCSF(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int InitGameDropdownColors(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int InitSkirmishDialogControls(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int LoadScenarioClassByIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int MapSkirmishDialogPlayerToControl(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ProcessNetworkLobbyOption(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ReadChatMessage(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int RefreshLobbyPlayerSlots(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SelectLobbyCountry(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SendNetworkLobbyChatMessage(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SetComboBoxSelection(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SetGameSetupPlayerState(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SetupSkirmishDialogPlayerSlot(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int GetComboBoxSelected(HWND hDlg, int nIDDlgItem, LRESULT wParam);  // x4:ida@0x4e4170
+int GetComboBoxSelectedDefault(HWND hDlg, int nIDDlgItem, LRESULT wParam);  // x4:ida@0x5e9b20
+int GetComboBoxSelectedRaw(HWND hDlg, int nIDDlgItem, LRESULT wParam);  // x4:ida@0x4e4e20
+int GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, LRESULT wParam);  // x4:ida@0x4e6030
+int GetResourceID2CSF(ObjectClass *p_this);  // x4:ida@0x4e37d0
+int GetResourceID3CSF(ObjectClass *p_this);  // x4:ida@0x4e4e60
+int GetResourceID4CSF(ObjectClass *p_this);  // x4:ida@0x4e5940
+int GetResourceIDCSF(ObjectClass *p_this);  // x4:ida@0x4e41d0
+int InitGameDropdownColors(ObjectClass *p_this);  // x4:ida@0x4e43c0
+int InitSkirmishDialogControls(HWND hDlg, int a2);  // x4:ida@0x5e3010
+int LoadScenarioClassByIndex(int p0);  // x4:signals@0x5e7bf0
+int MapSkirmishDialogPlayerToControl(HWND a1, int a2);  // x4:ida@0x4e48e0
+int ProcessNetworkLobbyOption(HWND hDlg, Dialog *nIDDlgItem);  // x4:ida@0x5e9db0
+int ReadChatMessage(wchar_t **a1, HWND a2);  // x4:ida@0x5edd00
+int RefreshLobbyPlayerSlots(unsigned int p0);  // x4:signals@0x5ee510
+int SelectLobbyCountry(HWND a1, CountryCombo *a2);  // x4:ida@0x5e9b60
+int SendNetworkLobbyChatMessage(HWND hWnd, int a2, int a3);  // x4:ida@0x5de360
+int SetComboBoxSelection(HWND hDlg, int nIDDlgItem, LRESULT wParam);  // x4:ida@0x4e5900
+int SetGameSetupPlayerState(char* p0, int p1);  // x4:signals@0x5dbe20
+int SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2);  // x4:ida@0x4e3ce0
 wchar_t *SideClass_GetName(void *a1);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SkirmishDialog_FillComboBoxes(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int StartCombo_IDToIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ToWideStringChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int WOLobby_Play(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int DeleteAndZero_Alt(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int Dialog_MapPlayerIDToIndex(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int Dialog_OptionIDToIndex(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int Dialog_SideIDToIndex(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int SkirmishDialog_FillComboBoxes(SkirmishDialog *p_this);  // x4:ida@0x4e3b90
+int StartCombo_IDToIndex(StartCombo *p_this);  // x4:ida@0x4e4230
+int ToWideStringChar(char* p0);  // x4:signals@0x7350c0
+int WOLobby_Play(const char* p0, const char* p1);  // x4:signals@0x5e3850
+int DeleteAndZero_Alt(DeleteAndZero *p_this);  // x4:ida@0x7b6760
+int Dialog_MapPlayerIDToIndex(Dialog *p_this);  // x4:ida@0x5e9950
+int Dialog_OptionIDToIndex(Dialog *p_this);  // x4:ida@0x4e59a0
+int Dialog_SideIDToIndex(Dialog *p_this);  // x4:ida@0x4e4ec0
 void GDlg_LoadLetterStrings(void);   // g57b5 W5: raw 词表 (自由形)
-int Lobby_FillPlayerFactions(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int Lobby_InvalidateFactionCombos(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int Lobby_InvalidatePlayerSlots(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int Network_SendOptionsGame(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
-int NetworkLobby_UpdatePlayerList(void *a1, ...);   // g57b5 W5: raw 词表 (自由形)
+int Lobby_FillPlayerFactions(Lobby *p_this);  // x4:ida@0x4e4820
+int Lobby_InvalidateFactionCombos(Lobby *p_this);  // x4:ida@0x4e5310
+int Lobby_InvalidatePlayerSlots(Lobby *p_this);  // x4:ida@0x4e5d60
+int Network_SendOptionsGame(char *Source);  // x4:ida@0x5e3720
+int NetworkLobby_UpdatePlayerList();  // x4:empty@0x5db9b0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W4r2: TU-local vocab ----

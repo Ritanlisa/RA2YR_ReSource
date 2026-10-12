@@ -61,8 +61,8 @@
 #include "e4/classes/MapPreview_e4.hpp"  // G57w10 D supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ExchangeMultiplayerGameInfo(...);  // raw 005E7920: void ExchangeMultiplayerGameInfo()
-    int SaveMultiplayerLobbySettings(...);  // raw 005ED400: char __fastcall SaveMultiplayerLobbySettings(HWND hDlg, int a2)
+    int ExchangeMultiplayerGameInfo();  // x4:empty@0x5e7920
+    int SaveMultiplayerLobbySettings(HWND hDlg, int a2);  // x4:ida@0x5ed400
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)

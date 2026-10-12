@@ -41,7 +41,7 @@ using ra2::game::FootClass;
 #include "e4/classes/Factory_e4.hpp"  // w16g4 C3861 Factory:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int PlayTauntClass(...);  // raw 00752B70: int __fastcall TauntClass_Play(int a1)
+    int PlayTauntClass(int p0);  // x4:signals@0x752b70
 } // namespace gamemd
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int C;  // 词表 (canon 无条目, int 兜底) L716
@@ -50,19 +50,19 @@ extern int nullsub_56;  // 词表 (canon 无条目, int 兜底) L74
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Array_ForEachReverse(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FontClass_GetPixelData(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ToWideStringChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Array_GetClamped(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CellClass_DrawWithFlags(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Keyboard_MapKey(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ListClass_Destruct(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Text_MeasureWidth(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Destruct(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int DrawBuildingTilesSHP(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FillRectangle(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Array_ForEachReverse(int p0, int p1, void* p2);  // x4:signals@0x40afd0
+int FontClass_GetPixelData(uint16_t p0);  // x4:signals@0x4349b0
+int ToWideStringChar(char* p0);  // x4:signals@0x7350c0
+int Array_GetClamped(int p0);  // x4:signals@0x557ac0
+int CellClass_DrawWithFlags(int p0, int* p1, int p2);  // x4:signals@0x557830
+int Keyboard_MapKey(uint16_t p0);  // x4:signals@0x54f450
+int ListClass_Destruct(ListClass *p_this);  // x4:ida@0x557600
+int Text_MeasureWidth(int p0, int p1);  // x4:signals@0x433ed0
+int Destruct(char p0);  // x4:signals@0x40b070
+int DrawBuildingTilesSHP(int* p0, int p1, char p2);  // x4:signals@0x4a5a50
+int FillRectangle(int* p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9);  // x4:signals@0x4a6500
 int GetInstance(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int nullsub_57(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int nullsub_57(int p0);  // x4:signals@0x40d300
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

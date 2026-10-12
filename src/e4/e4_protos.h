@@ -726,7 +726,7 @@ extern _DWORD * ExecuteActionPlanManager_Helper(ObjectClass * aP0);  // G42.57w9
 extern int ExecuteActionPlanManager_Helper_636EB0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_636EB0@0x636eb0)
 extern bool ExecuteActionPlanManager_Helper_638C40(ObjectClass * aP0, int a2, char a3);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_638C40@0x638c40)
 extern void __stdcall IPersistStream_Stub_709A30(void * a1, int a2);  // G57w17h4 supply (raw IPersistStream::Stub@0x709a30, retn 8, empty body)
-extern int InitGame(...);  // G57w17h4 supply (raw InitGame@0x52ba60; site 0x48cccf push 1 stack arg, eax result -- 0-arg site arg-fidelity deferred)
+extern int InitGame();  // x4:empty@0x52ba60
 extern char __fastcall MenuSelect(void *a1);  // G57w17h4 supply (raw MenuSelect@0x52d9a0 thiscall-in-ecx, char in al)
 extern void InitSkirmishSettings();  // G57w17h4 supply (raw InitSkirmishSettings@0x6c87f0 cdecl void)
 extern _DWORD * ExecuteActionPlanManager_Helper_63E1D0(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::ExecuteActionPlanManager_Helper_63E1D0@0x63e1d0)
@@ -1196,10 +1196,10 @@ struct _VectorClass_VWstring;
 
 // G42.32 M C3861 free-fn proto supply (per-name guarded, idempotent; `(...)` interim)
 int get_int_arg_0(void * aP0);   // G42.32: generator vararg helper leak (addr7D body)
-int BlitterDrawSHP(...);         // G42.32: 13-arg global blitter (E4Recv_4AF2A0 wrap)
+int BlitterDrawSHP(int* p0, int p1, int* p2, int* p3, int* p4, int* p5, int p6, int* p7, int p8, int p9, int p10, int p11, int p12);  // x4:signals@0x4af2a0
 unsigned char IsKnownPointer(void * aP0);  // G42.32: 0x5E93F0 free-form call
-int Event_Process_746D90(...);   // G42.32: addr73 body
-int sub_406310(...);             // G42.32: addr75 body
+int Event_Process_746D90(TechnoClass *p_this);  // x4:ida@0x746d90
+int sub_406310(int p0);  // x4:signals@0x406310
 
 // G42.32 M C2065 supply: nullsub stubs (fn-ptr cast use-form only)
 void nullsub_10();  // G42.32: IDA null stub, fn-ptr cast use

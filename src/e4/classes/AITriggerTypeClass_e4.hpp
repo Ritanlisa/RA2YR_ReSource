@@ -36,13 +36,6 @@ struct AITriggerTypeClass {
     unsigned int u32_BC;  // 0xBC (offset-truth)
     unsigned int u32_D8;  // 0xD8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
-    static double AITriggerTypeClass_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double AITriggerTypeClass_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double AITriggerTypeClass_field_0x28(...);  // plateau: C2039/C3861 stub
-    static double u32_C0(...);  // plateau: C2039/C3861 stub
-    static double u32_C4(...);  // plateau: C2039/C3861 stub
-    static double u32_C8(...);  // plateau: C2039/C3861 stub
-    static double u32_E8(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

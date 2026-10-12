@@ -365,9 +365,8 @@ struct HouseClass {
     int angerNodesCount;  // 0x5608 (G57W14E1 til supply)
     int scoutNodesCount;  // 0x5614 (G57W14E1 til supply)
     unsigned int CheckWinCondition_ph;  // w18j3: filler renamed (no offset truth; canon HouseClass::CheckWinCondition is a method)
-    static unsigned int CheckWinCondition(...);
+    static unsigned int CheckWinCondition(char p0);  // x4:signals@0x4fc9e0
     void* AccumulateScore_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon HouseClass::AccumulateScore is a method)
-    static unsigned int AccumulateScore(...);
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
     AbstractClass * * FindStartPositions(void *a1);
@@ -377,7 +376,7 @@ struct HouseClass {
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
     char DroppedFlag(UnitClass * aP1, int a3);
-    static char IonSensitivesShouldBeOffline(...);
+    static char IonSensitivesShouldBeOffline();  // x4:empty@0x53a130
     char PickedUpFlag(ObjectClass * aP1, char a3);
     char ReshroudMap();
     char Set(void *a1, void *a2, void *a3);
@@ -460,15 +459,13 @@ struct HouseClass {
     int SaveToINI(char *a2);
     int sub_63CF10();  // 0x63CF10
     int sub_63CFC0();
-    static int CheckDefeat(...);
-    static int ProcessPower(...);
+    static int CheckDefeat(char p0);  // x4:signals@0x4fcbd0
+    static int ProcessPower(ObjectClass *p_this);  // x4:ida@0x5f6250
     static int InitStatArray(void *aP1, unsigned int a2);
     static int initDropshipData(void *aP1);
     static char ClearPrimaryFactory();
     static char checkAutoProduction();
     unsigned int u32_54E4;  // 0x54E4 (offset-truth)
-    static double RespawnStartingBuildings(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_HouseClass_DEF
 

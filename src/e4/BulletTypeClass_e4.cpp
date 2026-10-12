@@ -32,7 +32,7 @@
 
 // [w20m5] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp fn_54.c 0x544CE0
 namespace gamemd {
-    int Entity_Read(...);  // raw 0x544CE0: int __thiscall Entity_Read(ObjectClass *this) -- this=string arg (ObjectTypeClass_Read precedent, ObjectTypeClass_e4.cpp:43)
+    int Entity_Read(ObjectClass *p_this);  // x4:ida@0x544ce0
 } // namespace gamemd
 // 0x465450
 namespace gamemd {  // G42.18 ns repair

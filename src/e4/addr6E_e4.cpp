@@ -72,7 +72,7 @@
 #include "e4/classes/LayerClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int Get_Waypoint_Location(...); }  // w16g4 raw call-form
+namespace gamemd { int Get_Waypoint_Location(int* p0, int p1); }  // x4:signals@0x68bcc0
 
 // 0x6E0250
 namespace gamemd {  // G42.18 ns repair

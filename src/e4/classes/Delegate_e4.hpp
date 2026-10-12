@@ -37,15 +37,6 @@ struct Delegate {
     unsigned int q010;  // 0x10 (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
     unsigned int q018;  // 0x18 (offset-truth)
-    static double Blowfish(...);  // plateau: C2039/C3861 stub
-    static double Previous(...);  // plateau: C2039/C3861 stub
-    static double Straw_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_14(...);  // plateau: C2039/C3861 stub
-    static double field_10(...);  // plateau: C2039/C3861 stub
-    static double field_18(...);  // plateau: C2039/C3861 stub
-    static double field_1C(...);  // plateau: C2039/C3861 stub
-    static double field_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

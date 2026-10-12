@@ -15,9 +15,5 @@ struct E4Recv_634B20 {
     unsigned int M168;  // 0xA8
 // --- flat members (END) ---
     Game * * sub_634B20();  // 0x634B20
-    static double attachedBomb(...);  // plateau: C2039/C3861 stub
-    static double lineTrailer(...);  // plateau: C2039/C3861 stub
-    static double nextObject(...);  // plateau: C2039/C3861 stub
-    static double occupant(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

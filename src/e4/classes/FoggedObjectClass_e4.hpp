@@ -49,10 +49,6 @@ struct FoggedObjectClass {
     unsigned int u32_58;  // 0x58 (offset-truth)
     void* ;  // 0x5C (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double LastSight2(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
-    static double u32_74(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

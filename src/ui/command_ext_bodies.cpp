@@ -10,7 +10,7 @@
 #include "e4/classes/DSurface_e4.hpp"  // w16g4 C3861 DSurface:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int CompressScreenshot(...);  // raw 007B05C0: char __fastcall Screenshot_Compress(int *a1, int *a2, void *Src)
+    int CompressScreenshot(int* p0, int* p1, void* p2);  // x4:signals@0x7b05c0
 } // namespace gamemd
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {

@@ -33,11 +33,6 @@ struct FileClass {
     char __tail_0[4];  // 0x0 (ml)
     unsigned int u32_58;  // 0x58 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
-    static double FileName(...);  // plateau: C2039/C3861 stub
-    static double FileNameAllocated(...);  // plateau: C2039/C3861 stub
-    static double FilePointer(...);  // plateau: C2039/C3861 stub
-    static double FileTimeDateLo(...);  // plateau: C2039/C3861 stub
-    static double Handle(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 

@@ -12,6 +12,5 @@ struct BufferIOFile {
     int Init(void *a1 = 0, void *a2 = 0);  // 0x47AA30
     int m_54;  // 0x54 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

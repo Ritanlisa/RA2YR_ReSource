@@ -14,7 +14,7 @@ struct Timer {
     unsigned int tail_C9;  // 0xC9
 // --- flat members (END) ---
     unsigned int ReadTSC_ph;  // w18j3: filler renamed (no offset truth; canon Timer::ReadTSC is a method)
-    static unsigned int ReadTSC(...);
+    static unsigned int ReadTSC(int* p0);  // x4:signals@0x7c6064
     void *  Start(int a2, void *a1 = 0);  // 0x46B640
     int  StartDouble(double a2);  // 0x4A5240
     DWORD *  Init(DWORD a2, void *a1 = 0);  // 0x4F1B00
@@ -31,8 +31,5 @@ struct Timer {
     char __pad_6[18];  // 0x6 (ml)
     int m_18;  // 0x18 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_318(...);  // plateau: C2039/C3861 stub
-    static double u32_4(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

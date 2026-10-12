@@ -13,10 +13,6 @@ struct ProgressTimer {
 // --- flat members (END) ---
     void* GetValue(void *aP1);
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
-    static double ProgressTimer_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double ProgressTimer_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double ProgressTimer_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_CORE_OWNS_PROGRESSTIMER
 

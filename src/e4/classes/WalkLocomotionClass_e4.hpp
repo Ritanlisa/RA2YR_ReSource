@@ -35,7 +35,6 @@ struct WalkLocomotionClass {
     int ddtor(int a1, unsigned int * a2);
     int Piggybackee;  // 0x38 (ml)
     unsigned int q018;  // 0x18 (offset-truth)
-    static double __pad_18(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -51,9 +51,9 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"  // w16g4 C3861 MultiplayerGameMode:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int SendMultiplayerStartSignal_Start(...);  // raw 005DBEC0: int __thiscall sub_5DBEC0(char *this)
-    int UI_Get_60B350(...);  // raw 0060B350: BOOL __thiscall UI_Get_60B350(ObjectClass *this)
-    int UI_Setup_791AA0(...);  // raw 00791AA0: void __thiscall UI_Setup_791AA0(ObjectClass *this)
+    int SendMultiplayerStartSignal_Start(char *p_this);  // x4:ida@0x5dbec0
+    int UI_Get_60B350(ObjectClass *p_this);  // x4:ida@0x60b350
+    int UI_Setup_791AA0(ObjectClass *p_this);  // x4:ida@0x791aa0
 } // namespace gamemd
 
 // 0x5E2820

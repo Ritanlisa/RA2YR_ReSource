@@ -162,7 +162,6 @@ struct WaveClass {
     int ProcessWaveTick(int * a1, int * a2, int a3);
     int StubReturnFalse();
      void Destroy(void *a1 = 0);
-     double Dtor(...);  // C2597 interim stub
     unsigned int u32_1F4;  // 0x1F4 (offset-truth)
     unsigned int u32_1F8;  // 0x1F8 (offset-truth)
     unsigned char u32_1FD;  // 0x1FD (offset-truth)

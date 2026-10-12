@@ -26,8 +26,6 @@ struct EventQueue {
     int16_t Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     int16_t Process(void *a1 = 0);
     short Read(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-    static double u32_314(...);  // plateau: C2039/C3861 stub
-    static double u32_318(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -28,14 +28,5 @@ struct Array {
     unsigned int q0044;  // 0x44 (offset-truth)
     unsigned char q0045;  // 0x45 (offset-truth)
     unsigned char q0046;  // 0x46 (offset-truth)
-    static double Array_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double Array_field_0x38(...);  // plateau: C2039/C3861 stub
-    static double Array_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double Array_field_0xE4(...);  // plateau: C2039/C3861 stub
-    static double Array_field_0xE8(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_8(...);  // plateau: C2039/C3861 stub
-    static double u32_38(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

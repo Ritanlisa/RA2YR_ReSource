@@ -596,8 +596,6 @@ struct RulesClass {
     int ReadSidesList(void * aSuperweapontyp);
     int ResetRules();  // G42.39 supply
     static int LoadFromINI();
-    static double ColorAdd(...);  // plateau: C2039/C3861 stub
-    static double __pad_240(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

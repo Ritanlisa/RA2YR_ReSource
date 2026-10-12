@@ -97,13 +97,13 @@
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_402EF0(...); }  // w18j2 raw 0x00402EF0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int sub_401B00(...); }  // w18j2 raw 0x00401B00 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int sub_4085B0(...); }  // w18j2 raw 0x004085B0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_402EF0(int p0); }  // x4:signals@0x402ef0
+namespace gamemd { int sub_401B00(int p0); }  // x4:signals@0x401b00
+namespace gamemd { int sub_4085B0(int p0); }  // x4:signals@0x4085b0
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int ProcessAudioMixerFrame(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ProcessAudioMixerFrame(ObjectClass *p_this); }  // x4:ida@0x402f60
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int ActivatePlay(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ActivatePlay(AudioChannel *p_this); }  // x4:ida@0x402650
 namespace AudioChannel { int ActivatePlay(); }  // w18j2 ns-supply raw 0x00402650
 
 // 0x4011C0

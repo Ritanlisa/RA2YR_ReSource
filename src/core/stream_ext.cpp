@@ -3,7 +3,7 @@
 #include "e4/classes/AudioStream_e4.hpp"  // g57c5 W5d scope supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ProcessAudioStream(...);  // raw 00409880: int __fastcall ProcessAudioStream(AudioBuffer *a1, unsigned int a2)
+    int ProcessAudioStream(int* p0, int p1);  // x4:signals@0x409880
 } // namespace gamemd
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {

@@ -60,10 +60,9 @@
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_49(); }  // w18j2 raw 0x007BF220
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int ButtonDown(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int RenderGradientTrapezoid(...);  // raw 00660050: char __thiscall RenderGradientTrapezoid(float *this)
+    int RenderGradientTrapezoid(float *p_this);  // x4:ida@0x660050
 } // namespace gamemd
 
 // 0x52FF90

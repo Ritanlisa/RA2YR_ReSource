@@ -179,7 +179,6 @@ protected:
 
 class XSurface : public Surface
 {
-    int GetRect(int, ...); // vtable slot +120
 public:
     XSurface(int width, int height) noexcept;
 
@@ -289,7 +288,6 @@ protected:
 class BSurface : public XSurface
 {
 public:
-    int GetWidth(int, ...); // vtable slot +124
     BSurface(int width, int height, int bytes_per_pixel) noexcept;
 
     // design: virtual function, no binary implementation matched in IDA

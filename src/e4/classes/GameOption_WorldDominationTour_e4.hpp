@@ -12,9 +12,6 @@ struct GameOption_WorldDominationTour {
     void * ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5);
     unsigned int u32_8;  // 0x8 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double u32_10(...);  // plateau: C2039/C3861 stub
-    static double u32_4(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

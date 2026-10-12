@@ -26,7 +26,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/TypeClass_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_412610(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_412610(int p0); }  // x4:signals@0x412610
 
 // 0x4C4EF0
 namespace gamemd {  // G42.18 ns repair

@@ -67,12 +67,12 @@ extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w1
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 {
 class Math;  // g57c5 W5 fwd
-int AudioController_GetOffset(...);  // g57c5 W5 vocab
-int DListNode_InitEmpty(...);  // g57c5 W5 vocab
-int Debug_Log(...);  // g57c5 W5 vocab
-int ObjectClass_ClearFlags2(...);  // g57c5 W5 vocab
-int Queue_GetNext(...);  // g57c5 W5 vocab
-int TechnoClass_MapHouseRelationIndex(...);  // g57c5 W5 vocab
+int AudioController_GetOffset(AudioController *p_this);  // x4:ida@0x408520
+int DListNode_InitEmpty(DListNode *p_this);  // x4:ida@0x4072d0
+int Debug_Log();  // x4:empty@0x4068e0
+int ObjectClass_ClearFlags2(ObjectClass *p_this);  // x4:ida@0x401170
+int Queue_GetNext(Queue *p_this);  // x4:ida@0x407470
+int TechnoClass_MapHouseRelationIndex(TechnoClass *p_this);  // x4:ida@0x50dac0
 }
 // ---- g57c5 W5 end ----
 extern int CellCoord;  // 词表 (canon 无条目, int 兜底) L1335
@@ -85,34 +85,32 @@ extern int Queue;  // 词表 (canon 无条目, int 兜底) L298
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Cell_IsBuildable(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_Pathfinding_Find(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Math_Sqrt(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AudioController_GetOffset(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int DListNode_InitEmpty(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Debug_Log(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsBuildable(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ObjectClass_ClearFlags2(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Pathfinding_Find(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Queue_GetNext(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int TechnoClass_MapHouseRelationIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AudioController_GetOffset(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Cell_GetGroundHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int DListNode_InitEmpty(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int Cell_IsBuildable(int p0, char p1, char p2, int p3, int p4, int p5, char p6);  // x4:signals@0x4834a0
+int LayerClass_Pathfinding_Find(int* p0, int p1, int* p2, int16_t* p3, int p4, int p5, int p6, int p7, int p8, int p9, char p10, char p11, char p12, char p13, int16_t* p14, char p15, char p16);  // x4:signals@0x56dc20
+int Math_Sqrt(double p0);  // x4:signals@0x4cac40
+int AudioController_GetOffset(AudioController *p_this);  // x4:ida@0x408520
+int DListNode_InitEmpty(DListNode *p_this);  // x4:ida@0x4072d0
+int Debug_Log();  // x4:empty@0x4068e0
+int IsBuildable(int p0, char p1, char p2, int p3, int p4, int p5, char p6);  // x4:signals@0x4834a0
+int ObjectClass_ClearFlags2(ObjectClass *p_this);  // x4:ida@0x401170
+int Pathfinding_Find(int* p0, int p1, int* p2, int16_t* p3, int p4, int p5, int p6, int p7, int p8, int p9, char p10, char p11, char p12, char p13, int16_t* p14, char p15, char p16);  // x4:signals@0x56dc20
+int Queue_GetNext(Queue *p_this);  // x4:ida@0x407470
+int TechnoClass_MapHouseRelationIndex(TechnoClass *p_this);  // x4:ida@0x50dac0
+int AudioController_GetOffset(AudioController *p_this);  // x4:ida@0x408520
+int Cell_GetGroundHeight(int* p0);  // x4:signals@0x578080
+int DListNode_InitEmpty(DListNode *p_this);  // x4:ida@0x4072d0
 int Debug_Log(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LinkedList_Pop(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int MapClass_FindPlacementCellsAlt(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_ClearFlags2(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_HasLocation(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Queue_GetNext(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Team_GetMember(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_MapHouseRelationIndex(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TriggerTypeClass_ReadINI(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AddObject(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindOpenNeighbor(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindPlacementCellsAlt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetGroundHeight(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int LayerClass_CoordinatesLegal(int16_t* p0);  // x4:signals@0x568300
+int MapClass_FindPlacementCellsAlt(int* p0, int p1);  // x4:signals@0x703590
+int ObjectClass_ClearFlags2(ObjectClass *p_this);  // x4:ida@0x401170
+int ObjectClass_HasLocation(ObjectClass *p_this);  // x4:ida@0x70fec0
+int Queue_GetNext(Queue *p_this);  // x4:ida@0x407470
+int TechnoClass_MapHouseRelationIndex(TechnoClass *p_this);  // x4:ida@0x50dac0
+int TriggerTypeClass_ReadINI(int* p0, int p1, uint8_t* p2, int p3, char p4);  // x4:signals@0x6fc0b0
+int AddObject(int* p0);  // x4:signals@0x4733a0
+int FindOpenNeighbor(int* p0, int p1, int p2, int p3, int p4, int p5, int p6);  // x4:signals@0x4aa440
+int FindPlacementCellsAlt(int* p0, int p1);  // x4:signals@0x703590
+int GetGroundHeight(int* p0);  // x4:signals@0x578080
 int GetNext(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int Log(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 } // namespace gamemd
@@ -155,16 +153,16 @@ extern unsigned int g_AircraftStatusFlag;  // data: aircraft flag
 extern int dword_A8E370;                   // data: 0x8E370 (unit 数组计数)
 extern unsigned int dword_A8E364;          // data: 0x8E364 (unit 数组基址槽)
 extern unsigned int * Array_Get(void *arr, int idx);   // 0x65AD40 (IDA: Array::Get)
-extern int Cell_IsBuildable(void *cell, ...);          // 0x4857B0 (IDA: Cell::IsBuildable)
-extern unsigned int * LayerClass_Pathfinding_Find(void *layer, ...);  // 0x51F730 (G42.33 b4 W7g: 指针形站点 *call)
+extern int Cell_IsBuildable(int p0, char p1, char p2, int p3, int p4, int p5, char p6);  // x4:signals@0x4834a0
+extern unsigned int * LayerClass_Pathfinding_Find(int* p0, int p1, int* p2, int16_t* p3, int p4, int p5, int p6, int p7, int p8, int p9, char p10, char p11, char p12, char p13, int16_t* p14, char p15, char p16);  // x4:signals@0x56dc20
 // G42.33 b4 W7c: 缺席全局/原型 (ApplyDamageEffects/ComputeTargetAngle 区)
 extern int g_TerrainBridgeIndex;             // data: 桥 tile 基索引
 extern void * Return_HRESULT_Fail(int a1, int a2, int a3);     // (IDA: Return::HRESULT_Fail)
 extern void * GetWarheadVersusMultiplier(unsigned int a1, unsigned int a2, int a3, int *a4);
-extern int TerrainClass_ProcessSlope(void *self, ...);         // (IDA: TerrainClass::ProcessSlope)
+extern int TerrainClass_ProcessSlope(int16_t* p0);  // x4:signals@0x574000
 extern int AudioFile_Stop(void *self);                         // (IDA: AudioFile::Stop)
 extern int PlaySoundEffectAt(int *a1, unsigned int a2, unsigned int *a3, unsigned int a4, int a5, int a6);  // (IDA: PlaySoundEffectAt)
-extern int World_ToScreen(void *a1, ...);                      // (IDA: World::ToScreen)
+extern int World_ToScreen(int* p0, int* p1);  // x4:signals@0x6d2070
 extern double BuildingLight_CalcIntensity(double a1);          // (IDA: BuildingLight::CalcIntensity)
 struct AnimClass_shadow { void * ctor(void *a1, void *a2, int *a3, int a4, int a5, void *a6, void *a7, int a8); };  // AnimClass::ctor 影子
 int StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // 0x7509E0 真形
@@ -193,9 +191,8 @@ extern int FootClass_Array;                  // data: 0x8B3DC0  // G42.34 W2: e4
 int PlayAudioAt2(unsigned int a1, int *a2, int a3);            // 0x750e20 真形
 int TimedCreateUnitAtCoords(int *a1, int a2, int a3, int a4);  // 0x6b5c90 真形
 int StandardCreateUnitAtCoords(int *a1, int a2, int a3, int a4); // 0x6b59a0 真形
-void * RandomCoordScatter(int a1, ...);          // 0x49f420 (5 参调用点变参兜底)
+void * RandomCoordScatter(int* p0, int* p1, int p2, char p3);  // x4:signals@0x49f420
 double Math_CalcAngle(double a1, double a2);     // (IDA: Math::CalcAngle) 真形 (0x43ebdd/0x43ee13 家族)
-int ComputeMathFacingAngle(int a1, ...);         // (IDA: ComputeMathFacingAngle 0x43eca7 家族)
 void MapClass_MarkForRedraw(void *self, int a2); // (IDA: MapClass::MarkForRedraw)
 // Scenario 单例 @ 0xA8B230 旧 til 数组形态别名宿主 (team TU 同款)
 struct dword_A8B230_elem {
@@ -219,37 +216,34 @@ struct VectorClass_base16 {
 };
 struct CellCoord_shadow { void * To_CellObj(int a2); };  // 0x5657A0 影子 (G42.33 b4 W7: 返回 void* 站点形态)
 struct Coord_shadow { unsigned char flags[8]; struct Coord_shadow *To_Cell(int *a2); };  // Coord::To_Cell 影子
-int MapClass_RevealArea0(void *a, ...);   // 0x5673A0 (IDA: MapClass::RevealArea0)
-int MapClass_RevealArea1(void *a, ...);   // 0x5678E0
-int MapClass_RevealArea2(void *a, ...);   // 0x567DA0
-int MapClass_GetTileIndex(void *a, ...);  // 0x56D230
-int MapClass_FindPlacementCellsAlt(void *a, ...); // 0x703590
-int MapClass_FillRevealBuffer(void *a, ...); // 0x5683C0
-int MapClass_ApplyTerrainDamage(void *a, ...); // 0x574C20
-int MapClass_ApplyOverlayReveal(void *a, ...); // 0x5687F0
-int MapClass_MarkForRedraw(void *a, ...); // 0x5D81F0 区
-int LayerClass_CoordinatesLegal(void *a, ...);  // 0x568300
-int LayerClass_IsWithinUsableArea(void *a, ...); // 0x578460
-int GScreenClass_MarkForRedraw(void *a, ...);   // 0x4F42F0
-int Team_GetMember(void *a, ...);        // 0x65AD30
-int Team_AllMembersValid(void *a, ...);  // 0x65AE30
-int ScriptAction_ExecuteMissionCmd(void *a, ...); // 0x6FFBE0
-int ScriptAction_DecrementRefCount(void *a, ...); // ScriptAction 族
-int ScriptAction_GetScreenPos(void *a, ...);      // ScriptAction 族
-void * Coord_Subtract(void *a, ...);     // 0x41C230 (IDA: Coord::Subtract)
-void * Coord_To_Cell(void *a, ...);      // 0x565730
-void * Coord_To_Screen(void *a, ...);    // 0x6D2140
-void * Coord_To_ScreenRaw(void *a, ...); // 0x6D1F10
-void * Coord_Divide(void *a, ...);       // 0x710700
-void * Coord_WorldToScreen(void *a, ...); // 0x6557F0
-int Coord_Length(void *a, ...);           // 0x41C380 (G42.33 b4 W7c: int 形站点)
-int CellCoord_To_CellObj(void *a, ...);  // 0x5657A0 (107 站点)
+int MapClass_RevealArea0(int* p0, int p1, int* p2, char p3, char p4, char p5, char p6, char p7);  // x4:signals@0x5673a0
+int MapClass_RevealArea1(int* p0, int p1, int* p2, char p3, int p4, char p5, char p6, char p7);  // x4:signals@0x5678e0
+int MapClass_RevealArea2(int* p0, int p1, int p2, int p3);  // x4:signals@0x567da0
+int MapClass_GetTileIndex(int16_t* p0, int p1, char p2);  // x4:signals@0x56d230
+int MapClass_FindPlacementCellsAlt(int* p0, int p1);  // x4:signals@0x703590
+int MapClass_FillRevealBuffer(uint16_t* p0, uint8_t* p1);  // x4:signals@0x5683c0
+int MapClass_ApplyTerrainDamage(int16_t* p0);  // x4:signals@0x574c20
+int MapClass_ApplyOverlayReveal(uint16_t* p0, char* p1);  // x4:signals@0x5687f0
+int LayerClass_CoordinatesLegal(int16_t* p0);  // x4:signals@0x568300
+int LayerClass_IsWithinUsableArea(int16_t* p0, char p1);  // x4:signals@0x578460
+int GScreenClass_MarkForRedraw(int p0);  // x4:signals@0x4f42f0
+int Team_AllMembersValid(Team *p_this);  // x4:ida@0x65ae30
+int ScriptAction_ExecuteMissionCmd(TechnoClass *p_this);  // x4:ida@0x6ffbe0
+int ScriptAction_DecrementRefCount(int p0);  // x4:signals@0x6351e0
+int ScriptAction_GetScreenPos(int* p0);  // x4:signals@0x634400
+void * Coord_Subtract(int p0, int p1, int p2);  // x4:signals@0x41c230
+void * Coord_To_Cell(int* p0);  // x4:signals@0x565730
+void * Coord_To_Screen(int* p0, int* p1);  // x4:signals@0x6d2140
+void * Coord_To_ScreenRaw(int* p0, int* p1);  // x4:signals@0x6d1f10
+void * Coord_Divide(int* p0, int p1);  // x4:signals@0x710700
+void * Coord_WorldToScreen(int* p0, int* p1, char p2);  // x4:signals@0x6557f0
+int Coord_Length(Coord *p_this);  // x4:ida@0x41c380
+int CellCoord_To_CellObj(int16_t* p0);  // x4:signals@0x5657a0
 int Math_RoundToInt(double a);           // 0x7C5F00 (G42.33 b4 W7: double 形)
 double Math_Sqrt(double a);              // 0x4CAC40 (G42.33 b4 W7: double 形)
-int Math_SinCos(void *a, ...);
-int Math_ArcTan(void *a, ...);
-int Math_CalcAngle(void *a, ...);
-int Math_DistSq(void *a, ...);
+int Math_SinCos(double p0);  // x4:signals@0x4cacb0
+int Math_ArcTan(double p0);  // x4:signals@0x4cade0
+int Math_CalcAngle(double p0, double p1);  // x4:signals@0x4cae30
 extern unsigned int dword_817A78;        // data: 0x817A78
 extern unsigned int g_DDrawSurfaceManager[];  // data: Scenario 域 (scenario 成员区)
 int sub_7DC720(int a2);  // G42.33 W5: 全局自由形 (team WinAPI::Wrapper 同义)

@@ -35,13 +35,6 @@ struct ColorStruct {
 // --- flat members (END) ---
     int SetRGB(uint8_t a2, uint8_t a3, uint8_t a4, void *a1 = 0);
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double field_10(...);  // plateau: C2039/C3861 stub
-    static double field_14(...);  // plateau: C2039/C3861 stub
-    static double field_30(...);  // plateau: C2039/C3861 stub
-    static double field_34(...);  // plateau: C2039/C3861 stub
-    static double field_50(...);  // plateau: C2039/C3861 stub
-    static double field_54(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_ColorStruct_DEF
 

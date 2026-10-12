@@ -12,7 +12,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_434700(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_434700(int p0); }  // x4:signals@0x434700
 
 // 0x433880
 namespace gamemd {  // G42.18 ns repair

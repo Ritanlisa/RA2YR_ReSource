@@ -34,7 +34,5 @@ int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
     unsigned char u32_53D3;  // 0x53D3 (offset-truth)
     unsigned int u32_53D4;  // 0x53D4 (offset-truth)
     unsigned int u32_53D8;  // 0x53D8 (offset-truth)
-    static double field_150C(...);  // plateau: C2039/C3861 stub
-    static double field_1530(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

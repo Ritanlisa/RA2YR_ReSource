@@ -51,8 +51,8 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int PropagateCellOccupancy(...);  // raw 00722440: void __thiscall PropagateCellOccupancy(ObjectClass *this)
-    int RebuildBuildingOccupancy(...);  // raw 00722F00: void __thiscall RebuildBuildingOccupancy(ObjectClass *this)
+    int PropagateCellOccupancy(ObjectClass *p_this);  // x4:ida@0x722440
+    int RebuildBuildingOccupancy(ObjectClass *p_this);  // x4:ida@0x722f00
 } // namespace gamemd
 
 // 0x7221B0

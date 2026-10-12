@@ -42,7 +42,7 @@ extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 extern unsigned int dword_8367C8;  // G57w19k3 data: 0x8367C8 BuildingDebris 记录表基 (namespace gamemd)
-namespace Timer { int GetTicks(...); }  // g57c5 W5 vocab
+namespace Timer { int GetTicks(); }  // x4:empty@0x6c8c40
 } // namespace gamemd
 // ---- g57c5 W5 end ----
 extern int g_INI_Key_Special;
@@ -135,7 +135,7 @@ struct TacticalClass_site {
 };
 struct LayerClass_site {
     static unsigned char CoordinatesLegal(void* self, void* a2);             // 0x6D8021
-    static unsigned int* Pathfinding_Find(void* a1, ...);                    // 0x73ED7F (16+ 参调用点变参兜底; object TU LayerClass_Pathfinding_Find 同形)
+    static unsigned int* Pathfinding_Find(int* p0, int p1, int* p2, int16_t* p3, int p4, int p5, int p6, int p7, int p8, int p9, char p10, char p11, char p12, char p13, int16_t* p14, char p15, char p16);  // x4:signals@0x56dc20
 };
 struct IsoCoord_site { static unsigned int* ToPixel(void* a1, int a2, int a3); };  // 0x6D81A5 (载体 2 参 void 不符)
 struct House_site { static unsigned char IsCurrentPlayer(void* self); };     // 0x73E67D

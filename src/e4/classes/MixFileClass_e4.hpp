@@ -30,7 +30,6 @@ struct MixFileClass {
     static int GetSubFile(MixFileClass * aP1, unsigned int a2);
     static char ** LoadSubFile(MixFileClass * aP1);
     void sub_5B3F50();  // 0x5B3F50
-    static double GetMixPool(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

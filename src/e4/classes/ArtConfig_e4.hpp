@@ -15,7 +15,6 @@ struct ArtConfig {
     unsigned int u32_1C;  // 0x1C (offset-truth)
     void* ;  // 0x28 (offset-truth)
     unsigned char u32_C2;  // 0xC2 (offset-truth)
-    static double __pad_07A(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

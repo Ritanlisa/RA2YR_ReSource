@@ -18,7 +18,6 @@ struct E4Recv_62C6E0 {
     unsigned int M276;  // 0x114
     unsigned int M305;  // 0x131
 // --- flat members (END) ---
-    int Vf436(int,  ...);    // G6 vtable slot dispatch
     void UpdateParticleSystem();  // 0x62C6E0
 };
 } // namespace gamemd

@@ -26,7 +26,7 @@ struct INIClass {
     static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640
     static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);
     void* LookupEnum_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon INIClass::LookupEnum is a method)
-    static unsigned int LookupEnum(...);
+    static unsigned int LookupEnum(uint8_t* p0, uint8_t* p1, int p2);  // x4:signals@0x474da0
     static int ReadInt(String *a2, String *a3, int a4);
     int ReadCoord(double *a1, double a2, uint8_t *a3, uint8_t *a4, int a5, int aP2, int aP1, int aP3);
     static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
@@ -109,11 +109,9 @@ static int WriteToString(INIClass * aP1, int a2);
     HWND CloseAll();
     unsigned int GetString(uint8_t *a2, uint8_t *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
-    static int ParseValue(...);  // w18j2 C3861 static supply
+    static int ParseValue(unsigned int* p0, uint8_t* p1, uint8_t* p2, unsigned int* p3);  // x4:signals@0x527cc0
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q020;  // 0x20 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_20(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_E4_INIClass
 

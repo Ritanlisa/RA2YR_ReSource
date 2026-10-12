@@ -61,11 +61,11 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/AudioCodec_e4.hpp"  // G57w10 D supply
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_401580(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_401580(int p0); }  // x4:signals@0x401580
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Audio_Read_6C6B00(...);  // raw 006C6B00: unsigned int *__thiscall Audio_Read_6C6B00(ObjectClass *this, unsigned int *a2)
-    int LoadVocFromINI(...);  // raw 00750440: char __thiscall LoadVocFromINI(ObjectClass *this, uint8_t ***a2)
+    int Audio_Read_6C6B00(int* p0);  // x4:signals@0x6c6b00
+    int LoadVocFromINI(uint8_t*** p0);  // x4:signals@0x750440
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aEvaStream;  // data: 0x84667c truth(IDA G42.57w9)

@@ -65,8 +65,8 @@ public:
     static int ScrollOnce(void *aP1, int a2);  // 0x554A80 static-call 形态 (structure/supplied_bodies.cpp:4299)
     int GetTileIndex(int a1, int a2, int a3);  // 0x56D230 实例形态 (building.cpp:4302); raw this=MapClass; map.hpp twin
     static int GetTileIndex(MapClass *aP1, int a2, int a3, int a4);  // 0x56D230 static-call 形态 (structure/supplied_bodies.cpp:976 四实参)
-    static void FillRevealBuffer(void *aP1, ...);  // 0x5683C0 static-call (unit.cpp:234/supplied_bodies/entity gap2_defs:7916 混合实参)
-    static void ApplyOverlayReveal(void *aP1, ...);  // 0x5687F0 static-call (unit.cpp:230/supplied_bodies)
+    static void FillRevealBuffer(uint16_t* p0, uint8_t* p1);  // x4:signals@0x5683c0
+    static void ApplyOverlayReveal(uint16_t* p0, char* p1);  // x4:signals@0x5687f0
 };
 #endif
 

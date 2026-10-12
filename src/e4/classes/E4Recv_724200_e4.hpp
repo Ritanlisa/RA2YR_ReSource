@@ -16,7 +16,6 @@ struct E4Recv_724200 {
     unsigned int M568;  // 0x238
     unsigned int M580;  // 0x244
 // --- flat members (END) ---
-    int Vf8(int,  ...);    // G6 vtable slot dispatch
     int  HandleToolTipMessage(int a2);  // 0x724200
 };
 } // namespace gamemd

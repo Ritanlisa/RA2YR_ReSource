@@ -46,8 +46,8 @@
 #include "e4/classes/AlphaShapeClass_e4.hpp"  // w18j2 C3861 AlphaShapeClass:: supply
 #include "e4/classes/MapClass_e4.hpp"  // w18j2 C3861 MapClass:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CTOR(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int GetScrollMode(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CTOR(int p0, int p1, int p2); }  // x4:signals@0x420960
+namespace gamemd { int GetScrollMode(MapClass *p_this); }  // x4:ida@0x4aeb10
 // [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
 namespace gamemd {
 struct Matrix3D

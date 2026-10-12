@@ -17,8 +17,5 @@ struct E4Recv_5AFEF0 {
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
     int sub_5AFEF0();  // 0x5AFEF0
-    static double HeadToCoord(...);  // plateau: C2039/C3861 stub
-    static double IsMoving(...);  // plateau: C2039/C3861 stub
-    static double MovingDestination(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

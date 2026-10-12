@@ -213,21 +213,21 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GameState_e4.hpp"  // G42.36 C2027 supply
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int Thunk(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Thunk(); }  // x4:empty@0x77d710
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int AllocateRenderSurface(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace BinkMovieClass { int AllocateRenderSurface(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int AllocateRenderSurface(uint8_t* p0, uint8_t* p1, int p2); }  // x4:signals@0x4335e0
+namespace BinkMovieClass { int AllocateRenderSurface(uint8_t* p0, uint8_t* p1, int p2); }  // x4:signals@0x4335e0
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int ConvertWrapper(...); }
-namespace gamemd { int setOverlayType(...); }
-namespace gamemd { int ValidateName(...); }
-namespace gamemd { int ComputeCRC(...); }
-namespace gamemd { int SetDigest(...); }
-namespace gamemd { int DecrementAll(...); }
-namespace gamemd { int Pump(...); }
+namespace gamemd { int ConvertWrapper(int p0); }  // x4:signals@0x6cf230
+namespace gamemd { int setOverlayType(int p0); }  // x4:signals@0x42ac00
+namespace gamemd { int ValidateName(int p0); }  // x4:signals@0x597730
+namespace gamemd { int ComputeCRC(); }  // x4:empty@0x5e84d0
+namespace gamemd { int SetDigest(char* p0); }  // x4:signals@0x69ad80
+namespace gamemd { int DecrementAll(); }  // x4:empty@0x408230
+namespace gamemd { int Pump(); }  // x4:empty@0x753620
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int nullsub_158(...);  // raw 007236D0: void nullsub_158()
+    int nullsub_158();  // x4:empty@0x7236d0
 } // namespace gamemd
 
 // 0x430980

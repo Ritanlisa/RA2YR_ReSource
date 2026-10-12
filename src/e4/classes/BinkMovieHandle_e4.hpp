@@ -39,7 +39,6 @@ struct BinkMovieHandle {
     unsigned int * Close(void *a1, void *a2);
     unsigned int * CopyFrameToSurface();
     unsigned int BlitToTarget(void *a1, void *a2);
-    static double MovieHandle(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

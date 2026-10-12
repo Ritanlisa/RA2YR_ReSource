@@ -12,8 +12,5 @@ struct AudioClass {
     unsigned int tail_40;  // 0x40
 // --- flat members (END) ---
     BuildingTypeClass * * ProcessEvent();  // 0x7228B0
-    static double u32_F4(...);  // plateau: C2039/C3861 stub
-    static double u32_F8(...);  // plateau: C2039/C3861 stub
-    static double u32_FC(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -154,11 +154,6 @@ OverlayTypeClass(ObjectClass * aP1);
     unsigned char u32_309;  // 0x309 (offset-truth)
     unsigned char u32_30A;  // 0x30A (offset-truth)
     unsigned char u32_30B;  // 0x30B (offset-truth)
-    static double ObjectTypeClass(...);  // plateau: C2039/C3861 stub
-    static double q234(...);  // plateau: C2039/C3861 stub
-    static double u32_2E4(...);  // plateau: C2039/C3861 stub
-    static double u32_30C(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

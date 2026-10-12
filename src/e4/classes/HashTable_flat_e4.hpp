@@ -119,14 +119,6 @@ void Shrink2(void *a1 = 0);
     unsigned int q020;  // 0x20 (offset-truth)
     unsigned int q030;  // 0x30 (offset-truth)
     unsigned int u32_8;  // 0x8 (offset-truth)
-    static double HashTable_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double HashTable_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double HashTable_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double HashTable_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double HashTable_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double HashTable_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double HashTable_field_0x30(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

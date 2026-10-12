@@ -27,12 +27,6 @@ struct DiskLaserClass {
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
-    static double DiskLaserClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x28(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -71,24 +71,10 @@ struct BulletClass {
     int MissionStubReturnZero2();
     int PowerDrainProcess(int a1, unsigned int * a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
-    static int16_t LoseTarget(...);  // 0x468430
+    static int16_t LoseTarget(BulletClass *p_this);  // x4:ida@0x468430
     char __pad_B4[88];  // 0xB4 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
-    static double BulletClass_field_0x10C(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0x130(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0x140(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0x154(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0xAC(...);  // plateau: C2039/C3861 stub
-    static double BulletClass_field_0xB0(...);  // plateau: C2039/C3861 stub
-    static double OccupantAnim(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_134(...);  // plateau: C2039/C3861 stub
-    static double __pad_144(...);  // plateau: C2039/C3861 stub
-    static double __pad_158(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

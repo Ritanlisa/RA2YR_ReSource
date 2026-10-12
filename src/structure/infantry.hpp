@@ -18,7 +18,6 @@ class InfantryTypeClass;
 // CSP: InfantryClass matched via T1
 class InfantryClass : public ra2::game::FootClass
 {
-    int GetPrimaryOrFallback(int, ...); // vtable slot +388
 public:
     static constexpr AbstractType kObjectTypeId = AbstractType::Infantry;
 

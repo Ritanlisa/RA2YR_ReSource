@@ -15,12 +15,6 @@ struct InfantryTypeVector {
     static unsigned int * Construct(void *aP1, int a2, int a3);
     unsigned int InfantryTypeVector_field_0x18;  // @0x511xxx (W16G3 raw-usage vocab)
     unsigned int InfantryTypeVector_field_0x1C;  // @0x511xxx (W16G3 raw-usage vocab)
-    static double InfantryTypeVector_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double InfantryTypeVector_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double InfantryTypeVector_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double InfantryTypeVector_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double InfantryTypeVector_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

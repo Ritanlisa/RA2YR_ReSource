@@ -34,7 +34,7 @@
 #include "core/ida_vtables.h"  // gC_vftable3
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int SearchMIXFile(...);  // raw 005B40B0: void *__fastcall SearchMIXFile(char *Source, char a2)
+    int SearchMIXFile(char* p0, char p1);  // x4:signals@0x5b40b0
 } // namespace gamemd
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern int FootClass_Array;

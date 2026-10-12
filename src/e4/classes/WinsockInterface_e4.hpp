@@ -18,20 +18,5 @@ struct WinsockInterface {
     int Init(void *a1 = 0, void *a2 = 0);  // 0x7B1DE0
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double q092(...);  // plateau: C2039/C3861 stub
-    static double q338(...);  // plateau: C2039/C3861 stub
-    static double u32_1C(...);  // plateau: C2039/C3861 stub
-    static double u32_3AC(...);  // plateau: C2039/C3861 stub
-    static double u32_3B4(...);  // plateau: C2039/C3861 stub
-    static double u32_3BC(...);  // plateau: C2039/C3861 stub
-    static double u32_3C0(...);  // plateau: C2039/C3861 stub
-    static double u32_3D0(...);  // plateau: C2039/C3861 stub
-    static double u32_3D4(...);  // plateau: C2039/C3861 stub
-    static double u32_3D8(...);  // plateau: C2039/C3861 stub
-    static double u32_48(...);  // plateau: C2039/C3861 stub
-    static double u32_60(...);  // plateau: C2039/C3861 stub
-    static double u32_98(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
-    static double u32_EE0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

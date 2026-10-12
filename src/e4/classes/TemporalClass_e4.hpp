@@ -38,9 +38,6 @@ struct TemporalClass {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4A8;  // 0x4A8 (offset-truth)
     unsigned char u32_A6;  // 0xA6 (offset-truth)
-    static double __pad_28(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

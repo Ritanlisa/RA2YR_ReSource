@@ -137,8 +137,6 @@ struct WeaponTypeClass {
     int DownReport[7];  // 0xD8 (ml)
     bool InfiniteMindControl;  // 0xF4 (canon-mt)
     bool IsMagBeam;  // 0x110 (canon-mt)
-    static double AbstractTypeClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

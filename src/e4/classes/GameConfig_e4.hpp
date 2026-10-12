@@ -22,7 +22,6 @@ struct GameConfig {
     int  BuildChecksum(char * Buffer);  // 0x77E7A0
     static char * ComputeCRC();
     int ComputeHash();
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

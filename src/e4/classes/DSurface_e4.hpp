@@ -55,17 +55,6 @@ struct DSurface {
     unsigned int q0084;  // 0x84 (offset-truth)
     unsigned char q0085;  // 0x85 (offset-truth)
     unsigned int q0088;  // 0x88 (offset-truth)
-    static double DSurface_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x1C(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double DSurface_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double q218(...);  // plateau: C2039/C3861 stub
-    static double u32_11B(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

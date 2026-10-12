@@ -46,7 +46,7 @@ struct WinMain {
 // --- flat members (END) ---
     LSTATUS CleanupResource();
     int Constructor_VectorClass_Wstring_();
-    static unsigned int * ShutdownCleanup(...);
+    static unsigned int * ShutdownCleanup(WinMain *p_this);  // x4:ida@0x734d30
     unsigned int u32_2A00;  // 0x2A00 (offset-truth)
 };
 

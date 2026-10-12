@@ -76,13 +76,13 @@
 #include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_4A4E30(...); }  // w18j2 raw 0x004A4E30 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_4A4E30(int p0, int p1, int p2); }  // x4:signals@0x4a4e30
 // [w18j2] C2065 global supply (data addr evidence)
 extern unsigned char byte_885180;  // w18j2 data: 0x885180
-namespace VectorClass { int CleanupTyped(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace VectorClass { int CleanupTyped(int p_this); }  // x4:ida@0x4a1330
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Render_Helper(...);  // raw 00626120: unsigned int __thiscall Render_Helper(ObjectClass *this, uint8_t a2, int a3)
+    int Render_Helper(uint8_t p0, int p1);  // x4:signals@0x626120
 } // namespace gamemd
 
 // 0x4A0190

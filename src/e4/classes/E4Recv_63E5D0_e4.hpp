@@ -10,7 +10,6 @@ struct E4Recv_63E5D0 {
     unsigned int M4;  // 0x4
     unsigned int M16;  // 0x10
 // --- flat members (END) ---
-    int Vf16(int,  ...);    // G6 vtable slot dispatch
     char  Team_Destroy(int a2);  // 0x63E5D0
 };
 } // namespace gamemd

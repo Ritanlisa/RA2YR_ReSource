@@ -235,28 +235,5 @@ void ClearAndFree4();
     unsigned int q00C;  // 0xC (offset-truth)
     unsigned int q010;  // 0x10 (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
-    static double DynamicVector_field_0x1(...);  // plateau: C2039/C3861 stub
-    static double DynamicVector_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double DynamicVector_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double IsInitialized(...);  // plateau: C2039/C3861 stub
-    static double Items(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_14(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
-    static double baseNodeCapacity(...);  // plateau: C2039/C3861 stub
-    static double baseNodeCount(...);  // plateau: C2039/C3861 stub
-    static double baseNodes(...);  // plateau: C2039/C3861 stub
-    static double cells24(...);  // plateau: C2039/C3861 stub
-    static double cells24Capacity(...);  // plateau: C2039/C3861 stub
-    static double cells24Count(...);  // plateau: C2039/C3861 stub
-    static double cells38Capacity(...);  // plateau: C2039/C3861 stub
-    static double cells38Count(...);  // plateau: C2039/C3861 stub
-    static double center(...);  // plateau: C2039/C3861 stub
-    static double owner(...);  // plateau: C2039/C3861 stub
-    static double percentBuilt(...);  // plateau: C2039/C3861 stub
-    static double relatedTagsCount(...);  // plateau: C2039/C3861 stub
-    static double unknown54(...);  // plateau: C2039/C3861 stub
-    static double vtable0(...);  // plateau: C2039/C3861 stub
-    static double vtable1(...);  // plateau: C2039/C3861 stub
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

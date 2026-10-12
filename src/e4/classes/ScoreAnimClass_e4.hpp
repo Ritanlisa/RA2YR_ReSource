@@ -15,9 +15,6 @@ struct ScoreAnimClass {
     unsigned int m_0;  // 0x0 (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_004(...);  // plateau: C2039/C3861 stub
-    static double field_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

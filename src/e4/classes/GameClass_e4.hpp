@@ -113,7 +113,6 @@ struct GameClass {
     unsigned int Timer;
     unsigned int Event;
     unsigned int Network_ph;  // w18j3: filler renamed (no offset truth; canon GameClass::Network is a method)
-    static unsigned int Network(...);
     unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
     unsigned int *  processFrame(int a2, int a3);  // 0x4381D0

@@ -99,7 +99,6 @@ struct BuildingLightClass {
     unsigned int abstractFlags6;  // @0x4358a3 (W16G3 raw-usage vocab)
     unsigned int abstractFlags7;  // @0x4358a9 (W16G3 raw-usage vocab)
     char __pad_B4[4];  // 0xB4 (ml)
-    static double ObjectClass(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
 

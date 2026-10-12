@@ -33,6 +33,5 @@ struct WideString {
     char IsASCII(void *a1 = 0);  // 0x7B7D90
     static int Hash(wchar_t * Source);  // def-aligned
     static int Hash(void *aP0);
-    static double u32_8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

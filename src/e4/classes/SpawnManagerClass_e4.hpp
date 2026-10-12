@@ -54,13 +54,6 @@ struct SpawnManagerClass {
     void Constructor_SpawnManagerClass();
     void* Constructor(void *a1, void *a2, void *a3, void *a4 = 0);
     SpawnManagerClass * ProcessEvent(void * Block, char a2);
-    static double __pad_048(...);  // plateau: C2039/C3861 stub
-    static double __pad_48(...);  // plateau: C2039/C3861 stub
-    static double u32_45(...);  // plateau: C2039/C3861 stub
-    static double u32_4C(...);  // plateau: C2039/C3861 stub
-    static double uniqueId0(...);  // plateau: C2039/C3861 stub
-    static double vtable24(...);  // plateau: C2039/C3861 stub
-    static double vtable46(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

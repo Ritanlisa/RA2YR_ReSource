@@ -28,8 +28,5 @@ struct Campaign_WorldDominationTour_16 {
     rc_ptr * Constructor(char Block);
     rc_ptr * Constructor_0(char Block);
     unsigned int m_C;  // 0xC (offset-truth)
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

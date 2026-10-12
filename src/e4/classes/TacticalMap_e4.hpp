@@ -43,10 +43,6 @@ struct TacticalMap {
     unsigned int u32_2B0;  // 0x2B0 (offset-truth)
     unsigned int u32_2B4;  // 0x2B4 (offset-truth)
     unsigned int u32_2B8;  // 0x2B8 (offset-truth)
-    static double Tactical_field_0xA8(...);  // plateau: C2039/C3861 stub
-    static double Tactical_field_0xDA4(...);  // plateau: C2039/C3861 stub
-    static double __pad_11F(...);  // plateau: C2039/C3861 stub
-    static double __pad_AC(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

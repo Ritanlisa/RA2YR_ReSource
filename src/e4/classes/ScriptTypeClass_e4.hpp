@@ -43,8 +43,6 @@ struct ScriptTypeClass {
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int *  Constructor(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x6916b0
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

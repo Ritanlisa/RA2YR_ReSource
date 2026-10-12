@@ -41,8 +41,8 @@
 #include "e4/classes/GadgetGrid_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int initDropshipData(...); }
-namespace gamemd { int InitStatArray(...); }
+namespace gamemd { int initDropshipData(HouseClass *p_this); }  // x4:ida@0x4b69b0
+namespace gamemd { int InitStatArray(int p0); }  // x4:signals@0x749060
 
 // 0x43B5E0
 namespace gamemd {  // G42.18 ns repair

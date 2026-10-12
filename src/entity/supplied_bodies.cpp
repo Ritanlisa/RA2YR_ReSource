@@ -36,15 +36,15 @@ extern dword_8871E0_v* dword_8871E0_t;  // data: 0x8871E0 (Rules 实例指针)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 class Rules;  // g57c5 W5 fwd
-bool ProductionCompletionCallback(...);  // g57c5 W5 vocab
-int RemoveTarget(...);  // g57c5 W5 vocab
+bool ProductionCompletionCallback(TechnoClass *p_this);  // x4:ida@0x424ce0
+int RemoveTarget(int p0);  // x4:signals@0x4a9770
 } // namespace gamemd
 // ---- g57c5 W5 end ----
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int BuildingClass_StartProduction(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int IsPowered(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int BuildingClass_StartProduction(int p0);  // x4:signals@0x447780
+int IsPowered(BuildingTypeClass *p_this);  // x4:ida@0x465af0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----

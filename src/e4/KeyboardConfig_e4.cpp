@@ -27,7 +27,7 @@
 #include "e4/classes/LightConvertClass_e4.hpp"
 #include "e4/classes/Targeting_e4.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int GetKeyCount(...); }  // w16g4 raw call-form
+namespace gamemd { int GetKeyCount(uint8_t* p0); }  // x4:signals@0x526960
 
 // 0x533D20
 namespace gamemd {  // G42.18 ns repair

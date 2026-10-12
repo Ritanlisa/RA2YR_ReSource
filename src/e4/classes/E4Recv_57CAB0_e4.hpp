@@ -9,7 +9,6 @@ struct E4Recv_57CAB0 {
     unsigned int vfptr;  // 0x0
     unsigned int M2;  // 0x2
 // --- flat members (END) ---
-    int Vf1(int,  ...);    // G6 vtable slot dispatch
     int sub_57CAB0();  // 0x57CAB0
 };
 } // namespace gamemd

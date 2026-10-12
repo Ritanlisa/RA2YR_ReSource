@@ -437,22 +437,6 @@ struct TechnoTypeClass {
     unsigned int u32_1A04;  // 0x1A04 (offset-truth)
     unsigned int u32_1B80;  // 0x1B80 (offset-truth)
     unsigned int u32_1C08;  // 0x1C08 (offset-truth)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double IsClean(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_0B8(...);  // plateau: C2039/C3861 stub
-    static double __pad_128(...);  // plateau: C2039/C3861 stub
-    static double q0D8(...);  // plateau: C2039/C3861 stub
-    static double u32_5390(...);  // plateau: C2039/C3861 stub
-    static double u32_5394(...);  // plateau: C2039/C3861 stub
-    static double u32_5398(...);  // plateau: C2039/C3861 stub
-    static double u32_539C(...);  // plateau: C2039/C3861 stub
-    static double u32_53A0(...);  // plateau: C2039/C3861 stub
-    static double u32_98(...);  // plateau: C2039/C3861 stub
-    static double u32_C8(...);  // plateau: C2039/C3861 stub
-    static double u32_D0(...);  // plateau: C2039/C3861 stub
-    static double u32_D4(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -15,7 +15,6 @@ IsometricTileClass(int aP1, unsigned short *aP2);
     unsigned char u32_81;  // 0x81 (offset-truth)
     unsigned int u32_AC;  // 0xAC (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
-    static double q48F(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

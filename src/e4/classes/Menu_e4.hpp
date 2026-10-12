@@ -28,8 +28,6 @@ struct Menu {
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
     int Reset(void *a1, void *a2);
-    static double u32_30(...);  // plateau: C2039/C3861 stub
-    static double u32_40(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

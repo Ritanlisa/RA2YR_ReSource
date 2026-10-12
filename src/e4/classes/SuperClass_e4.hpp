@@ -85,17 +85,6 @@ struct SuperClass {
     int AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea);
     wchar_t * NameReadiness(void * aTxtHold);
     unsigned int q00C;  // 0xC (offset-truth)
-    static double SuperClass_field_0x6C(...);  // plateau: C2039/C3861 stub
-    static double __pad_04C(...);  // plateau: C2039/C3861 stub
-    static double u32_24(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
-    static double u32_38(...);  // plateau: C2039/C3861 stub
-    static double u32_68(...);  // plateau: C2039/C3861 stub
-    static double u32_6C(...);  // plateau: C2039/C3861 stub
-    static double u32_74(...);  // plateau: C2039/C3861 stub
-    static double u32_78(...);  // plateau: C2039/C3861 stub
-    static double u32_7C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

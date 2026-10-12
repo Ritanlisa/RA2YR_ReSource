@@ -40,10 +40,10 @@
 #include "e4/classes/_DynamicVectorClass_VCell_e4.hpp"
 #include "e4/classes/_VectorClass_VCell_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int ResizeEx(...); }
-namespace gamemd { int PlaceMapSeedCityBlockVariant2(...); }
-namespace gamemd { int PlaceMapSeedCityBlockDiagonal(...); }
-namespace gamemd { int FindByValue(...); }
+namespace gamemd { int ResizeEx(int p0, int* p1); }  // x4:signals@0x42f860
+namespace gamemd { int PlaceMapSeedCityBlockVariant2(int16_t* p0, int16_t* p1, void* p2); }  // x4:signals@0x593af0
+namespace gamemd { int PlaceMapSeedCityBlockDiagonal(int16_t* p0, int16_t* p1, void* p2); }  // x4:signals@0x593030
+namespace gamemd { int FindByValue(List *p_this); }  // x4:ida@0x5943e0
 // [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
 // usage: *(unsigned int*)v.q000 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {

@@ -38,7 +38,6 @@
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_147(); }  // w18j2 raw 0x00523C80
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int __0Iostream_init_QAE_XZ_4(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char aAgent;  // data: 0x825954 truth(IDA G42.57w9)
 extern unsigned char aAssaulter;  // data: 0x82599c truth(IDA G42.57w9)

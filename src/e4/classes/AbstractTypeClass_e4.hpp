@@ -62,20 +62,6 @@ struct AbstractTypeClass {
     void sub_406640();
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q008;  // 0x8 (offset-truth)
-    static double TaskForceClass_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_024(...);  // plateau: C2039/C3861 stub
-    static double __pad_24(...);  // plateau: C2039/C3861 stub
-    static double __pad_8(...);  // plateau: C2039/C3861 stub
-    static double nextArrayIndex1(...);  // plateau: C2039/C3861 stub
-    static double u32_94(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
-    static double vtable34(...);  // plateau: C2039/C3861 stub
-    static double vtable35(...);  // plateau: C2039/C3861 stub
-    static double vtable46(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

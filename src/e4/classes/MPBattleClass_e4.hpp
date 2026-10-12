@@ -64,7 +64,6 @@ struct MPBattleClass {
     void validateOwner();
     void validatePlayer();
     void validateStartPosition();
-    static double MPGameModeClass(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

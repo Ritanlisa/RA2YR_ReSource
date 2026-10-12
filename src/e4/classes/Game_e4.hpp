@@ -58,7 +58,7 @@ struct Game {
     int LoadOrReloadOptions(IUnknown * aP1);
     int PreGameInit();
     void SetByte96();
-    int ClearScreen(...);
+    int ClearScreen(Scenario *p_this);  // x4:ida@0x684240
     int LoadWithProgress(const char *aP0, double a2);
     int FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3);
     void * ResetDisplayArrays();
@@ -67,10 +67,5 @@ struct Game {
     Game * * sub_634B20();
     HashTable_flat * * StartModemMultiplayer(ObjectClass *a2, char a3);
     unsigned char u32_C2;  // 0xC2 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_00C2(...);  // plateau: C2039/C3861 stub
-    static double __pad_44(...);  // plateau: C2039/C3861 stub
-    static double u32_48(...);  // plateau: C2039/C3861 stub
-    static double u32_4C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

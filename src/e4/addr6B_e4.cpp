@@ -54,13 +54,13 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LoadTypeLib(...);  // raw 007C8932: // attributes: thunk HRESULT __stdcall LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib)
-    int Object_Create(...);  // raw 00588960: int __thiscall Object_Create(ObjectClass *this, int a2)
-    int Render_Load_6BAFA0(...);  // raw 006BAFA0: void __thiscall Render_Load_6BAFA0(ObjectClass *this)
-    int System_Init_6B2520(...);  // raw 006B2520: char __thiscall System_Init_6B2520(TechnoClass *this)
+    int LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib);  // x4:ida@0x7c8932
+    int Object_Create(int p0);  // x4:signals@0x588960
+    int Render_Load_6BAFA0(ObjectClass *p_this);  // x4:ida@0x6bafa0
+    int System_Init_6B2520(TechnoClass *p_this);  // x4:ida@0x6b2520
 } // namespace gamemd
 
 // 0x6B2430

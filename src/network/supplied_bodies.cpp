@@ -47,10 +47,10 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Stream_e4.hpp"  // w16g4 C3861 Stream:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int BulkCharToWide(...);  // raw 00735060: uint8_t __fastcall CharToWide_Bulk(unsigned short *a1, uint8_t *a2, int a3)
-    int CharToWideString(...);  // raw 00735120: char *__fastcall CharToWideString(unsigned char *a1)
-    int DrawDialogText(...);  // raw 005E2820: int __fastcall DrawDialogText(LPARAM, wchar_t *a2, HWND hWnd)
-    int FindListBoxItem(...);  // raw 00776E10: int __fastcall ListBox_FindItem(HWND hWnd, signed int wParam, int a3)
+    int BulkCharToWide(uint16_t* p0, uint8_t* p1, int p2);  // x4:signals@0x735060
+    int CharToWideString(uint8_t* p0);  // x4:signals@0x735120
+    int DrawDialogText(LPARAM a1, wchar_t *a2, HWND hWnd);  // x4:ida@0x5e2820
+    int FindListBoxItem(HWND hWnd, signed int wParam, int a3);  // x4:ida@0x776e10
 } // namespace gamemd
 
 // G57w10: q000 externs (truth e4_globals_decls)
@@ -71,34 +71,34 @@ extern int aTxtPortNumberE;  // 词表 (canon 无条目, int 兜底) L722
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int CellClass_LockSurface(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Dialog_PumpMessages(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int INIClass_SetBool(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int INIClass_SetInt(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ModemGame_ProcessPacket(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ComputeHash(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetTicks(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int LoadArtINI(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ReadEventINI(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SaveConfigWOL(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int unknown_libname_29(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int unknown_libname_30(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ConnectionClass_allocPacketSlot(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ConnectionClass_dtor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Dialog_ShowMessageBox(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int GUID_Compare(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int INIClass_WriteDigest(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int IPXManagerClass_init(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ModemGuest_InitDialog(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int NetworkOptions_ApplySettings(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int RawFileClass_Construct(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int RawFileClass_Dtor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Terrain_GetTileType(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BaseDialogProc(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Construct(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CopyWideToChar(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CreateDialog(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int NavigateDialogTab(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int CellClass_LockSurface(int p_this, char a2);  // x4:ida@0x5b5ef0
+int Dialog_PumpMessages();  // x4:empty@0x623120
+int INIClass_SetBool(uint8_t* p0, char* p1, char p2);  // x4:signals@0x529560
+int INIClass_SetInt(uint8_t* p0, char* p1, int p2, int p3);  // x4:signals@0x5275c0
+int ModemGame_ProcessPacket(ModemGame *p_this);  // x4:ida@0x5b6020
+int ComputeHash(int* p0, int p1);  // x4:signals@0x64de80
+int GetTicks();  // x4:empty@0x6c8c40
+int LoadArtINI();  // x4:empty@0x679ee0
+int ReadEventINI();  // x4:empty@0x5b6f30
+int SaveConfigWOL(TechnoClass *p_this);  // x4:ida@0x6990a0
+int unknown_libname_29();  // x4:empty@0x679ec0
+int unknown_libname_30();  // x4:empty@0x679ed0
+int ConnectionClass_allocPacketSlot(ModemConnectionClass *p_this, const void *a2, signed int a3, const void *a4, signed int a5);  // x4:ida@0x48b750
+int ConnectionClass_dtor(ConnectionClass *p_this);  // x4:ida@0x48bee0
+int Dialog_ShowMessageBox(int p0, uint16_t* p1, uint16_t* p2, uint16_t* p3, uint16_t* p4, int p5);  // x4:signals@0x5d3490
+int GUID_Compare(int p0);  // x4:signals@0x53ee70
+int INIClass_WriteDigest(int p0, char p1);  // x4:signals@0x474430
+int IPXManagerClass_init(IPXManagerClass *p_this);  // x4:ida@0x48ba90
+int ModemGuest_InitDialog(ModemGuest *p_this);  // x4:ida@0x5b4ee0
+int NetworkOptions_ApplySettings(int p0, char* p1, int p2);  // x4:signals@0x7b0f50
+int RawFileClass_Construct(int p0);  // x4:signals@0x65ca80
+int RawFileClass_Dtor(BufferIOFileClass *p_this);  // x4:ida@0x65ca00
+int Terrain_GetTileType(int p0);  // x4:signals@0x48b9e0
+int BaseDialogProc();  // x4:empty@0x622b50
+int Construct(int p0, int p1, int p2, int p3);  // x4:signals@0x410ce0
+int CopyWideToChar(uint8_t* p0, char* p1, int p2);  // x4:signals@0x735090
+int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3);  // x4:ida@0x622650
+int NavigateDialogTab(HWND hCtl, unsigned __int8 a2);  // x4:ida@0x600c70
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----

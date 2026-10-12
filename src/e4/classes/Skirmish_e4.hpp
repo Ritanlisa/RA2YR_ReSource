@@ -28,19 +28,6 @@ struct Skirmish {
     int RenderPreview(HWND aP1);
     static int RenderPreview(void *aP0, HWND aP1);
     unsigned int u32_300;  // 0x300 (offset-truth)
-    static double q150(...);  // plateau: C2039/C3861 stub
-    static double u32_38(...);  // plateau: C2039/C3861 stub
-    static double u32_3C(...);  // plateau: C2039/C3861 stub
-    static double u32_40(...);  // plateau: C2039/C3861 stub
-    static double u32_48(...);  // plateau: C2039/C3861 stub
-    static double u32_4C(...);  // plateau: C2039/C3861 stub
-    static double u32_50(...);  // plateau: C2039/C3861 stub
-    static double u32_54(...);  // plateau: C2039/C3861 stub
-    static double u32_58(...);  // plateau: C2039/C3861 stub
-    static double u32_5C(...);  // plateau: C2039/C3861 stub
-    static double u32_64(...);  // plateau: C2039/C3861 stub
-    static double u32_68(...);  // plateau: C2039/C3861 stub
-    static double u32_6C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

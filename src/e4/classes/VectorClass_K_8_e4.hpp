@@ -42,15 +42,5 @@ struct VectorClass_K_8 {
     LONG Release(volatile LONG * Block);  // 0x6BEEE0
     int  ddtor(int a2, int a3, unsigned int * a4);  // 0x6BEF10
     int  GetSize(int a2);  // 0x6BEF90
-    static double CStreamClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x1C(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double CStreamClass_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

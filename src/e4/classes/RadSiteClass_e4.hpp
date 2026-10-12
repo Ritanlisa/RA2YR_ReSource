@@ -39,7 +39,7 @@ struct RadSiteClass {
     void* RadTimeLeft;  // 0x70
 // --- flat members (END) ---
     void* Radiate_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon RadSiteClass::Radiate is a method)
-    static unsigned int Radiate(...);
+    static unsigned int Radiate(int p0);  // x4:signals@0x65b9c0
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn116();
@@ -48,7 +48,6 @@ struct RadSiteClass {
     RadSiteClass();
     int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int IntensitySteps;  // 0x64 (canon-mt)
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -45,11 +45,11 @@ extern float flt_B43B43268;  // w18j2 data: 0xB43B43268
 extern float flt_B43B43278;  // w18j2 data: 0xB43B43278
 extern float flt_B43B43288;  // w18j2 data: 0xB43B43288
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CheckBridge(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CheckBridge(int p0, void* p1); }  // x4:signals@0x6b0880
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int GenerateLightRemapTable(...);  // raw 00758B70: int __thiscall GenerateLightRemapTable(ObjectClass *this, float *a2, int a3)
-    int InitializeTileAudioOcclusion(...);  // raw 00756860: int __thiscall InitializeTileAudioOcclusion(ObjectClass *this, int a2, float *a3)
+    int GenerateLightRemapTable(float* p0, int p1);  // x4:signals@0x758b70
+    int InitializeTileAudioOcclusion(int p0, float* p1);  // x4:signals@0x756860
 } // namespace gamemd
 // [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
 namespace gamemd {

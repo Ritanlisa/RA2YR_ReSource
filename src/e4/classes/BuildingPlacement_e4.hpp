@@ -27,8 +27,6 @@ struct BuildingPlacement {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
     unsigned int u32_90;  // 0x90 (offset-truth)
-    static double BuildingPlacement_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double Object_field_0x30(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

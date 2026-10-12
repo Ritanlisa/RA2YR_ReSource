@@ -29,7 +29,5 @@ struct TypeList_Infantry {
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double m_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

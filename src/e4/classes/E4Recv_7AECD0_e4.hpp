@@ -13,9 +13,5 @@ struct E4Recv_7AECD0 {
     unsigned int M13;  // 0xD
 // --- flat members (END) ---
     unsigned int *  sub_7AECD0(int a2, int a3);  // 0x7AECD0
-    static double Capacity(...);  // plateau: C2039/C3861 stub
-    static double IsAllocated(...);  // plateau: C2039/C3861 stub
-    static double IsInitialized(...);  // plateau: C2039/C3861 stub
-    static double Items(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

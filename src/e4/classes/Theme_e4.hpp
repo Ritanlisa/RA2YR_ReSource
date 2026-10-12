@@ -15,8 +15,6 @@ struct Theme {
     int Stop(char aP1, void *a1 = 0);
     unsigned char ptr_41;  // 0x41 (offset-truth)
     void * ptr_44;  // 0x44 (offset-truth)
-    static double u32_11(...);  // plateau: C2039/C3861 stub
-    static double u32_8(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

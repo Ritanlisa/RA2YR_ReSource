@@ -16,9 +16,6 @@ struct UnitTypeVector {
     unsigned int UnitTypeVector_field_0x10;  // @0x511dee (W16G3 raw-usage vocab)
     unsigned int UnitTypeVector_field_0x14;  // @0x511df6 (W16G3 raw-usage vocab)
     unsigned int UnitTypeVector_field_0x18;  // @0x511909 (W16G3 raw-usage vocab)
-    static double UnitTypeVector_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double UnitTypeVector_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

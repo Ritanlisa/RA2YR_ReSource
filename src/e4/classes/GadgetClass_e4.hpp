@@ -29,7 +29,7 @@ struct GadgetClass {
     static int Construct(void * aP0, int aP1, ControlClass * aP2, int aP3, int aP4, int aP5, int aP6);
     static int Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, char aP6);
     static int Dtor(void *aP0);
-    static int TrackState(...);
+    static int TrackState(int p0, int p1);  // x4:signals@0x77a700
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
@@ -41,13 +41,6 @@ struct GadgetClass {
     unsigned char u32_2D;  // 0x2D (offset-truth)
     unsigned int u32_44;  // 0x44 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
-    static double Hovered(...);  // plateau: C2039/C3861 stub
-    static double ListClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double ListClass_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double ListClass_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double ListClass_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double X0(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

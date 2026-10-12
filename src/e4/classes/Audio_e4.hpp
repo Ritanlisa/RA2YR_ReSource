@@ -35,19 +35,12 @@ struct Audio {
     int GetFlag();  // 0x407070
     static int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
-    static int IsPlaying(...);  // 0x7529E0
+    static int IsPlaying();  // x4:empty@0x7529e0
     static int SetScoreVolume(Audio * aP1, float a2, int a3);
     static int SetSoundVolume(Audio * aP1, float a2, char a3);
     static int SetVoiceVolume(Audio * aP1, float a2, char a3);
     static int IsLoud(Audio * aP1);
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
     char __pad_10[4];  // 0x10 (ml)
-    static double Audio_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double Audio_field_0x34(...);  // plateau: C2039/C3861 stub
-    static double Audio_field_0x38(...);  // plateau: C2039/C3861 stub
-    static double Audio_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_18(...);  // plateau: C2039/C3861 stub
-    static double __pad_3C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

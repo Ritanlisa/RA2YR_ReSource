@@ -26,21 +26,20 @@ extern int vftable;  // 词表 (canon 无条目, int 兜底) L579
 extern char aEvaInsufficien[];  // G57w8: raw IDA string-label vocab
 // ---- g57b5 W6 end ----
 struct Math { static int RoundToInt(double a1); };  // G57w8 raw fn_49 词表 (Math::RoundToInt)
-struct Rules { static int GetProductionTimeMult(...); };  // G57w8 raw 0x4F8BCB 词表 (Rules::GetProductionTimeMult)
+struct Rules { static int GetProductionTimeMult(int p0); };  // x4:signals@0x5fb2e0
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int TeamClass_CreateOneOf(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ClearAndFree3(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int CellCoord_To_CellObj(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int HouseClass_CanTogglePower(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int HouseClass_ClearLowPowerTargets(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int HouseClass_ToggleGapGeneratorReveal(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int HouseClass_UpdatePower(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_FindClosestObjectCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Random_Range(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TeamTypeVector_CopyConstruct(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int TeamClass_CreateOneOf(int p0);  // x4:signals@0x6f09c0
+int ClearAndFree3(int p_this);  // x4:ida@0x50f830
+int CellCoord_To_CellObj(int16_t* p0);  // x4:signals@0x5657a0
+int HouseClass_CanTogglePower(HouseClass *p_this);  // x4:ida@0x508df0
+int HouseClass_ClearLowPowerTargets(HouseClass *p_this);  // x4:ida@0x4fc6d0
+int HouseClass_ToggleGapGeneratorReveal(HouseClass *p_this);  // x4:ida@0x508f60
+int HouseClass_UpdatePower();  // x4:empty@0x508c30
+int Random_Range(int p0, int p1);  // x4:signals@0x65c7e0
+int TeamTypeVector_CopyConstruct(int* p0);  // x4:signals@0x50e830
 int Timer_GetTicks(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 词表 (纯变参兜底)
-int AISelectTeamHouseClass(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AISelectTeamHouseClass(void*** p0, int p1, int p2);  // x4:signals@0x6f0ab0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

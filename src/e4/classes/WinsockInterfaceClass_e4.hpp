@@ -29,11 +29,6 @@ struct WinsockInterfaceClass {
     unsigned char u32_42;  // 0x42 (offset-truth)
     unsigned char u32_45;  // 0x45 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
-    static double BoundPort0(...);  // plateau: C2039/C3861 stub
-    static double __pad_004(...);  // plateau: C2039/C3861 stub
-    static double __pad_0042(...);  // plateau: C2039/C3861 stub
-    static double __pad_008(...);  // plateau: C2039/C3861 stub
-    static double u32_3F068(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

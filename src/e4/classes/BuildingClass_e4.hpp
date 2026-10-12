@@ -445,15 +445,15 @@ struct BuildingClass {
     static int SquaredDistanceTo(unsigned int aP1);
     static int GetPowerFrame(void *aP1);
     void* CheckBuildability_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::CheckBuildability is a method)
-    static unsigned int CheckBuildability(...);
+    static unsigned int CheckBuildability(BuildingClass *p_this);  // x4:ida@0x63ac70
     void* Deploy_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::Deploy is a method)
-    static unsigned int Deploy(...);
+    static unsigned int Deploy(unsigned int p0, int p1, int p2);  // x4:signals@0x62a4a0
     void* FreeUpgradeQueue_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::FreeUpgradeQueue is a method)
-    static unsigned int FreeUpgradeQueue(...);
+    static unsigned int FreeUpgradeQueue();  // x4:empty@0x722390
     void* FreeUpgradeQueue2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::FreeUpgradeQueue2 is a method)
-    static unsigned int FreeUpgradeQueue2(...);
+    static unsigned int FreeUpgradeQueue2();  // x4:empty@0x722e50
     void* SetType_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::SetType is a method)
-    static unsigned int SetType(...);
+    static unsigned int SetType(ObjectTypeClass *p_this);  // x4:ida@0x5f7620
     static unsigned int * ctor(BuildingClass *pThis, int a2);
     static int CanRepair(BuildingClass *pThis, int a2);
     TechnoClass * ClearLimpetCheck();
@@ -481,7 +481,6 @@ struct BuildingClass {
     static int GetHealthRatio(BuildingClass * aP1);
     static int GetPlacementCoords(BuildingClass * aP1, int *a2, unsigned int *a3);
 static int * GetPlacementRect(BuildingClass * aP1, int *a2);
-    static double GetType_Thunk(...);  // C2597 interim stub
     static int IsCellPlaceable(BuildingClass * aP1, int16_t *a2);
     static bool IsTiberiumSiloEligible(BuildingClass * aP1);
     static int PlayAnim(BuildingClass *a1, int a2, AnimTypeClass *a3, int a4, int a5, int a6, void *a7);
@@ -529,19 +528,12 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);
     int UpdateSuperWeaponReadyState(int a1);
     void DispatchTeam(int a1, int a2);
     unsigned int q_610;  // +0x610 flat supply (CSP-fed)
-    static int Draw_0(...);
-    static int CheckBridge(...);
-    static int GetDrawColor(...);
-    static int DrawActionLines(...);
+    static int Draw_0(int* p0, int* p1);  // x4:signals@0x47f6a0
+    static int CheckBridge(int p0, void* p1);  // x4:signals@0x6b0880
+    static int GetDrawColor(int p_this);  // x4:ida@0x635830
+    static int DrawActionLines(BuildingClass *p_this);  // x4:ida@0x63be60
     unsigned int u32_898;  // 0x898 (offset-truth)
     unsigned int u32_8B4;  // 0x8B4 (offset-truth)
-    static double AnnounceReady(...);  // plateau: C2039/C3861 stub
-    static double Audio8_2(...);  // plateau: C2039/C3861 stub
-    static double PrismStage(...);  // plateau: C2039/C3861 stub
-    static double __pad_6B8(...);  // plateau: C2039/C3861 stub
-    static double q044(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

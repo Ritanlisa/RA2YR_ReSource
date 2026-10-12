@@ -60,7 +60,7 @@
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_4A3270(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4A3270(int p0, int p1, int p2, int p3); }  // x4:signals@0x4a3270
 
 // 0x4C1440
 namespace gamemd {  // G42.18 ns repair

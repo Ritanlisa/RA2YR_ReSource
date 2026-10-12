@@ -10,7 +10,6 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int Name(...); }  // w18j2 raw call-form (variadic last resort)
 
 // 0x49F5C0
 namespace gamemd {  // G42.18 ns repair

@@ -13,9 +13,5 @@ struct E4Recv_6D1E80 {
 // --- flat members (END) ---
     void sub_6D1E80();  // 0x6D1E80
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double Tactical_field_0x2(...);  // plateau: C2039/C3861 stub
-    static double Tactical_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double Tactical_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -68,13 +68,5 @@ char CheckCellPlacement(void * a2, DynamicVector * a3, float a4);  // 0x590970
     unsigned int *  Constructor_1(int a2, int a3);  // 0x5ADAB0
     int GenerateTerrainForAllCells();  // 0x58CF90
     unsigned int q04C;  // 0x4C (offset-truth)
-    static double RandomMap_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double RandomMap_field_0x2(...);  // plateau: C2039/C3861 stub
-    static double RandomMap_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double RandomMap_field_0x38(...);  // plateau: C2039/C3861 stub
-    static double RandomMap_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double RandomMap_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_4C(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

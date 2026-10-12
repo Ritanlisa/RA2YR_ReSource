@@ -10,7 +10,7 @@ struct SuperWeaponClass {
 // --- flat members (END) ---
     unsigned char q000[20];  // 0x0 (canon size filler)
     static int UpdateAll(void *aP1);
-    static int LoadFromSaveStream(...);
-    static int FindByName(...);
+    static int LoadFromSaveStream(SuperWeaponClass *p_this);  // x4:ida@0x539890
+    static int FindByName(SuperWeaponClass *p_this);  // x4:ida@0x773030
 };
 } // namespace gamemd

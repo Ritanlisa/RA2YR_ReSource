@@ -17,7 +17,7 @@ struct AudioMixer {
     unsigned int AudioMixer_field_14;  // 0x14
 // --- flat members (END) ---
     unsigned int ProcessAudioFrame_ph;  // w18j3: filler renamed (no offset truth; canon AudioMixer::ProcessAudioFrame is a method)
-    static unsigned int ProcessAudioFrame(...);
+    static unsigned int ProcessAudioFrame(ObjectClass *p_this);  // x4:ida@0x4041d0
     int Init(void *a1 = 0, void *a2 = 0);
     static int PlayBuffer(unsigned int * a1, unsigned int a2);
     int PlaySample(void *a1 = 0);
@@ -28,7 +28,6 @@ struct AudioMixer {
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
-    static double q028(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_AudioMixer_DEF
 

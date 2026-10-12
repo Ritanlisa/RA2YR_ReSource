@@ -55,22 +55,18 @@
 namespace gamemd { unsigned int * sub_7B0490(unsigned int *this); }  // w18j2 raw 0x007B0490
 namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic]
 namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int Team_Start_7AF500(...); }  // w18j2 raw 0x007AF500 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Team_Start_7AF500(OwnerDrawControl *p_this); }  // x4:ida@0x7af500
 namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
-namespace gamemd { int Team_Start_764FA0(...); }  // w18j2 raw 0x00764FA0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int Team_Start_597430(...); }  // w18j2 raw 0x00597430 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Team_Start_764FA0(ObjectClass *p_this); }  // x4:ida@0x764fa0
+namespace gamemd { int Team_Start_597430(ObjectClass *p_this); }  // x4:ida@0x597430
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aInfo[];  // data: 0x84d410 truth(IDA G42.57w9)
 extern char aNeed[];  // data: 0x84d3d4 truth(IDA G42.57w9)

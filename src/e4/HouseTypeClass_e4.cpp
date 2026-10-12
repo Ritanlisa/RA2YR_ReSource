@@ -33,7 +33,7 @@
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/KeywordClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/SideClass_e4.hpp"  // w16g4 C3861 SideClass:: supply
-namespace VectorClass { int ClearAndFree4(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace VectorClass { int ClearAndFree4(int p_this); }  // x4:ida@0x5134d0
 
 // 0x511650
 namespace gamemd {  // G42.18 ns repair

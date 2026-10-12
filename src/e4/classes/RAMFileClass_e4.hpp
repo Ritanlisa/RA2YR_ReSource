@@ -24,8 +24,5 @@ struct RAMFileClass {
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned char u32_1D;  // 0x1D (offset-truth)
-    static double RAMFileClass_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double RAMFileClass_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

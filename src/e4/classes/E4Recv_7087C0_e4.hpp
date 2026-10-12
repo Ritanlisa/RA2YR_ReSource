@@ -19,12 +19,6 @@ struct E4Recv_7087C0 {
     unsigned int M1492;  // 0x5D4
     unsigned int M1732;  // 0x6C4
 // --- flat members (END) ---
-    int Vf1016(int,  ...);    // G6 vtable slot dispatch
-    int Vf132(int,  ...);    // G6 vtable slot dispatch
-    int Vf44(int,  ...);    // G6 vtable slot dispatch
-    int Vf684(int,  ...);    // G6 vtable slot dispatch
-    int Vf740(int,  ...);    // G6 vtable slot dispatch
-    int Vf956(int,  ...);    // G6 vtable slot dispatch
     bool  ValidateAttackTarget(int * a2, int a3);  // 0x7087C0
 };
 } // namespace gamemd

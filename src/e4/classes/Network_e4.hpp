@@ -16,7 +16,7 @@ struct Network {
 // --- flat members (END) ---
     unsigned char __pad_87[0x171];  // 0x87 (array base, max idx 214)
     unsigned int UpdateLatencyDisplay_ph;  // w18j3: filler renamed (no offset truth; canon Network::UpdateLatencyDisplay is a method)
-    static unsigned int UpdateLatencyDisplay(...);
+    static unsigned int UpdateLatencyDisplay(int p0, double p1, double p2);  // x4:signals@0x643c50
     int SendBeaconDelete(int a2, int a3);  // 0x4311C0
     int SendBeacon(wchar_t *aP1, int a3, int a4, char a5);  // 0x431450
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x48D1E0
@@ -83,7 +83,6 @@ int GetSendCount();
     int  checkTimeout(int a2);  // 0x6643E0
     static bool IsMultiplayerActive();  // 0x77D940
     static char IsLobbyFeature();  // 0x77D970
-    static double ShutdownInterface(...);  // C2597 interim stub
     void Network_resetConnectionState();
     void Network_UpdateLatencyDisplay(ProgressScreenClass * aP1, ProgressScreenClass * aP2, ProgressScreenClass * aP3);
     char __pad_2C[4];  // 0x2C (ml)

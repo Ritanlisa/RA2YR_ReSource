@@ -14,9 +14,6 @@ struct VoxelRenderer {
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
-    static double VoxelRenderer_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double VoxelRenderer_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

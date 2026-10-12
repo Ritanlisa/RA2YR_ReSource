@@ -20,8 +20,6 @@ struct LoadingScreen {
     static char CleanupObjects(void *a1);
     static void DestroyFileTrees();
     void FreeResources2();
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_80(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -117,7 +117,6 @@ struct Animation {
     unsigned char u32_16C6;  // 0x16C6 (offset-truth)
     unsigned int u32_1A04;  // 0x1A04 (offset-truth)
     unsigned int u32_1A08;  // 0x1A08 (offset-truth)
-    static double q1046(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

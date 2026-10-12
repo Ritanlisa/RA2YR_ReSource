@@ -11,6 +11,5 @@ struct E4Recv_4517D0 {
 // --- flat members (END) ---
     int sub_4517D0();  // 0x4517D0
     unsigned char u32_2242;  // 0x2242 (offset-truth)
-    static double u32_55C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

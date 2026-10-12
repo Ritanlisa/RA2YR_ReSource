@@ -94,14 +94,14 @@
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MixFileClass_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int sub_5BF360(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_5BF360(int p0); }  // x4:signals@0x5bf360
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int CleanupOnDisconnect(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CleanupOnDisconnect(); }  // x4:empty@0x5f0040
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int Render_Load_759830(...); }  // w16g4 raw call-form
-namespace gamemd { int Render_Render_759880(...); }  // w16g4 raw call-form
-namespace gamemd { int Render_Render_759850(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_5CAF70(...); }  // w16g4 raw call-form
+namespace gamemd { int Render_Load_759830(int p0); }  // x4:signals@0x759830
+namespace gamemd { int Render_Render_759880(int p0, int p1, int p2); }  // x4:signals@0x759880
+namespace gamemd { int Render_Render_759850(int p0, int p1); }  // x4:signals@0x759850
+namespace gamemd { int sub_5CAF70(int p0); }  // x4:signals@0x5caf70
 
 // 0x5B3B10
 namespace gamemd {  // G42.18 ns repair

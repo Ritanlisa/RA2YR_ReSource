@@ -42,10 +42,6 @@ struct TagTypeClass {
     unsigned int u32_94;  // 0x94 (offset-truth)
     unsigned int u32_98;  // 0x98 (offset-truth)
     unsigned int u32_9C;  // 0x9C (offset-truth)
-    static double persistence0(...);  // plateau: C2039/C3861 stub
-    static double q064(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

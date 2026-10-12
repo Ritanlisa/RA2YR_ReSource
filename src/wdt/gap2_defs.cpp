@@ -27,12 +27,12 @@ using ra2::game::ObjectClass;
 #include "e4/classes/MovieClass_e4.hpp"
 #include "ui/ui_ext.hpp"// 0x4104C0
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int GetResourceID2CSF(...); }  // w16g4 raw call-form
-namespace gamemd { int SetupLobbyCountryCombo(...); }  // w16g4 raw call-form
+namespace gamemd { int GetResourceID2CSF(ObjectClass *p_this); }  // x4:ida@0x4e37d0
+namespace gamemd { int SetupLobbyCountryCombo(HWND hDlg, int nIDDlgItem, int a3); }  // x4:ida@0x4e3f70
 extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
-void DisableCampaignSlots(...);  // g57c5 W5 vocab
+void DisableCampaignSlots(HWND hDlg, int a2);  // x4:ida@0x5ebc00
 } // namespace gamemd
 // ---- g57c5 W5 end ----
 

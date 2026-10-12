@@ -42,11 +42,6 @@ CCINIClass();
     int sectionCount;  // 0x1C (ml)
     int sectionHead[3];  // 0x10 (ml)
     int unknown38;  // 0x38 (ml)
-    static double INIClass(...);  // plateau: C2039/C3861 stub
-    static double INIClass_field_3C(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_20(...);  // plateau: C2039/C3861 stub
-    static double q02C(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_E4_CCINIClass
 

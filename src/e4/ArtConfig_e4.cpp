@@ -26,7 +26,7 @@
 #include "e4/classes/MSOverlayAnim_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
-namespace Territory { int Constructor(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace Territory { int Constructor(AudioController *p_this); }  // x4:ida@0x402040
 
 // 0x76FC50
 namespace gamemd {  // G42.18 ns repair

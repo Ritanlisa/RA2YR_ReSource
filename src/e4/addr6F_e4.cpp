@@ -41,7 +41,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Team_Helper_6F2780(...);  // raw 006F2780: unsigned int *__thiscall Team_Helper_6F2780(ObjectClass *this, unsigned int *a2)
+    int Team_Helper_6F2780(int* p0);  // x4:signals@0x6f2780
 } // namespace gamemd
 
 // 0x6F0AB0

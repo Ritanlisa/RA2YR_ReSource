@@ -56,15 +56,15 @@
 #include "e4/classes/IPersistStream_e4.hpp"  // w16g4 C3861 IPersistStream:: supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // w18j2 C3861 ObjectPtr:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int GetNextAction(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int GetNextAction(int* p0); }  // x4:signals@0x691540
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int GetType(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int checkPassability(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int RegisterForTracking(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace TeknoClass { int GetType(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace gamemd { int GetType(InfantryClass *p_this); }  // x4:ida@0x484f20
+namespace gamemd { int checkPassability(AbstractClass *p_this); }  // x4:ida@0x50e370
+namespace gamemd { int RegisterForTracking(int p0, int* p1); }  // x4:signals@0x6cf240
+namespace TeknoClass { int GetType(InfantryClass *p_this); }  // x4:ida@0x484f20
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int Team_Destroy(...);  // raw 0063E5D0: char __thiscall Team_Destroy(ObjectClass *this, int a2)
+    int Team_Destroy(int p0);  // x4:signals@0x63e5d0
 } // namespace gamemd
 
 // 0x4D9E70

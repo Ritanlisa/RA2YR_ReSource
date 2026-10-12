@@ -32,9 +32,5 @@ struct ArrayClass {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     int GetAt_Wrap(int a2);  // 0x636E60
-    static double __pad_18(...);  // plateau: C2039/C3861 stub
-    static double field_14(...);  // plateau: C2039/C3861 stub
-    static double field_8(...);  // plateau: C2039/C3861 stub
-    static double field_94(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

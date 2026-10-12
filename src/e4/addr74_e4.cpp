@@ -61,7 +61,7 @@
 #include "e4/classes/_e4_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LookupWaypointName(...);  // raw 005B3910: int __thiscall LookupWaypointName(ObjectClass *this)
+    int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aViscLrgShp[];  // data: 0x84599c truth(IDA G42.57w9)

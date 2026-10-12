@@ -98,12 +98,6 @@ struct SmudgeTypeClass {
     unsigned char q0E05;  // 0xE05 (offset-truth)
     unsigned char q10C2;  // 0x10C2 (offset-truth)
     unsigned char q10C3;  // 0x10C3 (offset-truth)
-    static double __pad_233(...);  // plateau: C2039/C3861 stub
-    static double __pad_24(...);  // plateau: C2039/C3861 stub
-    static double __pad_2A1(...);  // plateau: C2039/C3861 stub
-    static double u32_22F(...);  // plateau: C2039/C3861 stub
-    static double u32_8D4(...);  // plateau: C2039/C3861 stub
-    static double u32_A80(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

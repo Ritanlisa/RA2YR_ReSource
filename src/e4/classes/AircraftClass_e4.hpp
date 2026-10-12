@@ -478,8 +478,6 @@ struct AircraftClass {
      int Construct(int a2, int a3, IUnknown *ppv, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
     unsigned int q_3E0;  // +0x3E0 flat supply (final pass)
-    static double FootClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

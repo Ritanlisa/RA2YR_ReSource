@@ -9,8 +9,6 @@ struct E4Recv_706BD0 {
     unsigned int vfptr;  // 0x0
     unsigned int M544;  // 0x220
 // --- flat members (END) ---
-    int Vf132(int,  ...);    // G6 vtable slot dispatch
-    int Vf136(int,  ...);    // G6 vtable slot dispatch
     int  QueueTechnoVoiceLine(unsigned char ** a2, int a3, int a4, int a5, int a6, int a7, int a8, uint8_t a9, int a10, int a11, int a12);  // 0x706BD0
 };
 } // namespace gamemd

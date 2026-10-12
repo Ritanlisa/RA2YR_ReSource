@@ -17,12 +17,5 @@ struct E4Recv_4C2790 {
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
     int sub_4C2790();  // 0x4C2790
-    static double abstractFlags(...);  // plateau: C2039/C3861 stub
-    static double fallRate(...);  // plateau: C2039/C3861 stub
-    static double owningHouseIndex(...);  // plateau: C2039/C3861 stub
-    static double uniqueId(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

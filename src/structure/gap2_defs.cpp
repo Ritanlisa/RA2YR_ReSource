@@ -31,14 +31,14 @@ using ra2::game::ObjectClass;
 #include "e4/classes/Math_e4.hpp"  // w16g4 C3861 Math:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int OleRun(...);  // raw 007C88CC: // attributes: thunk HRESULT __stdcall OleRun(LPUNKNOWN pUnknown)
+    int OleRun(LPUNKNOWN pUnknown);  // x4:ida@0x7c88cc
 } // namespace gamemd
 extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 Coord * CalculateShading();  // g57c5 W5 vocab (csp)
 int Length(void* a1, void* a2);  // g57c5 W5 vocab (csp)
-namespace Coord { int * Subtract(...); }  // g57c5 W5 vocab
+namespace Coord { int * Subtract(int p0, int p1, int p2); }  // x4:signals@0x41c230
 } // namespace gamemd
 // ---- g57c5 W5 end ----
 

@@ -28,7 +28,6 @@ struct E4Recv_5CEDD0 {
     unsigned int M80;  // 0x80
     unsigned int M84;  // 0x84
 // --- flat members (END) ---
-    int Vf12(int,  ...);    // G6 vtable slot dispatch
     char * sub_5CEDD0();  // 0x5CEDD0
 };
 } // namespace gamemd

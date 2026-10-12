@@ -40,8 +40,5 @@ struct TimerClass {
     unsigned char u32_C2;  // 0xC2 (offset-truth)
     unsigned char u32_C3;  // 0xC3 (offset-truth)
     signed int GetRemaining();  // plateau: def-aligned C2039/C2660
-    static double q028(...);  // plateau: C2039/C3861 stub
-    static double u32_10(...);  // plateau: C2039/C3861 stub
-    static double u32_8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

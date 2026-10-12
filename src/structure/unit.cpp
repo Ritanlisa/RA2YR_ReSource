@@ -17,25 +17,24 @@ extern int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // W1
 extern char FindPlacementPosition(void *a1, int a2, int a3, int a4, int a5);  // W13-C raw 0x718260 ObjectClass::FindPlacementPosition thiscall 自由形
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Sqrt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AnimClass_ctor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BuildingClass_CreatePlacementCrater(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BulletClass_LoseTarget(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Cell_GetNeighbourContent(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FootClass_MissionMoveCarryallLand(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LinkedList_Pop(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int MissionClass_GetMissionControl(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Random_Range(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_FindClosestPlacementCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_GetWaypointCoords(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AddMember(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int ApplyOverlayReveal(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FillRevealBuffer(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindNearbyCell(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetDB(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Get_Waypoint_Location(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int RoundToInt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int SelectMember(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int Sqrt(double p0);  // x4:signals@0x4cac40
+int AnimClass_ctor(void* p0, int* p1, void* p2, int p3, void* p4, void* p5, char p6);  // x4:signals@0x421ea0
+int BuildingClass_CreatePlacementCrater(BuildingClass *p_this);  // x4:ida@0x486e70
+int BulletClass_LoseTarget(BulletClass *p_this);  // x4:ida@0x468430
+int Cell_GetNeighbourContent(unsigned int p0);  // x4:signals@0x481810
+int FootClass_MissionMoveCarryallLand(FootClass *p_this);  // x4:ida@0x416af0
+int MissionClass_GetMissionControl(MissionClass *p_this);  // x4:ida@0x5b3a00
+int Random_Range(int p0, int p1);  // x4:signals@0x65c7e0
+int TechnoClass_FindClosestPlacementCell(TechnoClass *p_this);  // x4:ida@0x41a160
+int TechnoClass_GetWaypointCoords(int* p0);  // x4:signals@0x6f18a0
+int AddMember(int p0);  // x4:signals@0x6ea4f0
+int ApplyOverlayReveal(uint16_t* p0, char* p1);  // x4:signals@0x5687f0
+int FillRevealBuffer(uint16_t* p0, uint8_t* p1);  // x4:signals@0x5683c0
+int FindNearbyCell(int p0);  // x4:signals@0x418e20
+int GetDB(CCINIClass *p_this);  // x4:ida@0x473450
+int Get_Waypoint_Location(int* p0, int p1);  // x4:signals@0x68bcc0
+int RoundToInt(double p0);  // x4:signals@0x7c5f00
+int SelectMember(int p0);  // x4:signals@0x6e9050
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 
@@ -10877,10 +10876,10 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 #include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
 #include "e4/classes/BuildingTypeClass_e4.hpp"  // w16g4 C3861 BuildingTypeClass:: supply
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int ProcessUnitDeploymentAtCell(...); }  // w16g4 raw call-form
+namespace gamemd { int ProcessUnitDeploymentAtCell(int p0, int p1, int p2); }  // x4:signals@0x7187a0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ProcessUnitDeploymentAtCell(...);  // raw 007187A0: char __thiscall ProcessUnitDeploymentAtCell(TechnoClass *this, int a2, int a3, int a4)
+    int ProcessUnitDeploymentAtCell(int p0, int p1, int p2);  // x4:signals@0x7187a0
 } // namespace gamemd
 
 // G57w10: q000 externs (truth e4_globals_decls)

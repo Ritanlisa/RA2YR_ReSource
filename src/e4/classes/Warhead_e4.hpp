@@ -106,16 +106,6 @@ struct Warhead {
     int ProcessDamageArea();
     int RemoveFromDamageList(int a2);
     unsigned char u32_C2;  // 0xC2 (offset-truth)
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_34(...);  // plateau: C2039/C3861 stub
-    static double u32_3C(...);  // plateau: C2039/C3861 stub
-    static double u32_40(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
-    static double u32_48(...);  // plateau: C2039/C3861 stub
-    static double u32_4C(...);  // plateau: C2039/C3861 stub
-    static double u32_50(...);  // plateau: C2039/C3861 stub
-    static double u32_54(...);  // plateau: C2039/C3861 stub
-    static double u32_F0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

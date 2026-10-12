@@ -12,6 +12,5 @@ struct E4Recv_645D60 {
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
     ObjectClass * *  sub_645D60(float * a2);  // 0x645D60
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

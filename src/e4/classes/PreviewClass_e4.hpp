@@ -10,7 +10,7 @@ struct PreviewClass {
 
 // --- flat members (END) ---
     char ReadPreview(char *Source);
-    static int RenderMapPreview(...);  // w18j2 C3861 static supply
+    static int RenderMapPreview(int* p0);  // x4:signals@0x689d30
 };
 
 } // namespace gamemd

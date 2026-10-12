@@ -23,13 +23,5 @@ struct Terrain {
     unsigned int *  ClimbCheck(unsigned int * a1, unsigned int * a2);  // 0x6D6410
     int LookupByName(void *a1 = 0);  // 0x71DD80
     unsigned int u32_80;  // 0x80 (offset-truth)
-    static double Terrain_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double Terrain_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double Terrain_field_0x30(...);  // plateau: C2039/C3861 stub
-    static double Terrain_field_0x38(...);  // plateau: C2039/C3861 stub
-    static double Terrain_field_0x60(...);  // plateau: C2039/C3861 stub
-    static double __pad_18(...);  // plateau: C2039/C3861 stub
-    static double __pad_44(...);  // plateau: C2039/C3861 stub
-    static double __pad_68(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

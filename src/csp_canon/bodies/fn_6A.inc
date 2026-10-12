@@ -310,7 +310,7 @@ bool PlayerClass::HasPlayers() {
 }
 
 // ==== BACKFILL 0x006ABC60  HouseClass::GetStatus  cls=HouseClass  sig=csp  renamed_refs=0  residual=- ====
-int HouseClass::GetStatus(...)
+int HouseClass::GetStatus(int p0)  // x4:signals@0x6abc60
 {
     return 0; // TODO stub - quarantined G42 T9 (error-enclosing; truth = 0x6ABC60)
 }

@@ -15,8 +15,5 @@ struct E4Recv_56B250 {
     BombClass * *  sub_56B250(int a2);  // 0x56B250
     unsigned char q03D;  // 0x3D (offset-truth)
     unsigned int u32_F8;  // 0xF8 (offset-truth)
-    static double customSound_controller(...);  // plateau: C2039/C3861 stub
-    static double u32_F4(...);  // plateau: C2039/C3861 stub
-    static double vtable2(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -41,8 +41,5 @@ struct Mouse {
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
     BOOL  IsButtonDown(uint8_t a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400
-    static double u32_4C(...);  // plateau: C2039/C3861 stub
-    static double u32_50(...);  // plateau: C2039/C3861 stub
-    static double u32_54(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

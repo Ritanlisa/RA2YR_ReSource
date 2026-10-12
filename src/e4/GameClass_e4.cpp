@@ -44,7 +44,7 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_437F50(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_437F50(int p0); }  // x4:signals@0x437f50
 
 // 0x437FD0
 namespace gamemd {  // G42.18 ns repair

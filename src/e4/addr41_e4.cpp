@@ -47,10 +47,10 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int j_Time_GetElapsedMS(...); }  // w18j2 raw call-form (variadic last resort)
+namespace gamemd { int j_Time_GetElapsedMS(); }  // x4:empty@0x412540
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int LookupWaypointName(...);  // raw 005B3910: int __thiscall LookupWaypointName(ObjectClass *this)
+    int LookupWaypointName(ObjectClass *p_this);  // x4:ida@0x5b3910
 } // namespace gamemd
 
 // 0x4116A0

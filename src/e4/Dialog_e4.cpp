@@ -43,23 +43,23 @@
 #include "e4/classes/Surface_e4.hpp"  // w18j2 C3861 Surface:: supply
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { BOOL DestroyDialogChildWindow(HWND hWnd, LPARAM); }  // w18j2 raw 0x00610570
-namespace gamemd { int DlgProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4); }  // x4:ida@0x4f11b0
 namespace gamemd { int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam); }  // w18j2 raw 0x0061ECA0
-namespace gamemd { int WndProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int WndProc(InputManager *p_this, HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lParam); }  // x4:ida@0x54f790
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int TileBlit(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int TileBlit(int* p0, int p1, int p2, int p3, int p4); }  // x4:signals@0x6ba3e0
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int CtlDialogColorHandler(...);  // raw 006015E0: int __fastcall Dialog_CtlColorHandler(int a1, HWND a2)
-    int DispatchDialogControlAction(...);  // raw 006035F0: int __fastcall DispatchDialogControlAction(int a1, HWND a2)
-    int FilterDialogButtonAction(...);  // raw 00609E20: char __fastcall FilterDialogButtonAction(int a1, HWND a2)
-    int GetDialogControlSHP(...);  // raw 00603870: void *__fastcall GetDialogControlSHP(int a1, HWND a2, bool *a3)
-    int IsValidActionDialog(...);  // raw 00602490: bool __fastcall sub_602490(int a1, HWND a2)
-    int UpdateObserveButtonWOL(...);  // raw 005EE200: void __thiscall UpdateObserveButtonWOL(ObjectClass *this)
-    int ValidateDialogControl(...);  // raw 00601D20: int __fastcall Dialog_ValidateControl(int a1, HWND a2)
-    int ValidateDialogEvent(...);  // raw 00600CA0: int __fastcall Dialog_ValidateEvent(int a1, HWND a2)
+    int CtlDialogColorHandler(int a1, HWND a2);  // x4:ida@0x6015e0
+    int DispatchDialogControlAction(int a1, HWND a2);  // x4:ida@0x6035f0
+    int FilterDialogButtonAction(int a1, HWND a2);  // x4:ida@0x609e20
+    int GetDialogControlSHP(int a1, HWND a2, bool *a3);  // x4:ida@0x603870
+    int IsValidActionDialog(int a1, HWND a2);  // x4:ida@0x602490
+    int UpdateObserveButtonWOL(ObjectClass *p_this);  // x4:ida@0x5ee200
+    int ValidateDialogControl(int a1, HWND a2);  // x4:ida@0x601d20
+    int ValidateDialogEvent(int a1, HWND a2);  // x4:ida@0x600ca0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aButton[];  // data: 0x835814 truth(IDA G42.57w9)

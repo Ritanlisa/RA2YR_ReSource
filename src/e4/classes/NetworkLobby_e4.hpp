@@ -10,7 +10,7 @@ struct NetworkLobby {
 // --- flat members (END) ---
     static int UpdatePlayerList();
     unsigned int MessageHandler_ph;  // w18j3: filler renamed (no offset truth; canon NetworkLobby::MessageHandler is a method)
-    static unsigned int MessageHandler(...);
+    static unsigned int MessageHandler(NetworkLobby *p_this);  // x4:ida@0x5e00b0
     int  MessageList_Append(int a2, int a3, void * String, char a5, int a6);  // 0x5D4210
     int CreateGame();  // 0x5DC350
          INT_PTR DlgProc_Wnd(HWND hDlg, UINT msg, int nIDDlgItem, unsigned int lParam);

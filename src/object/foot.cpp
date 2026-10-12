@@ -9,16 +9,14 @@
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/MovementAI_e4.hpp"  // g57c5 W5d scope supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int Begin(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int CheckAmbiguity(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int Update_0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int State(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Begin(TechnoClass *p_this); }  // x4:ida@0x6f9e50
+namespace gamemd { int CheckAmbiguity(int p0, char p1); }  // x4:signals@0x578540
+namespace gamemd { int Update_0(int p0, int p1, int p2, char p3, int p4); }  // x4:signals@0x6e53a0
+namespace gamemd { int State(Random *p_this); }  // x4:ida@0x65c780
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int House(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int MapClass(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int StartAudioController(...);  // raw 00750D40: VocClass *__fastcall StartAudioController(unsigned int *a1, AudioSource *a2)
+    int StartAudioController(int p0, int p1);  // x4:signals@0x750d40
 } // namespace gamemd
 class Mixer;  // W13-C fwd (misc/audio_ext.hpp:115 载体; (Mixer*) cast 用法)
 extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同形)
@@ -28,8 +26,8 @@ class Math;  // g57c5 W5 fwd
 class MovementAI;  // g57c5 W5 fwd
 class Random;  // g57c5 W5 fwd
 class Type;  // g57c5 W5 fwd
-int StartAudioControllerAt(...);  // g57c5 W5 vocab
-int sub_7DC720(...);  // g57c5 W5 vocab
+int StartAudioControllerAt(int p0, int p1, int p2);  // x4:signals@0x7509e0
+int sub_7DC720();  // x4:empty@0x7dc720
 void GetTraversability();  // g57c5 W5 vocab (csp)
 } }
 // ---- g57c5 W5 end ----

@@ -30,13 +30,6 @@ struct E4Recv_431BC0 {
     void* attachedBomb;  // 0x0 (no offset truth)
     void* owningHouseIndex;  // 0x0 (no offset truth)
     void* AbstractClass;  // 0x0 (no offset truth)
-    int Vf20(int,  ...);    // G6 vtable slot dispatch
-    int Vf24(int,  ...);    // G6 vtable slot dispatch
-    int Vf36(int,  ...);    // G6 vtable slot dispatch
-    int Vf40(int,  ...);    // G6 vtable slot dispatch
-    int Vf44(int,  ...);    // G6 vtable slot dispatch
-    int Vf52(int,  ...);    // G6 vtable slot dispatch
-    int Vf64(int,  ...);    // G6 vtable slot dispatch
     int  sub_431BC0(int a2, int a3);  // 0x431BC0
 };
 } // namespace gamemd

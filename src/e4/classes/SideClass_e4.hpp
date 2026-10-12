@@ -43,12 +43,9 @@ struct SideClass {
     int Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a1 = 0, void *a7 = 0, void *a8 = 0);
     void * Init(void ** Block, char a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     wchar_t * GetName(void *a1 = 0);
-    static double AbstractClass(...);  // C2597 interim stub
     unsigned int u32_A4;  // 0xA4 (offset-truth)
     unsigned char u32_A5;  // 0xA5 (offset-truth)
     unsigned int u32_A8;  // 0xA8 (offset-truth)
-    static double u32_A0(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

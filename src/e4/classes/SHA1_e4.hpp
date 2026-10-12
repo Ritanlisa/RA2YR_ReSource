@@ -14,10 +14,6 @@ struct SHA1 {
     int Reset(int a2, void *a1 = 0);
     static int Compute(SHA1 *pThis, char *a2);
     int ComputeThunk(char *aP1, void *a1 = 0);
-    static double SHA1_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double SHA1_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

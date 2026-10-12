@@ -12,7 +12,6 @@ struct E4Recv_6BAFA0 {
     unsigned int M20;  // 0x14
     unsigned int M24;  // 0x24
 // --- flat members (END) ---
-    int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_6BAFA0();  // 0x6BAFA0
 };
 } // namespace gamemd

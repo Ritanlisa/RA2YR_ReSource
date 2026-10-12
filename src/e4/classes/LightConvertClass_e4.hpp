@@ -17,15 +17,6 @@ struct LightConvertClass {
      int Constructor(int a2, int a3, int a4, int a5, int a6, int a7, char a8, int a9, int a10);
     LightConvertClass * sub_556520(unsigned int * Block, char a2);
     char __pad_5[387];  // 0x5 (ml)
-    static double Array(...);  // plateau: C2039/C3861 stub
-    static double u32_16C(...);  // plateau: C2039/C3861 stub
-    static double u32_188(...);  // plateau: C2039/C3861 stub
-    static double u32_190(...);  // plateau: C2039/C3861 stub
-    static double u32_198(...);  // plateau: C2039/C3861 stub
-    static double u32_19C(...);  // plateau: C2039/C3861 stub
-    static double u32_1A4(...);  // plateau: C2039/C3861 stub
-    static double u32_1A8(...);  // plateau: C2039/C3861 stub
-    static double u32_1B0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

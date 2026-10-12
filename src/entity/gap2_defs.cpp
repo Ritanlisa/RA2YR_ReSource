@@ -38,7 +38,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "misc/misc_ext.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int ProcessTechnoMovementAction(...); }  // w16g4 raw call-form
+namespace gamemd { int ProcessTechnoMovementAction(char *p_this); }  // x4:ida@0x415c60
 
 // G57w10: q000 externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_Cell[4];  // data: 0x7E3890  // G57w10 vftable residue fix

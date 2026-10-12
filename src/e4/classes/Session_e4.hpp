@@ -44,10 +44,5 @@ int RemoveTeam(int (***aP1)(unsigned int, int));  // 0x005d1d80 g57w12-r raw-syn
     int GetPlayerColor(void *a1 = 0);  // 0x69B720
     int StartGame(HWND hWnd);  // 0x5ED370
     unsigned int q018;  // 0x18 (offset-truth)
-    static double field_15C(...);  // plateau: C2039/C3861 stub
-    static double field_160(...);  // plateau: C2039/C3861 stub
-    static double field_174(...);  // plateau: C2039/C3861 stub
-    static double field_178(...);  // plateau: C2039/C3861 stub
-    static double field_18(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -38,11 +38,6 @@ struct NullModemClass {
     unsigned char u32_51;  // 0x51 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
-    static double Active3(...);  // plateau: C2039/C3861 stub
-    static double ConnectionClass(...);  // plateau: C2039/C3861 stub
-    static double PlayerIndex4(...);  // plateau: C2039/C3861 stub
-    static double PlayerIndex9(...);  // plateau: C2039/C3861 stub
-    static double q206C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

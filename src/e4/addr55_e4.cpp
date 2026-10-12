@@ -66,7 +66,7 @@ namespace gamemd { int sub_5581A0(int int a2); }  // w18j2 raw 0x005581A0
 // [w18j2] C2065 function supply (raw-evidenced)
 namespace gamemd { void nullsub_22(); }  // w18j2 raw 0x005512C0
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_4B5830(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4B5830(int p0, int p1); }  // x4:signals@0x4b5830
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char byte_A8B8B4;  // data: 0xa8b8b4 truth(IDA G42.57w9)
 extern unsigned char byte_A8EDDC;  // data: 0xa8eddc truth(IDA G42.57w9)

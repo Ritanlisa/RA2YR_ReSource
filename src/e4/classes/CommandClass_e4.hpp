@@ -15,7 +15,6 @@ struct CommandClass {
     int BuildBar();
     static int BinarySearchAction(CommandClass * aP1, unsigned int *a2);
     static bool executeAction(CommandClass * aP1, unsigned int *a2);
-    static double u32_94(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_CommandClass_DEF
 

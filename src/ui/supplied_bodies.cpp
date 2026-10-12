@@ -78,13 +78,13 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Vector_e4.hpp"  // G42.35: Vector::Clear 体表词汇
 #include "e4/classes/Audio_e4.hpp"  // G42.35: Audio::IsSoundEnabled 体表词汇
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int Dtor(...); }  // w16g4 raw call-form
-namespace gamemd { int Reset(...); }  // w16g4 raw call-form
-namespace gamemd { int Read(...); }  // w16g4 raw call-form
+namespace gamemd { int Dtor(AbstractTypeClass *p_this); }  // x4:ida@0x4109c0
+namespace gamemd { int Reset(AudioStream *p_this); }  // x4:ida@0x403820
+namespace gamemd { int Read(int p0); }  // x4:signals@0x42f5e0
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int FindDialogTemplate(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int LookupDialogHash(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FindDialogTemplate(SaveLoadDialog *p_this);  // x4:ida@0x6083e0
+int LookupDialogHash(SkirmishMapGen *p_this);  // x4:ida@0x6067a0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

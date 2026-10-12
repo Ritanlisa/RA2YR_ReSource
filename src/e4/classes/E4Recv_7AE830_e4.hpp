@@ -13,8 +13,6 @@ struct E4Recv_7AE830 {
     unsigned int M24;  // 0x24
     unsigned int M48;  // 0x30
 // --- flat members (END) ---
-    int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_7AE830();  // 0x7AE830
-    static double nextObject(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

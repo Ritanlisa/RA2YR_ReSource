@@ -52,15 +52,6 @@ struct RadarClass {
     char  Destru_vt16(char a2);  // 0x653100
     char __pad_1264[16];  // 0x1264 (ml)
     unsigned int q122C;  // 0x122C (offset-truth)
-    static double RadarClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x1224(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x125C(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x1488(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x14C0(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double RadarClass_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double __pad_122C(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

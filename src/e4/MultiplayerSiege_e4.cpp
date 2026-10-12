@@ -24,7 +24,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/MPCombatTeam_e4.hpp"
-namespace AI { int CreateMCV(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace AI { int CreateMCV(int* p0, int p1); }  // x4:signals@0x5d7030
 
 // 0x5CA680
 namespace gamemd {  // G42.18 ns repair

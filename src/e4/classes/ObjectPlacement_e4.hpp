@@ -10,7 +10,5 @@ struct ObjectPlacement {
 // --- flat members (END) ---
     unsigned char q000[8];  // 0x0 (canon size filler)
     static int * CalcPosition(void *aP1, void *a2, void *a3, char a4, char a5, char a6);
-    static double ObjectPlacement_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

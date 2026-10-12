@@ -12,6 +12,5 @@ struct E4Recv_63DB20 {
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
     int sub_63DB20(unsigned int * a2);
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

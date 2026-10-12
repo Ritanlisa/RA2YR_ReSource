@@ -28,8 +28,5 @@ struct Options {
     void ClearComboBoxes();  // 0x624460
     unsigned int *q000;  // 0x0 (canon-mt)
     unsigned int q004;  // 0x4 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double field_4(...);  // plateau: C2039/C3861 stub
-    static double field_8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

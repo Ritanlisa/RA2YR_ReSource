@@ -19,11 +19,5 @@ struct JumpjetLocomotion {
     void* UpdateFacing();  // 0x54D0F0
     char __pad_5C[24];  // 0x5C (ml)
     char __pad_78[9];  // 0x78 (ml)
-    static double JumpjetLocomotion_field_0x40(...);  // plateau: C2039/C3861 stub
-    static double JumpjetLocomotion_field_0x44(...);  // plateau: C2039/C3861 stub
-    static double JumpjetLocomotion_field_0x58(...);  // plateau: C2039/C3861 stub
-    static double JumpjetLocomotion_field_0x74(...);  // plateau: C2039/C3861 stub
-    static double __pad_48(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

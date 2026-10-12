@@ -12,7 +12,5 @@ struct E4Recv_457A10 {
     void* vtable1;  // 0x0 (no offset truth)
     char sub_457A10();  // 0x457A10
     unsigned int u32_520;  // 0x520 (offset-truth)
-    static double gattlingValue(...);  // plateau: C2039/C3861 stub
-    static double needsRedraw8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

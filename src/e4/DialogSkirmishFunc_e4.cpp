@@ -27,7 +27,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int SetupSkirmishSpawnLocationEntry(...);  // raw 006ADC20: int __fastcall SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem)
+    int SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem);  // x4:ida@0x6adc20
 } // namespace gamemd
 
 // 0x6ACEE0

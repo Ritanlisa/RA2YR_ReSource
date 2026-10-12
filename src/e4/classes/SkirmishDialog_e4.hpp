@@ -13,7 +13,6 @@ struct SkirmishDialog {
      static int Show(HWND hWndParent, int a2, int a3);
     static int FillComboBoxes(SkirmishDialog * aP1);
     SkirmishDialog * * HandleMultiplayerMapSelection();
-    static double q000(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

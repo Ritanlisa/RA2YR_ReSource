@@ -49,7 +49,7 @@ namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w1
 namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, unsigned int *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
-namespace gamemd { int AddMessage(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int AddMessage(int* p0, int p1, int* p2, int p3, int p4, int p5, char p6); }  // x4:signals@0x5d3ba0
 namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
 namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
 // [w18j2] C3861 supply (raw-evidenced)
@@ -57,10 +57,10 @@ namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, unsigned int *a2, co
 namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
 namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int OleRun(...); }  // w16g4 raw call-form
-namespace gamemd { int ClipRectIntersection(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_42BCA0(...); }  // w16g4 raw call-form
-namespace gamemd { int DrawToSurfaceSHP(...); }  // w16g4 raw call-form
+namespace gamemd { int OleRun(LPUNKNOWN pUnknown); }  // x4:ida@0x7c88cc
+namespace gamemd { int ClipRectIntersection(int* p0, int* p1, int* p2, int* p3, int* p4); }  // x4:signals@0x421b60
+namespace gamemd { int sub_42BCA0(int p0, int p1, int p2, int p3, int p4); }  // x4:signals@0x42bca0
+namespace gamemd { int DrawToSurfaceSHP(int p0, int p1, int p2, unsigned int p3, int* p4, int* p5, int p6, int p7, int p8, int p9, int p10, int p11, int p12, unsigned int p13, int p14, int p15); }  // x4:signals@0x4aed70
 extern void * To_CellObj(void *a1, int16_t *a2);  // W13-C raw 0x5657A0 CellCoord::To_CellObj thiscall 自由形
 extern int GeneratePathWaypoints(void *a1, int *a2, int a3, int a4, int a5, int **a6);  // W13-C raw 0x42B420
 extern char WalkLineOfSight(void *a1, int a2, void *a3, int16_t *a4, void *a5, int a6, char a7);  // W13-C raw 0x42BE20
@@ -86,18 +86,18 @@ namespace Concurrency { namespace details { struct ContextBase; } }  // G57w8: r
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int Audio_ReleaseChannelRefs(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Voice_DetachChannel(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Audio_InitChannels(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AudioChannel_IsActive(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AudioQueue_GetNext(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_Cleanup(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_ClearFlags2(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int RefCount_Decrement(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Range(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int sub_4026C0(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int sub_405B50(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int sub_4039C0(...);   // G57w8: raw 0x403A body 调用词表 (纯变参兜底)
+int Audio_ReleaseChannelRefs(Audio *p_this);  // x4:ida@0x404d80
+int Voice_DetachChannel(Voice *p_this);  // x4:ida@0x404140
+int Audio_InitChannels(char *p_this);  // x4:ida@0x401080
+int AudioChannel_IsActive(AudioChannel *p_this);  // x4:ida@0x4010a0
+int AudioQueue_GetNext(AudioQueue *p_this);  // x4:ida@0x4073c0
+int ObjectClass_Cleanup(ObjectClass *p_this);  // x4:ida@0x402220
+int ObjectClass_ClearFlags2(ObjectClass *p_this);  // x4:ida@0x401170
+int RefCount_Decrement(RefCount *p_this);  // x4:ida@0x401f90
+int Range(int p0, int p1);  // x4:signals@0x65c7e0
+int sub_4026C0(int p0);  // x4:signals@0x4026c0
+int sub_405B50(int a1, char a2);  // x4:ida@0x405b50
+int sub_4039C0(int a1, char *a2);  // x4:ida@0x4039c0
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

@@ -25,7 +25,7 @@
 #include "e4/classes/Matrix_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ParseWDTTerritories(...);  // raw 0076B180: char __thiscall WDTClass::ParseTerritories(int this, int a2, int a3)
+    int ParseWDTTerritories(int p0, int p1);  // x4:signals@0x76b180
 } // namespace gamemd
 
 // 0x431F10

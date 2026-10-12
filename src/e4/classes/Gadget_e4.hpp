@@ -14,8 +14,5 @@ struct Gadget {
     unsigned char *m_1;  // 0x1 (canon-mt)
     unsigned char m_5;  // 0x5 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_10(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

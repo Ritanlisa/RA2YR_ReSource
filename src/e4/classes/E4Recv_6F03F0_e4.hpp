@@ -10,6 +10,5 @@ struct E4Recv_6F03F0 {
     unsigned int M84;  // 0x54
 // --- flat members (END) ---
     char sub_6F03F0();  // 0x6F03F0
-    static double customSound_controller(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -13,6 +13,5 @@ struct E4Recv_56AF40 {
     unsigned int M320;  // 0x140
 // --- flat members (END) ---
     BombClass * *  sub_56AF40(int a2);  // 0x56AF40
-    static double u32_4(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

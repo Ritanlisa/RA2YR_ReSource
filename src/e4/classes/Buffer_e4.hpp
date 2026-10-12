@@ -48,10 +48,6 @@ struct Buffer {
     unsigned int u32_744;  // 0x744 (offset-truth)
     unsigned int u32_748;  // 0x748 (offset-truth)
     unsigned int u32_88;  // 0x88 (offset-truth)
-    static double Items(...);  // plateau: C2039/C3861 stub
-    static double __pad_008(...);  // plateau: C2039/C3861 stub
-    static double u32_168(...);  // plateau: C2039/C3861 stub
-    static double u32_AC(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

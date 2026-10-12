@@ -12,11 +12,7 @@ struct VtableStub {
     char RetZero_eax_35(int a1);
     static void sub_643E70(void *aP1);
     void Method_425270(void *a1 = 0);
-    static int Push_407510(...);
-    static int sub_55CBF0(...);
-    static int sub_5175D0(...);
-    static int sub_72F510(...);
-    static int sub_5CB6C0(...);
+    static int Push_407510(VtableStub *p_this);  // x4:ida@0x407510
     void VtableStub_643E70();  // plateau: def-aligned C2039/C2660
 };
 

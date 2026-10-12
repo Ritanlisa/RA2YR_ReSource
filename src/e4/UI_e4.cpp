@@ -65,7 +65,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int SendMultiplayerStartSignal_Start(...);  // raw 005DBEC0: int __thiscall sub_5DBEC0(char *this)
+    int SendMultiplayerStartSignal_Start(char *p_this);  // x4:ida@0x5dbec0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_10;  // data: 0x836cb4 truth(IDA G42.57w9)

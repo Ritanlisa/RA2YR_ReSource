@@ -14,9 +14,6 @@ struct StaticButtonClass {
     static void Draw(void * aP0, wchar_t * aP1, int aP2);
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned char q00C6;  // 0xC6 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_24(...);  // plateau: C2039/C3861 stub
-    static double u32_30(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

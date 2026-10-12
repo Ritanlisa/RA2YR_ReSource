@@ -13,7 +13,5 @@ struct Building {
     int GetNthOfType();  // 0x485020
     int GetRenderType();  // 0x772A90
     static unsigned int *  GetFoundationSize(unsigned int * a1, unsigned int a2);  // 0x69E7E0
-    static double Building_field_0xA0(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

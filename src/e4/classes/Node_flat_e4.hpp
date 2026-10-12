@@ -14,11 +14,6 @@ struct Node_flat {
 // --- flat members (END) ---
 unsigned int * Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double Blowfish(...);  // plateau: C2039/C3861 stub
-    static double CountFiles(...);  // plateau: C2039/C3861 stub
-    static double FileSize(...);  // plateau: C2039/C3861 stub
-    static double Previous(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -10,7 +10,6 @@ struct E4Recv_6A6AF0 {
     unsigned int M21404;  // 0x539C
 // --- flat members (END) ---
     void* vtable1;  // 0x0 (no offset truth)
-    int Vf56(int,  ...);    // G6 vtable slot dispatch
     int  sub_6A6AF0(char a2, int a3);  // 0x6A6AF0
 };
 } // namespace gamemd

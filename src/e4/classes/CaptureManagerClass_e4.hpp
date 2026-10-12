@@ -78,8 +78,6 @@ struct CaptureManagerClass {
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
     unsigned int u32_9C;  // 0x9C (offset-truth)
     unsigned int u32_A4;  // 0xA4 (offset-truth)
-    static double __pad_03C(...);  // plateau: C2039/C3861 stub
-    static double u32_31(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

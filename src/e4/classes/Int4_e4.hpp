@@ -11,7 +11,6 @@ struct Int4 {
 // --- flat members (END) ---
     unsigned int * Set(int aP1, int aP2, int aP3, int a5);
     int  Set2(int a2, int a3, int a4, int a5, void *a1 = 0);  // 0x645c50
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -38,11 +38,11 @@ struct SidebarClass {
     unsigned int IsAvailableNow;  // 0x14D8
 // --- flat members (END) ---
     unsigned int calcSidebarRect_ph;  // w18j3: filler renamed (no offset truth; canon SidebarClass::calcSidebarRect is a method)
-    static unsigned int calcSidebarRect(...);
+    static unsigned int calcSidebarRect(SidebarClass *p_this);  // x4:ida@0x72ad90
     unsigned int InitButtons_ph;  // w18j3: filler renamed (no offset truth; canon SidebarClass::InitButtons is a method)
-    static unsigned int InitButtons(...);
+    static unsigned int InitButtons(TabClass *p_this);  // x4:ida@0x6d03a0
     void* GetProductionState_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon SidebarClass::GetProductionState is a method)
-    static unsigned int GetProductionState(...);
+    static unsigned int GetProductionState(SidebarClass *p_this);  // x4:ida@0x6cbee0
     static char LoadResources();
     static GadgetClass * LoadResources(void *a1);
     static int CalcBounds(char a1);
@@ -61,11 +61,9 @@ struct SidebarClass {
     int LoadButtonSHPs();  // 0x6d02b0
     int ReadButtonList();  // 0x674650
     static GadgetClass * LoadResources(void *a1, void * aSidegdi1Shp, void * aSidegdi2Shp, void * aSidegdi3Shp);
-    static int updateStripVisibility(...);
-    static int initializeStrip(...);
-    static int updateStripPosition(...);
-    static double SidebarClass_field_0x5C(...);  // plateau: C2039/C3861 stub
-    static double __pad_CD2(...);  // plateau: C2039/C3861 stub
+    static int updateStripVisibility(SidebarClass *p_this);  // x4:ida@0x724530
+    static int initializeStrip(int p0);  // x4:signals@0x724520
+    static int updateStripPosition(SidebarClass *p_this);  // x4:ida@0x724540
 };
 
 } // namespace gamemd

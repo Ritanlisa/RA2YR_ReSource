@@ -25,8 +25,5 @@ struct Factory {
     int GetLinkedIndex(int aP1);  // 0x663D60
     int FindExitCellByName(void *a1 = 0);  // 0x523C90
     int IdleHandler();  // 0x731CD0
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double field_10(...);  // plateau: C2039/C3861 stub
-    static double field_4(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

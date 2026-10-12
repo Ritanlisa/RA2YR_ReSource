@@ -17,10 +17,5 @@ struct Territory_WorldDominationTour_8 {
     unsigned int *  QueryInterface(char a2);  // 0x771A30
     unsigned int * Seek(unsigned int * a1, void *a2_1, void *a3_1);  // 0x771990
     unsigned int * Open(void *a1_1, void *a2_1, void *a3_1);  // 0x7719C0
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_C(...);  // plateau: C2039/C3861 stub
-    static double field_1C(...);  // plateau: C2039/C3861 stub
-    static double field_4(...);  // plateau: C2039/C3861 stub
-    static double field_8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

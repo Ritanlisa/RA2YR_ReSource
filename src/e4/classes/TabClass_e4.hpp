@@ -13,10 +13,6 @@ struct TabClass {
     int DrawPower(void *a1);
     unsigned int * initStripClass();
     int DrawPower(void *a1, void * aGrey);
-    static double TabClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double TabClass_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double TabClass_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double TabClass_field_0xC(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -4,7 +4,6 @@
 #include "structure/globals_structure.hpp"
 #include "core/ddraw_init.hpp"
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int event(...); }  // w18j2 raw call-form (variadic last resort)
 
 namespace gamemd {
 namespace wdt {

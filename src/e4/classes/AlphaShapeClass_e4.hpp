@@ -18,17 +18,12 @@ struct AlphaShapeClass {
     int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);
     int SD_vt10(int a2, int a3);
     int SD_vt13(int a2);
-    static int CTOR(...);
+    static int CTOR(int p0, int p1, int p2);  // x4:signals@0x420960
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
-    static double AlphaShapeClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double AlphaShapeClass_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double AlphaShapeClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double AlphaShapeClass_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

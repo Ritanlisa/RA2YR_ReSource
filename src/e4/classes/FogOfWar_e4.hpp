@@ -25,15 +25,6 @@ struct FogOfWar {
     unsigned char u32_73C6;  // 0x73C6 (offset-truth)
     unsigned int u32_7400;  // 0x7400 (offset-truth)
     unsigned char u32_7546;  // 0x7546 (offset-truth)
-    static double u32_121C(...);  // plateau: C2039/C3861 stub
-    static double u32_125C(...);  // plateau: C2039/C3861 stub
-    static double u32_1260(...);  // plateau: C2039/C3861 stub
-    static double u32_1264(...);  // plateau: C2039/C3861 stub
-    static double u32_1269(...);  // plateau: C2039/C3861 stub
-    static double u32_126C(...);  // plateau: C2039/C3861 stub
-    static double u32_1270(...);  // plateau: C2039/C3861 stub
-    static double u32_1274(...);  // plateau: C2039/C3861 stub
-    static double u32_14D9(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

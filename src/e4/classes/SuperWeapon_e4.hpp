@@ -139,7 +139,6 @@ struct SuperWeapon {
     char GetField10();
     char  FireSuperWeaponHouseClass(int a2, int a3, void *a1 = 0);  // 0x4fae50
     int UpdateSuperWeaponsOwnedHouseClass();  // 0x50af10
-    static double u32_28(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

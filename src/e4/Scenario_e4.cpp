@@ -70,12 +70,11 @@
 #include "e4/classes/CellSystem_e4.hpp"  // G57w10 D supply
 #include "e4/classes/LoadProgressMgr_e4.hpp"  // G57w10 D supply
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int __0Iostream_init_QAE_XZ_5(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ParseAndApplyAlliances(...);  // raw 0069B170: void __thiscall ParseAndApplyAlliances(ObjectClass *this)
-    int UpdateDeferredLightSurfaces(...);  // raw 00554D50: void __fastcall UpdateDeferredLightSurfaces(int a1, char a2)
-    int WaitForMultiplayerLoadSync(...);  // raw 00684370: char WaitForMultiplayerLoadSync(ObjectClass *this)
+    int ParseAndApplyAlliances(ObjectClass *p_this);  // x4:ida@0x69b170
+    int UpdateDeferredLightSurfaces(int p0, char p1);  // x4:signals@0x554d50
+    int WaitForMultiplayerLoadSync(ObjectClass *p_this);  // x4:ida@0x684370
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aSed;  // data: 0x83da88 truth(IDA G42.57w9)

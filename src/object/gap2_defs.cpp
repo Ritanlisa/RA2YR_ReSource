@@ -31,15 +31,14 @@ namespace gamemd { using ra2::game::AbstractClass;
 #include "e4/classes/DDraw_e4.hpp"  // w16g4 C3861 DDraw:: supply
 #include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int Stub3(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int GetStatus(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int QuickPassable(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Stub3(int p0); }  // x4:signals@0x4b4c70
+namespace gamemd { int GetStatus(); }  // x4:empty@0x4bbc90
+namespace gamemd { int QuickPassable(CellClass *p_this); }  // x4:ida@0x487950
 // [w18j2] C2065 global supply (data addr evidence)
 extern unsigned int dword_A8B230;  // w18j2 data: 0xA8B230
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int Type(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int GetHealthRatio(...); }  // w16g4 raw call-form
+namespace gamemd { int GetHealthRatio(BuildingClass *p_this); }  // x4:ida@0x5f5c60
 
 // G57w10: q000 externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
@@ -60,19 +59,19 @@ extern unsigned char vt_VectorClass_char_const[4];  // data: 0x7EE0D4  // G57w10
 extern unsigned char vt_VectorClass_int[4];  // data: 0x7E4DB8  // G57w10 vftable residue fix
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {
-int AbstractClass_Constructor(...);  // g57c5 W5 vocab
-int AnimTypeClass_FindIndex(...);  // g57c5 W5 vocab
-int AudioFile_Stop(...);  // g57c5 W5 vocab
-int BufferIO_Flush(...);  // g57c5 W5 vocab
-int CCINIClass_GetDB(...);  // g57c5 W5 vocab
-int FootClass_MovementAI(...);  // g57c5 W5 vocab
-int LayerClass_CoordinatesLegal(...);  // g57c5 W5 vocab
-int LayerClass_IsWithinUsableArea(...);  // g57c5 W5 vocab
-int Random_Range(...);  // g57c5 W5 vocab
-int StartAudioControllerAt(...);  // g57c5 W5 vocab
-int WTFMode_ResetUnitFlags(...);  // g57c5 W5 vocab
-int sub_7DC720(...);  // g57c5 W5 vocab
-int nullsub_84(...);  // g57c5 W5 vocab
+int AbstractClass_Constructor(AbstractClass *p_this);  // x4:ida@0x410170
+int AnimTypeClass_FindIndex(AnimTypeClass *p_this);  // x4:ida@0x427cb0
+int AudioFile_Stop(AudioFile *p_this);  // x4:ida@0x405fd0
+int BufferIO_Flush(BufferIO *p_this);  // x4:ida@0x431dd0
+int CCINIClass_GetDB(CCINIClass *p_this);  // x4:ida@0x473450
+int FootClass_MovementAI(int p0);  // x4:signals@0x4da530
+int LayerClass_CoordinatesLegal(int16_t* p0);  // x4:signals@0x568300
+int LayerClass_IsWithinUsableArea(int16_t* p0, char p1);  // x4:signals@0x578460
+int Random_Range(int p0, int p1);  // x4:signals@0x65c7e0
+int StartAudioControllerAt(int p0, int p1, int p2);  // x4:signals@0x7509e0
+int WTFMode_ResetUnitFlags(WTFMode *p_this);  // x4:ida@0x41db40
+int sub_7DC720();  // x4:empty@0x7dc720
+int nullsub_84(int p0);  // x4:signals@0x763720
 } }
 // ---- g57c5 W5 end ----
 
@@ -96,34 +95,33 @@ extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int AnimTypeClass_FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AudioFile_Stop(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int BufferIO_Flush(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FootClass_MovementAI(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int WTFMode_ResetUnitFlags(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int sub_7DC720(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int nullsub_84(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AbstractClass_Constructor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AnimTypeClass_FindIndex(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int AudioFile_Stop(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BufferIO_Flush(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FileClass_SetName(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FootClass_MovementAI(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int House_IsHumanPlayer(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_ctor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int WTFMode_ResetUnitFlags(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int sub_7DC720(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int CCINIClass_GetDB(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetHealthRatio(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Random_Range(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int RemoveAircraft(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int StartAudioControllerAt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Wrapper(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int AnimTypeClass_FindIndex(AnimTypeClass *p_this);  // x4:ida@0x427cb0
+int AudioFile_Stop(AudioFile *p_this);  // x4:ida@0x405fd0
+int BufferIO_Flush(BufferIO *p_this);  // x4:ida@0x431dd0
+int FootClass_MovementAI(int p0);  // x4:signals@0x4da530
+int LayerClass_CoordinatesLegal(int16_t* p0);  // x4:signals@0x568300
+int LayerClass_IsWithinUsableArea(int16_t* p0, char p1);  // x4:signals@0x578460
+int WTFMode_ResetUnitFlags(WTFMode *p_this);  // x4:ida@0x41db40
+int sub_7DC720();  // x4:empty@0x7dc720
+int nullsub_84(int p0);  // x4:signals@0x763720
+int AbstractClass_Constructor(AbstractClass *p_this);  // x4:ida@0x410170
+int AnimTypeClass_FindIndex(AnimTypeClass *p_this);  // x4:ida@0x427cb0
+int AudioFile_Stop(AudioFile *p_this);  // x4:ida@0x405fd0
+int BufferIO_Flush(BufferIO *p_this);  // x4:ida@0x431dd0
+int FileClass_SetName(char* p0);  // x4:signals@0x65cac0
+int FootClass_MovementAI(int p0);  // x4:signals@0x4da530
+int House_IsHumanPlayer(House *p_this);  // x4:ida@0x50b6f0
+int LayerClass_CoordinatesLegal(int16_t* p0);  // x4:signals@0x568300
+int LayerClass_IsWithinUsableArea(int16_t* p0, char p1);  // x4:signals@0x578460
+int ObjectClass_ctor(ObjectClass *p_this);  // x4:ida@0x5f3900
+int WTFMode_ResetUnitFlags(WTFMode *p_this);  // x4:ida@0x41db40
+int sub_7DC720();  // x4:empty@0x7dc720
+int CCINIClass_GetDB(CCINIClass *p_this);  // x4:ida@0x473450
+int FindIndex(AnimTypeClass *p_this);  // x4:ida@0x427cb0
+int GetHealthRatio(BuildingClass *p_this);  // x4:ida@0x5f5c60
+int Random_Range(int p0, int p1);  // x4:signals@0x65c7e0
+int RemoveAircraft(int p0);  // x4:signals@0x41dc80
+int StartAudioControllerAt(int p0, int p1, int p2);  // x4:signals@0x7509e0
 int nullsub_84(void);  // g57b5 W6: 0 参调用修正   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 } // namespace gamemd
 // ---- g57b5 W5 end ----

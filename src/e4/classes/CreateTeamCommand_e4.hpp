@@ -487,10 +487,5 @@ struct CreateTeamCommand {
     wchar_t * performAction_5(void * aTxtStructureTa_0);
     wchar_t * performAction_8(void * aTxtDefenseTab);
     wchar_t * performAction_27(void * aTxtNextObject);
-    static double CommandClass(...);  // plateau: C2039/C3861 stub
-    static double __pad_004(...);  // plateau: C2039/C3861 stub
-    static double __pad_0042(...);  // plateau: C2039/C3861 stub
-    static double __pad_00C(...);  // plateau: C2039/C3861 stub
-    static double qA5C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

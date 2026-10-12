@@ -59,8 +59,8 @@ namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **
 namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ExchangeMultiplayerGameInfo(...);  // raw 005E7920: void ExchangeMultiplayerGameInfo()
-    int StartGameWOL_Start_7ACB90(...);  // raw 007ACB90: char __thiscall StartGameWOL_Start_7ACB90(ObjectClass *this, void *a2, int a3)
+    int ExchangeMultiplayerGameInfo();  // x4:empty@0x5e7920
+    int StartGameWOL_Start_7ACB90(void* p0, int p1);  // x4:signals@0x7acb90
 } // namespace gamemd
 
 // 0x792CF0

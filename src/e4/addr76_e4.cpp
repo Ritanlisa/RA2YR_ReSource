@@ -92,13 +92,12 @@
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/_tree_full_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_76B7B0(...); }  // w18j2 raw 0x0076B7B0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_76B7B0(int p0, int p1); }  // x4:signals@0x76b7b0
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int Node(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int sub_7667E0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int sub_7667F0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_7667E0(int p0); }  // x4:signals@0x7667e0
+namespace gamemd { int sub_7667F0(int p0); }  // x4:signals@0x7667f0
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int ConstructorWDTFlagOption_Create(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ConstructorWDTFlagOption_Create(int p0, void* p1, int p2, void* p3, int p4); }  // x4:signals@0x767820
 // [w16g4] type supply: _VectorClass_V_TRect_H (raw 0x769550 v51 offset evidence 0x0/0x4/0x8/0xC, VectorClass<TRect> flat)
 namespace gamemd {
 struct _VectorClass_V_TRect_H {
@@ -110,20 +109,20 @@ struct _VectorClass_V_TRect_H {
 };
 } // namespace gamemd
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int Map_Load_769C20(...); }  // w16g4 raw call-form
-namespace gamemd { int Map_Load_7694C0(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Load_769C20(int p0); }  // x4:signals@0x769c20
+namespace gamemd { int Map_Load_7694C0(int* p0); }  // x4:signals@0x7694c0
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int ReadInt(...); }
-namespace gamemd { int SetIntFormat(...); }
-namespace gamemd { int ddtor(...); }
-namespace gamemd { int System_Init_766900(...); }
-namespace gamemd { int System_Init_766910(...); }
-namespace gamemd { int sub_47AA00(...); }
+namespace gamemd { int ReadInt(uint8_t* p0, uint8_t* p1, int p2); }  // x4:signals@0x474f50
+namespace gamemd { int SetIntFormat(char** p0, char** p1, int p2, int p3); }  // x4:signals@0x527640
+namespace gamemd { int ddtor(_VectorClass_PAVTechnoClass *p_this); }  // x4:ida@0x40ba50
+namespace gamemd { int System_Init_766900(rc_ptr *p_this); }  // x4:ida@0x766900
+namespace gamemd { int System_Init_766910(rc_ptr *p_this); }  // x4:ida@0x766910
+namespace gamemd { int sub_47AA00(int p0, int p1); }  // x4:signals@0x47aa00
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int GetRegionStringWOL(...);  // raw 007AF3D0: char **__thiscall GetRegionStringWOL(ObjectClass *this)
-    int System_Init_766EE0(...);  // raw 00766EE0: char __thiscall System_Init_766EE0(ObjectClass *this, int a2)
-    int System_Init_766F70(...);  // raw 00766F70: unsigned int *__thiscall System_Init_766F70(rc_ptr *this, int a2)
+    int GetRegionStringWOL(ObjectClass *p_this);  // x4:ida@0x7af3d0
+    int System_Init_766EE0(int p0);  // x4:signals@0x766ee0
+    int System_Init_766F70(int p0);  // x4:signals@0x766f70
 } // namespace gamemd
 
 // 0x7636F0

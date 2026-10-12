@@ -12,7 +12,6 @@ struct Matrix3x4 {
     int Identity(void *a1 = 0);
     unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3);
     int Translate(float aP1, void *a1 = 0);
-    static double q004(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

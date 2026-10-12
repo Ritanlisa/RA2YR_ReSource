@@ -48,7 +48,7 @@
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int ComputeMovementWeight(...);  // raw 00429830: double __thiscall ComputeMovementWeight(int this, int *a2, unsigned int *a3, char a4, int a5, in
+    int ComputeMovementWeight(int* p0, int* p1, char p2, int p3, int p4);  // x4:signals@0x429830
 } // namespace gamemd
 extern int CellToTileIndexMap(void *a1, int16_t *a2);  // W13-C raw 0x56D3F0 ObjectClass::CellToTileIndexMap thiscall 自由形
 extern int * globalHelper_02AA90(int a1, int a2);  // W13-C raw 0x42AA90 sub_42AA90
@@ -64,40 +64,38 @@ extern int IID_IFlyControl;  // 词表 (canon 无条目, int 兜底) L1038
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
-int FootClass_MissionMoveCarryallLand(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int MissionClass_GetMissionControl(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Random_Range(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TeamClass_AddMember(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_FindClosestPlacementCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ApplyOverlayReveal(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int FillRevealBuffer(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Pop(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int RemoveTarget(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int AbstractClass_QueryInterface(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BuildingClass_CanAcceptType(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BuildingClass_CheckPowerFlags(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BuildingClass_FindPlacementCells2(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BuildingClass_checkRepairEligibility(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int BuildingTypeClass_GetFoundationHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int House_IsCurrentPlayer(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int InfantryClass_FindNearbyCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_FindClosestObjectCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ObjectClass_HasLocation(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int ScenarioClass_Get_Waypoint_Location(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int Team_AllMembersValid(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TeamClass_SelectMember(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_CanMoveToCell(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_GetWaypointCoords(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_SetHouseFlag(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int TechnoClass_ShouldNotBeCloaked(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int WTFMode_FindObjectByType(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int FindBuildingByTiberiumType(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetDB(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetFoundationWidth(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int GetTileIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int Is1x1AndUndeployable_BuildingMassSelectable(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int IsNonNullPtr(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int UpdatePowered(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int FootClass_MissionMoveCarryallLand(FootClass *p_this);  // x4:ida@0x416af0
+int MissionClass_GetMissionControl(MissionClass *p_this);  // x4:ida@0x5b3a00
+int Random_Range(int p0, int p1);  // x4:signals@0x65c7e0
+int TeamClass_AddMember(int p0, char p1);  // x4:signals@0x6ea500
+int TechnoClass_FindClosestPlacementCell(TechnoClass *p_this);  // x4:ida@0x41a160
+int ApplyOverlayReveal(uint16_t* p0, char* p1);  // x4:signals@0x5687f0
+int FillRevealBuffer(uint16_t* p0, uint8_t* p1);  // x4:signals@0x5683c0
+int Pop(LinkedList *p_this);  // x4:ida@0x473430
+int RemoveTarget(int p0);  // x4:signals@0x4a9770
+int AbstractClass_QueryInterface(AbstractClass *p_this);  // x4:ida@0x410260
+int BuildingClass_CanAcceptType(int p0, int p1);  // x4:signals@0x452670
+int BuildingClass_CheckPowerFlags(BuildingClass *p_this);  // x4:ida@0x4a51b0
+int BuildingClass_FindPlacementCells2(int* p0, int p1);  // x4:signals@0x6b0300
+int BuildingClass_checkRepairEligibility(float *p_this);  // x4:ida@0x4f9750
+int BuildingTypeClass_GetFoundationHeight(char p0);  // x4:signals@0x45eca0
+int House_IsCurrentPlayer(House *p_this);  // x4:ida@0x50b730
+int InfantryClass_FindNearbyCell(int p0);  // x4:signals@0x418e20
+int ObjectClass_HasLocation(ObjectClass *p_this);  // x4:ida@0x70fec0
+int ScenarioClass_Get_Waypoint_Location(int* p0, int p1);  // x4:signals@0x68bcc0
+int Team_AllMembersValid(Team *p_this);  // x4:ida@0x65ae30
+int TeamClass_SelectMember(int p0);  // x4:signals@0x6e9050
+int TechnoClass_CanMoveToCell(TechnoClass *p_this);  // x4:ida@0x6fc030
+int TechnoClass_GetWaypointCoords(int* p0);  // x4:signals@0x6f18a0
+int TechnoClass_SetHouseFlag(int* p0);  // x4:signals@0x6f4960
+int TechnoClass_ShouldNotBeCloaked(float *p_this);  // x4:ida@0x6fbc90
+int WTFMode_FindObjectByType(char p0);  // x4:signals@0x47ec40
+int FindBuildingByTiberiumType(int p0);  // x4:signals@0x5fdd20
+int GetDB(CCINIClass *p_this);  // x4:ida@0x473450
+int GetFoundationWidth(BuildingTypeClass *p_this);  // x4:ida@0x45ec90
+int GetTileIndex(int p0);  // x4:signals@0x48b720
+int Is1x1AndUndeployable_BuildingMassSelectable(BuildingClass *p_this);  // x4:ida@0x465d40
+int IsNonNullPtr(_DWORD *a1);  // x4:ida@0x70e240
 } // namespace gamemd
 // ---- g57b5 W5 end ----
 

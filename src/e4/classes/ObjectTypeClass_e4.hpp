@@ -163,52 +163,6 @@ struct ObjectTypeClass {
     unsigned char u32_387;  // 0x387 (offset-truth)
     unsigned char u32_389;  // 0x389 (offset-truth)
     unsigned char u32_D41;  // 0xD41 (offset-truth)
-    static double AttachedSystem(...);  // plateau: C2039/C3861 stub
-    static double BounceAnim(...);  // plateau: C2039/C3861 stub
-    static double ExpireAnim(...);  // plateau: C2039/C3861 stub
-    static double NoSpawnAlt3(...);  // plateau: C2039/C3861 stub
-    static double NoSpawnAlt4(...);  // plateau: C2039/C3861 stub
-    static double NoSpawnAlt5(...);  // plateau: C2039/C3861 stub
-    static double NoSpawnAlt6(...);  // plateau: C2039/C3861 stub
-    static double Spawns(...);  // plateau: C2039/C3861 stub
-    static double TrailerAnim(...);  // plateau: C2039/C3861 stub
-    static double Warhead(...);  // plateau: C2039/C3861 stub
-    static double __pad_099(...);  // plateau: C2039/C3861 stub
-    static double __pad_14D(...);  // plateau: C2039/C3861 stub
-    static double q056(...);  // plateau: C2039/C3861 stub
-    static double u32_22B(...);  // plateau: C2039/C3861 stub
-    static double u32_23C(...);  // plateau: C2039/C3861 stub
-    static double u32_23D(...);  // plateau: C2039/C3861 stub
-    static double u32_248(...);  // plateau: C2039/C3861 stub
-    static double u32_24C(...);  // plateau: C2039/C3861 stub
-    static double u32_250(...);  // plateau: C2039/C3861 stub
-    static double u32_278(...);  // plateau: C2039/C3861 stub
-    static double u32_28C(...);  // plateau: C2039/C3861 stub
-    static double u32_98(...);  // plateau: C2039/C3861 stub
-    static double u32_9A(...);  // plateau: C2039/C3861 stub
-    static double uniqueId0(...);  // plateau: C2039/C3861 stub
-    static double uniqueId1(...);  // plateau: C2039/C3861 stub
-    static double uniqueId2(...);  // plateau: C2039/C3861 stub
-    static double uniqueId3(...);  // plateau: C2039/C3861 stub
-    static double uniqueId4(...);  // plateau: C2039/C3861 stub
-    static double uniqueId5(...);  // plateau: C2039/C3861 stub
-    static double uniqueId6(...);  // plateau: C2039/C3861 stub
-    static double uniqueId7(...);  // plateau: C2039/C3861 stub
-    static double uniqueId8(...);  // plateau: C2039/C3861 stub
-    static double uniqueId9(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
-    static double vtable49(...);  // plateau: C2039/C3861 stub
-    static double zero_3C0(...);  // plateau: C2039/C3861 stub
-    static double zero_3C1(...);  // plateau: C2039/C3861 stub
-    static double zero_3C2(...);  // plateau: C2039/C3861 stub
-    static double zero_3C4(...);  // plateau: C2039/C3861 stub
-    static double zero_3C5(...);  // plateau: C2039/C3861 stub
-    static double zero_3C6(...);  // plateau: C2039/C3861 stub
-    static double zero_3C7(...);  // plateau: C2039/C3861 stub
-    static double zero_3C9(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

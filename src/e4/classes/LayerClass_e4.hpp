@@ -12,7 +12,7 @@ struct LayerClass {
     char capacity[4];  // 0x8
 // --- flat members (END) ---
     void* Load_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LayerClass::Load is a method)
-    static unsigned int Load(...);
+    static unsigned int Load(int* p0);  // x4:signals@0x551b90
     void* items;  // 0x0 (no offset truth)
     int CellIteratorNext(void *a1 = 0);
     int CellIteratorReset(void *a1 = 0);
@@ -32,10 +32,6 @@ struct LayerClass {
     unsigned int u32_13C;  // 0x13C (offset-truth)
     unsigned int u32_F4;  // 0xF4 (offset-truth)
     unsigned int u32_F8;  // 0xF8 (offset-truth)
-    static double ClearFactoryCellAssignments(...);  // plateau: C2039/C3861 stub
-    static double u32_104(...);  // plateau: C2039/C3861 stub
-    static double u32_108(...);  // plateau: C2039/C3861 stub
-    static double u32_FC(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

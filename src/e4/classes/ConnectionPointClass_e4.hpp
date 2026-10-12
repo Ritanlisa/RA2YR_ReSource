@@ -17,8 +17,6 @@ struct ConnectionPointClass {
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned char u32_29;  // 0x29 (offset-truth)
-    static double ConnectionPointClass_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

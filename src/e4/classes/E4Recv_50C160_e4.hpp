@@ -10,6 +10,5 @@ struct E4Recv_50C160 {
     unsigned int M52;  // 0x34
 // --- flat members (END) ---
     double sub_50C160();  // 0x50C160
-    static double attachedTag(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

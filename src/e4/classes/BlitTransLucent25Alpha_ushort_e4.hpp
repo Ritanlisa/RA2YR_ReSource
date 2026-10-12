@@ -18,7 +18,6 @@ struct BlitTransLucent25Alpha_ushort {
     std::locale::facet * Constructor_Blitter(char a2);
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

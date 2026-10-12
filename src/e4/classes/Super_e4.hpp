@@ -20,7 +20,5 @@ struct Super {
     void* q6408;  // 0x6408
 // --- flat members (END) ---
     int GetDefaultTimer(void *a1 = 0);  // 0x6CC260
-    static double field_24(...);  // plateau: C2039/C3861 stub
-    static double field_28(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

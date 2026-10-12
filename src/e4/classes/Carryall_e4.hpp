@@ -16,13 +16,6 @@ struct Carryall {
     unsigned int u32_5D4;  // 0x5D4 (offset-truth)
     unsigned int u32_674;  // 0x674 (offset-truth)
     unsigned int u32_BC;  // 0xBC (offset-truth)
-    static double q112(...);  // plateau: C2039/C3861 stub
-    static double q1A1(...);  // plateau: C2039/C3861 stub
-    static double u32_500(...);  // plateau: C2039/C3861 stub
-    static double u32_6D4(...);  // plateau: C2039/C3861 stub
-    static double u32_9C(...);  // plateau: C2039/C3861 stub
-    static double u32_A0(...);  // plateau: C2039/C3861 stub
-    static double u32_A4(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

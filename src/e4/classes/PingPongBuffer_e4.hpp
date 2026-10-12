@@ -9,7 +9,7 @@ struct PingPongBuffer {
 // --- flat members (BEGIN) ---
     unsigned int tail_0;  // 0x0
 // --- flat members (END) ---
-    static int GetWriteOffset(...);
+    static int GetWriteOffset();  // x4:empty@0x55af60
 };
 
 } // namespace gamemd

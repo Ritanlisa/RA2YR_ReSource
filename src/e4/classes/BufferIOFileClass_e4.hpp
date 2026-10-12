@@ -38,7 +38,7 @@ struct BufferIOFileClass {
     void StubReturnFalse(int a1, int a2, int a3);
      uint8_t * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
 int Dtor(void *a1 = 0);
-    static int Seek(...);
+    static int Seek(CCFileClass *p_this, LONG lDistanceToMove, DWORD dwMoveMethod);  // x4:ida@0x473ba0
     char __tail_0[4];  // 0x0 (ml)
 };
 #endif  // GAMEMD_G2_BufferIOFileClass_DEF

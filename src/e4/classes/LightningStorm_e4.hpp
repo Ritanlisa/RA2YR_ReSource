@@ -24,8 +24,8 @@ struct LightningStorm {
     void* q6210;  // 0x6210
 // --- flat members (END) ---
     static int Strike(int a1);  // G57w10-S raw 0x0053A140 IUnknown 占位清除
-    static char End(...);
-    static int IsActive(...);
+    static char End();  // x4:empty@0x53a090
+    static int IsActive();  // x4:empty@0x53a100
     static int Start(int a1, int a2, int a3, void * a4);
     int Strike2(int a1, int a2, int a3);
 };

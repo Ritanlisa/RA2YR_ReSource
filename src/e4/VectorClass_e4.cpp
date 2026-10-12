@@ -171,8 +171,8 @@
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w18j2] C2065 function supply (raw-evidenced)
-namespace gamemd { int nullsub_138(...); }  // w18j2 raw call-form (variadic last resort)
-namespace VectorClass { int CleanupTyped(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+namespace gamemd { int nullsub_138(void *p_this); }  // x4:ida@0x4e0c30
+namespace VectorClass { int CleanupTyped(int p_this); }  // x4:ida@0x4a1330
 
 // 0x4137A0
 namespace gamemd {  // G42.18 ns repair

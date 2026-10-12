@@ -33,7 +33,6 @@ struct TeleportLocomotionClass {
     char LocomotionClass[24];  // 0x0 LocomotionClass base sub-object (live til)
     TeleportLocomotionClass();  // 0x718000 sig=csp
     unsigned int q018;  // 0x18 (offset-truth)
-    static double __pad_18(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

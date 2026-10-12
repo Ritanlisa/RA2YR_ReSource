@@ -27,7 +27,7 @@ struct LoadOptions {
     unsigned int grow_step;  // 0x34
 // --- flat members (END) ---
     unsigned int GetFlag252_ph;  // w18j3: filler renamed (no offset truth; canon LoadOptions::GetFlag252 is a method)
-    static unsigned int GetFlag252(...);
+    static unsigned int GetFlag252(LoadOptions *p_this);  // x4:ida@0x6812d0
     static int GetFlag99(LoadOptions *pThis);
     static int GetFlag98(LoadOptions *pThis);
     DynamicVector * vt00(char a2, int a1);
@@ -60,14 +60,6 @@ struct LoadOptions {
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    static double Items(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_22(...);  // plateau: C2039/C3861 stub
-    static double __pad_4(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
-    static double u32_24(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_2D(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_CORE_OWNS_LOADOPTIONS
 

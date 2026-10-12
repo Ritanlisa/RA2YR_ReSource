@@ -33,8 +33,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int gethostbyname(...);  // raw 007C8980: // attributes: thunk struct hostent *__stdcall gethostbyname(const char *name)
-    int gethostname(...);  // raw 007C89CE: // attributes: thunk int __stdcall gethostname(char *name, int namelen)
+    int gethostbyname(const char* p0);  // x4:signals@0x7c8980
+    int gethostname(char* p0, int p1);  // x4:signals@0x7c89ce
 } // namespace gamemd
 
 // 0x7B1B50

@@ -45,7 +45,7 @@
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int DrawUnitExperiencePopup(...);  // raw 007336C0: int __fastcall DrawUnitExperiencePopup(char a1)
+    int DrawUnitExperiencePopup(char p0);  // x4:signals@0x7336c0
 } // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aDefensetab;  // data: 0x827014 truth(IDA G42.57w9)

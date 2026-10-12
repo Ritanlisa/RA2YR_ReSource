@@ -25,7 +25,6 @@ struct Screen {
     int CleanupTransitionObjects();
     int TransitionLoop(int a2);
     int TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4);
-    static double u32_20(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

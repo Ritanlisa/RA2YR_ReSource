@@ -16,7 +16,5 @@ struct BlowStraw_29 {
     unsigned int u32_5540;  // 0x5540 (offset-truth)
     unsigned int u32_5544;  // 0x5544 (offset-truth)
     unsigned char u32_5545;  // 0x5545 (offset-truth)
-    static double TabClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double __pad_5298(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

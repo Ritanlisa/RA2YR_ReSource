@@ -47,12 +47,5 @@ struct E4Recv_76AAF0 {
     unsigned int M56;  // 0x56
 // --- flat members (END) ---
     unsigned int * sub_76AAF0();  // 0x76AAF0
-    static double ambientSoundController(...);  // plateau: C2039/C3861 stub
-    static double attachedBomb(...);  // plateau: C2039/C3861 stub
-    static double attachedTag(...);  // plateau: C2039/C3861 stub
-    static double fallRate(...);  // plateau: C2039/C3861 stub
-    static double nextObject(...);  // plateau: C2039/C3861 stub
-    static double occupant(...);  // plateau: C2039/C3861 stub
-    static double owningHouseIndex(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

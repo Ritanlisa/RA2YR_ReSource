@@ -74,29 +74,5 @@ struct Cell {
     unsigned char u32_746;  // 0x746 (offset-truth)
     unsigned char u32_901;  // 0x901 (offset-truth)
     unsigned int u32_C0;  // 0xC0 (offset-truth)
-    static double Cell_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0x11B(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0x140(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0x38(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0x68(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0x6C(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0xE4(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0xF4(...);  // plateau: C2039/C3861 stub
-    static double Cell_field_0xF8(...);  // plateau: C2039/C3861 stub
-    static double __pad_1C(...);  // plateau: C2039/C3861 stub
-    static double __pad_3C(...);  // plateau: C2039/C3861 stub
-    static double __pad_70(...);  // plateau: C2039/C3861 stub
-    static double __pad_E8(...);  // plateau: C2039/C3861 stub
-    static double __pad_FC(...);  // plateau: C2039/C3861 stub
-    static double q024(...);  // plateau: C2039/C3861 stub
-    static double q384(...);  // plateau: C2039/C3861 stub
-    static double u32_24(...);  // plateau: C2039/C3861 stub
-    static double u32_26(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
-    static double u32_46C(...);  // plateau: C2039/C3861 stub
-    static double u32_490(...);  // plateau: C2039/C3861 stub
-    static double u32_4A0(...);  // plateau: C2039/C3861 stub
-    static double u32_78(...);  // plateau: C2039/C3861 stub
-    static double u32_EC(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

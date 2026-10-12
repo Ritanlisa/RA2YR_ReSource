@@ -28,14 +28,6 @@ struct ThemeClass {
     unsigned int u32_288;  // 0x288 (offset-truth)
     unsigned char u32_289;  // 0x289 (offset-truth)
     unsigned int u32_28C;  // 0x28C (offset-truth)
-    static double __pad_37E(...);  // plateau: C2039/C3861 stub
-    static double q014(...);  // plateau: C2039/C3861 stub
-    static double q656(...);  // plateau: C2039/C3861 stub
-    static double u32_14(...);  // plateau: C2039/C3861 stub
-    static double u32_18(...);  // plateau: C2039/C3861 stub
-    static double u32_1C(...);  // plateau: C2039/C3861 stub
-    static double u32_21(...);  // plateau: C2039/C3861 stub
-    static double u32_24(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_ThemeClass_DEF
 

@@ -155,13 +155,6 @@ struct BulletTypeClass {
     unsigned char * Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     unsigned int * GetROF(unsigned int * a1, int * a2);
     int ProcessPower(int * a2, void *a2_2);
-    static double __pad_233(...);  // plateau: C2039/C3861 stub
-    static double u32_22F(...);  // plateau: C2039/C3861 stub
-    static double u32_230(...);  // plateau: C2039/C3861 stub
-    static double u32_231(...);  // plateau: C2039/C3861 stub
-    static double u32_234(...);  // plateau: C2039/C3861 stub
-    static double u32_235(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

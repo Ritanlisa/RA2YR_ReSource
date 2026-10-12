@@ -12,6 +12,5 @@ struct E4Recv_6EDFD0 {
 // --- flat members (END) ---
     unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)
     void  sub_6EDFD0(int a2, int a3);  // 0x6EDFD0
-    static double needsRedraw(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

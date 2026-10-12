@@ -78,16 +78,16 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/VectorClass_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int CreateDialog(...); }
-namespace gamemd { int sub_4F2C00(...); }
-namespace gamemd { int Find(...); }
-namespace gamemd { int sub_4F2F10(...); }
-namespace gamemd { int sub_4F3460(...); }
-namespace gamemd { int sub_4F3C40(...); }
-namespace gamemd { int sub_7B5410(...); }
-namespace gamemd { int ClearAndFree3(...); }
-namespace gamemd { int sub_4F3AB0(...); }
-namespace gamemd { int sub_4F3D40(...); }
+namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
+namespace gamemd { int sub_4F2C00(int p0, int p1, int p2); }  // x4:signals@0x4f2c00
+namespace gamemd { int Find(int* p0); }  // x4:signals@0x4e0550
+namespace gamemd { int sub_4F2F10(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7); }  // x4:signals@0x4f2f10
+namespace gamemd { int sub_4F3460(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9); }  // x4:signals@0x4f3460
+namespace gamemd { int sub_4F3C40(int p0, int p1, int p2); }  // x4:signals@0x4f3c40
+namespace gamemd { int sub_7B5410(int p0, int p1); }  // x4:signals@0x7b5410
+namespace gamemd { int ClearAndFree3(int p_this); }  // x4:ida@0x50f830
+namespace gamemd { int sub_4F3AB0(int p0, int p1); }  // x4:signals@0x4f3ab0
+namespace gamemd { int sub_4F3D40(int p0); }  // x4:signals@0x4f3d40
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aActiverect[];  // data: 0x824240 truth(IDA G42.57w9)
 extern char aAlt[];  // data: 0x82437c truth(IDA G42.57w9)

@@ -53,9 +53,9 @@
 #include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int HideSkirmishSpawnLocations(...);  // raw 006AE080: void __fastcall HideSkirmishSpawnLocations(HWND hDlg, int a2)
-    int SetupSkirmishSpawnLocationEntry(...);  // raw 006ADC20: int __fastcall SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem)
-    int VtableStub_72E280(...);  // raw 0072E280: int VtableStub_72E280()
+    int HideSkirmishSpawnLocations(HWND hDlg, int a2);  // x4:ida@0x6ae080
+    int SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem);  // x4:ida@0x6adc20
+    int VtableStub_72E280();  // x4:empty@0x72e280
 } // namespace gamemd
 
 // 0x46F600

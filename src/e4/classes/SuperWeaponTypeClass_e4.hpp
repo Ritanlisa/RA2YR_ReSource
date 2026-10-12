@@ -126,10 +126,6 @@ struct SuperWeaponTypeClass {
     unsigned int u32_158;  // 0x158 (offset-truth)
     unsigned int u32_178;  // 0x178 (offset-truth)
     unsigned int u32_17C;  // 0x17C (offset-truth)
-    static double MouseOverObject(...);  // plateau: C2039/C3861 stub
-    static double __pad_5558(...);  // plateau: C2039/C3861 stub
-    static double u32_15C(...);  // plateau: C2039/C3861 stub
-    static double u32_160(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

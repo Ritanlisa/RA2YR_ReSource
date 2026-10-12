@@ -11,7 +11,6 @@ struct MSPrintAnim {
 // --- flat members (END) ---
     wchar_t GetCharAt(size_t a2);
     unsigned int *q000;  // 0x0 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -17,12 +17,6 @@ struct TextRenderer {
     static void * GetInstance();
     void * MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4, int aP0, int aP2, int aP3, int a6, int a7, int a8, int aP8);
     int * RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8);
-    static double DrawTextA(...);  // C2597 interim stub
-    static double m_bits(...);  // C2597 interim stub
-    static double m_bmp(...);  // C2597 interim stub
-    static double m_font(...);  // C2597 interim stub
-    static double m_hdc(...);  // C2597 interim stub
-    static double m_old_bmp(...);  // C2597 interim stub
     int * RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8, void * aSD, void * aYellow);
     unsigned char u32_61;  // 0x61 (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
@@ -30,9 +24,6 @@ struct TextRenderer {
     unsigned int u32_80;  // 0x80 (offset-truth)
     unsigned char u32_86;  // 0x86 (offset-truth)
     unsigned char u32_87;  // 0x87 (offset-truth)
-    static double u32_50(...);  // plateau: C2039/C3861 stub
-    static double u32_68(...);  // plateau: C2039/C3861 stub
-    static double u32_6C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

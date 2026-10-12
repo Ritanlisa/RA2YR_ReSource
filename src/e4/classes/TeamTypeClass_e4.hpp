@@ -65,7 +65,6 @@ struct TeamTypeClass {
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     unsigned int * CreateScriptType(char *Source);  // G42.35f: ida truth 0x691C00 int* return
-    static double vftable(...);  // C2597 interim stub
     void * CreateScriptType(char *Source, int a2, int a3, int aP1);
     AbstractClass * * FindOrCreateTaskForce(char *Source, int a2, int a3, int aP1);
     AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2, void * aTaskforce, void * aWaypoint);
@@ -77,15 +76,6 @@ struct TeamTypeClass {
     unsigned char u32_AA;  // 0xAA (offset-truth)
     void* ;  // 0xC8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
-    static double TeamTypeClass_field_60(...);  // plateau: C2039/C3861 stub
-    static double __pad_4C(...);  // plateau: C2039/C3861 stub
-    static double u32_A8(...);  // plateau: C2039/C3861 stub
-    static double u32_AB(...);  // plateau: C2039/C3861 stub
-    static double u32_AC(...);  // plateau: C2039/C3861 stub
-    static double u32_AF(...);  // plateau: C2039/C3861 stub
-    static double u32_B1(...);  // plateau: C2039/C3861 stub
-    static double u32_C4(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

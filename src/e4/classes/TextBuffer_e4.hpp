@@ -14,7 +14,6 @@ struct TextBuffer {
     unsigned int q8000;  // 0x8000
 // --- flat members (END) ---
     int Init(void *a1 = 0, void *a2 = 0);
-    static double u32_2734(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

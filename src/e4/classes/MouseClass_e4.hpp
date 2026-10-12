@@ -45,7 +45,7 @@ struct MouseClass {
 // --- flat members (END) ---
     int MouseClass_field_0x70;  // 0x70 (G57W14E1 til supply)
     void* HandleClick_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon MouseClass::HandleClick is a method)
-    static unsigned int HandleClick(...);
+    static unsigned int HandleClick(MouseClass *p_this);  // x4:ida@0x5bdf50
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);
      int DrawCursor(LPSTREAM pStm);
@@ -89,13 +89,6 @@ struct MouseClass {
     unsigned int q_30;  // +0x30 flat supply (P5 provenance)
     unsigned int q_40;  // +0x40 flat supply (P5 provenance)
     unsigned int q_60;  // +0x60 flat supply (P5 provenance)
-    static double GetLastMouseCursor(...);  // plateau: C2039/C3861 stub
-    static double _base(...);  // plateau: C2039/C3861 stub
-    static double _bufsiz(...);  // plateau: C2039/C3861 stub
-    static double _cnt(...);  // plateau: C2039/C3861 stub
-    static double _file(...);  // plateau: C2039/C3861 stub
-    static double _flag(...);  // plateau: C2039/C3861 stub
-    static double _ptr(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

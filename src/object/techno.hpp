@@ -97,8 +97,6 @@ public:
     unsigned int q0B0;    // 0xB0
     unsigned int q0EC;    // 0xEC
 
-    int CheckTypeFlag1681(int, ...); // vtable slot +996
-    int COMStub_Return0_34(int, ...); // vtable slot +136
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 

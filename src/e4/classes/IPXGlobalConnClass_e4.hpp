@@ -27,9 +27,6 @@ struct IPXGlobalConnClass {
     unsigned char u32_141;  // 0x141 (offset-truth)
     unsigned int u32_CC;  // 0xCC (offset-truth)
     unsigned int u32_D4;  // 0xD4 (offset-truth)
-    static double IPXGlobalConnClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_D0(...);  // plateau: C2039/C3861 stub
 };
 #endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 

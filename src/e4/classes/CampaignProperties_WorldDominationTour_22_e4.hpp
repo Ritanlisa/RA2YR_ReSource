@@ -19,8 +19,5 @@ struct CampaignProperties_WorldDominationTour_22 {
     int AddRef(void *a1_1);  // def-aligned
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q00C(...);  // plateau: C2039/C3861 stub
-    static double u32_8(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

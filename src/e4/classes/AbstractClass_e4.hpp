@@ -418,16 +418,7 @@ int DTOR(); // 0x4101F0
     unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)
     int  sub_5D9060(int a2);  // 0x5D9060
     BOOL sub_7325C0();
-    static int IsTechno(...);
-    static double DiskLaserClass_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x08(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double DiskLaserClass_field_0x24(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
-    static double vt_slot_116(...);  // plateau: C2039/C3861 stub
+    static int IsTechno(AbstractClass *p_this);  // x4:ida@0x40dd20
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

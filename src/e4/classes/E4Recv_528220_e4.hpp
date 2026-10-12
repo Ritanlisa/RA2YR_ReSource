@@ -13,10 +13,5 @@ struct E4Recv_528220 {
     unsigned int M56;  // 0x38
 // --- flat members (END) ---
     int  sub_528220(uint8_t * a2, uint8_t * a3, int a4);  // 0x528220
-    static double attachedBomb(...);  // plateau: C2039/C3861 stub
-    static double fallRate(...);  // plateau: C2039/C3861 stub
-    static double owningHouseIndex(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

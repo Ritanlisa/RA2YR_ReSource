@@ -13,7 +13,6 @@ struct E4Recv_6F25E0 {
     unsigned int M16;  // 0x10
     unsigned int M20;  // 0x14
 // --- flat members (END) ---
-    int Vf8(int,  ...);    // G6 vtable slot dispatch
     char  sub_6F25E0(unsigned int * a2);  // 0x6F25E0
 };
 } // namespace gamemd

@@ -29,6 +29,20 @@ STUBS = SRC / 'e4' / 'e4_static_stubs.cpp'
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 
+# X4: signature authority resolver (shared module); c-branch stubs must be
+# COMPLETE or skipped loudly -- the `(...)` varargs stub path is deleted.
+sys.path.insert(0, str(ROOT / 'tools' / 'csp_export' / '_absorbed'
+                      / 'step4_bodies'))
+from signature_authority import Authority  # noqa: E402
+
+_au = []
+
+
+def au():
+    if not _au:
+        _au.append(Authority(ROOT))
+    return _au[0]
+
 TXT = Path(LOG).read_bytes().decode('utf-8', errors='replace') if LOG else ''
 
 # --------------------------------------------------------------- mining
@@ -99,7 +113,7 @@ tf_txt = TREE_FULL.read_text(encoding='utf-8', errors='replace') \
 tf_classes = set(re.findall(r'^struct (\w+) \{', tf_txt, re.M))
 
 # --------------------------------------------------------------- apply
-added_decls = added_stubs = 0
+added_decls = added_stubs = skipped_stubs = 0
 cls_adds = {}   # cls -> [decl lines]
 stub_adds = []   # full def lines
 
@@ -125,10 +139,23 @@ for (cls, mth), count in sorted(groups.items()):
         cls_adds.setdefault(cls, []).append(decl)
         added_decls += 1
     else:
-        # static varargs stub
-        decl = '    static double %s(...);  // C2039/C3861 interim stub' % mth
+        # X4: resolve a COMPLETE prototype from the authority; no def and no
+        # signature -> loud skip (Q4 gap), never a `...` stub.
+        r = au().resolve(name=mth, prefer_cls=cls)
+        if r is None or r.params is None:
+            print('  !! [x4] no signature for %s::%s -- stub skipped '
+                  '(Q4 gap; see x4 reports)' % (cls, mth))
+            skipped_stubs += 1
+            continue
+        ret = r.ret if r.ret and r.ret != 'unknown' else 'double'
+        decl = ('    static %s %s(%s);  // C2039/C3861 resolved %s@%s'
+                % (ret, mth, r.params, r.provenance, r.addr or ''))
         cls_adds.setdefault(cls, []).append(decl)
-        stub_adds.append('double %s::%s(...) { return 0; }' % (cls, mth))
+        if ret == 'void':
+            stub_adds.append('void %s::%s(%s) {}' % (cls, mth, r.params))
+        else:
+            stub_adds.append('%s %s::%s(%s) { return 0; }'
+                             % (ret, cls, mth, r.params))
         added_stubs += 1
 
 if APPLY and (cls_adds or stub_adds):
@@ -167,5 +194,6 @@ if APPLY and (cls_adds or stub_adds):
         STUBS.write_text(stubs_text, encoding='utf-8')
 
 print(f'C2039/C3861: {len(groups)} groups mined, {added_decls} def-aligned '
-      f'decls, {added_stubs} stubs (tree_full classes: {len(tf_classes)})')
+      f'decls, {added_stubs} stubs ({skipped_stubs} skipped, Q4 gaps; '
+      f'tree_full classes: {len(tf_classes)})')
 print('APPLIED' if APPLY else 'DRY RUN (use --apply)')

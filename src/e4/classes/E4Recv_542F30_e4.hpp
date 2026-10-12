@@ -10,7 +10,5 @@ struct E4Recv_542F30 {
     unsigned int M68;  // 0x44
 // --- flat members (END) ---
     int sub_542F30();  // 0x542F30
-    static double ambientSoundController(...);  // plateau: C2039/C3861 stub
-    static double owningHouseIndex(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

@@ -5,8 +5,13 @@ Round-3 agent-1: ~506 of 534 qualified `Cls::Name(...)` C3861 errors have
 the method ALREADY declared in the class's e4 header -- the error TU just
 doesn't include it.  P1: insert `#include "e4/classes/Cls_e4.hpp"` into
 the (e4-universe) error TU.  P2: non-static decls would then hit C2352 on
-qualified calls -- flip them to `static RET Name(...);` variadic (Math_e4
-precedent), gated: virtual decls and ctors/dtors are NEVER flipped.
+qualified calls -- flip them to `static RET Name(params);` with a COMPLETE
+parameter list resolved from the signature authority (X4 禁 `...`; no def
+and no authority signature -> the flip is skipped loudly).  Gated: virtual
+decls and ctors/dtors are NEVER flipped.
+
+NOTE (X4/T6): this script is retired from the live chains (no step2/step4
+wiring); kept source-hygienic for parity with the rest of the battery.
 
 Usage: [--apply]
 """
@@ -20,6 +25,18 @@ ROOT = Path(__file__).resolve().parents[4]
 APPLY = "--apply" in sys.argv
 CEN = ROOT / ".omo/tu_errors_g136.json"
 E4C = ROOT / "src/e4/classes"
+
+# X4: signature authority resolver (complete prototypes, never `...`)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from signature_authority import Authority  # noqa: E402
+
+_au = []
+
+
+def au():
+    if not _au:
+        _au.append(Authority(ROOT))
+    return _au[0]
 
 census = json.load(open(CEN, encoding="utf-8", errors='replace'))
 Q1, Q2 = chr(0x201C), chr(0x201D)
@@ -95,12 +112,18 @@ for cls, tus in sorted(cls_tus.items()):
                           r'\s*(?://.*)?\r?\n?$' % re.escape(name), ln)
             if dm and 'virtual' not in ln and 'static' not in ln:
                 ret = dm.group(2).strip()
+                r = au().resolve(name=name, prefer_cls=cls)
+                if r is None or r.params is None:
+                    print('  !! [x4] no signature for %s::%s -- static '
+                          'flip skipped (Q4 gap)' % (cls, name))
+                    stats['skipped-x4'] += 1
+                    break
                 ann = ''
                 am = re.search(r'//.*$', ln)
                 if am:
                     ann = '  ' + am.group(0).rstrip("\r\n")
-                hl[i] = '%sstatic %s %s(...);%s\n' % (
-                    dm.group(1), ret or 'int', name, ann)
+                hl[i] = '%sstatic %s %s(%s);%s\n' % (
+                    dm.group(1), ret or 'int', name, r.params, ann)
                 changed = True
                 stats['static-flip'] += 1
                 break

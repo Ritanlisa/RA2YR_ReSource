@@ -36,11 +36,6 @@ struct WaypointPathClass {
     unsigned int * computePath(int a2, unsigned int *a3, void *a1 = 0);
     unsigned int q030;  // 0x30 (canon-mt)
     int waypoints[6];  // 0x28 (ml)
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

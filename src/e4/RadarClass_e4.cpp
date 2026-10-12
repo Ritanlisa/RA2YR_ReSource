@@ -25,7 +25,7 @@
 #include "e4/classes/DSurface_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
-    int GenerateImageThumbnail(...);  // raw 006547C0: int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, char a5)
+    int GenerateImageThumbnail(int* p0, int* p1, int* p2, char p3);  // x4:signals@0x6547c0
 } // namespace gamemd
 
 // 0x652C00

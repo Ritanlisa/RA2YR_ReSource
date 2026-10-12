@@ -87,7 +87,7 @@ struct CellClass {
 // --- flat members (END) ---
     unsigned int mapCoords[2];  // G42.34 T11: initCellData body 0x588C40 does IDA_LOWORD/HIWORD(this->mapCoords[0]) (CellStruct 2-word truth); scalar form C2109
     void* RevealFogRect_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon CellClass::RevealFogRect is a method)
-    static unsigned int RevealFogRect(...);
+    static unsigned int RevealFogRect(int16_t* p0);  // x4:signals@0x6565a0
     char UpdateTerrain(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056F8B0 IUnknown 占位清除
     char UpdateTileVariant2(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056FC80 IUnknown 占位清除
     char UpdateVariant3(unsigned short *a1, int a2);  // G57w10-S raw 0x0056EF50 IUnknown 占位清除
@@ -144,14 +144,12 @@ static int * GetCoords(CellClass * aP1, int *a2);
     unsigned short *  initCellData(unsigned short * a2);  // 0x588C40
     static void * AddObject(void * a1, void * a2);  // G42.39a static-call supply
     static unsigned int * Construct(void *aP1);
-    static int ApplyTileMod58(...);
-    static int InitRandomOffsets(...);
-    static int ProcessUpdate(...);
-    static int FindOpenNeighbor(...);
+    static int ApplyTileMod58(int p0);  // x4:signals@0x57f440
+    static int InitRandomOffsets(int p0, int p1);  // x4:signals@0x4814f0
+    static int ProcessUpdate(CellClass *p_this);  // x4:ida@0x5a7b40
+    static int FindOpenNeighbor(int* p0, int p1, int p2, int p3, int p4, int p5, int p6);  // x4:signals@0x4aa440
     void* q028;  // 0x28 (canon-mt)
     unsigned int u32_2F4;  // 0x2F4 (offset-truth)
-    static double q0A4(...);  // plateau: C2039/C3861 stub
-    static double whatAmI(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

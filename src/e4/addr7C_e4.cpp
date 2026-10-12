@@ -37,7 +37,6 @@
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/AllocCallback_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
-namespace gamemd { int _wcstombs_lk(...); }
 extern double dbl_7F98B4;  // data: 0x7F98B4
 extern double dbl_7F98BC;  // data: 0x7F98BC
 extern double dbl_7F98C4;  // data: 0x7F98C4

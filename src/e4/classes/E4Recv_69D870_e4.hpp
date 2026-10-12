@@ -13,9 +13,5 @@ struct E4Recv_69D870 {
     unsigned int M13;  // 0xD
 // --- flat members (END) ---
     unsigned int *  sub_69D870(int a2, int a3);  // 0x69D870
-    static double Capacity(...);  // plateau: C2039/C3861 stub
-    static double IsAllocated(...);  // plateau: C2039/C3861 stub
-    static double IsInitialized(...);  // plateau: C2039/C3861 stub
-    static double Items(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

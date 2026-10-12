@@ -44,10 +44,10 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ObjectClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int sub_4B6AB0(...); }  // w18j2 raw 0x004B6AB0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_4B6AB0(int p0, int p1); }  // x4:signals@0x4b6ab0
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int sub_4C2FC0(...); }  // w16g4 raw call-form
-namespace gamemd { int sub_557380(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4C2FC0(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9); }  // x4:signals@0x4c2fc0
+namespace gamemd { int sub_557380(int p0, int p1); }  // x4:signals@0x557380
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int g_DDraw_Gray127;  // data: 0x8a0de8 truth(IDA G42.57w9)
 

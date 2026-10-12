@@ -94,10 +94,6 @@ static char * GetMissionControl(MissionClass * aP1);
     int ForceMission();
     int NextMission();
     int QueueMission();
-    static double ObjectClass(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

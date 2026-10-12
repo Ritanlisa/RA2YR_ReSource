@@ -333,7 +333,7 @@ HANDLE sub_751EA0(const CHAR * a1, unsigned int * a2, unsigned int * a3, unsigne
 }
 
 // ==== BACKFILL 0x007529E0  Audio::IsPlaying  cls=unknown  sig=csp  renamed_refs=0  residual=- ====
-int IsPlaying(...)
+int IsPlaying(Theme *p_this)  // x4:ida@0x720fd0
 {
      return 0; // TODO stub - quarantined G42 T9 (raw dialect; truth = .omo/ida_cache/func_0x007529E0.json)
 }

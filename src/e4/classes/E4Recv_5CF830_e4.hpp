@@ -8,7 +8,6 @@ struct E4Recv_5CF830 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
-    int Vf16(int,  ...);    // G6 vtable slot dispatch
     int  Network_Load(char a2);  // 0x5CF830
 };
 } // namespace gamemd

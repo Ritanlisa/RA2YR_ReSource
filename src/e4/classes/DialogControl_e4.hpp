@@ -21,8 +21,6 @@ struct DialogControl {
     unsigned int u32_64;  // 0x64 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_90;  // 0x90 (offset-truth)
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_3C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

@@ -13,9 +13,6 @@ struct E4Recv_520260 {
     unsigned int M981;  // 0x3D5
     unsigned int M1492;  // 0x5D4
 // --- flat members (END) ---
-    int Vf248(int,  ...);    // G6 vtable slot dispatch
-    int Vf388(int,  ...);    // G6 vtable slot dispatch
-    int Vf928(int,  ...);    // G6 vtable slot dispatch
     char sub_520260();  // 0x520260
 };
 } // namespace gamemd

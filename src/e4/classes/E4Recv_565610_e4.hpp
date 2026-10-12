@@ -11,6 +11,5 @@ struct E4Recv_565610 {
 // --- flat members (END) ---
     unsigned int *  sub_565610(unsigned int * a2, int16_t * a3);  // 0x565610
     unsigned char q03D;  // 0x3D (offset-truth)
-    static double u32_F4(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

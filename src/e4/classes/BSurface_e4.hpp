@@ -34,8 +34,5 @@ struct BSurface {
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_288;  // 0x288 (offset-truth)
     unsigned int u32_4;  // 0x4 (offset-truth)
-    static double XSurface(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

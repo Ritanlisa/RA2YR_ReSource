@@ -560,6 +560,12 @@ STAGE_DEFS = [
              dict(grep=('bare globals',))),
             ('fix_gf_wire.py', ('--apply',),
              dict(script_dir=A, grep=('wired', 'includes'))),
+            # X4: complete-signature landing -- upgrades every residual `...`
+            # declaration (historical one-off emitters' frozen output) from
+            # the signature authority; idempotent (0 writes on a clean tree);
+            # gaps -> Q4 defect/ledger reports (never a `...` fallback).
+            ('land_complete_signatures.py', ('--apply',),
+             dict(script_dir=A, grep=('site(s)', 'applied:', 'gaps'))),
             ('fix_legacy_e4_globals_redirect.py', ('--apply',),
              dict(script_dir=A, check=False, policy='account')),
             ('fix_link_stubs_prune.py', ('--apply',),

@@ -13,6 +13,5 @@ struct E4Recv_74BDC0 {
     unsigned int M16;  // 0x10
 // --- flat members (END) ---
     int  sub_74BDC0(unsigned int a2);  // 0x74BDC0
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

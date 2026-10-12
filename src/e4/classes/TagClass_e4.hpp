@@ -43,13 +43,6 @@ struct TagClass {
     TriggerClass * * Destructor(void * a1);
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
-    static double firstTrigger(...);  // C2597 interim stub
-    static double AbstractClass(...);  // plateau: C2039/C3861 stub
-    static double u32_44(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vtable20(...);  // plateau: C2039/C3861 stub
-    static double vtable26(...);  // plateau: C2039/C3861 stub
-    static double vtable27(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

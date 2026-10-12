@@ -67,18 +67,18 @@ namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { int RegisterInArray(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int RegisterInArray(int p0, int p1, int p2, int p3); }  // x4:signals@0x5ff250
 namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
-namespace gamemd { int ShowMissionBriefing(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int Shutdown(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ShowMissionBriefing(ScenarioClass *p_this); }  // x4:ida@0x65f520
+namespace gamemd { int Shutdown(Audio *p_this); }  // x4:ida@0x406d40
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
-namespace gamemd { int ShowDiplomacyDialog(...); }  // w18j2 raw 0x006586D0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int GameFrameCheck(...); }  // w18j2 raw 0x0055CFD0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
-namespace gamemd { int MainGameFrame(...); }  // w18j2 raw 0x0048C8B0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ShowDiplomacyDialog(ObjectClass *p_this); }  // x4:ida@0x6586d0
+namespace gamemd { int GameFrameCheck(ObjectClass *p_this); }  // x4:ida@0x55cfd0
+namespace gamemd { int MainGameFrame(ObjectClass *p_this); }  // x4:ida@0x48c8b0
 // [w16g4] C3861 supply (raw call-form evidence)
-namespace gamemd { int ShowConfirmDialog(...); }  // w16g4 raw call-form
-namespace gamemd { int ShowGameDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int ShowConfirmDialog(uint16_t* p0, int p1); }  // x4:signals@0x5c60d0
+namespace gamemd { int ShowGameDialog(); }  // x4:empty@0x4f1840
 
 // 0x4880F0
 namespace gamemd {  // G42.18 ns repair

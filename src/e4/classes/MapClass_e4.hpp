@@ -88,7 +88,7 @@ struct MapClass {
     int IsAreaFree(int *a2, int a3);
     int IsCellPassable(int a1, int a2);
     int LoadTerrainData(MapClass * aP1);
-    static int MarkForRedraw(...);
+    static int MarkForRedraw(int p0);  // x4:signals@0x4f42f0
     int ProcessFogTransition();
     int ProcessRegion();
     int ProcessTile();
@@ -147,52 +147,6 @@ struct MapClass {
     unsigned char q0585;  // 0x585 (offset-truth)
     unsigned char q0805;  // 0x805 (offset-truth)
     unsigned char u32_6F47;  // 0x6F47 (offset-truth)
-    static double cells(...);  // C2597 interim stub
-    static double cellsCount(...);  // C2597 interim stub
-    static double Activated(...);  // plateau: C2039/C3861 stub
-    static double AllowCellContent(...);  // plateau: C2039/C3861 stub
-    static double AnimationProbability(...);  // plateau: C2039/C3861 stub
-    static double AnimationRate(...);  // plateau: C2039/C3861 stub
-    static double ArrayIndex(...);  // plateau: C2039/C3861 stub
-    static double DamageArea(...);  // plateau: C2039/C3861 stub
-    static double Foundation(...);  // plateau: C2039/C3861 stub
-    static double FoundationData(...);  // plateau: C2039/C3861 stub
-    static double Immune(...);  // plateau: C2039/C3861 stub
-    static double Insignificant(...);  // plateau: C2039/C3861 stub
-    static double IsVeinhole(...);  // plateau: C2039/C3861 stub
-    static double LegalTarget(...);  // plateau: C2039/C3861 stub
-    static double MapClass_field_0x0(...);  // plateau: C2039/C3861 stub
-    static double MapClass_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double MapClass_field_0x28(...);  // plateau: C2039/C3861 stub
-    static double MapClass_field_0x2C(...);  // plateau: C2039/C3861 stub
-    static double Name(...);  // plateau: C2039/C3861 stub
-    static double RadarColor(...);  // plateau: C2039/C3861 stub
-    static double RadarInvisible(...);  // plateau: C2039/C3861 stub
-    static double Selectable(...);  // plateau: C2039/C3861 stub
-    static double SnowOccupationBits(...);  // plateau: C2039/C3861 stub
-    static double SpawnsTiberium(...);  // plateau: C2039/C3861 stub
-    static double TemperateOccupationBits(...);  // plateau: C2039/C3861 stub
-    static double WaterBound(...);  // plateau: C2039/C3861 stub
-    static double __pad_070(...);  // plateau: C2039/C3861 stub
-    static double __pad_1170(...);  // plateau: C2039/C3861 stub
-    static double __pad_11A4(...);  // plateau: C2039/C3861 stub
-    static double __pad_13C(...);  // plateau: C2039/C3861 stub
-    static double __pad_18(...);  // plateau: C2039/C3861 stub
-    static double __pad_298(...);  // plateau: C2039/C3861 stub
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q070(...);  // plateau: C2039/C3861 stub
-    static double q200(...);  // plateau: C2039/C3861 stub
-    static double q298(...);  // plateau: C2039/C3861 stub
-    static double u32_115C(...);  // plateau: C2039/C3861 stub
-    static double u32_1160(...);  // plateau: C2039/C3861 stub
-    static double u32_1164(...);  // plateau: C2039/C3861 stub
-    static double u32_119C(...);  // plateau: C2039/C3861 stub
-    static double u32_11A0(...);  // plateau: C2039/C3861 stub
-    static double u32_45A4(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
-    static double vfptr1(...);  // plateau: C2039/C3861 stub
-    static double vfptr2(...);  // plateau: C2039/C3861 stub
-    static double vfptr3(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

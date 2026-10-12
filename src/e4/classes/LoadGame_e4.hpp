@@ -19,13 +19,6 @@ struct LoadGame {
     int RestoreAudioState();
     char Start(void *a1 = 0, void *a2 = 0);
     static int LoadBlock68(LoadGame * aP1, int a2);
-    static double LoadGame_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double LoadGame_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double LoadGame_field_0x14(...);  // plateau: C2039/C3861 stub
-    static double LoadGame_field_0x18(...);  // plateau: C2039/C3861 stub
-    static double LoadGame_field_0x1C(...);  // plateau: C2039/C3861 stub
-    static double LoadGame_field_0x20(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd

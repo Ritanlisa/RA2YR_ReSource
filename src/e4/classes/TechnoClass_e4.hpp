@@ -358,13 +358,12 @@ struct TechnoClass {
     static int CalcOffsetFacing(void *aP1);
     static int ComputeScanRange(void *aP1, double a2);
     unsigned int Deploy_ph;  // w18j3: filler renamed (no offset truth; canon TechnoClass::Deploy is a method)
-    static unsigned int Deploy(...);
+    static unsigned int Deploy();  // x4:empty@0x7393c0
     unsigned int EvaluateTarget_ph;  // w18j3: filler renamed (no offset truth; canon TechnoClass::EvaluateTarget is a method)
-    static unsigned int EvaluateTarget(...);
+    static unsigned int EvaluateTarget(int p0, int p1, int p2, int p3, int* p4, int p5, int p6);  // x4:signals@0x6f7ca0
     void* GetAudioEntry_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon TechnoClass::GetAudioEntry is a method)
-    static unsigned int GetAudioEntry(...);
     void* GatherAllBuildings_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon TechnoClass::GatherAllBuildings is a method)
-    static unsigned int GatherAllBuildings(...);
+    static unsigned int GatherAllBuildings();  // x4:empty@0x732050
     void* IsCapturableByPlayer;  // 0x0 (no offset truth)
     static int checkCloakState(TechnoClass *pThis);
     BOOL processDamageAnimation(int a1);
@@ -420,8 +419,8 @@ struct TechnoClass {
     int sub_724550();  // 0x724550
     int sub_724570();  // 0x724570
     int sub_724A30(int * a2);
-    static int CalcFacingFromMatrix(...);
-    static int ClearArrays(...);
+    static int CalcFacingFromMatrix(float *p_this);  // x4:ida@0x5af410
+    static int ClearArrays();  // x4:empty@0x5f99e0
     void* vtable0;  // 0x0 (W16G3: addr42 0x424CE0/0x424F00/0x425670 receiver sites, ObjectClass-vocab)
     char __pad_0B0[4];  // 0xB0 @0x6ea681 (W16G3 raw-usage vocab)
     unsigned int q_610;  // 0x610 @0x6ea71e (W16G3 raw-usage vocab)
@@ -431,15 +430,6 @@ struct TechnoClass {
     int damageParticles_2;  // 0x324 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
     int railgunParticles_2;  // 0x328 (ml)
-    static double Deactivate(...);  // plateau: C2039/C3861 stub
-    static double currentBurstCount0(...);  // plateau: C2039/C3861 stub
-    static double disguiseBlinkTimer_d4(...);  // plateau: C2039/C3861 stub
-    static double disguiseCreationFrame_d6(...);  // plateau: C2039/C3861 stub
-    static double drainingMe0(...);  // plateau: C2039/C3861 stub
-    static double isDisguisedFlag8(...);  // plateau: C2039/C3861 stub
-    static double transporter_d0(...);  // plateau: C2039/C3861 stub
-    static double turretChargeTimer_d8(...);  // plateau: C2039/C3861 stub
-    static double vfptr(...);  // plateau: C2039/C3861 stub
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

@@ -48,22 +48,5 @@ struct MSEngine {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
     unsigned char u32_51;  // 0x51 (offset-truth)
-    static double MSEngine_field_0x4(...);  // plateau: C2039/C3861 stub
-    static double MSEngine_field_0x8(...);  // plateau: C2039/C3861 stub
-    static double MSEngine_field_0xC(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double __pad_0048(...);  // plateau: C2039/C3861 stub
-    static double __pad_011(...);  // plateau: C2039/C3861 stub
-    static double q004(...);  // plateau: C2039/C3861 stub
-    static double q008(...);  // plateau: C2039/C3861 stub
-    static double q00B(...);  // plateau: C2039/C3861 stub
-    static double q010(...);  // plateau: C2039/C3861 stub
-    static double u32_20(...);  // plateau: C2039/C3861 stub
-    static double u32_28(...);  // plateau: C2039/C3861 stub
-    static double u32_2C(...);  // plateau: C2039/C3861 stub
-    static double u32_30(...);  // plateau: C2039/C3861 stub
-    static double u32_38(...);  // plateau: C2039/C3861 stub
-    static double u32_40(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 } // namespace gamemd

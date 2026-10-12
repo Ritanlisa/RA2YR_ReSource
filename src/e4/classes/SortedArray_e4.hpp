@@ -20,14 +20,6 @@ struct SortedArray {
     int  Find(int * a2, void *a1 = 0);  // 0x52b170
     void * BinarySearch2(int *a2, void *a1 = 0);
     unsigned char q0046;  // 0x46 (offset-truth)
-    static double SortedArray_field_0x04(...);  // plateau: C2039/C3861 stub
-    static double SortedArray_field_0x0C(...);  // plateau: C2039/C3861 stub
-    static double SortedArray_field_0x10(...);  // plateau: C2039/C3861 stub
-    static double __pad_0(...);  // plateau: C2039/C3861 stub
-    static double u32_10(...);  // plateau: C2039/C3861 stub
-    static double u32_20(...);  // plateau: C2039/C3861 stub
-    static double u32_4(...);  // plateau: C2039/C3861 stub
-    static double u32_C(...);  // plateau: C2039/C3861 stub
 };
 
 } // namespace gamemd
