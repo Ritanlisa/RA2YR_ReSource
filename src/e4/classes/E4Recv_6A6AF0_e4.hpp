@@ -11,5 +11,7 @@ struct E4Recv_6A6AF0 {
 // --- flat members (END) ---
     void* vtable1;  // 0x0 (no offset truth)
     int  sub_6A6AF0(char a2, int a3);  // 0x6A6AF0
+
+    char u8_F94;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

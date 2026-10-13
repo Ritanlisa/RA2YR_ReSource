@@ -29,5 +29,12 @@ struct Vector {
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     void Math_Vector2D_Magnitude();  // plateau: def-aligned C2039/C2660
+
+    unsigned char __pad_010;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

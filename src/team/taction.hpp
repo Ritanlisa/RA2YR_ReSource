@@ -139,5 +139,7 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ctor();  // 0x6DD000
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char HouseClass_A20[4];  /* HouseClass */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

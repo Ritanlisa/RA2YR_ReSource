@@ -165,6 +165,8 @@ struct WaveClass {
     unsigned int u32_1F4;  // 0x1F4 (offset-truth)
     unsigned int u32_1F8;  // 0x1F8 (offset-truth)
     unsigned char u32_1FD;  // 0x1FD (offset-truth)
+
+    unsigned int Owner;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

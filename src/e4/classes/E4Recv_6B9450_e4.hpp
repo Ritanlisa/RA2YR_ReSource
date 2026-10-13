@@ -20,5 +20,8 @@ struct E4Recv_6B9450 {
     unsigned int M36;  // 0x36
 // --- flat members (END) ---
     unsigned int * sub_6B9450();  // 0x6B9450
+
+    unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

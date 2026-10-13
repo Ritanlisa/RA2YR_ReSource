@@ -13,5 +13,7 @@ struct E4Recv_54E690 {
     unsigned int M28;  // 0x1C
 // --- flat members (END) ---
     void sub_54E690();  // 0x54E690
+
+    unsigned int q050;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -154,6 +154,13 @@ OverlayTypeClass(ObjectClass * aP1);
     unsigned char u32_309;  // 0x309 (offset-truth)
     unsigned char u32_30A;  // 0x30A (offset-truth)
     unsigned char u32_30B;  // 0x30B (offset-truth)
+
+    unsigned char q2C0;  // X10 supply (member_lookup)
+    unsigned char q2E0;  // X10 supply (member_lookup)
+    uint32_t u32_2D0;  // X10 supply (member_lookup)
+    unsigned int u32_2E4;  // X10 supply (member_lookup)
+    int u32_2F0;  // X10 supply (member_lookup)
+    unsigned int u32_30C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

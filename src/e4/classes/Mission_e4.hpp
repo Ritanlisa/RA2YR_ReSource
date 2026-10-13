@@ -16,5 +16,18 @@ struct Mission_e4 {
     int  SetAndCall(int a2, int a3);  // 0x5BDA80
     char  AssignTeamMemberMissions(int a2, int a3);  // 0x6ED7E0
     int GetMissionDelay(void *a1_1);  // 0x70F770
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_294;  // X10 supply (member_lookup)
+    unsigned int u32_2B4;  // X10 supply (member_lookup)
+    unsigned int u32_5A4;  // X10 supply (member_lookup)
+    unsigned int u32_674;  // X10 supply (member_lookup)
+    unsigned int u32_6C0;  // X10 supply (member_lookup)
+    unsigned int u32_6C4;  // X10 supply (member_lookup)
+    unsigned int u32_9C;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_A4;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
+    double u64_578;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

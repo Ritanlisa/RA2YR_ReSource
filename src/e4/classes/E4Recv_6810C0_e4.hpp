@@ -13,5 +13,7 @@ struct E4Recv_6810C0 {
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
     const char * _raw_name_type_info__QBEPBDXZ();  // 0x6810C0
+
+    char u8_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

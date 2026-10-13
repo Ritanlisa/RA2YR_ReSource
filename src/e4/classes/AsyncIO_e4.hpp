@@ -30,6 +30,10 @@ struct AsyncIO {
     unsigned char q0242;  // 0x242 (offset-truth)
     unsigned int u32_180;  // 0x180 (offset-truth)
     unsigned char u32_1C6;  // 0x1C6 (offset-truth)
+
+    unsigned int q092;  // X10 supply (member_lookup)
+    unsigned char q129;  // X10 supply (member_lookup)
+    unsigned int q146;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

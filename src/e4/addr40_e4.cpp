@@ -1846,7 +1846,7 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
             }
             v8 = v3[1]; /*0x40878e*/
             a2[3] = v8; /*0x408792*/
-            a2[5] = *((unsigned int *)v3 + 2); /*0x408798*/
+            a2[5] = v3->u32_8; /*0x408798*/
             v9 = v8 * a2[4]; /*0x40879e*/
             v10 = v3->u32_4; /*0x4087a1*/
             *a2 = 4; /*0x4087a4*/
@@ -4811,7 +4811,7 @@ void sub_407780(Voice * a1)
       {
         if ( !Next[6].AudioSample_field_0x10 ) /*0x407803*/
         {
-          if ( *(unsigned int *)Next[1].__pad_0 ) /*0x40780d*/
+          if ( *Next->q004.__pad_0 ) /*0x40780d*/
           {
             EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407819*/
             ((Voice *)(v2))->Stop(); /*0x40781e*/
@@ -4946,8 +4946,8 @@ int sub_408410()
   Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x40841f*/
   if ( !Next ) /*0x408426*/
     return 1; /*0x40844c*/
-  while ( (Next->__pad_0[12] & 1) == 0 /*0x408439*/
-       || *(unsigned int *)(Next->AudioQueue_field_0x14[0] + 20) == *(unsigned int *)(Next->AudioQueue_field_0x14[0] + 24) )
+  while ( (Next->u32_C & 1) == 0 /*0x408439*/
+       || *(unsigned int *)(Next->u32_14 + 20) == *(unsigned int *)(Next->u32_14 + 24) )
   {
     Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x40843d*/
     if ( !Next ) /*0x408444*/

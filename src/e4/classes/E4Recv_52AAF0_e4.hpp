@@ -11,5 +11,10 @@ struct E4Recv_52AAF0 {
     AbstractClass * ptr_18;  // 0x24
 // --- flat members (END) ---
     void sub_52AAF0();  // 0x52AAF0
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

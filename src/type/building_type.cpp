@@ -1,4 +1,5 @@
 #include "type/building_type.hpp"
+#include "render/shp_struct.hpp"
 
 namespace gamemd {
 

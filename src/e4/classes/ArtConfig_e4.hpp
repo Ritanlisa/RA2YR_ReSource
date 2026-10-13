@@ -15,6 +15,9 @@ struct ArtConfig {
     unsigned int u32_1C;  // 0x1C (offset-truth)
     void* ;  // 0x28 (offset-truth)
     unsigned char u32_C2;  // 0xC2 (offset-truth)
+
+    unsigned char q020;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

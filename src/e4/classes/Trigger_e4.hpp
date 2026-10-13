@@ -29,5 +29,18 @@ struct Trigger {
     unsigned int u32_470;  // 0x470 (offset-truth)
     unsigned int u32_478;  // 0x478 (offset-truth)
     unsigned int u32_84;  // 0x84 (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_008;  // X10 supply (csp_canon_members)
+    unsigned char __pad_458;  // X10 supply (member_lookup)
+    unsigned char q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
+    MSShapeAnim * q024;  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    int q048;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    char u8_4706;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

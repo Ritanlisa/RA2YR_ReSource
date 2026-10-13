@@ -22,5 +22,11 @@ struct Tactical_42 {
     VectorClass_flat *  QueryInterface(char a2);  // 0x6E4AB0
     unsigned int  PointerToIndex(int a2);  // 0x6E4820
     unsigned int  InitMap(int a2);  // 0x6E49B0
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

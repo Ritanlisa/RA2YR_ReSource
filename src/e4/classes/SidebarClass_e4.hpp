@@ -64,6 +64,13 @@ struct SidebarClass {
     static int updateStripVisibility(SidebarClass *p_this);  // x4:ida@0x724530
     static int initializeStrip(int p0);  // x4:signals@0x724520
     static int updateStripPosition(SidebarClass *p_this);  // x4:ida@0x724540
+
+    int q05C;  // X10 supply (member_lookup)
+    int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_539C;  // X10 supply (member_lookup)
+    unsigned int u32_53A7;  // X10 supply (member_lookup)
+    unsigned int u32_F94;  // X10 supply (member_lookup)
+    unsigned int u32_FCC;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

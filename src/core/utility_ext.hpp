@@ -92,6 +92,8 @@ public:
     unsigned char q00C;  // 0xC (canon-mt)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_MoveFeedback_DEF
 #endif  // GAMEMD_E4_MoveFeedback
@@ -134,6 +136,20 @@ public:
     static bool     s_IsLoading;        // 0x00
     static uint32_t s_LoadVersion;      // 0x04
     static uint32_t s_BlockIndex;       // 0x08
+
+    int q00C;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
+    int q01C;  // X10 supply (member_lookup)
+    int q020;  // X10 supply (member_lookup)
+    unsigned char q025;  // X10 supply (member_lookup)
+    int q028;  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    unsigned int u32_2580;  // X10 supply (member_lookup)
+    unsigned int u32_2588;  // X10 supply (member_lookup)
+    int u8_D;  // X10 supply (member_lookup)
+
+    int q010;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_LoadGame
 
@@ -287,6 +303,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* InitTriple256(int a1);  // 0x5f75e0
     // === FUNCS-MOVE (END) ===
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_Struct
 
@@ -779,6 +799,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Init();  // 0x589680
     unsigned int * QueryInterface(char a2);  // 0x58A420 G42.35 C7 体签名
     // --- gap2 auto-generated stub declarations (END) ---
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    void* q010;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_unknown
 
@@ -952,6 +975,31 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int m_10;
     unsigned int m_8;
     unsigned int field_18;
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    unsigned int q00D;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned char q014[4];  /* String */  // X10 supply (member_lookup)
+
+    unsigned char __pad_01A;  // X10 supply (csp_canon_members)
+    unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int u32_110;  // X10 supply (member_lookup)
+    unsigned int u32_120;  // X10 supply (member_lookup)
+    unsigned int u32_130;  // X10 supply (member_lookup)
+    unsigned int u32_140;  // X10 supply (member_lookup)
+    unsigned int u32_60;  // X10 supply (member_lookup)
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned int u32_80;  // X10 supply (member_lookup)
+    unsigned int u32_90;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_C0;  // X10 supply (member_lookup)
+    unsigned int u32_D0;  // X10 supply (member_lookup)
+    unsigned int u32_E0;  // X10 supply (member_lookup)
+    unsigned int u32_F0;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_COMClass
 // 2 methods in IDA
@@ -967,6 +1015,9 @@ public:
 
     uint8_t COMClassFactory_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6bedb4)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_10 matched via T1
@@ -980,6 +1031,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BFBC0)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_3 matched via T1
@@ -993,6 +1046,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF140)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_4 matched via T1
@@ -1006,6 +1061,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF2C0)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_5 matched via T1
@@ -1019,6 +1076,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF440)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_6 matched via T1
@@ -1032,6 +1091,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF5C0)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_7 matched via T1
@@ -1045,6 +1106,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF740)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_8 matched via T1
@@ -1058,6 +1121,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BF8C0)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: COMClassFactory_9 matched via T1
@@ -1071,6 +1136,8 @@ public:
     unsigned int COMClassFactory_field_0x04;  // G42.35 C7 体词汇 (基类别名)
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x6BFA40)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 27 methods in IDA
 // CSP: COMObject matched via T1
@@ -1146,21 +1213,16 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *m_2D;  // supplied (C2039)
 
     unsigned char __pad_009;  // G42.39 data supply
+
+    int q030;  // X10 supply (member_lookup)
+    int q03C;  // X10 supply (member_lookup)
+    int q040;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned char u8_1E;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_COMObject
 
 // 1 methods in IDA
-#ifndef GAMEMD_E4_CRC32  // G42.35h: e4 flat carrier wins in opt-in TUs (Hash/SHA1 pattern)
-class CRC32
-{
-public:
-    // design: default destructor (compiler-generated), no callgraph reference
-    virtual ~CRC32() = default;
-
-    virtual void Compute(); // 0x4A1FB0
-
-};
-#endif  // GAMEMD_E4_CRC32
 #ifndef GAMEMD_E4_ComPtr  // G57a1: e4 flat carrier wins in e4 TUs
 // 9 methods in IDA
 class ComPtr
@@ -1195,6 +1257,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int DestroyWrapper(int a1, int a2);  // 0x76f000
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
 };
 
 #endif  // GAMEMD_E4_ComPtr
@@ -1207,6 +1272,12 @@ public:
 
     virtual char UpdateDisplay(char a2);  // 0x4A2600 G42.33 b3 体签名
 
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_9;  // X10 supply (member_lookup)
+    unsigned int u32_A;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 // CSP: CountryCombo matched via T1
@@ -1259,6 +1330,16 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int *m_10;  // supplied (C2039)
     unsigned int *m_8;  // supplied (C2039)
     unsigned int *m_C;  // supplied (C2039)
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int q01C;  // X10 supply (member_lookup)
+    unsigned int u32_19;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_EnumConnectionPointsClass
 
@@ -1287,6 +1368,13 @@ public:
     // === FUNCS-MOVE (END) ===
 
     unsigned int u32_1C;  // G42.39 data supply
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int u32_11;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_EnumConnectionsClass
 
@@ -1324,6 +1412,8 @@ public:
     unsigned int u32_19;  // G42.39 data supply
 
     unsigned int u32_18;  // G42.39 data supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 
 #endif  // GAMEMD_E4_Flag
@@ -1392,6 +1482,12 @@ public:
     unsigned int u32_18;  // G42.39 data supply
 
     unsigned int u32_1C;  // G42.39 data supply
+
+    int q010;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    int u8_9;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_GraphicMenuAnimItem
 
@@ -1419,6 +1515,16 @@ virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
     unsigned int u32_18;  // G42.39 data supply
 
     unsigned int q008;  // G42.39 (size usage)  // G42.39 data supply
+
+    int q010;  // X10 supply (member_lookup)
+    unsigned char q034;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    int u8_9;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: GraphicMenuItem matched via T1
@@ -1439,6 +1545,9 @@ public:
     unsigned int u32_8;  // G42.39 data supply
 
     unsigned int u32_C;  // G42.39 data supply
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_GraphicMenuItem
 
@@ -1471,24 +1580,14 @@ public:
     unsigned int *__pad_0;  // G42.35 C6 体词汇 (0x4f3f63 vfptr 槽)
 
     unsigned int u32_9;  // G42.39 data supply
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1D;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
-#ifndef GAMEMD_E4_Hash  // G42.33 b3: e4 flat carrier wins in opt-in TUs
-class Hash
-{
-public:
-    // design: default destructor (compiler-generated), no callgraph reference
-    virtual ~Hash() = default;
-
-    virtual void ComputeHashSHA1(); // 0x476D80
-    virtual void InsertOrdered(); // 0x4F4410
-    int Reset(); // 0x5565F0
-    static int Reset(void *aP0);  // 0x5565F0 G42.35 static-form sync (ui/supplied site 0x4B4F1C)
-
-    uint8_t Hash_field_0x04[4];
-    uint8_t Hash_field_0x08[4];
-};
-#endif  // GAMEMD_E4_Hash
 // 4 methods in IDA
 // CSP: HashMap matched via T1
 class HashMap
@@ -1512,6 +1611,11 @@ public:
     unsigned int u32_14;  // G42.39 data supply
 
     unsigned int u32_18;  // G42.39 data supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 27 methods in IDA
 #ifndef GAMEMD_E4_HashTable  // G57a1: e4 flat carrier wins in e4 TUs
@@ -1556,6 +1660,8 @@ public:
     unsigned int u32_4;  // G42.39 data supply
     unsigned int u32_C;  // G42.39 data supply
     unsigned int u32_10;  // G42.39 data supply
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 
@@ -1569,6 +1675,11 @@ public:
 
     virtual int FindSection(uint8_t *a2, uint8_t *a3); // 0x526B10 G42.35 C6 体签名
 
+
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class HashTree
@@ -1608,6 +1719,12 @@ public:
 
     virtual char PushBack(unsigned int *a2); // 0x4E0C40 G42.34 C5 体签名
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
 };
 // 12 methods in IDA
 // CSP: PlayerClass matched via T1
@@ -1668,6 +1785,17 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void * q020;  // G42.39 data supply
 
     unsigned int u32_81;  // G42.39 data supply
+
+    int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_60;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_D90;  // X10 supply (member_lookup)
+    unsigned int u32_D94;  // X10 supply (member_lookup)
+    unsigned int u32_D98;  // X10 supply (member_lookup)
+    unsigned int u32_D9C;  // X10 supply (member_lookup)
+    unsigned int u32_DB0;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_PlayerClass
 
@@ -1682,6 +1810,8 @@ public:
 
 
     void * q0046;  // G42.39 data supply
+
+    unsigned char DeleteAndZero_46[4];  /* DeleteAndZero */  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 // CSP: PlayerSlot matched via T1
@@ -1721,23 +1851,6 @@ public:
 #endif  // GAMEMD_E4_PtrVector
 
 // 1 methods in IDA
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: e4 Queue_e4(audio DList) 树宇宙抑制
-#ifndef GAMEMD_E4_Queue  // G42.33 b3: e4 flat carrier wins in opt-in TUs
-#ifndef GAMEMD_G2_Queue_DEF  // g57a5 W2d: twin-definition guard (utility_ext Queue)
-#define GAMEMD_G2_Queue_DEF 1
-class Queue
-{
-public:
-    // design: default destructor (compiler-generated), no callgraph reference
-    virtual ~Queue() = default;
-
-    int GetNext(); // 0x407470
-
-};
-#endif  // GAMEMD_G2_Queue_DEF
-
-#endif  // GAMEMD_E4_Queue
-#endif  // GAMEMD_TREE_UNIVERSE (Queue)
 // 4 methods in IDA
 #ifndef GAMEMD_E4_Random  // G57a1: e4 flat carrier wins in e4 TUs
 #ifndef GAMEMD_G2_Random_DEF  // g57a5 W2d: twin-definition guard (utility_ext Random)
@@ -1757,6 +1870,9 @@ public:
     uint8_t Random_field_0x08[4];
     uint8_t Random_field_0x0C[4];
     unsigned int *__pad_0;  // G42.35 C8 体词汇 (0x65c780 指针解引用)
+
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_Random_DEF
 
@@ -1776,6 +1892,10 @@ public:
     uint8_t RandomStraw_field_0x04[4];
     unsigned int *__pad_0;  // G42.35 C7 体词汇 (0x65c8ba)
     uint8_t RandomStraw_field_0x08[4];
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned char q010;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: Rect_Point matched via T1
@@ -1804,9 +1924,13 @@ public:
     void* Constructor(); // 0x65D660
     static int Constructor(void *aP0);  // 0x65D660 G42.35 static-form sync (ui/supplied site 0x765660)
 
+
+    unsigned char String_3[4];  /* String */  // X10 supply (member_lookup)
 };
 // 6 methods in IDA
 #ifndef GAMEMD_E4_SHA1  // G42.33 b3: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_SHA1_DEF  // X10: first-include-wins twin guard
+#define GAMEMD_G2_SHA1_DEF 1
 class SHA1
 {
 public:
@@ -1826,6 +1950,8 @@ public:
     uint8_t SHA1_field_0x10[4];
     uint8_t SHA1_field_0x14[4];
 };
+#endif  // GAMEMD_G2_SHA1_DEF (X10)
+
 #endif  // GAMEMD_E4_SHA1
 // 1 methods in IDA
 class SettingsClass
@@ -1878,6 +2004,8 @@ public:
 
 
     unsigned int u32_14;  // G42.39 data supply
+
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 #ifndef GAMEMD_E4_StringList  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs (TU-local addr6C_e4.cpp))
@@ -1909,6 +2037,10 @@ public:
 
     uint8_t StringTable_field_0x04[4];
     unsigned char __pad_0[64];  // g57w11 r4 G7 体词汇 (raw 0x40dcfa this->__pad_0 字符串基址)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_StringTable
 // 7 methods in IDA
@@ -1936,6 +2068,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct(int a1, int a2);  // 0x5AD6F0
     int Insert(void* a1, int a2);  // 0x7AE5D0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_StringVector
 // 1 methods in IDA
@@ -1982,6 +2118,8 @@ public:
 
     virtual void Destructor(); // 0x5B4080 G42.35 C8 体签名
 
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class TypeClass
@@ -2009,6 +2147,9 @@ public:
 
     unsigned int u32_8;  // G42.39 data supply
     unsigned int u32_4;  // G42.39 data supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_Vector2
 // 3 methods in IDA
@@ -2028,6 +2169,10 @@ public:
     uint8_t Vector3_field_0x08[4];
 
     void * q040;  // G42.39 data supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_Vector3
 // 2 methods in IDA
@@ -2042,6 +2187,9 @@ public:
     virtual int EraseAt_Copy(int a2); // 0x63EF70 G42.35 C7 体签名
 
     uint8_t Vector4_field_0x04[4];
+
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_Vector4
 // 1 methods in IDA
@@ -2054,6 +2202,9 @@ public:
 
     virtual int EraseAt(int a2); // 0x589290 G42.35 C7 体签名 (Vector8)
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 // CSP: VectorClassUInt matched via T1
@@ -2094,6 +2245,11 @@ public:
     uint8_t VectorCursor_field_0x10[4];
     uint8_t VectorCursor_field_0x14[4];
     uint8_t VectorCursor_field_0x18[4];
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_VectorCursor
 
@@ -2112,6 +2268,10 @@ public:
     uint8_t VectorCursor_uint_DynamicVectorClass_uint_field_0x08[4];
 
     void * q008;  // G42.39 data supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
 

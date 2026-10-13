@@ -164,6 +164,26 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
 public:  // g57c5 W4b supply slot
     int BulletClass_field_0x10C;  // 0x10C g57c5 W4b (self-desc vocab, ml slot witness)
+
+    unsigned char ProgressTimer_3A0[4];  /* ProgressTimer */  // X10 supply (member_lookup)
+    unsigned char __pad_118;  // X10 supply (csp_canon_members)
+    unsigned char __pad_130;  // X10 supply (csp_canon_members)
+    unsigned char __pad_154;  // X10 supply (csp_canon_members)
+    unsigned char q134[12];  /* char[12] */  // X10 supply (member_lookup)
+    int q140;  // X10 supply (member_lookup)
+    unsigned int q293;  // X10 supply (member_lookup)
+    unsigned int q487;  // X10 supply (member_lookup)
+    unsigned int u32_21C;  // X10 supply (member_lookup)
+    unsigned int u32_3E0;  // X10 supply (member_lookup)
+    unsigned int u32_587;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_D4;  // X10 supply (member_lookup)
+    int u32_D5;  // X10 supply (member_lookup)
+    unsigned int u32_D8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

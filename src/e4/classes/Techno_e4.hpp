@@ -31,5 +31,7 @@ struct Techno {
     int StartInvulnerability(int a2);
     BuildingTypeClass * StartInvulnerability(int a2, int aP1, int a1);
     unsigned int u32_500;  // 0x500 (offset-truth)
+
+    unsigned int q296;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

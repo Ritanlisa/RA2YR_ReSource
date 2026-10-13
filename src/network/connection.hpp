@@ -62,6 +62,8 @@ public:
     // === SYMBOL-ANCHOR (END) ===
     unsigned int *__pad_0; // 0x0  gB member supply
     void dtor();  // gB sig supply @cache
+
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 // CSP: IPXConnClass matched via T1+T3
@@ -84,6 +86,10 @@ virtual unsigned int * QueryInterface(char,int,int,int);  // 0x53F850
     uint16_t  RemoteSocket;
     uint8_t   padding[2];
     unsigned int *__pad_0; // 0x0  gB member supply
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_64;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 // CSP: IPXManagerClass matched via T1
@@ -125,6 +131,18 @@ void Flush(char a2);  // 0x00542ec0 g57w12-r raw-sync (def-form)
     void* QueryInterface(int a1);  // 0x5430e0 -- IPXManagerClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
     unsigned int u32_20; // 0x20  gB member supply
+
+    void* q280;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_64;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
 };
 
 class ModemConnectionClass : public ConnectionClass
@@ -177,6 +195,22 @@ public:
     int sendData();  // 0x774670 -- NullModemClass::sendData
     int receiveData();  // 0x7747c0 -- NullModemClass::receiveData
     // === SYMBOL-ANCHOR (END) ===
+
+    void* Active;  // X10 supply (csp_canon_members)
+    void* LastPacketTime;  // X10 supply (csp_canon_members)
+    void* PacketsReceived;  // X10 supply (csp_canon_members)
+    void* PacketsSent;  // X10 supply (csp_canon_members)
+    int PlayerIndex;  // X10 supply (csp_canon_members)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_60;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    BlowStraw* q050;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

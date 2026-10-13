@@ -800,7 +800,7 @@ AbstractClass * * SessionClass::BuildLobbyPlayerList()
       v7 = __2_YAPAXI_Z(0x2Au); /*0x663bd8*/
       *(unsigned char *)v7 = i; /*0x663be2*/
       v8 = ToWideStringChar(&v6->u8_1602A); /*0x663be4*/
-      strncpy((char *)(v7 + 1), v8, 0x14u); /*0x663bee*/
+      strncpy(&v7->AbstractClass_1, v8, 0x14u); /*0x663bee*/
       v9 = 0; /*0x663bfb*/
       if ( dword_A8DA84 > 0 ) /*0x663bff*/
       {

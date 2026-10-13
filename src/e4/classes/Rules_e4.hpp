@@ -23,5 +23,9 @@ struct Rules {
     char __tail_10[4];  // 0x10 (ml)
     int m_C;  // 0xC (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

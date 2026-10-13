@@ -11,5 +11,7 @@ struct E4Recv_408D30 {
     unsigned int M144;  // 0x90
 // --- flat members (END) ---
     int sub_408D30();  // 0x408D30
+
+    unsigned int u32_E8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

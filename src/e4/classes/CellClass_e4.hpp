@@ -150,6 +150,9 @@ static int * GetCoords(CellClass * aP1, int *a2);
     static int FindOpenNeighbor(int* p0, int p1, int p2, int p3, int p4, int p5, int p6);  // x4:signals@0x4aa440
     void* q028;  // 0x28 (canon-mt)
     unsigned int u32_2F4;  // 0x2F4 (offset-truth)
+
+    unsigned char __pad_038;  // X10 supply (csp_canon_members)
+    unsigned int q002;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

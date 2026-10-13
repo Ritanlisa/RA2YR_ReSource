@@ -33,7 +33,7 @@ int Mixer::ReleaseChannel()
   result = *(unsigned int *)(Mixer_field_00 + 36); /*0x40607f*/
   if ( this->u32_8 == result && this->u32_4 == *(unsigned int *)(Mixer_field_00 + 312) ) /*0x406094*/
   {
-    if ( (*(unsigned char *)(result + 16) & 1) == 0 || result->u32_4C ) /*0x40609c*/
+    if ( (result->q010 & 1) == 0 || result->u32_4C ) /*0x40609c*/
       goto LABEL_14; /*0x40609f*/
     if ( (*(unsigned char *)(Mixer_field_00 + 24) & 0x20) == 0 ) /*0x4060a5*/
     {

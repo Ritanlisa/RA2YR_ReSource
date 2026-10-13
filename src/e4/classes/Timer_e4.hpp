@@ -31,5 +31,12 @@ struct Timer {
     char __pad_6[18];  // 0x6 (ml)
     int m_18;  // 0x18 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_314;  // X10 supply (member_lookup)
+    unsigned int u32_318;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

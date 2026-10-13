@@ -18,5 +18,7 @@ struct E4Recv_54E360 {
     unsigned int M32;  // 0x32
 // --- flat members (END) ---
     unsigned int * sub_54E360();  // 0x54E360
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

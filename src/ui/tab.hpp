@@ -48,6 +48,26 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int drawTabBackground();  // 0x6AC7C0
     void* Constructor();  // 0x6CFE20
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    int q01C;  // X10 supply (member_lookup)
+    unsigned int q028;  // X10 supply (member_lookup)
+    unsigned int q539C;  // X10 supply (member_lookup)
+    unsigned int q53A0;  // X10 supply (member_lookup)
+    unsigned char q551C;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_5518;  // X10 supply (member_lookup)
+    unsigned int u32_552C;  // X10 supply (member_lookup)
+    unsigned int u32_5534;  // X10 supply (member_lookup)
+    unsigned int u32_5538;  // X10 supply (member_lookup)
+    unsigned int u32_5540;  // X10 supply (member_lookup)
+    unsigned int u32_5544;  // X10 supply (member_lookup)
+    unsigned int u32_5545;  // X10 supply (member_lookup)
+    unsigned int u32_5546;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    int u32_8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -37,5 +37,15 @@ struct Object {
     int StubReturn20();  // 0x5FDF50
     char __pad_EC[80];  // 0xEC (ml)
     unsigned int u32_5788;  // 0x5788 (offset-truth)
+
+    unsigned char q004[4];  /* AbstractClass */  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    unsigned char q024;  // X10 supply (member_lookup)
+    int q030;  // X10 supply (member_lookup)
+    int q0E4;  // X10 supply (member_lookup)
+    int q0E8;  // X10 supply (member_lookup)
+    int q13C;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

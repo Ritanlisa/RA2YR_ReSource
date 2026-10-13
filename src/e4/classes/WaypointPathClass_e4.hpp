@@ -36,6 +36,9 @@ struct WaypointPathClass {
     unsigned int * computePath(int a2, unsigned int *a3, void *a1 = 0);
     unsigned int q030;  // 0x30 (canon-mt)
     int waypoints[6];  // 0x28 (ml)
+
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    int u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -121,6 +121,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_14;  // 0x14
     unsigned int u32_6C;  // 0x6C
     unsigned int u32_70;  // 0x70
+
+    unsigned char q050;  // X10 supply (member_lookup)
 };
 
 // ============================================================================
@@ -249,6 +251,9 @@ public:
     unsigned int u32_744;  // G42.39 data supply
 
     unsigned int u32_748;  // G42.39 data supply
+
+    unsigned int u32_168;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 
@@ -283,6 +288,18 @@ public:
     uint8_t BufferIO_field_0x08[4];
 
     unsigned int u32_60;  // G42.39 data supply
+
+    unsigned char MapPreview_30[4];  /* MapPreview */  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_26;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_29;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 26 methods in IDA
 class CStreamClass
@@ -344,6 +361,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int IStreamAddRef();  // 0x4a3230
     int IStreamRelease();  // 0x4a3240
     // === FUNCS-MOVE (END) ===
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    unsigned char __pad_008;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class StreamObj
@@ -383,6 +403,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned char *__pad_0;  // 0x0
 
     unsigned int u32_18;  // G42.39 data supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 // 4 methods in IDA
 #ifndef GAMEMD_E4_Text  // G42.33 b3: e4 flat carrier wins in opt-in TUs
@@ -406,6 +432,8 @@ public:
     unsigned int u32_28;  // G42.39 data supply
     unsigned int u32_8;  // G42.39 data supply
     unsigned int u32_2C;  // G42.39 data supply
+
+    unsigned char q050;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_Text
 // 1 methods in IDA

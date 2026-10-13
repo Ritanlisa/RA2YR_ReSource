@@ -47,5 +47,18 @@ int IsAtEnd(void *a1_1); // def-aligned
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned char u32_2D;  // 0x2D (offset-truth)
     unsigned int u32_40;  // 0x40 (offset-truth)
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_804;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

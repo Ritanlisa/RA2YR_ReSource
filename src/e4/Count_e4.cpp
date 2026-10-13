@@ -122,7 +122,7 @@ int32_t Count::GetCountQueue()
 
   v1 = this->u32_38; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
-    return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 40); /*0x5f1eaa*/
+    return *(unsigned int *)(v1->u32_4 + 40); /*0x5f1eaa*/
   else
     return 0; /*0x5f1eae*/
 }

@@ -206,11 +206,11 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, Sce
   v12[3] = FoundationSize[3]; /*0x5cc3b6*/
   v13 = v11[1]; /*0x5cc3c0*/
   *v11 += v5->__pad_004; /*0x5cc3c3*/
-  v11[1] = *(unsigned int *)(v5 + 8) + v13; /*0x5cc3ca*/
+  v11[1] = v5->q008 + v13; /*0x5cc3ca*/
   if ( (v5->u32_38 & 0x200) != 0 ) /*0x5cc3d3*/
   {
-    *v11 += *(int16_t *)(*(unsigned int *)(v5 + 28) + 2) / -2; /*0x5cc3e7*/
-    v11[1] += *(int16_t *)(*(unsigned int *)(v5 + 28) + 4) / -2; /*0x5cc3fc*/
+    *v11 += *(int16_t *)(v5->u32_1C + 2) / -2; /*0x5cc3e7*/
+    v11[1] += *(int16_t *)(v5->u32_1C + 4) / -2; /*0x5cc3fc*/
   }
     (*(void (**)(MSOverlayAnim *, unsigned int *, DSurface *, unsigned int *, unsigned int, int, int))(*(unsigned int *)aP0->nextScenario
                                                                                             + 8))(
@@ -268,7 +268,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, Sce
   if ( v22 >= 4 ) /*0x5cc4c4*/
   {
     v23 = v5->u32_38; /*0x5cc4cf*/
-    v29 = *(unsigned int *)(v5 + 4); /*0x5cc4db*/
+    v29 = *&v5->__pad_004; /*0x5cc4db*/
     (((unsigned char *)&(v23))[1]) |= 4u; /*0x5cc4e3*/
     v28 = v23; /*0x5cc4e7*/
     v30 = v5->q008; /*0x5cc4e8*/

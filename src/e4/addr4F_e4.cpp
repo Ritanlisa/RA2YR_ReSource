@@ -76,7 +76,6 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GraphicMenuItem_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
-#include "e4/classes/VectorClass_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3); }  // x4:ida@0x622650
 namespace gamemd { int sub_4F2C00(int p0, int p1, int p2); }  // x4:signals@0x4f2c00

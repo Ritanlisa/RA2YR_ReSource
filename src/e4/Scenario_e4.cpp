@@ -293,20 +293,20 @@ int Scenario::ReadTeams()
                       BuildingLightClass::FindTarget(v37, (unsigned int *)v70); /*0x44fc16*/
                     if ( v55 ) /*0x44fc21*/
                     {
-                      if ( !*(unsigned char *)(v29 + 1632) && !v29->u32_504 ) /*0x44fc35*/
+                      if ( !v29->q660 && !v29->u32_504 ) /*0x44fc35*/
                       {
                         v38 = v29->u32_21C; /*0x44fc43*/
                         v29->q660 = 1; /*0x44fc49*/
                         v29->needsRedraw = 1; /*0x44fc50*/
                         v38->q5778 = 1; /*0x44fc57*/
-                        *(unsigned char *)(*(unsigned int *)(v29 + 540) + 22393) = 1; /*0x44fc64*/
+                        *(unsigned char *)(v29->u32_21C + 22393) = 1; /*0x44fc64*/
                         v39 = v29->u32_21C; /*0x44fc6b*/
                         v39->u32_1FC = 1; /*0x44fc71*/
                         v40 = v29->q614; /*0x44fc78*/
                         v29->u32_6EA = 1; /*0x44fc80*/
                         if ( v40 ) /*0x44fc87*/
                           Trigger::EnableOnce(v40, 0); /*0x44fc8b*/
-                        if ( *(unsigned char *)(*(unsigned int *)(v29 + 1312) + 5822) ) /*0x44fc96*/
+                        if ( *(unsigned char *)(v29->field_520 + 5822) ) /*0x44fc96*/
                           BuildingClass::RepairPlacement((BuildingClass *)v29, 0); /*0x44fca4*/
                         v41 = 0; /*0x44fca9*/
                         v42 = &v29->q55C; /*0x44fcab*/
@@ -378,7 +378,7 @@ int Scenario::ReadTeams()
                   }
                   else
                   {
-                    (*(void (**)(int, int))(*(unsigned int *)v29 + 32))(v29, 1); /*0x44fe2f*/
+                    (*(void (**)(int, int))(*&v29->needsRedraw))(v29, 1); /*0x44fe2f*/
                   }
                 }
               }

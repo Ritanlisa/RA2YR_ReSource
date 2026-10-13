@@ -27,6 +27,8 @@ struct CheckListClass {
     CheckListClass * sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);
     unsigned int u32_118;  // 0x118 (offset-truth)
     unsigned int u32_B8;  // 0xB8 (offset-truth)
+
+    unsigned char __pad_011;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

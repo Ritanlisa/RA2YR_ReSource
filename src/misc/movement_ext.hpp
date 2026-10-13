@@ -72,6 +72,32 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     unsigned int q01C;  // 0x1C
     void *ptr_24;  // 0x24
+
+    AbstractClass * q544;  // X10 supply (member_lookup)
+    void* q558;  // X10 supply (member_lookup)
+    unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int u32_1C4;  // X10 supply (member_types)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_3B8;  // X10 supply (member_lookup)
+    uint32_t u32_480;  // X10 supply (member_lookup)
+    int u32_4C;  // X10 supply (member_lookup)
+    int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_550;  // X10 supply (member_types)
+    unsigned int u32_564;  // X10 supply (member_types)
+    unsigned int u32_5B0;  // X10 supply (member_lookup)
+    unsigned int u32_5EC;  // X10 supply (member_lookup)
+    unsigned int u32_674;  // X10 supply (member_types)
+    unsigned int u32_67C;  // X10 supply (member_types)
+    unsigned int u32_697;  // X10 supply (member_types)
+    unsigned int u32_6C3;  // X10 supply (member_types)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    int u32_8D;  // X10 supply (member_lookup)
+    unsigned int u32_98;  // X10 supply (member_types)
+    int u32_9C;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_types)
+    unsigned int u32_AC;  // X10 supply (member_types)
+    unsigned int u32_FC;  // X10 supply (member_types)
 };
 
 // ============================================================================
@@ -112,42 +138,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 // 14 methods in IDA
 // CSP: MoveFeedback matched via T1
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
-#ifndef GAMEMD_G2_MoveFeedback_DEF  // G42.57w14 twin-guard (shared; first-include wins)
-#define GAMEMD_G2_MoveFeedback_DEF 1
-class MoveFeedback
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~MoveFeedback() = default;
-
-    virtual void ClearBuffer(); // 0x40B640
-    virtual void PointerToIndex(); // 0x40B670
-    virtual void Update(); // 0x40B6D0
-    virtual void Show(); // 0x40B6F0
-    virtual void FindItem(); // 0x40B930
-    // +9 more virtual methods
-
-    uint8_t MoveFeedback_field_0x04[4];
-    uint8_t MoveFeedback_field_0x08[4];
-    uint8_t MoveFeedback_field_0x0C[4];
-    uint8_t MoveFeedback_field_0x10[4];
-    uint8_t MoveFeedback_field_0x14[4];
-    uint8_t MoveFeedback_field_0x18[4];
-    uint8_t MoveFeedback_field_0x1C[4];
-    uint8_t MoveFeedback_field_0x20[4];
-    uint8_t MoveFeedback_field_0x24[4];
-    uint8_t MoveFeedback_field_0x28[4];
-    uint8_t MoveFeedback_field_0x2C[4];
-    uint8_t MoveFeedback_field_0x30[4];
-    uint8_t MoveFeedback_field_0x34[4];
-};
-#endif  // GAMEMD_G2_MoveFeedback_DEF
-#endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
-#endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
-#endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
 // 2 methods in IDA
 class MovementClass
 {
@@ -160,6 +150,12 @@ public:
 
     uint8_t MovementClass_field_0x04[4];
     unsigned int * CompareAbsCoords(unsigned int *a2);
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 7 methods in IDA
 // CSP: Pathfinding matched via T1
@@ -192,6 +188,17 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
     char AStar(int16_t *a2, int16_t *a3, int a4, int a5);
     void SiftDown(int a2);
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_068;  // X10 supply (member_lookup)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    unsigned char q028;  // X10 supply (member_lookup)
+    unsigned char q064;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 // CSP: PathfindingClass matched via T1
@@ -204,6 +211,12 @@ public:
     virtual void FindPath(); // 0x4FFB20
 
     int FindPath(unsigned int *a2);
+
+    unsigned char CellStruct_1525[4];  /* CellStruct */  // X10 supply (member_lookup)
+    unsigned int u32_5490;  // X10 supply (member_lookup)
+    unsigned int u32_5494;  // X10 supply (member_lookup)
+    unsigned int u32_5496;  // X10 supply (member_lookup)
+    unsigned int u32_5498;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

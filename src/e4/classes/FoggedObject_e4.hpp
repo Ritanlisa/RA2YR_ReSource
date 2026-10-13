@@ -13,5 +13,7 @@ struct FoggedObject {
     unsigned int u32_8;  // 0x8 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
     unsigned char u32_D;  // 0xD (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 } // namespace gamemd

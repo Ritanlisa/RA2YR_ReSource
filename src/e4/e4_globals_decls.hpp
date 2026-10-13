@@ -752,13 +752,7 @@ extern int DSurface_Composite;  // data: 0x88731C
 extern int DSurface_Sidebar;  // data: 0x887300
 extern int DSurface_SidebarBounds;  // data: 0x886F90
 extern int DSurface_Tile;  // data: 0x8872FC
-struct DSurface_ViewBounds_flat {
-    unsigned int field_0;                   // +0x0
-    unsigned int field_4;                   // +0x4
-    unsigned char __pad_8[0x34 - 0x8];      // +0x8  (idx<=20)
-    unsigned char __pad_34[0xFC - 0x34];    // +0x34 (idx<=116)
-    unsigned char __pad_FC[0x240 - 0xFC];   // +0xFC (idx<=324)
-};
+
 extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0
 extern int DSurface_WindowBounds;  // data: 0x886FB0
 extern int dwInitParam;  // data: 0xB72F54
@@ -14632,8 +14626,6 @@ extern void* vt_WorldDominationTour_Selection;  // data: 0x7f72b4
 extern void* vt_WWMouseClass;  // data: 0x7F7B2C
 extern void* vt_XSurface;  // data: 0x7E2104
 extern wchar_t DataGlobal_AC4D30[32904];  // data: 0xAC4D30
-struct Campaign_WorldDominationTour_24_ { unsigned int* ddtor(); };  // 0x765b50 (G22 materialized)
-struct CellAttachedStub { void* vfptr; void Delete(int); };  // 0x47BB60/0x47BB8C receiver stub (G22 CellClass::DTOR)
 struct MapSizeOptStub;  // 0x767800 arg chain stub (G22)
 extern int DataGlobal_AFA284;  // data: 0xafa284
 extern int DataGlobal_AFA28C;  // data: 0xafa28c

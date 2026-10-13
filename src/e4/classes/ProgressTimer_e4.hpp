@@ -13,6 +13,12 @@ struct ProgressTimer {
 // --- flat members (END) ---
     void* GetValue(void *aP1);
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_CORE_OWNS_PROGRESSTIMER
 

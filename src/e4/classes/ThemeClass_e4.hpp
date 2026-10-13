@@ -28,6 +28,14 @@ struct ThemeClass {
     unsigned int u32_288;  // 0x288 (offset-truth)
     unsigned char u32_289;  // 0x289 (offset-truth)
     unsigned int u32_28C;  // 0x28C (offset-truth)
+
+    unsigned char __pad_37E;  // X10 supply (member_lookup)
+    unsigned char q656;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_21;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_ThemeClass_DEF
 

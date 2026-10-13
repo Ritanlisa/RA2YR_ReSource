@@ -106,6 +106,14 @@ struct Warhead {
     int ProcessDamageArea();
     int RemoveFromDamageList(int a2);
     unsigned char u32_C2;  // 0xC2 (offset-truth)
+
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_674;  // X10 supply (member_lookup)
+    unsigned char u32_80[4];  /* __int16 */  // X10 supply (member_lookup)
+    unsigned int u32_F0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -9,6 +9,7 @@
 #include "e4/classes/DialogControl_e4.hpp"
 #include "e4/classes/E4Recv_74F63A_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x74F620
 namespace gamemd {  // G42.18 ns repair

@@ -11,5 +11,7 @@ struct E4Recv_765380 {
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
     unsigned int *  sub_765380(unsigned int * a2, int a3);  // 0x765380
+
+    unsigned char u8_18;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

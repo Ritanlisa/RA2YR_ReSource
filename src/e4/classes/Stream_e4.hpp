@@ -63,6 +63,21 @@ struct Stream {
     unsigned int u32_544;  // 0x544 (offset-truth)
     unsigned int u32_548;  // 0x548 (offset-truth)
     unsigned int u32_54C;  // 0x54C (offset-truth)
+
+    unsigned int u32_178;  // X10 supply (member_lookup)
+    unsigned int u32_17C;  // X10 supply (member_lookup)
+    unsigned int u32_180;  // X10 supply (member_lookup)
+    unsigned int u32_188;  // X10 supply (member_lookup)
+    unsigned int u32_190;  // X10 supply (member_lookup)
+    unsigned int u32_194;  // X10 supply (member_lookup)
+    unsigned int u32_1E4;  // X10 supply (member_lookup)
+    uint32_t u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_514;  // X10 supply (member_lookup)
+    unsigned int u32_528;  // X10 supply (member_lookup)
+    unsigned int u32_550;  // X10 supply (member_lookup)
+    unsigned int u32_551;  // X10 supply (member_lookup)
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned char u8_71;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

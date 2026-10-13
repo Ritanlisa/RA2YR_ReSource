@@ -534,6 +534,10 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);
     static int DrawActionLines(BuildingClass *p_this);  // x4:ida@0x63be60
     unsigned int u32_898;  // 0x898 (offset-truth)
     unsigned int u32_8B4;  // 0x8B4 (offset-truth)
+
+    unsigned int q044;  // X10 supply (member_lookup)
+    unsigned int q048;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

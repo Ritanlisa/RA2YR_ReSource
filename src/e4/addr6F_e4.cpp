@@ -114,7 +114,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v54 = *&dword_A8022C->vtable1; /*0x6f0aee*/
-  if ( Random::Range((gamemd::Random *)((unsigned int *)dword_A8B230 + 134), 1, 100) <= *(unsigned int *)(a2 + 22108) && *(unsigned char *)(a2 + 498) ) /*0x6f0b12*/
+  if ( Random::Range(&dword_A8B230->u32_218, 1, 100) <= *(unsigned int *)(a2 + 22108) && *(unsigned char *)(a2 + 498) ) /*0x6f0b12*/
   {
     v6 = 0; /*0x6f0b26*/
     if ( dword_8B40F8 > 0 ) /*0x6f0b2a*/

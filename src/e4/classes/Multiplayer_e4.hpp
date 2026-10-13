@@ -26,6 +26,8 @@ struct Multiplayer {
     void ShowProgress(int a2);
     unsigned char u32_42;  // 0x42 (offset-truth)
     void Screen();  // plateau: def-aligned C2039/C2660
+
+    unsigned char q025;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_Multiplayer_DEF
 

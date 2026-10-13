@@ -61,5 +61,18 @@ struct E4Recv_557380 {
     unsigned int M360;  // 0x360
 // --- flat members (END) ---
     int  sub_557380(int a2);  // 0x557380
+
+    unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int u32_108;  // X10 supply (member_lookup)
+    unsigned int u32_114;  // X10 supply (member_lookup)
+    unsigned int u32_118;  // X10 supply (member_lookup)
+    unsigned int u32_164;  // X10 supply (member_lookup)
+    unsigned int u32_168;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_88;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

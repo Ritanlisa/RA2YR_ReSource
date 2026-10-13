@@ -17,5 +17,7 @@ struct E4Recv_4880F0 {
     unsigned int M45;  // 0x2D
 // --- flat members (END) ---
     ConvertClass * *  sub_4880F0(int a2);  // 0x4880F0
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

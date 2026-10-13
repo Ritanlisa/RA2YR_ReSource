@@ -43,6 +43,8 @@ struct IsometricTileTypeClass {
     unsigned int u32_294;  // 0x294 (offset-truth)
     unsigned int u32_2BC;  // 0x2BC (offset-truth)
     unsigned int u32_2C8;  // 0x2C8 (offset-truth)
+
+    uint8_t IsometricTileTypeClass_field_0x0C;  // X10 supply (member_types)
 };
 
 } // namespace gamemd

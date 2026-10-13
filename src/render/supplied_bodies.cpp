@@ -36,8 +36,7 @@
 #include "e4/classes/Coord_e4.hpp"  // G42.35: Coord::To_ScreenRaw 静态站点载体（0x6D7F8E/0x6D843B 同款 e4 TU）
 #include "e4/classes/AudioStream_e4.hpp"  // G42.35: g_DSurface_Hidden_2 宿主基类（完整 AudioStream）
 #include "core/ida_vtables.h"  // gC_vftable3// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
-#include "e4/classes/MapClass_e4.hpp"  // w16g4 C3861 MapClass:: supply
-#include "e4/classes/MissionClass_e4.hpp"  // w16g4 C3861 MissionClass:: supply
+#include "system/map.hpp"
 extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同形)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
@@ -3341,59 +3340,59 @@ void Voxel_Section::Draw()
 
     _ESI = this; /*0x75d3b1*/
     INIClass::ResetSection((INIClass *)a2); /*0x75d3b5*/
-    if ( !INIClass::BinarySearchSection(a2, (uint8_t *)&_ESI->q024) ) /*0x75d3c0*/
+    if ( !INIClass::BinarySearchSection(a2, &_ESI->q024) ) /*0x75d3c0*/
       return 0; /*0x75deb2*/
     __asm { fld dword ptr [esi+124h] } /*0x75d3d2*/
     __asm { fstp [esp+154h+var_154]; double }
-    INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)&_ESI->q024, aCellspread, v83); /*0x75d3e6*/
+    INIClass::ReadDouble_Overwrite((double *)a2, &_ESI->q024, aCellspread, v83); /*0x75d3e6*/
     __asm { fstp dword ptr [esi+124h] } /*0x75d3eb*/
     *(float *)_ESI->q124 = _ET1; /*0x75d3eb*/
     __asm { fld dword ptr [esi+128h] } /*0x75d3f1*/
     __asm { fstp [esp+154h+var_154]; double }
-    INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)&_ESI->q024, aCellinset, v83); /*0x75d405*/
+    INIClass::ReadDouble_Overwrite((double *)a2, &_ESI->q024, aCellinset, v83); /*0x75d405*/
     __asm { fstp dword ptr [esi+128h] } /*0x75d40a*/
-    *(float *)&_ESI->q124[4] = _ET1; /*0x75d40a*/
+    *&_ESI->u32_128 = _ET1; /*0x75d40a*/
     __asm { fld dword ptr [esi+12Ch] } /*0x75d410*/
     __asm { fstp [esp+154h+var_154]; double }
     INIClass::ReadDouble_Overwrite( /*0x75d424*/
       (double *)a2,
-      (uint8_t *)&_ESI->q024,
+      &_ESI->q024,
       aPercentatmax,
       v83);
     __asm { fstp dword ptr [esi+12Ch] } /*0x75d429*/
-    *(float *)&_ESI->q124[8] = _ET1; /*0x75d429*/
+    *&_ESI->u32_12C = _ET1; /*0x75d429*/
     _ESI->q124[12] = INIClass::ReadBool_Overwrite( /*0x75d443*/
                             (int *)a2,
-                            (uint8_t *)&_ESI->q024,
+                            &_ESI->q024,
                             aCausesdelaykil,
                             _ESI->q124[12]);
-    *(unsigned int *)&_ESI->q124[16] = INIClass::ReadInt_Overwrite( /*0x75d45d*/
+    *&_ESI->u32_134 = INIClass::ReadInt_Overwrite( /*0x75d45d*/
                                         (bool *)a2,
-                                        (uint8_t *)&_ESI->q024,
+                                        &_ESI->q024,
                                         aDelaykillframe,
-                                        *(unsigned int *)&_ESI->q124[16]);
+                                        *&_ESI->u32_134);
     __asm { fld dword ptr [esi+138h] } /*0x75d466*/
     __asm { fstp [esp+154h+var_154]; double }
     INIClass::ReadDouble_Overwrite( /*0x75d477*/
       (double *)a2,
-      (uint8_t *)&_ESI->q024,
+      &_ESI->q024,
       aDelaykillatmax,
       v83);
     __asm { fstp dword ptr [esi+138h] } /*0x75d47c*/
-    *(float *)&_ESI->q124[20] = _ET1; /*0x75d47c*/
+    *&_ESI->u32_138 = _ET1; /*0x75d47c*/
     __asm { fld dword ptr [esi+13Ch] } /*0x75d482*/
     __asm { fstp [esp+154h+var_154]; double }
     INIClass::ReadDouble_Overwrite( /*0x75d496*/
       (double *)a2,
-      (uint8_t *)&_ESI->q024,
+      &_ESI->q024,
       aCombatlightsiz,
       v83);
     __asm { fstp dword ptr [esi+13Ch] } /*0x75d49b*/
-    *(float *)&_ESI->q124[24] = _ET1; /*0x75d49b*/
+    *&_ESI->u32_13C = _ET1; /*0x75d49b*/
     InfiniteMindControl = _ESI->InfiniteMindControl; /*0x75d4a1*/
     if ( INIClass::GetString( /*0x75d4be*/
            (INIClass *)a2,
-           (uint8_t *)&_ESI->q024,
+           &_ESI->q024,
            (uint8_t *)((char *)&g_INI_Key_Special + 8),
            &g_INI_DefaultBuffer,
            (char *)&v86.q01C,
@@ -3408,82 +3407,82 @@ void Voxel_Section::Draw()
     _ESI->InfiniteMindControl = v9; /*0x75d4d4*/
     _ESI->Conventional[0] = INIClass::ReadBool_Overwrite( /*0x75d4ee*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aConventional,
                               _ESI->Conventional[0]);
     _ESI->q144[0] = INIClass::ReadBool_Overwrite( /*0x75d508*/
                            (int *)a2,
-                           (uint8_t *)&_ESI->q024,
+                           &_ESI->q024,
                            g_INI_Key_Wall,
                            _ESI->q144[0]);
     _ESI->q144[1] = INIClass::ReadBool_Overwrite( /*0x75d522*/
                            (int *)a2,
-                           (uint8_t *)&_ESI->q024,
+                           &_ESI->q024,
                            aWallabsolutede,
                            _ESI->q144[1]);
     _ESI->q144[2] = INIClass::ReadBool_Overwrite( /*0x75d53c*/
                            (int *)a2,
-                           (uint8_t *)&_ESI->q024,
+                           &_ESI->q024,
                            aPenetratesbunk,
                            _ESI->q144[2]);
     _ESI->q144[3] = INIClass::ReadBool_Overwrite( /*0x75d556*/
                            (int *)a2,
-                           (uint8_t *)&_ESI->q024,
+                           &_ESI->q024,
                            aWood,
                            _ESI->q144[3]);
     _ESI->q144[4] = INIClass::ReadBool_Overwrite( /*0x75d570*/
                            (int *)a2,
-                           (uint8_t *)&_ESI->q024,
+                           &_ESI->q024,
                            (uint8_t *)g_INI_Key_Tiberium,
                            _ESI->q144[4]);
     _ESI->WarheadTypeClass_field_bool_149[1] = INIClass::ReadBool_Overwrite( /*0x75d58a*/
                                                  (int *)a2,
-                                                 (uint8_t *)&_ESI->q024,
+                                                 &_ESI->q024,
                                                  aSparky,
                                                  _ESI->WarheadTypeClass_field_bool_149[1]);
     _ESI->WarheadTypeClass_field_bool_149[2] = INIClass::ReadBool_Overwrite( /*0x75d5a4*/
                                                  (int *)a2,
-                                                 (uint8_t *)&_ESI->q024,
+                                                 &_ESI->q024,
                                                  aSonic,
                                                  _ESI->WarheadTypeClass_field_bool_149[2]);
     _ESI->Conventional[1] = INIClass::ReadBool_Overwrite( /*0x75d5be*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aRocker,
                               _ESI->Conventional[1]);
     _ESI->Conventional[2] = INIClass::ReadBool_Overwrite( /*0x75d5d8*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aDirectrocker,
                               _ESI->Conventional[2]);
     _ESI->WarheadTypeClass_field_bool_149[3] = INIClass::ReadBool_Overwrite( /*0x75d5f2*/
                                                  (int *)a2,
-                                                 (uint8_t *)&_ESI->q024,
+                                                 &_ESI->q024,
                                                  g_INI_Key_Fire,
                                                  _ESI->WarheadTypeClass_field_bool_149[3]);
     _ESI->Conventional[3] = INIClass::ReadBool_Overwrite( /*0x75d60c*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aBright,
                               _ESI->Conventional[3]);
     _ESI->CLDisableRed[0] = INIClass::ReadBool_Overwrite( /*0x75d626*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aCldisablered,
                               _ESI->CLDisableRed[0]);
     _ESI->CLDisableRed[1] = INIClass::ReadBool_Overwrite( /*0x75d640*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aCldisablegreen,
                               _ESI->CLDisableRed[1]);
     _ESI->CLDisableRed[2] = INIClass::ReadBool_Overwrite( /*0x75d65a*/
                               (int *)a2,
-                              (uint8_t *)&_ESI->q024,
+                              &_ESI->q024,
                               aCldisableblue,
                               _ESI->CLDisableRed[2]);
     if ( INIClass::GetString( /*0x75d677*/
            (INIClass *)a2,
-           (uint8_t *)&_ESI->q024,
+           &_ESI->q024,
            aAnimlist,
            &g_INI_DefaultBuffer,
            (char *)&v86.q01C,
@@ -3513,37 +3512,37 @@ void Voxel_Section::Draw()
     _ESI->WarheadTypeClass_field_0x114 = v85.Count; /*0x75d733*/
     Items = v85.Items; /*0x75d736*/
     *(unsigned int *)_ESI->OpenToppedAnim = CapacityIncrement; /*0x75d73a*/
-    *(unsigned int *)&_ESI->OpenToppedAnim[4] = unknown_18; /*0x75d73f*/
+    *&_ESI->q018 = unknown_18; /*0x75d73f*/
     v85.DynamicVectorClass = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x75d742*/
     if ( Items && v85.IsAllocated ) /*0x75d752*/
       delete[] (Items); /*0x75d755*/
     _ESI->q120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
                                            (bool *)a2,
-                                           (uint8_t *)&_ESI->q024,
+                                           &_ESI->q024,
                                            aInfdeath,
                                            _ESI->q120);
     INIClass::ReadDouble_Overwrite( /*0x75d78d*/
       (double *)a2,
-      (uint8_t *)&_ESI->q024,
+      &_ESI->q024,
       aDeform,
-      *(double *)&_ESI->q044[84]);
+      *&_ESI->u64_98);
     __asm { fstp qword ptr [esi+98h] } /*0x75d792*/
-    *(double *)&_ESI->q044[84] = _RT1; /*0x75d792*/
+    *&_ESI->u64_98 = _RT1; /*0x75d792*/
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x75d7a7*/
                       (bool *)a2,
-                      (uint8_t *)&_ESI->q024,
+                      &_ESI->q024,
                       aDeformthreshho,
                       _ESI->q100);
     v16 = _ESI->CLDisableRed[3]; /*0x75d7ac*/
     _ESI->q100 = Int_Overwrite; /*0x75d7b2*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x75d7c1*/
                        (int *)a2,
-                       (uint8_t *)&_ESI->q024,
+                       &_ESI->q024,
                        aEmeffect,
                        v16);
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->MindControl[0]) & 0xFFu) << 32); /*0x75d7ce*/
     v83 = aMindcontrol; /*0x75d7cf*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d7d4*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d7d4*/
     _ESI->CLDisableRed[3] = Bool_Overwrite; /*0x75d7d5*/
     _ESI->MindControl[0] = INIClass::ReadBool_Overwrite( /*0x75d7e0*/
                              (int *)a2,
@@ -3552,15 +3551,15 @@ void Voxel_Section::Draw()
                              SBYTE4(v83));
     v18 = INIClass::ReadBool_Overwrite( /*0x75d7f5*/
             (int *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aPoison,
             _ESI->MindControl[1]);
     v19 = _ESI->MindControl[2]; /*0x75d7fa*/
     _ESI->MindControl[1] = v18; /*0x75d800*/
-    v20 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)&_ESI->q024, aIvanbomb, v19); /*0x75d80f*/
+    v20 = INIClass::ReadBool_Overwrite((int *)a2, &_ESI->q024, aIvanbomb, v19); /*0x75d80f*/
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->MindControl[3]) & 0xFFu) << 32); /*0x75d81c*/
     v83 = aElectricassaul; /*0x75d81d*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d822*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d822*/
     _ESI->MindControl[2] = v20; /*0x75d823*/
     _ESI->MindControl[3] = INIClass::ReadBool_Overwrite( /*0x75d82e*/
                              (int *)a2,
@@ -3569,15 +3568,15 @@ void Voxel_Section::Draw()
                              SBYTE4(v83));
     v21 = INIClass::ReadBool_Overwrite( /*0x75d843*/
             (int *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aParasite,
             _ESI->Parasite[0]);
     v22 = _ESI->Parasite[1]; /*0x75d848*/
     _ESI->Parasite[0] = v21; /*0x75d84e*/
-    v23 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)&_ESI->q024, aTemporal, v22); /*0x75d85d*/
+    v23 = INIClass::ReadBool_Overwrite((int *)a2, &_ESI->q024, aTemporal, v22); /*0x75d85d*/
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->Parasite[2]) & 0xFFu) << 32); /*0x75d86a*/
     v83 = aIslocomotor; /*0x75d86b*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d870*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d870*/
     _ESI->Parasite[1] = v23; /*0x75d871*/
     _ESI->Parasite[2] = INIClass::ReadBool_Overwrite( /*0x75d87c*/
                           (int *)a2,
@@ -3587,23 +3586,23 @@ void Voxel_Section::Draw()
     GUID_Overwrite = (unsigned int *)INIClass::ReadGUID_Overwrite( /*0x75d8b2*/
                                  a2,
                                  (int)&v86,
-                                 (uint8_t *)&_ESI->q024,
+                                 &_ESI->q024,
                                  (uint8_t *)&g_INI_Key_TRUCKA.__pad_1624[92],
                                  *(unsigned int *)&_ESI->Parasite[3],
-                                 *(unsigned int *)&_ESI->__pad_15D[3],
-                                 *(unsigned int *)&_ESI->__pad_15D[7],
-                                 *(unsigned int *)&_ESI->__pad_15D[11]);
-    *(unsigned int *)&_ESI->Parasite[3] = *GUID_Overwrite; /*0x75d8b9*/
+                                 *&_ESI->u32_160,
+                                 *&_ESI->u32_164,
+                                 *&_ESI->u32_168);
+    *&_ESI->q00C = *GUID_Overwrite; /*0x75d8b9*/
     v25 = GUID_Overwrite[1]; /*0x75d8bb*/
-    *(unsigned int *)&_ESI->__pad_15D[3] = v25; /*0x75d8be*/
+    *&_ESI->u32_160 = v25; /*0x75d8be*/
     v25 = ((v25) & 0xFFFFFF00u) | ((unsigned int)(_ESI->Airstrike) & 0xFFu); /*0x75d8c1*/
     v26 = GUID_Overwrite[2]; /*0x75d8c7*/
     v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long)(v25) & 0xFFFFFFFFull) << 32); /*0x75d8ca*/
-    *(unsigned int *)&_ESI->__pad_15D[7] = v26; /*0x75d8cb*/
+    *&_ESI->u32_164 = v26; /*0x75d8cb*/
     v83 = aAirstrike; /*0x75d8ce*/
     v27 = GUID_Overwrite[3]; /*0x75d8d3*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d8d6*/
-    *(unsigned int *)&_ESI->__pad_15D[11] = v27; /*0x75d8d9*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d8d6*/
+    *&_ESI->u32_168 = v27; /*0x75d8d9*/
     v28 = INIClass::ReadBool_Overwrite( /*0x75d8dc*/
             (int *)a2,
             p_WarheadTypeClass_field_0x24,
@@ -3611,7 +3610,7 @@ void Voxel_Section::Draw()
             SBYTE4(v83));
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)((unsigned char)((_ESI->Airstrike) >> 8)) & 0xFFu) << 32); /*0x75d8e9*/
     v83 = aPsychedelic; /*0x75d8ea*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d8ef*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d8ef*/
     _ESI->Airstrike = ((_ESI->Airstrike) & 0xFFFFFF00u) | ((unsigned int)(v28) & 0xFFu); /*0x75d8f0*/
     IDA_BYTE1(_ESI->Airstrike) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
                                (int *)a2,
@@ -3620,19 +3619,19 @@ void Voxel_Section::Draw()
                                SBYTE4(v83));
     v29 = INIClass::ReadBool_Overwrite( /*0x75d910*/
             (int *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aBombdisarm,
             (unsigned char)((_ESI->Airstrike) >> 16));
     Paralyzes = _ESI->Paralyzes; /*0x75d915*/
     _ESI->Airstrike = ((_ESI->Airstrike) & 0xFF00FFFFu) | (((unsigned int)(v29) & 0xFFu) << 16); /*0x75d91b*/
     v31 = INIClass::ReadInt_Overwrite( /*0x75d92a*/
             (bool *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aParalyzes,
             Paralyzes);
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->Culling) & 0xFFu) << 32); /*0x75d937*/
     v83 = aCulling; /*0x75d938*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d93d*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d93d*/
     _ESI->Paralyzes = v31; /*0x75d93e*/
     IDA_LOBYTE(_ESI->Culling) = INIClass::ReadBool_Overwrite( /*0x75d949*/
                               (int *)a2,
@@ -3641,27 +3640,27 @@ void Voxel_Section::Draw()
                               SBYTE4(v83));
     v32 = INIClass::ReadBool_Overwrite( /*0x75d95e*/
             (int *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aMakesdisguise,
             (unsigned char)((_ESI->Culling) >> 8));
     v33 = (unsigned char)((_ESI->Culling) >> 16); /*0x75d963*/
     _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v32) & 0xFFu) << 8); /*0x75d969*/
-    v34 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)&_ESI->q024, aNukemaker, v33); /*0x75d978*/
+    v34 = INIClass::ReadBool_Overwrite((int *)a2, &_ESI->q024, aNukemaker, v33); /*0x75d978*/
     v35 = ((v35) & 0xFFFFFFFFull) | (((unsigned long)(*(unsigned int *)_ESI->q0FC) & 0xFFFFFFFFull) << 32); /*0x75d97d*/
     _ESI->Culling = ((_ESI->Culling) & 0xFF00FFFFu) | (((unsigned int)(v34) & 0xFFu) << 16); /*0x75d983*/
     v35 = _ESI->WarheadTypeClass_field_0xF8; /*0x75d989*/
-    INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)&_ESI->q024, aPronedamage, v35); /*0x75d999*/
+    INIClass::ReadDouble_Overwrite((double *)a2, &_ESI->q024, aPronedamage, v35); /*0x75d999*/
     Culling_high = (unsigned char)((_ESI->Culling) >> 8); /*0x75d99e*/
     __asm { fstp qword ptr [esi+0F8h] } /*0x75d9a4*/
-    *(double *)&_ESI->WarheadTypeClass_field_0xF8 = _RT1; /*0x75d9a4*/
+    *&_ESI->u64_F8 = _RT1; /*0x75d9a4*/
     v38 = INIClass::ReadBool_Overwrite( /*0x75d9b3*/
             (int *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aRadiation,
             Culling_high);
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->PsychicDamage) & 0xFFu) << 32); /*0x75d9c0*/
     v83 = aPsychicdamage; /*0x75d9c1*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75d9c6*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d9c6*/
     _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v38) & 0xFFu) << 8); /*0x75d9c7*/
     IDA_LOBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
                                     (int *)a2,
@@ -3670,15 +3669,15 @@ void Voxel_Section::Draw()
                                     SBYTE4(v83));
     v39 = INIClass::ReadBool_Overwrite( /*0x75d9e7*/
             (int *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aAffectsallies,
             (unsigned char)((_ESI->PsychicDamage) >> 8));
     v40 = (unsigned char)((_ESI->PsychicDamage) >> 16); /*0x75d9ec*/
     _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFFFF00FFu) | (((unsigned int)(v39) & 0xFFu) << 8); /*0x75d9f2*/
-    v41 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)&_ESI->q024, aBullets, v40); /*0x75da01*/
+    v41 = INIClass::ReadBool_Overwrite((int *)a2, &_ESI->q024, aBullets, v40); /*0x75da01*/
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)((unsigned char)((_ESI->PsychicDamage) >> 8)) & 0xFFu) << 32); /*0x75da0e*/
     v83 = aVeinhole; /*0x75da0f*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75da14*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75da14*/
     _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFF00FFFFu) | (((unsigned int)(v41) & 0xFFu) << 16); /*0x75da15*/
     IDA_HIBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75da20*/
                                     (int *)a2,
@@ -3687,19 +3686,19 @@ void Voxel_Section::Draw()
                                     SBYTE4(v83));
     v42 = INIClass::ReadInt_Overwrite( /*0x75da35*/
             (bool *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aShakexlo,
             _ESI->v42);
     q180 = _ESI->q180; /*0x75da3a*/
     _ESI->v42 = v42; /*0x75da40*/
     v44 = INIClass::ReadInt_Overwrite( /*0x75da4f*/
             (bool *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aShakexhi,
             q180);
     v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long)(_ESI->q184) & 0xFFFFFFFFull) << 32); /*0x75da5c*/
     v83 = aShakeylo; /*0x75da5d*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75da62*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75da62*/
     _ESI->q180 = v44; /*0x75da63*/
     _ESI->q184 = INIClass::ReadInt_Overwrite( /*0x75da6e*/
                                            (bool *)a2,
@@ -3708,19 +3707,19 @@ void Voxel_Section::Draw()
                                            (int)((v83) >> 32));
     v45 = INIClass::ReadInt_Overwrite( /*0x75da83*/
             (bool *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             aShakeyhi,
             _ESI->v45);
     v46 = _ESI->q1C4[0]; /*0x75da88*/
     _ESI->v45 = v45; /*0x75da8e*/
     v47 = INIClass::ReadInt_Overwrite( /*0x75da9d*/
             (bool *)a2,
-            (uint8_t *)&_ESI->q024,
+            &_ESI->q024,
             (uint8_t *)&g_INI_Key_TRUCKA.__pad_1584[76],
             v46);
     v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long)(_ESI->q1C8[0]) & 0xFFFFFFFFull) << 32); /*0x75daaa*/
     v83 = &g_INI_Key_TRUCKA.__pad_1584[64]; /*0x75daab*/
-    p_WarheadTypeClass_field_0x24 = (uint8_t *)&_ESI->q024; /*0x75dab0*/
+    p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75dab0*/
     _ESI->q1C4[0] = v47; /*0x75dab1*/
     v48 = INIClass::ReadInt_Overwrite( /*0x75dab7*/
             (bool *)a2,
@@ -3735,7 +3734,7 @@ void Voxel_Section::Draw()
       _ESI->q1C4[0] = v49; /*0x75dae0*/
     if ( INIClass::GetString( /*0x75dafd*/
            (INIClass *)a2,
-           (uint8_t *)&_ESI->q024,
+           &_ESI->q024,
            (uint8_t *)&g_INI_Key_TRUCKA.__pad_1584[52],
            &g_INI_DefaultBuffer,
            (char *)&v86.q01C,
@@ -3770,7 +3769,7 @@ void Voxel_Section::Draw()
     }
     if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
     {
-      (*(void (__thiscall **)(int *))(_ESI->DebrisTypes[0] + 12))(_ESI->DebrisTypes); /*0x75dbf3*/
+      _ESI->vt_slot_12(_ESI->DebrisTypes); /*0x75dbf3*/
       Capacity = v85.Capacity; /*0x75dbf6*/
       v54 = v85.Capacity == 0; /*0x75dbfa*/
       _ESI->MaxDebris = v85.Capacity; /*0x75dbfc*/
@@ -3805,7 +3804,7 @@ void Voxel_Section::Draw()
     _ESI->unused_1CC[0] = v85.CapacityIncrement; /*0x75dc4f*/
     v60 = v85.unknown_18; /*0x75dc52*/
     *(unsigned int *)_ESI->v58 = v58; /*0x75dc56*/
-    *(unsigned int *)&_ESI->v58[4] = v59; /*0x75dc5b*/
+    *&_ESI->u32_174 = v59; /*0x75dc5b*/
     v85.DynamicVectorClass = (unsigned int)(void *)(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dc5e*/
     if ( v60 && v85.IsAllocated ) /*0x75dc6e*/
       delete[] (v60); /*0x75dc71*/
@@ -3813,7 +3812,7 @@ void Voxel_Section::Draw()
     v80 = 0; /*0x75dc8b*/
     v81 = 1; /*0x75dc8e*/
     v78 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x75dc95*/
-    if ( &v78 != (void ***)&_ESI->v58[8] ) /*0x75dc9b*/
+    if ( &v78 != &_ESI->u32_174 ) /*0x75dc9b*/
     {
       VectorClass::Destroy((int)&v78); /*0x75dc9f*/
       v80 = *(unsigned int *)_ESI->__pad_1B0; /*0x75dcad*/
@@ -3824,7 +3823,7 @@ void Voxel_Section::Draw()
         {
           v61 = 0; /*0x75dcc8*/
           for ( v81 = ((v81) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); v61 < v80; ++v61 ) /*0x75dcd0*/
-            v79[v61] = *((unsigned int *)&_ESI->q1AC->AbstractClass + v61); /*0x75dcde*/
+            v79[v61] = _ESI->u32_1AC + v61); /*0x75dcde*/
         }
       }
       else
@@ -3833,10 +3832,10 @@ void Voxel_Section::Draw()
         v81 = ((v81) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x75dcf2*/
       }
     }
-    p_WarheadTypeClass_field_0x24 = *(uint8_t **)&_ESI->__pad_1B0[8]; /*0x75dd01*/
+    p_WarheadTypeClass_field_0x24 = *&_ESI->u32_1B8; /*0x75dd01*/
     v83 = _ESI->q1BC[0]; /*0x75dd0c*/
     v78 = (unsigned int)(void *)(void*)(void*)&TypeList_int_vftable; /*0x75dd0f*/
-    inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&_ESI->q024); /*0x75dd15*/
+    inited = (uint8_t *)__0Iostream_init_QAE_XZ_4_ESI->q024); /*0x75dd15*/
     IntList = (char *)INIClass::ReadIntList( /*0x75dd22*/
                         (INIClass *)a2,
                         (int)&v85,
@@ -3852,7 +3851,7 @@ void Voxel_Section::Draw()
     v84 = IntList; /*0x75dd2d*/
     if ( &_ESI->v58[8] != IntList ) /*0x75dd33*/
     {
-      (*(void (__thiscall **)(char *))(*(unsigned int *)&_ESI->v58[8] + 12))(&_ESI->v58[8]); /*0x75dd39*/
+      (*(void (__thiscall **)(char *))(*&_ESI->u32_174 + 12))(&_ESI->v58[8]); /*0x75dd39*/
       v64 = *((unsigned int *)v84 + 2); /*0x75dd40*/
       *(unsigned int *)_ESI->__pad_1B0 = v64; /*0x75dd45*/
       if ( v64 ) /*0x75dd48*/
@@ -3882,7 +3881,7 @@ void Voxel_Section::Draw()
       }
       IntList = v84; /*0x75dd95*/
     }
-    *(unsigned int *)&_ESI->__pad_1B0[8] = *((unsigned int *)IntList + 4); /*0x75dd9c*/
+    *&_ESI->u32_1B8 = *((unsigned int *)IntList + 4); /*0x75dd9c*/
     _ESI->q1BC[0] = *((unsigned int *)IntList + 5); /*0x75dda2*/
     v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
     v69 = v85.Items; /*0x75dda8*/
@@ -3892,14 +3891,14 @@ void Voxel_Section::Draw()
       delete[] (v69); /*0x75ddc4*/
     if ( INIClass::GetString( /*0x75dde6*/
            (INIClass *)a2,
-           (uint8_t *)&_ESI->q024,
+           &_ESI->q024,
            aVerses,
            a10010010010010,
            Destination,
            128) )
     {
       v70 = strtok(Destination, Str); /*0x75de04*/
-      v71 = (double *)&_ESI->q044[92]; /*0x75de06*/
+      v71 = &_ESI->u64_A0; /*0x75de06*/
       v72 = 11; /*0x75de0c*/
       do /*0x75de58*/
       {

@@ -15,5 +15,14 @@ struct E4Recv_4F3460 {
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
     MSAnim * *  sub_4F3460(int a2, unsigned int * a3, unsigned int * a4, unsigned int * a5, void * a6, void * a7, void * a8, void * a9, void * a10);  // 0x4F3460
+
+    unsigned int q020;  // X10 supply (member_lookup)
+    unsigned int q024;  // X10 supply (member_lookup)
+    unsigned int q028;  // X10 supply (member_lookup)
+    unsigned int q084;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

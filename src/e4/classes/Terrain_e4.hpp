@@ -23,5 +23,16 @@ struct Terrain {
     unsigned int *  ClimbCheck(unsigned int * a1, unsigned int * a2);  // 0x6D6410
     int LookupByName(void *a1 = 0);  // 0x71DD80
     unsigned int u32_80;  // 0x80 (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_122;  // X10 supply (member_types)
+    int q024;  // X10 supply (member_lookup)
+    int q030;  // X10 supply (member_lookup)
+    int q034;  // X10 supply (member_lookup)
+    int q040;  // X10 supply (member_lookup)
+    unsigned char q050;  // X10 supply (member_lookup)
+    unsigned int u32_124;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

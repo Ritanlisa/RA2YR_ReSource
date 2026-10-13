@@ -102,8 +102,8 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
       *this->DSurface_field_0x20 = 108; /*0x4ba66a*/
       (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->u32_74)(*v6, this->DSurface_field_0x20); /*0x4ba67a*/
       v8 = this->DSurface_field_0x20; /*0x4ba67d*/
-      this->Width = (unsigned int)(*(unsigned int *)(v8 + 84) + 7) >> 3; /*0x4ba689*/
-      this->u32_64 = (*(unsigned int *)(v8 + 104) & 0x4000) != 0; /*0x4ba695*/
+      this->Width = (unsigned int)(v8->u32_54 + 7) >> 3; /*0x4ba689*/
+      this->u32_64 = (v8->SuperClass_field_0x68 & 0x4000) != 0; /*0x4ba695*/
     }
   }
   return this; /*0x4ba69a*/
@@ -1113,7 +1113,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
 
   DSurface_field_0x0 = (int (__stdcall **)(unsigned int *))a1->DSurface_field_0x0; /*0x4bbca3*/
   v95[0] = a1; /*0x4bbcae*/
-  v11 = (int *)DSurface_field_0x0[30](&v95[1]); /*0x4bbcb2*/
+  v11 = DSurface_field_0x0->u32_78(&v95[1]); /*0x4bbcb2*/
   v12 = ClipRectIntersection(&v93, (int *)a3, v11, 0, 0); /*0x4bbcc2*/
   v13 = *v12; /*0x4bbcc9*/
   v99 = *v12; /*0x4bbccb*/
@@ -2698,7 +2698,7 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
 
   DSurface_field_0x0 = (int (__stdcall **)(unsigned int *))a1->DSurface_field_0x0; /*0x4bfd33*/
   v88[0] = a1; /*0x4bfd3e*/
-  v11 = (int *)DSurface_field_0x0[30](&v88[1]); /*0x4bfd42*/
+  v11 = DSurface_field_0x0->u32_78(&v88[1]); /*0x4bfd42*/
   v12 = ClipRectIntersection(&v87, (int *)a3, v11, 0, 0); /*0x4bfd57*/
   v13 = *v12; /*0x4bfd59*/
   v92 = *v12; /*0x4bfd5b*/

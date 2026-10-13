@@ -17,6 +17,8 @@ struct MovieClass {
     unsigned int q0080;  // 0x80 (offset-truth)
     unsigned int u32_148;  // 0x148 (offset-truth)
     unsigned int u32_78;  // 0x78 (offset-truth)
+
+    int q014;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

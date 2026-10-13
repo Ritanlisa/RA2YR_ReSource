@@ -41,10 +41,7 @@ class ParticleSystemClass;
 // CSP: VoxelAnimTypeClass matched via T3
 class VoxelAnimTypeClass;
 
-struct BounceClass
-{
-    uint32_t data[6];
-};
+
 
 class VoxelAnimClass : public ObjectClass
 {

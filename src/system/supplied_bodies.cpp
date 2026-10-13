@@ -38,6 +38,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+#include "system/map.hpp"
 // G42.34 T11: Isometric_e4.hpp NOT included -- misc_ext.hpp:233 tree `class Isometric`
 // (0-arg InitTables) is the first-wins def; e4 1-arg form arrives via shadow below.
 

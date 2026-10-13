@@ -71,6 +71,7 @@
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint_e4.hpp"
+#include "system/map.hpp"
 
 // G42.33 b3: 本地缺席全局/原型载体 (ida_globals.h 只覆盖裸名)
 extern unsigned int stru_A8EB00;      // data: 0xA8EB00 (帧计数基)
@@ -2577,7 +2578,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
   DisplayClass_field_0x11A8 = this->q11A8; /*0x4abb15*/
   (*(((unsigned short *)&(v55)) + 1)) = v12; /*0x4abb1b*/
   v50 = (*((unsigned char *)&(v56[0]))); /*0x4abb38*/
-  v48 = (*(int (__thiscall **)(void *))(*(unsigned int *)DisplayClass_field_0x11A8 + 64))(DisplayClass_field_0x11A8); /*0x4abb3c*/
+  v48 = DisplayClass_field_0x11A8->vt_slot_64(); /*0x4abb3c*/
   v15 = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13); /*0x4abb41*/
   v16 = EventClass::Init(v57, (int)dword_A83D4C->relatedTagsCount, 11, v15, v48, v50, &v55); /*0x4abb55*/
   if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4abb64*/

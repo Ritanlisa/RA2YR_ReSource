@@ -7,9 +7,7 @@
 #define GAMEMD_E4_Text 1
 #define GAMEMD_E4_BuildingLoadQueue 1
 #define GAMEMD_E4_FrameTimer 1
-#define GAMEMD_E4_BitmapClass 1
 #define GAMEMD_E4_CampaignScore 1
-#define GAMEMD_E4_CampaignSelect 1
 #define GAMEMD_E4_FontClass 1
 #define GAMEMD_E4_FontRenderer 1
 #define GAMEMD_E4_ToolTipClass 1
@@ -77,6 +75,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Debug_e4.hpp"  // G42.35: Debug::Log 体表词汇
 #include "e4/classes/Vector_e4.hpp"  // G42.35: Vector::Clear 体表词汇
 #include "e4/classes/Audio_e4.hpp"  // G42.35: Audio::IsSoundEnabled 体表词汇
+#include "core/hash_table.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int Dtor(AbstractTypeClass *p_this); }  // x4:ida@0x4109c0
 namespace gamemd { int Reset(AudioStream *p_this); }  // x4:ida@0x403820
@@ -164,7 +163,6 @@ extern int GetResourceID3CSF(void *a1);  // 本地原型
 extern void *SendToPlayer(int a1, int a2, int a3, int a4, wchar_t *a5);  // 0x541260 本地原型 (Network:: 静态形式)
 extern void *ReceiveLoop(void *a1);  // 0x5410B0 区 本地原型 (Network:: 静态形式, G42.34: ptr this)
 // Base64Straw 完整本地载体 (体表 q000 下标/成员用)
-struct Base64Straw { unsigned char q000[8]; };  // G42.33 b3
 extern int GetHouseClassSideIndex(int a1);  // 本地原型 (调用点 int)
 // G42.33 b3: r8 缺席全局/原型
 extern void *g_UIControlState;        // data: 0xAC1154 (globals_core 同形)

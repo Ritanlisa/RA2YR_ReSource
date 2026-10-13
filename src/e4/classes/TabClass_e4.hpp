@@ -13,6 +13,11 @@ struct TabClass {
     int DrawPower(void *a1);
     unsigned int * initStripClass();
     int DrawPower(void *a1, void * aGrey);
+
+    int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

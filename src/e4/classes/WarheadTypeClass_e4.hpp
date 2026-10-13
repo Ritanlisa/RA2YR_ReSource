@@ -148,6 +148,10 @@ struct WarheadTypeClass {
     unsigned int m_C;  // 0xC (offset-truth)
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_680;  // 0x680 (offset-truth)
+
+    unsigned int AnimList;  // X10 supply (csp_canon_members)
+    float CellInset;  // X10 supply (csp_canon_members)
+    unsigned int u32_104;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

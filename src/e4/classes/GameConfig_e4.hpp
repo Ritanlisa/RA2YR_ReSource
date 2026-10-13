@@ -22,6 +22,8 @@ struct GameConfig {
     int  BuildChecksum(char * Buffer);  // 0x77E7A0
     static char * ComputeCRC();
     int ComputeHash();
+
+    CCINIClass * q038;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

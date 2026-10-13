@@ -125,6 +125,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadWDTDecompress(int a1, int a2);  // 0x76b0a0 -- File::LoadWDTDecompress
     int ParseAudioFileRIFF();  // 0x7c12b0 -- File::ParseAudioFileRIFF
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned char q054;  // X10 supply (member_lookup)
+    unsigned int u32_2A;  // X10 supply (member_lookup)
+    unsigned char u8_27;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 
@@ -188,6 +193,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool Write();  // 0x65D420
     int Dtor(); // N_fix R5 supply (cache truth)
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char q058;  // X10 supply (member_lookup)
+    unsigned char q064;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_types)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_RawFileClass_DEF
 

@@ -21,6 +21,11 @@ struct VeinholeMonsterClass {
     int ddtor(int a1, unsigned int * a2);
     void UpdateVeinholeMonster();  // G42.39 supply
     unsigned int *q000;  // 0x0 (offset-truth)
+
+    unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

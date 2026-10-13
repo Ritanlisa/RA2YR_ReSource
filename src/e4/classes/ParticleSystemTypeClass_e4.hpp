@@ -92,6 +92,15 @@ struct ParticleSystemTypeClass {
     void* GetType(unsigned char *** aP1);
     void* PowerDrainUpdate(int * a2);
     ParticleSystemTypeClass * ddtor(void ** Block, char a2);
+
+    unsigned char __pad_2B4;  // X10 supply (csp_canon_members)
+    int q294;  // X10 supply (member_lookup)
+    unsigned char q298[4];  /* char[4] */  // X10 supply (member_lookup)
+    int q29C;  // X10 supply (member_lookup)
+    int q2A0;  // X10 supply (member_lookup)
+    int q2A4;  // X10 supply (member_lookup)
+    int q2A8;  // X10 supply (member_lookup)
+    int q2AC;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

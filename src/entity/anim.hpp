@@ -14,10 +14,7 @@ class AnimTypeClass;
 class BulletClass;
 class LightConvertClass;
 
-struct BounceClass
-{
-    uint32_t data[6];
-};
+
 
 class AnimClass : public ra2::game::ObjectClass
 {
@@ -183,6 +180,36 @@ public:  // g57c5 W4b supply slot
     int AnimClass_field_0x180;  // 0x180 g57c5 W4b (self-desc vocab, ml slot witness)
 public:  // g57c5 W4b supply slot
     int AnimClass_field_0xB8;  // 0xB8 g57c5 W4b (self-desc vocab, ml slot witness)
+
+    unsigned char __pad_0FC;  // X10 supply (csp_canon_members)
+    unsigned int q119;  // X10 supply (member_lookup)
+    unsigned int q11A;  // X10 supply (member_lookup)
+    unsigned int q11B;  // X10 supply (member_lookup)
+    unsigned char q128[4];  /* JumpjetLocomotionClass */  // X10 supply (member_lookup)
+    unsigned int q12C;  // X10 supply (member_lookup)
+    unsigned int q134;  // X10 supply (member_lookup)
+    unsigned int q138;  // X10 supply (member_lookup)
+    unsigned int q13C;  // X10 supply (member_lookup)
+    unsigned char q168[4];  /* Int4 */  // X10 supply (member_lookup)
+    unsigned int q179;  // X10 supply (member_lookup)
+    unsigned int q195;  // X10 supply (member_lookup)
+    unsigned int q196;  // X10 supply (member_lookup)
+    unsigned int q197;  // X10 supply (member_lookup)
+    unsigned int q198;  // X10 supply (member_lookup)
+    unsigned int q19A;  // X10 supply (member_lookup)
+    unsigned int q19B;  // X10 supply (member_lookup)
+    unsigned int q19C;  // X10 supply (member_lookup)
+    unsigned int q19E;  // X10 supply (member_lookup)
+    unsigned char u32_158[4];  /* Int4 */  // X10 supply (member_lookup)
+    unsigned int u32_3D3;  // X10 supply (member_lookup)
+    int u32_40;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
+
+    unsigned int q130;  // X10 supply (member_lookup)
+    unsigned int q199;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

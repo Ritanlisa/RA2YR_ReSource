@@ -14,5 +14,9 @@ struct Gadget {
     unsigned char *m_1;  // 0x1 (canon-mt)
     unsigned char m_5;  // 0x5 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

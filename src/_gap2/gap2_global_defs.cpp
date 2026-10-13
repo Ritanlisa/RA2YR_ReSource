@@ -34,6 +34,9 @@
 #include "e4/classes/Color_e4.hpp"  // w16g4 C3861 Color:: supply
 #include "e4/classes/Char_e4.hpp"  // w16g4 C3861 Char:: supply
 #include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
+#include "misc/rules.hpp"
+#include "entity/particle.hpp"
+#include "e4/classes/VeinholeMonsterClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, unsigned int *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
 namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
@@ -4495,7 +4498,7 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2)
                       BuildingClass::Deactivate(v17); /*0x4c570a*/
                       Type = v17->Type; /*0x4c5712*/
                       v17->empLockRemaining = (int)v23->nextObject; /*0x4c5718*/
-                      if ( Type->__pad_1624[128] ) /*0x4c571e*/
+                      if ( Type->Radar ) /*0x4c571e*/
                         v17->q5778->HouseClass_field_timer_B[2] = ((v17->q5778->HouseClass_field_timer_B[2]) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); /*0x4c5732*/
                     }
                   }
@@ -7220,10 +7223,10 @@ int Gap2Recv_54BD30::UpdateFootMoveToState() {
             v9 = v3->vtable4; /*0x54bdfc*/
             if ( !v9[1709] ) /*0x54bdff*/
             {
-              v3->needsRedraw = *(unsigned int *)(v3 + 44); /*0x54be0e*/
+              v3->needsRedraw = v3->fallRate; /*0x54be0e*/
               v10 = v9[116]; /*0x54be16*/
               (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v9 + 292))(v9, 0); /*0x54be19*/
-              *(unsigned char *)(*(unsigned int *)(v3 + 12) + 116) = v10; /*0x54be22*/
+              *(unsigned char *)(v3->vtable4 + 116) = v10; /*0x54be22*/
               v11 = v3->vtable4; /*0x54be25*/
               v3->customSound_controller = 2; /*0x54be28*/
               BuildingClass::GetType_Thunk(v11); /*0x54be2f*/
@@ -7245,7 +7248,7 @@ int Gap2Recv_54BD30::UpdateFootMoveToState() {
           v12 = v3->vtable4; /*0x54be77*/
           v13 = v12[116]; /*0x54be7e*/
           (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v12 + 292))(v12, 0); /*0x54be81*/
-          *(unsigned char *)(*(unsigned int *)(v3 + 12) + 116) = v13; /*0x54be8a*/
+          *(unsigned char *)(v3->vtable4 + 116) = v13; /*0x54be8a*/
           v14 = v3->vtable4; /*0x54be8d*/
           v3->customSound_controller = 2; /*0x54be90*/
           BuildingClass::GetType_Thunk(v14); /*0x54be97*/
@@ -7279,7 +7282,7 @@ LABEL_19:
     LOWORD(v29) = Math::RoundToInt(result); /*0x54bf46*/
     v28 = v29; /*0x54bf53*/
     FacingClass::Update(&v3->u32_54, &v28); /*0x54bf5b*/
-    if ( !*(unsigned int *)((*(int (**)(unsigned int))(**(unsigned int **)(v3 + 12) + 444))(*(unsigned int *)(v3 + 12)) + 224) ) /*0x54bf6b*/
+    if ( !*(unsigned int *)((*(int (**)(unsigned int))(*v3->vtable4 + 444))(v3->vtable4) + 224) ) /*0x54bf6b*/
     {
       v22 = v3->vtable4; /*0x54bf75*/
       if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)(v22 + 1376)) + 56) == v22 ) /*0x54bf91*/
@@ -8621,7 +8624,7 @@ char Gap2Recv_56E890::ProcessDataHouseClass(void* a2, void* a3, void* a4) {
     if ( ++v7 >= stru_A80220.nextArrayIndex ) /*0x56e95f*/
       return 0; /*0x56e95f*/
   }
-  *a3 = *(unsigned int *)(*(unsigned int *)(v8 + 52) + 184); /*0x56e97d*/
+  *a3 = *(unsigned int *)(v8->q034 + 184); /*0x56e97d*/
   return 1; /*0x56e961*/
 }
 }
@@ -16267,7 +16270,7 @@ char Gap2Recv_62E840::UpdateProductionParticleSystem() {
   LABEL_4:
       v6 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x62e8aa*/
       currentMission = this->currentMission; /*0x62e8af*/
-      v8 = *(unsigned int *)(currentMission + 676) / 2 + (int)abs32(v6) % (*(unsigned int *)(currentMission + 676) / 2); /*0x62e8dc*/
+      v8 = currentMission->q2A4 / 2 + (int)abs32(v6) % (currentMission->q2A4 / 2); /*0x62e8dc*/
       p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x62e8e4*/
       v10 = (unsigned int *)*((unsigned int *)dword_A83D9C + *(unsigned int *)(currentMission + 660)); /*0x62e8ea*/
       v47 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x62e8f4*/
@@ -16502,7 +16505,7 @@ char Gap2Recv_62E840::UpdateProductionParticleSystem() {
       if ( dword_A8EB78 == 2 ) /*0x62ebf9*/
       {
         v34 = this->currentMission; /*0x62ebfb*/
-        if ( this->flashing[0] == *(unsigned int *)(v34 + 768) && *(int *)(v34 + 772) > 0 && !v34->u32_30C ) /*0x62ec19*/
+        if ( this->flashing[0] == v34->q300 && v34->q304 > 0 && !v34->u32_30C ) /*0x62ec19*/
         {
           v35 = (ObjectClass *)operator new(0x18u); /*0x62ec25*/
           if ( v35 ) /*0x62ec2f*/
@@ -16784,11 +16787,11 @@ void Gap2Recv_62ED40::UpdateBuildingParticleSystem() {
                 }
                 if ( *&this->VectorClass_2C8 > (double)*(float *)(this->currentMission + 688) ) /*0x62f1af*/
                   *(unsigned char *)(v40 + 303) += 25; /*0x62f1b1*/
-                v45 = *(float *)(v40 + 228) /*0x62f1d0*/
+                v45 = v40->Tactical_E4 /*0x62f1d0*/
                     - (*(float *)&this->radioLinks[2] - (double)*(int *)(this->currentMission + 668)) * 0.34999999;
-                *(float *)(v40 + 228) = v45; /*0x62f1d6*/
+                v40->Tactical_E4 = v45; /*0x62f1d6*/
                 if ( v45 < 2.0 ) /*0x62f1e7*/
-                  *(unsigned int *)(v40 + 228) = 0x40000000; /*0x62f1e9*/
+                  v40->Tactical_E4 = 0x40000000; /*0x62f1e9*/
               }
             }
           }
@@ -16874,7 +16877,7 @@ char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
   {
     if ( !v6[144] ) /*0x62fa12*/
       goto LABEL_13; /*0x62fa12*/
-    if ( *((unsigned int *)v6 + 173) && TimerClass::Active((int)(v6 + 904)) ) /*0x62fa34*/
+    if ( v6->u32_2B4 && TimerClass::Active((int)(v6 + 904)) ) /*0x62fa34*/
     {
       v8 = (int *)(*(int (**)(unsigned int, int *))(*v6->u32_2B4 + 72))(v6->u32_2B4, &v50); /*0x62fa51*/
       v9 = *v8; /*0x62fa5c*/
@@ -18131,7 +18134,7 @@ char Gap2Recv_641B00::LoadMapPreviewImage(void* a2) {
          (uint8_t *)g_Str_EVA_CannotDeployHere.Type,
          (unsigned int *)&DataGlobal_87F8E4);
   v19 = *v3; /*0x641b45*/
-  v20 = (INIClass *)v3[1]; /*0x641b4c*/
+  v20 = v3->u32_4; /*0x641b4c*/
   v4 = v3[2]; /*0x641b50*/
   v5 = v3[3]; /*0x641b53*/
   v6 = (char *)operator new(0x24u); /*0x641b56*/
@@ -19108,9 +19111,9 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
     }
     Math::Sqrt(v32); /*0x6596cc*/
     __asm { fstp qword ptr [esi+68h] } /*0x6596d1*/
-    *(double *)&_ESI->bombVisible = _RT1; /*0x6596d1*/
+    *&_ESI->u64_68 = _RT1; /*0x6596d1*/
   }
-  if ( (*((unsigned char *)&(_ESI->customSound_controller[2]))) ) /*0x6596d7*/
+  if ( (_ESI->M88) ) /*0x6596d7*/
   {
     vtable1 = _ESI->vfptr1; /*0x6596e2*/
     if ( vtable1 ) /*0x6596e7*/
@@ -19144,10 +19147,10 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
       }
       Math::Sqrt(v33); /*0x659781*/
       __asm { fstp qword ptr [esi+68h] } /*0x659786*/
-      *(double *)&_ESI->bombVisible = _RT1; /*0x659786*/
+      *&_ESI->u64_68 = _RT1; /*0x659786*/
     }
   }
-  if ( (((unsigned char *)&(_ESI->vfptr2))[1]) ) /*0x65978c*/
+  if ( (_ESI->u8_A) ) /*0x65978c*/
   {
     __asm /*0x659797*/
     {
@@ -19159,7 +19162,7 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
     v38 = _ESI->customSound_controller[3]; /*0x6597a8*/
     customSound = _ESI->customSound; /*0x6597ac*/
     v39 = v14; /*0x6597af*/
-    *(unsigned int *)&_ESI->onBridge = v13; /*0x6597b8*/
+    *&_ESI->M140 = v13; /*0x6597b8*/
     v40 = customSound; /*0x6597be*/
     Render_Render_65A1B0((ObjectClass *)&v38, v13); /*0x6597c2*/
     __asm /*0x6597c7*/
@@ -19170,22 +19173,22 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
     v16 = v38; /*0x6597cd*/
     v17 = v39; /*0x6597d1*/
     _ESI->parachute = 0; /*0x6597e1*/
-    *(unsigned int *)&_ESI->isAliveFlag = v16; /*0x6597eb*/
+    *&_ESI->q088 = v16; /*0x6597eb*/
     v18 = v40; /*0x6597ed*/
     _ESI->lastLayer = v17; /*0x6597f1*/
-    *(unsigned int *)&_ESI->isInLogic = v18; /*0x6597f7*/
+    *&_ESI->M8 = v18; /*0x6597f7*/
     _ESI->location[0] = _ESI->occupant; /*0x6597fe*/
     fallRate = _ESI->fallRate; /*0x659803*/
     _ESI->location[1] = _ESI->owningHouseIndex; /*0x659806*/
     _ESI->location[2] = fallRate; /*0x65980c*/
     (*((unsigned short *)&(_ESI[1].abstractFlags))) = _ESI->NeedsSaveOrLink; /*0x659818*/
-    (((unsigned char *)&(_ESI[1].abstractFlags))[2]) = (((unsigned char *)&(_ESI->NeedsSaveOrLink))[2]); /*0x65981e*/
+    (((unsigned char *)&(_ESI[1].abstractFlags))[2]) = (_ESI->u32_4); /*0x65981e*/
     __asm /*0x659821*/
     {
       fmul qword ptr [esi+40h]
       fstp qword ptr [esi+80h]
     }
-    *(double *)&_ESI->needsRedraw = _RT1; /*0x659824*/
+    *&_ESI->u64_80 = _RT1; /*0x659824*/
     __asm /*0x65982a*/
     {
       fld ds:dbl_7E2800
@@ -19236,7 +19239,7 @@ bool Gap2Recv_659650::RenderProjectileTrail() {
       while ( (_AX & 0x100) != 0 ); /*0x659962*/
     }
   }
-  if ( (*((unsigned char *)&(_ESI->customSound_controller[2]))) ) /*0x659968*/
+  if ( (_ESI->M88) ) /*0x659968*/
   {
     v27 = _ESI->customSound_controller[1]; /*0x65996f*/
     v28 = v27 + _ESI->visibilityFlags; /*0x659975*/
@@ -19293,14 +19296,14 @@ int Gap2Recv_659E30::Weapon_Update_Update() {
   }
   Math::Sqrt(v14); /*0x659e85*/
   __asm { fst qword ptr [esi+68h] } /*0x659e8a*/
-  *(double *)&_ESI->bombVisible = _RT1; /*0x659e8a*/
+  *&_ESI->u64_68 = _RT1; /*0x659e8a*/
   __asm { fdiv qword ptr [esi+18h] } /*0x659e8d*/
   (*((unsigned short *)&(result))) = Math::RoundToInt(v1); /*0x659e93*/
   v9 = *v5; /*0x659e98*/
   v10 = _ESI->customSound_controller[4]; /*0x659e9a*/
   customSound = _ESI->customSound; /*0x659e9d*/
   v12 = result; /*0x659ea0*/
-  *(unsigned int *)&_ESI->onBridge = result; /*0x659ea4*/
+  *&_ESI->M140 = result; /*0x659ea4*/
   if ( result ) /*0x659eaa*/
   {
     v9 /= result; /*0x659eb1*/
@@ -19359,7 +19362,7 @@ int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
     fmul qword ptr [esi+40h]
     fstp qword ptr [esi+80h]
   }
-  *(double *)&_ESI->needsRedraw = _RT1; /*0x659f2b*/
+  *&_ESI->u64_80 = _RT1; /*0x659f2b*/
   __asm /*0x659f31*/
   {
     fstp st
@@ -19367,7 +19370,7 @@ int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
     fmul qword ptr [esi+48h]
   }
   (*((unsigned short *)&(v6))) = Math::RoundToInt(v1); /*0x659f3a*/
-  v7 = v6 * *(unsigned int *)&_ESI->isOnMap + _ESI->customSound_controller[4]; /*0x659f5f*/
+  v7 = v6 * *&_ESI->u32_4 + _ESI->customSound_controller[4]; /*0x659f5f*/
   v8 = v6 * _ESI->spawnStatus + _ESI->customSound; /*0x659f64*/
   _ESI->customSound_controller[3] += v6 * _ESI->estimatedHealth; /*0x659f68*/
   _ESI->customSound_controller[4] = v7; /*0x659f6a*/
@@ -19382,14 +19385,14 @@ int Gap2Recv_659EE0::Weapon_Update_Update_659EE0() {
   }
   Math::Sqrt(v16); /*0x659f96*/
   __asm { fst qword ptr [esi+68h] } /*0x659f9b*/
-  *(double *)&_ESI->bombVisible = _RT1; /*0x659f9b*/
+  *&_ESI->u64_68 = _RT1; /*0x659f9b*/
   __asm { fdiv qword ptr [esi+18h] } /*0x659f9e*/
   (*((unsigned short *)&(result))) = Math::RoundToInt(v1); /*0x659fa4*/
   v11 = _ESI->customSound_controller[3]; /*0x659fa9*/
   v12 = _ESI->customSound_controller[4]; /*0x659fab*/
   customSound = _ESI->customSound; /*0x659fae*/
   result = result; /*0x659fb1*/
-  *(unsigned int *)&_ESI->result = result; /*0x659fb5*/
+  *&_ESI->M140 = result; /*0x659fb5*/
   if ( result ) /*0x659fbb*/
   {
     v11 /= result; /*0x659fc2*/
@@ -27218,7 +27221,7 @@ char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
     v5 = v4->q5D8; /*0x6ef12d*/
     if ( v4 && v4->isAliveFlag ) /*0x6ef13b*/
     {
-      if ( *(unsigned int *)(v4 + 108) && (dword_A8E7AC || !*(unsigned char *)(v4 + 129)) && !v4->u8_689 ) /*0x6ef16b*/
+      if ( v4->health && (dword_A8E7AC || !v4->inLimbo) && !v4->u8_689 ) /*0x6ef16b*/
       {
         v6 = *SessionClass::GetEntry((SessionClass *)v3->owningHouseIndex, &v20); /*0x6ef182*/
         if ( v6 == 54 || v6 == 53 ) /*0x6ef18c*/
@@ -27236,7 +27239,7 @@ char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
           (*(void (**)(int, TagClass *, int))(*(unsigned int *)v4 + 1152))(v4, v3->attachedTag, 1); /*0x6ef1e5*/
         }
       }
-      if ( *(unsigned char *)(v4 + 144) /*0x6ef238*/
+      if ( v4->isAliveFlag /*0x6ef238*/
         && v4->health
         && (dword_A8E7AC || !v4->inLimbo)
         && (v4->u8_689 || (*(int (**)(int))(*&v4->q_B0))(v4) == 2) )
@@ -29622,7 +29625,7 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
         break; /*0x736f73*/
       case 2: /*0x736e77*/
         v9 = this->M1732; /*0x736f78*/
-        if ( *(unsigned char *)(v9 + 3601) || !v9->u32_CA1 ) /*0x736f88*/
+        if ( v9->u32_E11 || !v9->u32_CA1 ) /*0x736f88*/
         {
           if ( !this->M1444 ) /*0x736fb6*/
           {
@@ -31332,7 +31335,7 @@ int Gap2Recv_756860::InitializeTileAudioOcclusion(int a2, void* a3) {
   v55 = (float)(uint8_t)v44; /*0x756946*/
   (*((unsigned short *)&(v54[0]))) = Math::RoundToInt(v19); /*0x756965*/
   v21 = Math::RoundToInt(v19); /*0x756972*/
-  v22 = *(float *)(a2 + 52) - a2->owningHouseIndex; /*0x75697c*/
+  v22 = a2->attachedTag - a2->owningHouseIndex; /*0x75697c*/
   v53[1] = v21; /*0x75697f*/
   v23 = Math::RoundToInt(v22 / v55 * 256.0); /*0x75698e*/
   v24 = a2->ambientSoundController; /*0x756993*/
@@ -32626,7 +32629,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
   *(unsigned int *)this = &vt_ReferenceCounted; /*0x76bf11*/
   ComPtr::Constructor(&this->u32_8); /*0x76bf17*/
   *v3 = &vt_rc_ptr; /*0x76bf20*/
-  ComPtr::Set(v3, *(unsigned int *)(a2 + 4)); /*0x76bf2c*/
+  ComPtr::Set(v3, a2->vtable2); /*0x76bf2c*/
   v4 = a2->vtable2; /*0x76bf31*/
   if ( v4 ) /*0x76bf3d*/
     v5 = v4->vtable3; /*0x76bf3f*/
@@ -33396,7 +33399,7 @@ bool Gap2Recv_76DAD0::TerritorySelectWDT(ObjectClass * aP1) {
         WideString::Reassign_Alt((WideString *)&v27, (const wchar_t **)v21); /*0x76ddd1*/
         DeleteAndZero::Alt(&v31); /*0x76ddda*/
         WideString::Reassign_Alt((WideString *)&v27.vtable3, (const wchar_t **)&v27); /*0x76dde8*/
-        v22 = *(MSAnim **)(*(unsigned int *)(aP1 + 4) + 44); /*0x76ddf4*/
+        v22 = *(MSAnim **)(aP1->AudioController_field_04 + 44); /*0x76ddf4*/
         if ( v22 ) /*0x76ddf9*/
         {
           MSAnim::SetField(v22, 0xFFFFFFFF); /*0x76ddff*/

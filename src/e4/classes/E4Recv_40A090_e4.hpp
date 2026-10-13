@@ -16,5 +16,7 @@ struct E4Recv_40A090 {
     unsigned int M480;  // 0x1E0
 // --- flat members (END) ---
     AudioController * * sub_40A090();  // 0x40A090
+
+    unsigned char CoordBounds_E8[4];  /* CoordBounds */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

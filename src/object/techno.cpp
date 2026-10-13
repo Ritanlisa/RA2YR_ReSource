@@ -32,6 +32,7 @@ int Random_Range(void *a1, int a2, int a3);  // raw 0x6e17e3 Random::Range (g57b
 using ra2::game::AbstractClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "system/map.hpp"
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioSource;  // 词表 (canon 无条目, int 兜底) L1306
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {

@@ -235,5 +235,8 @@ void ClearAndFree4();
     unsigned int q00C;  // 0xC (offset-truth)
     unsigned int q010;  // 0x10 (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
+
+    unsigned int u32_25801;  // X10 supply (member_lookup)
+    unsigned int u32_960;  // X10 supply (member_lookup)
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

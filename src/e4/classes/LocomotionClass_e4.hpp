@@ -52,6 +52,12 @@ struct LocomotionClass {
     unsigned int u32_68;  // 0x68 (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
+
+    unsigned char q020;  // X10 supply (member_lookup)
+    unsigned int q040;  // X10 supply (member_lookup)
+    unsigned int q044;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

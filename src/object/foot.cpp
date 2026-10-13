@@ -8,6 +8,7 @@
 #include "e4/classes/House_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/MovementAI_e4.hpp"  // g57c5 W5d scope supply
+#include "system/map.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Begin(TechnoClass *p_this); }  // x4:ida@0x6f9e50
 namespace gamemd { int CheckAmbiguity(int p0, char p1); }  // x4:signals@0x578540

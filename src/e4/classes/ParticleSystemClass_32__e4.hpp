@@ -15,5 +15,10 @@ struct ParticleSystemClass_32_ {
     unsigned int  GetElementIndex(int a2);  // 0x4E8870
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

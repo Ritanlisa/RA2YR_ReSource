@@ -11,5 +11,10 @@ struct E4Recv_75A120 {
     unsigned int M112;  // 0x70
 // --- flat members (END) ---
     int  sub_75A120(int a2, int * a3, int a4);  // 0x75A120
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_1C0;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

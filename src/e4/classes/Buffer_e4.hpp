@@ -48,6 +48,13 @@ struct Buffer {
     unsigned int u32_744;  // 0x744 (offset-truth)
     unsigned int u32_748;  // 0x748 (offset-truth)
     unsigned int u32_88;  // 0x88 (offset-truth)
+
+    unsigned int Buffer_field_00;  // X10 supply (csp_canon_members)
+    unsigned char __pad_610;  // X10 supply (member_lookup)
+
+    unsigned int u32_12C;  // X10 supply (member_lookup)
+    unsigned int u32_158;  // X10 supply (member_lookup)
+    unsigned int u32_DC;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

@@ -20,6 +20,13 @@ struct SortedArray {
     int  Find(int * a2, void *a1 = 0);  // 0x52b170
     void * BinarySearch2(int *a2, void *a1 = 0);
     unsigned char q0046;  // 0x46 (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char q040;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

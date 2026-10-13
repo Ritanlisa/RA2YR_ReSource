@@ -179,14 +179,7 @@ public:
 // ============================================================================
 #ifndef GAMEMD_CAPTUREMANAGER_DECLARED  // G42.34: first-wins (misc_ext.hpp twin)
 #define GAMEMD_CAPTUREMANAGER_DECLARED
-class CaptureManager
-{
-public:
-    // IDA 0x48B2A0 area
-    static void FreeAll();  // 0x472140
 
-    static int32_t  s_Count;        // 0x00
-};
 #endif
 
 // ============================================================================
@@ -211,29 +204,6 @@ public:
 // Random — random number generation (4 methods)
 // IDA: Gaussian, State, Range
 // ============================================================================
-#ifndef GAMEMD_TREE_Random  // G42.35h: utility_ext Random carrier wins in tree TUs
-#ifndef GAMEMD_G2_Random_DEF  // g57a5 W2d: twin-definition guard (game_systems Random)
-#define GAMEMD_G2_Random_DEF 1
-class Random
-{
-public:
-    // IDA 0x48B2A0 area
-    static float Gaussian();  // 0x5980C0
-    // IDA 0x48B2A0 area
-    static uint32_t State();  // 0x65C780
-    // IDA 0x48B2A0 area
-    static int32_t Range(int32_t min, int32_t max);  // 0x65C7E0
-    // IDA 0x48B2A0 area
-    // design: static function, no direct binary match in IDA
-    static void Seed(uint32_t seed);
-
-    static uint32_t s_Seed;         // 0x00
-    static uint32_t s_State[4];     // 0x04
-};
-#endif  // GAMEMD_G2_Random_DEF
-
-
-#endif  // GAMEMD_TREE_Random
 
 // === Batch-generated MISSING class stubs ===
 
@@ -246,6 +216,13 @@ public:
 
     virtual void InitMultiplayerModes(int a2, int a3); // 0x5D86D0
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class GameLobby
@@ -269,6 +246,8 @@ public:
     void* Constructor(); // 0x767300
 
     uint8_t GameOption_WorldDominationTour_field_0x04[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 // 4 methods in IDA
 // CSP: GameOptions matched via T1
@@ -288,6 +267,17 @@ public:
     uint8_t GameOptions_field_0x0C[4];
 public:  // g57c5 W4b supply slot
     unsigned char *__pad_0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
+    unsigned char u32_108[4];  /* wchar_t */  // X10 supply (member_lookup)
+    unsigned int u32_188;  // X10 supply (member_lookup)
+    unsigned int u32_18C;  // X10 supply (member_lookup)
+    int u32_3D8;  // X10 supply (member_lookup)
+    int u32_3E0;  // X10 supply (member_lookup)
+    int u32_3E8;  // X10 supply (member_lookup)
+    unsigned int u32_3F0;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 class GameOptionsClass
@@ -310,6 +300,11 @@ public:
 
     virtual void CalcScore(); // 0x4C6210
 
+
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class GameScreen
@@ -357,39 +352,24 @@ public:
 
     int Reset(); // 0x680FF0
 
+
+    unsigned int u32_108;  // X10 supply (member_lookup)
+    unsigned int u32_188;  // X10 supply (member_lookup)
+    unsigned int u32_18C;  // X10 supply (member_lookup)
+    unsigned int u32_190;  // X10 supply (member_lookup)
+    unsigned int u32_294;  // X10 supply (member_lookup)
+    unsigned int u32_2D4;  // X10 supply (member_lookup)
+    unsigned int u32_3D8;  // X10 supply (member_lookup)
+    unsigned int u32_3DC;  // X10 supply (member_lookup)
+    unsigned int u32_3E0;  // X10 supply (member_lookup)
+    unsigned int u32_3E4;  // X10 supply (member_lookup)
+    unsigned int u32_3E8;  // X10 supply (member_lookup)
+    unsigned int u32_3EC;  // X10 supply (member_lookup)
+    unsigned int u32_3F0;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 12 methods in IDA
-#ifndef GAMEMD_TREE_LoadGame  // G42.35h: e4 flat carrier wins in opt-in TUs
-#ifndef GAMEMD_G2_LoadGame_DEF  // g57a5 W2d: twin-definition guard (game_systems LoadGame)
-#define GAMEMD_G2_LoadGame_DEF 1
-class LoadGame
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~LoadGame() = default;
-
-    virtual void LoadIteratedData(); // 0x4136C0
-    virtual void ClearAllSlots(); // 0x413800
-    virtual void DeserializePointerArrays(); // 0x439260
-    virtual void LoadBlock68(); // 0x4C6320
-    virtual void CleanupArray(); // 0x54E6F0
-    // +7 more virtual methods
-
-    uint8_t LoadGame_field_0x04[4];
-    uint8_t LoadGame_field_0x08[4];
-    uint8_t LoadGame_field_0x0C[4];
-    uint8_t LoadGame_field_0x10[4];
-    uint8_t LoadGame_field_0x14[4];
-    uint8_t LoadGame_field_0x18[4];
-    uint8_t LoadGame_field_0x1C[4];
-    uint8_t LoadGame_field_0x20[4];
-    uint8_t LoadGame_field_0x24[4];
-    uint8_t LoadGame_field_0x28[4];
-    uint8_t LoadGame_field_0x2C[4];
-};
-#endif  // GAMEMD_G2_LoadGame_DEF
-
-#endif  // GAMEMD_TREE_LoadGame
 // 3 methods in IDA
 // CSP: LoadProgressMgr matched via T1
 class LoadProgressMgr
@@ -414,6 +394,16 @@ public:
 
     virtual void FillList(); // 0x5596A0
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 6 methods in IDA
 class LoadScreen
@@ -438,6 +428,14 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int IsActive();  // 0x643e60 -- LoadScreen::IsActive
     // === SYMBOL-ANCHOR (END) ===
+
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_71;  // X10 supply (member_lookup)
+    unsigned int u32_74;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 // 16 methods in IDA
 // CSP: LoadingScreen matched via T1
@@ -485,6 +483,26 @@ public:
     int FreeResources();  // 0x730400
     void FreeResources2();  // 0x730530
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
+    int q01C;  // X10 supply (member_lookup)
+    int q020;  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    int q030;  // X10 supply (member_lookup)
+    int q03C;  // X10 supply (member_lookup)
+    unsigned char q084;  // X10 supply (member_lookup)
+    bool u32_200;  // X10 supply (member_lookup)
+    bool u32_201;  // X10 supply (member_lookup)
+    bool u32_202;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_types)
+    unsigned int u32_48;  // X10 supply (member_types)
+    unsigned int u32_4C;  // X10 supply (member_types)
+
+    unsigned int u32_80;  // X10 supply (member_lookup)
 };
 // 7 methods in IDA
 // CSP: MultiplayerGameMode matched via T1
@@ -511,6 +529,17 @@ public:
     void* QueryInterface(int a1);  // 0x5d7f20 -- MultiplayerGameMode::QueryInterface
     void* ConstructMultiplayerGameModeVectorClass(int a1, int a2);  // 0x5d89f0 -- MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass
     // === SYMBOL-ANCHOR (END) ===
+
+    int q010;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
+    unsigned char q020;  // X10 supply (member_lookup)
+    ObjectClass* q044;  // X10 supply (member_lookup)
+    ObjectClass* q048;  // X10 supply (member_lookup)
+    unsigned int u32_15;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class SaveLoad
@@ -521,6 +550,9 @@ public:
 
     virtual void StreamVector(); // 0x67A770
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 // 3 methods in IDA
 // CSP: SaveLoadDialog matched via T1
@@ -536,6 +568,17 @@ public:
 
     uint8_t SaveLoadDialog_field_0x04[4];
     uint8_t SaveLoadDialog_field_0x08[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 3 methods in IDA
 class SkirmishDialog
@@ -550,6 +593,9 @@ public:
 
     uint8_t SkirmishDialog_field_0x04[4];
     uint8_t SkirmishDialog_field_0x08[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 // CSP: SkirmishMapGen matched via T1
@@ -573,6 +619,13 @@ public:
 
     virtual void PushBack(); // 0x5EEE40
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class SyncDelayClass

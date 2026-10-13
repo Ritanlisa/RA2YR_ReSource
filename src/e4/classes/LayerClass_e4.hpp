@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_LAYERCLASS_DEF  // X10: first-include-wins twin guard
+#define GAMEMD_G2_LAYERCLASS_DEF 1
 struct LayerClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -32,6 +34,13 @@ struct LayerClass {
     unsigned int u32_13C;  // 0x13C (offset-truth)
     unsigned int u32_F4;  // 0xF4 (offset-truth)
     unsigned int u32_F8;  // 0xF8 (offset-truth)
+
+    unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned int u32_108;  // X10 supply (member_lookup)
+    unsigned int u32_118;  // X10 supply (member_lookup)
+    unsigned int u32_FC;  // X10 supply (member_lookup)
 };
+#endif  // GAMEMD_G2_LAYERCLASS_DEF (X10)
+
 
 } // namespace gamemd

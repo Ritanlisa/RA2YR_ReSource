@@ -344,7 +344,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   result = (int)this->spawnOwner; /*0x6b7e8b*/
   if ( result ) /*0x6b7e90*/
   {
-    v12 = (*(int (**)(int))(*(unsigned int *)(result + 4) + 16))(result + 4); /*0x6b7e99*/
+    v12 = (*(int (**)(int))(result->vtable2 + 16))(result + 4); /*0x6b7e99*/
     result = Power::TimerProcess(v12); /*0x6b7e9f*/
   }
   owner = this->owner; /*0x6b7ea4*/

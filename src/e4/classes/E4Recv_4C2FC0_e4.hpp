@@ -18,5 +18,8 @@ struct E4Recv_4C2FC0 {
     unsigned int M68;  // 0x68
 // --- flat members (END) ---
     int *  sub_4C2FC0(int a2, void * String, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x4C2FC0
+
+    unsigned int q114;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

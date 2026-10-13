@@ -62,5 +62,10 @@ struct String {
     unsigned char m_3;  // 0x3 (canon-mt)
     void * ptr_88;  // 0x88 (offset-truth)
     unsigned int *q000;  // 0x0 (canon-mt)
+
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_6;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned char u8_1;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

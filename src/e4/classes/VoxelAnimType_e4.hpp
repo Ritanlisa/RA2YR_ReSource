@@ -31,5 +31,26 @@ struct VoxelAnimType {
     AbstractClass * *  LoadBarrel(void * a2, int a3);  // 0x5F7DB0
     int LoadAnim(void *a1 = 0);  // 0x5F8110
     unsigned int u32_104;  // 0x104 (offset-truth)
+
+    unsigned int q022;  // X10 supply (member_lookup)
+    unsigned int u32_1EC;  // X10 supply (member_lookup)
+    unsigned int u32_244;  // X10 supply (member_lookup)
+    unsigned int u32_24C;  // X10 supply (member_lookup)
+    unsigned int u32_25C;  // X10 supply (member_lookup)
+    unsigned int u32_260;  // X10 supply (member_lookup)
+    unsigned int u32_26C;  // X10 supply (member_lookup)
+    unsigned int u32_27C;  // X10 supply (member_lookup)
+    unsigned int u32_3284;  // X10 supply (member_lookup)
+    unsigned int u32_3354;  // X10 supply (member_lookup)
+    unsigned int u32_7A0;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_A30;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_B8;  // X10 supply (member_lookup)
+    unsigned int u32_BC;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned int u32_C0;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

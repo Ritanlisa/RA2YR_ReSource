@@ -17,5 +17,8 @@ struct E4Recv_6E8000 {
     unsigned int M96;  // 0x60
 // --- flat members (END) ---
     unsigned int *  sub_6E8000(int a2);  // 0x6E8000
+
+    unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

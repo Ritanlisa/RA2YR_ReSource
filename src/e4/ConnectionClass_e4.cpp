@@ -145,7 +145,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
   else
   {
     *(unsigned char *)(aP1->needsRedraw + 2) = 1; /*0x48bf7c*/
-    *(unsigned int *)(aP1->needsRedraw + 4) = *(unsigned int *)(aP1 + 60); /*0x48bf86*/
+    *(unsigned int *)(aP1->needsRedraw + 4) = aP1->ambientSoundController; /*0x48bf86*/
   }
   if ( ((unsigned int *)(dword_A8B238))[0] == 4 && byte_A8DBA0 ) /*0x48bf99*/
     *(unsigned char *)(aP1->needsRedraw + 3) = a5; /*0x48bfa2*/

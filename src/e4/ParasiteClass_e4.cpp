@@ -466,7 +466,7 @@ void ParasiteClass::DeploySquad()
             }
           }
   LABEL_47:
-          v37 = (BuildingClass *)_ESI[1].vfptr; /*0x629d97*/
+          v37 = _ESI->vtable2.vfptr; /*0x629d97*/
           if ( v37 ) /*0x629d9c*/
           {
             if ( _ESI->creationFrame ) /*0x629d9e*/

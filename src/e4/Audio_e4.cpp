@@ -1572,7 +1572,7 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
   }
   if ( v9 ) /*0x7bef4f*/
   {
-    if ( (*(unsigned char *)(a3 + 4) & 2) != 0 && (*(unsigned char *)(v14 + 64) & 4) == 0 && --result < *(unsigned int *)(a1 + 296) ) /*0x7bef6a*/
+    if ( (a3->u8_4 & 2) != 0 && (*(unsigned char *)(v14 + 64) & 4) == 0 && --result < *(unsigned int *)(a1 + 296) ) /*0x7bef6a*/
       result = v22; /*0x7bef6c*/
     v17 = *(unsigned int *)(a1 + 312); /*0x7bef70*/
     if ( v17 != -1 ) /*0x7bef7b*/

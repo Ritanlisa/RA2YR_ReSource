@@ -79,6 +79,17 @@ struct ParticleClass {
     unsigned int q0184;  // 0x184 (offset-truth)
     unsigned char q0185;  // 0x185 (offset-truth)
     unsigned char q0186;  // 0x186 (offset-truth)
+
+    unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned int u32_108;  // X10 supply (member_lookup)
+    unsigned int u32_12D;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_A4;  // X10 supply (member_lookup)
+
+    int q0B8;  // X10 supply (member_lookup)
+    unsigned int u32_131;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

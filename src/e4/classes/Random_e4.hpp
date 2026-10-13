@@ -18,6 +18,9 @@ struct Random {
     static int Gaussian(void *aP0);
     static int AdvanceRandomBytes(void *aP0);  // G57a1 static-form sync
     unsigned int u32_24;  // 0x24 (offset-truth)
+
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
 };
     int AdvanceRandomBytes();  // G57w19k2 C2661 supply
 #endif  // GAMEMD_G2_Random_DEF

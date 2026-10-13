@@ -30,6 +30,7 @@ enum class Move : int;
 enum class RadioCommand : int;
 
 // IDA: sizeof=0x14 (confirmed via ObjectClass ctor gap 0x3C->0x50)
+#ifndef GAMEMD_E4_OWNS_AudioController  // X10: e4 universe owns this twin
 class AudioController {
 public:
     uint32_t AudioController_field_00;   // +0x00, init 0 — repurposed as idle-order ptr in UnitClass
@@ -57,7 +58,24 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void GetVolume();  // 0x72d170
     // === FUNCS-MOVE (END) ===
     unsigned int q074;  // 0x74 (offset-truth)
+
+    unsigned char AudioController_D40[4];  /* AudioController */  // X10 supply (member_lookup)
+    unsigned char q044;  // X10 supply (member_lookup)
+    unsigned int u32_168;  // X10 supply (member_lookup)
+    unsigned int u32_16C;  // X10 supply (member_lookup)
+    unsigned int u32_170;  // X10 supply (member_lookup)
+    unsigned int u32_174;  // X10 supply (member_lookup)
+    unsigned int u32_178;  // X10 supply (member_lookup)
+    unsigned int u32_1D0;  // X10 supply (member_lookup)
+    unsigned int u32_A4;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_B8;  // X10 supply (member_lookup)
+    unsigned int u32_D4;  // X10 supply (member_lookup)
 };
+#endif  // GAMEMD_E4_OWNS_AudioController (X10)
+
 
 // ============================================================================
 // ObjectClass — root of all game object instances
@@ -67,6 +85,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 //      Constructor: ObjectClass::ctor @ 0x5F3900  Dtor: 0x5F3B80
 //      sizeof: 0xAC (confirmed via ctor init chain)
 // ============================================================================
+#ifndef GAMEMD_E4_OWNS_ObjectClass  // X10: e4 universe owns this twin
 class ObjectClass : public AbstractClass {
 
 public:
@@ -645,7 +664,62 @@ public:  // g57c5 W6 owner supply
     unsigned int u32_61;  // 0x61 g57c5 W6 (ml ObjectClass@0x61 own)
 public:  // g57c5 W6 owner supply
     unsigned int q0AB;  // 0xAB g57c5 W6 (ml ObjectClass@0xAB own)
+
+    void* NeedsSaveOrLink;  // X10 supply (csp_canon_members)
+    void* abstractFlags;  // X10 supply (csp_canon_members)
+    void* nextArrayIndex;  // X10 supply (csp_canon_members)
+    unsigned int objectTypeFlags;  // X10 supply (csp_canon_members)
+    char * ptr_6D;  // X10 supply (member_lookup)
+    unsigned int q0A0;  // X10 supply (member_lookup)
+    unsigned int q0B1;  // X10 supply (member_lookup)
+    unsigned int q0B2;  // X10 supply (member_lookup)
+    unsigned int q0C8;  // X10 supply (member_lookup)
+    unsigned int q0D8;  // X10 supply (member_lookup)
+    Audio* q0E8;  // X10 supply (member_lookup)
+    void* q0EC;  // X10 supply (member_lookup)
+    VectorClass* q13F0;  // X10 supply (member_lookup)
+    unsigned char q1680;  // X10 supply (member_lookup)
+    IUnknown* q55C;  // X10 supply (member_lookup)
+    unsigned char qBC0;  // X10 supply (member_lookup)
+    void* referenceCount;  // X10 supply (csp_canon_members)
+    unsigned int u32_11B;  // X10 supply (member_lookup)
+    unsigned int u32_11C;  // X10 supply (member_lookup)
+    unsigned int u32_124;  // X10 supply (member_lookup)
+    unsigned int u32_12C;  // X10 supply (member_lookup)
+    unsigned int u32_12D;  // X10 supply (member_lookup)
+    unsigned int u32_130;  // X10 supply (member_lookup)
+    unsigned int u32_131;  // X10 supply (member_lookup)
+    unsigned int u32_1ED0;  // X10 supply (member_lookup)
+    unsigned int u32_29;  // X10 supply (member_lookup)
+    int u32_539C;  // X10 supply (member_lookup)
+    int u32_53EC;  // X10 supply (member_lookup)
+    unsigned int u32_5545;  // X10 supply (member_lookup)
+    unsigned int u32_63C;  // X10 supply (member_lookup)
+    unsigned int u32_640;  // X10 supply (member_lookup)
+    unsigned int u32_644;  // X10 supply (member_lookup)
+    unsigned int u32_64C;  // X10 supply (member_lookup)
+    unsigned int u32_650;  // X10 supply (member_lookup)
+    unsigned int u32_654;  // X10 supply (member_lookup)
+    unsigned int u32_658;  // X10 supply (member_lookup)
+    unsigned int u32_65C;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_B8;  // X10 supply (member_lookup)
+    unsigned int u32_BC;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
+    unsigned int u32_D4;  // X10 supply (member_lookup)
+    unsigned int u32_D64;  // X10 supply (member_lookup)
+    unsigned int u32_D68;  // X10 supply (member_lookup)
+    unsigned int u32_DC;  // X10 supply (member_lookup)
+    int u8_11E;  // X10 supply (member_lookup)
+    int u8_CD;  // X10 supply (member_lookup)
+    void* uniqueId;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+
+    unsigned int u32_100;  // X10 supply (member_lookup)
 };
+#endif  // GAMEMD_E4_OWNS_ObjectClass (X10)
+
 
 } // namespace game
 } // namespace ra2

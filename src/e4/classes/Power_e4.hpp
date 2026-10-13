@@ -19,5 +19,11 @@ struct Power {
     int TimerProcess(int a1);
     char ChangedHouse(char a2);  // 0x750090
     int FlagProcess(int Power_field_0x8, int a2, int a1);
+
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    unsigned char q020;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

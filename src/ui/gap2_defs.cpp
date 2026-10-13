@@ -39,6 +39,8 @@ using ra2::game::FootClass;
 #include "core/ida_vtables.h"  // gC_vftable3
 #include "e4/classes/Network_e4.hpp"  // w16g4 C3861 Network:: supply
 #include "e4/classes/Factory_e4.hpp"  // w16g4 C3861 Factory:: supply
+#include "core/hash_table.hpp"
+#include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int PlayTauntClass(int p0);  // x4:signals@0x752b70
@@ -7352,7 +7354,7 @@ void* SidebarClass::FindProductionData() {
       goto LABEL_18; /*0x77db36*/
     while ( !(uint8_t)String::Compare((String *)v6, (const char **)&v7) ) /*0x77db46*/
     {
-      v6 = *(unsigned int *)(v6 + 112); /*0x77db48*/
+      v6 = v6->estimatedHealth; /*0x77db48*/
       if ( !v6 ) /*0x77db4d*/
         goto LABEL_18; /*0x77db4d*/
     }
@@ -7372,7 +7374,7 @@ void* SidebarClass::FindProductionData() {
       goto LABEL_18; /*0x77dacf*/
     while ( !(uint8_t)String::Compare((String *)v4, (const char **)&v7) ) /*0x77dae3*/
     {
-      v4 = *(unsigned int *)(v4 + 112); /*0x77dae5*/
+      v4 = v4->estimatedHealth; /*0x77dae5*/
       if ( !v4 ) /*0x77daea*/
         goto LABEL_18; /*0x77daea*/
     }
@@ -7485,7 +7487,7 @@ int WWMouseClass::loadCursorImages() {
   WWMouseClass_field_0x6C = this->ZoneConnections; /*0x7b8947*/
   if ( WWMouseClass_field_0x6C ) /*0x7b894c*/
   {
-    result = (*(int (__thiscall **)(MouseClass *, int))WWMouseClass_field_0x6C->MouseClass_field_0x0)( /*0x7b8952*/
+    result = (*(int (__thiscall **)(MouseClass *, int))WWMouseClass_field_0x6C->HandleClick_ph)( /*0x7b8952*/
                WWMouseClass_field_0x6C,
                1);
     this->ZoneConnections = 0; /*0x7b8954*/
@@ -7591,13 +7593,8 @@ void WWMouseClass::AddRef(void* a1, int a2, int a3) {
               v25 = v12; /*0x7b8adc*/
               v22 = v10; /*0x7b8ae0*/
               v23 = v11; /*0x7b8ae4*/
-              (*(void (__thiscall **)(int, char **, int, char **, unsigned int, int))(*(unsigned int *)WWMouseClass_field_0x24 + 8))( /*0x7b8af0*/
-                WWMouseClass_field_0x24,
-                &v24,
-                WWMouseClass_field_0x44,
-                &v20,
-                0,
-                1);
+              WWMouseClass_field_0x24->vt_slot_8(/*0x7b8af0*/
+                WWMouseClass_field_0x24, &v24, WWMouseClass_field_0x44, &v20, 0, 1);
               v4 = (void *)a2; /*0x7b8af3*/
               v6 = WaitForSingleObject; /*0x7b8af7*/
             }
@@ -7857,7 +7854,7 @@ int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
             v20 = 0; /*0x7b91e0*/
             v21 = 0; /*0x7b91e4*/
             v23 = WWMouseClass_field_0xC; /*0x7b91e9*/
-            MouseClass_field_0x0 = (void (__thiscall **)(MouseClass *, int *, int *, WWMouseClass *, unsigned int, int))WWMouseClass_field_0x6C->MouseClass_field_0x0; /*0x7b91ed*/
+            MouseClass_field_0x0 = (void (__thiscall **)(MouseClass *, int *, int *, WWMouseClass *, unsigned int, int))WWMouseClass_field_0x6C->HandleClick_ph; /*0x7b91ed*/
             v22 = WWMouseClass_field_0x8; /*0x7b91f4*/
             MouseClass_field_0x0[2](WWMouseClass_field_0x6C, &v20, a1, pad_5C, 0, 1); /*0x7b91fc*/
             if ( a2 /*0x7b921b*/
@@ -8209,13 +8206,8 @@ bool WWMouseClass::FlipCursorBuffer() {
             v26 = v11; /*0x7b9f30*/
             v23 = v9; /*0x7b9f34*/
             v24 = v10; /*0x7b9f38*/
-            (*(void (__thiscall **)(int, char **, int, char **, unsigned int, int))(*(unsigned int *)WWMouseClass_field_0x24 + 8))( /*0x7b9f44*/
-              WWMouseClass_field_0x24,
-              &v25,
-              WWMouseClass_field_0x44,
-              &v21,
-              0,
-              1);
+            WWMouseClass_field_0x24->vt_slot_8(/*0x7b9f44*/
+              WWMouseClass_field_0x24, &v25, WWMouseClass_field_0x44, &v21, 0, 1);
             v4 = WaitForSingleObject; /*0x7b9f47*/
           }
         }

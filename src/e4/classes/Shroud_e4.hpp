@@ -24,6 +24,11 @@ struct Shroud {
     unsigned int q1498;  // 0x1498 (offset-truth)
     unsigned int q149C;  // 0x149C (offset-truth)
     unsigned int q14A4;  // 0x14A4 (offset-truth)
+
+    unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_FC;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

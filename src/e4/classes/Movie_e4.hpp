@@ -27,5 +27,20 @@ struct Movie {
     unsigned int q058;  // 0x58 (offset-truth)
     unsigned int q05C;  // 0x5C (offset-truth)
     unsigned int q060;  // 0x60 (offset-truth)
+
+    unsigned char __pad_05C;  // X10 supply (csp_canon_members)
+    unsigned int u32_12;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_64;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

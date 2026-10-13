@@ -45,6 +45,7 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Dialog_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
 #include "e4/classes/Stream_e4.hpp"  // w16g4 C3861 Stream:: supply
+#include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int BulkCharToWide(uint16_t* p0, uint8_t* p1, int p2);  // x4:signals@0x735060

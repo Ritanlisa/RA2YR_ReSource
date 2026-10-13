@@ -1160,7 +1160,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
         }
       }
     }
-    if ( *((unsigned int *)a1 + 9) != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1436] /*0x516899*/
+    if ( a1->q024 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1436] /*0x516899*/
       || a1->q028 != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1440]
       || a1->u32_2C != *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444] )
     {
@@ -2008,12 +2008,12 @@ int RulesClass::LoadFromINI() {
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->q240[96]); /*0x66d614*/
+        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->Stream_2A0); /*0x66d614*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->q240[96], &v332.u32_24); /*0x66d626*/
-      *(unsigned int *)&_ESI->q240[112] = v334; /*0x66d62f*/
-      *(unsigned int *)&_ESI->q240[116] = v335; /*0x66d636*/
-      *(unsigned int *)&_ESI->q240[120] = v336; /*0x66d63d*/
+      VectorClass::CopyDefault(&_ESI->Stream_2A0, &v332.u32_24); /*0x66d626*/
+      *&_ESI->u32_2B0 = v334; /*0x66d62f*/
+      *&_ESI->TechnoTypeClass_2B4 = v335; /*0x66d636*/
+      *&_ESI->AttackingAircraftSightRange = v336; /*0x66d63d*/
       *(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x66d646*/
       if ( v332.u32_28 && v333 ) /*0x66d656*/
         delete[] ((void *)v332.u32_28); /*0x66d659*/
@@ -2050,7 +2050,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::CopyVoxelAnim((TypeList *)&v332.u32_24, &_ESI->RadarEventColorSpeed); /*0x66d78b*/
       }
-      VectorClass::CopyAssign((VectorClass *)&_ESI->RadarEventColorSpeed, &v332.u32_24); /*0x66d79a*/
+      VectorClass::CopyAssign(&_ESI->RadarEventColorSpeed, &v332.u32_24); /*0x66d79a*/
       _ESI->DropPodPuff = v334; /*0x66d7a3*/
       _ESI->BarrelExplode = v335; /*0x66d7aa*/
       _ESI->BarrelDebris[0] = (int)v336; /*0x66d7b1*/
@@ -2097,7 +2097,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->GUICloseSound); /*0x66d941*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->GUICloseSound, &v332.u32_24); /*0x66d953*/
+      VectorClass::CopyDefault(&_ESI->GUICloseSound, &v332.u32_24); /*0x66d953*/
       _ESI->GUIComboOpenSound = (int)v334; /*0x66d95c*/
       _ESI->GUIComboCloseSound = (int)v335; /*0x66d963*/
       _ESI->GUICheckboxSound = (int)v336; /*0x66d96a*/
@@ -2124,7 +2124,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->ScoreAnimSound); /*0x66da43*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->ScoreAnimSound, &v332.u32_24); /*0x66da55*/
+      VectorClass::CopyDefault(&_ESI->ScoreAnimSound, &v332.u32_24); /*0x66da55*/
       _ESI->BuildingAbandonedSound = (int)v334; /*0x66da5e*/
       _ESI->BuildingRepairedSound = (int)v335; /*0x66da65*/
       _ESI->CheerSound = (int)v336; /*0x66da6c*/
@@ -2151,7 +2151,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->PlaceBeaconSound); /*0x66db46*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->PlaceBeaconSound, &v332.u32_24); /*0x66db58*/
+      VectorClass::CopyDefault(&_ESI->PlaceBeaconSound, &v332.u32_24); /*0x66db58*/
       _ESI->ExecutePlanSound = (int)v334; /*0x66db61*/
       _ESI->EndPlanningModeSound = (int)v335; /*0x66db68*/
       _ESI->CrateMoneySound = (int)v336; /*0x66db6f*/
@@ -2178,26 +2178,26 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->CrateRevealSound); /*0x66dc49*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->CrateRevealSound, &v332.u32_24); /*0x66dc5b*/
+      VectorClass::CopyDefault(&_ESI->CrateRevealSound, &v332.u32_24); /*0x66dc5b*/
       _ESI->CrateUnitSound = (int)v334; /*0x66dc64*/
       _ESI->CratePromoteSound = (int)v335; /*0x66dc6b*/
       _ESI->ImpactWaterSound = (int)v336; /*0x66dc72*/
       *(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x66dc7b*/
       if ( v332.u32_28 && v333 ) /*0x66dc8b*/
         delete[] ((void *)v332.u32_28); /*0x66dc8e*/
-      v20 = *(unsigned int **)&_ESI->q240[88]; /*0x66dc9b*/
+      v20 = *&_ESI->q298; /*0x66dc9b*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aIonblast, &g_INI_DefaultBuffer, String, 128) ) /*0x66dcb8*/
         v21 = AnimTypeClass::FindOrCreate(String); /*0x66dcc5*/
       else
         v21 = v20; /*0x66dccc*/
       v331[1] = 128; /*0x66dcd2*/
-      *(unsigned int *)&_ESI->q240[88] = v21; /*0x66dcd7*/
-      v22 = *(unsigned int **)&_ESI->q240[92]; /*0x66dce3*/
+      *&_ESI->q298 = v21; /*0x66dcd7*/
+      v22 = *&_ESI->q29C; /*0x66dce3*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aIonbeam, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66dcf7*/
         v23 = AnimTypeClass::FindOrCreate(String); /*0x66dd04*/
       else
         v23 = v22; /*0x66dd0b*/
-      *(unsigned int *)&_ESI->q240[92] = v23; /*0x66dd0d*/
+      *&_ESI->q29C = v23; /*0x66dd0d*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWeatherconclou, &g_INI_DefaultBuffer, String, 128) ) /*0x66dd30*/
       {
         DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v332, 0, 0); /*0x66dd45*/
@@ -2216,12 +2216,12 @@ int RulesClass::LoadFromINI() {
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->q240[124]); /*0x66ddc9*/
+        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->Stream_2BC); /*0x66ddc9*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->q240[124], &v332.u32_24); /*0x66dddb*/
-      *(unsigned int *)&_ESI->q240[140] = v334; /*0x66dde4*/
-      *(unsigned int *)&_ESI->q240[144] = v335; /*0x66ddeb*/
-      *(unsigned int *)&_ESI->q240[148] = v336; /*0x66ddf2*/
+      VectorClass::CopyDefault(&_ESI->Stream_2BC, &v332.u32_24); /*0x66dddb*/
+      *&_ESI->q2CC = v334; /*0x66dde4*/
+      *&_ESI->q2D0 = v335; /*0x66ddeb*/
+      *&_ESI->u32_2D4 = v336; /*0x66ddf2*/
       *(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x66ddfb*/
       if ( v332.u32_28 && v333 ) /*0x66de0b*/
         delete[] ((void *)v332.u32_28); /*0x66de0e*/
@@ -2243,23 +2243,23 @@ int RulesClass::LoadFromINI() {
       }
       else
       {
-        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->q240[152]); /*0x66decc*/
+        TypeList::AnimTypeCopy((TypeList *)&v332.u32_24, &_ESI->Stream_2D8); /*0x66decc*/
       }
-      VectorClass::CopyDefault((VectorClass *)&_ESI->q240[152], &v332.u32_24); /*0x66dede*/
-      *(unsigned int *)&_ESI->q240[168] = v334; /*0x66dee7*/
-      *(unsigned int *)&_ESI->q240[172] = v335; /*0x66deee*/
-      *(unsigned int *)&_ESI->q240[176] = v336; /*0x66def5*/
+      VectorClass::CopyDefault(&_ESI->Stream_2D8, &v332.u32_24); /*0x66dede*/
+      *&_ESI->q2E8 = v334; /*0x66dee7*/
+      *&_ESI->q2EC = v335; /*0x66deee*/
+      *&_ESI->u32_2F0 = v336; /*0x66def5*/
       *(unsigned int *)&v332.u32_24 = (unsigned int)(void *)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x66defe*/
       if ( v332.u32_28 && v333 ) /*0x66df0e*/
         delete[] ((void *)v332.u32_28); /*0x66df11*/
-      v26 = *(unsigned int **)&_ESI->q240[180]; /*0x66df1e*/
+      v26 = *&_ESI->q2F4; /*0x66df1e*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWeatherconbolt_0, &g_INI_DefaultBuffer, String, 128) ) /*0x66df3b*/
         v27 = AnimTypeClass::FindOrCreate(String); /*0x66df48*/
       else
         v27 = v26; /*0x66df4f*/
       v331[1] = 128; /*0x66df55*/
-      *(unsigned int *)&_ESI->q240[180] = v27; /*0x66df5a*/
-      v28 = *(unsigned int *)&_ESI->q240[184]; /*0x66df66*/
+      *&_ESI->q2F4 = v27; /*0x66df5a*/
+      v28 = *&_ESI->q2F8; /*0x66df66*/
       if ( INIClass::GetString( /*0x66df7a*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2274,15 +2274,15 @@ int RulesClass::LoadFromINI() {
       {
         v29 = v28; /*0x66df8e*/
       }
-      *(unsigned int *)&_ESI->q240[184] = v29; /*0x66df90*/
-      v30 = *(unsigned int **)&_ESI->q240[188]; /*0x66df9c*/
+      *&_ESI->q2F8 = v29; /*0x66df90*/
+      v30 = *&_ESI->u32_2FC; /*0x66df9c*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aDominatorfirst, &g_INI_DefaultBuffer, String, 128) ) /*0x66dfb9*/
         v31 = AnimTypeClass::FindOrCreate(String); /*0x66dfc6*/
       else
         v31 = v30; /*0x66dfcd*/
       v331[1] = 128; /*0x66dfd3*/
-      *(unsigned int *)&_ESI->q240[188] = v31; /*0x66dfd8*/
-      v32 = *(unsigned int **)&_ESI->q240[192]; /*0x66dfe3*/
+      *&_ESI->u32_2FC = v31; /*0x66dfd8*/
+      v32 = *&_ESI->q300; /*0x66dfe3*/
       if ( INIClass::GetString( /*0x66dff7*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2297,25 +2297,25 @@ int RulesClass::LoadFromINI() {
       {
         v33 = v32; /*0x66e00b*/
       }
-      *(unsigned int *)&_ESI->q240[192] = v33; /*0x66e00d*/
-      *(unsigned int *)&_ESI->q240[196] = INIClass::ReadInt_Overwrite( /*0x66e02d*/
+      *&_ESI->q300 = v33; /*0x66e00d*/
+      *&_ESI->q304 = INIClass::ReadInt_Overwrite( /*0x66e02d*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDominatorfirea,
-                                           *(unsigned int *)&_ESI->q240[196]);
-      *(unsigned int *)&_ESI->q240[200] = INIClass::ReadInt_Overwrite( /*0x66e04d*/
+                                           *&_ESI->q304);
+      *&_ESI->q308 = INIClass::ReadInt_Overwrite( /*0x66e04d*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDominatorcaptu,
-                                           *(unsigned int *)&_ESI->q240[200]);
+                                           *&_ESI->q308);
       Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66e067*/
                         (bool *)v338,
                         g_INI_Key_General,
                         aDominatordamag,
-                        *(unsigned int *)&_ESI->q240[204]);
+                        *&_ESI->u32_30C);
       v331[1] = 128; /*0x66e070*/
-      *(unsigned int *)&_ESI->q240[204] = Int_Overwrite; /*0x66e075*/
-      v35 = *(unsigned int **)&_ESI->q240[240]; /*0x66e081*/
+      *&_ESI->u32_30C = Int_Overwrite; /*0x66e075*/
+      v35 = *&_ESI->u32_330; /*0x66e081*/
       if ( INIClass::GetString( /*0x66e095*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2330,22 +2330,22 @@ int RulesClass::LoadFromINI() {
       {
         v36 = v35; /*0x66e0a9*/
       }
-      *(unsigned int *)&_ESI->q240[240] = v36; /*0x66e0ab*/
-      v37 = *(unsigned int **)&_ESI->q240[244]; /*0x66e0b7*/
+      *&_ESI->u32_330 = v36; /*0x66e0ab*/
+      v37 = *&_ESI->u32_334; /*0x66e0b7*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aChronobeam, &g_INI_DefaultBuffer, String, 128) ) /*0x66e0d4*/
         v38 = AnimTypeClass::FindOrCreate(String); /*0x66e0e1*/
       else
         v38 = v37; /*0x66e0e8*/
       v331[1] = 128; /*0x66e0ee*/
-      *(unsigned int *)&_ESI->q240[244] = v38; /*0x66e0f3*/
-      v39 = *(unsigned int **)&_ESI->q240[232]; /*0x66e0fe*/
+      *&_ESI->u32_334 = v38; /*0x66e0f3*/
+      v39 = *&_ESI->q328; /*0x66e0fe*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aChronoblast, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66e112*/
         v40 = AnimTypeClass::FindOrCreate(String); /*0x66e11f*/
       else
         v40 = v39; /*0x66e126*/
       v331[1] = 128; /*0x66e12c*/
-      *(unsigned int *)&_ESI->q240[232] = v40; /*0x66e131*/
-      v41 = *(unsigned int **)&_ESI->q240[236]; /*0x66e13d*/
+      *&_ESI->q328 = v40; /*0x66e131*/
+      v41 = *&_ESI->u32_32C; /*0x66e13d*/
       if ( INIClass::GetString( /*0x66e151*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2360,35 +2360,35 @@ int RulesClass::LoadFromINI() {
       {
         v42 = v41; /*0x66e165*/
       }
-      *(unsigned int *)&_ESI->q240[236] = v42; /*0x66e167*/
-      v43 = *(unsigned int **)&_ESI->q240[248]; /*0x66e173*/
+      *&_ESI->u32_32C = v42; /*0x66e167*/
+      v43 = *&_ESI->q338; /*0x66e173*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWarpin, &g_INI_DefaultBuffer, String, 128) ) /*0x66e190*/
         v44 = AnimTypeClass::FindOrCreate(String); /*0x66e19d*/
       else
         v44 = v43; /*0x66e1a4*/
       v331[1] = 128; /*0x66e1aa*/
-      *(unsigned int *)&_ESI->q240[248] = v44; /*0x66e1af*/
-      v45 = *(unsigned int **)&_ESI->q240[252]; /*0x66e1ba*/
+      *&_ESI->q338 = v44; /*0x66e1af*/
+      v45 = *&_ESI->u32_33C; /*0x66e1ba*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWarpout, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66e1ce*/
         v46 = AnimTypeClass::FindOrCreate(String); /*0x66e1db*/
       else
         v46 = v45; /*0x66e1e2*/
       v331[1] = 128; /*0x66e1e8*/
-      *(unsigned int *)&_ESI->q240[252] = v46; /*0x66e1ed*/
-      v47 = *(unsigned int **)&_ESI->q240[256]; /*0x66e1f9*/
+      *&_ESI->u32_33C = v46; /*0x66e1ed*/
+      v47 = *&_ESI->q340; /*0x66e1f9*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aWarpaway, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66e20d*/
         v48 = AnimTypeClass::FindOrCreate(String); /*0x66e21a*/
       else
         v48 = v47; /*0x66e221*/
-      *(unsigned int *)&_ESI->q240[256] = v48; /*0x66e223*/
-      v49 = *(unsigned int **)&_ESI->q240[264]; /*0x66e22f*/
+      *&_ESI->q340 = v48; /*0x66e223*/
+      v49 = *&_ESI->q348; /*0x66e22f*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aIroncurtaininv, &g_INI_DefaultBuffer, String, 128) ) /*0x66e24c*/
         v50 = AnimTypeClass::FindOrCreate(String); /*0x66e259*/
       else
         v50 = v49; /*0x66e260*/
       v331[1] = 128; /*0x66e266*/
-      *(unsigned int *)&_ESI->q240[264] = v50; /*0x66e26b*/
-      v51 = *(unsigned int **)&_ESI->q240[268]; /*0x66e276*/
+      *&_ESI->q348 = v50; /*0x66e26b*/
+      v51 = *&_ESI->u32_34C; /*0x66e276*/
       if ( INIClass::GetString( /*0x66e28a*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2404,8 +2404,8 @@ int RulesClass::LoadFromINI() {
         v52 = v51; /*0x66e29e*/
       }
       v331[1] = 128; /*0x66e2a4*/
-      *(unsigned int *)&_ESI->q240[268] = v52; /*0x66e2a9*/
-      v53 = *(unsigned int **)&_ESI->q240[272]; /*0x66e2b5*/
+      *&_ESI->u32_34C = v52; /*0x66e2a9*/
+      v53 = *&_ESI->u32_350; /*0x66e2b5*/
       if ( INIClass::GetString( /*0x66e2c9*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2420,14 +2420,14 @@ int RulesClass::LoadFromINI() {
       {
         v54 = v53; /*0x66e2dd*/
       }
-      *(unsigned int *)&_ESI->q240[272] = v54; /*0x66e2df*/
-      v55 = *(unsigned int **)&_ESI->q240[260]; /*0x66e2eb*/
+      *&_ESI->u32_350 = v54; /*0x66e2df*/
+      v55 = *&_ESI->q344; /*0x66e2eb*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aChronosparkle1, &g_INI_DefaultBuffer, String, 128) ) /*0x66e308*/
         v56 = AnimTypeClass::FindOrCreate(String); /*0x66e315*/
       else
         v56 = v55; /*0x66e31c*/
       v331[1] = 128; /*0x66e322*/
-      *(unsigned int *)&_ESI->q240[260] = v56; /*0x66e327*/
+      *&_ESI->q344 = v56; /*0x66e327*/
       Behind = _ESI->Behind; /*0x66e332*/
       if ( INIClass::GetString( /*0x66e346*/
              (INIClass *)v338,
@@ -2461,34 +2461,34 @@ int RulesClass::LoadFromINI() {
         v60 = v59; /*0x66e399*/
       }
       *(unsigned int *)_ESI->q0A0 = v60; /*0x66e39b*/
-      v61 = *(unsigned int **)&_ESI->q0A0[4]; /*0x66e3a7*/
+      v61 = *&_ESI->u32_A4; /*0x66e3a7*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aInfantryheadpo, &g_INI_DefaultBuffer, String, 128) ) /*0x66e3c4*/
         v62 = AnimTypeClass::FindOrCreate(String); /*0x66e3d1*/
       else
         v62 = v61; /*0x66e3d8*/
       v331[1] = 128; /*0x66e3de*/
-      *(unsigned int *)&_ESI->q0A0[4] = v62; /*0x66e3e3*/
-      v63 = *(unsigned int **)&_ESI->q0A0[8]; /*0x66e3ee*/
+      *&_ESI->u32_A4 = v62; /*0x66e3e3*/
+      v63 = *&_ESI->u32_A8; /*0x66e3ee*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aInfantrynuked, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66e402*/
         v64 = AnimTypeClass::FindOrCreate(String); /*0x66e40f*/
       else
         v64 = v63; /*0x66e416*/
       v331[1] = 128; /*0x66e41c*/
-      *(unsigned int *)&_ESI->q0A0[8] = v64; /*0x66e421*/
-      v65 = *(unsigned int **)&_ESI->q0A0[12]; /*0x66e42d*/
+      *&_ESI->u32_A8 = v64; /*0x66e421*/
+      v65 = *&_ESI->q0AC; /*0x66e42d*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aInfantryvirus, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66e441*/
         v66 = AnimTypeClass::FindOrCreate(String); /*0x66e44e*/
       else
         v66 = v65; /*0x66e455*/
-      *(unsigned int *)&_ESI->q0A0[12] = v66; /*0x66e457*/
-      v67 = *(unsigned int **)&_ESI->q0A0[16]; /*0x66e463*/
+      *&_ESI->q0AC = v66; /*0x66e457*/
+      v67 = *&_ESI->u32_B0; /*0x66e463*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aInfantrybrute, &g_INI_DefaultBuffer, String, 128) ) /*0x66e480*/
         v68 = AnimTypeClass::FindOrCreate(String); /*0x66e48d*/
       else
         v68 = v67; /*0x66e494*/
       v331[1] = 128; /*0x66e49a*/
-      *(unsigned int *)&_ESI->q0A0[16] = v68; /*0x66e49f*/
-      v69 = *(unsigned int **)&_ESI->q0A0[20]; /*0x66e4aa*/
+      *&_ESI->u32_B0 = v68; /*0x66e49f*/
+      v69 = *&_ESI->q0B4; /*0x66e4aa*/
       if ( INIClass::GetString( /*0x66e4be*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2504,13 +2504,13 @@ int RulesClass::LoadFromINI() {
         v70 = v69; /*0x66e4d2*/
       }
       v331[1] = 128; /*0x66e4d8*/
-      *(unsigned int *)&_ESI->q0A0[20] = v70; /*0x66e4dd*/
-      v71 = *(unsigned int **)&_ESI->q0A0[24]; /*0x66e4e9*/
+      *&_ESI->q0B4 = v70; /*0x66e4dd*/
+      v71 = *&_ESI->q0B8; /*0x66e4e9*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBehind, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66e4fd*/
         v72 = AnimTypeClass::FindOrCreate(String); /*0x66e50a*/
       else
         v72 = v71; /*0x66e511*/
-      *(unsigned int *)&_ESI->q0A0[24] = v72; /*0x66e513*/
+      *&_ESI->q0B8 = v72; /*0x66e513*/
       v73 = (unsigned int *)_ESI->Normal[6]; /*0x66e51f*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aMoveflash, &g_INI_DefaultBuffer, String, 128) ) /*0x66e53c*/
         v74 = AnimTypeClass::FindOrCreate(String); /*0x66e549*/
@@ -2531,14 +2531,14 @@ int RulesClass::LoadFromINI() {
       else
         v78 = v77; /*0x66e5cd*/
       _ESI->Normal[7] = (int)v78; /*0x66e5cf*/
-      v79 = *(unsigned int **)&_ESI->qC3C[2112]; /*0x66e5db*/
+      v79 = *&_ESI->u32_147C; /*0x66e5db*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aDropzoneanim, &g_INI_DefaultBuffer, String, 128) ) /*0x66e5f8*/
         v80 = AnimTypeClass::FindOrCreate(String); /*0x66e605*/
       else
         v80 = v79; /*0x66e60c*/
       v331[1] = 128; /*0x66e612*/
-      *(unsigned int *)&_ESI->qC3C[2112] = v80; /*0x66e617*/
-      v81 = *(unsigned int **)&_ESI->AlliedWallTransparency; /*0x66e622*/
+      *&_ESI->u32_147C = v80; /*0x66e617*/
+      v81 = *&_ESI->AlliedWallTransparency; /*0x66e622*/
       if ( INIClass::GetString( /*0x66e636*/
              (INIClass *)v338,
              g_INI_Key_General,
@@ -2554,7 +2554,7 @@ int RulesClass::LoadFromINI() {
         v82 = v81; /*0x66e64a*/
       }
       v331[1] = 128; /*0x66e650*/
-      *(unsigned int *)&_ESI->AlliedWallTransparency = v82; /*0x66e655*/
+      *&_ESI->AlliedWallTransparency = v82; /*0x66e655*/
       v83 = _ESI->LargeVisceroid; /*0x66e661*/
       if ( INIClass::GetString( /*0x66e672*/
              (INIClass *)v338,
@@ -2603,8 +2603,8 @@ int RulesClass::LoadFromINI() {
                                    g_INI_Key_General,
                                    aSelfhealunitam,
                                    _ESI->SelfHealUnitAmount);
-      v332.q01C = (AbstractClass *)&_ESI->q240[280]; /*0x66e756*/
-      IntVector::Copy((IntVector *)&v329, &_ESI->q240[280]); /*0x66e75a*/
+      v332.q01C = &_ESI->DynamicVector_358; /*0x66e756*/
+      IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_358); /*0x66e75a*/
       BuildingTypeClassPrerequisites = LoadBuildingTypeClassPrerequisites( /*0x66e791*/
                                          (DynamicVectorClass *)&v332,
                                          v338,
@@ -2617,16 +2617,16 @@ int RulesClass::LoadFromINI() {
                                          v332.q01C->uniqueId,
                                          v332.q01C->abstractFlags,
                                          v331[1]);
-      v332.q01C = (AbstractClass *)&_ESI->q240[280]; /*0x66e79a*/
-      TypeList::Copy((TypeList *)&_ESI->q240[280], BuildingTypeClassPrerequisites); /*0x66e79e*/
+      v332.q01C = &_ESI->DynamicVector_358; /*0x66e79a*/
+      TypeList::Copy(&_ESI->DynamicVector_358, BuildingTypeClassPrerequisites); /*0x66e79e*/
       q01C = v332.q01C; /*0x66e7a3*/
       v332.q01C->uniqueId = BuildingTypeClassPrerequisites->Count; /*0x66e7aa*/
       q01C->abstractFlags = BuildingTypeClassPrerequisites->CapacityIncrement; /*0x66e7b0*/
-      q01C->nextArrayIndex = *(unsigned int *)BuildingTypeClassPrerequisites[1].VectorClass; /*0x66e7b6*/
+      q01C->nextArrayIndex = *BuildingTypeClassPrerequisites->FLH.VectorClass; /*0x66e7b6*/
       *(unsigned int *)v332.vtable1 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x66e7bf*/
       if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e7cf*/
         delete[] (*(void **)&v332.Items); /*0x66e7d2*/
-      IntVector::Copy((IntVector *)&v329, &_ESI->q240[308]); /*0x66e7e8*/
+      IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_374); /*0x66e7e8*/
       v91 = LoadBuildingTypeClassPrerequisites( /*0x66e825*/
               (DynamicVectorClass *)&v332,
               v338,
@@ -2636,19 +2636,19 @@ int RulesClass::LoadFromINI() {
               (int)v329.Items,
               v329.Capacity,
               *(int *)&v329.IsInitialized,
-              *(unsigned int *)&_ESI->q240[324],
-              *(unsigned int *)&_ESI->q240[328],
+              *&_ESI->q384,
+              *&_ESI->q388,
               v331[1]);
-      v332.q01C = (AbstractClass *)&_ESI->q240[308]; /*0x66e82e*/
-      TypeList::Copy((TypeList *)&_ESI->q240[308], v91); /*0x66e832*/
+      v332.q01C = &_ESI->DynamicVector_374; /*0x66e82e*/
+      TypeList::Copy(&_ESI->DynamicVector_374, v91); /*0x66e832*/
       v92 = v332.q01C; /*0x66e837*/
       v332.q01C->uniqueId = v91->Count; /*0x66e83e*/
       v92->abstractFlags = v91->CapacityIncrement; /*0x66e844*/
-      v92->nextArrayIndex = *(unsigned int *)v91[1].VectorClass; /*0x66e84a*/
+      v92->nextArrayIndex = *v91->FLH.VectorClass; /*0x66e84a*/
       *(unsigned int *)v332.vtable1 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x66e853*/
       if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e863*/
         delete[] (*(void **)&v332.Items); /*0x66e866*/
-      IntVector::Copy((IntVector *)&v329, &_ESI->q240[336]); /*0x66e87c*/
+      IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_390); /*0x66e87c*/
       v93 = LoadBuildingTypeClassPrerequisites( /*0x66e8b8*/
               (DynamicVectorClass *)&v332,
               v338,
@@ -2658,19 +2658,19 @@ int RulesClass::LoadFromINI() {
               (int)v329.Items,
               v329.Capacity,
               *(int *)&v329.IsInitialized,
-              *(unsigned int *)&_ESI->q240[352],
-              *(unsigned int *)&_ESI->q240[356],
+              *&_ESI->u32_3A0,
+              *&_ESI->TechnoTypeClass_3A4,
               v331[1]);
-      v332.q01C = (AbstractClass *)&_ESI->q240[336]; /*0x66e8c1*/
-      TypeList::Copy((TypeList *)&_ESI->q240[336], v93); /*0x66e8c5*/
+      v332.q01C = &_ESI->DynamicVector_390; /*0x66e8c1*/
+      TypeList::Copy(&_ESI->DynamicVector_390, v93); /*0x66e8c5*/
       v94 = v332.q01C; /*0x66e8ca*/
       v332.q01C->uniqueId = v93->Count; /*0x66e8d1*/
       v94->abstractFlags = v93->CapacityIncrement; /*0x66e8d7*/
-      v94->nextArrayIndex = *(unsigned int *)v93[1].VectorClass; /*0x66e8dd*/
+      v94->nextArrayIndex = *v93->FLH.VectorClass; /*0x66e8dd*/
       *(unsigned int *)v332.vtable1 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x66e8e6*/
       if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e8f6*/
         delete[] (*(void **)&v332.Items); /*0x66e8f9*/
-      IntVector::Copy((IntVector *)&v329, &_ESI->q240[364]); /*0x66e90f*/
+      IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3AC); /*0x66e90f*/
       v95 = LoadBuildingTypeClassPrerequisites( /*0x66e94c*/
               (DynamicVectorClass *)&v332,
               v338,
@@ -2680,19 +2680,19 @@ int RulesClass::LoadFromINI() {
               (int)v329.Items,
               v329.Capacity,
               *(int *)&v329.IsInitialized,
-              *(unsigned int *)&_ESI->q240[380],
-              *(unsigned int *)&_ESI->q240[384],
+              *&_ESI->u32_3BC,
+              *&_ESI->TechnoTypeClass_3C0,
               v331[1]);
-      v332.q01C = (AbstractClass *)&_ESI->q240[364]; /*0x66e955*/
-      TypeList::Copy((TypeList *)&_ESI->q240[364], v95); /*0x66e959*/
+      v332.q01C = &_ESI->DynamicVector_3AC; /*0x66e955*/
+      TypeList::Copy(&_ESI->DynamicVector_3AC, v95); /*0x66e959*/
       v96 = v332.q01C; /*0x66e95e*/
       v332.q01C->uniqueId = v95->Count; /*0x66e965*/
       v96->abstractFlags = v95->CapacityIncrement; /*0x66e96b*/
-      v96->nextArrayIndex = *(unsigned int *)v95[1].VectorClass; /*0x66e971*/
+      v96->nextArrayIndex = *v95->FLH.VectorClass; /*0x66e971*/
       *(unsigned int *)v332.vtable1 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x66e97a*/
       if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66e98a*/
         delete[] (*(void **)&v332.Items); /*0x66e98d*/
-      IntVector::Copy((IntVector *)&v329, &_ESI->q240[392]); /*0x66e9a3*/
+      IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3C8); /*0x66e9a3*/
       v97 = LoadBuildingTypeClassPrerequisites( /*0x66e9df*/
               (DynamicVectorClass *)&v332,
               v338,
@@ -2702,19 +2702,19 @@ int RulesClass::LoadFromINI() {
               (int)v329.Items,
               v329.Capacity,
               *(int *)&v329.IsInitialized,
-              *(unsigned int *)&_ESI->q240[408],
-              *(unsigned int *)&_ESI->q240[412],
+              *&_ESI->u32_3D8,
+              *&_ESI->TechnoTypeClass_3DC,
               v331[1]);
-      v332.q01C = (AbstractClass *)&_ESI->q240[392]; /*0x66e9e8*/
-      TypeList::Copy((TypeList *)&_ESI->q240[392], v97); /*0x66e9ec*/
+      v332.q01C = &_ESI->DynamicVector_3C8; /*0x66e9e8*/
+      TypeList::Copy(&_ESI->DynamicVector_3C8, v97); /*0x66e9ec*/
       v98 = v332.q01C; /*0x66e9f1*/
       v332.q01C->uniqueId = v97->Count; /*0x66e9f8*/
       v98->abstractFlags = v97->CapacityIncrement; /*0x66e9fe*/
-      v98->nextArrayIndex = *(unsigned int *)v97[1].VectorClass; /*0x66ea04*/
+      v98->nextArrayIndex = *v97->FLH.VectorClass; /*0x66ea04*/
       *(unsigned int *)v332.vtable1 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x66ea0d*/
       if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66ea1d*/
         delete[] (*(void **)&v332.Items); /*0x66ea20*/
-      IntVector::Copy((IntVector *)&v329, &_ESI->q240[420]); /*0x66ea36*/
+      IntVector::Copy((IntVector *)&v329, &_ESI->DynamicVector_3E4); /*0x66ea36*/
       v99 = LoadBuildingTypeClassPrerequisites( /*0x66ea73*/
               (DynamicVectorClass *)&v332,
               v338,
@@ -2724,24 +2724,24 @@ int RulesClass::LoadFromINI() {
               (int)v329.Items,
               v329.Capacity,
               *(int *)&v329.IsInitialized,
-              *(unsigned int *)&_ESI->q240[436],
-              *(unsigned int *)&_ESI->q240[440],
+              *&_ESI->u32_3F4,
+              *&_ESI->q3F8,
               v331[1]);
-      v332.q01C = (AbstractClass *)&_ESI->q240[420]; /*0x66ea7c*/
-      TypeList::Copy((TypeList *)&_ESI->q240[420], v99); /*0x66ea80*/
+      v332.q01C = &_ESI->DynamicVector_3E4; /*0x66ea7c*/
+      TypeList::Copy(&_ESI->DynamicVector_3E4, v99); /*0x66ea80*/
       v100 = v332.q01C; /*0x66ea85*/
       v332.q01C->uniqueId = v99->Count; /*0x66ea8c*/
       v100->abstractFlags = v99->CapacityIncrement; /*0x66ea92*/
-      v100->nextArrayIndex = *(unsigned int *)v99[1].VectorClass; /*0x66ea98*/
+      v100->nextArrayIndex = *v99->FLH.VectorClass; /*0x66ea98*/
       *(unsigned int *)v332.vtable1 = (unsigned int)(void *)(void*)(void*)&VectorClass_int_vftable; /*0x66eaa1*/
       if ( *(unsigned int *)&v332.Items && v332.vtable4[1] ) /*0x66eab1*/
         delete[] (*(void **)&v332.Items); /*0x66eab4*/
-      v101 = *(unsigned int *)&_ESI->q240[784]; /*0x66eac2*/
-      v331[1] = *(unsigned int *)&_ESI->q240[788]; /*0x66eace*/
+      v101 = *&_ESI->u32_550; /*0x66eac2*/
+      v331[1] = *&_ESI->u32_554; /*0x66eace*/
       v331[0] = v101; /*0x66eacf*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aZoominfactor, *(double *)v331); /*0x66ead8*/
       __asm { fstp qword ptr [esi+550h] } /*0x66eadd*/
-      *(double *)&_ESI->q240[784] = _RT1; /*0x66eadd*/
+      *&_ESI->u32_550 = _RT1; /*0x66eadd*/
       IDA_BYTE2(_ESI->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite( /*0x66eafd*/
                                             (int *)v338,
                                             g_INI_Key_General,
@@ -2761,27 +2761,27 @@ int RulesClass::LoadFromINI() {
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMinlowpowerpro, *(double *)v331); /*0x66eb5b*/
       __asm { fstp dword ptr [esi+570h] } /*0x66eb60*/
-      *(float *)&_ESI->q240[816] = *(float *)&_RT1; /*0x66eb60*/
+      *&_ESI->u32_570 = *(float *)&_RT1; /*0x66eb60*/
       __asm { fld dword ptr [esi+574h] } /*0x66eb66*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMaxlowpowerpro, *(double *)v331); /*0x66eb80*/
       __asm { fstp dword ptr [esi+574h] } /*0x66eb85*/
-      *(float *)&_ESI->q240[820] = *(float *)&_RT1; /*0x66eb85*/
+      *&_ESI->u32_574 = *(float *)&_RT1; /*0x66eb85*/
       __asm { fld dword ptr [esi+578h] } /*0x66eb8b*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aLowpowerpenalt, *(double *)v331); /*0x66eba5*/
       __asm { fstp dword ptr [esi+578h] } /*0x66ebaa*/
-      *(float *)&_ESI->q240[824] = *(float *)&_RT1; /*0x66ebaa*/
+      *&_ESI->u32_578 = *(float *)&_RT1; /*0x66ebaa*/
       __asm { fld dword ptr [esi+57Ch] } /*0x66ebb0*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMultiplefactor, *(double *)v331); /*0x66ebc9*/
       __asm { fstp dword ptr [esi+57Ch] } /*0x66ebce*/
-      *(float *)&_ESI->q240[828] = *(float *)&_RT1; /*0x66ebce*/
-      *(unsigned int *)&_ESI->q240[832] = INIClass::ReadInt_Overwrite( /*0x66ebee*/
+      *&_ESI->u32_57C = *(float *)&_RT1; /*0x66ebce*/
+      *&_ESI->q580 = INIClass::ReadInt_Overwrite( /*0x66ebee*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aMaximumcheerra,
-                                           *(unsigned int *)&_ESI->q240[832]);
+                                           *&_ESI->q580);
       v103 = _ESI->TreeFlammability[0]; /*0x66ebfa*/
       v331[1] = _ESI->TreeFlammability[1]; /*0x66ec00*/
       v331[0] = v103; /*0x66ec07*/
@@ -2898,45 +2898,45 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aHoverbrake, *(double *)v331); /*0x66ee85*/
       __asm { fstp qword ptr [esi+5E8h] } /*0x66ee8a*/
       *(double *)_ESI->HoverBrake = _RT1; /*0x66ee8a*/
-      INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeteranratio, *(double *)&_ESI->SystemError); /*0x66eeab*/
+      INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeteranratio, *&_ESI->SystemError); /*0x66eeab*/
       __asm { fstp qword ptr [esi+668h] } /*0x66eeb0*/
-      *(double *)&_ESI->SystemError = _RT1; /*0x66eeb0*/
+      *&_ESI->SystemError = _RT1; /*0x66eeb0*/
       GameForming = _ESI->GameForming; /*0x66eebc*/
       v331[1] = _ESI->PlayerLeft; /*0x66eec7*/
       v331[0] = GameForming; /*0x66eec8*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeterancombat, *(double *)v331); /*0x66eed1*/
       __asm { fstp qword ptr [esi+670h] } /*0x66eed6*/
-      *(double *)&_ESI->GameForming = _RT1; /*0x66eed6*/
+      *&_ESI->GameForming = _RT1; /*0x66eed6*/
       PlayerJoined = _ESI->PlayerJoined; /*0x66eee2*/
       v331[1] = _ESI->MessageCharTyped; /*0x66eeed*/
       v331[0] = PlayerJoined; /*0x66eeee*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeteranspeed, *(double *)v331); /*0x66eef7*/
       __asm { fstp qword ptr [esi+678h] } /*0x66eefc*/
-      *(double *)&_ESI->PlayerJoined = _RT1; /*0x66eefc*/
+      *&_ESI->PlayerJoined = _RT1; /*0x66eefc*/
       Construction = _ESI->Construction; /*0x66ef08*/
       v331[1] = _ESI->CreditTicks[0]; /*0x66ef13*/
       v331[0] = Construction; /*0x66ef14*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeteransight, *(double *)v331); /*0x66ef1d*/
       __asm { fstp qword ptr [esi+680h] } /*0x66ef22*/
-      *(double *)&_ESI->Construction = _RT1; /*0x66ef22*/
+      *&_ESI->Construction = _RT1; /*0x66ef22*/
       v138 = _ESI->CreditTicks[1]; /*0x66ef2e*/
       v331[1] = _ESI->CreditTicks[2]; /*0x66ef39*/
       v331[0] = v138; /*0x66ef3a*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeteranarmor, *(double *)v331); /*0x66ef43*/
       __asm { fstp qword ptr [esi+688h] } /*0x66ef48*/
-      *(double *)&_ESI->CreditTicks[1] = _RT1; /*0x66ef48*/
+      *&_ESI->BuildingDieSound = _RT1; /*0x66ef48*/
       v140 = _ESI->CreditTicks[3]; /*0x66ef54*/
       v331[1] = _ESI->CreditTicks[4]; /*0x66ef5f*/
       v331[0] = v140; /*0x66ef60*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeteranrof, *(double *)v331); /*0x66ef69*/
       __asm { fstp qword ptr [esi+690h] } /*0x66ef6e*/
-      *(double *)&_ESI->CreditTicks[3] = _RT1; /*0x66ef6e*/
+      *&_ESI->HealCrateSound = _RT1; /*0x66ef6e*/
       v142 = _ESI->CreditTicks[5]; /*0x66ef7a*/
       v331[1] = _ESI->BuildingDieSound; /*0x66ef85*/
       v331[0] = v142; /*0x66ef86*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aVeterancap, *(double *)v331); /*0x66ef8f*/
       __asm { fstp qword ptr [esi+698h] } /*0x66ef94*/
-      *(double *)&_ESI->CreditTicks[5] = _RT1; /*0x66ef94*/
+      *&_ESI->u32_6FC = _RT1; /*0x66ef94*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aExplosivevoxel, &g_INI_DefaultBuffer, String, 128) ) /*0x66efb7*/
       {
         DynamicVector::Constructor_VoxelAnim(&v332, 0, 0); /*0x66efcc*/
@@ -2957,7 +2957,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::CopyVoxelAnim((TypeList *)&v332.u32_24, &_ESI->CloakingStages); /*0x66f050*/
       }
-      VectorClass::CopyAssign((VectorClass *)&_ESI->CloakingStages, &v332.u32_24); /*0x66f062*/
+      VectorClass::CopyAssign(&_ESI->CloakingStages, &v332.u32_24); /*0x66f062*/
       _ESI->IceCrackingWeight[0] = (int)v334; /*0x66f06b*/
       _ESI->IceCrackingWeight[1] = (int)v335; /*0x66f072*/
       _ESI->IceBreakingWeight[0] = (int)v336; /*0x66f079*/
@@ -3028,25 +3028,25 @@ int RulesClass::LoadFromINI() {
       v331[0] = WindDirection; /*0x66f226*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTrackeduphill, *(double *)v331); /*0x66f22f*/
       __asm { fstp qword ptr [esi+768h] } /*0x66f234*/
-      *(double *)&_ESI->WindDirection = _RT1; /*0x66f234*/
+      *&_ESI->WindDirection = _RT1; /*0x66f234*/
       FlightLevel = _ESI->FlightLevel; /*0x66f240*/
       v331[1] = _ESI->ParachuteMaxFallRate; /*0x66f24c*/
       v331[0] = FlightLevel; /*0x66f24d*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTrackeddownhil, *(double *)v331); /*0x66f256*/
       __asm { fstp qword ptr [esi+770h] } /*0x66f25b*/
-      *(double *)&_ESI->FlightLevel = _RT1; /*0x66f25b*/
+      *&_ESI->FlightLevel = _RT1; /*0x66f25b*/
       NoParachuteMaxFallRate = _ESI->NoParachuteMaxFallRate; /*0x66f267*/
       v331[1] = _ESI->BuildingDrop; /*0x66f26d*/
       v331[0] = NoParachuteMaxFallRate; /*0x66f26e*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aWheeleduphill, *(double *)v331); /*0x66f27d*/
       __asm { fstp qword ptr [esi+778h] } /*0x66f282*/
-      *(double *)&_ESI->NoParachuteMaxFallRate = _RT1; /*0x66f282*/
+      *&_ESI->NoParachuteMaxFallRate = _RT1; /*0x66f282*/
       GDIGateOne = (int)_ESI->GDIGateOne; /*0x66f28e*/
       v331[1] = (int)_ESI->GDIGateTwo; /*0x66f29a*/
       v331[0] = GDIGateOne; /*0x66f29b*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aWheeleddownhil, *(double *)v331); /*0x66f2a4*/
       __asm { fstp qword ptr [esi+780h] } /*0x66f2a9*/
-      *(double *)&_ESI->GDIGateOne = _RT1; /*0x66f2a9*/
+      *&_ESI->GDIGateOne = _RT1; /*0x66f2a9*/
       _ESI->BuildNavalYard[0] = INIClass::ReadInt_Overwrite( /*0x66f2c9*/
                                   (bool *)v338,
                                   g_INI_Key_General,
@@ -3095,7 +3095,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::BuildingTypeCopy((TypeList *)&v332.u32_24, &_ESI->ChronoHarvTooFarDistance); /*0x66f403*/
       }
-      VectorClass::CopyBuilding((VectorClass *)&_ESI->ChronoHarvTooFarDistance, &v332.u32_24); /*0x66f415*/
+      VectorClass::CopyBuilding(&_ESI->ChronoHarvTooFarDistance, &v332.u32_24); /*0x66f415*/
       _ESI->AlliedCrew = (InfantryTypeClass *)v334; /*0x66f41e*/
       _ESI->SovietCrew = (InfantryTypeClass *)v335; /*0x66f425*/
       _ESI->ThirdCrew = v336; /*0x66f42c*/
@@ -3155,7 +3155,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::BuildingTypeCopy((TypeList *)&v332.u32_24, &_ESI->MutateWarhead); /*0x66f63f*/
       }
-      VectorClass::CopyBuilding((VectorClass *)&_ESI->MutateWarhead, &v332.u32_24); /*0x66f651*/
+      VectorClass::CopyBuilding(&_ESI->MutateWarhead, &v332.u32_24); /*0x66f651*/
       _ESI->V3Warhead = (WarheadTypeClass *)v334; /*0x66f65a*/
       _ESI->DMislWarhead = (WarheadTypeClass *)v335; /*0x66f661*/
       _ESI->CMislWarhead = (WarheadTypeClass *)v336; /*0x66f668*/
@@ -3208,13 +3208,13 @@ int RulesClass::LoadFromINI() {
         v186 = (int)IvanWarhead; /*0x66f77f*/
       }
       _ESI->IvanWarhead = (WarheadTypeClass *)v186; /*0x66f781*/
-      v187 = *(unsigned int *)&_ESI->q240[448]; /*0x66f78d*/
+      v187 = *&_ESI->q400; /*0x66f78d*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aPrerequisitepr_0, &g_INI_DefaultBuffer, String, 128) ) /*0x66f7aa*/
         v188 = BuildingTypeClass::FindOrCreateAlt(String); /*0x66f7b7*/
       else
         v188 = v187; /*0x66f7be*/
       v331[1] = 128; /*0x66f7c4*/
-      *(unsigned int *)&_ESI->q240[448] = v188; /*0x66f7c9*/
+      *&_ESI->q400 = v188; /*0x66f7c9*/
       if ( INIClass::GetString((INIClass *)v338, g_INI_Key_General, aBaseunit, &g_INI_DefaultBuffer, String, v331[1]) ) /*0x66f7e2*/
       {
         UnitTypeVector::Construct((UnitTypeVector *)&v332, 0, 0); /*0x66f7f7*/
@@ -3235,7 +3235,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::CopyConstructor((TypeList *)&v332.u32_24, &_ESI->ThirdSurvivorDivisor); /*0x66f87b*/
       }
-      VectorClass::CopyConstructor((VectorClass *)&_ESI->ThirdSurvivorDivisor, &v332.u32_24); /*0x66f88d*/
+      VectorClass::CopyConstructor(&_ESI->ThirdSurvivorDivisor, &v332.u32_24); /*0x66f88d*/
       _ESI->AutocreateTime[1] = (int)v334; /*0x66f896*/
       _ESI->BuildupTime[0] = (int)v335; /*0x66f89d*/
       _ESI->BuildupTime[1] = (int)v336; /*0x66f8a4*/
@@ -3262,7 +3262,7 @@ int RulesClass::LoadFromINI() {
       {
         TypeList::CopyConstructor((TypeList *)&v332.u32_24, &_ESI->HarvesterLoadRate); /*0x66f97e*/
       }
-      VectorClass::CopyConstructor((VectorClass *)&_ESI->HarvesterLoadRate, &v332.u32_24); /*0x66f990*/
+      VectorClass::CopyConstructor(&_ESI->HarvesterLoadRate, &v332.u32_24); /*0x66f990*/
       _ESI->Easy[0] = (int)v334; /*0x66f999*/
       _ESI->Easy[1] = (int)v335; /*0x66f9a0*/
       _ESI->Easy[2] = (int)v336; /*0x66f9a7*/
@@ -3278,7 +3278,7 @@ int RulesClass::LoadFromINI() {
                              g_INI_Key_General,
                              (uint8_t *)aPadaircraft,
                              &_ESI->Easy[3]);
-      RulesClass::readSuperWeaponTypes((RulesClass *)&_ESI->Easy[3], CountryName); /*0x66f9ec*/
+      RulesClass::readSuperWeaponTypes(&_ESI->__pad_C3C, CountryName); /*0x66f9ec*/
       RulesClass::readCountries((RulesClass *)&v332); /*0x66f9f5*/
       _ESI->Normal[18] = GetINIClassInt(v338, g_INI_Key_General, (uint8_t *)aParatrooper, _ESI->Normal[18]); /*0x66fa19*/
       INIClassInfantryTypeList = (int *)ReadINIClassInfantryTypeList( /*0x66fa31*/
@@ -3286,28 +3286,28 @@ int RulesClass::LoadFromINI() {
                                           v338,
                                           g_INI_Key_General,
                                           (uint8_t *)aSecretinfantry,
-                                          &_ESI->qC3C[196]);
-      TypeList::CopyInfantry((TypeList *)&_ESI->qC3C[196], INIClassInfantryTypeList); /*0x66fa39*/
+                                          &_ESI->VectorClass_D00);
+      TypeList::CopyInfantry(&_ESI->VectorClass_D00, INIClassInfantryTypeList); /*0x66fa39*/
       TypeList::InfantryCleanup((TypeList *)&v332); /*0x66fa42*/
       BuildingTypes = (int *)BuildingClass::LoadBuildingTypes( /*0x66fa60*/
                                (int)&v332,
                                v338,
                                g_INI_Key_General,
                                (uint8_t *)aSecretunits,
-                               &_ESI->qC3C[224]);
-      RulesClass::readAircraftTypes((RulesClass *)&_ESI->qC3C[224], BuildingTypes); /*0x66fa6c*/
+                               &_ESI->SaveLoad_D1C);
+      RulesClass::readAircraftTypes(&_ESI->SaveLoad_D1C, BuildingTypes); /*0x66fa6c*/
       RulesClass::readInfantryTypes((RulesClass *)&v332); /*0x66fa75*/
       INIClassBuildingTypeList = (int *)ReadINIClassBuildingTypeList( /*0x66fa93*/
                                           (int)&v332,
                                           v338,
                                           g_INI_Key_General,
                                           (uint8_t *)aSecretbuilding,
-                                          &_ESI->qC3C[252]);
-      TypeList::CopyAircraft((TypeList *)&_ESI->qC3C[252], INIClassBuildingTypeList); /*0x66fa9f*/
+                                          &_ESI->DynamicVector_D38);
+      TypeList::CopyAircraft(&_ESI->DynamicVector_D38, INIClassBuildingTypeList); /*0x66fa9f*/
       RulesClass::readMaximums((RulesClass *)&v332); /*0x66faa8*/
-      Warheads = RulesClass::readWarheads((RulesClass *)&_ESI->qC3C[196]); /*0x66faba*/
-      v196 = RulesClass::readOverlayTypes((RulesClass *)&_ESI->qC3C[224]) + Warheads; /*0x66fac7*/
-      *(unsigned int *)&_ESI->qC3C[280] = RulesClass::readSmudgeTypes((RulesClass *)&_ESI->qC3C[252]) + v196; /*0x66fad0*/
+      Warheads = RulesClass::readWarheads(&_ESI->VectorClass_D00); /*0x66faba*/
+      v196 = RulesClass::readOverlayTypes(&_ESI->SaveLoad_D1C) + Warheads; /*0x66fac7*/
+      *&_ESI->u32_D54 = RulesClass::readSmudgeTypes(&_ESI->DynamicVector_D38) + v196; /*0x66fad0*/
       _ESI->Difficult[0] = INIClass::ReadInt_Overwrite((bool *)v338, g_INI_Key_General, aChronodelay, _ESI->Difficult[0]); /*0x66faf0*/
       _ESI->Difficult[1] = INIClass::ReadInt_Overwrite( /*0x66fb0f*/
                              (bool *)v338,
@@ -3334,71 +3334,71 @@ int RulesClass::LoadFromINI() {
                              g_INI_Key_General,
                              aChronorangemin,
                              _ESI->Difficult[5]);
-      *(unsigned int *)&_ESI->qC3C[284] = GetINIClassInt( /*0x66fbad*/
+      *&_ESI->u32_D58 = GetINIClassInt( /*0x66fbad*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aAllieddisguise,
-                                           *(unsigned int *)&_ESI->qC3C[284]);
-      *(unsigned int *)&_ESI->qC3C[288] = GetINIClassInt( /*0x66fbcc*/
+                                           *&_ESI->u32_D58);
+      *&_ESI->u32_D5C = GetINIClassInt( /*0x66fbcc*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aSovietdisguise,
-                                           *(unsigned int *)&_ESI->qC3C[288]);
-      *(unsigned int *)&_ESI->qC3C[292] = GetINIClassInt( /*0x66fbeb*/
+                                           *&_ESI->u32_D5C);
+      *&_ESI->u32_D60 = GetINIClassInt( /*0x66fbeb*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aThirddisguise,
-                                           *(unsigned int *)&_ESI->qC3C[292]);
-      *(unsigned int *)&_ESI->qC3C[296] = INIClass::ReadInt_Overwrite( /*0x66fc0b*/
+                                           *&_ESI->u32_D60);
+      *&_ESI->u32_D64 = INIClass::ReadInt_Overwrite( /*0x66fc0b*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aSpypowerblacko,
-                                           *(unsigned int *)&_ESI->qC3C[296]);
+                                           *&_ESI->u32_D64);
       __asm { fld dword ptr [esi+0D68h] } /*0x66fc17*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aSpymoneystealp, *(double *)v331); /*0x66fc2b*/
       __asm { fstp dword ptr [esi+0D68h] } /*0x66fc30*/
-      *(float *)&_ESI->qC3C[300] = _ET1; /*0x66fc30*/
-      _ESI->qC3C[304] = INIClass::ReadBool_Overwrite( /*0x66fc50*/
+      *&_ESI->u32_D68 = _ET1; /*0x66fc30*/
+      _ESI->u8_D6C = INIClass::ReadBool_Overwrite( /*0x66fc50*/
                                (int *)v338,
                                g_INI_Key_General,
                                aAttackcursoron,
-                               _ESI->qC3C[304]);
+                               _ESI->u8_D6C);
       __asm { fld dword ptr [esi+0F3Ch] } /*0x66fc5c*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aPurifierbonus, *(double *)v331); /*0x66fc70*/
       __asm { fstp dword ptr [esi+0F3Ch] } /*0x66fc75*/
-      *(float *)&_ESI->qC3C[768] = _ET1; /*0x66fc75*/
-      *(unsigned int *)&_ESI->qC3C[820] = GetINIClassInt( /*0x66fc94*/
+      *&_ESI->u32_F3C = _ET1; /*0x66fc75*/
+      *&_ESI->u32_F70 = GetINIClassInt( /*0x66fc94*/
                                            v338,
                                            g_INI_Key_General,
                                            aEngineer,
-                                           *(unsigned int *)&_ESI->qC3C[820]);
-      *(unsigned int *)&_ESI->qC3C[816] = GetINIClassInt( /*0x66fcb3*/
+                                           *&_ESI->u32_F70);
+      *&_ESI->u32_F6C = GetINIClassInt( /*0x66fcb3*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aTechnician,
-                                           *(unsigned int *)&_ESI->qC3C[816]);
-      *(unsigned int *)&_ESI->qC3C[824] = GetINIClassInt( /*0x66fcd2*/
+                                           *&_ESI->u32_F6C);
+      *&_ESI->u32_F74 = GetINIClassInt( /*0x66fcd2*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aPilot,
-                                           *(unsigned int *)&_ESI->qC3C[824]);
-      *(unsigned int *)&_ESI->qC3C[828] = GetINIClassInt( /*0x66fcf1*/
+                                           *&_ESI->u32_F74);
+      *&_ESI->u32_F78 = GetINIClassInt( /*0x66fcf1*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aAlliedcrew,
-                                           *(unsigned int *)&_ESI->qC3C[828]);
-      *(unsigned int *)&_ESI->qC3C[832] = GetINIClassInt( /*0x66fd10*/
+                                           *&_ESI->u32_F78);
+      *&_ESI->u32_F7C = GetINIClassInt( /*0x66fd10*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aSovietcrew,
-                                           *(unsigned int *)&_ESI->qC3C[832]);
-      *(unsigned int *)&_ESI->qC3C[836] = GetINIClassInt( /*0x66fd2f*/
+                                           *&_ESI->u32_F7C);
+      *&_ESI->u32_F80 = GetINIClassInt( /*0x66fd2f*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aThirdcrew,
-                                           *(unsigned int *)&_ESI->qC3C[836]);
+                                           *&_ESI->u32_F80);
       IDA_BYTE1(_ESI->ElevationIncrement) = INIClass::ReadBool_Overwrite( /*0x66fd4f*/
                                           (int *)v338,
                                           g_INI_Key_General,
@@ -3409,7 +3409,7 @@ int RulesClass::LoadFromINI() {
                                                    g_INI_Key_General,
                                                    aFinediffcontro,
                                                    _ESI->ElevationIncrementBonus[0]);
-      VectorClass::Copy(&v329, &_ESI->qC3C[1308]); /*0x66fd80*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1158); /*0x66fd80*/
       IntList = (int *)INIClass::ReadIntList( /*0x66fd98*/
                          (INIClass *)v338,
                          (int)&v332,
@@ -3422,9 +3422,9 @@ int RulesClass::LoadFromINI() {
                          v330,
                          v331[0],
                          v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1308], IntList); /*0x66fda0*/
+      TypeList::CopyFull(&_ESI->TypeList_1158, IntList); /*0x66fda0*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66fda9*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1336]); /*0x66fdba*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_1174); /*0x66fdba*/
       v200 = (int *)INIClass::ReadIntList( /*0x66fdd1*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3437,19 +3437,19 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1336], v200); /*0x66fdd9*/
+      TypeList::CopyFull(&_ESI->DynamicVector_1174, v200); /*0x66fdd9*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66fde2*/
-      *(unsigned int *)&_ESI->qC3C[1732] = INIClass::ReadInt_Overwrite( /*0x66fe00*/
+      *&_ESI->u32_1300 = INIClass::ReadInt_Overwrite( /*0x66fe00*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aAialternatepro,
-                                            *(unsigned int *)&_ESI->qC3C[1732]);
-      v201 = *(unsigned int *)&_ESI->qC3C[1964]; /*0x66fe0c*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1968]; /*0x66fe17*/
+                                            *&_ESI->u32_1300);
+      v201 = *&_ESI->u32_13E8; /*0x66fe0c*/
+      v331[1] = *&_ESI->u32_13EC; /*0x66fe17*/
       v331[0] = v201; /*0x66fe18*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aAiuseturbineup, *(double *)v331); /*0x66fe21*/
       __asm { fstp qword ptr [esi+13E8h] } /*0x66fe26*/
-      *(double *)&_ESI->qC3C[1964] = _RT1; /*0x66fe26*/
+      *&_ESI->u32_13E8 = _RT1; /*0x66fe26*/
       IDA_BYTE1(_ESI->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite( /*0x66fe46*/
                                             (int *)v338,
                                             g_INI_Key_General,
@@ -3460,7 +3460,7 @@ int RulesClass::LoadFromINI() {
                                             g_INI_Key_General,
                                             aAibuildswalls,
                                             (unsigned char)((_ESI->ElevationBonusCap[1]) >> 16));
-      VectorClass::Copy(&v329, &_ESI->qC3C[1972]); /*0x66fe78*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_13F0); /*0x66fe78*/
       v203 = (int *)INIClass::ReadIntList( /*0x66fe90*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3473,9 +3473,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1972], v203); /*0x66fe98*/
+      TypeList::CopyFull(&_ESI->TypeList_13F0, v203); /*0x66fe98*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66fea1*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1876]); /*0x66feb2*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1390); /*0x66feb2*/
       v204 = (int *)INIClass::ReadIntList( /*0x66feca*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3488,9 +3488,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1876], v204); /*0x66fed2*/
+      TypeList::CopyFull(&_ESI->TypeList_1390, v204); /*0x66fed2*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66fedb*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1904]); /*0x66feec*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_13AC); /*0x66feec*/
       v205 = (int *)INIClass::ReadIntList( /*0x66ff03*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3503,9 +3503,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1904], v205); /*0x66ff0b*/
+      TypeList::CopyFull(&_ESI->TypeList_13AC, v205); /*0x66ff0b*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66ff14*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1932]); /*0x66ff25*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_13C8); /*0x66ff25*/
       v206 = (int *)INIClass::ReadIntList( /*0x66ff3d*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3518,39 +3518,39 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1932], v206); /*0x66ff45*/
+      TypeList::CopyFull(&_ESI->DynamicVector_13C8, v206); /*0x66ff45*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66ff4e*/
       IDA_HIBYTE(_ESI->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite( /*0x66ff6d*/
                                              (int *)v338,
                                              g_INI_Key_General,
                                              aUsemindefenser,
                                              (unsigned char)((_ESI->ElevationBonusCap[1]) >> 8));
-      *(unsigned int *)&_ESI->qC3C[1364] = INIClass::ReadInt_Overwrite( /*0x66ff8d*/
+      *&_ESI->u32_1190 = INIClass::ReadInt_Overwrite( /*0x66ff8d*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aDissolveunfill,
-                                            *(unsigned int *)&_ESI->qC3C[1364]);
-      *(unsigned int *)&_ESI->qC3C[312] = INIClass::ReadInt_Overwrite( /*0x66ffac*/
+                                            *&_ESI->u32_1190);
+      *&_ESI->u32_D74 = INIClass::ReadInt_Overwrite( /*0x66ffac*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aAisafedistance,
-                                           *(unsigned int *)&_ESI->qC3C[312]);
+                                           *&_ESI->u32_D74);
       __asm { fld dword ptr [esi+0D70h] } /*0x66ffb8*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aAiminorsuperre, *(double *)v331); /*0x66ffcc*/
       __asm { fstp dword ptr [esi+0D70h] } /*0x66ffd1*/
-      *(float *)&_ESI->qC3C[308] = *(float *)&_RT1; /*0x66ffd1*/
-      *(unsigned int *)&_ESI->qC3C[316] = INIClass::ReadInt_Overwrite( /*0x66fff0*/
+      *&_ESI->u32_D70 = *(float *)&_RT1; /*0x66ffd1*/
+      *&_ESI->u32_D78 = INIClass::ReadInt_Overwrite( /*0x66fff0*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aHarvestertoofa,
-                                           *(unsigned int *)&_ESI->qC3C[316]);
-      *(unsigned int *)&_ESI->qC3C[320] = INIClass::ReadInt_Overwrite( /*0x67001b*/
+                                           *&_ESI->u32_D78);
+      *&_ESI->u32_D7C = INIClass::ReadInt_Overwrite( /*0x67001b*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aChronoharvtoof,
-                                           *(unsigned int *)&_ESI->qC3C[320]);
-      VectorClass::Copy(&v329, &_ESI->qC3C[324]); /*0x670022*/
+                                           *&_ESI->u32_D7C);
+      VectorClass::Copy(&v329, &_ESI->TypeList_D80); /*0x670022*/
       v207 = (int *)INIClass::ReadIntList( /*0x670039*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3563,9 +3563,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[324], v207); /*0x670041*/
+      TypeList::CopyFull(&_ESI->TypeList_D80, v207); /*0x670041*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67004a*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[352]); /*0x67005b*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_D9C); /*0x67005b*/
       v208 = (int *)INIClass::ReadIntList( /*0x670073*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3578,9 +3578,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[352], v208); /*0x67007b*/
+      TypeList::CopyFull(&_ESI->TypeList_D9C, v208); /*0x67007b*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670084*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[380]); /*0x670095*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_DB8); /*0x670095*/
       v209 = (int *)INIClass::ReadIntList( /*0x6700ad*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3593,9 +3593,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[380], v209); /*0x6700b5*/
+      TypeList::CopyFull(&_ESI->TypeList_DB8, v209); /*0x6700b5*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6700be*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[408]); /*0x6700cf*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_DD4); /*0x6700cf*/
       v210 = (int *)INIClass::ReadIntList( /*0x6700e6*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3608,49 +3608,49 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[408], v210); /*0x6700ee*/
+      TypeList::CopyFull(&_ESI->TypeList_DD4, v210); /*0x6700ee*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6700f7*/
-      *(unsigned int *)&_ESI->qC3C[436] = INIClass::ReadInt_Overwrite( /*0x670115*/
+      *&_ESI->u32_DF0 = INIClass::ReadInt_Overwrite( /*0x670115*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aAirestrictrepl,
-                                           *(unsigned int *)&_ESI->qC3C[436]);
-      *(unsigned int *)&_ESI->qC3C[440] = INIClass::ReadInt_Overwrite( /*0x670135*/
+                                           *&_ESI->u32_DF0);
+      *&_ESI->u32_DF4 = INIClass::ReadInt_Overwrite( /*0x670135*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aThreatperoccup,
-                                           *(unsigned int *)&_ESI->qC3C[440]);
-      *(unsigned int *)&_ESI->qC3C[444] = INIClass::ReadInt_Overwrite( /*0x670155*/
+                                           *&_ESI->u32_DF4);
+      *&_ESI->u32_DF8 = INIClass::ReadInt_Overwrite( /*0x670155*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aApproachtarget,
-                                           *(unsigned int *)&_ESI->qC3C[444]);
-      *(unsigned int *)&_ESI->qC3C[448] = INIClass::ReadInt_Overwrite( /*0x670174*/
+                                           *&_ESI->u32_DF8);
+      *&_ESI->u32_DFC = INIClass::ReadInt_Overwrite( /*0x670174*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCampaignmoneyd,
-                                           *(unsigned int *)&_ESI->qC3C[448]);
-      *(unsigned int *)&_ESI->qC3C[452] = INIClass::ReadInt_Overwrite( /*0x670194*/
+                                           *&_ESI->u32_DFC);
+      *&_ESI->u32_E00 = INIClass::ReadInt_Overwrite( /*0x670194*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCampaignmoneyd_0,
-                                           *(unsigned int *)&_ESI->qC3C[452]);
-      *(unsigned int *)&_ESI->qC3C[456] = INIClass::ReadInt_Overwrite( /*0x6701b4*/
+                                           *&_ESI->u32_E00);
+      *&_ESI->u32_E04 = INIClass::ReadInt_Overwrite( /*0x6701b4*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aGuardareatarge,
-                                           *(unsigned int *)&_ESI->qC3C[456]);
-      *(unsigned int *)&_ESI->qC3C[460] = INIClass::ReadInt_Overwrite( /*0x6701d3*/
+                                           *&_ESI->u32_E04);
+      *&_ESI->u32_E08 = INIClass::ReadInt_Overwrite( /*0x6701d3*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aNormaltargetin,
-                                           *(unsigned int *)&_ESI->qC3C[460]);
-      *(unsigned int *)&_ESI->qC3C[464] = INIClass::ReadInt_Overwrite( /*0x6701fe*/
+                                           *&_ESI->u32_E08);
+      *&_ESI->u32_E0C = INIClass::ReadInt_Overwrite( /*0x6701fe*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aAinavalyardadj,
-                                           *(unsigned int *)&_ESI->qC3C[464]);
-      VectorClass::Copy(&v329, &_ESI->qC3C[468]); /*0x670205*/
+                                           *&_ESI->u32_E0C);
+      VectorClass::Copy(&v329, &_ESI->TypeList_E10); /*0x670205*/
       v211 = (int *)INIClass::ReadIntList( /*0x67021c*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3663,9 +3663,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[468], v211); /*0x670224*/
+      TypeList::CopyFull(&_ESI->TypeList_E10, v211); /*0x670224*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67022d*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[496]); /*0x67023e*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_E2C); /*0x67023e*/
       v212 = (int *)INIClass::ReadIntList( /*0x670256*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3678,19 +3678,19 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[496], v212); /*0x67025e*/
+      TypeList::CopyFull(&_ESI->TypeList_E2C, v212); /*0x67025e*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670267*/
-      *(unsigned int *)&_ESI->qC3C[524] = INIClass::ReadInt_Overwrite( /*0x670286*/
+      *&_ESI->Color_E48 = INIClass::ReadInt_Overwrite( /*0x670286*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aMaximumbuildin,
-                                           *(unsigned int *)&_ESI->qC3C[524]);
-      *(unsigned int *)&_ESI->MutateExplosion = INIClass::ReadCoord( /*0x6702a6*/
+                                           *&_ESI->Color_E48);
+      *&_ESI->MutateExplosion = INIClass::ReadCoord( /*0x6702a6*/
                                             (double *)v338,
                                             v1,
                                             g_INI_Key_General,
                                             (uint8_t *)aTiberiumshorts,
-                                            *(unsigned int *)&_ESI->MutateExplosion);
+                                            *&_ESI->MutateExplosion);
       _ESI->CollapseChance = INIClass::ReadCoord( /*0x6702c5*/
                                (double *)v338,
                                v1,
@@ -3721,12 +3721,12 @@ int RulesClass::LoadFromINI() {
                                             g_INI_Key_General,
                                             (uint8_t *)aSlaveminerscan,
                                             ((unsigned int)(_ESI->ExtraAircraftLight)));
-      *(unsigned int *)&_ESI->Paranoid = INIClass::ReadInt_Overwrite( /*0x670367*/
+      *&_ESI->Paranoid = INIClass::ReadInt_Overwrite( /*0x670367*/
                                      (bool *)v338,
                                      g_INI_Key_General,
                                      aSlaveminerkick,
-                                     *(unsigned int *)&_ESI->Paranoid);
-      VectorClass::Copy(&v329, &_ESI->qC3C[648]); /*0x670376*/
+                                     *&_ESI->Paranoid);
+      VectorClass::Copy(&v329, &_ESI->TypeList_EC4); /*0x670376*/
       v213 = (int *)INIClass::ReadIntList( /*0x67038e*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3739,20 +3739,20 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[648], v213); /*0x670396*/
+      TypeList::CopyFull(&_ESI->TypeList_EC4, v213); /*0x670396*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67039f*/
-      *(unsigned int *)&_ESI->qC3C[676] = INIClass::ReadInt_Overwrite( /*0x6703be*/
+      *&_ESI->Color_EE0 = INIClass::ReadInt_Overwrite( /*0x6703be*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aAisuperdefense_0,
-                                           *(unsigned int *)&_ESI->qC3C[676]);
-      *(unsigned int *)&_ESI->qC3C[680] = INIClass::ReadCoord( /*0x6703e9*/
+                                           *&_ESI->Color_EE0);
+      *&_ESI->TechnoTypeClass_EE4 = INIClass::ReadCoord( /*0x6703e9*/
                                            (double *)v338,
                                            v1,
                                            g_INI_Key_General,
                                            (uint8_t *)aAisuperdefense_1,
-                                           *(unsigned int *)&_ESI->qC3C[680]);
-      VectorClass::Copy(&v329, &_ESI->qC3C[528]); /*0x6703f0*/
+                                           *&_ESI->TechnoTypeClass_EE4);
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_E4C); /*0x6703f0*/
       v214 = (int *)INIClass::ReadIntList( /*0x670408*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3765,9 +3765,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[528], v214); /*0x670410*/
+      TypeList::CopyFull(&_ESI->DynamicVector_E4C, v214); /*0x670410*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670419*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[556]); /*0x67042a*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_E68); /*0x67042a*/
       v215 = (int *)INIClass::ReadIntList( /*0x670442*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3780,9 +3780,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[556], v215); /*0x67044a*/
+      TypeList::CopyFull(&_ESI->DynamicVector_E68, v215); /*0x67044a*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670453*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[584]); /*0x670464*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_E84); /*0x670464*/
       v216 = (int *)INIClass::ReadIntList( /*0x67047b*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3795,9 +3795,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[584], v216); /*0x670483*/
+      TypeList::CopyFull(&_ESI->DynamicVector_E84, v216); /*0x670483*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67048c*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[612]); /*0x67049d*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_EA0); /*0x67049d*/
       v217 = (int *)INIClass::ReadIntList( /*0x6704b5*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3810,19 +3810,19 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[612], v217); /*0x6704bd*/
+      TypeList::CopyFull(&_ESI->DynamicVector_EA0, v217); /*0x6704bd*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6704c6*/
-      *(unsigned int *)&_ESI->qC3C[640] = INIClass::ReadInt_Overwrite( /*0x6704e5*/
+      *&_ESI->Color_EBC = INIClass::ReadInt_Overwrite( /*0x6704e5*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aAicapturelowmo_0,
-                                           *(unsigned int *)&_ESI->qC3C[640]);
+                                           *&_ESI->Color_EBC);
       __asm { fld dword ptr [esi+0EC0h] } /*0x6704f0*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; int }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aAicapturewound_0, *(double *)v331); /*0x670504*/
       __asm { fstp dword ptr [esi+0EC0h] } /*0x670509*/
-      *(float *)&_ESI->qC3C[644] = *(float *)&_RT1; /*0x670509*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1736]); /*0x67051b*/
+      *&_ESI->u32_EC0 = *(float *)&_RT1; /*0x670509*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_1304); /*0x67051b*/
       v218 = (int *)INIClass::ReadIntList( /*0x670533*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3835,9 +3835,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1736], v218); /*0x67053b*/
+      TypeList::CopyFull(&_ESI->DynamicVector_1304, v218); /*0x67053b*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670544*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1764]); /*0x670555*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_1320); /*0x670555*/
       v219 = (int *)INIClass::ReadIntList( /*0x67056c*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3850,9 +3850,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1764], v219); /*0x670574*/
+      TypeList::CopyFull(&_ESI->DynamicVector_1320, v219); /*0x670574*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67057d*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1792]); /*0x67058e*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_133C); /*0x67058e*/
       v220 = (int *)INIClass::ReadIntList( /*0x6705a6*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3865,9 +3865,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1792], v220); /*0x6705ae*/
+      TypeList::CopyFull(&_ESI->DynamicVector_133C, v220); /*0x6705ae*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6705b7*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1820]); /*0x6705c8*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_1358); /*0x6705c8*/
       v221 = (int *)INIClass::ReadIntList( /*0x6705e0*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3880,9 +3880,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1820], v221); /*0x6705e8*/
+      TypeList::CopyFull(&_ESI->DynamicVector_1358, v221); /*0x6705e8*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6705f1*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1848]); /*0x670602*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_1374); /*0x670602*/
       v222 = (int *)INIClass::ReadIntList( /*0x670619*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3895,7 +3895,7 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1848], v222); /*0x670621*/
+      TypeList::CopyFull(&_ESI->DynamicVector_1374, v222); /*0x670621*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67062a*/
       v223 = (int *)ReadINIClassInfantryTypeList( /*0x670648*/
                       (int)&v332,
@@ -3903,7 +3903,7 @@ int RulesClass::LoadFromINI() {
                       g_INI_Key_General,
                       (uint8_t *)aAmerparadropin,
                       &_ESI->Difficult[6]);
-      TypeList::CopyInfantry((TypeList *)&_ESI->Difficult[6], v223); /*0x670650*/
+      TypeList::CopyInfantry(&_ESI->qDCC, v223); /*0x670650*/
       TypeList::InfantryCleanup((TypeList *)&v332); /*0x670659*/
       VectorClass::Copy(&v329, &_ESI->Difficult[13]); /*0x67066a*/
       v224 = (int *)INIClass::ReadIntList( /*0x670681*/
@@ -3918,7 +3918,7 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->Difficult[13], v224); /*0x670689*/
+      TypeList::CopyFull(&_ESI->qFFC, v224); /*0x670689*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670692*/
       v225 = (int *)ReadINIClassInfantryTypeList( /*0x6706b0*/
                       (int)&v332,
@@ -3928,7 +3928,7 @@ int RulesClass::LoadFromINI() {
                       _ESI->qC3C);
       TypeList::CopyInfantry((TypeList *)_ESI->qC3C, v225); /*0x6706b8*/
       TypeList::InfantryCleanup((TypeList *)&v332); /*0x6706c1*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[28]); /*0x6706d2*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_C58); /*0x6706d2*/
       v226 = (int *)INIClass::ReadIntList( /*0x6706e9*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3941,17 +3941,17 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[28], v226); /*0x6706f1*/
+      TypeList::CopyFull(&_ESI->DynamicVector_C58, v226); /*0x6706f1*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6706fa*/
       v227 = (int *)ReadINIClassInfantryTypeList( /*0x670718*/
                       (int)&v332,
                       v338,
                       g_INI_Key_General,
                       (uint8_t *)aSovparadropinf,
-                      &_ESI->qC3C[56]);
-      TypeList::CopyInfantry((TypeList *)&_ESI->qC3C[56], v227); /*0x670720*/
+                      &_ESI->VectorClass_C74);
+      TypeList::CopyInfantry(&_ESI->VectorClass_C74, v227); /*0x670720*/
       TypeList::InfantryCleanup((TypeList *)&v332); /*0x670729*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[84]); /*0x67073a*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_C90); /*0x67073a*/
       v228 = (int *)INIClass::ReadIntList( /*0x670751*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3964,17 +3964,17 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[84], v228); /*0x670759*/
+      TypeList::CopyFull(&_ESI->DynamicVector_C90, v228); /*0x670759*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670762*/
       v229 = (int *)ReadINIClassInfantryTypeList( /*0x670780*/
                       (int)&v332,
                       v338,
                       g_INI_Key_General,
                       (uint8_t *)aYuriparadropin,
-                      &_ESI->qC3C[112]);
-      TypeList::CopyInfantry((TypeList *)&_ESI->qC3C[112], v229); /*0x670788*/
+                      &_ESI->VectorClass_CAC);
+      TypeList::CopyInfantry(&_ESI->VectorClass_CAC, v229); /*0x670788*/
       TypeList::InfantryCleanup((TypeList *)&v332); /*0x670791*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[140]); /*0x6707a2*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_CC8); /*0x6707a2*/
       v230 = (int *)INIClass::ReadIntList( /*0x6707b9*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -3987,17 +3987,17 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[140], v230); /*0x6707c1*/
+      TypeList::CopyFull(&_ESI->DynamicVector_CC8, v230); /*0x6707c1*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6707ca*/
       v231 = (int *)ReadINIClassInfantryTypeList( /*0x6707e8*/
                       (int)&v332,
                       v338,
                       g_INI_Key_General,
                       (uint8_t *)aAnimtoinfantry,
-                      &_ESI->qC3C[168]);
-      TypeList::CopyInfantry((TypeList *)&_ESI->qC3C[168], v231); /*0x6707f0*/
+                      &_ESI->VectorClass_CE4);
+      TypeList::CopyInfantry(&_ESI->VectorClass_CE4, v231); /*0x6707f0*/
       TypeList::InfantryCleanup((TypeList *)&v332); /*0x6707f9*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1368]); /*0x67080a*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_1194); /*0x67080a*/
       v232 = (int *)INIClass::ReadIntList( /*0x670821*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4010,9 +4010,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1368], v232); /*0x670829*/
+      TypeList::CopyFull(&_ESI->DynamicVector_1194, v232); /*0x670829*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670832*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1396]); /*0x670843*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_11B0); /*0x670843*/
       v233 = (int *)INIClass::ReadIntList( /*0x67085b*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4025,9 +4025,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1396], v233); /*0x670863*/
+      TypeList::CopyFull(&_ESI->TypeList_11B0, v233); /*0x670863*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67086c*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1424]); /*0x67087d*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_11CC); /*0x67087d*/
       v234 = (int *)INIClass::ReadIntList( /*0x670895*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4040,9 +4040,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1424], v234); /*0x67089d*/
+      TypeList::CopyFull(&_ESI->TypeList_11CC, v234); /*0x67089d*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6708a6*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1452]); /*0x6708b7*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_11E8); /*0x6708b7*/
       v235 = (int *)INIClass::ReadIntList( /*0x6708ce*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4055,9 +4055,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1452], v235); /*0x6708d6*/
+      TypeList::CopyFull(&_ESI->TypeList_11E8, v235); /*0x6708d6*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6708df*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1480]); /*0x6708f0*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1204); /*0x6708f0*/
       v236 = (int *)INIClass::ReadIntList( /*0x670908*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4070,9 +4070,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1480], v236); /*0x670910*/
+      TypeList::CopyFull(&_ESI->TypeList_1204, v236); /*0x670910*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670919*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1508]); /*0x67092a*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1220); /*0x67092a*/
       v237 = (int *)INIClass::ReadIntList( /*0x670942*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4085,9 +4085,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1508], v237); /*0x67094a*/
+      TypeList::CopyFull(&_ESI->TypeList_1220, v237); /*0x67094a*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670953*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1536]); /*0x670964*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_123C); /*0x670964*/
       v238 = (int *)INIClass::ReadIntList( /*0x67097b*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4100,9 +4100,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1536], v238); /*0x670983*/
+      TypeList::CopyFull(&_ESI->TypeList_123C, v238); /*0x670983*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x67098c*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1564]); /*0x67099d*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1258); /*0x67099d*/
       v239 = (int *)INIClass::ReadIntList( /*0x6709b5*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4115,9 +4115,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1564], v239); /*0x6709bd*/
+      TypeList::CopyFull(&_ESI->TypeList_1258, v239); /*0x6709bd*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x6709c6*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1592]); /*0x6709d7*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1274); /*0x6709d7*/
       v240 = (int *)INIClass::ReadIntList( /*0x6709ef*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4130,9 +4130,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1592], v240); /*0x6709f7*/
+      TypeList::CopyFull(&_ESI->TypeList_1274, v240); /*0x6709f7*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670a00*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1620]); /*0x670a11*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_1290); /*0x670a11*/
       v241 = (int *)INIClass::ReadIntList( /*0x670a28*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4145,9 +4145,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1620], v241); /*0x670a30*/
+      TypeList::CopyFull(&_ESI->TypeList_1290, v241); /*0x670a30*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670a39*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1648]); /*0x670a4a*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_12AC); /*0x670a4a*/
       v242 = (int *)INIClass::ReadIntList( /*0x670a62*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4160,9 +4160,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1648], v242); /*0x670a6a*/
+      TypeList::CopyFull(&_ESI->TypeList_12AC, v242); /*0x670a6a*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670a73*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1676]); /*0x670a84*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_12C8); /*0x670a84*/
       v243 = (int *)INIClass::ReadIntList( /*0x670a9c*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4175,9 +4175,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1676], v243); /*0x670aa4*/
+      TypeList::CopyFull(&_ESI->TypeList_12C8, v243); /*0x670aa4*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670aad*/
-      VectorClass::Copy(&v329, &_ESI->qC3C[1704]); /*0x670abe*/
+      VectorClass::Copy(&v329, &_ESI->TypeList_12E4); /*0x670abe*/
       v244 = (int *)INIClass::ReadIntList( /*0x670ad5*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4190,104 +4190,104 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->qC3C[1704], v244); /*0x670add*/
+      TypeList::CopyFull(&_ESI->TypeList_12E4, v244); /*0x670add*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x670ae6*/
-      v245 = *(unsigned int *)&_ESI->qC3C[2004]; /*0x670af1*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2008]; /*0x670afd*/
+      v245 = *&_ESI->u32_1410; /*0x670af1*/
+      v331[1] = *&_ESI->u32_1414; /*0x670afd*/
       v331[0] = v245; /*0x670afe*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCloakdelay, *(double *)v331); /*0x670b07*/
       __asm { fstp qword ptr [esi+1410h] } /*0x670b0c*/
-      *(double *)&_ESI->qC3C[2004] = _RT1; /*0x670b0c*/
-      v247 = *(unsigned int *)&_ESI->qC3C[2012]; /*0x670b18*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2016]; /*0x670b1e*/
+      *&_ESI->u32_1410 = _RT1; /*0x670b0c*/
+      v247 = *&_ESI->u32_1418; /*0x670b18*/
+      v331[1] = *&_ESI->u32_141C; /*0x670b1e*/
       v331[0] = v247; /*0x670b25*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aGamespeedbias, *(double *)v331); /*0x670b2e*/
       __asm { fstp qword ptr [esi+1418h] } /*0x670b33*/
-      *(double *)&_ESI->qC3C[2012] = _RT1; /*0x670b33*/
-      v249 = *(unsigned int *)&_ESI->qC3C[2020]; /*0x670b3f*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2024]; /*0x670b4b*/
+      *&_ESI->u32_1418 = _RT1; /*0x670b33*/
+      v249 = *&_ESI->u32_1420; /*0x670b3f*/
+      v331[1] = *&_ESI->u32_1424; /*0x670b4b*/
       v331[0] = v249; /*0x670b4c*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aBasebias, *(double *)v331); /*0x670b55*/
       __asm { fstp qword ptr [esi+1420h] } /*0x670b5a*/
-      *(double *)&_ESI->qC3C[2020] = _RT1; /*0x670b5a*/
+      *&_ESI->u32_1420 = _RT1; /*0x670b5a*/
       IDA_LOBYTE(_ESI->ElevationIncrementBonus[1]) = INIClass::ReadBool_Overwrite( /*0x670b79*/
                                                    (int *)v338,
                                                    g_INI_Key_General,
                                                    aSeparateaircra,
                                                    _ESI->ElevationIncrementBonus[1]);
-      v251 = *(unsigned int *)&_ESI->qC3C[2204]; /*0x670b85*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2208]; /*0x670b90*/
+      v251 = *&_ESI->u32_14D8; /*0x670b85*/
+      v331[1] = *&_ESI->u32_14DC; /*0x670b90*/
       v331[0] = v251; /*0x670b91*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aBasedefensedel, *(double *)v331); /*0x670b9a*/
       __asm { fstp qword ptr [esi+14D8h] } /*0x670b9f*/
-      *(double *)&_ESI->qC3C[2204] = _RT1; /*0x670b9f*/
-      *(unsigned int *)&_ESI->qC3C[2212] = INIClass::ReadInt_Overwrite( /*0x670bbf*/
+      *&_ESI->u32_14D8 = _RT1; /*0x670b9f*/
+      *&_ESI->u32_14E0 = INIClass::ReadInt_Overwrite( /*0x670bbf*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aSuspendpriorit,
-                                            *(unsigned int *)&_ESI->qC3C[2212]);
-      v253 = *(unsigned int *)&_ESI->qC3C[2220]; /*0x670bcb*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2224]; /*0x670bd7*/
+                                            *&_ESI->u32_14E0);
+      v253 = *&_ESI->u32_14E8; /*0x670bcb*/
+      v331[1] = *&_ESI->u32_14EC; /*0x670bd7*/
       v331[0] = v253; /*0x670bd8*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aSuspenddelay, *(double *)v331); /*0x670be1*/
       __asm { fstp qword ptr [esi+14E8h] } /*0x670be6*/
-      *(double *)&_ESI->qC3C[2220] = _RT1; /*0x670be6*/
-      v255 = *(unsigned int *)&_ESI->qC3C[2228]; /*0x670bf2*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2232]; /*0x670bfe*/
+      *&_ESI->u32_14E8 = _RT1; /*0x670be6*/
+      v255 = *&_ESI->u32_14F0; /*0x670bf2*/
+      v331[1] = *&_ESI->u32_14F4; /*0x670bfe*/
       v331[0] = v255; /*0x670bff*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aSurvivorrate, *(double *)v331); /*0x670c08*/
       __asm { fstp qword ptr [esi+14F0h] } /*0x670c0d*/
-      *(double *)&_ESI->qC3C[2228] = _RT1; /*0x670c0d*/
-      *(unsigned int *)&_ESI->qC3C[2236] = INIClass::ReadInt_Overwrite( /*0x670c2d*/
+      *&_ESI->u32_14F0 = _RT1; /*0x670c0d*/
+      *&_ESI->u32_14F8 = INIClass::ReadInt_Overwrite( /*0x670c2d*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aAlliedsurvivor,
-                                            *(unsigned int *)&_ESI->qC3C[2236]);
-      *(unsigned int *)&_ESI->qC3C[2240] = INIClass::ReadInt_Overwrite( /*0x670c4c*/
+                                            *&_ESI->u32_14F8);
+      *&_ESI->u32_14FC = INIClass::ReadInt_Overwrite( /*0x670c4c*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aSovietsurvivor,
-                                            *(unsigned int *)&_ESI->qC3C[2240]);
-      *(unsigned int *)&_ESI->qC3C[2244] = INIClass::ReadInt_Overwrite( /*0x670c6c*/
+                                            *&_ESI->u32_14FC);
+      *&_ESI->u32_1500 = INIClass::ReadInt_Overwrite( /*0x670c6c*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aThirdsurvivord,
-                                            *(unsigned int *)&_ESI->qC3C[2244]);
-      v257 = *(unsigned int *)&_ESI->qC3C[2252]; /*0x670c78*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2256]; /*0x670c84*/
+                                            *&_ESI->u32_1500);
+      v257 = *&_ESI->u32_1508; /*0x670c78*/
+      v331[1] = *&_ESI->u32_150C; /*0x670c84*/
       v331[0] = v257; /*0x670c85*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aReloadrate, *(double *)v331); /*0x670c8e*/
       __asm { fstp qword ptr [esi+1508h] } /*0x670c93*/
-      *(double *)&_ESI->qC3C[2252] = _RT1; /*0x670c93*/
-      v259 = *(unsigned int *)&_ESI->qC3C[2268]; /*0x670c9f*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2272]; /*0x670cab*/
+      *&_ESI->u32_1508 = _RT1; /*0x670c93*/
+      v259 = *&_ESI->q1518; /*0x670c9f*/
+      v331[1] = *&_ESI->u32_151C; /*0x670cab*/
       v331[0] = v259; /*0x670cac*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aBuilduptime, *(double *)v331); /*0x670cb5*/
       __asm { fstp qword ptr [esi+1518h] } /*0x670cba*/
-      *(double *)&_ESI->qC3C[2268] = _RT1; /*0x670cba*/
-      v261 = *(unsigned int *)&_ESI->qC3C[2284]; /*0x670cc6*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[2288]; /*0x670cd2*/
+      *&_ESI->q1518 = _RT1; /*0x670cba*/
+      v261 = *&_ESI->u32_1528; /*0x670cc6*/
+      v331[1] = *&_ESI->u32_152C; /*0x670cd2*/
       v331[0] = v261; /*0x670cd3*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aHarvesterdumpr, *(double *)v331); /*0x670cdc*/
       __asm { fstp qword ptr [esi+1528h] } /*0x670ce1*/
-      *(double *)&_ESI->qC3C[2284] = _RT1; /*0x670ce1*/
-      *(unsigned int *)&_ESI->qC3C[2276] = INIClass::ReadInt_Overwrite( /*0x670d01*/
+      *&_ESI->u32_1528 = _RT1; /*0x670ce1*/
+      *&_ESI->u32_1520 = INIClass::ReadInt_Overwrite( /*0x670d01*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aHarvesterloadr,
-                                            *(unsigned int *)&_ESI->qC3C[2276]);
+                                            *&_ESI->u32_1520);
       LightningDamage = _ESI->LightningDamage; /*0x670d0d*/
       v331[1] = _ESI->LightningStormDuration; /*0x670d19*/
       v331[0] = LightningDamage; /*0x670d1a*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aBuildspeed, *(double *)v331); /*0x670d23*/
       __asm { fstp qword ptr [esi+1748h] } /*0x670d28*/
-      *(double *)&_ESI->LightningDamage = _RT1; /*0x670d28*/
+      *&_ESI->LightningDamage = _RT1; /*0x670d28*/
       v265 = _ESI->RepairPercent[1]; /*0x670d34*/
       v331[1] = _ESI->IRepairStep; /*0x670d40*/
       v331[0] = v265; /*0x670d41*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDamagedelay, *(double *)v331); /*0x670d4a*/
       __asm { fstp qword ptr [esi+16B0h] } /*0x670d4f*/
-      *(double *)&_ESI->RepairPercent[1] = _RT1; /*0x670d4f*/
+      *&_ESI->IRepairStep = _RT1; /*0x670d4f*/
       v267 = _ESI->GrowthRate[0]; /*0x670d5b*/
       v331[1] = _ESI->GrowthRate[1]; /*0x670d67*/
       v331[0] = v267; /*0x670d68*/
@@ -4299,7 +4299,7 @@ int RulesClass::LoadFromINI() {
       v331[0] = v269; /*0x670d8f*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRefundpercent, *(double *)v331); /*0x670d98*/
       __asm { fstp qword ptr [esi+1738h] } /*0x670d9d*/
-      *(double *)&_ESI->MovieTime[1] = _RT1; /*0x670d9d*/
+      *&_ESI->TiberiumShortScan = _RT1; /*0x670d9d*/
       v271 = _ESI->ConditionYellow[0]; /*0x670da9*/
       v331[1] = _ESI->ConditionYellow[1]; /*0x670db5*/
       v331[0] = v271; /*0x670db6*/
@@ -4327,13 +4327,13 @@ int RulesClass::LoadFromINI() {
       v331[0] = CloseEnough; /*0x670e43*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aUrepairrate, *(double *)v331); /*0x670e4c*/
       __asm { fstp qword ptr [esi+16E8h] } /*0x670e51*/
-      *(double *)&_ESI->CloseEnough = _RT1; /*0x670e51*/
+      *&_ESI->CloseEnough = _RT1; /*0x670e51*/
       RelaxedStray = _ESI->RelaxedStray; /*0x670e5d*/
       v331[1] = _ESI->GuardModeStray; /*0x670e69*/
       v331[0] = RelaxedStray; /*0x670e6a*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aIrepairrate, *(double *)v331); /*0x670e73*/
       __asm { fstp qword ptr [esi+16F0h] } /*0x670e78*/
-      *(double *)&_ESI->RelaxedStray = _RT1; /*0x670e78*/
+      *&_ESI->RelaxedStray = _RT1; /*0x670e78*/
       _ESI->C4Delay[0] = INIClass::ReadCoord( /*0x670e98*/
                            (double *)v338,
                            v1,
@@ -4378,26 +4378,26 @@ int RulesClass::LoadFromINI() {
                               g_INI_Key_General,
                               aTiberiumtransm,
                               _ESI->SpeakDelay[1]);
-      *(unsigned int *)&_ESI->FineDiffControl = INIClass::ReadInt_Overwrite( /*0x670f8f*/
+      *&_ESI->FineDiffControl = INIClass::ReadInt_Overwrite( /*0x670f8f*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aLightningdefer,
-                                            *(unsigned int *)&_ESI->FineDiffControl);
-      *(unsigned int *)&_ESI->SeparateAircraft = INIClass::ReadInt_Overwrite( /*0x670faf*/
+                                            *&_ESI->FineDiffControl);
+      *&_ESI->SeparateAircraft = INIClass::ReadInt_Overwrite( /*0x670faf*/
                                              (bool *)v338,
                                              g_INI_Key_General,
                                              aLightningdamag,
-                                             *(unsigned int *)&_ESI->SeparateAircraft);
-      *(unsigned int *)&_ESI->PlayerReturnFire = INIClass::ReadInt_Overwrite( /*0x670fce*/
+                                             *&_ESI->SeparateAircraft);
+      *&_ESI->PlayerReturnFire = INIClass::ReadInt_Overwrite( /*0x670fce*/
                                              (bool *)v338,
                                              g_INI_Key_General,
                                              aLightningstorm,
-                                             *(unsigned int *)&_ESI->PlayerReturnFire);
-      *(unsigned int *)&_ESI->ShroudGrow = INIClass::ReadInt_Overwrite( /*0x670fee*/
+                                             *&_ESI->PlayerReturnFire);
+      *&_ESI->ShroudGrow = INIClass::ReadInt_Overwrite( /*0x670fee*/
                                        (bool *)v338,
                                        g_INI_Key_General,
                                        aLightninghitde,
-                                       *(unsigned int *)&_ESI->ShroudGrow);
+                                       *&_ESI->ShroudGrow);
       IDA_LODWORD(_ESI->EngineerCaptureLevel) = INIClass::ReadInt_Overwrite( /*0x67100e*/
                                               (bool *)v338,
                                               g_INI_Key_General,
@@ -4444,11 +4444,11 @@ int RulesClass::LoadFromINI() {
                                           g_INI_Key_General,
                                           aMutateexplosio_0,
                                           _ESI->RadLightFactor[0]);
-      *(unsigned int *)&_ESI->q240[600] = SmallFunc_67BCE0( /*0x671149*/
+      *&_ESI->u32_498 = SmallFunc_67BCE0( /*0x671149*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aPrismtype,
-                                           *(unsigned int *)&_ESI->q240[600]);
+                                           *&_ESI->u32_498);
       __asm /*0x671152*/
       {
         fild dword ptr [esi+49Ch]
@@ -4457,227 +4457,227 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aPrismsupportmo, *(double *)v331); /*0x671169*/
       __asm { fmul ds:dbl_7E2AC0 } /*0x67116e*/
       v279 = ((v279) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x671174*/
-      *(unsigned int *)&_ESI->q240[604] = v279; /*0x671179*/
-      *(unsigned int *)&_ESI->q240[608] = INIClass::ReadInt_Overwrite( /*0x671199*/
+      *&_ESI->u32_49C = v279; /*0x671179*/
+      *&_ESI->u32_4A0 = INIClass::ReadInt_Overwrite( /*0x671199*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aPrismsupportma,
-                                           *(unsigned int *)&_ESI->q240[608]);
-      *(unsigned int *)&_ESI->q240[612] = INIClass::ReadInt_Overwrite( /*0x6711b8*/
+                                           *&_ESI->u32_4A0);
+      *&_ESI->u32_4A4 = INIClass::ReadInt_Overwrite( /*0x6711b8*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aPrismsupportde,
-                                           *(unsigned int *)&_ESI->q240[612]);
-      *(unsigned int *)&_ESI->q240[616] = INIClass::ReadInt_Overwrite( /*0x6711d8*/
+                                           *&_ESI->u32_4A4);
+      *&_ESI->u32_4A8 = INIClass::ReadInt_Overwrite( /*0x6711d8*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aPrismsupportdu,
-                                           *(unsigned int *)&_ESI->q240[616]);
-      *(unsigned int *)&_ESI->q240[620] = INIClass::ReadInt_Overwrite( /*0x6711f8*/
+                                           *&_ESI->u32_4A8);
+      *&_ESI->u32_4AC = INIClass::ReadInt_Overwrite( /*0x6711f8*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aPrismsupporthe,
-                                           *(unsigned int *)&_ESI->q240[620]);
-      *(unsigned int *)&_ESI->q240[624] = INIClass::ReadInt_Overwrite( /*0x671217*/
+                                           *&_ESI->u32_4AC);
+      *&_ESI->u32_4B0 = INIClass::ReadInt_Overwrite( /*0x671217*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aV3rocketpausef,
-                                           *(unsigned int *)&_ESI->q240[624]);
-      *(unsigned int *)&_ESI->q240[628] = INIClass::ReadInt_Overwrite( /*0x671237*/
+                                           *&_ESI->u32_4B0);
+      *&_ESI->u32_4B4 = INIClass::ReadInt_Overwrite( /*0x671237*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aV3rockettiltfr,
-                                           *(unsigned int *)&_ESI->q240[628]);
+                                           *&_ESI->u32_4B4);
       __asm { fld dword ptr [esi+4B8h] } /*0x671242*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketpitchi, *(double *)v331); /*0x671256*/
       __asm { fstp dword ptr [esi+4B8h] } /*0x67125b*/
-      *(float *)&_ESI->q240[632] = *(float *)&_RT1; /*0x67125b*/
+      *&_ESI->u32_4B8 = *(float *)&_RT1; /*0x67125b*/
       __asm { fld dword ptr [esi+4BCh] } /*0x671261*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketpitchf, *(double *)v331); /*0x67127b*/
       __asm { fstp dword ptr [esi+4BCh] } /*0x671280*/
-      *(float *)&_ESI->q240[636] = *(float *)&_RT1; /*0x671280*/
+      *&_ESI->u32_4BC = *(float *)&_RT1; /*0x671280*/
       __asm { fld dword ptr [esi+4C0h] } /*0x671286*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketturnra, *(double *)v331); /*0x6712a0*/
       __asm { fstp dword ptr [esi+4C0h] } /*0x6712a5*/
-      *(float *)&_ESI->q240[640] = *(float *)&_RT1; /*0x6712a5*/
+      *&_ESI->u32_4C0 = *(float *)&_RT1; /*0x6712a5*/
       __asm { fild dword ptr [esi+4C4h] } /*0x6712ab*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketraiser, *(double *)v331); /*0x6712c4*/
       v280 = ((v280) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x6712c9*/
-      *(unsigned int *)&_ESI->q240[644] = v280; /*0x6712ce*/
+      *&_ESI->u32_4C4 = v280; /*0x6712ce*/
       __asm { fld dword ptr [esi+4C8h] } /*0x6712da*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aV3rocketaccele, *(double *)v331); /*0x6712ee*/
       __asm { fstp dword ptr [esi+4C8h] } /*0x6712f3*/
-      *(float *)&_ESI->q240[648] = *(float *)&_RT1; /*0x6712f3*/
-      *(unsigned int *)&_ESI->q240[652] = INIClass::ReadInt_Overwrite( /*0x671312*/
+      *&_ESI->u32_4C8 = *(float *)&_RT1; /*0x6712f3*/
+      *&_ESI->u32_4CC = INIClass::ReadInt_Overwrite( /*0x671312*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aV3rocketaltitu,
-                                           *(unsigned int *)&_ESI->q240[652]);
-      *(unsigned int *)&_ESI->q240[656] = INIClass::ReadInt_Overwrite( /*0x671332*/
+                                           *&_ESI->u32_4CC);
+      *&_ESI->u32_4D0 = INIClass::ReadInt_Overwrite( /*0x671332*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aV3rocketdamage,
-                                           *(unsigned int *)&_ESI->q240[656]);
-      *(unsigned int *)&_ESI->q240[660] = INIClass::ReadInt_Overwrite( /*0x671352*/
+                                           *&_ESI->u32_4D0);
+      *&_ESI->u32_4D4 = INIClass::ReadInt_Overwrite( /*0x671352*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aV3rocketelited,
-                                           *(unsigned int *)&_ESI->q240[660]);
-      *(unsigned int *)&_ESI->q240[664] = INIClass::ReadInt_Overwrite( /*0x671371*/
+                                           *&_ESI->u32_4D4);
+      *&_ESI->u32_4D8 = INIClass::ReadInt_Overwrite( /*0x671371*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aV3rocketbodyle,
-                                           *(unsigned int *)&_ESI->q240[664]);
-      _ESI->q240[668] = INIClass::ReadBool_Overwrite( /*0x671391*/
+                                           *&_ESI->u32_4D8);
+      _ESI->u8_4DC = INIClass::ReadBool_Overwrite( /*0x671391*/
                                (int *)v338,
                                g_INI_Key_General,
                                aV3rocketlazycu,
-                               _ESI->q240[668]);
-      *(unsigned int *)&_ESI->q240[672] = GetINIClassKeyword( /*0x6713b0*/
+                               _ESI->u8_4DC);
+      *&_ESI->u32_4E0 = GetINIClassKeyword( /*0x6713b0*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aV3rockettype,
-                                           *(unsigned int *)&_ESI->q240[672]);
-      *(unsigned int *)&_ESI->q240[676] = INIClass::ReadInt_Overwrite( /*0x6713d0*/
+                                           *&_ESI->u32_4E0);
+      *&_ESI->TechnoTypeClass_4E4 = INIClass::ReadInt_Overwrite( /*0x6713d0*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDmislpausefram,
-                                           *(unsigned int *)&_ESI->q240[676]);
-      *(unsigned int *)&_ESI->q240[680] = INIClass::ReadInt_Overwrite( /*0x6713f0*/
+                                           *&_ESI->TechnoTypeClass_4E4);
+      *&_ESI->u32_4E8 = INIClass::ReadInt_Overwrite( /*0x6713f0*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDmisltiltframe,
-                                           *(unsigned int *)&_ESI->q240[680]);
+                                           *&_ESI->u32_4E8);
       __asm { fld dword ptr [esi+4ECh] } /*0x6713fc*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislpitchinit, *(double *)v331); /*0x671410*/
       __asm { fstp dword ptr [esi+4ECh] } /*0x671415*/
-      *(float *)&_ESI->q240[684] = *(float *)&_RT1; /*0x671415*/
+      *&_ESI->u32_4EC = *(float *)&_RT1; /*0x671415*/
       __asm { fld dword ptr [esi+4F0h] } /*0x67141b*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislpitchfina, *(double *)v331); /*0x671434*/
       __asm { fstp dword ptr [esi+4F0h] } /*0x671439*/
-      *(float *)&_ESI->q240[688] = *(float *)&_RT1; /*0x671439*/
+      *&_ESI->u32_4F0 = *(float *)&_RT1; /*0x671439*/
       __asm { fld dword ptr [esi+4F4h] } /*0x67143f*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislturnrate, *(double *)v331); /*0x671459*/
       __asm { fstp dword ptr [esi+4F4h] } /*0x67145e*/
-      *(float *)&_ESI->q240[692] = *(float *)&_RT1; /*0x67145e*/
+      *&_ESI->u32_4F4 = *(float *)&_RT1; /*0x67145e*/
       __asm { fild dword ptr [esi+4F8h] } /*0x671464*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislraiserate, *(double *)v331); /*0x67147e*/
       v281 = ((v281) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x671483*/
-      *(unsigned int *)&_ESI->q240[696] = v281; /*0x671488*/
+      *&_ESI->u32_4F8 = v281; /*0x671488*/
       __asm { fld dword ptr [esi+4FCh] } /*0x671493*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDmislaccelerat, *(double *)v331); /*0x6714a7*/
       __asm { fstp dword ptr [esi+4FCh] } /*0x6714ac*/
-      *(float *)&_ESI->q240[700] = *(float *)&_RT1; /*0x6714ac*/
-      *(unsigned int *)&_ESI->q240[704] = INIClass::ReadInt_Overwrite( /*0x6714cc*/
+      *&_ESI->u32_4FC = *(float *)&_RT1; /*0x6714ac*/
+      *&_ESI->q500 = INIClass::ReadInt_Overwrite( /*0x6714cc*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDmislaltitude,
-                                           *(unsigned int *)&_ESI->q240[704]);
-      *(unsigned int *)&_ESI->q240[708] = INIClass::ReadInt_Overwrite( /*0x6714ec*/
+                                           *&_ESI->q500);
+      *&_ESI->q504 = INIClass::ReadInt_Overwrite( /*0x6714ec*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDmisldamage,
-                                           *(unsigned int *)&_ESI->q240[708]);
-      *(unsigned int *)&_ESI->q240[712] = INIClass::ReadInt_Overwrite( /*0x67150b*/
+                                           *&_ESI->q504);
+      *&_ESI->q508 = INIClass::ReadInt_Overwrite( /*0x67150b*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDmislelitedama,
-                                           *(unsigned int *)&_ESI->q240[712]);
-      *(unsigned int *)&_ESI->q240[716] = INIClass::ReadInt_Overwrite( /*0x67152b*/
+                                           *&_ESI->q508);
+      *&_ESI->u32_50C = INIClass::ReadInt_Overwrite( /*0x67152b*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aDmislbodylengt,
-                                           *(unsigned int *)&_ESI->q240[716]);
-      _ESI->q240[720] = INIClass::ReadBool_Overwrite( /*0x67154b*/
+                                           *&_ESI->u32_50C);
+      _ESI->u8_510 = INIClass::ReadBool_Overwrite( /*0x67154b*/
                                (int *)v338,
                                g_INI_Key_General,
                                aDmisllazycurve,
-                               _ESI->q240[720]);
-      *(unsigned int *)&_ESI->q240[724] = GetINIClassKeyword( /*0x67156a*/
+                               _ESI->u8_510);
+      *&_ESI->u32_514 = GetINIClassKeyword( /*0x67156a*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aDmisltype,
-                                           *(unsigned int *)&_ESI->q240[724]);
-      *(unsigned int *)&_ESI->q240[728] = INIClass::ReadInt_Overwrite( /*0x67158a*/
+                                           *&_ESI->u32_514);
+      *&_ESI->TechnoTypeClass_518 = INIClass::ReadInt_Overwrite( /*0x67158a*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCmislpausefram,
-                                           *(unsigned int *)&_ESI->q240[728]);
-      *(unsigned int *)&_ESI->q240[732] = INIClass::ReadInt_Overwrite( /*0x6715a9*/
+                                           *&_ESI->TechnoTypeClass_518);
+      *&_ESI->u32_51C = INIClass::ReadInt_Overwrite( /*0x6715a9*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCmisltiltframe,
-                                           *(unsigned int *)&_ESI->q240[732]);
+                                           *&_ESI->u32_51C);
       __asm { fld dword ptr [esi+520h] } /*0x6715b5*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislpitchinit, *(double *)v331); /*0x6715c9*/
       __asm { fstp dword ptr [esi+520h] } /*0x6715ce*/
-      *(float *)&_ESI->q240[736] = *(float *)&_RT1; /*0x6715ce*/
+      *&_ESI->q520 = *(float *)&_RT1; /*0x6715ce*/
       __asm { fld dword ptr [esi+524h] } /*0x6715d4*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislpitchfina, *(double *)v331); /*0x6715ee*/
       __asm { fstp dword ptr [esi+524h] } /*0x6715f3*/
-      *(float *)&_ESI->q240[740] = *(float *)&_RT1; /*0x6715f3*/
+      *&_ESI->q524 = *(float *)&_RT1; /*0x6715f3*/
       __asm { fld dword ptr [esi+528h] } /*0x6715f9*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislturnrate, *(double *)v331); /*0x671612*/
       __asm { fstp dword ptr [esi+528h] } /*0x671617*/
-      *(float *)&_ESI->q240[744] = *(float *)&_RT1; /*0x671617*/
+      *&_ESI->q528 = *(float *)&_RT1; /*0x671617*/
       __asm { fild dword ptr [esi+52Ch] } /*0x67161d*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislraiserate, *(double *)v331); /*0x671637*/
       v282 = ((v282) & 0xFFFF0000u) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFFu); /*0x67163c*/
-      *(unsigned int *)&_ESI->q240[748] = v282; /*0x671641*/
+      *&_ESI->u32_52C = v282; /*0x671641*/
       __asm { fld dword ptr [esi+4FCh] } /*0x67164d*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aCmislaccelerat, *(double *)v331); /*0x671661*/
       __asm { fstp dword ptr [esi+530h] } /*0x671666*/
-      *(float *)&_ESI->q240[752] = *(float *)&_RT1; /*0x671666*/
-      *(unsigned int *)&_ESI->q240[756] = INIClass::ReadInt_Overwrite( /*0x671686*/
+      *&_ESI->q530 = *(float *)&_RT1; /*0x671666*/
+      *&_ESI->q534 = INIClass::ReadInt_Overwrite( /*0x671686*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCmislaltitude,
-                                           *(unsigned int *)&_ESI->q240[756]);
-      *(unsigned int *)&_ESI->q240[760] = INIClass::ReadInt_Overwrite( /*0x6716a5*/
+                                           *&_ESI->q534);
+      *&_ESI->u32_538 = INIClass::ReadInt_Overwrite( /*0x6716a5*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCmisldamage,
-                                           *(unsigned int *)&_ESI->q240[760]);
-      *(unsigned int *)&_ESI->q240[764] = INIClass::ReadInt_Overwrite( /*0x6716c5*/
+                                           *&_ESI->u32_538);
+      *&_ESI->u32_53C = INIClass::ReadInt_Overwrite( /*0x6716c5*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCmislelitedama,
-                                           *(unsigned int *)&_ESI->q240[764]);
-      *(unsigned int *)&_ESI->q240[768] = INIClass::ReadInt_Overwrite( /*0x6716e5*/
+                                           *&_ESI->u32_53C);
+      *&_ESI->q540 = INIClass::ReadInt_Overwrite( /*0x6716e5*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aCmislbodylengt,
-                                           *(unsigned int *)&_ESI->q240[768]);
-      _ESI->q240[772] = INIClass::ReadBool_Overwrite( /*0x671704*/
+                                           *&_ESI->q540);
+      _ESI->q544 = INIClass::ReadBool_Overwrite( /*0x671704*/
                                (int *)v338,
                                g_INI_Key_General,
                                aCmisllazycurve,
-                               _ESI->q240[772]);
-      *(unsigned int *)&_ESI->q240[776] = GetINIClassKeyword( /*0x671723*/
+                               _ESI->q544);
+      *&_ESI->q548 = GetINIClassKeyword( /*0x671723*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aCmisltype,
-                                           *(unsigned int *)&_ESI->q240[776]);
-      *(unsigned int *)&_ESI->q240[780] = INIClass::ReadInt_Overwrite( /*0x671742*/
+                                           *&_ESI->q548);
+      *&_ESI->BuildingTypeClass_54C = INIClass::ReadInt_Overwrite( /*0x671742*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aParadropradius,
-                                           *(unsigned int *)&_ESI->q240[780]);
+                                           *&_ESI->BuildingTypeClass_54C);
       _ESI->NodGateOne = (BuildingTypeClass *)INIClass::ReadInt_Overwrite( /*0x671762*/
                                                 (bool *)v338,
                                                 g_INI_Key_General,
@@ -4693,7 +4693,7 @@ int RulesClass::LoadFromINI() {
       v331[0] = WallTower; /*0x67179b*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aSpotlightspeed, *(double *)v331); /*0x6717a4*/
       __asm { fstp qword ptr [esi+790h] } /*0x6717a9*/
-      *(double *)&_ESI->WallTower = _RT1; /*0x6717a9*/
+      *&_ESI->WallTower = _RT1; /*0x6717a9*/
       v285 = _ESI->BuildPower[0]; /*0x6717b5*/
       v331[1] = _ESI->BuildRefinery[0]; /*0x6717bb*/
       v331[0] = v285; /*0x6717c2*/
@@ -4728,18 +4728,18 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aWallbuildspeed, *(double *)v331); /*0x67187f*/
       __asm { fstp qword ptr [esi+758h] } /*0x671884*/
       *(double *)_ESI->WallBuildSpeedCoefficient = _RT1; /*0x671884*/
-      v293 = *(unsigned int *)&_ESI->q240[800]; /*0x671890*/
-      v331[1] = *(unsigned int *)&_ESI->q240[804]; /*0x67189c*/
+      v293 = *&_ESI->q560; /*0x671890*/
+      v331[1] = *&_ESI->q564; /*0x67189c*/
       v331[0] = v293; /*0x67189d*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aConditionyello_0, *(double *)v331); /*0x6718a6*/
       __asm { fstp qword ptr [esi+560h] } /*0x6718ab*/
-      *(double *)&_ESI->q240[800] = _RT1; /*0x6718ab*/
-      v295 = *(unsigned int *)&_ESI->q240[792]; /*0x6718b7*/
-      v331[1] = *(unsigned int *)&_ESI->q240[796]; /*0x6718c3*/
+      *&_ESI->q560 = _RT1; /*0x6718ab*/
+      v295 = *&_ESI->u32_558; /*0x6718b7*/
+      v331[1] = *&_ESI->u32_55C; /*0x6718c3*/
       v331[0] = v295; /*0x6718c4*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aConditionredsp, *(double *)v331); /*0x6718cd*/
       __asm { fstp qword ptr [esi+558h] } /*0x6718d2*/
-      *(double *)&_ESI->q240[792] = _RT1; /*0x6718d2*/
+      *&_ESI->u32_558 = _RT1; /*0x6718d2*/
       v297 = _ESI->AITriggerSuccessWeightDelta[0]; /*0x6718de*/
       v331[1] = _ESI->AITriggerSuccessWeightDelta[1]; /*0x6718ea*/
       v331[0] = v297; /*0x6718eb*/
@@ -4783,7 +4783,7 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventrota, *(double *)v331); /*0x6719ea*/
       __asm { fstp dword ptr [esi+84h] } /*0x6719ef*/
       _ESI->FlamingInfantry = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x6719ef*/
-      VectorClass::Copy(&v329, &_ESI->q240[508]); /*0x671a01*/
+      VectorClass::Copy(&v329, &_ESI->__pad_43C); /*0x671a01*/
       v303 = (int *)INIClass::ReadIntList( /*0x671a19*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4796,9 +4796,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->q240[508], v303); /*0x671a21*/
+      TypeList::CopyFull(&_ESI->__pad_43C, v303); /*0x671a21*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x671a2a*/
-      VectorClass::Copy(&v329, &_ESI->q240[536]); /*0x671a3b*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_458); /*0x671a3b*/
       v304 = (int *)INIClass::ReadIntList( /*0x671a53*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4811,9 +4811,9 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->q240[536], v304); /*0x671a5b*/
+      TypeList::CopyFull(&_ESI->DynamicVector_458, v304); /*0x671a5b*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x671a64*/
-      VectorClass::Copy(&v329, &_ESI->q240[564]); /*0x671a75*/
+      VectorClass::Copy(&v329, &_ESI->DynamicVector_474); /*0x671a75*/
       v305 = (int *)INIClass::ReadIntList( /*0x671a8c*/
                       (INIClass *)v338,
                       (int)&v332,
@@ -4826,7 +4826,7 @@ int RulesClass::LoadFromINI() {
                       v330,
                       v331[0],
                       v331[1]);
-      TypeList::CopyFull((TypeList *)&_ESI->q240[564], v305); /*0x671a94*/
+      TypeList::CopyFull(&_ESI->DynamicVector_474, v305); /*0x671a94*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x671a9d*/
       _ESI->NukeTakeOff = (AnimTypeClass *)INIClass::ReadInt_Overwrite( /*0x671ab8*/
                                              (bool *)v338,
@@ -4838,72 +4838,72 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aRadareventcolo, *(double *)v331); /*0x671ad2*/
       __asm { fstp dword ptr [esi+78h] } /*0x671ad7*/
       _ESI->Wake = (AnimTypeClass *)((unsigned int)(_RT1)); /*0x671ad7*/
-      v306 = *(unsigned int *)&_ESI->qC3C[1028]; /*0x671ae0*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1032]; /*0x671aec*/
+      v306 = *&_ESI->q1040; /*0x671ae0*/
+      v331[1] = *&_ESI->u32_1044; /*0x671aec*/
       v331[0] = v306; /*0x671aed*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aMyeffectivenes, *(double *)v331); /*0x671af6*/
       __asm { fstp qword ptr [esi+1040h] } /*0x671afb*/
-      *(double *)&_ESI->qC3C[1028] = _RT1; /*0x671afb*/
-      v308 = *(unsigned int *)&_ESI->qC3C[1036]; /*0x671b07*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1040]; /*0x671b13*/
+      *&_ESI->q1040 = _RT1; /*0x671afb*/
+      v308 = *&_ESI->u32_1048; /*0x671b07*/
+      v331[1] = *&_ESI->u32_104C; /*0x671b13*/
       v331[0] = v308; /*0x671b14*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTargeteffectiv, *(double *)v331); /*0x671b1d*/
       __asm { fstp qword ptr [esi+1048h] } /*0x671b22*/
-      *(double *)&_ESI->qC3C[1036] = _RT1; /*0x671b22*/
-      v310 = *(unsigned int *)&_ESI->qC3C[1044]; /*0x671b2e*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1048]; /*0x671b3a*/
+      *&_ESI->u32_1048 = _RT1; /*0x671b22*/
+      v310 = *&_ESI->q1050; /*0x671b2e*/
+      v331[1] = *&_ESI->u32_1054; /*0x671b3a*/
       v331[0] = v310; /*0x671b3b*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTargetspecialt, *(double *)v331); /*0x671b44*/
       __asm { fstp qword ptr [esi+1050h] } /*0x671b49*/
-      *(double *)&_ESI->qC3C[1044] = _RT1; /*0x671b49*/
-      v312 = *(unsigned int *)&_ESI->qC3C[1052]; /*0x671b55*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1056]; /*0x671b61*/
+      *&_ESI->q1050 = _RT1; /*0x671b49*/
+      v312 = *&_ESI->u32_1058; /*0x671b55*/
+      v331[1] = *&_ESI->u32_105C; /*0x671b61*/
       v331[0] = v312; /*0x671b62*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTargetstrength, *(double *)v331); /*0x671b6b*/
       __asm { fstp qword ptr [esi+1058h] } /*0x671b70*/
-      *(double *)&_ESI->qC3C[1052] = _RT1; /*0x671b70*/
-      v314 = *(unsigned int *)&_ESI->qC3C[1060]; /*0x671b7c*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1064]; /*0x671b88*/
+      *&_ESI->u32_1058 = _RT1; /*0x671b70*/
+      v314 = *&_ESI->q1060; /*0x671b7c*/
+      v331[1] = *&_ESI->q1064; /*0x671b88*/
       v331[0] = v314; /*0x671b89*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aTargetdistance, *(double *)v331); /*0x671b92*/
       __asm { fstp qword ptr [esi+1060h] } /*0x671b97*/
-      *(double *)&_ESI->qC3C[1060] = _RT1; /*0x671b97*/
-      v316 = *(unsigned int *)&_ESI->qC3C[1068]; /*0x671ba3*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1072]; /*0x671baf*/
+      *&_ESI->q1060 = _RT1; /*0x671b97*/
+      v316 = *&_ESI->q1068; /*0x671ba3*/
+      v331[1] = *&_ESI->u32_106C; /*0x671baf*/
       v331[0] = v316; /*0x671bb0*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDumbmyeffectiv, *(double *)v331); /*0x671bb9*/
       __asm { fstp qword ptr [esi+1068h] } /*0x671bbe*/
-      *(double *)&_ESI->qC3C[1068] = _RT1; /*0x671bbe*/
-      v318 = *(unsigned int *)&_ESI->qC3C[1076]; /*0x671bca*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1080]; /*0x671bd6*/
+      *&_ESI->q1068 = _RT1; /*0x671bbe*/
+      v318 = *&_ESI->u32_1070; /*0x671bca*/
+      v331[1] = *&_ESI->q1074; /*0x671bd6*/
       v331[0] = v318; /*0x671bd7*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDumbtargeteffe, *(double *)v331); /*0x671be0*/
       __asm { fstp qword ptr [esi+1070h] } /*0x671be5*/
-      *(double *)&_ESI->qC3C[1076] = _RT1; /*0x671be5*/
-      v320 = *(unsigned int *)&_ESI->qC3C[1084]; /*0x671bf1*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1088]; /*0x671bfd*/
+      *&_ESI->u32_1070 = _RT1; /*0x671be5*/
+      v320 = *&_ESI->q1078; /*0x671bf1*/
+      v331[1] = *&_ESI->u32_107C; /*0x671bfd*/
       v331[0] = v320; /*0x671bfe*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDumbtargetspec, *(double *)v331); /*0x671c07*/
       __asm { fstp qword ptr [esi+1078h] } /*0x671c0c*/
-      *(double *)&_ESI->qC3C[1084] = _RT1; /*0x671c0c*/
-      v322 = *(unsigned int *)&_ESI->qC3C[1092]; /*0x671c18*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1096]; /*0x671c24*/
+      *&_ESI->q1078 = _RT1; /*0x671c0c*/
+      v322 = *&_ESI->u32_1080; /*0x671c18*/
+      v331[1] = *&_ESI->q1084; /*0x671c24*/
       v331[0] = v322; /*0x671c25*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDumbtargetstre, *(double *)v331); /*0x671c2e*/
       __asm { fstp qword ptr [esi+1080h] } /*0x671c33*/
-      *(double *)&_ESI->qC3C[1092] = _RT1; /*0x671c33*/
-      v324 = *(unsigned int *)&_ESI->qC3C[1100]; /*0x671c3f*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1104]; /*0x671c4b*/
+      *&_ESI->u32_1080 = _RT1; /*0x671c33*/
+      v324 = *&_ESI->q1088; /*0x671c3f*/
+      v331[1] = *&_ESI->u32_108C; /*0x671c4b*/
       v331[0] = v324; /*0x671c4c*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aDumbtargetdist, *(double *)v331); /*0x671c55*/
       __asm { fstp qword ptr [esi+1088h] } /*0x671c5a*/
-      *(double *)&_ESI->qC3C[1100] = _RT1; /*0x671c5a*/
-      v326 = *(unsigned int *)&_ESI->qC3C[1108]; /*0x671c66*/
-      v331[1] = *(unsigned int *)&_ESI->qC3C[1112]; /*0x671c72*/
+      *&_ESI->q1088 = _RT1; /*0x671c5a*/
+      v326 = *&_ESI->u32_1090; /*0x671c66*/
+      v331[1] = *&_ESI->u32_1094; /*0x671c72*/
       v331[0] = v326; /*0x671c73*/
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aEnemyhousethre, *(double *)v331); /*0x671c7c*/
       __asm { fstp qword ptr [esi+1090h] } /*0x671c81*/
-      *(double *)&_ESI->qC3C[1108] = _RT1; /*0x671c81*/
+      *&_ESI->u32_1090 = _RT1; /*0x671c81*/
       _ESI->MaximumQueuedObjects = INIClass::ReadInt_Overwrite( /*0x671ca0*/
                                      (bool *)v338,
                                      g_INI_Key_General,
@@ -4925,24 +4925,24 @@ int RulesClass::LoadFromINI() {
                                     g_INI_Key_General,
                                     aVeindamage,
                                     _ESI->CreateAircraftSound);
-      *(unsigned int *)&_ESI->qC3C[952] = SmallFunc_67BD80( /*0x671d44*/
+      *&_ESI->u32_FF4 = SmallFunc_67BD80( /*0x671d44*/
                                            v338,
                                            g_INI_Key_General,
                                            (uint8_t *)aVeinholetypecl,
-                                           *(unsigned int *)&_ESI->qC3C[952]);
+                                           *&_ESI->u32_FF4);
       TypeList = (int *)RulesClass::LoadTypeList( /*0x671d5d*/
                           (int)&v332,
                           v338,
                           g_INI_Key_General,
                           aDefaultmiraged,
-                          &_ESI->qC3C[956]);
-      RulesClass::readBuildingTypes((RulesClass *)&_ESI->qC3C[956], TypeList); /*0x671d65*/
+                          &_ESI->RulesClass_FF8);
+      RulesClass::readBuildingTypes(&_ESI->RulesClass_FF8, TypeList); /*0x671d65*/
       RulesClass::readVehicleTypes((RulesClass *)&v332); /*0x671d6e*/
-      *(unsigned int *)&_ESI->qC3C[984] = INIClass::ReadInt_Overwrite( /*0x671d8c*/
+      *&_ESI->u32_1014 = INIClass::ReadInt_Overwrite( /*0x671d8c*/
                                            (bool *)v338,
                                            g_INI_Key_General,
                                            aInfantryblinkd,
-                                           *(unsigned int *)&_ESI->qC3C[984]);
+                                           *&_ESI->u32_1014);
       _ESI->BaseUnderAttackSound = INIClass::ReadInt_Overwrite( /*0x671dac*/
                                      (bool *)v338,
                                      g_INI_Key_General,
@@ -4953,11 +4953,11 @@ int RulesClass::LoadFromINI() {
                                                g_INI_Key_General,
                                                aMaxwaypointpat,
                                                (int)_ESI->InfantryVirus);
-      *(unsigned int *)&_ESI->qC3C[1288] = INIClass::ReadInt_Overwrite( /*0x671deb*/
+      *&_ESI->q1144 = INIClass::ReadInt_Overwrite( /*0x671deb*/
                                             (bool *)v338,
                                             g_INI_Key_General,
                                             aTreestrength,
-                                            *(unsigned int *)&_ESI->qC3C[1288]);
+                                            *&_ESI->q1144);
       __asm { fld dword ptr [esi+17F8h] } /*0x671df7*/
       __asm { fstp qword ptr [esp+0D8h+var_D8]; double }
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aEngineercaptur, *(double *)v331); /*0x671e0b*/

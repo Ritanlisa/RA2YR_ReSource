@@ -45,9 +45,6 @@
 #include "classes/ObjectTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
-#include "e4/classes/_tree_full_e4.hpp"
-#include "e4/minimal_carriers.hpp"
-#include "e4/classes/VectorClass_e4.hpp"
 #include "e4/classes/_VectorClass_PAVParticleClass_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int sub_4E6070(int p0); }  // x4:signals@0x4e6070

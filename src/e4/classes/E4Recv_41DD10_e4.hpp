@@ -13,5 +13,8 @@ struct E4Recv_41DD10 {
 // --- flat members (END) ---
     unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     char sub_41DD10();  // 0x41DD10
+
+    unsigned char u8_218;  // X10 supply (member_lookup)
+    unsigned char u8_219;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

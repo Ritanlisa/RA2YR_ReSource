@@ -304,7 +304,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
   {
     while ( !(uint8_t)((String *)((String *)v17))->Compare((const char **)v20) ) /*0x7a51c7*/
     {
-      v17 = *(unsigned int *)(v17 + 112); /*0x7a51c9*/
+      v17 = v17->estimatedHealth; /*0x7a51c9*/
       if ( !v17 ) /*0x7a51ce*/
         goto LABEL_42; /*0x7a51ce*/
     }
@@ -1741,7 +1741,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a
   {
     while ( !(uint8_t)((String *)((String *)v3))->Compare((const char **)v15) ) /*0x7abb76*/
     {
-      v3 = *(unsigned int *)(v3 + 8); /*0x7abb78*/
+      v3 = v3->vtable3; /*0x7abb78*/
       if ( !v3 ) /*0x7abb7d*/
         goto LABEL_19; /*0x7abb7d*/
     }

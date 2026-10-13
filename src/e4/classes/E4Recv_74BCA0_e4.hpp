@@ -15,5 +15,7 @@ struct E4Recv_74BCA0 {
     unsigned int M25;  // 0x19
 // --- flat members (END) ---
     unsigned int *  sub_74BCA0(int a2);  // 0x74BCA0
+
+    unsigned int M4;  // X10 supply (csp_canon_members)
 };
 } // namespace gamemd

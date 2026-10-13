@@ -140,5 +140,7 @@ struct DynamicVector {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)
     unsigned int q014;  // 0x14 (offset-truth)
+
+    unsigned int DynamicVector_field_0x1;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

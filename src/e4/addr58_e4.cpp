@@ -112,7 +112,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
           && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
           && NeighbourContent[59] != 3 )
         {
-          aP1 = (IUnknown *)((int16_t *)NeighbourContent[9]);
+          aP1 = (IUnknown *)(NeighbourContent->u32_24);
         }
       }
       if ( (*v11 & 0x100) == 0 ) /*0x5836b3*/

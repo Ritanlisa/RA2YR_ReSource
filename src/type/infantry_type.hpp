@@ -132,6 +132,12 @@ public:
     void* ClampToGroundHeight(int a1, int a2);  // 0x5247d0
     // === FUNCS-MOVE (END) ===
     int Ddtor();  // 0x5239D0 (G42.38 supply)
+
+    int VHPScan;  // X10 supply (csp_canon_members)
+    unsigned char u32_901[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_E6C;  // X10 supply (member_lookup)
+
+    unsigned int u32_E88;  // X10 supply (member_lookup)
 };
 
 // G22 E1: InfantryTypes registry (0xA8E348; ctor register / dtor compaction).

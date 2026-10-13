@@ -14,6 +14,8 @@ struct VtableStub {
     void Method_425270(void *a1 = 0);
     static int Push_407510(VtableStub *p_this);  // x4:ida@0x407510
     void VtableStub_643E70();  // plateau: def-aligned C2039/C2660
+
+    unsigned int u32_64;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

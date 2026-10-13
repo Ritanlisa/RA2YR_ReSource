@@ -26,5 +26,7 @@ struct E4Recv_659A30 {
     unsigned int M100;  // 0x100
 // --- flat members (END) ---
     short sub_659A30();  // 0x659A30
+
+    double u64_C0;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

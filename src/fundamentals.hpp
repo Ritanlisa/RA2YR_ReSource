@@ -25,6 +25,20 @@ struct noinit_t
     constexpr noinit_t() = default;
 };
 
+struct OwnedTiberiumStruct {
+    float Amount1;
+    float Amount2;
+    float Amount3;
+    float Amount4;
+};  // X10: single authority (was house.hpp + techno.hpp twins)
+
+struct TurretControl {
+    int Travel;
+    int CompressFrames;
+    int RecoverFrames;
+    int HoldFrames;
+};  // X10: single authority (was techno.hpp + techno_type.hpp twins)
+
 #define GAMEMD_CORE_OWNS_PROGRESSTIMER 1  // G42.17c: e4 flat def yields
 #ifndef GAMEMD_E4_OWNS_PROGRESSTIMER  // G42.36: order-independent pair, first include wins
 struct ProgressTimer

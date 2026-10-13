@@ -13,5 +13,10 @@ struct Building {
     int GetNthOfType();  // 0x485020
     int GetRenderType();  // 0x772A90
     static unsigned int *  GetFoundationSize(unsigned int * a1, unsigned int a2);  // 0x69E7E0
+
+    int q0A0;  // X10 supply (member_lookup)
+    unsigned int u32_11E;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_9C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

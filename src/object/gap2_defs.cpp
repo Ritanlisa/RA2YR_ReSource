@@ -28,8 +28,8 @@ namespace gamemd { using ra2::game::AbstractClass;
 #include "e4/classes/AnimClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/AirstrikeClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
-#include "e4/classes/DDraw_e4.hpp"  // w16g4 C3861 DDraw:: supply
 #include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
+#include "system/map.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
 namespace gamemd { int Stub3(int p0); }  // x4:signals@0x4b4c70
 namespace gamemd { int GetStatus(); }  // x4:empty@0x4bbc90
@@ -3335,7 +3335,7 @@ int AbstractClass::ModifyCellTiles(int a1) {
           goto LABEL_44; /*0x543407*/
         if ( !a1 ) /*0x543413*/
         {
-          if ( *((unsigned int *)v8 + 14) == *(unsigned int *)(v9 + 660) && v8[282] == v10 ) /*0x543430*/
+          if ( v8->u32_38 == *(unsigned int *)(v9 + 660) && v8[282] == v10 ) /*0x543430*/
           {
             v8->u32_38 = 0xFFFF; /*0x54343a*/
             v8[282] = 0; /*0x543441*/
@@ -3393,7 +3393,7 @@ int AbstractClass::ModifyCellTiles(int a1) {
             v8[282] = 0; /*0x54353e*/
             v8->u32_38 = v14; /*0x543545*/
           }
-          if ( *((unsigned int *)v8 + 14) != dword_AA1098 + 8 || v8[282] > 3u ) /*0x54355e*/
+          if ( v8->u32_38 != dword_AA1098 + 8 || v8[282] > 3u ) /*0x54355e*/
             goto LABEL_28; /*0x54355e*/
           v8->u32_38 = dword_AA109C; /*0x543566*/
         }
@@ -3415,7 +3415,7 @@ int AbstractClass::ModifyCellTiles(int a1) {
         v33 = 0; /*0x5435d3*/
         if ( dword_A8E9B8 <= 0 ) /*0x5435db*/
           goto LABEL_42; /*0x5435db*/
-        v35 = *(unsigned int *)(*(&dword_A83D84->vfptr + *((unsigned int *)v8 + 17)) + 668); /*0x5435f8*/
+        v35 = *(unsigned int *)(*(&dword_A83D84->vfptr + v8->u32_44) + 668); /*0x5435f8*/
         v28 = (char *)dword_A8E9AC; /*0x5435fc*/
         while ( 1 ) /*0x543608*/
         {
@@ -8027,17 +8027,17 @@ int TechnoClass::DrawPips()
             {
               if ( !DB ) /*0x709df7*/
                 break; /*0x709df7*/
-              if ( (*(int (__thiscall **)(unsigned int *))(*DB + 44))(DB) == 15 ) /*0x709e07*/
+              if ( DB->StubReturn15() == 15 ) /*0x709e07*/
               {
                 *v31 = *(unsigned int *)(DB[432] + 3580); /*0x709e15*/
               }
               else
               {
-                v32 = -((*(int (__thiscall **)(unsigned int *))(*DB + 44))(DB) != 1); /*0x709e23*/
+                v32 = -(DB->StubReturn15() != 1); /*0x709e23*/
                 v32 = ((v32) & 0xFFFFFF00u) | ((unsigned int)(v32 & 0xFD) & 0xFFu); /*0x709e25*/
                 *v31 = v32 + 4; /*0x709e2a*/
               }
-              DB = (unsigned int *)DB[12]; /*0x709e34*/
+              DB = DB->nextObject; /*0x709e34*/
               ++v31; /*0x709e38*/
               ++((unsigned int)(v95)); /*0x709e3d*/
             }

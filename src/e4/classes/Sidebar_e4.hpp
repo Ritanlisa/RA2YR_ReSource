@@ -34,5 +34,13 @@ int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
     unsigned char u32_53D3;  // 0x53D3 (offset-truth)
     unsigned int u32_53D4;  // 0x53D4 (offset-truth)
     unsigned int u32_53D8;  // 0x53D8 (offset-truth)
+
+    unsigned int u32_14E7;  // X10 supply (member_lookup)
+    unsigned int u32_151C;  // X10 supply (member_lookup)
+    unsigned int u32_1EC;  // X10 supply (member_lookup)
+    unsigned int u32_53A5;  // X10 supply (member_lookup)
+    unsigned int u32_53A6;  // X10 supply (member_lookup)
+    unsigned int u32_53A8;  // X10 supply (member_lookup)
+    unsigned char u8_F94;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

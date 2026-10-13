@@ -36,6 +36,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x48B390
 namespace gamemd {  // G42.18 ns repair

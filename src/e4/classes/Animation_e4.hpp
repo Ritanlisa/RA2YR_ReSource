@@ -117,6 +117,8 @@ struct Animation {
     unsigned char u32_16C6;  // 0x16C6 (offset-truth)
     unsigned int u32_1A04;  // 0x1A04 (offset-truth)
     unsigned int u32_1A08;  // 0x1A08 (offset-truth)
+
+    unsigned int q1046;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

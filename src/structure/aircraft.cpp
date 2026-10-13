@@ -1095,7 +1095,7 @@ int AircraftClass::Mission_Retreat()
   if ( FootClass::DispatchInput(&this->vtable1.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr, (int)&v15, a3) ) /*0x41439b*/
   {
     v10 = this->Type; /*0x4143a8*/
-    if ( !*(unsigned char *)(v10 + 560) /*0x4143e1*/
+    if ( !v10->Selectable_d /*0x4143e1*/
       || !v10->Landable_2
       || *(unsigned int *)this->SelectVocOrSfx(0)
       && *(unsigned char *)(*(unsigned int *)this->SelectVocOrSfx(0)

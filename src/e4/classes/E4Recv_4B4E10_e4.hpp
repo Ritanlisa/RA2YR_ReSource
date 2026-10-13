@@ -16,5 +16,8 @@ struct E4Recv_4B4E10 {
     unsigned int M176;  // 0xB0
 // --- flat members (END) ---
     DropListClass *  sub_4B4E10(int a2, void * String, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // 0x4B4E10
+
+    unsigned char q050[4];  /* ShapeButtonClass */  // X10 supply (member_lookup)
+    unsigned int u32_2C0;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -26,6 +26,7 @@
 #include "e4/classes/BuildingLightClass_e4.hpp"  // g57w10: BuildingLightClass carrier (UpdateOscillation)
 #include "entity/anim.hpp"  // g57w10: AnimClass complete (ctor 0x421EA0)
 #include "system/cell.hpp"  // g57w10: CellClass complete
+#include "system/map.hpp"
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 int ToCell(void* a1);  // g57c5 W5 vocab (csp)
@@ -3472,9 +3473,9 @@ int InfantryClass::IdleStateMachine()
       break;
   }
   v15 = this->Owner; /*0x7290f6*/
-  if ( *(unsigned char *)(v15 + 131) ) /*0x7290fa*/
+  if ( v15->q083 ) /*0x7290fa*/
   {
-    if ( !(uint8_t)House::IsHumanPlayer(*(House **)(v15 + 540)) ) /*0x72910e*/
+    if ( !(uint8_t)House::IsHumanPlayer(v15->q21C) ) /*0x72910e*/
     {
       v16 = (int *)(this->Owner + 156); /*0x72911a*/
       v20 = *v16; /*0x729122*/
@@ -7063,7 +7064,7 @@ int InfantryClass::RepairBridge()
                   v70 = ((v70) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v5)) & 0xFFFFu); /*0x519e7d*/
                   *(unsigned int *)v147 = v70; /*0x519e84*/
                   v46->ProcessAttack(/*0x519e9f*/
-                    v46, v147, 0, *(unsigned int *)&_EBX->qC3C[876], this, 1, 0, 0);
+                    v46, v147, 0, *&_EBX->u32_FA8, this, 1, 0, 0);
                   goto LABEL_112; /*0x519ea5*/
                 }
               }
@@ -7192,10 +7193,10 @@ int InfantryClass::RepairBridge()
       && Building
       && ((unsigned int *)this->movementDestination == Building || (unsigned int *)this->target == Building || v86 && Building == v86) )
     {
-      v90 = (TeamClass *)Building[13]; /*0x51a258*/
+      v90 = Building->q034; /*0x51a258*/
       if ( v90 ) /*0x51a25d*/
         TeamClass::Update_0(v90, 1, (int)this, dword_A8F1E0, 0, 0); /*0x51a26a*/
-      if ( (*(int (__thiscall **)(unsigned int *))(*Building + 44))(Building) == 6 ) /*0x51a279*/
+      if ( Building->getAltitude() == 6 ) /*0x51a279*/
       {
         v91 = (Cell *)(*(int (__thiscall **)(InfantryClass *))((char *)this->vtable1 + 444))(this); /*0x51a283*/
         if ( Building == Cell::IsBridge(v91) /*0x51a2a7*/
@@ -7236,7 +7237,7 @@ int InfantryClass::RepairBridge()
       }
       else
       {
-        v95 = (unsigned short *)(*(int (__thiscall **)(unsigned int *, double *))(*Building + 440))(Building, &v149); /*0x51a3b1*/
+        v95 = (unsigned short *)Building->GetCellCoords_Alt(&v149); /*0x51a3b1*/
         v96 = (unsigned short *)(*(int (__thiscall **)(InfantryClass *, int *))((char *)this->vtable1 + 440))(this, &v148); /*0x51a3ba*/
         if ( *v96 == *v95 && v96[1] == v95[1] && Building == (unsigned int *)this->movementDestination ) /*0x51a3e0*/
         {
@@ -7251,10 +7252,10 @@ int InfantryClass::RepairBridge()
             if ( v97 && v97->captureManager ) /*0x51a42b*/
               CaptureManagerClass::FreeUnit((CaptureManagerClass *)this, (int)v95, 0, v139, v140, v141); /*0x51a438*/
             (*(void (__thiscall **)(InfantryClass *))((char *)this->vtable1 + 212))(this); /*0x51a441*/
-            if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*Building + 132))(Building) + 1508) ) /*0x51a451*/
+            if ( *(unsigned char *)(Building->GetSpecialValue() + 1508) ) /*0x51a451*/
               TechnoClass::EnteredOpenTopped((int)this); /*0x51a45e*/
             this->transporter = (int)Building; /*0x51a463*/
-            (*(void (__thiscall **)(unsigned int *, InfantryClass *))(*Building + 916))(Building, this); /*0x51a46e*/
+            Building->vt_slot_916(this); /*0x51a46e*/
             (*(void (__thiscall **)(InfantryClass *))((char *)this->vtable1 + 284))(this); /*0x51a478*/
           }
           else
@@ -7952,12 +7953,8 @@ void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) con
 
 #include "e4/classes/Rules_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
-#include "e4/classes/ComPtr_e4.hpp"  // G42.36 C2027 supply
-#include "e4/classes/COMObject_e4.hpp"  // G42.36 C2027 supply
-#include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/_tree_alias_e4.hpp"  // gB C2027 supply
 #include "e4/classes/TriggerTypeClass_e4.hpp"  // w16g4 C3861 TriggerTypeClass:: supply
-#include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
 #include "e4/classes/ObjectPlacement_e4.hpp"  // w16g4 C3861 ObjectPlacement:: supply
 
 namespace gamemd {

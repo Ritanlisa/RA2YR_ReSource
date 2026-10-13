@@ -130,7 +130,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
       v3[1181] = 0.0; /*0x6546c1*/
     }
     GenerateImageThumbnail(v3, v19, v5, v5, 1); /*0x6546d3*/
-    v7 = (*(int (**)(unsigned int, int))(**((unsigned int **)v3 + 1160) + 124))(*((unsigned int *)v3 + 1160), a2); /*0x6546e0*/
+    v7 = (*(int (**)(unsigned int, int))(*v3->RadarSurface + 124))(v3->RadarSurface, a2); /*0x6546e0*/
     v8 = v3->RadarSurface; /*0x6546e3*/
     v3->q14A4 = v7; /*0x6546e9*/
     v9 = (*(int (**)(int))(v8->CapacityIncrement)(v8); /*0x6546f1*/
@@ -240,7 +240,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
     goto LABEL_26; /*0x6a8536*/
   }
   v16 = v33; /*0x6a84ef*/
-  v17 = *(unsigned int *)(*((unsigned int *)dword_A83D4C + 13) + 188); /*0x6a84fc*/
+  v17 = *(unsigned int *)(dword_A83D4C->relatedTagsCapacity + 188); /*0x6a84fc*/
   v18 = v17 == *(unsigned int *)(v33 + 1744); /*0x6a850a*/
   v19 = v17 == *(unsigned int *)(v7 + 1744); /*0x6a850f*/
   if ( v18 ) /*0x6a8514*/

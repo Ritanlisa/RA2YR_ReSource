@@ -4341,7 +4341,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
       fstp st
     }
   }
-  *(void **)&_ESI->vfptr = (void *)1065353216; /*0x5af638*/
+  *&_ESI->vfptr = (void *)1065353216; /*0x5af638*/
   _ESI->vfptr1 = 0; /*0x5af63a*/
   _ESI->vfptr2 = 0; /*0x5af63d*/
   _ESI->vfptr3 = 0; /*0x5af640*/
@@ -4356,20 +4356,20 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   __asm { fld dword ptr [edi] } /*0x5af65b*/
   v36 = 0; /*0x5af65d*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af669*/
-  *(float *)&_ESI->vfptr3 = _ET1; /*0x5af669*/
+  *&_ESI->M12 = _ET1; /*0x5af669*/
   __asm { fld ds:flt_7E1748 } /*0x5af66c*/
   __asm
   {
     fst [esp+24h+var_18]
     fst dword ptr [esi+1Ch]
   }
-  *(float *)&_ESI->referenceCount = _ET1; /*0x5af677*/
+  *&_ESI->M28 = _ET1; /*0x5af677*/
   __asm { fstp dword ptr [esi+2Ch] } /*0x5af67a*/
-  *(float *)&_ESI->fallRate = _ET1; /*0x5af67a*/
+  *&_ESI->M44 = _ET1; /*0x5af67a*/
   __asm { fadd [esp+24h+arg_4] } /*0x5af680*/
   v25 = *((unsigned int *)_EDI + 1); /*0x5af684*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af68d*/
-  *(float *)&_ESI->vfptr3 = _ET1; /*0x5af68d*/
+  *&_ESI->M12 = _ET1; /*0x5af68d*/
   __asm /*0x5af690*/
   {
     fld [esp+28h+var_14]
@@ -4377,7 +4377,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fst [esp+28h+var_14]
     fstp dword ptr [esi+1Ch]
   }
-  *(float *)&_ESI->referenceCount = _ET1; /*0x5af69b*/
+  *&_ESI->M28 = _ET1; /*0x5af69b*/
   __asm /*0x5af69e*/
   {
     fld [esp+28h+arg_4]
@@ -4389,12 +4389,12 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fst [esp+28h+var_18]
     fstp dword ptr [esi+2Ch]
   }
-  *(float *)&_ESI->fallRate = _ET1; /*0x5af6b2*/
+  *&_ESI->M44 = _ET1; /*0x5af6b2*/
   __asm { fld [esp+28h+arg_4] } /*0x5af6b5*/
   __asm { fadd st, st(1) }
   v32 = *((unsigned int *)_EDI + 2); /*0x5af6be*/
   __asm { fstp dword ptr [esi+0Ch] } /*0x5af6c4*/
-  *(float *)&_ESI->vfptr3 = _ET1; /*0x5af6c4*/
+  *&_ESI->M12 = _ET1; /*0x5af6c4*/
   __asm /*0x5af6c7*/
   {
     fstp st
@@ -4402,14 +4402,14 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fadd [esp+28h+var_14]
     fstp dword ptr [esi+1Ch]
   }
-  *(float *)&_ESI->referenceCount = _ET1; /*0x5af6d1*/
+  *&_ESI->M28 = _ET1; /*0x5af6d1*/
   __asm /*0x5af6d4*/
   {
     fld [esp+28h+var_18]
     fadd [esp+28h+var_4]
     fstp dword ptr [esi+2Ch]
   }
-  *(float *)&_ESI->fallRate = _ET1; /*0x5af6dc*/
+  *&_ESI->M44 = _ET1; /*0x5af6dc*/
   sub_5AF120((float *)_ESI, v30, v34); /*0x5af6df*/
   __asm { fld [esp+20h+var_8] } /*0x5af6e8*/
   __asm
@@ -5078,7 +5078,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
   owningHouseIndex = _ESI->owningHouseIndex; /*0x5aedac*/
   vtable3 = _ESI->vfptr3; /*0x5aedb0*/
   __asm { fstp dword ptr [esi] } /*0x5aedb4*/
-  *(float *)&_ESI->vfptr = _ET1; /*0x5aedb4*/
+  *&_ESI->vfptr = _ET1; /*0x5aedb4*/
   __asm /*0x5aedb6*/
   {
     fld [esp+38h+var_18]
@@ -5092,7 +5092,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+4]
   }
-  *(float *)&_ESI->vfptr1 = _ET1; /*0x5aedd0*/
+  *&_ESI->M4 = _ET1; /*0x5aedd0*/
   __asm /*0x5aedd3*/
   {
     fld [esp+28h+var_10]
@@ -5102,7 +5102,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+8]
   }
-  *(float *)&_ESI->vfptr2 = _ET1; /*0x5aede3*/
+  *&_ESI->M8 = _ET1; /*0x5aede3*/
   __asm /*0x5aede6*/
   {
     fld dword ptr [esp+28h+var_8]
@@ -5112,7 +5112,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+0Ch]
   }
-  *(float *)&_ESI->vfptr3 = _ET1; /*0x5aedf6*/
+  *&_ESI->M12 = _ET1; /*0x5aedf6*/
   __asm /*0x5aedf9*/
   {
     fxch st(1)
@@ -5122,7 +5122,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
-  *(float *)&_ESI->NeedsSaveOrLink = _ET1; /*0x5aee03*/
+  *&_ESI->M32 = _ET1; /*0x5aee03*/
   __asm /*0x5aee06*/
   {
     fld [esp+28h+var_1C]
@@ -5132,7 +5132,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+24h]
   }
-  *(float *)&_ESI->occupant = _ET1; /*0x5aee14*/
+  *&_ESI->q024 = _ET1; /*0x5aee14*/
   __asm /*0x5aee17*/
   {
     fld [esp+28h+var_14]
@@ -5142,7 +5142,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+28h]
   }
-  *(float *)&_ESI->owningHouseIndex = _ET1; /*0x5aee25*/
+  *&_ESI->M40 = _ET1; /*0x5aee25*/
   __asm /*0x5aee28*/
   {
     fld [esp+28h+var_C]
@@ -5152,7 +5152,7 @@ int E4Recv_5AED50::sub_5AED50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+2Ch]
   }
-  *(float *)&_ESI->fallRate = _ET1; /*0x5aee36*/
+  *&_ESI->M44 = _ET1; /*0x5aee36*/
   __asm { fstp st } /*0x5aee39*/
   __asm { fstp st }
   return result; /*0x5aee40*/

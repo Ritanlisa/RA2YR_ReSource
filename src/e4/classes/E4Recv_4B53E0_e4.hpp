@@ -35,5 +35,13 @@ struct E4Recv_4B53E0 {
     unsigned int M132;  // 0x132
 // --- flat members (END) ---
     int  sub_4B53E0(int a2);  // 0x4B53E0
+
+    unsigned char u32_14[4];  /* ControlClass */  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_84;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

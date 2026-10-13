@@ -31,6 +31,15 @@ struct WWMouseClass {
     void* captureMouse();
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q048;  // 0x48 (canon-mt)
+
+    unsigned char __pad_044;  // X10 supply (csp_canon_members)
+    unsigned int q018;  // X10 supply (member_lookup)
+    int q01C;  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    unsigned char q03C[8];  /* char[8] */  // X10 supply (member_lookup)
+    unsigned int q04C;  // X10 supply (member_lookup)
+    unsigned int q050;  // X10 supply (member_lookup)
+    unsigned int q054;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

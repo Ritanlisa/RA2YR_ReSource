@@ -23,5 +23,11 @@ struct TeamTypeClass_28 {
     DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x6F2720
     unsigned int  PointerToIndex(int a2);  // 0x6F21F0
     unsigned int  Write(int a2);  // 0x6F2490
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

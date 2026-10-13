@@ -28,5 +28,7 @@ struct E4Recv_4349F0 {
     char nextObject[16];  // 0x30 (was q034; SetRect lprc lea [esi+30h] RECT16; absorbs old q034/M36/q038/M40)
     unsigned char ambientSoundController[2];  // 0x40 (ctor bytes 0x40/0x41 @0x434a22/25; was M65 slot)
     BOOL sub_4349F0();  // 0x4349F0
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

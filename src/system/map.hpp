@@ -85,6 +85,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void processCratePickup(int a1);  // 0x750080
     int applyCrateEffect();  // 0x75E4A0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char __pad_024;  // X10 supply (member_lookup)
+    unsigned int q11C;  // X10 supply (member_lookup)
+    unsigned int q11E;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_types)
 };
 
 struct ZoneConnectionClass
@@ -381,6 +386,10 @@ protected:
     int UnselectAll_ClearLimboLaunchers();  // 0x48dc90
     int UpdateLightingPostProcess();  // 0x4ae4c0
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_13C;  // X10 supply (csp_canon_members)
+    unsigned char q0F8[4];  /* char[4] */  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
 };
 #endif
 

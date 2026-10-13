@@ -28,5 +28,9 @@ struct Campaign_WorldDominationTour_16 {
     rc_ptr * Constructor(char Block);
     rc_ptr * Constructor_0(char Block);
     unsigned int m_C;  // 0xC (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

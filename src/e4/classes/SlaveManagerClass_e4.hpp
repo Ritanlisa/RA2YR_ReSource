@@ -55,6 +55,10 @@ struct SlaveManagerClass {
     wchar_t * CreateSlave(wchar_t ** a2);
     static int ProcessSlaves(SlaveManagerClass *aP1, int *p_SlaveManagerClass_field_5C, int a3);
     SlaveManagerClass * ProcessOrders(void * Block, char a2);
+
+    HouseClass* house;  // X10 supply (csp_canon_members)
+    unsigned int slaves;  // X10 supply (csp_canon_members)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -239,7 +239,7 @@ int WOL_ResetSystem()
     while ( CChatEventSink_field_0x0C ) /*0x7803ab*/
     {
       v23 = CChatEventSink_field_0x0C; /*0x7803ad*/
-      CChatEventSink_field_0x0C = (CChatEventSink *)CChatEventSink_field_0x0C[5].CChatEventSink_field_0x0C; /*0x7803af*/
+      CChatEventSink_field_0x0C = CChatEventSink_field_0x0C->q014.CChatEventSink_field_0x0C; /*0x7803af*/
       CChatEventSink::DeleteAndZero(v23, 1); /*0x7803bb*/
     }
     ++k; /*0x7803ca*/
@@ -1557,7 +1557,7 @@ int InsertBuddyList(const char *a1, char a2)
                 {
                   while ( !(uint8_t)((String *)((String *)v12))->Compare((const char **)v47) ) /*0x782568*/
                   {
-                    v12 = *(unsigned int *)(v12 + 112); /*0x78256a*/
+                    v12 = v12->estimatedHealth; /*0x78256a*/
                     if ( !v12 ) /*0x78256f*/
                       goto LABEL_45; /*0x78256f*/
                   }
@@ -1599,7 +1599,7 @@ int InsertBuddyList(const char *a1, char a2)
               {
                 while ( !(uint8_t)((String *)((String *)v18))->Compare((const char **)v47) ) /*0x782642*/
                 {
-                  v18 = *(unsigned int *)(v18 + 112); /*0x782644*/
+                  v18 = v18->estimatedHealth; /*0x782644*/
                   if ( !v18 ) /*0x782649*/
                     goto LABEL_66; /*0x782649*/
                 }
@@ -1644,7 +1644,7 @@ int InsertBuddyList(const char *a1, char a2)
                 {
                   while ( !(uint8_t)((String *)((String *)v23))->Compare((const char **)v47) ) /*0x782739*/
                   {
-                    v23 = *(unsigned int *)(v23 + 112); /*0x78273b*/
+                    v23 = v23->estimatedHealth; /*0x78273b*/
                     if ( !v23 ) /*0x782740*/
                       goto LABEL_85; /*0x782740*/
                   }
@@ -1681,7 +1681,7 @@ int InsertBuddyList(const char *a1, char a2)
           {
             while ( !(uint8_t)((String *)((String *)v27))->Compare((const char **)v47) ) /*0x7827e6*/
             {
-              v27 = *(unsigned int *)(v27 + 112); /*0x7827e8*/
+              v27 = v27->estimatedHealth; /*0x7827e8*/
               if ( !v27 ) /*0x7827ed*/
                 goto LABEL_99; /*0x7827ed*/
             }
@@ -1727,7 +1727,7 @@ int InsertBuddyList(const char *a1, char a2)
                 {
                   while ( !(uint8_t)((String *)((String *)v32))->Compare((const char **)v47) ) /*0x7828cd*/
                   {
-                    v32 = *(unsigned int *)(v32 + 112); /*0x7828cf*/
+                    v32 = v32->estimatedHealth; /*0x7828cf*/
                     if ( !v32 ) /*0x7828d4*/
                       goto LABEL_119; /*0x7828d4*/
                   }
@@ -1771,7 +1771,7 @@ int InsertBuddyList(const char *a1, char a2)
               {
                 while ( !(uint8_t)((String *)((String *)v37))->Compare((const char **)v47) ) /*0x7829bb*/
                 {
-                  v37 = *(unsigned int *)(v37 + 112); /*0x7829bd*/
+                  v37 = v37->estimatedHealth; /*0x7829bd*/
                   if ( !v37 ) /*0x7829c2*/
                     goto LABEL_140; /*0x7829c2*/
                 }
@@ -1817,7 +1817,7 @@ int InsertBuddyList(const char *a1, char a2)
                 {
                   while ( !(uint8_t)((String *)((String *)v41))->Compare((const char **)v47) ) /*0x782ab1*/
                   {
-                    v41 = *(unsigned int *)(v41 + 112); /*0x782ab3*/
+                    v41 = v41->estimatedHealth; /*0x782ab3*/
                     if ( !v41 ) /*0x782ab8*/
                       goto LABEL_159; /*0x782ab8*/
                   }

@@ -42,6 +42,8 @@ struct DropPodLocomotionClass {
     HRESULT  UpdateMovement(int * pPStm, int a3);  // 0x4B62C0
     int StubReturn48();  // 0x4B66E0 vt+36
     void *  ProcessMove(char a2);  // 0x4B66F0
+
+    IUnknown* q0A4;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 } // namespace gamemd

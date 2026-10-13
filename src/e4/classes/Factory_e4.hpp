@@ -25,5 +25,7 @@ struct Factory {
     int GetLinkedIndex(int aP1);  // 0x663D60
     int FindExitCellByName(void *a1 = 0);  // 0x523C90
     int IdleHandler();  // 0x731CD0
+
+    unsigned char q000[4];  /* char[4] */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

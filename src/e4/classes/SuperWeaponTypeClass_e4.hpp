@@ -126,6 +126,10 @@ struct SuperWeaponTypeClass {
     unsigned int u32_158;  // 0x158 (offset-truth)
     unsigned int u32_178;  // 0x178 (offset-truth)
     unsigned int u32_17C;  // 0x17C (offset-truth)
+
+    unsigned char DynamicVector_5564[4];  /* DynamicVector */  // X10 supply (member_lookup)
+    VectorClass* qB20;  // X10 supply (member_lookup)
+    VectorClass* qB3C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

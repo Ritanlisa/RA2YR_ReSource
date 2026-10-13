@@ -30,6 +30,9 @@ struct MixFileClass {
     static int GetSubFile(MixFileClass * aP1, unsigned int a2);
     static char ** LoadSubFile(MixFileClass * aP1);
     void sub_5B3F50();  // 0x5B3F50
+
+    int q020;  // X10 supply (member_lookup)
+    int u8_12;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

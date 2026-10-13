@@ -2,6 +2,7 @@
 #include "object/object.hpp"
 #include "type/abstract_type.hpp"
 #include "type/object_type.hpp"
+#include "type/weapon_type.hpp"
 
 namespace ra2 { namespace game {
 
@@ -33,32 +34,27 @@ protected:
     TechnoTypeClass(const char* id) noexcept;
 };
 
-class ObjectTypeClass {
-    // TODO: complete from IDA
-};
 
-class BuildingTypeClass : public TechnoTypeClass {
-public:
-    // TODO: complete ~100 INI members from IDA
-};
 
-class UnitTypeClass : public TechnoTypeClass {};
-class InfantryTypeClass : public TechnoTypeClass {};
-class AircraftTypeClass : public TechnoTypeClass {};
 
-class WarheadTypeClass {};
-class WeaponTypeClass {};
-class BulletTypeClass {};
-class AnimTypeClass {};
-class ParticleTypeClass {};
-class ParticleSystemTypeClass {};
-class OverlayTypeClass {};
-class SmudgeTypeClass {};
-class TerrainTypeClass {};
-class SuperWeaponTypeClass {};
 
-class AbstractTypeClass {};
-class HouseTypeClass {};
-class SideClass {};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }} // namespace

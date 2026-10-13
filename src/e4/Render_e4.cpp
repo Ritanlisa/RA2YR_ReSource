@@ -2115,7 +2115,7 @@ int Render_Get(ScoreScreen * aP0)
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )
       {
-        v5 = VectorClass::GetCount((unsigned int *)(v4 + 21840)) + v2; /*0x68eddd*/
+        v5 = VectorClass::GetCount(&v4->SuperWeaponsAvailable) + v2; /*0x68eddd*/
         v6 = VectorClass::GetCount((unsigned int *)(v4 + 21860)) + v5; /*0x68edea*/
         v7 = VectorClass::GetCount((unsigned int *)(v4 + 21880)) + v6; /*0x68edf7*/
         v2 = VectorClass::GetCount((unsigned int *)(v4 + 21900)) + v7; /*0x68ee0c*/
@@ -2132,9 +2132,9 @@ int Render_Get(ScoreScreen * aP0)
   else
     v11 = (double)v12 / (double)(v2 + v1); /*0x68ee48*/
   Debug::Log(); /*0x68ee65*/
-  (*(void (__stdcall **)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36); /*0x68ee82*/
+  (*(void (__stdcall **)(char *))(aP0->u32_24 + 24))(&aP0->u32_24); /*0x68ee82*/
   Debug::Log(); /*0x68ee8b*/
-  othera = (void *)(aP0->u32_2E0 + *((unsigned int *)aP0 + 119)); /*0x68eea3*/
+  othera = (void *)(aP0->u32_2E0 + aP0->u32_1DC); /*0x68eea3*/
   if ( (int)othera <= 0 ) /*0x68eea7*/
     otherb = 0.0; /*0x68eec1*/
   else

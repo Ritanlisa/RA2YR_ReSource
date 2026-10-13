@@ -41,6 +41,9 @@ struct GadgetClass {
     unsigned char u32_2D;  // 0x2D (offset-truth)
     unsigned int u32_44;  // 0x44 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
+
+    unsigned int q050;  // X10 supply (member_lookup)
+    unsigned char u32_C80[4];  /* void */  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

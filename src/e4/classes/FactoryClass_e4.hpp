@@ -68,6 +68,16 @@ struct FactoryClass {
     static int FindOrCreate(char *Source);  // x4:ida@0x6b5910
     char __pad_42[28];  // 0x42 (ml)
     unsigned int u32_288;  // 0x288 (offset-truth)
+
+    void* q044;  // X10 supply (member_lookup)
+    unsigned int q05C;  // X10 supply (member_lookup)
+    unsigned int u32_4D;  // X10 supply (member_lookup)
+    int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_B;  // X10 supply (member_lookup)
+    char u32_E;  // X10 supply (member_lookup)
+
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    int u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

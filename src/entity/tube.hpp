@@ -58,6 +58,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(void* a1);  // 0x728630
     void* ProcessEvent(int a1);  // 0x728710
     // --- gap2 auto-generated stub declarations (END) ---
+
+    int estimatedHealth;  // X10 supply (csp_canon_members)
+    int fallRate;  // X10 supply (csp_canon_members)
+    void * nextObject;  // X10 supply (csp_canon_members)
+    int occupant;  // X10 supply (csp_canon_members)
+    int owningHouseIndex;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

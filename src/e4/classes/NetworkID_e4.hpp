@@ -11,6 +11,10 @@ struct NetworkID {
 // --- flat members (END) ---
     int16_t Assign(unsigned int *a2, int a3, int16_t a4);
     int Compare(int a2, void *a1 = 0);
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

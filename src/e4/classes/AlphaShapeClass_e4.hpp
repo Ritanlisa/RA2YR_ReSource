@@ -24,6 +24,9 @@ struct AlphaShapeClass {
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
+
+    int q024;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

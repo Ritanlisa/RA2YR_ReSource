@@ -86,6 +86,22 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void ProcessStream(int a1);  // 0x69e320
     // === FUNCS-MOVE (END) ===
+
+    char BufferDirty;  // X10 supply (csp_canon_members)
+    char BufferReadPending;  // X10 supply (csp_canon_members)
+    char BufferWritePending;  // X10 supply (csp_canon_members)
+    void* FilePointer;  // X10 supply (csp_canon_members)
+    int FileSize;  // X10 supply (csp_canon_members)
+    unsigned int FileTimeDateHi;  // X10 supply (csp_canon_members)
+    char FlushOnClose;  // X10 supply (csp_canon_members)
+    unsigned char q058[4];  /* Buffer */  // X10 supply (member_lookup)
+    int q064;  // X10 supply (member_lookup)
+    void* q088;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

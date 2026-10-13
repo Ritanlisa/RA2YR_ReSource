@@ -65,7 +65,7 @@ LABEL_17:
         return result; /*0x654637*/
     }
     if ( this->ptr_1498 == (MapClass *)-1 ) /*0x65457f*/
-      this->ptr_1498 = (MapClass *)(*(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38)); /*0x65458b*/
+      this->ptr_1498 = (MapClass *)(v9->outBuffer + v9->u32_26); /*0x65458b*/
     RadarClass_field_0x1490 = this->ptr_1490; /*0x654594*/
     RadarClass_field_0x1498 = this->ptr_1498; /*0x65459a*/
     aP1 = *(int **)(v9 + 36); /*0x6545a0*/

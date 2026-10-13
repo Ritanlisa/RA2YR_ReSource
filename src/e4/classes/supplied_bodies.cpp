@@ -1,3 +1,8 @@
+#include "e4/classes/ToolTipClass_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/NetworkManager_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
 // G57w8: utility_ext flat-twin suppression battery (full; C2011 x48 root fix)
@@ -916,7 +921,7 @@ char ScriptAction::ProcessIdleAction()
     v58 += (int)DSurface_ViewBounds.field_4; /*0x63b741*/
     Viewport = (Coord3D *)Display::GetViewport(&v72.X); /*0x63b745*/
     v55 = *Viewport; /*0x63b74c*/
-    v56 = *(unsigned int *)Viewport[1].__pad_0; /*0x63b76f*/
+    v56 = *Viewport->Coord3D_field_0x04.__pad_0; /*0x63b76f*/
     v16 = ComputeBounds(&v72, 6, v61, v62); /*0x63b778*/
     v63 = *v16; /*0x63b77f*/
     v64 = v16[1]; /*0x63b787*/

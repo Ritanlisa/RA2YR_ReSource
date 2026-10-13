@@ -42,5 +42,27 @@ struct EventClass {
     int  GetState(int a1);  // 0x5F3440
     char __pad_10[5];  // 0x10 (ml)
     unsigned char q0041;  // 0x41 (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q028;  // X10 supply (member_lookup)
+    int q038;  // X10 supply (member_lookup)
+    int q044;  // X10 supply (member_lookup)
+    int q048;  // X10 supply (member_lookup)
+    int q050;  // X10 supply (member_lookup)
+    int q054;  // X10 supply (member_lookup)
+    unsigned int u32_13;  // X10 supply (member_lookup)
+    unsigned int u32_15;  // X10 supply (member_lookup)
+    unsigned int u32_2;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_3;  // X10 supply (member_lookup)
+    unsigned int u32_314;  // X10 supply (member_lookup)
+    unsigned int u32_318;  // X10 supply (member_lookup)
+    int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_7;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_B;  // X10 supply (member_lookup)
+    unsigned int u32_F;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

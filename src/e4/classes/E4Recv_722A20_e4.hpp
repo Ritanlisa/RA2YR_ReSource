@@ -13,5 +13,7 @@ struct E4Recv_722A20 {
     unsigned int M252;  // 0xFC
 // --- flat members (END) ---
     void sub_722A20();  // 0x722A20
+
+    unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

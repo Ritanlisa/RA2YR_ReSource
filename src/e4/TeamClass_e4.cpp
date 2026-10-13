@@ -1736,7 +1736,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
         do /*0x6eadc8*/
         {
           v24 = *(unsigned int *)(FootClass_Array.? + 4 * v23); /*0x6ead23*/
-          if ( Group == -2 || *(unsigned int *)(v24 + 532) == Group || LOBYTE(v2->buildingType[1].TeamTypeClass_field_34) ) /*0x6ead3a*/
+          if ( Group == -2 || v24->controlGroup == Group || LOBYTE(v2->buildingType[1].TeamTypeClass_field_34) ) /*0x6ead3a*/
           {
             v25 = Math::DistSq2D((Math *)v24, &v35); /*0x6ead4b*/
             v26 = v25; /*0x6ead54*/
@@ -1994,21 +1994,21 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
       v35 = 0; /*0x6eb1c3*/
       do /*0x6eb301*/
       {
-        LOBYTE(v3) = *(unsigned char *)(v6 + 144); /*0x6eb1cd*/
+        LOBYTE(v3) = v6->isAliveFlag; /*0x6eb1cd*/
         if ( (unsigned char)v3 ) /*0x6eb1d5*/
         {
-          v3 = *(unsigned int *)(v6 + 108); /*0x6eb1db*/
+          v3 = v6->health; /*0x6eb1db*/
           if ( v3 ) /*0x6eb1e0*/
           {
-            if ( dword_A8E7AC || (LOBYTE(v3) = *(unsigned char *)(v6 + 129), !(unsigned char)v3) ) /*0x6eb1f7*/
+            if ( dword_A8E7AC || (LOBYTE(v3) = v6->inLimbo, !(unsigned char)v3) ) /*0x6eb1f7*/
             {
-              if ( *(unsigned char *)(v6 + 1673) || (v3 = (*(int (**)(int))(*(unsigned int *)v6 + 44))(v6), v3 == 2) ) /*0x6eb211*/
+              if ( v6->isTeamLeader || (v3 = (*(int (**)(int))(*(unsigned int *)v6 + 44))(v6), v3 == 2) ) /*0x6eb211*/
               {
-                LOBYTE(v3) = *(unsigned char *)(v6 + 981); /*0x6eb217*/
+                LOBYTE(v3) = v6->isInPlayfield_d; /*0x6eb217*/
                 if ( (unsigned char)v3 ) /*0x6eb21f*/
                 {
-                  v24 = (int *)(v6 + 156); /*0x6eb225*/
-                  v5 += *(unsigned int *)(v6 + 156); /*0x6eb22f*/
+                  v24 = &v6->location; /*0x6eb225*/
+                  v5 += v6->location; /*0x6eb22f*/
                   v40 = *(unsigned int *)(v6 + 160); /*0x6eb234*/
                   v25 = *(unsigned int *)(v6 + 156); /*0x6eb23d*/
                   v41 = *(unsigned int *)(v6 + 164); /*0x6eb23f*/
@@ -2018,10 +2018,10 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                   v33 += v26; /*0x6eb25e*/
                   ++v22; /*0x6eb262*/
                   if ( *(unsigned char *)(this->buildingType + 167) /*0x6eb271*/
-                    && (*(unsigned __int8 (**)(int))(*(unsigned int *)v6 + 1248))(v6) )
+                    && (*(unsigned __int8 (**)(int))(*&v6->q1380))(v6) )
                   {
                     v5 += *v24; /*0x6eb27f*/
-                    v40 = *(unsigned int *)(v6 + 160); /*0x6eb287*/
+                    v40 = *&v6->locationY; /*0x6eb287*/
                     v27 = *(unsigned int *)(v6 + 164); /*0x6eb28d*/
                     v39 = *v24; /*0x6eb290*/
                     v41 = v27; /*0x6eb294*/
@@ -2030,7 +2030,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                     v33 += v40; /*0x6eb2a6*/
                   }
                   if ( *(int *)((*(int (**)(int))(*(unsigned int *)v6 + 132))(v6) + 1504) <= 0 /*0x6eb2c8*/
-                    || (v3 = (*(int (**)(int))(*(unsigned int *)v6 + 132))(v6), !v3->u8_CCE) )
+                    || (v3 = (*(int (**)(int))(*&v6->currentBarrelIndex))(v6), !v3->u8_CCE) )
                   {
                     v3 = BuildingClass::SquaredDistanceTo(this->focus); /*0x6eb2dc*/
                     if ( !v36 || v3 < v36 ) /*0x6eb2eb*/
@@ -2045,7 +2045,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
             }
           }
         }
-        v6 = *(unsigned int *)(v6 + 1496); /*0x6eb2f9*/
+        v6 = v6->FootClass_field_5D8; /*0x6eb2f9*/
       }
       while ( v6 ); /*0x6eb301*/
       if ( v22 ) /*0x6eb309*/
@@ -3044,7 +3044,7 @@ bool TeamClass::ValidateMember(int aP1, int *a2, char a4)
   result = (*(int (**)(int))(*(unsigned int *)aP1 + 44))(aP1); /*0x6ea772*/
   if ( result == 2 ) /*0x6ea778*/
     v9 = 1; /*0x6ea77a*/
-  if ( !*(unsigned char *)(aP1 + 1058) && BYTE1(this->buildingType[1].TeamTypeClass_field_34) && !v9 ) /*0x6ea795*/
+  if ( !aP1->isRecruitableByEnemy_d && BYTE1(this->buildingType[1].TeamTypeClass_field_34) && !v9 ) /*0x6ea795*/
     goto LABEL_39; /*0x6ea795*/
   result = TeamClass::HasAnyMemberFlagged((TeamClass *)aP1); /*0x6ea79d*/
   if ( (unsigned char)result ) /*0x6ea7a4*/

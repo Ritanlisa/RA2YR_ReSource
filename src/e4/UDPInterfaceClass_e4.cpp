@@ -412,7 +412,7 @@ LABEL_25:
 LABEL_43:
     ntohs(*(u_short *)netshort.sa_data); /*0x7b3d18*/
     Debug::Log(); /*0x7b3d54*/
-    if ( sendto(sa, v13 + 28, *((unsigned int *)v13 + 4) + 4, 0, &netshort, 16) == -1 && WSAGetLastError() != 10035 ) /*0x7b3d89*/
+    if ( sendto(sa, v13 + 28, v13->uniqueId + 4, 0, &netshort, 16) == -1 && WSAGetLastError() != 10035 ) /*0x7b3d89*/
     {
       WSAGetLastError(); /*0x7b3d8b*/
       Debug::Log(); /*0x7b3d96*/
@@ -842,13 +842,13 @@ int UDPInterfaceClass_Destru_Connect(int a2, const void * a3, unsigned int a4, c
       *((unsigned int *)v9 + 1) = 0; /*0x7b3784*/
       *((unsigned int *)v9 + 2) = 0; /*0x7b3787*/
       *((unsigned int *)v9 + 3) = 0; /*0x7b378a*/
-      *((unsigned int *)v9 + 1) = **(unsigned int **)(*(unsigned int *)(v7 + 258876) + 4 * v24); /*0x7b379c*/
+      *((unsigned int *)v9 + 1) = **(unsigned int **)(v7->u32_3F33C + 4 * v24); /*0x7b379c*/
       *((unsigned short *)v9 + 13) = *v23; /*0x7b37a2*/
       v7->SetAddress(v9, a2); /*0x7b37aa*/
       if ( a5 ) /*0x7b37b3*/
       {
         v11 = v7->q040; /*0x7b37b5*/
-        if ( *(unsigned int *)(v7 + 72) < v11 /*0x7b37dd*/
+        if ( v7->u32_48 < v11 /*0x7b37dd*/
           || (v7->q045 || !v11)
           && (v12 = v7->q04C, v12 > 0)
           && v7->q038->ReadBuffer(v7 + 56, v11 + v12, 0) )

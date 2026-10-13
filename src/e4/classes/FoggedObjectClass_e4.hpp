@@ -49,6 +49,14 @@ struct FoggedObjectClass {
     unsigned int u32_58;  // 0x58 (offset-truth)
     void* ;  // 0x5C (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
+
+    HouseClass* q030;  // X10 supply (member_lookup)
+    void * q040;  // X10 supply (member_lookup)
+    ObjectClass * q048;  // X10 supply (member_lookup)
+    HouseClass* q04C;  // X10 supply (member_lookup)
+    unsigned char q050;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

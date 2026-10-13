@@ -190,6 +190,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadCoord(int a1, int a2, int a3, int a4);  // 0x474620
     int ReadInt(int a1, int a2, int a3);  // 0x5278f0
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_020;  // X10 supply (csp_canon_members)
+    unsigned int q008;  // X10 supply (member_lookup)
+    unsigned int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_types)
+    unsigned int u32_4C;  // X10 supply (member_types)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_lookup)
+    unsigned int u32_60;  // X10 supply (member_lookup)
+    unsigned int u32_A;  // X10 supply (member_lookup)
+    unsigned char u8_1D;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // G57w8 INIClass
 
@@ -248,6 +261,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadTypeList(int a1, int a2);  // 0x41f2e0
     int ReadInfantryTypeList(int a1, int a2);  // 0x41f490
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_041;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // G57w8 CCINIClass
 

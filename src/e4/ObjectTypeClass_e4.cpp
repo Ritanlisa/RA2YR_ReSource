@@ -555,7 +555,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( this->AlternateArcticArt_d && *((unsigned int *)dword_A8B230 + 1174) == 1 && !*(&this->uniqueId8) ) /*0x5f9096*/
+  if ( this->AlternateArcticArt_d && dword_A8B230->theater == 1 && !*(&this->uniqueId8) ) /*0x5f9096*/
   {
     if ( !this->ArcticArtInUse_d ) /*0x5f90a0*/
     {

@@ -168,18 +168,18 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     v5 = this->InfDeath; /*0x52ac21*/
     if ( !v5 ) /*0x52ac26*/
       break; /*0x52ac26*/
-    if ( !*(unsigned int *)(v5 + 4) ) /*0x52ac28*/
+    if ( !v5->ptr_4 ) /*0x52ac28*/
       break; /*0x52ac28*/
-    v6 = *(unsigned int *)(v5 + 8); /*0x52ac2d*/
+    v6 = v5->u32_8; /*0x52ac2d*/
     if ( !v6 ) /*0x52ac32*/
       break; /*0x52ac32*/
-    v7 = *(unsigned int *)(v5 + 4); /*0x52ac38*/
+    v7 = v5->ptr_4; /*0x52ac38*/
     if ( v7 ) /*0x52ac3d*/
     {
       *(unsigned int *)(v6 + 4) = v7; /*0x52ac43*/
-      *(unsigned int *)(*(unsigned int *)(v5 + 4) + 8) = *(unsigned int *)(v5 + 8); /*0x52ac4c*/
-      *(unsigned int *)(v5 + 8) = 0; /*0x52ac4f*/
-      *(unsigned int *)(v5 + 4) = 0; /*0x52ac52*/
+      *(unsigned int *)(v5->ptr_4 + 8) = v5->u32_8; /*0x52ac4c*/
+      v5->u32_8 = 0; /*0x52ac4f*/
+      v5->ptr_4 = 0; /*0x52ac52*/
     }
   }
   this->CellInset = &GenericNode::`vftable'; /*0x52ac5c*/

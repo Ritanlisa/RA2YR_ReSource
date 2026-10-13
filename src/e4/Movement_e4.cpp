@@ -284,7 +284,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
                     v47 - Vector3_field_0x08);
   v92 = *v51; /*0x5b2433*/
   __asm { fild dword ptr [esp+98h+var_30] } /*0x5b243e*/
-  v93[0] = *((unsigned int *)v51 + 2); /*0x5b2449*/
+  v93[0] = v51->u32_8; /*0x5b2449*/
   __asm /*0x5b2454*/
   {
     fstp qword ptr [esp+98h+var_48]

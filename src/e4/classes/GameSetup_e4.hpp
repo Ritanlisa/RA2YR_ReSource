@@ -16,6 +16,16 @@ struct GameSetup {
     static char FormatToString(GameSetup * aP1, uint8_t *Block, char *a3, int a4, int a5, int a6);
     wchar_t * GetColorTooltip(void *a1 = 0);  // 0x4e42a0
     unsigned int q0104;  // 0x104 (offset-truth)
+
+    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
+    unsigned char q095;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_15;  // X10 supply (member_lookup)
+    unsigned int u32_16;  // X10 supply (member_lookup)
+    unsigned int u32_17;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

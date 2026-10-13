@@ -28,6 +28,8 @@ struct ConnectionClass {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
+
+    void* q020;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

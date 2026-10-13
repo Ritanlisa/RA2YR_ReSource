@@ -995,7 +995,7 @@ LABEL_16:
       {
         if ( v9 ) /*0x5c1f11*/
         {
-          v10 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v18 + 20) + 4 * v8) + 16); /*0x5c1f22*/
+          v10 = *(unsigned int *)(*(unsigned int *)(v18->q014 + 4 * v8) + 16); /*0x5c1f22*/
           GameUI = (HWND)Dialog::FindGameUI(); /*0x5c1f25*/
           Campaign::SetupMovie((Campaign *)a1_1, GameUI); /*0x5c1f2d*/
           for ( i = 0; i < dword_A8DA84; ++i ) /*0x5c1f3b*/
@@ -1006,7 +1006,7 @@ LABEL_16:
             {
               if ( v10 <= 1 ) /*0x5c1f5a*/
               {
-                v16 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(*(unsigned int *)(v18 + 20) + 4 * v17) + 4)); /*0x5c1f78*/
+                v16 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(v18->q014 + 4 * v17) + 4)); /*0x5c1f78*/
                 SessionClass::SetPlayerOption((int *)dword_A8DA78[i], v16); /*0x5c1f82*/
               }
               else

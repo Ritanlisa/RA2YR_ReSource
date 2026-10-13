@@ -15,5 +15,7 @@ struct E4Recv_7BF190 {
     unsigned int M1756;  // 0x6DC
 // --- flat members (END) ---
     int sub_7BF190();  // 0x7BF190
+
+    unsigned int u32_1C4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

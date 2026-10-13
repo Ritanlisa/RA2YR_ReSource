@@ -89,6 +89,27 @@ struct AnimClass {
     AnimClass * * ComputePosition(int *aP1);
     int ReleaseBuffers();
     unsigned int q00C;  // 0xC (offset-truth)
+
+    IUnknown* AnimClass_field_0xAC;  // X10 supply (member_types)
+    IUnknown* AnimClass_field_0xB4;  // X10 supply (member_types)
+    IUnknown* AnimClass_field_0xBC;  // X10 supply (member_types)
+    CellStruct* AnimClass_field_0xC0;  // X10 supply (member_types)
+    IUnknown* AnimClass_field_0xD4;  // X10 supply (member_types)
+    unsigned int AnimClass_field_0xFC;  // X10 supply (member_types)
+    unsigned char __pad_017;  // X10 supply (csp_canon_members)
+    unsigned int q130;  // X10 supply (member_lookup)
+    unsigned int q199;  // X10 supply (member_lookup)
+    unsigned int u32_16;  // X10 supply (member_lookup)
+    unsigned int u32_1B;  // X10 supply (member_lookup)
+    unsigned int u32_1F4;  // X10 supply (member_lookup)
+    unsigned int u32_410;  // X10 supply (member_lookup)
+    unsigned int u32_7;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
+    unsigned int u32_E;  // X10 supply (member_lookup)
+
+    unsigned char __pad_0FC;  // X10 supply (csp_canon_members)
+    unsigned int q119;  // X10 supply (member_lookup)
+    unsigned int q196;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

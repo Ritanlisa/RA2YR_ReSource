@@ -430,6 +430,13 @@ struct TechnoClass {
     int damageParticles_2;  // 0x324 (ml)
     unsigned int *q000;  // 0x0 (offset-truth)
     int railgunParticles_2;  // 0x328 (ml)
+
+    unsigned char __pad_470;  // X10 supply (csp_canon_members)
+    unsigned int u32_53C;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_6C4;  // X10 supply (member_lookup)
+
+    void* q6C0;  // X10 supply (member_lookup)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

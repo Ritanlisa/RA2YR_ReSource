@@ -1084,7 +1084,7 @@ void CellClass::AddObject(void* aP1) {
         v5 = v4->ptr_30; /*0x4733d0*/
         if ( !v5 ) /*0x4733d5*/
           break; /*0x4733d5*/
-        if ( (*(unsigned char *)(v5 + 20) & 4) == 0 ) /*0x4733e4*/
+        if ( (v5->abstractFlags & 4) == 0 ) /*0x4733e4*/
           goto LABEL_8; /*0x4733e4*/
         v4 = v4->ptr_30; /*0x4733e6*/
       }
@@ -4108,7 +4108,7 @@ void CellClass::ProcessBridgeRepair() {
   {
     NeighbourContent = (CellClass *)Cell::GetNeighbourContent((Cell *)v1, v16); /*0x48578b*/
     if ( !NeighbourContent->slopeIndex /*0x4857ac*/
-      && *(unsigned int *)&NeighbourContent->__pad_28[28] == 126
+      && *&NeighbourContent->q044 == 126
       && NeighbourContent->powerup < 0x30u )
     {
       v18 = CellClass::GetBridgeBitfield(NeighbourContent); /*0x4857c0*/
@@ -4174,7 +4174,7 @@ void CellClass::ProcessBridgeRepair() {
       if ( v18 ) /*0x485909*/
         NeighbourContent->powerup = 3 * v18 + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 3); /*0x48593d*/
       else
-        *(unsigned int *)&NeighbourContent->__pad_28[28] = -1; /*0x48590b*/
+        *&NeighbourContent->q044 = -1; /*0x48590b*/
       House::AnnounceUpgrade((int)NeighbourContent, -1); /*0x485947*/
       v69[0] = DSurface_ViewBounds.field_0; /*0x485957*/
       v69[1] = DSurface_ViewBounds.field_4; /*0x48595f*/
@@ -4800,7 +4800,7 @@ void CellClass::AddObject(void* aP1) {
         v5 = v4->ptr_30; /*0x4733d0*/
         if ( !v5 ) /*0x4733d5*/
           break; /*0x4733d5*/
-        if ( (*(unsigned char *)(v5 + 20) & 4) == 0 ) /*0x4733e4*/
+        if ( (v5->abstractFlags & 4) == 0 ) /*0x4733e4*/
           goto LABEL_8; /*0x4733e4*/
         v4 = v4->ptr_30; /*0x4733e6*/
       }
@@ -7824,7 +7824,7 @@ void CellClass::ProcessBridgeRepair() {
   {
     NeighbourContent = (CellClass *)Cell::GetNeighbourContent((Cell *)v1, v16); /*0x48578b*/
     if ( !NeighbourContent->slopeIndex /*0x4857ac*/
-      && *(unsigned int *)&NeighbourContent->__pad_28[28] == 126
+      && *&NeighbourContent->q044 == 126
       && NeighbourContent->powerup < 0x30u )
     {
       v18 = CellClass::GetBridgeBitfield(NeighbourContent); /*0x4857c0*/
@@ -7890,7 +7890,7 @@ void CellClass::ProcessBridgeRepair() {
       if ( v18 ) /*0x485909*/
         NeighbourContent->powerup = 3 * v18 + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 3); /*0x48593d*/
       else
-        *(unsigned int *)&NeighbourContent->__pad_28[28] = -1; /*0x48590b*/
+        *&NeighbourContent->q044 = -1; /*0x48590b*/
       House::AnnounceUpgrade((int)NeighbourContent, -1); /*0x485947*/
       v69[0] = DSurface_ViewBounds.field_0; /*0x485957*/
       v69[1] = DSurface_ViewBounds.field_4; /*0x48595f*/
@@ -13596,7 +13596,7 @@ LABEL_34:
       v3 = (*(int (**)(int, CHAR *, unsigned int))(*&a1->q040))(a1, String2, strlen(String2)) + v24; /*0x5267db*/
       INIClass_field_3C = k; /*0x5267dd*/
     }
-    INIClass_field_3C = (unsigned int *)INIClass_field_3C[1]; /*0x5267e1*/
+    INIClass_field_3C = INIClass_field_3C->headNode; /*0x5267e1*/
   }
   return v3 + (*(int (**)(int))(*&a1->__pad_020))(a1); /*0x5267f3*/
 
@@ -29726,7 +29726,7 @@ int RadarClass::UpdateFoundationShapesCustom() {
           do /*0x656540*/
           {
             v15 = v3->Capacity; /*0x6564fe*/
-            if ( *((unsigned int *)v3 + 4) < v15 /*0x656528*/
+            if ( v3->q010 < v15 /*0x656528*/
               || ((LOBYTE(v9) = v3->IsAllocated, (unsigned char)v9) || !v15)
               && (v9 = v3->u32_14, v9 > 0)
               && (LOBYTE(v9) = (*(int (**)(float *, int, unsigned int))(*&v3->q020))(v3, v15 + v9, 0),
@@ -33892,7 +33892,7 @@ int RadarClass::UpdateFoundationShapesCustom() {
           do /*0x656540*/
           {
             v15 = v3->Capacity; /*0x6564fe*/
-            if ( *((unsigned int *)v3 + 4) < v15 /*0x656528*/
+            if ( v3->q010 < v15 /*0x656528*/
               || ((LOBYTE(v9) = v3->IsAllocated, (unsigned char)v9) || !v15)
               && (v9 = v3->u32_14, v9 > 0)
               && (LOBYTE(v9) = (*(int (**)(float *, int, unsigned int))(*&v3->q020))(v3, v15 + v9, 0),
@@ -36400,7 +36400,7 @@ int RadarClass::UpdateFoundationShapesCustom() {
           do /*0x656540*/
           {
             v15 = v3->Capacity; /*0x6564fe*/
-            if ( *((unsigned int *)v3 + 4) < v15 /*0x656528*/
+            if ( v3->q010 < v15 /*0x656528*/
               || ((LOBYTE(v9) = v3->IsAllocated, (unsigned char)v9) || !v15)
               && (v9 = v3->u32_14, v9 > 0)
               && (LOBYTE(v9) = (*(int (**)(float *, int, unsigned int))(*&v3->q020))(v3, v15 + v9, 0),
@@ -41680,7 +41680,7 @@ LABEL_186:
             {
               __asm { fld dword ptr [esp+84h+var_68] } /*0x73e47e*/
               LOWORD(v92) = Math::RoundToInt(v2); /*0x73e482*/
-              FactoryClass::AccumulateCreditsProgress((float *)_ESI[540], v92, FloatPositive); /*0x73e48e*/
+              FactoryClass::AccumulateCreditsProgress(_ESI->q870, v92, FloatPositive); /*0x73e48e*/
               *(unsigned int *)&_ESI[248] = 0; /*0x73e493*/
             }
             else

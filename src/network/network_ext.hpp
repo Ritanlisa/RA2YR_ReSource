@@ -143,6 +143,8 @@ int ConfigureBuffers(unsigned int aP1);  // 0x007b2630 g57w12-r raw-sync (def-fo
     int32_t     m_Socket;       // 0x00
     int32_t     m_SendBufSize;  // 0x04
     int32_t     m_RecvBufSize;  // 0x08
+
+    unsigned int u32_3F06C;  // X10 supply (member_lookup)
 };
 
 // ============================================================================
@@ -200,6 +202,16 @@ virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
     int Connect(int a1, int a2);  // 0x540650 -- IPXGlobalConnClass::Connect
     void* QueryInterface(int a1);  // 0x540670 -- IPXGlobalConnClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned char __pad_02E;  // X10 supply (csp_canon_members)
+    int q020;  // X10 supply (member_lookup)
+    int q024;  // X10 supply (member_lookup)
+    unsigned int u32_CC;  // X10 supply (member_lookup)
+    unsigned int u32_D4;  // X10 supply (member_lookup)
+    unsigned int u32_D8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    unsigned int u32_D0;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 // 4 methods in IDA
@@ -217,6 +229,13 @@ public:
     uint8_t Modem_field_0x04[4];
     uint8_t Modem_field_0x08[4];
     uint8_t Modem_field_0x0C[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned char u32_343[4];  /* void */  // X10 supply (member_lookup)
 };
 // 5 methods in IDA
 // CSP: ModemGame matched via T1
@@ -236,6 +255,20 @@ public:
     uint8_t ModemGame_field_0x08[4];
     uint8_t ModemGame_field_0x0C[4];
     uint8_t ModemGame_field_0x10[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned char u32_40[4];  /* wchar_t */  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    uint8_t u8_9;  // X10 supply (member_lookup)
 };
 // 4 methods in IDA
 // CSP: ModemGuest matched via T1
@@ -253,6 +286,23 @@ public:
     uint8_t ModemGuest_field_0x04[4];
     uint8_t ModemGuest_field_0x08[4];
     uint8_t ModemGuest_field_0x0C[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_05C;  // X10 supply (member_lookup)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    unsigned int u32_9;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 3 methods in IDA
 class ModemHost
@@ -267,6 +317,23 @@ public:
 
     uint8_t ModemHost_field_0x04[4];
     uint8_t ModemHost_field_0x08[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_22;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_9;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 3 methods in IDA
 class MultiplayerBattleTeam
@@ -313,6 +380,11 @@ public:
 
     int Destruct();  // 0x5D88B0
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
+    unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class MultiplayerModeVector2
@@ -322,6 +394,11 @@ public:
 
     int Destruct();  // 0x5D8900
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
+    unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 class MultiplayerObserverTeam
@@ -356,6 +433,8 @@ public:
     virtual void QueryInterface(); // 0x5CAF10
 
     uint8_t MultiplayerSiegeDefenderTeam_field_0x04[4];
+
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: MultiplayerTeam matched via T1
@@ -371,6 +450,10 @@ public:
 
     uint8_t MultiplayerTeam_field_0x04[4];
     unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view (site 0x5C1067)
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    uint32_t u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class MultiplayerTeamVector
@@ -380,6 +463,11 @@ public:
 
     int Destruct();  // 0x5D8860
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
+    unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class MultiplayerTeam_Destru
@@ -390,6 +478,9 @@ public:
 
     virtual void QueryInterface(); // 0x5D8D50
 
+
+    unsigned char DeleteAndZero_4[4];  /* DeleteAndZero */  // X10 supply (member_lookup)
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 #ifndef GAMEMD_G2_NetworkBuffer_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
 #define GAMEMD_G2_NetworkBuffer_DEF 1
@@ -408,6 +499,9 @@ public:
     uint8_t NetworkBuffer_field_0x04[4];
     uint8_t NetworkBuffer_field_0x08[4];
     uint8_t NetworkBuffer_field_0x0C[4];
+
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_NetworkBuffer_DEF
 // 3 methods in IDA
@@ -424,6 +518,14 @@ public:
 
     uint8_t NetworkDialog_field_0x04[4];
     uint8_t NetworkDialog_field_0x08[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_88;  // X10 supply (member_lookup)
+    unsigned int u32_8C;  // X10 supply (member_lookup)
+    unsigned int u32_90;  // X10 supply (member_lookup)
+    unsigned int u32_94;  // X10 supply (member_lookup)
+    unsigned int u32_98;  // X10 supply (member_lookup)
+    unsigned int u32_9C;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class NetworkEventClass
@@ -444,6 +546,9 @@ public:
 
     virtual void WaitForResponse(); // 0x664530
 
+
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    int u8_18;  // X10 supply (member_lookup)
 };
 // 8 methods in IDA
 #ifndef GAMEMD_G2_NetworkGameSetup_DEF  // G42.57w14 twin-guard (shared; first-include wins)
@@ -474,6 +579,9 @@ public:
     void SendGameSetupPacket(int a1);  // 0x5ba970 -- NetworkGameSetup::SendGameSetupPacket
     void* DeleteComPtr(int a1);  // 0x5bb560 -- NetworkGameSetup::DeleteComPtr
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_9;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 // 2 methods in IDA
@@ -490,6 +598,11 @@ public:
     virtual void RemovePlayer(); // 0x6646C0
 
     uint8_t NetworkManager_field_0x04[4];
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
+
+    int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_NetworkManager_DEF
 // 2 methods in IDA
@@ -504,6 +617,8 @@ public:
     virtual void ApplySettings(int a2, char a3, int a4); // 0x7B0F50
 
     uint8_t NetworkOptions_field_0x04[4];
+
+    unsigned int u32_3F068;  // X10 supply (member_lookup)
 };
 #ifndef GAMEMD_G2_NetworkScore_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
 #define GAMEMD_G2_NetworkScore_DEF 1
@@ -532,6 +647,17 @@ public:
 
     uint8_t NetworkSession_field_0x04[4];
     unsigned int *__pad_0; // 0x0  gB member supply
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    void* q284C;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_2840;  // X10 supply (member_lookup)
+    unsigned int u32_314;  // X10 supply (member_lookup)
+    unsigned int u32_318;  // X10 supply (member_lookup)
+    unsigned int u32_84;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    char u8_14;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_NetworkSession_DEF
 // 1 methods in IDA
@@ -599,6 +725,9 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int Connect(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x7b3720
     // === FUNCS-MOVE (END) ===
+
+    unsigned int u32_3F06C;  // X10 supply (member_lookup)
+    unsigned int u32_3F330;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_FLAT_UDPInterfaceClass_Destru
 // 1 methods in IDA
@@ -629,6 +758,14 @@ public:
     uint8_t WOLGameList_field_0x08[4];
     uint8_t WOLGameList_field_0x0C[4];
     uint8_t WOLGameList_field_0x10[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    void* q024;  // X10 supply (member_lookup)
+    void* q028;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class WOLLogin
@@ -650,6 +787,8 @@ public:
 
     virtual void SetValue(); // 0x77A4A0
 
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class WOLPersona
@@ -660,6 +799,9 @@ public:
 
     virtual void FormatDateTime(); // 0x77A4D0
 
+
+    unsigned char SafeDelete_20[4];  /* SafeDelete */  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 7 methods in IDA
 // CSP: WOLobby matched via T1

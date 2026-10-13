@@ -28,5 +28,7 @@ struct Options {
     void ClearComboBoxes();  // 0x624460
     unsigned int *q000;  // 0x0 (canon-mt)
     unsigned int q004;  // 0x4 (offset-truth)
+
+    unsigned char q008[4];  /* DeleteAndZero */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

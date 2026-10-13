@@ -43,6 +43,9 @@ struct TagClass {
     TriggerClass * * Destructor(void * a1);
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)
+
+    void * q040;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

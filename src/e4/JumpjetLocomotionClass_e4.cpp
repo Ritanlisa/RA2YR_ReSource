@@ -320,7 +320,7 @@ LABEL_35:
   *(float *)Function::645D00(v29, 1) = v70; /*0x439ec5*/
   v71 = -*(float *)Function::645D00(v29, 2); /*0x439ed2*/
   *(float *)Function::645D00(v29, 2) = v71; /*0x439ee3*/
-  LOWORD(v32) = Math::RoundToInt(*((float *)v28 + 8)); /*0x439ee8*/
+  LOWORD(v32) = Math::RoundToInt(v28->Climb); /*0x439ee8*/
   v59 = v32; /*0x439ef0*/
   LOWORD(v33) = Math::RoundToInt(*(&v28->Speed)); /*0x439ef1*/
   v54 = v33; /*0x439ef9*/
@@ -781,9 +781,9 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x4b0d00*/
       v11 = v5->q00C; /*0x4b0d0d*/
       v9 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12); /*0x4b0d14*/
-      if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x4b0d27*/
+      if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->q00C + 129) ) /*0x4b0d27*/
       {
-        (*((unsigned char *)&(v4))) = *(unsigned char *)(*((unsigned int *)v5 + 3) + 144); /*0x4b0d6d*/
+        (*((unsigned char *)&(v4))) = *(unsigned char *)(v5->q00C + 144); /*0x4b0d6d*/
         if ( (unsigned char)v4 ) /*0x4b0d75*/
         {
           (*((unsigned char *)&(v4))) = g_DDraw_ClipRect; /*0x4b0d77*/

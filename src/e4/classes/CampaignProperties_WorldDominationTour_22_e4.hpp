@@ -19,5 +19,9 @@ struct CampaignProperties_WorldDominationTour_22 {
     int AddRef(void *a1_1);  // def-aligned
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

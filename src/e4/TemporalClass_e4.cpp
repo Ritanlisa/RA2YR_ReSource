@@ -309,7 +309,7 @@ LABEL_10:
             v35 = v34->spawnManager; /*0x71aa6c*/
             if ( v35 )
             {
-              v36 = (*(int (**)(unsigned int))(*(unsigned int *)v35 + 44))(v34->spawnManager) == 6
+              v36 = (*(int (**)(unsigned int))(*&v35->suspendedMission))(v34->spawnManager) == 6
                   ? (BuildingClass *)v35
                   : 0;
               BuildingClass::UpdateDamageAnim(v36); /*0x71aa90*/
@@ -433,8 +433,8 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->creationFrame); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->DiskLaserClass_field_0x28); /*0x71a6b9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q040); /*0x71a6c7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 17); /*0x71a6d5*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 14); /*0x71a6e3*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_44); /*0x71a6d5*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_38); /*0x71a6e3*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 15); /*0x71a6f1*/
   }
   return Prefix_0; /*0x71a6f8*/

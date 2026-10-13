@@ -144,6 +144,14 @@ struct HouseTypeClass {
     void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);
     AbstractClass * LoadFromINI(uint8_t *** aP1, void *a2);
     char pad_16D[58];  // 0x16D (ml)
+
+    unsigned char __pad_16D;  // X10 supply (csp_canon_members)
+    unsigned int q170;  // X10 supply (member_lookup)
+    AbstractTypeClass * q188;  // X10 supply (member_lookup)
+    AbstractClass* q1A0;  // X10 supply (member_lookup)
+    unsigned int u32_184;  // X10 supply (member_lookup)
+    int u8_175;  // X10 supply (member_lookup)
+    int u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

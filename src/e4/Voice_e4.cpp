@@ -15,10 +15,10 @@ int Voice::Stop()
   int result; // eax
 
   v1 = v1; /*0x4025b1*/
-  (*(void (**)(void))(*(unsigned int *)(v1 + 212) + 40))(); /*0x4025b9*/
+  (*(void (**)(void))(v1->u32_D4 + 40))(); /*0x4025b9*/
   if ( (v1->u32_A4 & 5) != 0 ) /*0x4025c3*/
-    (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 16))(v1); /*0x4025cd*/
-  (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 44))(v1); /*0x4025d8*/
+    (*(void (**)(int))(v1->u32_D4 + 16))(v1); /*0x4025cd*/
+  (*(void (**)(int))(v1->u32_D4 + 44))(v1); /*0x4025d8*/
   result = v1->q0BC; /*0x4025db*/
   if ( result ) /*0x4025e3*/
     result = result(v1); /*0x4025e7*/

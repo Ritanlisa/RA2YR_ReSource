@@ -295,11 +295,11 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         }
         m_Size->locomotorTarget = (v6[5] & 1) != 0 ? v6 : 0;
         *((v6[5] & 1) != 0 ? v6 + 172 : (int *)688) = m_Size;
-        (*(void (**)(unsigned int, int, int))(**(unsigned int **)(m_Size + 684) + 1152))( /*0x710326*/
+        (*(void (**)(unsigned int, int, int))(*m_Size->locomotorTarget + 1152))( /*0x710326*/
           m_Size->locomotorTarget,
           m_Size,
           1);
-        (*(void (**)(unsigned int))(**(unsigned int **)(m_Size + 684) + 336))(*(unsigned int *)(m_Size + 684)); /*0x710334*/
+        (*(void (**)(unsigned int))(*m_Size->locomotorTarget + 336))(m_Size->locomotorTarget); /*0x710334*/
         v23 = v6->u32_5D4; /*0x71033a*/
         if ( v23 ) /*0x710342*/
           TeamClass::LiberateMember_Start(v23, (int)v6, 0xFFFFFFFF, 0); /*0x710349*/
@@ -307,7 +307,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         Member = Team::GetMember((Team *)v6, 0); /*0x710359*/
         if ( Member && (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/
           (*(void (**)(int *, int))(*v6 + 640))(v6, 3); /*0x710374*/
-        (*(void (**)(unsigned int, int, int))(**(unsigned int **)(m_Size + 684) + 488))(*(unsigned int *)(m_Size + 684), 5, 1); /*0x710386*/
+        (*(void (**)(unsigned int, int, int))(*m_Size->locomotorTarget + 488))(m_Size->locomotorTarget, 5, 1); /*0x710386*/
         v25 = m_Size->locomotorTarget; /*0x71038c*/
         if ( !*(unsigned char *)(v25[135] + 492) && !*(unsigned char *)((*(int (**)(unsigned int *))(*v25 + 132))(v25) + 1516) ) /*0x7103aa*/
         {

@@ -15,5 +15,7 @@ struct E4Recv_755CB0 {
     unsigned int M24;  // 0x24
 // --- flat members (END) ---
     unsigned int * sub_755CB0();  // 0x755CB0
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -13,6 +13,8 @@ struct VectorCursor {
     unsigned int * Release(void *a1);
     unsigned int *  Construct(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x76f0c0
     unsigned int *q000;  // 0x0 (offset-truth)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

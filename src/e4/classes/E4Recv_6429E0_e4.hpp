@@ -21,5 +21,8 @@ struct E4Recv_6429E0 {
     unsigned int M128;  // 0x128
 // --- flat members (END) ---
     unsigned int * sub_6429E0();  // 0x6429E0
+
+    unsigned int q068;  // X10 supply (member_lookup)
+    unsigned int q080;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -31,5 +31,24 @@ struct NetworkLobby {
     void UpdateLabels(HWND hDlg);  // 0x5EE6A0
     int DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam, void * a2);
     char __pad_3D[960];  // 0x3D (ml)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char q00C[45];  /* char[45] */  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
+    uint16_t u16_16C;  // X10 supply (member_lookup)
+    int u16_2B8;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    int u32_1480;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2B0;  // X10 supply (member_lookup)
+    unsigned int u32_2B4;  // X10 supply (member_lookup)
+    unsigned int u32_2C4;  // X10 supply (member_lookup)
+    unsigned int u32_2C8;  // X10 supply (member_lookup)
+    unsigned int u32_6B;  // X10 supply (member_lookup)
+    int u32_8;  // X10 supply (member_lookup)
+    int u8_19;  // X10 supply (member_lookup)
+    int u8_1A;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

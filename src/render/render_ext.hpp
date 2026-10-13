@@ -417,6 +417,9 @@ public:
     uint8_t BlitPlainXlatAlpha_ushort_field_0x0C[4];
     uint8_t BlitPlainXlatAlpha_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent25AlphaZReadWarp_ushort
@@ -436,6 +439,9 @@ public:
     uint8_t BlitTransLucent25AlphaZReadWarp_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 14 methods in IDA
 class BlitTransLucent25AlphaZReadWrite_ushort
@@ -491,6 +497,9 @@ public:
     uint8_t BlitTransLucent25AlphaZRead_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    int q008;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 10 methods in IDA
 class BlitTransLucent25Alpha_ushort
@@ -540,6 +549,9 @@ public:
     uint8_t BlitTransLucent50AlphaZReadWarp_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    int q008;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZReadWrite_ushort
@@ -559,6 +571,9 @@ public:
     uint8_t BlitTransLucent50AlphaZReadWrite_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent50AlphaZRead_ushort
@@ -577,6 +592,9 @@ public:
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x0C[4];
     uint8_t BlitTransLucent50AlphaZRead_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent50Alpha_ushort
@@ -596,6 +614,9 @@ public:
     uint8_t BlitTransLucent50Alpha_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    int q008;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZReadWarp_ushort
@@ -615,6 +636,9 @@ public:
     uint8_t BlitTransLucent75AlphaZReadWarp_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    int q008;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZReadWrite_ushort
@@ -634,6 +658,9 @@ public:
     uint8_t BlitTransLucent75AlphaZReadWrite_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    int q008;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75AlphaZRead_ushort
@@ -653,6 +680,9 @@ public:
     uint8_t BlitTransLucent75AlphaZRead_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransLucent75Alpha_ushort
@@ -672,6 +702,9 @@ public:
     uint8_t BlitTransLucent75Alpha_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    int q008;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransXlatAlphaZReadWrite_ushort
@@ -690,6 +723,9 @@ public:
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x0C[4];
     uint8_t BlitTransXlatAlphaZReadWrite_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 25 methods in IDA
 class BlitTransXlatAlphaZRead_ushort
@@ -778,6 +814,9 @@ public:
     uint8_t BlitTransZRemapXlatAlphaZRead_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_C;  // G42.35 til-name member sync
+
+    int q00C;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 5 methods in IDA
 class BlitTransZRemapXlatAlpha_ushort
@@ -797,6 +836,9 @@ public:
     uint8_t BlitTransZRemapXlatAlpha_ushort_field_0x10[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_C;  // G42.35 til-name member sync
+
+    int q00C;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class BlitterList
@@ -817,6 +859,21 @@ public:
 
     virtual int Init(int a2); // 0x631D40  // G42.35 def-truth sync
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 // CSP: BuildingLightQueue matched via T1
@@ -831,29 +888,6 @@ public:
 };
 // 4 methods in IDA
 // CSP: BuildingLoadQueue matched via T1
-#ifndef GAMEMD_G2_BuildingLoadQueue_DEF  // g57b5: twin-definition guard (render_ext copy)
-#define GAMEMD_G2_BuildingLoadQueue_DEF 1
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: misc_ext 版树宇宙抑制 (双守卫; 已应用态)
-#ifndef GAMEMD_E4_BuildingLoadQueue  // G42.33 b3: e4 flat carrier wins in opt-in TUs
-class BuildingLoadQueue
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~BuildingLoadQueue() = default;
-
-    int GetNext(); // 0x6E6E20
-    virtual void Find(); // 0x6E6F20
-    virtual void FindObject(); // 0x6E6FF0
-    virtual int FindBuilding(); // 0x6E7A80  // G42.35 def-truth sync
-
-    uint8_t BuildingLoadQueue_field_0x04[4];
-    uint8_t BuildingLoadQueue_field_0x08[4];
-    uint8_t BuildingLoadQueue_field_0x0C[4];
-};
-#endif  // GAMEMD_G2_BuildingLoadQueue_DEF
-
-#endif  // GAMEMD_E4_BuildingLoadQueue
-#endif  // GAMEMD_TREE_UNIVERSE (BuildingLoadQueue)
 // 9 methods in IDA
 // CSP: BuildingPlacement matched via T1
 class BuildingPlacement
@@ -887,6 +921,18 @@ virtual char RenderBuildingPlacementPreview(unsigned int *,int *,char);  // 0x47
     // === FUNCS-MOVE (BEGIN) ===
     void* FindPosition(int a1, int a2);  // 0x500200
     // === FUNCS-MOVE (END) ===
+
+    unsigned int q024;  // X10 supply (member_lookup)
+    unsigned int u32_11B;  // X10 supply (member_lookup)
+    unsigned int u32_11C;  // X10 supply (member_lookup)
+    unsigned int u32_124;  // X10 supply (member_lookup)
+    unsigned int u32_128;  // X10 supply (member_lookup)
+    unsigned int u32_12C;  // X10 supply (member_lookup)
+    int16_t u32_26;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_E4;  // X10 supply (member_lookup)
+    bool u32_E48;  // X10 supply (member_lookup)
+    unsigned int u32_EC;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class BuildingPlacementClass
@@ -929,6 +975,10 @@ public:
 
     uint8_t BuildingQueue_field_0x04[4];
     uint8_t BuildingQueue_field_0x08[4];
+
+    unsigned char TechnoClass_749[4];  /* TechnoClass */  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 // 10 methods in IDA
 class ColorListClass
@@ -962,6 +1012,20 @@ virtual unsigned int * DrawColorRect(int,int,int,int,int);  // 0x488980
     int Clear(int a1);  // 0x557f40 -- ColorListClass::Clear
     void RemoveColor(int a1);  // 0x558010 -- ColorListClass::RemoveColor
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int u32_174;  // X10 supply (member_lookup)
+    unsigned int u32_178;  // X10 supply (member_lookup)
+    unsigned int u32_17C;  // X10 supply (member_lookup)
+    unsigned int u32_181;  // X10 supply (member_lookup)
+    unsigned int u32_184;  // X10 supply (member_lookup)
+    unsigned int u32_188;  // X10 supply (member_lookup)
+    unsigned int u32_18C;  // X10 supply (member_lookup)
+    unsigned int u32_190;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class ColorSchemeClass
@@ -972,6 +1036,8 @@ public:
 
     virtual int LoadAllSchemes(int a2); // 0x627B20  // G42.35 def-truth sync
 
+
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 6 methods in IDA
 class FoggedObject_DrawVector
@@ -996,6 +1062,10 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4d2d10 -- FoggedObject_DrawVector::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 // CSP: FrameSnapshot matched via T1
@@ -1010,27 +1080,14 @@ public:
 
     uint8_t FrameSnapshot_field_0x04[4];
     unsigned short* __pad_0;  // G42.35 til-name member sync (bodies 0x4C91C0/0x4C91E0)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制
-#ifndef GAMEMD_E4_FrameTimer  // G42.33 b3: e4 flat carrier wins in opt-in TUs
-#ifndef GAMEMD_G2_FrameTimer_DEF  // g57a5 W2d: twin-definition guard (render_ext FrameTimer)
-#define GAMEMD_G2_FrameTimer_DEF 1
-class FrameTimer
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~FrameTimer() = default;
-
-    virtual void HasRemaining(); // 0x41BF40
-    virtual void Init25(); // 0x70D150
-
-    uint8_t FrameTimer_field_0x04[4];
-};
-#endif  // GAMEMD_G2_FrameTimer_DEF
-
-#endif  // GAMEMD_E4_FrameTimer
-#endif  // GAMEMD_TREE_UNIVERSE (FrameTimer)
 // 1 methods in IDA
 // CSP: PaletteClass matched via T1
 class PaletteClass
@@ -1109,6 +1166,9 @@ public:
     uint8_t RLEBlitTransLucent25Alpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransLucent25Alpha_ushort_field_0x08[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransLucent50AlphaZReadWarp_ushort
@@ -1167,6 +1227,9 @@ public:
     uint8_t RLEBlitTransLucent50Alpha_ushort_field_0x08[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
     unsigned int m_8;  // G42.35 til-name member sync
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransLucent75AlphaZReadWarp_ushort
@@ -1224,6 +1287,9 @@ public:
     uint8_t RLEBlitTransLucent75Alpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransLucent75Alpha_ushort_field_0x08[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlphaZReadWrite_ushort
@@ -1253,6 +1319,9 @@ public:
     uint8_t RLEBlitTransXlatAlphaZRead_ushort_field_0x04[4];
     uint8_t RLEBlitTransXlatAlphaZRead_ushort_field_0x08[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransXlatAlpha_ushort
@@ -1268,6 +1337,9 @@ public:
     uint8_t RLEBlitTransXlatAlpha_ushort_field_0x04[4];
     uint8_t RLEBlitTransXlatAlpha_ushort_field_0x08[4];
     unsigned int* __pad_0;  // G42.35 til-name member sync (cache-verbatim bodies 0x49A2xx/0x49AAxx)
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 3 methods in IDA
 class RLEBlitTransZRemapXlatAlphaZReadWrite_ushort
@@ -1376,6 +1448,10 @@ public:
 
     virtual int AddLine(wchar_t* String, int a3, wchar_t* Source, int a5); // 0x5D3FC0  // G42.35 def-truth sync
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_2C4;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 // CSP: TacticalMapClass matched via T1
@@ -1394,6 +1470,9 @@ public:
     unsigned int TacticalClass_field_D74;  // G42.35
     unsigned int TacticalClass_field_D78;  // G42.35
     int redrawing;  // G42.35 (0x6D605F)
+
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
 };
 // 5 methods in IDA
 class VoxClass_Vector
@@ -1412,6 +1491,12 @@ public:
     uint8_t VoxClass_Vector_field_0x08[4];
     uint8_t VoxClass_Vector_field_0x0C[4];
     uint8_t VoxClass_Vector_field_0x10[4];
+
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 #ifndef GAMEMD_E4_VoxelAnimTypeVector  // G57w8: e4 flat carrier wins in e4 TUs (C2011 vs _tree_full_e4.hpp G57e1 carrier)
@@ -1452,6 +1537,12 @@ public:
     int Reset(); // 0x7589C0
 
     uint8_t VoxelPalette_field_0x04[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
 };
 // 7 methods in IDA
 // CSP: VoxelRenderer matched via T1
@@ -1489,6 +1580,9 @@ public:
 
     virtual int GetInfo(int a2, int a3); // 0x7564B0  // G42.35 def-truth sync
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class VoxelTypeClass
@@ -1499,6 +1593,25 @@ public:
 
     virtual int ReadINI(double a2); // 0x73E5E0  // G42.35 def-truth sync (cache: int __thiscall(Class_7F5C70*,double))
 
+
+    unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned int u32_108;  // X10 supply (member_lookup)
+    unsigned int u32_10C;  // X10 supply (member_lookup)
+    unsigned int u32_218;  // X10 supply (member_lookup)
+    unsigned int u32_21C;  // X10 supply (member_lookup)
+    unsigned int u32_2D8;  // X10 supply (member_lookup)
+    unsigned int u32_3D0;  // X10 supply (member_lookup)
+    unsigned int u32_5A4;  // X10 supply (member_lookup)
+    unsigned int u32_674;  // X10 supply (member_lookup)
+    unsigned int u32_6C4;  // X10 supply (member_lookup)
+    unsigned int u32_6D2;  // X10 supply (member_lookup)
+    unsigned int u32_9C;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_A4;  // X10 supply (member_lookup)
+    unsigned int u32_AD0;  // X10 supply (member_lookup)
+    unsigned int u32_BC;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 class Voxel_Section

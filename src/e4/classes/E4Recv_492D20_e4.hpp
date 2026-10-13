@@ -11,5 +11,7 @@ struct E4Recv_492D20 {
 // --- flat members (END) ---
     unsigned short *  sub_492D20(unsigned short * a2, unsigned char * a3, int a4, int a5, uint16_t * a6, int a7, int a8, int a9);  // 0x492D20
     char m_2[4];  // 0x0.. (m_2[2] @0x492d5d) (W16G3 raw-usage vocab)
+
+    unsigned short u16_4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

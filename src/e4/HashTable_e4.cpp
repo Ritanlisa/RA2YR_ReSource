@@ -719,7 +719,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
     goto LABEL_24; /*0x6ba278*/
   while ( !(unsigned __int8)String::Compare((String *)v4, (const char **)v16) ) /*0x6ba28c*/
   {
-    v4 = *(unsigned int *)(v4 + 776); /*0x6ba28e*/
+    v4 = v4->q308; /*0x6ba28e*/
     if ( !v4 ) /*0x6ba296*/
       goto LABEL_24; /*0x6ba296*/
   }

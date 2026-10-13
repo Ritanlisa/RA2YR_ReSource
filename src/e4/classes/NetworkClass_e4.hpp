@@ -16,5 +16,8 @@ struct NetworkClass {
     int ExecutePlanningModeCmd();  // 0x639FD0
     AbstractClass * * RecordEvent();  // 0x6FFE00
     AnimClass * * UnregisterAsync();  // 0x7B1C50
+
+    unsigned int u32_3F06C;  // X10 supply (member_lookup)
+    unsigned int u32_3F070;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

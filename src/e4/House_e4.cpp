@@ -957,7 +957,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v41 = *(unsigned int *)&DataGlobal_A8EF18; /*0x50db29*/
   v42 = *(unsigned int *)&dword_A8EFF8; /*0x50db2d*/
   v7 = *(unsigned int *)&dword_A8EFF8; /*0x50db31*/
-  if ( aP1 && *(unsigned char *)(aP1 + 979) && *(unsigned int *)(*(unsigned int *)(aP1 + 1312) + 3768) == 7 ) /*0x50db4c*/
+  if ( aP1 && aP1->isPrimaryFactory_d && *(unsigned int *)(aP1->Type + 3768) == 7 ) /*0x50db4c*/
   {
     v8 = (int *)(*(int (**)(unsigned int *))(*(unsigned int *)aP1 + 72))(v39); /*0x50db58*/
     v9 = *v8; /*0x50db5a*/

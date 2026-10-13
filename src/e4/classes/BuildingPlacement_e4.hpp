@@ -27,6 +27,13 @@ struct BuildingPlacement {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
     unsigned int u32_90;  // 0x90 (offset-truth)
+
+    int q004;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    IUnknown* q040;  // X10 supply (member_lookup)
+    int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_80;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

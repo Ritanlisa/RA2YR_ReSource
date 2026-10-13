@@ -10,5 +10,8 @@ struct E4Recv_765000 {
     unsigned int M48;  // 0x30
 // --- flat members (END) ---
     AbstractClass * *  sub_765000(void * a2);  // 0x765000
+
+    unsigned int q114;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

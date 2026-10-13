@@ -13,5 +13,7 @@ struct E4Recv_7BCA50 {
     unsigned int M32;  // 0x20
 // --- flat members (END) ---
     int  sub_7BCA50(int a2, int a3, int a4, int a5, int a6);  // 0x7BCA50
+
+    unsigned int q024;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

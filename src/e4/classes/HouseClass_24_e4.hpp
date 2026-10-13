@@ -17,5 +17,9 @@ struct HouseClass_24 {
     int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x4F2A00
     VectorClass_flat *  QueryInterface(char a2);  // 0x4F2B60
     unsigned int  Write(int a2);  // 0x4F2A40
+
+    bool IsInitialized;  // X10 supply (member_lookup)
+    int q004;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

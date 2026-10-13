@@ -42,6 +42,9 @@ struct TagTypeClass {
     unsigned int u32_94;  // 0x94 (offset-truth)
     unsigned int u32_98;  // 0x98 (offset-truth)
     unsigned int u32_9C;  // 0x9C (offset-truth)
+
+    IUnknown* Name;  // X10 supply (member_lookup)
+    void* q0A0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

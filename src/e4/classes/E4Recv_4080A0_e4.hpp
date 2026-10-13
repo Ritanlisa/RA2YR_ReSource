@@ -9,5 +9,7 @@ struct E4Recv_4080A0 {
     unsigned int u32_290;  // 0x290
 // --- flat members (END) ---
     char * sub_4080A0();  // 0x4080A0
+
+    char u8_E8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

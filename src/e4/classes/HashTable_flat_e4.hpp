@@ -119,6 +119,8 @@ void Shrink2(void *a1 = 0);
     unsigned int q020;  // 0x20 (offset-truth)
     unsigned int q030;  // 0x30 (offset-truth)
     unsigned int u32_8;  // 0x8 (offset-truth)
+
+    unsigned int u32_1C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

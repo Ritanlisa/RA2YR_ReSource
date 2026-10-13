@@ -85,6 +85,20 @@ struct SuperClass {
     int AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea);
     wchar_t * NameReadiness(void * aTxtHold);
     unsigned int q00C;  // 0xC (offset-truth)
+
+    int q030;  // X10 supply (member_lookup)
+    int q060;  // X10 supply (member_lookup)
+    int q070;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_lookup)
+    unsigned int u32_74;  // X10 supply (member_lookup)
+    unsigned int u32_78;  // X10 supply (member_lookup)
+    unsigned int u32_7C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

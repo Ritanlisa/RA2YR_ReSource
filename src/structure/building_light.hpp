@@ -79,6 +79,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int CalculateShading();  // 0x5ff850 -- BuildingLight::CalculateShading
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned char __pad_0B4;  // X10 supply (csp_canon_members)
+    unsigned char __pad_0D4;  // X10 supply (csp_canon_members)
+    ParticleSystemClass* q388;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_OWNS_BUILDINGLIGHT
 

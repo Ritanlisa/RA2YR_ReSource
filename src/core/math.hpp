@@ -157,6 +157,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor(float a1, float a2);  // 0x5AE6F0
     void RotateZ(float a1);  // 0x5AF080
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int m_5;  // X10 supply (csp_canon_members)
+    unsigned int m_9;  // X10 supply (csp_canon_members)
+    unsigned int q004;  // X10 supply (member_lookup)
+    unsigned int q00C;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
 };
 
 struct RectangleStruct

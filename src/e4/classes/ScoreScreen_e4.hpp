@@ -24,6 +24,16 @@ struct ScoreScreen {
     unsigned char u32_3CD;  // 0x3CD (offset-truth)
     unsigned int u32_3D0;  // 0x3D0 (offset-truth)
     unsigned int u32_3D4;  // 0x3D4 (offset-truth)
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_60;  // X10 supply (member_lookup)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q014;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

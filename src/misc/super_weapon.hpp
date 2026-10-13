@@ -196,6 +196,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (END) ===
 public:  // g57c5 W4 supply slot
     void * q090;  // 0x90 g57c5 W4 supply (ml SuperClass@0x90)
+
+    void* vtable1;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
 };
 
 class LightningStorm

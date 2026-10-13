@@ -632,11 +632,7 @@ public:
 };
 
 // === j_Options  size=1  extracted from csp_canon/classes.hpp (W14-E4) ===
-class j_Options {
-public:
-    char __pad_000[1];  /* unsigned char */  // 0x0
-    static bool GetValue(void *aP1);  // raw 0x597d40
-};
+
 
 // === rc_ptr_base  size=?  extracted from csp_canon/classes.hpp (W14-E4) ===
 class rc_ptr_base {
@@ -713,26 +709,7 @@ public:
 };
 
 // G57W14E1 til mirror: _TypeList_W4DiskID (rawcache this=TypeList; WDT disk list)
-struct TypeList_W4DiskID {
-    char __pad_0[1];  // 0x0
-    char m_1[4];  // 0x1
-    char __pad_5[3];  // 0x5
-    int m_8;  // 0x8
-    int m_C;  // 0xC
-    int m_10;  // 0x10
-    void ddtor(void *a1);
-    unsigned int Write(int a2);
-    int Seek(int a2, void *a2_2, void *a3);
-    TypeList_flat * QueryInterface(unsigned int * Block, char a2);
-    char AddRef(int a2);
-    char addPlayer(int a2, unsigned int * a3);
-    void removePlayer();
-    int  findPlayer(unsigned int * a2);
-    unsigned int updatePlayer(int a2);
-    char Release(int a2, unsigned int * a3);
-    int Read(unsigned int * a2, void *a2_2);
-    VectorClass_flat * validateGame(unsigned int * Block, char a2);
-};
+
 
 // === CDROM  size=8  extracted from csp_canon/classes.hpp (W15F4) ===
 // W15F4: E3 挂账补全 — 方法真值 = IDA live 2026-10-07 (两枚均为 __stdcall 自由形,

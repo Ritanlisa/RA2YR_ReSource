@@ -13,6 +13,7 @@
 #include "structure/building.hpp"
 #include "e4/classes/Cell_e4.hpp"  // G42.34j: after tree headers (fwd names provided)
 #include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
+#include "system/map.hpp"
 extern int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // W13-C raw 0x7509E0 (e4_protos.h:501 同形)
 extern char FindPlacementPosition(void *a1, int a2, int a3, int a4, int a5);  // W13-C raw 0x718260 ObjectClass::FindPlacementPosition thiscall 自由形
 // ---- g57b5 W5: qualified-call free-form vocab ----
@@ -7660,7 +7661,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
               {
                 v63 = (*(int (__thiscall **)(Class_7F5C70 *, unsigned int, unsigned int, unsigned int))(*&this->vtable2))( /*0x738629*/
                         this,
-                        *(unsigned int *)(*(unsigned int *)(v61 + 1004) + 4 * v62),
+                        *(unsigned int *)(v61->DeploysInto + 4 * v62),
                         0,
                         0);
                 if ( v63 ) /*0x73862d*/
@@ -7889,7 +7890,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
     v50 = (ObjectClass *)v47; /*0x7382a1*/
     if ( v47 ) /*0x7382a5*/
     {
-      *(Class_7F5C70 *)(v47 + 140) = *(&this->attachedBomb0); /*0x7382b7*/
+      *&v47->q08C = *(&this->attachedBomb0); /*0x7382b7*/
       v72 = this->location; /*0x7382c1*/
       v73 = this->locationY; /*0x7382ca*/
       v51 = *(unsigned int *)v47; /*0x7382ce*/
@@ -7919,8 +7920,8 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
   LABEL_83:
     v53 = this->Type; /*0x73838a*/
     if ( *(unsigned char *)(v53 + 3610) /*0x7383c6*/
-      && ((((unsigned char *)&(dword_A8B230[374].nextArrayIndex))[1]) && !*(unsigned char *)(v53 + 3220)
-       || (((unsigned char *)&(dword_A8B230[374].vfptr3))[1]) && *(unsigned char *)(v53 + 3220)) )
+      && ((((unsigned char *)&(dword_A8B230[374].nextArrayIndex))[1]) && !v53->IsTrain
+       || (((unsigned char *)&(dword_A8B230[374].vfptr3))[1]) && v53->IsTrain) )
     {
       v54 = *(unsigned int *)this; /*0x7383f5*/
       a5 = 0; /*0x7383fa*/
@@ -8604,7 +8605,7 @@ unsigned int *Cell::IsBridge()
     return 0; /*0x47c547*/
   while ( Cell_field_0xE4->vt_slot_44() != 6 ) /*0x47c53e*/
   {
-    Cell_field_0xE4 = Cell_field_0xE4->u32_30; /*0x47c540*/
+    Cell_field_0xE4 = Cell_field_0xE4->nextObject; /*0x47c540*/
     if ( !Cell_field_0xE4 ) /*0x47c545*/
       return 0; /*0x47c545*/
   }
@@ -9440,7 +9441,7 @@ int UnitClass::PerFrameUpdate()
     if ( v6 ) /*0x74682f*/
     {
       v7 = 0; /*0x746834*/
-      v8 = *(unsigned int *)(v6 + 52) + 360; /*0x746836*/
+      v8 = v6->relatedTagsCapacity + 360; /*0x746836*/
       v9 = *(unsigned int *)(v8 + 16); /*0x74683b*/
       if ( v9 > 0 ) /*0x746840*/
       {
@@ -9459,7 +9460,7 @@ int UnitClass::PerFrameUpdate()
     v11 = v2->owner; /*0x746860*/
     if ( v11 ) /*0x746868*/
     {
-      if ( *(unsigned char *)(v11 + 704) ) /*0x74686a*/
+      if ( v11->warFactoryInfiltrated ) /*0x74686a*/
       {
         v12 = v2->Type; /*0x746874*/
         if ( !v12->Naval ) /*0x74687a*/
@@ -10830,14 +10831,11 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 
 } // namespace gamemd
 
-#include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/InfantryClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TeamClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/UnitTypeClass_e4.hpp"  // G42.36 C2027 supply
-#include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
-#include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/LayerClass_e4.hpp"  // w16g4 C3861 LayerClass:: supply
 #include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
 #include "e4/classes/BuildingTypeClass_e4.hpp"  // w16g4 C3861 BuildingTypeClass:: supply

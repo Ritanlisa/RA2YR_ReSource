@@ -48,6 +48,8 @@ struct Voice {
     int DetachChannel();
     int Stop(void *a1 = 0, void *a2 = 0);
     unsigned int u32_104;  // 0x104 (offset-truth)
+
+    unsigned int u32_B0;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_Voice_DEF
 

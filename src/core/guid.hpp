@@ -22,6 +22,8 @@ public:
     // Takes a pointer to another GUID, returns true if equal
     // Supports two comparison modes controlled by dword_828140
     bool __fastcall Compare(int a2);  // 0x53EE70 g57w12-r raw supply (v3: bool __thiscall(this, int))
+
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

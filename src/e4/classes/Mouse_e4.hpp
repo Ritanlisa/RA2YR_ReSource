@@ -41,5 +41,10 @@ struct Mouse {
     SHORT GetKeyState(uint8_t vKey);  // 0x53EC90
     BOOL  IsButtonDown(uint8_t a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -1021,7 +1021,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
       v26 = result; /*0x692527*/
       if ( result && !result->u32_41A ) /*0x69252d*/
       {
-        if ( *(unsigned int *)(result + 544) == 2 /*0x692575*/
+        if ( result->q220 == 2 /*0x692575*/
           && (v32 = dword_A83D4C->relatedTagsCount,
               v27 = (unsigned int *)(*(int (**)(int, unsigned int *))(*&result->q120))(result, v37),
               v28 = Coord::To_Cell(&dword_87F7E8, v27),
@@ -1578,7 +1578,7 @@ int Tactical::AddCellToDrawList(int aP1)
   if ( !dword_87F7F4 ) /*0x6da7df*/
   {
     result = (int)dword_A8ED84; /*0x6da7e9*/
-    if ( *(wchar_t **)(aP1 + 92) != dword_A8ED84 && ((*(unsigned char *)(aP1 + 300) & 8) != 0 || aP1->q138) ) /*0x6da800*/
+    if ( aP1->q05C != dword_A8ED84 && ((aP1->q12C & 8) != 0 || aP1->q138) ) /*0x6da800*/
     {
       aP1->q05C = dword_A8ED84; /*0x6da80e*/
       Coords = CellClass::GetCoords((unsigned int *)aP1, v14); /*0x6da819*/

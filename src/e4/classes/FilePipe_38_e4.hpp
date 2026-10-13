@@ -21,5 +21,8 @@ struct FilePipe_38 {
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_008;  // X10 supply (csp_canon_members)
 };
 } // namespace gamemd

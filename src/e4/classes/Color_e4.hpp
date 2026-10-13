@@ -16,6 +16,9 @@ struct Color {
     unsigned int * RGBFromFloat(int a2, float a3, void *a1 = 0);  // G57w10-S raw 0x0075F540 IUnknown 占位清除
     unsigned int u32_4;  // 0x4 (offset-truth)
     unsigned int u32_8;  // 0x8 (offset-truth)
+
+    int u32_1;  // X10 supply (member_lookup)
+    int u32_2;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

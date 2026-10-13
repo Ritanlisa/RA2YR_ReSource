@@ -83,6 +83,8 @@ struct RadioClass {
     unsigned int * Release(void *a1);
     void SetLinkCount(int a2);
      int Constructor(RadioClass * aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
+
+    unsigned int u32_E8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

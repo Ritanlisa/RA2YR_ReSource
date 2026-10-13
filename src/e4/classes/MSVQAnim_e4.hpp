@@ -16,6 +16,10 @@ struct MSVQAnim {
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned char u32_2D;  // 0x2D (offset-truth)
+
+    uint8_t MSVQAnim_field_0x1C;  // X10 supply (member_types)
+
+    int q01C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -28,5 +28,19 @@ struct Array {
     unsigned int q0044;  // 0x44 (offset-truth)
     unsigned char q0045;  // 0x45 (offset-truth)
     unsigned char q0046;  // 0x46 (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    unsigned char q008[8];  /* char[8] */  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    int q0E4;  // X10 supply (member_lookup)
+    int q0E8;  // X10 supply (member_lookup)
+    int q800;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
+    unsigned int u32_804;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

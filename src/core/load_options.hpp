@@ -194,6 +194,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_188;  // 0x188
     unsigned int u32_18C;  // 0x18C
     unsigned int u32_3F0;  // 0x3F0
+
+    void* Capacity;  // X10 supply (csp_canon_members)
+    void* IsAllocated;  // X10 supply (csp_canon_members)
+
+    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
 };
 
 // ============================================================================

@@ -124,6 +124,29 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (END) ===
 public:  // g57c5 W6 owner supply
     unsigned int q0CC;  // 0xCC g57c5 W6 (ml MissionClass@0xCC own)
+
+    unsigned int abstractFlags;  // X10 supply (csp_canon_members)
+    unsigned char ambientSoundController[20];  /* AudioController */  // X10 supply (csp_canon_members)
+    BombClass* attachedBomb;  // X10 supply (csp_canon_members)
+    TagClass* attachedTag;  // X10 supply (csp_canon_members)
+    bool bombVisible;  // X10 supply (csp_canon_members)
+    int32_t customSound;  // X10 supply (csp_canon_members)
+    unsigned char customSound_controller[20];  /* AudioController */  // X10 supply (csp_canon_members)
+    int32_t health;  // X10 supply (csp_canon_members)
+    unsigned int nextArrayIndex;  // X10 supply (member_lookup)
+    ObjectClass* nextObject;  // X10 supply (csp_canon_members)
+    int referenceCount;  // X10 supply (csp_canon_members)
+    unsigned int spawnStatus;  // X10 supply (csp_canon_members)
+    unsigned int uniqueId;  // X10 supply (csp_canon_members)
+    unsigned int visibilityFlags;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
+
+    unsigned int q005;  // X10 supply (member_lookup)
+    unsigned int q006;  // X10 supply (member_lookup)
+    unsigned int q009;  // X10 supply (member_lookup)
 };
 
 } // namespace game

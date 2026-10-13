@@ -470,6 +470,11 @@ struct FootClass {
     int team;  // 0x5D4 (ml)
     int unknownAbstractArray588;  // 0x588 (ml)
     char TeamClass_CheckCohesion(double a2);  // plateau: def-aligned C2039/C2660
+
+    unsigned int u32_595;  // X10 supply (member_lookup)
+    int u32_D54;  // X10 supply (member_lookup)
+
+    AbstractClass* q590;  // X10 supply (member_lookup)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

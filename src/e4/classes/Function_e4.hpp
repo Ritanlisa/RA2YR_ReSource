@@ -15,6 +15,8 @@ struct Function {
     int Function_643E80(void * a2);
     int sub_645D00(int a2);
     static int Method_46B260(int p0);  // x4:signals@0x46b260
+
+    int q004;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

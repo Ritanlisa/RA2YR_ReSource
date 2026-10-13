@@ -76,7 +76,7 @@ bool Weapon_Update(void * a1, void * a2)
       do /*0x659e01*/
       {
         updated = Weapon_Update_Update_659FF0(v3); /*0x659ceb*/
-        (*((unsigned short *)&(a2))) = (uint8_t)(*(unsigned char *)(v3 + 194) >> g_BitMask_Red); /*0x659d13*/
+        (*((unsigned short *)&(a2))) = (uint8_t)(v3->u32_C2 >> g_BitMask_Red); /*0x659d13*/
         (*((unsigned short *)&(updated))) = (uint8_t)(*(unsigned char *)(v3 + 193) >> g_BitMask_Blue); /*0x659d28*/
         (*((unsigned int *)&(updated))) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
         v6 = updated | (a2 << g_BitShift_Blue); /*0x659d40*/

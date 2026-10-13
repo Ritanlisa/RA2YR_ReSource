@@ -94,6 +94,11 @@ static char * GetMissionControl(MissionClass * aP1);
     int ForceMission();
     int NextMission();
     int QueueMission();
+
+    unsigned int q005;  // X10 supply (member_lookup)
+    unsigned int q006;  // X10 supply (member_lookup)
+    unsigned int q007;  // X10 supply (member_lookup)
+    unsigned int q009;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

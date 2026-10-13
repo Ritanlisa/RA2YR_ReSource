@@ -19,6 +19,8 @@ struct VoxelPaletteClass {
 // --- flat members (END) ---
     int ConvertFromFile(int a2);
     int LoadFromFile();
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

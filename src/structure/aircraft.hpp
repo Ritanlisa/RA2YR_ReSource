@@ -189,6 +189,30 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* vtable2;  // 0x4 (ml truth)  gB vtable supply
     void* vtable3;  // 0x8 (ml truth)  gB vtable supply
     void* vtable4;  // 0xC (ml truth)  gB vtable supply
+
+    void* airstrike;  // X10 supply (csp_canon_members)
+    unsigned char ambientSoundController[20];  /* AudioController */  // X10 supply (csp_canon_members)
+    unsigned int ammo;  // X10 supply (csp_canon_members)
+    TagClass* attachedTag;  // X10 supply (csp_canon_members)
+    void* currentMission;  // X10 supply (csp_canon_members)
+    int32_t displayProductionTo;  // X10 supply (csp_canon_members)
+    bool isOnMap;  // X10 supply (csp_canon_members)
+    bool isSelected;  // X10 supply (csp_canon_members)
+    unsigned char location[12];  /* CoordStruct */  // X10 supply (csp_canon_members)
+    ILocomotion* locomotor;  // X10 supply (csp_canon_members)
+    unsigned char missionTimer[12];  /* TimerStruct */  // X10 supply (csp_canon_members)
+    int32_t movementDestination;  // X10 supply (csp_canon_members)
+    bool needsRedraw;  // X10 supply (csp_canon_members)
+    unsigned int nextArrayIndex;  // X10 supply (csp_canon_members)
+    ObjectClass* nextObject;  // X10 supply (csp_canon_members)
+    unsigned int objectTypeFlags;  // X10 supply (csp_canon_members)
+    unsigned int occupant;  // X10 supply (csp_canon_members)
+    unsigned int owner;  // X10 supply (csp_canon_members)
+    unsigned int owningHouseIndex;  // X10 supply (csp_canon_members)
+    unsigned char passengers[8];  /* unsigned long long */  // X10 supply (csp_canon_members)
+    AnimClass* target;  // X10 supply (csp_canon_members)
+    unsigned int uniqueId;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

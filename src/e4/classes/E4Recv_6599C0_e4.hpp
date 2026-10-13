@@ -18,5 +18,7 @@ struct E4Recv_6599C0 {
     unsigned int M100;  // 0x100
 // --- flat members (END) ---
     void sub_6599C0();  // 0x6599C0
+
+    double u64_7C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

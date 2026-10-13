@@ -217,10 +217,10 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
                             0);
   if ( this ) /*0x4fb9e5*/
   {
-    v8 = (*(int (**)(int, AbstractClass **))(*(unsigned int *)(v7 + 56) + 16))(v7 + 56, &this); /*0x4fb9f4*/
+    v8 = (*(int (**)(int, AbstractClass **))(v7->conYards + 16))(v7 + 56, &this); /*0x4fb9f4*/
     if ( v8 != -1 ) /*0x4fb9fa*/
     {
-      v9 = *(unsigned int *)(v7 + 72); /*0x4fb9fc*/
+      v9 = *&v7->buildingsCount; /*0x4fb9fc*/
       if ( v8 < v9 ) /*0x4fba01*/
       {
         v10 = v9 - 1; /*0x4fba03*/
@@ -267,7 +267,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176, &a4); /*0x4fbad7*/
     if ( v20 != -1 ) /*0x4fbadd*/
     {
-      v21 = *(unsigned int *)(v7 + 192); /*0x4fbadf*/
+      v21 = *&v7->countResourceDestinations; /*0x4fbadf*/
       if ( v20 < v21 ) /*0x4fbae4*/
       {
         v22 = v21 - 1; /*0x4fbae6*/
@@ -289,7 +289,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224, &a4); /*0x4fbb3e*/
     if ( v26 != -1 ) /*0x4fbb44*/
     {
-      v27 = *(unsigned int *)(v7 + 240); /*0x4fbb46*/
+      v27 = *&v7->airspeedMultiplier; /*0x4fbb46*/
       if ( v26 < v27 ) /*0x4fbb4b*/
       {
         v28 = v27 - 1; /*0x4fbb4d*/
@@ -316,7 +316,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296, &a4); /*0x4fbbcc*/
     if ( v34 != -1 ) /*0x4fbbd2*/
     {
-      v35 = *(unsigned int *)(v7 + 312); /*0x4fbbd4*/
+      v35 = *&v7->startingEdge; /*0x4fbbd4*/
       if ( v34 < v35 ) /*0x4fbbd9*/
       {
         v36 = v35 - 1; /*0x4fbbdb*/
@@ -338,7 +338,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104, &a4); /*0x4fbc2d*/
     if ( v40 != -1 ) /*0x4fbc33*/
     {
-      v41 = *(unsigned int *)(v7 + 120); /*0x4fbc35*/
+      v41 = *&v7->bunkersCount; /*0x4fbc35*/
       if ( v40 < v41 ) /*0x4fbc3a*/
       {
         v42 = v41 - 1; /*0x4fbc3c*/

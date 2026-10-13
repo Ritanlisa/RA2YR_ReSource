@@ -27,6 +27,8 @@ struct IPXGlobalConnClass {
     unsigned char u32_141;  // 0x141 (offset-truth)
     unsigned int u32_CC;  // 0xCC (offset-truth)
     unsigned int u32_D4;  // 0xD4 (offset-truth)
+
+    unsigned int u32_D0;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 

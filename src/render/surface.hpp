@@ -441,6 +441,8 @@ public:  // g57c5 W4b supply slot
     void* DSurface_field_0x1C[4];  // 0x1C g57c5 W4b (subscripted usage, ml slot witness)
 public:  // g57c5 W4b supply slot
     void* DSurface_field_0xC;  // 0xC g57c5 W4b (self-desc vocab, ml slot witness)
+
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

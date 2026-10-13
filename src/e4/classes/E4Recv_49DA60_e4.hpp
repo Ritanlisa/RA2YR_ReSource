@@ -11,5 +11,8 @@ struct E4Recv_49DA60 {
     ObjectClass * ptr_60;  // 0x60
 // --- flat members (END) ---
     unsigned int * sub_49DA60();  // 0x49DA60
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

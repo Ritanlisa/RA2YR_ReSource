@@ -20,6 +20,8 @@ struct MovementAI {
     static int Begin(TechnoClass *p_this);  // x4:ida@0x6f9e50
     unsigned int u32_100;  // 0x100 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
+
+    int u8_19;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

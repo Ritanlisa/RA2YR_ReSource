@@ -29,6 +29,7 @@ using ra2::game::ObjectClass;
 #include "misc/misc_ext.hpp"// 0x517CC0
 #include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
 #include "e4/classes/Math_e4.hpp"  // w16g4 C3861 Math:: supply
+#include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int OleRun(LPUNKNOWN pUnknown);  // x4:ida@0x7c88cc
@@ -5679,7 +5680,7 @@ void SuperWeapon::DispatchTeam(int a1, int a2) {
       (*(((unsigned short *)&(v28)) + 1)) = v19[1] / 256; /*0x6efff7*/
       v24 = v28; /*0x6f0000*/
       SuperWeapon::FireSuperWeaponHouseClass((void *)v8, *(unsigned int *)(*(unsigned int *)(v25 + 40) + 180), (int)&v24); /*0x6f0011*/
-      v20 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, unsigned char *))(*v18 + 72))(v18, v27); /*0x6f001f*/
+      v20 = (unsigned int *)v18->GetCoords_0(v27); /*0x6f001f*/
       (*((unsigned short *)&(v28))) = *v20 / 256; /*0x6f0032*/
       (*(((unsigned short *)&(v28)) + 1)) = v20[1] / 256; /*0x6f004a*/
       v25 = v28; /*0x6f0057*/

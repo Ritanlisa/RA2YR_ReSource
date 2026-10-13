@@ -42,6 +42,11 @@ struct ParasiteClass {
     void * UpdateParasite(ParasiteClass * Block, char a2);
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_54;  // 0x54 (offset-truth)
+
+    unsigned char __pad_028;  // X10 supply (csp_canon_members)
+    IUnknown* q04C;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    int u32_50;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

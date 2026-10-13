@@ -524,6 +524,14 @@ struct UnitTypeClass {
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0();
     unsigned int * ClampToGroundHeight(unsigned int * a1, int * a2);
     unsigned int *  GetDefaultDimensions(unsigned int * a1);
+
+    unsigned char __pad_DFC;  // X10 supply (csp_canon_members)
+    unsigned int u32_D2E;  // X10 supply (member_lookup)
+    unsigned int u32_D35;  // X10 supply (member_lookup)
+    unsigned int u32_D36;  // X10 supply (member_lookup)
+    unsigned int u32_D3B;  // X10 supply (member_lookup)
+    unsigned int u32_E04;  // X10 supply (member_lookup)
+    unsigned int u32_E08;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

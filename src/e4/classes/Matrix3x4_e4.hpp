@@ -12,6 +12,13 @@ struct Matrix3x4 {
     int Identity(void *a1 = 0);
     unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3);
     int Translate(float aP1, void *a1 = 0);
+
+    void* q004;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

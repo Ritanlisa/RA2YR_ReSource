@@ -6,10 +6,20 @@ Cls to be a COMPLETE type in its TU. This tool:
 
   a) harvests the member-def inventory (class -> [(ret, method, params)])
      from all e4 cpps,
-  b) for classes without e4/classes/<Cls>_e4.hpp: emits a FLAT header
+  b) for classes without ANY e4-universe definition: emits a FLAT header
      (vfptr + csp_canon_members layout + harvested method decls),
-  c) for every cpp defining members of Cls: ensures
-     `#include "e4/classes/<Cls>_e4.hpp"` is present.
+  c) for every cpp defining members of Cls: ensures the include of the
+     SINGLE AUTHORITY header (the existing e4 def if one exists -- X10
+     single-declaration-authority discipline; never a second copy) is
+     present.
+
+X10 (2026-10-13): "copy the decl" -> "reference the single authority".
+Before creating `<Cls>_e4.hpp` the generator now scans ALL e4 headers for an
+existing top-level definition of Cls; if found (e.g. a class literally named
+`Foo_e4` already defined by `Foo_e4.hpp`, or a legacy carrier def), no new
+header is created and the cpp gets the authority's include instead. This
+kills the `*_e4_e4.hpp` double-suffix twin family (GameMode_e4 / Mission_e4
+/ AbstractType_e4) at the source.
 
 Existing headers keep their content (upgrade_e4_flat_classes.py enriches
 them with members); includes are added idempotently.
@@ -25,6 +35,13 @@ ROOT = Path(__file__).resolve().parents[4]
 E4 = ROOT / 'src' / 'e4'
 E4C = E4 / 'classes'
 APPLY = '--apply' in sys.argv
+
+# X10: shared nesting-aware declaration scanner (tools/csp_export).
+sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
+try:
+    from _decl_scan import iter_decls
+except Exception:  # pragma: no cover - scanner unavailable: fall back
+    iter_decls = None
 
 # RC1: members without a semantic name are NOT invented (`q%03X` fill is
 # forbidden); they land here and fail the process after output.
@@ -89,6 +106,19 @@ for p in sorted(E4.glob('*.cpp')):
 
 print(f'member-def classes: {len(defs)}')
 
+# ---- X10 authority index: every class already DEFINED in the e4 universe --
+e4_def_of = {}   # cls -> header path (first definer, lex order)
+if iter_decls is not None:
+    for hp in sorted(E4.rglob('*.hpp')):
+        try:
+            txt = hp.read_text(encoding='utf-8', errors='replace')
+        except OSError:
+            continue
+        for (nm, kind, _body, depth) in iter_decls(txt):
+            if kind == 'def' and depth == 0:
+                e4_def_of.setdefault(nm, hp)
+print(f'e4-universe existing definitions: {len(e4_def_of)}')
+
 
 def cpptype(t, size):
     t = (t or '').strip()
@@ -105,9 +135,32 @@ def cpptype(t, size):
     return 'ARRAY:%d' % max(1, size or 1)
 
 
-created = included = 0
+created = included = authority_refs = 0
 for cls in sorted(defs):
     hp = E4C / ('%s_e4.hpp' % cls)
+    # X10: if ANY e4 header already defines cls, that header is the single
+    # authority -- never create a second copy (kills *_e4_e4.hpp twins).
+    auth = e4_def_of.get(cls)
+    if auth is not None and auth != hp and not hp.exists():
+        inc = '#include "%s"' % auth.relative_to(ROOT).as_posix()
+        for p in def_files[cls]:
+            try:
+                txt = p.read_text(encoding='latin-1', errors='replace')
+            except OSError:
+                continue
+            if inc in txt:
+                continue
+            lines = txt.split('\n')
+            at = 0
+            for i, ln in enumerate(lines):
+                if ln.startswith('#include'):
+                    at = i + 1
+            lines.insert(at, inc)
+            authority_refs += 1
+            if APPLY:
+                p.write_bytes('\n'.join(lines).encode('latin-1',
+                                                      errors='replace'))
+        continue
     if not hp.exists():
         ent = mtab.get(cls) or {}
         taken = set()
@@ -163,7 +216,8 @@ for cls in sorted(defs):
             p.write_bytes('\n'.join(lines).encode('latin-1',
                                                   errors='replace'))
 
-print(f'headers created: {created}, includes added: {included}')
+print(f'headers created: {created}, includes added: {included}, '
+      f'authority refs: {authority_refs}')
 if unresolved_members:
     rpt_dir = ROOT / '.omo' / 'unresolved_reports'
     rpt_dir.mkdir(parents=True, exist_ok=True)

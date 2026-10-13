@@ -596,6 +596,9 @@ struct RulesClass {
     int ReadSidesList(void * aSuperweapontyp);
     int ResetRules();  // G42.39 supply
     static int LoadFromINI();
+
+    unsigned char ColorAdd[48];  /* int[12] */  // X10 supply (member_lookup)
+    int u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -19,6 +19,8 @@ struct TypeList_W4DiskID {
     unsigned int updatePlayer(int a2);
     void ddtor(void *a1);
     void removePlayer();
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

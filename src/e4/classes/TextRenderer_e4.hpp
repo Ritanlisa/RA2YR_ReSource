@@ -24,6 +24,10 @@ struct TextRenderer {
     unsigned int u32_80;  // 0x80 (offset-truth)
     unsigned char u32_86;  // 0x86 (offset-truth)
     unsigned char u32_87;  // 0x87 (offset-truth)
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_1A;  // X10 supply (member_lookup)
+    unsigned int u32_1B;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

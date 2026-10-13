@@ -690,7 +690,7 @@ int  RulesClass::readAI(unsigned int * a2)
   {
     result = (int)this->LargeVisceroid; /*0x67b4b5*/
     DetailMinFrameRateMovie = this->DetailMinFrameRateMovie; /*0x67b4b8*/
-    this->LargeVisceroid = (UnitTypeClass *)(result + 1); /*0x67b4be*/
+    this->LargeVisceroid = &result->AbstractClass_1; /*0x67b4be*/
     *(unsigned int *)(DetailMinFrameRateMovie + 4 * result) = *a2; /*0x67b4c8*/
     (*((unsigned char *)&(result))) = 1; /*0x67b4cb*/
   }

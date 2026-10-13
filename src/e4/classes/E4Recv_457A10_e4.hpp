@@ -12,5 +12,7 @@ struct E4Recv_457A10 {
     void* vtable1;  // 0x0 (no offset truth)
     char sub_457A10();  // 0x457A10
     unsigned int u32_520;  // 0x520 (offset-truth)
+
+    unsigned int u32_524;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

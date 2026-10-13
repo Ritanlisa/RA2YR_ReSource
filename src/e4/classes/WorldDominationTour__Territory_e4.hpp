@@ -21,5 +21,10 @@ struct WorldDominationTour__Territory {
     ReferenceCounted * ptr_28;  // 0x28
 // --- flat members (END) ---
     SessionClass * *  Constructor(int a2, unsigned int * a3, char * Source, void * a5, void * a6);  // 0x76F970
+
+    HashTable * q080;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned char u32_C[4];  /* WideString */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -12,5 +12,7 @@ struct E4Recv_4966D0 {
     int  sub_4966D0(int a2, uint8_t * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11);  // 0x4966D0
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_4[64];  // pad compile-supply (G41.47)
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

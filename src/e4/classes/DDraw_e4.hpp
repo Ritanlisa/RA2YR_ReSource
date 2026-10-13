@@ -29,6 +29,8 @@ struct DDraw {
     int ReleaseSurfaces(void *a1 = 0);
     static int WaitForIdle();
     void Init(void *a1 = 0, void *a2 = 0);
+
+    unsigned int u32_18000;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -13,5 +13,7 @@ struct E4Recv_6C6540 {
     unsigned int M52;  // 0x34
 // --- flat members (END) ---
     unsigned int *  sub_6C6540(int a2, void * String, int a4, int a5, int a6, int a7, int a8);  // 0x6C6540
+
+    unsigned int u32_24;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

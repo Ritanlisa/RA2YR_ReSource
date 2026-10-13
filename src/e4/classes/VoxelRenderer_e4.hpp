@@ -14,6 +14,10 @@ struct VoxelRenderer {
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)
     unsigned int u32_70;  // 0x70 (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

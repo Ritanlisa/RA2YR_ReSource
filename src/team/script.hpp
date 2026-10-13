@@ -79,6 +79,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ProcessEvent(int a1);  // 0x691EE0
     // --- gap2 auto-generated stub declarations (END) ---
     void* vtable4;  // 0xC (ml truth)  gB vtable supply
+
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
 };
 
 // --- ScriptTypeClass ---
@@ -134,6 +137,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadINI(int a1, int a2);  // 0x6e8340
     // === FUNCS-MOVE (END) ===
     void* vtable2;  // 0x4 (ml truth)  gB vtable supply
+
+    unsigned char ScriptTypeClass_2D80[4];  /* ScriptTypeClass */  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -48,5 +48,15 @@ struct MSEngine {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4C;  // 0x4C (offset-truth)
     unsigned char u32_51;  // 0x51 (offset-truth)
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    bool q00B;  // X10 supply (member_lookup)
+    bool q00E;  // X10 supply (member_lookup)
+    unsigned char q034;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

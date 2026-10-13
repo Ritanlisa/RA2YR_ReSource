@@ -42,6 +42,8 @@ struct BombClass {
     BombClass * * sub_56AF40(int a2);
     BombClass * * sub_56B250(int a2);
     unsigned int q_80;  // +0x80 flat supply (CSP-fed)
+
+    unsigned char __pad_024;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

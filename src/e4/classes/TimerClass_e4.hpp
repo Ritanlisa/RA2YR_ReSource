@@ -40,5 +40,17 @@ struct TimerClass {
     unsigned char u32_C2;  // 0xC2 (offset-truth)
     unsigned char u32_C3;  // 0xC3 (offset-truth)
     signed int GetRemaining();  // plateau: def-aligned C2039/C2660
+
+    unsigned int q024;  // X10 supply (member_lookup)
+    unsigned int q028;  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_140;  // X10 supply (member_lookup)
+    unsigned int u32_144;  // X10 supply (member_lookup)
+    unsigned int u32_148;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_84;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

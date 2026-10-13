@@ -14,5 +14,7 @@ struct E4Recv_767E90 {
     unsigned int M24;  // 0x24
 // --- flat members (END) ---
     unsigned int * sub_767E90();  // 0x767E90
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

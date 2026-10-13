@@ -199,7 +199,7 @@ void Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
         if ( (unsigned __int8)Audio::IsLoud(v7 + 84) ) /*0x4816b2*/
           break; /*0x4816b2*/
       }
-      Cell_field_0xE4 = (AbstractClass *)Cell_field_0xE4[1].vtable3; /*0x4816bb*/
+      Cell_field_0xE4 = Cell_field_0xE4->vtable2.vtable3; /*0x4816bb*/
       if ( !Cell_field_0xE4 ) /*0x4816c0*/
         goto LABEL_11; /*0x4816c0*/
     }
@@ -1127,7 +1127,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   int16_t v43[2]; // [esp+2Ch] [ebp-Ch] BYREF
   int16_t v44[4]; // [esp+30h] [ebp-8h] BYREF
 
-  v35 = *(char *)(aP0 + 283); /*0x579b89*/
+  v35 = aP0->u32_11B; /*0x579b89*/
   aP0 = aP0->u32_24; /*0x579b8d*/
   *(unsigned int *)v44 = aP0; /*0x579b91*/
   if ( (*((signed short *)(((unsigned char *)&(aP0)) + 2))) + (int16_t)aP0 <= dword_87F8DC /*0x579bdf*/

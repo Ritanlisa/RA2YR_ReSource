@@ -52,6 +52,14 @@ struct RadarClass {
     char  Destru_vt16(char a2);  // 0x653100
     char __pad_1264[16];  // 0x1264 (ml)
     unsigned int q122C;  // 0x122C (offset-truth)
+
+    VectorClass* RadarClass_field_0x1224;  // X10 supply (member_types)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned char __pad_122C;  // X10 supply (csp_canon_members)
+    int q008;  // X10 supply (member_lookup)
+    int u8_1231;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

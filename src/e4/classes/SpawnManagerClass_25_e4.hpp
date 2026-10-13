@@ -18,5 +18,11 @@ struct SpawnManagerClass_25 {
     int  Spawn(unsigned int * a2);  // 0x6B84B0
     DynamicVector *  QueryInterface(char a2);  // 0x6B8790
     unsigned int  LoadState(int a2);  // 0x6B8190
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

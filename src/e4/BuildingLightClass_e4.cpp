@@ -272,7 +272,7 @@ signed int BuildingLightClass::UpdateOscillation()
       v24 = *(unsigned int *)&g_RulesClass_Instance; /*0x513f08*/
     }
   }
-  v25 = *&this->q060 - (double)*(int *)(v24 + 5816); /*0x513f15*/
+  v25 = *&this->q060 - (double)v24->RepairRate; /*0x513f15*/
   *&this->q060 = v25; /*0x513f18*/
   *&this->q060 = v25 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 1520); /*0x513f27*/
   return result; /*0x513f2a*/

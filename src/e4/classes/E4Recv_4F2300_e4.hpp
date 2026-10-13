@@ -10,5 +10,7 @@ struct E4Recv_4F2300 {
     unsigned int M84;  // 0x54
 // --- flat members (END) ---
     ObjectClass * * ProcessGraphicMenu();  // 0x4F2300
+
+    unsigned int q132;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

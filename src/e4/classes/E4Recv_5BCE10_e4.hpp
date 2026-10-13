@@ -13,5 +13,8 @@ struct E4Recv_5BCE10 {
     unsigned int M10032;  // 0x2730
 // --- flat members (END) ---
     int  sub_5BCE10(int a2);  // 0x5BCE10
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

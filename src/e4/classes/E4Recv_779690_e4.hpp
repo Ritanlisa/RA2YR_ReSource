@@ -22,5 +22,11 @@ struct E4Recv_779690 {
     unsigned int M52;  // 0x52
 // --- flat members (END) ---
     void *  LoadAccountInfoWOL_Load(void * a2, int a3, char a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, char a13, void * a14, void * a15);  // 0x779690
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned char u32_3C[4];  /* WideString */  // X10 supply (member_lookup)
+    unsigned char u32_C[4];  /* String */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -140,5 +140,10 @@ struct GameClass {
     int  FindPlayerName(int a1);  // 0x69BC60
     int initPlayerData(const char **a2, void * aStandard_0);
     wchar_t * GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno);
+
+    unsigned char GameClass_30[4];  /* GameClass */  // X10 supply (member_lookup)
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_018;  // X10 supply (csp_canon_members)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

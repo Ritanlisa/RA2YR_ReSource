@@ -25,7 +25,6 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
-#include "e4/classes/GameMode_e4_e4.hpp"
 
 // 0x5D5DE0
 namespace gamemd {  // G42.18 ns repair

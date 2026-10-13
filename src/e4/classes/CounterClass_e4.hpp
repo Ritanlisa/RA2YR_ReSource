@@ -5,7 +5,6 @@
 #ifndef GAMEMD_E4_GAP2_HOUSE_HPP
 #define GAMEMD_E4_GAP2_HOUSE_HPP 1  // G57c6: gap2 ext below defines class twins that minimal_carriers.hpp guards against
 #endif
-#include "house/house.hpp"  // G42.55 tree truth
 
 namespace gamemd {
 

@@ -487,5 +487,9 @@ struct CreateTeamCommand {
     wchar_t * performAction_5(void * aTxtStructureTa_0);
     wchar_t * performAction_8(void * aTxtDefenseTab);
     wchar_t * performAction_27(void * aTxtNextObject);
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned char qA5C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

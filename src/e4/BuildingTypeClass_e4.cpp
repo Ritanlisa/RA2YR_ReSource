@@ -579,13 +579,13 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
       }
       else if ( v4->NewTheater_d ) /*0x45eadc*/
       {
-        if ( *(unsigned char *)(v4 + 5984) && v4->Image_d ) /*0x45eaec*/
+        if ( v4->u32_1760 && v4->Image_d ) /*0x45eaec*/
         {
           operator delete((void *)(v4->Image_d)); /*0x45eaf7*/
           v4->Image_d = 0; /*0x45eaff*/
           v4->ImageAllocated = 0; /*0x45eb05*/
         }
-        if ( *(unsigned char *)(v4 + 5985) && v4->u32_E00 ) /*0x45eb13*/
+        if ( v4->u32_1761 && v4->u32_E00 ) /*0x45eb13*/
         {
           operator delete((void *)(v4->u32_E00)); /*0x45eb1e*/
           v4->u32_E00 = 0; /*0x45eb26*/
@@ -1608,7 +1608,7 @@ LABEL_16:
             if ( *(unsigned int *)v3 < result ) /*0x5940fc*/
               break; /*0x5940fc*/
 LABEL_15:
-            if ( ++v11 >= v3->vtable4 + *((unsigned int *)v3 + 1) ) /*0x59416e*/
+            if ( ++v11 >= v3->vtable4 + v3->vtable2 ) /*0x59416e*/
               goto LABEL_16; /*0x59416e*/
           }
           while ( 1 )

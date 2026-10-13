@@ -31,5 +31,8 @@ struct E4Recv_5408F0 {
     unsigned int M168;  // 0xA8
 // --- flat members (END) ---
     char *  sub_5408F0(int a2, int a3, int a4, int a5, int16_t a6, int16_t a7);  // 0x5408F0
+
+    unsigned int q050;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

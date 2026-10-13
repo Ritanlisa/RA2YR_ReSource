@@ -22,6 +22,9 @@ struct StringVector {
     unsigned int *  QueryInterface(char a2);  // 0x49EFA0
     static unsigned int * Construct(StringVector * aP1, int a2, int a3);
     static char Insert(void *aP0, const char **aP1, int aP2);
+
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

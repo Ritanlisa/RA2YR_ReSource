@@ -63,7 +63,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
     goto LABEL_9; /*0x526863*/
   if ( !aP1->needsSave_flag ) /*0x526865*/
   {
-    qsort(*(void **)(aP1 + 40), v4, 8u, CompareFunc4Int); /*0x526876*/
+    qsort(aP1->needsSave_flag, v4, 8u, CompareFunc4Int); /*0x526876*/
     aP1->unknown38 = 0; /*0x52687e*/
     aP1->needsSave_flag = 1; /*0x526881*/
   }
@@ -81,7 +81,7 @@ LABEL_9:
     return *(unsigned int *)(aP1->unknown38 + 4); /*0x526933*/
   if ( !aP1->needsSave_flag ) /*0x5268b7*/
   {
-    qsort(*(void **)(aP1 + 40), v8, 8u, CompareFunc4Int); /*0x5268c8*/
+    qsort(aP1->needsSave_flag, v8, 8u, CompareFunc4Int); /*0x5268c8*/
     aP1->unknown38 = 0; /*0x5268d0*/
     aP1->needsSave_flag = 1; /*0x5268d3*/
   }

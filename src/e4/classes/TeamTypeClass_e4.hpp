@@ -76,6 +76,11 @@ struct TeamTypeClass {
     unsigned char u32_AA;  // 0xAA (offset-truth)
     void* ;  // 0xC8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
+
+    unsigned char __pad_04C;  // X10 supply (csp_canon_members)
+    void* q0D0;  // X10 supply (member_lookup)
+    void* q0E0;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

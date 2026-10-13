@@ -103,6 +103,9 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x645660
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x6457a0
     // === FUNCS-MOVE (END) ===
+
+    unsigned int u32_1570;  // X10 supply (member_lookup)
+    unsigned int u32_EF0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

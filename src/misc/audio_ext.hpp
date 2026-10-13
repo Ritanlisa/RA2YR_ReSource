@@ -64,6 +64,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Shutdown();  // 0x406e80
     // === FUNCS-MOVE (END) ===
     unsigned int q008;  // 0x8 (offset-truth)
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_AudioMixer_DEF
 
@@ -95,6 +97,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Check(int a1);  // 0x7209B0
     int ComputeTransform(int a1, int a2, int a3, int a4, int a5);  // 0x720E50
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
 };
 
 // ============================================================================
@@ -174,6 +179,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ClearQueues();  // 0x752370
     static bool GetField(int a1);  // 0x752ab0
     // === FUNCS-MOVE (END) ===
+
+    unsigned char u8_9;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_ThemeClass_DEF
 
@@ -233,6 +240,24 @@ public:
 
     virtual unsigned int * InitializePlayback(); // 0x409C40 (G42.33 批 3: 真值对齐)
 
+
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned int u32_74;  // X10 supply (member_lookup)
+    unsigned int u32_7C;  // X10 supply (member_lookup)
+    unsigned int u32_80;  // X10 supply (member_lookup)
+    unsigned int u32_84;  // X10 supply (member_lookup)
+    unsigned int u32_88;  // X10 supply (member_lookup)
+    unsigned char u32_881[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_8C;  // X10 supply (member_lookup)
+    unsigned int u32_90;  // X10 supply (member_lookup)
+    unsigned int u32_98;  // X10 supply (member_lookup)
+    unsigned int u32_9C;  // X10 supply (member_lookup)
+    unsigned char u32_9C6[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_A4;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
 };
 // 3 methods in IDA
 // CSP: AudioChannel matched via T1
@@ -254,6 +279,8 @@ public:
     unsigned int u32_50;
     unsigned int u32_A4;
     unsigned int u32_D4;
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_AudioChannel_DEF
 // 1 methods in IDA
@@ -304,6 +331,8 @@ public:
     virtual void Stop(); // 0x405FD0
 
     uint8_t AudioFile_field_0x04[4];
+
+    unsigned int u32_D4;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_AudioFile_DEF
 // 1 methods in IDA
@@ -315,6 +344,9 @@ public:
 
     virtual unsigned int * Release(); // 0x405C00
 
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 class AudioFrame
@@ -351,6 +383,8 @@ public:
 
     virtual int GetNextEntry(); // 0x407480
 
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 #ifndef GAMEMD_G2_AudioNode_DEF  // G42.57w14 twin-guard (shared; first-include wins)
@@ -363,6 +397,8 @@ public:
 
     virtual int Release(); // 0x408600
 
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_AudioNode_DEF
 // 1 methods in IDA
@@ -374,6 +410,9 @@ public:
 
     virtual void ComputeBoundingVertices(); // 0x756BB0
 
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 #ifndef GAMEMD_G2_AudioOptionsClass_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
 #define GAMEMD_G2_AudioOptionsClass_DEF 1
@@ -386,6 +425,12 @@ public:
 
     virtual void ApplySettings(); // 0x5FB160
 
+
+    unsigned int u32_1D;  // X10 supply (member_lookup)
+    unsigned int u32_1E;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_46;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_AudioOptionsClass_DEF
 // 1 methods in IDA
@@ -397,6 +442,8 @@ public:
 
     virtual int * ProcessQueue(); // 0x405190
 
+
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 // 5 methods in IDA
 class AudioSample
@@ -415,6 +462,34 @@ public:
     uint8_t AudioSample_field_0x08[4];
     uint8_t AudioSample_field_0x0C[4];
     uint8_t AudioSample_field_0x10[4];
+
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    unsigned char q010[4];  /* AudioMixer */  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    uint32_t u32_15C;  // X10 supply (member_lookup)
+    uint32_t u32_160;  // X10 supply (member_lookup)
+    uint32_t u32_164;  // X10 supply (member_lookup)
+    unsigned int u32_168;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_7C;  // X10 supply (member_lookup)
+    unsigned int u32_88;  // X10 supply (member_lookup)
+    unsigned int u32_90;  // X10 supply (member_lookup)
+    unsigned int u32_94;  // X10 supply (member_lookup)
+    unsigned int u32_98;  // X10 supply (member_lookup)
+    unsigned int u32_9C;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
+    unsigned int u32_A4;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_lookup)
+    int u32_B0;  // X10 supply (member_lookup)
+    int u32_B4;  // X10 supply (member_lookup)
+    int u32_B8;  // X10 supply (member_lookup)
+    int u32_BC;  // X10 supply (member_lookup)
+    int u32_C0;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class AudioSource
@@ -425,6 +500,9 @@ public:
 
     virtual int * Get(); // 0x406130
 
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class AudioThread
@@ -435,6 +513,16 @@ public:
 
     virtual int UpdateStats(int64_t a2);
 
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class AudioTimer

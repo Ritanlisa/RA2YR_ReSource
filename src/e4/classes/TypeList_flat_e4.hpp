@@ -50,6 +50,8 @@ void ddtor(void *a1 = 0);
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    unsigned char u8_E;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

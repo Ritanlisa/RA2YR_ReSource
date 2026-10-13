@@ -19,6 +19,7 @@
 // ---- g57b5 W2b: TU-local vocab supply (object/supplied_bodies.cpp 同款) ----
 #include "core/cellcoord.hpp"  // CellCoord::To_CellObj 单源权威 (G42.36)
 #include "e4/classes/Rules_e4.hpp"  // g57c5 W5d scope supply
+#include "system/map.hpp"
 // G57w10: dword_8871E0 宿主（ida_globals 裸 uint; 语料 ->GDIWallDefense/__pad_13BC 访问; render/supplied_bodies.cpp 同款）
 struct dword_8871E0_v {
     unsigned char q000[0x7B0];
@@ -350,10 +351,10 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     }
     AudioController::Init(&a2->AudioController_1A0); /*0x4252dc*/
     AudioController::Init(&a2->AudioController_1B4); /*0x4252e7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a2 + 200)); /*0x4252f8*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q0C8); /*0x4252f8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q0CC); /*0x425309*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a2 + 380)); /*0x42531a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a2 + 384)); /*0x42532b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->u32_17C); /*0x42531a*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a2->q_180); /*0x42532b*/
     v4 = a2->occupant; /*0x425330*/
     if ( v4 <= -1 ) /*0x425339*/
     {
@@ -895,7 +896,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   {
     AnimClass_field_0xCC = this->AnimClass_field_0xCC; /*0x4220bb*/
     if ( AnimClass_field_0xCC ) /*0x4220c3*/
-      (*(void (__thiscall **)(int, AnimClass *))(*(unsigned int *)AnimClass_field_0xCC + 96))(AnimClass_field_0xCC, this); /*0x4220c8*/
+      AnimClass_field_0xCC->GetDirty(this); /*0x4220c8*/
     BuildingClass::AimTurret((BuildingClass *)this, 0); /*0x4220ce*/
     Mixer::ReleaseChannel(&this->AudioController_1A0); /*0x4220d9*/
     if ( !this->q198 ) /*0x4220de*/

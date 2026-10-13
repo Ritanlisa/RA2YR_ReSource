@@ -18,5 +18,11 @@ struct SlaveManagerClass_25 {
     int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x6B16A0
     DynamicVector *  QueryInterface(char a2);  // 0x6B1980
     unsigned int  Write(int a2);  // 0x6B13E0
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

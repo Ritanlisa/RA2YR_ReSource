@@ -117,6 +117,9 @@ struct TiberiumClass {
     int Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // def-aligned
     static char Grow(TiberiumClass * aP1, unsigned short *a2);
     char __pad_E4[8];  // 0xE4 (ml)
+
+    unsigned int q0A4;  // X10 supply (member_lookup)
+    unsigned int u32_A0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -20,5 +20,7 @@ struct VectorClass_cptr_MultiMission {
     int Capacity(void *a1_1);  // 0x5EEBB0
     char  SetAt(int a2, unsigned int * a3);  // 0x5EEC50
     char  GetAt(int a2, unsigned int * a3);  // 0x5EED90
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

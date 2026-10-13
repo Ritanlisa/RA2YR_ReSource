@@ -140,6 +140,25 @@ struct ParticleTypeClass {
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
     void ParticleTypeClass_LoadFromINI(uint8_t *** aP1);  // plateau: def-aligned C2039/C2660
+
+    VectorClass* ParticleTypeClass_field_0x2C8;  // X10 supply (member_types)
+    VectorClass* ParticleTypeClass_field_0x2CC;  // X10 supply (member_types)
+    unsigned char __pad_2B0;  // X10 supply (csp_canon_members)
+    unsigned char __pad_2D0;  // X10 supply (member_types)
+    unsigned char __pad_2E4;  // X10 supply (csp_canon_members)
+    unsigned char q294;  // X10 supply (member_lookup)
+    IUnknown* q298;  // X10 supply (member_lookup)
+    unsigned char q29C;  // X10 supply (member_lookup)
+    int q2B4;  // X10 supply (member_lookup)
+    int q2D4;  // X10 supply (member_lookup)
+    int q300;  // X10 supply (member_lookup)
+    int q310;  // X10 supply (member_lookup)
+    int q314;  // X10 supply (member_lookup)
+    unsigned char u32_2FC[4];  /* char[4] */  // X10 supply (member_lookup)
+    int u8_2D9;  // X10 supply (member_lookup)
+
+    unsigned int u32_1570;  // X10 supply (member_lookup)
+    unsigned int u32_EF0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

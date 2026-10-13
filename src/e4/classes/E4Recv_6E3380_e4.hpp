@@ -10,5 +10,7 @@ struct E4Recv_6E3380 {
     unsigned int M68;  // 0x44
 // --- flat members (END) ---
     int  sub_6E3380(int a2, int a3, int a4, int a5);  // 0x6E3380
+
+    char u32_11;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

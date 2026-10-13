@@ -2870,7 +2870,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
   v30.q014 = 10; /*0x5d7146*/
   v4 = aP0->attachedTag; /*0x5d714a*/
   v30.q010 = 0; /*0x5d714d*/
-  v5 = 1 << *(unsigned int *)(v4 + 180); /*0x5d7161*/
+  v5 = 1 << v4->u32_B4; /*0x5d7161*/
   if ( dword_A83CF0 <= 0 ) /*0x5d7165*/
     goto LABEL_20; /*0x5d7165*/
   v6 = v31; /*0x5d716b*/
@@ -2986,14 +2986,14 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
           if ( ((int)dword_A8B230->vfptr & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag((Timer *)(v24 + 84), 1); /*0x5d740a*/
           if ( (uint8_t)((House *)((House *)aP0))->IsCurrentPlayer() ) /*0x5d7411*/
-            (*(void (__thiscall **)(int *, int))(*v24 + 496))(v24, 5); /*0x5d7420*/
+            v24->vt_slot_496(5); /*0x5d7420*/
           else
-            (*(void (__thiscall **)(int *, int))(*v24 + 496))(v24, 11); /*0x5d742e*/
+            v24->vt_slot_496(11); /*0x5d742e*/
         }
         else
         {
           if ( v24 ) /*0x5d73cf*/
-            (*(void (__thiscall **)(int *, int))(*v24 + 32))(v24, 1); /*0x5d73d7*/
+            v24->COMStub_8(1); /*0x5d73d7*/
           v26 = a1; /*0x5d73da*/
           --v18; /*0x5d73de*/
         }

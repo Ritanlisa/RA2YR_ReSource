@@ -28,5 +28,11 @@ struct AITriggerTypeClass_40 {
     unsigned int *m_10;  // supplied (C2039)
     unsigned int *m_8;  // supplied (C2039)
     unsigned int *m_C;  // supplied (C2039)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

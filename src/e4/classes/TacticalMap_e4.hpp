@@ -43,6 +43,17 @@ struct TacticalMap {
     unsigned int u32_2B0;  // 0x2B0 (offset-truth)
     unsigned int u32_2B4;  // 0x2B4 (offset-truth)
     unsigned int u32_2B8;  // 0x2B8 (offset-truth)
+
+    unsigned char u32_214[4];  /* __int16 */  // X10 supply (member_lookup)
+    unsigned char u32_21C[4];  /* __int16 */  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_B4;  // X10 supply (member_lookup)
+    unsigned int u32_D90;  // X10 supply (member_lookup)
+    unsigned int u32_D94;  // X10 supply (member_lookup)
+    unsigned int u32_D98;  // X10 supply (member_lookup)
+    unsigned int u32_D9C;  // X10 supply (member_lookup)
+    unsigned int u32_DE4;  // X10 supply (member_lookup)
+    unsigned int u32_E0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

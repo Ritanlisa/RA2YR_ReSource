@@ -47,5 +47,10 @@ struct E4Recv_76AAF0 {
     unsigned int M56;  // 0x56
 // --- flat members (END) ---
     unsigned int * sub_76AAF0();  // 0x76AAF0
+
+    unsigned int q012;  // X10 supply (member_lookup)
+    unsigned int q014;  // X10 supply (member_lookup)
+    unsigned int q021;  // X10 supply (member_lookup)
+    unsigned int u32_22;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

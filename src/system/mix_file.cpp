@@ -14,6 +14,7 @@
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "system/minimal_carriers.hpp"  // G42.42q minimal carriersnamespace gamemd
+#include "core/hash_table.hpp"
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace mix {
 void SetSoundWarning(int p0);  // x4:signals@0x4790b0

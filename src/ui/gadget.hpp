@@ -80,6 +80,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int Hovered;  // G42.35: supplied-bodies vocab (e4 flat member)
     unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned char q030;  // X10 supply (member_lookup)
+    unsigned char q058;  // X10 supply (member_lookup)
+    unsigned int q0B8;  // X10 supply (member_lookup)
+    unsigned char q118;  // X10 supply (member_lookup)
+    unsigned int q12C;  // X10 supply (member_lookup)
+    unsigned int u32_170;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_types)
+    unsigned int u32_2D;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    unsigned int q050;  // X10 supply (member_lookup)
 };
 
 // ============================================================================

@@ -292,7 +292,7 @@ AbstractClass * * File::ParseFileHVA(int a2, int aP1, int a3)
     aP1->__pad_00C = v7; /*0x5bd64d*/
     if ( v7 ) /*0x5bd650*/
     {
-      (*(void (**)(int, int, int))(*(unsigned int *)aP1 + 40))(aP1, 16 * *(unsigned int *)(aP1 + 4), 1); /*0x5bd675*/
+      (*(void (**)(int, int, int))(*(unsigned int *)aP1 + 40))(aP1, 16 * aP1->q004, 1); /*0x5bd675*/
       v11 = 0; /*0x5bd67b*/
       if ( aP1->ptr_8 ) /*0x5bd678*/
       {

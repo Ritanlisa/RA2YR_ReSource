@@ -38,6 +38,12 @@ struct NullModemClass {
     unsigned char u32_51;  // 0x51 (offset-truth)
     unsigned int u32_5C;  // 0x5C (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
+
+    BlowStraw* q050;  // X10 supply (member_lookup)
+    AnimClass* q206C;  // X10 supply (member_lookup)
+    int u32_20;  // X10 supply (member_lookup)
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

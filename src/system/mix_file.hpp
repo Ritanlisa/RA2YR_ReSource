@@ -26,6 +26,8 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x40E320
     // --- gap2 auto-generated stub declarations (END) ---
+
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 template <typename T>
@@ -193,6 +195,12 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void CleanupCache();  // 0x69e210
     void DestroyCache();  // 0x69e180
     // === FUNCS-MOVE (END) ===
+
+    void* Previous;  // X10 supply (csp_canon_members)
+    unsigned char __pad_01C;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
+
+    int q020;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

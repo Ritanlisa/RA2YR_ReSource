@@ -29,6 +29,10 @@ struct WinsockInterfaceClass {
     unsigned char u32_42;  // 0x42 (offset-truth)
     unsigned char u32_45;  // 0x45 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
+
+    int u32_10;  // X10 supply (member_lookup)
+    int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_3F068;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

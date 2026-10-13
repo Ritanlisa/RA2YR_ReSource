@@ -311,6 +311,10 @@ public:
 
 virtual size_t ProcessFrame(char *,int,int,int,int);  // 0x42DF90
 
+
+    unsigned char Base64Straw_14[4];  /* Base64Straw */  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_BitmapClass
 // 1 methods in IDA
@@ -409,6 +413,8 @@ public:
     virtual void DlgProc(); // 0x52EC00
 
     uint8_t CampaignSelect_field_0x04[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_CampaignSelect
 // 1 methods in IDA
@@ -421,6 +427,15 @@ public:
 
     virtual void QueryInterface(); // 0x765600
 
+
+    unsigned char ComPtr_4[4];  /* ComPtr */  // X10 supply (member_lookup)
+    unsigned char ObjectClass_12[4];  /* ObjectClass */  // X10 supply (member_lookup)
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_25;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 39 methods in IDA
 class CheckListClass
@@ -490,6 +505,32 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* OnClick(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x488520
     // === FUNCS-MOVE (END) ===
+
+    int Count;  // X10 supply (csp_canon_members)
+    char Enabled;  // X10 supply (csp_canon_members)
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    bool IsInitialized;  // X10 supply (csp_canon_members)
+    unsigned int q019;  // X10 supply (member_lookup)
+    int q044;  // X10 supply (member_lookup)
+    int q050;  // X10 supply (member_lookup)
+    void* q068;  // X10 supply (member_lookup)
+    void* q06C;  // X10 supply (member_lookup)
+    void* q070;  // X10 supply (member_lookup)
+    void* q0C4;  // X10 supply (member_lookup)
+    void* q0C8;  // X10 supply (member_lookup)
+    void* q0CC;  // X10 supply (member_lookup)
+    unsigned int q0D0;  // X10 supply (member_lookup)
+    void* q124;  // X10 supply (member_lookup)
+    void* q128;  // X10 supply (member_lookup)
+    void* q12C;  // X10 supply (member_lookup)
+    void* q130;  // X10 supply (member_lookup)
+    unsigned int q170;  // X10 supply (member_lookup)
+    void * subList1;  // X10 supply (member_lookup)
+    unsigned int u32_118;  // X10 supply (member_lookup)
+    unsigned int u32_1A8;  // X10 supply (member_types)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_B8;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class CheckSum
@@ -501,6 +542,8 @@ public:
 
     virtual int AccumulateModulo(int16_t a2); // 0x632C40 (G42.35 def truth)
 
+
+    unsigned int tail_0;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 class Checkbox
@@ -559,6 +602,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void SetCapacity();  // 0x6258E0
     int GrowBuffer();  // 0x625990
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
 };
 // 4 methods in IDA
 // CSP: ControlClass matched via T1
@@ -597,6 +648,10 @@ public:
     unsigned int u32_1E;  // G42.39 data supply
 
     int m_Prev;  // G42.39 data supply
+
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 2 methods in IDA
 // CSP: CreditsPower matched via T1
@@ -707,19 +762,23 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* OnKeyUp(int a1, int a2, int a3);  // 0x4b5030
     // === FUNCS-MOVE (END) ===
+
+    char Enabled;  // X10 supply (csp_canon_members)
+    int q03C;  // X10 supply (member_lookup)
+    unsigned int q045;  // X10 supply (member_lookup)
+    int q048;  // X10 supply (member_lookup)
+    int q04C;  // X10 supply (member_lookup)
+    int q050;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_C0;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
-#ifndef GAMEMD_TREE_UNIVERSE
-class DropPod
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~DropPod() = default;
-
-    virtual void ProcessLanding(); // 0x4CE840
-
-};
-#endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class EditClass
 {
@@ -742,6 +801,8 @@ public:
     unsigned int *__pad_0;  // G42.35: supplied-bodies vfptr view
 
     uint8_t EditControl_field_0x04[4];
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 // 6 methods in IDA
 // CSP: FontClass matched via T1
@@ -767,6 +828,15 @@ virtual int GetPixelData(unsigned short,int);  // 0x4349B0
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6);  // 0x68C710
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned char __pad_014;  // X10 supply (csp_canon_members)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
+    unsigned int u32_E;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_FontClass
 // 2 methods in IDA
@@ -781,6 +851,13 @@ virtual int InitContext(int *,int);  // 0x4348F0
     virtual void DrawText(); // 0x434B90
 
     uint8_t FontRenderer_field_0x04[4];
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_E4_FontRenderer
 // 2 methods in IDA
@@ -821,27 +898,14 @@ public:
     unsigned int u32_314;  // G42.39 data supply
 
     unsigned int u32_318;  // G42.39 data supply
+
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1E;  // X10 supply (member_lookup)
 };
 // 5 methods in IDA
-#ifndef GAMEMD_TREE_UNIVERSE
-class InputManager_ProcessEvents
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~InputManager_ProcessEvents() = default;
-
-    virtual void AddRef(); // 0x40D230
-    virtual void Release(); // 0x40D240
-    virtual void StubReturnFalse(); // 0x4AEBD0
-    virtual void Stub(); // 0x4AEBE0
-    virtual void Vtable(); // 0x4F4320
-
-    uint8_t InputManager_ProcessEvents_field_0x04[4];
-    uint8_t InputManager_ProcessEvents_field_0x08[4];
-    uint8_t InputManager_ProcessEvents_field_0x0C[4];
-    uint8_t InputManager_ProcessEvents_field_0x10[4];
-};
-#endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class Keyboard
 {
@@ -907,6 +971,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int EditSubclassProc();  // 0x614190
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
 };
 // 8 methods in IDA
 // CSP: ListClass matched via T1
@@ -960,6 +1032,30 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_41;  // G42.39 data supply
 
     unsigned int u32_3C;  // G42.39 data supply
+
+    unsigned char __pad_019;  // X10 supply (csp_canon_members)
+    unsigned int u32_124;  // X10 supply (member_lookup)
+    unsigned int u32_128;  // X10 supply (member_lookup)
+    unsigned int u32_130;  // X10 supply (member_lookup)
+    unsigned int u32_16C;  // X10 supply (member_lookup)
+    unsigned int u32_170;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_2D;  // X10 supply (member_lookup)
+    unsigned int u32_2E;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
+    unsigned int u32_C8;  // X10 supply (member_lookup)
+    unsigned int u32_CC;  // X10 supply (member_lookup)
+    unsigned int u32_D0;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: ListNode matched via T1
@@ -973,23 +1069,10 @@ public:
 
 
     unsigned int u32_4;  // G42.39 data supply
+
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
-#ifndef GAMEMD_TREE_UNIVERSE
-#ifndef GAMEMD_G2_Main_DEF  // g57a5 W2d: twin-definition guard (ui_ext Main)
-#define GAMEMD_G2_Main_DEF 1
-class Main
-{
-public:
-    // design: default destructor (compiler-generated), no callgraph reference
-    virtual ~Main() = default;
-
-    virtual void CreateDialogMain();  // 0x4E1D00
-
-};
-#endif  // GAMEMD_G2_Main_DEF
-
-#endif  // G42.32u: e4 flat struct wins in marker TUs
 // 1 methods in IDA
 class ProgressAnim
 {
@@ -1052,6 +1135,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_3C;  // G42.39 data supply
 
     void * q010;  // G42.39 data supply
+
+    int q02C;  // X10 supply (member_lookup)
+    int q030;  // X10 supply (member_lookup)
+    unsigned int q045;  // X10 supply (member_lookup)
+    unsigned int q046;  // X10 supply (member_lookup)
+    unsigned int u32_2E;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 // 1 methods in IDA
 // CSP: TabCameoListClass matched via T1
@@ -1065,6 +1161,9 @@ public:
 
 
     unsigned int u32_54;  // G42.39 data supply
+
+    int u32_16;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
 };
 // 2 methods in IDA
 class TabControl
@@ -1124,6 +1223,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q091;  // G42.39 data supply (usage-typed)
     unsigned int * q08E;  // G42.39 data supply (usage-typed)
     unsigned int * q08D;  // G42.39 data supply (usage-typed)
+
+    int Count;  // X10 supply (csp_canon_members)
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    bool IsInitialized;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_ToolTipClass
 // 1 methods in IDA
@@ -1143,6 +1246,8 @@ public:
     unsigned int u32_C;  // G42.39 data supply
 
     unsigned int u32_4;  // G42.39 data supply
+
+    uint32_t u32_8;  // X10 supply (member_lookup)
 };
 // 1 methods in IDA
 class TooltipClass
@@ -1160,6 +1265,8 @@ public:
     unsigned int u32_258;  // G42.39 data supply
 
     unsigned int u32_24C;  // G42.39 data supply
+
+    unsigned char u32_87[4];  /* void */  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

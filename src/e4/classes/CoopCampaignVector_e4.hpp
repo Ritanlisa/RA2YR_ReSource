@@ -16,6 +16,11 @@ struct CoopCampaignVector {
     unsigned int Write(int a2);
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    uint8_t CoopCampaignVector_field_0x0C;  // X10 supply (member_types)
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -14,6 +14,9 @@ struct PlayerClass {
     char AssignPlayerIndex();
     int SetHouse(int a2);
     int HasPlayers(void *a1 = 0);  // 0x6abac0
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

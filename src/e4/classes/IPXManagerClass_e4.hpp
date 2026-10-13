@@ -24,6 +24,12 @@ struct IPXManagerClass {
     int destroyConnection(void *a1 = 0);  // 0x540d60
     unsigned int * createConnection(void *a1 = 0);  // 0x540d40
     int Socket;  // 0x0 (ml)
+
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

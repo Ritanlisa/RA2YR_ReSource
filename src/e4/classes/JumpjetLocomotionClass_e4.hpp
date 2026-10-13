@@ -339,6 +339,20 @@ struct JumpjetLocomotionClass {
     void* Update2(void * a1, void * a2);
     JumpjetLocomotionClass * ProcessAttach(int * Block, char a2);
     TeleportLocomotionClass * ConstructLocomotor(ILocomotion ** Block, char a2);
+
+    int32_t TurnRate;  // X10 supply (member_types)
+    unsigned char __pad_054;  // X10 supply (csp_canon_members)
+    ObjectClass* q0E4;  // X10 supply (member_lookup)
+    void* q0F4;  // X10 supply (member_lookup)
+    void* q0FC;  // X10 supply (member_lookup)
+    void* q100;  // X10 supply (member_lookup)
+    unsigned int u32_104;  // X10 supply (member_lookup)
+    unsigned int u32_108;  // X10 supply (member_lookup)
+    int u32_2B4;  // X10 supply (member_lookup)
+    int u32_3;  // X10 supply (member_lookup)
+    int u32_4FC;  // X10 supply (member_lookup)
+    uint8_t u8_50C;  // X10 supply (member_lookup)
+    int u8_53;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

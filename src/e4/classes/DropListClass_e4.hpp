@@ -11,6 +11,8 @@ struct DropListClass {
     char Enabled;  // 0x15
 // --- flat members (END) ---
     int COMStub();
+
+    unsigned int u32_34;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

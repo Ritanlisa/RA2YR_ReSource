@@ -21,7 +21,7 @@
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
-#include "e4/classes/Mission_e4_e4.hpp"
+#include "e4/classes/ScriptClass_e4.hpp"
 
 // 0x520AE0
 namespace gamemd {  // G42.18 ns repair
@@ -459,7 +459,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     (*((unsigned char *)&(v3))) = i->q090; /*0x6ed801*/
     if ( (unsigned char)v3 )
     {
-      if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !i->u8_689 ) /*0x6ed831*/
+      if ( i[27] && (dword_A8E7AC || !i->q081) && !i->u8_689 ) /*0x6ed831*/
       {
         v7 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v19); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/

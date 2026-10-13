@@ -19,5 +19,24 @@ struct JumpjetLocomotion {
     void* UpdateFacing();  // 0x54D0F0
     char __pad_5C[24];  // 0x5C (ml)
     char __pad_78[9];  // 0x78 (ml)
+
+    unsigned char __pad_038;  // X10 supply (csp_canon_members)
+    unsigned int q020;  // X10 supply (member_lookup)
+    unsigned int q024;  // X10 supply (member_lookup)
+    int q040;  // X10 supply (member_lookup)
+    int q044;  // X10 supply (member_lookup)
+    unsigned char q050;  // X10 supply (member_lookup)
+    unsigned char q054[4];  /* ProgressTimer */  // X10 supply (member_lookup)
+    int q074;  // X10 supply (member_lookup)
+    ObjectClass* q088;  // X10 supply (member_lookup)
+    int q08C;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned int u32_7C;  // X10 supply (member_lookup)
+    int u32_80;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

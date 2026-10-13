@@ -53,7 +53,7 @@
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
-#include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
+#include "system/map.hpp"
 struct AudioMixer;  // W13-C fwd (e4/classes/AudioMixer_e4.hpp 载体; (AudioMixer*) cast 用法)
 
 // G57w10: q000 externs (truth e4_globals_decls)
@@ -300,7 +300,7 @@ int * AudioController::Constructor()
     return (int *)v2; /*0x402168*/
   if ( v2 ) /*0x402148*/
   {
-    (*(void (__thiscall **)(int))(*(unsigned int *)(v2 + 212) + 8))(v2); /*0x402152*/
+    v2->u32_D4->vt_slot_8(); /*0x402152*/
     operator delete((void *)((void *)v2)); /*0x402156*/
   }
   return 0; /*0x40215e*/
@@ -5648,9 +5648,9 @@ int FootClass::BeginPowerUpdate()
   _ESI = this; /*0x4dbade*/
   House::PowerBeginUpdate((TechnoClass *)this, (int)a2); /*0x4dbae1*/
   Checksummer::Add_double((Checksummer *)a2, _ESI->unknown530, _ESI->unknown534); /*0x4dbaf6*/
-  v37 = (*((signed short *)(((unsigned char *)&(_ESI->currentMapCoords[0])) + 2))); /*0x4dbb09*/
+  v37 = (*((signed short *)(_ESI->FootClass_field_558 + 2))); /*0x4dbb09*/
   __asm { fild [esp+18h+var_4] } /*0x4dbb10*/
-  v38 = (*((signed short *)&(_ESI->currentMapCoords[0]))); /*0x4dbb14*/
+  v38 = (_ESI->FootClass_field_558); /*0x4dbb14*/
   __asm /*0x4dbb18*/
   {
     fild [esp+18h+var_4]
@@ -6615,7 +6615,7 @@ bool FootClass::IsTargetInRange() const
           if ( v11 && v11[135] != dword_A83D4C ) /*0x4de8f8*/
           {
             if ( (*(int (__thiscall **)(Object **, unsigned int, unsigned int))&(*v11)->__pad_38[48])(v11, 0, 0) ) /*0x4de902*/
-              *((unsigned char *)v12 + 128) = 1; /*0x4de909*/
+              v12->q080 = 1; /*0x4de909*/
           }
           v3 = v16; /*0x4de910*/
           result = i; /*0x4de914*/
@@ -9121,7 +9121,7 @@ namespace gamemd {
     v18 = (char *)g_Map_VisibleRect + v64; /*0x63c0ec*/
     Viewport = (Coord3D *)Display::GetViewport((int *)v65.q000); /*0x63c0ee*/
     v61 = *Viewport; /*0x63c0f5*/
-    v62 = *(unsigned int *)Viewport[1].q000; /*0x63c119*/
+    v62 = *Viewport->Coord3D_field_0x04.q000; /*0x63c119*/
     v20 = ComputeBounds(&v65, 6, v5, v59); /*0x63c11d*/
     v53 = *v20; /*0x63c124*/
     v54 = v20[1]; /*0x63c12b*/
@@ -9328,7 +9328,7 @@ int TechnoClass::CalculateDamage()
   if ( v4 == *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1248) ) /*0x663062*/
   {
     v20 = (unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1200); /*0x66306a*/
-    if ( (((unsigned char *)&(_ESI->customSound_controller[0]))[1]) ) /*0x66306e*/
+    if ( (_ESI->q051) ) /*0x66306e*/
     {
       v19 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4024); /*0x66307b*/
       goto LABEL_13; /*0x66307f*/
@@ -9338,7 +9338,7 @@ int TechnoClass::CalculateDamage()
   else if ( v4 == *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1352) ) /*0x66308f*/
   {
     v20 = (unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1304); /*0x663097*/
-    if ( (((unsigned char *)&(_ESI->customSound_controller[0]))[1]) ) /*0x66309b*/
+    if ( (_ESI->q051) ) /*0x66309b*/
     {
       v19 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4036); /*0x6630a8*/
       goto LABEL_13; /*0x6630ac*/
@@ -9348,7 +9348,7 @@ int TechnoClass::CalculateDamage()
   else
   {
     v20 = (unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1252); /*0x6630bc*/
-    if ( (((unsigned char *)&(_ESI->customSound_controller[0]))[1]) ) /*0x6630c0*/
+    if ( (_ESI->q051) ) /*0x6630c0*/
     {
       v19 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4028); /*0x6630cd*/
       goto LABEL_13; /*0x6630d1*/
@@ -9416,7 +9416,7 @@ int TechnoClass::CalculateDamage()
   (*((unsigned short *)&(v23))) = v10 / 256; /*0x6631e1*/
   (((unsigned short *)&(v23))[1]) = (*((signed int *)&(v25))) / 256; /*0x6631f4*/
   *(unsigned int *)v27 = (*((unsigned int *)&(v23))); /*0x6631fd*/
-  if ( (((unsigned char *)&(_ESI->customSound_controller[0]))[1]) ) /*0x663201*/
+  if ( (_ESI->q051) ) /*0x663201*/
     v12 = v20[9]; /*0x66320c*/
   else
     v12 = v20[8]; /*0x663215*/
@@ -9431,7 +9431,7 @@ int TechnoClass::CalculateDamage()
   }
   CreateSmokeEffectAt(v12, v19, v32, v33, v34, 0, 0); /*0x6632af*/
   PlaySoundEffectAt(&v32, v12, (unsigned int *)_ESI->vfptr3, v19, 1, 0); /*0x6632c7*/
-  return (*(int (__thiscall **)(void *))(*(unsigned int *)_ESI->vfptr3 + 248))(_ESI->vfptr3); /*0x6632d9*/
+  return _ESI->vtable4->Destroy_0(); /*0x6632d9*/
 }
 } // namespace ra2::game
 
@@ -13548,7 +13548,7 @@ int TechnoClass::AssignTarget_SyncLog(int a2)
     (*((unsigned char *)&(result))) = v3->abstractFlags; /*0x6fcef1*/
     if ( (result & 2) == 0 ) /*0x6fcef6*/
       goto LABEL_39; /*0x6fcef6*/
-    if ( *(unsigned char *)(v3 + 144) && v3->HouseClass_6C ) /*0x6fcf00*/
+    if ( v3->q090 && v3->HouseClass_6C ) /*0x6fcf00*/
     {
       (*((unsigned char *)&(result))) = (result & 4) != 0; /*0x6fcf08*/
       if ( !(unsigned char)result ) /*0x6fcf0e*/

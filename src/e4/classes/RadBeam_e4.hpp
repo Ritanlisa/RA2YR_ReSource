@@ -33,6 +33,12 @@ struct RadBeam {
 // --- flat members (END) ---
     unsigned int * InitState(int aP1, void *a1 = 0);
     void * Create(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    int u8_21;  // X10 supply (member_lookup)
+    int u8_22;  // X10 supply (member_lookup)
+    uint8_t u8_9;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

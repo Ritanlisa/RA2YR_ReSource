@@ -12,5 +12,11 @@ struct AudioClass {
     unsigned int tail_40;  // 0x40
 // --- flat members (END) ---
     BuildingTypeClass * * ProcessEvent();  // 0x7228B0
+
+    unsigned int u32_98;  // X10 supply (member_lookup)
+    unsigned int u32_F0;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
+    unsigned int u32_FC;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

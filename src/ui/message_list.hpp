@@ -77,6 +77,26 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7);  // 0x5D3BA0
     int clearMessages(int a1, int a2, int a3, int a4, int a5);  // 0x72A440
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int q012;  // X10 supply (member_lookup)
+    unsigned int q022;  // X10 supply (member_lookup)
+    unsigned int q028;  // X10 supply (member_lookup)
+    unsigned int q02C;  // X10 supply (member_lookup)
+    unsigned char q03C;  // X10 supply (member_lookup)
+    unsigned int q040;  // X10 supply (member_lookup)
+    unsigned int q044;  // X10 supply (member_lookup)
+    unsigned char q144;  // X10 supply (member_lookup)
+    unsigned char q2C8;  // X10 supply (member_lookup)
+    int u32_1480;  // X10 supply (member_lookup)
+    unsigned int u32_16C;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_2B0;  // X10 supply (member_lookup)
+    unsigned int u32_2B4;  // X10 supply (member_lookup)
+    unsigned int u32_2B8;  // X10 supply (member_lookup)
+    unsigned int u32_2BC;  // X10 supply (member_lookup)
+    unsigned int u32_2C0;  // X10 supply (member_lookup)
+    unsigned int u32_2C4;  // X10 supply (member_lookup)
+    unsigned char u8_21;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

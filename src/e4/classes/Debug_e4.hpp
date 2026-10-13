@@ -20,5 +20,8 @@ struct Debug {
     unsigned int u32_2728;  // 0x2728 (offset-truth)
     unsigned int u32_272C;  // 0x272C (offset-truth)
     unsigned int u32_2734;  // 0x2734 (offset-truth)
+
+    unsigned char q004;  // X10 supply (member_lookup)
+    int q0A0;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

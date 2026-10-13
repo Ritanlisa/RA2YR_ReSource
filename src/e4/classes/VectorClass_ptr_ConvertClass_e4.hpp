@@ -34,5 +34,7 @@ struct VectorClass_ptr_ConvertClass {
     int  FindItemIndex(unsigned int * a2);  // 0x49B0B0
     VectorClass_flat *  QueryInterface(char a2);  // 0x49B0E0
     DynamicVector *  Constructor_VectorClass_ConvertClass___(char a2);  // 0x49B130
+
+    unsigned char __pad_01C;  // X10 supply (csp_canon_members)
 };
 } // namespace gamemd

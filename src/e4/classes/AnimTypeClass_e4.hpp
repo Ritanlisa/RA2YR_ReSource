@@ -200,6 +200,17 @@ struct AnimTypeClass {
     char Flat_flag[1];  // 0x369 (ml)
     char __pad_98[3];  // 0x98 (ml)
     unsigned int q024;  // 0x24 (offset-truth)
+
+    unsigned char __pad_2A0;  // X10 supply (csp_canon_members)
+    IUnknown* q0C4;  // X10 supply (member_lookup)
+    IUnknown* q0CC;  // X10 supply (member_lookup)
+    unsigned char q0D0;  // X10 supply (member_lookup)
+    VectorClass* q0D8;  // X10 supply (member_lookup)
+    VectorClass* q0E0;  // X10 supply (member_lookup)
+    AnimTypeClass* q108;  // X10 supply (member_lookup)
+    unsigned int u32_C8;  // X10 supply (member_lookup)
+    uint32_t u32_D4;  // X10 supply (member_lookup)
+    unsigned int u32_DC;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

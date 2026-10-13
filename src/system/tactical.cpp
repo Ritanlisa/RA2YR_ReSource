@@ -1598,7 +1598,7 @@ int TacticalClass::RenderCells()
         g_MissionQueueFrame.altNextScenario[46] = 0; /*0x5503a0*/
         result = atexit(nullsub_21); /*0x5503a6*/
       }
-      (*((unsigned char *)&(result))) = (((unsigned char *)&(_EBX->field50))[1]); /*0x5503ae*/
+      (*((unsigned char *)&(result))) = (_EBX->u8_51); /*0x5503ae*/
       if ( !(unsigned char)result )
       {
         field24 = _EBX->field24; /*0x5503bc*/
@@ -1630,20 +1630,20 @@ int TacticalClass::RenderCells()
         v42 = 0; /*0x550463*/
         field30 = 0; /*0x550468*/
         v40 = 1; /*0x550470*/
-        if ( (unsigned char)v9 || (((unsigned char *)&(_EBX->field44))[1]) || (((unsigned char *)&(_EBX->field44))[2]) )
+        if ( (unsigned char)v9 || (_EBX->u8_45) || (_EBX->u8_46) )
         {
-          field30 = Random::Range(&Randomizer_Global, -(*(((unsigned char *)&(_EBX->field44)) + (sizeof(_EBX->field44) - 1))), (*(((unsigned char *)&(_EBX->field44)) + (sizeof(_EBX->field44) - 1)))); /*0x5504a6*/
-          TacticalClass_field_4C = Random::Range(&Randomizer_Global, -(*((unsigned char *)&(_EBX->field48))), (*((unsigned char *)&(_EBX->field48)))); /*0x5504bf*/
-          *(float *)&v44 = COERCE_FLOAT(Random::Range(&Randomizer_Global, -(((unsigned char *)&(_EBX->field48))[1]), (((unsigned char *)&(_EBX->field48))[1]))); /*0x5504d8*/
-          v11 = (int)((*((unsigned char *)&(_EBX->field44))) + field30) < 0 ? 0 : (*((unsigned char *)&(_EBX->field44))) + field30;
+          field30 = Random::Range(&Randomizer_Global, -(*(_EBX->field44 + (sizeof(_EBX->field44) - 1))), (*(_EBX->field44 + (sizeof(_EBX->field44) - 1)))); /*0x5504a6*/
+          TacticalClass_field_4C = Random::Range(&Randomizer_Global, -(_EBX->field48), (_EBX->field48)); /*0x5504bf*/
+          *(float *)&v44 = COERCE_FLOAT(Random::Range(&Randomizer_Global, -(_EBX->u32_49), (_EBX->u32_49))); /*0x5504d8*/
+          v11 = (int)((_EBX->field44) + field30) < 0 ? 0 : (_EBX->field44) + field30;
           if ( v11 > 255 ) /*0x5504f6*/
             v11 = 255; /*0x5504f8*/
-          TacticalClass_field_4C = (((unsigned char *)&(_EBX->field44))[1]) + TacticalClass_field_4C < 0
+          TacticalClass_field_4C = (_EBX->u8_45) + TacticalClass_field_4C < 0
                                  ? 0
-                                 : (((unsigned char *)&(_EBX->field44))[1]) + TacticalClass_field_4C;
+                                 : (_EBX->u8_45) + TacticalClass_field_4C;
           if ( TacticalClass_field_4C > 255 ) /*0x55051c*/
             TacticalClass_field_4C = 255; /*0x55051e*/
-          v44 = (((unsigned char *)&(_EBX->field44))[2]) + v44 < 0 ? 0 : (((unsigned char *)&(_EBX->field44))[2]) + v44;
+          v44 = (_EBX->u8_46) + v44 < 0 ? 0 : (_EBX->u8_46) + v44;
           v12 = v44; /*0x55053a*/
           if ( v44 > 255 ) /*0x550545*/
           {
@@ -1661,15 +1661,15 @@ int TacticalClass::RenderCells()
         {
           v40 = 0; /*0x550485*/
         }
-        v13 = (((unsigned char *)&(_EBX->field40))[2]); /*0x5505b2*/
+        v13 = (_EBX->u8_42); /*0x5505b2*/
         v45 = (int)&_EBX->field40 + 1; /*0x5505b8*/
         *(float *)&v44 = 1.0; /*0x5505bc*/
-        (*((unsigned char *)&(v51))) = (((unsigned char *)&(_EBX->field40))[1]); /*0x5505cd*/
+        (*((unsigned char *)&(v51))) = (_EBX->u32_41); /*0x5505cd*/
         (*((unsigned char *)&(v49))) = (unsigned char)v51 != 0; /*0x5505d1*/
         (*((unsigned char *)&(v48))) = v13 != 0; /*0x5505d8*/
-        field40_high = (*(((unsigned char *)&(_EBX->field40)) + (sizeof(_EBX->field40) - 1))); /*0x5505dc*/
+        field40_high = (*(_EBX->field40 + (sizeof(_EBX->field40) - 1))); /*0x5505dc*/
         (*((unsigned char *)&(v47))) = field40_high != 0; /*0x5505e4*/
-        if ( (((unsigned char *)&(_EBX->field50))[2]) ) /*0x5505e8*/
+        if ( (_EBX->u8_52) ) /*0x5505e8*/
         {
           __asm /*0x5505f2*/
           {
@@ -1688,7 +1688,7 @@ int TacticalClass::RenderCells()
         }
         if ( stru_A8EB00.vfptr[30] ) /*0x550619*/
         {
-          if ( (*((unsigned char *)&(_EBX->field50))) ) /*0x55061f*/
+          if ( (_EBX->field50) ) /*0x55061f*/
           {
             result = g_DSurface_Hidden_2->vt_slot_60(/*0x550655*/
                        g_DSurface_Hidden_2, &DSurface_ViewBounds, &v55, &v53, v45, v8, v10, 0, 1, 1, 1, v44);
@@ -2760,10 +2760,8 @@ int TacticalClass::ProcessMouseClick(int x, int y)
                       if ( v28 ) /*0x653c70*/
                       {
                         ClosestEnemy = FindRadarClosestEnemy(0, (int)v28); /*0x653c74*/
-                        v9 = (*(int (__thiscall **)(int, void *, unsigned int))(*(unsigned int *)ClosestEnemy + 116))( /*0x653c83*/
-                               ClosestEnemy,
-                               v28,
-                               0);
+                        v9 = ClosestEnemy->COMStub_29(/*0x653c83*/
+                               ClosestEnemy, v28, 0);
                       }
                       else
                       {

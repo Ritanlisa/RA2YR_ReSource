@@ -37,6 +37,7 @@ using ra2::game::AbstractClass;
 // g57b5 W1b: e4 Vector3 include removed (C2011 vs utility_ext.hpp:1861 provider-in-TU)
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "misc/misc_ext.hpp"
+#include "system/map.hpp"
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int ProcessTechnoMovementAction(char *p_this); }  // x4:ida@0x415c60
 
@@ -791,7 +792,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
         !(uint8_t)Game::Stub3((int)&v27)) )
   {
     BulletClass_field_0xAC = _ESI->BulletClass_field_0xAC; /*0x4680e2*/
-    if ( !BulletClass_field_0xAC[670] && !_ESI->__pad_158[0] ) /*0x4680f6*/
+    if ( !BulletClass_field_0xAC[670] && !_ESI->q158 ) /*0x4680f6*/
     {
       if ( BulletClass_field_0xAC[566] ) /*0x468104*/
       {
@@ -802,7 +803,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
           fchs
           fstp [esp+0D0h+var_D0]; double
         }
-        Math::CalcAngle(v19, *(double *)&_ESI->__pad_B4[52]); /*0x468137*/
+        Math::CalcAngle(v19, *&_ESI->q0E8); /*0x468137*/
         __asm /*0x46813c*/
         {
           fsub ds:dbl_7E2820
@@ -835,7 +836,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
         }
         Math::Sqrt(v20); /*0x46819f*/
         __asm { fstp qword ptr [esp+0C8h+var_B0] } /*0x4681aa*/
-        Math::CalcAngle(*(double *)&_ESI->__pad_B4[68], v25); /*0x4681c0*/
+        Math::CalcAngle(*&_ESI->u32_F8, v25); /*0x4681c0*/
         __asm /*0x4681c5*/
         {
           fsub ds:dbl_7E2820
@@ -862,15 +863,15 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
         {
           v31 = _ESI->GetAnimFrame(); /*0x468275*/
           v8 = _ESI->GetZAboveGround(); /*0x468289*/
-          v27 = *(unsigned int *)&_ESI->__pad_1C[128]; /*0x46828f*/
-          v28 = *(unsigned int *)&_ESI->__pad_1C[132]; /*0x46829b*/
-          v29 = *(unsigned int *)&_ESI->__pad_1C[136]; /*0x4682a2*/
+          v27 = *&_ESI->Coord_9C; /*0x46828f*/
+          v28 = *&_ESI->q0A0; /*0x46829b*/
+          v29 = *&_ESI->q0A4; /*0x4682a2*/
           GroundHeight = Cell::GetGroundHeight(&v27); /*0x4682b0*/
-          if ( !_ESI->__pad_1C[112] ) /*0x4682b4*/
+          if ( !_ESI->onBridge ) /*0x4682b4*/
           {
-            v9 = *(unsigned int *)&_ESI->__pad_1C[132]; /*0x4682c0*/
-            v10 = *(unsigned int *)&_ESI->__pad_1C[136]; /*0x4682c3*/
-            v27 = *(unsigned int *)&_ESI->__pad_1C[128]; /*0x4682c6*/
+            v9 = *&_ESI->q0A0; /*0x4682c0*/
+            v10 = *&_ESI->q0A4; /*0x4682c3*/
+            v27 = *&_ESI->Coord_9C; /*0x4682c6*/
             v28 = v9; /*0x4682ce*/
             v29 = v10; /*0x4682d8*/
             if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)->flags[0] & 0x100) != 0 /*0x4682f3*/
@@ -913,7 +914,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
           }
           else if ( v14[681] ) /*0x468397*/
           {
-            v16 = *(unsigned int *)&_ESI->OccupantAnim[4]; /*0x4683a1*/
+            v16 = *&_ESI->InheritedColor; /*0x4683a1*/
             if ( v16 == -1 ) /*0x4683aa*/
               v15 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable /*0x4683d1*/
                                           + 4 * *(unsigned int *)&dword_A83D4C[134].__pad_90[4])
@@ -1008,7 +1009,7 @@ int BulletClass::ProcessImpact(void* a1, void* a2) {
     if ( BulletClass_field_0xB0 == 8 ) /*0x4685e0*/
     {
       a2 = v3; /*0x4685e2*/
-      if ( *(unsigned char *)(*((unsigned int *)v3 + 43) + 748) ) /*0x4685ec*/
+      if ( *(unsigned char *)(v3->Type + 748) ) /*0x4685ec*/
       {
         BulletClass_field_0xB0 = 0; /*0x4685fa*/
         if ( dword_89DE28 > 0 ) /*0x4685fe*/
@@ -1215,9 +1216,9 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
       }
       else
       {
-        (*(void (__thiscall **)(int, int *))(*(unsigned int *)_EBX + 436))(_EBX, &v58); /*0x468977*/
+        _EBX->SetPosition(&v58); /*0x468977*/
       }
-      (*(void (__thiscall **)(int, int *))(*(unsigned int *)_EBX + 436))(_EBX, &v58); /*0x468986*/
+      _EBX->SetPosition(&v58); /*0x468986*/
       *(unsigned int *)(_EBX + 272) = 0; /*0x46898c*/
       __asm /*0x468992*/
       {
@@ -1428,7 +1429,7 @@ bool BulletClass::CheckBulletCollision(void* a1) {
     v8 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &this->NextAnim); /*0x468c36*/
     BulletClass_field_0xB0 = this->q_B0; /*0x468c3b*/
     if ( BulletClass_field_0xB0 ) /*0x468c43*/
-      BulletClass_field_0xB0 = (ParticleSystemClass *)BulletClass_field_0xB0[2].referenceCount; /*0x468c45*/
+      BulletClass_field_0xB0 = BulletClass_field_0xB0->vtable3.referenceCount; /*0x468c45*/
     if ( TrajectoryHelper::GetObstacle( /*0x468c6d*/
            v6,
            v7,
@@ -7299,7 +7300,7 @@ int ParticleSystemClass::Write(int a1, void* a1_2) {
       v4->vtable4 = &off_7EFB70; /*0x62ff81*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x62ff94*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 228)); /*0x62ffa5*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->Tactical_E4); /*0x62ffa5*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->q0E0); /*0x62ffb6*/
     v6 = *a1_2; /*0x62ffbb*/
     a1 = 0; /*0x62ffc7*/
@@ -7584,14 +7585,14 @@ int BulletClass::ComputeImpactTrajectory(int a1) {
   v7 = v6; /*0x66219e*/
   if ( v6 > (int)_ESI->NeedsSaveOrLink ) /*0x6621a5*/
   {
-    v8 = (unsigned int *)(*(int (__thiscall **)(void *))(*(unsigned int *)_ESI->vfptr3 + 444))(_ESI->vfptr3); /*0x6621be*/
+    v8 = (unsigned int *)_ESI->vtable4->GetCellCoords(); /*0x6621be*/
     if ( !v8 /*0x6621f1*/
       || (v8[80] & 0x100) == 0
       || (NeedsSaveOrLink = _ESI->NeedsSaveOrLink,
           *(void **)((*(int (__thiscall **)(unsigned int *, unsigned int *))(*v8 + 72))(v8, v17) + 8) != NeedsSaveOrLink)
       || v7 > (int)NeedsSaveOrLink + dword_B04E6C )
     {
-      if ( (*(int (__thiscall **)(void *))(*(unsigned int *)_ESI->vfptr3 + 456))(_ESI->vfptr3) > 0 ) /*0x662212*/
+      if ( _ESI->vtable4->GetZAboveGround() > 0 ) /*0x662212*/
         return 0; /*0x662228*/
     }
   }

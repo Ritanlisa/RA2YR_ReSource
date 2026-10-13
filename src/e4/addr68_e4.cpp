@@ -848,7 +848,7 @@ int PostLoadInitScenario()
     if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
     {
       v12 = TeamClass::FindOrCreate(v7); /*0x684e44*/
-      Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v12 + 36) + 160) + 164) + 184)); /*0x684e5b*/
+      Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(v12->u32_24 + 160) + 164) + 184)); /*0x684e5b*/
       if ( Owner ) /*0x684e62*/
       {
         v14 = *(unsigned int *)(Owner + 64); /*0x684e64*/
@@ -1381,11 +1381,11 @@ AbstractClass * * SessionClass_AssignHouses()
       *(unsigned short *)(v9 + 90194) = 0; /*0x6880a4*/
       *(unsigned char *)(v9 + 492) = 1; /*0x6880ad*/
       sub_4FCE00((ObjectClass *)v9, v7->q053, v7->q_4B, *(int *)&g_Rules_Bases); /*0x6880c4*/
-      *(unsigned int *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(*(unsigned int *)(v7 + 83)); /*0x6880d9*/
+      *(unsigned int *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(v7->q053); /*0x6880d9*/
       HouseClass::GetColor((char *)v9); /*0x6880df*/
       ComputeSessionColorVector((ObjectClass *)v9); /*0x6880e6*/
       *(unsigned int *)(v9 + 90200) = SessionClass::GetOption((int *)v7); /*0x6880f2*/
-      *(unsigned int *)(v9 + 90204) = *(unsigned int *)(v7 + 99); /*0x688101*/
+      *(unsigned int *)(v9 + 90204) = v7->u32_63; /*0x688101*/
       if ( !v28 ) /*0x688107*/
       {
         dword_A83D4C = (Object *)v9; /*0x688109*/

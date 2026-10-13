@@ -12,5 +12,7 @@ struct E4Recv_5B4400 {
 // --- flat members (END) ---
     void sub_5B4400();  // 0x5B4400
     void* occupant;  // (W16G3 @0x5b440d delete/bool)
+
+    unsigned int q012;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

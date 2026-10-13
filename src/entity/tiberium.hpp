@@ -118,6 +118,25 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x7220d0
     // === FUNCS-MOVE (END) ===
     int SpreadGrowth(int a2, unsigned int *a3);  // (G42.35h supply)
+
+    int32_t Power_2;  // X10 supply (csp_canon_members)
+    int32_t TiberiumClass_field_10C_d;  // X10 supply (csp_canon_members)
+    int32_t TiberiumClass_field_110_d;  // X10 supply (csp_canon_members)
+    int32_t TiberiumClass_field_114_d;  // X10 supply (csp_canon_members)
+    int32_t TiberiumClass_field_F4_d;  // X10 supply (csp_canon_members)
+    int32_t TiberiumClass_field_F8_d;  // X10 supply (csp_canon_members)
+    int32_t TiberiumClass_field_FC_d;  // X10 supply (csp_canon_members)
+    int32_t ambientSoundController;  // X10 supply (csp_canon_members)
+    void* isInLogic;  // X10 supply (csp_canon_members)
+    LineTrail* lineTrailer;  // X10 supply (member_lookup)
+    unsigned char location[4];  /* CoordStruct */  // X10 supply (member_lookup)
+    unsigned int q0E8;  // X10 supply (member_lookup)
+    unsigned int u32_308;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
+    unsigned int u32_D1;  // X10 supply (member_lookup)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

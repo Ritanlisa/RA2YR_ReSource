@@ -15,5 +15,7 @@ struct E4Recv_5CE3A0 {
     int  sub_5CE3A0(int a2, int * a3);  // 0x5CE3A0
     void* attachedTag;  // (W16G3 @0x5ce44b)
     unsigned int attachedBomb;  // @0x5ce3e1 ClipRectIntersection slot (W16G3 raw-usage vocab)
+
+    unsigned int q020;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

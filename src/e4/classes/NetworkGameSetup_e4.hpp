@@ -16,6 +16,10 @@ struct NetworkGameSetup {
     int ReadRulesUnknown();
     unsigned int * DeleteComPtr(unsigned int * Block, char a2);
     void SendGameSetupPacket(wchar_t * Source);
+
+    int q008;  // X10 supply (member_lookup)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 

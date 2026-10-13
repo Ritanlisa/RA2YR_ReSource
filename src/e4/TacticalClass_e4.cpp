@@ -1271,7 +1271,7 @@ LABEL_18:
     v7 = 0; /*0x6da3e1*/
     if ( !v6 ) /*0x6da3e5*/
     {
-      if ( !(*(int (**)(unsigned char *))(*(unsigned int *)v5 + 136))(v5) ) /*0x6da50e*/
+      if ( !(*(int (**)(unsigned char *))(*&v5->q220))(v5) ) /*0x6da50e*/
         goto LABEL_15; /*0x6da50e*/
       v14 = (*(int (**)(unsigned char *))(*(unsigned int *)v5 + 136))(v5); /*0x6da520*/
       if ( (*(int (**)(int))(*(unsigned int *)v14 + 44))(v14) != 37 /*0x6da540*/

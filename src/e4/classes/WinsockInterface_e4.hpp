@@ -18,5 +18,12 @@ struct WinsockInterface {
     int Init(void *a1 = 0, void *a2 = 0);  // 0x7B1DE0
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     unsigned int *q000;  // 0x0 (canon-mt)
+
+    unsigned int u32_3D0;  // X10 supply (member_lookup)
+    unsigned int u32_3D4;  // X10 supply (member_lookup)
+    unsigned int u32_3D8;  // X10 supply (member_lookup)
+    unsigned int u32_3F06C;  // X10 supply (member_lookup)
+    unsigned char u8_37C;  // X10 supply (member_lookup)
+    unsigned char u8_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

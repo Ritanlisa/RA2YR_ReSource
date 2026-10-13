@@ -32,6 +32,15 @@ struct ToolTipClass {
     unsigned int __pad_234;  // 0x234 (ToolTipManager embedded VectorClass<ToolTip*> vfptr; G42 stale name q08D)
     unsigned int __pad_238;  // 0x238 (embedded vector Items; G42 stale name q08E)
     unsigned int __pad_244;  // 0x244 (vector loop bound; G42 stale name q091)
+
+    unsigned int u32_23C;  // X10 supply (member_lookup)
+    unsigned int u32_241;  // X10 supply (member_lookup)
+    unsigned int u32_24C;  // X10 supply (member_lookup)
+    unsigned char u32_24C7[4];  /* void */  // X10 supply (member_lookup)
+    unsigned int u32_250;  // X10 supply (member_lookup)
+    unsigned int u32_254;  // X10 supply (member_lookup)
+    unsigned int u32_258;  // X10 supply (member_lookup)
+    unsigned int u32_25C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

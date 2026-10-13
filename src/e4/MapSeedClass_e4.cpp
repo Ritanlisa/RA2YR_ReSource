@@ -296,7 +296,7 @@ LABEL_18:
                     do /*0x5a63c4*/
                     {
                       NeighbourContent->Cell_field_0x38 = g_CellTileTypeCache + 1; /*0x5a63b1*/
-                      NeighbourContent->__pad_FC[30] = 1; /*0x5a63b4*/
+                      NeighbourContent->u32_11A = 1; /*0x5a63b4*/
                       NeighbourContent = (Cell *)Cell::GetNeighbourContent(NeighbourContent, 0); /*0x5a63c0*/
                     }
                     while ( Value::InRange((Value *)NeighbourContent) ); /*0x5a63c4*/

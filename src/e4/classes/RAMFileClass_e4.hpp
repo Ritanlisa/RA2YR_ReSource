@@ -24,5 +24,9 @@ struct RAMFileClass {
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned char u32_1D;  // 0x1D (offset-truth)
+
+    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
+    int q010;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

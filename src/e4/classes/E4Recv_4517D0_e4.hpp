@@ -11,5 +11,7 @@ struct E4Recv_4517D0 {
 // --- flat members (END) ---
     int sub_4517D0();  // 0x4517D0
     unsigned char u32_2242;  // 0x2242 (offset-truth)
+
+    unsigned int u32_55C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -20,6 +20,8 @@ struct LoadingScreen {
     static char CleanupObjects(void *a1);
     static void DestroyFileTrees();
     void FreeResources2();
+
+    unsigned int u32_80;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

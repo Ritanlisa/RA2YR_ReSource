@@ -13,5 +13,7 @@ struct E4Recv_689790 {
     unsigned int u32_7220;  // 0x7220
 // --- flat members (END) ---
     char  sub_689790(void * a2, unsigned char * a3);  // 0x689790
+
+    unsigned char u8_28;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -60,9 +60,7 @@ bool IsRookie();   // 0x74FFC0
     bool IsElite();    // 0x750010
 };
 
-struct TurretControl {
-    uint32_t data[4];
-};
+
 
 struct RecoilData {
     TurretControl   Turret;
@@ -77,16 +75,11 @@ struct TransitionTimer {
 };
 
 template <typename T>
-struct IndexBitfield {
+struct IndexBitfieldT {
     T* Items;
 };
 
-struct OwnedTiberiumStruct {
-    float Amount1;
-    float Amount2;
-    float Amount3;
-    float Amount4;
-};
+
 
 class TechnoClass : public RadioClass {
 
@@ -948,7 +941,7 @@ public:
     TimerStruct             reloadTimer;
     uint32_t                currentBurstCount;
     uint32_t                currentBarrelIndex;
-    IndexBitfield<HouseClass*> displayProductionTo;
+    IndexBitfieldT<HouseClass*> displayProductionTo;
     int32_t                 controlGroup;    // 0-9 CTRL+group number (YRpp Group; was misnamed Owner)
     AbstractClass*          focus;
     HouseClass*             owner;
@@ -1182,6 +1175,104 @@ public:  // g57c5 W4b supply slot
     TimerStruct __pad_194;  // 0x194 g57c5 W4b (self-desc vocab, ml slot witness)
 public:  // g57c5 W6 owner supply
     unsigned int q0F2;  // 0xF2 g57c5 W6 (ml TechnoClass@0xF2 own)
+
+    void* NeedsSaveOrLink;  // X10 supply (csp_canon_members)
+    void* abstractFlags;  // X10 supply (csp_canon_members)
+    unsigned int airstrikeTintStage_2;  // X10 supply (csp_canon_members)
+    unsigned int airstrikeTintStage_d;  // X10 supply (csp_canon_members)
+    void* ambientSoundController;  // X10 supply (csp_canon_members)
+    BombClass* attachedBomb;  // X10 supply (csp_canon_members)
+    void* attachedTag;  // X10 supply (csp_canon_members)
+    void* currentMission;  // X10 supply (csp_canon_members)
+    void* customSound_controller;  // X10 supply (csp_canon_members)
+    unsigned char facing[4];  /* FacingStruct */  // X10 supply (csp_canon_members)
+    void* fallRate;  // X10 supply (csp_canon_members)
+    bool hasParachute;  // X10 supply (csp_canon_members)
+    void* health;  // X10 supply (csp_canon_members)
+    void* inLimbo;  // X10 supply (csp_canon_members)
+    bool inOpenToppedTransport;  // X10 supply (csp_canon_members)
+    void* isAliveFlag;  // X10 supply (csp_canon_members)
+    bool isInLogic;  // X10 supply (csp_canon_members)
+    bool isOnMap;  // X10 supply (csp_canon_members)
+    void* isSelected;  // X10 supply (csp_canon_members)
+    bool isVisible;  // X10 supply (csp_canon_members)
+    void* lastCommands;  // X10 supply (csp_canon_members)
+    unsigned int lastLayer;  // X10 supply (csp_canon_members)
+    void* lineTrailer;  // X10 supply (csp_canon_members)
+    void* location;  // X10 supply (csp_canon_members)
+    void* missionQueued;  // X10 supply (csp_canon_members)
+    int32_t missionStartTime;  // X10 supply (csp_canon_members)
+    int32_t missionStatus;  // X10 supply (csp_canon_members)
+    bool needsRedraw;  // X10 supply (csp_canon_members)
+    void* nextArrayIndex;  // X10 supply (csp_canon_members)
+    void* nextObject;  // X10 supply (csp_canon_members)
+    unsigned int occupant;  // X10 supply (csp_canon_members)
+    void* onBridge;  // X10 supply (csp_canon_members)
+    void* owningHouseIndex;  // X10 supply (csp_canon_members)
+    AnimClass* parachute;  // X10 supply (csp_canon_members)
+    unsigned int q019;  // X10 supply (member_lookup)
+    unsigned int q01E;  // X10 supply (member_lookup)
+    unsigned int q051;  // X10 supply (member_lookup)
+    unsigned int q07D;  // X10 supply (member_lookup)
+    unsigned int q173;  // X10 supply (member_lookup)
+    VectorClass* q17A0;  // X10 supply (member_lookup)
+    unsigned char q18C[4];  /* char[4] */  // X10 supply (member_lookup)
+    unsigned int q1A2;  // X10 supply (member_lookup)
+    unsigned int q578;  // X10 supply (member_lookup)
+    void* q6C0;  // X10 supply (member_lookup)
+    void* queuedMission;  // X10 supply (csp_canon_members)
+    unsigned int radioLinks;  // X10 supply (csp_canon_members)
+    void* referenceCount;  // X10 supply (csp_canon_members)
+    void* spawnStatus;  // X10 supply (csp_canon_members)
+    int32_t suspendedMission;  // X10 supply (csp_canon_members)
+    int16_t targetLaserOpacity;  // X10 supply (csp_canon_members)
+    unsigned int u32_11;  // X10 supply (member_lookup)
+    unsigned int u32_11BC;  // X10 supply (member_lookup)
+    int u32_14B0;  // X10 supply (member_lookup)
+    unsigned int u32_14D0;  // X10 supply (member_lookup)
+    unsigned int u32_1D;  // X10 supply (member_lookup)
+    unsigned int u32_1ED;  // X10 supply (member_lookup)
+    unsigned int u32_2ED4;  // X10 supply (member_lookup)
+    unsigned int u32_3C2;  // X10 supply (member_lookup)
+    unsigned int u32_3D2;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_5490;  // X10 supply (member_lookup)
+    unsigned int u32_5494;  // X10 supply (member_lookup)
+    unsigned int u32_5496;  // X10 supply (member_lookup)
+    unsigned int u32_54D8;  // X10 supply (member_lookup)
+    unsigned int u32_5714;  // X10 supply (member_lookup)
+    unsigned int u32_577C;  // X10 supply (member_lookup)
+    unsigned int u32_59C;  // X10 supply (member_lookup)
+    unsigned int u32_5CC;  // X10 supply (member_lookup)
+    unsigned int u32_5D4;  // X10 supply (member_lookup)
+    unsigned int u32_661;  // X10 supply (member_lookup)
+    unsigned int u32_684;  // X10 supply (member_lookup)
+    unsigned int u32_68D;  // X10 supply (member_lookup)
+    unsigned int u32_694;  // X10 supply (member_lookup)
+    unsigned int u32_6AD;  // X10 supply (member_lookup)
+    unsigned int u32_6AF;  // X10 supply (member_lookup)
+    unsigned int u32_6B5;  // X10 supply (member_lookup)
+    unsigned int u32_6B8;  // X10 supply (member_lookup)
+    unsigned int u32_6C8;  // X10 supply (member_lookup)
+    unsigned int u32_6CC;  // X10 supply (member_lookup)
+    unsigned int u32_6D0;  // X10 supply (member_lookup)
+    unsigned int u32_6D1;  // X10 supply (member_lookup)
+    unsigned int u32_6D2;  // X10 supply (member_lookup)
+    unsigned int u32_6D3;  // X10 supply (member_lookup)
+    unsigned int u32_6D5;  // X10 supply (member_lookup)
+    unsigned int u32_6D8;  // X10 supply (member_lookup)
+    unsigned int u32_6DC;  // X10 supply (member_lookup)
+    int u32_6E0;  // X10 supply (member_lookup)
+    int u32_D;  // X10 supply (member_lookup)
+    int u8_6DB;  // X10 supply (member_lookup)
+    unsigned char u8_B5;  // X10 supply (member_lookup)
+    void* uniqueId;  // X10 supply (csp_canon_members)
+    unsigned int visibilityFlags;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
+    float warpFactor_d;  // X10 supply (csp_canon_members)
 };
 
 } // namespace game

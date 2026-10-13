@@ -16,5 +16,7 @@ struct E4Recv_4A2880 {
     unsigned int M32;  // 0x32
 // --- flat members (END) ---
     void sub_4A2880();  // 0x4A2880
+
+    unsigned int q020;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

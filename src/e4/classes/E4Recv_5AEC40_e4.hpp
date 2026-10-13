@@ -17,5 +17,9 @@ struct E4Recv_5AEC40 {
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
     int  sub_5AEC40(float a2);  // 0x5AEC40
+
+    unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
+    unsigned int q050;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

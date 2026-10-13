@@ -38,6 +38,11 @@ struct TemporalClass {
     unsigned int u32_48;  // 0x48 (offset-truth)
     unsigned int u32_4A8;  // 0x4A8 (offset-truth)
     unsigned char u32_A6;  // 0xA6 (offset-truth)
+
+    unsigned char __pad_028;  // X10 supply (csp_canon_members)
+    int q040;  // X10 supply (member_lookup)
+    unsigned int q04C;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

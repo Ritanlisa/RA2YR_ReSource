@@ -27,6 +27,8 @@ struct BaseNodeClass
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Vector_Constructor(int a1, int a2);  // 0x42FC40
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int q00D;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_BaseNodeClass_DEF
 
@@ -78,6 +80,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadArrayFields(int a1, int a2);  // 0x42f070
     // === FUNCS-MOVE (END) ===
     int ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int a4, int a5, int a6);
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    unsigned char q08C[6];  /* VectorClass */  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_BaseClass_DEF
 

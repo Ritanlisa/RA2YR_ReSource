@@ -24,6 +24,9 @@ struct GameSettings {
     static char * FindFlagged();
     void * ParseNetworkAddress();
     int SetScoreVolume(int volume, void *a2, void *a3);
+
+    float q056;  // X10 supply (member_lookup)
+    unsigned int u32_4A;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

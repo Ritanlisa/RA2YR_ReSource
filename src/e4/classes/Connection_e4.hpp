@@ -11,5 +11,7 @@ struct Connection {
     void* Active;  // 0x0 (no offset truth)
     int GetSpeed();  // 0x5422F0
     int Close(void *a1 = 0, void *a2 = 0);  // 0x543090
+
+    unsigned int u32_48;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

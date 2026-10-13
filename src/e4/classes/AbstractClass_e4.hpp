@@ -419,6 +419,10 @@ int DTOR(); // 0x4101F0
     int  sub_5D9060(int a2);  // 0x5D9060
     BOOL sub_7325C0();
     static int IsTechno(AbstractClass *p_this);  // x4:ida@0x40dd20
+
+    uint16_t u16_A2;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    char u8_C8;  // X10 supply (member_lookup)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

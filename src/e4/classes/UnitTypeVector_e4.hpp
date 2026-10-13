@@ -16,6 +16,11 @@ struct UnitTypeVector {
     unsigned int UnitTypeVector_field_0x10;  // @0x511dee (W16G3 raw-usage vocab)
     unsigned int UnitTypeVector_field_0x14;  // @0x511df6 (W16G3 raw-usage vocab)
     unsigned int UnitTypeVector_field_0x18;  // @0x511909 (W16G3 raw-usage vocab)
+
+    uint8_t UnitTypeVector_field_0x0C;  // X10 supply (member_types)
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_008;  // X10 supply (csp_canon_members)
+    int q00C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

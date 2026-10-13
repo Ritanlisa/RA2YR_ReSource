@@ -29,5 +29,29 @@ char LoadWithProgress(void *a1 = 0, void *a2 = 0);
     int  SetDword32(int a2);  // 0x642B10
     int  SetDword30(int a2);  // 0x642DF0
     char __pad_9C[512];  // 0x9C (ml)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
+    int q01C;  // X10 supply (member_lookup)
+    int q020;  // X10 supply (member_lookup)
+    int q024;  // X10 supply (member_lookup)
+    int q028;  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    int q030;  // X10 supply (member_lookup)
+    int q034;  // X10 supply (member_lookup)
+    int q038;  // X10 supply (member_lookup)
+    unsigned char q03C[15];  /* char[15] */  // X10 supply (member_lookup)
+    void* q040;  // X10 supply (member_lookup)
+    int q060;  // X10 supply (member_lookup)
+    int q078;  // X10 supply (member_lookup)
+    int q080;  // X10 supply (member_lookup)
+    unsigned int u32_16C;  // X10 supply (member_lookup)
+    unsigned int u32_170;  // X10 supply (member_lookup)
+    unsigned int u32_174;  // X10 supply (member_lookup)
+    unsigned int u32_17C;  // X10 supply (member_lookup)
+    unsigned int u32_180;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

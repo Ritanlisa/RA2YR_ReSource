@@ -14,6 +14,8 @@ using ra2::game::ObjectClass;
 // IDA: inline struct in map.hpp
 // Dynamically-resized array of ObjectClass* pointers
 // CSP: LayerClass matched via T1
+#ifndef GAMEMD_G2_LAYERCLASS_DEF  // X10: first-include-wins twin guard
+#define GAMEMD_G2_LAYERCLASS_DEF 1
 struct LayerClass
 {
     ObjectClass**  items;    // +0x00
@@ -40,6 +42,20 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Pathfinding_Find(int a1, void* a2, int16_t* a3, int a4, int a5, int a6, char a7, int a8, int a9, char a10, char a11, char a12, char a13, int16_t* a14, char a15, char a16);  // 0x56dc20 IDA 真值原型定型 (this+16)
     // === FUNCS-MOVE (END) ===
     int Load(unsigned int * a2);
+
+    int CapacityIncrement;  // X10 supply (member_lookup)
+    unsigned int u32_10C;  // X10 supply (member_lookup)
+    unsigned int u32_110;  // X10 supply (member_lookup)
+    unsigned int u32_114;  // X10 supply (member_lookup)
+    unsigned int u32_13C;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
+    unsigned int u32_70;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
+
+    unsigned int u32_118;  // X10 supply (member_lookup)
 };
+#endif  // GAMEMD_G2_LAYERCLASS_DEF (X10)
+
 
 } // namespace gamemd

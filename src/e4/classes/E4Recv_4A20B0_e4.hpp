@@ -12,5 +12,7 @@ struct E4Recv_4A20B0 {
     unsigned int q084;  // 0x84
 // --- flat members (END) ---
     int  sub_4A20B0(uint8_t * a2, int a3);  // 0x4A20B0
+
+    unsigned char u32_C[4];  /* Checksummer */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

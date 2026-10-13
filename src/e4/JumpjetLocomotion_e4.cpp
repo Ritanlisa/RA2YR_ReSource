@@ -865,7 +865,7 @@ void* JumpjetLocomotion::Land()
       v31 = v30->u32_2D8; /*0x54cecc*/
       if ( v31 ) /*0x54ced4*/
       {
-        TechnoClass::MutateAll(v31, *(unsigned int *)(v30 + 1064), 0); /*0x54cedf*/
+        TechnoClass::MutateAll(v31, v30->u32_428, 0); /*0x54cedf*/
         v32 = *(unsigned int *)(*(unsigned int *)this->u32_C + 728); /*0x54cee7*/
         if ( v32 ) /*0x54ceef*/
           (*(void (**)(int, int))(*(unsigned int *)v32 + 32))(v32, 1); /*0x54cef5*/
@@ -886,7 +886,7 @@ void* JumpjetLocomotion::Land()
   else
   {
     v34 = *(unsigned int *)this->u32_C; /*0x54cf3c*/
-    if ( *(unsigned int *)(v34 + 1400) /*0x54cf75*/
+    if ( v34->u32_578 /*0x54cf75*/
       || v34->u32_57C != 1075052544 && (v34->u32_578 || v34->u32_57C != 1075576832)
       || v48 && !v26 )
     {

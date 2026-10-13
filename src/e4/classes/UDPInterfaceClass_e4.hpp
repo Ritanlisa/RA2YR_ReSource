@@ -27,6 +27,14 @@ struct UDPInterfaceClass {
     void CheckStatus(short a2);
     void GetStatistics(unsigned short a2);
     void disconnect();
+
+    unsigned char __pad_644;  // X10 supply (member_lookup)
+    void* q00C;  // X10 supply (member_lookup)
+    void* q010;  // X10 supply (member_lookup)
+    unsigned int u32_3F2FC;  // X10 supply (member_lookup)
+    unsigned int u32_3F330;  // X10 supply (member_lookup)
+    unsigned int u32_3F334;  // X10 supply (member_lookup)
+    unsigned int u32_3F554;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

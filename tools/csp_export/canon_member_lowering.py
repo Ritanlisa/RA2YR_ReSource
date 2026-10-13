@@ -436,6 +436,48 @@ def inst_disp(addr):
     return e['d'], bool(e.get('i'))
 
 
+# ---------------------------------------------------- X5b disp-window check
+# A single source statement can carry several member accesses but is anchored
+# by ONE `/*0xADDR*/` site (the last instruction of the statement). The
+# nearest-preceding-disp check (back_disp) therefore sees only ONE of them and
+# false-refuses the others (measured: 330/1,526 F-PTHIS disp-mismatch sites
+# have their offset present among the statement's own disps). Rescue: accept
+# when the claimed offset appears among the memory-op displacements of the
+# statement window [previous anchor, site] (GP-register bases only).
+def _prev_anchor_addr(ctx, pos):
+    """nearest /*0xADDR*/ before `pos` in the span (0 when none)."""
+    i = ctx.seg.rfind('/*0x', 0, pos)
+    if i < 0:
+        return None
+    m = re.match(r'/\*0x([0-9A-Fa-f]{6,8})\*/', ctx.seg[i:i + 14])
+    return int(m.group(1), 16) if m else None
+
+
+def _off_in_stmt_window(site, off, prev):
+    dis = func_disasm(site)
+    if not dis:
+        return False
+    idx = _dis_index(dis, site)
+    if idx >= len(dis):
+        idx = len(dis) - 1
+    if idx < 0:
+        return False
+    n = 0
+    for i in range(idx, -1, -1):
+        a, txt = dis[i]
+        if prev is not None and a <= prev:
+            break
+        if a > site:
+            continue
+        base, d, hi = _disp_of_memop(txt)
+        if base and base not in ('esp', 'ebp') and d == off:
+            return True
+        n += 1
+        if n > 120:
+            break
+    return False
+
+
 # --------------------------------------------------------------- registry
 import _members  # noqa: E402
 
@@ -637,8 +679,47 @@ def resolve_member(cls, off, cast_type=None, site=None, dry=False):
 GLOB_PT = {}   # global name -> pointee class (CSP name-derived)
 
 
+# X5b: names that are NOT real classes (keywords / primitives / parser junk
+# that crept into mtab+DECL and made _known_class accept them).
+_X5B_NONCLASS = frozenset((
+    'return', 'char', 'void', 'int', 'long', 'short', 'float', 'double',
+    'bool', 'unsigned', 'signed', 'unknown', 'size_t', 'wchar_t',
+    '_byte', '_word', '_dword', '_qword', '__int8', '__int16', '__int32',
+    '__int64', 'uint8_t', 'uint16_t', 'uint32_t', 'uint64_t', 'int8_t',
+    'int16_t', 'int32_t', 'int64_t', 'unsigned int', 'unsigned char',
+    'unsigned short', 'unsigned long', 'long long', 'unsigned long long',
+    'unsigned __int64', 'auto', 'register', 'static', 'const', 'volatile',
+    'if', 'for', 'while', 'do', 'else', 'switch', 'case', 'break',
+    'continue', 'goto', 'class', 'struct', 'union', 'enum', 'template',
+    'typename', 'namespace', 'new', 'delete', 'try', 'catch', 'throw',
+    'operator', 'sizeof', 'typedef', 'extern', 'inline', 'virtual',
+    'public', 'private', 'protected', 'friend', 'using', 'this',
+))
+
+
+# X5b: scalar global types (GTYPES) -- a global of one of these types holds a
+# value, so `g->member` reads through it; the abs-symbol replacement is only
+# sound for object/array or untyped hosts.
+_SCALAR_TY = re.compile(
+    r'^(?:u?int(?:8|16|32|64)_t|int|unsigned(?:\s+(?:int|short|char|long))?|'
+    r'signed\s+(?:int|char|short|long)|char|short|long|float|double|bool|'
+    r'BOOL|_BYTE|_WORD|_DWORD|_QWORD|byte|word|dword|size_t|unknown)\s*\*?\s*$')
+
+
 def _known_class(c):
-    return bool(c) and (c in CDB or c.lower() in MTABI or c.lower() in DECL)
+    """A usable receiver class name (X5b: junk pseudo-classes excluded).
+
+    The class universe carries parser/data artifacts (`return`, `char`,
+    `uint64_t`, `unknown`, ... -- e.g. member_lookup['return'] has 302
+    entries with src 'X5 cast (cls return)'), admitted because mtab/DECL
+    contain same-named pseudo entries. Converting against them fabricates
+    names from a non-class; they must stay fail-loud (CSP/decl defect)."""
+    if not c:
+        return False
+    lc = c.lower()
+    if lc in _X5B_NONCLASS or c in ('VOID_PTR', 'TOP'):
+        return False
+    return c in CDB or lc in MTABI or lc in DECL
 
 
 def is_global(name):
@@ -832,11 +913,24 @@ class Ctx:
             return int(m.group(1), 16)
         return None
 
-    def recv_class(self, recv):
+    def recv_class(self, recv, pos=None):
         if recv in ('this', '*this'):
             return self.env.get('this') or self.cls
         if recv in self.env:
             return self.env[recv]
+        ep = self.env.get('_x5b_pos')
+        if ep:
+            lst = ep.get(recv)
+            if lst:
+                if pos is None:
+                    return lst[-1][1]
+                ln = self.line_of(pos) - self.base_line
+                best = None
+                for l2, t2 in lst:
+                    if l2 <= ln:
+                        best = t2
+                if best:
+                    return best
         if is_global(recv):
             return global_class(recv)
         if recv in self.env.get('__locals__', ()):
@@ -893,7 +987,7 @@ def name_expr_offset(expr, ctx, pos, cast_type=None, addr_ctx=False):
     im = re.search(r'\[([^\]]*)\]', tail)
     if im:
         idx = im.group(1).strip()
-    cls = ctx.recv_class(recv)
+    cls = ctx.recv_class(recv, pos)
     off = None
     if re.match(r'^' + PADN + r'$', base):
         off = _pad_offset(base, None)
@@ -968,7 +1062,7 @@ def h_qmark(seg, ctx):
         recv, op, idx = m.group('recv'), m.group('op'), m.group('idx')
         pos = m.start()
         site = ctx.site_of(pos)
-        cls = ctx.recv_class(recv)
+        cls = ctx.recv_class(recv, pos)
         off = None
         # single-`?` line: instruction at the site is the access itself
         line = seg[seg.rfind('\n', 0, pos) + 1:
@@ -1040,7 +1134,7 @@ def _sig_class(sigargs):
     return c if (c in CDB or c.lower() in MTABI or c.lower() in DECL) else None
 
 
-def parse_fp_expr(expr, ctx):
+def parse_fp_expr(expr, ctx, pos=None):
     """-> (obj_text, obj_cls, base_off, base_name, sep) or (None,...).
 
     sep is the receiver separator to emit: '->' pointer, '.' value."""
@@ -1059,7 +1153,7 @@ def parse_fp_expr(expr, ctx):
     mm = re.match(r'^&\s*(this|[A-Za-z_]\w*)->(\w+)\s*$', s)
     if mm:
         recv, base = mm.group(1), mm.group(2)
-        cls0 = ctx.recv_class(recv)
+        cls0 = ctx.recv_class(recv, pos)
         t = member_type_str(cls0, base) if cls0 else None
         if t:
             t2 = t.rstrip('* ').strip()
@@ -1069,14 +1163,14 @@ def parse_fp_expr(expr, ctx):
     mm = re.match(r'^(this|[A-Za-z_]\w*)\s*$', s)
     if mm:
         recv = mm.group(1)
-        return recv, ctx.recv_class(recv), None, None, '->'
+        return recv, ctx.recv_class(recv, pos), None, None, '->'
     mm = re.match(r'^(this|[A-Za-z_]\w*|' + GLOB + r')\s*(->|\.)(.+)$', s)
     if mm:
         recv, sep0, tail = mm.group(1), mm.group(2), mm.group(3)
         base = tail.split('[')[0].split('->')[0]
         idx = re.search(r'\[([^\]]*)\]', tail)
         off = None
-        cls = ctx.recv_class(recv)
+        cls = ctx.recv_class(recv, pos)
         if idx is not None:
             if re.match(r'^' + PADN + r'$', base):
                 off = _pad_offset(base, None)
@@ -1124,7 +1218,8 @@ def h_fptr(seg, ctx):
             pos = m.end()
             continue
         slot = int(m.group('slot'), 0)
-        obj, cls, base_off, base_name, sep = parse_fp_expr(expr, ctx)
+        obj, cls, base_off, base_name, sep = parse_fp_expr(expr, ctx,
+                                                             m.start())
         if cls is None:
             cls = _sig_class(m.group('sigargs'))
         if obj is None or cls is None:
@@ -1224,7 +1319,7 @@ def h_staticsub(seg, ctx):
         r = name_expr_offset(member, ctx, pos, cast_type=call_cls)
         if r is None or r[0] != 'ok':
             ledger_add('F-SUB', ctx, pos, m.group(0),
-                       ctx.recv_class(member.split('->')[0]),
+                       ctx.recv_class(member.split('->')[0], pos),
                        r[4] if r else None,
                        r[0] if r else 'parse')
             continue
@@ -1270,7 +1365,7 @@ def h_castd(seg, ctx):
             r = name_expr_offset(member, ctx, pos, cast_type=cty)
             if r is None or r[0] != 'ok':
                 ledger_add('F-CASTD', ctx, pos, m.group(0),
-                           ctx.recv_class(member.split('->')[0]),
+                           ctx.recv_class(member.split('->')[0], pos),
                            r[4] if r else None, r[0] if r else 'parse')
                 continue
             _k, recv, base, cls, off = r
@@ -1344,10 +1439,11 @@ def _pad_convert(seg, ctx, m, n, out, last, kind='idx'):
     pos = m.start()
     off = _pad_offset(base, idx)
     if off is None:
-        ledger_add('F-PAD', ctx, pos, m.group(0), ctx.recv_class(recv),
+        ledger_add('F-PAD', ctx, pos, m.group(0),
+                   ctx.recv_class(recv, pos),
                    None, 'var-index-or-bad-name')
         return None
-    cls = ctx.recv_class(recv)
+    cls = ctx.recv_class(recv, pos)
     site = ctx.site_of(pos)
     d = inst_disp(site) if site else None
     cands = [off]
@@ -1374,6 +1470,21 @@ def _pad_convert(seg, ctx, m, n, out, last, kind='idx'):
     if is_global(recv):
         base_addr = SYM2ADDR.get(recv)
         if base_addr is not None:
+            # X5b: a scalar/pointer-TYPED global's `recv->member` reads
+            # THROUGH the value (`*(value + off)`), while the absolute symbol
+            # at `addr(recv) + off` is a different location. Replacing the
+            # member read with that symbol drops/redirects a dereference
+            # (measured: DSurface_Alternate->DSurface_field_0x0 + 31 was a
+            # vtable call; the symbol replacement read [ptr+7Ch] instead of
+            # [[ptr]+7Ch]). Only object/array or untyped IDA-style hosts may
+            # use the address-based replacement.
+            gt = GTYPES.get('0x%X' % base_addr)
+            if isinstance(gt, dict):
+                ty = str(gt.get('type') or '').strip()
+                if ty.endswith('*') or _SCALAR_TY.match(ty):
+                    ledger_add('F-PAD', ctx, pos, m.group(0), recv, off,
+                               'host-scalar')
+                    return None
             for i, cand in enumerate(cands):
                 sym = pick_symbol(base_addr + cand, ctx.includes)
                 if sym:
@@ -1431,7 +1542,7 @@ def h_castaddr(seg, ctx):
         r = name_expr_offset(member, ctx, pos, cast_type=cty)
         if r is None or r[0] != 'ok':
             ledger_add('F-CASTA', ctx, pos, m.group(0),
-                       ctx.recv_class(member.split('->')[0]),
+                       ctx.recv_class(member.split('->')[0], pos),
                        r[4] if r else None, r[0] if r else 'parse')
             continue
         _k, recv, base, cls, off = r
@@ -1499,7 +1610,7 @@ def h_this_arith(seg, ctx):
                     bd = back_disp(site)
                     if bd:
                         off = bd[0]
-            cls = ctx.recv_class('this')
+            cls = ctx.recv_class('this', pos)
             if cls is None:
                 ledger_add('F-THIS', ctx, pos, m.group(0), None, off,
                            'noclass')
@@ -1557,22 +1668,31 @@ def h_pthis(seg, ctx):
                 off = raw * WIDTHS.get(cty.strip(), 4)
             else:
                 off = raw
-            cls = ctx.recv_class(recv)
+            cls = ctx.recv_class(recv, pos)
             if cls is None:
                 ledger_add('F-PTHIS', ctx, pos, m.group(0), None, off,
                            'noclass')
                 continue
-            # disasm cross-check: mismatch -> fail loud (no silent guess)
+            # disasm cross-check: mismatch -> fail loud (no silent guess).
+            # X5b: a statement-wide anchor may differ from the nearest single
+            # disp on multi-access lines -- rescue when the offset is present
+            # among the statement window's own disps.
             site = ctx.site_of(pos)
             if site:
                 bd = back_disp(site)
                 if bd and bd[0] != off:
-                    ledger_add('F-PTHIS', ctx, pos, m.group(0), cls, off,
-                               'disp-mismatch:%d' % bd[0])
-                    continue
+                    if not _off_in_stmt_window(site, off,
+                                               _prev_anchor_addr(ctx, pos)):
+                        ledger_add('F-PTHIS', ctx, pos, m.group(0), cls, off,
+                                   'disp-mismatch:%d' % bd[0])
+                        continue
             nm, how = resolve_member(cls, off, cast_type=cty)
             if not nm:
                 ledger_add('F-PTHIS', ctx, pos, m.group(0), cls, off, how)
+                continue
+            if not _x5b_arith_ok(ctx, m.end(), cls, nm, cty):
+                ledger_add('F-PTHIS', ctx, pos, m.group(0), cls, off,
+                           'arith-width')
                 continue
             if kind.startswith('deref'):
                 repl = '%s->%s' % (recv, nm)
@@ -1608,7 +1728,7 @@ def h_index(seg, ctx):
                 continue
             cty, recv, idx = m.group(1), m.group(2), int(m.group(3), 0)
             off = idx * WIDTHS.get(cty.strip(), 4)
-            cls = ctx.recv_class(recv)
+            cls = ctx.recv_class(recv, m.start())
             if cls is None:
                 ledger_add('F-INDEX', ctx, m.start(), m.group(0), None, off,
                            'noclass')
@@ -1617,6 +1737,13 @@ def h_index(seg, ctx):
             if not nm:
                 ledger_add('F-INDEX', ctx, m.start(), m.group(0), cls, off,
                            how)
+                continue
+            if not _x5b_arith_ok(ctx, m.end(), cls, nm, cty):
+                # X5b: `(T *)recv[N] + K` -- renaming to a member of a
+                # different width changes the scale of the following + K
+                # (measured: `((unsigned int *)v9[50] + 176)` -> wrong)
+                ledger_add('F-INDEX', ctx, m.start(), m.group(0), cls, off,
+                           'arith-width')
                 continue
             out.append(seg[last:m.start()])
             out.append('%s->%s' % (recv, nm))
@@ -1805,6 +1932,200 @@ def scan_spans(lines):
 import normalize_blocks as NB  # noqa: E402
 
 
+# ---------------------------------------------------- X5b env enrichment
+# The Step-4 corpus writes many assignments in shapes the shared env scan
+# (normalize_blocks.build_types, ASSIGN_ANY `[a-z]\w* =`) cannot see:
+#   1. register aliases with underscore names:  `_ESI = this;`
+#   2. load-truncation write forms: `(*((unsigned int *)&(v2))) = expr;`
+#      (and the paren-less variant `*((unsigned int *)&(v2)) = expr;`)
+# Both are mechanical identities of `var := expr` and are the missing link
+# for a large share of the X5 `noclass` ledger (measured 2026-10-13: 763
+# distinct `_REG = this` sites + mech-write member/cast assignments).
+# Channels applied (same semantics as the shared builder, widened intake):
+#   this | ident copy | (T *) cast of known class | this->M / V->M member
+#   class type | tmap defsite register key (NB.tmap `{func}::<reg>_v{site}`).
+X5B_MECH_A = re.compile(
+    r'\(\s*\*\s*\(\s*\(\s*(?:unsigned\s+int|int|_DWORD|uint32_t)\s*\*+\s*\)'
+    r'\s*&\s*\(\s*([A-Za-z_]\w*)\s*\)\s*\)\s*\)\s*=')
+X5B_MECH_B = re.compile(
+    r'\*\s*\(\s*\(\s*(?:unsigned\s+int|int|_DWORD|uint32_t)\s*\*+\s*\)'
+    r'\s*&\s*\(\s*([A-Za-z_]\w*)\s*\)\s*\)\s*=')
+_RE_ASSIGN_ANY = re.compile(r'(?<![\w.>])([A-Za-z_]\w*)\s*=(?!=)\s*(.+)$')
+_RE_CTRL_LINE = re.compile(r'^(?:if|while|for|switch|else|return|do|case)\b')
+_RE_SITE_TAIL = re.compile(r'/\*0x([0-9A-Fa-f]{6,8})\*/\s*$')
+
+
+def _x5b_assignments(seg):
+    """[(var, rhs_text, site_or_None, line_idx)] over plain + mech write forms."""
+    out = []
+    for li, ln in enumerate(seg.split('\n')):
+        s = ln.strip()
+        if not s or s.startswith('//') or s.startswith('*'):
+            continue
+        sm = _RE_SITE_TAIL.search(ln)
+        site = int(sm.group(1), 16) if sm else None
+        m = X5B_MECH_A.search(ln)
+        if not m:
+            m = X5B_MECH_B.search(ln)
+        if m:
+            out.append((m.group(1), ln[m.end():], site, li))
+            continue
+        if _RE_CTRL_LINE.match(s):
+            continue
+        m = _RE_ASSIGN_ANY.search(ln)
+        if m:
+            out.append((m.group(1), m.group(2), site, li))
+    return out
+
+
+def _x5b_member_class(rc, mname):
+    """declared class of member `mname` in rc's chain, or None."""
+    if not rc:
+        return None
+    t = member_type_str(rc, mname)
+    if not t:
+        return None
+    base = re.sub(r'^(?:const\s+)?(?:struct\s+|class\s+|union\s+)?', '',
+                  t).split('*')[0].strip()
+    return base if _known_class(base) else None
+
+
+_DECL_W = {'unsigned int': 4, 'int': 4, 'long': 4, 'float': 4, 'BOOL': 4,
+           'DWORD': 4, 'unsigned char': 1, 'char': 1, 'bool': 1,
+           'unsigned short': 2, 'short': 2, 'wchar_t': 2,
+           'double': 8, '__int64': 8, 'unsigned __int64': 8}
+
+
+def _x5b_member_width(cls, name):
+    """byte width implied by the member name/filler or its declaration
+    (None = unknown). Used to refuse conversions that would change the scale
+    of a following `+ / - / [` arithmetic."""
+    if not name:
+        return None
+    m = re.match(r'^u(8|16|32|64)_', name)
+    if m:
+        return int(m.group(1)) // 8
+    if re.match(r'^ptr_|^vfptr', name):
+        return 4
+    if re.match(r'^q[0-9A-Fa-f]+$|^m_[0-9A-Fa-f]+$', name):
+        return 4
+    if re.match(r'^__pad_', name):
+        m = re.search(r'_([0-9A-Fa-f]+)$', name)
+        return None
+    w = member_size(cls, name)
+    if w:
+        return w
+    t = member_type_str(cls, name)
+    if t:
+        t = t.strip()
+        if t.endswith('*') or t.endswith('&'):
+            return 4
+        base = re.sub(r'^(?:const\s+)?(?:struct\s+|union\s+|class\s+)?', '',
+                      t).split('*')[0].strip()
+        if base in _DECL_W:
+            return _DECL_W[base]
+    return None
+
+
+def _x5b_arith_ok(ctx, end_pos, cls, nm, cty):
+    """True when replacing the matched cast expression with the member form
+    does not change the scale of a following + / - / [ (the member's width
+    must equal the cast type's width)."""
+    nxt = ctx.seg[end_pos:end_pos + 4].lstrip()
+    if not nxt or nxt[0] not in '+-[':
+        return True
+    cw = WIDTHS.get(cty.strip(), 4)
+    return _x5b_member_width(cls, nm) == cw
+
+
+def _x5b_enrich_env(seg, env, cls, addr):
+    """Position-aware receiver typing for the X5b intake forms.
+
+    All value-derived types land in `env['_x5b_pos']`:
+        var -> [(line_idx, type), ...]  (line_idx = 0-based within seg)
+    A use at seg-line L resolves to the LAST entry with line_idx <= L -- the
+    assignment dominating the site. Flat (function-wide) typing is WRONG for
+    the corpus' reused locals: `v2 = this->occupant` (int) near the top and
+    `v2 = this->lineTrailer` (TemporalClass*) 300 lines later are different
+    objects; the earlier use site must not inherit the later class (measured:
+    a flat version converted `((unsigned char*)v2 + 16)` at the occupant use
+    site against TemporalClass -> wrong receiver).
+    """
+    assigns = _x5b_assignments(seg)
+    if not assigns:
+        return
+    ai = '0x%08X' % addr if addr else None
+    pos = env.setdefault('_x5b_pos', {})
+
+    def get(var, li):
+        lst = pos.get(var)
+        if lst:
+            best = None
+            for l2, t2 in lst:
+                if l2 <= li:
+                    best = t2
+            if best:
+                return best
+        return env.get(var)
+
+    def has_at(var, li):
+        return any(l2 == li for l2, _ in pos.get(var, ()))
+
+    def put(var, li, t):
+        lst = pos.setdefault(var, [])
+        if (li, t) not in lst:
+            lst.append((li, t))
+            return True
+        return False
+
+    for _ in range(3):
+        grew = False
+        for var, rhs, site, li in assigns:
+            if var == 'this' or has_at(var, li):
+                continue
+            rhs0 = re.sub(r'/\*[^*]*\*/\s*$', '', rhs).strip()
+            rhs0 = rhs0.rstrip(';').strip()
+            if not rhs0:
+                continue
+            if rhs0 == 'this':
+                if cls:
+                    grew |= put(var, li, cls)
+                continue
+            if re.fullmatch(r'[A-Za-z_]\w*', rhs0):
+                t = get(rhs0, li)
+                if t:
+                    grew |= put(var, li, t)
+                    continue
+            m = re.match(r'^\(\s*([A-Za-z_]\w*)\s*\*+\s*\)', rhs0)
+            if m and _known_class(m.group(1)):
+                grew |= put(var, li, m.group(1))
+                continue
+            m = re.fullmatch(r'(this|[A-Za-z_]\w*)->([A-Za-z_]\w*)', rhs0)
+            if m:
+                r0, mem = m.group(1), m.group(2)
+                rc = (env.get('this') or cls) if r0 == 'this' else get(r0, li)
+                t = _x5b_member_class(rc, mem)
+                if t:
+                    grew |= put(var, li, t)
+                    continue
+            if site and ai:
+                for reg in ('eax', 'ecx', 'edx', 'ebx', 'esi', 'edi',
+                            'al', 'bl', 'cl', 'dl'):
+                    done = False
+                    for fmt in ('0x%X', '0x%06X', '0x%07X', '0x%08X'):
+                        e = NB.tmap.get(ai + '::' + reg + '_v' +
+                                        (fmt % site)) or {}
+                        t = e.get('type')
+                        if t and NB.is_cls(t) and _known_class(t):
+                            grew |= put(var, li, t)
+                            done = True
+                            break
+                    if done:
+                        break
+        if not grew:
+            break
+
+
 def build_env(seg, cls, addr):
     try:
         env = NB.build_types(seg, cls, addr or None)[0]
@@ -1816,6 +2137,11 @@ def build_env(seg, cls, addr):
     # local declarations (any type): names that shadow member names must not
     # be mistaken for members by the bare-member receiver channel
     for ln in seg.split('\n'):
+        if _RE_CTRL_LINE.match(ln.strip()):
+            # X5b: `return result;` etc. must not parse as `TYPE name` --
+            # that bug typed `result`/`Block` as pseudo-class `return`
+            # (member_lookup['return'] carries 302 such supplies)
+            continue
         m = re.match(r'^\s*(?:struct\s+|union\s+)?([A-Za-z_]\w*)\s+'
                      r'(\*?\s*(?:v\d+|a\d*|aP\d+|[\w]+))\s*'
                      r'(?:\[[^\]]*\])?\s*[;=]', ln)
@@ -1837,6 +2163,9 @@ def build_env(seg, cls, addr):
         if _known_class(t):
             env.setdefault(v, t)
     env['__locals__'] = locals_
+    # X5b: widen the intake (underscore register aliases + mechanical write
+    # forms) and run the same receiver-typing channels over it.
+    _x5b_enrich_env(seg, env, cls, addr)
     return env
 
 

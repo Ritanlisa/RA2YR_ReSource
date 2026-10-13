@@ -83,6 +83,14 @@ struct VoxelAnimClass {
     int Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     VoxelAnimClass * DrawVoxel(void * Block, char a2);
     char __pad_98[104];  // 0x98 (ml)
+
+    unsigned char __pad_0A0;  // X10 supply (csp_canon_members)
+    unsigned int q0A4;  // X10 supply (member_lookup)
+    int q104;  // X10 supply (member_lookup)
+    int q108;  // X10 supply (member_lookup)
+    unsigned int q13C;  // X10 supply (member_lookup)
+    int q140;  // X10 supply (member_lookup)
+    unsigned int u32_100;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

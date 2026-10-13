@@ -51,6 +51,20 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int * Constructor_BitText(char a1);  // 0x435560
     int Seek();  // 0x473BA0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    void * FileName;  // X10 supply (csp_canon_members)
+    char FileNameAllocated;  // X10 supply (csp_canon_members)
+    int FilePointer;  // X10 supply (csp_canon_members)
+    int FileSize;  // X10 supply (csp_canon_members)
+    unsigned int FileTimeDateHi;  // X10 supply (csp_canon_members)
+    void* FileTimeDateLo;  // X10 supply (csp_canon_members)
+    void * Handle;  // X10 supply (csp_canon_members)
+    void* q064;  // X10 supply (member_lookup)
+    unsigned int tail_19;  // X10 supply (csp_canon_members)
+    unsigned int u32_25;  // X10 supply (member_lookup)
+    unsigned int u32_29;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_types)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_G2_BufferIOFileClass_DEF
 

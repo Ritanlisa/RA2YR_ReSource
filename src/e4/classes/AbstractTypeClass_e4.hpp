@@ -62,6 +62,13 @@ struct AbstractTypeClass {
     void sub_406640();
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q008;  // 0x8 (offset-truth)
+
+    unsigned int UIName;  // X10 supply (csp_canon_members)
+    unsigned char __pad_024;  // X10 supply (csp_canon_members)
+    unsigned char __pad_036;  // X10 supply (csp_canon_members)
+    bool q019;  // X10 supply (member_lookup)
+    unsigned int u32_94;  // X10 supply (member_lookup)
+    char u8_9;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

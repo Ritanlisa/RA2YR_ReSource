@@ -1368,10 +1368,10 @@ int BuildingClass::SaveLoad_Register()
   if ( result >= 0 ) /*0x5f5e92*/
   {
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->nextObject); /*0x5f5e9d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 52)); /*0x5f5eab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 56)); /*0x5f5eb9*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->attachedTag); /*0x5f5eab*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->attachedBomb); /*0x5f5eb9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->nextArrayIndex); /*0x5f5ec7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 136)); /*0x5f5ed8*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->parachute); /*0x5f5ed8*/
     AudioController::Init(&v2->ambientSoundController); /*0x5f5ee0*/
     AudioController::Init(&v2->customSound_controller); /*0x5f5ee8*/
     v2->lineTrailer = 0; /*0x5f5eed*/

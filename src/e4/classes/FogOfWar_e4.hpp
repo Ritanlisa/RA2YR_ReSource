@@ -25,6 +25,21 @@ struct FogOfWar {
     unsigned char u32_73C6;  // 0x73C6 (offset-truth)
     unsigned int u32_7400;  // 0x7400 (offset-truth)
     unsigned char u32_7546;  // 0x7546 (offset-truth)
+
+    unsigned int u32_121C;  // X10 supply (member_lookup)
+    unsigned int u32_125C;  // X10 supply (member_lookup)
+    unsigned int u32_1260;  // X10 supply (member_lookup)
+    unsigned int u32_1264;  // X10 supply (member_lookup)
+    unsigned int u32_1269;  // X10 supply (member_lookup)
+    unsigned int u32_126C;  // X10 supply (member_lookup)
+    unsigned int u32_1270;  // X10 supply (member_lookup)
+    unsigned int u32_1274;  // X10 supply (member_lookup)
+    unsigned int u32_1488;  // X10 supply (member_lookup)
+    unsigned int u32_1490;  // X10 supply (member_lookup)
+    unsigned int u32_149C;  // X10 supply (member_lookup)
+    unsigned int u32_14A0;  // X10 supply (member_lookup)
+    unsigned int u32_14D9;  // X10 supply (member_lookup)
+    int u32_4830;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -9,6 +9,7 @@
 #include "core/logging.hpp"
 #include <cstring>
 #include <algorithm>
+#include "system/game_systems.hpp"
 
 namespace gamemd {
 

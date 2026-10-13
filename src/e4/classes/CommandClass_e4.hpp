@@ -15,6 +15,8 @@ struct CommandClass {
     int BuildBar();
     static int BinarySearchAction(CommandClass * aP1, unsigned int *a2);
     static bool executeAction(CommandClass * aP1, unsigned int *a2);
+
+    unsigned int u32_C0;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_CommandClass_DEF
 

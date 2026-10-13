@@ -13,5 +13,8 @@ struct CommBufferClass {
 // --- flat members (END) ---
     AbstractClass * *  sub_48B0E0(int a2, int a3, int Size, int a5);  // 0x48B0E0
     void sub_48B1F0();  // 0x48B1F0
+
+    AbstractClass* CommBufferClass_field_0x10;  // X10 supply (member_types)
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
 };
 } // namespace gamemd

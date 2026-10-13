@@ -23,5 +23,9 @@ struct E4Recv_76ABE0 {
     unsigned int M68;  // 0x68
 // --- flat members (END) ---
     unsigned int * sub_76ABE0();  // 0x76ABE0
+
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

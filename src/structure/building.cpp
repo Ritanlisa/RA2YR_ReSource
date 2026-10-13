@@ -664,7 +664,7 @@ int BuildingClass::Dtor()
   }
   Factory = this->Factory; /*0x43bf40*/
   if ( Factory ) /*0x43bf48*/
-    (*(void (__thiscall **)(int, int))(*(unsigned int *)Factory + 32))(Factory, 1); /*0x43bf4e*/
+    Factory->CopyTo_0(1); /*0x43bf4e*/
   this->Factory = 0; /*0x43bf51*/
   Vtable3 = (int)this; /*0x43bf67*/
   v18 = stru_B0F5B8.vt_slot_16(&Vtable3); /*0x43bf6b*/
@@ -1238,7 +1238,7 @@ void BuildingClass::ValidatePlacement(char a2) {
           v26 = 1; /*0x48093d*/
         }
       }
-      if ( *((unsigned int *)v4 + 17) == 3 && v4[286] == 16 ) /*0x48094c*/
+      if ( v4->q044 == 3 && v4[286] == 16 ) /*0x48094c*/
       {
         (*((unsigned char *)&(v21))) = 1; /*0x48094e*/
         v4->q044 = -1; /*0x480952*/
@@ -3374,7 +3374,7 @@ int BuildingClass::Sell()
     }
     Spotlight = this->Spotlight; /*0x445d75*/
     if ( Spotlight ) /*0x445d7d*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)Spotlight + 248))(Spotlight); /*0x445d81*/
+      Spotlight->Destroy_0(); /*0x445d81*/
     BuildingClass::DecrementTypeCounter((BuildingClass *)this->owner, this); /*0x445d8e*/
     *(unsigned char *)(this->owner + 508) = 1; /*0x445d99*/
     BuildingClass::CalcExitCoords((BuildingClass *)this->owner); /*0x445da6*/

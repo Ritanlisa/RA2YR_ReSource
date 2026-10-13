@@ -107,6 +107,20 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int checkHotspot(int a1, int a2);  // 0x7BA380
     void* QueryInterface(int a1);  // 0x7BA3A0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int XY2;  // X10 supply (csp_canon_members)
+    unsigned char __pad_044;  // X10 supply (csp_canon_members)
+    unsigned int q018;  // X10 supply (member_lookup)
+    int q01C;  // X10 supply (member_lookup)
+    int q02C;  // X10 supply (member_lookup)
+    int q038;  // X10 supply (member_lookup)
+    unsigned char q03C[8];  /* char[8] */  // X10 supply (member_lookup)
+    unsigned char q048[16];  /* char[16] */  // X10 supply (member_lookup)
+    unsigned int q04C;  // X10 supply (member_lookup)
+    unsigned int q050;  // X10 supply (member_lookup)
+    unsigned int q054;  // X10 supply (member_lookup)
+    int q058;  // X10 supply (member_lookup)
+    unsigned char u32_5C[16];  /* char[16] */  // X10 supply (member_lookup)
 };
 
 class MouseClass : public RadarClass
@@ -173,6 +187,60 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetCursor(int a1, int a2);  // 0x5bdc80 -- Mouse::SetCursor
     int ReleaseCapture();  // 0x6938c0 -- Mouse::ReleaseCapture
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int CapacityIncrement;  // X10 supply (csp_canon_members)
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    unsigned int MaxLevel;  // X10 supply (csp_canon_members)
+    unsigned int MaxWidth;  // X10 supply (csp_canon_members)
+    CampaignClass* MouseClass_field_0x70;  // X10 supply (member_types)
+    unsigned char q018[16];  /* char[16] */  // X10 supply (member_lookup)
+    unsigned int q01C;  // X10 supply (member_lookup)
+    int q028;  // X10 supply (member_lookup)
+    unsigned char q03C[44];  /* char[44] */  // X10 supply (member_lookup)
+    unsigned int q044;  // X10 supply (member_lookup)
+    unsigned int q058;  // X10 supply (member_lookup)
+    unsigned int q05C;  // X10 supply (member_lookup)
+    unsigned int q05D;  // X10 supply (member_lookup)
+    unsigned int q064;  // X10 supply (member_lookup)
+    unsigned char q074[136];  /* char[136] */  // X10 supply (member_lookup)
+    unsigned int q078;  // X10 supply (member_lookup)
+    unsigned int q07C;  // X10 supply (member_lookup)
+    unsigned int q090;  // X10 supply (member_lookup)
+    unsigned int q094;  // X10 supply (member_lookup)
+    unsigned int q0D8;  // X10 supply (member_lookup)
+    unsigned int q0DC;  // X10 supply (member_lookup)
+    unsigned int q0E1;  // X10 supply (member_lookup)
+    unsigned int q0E4;  // X10 supply (member_lookup)
+    unsigned int q0E8;  // X10 supply (member_lookup)
+    unsigned int q0F4;  // X10 supply (member_lookup)
+    unsigned int q0F8;  // X10 supply (member_lookup)
+    unsigned int q1160;  // X10 supply (member_lookup)
+    unsigned int q1164;  // X10 supply (member_lookup)
+    unsigned int q1169;  // X10 supply (member_lookup)
+    unsigned int q116C;  // X10 supply (member_lookup)
+    unsigned int q1170;  // X10 supply (member_lookup)
+    int q11A0;  // X10 supply (member_lookup)
+    int q11A4;  // X10 supply (member_lookup)
+    int q11A8;  // X10 supply (member_lookup)
+    unsigned int q11BC;  // X10 supply (member_lookup)
+    unsigned char q1554;  // X10 supply (member_lookup)
+    unsigned int q5550;  // X10 supply (member_lookup)
+    unsigned int q5554;  // X10 supply (member_lookup)
+    unsigned int q5558;  // X10 supply (member_lookup)
+    unsigned int u32_115C;  // X10 supply (member_lookup)
+    int u32_15A8;  // X10 supply (member_lookup)
+    unsigned char u32_2C[1];  /* char[1] */  // X10 supply (member_lookup)
+    int u32_38;  // X10 supply (member_lookup)
+    CampaignClass * u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_5518;  // X10 supply (member_lookup)
+    unsigned int u32_555C;  // X10 supply (member_lookup)
+    unsigned int u32_5560;  // X10 supply (member_lookup)
+    unsigned int u32_5568;  // X10 supply (member_lookup)
+    int u8_555A;  // X10 supply (member_lookup)
+    int vtable1;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

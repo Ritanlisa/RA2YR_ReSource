@@ -53,6 +53,22 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* ProcessEvent(int a1);  // 0x65AEB0
     // --- gap2 auto-generated stub declarations (END) ---
     char HasFreeLink();  // gB sig supply @cache
+
+    TagClass* attachedTag;  // X10 supply (csp_canon_members)
+    int32_t currentMission;  // X10 supply (csp_canon_members)
+    unsigned int missionData;  // X10 supply (csp_canon_members)
+    bool missionQueued;  // X10 supply (csp_canon_members)
+    int32_t missionStartTime;  // X10 supply (csp_canon_members)
+    int32_t missionStatus;  // X10 supply (csp_canon_members)
+    unsigned char missionTimer[12];  /* TimerStruct */  // X10 supply (csp_canon_members)
+    bool q0ED;  // X10 supply (member_lookup)
+    int32_t queuedMission;  // X10 supply (csp_canon_members)
+    int32_t suspendedMission;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
+
+    unsigned int u32_E8;  // X10 supply (member_lookup)
 };
 
 } // namespace game

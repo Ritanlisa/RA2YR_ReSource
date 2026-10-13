@@ -370,7 +370,7 @@ char WOL_RequestMatch(void * a1)
   {
     while ( !(uint8_t)((String *)((String *)v15))->Compare((const char **)&v31[12]) ) /*0x7a0ad6*/
     {
-      v15 = *(unsigned int *)(v15 + 8); /*0x7a0ad8*/
+      v15 = v15->vtable3; /*0x7a0ad8*/
       if ( !v15 ) /*0x7a0add*/
         goto LABEL_50; /*0x7a0add*/
     }
@@ -383,12 +383,12 @@ char WOL_RequestMatch(void * a1)
       {
         while ( !(uint8_t)((String *)((String *)v17))->Compare((const char **)&v31[12]) ) /*0x7a0b23*/
         {
-          v17 = *(unsigned int *)(v17 + 8); /*0x7a0b25*/
+          v17 = v17->vtable3; /*0x7a0b25*/
           if ( !v17 ) /*0x7a0b2a*/
             goto LABEL_49; /*0x7a0b2a*/
         }
         if ( v17 != -4 ) /*0x7a0b37*/
-          v16 = *(unsigned int *)(v17 + 4); /*0x7a0b39*/
+          v16 = v17->vtable2; /*0x7a0b39*/
       }
     }
   LABEL_49:

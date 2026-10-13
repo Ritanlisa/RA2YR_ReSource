@@ -26,6 +26,7 @@ using ra2::game::AbstractClass;
 #define GAMEMD_MC_VECTORCLASS_SKIP 1  // g57w20m1: misc TU 有模板前置(C2990), minimal VectorClass 跳过; AnimTypeClass minimal 保留
 #include "misc/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "core/ida_vtables.h"  // gC_vftable3
+#include "core/hash_table.hpp"
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int dword_ABD4C8;  // 词表 (canon 无条目, int 兜底) L1076
 extern int dword_ABD4CC;  // 词表 (canon 无条目, int 兜底) L1077
@@ -664,7 +665,7 @@ bool AITriggerTypeClass::EnemyHouseOwns(int a2, unsigned int * a3)
     return 0; /*0x426789*/
   if ( !this->vt_slot_24() ) /*0x426763*/
   {
-    (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)(v4 + 132) + 28))(*(unsigned int *)(v4 + 132), 1); /*0x426774*/
+    v4->u32_84->vt_slot_28(1); /*0x426774*/
     v4->u32_89 = 1; /*0x426777*/
   }
   return sub_4267F0((UnitClass *)v4); /*0x426785*/
@@ -1958,7 +1959,7 @@ int CoordinateTables::Init()  // G42 sig-sync: hpp declares int (matches IDA int
     v11 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x749559*/
     v12 = this->q104; /*0x74955e*/
     v44 = v11; /*0x749564*/
-    (*((unsigned short *)&(v13))) = Math::RoundToInt(*(double *)(v12 + 712) + *(double *)(v12 + 712)); /*0x749570*/
+    (*((unsigned short *)&(v13))) = Math::RoundToInt(v12->u64_2C8 + v12->u64_2C8); /*0x749570*/
     v46 = v13; /*0x74957e*/
     v14 = (double)((int)abs32(v42) % v13) - v12->u64_2C8; /*0x749592*/
     (*((unsigned short *)&(v15))) = Math::RoundToInt(v14); /*0x7495b0*/
@@ -12934,7 +12935,7 @@ void ArtConfig::ReadLayout( INIClass * a2, PriorityQueue * a3, int a4)
     String::Assign((String *)&((char *)&v73), (const char *)g_Str_EVA_CannotDeployHere.Type); /*0x768373*/
     CoordPair = (ObjectClass **)INIClass::GetCoordPair(a2, &((char *)&v73), (char *)&((char *)&v73), (char **)&((char *)&v73), &v73.nextObject); /*0x76838e*/
     v11 = *CoordPair; /*0x768393*/
-    v12 = (TagClass *)CoordPair[1]; /*0x768395*/
+    v12 = CoordPair->vtable2; /*0x768395*/
     v73.nextObject = v11; /*0x768398*/
     v73.attachedTag = v12; /*0x7683a0*/
     DeleteAndZero((ObjectClass *)&((char *)&v73)); /*0x7683a4*/
@@ -15702,7 +15703,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
         {
           while ( !(uint8_t)String::Compare((String *)v64, (const char **)&v151) ) /*0x7a6459*/
           {
-            v64 = *(unsigned int *)(v64 + 8); /*0x7a645f*/
+            v64 = v64->vtable3; /*0x7a645f*/
             if ( !v64 ) /*0x7a6464*/
               goto LABEL_134; /*0x7a6464*/
           }
@@ -15769,7 +15770,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
         {
           while ( !(uint8_t)String::Compare((String *)v70, (const char **)&v151) ) /*0x7a6573*/
           {
-            v70 = *(unsigned int *)(v70 + 112); /*0x7a6575*/
+            v70 = v70->estimatedHealth; /*0x7a6575*/
             if ( !v70 ) /*0x7a657a*/
               goto LABEL_155; /*0x7a657a*/
           }
@@ -15798,7 +15799,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
         {
           while ( !(uint8_t)String::Compare((String *)v73, (const char **)&v151) ) /*0x7a65e9*/
           {
-            v73 = *(unsigned int *)(v73 + 72); /*0x7a65eb*/
+            v73 = v73->q048; /*0x7a65eb*/
             if ( !v73 ) /*0x7a65f0*/
               goto LABEL_159; /*0x7a65f0*/
           }
@@ -16522,7 +16523,7 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
                 {
                   while ( !(uint8_t)String::Compare((String *)v7, (const char **)&v46.NeedsSaveOrLink) ) /*0x7a723e*/
                   {
-                    v7 = *(unsigned int *)(v7 + 112); /*0x7a7240*/
+                    v7 = v7->estimatedHealth; /*0x7a7240*/
                     if ( !v7 ) /*0x7a7245*/
                       goto LABEL_13; /*0x7a7245*/
                   }
@@ -16615,7 +16616,7 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
         {
           while ( !(uint8_t)String::Compare((String *)v10, (const char **)&v46) ) /*0x7a73fc*/
           {
-            v10 = *(unsigned int *)(v10 + 8); /*0x7a73fe*/
+            v10 = v10->vtable3; /*0x7a73fe*/
             if ( !v10 ) /*0x7a7403*/
               goto LABEL_39; /*0x7a7403*/
           }
@@ -16634,7 +16635,7 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
         {
           while ( !(uint8_t)String::Compare((String *)v12, (const char **)&v46) ) /*0x7a7447*/
           {
-            v12 = *(unsigned int *)(v12 + 112); /*0x7a744d*/
+            v12 = v12->estimatedHealth; /*0x7a744d*/
             if ( !v12 ) /*0x7a7452*/
               goto LABEL_43; /*0x7a7452*/
           }
@@ -17706,11 +17707,11 @@ void CChatEventSink::HandleUserSearch( int a2, void * a3)
       {
         while ( !(uint8_t)String::Compare((String *)v4, (const char **)&g_WOL_AuthObject) ) /*0x7a99db*/
         {
-          v4 = *(unsigned int *)(v4 + 8); /*0x7a99dd*/
+          v4 = v4->vtable3; /*0x7a99dd*/
           if ( !v4 ) /*0x7a99e2*/
             goto LABEL_9; /*0x7a99e2*/
         }
-        v5 = (unsigned int *)(v4 + 4); /*0x7a99ea*/
+        v5 = &v4->vtable2; /*0x7a99ea*/
         if ( v5 ) /*0x7a99ef*/
           *(unsigned int *)v87.owningHouseIndex = *v5; /*0x7a99f3*/
       }
@@ -20581,7 +20582,7 @@ void CrateClass::ProcessPickup(int aP1)
                   goto LABEL_221; /*0x4821f1*/
                 v34 = a2; /*0x4821f7*/
   LABEL_111:
-                result = (*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)v33 + 140))(v33, v34->q21C); /*0x482205*/
+                result = v33->GetTypeVt28(v34->q21C); /*0x482205*/
                 v39 = (unsigned int *)result; /*0x48220b*/
                 if ( !result ) /*0x48220f*/
                   goto LABEL_221; /*0x48220f*/
@@ -20821,7 +20822,7 @@ void CrateClass::ProcessPickup(int aP1)
                           0);
                   *(unsigned int *)v122.vtable1 = *v53; /*0x482642*/
                   *(unsigned int *)&v122.vtable2 = v53[1]; /*0x482651*/
-                  v122.vtable3 = (void *)v53[2]; /*0x48265a*/
+                  v122.vtable3 = v53->vtable3; /*0x48265a*/
                   PlaySoundEffectAt( /*0x48266d*/
                     &v122,
                     (int)v119,
@@ -30810,7 +30811,7 @@ void ObjectPtr::RegisterForTracking(SwizzleManagerClass * aP0, MouseClass * aP1)
   if ( !*aP1 ) /*0x6cf254*/
     return 0; /*0x6cf25b*/
   v4 = aP0->q00C; /*0x6cf266*/
-  if ( *(unsigned int *)(aP0 + 20) < v4 /*0x6cf28e*/
+  if ( aP0->u32_14 < v4 /*0x6cf28e*/
     || (aP0->u32_11 || !v4)
     && (v5 = aP0->q018, v5 > 0)
     && aP0->__pad_004->vt_slot_8(aP0 + 4, v4 + v5, 0) )
@@ -31200,9 +31201,9 @@ void OreManagerClass::AssignMinerToRefinery( unsigned int * a2)
       if ( this->q028->GetModeNeg2() == 6 ) /*0x71b11b*/
       {
         v18 = this->q028; /*0x71b11d*/
-        *(unsigned char *)(*(unsigned int *)(v18 + 540) + 22392) = 1; /*0x71b126*/
+        *(unsigned char *)(v18->q21C + 22392) = 1; /*0x71b126*/
         BuildingClass::DisableTemporal(v18); /*0x71b12f*/
-        *(unsigned char *)(*(unsigned int *)(v18 + 540) + 508) = 1; /*0x71b13a*/
+        *(unsigned char *)(v18->q21C + 508) = 1; /*0x71b13a*/
       }
       this->q028->vt_slot_292(2); /*0x71b148*/
       v19 = *(unsigned int **)(this->q274 + 628); /*0x71b151*/
@@ -32600,7 +32601,7 @@ void ProjectileTrail::ComputeRenderData()
     fadd ds:dbl_7E1738
     fst qword ptr [esi+0B8h]
   }
-  *(double *)_ESI[46].__tail_0 = _RT1; /*0x659c37*/
+  *_ESI->u64_170.__tail_0 = _RT1; /*0x659c37*/
   (*((unsigned int *)&(v22))) = (uint8_t)_ESI[8].__tail_0[1]; /*0x659c43*/
   __asm { fild dword ptr [esp+20h+var_18] } /*0x659c47*/
   (*((unsigned int *)&(v22))) = (uint8_t)_ESI[8].__tail_0[2]; /*0x659c4b*/
@@ -32774,7 +32775,7 @@ void ResultNode::CleanupList()
   {
     do /*0x625ad4*/
     {
-      v2 = (ResultNode *)ResultNode_field_0x04[1].ResultNode_field_0x04; /*0x625ab9*/
+      v2 = ResultNode_field_0x04->q004.ResultNode_field_0x04; /*0x625ab9*/
       if ( ResultNode_field_0x04 ) /*0x625abe*/
       {
         ResultNode::Init(ResultNode_field_0x04); /*0x625ac2*/
@@ -33127,7 +33128,7 @@ void ShapeButtonClass::Constructor( ControlClass * aP1, ShapeButtonClass * aP2, 
   this->aP2 = aP2; /*0x69dd7e*/
   if ( aP2 ) /*0x69dd81*/
   {
-    this->Visible = *(int16_t *)(aP2 + 2); /*0x69dd87*/
+    this->Visible = aP2->u32_2; /*0x69dd87*/
     this->ID = aP2->X; /*0x69dd8e*/
   }
   else

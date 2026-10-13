@@ -173,6 +173,12 @@ struct TacticalClass {
     unsigned int u32_11C0;  // 0x11C0 (offset-truth)
     unsigned int u32_11C4;  // 0x11C4 (offset-truth)
     unsigned int u32_11C8;  // 0x11C8 (offset-truth)
+
+    unsigned int q140;  // X10 supply (member_lookup)
+    unsigned int u32_11B;  // X10 supply (member_lookup)
+    unsigned int u32_11E;  // X10 supply (member_lookup)
+    unsigned int u32_294;  // X10 supply (member_lookup)
+    unsigned int u32_2E1;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

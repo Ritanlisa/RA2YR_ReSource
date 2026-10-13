@@ -47,14 +47,6 @@ namespace gamemd { int FindByValue(List *p_this); }  // x4:ida@0x5943e0
 // [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
 // usage: *(unsigned int*)v.q000 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {
-struct _VectorClass_VCell {
-    char q000[1];        // 0x0 (vfptr carrier, dword-wide via cast; W16G3 raw vocab)
-    char m_1[7];            // 0x1..0x7 (raw usage &x.m_1[3] = Items @0x4)
-    int m_8;                // 0x8 Capacity
-    char m_C[2];            // 0xC..0xD IsInitialized/IsAllocated
-    char __pad_E[2];        // 0xE..0xF
-    char __tail_10[4];      // 0x10 Count
-};
 } // namespace gamemd
 
 

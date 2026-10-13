@@ -46,6 +46,7 @@
 #include "e4/classes/LayerClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/UnitTypeClass_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+#include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ComputeMovementWeight(int* p0, int* p1, char p2, int p3, int p4);  // x4:signals@0x429830
@@ -5742,7 +5743,7 @@ namespace gamemd {
     (*((unsigned char *)&(result))) = Type[5824]; /*0x4471cb*/
     if ( (unsigned char)result ) /*0x4471d3*/
     {
-      (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)Type + 132))(Type, bug->owner); /*0x4471de*/
+      Type->GetSpecialValue(bug->owner); /*0x4471de*/
       House::IsCurrentPlayer((House *)bug->owner); /*0x4471ea*/
       bug->Sell(); /*0x4471f3*/
       return bug->Destroy_0(); /*0x4471fd*/
@@ -9871,7 +9872,7 @@ namespace gamemd {
       v21 = (unsigned int *)BridgeSegment; /*0x452e0f*/
       if ( BridgeSegment ) /*0x452e13*/
       {
-        if ( (*(int (__thiscall **)(int))(*(unsigned int *)BridgeSegment + 388))(BridgeSegment) != 19 ) /*0x452e26*/
+        if ( BridgeSegment->vt_slot_388() != 19 ) /*0x452e26*/
         {
           v3 = 0; /*0x452e31*/
           if ( dword_A83C78 > 0 ) /*0x452e35*/
@@ -10234,10 +10235,10 @@ namespace gamemd {
               v28 = 0; /*0x4535a1*/
               if ( v27 /*0x4535f4*/
                 && BridgeSegment
-                && (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)BridgeSegment + 848))(BridgeSegment)
+                && BridgeSegment->IsPoweredActive()
                 && BridgeSegment[1770]
-                && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)BridgeSegment + 388))(BridgeSegment) != 19
-                && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)BridgeSegment + 388))(BridgeSegment) != 18 )
+                && BridgeSegment->GetPrimaryOrFallback() != 19
+                && BridgeSegment->GetPrimaryOrFallback() != 18 )
               {
                 v28 = 1; /*0x4535fa*/
                 switch ( v32 ) /*0x453604*/
@@ -13207,13 +13208,13 @@ namespace gamemd {
       v11 = NeighbourContent->ambientSoundController[2]; /*0x485ce6*/
       if ( v11 == 126 ) /*0x485cec*/
       {
-        if ( (((unsigned char *)&(NeighbourContent->transporter))[2]) < 0x30u ) /*0x485cf5*/
+        if ( (NeighbourContent->u8_FE) < 0x30u ) /*0x485cf5*/
           goto LABEL_21; /*0x485cf5*/
       }
       else if ( v11 == -1 || !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v11) + 686) ) /*0x485d0d*/
       {
   LABEL_21:
-        if ( (*((unsigned char *)&(NeighbourContent->transporter))) ) /*0x485d1b*/
+        if ( (NeighbourContent->transporter) ) /*0x485d1b*/
         {
           Rect::Set(&v69, 0, 0, 0, 0); /*0x486142*/
           v55 = (struct tagRECT *)BuildingClass::GetPlacementRect(NeighbourContent, v93); /*0x48615d*/
@@ -13226,7 +13227,7 @@ namespace gamemd {
           v40 = v39[3]; /*0x486199*/
           NeighbourContent->ambientSoundController[2] = 126; /*0x48619c*/
           v69.Height = v40; /*0x4861a8*/
-          (((unsigned char *)&(NeighbourContent->transporter))[2]) = 2 * (*((unsigned char *)&(NeighbourContent->transporter))) /*0x4861d7*/
+          (NeighbourContent->u8_FE) = 2 * (NeighbourContent->transporter) /*0x4861d7*/
                                                + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
                                                + 51;
           v56 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4861e2*/
@@ -13243,7 +13244,7 @@ namespace gamemd {
           BridgeBitfield = CellClass::GetBridgeBitfield((CellClass *)NeighbourContent); /*0x485d30*/
           v13 = NeighbourContent->ambientSoundController[2]; /*0x485d32*/
           v70 = BridgeBitfield; /*0x485d38*/
-          if ( v13 == -1 || BridgeBitfield <= 15 && (((unsigned char *)&(NeighbourContent->transporter))[2]) / 3 != BridgeBitfield ) /*0x485d5f*/
+          if ( v13 == -1 || BridgeBitfield <= 15 && (NeighbourContent->u8_FE) / 3 != BridgeBitfield ) /*0x485d5f*/
           {
             v14 = BuildingClass::GetPlacementRect(NeighbourContent, v97); /*0x485d86*/
             v15 = House::GetStartCoords((House *)NeighbourContent, v92); /*0x485d92*/
@@ -13293,7 +13294,7 @@ namespace gamemd {
             v77 = v20; /*0x485e6e*/
             NeighbourContent->ambientSoundController[2] = 126; /*0x485f28*/
             v24 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x485f47*/
-            (((unsigned char *)&(NeighbourContent->transporter))[2]) = 3 * v70 + abs32(v24 % 3); /*0x485f69*/
+            (NeighbourContent->u8_FE) = 3 * v70 + abs32(v24 % 3); /*0x485f69*/
             House::AnnounceUpgrade((int)NeighbourContent, -1); /*0x485f71*/
             v78[0] = DSurface_ViewBounds.field_0; /*0x485f81*/
             v78[1] = DSurface_ViewBounds.field_4; /*0x485f8f*/

@@ -47,6 +47,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CheckDiscPresence(int a1);  // 0x4A8270
     bool CreateDialog();  // 0x623CD0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

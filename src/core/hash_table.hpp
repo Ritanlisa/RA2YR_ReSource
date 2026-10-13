@@ -41,6 +41,8 @@ public:
 // SHA1 — SHA-1 hash computation (6 methods)
 // ============================================================================
 // CSP: SHA1 matched via T1
+#ifndef GAMEMD_G2_SHA1_DEF  // X10: first-include-wins twin guard
+#define GAMEMD_G2_SHA1_DEF 1
 class SHA1
 {
 public:
@@ -79,7 +81,14 @@ public:
     // === SYMBOL-ANCHOR (END) ===
 public:  // g57c5 W4b supply slot
     unsigned int SHA1_field_0x04;  // 0x4 g57c5 W4b (self-desc vocab, ml slot witness)
+
+    void* q034;  // X10 supply (member_lookup)
+    int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_30;  // X10 supply (member_lookup)
 };
+#endif  // GAMEMD_G2_SHA1_DEF (X10)
+
 
 // ============================================================================
 // CRC32 — CRC-32 checksum (1 method)

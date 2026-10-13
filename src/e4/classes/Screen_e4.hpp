@@ -25,6 +25,8 @@ struct Screen {
     int CleanupTransitionObjects();
     int TransitionLoop(int a2);
     int TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4);
+
+    unsigned int u32_38;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

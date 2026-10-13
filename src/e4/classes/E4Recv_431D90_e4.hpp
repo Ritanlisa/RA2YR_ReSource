@@ -20,5 +20,8 @@ struct E4Recv_431D90 {
     unsigned int occupant;  // @0x431d9d LOBYTE (W16G3 raw-usage vocab)
     void* attachedTag;  // (W16G3 @0x431db1 assign 0)
     unsigned int owningHouseIndex;  // @0x431dxx (W16G3 raw-usage vocab)
+
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

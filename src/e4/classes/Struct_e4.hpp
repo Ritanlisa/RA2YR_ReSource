@@ -37,6 +37,9 @@ struct Struct {
     unsigned int u32_4C;  // 0x4C (offset-truth)
     unsigned int u32_54;  // 0x54 (offset-truth)
     unsigned int u32_8;  // 0x8 (offset-truth)
+
+    int u32_1;  // X10 supply (member_lookup)
+    int u32_2;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

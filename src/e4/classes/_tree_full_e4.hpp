@@ -222,6 +222,13 @@
 #include "e4/classes/WinMain_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
 #include "e4/classes/unknown_e4.hpp"  // G57c1 promoted flat carrier (utility_ext twin suppressed in e4 TUs)
 
+// X10: e4 flat authority markers (suppress tree twins in object/object.hpp)
+#ifndef GAMEMD_E4_OWNS_ObjectClass
+#define GAMEMD_E4_OWNS_ObjectClass 1
+#endif
+#ifndef GAMEMD_E4_OWNS_AudioController
+#define GAMEMD_E4_OWNS_AudioController 1
+#endif
 namespace gamemd {
 
 struct AudioChannel;
@@ -831,6 +838,33 @@ struct ObjectClass {
     unsigned int rockerLinkedUnit;  // @0x4d7d65 (W16G3 raw-usage vocab)
     // --- W16G3 supply (END) ---
 
+
+    unsigned char AudioController_1A0[4];  /* AudioController */  // X10 supply (member_lookup)
+    unsigned char AudioController_1B4[4];  /* AudioController */  // X10 supply (member_lookup)
+    void* q140;  // X10 supply (member_lookup)
+    VectorClass* q16C;  // X10 supply (member_lookup)
+    IUnknown* q1E4;  // X10 supply (member_lookup)
+    IUnknown* q28C;  // X10 supply (member_lookup)
+    unsigned char q3DB;  // X10 supply (member_lookup)
+    unsigned short u16_80E;  // X10 supply (member_lookup)
+    unsigned int u32_100;  // X10 supply (member_lookup)
+    unsigned int u32_13C;  // X10 supply (member_lookup)
+    unsigned int u32_158;  // X10 supply (member_lookup)
+    unsigned int u32_1BC;  // X10 supply (member_lookup)
+    unsigned int u32_20000;  // X10 supply (member_lookup)
+    unsigned int u32_20004;  // X10 supply (member_lookup)
+    unsigned int u32_2840;  // X10 supply (member_lookup)
+    unsigned int u32_284C;  // X10 supply (member_lookup)
+    int u32_294;  // X10 supply (member_lookup)
+    unsigned int u32_2D4;  // X10 supply (member_types)
+    unsigned int u32_5D4;  // X10 supply (member_lookup)
+    unsigned int u32_674;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
+    unsigned int u32_E10;  // X10 supply (member_lookup)
+    unsigned int u32_E18;  // X10 supply (member_lookup)
+    unsigned char u8_28A;  // X10 supply (member_lookup)
+
+    unsigned int u32_BC;  // X10 supply (member_lookup)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -919,14 +953,14 @@ struct VectorClass {
     static int Cleanup(void *aP1);
     // --- W16G3 supply (END) ---
 
+
+    void* q010;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 #endif
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
-struct VectorCursor_uint_DynamicVectorClass_uint {
-    void* vfptr;
-    unsigned char *__pad_0;  // 0x0
-};
+
 #endif  // GAMEMD_TREE_UNIVERSE (VectorCursor_uint_DynamicVectorClass_uint)
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere

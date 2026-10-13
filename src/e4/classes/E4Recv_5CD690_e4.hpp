@@ -15,5 +15,8 @@ struct E4Recv_5CD690 {
     unsigned int M68;  // 0x44
 // --- flat members (END) ---
     unsigned int *  sub_5CD690(int * a2);  // 0x5CD690
+
+    unsigned int q096;  // X10 supply (member_lookup)
+    unsigned char u32_1C[4];  /* wchar_t */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

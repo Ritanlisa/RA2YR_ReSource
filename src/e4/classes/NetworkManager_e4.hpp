@@ -13,6 +13,9 @@ struct NetworkManager {
     unsigned char q000[8];  // 0x0 (carrier filler)
     static char RemovePlayer(int aP1, int a2);
     static unsigned int SetPlayerAddress(void *aP1, unsigned int a2, void *a3);
+
+    int u32_10;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_NetworkManager_DEF
 } // namespace gamemd

@@ -734,7 +734,7 @@ int AudioQueue::ReleaseBuffers()
     result = ((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x40827f*/
     for ( i = result; result; i = result ) /*0x408288*/
     {
-      if ( !*(unsigned int *)(i + 128) && i->u32_14 ) /*0x4082a2*/
+      if ( !i->q080 && i->u32_14 ) /*0x4082a2*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x4082ae*/
         AudioChannel::DeactivatePlay(i->u32_14); /*0x4082b3*/

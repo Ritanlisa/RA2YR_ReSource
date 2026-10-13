@@ -16,6 +16,14 @@ struct Text {
     BOOL  DrawCharAtGrid(int hdc, int String, int a4);  // 0x5BD3D0
     static int __stdcall MeasureWidth(int a1, int a2);
     unsigned int u32_2714;  // g57w11 r4 G9 体词汇 (raw 0x5bd3f2/3c *((unsigned int*)this + 2501) = 0x2714)
+
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+
+    unsigned char q050;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

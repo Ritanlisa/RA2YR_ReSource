@@ -149,6 +149,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool q278; // 0x278  gB member supply
     unsigned char u8_270; // 0x270  gB member supply
     HouseTypeClass* House;  // 0xA4 (canon-mt)
+
+    unsigned int u32_98;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_D2;  // X10 supply (member_lookup)
+    unsigned int u32_D3;  // X10 supply (member_lookup)
+    unsigned int u32_D4;  // X10 supply (member_lookup)
+    unsigned int u32_DC;  // X10 supply (member_lookup)
+    unsigned int u32_E0;  // X10 supply (member_lookup)
+    bool u8_9E;  // X10 supply (member_lookup)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
 };
 
 // --- TriggerTypeClass ---
@@ -255,6 +268,18 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_DC; // 0xDC  gB member supply
     void* vtable4;  // 0xC (ml truth)  gB vtable supply
     void* vtable46;  // 0x0 (no offset truth)  gB vtable supply
+
+    bool Difficulty;  // X10 supply (csp_canon_members)
+    bool Enabled;  // X10 supply (csp_canon_members)
+    HouseTypeClass* House;  // X10 supply (csp_canon_members)
+    unsigned char UINameLabel;  // X10 supply (csp_canon_members)
+    unsigned int q026;  // X10 supply (member_lookup)
+    bool q029;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_C0;  // X10 supply (member_lookup)
+    unsigned int u32_C4;  // X10 supply (member_lookup)
+    unsigned int u32_D0;  // X10 supply (member_lookup)
+    unsigned int u32_E0;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -1965,7 +1965,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         if ( v13 ) /*0x65e5bf*/
         {
           v45 = v13 + 12; /*0x65e5c8*/
-          v50 = (unsigned int *)v13[12]; /*0x65e5cb*/
+          v50 = v13->nextObject; /*0x65e5cb*/
           v13 = v50; /*0x65e5cf*/
           *v45 = 0; /*0x65e5d1*/
         }
@@ -2056,7 +2056,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   {
     while ( 1 ) /*0x65e622*/
     {
-      v46 = (unsigned int *)v13[12]; /*0x65e622*/
+      v46 = v13->nextObject; /*0x65e622*/
       v50 = v46; /*0x65e62a*/
       v13[12] = 0; /*0x65e630*/
       if ( v13 ) /*0x65e636*/

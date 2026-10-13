@@ -66,7 +66,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
       v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->q14C = v4->fallRate == 3 ? v4 + 384 : v4 + 336;
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x75f6ee*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x75f6ee*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->q1D4); /*0x75f6ff*/
     Register = (*(int (__stdcall **)(int, int *, int, unsigned int))(a3->vtable4)(a3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/

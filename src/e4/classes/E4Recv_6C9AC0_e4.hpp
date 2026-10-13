@@ -17,5 +17,8 @@ struct E4Recv_6C9AC0 {
     unsigned int M32;  // 0x32
 // --- flat members (END) ---
     void * sub_6C9AC0();
+
+    unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

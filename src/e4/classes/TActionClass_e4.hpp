@@ -116,6 +116,16 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     unsigned int u32_54F0;  // 0x54F0 (offset-truth)
     unsigned int u32_54F4;  // 0x54F4 (offset-truth)
     unsigned int u32_54FC;  // 0x54FC (offset-truth)
+
+    unsigned char HouseClass_A20[4];  /* HouseClass */  // X10 supply (member_lookup)
+    void* q348;  // X10 supply (member_lookup)
+    unsigned int u32_114;  // X10 supply (member_lookup)
+    unsigned int u32_118;  // X10 supply (member_lookup)
+    unsigned int u32_11C;  // X10 supply (member_lookup)
+    unsigned int u32_13C;  // X10 supply (member_lookup)
+    unsigned int u32_27D;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
+    unsigned int u32_FC;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

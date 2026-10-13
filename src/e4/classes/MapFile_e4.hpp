@@ -15,6 +15,12 @@ struct MapFile {
     static wchar_t * LoadDescription(void *aP1, void *a2, void *a3);
     DynamicVector * QueryInterface(unsigned int * Block, char a2);
     unsigned int * Constructor(int a2, int a3, void *a1 = 0, void *a4 = 0);
+
+    uint8_t MapFile_field_0x0C;  // X10 supply (member_types)
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

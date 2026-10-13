@@ -42,6 +42,8 @@ CCINIClass();
     int sectionCount;  // 0x1C (ml)
     int sectionHead[3];  // 0x10 (ml)
     int unknown38;  // 0x38 (ml)
+
+    unsigned char __pad_041;  // X10 supply (csp_canon_members)
 };
 #endif  // GAMEMD_E4_CCINIClass
 

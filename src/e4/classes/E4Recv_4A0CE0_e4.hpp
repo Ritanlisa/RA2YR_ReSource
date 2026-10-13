@@ -18,5 +18,7 @@ struct E4Recv_4A0CE0 {
     unsigned int M32;  // 0x32
 // --- flat members (END) ---
     unsigned int *  sub_4A0CE0(unsigned int * a2);  // 0x4A0CE0
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

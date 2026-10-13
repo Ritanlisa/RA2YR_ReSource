@@ -15,6 +15,15 @@ struct FontClass {
     int GetPixelData(uint16_t a2);  // 0x4349B0
     char  LoadFontResources(int16_t a2);  // 0x5D2E90
     unsigned char q004;  // 0x4 (ml; member holds a pointer value per G42.39 note)
+
+    unsigned char __pad_014;  // X10 supply (csp_canon_members)
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
+    unsigned int u32_E;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

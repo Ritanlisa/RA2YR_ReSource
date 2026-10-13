@@ -33,5 +33,9 @@ struct FilePipe_30 {
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char __pad_00C;  // X10 supply (csp_canon_members)
+    unsigned int u32_4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

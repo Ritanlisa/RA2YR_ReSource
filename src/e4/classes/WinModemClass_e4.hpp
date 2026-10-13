@@ -31,6 +31,24 @@ struct WinModemClass {
     unsigned int u32_58;  // 0x58 (offset-truth)
     unsigned int u32_64;  // 0x64 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
+
+    unsigned char __pad_004;  // X10 supply (csp_canon_members)
+    unsigned char __pad_158;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    unsigned int q040;  // X10 supply (member_lookup)
+    unsigned char q06C;  // X10 supply (member_lookup)
+    int u32_10;  // X10 supply (member_lookup)
+    int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
+    unsigned int u32_CC;  // X10 supply (member_lookup)
+
+    unsigned int u32_5C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

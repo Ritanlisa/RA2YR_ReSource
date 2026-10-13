@@ -19,5 +19,8 @@ struct Team {
     int  GetMember(int a2, void *a1 = 0);  // 0x65AD30
     int AllMembersValid();
     unsigned int *q000;  // 0x0 (canon-mt)
+
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

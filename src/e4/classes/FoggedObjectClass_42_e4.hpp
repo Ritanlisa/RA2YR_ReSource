@@ -30,5 +30,7 @@ struct FoggedObjectClass_42 {
     VectorClass_flat *  QueryInterface(char a2);  // 0x4E0CE0
     unsigned int  PointerToIndex(int a2);  // 0x4E0220
     unsigned int  Write(int a2);  // 0x4E06E0
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
 };
 } // namespace gamemd

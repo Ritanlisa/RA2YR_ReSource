@@ -13,6 +13,9 @@ struct AnimFile {
 // --- flat members (END) ---
     AnimFile * QueryInterface(void * Block, char a2);
     char * Stub();
+
+    unsigned char q368;  // X10 supply (member_lookup)
+    unsigned int u32_89;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_ANIMFILE_DECLARED
 

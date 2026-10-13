@@ -2710,7 +2710,7 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
       v9 = *v6; /*0x6ed143*/
       v16[2] = v6[41]; /*0x6ed148*/
       v10 = this->buildingType; /*0x6ed14c*/
-      (*((unsigned char *)&(v10))) = *(unsigned char *)(v10 + 247); /*0x6ed14f*/
+      (*((unsigned char *)&(v10))) = v10->u32_F7; /*0x6ed14f*/
       v11 = (*(int (__thiscall **)(int *, int, unsigned int *, int))(v9 + 964))(v6, SuperWeaponTypeFlag, v16, v10); /*0x6ed15e*/
       TeamClass::SelectMember(this, v11); /*0x6ed167*/
       if ( this->queuedFocus && (v12 = *&this->Coord_9C) != 0 ) /*0x6ed17a*/
@@ -3426,7 +3426,7 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
   v13 = *v5; /*0x6f0233*/
   v25[2] = v5[41]; /*0x6f0239*/
   v14 = v23->buildingType; /*0x6f0241*/
-  (*((unsigned char *)&(v14))) = *(unsigned char *)(v14 + 247); /*0x6f0244*/
+  (*((unsigned char *)&(v14))) = v14->u32_F7; /*0x6f0244*/
   v15 = v5->SelectAutoTarget_Start_AU(v12, v25, v14); /*0x6f0253*/
   v23 = v23; /*0x6f0259*/
   v15 = v15; /*0x6f025d*/

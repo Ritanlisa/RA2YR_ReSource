@@ -63,10 +63,6 @@ namespace gamemd {
 struct GameScreen;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-#ifndef GAMEMD_E4_FLAT_DynamicVector  // G57c2 dedup: full flat carrier DynamicVector_e4.hpp wins (include order verified carrier-first)
-#define GAMEMD_E4_FLAT_DynamicVector 1  // G57w8: twin-guard dedup, define restored
-struct DynamicVector { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-#endif  // GAMEMD_E4_FLAT_DynamicVector
 } // namespace gamemd
 namespace gamemd {
 struct ComboBoxDropDown;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
@@ -95,7 +91,6 @@ struct ChronoScreen;  // G57c2 dedup: fwd only -- other def lives in classes.hpp
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_DropPodLocomotionClass  // G57c2 dedup: full flat carrier DropPodLocomotionClass_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_DropPodLocomotionClass 1  // G57w8: twin-guard dedup, define restored
-struct DropPodLocomotionClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 } // namespace gamemd
 namespace gamemd {
@@ -156,10 +151,6 @@ struct TechnoTypeClass { void* vfptr; };  // minimal E2 (size-fix pending til ev
 #endif  // GAMEMD_E4_FLAT_TechnoTypeClass
 } // namespace gamemd
 namespace gamemd {
-#ifndef GAMEMD_E4_FLAT_ScriptClass  // G57c2 dedup: full flat carrier ScriptClass_e4.hpp wins (include order verified carrier-first)
-#define GAMEMD_E4_FLAT_ScriptClass 1  // G57w8: twin-guard dedup, define restored
-struct ScriptClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-#endif  // GAMEMD_E4_FLAT_ScriptClass
 } // namespace gamemd
 namespace gamemd {
 // G57a1 dedup: gamemd::HashVector_UInt is defined in core/utility_ext.hpp (transitively included first via e4_globals.hpp -> _tree_full_e4.hpp in every consumer TU); minimal twin removed.
@@ -254,38 +245,16 @@ struct BombClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence
 #endif  // GAMEMD_E4_FLAT_BombClass
 } // namespace gamemd
 namespace gamemd {
-#ifndef GAMEMD_E4_FLAT_UDPInterfaceClass_Destru  // G57c2 dedup: full flat carrier UDPInterfaceClass_Destru_e4.hpp wins (include order verified carrier-first)
-#define GAMEMD_E4_FLAT_UDPInterfaceClass_Destru 1  // G57w8: twin-guard dedup, define restored
-struct UDPInterfaceClass_Destru { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-#endif  // GAMEMD_E4_FLAT_UDPInterfaceClass_Destru
 } // namespace gamemd
 namespace gamemd {
-#ifndef GAMEMD_E4_FLAT_WinsockInterface  // G57c2 dedup: full flat carrier WinsockInterface_e4.hpp wins (include order verified carrier-first)
-#define GAMEMD_E4_FLAT_WinsockInterface 1  // G57w8: twin-guard dedup, define restored
-struct WinsockInterface { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-#endif  // GAMEMD_E4_FLAT_WinsockInterface
 } // namespace gamemd
 namespace gamemd {
 struct WDTState;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct CarryoverClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
-struct _DynamicVectorClass_PAUControlNode {
-void* vfptr;
-    char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
-    unsigned int m_8;  // 0x8 vocab alias (Capacity)
-    unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
-    unsigned int m_10;  // 0x10 vocab alias (Count)
-    char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
-};
-  // minimal E2 (size-fix pending til evidence)
-struct _VectorClass_PAUControlNode {
-void* vfptr;
-    char m_1[8];  // @0x4xxxxx (m_1[3] vocab) (W16G3 raw-usage vocab)
-    unsigned int m_C;  // BYTE1 vocab (W16G3 raw-usage vocab)
-    unsigned int m_10;  // Count vocab (W16G3 raw-usage vocab)
 
-};  // minimal E2 (size-fix pending til evidence)
+  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct CoordBounds;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
@@ -302,13 +271,7 @@ struct VectorClass_TagClass {  // G57w17h4: til VectorClass (ordinal 1500) layou
 } // namespace gamemd
 
 namespace gamemd {
-struct _VectorClass_PAVParticleClass {
-void* vfptr;
-    char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
-    unsigned int m_8;  // 0x8 vocab alias (Capacity)
-    unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
-    char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
-};
+
   // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
@@ -372,7 +335,6 @@ struct ScriptActionVector;  // G57c2 dedup: fwd only -- other def lives in class
 namespace gamemd {
 #if !defined(GAMEMD_E4_FLAT_AudioSample) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
 #ifndef GAMEMD_E4_FLAT_AudioSample  // G57c2 dedup: full flat carrier AudioSample_e4.hpp wins (include order verified carrier-first)
-struct AudioSample { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_AudioSample
 #endif  // GAMEMD_E4_FLAT_AudioSample
 } // namespace gamemd

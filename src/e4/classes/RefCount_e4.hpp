@@ -16,6 +16,8 @@ struct RefCount {
     int Increment(int a2);
     unsigned int u32_8;  // 0x8 (offset-truth)
     unsigned int u32_C;  // 0xC (offset-truth)
+
+    unsigned char q010;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_RefCount_DEF
 

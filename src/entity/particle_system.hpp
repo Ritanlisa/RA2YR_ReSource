@@ -87,6 +87,23 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
 
     int Constructor(int a2, int *a3, int a4, void *a5, unsigned int *a6, int a7);  // G42.39 supply (0x62DC50)
+
+    bool IsAllocated;  // X10 supply (csp_canon_members)
+    bool IsInitialized;  // X10 supply (csp_canon_members)
+    char isAliveFlag;  // X10 supply (csp_canon_members)
+    unsigned char location;  // X10 supply (csp_canon_members)
+    unsigned int q0EC;  // X10 supply (member_lookup)
+    unsigned int q0F4;  // X10 supply (member_lookup)
+    unsigned int u32_C8;  // X10 supply (member_lookup)
+    unsigned int u32_C9;  // X10 supply (member_lookup)
+    unsigned int u32_E8;  // X10 supply (member_lookup)
+    unsigned int u32_F8;  // X10 supply (member_lookup)
+    unsigned char u8_AE;  // X10 supply (member_lookup)
+    unsigned char u8_D9;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
+    void* vtable2;  // X10 supply (csp_canon_members)
+    void* vtable3;  // X10 supply (csp_canon_members)
+    void* vtable4;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

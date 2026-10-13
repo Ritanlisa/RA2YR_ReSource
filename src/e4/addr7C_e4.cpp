@@ -743,7 +743,7 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
     else
     {
       v7[30] = v7[128]; /*0x7c2a1f*/
-      v7->u8_3E = *((unsigned char *)v7 + 258); /*0x7c2a29*/
+      v7->u8_3E = v7->q102; /*0x7c2a29*/
       v19 = v7->q103; /*0x7c2a2c*/
     }
     v7->u8_3F = v19; /*0x7c2a32*/
@@ -5630,7 +5630,7 @@ void * strchr(const char * Str, int Val)
             | (uint8_t)Val
             | ((((uint8_t)Val << 8) | (uint8_t)Val) << 16))
            ^ *(unsigned int *)v2;
-        v5 = *(unsigned int *)v2 + 2130640639; /*0x7caf73*/
+        v5 = *&v2->u32_1FBFBFBFC; /*0x7caf73*/
         v6 = v5 ^ ~*(unsigned int *)v2; /*0x7caf7f*/
         v2 += 4; /*0x7caf81*/
         if ( (((v4 + 2130640639) ^ ~v4) & 0x81010100) != 0 ) /*0x7caf8a*/
@@ -6028,7 +6028,7 @@ char * strncat(char * aP0, const char * Source, size_t Count)
   while ( 1 ) /*0x7cb628*/
   {
   main_loop_entrance_0:
-    v15 = (*(unsigned int *)v9 + 2130640639) ^ ~*(unsigned int *)v9; /*0x7cb61c*/
+    v15 = (*&v9->u32_1FBFBFBFC) ^ ~*(unsigned int *)v9; /*0x7cb61c*/
     v12 = *(unsigned int *)v9; /*0x7cb62a*/
     v9 += 4; /*0x7cb62c*/
     if ( (v15 & 0x81010100) == 0 ) /*0x7cb634*/
@@ -9184,7 +9184,7 @@ unsigned int * __sbh_free_block(char * aP0, int aP1)  // G42.33 b18: truth char*
     *(unsigned int *)(dword_B78B90->uniqueId + 4 * dword_B78B88 + 196) = 0; /*0x7cfa64*/
     --*(unsigned char *)(*(&dword_B78B90->uniqueId) + 67); /*0x7cfa74*/
     v22 = (LPVOID *)dword_B78B90; /*0x7cfa77*/
-    if ( !*(unsigned char *)(*((unsigned int *)dword_B78B90 + 4) + 67) ) /*0x7cfa7f*/
+    if ( !*(unsigned char *)(dword_B78B90->uniqueId + 67) ) /*0x7cfa7f*/
     {
       dword_B78B90->vtable2 &= ~1u; /*0x7cfa85*/
       v22 = (LPVOID *)dword_B78B90; /*0x7cfa89*/

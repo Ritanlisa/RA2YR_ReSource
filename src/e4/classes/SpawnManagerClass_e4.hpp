@@ -54,6 +54,9 @@ struct SpawnManagerClass {
     void Constructor_SpawnManagerClass();
     void* Constructor(void *a1, void *a2, void *a3, void *a4 = 0);
     SpawnManagerClass * ProcessEvent(void * Block, char a2);
+
+    unsigned int spawns;  // X10 supply (csp_canon_members)
+    int u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -14,6 +14,10 @@ struct Vector3 {
     int Magnitude();  // 0x41c3c0
     double q008;  // G42.39 data supply (Sqrt operand)
     double q040;  // G42.39 data supply (Sqrt operand)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

@@ -34,5 +34,11 @@ struct BSurface {
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_288;  // 0x288 (offset-truth)
     unsigned int u32_4;  // 0x4 (offset-truth)
+
+    unsigned char q110;  // X10 supply (member_lookup)
+    unsigned char q1B0;  // X10 supply (member_lookup)
+    int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

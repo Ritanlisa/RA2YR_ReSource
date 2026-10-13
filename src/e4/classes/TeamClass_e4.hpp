@@ -121,6 +121,12 @@ struct TeamClass {
     unsigned int u32_A8;  // 0xA8 (offset-truth)
     unsigned int u32_B0;  // 0xB0 (offset-truth)
     unsigned int u32_B4;  // 0xB4 (offset-truth)
+
+    unsigned int u32_114;  // X10 supply (member_lookup)
+    unsigned int u32_118;  // X10 supply (member_lookup)
+    unsigned int u32_13C;  // X10 supply (member_lookup)
+    unsigned int u32_AC;  // X10 supply (member_lookup)
+    unsigned int u32_F4;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

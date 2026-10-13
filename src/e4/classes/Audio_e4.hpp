@@ -42,5 +42,23 @@ struct Audio {
     static int IsLoud(Audio * aP1);
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
     char __pad_10[4];  // 0x10 (ml)
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    unsigned char q018[28];  /* char[28] */  // X10 supply (member_lookup)
+    unsigned char q028;  // X10 supply (member_lookup)
+    int q034;  // X10 supply (member_lookup)
+    int q038;  // X10 supply (member_lookup)
+    unsigned int q150;  // X10 supply (member_lookup)
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_148;  // X10 supply (member_lookup)
+    unsigned int u32_14C;  // X10 supply (member_lookup)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_20;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
+    unsigned int u32_88;  // X10 supply (member_lookup)
+    unsigned int u32_A8;  // X10 supply (member_lookup)
+    unsigned int u32_B0;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

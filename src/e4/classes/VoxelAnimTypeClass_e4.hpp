@@ -121,6 +121,8 @@ struct VoxelAnimTypeClass {
     long long GetData(ObjectTypeClass * aP1, int a3);
     VoxelAnimTypeClass * Constructor(char *Source, void *a1 = 0, void *a2 = 0, void *a3 = 0);
     VoxelAnimTypeClass * ddtor(void ** Block, char a2);
+
+    int32_t VoxelIndex;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

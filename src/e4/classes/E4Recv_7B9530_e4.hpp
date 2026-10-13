@@ -25,5 +25,7 @@ struct E4Recv_7B9530 {
     unsigned int M84;  // 0x84
 // --- flat members (END) ---
     AbstractClass * * sub_7B9530();  // 0x7B9530
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

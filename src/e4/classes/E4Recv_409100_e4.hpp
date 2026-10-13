@@ -17,5 +17,7 @@ struct E4Recv_409100 {
     unsigned int M56;  // 0x38
 // --- flat members (END) ---
     int sub_409100();  // 0x409100
+
+    unsigned int q018;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

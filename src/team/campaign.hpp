@@ -77,6 +77,17 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int q01A; // 0x1A (ml truth: q01A@0x1A)  gB member supply
     void* vtable3;  // 0x8 (ml truth)  gB vtable supply
     void* vtable4;  // 0xC (ml truth)  gB vtable supply
+
+    unsigned int abstractFlags;  // X10 supply (csp_canon_members)
+    unsigned int nextArrayIndex;  // X10 supply (csp_canon_members)
+    unsigned int q00E;  // X10 supply (member_lookup)
+    unsigned char q1428[4];  /* SessionClass */  // X10 supply (member_lookup)
+    VectorClass* q6028;  // X10 supply (member_lookup)
+    unsigned char u32_1F2C[4];  /* wchar_t */  // X10 supply (member_lookup)
+    unsigned int u32_6828;  // X10 supply (member_lookup)
+    char u8_3A28;  // X10 supply (member_lookup)
+    void* uniqueId;  // X10 supply (csp_canon_members)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

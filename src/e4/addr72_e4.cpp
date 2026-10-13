@@ -907,7 +907,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   }
   v20 = *((int16_t *)dword_B0F9DC + 1); /*0x72ee33*/
   v21 = *((int16_t *)dword_B0F9DC + 2); /*0x72ee37*/
-  v22 = dword_B0FC24->vtable2 + *((unsigned int *)dword_B0FC24 + 3) - v21; /*0x72ee48*/
+  v22 = dword_B0FC24->vtable2 + dword_B0FC24->vtable4 - v21; /*0x72ee48*/
   v23 = operator new(0x10u); /*0x72ee4a*/
   if ( v23 ) /*0x72ee54*/
   {

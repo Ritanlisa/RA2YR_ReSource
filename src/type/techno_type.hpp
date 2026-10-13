@@ -3,6 +3,7 @@
 #include "object_type.hpp"
 #include "core/enums.hpp"
 #include "core/utility_ext.hpp"  // G42.55 closure (Count)
+#include "fundamentals.hpp"
 
 namespace gamemd
 {
@@ -41,13 +42,7 @@ struct AbilitiesStruct
     bool CRUSHER;
 };
 
-struct TurretControl
-{
-    int Travel;
-    int CompressFrames;
-    int RecoverFrames;
-    int HoldFrames;
-};
+
 
 struct WeaponStruct
 {

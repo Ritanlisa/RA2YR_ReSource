@@ -41,5 +41,9 @@ struct TaskForceClass {
     int StubReturn212();  // 0x6E87E0
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q008;  // 0x8 (offset-truth)
+
+    int q024;  // X10 supply (member_lookup)
+    unsigned char q0A0[4];  /* char[4] */  // X10 supply (member_lookup)
+    int q0A4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

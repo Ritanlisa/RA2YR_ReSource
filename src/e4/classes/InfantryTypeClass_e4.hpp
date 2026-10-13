@@ -551,6 +551,19 @@ struct InfantryTypeClass {
     unsigned int q5B84;  // 0x5B84 (offset-truth)
     unsigned char q5C42;  // 0x5C42 (offset-truth)
     unsigned int u32_5D00;  // 0x5D00 (offset-truth)
+
+    unsigned int RecordTable;  // X10 supply (member_lookup)
+    int qE40;  // X10 supply (member_lookup)
+    unsigned char qE50[28];  /* int[7] */  // X10 supply (member_lookup)
+    unsigned char qE60;  // X10 supply (member_lookup)
+    unsigned int u32_E44;  // X10 supply (member_lookup)
+    unsigned int u32_E48;  // X10 supply (member_lookup)
+    unsigned int u32_E4C;  // X10 supply (member_lookup)
+    unsigned int u32_E64;  // X10 supply (member_lookup)
+    unsigned int u32_E88;  // X10 supply (member_lookup)
+    unsigned int u32_E98;  // X10 supply (member_lookup)
+    unsigned int u32_E9C;  // X10 supply (member_lookup)
+    uint8_t u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

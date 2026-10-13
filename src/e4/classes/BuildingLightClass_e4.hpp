@@ -99,6 +99,12 @@ struct BuildingLightClass {
     unsigned int abstractFlags6;  // @0x4358a3 (W16G3 raw-usage vocab)
     unsigned int abstractFlags7;  // @0x4358a9 (W16G3 raw-usage vocab)
     char __pad_B4[4];  // 0xB4 (ml)
+
+    unsigned int q060;  // X10 supply (member_lookup)
+
+    unsigned char __pad_0B4;  // X10 supply (csp_canon_members)
+    unsigned char __pad_0D4;  // X10 supply (csp_canon_members)
+    ParticleSystemClass* q388;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
 

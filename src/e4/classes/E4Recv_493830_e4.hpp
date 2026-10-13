@@ -10,5 +10,7 @@ struct E4Recv_493830 {
     unsigned int M1;  // 0x1
 // --- flat members (END) ---
     unsigned short *  sub_493830(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9);  // 0x493830
+
+    unsigned short u16_4;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

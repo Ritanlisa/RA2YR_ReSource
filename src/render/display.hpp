@@ -7,6 +7,7 @@
 #include "core/enums.hpp"
 #include "fundamentals.hpp"
 #include "object/abstract.hpp"
+#include "system/map.hpp"
 #if !defined(GAMEMD_E4_UNIVERSE)  // G57w8: e4 TUs carry flat MapClass/GScreenClass carriers; display.hpp twins are gap2-only
 
 namespace gamemd
@@ -25,49 +26,14 @@ struct SHPStruct;
 #define GAMEMD_DEF_GScreenClass
 #ifndef GAMEMD_G2_GScreenClass_DEF  // g57a5 W2d: twin-definition guard (display GScreenClass)
 #define GAMEMD_G2_GScreenClass_DEF 1
-class GScreenClass
-{
-public:
-    virtual ~GScreenClass();
 
-    virtual HRESULT Load(IStream* stream);
-    virtual HRESULT Save(IStream* stream);
-
-    virtual void LoadFromINI(CCINIClass* ini);
-    virtual const wchar_t* GetToolTip(unsigned int dialog_id);
-    int CloseWindow();
-    virtual void vt_entry_8C();
-    // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_90(const CellStruct& cell, HouseClass* house);
-    virtual bool vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk);
-    // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
-    // unmatched: no callgraph reference and no git history record
-    virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
-    unsigned int q034;  // 0x34 (offset-truth)
-    void* q12C;  // 0x12C (canon-mt)
-    void* q140;  // 0x140 (canon-mt)
-};
 #endif  // GAMEMD_G2_GScreenClass_DEF
 
 #endif
 
 #ifndef GAMEMD_DEF_MapClass
 #define GAMEMD_DEF_MapClass
-class MapClass : public GScreenClass
-{
-public:
-    virtual ~MapClass() override;  // 0x5652C0
-    static int RevealArea1(MapClass *aP1, void *a2, int a3, void *a4, char a5, int a6, char a7, char a8, char a9);
-    // 0x5678E0 raw fn_56.c:2487 verbatim (G57w10; display.hpp first-wins twin for entity TU; map.hpp twin has semantic member form)
-    // g57w10 r4 item2: MapClass C2039 补声明 (display.hpp 首赢孪生; raw 段头真值)
-    int ScrollOnce(int a1);  // 0x554A80 实例形态 (building.cpp:557/733); map.hpp:327 twin; raw this=LightSourceClass(CSP 判定, 调用方 BuildingClass::LightSource)
-    static int ScrollOnce(void *aP1, int a2);  // 0x554A80 static-call 形态 (structure/supplied_bodies.cpp:4299)
-    int GetTileIndex(int a1, int a2, int a3);  // 0x56D230 实例形态 (building.cpp:4302); raw this=MapClass; map.hpp twin
-    static int GetTileIndex(MapClass *aP1, int a2, int a3, int a4);  // 0x56D230 static-call 形态 (structure/supplied_bodies.cpp:976 四实参)
-    static void FillRevealBuffer(uint16_t* p0, uint8_t* p1);  // x4:signals@0x5683c0
-    static void ApplyOverlayReveal(uint16_t* p0, char* p1);  // x4:signals@0x5687f0
-};
+
 #endif
 
 class DisplayClass : public MapClass

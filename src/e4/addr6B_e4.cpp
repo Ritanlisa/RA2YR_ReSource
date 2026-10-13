@@ -2341,7 +2341,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
       {
         while ( !(uint8_t)String::Compare(&v48) ) /*0x6b9fd4*/
         {
-          v39 = *(unsigned int *)(v39 + 776); /*0x6b9fd6*/
+          v39 = v39->q308; /*0x6b9fd6*/
           if ( !v39 ) /*0x6b9fde*/
             goto LABEL_31; /*0x6b9fde*/
         }

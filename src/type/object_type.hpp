@@ -3,13 +3,14 @@
 #include "type/abstract_type.hpp"
 #include "core/enums.hpp"
 #include "core/math.hpp"
+#include "render/shp_struct.hpp"
 
 namespace gamemd
 {
 
-struct SHPStruct { int unused; };
+
 #ifndef GAMEMD_VOXEL_STRUCT_FULL
-struct VoxelStruct { int unused; };
+
 #endif
 // SomeVoxelCache — 20 bytes (0x14). IDA-validated: each element of ObjectTypeClass::VoxelCaches[4]
 // is a {ptr, dword, dword, byte, dword} group. Confirmed by ObjectTypeClass::ConstructFull

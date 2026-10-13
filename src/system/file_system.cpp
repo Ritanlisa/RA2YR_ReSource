@@ -9,6 +9,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+#include "core/hash_table.hpp"
 
 namespace gamemd
 {

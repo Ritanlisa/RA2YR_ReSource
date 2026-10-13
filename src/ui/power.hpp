@@ -55,6 +55,19 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ComputeHousePowerChecksum(int a1);  // 0x68b940 -- Power::ComputeHousePowerChecksum
     int ChangedHouse(int a1);  // 0x750090 -- Power::ChangedHouse
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int q008;  // X10 supply (member_lookup)
+    unsigned char q1510[16];  /* char[16] */  // X10 supply (member_lookup)
+    unsigned int q1514;  // X10 supply (member_lookup)
+    unsigned int q1518;  // X10 supply (member_lookup)
+    unsigned int q151C;  // X10 supply (member_lookup)
+    unsigned char q1524[4];  /* char[4] */  // X10 supply (member_lookup)
+    unsigned char q152C[4];  /* char[4] */  // X10 supply (member_lookup)
+    unsigned char q1534[4];  /* char[4] */  // X10 supply (member_lookup)
+    int q1538;  // X10 supply (member_lookup)
+    unsigned int u32_153C;  // X10 supply (member_lookup)
+    unsigned int u32_1540;  // X10 supply (member_lookup)
+    void* vtable1;  // X10 supply (csp_canon_members)
 };
 
 } // namespace gamemd

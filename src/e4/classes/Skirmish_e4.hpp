@@ -28,6 +28,20 @@ struct Skirmish {
     int RenderPreview(HWND aP1);
     static int RenderPreview(void *aP0, HWND aP1);
     unsigned int u32_300;  // 0x300 (offset-truth)
+
+    unsigned int u32_1E0;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_3C;  // X10 supply (member_lookup)
+    unsigned int u32_40;  // X10 supply (member_lookup)
+    unsigned int u32_48;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_50;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_lookup)
+    unsigned int u32_64;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_lookup)
+    unsigned int u32_6C;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

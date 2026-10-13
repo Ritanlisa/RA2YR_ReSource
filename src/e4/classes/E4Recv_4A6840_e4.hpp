@@ -17,5 +17,8 @@ struct E4Recv_4A6840 {
     unsigned int M32;  // 0x32
 // --- flat members (END) ---
     AbstractClass * *  sub_4A6840(HWND hWnd, int a3, int a4, int a5);  // 0x4A6840
+
+    unsigned int q018;  // X10 supply (member_lookup)
+    unsigned int q020;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

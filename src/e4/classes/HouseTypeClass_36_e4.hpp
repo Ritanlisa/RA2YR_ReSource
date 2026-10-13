@@ -23,5 +23,11 @@ struct HouseTypeClass_36 {
     int  IndexOf(unsigned int * a2);  // 0x513500
     unsigned int  Write(int a2);  // 0x512930
     unsigned int  PointerToIndex(int a2);  // 0x513540
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q00C;  // X10 supply (member_lookup)
+    int q010;  // X10 supply (member_lookup)
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

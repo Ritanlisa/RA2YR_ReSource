@@ -12,6 +12,10 @@ struct _VectorClass_PAVParticleClass {
     unsigned int * ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, char a2);
     unsigned int ParticleSystemClass_vt_05_free_(gamemd::_VectorClass_PAVParticleClass *a1, int a2)  // G57w17h4 receiver-first (raw this=_VectorClass_PAVParticleClass);
     void ParticleSystemClass__vt_03_();
+
+    unsigned int u32_4;  // X10 supply (member_lookup)
+    unsigned char u8_C;  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

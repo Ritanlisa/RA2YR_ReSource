@@ -237,7 +237,7 @@ LABEL_51:
             {
               while ( !(unsigned __int8)String::Compare((String *)v20, (const char **)v33) ) /*0x7aac57*/
               {
-                v20 = *(unsigned int *)(v20 + 8); /*0x7aac5d*/
+                v20 = v20->vtable3; /*0x7aac5d*/
                 if ( !v20 ) /*0x7aac62*/
                   goto LABEL_66; /*0x7aac62*/
               }
@@ -304,7 +304,7 @@ LABEL_72:
             {
               while ( !(unsigned __int8)String::Compare((String *)v26, (const char **)v33) ) /*0x7aad71*/
               {
-                v26 = *(unsigned int *)(v26 + 112); /*0x7aad73*/
+                v26 = v26->estimatedHealth; /*0x7aad73*/
                 if ( !v26 ) /*0x7aad78*/
                   goto LABEL_87; /*0x7aad78*/
               }

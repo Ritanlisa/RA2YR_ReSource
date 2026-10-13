@@ -28,12 +28,12 @@ using ra2::game::ObjectClass;
 #include "core/checksummer.hpp"
 #include "render/render_ext.hpp"
 #include "structure/building.hpp"
-#include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/INIClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Cell_e4.hpp"  // w16g4 C3861 Cell:: supply
 #include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
 #include "e4/classes/Radar_e4.hpp"  // w16g4 C3861 Radar:: supply
+#include "system/map.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int UpdateHouseClassAnger(unsigned int p0, int p1, int p2, int p3);  // x4:signals@0x504790
@@ -103,6 +103,10 @@ struct TagClassVectorHost {
     int COMStub_2(int a1, void* a2);  // 0x4E9380 vt+8 (SetCapacity)
     int COMStub_4(void* a1);  // 0x4E9430 vt+16 (FindItemIndex)
     void* COMStub_0(int a2);  // 0x4EF530 vt+0 (scalar-deleting dtor)
+
+    AbstractClass * ptr_4;  // X10 supply (csp_canon_members)
+    unsigned int u32_19D;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd
 // g57w10 r4 item1-B: 0x4F2850 族归属修正载体 (raw fn_4F 段头 this=DynamicVector<GraphicMenuItem*>)
@@ -121,6 +125,9 @@ struct GraphicMenuItemVectorHost {
     int processWaypointPlanning(int a1, void* a2);  // 0x4F2A60 vt+8 (SetCapacity; gap2 占位名)
     int vt_placeholder_08(void* a1);  // 0x4F2B10 vt+16 (FindItemIndex)
     void* vt_placeholder_11(int a2);  // 0x4F2BB0 vt+0 (scalar-deleting dtor)
+
+    unsigned int u32_19D;  // X10 supply (member_lookup)
+    unsigned int u32_C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd
 // ---- g57w10 r4 item1 end ----
@@ -3960,7 +3967,7 @@ int HouseClass::ManageProduction(int a1) {
     BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4fde79*/
                            (HouseClass *)this,
                            *(unsigned int *)&g_RulesClass_Instance + 2276);
-    v84 = (*(int (__thiscall **)(unsigned int *, int))(*BuildableFromArray + 132))(BuildableFromArray, this); /*0x4fde96*/
+    v84 = BuildableFromArray->vt_slot_132(this); /*0x4fde96*/
     goto LABEL_27; /*0x4fde96*/
   }
   if ( v77 ) /*0x4fddbc*/

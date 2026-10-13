@@ -28,5 +28,9 @@ struct E4Recv_5CD570 {
     char __pad_0[4];  // 0x0 @0x5cd570 (W16G3 raw-usage vocab)
     unsigned int MSAnim_field_0x08;  // 0x8 @0x5cd581 (W16G3 raw-usage vocab)
     unsigned int MSAnim_field_0x04;  // 0x4 @0x5cd587 (W16G3 raw-usage vocab)
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_343;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

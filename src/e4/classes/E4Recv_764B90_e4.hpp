@@ -24,5 +24,10 @@ struct E4Recv_764B90 {
     unsigned int M68;  // 0x68
 // --- flat members (END) ---
     HashTable_flat * *  WDT_Campaign_Constructor(void * a2, int a3);  // 0x764B90
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_28;  // X10 supply (member_lookup)
+    unsigned int u32_44;  // X10 supply (member_lookup)
+    unsigned int u32_8;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

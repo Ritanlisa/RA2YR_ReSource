@@ -106,6 +106,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void InitPipShapes();  // 0x5f76b0
     int ProcessNextFileExtension();  // 0x626da0
     // === FUNCS-MOVE (END) ===
+
+    unsigned int u32_60;  // X10 supply (member_lookup)
+    unsigned int u32_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

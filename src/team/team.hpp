@@ -177,6 +177,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReleaseAll(int a1);  // 0x5d26c0 -- Team::ReleaseAll
     int AllMembersValid();  // 0x65ae30 -- Team::AllMembersValid
     // === SYMBOL-ANCHOR (END) ===
+
+    unsigned int q0B8;  // X10 supply (member_lookup)
+    void* q0DC;  // X10 supply (member_lookup)
+    int u32_C4;  // X10 supply (member_lookup)
+    unsigned int u32_D8;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

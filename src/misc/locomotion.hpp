@@ -57,6 +57,8 @@ struct FacingClass {
     int Set_SyncLog(unsigned int* a1);  // 0x4c9300 -- FacingClass::Set_SyncLog
     // === SYMBOL-ANCHOR (END) ===
 
+
+    void* q010;  // X10 supply (member_lookup)
 };
 static_assert(sizeof(FacingClass) == 0x18, "FacingClass size");
 
@@ -199,6 +201,26 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     void* UpdateAll();  // 0x4c54a0
     // === FUNCS-MOVE (END) ===
+
+    unsigned char __pad_012;  // X10 supply (csp_canon_members)
+    unsigned int u32_1C;  // X10 supply (member_lookup)
+    unsigned int u32_24;  // X10 supply (member_lookup)
+    unsigned int u32_2C;  // X10 supply (member_lookup)
+    unsigned int u32_34;  // X10 supply (member_lookup)
+    unsigned int u32_38;  // X10 supply (member_lookup)
+    unsigned int u32_4C;  // X10 supply (member_lookup)
+    unsigned int u32_58;  // X10 supply (member_lookup)
+    unsigned int u32_5C;  // X10 supply (member_lookup)
+    unsigned int u32_60;  // X10 supply (member_lookup)
+    unsigned int u32_61;  // X10 supply (member_lookup)
+    unsigned int u32_62;  // X10 supply (member_lookup)
+    unsigned int u32_63;  // X10 supply (member_lookup)
+    unsigned int u32_64;  // X10 supply (member_lookup)
+    unsigned int u32_65;  // X10 supply (member_lookup)
+    unsigned int u32_68;  // X10 supply (member_lookup)
+
+    unsigned int u32_18;  // X10 supply (member_lookup)
+    unsigned int u32_54;  // X10 supply (member_lookup)
 };
 
 //============================================================================
@@ -292,6 +314,8 @@ protected:
     int BeginMove();  // 0x4af780
     int LoadFromStream();  // 0x4af800
     // === FUNCS-MOVE (END) ===
+
+    void* vtable3;  // X10 supply (csp_canon_members)
 };
 static_assert(sizeof(DriveLocomotionClass) == 0x70, "DriveLocomotionClass size");
 
@@ -346,6 +370,10 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     int BeginMove(int a1, int a2);  // 0x5170b0
     // === FUNCS-MOVE (END) ===
+
+    int Owner;  // X10 supply (csp_canon_members)
+    int RefCount;  // X10 supply (csp_canon_members)
+    unsigned char u32_3C[4];  /* ProgressTimer */  // X10 supply (member_lookup)
 };
 
 //============================================================================
@@ -415,6 +443,8 @@ protected:
     int BeginMove();  // 0x75c680
     int LoadFromStream();  // 0x75c700
     // === FUNCS-MOVE (END) ===
+
+    void* vtable3;  // X10 supply (csp_canon_members)
 };
 static_assert(sizeof(WalkLocomotionClass) == 0x3C, "WalkLocomotionClass size");
 
@@ -923,6 +953,8 @@ protected:
     // === FUNCS-MOVE (BEGIN) ===
     int BeginMove();  // 0x69ee90
     // === FUNCS-MOVE (END) ===
+
+    void* vtable3;  // X10 supply (csp_canon_members)
 };
 static_assert(sizeof(ShipLocomotionClass) == 0x70, "ShipLocomotionClass size");
 

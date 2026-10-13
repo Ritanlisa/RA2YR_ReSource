@@ -204,7 +204,7 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
   v3 = 0; /*0x41dc8c*/
   if ( result == (int)(aP1) ) /*0x41dc90*/
   {
-    *(&this->vtable33) = *(unsigned int *)(aP1 + 1496); /*0x41dc98*/
+    *(&this->vtable33) = aP1->u32_5D8; /*0x41dc98*/
     aP1->u32_5D8 = 0; /*0x41dc9b*/
     result = *(&this->vtable22) - 1; /*0x41dca4*/
     *(&this->vtable22) = result; /*0x41dca5*/

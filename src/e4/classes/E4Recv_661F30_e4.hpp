@@ -10,5 +10,7 @@ struct E4Recv_661F30 {
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
     void sub_661F30();  // 0x661F30
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

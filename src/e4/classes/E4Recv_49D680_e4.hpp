@@ -23,5 +23,10 @@ struct E4Recv_49D680 {
     unsigned int M104;  // 0x104
 // --- flat members (END) ---
     AbstractClass * * SerializeCampaignOptions();  // 0x49D680
+
+    unsigned int q040;  // X10 supply (member_lookup)
+    unsigned int q060;  // X10 supply (member_lookup)
+    unsigned int q068;  // X10 supply (member_lookup)
+    unsigned char u8_1C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

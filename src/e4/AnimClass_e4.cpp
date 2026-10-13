@@ -1437,8 +1437,8 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v14)); /*0x729922*/
   if ( v16 >= GroundHeight ) /*0x72992a*/
   {
-    (*(void (**)(unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v3 + 12) + 288))(*(unsigned int *)(v3 + 12), 0, 0); /*0x729a43*/
-    v11 = (*(int (**)(unsigned int))(**(unsigned int **)(v3 + 12) + 132))(*(unsigned int *)(v3 + 12)); /*0x729a4e*/
+    (*(void (**)(unsigned int, unsigned int, unsigned int))(*v3->vtable4 + 288))(v3->vtable4, 0, 0); /*0x729a43*/
+    v11 = (*(int (**)(unsigned int))(*v3->vtable4 + 132))(v3->vtable4); /*0x729a4e*/
     (*((unsigned short *)&(v12))) = Math::RoundToInt(64.0 / (double)*(int *)(v11 + 1820)); /*0x729a60*/
     v3->owningHouseIndex = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x729a72*/
     *(unsigned int *)(v3 + 44) = v18; /*0x729a78*/
@@ -1458,10 +1458,10 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
     v17 += v7; /*0x729971*/
     if ( v17 > GroundHeight ) /*0x729975*/
       v17 = GroundHeight; /*0x729977*/
-    result = (*(int (**)(unsigned int, int *))(**(unsigned int **)(v3 + 12) + 436))(*(unsigned int *)(v3 + 12), &v15); /*0x729985*/
+    result = (*(int (**)(unsigned int, int *))(*v3->vtable4 + 436))(v3->vtable4, &v15); /*0x729985*/
     if ( v6 <= -50 ) /*0x72998f*/
     {
-      result = (*(int (**)(unsigned int))(**(unsigned int **)(v3 + 12) + 456))(*&v3->vtable4); /*0x72999a*/
+      result = (*(int (**)(unsigned int))(*v3->vtable4 + 456))(*&v3->vtable4); /*0x72999a*/
       if ( result > -50 ) /*0x7299a3*/
       {
         v9 = (int *)(v3->vtable4 + 156); /*0x7299ae*/

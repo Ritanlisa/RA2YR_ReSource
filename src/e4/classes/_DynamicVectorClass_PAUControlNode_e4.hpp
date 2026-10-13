@@ -8,6 +8,9 @@ namespace gamemd {
 struct _DynamicVectorClass_PAUControlNode {
     void* vfptr;
     void CaptureManagerClass__vt_03_();
+
+    unsigned char u32_4[4];  /* void */  // X10 supply (member_lookup)
+    unsigned char u8_D;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

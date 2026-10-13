@@ -21,6 +21,14 @@ struct ComStreamClass {
     unsigned int * seekToPosition();
     void ** writeData(char a2);
     void flushStream();
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
+    int q014;  // X10 supply (member_lookup)
+    int q018;  // X10 supply (member_lookup)
+    int q030;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

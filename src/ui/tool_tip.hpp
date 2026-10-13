@@ -59,6 +59,8 @@ protected:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int release(int a1);  // 0x724AB0
     // --- gap2 auto-generated stub declarations (END) ---
+
+    unsigned int u32_820;  // X10 supply (member_lookup)
 };
 
 } // namespace gamemd

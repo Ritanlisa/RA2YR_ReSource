@@ -4411,14 +4411,14 @@ int E4Recv_79BF50::sub_79BF50(HWND hDlg)
       goto LABEL_10; /*0x79bfd9*/
     while ( !(uint8_t)((String *)((String *)v4))->Compare((const char **)&g_WOL_LoginObject) ) /*0x79bfe9*/
     {
-      v4 = *(unsigned int *)(v4 + 8); /*0x79bfeb*/
+      v4 = v4->vtable3; /*0x79bfeb*/
       if ( !v4 ) /*0x79bff0*/
       {
         v9 = 0; /*0x79bff2*/
         goto LABEL_12; /*0x79bff7*/
       }
     }
-    if ( v4 != -4 && *(unsigned int *)(v4 + 4) > 2u ) /*0x79c008*/
+    if ( v4 != -4 && v4->vtable2 > 2u ) /*0x79c008*/
       v9 = 1; /*0x79c016*/
     else
   LABEL_10:
@@ -5597,11 +5597,11 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
                 {
                   while ( !(uint8_t)((String *)((String *)v19))->Compare((const char **)&g_WOL_LoginObject) ) /*0x79ebdb*/
                   {
-                    v19 = *(unsigned int *)(v19 + 8); /*0x79ebdd*/
+                    v19 = v19->vtable3; /*0x79ebdd*/
                     if ( !v19 ) /*0x79ebe2*/
                       return 0; /*0x79ebed*/
                   }
-                  v20 = (unsigned int *)(v19 + 4); /*0x79ebf8*/
+                  v20 = &v19->vtable2; /*0x79ebf8*/
                   if ( v20 ) /*0x79ebfd*/
                   {
                     if ( *v20 > 2u ) /*0x79ec07*/
@@ -5640,14 +5640,14 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
             goto LABEL_88; /*0x79ecf2*/
           while ( !(uint8_t)((String *)((String *)v25))->Compare((const char **)&g_WOL_LoginObject) ) /*0x79ed02*/
           {
-            v25 = *(unsigned int *)(v25 + 8); /*0x79ed04*/
+            v25 = v25->vtable3; /*0x79ed04*/
             if ( !v25 ) /*0x79ed09*/
             {
               v39.vtable1 = 0; /*0x79ed0b*/
               goto LABEL_90; /*0x79ed10*/
             }
           }
-          v26 = (unsigned int *)(v25 + 4); /*0x79ed16*/
+          v26 = &v25->vtable2; /*0x79ed16*/
           if ( v26 && *v26 > 2u ) /*0x79ed21*/
             v39.vtable1 = 1; /*0x79ed2f*/
           else

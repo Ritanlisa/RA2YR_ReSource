@@ -13,5 +13,7 @@ struct E4Recv_528220 {
     unsigned int M56;  // 0x38
 // --- flat members (END) ---
     int  sub_528220(uint8_t * a2, uint8_t * a3, int a4);  // 0x528220
+
+    unsigned char SortedArray_5A4[4];  /* SortedArray */  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -9,5 +9,7 @@ struct E4Recv_538E70 {
     unsigned int u32_8;  // 0x8
 // --- flat members (END) ---
     AbstractClass * *  sub_538E70(double a2);  // 0x538E70
+
+    char u8_2;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -17,5 +17,10 @@ struct Map_WorldDominationTour_43 {
     unsigned int *  Seek(unsigned int * a2, int a3);  // 0x769D30
     int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x76A520
     unsigned int  Write(int a2);  // 0x76A570
+
+    unsigned char __pad_000;  // X10 supply (csp_canon_members)
+    int q004;  // X10 supply (member_lookup)
+    int q008;  // X10 supply (member_lookup)
+    int q00C;  // X10 supply (member_lookup)
 };
 } // namespace gamemd

@@ -33,6 +33,9 @@ struct FileClass {
     char __tail_0[4];  // 0x0 (ml)
     unsigned int u32_58;  // 0x58 (offset-truth)
     unsigned int u32_68;  // 0x68 (offset-truth)
+
+    unsigned int u32_14;  // X10 supply (member_lookup)
+    unsigned int u32_18;  // X10 supply (member_lookup)
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 
