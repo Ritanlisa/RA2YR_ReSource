@@ -3,6 +3,14 @@
 evidence). Binary evidence + lattice only (2026-09-03 ruling: NO voting /
 majority / statistics channels).
 
+X16 extension (same tool, not a parallel one):
+  - binary ctor-installer channel for the `return this` guard: when the
+    def-line class and the X11 elided-install marker both fail (this-synthetic)
+    or the def-line class conflicts with signals cls (this-conflict), the class
+    whose vtable the function installs (anchors/ctor_types.json, binary scan)
+    decides — canonicalized through class_name_align and gated to REAL classes;
+    a conflicting signals cls still fails loud.
+
 X15 extensions (same tool, not a parallel one):
   - site-scanner hardening: comment-internal matches and declaration-shaped
     lines are no longer sites; `namespace X { ... }`-prefixed defs are defs;
@@ -148,6 +156,32 @@ CLASSES_L = {c.lower(): c for c in CLASSES}
 # that must never be written as a resolved return class.
 REAL_CLASSES = set(CDB) | set(LAYOUTS)
 
+# X16: binary ctor-installer channel. `anchors/ctor_types.json` maps
+# function addr -> class whose vtable the function installs (X11-era binary
+# scan). Canonicalized via the same align namespace; REAL classes only.
+CTOR_CANON = {}
+try:
+    _ct = J(ROOT / 'anchors' / 'ctor_types.json')
+    try:
+        _r2c = (J(ROOT / 'anchors' / 'class_name_align.json')
+                .get('rtti_to_canon') or {})
+    except Exception:
+        _r2c = {}
+    for _k, _v in _ct.items():
+        try:
+            _a = int(_k, 16)
+        except (TypeError, ValueError):
+            continue
+        _c = _v if _v in CLASSES else CLASSES_L.get((_v or '').lower())
+        if not _c:
+            _r = _r2c.get(_v)
+            if isinstance(_r, dict) and _r.get('canon'):
+                _c = CLASSES_L.get(_r['canon'].lower(), _r['canon'])
+        if _c and _c in REAL_CLASSES:
+            CTOR_CANON[_a] = _c
+except Exception:
+    CTOR_CANON = {}
+
 # global variable names (signals kind=global) — attribution only
 GLOBALS = set()
 for _k, _v in SIG['symbols'].items():
@@ -223,6 +257,12 @@ def derived_or_eq(c, p):
     if c == p:
         return True
     return p in ancestors(c)
+
+
+def _conflicts(a, b):
+    """True iff b is a known class incompatible with a (not equal/related)."""
+    return bool(b) and b in CLASSES and not (
+        a == b or derived_or_eq(a, b) or derived_or_eq(b, a))
 
 
 def class_of_type(ty, size=None):
@@ -882,11 +922,27 @@ def analyze_callee_returns(addr, defs, load_lines):
                 body) if m in CLASSES}
             if len(marks) == 1:
                 cls2 = marks.pop()
-        if not cls2:
-            return ('this-synthetic', None)
         sc = (FUNCS.get(addr) or {}).get('cls') or ''
-        if sc and sc in CLASSES and not (
-                cls2 == sc or derived_or_eq(cls2, sc) or derived_or_eq(sc, cls2)):
+        if not cls2:
+            # X16: binary ctor-installer adjudication for this-synthetic.
+            # The function installs `bc`'s vtable (binary truth, anchors/
+            # ctor_types.json) and the body returns `this` -> the object is
+            # `bc`. A known signals cls that conflicts still fails loud.
+            bc = CTOR_CANON.get(addr)
+            if bc:
+                if _conflicts(bc, sc):
+                    return ('this-conflict', None)
+                RET_INFO.setdefault(addr, {})['ctor_channel'] = bc
+                return ('this', bc)
+            return ('this-synthetic', None)
+        if _conflicts(cls2, sc):
+            # X16: conflict adjudication — the binary installer class decides
+            # only when it is compatible with at least one of the two text
+            # claims (def-line class / signals cls); else fail loud.
+            bc = CTOR_CANON.get(addr)
+            if bc and (not _conflicts(bc, sc) or not _conflicts(bc, cls2)):
+                RET_INFO.setdefault(addr, {})['ctor_channel'] = bc
+                return ('this', bc)
             return ('this-conflict', None)
         return ('this', cls2)
     if kinds == {'param'} and len(typed_classes) == 1:

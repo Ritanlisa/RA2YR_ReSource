@@ -19603,8 +19603,8 @@ void* Gap2Recv_65DD30::ConstructTeamMembers() {
     v5 = (ObjectClass *)v4; /*0x65dd5e*/
     if ( v4 ) /*0x65dd62*/
     {
-      v4->q077 = 1; /*0x65dd64*/
-      v4->u8_7A = 0; /*0x65dd68*/
+      v4->unknown77 = 1; /*0x65dd64*/
+      v4->TeamClass_field_7A = 0; /*0x65dd68*/
     }
   }
   else
