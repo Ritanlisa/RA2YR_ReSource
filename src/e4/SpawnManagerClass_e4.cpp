@@ -48,10 +48,10 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   *((unsigned int *)this + 25) = 0; /*0x6b6cdc*/
   *((unsigned int *)this + 10) = a3; /*0x6b6cdf*/
   *((unsigned int *)this + 9) = a2; /*0x6b6ce6*/
-  *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b6cef*/
-  this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b6cf5*/
+  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6cef) */
+  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6cf5) */
   *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b6cfc*/
-  this->vtable4 = &SpawnManagerClass::`vftable'; /*0x6b6d03*/
+  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b6d03) */
   *((unsigned int *)this + 11) = a4; /*0x6b6d0a*/
   *((unsigned int *)this + 12) = a5; /*0x6b6d0d*/
   *((unsigned int *)this + 13) = a6; /*0x6b6d10*/
@@ -179,7 +179,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
 
   *this = (TaskManager)&SpawnManagerClass::`vftable'; /*0x6b7015*/
   *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b701b*/
-  this->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b7022*/
+  /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7022) */
   *((unsigned int *)this + 3) = &SpawnManagerClass::`vftable'; /*0x6b7029*/
   if ( byte_A8E9A0 ) /*0x6b7037*/
     TaskManager::Update(this); /*0x6b7039*/
@@ -393,7 +393,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
       v2->AbstractClass = &SpawnManagerClass::`vftable'; /*0x6b7f5f*/
       v2->? = &SpawnManagerClass::`vftable'; /*0x6b7f65*/
-      v2->vtable3 = &SpawnManagerClass::`vftable'; /*0x6b7f6c*/
+      /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f6c) */
       v2->? = &SpawnManagerClass::`vftable'; /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/

@@ -36,10 +36,10 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
-      aP0->vfptr = &vt_ScriptClass; /*0x691654*/
-      aP0->vfptr1 = &vt_ScriptClass; /*0x69165a*/
-      aP0->vfptr2 = &vt_ScriptClass; /*0x691661*/
-      aP0->vfptr3 = &vt_ScriptClass; /*0x691668*/
+      /* X11: vtable install elided (implicit via ScriptClass virtuals 0x691654) */
+      /* X11: vtable install elided (implicit via ScriptClass virtuals 0x69165a) */
+      /* X11: vtable install elided (implicit via ScriptClass virtuals 0x691661) */
+      /* X11: vtable install elided (implicit via ScriptClass virtuals 0x691668) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/

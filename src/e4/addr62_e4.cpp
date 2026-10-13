@@ -2621,7 +2621,7 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
 namespace gamemd {
 unsigned int * E4Recv_624080::sub_624080()
 {
-  this->vfptr = &vt_OwnerDrawDialogControl; /*0x624082*/
+  /* X11: vtable install elided (implicit via OwnerDrawDialogControl virtuals 0x624082) */
   return &this->vfptr; /*0x624088*/
 }
 } // namespace gamemd
@@ -2910,7 +2910,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
   this->Capacity = a2; /*0x628b13*/
   this->IsInitialized = 1; /*0x628b16*/
   this->IsAllocated = 0; /*0x628b1a*/
-  this->vtable0 = &VectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b1e*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x628b1e) */
   if ( a2 ) /*0x628b24*/
   {
     if ( a3 ) /*0x628b2c*/
@@ -2953,7 +2953,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
       this->IsAllocated = 1; /*0x628b8b*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b8f*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x628b8f) */
   this->M20 = 10; /*0x628b95*/
   this->M16 = 0; /*0x628b9c*/
   return &this->vtable0; /*0x628ba5*/

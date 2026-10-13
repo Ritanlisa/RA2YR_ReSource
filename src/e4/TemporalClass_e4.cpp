@@ -51,7 +51,7 @@ int TemporalClass::Constructor()
   *&this->creationFrame = v2; /*0x71a464*/
   this->AbstractClass = &TemporalClass::`vftable'; /*0x71a467*/
   this->? = &TemporalClass::`vftable'; /*0x71a46d*/
-  this->vtable3 = &TemporalClass::`vftable'; /*0x71a474*/
+  /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a474) */
   this->? = &TemporalClass::`vftable'; /*0x71a47b*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a4b7*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
@@ -82,7 +82,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->AbstractClass = &TemporalClass::`vftable'; /*0x71a501*/
   this->? = &TemporalClass::`vftable'; /*0x71a507*/
-  this->vtable3 = &TemporalClass::`vftable'; /*0x71a50e*/
+  /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a50e) */
   this->? = &TemporalClass::`vftable'; /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_028 = 0; /*0x71a51f*/
@@ -425,10 +425,10 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      aP0->vfptr = &vt_TemporalClass; /*0x71a687*/
-      aP0->vfptr1 = &vt_TemporalClass; /*0x71a68d*/
-      aP0->vfptr2 = &vt_TemporalClass; /*0x71a694*/
-      aP0->vfptr3 = &vt_TemporalClass; /*0x71a69b*/
+      /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a687) */
+      /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a68d) */
+      /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a694) */
+      /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a69b) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->creationFrame); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->DiskLaserClass_field_0x28); /*0x71a6b9*/

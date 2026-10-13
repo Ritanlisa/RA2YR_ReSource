@@ -745,7 +745,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
   *&this->IsInitialized = a2; /*0x477dc0*/
   (this->IsInitialized) = 1; /*0x477dc3*/
   (this->IsAllocated) = 0; /*0x477dc7*/
-  *(unsigned int *)this->vfptr = (unsigned int)(&vt_VectorClass); /*0x477dcb*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x477dcb) */
   if ( a2 ) /*0x477dd1*/
   {
     if ( a3 ) /*0x477dd9*/
@@ -758,7 +758,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
       (this->IsAllocated) = 1; /*0x477def*/
     }
   }
-  *(unsigned int *)this->vfptr = (unsigned int)(&vt_DynamicVectorClass); /*0x477df3*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x477df3) */
   this->CapacityIncrement = 10; /*0x477df9*/
   this->Count = 0; /*0x477e00*/
   return (unsigned int *)(this->vfptr); /*0x477e09*/
@@ -1197,7 +1197,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   *&this->IsInitialized = aP1; /*0x525260*/
   (this->IsInitialized) = 1; /*0x525263*/
   (this->IsAllocated) = 0; /*0x525267*/
-  *(unsigned int *)this->vfptr = &vt_VectorClass; /*0x52526b*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x52526b) */
   if ( aP1 ) /*0x525271*/
   {
     if ( aP2 ) /*0x525279*/
@@ -1210,7 +1210,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
       (this->IsAllocated) = 1; /*0x52528f*/
     }
   }
-  *(unsigned int *)this->vfptr = &vt_DynamicVectorClass; /*0x525293*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x525293) */
   this->CapacityIncrement = 10; /*0x525299*/
   this->Count = 0; /*0x5252a0*/
   return this->vfptr; /*0x5252a9*/
@@ -1372,7 +1372,7 @@ namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
 {
 
-  *(unsigned int *)this = &OwnerDraw::DialogControl::`vftable'; /*0x6244c9*/
+  /* X11: vtable install elided (implicit via DialogControl virtuals 0x6244c9) */
   if ( (a2 & 1) != 0 ) /*0x6244cf*/
     __3_YAXPAX_Z(this); /*0x6244d2*/
   return this; /*0x6244dc*/

@@ -1046,7 +1046,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   int v8; // ebx
   int v9; // edi
 
-  *(unsigned int *)this->vtable1 = &CommBufferClass::`vftable'; /*0x48b0fd*/
+  /* X11: vtable install elided (implicit via CommBufferClass virtuals 0x48b0fd) */
   *(unsigned int *)&this->__pad_0[4] = a2; /*0x48b103*/
   this->CommBufferClass_field_0x8 = a3; /*0x48b106*/
   *(unsigned int *)this->__pad_C = Size; /*0x48b109*/
@@ -1851,7 +1851,7 @@ CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, List
 
   ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
   this->M372 = 0; /*0x4882b2*/
-  *(unsigned int *)this->vfptr = &CheckListClass::`vftable'; /*0x4882b9*/
+  /* X11: vtable install elided (implicit via CheckListClass virtuals 0x4882b9) */
   return this->__pad_0; /*0x4882c1*/
 
 }
@@ -1901,7 +1901,7 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = this->M372; /*0x4887f5*/
   v3 = &this->M372; /*0x4887fb*/
-  *(unsigned int *)this->vfptr = &ColorListClass::`vftable'; /*0x488803*/
+  /* X11: vtable install elided (implicit via ColorListClass virtuals 0x488803) */
   (*(void (**)(char *))(v2 + 12))((char *)this + 372); /*0x488809*/
   *((unsigned int *)this + 100) = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
@@ -2156,7 +2156,7 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
   this->Capacity = a2; /*0x48b07e*/
   this->IsInitialized = 1; /*0x48b081*/
   this->IsAllocated = 0; /*0x48b085*/
-  this->vtable0 = &VectorClass<DamageGroup *>::`vftable'; /*0x48b088*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x48b088) */
   if ( a2 ) /*0x48b08e*/
   {
     if ( a3 ) /*0x48b096*/
@@ -2199,7 +2199,7 @@ void CommBufferClass::sub_48B1F0()
 
   v2 = 0; /*0x48b1f4*/
   v3 = *&this->__pad_004; /*0x48b1f7*/
-  *(unsigned int *)this->vtable1 = &CommBufferClass::`vftable'; /*0x48b1fa*/
+  /* X11: vtable install elided (implicit via CommBufferClass virtuals 0x48b1fa) */
   if ( v3 > 0 ) /*0x48b202*/
   {
     v4 = 0; /*0x48b204*/

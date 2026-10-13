@@ -633,7 +633,7 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
-      aP0->vtable1 = &vt_TagClass; /*0x6e5754*/
+      /* X11: vtable install elided (implicit via TagClass virtuals 0x6e5754) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5768*/
@@ -738,7 +738,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e6426*/
     {
       ((AbstractTypeClass*)((int)aP0))->Init((int)&aP1); /*0x6e642f*/
-      aP0->vtable1 = &vt_TagTypeClass; /*0x6e6434*/
+      /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e643a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6441*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagTypeClass); /*0x6e6448*/

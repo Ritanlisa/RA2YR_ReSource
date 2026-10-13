@@ -4663,7 +4663,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   v11 = 0; /*0x5cd597*/
   this->M16 = Timer::GetTicks(); /*0x5cd59c*/
   this->u32_18 = 0; /*0x5cd59f*/
-  *(unsigned int *)this->vfptr = &MSAnim::`vftable'; /*0x5cd5a5*/
+  /* X11: vtable install elided (implicit via MSAnim virtuals 0x5cd5a5) */
   WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd5ab*/
   *((unsigned int *)this + 11) = a8; /*0x5cd5c0*/
   *((unsigned char *)this + 48) = a9; /*0x5cd5c7*/

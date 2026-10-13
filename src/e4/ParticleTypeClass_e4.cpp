@@ -661,7 +661,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
       v3->ArrayIndex = &vt_ParticleTypeClass; /*0x6456a3*/
       v3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x6456a9*/
       v3->BehavesLike = &vt_ParticleTypeClass; /*0x6456b0*/
-      v3->vtable4 = &vt_ParticleTypeClass; /*0x6456b7*/
+      /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x6456b7) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->u32_2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
@@ -876,7 +876,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x477ac3*/
-  *(unsigned int *)this = &vt_VectorClass; /*0x477ac6*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x477ac6) */
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
   {
     operator delete((void *)(v3)); /*0x477ad8*/

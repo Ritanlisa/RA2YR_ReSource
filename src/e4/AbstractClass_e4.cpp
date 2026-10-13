@@ -68,10 +68,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].vtable3 = 0; /*0x438ecb*/
-      v5->vtable0 = &BombClass::`vftable'; /*0x438ece*/
-      v5->vtable1 = &BombClass::`vftable'; /*0x438ed4*/
-      v5->vtable2 = &BombClass::`vftable'; /*0x438edb*/
-      v5->vtable3 = &BombClass::`vftable'; /*0x438ee2*/
+      /* X11: vtable install elided (implicit via BombClass virtuals 0x438ece) */
+      /* X11: vtable install elided (implicit via BombClass virtuals 0x438ed4) */
+      /* X11: vtable install elided (implicit via BombClass virtuals 0x438edb) */
+      /* X11: vtable install elided (implicit via BombClass virtuals 0x438ee2) */
       v5[1].vtable1 = 0; /*0x438ee9*/
       v5[1].vtable2 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
@@ -432,7 +432,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
-  this->vfptr = &vt_MultiplayerGameModeInitializerBase; /*0x5d7fd9*/
+  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7fd9) */
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     operator delete((void *)(this)); /*0x5d7fe2*/
   return &this->vfptr; /*0x5d7fec*/
@@ -442,7 +442,7 @@ unsigned int * AbstractClass::checkVisibility(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
-  this->vfptr = &vt_MultiplayerGameModeInitializerBase; /*0x5d8039*/
+  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8039) */
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     operator delete((void *)(this)); /*0x5d8042*/
   return &this->vfptr; /*0x5d804c*/
@@ -452,7 +452,7 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
-  this->vfptr = &vt_MultiplayerGameModeInitializerBase; /*0x5d8059*/
+  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8059) */
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     operator delete((void *)(this)); /*0x5d8062*/
   return &this->vfptr; /*0x5d806c*/
@@ -462,7 +462,7 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
-  this->vfptr = &vt_MultiplayerGameModeInitializerBase; /*0x5d8079*/
+  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8079) */
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     operator delete((void *)(this)); /*0x5d8082*/
   return &this->vfptr; /*0x5d808c*/
@@ -472,7 +472,7 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
-  this->vfptr = &vt_MultiplayerGameModeInitializerBase; /*0x5d8099*/
+  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d8099) */
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     operator delete((void *)(this)); /*0x5d80a2*/
   return &this->vfptr; /*0x5d80ac*/
@@ -719,10 +719,10 @@ int AbstractClass::AbstractClass::DTOR(void *a1_1)
 {
   int result; // eax
 
-  a1_1->vfptr = &vt_AbstractClass; /*0x4101f0*/
-  a1_1->vfptr1 = &vt_AbstractClass; /*0x4101f6*/
-  a1_1->vfptr2 = &vt_AbstractClass; /*0x4101fd*/
-  a1_1->vfptr3 = &vt_AbstractClass; /*0x410204*/
+  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f0) */
+  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f6) */
+  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101fd) */
+  /* X11: vtable install elided (implicit via AbstractClass virtuals 0x410204) */
   return result; /*0x41020b*/
 }
 } // namespace gamemd
@@ -920,7 +920,7 @@ void AbstractClass::COM_Stub_Return0(int a1)
 namespace gamemd {
 Surface * AbstractClass::getObjectValue(char a2)
 {
-  *(unsigned int *)this->vtable1 = &Surface_Vtable; /*0x4115d9*/
+  /* X11: vtable install elided (implicit via Surface virtuals 0x4115d9) */
   if ( (a2 & 1) != 0 ) /*0x4115df*/
     operator delete((void *)(this)); /*0x4115e2*/
   return (std::locale::facet *)this; /*0x4115ec*/
@@ -1176,7 +1176,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
 
-  this->vtable1 = (int)&Animate::`vftable'; /*0x427279*/
+  /* X11: vtable install elided (implicit via Animate virtuals 0x427279) */
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     __3_YAXPAX_Z(this); /*0x427282*/
   return (std::locale::facet *)this; /*0x42728c*/
@@ -1273,7 +1273,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
 namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499ce9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499ce9) */
   if ( (a2 & 1) != 0 ) /*0x499cef*/
     operator delete((void *)(this)); /*0x499cf2*/
   return this; /*0x499cfc*/
@@ -1284,7 +1284,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499d09*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499d09) */
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
     operator delete((void *)(this)); /*0x499d12*/
   return this; /*0x499d1c*/
@@ -1295,7 +1295,7 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499d29*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499d29) */
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
     operator delete((void *)(this)); /*0x499d32*/
   return this; /*0x499d3c*/
@@ -1503,10 +1503,10 @@ int AbstractClass::COMStub_Ret450_151()
 namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
 {
-  Block->vfptr = &vt_MissionClass; /*0x5b3a63*/
-  Block->vfptr1 = &vt_MissionClass; /*0x5b3a69*/
-  Block->vfptr2 = &vt_MissionClass; /*0x5b3a70*/
-  Block->vfptr3 = &vt_MissionClass; /*0x5b3a77*/
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a63) */
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a69) */
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a70) */
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x5b3a77) */
   ObjectClass::Dtor((ObjectClass *)Block); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     operator delete((void *)(Block)); /*0x5b3a8b*/

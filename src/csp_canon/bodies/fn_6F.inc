@@ -161,7 +161,7 @@ void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
   this->Capacity = a2; /*0x6f2240*/
   this->IsInitialized = 1; /*0x6f2243*/
   this->IsAllocated = 0; /*0x6f2247*/
-  this->vtable0 = &vt_VectorClass; /*0x6f224b*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6f224b) */
   if ( a2 ) /*0x6f2251*/
   {
     if ( a3 ) /*0x6f2259*/
@@ -174,7 +174,7 @@ void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
       this->IsAllocated = 1; /*0x6f226f*/
     }
   }
-  this->vtable0 = &vt_DynamicVectorClass; /*0x6f2273*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6f2273) */
   *((unsigned int *)this + 5) = 10; /*0x6f2279*/
   *((unsigned int *)this + 4) = 0; /*0x6f2280*/
   return &this->vtable0; /*0x6f2289*/

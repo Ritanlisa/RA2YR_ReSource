@@ -208,7 +208,7 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *(unsigned int *)Block->vfptr = &vt_rc_ptr; /*0x538a6a*/
+    /* X11: vtable install elided (implicit via rc_ptr virtuals 0x538a6a) */
     ComPtr::Release((ComPtr *)Block); /*0x538a70*/
     if ( (a2 & 1) != 0 ) /*0x538a78*/
       operator delete((void *)(Block)); /*0x538a7b*/
@@ -309,7 +309,7 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1)
 {
   this->__pad_004 = (void *)a2; /*0x535c06*/
-  *(unsigned int *)this->vtable1 = &vt_CreateTeamCommandClass; /*0x535c09*/
+  /* X11: vtable install elided (implicit via CreateTeamCommandClass virtuals 0x535c09) */
   return this; /*0x535c0f*/
 }
 } // namespace gamemd
@@ -371,7 +371,7 @@ void CreateTeamCommand::Undo(int a2)
 namespace gamemd {
 CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
 {
-  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_CommandClass); /*0x535cd9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x535cd9) */
   if ( (a2 & 1) != 0 ) /*0x535cdf*/
     operator delete((void *)(this)); /*0x535ce2*/
   return (gamemd::CreateTeamCommand *)((std::locale::facet *)this); /*0x535cec*/
@@ -605,7 +605,7 @@ int CreateTeamCommand::performAction_21()
 namespace gamemd {
 SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 {
-  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_CommandClass); /*0x536099*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x536099) */
   if ( (a2 & 1) != 0 ) /*0x53609f*/
     operator delete((void *)(this)); /*0x5360a2*/
   return (gamemd::SelectTeamCommand *)((std::locale::facet *)this); /*0x5360ac*/
@@ -616,7 +616,7 @@ SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 namespace gamemd {
 AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 {
-  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_CommandClass); /*0x536189*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x536189) */
   if ( (a2 & 1) != 0 ) /*0x53618f*/
     operator delete((void *)(this)); /*0x536192*/
   return (gamemd::AddTeamCommand *)((std::locale::facet *)this); /*0x53619c*/
@@ -627,7 +627,7 @@ AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 namespace gamemd {
 CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 {
-  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_CommandClass); /*0x536279*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x536279) */
   if ( (a2 & 1) != 0 ) /*0x53627f*/
     operator delete((void *)(this)); /*0x536282*/
   return (gamemd::CenterTeamCommand *)((std::locale::facet *)this); /*0x53628c*/
@@ -2173,7 +2173,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_198(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x537fa9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x537fa9) */
   if ( (a2 & 1) != 0 ) /*0x537faf*/
     __3_YAXPAX_Z(this); /*0x537fb2*/
   return (std::locale::facet *)this; /*0x537fbc*/
@@ -2186,7 +2186,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_199(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x537fc9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x537fc9) */
   if ( (a2 & 1) != 0 ) /*0x537fcf*/
     __3_YAXPAX_Z(this); /*0x537fd2*/
   return (std::locale::facet *)this; /*0x537fdc*/
@@ -2199,7 +2199,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_200(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x537fe9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x537fe9) */
   if ( (a2 & 1) != 0 ) /*0x537fef*/
     __3_YAXPAX_Z(this); /*0x537ff2*/
   return (std::locale::facet *)this; /*0x537ffc*/
@@ -2212,7 +2212,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_201(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538009*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538009) */
   if ( (a2 & 1) != 0 ) /*0x53800f*/
     __3_YAXPAX_Z(this); /*0x538012*/
   return (std::locale::facet *)this; /*0x53801c*/
@@ -2225,7 +2225,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_202(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538029*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538029) */
   if ( (a2 & 1) != 0 ) /*0x53802f*/
     __3_YAXPAX_Z(this); /*0x538032*/
   return (std::locale::facet *)this; /*0x53803c*/
@@ -2238,7 +2238,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_203(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538049*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538049) */
   if ( (a2 & 1) != 0 ) /*0x53804f*/
     __3_YAXPAX_Z(this); /*0x538052*/
   return (std::locale::facet *)this; /*0x53805c*/
@@ -2251,7 +2251,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_204(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538069*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538069) */
   if ( (a2 & 1) != 0 ) /*0x53806f*/
     __3_YAXPAX_Z(this); /*0x538072*/
   return (std::locale::facet *)this; /*0x53807c*/
@@ -2264,7 +2264,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_205(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538089*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538089) */
   if ( (a2 & 1) != 0 ) /*0x53808f*/
     __3_YAXPAX_Z(this); /*0x538092*/
   return (std::locale::facet *)this; /*0x53809c*/
@@ -2277,7 +2277,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_206(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x5380a9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5380a9) */
   if ( (a2 & 1) != 0 ) /*0x5380af*/
     __3_YAXPAX_Z(this); /*0x5380b2*/
   return (std::locale::facet *)this; /*0x5380bc*/
@@ -2290,7 +2290,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_207(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x5380c9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5380c9) */
   if ( (a2 & 1) != 0 ) /*0x5380cf*/
     __3_YAXPAX_Z(this); /*0x5380d2*/
   return (std::locale::facet *)this; /*0x5380dc*/
@@ -2303,7 +2303,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_208(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x5380e9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5380e9) */
   if ( (a2 & 1) != 0 ) /*0x5380ef*/
     __3_YAXPAX_Z(this); /*0x5380f2*/
   return (std::locale::facet *)this; /*0x5380fc*/
@@ -2316,7 +2316,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_209(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538109*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538109) */
   if ( (a2 & 1) != 0 ) /*0x53810f*/
     __3_YAXPAX_Z(this); /*0x538112*/
   return (std::locale::facet *)this; /*0x53811c*/
@@ -2329,7 +2329,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_210(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538129*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538129) */
   if ( (a2 & 1) != 0 ) /*0x53812f*/
     __3_YAXPAX_Z(this); /*0x538132*/
   return (std::locale::facet *)this; /*0x53813c*/
@@ -2342,7 +2342,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_211(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538149*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538149) */
   if ( (a2 & 1) != 0 ) /*0x53814f*/
     __3_YAXPAX_Z(this); /*0x538152*/
   return (std::locale::facet *)this; /*0x53815c*/
@@ -2355,7 +2355,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_212(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538169*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538169) */
   if ( (a2 & 1) != 0 ) /*0x53816f*/
     __3_YAXPAX_Z(this); /*0x538172*/
   return (std::locale::facet *)this; /*0x53817c*/
@@ -2368,7 +2368,7 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_213(char a2)
 {
 
-  this->vtable1 = (int)&CommandClass::`vftable'; /*0x538189*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538189) */
   if ( (a2 & 1) != 0 ) /*0x53818f*/
     __3_YAXPAX_Z(this); /*0x538192*/
   return (std::locale::facet *)this; /*0x53819c*/
@@ -2402,7 +2402,7 @@ ToggleRepairCommandClass * CreateTeamCommand::performAction_215(unsigned int * B
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_216(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x5381e9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5381e9) */
   if ( (a2 & 1) != 0 ) /*0x5381ef*/
     operator delete((void *)(Block)); /*0x5381f2*/
   return &Block->vtable1; /*0x5381fc*/
@@ -2413,7 +2413,7 @@ unsigned int * CreateTeamCommand::performAction_216(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_217(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538209*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538209) */
   if ( (a2 & 1) != 0 ) /*0x53820f*/
     operator delete((void *)(Block)); /*0x538212*/
   return &Block->vtable1; /*0x53821c*/
@@ -2424,7 +2424,7 @@ unsigned int * CreateTeamCommand::performAction_217(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_218(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538229*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538229) */
   if ( (a2 & 1) != 0 ) /*0x53822f*/
     operator delete((void *)(Block)); /*0x538232*/
   return &Block->vtable1; /*0x53823c*/
@@ -2468,7 +2468,7 @@ StopCommandClass * CreateTeamCommand::performAction_221(unsigned int * Block, ch
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_222(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x5382a9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5382a9) */
   if ( (a2 & 1) != 0 ) /*0x5382af*/
     operator delete((void *)(Block)); /*0x5382b2*/
   return &Block->vtable1; /*0x5382bc*/
@@ -2490,7 +2490,7 @@ DeployCommandClass * CreateTeamCommand::performAction_223(unsigned int * Block, 
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_224(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x5382e9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5382e9) */
   if ( (a2 & 1) != 0 ) /*0x5382ef*/
     operator delete((void *)(Block)); /*0x5382f2*/
   return &Block->vtable1; /*0x5382fc*/
@@ -2501,7 +2501,7 @@ unsigned int * CreateTeamCommand::performAction_224(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_225(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538309*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538309) */
   if ( (a2 & 1) != 0 ) /*0x53830f*/
     operator delete((void *)(Block)); /*0x538312*/
   return &Block->vtable1; /*0x53831c*/
@@ -2512,7 +2512,7 @@ unsigned int * CreateTeamCommand::performAction_225(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_226(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538329*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538329) */
   if ( (a2 & 1) != 0 ) /*0x53832f*/
     operator delete((void *)(Block)); /*0x538332*/
   return &Block->vtable1; /*0x53833c*/
@@ -2523,7 +2523,7 @@ unsigned int * CreateTeamCommand::performAction_226(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_227(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538349*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538349) */
   if ( (a2 & 1) != 0 ) /*0x53834f*/
     operator delete((void *)(Block)); /*0x538352*/
   return &Block->vtable1; /*0x53835c*/
@@ -2534,7 +2534,7 @@ unsigned int * CreateTeamCommand::performAction_227(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_228(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538369*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538369) */
   if ( (a2 & 1) != 0 ) /*0x53836f*/
     operator delete((void *)(Block)); /*0x538372*/
   return &Block->vtable1; /*0x53837c*/
@@ -2545,7 +2545,7 @@ unsigned int * CreateTeamCommand::performAction_228(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_229(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538389*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538389) */
   if ( (a2 & 1) != 0 ) /*0x53838f*/
     operator delete((void *)(Block)); /*0x538392*/
   return &Block->vtable1; /*0x53839c*/
@@ -2556,7 +2556,7 @@ unsigned int * CreateTeamCommand::performAction_229(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_230(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x5383a9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5383a9) */
   if ( (a2 & 1) != 0 ) /*0x5383af*/
     operator delete((void *)(Block)); /*0x5383b2*/
   return &Block->vtable1; /*0x5383bc*/
@@ -2567,7 +2567,7 @@ unsigned int * CreateTeamCommand::performAction_230(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_231(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x5383c9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5383c9) */
   if ( (a2 & 1) != 0 ) /*0x5383cf*/
     operator delete((void *)(Block)); /*0x5383d2*/
   return &Block->vtable1; /*0x5383dc*/
@@ -2578,7 +2578,7 @@ unsigned int * CreateTeamCommand::performAction_231(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_232(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x5383e9*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x5383e9) */
   if ( (a2 & 1) != 0 ) /*0x5383ef*/
     operator delete((void *)(Block)); /*0x5383f2*/
   return &Block->vtable1; /*0x5383fc*/
@@ -2589,7 +2589,7 @@ unsigned int * CreateTeamCommand::performAction_232(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_233(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538409*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538409) */
   if ( (a2 & 1) != 0 ) /*0x53840f*/
     operator delete((void *)(Block)); /*0x538412*/
   return &Block->vtable1; /*0x53841c*/
@@ -2600,7 +2600,7 @@ unsigned int * CreateTeamCommand::performAction_233(unsigned int * Block, char a
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_234(unsigned int * Block, char a2)
 {
-  *(unsigned int *)&Block->vtable1 = (int)&vt_CommandClass; /*0x538429*/
+  /* X11: vtable install elided (implicit via CommandClass virtuals 0x538429) */
   if ( (a2 & 1) != 0 ) /*0x53842f*/
     operator delete((void *)(Block)); /*0x538432*/
   return &Block->vtable1; /*0x53843c*/

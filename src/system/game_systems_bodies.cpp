@@ -6662,10 +6662,10 @@ void SaveLoadDialog::DlgProc()
               FileClass::SetFileName(&v59, Buffer); /*0x5592d7*/
             }
             while ( (uint8_t)CCFileClass::Open(&v59, 0) == 1 ); /*0x5592e9*/
-            *(unsigned int *)v59.vtable1 = 0; /*0x5592f2*/
+            /* X11: vtable install elided (implicit via class virtuals 0x5592f2) — binary-proven install, was 0 */
             v61 = 0; /*0x5592fa*/
             Vector::Clear((int)v60); /*0x559305*/
-            *(unsigned int *)v59.vtable1 = &off_7E1668; /*0x55930e*/
+            /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x55930e) */
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v59); /*0x559316*/
             v34 = Buffer; /*0x55931b*/
           }

@@ -2516,7 +2516,7 @@ namespace gamemd {
   }
   VectorClass::ConstructorWithVtable(&v75, 0, 0); /*0x441d6f*/
   v48 = (int (__thiscall **)(BuildingClass *))this->vfptr; /*0x441d74*/
-  v75.vfptr = 0; /*0x441d78*/
+  /* X11: vtable install elided (implicit via class virtuals 0x441d78) — binary-proven install, was 0 */
   v77 = 10; /*0x441d80*/
   v76 = 0; /*0x441d88*/
   for ( i = *(unsigned int *)(v48[33](this) + 1956) - 1; i >= 0; --i ) /*0x441d9e*/
@@ -2572,7 +2572,7 @@ namespace gamemd {
   BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x441f1b*/
   TechnoClass::CleanupAll((TechnoClass *)this, v78); /*0x441f27*/
   result = (int)v75.Items; /*0x441f2c*/
-  v75.vfptr = 0; /*0x441f35*/
+  /* X11: vtable install elided (implicit via class virtuals 0x441f35) — binary-proven install, was 0 */
   if ( v75.Items && v75.IsAllocated ) /*0x441f46*/
     operator delete((void *)(v75.Items)); /*0x441f49*/
   return result; /*0x441f30*/
@@ -2805,7 +2805,7 @@ namespace gamemd {
   }
   VectorClass::ConstructorWithVtable(&v75, 0, 0); /*0x441d6f*/
   v48 = (int (__thiscall **)(BuildingClass *))this->vfptr; /*0x441d74*/
-  v75.vfptr = &(void*)(void*)(void*)&DynamicVectorClass_ParticleSystemTypeClass_const___vftable; /*0x441d78*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass_ParticleSystemTypeClass_const__ virtuals 0x441d78) */
   v77 = 10; /*0x441d80*/
   v76 = 0; /*0x441d88*/
   for ( i = *(unsigned int *)(v48[33](this) + 1956) - 1; i >= 0; --i ) /*0x441d9e*/
@@ -2861,7 +2861,7 @@ namespace gamemd {
   BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x441f1b*/
   TechnoClass::CleanupAll((TechnoClass *)this, v78); /*0x441f27*/
   result = (int)v75.Items; /*0x441f2c*/
-  v75.vfptr = &(void*)(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x441f35*/
+  /* X11: vtable install elided (implicit via VectorClass_ParticleSystemTypeClass_const__ virtuals 0x441f35) */
   if ( v75.Items && v75.IsAllocated ) /*0x441f46*/
     delete[] (v75.Items); /*0x441f49*/
   return result; /*0x441f30*/
@@ -4419,10 +4419,10 @@ int FootClass::PostLoadInit()
   this->unknownAbstractArray588[0] = (int)0; /*0x4d3552*/
   this->FootClass_field_abstract_array_5AC[0] = (int)0; /*0x4d3558*/
   this->locomotor[0] = 0; /*0x4d355e*/
-  this->vfptr = 0; /*0x4d3568*/
-  this->vfptr1 = 0; /*0x4d356e*/
-  this->vfptr2 = 0; /*0x4d3575*/
-  this->vfptr3 = 0; /*0x4d357c*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4d3568) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4d356e) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4d3575) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4d357c) — binary-proven install, was 0 */
   return &this->vfptr; /*0x4d3585*/
 }
 } // namespace ra2::game
@@ -7882,10 +7882,10 @@ namespace ra2::game {
 void * ObjectClass::Init(int a2)
 {
   AbstractClass::InitVtables((AbstractClass *)this, a2); /*0x5f3b58*/
-  this->vfptr = 0; /*0x5f3b5d*/
-  this->vfptr1 = 0; /*0x5f3b63*/
-  this->vfptr2 = 0; /*0x5f3b6a*/
-  this->vfptr3 = 0; /*0x5f3b71*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5f3b5d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x5f3b63) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x5f3b6a) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x5f3b71) — binary-proven install, was 0 */
   return &this->vfptr; /*0x5f3b7a*/
 }
 } // namespace ra2::game
@@ -8939,7 +8939,7 @@ int TechnoClass::CreatePlanningNode()
     this->vtable4 = 0; /*0x638a9a*/
     this->uniqueId = 1; /*0x638a9d*/
     this->u32_11 = 0; /*0x638aa1*/
-    this->vtable2 = 0; /*0x638aa4*/
+    /* X11: vtable install elided (implicit via class virtuals 0x638aa4) — binary-proven install, was 0 */
     this->nextArrayIndex = 10; /*0x638aab*/
     this->abstractFlags = 0; /*0x638ab2*/
     this->referenceCount = 0; /*0x638ab5*/

@@ -200,9 +200,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2[1].? = 0; /*0x6a47d1*/
       v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
       v2->AbstractClass = &SideClass::`vftable'; /*0x6a47e1*/
-      v2->vtable2 = &SideClass::`vftable'; /*0x6a47e7*/
+      /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47e7) */
       v2->? = &SideClass::`vftable'; /*0x6a47ee*/
-      v2->vtable4 = &SideClass::`vftable'; /*0x6a47f5*/
+      /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47f5) */
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/

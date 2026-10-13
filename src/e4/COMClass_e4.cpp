@@ -51,7 +51,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *(unsigned int *)Block->vfptr = &vt_rc_ptr; /*0x76705a*/
+    /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76705a) */
     ComPtr::Release((ComPtr *)Block); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       operator delete((void *)(Block)); /*0x76706b*/

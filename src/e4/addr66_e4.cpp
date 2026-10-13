@@ -957,7 +957,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   v2 = 32; /*0x6616b8*/
   this->M4 = 0; /*0x6616bd*/
   this->M8 = 0; /*0x6616c0*/
-  *(unsigned int *)this->vfptr = &Straw::`vftable'; /*0x6616c3*/
+  /* X11: vtable install elided (implicit via Straw virtuals 0x6616c3) */
   *((unsigned int *)this + 3) = 0; /*0x6616c9*/
   *((unsigned int *)this + 4) = 0; /*0x6616cc*/
   v3 = (ObjectClass *)((char *)this + 20); /*0x6616cf*/
@@ -1588,7 +1588,7 @@ void E4Recv_663960::sub_663960()
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  this->vtable0 = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6639a6) */
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/

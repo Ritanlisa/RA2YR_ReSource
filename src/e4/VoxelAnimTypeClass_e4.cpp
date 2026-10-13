@@ -78,7 +78,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   this->IsTiberium = 0; /*0x74ae65*/
   this->ObjectTypeClass = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
   this->? = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
-  this->vtable3 = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
+  /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
   this->? = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
   this->LegalTarget_d = 0; /*0x74ae8c*/
@@ -564,10 +564,10 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x74b82a*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
-      aP0->vfptr = &vt_VoxelAnimTypeClass; /*0x74b838*/
-      aP0->vfptr1 = &vt_VoxelAnimTypeClass; /*0x74b83e*/
-      aP0->vfptr2 = &vt_VoxelAnimTypeClass; /*0x74b845*/
-      aP0->vfptr3 = &vt_VoxelAnimTypeClass; /*0x74b84c*/
+      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b838) */
+      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b83e) */
+      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b845) */
+      /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74b84c) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->Warhead); /*0x74b85f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->BounceAnim); /*0x74b870*/

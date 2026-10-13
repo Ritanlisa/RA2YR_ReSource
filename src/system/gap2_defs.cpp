@@ -54,10 +54,10 @@ int CCFileClass::Destru_vt08(int a2, int a3) {
 // 0x4019A0
 namespace gamemd { 
 unsigned int * CCFileClass::Destru_vt00(char a2) {
-  *(unsigned int *)this->vtable1 = &vt_CCFileClass; /*0x4019a6*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x4019a6) */
   this->tail_19 = 0; /*0x4019ac*/
   Vector::Clear((int)&this->CacheReadAhead8); /*0x4019b3*/
-  *(unsigned int *)this->vtable1 = &off_7E1668; /*0x4019ba*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4019ba) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)this); /*0x4019c0*/
   if ( (a2 & 1) != 0 ) /*0x4019ca*/
     operator delete((void *)(this)); /*0x4019cd*/
@@ -69,7 +69,7 @@ namespace gamemd {
 void* GenericNode::Constructor() {
   this->Previous = 0; /*0x40e324*/
   *(unsigned int *)this->Blowfish = 0; /*0x40e327*/
-  *(unsigned int *)this->vtable1 = &vt_GenericNode; /*0x40e32a*/
+  /* X11: vtable install elided (implicit via GenericNode virtuals 0x40e32a) */
   return this->vtable1; /*0x40e330*/
 }
 }
@@ -412,7 +412,7 @@ void* BufferIOFileClass::Constructor() {
   this->TotalBytesWritten = 0; /*0x431b6f*/
   this->FileID = 0; /*0x431b72*/
   this->MixFileIndex = 0; /*0x431b75*/
-  *(unsigned int *)this->vtable1 = &vt_BufferIOFileClass; /*0x431b78*/
+  /* X11: vtable install elided (implicit via BufferIOFileClass virtuals 0x431b78) */
   return this->vtable1; /*0x431b7e*/
 }
 }
@@ -1114,7 +1114,7 @@ void* RawFileClass::Construct(int a1) {
   BufferIOFile::Init((BufferIOFile *)this); /*0x4739f3*/
   Buffer::Init((Buffer *)this->q058), 0, 0); /*0x4739ff*/
   this->q064 = 0; /*0x473a0b*/
-  *(unsigned int *)this->vtable1 = &vt_CCFileClass; /*0x473a12*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x473a12) */
   this->u32_68 = 0; /*0x473a18*/
   FileClass::OpenWithCDSearch((CDFileClass *)this, a1); /*0x473a1f*/
   return this->vtable1; /*0x473a26*/
@@ -1128,7 +1128,7 @@ void* CCFileClass::Construct2(void* a1) {
   BufferIOFile::Init((BufferIOFile *)this); /*0x473a33*/
   Buffer::Init((Buffer *)this->q058), 0, 0); /*0x473a3f*/
   this->tail_19 = 0; /*0x473a48*/
-  *(unsigned int *)this->vtable1 = &vt_CCFileClass; /*0x473a4f*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x473a4f) */
   this->u32_68 = 0; /*0x473a55*/
   v3 = String::GetOrEmpty_Alt((String *)a1); /*0x473a5c*/
   this->u32_68 = 0; /*0x473a64*/
@@ -1142,7 +1142,7 @@ int CCFileClass::Construct3() {
   BufferIOFile::Init((unsigned char *)this); /*0x473a83*/
   Buffer::Init(&this->q058, 0, 0); /*0x473a8f*/
   this->q064 = 0; /*0x473a94*/
-  *(unsigned int *)this = &vt_CCFileClass; /*0x473a9b*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x473a9b) */
   this->u32_68 = 0; /*0x473aa1*/
   return this; /*0x473aaa*/
 }
@@ -1440,7 +1440,7 @@ int INIClass::WriteDigest(int a1, int a2) {
   v6.__pad_004 = 0; /*0x474451*/
   v6.q008 = 0; /*0x474455*/
   v7 = 0; /*0x474459*/
-  *(unsigned int *)v6.vtable1 = &vt_FilePipe; /*0x47445d*/
+  /* X11: vtable install elided (implicit via FilePipe virtuals 0x47445d) */
   if ( a2 ) /*0x474465*/
   {
     INIClass::ClearSection((int *)this->vtable1.__pad_0, (int)g_INI_Key_Digest, 0); /*0x474482*/
@@ -1688,7 +1688,7 @@ int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6
     VectorClass::Construct(&v21, 0, 0); /*0x475da9*/
     v23 = 10; /*0x475db8*/
     v22 = 0; /*0x475dc0*/
-    v21.vfptr = &vt_TypeList; /*0x475dc4*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x475dc4) */
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x475dd6*/
     {
       if ( !*i ) /*0x475dd8*/
@@ -1711,7 +1711,7 @@ int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6
     v17 = v21.Items == 0; /*0x475e5e*/
     a1->u32_14 = v15; /*0x475e60*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x475e63*/
-    v21.vfptr = &vt_VectorClass; /*0x475e69*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x475e69) */
     if ( !v17 && v21.IsAllocated ) /*0x475e77*/
     {
       operator delete((void *)(Items)); /*0x475e7a*/
@@ -1798,7 +1798,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
     VectorClass::Construct(&v26, 0, 0); /*0x476059*/
     v28 = 10; /*0x476068*/
     v27 = 0; /*0x476070*/
-    v26.vfptr = &vt_TypeList; /*0x476074*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x476074) */
     v11 = (Factory *)strtok((char *)v30.u32_10, Str); /*0x476081*/
     if ( v11 ) /*0x476088*/
     {
@@ -1853,7 +1853,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
     v22 = v26.Items == 0; /*0x476171*/
     *(unsigned int *)(a1 + 20) = v20; /*0x476173*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x476176*/
-    v26.vfptr = &vt_VectorClass; /*0x47617c*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x47617c) */
     if ( !v22 && v26.IsAllocated ) /*0x47618a*/
     {
       operator delete((void *)(Items)); /*0x47618d*/
@@ -2074,7 +2074,7 @@ void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, 
     VectorClass::Construct(&v27, 0, 0); /*0x4767fa*/
     v29 = 10; /*0x476809*/
     v28 = 0; /*0x476811*/
-    v27.vfptr = &vt_TypeList; /*0x476819*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x476819) */
     v11 = (SuperWeaponTypeClass *)strtok(String, Str); /*0x476826*/
     if ( v11 ) /*0x47682d*/
     {
@@ -2140,7 +2140,7 @@ void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, 
     a1[4] = v28; /*0x476961*/
     a1[5] = v22; /*0x476964*/
     *a1 = &vt_TypeList; /*0x476967*/
-    v27.vfptr = &vt_VectorClass; /*0x47696d*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x47696d) */
     if ( !v23 && v27.IsAllocated ) /*0x476979*/
     {
       operator delete((void *)(Items)); /*0x47697c*/
@@ -3733,10 +3733,10 @@ int CellClass::SaveLoad_Prefix() {
       AbstractClass::InitVtables(v21, (int)&v23); /*0x483a19*/
       v21[1].uniqueId = 0; /*0x483a1e*/
       v21[2].vfptr1 = 0; /*0x483a21*/
-      v21->vfptr = &vt_CellClass; /*0x483a24*/
-      v21->vfptr1 = &vt_CellClass; /*0x483a2a*/
-      v21->vfptr2 = &vt_CellClass; /*0x483a31*/
-      v21->vfptr3 = &vt_CellClass; /*0x483a38*/
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a24) */
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a2a) */
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a31) */
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a38) */
     }
     if ( !v21[1].vfptr1 ) /*0x483a42*/
       goto LABEL_20; /*0x483a42*/
@@ -4844,7 +4844,7 @@ void* CCFileClass::Construct2(void* a1) {
   BufferIOFile::Init((BufferIOFile *)this); /*0x473a33*/
   Buffer::Init((Buffer *)this->q058), 0, 0); /*0x473a3f*/
   this->tail_19 = 0; /*0x473a48*/
-  *(unsigned int *)this->vtable1 = &vt_CCFileClass; /*0x473a4f*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x473a4f) */
   this->u32_68 = 0; /*0x473a55*/
   v3 = String::GetOrEmpty_Alt((String *)a1); /*0x473a5c*/
   this->u32_68 = 0; /*0x473a64*/
@@ -4858,7 +4858,7 @@ int CCFileClass::Construct3() {
   BufferIOFile::Init((unsigned char *)this); /*0x473a83*/
   Buffer::Init(&this->q088, 0, 0); /*0x473a8f*/
   this->q064 = 0; /*0x473a94*/
-  *(unsigned int *)this = &vt_CCFileClass; /*0x473a9b*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x473a9b) */
   this->u32_68 = 0; /*0x473aa1*/
   return this; /*0x473aaa*/
 }
@@ -5156,7 +5156,7 @@ int INIClass::WriteDigest(int a1, int a2) {
   v6.__pad_004 = 0; /*0x474451*/
   v6.q008 = 0; /*0x474455*/
   v7 = 0; /*0x474459*/
-  *(unsigned int *)v6.vtable1 = &vt_FilePipe; /*0x47445d*/
+  /* X11: vtable install elided (implicit via FilePipe virtuals 0x47445d) */
   if ( a2 ) /*0x474465*/
   {
     INIClass::ClearSection((int *)this->vtable1.__pad_0, (int)g_INI_Key_Digest, 0); /*0x474482*/
@@ -5403,7 +5403,7 @@ int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6
     VectorClass::Construct(&v21, 0, 0); /*0x475da9*/
     v23 = 10; /*0x475db8*/
     v22 = 0; /*0x475dc0*/
-    v21.vfptr = &vt_TypeList; /*0x475dc4*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x475dc4) */
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x475dd6*/
     {
       if ( !*i ) /*0x475dd8*/
@@ -5426,7 +5426,7 @@ int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6
     v17 = v21.Items == 0; /*0x475e5e*/
     a1->u32_14 = v15; /*0x475e60*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x475e63*/
-    v21.vfptr = &vt_VectorClass; /*0x475e69*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x475e69) */
     if ( !v17 && v21.IsAllocated ) /*0x475e77*/
     {
       operator delete((void *)(Items)); /*0x475e7a*/
@@ -5513,7 +5513,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
     VectorClass::Construct(&v26, 0, 0); /*0x476059*/
     v28 = 10; /*0x476068*/
     v27 = 0; /*0x476070*/
-    v26.vfptr = &vt_TypeList; /*0x476074*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x476074) */
     v11 = (Factory *)strtok((char *)v30.u32_10, Str); /*0x476081*/
     if ( v11 ) /*0x476088*/
     {
@@ -5568,7 +5568,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
     v22 = v26.Items == 0; /*0x476171*/
     *(unsigned int *)(a1 + 20) = v20; /*0x476173*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x476176*/
-    v26.vfptr = &vt_VectorClass; /*0x47617c*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x47617c) */
     if ( !v22 && v26.IsAllocated ) /*0x47618a*/
     {
       operator delete((void *)(Items)); /*0x47618d*/
@@ -5789,7 +5789,7 @@ void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, 
     VectorClass::Construct(&v27, 0, 0); /*0x4767fa*/
     v29 = 10; /*0x476809*/
     v28 = 0; /*0x476811*/
-    v27.vfptr = &vt_TypeList; /*0x476819*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x476819) */
     v11 = (SuperWeaponTypeClass *)strtok(String, Str); /*0x476826*/
     if ( v11 ) /*0x47682d*/
     {
@@ -5855,7 +5855,7 @@ void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, 
     a1[4] = v28; /*0x476961*/
     a1[5] = v22; /*0x476964*/
     *a1 = &vt_TypeList; /*0x476967*/
-    v27.vfptr = &vt_VectorClass; /*0x47696d*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x47696d) */
     if ( !v23 && v27.IsAllocated ) /*0x476979*/
     {
       operator delete((void *)(Items)); /*0x47697c*/
@@ -7449,10 +7449,10 @@ int CellClass::SaveLoad_Prefix() {
       AbstractClass::InitVtables(v21, (int)&v23); /*0x483a19*/
       v21[1].uniqueId = 0; /*0x483a1e*/
       v21[2].vfptr1 = 0; /*0x483a21*/
-      v21->vfptr = &vt_CellClass; /*0x483a24*/
-      v21->vfptr1 = &vt_CellClass; /*0x483a2a*/
-      v21->vfptr2 = &vt_CellClass; /*0x483a31*/
-      v21->vfptr3 = &vt_CellClass; /*0x483a38*/
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a24) */
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a2a) */
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a31) */
+      /* X11: vtable install elided (implicit via CellClass virtuals 0x483a38) */
     }
     if ( !v21[1].vfptr1 ) /*0x483a42*/
       goto LABEL_20; /*0x483a42*/
@@ -10848,7 +10848,7 @@ void* RadarClass::RenderSpySatellite() {
   *&this->q11D8 = 0; /*0x4a881e*/
   *&this->q11DC = 0; /*0x4a8824*/
   *&this->q11E0 = 0; /*0x4a882a*/
-  this->vtable1 = &vt_DisplayClass; /*0x4a8830*/
+  /* X11: vtable install elided (implicit via DisplayClass virtuals 0x4a8830) */
   dword_8A072C = 0; /*0x4a8836*/
   stru_8A0390.health = 0; /*0x4a883b*/
   stru_8A0390.parachute = 0; /*0x4a8840*/
@@ -11100,7 +11100,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
     VectorClass::CellConstructor(&v79, 0, 0); /*0x4aa81b*/
     v40 = v10->unknown104; /*0x4aa820*/
     v41 = 0; /*0x4aa826*/
-    v79.vfptr = &vt_DynamicVectorClass; /*0x4aa82a*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x4aa82a) */
     v81 = 10; /*0x4aa832*/
     v80 = 0; /*0x4aa83a*/
     if ( v40 > 0 ) /*0x4aa83e*/
@@ -11201,7 +11201,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
       }
       a3 = v52; /*0x4aa9f5*/
     }
-    v79.vfptr = &vt_VectorClass; /*0x4aa9fb*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x4aa9fb) */
     if ( Items && v79.IsAllocated ) /*0x4aaa0f*/
     {
       operator delete((void *)(Items)); /*0x4aaa16*/
@@ -12187,10 +12187,10 @@ void ScenarioClass::LoadMapData(void* a1) {
     v39.GetPitch(); /*0x4ad3ea*/
     v44.__pad_004 = 0; /*0x4ad3f7*/
     v45 = 0; /*0x4ad3fb*/
-    *(unsigned int *)v44.vtable1 = &vt_Straw; /*0x4ad3ff*/
+    /* X11: vtable install elided (implicit via Straw virtuals 0x4ad3ff) */
     Buffer::Init(&v46, KeyCount, Base64Data); /*0x4ad407*/
     v46.Buffer_field_0C = 0; /*0x4ad416*/
-    *(unsigned int *)v44.vtable1 = &vt_BufferStraw; /*0x4ad41a*/
+    /* X11: vtable install elided (implicit via BufferStraw virtuals 0x4ad41a) */
     CellClass::LoadTerrainTiles((CellClass *)&DataGlobal_87F7E8, (int)&v44); /*0x4ad422*/
     --((char *)&v39); /*0x4ad430*/
     Vector::Clear((int)&v46); /*0x4ad434*/
@@ -12208,10 +12208,10 @@ void ScenarioClass::LoadMapData(void* a1) {
     v39.GetPitch(); /*0x4ad49d*/
     v44.__pad_004 = 0; /*0x4ad4aa*/
     v45 = 0; /*0x4ad4ae*/
-    *(unsigned int *)v44.vtable1 = &vt_Straw; /*0x4ad4b2*/
+    /* X11: vtable install elided (implicit via Straw virtuals 0x4ad4b2) */
     Buffer::Init(&v46, KeyCount, v28); /*0x4ad4ba*/
     v46.Buffer_field_0C = 0; /*0x4ad4c9*/
-    *(unsigned int *)v44.vtable1 = &vt_BufferStraw; /*0x4ad4cd*/
+    /* X11: vtable install elided (implicit via BufferStraw virtuals 0x4ad4cd) */
     CellClass::CreateOverlay((CellClass *)&DataGlobal_87F7E8, (int)&v44); /*0x4ad4d5*/
     --((char *)&v39); /*0x4ad4e3*/
     Vector::Clear((int)&v46); /*0x4ad4e7*/
@@ -12229,10 +12229,10 @@ void ScenarioClass::LoadMapData(void* a1) {
     v39.GetPitch(); /*0x4ad550*/
     v44.__pad_004 = 0; /*0x4ad55d*/
     v45 = 0; /*0x4ad561*/
-    *(unsigned int *)v44.vtable1 = &vt_Straw; /*0x4ad565*/
+    /* X11: vtable install elided (implicit via Straw virtuals 0x4ad565) */
     Buffer::Init(&v46, KeyCount, v30); /*0x4ad56d*/
     v46.Buffer_field_0C = 0; /*0x4ad57c*/
-    *(unsigned int *)v44.vtable1 = &vt_BufferStraw; /*0x4ad580*/
+    /* X11: vtable install elided (implicit via BufferStraw virtuals 0x4ad580) */
     CellClass::DecompressRawCellData((CellClass *)&DataGlobal_87F7E8, (int)&v44); /*0x4ad588*/
     --((char *)&v39); /*0x4ad596*/
     Vector::Clear((int)&v46); /*0x4ad59a*/
@@ -12250,10 +12250,10 @@ void ScenarioClass::LoadMapData(void* a1) {
     v39.GetPitch(); /*0x4ad603*/
     v44.__pad_004 = 0; /*0x4ad610*/
     v45 = 0; /*0x4ad614*/
-    *(unsigned int *)v44.vtable1 = &vt_Straw; /*0x4ad618*/
+    /* X11: vtable install elided (implicit via Straw virtuals 0x4ad618) */
     Buffer::Init(&v46, KeyCount, v32); /*0x4ad620*/
     v46.Buffer_field_0C = 0; /*0x4ad62f*/
-    *(unsigned int *)v44.vtable1 = &vt_BufferStraw; /*0x4ad633*/
+    /* X11: vtable install elided (implicit via BufferStraw virtuals 0x4ad633) */
     CellClass::DecompressTerrainDataSimple((CellClass *)&DataGlobal_87F7E8, (int)&v44); /*0x4ad63b*/
     --((char *)&v39); /*0x4ad649*/
     Vector::Clear((int)&v46); /*0x4ad64d*/
@@ -12271,10 +12271,10 @@ void ScenarioClass::LoadMapData(void* a1) {
     v39.GetPitch(); /*0x4ad6b2*/
     v44.__pad_004 = 0; /*0x4ad6bb*/
     v45 = 0; /*0x4ad6bf*/
-    *(unsigned int *)v44.vtable1 = &vt_Straw; /*0x4ad6c3*/
+    /* X11: vtable install elided (implicit via Straw virtuals 0x4ad6c3) */
     Buffer::Init(&v46, (int)v35, v34); /*0x4ad6cb*/
     v46.Buffer_field_0C = 0; /*0x4ad6d4*/
-    *(unsigned int *)v44.vtable1 = &vt_BufferStraw; /*0x4ad6de*/
+    /* X11: vtable install elided (implicit via BufferStraw virtuals 0x4ad6de) */
     CellClass::DecompressTerrainData((CellClass *)&DataGlobal_87F7E8, (int)&v44); /*0x4ad6e6*/
     --((char *)&v39); /*0x4ad6f4*/
     Vector::Clear((int)&v46); /*0x4ad6f8*/
@@ -12888,7 +12888,7 @@ int INIClass::LoadFile(int a1, int a2) {
   INIClass::loadFile(&v96, 4096); /*0x525ab5*/
   v96.headNode[2] = 0; /*0x525ac6*/
   v96.sectionHead[0] = 0; /*0x525aca*/
-  *(unsigned int *)v94.vtable1 = &vt_CacheStraw; /*0x525ace*/
+  /* X11: vtable install elided (implicit via CacheStraw virtuals 0x525ace) */
   Delegate::Set(&v94, a1); /*0x525ad6*/
   do /*0x525b9d*/
   {
@@ -13807,12 +13807,12 @@ int INIClass::GetBase64Data() {
   *(unsigned int *)&v26.q008 = 0; /*0x526ff3*/
   v26.field_C = 1; /*0x526ff7*/
   v26.field_10 = 0; /*0x526fff*/
-  *(unsigned int *)v26.vtable1 = &vt_Base64Pipe; /*0x527003*/
+  /* X11: vtable install elided (implicit via Base64Pipe virtuals 0x527003) */
   v27.headNode = 0; /*0x52700b*/
   v27.q008 = 0; /*0x52700f*/
   Buffer::Init((Buffer *)&v27.q00C, a3, Size); /*0x52701b*/
   v28 = 0; /*0x527029*/
-  *(unsigned int *)v27.vtable1 = &vt_BufferPipe; /*0x52702d*/
+  /* X11: vtable install elided (implicit via BufferPipe virtuals 0x52702d) */
   Pipe::SetDelegate((Pipe *)&v26, (int)&v27); /*0x527035*/
   v24 = 0; /*0x527041*/
   v6 = strlen(a2) + 1; /*0x527045*/
@@ -16539,7 +16539,7 @@ int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a
   this->u32_1A8 = a5; /*0x555e10*/
   this->u32_1AC = a6; /*0x555e16*/
   this->q06C = 0; /*0x555e1c*/
-  *(unsigned int *)this = &vt_LightConvertClass; /*0x555e23*/
+  /* X11: vtable install elided (implicit via LightConvertClass virtuals 0x555e23) */
   if ( v11 < 1 ) /*0x555e29*/
     return this; /*0x555e29*/
   if ( !a8 ) /*0x555e31*/
@@ -16794,7 +16794,7 @@ int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a
   this->u32_1A8 = a5; /*0x555e10*/
   this->u32_1AC = a6; /*0x555e16*/
   this->q06C = 0; /*0x555e1c*/
-  *(unsigned int *)this = &vt_LightConvertClass; /*0x555e23*/
+  /* X11: vtable install elided (implicit via LightConvertClass virtuals 0x555e23) */
   if ( v11 < 1 ) /*0x555e29*/
     return this; /*0x555e29*/
   if ( !a8 ) /*0x555e31*/
@@ -16964,7 +16964,7 @@ int RadarClass::RenderMapPreview() {
   this->q115C = &vt_DynamicVectorClass; /*0x565157*/
   this->q1170 = 10; /*0x565161*/
   this->q116C = 0; /*0x565167*/
-  *(unsigned int *)this = &vt_MapClass; /*0x56516d*/
+  /* X11: vtable install elided (implicit via MapClass virtuals 0x56516d) */
   this->Crates = 13; /*0x565173*/
   return this; /*0x56517f*/
 }
@@ -16982,7 +16982,7 @@ void* RadarClass::Render(int a2) {
   int v11; // [esp+10h] [ebp-4h]
 
   v3 = &this->ptr_50; /*0x565199*/
-  *(unsigned int *)this = &off_7EA6FC; /*0x5651a0*/
+  /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x5651a0) */
   *(&this->Count) = 0; /*0x5651a6*/
   this->ptr_50 = 0; /*0x5651a9*/
   RadarClass::drawRadarTerrain(&this->ptr_50, 0, 0); /*0x5651ac*/
@@ -17023,7 +17023,7 @@ void* RadarClass::Render(int a2) {
   this->q115C = &vt_DynamicVectorClass; /*0x565246*/
   this->q1170 = 10; /*0x565250*/
   this->q116C = 0; /*0x565256*/
-  *(unsigned int *)this = &vt_MapClass; /*0x565266*/
+  /* X11: vtable install elided (implicit via MapClass virtuals 0x565266) */
   v8 = &this->u32_C8; /*0x56526c*/
   memset(&this->q804, 0, 0x34u); /*0x565272*/
   v9 = &this->LevelAndPassabilityStruct2pointer_70; /*0x565276*/
@@ -25154,7 +25154,7 @@ void* RadarClass::drawRadarTerrain(int a1, int a2) {
   this->vtable3 = (void *)a1; /*0x58adc0*/
   this->vtable4 = 1; /*0x58adc3*/
   this->IsAllocated = 0; /*0x58adc7*/
-  this->vtable1 = &vt_VectorClass; /*0x58adca*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x58adca) */
   if ( !a1 ) /*0x58add0*/
     return &this->vtable1; /*0x58ae56*/
   if ( !a2 ) /*0x58addc*/
@@ -25227,7 +25227,7 @@ void* RadarClass::RenderJammerRadius(int a1, void* a2) {
   this->q008 = (void *)a1; /*0x58ae76*/
   this->u32_C = 1; /*0x58ae79*/
   this->IsAllocated = 0; /*0x58ae7d*/
-  this->vtable1 = &VectorClass<SubzoneTrackingStruct>::`vftable'; /*0x58ae80*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x58ae80) */
   if ( !a1 ) /*0x58ae87*/
     return &v3->RadarClass_field_0x0; /*0x58af69*/
   if ( !a2 ) /*0x58ae93*/
@@ -25919,7 +25919,7 @@ int TacticalClass::FindInVector(void* a1) {
 // 0x5C5E40
 namespace gamemd { 
 void* ScenarioClass::executeTriggerActions(int a2) {
-  this->vtable1 = (int)&vt_FreeForAll; /*0x5c5e43*/
+  /* X11: vtable install elided (implicit via FreeForAll virtuals 0x5c5e43) */
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c5e49*/
   if ( (a2 & 1) != 0 ) /*0x5c5e53*/
     operator delete((void *)(this)); /*0x5c5e56*/
@@ -27495,10 +27495,10 @@ int ScenarioClass::SaveGameOptions() {
   INIClass::SetWideAsHex(&CCINIClass_INI_RA2MD, g_INI_Key_Network, aNetid, Buffer); /*0x5faff6*/
   INIClass::WriteDigest((INIClass *)&CCINIClass_INI_RA2MD, (int)&v5, 0); /*0x5fb007*/
   GameSettings::ParseNetworkAddress((const char *)this); /*0x5fb00e*/
-  *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x5fb017*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5fb017) */
   v7 = 0; /*0x5fb01f*/
   Vector::Clear((int)v6); /*0x5fb027*/
-  *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x5fb030*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5fb030) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x5fb03d*/
 }
 }
@@ -27635,7 +27635,7 @@ void FileSystem::InitExtensionState() {
     if ( v7 ) /*0x626819*/
     {
       VectorClass::ConstructHSV(v7, 0, 0); /*0x62681f*/
-      v8->vfptr = &vt_DynamicVectorClass; /*0x626824*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x626824) */
       v8[1].Items = (void *)10; /*0x62682a*/
       v8[1].vfptr = 0; /*0x62682d*/
     }
@@ -28136,7 +28136,7 @@ int FileSystem::readFile() {
   this->q004 = 0; /*0x628746*/
   this->q008 = 0; /*0x628749*/
   this->u32_D = 0; /*0x62874c*/
-  *(unsigned int *)this = &vt_DynamicVectorClassHashObject; /*0x62874f*/
+  /* X11: vtable install elided (implicit via DynamicVectorClassHashObject virtuals 0x62874f) */
   this->q014 = 10; /*0x628755*/
   this->q010 = 0; /*0x62875c*/
   return 0; /*0x62875f*/
@@ -28154,7 +28154,7 @@ void* FileSystem::writeFile(int a1, void* a2) {
   this->q008 = a1; /*0x628ee3*/
   this->q00C = 1; /*0x628ee6*/
   this->u32_D = 0; /*0x628eea*/
-  *(unsigned int *)this = &vt_VectorClassHashObject; /*0x628eee*/
+  /* X11: vtable install elided (implicit via VectorClassHashObject virtuals 0x628eee) */
   if ( !a1 ) /*0x628ef4*/
     return this; /*0x628ef4*/
   if ( !a2 ) /*0x628efc*/
@@ -28238,7 +28238,7 @@ void ScenarioClass::DestroyAndClearVector() {
 // 0x631E30
 namespace gamemd { 
 void* TacticalClass::saveConfig(int a2) {
-  this->vfptr = &vt_PixelFXClass; /*0x631e38*/
+  /* X11: vtable install elided (implicit via PixelFXClass virtuals 0x631e38) */
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
   return &this->vfptr; /*0x631e45*/
 }
@@ -28438,7 +28438,7 @@ void FactoryClass::FindAvailable() {
   this->u32_94 = -1; /*0x6360cc*/
   this->u32_99 = 0; /*0x6360d2*/
   vtable2 = this->vfptr2; /*0x6360d9*/
-  this->vfptr1 = &vt_VectorClass; /*0x6360e0*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6360e0) */
   if ( vtable2 && (this->u32_11) ) /*0x6360e8*/
   {
     operator delete((void *)(vtable2)); /*0x6360f0*/
@@ -28695,7 +28695,7 @@ int RadarClass::Create() {
   this->u32_1530 = 0; /*0x63f70a*/
   this->u32_1534 = 0; /*0x63f710*/
   this->u32_1538 = 0; /*0x63f716*/
-  *(unsigned int *)this = &vt_PowerClass; /*0x63f71c*/
+  /* X11: vtable install elided (implicit via PowerClass virtuals 0x63f71c) */
   return this; /*0x63f724*/
 }
 }
@@ -28756,7 +28756,7 @@ void* RadarClass::Construct() {
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass; /*0x652a5a*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x652a5a) */
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
     p_RadarClass_field_0x1278[1].vfptr = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = &p_RadarClass_field_0x1278->VectorClass_18; /*0x652a6a*/
@@ -28790,7 +28790,7 @@ void* RadarClass::Construct() {
   *&this->q14E8 = v7; /*0x652b2f*/
   *(unsigned int *)this->RadarClass_field_timer_1500 = TimerGetTicks(); /*0x652b37*/
   this->q1508 = 0; /*0x652b3d*/
-  this->vtable1 = &vt_RadarClass; /*0x652b45*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x652b45) */
   v8 = (MapClass *)operator new(0x10u); /*0x652b4b*/
   v9 = v8; /*0x652b50*/
   if ( v8 ) /*0x652b57*/
@@ -30025,7 +30025,7 @@ void* RadarClass::Destru_vt04(int a1) {
   CampaignClass *ptr_1260; // eax
   CampaignClass *ptr_1228; // eax
 
-  this->vfptr = &vt_RadarClass; /*0x6587ac*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x6587ac) */
   AudioFileClass::Release(&this->AudioFileClass_14C0); /*0x6587b2*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x6587b9*/
   p_RadarClass_field_0x1488 = &this->radarSizeFactor; /*0x6587be*/
@@ -30108,7 +30108,7 @@ void* RawFileClass::Construct(RawFileClass * aP1) {
   *(unsigned short *)this->BufferDirty = 0; /*0x65ca9d*/
   *(unsigned short *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  *(unsigned int *)this->vtable1 = &vt_RawFileClass; /*0x65caa8*/
+  /* X11: vtable install elided (implicit via RawFileClass virtuals 0x65caa8) */
   return this->vtable1; /*0x65caae*/
 }
 }
@@ -30351,7 +30351,7 @@ void* RawFileClass::QueryInterface(int a1) {
   DWORD LastError; // eax
   int v6; // [esp-4h] [ebp-Ch]
 
-  *(unsigned int *)this->vtable1 = &vt_RawFileClass; /*0x65d3a3*/
+  /* X11: vtable install elided (implicit via RawFileClass virtuals 0x65d3a3) */
   if ( RawFileClass::Write((RawFileClass *)this) ) /*0x65d3a9*/
   {
     if ( !CloseHandle(*(HANDLE *)this->FileTimeDateLo) ) /*0x65d3b7*/
@@ -30369,7 +30369,7 @@ void* RawFileClass::QueryInterface(int a1) {
     *(unsigned int *)this->FileNameAllocated = 0; /*0x65d3f4*/
     this->CacheReadAhead[0] = 0; /*0x65d3fb*/
   }
-  *(unsigned int *)this->vtable1 = &vt_FileClass; /*0x65d403*/
+  /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
     operator delete((void *)(this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
@@ -30406,7 +30406,7 @@ int ScenarioClass::ShowMissionBriefing() {
   Node::Init((Node *)&v9.needsSave_flag); /*0x65f561*/
   v9.INIClass_field_3C = 0; /*0x65f56a*/
   v9.ownsFile = 0; /*0x65f56e*/
-  *(unsigned int *)v9.vtable1 = &CCINIClass_Vtable; /*0x65f572*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x65f572) */
   CCFileClass::Reset(&v10); /*0x65f57a*/
   FileClass::SetFileName(&v10, off_839710); /*0x65f58a*/
   if ( (uint8_t)CCFileClass::Open(&v10, 0) ) /*0x65f594*/
@@ -30456,10 +30456,10 @@ int ScenarioClass::ShowMissionBriefing() {
   }
   ((unsigned int *)&stru_A8EB00)[376] = v7; /*0x65f6c4*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x65f6ca*/
-  *(unsigned int *)v10.vtable1 = &vt_CCFileClass; /*0x65f6d6*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x65f6d6) */
   v12 = 0; /*0x65f6de*/
   Vector::Clear((int)v11); /*0x65f6e5*/
-  *(unsigned int *)v10.vtable1 = &off_7E1668; /*0x65f6ee*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x65f6ee) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x65f6fb*/
 }
 }
@@ -30879,10 +30879,10 @@ int ScenarioClass::SaveGameOptions() {
   INIClass::SetWideAsHex(&CCINIClass_INI_RA2MD, g_INI_Key_Network, aNetid, Buffer); /*0x5faff6*/
   INIClass::WriteDigest((INIClass *)&CCINIClass_INI_RA2MD, (int)&v5, 0); /*0x5fb007*/
   GameSettings::ParseNetworkAddress((const char *)this); /*0x5fb00e*/
-  *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x5fb017*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5fb017) */
   v7 = 0; /*0x5fb01f*/
   Vector::Clear((int)v6); /*0x5fb027*/
-  *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x5fb030*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5fb030) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x5fb03d*/
 }
 }
@@ -31019,7 +31019,7 @@ void FileSystem::InitExtensionState() {
     if ( v7 ) /*0x626819*/
     {
       VectorClass::ConstructHSV(v7, 0, 0); /*0x62681f*/
-      v8->vfptr = &vt_DynamicVectorClass; /*0x626824*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x626824) */
       v8[1].Items = (void *)10; /*0x62682a*/
       v8[1].vfptr = 0; /*0x62682d*/
     }
@@ -31660,10 +31660,10 @@ int ScenarioClass::SaveGameOptions() {
   INIClass::SetWideAsHex(&CCINIClass_INI_RA2MD, g_INI_Key_Network, aNetid, Buffer); /*0x5faff6*/
   INIClass::WriteDigest((INIClass *)&CCINIClass_INI_RA2MD, (int)&v5, 0); /*0x5fb007*/
   GameSettings::ParseNetworkAddress((const char *)this); /*0x5fb00e*/
-  *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x5fb017*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5fb017) */
   v7 = 0; /*0x5fb01f*/
   Vector::Clear((int)v6); /*0x5fb027*/
-  *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x5fb030*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5fb030) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x5fb03d*/
 }
 }
@@ -31799,7 +31799,7 @@ void FileSystem::InitExtensionState() {
     if ( v7 ) /*0x626819*/
     {
       VectorClass::ConstructHSV(v7, 0, 0); /*0x62681f*/
-      v8->vfptr = &vt_DynamicVectorClass; /*0x626824*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x626824) */
       v8[1].Items = (void *)10; /*0x62682a*/
       v8[1].vfptr = 0; /*0x62682d*/
     }
@@ -32299,7 +32299,7 @@ int FileSystem::readFile() {
   this->q004 = 0; /*0x628746*/
   this->Capacity = 0; /*0x628749*/
   this->IsAllocated = 0; /*0x62874c*/
-  *(unsigned int *)this = &vt_DynamicVectorClassHashObject; /*0x62874f*/
+  /* X11: vtable install elided (implicit via DynamicVectorClassHashObject virtuals 0x62874f) */
   this->CapacityIncrement = 10; /*0x628755*/
   this->Count = 0; /*0x62875c*/
   return 0; /*0x62875f*/
@@ -32318,7 +32318,7 @@ void* FileSystem::writeFile(int a1, void* a2) {
   this->Capacity = a1; /*0x628ee3*/
   this->IsInitialized = 1; /*0x628ee6*/
   this->IsAllocated = 0; /*0x628eea*/
-  *(unsigned int *)this = &vt_VectorClassHashObject; /*0x628eee*/
+  /* X11: vtable install elided (implicit via VectorClassHashObject virtuals 0x628eee) */
   if ( !a1 ) /*0x628ef4*/
     return this; /*0x628ef4*/
   if ( !a2 ) /*0x628efc*/
@@ -32402,7 +32402,7 @@ void ScenarioClass::DestroyAndClearVector() {
 // 0x631E30
 namespace gamemd { 
 void* TacticalClass::saveConfig(int a2) {
-  this->vfptr = &vt_PixelFXClass; /*0x631e38*/
+  /* X11: vtable install elided (implicit via PixelFXClass virtuals 0x631e38) */
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
   return &this->vfptr; /*0x631e45*/
 }
@@ -32602,7 +32602,7 @@ void FactoryClass::FindAvailable() {
   this->u32_94 = -1; /*0x6360cc*/
   this->u32_99 = 0; /*0x6360d2*/
   vtable2 = this->vfptr2; /*0x6360d9*/
-  this->vfptr1 = &vt_VectorClass; /*0x6360e0*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6360e0) */
   if ( vtable2 && (this->u32_11) ) /*0x6360e8*/
   {
     operator delete((void *)(vtable2)); /*0x6360f0*/
@@ -32778,7 +32778,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
   (this->u32_2D) = 0; /*0x63da88*/
   this->production[1] = 0; /*0x63da8b*/
   vtable1 = this->vfptr1; /*0x63da8e*/
-  this->vfptr = &vt_VectorClass; /*0x63da91*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63da91) */
   if ( vtable1 && (this->IsAllocated) ) /*0x63da9b*/
   {
     operator delete((void *)(vtable1)); /*0x63daa1*/
@@ -32858,7 +32858,7 @@ int RadarClass::Create() {
   this->u32_1530 = 0; /*0x63f70a*/
   this->u32_1534 = 0; /*0x63f710*/
   this->u32_1538 = 0; /*0x63f716*/
-  *(unsigned int *)this = &vt_PowerClass; /*0x63f71c*/
+  /* X11: vtable install elided (implicit via PowerClass virtuals 0x63f71c) */
   return this; /*0x63f724*/
 }
 }
@@ -32919,7 +32919,7 @@ void* RadarClass::Construct() {
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass; /*0x652a5a*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x652a5a) */
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
     p_RadarClass_field_0x1278[1].vfptr = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = &p_RadarClass_field_0x1278->VectorClass_18; /*0x652a6a*/
@@ -32953,7 +32953,7 @@ void* RadarClass::Construct() {
   *&this->q14E8 = v7; /*0x652b2f*/
   *(unsigned int *)this->RadarClass_field_timer_1500 = TimerGetTicks(); /*0x652b37*/
   this->q1508 = 0; /*0x652b3d*/
-  this->vtable1 = &vt_RadarClass; /*0x652b45*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x652b45) */
   v8 = (MapClass *)operator new(0x10u); /*0x652b4b*/
   v9 = v8; /*0x652b50*/
   if ( v8 ) /*0x652b57*/
@@ -34191,7 +34191,7 @@ void* RadarClass::Destru_vt04(int a1) {
   CampaignClass *ptr_1260; // eax
   CampaignClass *ptr_1228; // eax
 
-  this->vfptr = &vt_RadarClass; /*0x6587ac*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x6587ac) */
   AudioFileClass::Release(&this->AudioFileClass_14C0); /*0x6587b2*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x6587b9*/
   p_RadarClass_field_0x1488 = &this->radarSizeFactor; /*0x6587be*/
@@ -34274,7 +34274,7 @@ void* RawFileClass::Construct(RawFileClass * aP1) {
   *(unsigned short *)this->BufferDirty = 0; /*0x65ca9d*/
   *(unsigned short *)this->BufferWritePending = 0; /*0x65caa1*/
   this->CacheReadAhead[0] = 0; /*0x65caa5*/
-  *(unsigned int *)this->vtable1 = &vt_RawFileClass; /*0x65caa8*/
+  /* X11: vtable install elided (implicit via RawFileClass virtuals 0x65caa8) */
   return this->vtable1; /*0x65caae*/
 }
 }
@@ -34517,7 +34517,7 @@ void* RawFileClass::QueryInterface(int a1) {
   DWORD LastError; // eax
   int v6; // [esp-4h] [ebp-Ch]
 
-  *(unsigned int *)this->vtable1 = &vt_RawFileClass; /*0x65d3a3*/
+  /* X11: vtable install elided (implicit via RawFileClass virtuals 0x65d3a3) */
   if ( RawFileClass::Write((RawFileClass *)this) ) /*0x65d3a9*/
   {
     if ( !CloseHandle(*(HANDLE *)this->FileTimeDateLo) ) /*0x65d3b7*/
@@ -34535,7 +34535,7 @@ void* RawFileClass::QueryInterface(int a1) {
     *(unsigned int *)this->FileNameAllocated = 0; /*0x65d3f4*/
     this->CacheReadAhead[0] = 0; /*0x65d3fb*/
   }
-  *(unsigned int *)this->vtable1 = &vt_FileClass; /*0x65d403*/
+  /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
     operator delete((void *)(this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
@@ -34572,7 +34572,7 @@ int ScenarioClass::ShowMissionBriefing() {
   Node::Init((Node *)&v9.needsSave_flag); /*0x65f561*/
   v9.INIClass_field_3C = 0; /*0x65f56a*/
   v9.ownsFile = 0; /*0x65f56e*/
-  *(unsigned int *)v9.vtable1 = &CCINIClass_Vtable; /*0x65f572*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x65f572) */
   CCFileClass::Reset(&v10); /*0x65f57a*/
   FileClass::SetFileName(&v10, off_839710); /*0x65f58a*/
   if ( (uint8_t)CCFileClass::Open(&v10, 0) ) /*0x65f594*/
@@ -34622,10 +34622,10 @@ int ScenarioClass::ShowMissionBriefing() {
   }
   ((unsigned int *)&stru_A8EB00)[376] = v7; /*0x65f6c4*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x65f6ca*/
-  *(unsigned int *)v10.vtable1 = &vt_CCFileClass; /*0x65f6d6*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x65f6d6) */
   v12 = 0; /*0x65f6de*/
   Vector::Clear((int)v11); /*0x65f6e5*/
-  *(unsigned int *)v10.vtable1 = &off_7E1668; /*0x65f6ee*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x65f6ee) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x65f6fb*/
 }
 }
@@ -34806,7 +34806,7 @@ int FileSystem::readFile() {
   this->headNode = 0; /*0x628746*/
   this->Capacity = 0; /*0x628749*/
   this->needsSave_flag = 0; /*0x62874c*/
-  *(unsigned int *)this = &vt_DynamicVectorClassHashObject; /*0x62874f*/
+  /* X11: vtable install elided (implicit via DynamicVectorClassHashObject virtuals 0x62874f) */
   this->unknown50 = 10; /*0x628755*/
   this->ownsFile = 0; /*0x62875c*/
   return 0; /*0x62875f*/
@@ -34824,7 +34824,7 @@ void* FileSystem::writeFile(int a1, void* a2) {
   this->Capacity = a1; /*0x628ee3*/
   this->IsInitialized = 1; /*0x628ee6*/
   this->needsSave_flag = 0; /*0x628eea*/
-  *(unsigned int *)this = &vt_VectorClassHashObject; /*0x628eee*/
+  /* X11: vtable install elided (implicit via VectorClassHashObject virtuals 0x628eee) */
   if ( !a1 ) /*0x628ef4*/
     return this; /*0x628ef4*/
   if ( !a2 ) /*0x628efc*/
@@ -34908,7 +34908,7 @@ void ScenarioClass::DestroyAndClearVector() {
 // 0x631E30
 namespace gamemd { 
 void* TacticalClass::saveConfig(int a2) {
-  this->vfptr = &vt_PixelFXClass; /*0x631e38*/
+  /* X11: vtable install elided (implicit via PixelFXClass virtuals 0x631e38) */
   BuildingDebris::Init((BuildingDebris *)this, a2); /*0x631e3e*/
   return &this->vfptr; /*0x631e45*/
 }
@@ -35108,7 +35108,7 @@ void FactoryClass::FindAvailable() {
   this->u32_94 = -1; /*0x6360cc*/
   this->u32_99 = 0; /*0x6360d2*/
   vtable2 = this->vfptr2; /*0x6360d9*/
-  this->vfptr1 = &vt_VectorClass; /*0x6360e0*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6360e0) */
   if ( vtable2 && (this->u32_11) ) /*0x6360e8*/
   {
     operator delete((void *)(vtable2)); /*0x6360f0*/
@@ -35366,7 +35366,7 @@ int RadarClass::Create() {
   this->u32_1530 = 0; /*0x63f70a*/
   this->u32_1534 = 0; /*0x63f710*/
   this->u32_1538 = 0; /*0x63f716*/
-  *(unsigned int *)this = &vt_PowerClass; /*0x63f71c*/
+  /* X11: vtable install elided (implicit via PowerClass virtuals 0x63f71c) */
   return this; /*0x63f724*/
 }
 }
@@ -35427,7 +35427,7 @@ void* RadarClass::Construct() {
   do /*0x652a6e*/
   {
     VectorClass::PointConstructor(p_RadarClass_field_0x1278, 0, 0); /*0x652a55*/
-    p_RadarClass_field_0x1278->vfptr = &vt_DynamicVectorClass; /*0x652a5a*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x652a5a) */
     p_RadarClass_field_0x1278[1].Items = (void *)10; /*0x652a60*/
     p_RadarClass_field_0x1278[1].vfptr = 0; /*0x652a67*/
     p_RadarClass_field_0x1278 = &p_RadarClass_field_0x1278->VectorClass_18; /*0x652a6a*/
@@ -35461,7 +35461,7 @@ void* RadarClass::Construct() {
   *&this->q14E8 = v7; /*0x652b2f*/
   *(unsigned int *)this->RadarClass_field_timer_1500 = TimerGetTicks(); /*0x652b37*/
   this->q1508 = 0; /*0x652b3d*/
-  this->vtable1 = &vt_RadarClass; /*0x652b45*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x652b45) */
   v8 = (MapClass *)operator new(0x10u); /*0x652b4b*/
   v9 = v8; /*0x652b50*/
   if ( v8 ) /*0x652b57*/
@@ -36699,7 +36699,7 @@ void* RadarClass::Destru_vt04(int a1) {
   CampaignClass *ptr_1260; // eax
   CampaignClass *ptr_1228; // eax
 
-  this->vtable1 = &vt_RadarClass; /*0x6587ac*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x6587ac) */
   AudioFileClass::Release(&this->RadarSoundChannel); /*0x6587b2*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x6587b9*/
   p_RadarClass_field_0x1488 = &this->radarSizeFactor; /*0x6587be*/
@@ -36987,7 +36987,7 @@ void* RawFileClass::QueryInterface(int a1) {
   DWORD LastError; // eax
   int v6; // [esp-4h] [ebp-Ch]
 
-  *(unsigned int *)this->vtable1 = &vt_RawFileClass; /*0x65d3a3*/
+  /* X11: vtable install elided (implicit via RawFileClass virtuals 0x65d3a3) */
   if ( RawFileClass::Write((RawFileClass *)this) ) /*0x65d3a9*/
   {
     if ( !CloseHandle(*(HANDLE *)this->FileTimeDateLo) ) /*0x65d3b7*/
@@ -37005,7 +37005,7 @@ void* RawFileClass::QueryInterface(int a1) {
     *(unsigned int *)this->FileNameAllocated = 0; /*0x65d3f4*/
     this->CacheReadAhead[0] = 0; /*0x65d3fb*/
   }
-  *(unsigned int *)this->vtable1 = &vt_FileClass; /*0x65d403*/
+  /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
     operator delete((void *)(this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
@@ -37042,7 +37042,7 @@ int ScenarioClass::ShowMissionBriefing() {
   Node::Init((Node *)&v9.needsSave_flag); /*0x65f561*/
   v9.INIClass_field_3C = 0; /*0x65f56a*/
   v9.ownsFile = 0; /*0x65f56e*/
-  *(unsigned int *)v9.vtable1 = &CCINIClass_Vtable; /*0x65f572*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x65f572) */
   CCFileClass::Reset(&v10); /*0x65f57a*/
   FileClass::SetFileName(&v10, off_839710); /*0x65f58a*/
   if ( (uint8_t)CCFileClass::Open(&v10, 0) ) /*0x65f594*/
@@ -37092,10 +37092,10 @@ int ScenarioClass::ShowMissionBriefing() {
   }
   ((unsigned int *)&stru_A8EB00)[376] = v7; /*0x65f6c4*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x65f6ca*/
-  *(unsigned int *)v10.vtable1 = &vt_CCFileClass; /*0x65f6d6*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x65f6d6) */
   v12 = 0; /*0x65f6de*/
   Vector::Clear((int)v11); /*0x65f6e5*/
-  *(unsigned int *)v10.vtable1 = &off_7E1668; /*0x65f6ee*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x65f6ee) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x65f6fb*/
 }
 }
@@ -37441,7 +37441,7 @@ void* RawFileClass::QueryInterface(int a1) {
   DWORD LastError; // eax
   int v6; // [esp-4h] [ebp-Ch]
 
-  *(unsigned int *)this->vtable1 = &vt_RawFileClass; /*0x65d3a3*/
+  /* X11: vtable install elided (implicit via RawFileClass virtuals 0x65d3a3) */
   if ( RawFileClass::Write((RawFileClass *)this) ) /*0x65d3a9*/
   {
     if ( !CloseHandle(*(HANDLE *)this->FileTimeDateLo) ) /*0x65d3b7*/
@@ -37459,7 +37459,7 @@ void* RawFileClass::QueryInterface(int a1) {
     *(unsigned int *)this->FileNameAllocated = 0; /*0x65d3f4*/
     this->CacheReadAhead[0] = 0; /*0x65d3fb*/
   }
-  *(unsigned int *)this->vtable1 = &vt_FileClass; /*0x65d403*/
+  /* X11: vtable install elided (implicit via FileClass virtuals 0x65d403) */
   if ( (a1 & 1) != 0 ) /*0x65d40b*/
     operator delete((void *)(this)); /*0x65d40e*/
   return this->vtable1; /*0x65d418*/
@@ -37496,7 +37496,7 @@ int ScenarioClass::ShowMissionBriefing() {
   Node::Init((Node *)&v9.needsSave_flag); /*0x65f561*/
   v9.INIClass_field_3C = 0; /*0x65f56a*/
   v9.ownsFile = 0; /*0x65f56e*/
-  *(unsigned int *)v9.vtable1 = &CCINIClass_Vtable; /*0x65f572*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x65f572) */
   CCFileClass::Reset(&v10); /*0x65f57a*/
   FileClass::SetFileName(&v10, off_839710); /*0x65f58a*/
   if ( (uint8_t)CCFileClass::Open(&v10, 0) ) /*0x65f594*/
@@ -37546,10 +37546,10 @@ int ScenarioClass::ShowMissionBriefing() {
   }
   ((unsigned int *)&stru_A8EB00)[376] = v7; /*0x65f6c4*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x65f6ca*/
-  *(unsigned int *)v10.vtable1 = &vt_CCFileClass; /*0x65f6d6*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x65f6d6) */
   v12 = 0; /*0x65f6de*/
   Vector::Clear((int)v11); /*0x65f6e5*/
-  *(unsigned int *)v10.vtable1 = &off_7E1668; /*0x65f6ee*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x65f6ee) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x65f6fb*/
 }
 }
@@ -39710,10 +39710,10 @@ int MixFileClass::GetSubFile(int a2) {
       this->CountFiles = (int)v3; /*0x69e76d*/
       (this->FileSize) = 1; /*0x69e770*/
     }
-    *(unsigned int *)v7.vtable1 = &vt_CCFileClass; /*0x69e778*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x69e778) */
     v9 = 0; /*0x69e780*/
     Vector::Clear((int)v8); /*0x69e788*/
-    *(unsigned int *)v7.vtable1 = &off_7E1668; /*0x69e791*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x69e791) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x69e799*/
   }
   SubFile = MixFileClass::LoadSubFile(this); /*0x69e7a0*/
@@ -41369,7 +41369,7 @@ void* TacticalClass::updateScroll(int a2, int a3) {
   this->vfptr2 = (void *)a2; /*0x7343ee*/
   (this->vfptr3) = 1; /*0x7343f1*/
   (this->q00D) = 0; /*0x7343f5*/
-  this->vfptr = &vt_VectorClass; /*0x7343f8*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x7343f8) */
   if ( a2 ) /*0x7343fe*/
   {
     if ( a3 ) /*0x734406*/
@@ -42152,10 +42152,10 @@ namespace gamemd {
 int CCFileClass::Cleanup() {
   System_Cleanup(); /*0x759513*/
   this = &this->FilePointer; /*0x759518*/
-  *(unsigned int *)this->vtable1 = &vt_CCFileClass; /*0x75951e*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x75951e) */
   this->tail_19 = 0; /*0x759524*/
   Vector::Clear((int)&this->CacheReadAhead8); /*0x75952b*/
-  *(unsigned int *)this->vtable1 = &off_7E1668; /*0x759532*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x759532) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)this); /*0x75953d*/
 }
 }

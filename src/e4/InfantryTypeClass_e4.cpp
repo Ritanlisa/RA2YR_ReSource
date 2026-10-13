@@ -125,10 +125,10 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   *((unsigned char *)this + 3785) = 1; /*0x5237d5*/
   *((unsigned char *)this + 3786) = 0; /*0x5237dc*/
   *((unsigned char *)this + 3787) = 0; /*0x5237e2*/
-  *(unsigned int *)this = &InfantryTypeClass::`vftable'; /*0x5237e8*/
-  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5237ee*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237e8) */
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237ee) */
   *((unsigned int *)this + 2) = &InfantryTypeClass::`vftable'; /*0x5237f4*/
-  this->vtable4 = &InfantryTypeClass::`vftable'; /*0x5237fb*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237fb) */
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
@@ -212,9 +212,9 @@ unsigned int * InfantryTypeClass::Constructor_523980(int aP1)
   this->DeathAnims[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x523998*/
   this->VoiceComment[0] = (int)&TypeList<int>::`vftable'; /*0x52399e*/
   this->TechnoTypeClass = &InfantryTypeClass::`vftable'; /*0x5239a8*/
-  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5239ae*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239ae) */
   this->? = &InfantryTypeClass::`vftable'; /*0x5239b5*/
-  this->vtable4 = &InfantryTypeClass::`vftable'; /*0x5239bc*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239bc) */
   return &this->TechnoTypeClass; /*0x5239c5*/
 
 }
@@ -777,10 +777,10 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   void *v6; // eax
   InfantryTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vfptr = &vt_InfantryTypeClass; /*0x524d76*/
-  Block->vfptr1 = &vt_InfantryTypeClass; /*0x524d7c*/
-  Block->vfptr2 = &vt_InfantryTypeClass; /*0x524d83*/
-  Block->vfptr3 = &vt_InfantryTypeClass; /*0x524d8a*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d76) */
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d7c) */
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d83) */
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x524d8a) */
   AbstractClass::AnnounceExpiredPointer(&Block->vfptr, 1); /*0x524d91*/
   v8 = Block; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/

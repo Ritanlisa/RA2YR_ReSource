@@ -47,7 +47,7 @@ int KeyboardConfig::LoadINI()
 
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
-  *(unsigned int *)v9.vtable1 = &CCINIClass_Vtable; /*0x533d3f*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x533d3f) */
   CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
   if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
   {
@@ -96,10 +96,10 @@ int KeyboardConfig::LoadINI()
   LABEL_14:
       ++i; /*0x533e98*/
     }
-    *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x533ec0*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x533ec0) */
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
-    *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x533ed8*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x533ed8) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
     return 1; /*0x533eee*/
@@ -107,10 +107,10 @@ int KeyboardConfig::LoadINI()
   else
   {
     Debug::Log(); /*0x533efe*/
-    *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x533f0d) */
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
-    *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x533f25*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x533f25) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
     return 0; /*0x533f3b*/

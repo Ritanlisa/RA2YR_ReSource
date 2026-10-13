@@ -49,9 +49,9 @@ BulletClass::BulletClass()
   *&this->u16_14E = -1; /*0x46640e*/
   this->__pad_154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
-  *(unsigned int *)this->vtable1 = &BulletClass::`vftable'; /*0x466425*/
+  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466425) */
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
-  this->vtable3 = &BulletClass::`vftable'; /*0x466431*/
+  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466431) */
   *(unsigned int *)this->__pad_C = &BulletClass::`vftable'; /*0x466438*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x46643f*/
   *(unsigned int *)this->q134 = 0; /*0x466444*/
@@ -83,10 +83,10 @@ BulletClass * * BulletClass::Dtor(void *a1)
   int v3; // eax
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)a1->vtable1 = &vt_BulletClass; /*0x466566*/
-  a1->vtable2 = &vt_BulletClass; /*0x46656c*/
-  a1->vtable3 = &vt_BulletClass; /*0x466573*/
-  *(unsigned int *)a1->vtable4 = &vt_BulletClass; /*0x46657a*/
+  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466566) */
+  /* X11: vtable install elided (implicit via BulletClass virtuals 0x46656c) */
+  /* X11: vtable install elided (implicit via BulletClass virtuals 0x466573) */
+  /* X11: vtable install elided (implicit via BulletClass virtuals 0x46657a) */
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x466581*/
   if ( a1->q158 ) /*0x466586*/
   {

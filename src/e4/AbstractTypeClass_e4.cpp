@@ -100,7 +100,7 @@ int AbstractTypeClass::Dtor()
 
   this->AbstractClass = &AbstractTypeClass::`vftable'; /*0x4109cd*/
   this->? = &AbstractTypeClass::`vftable'; /*0x4109d3*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x4109da*/
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
   this->? = &AbstractTypeClass::`vftable'; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
@@ -232,10 +232,10 @@ int AbstractTypeClass::Init(int aP1)
 
   AbstractClass::InitVtables(aP1); /*0x410968*/
   v3 = this->UINameLabel; /*0x41096d*/
-  *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
-  this->vtable2 = &vt_AbstractTypeClass; /*0x41097b*/
-  this->vtable3 = &vt_AbstractTypeClass; /*0x410982*/
-  this->vtable4 = &vt_AbstractTypeClass; /*0x410989*/
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410975) */
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x41097b) */
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410982) */
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410989) */
   if ( v3 ) /*0x410990*/
     this->UIName = GetStringCSF(&this->UIName, 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
   else

@@ -1580,16 +1580,16 @@ AbstractClass * * sub_7AF970(int a2)
   v6 = (OwnerDrawControl)&vt_WorldDominationTourFactionSelectDialogControl; /*0x7af9a5*/
   CCFileClass::Construct(&v12, aWdtfsbsmPcx); /*0x7af9ad*/
   v8 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7af9cb*/
-  *(unsigned int *)v12.vtable1 = &vt_CCFileClass; /*0x7af9cf*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x7af9cf) */
   v14 = 0; /*0x7af9d3*/
   Vector::Clear((int)v13); /*0x7af9da*/
-  *(unsigned int *)v12.vtable1 = &off_7E1668; /*0x7af9e3*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x7af9e3) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v12))->Dtor(); /*0x7af9eb*/
   if ( !v9 ) /*0x7af9f4*/
   {
     CCFileClass::Construct(&v12, aWdtfsasmPcx); /*0x7af9ff*/
     v3 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7afa0c*/
-    *(unsigned int *)v12.vtable1 = &vt_CCFileClass; /*0x7afa18*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x7afa18) */
     v9 = (void (***)(unsigned int, int))v3; /*0x7afa1c*/
     v14 = 0; /*0x7afa20*/
     Vector::Clear((int)v13); /*0x7afa27*/

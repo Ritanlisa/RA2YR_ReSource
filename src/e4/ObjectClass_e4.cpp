@@ -1019,10 +1019,10 @@ ObjectClass * * ObjectClass::Dtor()
   ObjectClass *v10; // [esp+10h] [ebp-4h] BYREF
 
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f3b84*/
-  this->vtable0 = (int)&ObjectClass::`vftable'; /*0x5f3b87*/
-  this->vtable1 = (int)&ObjectClass::`vftable'; /*0x5f3b8f*/
-  this->vtable2 = (int)&ObjectClass::`vftable'; /*0x5f3b96*/
-  this->vtable3 = (int)&ObjectClass::`vftable'; /*0x5f3b9d*/
+  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b87) */
+  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b8f) */
+  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b96) */
+  /* X11: vtable install elided (implicit via ObjectClass virtuals 0x5f3b9d) */
   if ( attachedBomb ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f3ba6*/
   v10 = this; /*0x5f3bbb*/

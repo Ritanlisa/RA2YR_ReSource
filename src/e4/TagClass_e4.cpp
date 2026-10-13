@@ -55,7 +55,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
 
   a1->AbstractClass = &TagClass::`vftable'; /*0x6e4f69*/
   a1->? = &TagClass::`vftable'; /*0x6e4f6f*/
-  a1->vtable3 = &TagClass::`vftable'; /*0x6e4f76*/
+  /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f76) */
   a1->? = &TagClass::`vftable'; /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
@@ -365,10 +365,10 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
-      aP0->vfptr = &vt_TagClass; /*0x6e5754*/
-      aP0->vfptr1 = &vt_TagClass; /*0x6e575a*/
-      aP0->vfptr2 = &vt_TagClass; /*0x6e5761*/
-      aP0->vfptr3 = &vt_TagClass; /*0x6e5768*/
+      /* X11: vtable install elided (implicit via TagClass virtuals 0x6e5754) */
+      /* X11: vtable install elided (implicit via TagClass virtuals 0x6e575a) */
+      /* X11: vtable install elided (implicit via TagClass virtuals 0x6e5761) */
+      /* X11: vtable install elided (implicit via TagClass virtuals 0x6e5768) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/

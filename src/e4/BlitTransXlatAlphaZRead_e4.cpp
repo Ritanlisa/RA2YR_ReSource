@@ -367,7 +367,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &Blitter::`vftable'; /*0x49a3a9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a3a9) */
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
     __3_YAXPAX_Z(this); /*0x49a3b2*/
   return (std::locale::facet *)this; /*0x49a3bc*/
@@ -379,7 +379,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &Blitter::`vftable'; /*0x49a3c9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a3c9) */
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
     __3_YAXPAX_Z(this); /*0x49a3d2*/
   return (std::locale::facet *)this; /*0x49a3dc*/
@@ -391,7 +391,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &Blitter::`vftable'; /*0x49a3e9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a3e9) */
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
     __3_YAXPAX_Z(this); /*0x49a3f2*/
   return (std::locale::facet *)this; /*0x49a3fc*/
@@ -403,7 +403,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &Blitter::`vftable'; /*0x49a409*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a409) */
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
     __3_YAXPAX_Z(this); /*0x49a412*/
   return (std::locale::facet *)this; /*0x49a41c*/

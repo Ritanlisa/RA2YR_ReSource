@@ -225,7 +225,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   *p_EnumConnectionsClass_field_0x04 = (int)&DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a033a*/
   this->M28 = 0; /*0x4a0340*/
   this->q020 = 0; /*0x4a0343*/
-  *(unsigned int *)this->vfptr = &EnumConnectionsClass::`vftable'; /*0x4a0346*/
+  /* X11: vtable install elided (implicit via EnumConnectionsClass virtuals 0x4a0346) */
   for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0353*/
   {
     v12 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a035b*/
@@ -297,7 +297,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   v10 = a2[7]; /*0x4a041b*/
   this->q020 = 0; /*0x4a041e*/
   this->M28 = v10; /*0x4a0421*/
-  *(unsigned int *)this->vfptr = &EnumConnectionsClass::`vftable'; /*0x4a0424*/
+  /* X11: vtable install elided (implicit via EnumConnectionsClass virtuals 0x4a0424) */
   for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0431*/
   {
     v13 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a0439*/
@@ -632,10 +632,10 @@ void * LoadFileSHP(char * aP0, bool * aP1)
       if ( !v5 ) /*0x4a391e*/
       {
   LABEL_6: *aP1 = (unsigned int)(!v7);
-        *(unsigned int *)v8.vtable1 = &vt_CCFileClass; /*0x4a3938*/
+        /* X11: vtable install elided (implicit via CCFileClass virtuals 0x4a3938) */
         v9[3] = (unsigned int)(0); /*0x4a3940*/
         Vector::Clear((int)v9); /*0x4a3948*/
-        *(unsigned int *)v8.vtable1 = &off_7E1668; /*0x4a3951*/
+        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4a3951) */
         ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x4a3959*/
         return (void *)v5; /*0x4a395e*/
       }
@@ -2826,7 +2826,7 @@ void E4Recv_4A08D0::sub_4A08D0()
   void *v5; // eax
 
   ConnectionPointClass_field_0x18 = this->M24; /*0x4a08d4*/
-  *(unsigned int *)this->vfptr = &ConnectionPointClass::`vftable'; /*0x4a08d7*/
+  /* X11: vtable install elided (implicit via ConnectionPointClass virtuals 0x4a08d7) */
   (*(void (**)(int))(*(unsigned int *)ConnectionPointClass_field_0x18 + 8))(ConnectionPointClass_field_0x18); /*0x4a08e0*/
   ConnectionPointClass_field_0x1C = this->ConnectionPointClass_field_0x1C; /*0x4a08e3*/
   p_ConnectionPointClass_field_0x1C = &this->ConnectionPointClass_field_0x1C; /*0x4a08e6*/
@@ -2899,7 +2899,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   this->EnumConnectionPointsClass_field_0x1C = a2[7]; /*0x4a0d67*/
   this->EnumConnectionPointsClass_field_0x20 = a2[8]; /*0x4a0d6d*/
   *p_EnumConnectionPointsClass_field_0x0C = (int)&DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0d70*/
-  *(unsigned int *)this->vfptr = &EnumConnectionPointsClass::`vftable'; /*0x4a0d76*/
+  /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0d76) */
   for ( i = 0; i < this->EnumConnectionPointsClass_field_0x1C; ++i ) /*0x4a0d83*/
   {
     v10 = *(unsigned int *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a0d8b*/
@@ -3257,7 +3257,7 @@ void E4Recv_4A2880::sub_4A2880()
   ULONG v6; // [esp+0h] [ebp-8h]
 
   CStreamClass_field_0x08 = this->M8; /*0x4a2886*/
-  *(unsigned int *)this->vfptr = &CStreamClass::`vftable'; /*0x4a2889*/
+  /* X11: vtable install elided (implicit via CStreamClass virtuals 0x4a2889) */
   this->CStreamClass_field_0x04 = (int)&CStreamClass::`vftable'; /*0x4a2891*/
   if ( CStreamClass_field_0x08 ) /*0x4a2898*/
   {
@@ -3644,7 +3644,7 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
   this->Capacity = a2; /*0x4a4e3e*/
   this->IsInitialized = 1; /*0x4a4e41*/
   this->IsAllocated = 0; /*0x4a4e45*/
-  this->vtable0 = &VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4e48*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x4a4e48) */
   if ( a2 ) /*0x4a4e4e*/
   {
     if ( a3 ) /*0x4a4e56*/

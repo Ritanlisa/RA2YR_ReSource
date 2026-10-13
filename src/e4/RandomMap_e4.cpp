@@ -498,7 +498,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
         {
           VectorClass::CellConstructor(v10, 0, 0); /*0x58d26d*/
           v11[1].vtable0 = 0; /*0x58d272*/
-          v11->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d275*/
+          /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58d275) */
           v11[1].Items = (void *)10; /*0x58d27b*/
           v12 = v11; /*0x58d282*/
         }
@@ -616,7 +616,7 @@ unsigned int * RandomMap::TerrainAlloc(void *a1_1)
   if ( v1 ) /*0x58d428*/
   {
     VectorClass::CellConstructor(v1, 0, 0); /*0x58d430*/
-    v2->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58d435*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58d435) */
     v2[1].Items = (void *)10; /*0x58d43b*/
     v2[1].vtable0 = 0; /*0x58d442*/
     v3 = v2; /*0x58d449*/
@@ -726,7 +726,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2, void *a2_2)
     if ( v2 ) /*0x58e774*/
     {
       VectorClass::CellConstructor(v2, 0, 0); /*0x58e77a*/
-      v3->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58e77f*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58e77f) */
       v3[1].Items = (void *)10; /*0x58e785*/
       v3[1].vtable0 = 0; /*0x58e78c*/
       v4 = v3; /*0x58e78f*/
@@ -846,7 +846,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain(RandomMap *self)
   v1 = ((RandomMap *)(self))->TerrainAlloc(); /*0x58e9c7*/
   VectorClass::CellConstructor(&v19, 0, 0); /*0x58e9c9*/
   v2 = 50000; /*0x58e9ce*/
-  v19.vfptr = &vt_DynamicVectorClass; /*0x58e9d3*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58e9d3) */
   j = 0; /*0x58e9db*/
   v21 = 50000; /*0x58e9e3*/
   v3 = 0; /*0x58e9ea*/
@@ -921,7 +921,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain(RandomMap *self)
     }
     v7 = j; /*0x58eb7e*/
   }
-  v19.vfptr = &vt_VectorClass; /*0x58eb93*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x58eb93) */
   if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
     operator delete((void *)(v19.Items)); /*0x58eba9*/
   return 1; /*0x58eb91*/
@@ -967,7 +967,7 @@ void* RandomMap::CollectBorderCells(RandomMap *self)
   if ( v2 ) /*0x58f0db*/
   {
     VectorClass::Construct(v2, 0, 0); /*0x58f0e3*/
-    v3->vfptr = &vt_DynamicVectorClass; /*0x58f0e8*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x58f0e8) */
     v3[1].Items = (void *)10; /*0x58f0ee*/
     v3[1].vfptr = 0; /*0x58f0f5*/
   }
@@ -3132,14 +3132,14 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
   memset(&v4.needsSave_flag, 0, 13); /*0x597e04*/
   v4.unknown38 = 0; /*0x597e14*/
   v4.INIClass_field_3C = 0; /*0x597e18*/
-  *(unsigned int *)v4.vtable1 = &vt_INIClass; /*0x597e1c*/
+  /* X11: vtable install elided (implicit via INIClass virtuals 0x597e1c) */
   if ( !FileStraw::Open((FileStraw *)&v4, (int)&v5, 0) ) /*0x597e2b*/
   {
     HashTable::DestroyHashTableINIClass(&v4); /*0x597f38*/
-    *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x597f44*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x597f44) */
     v7 = 0; /*0x597f4c*/
     Vector::Clear((int)v6); /*0x597f53*/
-    *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x597f5c*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x597f5c) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x597f64*/
     return 0; /*0x597f6b*/
   }
@@ -3169,10 +3169,10 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
   *((unsigned int *)Destination + 108) = *(unsigned int *)(a2 + 24); /*0x597ee5*/
   *((unsigned int *)Destination + 107) = *(unsigned int *)(a2 + 20); /*0x597eee*/
   HashTable::DestroyHashTableINIClass(&v4); /*0x597ef4*/
-  *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x597f00*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x597f00) */
   v7 = 0; /*0x597f08*/
   Vector::Clear((int)v6); /*0x597f0f*/
-  *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x597f18*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x597f18) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x597f20*/
   return 1; /*0x597f26*/
 }
@@ -3218,7 +3218,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   {
     INIClass::INIClass(v2); /*0x59821c*/
     v3[1].__pad_0[0] = 0; /*0x598221*/
-    *(unsigned int *)v3->vtable1 = &CCINIClass_Vtable; /*0x598225*/
+    /* X11: vtable install elided (implicit via CCINIClass virtuals 0x598225) */
   }
   else
   {
@@ -3509,7 +3509,7 @@ WeaponStruct * * RandomMap::LoadConfig()
         DynamicVector::Add_Alt3(&v27, &IntList); /*0x5987f2*/
     }
     TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_024, &v27); /*0x598813*/
-    *(unsigned int *)v27.vtable1 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x59881c*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x59881c) */
     DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27); /*0x598820*/
     v20 = *(unsigned int *)v27.__pad_20; /*0x598825*/
   }
@@ -3534,7 +3534,7 @@ WeaponStruct * * RandomMap::LoadConfig()
         DynamicVector::Add_Alt3(&v27, &IntList); /*0x5988c1*/
     }
     TypeList::BuildingTypeCopy((TypeList *)&v27.__pad_024, &v27); /*0x5988e2*/
-    *(unsigned int *)v27.vtable1 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5988eb*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x5988eb) */
     DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27); /*0x5988ef*/
     DynamicVector_field_0x1C = v27.DynamicVector_field_0x1C; /*0x5988f4*/
   }
@@ -4128,7 +4128,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
   Node::Init((Node *)&v80.needsSave_flag); /*0x599785*/
   v80.INIClass_field_3C = 0; /*0x599790*/
   v81 = 0; /*0x599797*/
-  *(unsigned int *)v80.vtable1 = &CCINIClass_Vtable; /*0x59979e*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x59979e) */
   INIClass::ClearSection((int *)v80.vtable1, 0, 0); /*0x5997a6*/
   v8 = this->u32_38; /*0x5997ab*/
   this->u32_30C = 4; /*0x5997ae*/
@@ -5932,7 +5932,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
   if ( v3 ) /*0x5a0718*/
   {
     VectorClass::CellConstructor(v3, 0, 0); /*0x5a071e*/
-    v4->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0723*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5a0723) */
     v4[1].Items = (void *)10; /*0x5a0729*/
     v4[1].vtable0 = 0; /*0x5a0730*/
   }

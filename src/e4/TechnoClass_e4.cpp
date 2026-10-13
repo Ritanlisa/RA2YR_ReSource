@@ -362,9 +362,9 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->disguiseAsType = 0; /*0x6f3124*/
   this->disguisedAsHouse = 0; /*0x6f312a*/
   this->RadioClass = &TechnoClass::`vftable'; /*0x6f3130*/
-  this->vtable2 = &TechnoClass::`vftable'; /*0x6f3136*/
+  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f3136) */
   this->? = &TechnoClass::`vftable'; /*0x6f313d*/
-  this->vtable4 = &off_7F4934; /*0x6f314a*/
+  /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f314a) */
   AudioController::Init((AudioController *)this->turretRotateSoundController); /*0x6f3151*/
   AudioController::Init((AudioController *)this->gattlingSoundController); /*0x6f315c*/
   AudioController::Init((AudioController *)this->unusedGattlingSoundController); /*0x6f3167*/
@@ -602,9 +602,9 @@ int TechnoClass::DTOR()
   int v18; // [esp+18h] [ebp-4h] BYREF
 
   v2 = *&this->planningToken; /*0x6f4507*/
-  *(unsigned int *)this = &TechnoClass::`vftable'; /*0x6f450d*/
+  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f450d) */
   *((unsigned int *)this + 1) = &TechnoClass::`vftable'; /*0x6f4515*/
-  this->vtable3 = &TechnoClass::`vftable'; /*0x6f451c*/
+  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f451c) */
   *((unsigned int *)this + 3) = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
@@ -696,9 +696,9 @@ int TechnoClass::DTOR()
   this->vecInt_IsAllocated = 0; /*0x6f4710*/
   this->vecInt_Capacity = 0; /*0x6f4716*/
   nullsub_69(v17); /*0x6f471c*/
-  *(unsigned int *)this = &RadioClass::`vftable'; /*0x6f4721*/
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4721) */
   *((unsigned int *)this + 1) = &RadioClass::`vftable'; /*0x6f4727*/
-  this->vtable3 = &RadioClass::`vftable'; /*0x6f472e*/
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f472e) */
   *((unsigned int *)this + 3) = &RadioClass::`vftable'; /*0x6f4735*/
   v15 = *&this->flashing; /*0x6f473c*/
   this->radioLinks = &VectorClass<TechnoClass *>::`vftable'; /*0x6f4742*/
@@ -709,10 +709,10 @@ int TechnoClass::DTOR()
   }
   *((unsigned char *)this + 237) = 0; /*0x6f4767*/
   *((unsigned int *)this + 58) = 0; /*0x6f476d*/
-  *(unsigned int *)this = &MissionClass::`vftable'; /*0x6f4775*/
-  this->vtable2 = &MissionClass::`vftable'; /*0x6f477b*/
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4775) */
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f477b) */
   *((unsigned int *)this + 2) = &MissionClass::`vftable'; /*0x6f4782*/
-  this->vtable4 = &MissionClass::`vftable'; /*0x6f4789*/
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4789) */
   return ObjectClass::Dtor((ObjectClass *)this); /*0x6f4795*/
 
 }

@@ -9621,7 +9621,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
   v3 = *(unsigned int *)(a2 + 8); /*0x7dce1b*/
   this->u32_C = 0; /*0x7dce1e*/
   this->u32_8 = v3; /*0x7dce22*/
-  this->vfptr = (int)&vt__com_error; /*0x7dce27*/
+  /* X11: vtable install elided (implicit via _com_error virtuals 0x7dce27) */
   if ( v3 ) /*0x7dce2d*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v3 + 4))(v3); /*0x7dce32*/
   return &this->vfptr; /*0x7dce37*/
@@ -9635,7 +9635,7 @@ HLOCAL _com_error::sub_7DCE3B()
   void *v3; // esi
 
   result = (HLOCAL)this->u32_8; /*0x7dce3e*/
-  this->vfptr = (int)&vt__com_error; /*0x7dce41*/
+  /* X11: vtable install elided (implicit via _com_error virtuals 0x7dce41) */
   if ( result ) /*0x7dce49*/
     result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*&result->u32_20))(result); /*0x7dce4e*/
   v3 = (void *)this->u32_C; /*0x7dce51*/
@@ -11685,7 +11685,7 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
   int v3; // eax
   char *v4; // eax
 
-  *(unsigned int *)this = &vt_exception; /*0x7d2ea3*/
+  /* X11: vtable install elided (implicit via exception virtuals 0x7d2ea3) */
   v3 = strlen(*a2); /*0x7d2eab*/
   v4 = (char *)operator new(v3 + 1); /*0x7d2eb2*/
   this->M4 = v4; /*0x7d2eb8*/
@@ -11704,7 +11704,7 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
   int v4; // eax
   char *v5; // eax
 
-  *(unsigned int *)this = &vt_exception; /*0x7d2ee0*/
+  /* X11: vtable install elided (implicit via exception virtuals 0x7d2ee0) */
   v3 = *((unsigned int *)a2 + 2); /*0x7d2ee6*/
   this->M8 = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/

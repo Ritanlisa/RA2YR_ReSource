@@ -62,7 +62,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   this->q108 = 0; /*0x41e3fb*/
   this->ObjectTypeClass = &AITriggerTypeClass::`vftable'; /*0x41e401*/
   this->? = &AITriggerTypeClass::`vftable'; /*0x41e407*/
-  this->vtable3 = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
+  /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e40e) */
   this->? = &AITriggerTypeClass::`vftable'; /*0x41e415*/
   memset(&this->vtable4, 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
@@ -170,7 +170,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
   this->ShouldFogRemove = 1; /*0x42772a*/
   this->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x427731*/
   this->? = &AnimTypeClass::`vftable'; /*0x427737*/
-  this->vtable3 = &AnimTypeClass::`vftable'; /*0x42773d*/
+  /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x42773d) */
   this->? = &AnimTypeClass::`vftable'; /*0x427744*/
   AbstractClass::GenerateUniqueID(&this->vtable4); /*0x42774b*/
   this->IsLogic_d = 1; /*0x427750*/

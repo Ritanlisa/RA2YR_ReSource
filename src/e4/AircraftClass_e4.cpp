@@ -712,11 +712,11 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     if ( v2 ) /*0x41b4d3*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&a0); /*0x41b4dc*/
-      v2->vfptr = &vt_AircraftClass; /*0x41b4e1*/
+      /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4e1) */
       *p_vtable1 = &vt_AircraftClass; /*0x41b4e7*/
-      v2->vfptr2 = &vt_AircraftClass; /*0x41b4ed*/
-      v2->vfptr3 = &vt_AircraftClass; /*0x41b4f4*/
-      *(unsigned int *)v2->vtable5 = &vt_AircraftClass; /*0x41b4fb*/
+      /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4ed) */
+      /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4f4) */
+      /* X11: vtable install elided (implicit via AircraftClass virtuals 0x41b4fb) */
     }
     v11 = v2->locomotor[0]; /*0x41b506*/
     if ( v11 != v10 ) /*0x41b50e*/

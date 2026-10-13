@@ -222,10 +222,10 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
   v3 = &this->q034; /*0x4f37b2*/
   v4 = CCFileClass::Construct2(&v7, v3); /*0x4f37ba*/
   v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
-  *(unsigned int *)v7.vtable1 = 0; /*0x4f37ce*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f37ce) — binary-proven install, was 0 */
   v9 = 0; /*0x4f37d6*/
   Vector::Clear((int)v8); /*0x4f37de*/
-  *(unsigned int *)v7.vtable1 = &off_7E1668; /*0x4f37e7*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4f37e7) */
   result = (unsigned int *)BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x4f37ef*/
   if ( v5 ) /*0x4f37f6*/
   {
@@ -1721,7 +1721,7 @@ unsigned int * StringVector::QueryInterface(char a2) {
   void *v3; // eax
 
   v3 = *&this->Items; /*0x49efa3*/
-  *(unsigned int *)this->vtable1 = 0; /*0x49efa6*/
+  /* X11: vtable install elided (implicit via class virtuals 0x49efa6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x49efb0*/
   {
     operator delete((void *)(v3)); /*0x49efb8*/
@@ -1772,7 +1772,7 @@ LONG EnumConnectionsClass::Release() {
   result = InterlockedDecrement((volatile LONG *)this + 8); /*0x4a0027*/
   if ( !result && this ) /*0x4a0035*/
   {
-    *(unsigned int *)this->vtable1 = 0; /*0x4a0037*/
+    /* X11: vtable install elided (implicit via class virtuals 0x4a0037) — binary-proven install, was 0 */
     for ( i = 0; i < this->q014; ++i ) /*0x4a0045*/
     {
       v4 = *(unsigned int *)(this->q008 + 8 * i); /*0x4a004d*/
@@ -1889,7 +1889,7 @@ LONG EnumConnectionPointsClass::Release() {
   result = InterlockedDecrement(&this->q008); /*0x4a09c7*/
   if ( !result && this ) /*0x4a09d5*/
   {
-    *(unsigned int *)this->vtable1 = 0; /*0x4a09d7*/
+    /* X11: vtable install elided (implicit via class virtuals 0x4a09d7) — binary-proven install, was 0 */
     for ( i = 0; i < this->q01C; ++i ) /*0x4a09e5*/
     {
       v4 = *(unsigned int *)(this->q010 + 4 * i); /*0x4a09ed*/
@@ -2818,7 +2818,7 @@ void *** GraphicMenuAnimItem::QueryInterface(char a2) {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = (void (__thiscall ***)(unsigned int, int))this->u32_24; /*0x4f30e3*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4f30e6*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f30e6) — binary-proven install, was 0 */
   if ( v3 ) /*0x4f30ee*/
     (**v3)(v3, 1); /*0x4f30f4*/
   GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f30f8*/
@@ -2925,7 +2925,7 @@ unsigned int * GraphicMenuItem::Constructor(int a2) {
   this->u32_8 = 0; /*0x4f3a5b*/
   this->u32_9 = 1; /*0x4f3a5e*/
   this->u32_C = 0; /*0x4f3a62*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4f3a65*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f3a65) — binary-proven install, was 0 */
   return this->vtable1; /*0x4f3a6b*/
 }
 } // namespace gamemd
@@ -2950,7 +2950,7 @@ void *** GraphicMenuItem_Destru::QueryInterface(char a2) {
   ObjectClass *v3; // edi
 
   v3 = (ObjectClass *)this->u32_C; /*0x4f3b24*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4f3b27*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f3b27) — binary-proven install, was 0 */
   if ( v3 ) /*0x4f3b2f*/
   {
     j_DeleteAndZero(v3); /*0x4f3b33*/
@@ -2992,7 +2992,7 @@ namespace gamemd {
 unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
   void *v3; // eax
 
-  *(unsigned int *)this->vtable1 = 0; /*0x4f3f63*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f3f63) — binary-proven install, was 0 */
   v3 = (void *)this->u32_14; /*0x4f3f69*/
   this->__pad_004 = 0; /*0x4f3f6e*/
   if ( v3 && this->u32_1D ) /*0x4f3f77*/
@@ -3395,7 +3395,7 @@ unsigned int * unknown::QueryInterface(char a2) {
   void *v3; // eax
 
   v3 = *&this->Items; /*0x58a423*/
-  *(unsigned int *)this->vtable1 = 0; /*0x58a426*/
+  /* X11: vtable install elided (implicit via class virtuals 0x58a426) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x58a430*/
   {
     operator delete((void *)(v3)); /*0x58a438*/
@@ -3701,7 +3701,7 @@ unsigned int * StringVector::Construct(int a2, int a3, void *a1, void *a4, void 
   this->Capacity = a2; /*0x5ad6fe*/
   (this->IsInitialized) = 1; /*0x5ad701*/
   (this->IsAllocated) = 0; /*0x5ad705*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5ad708*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5ad708) — binary-proven install, was 0 */
   if ( a2 ) /*0x5ad70e*/
   {
     if ( a3 ) /*0x5ad716*/
@@ -4313,7 +4313,7 @@ int RandomStraw::Release(int a2, int a3) {
 // 0x661C70
 namespace gamemd {
 int * RandomStraw::QueryInterface(char a2) {
-  *(unsigned int *)this->vtable1 = 0; /*0x661c7e*/
+  /* X11: vtable install elided (implicit via class virtuals 0x661c7e) — binary-proven install, was 0 */
   this->m_allocated = 0; /*0x661c84*/
   this->Delegate_field_10 = 0; /*0x661c87*/
   memsetthis->q010, 0, 0x100u); /*0x661c8a*/
@@ -4639,7 +4639,7 @@ namespace gamemd {
 unsigned int * VectorCursor::Construct(int a2, int a3) {
   this->__pad_004 = a2; /*0x76f0ca*/
   this->u32_8 = a3; /*0x76f0cd*/
-  *(unsigned int *)this->vtable1 = 0; /*0x76f0d0*/
+  /* X11: vtable install elided (implicit via class virtuals 0x76f0d0) — binary-proven install, was 0 */
   return this->vtable1; /*0x76f0d6*/
 }
 } // namespace gamemd
@@ -4647,7 +4647,7 @@ unsigned int * VectorCursor::Construct(int a2, int a3) {
 // 0x76F140
 namespace gamemd {
 unsigned int * VectorCursor::drawCursor(char a2) {
-  *(unsigned int *)this->vtable1 = 0; /*0x76f149*/
+  /* X11: vtable install elided (implicit via class virtuals 0x76f149) — binary-proven install, was 0 */
   if ( (a2 & 1) != 0 ) /*0x76f14f*/
     operator delete((void *)(this)); /*0x76f152*/
   return this->vtable1; /*0x76f15c*/

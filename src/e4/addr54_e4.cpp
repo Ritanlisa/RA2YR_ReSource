@@ -2004,7 +2004,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   unsigned int *v9; // eax
   int16_t v10; // cx
 
-  *(unsigned int *)this = &vt_IPXManagerClass; /*0x5408f7*/
+  /* X11: vtable install elided (implicit via IPXManagerClass virtuals 0x5408f7) */
   if ( dword_887628 ) /*0x540905*/
   {
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/
@@ -2998,7 +2998,7 @@ unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
   this->Capacity = a2; /*0x54ebfe*/
   this->IsInitialized = 1; /*0x54ec01*/
   this->IsAllocated = 0; /*0x54ec05*/
-  this->vtable0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x54ec08) */
   if ( a2 ) /*0x54ec0e*/
   {
     if ( a3 ) /*0x54ec16*/

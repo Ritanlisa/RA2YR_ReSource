@@ -390,7 +390,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ((ObjectTypeClass*)(ObjectTypeClass *)aP0)->Construct((int)&aP1); /*0x6b586f*/
-      aP0->vtable1 = &vt_SmudgeTypeClass; /*0x6b5874*/
+      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b587a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5881*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_SmudgeTypeClass); /*0x6b5888*/
@@ -837,7 +837,7 @@ int TClassFactory_LightSourceClass::ddtor()
 void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6bfd42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6bfd49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfd49) */
   return this; /*0x6bfd4f*/
 
 }
@@ -870,7 +870,7 @@ int TClassFactory_SideClass::ddtor()
 void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6bfec2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6bfec9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfec9) */
   return this; /*0x6bfecf*/
 
 }

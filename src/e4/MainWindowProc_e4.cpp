@@ -129,7 +129,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned char *)this + 600) = 0; /*0x72405c*/
   *((unsigned int *)this + 151) = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
-  *(unsigned int *)this = &ToolTipManager::`vftable'; /*0x72406a*/
+  /* X11: vtable install elided (implicit via ToolTipManager virtuals 0x72406a) */
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
   __3_YAXPAX_Z(this->u8_234)); /*0x72407a*/
   this->M588 = 0; /*0x724082*/

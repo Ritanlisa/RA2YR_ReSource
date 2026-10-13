@@ -305,10 +305,10 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   }
   if ( v34 ) /*0x531630*/
     (**(void (***)(int, int))v34)(v34, 1); /*0x531636*/
-  *(unsigned int *)v42.vtable1 = &vt_CCFileClass; /*0x53163f*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x53163f) */
   v44 = 0; /*0x531647*/
   Vector::Clear((int)v43); /*0x531652*/
-  *(unsigned int *)v42.vtable1 = &off_7E1668; /*0x53165b*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x53165b) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v42))->Dtor(); /*0x531668*/
 }
 }
@@ -370,10 +370,10 @@ char BulkData_Initialize()
   LABEL_11:
     Debug::Log(); /*0x53178f*/
   LABEL_12:
-    *(unsigned int *)v7.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x53179c*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x53179c) */
     v9 = 0; /*0x5317a8*/
     Vector::Clear((int)v8); /*0x5317ac*/
-    *(unsigned int *)v7.vtable1 = (unsigned int)(&off_7E1668); /*0x5317b5*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5317b5) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x5317bd*/
     return 0; /*0x5317cb*/
   }
@@ -389,22 +389,22 @@ char BulkData_Initialize()
   {
   LABEL_16:
     Debug::Log(); /*0x531805*/
-    *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x531819*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x531819) */
     v12 = 0; /*0x531821*/
     Vector::Clear((int)v11); /*0x531828*/
-    *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x531831*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x531831) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
-  *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x531852*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x531852) */
   v12 = 0; /*0x53185a*/
   Vector::Clear((int)v11); /*0x531861*/
-  *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x53186a*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x53186a) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x531872*/
-  *(unsigned int *)v7.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x53187b*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x53187b) */
   v9 = 0; /*0x531883*/
   Vector::Clear((int)v8); /*0x531887*/
-  *(unsigned int *)v7.vtable1 = (unsigned int)(&off_7E1668); /*0x531890*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x531890) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x531898*/
   return 1; /*0x5317c4*/
 }
@@ -2369,10 +2369,10 @@ char sub_538F20(int a1, int a2, char * Source)
         CCFileClass::Reset(&v20); /*0x538f8d*/
         byte_A9F91C = 0; /*0x538f92*/
       }
-      *(unsigned int *)v20.vtable1 = &vt_CCFileClass; /*0x538f9d*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x538f9d) */
       v22 = 0; /*0x538fa5*/
       Vector::Clear((int)v21); /*0x538fad*/
-      *(unsigned int *)v20.vtable1 = &off_7E1668; /*0x538fb6*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x538fb6) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x538fba*/
     }
     if ( byte_A9F91C ) /*0x538fc6*/
@@ -2387,10 +2387,10 @@ char sub_538F20(int a1, int a2, char * Source)
       FileClass::Write(&v20, &byte_A8F91C, 0x10000u); /*0x539003*/
       CCFileClass::Reset(&v20); /*0x53900c*/
     }
-    *(unsigned int *)v20.vtable1 = &vt_CCFileClass; /*0x539015*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x539015) */
     v22 = 0; /*0x53901d*/
     Vector::Clear((int)v21); /*0x539025*/
-    *(unsigned int *)v20.vtable1 = &off_7E1668; /*0x53902e*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x53902e) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x539032*/
   }
   DDraw::WaitForIdle((DDraw *)v16); /*0x539037*/
@@ -3685,10 +3685,10 @@ int E4Recv_538C40::sub_538C40(char * Source)
     CCFileClass::Reset(&v2); /*0x538c7e*/
     byte_A9F91C = 0; /*0x538c83*/
   }
-  *(unsigned int *)v2.vtable1 = &vt_CCFileClass; /*0x538c8e*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x538c8e) */
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
-  *(unsigned int *)v2.vtable1 = &off_7E1668; /*0x538ca7*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x538ca7) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v2))->Dtor(); /*0x538cb4*/
 }
 } // namespace gamemd
@@ -3708,10 +3708,10 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
     FileClass::Write(&v2, &byte_A8F91C, 0x10000u); /*0x538cf5*/
     CCFileClass::Reset(&v2); /*0x538cfe*/
   }
-  *(unsigned int *)v2.vtable1 = &vt_CCFileClass; /*0x538d07*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x538d07) */
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
-  *(unsigned int *)v2.vtable1 = &off_7E1668; /*0x538d20*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x538d20) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v2))->Dtor(); /*0x538d2d*/
 }
 } // namespace gamemd

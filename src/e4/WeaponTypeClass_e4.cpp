@@ -176,7 +176,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   aP1->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771e77*/
   aP1->q15C = &WeaponTypeClass::`vftable'; /*0x771e7d*/
   aP1->? = &WeaponTypeClass::`vftable'; /*0x771e83*/
-  aP1->vtable4 = &WeaponTypeClass::`vftable'; /*0x771e8a*/
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e8a) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
@@ -452,10 +452,10 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
 
   v3 = v2; /*0x7730f3*/
-  v2->vfptr = &vt_WeaponTypeClass; /*0x7730f7*/
-  v2->vfptr1 = &vt_WeaponTypeClass; /*0x7730fd*/
-  v2->vfptr2 = &vt_WeaponTypeClass; /*0x773104*/
-  v2->vfptr3 = &vt_WeaponTypeClass; /*0x77310b*/
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x7730f7) */
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x7730fd) */
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x773104) */
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x77310b) */
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x773112*/
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
@@ -482,7 +482,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   (((unsigned char *)&(v3[7].vfptr1))[1]) = 0; /*0x773199*/
   v3[7].vfptr = 0; /*0x77319f*/
   vtable1 = v3[6].vfptr1; /*0x7731a5*/
-  v3[6].vfptr = &vt_VectorClass; /*0x7731ab*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x7731ab) */
   if ( vtable1 && (((unsigned char *)&(v3[6].vfptr3))[1]) ) /*0x7731b9*/
   {
     operator delete((void *)(vtable1)); /*0x7731c2*/
@@ -491,7 +491,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   (((unsigned char *)&(v3[6].vfptr3))[1]) = 0; /*0x7731d0*/
   v3[6].vfptr2 = 0; /*0x7731d6*/
   vtable3 = v3[5].vfptr3; /*0x7731dc*/
-  v3[5].vfptr2 = &vt_VectorClass; /*0x7731e2*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x7731e2) */
   if ( vtable3 && (((unsigned char *)&(v3[5].abstractFlags))[1]) ) /*0x7731f0*/
   {
     operator delete((void *)(vtable3)); /*0x7731f9*/
@@ -591,9 +591,9 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   this->DownReport[0] = (int)&TypeList<int>::`vftable'; /*0x771f18*/
   this->Anim[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x771f1e*/
   this->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771f28*/
-  this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f2e*/
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f2e) */
   this->? = &WeaponTypeClass::`vftable'; /*0x771f35*/
-  this->vtable4 = &WeaponTypeClass::`vftable'; /*0x771f3c*/
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f3c) */
   return &this->AbstractTypeClass; /*0x771f45*/
 
 }

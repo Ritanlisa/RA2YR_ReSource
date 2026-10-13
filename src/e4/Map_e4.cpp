@@ -315,7 +315,7 @@ int E4Recv_5ADD10::Map_Delete()
   unknown_libname_73(v9); /*0x5add33*/
   v9[1] = (void *)TimerGetTicks(); /*0x5add48*/
   v9[3] = 0; /*0x5add50*/
-  *(unsigned int *)v7.vtable1 = &vt_MapSelect; /*0x5add5b*/
+  /* X11: vtable install elided (implicit via MapSelect virtuals 0x5add5b) */
   v2 = ScenarioClass::Load((ScenarioClass *)&v7, (int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   MSEngine::Destructor((MSEngine *)v8); /*0x5add7d*/
@@ -416,7 +416,7 @@ AbstractClass * * sub_68C050()
     {
       VectorClass::Construct(&v14, 0, 0); /*0x68c086*/
       v3 = 10; /*0x68c091*/
-      v14.vfptr = &vt_DynamicVectorClass; /*0x68c096*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x68c096) */
       v16 = 10; /*0x68c09e*/
       v15 = 0; /*0x68c0a2*/
       v4 = 0; /*0x68c0ac*/
@@ -491,7 +491,7 @@ AbstractClass * * sub_68C050()
         goto LABEL_25; /*0x68c19f*/
       }
   LABEL_29:
-      v14.vfptr = &vt_VectorClass; /*0x68c1ca*/
+      /* X11: vtable install elided (implicit via VectorClass virtuals 0x68c1ca) */
       if ( v14.Items ) /*0x68c1d9*/
       {
         if ( v14.IsAllocated ) /*0x68c1e1*/

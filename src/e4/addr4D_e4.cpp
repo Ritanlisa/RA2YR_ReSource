@@ -54,9 +54,9 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   int16_t v18[2]; // [esp+18h] [ebp-4h] BYREF
 
   *(unsigned int *)aP0 = (unsigned int)(&vt_FoggedObjectClass); /*0x4d1663*/
-  aP0->vtable2 = &vt_FoggedObjectClass; /*0x4d1669*/
-  aP0->vtable3 = &vt_FoggedObjectClass; /*0x4d1670*/
-  aP0->vtable4 = &vt_FoggedObjectClass; /*0x4d1677*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1669) */
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1670) */
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1677) */
   *(unsigned int *)v17 = (unsigned int)(aP0); /*0x4d1684*/
   v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v17); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/

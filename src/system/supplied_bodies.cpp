@@ -114,7 +114,7 @@ unsigned int * INIClass::sectionExists() {
   this->sectionHead[1] = 0; /*0x52af6b*/
   this->sectionHead[2] = 0; /*0x52af6e*/
   this->sectionHead[0] = (int)0; /*0x52af71*/
-  *(unsigned int *)this->vtable1 = 0; /*0x52af77*/
+  /* X11: vtable install elided (implicit via class virtuals 0x52af77) — binary-proven install, was 0 */
   if ( this != (INIClass *)-16 ) /*0x52af7d*/
   {
     v3 = this->sectionHead[1]; /*0x52af7f*/
@@ -137,7 +137,7 @@ unsigned int * INIClass::sectionExists() {
   if ( v6 ) /*0x52afad*/
     *(unsigned int *)(v6 + 8) = sectionHead; /*0x52afaf*/
   this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-  *(unsigned int *)this->vtable1 = 0; /*0x52afb7*/
+  /* X11: vtable install elided (implicit via class virtuals 0x52afb7) — binary-proven install, was 0 */
   return result; /*0x52afb5*/
 }
 } // namespace gamemd
@@ -226,7 +226,7 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
   void *FileBaseOffset; // eax
 
   FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/
-  *(unsigned int *)this->vtable1 = 0; /*0x432619*/
+  /* X11: vtable install elided (implicit via class virtuals 0x432619) — binary-proven install, was 0 */
   if ( FileBaseOffset ) /*0x432621*/
   {
     if ( (this->BufferOffset) ) /*0x432623*/
@@ -257,7 +257,7 @@ namespace gamemd {
   void **FilePointer; // esi
 
   FileSize = (void *)this->FileSize; /*0x434a43*/
-  *(unsigned int *)this->vtable1 = 0; /*0x434a46*/
+  /* X11: vtable install elided (implicit via class virtuals 0x434a46) — binary-proven install, was 0 */
   if ( FileSize ) /*0x434a4e*/
     free(FileSize); /*0x434a51*/
   FilePointer = (void **)this->FilePointer; /*0x434a5a*/
@@ -288,7 +288,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   this->headNode[1] = 0; /*0x477f50*/
   (this->sectionCount) = 1; /*0x477f53*/
   (this->u8_1D) = 0; /*0x477f57*/
-  *(unsigned int *)this->vtable1 = 0; /*0x477f5a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x477f5a) — binary-proven install, was 0 */
   if ( this == (INIClass *)a2 ) /*0x477f60*/
     return this->vtable1; /*0x477f60*/
   TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
@@ -413,7 +413,7 @@ unsigned int * GenericList::Constructor() {
   this->u32_14 = 0; /*0x52acfb*/
   this->u32_18 = 0; /*0x52acfe*/
   this->u32_10 = 0; /*0x52ad01*/
-  this->vtable = 0; /*0x52ad07*/
+  /* X11: vtable install elided (implicit via class virtuals 0x52ad07) — binary-proven install, was 0 */
   if ( this != (GenericList *)-16 ) /*0x52ad0d*/
   {
     v3 = this->u32_14; /*0x52ad0f*/
@@ -452,7 +452,7 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
   *(unsigned int *)this->__pad_020 = a8; /*0x52af2e*/
   this->sectionCount = a7; /*0x52af31*/
   *&this->unknown30 = a6; /*0x52af38*/
-  *(unsigned int *)this->vtable1 = 0; /*0x52af3b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x52af3b) — binary-proven install, was 0 */
   return this->vtable1; /*0x52af41*/
 }
 } // namespace gamemd
@@ -699,7 +699,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     this->headNode[1] = 0; /*0x478231*/
     (this->sectionCount) = 1; /*0x478234*/
     (this->u8_1D) = 0; /*0x478238*/
-    *(unsigned int *)this->vtable1 = (void *)&vt_VectorClass_RGBClass; /*0x47823b*/
+    /* X11: vtable install elided (implicit via VectorClass_RGBClass virtuals 0x47823b) */
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->vtable1; /*0x478241*/
     FilePipe_38::ddtor((int)this); /*0x478247*/

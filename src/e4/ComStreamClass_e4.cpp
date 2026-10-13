@@ -127,7 +127,7 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v22[0].vfptr.vfptr1 = (int)&vt_rc_ptr; /*0x7a3fd1*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x7a3fd1) */
   ComPtr::Release((ComPtr *)&v22[0].vfptr.vfptr1); /*0x7a3fdd*/
   LABEL_16:
   if ( lParam ) /*0x7a3fed*/

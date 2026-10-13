@@ -195,10 +195,10 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = a3->Image; /*0x6b6164*/
-  a3->vfptr = &vt_SmudgeTypeClass; /*0x6b616a*/
-  a3->vfptr1 = &vt_SmudgeTypeClass; /*0x6b6172*/
-  a3->vfptr2 = &vt_SmudgeTypeClass; /*0x6b6179*/
-  a3->vfptr3 = &vt_SmudgeTypeClass; /*0x6b6180*/
+  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b616a) */
+  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6172) */
+  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6179) */
+  /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6180) */
   if ( Image ) /*0x6b6187*/
   {
     operator delete((void *)(Image)); /*0x6b618a*/
@@ -292,10 +292,10 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
-      aP0->vfptr = &vt_SmudgeTypeClass; /*0x6b5874*/
-      aP0->vfptr1 = &vt_SmudgeTypeClass; /*0x6b587a*/
-      aP0->vfptr2 = &vt_SmudgeTypeClass; /*0x6b5881*/
-      aP0->vfptr3 = &vt_SmudgeTypeClass; /*0x6b5888*/
+      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5874) */
+      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b587a) */
+      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5881) */
+      /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b5888) */
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/

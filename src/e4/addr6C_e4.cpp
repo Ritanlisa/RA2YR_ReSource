@@ -486,7 +486,7 @@ LABEL_95:
       }
       SaveProfileWOL((void *)v265, (const char **)&g_WebBrowser);
     }
-    v264.vfptr = &vt_rc_ptr_PlayerProfile;
+    /* X11: vtable install elided (implicit via rc_ptr_PlayerProfile virtuals) */
     ((ComPtr *)(&v264))->Release();
   }
   unsigned int v79 = 0;
@@ -1735,7 +1735,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   Buffer::Init(&this->u32_24, 0, 0); /*0x6c656c*/
   this->M48 = 0; /*0x6c657e*/
   this->M52 = a4; /*0x6c6585*/
-  *(unsigned int *)this->vfptr = &StaticButtonClass::`vftable'; /*0x6c6588*/
+  /* X11: vtable install elided (implicit via StaticButtonClass virtuals 0x6c6588) */
   StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
@@ -2978,7 +2978,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x6cf900*/
   this->IsInitialized = 1; /*0x6cf903*/
   this->IsAllocated = 0; /*0x6cf907*/
-  this->vtable0 = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6cf90a) */
   if ( !a2 ) /*0x6cf910*/
     return &this->vtable0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/

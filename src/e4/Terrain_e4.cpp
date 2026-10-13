@@ -1545,7 +1545,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
     LOBYTE(aP1) = 0; /*0x570386*/
     VectorClass::CellConstructor(&v86, 0, 0); /*0x57038b*/
     v32 = *(unsigned int *)v81; /*0x570390*/
-    v86.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x570394*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x570394) */
     v88 = 10; /*0x57039c*/
     v87 = 0; /*0x5703a4*/
     while ( 1 ) /*0x5703ba*/
@@ -1699,7 +1699,7 @@ LABEL_137:
 LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
               LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
-            v86.vtable0 = &VectorClass<Cell>::`vftable'; /*0x570aad*/
+            /* X11: vtable install elided (implicit via VectorClass virtuals 0x570aad) */
             if ( v86.Items ) /*0x570ab7*/
             {
               if ( v86.IsAllocated ) /*0x570abf*/
@@ -2031,7 +2031,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
     VectorClass::CellConstructor(&v92, 0, 0); /*0x57386f*/
     v38 = *(unsigned int *)v87; /*0x573874*/
     v39 = *&this->u32_124; /*0x57387f*/
-    v92.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x573885*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x573885) */
     v94 = 10; /*0x57388f*/
     v93 = 0; /*0x573897*/
     LOBYTE(aP1) = 0; /*0x57389f*/
@@ -2278,7 +2278,7 @@ LABEL_139:
 LABEL_141:
           if ( v93 > 0 ) /*0x573fbc*/
             LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v92); /*0x573fc7*/
-          v92.vtable0 = &VectorClass<Cell>::`vftable'; /*0x573fd0*/
+          /* X11: vtable install elided (implicit via VectorClass virtuals 0x573fd0) */
           if ( v92.Items ) /*0x573fda*/
           {
             if ( v92.IsAllocated ) /*0x573fe2*/

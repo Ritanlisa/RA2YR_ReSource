@@ -137,10 +137,10 @@ int AnimClass::SimpleCtor()
   this->q19C = 1; /*0x422834*/
   this->SuperClass_19D = 0; /*0x42283b*/
   this->q19E = 0; /*0x422841*/
-  this->vtable1 = 0; /*0x422847*/
-  this->vtable2 = 0; /*0x42284d*/
-  this->vtable3 = 0; /*0x422854*/
-  *(unsigned int *)this->vtable4 = &off_7E3328; /*0x42285b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x422847) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x42284d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x422854) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via off_7E3328 virtuals 0x42285b) */
   if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
     || (byte_A8E9B5 || !dword_A8E9B0)
     && dword_A8E9BC > 0
@@ -345,9 +345,9 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
       ObjectClass::Init((ObjectClass *)a2, (int)&a3); /*0x4252a6*/
       __4type_info_AAEAAV0_ABV0__Z(&a2->u32_B4, (int)&a3); /*0x4252b6*/
       *(unsigned int *)a2 = 0; /*0x4252bb*/
-      a2->vtable2 = 0; /*0x4252c1*/
-      a2->vtable3 = 0; /*0x4252c8*/
-      a2->vtable4 = &off_7E3328; /*0x4252cf*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4252c1) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x4252c8) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via off_7E3328 virtuals 0x4252cf) */
     }
     AudioController::Init(&a2->AudioController_1A0); /*0x4252dc*/
     AudioController::Init(&a2->AudioController_1B4); /*0x4252e7*/
@@ -674,10 +674,10 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   this->q19C = 1; /*0x422009*/
   this->SuperClass_19D = 0; /*0x422010*/
   this->q19E = 0; /*0x422016*/
-  this->vtable1 = (int)0; /*0x42201c*/
-  this->vtable2 = (int)0; /*0x422022*/
-  this->vtable3 = (int)0; /*0x422028*/
-  *(unsigned int *)this->vtable4 = &off_7E3328; /*0x422030*/
+  /* X11: vtable install elided (implicit via class virtuals 0x42201c) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x422022) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x422028) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via off_7E3328 virtuals 0x422030) */
   this->PaletteName = 0; /*0x422037*/
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x42203d*/
   AudioController::Init(&this->AudioController_1A0); /*0x422048*/

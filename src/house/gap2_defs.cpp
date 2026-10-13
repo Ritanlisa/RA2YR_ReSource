@@ -386,7 +386,7 @@ void* BaseClass::QueryInterface(int a1) {
   void *v3; // eax
 
   v3 = *&this->baseNodeCount; /*0x42f973*/
-  *(unsigned int *)this->vtable1 = 0; /*0x42f976*/
+  /* X11: vtable install elided (implicit via class virtuals 0x42f976) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x42f980*/
   {
     operator delete((void *)(v3)); /*0x42f988*/
@@ -1084,7 +1084,7 @@ void HouseClass::processTargetSelection() {
   int v7; // [esp+14h] [ebp-4h]
 
   v2 = &this->repairStationsCapacity; /*0x4f21ae*/
-  *(unsigned int *)this = 0; /*0x4f21b1*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f21b1) — binary-proven install, was 0 */
   v6 = &this->repairStationsCapacity; /*0x4f21b7*/
   v7 = 0; /*0x4f21bb*/
   v5 = 0; /*0x4f21bf*/
@@ -1349,9 +1349,9 @@ int HouseClass::Constructor(int a1, int a2) { /*g57w11 r4: raw fn_4F Constructor
   a1->__pad_16078 = 10; /*0x4f544b*/
   a1->q16074 = 0; /*0x4f5451*/
   *(unsigned int *)a1 = 0; /*0x4f5457*/
-  a1->vtable2 = 0; /*0x4f545d*/
-  a1->vtable3 = 0; /*0x4f5464*/
-  a1->vtable4 = 0; /*0x4f546b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f545d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f5464) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f546b) — binary-proven install, was 0 */
   a1->u32_24 = 0; /*0x4f5472*/
   a1->DiskLaserClass_field_0x28 = 0; /*0x4f5479*/
   a1->SuperClass_field_0x2C = 0; /*0x4f5480*/
@@ -1485,13 +1485,13 @@ int HouseClass::Destruct() {
   ObjectClass *v48; // [esp+1Ch] [ebp-14h]
   ObjectClass *v49; // [esp+1Ch] [ebp-14h]
 
-  *(unsigned int *)this = 0; /*0x4f7149*/
-  this->vtable2 = 0; /*0x4f714f*/
-  this->vtable3 = 0; /*0x4f7156*/
-  this->vtable4 = 0; /*0x4f715d*/
-  this->vtable5 = 0; /*0x4f7164*/
-  this->vtable6 = 0; /*0x4f716b*/
-  this->vtable7 = 0; /*0x4f7172*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f7149) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f714f) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f7156) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f715d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f7164) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f716b) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4f7172) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x4f7179*/
   v2 = &this->Float4_19D; /*0x4f7180*/
   this->relatedTagsCapacity = 0; /*0x4f7186*/
@@ -1846,7 +1846,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       return 0; /*0x4f7895*/
     DynamicVectorClass::Copy(&v68, &a1->u32_654); /*0x4f78a6*/
     v6 = 0; /*0x4f78b4*/
-    *(unsigned int *)v68.vfptr = 0; /*0x4f78b6*/
+    /* X11: vtable install elided (implicit via class virtuals 0x4f78b6) — binary-proven install, was 0 */
     if ( v68.Count > 0 ) /*0x4f78bc*/
     {
       while ( DynamicVector::GetOrGrow( /*0x4f78d5*/
@@ -1859,7 +1859,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
           goto LABEL_7; /*0x4f78e0*/
         }
       }
-      *(unsigned int *)v68.vfptr = 0; /*0x4f7913*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4f7913) — binary-proven install, was 0 */
       VectorClass::Destroy((int)&v68); /*0x4f791b*/
       goto LABEL_135; /*0x4f7920*/
     }
@@ -1873,7 +1873,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
           goto LABEL_15; /*0x4f790b*/
       }
       v8 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7925*/
-      *(unsigned int *)v68.vfptr = 0; /*0x4f7929*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4f7929) — binary-proven install, was 0 */
       if ( !*(unsigned int *)&((unsigned int *)&v68)[3] || !(((unsigned char *)&(v68.IsInitialized))[1]) ) /*0x4f793f*/
         goto LABEL_135; /*0x4f793f*/
       goto LABEL_134; /*0x4f793f*/
@@ -1882,7 +1882,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     if ( v5->q634 == -1 ) /*0x4f7951*/
     {
       v9 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7953*/
-      *(unsigned int *)v68.vfptr = 0; /*0x4f7957*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4f7957) — binary-proven install, was 0 */
       v10 = *(unsigned int *)&((unsigned int *)&v68)[3] == 0; /*0x4f795f*/
       goto LABEL_125; /*0x4f7961*/
     }
@@ -1927,7 +1927,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
   LABEL_47:
         if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(this->supersCount + 4 * v16) + 40) + 231) ) /*0x4f7b01*/
         {
-          *(unsigned int *)v67.vfptr = 0; /*0x4f7b16*/
+          /* X11: vtable install elided (implicit via class virtuals 0x4f7b16) — binary-proven install, was 0 */
           if ( *(unsigned int *)&((unsigned int *)&v67)[3] && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f7b22*/
           {
             operator delete((void *)(*(void **)&((unsigned int *)&v67)[3])); /*0x4f7b25*/
@@ -1954,7 +1954,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     {
   LABEL_19:
       v13 = *(void **)&((unsigned int *)&v67)[3]; /*0x4f7994*/
-      *(unsigned int *)v67.vfptr = 0; /*0x4f799d*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4f799d) — binary-proven install, was 0 */
   LABEL_20:
       if ( v13 && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f79b1*/
       {
@@ -1966,7 +1966,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       v9 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7f20*/
       (((unsigned char *)&(v67.IsInitialized))[1]) = 0; /*0x4f7f24*/
       *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7f29*/
-      *(unsigned int *)v68.vfptr = 0; /*0x4f7f2d*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4f7f2d) — binary-proven install, was 0 */
       v10 = *(unsigned int *)&((unsigned int *)&v68)[3] == 0; /*0x4f7f31*/
       goto LABEL_125; /*0x4f7f31*/
     }
@@ -1975,7 +1975,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       currentPlayer = currentPlayer || this->playerControl; /*0x4f7b90*/
     if ( !currentPlayer ) /*0x4f7b94*/
     {
-      *(unsigned int *)v67.vfptr = 0; /*0x4f7ba1*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4f7ba1) — binary-proven install, was 0 */
       if ( *(unsigned int *)&((unsigned int *)&v67)[3] && (((unsigned char *)&(v67.IsInitialized))[1]) ) /*0x4f7bad*/
       {
         operator delete((void *)(*(void **)&((unsigned int *)&v67)[3])); /*0x4f7bb0*/
@@ -2020,7 +2020,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             if ( !v29 ) /*0x4f7ddb*/
             {
               v13 = *(void **)&((unsigned int *)&v67)[3]; /*0x4f7e99*/
-              *(unsigned int *)v67.vfptr = 0; /*0x4f7ea2*/
+              /* X11: vtable install elided (implicit via class virtuals 0x4f7ea2) — binary-proven install, was 0 */
               goto LABEL_20; /*0x4f7ea6*/
             }
             goto LABEL_114; /*0x4f7ddb*/
@@ -2082,7 +2082,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             while ( v24 < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 872) ); /*0x4f7c5a*/
   LABEL_116:
             v13 = *(void **)&((unsigned int *)&v67)[3]; /*0x4f7e85*/
-            *(unsigned int *)v67.vfptr = 0; /*0x4f7e8e*/
+            /* X11: vtable install elided (implicit via class virtuals 0x4f7e8e) — binary-proven install, was 0 */
             goto LABEL_20; /*0x4f7e94*/
           default:
             v32 = *((unsigned int *)dword_A83C6C + v23); /*0x4f7deb*/
@@ -2100,7 +2100,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
                   *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7edd*/
                   (((unsigned char *)&(v67.IsInitialized))[1]) = 0; /*0x4f7ee5*/
                   *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7eea*/
-                  *(unsigned int *)v68.vfptr = 0; /*0x4f7ef2*/
+                  /* X11: vtable install elided (implicit via class virtuals 0x4f7ef2) — binary-proven install, was 0 */
                   v10 = *(unsigned int *)&((unsigned int *)&v68)[3] == 0; /*0x4f7ef6*/
                   goto LABEL_125; /*0x4f7ef8*/
                 }
@@ -2108,7 +2108,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
                 v9 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7b35*/
                 (((unsigned char *)&(v67.IsInitialized))[1]) = 0; /*0x4f7b39*/
                 *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7b3e*/
-                *(unsigned int *)v68.vfptr = 0; /*0x4f7b46*/
+                /* X11: vtable install elided (implicit via class virtuals 0x4f7b46) — binary-proven install, was 0 */
                 v10 = *(unsigned int *)&((unsigned int *)&v68)[3] == 0; /*0x4f7b4a*/
   LABEL_125:
                 if ( !v10 ) /*0x4f7f33*/
@@ -2171,7 +2171,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     v8 = *(void **)&((unsigned int *)&v68)[3]; /*0x4f7f78*/
     (((unsigned char *)&(v67.IsInitialized))[1]) = 0; /*0x4f7f7c*/
     *(unsigned int *)&((unsigned int *)&v67)[3] = 0; /*0x4f7f83*/
-    *(unsigned int *)v68.vfptr = 0; /*0x4f7f87*/
+    /* X11: vtable install elided (implicit via class virtuals 0x4f7f87) — binary-proven install, was 0 */
     if ( *(unsigned int *)&((unsigned int *)&v68)[3] && (((unsigned char *)&(v68.IsInitialized))[1]) ) /*0x4f7f93*/
   LABEL_134:
       operator delete((void *)(v8)); /*0x4f7f95*/
@@ -4640,7 +4640,7 @@ int HouseClass::AutoBuild() {
     VectorClass::BuildingTypeConstructor(&v84, 0, 0); /*0x4fe7af*/
     v58 = 10; /*0x4fe7b7*/
     v59 = this->bunkersCount - 1; /*0x4fe7bc*/
-    v84.vfptr = 0; /*0x4fe7bd*/
+    /* X11: vtable install elided (implicit via class virtuals 0x4fe7bd) — binary-proven install, was 0 */
     v86 = 10; /*0x4fe7c5*/
     v85 = 0; /*0x4fe7c9*/
     if ( v59 < 0 ) /*0x4fe7d1*/
@@ -4653,7 +4653,7 @@ int HouseClass::AutoBuild() {
         v57 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 2212); /*0x4fe84f*/
       else
         v57 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 2208); /*0x4fe85d*/
-      v84.vfptr = 0; /*0x4fe86b*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4fe86b) — binary-proven install, was 0 */
       if ( v84.Items && v84.IsAllocated ) /*0x4fe87b*/
       {
         operator delete((void *)(v84.Items)); /*0x4fe87e*/
@@ -6839,7 +6839,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
   (*(void (__thiscall **)(int *))(v3 + 12))(&this->base[7]); /*0x5054dc*/
   v4 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->relatedTagsCapacity + 152)); /*0x5054f6*/
   VectorClass::BuildingTypeConstructor(&v93, 0, 0); /*0x5054fe*/
-  v93.vfptr = 0; /*0x50550e*/
+  /* X11: vtable install elided (implicit via class virtuals 0x50550e) — binary-proven install, was 0 */
   v95 = 10; /*0x505516*/
   v94 = 0; /*0x50551a*/
   BoolVector::Construct(&v96, 0, 0); /*0x50551e*/
@@ -6920,7 +6920,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
   v16 = v94; /*0x5056d8*/
   v91 = v94; /*0x5056e4*/
   VectorClass::BuildingTypeConstructor(&v85, 0, 0); /*0x5056e8*/
-  v85.vfptr = 0; /*0x5056fb*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5056fb) — binary-proven install, was 0 */
   v87 = 10; /*0x505704*/
   v86 = 0; /*0x50570c*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray(this, *(unsigned int *)&g_RulesClass_Instance + 2220); /*0x505719*/
@@ -7314,7 +7314,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
   }
   (((unsigned char *)&(v88.m_C))[1]) = 0; /*0x505eee*/
   v88.m_8 = 0; /*0x505ef5*/
-  v85.vfptr = 0; /*0x505ef9*/
+  /* X11: vtable install elided (implicit via class virtuals 0x505ef9) — binary-proven install, was 0 */
   if ( v85.Items && v85.IsAllocated ) /*0x505f05*/
   {
     operator delete((void *)(v85.Items)); /*0x505f08*/

@@ -352,10 +352,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable1 =(void *)(int)&vt_BuildingLightClass; /*0x4370c4*/
-  this->vtable1 =(void *)(int)&vt_BuildingLightClass; /*0x4370ca*/
-  this->vtable2 =(void *)(int)&vt_BuildingLightClass; /*0x4370d1*/
-  this->vtable3 =(void *)(int)&vt_BuildingLightClass; /*0x4370d8*/
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370c4) */
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370ca) */
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
   if ( (uint8_t)((ObjectClass *)(this))->Undeploy() ) /*0x4370df*/
     ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)this); /*0x4370ee*/
   v5 = (gamemd::BuildingLightClass *)(this); /*0x437103*/

@@ -1243,9 +1243,9 @@ void TeamClass::Destructor(void * a2)
   TeamClass *v15; // [esp+10h] [ebp-4h] BYREF
 
   v2 = 0; /*0x6e8de5*/
-  a2->vfptr = &vt_TeamClass; /*0x6e8de7*/
-  a2->vfptr1 = &vt_TeamClass; /*0x6e8ded*/
-  a2->vfptr2 = &vt_TeamClass; /*0x6e8df4*/
+  /* X11: vtable install elided (implicit via TeamClass virtuals 0x6e8de7) */
+  /* X11: vtable install elided (implicit via TeamClass virtuals 0x6e8ded) */
+  /* X11: vtable install elided (implicit via TeamClass virtuals 0x6e8df4) */
   for ( a2->vfptr3 = &vt_TeamClass; v2 < dword_A8B210; ++v2 ) /*0x6e8e09*/
   {
     v3 = *((unsigned int *)dword_A8B204 + v2); /*0x6e8e10*/
@@ -3149,10 +3149,10 @@ int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6ec473*/
       __4type_info_AAEAAV0_ABV0__Z(aP0->suspendTimer, (int)&aP1); /*0x6ec480*/
-      aP0->vfptr = &vt_TeamClass; /*0x6ec485*/
-      aP0->vfptr1 = &vt_TeamClass; /*0x6ec48b*/
-      aP0->vfptr2 = &vt_TeamClass; /*0x6ec492*/
-      aP0->vfptr3 = &vt_TeamClass; /*0x6ec499*/
+      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec485) */
+      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec48b) */
+      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec492) */
+      /* X11: vtable install elided (implicit via TeamClass virtuals 0x6ec499) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4a9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->Coord_9C); /*0x6ec4b7*/

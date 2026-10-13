@@ -460,7 +460,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      aP0->vtable1 = (void *)((unsigned int)(&vt_TemporalClass)); /*0x71a687*/
+      /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a687) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a68d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a694*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a69b*/
@@ -599,10 +599,10 @@ int TerrainClass::CleanupMembers() {
   int v13[2]; // [esp+8h] [ebp-8h] BYREF
 
   v2 = (AbstractClass *)(this + 4); /*0x71b7b9*/
-  *(unsigned int *)this = (void *)&TerrainClass_vftable; /*0x71b7bc*/
-  this->vtable3 = (void *)&TerrainClass_vftable; /*0x71b7c2*/
-  this->vtable4 = (void *)&TerrainClass_vftable; /*0x71b7c9*/
-  this->vtable2 = &off_7F5200; /*0x71b7d0*/
+  /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71b7bc) */
+  /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71b7c2) */
+  /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71b7c9) */
+  /* X11: vtable install elided (implicit via off_7F5200 virtuals 0x71b7d0) */
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x71b7d6*/
   v13[0] = this; /*0x71b7eb*/
   v3 = (*(int (**)(unsigned int *, int *))(dword_A8E988 + 16))(&dword_A8E988, v13); /*0x71b7ef*/

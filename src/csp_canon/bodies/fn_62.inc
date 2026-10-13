@@ -569,10 +569,10 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   this->Translucency = v13[756]; /*0x62b754*/
   this->q130 = 0; /*0x62b75b*/
   this->q4C4 = 0; /*0x62b761*/
-  *(unsigned int *)this = (void *)&ParticleClass_vftable; /*0x62b767*/
-  this->vtable2 = (void *)&ParticleClass_vftable; /*0x62b76d*/
-  this->vtable3 = (void *)&ParticleClass_vftable; /*0x62b773*/
-  this->vtable4 = (void *)&ParticleClass_vftable; /*0x62b77a*/
+  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b767) */
+  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b76d) */
+  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b773) */
+  /* X11: vtable install elided (implicit via ParticleClass virtuals 0x62b77a) */
   this->vtable2.GenerateUniqueID(); /*0x62b781*/
   if ( dword_A83DD8 < dword_A83DD0 /*0x62b7b9*/
     || (byte_A83DD5 || !dword_A83DD0)
@@ -1009,9 +1009,9 @@ int ParticleSystemClass::Constructor(int a2, int *a3, int a4, void *a5, unsigned
   this->ParticleSystemClass_field_bool_F9 = 0; /*0x62dd0a*/
   *(&this->nextArrayIndex3) = 0; /*0x62dd10*/
   *this = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd16*/
-  this->vtable2 = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd1c*/
-  this->vtable3 = (int)(void *)&ParticleSystemClass_vftable; /*0x62dd22*/
-  this->vtable4 = (int)&off_7EFB70; /*0x62dd29*/
+  /* X11: vtable install elided (implicit via ParticleSystemClass virtuals 0x62dd1c) */
+  /* X11: vtable install elided (implicit via ParticleSystemClass virtuals 0x62dd22) */
+  /* X11: vtable install elided (implicit via off_7EFB70 virtuals 0x62dd29) */
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x62dd30*/
   if ( g_GameCleanupState < dword_A80210 /*0x62dd6a*/
     || (byte_A80215 || !dword_A80210)

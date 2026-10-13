@@ -124,7 +124,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &RLEBlitter::`vftable'; /*0x49a9a9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a9a9) */
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     __3_YAXPAX_Z(this); /*0x49a9b2*/
   return (std::locale::facet *)this; /*0x49a9bc*/
@@ -136,7 +136,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &RLEBlitter::`vftable'; /*0x49a9c9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a9c9) */
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     __3_YAXPAX_Z(this); /*0x49a9d2*/
   return (std::locale::facet *)this; /*0x49a9dc*/
@@ -148,7 +148,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &RLEBlitter::`vftable'; /*0x49a9e9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a9e9) */
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     __3_YAXPAX_Z(this); /*0x49a9f2*/
   return (std::locale::facet *)this; /*0x49a9fc*/

@@ -212,7 +212,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   v2 = a1->u32_68; /*0x6cb124*/
   *(unsigned int *)a1 = &SuperClass::`vftable'; /*0x6cb127*/
   *(unsigned int *)(a1 + 4) = &SuperClass::`vftable'; /*0x6cb12f*/
-  a1->vtable3 = &SuperClass::`vftable'; /*0x6cb136*/
+  /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb136) */
   *(unsigned int *)(a1 + 12) = &SuperClass::`vftable'; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
@@ -1312,10 +1312,10 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6cdf0a*/
     {
       AbstractClass::Constructor((AbstractClass *)aP0); /*0x6cdf0e*/
-      aP0->vtable1 = &vt_SuperClass; /*0x6cdf13*/
-      aP0->vtable2 = &vt_SuperClass; /*0x6cdf19*/
-      aP0->vtable3 = &vt_SuperClass; /*0x6cdf20*/
-      *(unsigned int *)aP0->vtable4 = &vt_SuperClass; /*0x6cdf27*/
+      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf13) */
+      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf19) */
+      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf20) */
+      /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cdf27) */
     }
     if ( aP0->SuperClass_field_0x68 /*0x6cdf70*/
       && (g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < DataGlobal_B0F5C0

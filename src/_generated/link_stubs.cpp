@@ -266,7 +266,7 @@ char gamemd::DSurface::BlitCore(int* a0, int* a1, int* a2, void* a3, int* a4, in
     *(this + 25) = 0; /*0x4ba5c7*/
     *((_DWORD *)this + 7) = 0; /*0x4ba5ca*/
     *((_DWORD *)this + 8) = 0; /*0x4ba5cd*/
-    *(_DWORD *)this = &DSurface_Vtable; /*0x4ba5d0*/
+    /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
     v7 = __2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
     *((_DWORD *)this + 8) = v7; /*0x4ba5e2*/
     if ( v7 ) /*0x4ba5e5*/
@@ -815,7 +815,7 @@ void gamemd::DSurface::DSurface(int a0, int a1, bool a2, bool a3)
     *(this + 25) = 0; /*0x4ba5c7*/
     *((_DWORD *)this + 7) = 0; /*0x4ba5ca*/
     *((_DWORD *)this + 8) = 0; /*0x4ba5cd*/
-    *(_DWORD *)this = &DSurface_Vtable; /*0x4ba5d0*/
+    /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
     v7 = __2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
     *((_DWORD *)this + 8) = v7; /*0x4ba5e2*/
     if ( v7 ) /*0x4ba5e5*/
@@ -1518,7 +1518,7 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
     *(_DWORD *)(this + 52) = v3; /*0x725fc4*/
     *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
     *(_BYTE *)(this + 68) = 1; /*0x725fca*/
-    *(_DWORD *)this = (void *)&vt_TriggerClass; /*0x725fce*/
+    /* X11: vtable install elided (implicit via TriggerClass virtuals 0x725fce) */
     *(_DWORD *)(this + 4) = (void *)&vt_TriggerClass; /*0x725fd4*/
     *(_DWORD *)(this + 8) = (void *)&vt_TriggerClass; /*0x725fdb*/
     *(_DWORD *)(this + 12) = (void *)&vt_TriggerClass; /*0x725fe2*/
@@ -1587,7 +1587,7 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
     *(_DWORD *)(this + 52) = v3; /*0x725fc4*/
     *(_DWORD *)(this + 64) = 0; /*0x725fc7*/
     *(_BYTE *)(this + 68) = 1; /*0x725fca*/
-    *(_DWORD *)this = (void *)&vt_TriggerClass; /*0x725fce*/
+    /* X11: vtable install elided (implicit via TriggerClass virtuals 0x725fce) */
     *(_DWORD *)(this + 4) = (void *)&vt_TriggerClass; /*0x725fd4*/
     *(_DWORD *)(this + 8) = (void *)&vt_TriggerClass; /*0x725fdb*/
     *(_DWORD *)(this + 12) = (void *)&vt_TriggerClass; /*0x725fe2*/
@@ -1913,7 +1913,7 @@ bool gamemd::DSurface::FillRectEx(gamemd::RectangleStruct const& a0, gamemd::Rec
     *(this + 25) = 0; /*0x4ba5c7*/
     *((_DWORD *)this + 7) = 0; /*0x4ba5ca*/
     *((_DWORD *)this + 8) = 0; /*0x4ba5cd*/
-    *(_DWORD *)this = &DSurface_Vtable; /*0x4ba5d0*/
+    /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
     v7 = __2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
     *((_DWORD *)this + 8) = v7; /*0x4ba5e2*/
     if ( v7 ) /*0x4ba5e5*/
@@ -6209,7 +6209,7 @@ long gamemd::WaypointPathClass::GetClassID(GUID* a0)
     *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
     *(_DWORD *)(this + 60) = 10; /*0x763839*/
     *(_DWORD *)(this + 56) = 0; /*0x763840*/
-    *(_DWORD *)this = (void *)&vt_WaypointPathClass; /*0x763845*/
+    /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
     *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
     *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
     *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
@@ -6241,7 +6241,7 @@ long gamemd::WaypointPathClass::Load(struct IStream* a0)
     *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
     *(_DWORD *)(this + 60) = 10; /*0x763839*/
     *(_DWORD *)(this + 56) = 0; /*0x763840*/
-    *(_DWORD *)this = (void *)&vt_WaypointPathClass; /*0x763845*/
+    /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
     *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
     *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
     *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
@@ -6273,7 +6273,7 @@ long gamemd::WaypointPathClass::Save(struct IStream* a0, int a1)
     *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
     *(_DWORD *)(this + 60) = 10; /*0x763839*/
     *(_DWORD *)(this + 56) = 0; /*0x763840*/
-    *(_DWORD *)this = (void *)&vt_WaypointPathClass; /*0x763845*/
+    /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
     *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
     *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
     *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
@@ -6305,7 +6305,7 @@ long ra2::game::CaptureManagerClass::GetClassID(GUID* a0)
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -6341,7 +6341,7 @@ long ra2::game::CaptureManagerClass::Load(struct IStream* a0)
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -6377,7 +6377,7 @@ long ra2::game::CaptureManagerClass::QueryInterface(const GUID& a0, void** a1)
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -6413,7 +6413,7 @@ long ra2::game::CaptureManagerClass::Save(struct IStream* a0, int a1)
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -6755,7 +6755,7 @@ unsigned long ra2::game::CaptureManagerClass::AddRef()
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -6791,7 +6791,7 @@ unsigned long ra2::game::CaptureManagerClass::Release()
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -8628,7 +8628,7 @@ void gamemd::WaypointPathClass::pointerExpired(class ra2::game::AbstractClass* a
     *(_DWORD *)(this + 40) = (void *)&vt_DynamicVectorClass_WaypointClass; /*0x763832*/
     *(_DWORD *)(this + 60) = 10; /*0x763839*/
     *(_DWORD *)(this + 56) = 0; /*0x763840*/
-    *(_DWORD *)this = (void *)&vt_WaypointPathClass; /*0x763845*/
+    /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
     *(_DWORD *)(this + 4) = (void *)&vt_WaypointPathClass; /*0x76384b*/
     *(_DWORD *)(this + 8) = (void *)&vt_WaypointPathClass; /*0x763852*/
     *(_DWORD *)(this + 12) = (void *)&vt_WaypointPathClass; /*0x763859*/
@@ -8660,7 +8660,7 @@ void ra2::game::CaptureManagerClass::pointerExpired(class ra2::game::AbstractCla
     *(_DWORD *)(this + 56) = 10; /*0x4717f6*/
     *(_DWORD *)(this + 52) = 0; /*0x4717fd*/
     *(_DWORD *)(this + 72) = a2; /*0x471800*/
-    *(_DWORD *)this = (void *)&vt_CaptureManagerClass; /*0x471807*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
     *(_DWORD *)(this + 4) = (void *)&vt_CaptureManagerClass; /*0x47180d*/
     *(_DWORD *)(this + 8) = (void *)&vt_CaptureManagerClass; /*0x471814*/
     *(_DWORD *)(this + 12) = (void *)&vt_CaptureManagerClass; /*0x47181b*/
@@ -9142,7 +9142,7 @@ void gamemd::BuildingClass::CreateDestructionCrater()
     *(_DWORD *)(this + 1796) = 0; /*0x43b9e8*/
     *(_DWORD *)(this + 1812) = 0; /*0x43b9ee*/
     *(_DWORD *)(this + 1816) = 0; /*0x43b9f4*/
-    *(_DWORD *)this = &BuildingClass_Vtable; /*0x43b9fa*/
+    /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b9fa) */
     *(_DWORD *)(this + 4) = &BuildingClass_Vtable2; /*0x43ba00*/
     *(_DWORD *)(this + 8) = &BuildingClass_Vtable3; /*0x43ba07*/
     *(_DWORD *)(this + 12) = &BuildingClass_Vtable4; /*0x43ba0e*/

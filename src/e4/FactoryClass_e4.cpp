@@ -323,9 +323,9 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
       v3->AbstractClass = &FactoryClass::`vftable'; /*0x4ca2c7*/
-      v3->vtable2 = &FactoryClass::`vftable'; /*0x4ca2cd*/
+      /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2cd) */
       v3->? = &FactoryClass::`vftable'; /*0x4ca2d4*/
-      v3->vtable4 = &FactoryClass::`vftable'; /*0x4ca2db*/
+      /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2db) */
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -550,10 +550,10 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   void *v5; // eax
   FactoryClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vfptr = &vt_FactoryClass; /*0x4ca776*/
-  Block->vfptr1 = &vt_FactoryClass; /*0x4ca77c*/
-  Block->vfptr2 = &vt_FactoryClass; /*0x4ca783*/
-  Block->vfptr3 = &vt_FactoryClass; /*0x4ca78a*/
+  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca776) */
+  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca77c) */
+  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca783) */
+  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca78a) */
   AbstractClass::AnnounceExpiredPointer(&Block->vfptr, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&DataGlobal_A83E30 + 16))( /*0x4ca7aa*/

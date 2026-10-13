@@ -2909,7 +2909,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
   int v8; // edx
   int v9; // ecx
 
-  Block->vtable = &vt_GenericList; /*0x40e3e6*/
+  /* X11: vtable install elided (implicit via GenericList virtuals 0x40e3e6) */
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = *((unsigned int *)Block + 2); /*0x40e3ec*/
@@ -2978,7 +2978,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
   int v8; // edx
   int v9; // ecx
 
-  Block->vtable = &vt_GenericList; /*0x40e4c6*/
+  /* X11: vtable install elided (implicit via GenericList virtuals 0x40e4c6) */
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = *((unsigned int *)Block + 2); /*0x40e4cc*/

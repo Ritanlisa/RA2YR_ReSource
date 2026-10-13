@@ -808,7 +808,7 @@ void BrainClass::sub_43A600()
   void *v5; // eax
 
   v2 = 0; /*0x43a608*/
-  this->vfptr = (int)&vt_BrainClass; /*0x43a60a*/
+  /* X11: vtable install elided (implicit via BrainClass virtuals 0x43a60a) */
   v3 = this->u32_14; /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
@@ -844,7 +844,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   void *v6; // eax
 
   v3 = 0; /*0x43aa95*/
-  this->vfptr = (int)&vt_BrainClass; /*0x43aa97*/
+  /* X11: vtable install elided (implicit via BrainClass virtuals 0x43aa97) */
   v4 = this->u32_14; /*0x43aa9d*/
   if ( v4 > 0 ) /*0x43aaa2*/
   {

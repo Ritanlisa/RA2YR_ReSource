@@ -336,7 +336,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_D0; /*0x540673*/
-  *(unsigned int *)this->vtable1 = &IPXGlobalConnClass::`vftable'; /*0x540679*/
+  /* X11: vtable install elided (implicit via IPXGlobalConnClass virtuals 0x540679) */
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/

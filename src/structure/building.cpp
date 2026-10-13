@@ -430,10 +430,10 @@ int BuildingClass::Construct(int a2, int a3)
   this->PrismStage = 0; /*0x43b9e8*/
   this->DelayBeforeFiring = 0; /*0x43b9ee*/
   this->BunkerState = 0; /*0x43b9f4*/
-  *(unsigned int *)this = &BuildingClass_Vtable; /*0x43b9fa*/
-  this->vtable2 = &BuildingClass_Vtable2; /*0x43ba00*/
-  this->vtable3 = &BuildingClass_Vtable3; /*0x43ba07*/
-  this->vtable4 = &BuildingClass_Vtable4; /*0x43ba0e*/
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b9fa) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43ba00) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43ba07) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43ba0e) */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x43ba15*/
   this->Upgrades = 0; /*0x43ba22*/
   (*((unsigned char *)&(v6))) = 0; /*0x43ba28*/
@@ -578,10 +578,10 @@ int BuildingClass::Dtor()
   int Vtable3; // [esp+18h] [ebp-4h] BYREF
 
   p_Audio8_2 = &this->Audio8_2; /*0x43bcf7*/
-  this->vfptr = (int)&BuildingClass_Vtable; /*0x43bcfd*/
-  this->vfptr1 = (int)&BuildingClass_Vtable2; /*0x43bd05*/
-  this->vfptr2 = (int)&BuildingClass_Vtable3; /*0x43bd0c*/
-  this->vfptr3 = (int)&BuildingClass_Vtable4; /*0x43bd13*/
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bcfd) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bd05) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bd0c) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43bd13) */
   Mixer::ReleaseChannel(&this->Audio8_2); /*0x43bd1a*/
   Mixer::ReleaseChannel((Mixer *)this->WasOnline); /*0x43bd27*/
   AudioFileClass::Release((AudioFileClass *)p_Audio8_2); /*0x43bd2e*/

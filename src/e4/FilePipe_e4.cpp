@@ -172,7 +172,7 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477a73*/
-  Block->vfptr = &vt_VectorClass; /*0x477a76*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x477a76) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
   {
     operator delete((void *)(v3)); /*0x477a88*/

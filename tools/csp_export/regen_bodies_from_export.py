@@ -65,6 +65,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _blockspan import brace_delta
 from _ida_vocab import (find_refusals, truthify, type_ids)
+from _vtelide import elide_vtable_install_lines  # noqa: E402  (X11)
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -187,7 +188,11 @@ def body_from_pseudo(code):
             out.append('  ' + ln if not ln.startswith('  ') else ln)
         else:
             out.append('')
-    return '\n'.join(out)
+    # X11: explicit vtable installs are never landed — the vtable is emitted by
+    # the compiler from the class's virtual declarations (user ruling
+    # 2026-10-13). Standalone install statements become marker comments.
+    text, _n, _notes = elide_vtable_install_lines('\n'.join(out))
+    return text
 
 
 manifest = {}

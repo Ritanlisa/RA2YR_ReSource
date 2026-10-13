@@ -47,10 +47,10 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   *((unsigned int *)this + 14) = 10; /*0x4717f6*/
   *((unsigned int *)this + 13) = 0; /*0x4717fd*/
   *((unsigned int *)this + 18) = a2; /*0x471800*/
-  *(unsigned int *)this = &CaptureManagerClass::`vftable'; /*0x471807*/
-  this->vtable2 = &CaptureManagerClass::`vftable'; /*0x47180d*/
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47180d) */
   *((unsigned int *)this + 2) = &CaptureManagerClass::`vftable'; /*0x471814*/
-  this->vtable4 = &CaptureManagerClass::`vftable'; /*0x47181b*/
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47181b) */
   *((unsigned int *)this + 15) = a3; /*0x471822*/
   *((unsigned char *)this + 64) = a4; /*0x471825*/
   *((unsigned char *)this + 65) = 0; /*0x471828*/
@@ -832,10 +832,10 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
       v3->controlNodes[0] = (int)&vt_DynamicVectorClass; /*0x47275c*/
       *(unsigned int *)&v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
-      v3->vfptr = &vt_CaptureManagerClass; /*0x47276c*/
-      v3->vfptr1 = &vt_CaptureManagerClass; /*0x472773*/
-      v3->vfptr2 = &vt_CaptureManagerClass; /*0x47277a*/
-      v3->vfptr3 = &vt_CaptureManagerClass; /*0x472781*/
+      /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47276c) */
+      /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x472773) */
+      /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47277a) */
+      /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x472781) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
     v6 = *v2; /*0x472796*/
@@ -1058,10 +1058,10 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   void *controlNodeCount; // eax
   CaptureManagerClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vfptr = &vt_CaptureManagerClass; /*0x4729cd*/
-  Block->vfptr1 = &vt_CaptureManagerClass; /*0x4729d3*/
-  Block->vfptr2 = &vt_CaptureManagerClass; /*0x4729da*/
-  Block->vfptr3 = &vt_CaptureManagerClass; /*0x4729e1*/
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4729cd) */
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4729d3) */
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4729da) */
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4729e1) */
   v6 = Block; /*0x4729ef*/
   v3 = (*(int (**)(int *, CaptureManagerClass **))(dword_89E0F0 + 16))(&dword_89E0F0, &v6); /*0x4729f3*/
   if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/

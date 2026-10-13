@@ -983,7 +983,7 @@ void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
   this->Capacity = a2; /*0x63ded0*/
   this->IsInitialized = 1; /*0x63ded3*/
   this->IsAllocated = 0; /*0x63ded7*/
-  this->vtable0 = &vt_VectorClass; /*0x63dedb*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63dedb) */
   if ( a2 ) /*0x63dee1*/
   {
     if ( a3 ) /*0x63dee9*/
@@ -996,7 +996,7 @@ void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
       this->IsAllocated = 1; /*0x63deff*/
     }
   }
-  this->vtable0 = &vt_DynamicVectorClass; /*0x63df03*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x63df03) */
   *((unsigned int *)this + 5) = 10; /*0x63df09*/
   *((unsigned int *)this + 4) = 0; /*0x63df10*/
   return &this->vtable0; /*0x63df19*/
@@ -1015,7 +1015,7 @@ void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
   this->Capacity = a2; /*0x63e1e0*/
   this->IsInitialized = 1; /*0x63e1e3*/
   this->IsAllocated = 0; /*0x63e1e7*/
-  this->vtable0 = &vt_VectorClass; /*0x63e1eb*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63e1eb) */
   if ( a2 ) /*0x63e1f1*/
   {
     if ( a3 ) /*0x63e1f9*/
@@ -1028,7 +1028,7 @@ void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
       this->IsAllocated = 1; /*0x63e20f*/
     }
   }
-  this->vtable0 = &vt_DynamicVectorClass; /*0x63e213*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x63e213) */
   *((unsigned int *)this + 5) = 10; /*0x63e219*/
   *((unsigned int *)this + 4) = 0; /*0x63e220*/
   return &this->vtable0; /*0x63e229*/

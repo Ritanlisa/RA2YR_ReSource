@@ -4610,7 +4610,7 @@ int Network::finalizeSession()
   this->q3F2FC = 0; /*0x7b2e1a*/
   this->q3F330 = 0; /*0x7b2e21*/
   this->q3F568 = 0; /*0x7b2e27*/
-  this->vtable1 = (int)&UDPInterfaceClass::`vftable'; /*0x7b2e2d*/
+  /* X11: vtable install elided (implicit via UDPInterfaceClass virtuals 0x7b2e2d) */
   *((unsigned int *)this + 64717) = -1; /*0x7b2e33*/
   return (int)this; /*0x7b2e3f*/
 

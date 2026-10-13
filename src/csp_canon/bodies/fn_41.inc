@@ -205,7 +205,7 @@ int AbstractTypeClass::Init(int aP1)
 
   AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
   v3 = *((unsigned char *)this + 61); /*0x41096d*/
-  *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410975) */
   *((unsigned int *)this + 1) = (unsigned int)(&vt_AbstractTypeClass); /*0x41097b*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_AbstractTypeClass); /*0x410982*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_AbstractTypeClass); /*0x410989*/
@@ -1207,7 +1207,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
-      aP0->vtable1 = &vt_AirstrikeClass; /*0x41d717*/
+      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d717) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d72b*/

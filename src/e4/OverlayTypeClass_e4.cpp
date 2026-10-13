@@ -85,7 +85,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->ParticleTypeClass_2B8 = 0; /*0x5fe2ea*/
   this->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
   this->? = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
-  this->vtable3 = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
+  /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
   this->? = &OverlayTypeClass::`vftable'; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
   this->RadarInvisible_d = 1; /*0x5fe310*/
@@ -391,7 +391,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   this->u32_30C = 0; /*0x644196*/
   this->ObjectTypeClass = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
   this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
-  this->vtable3 = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
+  /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
   this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
   AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
   if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
@@ -656,9 +656,9 @@ namespace gamemd {
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
     this->ObjectTypeClass = &vt_OverlayTypeClass;
-    this->vtable1 = &vt_OverlayTypeClass;
-    this->vtable1 = &vt_OverlayTypeClass;
-    this->vtable1 = &vt_OverlayTypeClass;
+    /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
+    /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
+    /* X11: vtable install elided (implicit via OverlayTypeClass virtuals) */
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
   v3 = (*((int (**)(void **, OverlayTypeClass **))DataGlobal_A83D80 + 4))( /*0x5fef6a*/

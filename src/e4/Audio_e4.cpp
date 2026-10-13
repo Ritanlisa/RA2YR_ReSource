@@ -680,10 +680,10 @@ int Audio::LoadWAVFiles(void *a1_1)
               *(float *)((*(((unsigned int *)&(v6)) + 1)) + 644) = (float)(int)v6; /*0x7208ec*/
             }
           }
-          *(unsigned int *)v10.vtable1 = &vt_CCFileClass; /*0x7208f9*/
+          /* X11: vtable install elided (implicit via CCFileClass virtuals 0x7208f9) */
           v12 = 0; /*0x720901*/
           Vector::Clear((int)v11); /*0x72090c*/
-          *(unsigned int *)v10.vtable1 = &off_7E1668; /*0x720915*/
+          /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x720915) */
           ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x72091d*/
           IsSoundEnabled = *(unsigned int *)&a1_1->__pad_18[12]; /*0x720922*/
         }

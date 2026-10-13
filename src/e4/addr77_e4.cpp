@@ -3843,7 +3843,7 @@ int E4Recv_7719E0::sub_7719E0()
   this->Items = 0; /*0x7719e6*/
   this->Capacity = 0; /*0x7719e9*/
   this->IsAllocated = 0; /*0x7719ec*/
-  *(unsigned int *)this->vfptr = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7719ef*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x7719ef) */
   this->CapacityIncrement[0] = 10; /*0x7719f5*/
   this->Count = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
@@ -3859,7 +3859,7 @@ void E4Recv_771A00::sub_771A00()
   void *Items; // eax
 
   Items = this->Items; /*0x771a06*/
-  this->vtable0 = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x771a09) */
   if ( Items && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(Items); /*0x771a19*/

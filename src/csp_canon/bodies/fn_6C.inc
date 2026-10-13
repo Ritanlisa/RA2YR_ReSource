@@ -12,7 +12,7 @@ void nullsub_114(int a1, int a2)
 void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0042*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0049*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0049) */
   return this; /*0x6c004f*/
 
 }
@@ -39,7 +39,7 @@ int COMObject::QueryInterface2(const void * a2, unsigned int * a3)
 void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c01c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c01c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c01c9) */
   return this; /*0x6c01cf*/
 
 }
@@ -90,7 +90,7 @@ int TClassFactory_CampaignClass::GetSize(int a2, int a1, int a3, int a4)
 void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0342*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0349*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0349) */
   return this; /*0x6c034f*/
 
 }
@@ -123,7 +123,7 @@ int TClassFactory_BuildingLightClass::ddtor()
 void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c04c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c04c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c04c9) */
   return this; /*0x6c04cf*/
 
 }
@@ -156,7 +156,7 @@ int TClassFactory_WaypointPathClass::ddtor()
 void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0642*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0649*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0649) */
   return this; /*0x6c064f*/
 
 }
@@ -189,7 +189,7 @@ int TClassFactory_TemporalClass::ddtor()
 void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c07c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c07c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c07c9) */
   return this; /*0x6c07cf*/
 
 }
@@ -221,7 +221,7 @@ void TClassFactory_AirstrikeClass::ddtor()
 void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0942*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0949*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0949) */
   return this; /*0x6c094f*/
 
 }
@@ -278,7 +278,7 @@ int TClassFactory_SlaveManagerClass::ddtor()
 void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0c42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0c49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0c49) */
   return this; /*0x6c0c4f*/
 
 }
@@ -311,7 +311,7 @@ int TClassFactory_CaptureManagerClass::ddtor()
 void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0dc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0dc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0dc9) */
   return this; /*0x6c0dcf*/
 
 }
@@ -344,7 +344,7 @@ int TClassFactory_DiskLaserClass::ddtor()
 void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c0f42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c0f49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0f49) */
   return this; /*0x6c0f4f*/
 
 }
@@ -377,7 +377,7 @@ int TClassFactory_ParasiteClass::ddtor()
 void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c10c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c10c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c10c9) */
   return this; /*0x6c10cf*/
 
 }
@@ -410,7 +410,7 @@ int TClassFactory_BombClass::ddtor()
 void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1242*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1249*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1249) */
   return this; /*0x6c124f*/
 
 }
@@ -443,7 +443,7 @@ int TClassFactory_RadSiteClass::ddtor()
 void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c13c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c13c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c13c9) */
   return this; /*0x6c13cf*/
 
 }
@@ -476,7 +476,7 @@ int TClassFactory_TEventClass::ddtor()
 void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1542*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1549*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1549) */
   return this; /*0x6c154f*/
 
 }
@@ -503,7 +503,7 @@ int E4Recv_6C1550::CreateTClassFactory_VoxelAnimTypeClass(const void *a2, unsign
 void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c16c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c16c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c16c9) */
   return this; /*0x6c16cf*/
 
 }
@@ -536,7 +536,7 @@ int TClassFactory_VoxelAnimClass::ddtor()
 void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1842*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1849*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1849) */
   return this; /*0x6c184f*/
 
 }
@@ -569,7 +569,7 @@ int TClassFactory_TActionClass::ddtor()
 void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c19c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c19c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c19c9) */
   return this; /*0x6c19cf*/
 
 }
@@ -602,7 +602,7 @@ int TClassFactory_TriggerClass::ddtor()
 void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1b42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1b49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1b49) */
   return this; /*0x6c1b4f*/
 
 }
@@ -629,7 +629,7 @@ int E4Recv_6C1B50::CreateTClassFactory_TriggerTypeClass(const void *a2, unsigned
 void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1cc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1cc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1cc9) */
   return this; /*0x6c1ccf*/
 
 }
@@ -661,7 +661,7 @@ void TClassFactory_ScriptClass::ddtor()
 void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1e42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1e49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1e49) */
   return this; /*0x6c1e4f*/
 
 }
@@ -688,7 +688,7 @@ int E4Recv_6C1E50::CreateTClassFactory_ScriptTypeClass(const void *a2, unsigned 
 void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c1fc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c1fc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1fc9) */
   return this; /*0x6c1fcf*/
 
 }
@@ -721,7 +721,7 @@ int TClassFactory_TagClass::ddtor()
 void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2142*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2149*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2149) */
   return this; /*0x6c214f*/
 
 }
@@ -748,7 +748,7 @@ int E4Recv_6C2150::CreateTClassFactory_TagTypeClass(const void *a2, unsigned int
 void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c22c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c22c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c22c9) */
   return this; /*0x6c22cf*/
 
 }
@@ -781,7 +781,7 @@ int TClassFactory_TeamClass::ddtor()
 void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2442*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2449*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2449) */
   return this; /*0x6c244f*/
 
 }
@@ -808,7 +808,7 @@ int E4Recv_6C2450::CreateTClassFactory_TeamTypeClass(const void *a2, unsigned in
 void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c25c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c25c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c25c9) */
   return this; /*0x6c25cf*/
 
 }
@@ -841,7 +841,7 @@ int TClassFactory_TaskForceClass::ddtor()
 void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2742*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2749*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2749) */
   return this; /*0x6c274f*/
 
 }
@@ -868,7 +868,7 @@ int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass(const void *a2, unsigned in
 void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c28c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c28c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c28c9) */
   return this; /*0x6c28cf*/
 
 }
@@ -895,7 +895,7 @@ int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass(const void *a2, unsigne
 void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2a42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2a49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2a49) */
   return this; /*0x6c2a4f*/
 
 }
@@ -922,7 +922,7 @@ int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass(const void *a2, unsigne
 void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2bc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2bc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2bc9) */
   return this; /*0x6c2bcf*/
 
 }
@@ -949,7 +949,7 @@ int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass(const void *a2, unsigne
 void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2d42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2d49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2d49) */
   return this; /*0x6c2d4f*/
 
 }
@@ -976,7 +976,7 @@ int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass(const void *a2, unsigned 
 void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c2ec2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c2ec9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2ec9) */
   return this; /*0x6c2ecf*/
 
 }
@@ -1003,7 +1003,7 @@ int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass(const void *a2, un
 void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3042*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3049*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3049) */
   return this; /*0x6c304f*/
 
 }
@@ -1030,7 +1030,7 @@ int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass(const void *a2, unsigned
 void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c31c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c31c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c31c9) */
   return this; /*0x6c31cf*/
 
 }
@@ -1057,7 +1057,7 @@ int E4Recv_6C31D0::CreateTClassFactory_SmudgeTypeClass(const void *a2, unsigned 
 void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3342*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3349*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3349) */
   return this; /*0x6c334f*/
 
 }
@@ -1090,7 +1090,7 @@ int TClassFactory_UnitClass::ddtor()
 void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c34c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c34c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c34c9) */
   return this; /*0x6c34cf*/
 
 }
@@ -1123,7 +1123,7 @@ int TClassFactory_BuildingClass::ddtor()
 void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3642*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3649*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3649) */
   return this; /*0x6c364f*/
 
 }
@@ -1156,7 +1156,7 @@ int TClassFactory_AircraftClass::ddtor()
 void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c37c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c37c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c37c9) */
   return this; /*0x6c37cf*/
 
 }
@@ -1189,7 +1189,7 @@ int TClassFactory_InfantryClass::ddtor()
 void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3942*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3949*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3949) */
   return this; /*0x6c394f*/
 
 }
@@ -1223,7 +1223,7 @@ int TClassFactory_AnimClass::ddtor()
 void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3ac2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3ac9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3ac9) */
   return this; /*0x6c3acf*/
 
 }
@@ -1250,7 +1250,7 @@ int E4Recv_6C3AD0::CreateTClassFactory_AnimTypeClass(const void *a2, unsigned in
 void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3c42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3c49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3c49) */
   return this; /*0x6c3c4f*/
 
 }
@@ -1277,7 +1277,7 @@ int E4Recv_6C3C50::CreateTClassFactory_HouseTypeClass(const void *a2, unsigned i
 void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3dc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3dc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3dc9) */
   return this; /*0x6c3dcf*/
 
 }
@@ -1310,7 +1310,7 @@ int TClassFactory_HouseClass::ddtor()
 void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c3f42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c3f49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3f49) */
   return this; /*0x6c3f4f*/
 
 }
@@ -1343,7 +1343,7 @@ int TClassFactory_DriveLocomotionClass::ddtor()
 void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c40c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c40c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c40c9) */
   return this; /*0x6c40cf*/
 
 }
@@ -1376,7 +1376,7 @@ int TClassFactory_JumpjetLocomotionClass::ddtor()
 void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4242*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4249*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4249) */
   return this; /*0x6c424f*/
 
 }
@@ -1409,7 +1409,7 @@ int TClassFactory_HoverLocomotionClass::ddtor()
 void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c43c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c43c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c43c9) */
   return this; /*0x6c43cf*/
 
 }
@@ -1442,7 +1442,7 @@ int TClassFactory_RocketLocomotionClass::ddtor()
 void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4542*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4549*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4549) */
   return this; /*0x6c454f*/
 
 }
@@ -1475,7 +1475,7 @@ int TClassFactory_TunnelLocomotionClass::ddtor()
 void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c46c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c46c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c46c9) */
   return this; /*0x6c46cf*/
 
 }
@@ -1508,7 +1508,7 @@ int TClassFactory_WalkLocomotionClass::ddtor()
 void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4842*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4849*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4849) */
   return this; /*0x6c484f*/
 
 }
@@ -1541,7 +1541,7 @@ int TClassFactory_DropPodLocomotionClass::ddtor()
 void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c49c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c49c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c49c9) */
   return this; /*0x6c49cf*/
 
 }
@@ -1574,7 +1574,7 @@ int TClassFactory_FlyLocomotionClass::ddtor()
 void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4b42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4b49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4b49) */
   return this; /*0x6c4b4f*/
 
 }
@@ -1607,7 +1607,7 @@ int TClassFactory_TeleportLocomotionClass::ddtor()
 void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4cc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4cc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4cc9) */
   return this; /*0x6c4ccf*/
 
 }
@@ -1664,7 +1664,7 @@ int TClassFactory_MechLocomotionClass::GetSize(int a2)
 void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4e42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4e49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4e49) */
   return this; /*0x6c4e4f*/
 
 }
@@ -1697,7 +1697,7 @@ int TClassFactory_ShipLocomotionClass::ddtor()
 void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c4fc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c4fc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4fc9) */
   return this; /*0x6c4fcf*/
 
 }
@@ -1731,7 +1731,7 @@ int TClassFactory_BulletClass::ddtor()
 void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5142*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5149*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5149) */
   return this; /*0x6c514f*/
 
 }
@@ -1764,7 +1764,7 @@ int TClassFactory_FactoryClass::ddtor()
 void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c52c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c52c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c52c9) */
   return this; /*0x6c52cf*/
 
 }
@@ -1791,7 +1791,7 @@ int E4Recv_6C52D0::CreateTClassFactory_WarheadTypeClass(void * a2, void * a3)
 void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5442*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5449*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5449) */
   return this; /*0x6c544f*/
 
 }
@@ -1818,7 +1818,7 @@ int E4Recv_6C5450::CreateTClassFactory_WeaponTypeClass(void * a2, void * a3)
 void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c55c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c55c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c55c9) */
   return this; /*0x6c55cf*/
 
 }
@@ -1851,7 +1851,7 @@ int TClassFactory_ParticleClass::ddtor()
 void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5742*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5749*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5749) */
   return this; /*0x6c574f*/
 
 }
@@ -1878,7 +1878,7 @@ int E4Recv_6C5750::CreateTClassFactory_ParticleTypeClass(void * a2, void * a3)
 void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c58c2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c58c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c58c9) */
   return this; /*0x6c58cf*/
 
 }
@@ -1911,7 +1911,7 @@ int TClassFactory_ParticleSystemClass::ddtor()
 void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5a42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5a49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5a49) */
   return this; /*0x6c5a4f*/
 
 }
@@ -1938,7 +1938,7 @@ int E4Recv_6C5A50::CreateTClassFactory_ParticleSystemTypeClass(void * a2, void *
 void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5bc2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5bc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5bc9) */
   return this; /*0x6c5bcf*/
 
 }
@@ -1965,7 +1965,7 @@ int E4Recv_6C5BD0::CreateTClassFactory_AITriggerTypeClass(void * a2, void * a3)
 void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5d42*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5d49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5d49) */
   return this; /*0x6c5d4f*/
 
 }
@@ -1998,7 +1998,7 @@ int TClassFactory_NeuronClass::ddtor()
 void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c5ec2*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c5ec9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5ec9) */
   return this; /*0x6c5ecf*/
 
 }
@@ -2031,7 +2031,7 @@ int TClassFactory_FoggedObjectClass::ddtor()
 void* Gap2Recv_6C6040::WinMain_Helper_6C6040() {
 
   ((unsigned int *)this)[0] = 0; /*0x6c6042*/
-  this->vtable1 = &vt_TClassFactory; /*0x6c6049*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c6049) */
   return this; /*0x6c604f*/
 
 }

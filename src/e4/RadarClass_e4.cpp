@@ -40,7 +40,7 @@ CampaignClass * RadarClass::Destruct()
   CampaignClass *RadarClass_field_0x1228; // eax
   int result; // eax
 
-  this->vtable1 = &RadarClass::`vftable'; /*0x652c0c*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x652c0c) */
   AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
   p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
@@ -372,7 +372,7 @@ unsigned int * RadarClass::initRadarSurface()
   this->__pad_004 = 0; /*0x4f4224*/
   this->q008 = 0; /*0x4f4227*/
   *(unsigned int *)this->u32_C = 2; /*0x4f422a*/
-  this->vtable1 = &off_7EA6FC; /*0x4f4231*/
+  /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x4f4231) */
   return &this->vtable1; /*0x4f4237*/
 
 }

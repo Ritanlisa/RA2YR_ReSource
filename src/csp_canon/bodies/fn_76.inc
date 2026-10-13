@@ -221,7 +221,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
   ((unsigned int *)this)[0] = (void *)a2; /*0x765ca3*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x765ca6*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x765caa*/
-  this->vtable1 = &vt_VectorClassrc_ptr; /*0x765cae*/
+  /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x765cae) */
   if ( !a2 ) /*0x765cb5*/
     return this; /*0x765cb5*/
   if ( !a3 ) /*0x765cc1*/
@@ -329,10 +329,10 @@ void* Gap2Recv_766A10::System_Init_766A10(int a2, int arg4, void * a3, ObjectCla
   *((unsigned int *)this + 2) = a2; /*0x766a1f*/
   *((unsigned int *)this + 3) = v6; /*0x766a26*/
   *((unsigned int *)this + 1) = 0; /*0x766a2d*/
-  *(unsigned int *)this = &WorldDominationTour::vt_GameOption; /*0x766a34*/
+  /* X11: vtable install elided (implicit via GameOption virtuals 0x766a34) */
   *((unsigned int *)this + 4) = arg4; /*0x766a3a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a3); /*0x766a3d*/
-  *(unsigned int *)this = &vt_WorldDominationTourValueGameOption; /*0x766a46*/
+  /* X11: vtable install elided (implicit via WorldDominationTourValueGameOption virtuals 0x766a46) */
   DeleteAndZero(&a3); /*0x766a4c*/
   return this; /*0x766a53*/
 
@@ -390,7 +390,7 @@ char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
 void* Gap2Recv_766F70::System_Init_766F70(int a2) {
 
   ComPtr::Constructor((ComPtr *)this); /*0x766f73*/
-  *(unsigned int *)this = &vt_rc_ptr; /*0x766f7c*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x766f7c) */
   ComPtr::Set((ComPtr *)this, *(unsigned int *)(a2 + 4)); /*0x766f88*/
   return this; /*0x766f8f*/
 
@@ -645,7 +645,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
   ((unsigned int *)this)[0] = (void *)aP1; /*0x76a7f3*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x76a7f6*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x76a7fa*/
-  this->vtable1 = &vt_VectorClassrc_ptr; /*0x76a7fe*/
+  /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x76a7fe) */
   if ( !aP1 ) /*0x76a805*/
     return this; /*0x76a805*/
   if ( !aP2 ) /*0x76a811*/
@@ -1112,7 +1112,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
 
   v3 = (unsigned char *)this + 8; /*0x76bf05*/
   *((unsigned int *)this + 1) = 0; /*0x76bf08*/
-  *(unsigned int *)this = &vt_ReferenceCounted; /*0x76bf11*/
+  /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x76bf11) */
   ComPtr::Constructor((unsigned int *)this + 2); /*0x76bf17*/
   *v3 = &vt_rc_ptr; /*0x76bf20*/
   ComPtr::Set(v3, *(unsigned int *)(a2 + 4)); /*0x76bf2c*/
@@ -1130,7 +1130,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
     v8 = aWdtDefaultlong; /*0x76bf72*/
   v9 = GetStringCSF(v8, 0, aDRa2mdpostWdtp, 21); /*0x76bf77*/
   WideString::Assign((wchar_t **)this + 5, v9); /*0x76bf80*/
-  *(unsigned int *)this = &WorldDominationTour::vt_CampaignProperties; /*0x76bf85*/
+  /* X11: vtable install elided (implicit via CampaignProperties virtuals 0x76bf85) */
   return this; /*0x76bf8d*/
 
 }
@@ -1201,7 +1201,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   *((unsigned int *)this + 293) = &vt_DynamicVectorClass; /*0x76c3c1*/
   *((unsigned int *)this + 298) = 10; /*0x76c3c8*/
   *((unsigned int *)this + 297) = 0; /*0x76c3cf*/
-  *(unsigned int *)this = &WorldDominationTour::vt_Selection; /*0x76c3d2*/
+  /* X11: vtable install elided (implicit via Selection virtuals 0x76c3d2) */
   *((unsigned int *)this + 299) = (uint16_t)Property::Set( /*0x76c448*/
                                                  (Property *)g_FogOfWarState,
                                                  ((uint8_t)dword_AC18A4 >> g_BitShift_Green_0 << g_BitShift_Red)
@@ -1838,7 +1838,7 @@ void* Gap2Recv_76F500::ConstructWDTSelection_Create_76F500() {
     v3 = 0; /*0x76f542*/
   }
   ComPtr::Constructor((ComPtr *)this); /*0x76f546*/
-  *(unsigned int *)this = &vt_rc_ptr; /*0x76f54d*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76f54d) */
   ComPtr::Set((ComPtr *)this, (int)v3); /*0x76f554*/
   return this; /*0x76f55b*/
 

@@ -12373,7 +12373,7 @@ void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 {
   void *v2; // esi
 
-  *(unsigned int *)this = &off_7F9594; /*0x7c8a93*/
+  /* X11: vtable install elided (implicit via off_7F9594 virtuals 0x7c8a93) */
   _lock(27); /*0x7c8a99*/
   v2 = (void *)this->M4; /*0x7c8a9e*/
   if ( v2 ) /*0x7c8aa4*/
@@ -12431,7 +12431,7 @@ char * E4Recv_7C8B29::sub_7C8B29()
 namespace gamemd {
 unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
-  this->vfptr = &off_7F9594; /*0x7c8b2f*/
+  /* X11: vtable install elided (implicit via off_7F9594 virtuals 0x7c8b2f) */
   return &this->vfptr; /*0x7c8b35*/
 }
 } // namespace gamemd
@@ -13269,7 +13269,7 @@ namespace gamemd {
 void * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)  // G42.33 b24: void* (R9 hpp sync; type name undeclared)
 {
   __0exception_QAE_ABQBD_Z((const char *const *)&a2); /*0x7ca981*/
-  *(unsigned int *)this = &vt___non_rtti_object; /*0x7ca986*/
+  /* X11: vtable install elided (implicit via __non_rtti_object virtuals 0x7ca986) */
   return this; /*0x7ca98e*/
 }
 } // namespace gamemd
@@ -13290,7 +13290,7 @@ namespace gamemd {
 exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 {
   __0exception_QAE_ABV0__Z(a2); /*0x7ca9bb*/
-  *(unsigned int *)this = &vt___non_rtti_object; /*0x7ca9c0*/
+  /* X11: vtable install elided (implicit via __non_rtti_object virtuals 0x7ca9c0) */
   return this; /*0x7ca9c8*/
 }
 } // namespace gamemd
@@ -13429,7 +13429,7 @@ namespace gamemd {
 exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
   __0exception_QAE_ABV0__Z(a2); /*0x7cac3b*/
-  *(unsigned int *)this = &vt_bad_cast; /*0x7cac40*/
+  /* X11: vtable install elided (implicit via bad_cast virtuals 0x7cac40) */
   return this; /*0x7cac48*/
 }
 } // namespace gamemd

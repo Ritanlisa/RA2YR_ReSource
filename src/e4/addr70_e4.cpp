@@ -593,7 +593,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
     v37 = 0; /*0x7095fe*/
     VectorClass::Construct(&v30, 0, 0); /*0x709602*/
     v11 = v3[288]; /*0x709607*/
-    v30.vfptr = (void *)((int)&vt_DynamicVectorClass); /*0x70960d*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x70960d) */
     v32 = 10; /*0x709617*/
     v31 = 0; /*0x70961b*/
     if ( v11 > 0 ) /*0x70961f*/
@@ -671,7 +671,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
       }
       (*(void (**)(unsigned int *))(*v3 + 968))(v3); /*0x70975d*/
     }
-    v30.vfptr = (void *)((int)&vt_VectorClass);
+    /* X11: vtable install elided (implicit via VectorClass virtuals) */
     if ( v30.Items && ((unsigned int *)(v30.IsAllocated))[0] ) /*0x7097b0*/
     {
       operator delete((void *)((void *)v30.Items)); /*0x7097b3*/

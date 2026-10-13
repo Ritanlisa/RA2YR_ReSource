@@ -418,7 +418,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
   v19.headNode[2] = (int)&vt_List; /*0x683c29*/
   memset(&v19.needsSave_flag, 0, 13); /*0x683c32*/
   memset(&v19.unknown38, 0, 9); /*0x683c42*/
-  *(unsigned int *)v19.vtable1 = &CCINIClass_Vtable; /*0x683c4e*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x683c4e) */
   CCFileClass::Construct(&v20, v4); /*0x683c56*/
   if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) ) /*0x683c67*/
   {
@@ -431,10 +431,10 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
-  *(unsigned int *)v20.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x683cc9*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x683cc9) */
   v22 = 0; /*0x683cd1*/
   Vector::Clear((int)v21); /*0x683cd8*/
-  *(unsigned int *)v20.vtable1 = (unsigned int)(&off_7E1668); /*0x683ce1*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x683ce1) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x683cf2*/
   Debug::Log(); /*0x683cfd*/
@@ -582,17 +582,17 @@ int ScenarioClass_Construct(void * a2)
     Node::Init((Node *)&v5.needsSave_flag); /*0x686784*/
     v5.INIClass_field_3C = 0; /*0x68678d*/
     v5.ownsFile = 0; /*0x686792*/
-    *(unsigned int *)v5.vtable1 = &CCINIClass_Vtable; /*0x686797*/
+    /* X11: vtable install elided (implicit via CCINIClass virtuals 0x686797) */
     CCFileClass::Construct(&v6, Source); /*0x68679f*/
     Debug::Log(); /*0x6867aa*/
     if ( CCINIClass::Load(&v5, (int)&v6, 1, 0) ) /*0x6867be*/
     {
       strcpy((char *)&dword_A8B230[130].abstractFlags, Source); /*0x686836*/
       Map = ScenarioClass::LoadMap(0, (bool *)v5.vtable1, a2); /*0x686851*/
-      *(unsigned int *)v6.vtable1 = &vt_CCFileClass; /*0x686853*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x686853) */
       v8 = 0; /*0x68685b*/
       Vector::Clear((int)v7); /*0x686862*/
-      *(unsigned int *)v6.vtable1 = &off_7E1668; /*0x68686b*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x68686b) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x686873*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x68687c*/
       return Map; /*0x686881*/
@@ -600,10 +600,10 @@ int ScenarioClass_Construct(void * a2)
     else
     {
       Debug::Log(); /*0x6867cc*/
-      *(unsigned int *)v6.vtable1 = &vt_CCFileClass; /*0x6867db*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x6867db) */
       v8 = 0; /*0x6867e3*/
       Vector::Clear((int)v7); /*0x6867ea*/
-      *(unsigned int *)v6.vtable1 = &off_7E1668; /*0x6867f3*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x6867f3) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x6867fb*/
       HashTable::DestroyHashTableINIClass((INIClass *)&v5); /*0x686804*/
       return 0; /*0x686809*/

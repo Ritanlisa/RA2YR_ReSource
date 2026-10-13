@@ -1761,7 +1761,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   VectorClass::BuildingTypeConstructor(&v126, 0, 0); /*0x5072ae*/
   v42 = *(unsigned int *)(_EBP + 120); /*0x5072b3*/
   v43 = 0; /*0x5072b6*/
-  v126.vtable0 = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5072ba*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5072ba) */
   v128 = 10; /*0x5072c2*/
   v127 = 0; /*0x5072cd*/
   if ( v42 > 0 ) /*0x5072d8*/
@@ -2016,7 +2016,7 @@ LABEL_87:
     LOBYTE(v116) = 0; /*0x507826*/
     v117 = 0; /*0x50782b*/
     VectorClass::CellConstructor(&v119, 0, 0); /*0x50782f*/
-    v119.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x507838*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x507838) */
     v121 = 10; /*0x507842*/
     v120 = 0; /*0x50784a*/
     if ( v119.Items && v119.IsAllocated ) /*0x507856*/
@@ -2087,7 +2087,7 @@ LABEL_107:
       for ( v82[4] = v86; v84 < v82[4]; *(unsigned int *)(v82[1] + 4 * v84 - 4) = *(unsigned int *)(v82[1] + 4 * v84) ) /*0x5079ba*/
         ++v84; /*0x5079bf*/
     }
-    v119.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5079d2*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x5079d2) */
     if ( v119.Items && v119.IsAllocated ) /*0x5079e4*/
     {
       __3_YAXPAX_Z(v119.Items); /*0x5079e7*/
@@ -2206,7 +2206,7 @@ LABEL_56:
   }
   BYTE1(v145) = 0; /*0x5075f5*/
   v144 = 0; /*0x5075ff*/
-  v126.vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x507606*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x507606) */
   if ( v126.Items && v126.IsAllocated ) /*0x507616*/
   {
     __3_YAXPAX_Z(v126.Items); /*0x507619*/
@@ -3314,7 +3314,7 @@ int HouseClass_24::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
-  *(unsigned int *)this = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f28c9*/
+  /* X11: vtable install elided (implicit via VectorCursorGraphicMenuItemDynamicVectorClass virtuals 0x4f28c9) */
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
     operator delete((void *)(this)); /*0x4f28d2*/
   return this; /*0x4f28dc*/

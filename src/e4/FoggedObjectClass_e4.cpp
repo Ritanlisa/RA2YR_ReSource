@@ -69,9 +69,9 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
   *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
-  this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0a0c*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a0c) */
   this->? = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
-  this->vtable4 = &FoggedObjectClass::`vftable'; /*0x4d0a1a*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a1a) */
   v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
@@ -205,9 +205,9 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   *((unsigned int *)this + 27) = 0; /*0x4d0ca5*/
   *((unsigned char *)this + 116) = 1; /*0x4d0cae*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
-  this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0cb8*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cb8) */
   this->? = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
-  this->vtable4 = &FoggedObjectClass::`vftable'; /*0x4d0cc6*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cc6) */
   v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -368,9 +368,9 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   *(unsigned int *)(aP1 + 108) = 0; /*0x4d0f97*/
   *(unsigned char *)(aP1 + 116) = a3; /*0x4d0fa2*/
   *(unsigned int *)aP1 = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
-  aP1->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d0fab*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fab) */
   *(unsigned int *)(aP1 + 8) = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
-  aP1->vtable4 = &FoggedObjectClass::`vftable'; /*0x4d0fb9*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fb9) */
   v8 = (unsigned int *)(*(int (**)(int *, char *))(*aP2 + 300))(aP2, v52); /*0x4d0fc5*/
   *(unsigned int *)(aP1 + 64) = *v8; /*0x4d0fd2*/
   *(unsigned int *)(aP1 + 68) = v8[1]; /*0x4d0fd7*/
@@ -580,9 +580,9 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned int *)this + 27) = 0; /*0x4d1403*/
   *((unsigned char *)this + 116) = 1; /*0x4d140a*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d140e*/
-  this->vtable2 = &FoggedObjectClass::`vftable'; /*0x4d1414*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1414) */
   this->? = &FoggedObjectClass::`vftable'; /*0x4d141b*/
-  this->vtable4 = &FoggedObjectClass::`vftable'; /*0x4d1422*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1422) */
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
   *((unsigned int *)this + 16) = *v5; /*0x4d143b*/
   *((unsigned int *)this + 17) = v5[1]; /*0x4d1440*/
@@ -697,10 +697,10 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     a1[1].Cell[0] = (int)&vt_DynamicVectorClass; /*0x4d254c*/
     a1[2].uniqueId = 10; /*0x4d2552*/
     a1[2].vfptr3 = 0; /*0x4d2559*/
-    a1->vfptr = &vt_FoggedObjectClass; /*0x4d255c*/
-    a1->vfptr1 = &vt_FoggedObjectClass; /*0x4d2562*/
-    a1->vfptr2 = &vt_FoggedObjectClass; /*0x4d2569*/
-    a1->vfptr3 = &vt_FoggedObjectClass; /*0x4d2570*/
+    /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d255c) */
+    /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d2562) */
+    /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d2569) */
+    /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d2570) */
   }
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a1->u32_44); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/

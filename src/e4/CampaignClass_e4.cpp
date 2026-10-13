@@ -46,7 +46,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
   this->? = &CampaignClass::`vftable'; /*0x46cb82*/
-  this->vtable3 = &CampaignClass::`vftable'; /*0x46cb89*/
+  /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46cb89) */
   this->? = &CampaignClass::`vftable'; /*0x46cb90*/
   if ( dword_A83D08 < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
@@ -364,10 +364,10 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46d016*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
-      aP0->vfptr = &vt_CampaignClass; /*0x46d024*/
-      aP0->vfptr1 = &vt_CampaignClass; /*0x46d02a*/
-      aP0->vfptr2 = &vt_CampaignClass; /*0x46d031*/
-      aP0->vfptr3 = &vt_CampaignClass; /*0x46d038*/
+      /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d024) */
+      /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d02a) */
+      /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d031) */
+      /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d038) */
     }
     return 0; /*0x46d03f*/
   }
@@ -414,7 +414,7 @@ void ** CampaignClass::DTOR(char a2)
 
   this->AbstractClass = &CampaignClass::`vftable'; /*0x46d096*/
   this->? = &CampaignClass::`vftable'; /*0x46d09c*/
-  this->vtable3 = &CampaignClass::`vftable'; /*0x46d0a3*/
+  /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0a3) */
   this->? = &CampaignClass::`vftable'; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x46d0b1*/
   v5 = this; /*0x46d0c6*/

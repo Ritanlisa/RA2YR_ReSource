@@ -1310,7 +1310,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   char v3; // al
 
   v3 = this->u32_1D; /*0x65c5a3*/
-  *(unsigned int *)this->vtable1 = &RAMFileClass::`vftable'; /*0x65c5a6*/
+  /* X11: vtable install elided (implicit via RAMFileClass virtuals 0x65c5a6) */
   *((unsigned char *)this + 28) = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {

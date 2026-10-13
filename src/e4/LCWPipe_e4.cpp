@@ -17,7 +17,7 @@ int LCWPipe::Dtor()
   void *v3; // ecx
 
   v2 = (void *)this->u32_14; /*0x552063*/
-  *(unsigned int *)this->vtable1 = &LCWPipe::`vftable'; /*0x552066*/
+  /* X11: vtable install elided (implicit via LCWPipe virtuals 0x552066) */
   __3_YAXPAX_Z(v2); /*0x55206d*/
   v3 = (void *)*((unsigned int *)this + 6); /*0x552072*/
   *((unsigned int *)this + 5) = 0; /*0x552075*/

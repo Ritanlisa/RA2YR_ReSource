@@ -38,9 +38,9 @@ DiskLaserClass::DiskLaserClass()
   int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
-  *(unsigned int *)this->vtable1 = &DiskLaserClass::`vftable'; /*0x4a7a3a*/
+  /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a3a) */
   this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass::`vftable'; /*0x4a7a40*/
-  this->vtable3 = (int)&DiskLaserClass::`vftable'; /*0x4a7a47*/
+  /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a47) */
   this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass::`vftable'; /*0x4a7a4e*/
   this->q024 = 0; /*0x4a7a55*/
   this->q028 = 0; /*0x4a7a58*/
@@ -104,10 +104,10 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x4a7bb2*/
-      *(unsigned int *)aP0->vtable1 = (unsigned int)(&vt_DiskLaserClass); /*0x4a7bb7*/
-      aP0->vtable2 = (int)&vt_DiskLaserClass; /*0x4a7bbd*/
-      aP0->vtable3 = (int)&vt_DiskLaserClass; /*0x4a7bc4*/
-      aP0->vtable4 = (int)&vt_DiskLaserClass; /*0x4a7bcb*/
+      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bb7) */
+      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bbd) */
+      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bc4) */
+      /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7bcb) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_24); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x4a7be9*/

@@ -114,10 +114,10 @@ int  AlphaShapeClass::SD_vt05(int aP1)
     if ( this ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)this, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)this->vtable1 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
-      this->vtable2 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
-      this->vtable3 = (int)&vt_AlphaShapeClass; /*0x420e14*/
-      this->vtable4 = (int)&vt_AlphaShapeClass; /*0x420e1b*/
+      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e07) */
+      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e0d) */
+      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e14) */
+      /* X11: vtable install elided (implicit via AlphaShapeClass virtuals 0x420e1b) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,&this->q024); /*0x420e2b*/
     this->u32_38 = 0; /*0x420e30*/

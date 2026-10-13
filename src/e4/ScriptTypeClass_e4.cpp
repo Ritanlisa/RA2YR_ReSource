@@ -41,10 +41,10 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      aP0->vfptr = &vt_ScriptTypeClass; /*0x691db4*/
-      aP0->vfptr1 = &vt_ScriptTypeClass; /*0x691dba*/
-      aP0->vfptr2 = &vt_ScriptTypeClass; /*0x691dc1*/
-      aP0->vfptr3 = &vt_ScriptTypeClass; /*0x691dc8*/
+      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
+      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691dba) */
+      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691dc1) */
+      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691dc8) */
     }
     return 0; /*0x691dcf*/
   }

@@ -244,7 +244,7 @@ int E4Recv_490400::sub_490400()
   int result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &ConvertClass::`vftable'; /*0x490404*/
+  /* X11: vtable install elided (implicit via ConvertClass virtuals 0x490404) */
   COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
   __3_YAXPAX_Z(*(void **)((char *)this + 368)); /*0x490416*/
   v2 = *(void **)((char *)this + 376); /*0x49041b*/
@@ -5658,7 +5658,7 @@ int E4Recv_497470::sub_497470(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499ca9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499ca9) */
   if ( (a2 & 1) != 0 ) /*0x499caf*/
     operator delete((void *)(this)); /*0x499cb2*/
   return this; /*0x499cbc*/
@@ -5669,7 +5669,7 @@ BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499d49*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499d49) */
   if ( (a2 & 1) != 0 ) /*0x499d4f*/
     operator delete((void *)(this)); /*0x499d52*/
   return this; /*0x499d5c*/
@@ -5680,7 +5680,7 @@ std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499d69*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499d69) */
   if ( (a2 & 1) != 0 ) /*0x499d6f*/
     operator delete((void *)(this)); /*0x499d72*/
   return this; /*0x499d7c*/
@@ -5691,7 +5691,7 @@ std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 namespace gamemd {
 RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499d89*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499d89) */
   if ( (a2 & 1) != 0 ) /*0x499d8f*/
     operator delete((void *)(this)); /*0x499d92*/
   return this; /*0x499d9c*/
@@ -5702,7 +5702,7 @@ RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499dc9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499dc9) */
   if ( (a2 & 1) != 0 ) /*0x499dcf*/
     operator delete((void *)(this)); /*0x499dd2*/
   return this; /*0x499ddc*/
@@ -5713,7 +5713,7 @@ std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499de9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499de9) */
   if ( (a2 & 1) != 0 ) /*0x499def*/
     operator delete((void *)(this)); /*0x499df2*/
   return this; /*0x499dfc*/
@@ -5724,7 +5724,7 @@ std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e09*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499e09) */
   if ( (a2 & 1) != 0 ) /*0x499e0f*/
     operator delete((void *)(this)); /*0x499e12*/
   return this; /*0x499e1c*/
@@ -5735,7 +5735,7 @@ std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e29*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499e29) */
   if ( (a2 & 1) != 0 ) /*0x499e2f*/
     operator delete((void *)(this)); /*0x499e32*/
   return this; /*0x499e3c*/
@@ -5746,7 +5746,7 @@ RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a
 namespace gamemd {
 std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e49*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499e49) */
   if ( (a2 & 1) != 0 ) /*0x499e4f*/
     operator delete((void *)(this)); /*0x499e52*/
   return this; /*0x499e5c*/
@@ -5757,7 +5757,7 @@ std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e69*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499e69) */
   if ( (a2 & 1) != 0 ) /*0x499e6f*/
     operator delete((void *)(this)); /*0x499e72*/
   return this; /*0x499e7c*/
@@ -5768,7 +5768,7 @@ std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e89*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499e89) */
   if ( (a2 & 1) != 0 ) /*0x499e8f*/
     operator delete((void *)(this)); /*0x499e92*/
   return this; /*0x499e9c*/
@@ -5779,7 +5779,7 @@ std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499ea9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499ea9) */
   if ( (a2 & 1) != 0 ) /*0x499eaf*/
     operator delete((void *)(this)); /*0x499eb2*/
   return this; /*0x499ebc*/
@@ -5790,7 +5790,7 @@ std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499ec9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499ec9) */
   if ( (a2 & 1) != 0 ) /*0x499ecf*/
     operator delete((void *)(this)); /*0x499ed2*/
   return this; /*0x499edc*/
@@ -5801,7 +5801,7 @@ std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499ee9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499ee9) */
   if ( (a2 & 1) != 0 ) /*0x499eef*/
     operator delete((void *)(this)); /*0x499ef2*/
   return this; /*0x499efc*/
@@ -5812,7 +5812,7 @@ std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x499f09*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x499f09) */
   if ( (a2 & 1) != 0 ) /*0x499f0f*/
     operator delete((void *)(this)); /*0x499f12*/
   return this; /*0x499f1c*/
@@ -5823,7 +5823,7 @@ std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 namespace gamemd {
 BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499f29*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499f29) */
   if ( (a2 & 1) != 0 ) /*0x499f2f*/
     operator delete((void *)(this)); /*0x499f32*/
   return this; /*0x499f3c*/
@@ -5834,7 +5834,7 @@ BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499f49*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499f49) */
   if ( (a2 & 1) != 0 ) /*0x499f4f*/
     operator delete((void *)(this)); /*0x499f52*/
   return this; /*0x499f5c*/
@@ -5845,7 +5845,7 @@ std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 namespace gamemd {
 BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499f69*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499f69) */
   if ( (a2 & 1) != 0 ) /*0x499f6f*/
     operator delete((void *)(this)); /*0x499f72*/
   return this; /*0x499f7c*/
@@ -5856,7 +5856,7 @@ BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 namespace gamemd {
 BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499f89*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499f89) */
   if ( (a2 & 1) != 0 ) /*0x499f8f*/
     operator delete((void *)(this)); /*0x499f92*/
   return this; /*0x499f9c*/
@@ -5867,7 +5867,7 @@ BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 namespace gamemd {
 BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499fa9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499fa9) */
   if ( (a2 & 1) != 0 ) /*0x499faf*/
     operator delete((void *)(this)); /*0x499fb2*/
   return this; /*0x499fbc*/
@@ -5878,7 +5878,7 @@ BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 namespace gamemd {
 BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499fc9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499fc9) */
   if ( (a2 & 1) != 0 ) /*0x499fcf*/
     operator delete((void *)(this)); /*0x499fd2*/
   return this; /*0x499fdc*/
@@ -5889,7 +5889,7 @@ BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x499fe9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x499fe9) */
   if ( (a2 & 1) != 0 ) /*0x499fef*/
     operator delete((void *)(this)); /*0x499ff2*/
   return this; /*0x499ffc*/
@@ -5900,7 +5900,7 @@ std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 namespace gamemd {
 BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a009*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a009) */
   if ( (a2 & 1) != 0 ) /*0x49a00f*/
     operator delete((void *)(this)); /*0x49a012*/
   return this; /*0x49a01c*/
@@ -5911,7 +5911,7 @@ BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a029*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a029) */
   if ( (a2 & 1) != 0 ) /*0x49a02f*/
     operator delete((void *)(this)); /*0x49a032*/
   return this; /*0x49a03c*/
@@ -5922,7 +5922,7 @@ std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a049*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a049) */
   if ( (a2 & 1) != 0 ) /*0x49a04f*/
     operator delete((void *)(this)); /*0x49a052*/
   return this; /*0x49a05c*/
@@ -5933,7 +5933,7 @@ std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a069*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a069) */
   if ( (a2 & 1) != 0 ) /*0x49a06f*/
     operator delete((void *)(this)); /*0x49a072*/
   return this; /*0x49a07c*/
@@ -5944,7 +5944,7 @@ std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a089*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a089) */
   if ( (a2 & 1) != 0 ) /*0x49a08f*/
     operator delete((void *)(this)); /*0x49a092*/
   return this; /*0x49a09c*/
@@ -5955,7 +5955,7 @@ std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a0a9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a0a9) */
   if ( (a2 & 1) != 0 ) /*0x49a0af*/
     operator delete((void *)(this)); /*0x49a0b2*/
   return this; /*0x49a0bc*/
@@ -5966,7 +5966,7 @@ std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a0c9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a0c9) */
   if ( (a2 & 1) != 0 ) /*0x49a0cf*/
     operator delete((void *)(this)); /*0x49a0d2*/
   return this; /*0x49a0dc*/
@@ -5977,7 +5977,7 @@ std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a0e9*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a0e9) */
   if ( (a2 & 1) != 0 ) /*0x49a0ef*/
     operator delete((void *)(this)); /*0x49a0f2*/
   return this; /*0x49a0fc*/
@@ -5988,7 +5988,7 @@ std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a109*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a109) */
   if ( (a2 & 1) != 0 ) /*0x49a10f*/
     operator delete((void *)(this)); /*0x49a112*/
   return this; /*0x49a11c*/
@@ -5999,7 +5999,7 @@ std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a129*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a129) */
   if ( (a2 & 1) != 0 ) /*0x49a12f*/
     operator delete((void *)(this)); /*0x49a132*/
   return this; /*0x49a13c*/
@@ -6010,7 +6010,7 @@ std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 namespace gamemd {
 BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a149*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a149) */
   if ( (a2 & 1) != 0 ) /*0x49a14f*/
     operator delete((void *)(this)); /*0x49a152*/
   return this; /*0x49a15c*/
@@ -6021,7 +6021,7 @@ BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char
 namespace gamemd {
 std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a169*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a169) */
   if ( (a2 & 1) != 0 ) /*0x49a16f*/
     operator delete((void *)(this)); /*0x49a172*/
   return this; /*0x49a17c*/
@@ -6032,7 +6032,7 @@ std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 {
-  *(unsigned int *)this = &vt_Blitter; /*0x49a189*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a189) */
   if ( (a2 & 1) != 0 ) /*0x49a18f*/
     operator delete((void *)(this)); /*0x49a192*/
   return this; /*0x49a19c*/
@@ -6043,7 +6043,7 @@ std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7c9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a7c9) */
   if ( (a2 & 1) != 0 ) /*0x49a7cf*/
     operator delete((void *)(this)); /*0x49a7d2*/
   return this; /*0x49a7dc*/
@@ -6054,7 +6054,7 @@ std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7e9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a7e9) */
   if ( (a2 & 1) != 0 ) /*0x49a7ef*/
     operator delete((void *)(this)); /*0x49a7f2*/
   return this; /*0x49a7fc*/
@@ -6065,7 +6065,7 @@ std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a809*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a809) */
   if ( (a2 & 1) != 0 ) /*0x49a80f*/
     operator delete((void *)(this)); /*0x49a812*/
   return this; /*0x49a81c*/
@@ -6076,7 +6076,7 @@ std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a829*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a829) */
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
     operator delete((void *)(this)); /*0x49a832*/
   return this; /*0x49a83c*/
@@ -6087,7 +6087,7 @@ RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a
 namespace gamemd {
 std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a849*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a849) */
   if ( (a2 & 1) != 0 ) /*0x49a84f*/
     operator delete((void *)(this)); /*0x49a852*/
   return this; /*0x49a85c*/
@@ -6098,7 +6098,7 @@ std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a869*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a869) */
   if ( (a2 & 1) != 0 ) /*0x49a86f*/
     operator delete((void *)(this)); /*0x49a872*/
   return this; /*0x49a87c*/
@@ -6109,7 +6109,7 @@ std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a889*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a889) */
   if ( (a2 & 1) != 0 ) /*0x49a88f*/
     operator delete((void *)(this)); /*0x49a892*/
   return this; /*0x49a89c*/
@@ -6120,7 +6120,7 @@ std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8a9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a8a9) */
   if ( (a2 & 1) != 0 ) /*0x49a8af*/
     operator delete((void *)(this)); /*0x49a8b2*/
   return this; /*0x49a8bc*/
@@ -6131,7 +6131,7 @@ std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8c9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a8c9) */
   if ( (a2 & 1) != 0 ) /*0x49a8cf*/
     operator delete((void *)(this)); /*0x49a8d2*/
   return this; /*0x49a8dc*/
@@ -6142,7 +6142,7 @@ std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8e9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a8e9) */
   if ( (a2 & 1) != 0 ) /*0x49a8ef*/
     operator delete((void *)(this)); /*0x49a8f2*/
   return this; /*0x49a8fc*/
@@ -6153,7 +6153,7 @@ std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a909*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a909) */
   if ( (a2 & 1) != 0 ) /*0x49a90f*/
     operator delete((void *)(this)); /*0x49a912*/
   return this; /*0x49a91c*/
@@ -6164,7 +6164,7 @@ std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a929*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a929) */
   if ( (a2 & 1) != 0 ) /*0x49a92f*/
     operator delete((void *)(this)); /*0x49a932*/
   return this; /*0x49a93c*/
@@ -6175,7 +6175,7 @@ std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a949*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a949) */
   if ( (a2 & 1) != 0 ) /*0x49a94f*/
     operator delete((void *)(this)); /*0x49a952*/
   return this; /*0x49a95c*/
@@ -6186,7 +6186,7 @@ std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a969*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a969) */
   if ( (a2 & 1) != 0 ) /*0x49a96f*/
     operator delete((void *)(this)); /*0x49a972*/
   return this; /*0x49a97c*/
@@ -6197,7 +6197,7 @@ std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 {
-  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a989*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a989) */
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
     operator delete((void *)(this)); /*0x49a992*/
   return this; /*0x49a99c*/

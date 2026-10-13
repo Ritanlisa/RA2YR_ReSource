@@ -202,11 +202,11 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
   }
   while ( v4 ); /*0x6a4f64*/
   Timer::Init((DWORD *)((char *)this + 5376), 0); /*0x6a4f6d*/
-  *(unsigned int *)this = &vt_RadarClass; /*0x6a4f78*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x6a4f78) */
   AudioController::Init((unsigned int *)((char *)this + 5312)); /*0x6a4f7e*/
   *((unsigned int *)this + 1352) = TimerGetTicks(); /*0x6a4f8e*/
   *((unsigned int *)this + 1354) = 0; /*0x6a4f94*/
-  *(unsigned int *)this = &vt_PowerClass; /*0x6a4f9a*/
+  /* X11: vtable install elided (implicit via PowerClass virtuals 0x6a4f9a) */
   v5 = (char *)this + 5444; /*0x6a4fa0*/
   v6 = 4; /*0x6a4fa6*/
   do /*0x6a4fdf*/
@@ -222,7 +222,7 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
     --v6; /*0x6a4fde*/
   }
   while ( v6 ); /*0x6a4fdf*/
-  *(unsigned int *)this = &vt_SidebarClass; /*0x6a4fe1*/
+  /* X11: vtable install elided (implicit via SidebarClass virtuals 0x6a4fe1) */
   return this; /*0x6a4fe9*/
 
 }
@@ -354,7 +354,7 @@ char* Gap2Recv_6AC840::System_Init_6AC840(int a2) {
   *((unsigned char *)this + 4556) = 0; /*0x6ac84f*/
   *((unsigned char *)this + 4557) = 0; /*0x6ac855*/
   *((unsigned char *)this + 4558) = 0; /*0x6ac85b*/
-  *(unsigned int *)this = &vt_DisplayClass; /*0x6ac861*/
+  /* X11: vtable install elided (implicit via DisplayClass virtuals 0x6ac861) */
   return this; /*0x6ac869*/
 
 }
@@ -373,7 +373,7 @@ void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
   this->Capacity = a2; /*0x6ac8e1*/
   this->IsInitialized = 1; /*0x6ac8e4*/
   this->IsAllocated = 0; /*0x6ac8e8*/
-  this->vtable0 = &vt_VectorClass; /*0x6ac8ec*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6ac8ec) */
   if ( a2 ) /*0x6ac8f2*/
   {
     if ( a3 ) /*0x6ac8fa*/
@@ -389,7 +389,7 @@ void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
       this->IsAllocated = 1; /*0x6ac926*/
     }
   }
-  this->vtable0 = &vt_DynamicVectorClass; /*0x6ac92a*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6ac92a) */
   *((unsigned int *)this + 5) = 10; /*0x6ac930*/
   *((unsigned int *)this + 4) = 0; /*0x6ac937*/
   return &this->vtable0; /*0x6ac940*/

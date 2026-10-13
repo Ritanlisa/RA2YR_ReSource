@@ -35,7 +35,7 @@ int LinkClass::Destruct()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  *(unsigned int *)this->vtable1 = &LinkClass::`vftable'; /*0x5565a5*/
+  /* X11: vtable install elided (implicit via LinkClass virtuals 0x5565a5) */
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
   m_Prev = this->m_Prev; /*0x5565ba*/

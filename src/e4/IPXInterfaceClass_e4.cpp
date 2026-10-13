@@ -770,7 +770,7 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   void *v3; // eax
 
   v3 = *&this->Initialized; /*0x7b2b53*/
-  *(unsigned int *)this->vtable1 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b2b56*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x7b2b56) */
   if ( v3 && BYTE1(this->m_C) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/

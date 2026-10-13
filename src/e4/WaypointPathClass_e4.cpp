@@ -35,9 +35,9 @@ int WaypointPathClass::Init()
   this->waypoints[5] = 10; /*0x763755*/
   this->waypoints[4] = 0; /*0x76375c*/
   this->AbstractClass = &WaypointPathClass::`vftable'; /*0x76375f*/
-  this->vtable2 = &WaypointPathClass::`vftable'; /*0x763765*/
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763765) */
   this->? = &WaypointPathClass::`vftable'; /*0x76376c*/
-  this->vtable4 = &WaypointPathClass::`vftable'; /*0x763773*/
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763773) */
   if ( dword_B72618 < dword_B72610 /*0x7637ac*/
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
@@ -68,10 +68,10 @@ int WaypointPathClass::Construct(unsigned int aP1)
   this->waypoints = &vt_DynamicVectorClass; /*0x763832*/
   this->waypointCapacity = 10; /*0x763839*/
   this->waypointCount = 0; /*0x763840*/
-  *(unsigned int *)this = &vt_WaypointPathClass; /*0x763845*/
-  this->vtable2 = &vt_WaypointPathClass; /*0x76384b*/
-  this->vtable3 = &vt_WaypointPathClass; /*0x763852*/
-  this->vtable4 = &vt_WaypointPathClass; /*0x763859*/
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763845) */
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x76384b) */
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763852) */
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763859) */
   if ( aP1 < 0xC /*0x76389a*/
     && (dword_B72618 < dword_B72610
      || (byte_B72615 || !dword_B72610)
@@ -116,11 +116,11 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      v2[1].vfptr1 = &vt_DynamicVectorClass; /*0x763ca0*/
-      v2->vfptr = &vt_WaypointPathClass; /*0x763ca7*/
-      v2->vfptr1 = &vt_WaypointPathClass; /*0x763cad*/
-      v2->vfptr2 = &vt_WaypointPathClass; /*0x763cb4*/
-      v2->vfptr3 = &vt_WaypointPathClass; /*0x763cbb*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x763ca0) */
+      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763ca7) */
+      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763cad) */
+      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763cb4) */
+      /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763cbb) */
     }
     result = (*(int (__stdcall **)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
@@ -129,7 +129,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       if ( p_vtable1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vtable1, 0, 0); /*0x763ce3*/
-        p_vtable1->vfptr = &vt_DynamicVectorClass; /*0x763ce8*/
+        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x763ce8) */
         p_vtable1->abstractFlags = 10; /*0x763cee*/
         p_vtable1->uniqueId = 0; /*0x763cf5*/
       }
@@ -343,7 +343,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
 
   this->AbstractClass = &WaypointPathClass::`vftable'; /*0x763e26*/
   this->? = &WaypointPathClass::`vftable'; /*0x763e2c*/
-  this->vtable3 = &WaypointPathClass::`vftable'; /*0x763e33*/
+  /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e33) */
   this->? = &WaypointPathClass::`vftable'; /*0x763e3a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x763e41*/
   v6 = this; /*0x763e56*/

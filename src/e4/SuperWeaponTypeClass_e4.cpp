@@ -292,7 +292,7 @@ int SuperWeaponTypeClass::Construct(char *aP1)
   this->AbstractTypeClass = &HouseTypeClass::`vftable'; /*0x511572*/
   this->WarheadTypeClass_1A8 = &HouseTypeClass::`vftable'; /*0x511578*/
   this->? = &HouseTypeClass::`vftable'; /*0x51157f*/
-  this->vtable4 = &HouseTypeClass::`vftable'; /*0x511586*/
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511586) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x51158d*/
   *((unsigned char *)this + 416) = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
@@ -645,7 +645,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
 
   this->AbstractTypeClass = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
   this->? = &SuperWeaponTypeClass::`vftable'; /*0x6ceff3*/
-  this->vtable3 = &SuperWeaponTypeClass::`vftable'; /*0x6ceffa*/
+  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceffa) */
   this->? = &SuperWeaponTypeClass::`vftable'; /*0x6cf001*/
   v5 = this; /*0x6cf00f*/
   v3 = (*(int (**)(unsigned int *, SuperWeaponTypeClass **))(dword_A8E330 + 16))(&dword_A8E330, &v5); /*0x6cf013*/
@@ -790,10 +790,10 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
   this->ManualControl_d = 0; /*0x6ce654*/
   this->Range_d = 0; /*0x6ce65a*/
   this->LineMultiplier_d = 0; /*0x6ce660*/
-  *(unsigned int *)this = &vt_SuperWeaponTypeClass; /*0x6ce666*/
-  this->vtable2 = &vt_SuperWeaponTypeClass; /*0x6ce66d*/
-  this->vtable3 = &vt_SuperWeaponTypeClass; /*0x6ce673*/
-  this->vtable4 = &vt_SuperWeaponTypeClass; /*0x6ce67a*/
+  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce666) */
+  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce66d) */
+  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce673) */
+  /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce67a) */
   this->vtable2.GenerateUniqueID(); /*0x6ce681*/
   this->ArrayIndex = dword_A8E340; /*0x6ce68c*/
   if ( dword_A8E340 < dword_A8E338 /*0x6ce6c4*/
@@ -843,10 +843,10 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init((int)a1, (int)&v4); /*0x6ce82c*/
       a1->SidebarImage = 0; /*0x6ce831*/
-      a1->vfptr = &vt_SuperWeaponTypeClass; /*0x6ce83b*/
-      a1->vfptr1 = &vt_SuperWeaponTypeClass; /*0x6ce841*/
-      a1->vfptr2 = &vt_SuperWeaponTypeClass; /*0x6ce848*/
-      a1->vfptr3 = &vt_SuperWeaponTypeClass; /*0x6ce84f*/
+      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce83b) */
+      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce841) */
+      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce848) */
+      /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ce84f) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->WeaponType); /*0x6ce862*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->AuxBuilding); /*0x6ce873*/

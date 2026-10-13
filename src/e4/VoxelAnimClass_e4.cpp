@@ -122,10 +122,10 @@ int VoxelAnimClass::CleanupMembers(void *a1)
   int v4; // eax
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  a1->vtable1 = &vt_VoxelAnimClass; /*0x7499f6*/
-  a1->vtable2 = (int)&vt_VoxelAnimClass; /*0x7499fc*/
-  a1->vtable3 = &vt_VoxelAnimClass; /*0x749a03*/
-  *(unsigned int *)a1->vtable4 = &vt_VoxelAnimClass; /*0x749a0a*/
+  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x7499f6) */
+  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x7499fc) */
+  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x749a03) */
+  /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x749a0a) */
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, 1); /*0x749a11*/
   v6 = a1; /*0x749a26*/
   v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&VoxelAnimClass_Array + 16))( /*0x749a2a*/

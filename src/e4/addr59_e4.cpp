@@ -610,7 +610,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   int v17; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(&v15, 0, 0); /*0x595cef*/
-  v15.vfptr = &vt_DynamicVectorClass; /*0x595cf4*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x595cf4) */
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)operator new(0x140u); /*0x595d19*/
@@ -746,7 +746,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
     }
     while ( !v12 ); /*0x595f85*/
   }
-  v15.vfptr = &vt_VectorClass; /*0x595f89*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x595f89) */
   if ( Items ) /*0x595f91*/
   {
     if ( v15.IsAllocated ) /*0x595f99*/
@@ -876,10 +876,10 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     g_MissionQueueFrame.briefing[450] = 0; /*0x5962b2*/
   }
   LABEL_39:
-  *(unsigned int *)v18.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x5962b8*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5962b8) */
   v20 = 0; /*0x5962c7*/
   Vector::Clear((int)v19); /*0x5962ce*/
-  *(unsigned int *)v18.vtable1 = (unsigned int)(&off_7E1668); /*0x5962d7*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5962d7) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v18))->Dtor(); /*0x5962df*/
   *(unsigned int *)v17.__pad_000 = &vt_rc_ptr; /*0x5962e8*/
   return (unsigned int *)(ComPtr::Release(&v17)); /*0x5962f5*/

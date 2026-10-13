@@ -319,7 +319,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
   this->AbstractTypeClass = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
   this->? = &ObjectTypeClass::`vftable'; /*0x5f73df*/
-  this->vtable3 = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73e6) */
   this->? = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 
@@ -337,9 +337,9 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   int v6; // ebx
   int v8; // [esp+Ch] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f740b) */
   *((unsigned int *)this + 1) = &ObjectTypeClass::`vftable'; /*0x5f7411*/
-  this->vtable3 = &ObjectTypeClass::`vftable'; /*0x5f7418*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7418) */
   *((unsigned int *)this + 3) = &ObjectTypeClass::`vftable'; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/

@@ -704,10 +704,10 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v6 = (void *)operator new(4 * Buffer); /*0x5bb435*/
     v15.__pad_004 = 0; /*0x5bb437*/
     v15.q008 = 0; /*0x5bb448*/
-    *(unsigned int *)v15.vtable1 = &vt_Pipe; /*0x5bb44c*/
+    /* X11: vtable install elided (implicit via Pipe virtuals 0x5bb44c) */
     Buffer::Init((Buffer *)&v15.q00C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
-    *(unsigned int *)v15.vtable1 = &vt_BufferPipe; /*0x5bb467*/
+    /* X11: vtable install elided (implicit via BufferPipe virtuals 0x5bb467) */
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate(&v19, (int)&v15); /*0x5bb47d*/
     v7 = Compression::Read((int *)v19.vtable1, v5, Buffer); /*0x5bb499*/
@@ -1327,11 +1327,11 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15->q048 = 0; /*0x5bfb11*/
   v16 = CCFileClass::Construct(&v53, Source); /*0x5bfb14*/
   v17 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x5bfb1e*/
-  *(unsigned int *)v53.vtable1 = &vt_CCFileClass; /*0x5bfb2a*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5bfb2a) */
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
   Vector::Clear((int)v54); /*0x5bfb3e*/
-  *(unsigned int *)v53.vtable1 = &off_7E1668; /*0x5bfb47*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5bfb47) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v53))->Dtor(); /*0x5bfb4f*/
   if ( v45 ) /*0x5bfb58*/
     return 0; /*0x5bfb58*/
@@ -3444,7 +3444,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
 
   SmallFunc_692290((int)this); /*0x5bda43*/
-  this->vfptr = &MouseClass::`vftable'; /*0x5bda4a*/
+  /* X11: vtable install elided (implicit via MouseClass virtuals 0x5bda4a) */
   *((unsigned char *)this + 21852) = 0; /*0x5bda50*/
   *((unsigned int *)this + 5464) = 0; /*0x5bda56*/
   *((unsigned int *)this + 5465) = 0; /*0x5bda5c*/

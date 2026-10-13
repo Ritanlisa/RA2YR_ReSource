@@ -634,7 +634,7 @@ void* Gap2Recv_5AD9F0::Map_Cleanup(int a2, int a3) {
   this->Capacity = a2; /*0x5ad9fe*/
   this->IsInitialized = 1; /*0x5ada01*/
   this->IsAllocated = 0; /*0x5ada05*/
-  this->vtable0 = &vt_VectorClass; /*0x5ada08*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ada08) */
   if ( a2 ) /*0x5ada0e*/
   {
     if ( a3 ) /*0x5ada16*/

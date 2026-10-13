@@ -183,7 +183,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     VectorClass::Construct(&v22, 0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
     v23 = 0; /*0x525488*/
-    v22.vfptr = &vt_TypeList; /*0x52548c*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x52548c) */
     for ( i = (ObjectClass *)strtok(String, Str); i; i = (ObjectClass *)strtok(0, Str) ) /*0x52549e*/
     {
       if ( !(i->vtable1) ) /*0x5254a0*/
@@ -212,7 +212,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     Items = v22.Items; /*0x52552f*/
     v18 = v22.Items == 0; /*0x525533*/
     *(unsigned int *)(a1 + 20) = v16; /*0x525535*/
-    v22.vfptr = &vt_VectorClass; /*0x525538*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x525538) */
     if ( !v18 && v22.IsAllocated ) /*0x525542*/
     {
       operator delete((void *)(Items)); /*0x525545*/
@@ -1290,7 +1290,7 @@ LABEL_89:
   {
     Debug::Log();
 LABEL_93:
-    *aP1->vtable1 = (unsigned int)&vt_CCFileClass;
+    /* X11: vtable install elided (implicit via CCFileClass virtuals) */
 LABEL_94:
     int v93 = 0;
   unsigned char v92[12]; // [esp+ACh] [ebp-2E94h] BYREF
@@ -1314,22 +1314,22 @@ LABEL_94:
   if ( !((CCFileClass *)(&v94))->Open(0) )
   {
     Debug::Log();
-    *v94->vtable1 = (unsigned int)&vt_CCFileClass;
+    /* X11: vtable install elided (implicit via CCFileClass virtuals) */
     v96 = 0;
     ((Vector *)((int)v95))->Clear((int)((Vector *)((int)v95)));
     ((BufferIOFileClass *)(&v94))->Destruct();
     HashTable_flat::DestroyHashTableINIClass( (void *)(v97));
-    *aP1->vtable1 = (unsigned int)&vt_CCFileClass;
+    /* X11: vtable install elided (implicit via CCFileClass virtuals) */
     goto LABEL_94;
   }
   INIClass::INIClass(&v99);
   v99.ownsFile = 0;
-  *v99->vtable1 = (unsigned int)&CCINIClass_Vtable;
+  /* X11: vtable install elided (implicit via CCINIClass virtuals) */
   if ( !((CCINIClass *)(&v99))->Load( (int)(&v94), 0, 0) )
   {
     Debug::Log();
     HashTable_flat::DestroyHashTableINIClass((void **)&v99);
-    *v94->vtable1 = (unsigned int)&vt_CCFileClass;
+    /* X11: vtable install elided (implicit via CCFileClass virtuals) */
     v96 = 0;
     ((Vector *)((int)v95))->Clear((int)((Vector *)((int)v95)));
     ((BufferIOFileClass *)(&v94))->Destruct();
@@ -1502,7 +1502,7 @@ void InitRules()
     {
       INIClass::INIClass(v3); /*0x52ce03*/
       v4->ownsFile = 0; /*0x52ce08*/
-      *(unsigned int *)v4->vtable1 = &CCINIClass_Vtable; /*0x52ce0b*/
+      /* X11: vtable install elided (implicit via CCINIClass virtuals 0x52ce0b) */
     }
     else
     {
@@ -1545,10 +1545,10 @@ void InitRules()
       ++*(unsigned int *)dwInitParam.__tail_10; /*0x52ce9b*/
     }
   LABEL_24:
-    *(unsigned int *)v19.vtable1 = &vt_CCFileClass; /*0x52cee4*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52cee4) */
     v21 = 0; /*0x52cef3*/
     Vector::Clear((int)v20); /*0x52cefa*/
-    *(unsigned int *)v19.vtable1 = &off_7E1668; /*0x52cf03*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52cf03) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x52cf0b*/
   }
   while ( FindNextFileA(FirstFileA, &FindFileData) ); /*0x52cf19*/
@@ -1563,7 +1563,7 @@ void InitRules()
     {
       INIClass::INIClass(v7); /*0x52cf58*/
       v8->ownsFile = 0; /*0x52cf5d*/
-      *(unsigned int *)v8->vtable1 = &CCINIClass_Vtable; /*0x52cf60*/
+      /* X11: vtable install elided (implicit via CCINIClass virtuals 0x52cf60) */
     }
     else
     {
@@ -1590,10 +1590,10 @@ void InitRules()
       v9 = *(unsigned int *)dwInitParam.__tail_10; /*0x52cfa9*/
       goto LABEL_36; /*0x52cfa9*/
     }
-    *(unsigned int *)v19.vtable1 = &vt_CCFileClass; /*0x52cfe1*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52cfe1) */
     v21 = 0; /*0x52cfe5*/
     Vector::Clear((int)v20); /*0x52cfec*/
-    *(unsigned int *)v19.vtable1 = &off_7E1668; /*0x52cffa*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52cffa) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x52cffe*/
   }
   if ( *(int *)dwInitParam.__tail_10 <= 0 ) /*0x52d013*/
@@ -1606,10 +1606,10 @@ void InitRules()
   if ( !CCINIClass::Load((CCINIClass *)&DataGlobal_887180, (int)&v22, 0, 0) ) /*0x52d053*/
   {
     Debug::Log(); /*0x52d061*/
-    *(unsigned int *)v22.vtable1 = &vt_CCFileClass; /*0x52d070*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52d070) */
     v24 = 0; /*0x52d077*/
     Vector::Clear((int)v23); /*0x52d07e*/
-    *(unsigned int *)v22.vtable1 = &off_7E1668; /*0x52d08a*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52d08a) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d091*/
     *(unsigned int *)dwInitParam = &vt_VectorClass; /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d0a2*/
@@ -1655,19 +1655,19 @@ void InitRules()
   {
     INIClass::INIClass((INIClass *)&v19); /*0x52d24f*/
     v19.ownsFile = 0; /*0x52d25b*/
-    *(unsigned int *)v19.vtable1 = &CCINIClass_Vtable; /*0x52d267*/
+    /* X11: vtable install elided (implicit via CCINIClass virtuals 0x52d267) */
     if ( CCINIClass::Load(&v19, (int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
-      *(unsigned int *)v25.vtable1 = &vt_CCFileClass; /*0x52d28d*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52d28d) */
       v27 = 0; /*0x52d294*/
       Vector::Clear((int)v26); /*0x52d29b*/
-      *(unsigned int *)v25.vtable1 = &off_7E1668; /*0x52d2a7*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52d2a7) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v25))->Dtor(); /*0x52d2ae*/
-      *(unsigned int *)v22.vtable1 = &vt_CCFileClass; /*0x52d2ba*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52d2ba) */
       v24 = 0; /*0x52d2c1*/
       Vector::Clear((int)v23); /*0x52d2c8*/
-      *(unsigned int *)v22.vtable1 = &off_7E1668; /*0x52d2d4*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52d2d4) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d2db*/
       *(unsigned int *)dwInitParam = &vt_VectorClass; /*0x52d2e4*/
       if ( *(unsigned int *)&DataGlobal_B72F58 ) /*0x52d2ee*/
@@ -1698,20 +1698,20 @@ void InitRules()
   }
   CCFileClass::Construct(&v28, aAimdIni); /*0x52d363*/
   CCINIClass::Load((CCINIClass *)&CCINIClass_INI_AI, (int)&v28, 1, 0); /*0x52d378*/
-  *(unsigned int *)v28.vtable1 = &vt_CCFileClass; /*0x52d384*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52d384) */
   v29[3] = 0; /*0x52d38b*/
   Vector::Clear((int)v29); /*0x52d392*/
-  *(unsigned int *)v28.vtable1 = &off_7E1668; /*0x52d39e*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52d39e) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v28))->Dtor(); /*0x52d3a5*/
-  *(unsigned int *)v25.vtable1 = &vt_CCFileClass; /*0x52d3b1*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52d3b1) */
   v27 = 0; /*0x52d3b8*/
   Vector::Clear((int)v26); /*0x52d3bf*/
-  *(unsigned int *)v25.vtable1 = &off_7E1668; /*0x52d3cb*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52d3cb) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v25))->Dtor(); /*0x52d3d2*/
-  *(unsigned int *)v22.vtable1 = &vt_CCFileClass; /*0x52d3de*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x52d3de) */
   v24 = 0; /*0x52d3e5*/
   Vector::Clear((int)v23); /*0x52d3ec*/
-  *(unsigned int *)v22.vtable1 = &off_7E1668; /*0x52d3f8*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x52d3f8) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v22))->Dtor(); /*0x52d3ff*/
   *(unsigned int *)dwInitParam = &vt_VectorClass; /*0x52d408*/
   if ( *(unsigned int *)&DataGlobal_B72F58 && (((unsigned char *)&(dwInitParam.m_C))[1]) ) /*0x52d418*/
@@ -3356,7 +3356,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   void *v7; // [esp-8h] [ebp-10h]
 
   v2 = (void *)this->u32_C; /*0x52aaf4*/
-  *(unsigned int *)this = &vt_INIClassINIEntry; /*0x52aaf7*/
+  /* X11: vtable install elided (implicit via INIClassINIEntry virtuals 0x52aaf7) */
   free(v2); /*0x52aafe*/
   v7 = (void *)this->ptr_10; /*0x52ab08*/
   this->u32_C = 0; /*0x52ab09*/
@@ -3376,7 +3376,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   }
   free(*&this->u32_18); /*0x52ab47*/
   this->u32_18 = 0; /*0x52ab51*/
-  *(unsigned int *)this = &vt_GenericNode; /*0x52ab54*/
+  /* X11: vtable install elided (implicit via GenericNode virtuals 0x52ab54) */
   if ( this ) /*0x52ab5a*/
   {
     v5 = this->ptr_10; /*0x52ab5c*/

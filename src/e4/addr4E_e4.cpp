@@ -103,7 +103,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  this->vtable0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x4e0a1c) */
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -152,7 +152,7 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x4e0a8a) */
   this->u32_14 = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
   return &this->vtable0; /*0x4e0aa0*/
@@ -2420,7 +2420,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = this->M48; /*0x4e2a79*/
-  *(unsigned int *)this->vfptr = &GaugeClass::`vftable'; /*0x4e2a83*/
+  /* X11: vtable install elided (implicit via GaugeClass virtuals 0x4e2a83) */
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/

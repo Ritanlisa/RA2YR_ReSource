@@ -43,9 +43,9 @@ NeuronClass::NeuronClass()
   this->u32_28 = 0; /*0x43a35f*/
   this->u32_2C = 0; /*0x43a366*/
   this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
-  *(unsigned int *)this->vtable1 = &NeuronClass::`vftable'; /*0x43a375*/
+  /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a375) */
   this->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a37b*/
-  this->vtable3 = (int)&NeuronClass::`vftable'; /*0x43a382*/
+  /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a382) */
   this->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a389*/
   if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
     || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)

@@ -851,7 +851,7 @@ TActionClass::TActionClass()
   *&this->TActionClass_field_54 = 0; /*0x71e6be*/
   this->AbstractClass = &TEventClass::`vftable'; /*0x71e6c1*/
   this->? = &TEventClass::`vftable'; /*0x71e6c7*/
-  this->vtable3 = &TEventClass::`vftable'; /*0x71e6ce*/
+  /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6ce) */
   this->? = &TEventClass::`vftable'; /*0x71e6d5*/
   v2 = g_BuildingLoadQueue_Array.?[54]; /*0x71e6dc*/
   if ( g_BuildingLoadQueue_Array.?[54] < g_BuildingLoadQueue_Array.?[52] /*0x71e71a*/
@@ -1674,10 +1674,10 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e3dcf*/
-      aP0->vfptr = &vt_TActionClass; /*0x6e3dd4*/
-      aP0->vfptr1 = &vt_TActionClass; /*0x6e3dda*/
-      aP0->vfptr2 = &vt_TActionClass; /*0x6e3de1*/
-      aP0->vfptr3 = &vt_TActionClass; /*0x6e3de8*/
+      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3dd4) */
+      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3dda) */
+      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3de1) */
+      /* X11: vtable install elided (implicit via TActionClass virtuals 0x6e3de8) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_53A0); /*0x6e3e06*/

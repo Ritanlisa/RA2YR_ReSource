@@ -938,7 +938,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
   this->M48 = 0; /*0x4f34a7*/
   unknown_libname_73this->q084 + 76); /*0x4f34aa*/
   a9 = a9; /*0x4f34af*/
-  *(unsigned int *)this = &vt_GraphicMenuImageItem; /*0x4f34b3*/
+  /* X11: vtable install elided (implicit via GraphicMenuImageItem virtuals 0x4f34b3) */
   if ( String::Length(a9) && (a3 = operator new(0x10u)) != 0 ) /*0x4f34d4*/
   {
     ((String *)((char **)&a2))->Assign(aHighlightsound); /*0x4f34df*/
@@ -1522,7 +1522,7 @@ int sub_4F1B80(char ** a1, int a2)
     memset(&v6.needsSave_flag, 0, 13); /*0x4f1c24*/
     v6.unknown38 = 0; /*0x4f1c34*/
     v6.INIClass_field_3C = 0; /*0x4f1c38*/
-    *(unsigned int *)v6.vtable1 = &vt_INIClass; /*0x4f1c3c*/
+    /* X11: vtable install elided (implicit via INIClass virtuals 0x4f1c3c) */
     if ( FileStraw::Open((FileStraw *)&v6, (int)&v7, 0) <= 0 ) /*0x4f1c4b*/
       v4 = 0; /*0x4f1c5c*/
     else
@@ -1642,7 +1642,7 @@ unsigned int VectorClass::sub_4F2C00(int a2, int a3)
   this->Capacity = a2; /*0x4f2c0e*/
   this->IsInitialized = 1; /*0x4f2c11*/
   this->IsAllocated = 0; /*0x4f2c15*/
-  this->vfptr = &vt_VectorClass; /*0x4f2c18*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x4f2c18) */
   if ( a2 ) /*0x4f2c1e*/
   {
     if ( a3 ) /*0x4f2c26*/
@@ -1690,7 +1690,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   this->u32_20 = 0; /*0x4f2f4d*/
   this->M28 = v10; /*0x4f2f50*/
   this->u32_24 = 0; /*0x4f2f5a*/
-  *(unsigned int *)this->vfptr = &GraphicMenuAnimItem::`vftable'; /*0x4f2f5d*/
+  /* X11: vtable install elided (implicit via GraphicMenuAnimItem virtuals 0x4f2f5d) */
   CCFileClass::Construct2((CCFileClass *)&v15.estimatedHealth, a6); /*0x4f2f63*/
   CCFileClass::Construct2((CCFileClass *)&v15.?, a7); /*0x4f2f74*/
   if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v15.estimatedHealth, 0) ) /*0x4f2f81*/
@@ -1713,7 +1713,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   v15.? = &CCFileClass::`vftable'; /*0x4f3011*/
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
-  v15.vtable2 = &off_7E1668; /*0x4f3027*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4f3027) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.?); /*0x4f302b*/
   v15.estimatedHealth = (int)&CCFileClass::`vftable'; /*0x4f3037*/
   v17 = 0; /*0x4f303e*/
@@ -1784,7 +1784,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   v3->uniqueId = (int)&vt_DynamicVectorClass; /*0x4f3c6b*/
   v3->occupant = 10; /*0x4f3c71*/
   v3->NeedsSaveOrLink = 0; /*0x4f3c78*/
-  v3->vfptr = &vt_GraphicMenuShortcutItem; /*0x4f3c7b*/
+  /* X11: vtable install elided (implicit via GraphicMenuShortcutItem virtuals 0x4f3c7b) */
   unknown_libname_73(&a2); /*0x4f3c82*/
   v5 = String::Tokenize((String *)a3, 0, Str, (void **)&a2); /*0x4f3c9f*/
   if ( String::Length((String *)&a2) ) /*0x4f3ca1*/

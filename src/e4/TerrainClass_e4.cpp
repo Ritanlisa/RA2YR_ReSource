@@ -1153,10 +1153,10 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
     if ( v2 ) /*0x71ce8a*/
     {
       ((ObjectClass *)(v2))->Init((int)&a1); /*0x71ce93*/
-      v2->vtable1 = &vt_TerrainClass; /*0x71ce98*/
+      /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71ce98) */
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
-      v2->vtable1 = (unsigned int)&vt_TerrainClass; /*0x71cea5*/
-      v2->vtable1 = (unsigned int)&vt_TerrainClass; /*0x71ceac*/
+      /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71cea5) */
+      /* X11: vtable install elided (implicit via TerrainClass virtuals 0x71ceac) */
     }
     v14 = (*((int (**)(void **))*p_vtable1 + 4))( (void **)(p_vtable1)); /*0x71cebf*/
     vtable2 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x71cec1*/

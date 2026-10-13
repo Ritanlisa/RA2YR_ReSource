@@ -687,19 +687,19 @@ int Game::MakeScreenshot(int a1)
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
           v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x537d3b*/
-          *(unsigned int *)v19.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x537d3d*/
+          /* X11: vtable install elided (implicit via CCFileClass virtuals 0x537d3d) */
           v21 = 0; /*0x537d48*/
           Vector::Clear((int)v20); /*0x537d4f*/
-          *(unsigned int *)v19.vtable1 = (unsigned int)(&off_7E1668); /*0x537d5b*/
+          /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x537d5b) */
           ((BufferIOFileClass *)((BufferIOFileClass *)&v19))->Dtor(); /*0x537d66*/
         }
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
         CompressScreenshot((int *)v16.vtable1, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
-        *(unsigned int *)v16.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x537d9b*/
+        /* X11: vtable install elided (implicit via CCFileClass virtuals 0x537d9b) */
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
-        *(unsigned int *)v16.vtable1 = (unsigned int)(&off_7E1668); /*0x537db3*/
+        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x537db3) */
         return ((BufferIOFileClass *)((BufferIOFileClass *)&v16))->Dtor(); /*0x537dbb*/
       }
     }

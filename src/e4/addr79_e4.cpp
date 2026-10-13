@@ -5443,13 +5443,13 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
           {
             case 1794: /*0x79ed73*/
               SimpleDialogControl::Constructor((SimpleDialogControl *)&v39.vtable2); /*0x79edc9*/
-              *(unsigned int *)&v39.vtable2 = &off_7F7624; /*0x79ede2*/
+              /* X11: vtable install elided (implicit via off_7F7624 virtuals 0x79ede2) */
               RunDialog( /*0x79ede6*/
                 0x115u,
                 (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameSetupDlgProcWOL,
                 (LPARAM)&v39.vtable2);
               FillBuddyListWOL((ObjectClass *)hWnd); /*0x79eded*/
-              *(unsigned int *)&v39.vtable2 = &off_7F7624; /*0x79edf6*/
+              /* X11: vtable install elided (implicit via off_7F7624 virtuals 0x79edf6) */
               OwnerDrawControl::InitVtable((OwnerDrawControl *)&v39.vtable2); /*0x79edfa*/
               return 0; /*0x79ee08*/
             case 1795: /*0x79ed73*/

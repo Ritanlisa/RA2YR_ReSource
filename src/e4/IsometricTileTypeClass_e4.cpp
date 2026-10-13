@@ -292,7 +292,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->vtable3 = a2; /*0x54a85e*/
   LOBYTE(this->vtable4) = 1; /*0x54a861*/
   BYTE1(this->vtable4) = 0; /*0x54a865*/
-  *(unsigned int *)this->vtable1 = &VectorClass<unsigned short *>::`vftable'; /*0x54a868*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x54a868) */
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/

@@ -3573,9 +3573,9 @@ int Gap2Recv_471890::SmallFunc_471890()
     *(unsigned int *)&v23->CaptureManagerClass_field_30 = 10; /*0x4718b2*/
     v23->originalOwner = 0; /*0x4718b9*/
     v23->AbstractClass = (unsigned int)(void *)(void*)(void*)&CaptureManagerClass_vftable; /*0x4718bc*/
-    v23->vtable2 = (unsigned int)(void *)(void*)(void*)&CaptureManagerClass_vftable; /*0x4718c2*/
-    v23->vtable3 = (unsigned int)(void *)(void*)(void*)&CaptureManagerClass_vftable; /*0x4718c9*/
-    v23->vtable4 = (unsigned int)(void *)(void*)(void*)&CaptureManagerClass_vftable; /*0x4718d0*/
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4718c2) */
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4718c9) */
+    /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x4718d0) */
     v23->overloadCount = 0; /*0x4718d7*/
     *(unsigned int *)v23->q03C = 1; /*0x4718da*/
     v23->CaptureManagerClass_field_40 = 0; /*0x4718dd*/
@@ -6929,7 +6929,7 @@ void* Gap2Recv_53FA90::Network_Init_53FA90(int aP1, int aP2, int aP3, short aP4,
   int v12; // eax
 
   IPXConnClass::constructor((IPXConnClass *)this, aP1, aP2, aP3 + 2, a6, 0, 0, &g_TypeClass_DefaultString, 12); /*0x53faba*/
-  *(unsigned int *)this->vfptr = &vt_IPXGlobalConnClass; /*0x53facc*/
+  /* X11: vtable install elided (implicit via IPXGlobalConnClass virtuals 0x53facc) */
   this->M184 = aP4; /*0x53fad2*/
   this->M196 = 0; /*0x53fad9*/
   this->M200 = 1; /*0x53fadf*/
@@ -12040,7 +12040,7 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
   v26[2] = *(unsigned int *)&DataGlobal_87F8EC - 8; /*0x5948ac*/
   v26[3] = *(unsigned int *)&DataGlobal_87F8F0 - 8; /*0x5948b0*/
   VectorClass::CellConstructor(&v27, 0, 0); /*0x5948b4*/
-  v27.vfptr = &vt_DynamicVectorClass; /*0x5948b9*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5948b9) */
   v29 = 10; /*0x5948c1*/
   v28 = 0; /*0x5948c9*/
   do /*0x5948f1*/
@@ -12116,13 +12116,13 @@ void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
       (**(void (***)(void *, int))this->vfptr)(this->vfptr, 1); /*0x594b21*/
     Items = v27.Items; /*0x594b23*/
     this->vfptr = v9; /*0x594b27*/
-    v27.vfptr = &vt_VectorClass; /*0x594b2b*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x594b2b) */
     if ( Items && v27.IsAllocated ) /*0x594b3b*/
       operator delete((void *)(Items)); /*0x594b3e*/
   }
   else
   {
-    v27.vfptr = &vt_VectorClass; /*0x594a29*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x594a29) */
     if ( v27.Items ) /*0x594a33*/
     {
       if ( v27.IsAllocated ) /*0x594a3f*/
@@ -13664,7 +13664,7 @@ void* Gap2Recv_5AD9F0::Map_Cleanup(int a2, int a3) {
   this->Capacity = a2; /*0x5ad9fe*/
   this->IsInitialized = 1; /*0x5ada01*/
   this->IsAllocated = 0; /*0x5ada05*/
-  this->vfptr = &vt_VectorClass; /*0x5ada08*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ada08) */
   if ( a2 ) /*0x5ada0e*/
   {
     if ( a3 ) /*0x5ada16*/
@@ -13773,7 +13773,7 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
   memset(&v4.needsSave_flag, 0, 13); /*0x5c1363*/
   v4.unknown38 = 0; /*0x5c1373*/
   v4.INIClass_field_3C = 0; /*0x5c1377*/
-  *(unsigned int *)v4.vtable1 = &vt_INIClass; /*0x5c137b*/
+  /* X11: vtable install elided (implicit via INIClass virtuals 0x5c137b) */
   if ( FileStraw::Open((FileStraw *)&v4, (int)&v5, 0) ) /*0x5c1383*/
   {
     Int_Overwrite = 0; /*0x5c13cd*/
@@ -13790,20 +13790,20 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
                         (uint8_t *)&g_INI_Key_NumPlayers,
                         0);
     HashTable::DestroyHashTableINIClass(&v4); /*0x5c1429*/
-    *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x5c1435*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5c1435) */
     v7 = 0; /*0x5c143d*/
     Vector::Clear((int)v6); /*0x5c1444*/
-    *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x5c144d*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5c144d) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x5c1455*/
     return Int_Overwrite; /*0x5c145a*/
   }
   else
   {
     HashTable::DestroyHashTableINIClass(&v4); /*0x5c1390*/
-    *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x5c139c*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5c139c) */
     v7 = 0; /*0x5c13a4*/
     Vector::Clear((int)v6); /*0x5c13ab*/
-    *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x5c13b4*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5c13b4) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x5c13bc*/
     return 0; /*0x5c13c1*/
   }
@@ -14126,7 +14126,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
   this->M12 = 0; /*0x5ce4b7*/
   this->M16 = TimerGetTicks(); /*0x5ce4d4*/
   this->q018 = 0; /*0x5ce4d7*/
-  *(unsigned int *)this->vfptr = &vt_MSAnim; /*0x5ce4da*/
+  /* X11: vtable install elided (implicit via MSAnim virtuals 0x5ce4da) */
   v5 = (MSAnim *)this->M44); /*0x5ce4e5*/
   this->M28 = DSurface_Alternate; /*0x5ce4e8*/
   this->a3 = a3; /*0x5ce4eb*/
@@ -14137,7 +14137,7 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
   this->M48 = 0; /*0x5ce4f9*/
   this->q034 = 0; /*0x5ce4fc*/
   this->M56 = 0; /*0x5ce4ff*/
-  *(unsigned int *)this->vfptr = &vt_MSPCXAnim; /*0x5ce505*/
+  /* X11: vtable install elided (implicit via MSPCXAnim virtuals 0x5ce505) */
   this->M12 = 1; /*0x5ce50b*/
   if ( (uint8_t)String::NotEquals((String *)a2, 0) ) /*0x5ce50f*/
   {
@@ -14170,10 +14170,10 @@ void* Gap2Recv_5CE4A0::UI_Load(char* a2, int a3, char a4) {
         this->M48 = v15 / 2 + v14; /*0x5ce5ed*/
       }
     }
-    *(unsigned int *)v19.vtable1 = &vt_CCFileClass; /*0x5ce5f7*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5ce5f7) */
     v21 = 0; /*0x5ce5ff*/
     Vector::Clear((int)v20); /*0x5ce606*/
-    *(unsigned int *)v19.vtable1 = &off_7E1668; /*0x5ce60f*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5ce60f) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x5ce617*/
     DeleteAndZero((ObjectClass *)&v17); /*0x5ce620*/
   }
@@ -14189,7 +14189,7 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   this->M8 = 0; /*0x5cede0*/
   this->M12 = 1; /*0x5cede3*/
   this->M13 = 0; /*0x5cede7*/
-  *(unsigned int *)this->vfptr = &vt_DynamicVectorClass; /*0x5cedea*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5cedea) */
   *(unsigned int *)this->M20 = 10; /*0x5cedf0*/
   this->M16 = 0; /*0x5cedf7*/
   unknown_libname_73(&this->M16); /*0x5cedfa*/
@@ -15199,7 +15199,7 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
       v26 = 0; /*0x5fd3b9*/
       Buffer::Init(&v27, v6, Base64Data); /*0x5fd3c5*/
       v27.Buffer_field_0C = 0; /*0x5fd3ce*/
-      *(unsigned int *)v25.vtable1 = &vt_BufferStraw; /*0x5fd3d9*/
+      /* X11: vtable install elided (implicit via BufferStraw virtuals 0x5fd3d9) */
       LCWStraw::Constructor(&v28, 1, 0x2000); /*0x5fd3e1*/
       Delegate::Set((Straw *)&v28, (int)&v25); /*0x5fd3ef*/
       for ( i = 0; i < 512; ++i ) /*0x5fd3f4*/
@@ -15251,10 +15251,10 @@ int Gap2Recv_5FD2E0::ReadOverlayINI() {
       (*(void (**)(int *))(v27.Buffer_field_10 + 116))(&v27.Buffer_field_10); /*0x5fd5af*/
       v25.__pad_004 = 0; /*0x5fd5b6*/
       v26 = 0; /*0x5fd5bc*/
-      *(unsigned int *)v25.vtable1 = &vt_Straw; /*0x5fd5c0*/
+      /* X11: vtable install elided (implicit via Straw virtuals 0x5fd5c0) */
       Buffer::Init(&v27, v15, v14); /*0x5fd5c8*/
       v27.Buffer_field_0C = 0; /*0x5fd5d1*/
-      *(unsigned int *)v25.vtable1 = &vt_BufferStraw; /*0x5fd5dc*/
+      /* X11: vtable install elided (implicit via BufferStraw virtuals 0x5fd5dc) */
       LCWStraw::Constructor(&v28, 1, 0x2000); /*0x5fd5e4*/
       Delegate::Set((Straw *)&v28, (int)&v25); /*0x5fd5f2*/
       for ( k = 0; k < 512; ++k ) /*0x5fd5f7*/
@@ -18011,7 +18011,7 @@ void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
   this->Capacity = a2; /*0x63ded0*/
   this->IsInitialized = 1; /*0x63ded3*/
   this->IsAllocated = 0; /*0x63ded7*/
-  this->vfptr = &vt_VectorClass; /*0x63dedb*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63dedb) */
   if ( a2 ) /*0x63dee1*/
   {
     if ( a3 ) /*0x63dee9*/
@@ -18024,7 +18024,7 @@ void* Gap2Recv_63DEC0::ExecuteActionPlanManager_Helper_63DEC0(int a2, int a3) {
       this->IsAllocated = 1; /*0x63deff*/
     }
   }
-  this->vfptr = &vt_DynamicVectorClass; /*0x63df03*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x63df03) */
   this->abstractFlags = 10; /*0x63df09*/
   this->uniqueId = 0; /*0x63df10*/
   return &this->vfptr; /*0x63df19*/
@@ -18037,7 +18037,7 @@ void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
   this->Capacity = a2; /*0x63e1e0*/
   this->IsInitialized = 1; /*0x63e1e3*/
   this->IsAllocated = 0; /*0x63e1e7*/
-  this->vfptr = &vt_VectorClass; /*0x63e1eb*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63e1eb) */
   if ( a2 ) /*0x63e1f1*/
   {
     if ( a3 ) /*0x63e1f9*/
@@ -18050,7 +18050,7 @@ void* Gap2Recv_63E1D0::ExecuteActionPlanManager_Helper_63E1D0(int a2, int a3) {
       this->IsAllocated = 1; /*0x63e20f*/
     }
   }
-  this->vfptr = &vt_DynamicVectorClass; /*0x63e213*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x63e213) */
   this->M20 = 10; /*0x63e219*/
   this->Items = 0; /*0x63e220*/
   return &this->vfptr; /*0x63e229*/
@@ -18082,7 +18082,7 @@ void* Gap2Recv_63EFB0::Object_Set(int a2, int a3) {
   this->Capacity = a2; /*0x63efbe*/
   this->IsInitialized = 1; /*0x63efc1*/
   this->IsAllocated = 0; /*0x63efc5*/
-  this->vfptr = &vt_VectorClass; /*0x63efc8*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x63efc8) */
   if ( a2 ) /*0x63efce*/
   {
     if ( a3 ) /*0x63efd6*/
@@ -18166,10 +18166,10 @@ char Gap2Recv_641B00::LoadMapPreviewImage(void* a2) {
           0);
   v21.__pad_004 = 0; /*0x641bef*/
   v22 = 0; /*0x641bf3*/
-  *(unsigned int *)v21.vtable1 = &vt_Straw; /*0x641bf7*/
+  /* X11: vtable install elided (implicit via Straw virtuals 0x641bf7) */
   Buffer::Init(&v23, v13, Base64Data); /*0x641bff*/
   v23.Buffer_field_0C = 0; /*0x641c0f*/
-  *(unsigned int *)v21.vtable1 = &vt_BufferStraw; /*0x641c13*/
+  /* X11: vtable install elided (implicit via BufferStraw virtuals 0x641c13) */
   LZOStraw::Constructor((LZOStraw *)&v23.Buffer_field_10, 1, 0x2000); /*0x641c1b*/
   Delegate::Set((Straw *)&v23.Buffer_field_10, (int)&v21); /*0x641c29*/
   vtable0 = this->v7; /*0x641c2e*/
@@ -19469,10 +19469,10 @@ namespace gamemd {
 void* Gap2Recv_65A7E0::Helper_65A7E0(TechnoClass * aP1) {
   ObjectClass::Init((ObjectClass *)this, aP1); /*0x65a7e8*/
   this->radioLinks[0] = (int)&vt_VectorClass; /*0x65a7ed*/
-  this->vfptr = &vt_RadioClass; /*0x65a7f7*/
-  this->vfptr1 = &vt_RadioClass; /*0x65a7fd*/
-  this->vfptr2 = &vt_RadioClass; /*0x65a804*/
-  this->vfptr3 = &vt_RadioClass; /*0x65a80b*/
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7f7) */
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7fd) */
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a804) */
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a80b) */
   return &this->vfptr; /*0x65a814*/
 }
 }
@@ -19487,7 +19487,7 @@ char* Gap2Recv_65C250::WinMain_Helper_65C250(int a2, int aP2) {
   this->nextArrayIndex = 1; /*0x65c26e*/
   this->referenceCount = 0; /*0x65c275*/
   this->isOnMap = 0; /*0x65c278*/
-  *(unsigned int *)this->vfptr = &vt_RAMFileClass; /*0x65c27b*/
+  /* X11: vtable install elided (implicit via RAMFileClass virtuals 0x65c27b) */
   if ( !a2 && aP2 > 0 ) /*0x65c285*/
   {
     this->M8 = (AbstractClass *)operator new(aP2); /*0x65c290*/
@@ -19502,7 +19502,7 @@ void Gap2Recv_65C2A0::WinMain_Helper_65C2A0() {
   char v2; // al
 
   v2 = this->M29; /*0x65c2a3*/
-  *(unsigned int *)this->vfptr = &vt_RAMFileClass; /*0x65c2a6*/
+  /* X11: vtable install elided (implicit via RAMFileClass virtuals 0x65c2a6) */
   this->referenceCount = 0; /*0x65c2ae*/
   if ( v2 ) /*0x65c2b2*/
   {
@@ -19510,7 +19510,7 @@ void Gap2Recv_65C2A0::WinMain_Helper_65C2A0() {
     this->M8 = 0; /*0x65c2c0*/
     this->isOnMap = 0; /*0x65c2c7*/
   }
-  *(unsigned int *)this->vfptr = &vt_FileClass; /*0x65c2cb*/
+  /* X11: vtable install elided (implicit via FileClass virtuals 0x65c2cb) */
 }
 }
 // 0x65C6D0
@@ -20622,7 +20622,7 @@ int RulesClass::ResetRules() {
     v19.headNode[2] = (int)&vt_List; /*0x668ab6*/
     memset(&v19.needsSave_flag, 0, 13); /*0x668abe*/
     memset(&v19.unknown38, 0, 9); /*0x668acf*/
-    *(unsigned int *)v19.vtable1 = &CCINIClass_Vtable; /*0x668adc*/
+    /* X11: vtable install elided (implicit via CCINIClass virtuals 0x668adc) */
     if ( CCINIClass::Load(&v19, (int)&v20, 1, 0) > 1 ) /*0x668aec*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x668af2*/
@@ -20659,10 +20659,10 @@ int RulesClass::ResetRules() {
     RulesClass::Addition(v17); /*0x668baa*/
   }
   LABEL_99:
-  *(unsigned int *)v20.vtable1 = &vt_CCFileClass; /*0x668baf*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x668baf) */
   v22 = 0; /*0x668bbe*/
   Vector::Clear((int)v21); /*0x668bc5*/
-  *(unsigned int *)v20.vtable1 = &off_7E1668; /*0x668bce*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x668bce) */
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x668bdb*/
 }
 }
@@ -22949,7 +22949,7 @@ int Gap2Recv_692290::SmallFunc_692290() {
   this->M21848 = 0; /*0x6922b2*/
   this->M21850 = 0; /*0x6922b8*/
   this->M21849 = 1; /*0x6922be*/
-  *(unsigned int *)this = &vt_ScrollClass; /*0x6922c5*/
+  /* X11: vtable install elided (implicit via ScrollClass virtuals 0x6922c5) */
   this->u32_5518 = &vt_ScrollClass; /*0x6922cb*/
   return this; /*0x6922d7*/
 }
@@ -23806,11 +23806,11 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
       if ( strlen(byte_B76568) ) /*0x69b1d1*/
       {
         ParseAndApplyAlliances_Parse(&v33, 0, 0); /*0x69b1ea*/
-        v33.vfptr = &vt_DynamicVectorClass; /*0x69b1ff*/
+        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b1ff) */
         v35 = 10; /*0x69b203*/
         v34 = 0; /*0x69b207*/
         ParseAndApplyAlliances_Parse(&v30, 0, 0); /*0x69b20b*/
-        v30.vfptr = &vt_DynamicVectorClass; /*0x69b210*/
+        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b210) */
         v32 = 10; /*0x69b232*/
         v31 = 0; /*0x69b238*/
         v3 = &byte_B77A04; /*0x69b23c*/
@@ -23933,13 +23933,13 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
         v27 = dword_A8B230->vfptr; /*0x69b4e0*/
         (((unsigned char *)&(v27))[1]) = ((uint16_t)dword_A8B230->vfptr >> 8) | 4; /*0x69b4e2*/
         dword_A8B230->vfptr = v27; /*0x69b4e5*/
-        v30.vfptr = &vt_VectorClass; /*0x69b4ed*/
+        /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b4ed) */
         if ( v30.Items && v30.IsAllocated ) /*0x69b4f9*/
         {
           operator delete((void *)(v30.Items)); /*0x69b4fc*/
           v30.Items = 0; /*0x69b504*/
         }
-        v33.vfptr = &vt_VectorClass; /*0x69b50c*/
+        /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b50c) */
         v30.IsAllocated = 0; /*0x69b514*/
         v30.Capacity = 0; /*0x69b519*/
         if ( v33.Items ) /*0x69b51e*/
@@ -23979,7 +23979,7 @@ void* Gap2Recv_69D870::ParseAndApplyAlliances_Parse(int a2, int a3) {
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  this->vfptr = &vt_VectorClass; /*0x69d888*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x69d888) */
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
@@ -24020,10 +24020,10 @@ int ObjectClass::LoadSHPFile(int lpBuffer, char* Source) {
     *((unsigned int *)dword_B077B0 + 7) = lpBuffer; /*0x69e4bc*/
   dword_B077B0 = lpBuffer; /*0x69e4bf*/
   lpBuffer->NeedsSaveOrLink = 0; /*0x69e4c9*/
-  *(unsigned int *)v5.vtable1 = &vt_CCFileClass; /*0x69e4cc*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x69e4cc) */
   v7 = 0; /*0x69e4d4*/
   Vector::Clear((int)v6); /*0x69e4d8*/
-  *(unsigned int *)v5.vtable1 = &off_7E1668; /*0x69e4e1*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x69e4e1) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x69e4e9*/
   return lpBuffer; /*0x69e4f0*/
 }
@@ -24064,11 +24064,11 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
   }
   while ( v4 ); /*0x6a4f64*/
   Timer::Init(&this->RadarClass_field_timer_1500, 0); /*0x6a4f6d*/
-  *(unsigned int *)this = &vt_RadarClass; /*0x6a4f78*/
+  /* X11: vtable install elided (implicit via RadarClass virtuals 0x6a4f78) */
   AudioController::Init(&this->RadarSoundChannel); /*0x6a4f7e*/
   this->M5408 = TimerGetTicks(); /*0x6a4f8e*/
   this->M5416 = 0; /*0x6a4f94*/
-  *(unsigned int *)this = &vt_PowerClass; /*0x6a4f9a*/
+  /* X11: vtable install elided (implicit via PowerClass virtuals 0x6a4f9a) */
   v5 = &this->q304; /*0x6a4fa0*/
   v6 = 4; /*0x6a4fa6*/
   do /*0x6a4fdf*/
@@ -24084,7 +24084,7 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
     --v6; /*0x6a4fde*/
   }
   while ( v6 ); /*0x6a4fdf*/
-  *(unsigned int *)this = &vt_SidebarClass; /*0x6a4fe1*/
+  /* X11: vtable install elided (implicit via SidebarClass virtuals 0x6a4fe1) */
   return this; /*0x6a4fe9*/
 }
 }
@@ -24115,7 +24115,7 @@ char* Gap2Recv_6AC840::System_Init_6AC840(int a2) {
   this->M4556 = 0; /*0x6ac84f*/
   this->M4557 = 0; /*0x6ac855*/
   this->M4558 = 0; /*0x6ac85b*/
-  *(unsigned int *)this = &vt_DisplayClass; /*0x6ac861*/
+  /* X11: vtable install elided (implicit via DisplayClass virtuals 0x6ac861) */
   return this; /*0x6ac869*/
 }
 }
@@ -24128,7 +24128,7 @@ void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
   this->Capacity = a2; /*0x6ac8e1*/
   this->IsInitialized = 1; /*0x6ac8e4*/
   this->IsAllocated = 0; /*0x6ac8e8*/
-  this->vfptr = &vt_VectorClass; /*0x6ac8ec*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6ac8ec) */
   if ( a2 ) /*0x6ac8f2*/
   {
     if ( a3 ) /*0x6ac8fa*/
@@ -24144,7 +24144,7 @@ void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
       this->IsAllocated = 1; /*0x6ac926*/
     }
   }
-  this->vfptr = &vt_DynamicVectorClass; /*0x6ac92a*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6ac92a) */
   this->abstractFlags = 10; /*0x6ac930*/
   this->uniqueId = 0; /*0x6ac937*/
   return &this->vfptr; /*0x6ac940*/
@@ -24426,7 +24426,7 @@ int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4
 namespace gamemd { 
 void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
   this->vfptr1 = 0; /*0x6bfd42*/
-  this->vfptr = &vt_TClassFactory; /*0x6bfd49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfd49) */
   return &this->vfptr; /*0x6bfd4f*/
 }
 }
@@ -24434,7 +24434,7 @@ void* Gap2Recv_6BFD40::WinMain_Helper_6BFD40() {
 namespace gamemd { 
 void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
   this->vfptr1 = 0; /*0x6bfec2*/
-  this->vfptr = &vt_TClassFactory; /*0x6bfec9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6bfec9) */
   return &this->vfptr; /*0x6bfecf*/
 }
 }
@@ -24442,7 +24442,7 @@ void* Gap2Recv_6BFEC0::WinMain_Helper_6BFEC0() {
 namespace gamemd { 
 void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
   this->vfptr1 = 0; /*0x6c0042*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0049*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0049) */
   return &this->vfptr; /*0x6c004f*/
 }
 }
@@ -24450,7 +24450,7 @@ void* Gap2Recv_6C0040::WinMain_Helper_6C0040() {
 namespace gamemd { 
 void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
   this->vfptr1 = 0; /*0x6c01c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c01c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c01c9) */
   return &this->vfptr; /*0x6c01cf*/
 }
 }
@@ -24458,7 +24458,7 @@ void* Gap2Recv_6C01C0::WinMain_Helper_6C01C0() {
 namespace gamemd { 
 void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
   this->vfptr1 = 0; /*0x6c0342*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0349*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0349) */
   return &this->vfptr; /*0x6c034f*/
 }
 }
@@ -24466,7 +24466,7 @@ void* Gap2Recv_6C0340::WinMain_Helper_6C0340() {
 namespace gamemd { 
 void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
   this->vfptr1 = 0; /*0x6c04c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c04c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c04c9) */
   return &this->vfptr; /*0x6c04cf*/
 }
 }
@@ -24474,7 +24474,7 @@ void* Gap2Recv_6C04C0::WinMain_Helper_6C04C0() {
 namespace gamemd { 
 void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
   this->vfptr1 = 0; /*0x6c0642*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0649*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0649) */
   return &this->vfptr; /*0x6c064f*/
 }
 }
@@ -24482,7 +24482,7 @@ void* Gap2Recv_6C0640::WinMain_Helper_6C0640() {
 namespace gamemd { 
 void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
   this->vfptr1 = 0; /*0x6c07c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c07c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c07c9) */
   return &this->vfptr; /*0x6c07cf*/
 }
 }
@@ -24490,7 +24490,7 @@ void* Gap2Recv_6C07C0::WinMain_Helper_6C07C0() {
 namespace gamemd { 
 void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
   this->vfptr1 = 0; /*0x6c0942*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0949*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0949) */
   return &this->vfptr; /*0x6c094f*/
 }
 }
@@ -24498,7 +24498,7 @@ void* Gap2Recv_6C0940::WinMain_Helper_6C0940() {
 namespace gamemd { 
 void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
   this->vfptr1 = 0; /*0x6c0c42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0c49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0c49) */
   return &this->vfptr; /*0x6c0c4f*/
 }
 }
@@ -24506,7 +24506,7 @@ void* Gap2Recv_6C0C40::WinMain_Helper_6C0C40() {
 namespace gamemd { 
 void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
   this->vfptr1 = 0; /*0x6c0dc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0dc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0dc9) */
   return &this->vfptr; /*0x6c0dcf*/
 }
 }
@@ -24514,7 +24514,7 @@ void* Gap2Recv_6C0DC0::WinMain_Helper_6C0DC0() {
 namespace gamemd { 
 void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
   this->vfptr1 = 0; /*0x6c0f42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c0f49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c0f49) */
   return &this->vfptr; /*0x6c0f4f*/
 }
 }
@@ -24522,7 +24522,7 @@ void* Gap2Recv_6C0F40::WinMain_Helper_6C0F40() {
 namespace gamemd { 
 void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
   this->vfptr1 = 0; /*0x6c10c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c10c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c10c9) */
   return &this->vfptr; /*0x6c10cf*/
 }
 }
@@ -24530,7 +24530,7 @@ void* Gap2Recv_6C10C0::WinMain_Helper_6C10C0() {
 namespace gamemd { 
 void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
   this->vfptr1 = 0; /*0x6c1242*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1249*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1249) */
   return &this->vfptr; /*0x6c124f*/
 }
 }
@@ -24538,7 +24538,7 @@ void* Gap2Recv_6C1240::WinMain_Helper_6C1240() {
 namespace gamemd { 
 void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
   this->vfptr1 = 0; /*0x6c13c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c13c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c13c9) */
   return &this->vfptr; /*0x6c13cf*/
 }
 }
@@ -24546,7 +24546,7 @@ void* Gap2Recv_6C13C0::WinMain_Helper_6C13C0() {
 namespace gamemd { 
 void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
   this->vfptr1 = 0; /*0x6c1542*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1549*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1549) */
   return &this->vfptr; /*0x6c154f*/
 }
 }
@@ -24554,7 +24554,7 @@ void* Gap2Recv_6C1540::WinMain_Helper_6C1540() {
 namespace gamemd { 
 void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
   this->vfptr1 = 0; /*0x6c16c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c16c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c16c9) */
   return &this->vfptr; /*0x6c16cf*/
 }
 }
@@ -24562,7 +24562,7 @@ void* Gap2Recv_6C16C0::WinMain_Helper_6C16C0() {
 namespace gamemd { 
 void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
   this->vfptr1 = 0; /*0x6c1842*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1849*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1849) */
   return &this->vfptr; /*0x6c184f*/
 }
 }
@@ -24570,7 +24570,7 @@ void* Gap2Recv_6C1840::WinMain_Helper_6C1840() {
 namespace gamemd { 
 void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
   this->vfptr1 = 0; /*0x6c19c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c19c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c19c9) */
   return &this->vfptr; /*0x6c19cf*/
 }
 }
@@ -24578,7 +24578,7 @@ void* Gap2Recv_6C19C0::WinMain_Helper_6C19C0() {
 namespace gamemd { 
 void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
   this->vfptr1 = 0; /*0x6c1b42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1b49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1b49) */
   return &this->vfptr; /*0x6c1b4f*/
 }
 }
@@ -24586,7 +24586,7 @@ void* Gap2Recv_6C1B40::WinMain_Helper_6C1B40() {
 namespace gamemd { 
 void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
   this->vfptr1 = 0; /*0x6c1cc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1cc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1cc9) */
   return &this->vfptr; /*0x6c1ccf*/
 }
 }
@@ -24594,7 +24594,7 @@ void* Gap2Recv_6C1CC0::WinMain_Helper_6C1CC0() {
 namespace gamemd { 
 void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
   this->vfptr1 = 0; /*0x6c1e42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1e49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1e49) */
   return &this->vfptr; /*0x6c1e4f*/
 }
 }
@@ -24602,7 +24602,7 @@ void* Gap2Recv_6C1E40::WinMain_Helper_6C1E40() {
 namespace gamemd { 
 void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
   this->vfptr1 = 0; /*0x6c1fc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c1fc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c1fc9) */
   return &this->vfptr; /*0x6c1fcf*/
 }
 }
@@ -24610,7 +24610,7 @@ void* Gap2Recv_6C1FC0::WinMain_Helper_6C1FC0() {
 namespace gamemd { 
 void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
   this->vfptr1 = 0; /*0x6c2142*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2149*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2149) */
   return &this->vfptr; /*0x6c214f*/
 }
 }
@@ -24618,7 +24618,7 @@ void* Gap2Recv_6C2140::WinMain_Helper_6C2140() {
 namespace gamemd { 
 void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
   this->vfptr1 = 0; /*0x6c22c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c22c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c22c9) */
   return &this->vfptr; /*0x6c22cf*/
 }
 }
@@ -24626,7 +24626,7 @@ void* Gap2Recv_6C22C0::WinMain_Helper_6C22C0() {
 namespace gamemd { 
 void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
   this->vfptr1 = 0; /*0x6c2442*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2449*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2449) */
   return &this->vfptr; /*0x6c244f*/
 }
 }
@@ -24634,7 +24634,7 @@ void* Gap2Recv_6C2440::WinMain_Helper_6C2440() {
 namespace gamemd { 
 void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
   this->vfptr1 = 0; /*0x6c25c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c25c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c25c9) */
   return &this->vfptr; /*0x6c25cf*/
 }
 }
@@ -24642,7 +24642,7 @@ void* Gap2Recv_6C25C0::WinMain_Helper_6C25C0() {
 namespace gamemd { 
 void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
   this->vfptr1 = 0; /*0x6c2742*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2749*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2749) */
   return &this->vfptr; /*0x6c274f*/
 }
 }
@@ -24650,7 +24650,7 @@ void* Gap2Recv_6C2740::WinMain_Helper_6C2740() {
 namespace gamemd { 
 void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
   this->vfptr1 = 0; /*0x6c28c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c28c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c28c9) */
   return &this->vfptr; /*0x6c28cf*/
 }
 }
@@ -24658,7 +24658,7 @@ void* Gap2Recv_6C28C0::WinMain_Helper_6C28C0() {
 namespace gamemd { 
 void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
   this->vfptr1 = 0; /*0x6c2a42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2a49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2a49) */
   return &this->vfptr; /*0x6c2a4f*/
 }
 }
@@ -24666,7 +24666,7 @@ void* Gap2Recv_6C2A40::WinMain_Helper_6C2A40() {
 namespace gamemd { 
 void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
   this->vfptr1 = 0; /*0x6c2bc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2bc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2bc9) */
   return &this->vfptr; /*0x6c2bcf*/
 }
 }
@@ -24674,7 +24674,7 @@ void* Gap2Recv_6C2BC0::WinMain_Helper_6C2BC0() {
 namespace gamemd { 
 void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
   this->vfptr1 = 0; /*0x6c2d42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2d49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2d49) */
   return &this->vfptr; /*0x6c2d4f*/
 }
 }
@@ -24682,7 +24682,7 @@ void* Gap2Recv_6C2D40::WinMain_Helper_6C2D40() {
 namespace gamemd { 
 void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
   this->vfptr1 = 0; /*0x6c2ec2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c2ec9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c2ec9) */
   return &this->vfptr; /*0x6c2ecf*/
 }
 }
@@ -24690,7 +24690,7 @@ void* Gap2Recv_6C2EC0::WinMain_Helper_6C2EC0() {
 namespace gamemd { 
 void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
   this->vfptr1 = 0; /*0x6c3042*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3049*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3049) */
   return &this->vfptr; /*0x6c304f*/
 }
 }
@@ -24698,7 +24698,7 @@ void* Gap2Recv_6C3040::WinMain_Helper_6C3040() {
 namespace gamemd { 
 void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
   this->vfptr1 = 0; /*0x6c31c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c31c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c31c9) */
   return &this->vfptr; /*0x6c31cf*/
 }
 }
@@ -24706,7 +24706,7 @@ void* Gap2Recv_6C31C0::WinMain_Helper_6C31C0() {
 namespace gamemd { 
 void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
   this->vfptr1 = 0; /*0x6c3342*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3349*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3349) */
   return &this->vfptr; /*0x6c334f*/
 }
 }
@@ -24714,7 +24714,7 @@ void* Gap2Recv_6C3340::WinMain_Helper_6C3340() {
 namespace gamemd { 
 void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
   this->vfptr1 = 0; /*0x6c34c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c34c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c34c9) */
   return &this->vfptr; /*0x6c34cf*/
 }
 }
@@ -24722,7 +24722,7 @@ void* Gap2Recv_6C34C0::WinMain_Helper_6C34C0() {
 namespace gamemd { 
 void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
   this->vfptr1 = 0; /*0x6c3642*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3649*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3649) */
   return &this->vfptr; /*0x6c364f*/
 }
 }
@@ -24730,7 +24730,7 @@ void* Gap2Recv_6C3640::WinMain_Helper_6C3640() {
 namespace gamemd { 
 void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
   this->vfptr1 = 0; /*0x6c37c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c37c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c37c9) */
   return &this->vfptr; /*0x6c37cf*/
 }
 }
@@ -24738,7 +24738,7 @@ void* Gap2Recv_6C37C0::WinMain_Helper_6C37C0() {
 namespace gamemd { 
 void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
   this->vfptr1 = 0; /*0x6c3942*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3949*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3949) */
   return &this->vfptr; /*0x6c394f*/
 }
 }
@@ -24746,7 +24746,7 @@ void* Gap2Recv_6C3940::WinMain_Helper_6C3940() {
 namespace gamemd { 
 void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
   this->vfptr1 = 0; /*0x6c3ac2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3ac9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3ac9) */
   return &this->vfptr; /*0x6c3acf*/
 }
 }
@@ -24754,7 +24754,7 @@ void* Gap2Recv_6C3AC0::WinMain_Helper_6C3AC0() {
 namespace gamemd { 
 void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
   this->vfptr1 = 0; /*0x6c3c42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3c49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3c49) */
   return &this->vfptr; /*0x6c3c4f*/
 }
 }
@@ -24762,7 +24762,7 @@ void* Gap2Recv_6C3C40::WinMain_Helper_6C3C40() {
 namespace gamemd { 
 void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
   this->vfptr1 = 0; /*0x6c3dc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3dc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3dc9) */
   return &this->vfptr; /*0x6c3dcf*/
 }
 }
@@ -24770,7 +24770,7 @@ void* Gap2Recv_6C3DC0::WinMain_Helper_6C3DC0() {
 namespace gamemd { 
 void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
   this->vfptr1 = 0; /*0x6c3f42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c3f49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c3f49) */
   return &this->vfptr; /*0x6c3f4f*/
 }
 }
@@ -24778,7 +24778,7 @@ void* Gap2Recv_6C3F40::WinMain_Helper_6C3F40() {
 namespace gamemd { 
 void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
   this->vfptr1 = 0; /*0x6c40c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c40c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c40c9) */
   return &this->vfptr; /*0x6c40cf*/
 }
 }
@@ -24786,7 +24786,7 @@ void* Gap2Recv_6C40C0::WinMain_Helper_6C40C0() {
 namespace gamemd { 
 void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
   this->vfptr1 = 0; /*0x6c4242*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4249*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4249) */
   return &this->vfptr; /*0x6c424f*/
 }
 }
@@ -24794,7 +24794,7 @@ void* Gap2Recv_6C4240::WinMain_Helper_6C4240() {
 namespace gamemd { 
 void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
   this->vfptr1 = 0; /*0x6c43c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c43c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c43c9) */
   return &this->vfptr; /*0x6c43cf*/
 }
 }
@@ -24802,7 +24802,7 @@ void* Gap2Recv_6C43C0::WinMain_Helper_6C43C0() {
 namespace gamemd { 
 void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
   this->vfptr1 = 0; /*0x6c4542*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4549*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4549) */
   return &this->vfptr; /*0x6c454f*/
 }
 }
@@ -24810,7 +24810,7 @@ void* Gap2Recv_6C4540::WinMain_Helper_6C4540() {
 namespace gamemd { 
 void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
   this->vfptr1 = 0; /*0x6c46c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c46c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c46c9) */
   return &this->vfptr; /*0x6c46cf*/
 }
 }
@@ -24818,7 +24818,7 @@ void* Gap2Recv_6C46C0::WinMain_Helper_6C46C0() {
 namespace gamemd { 
 void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
   this->vfptr1 = 0; /*0x6c4842*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4849*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4849) */
   return &this->vfptr; /*0x6c484f*/
 }
 }
@@ -24826,7 +24826,7 @@ void* Gap2Recv_6C4840::WinMain_Helper_6C4840() {
 namespace gamemd { 
 void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
   this->vfptr1 = 0; /*0x6c49c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c49c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c49c9) */
   return &this->vfptr; /*0x6c49cf*/
 }
 }
@@ -24834,7 +24834,7 @@ void* Gap2Recv_6C49C0::WinMain_Helper_6C49C0() {
 namespace gamemd { 
 void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
   this->vfptr1 = 0; /*0x6c4b42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4b49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4b49) */
   return &this->vfptr; /*0x6c4b4f*/
 }
 }
@@ -24842,7 +24842,7 @@ void* Gap2Recv_6C4B40::WinMain_Helper_6C4B40() {
 namespace gamemd { 
 void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
   this->vfptr1 = 0; /*0x6c4cc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4cc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4cc9) */
   return &this->vfptr; /*0x6c4ccf*/
 }
 }
@@ -24850,7 +24850,7 @@ void* Gap2Recv_6C4CC0::WinMain_Helper_6C4CC0() {
 namespace gamemd { 
 void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
   this->vfptr1 = 0; /*0x6c4e42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4e49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4e49) */
   return &this->vfptr; /*0x6c4e4f*/
 }
 }
@@ -24858,7 +24858,7 @@ void* Gap2Recv_6C4E40::WinMain_Helper_6C4E40() {
 namespace gamemd { 
 void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
   this->vfptr1 = 0; /*0x6c4fc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c4fc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c4fc9) */
   return &this->vfptr; /*0x6c4fcf*/
 }
 }
@@ -24866,7 +24866,7 @@ void* Gap2Recv_6C4FC0::WinMain_Helper_6C4FC0() {
 namespace gamemd { 
 void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
   this->vfptr1 = 0; /*0x6c5142*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5149*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5149) */
   return &this->vfptr; /*0x6c514f*/
 }
 }
@@ -24874,7 +24874,7 @@ void* Gap2Recv_6C5140::WinMain_Helper_6C5140() {
 namespace gamemd { 
 void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
   this->vfptr1 = 0; /*0x6c52c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c52c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c52c9) */
   return &this->vfptr; /*0x6c52cf*/
 }
 }
@@ -24882,7 +24882,7 @@ void* Gap2Recv_6C52C0::WinMain_Helper_6C52C0() {
 namespace gamemd { 
 void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
   this->vfptr1 = 0; /*0x6c5442*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5449*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5449) */
   return &this->vfptr; /*0x6c544f*/
 }
 }
@@ -24890,7 +24890,7 @@ void* Gap2Recv_6C5440::WinMain_Helper_6C5440() {
 namespace gamemd { 
 void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
   this->vfptr1 = 0; /*0x6c55c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c55c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c55c9) */
   return &this->vfptr; /*0x6c55cf*/
 }
 }
@@ -24898,7 +24898,7 @@ void* Gap2Recv_6C55C0::WinMain_Helper_6C55C0() {
 namespace gamemd { 
 void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
   this->vfptr1 = 0; /*0x6c5742*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5749*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5749) */
   return &this->vfptr; /*0x6c574f*/
 }
 }
@@ -24906,7 +24906,7 @@ void* Gap2Recv_6C5740::WinMain_Helper_6C5740() {
 namespace gamemd { 
 void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
   this->vfptr1 = 0; /*0x6c58c2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c58c9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c58c9) */
   return &this->vfptr; /*0x6c58cf*/
 }
 }
@@ -24914,7 +24914,7 @@ void* Gap2Recv_6C58C0::WinMain_Helper_6C58C0() {
 namespace gamemd { 
 void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
   this->vfptr1 = 0; /*0x6c5a42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5a49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5a49) */
   return &this->vfptr; /*0x6c5a4f*/
 }
 }
@@ -24922,7 +24922,7 @@ void* Gap2Recv_6C5A40::WinMain_Helper_6C5A40() {
 namespace gamemd { 
 void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
   this->vfptr1 = 0; /*0x6c5bc2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5bc9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5bc9) */
   return &this->vfptr; /*0x6c5bcf*/
 }
 }
@@ -24930,7 +24930,7 @@ void* Gap2Recv_6C5BC0::WinMain_Helper_6C5BC0() {
 namespace gamemd { 
 void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
   this->vfptr1 = 0; /*0x6c5d42*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5d49*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5d49) */
   return &this->vfptr; /*0x6c5d4f*/
 }
 }
@@ -24938,7 +24938,7 @@ void* Gap2Recv_6C5D40::WinMain_Helper_6C5D40() {
 namespace gamemd { 
 void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
   this->vfptr1 = 0; /*0x6c5ec2*/
-  this->vfptr = &vt_TClassFactory; /*0x6c5ec9*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c5ec9) */
   return &this->vfptr; /*0x6c5ecf*/
 }
 }
@@ -24946,7 +24946,7 @@ void* Gap2Recv_6C5EC0::WinMain_Helper_6C5EC0() {
 namespace gamemd { 
 void* Gap2Recv_6C6040::WinMain_Helper_6C6040() {
   this->vfptr1 = 0; /*0x6c6042*/
-  this->vfptr = &vt_TClassFactory; /*0x6c6049*/
+  /* X11: vtable install elided (implicit via TClassFactory virtuals 0x6c6049) */
   return &this->vfptr; /*0x6c604f*/
 }
 }
@@ -25182,7 +25182,7 @@ void* Gap2Recv_6CABA0::Render_Parse_6CABA0(int a2, int a3) {
   this->Capacity = a2; /*0x6cabae*/
   this->IsInitialized = 1; /*0x6cabb1*/
   this->IsAllocated = 0; /*0x6cabb5*/
-  this->vfptr = &vt_VectorClass; /*0x6cabb8*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6cabb8) */
   if ( a2 ) /*0x6cabbe*/
   {
     if ( a3 ) /*0x6cabc6*/
@@ -25220,7 +25220,7 @@ void Gap2Recv_6CF1D0::SmallFunc_6CF1D0() {
   void *SwizzleManagerClass_field_0x20; // eax
   void *SwizzleManagerClass_field_0x08; // eax
 
-  *(unsigned int *)this->vtable1 = &vt_SwizzleManagerClass; /*0x6cf1d4*/
+  /* X11: vtable install elided (implicit via SwizzleManagerClass virtuals 0x6cf1d4) */
   SwizzleManagerClass::ConvertNodes((int)this); /*0x6cf1da*/
   SwizzleManagerClass_field_0x20 = (void *)this->M32; /*0x6cf1df*/
   this->M28 = (int)&vt_VectorClass; /*0x6cf1e6*/
@@ -25264,10 +25264,10 @@ void* Gap2Recv_6D1E30::SmallFunc_6D1E30(AbstractClass * aP1) {
   AbstractClass::InitVtables((AbstractClass *)this, aP1); /*0x6d1e38*/
   this->M3492 = (AbstractClass *)TimerGetTicks(); /*0x6d1e48*/
   *&this->M3500 = 0; /*0x6d1e4e*/
-  *(unsigned int *)this->vtable1 = &vt_Tactical; /*0x6d1e58*/
-  *&this->vtable2 = &vt_Tactical; /*0x6d1e5e*/
-  this->vtable3 = (int)&vt_Tactical; /*0x6d1e65*/
-  this->vtable4 = (int)&vt_Tactical; /*0x6d1e6c*/
+  /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e58) */
+  /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e5e) */
+  /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e65) */
+  /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e6c) */
   return this->vtable1; /*0x6d1e75*/
 }
 }
@@ -27081,7 +27081,7 @@ char Gap2Recv_6EE800::SelectTeamMembers(ScriptClass * aP1, int a3) {
       VectorClass::BuildingConstructor(&v39, 0, 0); /*0x6ee89b*/
       v14 = 0; /*0x6ee8ad*/
       v15 = 0; /*0x6ee8af*/
-      v39.vfptr = &vt_DynamicVectorClass; /*0x6ee8b1*/
+      /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6ee8b1) */
       v41 = 10; /*0x6ee8bb*/
       v40 = 0; /*0x6ee8c3*/
       if ( stru_A8EB00.vfptr[20] > 0 ) /*0x6ee8c7*/
@@ -27174,7 +27174,7 @@ char Gap2Recv_6EE800::SelectTeamMembers(ScriptClass * aP1, int a3) {
         }
         v3 = this; /*0x6eeaa5*/
       }
-      v39.vfptr = &vt_VectorClass; /*0x6eeac2*/
+      /* X11: vtable install elided (implicit via VectorClass virtuals 0x6eeac2) */
       if ( v39.Items && v39.IsAllocated ) /*0x6eead8*/
         operator delete((void *)(v39.Items)); /*0x6eeadf*/
     }
@@ -27527,7 +27527,7 @@ void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
   this->Capacity = a2; /*0x6f2240*/
   this->IsInitialized = 1; /*0x6f2243*/
   this->IsAllocated = 0; /*0x6f2247*/
-  this->vfptr = &vt_VectorClass; /*0x6f224b*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6f224b) */
   if ( a2 ) /*0x6f2251*/
   {
     if ( a3 ) /*0x6f2259*/
@@ -27540,7 +27540,7 @@ void* Gap2Recv_6F2230::Team_Helper_6F2230(int a2, int a3) {
       this->IsAllocated = 1; /*0x6f226f*/
     }
   }
-  this->vfptr = &vt_DynamicVectorClass; /*0x6f2273*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6f2273) */
   this->abstractFlags = 10; /*0x6f2279*/
   this->uniqueId = 0; /*0x6f2280*/
   return &this->vfptr; /*0x6f2289*/
@@ -27650,7 +27650,7 @@ void* Gap2Recv_6F27F0::Team_Helper_6F27F0(int a2, void* a3) {
   this->Capacity = a2; /*0x6f2801*/
   this->IsInitialized = 1; /*0x6f2804*/
   this->IsAllocated = 0; /*0x6f2808*/
-  this->vfptr = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x6f280c*/
+  /* X11: vtable install elided (implicit via VectorClassDiscreteDistributionClassDistributionObject virtuals 0x6f280c) */
   if ( !a2 ) /*0x6f2812*/
     return &this->vfptr; /*0x6f2812*/
   if ( a3 ) /*0x6f281a*/
@@ -29526,7 +29526,7 @@ void* Gap2Recv_734330::SelectFactionThemeMusic_Helper_734330(void * aP1, void * 
   this->Capacity = aP1; /*0x734340*/
   this->IsInitialized = 1; /*0x734343*/
   this->IsAllocated = 0; /*0x734347*/
-  this->vfptr = &vt_VectorClass; /*0x73434b*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x73434b) */
   if ( aP1 ) /*0x734351*/
   {
     if ( aP2 ) /*0x734359*/
@@ -29539,7 +29539,7 @@ void* Gap2Recv_734330::SelectFactionThemeMusic_Helper_734330(void * aP1, void * 
       this->IsAllocated = 1; /*0x73436f*/
     }
   }
-  this->vfptr = &vt_DynamicVectorClass; /*0x734373*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x734373) */
   this->M20 = 10; /*0x734379*/
   this->Items = 0; /*0x734380*/
   return &this->vfptr; /*0x734389*/
@@ -30045,10 +30045,10 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
 
   v1 = this; /*0x74c9f4*/
   Vtable3 = (int)this; /*0x74c9f9*/
-  *(unsigned int *)this->vtable1 = &vt_VeinholeMonsterClass; /*0x74c9fd*/
-  this->vtable2 = (int)&vt_VeinholeMonsterClass; /*0x74ca03*/
-  this->vtable3 = (int)&vt_VeinholeMonsterClass; /*0x74ca0a*/
-  this->vtable4 = (int)&vt_VeinholeMonsterClass; /*0x74ca11*/
+  /* X11: vtable install elided (implicit via VeinholeMonsterClass virtuals 0x74c9fd) */
+  /* X11: vtable install elided (implicit via VeinholeMonsterClass virtuals 0x74ca03) */
+  /* X11: vtable install elided (implicit via VeinholeMonsterClass virtuals 0x74ca0a) */
+  /* X11: vtable install elided (implicit via VeinholeMonsterClass virtuals 0x74ca11) */
   v31 = -2; /*0x74ca18*/
   do /*0x74cc16*/
   {
@@ -30510,7 +30510,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
 
   VectorClass::CellConstructor(&v51, 0, 0); /*0x74e1d1*/
   v2 = (unsigned int *)this->fallRate; /*0x74e1d6*/
-  v51.vfptr = &vt_DynamicVectorClass; /*0x74e1dc*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x74e1dc) */
   v52 = 0; /*0x74e1e4*/
   v53 = 5000; /*0x74e1e8*/
   this->M172 = 0; /*0x74e1f0*/
@@ -30719,7 +30719,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
       }
     }
   }
-  v51.vfptr = &vt_VectorClass; /*0x74e682*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x74e682) */
   if ( v51.Items ) /*0x74e68b*/
   {
     if ( v51.IsAllocated ) /*0x74e693*/
@@ -31834,7 +31834,7 @@ void* Gap2Recv_765C90::Team_Create_765C90(int a2, void* a3) {
   this->vfptr2 = (void *)a2; /*0x765ca3*/
   (this->vtable4) = 1; /*0x765ca6*/
   (this->M13) = 0; /*0x765caa*/
-  this->vfptr = &vt_VectorClassrc_ptr; /*0x765cae*/
+  /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x765cae) */
   if ( !a2 ) /*0x765cb5*/
     return &this->vfptr; /*0x765cb5*/
   if ( !a3 ) /*0x765cc1*/
@@ -31995,21 +31995,21 @@ void* Gap2Recv_7665D0::TerritorySelectWDT_Create(void* a2) {
 // 0x7668F0
 namespace gamemd { 
 void* Gap2Recv_7668F0::System_Init_7668F0() {
-  *(unsigned int *)this = &vt_rc_ptr; /*0x7668f0*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x7668f0) */
   return ComPtr::Release((ComPtr *)this);
 }
 }
 // 0x766900
 namespace gamemd { 
 void* Gap2Recv_766900::System_Init_766900() {
-  *(unsigned int *)this = &vt_rc_ptr; /*0x766900*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x766900) */
   return ComPtr::Release((ComPtr *)this);
 }
 }
 // 0x766910
 namespace gamemd { 
 void* Gap2Recv_766910::System_Init_766910() {
-  *(unsigned int *)this = &vt_rc_ptr; /*0x766910*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x766910) */
   return ComPtr::Release((ComPtr *)this);
 }
 }
@@ -32021,10 +32021,10 @@ void* Gap2Recv_766A10::System_Init_766A10(int a2, int arg4, void * a3, ObjectCla
   this->M8 = a2; /*0x766a1f*/
   this->M12 = v6; /*0x766a26*/
   this->M4 = 0; /*0x766a2d*/
-  *(unsigned int *)this = &vt_WorldDominationTourGameOption; /*0x766a34*/
+  /* X11: vtable install elided (implicit via WorldDominationTourGameOption virtuals 0x766a34) */
   this->M16 = arg4; /*0x766a3a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a3); /*0x766a3d*/
-  *(unsigned int *)this = &vt_WorldDominationTourValueGameOption; /*0x766a46*/
+  /* X11: vtable install elided (implicit via WorldDominationTourValueGameOption virtuals 0x766a46) */
   DeleteAndZero(&a3); /*0x766a4c*/
   return this; /*0x766a53*/
 }
@@ -32061,7 +32061,7 @@ char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
 namespace gamemd { 
 void* Gap2Recv_766F70::System_Init_766F70(int a2) {
   ComPtr::Constructor((ComPtr *)this); /*0x766f73*/
-  *(unsigned int *)this = &vt_rc_ptr; /*0x766f7c*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x766f7c) */
   ComPtr::Set((ComPtr *)this, a2->u32_4); /*0x766f88*/
   return this; /*0x766f8f*/
 }
@@ -32077,11 +32077,11 @@ void* Gap2Recv_767820::ConstructorWDTFlagOption_Create(int arg0, void * a2, int 
   this->VtableStub_8 = arg0; /*0x76782f*/
   this->M12 = v8; /*0x767836*/
   this->M4 = 0; /*0x76783d*/
-  *(unsigned int *)this = &vt_WorldDominationTourGameOption; /*0x767844*/
+  /* X11: vtable install elided (implicit via WorldDominationTourGameOption virtuals 0x767844) */
   this->M16 = v6; /*0x76784a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a4); /*0x76784d*/
   String::AssignFromPtr((char **)this + 6, (const char **)&a2); /*0x76785a*/
-  *(unsigned int *)this = &vt_WorldDominationTourFlagGameOption; /*0x767863*/
+  /* X11: vtable install elided (implicit via WorldDominationTourFlagGameOption virtuals 0x767863) */
   DeleteAndZero(&a2); /*0x767869*/
   DeleteAndZero(&a4); /*0x767872*/
   return this; /*0x767879*/
@@ -32189,7 +32189,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
   this->vfptr2 = (void *)aP1; /*0x76a7f3*/
   (this->vtable4) = 1; /*0x76a7f6*/
   (this->M13) = 0; /*0x76a7fa*/
-  this->vfptr = &vt_VectorClassrc_ptr; /*0x76a7fe*/
+  /* X11: vtable install elided (implicit via VectorClassrc_ptr virtuals 0x76a7fe) */
   if ( !aP1 ) /*0x76a805*/
     return &this->vfptr; /*0x76a805*/
   if ( !aP2 ) /*0x76a811*/
@@ -32244,7 +32244,7 @@ void* Gap2Recv_76A7E0::ConstructWDTSelection_Create_767FB0_Create_Create(HashTab
 namespace gamemd { 
 void* Gap2Recv_76AAF0::ParseWDTTerritories_Parse() {
   this->vfptr1 = 0; /*0x76aaf7*/
-  this->vfptr = &off_7F7220; /*0x76aafa*/
+  /* X11: vtable install elided (implicit via off_7F7220 virtuals 0x76aafa) */
   this->vfptr2 = 0; /*0x76ab00*/
   (this->M14) = 10; /*0x76ab03*/
   (*(this->vtable4 + (sizeof(this->vfptr3) - 1))) = 10; /*0x76ab06*/
@@ -32608,7 +32608,7 @@ char Gap2Recv_76B180::ParseWDTTerritories(WDTState * aP1, int a3) {
 namespace gamemd { 
 void* Gap2Recv_76B790::ParseWDTTerritories_Parse_76B790(int a2) {
   ComPtr::Constructor((ComPtr *)this); /*0x76b793*/
-  *(unsigned int *)this = &vt_rc_ptr; /*0x76b79f*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76b79f) */
   ComPtr::Set((ComPtr *)this, a2); /*0x76b7a5*/
   return this; /*0x76b7ac*/
 }
@@ -32626,7 +32626,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
 
   v3 = this + 8; /*0x76bf05*/
   this->M4 = 0; /*0x76bf08*/
-  *(unsigned int *)this = &vt_ReferenceCounted; /*0x76bf11*/
+  /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x76bf11) */
   ComPtr::Constructor(&this->u32_8); /*0x76bf17*/
   *v3 = &vt_rc_ptr; /*0x76bf20*/
   ComPtr::Set(v3, a2->vtable2); /*0x76bf2c*/
@@ -32644,7 +32644,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
     v8 = aWdtDefaultlong; /*0x76bf72*/
   v9 = GetStringCSF(v8, 0, aDRa2mdpostWdtp, 21); /*0x76bf77*/
   WideString::Assign((wchar_t **)this + 5, v9); /*0x76bf80*/
-  *(unsigned int *)this = &vt_WorldDominationTourCampaignProperties; /*0x76bf85*/
+  /* X11: vtable install elided (implicit via WorldDominationTourCampaignProperties virtuals 0x76bf85) */
   return this; /*0x76bf8d*/
 }
 }
@@ -32720,7 +32720,7 @@ int Gap2Recv_76C290::ConstructWDTSelection(int arg0, int arg4) {
   this->VectorClass_494 = &vt_DynamicVectorClass; /*0x76c3c1*/
   this->AudioBuffer_14 = 10; /*0x76c3c8*/
   this->u32_10 = 0; /*0x76c3cf*/
-  *(unsigned int *)this = &vt_WorldDominationTourSelection; /*0x76c3d2*/
+  /* X11: vtable install elided (implicit via WorldDominationTourSelection virtuals 0x76c3d2) */
   this->u32_4AC = (uint16_t)Property::Set( /*0x76c448*/
                                                  (Property *)g_FogOfWarState,
                                                  ((uint8_t)dword_AC18A4 >> g_BitShift_Green_0 << g_BitShift_Red)
@@ -32815,7 +32815,7 @@ void Gap2Recv_76C6E0::SelectionInitializeWOL() {
   int v16; // [esp+20h] [ebp-8h]
   int v17; // [esp+24h] [ebp-4h]
 
-  *(unsigned int *)this = &vt_WorldDominationTourSelection; /*0x76c6e9*/
+  /* X11: vtable install elided (implicit via WorldDominationTourSelection virtuals 0x76c6e9) */
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x76c6f7*/
   Theme::QueueSong((int)&unk_A83D10, -3); /*0x76c701*/
   (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x76c710*/
@@ -33721,7 +33721,7 @@ void* Gap2Recv_76F210::ConstructWDTSelection_Create_76F210(int a2, int a3) {
   this->Capacity = a2; /*0x76f21e*/
   this->IsInitialized = 1; /*0x76f221*/
   this->IsAllocated = 0; /*0x76f225*/
-  this->vfptr = &vt_VectorClass; /*0x76f228*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x76f228) */
   if ( a2 ) /*0x76f22e*/
   {
     if ( a3 ) /*0x76f236*/
@@ -33759,7 +33759,7 @@ void* Gap2Recv_76F500::ConstructWDTSelection_Create_76F500() {
     v3 = 0; /*0x76f542*/
   }
   ComPtr::Constructor((ComPtr *)this); /*0x76f546*/
-  *(unsigned int *)this = &vt_rc_ptr; /*0x76f54d*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76f54d) */
   ComPtr::Set((ComPtr *)this, (int)v3); /*0x76f554*/
   return this; /*0x76f55b*/
 }
@@ -34142,7 +34142,7 @@ char* Gap2Recv_779B50::ReadAutoLoginWOL() {
     memset(&v5.needsSave_flag, 0, 13); /*0x779bd2*/
     v5.unknown38 = 0; /*0x779be2*/
     v5.INIClass_field_3C = 0; /*0x779be6*/
-    *(unsigned int *)v5.vtable1 = &vt_INIClass; /*0x779bea*/
+    /* X11: vtable install elided (implicit via INIClass virtuals 0x779bea) */
     FileStraw::Open((FileStraw *)&v5, (int)&v6, 0); /*0x779bf2*/
     CCFileClass::Close((BufferIOFileClass *)&v6); /*0x779bfb*/
     unknown_libname_73(&v3); /*0x779c04*/
@@ -34191,7 +34191,7 @@ int Gap2Recv_779C90::ReadSettingsWOL() {
   memset(&v4.needsSave_flag, 0, 13); /*0x779d22*/
   v4.unknown38 = 0; /*0x779d32*/
   v4.INIClass_field_3C = 0; /*0x779d36*/
-  *(unsigned int *)v4.vtable1 = &vt_INIClass; /*0x779d3a*/
+  /* X11: vtable install elided (implicit via INIClass virtuals 0x779d3a) */
   if ( (uint8_t)File::IsReady((BufferIOFileClass *)&v5, 0) ) /*0x779d42*/
   {
     FileStraw::Open((FileStraw *)&v4, (int)&v5, 0); /*0x779d55*/
@@ -34231,7 +34231,7 @@ char* Gap2Recv_779DD0::LoadConfigWOL() {
     memset(&v5.needsSave_flag, 0, 13); /*0x779e52*/
     v5.unknown38 = 0; /*0x779e62*/
     v5.INIClass_field_3C = 0; /*0x779e66*/
-    *(unsigned int *)v5.vtable1 = &vt_INIClass; /*0x779e6a*/
+    /* X11: vtable install elided (implicit via INIClass virtuals 0x779e6a) */
     FileStraw::Open((FileStraw *)&v5, (int)&v6, 0); /*0x779e72*/
     CCFileClass::Close((BufferIOFileClass *)&v6); /*0x779e7b*/
     unknown_libname_73(&v3); /*0x779e84*/

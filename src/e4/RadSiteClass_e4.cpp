@@ -44,7 +44,7 @@ RadSiteClass::RadSiteClass()
   this->RadTimeLeft = 0; /*0x65b225*/
   this->AbstractClass = &RadSiteClass::`vftable'; /*0x65b228*/
   this->? = &RadSiteClass::`vftable'; /*0x65b22e*/
-  this->vtable3 = &RadSiteClass::`vftable'; /*0x65b235*/
+  /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b235) */
   this->? = &RadSiteClass::`vftable'; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
@@ -95,10 +95,10 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0-((unsigned int *)(>RadLevelTimer))[0] = v3; /*0x65b404*/
       aP0-((unsigned int *)(>RadLightTimer))[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x65b40c*/
       aP0-((unsigned int *)(>RadLightTimer))[2] = 0; /*0x65b40f*/
-      aP0->vfptr = &vt_RadSiteClass; /*0x65b416*/
-      aP0->vfptr1 = &vt_RadSiteClass; /*0x65b41c*/
-      aP0->vfptr2 = &vt_RadSiteClass; /*0x65b423*/
-      aP0->vfptr3 = &vt_RadSiteClass; /*0x65b42a*/
+      /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b416) */
+      /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b41c) */
+      /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b423) */
+      /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b42a) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->vtable4); /*0x65b43a*/
   }

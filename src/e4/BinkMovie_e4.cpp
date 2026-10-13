@@ -910,10 +910,10 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
   if ( !(uint8_t)((CCFileClass *)(&v8))->Open(0) ) /*0x6c9b8a*/
   {
   LABEL_6:
-    *(unsigned int *)v8.vtable1 = &vt_CCFileClass; /*0x6c9be2*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x6c9be2) */
     v10 = 0; /*0x6c9bee*/
     Vector::Clear((int)v9); /*0x6c9bf5*/
-    *(unsigned int *)v8.vtable1 = &off_7E1668; /*0x6c9bfe*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x6c9bfe) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x6c9c06*/
     return 0; /*0x6c9c16*/
   }
@@ -933,10 +933,10 @@ int BinkMovie::InitKeyframeTracking(char * Source, void * aSubtitlemdTxt)
   }
   nullsub_40(v5); /*0x6c9c19*/
   FileStraw::Destructor((int)v6); /*0x6c9c22*/
-  *(unsigned int *)v8.vtable1 = &vt_CCFileClass; /*0x6c9c2b*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x6c9c2b) */
   v10 = 0; /*0x6c9c33*/
   Vector::Clear((int)v9); /*0x6c9c3a*/
-  *(unsigned int *)v8.vtable1 = &off_7E1668; /*0x6c9c43*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x6c9c43) */
   ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x6c9c4b*/
   return 1; /*0x6c9c0b*/
 }

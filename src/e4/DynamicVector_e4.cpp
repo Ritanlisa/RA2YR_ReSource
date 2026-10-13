@@ -101,7 +101,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   aP1->vtable3 = aP2; /*0x42f681*/
   aP1->vtable4 = 1; /*0x42f684*/
   aP1->u32_D = 0; /*0x42f688*/
-  *(unsigned int *)aP1->vtable1 = (unsigned int)(&vt_VectorClass); /*0x42f68c*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x42f68c) */
   if ( aP2 ) /*0x42f692*/
   {
     if ( a3_1 ) /*0x42f69a*/
@@ -117,7 +117,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       aP1->u32_D = 1; /*0x42f6c6*/
     }
   }
-  *(unsigned int *)aP1->vtable1 = (unsigned int)(&vt_DynamicVectorClass); /*0x42f6ca*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x42f6ca) */
   *(unsigned int *)aP1->abstractFlags = 10; /*0x42f6d0*/
   aP1->uniqueId = 0; /*0x42f6d7*/
   return aP1->vtable1; /*0x42f6e0*/
@@ -422,7 +422,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   this->Capacity = a2; /*0x67ac80*/
   this->IsInitialized = 1; /*0x67ac83*/
   this->IsAllocated = 0; /*0x67ac87*/
-  *(unsigned int *)this->vtable1 = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67ac8b*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x67ac8b) */
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
@@ -579,7 +579,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   this->Capacity = a2; /*0x7342e0*/
   this->IsInitialized = 1; /*0x7342e3*/
   this->IsAllocated = 0; /*0x7342e7*/
-  *(unsigned int *)this->vtable1 = &VectorClass<TechnoClass *>::`vftable'; /*0x7342eb*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x7342eb) */
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/

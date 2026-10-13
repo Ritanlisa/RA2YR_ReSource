@@ -1168,11 +1168,11 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   v41 = (__int16 *)*((unsigned int *)a1 + 2); /*0x7074a2*/
   Surface::Construct(&v37, v9, v8); /*0x7074a6*/
   v38 = 0; /*0x7074b8*/
-  *(unsigned int *)v37.vtable1 = &XSurface_Vtable; /*0x7074c0*/
+  /* X11: vtable install elided (implicit via XSurface virtuals 0x7074c0) */
   v39 = 1; /*0x7074c8*/
   Buffer::Init((Buffer *)v40, (int)v41, v8 * v9); /*0x7074d0*/
   v11 = *(unsigned int *)this->vtable1; /*0x7074d9*/
-  *(unsigned int *)v37.vtable1 = &BSurface_Vtable; /*0x7074dd*/
+  /* X11: vtable install elided (implicit via BSurface virtuals 0x7074dd) */
   v12 = aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (**)(Surface *))(v11 + 44))(this) == 1 && this->u32_6D3 ) /*0x7074f0*/
     v13 = (LightConvertClass *)dword_B1D140; /*0x7074fa*/
@@ -2194,7 +2194,7 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, v
 
   aP1->Width = aP2; /*0x4aec6a*/
   aP1->Height = a3; /*0x4aec6d*/
-  *(unsigned int *)aP1->vtable1 = &Surface_Vtable; /*0x4aec70*/
+  /* X11: vtable install elided (implicit via Surface virtuals 0x4aec70) */
   return aP1->vtable1; /*0x4aec76*/
 
 }

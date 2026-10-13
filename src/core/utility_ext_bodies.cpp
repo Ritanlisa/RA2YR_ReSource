@@ -44,7 +44,7 @@ int GraphicMenuImageItem::QueryInterface(char a2)
   ObjectClass *v3; // edi
 
   v3 = (ObjectClass *)this->u32_30; /*0x4f3844*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4f3847*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4f3847) — binary-proven install, was 0 */
   if ( v3 ) /*0x4f384f*/
   {
     j_DeleteAndZero(v3); /*0x4f3853*/

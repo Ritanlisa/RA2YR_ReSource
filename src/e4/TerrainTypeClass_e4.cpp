@@ -94,9 +94,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned char *)aP4 + 774) = 0; /*0x5448bc*/
   *((unsigned int *)aP4 + 194) = 0; /*0x5448c2*/
   aP4->ObjectTypeClass = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
-  aP4->vtable2 = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
+  /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
   aP4->? = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
-  aP4->vtable4 = &IsometricTileTypeClass::`vftable'; /*0x5448dd*/
+  /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -353,10 +353,10 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
   TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = a3->Image; /*0x71e364*/
-  a3->vfptr = &vt_TerrainTypeClass; /*0x71e36a*/
-  a3->vfptr1 = &vt_TerrainTypeClass; /*0x71e372*/
-  a3->vfptr2 = &vt_TerrainTypeClass; /*0x71e379*/
-  a3->vfptr3 = &vt_TerrainTypeClass; /*0x71e380*/
+  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e36a) */
+  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e372) */
+  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e379) */
+  /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e380) */
   if ( Image ) /*0x71e387*/
   {
     operator delete((void *)(Image)); /*0x71e38a*/
@@ -483,10 +483,10 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
-      aP0->vfptr = &vt_TerrainTypeClass; /*0x71e1f4*/
-      aP0->vfptr1 = &vt_TerrainTypeClass; /*0x71e1fa*/
-      aP0->vfptr2 = &vt_TerrainTypeClass; /*0x71e201*/
-      aP0->vfptr3 = &vt_TerrainTypeClass; /*0x71e208*/
+      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e1f4) */
+      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e1fa) */
+      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e201) */
+      /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e208) */
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/

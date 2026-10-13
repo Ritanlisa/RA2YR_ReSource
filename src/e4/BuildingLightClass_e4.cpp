@@ -141,10 +141,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  a1->vtable0 = (int)&BuildingLightClass::`vftable'; /*0x4370c4*/
-  a1->vtable1 = (int)&BuildingLightClass::`vftable'; /*0x4370ca*/
-  a1->vtable2 = (int)&BuildingLightClass::`vftable'; /*0x4370d1*/
-  a1->vtable3 = (int)&BuildingLightClass::`vftable'; /*0x4370d8*/
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370c4) */
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370ca) */
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d1) */
+  /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
   if ( (unsigned __int8)ObjectClass::Undeploy(a1) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)a1); /*0x4370ee*/
   v5 = a1; /*0x437103*/

@@ -128,11 +128,11 @@ int AircraftClass::Construct(int a1, void* a2) {
   this->AircraftClass_field_char_6D3 = 5; /*0x413d74*/
   this->AircraftClass_field_bool_6D4 = 1; /*0x413d7b*/
   this->AircraftClass_field_bool_6D5 = 1; /*0x413d81*/
-  *(unsigned int *)this = 0; /*0x413d87*/
-  this->vtable2 = 0; /*0x413d8d*/
-  this->vtable3 = 0; /*0x413d94*/
-  this->vtable4 = 0; /*0x413d9b*/
-  this->vtable5 = 0; /*0x413da2*/
+  /* X11: vtable install elided (implicit via class virtuals 0x413d87) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x413d8d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x413d94) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x413d9b) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x413da2) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x413dac*/
   v5 = this->Type; /*0x413db1*/
   if ( v5 ) /*0x413db9*/
@@ -258,10 +258,10 @@ void* BuildingLightClass::CTOR(int a1) {
   v4[1].nextObject = 0; /*0x43589d*/
   v4[1].attachedTag = 0; /*0x4358a3*/
   v4[1].attachedBomb = (BombClass *)this; /*0x4358a9*/
-  v4->vfptr = 0; /*0x4358af*/
-  v4->vfptr1 = 0; /*0x4358b5*/
-  v4->vfptr2 = 0; /*0x4358bc*/
-  v4->vfptr3 = 0; /*0x4358c3*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4358af) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4358b5) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4358bc) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x4358c3) — binary-proven install, was 0 */
   if ( FootClass_Array.turretRecoil[2] < FootClass_Array.turretRecoil[0] /*0x435900*/
     || ((((unsigned char *)&(FootClass_Array.turretRecoil[1]))[1]) || !FootClass_Array.turretRecoil[0])
     && FootClass_Array.turretRecoil[3] > 0
@@ -1356,10 +1356,10 @@ void* BuildingClass::ctor(int a1) {
   this->Audio7[3] = (int)0; /*0x43b709*/
   this->Audio8[3] = 10; /*0x43b713*/
   this->Audio8[2] = 0; /*0x43b719*/
-  this->vfptr = (int)&BuildingClass_Vtable; /*0x43b71f*/
-  this->vfptr1 = (int)&BuildingClass_Vtable2; /*0x43b725*/
-  this->vfptr2 = (int)&BuildingClass_Vtable3; /*0x43b72c*/
-  this->vfptr3 = (int)&BuildingClass_Vtable4; /*0x43b733*/
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b71f) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b725) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b72c) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b733) */
   return &this->vfptr; /*0x43b73c*/
 }
 }
@@ -1517,10 +1517,10 @@ void* BuildingClass::ctor(int a1) {
   this->Audio7[3] = (int)0; /*0x43b709*/
   this->Audio8[3] = 10; /*0x43b713*/
   this->Audio8[2] = 0; /*0x43b719*/
-  this->vfptr = (int)&BuildingClass_Vtable; /*0x43b71f*/
-  this->vfptr1 = (int)&BuildingClass_Vtable2; /*0x43b725*/
-  this->vfptr2 = (int)&BuildingClass_Vtable3; /*0x43b72c*/
-  this->vfptr3 = (int)&BuildingClass_Vtable4; /*0x43b733*/
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b71f) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b725) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b72c) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b733) */
   return &this->vfptr; /*0x43b73c*/
 }
 }
@@ -1669,10 +1669,10 @@ void* BuildingClass::ctor(int a1) {
   this->Audio7[3] = (int)0; /*0x43b709*/
   this->Audio8[3] = 10; /*0x43b713*/
   this->Audio8[2] = 0; /*0x43b719*/
-  this->vfptr = (int)&BuildingClass_Vtable; /*0x43b71f*/
-  this->vfptr1 = (int)&BuildingClass_Vtable2; /*0x43b725*/
-  this->vfptr2 = (int)&BuildingClass_Vtable3; /*0x43b72c*/
-  this->vfptr3 = (int)&BuildingClass_Vtable4; /*0x43b733*/
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b71f) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b725) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b72c) */
+  /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b733) */
   return &this->vfptr; /*0x43b73c*/
 }
 }
@@ -3936,9 +3936,9 @@ int InfantryClass::Construct(int a1, void* a2) {
   this->ShouldDeploy = 0; /*0x517abc*/
   this->InfantryClass_field_int_6E8 = 2; /*0x517ac2*/
   *(unsigned int *)this = 0; /*0x517acc*/
-  this->vtable2 = 0; /*0x517ad2*/
-  this->vtable3 = 0; /*0x517ad8*/
-  this->vtable4 = &off_7EB02C; /*0x517adf*/
+  /* X11: vtable install elided (implicit via class virtuals 0x517ad2) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x517ad8) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517adf) */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x517ae6*/
   if ( *(int *)&g_BuildingClass_Count < *(int *)&DataGlobal_A83DF0 /*0x517b1e*/
     || (DataGlobal_A83DF5 || !*(unsigned int *)&DataGlobal_A83DF0)
@@ -4038,9 +4038,9 @@ int InfantryClass::Construct(int a1, void* a2) {
   this->ShouldDeploy = 0; /*0x517abc*/
   this->InfantryClass_field_int_6E8 = 2; /*0x517ac2*/
   *(unsigned int *)this = 0; /*0x517acc*/
-  this->vtable2 = 0; /*0x517ad2*/
-  this->vtable3 = 0; /*0x517ad8*/
-  this->vtable4 = &off_7EB02C; /*0x517adf*/
+  /* X11: vtable install elided (implicit via class virtuals 0x517ad2) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x517ad8) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517adf) */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x517ae6*/
   if ( *(int *)&g_BuildingClass_Count < *(int *)&DataGlobal_A83DF0 /*0x517b1e*/
     || (DataGlobal_A83DF5 || !*(unsigned int *)&DataGlobal_A83DF0)
@@ -5770,9 +5770,9 @@ int UnitClass::Construct() {
   this->Undeploying = 0; /*0x73542e*/
   *(&this->suspendedMission1) = 0; /*0x735434*/
   *this = (int)0; /*0x73543a*/
-  this->vtable2 = (int)0; /*0x735440*/
-  this->vtable3 = (int)0; /*0x735446*/
-  this->vtable4 = (int)&off_7F5C44; /*0x73544d*/
+  /* X11: vtable install elided (implicit via class virtuals 0x735440) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x735446) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via off_7F5C44 virtuals 0x73544d) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x735454*/
   if ( FootClass_Array.storedTiberium[2] < FootClass_Array.storedTiberium[0] /*0x73548f*/
     || ((((unsigned char *)&(FootClass_Array.storedTiberium[1]))[1]) || !FootClass_Array.storedTiberium[0])
@@ -5957,9 +5957,9 @@ int UnitClass::Construct() {
   this->Undeploying = 0; /*0x73542e*/
   *(&this->suspendedMission1) = 0; /*0x735434*/
   *this = (int)0; /*0x73543a*/
-  this->vtable2 = (int)0; /*0x735440*/
-  this->vtable3 = (int)0; /*0x735446*/
-  this->vtable4 = (int)&off_7F5C44; /*0x73544d*/
+  /* X11: vtable install elided (implicit via class virtuals 0x735440) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x735446) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via off_7F5C44 virtuals 0x73544d) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x735454*/
   if ( FootClass_Array.storedTiberium[2] < FootClass_Array.storedTiberium[0] /*0x73548f*/
     || ((((unsigned char *)&(FootClass_Array.storedTiberium[1]))[1]) || !FootClass_Array.storedTiberium[0])

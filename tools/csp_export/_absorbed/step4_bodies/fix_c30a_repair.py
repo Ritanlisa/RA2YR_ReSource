@@ -37,6 +37,19 @@ ZIPNAME = re.compile(r'\b(?!' + TYPW + r'\b)([A-Za-z_]\w*)\s+'
 
 n_reg = n_vt = n_rtti = n_dup = n_zip = 0
 SRC = ROOT / 'src'
+
+# X11 (user ruling 2026-10-13): a vtable install is compiler-generated — it
+# must never be rewritten to `= 0` (that silently zeroed real installs and is
+# the historical source of `vfptr = 0` corruption). Standalone install
+# statements are elided (marker comment) instead; mentions that are not part
+# of a standalone statement are left in place (fail-loud; no silent zeroing).
+import sys as _sys
+_sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
+try:
+    from _vtelide import elide_vtable_install_lines as _elide_vt
+except Exception:  # pragma: no cover
+    _elide_vt = None
+
 files = (list(SRC.rglob('*.cpp')) + list(SRC.rglob('*.hpp')) +
          list(SRC.rglob('*.h')) + list(SRC.rglob('*.inc')))
 for p in files:
@@ -47,8 +60,11 @@ for p in files:
     orig = txt
     txt, k = REG.subn('', txt)
     n_reg += k
-    txt, k = VTFT.subn('0', txt)
-    n_vt += k
+    if _elide_vt is not None:
+        txt, k2, _notes = _elide_vt(txt)
+        n_vt += k2
+    # remaining backtick vtable mentions (non-statement contexts) stay
+    # untouched — zeroing them corrupted installs (I-corrupted class).
     txt, k = RTTI.subn('0', txt)
     n_rtti += k
     txt, k = TYPEINFO.subn('0', txt)
@@ -60,6 +76,6 @@ for p in files:
     if txt != orig and APPLY:
         p.write_text(txt, encoding='utf-8', errors='replace')
 
-print('reg-anno: %d, `vftable\': %d, RTTI: %d, dup-names: %d, zip: %d, '
+print('reg-anno: %d, `vftable\' elided: %d, RTTI: %d, dup-names: %d, zip: %d, '
       'files: %d %s' % (n_reg, n_vt, n_rtti, n_dup, n_zip, len(files),
                         '(written)' if APPLY else '(DRY)'))

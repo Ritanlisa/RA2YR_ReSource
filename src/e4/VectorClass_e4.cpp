@@ -723,7 +723,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   *((unsigned int *)p_IsInitialized + 4) = a2_1[4]; /*0x4a0c9d*/
   *((unsigned int *)p_IsInitialized + 5) = a2_1[5]; /*0x4a0ca3*/
   *(unsigned int *)p_IsInitialized = &DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0ca6*/
-  *(unsigned int *)aP1->vtable1 = &EnumConnectionPointsClass::`vftable'; /*0x4a0cac*/
+  /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0cac) */
   for ( i = 0; i < *(unsigned int *)&aP1->__tail_18[4]; ++i ) /*0x4a0cb9*/
   {
     v10 = *((unsigned int *)aP1->Count + i); /*0x4a0cc1*/
@@ -3116,7 +3116,7 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
   this->Capacity = aP1; /*0x42fcc1*/
   this->IsInitialized = 1; /*0x42fcc4*/
   this->IsAllocated = 0; /*0x42fcc8*/
-  this->vtable0 = &VectorClass<Cell>::`vftable'; /*0x42fccc*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x42fccc) */
   if ( aP1 ) /*0x42fcd2*/
   {
     if ( aP2 ) /*0x42fcda*/
@@ -3426,7 +3426,7 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
   this->Capacity = aP1; /*0x45ad8e*/
   this->IsInitialized = 1; /*0x45ad91*/
   this->IsAllocated = 0; /*0x45ad95*/
-  this->vtable0 = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x45ad98*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x45ad98) */
   if ( aP1 ) /*0x45ad9e*/
   {
     if ( aP2 ) /*0x45ada6*/
@@ -3450,7 +3450,7 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
   *&aP1->vtable3 = aP2; /*0x45ae5e*/
   LOBYTE(aP1->vtable4) = 1; /*0x45ae61*/
   BYTE1(aP1->vtable4) = 0; /*0x45ae65*/
-  *(unsigned int *)aP1->vtable1 = &VectorClass<Reestablish *>::`vftable'; /*0x45ae68*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x45ae68) */
   if ( aP2 ) /*0x45ae6e*/
   {
     if ( a3_1 ) /*0x45ae76*/
@@ -3693,7 +3693,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   aP1->Capacity = 0; /*0x4777c0*/
   aP1->IsInitialized[0] = 1; /*0x4777c3*/
   aP1->IsAllocated[0] = 0; /*0x4777c7*/
-  aP1->vfptr = (int)&vt_VectorClass; /*0x4777ca*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x4777ca) */
   if ( aP1 != (DynamicVectorClass *)a2 ) /*0x4777d0*/
   {
     VectorClass::Destroy((int)aP1); /*0x4777d2*/
@@ -3727,7 +3727,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1, void *a2)
   }
   aP1->Count = a2[4]; /*0x477821*/
   aP1->CapacityIncrement = a2[5]; /*0x477827*/
-  aP1->vfptr = (int)&vt_TypeList; /*0x47782a*/
+  /* X11: vtable install elided (implicit via TypeList virtuals 0x47782a) */
   return &aP1->vfptr; /*0x477832*/
 }
 }  // G42.18c ns repair
@@ -3749,7 +3749,7 @@ unsigned int * VectorClass_flat::Construct(int a2, int a3, void *a3_2, void *a4,
   a3_2->Capacity = a3_2; /*0x477bee*/
   a3_2->IsInitialized = 1; /*0x477bf1*/
   a3_2->IsAllocated = 0; /*0x477bf5*/
-  a3_2->vtable0 = &VectorClass<int>::`vftable'; /*0x477bf8*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x477bf8) */
   if ( a3_2 ) /*0x477bfe*/
   {
     if ( a3_2 ) /*0x477c06*/
@@ -7157,7 +7157,7 @@ unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
   this->Capacity = a2; /*0x51055e*/
   this->IsInitialized = 1; /*0x510561*/
   this->IsAllocated = 0; /*0x510565*/
-  this->vtable0 = &VectorClass<BuildingClass *>::`vftable'; /*0x510568*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x510568) */
   if ( a2 ) /*0x51056e*/
   {
     if ( a3 ) /*0x510576*/
@@ -7179,7 +7179,7 @@ unsigned int *  VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP2)
   aP2->Capacity = a2; /*0x5105ae*/
   aP2->IsInitialized = 1; /*0x5105b1*/
   aP2->IsAllocated = 0; /*0x5105b5*/
-  aP2->vtable0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5105b8*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5105b8) */
   if ( a2 ) /*0x5105be*/
   {
     if ( a3 ) /*0x5105c6*/
@@ -7979,7 +7979,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
   this->Capacity = a2; /*0x58ac80*/
   this->IsInitialized = 1; /*0x58ac83*/
   this->IsAllocated = 0; /*0x58ac87*/
-  this->vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58ac8a*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x58ac8a) */
   if ( !a2 ) /*0x58ac90*/
     return &this->vtable0; /*0x58ac90*/
   if ( !a3 ) /*0x58ac98*/
@@ -8471,7 +8471,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->field_50; /*0x5ef293*/
-  *(unsigned int *)this->vfptr = &NullModemConnClass::`vftable'; /*0x5ef296*/
+  /* X11: vtable install elided (implicit via NullModemConnClass virtuals 0x5ef296) */
   __3_YAXPAX_Z(v3); /*0x5ef29d*/
   ConnectionClass::dtor((ConnectionClass *)this); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
@@ -8645,7 +8645,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
   this->Capacity = a2; /*0x628e00*/
   this->IsInitialized = 1; /*0x628e03*/
   this->IsAllocated = 0; /*0x628e07*/
-  this->vtable0 = &VectorClass<HSVClass>::`vftable'; /*0x628e0a*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x628e0a) */
   if ( !a2 ) /*0x628e10*/
     return &this->vtable0; /*0x628e70*/
   if ( !a3 ) /*0x628e18*/
@@ -8947,7 +8947,7 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
   this->Capacity = aP1; /*0x658d71*/
   this->IsInitialized = 1; /*0x658d74*/
   this->IsAllocated = 0; /*0x658d78*/
-  this->vtable0 = &VectorClass<Point2D>::`vftable'; /*0x658d7c*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x658d7c) */
   if ( aP1 ) /*0x658d82*/
   {
     if ( aP2 ) /*0x658d8a*/
@@ -9101,7 +9101,7 @@ void VectorClass_flat::Dtor()
   void *Items; // eax
 
   Items = this->Items; /*0x679f76*/
-  this->vtable0 = &VectorClass<int>::`vftable'; /*0x679f79*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x679f79) */
   if ( Items && this->IsAllocated ) /*0x679f83*/
   {
     __3_YAXPAX_Z(Items); /*0x679f89*/
@@ -9487,7 +9487,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x69d7d3*/
   this->IsInitialized = 1; /*0x69d7d6*/
   this->IsAllocated = 0; /*0x69d7da*/
-  this->vtable0 = &VectorClass<Wstring>::`vftable'; /*0x69d7de*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x69d7de) */
   if ( !a2 ) /*0x69d7e4*/
     return &this->vtable0; /*0x69d7e4*/
   if ( !a3 ) /*0x69d7ec*/
@@ -10148,7 +10148,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   this->Capacity = 0; /*0x717d30*/
   this->IsInitialized[0] = 1; /*0x717d33*/
   this->IsAllocated[0] = 0; /*0x717d37*/
-  this->vtable0 = (int)&VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x717d3a*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x717d3a) */
   if ( this != (DynamicVectorClass *)aP1 ) /*0x717d40*/
   {
     VectorClass::Cleanup((int)this); /*0x717d42*/
@@ -10182,7 +10182,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   }
   this->Count = aP1[4]; /*0x717d91*/
   this->CapacityIncrement = aP1[5]; /*0x717d97*/
-  this->vtable0 = (int)&TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x717d9a*/
+  /* X11: vtable install elided (implicit via TypeList virtuals 0x717d9a) */
   return &this->vtable0; /*0x717da2*/
 
 }

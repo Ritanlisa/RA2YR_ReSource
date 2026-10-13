@@ -207,15 +207,15 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
     {
       Info = VoxelSection::GetInfo(this->m_2 * a3 + 86), 0, 0); /*0x5f7f6a*/
       Matrix::Scale(this->m_2 * a3 + 87), *(float *)(Info + 12)); /*0x5f7f7a*/
-      *(unsigned int *)v17.vtable1 = &vt_CCFileClass; /*0x5f7f8b*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f7f8b) */
       v19 = 0; /*0x5f7f92*/
       Vector::Clear((int)v18); /*0x5f7f99*/
-      *(unsigned int *)v17.vtable1 = &off_7E1668; /*0x5f7faa*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f7faa) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x5f7fb1*/
-      *(unsigned int *)v14.vtable1 = &vt_CCFileClass; /*0x5f7fba*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f7fba) */
       v16 = 0; /*0x5f7fbe*/
       Vector::Clear((int)v15); /*0x5f7fc2*/
-      *(unsigned int *)v14.vtable1 = &off_7E1668; /*0x5f7fcb*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f7fcb) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v14))->Dtor(); /*0x5f7fcf*/
       return 1; /*0x5f7fd7*/
     }
@@ -233,25 +233,25 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
         ((String *)(v12))->Release(); /*0x5f800d*/
         operator delete((void *)(v12)); /*0x5f8013*/
       }
-      *(unsigned int *)v17.vtable1 = &vt_CCFileClass; /*0x5f8027*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f8027) */
       v19 = 0; /*0x5f802e*/
       Vector::Clear((int)v18); /*0x5f8035*/
-      *(unsigned int *)v17.vtable1 = &off_7E1668; /*0x5f8046*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8046) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x5f804d*/
-      *(unsigned int *)v14.vtable1 = &vt_CCFileClass; /*0x5f8056*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f8056) */
       v16 = 0; /*0x5f805a*/
       Vector::Clear((int)v15); /*0x5f805e*/
-      *(unsigned int *)v14.vtable1 = &off_7E1668; /*0x5f8067*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8067) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v14))->Dtor(); /*0x5f806b*/
       return 0; /*0x5f8073*/
     }
   }
   else
   {
-    *(unsigned int *)v14.vtable1 = &vt_CCFileClass; /*0x5f7e48*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f7e48) */
     v16 = 0; /*0x5f7e50*/
     Vector::Clear((int)v15); /*0x5f7e54*/
-    *(unsigned int *)v14.vtable1 = &off_7E1668; /*0x5f7e5d*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f7e5d) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v14))->Dtor(); /*0x5f7e65*/
     return 1; /*0x5f7e6d*/
   }
@@ -364,10 +364,10 @@ int VoxelAnimType::LoadAnim()
       Info = VoxelSection::GetInfo(this->u32_B0, 0, 0); /*0x5f822f*/
       Matrix::Scale(this->u32_B4, *(float *)(Info + 12)); /*0x5f823e*/
     }
-    *(unsigned int *)v51.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x5f824e*/
+    /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f824e) */
     v53 = 0; /*0x5f8256*/
     Vector::Clear((int)v52); /*0x5f825a*/
-    *(unsigned int *)v51.vtable1 = (unsigned int)(&off_7E1668); /*0x5f8263*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8263) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v51))->Dtor(); /*0x5f826b*/
   }
   else
@@ -423,10 +423,10 @@ int VoxelAnimType::LoadAnim()
           v32 = VoxelSection::GetInfo(this->u32_B8, 0, 0); /*0x5f87ce*/
           Matrix::Scale(this->u32_BC, *(float *)(v32 + 12)); /*0x5f87dd*/
         }
-        *(unsigned int *)v54.vtable1 = &vt_CCFileClass; /*0x5f87f0*/
+        /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f87f0) */
         v56 = 0; /*0x5f87fb*/
         Vector::Clear((int)v55); /*0x5f8802*/
-        *(unsigned int *)v54.vtable1 = &off_7E1668; /*0x5f880e*/
+        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f880e) */
         ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x5f8819*/
       }
       goto LABEL_92; /*0x5f8819*/
@@ -490,16 +490,16 @@ int VoxelAnimType::LoadAnim()
           v16 = VoxelSection::GetInfo(this->u32_B8, 0, 0); /*0x5f840a*/
           Matrix::Scale(this->u32_BC, *(float *)(v16 + 12)); /*0x5f8419*/
         }
-        *(unsigned int *)v54.vtable1 = &vt_CCFileClass; /*0x5f842c*/
+        /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f842c) */
         v56 = 0; /*0x5f8437*/
         Vector::Clear((int)v55); /*0x5f843e*/
-        *(unsigned int *)v54.vtable1 = &off_7E1668; /*0x5f844a*/
+        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f844a) */
         ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x5f8455*/
       }
-      *(unsigned int *)v51.vtable1 = &vt_CCFileClass; /*0x5f845e*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f845e) */
       v53 = 0; /*0x5f8466*/
       Vector::Clear((int)v52); /*0x5f846a*/
-      *(unsigned int *)v51.vtable1 = &off_7E1668; /*0x5f8473*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8473) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v51))->Dtor(); /*0x5f847b*/
     }
     if ( this->u32_7A0 ) /*0x5f8480*/
@@ -547,17 +547,17 @@ int VoxelAnimType::LoadAnim()
           v23 = VoxelSection::GetInfo(this->u32_B8, 0, 0); /*0x5f85ca*/
           Matrix::Scale(this->u32_BC, *(float *)(v23 + 12)); /*0x5f85d9*/
         }
-        *(unsigned int *)v54.vtable1 = &vt_CCFileClass; /*0x5f85ec*/
+        /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f85ec) */
         v56 = 0; /*0x5f85f7*/
         Vector::Clear((int)v55); /*0x5f85fe*/
-        *(unsigned int *)v54.vtable1 = &off_7E1668; /*0x5f860a*/
+        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f860a) */
         ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x5f8615*/
       }
   LABEL_92:
-      *(unsigned int *)v51.vtable1 = &vt_CCFileClass; /*0x5f881e*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f881e) */
       v53 = 0; /*0x5f882a*/
       Vector::Clear((int)v52); /*0x5f882e*/
-      *(unsigned int *)v51.vtable1 = &off_7E1668; /*0x5f8833*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8833) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v51))->Dtor(); /*0x5f883f*/
     }
   }
@@ -625,16 +625,16 @@ int VoxelAnimType::LoadAnim()
           v41 = VoxelSection::GetInfo(this->u32_C0, 0, 0); /*0x5f89ea*/
           Matrix::Scale(this->u32_C4, *(float *)(v41 + 12)); /*0x5f89f9*/
         }
-        *(unsigned int *)v54.vtable1 = &vt_CCFileClass; /*0x5f8a0c*/
+        /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f8a0c) */
         v56 = 0; /*0x5f8a17*/
         Vector::Clear((int)v55); /*0x5f8a1e*/
-        *(unsigned int *)v54.vtable1 = &off_7E1668; /*0x5f8a2a*/
+        /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8a2a) */
         ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x5f8a35*/
       }
-      *(unsigned int *)v51.vtable1 = &vt_CCFileClass; /*0x5f8a3e*/
+      /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f8a3e) */
       v53 = 0; /*0x5f8a46*/
       Vector::Clear((int)v52); /*0x5f8a4a*/
-      *(unsigned int *)v51.vtable1 = &off_7E1668; /*0x5f8a53*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8a53) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v51))->Dtor(); /*0x5f8a5b*/
     }
   }
@@ -727,10 +727,10 @@ int VoxelAnimType::LoadAnim()
   this->u32_A30 = 0; /*0x5f8c8f*/
   this->ptr_290 = 0; /*0x5f8c95*/
   LABEL_146:
-  *(unsigned int *)v58.vtable1 = &vt_CCFileClass; /*0x5f8c9b*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5f8c9b) */
   v60 = 0; /*0x5f8cad*/
   Vector::Clear((int)v59); /*0x5f8cb4*/
-  *(unsigned int *)v58.vtable1 = &off_7E1668; /*0x5f8cc0*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f8cc0) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v58))->Dtor(); /*0x5f8cd0*/
 }
 }

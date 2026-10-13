@@ -721,10 +721,10 @@ AbstractClass * * GenerateRangeRingTextures()
         {
           Surface::Construct(v3, 256, 128); /*0x5ff465*/
           *v4->Width.__pad_0 = 0; /*0x5ff46d*/
-          *(unsigned int *)v4->vtable1 = &XSurface_Vtable; /*0x5ff476*/
+          /* X11: vtable install elided (implicit via XSurface virtuals 0x5ff476) */
           v4[1].Width = 1; /*0x5ff47c*/
           Buffer::Init((Buffer *)&v4[1].Height, 0, 0x8000); /*0x5ff47f*/
-          *(unsigned int *)v4->vtable1 = &BSurface_Vtable; /*0x5ff484*/
+          /* X11: vtable install elided (implicit via BSurface virtuals 0x5ff484) */
         }
         else
         {
@@ -791,10 +791,10 @@ AbstractClass * * GenerateRangeRingTextures()
         {
           Surface::Construct(v12, 256, 128); /*0x5ff5d8*/
           *v13->Width.__pad_0 = 0; /*0x5ff5e0*/
-          *(unsigned int *)v13->vtable1 = &XSurface_Vtable; /*0x5ff5e9*/
+          /* X11: vtable install elided (implicit via XSurface virtuals 0x5ff5e9) */
           v13[1].Width = 1; /*0x5ff5ef*/
           Buffer::Init((Buffer *)&v13[1].Height, 0, 0x8000); /*0x5ff5f6*/
-          *(unsigned int *)v13->vtable1 = &BSurface_Vtable; /*0x5ff5fb*/
+          /* X11: vtable install elided (implicit via BSurface virtuals 0x5ff5fb) */
         }
         else
         {
@@ -1026,7 +1026,7 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
   (this->onBridge) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
-  this->vfptr = &vt_NullModemClass; /*0x5f15f1*/
+  /* X11: vtable install elided (implicit via NullModemClass virtuals 0x5f15f1) */
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/

@@ -45,9 +45,9 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
   *(unsigned int *)&this->prefix = &TypeList<UnitTypeClass const *>::`vftable'; /*0x511667*/
   *&this->u32_184 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x511671*/
   this->AbstractClass = &HouseTypeClass::`vftable'; /*0x51167b*/
-  this->vtable2 = &HouseTypeClass::`vftable'; /*0x511681*/
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511681) */
   this->? = &HouseTypeClass::`vftable'; /*0x511688*/
-  this->vtable4 = &HouseTypeClass::`vftable'; /*0x51168f*/
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51168f) */
   return &this->AbstractClass; /*0x511698*/
 
 }
@@ -62,10 +62,10 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   void *veteranInfantryCount; // eax
   HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  a1->vfptr = &vt_HouseTypeClass; /*0x5116a7*/
-  a1->vfptr1 = &vt_HouseTypeClass; /*0x5116ad*/
-  a1->vfptr2 = &vt_HouseTypeClass; /*0x5116b4*/
-  a1->vfptr3 = &vt_HouseTypeClass; /*0x5116bb*/
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116a7) */
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116ad) */
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116b4) */
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116bb) */
   AbstractClass::AnnounceExpiredPointer(&a1->vfptr, 1); /*0x5116c2*/
   v7 = a1; /*0x5116d7*/
   v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))(&dword_A83C98, &v7); /*0x5116db*/
@@ -384,7 +384,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
          128) )
   {
     InfantryTypeVector::Construct(&v82, 0, 0); /*0x511d42*/
-    *(unsigned int *)v82.vtable1 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x511d56*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x511d56) */
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x511d64*/
     {
       if ( !*i ) /*0x511d66*/
@@ -395,7 +395,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     }
     HouseTypeClass::readAllowedUnits((HouseTypeClass *)&Destination, &v82); /*0x511da4*/
     *(unsigned int *)Destination.__pad_0 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x511dad*/
-    *(unsigned int *)v82.vtable1 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x511db1*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x511db1) */
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)&v82); /*0x511db9*/
   }
   else
@@ -502,7 +502,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v43 = (void *)v82.vtable2; /*0x512065*/
   *(unsigned int *)(_EBX + 404) = v41; /*0x512069*/
   *(unsigned int *)(_EBX + 412) = v42; /*0x51206e*/
-  *(unsigned int *)v82.vtable1 = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512071*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x512071) */
   if ( v43 && BYTE1(v82.InfantryTypeVector_field_0x0C) ) /*0x512081*/
     __3_YAXPAX_Z(v43); /*0x512084*/
   v44 = *(unsigned int *)(_EBX + 188); /*0x51208c*/
@@ -991,7 +991,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
 
   this->AbstractClass = &HouseTypeClass::`vftable'; /*0x512766*/
   this->? = &HouseTypeClass::`vftable'; /*0x51276c*/
-  this->vtable3 = &HouseTypeClass::`vftable'; /*0x512773*/
+  /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x512773) */
   this->? = &HouseTypeClass::`vftable'; /*0x51277a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x512781*/
   v8 = this; /*0x512796*/
@@ -1148,7 +1148,7 @@ TypeList_flat * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x512a43*/
-  Block->vfptr = &vt_VectorClass; /*0x512a46*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x512a46) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a50*/
   {
     operator delete((void *)(v3)); /*0x512a58*/
@@ -1169,7 +1169,7 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x512a93*/
-  Block->vfptr = &vt_VectorClass; /*0x512a96*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x512a96) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512aa0*/
   {
     operator delete((void *)(v3)); /*0x512aa8*/

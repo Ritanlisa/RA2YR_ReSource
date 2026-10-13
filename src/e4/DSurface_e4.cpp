@@ -77,7 +77,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
   this->u32_64 = 0; /*0x4ba5c7*/
   this->DSurface_field_0x1C = 0; /*0x4ba5ca*/
   this->DSurface_field_0x20 = 0; /*0x4ba5cd*/
-  *(unsigned int *)this = &DSurface_Vtable; /*0x4ba5d0*/
+  /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
   v7 = operator new(0x6Cu); /*0x4ba5db*/
   this->DSurface_field_0x20 = v7; /*0x4ba5e2*/
   if ( v7 ) /*0x4ba5e5*/
@@ -119,7 +119,7 @@ AbstractClass * * DSurface::Destroy()
   int result; // eax
 
   DSurface_field_0x18 = (char)this->DSurface_field_0x18; /*0x4ba6b6*/
-  this->vtable1 = &DSurface_Vtable; /*0x4ba6b9*/
+  /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba6b9) */
   if ( DSurface_field_0x18 ) /*0x4ba6c1*/
   {
     v3 = this->DSurface_field_0x1C; /*0x4ba6c3*/
@@ -139,7 +139,7 @@ AbstractClass * * DSurface::Destroy()
   if ( result ) /*0x4ba6fe*/
     result = (*(int (**)(int))(*(unsigned int *)result + 8))(result); /*0x4ba703*/
   this->DSurface_field_0x1C = 0; /*0x4ba706*/
-  this->vtable1 = &Surface_Vtable; /*0x4ba709*/
+  /* X11: vtable install elided (implicit via Surface virtuals 0x4ba709) */
   return result; /*0x4ba70f*/
 
 }
@@ -405,7 +405,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   BYTE1(this->DSurface_field_0x18) = 0; /*0x4bac7d*/
   this->DSurface_field_0x1C = a2; /*0x4bac80*/
   this->DSurface_field_0x20 = 0; /*0x4bac83*/
-  this->vtable1 = &DSurface_Vtable; /*0x4bac86*/
+  /* X11: vtable install elided (implicit via DSurface virtuals 0x4bac86) */
   if ( a2 ) /*0x4bac8c*/
   {
     v3 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4bac96*/

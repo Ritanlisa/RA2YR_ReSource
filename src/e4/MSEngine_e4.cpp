@@ -207,7 +207,7 @@ CampaignClass * MSEngine::Destructor()
   this->q034 = 0; /*0x5ceeb5*/
   DeleteAndZero(&this->m_8); /*0x5ceeb8*/
   MSEngine_field_0x4 = this->__pad_004; /*0x5ceebd*/
-  *(unsigned int *)this->vtable1 = &VectorClass<MapStage *>::`vftable'; /*0x5ceec0*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ceec0) */
   if ( MSEngine_field_0x4 && BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
   {
     __3_YAXPAX_Z(MSEngine_field_0x4); /*0x5ceed0*/

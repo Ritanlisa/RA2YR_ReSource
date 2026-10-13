@@ -149,10 +149,10 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   this->WalkFrames = 12; /*0x7471ab*/
   this->FiringFrames_d = 0; /*0x7471b2*/
   this->AltImageFile = 0; /*0x7471b8*/
-  *(unsigned int *)this = &vt_UnitTypeClass; /*0x7471bf*/
-  this->vtable2 = &vt_UnitTypeClass; /*0x7471c5*/
-  this->vtable3 = &vt_UnitTypeClass; /*0x7471cb*/
-  this->vtable4 = &vt_UnitTypeClass; /*0x7471d2*/
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471bf) */
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471c5) */
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471cb) */
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7471d2) */
   this->vtable2.GenerateUniqueID(); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = dword_A83CF0; /*0x7471e8*/
@@ -751,10 +751,10 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     if ( a1 ) /*0x74802f*/
     {
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
-      a1->vfptr = &vt_UnitTypeClass; /*0x74803d*/
-      a1->vfptr1 = &vt_UnitTypeClass; /*0x748043*/
-      a1->vfptr2 = &vt_UnitTypeClass; /*0x74804a*/
-      a1->vfptr3 = &vt_UnitTypeClass; /*0x748051*/
+      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74803d) */
+      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748043) */
+      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74804a) */
+      /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748051) */
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
@@ -813,10 +813,10 @@ namespace gamemd {
   UnitTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = (UnitTypeClass *)v2; /*0x748192*/
-  v2->vfptr = &vt_UnitTypeClass; /*0x748196*/
-  v2->vfptr1 = &vt_UnitTypeClass; /*0x74819c*/
-  v2->vfptr2 = &vt_UnitTypeClass; /*0x7481a3*/
-  v2->vfptr3 = &vt_UnitTypeClass; /*0x7481aa*/
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x748196) */
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x74819c) */
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7481a3) */
+  /* X11: vtable install elided (implicit via UnitTypeClass virtuals 0x7481aa) */
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x7481b1*/
   v6 = v3; /*0x7481c6*/
   v4 = (*(int (**)(unsigned int *, UnitTypeClass **))(dword_A83CE0 + 16))(&dword_A83CE0, &v6); /*0x7481ca*/

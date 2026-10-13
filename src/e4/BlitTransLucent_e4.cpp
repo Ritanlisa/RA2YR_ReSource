@@ -232,7 +232,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->ptr_8; /*0x49a348*/
-  *(unsigned int *)this->vtable1 = &BlitTransLucent25Alpha<unsigned short>::`vftable'; /*0x49a34b*/
+  /* X11: vtable install elided (implicit via BlitTransLucent25Alpha virtuals 0x49a34b) */
   FractalNoise::Dtor(m_8); /*0x49a352*/
   this->m_8 = 0; /*0x49a35b*/
   *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a364*/
@@ -247,7 +247,7 @@ namespace gamemd {
 std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &Blitter::`vftable'; /*0x49a389*/
+  /* X11: vtable install elided (implicit via Blitter virtuals 0x49a389) */
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
     __3_YAXPAX_Z(this); /*0x49a392*/
   return (std::locale::facet *)this; /*0x49a39c*/
@@ -275,7 +275,7 @@ namespace gamemd {
 RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &RLEBlitter::`vftable'; /*0x49a769*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a769) */
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
     __3_YAXPAX_Z(this); /*0x49a772*/
   return (std::locale::facet *)this; /*0x49a77c*/
@@ -287,7 +287,7 @@ namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &RLEBlitter::`vftable'; /*0x49a789*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a789) */
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
     __3_YAXPAX_Z(this); /*0x49a792*/
   return (std::locale::facet *)this; /*0x49a79c*/
@@ -299,7 +299,7 @@ namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1(char a2)
 {
 
-  *(unsigned int *)this->vtable1 = &RLEBlitter::`vftable'; /*0x49a7a9*/
+  /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a7a9) */
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
     __3_YAXPAX_Z(this); /*0x49a7b2*/
   return (std::locale::facet *)this; /*0x49a7bc*/

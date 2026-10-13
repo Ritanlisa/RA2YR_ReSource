@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.q020, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    *(unsigned int *)v21.vtable1 = &vt_TypeList; /*0x47712a*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x47712a) */
     for ( i = strtok(v21.q020, Str); i; i = strtok(0, Str) ) /*0x477144*/
     {
       if ( !*i ) /*0x47714a*/
@@ -194,8 +194,8 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    a1->vfptr = (int)&vt_TypeList; /*0x4773d9*/
-    *(unsigned int *)v21.vtable1 = &vt_VectorClass; /*0x4773df*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x4773d9) */
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x4773df) */
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &vt_VectorClass; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
@@ -2462,7 +2462,7 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 
   BufferIOFileClass::Constructor(); /*0x47aa03*/
   this->M84 = 0; /*0x47aa0c*/
-  *(unsigned int *)this->vfptr = &off_7E1668; /*0x47aa10*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x47aa10) */
   v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/
   FileClass::OpenWithCDSearch(v3); /*0x47aa1e*/
   return this->vfptr; /*0x47aa25*/

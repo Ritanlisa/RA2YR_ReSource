@@ -106,7 +106,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
-    v17.vfptr = &vt_TypeList; /*0x67b5ac*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x67b5ac) */
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
@@ -126,10 +126,10 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     aP0->Capacity = 0; /*0x67b630*/
     aP0->IsInitialized = 1; /*0x67b633*/
     aP0->IsAllocated = 0; /*0x67b637*/
-    aP0->vfptr = &vt_VectorClass; /*0x67b63a*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b63a) */
     VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
-    aP0->vfptr = &vt_TypeList; /*0x67b645*/
-    v17.vfptr = &vt_VectorClass; /*0x67b64b*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x67b645) */
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b64b) */
     v9 = (void *)v19; /*0x67b657*/
     aP0[1].vfptr = (void *)v18; /*0x67b65b*/
     Items = v17.Items; /*0x67b65e*/
@@ -147,7 +147,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     aP0->Capacity = 0; /*0x67b69c*/
     aP0->IsInitialized = 1; /*0x67b69f*/
     aP0->IsAllocated = 0; /*0x67b6a3*/
-    aP0->vfptr = &vt_VectorClass; /*0x67b6a6*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x67b6a6) */
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
@@ -181,7 +181,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     }
     aP0[1].vfptr = a4[1].vfptr; /*0x67b703*/
     aP0[1].Items = a4[1].Items; /*0x67b709*/
-    aP0->vfptr = &vt_TypeList; /*0x67b70c*/
+    /* X11: vtable install elided (implicit via TypeList virtuals 0x67b70c) */
   }
   return aP0; /*0x67b682*/
 }

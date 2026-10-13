@@ -221,7 +221,7 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->0 = &vt_FlyLocomotionClass; /*0x4d03a3*/
-  *&this->vtable2 = &vt_FlyLocomotionClass; /*0x4d03a9*/
+  /* X11: vtable install elided (implicit via FlyLocomotionClass virtuals 0x4d03a9) */
   this->LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     operator delete((void *)(this)); /*0x4d03bd*/

@@ -139,7 +139,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
   aP1->q008 = aP2; /*0x658df0*/
   LOBYTE(aP1->u32_C) = 1; /*0x658df3*/
   BYTE1(aP1->u32_C) = 0; /*0x658df7*/
-  *(unsigned int *)aP1->vtable1 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658dfa*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x658dfa) */
   if ( aP2 ) /*0x658e00*/
   {
     if ( a3 ) /*0x658e08*/

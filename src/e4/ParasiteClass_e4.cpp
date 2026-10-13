@@ -53,7 +53,7 @@ int ParasiteClass::Constructor()
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->AbstractClass = &ParasiteClass::`vftable'; /*0x629231*/
   this->? = &ParasiteClass::`vftable'; /*0x629237*/
-  this->vtable3 = &ParasiteClass::`vftable'; /*0x62923e*/
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62923e) */
   this->? = &ParasiteClass::`vftable'; /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
@@ -83,10 +83,10 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
   this->ParasiteClass_field_38 = dword_A8ED84; /*0x6292d2*/
   this->ParasiteClass_field_40 = 0; /*0x6292d5*/
-  *(unsigned int *)this = &vt_ParasiteClass; /*0x6292d8*/
-  this->vtable2 = &vt_ParasiteClass; /*0x6292de*/
-  this->vtable3 = &vt_ParasiteClass; /*0x6292e5*/
-  this->vtable4 = &vt_ParasiteClass; /*0x6292ec*/
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x6292d8) */
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x6292de) */
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x6292e5) */
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x6292ec) */
   this->creationFrame = aP1; /*0x6292f3*/
   this->__pad_028 = 0; /*0x6292f6*/
   this->ParasiteClass_field_38 = dword_A8ED84; /*0x629303*/
@@ -807,10 +807,10 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   v3 = *((unsigned int *)Block + 17); /*0x62af77*/
-  Block->vfptr = &vt_ParasiteClass; /*0x62af7a*/
-  Block->vfptr1 = &vt_ParasiteClass; /*0x62af82*/
-  Block->vfptr2 = &vt_ParasiteClass; /*0x62af89*/
-  Block->vfptr3 = &vt_ParasiteClass; /*0x62af90*/
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af7a) */
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af82) */
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af89) */
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af90) */
   *((unsigned int *)Block + 19) = 0; /*0x62af97*/
   *((unsigned int *)Block + 20) = 0; /*0x62af9a*/
   *((unsigned int *)Block + 18) = 0; /*0x62af9d*/
@@ -1202,10 +1202,10 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       *(unsigned int *)&a0->__pad_28[4] = v4; /*0x6295e8*/
       a0->ParasiteClass_field_38 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6295f0*/
       a0->ParasiteClass_field_40 = 0; /*0x6295f3*/
-      a0->vfptr = &vt_ParasiteClass; /*0x6295fa*/
-      a0->vfptr1 = &vt_ParasiteClass; /*0x629600*/
-      a0->vfptr2 = &vt_ParasiteClass; /*0x629607*/
-      a0->vfptr3 = &vt_ParasiteClass; /*0x62960e*/
+      /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x6295fa) */
+      /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629600) */
+      /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629607) */
+      /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62960e) */
     }
     if ( *((unsigned int *)a0 + 17) /*0x629657*/
       && (g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < DataGlobal_B0F5C0

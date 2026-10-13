@@ -1358,7 +1358,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
   (this->u32_2D) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   vtable1 = this->vfptr1; /*0x633e20*/
-  this->vfptr = 0; /*0x633e23*/
+  /* X11: vtable install elided (implicit via class virtuals 0x633e23) — binary-proven install, was 0 */
   if ( vtable1 && (this->u32_D) ) /*0x633e2d*/
   {
     operator delete((void *)(vtable1)); /*0x633e33*/

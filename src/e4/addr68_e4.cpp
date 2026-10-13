@@ -1194,7 +1194,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   Node::Init((MixFileClass *)&v10.fallRate); /*0x687d0d*/
   v10.ambientSoundController[1] = 0; /*0x687d17*/
   (*((unsigned char *)&(v10.ambientSoundController[2]))) = 0; /*0x687d1d*/
-  v10.vfptr.vfptr1 = (int)&CCINIClass_Vtable; /*0x687d21*/
+  /* X11: vtable install elided (implicit via CCINIClass virtuals 0x687d21) */
   if ( byte_A8ED6B ) /*0x687d29*/
   {
     v4 = CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d34*/

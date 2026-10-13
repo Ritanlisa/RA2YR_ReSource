@@ -520,10 +520,10 @@ int AITriggerTypeClass::GetClassIdentifier(unsigned int * a2)
     if ( this ) /*0x41e556*/
     {
       AbstractTypeClass::Init((int)this, (int)&a2); /*0x41e55f*/
-      *(unsigned int *)this->vtable1 = 0; /*0x41e564*/
-      this->vtable2 = (int)0; /*0x41e56a*/
-      this->vtable3 = (int)0; /*0x41e571*/
-      this->vtable4 = (int)0; /*0x41e578*/
+      /* X11: vtable install elided (implicit via class virtuals 0x41e564) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x41e56a) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x41e571) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x41e578) — binary-proven install, was 0 */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->u32_D8); /*0x41e58b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->u32_DC); /*0x41e59c*/
@@ -1881,10 +1881,10 @@ int CoordinateTables::Init()  // G42 sig-sync: hpp declares int (matches IDA int
   this->OccupantAnim[0] = 0; /*0x749422*/
   this->q13C = 0; /*0x749428*/
   this->q140 = 0; /*0x74942e*/
-  this->vtable1 = (int)0; /*0x749434*/
-  this->vtable2 = (int)0; /*0x74943a*/
-  this->vtable3 = (int)0; /*0x749440*/
-  *(unsigned int *)this->vtable4 = 0; /*0x749447*/
+  /* X11: vtable install elided (implicit via class virtuals 0x749434) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74943a) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x749440) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x749447) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x74944e*/
   AudioController::Init(&this->q114); /*0x749459*/
   AudioController::Init(&this->q128); /*0x749464*/
@@ -2084,10 +2084,10 @@ int EMPulseClass::ddtor(unsigned int *a2)  // G42 sig-sync: IDA int __stdcall dd
     if ( this ) /*0x4c5a46*/
     {
       AbstractClass::InitVtables((AbstractClass *)this, (int)&a2); /*0x4c5a4f*/
-      *(unsigned int *)this->vtable1 = 0; /*0x4c5a54*/
-      this->vtable2 = (int)0; /*0x4c5a5a*/
-      this->vtable3 = (int)0; /*0x4c5a61*/
-      this->vtable4 = (int)0; /*0x4c5a68*/
+      /* X11: vtable install elided (implicit via class virtuals 0x4c5a54) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x4c5a5a) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x4c5a61) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x4c5a68) — binary-proven install, was 0 */
     }
     return 0; /*0x4c5a6f*/
   }
@@ -2758,7 +2758,7 @@ int EMPulseClass::ddtor(unsigned int *a2)  // G42 sig-sync: IDA int __stdcall dd
   this->Capacity = a2; /*0x628250*/
   (this->IsInitialized) = 1; /*0x628253*/
   (this->IsAllocated) = 0; /*0x628257*/
-  *(unsigned int *)this->vtable1 = 0; /*0x62825a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x62825a) — binary-proven install, was 0 */
   if ( a2 ) /*0x628260*/
   {
     if ( a3 ) /*0x628268*/
@@ -2950,7 +2950,7 @@ void FileFind::ReleaseAllHandles()
   int Pipe_field_0x0C; // ecx
 
   Pipe_field_0x0C = this->q00C; /*0x7ba423*/
-  *(unsigned int *)this->vtable1 = 0; /*0x7ba426*/
+  /* X11: vtable install elided (implicit via class virtuals 0x7ba426) — binary-proven install, was 0 */
   if ( Pipe_field_0x0C && this->__pad_004 ) /*0x7ba430*/
   {
     this->__pad_004 = 0; /*0x7ba437*/
@@ -3018,7 +3018,7 @@ void FileFind::ReleaseAllHandles()
   int v2; // ecx
 
   v2 = this->u32_C; /*0x7ba593*/
-  *(unsigned int *)this->vtable1 = 0; /*0x7ba596*/
+  /* X11: vtable install elided (implicit via class virtuals 0x7ba596) — binary-proven install, was 0 */
   if ( v2 && this->__pad_004 ) /*0x7ba5a0*/
   {
     (*(void (__thiscall **)(int))(*(unsigned int *)v2 + 52))(v2); /*0x7ba5a9*/
@@ -3393,7 +3393,7 @@ void InfantryTypeVector::Construct( int a2, int a3)
   this->Capacity = a2; /*0x512dd0*/
   (this->IsInitialized) = 1; /*0x512dd3*/
   (this->IsAllocated) = 0; /*0x512dd7*/
-  *(unsigned int *)this->vtable1 = 0; /*0x512ddb*/
+  /* X11: vtable install elided (implicit via class virtuals 0x512ddb) — binary-proven install, was 0 */
   if ( a2 ) /*0x512de1*/
   {
     if ( a3 ) /*0x512de9*/
@@ -3406,7 +3406,7 @@ void InfantryTypeVector::Construct( int a2, int a3)
       (this->IsAllocated) = 1; /*0x512dff*/
     }
   }
-  *(unsigned int *)this->vtable1 = 0; /*0x512e03*/
+  /* X11: vtable install elided (implicit via class virtuals 0x512e03) — binary-proven install, was 0 */
   this->q014 = 10; /*0x512e09*/
   this->q010 = 0; /*0x512e10*/
   return this->vtable1; /*0x512e19*/
@@ -4670,10 +4670,10 @@ void IsometricTileTypeClass::CleanupMembers()
   int v7; // ecx
   void *v9; // eax
 
-  *(unsigned int *)this = 0; /*0x544a77*/
-  this->vtable2 = 0; /*0x544a7d*/
-  this->vtable3 = 0; /*0x544a84*/
-  this->vtable4 = 0; /*0x544a8b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x544a77) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x544a7d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x544a84) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x544a8b) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x544a92*/
   v2 = this->u32_2BC; /*0x544a97*/
   if ( v2 ) /*0x544aa1*/
@@ -5554,7 +5554,7 @@ void MapFile::LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1
           Node::Init((Node *)&v25.needsSave_flag); /*0x69a83f*/
           v25.INIClass_field_3C = 0; /*0x69a852*/
           v26 = 0; /*0x69a859*/
-          *(unsigned int *)v25.vtable1 = &CCINIClass_Vtable; /*0x69a861*/
+          /* X11: vtable install elided (implicit via CCINIClass virtuals 0x69a861) */
           v24.nextArrayIndex = 0; /*0x69a86c*/
           v24.referenceCount = 0; /*0x69a870*/
           v24.abstractFlags = (int)0; /*0x69a874*/
@@ -5959,10 +5959,10 @@ void MapPreview::Upload()
           v20 = (void *)operator new(4 * Size[0]); /*0x5e837a*/
           v31.__pad_004 = 0; /*0x5e838b*/
           v31.q008 = 0; /*0x5e838f*/
-          *(unsigned int *)v31.vtable1 = 0; /*0x5e8393*/
+          /* X11: vtable install elided (implicit via class virtuals 0x5e8393) — binary-proven install, was 0 */
           Buffer::Init((Buffer *)&v31.q00C, (int)v20, 4 * Size[0]); /*0x5e839b*/
           v32 = 0; /*0x5e83a7*/
-          *(unsigned int *)v31.vtable1 = 0; /*0x5e83b1*/
+          /* X11: vtable install elided (implicit via class virtuals 0x5e83b1) — binary-proven install, was 0 */
           LZOPipe::Constructor((LZOPipe *)&v33.__pad_0[48], 0, 0x2000); /*0x5e83b9*/
           Pipe::SetDelegate((Pipe *)&v33.__pad_0[48], (int)&v31); /*0x5e83ca*/
           v21 = Compression::Read((int *)&v33.__pad_0[48], (int)v19, Size[0]); /*0x5e83e1*/
@@ -7178,7 +7178,7 @@ int MapSeedClass::Constructor()
   this->u32_6C = 0; /*0x5956be*/
   this->u32_70 = 0; /*0x5956c1*/
   this->u32_74 = -1; /*0x5956c4*/
-  *(unsigned int *)this = 0; /*0x5956cb*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5956cb) — binary-proven install, was 0 */
   this->Capacity = &unk_82BA60; /*0x5956d1*/
   this->u32_78 = 0; /*0x5956d8*/
   this->m_C = &this->m_C; /*0x5956db*/
@@ -7214,7 +7214,7 @@ void MapSeedClass::Release( char * a2, wchar_t * Source)
   memset(&v5.needsSave_flag, 0, 13); /*0x5977e2*/
   v5.unknown38 = 0; /*0x5977f2*/
   v5.INIClass_field_3C = 0; /*0x5977f6*/
-  *(unsigned int *)v5.vtable1 = 0; /*0x5977fa*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5977fa) — binary-proven install, was 0 */
   if ( Source ) /*0x597802*/
     wcscpy(&this->u32_F0, Source); /*0x597809*/
   INIClass::SetWideAsHex( /*0x597820*/
@@ -7320,10 +7320,10 @@ void MapSeedClass::Release( char * a2, wchar_t * Source)
     0);
   INIClass::SaveToPipe(&v5, (int)&v6); /*0x5979ae*/
   HashTable::DestroyHashTableINIClass(&v5); /*0x5979b7*/
-  *(unsigned int *)v6.vtable1 = 0; /*0x5979c3*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5979c3) — binary-proven install, was 0 */
   v8 = 0; /*0x5979cb*/
   Vector::Clear((int)v7); /*0x5979d2*/
-  *(unsigned int *)v6.vtable1 = &off_7E1668; /*0x5979db*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5979db) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5979e3*/
   return 1; /*0x5979e9*/
 }
@@ -7373,7 +7373,7 @@ char MapSeedClass::AddRef( char * Source)
     memset(&v25.needsSave_flag, 0, 13); /*0x597ab1*/
     v25.unknown38 = 0; /*0x597ac1*/
     v25.INIClass_field_3C = 0; /*0x597ac5*/
-    *(unsigned int *)v25.vtable1 = 0; /*0x597ac9*/
+    /* X11: vtable install elided (implicit via class virtuals 0x597ac9) — binary-proven install, was 0 */
     if ( FileStraw::Open((FileStraw *)&v25, (int)&v26, 0) ) /*0x597ad1*/
     {
       StringCSF = GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, &stru_82BA00.UINameLabel[11], 5433); /*0x597af8*/
@@ -7485,18 +7485,18 @@ char MapSeedClass::AddRef( char * Source)
                                  (uint8_t *)&stru_82BA00.__pad_14D[15],
                                  this->u32_40);
       HashTable::DestroyHashTableINIClass(&v25); /*0x597cb5*/
-      *(unsigned int *)v26.vtable1 = 0; /*0x597cc1*/
+      /* X11: vtable install elided (implicit via class virtuals 0x597cc1) — binary-proven install, was 0 */
       v28 = 0; /*0x597cc9*/
       Vector::Clear((int)v27); /*0x597cd0*/
-      *(unsigned int *)v26.vtable1 = &off_7E1668; /*0x597cd9*/
+      /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x597cd9) */
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x597ce1*/
       return 1; /*0x597cf1*/
     }
     HashTable::DestroyHashTableINIClass(&v25); /*0x597cf8*/
-    *(unsigned int *)v26.vtable1 = 0; /*0x597d04*/
+    /* X11: vtable install elided (implicit via class virtuals 0x597d04) — binary-proven install, was 0 */
     v28 = 0; /*0x597d0c*/
     Vector::Clear((int)v27); /*0x597d13*/
-    *(unsigned int *)v26.vtable1 = &off_7E1668; /*0x597d1c*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x597d1c) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x597d24*/
   }
   return 0; /*0x597ce6*/
@@ -12551,7 +12551,7 @@ void AlphaShapeClass::CTOR( ObjectClass * aP1, int a3, AbstractClass * aP3)
   this->tail_E = 0; /*0x42096e*/
   this->aP1 = aP1; /*0x420975*/
   this->u32_3C = 0; /*0x420978*/
-  *(unsigned int *)this = 0; /*0x42097c*/
+  /* X11: vtable install elided (implicit via class virtuals 0x42097c) — binary-proven install, was 0 */
   this->Items = 0; /*0x420982*/
   this->Capacity = 0; /*0x420989*/
   this->IsInitialized = 0; /*0x420990*/
@@ -12620,7 +12620,7 @@ int AlphaShapeClass::Constructor()
   this->u32_34 = 0; /*0x420b07*/
   this->u32_38 = 0; /*0x420b0a*/
   this->u32_3C = 0; /*0x420b0d*/
-  *(unsigned int *)this->vtable1 = 0; /*0x420b10*/
+  /* X11: vtable install elided (implicit via class virtuals 0x420b10) — binary-proven install, was 0 */
   this->Items = (int)0; /*0x420b16*/
   this->Capacity = (int)0; /*0x420b1d*/
   this->IsInitialized = (int)0; /*0x420b24*/
@@ -12800,7 +12800,7 @@ void ArtConfig::loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5)
   this->INIClass_10 = TimerGetTicks(); /*0x5cc785*/
   this->VectorClass_18 = 0; /*0x5cc78d*/
   this->u32_1C = 0; /*0x5cc790*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cc795*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cc795) — binary-proven install, was 0 */
   this->q020 = aP2; /*0x5cc79b*/
   this->u32_24 = *aP4; /*0x5cc7a4*/
   this->u32_28 = aP4[1]; /*0x5cc7a9*/
@@ -12809,7 +12809,7 @@ void ArtConfig::loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5)
   this->u32_34 = aP3; /*0x5cc7b9*/
   this->q030 = v8; /*0x5cc7bc*/
   this->__pad_038 = aP5; /*0x5cc7c5*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cc7c8*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cc7c8) — binary-proven install, was 0 */
   if ( String::Length((String *)aP1) ) /*0x5cc7ce*/
   {
     v12 = (BinkMovie *)operator new(0x34u); /*0x5cc7e1*/
@@ -13346,10 +13346,10 @@ void ArtConfig::ParseLayoutEntry( unsigned int * a1, ObjectClass * aP2, char ** 
   }
   v18 = CCFileClass::Construct2((CCFileClass *)&v26.vtable2, &v25); /*0x7690db*/
   v23 = v18->SaveLoad_Register(0); /*0x7690f0*/
-  *(unsigned int *)&v26.vtable2 = 0; /*0x7690f4*/
+  /* X11: vtable install elided (implicit via class virtuals 0x7690f4) — binary-proven install, was 0 */
   v28 = 0; /*0x7690fc*/
   Vector::Clear((int)v27); /*0x769107*/
-  *(unsigned int *)&v26.vtable2 = &off_7E1668; /*0x769110*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x769110) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v26.vtable2); /*0x769118*/
   if ( !v23 || !v17 ) /*0x769127*/
   {
@@ -16832,7 +16832,7 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
                                 (ObjectClass *)&v46.vfptr2,
                                 (const char **)&g_WebBrowser);
               ComPtr::Set((ComPtr *)&v46.uniqueId, (int)PlayerProfile->vfptr1); /*0x7a795d*/
-              v46.vfptr2 = 0; /*0x7a7966*/
+              /* X11: vtable install elided (implicit via class virtuals 0x7a7966) — binary-proven install, was 0 */
               ComPtr::Release((ComPtr *)&v46.vfptr2); /*0x7a796a*/
             }
             else
@@ -21513,7 +21513,7 @@ void Dial8Class::Constructor( ControlClass * aP1, ControlClass * aP2, ControlCla
 
   aP5 = aP5; /*0x4a53b5*/
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4a53d5*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4a53da*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4a53da) — binary-proven install, was 0 */
   (*((unsigned char *)&(v10))) = 0; /*0x4a53ed*/
   this->u32_2C = this->Width + this->Visible / 2; /*0x4a53ef*/
   this->u32_30 = this->X + this->ID / 2; /*0x4a53ff*/
@@ -24151,7 +24151,7 @@ void IntDynamicVector::QueryInterface(unsigned int * Block, char a2)
 // 0x717bd0
 void IntDynamicVector::Construct( ObjectTypeClass * aP1)
 {
-  *(unsigned int *)this->vtable1 = 0; /*0x717bd2*/
+  /* X11: vtable install elided (implicit via class virtuals 0x717bd2) — binary-proven install, was 0 */
   return this->vtable1; /*0x717bd8*/
 }
 // 0x477b60
@@ -24166,7 +24166,7 @@ void IntVector::Copy( void * aP1)  // G42: VectorClass->void* (template needs ar
   this->u32_8 = 0; /*0x477b70*/
   this->IsInitialized = 1; /*0x477b73*/
   this->IsAllocated = 0; /*0x477b77*/
-  *(unsigned int *)this->vtable1 = 0; /*0x477b7a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x477b7a) — binary-proven install, was 0 */
   if ( this == (IntVector *)aP1 ) /*0x477b80*/
     return this->vtable1; /*0x477b80*/
   VectorClass::Destroy((int)this); /*0x477b82*/
@@ -24201,7 +24201,7 @@ void IntVector::Destructor()
   void *IntVector_field_0x04; // eax
 
   IntVector_field_0x04 = (void *)this->Items; /*0x49f9d6*/
-  *(unsigned int *)this->vtable1 = 0; /*0x49f9d9*/
+  /* X11: vtable install elided (implicit via class virtuals 0x49f9d9) — binary-proven install, was 0 */
   if ( IntVector_field_0x04 && this->IsAllocated ) /*0x49f9e3*/
   {
     operator delete((void *)(IntVector_field_0x04)); /*0x49f9e9*/
@@ -24567,7 +24567,7 @@ void LCWPipe::Constructor( int a2, int a3)
   this->u32_14 = 0; /*0x552009*/
   this->u32_18 = 0; /*0x55200c*/
   this->u32_1C = a3; /*0x552015*/
-  *(unsigned int *)this->vtable1 = 0; /*0x55201a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x55201a) — binary-proven install, was 0 */
   v4 = a3 / 128 + 1; /*0x552023*/
   if ( v4 < 128 ) /*0x552029*/
     v4 = 128; /*0x55202b*/
@@ -24659,7 +24659,7 @@ void LCWStraw::Constructor( int a2, int a3)
   this->u32_14 = 0; /*0x55240d*/
   this->u32_18 = 0; /*0x552410*/
   this->u32_1C = a3; /*0x552413*/
-  *(unsigned int *)this->vtable1 = 0; /*0x552416*/
+  /* X11: vtable install elided (implicit via class virtuals 0x552416) — binary-proven install, was 0 */
   this->u32_14 = operator new(a3 + v4); /*0x552426*/
   if ( !a2 ) /*0x552429*/
     this->u32_18 = operator new(this->u32_1C + this->u32_20); /*0x55243c*/
@@ -24700,7 +24700,7 @@ void LZOPipe::Constructor( int a2, TechnoTypeClass * aP2)
   this->u32_18 = 0; /*0x55c2c5*/
   this->u32_C = a2; /*0x55c2cc*/
   this->u32_1C = aP2; /*0x55c2cf*/
-  *(unsigned int *)this->vtable1 = 0; /*0x55c2d5*/
+  /* X11: vtable install elided (implicit via class virtuals 0x55c2d5) — binary-proven install, was 0 */
   this->u32_20 = aP2; /*0x55c2dc*/
   v4 = operator new(2 * aP2); /*0x55c2df*/
   v5 = this->u32_1C; /*0x55c2e4*/
@@ -24716,7 +24716,7 @@ void LZOPipe::Destructor()
   void *v3; // ecx
 
   v2 = (void *)this->u32_14; /*0x55c313*/
-  *(unsigned int *)this->vtable1 = 0; /*0x55c316*/
+  /* X11: vtable install elided (implicit via class virtuals 0x55c316) — binary-proven install, was 0 */
   operator delete((void *)(v2)); /*0x55c31d*/
   v3 = (void *)this->u32_18; /*0x55c322*/
   this->u32_14 = 0; /*0x55c325*/
@@ -24801,7 +24801,7 @@ void LZOStraw::Constructor( int a2, int a3)
   this->q010 = 0; /*0x55c741*/
   this->u32_14 = 0; /*0x55c744*/
   this->u32_18 = 0; /*0x55c747*/
-  *(unsigned int *)this->vtable1 = 0; /*0x55c74a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x55c74a) — binary-proven install, was 0 */
   this->u32_14 = operator new(2 * a3); /*0x55c75a*/
   if ( !a2 ) /*0x55c75d*/
     this->u32_18 = operator new(this->u32_1C + this->u32_20); /*0x55c770*/
@@ -24814,7 +24814,7 @@ void LZOStraw::Destructor()
   void *v3; // ecx
 
   v2 = (void *)this->u32_14; /*0x55c783*/
-  *(unsigned int *)this->vtable1 = 0; /*0x55c786*/
+  /* X11: vtable install elided (implicit via class virtuals 0x55c786) — binary-proven install, was 0 */
   operator delete((void *)(v2)); /*0x55c78d*/
   v3 = (void *)this->u32_18; /*0x55c792*/
   this->u32_14 = 0; /*0x55c795*/
@@ -25138,7 +25138,7 @@ wchar_t ** MPCombatTeam::Constructor()
   WideString::Assign(&v4, StringCSF); /*0x5c948c*/
   MultiplayerTeam::Constructor((MultiplayerTeam *)this, (const wchar_t **)&v4, (wchar_t *)-1); /*0x5c949a*/
   DeleteAndZero::Alt((DeleteAndZero *)&v4); /*0x5c94a3*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5c94a8*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5c94a8) — binary-proven install, was 0 */
   return (wchar_t **)this; /*0x5c94b0*/
 }
 // 0x5cae10
@@ -25151,7 +25151,7 @@ void MPCombatTeam::MPTeam()
   WideString::Assign(&v4, StringCSF); /*0x5cae2c*/
   MultiplayerTeam::Constructor((MultiplayerTeam *)this, (const wchar_t **)&v4, (wchar_t *)1); /*0x5cae3a*/
   DeleteAndZero::Alt((DeleteAndZero *)&v4); /*0x5cae43*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cae48*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cae48) — binary-proven install, was 0 */
   return (wchar_t **)this; /*0x5cae50*/
 }
 // 0x5caeb0
@@ -25164,7 +25164,7 @@ void MPCombatTeam::Constructor2()
   WideString::Assign(&v4, StringCSF); /*0x5caecc*/
   MultiplayerTeam::Constructor((MultiplayerTeam *)this, (const wchar_t **)&v4, (wchar_t *)1); /*0x5caeda*/
   DeleteAndZero::Alt((DeleteAndZero *)&v4); /*0x5caee3*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5caee8*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5caee8) — binary-proven install, was 0 */
   return (wchar_t **)this; /*0x5caef0*/
 }
 // 0x5d8d10
@@ -25536,14 +25536,14 @@ void MSBitPrintAnim::Construct( const wchar_t ** a1, MSAnim * aP2, MPCooperative
   (this->q00C) = 1; /*0x5cd346*/
   this->INIClass_10 = TimerGetTicks(); /*0x5cd353*/
   this->q018 = 0; /*0x5cd356*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cd361*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cd361) — binary-proven install, was 0 */
   WideString::AssignFromPtr((wchar_t **)this + 7, a1); /*0x5cd367*/
   this->u32_20 = *aP2; /*0x5cd371*/
   this->u32_24 = aP2[1]; /*0x5cd377*/
   this->u32_28 = aP2[2]; /*0x5cd37d*/
   v6 = aP2[3]; /*0x5cd380*/
   this->u32_30 = 0; /*0x5cd383*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cd387*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cd387) — binary-proven install, was 0 */
   this->v6 = v6; /*0x5cd38d*/
   this->aP3 = aP3; /*0x5cd394*/
   return this; /*0x5cd399*/
@@ -26033,7 +26033,7 @@ void MSFont::Constructor_MSFont()
   char *v2; // eax
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  *(unsigned int *)this->vtable1 = 0; /*0x5d2e33*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5d2e33) — binary-proven install, was 0 */
   if ( !--*(unsigned int *)&g_MissionQueueFrame.underParMessage[25] ) /*0x5d2e44*/
   {
     v2 = &g_MissionQueueFrame.overParTitle[2]; /*0x5d2e47*/
@@ -26645,10 +26645,10 @@ void MSPCXAnim::Construct( ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, c
         (*(void (__thiscall **)(int, unsigned char *))(*(unsigned int *)v10 + 120))(v10, v13); /*0x5ce75e*/
       }
     }
-    *(unsigned int *)v14.vtable1 = 0; /*0x5ce768*/
+    /* X11: vtable install elided (implicit via class virtuals 0x5ce768) — binary-proven install, was 0 */
     v16 = 0; /*0x5ce770*/
     Vector::Clear((int)v15); /*0x5ce777*/
-    *(unsigned int *)v14.vtable1 = &off_7E1668; /*0x5ce780*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5ce780) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v14); /*0x5ce788*/
     DeleteAndZero((ObjectClass *)&v12); /*0x5ce791*/
   }
@@ -27214,7 +27214,7 @@ void MSShapeAnim::Constructor( MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, MSS
   this->aP7 = aP7; /*0x5cb711*/
   this->a6 = a6; /*0x5cb717*/
   this->u32_28 = 0; /*0x5cb71a*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cb721*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cb721) — binary-proven install, was 0 */
   this->u32_3C = 0; /*0x5cb727*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, &this->u32_F0); /*0x5cb72a*/
   this->u32_1C = FileClassToBuffer; /*0x5cb72f*/
@@ -27282,7 +27282,7 @@ void MSVQAnim::Construct( char ** a2, int a3, int a4, unsigned int * a5, char a6
   this->u32_24 = a4; /*0x5cca68*/
   this->u32_28 = 0; /*0x5cca6b*/
   this->u32_2D = 0; /*0x5cca6e*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5cca71*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5cca71) — binary-proven install, was 0 */
   if ( (uint8_t)String::NotEquals((String *)a2, 0) && v9 ) /*0x5cca86*/
   {
     (*((unsigned short *)&(v12))) = Math::RoundToInt(*(float *)&stru_A8EB00.vfptr[38] * 255.0); /*0x5cca9b*/
@@ -27319,10 +27319,10 @@ void MSVQAnim::Construct( char ** a2, int a3, int a4, unsigned int * a5, char a6
     DeleteAndZero((ObjectClass *)&a2); /*0x5ccbb9*/
     if ( (uint8_t)CCFileClass::Open(&v27, 0) ) /*0x5ccbc4*/
       this->owningHouseIndex = DecodeFrameSHP((int)&v27, 0, 0, 0); /*0x5ccbdc*/
-    *(unsigned int *)v27.vtable1 = 0; /*0x5ccbe3*/
+    /* X11: vtable install elided (implicit via class virtuals 0x5ccbe3) — binary-proven install, was 0 */
     v29 = 0; /*0x5ccbeb*/
     Vector::Clear((int)v28); /*0x5ccbf3*/
-    *(unsigned int *)v27.vtable1 = &off_7E1668; /*0x5ccbfc*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5ccbfc) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v27); /*0x5ccc04*/
     DeleteAndZero((ObjectClass *)&a6); /*0x5ccc10*/
   }
@@ -27394,10 +27394,10 @@ void MSVQAnim::ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a)
     DeleteAndZero((ObjectClass *)&aP1); /*0x5ccdce*/
     if ( (uint8_t)CCFileClass::Open(&v24, 0) ) /*0x5ccdd9*/
       this->u32_28 = DecodeFrameSHP((int)&v24, 0, 0, 0); /*0x5ccdf1*/
-    *(unsigned int *)v24.vtable1 = 0; /*0x5ccdf8*/
+    /* X11: vtable install elided (implicit via class virtuals 0x5ccdf8) — binary-proven install, was 0 */
     v26 = 0; /*0x5cce00*/
     Vector::Clear((int)v25); /*0x5cce08*/
-    *(unsigned int *)v24.vtable1 = &off_7E1668; /*0x5cce11*/
+    /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5cce11) */
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x5cce19*/
     DeleteAndZero((ObjectClass *)&aP3a); /*0x5cce25*/
   }
@@ -28031,10 +28031,10 @@ void MiniMap::SavePreviewToINI( char * a2)
          0);
   v22.__pad_004 = 0; /*0x641943*/
   v22.q008 = 0; /*0x641947*/
-  *(unsigned int *)v22.vtable1 = 0; /*0x64194b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x64194b) — binary-proven install, was 0 */
   Buffer::Init((Buffer *)&v22.q00C, v9, v8); /*0x641953*/
   v23 = 0; /*0x641962*/
-  *(unsigned int *)v22.vtable1 = 0; /*0x641966*/
+  /* X11: vtable install elided (implicit via class virtuals 0x641966) — binary-proven install, was 0 */
   LZOPipe::Constructor((LZOPipe *)&v24, 0, 0x2000); /*0x64196e*/
   Pipe::SetDelegate(&v24, (int)&v22); /*0x64197c*/
   v10 = *(unsigned int *)this->__pad_000; /*0x641981*/
@@ -30430,10 +30430,10 @@ void NeuronClass::Fire(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x43a556*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x43a55f*/
-      *(unsigned int *)aP0->vtable1 = 0; /*0x43a564*/
-      aP0->vtable2 = (int)0; /*0x43a56a*/
-      aP0->vtable3 = (int)0; /*0x43a571*/
-      aP0->vtable4 = (int)0; /*0x43a578*/
+      /* X11: vtable install elided (implicit via class virtuals 0x43a564) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x43a56a) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x43a571) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via class virtuals 0x43a578) — binary-proven install, was 0 */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x43a588*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_24); /*0x43a596*/
@@ -31241,7 +31241,7 @@ void PKStrawClass::Initialize( int a2, Straw * aP2)
   this->m_13C = 0; /*0x63308d*/
   this->u32_140 = 0; /*0x633093*/
   this->a2 = a2; /*0x63309c*/
-  *(unsigned int *)this->vtable1 = 0; /*0x63309f*/
+  /* X11: vtable install elided (implicit via class virtuals 0x63309f) — binary-proven install, was 0 */
   PKStrawClass::RelayBlowfishKey((PKStraw *)this, (int)this + 20); /*0x6330a5*/
   return (int)this->vtable1; /*0x6330ad*/
 }
@@ -31849,7 +31849,7 @@ void Pipe::Dtor()
   int Pipe_field_0x08; // ecx
 
   result = this->vtable2; /*0x631c86*/
-  *(unsigned int *)this->vtable1 = 0; /*0x631c89*/
+  /* X11: vtable install elided (implicit via class virtuals 0x631c89) — binary-proven install, was 0 */
   if ( result ) /*0x631c91*/
     result->VtableStub_8 = this->vtable3; /*0x631c96*/
   Pipe_field_0x08 = this->vtable3; /*0x631c99*/
@@ -32021,7 +32021,7 @@ void PreviewClass::ReadPreview(char *Source)
   {
     INIClass::INIClass((INIClass *)&v15); /*0x641f2d*/
     v15.ownsFile = 0; /*0x641f41*/
-    *(unsigned int *)v15.vtable1 = &CCINIClass_Vtable; /*0x641f48*/
+    /* X11: vtable install elided (implicit via CCINIClass virtuals 0x641f48) */
     CCINIClass::Load(&v15, (int)&v12.Buffer_field_10, 1, 0); /*0x641f53*/
     INIClass::ResetSection((INIClass *)&v15); /*0x641f5f*/
     PreviewClass::RenderMapPreview((PreviewClass *)dword_A8B230, &v15); /*0x641f72*/
@@ -32054,12 +32054,12 @@ void PreviewClass::ReadPreview(char *Source)
     *v5 = 0; /*0x642047*/
     INIClass::INIClass(&v16); /*0x642049*/
     v17 = 0; /*0x642055*/
-    *(unsigned int *)v16.vtable1 = &CCINIClass_Vtable; /*0x64205e*/
+    /* X11: vtable install elided (implicit via CCINIClass virtuals 0x64205e) */
     v10.__pad_004 = 0; /*0x642069*/
     v11 = 0; /*0x64206d*/
     Buffer::Init(&v12, (int)v3, v6 - (unsigned char *)v3 - 1); /*0x642079*/
     v12.Buffer_field_0C = 0; /*0x64208c*/
-    *(unsigned int *)v10.vtable1 = 0; /*0x642090*/
+    /* X11: vtable install elided (implicit via class virtuals 0x642090) — binary-proven install, was 0 */
     CCINIClass::LoadAndVerifyDigest((int *)v16.vtable1, (int)&v10, 0, 0); /*0x642098*/
     v8 = LoadMapPreviewImage((ObjectClass *)this, &v16); /*0x6420af*/
     operator delete((void *)(v3)); /*0x6420b3*/
@@ -33148,7 +33148,7 @@ void ShapeButtonClass::Destructor()
   char v2; // al
 
   v2 = this->u32_5C; /*0x69ddc6*/
-  *(unsigned int *)this = 0; /*0x69ddc9*/
+  /* X11: vtable install elided (implicit via class virtuals 0x69ddc9) — binary-proven install, was 0 */
   if ( v2 && this->u32_58 ) /*0x69ddd3*/
   {
     operator delete((void *)(this->u32_58)); /*0x69dddb*/
@@ -33342,7 +33342,7 @@ void SmudgeTypeVector::Construct( int a2, int a3)
   this->Capacity = a2; /*0x67b000*/
   (this->IsInitialized) = 1; /*0x67b003*/
   (this->IsAllocated) = 0; /*0x67b007*/
-  *(unsigned int *)this->vtable1 = 0; /*0x67b00b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x67b00b) — binary-proven install, was 0 */
   if ( a2 ) /*0x67b011*/
   {
     if ( a3 ) /*0x67b019*/
@@ -33355,7 +33355,7 @@ void SmudgeTypeVector::Construct( int a2, int a3)
       (this->IsAllocated) = 1; /*0x67b02f*/
     }
   }
-  *(unsigned int *)this->vtable1 = 0; /*0x67b033*/
+  /* X11: vtable install elided (implicit via class virtuals 0x67b033) — binary-proven install, was 0 */
   this->q014 = 10; /*0x67b039*/
   this->q010 = 0; /*0x67b040*/
   return this->vtable1; /*0x67b049*/
@@ -34009,7 +34009,7 @@ void Straw::Dtor()
   int v3; // ecx
 
   result = this->X; /*0x6c9856*/
-  *(unsigned int *)this->vtable1 = 0; /*0x6c9859*/
+  /* X11: vtable install elided (implicit via class virtuals 0x6c9859) — binary-proven install, was 0 */
   if ( result ) /*0x6c9861*/
     result->VtableStub_8 = this->Y; /*0x6c9866*/
   v3 = this->Y; /*0x6c9869*/
@@ -34154,7 +34154,7 @@ void Subzone::BuildGraph( IUnknown * aP2)
     *(unsigned int *)(p_Subzone_field_0x08 + 16) = v14 + 1; /*0x582094*/
     Subzone::CopyDataFrom((Subzone *)(*(unsigned int *)(p_Subzone_field_0x08 + 4) + 36 * v14), (int)&v73); /*0x58209d*/
   }
-  v73.vfptr = 0; /*0x5820a6*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5820a6) — binary-proven install, was 0 */
   VectorClass::Cleanup5((int)&v73); /*0x5820ae*/
   *(unsigned short *)(*(unsigned int *)(p_Subzone_field_0x08 + 4) + 24) = 0; /*0x5820b9*/
   *(unsigned int *)(*(unsigned int *)(p_Subzone_field_0x08 + 4) + 28) = 7; /*0x5820c0*/
@@ -34193,7 +34193,7 @@ void Subzone::BuildGraph( IUnknown * aP2)
       v60[0] = v17; /*0x582182*/
       v19 = Radar::ProcessSubzone((Radar *)v2, v15, aP2, v53, &v69, v60); /*0x582194*/
       VectorClass::ConstructSubzone(&v73, 0, 0); /*0x582196*/
-      v73.vfptr = 0; /*0x58219f*/
+      /* X11: vtable install elided (implicit via class virtuals 0x58219f) — binary-proven install, was 0 */
       v75 = 10; /*0x5821a7*/
       v74 = 0; /*0x5821af*/
       VectorClass::CleanupSubzone((int)&v73); /*0x5821b7*/
@@ -34214,7 +34214,7 @@ void Subzone::BuildGraph( IUnknown * aP2)
         *(unsigned int *)(p_Subzone_field_0x08 + 16) = v23 + 1; /*0x582206*/
         Subzone::CopyDataFrom((Subzone *)(*(unsigned int *)(p_Subzone_field_0x08 + 4) + 36 * v23), (int)&v73); /*0x58220f*/
       }
-      v73.vfptr = 0; /*0x582218*/
+      /* X11: vtable install elided (implicit via class virtuals 0x582218) — binary-proven install, was 0 */
       if ( v73.Items && v73.IsAllocated ) /*0x58222a*/
       {
         operator delete((void *)(v73.Items)); /*0x58222d*/
@@ -34389,7 +34389,7 @@ void Subzone::Constructor( int a2, int a3)
       this->IsAllocated = 1; /*0x589174*/
     }
   }
-  *(unsigned int *)this->vtable1 = 0; /*0x589178*/
+  /* X11: vtable install elided (implicit via class virtuals 0x589178) — binary-proven install, was 0 */
   this->u32_14 = 10; /*0x58917e*/
   this->u32_10 = 0; /*0x589185*/
   return this->vtable1; /*0x58918a*/
@@ -39010,7 +39010,7 @@ void TechnoTypeVector::Construct( int a2, int a3)
   this->Capacity = a2; /*0x68c210*/
   this->IsInitialized = 1; /*0x68c213*/
   this->IsAllocated = 0; /*0x68c217*/
-  *(unsigned int *)this->vtable1 = 0; /*0x68c21b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x68c21b) — binary-proven install, was 0 */
   if ( a2 ) /*0x68c221*/
   {
     if ( a3 ) /*0x68c229*/
@@ -39023,7 +39023,7 @@ void TechnoTypeVector::Construct( int a2, int a3)
       this->IsAllocated = 1; /*0x68c23f*/
     }
   }
-  *(unsigned int *)this->vtable1 = 0; /*0x68c243*/
+  /* X11: vtable install elided (implicit via class virtuals 0x68c243) — binary-proven install, was 0 */
   this->u32_14 = 10; /*0x68c249*/
   this->q010 = 0; /*0x68c250*/
   return this->vtable1; /*0x68c259*/
@@ -39045,10 +39045,10 @@ void TeknoClass::GetType( TeamTypeClass * aP1)
   this->defaultCoords = dword_B0E700; /*0x6e4dfe*/
   this->destroyed = 0; /*0x6e4e01*/
   this->isExecuting = 0; /*0x6e4e04*/
-  *(unsigned int *)this = 0; /*0x6e4e07*/
-  this->vtable2 = 0; /*0x6e4e0d*/
-  this->vtable3 = 0; /*0x6e4e14*/
-  this->vtable4 = 0; /*0x6e4e1b*/
+  /* X11: vtable install elided (implicit via class virtuals 0x6e4e07) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x6e4e0d) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x6e4e14) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x6e4e1b) — binary-proven install, was 0 */
   if ( g_GameObjectCleanup < dword_B0E728 /*0x6e4e54*/
     || (byte_B0E72D || !dword_B0E728)
     && dword_B0E734 > 0
@@ -39747,7 +39747,7 @@ void TileSystem::BuildNodes()
       v61 = 0; /*0x58db63*/
     }
     VectorClass::CellConstructor(&v167, 0, 0); /*0x58db98*/
-    v167.vtable0 = (unsigned int)(void *)(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x58dba2*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass_Cell virtuals 0x58dba2) */
     v169 = 10; /*0x58dbaf*/
     v168 = 0; /*0x58dbb6*/
     while ( v61 ) /*0x58dbc1*/
@@ -40241,7 +40241,7 @@ void TileSystem::BuildNodes()
     }
     v163.u32_C = ((v163.u32_C) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x58e590*/
     v163.u32_8 = 0; /*0x58e59a*/
-    v167.vtable0 = (unsigned int)(void *)(void*)(void*)&VectorClass_Cell_vftable; /*0x58e5a1*/
+    /* X11: vtable install elided (implicit via VectorClass_Cell virtuals 0x58e5a1) */
     if ( v167.Items ) /*0x58e5ac*/
     {
       if ( v167.IsAllocated ) /*0x58e5b7*/
@@ -40283,7 +40283,7 @@ void TileSystem::AnalyzeTileConnectivity()
   {
     VectorClass::CellConstructor(v2, 0, 0); /*0x58e5f2*/
     v3[1].vfptr = 0; /*0x58e5f7*/
-    v3->vfptr = 0; /*0x58e5fa*/
+    /* X11: vtable install elided (implicit via class virtuals 0x58e5fa) — binary-proven install, was 0 */
     v3[1].Items = (void *)10; /*0x58e600*/
     v4 = v3; /*0x58e607*/
   }
@@ -40413,7 +40413,7 @@ void ToggleClass::QueryInterface(unsigned int * Block, char a2)
 void ToggleClass::Construct( ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5)
 {
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 5, 1); /*0x723e82*/
-  *(unsigned int *)this = 0; /*0x723e89*/
+  /* X11: vtable install elided (implicit via class virtuals 0x723e89) — binary-proven install, was 0 */
   this->u32_2C = 0; /*0x723e8f*/
   this->u32_2D = 0; /*0x723e92*/
   this->u32_30 = 0; /*0x723e95*/
@@ -40556,7 +40556,7 @@ void UnitTypeVector::Construct( int a2, int a3)
       (this->IsAllocated) = 1; /*0x5131cf*/
     }
   }
-  *(unsigned int *)this->vtable1 = 0; /*0x5131d3*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5131d3) — binary-proven install, was 0 */
   this->Visible = 10; /*0x5131d9*/
   this->q010 = 0; /*0x5131e0*/
   return this->vtable1; /*0x5131e9*/
@@ -40817,10 +40817,10 @@ void VeinholeMonsterClass::Construct( AbstractClass * aP1)
   v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x74c42d*/
   this->u32_C0 = 0; /*0x74c433*/
   this->u32_B8 = v3; /*0x74c43d*/
-  *(unsigned int *)this->vtable1 = 0; /*0x74c443*/
-  this->vtable2 = (int)0; /*0x74c449*/
-  this->vtable3 = (int)0; /*0x74c450*/
-  this->vtable4 = (int)0; /*0x74c457*/
+  /* X11: vtable install elided (implicit via class virtuals 0x74c443) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74c449) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74c450) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74c457) — binary-proven install, was 0 */
   if ( stru_B1D290.uniqueId < (int)stru_B1D290.vfptr2 /*0x74c493*/
     || ((((unsigned char *)&(stru_B1D290.vfptr3))[1]) || !stru_B1D290.vfptr2)
     && stru_B1D290.abstractFlags > 0
@@ -40932,10 +40932,10 @@ void VeinholeMonsterClass::Constructor( IUnknown * aP1)
   this->u32_100 = 0; /*0x74c657*/
   this->u32_101 = 0; /*0x74c65d*/
   this->u32_104 = 0; /*0x74c663*/
-  *(unsigned int *)this->vtable1 = 0; /*0x74c669*/
-  this->vtable2 = (int)0; /*0x74c66f*/
-  this->vtable3 = (int)0; /*0x74c675*/
-  this->vtable3 = (int)0; /*0x74c67c*/
+  /* X11: vtable install elided (implicit via class virtuals 0x74c669) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74c66f) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74c675) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x74c67c) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x74c683*/
   if ( ObjectClass::IsCellSuitableForPlacement(aP1) ) /*0x74c68a*/
   {
@@ -42160,7 +42160,7 @@ void WDTGame::ReviewHistory()
 void WDTGame::Constructor( ObjectClass * aP1)
 {
   ComPtr::Constructor((ComPtr *)this); /*0x76f033*/
-  *(unsigned int *)this->vtable1 = 0; /*0x76f03c*/
+  /* X11: vtable install elided (implicit via class virtuals 0x76f03c) — binary-proven install, was 0 */
   ComPtr::Set((ComPtr *)this, aP1->AudioController_field_04); /*0x76f048*/
   return this->vtable1; /*0x76f04f*/
 }
@@ -42630,7 +42630,7 @@ void WorldDomination::SetupTerritoryNodes()
   void (__thiscall ***v9)(unsigned int, int); // ecx
 
   v2 = *(void (__thiscall ****)(unsigned int, int))(&this->vtable46); /*0x7680c6*/
-  *(unsigned int *)this = 0; /*0x7680c9*/
+  /* X11: vtable install elided (implicit via class virtuals 0x7680c9) — binary-proven install, was 0 */
   if ( v2 ) /*0x7680d1*/
     (**v2)(v2, 1); /*0x7680d7*/
   v3 = *(void (__thiscall ****)(unsigned int, int))(&this->vtable30); /*0x7680d9*/

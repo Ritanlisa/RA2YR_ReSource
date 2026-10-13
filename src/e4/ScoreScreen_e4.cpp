@@ -343,10 +343,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
   }
-  *(unsigned int *)v38.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x778461*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x778461) */
   v40 = 0; /*0x778469*/
   Vector::Clear((int)v39); /*0x778474*/
-  *(unsigned int *)v38.vtable1 = (unsigned int)(&off_7E1668); /*0x77847d*/
+  /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x77847d) */
   return ((gamemd::BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
 }
 }

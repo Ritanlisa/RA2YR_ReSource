@@ -119,7 +119,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
-      aP0->vtable1 = &vt_ScriptClass; /*0x691654*/
+      /* X11: vtable install elided (implicit via ScriptClass virtuals 0x691654) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x69165a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691661*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptClass); /*0x691668*/
@@ -236,7 +236,7 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       ((AbstractTypeClass*)(int)aP0)->Init((int)&aP1); /*0x691daf*/
-      aP0->vtable1 = &vt_ScriptTypeClass; /*0x691db4*/
+      /* X11: vtable install elided (implicit via ScriptTypeClass virtuals 0x691db4) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dba*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc1*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_ScriptTypeClass); /*0x691dc8*/
@@ -320,7 +320,7 @@ int Gap2Recv_692290::SmallFunc_692290() {
   *((unsigned char *)this + 21848) = 0; /*0x6922b2*/
   *((unsigned char *)this + 21850) = 0; /*0x6922b8*/
   *((unsigned char *)this + 21849) = 1; /*0x6922be*/
-  *(unsigned int *)this = &vt_ScrollClass; /*0x6922c5*/
+  /* X11: vtable install elided (implicit via ScrollClass virtuals 0x6922c5) */
   *((unsigned int *)this + 5446) = &vt_ScrollClass; /*0x6922cb*/
   return this; /*0x6922d7*/
 
@@ -638,11 +638,11 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
       if ( strlen(byte_B76568) ) /*0x69b1d1*/
       {
         ParseAndApplyAlliances_Parse(&v33, 0, 0); /*0x69b1ea*/
-        v33.vtable0 = &vt_DynamicVectorClass; /*0x69b1ff*/
+        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b1ff) */
         v35 = 10; /*0x69b203*/
         v34 = 0; /*0x69b207*/
         ParseAndApplyAlliances_Parse(&v30, 0, 0); /*0x69b20b*/
-        v30.vtable0 = &vt_DynamicVectorClass; /*0x69b210*/
+        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b210) */
         v32 = 10; /*0x69b232*/
         v31 = 0; /*0x69b238*/
         v3 = &byte_B77A04; /*0x69b23c*/
@@ -765,13 +765,13 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
         v27 = dword_A8B230->vtable0; /*0x69b4e0*/
         BYTE1(v27) = ((uint16_t)dword_A8B230->vtable0 >> 8) | 4; /*0x69b4e2*/
         dword_A8B230->vtable0 = v27; /*0x69b4e5*/
-        v30.vtable0 = &vt_VectorClass; /*0x69b4ed*/
+        /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b4ed) */
         if ( v30.Items && v30.IsAllocated ) /*0x69b4f9*/
         {
           __3_YAXPAX_Z(v30.Items); /*0x69b4fc*/
           v30.Items = 0; /*0x69b504*/
         }
-        v33.vtable0 = &vt_VectorClass; /*0x69b50c*/
+        /* X11: vtable install elided (implicit via VectorClass virtuals 0x69b50c) */
         v30.IsAllocated = 0; /*0x69b514*/
         v30.Capacity = 0; /*0x69b519*/
         if ( v33.Items ) /*0x69b51e*/
@@ -901,7 +901,7 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
   this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  this->vtable1 = (void *)((unsigned int)(&vt_VectorClass)); /*0x69d888*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x69d888) */
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/

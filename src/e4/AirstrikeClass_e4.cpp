@@ -354,9 +354,9 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v14; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
-  *(unsigned int *)this = &AirstrikeClass::`vftable'; /*0x41d389*/
+  /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d389) */
   *((unsigned int *)this + 1) = &AirstrikeClass::`vftable'; /*0x41d38f*/
-  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41d396*/
+  /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d396) */
   *((unsigned int *)this + 3) = &AirstrikeClass::`vftable'; /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
@@ -416,10 +416,10 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
-      aP0->vfptr = &vt_AirstrikeClass; /*0x41d717*/
-      aP0->vfptr1 = &vt_AirstrikeClass; /*0x41d71d*/
-      aP0->vfptr2 = &vt_AirstrikeClass; /*0x41d724*/
-      aP0->vfptr3 = &vt_AirstrikeClass; /*0x41d72b*/
+      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d717) */
+      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d71d) */
+      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d724) */
+      /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d72b) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/

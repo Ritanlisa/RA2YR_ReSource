@@ -341,7 +341,7 @@ namespace gamemd {
 void* CheckListClass::QueryInterface(int a2) {
   void *Clamped; // edi
 
-  *(unsigned int *)this->vtable1 = 0; /*0x4886e3*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4886e3) — binary-proven install, was 0 */
   while ( this->q044 ) /*0x4886e9*/
   {
     Clamped = (void *)Array::GetClamped((ListClass *)this, 0); /*0x4886fe*/
@@ -493,7 +493,7 @@ int DropListClass::ScrollDown(int a1) {
 // 0x4B55F0
 namespace gamemd { 
 void* DropListClass::QueryInterface(int a2) {
-  *(unsigned int *)this->vtable1 = 0; /*0x4b55f9*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4b55f9) — binary-proven install, was 0 */
   ListClass::Destruct(&this->u32_B0); /*0x4b55ff*/
   ShapeButtonClass::Destructor((int)&this->q050); /*0x4b5607*/
   DropListClass::Constructor(this); /*0x4b560e*/
@@ -505,7 +505,7 @@ void* DropListClass::QueryInterface(int a2) {
 // 0x4C30B0
 namespace gamemd { 
 int DropListClass::Constructor() {
-  *(unsigned int *)this->vtable1 = 0; /*0x4c30b3*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4c30b3) — binary-proven install, was 0 */
   if ( COMObject::IsPrimaryInstance((GadgetClass *)this) ) /*0x4c30b9*/
     COMObject::DeactivateGlobal((ShpButtonClass *)this); /*0x4c30c4*/
   return GadgetClass::Dtor((ShpButtonClass *)this); /*0x4c30d0*/
@@ -1102,7 +1102,7 @@ void* CheckListClass::toggleItem(int a2) {
   void *v3; // eax
 
   v3 = *&this->X; /*0x5571c3*/
-  *(unsigned int *)this->vtable1 = 0; /*0x5571c6*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5571c6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x5571d0*/
   {
     operator delete((void *)(v3)); /*0x5571d8*/
@@ -1404,7 +1404,7 @@ void* ListClass::Destru_vt00(int a2) {
   void *v5; // eax
 
   v3 = this->Enabled; /*0x558066*/
-  *(unsigned int *)this->vtable1 = 0; /*0x558069*/
+  /* X11: vtable install elided (implicit via class virtuals 0x558069) — binary-proven install, was 0 */
   if ( v3 ) /*0x558071*/
   {
     v4 = this->u32_118; /*0x55807c*/
@@ -1439,7 +1439,7 @@ void* CheckListClass::drawList(int a2) {
   void *v3; // eax
 
   v3 = *&this->X; /*0x558133*/
-  *(unsigned int *)this->vtable1 = 0; /*0x558136*/
+  /* X11: vtable install elided (implicit via class virtuals 0x558136) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x558140*/
   {
     operator delete((void *)(v3)); /*0x558148*/
@@ -2392,7 +2392,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
       (this->IsAllocated) = 1; /*0x5bea86*/
     }
   }
-  this->vtable1 = 0; /*0x5bea8a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5bea8a) — binary-proven install, was 0 */
   this->CapacityIncrement = 10; /*0x5bea90*/
   this->q_10 = 0; /*0x5bea97*/
   return &this->vtable1; /*0x5beaa0*/
@@ -3874,7 +3874,7 @@ void* TabClass::initTabData() {
   this->u32_14EA0 = 0; /*0x6a4ecd*/
   this->u32_15450 = 0; /*0x6a4ed3*/
   this->u32_15454 = 0; /*0x6a4ed9*/
-  *(unsigned int *)this = 0; /*0x6a4edf*/
+  /* X11: vtable install elided (implicit via class virtuals 0x6a4edf) — binary-proven install, was 0 */
   v4 = &this->q15444; /*0x6a4ee5*/
   v5 = 4; /*0x6a4eeb*/
   do /*0x6a4f07*/
@@ -6311,7 +6311,7 @@ void* TabClass::Constructor() {
   this->u32_5544 = 1; /*0x6cfe74*/
   this->u32_5545 = 1; /*0x6cfe7a*/
   this->u32_5546 = 1; /*0x6cfe80*/
-  this->vtable1 = 0; /*0x6cfe86*/
+  /* X11: vtable install elided (implicit via class virtuals 0x6cfe86) — binary-proven install, was 0 */
   v3 = 0; /*0x6cfe8c*/
   v4 = (const char **)off_8427D0; /*0x6cfe8e*/
   while ( strcmp(*v4, aAttackmove) ) /*0x6cfec5*/
@@ -7145,7 +7145,7 @@ void* ToolTipClass::compareString(int a2) {
   void *v3; // eax
 
   v3 = *&this->Items; /*0x724ef3*/
-  *(unsigned int *)this->vtable1 = 0; /*0x724ef6*/
+  /* X11: vtable install elided (implicit via class virtuals 0x724ef6) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x724f00*/
   {
     operator delete((void *)(v3)); /*0x724f08*/
@@ -7173,7 +7173,7 @@ int MessageListClass::clearMessages(int a1, int a2, int a3, int a4, int a5) {
   this->u32_41 = 0; /*0x72a485*/
   this->q044 = 0; /*0x72a488*/
   this->q012 = 0; /*0x72a48b*/
-  *(unsigned int *)this = 0; /*0x72a48e*/
+  /* X11: vtable install elided (implicit via class virtuals 0x72a48e) — binary-proven install, was 0 */
   return this; /*0x72a496*/
 }
 }

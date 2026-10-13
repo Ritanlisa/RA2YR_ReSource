@@ -2065,7 +2065,7 @@ unsigned int ObjectClass::sub_74F730()
   this->ambientSoundController[0] = 0; /*0x74f745*/
   this->ambientSoundController[1] = 0; /*0x74f748*/
   this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
-  this->vfptr = &vt_VersionClass; /*0x74f74e*/
+  /* X11: vtable install elided (implicit via VersionClass virtuals 0x74f74e) */
   (this->q02A) = 0; /*0x74f754*/
   (this->vtable4) = 0; /*0x74f757*/
   return &this->vfptr; /*0x74f75a*/

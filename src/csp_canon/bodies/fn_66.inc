@@ -656,7 +656,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   ((unsigned int *)this)[0] = 0; /*0x6638e7*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6638ea*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x6638ee*/
-  this->vtable1 = &vt_DynamicVectorClass; /*0x6638f1*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6638f1) */
   ((unsigned int *)this)[0] = 10; /*0x6638f7*/
   ((unsigned int *)this)[0] = 0; /*0x6638fe*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x663901*/
@@ -687,7 +687,7 @@ void E4Recv_663960::sub_663960()
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  this->vtable1 = (int)&vt_VectorClass; /*0x6639a6*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x6639a6) */
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/

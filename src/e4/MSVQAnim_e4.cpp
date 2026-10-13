@@ -62,7 +62,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   void *v5; // edi
 
   v3 = (void (***)(unsigned int, int))this->u32_28; /*0x5cecb3*/
-  *(unsigned int *)this->vtable1 = &MSVQAnim::`vftable'; /*0x5cecb6*/
+  /* X11: vtable install elided (implicit via MSVQAnim virtuals 0x5cecb6) */
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
   MSVQAnim_field_0x1C = (MovieContext *)this->MSVQAnim_field_0x1C; /*0x5cecc6*/

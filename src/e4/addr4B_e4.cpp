@@ -725,7 +725,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   this->M76 = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor(&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct((int)&this->u32_2C0, 0, aP5, aP6 + *(__int16 *)(a11 + 4), aP7 + *(__int16 *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
-  *(unsigned int *)this->vfptr = &DropListClass::`vftable'; /*0x4b4eac*/
+  /* X11: vtable install elided (implicit via DropListClass virtuals 0x4b4eac) */
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
   this->DropListClass_field_0x18 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/

@@ -3189,7 +3189,7 @@ void AnimFile::sub_4266D0()
   void (***v3)(unsigned int, int); // ecx
 
   v2 = this->u32_89; /*0x4266d6*/
-  *(unsigned int *)this->vtable1 = &AnimFile::`vftable'; /*0x4266dc*/
+  /* X11: vtable install elided (implicit via AnimFile virtuals 0x4266dc) */
   if ( v2 ) /*0x4266e4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)this + 33) + 52))(*((unsigned int *)this + 33)); /*0x4266ee*/

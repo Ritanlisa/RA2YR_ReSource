@@ -21,6 +21,8 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
+from _vtelide import elide_vtable_install_lines  # noqa: E402  (X11)
 SRC = ROOT / "src"
 EXPORT = ROOT / "decompile-results" / "full_export"
 E4 = SRC / "e4"
@@ -830,6 +832,12 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
         pseudo, was_truncated = emit_pseudo(pseudo)
         if was_truncated:
             stats["truncated"] = stats.get("truncated", 0) + 1
+        # X11 (user ruling 2026-10-13): explicit vtable installs are never
+        # landed — the vtable is compiler-generated from the class's virtual
+        # declarations. Standalone install statements become marker comments.
+        pseudo, _n_vt, _ = elide_vtable_install_lines(pseudo)
+        if _n_vt:
+            stats["vt_install_elided"] = stats.get("vt_install_elided", 0) + _n_vt
         for ident in idscan.findall(pseudo):
             if ident in gindex:
                 globals_used.add(ident)

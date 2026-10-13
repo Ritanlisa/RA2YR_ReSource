@@ -2697,7 +2697,7 @@ void ToolTipClass::updateString() {
     void *v5; // eax
 
     ToolTipClass_field_0x08 = (HWND)this->Capacity; /*0x7240ba*/
-    *(unsigned int *)this->vtable1 = (void *)&vt_ToolTipManager; /*0x7240bd*/
+    /* X11: vtable install elided (implicit via ToolTipManager virtuals 0x7240bd) */
     KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
     if ( this->Items ) /*0x7240ca*/
       this->Release(&this->VectorClass_18); /*0x7240db*/

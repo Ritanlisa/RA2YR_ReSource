@@ -934,7 +934,7 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
     if ( aP0 ) /*0x46c6b6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
-      *(unsigned int *)aP0->vfptr = &vt_BulletTypeClass; /*0x46c6c4*/
+      /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46c6c4) */
       *(unsigned int *)&aP0->vfptr[4] = &vt_BulletTypeClass; /*0x46c6ca*/
       *(unsigned int *)&aP0->vfptr[8] = &vt_BulletTypeClass; /*0x46c6d1*/
       *(unsigned int *)&aP0->vfptr[12] = &vt_BulletTypeClass; /*0x46c6d8*/

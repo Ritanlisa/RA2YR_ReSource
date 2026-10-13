@@ -172,7 +172,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   v4 = &this->M32; /*0x764b9e*/
   v35 = 0; /*0x764ba1*/
   this->M4 = 0; /*0x764baa*/
-  *(unsigned int *)this = &vt_ReferenceCounted; /*0x764bad*/
+  /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x764bad) */
   ComPtr::Constructor&this->u32_8; /*0x764bb3*/
   *v4 = &vt_rc_ptr; /*0x764bbf*/
   ComPtr::Set(v4, *(unsigned int *)(a3 + 4)); /*0x764bcb*/
@@ -183,7 +183,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   this->u32_28 = 0; /*0x764c04*/
   this->u32_44 = 0; /*0x764c0b*/
   String::AssignFromPtrthis->ptr_48, a2); /*0x764c0e*/
-  *(unsigned int *)this = &vt_WorldDominationTourCampaign; /*0x764c18*/
+  /* X11: vtable install elided (implicit via WorldDominationTourCampaign virtuals 0x764c18) */
   this->M52 = 0; /*0x764c1e*/
   this->M56 = 0; /*0x764c20*/
   this->M60 = 0; /*0x764c23*/
@@ -735,7 +735,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   v55.vfptr2 = &v51; /*0x7696af*/
   (((unsigned char *)&(v54))[1]) = 1; /*0x7696b7*/
   v55.vfptr3 = 0; /*0x7696bc*/
-  v55.vfptr1 = &vt_VectorCursorTRectVectorClassTRect; /*0x7696c0*/
+  /* X11: vtable install elided (implicit via VectorCursorTRectVectorClassTRect virtuals 0x7696c0) */
   if ( Map_WorldDominationTour_38::AddRef(&v55.vfptr1) ) /*0x7696c8*/
   {
     do /*0x769700*/
@@ -976,7 +976,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)&v55.needsRedraw); /*0x769b4c*/
   CCFileClass::Reopen((CDFileClass *)&v55.needsRedraw, aCodeWdtmapmdIn, (CHAR *)2); /*0x769b5f*/
   INIClass::SaveToPipe((INIClass *)&v55.ambientSoundController[1], (int)&v55.needsRedraw); /*0x769b70*/
-  v55.vfptr1 = &vt_VectorCursorTRectVectorClassTRect; /*0x769b79*/
+  /* X11: vtable install elided (implicit via VectorCursorTRectVectorClassTRect virtuals 0x769b79) */
   *(unsigned int *)v51.__tail_10 = &vt_VectorClass; /*0x769b81*/
   Map_WorldDominationTour_43::ddtor((int)v51.__tail_10); /*0x769b89*/
   *(unsigned int *)v51.__pad_0 = &vt_VectorClassTRect; /*0x769b92*/
@@ -1087,7 +1087,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
 
   aP1 = aP1; /*0x76f975*/
   this->ptr_4 = 0; /*0x76f982*/
-  *(unsigned int *)this = &vt_ReferenceCounted; /*0x76f985*/
+  /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x76f985) */
   this->ptr_8 = aP1; /*0x76f98b*/
   unknown_libname_74(&this->ptr_42); /*0x76f98e*/
   v8 = &this->ptr_10; /*0x76f993*/
@@ -1100,7 +1100,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   this->ptr_24 = 0; /*0x76f9ba*/
   this->ptr_28 = 0; /*0x76f9bd*/
   this->u32_2C = 0; /*0x76f9c0*/
-  *(unsigned int *)this = &vt_WorldDominationTourTerritory; /*0x76f9d0*/
+  /* X11: vtable install elided (implicit via WorldDominationTourTerritory virtuals 0x76f9d0) */
   v10 = FormatStringInt((char **)v35, aP1, 2); /*0x76f9d6*/
   v11 = ConcatStringAlloc((char **)&v34, a4, v10); /*0x76f9e4*/
   v12 = ((String *)((const char **)v11))->Concat2((char **)&v33, aShp_0); /*0x76f9eb*/
@@ -2272,7 +2272,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
   LOBYTE(this->M12) = 0; /*0x767e9f*/
   this->INIClass_10 = (void *)Timer::GetTicks(); /*0x767ea7*/
   this->q018 = 0; /*0x767eaa*/
-  *(unsigned int *)this->vtable1 = &MSFrameAnim::`vftable'; /*0x767ead*/
+  /* X11: vtable install elided (implicit via MSFrameAnim virtuals 0x767ead) */
   return this->__pad_0; /*0x767eb5*/
 
 }
@@ -2448,7 +2448,7 @@ namespace gamemd {
 void E4Recv_76AB90::sub_76AB90()
 {
 
-  this->vtable1 = (int)&off_7F7220; /*0x76ab90*/
+  /* X11: vtable install elided (implicit via off_7F7220 virtuals 0x76ab90) */
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x76ab96*/
 
 }

@@ -129,7 +129,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   int v13; // ecx
 
   v2 = (void *)this->vtable4; /*0x52ab84*/
-  *(unsigned int *)this = &INIClass::INISection::`vftable'; /*0x52ab87*/
+  /* X11: vtable install elided (implicit via INISection virtuals 0x52ab87) */
   free(v2); /*0x52ab8e*/
   *((unsigned int *)this + 3) = 0; /*0x52ab98*/
   while ( 1 ) /*0x52ab9b*/
@@ -215,7 +215,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
   }
-  *(unsigned int *)this = &GenericNode::`vftable'; /*0x52acb3*/
+  /* X11: vtable install elided (implicit via GenericNode virtuals 0x52acb3) */
   if ( this ) /*0x52acb9*/
   {
     v13 = *((unsigned int *)this + 1); /*0x52acbb*/
@@ -440,7 +440,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned int *)aP1 = &WarheadTypeClass::`vftable'; /*0x75d0ba*/
   *(unsigned int *)(aP1 + 4) = &WarheadTypeClass::`vftable'; /*0x75d0c1*/
   *(unsigned int *)(aP1 + 8) = &WarheadTypeClass::`vftable'; /*0x75d0c7*/
-  aP1->vtable4 = &WarheadTypeClass::`vftable'; /*0x75d0ce*/
+  /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0ce) */
   AbstractClass::GenerateUniqueID(aP1 + 4); /*0x75d0d5*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 396) + 12))(aP1 + 396); /*0x75d0de*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 424) + 12))(aP1 + 424); /*0x75d0e5*/
@@ -577,9 +577,9 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       WarheadTypeClass::checkImmunity((WarheadTypeClass *)DebrisTypes, (int)&a1); /*0x75e12d*/
       WarheadTypeClass::calculateDamage(&v2->WarheadTypeClass_1A8, (int)&a1); /*0x75e139*/
       v2->Deform = &vt_WarheadTypeClass; /*0x75e13e*/
-      v2->vtable2 = &vt_WarheadTypeClass; /*0x75e144*/
-      v2->vtable3 = &vt_WarheadTypeClass; /*0x75e14b*/
-      v2->vtable4 = &vt_WarheadTypeClass; /*0x75e152*/
+      /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e144) */
+      /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e14b) */
+      /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75e152) */
     }
     if ( v2 != (WarheadTypeClass *)-260 ) /*0x75e161*/
     {

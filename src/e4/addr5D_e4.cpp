@@ -2497,7 +2497,7 @@ int sub_5D7550(int a1)
 namespace gamemd {
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
-  this->vfptr = &vt_MultiplayerGameModeInitializerBase; /*0x5d7582*/
+  /* X11: vtable install elided (implicit via MultiplayerGameModeInitializerBase virtuals 0x5d7582) */
   return &this->vfptr; /*0x5d7588*/
 }
 } // namespace gamemd

@@ -387,10 +387,10 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
           0);
   v18.__pad_004 = 0; /*0x4ad956*/
   v18.q008 = 0; /*0x4ad95a*/
-  *(unsigned int *)v18.vtable1 = &vt_Pipe; /*0x4ad95e*/
+  /* X11: vtable install elided (implicit via Pipe virtuals 0x4ad95e) */
   Buffer::Init((Buffer *)&v18.q00C, v10, v9); /*0x4ad966*/
   v19 = 0; /*0x4ad96f*/
-  *(unsigned int *)v18.vtable1 = &vt_BufferPipe; /*0x4ad979*/
+  /* X11: vtable install elided (implicit via BufferPipe virtuals 0x4ad979) */
   v11 = MapClass::DecompressCellData((MapClass *)&DataGlobal_87F7E8, (int)&v18); /*0x4ad990*/
   INIClass::ClearSection((gamemd::INIClass *)((int *)a2), (int)aIsomappack, 0); /*0x4ad992*/
   INIClass::ClearSection((gamemd::INIClass *)((int *)a2), (int)aIsomappack2, 0); /*0x4ad9a0*/
@@ -599,7 +599,7 @@ void* MapClass::Destruct()
   void *v11; // eax
   int v12; // [esp+8h] [ebp-4h]
 
-  *(unsigned int *)this = &MapClass::`vftable'; /*0x5652c5*/
+  /* X11: vtable install elided (implicit via MapClass virtuals 0x5652c5) */
   CleanupVeinholeSystem(); /*0x5652cb*/
   Map_Destroy(); /*0x5652d0*/
   BuildingClass::FreeUpgradeQueue(); /*0x5652d5*/
@@ -691,7 +691,7 @@ void* MapClass::Destruct()
   }
   this->u32_5D = 0; /*0x56545d*/
   this->q058 = 0; /*0x565460*/
-  *(unsigned int *)this = &off_7EA6FC; /*0x565463*/
+  /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x565463) */
 
 }
 } // namespace gamemd
@@ -2523,7 +2523,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
     v40 = *(int16_t **)v63; /*0x574f8a*/
     occupationFlags = v2->occupationFlags; /*0x574f8e*/
-    v69.vfptr = &vt_DynamicVectorClass; /*0x574f99*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x574f99) */
     v71 = 10; /*0x574fa1*/
     v70 = 0; /*0x574fa9*/
     if ( v63[0] >= occupationFlags ) /*0x574fb1*/
@@ -2627,7 +2627,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown)
       while ( (int16_t)IUnknown >= occupationFlags ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5751e6*/
-    v69.vfptr = &vt_VectorClass; /*0x5751f1*/
+    /* X11: vtable install elided (implicit via VectorClass virtuals 0x5751f1) */
     if ( v69.Items ) /*0x5751fb*/
     {
       if ( v69.IsAllocated ) /*0x575203*/
@@ -3688,7 +3688,7 @@ unsigned int * MapClass::allocateMapBuffers()
   this->q008 = 0; /*0x589bd9*/
   LOBYTE(this->u32_C) = 1; /*0x589bdc*/
   BYTE1(this->u32_C) = 0; /*0x589be0*/
-  this->vtable1 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x589be3*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x589be3) */
   this->MapClass_field_0x14 = (void *)10; /*0x589be9*/
   this->MapClass_field_0x10 = 0; /*0x589bf0*/
   VectorClass::CleanupSubzone((int)this); /*0x589bf3*/
@@ -3913,7 +3913,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         if ( v11 ) /*0x5a0515*/
         {
           VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
-          v12->vfptr = &vt_DynamicVectorClass; /*0x5a0520*/
+          /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5a0520) */
           v12[1].Items = (void *)10; /*0x5a0526*/
           v12[1].vfptr = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/

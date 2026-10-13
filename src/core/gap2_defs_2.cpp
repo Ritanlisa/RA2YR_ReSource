@@ -57,7 +57,7 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
   void *v3; // eax
 
   v3 = *&this->__pad_004; /*0x4a0e63*/
-  *(unsigned int *)this->vtable1 = 0; /*0x4a0e66*/
+  /* X11: vtable install elided (implicit via class virtuals 0x4a0e66) — binary-proven install, was 0 */
   if ( v3 && (this->IsAllocated) ) /*0x4a0e70*/
   {
     operator delete((void *)(v3)); /*0x4a0e78*/

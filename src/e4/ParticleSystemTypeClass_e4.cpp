@@ -403,9 +403,9 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6447ff*/
-    aP0->vtable1 = &vt_ParticleSystemTypeClass; /*0x644804*/
-    aP0->vtable2 = &vt_ParticleSystemTypeClass; /*0x64480a*/
-    aP0->vtable3 = &vt_ParticleSystemTypeClass; /*0x644811*/
+    /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x644804) */
+    /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x64480a) */
+    /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x644811) */
     aP0->SpawnCount = &vt_ParticleSystemTypeClass; /*0x644818*/
   }
   return 0; /*0x644821*/

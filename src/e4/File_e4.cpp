@@ -651,7 +651,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   this->__pad_02C = &vt_DynamicVectorClassrc_ptr; /*0x76acab*/
   this->q040 = 10; /*0x76acb2*/
   this->u32_3C = 0; /*0x76acb9*/
-  *(unsigned int *)this = &vt_WDTState; /*0x76acbe*/
+  /* X11: vtable install elided (implicit via WDTState virtuals 0x76acbe) */
   v3 = (File *)operator new(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
     PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/

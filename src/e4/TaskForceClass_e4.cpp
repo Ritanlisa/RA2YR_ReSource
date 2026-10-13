@@ -86,9 +86,9 @@ int TaskForceClass::Construct(char *aP1)
   this->ptr_98 = (AbstractClass *)-1; /*0x6e7e8f*/
   this->Coord_9C = 0; /*0x6e7e99*/
   *(unsigned int *)this->q0A0 = 0; /*0x6e7ea3*/
-  *(unsigned int *)this->vtable1 = &TaskForceClass::`vftable'; /*0x6e7ead*/
+  /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7ead) */
   this->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e7eb3*/
-  *(unsigned int *)this->vtable3 = &TaskForceClass::`vftable'; /*0x6e7eba*/
+  /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7eba) */
   *(unsigned int *)&this->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e7ec1*/
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
@@ -335,10 +335,10 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
-      *(unsigned int *)aP0->vtable1 = &vt_TaskForceClass; /*0x6e86c4*/
-      aP0->vtable2 = (int)&vt_TaskForceClass; /*0x6e86ca*/
-      *(unsigned int *)aP0->vtable3 = &vt_TaskForceClass; /*0x6e86d1*/
-      *&aP0->vtable4 = &vt_TaskForceClass; /*0x6e86d8*/
+      /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86c4) */
+      /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86ca) */
+      /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86d1) */
+      /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86d8) */
     }
     v3 = (int *)(aP0 + 1); /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

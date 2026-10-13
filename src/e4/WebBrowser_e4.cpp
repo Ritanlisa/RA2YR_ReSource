@@ -172,7 +172,7 @@ int WebBrowser::GoForward()
   void *WebBrowser_field_0x8; // eax
   char v4; // [esp+10h] [ebp+4h]
 
-  *(unsigned int *)this->vtable1 = &WebBrowser::`vftable'; /*0x7740a8*/
+  /* X11: vtable install elided (implicit via WebBrowser virtuals 0x7740a8) */
   Debug::Log(); /*0x7740ae*/
   if ( this->WebBrowser_field_0x8 ) /*0x7740b3*/
   {

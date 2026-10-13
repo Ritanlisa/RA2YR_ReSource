@@ -625,7 +625,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
 
   VectorClass::CellConstructor(&v51, 0, 0); /*0x74e1d1*/
   v2 = (unsigned int *)*((unsigned int *)this + 44); /*0x74e1d6*/
-  v51.vtable0 = &vt_DynamicVectorClass; /*0x74e1dc*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x74e1dc) */
   v52 = 0; /*0x74e1e4*/
   v53 = 5000; /*0x74e1e8*/
   *((unsigned int *)this + 43) = 0; /*0x74e1f0*/
@@ -834,7 +834,7 @@ void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
       }
     }
   }
-  v51.vtable0 = &vt_VectorClass; /*0x74e682*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x74e682) */
   if ( v51.Items ) /*0x74e68b*/
   {
     if ( v51.IsAllocated ) /*0x74e693*/

@@ -27,10 +27,10 @@ unsigned int * RadioClass::Release(void *a1)
   (&a1->radioLinks)[0] = (int)&vt_VectorClass; /*0x65a77c*/
   *(unsigned int *)&a1->q0E4 = operator new(4u); /*0x65a78b*/
   (((unsigned char *)&((&a1->radioLinks)[3]))[1]) = 1; /*0x65a791*/
-  a1->vfptr = &vt_RadioClass; /*0x65a798*/
-  a1->vfptr1 = &vt_RadioClass; /*0x65a79e*/
-  a1->vfptr2 = &vt_RadioClass; /*0x65a7a5*/
-  a1->vfptr3 = &vt_RadioClass; /*0x65a7ac*/
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a798) */
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a79e) */
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7a5) */
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x65a7ac) */
   *(unsigned int *)a1->radioLinks[1] = 0; /*0x65a7be*/
   (&a1->lastCommands)[0] = 0; /*0x65a7c4*/
   a1->lastCommands[1] = 0; /*0x65a7ca*/

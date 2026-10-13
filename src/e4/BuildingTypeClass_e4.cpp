@@ -419,9 +419,9 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   this->u32_1791 = 0; /*0x45e548*/
   *&this->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e54e*/
   this->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e558*/
-  this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e55e*/
+  /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
   this->? = &BuildingTypeClass::`vftable'; /*0x45e565*/
-  this->vtable4 = &BuildingTypeClass::`vftable'; /*0x45e56c*/
+  /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e56c) */
   return &this->TechnoTypeClass; /*0x45e575*/
 
 }
@@ -439,7 +439,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
   a1->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e58d*/
   a1->? = &BuildingTypeClass::`vftable'; /*0x45e595*/
-  a1->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e59c*/
+  /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
   a1->? = &BuildingTypeClass::`vftable'; /*0x45e5a3*/
   if ( BuildupLoaded && a1->Buildup[0] ) /*0x45e5ac*/
   {
@@ -1739,9 +1739,9 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   aP1->? = -1; /*0x644ce8*/
   aP1->?[0] = -1; /*0x644cee*/
   aP1->TechnoTypeClass = &ParticleTypeClass::`vftable'; /*0x644cf4*/
-  aP1->vtable2 = &ParticleTypeClass::`vftable'; /*0x644cfa*/
+  /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644cfa) */
   aP1->? = &ParticleTypeClass::`vftable'; /*0x644d01*/
-  aP1->vtable4 = &ParticleTypeClass::`vftable'; /*0x644d08*/
+  /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d08) */
   if ( *(int *)&stru_A83D50.__pad_3C[28] < *(int *)&stru_A83D50.__pad_3C[20] /*0x644d43*/
     || (stru_A83D50.__pad_3C[25] || !*(unsigned int *)&stru_A83D50.__pad_3C[20])
     && *(int *)&stru_A83D50.__pad_3C[32] > 0

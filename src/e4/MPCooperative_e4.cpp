@@ -472,7 +472,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   do /*0x5c14f5*/
   {
     ((VectorClass *)(u32_1A4))->Construct(0, 0); /*0x5c14dc*/
-    u32_1A4->vtable1 = &vt_DynamicVectorClass; /*0x5c14e1*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5c14e1) */
     u32_1A4[1].Items = (void *)10; /*0x5c14e7*/
     u32_1A4[1].vtable0 = 0; /*0x5c14ee*/
     u32_1A4 = &u32_1A4->VectorClass_18; /*0x5c14f1*/
@@ -484,7 +484,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   do /*0x5c151f*/
   {
     ((VectorClass *)(p_MPCooperative_field_0x264))->Construct(0, 0); /*0x5c1506*/
-    p_MPCooperative_field_0x264->vtable1 = (void *)&vt_DynamicVectorClass; /*0x5c150b*/
+    /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5c150b) */
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
     p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = &p_MPCooperative_field_0x264->VectorClass_18; /*0x5c151b*/
@@ -496,7 +496,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   this->q324 = (int)&vt_DynamicVectorClass; /*0x5c1530*/
   *&this->q014 = (unsigned int)(10); /*0x5c1536*/
   *&this->q334 = 0; /*0x5c153d*/
-    this->vtable1 = &vt_MPCooperative;
+    /* X11: vtable install elided (implicit via MPCooperative virtuals) */
     this->u32_40 = 0;
     this->q044 = 0;
     this->q33C = 0;
@@ -2207,7 +2207,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   }
   v17 = 0; /*0x5c3c49*/
   IsometricTileTypeClass::Constructor_0(&v27, 0, 0); /*0x5c3c51*/
-  *(unsigned int *)v27.vtable1 = &DynamicVectorClass<unsigned short *>::`vftable'; /*0x5c3c60*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5c3c60) */
   v27.IsometricTileTypeClass_field_0x14 = 10; /*0x5c3c68*/
   v27.IsometricTileTypeClass_field_0x10 = 0; /*0x5c3c70*/
   SmallFunc_49E740((int)&g_DDrawSurfaceManager, &v27); /*0x5c3c74*/
@@ -2870,7 +2870,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   this->u32_8 = 0; /*0x5c4f40*/
   LOBYTE(this->u32_C) = 1; /*0x5c4f43*/
   BYTE1(this->u32_C) = 0; /*0x5c4f47*/
-  this->vtable1 = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4f4a*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5c4f4a) */
   if ( this != (MPCooperative *)a2 ) /*0x5c4f50*/
   {
     MPCooperative::ddtor((int)this); /*0x5c4f52*/
@@ -2931,7 +2931,7 @@ namespace gamemd {
 unsigned int * MPCooperative::initGame()
 {
 
-  this->vtable1 = &CampaignScoreClass::`vftable'; /*0x46d334*/
+  /* X11: vtable install elided (implicit via CampaignScoreClass virtuals 0x46d334) */
   this->MPCooperative_field_0x4 = 0; /*0x46d33a*/
   dword_89E050 = 0; /*0x46d33d*/
   stru_81AF8C.?[6] = -1; /*0x46d343*/
@@ -2945,7 +2945,7 @@ namespace gamemd {
 unsigned int * MPCooperative::startGame()
 {
 
-  this->vtable1 = &CampaignEndScoreClass::`vftable'; /*0x470c04*/
+  /* X11: vtable install elided (implicit via CampaignEndScoreClass virtuals 0x470c04) */
   dword_89E008 = -1; /*0x470c0a*/
   dword_89E020 = 0; /*0x470c14*/
   dword_89DFD4 = 0; /*0x470c1a*/
@@ -3719,7 +3719,7 @@ unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
   this->u32_8 = (void *)a2; /*0x5c59ee*/
   LOBYTE(this->u32_C) = 1; /*0x5c59f1*/
   BYTE1(this->u32_C) = 0; /*0x5c59f5*/
-  this->vtable1 = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c59f8*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5c59f8) */
   if ( a2 ) /*0x5c59fe*/
   {
     if ( a3 ) /*0x5c5a06*/

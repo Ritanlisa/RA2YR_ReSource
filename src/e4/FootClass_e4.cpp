@@ -56,7 +56,7 @@ AbstractClass * FootClass::Destruct()
   team = (int *)this->team; /*0x4d3597*/
   this->TechnoClass = &FootClass::`vftable'; /*0x4d359d*/
   this->? = &FootClass::`vftable'; /*0x4d35a5*/
-  this->vtable3 = &FootClass::`vftable'; /*0x4d35ac*/
+  /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35ac) */
   this->? = &FootClass::`vftable'; /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/

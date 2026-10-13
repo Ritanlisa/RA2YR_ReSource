@@ -825,10 +825,10 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
-      aP0->vfptr = &vt_TEventClass; /*0x71f8e4*/
-      aP0->vfptr1 = &vt_TEventClass; /*0x71f8ea*/
-      aP0->vfptr2 = &vt_TEventClass; /*0x71f8f1*/
-      aP0->vfptr3 = &vt_TEventClass; /*0x71f8f8*/
+      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8e4) */
+      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8ea) */
+      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8f1) */
+      /* X11: vtable install elided (implicit via TEventClass virtuals 0x71f8f8) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/

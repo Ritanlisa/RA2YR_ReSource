@@ -180,7 +180,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   this->q0F7 = 0; /*0x6f07f7*/
   this->AbstractClass = &TeamTypeClass::`vftable'; /*0x6f07fd*/
   this->? = &TeamTypeClass::`vftable'; /*0x6f0803*/
-  this->vtable3 = &TeamTypeClass::`vftable'; /*0x6f080a*/
+  /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
   this->? = &TeamTypeClass::`vftable'; /*0x6f0811*/
   v3 = *(unsigned int *)&stru_A8EB00.?[204]; /*0x6f0818*/
   if ( *(int *)&stru_A8EB00.?[204] < *(int *)&stru_A8EB00.?[196] /*0x6f0857*/
@@ -680,9 +680,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->__pad_DC8 = 10; /*0x711674*/
   this->u32_DCC = 0; /*0x71167a*/
   this->u32_DF0 = 0; /*0x711680*/
-  *(unsigned int *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711686) */
   *((unsigned int *)this + 1) = &TechnoTypeClass::`vftable'; /*0x71168c*/
-  this->vtable3 = &TechnoTypeClass::`vftable'; /*0x711693*/
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711693) */
   *((unsigned int *)this + 3) = &TechnoTypeClass::`vftable'; /*0x71169a*/
   this->u32_DD0 = 0; /*0x7116a7*/
   this->IsLogic_d = 1; /*0x7116ad*/
@@ -834,10 +834,10 @@ void TechnoTypeClass::Construct(int aP1)
   this->DebrisMaximums = 1; /*0x711a3a*/
   this->u32_CC4 = 1; /*0x711a40*/
   this->unknown_bool_CC8 = 0; /*0x711a46*/
-  *(unsigned int *)this = &vt_TechnoTypeClass; /*0x711a4c*/
-  this->vtable2 = &vt_TechnoTypeClass; /*0x711a52*/
-  this->vtable3 = &vt_TechnoTypeClass; /*0x711a59*/
-  this->vtable4 = &vt_TechnoTypeClass; /*0x711a60*/
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711a4c) */
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711a52) */
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711a59) */
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711a60) */
   v3 = dword_A8EB10; /*0x711a67*/
   v4 = 0; /*0x711a6c*/
   if ( dword_A8EB10 <= 0 ) /*0x711a70*/
@@ -893,9 +893,9 @@ int TechnoTypeClass::DTOR(void *a1)
 
   v2 = a1->CameoAllocated; /*0x711ae7*/
   *(unsigned int *)a1 = &vt_TechnoTypeClass; /*0x711aed*/
-  a1->vtable2 = &vt_TechnoTypeClass; /*0x711af5*/
-  a1->vtable3 = &vt_TechnoTypeClass; /*0x711afc*/
-  a1->vtable4 = &vt_TechnoTypeClass; /*0x711b03*/
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711af5) */
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711afc) */
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711b03) */
   if ( v2 && a1->Cameo ) /*0x711b0c*/
   {
     operator delete((void *)(a1->Cameo)); /*0x711b17*/

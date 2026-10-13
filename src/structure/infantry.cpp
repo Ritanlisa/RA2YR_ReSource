@@ -1619,10 +1619,10 @@ int InfantryTypeClass::DTOR()
   void *v4; // eax
   void *v5; // eax
 
-  this->vfptr = 0; /*0x5239d7*/
-  this->vfptr1 = 0; /*0x5239dd*/
-  this->vfptr2 = 0; /*0x5239e4*/
-  this->vfptr3 = 0; /*0x5239eb*/
+  /* X11: vtable install elided (implicit via class virtuals 0x5239d7) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x5239dd) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x5239e4) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x5239eb) — binary-proven install, was 0 */
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5239f2*/
   v2 = (*(int (__thiscall **)(unsigned int *, InfantryClass **))(dword_A8E348 + 16))(&dword_A8E348, &this); /*0x523a0b*/
   if ( v2 != -1 && v2 < dword_A8E358 && v2 < --dword_A8E358 ) /*0x523a26*/
@@ -5251,10 +5251,10 @@ int InfantryClass::LoadFromStream()
     if ( v2 ) /*0x521a03*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&this); /*0x521a0c*/
-      v2->vfptr = 0; /*0x521a11*/
+      /* X11: vtable install elided (implicit via class virtuals 0x521a11) — binary-proven install, was 0 */
       *p_vtable1 = 0; /*0x521a17*/
-      v2->vfptr2 = 0; /*0x521a1d*/
-      v2->vfptr3 = &off_7EB02C; /*0x521a24*/
+      /* X11: vtable install elided (implicit via class virtuals 0x521a1d) — binary-proven install, was 0 */
+      /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x521a24) */
     }
     v11 = v2->locomotor[0]; /*0x521a2c*/
     if ( v11 != v10 ) /*0x521a34*/

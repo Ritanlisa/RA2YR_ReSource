@@ -71,7 +71,7 @@ void * Multiplayer::FindStartPositions()
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = dword_A8B230; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
-  v25.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x6883a5*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x6883a5) */
   v27 = 10; /*0x6883ad*/
   v26 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
@@ -197,7 +197,7 @@ LABEL_24:
   *(unsigned int *)v2 = &VectorClass<Cell>::`vftable'; /*0x688663*/
   Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
   *(unsigned int *)v2 = &DynamicVectorClass<Cell>::`vftable'; /*0x68866e*/
-  v25.vtable0 = &VectorClass<Cell>::`vftable'; /*0x688674*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x688674) */
   Items = v25.Items; /*0x68867c*/
   v17 = v27; /*0x688684*/
   *(unsigned int *)&v2[16] = v26; /*0x688688*/

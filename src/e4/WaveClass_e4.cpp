@@ -61,9 +61,9 @@ int WaveClass::LoadWaveData(int a2, int a3)
       (&v4->u32_1D8)->Init(); /*0x75f692*/
       WaveClass::Constructor_7632D0(&v4->q_1F0, 0, 0); /*0x75f69f*/
       *(unsigned int *)v4 = (unsigned int)(&vt_WaveClass); /*0x75f6a4*/
-      v4->vtable2 = &vt_WaveClass; /*0x75f6aa*/
-      v4->vtable3 = &vt_WaveClass; /*0x75f6b1*/
-      v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
+      /* X11: vtable install elided (implicit via WaveClass virtuals 0x75f6aa) */
+      /* X11: vtable install elided (implicit via WaveClass virtuals 0x75f6b1) */
+      /* X11: vtable install elided (implicit via off_7F6BC8 virtuals 0x75f6b8) */
     }
     v4->q14C = v4->fallRate == 3 ? v4 + 384 : v4 + 336;
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x75f6ee*/

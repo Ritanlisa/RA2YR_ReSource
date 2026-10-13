@@ -707,7 +707,7 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x765fa9*/
   }
   ComPtr::Constructor(a1); /*0x765fad*/
-  *(unsigned int *)a1->vfptr = (unsigned int)(&vt_rc_ptr); /*0x765fb4*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x765fb4) */
   ComPtr::Set(a1, v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
@@ -738,7 +738,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x767b49*/
   }
   ComPtr::Constructor(a1); /*0x767b4d*/
-  *(unsigned int *)a1->vfptr = (unsigned int)(&vt_rc_ptr); /*0x767b54*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x767b54) */
   ComPtr::Set(a1, v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }

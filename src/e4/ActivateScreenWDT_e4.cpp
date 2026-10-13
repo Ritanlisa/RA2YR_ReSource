@@ -41,7 +41,7 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  *(unsigned int *)a1->vfptr = (unsigned int)(&vt_rc_ptr); /*0x76f4e6*/
+  /* X11: vtable install elided (implicit via rc_ptr virtuals 0x76f4e6) */
   ComPtr::Set(a1, v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }  // G42.18 ns repair

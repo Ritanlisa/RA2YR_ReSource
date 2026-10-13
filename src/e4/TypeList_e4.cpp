@@ -606,7 +606,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5129f3*/
-  *(unsigned int *)this = &vt_VectorClass; /*0x5129f6*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5129f6) */
   if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
     operator delete((void *)(v3)); /*0x512a08*/
@@ -911,7 +911,7 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ac653*/
-  *(unsigned int *)this = &vt_VectorClass; /*0x5ac656*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ac656) */
   if ( v3 && this->IsAllocated ) /*0x5ac660*/
   {
     operator delete((void *)(v3)); /*0x5ac668*/
@@ -1320,7 +1320,7 @@ TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2, void *a3_
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67a993*/
-  *(unsigned int *)this = &vt_VectorClass; /*0x67a996*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x67a996) */
   if ( v3 && this->IsAllocated ) /*0x67a9a0*/
   {
     operator delete((void *)(v3)); /*0x67a9a8*/
@@ -1362,7 +1362,7 @@ TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67aa33*/
-  *(unsigned int *)this = &vt_VectorClass; /*0x67aa36*/
+  /* X11: vtable install elided (implicit via VectorClass virtuals 0x67aa36) */
   if ( v3 && this->IsAllocated ) /*0x67aa40*/
   {
     operator delete((void *)(v3)); /*0x67aa48*/

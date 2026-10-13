@@ -84,7 +84,7 @@ int TeamTypeClass::Construct()
   this->AbstractClass = &FactoryClass::`vftable'; /*0x4c991a*/
   this->TeamTypeClass_field_70 = &FactoryClass::`vftable'; /*0x4c9920*/
   this->? = &FactoryClass::`vftable'; /*0x4c9926*/
-  this->vtable4 = &FactoryClass::`vftable'; /*0x4c992d*/
+  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c992d) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
@@ -1118,10 +1118,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6f1bc6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
-      aP0->vfptr = &vt_TeamTypeClass; /*0x6f1bd4*/
-      aP0->vfptr1 = &vt_TeamTypeClass; /*0x6f1bda*/
-      aP0->vfptr2 = &vt_TeamTypeClass; /*0x6f1be1*/
-      aP0->vfptr3 = &vt_TeamTypeClass; /*0x6f1be8*/
+      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1bd4) */
+      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1bda) */
+      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1be1) */
+      /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f1be8) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_C4); /*0x6f1bfb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q0D0); /*0x6f1c0c*/

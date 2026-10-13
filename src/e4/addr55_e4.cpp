@@ -1305,7 +1305,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->M364 = *(unsigned int *)(a2 + 364); /*0x55752c*/
   v3 = this->M88; /*0x557538*/
   this->M368 = *(unsigned int *)(a2 + 368); /*0x55753c*/
-  *(unsigned int *)this = &vt_ListClass; /*0x557542*/
+  /* X11: vtable install elided (implicit via ListClass virtuals 0x557542) */
   v3->SetMember10(&this->M88, this); /*0x557548*/
   this->SetMember10(&this->M184, this); /*0x557553*/
   this->u32_118.SetMember10(this); /*0x55755f*/
@@ -3926,7 +3926,7 @@ int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
   this->M48 = aP1->u32_30; /*0x5581c3*/
   this->u32_34 = aP1->u32_34; /*0x5581c9*/
   this->M56 = aP1->u32_38; /*0x5581cf*/
-  *(unsigned int *)this = &vt_GaugeClass; /*0x5581d2*/
+  /* X11: vtable install elided (implicit via GaugeClass virtuals 0x5581d2) */
   return this; /*0x5581da*/
 }
 } // namespace gamemd

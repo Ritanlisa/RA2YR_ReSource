@@ -186,10 +186,10 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x726876*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
-      aP0->vfptr = &vt_TriggerClass; /*0x726884*/
-      aP0->vfptr1 = &vt_TriggerClass; /*0x72688a*/
-      aP0->vfptr2 = &vt_TriggerClass; /*0x726891*/
-      aP0->vfptr3 = &vt_TriggerClass; /*0x726898*/
+      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726884) */
+      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x72688a) */
+      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726891) */
+      /* X11: vtable install elided (implicit via TriggerClass virtuals 0x726898) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/

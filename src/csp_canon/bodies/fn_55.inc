@@ -134,7 +134,7 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
-      aP0->vtable1 = &vt_LightSourceClass; /*0x5550e4*/
+      /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5550e4) */
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550ea*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550f1*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550f8*/

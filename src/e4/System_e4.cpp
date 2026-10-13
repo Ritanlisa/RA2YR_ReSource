@@ -180,7 +180,7 @@ int sub_6269A0()
       if ( v6 ) /*0x626a0d*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626a15*/
-        v7->vfptr = &vt_DynamicVectorClass; /*0x626a1a*/
+        /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x626a1a) */
         v7[1].Items = (void *)10; /*0x626a20*/
         v7[1].vfptr = 0; /*0x626a27*/
       }
