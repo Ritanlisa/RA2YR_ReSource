@@ -101,6 +101,20 @@ SCALAR_W = {
     '__int16': 2, '__int64': 8, 'double': 8, 'unsigned __int64': 8,
 }
 
+# X17 (I165 ③, 2026-10-14): ubound 伪类门——标量 typedef 名不允许做类上界。
+# 证据（X16 §4 / x16_probe8_ubound_gate.log）: 107 处 ubound 是标量 typedef
+# （char 27 / int16_t 15 / wchar_t 13 / uint8_t 8 / __int16 7 / const char 7 /
+# const wchar_t 6 / uint16_t 3 / float 2 …），经 cast/成员事件进入 ubounds 后
+# check_class 要求 `derived_or_eq(cls, u)` → 无真实类能满足 → 候选集杀空 →
+# 假阴性 no-candidate。集合 = SCALAR_W 键 + fail 占位符 `unknown`（X16 §2）
+# + 实测出现的单字异体（int16_t 等）。**刻意不是 REAL_CLASSES 全门**（X16 §4:
+# 会 demote 上界在 class_db∪layouts 之外的既有解析，如 `Timer`）——本门只移除
+# "可证明非类"的标量名。
+UBOUND_PSEUDO = (frozenset(SCALAR_W)
+                 | {'unknown', 'void', 'signed char',
+                    'int8_t', 'int16_t', 'int32_t', 'int64_t', 'size_t',
+                    'LPVOID', 'long'})
+
 
 def J(p):
     return json.loads(Path(p).read_text(encoding='utf-8'))
@@ -1070,11 +1084,14 @@ def collect_usage(span_text, var):
         argt = span_text[args_off + 1:k]
         if not argt.strip():
             continue
-        for piece in _split_top(argt):
+        for piece_idx, piece in enumerate(_split_top(argt)):
             mm = re.match(r'^(?:\(\s*([A-Za-z_]\w*)\s*\*+\s*\)\s*)?' +
                           re.escape(var) + r'\s*$', piece.strip())
             if mm:
-                out['passes'].append((norm_qual(m.group(1)), mm.group(1)))
+                # X17 (I165 ①): 记录实参位置——thiscall-pass 的类上界只在
+                # 位置 0（flat 限定名调用的隐式 this）有效，见 _merge_usage。
+                out['passes'].append((norm_qual(m.group(1)), mm.group(1),
+                                      piece_idx))
     return out
 
 
@@ -1132,7 +1149,7 @@ def _merge_usage(ev, usage, w, wptr, rec, tag):
             continue
         ev['names'].add(nm)
         n += 1
-    for callee2, cast2 in usage['passes']:
+    for callee2, cast2, pass_idx in usage['passes']:
         ev['passes'].append((callee2, cast2))
         if cast2 and class_of_type(cast2):
             ev['ubounds'].add(cast2)
@@ -1143,7 +1160,16 @@ def _merge_usage(ev, usage, w, wptr, rec, tag):
                 a2 = SHORT2ADDR.get(sh)
         if a2 is not None:
             v2 = FUNCS.get(a2) or {}
-            if v2.get('call_convention') == 'thiscall' and v2.get('cls'):
+            # X17 (I165 ①): thiscall-pass ubound 原实现是 argument-index-
+            # blind 的——接收者变量出现在被调 thiscall 方法的**任一**文本
+            # 实参位置都加类上界。但只有 flat 限定名（`Class::Method(recv,
+            # …)`，`::` 在名内）的实参 0 是隐式 this；其它位置是值参数、
+            # arrow-form（`obj->Method(x)`，接收者在实参文本之外）无类蕴含。
+            # 实测样本: Power::FlagProcess((Power *)a2, v6) 的第二实参 v6
+            # 曾得 ubound 'Power'（x16_partA_probe6.log）。
+            if (pass_idx == 0 and '::' in callee2
+                    and v2.get('call_convention') == 'thiscall'
+                    and v2.get('cls')):
                 ev['ubounds'].add(v2['cls'])
         n += 1
     for c in usage['casts']:
@@ -1396,14 +1422,18 @@ def main():
             # X15: `return recv;` -> enclosing function's declared return type
             # (skipped when that function is itself a target of this run —
             # keeps apply idempotent: its signals may change during the run)
+            # X17 (I165 ②): 只接受**指针**返回类型——值类型（如标量 typedef
+            # `Char`，x16_resolver_dry1_census.json 实证）经 class_of_type 剥
+            # `*` 后混入类表，产生伪类上界。
             if re.search(r'\breturn\s+' + re.escape(s.recv) + r'\s*;',
                          span_text):
                 if sp[0] and sp[0] not in targets:
                     hrt = (FUNCS.get(sp[0]) or {}).get('return_type') or ''
-                    hc = class_of_type(hrt)
-                    if hc:
-                        ev['ubounds'].add(hc)
-                        rec['return_passthrough'] = hc
+                    if '*' in hrt:
+                        hc = class_of_type(hrt)
+                        if hc:
+                            ev['ubounds'].add(hc)
+                            rec['return_passthrough'] = hc
             ev['sites'].append(rec)
 
         # ---- X15: call-argument sites (inline args) ----
@@ -1494,7 +1524,9 @@ def main():
         slots = set(ev['slots'])
         chains = list(ev['chains'])
         names = set(ev['names'])
-        ubounds = set(ev['ubounds'])
+        # X17 (I165 ③): 单点消费的 ubound 伪类门（标量 typedef 名不得做类
+        # 上界——见 UBOUND_PSEUDO 注释；只移除可证明非类的名字）。
+        ubounds = {u for u in ev['ubounds'] if u not in UBOUND_PSEUDO}
         out = {'name': name, 'return_type': rt,
                'sites': ev['sites'],
                'inline': ev['inline'],

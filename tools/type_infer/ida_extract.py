@@ -2172,6 +2172,108 @@ def _x2b_apply_fp_rules(rows):
                    "byte_stream_group": excl_c}
 
 
+# ============================================================
+# X17 (2026-10-14): I156 Variant B —— RETURN_TO 接收端 → 消费点桥接
+# （纯逻辑，模块级定义，离线可导入）
+#
+# I156 缺陷（X16 定谳，x16_defect_notes.md §1 为可执行规格）:
+# `_scan_call_args` 发射的 RETURN_TO 行把接收端写成调用点作用域名
+# `{caller}::eax_v0x<site>`，但该名在图内是**死端**——83,503 个预作用域
+# 目标没有一个被其它行引用；消费侧（CALL_ARG/ASSIGN）读的是裸寄存器 +
+# site addr（作用域由引擎 scope_vars 重建，X14 `_RE_PRESCOPED_REG` 已把
+# 预作用域名注册为写点，引擎侧链路已通）。图级消费者（不跑 scope_vars 的
+# 通道，如 X15 内联实参通道尝试）无法从 `F.return` 跟到其消费者。
+#
+# Variant B 规格（X16 交付；本实现逐字遵守）: 每个"被读的返回值"追加一行
+#   ASSIGN {from: "{caller}::eax_v0x<siteF>", to: "eax@0x<consumer>",
+#           addr: "0x<consumer>", bridge: "return_consumer"}
+# consumer = call 之后**首条读 eax 且此前无 eax 写**的指令（直序近似——
+# 与引擎 scope_vars 的 most-recent-write SSA 语义同构；call/ret/write 任一
+# 终止扫描，上限 32 条）。`eax@0x<site>` 不是寄存器名/栈名 → scope_vars
+# 不改写、_detect_writes 不登记（引擎内成为携带返回类型的叶子；不改变任何
+# 既有变量的作用域）；图级消费者用 site 后缀直接配对同 addr 的裸寄存器
+# 消费行。
+#
+# 纪律（X2/X2b 继承）: 纯追加——现有行（含 RETURN_TO）零修改；由
+# `_scan_call_args` 尾部执行（只读 IDA 指令，不触碰约束列表状态——D5 无
+# `_has_to` 交互）；读判定必须精确（过检 = 假桥接，宁缺毋滥）。
+# ============================================================
+
+# X17: 纯写目标助记——**裸寄存器**操作数 0 不构成读（mov 族/lea/pop/
+# fnstsw/fstsw；setcc/cmov 的条件写；3 操作数 imul/shld/shrd 的目的操作数）。
+_X17_PUREDEST = frozenset({
+    "mov", "movzx", "movsx", "movsxd", "movd", "movq",
+    "lea", "pop", "fnstsw", "fstsw",
+})
+_X17_PUREDEST_3OP = frozenset({"imul", "shld", "shrd"})
+
+
+def _x17_parent_reg(txt):
+    """X17: 操作数文本为**裸寄存器**时返回 32 位父寄存器名；否则 None。
+
+    `eax`→eax；`al/ah/ax`→eax（子寄存器读写同父版本）；带 size 前缀 /
+    内存 / 符号 / 立即数 → None。
+    """
+    t, _ = _x2_strip_size_prefix((txt or "").strip().lower())
+    t = t.strip()
+    if t in _REG32_NAMES:
+        return t
+    return _X2_SUBREG.get(t)
+
+
+def _x17_mentions_reg(txt, reg):
+    """X17: 操作数文本是否**含**该寄存器（裸 / 内存基址 / 索引 / 子寄存器）。
+
+    文本 token 判定（`_` 属于 token 字符——`eax_counter` 型符号名整体成词
+    不误命中）。**前界守卫必不可少**（小样本实证假阳性）: IDA hex 字面量
+    `0Ah`/`4Ah`/`0Ch`/`0Dh`/`0Bh` 中数字后紧贴的子寄存器名 `ah/ch/dh/bh`
+    会被裸 token 正则误命中 → 假读 → 假桥接。token 前不得是
+    [0-9A-Za-z_]（数字需先于字母被排除——`(?<![0-9A-Za-z_])`）。
+    """
+    if not txt or not reg:
+        return False
+    body, _ = _x2_strip_size_prefix(txt.strip().lower())
+    for m in re.finditer(r"(?<![0-9A-Za-z_])[a-z_][a-z0-9_]*", body):
+        tok = m.group(0)
+        if tok == reg or _X2_SUBREG.get(tok) == reg:
+            return True
+    return False
+
+
+def _x17_classify_read(mnem, op0, op1, op2, reg):
+    """X17: 指令是否读 32 位父寄存器 reg（纯逻辑，离线可测）。
+
+    精确读判定（过检 = 假桥接）:
+      - 零化惯用法 `xor R,R` / `sub R,R`（文本等同）→ 不读；
+      - 操作数 0 为裸寄存器: 纯写目标助记不读，其余（RMW 族 add/sub/cmp/
+        test/inc/...）读；
+      - 操作数 0 为内存操作数: 地址计算恒为读（`mov [eax+4], ecx` 读 eax）；
+      - 操作数 1/2（源位）: 含 reg 即读。
+    """
+    r = (reg or "").lower()
+    o0 = (op0 or "").strip().lower()
+    o1 = (op1 or "").strip().lower()
+    o2 = (op2 or "").strip().lower()
+    if mnem in ("xor", "sub") and o0 and o0 == o1 \
+            and _x17_parent_reg(o0) == r:
+        return False  # 零化惯用法（xor eax,eax / sub eax,eax）——无读
+    if o0:
+        p0 = _x17_parent_reg(o0)
+        if p0 == r:
+            pure = (mnem in _X17_PUREDEST or mnem.startswith("set")
+                    or mnem.startswith("cmov")
+                    or (bool(o2) and mnem in _X17_PUREDEST_3OP))
+            if not pure:
+                return True
+        elif _x17_mentions_reg(o0, r):
+            return True  # 内存操作数（地址计算）
+    if o1 and _x17_mentions_reg(o1, r):
+        return True
+    if o2 and _x17_mentions_reg(o2, r):
+        return True
+    return False
+
+
 def _operand_member_disp(txt, val):
     """B2: 操作数真实位移提取（纯逻辑，离线可测）。
 
@@ -2515,6 +2617,18 @@ RUN_MANIFEST = {
     "ptr_arith_count": 0,
     "ptr_arith_ops": {"ADD": 0, "SUB": 0, "SCALE": 0},
     "ptr_arith_samples": [],
+    # X17 (2026-10-14, I156 Variant B): RETURN_TO 接收端 → 消费点桥接行
+    #   ret_bridge_count      —— 已发射桥接行数（= 被读的返回值数）
+    #   ret_bridge_status     —— 每个 call 返回值的消费扫描结局:
+    #     read（首读命中，桥接已发）/ killed（eax 先被写）/ ret（B11a 转发
+    #     通道）/ window（32 条上限未决）/ end（函数尾/BADADDR）
+    #   ret_bridge_multi_read —— 首读后又读到同一版本（≥2 读）的返回值数
+    #     （完整性观察：这些值的后续消费点未被桥接——一行一返回值规格）
+    #   ret_bridge_samples    —— 样本（含 call/consumer 两侧反汇编）
+    "ret_bridge_count": 0,
+    "ret_bridge_status": {},
+    "ret_bridge_multi_read": 0,
+    "ret_bridge_samples": [],
     "errors": [],
 }
 
@@ -3279,6 +3393,86 @@ def _run_main():
         return ("imm", None)
 
 
+    def _x17_ret_consumer(call_ea, fstart, call_ea_hex):
+        """X17 (I156 Variant B): call 之后首条读 eax 的指令 → 桥接行。
+
+        返回 (edge|None, status, n_reads):
+          edge   —— ASSIGN {from: caller::eax_v<siteF>, to: eax@0x<consumer>,
+                    addr: <consumer>}（首读命中时）；否则 None
+          status —— read（桥接已发）/ killed（eax 先被写）/ ret（ret/retn，
+                    B11a 转发通道已承载）/ window（32 条上限未决）/ end
+          n_reads —— 扫描窗口内读到 eax 的次数（≥2 时计入 multi_read 观察）
+
+        纪律: 只读 IDA 指令（与 scope_vars most-recent-write 直序语义同构）；
+        每个 call 恰好一次扫描；计数/样本入 RUN_MANIFEST（确定性字段）。
+        """
+        _fn = idaapi.get_func(call_ea)
+        _end = _fn.end_ea if _fn is not None else (call_ea + 0x400)
+        _ea = idc.next_head(call_ea, _end)
+        _first_read = None
+        _reads = 0
+        _n = 0
+        _stop = "end"
+        _post = 0
+        while _ea != idaapi.BADADDR and _ea < _end and _n < 32:
+            _n += 1
+            _m = idc.print_insn_mnem(_ea)
+            if not _m:
+                _stop = "end"
+                break
+            if _m in ("ret", "retn"):
+                _stop = "ret"
+                break
+            _o0 = idc.print_operand(_ea, 0)
+            _o1 = idc.print_operand(_ea, 1)
+            _o2 = idc.print_operand(_ea, 2) if _o1 else ""
+            if _x17_classify_read(_m, _o0, _o1, _o2, "eax"):
+                _reads += 1
+                if _first_read is None:
+                    _first_read = _ea
+            if "eax" in _x2_reg_writes(_m, _o0, _o1):
+                _stop = "killed"
+                break
+            # 首读后再看 8 条：只用于 multi_read 观察，不改变发射（规格
+            # 一行一返回值——首消费点即桥接目标）
+            if _first_read is not None:
+                _post += 1
+                if _post >= 8:
+                    _stop = "window"
+                    break
+            _ea = idc.next_head(_ea, _end)
+        if _first_read is not None:
+            _st = "read"
+        elif _stop in ("killed", "ret"):
+            _st = _stop
+        elif _n >= 32:
+            _st = "window"
+        else:
+            _st = "end"
+        _rst = RUN_MANIFEST["ret_bridge_status"]
+        _rst[_st] = _rst.get(_st, 0) + 1
+        if _reads >= 2:
+            RUN_MANIFEST["ret_bridge_multi_read"] += 1
+        if _first_read is not None:
+            RUN_MANIFEST["ret_bridge_count"] += 1
+            _edge = {
+                "from": f"0x{fstart:08X}::eax_v{call_ea_hex}",
+                "to": f"eax@0x{_first_read:X}",
+                "type": "ASSIGN",
+                "addr": f"0x{_first_read:X}",
+                "bridge": "return_consumer",
+            }
+            if len(RUN_MANIFEST["ret_bridge_samples"]) < 50:
+                RUN_MANIFEST["ret_bridge_samples"].append({
+                    "from": _edge["from"], "to": _edge["to"],
+                    "addr": _edge["addr"], "reads": _reads,
+                    "call_disasm": _x2_disasm_text(call_ea),
+                    "consumer_disasm": _x2_disasm_text(_first_read),
+                })
+            return _edge, _st, _reads
+        return None, _st, _reads
+
+
     def _scan_call_args(call_ea, fstart, callee_addr_str, callee_name, call_ea_hex):
         edges = []
         ea = idc.prev_head(call_ea, fstart)
@@ -3342,6 +3536,13 @@ def _run_main():
                 "callee_name": callee_name,
             }
         )
+        # X17 (I156 Variant B, 纯追加): RETURN_TO 接收端 → 首消费点桥接行
+        # （规格见模块级 X17 段；计数/样本入 manifest）。扫描只读 IDA 指令，
+        # 不触碰约束列表状态——现有行零修改。
+        _x17_edge, _x17_st, _x17_rd = _x17_ret_consumer(
+            call_ea, fstart, call_ea_hex)
+        if _x17_edge is not None:
+            edges.append(_x17_edge)
         return edges
 
 
