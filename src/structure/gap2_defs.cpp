@@ -305,9 +305,9 @@ void* BuildingLightClass::CTOR(int a1) {
     (*((unsigned short *)&(v8))) = Math::RoundToInt(a2); /*0x4359d6*/
     v9 = Coord3D::Set(&v43, v8, v25, v27); /*0x4359e0*/
     v40 = *v9; /*0x4359e9*/
-    v41 = v9[1]; /*0x4359f0*/
+    v41 = v9->Coord3D_field_0x04; /*0x4359f0*/
     v10 = v41; /*0x4359ed*/
-    v11 = (void *)v9[2]; /*0x4359f4*/
+    v11 = v9->q008; /*0x4359f4*/
     v4[1].nextArrayIndex = v40; /*0x4359f7*/
     v4[1].referenceCount = v10; /*0x4359fd*/
     v42 = (int)v11; /*0x435a03*/

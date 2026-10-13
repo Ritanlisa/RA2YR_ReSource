@@ -2112,8 +2112,8 @@ void* Voxel::FaceBlit()
         LOWORD(v8) = Math::RoundToInt(v5); /*0x7611cd*/
         v9 = Coord3D::Set(&v49, v8, v30, v33); /*0x7611e0*/
         v10 = *v9; /*0x7611e2*/
-        v11 = v9[1]; /*0x7611e4*/
-        v50.q008 = v9[2]; /*0x7611ea*/
+        v11 = v9->Coord3D_field_0x04; /*0x7611e4*/
+        v50.q008 = v9->q008; /*0x7611ea*/
         v12 = v11; /*0x7611f7*/
         v13 = v10 / 256; /*0x76120d*/
         v39 = *(void **)CellStruct::Set((CellStruct *)&v41, v10 / 256, v11 / 256); /*0x76121e*/

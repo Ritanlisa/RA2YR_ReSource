@@ -526,8 +526,8 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
       ScenarioClassActionCoords = GetScenarioClassActionCoords(v27, v28); /*0x634d75*/
       v17 = *ScenarioClassActionCoords; /*0x634d7a*/
       v18 = 0; /*0x634d7c*/
-      v25 = ScenarioClassActionCoords[1]; /*0x634d83*/
-      for ( i = ScenarioClassActionCoords[2]; v18 < v15; ++v18 ) /*0x634d8e*/
+      v25 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x634d83*/
+      for ( i = ScenarioClassActionCoords->q008; v18 < v15; ++v18 ) /*0x634d8e*/
       {
         v19 = *(unsigned int **)(v24->q024 + 4 * v18); /*0x634d97*/
         if ( v19[28] ) /*0x634d9a*/
@@ -537,7 +537,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
           v32 = *(unsigned short *)v20; /*0x634daf*/
           v33 = *((unsigned char *)v20 + 2); /*0x634dbc*/
           v21 = GetScenarioClassActionCoords(v27, v31); /*0x634dbd*/
-          if ( v17 == *v21 && v25 == v21[1] && i == v21[2] ) /*0x634dda*/
+          if ( v17 == *v21 && v25 == v21->Coord3D_field_0x04 && i == v21->q008 ) /*0x634dda*/
             return v18; /*0x634df3*/
           v15 = (int)ScriptAction_field_0x30; /*0x634ddc*/
         }

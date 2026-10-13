@@ -1331,7 +1331,7 @@ void * Radar::CopyDataArray(int * a2)
   if ( this != (Radar *)a2 ) /*0x58abdc*/
   {
     (*(void (**)(Radar *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x58abe0*/
-    v3 = a2[2]; /*0x58abe3*/
+    v3 = a2->u32_8; /*0x58abe3*/
     *&this->u32_8 = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
@@ -1366,7 +1366,7 @@ void * Radar::CopyDataArray(int * a2)
         {
           do /*0x58ac4a*/
           {
-            v9 = a2[1]; /*0x58ac30*/
+            v9 = a2->q004; /*0x58ac30*/
             v10 = *&this->q004; /*0x58ac33*/
             *(unsigned int *)(v10 + 8 * v8) = *(unsigned int *)(v9 + 8 * v8); /*0x58ac39*/
             *(unsigned int *)(v10 + 8 * v8 + 4) = *(unsigned int *)(v9 + 8 * v8 + 4); /*0x58ac40*/
@@ -1382,8 +1382,8 @@ void * Radar::CopyDataArray(int * a2)
       BYTE1(this->q00C) = 0; /*0x58ac51*/
     }
   }
-  *(unsigned int *)this->q010 = a2[4]; /*0x58ac58*/
-  this->q014 = (void *)a2[5]; /*0x58ac5e*/
+  *(unsigned int *)this->q010 = a2->q010; /*0x58ac58*/
+  this->q014 = a2->q014; /*0x58ac5e*/
   return (int *)this->__pad_000; /*0x58ac57*/
 
 }

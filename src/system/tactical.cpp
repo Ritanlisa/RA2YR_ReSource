@@ -701,8 +701,8 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a4)
                              ((((*((signed short *)(((unsigned char *)&(a4)) + 2))) << 8) + 128) / 256) << 8,
                              0);
             v47[0] = *v29; /*0x6d7e98*/
-            v47[1] = v29[1]; /*0x6d7ea4*/
-            v47[2] = v29[2]; /*0x6d7eb2*/
+            v47[1] = v29->Coord3D_field_0x04; /*0x6d7ea4*/
+            v47[2] = v29->q008; /*0x6d7eb2*/
             Coord::To_Screen((Coord *)a4, v47, (int *)&v41); /*0x6d7eb6*/
             *(unsigned int *)&v41 -= 30; /*0x6d7ec7*/
             v30 = (TacticalClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a4); /*0x6d7ed6*/

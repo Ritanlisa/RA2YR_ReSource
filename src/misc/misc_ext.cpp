@@ -39564,10 +39564,10 @@ void TileSystem::BuildNodes()
     v157.u32_C = 1; /*0x58d7fd*/
     v160 = *(unsigned int *)(v25 + 4 * v24); /*0x58d808*/
     *(unsigned int *)Block = v160; /*0x58d80c*/
-    v26->u32_4 = 0; /*0x58d80e*/
+    v26->field_4 = 0; /*0x58d80e*/
     *(unsigned int *)(80 * ((int16_t)v160 + g_MapCellWidth * (short)((v160) >> 16)) + g_MissionQueueFrame.localVariables[163] + 60) = -3; /*0x58d830*/
     v27 = *&v8->__pad_004; /*0x58d83d*/
-    v156 = v26->u32_4; /*0x58d840*/
+    v156 = v26->field_4; /*0x58d840*/
     v28 = v27 >> 1; /*0x58d847*/
     if ( v27 < *(unsigned int *)&v8[1] ) /*0x58d84b*/
     {

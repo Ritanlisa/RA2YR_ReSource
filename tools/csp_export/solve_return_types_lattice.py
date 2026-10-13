@@ -1,8 +1,32 @@
 #!/usr/bin/env python3
-"""X14: resolve raw function return types into class pointers (usage evidence).
+"""X14+X15: resolve raw function return types into class pointers (usage
+evidence). Binary evidence + lattice only (2026-09-03 ruling: NO voting /
+majority / statistics channels).
 
-Binary evidence + lattice only (2026-09-03 ruling: NO voting / majority /
-statistics channels). Sources of evidence, per call site of the callee:
+X15 extensions (same tool, not a parallel one):
+  - site-scanner hardening: comment-internal matches and declaration-shaped
+    lines are no longer sites; `namespace X { ... }`-prefixed defs are defs;
+    scalar-cast assignment heads (`v = (int)F(...)`) count as assignments.
+  - site kinds are classified (assign / inline-arg / ctrl / return / stmt /
+    expr); call-argument positions become sites:
+      chain: callee .return -RETURN_TO-> caller eax_v{site} -CALL_ARG-> G::paramN
+      (constraint-graph vocabulary; the tree renders the same binding
+      syntactically as the nested call `G(F(...), ...)`); evidence = G's
+      parameter declared type (upper bound) + G's parameter usage in G's
+      mechanical body (offsets / slots / chains / names / passes).
+  - the callee-body guard now runs for any call site (not only assigned ones);
+    `return this->M` VALUE reads are split from `&this->M`: placeholder
+    offset-0 names stay `this` (IDA render of `mov eax,ecx; ...; mov [eax],vt`
+    ctors), a real class-typed member resolves as the member's pointee class.
+  - no-class-evidence channels: receiver copy-alias (1 hop, reassignment-cut),
+    `return recv;` -> enclosing function's declared return (only when that
+    function is not itself a target of this run: keeps apply idempotent),
+    member-assignment receiver (`this->m = F(...)` -> member declared type),
+    all-argument cross-function passing (was first-arg only).
+  - per-target sub-cause attribution for the fail-loud buckets; the
+    unresolved ledger is no longer truncated.
+
+Sources of evidence, per call site of the callee:
 
   1. call-site cast / typed assignment in the mechanical tree
      (`x = (Cls *)F(...)`)            -> upper bound (the value IS a Cls or
@@ -53,7 +77,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-EVID = ROOT / '.omo' / 'evidence' / 'optimization' / 'x14'
+EVID = ROOT / '.omo' / 'evidence' / 'optimization' / 'x15'
 EVID.mkdir(parents=True, exist_ok=True)
 CSP_PATH = ROOT / 'tools' / 'csp' / 'full_report' / 'csp_functions.json'
 SIGNALS_PATH = ROOT / 'signals.json'
@@ -119,6 +143,18 @@ for _k, _v in AUTH.items():
     if isinstance(_v, dict) and _v.get('class'):
         CLASSES.add(_v['class'])
 CLASSES_L = {c.lower(): c for c in CLASSES}
+# X15: "real" classes = present in class_db / class_layouts (engine classes).
+# MTAB alone also carries scalar typedef pseudo-classes (uint8_t/int32_t/...)
+# that must never be written as a resolved return class.
+REAL_CLASSES = set(CDB) | set(LAYOUTS)
+
+# global variable names (signals kind=global) — attribution only
+GLOBALS = set()
+for _k, _v in SIG['symbols'].items():
+    if _v.get('kind') == 'global':
+        _nm = _v.get('name') or ''
+        if _nm:
+            GLOBALS.add(_nm)
 
 # per-class members: off -> [name, [type candidates], size]
 MEMB = {}
@@ -380,23 +416,103 @@ def span_for(spans, line_idx):
 
 
 CALL_RE = re.compile(r'([A-Za-z_]\w*(?:\s*::\s*~?[A-Za-z_]\w*)*)\s*\(')
+# `name =` possibly followed by a cast `(Type)` / `(Type *)` — X15: scalar
+# casts (`(int)`, `(unsigned int)`) now yield the receiver too (previously the
+# whole line fell into no-assigned-site). Group 2 = cast base, group 3 = stars.
 ASSIGN_HEAD = re.compile(
-    r'([A-Za-z_]\w*)\s*=\s*(?:\(\s*([A-Za-z_]\w*)\s*\*+\s*\)\s*)?$')
+    r'([A-Za-z_]\w*)\s*=\s*(?:\(\s*([A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*)\s*(\*+)\s*\))?'
+    r'\s*$')
+ASSIGN_HEAD_SCALAR = re.compile(
+    r'([A-Za-z_]\w*)\s*=\s*\(\s*([A-Za-z_]\w*(?:\s+[A-Za-z_]\w*)*)\s*\)\s*$')
 CTRL_LINE = re.compile(r'^\s*(?:if|while|for|switch|return|else|do|case)\b')
 # signature/definition tail: `(...)` optionally followed by `{`
 DEF_TAIL = re.compile(r'^\([^;{}]*\)\s*\{?\s*$')
 # type-ish text before a name (return type / qualifiers)
 TYPE_HEAD = re.compile(r'^[A-Za-z_][\w:<>\*&,\s]*$')
+# X15: leading `namespace X {` fragment on a joined line
+NS_PREFIX = re.compile(r'^\s*namespace\s+\w+\s*\{\s*')
+# X15: a preceding cast fed into the call `G((Cls *)F(...))`
+CAST_PRE = re.compile(r'\(\s*([A-Za-z_]\w*)\s*\*+\s*\)\s*$')
+# X15: enclosing call with a control keyword is a test, not an argument
+CTRL_CALLS = {'if', 'while', 'for', 'switch'}
+# direct post-use of the call result
+POST_NAME = re.compile(r'^\s*->\s*([A-Za-z_]\w*)')
+POST_IDX = re.compile(r'^\s*\[\s*(\d+)\s*\]')
+
+
+def comment_spans(ln):
+    """[(a,b)] comment spans of the line (string-literal aware)."""
+    spans = []
+    i, n = 0, len(ln)
+    instr = None
+    while i < n:
+        c = ln[i]
+        if instr:
+            if c == '\\':
+                i += 2
+                continue
+            if c == instr:
+                instr = None
+            i += 1
+            continue
+        if c == '"' or c == "'":
+            instr = c
+            i += 1
+            continue
+        if c == '/' and i + 1 < n and ln[i + 1] == '/':
+            spans.append((i, n))
+            break
+        if c == '/' and i + 1 < n and ln[i + 1] == '*':
+            j = ln.find('*/', i + 2)
+            j = n if j < 0 else j + 2
+            spans.append((i, j))
+            i = j
+            continue
+        i += 1
+    return spans
+
+
+def paren_close(txt, i):
+    """index of the ')' matching the '(' at i, or -1."""
+    d = 0
+    for j in range(i, len(txt)):
+        c = txt[j]
+        if c == '(':
+            d += 1
+        elif c == ')':
+            d -= 1
+            if d == 0:
+                return j
+    return -1
+
+
+def _code_core(ln):
+    """Line with comment spans blanked to spaces (offsets preserved)."""
+    spans = comment_spans(ln)
+    if not spans:
+        return ln
+    out = list(ln)
+    for a, b in spans:
+        for k in range(a, min(b, len(out))):
+            out[k] = ' '
+    return ''.join(out)
 
 
 def _is_def_line(ln, m):
     """True when the call-shaped match is really a function signature."""
-    core = re.sub(r'/\*.*?\*/', '', ln)
-    core = core.split('//')[0].rstrip()
-    if CTRL_LINE.match(core):
+    core = _code_core(ln)
+    ns = 0
+    mm = NS_PREFIX.match(core)
+    if mm:
+        ns = mm.end()
+    s, e = m.start() - ns, m.end() - ns
+    if s < 0 or e > len(core):
         return False
-    pre = core[:m.start()].rstrip()
-    tail = core[m.end() - 1:]
+    body = core[ns:]
+    if CTRL_LINE.match(body):
+        return False
+    pre = body[:s].rstrip()
+    tail = body[e - 1:]
     if not DEF_TAIL.match(tail):
         return False
     if not pre:
@@ -406,16 +522,41 @@ def _is_def_line(ln, m):
     return bool(TYPE_HEAD.match(pre))
 
 
+def _is_decl_line(ln, m):
+    """True when the match is a declaration (`Ret Name(...);`) — not a call."""
+    core = _code_core(ln)
+    ns = 0
+    mm = NS_PREFIX.match(core)
+    if mm:
+        ns = mm.end()
+    s, e = m.start() - ns, m.end() - ns
+    if s < 0 or e > len(core):
+        return False
+    body = core[ns:]
+    pre = body[:s].rstrip()
+    if not pre or not TYPE_HEAD.match(pre):
+        return False
+    if any(ch in pre for ch in '=;()'):
+        return False
+    pc = paren_close(body, e - 1)
+    if pc < 0:
+        return False
+    after = body[pc + 1:].strip()
+    return after in (';', '; }', '}')
+
+
 def norm_qual(name):
     return re.sub(r'\s+', '', name)
 
 
 class Site:
     __slots__ = ('file', 'line', 'col', 'anchor', 'recv', 'cast', 'callee_addr',
-                 'callee_name')
+                 'callee_name', 'kind', 'enc', 'argi', 'precast', 'post',
+                 'recv_kind')
 
     def __init__(self, file, line, col, anchor, recv, cast, callee_addr,
-                 callee_name):
+                 callee_name, kind='assign', enc=None, argi=None, precast=None,
+                 post=None, recv_kind=None):
         self.file = file
         self.line = line
         self.col = col
@@ -424,13 +565,35 @@ class Site:
         self.cast = cast
         self.callee_addr = callee_addr
         self.callee_name = callee_name
+        self.kind = kind          # assign|inline|ctrl|return|stmt|expr
+        self.enc = enc            # enclosing call name (inline only)
+        self.argi = argi          # argument index (inline only)
+        self.precast = precast    # cast right before the call `(Cls *)F(...)`
+        self.post = post          # direct post-use text (`->M`, `[N]`, ...)
+        self.recv_kind = recv_kind  # local|member|global (attribution only)
+
+
+def _count_args(ln, o2, s):
+    """top-level comma count between '(' at o2 and index s."""
+    d, n = 0, 0
+    for ch in ln[o2 + 1:s]:
+        if ch in '([':
+            d += 1
+        elif ch in ')]':
+            d -= 1
+        elif ch == ',' and d == 0:
+            n += 1
+    return n
 
 
 def scan_sites(target_addrs, targets_short, files, verbose=False):
-    """file scan -> ({callee_addr: [Site]}, {callee_addr: (file, def_line)})."""
+    """file scan -> ({callee_addr: [Site]}, {callee_addr: (file, def_line)},
+    {any_addr: (file, def_line)})."""
     sites = defaultdict(list)
     defs = {}
+    defs_all = {}
     anchor_re = re.compile(r'/\*(0x[0-9A-Fa-f]{6,8})\*/')
+    RET_TAIL = re.compile(r'\breturn\s*$')
     for fi, p in enumerate(files):
         rel = str(p.relative_to(ROOT)).replace('\\', '/')
         try:
@@ -440,7 +603,12 @@ def scan_sites(target_addrs, targets_short, files, verbose=False):
         for li, ln in enumerate(lines):
             if '(' not in ln:
                 continue
-            for m in CALL_RE.finditer(ln):
+            cspans = comment_spans(ln) if '/' in ln else []
+            core = None
+            matches = list(CALL_RE.finditer(ln))
+            for mi, m in enumerate(matches):
+                if cspans and any(a <= m.start() < b for (a, b) in cspans):
+                    continue
                 q = norm_qual(m.group(1))
                 addr = NAME2ADDR.get(q) if q in NAME2ADDR else None
                 if addr is None:
@@ -448,23 +616,85 @@ def scan_sites(target_addrs, targets_short, files, verbose=False):
                     if q not in NAME_DUP and sh in targets_short \
                             and sh not in SHORT_DUP:
                         addr = SHORT2ADDR.get(sh)
+                if addr is not None and _is_def_line(ln, m):
+                    defs_all.setdefault(addr, (rel, li))
+                    if addr in target_addrs:
+                        defs.setdefault(addr, (rel, li))
+                    continue
                 if addr is None or addr not in target_addrs:
                     continue
-                if _is_def_line(ln, m):
-                    if addr not in defs:
-                        defs[addr] = (rel, li)
+                if _is_decl_line(ln, m):
                     continue
-                head = ln[:m.start()]
+                if core is None:
+                    core = _code_core(ln)
+                head = core[:m.start()]
                 hm = ASSIGN_HEAD.search(head.rstrip())
-                recv = hm.group(1) if hm else None
-                cast = hm.group(2) if hm else None
+                recv = cast = recv_kind = None
+                if hm:
+                    recv = hm.group(1)
+                    if hm.group(3) is not None:
+                        cast = hm.group(2)
+                else:
+                    hm2 = ASSIGN_HEAD_SCALAR.search(head.rstrip())
+                    if hm2:
+                        recv = hm2.group(1)
+                if recv:
+                    rr = head.rstrip()
+                    ix = rr.rfind(recv)
+                    prech = rr[:ix].rstrip() if ix >= 0 else ''
+                    if recv in GLOBALS:
+                        recv_kind = 'global'
+                    elif prech.endswith('->') or prech.endswith('.'):
+                        recv_kind = 'member'
+                    else:
+                        recv_kind = 'local'
+                # enclosing call (innermost) / argument index
+                enc = None
+                for j, m2 in enumerate(matches):
+                    if j == mi:
+                        continue
+                    o2 = m2.end() - 1
+                    if o2 >= m.start():
+                        continue
+                    c2 = paren_close(ln, o2)
+                    if c2 == -1 or c2 > m.start():
+                        if enc is None or o2 > enc[0]:
+                            enc = (o2, norm_qual(m2.group(1)))
+                kind, enc_name, argi = None, None, None
+                if enc is not None:
+                    if enc[1] in CTRL_CALLS:
+                        kind = 'ctrl'
+                    else:
+                        kind = 'inline'
+                        enc_name = enc[1]
+                        argi = _count_args(ln, enc[0], m.start())
+                elif recv:
+                    kind = 'assign'
+                else:
+                    pre = head.rstrip()
+                    if RET_TAIL.search(pre):
+                        kind = 'return'
+                    elif not pre or pre.endswith((';', '{', '}')):
+                        kind = 'stmt'
+                    else:
+                        kind = 'expr'
+                # direct post-use (`F(...)->M` / `F(...)[N]`)
+                post = None
+                pc = paren_close(core, m.end() - 1)
+                if pc >= 0:
+                    post = core[pc + 1:].strip()
+                pre_cast = None
+                cp = CAST_PRE.search(head)
+                if cp:
+                    pre_cast = cp.group(1)
                 am = anchor_re.search(ln)
                 anchor = int(am.group(1), 16) if am else None
                 sites[addr].append(Site(rel, li, m.start(), anchor, recv, cast,
-                                        addr, q))
+                                        addr, q, kind, enc_name, argi, pre_cast,
+                                        post, recv_kind))
         if verbose and fi % 200 == 0:
             print('  ...scanned %d/%d files' % (fi, len(files)), flush=True)
-    return sites, defs
+    return sites, defs, defs_all
 
 
 def _split_top(txt):
@@ -517,6 +747,9 @@ def _parse_def_params(lines, start, end):
 THIS_MEM_PH = re.compile(r'^(?:vfptr\d*|vtable\d+|__pad_\w*|q0+)$')
 SYNTH_RECV = re.compile(r'^(?:Gap2Recv_|E4Recv)')
 
+# X15: per-call audit trail of the body-guard verdict inputs (evidence only)
+RET_INFO = {}
+
 
 def analyze_callee_returns(addr, defs, load_lines):
     """Return ('this', cls) / ('typed_passthrough', cls) / ('passthrough', None)
@@ -548,9 +781,9 @@ def analyze_callee_returns(addr, defs, load_lines):
         if ee == 'this':
             cats.append(('this', None))
             continue
-        mm = re.match(r'^&?\s*this\s*->\s*(\w+)$', ee)
+        mm = re.match(r'^(&?)\s*this\s*->\s*(\w+)$', ee)
         if mm:
-            cats.append(('this_mem', mm.group(1)))
+            cats.append(('this_mem', (mm.group(1), mm.group(2))))
             continue
         if ee in ptypes:
             cats.append(('param', ee))
@@ -573,19 +806,66 @@ def analyze_callee_returns(addr, defs, load_lines):
     if untyped_pt:
         return ('passthrough', None)
     kinds = {k for k, _ in cats}
-    if kinds == {'this', 'this_mem'} or kinds == {'this'} or kinds == {'this_mem'}:
+    RET_INFO[addr] = {
+        'kinds': sorted(kinds),
+        'cats': [k if k != 'this_mem' else 'this_mem(%s%s)' % (v[0], v[1])
+                 for k, v in cats],
+    }
+    if kinds and kinds <= {'this', 'this_mem'}:
+        # `&this->M` = object (sub)pointer: M must be at offset 0.
+        # `this->M` (no `&`):
+        #   placeholder offset-0 names  -> IDA artifact for `return this`
+        #     (X15 disasm-verified: 0x40E320, 0x46B640, 0x42DC50, 0x4101C0)
+        #   real name at offset 0       -> same artifact (0x5D39D0 saveSettings
+        #     disasm: `mov eax, edx` -> returns this), so also `this`
+        #   real name at offset > 0     -> genuine member value read; the
+        #     member must be a POINTER-typed real class -> its pointee class
+        val_cls = None
         for kind, val in cats:
             if kind != 'this_mem':
                 continue
-            ok = False
-            if THIS_MEM_PH.match(val or ''):
-                ok = True
-            else:
-                bm = members_by_name(cls) if cls else {}
-                if val in bm and bm[val][0] == 0:
-                    ok = True
-            if not ok:
+            amp, mname = val
+            bm = members_by_name(cls) if cls else {}
+            ent = bm.get(mname)
+            moff = ent[0] if ent else None
+            if THIS_MEM_PH.match(mname or ''):
+                continue
+            if amp:
+                if moff != 0:
+                    return None
+                continue
+            if ent is not None and moff == 0:
+                # X15: real-name offset-0 `return this->M` is AMBIGUOUS —
+                # disasm-verified both ways: SessionClass::saveSettings
+                # (0x5D39D0, `mov eax,edx` -> this) and ScenarioClass::
+                # ProcessAmbientEffects (0x55BB40, `mov eax,esi` -> this) vs
+                # ThemeClass::Play (0x720BB0, `mov eax,[esi]` -> member value).
+                # The IDA render is textually identical -> fail loud.
                 return None
+            tcls = None
+            if ent is not None:
+                _off, tys, _sz = ent
+                for _t in (tys or []):
+                    if '*' not in (_t or ''):
+                        continue
+                    _c = class_of_type(_t, _sz)
+                    if _c and _c in REAL_CLASSES:
+                        tcls = _c
+                        break
+            if tcls is None:
+                return None
+            if val_cls is None:
+                val_cls = tcls
+            elif not (val_cls == tcls or derived_or_eq(tcls, val_cls)
+                      or derived_or_eq(val_cls, tcls)):
+                return None
+        has_thisish = any(
+            k == 'this' or (k == 'this_mem' and THIS_MEM_PH.match(v[1] or ''))
+            for k, v in cats)
+        if val_cls is not None:
+            if has_thisish:
+                return None            # mixed shapes -> inconsistent
+            return ('member_value', val_cls)
         # class of the returned `this`: prefer the def-line class when it is a
         # real (non synthetic-receiver) class; else the X11 vtable-install
         # marker class (binary ctor-install truth); else fail loud.
@@ -610,7 +890,35 @@ def analyze_callee_returns(addr, defs, load_lines):
             return ('this-conflict', None)
         return ('this', cls2)
     if kinds == {'param'} and len(typed_classes) == 1:
-        return ('typed_passthrough', typed_classes.pop())
+        c = typed_classes.pop()
+        # X15: real-classes only (MTAB carries scalar typedef pseudo-classes)
+        if c not in REAL_CLASSES:
+            return None
+        # X15: cross-check the tree def's param type against the signals
+        # signature (X4/X13 authority). A pure-scalar signals type cannot be
+        # the source of a class-pointer return -> fail loud (0x4071A0
+        # SetRateMixerSample: tree said `ObjectClass *aP3`, signals/IDA/export
+        # snapshot all say `int a4`).
+        pname_r = None
+        for kk2, vv2 in cats:
+            if kk2 == 'param':
+                pname_r = vv2
+                break
+        idx = None
+        for i2, (pn2, _pt2) in enumerate(params):
+            if pn2 == pname_r:
+                idx = i2
+                break
+        sigs = (FUNCS.get(addr) or {}).get('params') or []
+        if idx is not None and len(sigs) == len(params) and idx < len(sigs):
+            st = (sigs[idx].get('type') or '').strip()
+            if st and '*' not in st:
+                return ('param-conflict', None)
+            sc = class_of_type(st)
+            if sc and sc in REAL_CLASSES and not (
+                    sc == c or derived_or_eq(sc, c) or derived_or_eq(c, sc)):
+                return ('param-conflict', None)
+        return ('typed_passthrough', c)
     if kinds == {'param'}:
         return ('passthrough', None)
     return None
@@ -688,7 +996,7 @@ def collect_usage(span_text, var):
                          r'\(\s*' + vb + r'\s*\+\s*(\d+)\s*\)', span_text):
         out['offsets']['plus'].append(int(m.group(1)))
 
-    # cross-function passing: split calls
+    # cross-function passing: split calls (X15: all arguments, not just #0)
     for m in CALL_RE.finditer(span_text):
         args_off = m.end() - 1
         depth, k = 0, args_off
@@ -704,14 +1012,120 @@ def collect_usage(span_text, var):
         if k >= len(span_text):
             continue
         argt = span_text[args_off + 1:k]
-        first = argt.split(',')[0].strip() if argt.strip() else ''
-        if not first:
+        if not argt.strip():
             continue
-        mm = re.match(r'^(?:\(\s*([A-Za-z_]\w*)\s*\*+\s*\)\s*)?' +
-                      re.escape(var) + r'\s*$', first)
-        if mm:
-            out['passes'].append((norm_qual(m.group(1)), mm.group(1)))
+        for piece in _split_top(argt):
+            mm = re.match(r'^(?:\(\s*([A-Za-z_]\w*)\s*\*+\s*\)\s*)?' +
+                          re.escape(var) + r'\s*$', piece.strip())
+            if mm:
+                out['passes'].append((norm_qual(m.group(1)), mm.group(1)))
     return out
+
+
+def _merge_usage(ev, usage, w, wptr, rec, tag):
+    """Merge a collect_usage() result into ev; returns the number of evidence
+    items collected (offsets/slots/chains/names/passes/casts)."""
+    n = 0
+    for N in usage['offsets'].get('idx', []):
+        if w is None or not wptr:
+            rec.setdefault('skipped', []).append(
+                       {'t': tag, 'r': 'idx-no-width'})
+            continue
+        off = N * w
+        ev['offsets'].add(off)
+        rec.setdefault('offsets', []).append(
+            {'kind': 'idx', 'n': N, 'off': '0x%X' % off})
+        n += 1
+    for K in usage['offsets'].get('plus', []):
+        if wptr is None:
+            rec.setdefault('skipped', []).append(
+                       {'t': tag, 'r': 'plus-no-decl'})
+            continue
+        off = K if not wptr else (K * w if w else None)
+        if off is None:
+            rec.setdefault('skipped', []).append(
+                       {'t': tag, 'r': 'plus-no-width'})
+            continue
+        ev['offsets'].add(off)
+        rec.setdefault('offsets', []).append(
+            {'kind': 'plus', 'off': '0x%X' % off})
+        n += 1
+    for S in usage['slots']:
+        ev['slots'].add(S)
+        rec.setdefault('slots', []).append('0x%X' % S)
+        n += 1
+    for kind, a, b in usage['chains']:
+        if kind == 'idx+imm' and (w is None or not wptr):
+            rec.setdefault('skipped', []).append(
+                       {'t': tag, 'r': 'chain-no-width'})
+            continue
+        base_off = a * w if (kind == 'idx+imm' and w) else a
+        if kind == 'idx+imm':
+            ev['chains'].append(('idx+imm', base_off, b))
+            rec.setdefault('chains', []).append(
+                {'kind': kind, 'off': '0x%X' % base_off, 'k': b})
+        else:
+            ev['chains'].append(('idx+name', base_off, b))
+            rec.setdefault('chains', []).append(
+                {'kind': kind, 'off': '0x%X' % base_off, 'm': b})
+        n += 1
+    for nm in usage['names']:
+        if PLACEHOLDER_NAME.match(nm):
+            rec.setdefault('skipped', []).append(
+                       {'t': tag, 'r': 'ph-name', 'v': nm})
+            continue
+        ev['names'].add(nm)
+        n += 1
+    for callee2, cast2 in usage['passes']:
+        ev['passes'].append((callee2, cast2))
+        if cast2 and class_of_type(cast2):
+            ev['ubounds'].add(cast2)
+        a2 = NAME2ADDR.get(callee2)
+        if a2 is None:
+            sh = callee2.split('::')[-1]
+            if sh not in SHORT_DUP:
+                a2 = SHORT2ADDR.get(sh)
+        if a2 is not None:
+            v2 = FUNCS.get(a2) or {}
+            if v2.get('call_convention') == 'thiscall' and v2.get('cls'):
+                ev['ubounds'].add(v2['cls'])
+        n += 1
+    for c in usage['casts']:
+        ev['casts'].append(c)
+        if class_of_type(c):
+            ev['ubounds'].add(c)
+        n += 1
+    return n
+
+
+def _nce_label(ev):
+    """Compact sub-cause label for a no-class-evidence target."""
+    c = Counter()
+    for r in ev['sites']:
+        if r.get('note') == 'no-span':
+            c['no-span'] += 1
+            continue
+        for sk in (r.get('skipped') or []):
+            c['skip-' + sk.get('r', '?')] += 1
+        got = bool(r.get('offsets') or r.get('slots') or r.get('chains'))
+        if not got:
+            rk = r.get('recv_kind')
+            if rk == 'member':
+                c['recv-member'] += 1
+            elif rk == 'global':
+                c['recv-global'] += 1
+            elif r.get('ptr_decl') is False:
+                c['recv-scalar'] += 1
+            elif r.get('ptr_decl') is None:
+                c['recv-undeclared'] += 1
+            else:
+                c['recv-ptr-noused'] += 1
+    for r in ev.get('inline', []):
+        if r.get('skip'):
+            c['inline-' + r['skip']] += 1
+    if not c:
+        c['no-consumers'] += 1
+    return '+'.join('%s%d' % (k, n) for k, n in c.most_common(3))
 
 
 # ------------------------------------------------------------------ checks
@@ -830,9 +1244,10 @@ def main():
     targets_short = {FUNCS[a]['name'].split('::')[-1] for a in targets
                      if FUNCS.get(a, {}).get('name')}
     print('scanning call sites...', flush=True)
-    sites, defs = scan_sites(set(targets), targets_short, files, args.verbose)
+    sites, defs, defs_all = scan_sites(set(targets), targets_short, files,
+                                      args.verbose)
     print('callees with sites:', len(sites), '| total sites:',
-          sum(len(v) for v in sites.values()), '| defs:', len(defs),
+          sum(len(v) for v in sites.values()), '| defs:', len(defs_all),
           flush=True)
 
     # per-file span caches for usage scanning
@@ -852,20 +1267,19 @@ def main():
 
     resolved = {}
     unresolved = {}
+    nas_sub = Counter()
+    nce_sub = Counter()
+    inline_stat = Counter()
     for callee_addr, slist in sorted(sites.items()):
         v = FUNCS.get(callee_addr) or {}
         name = v.get('name') or ('0x%X' % callee_addr)
         rt = v.get('return_type') or ''
         assigned = [s for s in slist if s.recv]
-        ev = {'sites': [], 'offsets': set(), 'slots': set(), 'chains': [],
-              'names': set(), 'ubounds': set(), 'casts': [], 'passes': []}
-        if not assigned:
-            unresolved['0x%08X' % callee_addr] = {
-                'name': name, 'return_type': rt, 'reason': 'no-assigned-site',
-                'sites': [{'file': s.file, 'line': s.line + 1,
-                           'anchor': hex(s.anchor) if s.anchor else None}
-                          for s in slist[:8]]}
-            continue
+        inline_sites = [s for s in slist if s.kind == 'inline' and s.enc]
+        site_kinds = Counter(s.kind for s in slist)
+        ev = {'sites': [], 'inline': [], 'offsets': set(), 'slots': set(),
+              'chains': [], 'names': set(), 'ubounds': set(), 'casts': [],
+              'passes': []}
         for s in assigned:
             lines, spans = load_lines(s.file)
             sp = span_for(spans, s.line)
@@ -891,72 +1305,133 @@ def main():
             usage = collect_usage(span_text, s.recv)
             rec = {'file': s.file, 'line': s.line + 1,
                    'recv': s.recv, 'width': w, 'ptr_decl': wptr,
+                   'recv_kind': s.recv_kind,
                    'window': [s.line + 1, end],
                    'anchor': ('0x%08X' % s.anchor) if s.anchor else None}
-            if s.cast:
+            if s.cast and class_of_type(s.cast):
                 ev['casts'].append(s.cast)
                 ev['ubounds'].add(s.cast)
                 rec['cast'] = s.cast
-            # offsets
-            for N in usage['offsets'].get('idx', []):
-                if w is None or not wptr:
-                    rec.setdefault('skipped', []).append('idx-no-width')
+            _merge_usage(ev, usage, w, wptr, rec, 'win')
+            # X15: receiver copy-alias (1 hop, reassignment-cut; X5b L158)
+            alias_rx = re.compile(
+                r'^\s*([A-Za-z_]\w*)\s*=\s*'
+                r'(?:\(\s*[A-Za-z_]\w*\s*\*+\s*\)\s*)?' +
+                re.escape(s.recv) + r'\s*;')
+            na = 0
+            for k in range(s.line + 1, end):
+                am2 = alias_rx.match(lines[k])
+                if not am2:
                     continue
-                off = N * w
-                ev['offsets'].add(off)
-                rec.setdefault('offsets', []).append(
-                    {'kind': 'idx', 'n': N, 'off': '0x%X' % off})
-            for K in usage['offsets'].get('plus', []):
-                if wptr is None:
-                    rec.setdefault('skipped', []).append('plus-no-decl')
+                av = am2.group(1)
+                if av == s.recv or av in GLOBALS or na >= 3:
                     continue
-                off = K if not wptr else (K * w if w else None)
-                if off is None:
-                    rec.setdefault('skipped', []).append('plus-no-width')
-                    continue
-                ev['offsets'].add(off)
-                rec.setdefault('offsets', []).append(
-                    {'kind': 'plus', 'off': '0x%X' % off})
-            # slots
-            for S in usage['slots']:
-                ev['slots'].add(S)
-                rec.setdefault('slots', []).append('0x%X' % S)
-            # chains (idx width applied)
-            for kind, a, b in usage['chains']:
-                if kind == 'idx+imm' and (w is None or not wptr):
-                    rec.setdefault('skipped', []).append('chain-no-width')
-                    continue
-                base_off = a * w if (kind == 'idx+imm' and w) else a
-                if kind == 'idx+imm':
-                    ev['chains'].append(('idx+imm', base_off, b))
-                    rec.setdefault('chains', []).append(
-                        {'kind': kind, 'off': '0x%X' % base_off, 'k': b})
-                else:
-                    ev['chains'].append(('idx+name', base_off, b))
-                    rec.setdefault('chains', []).append(
-                        {'kind': kind, 'off': '0x%X' % base_off, 'm': b})
-            # member names (placeholder names are non-discriminative)
-            for nm in usage['names']:
-                if PLACEHOLDER_NAME.match(nm):
-                    rec.setdefault('skipped', []).append('ph-name:%s' % nm)
-                    continue
-                ev['names'].add(nm)
-            # passing
-            for callee2, cast2 in usage['passes']:
-                ev['passes'].append((callee2, cast2))
-                if cast2:
-                    ev['ubounds'].add(cast2)
-                a2 = NAME2ADDR.get(callee2)
-                if a2 is None:
-                    sh = callee2.split('::')[-1]
-                    if sh not in SHORT_DUP:
-                        a2 = SHORT2ADDR.get(sh)
-                if a2 is not None:
-                    v2 = FUNCS.get(a2) or {}
-                    cc2 = v2.get('call_convention')
-                    if cc2 == 'thiscall' and v2.get('cls'):
-                        ev['ubounds'].add(v2['cls'])
+                na += 1
+                arx = re.compile(r'^\s*' + re.escape(av) + r'\s*=(?!=)')
+                kend = end
+                for k2 in range(k + 1, end):
+                    if arx.match(lines[k2]):
+                        kend = k2
+                        break
+                ausage = collect_usage('\n'.join(lines[k + 1:kend]), av)
+                aw, awp = decl_width(lines[s0:s1 + 1], av)
+                if _merge_usage(ev, ausage, aw, awp, rec, 'alias:' + av):
+                    rec.setdefault('alias', []).append(av)
+            # X15: `return recv;` -> enclosing function's declared return type
+            # (skipped when that function is itself a target of this run —
+            # keeps apply idempotent: its signals may change during the run)
+            if re.search(r'\breturn\s+' + re.escape(s.recv) + r'\s*;',
+                         span_text):
+                if sp[0] and sp[0] not in targets:
+                    hrt = (FUNCS.get(sp[0]) or {}).get('return_type') or ''
+                    hc = class_of_type(hrt)
+                    if hc:
+                        ev['ubounds'].add(hc)
+                        rec['return_passthrough'] = hc
             ev['sites'].append(rec)
+
+        # ---- X15: call-argument sites (inline args) ----
+        # chain: callee .return -RETURN_TO-> caller reg -CALL_ARG-> G::paramN
+        # tree form: `G(F(...), ...)`. Evidence = G's parameter declared type
+        # (upper bound) + G's parameter usage inside G's mechanical body.
+        for s in inline_sites:
+            gaddr = NAME2ADDR.get(s.enc)
+            if gaddr is None:
+                sh = s.enc.split('::')[-1]
+                if sh not in SHORT_DUP:
+                    gaddr = SHORT2ADDR.get(sh)
+            rec = {'file': s.file, 'line': s.line + 1,
+                   'inline_into': s.enc, 'arg': s.argi,
+                   'anchor': ('0x%08X' % s.anchor) if s.anchor else None}
+            if gaddr is None:
+                rec['skip'] = 'inline-callee-unknown'
+                inline_stat['callee-unknown'] += 1
+                ev['inline'].append(rec)
+                continue
+            gdef = defs_all.get(gaddr)
+            if not gdef:
+                rec['skip'] = 'inline-callee-no-def'
+                inline_stat['callee-no-def'] += 1
+                ev['inline'].append(rec)
+                continue
+            gv = FUNCS.get(gaddr) or {}
+            gcls = gv.get('cls') or ''
+            is_member = bool(gcls) and gcls != 'unknown'
+            rel2, li2 = gdef
+            lines2, spans2 = load_lines(rel2)
+            sp2 = span_for(spans2, li2)
+            s1b = sp2[2] if sp2 else li2
+            params = _parse_def_params(lines2, li2, s1b)
+            if is_member and gcls in CLASSES:
+                # the value is used as G's receiver -> upper bound
+                ev['ubounds'].add(gcls)
+                rec['receiver_class'] = gcls
+            pidx = (s.argi - 1) if is_member else s.argi
+            if pidx is None or pidx < 0:
+                rec['note'] = 'receiver-arg'
+                inline_stat['receiver-arg'] += 1
+                ev['inline'].append(rec)
+                continue
+            if pidx >= len(params):
+                rec['skip'] = 'inline-param-index'
+                inline_stat['param-index'] += 1
+                ev['inline'].append(rec)
+                continue
+            pname, ptype = params[pidx]
+            rec['param'] = pname
+            rec['param_type'] = ptype
+            pc_cls = class_of_type(ptype)
+            if pc_cls:
+                ev['ubounds'].add(pc_cls)
+                rec['param_class'] = pc_cls
+            body = lines2[li2:s1b + 1]
+            rass = re.compile(r'^\s*' + re.escape(pname) + r'\s*=(?!=)')
+            end2 = len(body)
+            for k2 in range(1, len(body)):
+                if rass.match(body[k2]):
+                    end2 = k2
+                    break
+            usage2 = collect_usage('\n'.join(body[:end2]), pname)
+            w2, wptr2 = decl_width(body, pname)
+            rec['window'] = [li2 + 1, li2 + end2]
+            got = _merge_usage(ev, usage2, w2, wptr2, rec, 'inline')
+            if got:
+                inline_stat['evidence'] += 1
+            else:
+                rec['skip'] = 'inline-param-no-evidence'
+                inline_stat['param-no-evidence'] += 1
+            ev['inline'].append(rec)
+
+        # ---- X15: direct site-expression evidence (all sites) ----
+        for s in slist:
+            if s.precast and not s.cast and class_of_type(s.precast):
+                ev['casts'].append(s.precast)
+                ev['ubounds'].add(s.precast)
+            if s.post:
+                pm = POST_NAME.match(s.post)
+                if pm and not PLACEHOLDER_NAME.match(pm.group(1)):
+                    ev['names'].add(pm.group(1))
+                # bare `F(...)[N]` has no element width -> fail loud (skip)
 
         # ---- adjudicate ----
         offs = set(ev['offsets'])
@@ -966,33 +1441,50 @@ def main():
         ubounds = set(ev['ubounds'])
         out = {'name': name, 'return_type': rt,
                'sites': ev['sites'],
+               'inline': ev['inline'],
                'offsets': sorted('0x%X' % o for o in offs),
                'slots': sorted('0x%X' % s for s in slots),
                'chains': [('idx+imm' if k == 'idx+imm' else 'idx+name', '0x%X' % a, b)
                           for (k, a, b) in chains],
                'names': sorted(names),
                'ubounds': sorted(ubounds)}
-        # callee-body guard: buffer/arg passthrough and `return this` shapes.
-        ret_an = analyze_callee_returns(callee_addr, defs, load_lines)
+        # callee-body guard (X15: runs for every site population).
+        ret_an = analyze_callee_returns(callee_addr, defs_all, load_lines)
+        out['ret_info'] = RET_INFO.get(callee_addr)
         if ret_an is not None:
             kind, cls2 = ret_an
             if kind in ('passthrough', 'this-synthetic', 'this-conflict'):
                 out['reason'] = kind
                 unresolved['0x%08X' % callee_addr] = out
                 continue
-            if kind in ('this', 'typed_passthrough'):
+            if kind in ('this', 'typed_passthrough', 'member_value'):
                 # cross-check: a known upper bound must be compatible with the
                 # body-derived class (sites' casts are independent evidence).
-                if kind == 'typed_passthrough' and ubounds:
+                if kind != 'this' and ubounds:
                     if not any(cls2 == u or derived_or_eq(cls2, u)
                                or derived_or_eq(u, cls2) for u in ubounds):
-                        out['reason'] = 'arg-passthrough'
+                        out['reason'] = ('arg-passthrough'
+                                         if kind == 'typed_passthrough'
+                                         else 'member-conflict')
                         unresolved['0x%08X' % callee_addr] = out
                         continue
                 out['resolved'] = cls2
                 out['how'] = kind
                 resolved['0x%08X' % callee_addr] = out
                 continue
+        if not assigned and not inline_sites:
+            kk = '+'.join('%s%d' % (k, n)
+                          for k, n in sorted(site_kinds.items()))
+            nas_sub[kk] += 1
+            out['reason'] = 'no-assigned-site'
+            out['subcause'] = kk
+            out['site_kinds'] = dict(site_kinds)
+            out['sites'] = [{'file': s.file, 'line': s.line + 1,
+                             'kind': s.kind,
+                             'anchor': ('0x%08X' % s.anchor) if s.anchor else None}
+                            for s in slist[:48]]
+            unresolved['0x%08X' % callee_addr] = out
+            continue
         tier1 = bool(slots or chains or ev['passes'])
         tier2 = bool(ev['casts'])
         tier3 = set()
@@ -1007,7 +1499,18 @@ def main():
         # tier-1 piece. Pure offset/name evidence never resolves.
         accept_unique = (tier1 or tier2)
         if not have_checks:
-            out['reason'] = 'no-class-evidence'
+            if assigned:
+                lbl = _nce_label(ev)
+                nce_sub[lbl] += 1
+                out['reason'] = 'no-class-evidence'
+                out['subcause'] = lbl
+            else:
+                kk = '+'.join('%s%d' % (k, n)
+                              for k, n in sorted(site_kinds.items()))
+                nas_sub[kk] += 1
+                out['reason'] = 'no-assigned-site'
+                out['subcause'] = kk
+                out['site_kinds'] = dict(site_kinds)
             unresolved['0x%08X' % callee_addr] = out
             continue
         if not accept_unique:
@@ -1056,11 +1559,15 @@ def main():
         resolved['0x%08X' % callee_addr] = out
 
     print()
-    print('=== X14 census ===')
+    print('=== X15 census ===')
     print('targets:', len(targets), '| with sites:', len(sites))
     print('resolved:', len(resolved), '| unresolved:', len(unresolved))
     rc = Counter(v.get('reason') for v in unresolved.values())
     print('unresolved reasons:', dict(rc))
+    print('resolved how:', dict(Counter(v.get('how') for v in resolved.values())))
+    print('inline-link stats:', dict(inline_stat))
+    print('no-assigned-site subcauses:', dict(nas_sub.most_common(20)))
+    print('no-class-evidence subcauses:', dict(nce_sub.most_common(20)))
     top_fam = Counter()
     for k, v in resolved.items():
         top_fam[v['return_type']] += 1
@@ -1079,15 +1586,19 @@ def main():
             if rec.get('explain'):
                 print('   explain:', json.dumps(rec['explain'])[:400])
 
-    # evidence files
+    # evidence files (X15: full fail-loud ledger, no truncation)
     ts = time.strftime('%Y%m%d_%H%M%S')
-    ev_path = EVID / ('x14_resolve_%s%s.json' % (ts, '_dry' if not args.apply else ''))
+    ev_path = EVID / ('x15_resolve_%s%s.json' % (ts, '_dry' if not args.apply else ''))
     ev_path.write_text(json.dumps({
         'targets': len(targets), 'with_sites': len(sites),
         'resolved_count': len(resolved), 'unresolved_count': len(unresolved),
         'unresolved_reasons': dict(rc),
+        'nas_subcauses': dict(nas_sub),
+        'nce_subcauses': dict(nce_sub),
+        'inline_link_stats': dict(inline_stat),
+        'resolved_how': dict(Counter(v.get('how') for v in resolved.values())),
         'resolved': resolved,
-        'unresolved': {k: v for k, v in list(unresolved.items())[:4000]},
+        'unresolved': unresolved,
         'wall_sec': round(time.time() - t0, 1),
     }, ensure_ascii=False, indent=1), encoding='utf-8')
     print('evidence:', ev_path)
@@ -1121,10 +1632,11 @@ def main():
     for k, rec in resolved.items():
         a = int(k, 16)
         ty = rec['resolved'] + ' *'
-        evid_txt = ('usage-evidence lattice (X14 solve_return_types_lattice; '
-                    'how=%s sites=%d)' % (
+        evid_txt = ('usage-evidence lattice (X15 solve_return_types_lattice; '
+                    'how=%s sites=%d inline=%d)' % (
                         rec.get('how'),
-                        len([s for s in rec['sites'] if s.get('recv')])))
+                        len([s for s in rec['sites'] if s.get('recv')]),
+                        len(rec.get('inline') or [])))
         ck = csp_by_addr.get(a)
         if ck is not None:
             e = csp_fn[ck]
@@ -1146,13 +1658,13 @@ def main():
                        encoding='utf-8')
         os.replace(tmp, CSP_PATH)
     if n_sig:
-        tmp = SIGNALS_PATH.with_suffix('.json.x14tmp')
+        tmp = SIGNALS_PATH.with_suffix('.json.x15tmp')
         tmp.write_text(json.dumps(SIG, ensure_ascii=False, indent=2),
                        encoding='utf-8')
         os.replace(tmp, SIGNALS_PATH)
-    (EVID / ('x14_apply_%s.json' % ts)).write_text(json.dumps({
+    (EVID / ('x15_apply_%s.json' % ts)).write_text(json.dumps({
         'csp_updated': n_csp, 'signals_updated': n_sig,
-        'signals_changes': changed_sig[:800],
+        'signals_changes': changed_sig[:2000],
     }, ensure_ascii=False, indent=1), encoding='utf-8')
     print('applied.')
 

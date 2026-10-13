@@ -5085,7 +5085,7 @@ int RulesClass::ReadDataList() {
       v6[43] = v7->CapacityIncrement; /*0x672524*/
       v8 = Block; /*0x672527*/
       v9 = Block == 0; /*0x67252e*/
-      v6[44] = v7->q018; /*0x672530*/
+      v6[44] = v7->unknown_18; /*0x672530*/
       v24 = 0; /*0x672533*/
       if ( !v9 && v27 ) /*0x672543*/
       {

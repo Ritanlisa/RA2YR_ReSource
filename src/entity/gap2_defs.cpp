@@ -111,7 +111,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
     v65 = (double *)v7; /*0x415f1b*/
     if ( v7 ) /*0x415f1f*/
     {
-      if ( !*(unsigned int *)(*(unsigned int *)(v7 + 172) + 732) ) /*0x415f2b*/
+      if ( !*(unsigned int *)(v7->u32_AC + 732) ) /*0x415f2b*/
       {
         if ( !this->q674 ) /*0x415f39*/
           sub_7DC720(-2147467261); /*0x415f48*/
@@ -219,7 +219,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         _ESI[1] = _RT1; /*0x4160b5*/
         v8 = (int)v65; /*0x4160b8*/
       }
-      if ( *(unsigned int *)(*(unsigned int *)(v8 + 172) + 732) == 1 ) /*0x4160c9*/
+      if ( *(unsigned int *)(v8->u32_AC + 732) == 1 ) /*0x4160c9*/
       {
         v24 = (unsigned int *)this->GetCoords_0(v67); /*0x4160dd*/
         v25 = (unsigned int *)(*(int (__thiscall **)(int, double *))(v6->turretChargeTimer)(v6, &v70); /*0x4160e6*/
@@ -254,7 +254,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         __asm { fmul ds:dbl_7E2818 }
         v29 = Math::RoundToInt(result); /*0x416181*/
         _ESI = v65 + 29; /*0x416188*/
-        Vector2::NormalizeNonZero((int *)v65 + 58); /*0x416190*/
+        Vector2::NormalizeNonZero(&v65->q0E8); /*0x416190*/
         Function::sub_41C430(v65 + 29); /*0x416197*/
         __asm { fstp qword ptr [esp+78h+var_54+4] } /*0x41619c*/
         v66 = v29 - 0x3FFF; /*0x4161a9*/
@@ -290,7 +290,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
           fmul ds:dbl_7E2810
           fstp qword ptr [esp+78h+var_64+4]
         }
-        Vector3::Magnitude((int *)v65 + 58); /*0x416245*/
+        Vector3::Magnitude(&v65->q0E8); /*0x416245*/
         __asm /*0x41624a*/
         {
           fstp qword ptr [esp+78h+var_54+4]

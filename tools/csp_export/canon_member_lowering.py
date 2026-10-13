@@ -1862,6 +1862,41 @@ def h_index(seg, ctx):
 # (The cast-wrapped shapes `((T *)recv)[N]` / `(T *)recv[N]` stay F-INDEX's.)
 BIDX = re.compile(r'(?<![\w.>])\b([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]')
 
+_DECL_WORD = re.compile(
+    r'^(?:u?int(?:8|16|32|64)_t|int|unsigned(?:\s+(?:int|short|char|long))?|'
+    r'signed(?:\s+(?:int|short|char|long))?|char|short|long|float|double|bool|'
+    r'BOOL|DWORD|_DWORD|_BYTE|_WORD|wchar_t|size_t|void)$', re.I)
+
+
+def _in_own_decl(seg, m, recv):
+    """True when `recv[...]` at m is the array-bound of recv's own
+    declaration (`Type recv[N];`), never an index access.
+    X15: locals reuse names across scopes inside one function (IDA naming);
+    `_decl_ptr_width` scans the whole body and found a `Type *recv` decl of a
+    DIFFERENT scope, so F-BIDX rewrote `int16_t v45[2];` into
+    `int16_t v45->u32_8;` -- never touch a decl site."""
+    ls = seg.rfind('\n', 0, m.start()) + 1
+    le = seg.find('\n', m.start())
+    if le < 0:
+        le = len(seg)
+    line = seg[ls:le]
+    pre = line[:m.start() - ls]
+    if not pre or pre.rstrip().endswith(
+            ('(', ',', '=', '+', '-', '/', '|', '&', '!', '>', '<', ';',
+             '{', '}', '?', ':')):
+        return False
+    pm = re.match(
+        r'^\s*(?:(?:struct|union|const|static|unsigned|signed|class)\s+)*'
+        r'([A-Za-z_]\w*(?:\s*::\s*[A-Za-z_]\w*)?)\s*'
+        r'\*?\s*&?\s*$', pre)
+    if not pm:
+        return False
+    word = pm.group(1).strip().split('::')[-1]
+    if not _DECL_WORD.match(word) and not _known_class(word):
+        return False
+    rest = line[m.end() - ls:].lstrip()
+    return (not rest) or rest[0] in ';,=['
+
 
 def h_bidx(seg, ctx):
     n = 0
@@ -1872,6 +1907,8 @@ def h_bidx(seg, ctx):
         if bad_span(seg, m):
             continue
         recv, N = m.group(1), int(m.group(2))
+        if _in_own_decl(seg, m, recv):
+            continue
         pre = seg[max(0, m.start() - 24):m.start()].rstrip()
         if pre.endswith(')') or pre.endswith('*'):
             # cast-wrapped index reach (F-INDEX/F-PTHIS domain)

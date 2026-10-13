@@ -2868,7 +2868,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   if ( this != (MPCooperative *)a2 ) /*0x5c4f50*/
   {
     MPCooperative::ddtor((int)this); /*0x5c4f52*/
-    v3 = (void *)a2[2]; /*0x5c4f58*/
+    v3 = a2->u32_8; /*0x5c4f58*/
     this->Capacity = v3; /*0x5c4f5d*/
     if ( v3 ) /*0x5c4f60*/
     {
@@ -2896,8 +2896,8 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
       BYTE1(this->IsInitialized) = 0; /*0x5c4f9b*/
     }
   }
-  this->MPCooperative_field_0x10 = (void *)a2[4]; /*0x5c4fa1*/
-  this->MPCooperative_field_0x14 = a2[5]; /*0x5c4fa7*/
+  this->MPCooperative_field_0x10 = a2->q010; /*0x5c4fa1*/
+  this->MPCooperative_field_0x14 = a2->q014; /*0x5c4fa7*/
   this->ClearAndFree2_ph = &DynamicVectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4faa*/
   return &this->vtable1; /*0x5c4fb2*/
 

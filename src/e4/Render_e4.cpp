@@ -2061,8 +2061,8 @@ unsigned int * sub_63CA80(unsigned int * a1, unsigned char * a2, int a3)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, a2); /*0x63ca90*/
   v5 = *ScenarioClassActionCoords; /*0x63ca92*/
-  v6 = ScenarioClassActionCoords[1]; /*0x63ca97*/
-  v7 = ScenarioClassActionCoords[2]; /*0x63ca9a*/
+  v6 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x63ca97*/
+  v7 = ScenarioClassActionCoords->q008; /*0x63ca9a*/
   if ( *ScenarioClassActionCoords == -1 && v6 == -1 && v7 == -1 && a3 ) /*0x63caad*/
   {
     v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)a3 + 88))(a3, v10); /*0x63cab9*/

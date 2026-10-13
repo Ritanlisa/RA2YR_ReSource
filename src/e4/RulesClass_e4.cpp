@@ -529,7 +529,7 @@ void *  RulesClass::readAircraftTypes(int * a2)
   if ( this != (RulesClass *)a2 ) /*0x67a19a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a19e*/
-    v3 = a2[2]; /*0x67a1a1*/
+    v3 = a2->DetailBufferZoneWidth; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
@@ -557,9 +557,9 @@ void *  RulesClass::readAircraftTypes(int * a2)
       (this->u8_D) = 0; /*0x67a1ec*/
     }
   }
-  this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a1f3*/
-  this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a1f9*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
+  this->LargeVisceroid = a2->LargeVisceroid; /*0x67a1f3*/
+  this->SmallVisceroid = a2->SmallVisceroid; /*0x67a1f9*/
+  this->AttackingAircraftSightRange = a2->AttackingAircraftSightRange; /*0x67a1ff*/
   return &this->DetailMinFrameRateNormal; /*0x67a204*/
 }
 }  // G42.18c ns repair
@@ -575,7 +575,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
   if ( this != (RulesClass *)a2 ) /*0x67a21a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a21e*/
-    v3 = a2[2]; /*0x67a221*/
+    v3 = a2->DetailBufferZoneWidth; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
@@ -605,7 +605,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
   }
   this->LargeVisceroid = a2->uniqueId; /*0x67a273*/
   this->SmallVisceroid = a2->abstractFlags; /*0x67a279*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
+  this->AttackingAircraftSightRange = a2->AttackingAircraftSightRange; /*0x67a27f*/
   return &this->DetailMinFrameRateNormal; /*0x67a284*/
 }
 }  // G42.18c ns repair
@@ -621,7 +621,7 @@ void * RulesClass::readBuildingTypes(int * a2)
   if ( this != (RulesClass *)a2 ) /*0x67a31a*/
   {
     (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a31e*/
-    v3 = a2[2]; /*0x67a321*/
+    v3 = a2->DetailBufferZoneWidth; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
@@ -649,9 +649,9 @@ void * RulesClass::readBuildingTypes(int * a2)
       (this->u8_D) = 0; /*0x67a36c*/
     }
   }
-  this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a373*/
-  this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a379*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
+  this->LargeVisceroid = a2->LargeVisceroid; /*0x67a373*/
+  this->SmallVisceroid = a2->SmallVisceroid; /*0x67a379*/
+  this->AttackingAircraftSightRange = a2->AttackingAircraftSightRange; /*0x67a37f*/
   return &this->DetailMinFrameRateNormal; /*0x67a384*/
 }
 }  // G42.18c ns repair

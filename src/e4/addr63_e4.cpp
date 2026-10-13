@@ -1394,13 +1394,13 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
     return 0; /*0x638133*/
   v34 = (void *)a2[2] == dword_A83D4C->relatedTagsCount; /*0x63814c*/
   ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords(v42,(unsigned char *)(a2))); /*0x638151*/
-  if ( *ScenarioClassActionCoords == -1 && ScenarioClassActionCoords[1] == -1 && ScenarioClassActionCoords[2] == -1 ) /*0x63816b*/
+  if ( *ScenarioClassActionCoords == -1 && ScenarioClassActionCoords->Coord3D_field_0x04 == -1 && ScenarioClassActionCoords->q008 == -1 ) /*0x63816b*/
     return 0; /*0x63816b*/
   v4 = *ScenarioClassActionCoords; /*0x638174*/
   Array_field_0x10 = DataGlobal_AC4B40; /*0x638176*/
   *(unsigned int *)v36 = *(unsigned int *)(v2 + 3); /*0x63817c*/
-  v6 = ScenarioClassActionCoords[1]; /*0x638180*/
-  v7 = ScenarioClassActionCoords[2]; /*0x638183*/
+  v6 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x638180*/
+  v7 = ScenarioClassActionCoords->q008; /*0x638183*/
   v8 = v2[2]; /*0x638186*/
   v9 = 0; /*0x63818a*/
   v39 = v4; /*0x63818c*/
@@ -1913,8 +1913,8 @@ int sub_639210(int a1, int a2, int a3, int a4, int a5)
     v7 = *((unsigned int *)dword_AC4B34 + v6); /*0x63923c*/
     ScenarioClassActionCoords = GetScenarioClassActionCoords(v15, *(unsigned char **)(*v7->u32_4 + 4)); /*0x63924b*/
     if ( *ScenarioClassActionCoords != a3 /*0x639276*/
-      || ScenarioClassActionCoords[1] != a4
-      || ScenarioClassActionCoords[2] != a5
+      || ScenarioClassActionCoords->Coord3D_field_0x04 != a4
+      || ScenarioClassActionCoords->q008 != a5
       || a2 != -1 && a2 != v7->u32_18 )
     {
       goto LABEL_13; /*0x639276*/
@@ -2026,7 +2026,7 @@ int sub_639470(int a1, int a2, int a3)
   {
     v5 = *((unsigned int *)dword_AC4C1C + v4); /*0x63948c*/
     ScenarioClassActionCoords = GetScenarioClassActionCoords(v8, *(unsigned char **)(*v5->u32_4 + 4)); /*0x63949b*/
-    if ( *ScenarioClassActionCoords == a1 && ScenarioClassActionCoords[1] == a2 && ScenarioClassActionCoords[2] == a3 ) /*0x6394b8*/
+    if ( *ScenarioClassActionCoords == a1 && ScenarioClassActionCoords->Coord3D_field_0x04 == a2 && ScenarioClassActionCoords->q008 == a3 ) /*0x6394b8*/
       break; /*0x6394b8*/
     if ( ++v4 >= v3 ) /*0x6394bd*/
       return 0; /*0x6394bd*/
@@ -4046,8 +4046,8 @@ unsigned int * E4Recv_633C60::sub_633C60(unsigned int * a2)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v5, this); /*0x633c69*/
   v6[0] = *ScenarioClassActionCoords; /*0x633c70*/
-  v6[1] = ScenarioClassActionCoords[1]; /*0x633c82*/
-  v6[2] = ScenarioClassActionCoords[2]; /*0x633c8e*/
+  v6[1] = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x633c82*/
+  v6[2] = ScenarioClassActionCoords->q008; /*0x633c8e*/
   ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v6, v5); /*0x633c92*/
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x633cac*/
   *a2 = DSurface_ViewBounds.field_0 + v5[0]; /*0x633cb2*/
@@ -4197,8 +4197,8 @@ unsigned int ObjectClass::sub_634810(unsigned int * a2, int a3)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v8, *(unsigned char **)(this->occupant + 4 * a3)); /*0x634823*/
   v4 = *ScenarioClassActionCoords; /*0x634828*/
-  v5 = ScenarioClassActionCoords[1]; /*0x63482a*/
-  v6 = ScenarioClassActionCoords[2]; /*0x63482d*/
+  v5 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x63482a*/
+  v6 = ScenarioClassActionCoords->q008; /*0x63482d*/
   *a2 = v4; /*0x634836*/
   a2[1] = v5; /*0x634838*/
   a2[2] = v6; /*0x63483b*/
@@ -4218,8 +4218,8 @@ unsigned int ObjectClass::sub_634850(unsigned int * a2)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, &this->attachedBomb); /*0x63485c*/
   v3 = *ScenarioClassActionCoords; /*0x634861*/
-  v4 = ScenarioClassActionCoords[1]; /*0x634863*/
-  v5 = ScenarioClassActionCoords[2]; /*0x634866*/
+  v4 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x634863*/
+  v5 = ScenarioClassActionCoords->q008; /*0x634866*/
   *a2 = v3; /*0x63486f*/
   a2[1] = v4; /*0x634871*/
   a2[2] = v5; /*0x634874*/
@@ -4239,8 +4239,8 @@ unsigned int ObjectClass::sub_634880(unsigned int * a2, int a3)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v8, *(unsigned char **)(this->occupant + 4 * a3)); /*0x634891*/
   v7[0] = *ScenarioClassActionCoords; /*0x634898*/
-  v7[1] = ScenarioClassActionCoords[1]; /*0x63489f*/
-  v7[2] = ScenarioClassActionCoords[2]; /*0x6348b6*/
+  v7[1] = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x63489f*/
+  v7[2] = ScenarioClassActionCoords->q008; /*0x6348b6*/
   ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v7, v6); /*0x6348ba*/
   v4 = (char *)DSurface_ViewBounds.field_4 + v6[1]; /*0x6348d4*/
   *a2 = DSurface_ViewBounds.field_0 + v6[0]; /*0x6348da*/
@@ -4261,8 +4261,8 @@ unsigned int ObjectClass::sub_6348F0(unsigned int * a2)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, &this->attachedBomb); /*0x6348fa*/
   v6[0] = *ScenarioClassActionCoords; /*0x634901*/
-  v6[1] = ScenarioClassActionCoords[1]; /*0x634913*/
-  v6[2] = ScenarioClassActionCoords[2]; /*0x63491f*/
+  v6[1] = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x634913*/
+  v6[2] = ScenarioClassActionCoords->q008; /*0x63491f*/
   ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v6, v5); /*0x634923*/
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x63493d*/
   *a2 = DSurface_ViewBounds.field_0 + v5[0]; /*0x634943*/
@@ -4334,12 +4334,12 @@ int ObjectClass::sub_635210()
         v18 = v4[2]; /*0x635270*/
         ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, v15); /*0x635271*/
         v6 = *ScenarioClassActionCoords; /*0x635276*/
-        v7 = ScenarioClassActionCoords[1]; /*0x63527f*/
-        v12 = ScenarioClassActionCoords[2]; /*0x635285*/
+        v7 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x63527f*/
+        v12 = ScenarioClassActionCoords->q008; /*0x635285*/
         v8 = GetScenarioClassActionCoords(v14, v16); /*0x635292*/
         result = *v8; /*0x635294*/
-        v9 = v8[1]; /*0x635298*/
-        v10 = v8[2]; /*0x63529b*/
+        v9 = v8->Coord3D_field_0x04; /*0x635298*/
+        v10 = v8->q008; /*0x63529b*/
         if ( v6 == result && v7 == v9 && v12 == v10 ) /*0x6352a8*/
           break; /*0x6352a8*/
         result = v11; /*0x6352aa*/
@@ -4851,8 +4851,8 @@ int * ActionScenarioClassCoordToScreen(BuildingClass * aP0, const void * a1, int
     memcpy(v15, a1, 0x6Fu); /*0x63d238*/
     ActionCoords = GetScenarioClassActionCoords(v13, v15); /*0x63d246*/
     v7 = *ActionCoords; /*0x63d248*/
-    v8 = ActionCoords[1]; /*0x63d24d*/
-    v9 = ActionCoords[2]; /*0x63d250*/
+    v8 = ActionCoords->Coord3D_field_0x04; /*0x63d24d*/
+    v9 = ActionCoords->q008; /*0x63d250*/
     if ( *ActionCoords == -1 && v8 == -1 && v9 == -1 && a3 ) /*0x63d266*/
     {
       v10 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a3 + 88))(a3, v14); /*0x63d272*/

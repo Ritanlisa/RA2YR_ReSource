@@ -498,7 +498,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     return 0; /*0x402ca1*/
   while ( 1 ) /*0x402ca7*/
   {
-    v5 = NextAudioQueue[6]; /*0x402ca7*/
+    v5 = NextAudioQueue->u32_18; /*0x402ca7*/
     if ( v2 < v5 ) /*0x402cac*/
       break; /*0x402cac*/
     v2 -= v5; /*0x402cae*/

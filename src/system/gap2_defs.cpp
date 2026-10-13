@@ -14810,15 +14810,15 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
   v40 = v16; /*0x52880d*/
   if ( v16 ) /*0x528811*/
   {
-    v14 = v16[5]; /*0x52881d*/
-    Blocka = (void *)v16[6]; /*0x528820*/
-    v17 = v16[7]; /*0x528824*/
-    v45 = (char *)v16[9]; /*0x528827*/
-    v18 = v16[8]; /*0x52882b*/
-    v16[5] = 0; /*0x52882e*/
+    v14 = v16->u32_14; /*0x52881d*/
+    Blocka = v16->u32_18; /*0x528820*/
+    v17 = v16->sectionCount; /*0x528824*/
+    v45 = v16->q009; /*0x528827*/
+    v18 = v16->__pad_020; /*0x52882b*/
+    v16->u32_14 = 0; /*0x52882e*/
     v44 = v17; /*0x528835*/
     v43 = v18; /*0x528839*/
-    v40[6] = 0; /*0x52883d*/
+    v40->u32_18 = 0; /*0x52883d*/
     v19 = strlen((const char *)v40[3]) + 1; /*0x52884e*/
     v36 = v40->u32_C; /*0x528854*/
     v20 = (unsigned int *)KeyValuePair::Init(0); /*0x52885a*/
@@ -28254,8 +28254,8 @@ void* ScenarioClass::GetActionCoordsCopy(void* a1) {
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, this); /*0x633b9b*/
   v3 = *ScenarioClassActionCoords; /*0x633ba0*/
-  v4 = ScenarioClassActionCoords[1]; /*0x633ba2*/
-  v5 = ScenarioClassActionCoords[2]; /*0x633ba5*/
+  v4 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x633ba2*/
+  v5 = ScenarioClassActionCoords->q008; /*0x633ba5*/
   *a1 = v3; /*0x633bae*/
   a1[1] = v4; /*0x633bb0*/
   a1[2] = v5; /*0x633bb3*/
@@ -32418,8 +32418,8 @@ void* ScenarioClass::GetActionCoordsCopy(void* v3) {
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, this); /*0x633b9b*/
   v3 = *ScenarioClassActionCoords; /*0x633ba0*/
-  v4 = ScenarioClassActionCoords[1]; /*0x633ba2*/
-  v5 = ScenarioClassActionCoords[2]; /*0x633ba5*/
+  v4 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x633ba2*/
+  v5 = ScenarioClassActionCoords->q008; /*0x633ba5*/
   *v3 = v3; /*0x633bae*/
   v3[1] = v4; /*0x633bb0*/
   v3[2] = v5; /*0x633bb3*/
@@ -34924,8 +34924,8 @@ void* ScenarioClass::GetActionCoordsCopy(void* a1) {
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, this); /*0x633b9b*/
   v3 = *ScenarioClassActionCoords; /*0x633ba0*/
-  v4 = ScenarioClassActionCoords[1]; /*0x633ba2*/
-  v5 = ScenarioClassActionCoords[2]; /*0x633ba5*/
+  v4 = ScenarioClassActionCoords->Coord3D_field_0x04; /*0x633ba2*/
+  v5 = ScenarioClassActionCoords->q008; /*0x633ba5*/
   *a1 = v3; /*0x633bae*/
   a1[1] = v4; /*0x633bb0*/
   a1[2] = v5; /*0x633bb3*/

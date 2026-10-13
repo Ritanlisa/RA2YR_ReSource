@@ -3653,9 +3653,9 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
       {
         v13 = (unsigned int *)((char *)v11 + v12 + this->Items); /*0x589b38*/
         Radar::CopyDataArray(v11 - 7, v13); /*0x589b3b*/
-        *((unsigned short *)v11 - 2) = *((unsigned short *)v13 + 12); /*0x589b44*/
-        *v11 = v13[7]; /*0x589b4b*/
-        v11[1] = v13[8]; /*0x589b54*/
+        *((unsigned short *)v11 - 2) = v13->u32_18; /*0x589b44*/
+        *v11 = v13->q01C; /*0x589b4b*/
+        v11[1] = v13->q020; /*0x589b54*/
         v11 += 9; /*0x589b57*/
         --v10; /*0x589b5b*/
       }

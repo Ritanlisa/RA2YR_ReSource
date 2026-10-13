@@ -292,7 +292,7 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   if ( this == (INIClass *)a2 ) /*0x477f60*/
     return this->vtable1; /*0x477f60*/
   TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
-  v3 = a2[2]; /*0x477f68*/
+  v3 = a2->q008; /*0x477f68*/
   this->headNode[1] = v3; /*0x477f6d*/
   if ( !v3 ) /*0x477f70*/
   {
@@ -703,7 +703,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     if ( this == (INIClass *)a2 ) /*0x478241*/
       return this->vtable1; /*0x478241*/
     FilePipe_38::ddtor((int)this); /*0x478247*/
-    v3 = a2[2]; /*0x47824d*/
+    v3 = a2->q008; /*0x47824d*/
     this->headNode[1] = v3; /*0x478252*/
     if ( !v3 ) /*0x478255*/
     {
@@ -744,7 +744,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     v9 = 0; /*0x478298*/
     do /*0x4782bb*/
     {
-      v10 = v9 + a2[1]; /*0x4782a0*/
+      v10 = v9 + a2->headNode; /*0x4782a0*/
       v11 = this->headNode[0] + v9; /*0x4782a4*/
       ++v8; /*0x4782a6*/
       v9 += 3; /*0x4782aa*/
