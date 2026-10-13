@@ -462,7 +462,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v26 = (int16_t)v51 + ((int16_t)((*(((unsigned short *)&(v51)) + 1)) + 1) << 9); /*0x57a73e*/
       if ( v26 >= 0x40000 || (v27 = *(CellClass **)(dword_87F924 + 4 * v26)) == 0 ) /*0x57a754*/
       {
-        dword_ABDC74 = (gamemd::CellClass *)(v51 + 0x10000);
+        dword_ABDC74 = &v51->u32_10000;
         v27 = (gamemd::CellClass *)(&unk_ABDC50); /*0x57a75f*/
       }
       v28 = Cell::GetTerrainMask(a1, &v27->mapCoords, 0); /*0x57a771*/
@@ -470,7 +470,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v29 = (int16_t)v51 + ((int16_t)((*(((unsigned short *)&(v51)) + 1)) + 2) << 9); /*0x57a791*/
       if ( v29 >= 0x40000 || (v30 = *(CellClass **)(dword_87F924 + 4 * v29)) == 0 ) /*0x57a7a7*/
       {
-        dword_ABDC74 = (gamemd::CellClass *)(v51 + 0x20000);
+        dword_ABDC74 = &v51->u32_20000;
         v30 = (gamemd::CellClass *)(&unk_ABDC50); /*0x57a7b2*/
       }
       v31 = Cell::GetTerrainMask(a1, &v30->mapCoords, 0); /*0x57a7bc*/
@@ -515,7 +515,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
           v41 = (char *)(Tactical::GetCellData((Tactical *)&v51)); /*0x57a8ba*/
           v42 = i.Tactical_field_0x8; /*0x57a8bf*/
           v43 = v52; /*0x57a8c3*/
-          *((unsigned int *)v41 + 16) = -1; /*0x57a8c7*/
+          v41->u32_40 = -1; /*0x57a8c7*/
           RecursiveCellClassNeighbourUpdate(v43, v42, (int)NeighbourContent, *(int *)&i.Tactical_field_0x2[2], v42); /*0x57a8d5*/
         }
         v37 = ++*(unsigned int *)i.__pad_0; /*0x57a8de*/
@@ -569,9 +569,9 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   v8 = (int)(a4); /*0x57ad09*/
   v9 = v7; /*0x57ad0d*/
   if ( a4 == (void *)(2) ) /*0x57ad12*/
-    TerrainMask = Cell::GetTerrainMask((int *)(a1), &a3->Cell_field_0x0, 1); /*0x57ad1b*/
+    TerrainMask = Cell::GetTerrainMask((int *)(a1), &a3->q000, 1); /*0x57ad1b*/
   else
-    TerrainMask = Cell::GetTerrainMask((int *)(a1), &a3->Cell_field_0x0, 0); /*0x57ad26*/
+    TerrainMask = Cell::GetTerrainMask((int *)(a1), &a3->q000, 0); /*0x57ad26*/
   v11 = TerrainMask; /*0x57ad2b*/
   if ( !TerrainMask ) /*0x57ad2f*/
     return 1; /*0x57ad2f*/
@@ -761,24 +761,24 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   }
   LABEL_71:
   v26 = a3; /*0x57b12d*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * (v13 + dword_ABAD28) - 4); /*0x57b143*/
-  v27 = *(unsigned int *)&a3->__pad_1C[8]; /*0x57b149*/
+  *(unsigned int *)&g_RadarBlipManager = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * (v13 + dword_ABAD28) - 4); /*0x57b143*/
+  v27 = *&a3->ptr_24; /*0x57b149*/
   v28 = g_MissionQueueFrame.briefing[v13 + 71]; /*0x57b14c*/
   v29 = (*(((unsigned short *)&(g_MissionQueueFrame.briefing[v13 + 71])) + 1)); /*0x57b154*/
   (*((unsigned short *)&(a3))) = v27 + v28; /*0x57b168*/
   (*(((unsigned short *)&(a3)) + 1)) = (*(((unsigned short *)&(v27)) + 1)) + v29; /*0x57b16d*/
   v39[0] = a3; /*0x57b17e*/
-  Tactical::MouseMove((Tactical *)&stru_87F5F0.__pad_58[416], &v40, v39); /*0x57b189*/
+  Tactical::MouseMove((Tactical *)&DataGlobal_87F7E8, &v40, v39); /*0x57b189*/
   (*((unsigned char *)&(a3))) = 1; /*0x57b192*/
   if ( a4 == 1 ) /*0x57b19a*/
   {
-    GenerateTerrainMap(0, 0, v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1b7*/
+    GenerateTerrainMap(0, 0, v26->u32_11B, a5, &a3, a6); /*0x57b1b7*/
   }
   else
   {
     if ( a4 != 2 ) /*0x57b1bc*/
       return 1; /*0x57b1bc*/
-    GenerateTerrainMap(dword_ABAD28, dword_ABAD28 + 41, v26->Cell_field_0x11B[0], a5, &a3, a6); /*0x57b1e3*/
+    GenerateTerrainMap(dword_ABAD28, dword_ABAD28 + 41, v26->u32_11B, a5, &a3, a6); /*0x57b1e3*/
   }
   return (unsigned char)a3 != 0; /*0x57b1ee*/
 }
@@ -929,8 +929,8 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   if ( Cell::IsEmpty(v14) || (v25 = v14[14], v25 >= aP0) && v25 <= aP1 ) /*0x57b64a*/
   {
     v14[14] = *(unsigned int *)(v29 + 660); /*0x57b65e*/
-    *((unsigned char *)v14 + 282) = v15; /*0x57b661*/
-    *((unsigned char *)v14 + 283) = aP2 + *(unsigned char *)(v16 + 40); /*0x57b66c*/
+    v14->u32_11A = v15; /*0x57b661*/
+    v14->u32_11B = aP2 + *(unsigned char *)(v16 + 40); /*0x57b66c*/
   LABEL_36:
     v7 = dword_87F8DC; /*0x57b672*/
     goto LABEL_37; /*0x57b672*/
@@ -1318,7 +1318,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       v51 = (int)&unk_ABDC50; /*0x57ddf9*/
       unk_ABDC50.smudgeTypeIndex = v46; /*0x57de01*/
     }
-    v9 = *aP0 + ((int16_t)((unsigned int)(*(unsigned int *)aP0 + 0x10000) >> 16) << 9); /*0x57de23*/
+    v9 = *aP0 + ((int16_t)((unsigned int)(*&aP0->u32_40000) >> 16) << 9); /*0x57de23*/
     if ( v9 < 0x40000 && (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) != 0 ) /*0x57de33*/
     {
       v47 = v10; /*0x57de35*/
@@ -1326,7 +1326,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     else
     {
       v47 = &unk_ABDC50; /*0x57de3f*/
-      unk_ABDC50.smudgeTypeIndex = *(unsigned int *)aP0 + 0x10000; /*0x57de47*/
+      unk_ABDC50.smudgeTypeIndex = *&aP0->u32_40000; /*0x57de47*/
     }
     (*((unsigned char *)&(v54))) = 0; /*0x57de54*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57de62*/
@@ -1419,8 +1419,8 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       }
       v24 = v49; /*0x57e009*/
       v25 = v51; /*0x57e00d*/
-      *(unsigned int *)(v49 + 68) = v23; /*0x57e015*/
-      *(unsigned int *)(v25 + 68) = v23; /*0x57e018*/
+      v49->u32_44 = v23; /*0x57e015*/
+      v25->u32_44 = v23; /*0x57e018*/
       *(unsigned int *)&v47->__pad_28[28] = v23; /*0x57e01b*/
       v62[1] = dword_886FA4; /*0x57e029*/
       v62[0] = DSurface_ViewBounds; /*0x57e034*/
@@ -1682,7 +1682,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
     v64[10] = 101; /*0x57e4b5*/
     memset(&v64[11], 255, 20); /*0x57e4c0*/
     (*((unsigned char *)&(v2))) = Map_Create_57B990(v1); /*0x57e4e3*/
-    v22 = *(unsigned int *)&v5->__pad_28[28]; /*0x57e4e8*/
+    v22 = *&v5->q044; /*0x57e4e8*/
     if ( v2 > 0 ) /*0x57e4ed*/
     {
       if ( v22 < 96 ) /*0x57e4f6*/
@@ -1703,9 +1703,9 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       }
       v24 = v52; /*0x57e51d*/
       v25 = v50; /*0x57e521*/
-      *(unsigned int *)&v5->__pad_28[28] = v23; /*0x57e525*/
+      *&v5->q044 = v23; /*0x57e525*/
       *(unsigned int *)(v24 + 68) = v23; /*0x57e528*/
-      *(unsigned int *)(v25 + 68) = v23; /*0x57e52b*/
+      v25->u32_44 = v23; /*0x57e52b*/
       v61[1] = dword_886FA4; /*0x57e539*/
       v61[0] = DSurface_ViewBounds; /*0x57e547*/
       v26 = (struct tagRECT *)((House *)((int)v5))->GetStartCoords(v66); /*0x57e55a*/
@@ -1892,7 +1892,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v51 = (int)&unk_ABDC50; /*0x57e84d*/
       unk_ABDC50.smudgeTypeIndex = v46; /*0x57e855*/
     }
-    v9 = *aP0 + ((int16_t)((unsigned int)(*(unsigned int *)aP0 + 0x10000) >> 16) << 9); /*0x57e877*/
+    v9 = *aP0 + ((int16_t)((unsigned int)(*&aP0->u32_40000) >> 16) << 9); /*0x57e877*/
     if ( v9 < 0x40000 && (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) != 0 ) /*0x57e887*/
     {
       v47 = v10; /*0x57e889*/
@@ -1900,7 +1900,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
     else
     {
       v47 = &unk_ABDC50; /*0x57e893*/
-      unk_ABDC50.smudgeTypeIndex = *(unsigned int *)aP0 + 0x10000; /*0x57e89b*/
+      unk_ABDC50.smudgeTypeIndex = *&aP0->u32_40000; /*0x57e89b*/
     }
     (*((unsigned char *)&(v54))) = 0; /*0x57e8a8*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57e8b6*/
@@ -1993,8 +1993,8 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       }
       v24 = v49; /*0x57ea63*/
       v25 = v51; /*0x57ea67*/
-      *(unsigned int *)(v49 + 68) = v23; /*0x57ea6f*/
-      *(unsigned int *)(v25 + 68) = v23; /*0x57ea72*/
+      v49->u32_44 = v23; /*0x57ea6f*/
+      v25->u32_44 = v23; /*0x57ea72*/
       *(unsigned int *)&v47->__pad_28[28] = v23; /*0x57ea75*/
       v62[1] = dword_886FA4; /*0x57ea83*/
       v62[0] = DSurface_ViewBounds; /*0x57ea8e*/
@@ -2256,7 +2256,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
     v64[10] = 232; /*0x57ef19*/
     memset(&v64[11], 255, 20); /*0x57ef24*/
     (*((unsigned char *)&(v2))) = Map_Create_57CBE0(v1); /*0x57ef47*/
-    v22 = *(unsigned int *)&v5->__pad_28[28]; /*0x57ef4c*/
+    v22 = *&v5->q044; /*0x57ef4c*/
     if ( v2 > 0 ) /*0x57ef51*/
     {
       if ( v22 < 227 ) /*0x57ef5d*/
@@ -2277,9 +2277,9 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       }
       v24 = v52; /*0x57ef87*/
       v25 = v50; /*0x57ef8b*/
-      *(unsigned int *)&v5->__pad_28[28] = v23; /*0x57ef8f*/
+      *&v5->q044 = v23; /*0x57ef8f*/
       *(unsigned int *)(v24 + 68) = v23; /*0x57ef92*/
-      *(unsigned int *)(v25 + 68) = v23; /*0x57ef95*/
+      v25->u32_44 = v23; /*0x57ef95*/
       v61[1] = dword_886FA4; /*0x57efa3*/
       v61[0] = DSurface_ViewBounds; /*0x57efb1*/
       v26 = (struct tagRECT *)((House *)((int)v5))->GetStartCoords(v66); /*0x57efc4*/
@@ -2547,11 +2547,11 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * v9, int a3)
   __int16 v8; // [esp+12h] [ebp-Eh]
   int v9; // [esp+28h] [ebp+8h]
 
-  v3 = ((2 * *((unsigned int *)this + 65) - 1) % 3 != 0) + (2 * *((unsigned int *)this + 65) - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
-  v4 = *((unsigned int *)this + 64); /*0x578ccc*/
-  v5 = ((2 * *((unsigned int *)this + 66) - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * *((unsigned int *)this + 66) - 1) / 3); /*0x578cd8*/
-  v6 = *((unsigned int *)this + 63); /*0x578cda*/
-  v8 = v4 + *((unsigned int *)this + 61) - v6; /*0x578cf0*/
+  v3 = ((2 * this->M260 - 1) % 3 != 0) + (2 * this->M260 - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
+  v4 = this->M256; /*0x578ccc*/
+  v5 = ((2 * this->M264 - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * this->M264 - 1) / 3); /*0x578cd8*/
+  v6 = this->M252; /*0x578cda*/
+  v8 = v4 + this->M244 - v6; /*0x578cf0*/
   LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
   HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
   *v9 = v9; /*0x578d4b*/

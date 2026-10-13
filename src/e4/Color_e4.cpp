@@ -24,9 +24,9 @@ int Color::ConvertToRGB(int a2)
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
-  v2 = (((unsigned char *)&(this->Color_field_00))[2]); /*0x51744b*/
-  v3 = (((unsigned char *)&(this->Color_field_00))[1]); /*0x517453*/
-  v4 = 3 * (*((unsigned char *)&(this->Color_field_00))); /*0x51745c*/
+  v2 = (this->u32_2); /*0x51744b*/
+  v3 = (this->u32_1); /*0x517453*/
+  v4 = 3 * (this->Color_field_00); /*0x51745c*/
   v10[2] = v2; /*0x51745f*/
   v4 *= 2; /*0x517463*/
   v10[1] = v2; /*0x517467*/
@@ -41,7 +41,7 @@ int Color::ConvertToRGB(int a2)
   (*((unsigned char *)&(v6))) = v10[v6]; /*0x51752c*/
   (*(((unsigned char *)&(v9)) + (sizeof(v9) - 1))) = v10[v7]; /*0x517535*/
   *(unsigned short *)a2 = v9; /*0x517544*/
-  *(unsigned char *)(a2 + 2) = v6; /*0x51754a*/
+  a2->u8_2 = v6; /*0x51754a*/
   return a2; /*0x517530*/
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -128,14 +128,14 @@ unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2)
   uint8_t v5; // bl
   unsigned int result; // eax
 
-  v3 = (((unsigned char *)&(this->Color_field_00))[1]); /*0x6612f2*/
-  (*((unsigned char *)&(this->Color_field_00))) += aP1 * (*a2 - (*((unsigned char *)&(this->Color_field_00)))) / 256; /*0x6612f5*/
+  v3 = (this->u32_1); /*0x6612f2*/
+  (this->Color_field_00) += aP1 * (*a2 - (this->Color_field_00)) / 256; /*0x6612f5*/
   v4 = v3 + aP1 * (a2[1] - v3) / 256; /*0x661315*/
-  v5 = (((unsigned char *)&(this->Color_field_00))[2]); /*0x661317*/
-  (((unsigned char *)&(this->Color_field_00))[1]) = v4; /*0x66131a*/
+  v5 = (this->u32_2); /*0x661317*/
+  (this->u32_1) = v4; /*0x66131a*/
   result = aP1 * (a2[2] - v5) / 256; /*0x66133a*/
   (*((unsigned char *)&(result))) = v5 + result; /*0x66133d*/
-  (((unsigned char *)&(this->Color_field_00))[2]) = result; /*0x661340*/
+  (this->u32_2) = result; /*0x661340*/
   return result; /*0x66132a*/
 }
 } // namespace gamemd
@@ -158,8 +158,8 @@ unsigned int * Color::RGBFromFloat(int aP1, float a3)
   v10 = v7; /*0x75f582*/
   LOWORD(v8) = Math::RoundToInt(v3); /*0x75f591*/
   this->Color_field_00 = v6; /*0x75f59e*/
-  *((unsigned int *)this + 1) = v10; /*0x75f5a0*/
-  *((unsigned int *)this + 2) = v8; /*0x75f5a3*/
+  this->u32_4 = v10; /*0x75f5a0*/
+  this->u32_8 = v8; /*0x75f5a3*/
   return &this->Color_field_00; /*0x75f5ac*/
 
 }

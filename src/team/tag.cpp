@@ -190,18 +190,18 @@ int TagClass::Destroy()
   int result; // eax
 
   this->destroyed = 1; /*0x6e5233*/
-  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e5237*/
-  if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5270*/
-    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+  result = *(unsigned int *)&DataGlobal_B0F6A0; /*0x6e5237*/
+  if ( *(int *)&DataGlobal_B0F6A8 < *(int *)&DataGlobal_B0F6A0 /*0x6e5270*/
+    || (DataGlobal_B0F6A5 || !*(unsigned int *)&DataGlobal_B0F6A0)
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
     && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
-                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                   *(unsigned int *)&DataGlobal_B0F6A0 + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
         (unsigned char)result) )
   {
-    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5278*/
-    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)(this); /*0x6e5287*/
+    result = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x6e5278*/
+    *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = (unsigned int)(this); /*0x6e5287*/
   }
   return result; /*0x6e528a*/
 }

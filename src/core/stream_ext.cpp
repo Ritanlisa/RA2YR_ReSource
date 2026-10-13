@@ -91,8 +91,8 @@ int Buffer::CreateDirectSound()
   v12 = v1[27]; /*0x40a562*/
   v24 = v15; /*0x40a56c*/
   v22 = 4 * v12; /*0x40a578*/
-  if ( (*(int (__stdcall **)(unsigned int, unsigned int *, int *, unsigned int))(**(unsigned int **)&stru_87E790.__pad_D8[52] + 12))( /*0x40a587*/
-         *(unsigned int *)&stru_87E790.__pad_D8[52],
+  if ( (*(int (__stdcall **)(unsigned int, unsigned int *, int *, unsigned int))(**(unsigned int **)&DataGlobal_87E89C + 12))( /*0x40a587*/
+         *(unsigned int *)&DataGlobal_87E89C,
          v21,
          v1 + 25,
          0) )

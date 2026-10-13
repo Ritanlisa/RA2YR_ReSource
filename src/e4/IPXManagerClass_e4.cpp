@@ -20,16 +20,16 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
   v4 = this->u32_4C; /*0x540d80*/
   if ( v4 ) /*0x540d93*/
   {
-    *(unsigned int *)(v4 + 40) = a2; /*0x540d95*/
+    v4->u32_28 = a2; /*0x540d95*/
     *(unsigned int *)(this->u32_4C + 44) = a3; /*0x540d9b*/
     *(unsigned int *)(this->u32_4C + 48) = a4; /*0x540da1*/
   }
   result = this->u32_50; /*0x540da4*/
   if ( result ) /*0x540da9*/
   {
-    *(unsigned int *)(result + 40) = a2; /*0x540dab*/
+    result->u8_28 = a2; /*0x540dab*/
     result = this->u32_50; /*0x540dae*/
-    *(unsigned int *)(result + 44) = a3; /*0x540db1*/
+    result->u32_2C = a3; /*0x540db1*/
     *(unsigned int *)(this->u32_50 + 48) = a4; /*0x540db7*/
   }
   return result; /*0x540dba*/

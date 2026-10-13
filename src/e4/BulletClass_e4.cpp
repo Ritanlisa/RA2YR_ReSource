@@ -26,52 +26,52 @@ BulletClass::BulletClass()
   int v2; // eax
 
   ObjectClass::ctor((ObjectClass *)this); /*0x466384*/
-  this->BulletClass_field_0xAC = 0; /*0x466391*/
-  this->BulletClass_field_0xB0 = 0; /*0x466397*/
-  this->__pad_B4[0] = 0; /*0x46639d*/
-  BulletClass::ResetDetonationTimer((BulletClass *)&this->__pad_B4[4]); /*0x4663a3*/
-  *(unsigned int *)&this->__pad_110[16] = 0; /*0x4663aa*/
-  this->__pad_B4[80] = 1; /*0x4663b0*/
-  this->__pad_B4[81] = 1; /*0x4663b6*/
-  this->__pad_B4[44] = 0; /*0x4663bf*/
-  *(unsigned int *)&this->__pad_B4[76] = 0; /*0x4663c5*/
-  *(unsigned int *)&this->__pad_B4[84] = 0; /*0x4663cb*/
-  this->BulletClass_field_0x10C = 0; /*0x4663d1*/
-  *(unsigned int *)this->__pad_110 = 0; /*0x4663d7*/
-  *(unsigned int *)&this->__pad_110[4] = -1; /*0x4663dd*/
-  *(unsigned int *)&this->__pad_110[8] = 0; /*0x4663e3*/
-  *(unsigned int *)&this->__pad_110[20] = 0; /*0x4663e9*/
-  *(unsigned int *)&this->__pad_110[24] = 0; /*0x4663ef*/
-  this->__pad_110[28] = 0; /*0x4663f5*/
-  this->__pad_110[29] = 0; /*0x4663fb*/
-  this->BulletClass_field_0x130 = 0; /*0x466401*/
-  *(unsigned short *)&this->__pad_144[8] = -1; /*0x466407*/
-  *(unsigned short *)&this->__pad_144[10] = -1; /*0x46640e*/
-  this->BulletClass_field_0x154 = 0; /*0x466419*/
-  this->__pad_158[0] = 0; /*0x46641f*/
-  *(unsigned int *)this->__pad_0 = &BulletClass::`vftable'; /*0x466425*/
+  this->u32_AC = 0; /*0x466391*/
+  this->q_B0 = 0; /*0x466397*/
+  this->__pad_B4 = 0; /*0x46639d*/
+  BulletClass::ResetDetonationTimer(&this->Data); /*0x4663a3*/
+  *&this->q_120 = 0; /*0x4663aa*/
+  this->q104 = 1; /*0x4663b0*/
+  this->CourseLock = 1; /*0x4663b6*/
+  this->Bright = 0; /*0x4663bf*/
+  *&this->q100 = 0; /*0x4663c5*/
+  *&this->q108 = 0; /*0x4663cb*/
+  this->AbstractClass_10C = 0; /*0x4663d1*/
+  *(unsigned int *)this->ParticleSystemClass_110 = 0; /*0x4663d7*/
+  *&this->InheritedColor = -1; /*0x4663dd*/
+  *&this->__pad_118 = 0; /*0x4663e3*/
+  *&this->AnimFrame = 0; /*0x4663e9*/
+  *&this->WeaponType = 0; /*0x4663ef*/
+  this->SourceCoords = 0; /*0x4663f5*/
+  this->q12D = 0; /*0x4663fb*/
+  this->__pad_130 = 0; /*0x466401*/
+  *&this->NextAnim = -1; /*0x466407*/
+  *&this->u16_14E = -1; /*0x46640e*/
+  this->__pad_154 = 0; /*0x466419*/
+  this->q158 = 0; /*0x46641f*/
+  *(unsigned int *)this->vtable1 = &BulletClass::`vftable'; /*0x466425*/
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
-  this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466431*/
+  this->vtable3 = &BulletClass::`vftable'; /*0x466431*/
   *(unsigned int *)this->__pad_C = &BulletClass::`vftable'; /*0x466438*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->BulletClass_field_0x4); /*0x46643f*/
-  *(unsigned int *)this->__pad_134 = 0; /*0x466444*/
-  *(unsigned int *)&this->__pad_134[4] = 0; /*0x46644a*/
-  *(unsigned int *)&this->__pad_134[8] = 0; /*0x466450*/
-  this->BulletClass_field_0x140 = 0; /*0x466456*/
-  *(unsigned int *)this->__pad_144 = 0; /*0x46645c*/
-  *(unsigned int *)&this->__pad_144[4] = 0; /*0x466462*/
+  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x46643f*/
+  *(unsigned int *)this->q134 = 0; /*0x466444*/
+  *&this->TargetCoords = 0; /*0x46644a*/
+  *&this->__pad_13C = 0; /*0x466450*/
+  this->q140 = 0; /*0x466456*/
+  *(unsigned int *)this->q144 = 0; /*0x46645c*/
+  *&this->DamageMultiplier = 0; /*0x466462*/
   if ( *(int *)&stru_A8EB00.?[364] < *(int *)&stru_A8EB00.?[356] /*0x46649b*/
-    || (stru_A8EB00.?[361] || !*(unsigned int *)&stru_A8EB00.?[356])
-    && *(int *)&stru_A8EB00.?[368] > 0
-    && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[348] + 8))(
-         &stru_A8EB00.?[348],
-         *(unsigned int *)&stru_A8EB00.?[356] + *(unsigned int *)&stru_A8EB00.?[368],
+    || (stru_A8EB00.?[361] || !*(unsigned int *)&DataGlobal_A8EC64)
+    && *(int *)&DataGlobal_A8EC70 > 0
+    && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EC5C + 8))(
+         &DataGlobal_A8EC5C,
+         *(unsigned int *)&DataGlobal_A8EC64 + *(unsigned int *)&DataGlobal_A8EC70,
          0) )
   {
     v2 = (*(unsigned int *)&stru_A8EB00.?[364])++; /*0x4664a8*/
     *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[352] + 4 * v2) = this; /*0x4664b7*/
   }
-  return (int)this->__pad_0; /*0x4664bc*/
+  return (int)this->vtable1; /*0x4664bc*/
 
 }
 }  // G42.18 ns repair
@@ -83,12 +83,12 @@ BulletClass * * BulletClass::Dtor(void *a1)
   int v3; // eax
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)a1->__pad_0 = &vt_BulletClass; /*0x466566*/
-  a1->BulletClass_field_0x4 = &vt_BulletClass; /*0x46656c*/
-  a1->BulletClass_field_0x8 = &vt_BulletClass; /*0x466573*/
-  *(unsigned int *)a1->__pad_C = &vt_BulletClass; /*0x46657a*/
+  *(unsigned int *)a1->vtable1 = &vt_BulletClass; /*0x466566*/
+  a1->vtable2 = &vt_BulletClass; /*0x46656c*/
+  a1->vtable3 = &vt_BulletClass; /*0x466573*/
+  *(unsigned int *)a1->vtable4 = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x466581*/
-  if ( a1->__pad_158[0] ) /*0x466586*/
+  if ( a1->q158 ) /*0x466586*/
   {
     v5 = a1; /*0x4665a0*/
     v2 = (*(int (**)(int *, BulletClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x4665a4*/
@@ -108,9 +108,9 @@ BulletClass * * BulletClass::Dtor(void *a1)
   }
   if ( byte_A8E9A0 ) /*0x4665e0*/
     ObjectClass::Undeploy((ObjectClass *)a1); /*0x4665e4*/
-  a1->BulletClass_field_0xAC = 0; /*0x4665e9*/
-  a1->BulletClass_field_0xB0 = 0; /*0x4665f3*/
-  a1->BulletClass_field_0x154 = 0; /*0x4665fd*/
+  a1->u32_AC = 0; /*0x4665e9*/
+  a1->q_B0 = 0; /*0x4665f3*/
+  a1->__pad_154 = 0; /*0x4665fd*/
   v5 = a1; /*0x466617*/
   v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[348] + 16))(&((unsigned int *)&stru_A8EB00)[348], &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < *(int *)&((unsigned int *)&stru_A8EB00)[364] ) /*0x46662b*/
@@ -146,7 +146,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
 namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x46afc4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x46afc4*/
 }
 } // namespace gamemd
 

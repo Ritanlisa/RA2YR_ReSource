@@ -118,7 +118,7 @@ CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (gamemd::CoordStruct *)((int *)(*(int (__thiscall **)(AbstractClass *, unsigned char *))(out->vfptr + 72))(out, v3));
+  v1 = (gamemd::CoordStruct *)((int *)out->vt_slot_72(v3));
   out->vfptr = (void *)*v1; /*0x410558*/
   out[1].vfptr = (void *)v1[1]; /*0x41055d*/
   out[2].vfptr = (void *)v1[2]; /*0x410564*/

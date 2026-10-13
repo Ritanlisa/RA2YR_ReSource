@@ -48,9 +48,9 @@ int Mission_e4::ExecuteTechnoMissionAction()
   unsigned int v19[3]; // [esp+18h] [ebp-18h] BYREF
   char v20; // [esp+24h] [ebp-Ch] BYREF
 
-  v2 = *(unsigned int *)&this->__pad_5B8[268]; /*0x520ae9*/
+  v2 = *&this->u32_6C4; /*0x520ae9*/
   if ( v2 == -1 /*0x520b0d*/
-    || *(unsigned int *)&this->__pad_C[236] >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3644) + 36 * v2 + 4) )
+    || *&this->u32_F8 >= *(unsigned int *)(*(unsigned int *)(*&this->u32_6C0 + 3644) + 36 * v2 + 4) )
   {
     switch ( v2 ) /*0x520b27*/
     {
@@ -59,8 +59,8 @@ int Mission_e4::ExecuteTechnoMissionAction()
       case 13: /*0x520b27*/
       case 14: /*0x520b27*/
       case 15: /*0x520b27*/
-        v3 = *(unsigned int *)&this->__pad_5B8[264]; /*0x520bc6*/
-        if ( *(unsigned int *)&this->__pad_C[236] < *(unsigned int *)(*(unsigned int *)(v3 + 3644) + 36 * v2 + 4) ) /*0x520bdf*/
+        v3 = *&this->u32_6C0; /*0x520bc6*/
+        if ( *&this->u32_F8 < *(unsigned int *)(*(unsigned int *)(v3 + 3644) + 36 * v2 + 4) ) /*0x520bdf*/
           break; /*0x520bdf*/
         if ( *(int *)(v3 + 3680) > 0 ) /*0x520bed*/
         {
@@ -68,9 +68,9 @@ int Mission_e4::ExecuteTechnoMissionAction()
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
           v5 = (unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) /*0x520c2d*/
-             % *(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3680);
+             % *(unsigned int *)(*&this->u32_6C0 + 3680);
           v6 = (char *)v19; /*0x520c37*/
-          v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3668) + 4 * v5); /*0x520c3b*/
+          v7 = *(void **)(*(unsigned int *)(*&this->u32_6C0 + 3668) + 4 * v5); /*0x520c3b*/
           v8 = *(unsigned int *)this->__pad_0; /*0x520c3e*/
           goto LABEL_19; /*0x520c40*/
         }
@@ -79,10 +79,10 @@ int Mission_e4::ExecuteTechnoMissionAction()
           v4 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x520c56*/
           if ( v4 ) /*0x520c5d*/
           {
-            v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 292) /*0x520c91*/
+            v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 292) /*0x520c91*/
                           + 4
                           * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
-                           % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 304)));
+                           % *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 304)));
             v8 = *(unsigned int *)this->__pad_0; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
 LABEL_19:
@@ -96,20 +96,20 @@ LABEL_20:
       case 20: /*0x520b27*/
       case 21: /*0x520b27*/
       case 36: /*0x520b27*/
-        if ( *(unsigned int *)&this->__pad_C[236] >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3644) /*0x520cd1*/
+        if ( *&this->u32_F8 >= *(unsigned int *)(*(unsigned int *)(*&this->u32_6C0 + 3644) /*0x520cd1*/
                                                          + 36 * v2
                                                          + 4) )
-          (*(void (**)(Mission *))(*(unsigned int *)this->__pad_0 + 248))(this); /*0x520cdb*/
+          (*(void (**)(Mission *))(*(unsigned int *)this->u32_F8 + 248))(this); /*0x520cdb*/
         break; /*0x520ce1*/
       case 27: /*0x520b27*/
         (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0); /*0x520b38*/
-        if ( !*(unsigned char *)(*(unsigned int *)&this->__pad_5B8[264] + 3785) ) /*0x520b44*/
+        if ( !*(unsigned char *)(*&this->u32_6C0 + 3785) ) /*0x520b44*/
           this->__pad_18C[280] = 1; /*0x520b4e*/
         Mission::GetMissionDelay(this); /*0x520b57*/
         break; /*0x520b5c*/
       case 31: /*0x520b27*/
         (*(void (**)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0); /*0x520b93*/
-        if ( !*(unsigned char *)(*(unsigned int *)&this->__pad_5B8[264] + 3785) ) /*0x520b9f*/
+        if ( !*(unsigned char *)(*&this->u32_6C0 + 3785) ) /*0x520b9f*/
           this->__pad_18C[280] = 0; /*0x520bad*/
         break; /*0x520bb4*/
       case 33: /*0x520b27*/
@@ -125,17 +125,17 @@ LABEL_20:
       default:
         if ( v2 != -1 ) /*0x520ce9*/
         {
-          v10 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3644) + 36 * v2 + 12); /*0x520cfa*/
+          v10 = *(unsigned int *)(*(unsigned int *)(*&this->u32_6C0 + 3644) + 36 * v2 + 12); /*0x520cfa*/
           if ( v10 != -1 ) /*0x520d01*/
           {
             LOWORD(v18) = (unsigned short)v10 << 13; /*0x520d11*/
             FacingClass::Set_SyncLog(&this->__pad_18C[508], &v18); /*0x520d16*/
           }
         }
-        if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520d1b*/
+        if ( !*&this->u32_674 ) /*0x520d1b*/
           WinAPI::Wrapper(-2147467261); /*0x520d2a*/
-        if ( (*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) /*0x520d50*/
-          && *(double *)&this->__pad_18C[1004] > 0.1 )
+        if ( (*(unsigned __int8 (**)(unsigned int))(**&this->u32_674 + 16))(*&this->u32_674) /*0x520d50*/
+          && *&this->u64_578 > 0.1 )
         {
           if ( this->__pad_5B8[291] ) /*0x520d52*/
             (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 6, 1, 0); /*0x520d66*/
@@ -144,15 +144,15 @@ LABEL_20:
         }
         else
         {
-          v11 = *(unsigned int *)&this->__pad_5B8[268]; /*0x520d7e*/
-          if ( v11 != 40 && v11 != 41 || !*(unsigned int *)&this->__pad_18C[264] || !*(unsigned int *)&this->__pad_18C[296] ) /*0x520d98*/
+          v11 = *&this->u32_6C4; /*0x520d7e*/
+          if ( v11 != 40 && v11 != 41 || !*&this->u32_294 || !*&this->u32_2B4 ) /*0x520d98*/
             goto LABEL_44; /*0x520d98*/
-          if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520da2*/
+          if ( !*&this->u32_674 ) /*0x520da2*/
             WinAPI::Wrapper(-2147467261); /*0x520db1*/
-          if ( !(*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x520dbf*/
+          if ( !(*(unsigned __int8 (**)(unsigned int))(**&this->u32_674 + 16))(*&this->u32_674) ) /*0x520dbf*/
           {
             if ( this->__pad_5B8[291] ) /*0x520dc6*/
-              (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 41, 1, 0); /*0x520dda*/
+              (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->u32_10 + 1368))(this, 41, 1, 0); /*0x520dda*/
             else
               (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 40, 1, 0); /*0x520df3*/
             this->__pad_5B8[213] = 0; /*0x520de0*/
@@ -160,10 +160,10 @@ LABEL_20:
           else
           {
 LABEL_44:
-            v12 = *(unsigned int *)&this->__pad_5B8[268]; /*0x520e02*/
+            v12 = *&this->u32_6C4; /*0x520e02*/
             if ( v12 == 27 || v12 == 28 || v12 == 29 || v12 == 30 ) /*0x520e1a*/
             {
-              (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0); /*0x520e24*/
+              (*(void (**)(Mission *, int, int, unsigned int))(*(unsigned int *)this->u32_6C4 + 1368))(this, 28, 1, 0); /*0x520e24*/
             }
             else if ( this->__pad_5B8[291] ) /*0x520e26*/
             {
@@ -179,10 +179,10 @@ LABEL_51:
         break; /*0x520d6c*/
     }
   }
-  if ( *(unsigned int *)&this->__pad_5B8[268] == 33 && !this->__pad_C[129] ) /*0x520e5b*/
+  if ( *&this->u32_6C4 == 33 && !this->__pad_C[129] ) /*0x520e5b*/
     (*(void (**)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0); /*0x520e6f*/
   v13 = 0; /*0x520e81*/
-  v14 = *(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3644) + 36 * *(unsigned int *)&this->__pad_5B8[268]; /*0x520e8c*/
+  v14 = *(unsigned int *)(*&this->u32_6C0 + 3644) + 36 * *&this->u32_6C4; /*0x520e8c*/
   result = *(unsigned int *)(v14 + 16); /*0x520e8f*/
   if ( result > 0 ) /*0x520e95*/
   {
@@ -194,11 +194,11 @@ LABEL_51:
         v17 = *(unsigned int *)(v14 + 4); /*0x520eaa*/
         if ( v17 <= 1 ) /*0x520eac*/
           v17 = 1; /*0x520eae*/
-        if ( *(unsigned int *)&this->__pad_C[236] % v17 == *(v16 - 1) ) /*0x520ebf*/
+        if ( *&this->u32_F8 % v17 == *(v16 - 1) ) /*0x520ebf*/
         {
-          v19[0] = *(unsigned int *)&this->__pad_C[144]; /*0x520ecb*/
-          v19[1] = *(unsigned int *)&this->__pad_C[148]; /*0x520ed6*/
-          v19[2] = *(unsigned int *)&this->__pad_C[152]; /*0x520edd*/
+          v19[0] = *&this->u32_9C; /*0x520ecb*/
+          v19[1] = *&this->u32_A0; /*0x520ed6*/
+          v19[2] = *&this->u32_A4; /*0x520edd*/
           StartAudioControllerAt(*v16, v19, 0); /*0x520ee4*/
         }
       }
@@ -243,12 +243,12 @@ char Mission_e4::ProcessUnitMissionAI()
 
   if ( (*(int (**)(Mission *))(*(unsigned int *)this->__pad_0 + 388))(this) == 2 ) /*0x520f53*/
   {
-    if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520f55*/
+    if ( !*&this->u32_674 ) /*0x520f55*/
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
-    if ( !(*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x520f72*/
+    if ( !(*(unsigned __int8 (**)(unsigned int))(**&this->u32_674 + 16))(*&this->u32_674) ) /*0x520f72*/
     {
-      v2 = *(unsigned int *)&this->__pad_18C[1048]; /*0x520f79*/
-      v3 = *(unsigned int *)this->__pad_0; /*0x520f7f*/
+      v2 = *&this->u32_5A4; /*0x520f79*/
+      v3 = *(unsigned int *)this->u32_5A4; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
         (*(void (**)(Mission *, int, int))(v3 + 1152))(this, v2, 1); /*0x520f97*/
@@ -260,7 +260,7 @@ char Mission_e4::ProcessUnitMissionAI()
       }
     }
   }
-  v4 = *(unsigned int *)&this->__pad_18C[1048]; /*0x520faf*/
+  v4 = *&this->u32_5A4; /*0x520faf*/
   if ( v4 ) /*0x520fb7*/
   {
     v5 = (unsigned int *)(*(int (**)(int, char *, Mission *))(*(unsigned int *)v4 + 76))(v4, v25, this); /*0x520fc5*/
@@ -278,12 +278,12 @@ char Mission_e4::ProcessUnitMissionAI()
                  1),
           (*(int (**)(Mission *, int))(v6 + 428))(this, v7) != 7) )
     {
-      if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x521028*/
+      if ( !*&this->u32_674 ) /*0x521028*/
         WinAPI::Wrapper(-2147467261); /*0x521037*/
-      if ( !(*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) /*0x521050*/
+      if ( !(*(unsigned __int8 (**)(unsigned int))(**&this->u32_674 + 16))(*&this->u32_674) /*0x521050*/
         && !this->__pad_18C[652] )
       {
-        if ( *(unsigned int *)&this->__pad_18C[1048] ) /*0x52105e*/
+        if ( *&this->u32_5A4 ) /*0x52105e*/
         {
           if ( this->__pad_18C[585] ) /*0x52106c*/
           {
@@ -293,7 +293,7 @@ char Mission_e4::ProcessUnitMissionAI()
             v9 = *(unsigned int *)this->__pad_0; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (**)(Mission *))(v9 + 800))(this); /*0x5210c9*/
-            v10 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], &v21) + 80) >> 8; /*0x5210de*/
+            v10 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
             v11 = (*(int (**)(Mission *, unsigned int, int, int))(*(unsigned int *)this->__pad_0 + 188))( /*0x5210e9*/
                     this,
@@ -301,14 +301,14 @@ char Mission_e4::ProcessUnitMissionAI()
                     v10,
                     v19);
             if ( !MapSeed::CheckTileMatch( /*0x521133*/
-                    (MapSeed *)&stru_87F5F0.__pad_58[416],
+                    (MapSeed *)&DataGlobal_87F7E8,
                     v24,
                     v23,
-                    *(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 1460),
+                    *(unsigned int *)(*&this->u32_6C0 + 1460),
                     v11,
                     (char)v25,
                     0)
-              && !*(unsigned char *)(*(unsigned int *)&this->__pad_5B8[264] + 3774)
+              && !*(unsigned char *)(*&this->u32_6C0 + 3774)
               && (*(int (**)(Mission *))(*(unsigned int *)this->__pad_0 + 388))(this) != 7 )
             {
               (*(void (**)(Mission *, unsigned int, int))(*(unsigned int *)this->__pad_0 + 1152))(this, 0, 1); /*0x52113e*/
@@ -318,13 +318,13 @@ char Mission_e4::ProcessUnitMissionAI()
       }
     }
   }
-  if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x521144*/
+  if ( !*&this->u32_674 ) /*0x521144*/
     WinAPI::Wrapper(-2147467261); /*0x521153*/
-  if ( (*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 168))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x521161*/
+  if ( (*(unsigned __int8 (**)(unsigned int))(**&this->u32_674 + 168))(*&this->u32_674) ) /*0x521161*/
   {
-    if ( !*(unsigned char *)(*(unsigned int *)&this->__pad_5B8[264] + 3476) ) /*0x521175*/
+    if ( !*(unsigned char *)(*&this->u32_6C0 + 3476) ) /*0x521175*/
       goto LABEL_55; /*0x521175*/
-    v12 = *(int (****)(unsigned int, void *, __int16 *))&this->__pad_5B8[188]; /*0x521183*/
+    v12 = *(int (****)(unsigned int, void *, __int16 *))&this->u32_674; /*0x521183*/
     v22 = 0; /*0x52118d*/
     if ( !v12 ) /*0x521195*/
       goto LABEL_33; /*0x521195*/
@@ -355,7 +355,7 @@ LABEL_33:
       LOBYTE(v17) = this->__pad_5B8[213]; /*0x521228*/
       if ( !(unsigned char)v17 ) /*0x521230*/
       {
-        if ( *(double *)&this->__pad_18C[1004] <= 0.8 ) /*0x521247*/
+        if ( *&this->u64_578 <= 0.8 ) /*0x521247*/
           LOBYTE(v17) = (*(char (**)(Mission *, int, unsigned int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))( /*0x52126b*/
                           this,
                           23,
@@ -388,7 +388,7 @@ LABEL_55:
   }
   else
   {
-    v17 = *(unsigned int *)&this->__pad_5B8[268]; /*0x5212af*/
+    v17 = *&this->u32_6C4; /*0x5212af*/
     switch ( v17 ) /*0x5212c2*/
     {
       case 3: /*0x5212c2*/
@@ -454,21 +454,21 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 
   (*((unsigned char *)&(v3))) = aP1; /*0x6ed7e3*/
   v4 = aP1->vtable2; /*0x6ed7e9*/
-  for ( i = this->ptr_54; i; i = (int *)i[374] )
+  for ( i = this->ptr_54; i; i = i->q5D8 )
   {
-    (*((unsigned char *)&(v3))) = *((unsigned char *)i + 144); /*0x6ed801*/
+    (*((unsigned char *)&(v3))) = i->q090; /*0x6ed801*/
     if ( (unsigned char)v3 )
     {
-      if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !*((unsigned char *)i + 1673) ) /*0x6ed831*/
+      if ( i[27] && (dword_A8E7AC || !*((unsigned char *)i + 129)) && !i->u8_689 ) /*0x6ed831*/
       {
-        v7 = *SessionClass::GetEntry(*(unsigned int *)((char *)&this->ptr_54 + 76), &v19); /*0x6ed848*/
+        v7 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v19); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
           v8 = ((unsigned int *)&dword_8871E0[1])[0]; /*0x6ed85a*/
         if ( ObjectClass::DistanceTo(i, this->ptr_34) <= v8 ) /*0x6ed87a*/
         {
-          *((unsigned char *)i + 1673) = 1; /*0x6ed8b2*/
+          i->u8_689 = 1; /*0x6ed8b2*/
         }
         else if ( !i[361] ) /*0x6ed87c*/
         {
@@ -477,21 +477,21 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
           (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, this->ptr_34, 1); /*0x6ed8aa*/
         }
       }
-      (*((unsigned char *)&(v3))) = *((unsigned char *)i + 144); /*0x6ed8b9*/
+      (*((unsigned char *)&(v3))) = i->q090; /*0x6ed8b9*/
       if ( (unsigned char)v3 )
       {
         v3 = i[27]; /*0x6ed8c7*/
         if ( v3 )
         {
-          if ( dword_A8E7AC || ((*((unsigned char *)&(v3))) = *((unsigned char *)i + 129), !(unsigned char)v3) )
+          if ( dword_A8E7AC || ((*((unsigned char *)&(v3))) = i->q081, !(unsigned char)v3) )
           {
-            if ( *((unsigned char *)i + 1673) || (v3 = (*(int (**)(int *))(*i + 44))(i), v3 == 2) )
+            if ( i->u8_689 || (v3 = (*(int (**)(int *))(*i + 44))(i), v3 == 2) )
             {
               v3 = i[173]; /*0x6ed903*/
               if ( !v3 )
               {
                 if ( i[361]
-                  || ((v9 = *SessionClass::GetEntry(*(unsigned int *)((char *)&this->ptr_54 + 76), &v20), v9 == 54) || v9 == 53
+                  || ((v9 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
                       ObjectClass::DistanceTo(i, this->ptr_34) <= 2 * v10 || v4 == 11) )

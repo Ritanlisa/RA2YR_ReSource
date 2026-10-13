@@ -81,7 +81,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     LOBYTE(this->m_C) = 1; /*0x658b7d*/
     if ( !v5 ) /*0x658b81*/
       return 0; /*0x658c11*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x658b87*/
+    if ( *&this->q004 ) /*0x658b87*/
     {
       m_8 = this->m_8; /*0x658b8c*/
       if ( a2 < m_8 ) /*0x658b91*/
@@ -91,7 +91,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
         v12 = 0; /*0x658b99*/
         do /*0x658bbf*/
         {
-          v13 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + v12); /*0x658ba0*/
+          v13 = (unsigned int *)(*&this->q004 + v12); /*0x658ba0*/
           v14 = &v5[v12]; /*0x658ba2*/
           v12 += 16; /*0x658ba5*/
           --m_8; /*0x658ba8*/
@@ -105,17 +105,17 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x658bc7*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x658bd0*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x658bd8*/
+        __3_YAXPAX_Z(*&this->q004); /*0x658bd0*/
+        *&this->q004 = 0; /*0x658bd8*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x658be3*/
+    *&this->q004 = v5; /*0x658be3*/
     this->m_8 = v3; /*0x658be9*/
     BYTE1(this->m_C) = a3 == 0; /*0x658bec*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x658bf5*/
+    (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x658bf5*/
   }
   v15 = this->m_8; /*0x658bf8*/
   if ( v15 < this->m_10 ) /*0x658c00*/
@@ -135,11 +135,11 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
   unsigned int *v7; // ecx
   int v8; // edx
 
-  aP1->RadarHashVector_field_0x04 = 0; /*0x658ded*/
-  aP1->RadarHashVector_field_0x08 = aP2; /*0x658df0*/
-  LOBYTE(aP1->RadarHashVector_field_0x0C) = 1; /*0x658df3*/
-  BYTE1(aP1->RadarHashVector_field_0x0C) = 0; /*0x658df7*/
-  *(unsigned int *)aP1->__pad_0 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658dfa*/
+  aP1->__pad_004 = 0; /*0x658ded*/
+  aP1->q008 = aP2; /*0x658df0*/
+  LOBYTE(aP1->u32_C) = 1; /*0x658df3*/
+  BYTE1(aP1->u32_C) = 0; /*0x658df7*/
+  *(unsigned int *)aP1->vtable1 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658dfa*/
   if ( aP2 ) /*0x658e00*/
   {
     if ( a3 ) /*0x658e08*/
@@ -189,9 +189,9 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
     }
   }
   *(unsigned int *)aP1->__pad_0 = &DynamicVectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658e5e*/
-  aP1->RadarHashVector_field_0x14 = 10; /*0x658e64*/
-  aP1->RadarHashVector_field_0x10 = 0; /*0x658e6b*/
-  return aP1->__pad_0; /*0x658e70*/
+  aP1->q014 = 10; /*0x658e64*/
+  aP1->q010 = 0; /*0x658e6b*/
+  return aP1->vtable1; /*0x658e70*/
 
 }
 } // namespace gamemd
@@ -199,13 +199,13 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
 namespace gamemd {
 void RadarHashVector::ddtor()
 {
-  if ( *(unsigned int *)&this->IsAllocated && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x658a7d*/
+  if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x658a7d*/
   {
-    operator delete((void *)(*(void **)&this->q004)); /*0x658a83*/
-    *(unsigned int *)&this->q004 = 0; /*0x658a8b*/
+    operator delete((void *)(*&this->q004)); /*0x658a83*/
+    *&this->q004 = 0; /*0x658a8b*/
   }
-  (((unsigned char *)&(*(unsigned int *)&this->q00C))[1]) = 0; /*0x658a8e*/
-  *(unsigned int *)&this->q008 = 0; /*0x658a91*/
+  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x658a8e*/
+  *&this->m_8 = 0; /*0x658a91*/
 }
 } // namespace gamemd
 // 0x658AA0
@@ -234,8 +234,8 @@ int RadarHashVector::Read(unsigned int * a2, void *a2_2)
 namespace gamemd {
 unsigned int RadarHashVector::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*(unsigned int *)&this->q00C))) ) /*0x658af0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 4; /*0x658b05*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x658af0*/
+    return (unsigned int)(a2 - *&this->q004) >> 4; /*0x658b05*/
   else
     return 0; /*0x658af7*/
 }
@@ -248,11 +248,11 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x658c20*/
+  m_10 = *&this->m_10; /*0x658c20*/
   result = 0; /*0x658c25*/
   if ( m_10 <= 0 ) /*0x658c2b*/
     return -1; /*0x658c56*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
+  for ( i = *&this->q004; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
   {
     if ( ++result >= m_10 ) /*0x658c54*/
       return -1; /*0x658c54*/
@@ -311,13 +311,13 @@ char * RadarHashVector::Destructor(char a2)
     if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
-      *(unsigned int *)&this->m_1[3] = 0; /*0x658ce2*/
+      *&this->q004 = 0; /*0x658ce2*/
     }
     BYTE1(this->m_C) = 0; /*0x658ce9*/
     this->m_8 = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
       __3_YAXPAX_Z(this); /*0x658cf4*/
-    return this->__pad_0; /*0x658cfc*/
+    return this->__pad_000; /*0x658cfc*/
   }
 
 }
@@ -328,17 +328,17 @@ VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x658d13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassHashObject; /*0x658d16*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x658d20*/
+  v3 = *&Block->__pad_004; /*0x658d13*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClassHashObject; /*0x658d16*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x658d20*/
   {
     operator delete((void *)(v3)); /*0x658d28*/
-    *(unsigned int *)&Block->q004 = 0; /*0x658d30*/
+    *&Block->__pad_004 = 0; /*0x658d30*/
   }
-  (((unsigned char *)&(*(unsigned int *)&Block->q00C))[1]) = 0; /*0x658d3b*/
-  *(unsigned int *)&Block->q008 = 0; /*0x658d41*/
+  (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x658d3b*/
+  *&Block->u32_8 = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
     operator delete((void *)(Block)); /*0x658d4b*/
-  return Block->__pad_0; /*0x658d55*/
+  return Block->tail_0; /*0x658d55*/
 }
 } // namespace gamemd

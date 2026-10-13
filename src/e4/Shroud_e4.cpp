@@ -36,26 +36,26 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   int v16; // eax
 
   ShroudClass::UpdateVisibility((MapClass *)this, aP1); /*0x65449d*/
-  v3 = *(unsigned int *)&this->__pad_C0[60]; /*0x6544a2*/
-  v4 = *(unsigned int *)&this->__pad_C0[64]; /*0x6544a8*/
+  v3 = *&this->u32_FC; /*0x6544a2*/
+  v4 = *&this->u32_100; /*0x6544a8*/
   *(unsigned int *)this->__pad_14A8 = 0; /*0x6544b3*/
   *(unsigned int *)this->__pad_14A0 = 10000; /*0x6544bd*/
-  this->RadarClass_field_0x149C = (RadarClass *)10000; /*0x6544c3*/
+  this->q149C = (RadarClass *)10000; /*0x6544c3*/
   v5 = v3 + v4 + 1; /*0x6544cf*/
-  v6 = v4 + *(unsigned int *)&this->__pad_C0[52] - v3; /*0x6544da*/
-  v7 = *(unsigned int *)&this->__pad_C0[68]; /*0x6544dc*/
-  this->RadarClass_field_0x14A4 = 0; /*0x6544e7*/
-  this->RadarClass_field_0x1498 = (MapClass *)-1; /*0x6544f4*/
-  this->RadarClass_field_0x1494 = (MapClass *)((__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6)); /*0x654533*/
-  this->RadarClass_field_0x1490 = (MapClass *)(v6 - v5); /*0x65453e*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x654544*/
+  v6 = v4 + *&this->u32_F4 - v3; /*0x6544da*/
+  v7 = *&this->u32_104; /*0x6544dc*/
+  this->q14A4 = 0; /*0x6544e7*/
+  this->ptr_1498 = (MapClass *)-1; /*0x6544f4*/
+  this->ptr_1494 = (MapClass *)((__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6)); /*0x654533*/
+  this->ptr_1490 = (MapClass *)(v6 - v5); /*0x65453e*/
+  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x654544*/
   result = LayerClass::CellIteratorNext((LayerClass *)this); /*0x65454b*/
   v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/
   {
     while ( 1 ) /*0x654567*/
     {
-      aP1 = *(int **)(v9 + 36); /*0x654567*/
+      aP1 = v9->outBuffer; /*0x654567*/
       if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, (__int16 *)&aP1, 1) ) /*0x65456b*/
         break; /*0x65456b*/
 LABEL_17:
@@ -64,10 +64,10 @@ LABEL_17:
       if ( !result ) /*0x654637*/
         return result; /*0x654637*/
     }
-    if ( this->RadarClass_field_0x1498 == (MapClass *)-1 ) /*0x65457f*/
-      this->RadarClass_field_0x1498 = (MapClass *)(*(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38)); /*0x65458b*/
-    RadarClass_field_0x1490 = this->RadarClass_field_0x1490; /*0x654594*/
-    RadarClass_field_0x1498 = this->RadarClass_field_0x1498; /*0x65459a*/
+    if ( this->ptr_1498 == (MapClass *)-1 ) /*0x65457f*/
+      this->ptr_1498 = (MapClass *)(*(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38)); /*0x65458b*/
+    RadarClass_field_0x1490 = this->ptr_1490; /*0x654594*/
+    RadarClass_field_0x1498 = this->ptr_1498; /*0x65459a*/
     aP1 = *(int **)(v9 + 36); /*0x6545a0*/
     v12 = (RadarClass *)((char *)RadarClass_field_0x1490 + (__int16)aP1 - SHIWORD(aP1)); /*0x6545b0*/
     v13 = (__int16)aP1 + SHIWORD(aP1) - (unsigned int)RadarClass_field_0x1498; /*0x6545b2*/
@@ -76,18 +76,18 @@ LABEL_17:
     {
       v12 = 0; /*0x6545be*/
     }
-    else if ( v12 != (RadarClass *)(2 * *(unsigned int *)&this->__pad_C0[68] - 1) ) /*0x6545ce*/
+    else if ( v12 != (RadarClass *)(2 * *&this->u32_104 - 1) ) /*0x6545ce*/
     {
 LABEL_9:
-      RadarClass_field_0x149C = this->RadarClass_field_0x149C; /*0x6545d5*/
+      RadarClass_field_0x149C = this->q149C; /*0x6545d5*/
       if ( (int)v12 >= (int)RadarClass_field_0x149C ) /*0x6545dd*/
       {
-        if ( (int)v12 + v14 > (int)((int)RadarClass_field_0x149C + (unsigned int)this->RadarClass_field_0x14A4) ) /*0x6545f4*/
-          this->RadarClass_field_0x14A4 = (CampaignClass *)((char *)v12 + v14 - (unsigned int)RadarClass_field_0x149C); /*0x6545fa*/
+        if ( (int)v12 + v14 > (int)((int)RadarClass_field_0x149C + (unsigned int)this->q14A4) ) /*0x6545f4*/
+          this->q14A4 = (CampaignClass *)((char *)v12 + v14 - (unsigned int)RadarClass_field_0x149C); /*0x6545fa*/
       }
       else
       {
-        this->RadarClass_field_0x149C = v12; /*0x6545df*/
+        this->q149C = v12; /*0x6545df*/
       }
       v16 = *(unsigned int *)this->__pad_14A0; /*0x654600*/
       if ( v13 >= v16 ) /*0x654608*/

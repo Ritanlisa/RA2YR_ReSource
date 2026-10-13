@@ -17,9 +17,9 @@ int COMObject::FindNextActive(unsigned char * a1)
 {
   if ( !a1 ) /*0x4e1a02*/
     return 0; /*0x4e1a16*/
-  while ( !(*((unsigned char *)&(a1->Image))) ) /*0x4e1a09*/
+  while ( !(a1->Image) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
+    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_000 + 4))(a1); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }

@@ -322,7 +322,7 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
     this->referenceCount = (int)result; /*0x70ecf8*/
     if ( (int)result < 1 ) /*0x70ecfb*/
       this->referenceCount = 1; /*0x70ecfd*/
-    *(float *)&this->uniqueId = (double)(int)vtable0 / (double)this->referenceCount; /*0x70ed07*/
+    *&this->uniqueId = (double)(int)vtable0 / (double)this->referenceCount; /*0x70ed07*/
   }
   return result; /*0x70ed0b*/
 }
@@ -495,7 +495,7 @@ void TechnoClass::Uncloak(bool play_sound)
       {
         return 1; /*0x6f3645*/
       }
-      if ( (*((int (__thiscall **)(TechnoClass *))this->vfptr + 11))(this) == 2 && this->u32_6CA ) /*0x6f3658*/
+      if ( (*((int (__thiscall **)(TechnoClass *))this->vfptr + 11))(this) == 2 && this->Tactical_6CA ) /*0x6f3658*/
         return 1; /*0x6f366e*/
       if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
         && (v11[59] != 2 && (*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
@@ -1207,30 +1207,30 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   {
     if ( sideIndex == 1 ) /*0x707d5a*/
     {
-      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d5c*/
-      v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964); /*0x707d61*/
+      v5 = *(unsigned int *)&g_RulesClass_Instance; /*0x707d5c*/
+      v6 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3964); /*0x707d61*/
     }
     else
     {
       v7 = sideIndex == 2; /*0x707d69*/
-      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d6c*/
+      v5 = *(unsigned int *)&g_RulesClass_Instance; /*0x707d6c*/
       if ( v7 ) /*0x707d71*/
-        v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968); /*0x707d73*/
+        v6 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3968); /*0x707d73*/
       else
-        v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707d7b*/
+        v6 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707d7b*/
     }
   }
   else
   {
-    v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d4a*/
-    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3960); /*0x707d4f*/
+    v5 = *(unsigned int *)&g_RulesClass_Instance; /*0x707d4a*/
+    v6 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3960); /*0x707d4f*/
   }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
-    return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
+    return v5->u32_F6C; /*0x707dc5*/
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vfptr + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
-    return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
+    return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/
   }
   return v6; /*0x707d37*/
 }
@@ -1244,7 +1244,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vfptr + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
-    return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.q0FC[324] + 3948); /*0x707dc4*/
+    return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/
   }
   return v6; /*0x707d37*/
 }
@@ -1305,7 +1305,7 @@ int TechnoClass::vt_entry_4B8()
   }
 // 0x659550
 char RadBeam::drawPassengerPips(char a2) {
-  (*((unsigned char *)&(this->customSound_controller[2]))) = a2; /*0x659554*/
+  (this->memberAtOffset88) = a2; /*0x659554*/
   return a2; /*0x659557*/
 }
 // 0x633d30
@@ -1319,50 +1319,50 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
 
   FactoryClass::ClearObjects((FactoryClass *)this); /*0x633d35*/
   v7 = this; /*0x633d4a*/
-  v2 = (*(int (__thiscall **)(char *, TechnoClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x633d4e*/
-         &stru_AC4B30.__pad_EC[124],
+  v2 = (*(int (__thiscall **)(char *, TechnoClass **))(*(unsigned int *)&g_ScriptConfig + 16))( /*0x633d4e*/
+         &g_ScriptConfig,
          &v7);
   if ( v2 != -1 ) /*0x633d54*/
-    Array::RemoveAt((Array *)&stru_AC4B30.__pad_EC[124], v2); /*0x633d5c*/
-  v3 = (*(int (__thiscall **)(Array *, TechnoClass **))(*(unsigned int *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &v7); /*0x633d71*/
+    Array::RemoveAt((Array *)&g_ScriptConfig, v2); /*0x633d5c*/
+  v3 = stru_AC4B30.vt_slot_16(&v7); /*0x633d71*/
   if ( v3 != -1 ) /*0x633d77*/
     Array::RemoveAt(&stru_AC4B30, v3); /*0x633d7f*/
-  v4 = (*((int (__thiscall **)(void **, TechnoClass **))stru_AC4B30.Array_field_0xE8 + 4))( /*0x633d94*/
-         &stru_AC4B30.Array_field_0xE8,
+  v4 = (*((int (__thiscall **)(void **, TechnoClass **))DataGlobal_AC4C18 + 4))( /*0x633d94*/
+         &DataGlobal_AC4C18,
          &v7);
-  if ( v4 != -1 && v4 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x633da4*/
+  if ( v4 != -1 && v4 < *(int *)&DataGlobal_AC4C28 ) /*0x633da4*/
   {
-    --*(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x633da9*/
+    --*(unsigned int *)&DataGlobal_AC4C28; /*0x633da9*/
     for ( ; /*0x633daf*/
-          v4 < *(int *)&stru_AC4B30.__pad_EC[12];
-          *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC
+          v4 < *(int *)&DataGlobal_AC4C28;
+          *(unsigned int *)(*(unsigned int *)DataGlobal_AC4C1C + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)DataGlobal_AC4C1C
                                                                                 + 4 * v4) )
     {
       ++v4; /*0x633db7*/
     }
   }
-  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
-    *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
-  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[28] == v7 ) /*0x633de5*/
-    *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
-  if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
-    *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
+  if ( *(TechnoClass **)&g_ScriptPool == v7 ) /*0x633dd7*/
+    *(unsigned int *)&g_ScriptPool = 0; /*0x633dd9*/
+  if ( *(TechnoClass **)&g_ScriptState == v7 ) /*0x633de5*/
+    *(unsigned int *)&g_ScriptState = 0; /*0x633de7*/
+  if ( *(TechnoClass **)&g_ScriptActionPool == v7 ) /*0x633df3*/
+    *(unsigned int *)&g_ScriptActionPool = 0; /*0x633df5*/
   occupant = (void *)this->occupant; /*0x633dfb*/
   this->NeedsSaveOrLink = 0; /*0x633dfe*/
-  if ( occupant && (((unsigned char *)&(this->fallRate))[1]) ) /*0x633e09*/
+  if ( occupant && (this->u32_2D) ) /*0x633e09*/
   {
     operator delete((void *)(occupant)); /*0x633e0f*/
     this->occupant = 0; /*0x633e17*/
   }
-  (((unsigned char *)&(this->fallRate))[1]) = 0; /*0x633e1a*/
+  (this->u32_2D) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   vtable1 = this->vfptr1; /*0x633e20*/
   this->vfptr = 0; /*0x633e23*/
-  if ( vtable1 && (((unsigned char *)&(this->vfptr3))[1]) ) /*0x633e2d*/
+  if ( vtable1 && (this->u32_D) ) /*0x633e2d*/
   {
     operator delete((void *)(vtable1)); /*0x633e33*/
     this->vfptr1 = 0; /*0x633e3b*/
   }
-  (((unsigned char *)&(this->vfptr3))[1]) = 0; /*0x633e3e*/
+  (this->u32_D) = 0; /*0x633e3e*/
   this->vfptr2 = 0; /*0x633e41*/
 }

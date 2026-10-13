@@ -17,7 +17,7 @@ unsigned int * E4Recv_633AC0::sub_633AC0()
 
   LOBYTE(this->AbstractClass) = 0; /*0x633ac2*/
   this->estimatedHealth = 0; /*0x633ac5*/
-  *(unsigned int *)&this->isOnMap = -1; /*0x633acc*/
+  *&this->M116 = -1; /*0x633acc*/
   return &this->AbstractClass; /*0x633ad3*/
 
 }
@@ -30,9 +30,9 @@ int E4Recv_636EB0::sub_636EB0()
 
   int v1; // eax
 
-  v1 = this->? - 1; /*0x636eb3*/
+  v1 = this->M20 - 1; /*0x636eb3*/
   if ( v1 >= 0 ) /*0x636eb4*/
-    return *((unsigned int *)this->? + v1); /*0x636ebc*/
+    return *((unsigned int *)this->M8 + v1); /*0x636ebc*/
   else
     return 0; /*0x636eb6*/
 
@@ -43,7 +43,7 @@ int E4Recv_636EB0::sub_636EB0()
 namespace gamemd {
 bool E4Recv_638C40::sub_638C40(int a2, char a3)
 {
-  if ( this != (gamemd::E4Recv_638C40 *)((ObjectClass *))1 && this != (ObjectClass *)11 ) /*0x638c48*/
+  if ( this != (gamemd::E4Recv_638C40 *)((ObjectClass *))1 && this != 11 ) /*0x638c48*/
     return 0; /*0x638c48*/
   if ( a3 == 11 ) /*0x638c50*/
     return 1; /*0x638c54*/

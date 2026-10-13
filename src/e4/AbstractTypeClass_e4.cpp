@@ -27,13 +27,13 @@ int AbstractTypeClass::Constructor(char *aP1)
   char v8; // [esp+50h] [ebp-4h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
-  v3 = (char *)((char *)this + 9); /*0x410812*/
-  *((unsigned char *)this + 36) = 0; /*0x410817*/
-  *((unsigned char *)this + 61) = 0; /*0x41081a*/
-  *((unsigned char *)this + 100) = 0; /*0x41081e*/
+  v3 = &this->u8_9; /*0x410812*/
+  this->__pad_024 = 0; /*0x410817*/
+  this->UINameLabel = 0; /*0x41081a*/
+  this->Name = 0; /*0x41081e*/
   *this = (int)&AbstractTypeClass::`vftable'; /*0x410822*/
   *((char *)this + 1) = (int)&AbstractTypeClass::`vftable'; /*0x410829*/
-  *((char *)this + 2) = (int)&AbstractTypeClass::`vftable'; /*0x410830*/
+  this->UINameLabel[0x20] = (int)&AbstractTypeClass::`vftable'; /*0x410830*/
   *((char *)this + 3) = (int)&AbstractTypeClass::`vftable'; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
@@ -57,7 +57,7 @@ int AbstractTypeClass::Constructor(char *aP1)
   {
 LABEL_8:
     qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
-    *((unsigned char *)this + 60) = Destination[24]; /*0x4108b7*/
+    this->zero_3C = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
   if ( this == (int *)-36 ) /*0x4108ba*/
@@ -66,15 +66,15 @@ LABEL_9:
   }
   else
   {
-    strncpy(Destination, (const char *)this + 36, 0x30u); /*0x4108ca*/
+    strncpy(Destination, (const char *)&this->__pad_036, 0x30u); /*0x4108ca*/
     v8 = 0; /*0x4108d2*/
   }
-  if ( Destination != (char *)((char *)this + 25) ) /*0x4108e0*/
+  if ( Destination != &this->q019 ) /*0x4108e0*/
   {
-    qmemcpy((char *)this + 25, Destination, 0x30u); /*0x4108eb*/
-    *((unsigned char *)this + 148) = v8; /*0x4108ed*/
+    qmemcpy(&this->q019, Destination, 0x30u); /*0x4108eb*/
+    this->u32_94 = v8; /*0x4108ed*/
   }
-  *((char *)this + 24) = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
+  this->nextArrayIndex = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
   if ( dword_A8E978 < dword_A8E970 /*0x410929*/
     || (byte_A8E975 || !dword_A8E970)
     && dword_A8E97C > 0
@@ -100,7 +100,7 @@ int AbstractTypeClass::Dtor()
 
   this->AbstractClass = &AbstractTypeClass::`vftable'; /*0x4109cd*/
   this->? = &AbstractTypeClass::`vftable'; /*0x4109d3*/
-  this->? = &AbstractTypeClass::`vftable'; /*0x4109da*/
+  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x4109da*/
   this->? = &AbstractTypeClass::`vftable'; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
@@ -130,13 +130,13 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_24); /*0x410a7f*/
+  result = INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_024); /*0x410a7f*/
   if ( result ) /*0x410a86*/
   {
     Name = this->Name; /*0x410a91*/
     INIClass::GetString( /*0x410aa0*/
       (INIClass *)aP1,
-      (unsigned __int8 *)this->__pad_24,
+      (unsigned __int8 *)this->__pad_024,
       (unsigned __int8 *)g_INI_Key_Name,
       this->Name,
       Source,
@@ -158,7 +158,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1)
     UINameLabel = this->UINameLabel; /*0x410aeb*/
     INIClass::GetString( /*0x410afb*/
       (INIClass *)aP1,
-      (unsigned __int8 *)this->__pad_24,
+      (unsigned __int8 *)this->__pad_024,
       (unsigned __int8 *)g_INI_Key_UIName,
       this->UINameLabel,
       Source,
@@ -237,7 +237,7 @@ int AbstractTypeClass::Init(int aP1)
   this->vtable3 = &vt_AbstractTypeClass; /*0x410982*/
   this->vtable4 = &vt_AbstractTypeClass; /*0x410989*/
   if ( v3 ) /*0x410990*/
-    this->UIName = GetStringCSF((wchar_t *)(&this->nextArrayIndex1), 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
+    this->UIName = GetStringCSF(&this->UIName, 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
   else
     this->UIName = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
   return (int)(this); /*0x4109a5*/
@@ -257,8 +257,8 @@ char AbstractTypeClass::WriteINI(char *aP1)
 
   unsigned __int8 *pad_24; // edi
 
-  pad_24 = (unsigned __int8 *)this->__pad_24; /*0x410b9b*/
-  INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
+  pad_24 = (unsigned __int8 *)this->__pad_024; /*0x410b9b*/
+  INIClass::ClearSection((int *)aP1, (int)this->__pad_024, 0); /*0x410ba1*/
   INIClass::SetString(aP1, pad_24, g_INI_Key_Name, this->Name); /*0x410bb2*/
   if ( this->UINameLabel[0] ) /*0x410bb7*/
     INIClass::SetString(aP1, pad_24, g_INI_Key_UIName, this->UINameLabel); /*0x410bca*/
@@ -272,7 +272,7 @@ int AbstractTypeClass::ProcessPower(int *aP1)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x410be9*/
-  Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->__pad_24); /*0x410bf4*/
+  Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->__pad_024); /*0x410bf4*/
   Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->Name); /*0x410bff*/
   return Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->UINameLabel); /*0x410c0f*/
 

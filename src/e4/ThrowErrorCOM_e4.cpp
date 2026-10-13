@@ -15,8 +15,8 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
 {
 
-  *((unsigned int *)this + 3) = 0; /*0x7dcdc7*/
-  *((unsigned int *)this + 1) = a2; /*0x7dcdcb*/
+  this->u32_C = 0; /*0x7dcdc7*/
+  this->u32_4 = a2; /*0x7dcdcb*/
   this->vfptr = (int)&_com_error::`vftable'; /*0x7dcdd2*/
   *((unsigned int *)this + 2) = a3; /*0x7dcdda*/
   if ( a3 && a4 ) /*0x7dcde4*/

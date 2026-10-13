@@ -71,8 +71,8 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       v5[99] = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
-      v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
-      v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x6a03e4*/
+      v11 = v5->q00C; /*0x6a03dd*/
+      v9 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12); /*0x6a03e4*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(*((unsigned int *)v5 + 3) + 129) ) /*0x6a03f7*/
       {
         (*((unsigned char *)&(v4))) = *(unsigned char *)(*((unsigned int *)v5 + 3) + 144); /*0x6a043d*/
@@ -240,12 +240,12 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x75c71b*/
   if ( !v4->Piggybackee ) /*0x75c726*/
   {
-    v12 = *(unsigned int *)v3->__pad_0; /*0x75c7c3*/
+    v12 = *(unsigned int *)v3->IStream_field_00; /*0x75c7c3*/
     LOBYTE(a3) = 0; /*0x75c7cf*/
     (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x75c7d4*/
     return IPersistStream; /*0x75c7d8*/
   }
-  v6 = *(unsigned int *)v3->__pad_0; /*0x75c72c*/
+  v6 = *(unsigned int *)v3->IStream_field_00; /*0x75c72c*/
   LOBYTE(a3) = 1; /*0x75c738*/
   (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x75c73d*/
   Piggybackee = v4->Piggybackee; /*0x75c740*/
@@ -294,7 +294,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)this->LocomotionClass = &WalkLocomotionClass::`vftable'; /*0x75cbe3*/
   *(unsigned int *)&this->LocomotionClass[4] = &WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(unsigned int *)this->__pad_18 = &WalkLocomotionClass::`vftable'; /*0x75cbf0*/
+  *(unsigned int *)this->vtable3 = &WalkLocomotionClass::`vftable'; /*0x75cbf0*/
   Piggybackee = this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/

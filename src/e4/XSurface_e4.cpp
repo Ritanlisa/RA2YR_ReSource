@@ -119,7 +119,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
             v21 -= 16; /*0x7ba9e8*/
           if ( *(unsigned char *)(a5 + v21) ) /*0x7ba9eb*/
           {
-            if ( v42 == (int *)1 ) /*0x7ba9fc*/
+            if ( v42 == 1 ) /*0x7ba9fc*/
               *(unsigned char *)v43 = a4; /*0x7ba9fe*/
             else
               *v43 = a4; /*0x7baa02*/
@@ -161,7 +161,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
               v35 -= 16; /*0x7baad7*/
             if ( *(unsigned char *)(a5 + v35) ) /*0x7baade*/
             {
-              if ( v42 == (int *)1 ) /*0x7baaef*/
+              if ( v42 == 1 ) /*0x7baaef*/
                 *((unsigned char *)v43 + v32) = a4; /*0x7baaf1*/
               else
                 v43[v32] = a4; /*0x7baaf6*/
@@ -189,7 +189,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
             v31 -= 16; /*0x7baa67*/
           if ( *(unsigned char *)(a5 + v31) ) /*0x7baa6e*/
           {
-            if ( v42 == (int *)1 ) /*0x7baa79*/
+            if ( v42 == 1 ) /*0x7baa79*/
               *((unsigned char *)v43 + i) = a4; /*0x7baa83*/
             else
               v43[i] = a4; /*0x7baa91*/
@@ -530,7 +530,7 @@ LABEL_9:
           *(unsigned short *)v18 = v29; /*0x7bb28b*/
           v41 = v4; /*0x7bb291*/
           v31 = v54; /*0x7bb292*/
-          v32 = (char *)(v18 + 2); /*0x7bb295*/
+          v32 = &v18->u32_2; /*0x7bb295*/
           if ( v54 > 0 ) /*0x7bb29b*/
           {
             memset32(v32, (int)v53, v54); /*0x7bb2a0*/

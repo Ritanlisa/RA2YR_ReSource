@@ -111,7 +111,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     Field::Int_Set((unsigned int *)aP0, aP1a); /*0x434d04*/
     v13 = 0; /*0x434d0f*/
     v14 = 0; /*0x434d11*/
-    v15 = *(uint16_t *)(aP0 + 36); /*0x434d13*/
+    v15 = aP0->q024; /*0x434d13*/
     (*(((unsigned short *)&(v16)) + 1)) = (*(((unsigned short *)&(aP2)) + 1)); /*0x434d17*/
     v17 = 0; /*0x434d19*/
     v51 = 0; /*0x434d1b*/
@@ -126,7 +126,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
       switch ( (int16_t)v53 ) /*0x434d59*/
       {
         case 9: /*0x434d59*/
-          v11 = *(unsigned int *)(aP0 + 40) + v11 - (*(unsigned int *)(aP0 + 40) + v11) % *(unsigned int *)(aP0 + 40); /*0x434ef7*/
+          v11 = aP0->q028 + v11 - (aP0->q028 + v11) % aP0->q028; /*0x434ef7*/
           goto LABEL_55; /*0x434ef9*/
         case 10: /*0x434d59*/
         case 13: /*0x434d59*/
@@ -188,7 +188,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v24 = (unsigned int *)aP0; /*0x434eb6*/
           v11 = 0; /*0x434ebe*/
           v14 = 0; /*0x434ec0*/
-          v25 = *(unsigned int *)(aP0 + 28); /*0x434ec2*/
+          v25 = aP0->u32_1C; /*0x434ec2*/
           v51 += v25; /*0x434ec7*/
           if ( aP6 && v51 >= aP6 ) /*0x434ed7*/
             goto LABEL_57; /*0x434ed7*/
@@ -210,7 +210,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
               goto LABEL_55; /*0x434f29*/
           }
           ++v14; /*0x434f37*/
-          v27 = *GlyphDataForChar + *(unsigned int *)(aP0 + 44); /*0x434f3b*/
+          v27 = *GlyphDataForChar + aP0->q02C; /*0x434f3b*/
           v11 += v27; /*0x434f41*/
           if ( !aP5 || v11 <= aP5 ) /*0x434f4d*/
             goto LABEL_55; /*0x434f4d*/
@@ -288,7 +288,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v24 = (unsigned int *)aP0; /*0x435106*/
           v11 = 0; /*0x43510e*/
           v14 = 0; /*0x435110*/
-          v36 = *(unsigned int *)(aP0 + 28); /*0x435112*/
+          v36 = aP0->u32_1C; /*0x435112*/
           v51 += v36; /*0x435117*/
           if ( aP6 && v51 >= aP6 ) /*0x435127*/
           {

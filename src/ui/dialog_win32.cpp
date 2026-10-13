@@ -345,9 +345,9 @@ void CleanupTree(void* dialog_data)
 {
     // IDA: free *(&this->q0100), cleanup linked list at *(&this->u32_142), DeleteAndZero::Alt *(&this->u32_180)
     uint8_t* base = (uint8_t*)(dialog_data);
-    uint32_t* ptr40 = (uint32_t*)(base + 40);
-    uint32_t* ptr52 = (uint32_t*)(base + 52);
-    uint32_t* ptr60 = (uint32_t*)(base + 60);
+    uint32_t* ptr40 = &base->u16_28;
+    uint32_t* ptr52 = &base->q034;
+    uint32_t* ptr60 = &base->u32_3C;
 
     if (*ptr40) {
         // IDA: operator delete(*(&this->q0100))

@@ -118,7 +118,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       if ( (*v11 & 0x100) == 0 ) /*0x5836b3*/
         goto LABEL_22; /*0x5836b3*/
       v12 = (int *)Cell::GetNeighbourContent(v12, v23); /*0x5836c1*/
-      v11 = (unsigned int *)(v12 + 80); /*0x5836cc*/
+      v11 = &v12->q050; /*0x5836cc*/
       if ( (v12[80] & 0x100) == 0 ) /*0x5836d2*/
       {
         if ( (Cell::IsInRange(v12) || Cell::IsInRange2(v12)) && v12[59] != 3 ) /*0x5836f1*/
@@ -144,7 +144,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       if ( (((unsigned int)(unsigned short)(v13)) | ((unsigned int)(unsigned short)((*(((unsigned short *)&(v22)) + 1))) << 16)) == dword_ABD480 ) /*0x583758*/
         goto LABEL_28; /*0x583758*/
       v14 = (unsigned short *)aP2; /*0x58376c*/
-      v15 = (double)(int16_t)((*(((unsigned short *)&(v21)) + 1)) - *(unsigned short *)(aP2 + 2)); /*0x58378e*/
+      v15 = (double)(int16_t)((*(((unsigned short *)&(v21)) + 1)) - aP2->u32_2); /*0x58378e*/
       aP2 = (IUnknown *)((int16_t)(v21 - *(unsigned short *)aP2)); /*0x583792*/
       v16 = Math::Sqrt((double)aP2 * (double)aP2 + v15 * v15); /*0x5837ab*/
       v17 = Math::RoundToInt(v16); /*0x5837ba*/
@@ -193,17 +193,17 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   v18.vfptr = &vt_DynamicVectorClass; /*0x583af1*/
   v20 = 10; /*0x583af9*/
   v19 = 0; /*0x583b05*/
-  *(unsigned int *)&stru_87F5F0.__pad_58[700] = *(unsigned int *)&stru_87F5F0.__pad_58[668] /*0x583b0d*/
-                                        + *(unsigned int *)&stru_87F5F0.__pad_58[672]
+  *(unsigned int *)&dword_87F904 = *(unsigned int *)&DataGlobal_87F8E4 /*0x583b0d*/
+                                        + *(unsigned int *)&DataGlobal_87F8E8
                                         + 1;
-  *(unsigned int *)&stru_87F5F0.__pad_58[704] = *(unsigned int *)&stru_87F5F0.__pad_58[672] /*0x583b22*/
-                                        + *(unsigned int *)&stru_87F5F0.__pad_58[660]
-                                        - *(unsigned int *)&stru_87F5F0.__pad_58[668];
-  for ( i = (int16_t *)MapClass::SpiralSearch((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x583b2f*/
+  *(unsigned int *)&dword_87F908 = *(unsigned int *)&DataGlobal_87F8E8 /*0x583b22*/
+                                        + *(unsigned int *)&g_Cell_PositionLUT
+                                        - *(unsigned int *)&DataGlobal_87F8E4;
+  for ( i = (int16_t *)MapClass::SpiralSearch((MapClass *)&DataGlobal_87F7E8); /*0x583b2f*/
         i;
-        i = (int16_t *)MapClass::SpiralSearch((MapClass *)&stru_87F5F0.__pad_58[416]) )
+        i = (int16_t *)MapClass::SpiralSearch((MapClass *)&DataGlobal_87F7E8) )
   {
-    if ( *((unsigned int *)i + 19) == 4 ) /*0x583b39*/
+    if ( i->u32_4C == 4 ) /*0x583b39*/
     {
       TileIndex = ((MapClass *)((MapClass *)this))->GetTileIndex(i + 18, 10, 0); /*0x583b49*/
       v5 = TileIndex; /*0x583b4e*/
@@ -554,7 +554,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
   {
     v4 = (int)(aP2);
     v18 = 0; /*0x588585*/
-    v5 = *(int *)(aP2 + 1464) >> 8; /*0x588595*/
+    v5 = aP2->q5B8 >> 8; /*0x588595*/
     v17 = *(unsigned int *)aP0; /*0x58859a*/
     v22 = v5; /*0x58859e*/
     if ( v5 > 0 ) /*0x5885a2*/
@@ -576,7 +576,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
         {
           if ( *(unsigned char *)(*(unsigned int *)(v5 + 1312) + 5824) ) /*0x588613*/
           {
-            v9 = *(unsigned int *)(v5 + 540); /*0x58861d*/
+            v9 = v5->House_21C; /*0x58861d*/
             (*((unsigned char *)&(v5))) = (unsigned char)(aP1); /*0x588623*/
             if ( v9 == (int)(aP1) ) /*0x588629*/
               break; /*0x588629*/
@@ -591,7 +591,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           dword_ABDC74 = (unsigned int *)(v20);
           v11 = (unsigned int *)(unk_ABDC50); /*0x58864d*/
         }
-        (*((unsigned char *)&(v5))) = CellClass::IsPassable((int)v11, *(unsigned int *)(aP2 + 1660), aP2, aP1); /*0x58865f*/
+        (*((unsigned char *)&(v5))) = CellClass::IsPassable((int)v11, aP2->u32_67C, aP2, aP1); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
           (*((unsigned char *)&(v5))) = ++v18; /*0x588674*/
@@ -604,7 +604,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
       if ( v18 > 0 ) /*0x58868c*/
       {
         v13 = *v6 + *(unsigned short *)aP0; /*0x5886ae*/
-        v19 = *(unsigned short *)(aP0 + 2) + v6[1]; /*0x5886b4*/
+        v19 = aP0->q002_ + v6[1]; /*0x5886b4*/
         while ( 1 ) /*0x5886ca*/
         {
           v14 = (int *)(*(int (**)(int, int))(*(unsigned int *)v4 + 140))(v4, aP1); /*0x5886ca*/
@@ -711,7 +711,7 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
     if ( v16 > 0 ) /*0x588897*/
     {
       v14 = *(unsigned short *)aP0 + *v7; /*0x5888bb*/
-      v20 = *((unsigned short *)aP0 + 1) + v7[1]; /*0x5888bf*/
+      v20 = aP0->q002_ + v7[1]; /*0x5888bf*/
       do /*0x588933*/
       {
         v15 = (*(int (**)(int *, int))(*v3 + 140))(v3, aP1); /*0x5888ce*/
@@ -860,7 +860,7 @@ ScenarioClass * * ComputeMapCameraBounds()
       if ( !(uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, i) ) /*0x58b851*/
         break; /*0x58b858*/
       Waypoint_Location = (int16_t *)((ScenarioClass *)((char *)dword_A8B230))->Get_Waypoint_Location(&k, i); /*0x58b86a*/
-      v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(Waypoint_Location); /*0x58b87e*/
+      v5 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(Waypoint_Location); /*0x58b87e*/
       v6 = (*(int (**)(void *))(*(unsigned int *)v5 + 72))(v5); /*0x58b88f*/
       v7 = (int *)(*(int (**)(void *, char *, unsigned int))(*(unsigned int *)v5 + 72))(v5, v30, *(unsigned int *)(v6 + 4)); /*0x58b89f*/
       IsoCoord::ToScreenOffset(*v7, (int)v29, &v25, &v26); /*0x58b8ab*/
@@ -873,15 +873,15 @@ ScenarioClass * * ComputeMapCameraBounds()
       *(unsigned int *)&g_MissionQueueFrame.globalVariables[8 * v9 + 172] = ((unsigned int)v11 >> 31) + (v11 >> 4); /*0x58b907*/
       g_MissionQueueFrame.localVariables[162] = v9 + 1; /*0x58b910*/
     }
-    LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58b924*/
+    LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x58b924*/
     v12 = 10000; /*0x58b929*/
     v25 = 10000; /*0x58b933*/
     v13 = 0; /*0x58b937*/
-    for ( j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58b942*/
+    for ( j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x58b942*/
           j;
-          j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+          j = (int16_t *)LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
     {
-      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], j + 18, 1) ) /*0x58b953*/
+      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, j + 18, 1) ) /*0x58b953*/
       {
         v15 = (*(int (**)(int16_t *))(*(unsigned int *)j + 72))(j); /*0x58b973*/
         v16 = (int *)(*(int (**)(int16_t *, char *, unsigned int))(*(unsigned int *)j + 72))( /*0x58b983*/
@@ -927,10 +927,10 @@ ScenarioClass * * ComputeMapCameraBounds()
             v23 = *(void **)&v21[v20]; /*0x58ba73*/
             v24 = *(void **)&v21[v20 + 4]; /*0x58ba76*/
           }
-          *(void **)((char *)&v19->vfptr + v20) = v23; /*0x58ba80*/
+          *(void **)v19->q010 + v20) = v23; /*0x58ba80*/
           ++v18; /*0x58ba89*/
           v22 += 4; /*0x58ba8a*/
-          *(void **)((char *)&dword_A8B230->vfptr1 + v20) = v24; /*0x58ba8d*/
+          *(void **)dword_A8B230->q010 + v20) = v24; /*0x58ba8d*/
           v20 += 8; /*0x58ba9b*/
           *(unsigned int *)((char *)dword_A8B230 + v22 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v22 + 1302]; /*0x58ba9e*/
           v19 = dword_A8B230; /*0x58baa2*/
@@ -1162,11 +1162,11 @@ AbstractClass * * sub_58EF10()
   unsigned short v17[2]; // [esp+10h] [ebp-4h] BYREF
 
   v16 = 1; /*0x58ef1e*/
-  Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x58ef23*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58ef2d*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x58ef41*/
+  Mouse::SetBounds((int)&DataGlobal_87F7E8, 0); /*0x58ef23*/
+  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x58ef2d*/
+  for ( i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x58ef41*/
         i;
-        i = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]) )
+        i = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8) )
   {
     if ( !v16 ) /*0x58ef47*/
       break; /*0x58ef47*/
@@ -1219,7 +1219,7 @@ AbstractClass * * sub_58EF10()
         if ( (uint8_t)Coord::Compare2D((Coord *)(v7 + g_MissionQueueFrame.localVariables[163]), v17) ) /*0x58effd*/
         {
           v9 = (RandomMap *)CellCoord::To_CellObj( /*0x58f014*/
-                              (CellCoord *)&stru_87F5F0.__pad_58[416],
+                              (CellCoord *)&DataGlobal_87F7E8,
                               (int16_t *)(v7 + g_MissionQueueFrame.localVariables[163]));
           Terrain = RandomMap::GenerateTerrain(v9); /*0x58f01b*/
           if ( Terrain ) /*0x58f022*/
@@ -1343,8 +1343,8 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int unknown::Write(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x588d10*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 4; /*0x588d25*/
+  if ( LOBYTE(this->unknown_field_0C) ) /*0x588d10*/
+    return (unsigned int)(a2 - *&this->m_Position) >> 4; /*0x588d25*/
   else
     return 0; /*0x588d17*/
 
@@ -1356,11 +1356,11 @@ int unknown::Seek(int a2, int a3, void *a3_2)
 {
   int v3; // edx
 
-  v3 = *(unsigned int *)&a3_2->m_1[3] + 16 * a3_2; /*0x588d3a*/
+  v3 = *&a3_2->u32_4 + 16 * a3_2; /*0x588d3a*/
   *(unsigned int *)a3_2 = *(unsigned int *)v3; /*0x588d42*/
-  *(unsigned int *)(a3_2 + 4) = *(unsigned int *)(v3 + 4); /*0x588d47*/
-  *(unsigned char *)(a3_2 + 8) = *(unsigned char *)(v3 + 8); /*0x588d4d*/
-  *(unsigned int *)(a3_2 + 12) = *(unsigned int *)(v3 + 12); /*0x588d53*/
+  a3_2->u32_4 = *(unsigned int *)(v3 + 4); /*0x588d47*/
+  a3_2->VtableStub_8 = *(unsigned char *)(v3 + 8); /*0x588d4d*/
+  a3_2->u32_C = *(unsigned int *)(v3 + 12); /*0x588d53*/
   return a3_2; /*0x588d56*/
 }
 }  // G42.18c ns repair
@@ -1885,7 +1885,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       this->AbstractClass = 0; /*0x58bf51*/
       return &this->AbstractClass; /*0x58bf5c*/
     }
-    v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v8); /*0x58bf2d*/
+    v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8); /*0x58bf2d*/
   }
   while ( !(unsigned __int8)Cell::IsEmpty(v6) ); /*0x58bf34*/
   this->AbstractClass = *(void **)v8; /*0x58bf62*/
@@ -2024,7 +2024,7 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
       *a2 = 0; /*0x58c47a*/
       return a2; /*0x58c480*/
     }
-    v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v9); /*0x58c450*/
+    v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v9); /*0x58c450*/
   }
   while ( !(unsigned __int8)Cell::IsEmpty(v6) ); /*0x58c457*/
   *a2 = *(unsigned int *)v9; /*0x58c48e*/
@@ -2067,7 +2067,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
     {
       if ( *((unsigned char *)v2 + 68) ) /*0x58c541*/
       {
-        v5 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v2); /*0x58c552*/
+        v5 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v2); /*0x58c552*/
         if ( (unsigned __int8)Cell::IsEmpty(v5) ) /*0x58c559*/
           break; /*0x58c559*/
       }
@@ -2117,7 +2117,7 @@ unsigned int * sub_58C5A0(unsigned int * a1, int a2, int a3)
   while ( !*v3 && !v3[1] /*0x58c67e*/
        || ((MapClass *)(&dword_87F7E8))->GetTileIndex((int16_t *)v6 + 18, 0, 0) != a2
        || !Cell::IsEmpty(v7)
-       || a3 != -1 && *((unsigned int *)v3 + 14) != a3 );
+       || a3 != -1 && v3->u32_38 != a3 );
   *a1 = *(unsigned int *)v3; /*0x58c6ac*/
   return a1; /*0x58c697*/
 }
@@ -2154,7 +2154,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
   v7 = this; /*0x58d12e*/
   if ( g_MapCellWidth * g_MapCellWidth <= 0 ) /*0x58d134*/
   {
-    this->? = 0; /*0x58d1b3*/
+    this->M12 = 0; /*0x58d1b3*/
   }
   else
   {
@@ -2163,12 +2163,12 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
     v8 = g_MapCellWidth * g_MapCellWidth; /*0x58d143*/
     do /*0x58d1a4*/
     {
-      if ( *(void **)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == this->? ) /*0x58d153*/
+      if ( *(void **)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == this->M8 ) /*0x58d153*/
       {
         *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) = a2; /*0x58d155*/
         *(unsigned char *)(v5 + g_MissionQueueFrame.localVariables[163] + 75) = 0; /*0x58d15e*/
         a3 = *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x58d176*/
-        v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a3); /*0x58d17a*/
+        v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a3); /*0x58d17a*/
         v6[14] = 0; /*0x58d182*/
         *((unsigned char *)v6 + 282) = 0; /*0x58d185*/
         if ( v4 != -1 ) /*0x58d18c*/
@@ -2179,7 +2179,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
       result = --v8; /*0x58d19f*/
     }
     while ( v8 ); /*0x58d1a4*/
-    this->? = 0; /*0x58d1a8*/
+    this->M12 = 0; /*0x58d1a8*/
   }
   return result; /*0x58d1ac*/
 

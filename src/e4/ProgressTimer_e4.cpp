@@ -23,11 +23,11 @@ void* ProgressTimer::GetValue(void *aP1)
   __int16 v10; // cx
   int v12; // [esp+Ch] [ebp-4h]
 
-  ProgressTimer_field_0x14 = (__int16)this->ProgressTimer_field_0x14; /*0x4c93d2*/
+  ProgressTimer_field_0x14 = (__int16)this->q014; /*0x4c93d2*/
   if ( ProgressTimer_field_0x14 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
-  ProgressTimer_field_0x8 = this->ProgressTimer_field_0x8; /*0x4c93dd*/
-  ProgressTimer_field_0x10 = (char *)this->ProgressTimer_field_0x10; /*0x4c93e0*/
+  ProgressTimer_field_0x8 = this->q008; /*0x4c93dd*/
+  ProgressTimer_field_0x10 = (char *)this->q010; /*0x4c93e0*/
   if ( ProgressTimer_field_0x8 != (void *)-1 ) /*0x4c93ec*/
   {
     if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)ProgressTimer_field_0x8 >= (int)ProgressTimer_field_0x10 ) /*0x4c93f4*/
@@ -36,18 +36,18 @@ void* ProgressTimer::GetValue(void *aP1)
   }
   if ( ProgressTimer_field_0x10 ) /*0x4c93fa*/
   {
-    v5 = (__int16)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this->__pad_0[4]); /*0x4c9406*/
-    v6 = (__int16)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this->__pad_0[4]); /*0x4c940b*/
+    v5 = (__int16)(*(unsigned short *)this->__pad_000 - *&this->u32_4); /*0x4c9406*/
+    v6 = (__int16)(*(unsigned short *)this->__pad_000 - *&this->u32_4); /*0x4c940b*/
     v7 = (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) / ProgressTimer_field_0x14; /*0x4c9411*/
-    v12 = *(unsigned int *)this->__pad_0; /*0x4c9415*/
+    v12 = *(unsigned int *)this->__pad_000; /*0x4c9415*/
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/
     {
 LABEL_12:
       *aP1 = v12; /*0x4c9445*/
       return aP1; /*0x4c9453*/
     }
-    v8 = this->ProgressTimer_field_0x10; /*0x4c941e*/
-    v9 = this->ProgressTimer_field_0x8; /*0x4c9421*/
+    v8 = this->q010; /*0x4c941e*/
+    v9 = this->q008; /*0x4c9421*/
     if ( v9 != (void *)-1 ) /*0x4c9427*/
     {
       if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)v9 >= (int)v8 ) /*0x4c942f*/
@@ -63,7 +63,7 @@ LABEL_11:
     goto LABEL_12; /*0x4c9440*/
   }
 LABEL_14:
-  *aP1 = *(unsigned int *)this->__pad_0; /*0x4c945a*/
+  *aP1 = *(unsigned int *)this->__pad_000; /*0x4c945a*/
   return aP1; /*0x4c944d*/
 
 }

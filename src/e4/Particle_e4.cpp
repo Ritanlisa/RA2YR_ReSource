@@ -23,7 +23,7 @@ int Particle::Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7
   this->u32_B0 = aP3; /*0x466501*/
   this->u32_12C = 0; /*0x466507*/
   this->u32_12D = *(unsigned char *)(aP1 + 758); /*0x466513*/
-  if ( *(unsigned char *)(aP1 + 681) && aP3 ) /*0x466525*/
+  if ( aP1->u8_2A9 && aP3 ) /*0x466525*/
   {
     result = *(unsigned int *)(*(unsigned int *)(aP3 + 540) + 90196); /*0x46652d*/
     this->u32_114 = result; /*0x466533*/

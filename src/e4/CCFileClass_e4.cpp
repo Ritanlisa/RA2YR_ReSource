@@ -78,13 +78,13 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->__tail_0 + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->vtable1 + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = *(unsigned int *)this->__tail_0; /*0x65d0fd*/
-        v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
+        v4 = *(unsigned int *)this->vtable1; /*0x65d0fd*/
+        v6 = *&this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - (unsigned int)this->Handle; /*0x65d113*/
@@ -92,10 +92,10 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->__tail_0 + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->vtable1 + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->__tail_0 + 44))(this); /*0x65d130*/
-      (*(void (**)(RawFileClass *))(*(unsigned int *)this->__tail_0 + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->vtable1 + 44))(this); /*0x65d130*/
+      (*(void (**)(RawFileClass *))(*(unsigned int *)this->vtable1 + 52))(this); /*0x65d136*/
     }
     result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
     this->FileName = (void *)result; /*0x65d140*/
@@ -124,34 +124,34 @@ void CCFileClass::ProcessStream(unsigned int a1)
   {
     do /*0x69e3a1*/
     {
-      if ( v1[8] <= a1 && *(unsigned short *)v1 == 0xFFFF && *((unsigned char *)v1 + 16) ) /*0x69e33d*/
+      if ( v1[8] <= a1 && *(unsigned short *)v1 == 0xFFFF && v1->uniqueId ) /*0x69e33d*/
       {
-        v3 = (void *)v1[3]; /*0x69e342*/
+        v3 = v1->vtable4; /*0x69e342*/
         if ( v3 ) /*0x69e347*/
         {
           if ( *(unsigned short *)v3 == 0xFFFF ) /*0x69e34d*/
           {
-            BTree::DeleteSubtree((unsigned int *)v1[3]); /*0x69e351*/
-            v4 = *((unsigned int *)v3 + 6); /*0x69e356*/
+            BTree::DeleteSubtree(v1->vtable4); /*0x69e351*/
+            v4 = v3->u32_18; /*0x69e356*/
             if ( v4 ) /*0x69e35b*/
-              *(unsigned int *)(v4 + 28) = *((unsigned int *)v3 + 7); /*0x69e360*/
-            v5 = *((unsigned int *)v3 + 7); /*0x69e363*/
+              *(unsigned int *)(v4 + 28) = v3->u32_1C; /*0x69e360*/
+            v5 = v3->u32_1C; /*0x69e363*/
             if ( v5 ) /*0x69e368*/
-              *(unsigned int *)(v5 + 24) = *((unsigned int *)v3 + 6); /*0x69e36d*/
+              *(unsigned int *)(v5 + 24) = v3->u32_18; /*0x69e36d*/
             else
-              dword_B077B0 = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
-            if ( *((unsigned int *)v3 + 2) ) /*0x69e37a*/
+              dword_B077B0 = (void *)v3->u32_18; /*0x69e375*/
+            if ( v3->u32_8 ) /*0x69e37a*/
             {
               free(*((void **)v3 + 2)); /*0x69e382*/
-              *((unsigned int *)v3 + 2) = 0; /*0x69e38a*/
+              v3->u32_8 = 0; /*0x69e38a*/
             }
           }
           __3_YAXPAX_Z(v3); /*0x69e38e*/
         }
         v1[3] = 0; /*0x69e396*/
-        *((unsigned char *)v1 + 16) = 0; /*0x69e399*/
+        v1->uniqueId = 0; /*0x69e399*/
       }
-      v1 = (unsigned int *)v1[6]; /*0x69e39c*/
+      v1 = v1->nextArrayIndex; /*0x69e39c*/
     }
     while ( v1 ); /*0x69e3a1*/
   }
@@ -170,18 +170,18 @@ void CCFileClass::ProcessStream(unsigned int a1)
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-      v10 = *((unsigned int *)v6 + 6); /*0x69e3d3*/
+      v10 = v6->nextArrayIndex; /*0x69e3d3*/
       if ( v10 ) /*0x69e3d8*/
-        *(unsigned int *)(v10 + 28) = *((unsigned int *)v6 + 7); /*0x69e3dd*/
-      v11 = *((unsigned int *)v6 + 7); /*0x69e3e0*/
+        *(unsigned int *)(v10 + 28) = v6->referenceCount; /*0x69e3dd*/
+      v11 = v6->referenceCount; /*0x69e3e0*/
       if ( v11 ) /*0x69e3e5*/
-        *(unsigned int *)(v11 + 24) = *((unsigned int *)v6 + 6); /*0x69e3ea*/
+        *(unsigned int *)(v11 + 24) = v6->nextArrayIndex; /*0x69e3ea*/
       else
-        dword_B077B0 = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
-      if ( *((unsigned int *)v6 + 2) ) /*0x69e3f7*/
+        dword_B077B0 = (void *)v6->nextArrayIndex; /*0x69e3f2*/
+      if ( v6->vtable3 ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
-        *((unsigned int *)v6 + 2) = 0; /*0x69e407*/
+        v6->vtable3 = 0; /*0x69e407*/
       }
     }
     __3_YAXPAX_Z(v6); /*0x69e40b*/

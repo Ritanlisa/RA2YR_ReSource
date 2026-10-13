@@ -77,7 +77,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         this->vtable3,
         v23,
         0,
-        *(unsigned int *)&dword_8871E0->__pad_C3C[876],
+        *&dword_8871E0->u32_FA8,
         0,
         1,
         0,
@@ -131,7 +131,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
                         v20,
                         v23,
                         0,
-                        *(unsigned int *)&dword_8871E0->__pad_C3C[876],
+                        *&dword_8871E0->u32_FA8,
                         0,
                         1,
                         0,
@@ -142,7 +142,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         *(unsigned char *)(this->vtable3 + 973) = 1; /*0x718ac2*/
         (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718ace*/
         v12 = (unsigned int *)this->vtable3; /*0x718ad4*/
-        v17 = (TechnoClass *)v12[182]; /*0x718ad7*/
+        v17 = v12->threatAvoidValue; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
           TechnoClass::MutateAll(v17, v12[266], v12[267]); /*0x718aef*/
@@ -160,7 +160,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     *(unsigned char *)(this->vtable3 + 973) = 1; /*0x71896b*/
     (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718977*/
     v8 = (unsigned int *)this->vtable3; /*0x71897d*/
-    v9 = (TechnoClass *)v8[182]; /*0x718980*/
+    v9 = v8->threatAvoidValue; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
@@ -176,7 +176,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     }
     else
     {
-      v12 = (unsigned int *)v11[267]; /*0x7189dd*/
+      v12 = v11->CreateSound; /*0x7189dd*/
       if ( v12 ) /*0x7189e5*/
         LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
@@ -1275,8 +1275,8 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   this->__pad_0[53] = aP9; /*0x71ff52*/
   this->__pad_0[52] = a9; /*0x71ff5c*/
   this->field_38 = a3; /*0x71ff5f*/
-  *((unsigned int *)this + 15) = a4; /*0x71ff62*/
-  *(unsigned int *)this->__pad_0 = &TextButtonClass::`vftable'; /*0x71ff65*/
+  this->M60 = a4; /*0x71ff62*/
+  *(unsigned int *)this->vfptr = &TextButtonClass::`vftable'; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/

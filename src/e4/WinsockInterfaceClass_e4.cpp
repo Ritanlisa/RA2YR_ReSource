@@ -75,7 +75,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   void *v4; // eax
   void *v5; // eax
 
-  v2 = *((unsigned char *)this + 258152); /*0x7b1ab6*/
+  v2 = this->u32_3F068; /*0x7b1ab6*/
   *(unsigned int *)this = &WinsockInterfaceClass::`vftable'; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
@@ -86,15 +86,15 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   }
   v3 = *(void **)((char *)this + 60); /*0x7b1ade*/
   *((unsigned int *)this + 14) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
-  if ( v3 && *((unsigned char *)this + 69) ) /*0x7b1aec*/
+  if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
-    *((unsigned int *)this + 15) = 0; /*0x7b1afa*/
+    this->u32_3C = 0; /*0x7b1afa*/
   }
-  *((unsigned char *)this + 69) = 0; /*0x7b1afd*/
-  *((unsigned int *)this + 16) = 0; /*0x7b1b00*/
-  v4 = *(void **)((char *)this + 36); /*0x7b1b03*/
-  *((unsigned int *)this + 8) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
+  this->u32_45 = 0; /*0x7b1afd*/
+  this->u32_40 = 0; /*0x7b1b00*/
+  v4 = *&this->u32_24; /*0x7b1b03*/
+  this->u32_20 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
   if ( v4 && *((unsigned char *)this + 45) ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
@@ -104,13 +104,13 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   *((unsigned int *)this + 10) = 0; /*0x7b1b25*/
   v5 = *(void **)((char *)this + 12); /*0x7b1b28*/
   *((unsigned int *)this + 2) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
-  if ( v5 && *((unsigned char *)this + 21) ) /*0x7b1b36*/
+  if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/
-    *((unsigned int *)this + 3) = 0; /*0x7b1b44*/
+    this->u32_C = 0; /*0x7b1b44*/
   }
-  *((unsigned char *)this + 21) = 0; /*0x7b1b47*/
-  *((unsigned int *)this + 4) = 0; /*0x7b1b4a*/
+  this->u32_15 = 0; /*0x7b1b47*/
+  this->u32_10 = 0; /*0x7b1b4a*/
 
 }
 }  // G42.18c ns repair

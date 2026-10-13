@@ -76,8 +76,8 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 
   v3 = a3; /*0x6a6af3*/
   if ( a3 == -1 ) /*0x6a6afe*/
-    v3 = *((unsigned int *)this + 5351); /*0x6a6b00*/
-  v4 = (char *)this + 3988 * v3 + 5444; /*0x6a6b19*/
+    v3 = this->M21404; /*0x6a6b00*/
+  v4 = &this->u8_F94 * v3 + 5444; /*0x6a6b19*/
   v5 = 26; /*0x6a6b20*/
   v14 = v4; /*0x6a6b25*/
   NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x6a6b29*/
@@ -129,10 +129,10 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
   int v5; // esi
   int v6; // ebp
 
-  this->u32_539C = a2; /*0x6a74b6*/
+  this->M21404 = a2; /*0x6a74b6*/
   ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * a2)))->Show(); /*0x6a74bc*/
-  v3 = (unsigned int *)((char *)&this->u32_F94 * this->u32_539C + 5444); /*0x6a74d4*/
-  *((unsigned char *)&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a74db*/
+  v3 = (unsigned int *)this->u8_F94 * this->M21404 + 5444); /*0x6a74d4*/
+  this->u8_F94 * this->M21404 + 5472) = 1; /*0x6a74db*/
   v4 = 26; /*0x6a74ed*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a74e5*/
     v4 = 18; /*0x6a74f4*/
@@ -143,7 +143,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
     do /*0x6a7570*/
     {
       Hash::Reset((LinkClass *)(56 * (v5 + 60 * v3[14]) + 11566720)); /*0x6a7545*/
-      Hash::InsertOrdered((GScreenClass *)&stru_87F5F0.__pad_58[416], 56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
+      Hash::InsertOrdered((GScreenClass *)&DataGlobal_87F7E8, 56 * (v5 + 60 * v3[14]) + 11566720); /*0x6a7568*/
       ++v5; /*0x6a756d*/
     }
     while ( v5 < v6 ); /*0x6a7570*/
@@ -255,7 +255,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   unsigned int v5; // eax
   int v6; // ebp
 
-  LOBYTE(this->?) = 1; /*0x6a93f8*/
+  LOBYTE(this->M28) = 1; /*0x6a93f8*/
   v2 = 26; /*0x6a9408*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
@@ -269,7 +269,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
     {
       Hash::Reset((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720)); /*0x6a9465*/
       LOBYTE(v5) = Hash::InsertOrdered( /*0x6a948c*/
-                     (GScreenClass *)&stru_87F5F0.__pad_58[416],
+                     (GScreenClass *)&DataGlobal_87F7E8,
                      56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
       ++v3; /*0x6a9491*/
     }
@@ -462,29 +462,29 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
       {
         if ( v7 )
         {
-          if ( v7 == (char *)1 )
+          if ( v7 == 1 )
           {
             nIDDlgItema = 1294; /*0x6ae18d*/
           }
-          else if ( v7 == (char *)2 )
+          else if ( v7 == 2 )
           {
             nIDDlgItema = 1302; /*0x6ae19c*/
           }
-          else if ( v7 == (char *)3 )
+          else if ( v7 == 3 )
           {
             nIDDlgItema = 1306; /*0x6ae1ab*/
           }
-          else if ( v7 == (char *)4 )
+          else if ( v7 == 4 )
           {
             nIDDlgItema = 1307; /*0x6ae1ba*/
           }
-          else if ( v7 == (char *)5 )
+          else if ( v7 == 5 )
           {
             nIDDlgItema = 1308; /*0x6ae1c9*/
           }
           else
           {
-            nIDDlgItema = v7 != (char *)6 ? -1 : 1309;
+            nIDDlgItema = v7 != 6 ? -1 : 1309;
           }
         }
         else
@@ -530,12 +530,12 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
 
   v10 = v3; /*0x6ae2cc*/
   dwNewLong = -1; /*0x6ae2ce*/
-  RulesClass::LoadCountries(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2d6*/
-  RulesClass::ReadDataList(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2e8*/
+  RulesClass::LoadCountries(*(RulesClass **)&g_RulesClass_Instance); /*0x6ae2d6*/
+  RulesClass::ReadDataList(*(RulesClass **)&g_RulesClass_Instance); /*0x6ae2e8*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
     (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
       *((unsigned int *)dword_A83C9C + i),
-      *(unsigned int *)&DSurface_ViewBounds.__pad_34[116]);
+      *(unsigned int *)&DataGlobal_887048);
   LoadingScreen::Init(); /*0x6ae317*/
   Dialog = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
   if ( Dialog ) /*0x6ae331*/
@@ -640,7 +640,7 @@ int TechnoClass::ProcessDeployAction()
         v3 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6afe1c*/
                           this->occupant,
                           &v31,
-                          *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
+                          *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6024) / 256,
                           1);
         v30 = v3; /*0x6afe25*/
         *(unsigned int *)v29 = v3; /*0x6afe29*/
@@ -655,7 +655,7 @@ int TechnoClass::ProcessDeployAction()
         else
         {
           v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-          v8 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v29); /*0x6afe8e*/
+          v8 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v29); /*0x6afe8e*/
           (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
           LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
           this->customSound_controller[3] = 2; /*0x6afeac*/
@@ -717,7 +717,7 @@ int TechnoClass::ProcessDeployAction()
         && ((v12 = this->occupant) != 0
           ? (v3 = (*(int (**)(int))(*(unsigned int *)v12 + 44))(this->occupant) == 6 ? v12 : 0)
           : (v3 = 0),
-            *(unsigned int *)(v3 + 1332)) )
+            v3->q534) )
       {
         this->customSound_controller[3] = 5; /*0x6affc2*/
         this->customSound_controller[4] = 0x7FFFFFFF; /*0x6affc9*/
@@ -732,7 +732,7 @@ int TechnoClass::ProcessDeployAction()
           {
             v14 = this->occupant; /*0x6affef*/
             v3 = v14 ? ((*(int (**)(int))(*(unsigned int *)v14 + 44))(this->occupant) == 1 ? v14 : 0) : 0;
-            if ( !*(unsigned char *)(v3 + 1676) && *(unsigned int *)(this->occupant + 172) == 5 ) /*0x6b0022*/
+            if ( !*&v3->u8_68C && *(unsigned int *)(this->occupant + 172) == 5 ) /*0x6b0022*/
             {
               this->customSound_controller[3] = 2; /*0x6b0028*/
               this->customSound_controller[4] = 0x7FFFFFFF; /*0x6b002f*/
@@ -754,7 +754,7 @@ int TechnoClass::ProcessDeployAction()
         v3 = *(unsigned int *)(*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)this->occupant + 824))( /*0x6b008d*/
                           this->occupant,
                           &v31,
-                          *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256,
+                          *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6016) / 256,
                           0);
         v30 = v3; /*0x6b0096*/
         if ( v3 == dword_B0B5B8 ) /*0x6b009a*/
@@ -762,11 +762,11 @@ int TechnoClass::ProcessDeployAction()
           *(unsigned int *)v29 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6b00e7*/
                                         this->occupant,
                                         &v31,
-                                        *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
+                                        *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6024) / 256,
                                         1);
           v30 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v33, *(int *)v29); /*0x6b0100*/
           v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
-          v17 = *((__int16 *)v16 + 1); /*0x6b0109*/
+          v17 = v16->u32_4; /*0x6b0109*/
           v18 = *(__int16 *)v16; /*0x6b010d*/
           v31 = v17; /*0x6b0110*/
           __asm { fild [esp+38h+var_20] } /*0x6b0117*/
@@ -807,7 +807,7 @@ int TechnoClass::ProcessDeployAction()
           }
           Math::Sqrt(v27); /*0x6b018f*/
           v23 = Math::RoundToInt(v1); /*0x6b01b8*/
-          v3 = v19 + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6028) / 256; /*0x6b01bb*/
+          v3 = v19 + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6028) / 256; /*0x6b01bb*/
           if ( v3 < v23 ) /*0x6b01bf*/
           {
             *(unsigned char *)(this->occupant + 1272) = 1; /*0x6b01c4*/
@@ -874,8 +874,8 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     v6 = aP1[2]; /*0x6a053d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
-    vtable3 = this->?; /*0x6a054a*/
-    v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x6a0551*/
+    vtable3 = this->M12; /*0x6a054a*/
+    v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x6a0551*/
     if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)this->? + 129) ) /*0x6a0564*/
     {
       WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/
@@ -1397,7 +1397,7 @@ char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
   this->customSound_controller[13 * v5 + 5] = a2; /*0x6aba9e*/
   BYTE1(this->ambientSoundController[0]) = 1; /*0x6abaa2*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6abaa5*/
-  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6abaad*/
+  MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x6abaad*/
   return 1; /*0x6aba88*/
 
 }

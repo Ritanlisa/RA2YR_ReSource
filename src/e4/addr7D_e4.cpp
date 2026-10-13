@@ -91,10 +91,10 @@ int __sbh_heap_check()
     return 0; /*0x7d03d3*/
   while ( 2 ) /*0x7d03dd*/
   {
-    v3 = (unsigned int *)v2[4]; /*0x7d03dd*/
+    v3 = v2->uniqueId; /*0x7d03dd*/
     if ( !IsBadWritePtr(v3, 0x41C4u) ) /*0x7d03e6*/
     {
-      v4 = (int *)((void *)v2[3]);
+      v4 = (int *)(v2->vtable4);
       v26 = 0; /*0x7d03f7*/
       lp = v4; /*0x7d03fa*/
       v27 = (int *)(v3 + 81); /*0x7d0403*/
@@ -114,7 +114,7 @@ int __sbh_heap_check()
           if ( IsBadWritePtr(lp, 0x8000u) ) /*0x7d0446*/
             return -4; /*0x7d0685*/
           v6 = 0; /*0x7d0457*/
-          v7 = (unsigned int *)((char *)lp + 4092); /*0x7d0459*/
+          v7 = &lp->u32_FFC; /*0x7d0459*/
           while ( 2 ) /*0x7d045f*/
           {
             v8 = (int *)(v7 - 1020);
@@ -227,7 +227,7 @@ int __sbh_heap_check()
         }
         if ( v28 != *(v5 - 32) || v30 != *v5 ) /*0x7d0629*/
           return -16; /*0x7d06b7*/
-        lp = (char *)lp + 0x8000; /*0x7d062f*/
+        lp = &lp->u8_8000; /*0x7d062f*/
         v27 += 129; /*0x7d0636*/
         v32 *= 2; /*0x7d063d*/
         ++v25; /*0x7d0640*/
@@ -606,7 +606,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
         *((unsigned int *)a0 + v5 - 2) = *((unsigned int *)aP1 + v5 - 2); /*0x7d0b44*/
   UnwindUp1_0:
         *((unsigned int *)a0 + v5 - 1) = *((unsigned int *)aP1 + v5 - 1); /*0x7d0b4c*/
-        v3 = (char *)aP1 + 4 * v5; /*0x7d0b5b*/
+        v3 = &aP1->u32_4 * v5; /*0x7d0b5b*/
         v4 = (char *)a0 + 4 * v5; /*0x7d0b5d*/
   UnwindUp0_0:
         switch ( (unsigned int)(aP2)& 3 ) /*0x7d0b5f*/
@@ -622,7 +622,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
         }
       default:
         memcpy(a0, aP1, 4 * v5); /*0x7d0a53*/
-        v3 = (char *)aP1 + 4 * v5; /*0x7d0a53*/
+        v3 = &aP1->u32_4 * v5; /*0x7d0a53*/
         v4 = (char *)a0 + 4 * v5; /*0x7d0a53*/
         switch ( (unsigned int)(aP2)& 3 ) /*0x7d0a55*/
         {
@@ -969,7 +969,7 @@ int strlen(const char * Str)
     do /*0x7d15d6*/
     {
   main_loop_2:
-      v3 = (*(unsigned int *)v1 + 2130640639) ^ ~*(unsigned int *)v1; /*0x7d15c0*/
+      v3 = (*&v1->u32_1FBFBFBFC) ^ ~*(unsigned int *)v1; /*0x7d15c0*/
       v1 += 4; /*0x7d15ce*/
     }
     while ( (v3 & 0x81010100) == 0 ); /*0x7d15d6*/
@@ -1152,7 +1152,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
           case 'I': /*0x7d181b*/
             if ( v3[1] == 54 && v3[2] == 52 ) /*0x7d1843*/
             {
-              v61 = (wchar_t *)((char *)v61 + 1); /*0x7d1845*/
+              v61 = &v61->u32_1; /*0x7d1845*/
               v63 = 0; /*0x7d1848*/
               v3 += 2; /*0x7d1850*/
               continue; /*0x7d1852*/
@@ -1367,7 +1367,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
                 }
                 if ( v72 ) /*0x7d1d7a*/
                 {
-                  v61 = (wchar_t *)((char *)v61 + 1); /*0x7d1dce*/
+                  v61 = &v61->u32_1; /*0x7d1dce*/
                 }
                 else
                 {
@@ -1385,7 +1385,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
                   else
                   {
                     *(unsigned char *)v37 = v39; /*0x7d1dc3*/
-                    v37 = (wchar_t *)((char *)v37 + 1); /*0x7d1dc5*/
+                    v37 = &v37->u32_1; /*0x7d1dc5*/
                   }
                   v62 = v37; /*0x7d1dc6*/
                 }
@@ -1820,7 +1820,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
   int v55; // [esp+458h] [ebp-4h]
   wchar_t *v56; // [esp+468h] [ebp+Ch]
 
-  v56 = (wchar_t *)(aP1 + 1);
+  v56 = &aP1->AbstractClass_1;
   v4 = (wchar_t *)(0); /*0x7d21cf*/
   v5 = *aP1; /*0x7d21d1*/
   v6 = *aP1 == 0; /*0x7d21d5*/
@@ -2048,7 +2048,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
             if ( v5 == 90 ) /*0x7d24a6*/
             {
               v14 = (int16_t *)get_int_arg_0(&aP2); /*0x7d24d5*/
-              if ( v14 && (v15 = (char *)*((unsigned int *)v14 + 1)) != 0 ) /*0x7d24e4*/
+              if ( v14 && (v15 = (char *)v14->u32_4) != 0 ) /*0x7d24e4*/
               {
                 if ( (v55 & 0x800) != 0 ) /*0x7d24ea*/
                 {
@@ -2602,7 +2602,7 @@ int _ioinit()
         {
           v7[4] = 0; /*0x7d3223*/
           *(unsigned int *)v7 = -1; /*0x7d3227*/
-          *((unsigned int *)v7 + 2) = 0; /*0x7d322a*/
+          v7->u32_8 = 0; /*0x7d322a*/
           v7[5] = 10; /*0x7d322e*/
           v7 += 36; /*0x7d3234*/
         }
@@ -4009,7 +4009,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
     do /*0x7d4c32*/
     {
   find_end_of_dest_string_loop:
-      v4 = (*(unsigned int *)v2 + 2130640639) ^ ~*(unsigned int *)v2; /*0x7d4c1c*/
+      v4 = (*&v2->u32_1FBFBFBFC) ^ ~*(unsigned int *)v2; /*0x7d4c1c*/
       v2 += 4; /*0x7d4c2a*/
     }
     while ( (v4 & 0x81010100) == 0 ); /*0x7d4c32*/
@@ -4045,7 +4045,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
       while ( 1 ) /*0x7d4c92*/
       {
   main_loop_entrance_1:
-        v9 = (*(unsigned int *)v7 + 2130640639) ^ ~*(unsigned int *)v7; /*0x7d4c86*/
+        v9 = (*&v7->u32_1FBFBFBFC) ^ ~*(unsigned int *)v7; /*0x7d4c86*/
         v8 = *(unsigned int *)v7; /*0x7d4c94*/
         v7 += 4; /*0x7d4c96*/
         if ( (v9 & 0x81010100) != 0 ) /*0x7d4c9e*/
@@ -5239,7 +5239,7 @@ AbstractClass * * __init_ctype()
           v12 = *(v11 - 1); /*0x7d6c17*/
           if ( v12 <= *v11 ) /*0x7d6c20*/
           {
-            v13 = (char *)v16 + 2 * v12 + 2; /*0x7d6c25*/
+            v13 = &v16->u8_2 * v12 + 2; /*0x7d6c25*/
             do /*0x7d6c36*/
             {
               *v13 = 0x8000; /*0x7d6c29*/
@@ -5253,7 +5253,7 @@ AbstractClass * * __init_ctype()
         while ( *(v11 - 1) ); /*0x7d6c3a*/
       }
       off_87C594 = v10; /*0x7d6c42*/
-      off_87C590 = (char *)v16 + 2; /*0x7d6c4b*/
+      off_87C590 = &v16->u8_2; /*0x7d6c4b*/
       if ( dword_B78518 ) /*0x7d6c57*/
         free(dword_B78518); /*0x7d6c5a*/
       dword_B78518 = v16; /*0x7d6c63*/
@@ -6916,7 +6916,7 @@ int _alloc_osfhnd()
     {
       v6[4] = 0; /*0x7d948f*/
       *(unsigned int *)v6 = -1; /*0x7d9493*/
-      *((unsigned int *)v6 + 2) = 0; /*0x7d9496*/
+      v6->u32_8 = 0; /*0x7d9496*/
       v6[5] = 10; /*0x7d949a*/
       v6 += 36; /*0x7d94a0*/
       v7 = dword_B78A80[v2] + 1152; /*0x7d94a3*/
@@ -8331,7 +8331,7 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
     *(unsigned short *)v5 = 1; /*0x7db29d*/
     if ( (v8 != 0x80000000 || a1) && (v8 & 0x40000000) == 0 ) /*0x7db2b2*/
     {
-      strcpy((char *)(v5 + 4), "1#SNAN"); /*0x7db2b9*/
+      strcpy(&v5->vtable2, "1#SNAN"); /*0x7db2b9*/
   LABEL_23:
       v5->vtable4 = 6; /*0x7db30a*/
       return 0; /*0x7db310*/
@@ -8340,7 +8340,7 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
     {
       if ( !a1 ) /*0x7db2cc*/
       {
-        strcpy((char *)(v5 + 4), "1#IND"); /*0x7db2d3*/
+        strcpy(&v5->vtable2, "1#IND"); /*0x7db2d3*/
   LABEL_20:
         v5->vtable4 = 5; /*0x7db2ed*/
         return 0; /*0x7db2f7*/
@@ -8348,10 +8348,10 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
     }
     else if ( v8 == 0x80000000 && !a1 ) /*0x7db2dd*/
     {
-      strcpy((char *)(v5 + 4), "1#INF"); /*0x7db2e8*/
+      strcpy(&v5->vtable2, "1#INF"); /*0x7db2e8*/
       goto LABEL_20; /*0x7db2e8*/
     }
-    strcpy((char *)(v5 + 4), "1#QNAN"); /*0x7db305*/
+    strcpy(&v5->vtable2, "1#QNAN"); /*0x7db305*/
     goto LABEL_23; /*0x7db305*/
   }
   *(unsigned short *)v24 = 0; /*0x7db325*/
@@ -8418,7 +8418,7 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
     v17 = *(unsigned char *)(v14 - 1); /*0x7db435*/
     v18 = (unsigned char *)(v14 - 2); /*0x7db439*/
     v19 = v17 < 53; /*0x7db43a*/
-    v20 = (unsigned char *)(v5 + 4); /*0x7db43d*/
+    v20 = &v5->vtable2; /*0x7db43d*/
     if ( v19 ) /*0x7db440*/
     {
       while ( v18 >= v20 ) /*0x7db474*/
@@ -8587,13 +8587,13 @@ int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, sh
   result = Arguments; /*0x7db8a6*/
   if ( (*(unsigned char *)(Arguments + 8) & 0x10) != 0 ) /*0x7db8ad*/
     *v8 &= ~1u; /*0x7db8af*/
-  if ( (*(unsigned char *)(result + 8) & 8) != 0 ) /*0x7db8b6*/
+  if ( (result->VtableStub_8 & 8) != 0 ) /*0x7db8b6*/
     *v8 &= ~4u; /*0x7db8b8*/
-  if ( (*(unsigned char *)(result + 8) & 4) != 0 ) /*0x7db8bf*/
+  if ( (result->VtableStub_8 & 4) != 0 ) /*0x7db8bf*/
     *v8 &= ~8u; /*0x7db8c1*/
-  if ( (*(unsigned char *)(result + 8) & 2) != 0 ) /*0x7db8c8*/
+  if ( (result->VtableStub_8 & 2) != 0 ) /*0x7db8c8*/
     *v8 &= ~0x10u; /*0x7db8ca*/
-  if ( (*(unsigned char *)(result + 8) & 1) != 0 ) /*0x7db8d0*/
+  if ( (result->VtableStub_8 & 1) != 0 ) /*0x7db8d0*/
     *v8 &= ~0x20u; /*0x7db8d2*/
   v19 = *(unsigned int *)result & 3; /*0x7db8dc*/
   if ( !v19 ) /*0x7db8e2*/
@@ -8639,7 +8639,7 @@ int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, sh
   if ( v24 == 1 ) /*0x7db91c*/
     *v8 &= 0xFFFFF3FF; /*0x7db91e*/
   LABEL_63:
-  *v16 = *(double *)(result + 64); /*0x7db934*/
+  *v16 = result->u32_40; /*0x7db934*/
   return result; /*0x7db939*/
 }
 }
@@ -9072,7 +9072,7 @@ int _filwbuf(unsigned short ** a1)
       a1[3] = v3; /*0x7dc32e*/
     }
   }
-  if ( a1[6] == (uint16_t *)512 ) /*0x7dc338*/
+  if ( a1[6] == 512 ) /*0x7dc338*/
   {
     v5 = a1[3]; /*0x7dc33a*/
     if ( ((uint8_t)v5 & 8) != 0 && ((((unsigned char *)&(v5))[1]) & 4) == 0 ) /*0x7dc345*/
@@ -9446,7 +9446,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
               *(unsigned int *)v27 = *v26++; /*0x7dc915*/
               v27 += 2; /*0x7dc915*/
               *(unsigned int *)v27 = *v26; /*0x7dc916*/
-              *((unsigned int *)v27 + 1) = v26[1]; /*0x7dc917*/
+              v27->u32_4 = v26[1]; /*0x7dc917*/
               break; /*0x7dc918*/
             case 0xEu: /*0x7dc8b9*/
               v28 = *(unsigned int **)(v18 + 4); /*0x7dc91a*/
@@ -9458,7 +9458,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
               *(unsigned int *)v29 = *v28++; /*0x7dc925*/
               v29 += 2; /*0x7dc925*/
               *(unsigned int *)v29 = *v28; /*0x7dc926*/
-              *((unsigned int *)v29 + 1) = v28[1]; /*0x7dc927*/
+              v29->u32_4 = v28[1]; /*0x7dc927*/
               *v53 = 14; /*0x7dc92b*/
               break; /*0x7dc930*/
             case 0x11u: /*0x7dc8b9*/
@@ -9547,7 +9547,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
         {
           case 2u: /*0x7dcb50*/
           case 0xBu: /*0x7dcb50*/
-            (*((unsigned short *)&(pperrinfo->lpVtbl))) = pvarg.iVal; /*0x7dcb6e*/
+            (pperrinfo->u16_4) = pvarg.iVal; /*0x7dcb6e*/
             return v39; /*0x7dcb71*/
           case 3u: /*0x7dcb50*/
           case 4u: /*0x7dcb50*/
@@ -9570,7 +9570,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
             *(unsigned long long *)&v41[1].lpVtbl = pvarg.llVal; /*0x7dcb7b*/
             return v39; /*0x7dcb7d*/
           case 0x11u: /*0x7dcb50*/
-            (*((unsigned char *)&(pperrinfo->lpVtbl))) = pvarg.bVal; /*0x7dcb85*/
+            (pperrinfo->u16_4) = pvarg.bVal; /*0x7dcb85*/
             return v39; /*0x7dcb87*/
           default:
             if ( (vt & 0x6000) == 0x2000 ) /*0x7dcb93*/
@@ -9637,7 +9637,7 @@ HLOCAL _com_error::sub_7DCE3B()
   result = (HLOCAL)this->u32_8; /*0x7dce3e*/
   this->vfptr = (int)&vt__com_error; /*0x7dce41*/
   if ( result ) /*0x7dce49*/
-    result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(unsigned int *)result + 8))(result); /*0x7dce4e*/
+    result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*&result->u32_20))(result); /*0x7dce4e*/
   v3 = (void *)this->u32_C; /*0x7dce51*/
   if ( v3 ) /*0x7dce56*/
     return LocalFree(v3); /*0x7dce59*/
@@ -9922,10 +9922,10 @@ void output(char * a1, int a2)
           switch ( vtable0 ) /*0x7dd661*/
           {
             case 'I': /*0x7dd661*/
-              if ( (*((unsigned char *)&(thisa->vfptr))) == 54 && (((unsigned char *)&(thisa->vfptr))[1]) == 52 ) /*0x7dd69c*/
+              if ( (thisa->vtable1) == 54 && (thisa->AbstractClass_1) == 52 ) /*0x7dd69c*/
               {
                 (((unsigned char *)&(v56))[1]) |= 0x80u; /*0x7dd6a0*/
-                thisa = (ObjectClass *)((char *)thisa + 2); /*0x7dd6a4*/
+                thisa = &thisa->ptr_2; /*0x7dd6a4*/
               }
               else
               {
@@ -9936,7 +9936,7 @@ void output(char * a1, int a2)
                 {
                   write_char_1(vtable0, &v52); /*0x7dd6ca*/
                   v8 = (char *)thisa; /*0x7dd6cf*/
-                  thisa = (ObjectClass *)((char *)thisa + 1); /*0x7dd6d2*/
+                  thisa = &thisa->AbstractClass_1; /*0x7dd6d2*/
                   vtable0 = *v8; /*0x7dd6d6*/
                 }
                 write_char_1(vtable0, &v52); /*0x7dd6e1*/
@@ -10077,7 +10077,7 @@ void output(char * a1, int a2)
             if ( vtable0 == 90 ) /*0x7dd7f8*/
             {
               v15 = (int16_t *)get_int_arg_1(&a2); /*0x7dd830*/
-              if ( v15 && (v16 = (char *)*((unsigned int *)v15 + 1)) != 0 ) /*0x7dd83f*/
+              if ( v15 && (v16 = (char *)v15->u32_4) != 0 ) /*0x7dd83f*/
               {
                 if ( (v56 & 0x800) != 0 ) /*0x7dd844*/
                 {
@@ -10247,7 +10247,7 @@ void output(char * a1, int a2)
             write_multi_char_1(32, v30, &v52); /*0x7ddbf2*/
   LABEL_171:
           v36 = (char *)thisa; /*0x7ddbfa*/
-          thisa = (ObjectClass *)((char *)thisa + 1); /*0x7ddbfd*/
+          thisa = &thisa->AbstractClass_1; /*0x7ddbfd*/
           vtable0 = *v36; /*0x7ddc00*/
           if ( !*v36 ) /*0x7ddc00*/
             return v52; /*0x7ddc04*/
@@ -11205,8 +11205,8 @@ int _mtinit()
 namespace gamemd {
 int _initptd(int a1)
 {
-  *(unsigned int *)(a1 + 80) = &unk_87CB20; /*0x7d13fc*/
-  *(unsigned int *)(a1 + 20) = 1; /*0x7d1403*/
+  a1->u32_50 = &unk_87CB20; /*0x7d13fc*/
+  a1->AudioBuffer_14 = 1; /*0x7d1403*/
   return a1; /*0x7d140a*/
 }
 } // namespace gamemd
@@ -11277,8 +11277,8 @@ int _fltin2(int a1, int a2)
   v6 = v10 - a2; /*0x7d158a*/
   v7 = v9; /*0x7d158d*/
   *(unsigned int *)a1 = v2; /*0x7d1590*/
-  *(double *)(a1 + 16) = v7; /*0x7d1593*/
-  *(unsigned int *)(a1 + 4) = v6; /*0x7d1597*/
+  a1->u32_10 = v7; /*0x7d1593*/
+  a1->u32_4 = v6; /*0x7d1597*/
   return a1; /*0x7d1596*/
 }
 } // namespace gamemd
@@ -11577,11 +11577,11 @@ int _freebuf(MouseClass * a1)
   result = a1->ptr_30; /*0x7d2b59*/
   if ( (result & 0x83) != 0 && (result & 8) != 0 ) /*0x7d2b62*/
   {
-    free(*(void **)(a1 + 8)); /*0x7d2b67*/
+    free(a1->u32_8); /*0x7d2b67*/
     a1->ptr_30 &= 0xFBF7u; /*0x7d2b6c*/
     *(unsigned int *)a1 = 0; /*0x7d2b75*/
-    *(unsigned int *)(a1 + 8) = 0; /*0x7d2b77*/
-    *(unsigned int *)(a1 + 4) = 0; /*0x7d2b7a*/
+    a1->u32_8 = 0; /*0x7d2b77*/
+    a1->u32_4 = 0; /*0x7d2b7a*/
     return 0; /*0x7d2b72*/
   }
   return result; /*0x7d2b7d*/
@@ -11659,8 +11659,8 @@ namespace gamemd {
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
 
-  this->? = 0; /*0x7d2e70*/
-  this->? = 0; /*0x7d2e74*/
+  this->M4 = 0; /*0x7d2e70*/
+  this->M8 = 0; /*0x7d2e74*/
   this->AbstractClass = &exception::`vftable'; /*0x7d2e78*/
   return &this->AbstractClass; /*0x7d2e7e*/
 
@@ -11688,10 +11688,10 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
   *(unsigned int *)this = &vt_exception; /*0x7d2ea3*/
   v3 = strlen(*a2); /*0x7d2eab*/
   v4 = (char *)operator new(v3 + 1); /*0x7d2eb2*/
-  this->u32_4 = v4; /*0x7d2eb8*/
+  this->M4 = v4; /*0x7d2eb8*/
   if ( v4 ) /*0x7d2ebe*/
     strcpy(v4, *a2); /*0x7d2ec3*/
-  this->u32_8 = 1; /*0x7d2eca*/
+  this->M8 = 1; /*0x7d2eca*/
   return this; /*0x7d2ed3*/
 }
 } // namespace gamemd
@@ -11706,18 +11706,18 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 
   *(unsigned int *)this = &vt_exception; /*0x7d2ee0*/
   v3 = *((unsigned int *)a2 + 2); /*0x7d2ee6*/
-  this->u32_8 = v3; /*0x7d2eeb*/
+  this->M8 = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/
   {
     v4 = strlen(*((const char **)a2 + 1)); /*0x7d2ef3*/
     v5 = (char *)operator new(v4 + 1); /*0x7d2efa*/
-    this->u32_4 = v5; /*0x7d2f00*/
+    this->M4 = v5; /*0x7d2f00*/
     if ( v5 ) /*0x7d2f06*/
       strcpy(v5, *((const char **)a2 + 1)); /*0x7d2f0c*/
   }
   else
   {
-    this->u32_4 = *((unsigned int *)a2 + 1); /*0x7d2f18*/
+    this->M4 = *((unsigned int *)a2 + 1); /*0x7d2f18*/
   }
   return this; /*0x7d2f1d*/
 }
@@ -12271,9 +12271,9 @@ unsigned int siglookup(int a1, unsigned int a2)
   {
     do /*0x7d4bb9*/
       result += 12; /*0x7d4baf*/
-    while ( result < a2 + 12 * dword_87CBA4 && *(unsigned int *)(result + 4) != a1 ); /*0x7d4bb9*/
+    while ( result < a2 + 12 * dword_87CBA4 && result->u32_4 != a1 ); /*0x7d4bb9*/
   }
-  if ( result >= a2 + 12 * dword_87CBA4 || *(unsigned int *)(result + 4) != a1 ) /*0x7d4bc8*/
+  if ( result >= a2 + 12 * dword_87CBA4 || result->u32_4 != a1 ) /*0x7d4bc8*/
     return 0; /*0x7d4bca*/
   return result; /*0x7d4bcc*/
 }
@@ -12335,7 +12335,7 @@ struct tm * gmtime(CampaignScore * aP0)
   v4 = v3; /*0x7d52ca*/
   if ( v1 < 0 ) /*0x7d52cc*/
     return 0; /*0x7d52ce*/
-  if ( *(unsigned int *)(v3 + 64) || (v6 = malloc(0x24u), *(unsigned int *)(v4 + 64) = v6, v7 = (struct tm *)&unk_B783B0, v6) ) /*0x7d52ed*/
+  if ( *(unsigned int *)(v3 + 64) || (v6 = malloc(0x24u), v4->q040 = v6, v7 = (struct tm *)&unk_B783B0, v6) ) /*0x7d52ed*/
     v7 = *(struct tm **)(v4 + 64); /*0x7d52ef*/
   v8 = v1 / 126230400; /*0x7d52fa*/
   v9 = v1 % 126230400; /*0x7d5304*/
@@ -12957,13 +12957,13 @@ int _get_lc_lconv(CCINIClass * a1)
   v8 = __getlocaleinfo(1, v1, 0x50u, a1 + 8) | v7; /*0x7d697e*/
   v9 = __getlocaleinfo(1, v1, 0x51u, a1 + 9) | v8; /*0x7d698e*/
   v10 = __getlocaleinfo(0, v1, 0x1Au, a1 + 10) | v9; /*0x7d69a1*/
-  v11 = __getlocaleinfo(0, v1, 0x19u, (char **)((char *)a1 + 41)) | v10; /*0x7d69b1*/
-  v12 = __getlocaleinfo(0, v1, 0x54u, (char **)((char *)a1 + 42)) | v11; /*0x7d69c1*/
-  v13 = __getlocaleinfo(0, v1, 0x55u, (char **)((char *)a1 + 43)) | v12; /*0x7d69d1*/
+  v11 = __getlocaleinfo(0, v1, 0x19u, &a1->q029) | v10; /*0x7d69b1*/
+  v12 = __getlocaleinfo(0, v1, 0x54u, &a1->u32_2A) | v11; /*0x7d69c1*/
+  v13 = __getlocaleinfo(0, v1, 0x55u, &a1->q02B) | v12; /*0x7d69d1*/
   v14 = __getlocaleinfo(0, v1, 0x56u, a1 + 11) | v13; /*0x7d69e4*/
-  v15 = __getlocaleinfo(0, v1, 0x57u, (char **)((char *)a1 + 45)) | v14; /*0x7d69f4*/
-  v16 = __getlocaleinfo(0, v1, 0x52u, (char **)((char *)a1 + 46)) | v15; /*0x7d6a07*/
-  return v16 | __getlocaleinfo(0, v1, 0x53u, (char **)((char *)a1 + 47)); /*0x7d6a1a*/
+  v15 = __getlocaleinfo(0, v1, 0x57u, &a1->u32_2D) | v14; /*0x7d69f4*/
+  v16 = __getlocaleinfo(0, v1, 0x52u, &a1->u32_2E) | v15; /*0x7d6a07*/
+  return v16 | __getlocaleinfo(0, v1, 0x53u, &a1->u32_2F); /*0x7d6a1a*/
 }
 } // namespace gamemd
 
@@ -13839,9 +13839,9 @@ int ___dtold(unsigned int a1, int a2, int * a3)
   {
     if ( !v7 && !v6 ) /*0x7d7e72*/
     {
-      *(unsigned int *)(a2 + 4) = 0; /*0x7d7e77*/
+      a2->u32_4 = 0; /*0x7d7e77*/
       *(unsigned int *)a2 = 0; /*0x7d7e7a*/
-      *(unsigned short *)(a2 + 8) = 0; /*0x7d7e7c*/
+      a2->VtableStub_8 = 0; /*0x7d7e7c*/
       return a2; /*0x7d7e80*/
     }
     v8 = v4 + 15361; /*0x7d7e82*/
@@ -13850,7 +13850,7 @@ int ___dtold(unsigned int a1, int a2, int * a3)
   v10 = (v7 << 11) | (v6 >> 21); /*0x7d7e93*/
   result = a2; /*0x7d7e95*/
   v11 = v13 | v10; /*0x7d7e98*/
-  *(unsigned int *)(a2 + 4) = v11; /*0x7d7e9e*/
+  a2->u32_4 = v11; /*0x7d7e9e*/
   *(unsigned int *)a2 = v6 << 11; /*0x7d7ea1*/
   while ( (v11 & 0x80000000) == 0 ) /*0x7d7ea5*/
   {
@@ -13859,7 +13859,7 @@ int ___dtold(unsigned int a1, int a2, int * a3)
     --v8; /*0x7d7eba*/
     v11 = (*(((unsigned int *)&(v12)) + 1)); /*0x7d7ec0*/
   }
-  *(unsigned short *)(a2 + 8) = v8 | v14; /*0x7d7ec9*/
+  a2->VtableStub_8 = v8 | v14; /*0x7d7ec9*/
   return result; /*0x7d7ecd*/
 }
 } // namespace gamemd
@@ -14525,7 +14525,7 @@ int findenv(unsigned char * Str1, size_t MaxCount)
       if ( v4 == 61 || !v4 ) /*0x7dab83*/
         break; /*0x7dab83*/
     }
-    v3 = (const uint8_t *)*((unsigned int *)v2 + 1); /*0x7dab85*/
+    v3 = (const uint8_t *)v2->__pad_004; /*0x7dab85*/
     v2 += 4; /*0x7dab88*/
     if ( !v3 ) /*0x7dab8d*/
       return -((v2 - (unsigned char *)dword_B781E4) >> 2); /*0x7dab8d*/
@@ -14724,7 +14724,7 @@ int * __shr_12(int * a1)
 
   v2 = a1[2]; /*0x7db119*/
   v3 = a1[1]; /*0x7db121*/
-  a1[1] = *(int64_t *)(a1 + 1) >> 1; /*0x7db12a*/
+  a1[1] = a1->u32_1 >> 1; /*0x7db12a*/
   v4 = (v3 << 31) | ((unsigned int)*a1 >> 1); /*0x7db136*/
   a1[2] = v2 >> 1; /*0x7db139*/
   *a1 = v4; /*0x7db13c*/

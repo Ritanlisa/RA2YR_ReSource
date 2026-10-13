@@ -68,14 +68,14 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4)
 {
-  return AbstractClass::SaveLoad_Prefix((int *)this->__pad_0, a2, a3); /*0x74eef4*/
+  return AbstractClass::SaveLoad_Prefix((int *)this->vtable1, a2, a3); /*0x74eef4*/
 }
 }  // G42.18c ns repair
 // 0x74EF00
 namespace gamemd {  // G42.18c ns repair
 int VeinholeMonsterClass::CheckStatus()
 {
-  return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4084); /*0x74ef0b*/
+  return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4084); /*0x74ef0b*/
 }
 }  // G42.18c ns repair
 // 0x74F2D0

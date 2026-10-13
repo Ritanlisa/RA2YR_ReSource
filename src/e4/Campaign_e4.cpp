@@ -47,7 +47,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   m_8 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
-    (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76594d*/
+    (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
   LOBYTE(this->m_C) = 0; /*0x765857*/
@@ -61,7 +61,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7658bd*/
+        *(unsigned int *)v6->__pad_000 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -99,23 +99,23 @@ LABEL_14:
   LOBYTE(this->m_C) = 1; /*0x7658cf*/
   if ( !v8 ) /*0x7658d5*/
     return 0; /*0x7658da*/
-  if ( *(unsigned int *)&this->m_1[3] ) /*0x7658e1*/
+  if ( *&this->q004 ) /*0x7658e1*/
   {
-    if ( a2 >= this->m_8 ) /*0x7658ed*/
-      m_8 = this->m_8; /*0x7658ef*/
+    if ( a2 >= this->q008 ) /*0x7658ed*/
+      m_8 = this->q008; /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
-      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x765902*/
+      ComPtr::Set(&v8->ComPtr_field_0x08 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x765902*/
     if ( BYTE1(this->m_C) ) /*0x76590c*/
     {
-      v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x765913*/
+      v12 = *(void (****)(unsigned int, int))&this->q004; /*0x765913*/
       if ( v12 ) /*0x765918*/
         (**v12)(v12, 3); /*0x76591e*/
-      *(unsigned int *)&this->m_1[3] = 0; /*0x765920*/
+      *&this->q004 = 0; /*0x765920*/
     }
     m_8 = a2; /*0x765927*/
   }
-  *(unsigned int *)&this->m_1[3] = v8; /*0x765936*/
-  this->m_8 = m_8; /*0x765939*/
+  *&this->q004 = v8; /*0x765936*/
+  this->q008 = m_8; /*0x765939*/
   BYTE1(this->m_C) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 
@@ -143,8 +143,8 @@ namespace gamemd {
 BOOL Campaign_WorldDominationTour_24::ddtor()
 {
 
-  --*((unsigned int *)this + 2); /*0x765b52*/
-  return this->__pad_0; /*0x765b55*/
+  --this->u32_8; /*0x765b52*/
+  return this->q000; /*0x765b55*/
 
 }
 }
@@ -167,7 +167,7 @@ LONG Campaign::Screen(char a1)
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x60d3a1*/
     ShowWindow((HWND)Dialog, 1); /*0x60d3aa*/
     SetForegroundWindow((HWND)Dialog); /*0x60d3b1*/
-    Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x60d3bd*/
+    Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x60d3bd*/
     if ( a1 ) /*0x60d3c8*/
       BINK::Background_Setup((HWND)(Dialog)); /*0x60d3cc*/
     while ( !dwNewLong ) /*0x60d3d7*/
@@ -175,7 +175,7 @@ LONG Campaign::Screen(char a1)
       MessageLoop(); /*0x60d3d9*/
       if ( !*(unsigned int *)&dword_A8B238 /*0x60d3fc*/
         || *(unsigned int *)&dword_A8B238 == 5
-        || (((unsigned char *)&(stru_A8D600.Network_field_0xC))[2])
+        || (((unsigned char *)&(DataGlobal_A8D60C))[2])
         || dword_A8DAB4 )
       {
         Event::Dispatch(); /*0x60d412*/
@@ -197,7 +197,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, 
 {
   int v3; // edi
 
-  v3 = *(unsigned int *)&a3_2->q004 + 8 * a3_2; /*0x7656dd*/
+  v3 = *&a3_2->u32_4 + 8 * a3_2; /*0x7656dd*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x7656e2*/
   *(unsigned int *)(a3_2) = &vt_rc_ptr; /*0x7656e7*/
   ComPtr::Set((ComPtr *)a3_2, v3->u32_4); /*0x7656f3*/
@@ -237,10 +237,10 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x765779*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     operator delete((void *)(Block)); /*0x765782*/
-  return Block->__pad_0; /*0x76578c*/
+  return Block->tail_0; /*0x76578c*/
 }
 } // namespace gamemd
 
@@ -259,7 +259,7 @@ char Campaign_WorldDominationTour_16::AddRef(int a2)
     v3 = 0; /*0x765801*/
     if ( m_8 <= 0 ) /*0x765805*/
       return 1; /*0x76582b*/
-    v4 = (unsigned int *)(*(unsigned int *)&this->q004 + 4); /*0x76580d*/
+    v4 = (unsigned int *)(*&this->q004 + 4); /*0x76580d*/
     for ( i = (unsigned int *)(*(unsigned int *)(a2 + 4) + 4); *v4 == *i; i += 2 ) /*0x765810*/
     {
       ++v3; /*0x76581b*/
@@ -280,12 +280,12 @@ int Campaign_WorldDominationTour_16::ddtor()
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x765966*/
-  if ( v2 && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x76596d*/
+  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x76596d*/
   {
     result = (**v2)(v2, 3); /*0x76597a*/
-    *(unsigned int *)&this->q004 = 0; /*0x76597c*/
+    *&this->q004 = 0; /*0x76597c*/
   }
-  (((unsigned char *)&(this->q00C))[1]) = 0; /*0x76597f*/
+  (this->IsAllocated) = 0; /*0x76597f*/
   this->q008 = 0; /*0x765982*/
   return result; /*0x765985*/
 }
@@ -317,8 +317,8 @@ int Campaign_WorldDominationTour_16::Read(int a2, void *a2_2)
 namespace gamemd {
 unsigned int Campaign_WorldDominationTour_16::Write(int a2)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x7659d0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x7659e5*/
+  if ( (this->m_C) ) /*0x7659d0*/
+    return (unsigned int)(a2 - *&this->q004) >> 3; /*0x7659e5*/
   else
     return 0; /*0x7659d7*/
 }
@@ -330,17 +330,17 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
 {
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (****)(unsigned int, int))&Block->q004; /*0x765b63*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x765b66*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x765b70*/
+  v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x765b63*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x765b66*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/
-    *(unsigned int *)&Block->q004 = 0; /*0x765b81*/
+    *&Block->__pad_004 = 0; /*0x765b81*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x765b8c*/
-  Block->q008 = 0; /*0x765b92*/
+  (Block->u32_D) = 0; /*0x765b8c*/
+  Block->u32_8 = 0; /*0x765b92*/
   if ( (a2 & 1) != 0 ) /*0x765b99*/
     operator delete((void *)(Block)); /*0x765b9c*/
-  return Block->__pad_0; /*0x765ba6*/
+  return Block->tail_0; /*0x765ba6*/
 }
 } // namespace gamemd

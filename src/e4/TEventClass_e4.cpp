@@ -392,27 +392,27 @@ LABEL_139:
         switch ( TEventClass_field_2C ) /*0x71eea2*/
         {
           case 12: /*0x71eea2*/
-            if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= this->TEventClass_field_34 ) /*0x71ef0e*/
+            if ( (*(int (**)(int))(a3->u32_24 + 24))(a3 + 36) >= this->TEventClass_field_34 ) /*0x71ef0e*/
               goto LABEL_122; /*0x71ef0e*/
             LOBYTE(v18) = 0; /*0x71ef17*/
             return v18; /*0x71ef1d*/
           case 15: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21640) >= this->TEventClass_field_34 ) /*0x71f04a*/
+            if ( a3->u32_5488 >= this->TEventClass_field_34 ) /*0x71f04a*/
               goto LABEL_122; /*0x71f04a*/
             LOBYTE(v18) = 0; /*0x71f04f*/
             return v18; /*0x71f055*/
           case 16: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21556) >= this->TEventClass_field_34 ) /*0x71f063*/
+            if ( a3->u32_5434 >= this->TEventClass_field_34 ) /*0x71f063*/
               goto LABEL_122; /*0x71f063*/
             goto LABEL_139; /*0x71f063*/
           case 17: /*0x71eea2*/
-            if ( *(int *)(a3 + 752) <= 0 ) /*0x71ef47*/
+            if ( a3->u32_2F0 <= 0 ) /*0x71ef47*/
               goto LABEL_122; /*0x71ef47*/
-            v44 = *(unsigned int *)(a3 + 120); /*0x71ef4d*/
+            v44 = a3->u32_78; /*0x71ef4d*/
             v45 = 0; /*0x71ef50*/
             if ( v44 <= 0 ) /*0x71ef54*/
               goto LABEL_122; /*0x71ef54*/
-            v46 = *(int **)(a3 + 108); /*0x71ef5a*/
+            v46 = a3->u32_6C; /*0x71ef5a*/
             while ( 1 ) /*0x71ef5d*/
             {
               v47 = *v46; /*0x71ef5d*/
@@ -427,25 +427,25 @@ LABEL_139:
                 goto LABEL_122; /*0x71ef87*/
             }
           case 18: /*0x71eea2*/
-            if ( *(unsigned char *)(a3 + 505) ) /*0x71ef8e*/
+            if ( a3->u8_1F9 ) /*0x71ef8e*/
               goto LABEL_122; /*0x71ef96*/
             LOBYTE(v18) = 0; /*0x71ef9f*/
             return v18; /*0x71efa5*/
           case 19: /*0x71eea2*/
-            v48 = *(unsigned int *)(a3 + 620); /*0x71efeb*/
+            v48 = a3->u32_26C; /*0x71efeb*/
             goto LABEL_112; /*0x71efeb*/
           case 20: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 628) != this->TEventClass_field_34 ) /*0x71f00e*/
+            if ( a3->u32_274 != this->TEventClass_field_34 ) /*0x71f00e*/
               goto LABEL_139; /*0x71f00e*/
             *(unsigned char *)a6 = 1; /*0x71f018*/
             goto LABEL_122; /*0x71f01b*/
           case 21: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 624) != this->TEventClass_field_34 ) /*0x71f028*/
+            if ( a3->u32_270 != this->TEventClass_field_34 ) /*0x71f028*/
               goto LABEL_139; /*0x71f028*/
             *(unsigned char *)a6 = 1; /*0x71f032*/
             goto LABEL_122; /*0x71f035*/
           case 22: /*0x71eea2*/
-            v48 = *(unsigned int *)(a3 + 632); /*0x71f037*/
+            v48 = a3->u32_278; /*0x71f037*/
 LABEL_112:
             if ( v48 != this->TEventClass_field_34 ) /*0x71eff4*/
               goto LABEL_139; /*0x71eff4*/
@@ -459,17 +459,17 @@ LABEL_112:
             auxParticles1 = FootClass_Array.?; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efb9*/
+            if ( !DynamicVector::GetOrGrow(&a3->DynamicVector_5550, this->TEventClass_field_34) ) /*0x71efb9*/
               goto LABEL_139; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
           case 52: /*0x71eea2*/
-            if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= this->TEventClass_field_34 ) /*0x71ef2d*/
+            if ( (*(int (**)(int))(a3->u32_24 + 24))(a3 + 36) <= this->TEventClass_field_34 ) /*0x71ef2d*/
               goto LABEL_122; /*0x71ef2d*/
             LOBYTE(v18) = 0; /*0x71ef36*/
             return v18; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efd5*/
+            if ( DynamicVector::GetOrGrow(&a3->DynamicVector_5550, this->TEventClass_field_34) ) /*0x71efd5*/
               goto LABEL_139; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/
@@ -486,7 +486,7 @@ LABEL_112:
             break; /*0x71eecc*/
           }
           ++v41; /*0x71eed6*/
-          auxParticles1 = (ParticleSystemClass *)((char *)auxParticles1 + 4); /*0x71eed7*/
+          auxParticles1 = &auxParticles1->vtable2; /*0x71eed7*/
           if ( v41 >= (int)FootClass_Array.? ) /*0x71eedc*/
             goto LABEL_91; /*0x71eedc*/
         }
@@ -695,7 +695,7 @@ int TEventClass::CheckConditions(int a2, int a3)
   result = this->TEventClass_field_28; /*0x71f800*/
   if ( result == a2 ) /*0x71f809*/
   {
-    result = *(unsigned int *)(result + 40); /*0x71f80b*/
+    result = result->TEventClass_field_28; /*0x71f80b*/
     this->TEventClass_field_28 = result; /*0x71f80e*/
   }
   if ( this->TEventClass_field_30 == a2 ) /*0x71f814*/
@@ -716,7 +716,7 @@ void * TEventClass::Fire(void ** Block, char a2)
 
   Block->AbstractClass = &TEventClass::`vftable'; /*0x71fa86*/
   Block->? = &TEventClass::`vftable'; /*0x71fa8c*/
-  Block->? = &TEventClass::`vftable'; /*0x71fa93*/
+  Block->u32_8 = &TEventClass::`vftable'; /*0x71fa93*/
   Block->? = &TEventClass::`vftable'; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
@@ -752,9 +752,9 @@ void * TEventClass::Fire(void ** Block, char a2)
   v5 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.?[50] + 16))( /*0x71fb4c*/
          &g_BuildingLoadQueue_Array.?[50],
          &v7);
-  if ( v5 != -1 && v5 < g_BuildingLoadQueue_Array.?[54] ) /*0x71fb5c*/
+  if ( v5 != -1 && v5 < dword_B0F1B0 ) /*0x71fb5c*/
   {
-    --g_BuildingLoadQueue_Array.?[54]; /*0x71fb61*/
+    --dword_B0F1B0; /*0x71fb61*/
     for ( ; /*0x71fb67*/
           v5 < g_BuildingLoadQueue_Array.?[54];
           *(unsigned int *)(g_BuildingLoadQueue_Array.?[51] + 4 * v5 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.?[51]

@@ -32,10 +32,10 @@ unsigned int * WWMouseClass::initSurface()
   unsigned int v8[4]; // [esp+4h] [ebp-20h] BYREF
   unsigned int v9[4]; // [esp+14h] [ebp-10h] BYREF
 
-  result = this->__pad_0; /*0x7b9040*/
-  if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b9052*/
+  result = this->HandleClick_ph; /*0x7b9040*/
+  if ( *&this->q050 > 0 && *&this->q054 > 0 ) /*0x7b9052*/
   {
-    WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b9054*/
+    WWMouseClass_field_0x24 = this->outBuffer; /*0x7b9054*/
     if ( WWMouseClass_field_0x24 ) /*0x7b9059*/
     {
       v3 = result[17]; /*0x7b905b*/
@@ -84,25 +84,25 @@ int WWMouseClass::hideCursor()
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
     Debug::Log(); /*0x7b9960*/
-  if ( !this->WWMouseClass_field_0xC ) /*0x7b9968*/
+  if ( !this->m_MaxY ) /*0x7b9968*/
   {
-    if ( (*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9977*/
+    if ( (*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->HandleClick_ph + 28))(this) ) /*0x7b9977*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
         Debug::Log(); /*0x7b99a5*/
-      if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b99ba*/
+      if ( *&this->q050 > 0 && *&this->q054 > 0 ) /*0x7b99ba*/
       {
-        WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b99bc*/
+        WWMouseClass_field_0x24 = this->outBuffer; /*0x7b99bc*/
         if ( WWMouseClass_field_0x24 ) /*0x7b99c1*/
         {
-          WWMouseClass_field_0x44 = this->WWMouseClass_field_0x44; /*0x7b99c3*/
+          WWMouseClass_field_0x44 = this->__pad_044; /*0x7b99c3*/
           if ( WWMouseClass_field_0x44 ) /*0x7b99c8*/
           {
-            v4 = *(unsigned int *)&this->__pad_48[4]; /*0x7b99cd*/
-            v5 = *(unsigned int *)&this->__pad_48[8]; /*0x7b99d3*/
-            v6 = *(unsigned int *)&this->__pad_48[12]; /*0x7b99d7*/
-            v10[0] = (char *)this->WWMouseClass_field_0x2C + *(unsigned int *)this->__pad_48; /*0x7b99da*/
-            v7 = (char *)this->WWMouseClass_field_0x30 + v4; /*0x7b99e1*/
+            v4 = *&this->q04C; /*0x7b99cd*/
+            v5 = *&this->q050; /*0x7b99d3*/
+            v6 = *&this->q054; /*0x7b99d7*/
+            v10[0] = (char *)this->q02C + *(unsigned int *)this->q048; /*0x7b99da*/
+            v7 = (char *)this->q_30 + v4; /*0x7b99e1*/
             v9[0] = 0; /*0x7b99e7*/
             v9[1] = 0; /*0x7b99eb*/
             v10[2] = v5; /*0x7b99f4*/
@@ -128,7 +128,7 @@ int WWMouseClass::hideCursor()
         ; /*0x7b9a33*/
     }
   }
-  --this->WWMouseClass_field_0xC; /*0x7b9a3f*/
+  --this->m_MaxY; /*0x7b9a3f*/
   return ReleaseMutex(hMutex); /*0x7b9a4f*/
 
 }
@@ -156,33 +156,33 @@ void* WWMouseClass::captureMouse()
   unsigned int v17[4]; // [esp+14h] [ebp-20h] BYREF
   Rect v18; // [esp+24h] [ebp-10h] BYREF
 
-  if ( this && !(*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9a70*/
+  if ( this && !(*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->HandleClick_ph + 28))(this) ) /*0x7b9a70*/
   {
     Debug::Log(); /*0x7b9a82*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
       Debug::Log(); /*0x7b9ab4*/
-    v2 = *(unsigned int *)this->__pad_0; /*0x7b9abc*/
-    LOBYTE(this->WWMouseClass_field_0x10) = 1; /*0x7b9ac0*/
+    v2 = *(unsigned int *)this->HandleClick_ph; /*0x7b9abc*/
+    LOBYTE(this->Count) = 1; /*0x7b9ac0*/
     if ( !(*(unsigned __int8 (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
         Debug::Log(); /*0x7b9af8*/
-      if ( (unsigned __int8)BSurface::CreateTripleBuffer((int)this) && this->WWMouseClass_field_0x24 ) /*0x7b9b0f*/
+      if ( (unsigned __int8)BSurface::CreateTripleBuffer((int)this) && this->outBuffer ) /*0x7b9b0f*/
       {
         Rect::Set(&v16, 0, 0, 0, 0); /*0x7b9b26*/
-        if ( this->WWMouseClass_field_0x4 ) /*0x7b9b2b*/
+        if ( this->m_ScrollY ) /*0x7b9b2b*/
         {
           UI_Helper_7BA2C0(); /*0x7b9b32*/
-          FoundationSize = Building::GetFoundationSize(&v18, (unsigned int)this->WWMouseClass_field_0x8); /*0x7b9b43*/
+          FoundationSize = Building::GetFoundationSize(&v18, (unsigned int)this->m_MaxX); /*0x7b9b43*/
           v16.X = *FoundationSize; /*0x7b9b4c*/
           v16.Y = FoundationSize[1]; /*0x7b9b53*/
           v16.Width = FoundationSize[2]; /*0x7b9b5a*/
-          v4 = *(unsigned int *)this->__pad_3C; /*0x7b9b5e*/
+          v4 = *(unsigned int *)this->q03C; /*0x7b9b5e*/
           v16.Height = FoundationSize[3]; /*0x7b9b64*/
-          v5 = *(unsigned int *)this->__pad_14 - v4; /*0x7b9b6b*/
-          v6 = *(unsigned int *)&this->__pad_3C[4]; /*0x7b9b6d*/
+          v5 = *(unsigned int *)this->CapacityIncrement - v4; /*0x7b9b6b*/
+          v6 = *&this->XY2; /*0x7b9b6d*/
           v16.X += v5; /*0x7b9b72*/
-          v16.Y += *(unsigned int *)&this->__pad_14[4] - v6; /*0x7b9b7d*/
+          v16.Y += *&this->q018 - v6; /*0x7b9b7d*/
           ReleaseMutex(hMutex); /*0x7b9b88*/
         }
         X = v16.X; /*0x7b9b8a*/
@@ -190,28 +190,28 @@ void* WWMouseClass::captureMouse()
         Width = v16.Width; /*0x7b9b98*/
         Height = v16.Height; /*0x7b9b9c*/
         v17[0] = v16.X; /*0x7b9ba0*/
-        *(unsigned int *)this->__pad_48 = v16.X; /*0x7b9ba4*/
+        *(unsigned int *)this->q048 = v16.X; /*0x7b9ba4*/
         v17[2] = Width; /*0x7b9ba7*/
         v17[3] = Height; /*0x7b9bab*/
-        *(unsigned int *)&this->__pad_48[4] = Y; /*0x7b9bb1*/
-        *(unsigned int *)&this->__pad_48[8] = Width; /*0x7b9bb6*/
-        *(unsigned int *)&this->__pad_48[12] = Height; /*0x7b9bb9*/
-        v11 = (char *)this->WWMouseClass_field_0x2C + X; /*0x7b9bbf*/
-        WWMouseClass_field_0x44 = (int *)this->WWMouseClass_field_0x44; /*0x7b9bc1*/
+        *&this->q04C = Y; /*0x7b9bb1*/
+        *&this->q050 = Width; /*0x7b9bb6*/
+        *&this->q054 = Height; /*0x7b9bb9*/
+        v11 = (char *)this->q02C + X; /*0x7b9bbf*/
+        WWMouseClass_field_0x44 = (int *)this->__pad_044; /*0x7b9bc1*/
         v17[0] = v11; /*0x7b9bc4*/
-        v17[1] = (char *)this->WWMouseClass_field_0x30 + Y; /*0x7b9bcd*/
+        v17[1] = (char *)this->q_30 + Y; /*0x7b9bcd*/
         v13 = *WWMouseClass_field_0x44; /*0x7b9bd1*/
-        WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b9bdb*/
+        WWMouseClass_field_0x24 = this->outBuffer; /*0x7b9bdb*/
         v14 = Rect::Set(&v18, 0, 0, Width, Height); /*0x7b9be6*/
         (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(v13 + 8))( /*0x7b9bef*/
-          this->WWMouseClass_field_0x44,
+          this->__pad_044,
           v14,
           WWMouseClass_field_0x24,
           v17,
           0,
           1);
       }
-      Mouse::DrawCursor((Mouse *)this, (int *)this->WWMouseClass_field_0x24, 0, 0); /*0x7b9bfd*/
+      Mouse::DrawCursor((Mouse *)this, (int *)this->outBuffer, 0, 0); /*0x7b9bfd*/
       ReleaseMutex(hMutex); /*0x7b9c09*/
     }
     ShowCursor(0); /*0x7b9c0d*/
@@ -235,30 +235,30 @@ void WWMouseClass::releaseMouse()
   unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
   unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( this && (*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9c40*/
+  if ( this && (*(unsigned __int8 (**)(WWMouseClass *))(*(unsigned int *)this->HandleClick_ph + 28))(this) ) /*0x7b9c40*/
   {
     Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
       Debug::Log(); /*0x7b9c83*/
-    v2 = *(unsigned int *)this->__pad_0; /*0x7b9c8b*/
-    LOBYTE(this->WWMouseClass_field_0x10) = 0; /*0x7b9c8f*/
+    v2 = *(unsigned int *)this->HandleClick_ph; /*0x7b9c8b*/
+    LOBYTE(this->Count) = 0; /*0x7b9c8f*/
     if ( !(*(unsigned __int8 (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
         Debug::Log(); /*0x7b9cc1*/
-      if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b9cd6*/
+      if ( *&this->q050 > 0 && *&this->q054 > 0 ) /*0x7b9cd6*/
       {
-        WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/
+        WWMouseClass_field_0x24 = this->outBuffer; /*0x7b9cd8*/
         if ( WWMouseClass_field_0x24 ) /*0x7b9cdd*/
         {
-          WWMouseClass_field_0x44 = this->WWMouseClass_field_0x44; /*0x7b9cdf*/
+          WWMouseClass_field_0x44 = this->__pad_044; /*0x7b9cdf*/
           if ( WWMouseClass_field_0x44 ) /*0x7b9ce4*/
           {
-            v5 = *(unsigned int *)&this->__pad_48[4]; /*0x7b9ce9*/
-            v6 = *(unsigned int *)&this->__pad_48[8]; /*0x7b9cef*/
-            v7 = *(unsigned int *)&this->__pad_48[12]; /*0x7b9cf3*/
-            v10[0] = (char *)this->WWMouseClass_field_0x2C + *(unsigned int *)this->__pad_48; /*0x7b9cf6*/
-            v8 = (char *)this->WWMouseClass_field_0x30 + v5; /*0x7b9cfd*/
+            v5 = *&this->q04C; /*0x7b9ce9*/
+            v6 = *&this->q050; /*0x7b9cef*/
+            v7 = *&this->q054; /*0x7b9cf3*/
+            v10[0] = (char *)this->q02C + *(unsigned int *)this->q048; /*0x7b9cf6*/
+            v8 = (char *)this->q_30 + v5; /*0x7b9cfd*/
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/
             v10[2] = v6; /*0x7b9d10*/
@@ -290,7 +290,7 @@ namespace gamemd {
 int WWMouseClass::checkRegion()
 {
 
-  return (int)this->WWMouseClass_field_0x1C; /*0x7ba343*/
+  return (int)this->q01C; /*0x7ba343*/
 
 }
 } // namespace gamemd
@@ -302,8 +302,8 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
   void *WWMouseClass_field_0x1C; // edx
   void *WWMouseClass_field_0x20; // ecx
 
-  WWMouseClass_field_0x1C = this->WWMouseClass_field_0x1C; /*0x7ba364*/
-  WWMouseClass_field_0x20 = this->WWMouseClass_field_0x20; /*0x7ba367*/
+  WWMouseClass_field_0x1C = this->q01C; /*0x7ba364*/
+  WWMouseClass_field_0x20 = this->CapacityIncrement; /*0x7ba367*/
   *a2 = WWMouseClass_field_0x1C; /*0x7ba36a*/
   a2[1] = WWMouseClass_field_0x20; /*0x7ba36c*/
   return a2; /*0x7ba36f*/
@@ -315,7 +315,7 @@ namespace gamemd {
 int WWMouseClass::COMStub()
 {
 
-  return (int)this->WWMouseClass_field_0xC; /*0x7b89f3*/
+  return (int)this->m_MaxY; /*0x7b89f3*/
 
 }
 } // namespace gamemd
@@ -331,7 +331,7 @@ namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Mouse::`vftable'; /*0x7ba309*/
+  *(unsigned int *)this->HandleClick_ph = &Mouse::`vftable'; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     __3_YAXPAX_Z(this); /*0x7ba312*/
   return this->__pad_0; /*0x7ba31c*/
@@ -343,7 +343,7 @@ namespace gamemd {
 char WWMouseClass::checkCapture()
 {
 
-  return this->WWMouseClass_field_0x10; /*0x7ba333*/
+  return this->Count; /*0x7ba333*/
 
 }
 } // namespace gamemd
@@ -352,7 +352,7 @@ namespace gamemd {
 int WWMouseClass::checkBounds()
 {
 
-  return (int)this->WWMouseClass_field_0x20; /*0x7ba353*/
+  return (int)this->CapacityIncrement; /*0x7ba353*/
 
 }
 } // namespace gamemd

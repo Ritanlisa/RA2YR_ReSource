@@ -21,8 +21,8 @@ void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0,
   this->u32_4 = 0; /*0x76783d*/
   *(unsigned int *)this = &vt_WorldDominationTourGameOption; /*0x767844*/
   this->u32_10 = aP5; /*0x76784a*/
-  String::AssignFromPtr((char *)((char *)&this->q004 + 1), (const char **)&a4); /*0x76784d*/
-  String::AssignFromPtr((char *)((char *)&this->q004 + 2), (const char **)&a2); /*0x76785a*/
+  String::AssignFromPtr((char *)this->u32_4 + 1), (const char **)&a4); /*0x76784d*/
+  String::AssignFromPtr((char *)this->u32_4 + 2), (const char **)&a2); /*0x76785a*/
   *(unsigned int *)this = &vt_WorldDominationTourFlagGameOption; /*0x767863*/
   DeleteAndZero(&a2); /*0x767869*/
   DeleteAndZero(&a4); /*0x767872*/

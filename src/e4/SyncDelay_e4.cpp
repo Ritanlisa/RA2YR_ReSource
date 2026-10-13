@@ -47,13 +47,13 @@ signed int SyncDelay::Start(void *a1, void *a2)
   int v25; // [esp+10h] [ebp-14h] BYREF
   unsigned int v26[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v2 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e160*/
-  v3 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e171*/
-  if ( *(unsigned int *)stru_88732C.__pad_1C != -1 ) /*0x55e179*/
+  v2 = *(unsigned int *)DataGlobal_887348; /*0x55e160*/
+  v3 = *(unsigned int *)&DataGlobal_887350; /*0x55e171*/
+  if ( *(unsigned int *)DataGlobal_887348 != -1 ) /*0x55e179*/
   {
     Ticks = TimerGetTicks(); /*0x55e180*/
-    v2 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e185*/
-    v5 = Ticks - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e18b*/
+    v2 = *(unsigned int *)DataGlobal_887348; /*0x55e185*/
+    v5 = Ticks - *(unsigned int *)DataGlobal_887348; /*0x55e18b*/
     if ( v5 >= v3 ) /*0x55e18f*/
       v3 = 0; /*0x55e195*/
     else
@@ -64,7 +64,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
   {
     while ( 1 ) /*0x55e1c7*/
     {
-      v6 = *(unsigned int *)&stru_88732C.m_2[2]; /*0x55e1c7*/
+      v6 = *(unsigned int *)&DataGlobal_887330; /*0x55e1c7*/
       if ( g_TacticalState != (void *)(-1) ) /*0x55e1cf*/
       {
         v7 = timeGetTime() - g_TacticalState; /*0x55e1db*/
@@ -80,7 +80,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
   LABEL_23:
       Sleep(0); /*0x55e2ac*/
     }
-    v8 = *(unsigned int *)&stru_88732C.m_2[2]; /*0x55e216*/
+    v8 = *(unsigned int *)&DataGlobal_887330; /*0x55e216*/
     v24 = 0; /*0x55e21e*/
     if ( g_TacticalState != (void *)(-1) ) /*0x55e222*/
     {
@@ -91,16 +91,16 @@ signed int SyncDelay::Start(void *a1, void *a2)
     }
     if ( v8 > 10 ) /*0x55e23d*/
     {
-      InputManager_ProcessEvents::Vtable((GScreenClass *)&stru_87F5F0.__pad_58[416], &v24, v26, &v25); /*0x55e253*/
+      InputManager_ProcessEvents::Vtable((GScreenClass *)&DataGlobal_87F7E8, &v24, v26, &v25); /*0x55e253*/
       SyncDelayClass::ProcessNetworkSync(&v24); /*0x55e25c*/
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55e269*/
-      ((TacticalMap *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x55e271*/
+      ((TacticalMap *)((GScreenClass *)&DataGlobal_87F7E8))->Redraw(); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }
   LABEL_18:
     Sleep(0); /*0x55e278*/
   LABEL_19:
-    v10 = *(unsigned int *)&stru_88732C.m_2[2]; /*0x55e27b*/
+    v10 = *(unsigned int *)&DataGlobal_887330; /*0x55e27b*/
     if ( g_TacticalState != (void *)(-1) ) /*0x55e288*/
     {
       v11 = timeGetTime() - g_TacticalState; /*0x55e294*/
@@ -112,10 +112,10 @@ signed int SyncDelay::Start(void *a1, void *a2)
       goto LABEL_38; /*0x55e2a6*/
     goto LABEL_23; /*0x55e2a6*/
   }
-  v12 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e2b4*/
+  v12 = *(unsigned int *)&DataGlobal_887350; /*0x55e2b4*/
   if ( v2 != -1 ) /*0x55e2bc*/
   {
-    v13 = TimerGetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2c8*/
+    v13 = TimerGetTicks() - *(unsigned int *)DataGlobal_887348; /*0x55e2c8*/
     if ( v13 >= v12 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v12 -= v13; /*0x55e2d2*/
@@ -127,26 +127,26 @@ signed int SyncDelay::Start(void *a1, void *a2)
     {
       while ( 1 ) /*0x55e2e3*/
       {
-        v14 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2e3*/
-        v15 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e2e9*/
-        if ( *(unsigned int *)stru_88732C.__pad_1C != -1 ) /*0x55e2f1*/
+        v14 = *(unsigned int *)DataGlobal_887348; /*0x55e2e3*/
+        v15 = *(unsigned int *)&DataGlobal_887350; /*0x55e2e9*/
+        if ( *(unsigned int *)DataGlobal_887348 != -1 ) /*0x55e2f1*/
         {
           v16 = TimerGetTicks(); /*0x55e2f8*/
-          v14 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2fd*/
-          v17 = v16 - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e303*/
+          v14 = *(unsigned int *)DataGlobal_887348; /*0x55e2fd*/
+          v17 = v16 - *(unsigned int *)DataGlobal_887348; /*0x55e303*/
           if ( v17 >= v15 ) /*0x55e307*/
             goto LABEL_38; /*0x55e307*/
           v15 -= v17; /*0x55e309*/
         }
         if ( !v15 ) /*0x55e30d*/
           goto LABEL_38; /*0x55e30d*/
-        v18 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e30f*/
+        v18 = *(unsigned int *)&DataGlobal_887350; /*0x55e30f*/
         if ( v14 != -1 ) /*0x55e317*/
           break; /*0x55e317*/
   LABEL_37:
         Sleep(v18); /*0x55e336*/
       }
-      v19 = TimerGetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e323*/
+      v19 = TimerGetTicks() - *(unsigned int *)DataGlobal_887348; /*0x55e323*/
       if ( v19 >= v18 ) /*0x55e32b*/
       {
         v18 = 0; /*0x55e334*/
@@ -203,7 +203,7 @@ bool SyncDelay::Check(unsigned int * a2)
 {
   unsigned int *v2; // eax
 
-  v2 = (unsigned int *)this->u32_10; /*0x55f6c0*/
+  v2 = (unsigned int *)this->q010; /*0x55f6c0*/
   return v2 && *v2 == *a2; /*0x55f6d3*/
 }
 } // namespace gamemd

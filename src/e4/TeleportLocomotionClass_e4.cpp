@@ -39,7 +39,7 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->Piggybackee = 0; /*0x71805b*/
   *(unsigned int *)this->LocomotionClass = &TeleportLocomotionClass::`vftable'; /*0x71805e*/
   *(unsigned int *)&this->LocomotionClass[4] = &TeleportLocomotionClass::`vftable'; /*0x718064*/
-  *(unsigned int *)this->__pad_18 = &TeleportLocomotionClass::`vftable'; /*0x71806b*/
+  *(unsigned int *)this->vtable3 = &TeleportLocomotionClass::`vftable'; /*0x71806b*/
   return (int)this->LocomotionClass; /*0x718074*/
 
 }

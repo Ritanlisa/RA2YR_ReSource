@@ -15,7 +15,7 @@ int TimerClass::Active()
   int v1; // edx
   int v2; // eax
 
-  if ( *(unsigned short *)&this->q028 <= 0 ) /*0x4c9485*/
+  if ( *&this->q028 <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
   v1 = this->u32_8; /*0x4c9487*/
   v2 = this->u32_10; /*0x4c948a*/
@@ -101,19 +101,19 @@ signed int TimerClass::GetRemaining()
   signed int result; // eax
   signed int v3; // edi
 
-  result = this->__pad_004; /*0x5cead3*/
+  result = this->u32_4; /*0x5cead3*/
   if ( result != -1 ) /*0x5cead9*/
   {
     v3 = this->u32_18; /*0x5ceadc*/
-    result = TimerGetTicks() - this->__pad_004; /*0x5ceaec*/
+    result = TimerGetTicks() - this->u32_4; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
       this->u32_18 = 0; /*0x5ceb04*/
-      this->__pad_004 = -1; /*0x5ceb07*/
+      this->u32_4 = -1; /*0x5ceb07*/
     }
     else
     {
-      this->__pad_004 = -1; /*0x5ceaf5*/
+      this->u32_4 = -1; /*0x5ceaf5*/
       this->u32_18 = v3 - result; /*0x5ceafc*/
     }
   }

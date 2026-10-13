@@ -77,7 +77,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   }
   *(unsigned int *)optval = 1; /*0x7b0e44*/
   optlen = 4; /*0x7b0e4e*/
-  if ( stru_887598.onBridge && stru_887598.vfptr == (void *)4 && !stru_887598.vfptr1 ) /*0x7b0e63*/
+  if ( stru_887598.onBridge && stru_887598.vfptr == 4 && !stru_887598.vfptr1 ) /*0x7b0e63*/
   {
     Debug::Log(); /*0x7b0eae*/
   }
@@ -151,22 +151,22 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
       if ( HIWORD(fromlen) ) /*0x7b140c*/
       {
 LABEL_6:
-        (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, *((unsigned int *)this + 64539)); /*0x7b1411*/
+        (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, this->u32_3F06C); /*0x7b1411*/
         return 0; /*0x7b1429*/
       }
-      if ( *((unsigned int *)this + 12) ) /*0x7b142c*/
+      if ( this->q_30 ) /*0x7b142c*/
       {
         while ( 1 ) /*0x7b1446*/
         {
-          v25 = *((unsigned short *)this + 129414); /*0x7b1446*/
+          v25 = this->u32_3F30C; /*0x7b1446*/
           v7 = (Network *)**((unsigned int **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
           *(unsigned short *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
-          if ( v7->__pad_14[0] ) /*0x7b1458*/
+          if ( v7->__pad_14 ) /*0x7b1458*/
           {
-            *(unsigned int *)to.sa_data = *((unsigned int *)this + 64703); /*0x7b146b*/
-            *(unsigned int *)&to.sa_data[4] = *((unsigned int *)this + 64704); /*0x7b1471*/
-            *(unsigned short *)&to.sa_data[8] = *((unsigned short *)this + 129410); /*0x7b1479*/
+            *(unsigned int *)to.sa_data = this->u32_3F2FC; /*0x7b146b*/
+            *(unsigned int *)&to.sa_data[4] = this->u32_3F300; /*0x7b1471*/
+            *(unsigned short *)&to.sa_data[8] = this->u32_3F304; /*0x7b1479*/
           }
           else
           {
@@ -175,33 +175,33 @@ LABEL_6:
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(*((unsigned int *)this + 64539), &v7->__pad_14[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto(this->u32_3F06C, &v7->u32_1C, (int)v7->q010 + 4, 0, &to, 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/
           }
-          v8 = *((unsigned int *)this + 12); /*0x7b14e0*/
+          v8 = this->q_30; /*0x7b14e0*/
           if ( v8 > 0 ) /*0x7b14e5*/
           {
             v9 = v8 - 1; /*0x7b14e7*/
             v10 = 0; /*0x7b14ea*/
-            for ( *((unsigned int *)this + 12) = v9; /*0x7b14f1*/
-                  v10 < *((unsigned int *)this + 12);
-                  *(unsigned int *)(*((unsigned int *)this + 9) + 4 * v10 - 4) = *(unsigned int *)(*((unsigned int *)this + 9) + 4 * v10) )
+            for ( this->q_30 = v9; /*0x7b14f1*/
+                  v10 < this->q_30;
+                  *(unsigned int *)(this->u32_24 + 4 * v10 - 4) = *(unsigned int *)(this->u32_24 + 4 * v10) )
             {
               ++v10; /*0x7b14f6*/
             }
           }
-          if ( v7->__pad_14[2] ) /*0x7b1505*/
+          if ( v7->q016 ) /*0x7b1505*/
           {
             __3_YAXPAX_Z(v7); /*0x7b150d*/
           }
           else
           {
             v7->__pad_14[1] = 0; /*0x7b1517*/
-            --*((unsigned int *)this + 64536); /*0x7b1522*/
+            --this->u32_3F060; /*0x7b1522*/
           }
-          if ( !*((unsigned int *)this + 12) ) /*0x7b1528*/
+          if ( !this->q_30 ) /*0x7b1528*/
             return 0; /*0x7b153c*/
         }
         goto LABEL_6; /*0x7b14da*/
@@ -211,18 +211,18 @@ LABEL_6:
   }
   if ( HIWORD(fromlen) ) /*0x7b153f*/
   {
-    (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, *((unsigned int *)this + 64539)); /*0x7b1550*/
+    (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, this->u32_3F06C); /*0x7b1550*/
     return 0; /*0x7b155c*/
   }
-  v11 = *((unsigned int *)this + 64539); /*0x7b1577*/
+  v11 = this->u32_3F06C; /*0x7b1577*/
   fromlen = 14; /*0x7b157d*/
-  v12 = recvfrom(v11, (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
+  v12 = recvfrom(v11, &this->q3F074, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
   v26 = v12; /*0x7b158e*/
   if ( v12 == -1 ) /*0x7b1592*/
   {
     if ( WSAGetLastError() != 10035 ) /*0x7b159e*/
     {
-      (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, *((unsigned int *)this + 64539)); /*0x7b15b0*/
+      (*(void (**)(IPXInterfaceClass *, unsigned int))(this->Socket + 36))(this, this->u32_3F06C); /*0x7b15b0*/
       return 0; /*0x7b15bc*/
     }
     return 0; /*0x7b159e*/
@@ -232,10 +232,10 @@ LABEL_6:
   v27 = *(unsigned int *)&to.sa_data[4]; /*0x7b15d4*/
   a3 = *(unsigned int *)to.sa_data; /*0x7b15d8*/
   v28 = *(unsigned short *)&to.sa_data[8]; /*0x7b15e6*/
-  if ( *(unsigned int *)to.sa_data == *((unsigned int *)this + 64703) ) /*0x7b15ef*/
+  if ( *(unsigned int *)to.sa_data == this->u32_3F2FC ) /*0x7b15ef*/
   {
     v13 = 3; /*0x7b15f1*/
-    v14 = (unsigned short *)((char *)this + 258822); /*0x7b15f6*/
+    v14 = &this->u32_3F306; /*0x7b15f6*/
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
     do /*0x7b1602*/
@@ -255,14 +255,14 @@ LABEL_6:
   if ( v17 > 0 && Random::Range(&Randomizer_Global, 0, 99) <= v17 ) /*0x7b1626*/
     return 0; /*0x7b1717*/
   v18 = (NetworkID *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
-  *(unsigned int *)v18[2].__pad_0 = v26 - 4; /*0x7b1646*/
-  v18[3].NetworkID_field_0x04 = *((unsigned int *)this + 64541); /*0x7b1651*/
-  qmemcpy(&v18[4], (char *)this + 258168, v26 - 4); /*0x7b1657*/
+  *v18->u32_8.__pad_0 = v26 - 4; /*0x7b1646*/
+  v18[3].NetworkID_field_0x04 = this->q3F074; /*0x7b1651*/
+  qmemcpy(&v18[4], &this->q3F078, v26 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
-    v19 = *(unsigned int *)&this->LocalNode[4]; /*0x7b16d5*/
-    v20 = *((unsigned int *)this + 6); /*0x7b16d8*/
+    v19 = *&this->u32_24; /*0x7b16d5*/
+    v20 = this->u32_18; /*0x7b16d8*/
     p_LocalNetwork = &this->LocalNetwork; /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
       || (*((unsigned char *)p_LocalNetwork + 13) || !v19)
@@ -286,7 +286,7 @@ LABEL_6:
   else
   {
     BYTE1(v18[2].NetworkID_field_0x04) = 0; /*0x7b16a5*/
-    --*((unsigned int *)this + 64536); /*0x7b16b1*/
+    --this->u32_3F060; /*0x7b16b1*/
   }
   return 0; /*0x7b13e4*/
 
@@ -307,29 +307,29 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   unsigned char *v2; // eax
   int v3; // edx
 
-  *((unsigned int *)a1 + 3) = 0; /*0x7b19d2*/
-  *((unsigned int *)a1 + 4) = 0; /*0x7b19d5*/
-  a1->u32_50 = 1; /*0x7b19d8*/
+  a1->u32_C = 0; /*0x7b19d2*/
+  a1->u32_10 = 0; /*0x7b19d5*/
+  a1->u8_14 = 1; /*0x7b19d8*/
   a1->u32_54 = 0; /*0x7b19db*/
-  *((unsigned int *)a1 + 2) = &vt_DynamicVectorClass; /*0x7b19de*/
-  *((unsigned int *)a1 + 7) = 10; /*0x7b19e1*/
-  *((unsigned int *)a1 + 6) = 0; /*0x7b19e4*/
-  *((unsigned int *)a1 + 9) = 0; /*0x7b19e7*/
-  *((unsigned int *)a1 + 10) = 0; /*0x7b19ea*/
-  a1->u32_B0 = 1; /*0x7b19ed*/
-  a1->u32_B4 = 0; /*0x7b19f0*/
-  *((unsigned int *)a1 + 8) = &vt_DynamicVectorClass; /*0x7b19f3*/
-  *((unsigned int *)a1 + 13) = 10; /*0x7b19f6*/
-  *((unsigned int *)a1 + 12) = 0; /*0x7b19f9*/
-  *((unsigned int *)a1 + 19) = 10; /*0x7b19fc*/
-  *((unsigned int *)a1 + 15) = 0; /*0x7b1a02*/
-  *((unsigned int *)a1 + 16) = 0; /*0x7b1a05*/
-  a1->u32_110 = 1; /*0x7b1a08*/
-  a1->u32_114 = 0; /*0x7b1a0b*/
-  *((unsigned int *)a1 + 14) = &vt_DynamicVectorClass; /*0x7b1a0e*/
-  *((unsigned int *)a1 + 18) = 0; /*0x7b1a11*/
-  *((unsigned int *)a1 + 64539) = -1; /*0x7b1a14*/
-  *((unsigned int *)a1 + 64540) = -1; /*0x7b1a1a*/
+  a1->__pad_008 = &vt_DynamicVectorClass; /*0x7b19de*/
+  a1->u32_1C = 10; /*0x7b19e1*/
+  a1->q018 = 0; /*0x7b19e4*/
+  a1->u32_24 = 0; /*0x7b19e7*/
+  a1->u32_28 = 0; /*0x7b19ea*/
+  a1->q02C = 1; /*0x7b19ed*/
+  a1->u32_2D = 0; /*0x7b19f0*/
+  a1->u32_20 = &vt_DynamicVectorClass; /*0x7b19f3*/
+  a1->u32_34 = 10; /*0x7b19f6*/
+  a1->u32_30 = 0; /*0x7b19f9*/
+  a1->u32_4C = 10; /*0x7b19fc*/
+  a1->u32_3C = 0; /*0x7b1a02*/
+  a1->u32_40 = 0; /*0x7b1a05*/
+  a1->q044 = 1; /*0x7b1a08*/
+  a1->u32_45 = 0; /*0x7b1a0b*/
+  a1->u32_38 = &vt_DynamicVectorClass; /*0x7b1a0e*/
+  a1->u32_48 = 0; /*0x7b1a11*/
+  a1->u32_3F06C = -1; /*0x7b1a14*/
+  a1->u32_3F070 = -1; /*0x7b1a1a*/
   *(unsigned int *)a1 = &vt_WinsockInterfaceClass; /*0x7b1a20*/
   a1->u32_FC1A0 = 0; /*0x7b1a26*/
   v2 = a1 + 102; /*0x7b1a2c*/
@@ -350,12 +350,12 @@ void * IPXInterfaceClass::bindSocket(void *a1)
     --v3; /*0x7b1a6e*/
   }
   while ( v3 ); /*0x7b1a6f*/
-  *((unsigned int *)a1 + 64535) = 0; /*0x7b1a76*/
-  *((unsigned int *)a1 + 64536) = 0; /*0x7b1a7c*/
-  *((unsigned int *)a1 + 64537) = 0; /*0x7b1a82*/
-  *((unsigned int *)a1 + 64532) = 0; /*0x7b1a88*/
-  *((unsigned int *)a1 + 64533) = 0; /*0x7b1a8e*/
-  *((unsigned int *)a1 + 1) = 576; /*0x7b1a94*/
+  a1->u32_3F05C = 0; /*0x7b1a76*/
+  a1->u32_3F060 = 0; /*0x7b1a7c*/
+  a1->u32_3F064 = 0; /*0x7b1a82*/
+  a1->u32_3F050 = 0; /*0x7b1a88*/
+  a1->u32_3F054 = 0; /*0x7b1a8e*/
+  a1->__pad_004 = 576; /*0x7b1a94*/
   Debug::Log(); /*0x7b1a9b*/
   return a1; /*0x7b1aa5*/
 }
@@ -392,13 +392,13 @@ AbstractClass * * IPXInterfaceClass::Receive()
   int v7; // [esp+0h] [ebp-4h]
 
   v2 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, -1); /*0x7b1bc9*/
-  if ( WSAAsyncSelect(*((AnimClass **)this + 64539), (SOCKET)g_hWnd, v2, 3u, v6) != (AnimClass *)-1 ) /*0x7b1be3*/
+  if ( WSAAsyncSelect(this->Initialized), (SOCKET)g_hWnd, v2, 3u, v6) != (AnimClass *)-1 ) /*0x7b1be3*/
   {
-    v4 = *((unsigned int *)this + 64540); /*0x7b1bfc*/
+    v4 = this->u32_3F070; /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
     v5 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v4); /*0x7b1c0e*/
-    if ( WSAAsyncSelect(*((AnimClass **)this + 64540), (SOCKET)g_hWnd, v5, 3u, v7) != (AnimClass *)-1 ) /*0x7b1c27*/
+    if ( WSAAsyncSelect(this->Initialized), (SOCKET)g_hWnd, v5, 3u, v7) != (AnimClass *)-1 ) /*0x7b1c27*/
       return 1; /*0x7b1c40*/
   }
   WSAGetLastError(); /*0x7b1be5*/
@@ -418,14 +418,14 @@ void IPXInterfaceClass::Disconnect()
 
   while ( this->BoundPort ) /*0x7b1ca6*/
   {
-    v2 = **(unsigned int *)&this->LocalNode; /*0x7b1cae*/
-    if ( *(unsigned char *)(v2 + 22) ) /*0x7b1cb0*/
+    v2 = **&this->LocalNode; /*0x7b1cae*/
+    if ( v2->q016 ) /*0x7b1cb0*/
     {
-      operator delete((void *)(**(unsigned int *)&this->LocalNode)); /*0x7b1cb6*/
+      operator delete((void *)(**&this->LocalNode)); /*0x7b1cb6*/
     }
     else
     {
-      *(unsigned char *)(v2 + 21) = 0; /*0x7b1cc0*/
+      v2->u8_15 = 0; /*0x7b1cc0*/
       --this->u32_3F05C; /*0x7b1cca*/
     }
     v3 = this->BoundPort; /*0x7b1cd0*/
@@ -435,7 +435,7 @@ void IPXInterfaceClass::Disconnect()
       v5 = 0; /*0x7b1cda*/
       for ( this->BoundPort = v4; /*0x7b1ce1*/
             v5 < this->BoundPort;
-            *(unsigned int *)(this->u32_C + 4 * v5 - 4) = *(unsigned int *)(this->u32_C + 4 * v5) )
+            *(unsigned int *)(this->LocalNode + 4 * v5 - 4) = *(unsigned int *)(this->LocalNode + 4 * v5) )
       {
         ++v5; /*0x7b1ce6*/
       }
@@ -504,23 +504,20 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
 
   v5 = AudioQueue::AllocBuffer((AudioQueue *)this, aP3); /*0x7b24f4*/
   memcpy(v5 + 32, a1, a3); /*0x7b2505*/
-  *((unsigned int *)v5 + 4) = a3; /*0x7b250e*/
-  (*(void (__thiscall **)(WinsockInterfaceClass *, unsigned char *))(this->Socket + 84))(this, v5); /*0x7b2516*/
+  v5->q010 = a3; /*0x7b250e*/
+  this->SetAddress(v5); /*0x7b2516*/
   v5[20] = 1; /*0x7b251d*/
   if ( aP3 ) /*0x7b2523*/
   {
-    v6 = this->u32_40; /*0x7b2525*/
-    if ( this->u32_48 < v6 /*0x7b254d*/
+    v6 = this->q_40; /*0x7b2525*/
+    if ( this->__pad_048 < v6 /*0x7b254d*/
       || (this->u32_45 || !v6)
       && (v7 = this->u32_4C, v7 > 0)
-      && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(this->u32_38 + 8))(
-           (char *)this + 56,
-           v6 + v7,
-           0) )
+      && this->u32_38->ReadBuffer(&this->u32_38, v6 + v7, 0) )
     {
-      v8 = this->u32_48; /*0x7b2554*/
+      v8 = this->__pad_048; /*0x7b2554*/
       v9 = this->u32_3C; /*0x7b2557*/
-      this->u32_48 = v8 + 1; /*0x7b255d*/
+      this->__pad_048 = v8 + 1; /*0x7b255d*/
       *(unsigned int *)(v9 + 4 * v8) = v5; /*0x7b2560*/
     }
     v10 = this->u32_3F070; /*0x7b2563*/
@@ -528,24 +525,21 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   else
   {
     v11 = this->u32_28; /*0x7b256b*/
-    if ( this->u32_30 < v11 /*0x7b2593*/
+    if ( this->q_30 < v11 /*0x7b2593*/
       || (this->u32_2D || !v11)
-      && (v12 = this->u32_34, v12 > 0)
-      && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(this->__pad_008 + 8))(
-           (char *)this + 32,
-           v11 + v12,
-           0) )
+      && (v12 = this->q034, v12 > 0)
+      && this->LocalNetwork->ReadBuffer(&this->q020, v11 + v12, 0) )
     {
-      v13 = this->u32_30; /*0x7b259a*/
+      v13 = this->q_30; /*0x7b259a*/
       v14 = this->u32_24; /*0x7b259d*/
-      this->u32_30 = v13 + 1; /*0x7b25a3*/
+      this->q_30 = v13 + 1; /*0x7b25a3*/
       *(unsigned int *)(v14 + 4 * v13) = v5; /*0x7b25a6*/
     }
     v10 = this->u32_3F06C; /*0x7b25a9*/
   }
-  v15 = (*(int (__thiscall **)(WinsockInterfaceClass *, int))(this->Socket + 56))(this, v10); /*0x7b25b9*/
+  v15 = this->COMStub_Ret1139(v10); /*0x7b25b9*/
   SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
-  return EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x7b25d4*/
+  return EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x7b25d4*/
 }
 } // namespace gamemd
 // 0x7B2A20
@@ -560,39 +554,39 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7b2a2c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x7b2a32*/
+    LOBYTE(this->IsInitialized) = 0; /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
       v4 = a3; /*0x7b2a4e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
-    LOBYTE(this->m_C) = 1; /*0x7b2a52*/
+    LOBYTE(this->IsInitialized) = 1; /*0x7b2a52*/
     if ( !v4 ) /*0x7b2a56*/
       return 0; /*0x7b2aca*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x7b2a58*/
+    if ( *&this->Items ) /*0x7b2a58*/
     {
-      m_8 = this->m_8; /*0x7b2a5f*/
+      m_8 = this->Capacity; /*0x7b2a5f*/
       if ( a2 < m_8 ) /*0x7b2a64*/
         m_8 = a2; /*0x7b2a66*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x7b2a6c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x7b2a6c*/
         ++i; /*0x7b2a71*/
-      if ( BYTE1(this->m_C) ) /*0x7b2a7e*/
+      if ( BYTE1(this->IsInitialized) ) /*0x7b2a7e*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x7b2a89*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x7b2a91*/
+        __3_YAXPAX_Z(*&this->Items); /*0x7b2a89*/
+        *&this->Items = 0; /*0x7b2a91*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x7b2a9a*/
-    this->m_8 = a2; /*0x7b2aa2*/
-    BYTE1(this->m_C) = a3 == 0; /*0x7b2aa5*/
+    *&this->Items = v4; /*0x7b2a9a*/
+    this->Capacity = a2; /*0x7b2aa2*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x7b2aa5*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(unsigned int *)this->__pad_0 /*0x7b2aae*/
+    (*(void (**)(_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(unsigned int *)this->vtable1 /*0x7b2aae*/
                                                                                              + 12))(this);
   }
-  v7 = this->m_8; /*0x7b2ab1*/
-  if ( v7 < this->m_10 ) /*0x7b2ab9*/
-    this->m_10 = v7; /*0x7b2abb*/
+  v7 = this->Capacity; /*0x7b2ab1*/
+  if ( v7 < this->Count ) /*0x7b2ab9*/
+    this->Count = v7; /*0x7b2abb*/
   return 1; /*0x7b2abe*/
 
 }
@@ -722,15 +716,15 @@ void IPXInterfaceClass::getSocketCount()
 
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x7b2846*/
-  this->m_10 = 0; /*0x7b2849*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x7b2850*/
+  v2 = *&this->Initialized; /*0x7b2846*/
+  this->Count = 0; /*0x7b2849*/
+  if ( v2 && BYTE1(this->IsInitialized) ) /*0x7b2850*/
   {
     __3_YAXPAX_Z(v2); /*0x7b2856*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x7b285e*/
+    *&this->Items = 0; /*0x7b285e*/
   }
-  BYTE1(this->m_C) = 0; /*0x7b2861*/
-  this->m_8 = 0; /*0x7b2864*/
+  BYTE1(this->IsInitialized) = 0; /*0x7b2861*/
+  this->Capacity = 0; /*0x7b2864*/
 
 }
 } // namespace gamemd
@@ -739,8 +733,8 @@ namespace gamemd {
 unsigned int IPXInterfaceClass::resetSocket(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x7b2870*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x7b2885*/
+  if ( LOBYTE(this->LocalNode) ) /*0x7b2870*/
+    return (unsigned int)(a2 - *&this->Initialized) >> 2; /*0x7b2885*/
   else
     return 0; /*0x7b2877*/
 
@@ -755,11 +749,11 @@ int IPXInterfaceClass::initSession(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x7b2ad0*/
+  m_10 = this->Count; /*0x7b2ad0*/
   result = 0; /*0x7b2ad3*/
   if ( m_10 <= 0 ) /*0x7b2ad8*/
     return -1; /*0x7b2aef*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x7b2ade*/
+  for ( i = *&this->Items; *i != *a2; ++i ) /*0x7b2ade*/
   {
     if ( ++result >= m_10 ) /*0x7b2aed*/
       return -1; /*0x7b2aed*/
@@ -775,8 +769,8 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x7b2b53*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b2b56*/
+  v3 = *&this->Initialized; /*0x7b2b53*/
+  *(unsigned int *)this->vtable1 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b2b56*/
   if ( v3 && BYTE1(this->m_C) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/

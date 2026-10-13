@@ -120,17 +120,17 @@ bool LocomotionClass::Process()
 
   LocomotionClass::Init(this); /*0x69ec53*/
   this->u32_1C = 0; /*0x69ec5d*/
-  this->__pad_008 = 0; /*0x69ec60*/
+  this->Owner = 0; /*0x69ec60*/
   v2 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x69ec63*/
   this->u32_2C = 0; /*0x69ec69*/
   this->u32_24 = v2; /*0x69ec6c*/
   this->LinkedTo = 0; /*0x69ec6f*/
   this->u32_34 = g_OverlayTypeConfig; /*0x69ec78*/
   this->u32_38 = qword_B077FC; /*0x69ec80*/
-  this->__pad_010 = g_OverlayTypeConfig; /*0x69ec95*/
+  this->Powered = g_OverlayTypeConfig; /*0x69ec95*/
   this->Dirty = qword_B077FC; /*0x69ec9e*/
   v3 = (*(((unsigned int *)&(qword_B077FC)) + 1)); /*0x69eca1*/
-  this->u32_50 = 0; /*0x69eca7*/
+  this->__pad_50 = 0; /*0x69eca7*/
   this->u32_4C = 0; /*0x69ecaa*/
   this->__pad_012 = v3; /*0x69ecad*/
   this->u32_54 = 0; /*0x69ecb3*/
@@ -144,7 +144,7 @@ bool LocomotionClass::Process()
   this->u32_65 = 1; /*0x69eccb*/
   this->u32_68 = 0; /*0x69eccf*/
   *(unsigned int *)this->ILocomotion = 0; /*0x69ecd2*/
-  *(unsigned int *)&this->ILocomotion[4] = 0; /*0x69ecd8*/
+  *&this->u32_18 = 0; /*0x69ecd8*/
   this->u32_18 = &off_7F2D68; /*0x69ecdf*/
   return (int)this->ILocomotion; /*0x69ece8*/
 }

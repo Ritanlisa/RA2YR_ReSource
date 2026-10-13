@@ -37,9 +37,9 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (int16_t)v6 - *(unsigned int *)&stru_87F5F0.__pad_58[708] > *(unsigned int *)&stru_87F5F0.__pad_58[716] / 2 ) /*0x44f751*/
+  if ( (int16_t)v6 - *(unsigned int *)&DataGlobal_87F90C > *(unsigned int *)&g_AircraftTrackerPool / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - *(unsigned int *)&stru_87F5F0.__pad_58[712] > *(unsigned int *)&stru_87F5F0.__pad_58[720] / 2 ) /*0x44f76b*/
+  if ( (int16_t)v7 - *(unsigned int *)&DataGlobal_87F910 > *(unsigned int *)&g_AircraftTrackerState / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
   (*((unsigned short *)&(v10))) = v6 + v3; /*0x44f77f*/
   (*(((unsigned short *)&(v10)) + 1)) = v7 + v4; /*0x44f784*/

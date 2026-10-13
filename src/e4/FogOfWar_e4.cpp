@@ -163,7 +163,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
   if ( v18 == -1 ) /*0x655ffa*/
   {
   LABEL_37:
-    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(void **)(v13 + 540) != (void *)(dword_A83D4C) ) /*0x65603a*/
+    if ( v19 <= 0 || (v19 - 1) / dword_8871E0->InfantryHeadPop % 2 != 1 || *(void **)(v13 + 540) != (void *)(dword_A83D4C) ) /*0x65603a*/
       goto LABEL_41; /*0x65603a*/
     (*(void (**)(unsigned int, int *, int))(*this->u32_121C + 36))(this->u32_121C, a2, ~v17); /*0x656048*/
   }
@@ -180,7 +180,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
   LABEL_45:
   v22 = this->u32_149C; /*0x65608f*/
   v23 = this->u32_14A0; /*0x656095*/
-  v24 = (int *)&this->u32_4830; /*0x6560a0*/
+  v24 = &this->u32_4830; /*0x6560a0*/
   v25 = v22 + *a2; /*0x6560a6*/
   v26 = a2[1] + v23; /*0x6560a8*/
   if ( v24[2] <= 0 || v24[3] <= 0 ) /*0x6560be*/
@@ -269,7 +269,7 @@ int FogOfWar::RenderCell()
     result = *(unsigned int *)(v9 + 4); /*0x6561b0*/
     if ( v10 > 0 ) /*0x6561b5*/
     {
-      v12 = (unsigned int *)(result + 4); /*0x6561bb*/
+      v12 = &result->u32_4; /*0x6561bb*/
       v10 = v10; /*0x6561be*/
       do /*0x65629e*/
       {
@@ -281,11 +281,11 @@ int FogOfWar::RenderCell()
         if ( (*v16 & (uint8_t)v15) == 0 ) /*0x6561f3*/
         {
           *v16 |= v15; /*0x6561fb*/
-          BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(v13[135] + 90196)); /*0x656211*/
+          BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(v13[135] + 90196)); /*0x656211*/
           if ( (*(uint8_t (**)(unsigned int *))(*v13 + 196))(v13) ) /*0x656216*/
           {
             if ( (*(int (**)(unsigned int *, unsigned int))(*v13 + 208))(v13, 0) ) /*0x656226*/
-              BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x656248*/
+              BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable /*0x656248*/
                                              + 4
                                              * *(unsigned int *)((*(int (**)(unsigned int *, unsigned int))(*v13 + 208))(
                                                              v13,
@@ -400,7 +400,7 @@ int FogOfWar::Render()
   {
     v2 = (int *)this->u32_121C; /*0x657cf2*/
     v3 = *v2; /*0x657d06*/
-    v4 = (*(int (**)(unsigned int, int *, unsigned int, int))(**(unsigned int *)&this->ptr_1220 + 120))( /*0x657d0d*/
+    v4 = (*(int (**)(unsigned int, int *, unsigned int, int))(**&this->ptr_1220 + 120))( /*0x657d0d*/
            this->ptr_1220,
            v11,
            0,

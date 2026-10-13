@@ -36,12 +36,12 @@ int Stream::FlushAndReset()
   v1 = this; /*0x439111*/
   m_Stream = this->m_Stream; /*0x439114*/
   Stream_field_08 = this->Stream_field_08; /*0x439116*/
-  *((unsigned int *)this + 12) = 45; /*0x439119*/
+  this->u32_30 = 45; /*0x439119*/
   ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
   ((void (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
   Stream_field_04 = v1[1].Stream_field_04; /*0x43912d*/
   Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
-  v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
+  v1 = &v1->u32_18; /*0x439133*/
   (*(void (**)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
   return ((int (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 
@@ -133,40 +133,40 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
   char v17; // al
   char v19; // [esp+13h] [ebp-1h] BYREF
 
-  CCFileClass::Construct3((int)((unsigned char *)this + 4)); /*0x75926a*/
-  Stream::CopyFromTemplate((unsigned char *)this + 376); /*0x759275*/
-  *((unsigned int *)this + 331) = a3; /*0x759282*/
-  *((unsigned int *)this + 121) = this; /*0x759288*/
-  *((unsigned int *)this + 101) = &v19; /*0x75928e*/
-  *((unsigned int *)this + 110) = 0; /*0x75929b*/
+  CCFileClass::Construct3((int)(&this->Stream_field_04)); /*0x75926a*/
+  Stream::CopyFromTemplate(&this->u32_178); /*0x759275*/
+  this->u32_52C = a3; /*0x759282*/
+  this->u32_1E4 = this; /*0x759288*/
+  this->u32_194 = &v19; /*0x75928e*/
+  this->u32_1B8 = 0; /*0x75929b*/
   if ( !TestBitArray(15) ) /*0x7592a1*/
-    *((unsigned int *)this + 110) |= 1u; /*0x7592af*/
+    this->u32_1B8 |= 1u; /*0x7592af*/
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
-    v9 = *((unsigned int *)this + 110); /*0x7592c0*/
+    v9 = this->u32_1B8; /*0x7592c0*/
     LOBYTE(v9) = v9 | 4; /*0x7592c6*/
-    *((unsigned int *)this + 110) = v9; /*0x7592c8*/
+    this->u32_1B8 = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
-    v10 = *((unsigned int *)this + 110); /*0x7592dc*/
+    v10 = this->u32_1B8; /*0x7592dc*/
     LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
-    *((unsigned int *)this + 110) = v10; /*0x7592e4*/
+    this->u32_1B8 = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
-    v11 = *((unsigned int *)this + 110); /*0x7592f8*/
+    v11 = this->u32_1B8; /*0x7592f8*/
     LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
-    *((unsigned int *)this + 110) = v11; /*0x759300*/
+    this->u32_1B8 = v11; /*0x759300*/
   }
-  v12 = *((unsigned int *)this + 111) | 8; /*0x75930c*/
-  *((unsigned int *)this + 111) = v12; /*0x75930f*/
+  v12 = this->u32_1BC | 8; /*0x75930c*/
+  this->u32_1BC = v12; /*0x75930f*/
   v13 = v12; /*0x75931e*/
-  if ( (*((unsigned char *)this + 1324) & 2) != 0 ) /*0x759320*/
+  if ( (this->u32_52C & 2) != 0 ) /*0x759320*/
   {
     LOBYTE(v13) = v12 | 0x20; /*0x759322*/
-    *((unsigned int *)this + 111) = v13; /*0x759324*/
-    if ( (*((unsigned char *)this + 1324) & 4) == 0 ) /*0x759333*/
+    this->u32_1BC = v13; /*0x759324*/
+    if ( (this->u32_52C & 4) == 0 ) /*0x759333*/
       goto LABEL_14; /*0x759333*/
     BYTE1(v13) = BYTE1(v12) | 1; /*0x759335*/
   }
@@ -174,71 +174,71 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
   {
     LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
   }
-  *((unsigned int *)this + 111) = v13; /*0x75933c*/
+  this->u32_1BC = v13; /*0x75933c*/
 LABEL_14:
   v14 = TestBitArray(17); /*0x759342*/
-  v15 = *((unsigned int *)this + 111); /*0x75934e*/
+  v15 = this->u32_1BC; /*0x75934e*/
   if ( v14 ) /*0x759354*/
     LOBYTE(v15) = v15 | 4; /*0x759356*/
   else
     LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
-  *((unsigned int *)this + 111) = v15; /*0x759361*/
+  this->u32_1BC = v15; /*0x759361*/
   v14 = TestBitArray(3); /*0x75936c*/
-  v16 = *((unsigned int *)this + 111); /*0x75936e*/
+  v16 = this->u32_1BC; /*0x75936e*/
   if ( v14 ) /*0x759374*/
     LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
   else
     v16 |= 1u; /*0x75937a*/
-  *((unsigned int *)this + 111) = v16; /*0x759383*/
-  *((unsigned int *)this + 102) = -1; /*0x75938d*/
-  *((unsigned int *)this + 103) = -1; /*0x759393*/
-  *((unsigned int *)this + 104) = 0; /*0x75939e*/
-  *((unsigned int *)this + 105) = 0; /*0x7593a4*/
-  *((unsigned int *)this + 97) = 0; /*0x7593aa*/
-  *((unsigned int *)this + 106) = a7; /*0x7593b0*/
-  *((unsigned int *)this + 107) = a8; /*0x7593b6*/
+  this->u32_1BC = v16; /*0x759383*/
+  this->u32_198 = -1; /*0x75938d*/
+  this->u32_19C = -1; /*0x759393*/
+  this->u32_1A0 = 0; /*0x75939e*/
+  this->u32_1A4 = 0; /*0x7593a4*/
+  this->u32_184 = 0; /*0x7593aa*/
+  this->u32_1A8 = a7; /*0x7593b0*/
+  this->u32_1AC = a8; /*0x7593b6*/
   if ( TestBitArray(3) ) /*0x7593bc*/
-    *((unsigned int *)this + 112) = 1; /*0x7593c5*/
+    this->u32_1C0 = 1; /*0x7593c5*/
   else
-    *((unsigned int *)this + 112) = 14; /*0x7593cd*/
-  v17 = *((unsigned char *)this + 1324); /*0x7593d7*/
-  *((unsigned int *)this + 113) = -1; /*0x7593dd*/
+    this->u32_1C0 = 14; /*0x7593cd*/
+  v17 = this->u32_52C; /*0x7593d7*/
+  this->u32_1C4 = -1; /*0x7593dd*/
   if ( (v17 & 1) != 0 ) /*0x7593e5*/
-    *((unsigned int *)this + 94) = sub_75A2B0; /*0x7593e7*/
+    this->u32_178 = sub_75A2B0; /*0x7593e7*/
   else
-    *((unsigned int *)this + 94) = sub_75A100; /*0x7593f3*/
-  *((unsigned int *)this + 95) = sub_75A2F0; /*0x759402*/
-  *((unsigned int *)this + 96) = sub_75A350; /*0x75940c*/
+    this->u32_178 = sub_75A100; /*0x7593f3*/
+  this->u32_17C = sub_75A2F0; /*0x759402*/
+  this->u32_180 = sub_75A350; /*0x75940c*/
   if ( TestBitArray(4) ) /*0x759416*/
   {
-    *((unsigned int *)this + 98) = j_Time_GetElapsedMS; /*0x75941f*/
-    *((unsigned int *)this + 108) = 60; /*0x759429*/
+    this->u32_188 = j_Time_GetElapsedMS; /*0x75941f*/
+    this->u32_1B0 = 60; /*0x759429*/
   }
   else
   {
-    *((unsigned int *)this + 98) = sub_4116A0; /*0x759435*/
-    *((unsigned int *)this + 108) = 60; /*0x75943f*/
-    *((unsigned int *)this + 127) = (unsigned __int16)unk_A8EBA8; /*0x759455*/
+    this->u32_188 = sub_4116A0; /*0x759435*/
+    this->u32_1B0 = 60; /*0x75943f*/
+    this->u32_1FC = (unsigned __int16)unk_A8EBA8; /*0x759455*/
   }
-  *((unsigned int *)this + 100) = ManageMultimediaTimer; /*0x759463*/
-  *((unsigned int *)this + 117) = 0x2000; /*0x75946d*/
-  *((unsigned int *)this + 321) = 0; /*0x759477*/
-  *((unsigned int *)this + 339) = 0; /*0x75947d*/
-  *((unsigned int *)this + 322) = 0; /*0x759483*/
-  strcpy((unsigned char *)this + 113, a2); /*0x75949f*/
-  *((unsigned int *)this + 338) = a6; /*0x7594b0*/
-  *((unsigned int *)this + 326) = 0; /*0x7594b7*/
-  *((unsigned int *)this + 327) = 0; /*0x7594bd*/
-  *((unsigned int *)this + 328) = 0; /*0x7594c3*/
-  *((unsigned int *)this + 329) = 0; /*0x7594c9*/
-  *((unsigned int *)this + 324) = -1; /*0x7594cf*/
-  *((unsigned char *)this + 1320) = 0; /*0x7594d9*/
-  *((unsigned int *)this + 336) = a4; /*0x7594df*/
-  *((unsigned int *)this + 337) = a5; /*0x7594e5*/
-  *((unsigned char *)this + 112) = 0; /*0x7594eb*/
-  *((unsigned char *)this + 1300) = 0; /*0x7594ee*/
-  *((unsigned char *)this + 1360) = 0; /*0x7594f4*/
-  *((unsigned char *)this + 1361) = 0; /*0x7594fa*/
+  this->u32_190 = ManageMultimediaTimer; /*0x759463*/
+  this->u32_1D4 = 0x2000; /*0x75946d*/
+  this->u32_504 = 0; /*0x759477*/
+  this->u32_54C = 0; /*0x75947d*/
+  this->u32_508 = 0; /*0x759483*/
+  strcpy(&this->u8_71, a2); /*0x75949f*/
+  this->u32_548 = a6; /*0x7594b0*/
+  this->u32_518 = 0; /*0x7594b7*/
+  this->u32_51C = 0; /*0x7594bd*/
+  this->u32_520 = 0; /*0x7594c3*/
+  this->u32_524 = 0; /*0x7594c9*/
+  this->u32_510 = -1; /*0x7594cf*/
+  this->u32_528 = 0; /*0x7594d9*/
+  this->u32_540 = a4; /*0x7594df*/
+  this->u32_544 = a5; /*0x7594e5*/
+  this->u32_70 = 0; /*0x7594eb*/
+  this->u32_514 = 0; /*0x7594ee*/
+  this->u32_550 = 0; /*0x7594f4*/
+  this->u32_551 = 0; /*0x7594fa*/
   *(unsigned int *)this = 0; /*0x759500*/
   return this; /*0x7594b6*/
 

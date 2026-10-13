@@ -31,20 +31,20 @@ int Mixer::ReleaseChannel()
   if ( !this->Mixer_field_00 ) /*0x406079*/
     goto LABEL_14; /*0x40607d*/
   result = *(unsigned int *)(Mixer_field_00 + 36); /*0x40607f*/
-  if ( *((unsigned int *)this + 2) == result && *((unsigned int *)this + 1) == *(unsigned int *)(Mixer_field_00 + 312) ) /*0x406094*/
+  if ( this->u32_8 == result && this->u32_4 == *(unsigned int *)(Mixer_field_00 + 312) ) /*0x406094*/
   {
-    if ( (*(unsigned char *)(result + 16) & 1) == 0 || *(unsigned int *)(result + 76) ) /*0x40609c*/
+    if ( (*(unsigned char *)(result + 16) & 1) == 0 || result->u32_4C ) /*0x40609c*/
       goto LABEL_14; /*0x40609f*/
     if ( (*(unsigned char *)(Mixer_field_00 + 24) & 0x20) == 0 ) /*0x4060a5*/
     {
       v4 = *(unsigned int *)(Mixer_field_00 + 176); /*0x4060a7*/
-      if ( v4 && Mixer_field_00 == *(unsigned int *)(v4 + 192) ) /*0x4060b7*/
+      if ( v4 && Mixer_field_00 == v4->u32_C0 ) /*0x4060b7*/
       {
         AudioFile::GetCallback(*(AudioFile **)(Mixer_field_00 + 176)); /*0x4060bb*/
         *(unsigned int *)(Mixer_field_00 + 24) |= 0x60u; /*0x4060c6*/
         result = AudioStream::Stop(*(AudioStream **)(Mixer_field_00 + 176)); /*0x4060cf*/
         this->Mixer_field_00 = 0; /*0x4060d4*/
-        *((unsigned int *)this + 2) = 0; /*0x4060d6*/
+        this->u32_8 = 0; /*0x4060d6*/
         return result; /*0x4060dc*/
       }
       result = *(unsigned int *)(Mixer_field_00 + 24); /*0x4060dd*/
@@ -54,7 +54,7 @@ int Mixer::ReleaseChannel()
   }
   this->Mixer_field_00 = 0; /*0x4060e5*/
 LABEL_14:
-  *((unsigned int *)this + 2) = 0; /*0x4060e7*/
+  this->u32_8 = 0; /*0x4060e7*/
   return result; /*0x4060d9*/
 
 }

@@ -31,12 +31,12 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   char v7; // [esp+38h] [ebp-4h]
 
   AbstractTypeClass::Constructor((int)this, aP1); /*0x6e5b6c*/
-  *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
-  *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
-  *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
+  this->u32_98 = -1; /*0x6e5b78*/
+  this->Coord_9C = 0; /*0x6e5b82*/
+  this->q0A0 = 0; /*0x6e5b88*/
   *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
   *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5b95*/
-  *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5b9c*/
+  this->vtable3 = &TagTypeClass::`vftable'; /*0x6e5b9c*/
   *((unsigned int *)this + 3) = &TagTypeClass::`vftable'; /*0x6e5ba3*/
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
@@ -44,15 +44,15 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   }
   else
   {
-    strncpy(Destination, (unsigned char *)this + 36, 0x30u); /*0x6e5bba*/
+    strncpy(Destination, &this->arrayIndex, 0x30u); /*0x6e5bba*/
     v7 = 0; /*0x6e5bc2*/
   }
-  if ( Destination != (unsigned char *)this + 100 ) /*0x6e5bd0*/
+  if ( Destination != &this->Name ) /*0x6e5bd0*/
   {
-    qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
-    *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
+    qmemcpy(&this->Name, Destination, 0x30u); /*0x6e5bdc*/
+    this->u32_94 = v7; /*0x6e5bde*/
   }
-  *((unsigned int *)this + 38) = g_MultiplayerCleanup; /*0x6e5be6*/
+  this->u32_98 = g_MultiplayerCleanup; /*0x6e5be6*/
   if ( g_MultiplayerCleanup < dword_B0E788 /*0x6e5c1e*/
     || (byte_B0E78D || !dword_B0E788)
     && dword_B0E794 > 0
@@ -97,8 +97,8 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
   a1->vfptr2 = &vt_TagTypeClass; /*0x6e5cb4*/
   a1->vfptr3 = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer(&a1->vfptr, 1); /*0x6e5cc2*/
-  v2 = (unsigned int *)*((unsigned int *)a1 + 40); /*0x6e5cc7*/
-  *((unsigned int *)a1 + 40) = 0; /*0x6e5ccd*/
+  v2 = (unsigned int *)a1->q0A0; /*0x6e5cc7*/
+  a1->q0A0 = 0; /*0x6e5ccd*/
   if ( v2 ) /*0x6e5cd9*/
   {
     do /*0x6e5cfa*/
@@ -167,11 +167,11 @@ int TagTypeClass::GetEvent(int a2, int a3)
 
   int result; // eax
 
-  result = *((unsigned int *)this + 40); /*0x6e5e50*/
+  result = this->q0A0; /*0x6e5e50*/
   if ( result == a2 ) /*0x6e5e5c*/
   {
-    result = *(unsigned int *)(result + 168); /*0x6e5e5e*/
-    *((unsigned int *)this + 40) = result; /*0x6e5e64*/
+    result = result->q0A8; /*0x6e5e5e*/
+    this->q0A0 = result; /*0x6e5e64*/
   }
   return result; /*0x6e5e6a*/
 
@@ -191,14 +191,14 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   INIClass::ResetSection((INIClass *)a2); /*0x6e6093*/
   if ( !INIClass::GetString( /*0x6e60b4*/
           (INIClass *)a2,
-          (unsigned __int8 *)&stru_842C2C.SuperWeaponClass_field_0x10,
+          (unsigned __int8 *)&DataGlobal_842C3C,
           (unsigned __int8 *)&this->arrayIndex,
           &g_INI_DefaultBuffer,
           String,
           128) )
     return 0; /*0x6e6151*/
   strtok(String, Str); /*0x6e60cb*/
-  *((unsigned int *)this + 39) = atoi(String); /*0x6e60e1*/
+  this->Coord_9C = atoi(String); /*0x6e60e1*/
   v3 = strtok(0, Str); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
@@ -209,13 +209,13 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   {
     Destination[0] = 0; /*0x6e60f3*/
   }
-  if ( Destination != (char *)this + 100 ) /*0x6e6118*/
+  if ( Destination != &this->Name ) /*0x6e6118*/
   {
-    qmemcpy((char *)this + 100, Destination, 0x30u); /*0x6e6123*/
-    *((unsigned char *)this + 148) = v7; /*0x6e6125*/
+    qmemcpy(&this->Name, Destination, 0x30u); /*0x6e6123*/
+    this->u32_94 = v7; /*0x6e6125*/
   }
   v4 = strtok(0, Str); /*0x6e612d*/
-  *((unsigned int *)this + 40) = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
+  this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 
 }
@@ -228,15 +228,15 @@ int TagTypeClass::GetParameter(char * a2)
   int v3; // eax
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
-  v3 = *((unsigned int *)this + 40); /*0x6e6169*/
+  v3 = this->q0A0; /*0x6e6169*/
   if ( v3 ) /*0x6e6171*/
-    wsprintfA(Source, "%d,%s,%s", *((unsigned int *)this + 39), (const char *)this + 100, (const char *)(v3 + 36)); /*0x6e61b4*/
+    wsprintfA(Source, "%d,%s,%s", this->Coord_9C, (const char *)&this->q0A0, (const char *)(v3 + 36)); /*0x6e61b4*/
   else
-    wsprintfA(Source, "%s,<none>", (const char *)this + 100); /*0x6e6181*/
+    wsprintfA(Source, "%s,<none>", (const char *)&this->q0A0); /*0x6e6181*/
   INIClass::SetString( /*0x6e6199*/
     a2,
-    (unsigned __int8 *)&stru_842C2C.SuperWeaponClass_field_0x10,
-    (char *)&this->arrayIndex,
+    (unsigned __int8 *)&DataGlobal_842C3C,
+    &this->arrayIndex,
     Source);
   return 1; /*0x6e61db*/
 
@@ -275,7 +275,7 @@ namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6e63e9*/
-  return Power::TimerProcess(this->u32_9C); /*0x6e63fc*/
+  return Power::TimerProcess(this->Coord_9C); /*0x6e63fc*/
 }
 }
 // 0x6E64B0
@@ -342,7 +342,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
       aP0->vfptr2 = &vt_TagTypeClass; /*0x6e6441*/
       aP0->vfptr3 = &vt_TagTypeClass; /*0x6e6448*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_A0); /*0x6e645b*/
     return 0; /*0x6e6460*/
   }
   return result; /*0x6e6462*/

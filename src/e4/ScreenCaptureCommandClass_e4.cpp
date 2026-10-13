@@ -11,8 +11,8 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int * ScreenCaptureCommandClass::Constructor()
 {
-  *(unsigned int *)this->__tail_0 = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/
-  return (unsigned int *)(this->__tail_0); /*0x537b48*/
+  *(unsigned int *)this->vtable1 = (unsigned int)(&vt_ScreenCaptureCommandClass); /*0x537b42*/
+  return (unsigned int *)(this->vtable1); /*0x537b48*/
 }  // G42.18 ns repair
 } // namespace gamemd
 // 0x537B50

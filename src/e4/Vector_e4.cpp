@@ -17,8 +17,8 @@ void Vector::Math_Vector2D_Magnitude()
 
   double result; // st7
 
-  result = (double)this->Vector_field_0x4; /*0x4c1b50*/
-  Math::Sqrt((double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0 + result * result); /*0x4c1b69*/
+  result = (double)this->q004; /*0x4c1b50*/
+  Math::Sqrt((double)*(int *)this->Cl_ph * (double)*(int *)this->Cl_ph + result * result); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 
@@ -30,14 +30,14 @@ int Vector::Cleanup()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->q004; /*0x512d36*/
-  if ( result && (((unsigned char *)&(*(unsigned int *)&this->u8_D))[1]) ) /*0x512d3d*/
+  result = *&this->q004; /*0x512d36*/
+  if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x512d3d*/
   {
-    operator delete((void *)(*(void **)&this->q004)); /*0x512d43*/
-    *(unsigned int *)&this->q004 = 0; /*0x512d4b*/
+    operator delete((void *)(*&this->q004)); /*0x512d43*/
+    *&this->q004 = 0; /*0x512d4b*/
   }
-  (((unsigned char *)&(*(unsigned int *)&this->IsInitialized))[1]) = 0; /*0x512d4e*/
-  *(unsigned int *)&this->q008 = 0; /*0x512d51*/
+  (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x512d4e*/
+  *&this->m_8 = 0; /*0x512d51*/
   return result; /*0x512d54*/
 }
 }
@@ -47,14 +47,14 @@ int Vector::Destructor()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->q004; /*0x513106*/
-  if ( result && (((unsigned char *)&(*(unsigned int *)&this->u8_D))[1]) ) /*0x51310d*/
+  result = *&this->q004; /*0x513106*/
+  if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x51310d*/
   {
-    operator delete((void *)(*(void **)&this->q004)); /*0x513113*/
-    *(unsigned int *)&this->q004 = 0; /*0x51311b*/
+    operator delete((void *)(*&this->q004)); /*0x513113*/
+    *&this->q004 = 0; /*0x51311b*/
   }
-  (((unsigned char *)&(*(unsigned int *)&this->IsInitialized))[1]) = 0; /*0x51311e*/
-  *(unsigned int *)&this->q008 = 0; /*0x513121*/
+  (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x51311e*/
+  *&this->m_8 = 0; /*0x513121*/
   return result; /*0x513124*/
 }
 }
@@ -65,7 +65,7 @@ int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
   int result; // eax
 
   this->IsInitialized = a3 * this->__pad_010 /*0x5ae8ab*/
-                       + a4 * this->u32_8
+                       + a4 * this->m_8
                        + a2 * *(float *)this
                        + this->IsInitialized;
   this->u32_1C = a2 * this->__pad_010 /*0x5ae8ca*/
@@ -85,14 +85,14 @@ int Vector::Cleanup2()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->q004; /*0x67abe6*/
-  if ( result && (((unsigned char *)&(*(unsigned int *)&this->u8_D))[1]) ) /*0x67abed*/
+  result = *&this->q004; /*0x67abe6*/
+  if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x67abed*/
   {
-    operator delete((void *)(*(void **)&this->q004)); /*0x67abf3*/
-    *(unsigned int *)&this->q004 = 0; /*0x67abfb*/
+    operator delete((void *)(*&this->q004)); /*0x67abf3*/
+    *&this->q004 = 0; /*0x67abfb*/
   }
-  (((unsigned char *)&(*(unsigned int *)&this->IsInitialized))[1]) = 0; /*0x67abfe*/
-  *(unsigned int *)&this->q008 = 0; /*0x67ac01*/
+  (((unsigned char *)&(*&this->IsInitialized))[1]) = 0; /*0x67abfe*/
+  *&this->m_8 = 0; /*0x67ac01*/
   return result; /*0x67ac04*/
 }
 }
@@ -135,12 +135,12 @@ int Vector::Clear()
 {
   int result; // eax
 
-  (*((unsigned char *)&(result))) = this->u32_8; /*0x43ae53*/
+  (*((unsigned char *)&(result))) = this->m_8; /*0x43ae53*/
   if ( (unsigned char)result ) /*0x43ae58*/
     operator delete((void *)(*(void **)this)); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/
   this->__pad_010 = 0; /*0x43ae6b*/
-  this->u32_8 = 0; /*0x43ae72*/
+  this->m_8 = 0; /*0x43ae72*/
   return result; /*0x43ae76*/
 }
 } // namespace gamemd
@@ -154,7 +154,7 @@ int Vector::RemoveAt(int aP1)
   int result; // eax
   char *v4; // edx
 
-  Vector_field_0x10 = (char *)this->Vector_field_0x10; /*0x45ae10*/
+  Vector_field_0x10 = (char *)this->__pad_010; /*0x45ae10*/
   result = aP1; /*0x45ae13*/
   if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
@@ -163,15 +163,15 @@ int Vector::RemoveAt(int aP1)
   else
   {
     v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
-    this->Vector_field_0x10 = v4; /*0x45ae1e*/
+    this->__pad_010 = v4; /*0x45ae1e*/
     if ( aP1 < (int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
-        *((unsigned int *)this->Vector_field_0x4 + result - 1) = *((unsigned int *)this->Vector_field_0x4 + result); /*0x45ae2b*/
+        *((unsigned int *)this->q004 + result - 1) = *((unsigned int *)this->q004 + result); /*0x45ae2b*/
       }
-      while ( result < (int)this->Vector_field_0x10 ); /*0x45ae34*/
+      while ( result < (int)this->__pad_010 ); /*0x45ae34*/
     }
     LOBYTE(result) = 1; /*0x45ae37*/
   }
@@ -222,7 +222,7 @@ int Vector::Find(unsigned int * a2)
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = *&this->q004; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -235,7 +235,7 @@ namespace gamemd {
 BOOL Vector::HasCapacity()
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
+  return this->m_8 < *(unsigned int *)(*&this->q004 + 16); /*0x76f0bd*/
 
 }
 } // namespace gamemd
@@ -250,8 +250,8 @@ char Vector::Grow()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x7aeec4*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
+  v2 = *(unsigned int *)this->Cl_ph; /*0x7aeec4*/
+  if ( *(unsigned int *)this->Cl_ph < (int)this->q004 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
@@ -262,14 +262,14 @@ char Vector::Grow()
   }
   v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
-  if ( this->Vector_field_0x8 ) /*0x7aef13*/
+  if ( this->m_8 ) /*0x7aef13*/
   {
-    qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
+    qmemcpy(v5, this->m_8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  __3_YAXPAX_Z(this->Vector_field_0x8); /*0x7aef39*/
-  this->Vector_field_0x4 = (void *)v4; /*0x7aef41*/
-  this->Vector_field_0x8 = v5; /*0x7aef44*/
+  __3_YAXPAX_Z(this->m_8); /*0x7aef39*/
+  this->q004 = (void *)v4; /*0x7aef41*/
+  this->m_8 = v5; /*0x7aef44*/
   return 1; /*0x7aeecf*/
 
 }

@@ -161,7 +161,7 @@ void GameConfig::Constructor()
   int v8; // [esp+70h] [ebp-8h]
 
   v1 = this; /*0x5d67b5*/
-  if ( !*(unsigned int *)&this->__pad_0[56] ) /*0x5d67bd*/
+  if ( !*&this->q038 ) /*0x5d67bd*/
   {
     v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
@@ -174,9 +174,9 @@ void GameConfig::Constructor()
       *(unsigned int *)(v2 + 16) = &GenericNode::`vftable'; /*0x5d67ec*/
       GenericNode::Constructor((GenericNode *)(v2 + 28)); /*0x5d67f2*/
       *(unsigned int *)(v3 + 12) = &GenericList::`vftable'; /*0x5d67fa*/
-      LinkedList::Prepend((LinkedList *)(v3 + 16), v3 + 28); /*0x5d6801*/
+      LinkedList::Prepend(&v3->sectionHead, v3 + 28); /*0x5d6801*/
       v1 = this; /*0x5d6806*/
-      *(unsigned int *)(v3 + 12) = &List<INIClass::INISection *>::`vftable'; /*0x5d680a*/
+      v3->u32_C = &List<INIClass::INISection *>::`vftable'; /*0x5d680a*/
       *(unsigned int *)(v3 + 40) = 0; /*0x5d6811*/
       *(unsigned int *)(v3 + 44) = 0; /*0x5d6814*/
       *(unsigned int *)(v3 + 48) = 0; /*0x5d6817*/
@@ -200,7 +200,7 @@ void GameConfig::Constructor()
     *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
   }
-  return *(char **)&v1->__pad_0[56]; /*0x5d6888*/
+  return *&v1->q038; /*0x5d6888*/
 
 }
 }

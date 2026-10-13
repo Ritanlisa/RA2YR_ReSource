@@ -199,18 +199,18 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1)
     dword_81CC04 = 0; /*0x47ba79*/
     *(double *)&qword_81CC18 = dbl_89E720 * -0.5; /*0x47ba89*/
   }
-  result = Math::RoundToInt((double)(dword_89E7C0 * *((char *)this + 283)) + 0.5); /*0x47bab0*/
-  if ( *((unsigned char *)this + 284) ) /*0x47bab5*/
+  result = Math::RoundToInt((double)(dword_89E7C0 * this->u32_11B) + 0.5); /*0x47bab0*/
+  if ( this->u8_11C ) /*0x47bab5*/
   {
-    v5 = 40 * (*(unsigned __int8 *)((char *)this + 284) - 1); /*0x47baec*/
+    v5 = 40 * (*(unsigned __int8 *)(&this->u8_11C) - 1); /*0x47baec*/
     v6 = (double)(unsigned __int8)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
        + (double)(unsigned __int8)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
        + *(double *)(v5 + 8505616)
        + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
-    if ( v6 > *(double *)&qword_81C918[5 * *(unsigned __int8 *)((char *)this + 284) - 5] ) /*0x47bb3d*/
-      v6 = *(double *)&qword_81C918[5 * *(unsigned __int8 *)((char *)this + 284) - 5]; /*0x47bb41*/
+    if ( v6 > *(double *)&qword_81C918[5 * *(unsigned __int8 *)(&this->u8_11C) - 5] ) /*0x47bb3d*/
+      v6 = *(double *)&qword_81C918[5 * *(unsigned __int8 *)(&this->u8_11C) - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return result; /*0x47bb54*/

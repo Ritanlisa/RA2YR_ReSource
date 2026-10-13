@@ -174,9 +174,9 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   aP1->RadLevel = 0; /*0x771e6b*/
   aP1->IsMagBeam = 0; /*0x771e71*/
   aP1->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771e77*/
-  aP1->? = &WeaponTypeClass::`vftable'; /*0x771e7d*/
+  aP1->q15C = &WeaponTypeClass::`vftable'; /*0x771e7d*/
   aP1->? = &WeaponTypeClass::`vftable'; /*0x771e83*/
-  aP1->? = &WeaponTypeClass::`vftable'; /*0x771e8a*/
+  aP1->vtable4 = &WeaponTypeClass::`vftable'; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
@@ -591,9 +591,9 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   this->DownReport[0] = (int)&TypeList<int>::`vftable'; /*0x771f18*/
   this->Anim[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x771f1e*/
   this->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771f28*/
-  this->? = &WeaponTypeClass::`vftable'; /*0x771f2e*/
+  this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f2e*/
   this->? = &WeaponTypeClass::`vftable'; /*0x771f35*/
-  this->? = &WeaponTypeClass::`vftable'; /*0x771f3c*/
+  this->vtable4 = &WeaponTypeClass::`vftable'; /*0x771f3c*/
   return &this->AbstractTypeClass; /*0x771f45*/
 
 }
@@ -607,10 +607,10 @@ int WeaponTypeClass::CalculateSpeed()
   double FiringDistance; // [esp+4h] [ebp-8h]
 
   result = (int)this->Projectile; /*0x7729f6*/
-  if ( result && !*(unsigned int *)(result + 732) ) /*0x772a00*/
+  if ( result && !result->u32_2DC ) /*0x772a00*/
   {
-    FiringDistance = (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5816); /*0x772a1e*/
-    if ( *(unsigned char *)(result + 661) ) /*0x772a16*/
+    FiringDistance = (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 5816); /*0x772a1e*/
+    if ( result->u8_295 ) /*0x772a16*/
       FiringDistance = RulesClass::GetFiringDistance(); /*0x772a29*/
     result = TechnoClass::ComputeScanRange((TechnoClass *)this->Range, FiringDistance); /*0x772a3d*/
     this->Speed = result; /*0x772a42*/

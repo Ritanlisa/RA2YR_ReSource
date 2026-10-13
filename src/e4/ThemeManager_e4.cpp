@@ -29,7 +29,7 @@ char ThemeManager::ProcessCallback(void *a1)
   while ( (*(unsigned char *)((unsigned int)(a1)+ 12) & 1) != 0 ) /*0x408107*/
   {
     (*((unsigned int *)&(v3))) = *((unsigned int *)a1 + 5); /*0x40810d*/
-    if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
+    if ( *(unsigned int *)(v3 + 20) == v3->q018 ) /*0x408118*/
       break; /*0x408118*/
     (*((unsigned int *)&(v3))) = Audio::Callback(); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
@@ -48,16 +48,16 @@ void ThemeManager::Cleanup()
   int v4; // eax
   ThemeClass *v5; // ecx
 
-  while ( this->u32_24 > 0 ) /*0x720778*/
+  while ( this->q024 > 0 ) /*0x720778*/
   {
-    operator delete((void *)(**(unsigned int *)&this->u32_18)); /*0x720780*/
-    v2 = this->u32_24; /*0x720785*/
+    operator delete((void *)(**&this->u32_18)); /*0x720780*/
+    v2 = this->q024; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
       v3 = v2 - 1; /*0x72078f*/
       v4 = 0; /*0x720792*/
-      for ( this->u32_24 = v3; /*0x720799*/
-            v4 < this->u32_24;
+      for ( this->q024 = v3; /*0x720799*/
+            v4 < this->q024;
             *(unsigned int *)(this->u32_18 + 4 * v4 - 4) = *(unsigned int *)(this->u32_18 + 4 * v4) )
       {
         ++v4; /*0x72079e*/
@@ -68,9 +68,9 @@ void ThemeManager::Cleanup()
   if ( v5 ) /*0x7207b9*/
   {
     ThemeClass::RequestBuffer(v5); /*0x7207bb*/
-    ThemeManager::ProcessCallback(*(unsigned int *)&this->u32_2C); /*0x7207c3*/
-    Audio::Release(*(unsigned int *)&this->u32_2C); /*0x7207cb*/
-    AudioSample::Destructor(*(unsigned int *)&this->u32_2C); /*0x7207d3*/
+    ThemeManager::ProcessCallback(*&this->u32_2C); /*0x7207c3*/
+    Audio::Release(*&this->u32_2C); /*0x7207cb*/
+    AudioSample::Destructor(*&this->u32_2C); /*0x7207d3*/
     this->u32_2C = 0; /*0x7207d8*/
   }
 }

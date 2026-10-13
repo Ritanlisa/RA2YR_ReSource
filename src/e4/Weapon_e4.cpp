@@ -37,7 +37,7 @@ int sub_53AE00()
   StringCSF = GetStringCSF((wchar_t *)(unk_82809C), 0, g_Str_File_Ion_cpp, 1123); /*0x53ae11*/
   v1 = 3; /*0x53ae1c*/
   if ( dword_A83D4C ) /*0x53ae23*/
-    v1 = *((unsigned int *)dword_A83D4C + 22549); /*0x53ae25*/
+    v1 = dword_A83D4C->startingCell; /*0x53ae25*/
   return MessageListClass::AddMessage((gamemd::MessageListClass *)(unk_A8BC60), 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
 }
 }  // G42.18 ns repair
@@ -66,11 +66,11 @@ bool Weapon_Update(void * a1, void * a2)
     *(unsigned char *)(v2 + 8) = 1; /*0x659cae*/
     Weapon_Update_Update((ObjectClass *)v2); /*0x659cb2*/
   }
-  if ( *(unsigned char *)(v3 + 9) ) /*0x659cb7*/
+  if ( v3->u32_9 ) /*0x659cb7*/
   {
     Weapon_Update_Update_659EE0((ObjectClass *)v3); /*0x659cc4*/
-    v4 = *(unsigned int *)(v3 + 140); /*0x659cc9*/
-    *(unsigned int *)(v3 + 136) = 0; /*0x659ccf*/
+    v4 = v3->onBridge; /*0x659cc9*/
+    v3->parachute = 0; /*0x659ccf*/
     if ( v4 > 0 ) /*0x659cdb*/
     {
       do /*0x659e01*/
@@ -80,19 +80,19 @@ bool Weapon_Update(void * a1, void * a2)
         (*((unsigned short *)&(updated))) = (uint8_t)(*(unsigned char *)(v3 + 193) >> g_BitMask_Blue); /*0x659d28*/
         (*((unsigned int *)&(updated))) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
         v6 = updated | (a2 << g_BitShift_Blue); /*0x659d40*/
-        (*((unsigned short *)&(updated))) = (uint8_t)(*(unsigned char *)(v3 + 192) >> g_BitShift_Green_0); /*0x659d45*/
+        (*((unsigned short *)&(updated))) = (uint8_t)(v3->q0C0 >> g_BitShift_Green_0); /*0x659d45*/
         a2 = ((unsigned int)updated << g_BitShift_Red) | v6; /*0x659d55*/
-        ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v3 + 156), v15); /*0x659d57*/
-        ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v3 + 168), v14); /*0x659d68*/
+        ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v3->location, v15); /*0x659d57*/
+        ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v3->lineTrailer, v14); /*0x659d68*/
         v16[1] = (int)DSurface_ViewBounds.field_4; /*0x659d7e*/
         v16[0] = DSurface_ViewBounds.field_0; /*0x659d86*/
-        v16[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x659d8f*/
-        v16[3] = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x659d9c*/
+        v16[2] = *(unsigned int *)g_Map_VisibleRectOffset; /*0x659d8f*/
+        v16[3] = *(unsigned int *)&g_DSurface_WindowOffset; /*0x659d9c*/
         if ( (uint8_t)ClipLine(v15, v14, v16) ) /*0x659da0*/
         {
-          v7 = *(unsigned int *)(v3 + 12) - ZCoordToScreenY(*(unsigned int *)(v3 + 164)) - 2; /*0x659db9*/
-          v8 = ZCoordToScreenY(*(unsigned int *)(v3 + 176)); /*0x659dbc*/
-          (*(void (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x659de7*/
+          v7 = v3->vtable4 - ZCoordToScreenY(*&v3->q0A4) - 2; /*0x659db9*/
+          v8 = ZCoordToScreenY(v3->q_B0); /*0x659dbc*/
+          (*(void (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 52))( /*0x659de7*/
             g_DSurface_Hidden_2,
             &DSurface_ViewBounds,
             v15,
@@ -102,16 +102,16 @@ bool Weapon_Update(void * a1, void * a2)
             -2 - v8,
             0);
         }
-        v9 = *(unsigned int *)(v3 + 140); /*0x659df0*/
-        v10 = *(unsigned int *)(v3 + 136) + 1; /*0x659df7*/
-        *(unsigned int *)(v3 + 136) = v10; /*0x659df9*/
+        v9 = v3->onBridge; /*0x659df0*/
+        v10 = *&v3->parachute + 1; /*0x659df7*/
+        v3->parachute = v10; /*0x659df9*/
       }
       while ( v10 < v9 ); /*0x659e01*/
     }
   }
-  v11 = *(unsigned int *)(v3 + 60); /*0x659e0c*/
+  v11 = v3->ambientSoundController; /*0x659e0c*/
   v12 = *(unsigned int *)(v3 + 124) + 1; /*0x659e12*/
-  *(unsigned int *)(v3 + 124) = v12; /*0x659e14*/
+  v3->visibilityFlags = v12; /*0x659e14*/
   return v12 >= v11; /*0x659e19*/
 }
 }
@@ -225,7 +225,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     fstp [esp+0C8h+var_88]
   }
   ObjectVector::Construct(&v43, 0, 0); /*0x70c777*/
-  *(unsigned int *)v43.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x70c77c*/
+  *(unsigned int *)v43.__pad_000 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x70c77c*/
   v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
   v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/
   v42 = 0; /*0x70c790*/
@@ -474,26 +474,26 @@ LABEL_55:
       v37 = v57; /*0x70cc55*/
       a1[1] = v36; /*0x70cc59*/
       a1[2] = v37; /*0x70cc5c*/
-      if ( v43.ObjectVector_field_0x04 ) /*0x70cc65*/
+      if ( v43.q004 ) /*0x70cc65*/
       {
-        if ( BYTE1(v43.ObjectVector_field_0x0C) ) /*0x70cc6d*/
-          __3_YAXPAX_Z((void *)v43.ObjectVector_field_0x04); /*0x70cc70*/
+        if ( BYTE1(v43.q00C) ) /*0x70cc6d*/
+          __3_YAXPAX_Z((void *)v43.q004); /*0x70cc70*/
       }
       return a1; /*0x70cc78*/
     }
   }
-  v26 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cae2*/
+  v26 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49); /*0x70cae2*/
   if ( (unsigned __int8)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
   {
-    v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cb01*/
+    v27 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/
     {
-      v28 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cb20*/
-      LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v29, (int)v28); /*0x70cb2b*/
+      v28 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49); /*0x70cb20*/
+      LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v29, (int)v28); /*0x70cb2b*/
     }
   }
   v30 = v50; /*0x70cb37*/
-  *(unsigned int *)v43.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x70cb3d*/
+  *(unsigned int *)v43.__pad_000 = &VectorClass<ObjectClass *>::`vftable'; /*0x70cb3d*/
   *a1 = v49; /*0x70cb45*/
   v31 = v51; /*0x70cb47*/
   a1[1] = v30; /*0x70cb4b*/
@@ -513,7 +513,7 @@ int sub_53B410()
   StringCSF = GetStringCSF((wchar_t *)(aMsgDominatorac), 0, g_Str_File_Ion_cpp, 1339); /*0x53b421*/
   v1 = 3; /*0x53b42c*/
   if ( dword_A83D4C ) /*0x53b433*/
-    v1 = *((unsigned int *)dword_A83D4C + 22549); /*0x53b435*/
+    v1 = dword_A83D4C->startingCell; /*0x53b435*/
   return MessageListClass::AddMessage((gamemd::MessageListClass *)(unk_A8BC60), 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
 }
 }

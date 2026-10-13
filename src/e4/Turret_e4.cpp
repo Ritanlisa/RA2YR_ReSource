@@ -70,18 +70,18 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
     v2 = (*(int (**)(Turret *))(this->Turret_field_00 + 156))(this); /*0x5f8cfc*/
     if ( v2 ) /*0x5f8d04*/
     {
-      LOBYTE(v2) = *((unsigned char *)this + 3233); /*0x5f8d0a*/
+      LOBYTE(v2) = this->u32_CA1; /*0x5f8d0a*/
       if ( (unsigned char)v2 ) /*0x5f8d14*/
       {
-        sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8d30*/
+        sprintf(Buffer, "%sTUR", (const char *)&this->q0324); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
         CCFileClass::Construct(&v26, Source); /*0x5f8d63*/
         if ( (unsigned __int8)CCFileClass::Open(&v26, 0) ) /*0x5f8d70*/
         {
-          v3 = (void *)*((unsigned int *)this + 46); /*0x5f8d7d*/
+          v3 = (void *)this->u32_B8; /*0x5f8d7d*/
           if ( v3 ) /*0x5f8d85*/
           {
-            WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f8d89*/
+            WaveClass::Destroy(this->WaveClass_B86)); /*0x5f8d89*/
             __3_YAXPAX_Z(v3); /*0x5f8d8f*/
           }
           v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
@@ -89,16 +89,16 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             FileVXL = File::LoadFileVXL(v4, (int)&v26, 0); /*0x5f8db0*/
           else
             FileVXL = 0; /*0x5f8db7*/
-          *((unsigned int *)this + 46) = FileVXL; /*0x5f8dbb*/
+          this->u32_B8 = FileVXL; /*0x5f8dbb*/
           if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f8dc7*/
           {
-            sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8ddd*/
+            sprintf(Buffer, "%sTUR", (const char *)&this->q0324); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
             CCFileClass::Construct(&v20, Source); /*0x5f8e0d*/
-            v6 = (void *)*((unsigned int *)this + 47); /*0x5f8e12*/
+            v6 = (void *)this->u32_BC; /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
-              String::Release(*((String **)this + 47)); /*0x5f8e1e*/
+              String::Release(this->String_BC7)); /*0x5f8e1e*/
               __3_YAXPAX_Z(v6); /*0x5f8e24*/
             }
             v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
@@ -106,10 +106,10 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
               FileHVA = File::LoadFileHVA(v7, (int)&v20); /*0x5f8e41*/
             else
               FileHVA = 0; /*0x5f8e48*/
-            v9 = (VoxelSection *)*((unsigned int *)this + 46); /*0x5f8e4a*/
-            *((unsigned int *)this + 47) = FileHVA; /*0x5f8e52*/
+            v9 = (VoxelSection *)this->u32_B8; /*0x5f8e4a*/
+            this->u32_BC = FileHVA; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
-            Matrix::Scale(*((Matrix **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
+            Matrix::Scale(this->Matrix_B87), *(float *)(Info + 12)); /*0x5f8e67*/
             *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
             Vector::Clear((int)v21); /*0x5f8e7c*/

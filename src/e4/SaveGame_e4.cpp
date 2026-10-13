@@ -35,7 +35,7 @@ int SaveGame::LoadArrayData(int * a2)
   int v8; // [esp+40h] [ebp-4h] BYREF
 
   v3 = *a2; /*0x4391cc*/
-  v8 = *(unsigned int *)&this->__pad_0[16]; /*0x4391d9*/
+  v8 = *&this->u32_10; /*0x4391d9*/
   result = (*(int (**)(int *, int *, int, unsigned int))(v3 + 16))(a2, &v8, 4, 0); /*0x4391dd*/
   if ( result >= 0 ) /*0x4391e2*/
   {
@@ -44,7 +44,7 @@ int SaveGame::LoadArrayData(int * a2)
     {
 LABEL_5:
       v6 = *a2; /*0x43920c*/
-      v8 = *(unsigned int *)&this->__pad_0[40]; /*0x43921b*/
+      v8 = *&this->q028; /*0x43921b*/
       result = (*(int (**)(int *, int *, int, unsigned int))(v6 + 16))(a2, &v8, 4, 0); /*0x43921f*/
       if ( result >= 0 ) /*0x439224*/
       {
@@ -52,7 +52,7 @@ LABEL_5:
         {
           result = (*(int (**)(int *, int, int, unsigned int))(*a2 + 16))( /*0x43923e*/
                      a2,
-                     *(unsigned int *)&this->__pad_0[28] + 4 * i,
+                     *&this->u32_1C + 4 * i,
                      4,
                      0);
           if ( result < 0 ) /*0x439243*/
@@ -66,7 +66,7 @@ LABEL_5:
       {
         result = (*(int (**)(int *, int, int, unsigned int))(*a2 + 16))( /*0x4391fc*/
                    a2,
-                   *(unsigned int *)&this->__pad_0[4] + 4 * v5,
+                   *&this->q004 + 4 * v5,
                    4,
                    0);
         if ( result < 0 ) /*0x439201*/
@@ -91,7 +91,7 @@ int SaveGame::WriteDataArray(int * a2)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *a2; /*0x54e75c*/
-  v6 = *(unsigned int *)&this->__pad_0[28]; /*0x54e769*/
+  v6 = *&this->u32_1C; /*0x54e769*/
   result = (*(int (**)(int *, int *, int, unsigned int))(v3 + 16))(a2, &v6, 4, 0); /*0x54e76d*/
   if ( result >= 0 ) /*0x54e772*/
   {
@@ -99,7 +99,7 @@ int SaveGame::WriteDataArray(int * a2)
     {
       result = (*(int (**)(int *, unsigned int, int, unsigned int))(*a2 + 16))( /*0x54e78c*/
                  a2,
-                 *(unsigned int *)(*(unsigned int *)&this->__pad_0[16] + 4 * i),
+                 *(unsigned int *)(*&this->u32_10 + 4 * i),
                  8,
                  0);
       if ( result < 0 ) /*0x54e791*/
@@ -119,21 +119,21 @@ int SaveGame::SaveTriggerEvents()
   int v4; // edi
   int LoadGame_field_0x10; // [esp+20h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x6607e0*/
-  LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x6607e6*/
+  v2 = *(unsigned int *)this->q000; /*0x6607e0*/
+  LoadGame_field_0x10 = g_TriggerEventState; /*0x6607e6*/
   if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &LoadGame_field_0x10, 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/
   v4 = 0; /*0x6607fb*/
   if ( LoadGame_field_0x10 > 0 ) /*0x6607ff*/
   {
-    while ( (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x660817*/
+    while ( (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x660817*/
               this,
-              *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v4),
+              *(unsigned int *)(g_TriggerPool + 4 * v4),
               64,
               0) >= 0 )
     {
       if ( ++v4 >= LoadGame_field_0x10 ) /*0x660820*/
-        return (*(int (**)(SaveGame *, __int16 *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x660820*/
+        return (*(int (**)(SaveGame *, __int16 *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x660820*/
                  this,
                  &word_B04D78,
                  4,
@@ -141,7 +141,7 @@ int SaveGame::SaveTriggerEvents()
     }
     return 0; /*0x660817*/
   }
-  return (*(int (**)(SaveGame *, __int16 *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x6607f1*/
+  return (*(int (**)(SaveGame *, __int16 *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x6607f1*/
            this,
            &word_B04D78,
            4,
@@ -233,29 +233,29 @@ int SaveGame::LoadMainGameState()
   int v9; // eax
   ParticleSystemClass *unk1Particles; // [esp+A0h] [ebp-4h] BYREF
 
-  result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f7f1*/
+  result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f7f1*/
              this,
-             &stru_A8EB00.?[404],
+             &DataGlobal_A8EC94,
              4,
              0);
   if ( result >= 0 )
   {
-    result = (*(int (**)(SaveGame *, Object **, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f808*/
+    result = (*(int (**)(SaveGame *, Object **, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f808*/
                this,
                &dword_A83D4C,
                4,
                0);
     if ( result >= 0 )
     {
-      result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f81f*/
+      result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f81f*/
                  this,
-                 &stru_A8EB00.?[416],
+                 &TeamTypeClass_Array,
                  4,
                  0);
       if ( result >= 0 )
       {
-        v3 = *(unsigned int *)this->__pad_0; /*0x67f82f*/
-        unk1Particles = *(ParticleSystemClass **)&stru_A8EB00.?[228]; /*0x67f83b*/
+        v3 = *(unsigned int *)this->q000; /*0x67f82f*/
+        unk1Particles = *(ParticleSystemClass **)&Instance; /*0x67f83b*/
         result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v3 + 16))( /*0x67f83f*/
                    this,
                    &unk1Particles,
@@ -267,7 +267,7 @@ int SaveGame::LoadMainGameState()
           if ( (int)unk1Particles <= 0 )
           {
 LABEL_8:
-            result = (*(int (**)(SaveGame *, float *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f879*/
+            result = (*(int (**)(SaveGame *, float *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f879*/
                        this,
                        flt_89EA40,
                        432,
@@ -275,8 +275,8 @@ LABEL_8:
             if ( result >= 0 )
             {
               SuperWeaponClass::LoadFromSaveStream((SuperWeaponClass *)this); /*0x67f895*/
-              v5 = *(unsigned int *)this->__pad_0; /*0x67f8a0*/
-              unk1Particles = FootClass_Array.?; /*0x67f8ac*/
+              v5 = *(unsigned int *)this->q000; /*0x67f8a0*/
+              unk1Particles = dword_8B40D8; /*0x67f8ac*/
               result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v5 + 16))( /*0x67f8b0*/
                          this,
                          &unk1Particles,
@@ -288,8 +288,8 @@ LABEL_8:
                 if ( (int)unk1Particles <= 0 )
                 {
 LABEL_13:
-                  v7 = *(unsigned int *)this->__pad_0; /*0x67f8ea*/
-                  unk1Particles = (ParticleSystemClass *)FootClass_Array.?[0]; /*0x67f8fc*/
+                  v7 = *(unsigned int *)this->q000; /*0x67f8ea*/
+                  unk1Particles = (ParticleSystemClass *)FootClass_Array; /*0x67f8fc*/
                   result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v7 + 16))( /*0x67f900*/
                              this,
                              &unk1Particles,
@@ -301,21 +301,21 @@ LABEL_13:
                     if ( (int)unk1Particles <= 0 )
                     {
 LABEL_17:
-                      result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f93a*/
+                      result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f93a*/
                                  this,
                                  dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f959*/
+                        result = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f959*/
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (**)(SaveGame *, double *, int, unsigned int))(*(unsigned int *)this->__pad_0 /*0x67f96f*/
+                          result = (*(int (**)(SaveGame *, double *, int, unsigned int))(*(unsigned int *)this->q000 /*0x67f96f*/
                                                                                            + 16))(
                                      this,
                                      dbl_89EC28,
@@ -323,7 +323,7 @@ LABEL_17:
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 /*0x67f982*/
+                            result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->q000 /*0x67f982*/
                                                                                            + 16))(
                                        this,
                                        byte_89ECC0,
@@ -331,14 +331,14 @@ LABEL_17:
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (**)(SaveGame *, MissionClass *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f998*/
+                              result = (*(int (**)(SaveGame *, MissionClass *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f998*/
                                          this,
                                          &stru_A8E3A8,
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v9 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f9ab*/
+                                v9 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f9ab*/
                                        this,
                                        &dword_B07784,
                                        4,
@@ -354,7 +354,7 @@ LABEL_17:
                     {
                       while ( 1 ) /*0x67f926*/
                       {
-                        result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f926*/
+                        result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f926*/
                                    this,
                                    FootClass_Array.?[5] + 4 * v8,
                                    4,
@@ -371,7 +371,7 @@ LABEL_17:
                 {
                   while ( 1 ) /*0x67f8d6*/
                   {
-                    result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f8d6*/
+                    result = (*(int (**)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f8d6*/
                                this,
                                (char *)&FootClass_Array.?->ObjectClass + 4 * v6,
                                4,
@@ -389,7 +389,7 @@ LABEL_17:
           {
             while ( 1 ) /*0x67f865*/
             {
-              result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f865*/
+              result = (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))( /*0x67f865*/
                          this,
                          *(unsigned int *)&stru_A8EB00.?[216] + 4 * v4,
                          4,
@@ -429,12 +429,12 @@ int SaveGame::LoadVeinholeData()
   int v16; // [esp+9Ch] [ebp-8h] BYREF
   int v17; // [esp+A0h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x74ed74*/
+  v2 = *(unsigned int *)this->q000; /*0x74ed74*/
   uniqueId = stru_B1D290.?; /*0x74ed7a*/
   if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &uniqueId, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
   v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
-  v5 = *(unsigned int *)this->__pad_0; /*0x74ed9c*/
+  v5 = *(unsigned int *)this->q000; /*0x74ed9c*/
   v15 = v4; /*0x74eda3*/
   if ( (*(int (**)(SaveGame *, int, int, unsigned int))(v5 + 16))( /*0x74edac*/
          this,
@@ -448,23 +448,23 @@ int SaveGame::LoadVeinholeData()
   {
     while ( 1 ) /*0x74edd6*/
     {
-      v7 = *(unsigned int *)this->__pad_0; /*0x74edd6*/
+      v7 = *(unsigned int *)this->q000; /*0x74edd6*/
       v16 = *((unsigned int *)stru_B1D290.? + v6); /*0x74ede5*/
       if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
-        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
+        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(
              this,
              *((unsigned int *)stru_B1D290.? + v6),
              264,
              0) < 0
-        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
+        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(
              this,
              *(unsigned int *)(*((unsigned int *)stru_B1D290.? + v6) + 196),
              v4,
              0) < 0
-        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(
+        || (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(
              this,
              *(unsigned int *)(*((unsigned int *)stru_B1D290.? + v6) + 180),
-             8 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 220),
+             8 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 220),
              0) < 0 )
       {
         break; /*0x74ee50*/
@@ -472,12 +472,12 @@ int SaveGame::LoadVeinholeData()
       v8 = *((unsigned int *)stru_B1D290.? + v6); /*0x74ee62*/
       v9 = *(unsigned int *)(v8 + 176); /*0x74ee65*/
       v10 = *(unsigned int *)(v8 + 180); /*0x74ee6b*/
-      if ( (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
-        && (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, v9 + 4, 4, 0) >= 0 )
+      if ( (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
+        && (*(int (**)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->q000 + 16))(this, v9 + 4, 4, 0) >= 0 )
       {
         for ( i = 0; i < *(unsigned int *)(v9 + 4); ++i ) /*0x74ee93*/
         {
-          v12 = *(unsigned int *)this->__pad_0; /*0x74ee98*/
+          v12 = *(unsigned int *)this->q000; /*0x74ee98*/
           v17 = (*(unsigned int *)(*(unsigned int *)(v9 + 8) + 4 * i) - v10) >> 3; /*0x74eeac*/
           if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v12 + 16))(this, &v17, 4, 0) < 0 ) /*0x74eeb5*/
             break; /*0x74eeb5*/
@@ -512,7 +512,7 @@ int SaveGame::SaveAudioQueueItems()
   unsigned int v12[4]; // [esp+14h] [ebp-10h] BYREF
 
   v11 = SaveGame::CountLinkedList((SaveGame *)&stru_B1D290.isAliveFlag); /*0x751637*/
-  v2 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))(this, &v11, 4, 0); /*0x751647*/
+  v2 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->q000 + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
     for ( i = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); i; i = AudioQueue::GetNextAlt((AudioQueue *)i) )
@@ -547,7 +547,7 @@ LABEL_11:
         v12[0] = v4; /*0x7516bf*/
       }
       v12[1] = *(unsigned int *)(i + 32); /*0x7516c8*/
-      v9 = *(unsigned int *)this->__pad_0; /*0x7516cf*/
+      v9 = *(unsigned int *)this->q000; /*0x7516cf*/
       v12[2] = *(unsigned int *)(i + 36); /*0x7516d2*/
       v12[3] = *(unsigned int *)(i + 40); /*0x7516e1*/
       v2 = (*(int (**)(SaveGame *, unsigned int *, int, unsigned int))(v9 + 16))(this, v12, 16, 0); /*0x7516e8*/
@@ -587,7 +587,7 @@ int SaveGame::SaveIteratedData(int a2)
 
   v2 = a2; /*0x413853*/
   v3 = 0; /*0x413858*/
-  for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
+  for ( i = &this->q004; ; i += 24 ) /*0x41385a*/
   {
     v5 = *(unsigned int *)v2; /*0x413860*/
     a2 = *((unsigned int *)i + 3); /*0x41386c*/
@@ -2350,9 +2350,9 @@ int SaveGame::VtableDispatch(int a2)
 
   int result; // eax
 
-  result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[4], 4, 0); /*0x721023*/
+  result = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->q004, 4, 0); /*0x721023*/
   if ( result >= 0 ) /*0x721028*/
-    return (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[8], 4, 0); /*0x721035*/
+    return (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->u32_10, 4, 0); /*0x721035*/
   return result; /*0x721038*/
 
 }
@@ -2368,12 +2368,12 @@ int SaveGame::WriteMagicHeader()
   int v4; // edx
   int v5; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x7533ba*/
+  v2 = *(unsigned int *)this->q000; /*0x7533ba*/
   v5 = 1450145875; /*0x7533c0*/
   result = (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))(this, &v5, 4, 0); /*0x7533c8*/
   if ( result >= 0 ) /*0x7533cd*/
   {
-    v4 = *(unsigned int *)this->__pad_0; /*0x7533cf*/
+    v4 = *(unsigned int *)this->q000; /*0x7533cf*/
     v5 = 1450145861; /*0x7533db*/
     return (*(int (**)(SaveGame *, int *, int, unsigned int))(v4 + 16))(this, &v5, 4, 0); /*0x7533e3*/
   }

@@ -68,7 +68,7 @@ void PsyDom::Fire()
   v1 = (ActionQueue *)operator new(0x14u); /*0x53b08e*/
   if ( v1 ) /*0x53b097*/
   {
-    v2 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(&PsyDom_Coords); /*0x53b0a3*/
+    v2 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(&PsyDom_Coords); /*0x53b0a3*/
     v3 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v2 + 72))(v2, v34); /*0x53b0b1*/
     v4 = ActionQueue::PushEntry(v1, *v3, v3[1], v3[2]); /*0x53b0cb*/
   }
@@ -77,8 +77,8 @@ void PsyDom::Fire()
     v4 = 0; /*0x53b0d2*/
   }
   v4[4] = 1; /*0x53b0d4*/
-  v5 = *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 768); /*0x53b0e6*/
-  v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(&PsyDom_Coords); /*0x53b0f1*/
+  v5 = *(void **)(*(unsigned int *)&g_RulesClass_Instance + 768); /*0x53b0e6*/
+  v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(&PsyDom_Coords); /*0x53b0f1*/
   v7 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v6 + 72))(v6, v34); /*0x53b0ff*/
   v33[0] = *v7; /*0x53b104*/
   v33[1] = v7[1]; /*0x53b110*/
@@ -90,12 +90,12 @@ void PsyDom::Fire()
     PsyDom_Anim = 0; /*0x53b145*/
   PlaySoundEffectAt( /*0x53b16b*/
     v33,
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 780),
+    *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 780),
     0,
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 760),
+    *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 760),
     1,
     (int)LightningStorm_Owner);
-  v9 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 776); /*0x53b176*/
+  v9 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 776); /*0x53b176*/
   if ( v9 >= 10 ) /*0x53b17f*/
     v9 = 10; /*0x53b181*/
   v10 = ((unsigned int *)(dword_7ED3D0))[v9]; /*0x53b186*/
@@ -116,7 +116,7 @@ void PsyDom::Fire()
       *(unsigned int *)v31 = v29; /*0x53b1f7*/
       v32[0] = 0; /*0x53b1fb*/
       v32[1] = 0; /*0x53b1ff*/
-      v13 = (Object *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v31); /*0x53b203*/
+      v13 = (Object *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v31); /*0x53b203*/
       for ( i = ((Object *)(v13))->FindClosestObjectCell(v32, 0, 0); i; i = (*(unsigned char *)(v24 + 20) & 1) != 0 ? v24 : 0 )
       {
         if ( (*(int (**)(int))(*(unsigned int *)i + 44))(i) != 6 /*0x53b26b*/
@@ -142,7 +142,7 @@ void PsyDom::Fire()
           if ( v21 ) /*0x53b2e6*/
             v22 = (BuildingClass *)AnimClass::ctor( /*0x53b306*/
                                      v21,
-                                     *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 804),
+                                     *(void **)(*(unsigned int *)&g_RulesClass_Instance + 804),
                                      v34,
                                      0,
                                      1,

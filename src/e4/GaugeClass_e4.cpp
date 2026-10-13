@@ -33,6 +33,6 @@ GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
   GadgetClass::Dtor((GadgetClass *)Block); /*0x4e30d3*/
   if ( (a2 & 1) != 0 ) /*0x4e30dd*/
     operator delete((void *)(Block)); /*0x4e30e0*/
-  return Block->__pad_0; /*0x4e30ea*/
+  return Block->tail_0; /*0x4e30ea*/
 }
 } // namespace gamemd

@@ -19,20 +19,20 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   int16_t v14; // [esp+Ch] [ebp-4h]
 
   IPXConnClass::initConnection((int)((ModemConnectionClass *)aP1), aP2, aP3, aP4, a5, 2, -1, 60, a9); /*0x53f458*/
-  Waypoint::InitInvalid((Waypoint *)((char *)aP1 + 76)); /*0x53f462*/
-  *(unsigned int *)aP1->__pad_0 = &vt_IPXConnClass; /*0x53f46b*/
+  Waypoint::InitInvalid(&aP1->u32_4C); /*0x53f462*/
+  *(unsigned int *)aP1->vtable1 = &vt_IPXConnClass; /*0x53f46b*/
   if ( aP8 ) /*0x53f473*/
   {
-    *((unsigned int *)aP1 + 19) = *(unsigned int *)(aP8); /*0x53f479*/
+    aP1->u32_4C = *(unsigned int *)(aP8); /*0x53f479*/
     *((unsigned int *)aP1 + 20) = ((unsigned int *)(aP8))[1]; /*0x53f47e*/
     *((unsigned int *)aP1 + 21) = ((unsigned int *)(aP8))[2]; /*0x53f484*/
   }
-  *((unsigned int *)aP1 + 25) = aP8; /*0x53f494*/
-  wcscpy((wchar_t *)aP1 + 52,(const wchar_t *)(aP8)); /*0x53f497*/
-  ((Network *)((Network *)((char *)aP1 + 76)))->CopyAddress((unsigned int *)(&a9), (int)&v13); /*0x53f4ab*/
+  aP1->q064 = aP8; /*0x53f494*/
+  wcscpy(&aP1->u32_D0,(const wchar_t *)(aP8)); /*0x53f497*/
+  (&aP1->u32_4C)->CopyAddress((unsigned int *)(&a9), (int)&v13); /*0x53f4ab*/
   v10 = v13; /*0x53f4b0*/
   v11 = v14; /*0x53f4b4*/
-  *((unsigned int *)aP1 + 24) = 0; /*0x53f4bc*/
+  aP1->q060 = 0; /*0x53f4bc*/
   *((unsigned int *)aP1 + 22) = v10; /*0x53f4c4*/
   *((unsigned short *)aP1 + 46) = v11; /*0x53f4c6*/
   return (void *)(aP1); /*0x53f4c3*/

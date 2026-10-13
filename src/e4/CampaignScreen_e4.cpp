@@ -182,7 +182,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
     while ( 1 ) /*0x47102c*/
     {
       v21 = Color::ConvertToRGB( /*0x47102c*/
-              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776),
+              (Color *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776),
               (int)v57);
       (*((unsigned short *)&(v56))) = *(unsigned short *)v21; /*0x471034*/
       (((unsigned char *)&(v56))[2]) = *(unsigned char *)(v21 + 2); /*0x47103c*/

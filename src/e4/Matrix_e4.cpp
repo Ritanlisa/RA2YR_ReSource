@@ -14,7 +14,7 @@ namespace gamemd {  // G42.18 ns repair
 int Matrix3x4::Identity()
 {
   this-((unsigned int *)(>m_Data))[0] = 1065353216; /*0x5ae867*/
-  *(unsigned int *)&this->q004 = 0; /*0x5ae869*/
+  *&this->q004 = 0; /*0x5ae869*/
   this-((unsigned int *)(>m_Data))[2] = 0; /*0x5ae86c*/
   this-((unsigned int *)(>m_Data))[3] = 0; /*0x5ae86f*/
   this-((unsigned int *)(>m_Data))[4] = 0; /*0x5ae872*/

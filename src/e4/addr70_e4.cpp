@@ -464,7 +464,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       v39 = 0; /*0x707100*/
       v42 = v21 - *(unsigned int *)&v22; /*0x707104*/
       v40 = 0; /*0x70710c*/
-      v41 = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x707110*/
+      v41 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x707110*/
       v23 = (int *)(ClipRectIntersection(v49, &v43, &v39, 0, 0)); /*0x70711e*/
       v43 = *v23; /*0x707125*/
       v44 = v23[1]; /*0x70712c*/
@@ -496,7 +496,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   SHPFrame = (int *)BuildingClass::GetSHPFrame(v25, v24); /*0x707215*/
   v32 = Miles::DriverGet(); /*0x707227*/
   BlitterDrawSHP( /*0x707235*/
-    (int *)g_DSurface_Hidden_2->__pad_0,
+    (int *)g_DSurface_Hidden_2,
     (int)v25,
     v32,
     &v48[2],
@@ -577,7 +577,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
       }
       else
       {
-        v7 = (unsigned int *)v3[279]; /*0x709596*/
+        v7 = v3->attackedTargets; /*0x709596*/
         while ( *(unsigned int *)(v3[285] + 4 * i) != *v7 ) /*0x70959e*/
         {
           ++v5; /*0x7095a0*/
@@ -605,7 +605,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
         v13 = 4 * v12; /*0x709643*/
         v14 = 0; /*0x70964a*/
         v15 = *(unsigned int *)(v3[279] + v13); /*0x70964c*/
-        v16 = (unsigned int *)v3[285]; /*0x709653*/
+        v16 = v3->audioLoopIndex3; /*0x709653*/
         while ( v15 != *v16 ) /*0x70965b*/
         {
           ++v14; /*0x709661*/
@@ -762,7 +762,7 @@ void UpdateTimedStateMachine(int * a1)
         {
   LABEL_16:
           a1[112] = 3; /*0x70ea31*/
-          v7 = Random::Range((gamemd::Random *)((unsigned int *)dword_A8B230 + 134), -5, 5); /*0x70ea4b*/
+          v7 = Random::Range(&dword_A8B230->u32_218, -5, 5); /*0x70ea4b*/
           a1[109] = (int)dword_A8ED84; /*0x70ea59*/
           a1[110] = v21; /*0x70ea5f*/
           a1[111] = v7 + 20; /*0x70ea62*/
@@ -956,18 +956,18 @@ int E4Recv_7011A0::sub_7011A0()
 
   if ( (*((uint8_t (**)(ObjectClass *))this->vfptr + 21))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
-  if ( !*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6200) ) /*0x7011bd*/
+  if ( !*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6200) ) /*0x7011bd*/
     return 0; /*0x7011c8*/
-  v4 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6212); /*0x7011d5*/
+  v4 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6212); /*0x7011d5*/
   vtable0 = (int (**)(ObjectClass *, unsigned char *))this->vfptr; /*0x7011db*/
-  v12 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6208); /*0x7011dd*/
+  v12 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6208); /*0x7011dd*/
   v13 = v4; /*0x7011e5*/
-  v6 = (unsigned int *)vtable0[18](this, v14); /*0x7011ec*/
+  v6 = vtable0->q048(this, v14); /*0x7011ec*/
   (*((unsigned short *)&(v10))) = *v6 / 256; /*0x7011ff*/
   (*(((unsigned short *)&(v10)) + 1)) = v6[1] / 256; /*0x701218*/
   *(unsigned int *)v11 = v10; /*0x701225*/
-  v7 = (char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v11); /*0x701234*/
-  ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&stru_87F5F0.__pad_58[416]); /*0x701236*/
+  v7 = (char *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v11); /*0x701234*/
+  ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&DataGlobal_87F7E8); /*0x701236*/
   v8 = g_BuildingLoadQueue_Array.ThreatAvoidanceCoefficient[1] * v7[283]; /*0x70127d*/
   (*((unsigned short *)&(v9))) = Math::RoundToInt(v1); /*0x70127f*/
   Math::Sqrt((double)(v8 * v8 + (v9 << 8) * (v9 << 8))); /*0x7012a1*/
@@ -1000,7 +1000,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   ObjectClass *v2; // ecx
   int v4; // [esp+4h] [ebp-8h]
 
-  v2 = (ObjectClass *)(char *)&this->u32_180; /*0x70f74c*/
+  v2 = &this->u32_180; /*0x70f74c*/
   v2->vfptr = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x70f752*/
   v2->vfptr1 = (void *)v4; /*0x70f758*/
   v2->vfptr2 = (void *)a2; /*0x70f75b*/
@@ -1028,16 +1028,16 @@ int E4Recv_70FE50::sub_70FE50()
   drainAnim = this->drainAnim; /*0x70fe53*/
   if ( drainAnim ) /*0x70fe5b*/
   {
-    (*(void (**)(int))(*(unsigned int *)drainAnim + 248))(drainAnim); /*0x70fe5f*/
+    (*(void (**)(int))(*&drainAnim->isDiscoveredByComputer))(drainAnim); /*0x70fe5f*/
     this->drainAnim = 0; /*0x70fe65*/
   }
   result = this->drainTarget; /*0x70fe6f*/
   if ( result ) /*0x70fe77*/
   {
-    *(unsigned int *)(result + 464) = 0; /*0x70fe79*/
+    result->IQ = 0; /*0x70fe79*/
     result = *(unsigned int *)(this->drainTarget + 540); /*0x70fe89*/
     if ( result ) /*0x70fe91*/
-      *(unsigned char *)(result + 22392) = 1; /*0x70fe93*/
+      result->u32_5778 = 1; /*0x70fe93*/
     this->drainTarget = 0; /*0x70fe9a*/
   }
   return result; /*0x70fea4*/

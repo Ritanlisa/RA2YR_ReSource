@@ -12,7 +12,7 @@
 namespace gamemd {  // G42.18 ns repair
 int CampaignProperties_WorldDominationTour_22::Seek(int a2, void *a2_2, void *a3_1)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x5d277a*/
+  return *(unsigned int *)(*&this->q004 + 4 * a2); /*0x5d277a*/
 }  // G42.18 ns repair
 } // namespace gamemd
 
@@ -43,8 +43,8 @@ int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2, void *a2_
 namespace gamemd {
 unsigned int CampaignProperties_WorldDominationTour_22::Write(int a2)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x5d2940*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x5d2955*/
+  if ( (this->m_C) ) /*0x5d2940*/
+    return (unsigned int)(a2 - *&this->q004) >> 2; /*0x5d2955*/
   else
     return 0; /*0x5d2947*/
 }
@@ -56,18 +56,18 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x5d2ca3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d2ca6*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x5d2cb0*/
+  v3 = *&Block->__pad_004; /*0x5d2ca3*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d2ca6*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5d2cb0*/
   {
     operator delete((void *)(v3)); /*0x5d2cb8*/
-    *(unsigned int *)&Block->q004 = 0; /*0x5d2cc0*/
+    *&Block->__pad_004 = 0; /*0x5d2cc0*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x5d2ccb*/
-  Block->q008 = 0; /*0x5d2cd1*/
+  (Block->u32_D) = 0; /*0x5d2ccb*/
+  Block->u32_8 = 0; /*0x5d2cd1*/
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
     operator delete((void *)(Block)); /*0x5d2cdb*/
-  return Block->__pad_0; /*0x5d2ce5*/
+  return Block->tail_0; /*0x5d2ce5*/
 }
 } // namespace gamemd
 
@@ -95,8 +95,8 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::ddtor()
 {
 
-  --*((unsigned int *)this + 2); /*0x76f1b2*/
-  return this->__pad_0; /*0x76f1b5*/
+  --this->u32_8; /*0x76f1b2*/
+  return this->__pad_000; /*0x76f1b5*/
 
 }
 } // namespace gamemd

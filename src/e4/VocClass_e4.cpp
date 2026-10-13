@@ -41,7 +41,7 @@ int VocClass::Release()
     v5 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
-      v6 = (RefCount **)&this->Volume[4]; /*0x405390*/
+      v6 = &this->VocClass_field_98; /*0x405390*/
       do /*0x4053a8*/
       {
         RefCount::Decrement(*v6); /*0x405395*/
@@ -55,7 +55,7 @@ int VocClass::Release()
     this->ActiveBufferCount = 0; /*0x4053ab*/
     this->Volume[1] = 4; /*0x4053b1*/
     this->Attack = 0; /*0x4053b8*/
-    *((unsigned int *)this + 158) = 0; /*0x4053be*/
+    this->u32_278 = 0; /*0x4053be*/
     this->Volume[0] |= 1u; /*0x4053ca*/
   }
   return result; /*0x4053cf*/

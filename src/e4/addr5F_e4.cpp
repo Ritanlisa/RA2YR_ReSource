@@ -113,7 +113,7 @@ char HandlePlayerDisconnection(int a1, int a2)
   if ( dword_A8B54C != 1 ) /*0x5f018f*/
   {
     result = (char)dword_A8022C; /*0x5f0195*/
-    v3 = *(unsigned int *)&dword_A8022C->vfptr[4 * a1]; /*0x5f019a*/
+    v3 = *&dword_A8022C->vtable1; /*0x5f019a*/
     if ( v3 ) /*0x5f019f*/
     {
       result = v3->currentPlayer; /*0x5f01a5*/
@@ -530,8 +530,8 @@ AbstractClass * * sub_5FDDF0()
   int v12; // [esp+1Ch] [ebp-8h]
   int v13; // [esp+20h] [ebp-4h]
 
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5fddfb*/
-  v1 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5fde0a*/
+  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x5fddfb*/
+  v1 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x5fde0a*/
   v2 = 0; /*0x5fde0e*/
   v3 = 1000; /*0x5fde10*/
   Block = 0; /*0x5fde17*/
@@ -557,7 +557,7 @@ AbstractClass * * sub_5FDDF0()
         *(unsigned int *)(v1 + 68) = -1; /*0x5fde8f*/
         *(unsigned char *)(v1 + 286) = 0; /*0x5fde92*/
       }
-      v1 = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x5fdea2*/
+      v1 = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x5fdea2*/
       if ( !v1 ) /*0x5fdea6*/
         break; /*0x5fdea6*/
       v2 = v9; /*0x5fde3f*/
@@ -720,11 +720,11 @@ AbstractClass * * GenerateRangeRingTextures()
         if ( v3 ) /*0x5ff457*/
         {
           Surface::Construct(v3, 256, 128); /*0x5ff465*/
-          *(unsigned int *)v4[1].__pad_0 = 0; /*0x5ff46d*/
-          *(unsigned int *)v4->__pad_0 = &XSurface_Vtable; /*0x5ff476*/
+          *v4->Width.__pad_0 = 0; /*0x5ff46d*/
+          *(unsigned int *)v4->vtable1 = &XSurface_Vtable; /*0x5ff476*/
           v4[1].Width = 1; /*0x5ff47c*/
           Buffer::Init((Buffer *)&v4[1].Height, 0, 0x8000); /*0x5ff47f*/
-          *(unsigned int *)v4->__pad_0 = &BSurface_Vtable; /*0x5ff484*/
+          *(unsigned int *)v4->vtable1 = &BSurface_Vtable; /*0x5ff484*/
         }
         else
         {
@@ -790,11 +790,11 @@ AbstractClass * * GenerateRangeRingTextures()
         if ( v12 ) /*0x5ff5ca*/
         {
           Surface::Construct(v12, 256, 128); /*0x5ff5d8*/
-          *(unsigned int *)v13[1].__pad_0 = 0; /*0x5ff5e0*/
-          *(unsigned int *)v13->__pad_0 = &XSurface_Vtable; /*0x5ff5e9*/
+          *v13->Width.__pad_0 = 0; /*0x5ff5e0*/
+          *(unsigned int *)v13->vtable1 = &XSurface_Vtable; /*0x5ff5e9*/
           v13[1].Width = 1; /*0x5ff5ef*/
           Buffer::Init((Buffer *)&v13[1].Height, 0, 0x8000); /*0x5ff5f6*/
-          *(unsigned int *)v13->__pad_0 = &BSurface_Vtable; /*0x5ff5fb*/
+          *(unsigned int *)v13->vtable1 = &BSurface_Vtable; /*0x5ff5fb*/
         }
         else
         {
@@ -810,7 +810,7 @@ AbstractClass * * GenerateRangeRingTextures()
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff640*/
       *(unsigned int *)v31.Surface = &BSurface_Vtable; /*0x5ff649*/
       XSurface::Fill(&v31, 0); /*0x5ff652*/
-      v21 = 60 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1960); /*0x5ff684*/
+      v21 = 60 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1960); /*0x5ff684*/
       (*((unsigned short *)&(v14))) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
       Draw::Ellipse((Draw *)&v31, 128, 128, i - v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
@@ -1023,7 +1023,7 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->ambientSoundController[2] = a2; /*0x5f15cc*/
   this->ambientSoundController[3] = a3; /*0x5f15d3*/
   this->vfptr2 = (void *)a4; /*0x5f15da*/
-  (*((unsigned short *)&(this->ambientSoundController[4]))) = a5; /*0x5f15e2*/
+  (this->onBridge) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
   this->vfptr = &vt_NullModemClass; /*0x5f15f1*/
@@ -1038,8 +1038,8 @@ unsigned int ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->NeedsSaveOrLink = 0; /*0x5f1613*/
   this->occupant = 3000; /*0x5f1616*/
   this->owningHouseIndex = 1200; /*0x5f161d*/
-  (*((unsigned char *)&(this->nextObject))) = 43; /*0x5f1624*/
-  *(unsigned int *)&this->bombVisible = 0; /*0x5f1628*/
+  (this->nextObject) = 43; /*0x5f1624*/
+  *&this->bombVisible = 0; /*0x5f1628*/
   this->health = 0; /*0x5f162b*/
   this->estimatedHealth = 0; /*0x5f162e*/
   this->ambientSoundController[0] = 0; /*0x5f1631*/

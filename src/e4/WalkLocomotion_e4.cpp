@@ -56,11 +56,11 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
   v3 = aP1; /*0x6a01a0*/
   if ( *aP1 != g_OverlayTypeConfig || aP1[1] != (unsigned int)qword_B077FC || (v5 = aP1[2], v5 != HIDWORD(qword_B077FC)) ) /*0x6a01ce*/
   {
-    LOBYTE(v5) = *((unsigned char *)this + 96); /*0x6a01d4*/
+    LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
     v6 = aP3; /*0x6a01d7*/
     if ( !(unsigned char)v5 ) /*0x6a01dd*/
     {
-      v5 = *((unsigned int *)this + 22); /*0x6a01e3*/
+      v5 = this->u32_58; /*0x6a01e3*/
       if ( v5 != -1 ) /*0x6a01e9*/
       {
         v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/
@@ -73,31 +73,31 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
           {
             v9 = (int *)(v8 + 12 * v5); /*0x6a021d*/
             aP3 = v9[2]; /*0x6a0223*/
-            if ( *((unsigned int *)this + 23) < v5 ) /*0x6a022c*/
+            if ( this->u32_5C < v5 ) /*0x6a022c*/
             {
               v10 = v9[1]; /*0x6a0234*/
               v18[0] = *v9; /*0x6a0237*/
               v18[1] = v10; /*0x6a023f*/
               v5 = (int)WalkLocomotion::TransformCoords((WalkLocomotion *)this, &v19, v18, &aP3); /*0x6a0250*/
               v11 = *(unsigned int *)v5; /*0x6a0255*/
-              v12 = *(unsigned int *)(v5 + 4); /*0x6a0259*/
+              v12 = v5->u32_4; /*0x6a0259*/
               if ( !v6 ) /*0x6a025c*/
               {
-                v13 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 464))(*((unsigned int *)this + 3)); /*0x6a0263*/
-                v14 = *((unsigned int *)this + 3); /*0x6a0269*/
+                v13 = (*(int (**)(unsigned int))(**&this->u32_C + 464))(this->u32_C); /*0x6a0263*/
+                v14 = this->u32_C; /*0x6a0269*/
                 v19 = v11; /*0x6a026c*/
                 v20 = v12; /*0x6a0270*/
                 v21 = v13; /*0x6a0274*/
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x6a027f*/
-                LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a028f*/
-                               *((unsigned int *)this + 3),
+                LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**&this->u32_C + 244))( /*0x6a028f*/
+                               this->u32_C,
                                aP1);
                 return v5; /*0x6a029c*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
-                v15 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 464))(*((unsigned int *)this + 3)); /*0x6a02ae*/
-                v16 = *((unsigned int *)this + 3); /*0x6a02b4*/
+                v15 = (*(int (**)(unsigned int))(**&this->u32_C + 464))(this->u32_C); /*0x6a02ae*/
+                v16 = this->u32_C; /*0x6a02b4*/
                 v21 = v15; /*0x6a02b7*/
                 v19 = v11; /*0x6a02bb*/
                 v20 = v12; /*0x6a02bf*/
@@ -112,14 +112,14 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
     if ( v6 ) /*0x6a02d6*/
     {
       if ( v6 == 1 || v6 == 3 ) /*0x6a02f6*/
-        LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 240))( /*0x6a02fe*/
-                       *((unsigned int *)this + 3),
+        LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**&this->u32_C + 240))( /*0x6a02fe*/
+                       this->u32_C,
                        v3);
     }
     else
     {
-      LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a02de*/
-                     *((unsigned int *)this + 3),
+      LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**&this->u32_C + 244))( /*0x6a02de*/
+                     this->u32_C,
                      v3);
     }
   }
@@ -596,7 +596,7 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
   char *WalkLocomotion_field_0x44; // ecx
 
   v4 = *aP3; /*0x6a3dbd*/
-  v5 = dword_7F2A48[3 * (int)this->WalkLocomotion_field_0x58]; /*0x6a3dc1*/
+  v5 = dword_7F2A48[3 * (int)this->u32_58]; /*0x6a3dc1*/
   v6 = *aP2; /*0x6a3dcf*/
   v7 = aP2[1]; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
@@ -616,8 +616,8 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
   *aP3 = v4; /*0x6a3e0f*/
-  WalkLocomotion_field_0x40 = (char *)this->WalkLocomotion_field_0x40; /*0x6a3e12*/
-  WalkLocomotion_field_0x44 = (char *)this->WalkLocomotion_field_0x44; /*0x6a3e15*/
+  WalkLocomotion_field_0x40 = (char *)this->q040; /*0x6a3e12*/
+  WalkLocomotion_field_0x44 = (char *)this->q044; /*0x6a3e15*/
   *aP1 = &WalkLocomotion_field_0x40[v6]; /*0x6a3e22*/
   aP1[1] = &WalkLocomotion_field_0x44[v7]; /*0x6a3e25*/
   return aP1; /*0x6a3e20*/

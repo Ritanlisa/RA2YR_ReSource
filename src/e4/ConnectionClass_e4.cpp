@@ -91,10 +91,10 @@ int ConnectionClass::initQueue(unsigned int a2)
   unsigned int v6; // eax
   unsigned int result; // eax
 
-  v2 = *((unsigned int *)this + 6); /*0x48ba10*/
+  v2 = this->u32_18; /*0x48ba10*/
   if ( v2 == 256 ) /*0x48ba1c*/
   {
-    v3 = a2 - *((unsigned int *)this + 7) + this->PacketsReceived; /*0x48ba2c*/
+    v3 = a2 - this->u32_1C + this->PacketsReceived; /*0x48ba2c*/
     this->PacketsReceived = v3; /*0x48ba2e*/
     v4 = ((unsigned __int8)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
   }
@@ -102,14 +102,14 @@ int ConnectionClass::initQueue(unsigned int a2)
   {
     v5 = v2 + 1; /*0x48ba4e*/
     v6 = a2 + this->PacketsReceived; /*0x48ba56*/
-    *((unsigned int *)this + 6) = v5; /*0x48ba58*/
+    this->u32_18 = v5; /*0x48ba58*/
     this->PacketsReceived = v6; /*0x48ba5b*/
     v4 = v6 / v5; /*0x48ba5e*/
   }
-  *((unsigned int *)this + 7) = v4; /*0x48ba60*/
-  result = *((unsigned int *)this + 8); /*0x48ba63*/
+  this->u32_1C = v4; /*0x48ba60*/
+  result = this->q020; /*0x48ba63*/
   if ( a2 > result ) /*0x48ba68*/
-    *((unsigned int *)this + 8) = a2; /*0x48ba6a*/
+    this->q020 = a2; /*0x48ba6a*/
   return result; /*0x48ba6d*/
 
 }
@@ -122,8 +122,8 @@ void ConnectionClass::dtor()
   void *v2; // eax
   void (***PlayerIndex)(unsigned int, int); // ecx
 
-  v2 = (void *)*((unsigned int *)this + 8); /*0x48bee3*/
-  *(unsigned int *)this->__pad_0 = &ConnectionClass::`vftable'; /*0x48bee6*/
+  v2 = (void *)this->q020; /*0x48bee3*/
+  *(unsigned int *)this->vtable1 = &ConnectionClass::`vftable'; /*0x48bee6*/
   __3_YAXPAX_Z(v2); /*0x48beed*/
   PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
   if ( PlayerIndex ) /*0x48befb*/
@@ -135,33 +135,33 @@ void ConnectionClass::dtor()
 namespace gamemd {
 AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4, void *a5)
 {
-  *aP1->__pad_080 = *(unsigned short *)(aP1 + 36); /*0x48bf4b*/
+  *aP1->needsRedraw = aP1->objectTypeFlags; /*0x48bf4b*/
   if ( aP4 ) /*0x48bf54*/
   {
-    *(unsigned char *)(aP1->__pad_080 + 2) = 0; /*0x48bf59*/
-    *(unsigned int *)(aP1->__pad_080 + 4) = aP1->__pad_010; /*0x48bf63*/
+    *(unsigned char *)(aP1->needsRedraw + 2) = 0; /*0x48bf59*/
+    *(unsigned int *)(aP1->needsRedraw + 4) = aP1->uniqueId; /*0x48bf63*/
     Debug::Log(); /*0x48bf6f*/
   }
   else
   {
-    *(unsigned char *)(aP1->__pad_080 + 2) = 1; /*0x48bf7c*/
-    *(unsigned int *)(aP1->__pad_080 + 4) = *(unsigned int *)(aP1 + 60); /*0x48bf86*/
+    *(unsigned char *)(aP1->needsRedraw + 2) = 1; /*0x48bf7c*/
+    *(unsigned int *)(aP1->needsRedraw + 4) = *(unsigned int *)(aP1 + 60); /*0x48bf86*/
   }
   if ( ((unsigned int *)(dword_A8B238))[0] == 4 && byte_A8DBA0 ) /*0x48bf99*/
-    *(unsigned char *)(aP1->__pad_080 + 3) = a5; /*0x48bfa2*/
+    *(unsigned char *)(aP1->needsRedraw + 3) = a5; /*0x48bfa2*/
   if ( aP1->estimatedHealth < (char [4])(aP3) ) /*0x48bfae*/
   {
     Debug::Log(); /*0x48bfb6*/
     Debug::Log(); /*0x48bfc1*/
     return 0; /*0x48bfcd*/
   }
-  memcpy((void *)(aP1->__pad_080 + 14), aP2, aP3); /*0x48bfe5*/
-  if ( !ConnectionClass::queueSendPacket(aP1->__pad_080, aP3 + 14, 0, 0, 0) ) /*0x48c006*/
+  memcpy((void *)(aP1->needsRedraw + 14), aP2, aP3); /*0x48bfe5*/
+  if ( !ConnectionClass::queueSendPacket(aP1->needsRedraw, aP3 + 14, 0, 0, 0) ) /*0x48c006*/
     return 0; /*0x48c006*/
   if ( aP4 ) /*0x48c00e*/
-    ++aP1->__pad_010; /*0x48c015*/
+    ++aP1->uniqueId; /*0x48c015*/
   else
-    ++*(unsigned int *)(aP1 + 60); /*0x48c026*/
+    ++aP1->ambientSoundController; /*0x48c026*/
   return (gamemd::AbstractClass **)(1); /*0x48bfc9*/
 }
 } // namespace gamemd
@@ -250,7 +250,7 @@ LABEL_40:
         Debug::Log(); /*0x48c2c6*/
         v26 = dword_A8EA0C; /*0x48c2cb*/
         LOBYTE(v26) = this == (ModemConnectionClass *)dword_A8EA0C; /*0x48c2d7*/
-        (*(void (**)(ModemConnectionClass *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/
+        (*(void (**)(ModemConnectionClass *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->vtable1 + 36))( /*0x48c2ea*/
           this,
           &v27,
           14,
@@ -262,7 +262,7 @@ LABEL_40:
       }
       v14 = (Terrain *)this->PlayerIndex; /*0x48c1a1*/
       v15 = 0; /*0x48c1a4*/
-      if ( v14->Terrain_field_0x38 > 0 ) /*0x48c1ab*/
+      if ( v14->q038 > 0 ) /*0x48c1ab*/
       {
         do /*0x48c1ae*/
         {
@@ -275,7 +275,7 @@ LABEL_40:
           }
           v14 = (Terrain *)this->PlayerIndex; /*0x48c1cf*/
         }
-        while ( ++v15 < v14->Terrain_field_0x38 ); /*0x48c1ae*/
+        while ( ++v15 < v14->q038 ); /*0x48c1ae*/
       }
       v18 = this->PlayerIndex; /*0x48c1d8*/
       if ( (*(unsigned int *)(v18 + 8) - *(unsigned int *)(v18 + 56) > 1 || *(unsigned int *)(a2 + 4) == this->PhoneNumber[11] + 1) /*0x48c216*/
@@ -291,7 +291,7 @@ LABEL_40:
             v21 = (Terrain *)this->PlayerIndex; /*0x48c24a*/
             this->PhoneNumber[11] = v20; /*0x48c24d*/
             v22 = 0; /*0x48c250*/
-            if ( v21->Terrain_field_0x38 <= 0 ) /*0x48c257*/
+            if ( v21->q038 <= 0 ) /*0x48c257*/
               break; /*0x48c257*/
             while ( 1 ) /*0x48c25a*/
             {
@@ -303,7 +303,7 @@ LABEL_40:
                   break; /*0x48c276*/
               }
               v21 = (Terrain *)this->PlayerIndex; /*0x48c278*/
-              if ( ++v22 >= v21->Terrain_field_0x38 ) /*0x48c27f*/
+              if ( ++v22 >= v21->q038 ) /*0x48c27f*/
                 goto LABEL_40; /*0x48c27f*/
             }
             v20 = *(unsigned int *)(v24 + 4); /*0x48c283*/
@@ -354,7 +354,7 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
 
   v4 = 0; /*0x48c326*/
   PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c328*/
-  if ( PlayerIndex->Terrain_field_0x38 <= 0 ) /*0x48c330*/
+  if ( PlayerIndex->u32_38 <= 0 ) /*0x48c330*/
     return 0; /*0x48c36a*/
   while ( 1 ) /*0x48c333*/
   {
@@ -369,7 +369,7 @@ int ConnectionClass::processTileUpdate(void *a2, signed int *a3)
       goto LABEL_10; /*0x48c359*/
 LABEL_7:
     PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c35b*/
-    if ( ++v4 >= PlayerIndex->Terrain_field_0x38 ) /*0x48c362*/
+    if ( ++v4 >= PlayerIndex->u32_38 ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
   this->PhoneNumber[12] = *(unsigned int *)(v7 + 4); /*0x48c370*/
@@ -453,7 +453,7 @@ int ConnectionClass::serviceSendQueue()
         v11 = dword_A8EA0C; /*0x48c4bd*/
         LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
         LOBYTE(v11) = this == (ModemConnectionClass *)dword_A8EA0C; /*0x48c4cb*/
-        (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x48c4e2*/
+        (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->vtable1 /*0x48c4e2*/
                                                                                                  + 36))(
           this,
           *(unsigned int *)(v8 + 20),

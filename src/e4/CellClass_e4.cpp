@@ -30,7 +30,7 @@ namespace gamemd {  // G42.18 ns repair
 int CellClass::EnsureFileLoaded()
 {
 
-  if ( !this->sensorsOfHouses[10] && *((unsigned char *)this + 756) ) /*0x544c8d*/
+  if ( !this->sensorsOfHouses[10] && this->u32_2F4 ) /*0x544c8d*/
     MapClass::LoadFileData((MapClass *)this); /*0x544c97*/
   return this->sensorsOfHouses[10] != 0; /*0x544ca9*/
 
@@ -359,7 +359,7 @@ char CellClass::UpdateVariant4(unsigned short *aP0, int aP1)
         dword_ABDC74 = aP1; /*0x56f5fa*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x56f617*/
+      aP1 = *&v32->u32_40000; /*0x56f617*/
       v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x56f62a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f631*/
       v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x56f642*/
@@ -865,7 +865,7 @@ char CellClass::UpdateVariant7(unsigned short *aP0, int aP1)
         dword_ABDC74 = aP1; /*0x57274a*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x57274f*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x572767*/
+      aP1 = *&v32->u32_40000; /*0x572767*/
       v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x57277a*/
       CellClass::UpdateAnimations((int)v30); /*0x572781*/
       v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x572792*/
@@ -1033,7 +1033,7 @@ char CellClass::UpdateVariant8(unsigned short *aP0, int aP1)
         dword_ABDC74 = aP1; /*0x572aea*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x572aef*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x572b07*/
+      aP1 = *&v32->u32_40000; /*0x572b07*/
       v30 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP1); /*0x572b1a*/
       CellClass::UpdateAnimations((int)v30); /*0x572b21*/
       v23 = (char *)CellCoord::To_CellObj(&dword_87F7E8, v32); /*0x572b32*/
@@ -1408,7 +1408,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
   v2 = (int16_t *)aP0; /*0x57baa4*/
   v1 = v1; /*0x57baa9*/
   v4 = *(int16_t *)aP0 + (aP0->vtable3 << 9); /*0x57bab5*/
-  if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v4)) == 0 ) /*0x57bacb*/
+  if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v4)) == 0 ) /*0x57bacb*/
   {
     g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP0; /*0x57bacf*/
     v5 = &g_MissionQueueFrame.briefing[130]; /*0x57bad4*/
@@ -1419,13 +1419,13 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
     v7 = aP0->vtable3; /*0x57bafc*/
     (*((unsigned short *)&(aP0))) = *(unsigned short *)aP0; /*0x57bb00*/
     (*(((unsigned short *)&(aP0)) + 1)) = v7 - 1; /*0x57bb0b*/
-    v8 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bb23*/
+    v8 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bb23*/
     if ( v8 >= 74 && v8 <= 101 ) /*0x57bb2e*/
     {
       v10 = v2[1] - 2; /*0x57bb66*/
       (*((unsigned short *)&(aP0))) = *v2; /*0x57bb6a*/
       (*(((unsigned short *)&(aP0)) + 1)) = v10; /*0x57bb6f*/
-      v11 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bb8b*/
+      v11 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bb8b*/
       if ( v11 >= 74 && v11 <= 101 ) /*0x57bb96*/
       {
         v12 = v2[1]; /*0x57bbab*/
@@ -1451,13 +1451,13 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
     v13 = *(unsigned short *)aP0 - 1; /*0x57bbfb*/
     (*(((unsigned short *)&(aP0)) + 1)) = aP0->vtable3; /*0x57bbfd*/
     (*((unsigned short *)&(aP0))) = v13; /*0x57bc02*/
-    v14 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bc1e*/
+    v14 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bc1e*/
     if ( v14 >= 74 && v14 <= 101 ) /*0x57bc29*/
     {
       v16 = *v2 - 2; /*0x57bc61*/
       (*(((unsigned short *)&(aP0)) + 1)) = v2[1]; /*0x57bc65*/
       (*((unsigned short *)&(aP0))) = v16; /*0x57bc6a*/
-      v17 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bc86*/
+      v17 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57bc86*/
       if ( v17 >= 74 && v17 <= 101 ) /*0x57bc91*/
       {
         aP0 = 1; /*0x57bcaf*/
@@ -1510,7 +1510,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   v2 = (int16_t *)aP0; /*0x57ccf4*/
   v1 = v1; /*0x57ccf9*/
   v4 = *(int16_t *)aP0 + (aP0->vtable3 << 9); /*0x57cd05*/
-  if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v4)) == 0 ) /*0x57cd1b*/
+  if ( v4 >= 0x40000 || (v5 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v4)) == 0 ) /*0x57cd1b*/
   {
     g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP0; /*0x57cd1f*/
     v5 = &g_MissionQueueFrame.briefing[130]; /*0x57cd24*/
@@ -1521,13 +1521,13 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
     v7 = aP0->vtable3; /*0x57cd56*/
     (*((unsigned short *)&(aP0))) = *(unsigned short *)aP0; /*0x57cd5a*/
     (*(((unsigned short *)&(aP0)) + 1)) = v7 - 1; /*0x57cd65*/
-    v8 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57cd7d*/
+    v8 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57cd7d*/
     if ( v8 >= 205 && v8 <= 232 ) /*0x57cd8c*/
     {
       v10 = v2[1] - 2; /*0x57cdc4*/
       (*((unsigned short *)&(aP0))) = *v2; /*0x57cdc8*/
       (*(((unsigned short *)&(aP0)) + 1)) = v10; /*0x57cdcd*/
-      v11 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57cde9*/
+      v11 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57cde9*/
       if ( v11 >= 205 && v11 <= 232 ) /*0x57cdf8*/
       {
         v12 = v2[1]; /*0x57ce0d*/
@@ -1553,13 +1553,13 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
     v13 = *(unsigned short *)aP0 - 1; /*0x57ce67*/
     (*(((unsigned short *)&(aP0)) + 1)) = aP0->vtable3; /*0x57ce69*/
     (*((unsigned short *)&(aP0))) = v13; /*0x57ce6e*/
-    v14 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57ce8a*/
+    v14 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57ce8a*/
     if ( v14 >= 205 && v14 <= 232 ) /*0x57ce99*/
     {
       v16 = *v2 - 2; /*0x57ced1*/
       (*(((unsigned short *)&(aP0)) + 1)) = v2[1]; /*0x57ced5*/
       (*((unsigned short *)&(aP0))) = v16; /*0x57ceda*/
-      v17 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0) + 17); /*0x57cef6*/
+      v17 = *((unsigned int *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP0) + 17); /*0x57cef6*/
       if ( v17 >= 205 && v17 <= 232 ) /*0x57cf05*/
       {
         aP0 = 1; /*0x57cf23*/
@@ -1762,7 +1762,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
   unsigned int v10[2]; // [esp+10h] [ebp-8h] BYREF
   int v11; // [esp+1Ch] [ebp+4h]
 
-  v11 = *(unsigned int *)(aP0 + 36); /*0x5865fe*/
+  v11 = aP0->u32_24; /*0x5865fe*/
   v3 = (*(((unsigned short *)&(v11)) + 1)); /*0x586602*/
   v4 = 1; /*0x586607*/
   v5 = v11; /*0x58660c*/
@@ -1787,7 +1787,7 @@ int CellClass::SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP
       v10[1] = 0; /*0x586674*/
       result = ((Object *)(v8))->FindClosestObjectCell(v10, 0, 0); /*0x58667e*/
       if ( result ) /*0x586685*/
-        result = (*(int (**)(int, int))(*(unsigned int *)result + 408))(result, aP1); /*0x586690*/
+        result = (*(int (**)(int, int))(*&result->u32_660))(result, aP1); /*0x586690*/
     }
     ++v5; /*0x586696*/
     v4 += 2; /*0x586698*/

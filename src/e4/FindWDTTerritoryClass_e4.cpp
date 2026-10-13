@@ -20,7 +20,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   char *v6; // [esp+8h] [ebp-8h]
   int v7; // [esp+Ch] [ebp-4h]
 
-  v6 = (unsigned char *)this + 24; /*0x765387*/
+  v6 = &this->u8_18; /*0x765387*/
   v7 = 0; /*0x76538f*/
   v5 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
@@ -49,7 +49,7 @@ int E4Recv_766060::sub_766060()
 
   unsigned int *vtable3; // eax
 
-  vtable3 = this->?; /*0x766060*/
+  vtable3 = this->M12; /*0x766060*/
   if ( vtable3 ) /*0x766065*/
     return vtable3[2]; /*0x766067*/
   else

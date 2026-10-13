@@ -37,8 +37,8 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   unsigned int v18; // [esp+10h] [ebp-4h]
 
   v2 = 0; /*0x7228b6*/
-  v3 = (int *)*((unsigned int *)this + 61); /*0x7228b9*/
-  *((unsigned int *)this + 60) = 0; /*0x7228bf*/
+  v3 = (int *)this->u32_F4; /*0x7228b9*/
+  this->u32_F0 = 0; /*0x7228bf*/
   if ( *v3 >= 0 ) /*0x7228cc*/
   {
     do /*0x7228de*/
@@ -49,22 +49,22 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
     while ( v2 <= *v3 ); /*0x7228de*/
   }
   *v3 = 0; /*0x7228e0*/
-  for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(*((unsigned int *)this + 62) + i + 1) = 0 ) /*0x7228ec*/
+  for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *(unsigned char *)(this->u32_F8 + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
-  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x722901*/
-  result = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x72290b*/
+  LayerClass::CellIteratorReset((LayerClass *)&DataGlobal_87F7E8); /*0x722901*/
+  result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x72290b*/
   for ( j = (BuildingClass *)result; result; j = (BuildingClass *)result ) /*0x722914*/
   {
-    if ( BuildingClass::FindByCellHash(j) == *((unsigned int *)this + 38) && BuildingClass::IsTiberiumSiloEligible(j) ) /*0x722931*/
+    if ( BuildingClass::FindByCellHash(j) == this->u32_98 && BuildingClass::IsTiberiumSiloEligible(j) ) /*0x722931*/
     {
-      p_occupant = (Cell *)&j->?; /*0x72294a*/
-      v17 = (Cell *)&j->?; /*0x72294d*/
-      *(unsigned int *)(*((unsigned int *)this + 63) + 8 * *((unsigned int *)this + 60)) = j->?; /*0x722953*/
-      *(unsigned int *)(*((unsigned int *)this + 63) + 8 * *((unsigned int *)this + 60) + 4) = 0; /*0x722962*/
-      v8 = *((unsigned int *)this + 60); /*0x72296a*/
-      v9 = (unsigned int *)*((unsigned int *)this + 61); /*0x722976*/
-      v10 = *((unsigned int *)this + 63) + 8 * v8; /*0x72297c*/
-      *((unsigned int *)this + 60) = v8 + 1; /*0x722980*/
+      p_occupant = &j->objectTypeFlags; /*0x72294a*/
+      v17 = &j->objectTypeFlags; /*0x72294d*/
+      *(unsigned int *)(this->u32_FC + 8 * this->u32_F0) = j->objectTypeFlags; /*0x722953*/
+      *(unsigned int *)(this->u32_FC + 8 * this->u32_F0 + 4) = 0; /*0x722962*/
+      v8 = this->u32_F0; /*0x72296a*/
+      v9 = (unsigned int *)this->u32_F4; /*0x722976*/
+      v10 = this->u32_FC + 8 * v8; /*0x72297c*/
+      this->u32_F0 = v8 + 1; /*0x722980*/
       v11 = *v9 + 1; /*0x72298c*/
       v16 = *(float *)(v10 + 4); /*0x72298f*/
       v18 = v10; /*0x722996*/
@@ -95,9 +95,9 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
         if ( v10 < v9[4] ) /*0x7229e7*/
           v9[4] = v10; /*0x7229e9*/
       }
-      *(unsigned char *)(Cell::PosToIndex(p_occupant) + *((unsigned int *)this + 62)) = 1; /*0x7229f7*/
+      *(unsigned char *)(Cell::PosToIndex(p_occupant) + this->u32_F8) = 1; /*0x7229f7*/
     }
-    result = LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x722a00*/
+    result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x722a00*/
   }
   return result; /*0x722a11*/
 

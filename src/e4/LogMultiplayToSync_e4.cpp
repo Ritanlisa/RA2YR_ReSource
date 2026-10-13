@@ -85,7 +85,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
   char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF
 
   v61 = (int)(a2);
-  v3 = *((unsigned int *)dword_A83D4C + 12); /*0x651709*/
+  v3 = dword_A83D4C->relatedTagsCount; /*0x651709*/
   v56 = (int)(a1); /*0x65170c*/
   v4 = 828 * a1 + 11298400; /*0x65171e*/
   v59 = (unsigned int *)v4; /*0x65172d*/
@@ -197,7 +197,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       --v19; /*0x651aa9*/
     }
     while ( v19 );
-    v58 = *(unsigned int *)(v4 + 768); /*0x651ab8*/
+    v58 = v4->q300; /*0x651ab8*/
     v55 = 0; /*0x651abc*/
     if ( v56 > 0 ) /*0x651ac4*/
     {
@@ -208,7 +208,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
         {
           fprintf(v6, "-------------------- %s Infantry -------------------\n", v54); /*0x651ae4*/
           v21 = 0; /*0x651af2*/
-          if ( *(int *)(v4 + 752) > 0 ) /*0x651af6*/
+          if ( v4->u32_2F0 > 0 ) /*0x651af6*/
           {
             v22 = v58 + 64; /*0x651afc*/
             do /*0x651b4f*/
@@ -230,7 +230,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
               v22 += 104; /*0x651b49*/
               ++v21; /*0x651b4c*/
             }
-            while ( v21 < *(unsigned int *)(v4 + 752) ); /*0x651b4f*/
+            while ( v21 < v4->u32_2F0 ); /*0x651b4f*/
           }
         }
         v23 = ++v55 < v56; /*0x651b61*/
@@ -238,7 +238,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       }
       while ( v23 ); /*0x651b6b*/
     }
-    v24 = *(unsigned int *)(v4 + 752); /*0x651b71*/
+    v24 = v4->u32_2F0; /*0x651b71*/
     v55 = 0; /*0x651b77*/
     v58 += 104 * v24; /*0x651b92*/
     if ( v56 > 0 ) /*0x651b96*/
@@ -250,7 +250,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
         {
           fprintf(v6, "-------------------- %s Units -------------------\n", v54); /*0x651bba*/
           v25 = 0; /*0x651bc8*/
-          if ( *(int *)(v4 + 756) > 0 ) /*0x651bcc*/
+          if ( v4->u32_2F4 > 0 ) /*0x651bcc*/
           {
             v26 = v58 + 92; /*0x651bd2*/
             do /*0x651c34*/

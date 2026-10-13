@@ -84,7 +84,7 @@ int CellClass::QuickPassable() {
   unsigned int v6[3]; // [esp+10h] [ebp-Ch] BYREF
 
   v1 = ((int16_t)this->smudgeTypeIndex << 8) + 128; /*0x48796f*/
-  v2 = ((int16_t)(*(((unsigned short *)&(this->smudgeTypeIndex)) + 1)) << 8) + 128; /*0x487971*/
+  v2 = ((int16_t)(*(this->smudgeTypeIndex + 1)) << 8) + 128; /*0x487971*/
   v5[0] = 128; /*0x487973*/
   v5[1] = 128; /*0x487977*/
   inited = Isometric::InitTables((int)this, v5); /*0x487980*/
@@ -105,7 +105,7 @@ unsigned int * INIClass::sectionExists() {
   int v5; // edi
   int v6; // edi
 
-  result = this->__pad_0; /*0x52af50*/
+  result = this->vtable1; /*0x52af50*/
   sectionHead = this->sectionHead; /*0x52af59*/
   this->headNode[1] = 0; /*0x52af5f*/
   this->headNode[2] = 0; /*0x52af62*/
@@ -113,7 +113,7 @@ unsigned int * INIClass::sectionExists() {
   this->sectionHead[1] = 0; /*0x52af6b*/
   this->sectionHead[2] = 0; /*0x52af6e*/
   this->sectionHead[0] = (int)0; /*0x52af71*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x52af77*/
+  *(unsigned int *)this->vtable1 = 0; /*0x52af77*/
   if ( this != (INIClass *)-16 ) /*0x52af7d*/
   {
     v3 = this->sectionHead[1]; /*0x52af7f*/
@@ -136,7 +136,7 @@ unsigned int * INIClass::sectionExists() {
   if ( v6 ) /*0x52afad*/
     *(unsigned int *)(v6 + 8) = sectionHead; /*0x52afaf*/
   this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x52afb7*/
+  *(unsigned int *)this->vtable1 = 0; /*0x52afb7*/
   return result; /*0x52afb5*/
 }
 } // namespace gamemd
@@ -155,7 +155,7 @@ char TacticalClass::CompareVector(int a2) {
     v3 = 0; /*0x5c0adf*/
     if ( v2 <= 0 ) /*0x5c0ae3*/
       return 1; /*0x5c0b03*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x5c0ae5*/
+    v4 = *&this->vfptr1; /*0x5c0ae5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5c0aeb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5c0af4*/
     {
@@ -172,11 +172,11 @@ char TacticalClass::CompareVector(int a2) {
 // 0x5C0FE0
 namespace gamemd {
 unsigned int * ScenarioClass::initAI(char a2) {
-  this->m_0 = (int)0; /*0x5c0fe3*/
+  this->nextScenario = (int)0; /*0x5c0fe3*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0fe9*/
   if ( (a2 & 1) != 0 ) /*0x5c0ff3*/
     operator delete((void *)(this)); /*0x5c0ff6*/
-  return &this->m_0; /*0x5c1000*/
+  return &this->nextScenario; /*0x5c1000*/
 }
 } // namespace gamemd
 
@@ -190,7 +190,7 @@ void CellClass::DrawWrapper(unsigned int * a2, int jj, char a4, char a5) {
 // 0x68BCC0
 namespace gamemd {
 unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
-  *a2 = *(unsigned int *)(&this->Items * a3 + 1586); /*0x68bccf*/
+  *a2 = *&this->Items * a3 + 1586); /*0x68bccf*/
   return a2; /*0x68bcd1*/
 }
 } // namespace gamemd
@@ -198,7 +198,7 @@ unsigned int * ScenarioClass::Get_Waypoint_Location(unsigned int *a2, int a3) {
 // 0x68BCE0
 namespace gamemd {
 void * ScenarioClass::GetCellFromArray(int a2) {
-  return CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&this->waypoints[4 * a2]); /*0x68bcf6*/
+  return CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &this->waypoints); /*0x68bcf6*/
 }
 } // namespace gamemd
 
@@ -225,25 +225,25 @@ unsigned int * BufferIOFileClass::QueryInterface(char a2) {
   void *FileBaseOffset; // eax
 
   FileBaseOffset = (void *)this->FileBaseOffset; /*0x432616*/
-  *(unsigned int *)this->__tail_0 = 0; /*0x432619*/
+  *(unsigned int *)this->vtable1 = 0; /*0x432619*/
   if ( FileBaseOffset ) /*0x432621*/
   {
-    if ( (*((unsigned char *)&(this->BufferOffset))) ) /*0x432623*/
+    if ( (this->BufferOffset) ) /*0x432623*/
     {
       operator delete((void *)(FileBaseOffset)); /*0x432629*/
-      (*((unsigned char *)&(this->BufferOffset))) = 0; /*0x432631*/
+      (this->BufferOffset) = 0; /*0x432631*/
     }
     this->FileBaseOffset = 0; /*0x432634*/
   }
   this->BufferReadSize = 0; /*0x432639*/
-  (((unsigned char *)&(this->BufferOffset))[1]) = 0; /*0x43263c*/
-  (*(((unsigned char *)&(this->BufferOffset)) + (sizeof(this->BufferOffset) - 1))) = 0; /*0x43263f*/
-  (*((unsigned char *)&(this->BufferSize))) = 0; /*0x432642*/
-  (((unsigned char *)&(this->BufferSize))[1]) = 0; /*0x432645*/
+  (this->u32_25) = 0; /*0x43263c*/
+  (*(this->BufferOffset + (sizeof(this->BufferOffset) - 1))) = 0; /*0x43263f*/
+  (this->BufferSize) = 0; /*0x432642*/
+  (this->u32_29) = 0; /*0x432645*/
   RawFileClass::Dtor(this); /*0x432648*/
   if ( (a2 & 1) != 0 ) /*0x432652*/
     operator delete((void *)(this)); /*0x432655*/
-  return this->__tail_0; /*0x43265f*/
+  return this->vtable1; /*0x43265f*/
 }
 } // namespace gamemd
 
@@ -256,7 +256,7 @@ namespace gamemd {
   void **FilePointer; // esi
 
   FileSize = (void *)this->FileSize; /*0x434a43*/
-  *(unsigned int *)this->__tail_0 = 0; /*0x434a46*/
+  *(unsigned int *)this->vtable1 = 0; /*0x434a46*/
   if ( FileSize ) /*0x434a4e*/
     free(FileSize); /*0x434a51*/
   FilePointer = (void **)this->FilePointer; /*0x434a5a*/
@@ -285,36 +285,36 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
 
   this->headNode[0] = 0; /*0x477f4d*/
   this->headNode[1] = 0; /*0x477f50*/
-  (*((unsigned char *)&(this->headNode[2]))) = 1; /*0x477f53*/
-  (((unsigned char *)&(this->headNode[2]))[1]) = 0; /*0x477f57*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x477f5a*/
+  (this->sectionCount) = 1; /*0x477f53*/
+  (this->u8_1D) = 0; /*0x477f57*/
+  *(unsigned int *)this->vtable1 = 0; /*0x477f5a*/
   if ( this == (INIClass *)a2 ) /*0x477f60*/
-    return this->__pad_0; /*0x477f60*/
+    return this->vtable1; /*0x477f60*/
   TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
   v3 = a2[2]; /*0x477f68*/
   this->headNode[1] = v3; /*0x477f6d*/
   if ( !v3 ) /*0x477f70*/
   {
     this->headNode[0] = 0; /*0x477fae*/
-    (((unsigned char *)&(this->headNode[2]))[1]) = 0; /*0x477fb1*/
-    return this->__pad_0; /*0x477fb4*/
+    (this->u8_1D) = 0; /*0x477fb1*/
+    return this->vtable1; /*0x477fb4*/
   }
   v4 = operator new(4 * v3); /*0x477f76*/
   this->headNode[0] = v4; /*0x477f80*/
   if ( !v4 ) /*0x477f83*/
-    return this->__pad_0; /*0x477f83*/
+    return this->vtable1; /*0x477f83*/
   v5 = this->headNode[1]; /*0x477f85*/
   v6 = 0; /*0x477f88*/
-  (((unsigned char *)&(this->headNode[2]))[1]) = 1; /*0x477f8c*/
+  (this->u8_1D) = 1; /*0x477f8c*/
   if ( v5 <= 0 ) /*0x477f90*/
-    return this->__pad_0; /*0x477f90*/
+    return this->vtable1; /*0x477f90*/
   do /*0x477fa4*/
   {
     *(unsigned int *)(this->headNode[0] + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x477f9b*/
     ++v6; /*0x477fa1*/
   }
   while ( v6 < this->headNode[1] ); /*0x477fa4*/
-  return this->__pad_0; /*0x477fa8*/
+  return this->vtable1; /*0x477fa8*/
 }
 } // namespace gamemd
 
@@ -339,8 +339,8 @@ int * CellClass::GetScreenRect(int *a2) {
   int v19; // [esp+20h] [ebp-8h]
   int v20; // [esp+24h] [ebp-4h]
 
-  v3 = ((*((signed short *)&(this->smudgeTypeIndex))) << 8) + 128; /*0x47ffab*/
-  v4 = ((*((signed short *)(((unsigned char *)&(this->smudgeTypeIndex)) + 2))) << 8) + 128; /*0x47ffb8*/
+  v3 = ((this->smudgeTypeIndex) << 8) + 128; /*0x47ffab*/
+  v4 = ((*((signed short *)(this->smudgeTypeIndex + 2))) << 8) + 128; /*0x47ffb8*/
   v19 = 0; /*0x47ffba*/
   v18 = (v4 / 256) << 8; /*0x47ffc4*/
   v17 = (v3 / 256) << 8; /*0x47ffde*/
@@ -351,7 +351,7 @@ int * CellClass::GetScreenRect(int *a2) {
   v7 = 30; /*0x480014*/
   v16 += (int)DSurface_ViewBounds.field_4 - 5 * v5; /*0x480019*/
   v8 = v16; /*0x48001d*/
-  v9 = *(unsigned int *)&this->__pad_28[16]; /*0x48001f*/
+  v9 = *&this->__pad_038; /*0x48001f*/
   if ( v9 == 0xFFFF ) /*0x480027*/
   {
     *a2 = v15; /*0x48002f*/
@@ -448,11 +448,11 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
   this->headNode[2] = a2; /*0x52af19*/
   this->sectionHead[2] = a5; /*0x52af20*/
   this->sectionHead[1] = a4; /*0x52af27*/
-  *(unsigned int *)this->__pad_20 = a8; /*0x52af2e*/
+  *(unsigned int *)this->__pad_020 = a8; /*0x52af2e*/
   this->sectionCount = a7; /*0x52af31*/
-  *(unsigned int *)&this->__pad_20[4] = a6; /*0x52af38*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x52af3b*/
-  return this->__pad_0; /*0x52af41*/
+  *&this->unknown30 = a6; /*0x52af38*/
+  *(unsigned int *)this->vtable1 = 0; /*0x52af3b*/
+  return this->vtable1; /*0x52af41*/
 }
 } // namespace gamemd
 
@@ -473,13 +473,13 @@ namespace gamemd {
   {
     if ( *a3 == 38 ) /*0x55786c*/
     {
-      (*(void (__thiscall **)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 164))(this, -1); /*0x557874*/
+      this->ScrollDown(-1); /*0x557874*/
       *a3 = 0; /*0x557880*/
       return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x557886*/
     }
     else if ( *a3 == 40 ) /*0x557894*/
     {
-      (*(void (__thiscall **)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 164))(this, 1); /*0x55789c*/
+      this->ScrollDown(1); /*0x55789c*/
       *a3 = 0; /*0x5578a8*/
       return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x5578ae*/
     }
@@ -493,7 +493,7 @@ namespace gamemd {
   {
     v7 = this->u32_170 /*0x5578e8*/
        + ((*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer)
-        - this->ListClass_field_0x10
+        - this->Height
         - 1)
        / this->u32_4C;
     this->u32_16C = v7; /*0x5578ea*/
@@ -528,25 +528,25 @@ char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
   int v13; // eax
   unsigned int *v14; // ecx
 
-  RadarClass_field_0x0 = this->RadarClass_field_0x0; /*0x589e24*/
+  RadarClass_field_0x0 = this->vtable1; /*0x589e24*/
   v4 = RadarClass_field_0x0[6 * a2 + 4]; /*0x589e30*/
   v5 = (char *)&RadarClass_field_0x0[6 * a2]; /*0x589e34*/
-  v6 = (unsigned int *)*((unsigned int *)v5 + 1); /*0x589e37*/
+  v6 = (unsigned int *)v5->__pad_004; /*0x589e37*/
   v7 = v4 - 1; /*0x589e3b*/
   if ( v4 - 1 < 0 ) /*0x589e40*/
   {
   LABEL_4:
-    v8 = *((unsigned int *)v5 + 2); /*0x589e4e*/
+    v8 = v5->u32_8; /*0x589e4e*/
     if ( v4 < v8 /*0x589e70*/
       || (v5[13] || !v8)
-      && (v9 = *((unsigned int *)v5 + 5), v9 > 0)
-      && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v5 + 8))(v5, v8 + v9, 0) )
+      && (v9 = v5->Straw_14, v9 > 0)
+      && v5->vt_slot_8(v8 + v9, 0) )
     {
-      v10 = *((unsigned int *)v5 + 4); /*0x589e77*/
+      v10 = v5->u32_10; /*0x589e77*/
       v11 = v10 + 1; /*0x589e7a*/
       v12 = 3 * v10; /*0x589e7d*/
-      v13 = *((unsigned int *)v5 + 1); /*0x589e80*/
-      *((unsigned int *)v5 + 4) = v11; /*0x589e83*/
+      v13 = v5->__pad_004; /*0x589e80*/
+      v5->u32_10 = v11; /*0x589e83*/
       v14 = (unsigned int *)(v13 + 4 * v12); /*0x589e86*/
       *v14 = *a3; /*0x589e8b*/
       v14[1] = a3[1]; /*0x589e90*/
@@ -570,7 +570,7 @@ char RadarClass::updateRadarCells(int a2, unsigned int *a3) {
 // 0x5C0AC0
 namespace gamemd {
 int TacticalClass::ProbeCalling2(int a2) {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5c0aca*/
+  return *(unsigned int *)(*&this->vfptr1 + 4 * a2); /*0x5c0aca*/
 }
 } // namespace gamemd
 
@@ -597,7 +597,7 @@ unsigned int * TacticalClass::DestroyVector(unsigned int *Block, char a2) {
 // 0x5D8160
 namespace gamemd {
 int ScenarioClass::loadTheater(int a2) {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d816a*/
+  return *(unsigned int *)(*&this->Items + 4 * a2); /*0x5d816a*/
 }
 } // namespace gamemd
 
@@ -616,14 +616,14 @@ unsigned int * TacticalClass::PixelToCellCheck(int *a2) {
   v3 = TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v7, v6); /*0x653785*/
   if ( *v3 == dword_B04900 && v3[1] == dword_B04904 && v3[2] == dword_B04908 ) /*0x6537ad*/
   {
-    this->RadarClass_field_0x0 = (void *)dword_B048C0; /*0x653803*/
-    return &this->RadarClass_field_0x0; /*0x6537f9*/
+    this->vfptr = (void *)dword_B048C0; /*0x653803*/
+    return &this->vfptr; /*0x6537f9*/
   }
   else
   {
     v4 = (void *)*Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, v6); /*0x6537cd*/
-    this->RadarClass_field_0x0 = v4; /*0x6537d3*/
-    return &this->RadarClass_field_0x0; /*0x6537cf*/
+    this->vfptr = v4; /*0x6537d3*/
+    return &this->vfptr; /*0x6537cf*/
   }
 }
 } // namespace gamemd
@@ -696,26 +696,26 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
 
     this->headNode[0] = 0; /*0x47822e*/
     this->headNode[1] = 0; /*0x478231*/
-    (*((unsigned char *)&(this->headNode[2]))) = 1; /*0x478234*/
-    (((unsigned char *)&(this->headNode[2]))[1]) = 0; /*0x478238*/
-    *(unsigned int *)this->__pad_0 = (void *)&vt_VectorClass_RGBClass; /*0x47823b*/
+    (this->sectionCount) = 1; /*0x478234*/
+    (this->u8_1D) = 0; /*0x478238*/
+    *(unsigned int *)this->vtable1 = (void *)&vt_VectorClass_RGBClass; /*0x47823b*/
     if ( this == (INIClass *)a2 ) /*0x478241*/
-      return this->__pad_0; /*0x478241*/
+      return this->vtable1; /*0x478241*/
     FilePipe_38::ddtor((int)this); /*0x478247*/
     v3 = a2[2]; /*0x47824d*/
     this->headNode[1] = v3; /*0x478252*/
     if ( !v3 ) /*0x478255*/
     {
       this->headNode[0] = 0; /*0x4782c6*/
-      (((unsigned char *)&(this->headNode[2]))[1]) = 0; /*0x4782c9*/
-      return this->__pad_0; /*0x4782cc*/
+      (this->u8_1D) = 0; /*0x4782c9*/
+      return this->vtable1; /*0x4782cc*/
     }
     v4 = operator new(3 * v3); /*0x47825b*/
     if ( v4 ) /*0x478265*/
     {
       if ( v3 - 1 >= 0 ) /*0x47826c*/
       {
-        v5 = (unsigned char *)(v4 + 2); /*0x47826e*/
+        v5 = &v4->u8_2; /*0x47826e*/
         v6 = v3; /*0x478271*/
         do /*0x47827e*/
         {
@@ -734,12 +734,12 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
     }
     this->headNode[0] = v4; /*0x478286*/
     if ( !v4 ) /*0x478289*/
-      return this->__pad_0; /*0x478289*/
+      return this->vtable1; /*0x478289*/
     v7 = this->headNode[1]; /*0x47828b*/
     v8 = 0; /*0x47828e*/
-    (((unsigned char *)&(this->headNode[2]))[1]) = 1; /*0x478292*/
+    (this->u8_1D) = 1; /*0x478292*/
     if ( v7 <= 0 ) /*0x478296*/
-      return this->__pad_0; /*0x478296*/
+      return this->vtable1; /*0x478296*/
     v9 = 0; /*0x478298*/
     do /*0x4782bb*/
     {
@@ -751,7 +751,7 @@ unsigned int * INIClass::parseKeyValue(unsigned int *a2) {
       *(unsigned char *)(v11 + 2) = *(unsigned char *)(v10 + 2); /*0x4782b3*/
     }
     while ( v8 < this->headNode[1] ); /*0x4782bb*/
-    return this->__pad_0; /*0x4782bf*/
+    return this->vtable1; /*0x4782bf*/
 }
 } // namespace gamemd
 
@@ -776,7 +776,7 @@ unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
 namespace gamemd::ra2::gamemd {
 unsigned short * CellClass::initCellData(unsigned short *a2) {
     (*((unsigned short *)&(this->mapCoords[0]))) += *a2; /*0x588c49*/
-    (*(((unsigned short *)&(this->mapCoords[0])) + 1)) += a2[1]; /*0x588c50*/
+    (*(this->q002 + 1)) += a2[1]; /*0x588c50*/
     return this; /*0x588c54*/
 }
 } // namespace gamemd::ra2::gamemd

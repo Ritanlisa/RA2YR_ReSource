@@ -196,7 +196,7 @@ bool FootClass::MovementAI()
   if ( !result ) /*0x4da548*/
     return result; /*0x4da548*/
   this->FootClass_field_bool_6B3 = 0; /*0x4da54e*/
-  if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6152)) /*0x4da593*/
+  if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6152)) /*0x4da593*/
     && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3383)
     && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 21))(this)
     && !this->inLimbo )
@@ -205,12 +205,12 @@ bool FootClass::MovementAI()
     (*((unsigned short *)&(Traversability))) = *v3 / 256; /*0x4da5bb*/
     (*(((unsigned short *)&(Traversability)) + 1)) = v3[1] / 256; /*0x4da5d3*/
     *(unsigned int *)v45 = Traversability; /*0x4da5dc*/
-    v4 = (double *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v45); /*0x4da5e6*/
+    v4 = (double *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x4da5e6*/
     Traversability = Cell::GetTraversability(v4); /*0x4da5f4*/
     if ( Traversability > 0 ) /*0x4da5f8*/
     {
-      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4da5fe*/
-      (*((unsigned short *)&(v6))) = Math::RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
+      v5 = *(unsigned int *)&g_RulesClass_Instance; /*0x4da5fe*/
+      (*((unsigned short *)&(v6))) = Math::RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&g_RulesClass_Instance /*0x4da60a*/
                                                                        + 6168));
       Traversability = v6; /*0x4da610*/
       result = (*((int (__thiscall **)(FootClass *, int *, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int))this->vfptr + 91))( /*0x4da629*/
@@ -231,7 +231,7 @@ bool FootClass::MovementAI()
     if ( *(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3434) ) /*0x4da64d*/
     {
       v7 = (*((int (__thiscall **)(FootClass *))this->vfptr + 111))(this); /*0x4da65b*/
-      if ( (uint8_t)Type::CheckAmbiguity((Type *)&stru_87F5F0.__pad_58[416], v7, 1) ) /*0x4da667*/
+      if ( (uint8_t)Type::CheckAmbiguity((Type *)&DataGlobal_87F7E8, v7, 1) ) /*0x4da667*/
         this->isInPlayfield = 1; /*0x4da670*/
     }
   }
@@ -263,7 +263,7 @@ bool FootClass::MovementAI()
           v47 = v13; /*0x4da758*/
           v48 = this->location[2]; /*0x4da763*/
           MapClass::RevealArea2( /*0x4da77b*/
-            (MapClass *)&stru_87F5F0.__pad_58[416],
+            (MapClass *)&DataGlobal_87F7E8,
             &v46,
             this->lastSightRange - 3,
             this->lastSightRange + 3,
@@ -277,7 +277,7 @@ bool FootClass::MovementAI()
           v12 = this->location[2]; /*0x4da73a*/
           v47 = v10; /*0x4da740*/
           v48 = v12; /*0x4da745*/
-          MapClass::RevealArea2((MapClass *)&stru_87F5F0.__pad_58[416], &v46, 0, lastSightRange + 3, 0); /*0x4da74e*/
+          MapClass::RevealArea2((MapClass *)&DataGlobal_87F7E8, &v46, 0, lastSightRange + 3, 0); /*0x4da74e*/
         }
         v14 = (*((int (__thiscall **)(FootClass *))this->vfptr + 114))(this); /*0x4da784*/
         v47 = v47; /*0x4da78a*/
@@ -340,7 +340,7 @@ bool FootClass::MovementAI()
     {
       if ( !this->locomotor[0] ) /*0x4da952*/
         sub_7DC720(-2147467261); /*0x4da95f*/
-      if ( !(*(uint8_t (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da9af*/
+      if ( !this->COMStub_Return0_32(this->locomotor[0]) /*0x4da9af*/
         && !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]
            % *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 664))
         && !(*((uint8_t (__thiscall **)(FootClass *))this->vfptr + 117))(this)
@@ -443,13 +443,13 @@ bool FootClass::MovementAI()
         }
         if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1352) == -1 ) /*0x4dac3b*/
         {
-          if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 520) != -1 ) /*0x4dac86*/
+          if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 520) != -1 ) /*0x4dac86*/
           {
             v46 = this->location[0]; /*0x4dac94*/
             v47 = this->location[1]; /*0x4dac9b*/
             v48 = this->location[2]; /*0x4daca9*/
             StartAudioControllerAt( /*0x4dacb7*/
-              *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 520),
+              *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 520),
               &v46,
               (int **)this->audioController7);
           }

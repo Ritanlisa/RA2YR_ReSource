@@ -22,15 +22,15 @@ int ColorScheme::Destructor(void *a1)
     (**v2)(v2, 1); /*0x68c8ff*/
   a1->data[195] = 0; /*0x68c905*/
   v4 = (gamemd::ColorScheme *)(a1); /*0x68c91b*/
-  result = (*(int (**)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)stru_B054D0.__pad_0 + 16))( /*0x68c91f*/
+  result = (*(int (**)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)ColorScheme_Array + 16))( /*0x68c91f*/
              &stru_B054D0,
              &v4);
-  if ( result != -1 && result < *(int *)stru_B054D0.__tail_10 ) /*0x68c930*/
+  if ( result != -1 && result < *(int *)g_AnimClass_SaveState ) /*0x68c930*/
   {
-    --*(unsigned int *)stru_B054D0.__tail_10; /*0x68c935*/
+    --*(unsigned int *)g_AnimClass_SaveState; /*0x68c935*/
     for ( ; /*0x68c93b*/
-          result < *(int *)stru_B054D0.__tail_10;
-          *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3]
+          result < *(int *)g_AnimClass_SaveState;
+          *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable
                                                                                    + 4 * result) )
     {
       ++result; /*0x68c943*/

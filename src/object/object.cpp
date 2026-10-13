@@ -76,7 +76,7 @@ bool ObjectClass::Remove()
   int v3; // eax
   IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
 
-  (*((unsigned char *)&(result))) = this->__pad_74[15]; /*0x5f44a4*/
+  (*((unsigned char *)&(result))) = this->isSelected; /*0x5f44a4*/
   if ( (unsigned char)result ) /*0x5f44ac*/
   {
     v4 = this; /*0x5f44be*/
@@ -92,10 +92,10 @@ bool ObjectClass::Remove()
         ++v3; /*0x5f44e5*/
       }
     }
-    this->__pad_74[15] = 0; /*0x5f44fc*/
-    result = MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x5f4503*/
+    this->isSelected = 0; /*0x5f44fc*/
+    result = MapClass::GetScrollMode((MapClass *)&DataGlobal_87F7E8); /*0x5f4503*/
     if ( (IUnknown *)result == this ) /*0x5f450a*/
-      return MapClass::SetScrollMode((int)&stru_87F5F0.__pad_58[416], 0); /*0x5f4513*/
+      return MapClass::SetScrollMode((int)&DataGlobal_87F7E8, 0); /*0x5f4513*/
   }
   return result; /*0x5f4518*/
 }
@@ -113,18 +113,18 @@ int ObjectClass::Destroy()
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5f6616*/
   (*((void (__thiscall **)(ObjectClass *))this->vfptr + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
-  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
-  if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
-    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+  result = *(unsigned int *)&DataGlobal_B0F6A0; /*0x5f662c*/
+  if ( *(int *)&DataGlobal_B0F6A8 < *(int *)&DataGlobal_B0F6A0 /*0x5f6666*/
+    || (DataGlobal_B0F6A5 || !*(unsigned int *)&DataGlobal_B0F6A0)
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
     && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
-                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                   *(unsigned int *)&DataGlobal_B0F6A0 + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
         (unsigned char)result) )
   {
-    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
-    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
+    result = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x5f666e*/
+    *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = this; /*0x5f667d*/
   }
   return result; /*0x5f6680*/
 }
@@ -145,11 +145,11 @@ int ObjectClass::MarkForRedraw()
 {
   int result; // eax
 
-  (*((unsigned char *)&(result))) = this->__pad_74[12]; /*0x5f4d10*/
+  (*((unsigned char *)&(result))) = this->needsRedraw; /*0x5f4d10*/
   if ( !(unsigned char)result ) /*0x5f4d18*/
   {
-    this->__pad_74[12] = 1; /*0x5f4d1a*/
-    return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
+    this->needsRedraw = 1; /*0x5f4d1a*/
+    return MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x5f4d28*/
   }
   return result; /*0x5f4d2d*/
 }

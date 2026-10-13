@@ -19,10 +19,10 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   int result; // eax
   int v3; // edx
 
-  v1 = *((unsigned int *)this + 7) - 1; /*0x408e73*/
-  *((unsigned int *)this + 7) = v1; /*0x408e76*/
+  v1 = this->u32_1C - 1; /*0x408e73*/
+  this->u32_1C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
-    *((unsigned int *)this + 7) = 0; /*0x408e7b*/
+    this->u32_1C = 0; /*0x408e7b*/
   result = this->m_RefCount; /*0x408e82*/
   v3 = *(unsigned int *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
   *(unsigned int *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
@@ -147,8 +147,8 @@ namespace gamemd {
 int32_t Count::ddtor()
 {
 
-  --*((unsigned int *)this + 2); /*0x76f172*/
-  return this->__pad_0; /*0x76f175*/
+  --this->u32_8; /*0x76f172*/
+  return this->m_RefCount; /*0x76f175*/
 
 }
 } // namespace gamemd

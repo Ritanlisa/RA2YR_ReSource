@@ -177,7 +177,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       && v14
       && a1[283] <= v8[283]
       && (!(*((unsigned char *)&(dword_8871E0[1][3])))
-       || (v15 = *(void **)&dword_A8022C->vfptr[4 * v10[20]]) == 0
+       || (v15 = *&dword_A8022C->vtable1]) == 0
        || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
   LABEL_16:

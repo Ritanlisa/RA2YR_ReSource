@@ -343,11 +343,11 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
     Debug::Log(); /*0x411c3e*/
   else
     *(unsigned int *)(dwUser + 196) = 0; /*0x411c48*/
-  v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
-  v5[11] = *((unsigned char *)aP1 + 3); /*0x411c60*/
-  *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
-  dword_88776C = (unsigned int)((int (__cdecl *)(unsigned int))*((unsigned int *)aP1 + 2)); /*0x411c6c*/
-  dword_887770 = (int (__cdecl *)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3); /*0x411c75*/
+  v5[10] = aP1->u32_2; /*0x411c5a*/
+  v5[11] = aP1->u32_3; /*0x411c60*/
+  *((unsigned int *)v5 + 9) = aP1->vtable2; /*0x411c66*/
+  dword_88776C = (unsigned int)((int (__cdecl *)(unsigned int))aP1->vtable3); /*0x411c6c*/
+  dword_887770 = (int (__cdecl *)(unsigned int, unsigned int))aP1->vtable4; /*0x411c75*/
   Debug::Log(); /*0x411c7b*/
   if ( timeBeginPeriod((void *)(0x10u)) == 97 ) /*0x411c90*/
     return (gamemd::AbstractClass **)(-13); /*0x411cd5*/
@@ -1091,7 +1091,7 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   int v16; // [esp+14h] [ebp+4h]
 
   v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
-  v9 = (__int16 *)(this->? + this->?); /*0x410de9*/
+  v9 = (__int16 *)(this->M16 + this->M16); /*0x410de9*/
   v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
@@ -1107,8 +1107,8 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= this->? ) /*0x410e20*/
-            v9 = (__int16 *)((char *)v9 - (unsigned int)this->?); /*0x410e22*/
+          if ( (unsigned int)v9 >= this->M28 ) /*0x410e20*/
+            v9 = (__int16 *)((char *)v9 - (unsigned int)this->M32); /*0x410e22*/
           --v13; /*0x410e25*/
         }
         while ( v13 ); /*0x410e26*/
@@ -1932,8 +1932,8 @@ namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
   this->ambientSoundController[1] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x41dd15*/
-  (*((unsigned char *)&(this->ambientSoundController[0]))) = 0; /*0x41dd1a*/
-  (((unsigned char *)&(this->ambientSoundController[0]))[1]) = 0; /*0x41dd1d*/
+  (this->u8_218) = 0; /*0x41dd1a*/
+  (this->u8_219) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
 }
 } // namespace gamemd

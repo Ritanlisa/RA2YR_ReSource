@@ -47,7 +47,7 @@ char Debug::ScrollText(const char * aP1)
     {
       v12 = (char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
       v9 = &aP1[-v5]; /*0x5bd15c*/
-      v11 = (unsigned int *)(&this->q004 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
+      v11 = &this->q004 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
         v15 = v9[v5]; /*0x5bd16f*/
@@ -84,7 +84,7 @@ int Debug::AccumFlags()
   int i; // edi
   int Flags; // eax
 
-  Debug_field_0xA0 = (TriggerTypeClass *)this->Debug_field_0xA0; /*0x6e61f1*/
+  Debug_field_0xA0 = (TriggerTypeClass *)this->q0A0; /*0x6e61f1*/
   for ( i = 0; Debug_field_0xA0; i |= Flags ) /*0x6e61fc*/
   {
     Flags = TriggerTypeClass::GetFlags(Debug_field_0xA0); /*0x6e6200*/

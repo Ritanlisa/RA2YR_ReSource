@@ -74,7 +74,7 @@ void sub_600750()
     while ( v2 ) /*0x600769*/
     {
       v3 = v2; /*0x60076b*/
-      v2 = (unsigned int *)v2[2]; /*0x60076d*/
+      v2 = v2->vtable3; /*0x60076d*/
       operator delete((void *)(v3)); /*0x600771*/
     }
     *((unsigned int *)dword_AC1B48 + i++) = 0; /*0x600784*/
@@ -152,7 +152,7 @@ void sub_600920()
     while ( v2 ) /*0x600939*/
     {
       v3 = v2; /*0x60093b*/
-      v2 = (unsigned int *)v2[2]; /*0x60093d*/
+      v2 = v2->vtable3; /*0x60093d*/
       operator delete((void *)(v3)); /*0x600941*/
     }
     *((unsigned int *)g_DialogPool + i++) = 0; /*0x600954*/
@@ -347,70 +347,70 @@ int ValidateDialogEvent(int a1, HWND a2)
   LABEL_5:
     v4 = 0; /*0x600cee*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x600cf1*/
-  if ( (v4 == (void *)268 /*0x600f05*/
-     || v4 == (void *)148
-     || v4 == (void *)163
-     || v4 == (void *)115
-     || v4 == (void *)216
-     || v4 == (void *)3003
-     || v4 == (void *)245
-     || v4 == (void *)261
-     || v4 == (void *)226
-     || v4 == (void *)213
-     || v4 == (void *)693
-     || v4 == (void *)183
-     || v4 == (void *)692
-     || v4 == (void *)3015
-     || v4 == (void *)257
-     || v4 == (void *)297
-     || v4 == (void *)3014
-     || v4 == (void *)215
-     || v4 == (void *)264
-     || v4 == (void *)188
-     || v4 == (void *)189
-     || v4 == (void *)187
-     || v4 == (void *)181
-     || v4 == (void *)3002
-     || v4 == (void *)255
-     || v4 == (void *)107
-     || v4 == (void *)256
-     || v4 == (void *)258
-     || v4 == (void *)184
-     || v4 == (void *)214
-     || v4 == (void *)259
-     || v4 == (void *)293
-     || v4 == (void *)231
-     || v4 == (void *)278
-     || v4 == (void *)194
-     || v4 == (void *)201
-     || v4 == (void *)285
-     || v4 == (void *)284
-     || v4 == (void *)276
-     || v4 == (void *)700
-     || v4 == (void *)275
-     || v4 == (void *)265
-     || v4 == (void *)271
-     || v4 == (void *)279
-     || v4 == (void *)230
-     || v4 == (void *)243
-     || v4 == (void *)244
-     || v4 == (void *)270
-     || v4 == (void *)274)
+  if ( (v4 == 268 /*0x600f05*/
+     || v4 == 148
+     || v4 == 163
+     || v4 == 115
+     || v4 == 216
+     || v4 == 3003
+     || v4 == 245
+     || v4 == 261
+     || v4 == 226
+     || v4 == 213
+     || v4 == 693
+     || v4 == 183
+     || v4 == 692
+     || v4 == 3015
+     || v4 == 257
+     || v4 == 297
+     || v4 == 3014
+     || v4 == 215
+     || v4 == 264
+     || v4 == 188
+     || v4 == 189
+     || v4 == 187
+     || v4 == 181
+     || v4 == 3002
+     || v4 == 255
+     || v4 == 107
+     || v4 == 256
+     || v4 == 258
+     || v4 == 184
+     || v4 == 214
+     || v4 == 259
+     || v4 == 293
+     || v4 == 231
+     || v4 == 278
+     || v4 == 194
+     || v4 == 201
+     || v4 == 285
+     || v4 == 284
+     || v4 == 276
+     || v4 == 700
+     || v4 == 275
+     || v4 == 265
+     || v4 == 271
+     || v4 == 279
+     || v4 == 230
+     || v4 == 243
+     || v4 == 244
+     || v4 == 270
+     || v4 == 274)
     && DlgCtrlID == 1684 )
   {
     return 30; /*0x600f0f*/
   }
-  if ( (v4 == (void *)188 /*0x600f69*/
-     || v4 == (void *)189
-     || v4 == (void *)258
-     || v4 == (void *)194
-     || v4 == (void *)201
-     || v4 == (void *)3014)
+  if ( (v4 == 188 /*0x600f69*/
+     || v4 == 189
+     || v4 == 258
+     || v4 == 194
+     || v4 == 201
+     || v4 == 3014)
     && (DlgCtrlID == 1772 || DlgCtrlID == 1448) )
   {
     return 30; /*0x600f69*/
   }
-  if ( v4 != (void *)259 && v4 != (void *)3015 ) /*0x600f82*/
+  if ( v4 != 259 && v4 != 3015 ) /*0x600f82*/
     goto LABEL_102; /*0x600f82*/
   if ( DlgCtrlID != 1780 ) /*0x600f8e*/
   {
@@ -451,7 +451,7 @@ int ValidateDialogEvent(int a1, HWND a2)
       return 60; /*0x6010a4*/
     }
   LABEL_102:
-    if ( v4 != (void *)264 && v4 != (void *)3014 ) /*0x6010b3*/
+    if ( v4 != 264 && v4 != 3014 ) /*0x6010b3*/
     {
   LABEL_164:
       Event::IsValidActionType(v4); /*0x601346*/
@@ -559,67 +559,67 @@ int CtlDialogColorHandler(int a1, HWND a2)
     v4 = 0; /*0x60162e*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x601631*/
   v6 = DlgCtrlID; /*0x60163d*/
-  if ( (v4 == (void *)268 /*0x60188d*/
-     || v4 == (void *)148
-     || v4 == (void *)163
-     || v4 == (void *)115
-     || v4 == (void *)216
-     || v4 == (void *)3003
-     || v4 == (void *)245
-     || v4 == (void *)261
-     || v4 == (void *)226
-     || v4 == (void *)213
-     || v4 == (void *)693
-     || v4 == (void *)183
-     || v4 == (void *)692
-     || v4 == (void *)3015
-     || v4 == (void *)257
-     || v4 == (void *)297
-     || v4 == (void *)3014
-     || v4 == (void *)215
-     || v4 == (void *)264
-     || v4 == (void *)188
-     || v4 == (void *)189
-     || v4 == (void *)187
-     || v4 == (void *)181
-     || v4 == (void *)3002
-     || v4 == (void *)255
-     || v4 == (void *)107
-     || v4 == (void *)256
-     || v4 == (void *)258
-     || v4 == (void *)184
-     || v4 == (void *)214
-     || v4 == (void *)259
-     || v4 == (void *)293
-     || v4 == (void *)231
-     || v4 == (void *)278
-     || v4 == (void *)194
-     || v4 == (void *)201
-     || v4 == (void *)285
-     || v4 == (void *)284
-     || v4 == (void *)276
-     || v4 == (void *)700
-     || v4 == (void *)275
-     || v4 == (void *)265
-     || v4 == (void *)271
-     || v4 == (void *)279
-     || v4 == (void *)230
-     || v4 == (void *)243
-     || v4 == (void *)244
-     || v4 == (void *)270
-     || v4 == (void *)274)
+  if ( (v4 == 268 /*0x60188d*/
+     || v4 == 148
+     || v4 == 163
+     || v4 == 115
+     || v4 == 216
+     || v4 == 3003
+     || v4 == 245
+     || v4 == 261
+     || v4 == 226
+     || v4 == 213
+     || v4 == 693
+     || v4 == 183
+     || v4 == 692
+     || v4 == 3015
+     || v4 == 257
+     || v4 == 297
+     || v4 == 3014
+     || v4 == 215
+     || v4 == 264
+     || v4 == 188
+     || v4 == 189
+     || v4 == 187
+     || v4 == 181
+     || v4 == 3002
+     || v4 == 255
+     || v4 == 107
+     || v4 == 256
+     || v4 == 258
+     || v4 == 184
+     || v4 == 214
+     || v4 == 259
+     || v4 == 293
+     || v4 == 231
+     || v4 == 278
+     || v4 == 194
+     || v4 == 201
+     || v4 == 285
+     || v4 == 284
+     || v4 == 276
+     || v4 == 700
+     || v4 == 275
+     || v4 == 265
+     || v4 == 271
+     || v4 == 279
+     || v4 == 230
+     || v4 == 243
+     || v4 == 244
+     || v4 == 270
+     || v4 == 274)
     && DlgCtrlID == 1684
-    || (v4 == (void *)188
-     || v4 == (void *)189
-     || v4 == (void *)258
-     || v4 == (void *)194
-     || v4 == (void *)201
-     || v4 == (void *)3014)
+    || (v4 == 188
+     || v4 == 189
+     || v4 == 258
+     || v4 == 194
+     || v4 == 201
+     || v4 == 3014)
     && (DlgCtrlID == 1772 || DlgCtrlID == 1448) )
   {
     return 1; /*0x60188d*/
   }
-  if ( v4 == (void *)259 || v4 == (void *)3015 ) /*0x6018a1*/
+  if ( v4 == 259 || v4 == 3015 ) /*0x6018a1*/
   {
     if ( DlgCtrlID == 1780 ) /*0x6018ad*/
       return 3; /*0x6018b7*/
@@ -659,7 +659,7 @@ int CtlDialogColorHandler(int a1, HWND a2)
       return 1; /*0x601a4d*/
     }
   }
-  if ( (v4 == (void *)264 || v4 == (void *)3014) /*0x601cf5*/
+  if ( (v4 == 264 || v4 == 3014) /*0x601cf5*/
     && (DlgCtrlID == 1746
      || DlgCtrlID == 1002
      || DlgCtrlID == 1843
@@ -761,65 +761,65 @@ int ValidateDialogControl(int a1, HWND a2)
     v4 = 0; /*0x601d6e*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x601d71*/
   v6 = DlgCtrlID; /*0x601d7d*/
-  if ( (v4 != (void *)268 /*0x601fcd*/
-     && v4 != (void *)148
-     && v4 != (void *)163
-     && v4 != (void *)115
-     && v4 != (void *)216
-     && v4 != (void *)3003
-     && v4 != (void *)245
-     && v4 != (void *)261
-     && v4 != (void *)226
-     && v4 != (void *)213
-     && v4 != (void *)693
-     && v4 != (void *)183
-     && v4 != (void *)692
-     && v4 != (void *)3015
-     && v4 != (void *)257
-     && v4 != (void *)297
-     && v4 != (void *)3014
-     && v4 != (void *)215
-     && v4 != (void *)264
-     && v4 != (void *)188
-     && v4 != (void *)189
-     && v4 != (void *)187
-     && v4 != (void *)181
-     && v4 != (void *)3002
-     && v4 != (void *)255
-     && v4 != (void *)107
-     && v4 != (void *)256
-     && v4 != (void *)258
-     && v4 != (void *)184
-     && v4 != (void *)214
-     && v4 != (void *)259
-     && v4 != (void *)293
-     && v4 != (void *)231
-     && v4 != (void *)278
-     && v4 != (void *)194
-     && v4 != (void *)201
-     && v4 != (void *)285
-     && v4 != (void *)284
-     && v4 != (void *)276
-     && v4 != (void *)700
-     && v4 != (void *)275
-     && v4 != (void *)265
-     && v4 != (void *)271
-     && v4 != (void *)279
-     && v4 != (void *)230
-     && v4 != (void *)243
-     && v4 != (void *)244
-     && v4 != (void *)270
-     && v4 != (void *)274
+  if ( (v4 != 268 /*0x601fcd*/
+     && v4 != 148
+     && v4 != 163
+     && v4 != 115
+     && v4 != 216
+     && v4 != 3003
+     && v4 != 245
+     && v4 != 261
+     && v4 != 226
+     && v4 != 213
+     && v4 != 693
+     && v4 != 183
+     && v4 != 692
+     && v4 != 3015
+     && v4 != 257
+     && v4 != 297
+     && v4 != 3014
+     && v4 != 215
+     && v4 != 264
+     && v4 != 188
+     && v4 != 189
+     && v4 != 187
+     && v4 != 181
+     && v4 != 3002
+     && v4 != 255
+     && v4 != 107
+     && v4 != 256
+     && v4 != 258
+     && v4 != 184
+     && v4 != 214
+     && v4 != 259
+     && v4 != 293
+     && v4 != 231
+     && v4 != 278
+     && v4 != 194
+     && v4 != 201
+     && v4 != 285
+     && v4 != 284
+     && v4 != 276
+     && v4 != 700
+     && v4 != 275
+     && v4 != 265
+     && v4 != 271
+     && v4 != 279
+     && v4 != 230
+     && v4 != 243
+     && v4 != 244
+     && v4 != 270
+     && v4 != 274
      || DlgCtrlID != 1684)
-    && (v4 != (void *)188
-     && v4 != (void *)189
-     && v4 != (void *)258
-     && v4 != (void *)194
-     && v4 != (void *)201
-     && v4 != (void *)3014
+    && (v4 != 188
+     && v4 != 189
+     && v4 != 258
+     && v4 != 194
+     && v4 != 201
+     && v4 != 3014
      || DlgCtrlID != 1772 && DlgCtrlID != 1448) )
   {
-    if ( v4 == (void *)259 || v4 == (void *)3015 ) /*0x601fe1*/
+    if ( v4 == 259 || v4 == 3015 ) /*0x601fe1*/
     {
       switch ( DlgCtrlID ) /*0x601fed*/
       {
@@ -860,7 +860,7 @@ int ValidateDialogControl(int a1, HWND a2)
           return 32; /*0x602141*/
       }
     }
-    if ( v4 == (void *)264 || v4 == (void *)3014 ) /*0x60215a*/
+    if ( v4 == 264 || v4 == 3014 ) /*0x60215a*/
     {
       if ( DlgCtrlID == 1746 /*0x60220e*/
         || DlgCtrlID == 1002
@@ -964,7 +964,7 @@ int sub_6023F0(int a1, HWND a2)
     v4 = 0; /*0x60243a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x60243d*/
   if ( (v4 == 259 || v4 == 3015) && DlgCtrlID == 1780 ) /*0x602458*/
-    return (*(((unsigned int *)&(dword_8871E0->GenericClick)) + 1)); /*0x602462*/
+    return (*(dword_8871E0->GenericClick + 1)); /*0x602462*/
   else
     return -1; /*0x60247b*/
 }
@@ -998,53 +998,53 @@ bool IsValidActionDialog(int a1, HWND a2)
   LABEL_5:
     v4 = 0; /*0x6024de*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x6024ed*/
-  if ( (v4 == (void *)268 /*0x60262c*/
-     || v4 == (void *)148
-     || v4 == (void *)163
-     || v4 == (void *)115
-     || v4 == (void *)216
-     || v4 == (void *)3003
-     || v4 == (void *)245
-     || v4 == (void *)261
-     || v4 == (void *)226
-     || v4 == (void *)213
-     || v4 == (void *)693
-     || v4 == (void *)183
-     || v4 == (void *)692
-     || v4 == (void *)3015
-     || v4 == (void *)257
-     || v4 == (void *)297
-     || v4 == (void *)3014
-     || v4 == (void *)215
-     || v4 == (void *)264
-     || v4 == (void *)188
-     || v4 == (void *)189
-     || v4 == (void *)187
-     || v4 == (void *)181
-     || v4 == (void *)3002
-     || v4 == (void *)255
-     || v4 == (void *)107
-     || v4 == (void *)256
-     || v4 == (void *)258
-     || v4 == (void *)184
-     || v4 == (void *)214
-     || v4 == (void *)259
+  if ( (v4 == 268 /*0x60262c*/
+     || v4 == 148
+     || v4 == 163
+     || v4 == 115
+     || v4 == 216
+     || v4 == 3003
+     || v4 == 245
+     || v4 == 261
+     || v4 == 226
+     || v4 == 213
+     || v4 == 693
+     || v4 == 183
+     || v4 == 692
+     || v4 == 3015
+     || v4 == 257
+     || v4 == 297
+     || v4 == 3014
+     || v4 == 215
+     || v4 == 264
+     || v4 == 188
+     || v4 == 189
+     || v4 == 187
+     || v4 == 181
+     || v4 == 3002
+     || v4 == 255
+     || v4 == 107
+     || v4 == 256
+     || v4 == 258
+     || v4 == 184
+     || v4 == 214
+     || v4 == 259
      || ((Dialog *)(v4))->IsSpecialTemplate())
     && DlgCtrlID == 1684 )
   {
     return 1; /*0x60262f*/
   }
-  if ( (v4 == (void *)188 /*0x60268d*/
-     || v4 == (void *)189
-     || v4 == (void *)258
-     || v4 == (void *)194
-     || v4 == (void *)201
-     || v4 == (void *)3014)
+  if ( (v4 == 188 /*0x60268d*/
+     || v4 == 189
+     || v4 == 258
+     || v4 == 194
+     || v4 == 201
+     || v4 == 3014)
     && (DlgCtrlID == 1772 || DlgCtrlID == 1448) )
   {
     return 1; /*0x602690*/
   }
-  if ( (v4 == (void *)259 || v4 == (void *)3015) /*0x6027f3*/
+  if ( (v4 == 259 || v4 == 3015) /*0x6027f3*/
     && (DlgCtrlID == 1779
      || DlgCtrlID == 1780
      || DlgCtrlID == 1695
@@ -1081,7 +1081,7 @@ bool IsValidActionDialog(int a1, HWND a2)
   {
     return 1; /*0x6027f6*/
   }
-  if ( (v4 == (void *)264 || v4 == (void *)3014) /*0x602a9d*/
+  if ( (v4 == 264 || v4 == 3014) /*0x602a9d*/
     && (DlgCtrlID == 1746
      || DlgCtrlID == 1002
      || DlgCtrlID == 1693
@@ -1574,7 +1574,7 @@ void * CacheDialogInvalidate(HWND hWnd, HWND a2)
     {
       while ( *result != v5 ) /*0x603d70*/
       {
-        result = (HWND *)result[129]; /*0x603d72*/
+        result = result->HWND_204; /*0x603d72*/
         if ( !result ) /*0x603d7a*/
           return result; /*0x603d7a*/
       }
@@ -1605,7 +1605,7 @@ unsigned int * sub_603E40(int a1, int a2)
     {
       while ( *result != v4 ) /*0x603e7d*/
       {
-        result = (unsigned int *)result[129]; /*0x603e7f*/
+        result = result->u32_204; /*0x603e7f*/
         if ( !result ) /*0x603e87*/
           return result; /*0x603e87*/
       }
@@ -1682,13 +1682,13 @@ int Dialog_SetActiveFlag(int a1, char a2)
     {
       while ( *(unsigned int *)result != v4 ) /*0x60677d*/
       {
-        result = *(unsigned int *)(result + 516); /*0x60677f*/
+        result = result->u32_204; /*0x60677f*/
         if ( !result ) /*0x606787*/
           return result; /*0x606787*/
       }
       result += 4; /*0x606790*/
       if ( result ) /*0x606795*/
-        *(unsigned char *)(result + 188) = a2; /*0x606797*/
+        result->u8_BC = a2; /*0x606797*/
     }
   }
   return result; /*0x606789*/
@@ -2151,9 +2151,9 @@ LABEL_116:
   RA2_OPDEL(Block);
   if ( !a2 )
     return (gamemd::AbstractClass **)(SendMessageA( (HWND)(hWnd), 0x4EDu, 0, 0));
-  PlayVocClass(*((unsigned int *)g_RulesClass_Instance + 468), 0x2000, 1.0, 0);
-  while ( (*(int (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
-    (*(void (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+  PlayVocClass(g_RulesClass_Instance->u32_750, 0x2000, 1.0, 0);
+  while ( (*(int (**)(int))(*&g_WWMouseClass_Instance->q_A0))(g_WWMouseClass_Instance) )
+    (*(void (**)(int))(*&g_WWMouseClass_Instance->XY2))(g_WWMouseClass_Instance);
   return (gamemd::AbstractClass **)(SendMessageA( (HWND)(hWnd), 0x4ECu, 0, 0));
 }
 } // namespace gamemd
@@ -2189,7 +2189,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
         return 0; /*0x6086e1*/
-      v7 = *((unsigned int *)dword_A8B230 + 3374); /*0x6086f8*/
+      v7 = dword_A8B230->playerSideIndex; /*0x6086f8*/
       if ( g_DisplayWidth >= 800 ) /*0x608700*/
       {
         if ( v7 ) /*0x608704*/
@@ -2215,7 +2215,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x608741*/
         return 0; /*0x608741*/
-      v8 = *((unsigned int *)dword_A8B230 + 3374); /*0x608753*/
+      v8 = dword_A8B230->playerSideIndex; /*0x608753*/
       if ( g_DisplayWidth >= 800 ) /*0x608761*/
       {
         if ( v8 ) /*0x608765*/
@@ -2918,7 +2918,7 @@ char sub_6096A0(int a1, HWND a2)
     return 0; /*0x6096e8*/
   while ( *v4 != v7 ) /*0x6096f0*/
   {
-    v4 = (HWND *)v4[129]; /*0x6096f2*/
+    v4 = v4->HWND_204; /*0x6096f2*/
     if ( !v4 ) /*0x6096fa*/
       return 0; /*0x6096fa*/
   }
@@ -3056,7 +3056,7 @@ bool sub_609AA0(int a1, HWND a2)
     return 0; /*0x609ae8*/
   while ( *v4 != v7 ) /*0x609af0*/
   {
-    v4 = (HWND *)v4[129]; /*0x609af2*/
+    v4 = v4->HWND_204; /*0x609af2*/
     if ( !v4 ) /*0x609afa*/
       return 0; /*0x609afa*/
   }
@@ -3121,7 +3121,7 @@ bool sub_609BC0(int a1, HWND a2)
       {
         while ( *v4 != v9 ) /*0x609c25*/
         {
-          v4 = (HWND *)v4[129]; /*0x609c27*/
+          v4 = v4->HWND_204; /*0x609c27*/
           if ( !v4 ) /*0x609c2f*/
             goto LABEL_7; /*0x609c2f*/
         }
@@ -3145,7 +3145,7 @@ bool sub_609BC0(int a1, HWND a2)
     return 0; /*0x609c76*/
   while ( *v5 != v9 ) /*0x609c7e*/
   {
-    v5 = (HWND *)v5[129]; /*0x609c80*/
+    v5 = v5->HWND_204; /*0x609c80*/
     if ( !v5 ) /*0x609c88*/
       return 0; /*0x609c90*/
   }
@@ -3175,7 +3175,7 @@ bool sub_609CF0(int a1, HWND a2)
       {
         while ( *v4 != v9 ) /*0x609d55*/
         {
-          v4 = (HWND *)v4[129]; /*0x609d57*/
+          v4 = v4->HWND_204; /*0x609d57*/
           if ( !v4 ) /*0x609d5f*/
             goto LABEL_7; /*0x609d5f*/
         }
@@ -3199,7 +3199,7 @@ bool sub_609CF0(int a1, HWND a2)
     return 0; /*0x609da6*/
   while ( *v5 != v9 ) /*0x609dae*/
   {
-    v5 = (HWND *)v5[129]; /*0x609db0*/
+    v5 = v5->HWND_204; /*0x609db0*/
     if ( !v5 ) /*0x609db8*/
       return 0; /*0x609dc0*/
   }

@@ -52,7 +52,7 @@ namespace gamemd { namespace wdt {
 }
 // 0x4f28b0
 bool Map::CanScroll() {
-  return this->Height < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f28bd*/
+  return this->Height < *(unsigned int *)(*&this->Width + 16); /*0x4f28bd*/
 }
 // 0x4F3A90
 namespace gamemd { namespace wdt { 
@@ -64,10 +64,10 @@ int State::SetIfChanged(int a1) {
   int v3; // edx
 
   result = a1; /*0x4f3a90*/
-  if ( (unsigned char)a1 != (*((unsigned char *)&(this->AIPlayers))) ) /*0x4f3a99*/
+  if ( (unsigned char)a1 != (this->AIPlayers) ) /*0x4f3a99*/
   {
-    v3 = *(unsigned int *)this->__pad_0; /*0x4f3a9b*/
-    (*((unsigned char *)&(this->AIPlayers))) = a1; /*0x4f3a9e*/
+    v3 = *(unsigned int *)this->ConstructorWithVtable; /*0x4f3a9b*/
+    (this->AIPlayers) = a1; /*0x4f3a9e*/
     return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
   return result; /*0x4f3aa4*/
@@ -100,7 +100,7 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
   v16 = (MovieClass *)this; /*0x5c2511*/
   if ( hDlg ) /*0x5c2515*/
   {
-    v6 = this->u32_33C; /*0x5c251b*/
+    v6 = this->q33C; /*0x5c251b*/
     v7 = dword_A8BB0C; /*0x5c2521*/
     dword_A8BB0C = dword_A8BB0C; /*0x5c252b*/
     v13 = 0; /*0x5c2536*/
@@ -110,7 +110,7 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
     {
       if ( v14->__pad_008 ) /*0x5c254b*/
       {
-        v9 = (int *)v5[16]; /*0x5c2554*/
+        v9 = v5->u32_40; /*0x5c2554*/
         if ( v9 ) /*0x5c2559*/
         {
           if ( (uint8_t)Movie::GetState(v9, &v13) ) /*0x5c2560*/

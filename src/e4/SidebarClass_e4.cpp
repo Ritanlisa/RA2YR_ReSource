@@ -58,7 +58,7 @@ namespace gamemd {  // G42.18 ns repair
 int SidebarClass::draw()
 {
 
-  return (char)this->SidebarClass_field_0x5C; /*0x4c9c53*/
+  return (char)this->q05C; /*0x4c9c53*/
 
 }
 } // namespace gamemd
@@ -67,7 +67,7 @@ namespace gamemd {
 int SidebarClass::draw2()
 {
 
-  return this->SidebarClass_field_0x68; /*0x4ca173*/
+  return this->somecount_4C; /*0x4ca173*/
 
 }
 } // namespace gamemd
@@ -137,10 +137,10 @@ int SidebarClass::CalcBounds(char a1)
     v2 = g_DSurface_ViewBounds; /*0x6a51de*/
     v1 = DSurface_SidebarBounds; /*0x6a51e3*/
   }
-  v6 = *((unsigned int *)dword_A8B230 + 3374); /*0x6a51ef*/
+  v6 = dword_A8B230->playerSideIndex; /*0x6a51ef*/
   dword_B0B500 = 50; /*0x6a51f5*/
   v7 = 26; /*0x6a5205*/
-  if ( *((unsigned int *)dword_A8B230 + 3374) ) /*0x6a51ff*/
+  if ( dword_A8B230->playerSideIndex ) /*0x6a51ff*/
     v7 = 18; /*0x6a520e*/
   result = 50 * ((v2 - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a523f*/
   dword_B0B504 = result; /*0x6a5243*/
@@ -204,14 +204,14 @@ void * SidebarClass::LoadAssets()
 
   PowerClass::checkBlackout(v1); /*0x6a5849*/
   memcpy(v14, UI_Load_72F4A0(), sizeof(v14)); /*0x6a5863*/
-  if ( *(unsigned int *)&stru_87F5F0.__pad_58[132] ) /*0x6a586d*/
+  if ( *(unsigned int *)&g_SidebarConfig ) /*0x6a586d*/
   {
-    (***(void (****)(unsigned int, int))&stru_87F5F0.__pad_58[132])(*(unsigned int *)&stru_87F5F0.__pad_58[132], 1); /*0x6a5873*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[132] = 0; /*0x6a5875*/
+    (***(void (****)(unsigned int, int))&g_SidebarConfig)(*(unsigned int *)&g_SidebarConfig, 1); /*0x6a5873*/
+    *(unsigned int *)&g_SidebarConfig = 0; /*0x6a5875*/
   }
   v2 = (ConvertClass *)operator new(0x188u); /*0x6a5880*/
   if ( v2 ) /*0x6a588a*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[132] = ConvertClass::Construct( /*0x6a58ad*/
+    *(unsigned int *)&g_SidebarConfig = ConvertClass::Construct( /*0x6a58ad*/
                                               v2,
                                               (int)v14,
                                               (int)v14,
@@ -219,18 +219,18 @@ void * SidebarClass::LoadAssets()
                                               1,
                                               0);
   else
-    *(unsigned int *)&stru_87F5F0.__pad_58[132] = 0; /*0x6a58b4*/
+    *(unsigned int *)&g_SidebarConfig = 0; /*0x6a58b4*/
   dword_B0B484 = (unsigned int)(LoadFileSHP((char *)(aGclock2Shp), (bool *)&byte_B0B48F)); /*0x6a58d4*/
   v12 = 0; /*0x6a58d9*/
   FileSHP = LoadFileSHP((char *)(aSellShp), (bool *)&v12); /*0x6a58dd*/
   ShapeButton::SetShape(&stru_B07DF8, (int)FileSHP, 0, 0); /*0x6a58e8*/
   ButtonClass::SetState((ButtonClass *)&stru_B07DF8, v12); /*0x6a58f7*/
-  dword_B07E48 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a590c*/
+  dword_B07E48 = *(unsigned int *)&g_SidebarConfig; /*0x6a590c*/
   v4 = LoadFileSHP((char *)(aRepairShp), (bool *)&v12); /*0x6a5911*/
   ShapeButton::SetShape(&stru_B0B3A0, (int)v4, 0, 0); /*0x6a591c*/
   ButtonClass::SetState((ButtonClass *)&stru_B0B3A0, v12); /*0x6a592b*/
   v5 = 0; /*0x6a5936*/
-  dword_B0B3F0 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a5938*/
+  dword_B0B3F0 = *(unsigned int *)&g_SidebarConfig; /*0x6a5938*/
   v6 = (gamemd::ShapeButtonClass *)(&stru_B07C48); /*0x6a593e*/
   do /*0x6a598c*/
   {
@@ -239,31 +239,31 @@ void * SidebarClass::LoadAssets()
     ShapeButton::SetShape(v6, (int)v7, 0, 0); /*0x6a5968*/
     ButtonClass::SetState((ButtonClass *)v6, v12); /*0x6a5974*/
     ++v5; /*0x6a597f*/
-    v6[6].ShapeButtonClass_field_0x08 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a5980*/
+    v6[6].ShapeButtonClass_field_0x08 = *(unsigned int *)&g_SidebarConfig; /*0x6a5980*/
     v6 += 8; /*0x6a5983*/
   }
   while ( (int)v6 < (int)&dword_B07DC8 ); /*0x6a598c*/
   v8 = LoadFileSHP((char *)(aRDnShp), (bool *)&v12); /*0x6a5999*/
   ShapeButton::SetShape(&stru_B0B328, (int)v8, 0, 0); /*0x6a59a4*/
   ButtonClass::SetState((ButtonClass *)&stru_B0B328, v12); /*0x6a59b3*/
-  dword_B0B378 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a59bf*/
+  dword_B0B378 = *(unsigned int *)&g_SidebarConfig; /*0x6a59bf*/
   v9 = LoadFileSHP((char *)(aRUpShp), (bool *)&v12); /*0x6a59cf*/
   ShapeButton::SetShape(&g_SidebarFlag, (int)v9, 0, 0); /*0x6a59da*/
   ButtonClass::SetState((ButtonClass *)&g_SidebarFlag, v12); /*0x6a59e9*/
-  dword_B0B458 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a59fd*/
+  dword_B0B458 = *(unsigned int *)&g_SidebarConfig; /*0x6a59fd*/
   dword_B0B468 = (unsigned int)(LoadFileSHP((char *)(aSide1Shp), (bool *)&byte_B0B488)); /*0x6a5a11*/
   dword_B0B46C = (unsigned int)(LoadFileSHP((char *)(aSide2Shp), (bool *)&byte_B0B489)); /*0x6a5a25*/
   dword_B0B470 = (unsigned int)(LoadFileSHP((char *)(aSide3Shp), (bool *)&byte_B0B48A)); /*0x6a5a39*/
   dword_B0B474 = (unsigned int)(LoadFileSHP((char *)(aAddonShp), (bool *)&byte_B0B48B)); /*0x6a5a43*/
   memcpy(v15, UI_Load_72F4E0(), sizeof(v15)); /*0x6a5a5b*/
-  if ( *(unsigned int *)&stru_87F5F0.__pad_58[136] ) /*0x6a5a65*/
+  if ( *(unsigned int *)&DataGlobal_87F6D0 ) /*0x6a5a65*/
   {
-    (***(void (****)(unsigned int, int))&stru_87F5F0.__pad_58[136])(*(unsigned int *)&stru_87F5F0.__pad_58[136], 1); /*0x6a5a6b*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[136] = 0; /*0x6a5a6d*/
+    (***(void (****)(unsigned int, int))&DataGlobal_87F6D0)(*(unsigned int *)&DataGlobal_87F6D0, 1); /*0x6a5a6b*/
+    *(unsigned int *)&DataGlobal_87F6D0 = 0; /*0x6a5a6d*/
   }
   v10 = (ConvertClass *)operator new(0x188u); /*0x6a5a78*/
   if ( v10 ) /*0x6a5a82*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[136] = ConvertClass::Construct( /*0x6a5aa5*/
+    *(unsigned int *)&DataGlobal_87F6D0 = ConvertClass::Construct( /*0x6a5aa5*/
                                               v10,
                                               (int)v15,
                                               (int)v15,
@@ -271,7 +271,7 @@ void * SidebarClass::LoadAssets()
                                               1,
                                               0);
   else
-    *(unsigned int *)&stru_87F5F0.__pad_58[136] = 0; /*0x6a5aac*/
+    *(unsigned int *)&DataGlobal_87F6D0 = 0; /*0x6a5aac*/
   dword_B0B490 = (unsigned int)(LoadFileSHP((char *)(aObsalliShp), (bool *)&byte_B0B4CC)); /*0x6a5acb*/
   dword_B0B494 = (unsigned int)(LoadFileSHP((char *)(aObssoviShp), (bool *)&byte_B0B4CD)); /*0x6a5adf*/
   dword_B0B498 = (unsigned int)(LoadFileSHP((char *)(aObsyuriShp), (bool *)&byte_B0B4CE)); /*0x6a5af3*/
@@ -318,15 +318,15 @@ int SidebarClass::Redraw(char a2)
   char v23; // [esp+34h] [ebp+4h]
 
   v2 = this; /*0x6a6c3b*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1522] = dword_B07DC8; /*0x6a6c49*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1526] = dword_B07DCC; /*0x6a6c53*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1530] = dword_B07DD0; /*0x6a6c5f*/
+  *(unsigned int *)&DataGlobal_8809F4 = dword_B07DC8; /*0x6a6c49*/
+  *(unsigned int *)&DataGlobal_8809F8 = dword_B07DCC; /*0x6a6c53*/
+  *(unsigned int *)&DataGlobal_8809FC = dword_B07DD0; /*0x6a6c5f*/
   v19 = g_DSurface_Hidden_2; /*0x6a6c65*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1534] = dword_B07DD4; /*0x6a6c6f*/
+  *(unsigned int *)&DataGlobal_880A00 = dword_B07DD4; /*0x6a6c6f*/
   g_DSurface_Hidden_2 = (AudioStream *)DSurface_Sidebar; /*0x6a6c74*/
   v17 = 0; /*0x6a6c82*/
-  v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar); /*0x6a6c92*/
-  v22[2] = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6a6c99*/
+  v3 = (*((int (**)(DSurface *))DSurface_Sidebar + 32))(DSurface_Sidebar); /*0x6a6c92*/
+  v22[2] = (*((int (**)(DSurface *))DSurface_Sidebar + 31))(DSurface_Sidebar); /*0x6a6c99*/
   v22[0] = 0; /*0x6a6ca3*/
   v22[1] = 0; /*0x6a6ca7*/
   v22[3] = v3; /*0x6a6cab*/
@@ -341,7 +341,7 @@ int SidebarClass::Redraw(char a2)
       v20 = 0; /*0x6a6d3e*/
       DrawToSurfaceSHP( /*0x6a6d42*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
+        *(int *)&g_SidebarConfig,
         (int)dword_B0B468,
         0,
         &v20,
@@ -369,7 +369,7 @@ int SidebarClass::Redraw(char a2)
         v21 = v4; /*0x6a6dd0*/
         DrawToSurfaceSHP( /*0x6a6dd4*/
           (int)DSurface_Sidebar,
-          *(int *)&stru_87F5F0.__pad_58[132],
+          *(int *)&g_SidebarConfig,
           (int)v5,
           0,
           &v20,
@@ -391,7 +391,7 @@ int SidebarClass::Redraw(char a2)
       v21 = v4; /*0x6a6e20*/
       DrawToSurfaceSHP( /*0x6a6e24*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
+        *(int *)&g_SidebarConfig,
         (int)dword_B0B470,
         0,
         &v20,
@@ -410,7 +410,7 @@ int SidebarClass::Redraw(char a2)
       v20 = 0; /*0x6a6e6b*/
       DrawToSurfaceSHP( /*0x6a6e6f*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
+        *(int *)&g_SidebarConfig,
         (int)dword_B0B474,
         0,
         &v20,
@@ -445,7 +445,7 @@ int SidebarClass::Redraw(char a2)
       v20 = 0; /*0x6a6f18*/
       DrawToSurfaceSHP( /*0x6a6f1c*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
+        *(int *)&g_SidebarConfig,
         (int)dword_B0B478,
         v14,
         &v20,
@@ -465,7 +465,7 @@ int SidebarClass::Redraw(char a2)
       v20 = 0; /*0x6a6f63*/
       DrawToSurfaceSHP( /*0x6a6f67*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
+        *(int *)&g_SidebarConfig,
         (int)dword_B0B47C,
         v15,
         &v20,
@@ -485,7 +485,7 @@ int SidebarClass::Redraw(char a2)
       v20 = 0; /*0x6a6fae*/
       DrawToSurfaceSHP( /*0x6a6fb2*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
+        *(int *)&g_SidebarConfig,
         (int)dword_B0B480,
         v16,
         &v20,
@@ -549,10 +549,10 @@ int SidebarClass::Redraw(char a2)
     byte_B0B45C = 0; /*0x6a7073*/
     g_TooltipActive = 1; /*0x6a7079*/
   }
-  if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x6a7087*/
+  if ( *(unsigned int *)&g_TacticalRender ) /*0x6a7087*/
   {
-    (*(void (**)(unsigned int, int))(**(unsigned int **)&stru_88732C.__pad_1C[32] + 12))( /*0x6a708d*/
-      *(unsigned int *)&stru_88732C.__pad_1C[32],
+    (*(void (**)(unsigned int, int))(**(unsigned int **)&g_TacticalRender + 12))( /*0x6a708d*/
+      *(unsigned int *)&g_TacticalRender,
       1);
     v10 = g_TooltipActive; /*0x6a7090*/
   }
@@ -561,7 +561,7 @@ int SidebarClass::Redraw(char a2)
   v2[3].__pad_CD2[1788] = 0; /*0x6a70b7*/
   v2[3].__pad_CD2[1789] = 0; /*0x6a70bd*/
   g_DSurface_Hidden_2 = v19; /*0x6a70c5*/
-  return (int)v19->__pad_0; /*0x6a70c3*/
+  return (int)v19->__pad_000; /*0x6a70c3*/
 
 }
 } // namespace gamemd
@@ -583,11 +583,11 @@ int SidebarClass::SwitchTab(int a2)
     GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * result)); /*0x6a75b4*/
     v4 = 0; /*0x6a75c6*/
     v5 = &this->u32_F94 * this->u32_539C + 5444; /*0x6a75ce*/
-    *(unsigned char *)(&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a75d5*/
+    *&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a75d5*/
     do /*0x6a7600*/
     {
       Tactical::SelectObject( /*0x6a75f7*/
-        (GScreenClass *)&stru_87F5F0.__pad_58[416],
+        (GScreenClass *)&DataGlobal_87F7E8,
         56 * (v4 + 60 * this->u32_FCC) + 11566720);
       ++v4; /*0x6a75fc*/
     }
@@ -595,7 +595,7 @@ int SidebarClass::SwitchTab(int a2)
     this->u32_539C = a2; /*0x6a7605*/
     ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * a2)))->Show(); /*0x6a7614*/
     v6 = &this->u32_F94 * this->u32_539C + 5444; /*0x6a762c*/
-    *(unsigned char *)(&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a7633*/
+    *&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a7633*/
     v7 = 26; /*0x6a7645*/
     if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a763d*/
       v7 = 18; /*0x6a764c*/
@@ -607,7 +607,7 @@ int SidebarClass::SwitchTab(int a2)
       {
         Hash::Reset((LinkClass *)(56 * (v8 + 60 * this->u32_FCC) + 11566720)); /*0x6a769d*/
         Hash::InsertOrdered( /*0x6a76c0*/
-          (GScreenClass *)&stru_87F5F0.__pad_58[416],
+          (GScreenClass *)&DataGlobal_87F7E8,
           56 * (v8 + 60 * this->u32_FCC) + 11566720);
         ++v8; /*0x6a76c5*/
       }
@@ -671,11 +671,11 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   v2 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdb2*/
   v23 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdbc*/
   if ( (*((unsigned char *)&(stru_A8EB00.vfptr[31]))) ) /*0x6abdbd*/
-    Rect_Point::Set(&stru_B07E58, DSurface_ViewBounds.field_0 + *(unsigned int *)DSurface_ViewBounds.__pad_8, v23); /*0x6abdce*/
+    Rect_Point::Set(&stru_B07E58, DSurface_ViewBounds.field_0 + *(unsigned int *)g_Map_VisibleRectOffset, v23); /*0x6abdce*/
   else
     Rect_Point::Set(&stru_B07E58, 0, v23); /*0x6abdd7*/
-  v24 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar) - v2; /*0x6abdf2*/
-  v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6abdf5*/
+  v24 = (*((int (**)(DSurface *))DSurface_Sidebar + 32))(DSurface_Sidebar) - v2; /*0x6abdf2*/
+  v3 = (*((int (**)(DSurface *))DSurface_Sidebar + 31))(DSurface_Sidebar); /*0x6abdf5*/
   ObjectClass::SetPositionXY(&stru_B07E58, v3, v24); /*0x6abdfe*/
   Rect_Point::Set((GadgetClass *)&stru_B0B3A0, dword_B0B4DC, dword_B0B4E0); /*0x6abe15*/
   VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&stru_B0B3A0); /*0x6abe1f*/
@@ -689,7 +689,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   {
     Rect_Point::Set(v4, dword_B0B4E8 + v5 * dword_B0B4F0, dword_B0B4EC); /*0x6abe88*/
     ((VectorClass_ptr_ConvertClass*)v4)->MarkDirty(); /*0x6abe8f*/
-    v4 = (GadgetClass *)((char *)v4 + 96); /*0x6abe99*/
+    v4 = &v4->q060; /*0x6abe99*/
     *(unsigned int *)v4[-1].__pad_0 = -DSurface_SidebarBounds; /*0x6abe9e*/
     ++v5; /*0x6abea1*/
   }
@@ -716,12 +716,12 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
       {
         for ( i = 0; i < 2; ++i ) /*0x6abf6c*/
         {
-          (*(void (**)(LinkClass *, int, int))(*(unsigned int *)v7->__pad_0 + 100))( /*0x6abf96*/
+          (*(void (**)(LinkClass *, int, int))(*(unsigned int *)v7->vtable1 + 100))( /*0x6abf96*/
             v7,
             dword_B0B4F4 + i * dword_B0B4FC,
             v9 * dword_B0B500 + g_SidebarBounds + 1);
-          (*(void (**)(LinkClass *))(*(unsigned int *)v7->__pad_0 + 72))(v7); /*0x6abf9d*/
-          v7 = (LinkClass *)((char *)v7 + 56); /*0x6abfa1*/
+          (*(void (**)(LinkClass *))(*(unsigned int *)v7->vtable1 + 72))(v7); /*0x6abf9d*/
+          v7 = &v7->__pad_038; /*0x6abfa1*/
         }
         ++v9; /*0x6abfa9*/
       }
@@ -732,8 +732,8 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     v25 = v7; /*0x6abfbe*/
   }
   while ( (int)v7 < (int)&dword_B0B300 ); /*0x6abfc2*/
-  result = stru_88732C.__pad_1C[32]; /*0x6abfc4*/
-  if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x6abfcd*/
+  result = g_TacticalRender; /*0x6abfc4*/
+  if ( *(unsigned int *)&g_TacticalRender ) /*0x6abfcd*/
   {
     v33 = 0; /*0x6abfd3*/
     v12 = 203; /*0x6abfd7*/
@@ -749,14 +749,14 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
       v32 = 0; /*0x6abfff*/
       v30 = v15; /*0x6ac003*/
       v31 = v16; /*0x6ac007*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v12); /*0x6ac00b*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac01b*/
+      HashTable::Remove(*(HashTable **)&g_TacticalRender, v12); /*0x6ac00b*/
+      CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v27); /*0x6ac01b*/
       ++v12; /*0x6ac020*/
       v13 += 24; /*0x6ac021*/
     }
     while ( v12 - 203 < 4 ); /*0x6ac02d*/
     for ( j = 0; j < 60; ++j ) /*0x6ac02f*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], j + 1000); /*0x6ac03e*/
+      HashTable::Remove(*(HashTable **)&g_TacticalRender, j + 1000); /*0x6ac03e*/
     v18 = 0; /*0x6ac04d*/
     if ( v26 > 0 ) /*0x6ac051*/
     {
@@ -773,7 +773,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
         v32 = 0; /*0x6ac086*/
         v31 = v22; /*0x6ac08e*/
         v33 = 1; /*0x6ac092*/
-        CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac096*/
+        CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v27); /*0x6ac096*/
         ++v18; /*0x6ac09f*/
         v19 += 14; /*0x6ac0a0*/
       }
@@ -786,32 +786,32 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     v32 = aTxtSellMode; /*0x6ac0dd*/
     v29 = dword_B07E08; /*0x6ac0e5*/
     v30 = dword_B07E0C; /*0x6ac0e9*/
-    HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 102); /*0x6ac0ed*/
-    CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac0fd*/
+    HashTable::Remove(*(HashTable **)&g_TacticalRender, 102); /*0x6ac0ed*/
+    CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v27); /*0x6ac0fd*/
     v28 = dword_B0B3AC; /*0x6ac113*/
     v29 = dword_B0B3B0; /*0x6ac11c*/
     v27 = 101; /*0x6ac128*/
     v32 = aTxtRepairMode; /*0x6ac130*/
     v30 = dword_B0B3B4; /*0x6ac138*/
     v31 = dword_B0B3B8; /*0x6ac13c*/
-    HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 101); /*0x6ac140*/
-    CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac150*/
+    HashTable::Remove(*(HashTable **)&g_TacticalRender, 101); /*0x6ac140*/
+    CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v27); /*0x6ac150*/
     v28 = dword_B0B414; /*0x6ac166*/
     v30 = dword_B0B41C; /*0x6ac170*/
     v27 = 200; /*0x6ac17f*/
     v32 = 0; /*0x6ac187*/
     v29 = dword_B0B418; /*0x6ac18b*/
     v31 = dword_B0B420; /*0x6ac18f*/
-    HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 200); /*0x6ac193*/
-    CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac1a3*/
+    HashTable::Remove(*(HashTable **)&g_TacticalRender, 200); /*0x6ac193*/
+    CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v27); /*0x6ac1a3*/
     v28 = dword_B0B334; /*0x6ac1b9*/
     v31 = dword_B0B340; /*0x6ac1c8*/
     v27 = 201; /*0x6ac1d2*/
     v32 = 0; /*0x6ac1da*/
     v29 = dword_B0B338; /*0x6ac1de*/
     v30 = dword_B0B33C; /*0x6ac1e2*/
-    HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 201); /*0x6ac1e6*/
-    return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac1f6*/
+    HashTable::Remove(*(HashTable **)&g_TacticalRender, 201); /*0x6ac1e6*/
+    return CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v27); /*0x6ac1f6*/
   }
   return result; /*0x6ac1fb*/
 }
@@ -834,14 +834,14 @@ void SidebarClass::CreateScrollButtons()
   {
     dword_B0499C = 242; /*0x65303d*/
     byte_B049C4 = 1; /*0x653047*/
-    dword_B049C8 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x65304e*/
+    dword_B049C8 = *(unsigned int *)&g_SidebarConfig; /*0x65304e*/
     byte_B049A5 = 0; /*0x653053*/
     dword_B049A8 = 0; /*0x653059*/
     dword_B04998 = 5; /*0x65305f*/
     Rect_Point::Set(&stru_B04978, dword_B04A00, dword_B04A04); /*0x653069*/
     ShapeButton::SetShape((ShapeButtonClass *)&stru_B04978, (int)dword_B048E0, 0, 0); /*0x65307b*/
     VectorClass_ptr_ConvertClass::MarkDirty(&stru_B04978); /*0x653085*/
-    dword_B04960 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x65309b*/
+    dword_B04960 = *(unsigned int *)&g_SidebarConfig; /*0x65309b*/
     dword_B04934 = 243; /*0x6530a8*/
     byte_B0495C = 1; /*0x6530b2*/
     byte_B0493D = 0; /*0x6530b9*/
@@ -861,12 +861,12 @@ int SidebarClass::select()
   int v2; // eax
   int result; // eax
 
-  SidebarClass::updateStripVisibility(*(SidebarClass **)&stru_88732C.__pad_1C[32]); /*0x6ab99a*/
-  SidebarClass::initializeStrip(*(SidebarClass **)&stru_88732C.__pad_1C[32], 0); /*0x6ab9a7*/
-  v2 = *(unsigned int *)&this->__pad_4[40]; /*0x6ab9ac*/
+  SidebarClass::updateStripVisibility(*(SidebarClass **)&g_TacticalRender); /*0x6ab99a*/
+  SidebarClass::initializeStrip(*(SidebarClass **)&g_TacticalRender, 0); /*0x6ab9a7*/
+  v2 = *&this->u32_2C; /*0x6ab9ac*/
   LOBYTE(this->field_34) = 1; /*0x6ab9b1*/
   *(unsigned char *)(v2 + 60) = 1; /*0x6ab9bb*/
-  result = MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6ab9be*/
+  result = MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x6ab9be*/
   g_CameoRenderFlag = 1; /*0x6ab9c3*/
   g_TooltipActive = 1; /*0x6ab9c9*/
   return result; /*0x6ab9cf*/
@@ -880,11 +880,11 @@ int SidebarClass::deselect()
   int v2; // eax
   int result; // eax
 
-  SidebarClass::updateStripPosition(*(SidebarClass **)&stru_88732C.__pad_1C[32]); /*0x6ab9e9*/
-  v2 = *(unsigned int *)&this->__pad_4[40]; /*0x6ab9ee*/
+  SidebarClass::updateStripPosition(*(SidebarClass **)&g_TacticalRender); /*0x6ab9e9*/
+  v2 = *&this->u32_2C; /*0x6ab9ee*/
   LOBYTE(this->field_34) = 0; /*0x6ab9f1*/
   *(unsigned char *)(v2 + 60) = 1; /*0x6ab9fc*/
-  result = MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6aba00*/
+  result = MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x6aba00*/
   g_CameoRenderFlag = 1; /*0x6aba05*/
   g_TooltipActive = 1; /*0x6aba0c*/
   return result; /*0x6aba13*/

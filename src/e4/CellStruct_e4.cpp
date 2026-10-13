@@ -13,8 +13,8 @@ void* CellStruct::Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2)  
   int16_t v3; // dx
   unsigned short *v5; // [esp+8h] [ebp+8h]
 
-  v3 = (*((unsigned short *)&(aP0->field_0))) + *aP2; /*0x42d51f*/
-  (*(((unsigned short *)&(v5)) + 1)) = (*(((unsigned short *)&(aP0->field_0)) + 1)) + aP2[1]; /*0x42d522*/
+  v3 = (aP0->u32_2) + *aP2; /*0x42d51f*/
+  (*(((unsigned short *)&(v5)) + 1)) = (*(aP0->u32_2 + 1)) + aP2[1]; /*0x42d522*/
   (*((unsigned short *)&(v5))) = v3; /*0x42d52b*/
   *aP1 = (unsigned int)(v5); /*0x42d534*/
   return aP1; /*0x42d536*/

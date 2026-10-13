@@ -567,7 +567,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   }
   result = (int16_t)v18; /*0x5679ff*/
   v20 = (int16_t)v18 + (int16_t)v17; /*0x567a06*/
-  MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x567a09*/
+  MapClass_field_0xF4 = this->u32_F4; /*0x567a09*/
   if ( v20 <= (int)MapClass_field_0xF4 ) /*0x567a11*/
     return result; /*0x567a11*/
   if ( (int16_t)v17 - (int16_t)v18 >= (int)MapClass_field_0xF4 ) /*0x567a1d*/
@@ -575,7 +575,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   result = (int16_t)v18 - (int16_t)v17; /*0x567a23*/
   if ( result >= (int)MapClass_field_0xF4 ) /*0x567a27*/
     return result; /*0x567a27*/
-  result = *(unsigned int *)this->__pad_F8; /*0x567a2d*/
+  result = *(unsigned int *)this->q0F8; /*0x567a2d*/
   if ( v20 > (int)MapClass_field_0xF4 + 2 * result ) /*0x567a38*/
     return result; /*0x567a38*/
   result = radius; /*0x567a3e*/
@@ -589,7 +589,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   v22 = dword_7ED3D0[result]; /*0x567a63*/
   v44 = &g_MissionQueueFrame.waypoints[2150]; /*0x567a6a*/
   v23 = &g_MissionQueueFrame.waypoints[822]; /*0x567a72*/
-  if ( !*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6126) && arg4 && result > 2 ) /*0x567a8c*/
+  if ( !*(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 6126) && arg4 && result > 2 ) /*0x567a8c*/
   {
     v24 = dword_7ED3C4[result]; /*0x567a8e*/
     v22 -= v24; /*0x567a95*/
@@ -605,7 +605,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     goto LABEL_27; /*0x567abb*/
   if ( owner != dword_A83D4C ) /*0x567abf*/
   {
-    if ( ((1 << *((unsigned int *)dword_A83D4C->Object_field_0x34 + 46)) & *((unsigned int *)owner + 5433)) != 0 ) /*0x567ad7*/
+    if ( ((1 << *((unsigned int *)dword_A83D4C->relatedTagsCapacity + 46)) & owner->q54E4) != 0 ) /*0x567ad7*/
     {
       v25 = (void *)dword_A83D4C; /*0x567ad9*/
       owner = dword_A83D4C; /*0x567adb*/
@@ -613,7 +613,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     if ( v25 != (void *)dword_A83D4C ) /*0x567ae1*/
     {
       if ( (uint8_t)HouseClass::IsAlliedWith(v25, (void *)dword_A83D4C) /*0x567af4*/
-        && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6119) )
+        && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 6119) )
       {
         result = (int)dword_A83D4C; /*0x567afe*/
         v25 = (void *)dword_A83D4C; /*0x567b03*/
@@ -637,8 +637,8 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
       v29 = v44; /*0x567b37*/
       v44 += 4; /*0x567b3c*/
       v30 = *(unsigned short *)v29 + v17; /*0x567b43*/
-      v31 = v51 + *((unsigned short *)v29 + 1); /*0x567b4a*/
-      v32 = this->MapClass_field_0xF4; /*0x567b4f*/
+      v31 = v51 + v29->q002_; /*0x567b4a*/
+      v32 = this->u32_F4; /*0x567b4f*/
       (*((unsigned short *)&(v53))) = v30; /*0x567b55*/
       v26 += 4; /*0x567b5a*/
       (*(((unsigned short *)&(v53)) + 1)) = v31; /*0x567b5d*/
@@ -647,7 +647,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
       if ( v33 > (int)v32 /*0x567bb8*/
         && v30 - v31 < (int)v32
         && v31 - v30 < (int)v32
-        && v33 <= (int)v32 + 2 * *(unsigned int *)this->__pad_F8
+        && v33 <= (int)v32 + 2 * *(unsigned int *)this->q0F8
         && (int)abs32(v30 - v50) <= radius )
       {
         v47 = (int16_t)((*(((unsigned short *)&(v53)) + 1)) - v51); /*0x567bd7*/
@@ -669,7 +669,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
         if ( (int16_t)Math::RoundToInt(v9) <= radius ) /*0x567c0a*/
         {
           v34 = v52[0] + (v52[1] << 9); /*0x567c21*/
-          if ( v34 < 0x40000 && (v35 = (int *)*((unsigned int *)this->MapClass_field_0x13C + v34)) != 0 ) /*0x567c38*/
+          if ( v34 < 0x40000 && (v35 = (int *)*((unsigned int *)this->__pad_13C + v34)) != 0 ) /*0x567c38*/
           {
             v36 = v35; /*0x567c3a*/
           }
@@ -678,12 +678,12 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v52; /*0x567c3e*/
             v36 = &g_MissionQueueFrame.briefing[130]; /*0x567c43*/
           }
-          if ( !arg7 || !*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6126) ) /*0x567c56*/
+          if ( !arg7 || !*(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 6126) ) /*0x567c56*/
             goto LABEL_47; /*0x567c56*/
           (*((unsigned short *)&(v57))) = v52[0] - v54 + *(unsigned short *)v26; /*0x567c7c*/
           (*(((unsigned short *)&(v57)) + 1)) = v52[1] - v55 + *((unsigned short *)v26 + 1); /*0x567c81*/
           v37 = (int16_t)v57 + ((*((signed short *)(((unsigned char *)&(v57)) + 2))) << 9); /*0x567c8f*/
-          if ( v37 >= 0x40000 || (v38 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v37)) == 0 ) /*0x567ca5*/
+          if ( v37 >= 0x40000 || (v38 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v37)) == 0 ) /*0x567ca5*/
           {
             g_MissionQueueFrame.briefing[139] = v57; /*0x567cab*/
             v38 = &g_MissionQueueFrame.briefing[130]; /*0x567cb0*/
@@ -698,7 +698,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
             if ( arg6 ) /*0x567ce8*/
             {
               if ( ((v41 & 1) == 0 || (v41 & 2) == 0) && (v36[75] & 8) != 0 ) /*0x567cff*/
-                DisplayClass::ProcessCellReveal((DisplayClass *)&stru_87F5F0.__pad_58[416], v52, (int)owner); /*0x567d10*/
+                DisplayClass::ProcessCellReveal((DisplayClass *)&DataGlobal_87F7E8, v52, (int)owner); /*0x567d10*/
             }
             else
             {
@@ -706,15 +706,15 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
                 goto LABEL_60; /*0x567d1d*/
               if ( v39 == 7 ) /*0x567d22*/
               {
-                if ( v40 == (char *)this->MapClass_field_0xF4 + 5 ) /*0x567d2f*/
+                if ( v40 == (char *)this->u32_F4 + 5 ) /*0x567d2f*/
                   goto LABEL_61; /*0x567d2f*/
               }
-              else if ( v39 == 13 && v40 == (char *)this->MapClass_field_0xF4 + 11 ) /*0x567d43*/
+              else if ( v39 == 13 && v40 == (char *)this->u32_F4 + 11 ) /*0x567d43*/
               {
                 goto LABEL_61; /*0x567d43*/
               }
-              v42 = *(unsigned int *)this->__pad_F8; /*0x567d45*/
-              if ( v39 != v42 + 13 || v40 != (char *)this->MapClass_field_0xF4 + v42 - 15 ) /*0x567d5e*/
+              v42 = *(unsigned int *)this->q0F8; /*0x567d45*/
+              if ( v39 != v42 + 13 || v40 != (char *)this->u32_F4 + v42 - 15 ) /*0x567d5e*/
   LABEL_60:
                 Conditions::CheckResult3((RadarClass *)v52, (int)owner, arg8); /*0x567d60*/
             }
@@ -816,7 +816,7 @@ int MapClass::RevealArea2(int *coords, int radius, int owner, int arg4)
       v22 = (int16_t)v28 + v21 < 0; /*0x567ed7*/
       v23 = (int16_t)v28 + v21; /*0x567ed7*/
       a5 = v28; /*0x567ed9*/
-      if ( v22 || v23 >= 0x40000 || (v24 = (int *)*((unsigned int *)this->MapClass_field_0x13C + v23)) == 0 ) /*0x567ef5*/
+      if ( v22 || v23 >= 0x40000 || (v24 = (int *)*((unsigned int *)this->__pad_13C + v23)) == 0 ) /*0x567ef5*/
       {
         g_MissionQueueFrame.briefing[139] = v28; /*0x567f0f*/
         v25 = &g_MissionQueueFrame.briefing[130]; /*0x567f15*/
@@ -826,10 +826,10 @@ int MapClass::RevealArea2(int *coords, int radius, int owner, int arg4)
         v25 = v24; /*0x567ef7*/
       }
       AdjacentPassableMask = Cell::GetAdjacentPassableMask((int16_t *)&a5, 0); /*0x567f27*/
-      if ( AdjacentPassableMask != *((unsigned char *)v25 + 288) ) /*0x567f32*/
+      if ( AdjacentPassableMask != v25->q120 ) /*0x567f32*/
       {
-        *((unsigned char *)v25 + 288) = AdjacentPassableMask; /*0x567f34*/
-        *((unsigned char *)v25 + 312) = 1; /*0x567f3a*/
+        v25->q120 = AdjacentPassableMask; /*0x567f34*/
+        v25->q138 = 1; /*0x567f3a*/
         Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v25); /*0x567f48*/
       }
       result = v29 - 1; /*0x567f51*/

@@ -238,14 +238,14 @@ namespace gamemd {
 void ToolTipClass::ddtor() {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x724c36*/
-  this->m_10 = 0; /*0x724c39*/
-  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x724c40*/
+  v2 = *&this->Position; /*0x724c36*/
+  this->Duration = 0; /*0x724c39*/
+  if ( v2 && (this->IsAllocated) ) /*0x724c40*/
   {
     operator delete((void *)(v2)); /*0x724c46*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x724c4e*/
+    *&this->Position = 0; /*0x724c4e*/
   }
-  (((unsigned char *)&(this->m_C))[1]) = 0; /*0x724c51*/
+  (this->IsAllocated) = 0; /*0x724c51*/
   this->m_8 = 0; /*0x724c54*/
 }
 } // namespace gamemd
@@ -264,7 +264,7 @@ char ToolTipClass::addRef(int a2) {
     v3 = 0; /*0x724c9f*/
     if ( m_8 <= 0 ) /*0x724ca3*/
       return 1; /*0x724cc3*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x724ca5*/
+    v4 = *&this->Position; /*0x724ca5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x724cab*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x724cb4*/
     {
@@ -347,17 +347,17 @@ size_t BitmapClass::ProcessFrame(char * v12, signed int Size) {
   if ( this->u32_C ) /*0x42df9b*/
   {
     v18 = 4; /*0x42dfc2*/
-    v17 = (Base64Straw *)((char *)this + 20); /*0x42dfca*/
+    v17 = &this->Base64Straw_14; /*0x42dfca*/
     v6 = this + 2; /*0x42dfce*/
     v7 = 3; /*0x42dfd1*/
-    v5 = (Base64Straw *)((char *)this + 20); /*0x42dfd6*/
+    v5 = &this->Base64Straw_14; /*0x42dfd6*/
   }
   else
   {
     v5 = this + 2; /*0x42dfa6*/
     v18 = 3; /*0x42dfa9*/
     v17 = this + 2; /*0x42dfb1*/
-    v6 = (Base64Straw *)((char *)this + 20); /*0x42dfb5*/
+    v6 = &this->Base64Straw_14; /*0x42dfb5*/
     v7 = 4; /*0x42dfb8*/
   }
   v8 = Size; /*0x42dfd8*/
@@ -387,7 +387,7 @@ size_t BitmapClass::ProcessFrame(char * v12, signed int Size) {
       v14 = Delegate::Invoke((Straw *)this, (int)v5, v18); /*0x42e04b*/
       v15 = this->u32_C
           ? DecodeBitmapRGB((uint8_t *)v5, v14, v6, v7)
-          : EncodeBitmapRGB(v5->__pad_0, v14, v6, v7);
+          : EncodeBitmapRGB(v5->vtable1, v14, v6, v7);
       this->u32_10 = v15; /*0x42e066*/
       if ( !v15 || Size <= 0 ) /*0x42e071*/
         break; /*0x42e071*/
@@ -490,8 +490,8 @@ int FontRenderer::InitContext(int * a2) {
     int v11; // [esp+Ch] [ebp-Ch]
     int v12; // [esp+10h] [ebp-8h]
 
-    this->q00C = (*(int (__thiscall **)(int *, unsigned int, unsigned int))(*a2 + 92))(a2, 0, 0); /*0x434908*/
-    this->ptr_10 = (unsigned int)(*(int (__thiscall **)(int *))(*a2 + 116))(a2) >> 1; /*0x434914*/
+    this->u32_C = (*(int (__thiscall **)(int *, unsigned int, unsigned int))(*a2 + 92))(a2, 0, 0); /*0x434908*/
+    this->u32_10 = (unsigned int)(*(int (__thiscall **)(int *))(*a2 + 116))(a2) >> 1; /*0x434914*/
     v3 = *a2; /*0x434917*/
     v10 = 0; /*0x43491b*/
     v11 = 0; /*0x434923*/
@@ -499,17 +499,17 @@ int FontRenderer::InitContext(int * a2) {
     v4 = (*(int (__thiscall **)(int *))(*a2 + 128))(a2); /*0x434937*/
     v5 = this->v11 | this->result | this->v9; /*0x43494b*/
     result = v4 - 1; /*0x43494d*/
-    v7 = this->q00C; /*0x43494e*/
+    v7 = this->u32_C; /*0x43494e*/
     result = result; /*0x434950*/
     if ( v7 | v5 ) /*0x434954*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(sub_434840((unsigned int *)&this->q00C, (unsigned int *)&this->q00C, &v10)) & 0xFF); /*0x434980*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(sub_434840this->u32_C, &this->u32_C, &v10)) & 0xFF); /*0x434980*/
     }
     else
     {
       v8 = v10; /*0x434958*/
       this->result = result; /*0x43495c*/
-      this->q00C = v8; /*0x43495f*/
+      this->u32_C = v8; /*0x43495f*/
       v9 = v12; /*0x434965*/
       this->v11 = v11; /*0x434969*/
       this->v9 = v9; /*0x43496c*/
@@ -525,7 +525,7 @@ int FontClass::GetPixelData(uint16_t a2) {
   int v3; // eax
   uint8_t *v4; // eax
 
-  FontClass_field_0x04 = (unsigned int *)this->FontClass_field_0x04; /*0x4349b0*/
+  FontClass_field_0x04 = (unsigned int *)this->q004; /*0x4349b0*/
   if ( FontClass_field_0x04 /*0x4349dc*/
     && (v3 = *(uint16_t *)(FontClass_field_0x04[6] + 2 * a2), (unsigned short)v3)
     && (v4 = (uint8_t *)(FontClass_field_0x04[7] + (v3 - 1) * FontClass_field_0x04[5])) != 0 )
@@ -547,7 +547,7 @@ int CampaignSelect::LookupByName() {
   v1 = 0; /*0x46cc96*/
   if ( dword_A83D08 <= 0 ) /*0x46cc9d*/
     return -1; /*0x46ccc2*/
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A83CFC + v1) + 36), this->__pad_0) ) /*0x46ccb6*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A83CFC + v1) + 36), this->__pad_000) ) /*0x46ccb6*/
   {
     if ( ++v1 >= dword_A83D08 ) /*0x46ccc0*/
       return -1; /*0x46ccc0*/
@@ -792,7 +792,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
       {
         do /*0x46ebd0*/
         {
-          *((unsigned int *)v67 + 8) = -1; /*0x46ebc3*/
+          v67->COMObject_20 = -1; /*0x46ebc3*/
           *(unsigned int *)v67 = -1; /*0x46ebc6*/
           v67 += 4; /*0x46ebc8*/
         }
@@ -873,7 +873,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
       {
         do /*0x46edc4*/
         {
-          *((unsigned int *)v67 + 8) = -1; /*0x46edb7*/
+          v67->COMObject_20 = -1; /*0x46edb7*/
           *(unsigned int *)v67 = -1; /*0x46edba*/
           v67 += 4; /*0x46edbc*/
         }
@@ -1272,7 +1272,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e201*/
             wcscpy((wchar_t *)&v131[12], lParam); /*0x46e213*/
             v131[68] = v125; /*0x46e224*/
-            v12 = WideString::Hash((void *)&stru_A8D600.q010); /*0x46e22b G42.35: static (void*) 形*/
+            v12 = WideString::Hash((void *)&g_CurrentPlayerName); /*0x46e22b G42.35: static (void*) 形*/
             v13 = dword_A8DA84; /*0x46e230*/
             v14 = 1; /*0x46e236*/
             v131[69] = v12; /*0x46e23d*/
@@ -1479,7 +1479,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
 // 0x471500
 namespace gamemd {
 std::locale::facet * CampaignScore::Constructor_CampaignScoreClass(char a2) {
-  *(unsigned int *)this->__pad_0 = 0; /*0x471509*/
+  *(unsigned int *)this->onBridge = 0; /*0x471509*/
   if ( (a2 & 1) != 0 ) /*0x47150f*/
     operator delete((void *)(this)); /*0x471512*/
   return (std::locale::facet *)this; /*0x47151c*/
@@ -1489,7 +1489,7 @@ std::locale::facet * CampaignScore::Constructor_CampaignScoreClass(char a2) {
 // 0x471520
 namespace gamemd {
 std::locale::facet * CampaignScore::Constructor_CampaignEndScoreClass(char a2) {
-  *(unsigned int *)this->__pad_0 = 0; /*0x471529*/
+  *(unsigned int *)this->onBridge = 0; /*0x471529*/
   if ( (a2 & 1) != 0 ) /*0x47152f*/
     operator delete((void *)(this)); /*0x471532*/
   return (std::locale::facet *)this; /*0x47153c*/
@@ -1544,7 +1544,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
   const wchar_t **v5; // edi
 
   v3 = 0; /*0x488386*/
-  if ( (*(int (__thiscall **)(CheckListClass *))(*(unsigned int *)this->__pad_0 + 148))(this) > 0 ) /*0x488392*/
+  if ( this->COMStub() > 0 ) /*0x488392*/
   {
     while ( 1 ) /*0x48839b*/
     {
@@ -1555,7 +1555,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
         if ( !_wcsicmp(*Clamped, String2) ) /*0x4883aa*/
           break; /*0x4883aa*/
       }
-      if ( ++v3 >= (*(int (__thiscall **)(CheckListClass *))(*(unsigned int *)this->__pad_0 + 148))(this) ) /*0x4883c3*/
+      if ( ++v3 >= this->COMStub() ) /*0x4883c3*/
         return; /*0x4883c3*/
     }
     ListClass::RemoveItem((ListClass *)this, v3); /*0x4883cf*/
@@ -1572,7 +1572,7 @@ int CheckListClass::SetItemData(wchar_t *String2) {
   const wchar_t **Clamped; // eax
 
   v3 = 0; /*0x4883f5*/
-  result = (*(int (__thiscall **)(CheckListClass *))(*(unsigned int *)this->__pad_0 + 148))(this); /*0x4883f9*/
+  result = this->COMStub(); /*0x4883f9*/
   if ( result > 0 ) /*0x488401*/
   {
     while ( 1 ) /*0x48840a*/
@@ -1584,11 +1584,11 @@ int CheckListClass::SetItemData(wchar_t *String2) {
           break; /*0x488417*/
       }
       ++v3; /*0x488427*/
-      result = (*(int (__thiscall **)(CheckListClass *))(*(unsigned int *)this->__pad_0 + 148))(this); /*0x488428*/
+      result = this->COMStub(); /*0x488428*/
       if ( v3 >= result ) /*0x488430*/
         return result; /*0x488430*/
     }
-    return (*(int (__thiscall **)(CheckListClass *, int))(*(unsigned int *)this->__pad_0 + 184))(this, v3); /*0x48843d*/
+    return this->SetFocus(v3); /*0x48843d*/
   }
   return result; /*0x488432*/
 }
@@ -1600,8 +1600,8 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
   GadgetClass::Construct((ShpButtonClass *)this, a3, a4, a5, a6, a7, a8); /*0x48e543*/
   this->u32_28 = 0; /*0x48e54c*/
   this->u32_24 = a2; /*0x48e553*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x48e556*/
-  return this->__pad_0; /*0x48e55e*/
+  *(unsigned int *)this->vtable1 = 0; /*0x48e556*/
+  return this->vtable1; /*0x48e55e*/
 }
 } // namespace gamemd
 
@@ -1609,10 +1609,10 @@ unsigned int * ControlClass::Construct(int a2, int a3, int a4, int a5, int a6, i
 namespace gamemd {
 unsigned int * ControlClass::CtorFromData(ControlClass * a2) {
   ControlClass::Constructor(this, a2); /*0x48e579*/
-  this->u32_24 = *(unsigned int *)(a2 + 36); /*0x48e581*/
-  this->u32_28 = *(unsigned int *)(a2 + 40); /*0x48e587*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x48e58a*/
-  return this->__pad_0; /*0x48e592*/
+  this->u32_24 = a2->ID; /*0x48e581*/
+  this->u32_28 = a2->q028; /*0x48e587*/
+  *(unsigned int *)this->vtable1 = 0; /*0x48e58a*/
+  return this->vtable1; /*0x48e592*/
 }
 } // namespace gamemd
 
@@ -1622,7 +1622,7 @@ unsigned int * ControlClass::QueryInterface(char a2) {
   GadgetClass::Dtor((GadgetClass *)this); /*0x48e663*/
   if ( (a2 & 1) != 0 ) /*0x48e66d*/
     operator delete((void *)(this)); /*0x48e670*/
-  return this->__pad_0; /*0x48e67a*/
+  return this->vtable1; /*0x48e67a*/
 }
 } // namespace gamemd
 
@@ -1640,13 +1640,13 @@ int Checksum::AddString(uint8_t *a2) {
 // 0x4B4EE0
 namespace gamemd {
 int DropListClass::OnClick() {
-  if ( (*((unsigned char *)&(this->DropListClass_field_0x48))) ) /*0x4b4ee3*/
+  if ( (this->q048) ) /*0x4b4ee3*/
   {
-    (*(void (__thiscall **)(char *))(this->u32_B0 + 36))((char *)this + 176); /*0x4b4ef6*/
-    (*((unsigned char *)&(this->DropListClass_field_0x48))) = 0; /*0x4b4ef9*/
+    this->u32_B0->OnDblClick(&this->u32_B0); /*0x4b4ef6*/
+    (this->q048) = 0; /*0x4b4ef9*/
   }
-  (*(void (__thiscall **)(char *))(this->u32_B0 + 32))((char *)this + 176); /*0x4b4f09*/
-  (*(void (__thiscall **)(int *))(this->DropListClass_field_0x50 + 32))(&this->DropListClass_field_0x50); /*0x4b4f12*/
+  this->u32_B0->OnClick_1(&this->u32_B0); /*0x4b4f09*/
+  this->q050.OnClick_1(); /*0x4b4f12*/
   return Hash::Reset((LinkClass *)this); /*0x4b4f1c*/
 }
 } // namespace gamemd
@@ -1654,7 +1654,7 @@ int DropListClass::OnClick() {
 // 0x4B4F20
 namespace gamemd {
 int DropListClass::vt_method_4B4F20(int a2) {
-  (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 12))(&this->DropListClass_field_0x50, a2); /*0x4b4f2f*/
+  this->q050.?(a2); /*0x4b4f2f*/
   return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x4b4f3a*/
 }
 } // namespace gamemd
@@ -1662,7 +1662,7 @@ int DropListClass::vt_method_4B4F20(int a2) {
 // 0x4B4F40
 namespace gamemd {
 int DropListClass::Draw(int a2) {
-  (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 16))(&this->DropListClass_field_0x50, a2); /*0x4b4f4f*/
+  this->q050.Draw(a2); /*0x4b4f4f*/
   return LinkedList::Append((LinkClass *)this, a2); /*0x4b4f5a*/
 }
 } // namespace gamemd
@@ -1670,7 +1670,7 @@ int DropListClass::Draw(int a2) {
 // 0x4B4F60
 namespace gamemd {
 unsigned int * DropListClass::HitTest(int a2) {
-  (*(void (__thiscall **)(int *, int))(this->DropListClass_field_0x50 + 20))(&this->DropListClass_field_0x50, a2); /*0x4b4f6f*/
+  this->q050.HitTest(a2); /*0x4b4f6f*/
   return LinkedList::Attach((LinkClass *)this, a2); /*0x4b4f7a*/
 }
 } // namespace gamemd
@@ -1678,12 +1678,12 @@ unsigned int * DropListClass::HitTest(int a2) {
 // 0x4B4F80
 namespace gamemd {
 int DropListClass::OnDblClick() {
-  if ( (*((unsigned char *)&(this->DropListClass_field_0x48))) ) /*0x4b4f83*/
+  if ( (this->q048) ) /*0x4b4f83*/
   {
-    (*(void (__thiscall **)(char *))(this->u32_B0 + 36))((char *)this + 176); /*0x4b4f96*/
-    (*((unsigned char *)&(this->DropListClass_field_0x48))) = 0; /*0x4b4f99*/
+    this->u32_B0->OnDblClick(&this->u32_B0); /*0x4b4f96*/
+    (this->q048) = 0; /*0x4b4f99*/
   }
-  (*(void (__thiscall **)(int *))(this->DropListClass_field_0x50 + 36))(&this->DropListClass_field_0x50); /*0x4b4fa3*/
+  this->q050.OnDblClick(); /*0x4b4fa3*/
   return LinkClass::Destroy((GadgetClass *)this); /*0x4b4fad*/
 }
 } // namespace gamemd
@@ -1701,19 +1701,19 @@ unsigned int * EditClass::QueryInterface(char a2) {
 // 0x4E1340
 namespace gamemd {
 unsigned int * ControlClass::Constructor(int a2) {
-  this->ControlClass_field_0x04 = 0; /*0x4e1344*/
-  this->ControlClass_field_0x08 = 0; /*0x4e1347*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x4e134e*/
-  this->ControlClass_field_0x0C = a2->u32_C; /*0x4e1357*/
-  this->__pad_004 = *(unsigned int *)(a2 + 16); /*0x4e135d*/
-  this->u32_14 = a2->u32_14; /*0x4e1363*/
-  this->u32_18 = a2->u32_18; /*0x4e1369*/
-  this->u32_1C = *(unsigned char *)(a2 + 28); /*0x4e136f*/
-  this->u32_1D = *(unsigned char *)(a2 + 29); /*0x4e1375*/
-  this->u32_1E = *(unsigned char *)(a2 + 30); /*0x4e137b*/
-  this->u32_20 = *(unsigned int *)(a2 + 32); /*0x4e1381*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x4e1384*/
-  return this->__pad_0; /*0x4e138a*/
+  this->X = 0; /*0x4e1344*/
+  this->Y = 0; /*0x4e1347*/
+  *(unsigned int *)this->vtable1 = 0; /*0x4e134e*/
+  this->Width = a2->Width; /*0x4e1357*/
+  this->X = a2->Height; /*0x4e135d*/
+  this->Visible = a2->Visible; /*0x4e1363*/
+  this->ID = a2->ID; /*0x4e1369*/
+  this->u32_1C = a2->q01C; /*0x4e136f*/
+  this->u32_1D = a2->q01D; /*0x4e1375*/
+  this->u32_1E = a2->q01E; /*0x4e137b*/
+  this->u32_20 = a2->q020; /*0x4e1381*/
+  *(unsigned int *)this->vtable1 = 0; /*0x4e1384*/
+  return this->vtable1; /*0x4e138a*/
 }
 } // namespace gamemd
 
@@ -1739,8 +1739,8 @@ unsigned int * InputManager::FindBestHitElement(int a2, int a3) {
     {
       if ( !this->u32_1E ) /*0x4e15c4*/
       {
-        InputManager_field_0x0C = this->InputManager_field_0x0C; /*0x4e15cf*/
-        InputManager_field_0x10 = this->InputManager_field_0x10; /*0x4e15d2*/
+        InputManager_field_0x0C = this->q00C; /*0x4e15cf*/
+        InputManager_field_0x10 = this->q010; /*0x4e15d2*/
         v6 = this->u32_14; /*0x4e15d5*/
         v7 = this->u32_18; /*0x4e15d8*/
         if ( a2 >= InputManager_field_0x0C /*0x4e1605*/
@@ -1754,10 +1754,10 @@ unsigned int * InputManager::FindBestHitElement(int a2, int a3) {
           v8 = this; /*0x4e1617*/
         }
       }
-      this = (InputManager *)(*(int (__thiscall **)(InputManager *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x4e1620*/
+      this = (InputManager *)this->vt_slot_4(); /*0x4e1620*/
     }
     while ( this ); /*0x4e1624*/
-    return v8->__pad_0; /*0x4e1626*/
+    return v8->__pad_000; /*0x4e1626*/
   }
   return result; /*0x4e162e*/
 }
@@ -1802,8 +1802,8 @@ int InputManager::ProcessEvents() {
   }
   else
   {
-    v3 = (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x4e16bb*/
-    v4 = (HWND)(*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x4e16c2*/
+    v3 = dword_887640->checkRegion(); /*0x4e16bb*/
+    v4 = (HWND)dword_887640->checkBounds(); /*0x4e16c2*/
   }
   BestHitElement = InputManager::FindBestHitElement((InputManager *)v1, v3, (int)v4); /*0x4e16df*/
   if ( BestHitElement != (unsigned int *)dword_8B3E94 ) /*0x4e16e3*/
@@ -1896,26 +1896,21 @@ int InputManager::ProcessEvents() {
   {
     while ( 1 ) /*0x4e18c4*/
     {
-      (*(void (__thiscall **)(ShpButtonClass *, int))(*(unsigned int *)v1->__pad_0 + 108))(v1, v13); /*0x4e18c9*/
-      if ( !(((unsigned char *)&(v1->Image))[2]) ) /*0x4e18cc*/
+      v1->vt_slot_108(v13); /*0x4e18c9*/
+      if ( !(v1->u8_1E) ) /*0x4e18cc*/
       {
-        if ( (*(int (__thiscall **)(ShpButtonClass *, int *, int, int, HWND, int))(*(unsigned int *)v1->__pad_0 + 128))( /*0x4e18e4*/
-               v1,
-               &v11,
-               v6,
-               v3,
-               v4,
-               v12) )
+        if ( v1->vt_slot_128(/*0x4e18e4*/
+               v1, &v11, v6, v3, v4, v12) )
         {
           break; /*0x4e18e4*/
         }
       }
-      v1 = (ShpButtonClass *)(*(int (__thiscall **)(ShpButtonClass *))(*(unsigned int *)v1->__pad_0 + 4))(v1); /*0x4e18f5*/
+      v1 = (ShpButtonClass *)v1->vt_slot_4(); /*0x4e18f5*/
       if ( !v1 ) /*0x4e18f9*/
         return v11; /*0x4e1906*/
     }
   LABEL_53:
-    (*(void (__thiscall **)(ShpButtonClass *, unsigned int))(*(unsigned int *)v1->__pad_0 + 108))(v1, 0); /*0x4e1907*/
+    v1->vt_slot_108(0); /*0x4e1907*/
   }
   return v11; /*0x4e1866*/
 }
@@ -1927,7 +1922,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
   ShpButtonClass *v3; // eax
   int v4; // eax
 
-  *(unsigned int *)this->__pad_0 = 0; /*0x4e1a65*/
+  *(unsigned int *)this->vtable1 = 0; /*0x4e1a65*/
   v3 = (ShpButtonClass *)dword_8B3E90; /*0x4e1a6b*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
   {
@@ -1946,7 +1941,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
   LinkClass::Destruct((LinkClass *)this); /*0x4e1aac*/
   if ( (a2 & 1) != 0 ) /*0x4e1ab6*/
     operator delete((void *)(this)); /*0x4e1ab9*/
-  return this->__pad_0; /*0x4e1ac3*/
+  return this->vtable1; /*0x4e1ac3*/
 }
 } // namespace gamemd
 
@@ -1970,7 +1965,7 @@ int ListClass::Constructor(int a2, int a3, int a4, int a5, int a6) {
   if ( v8 != this->u32_34 ) /*0x4e2554*/
   {
     this->u32_34 = v8; /*0x4e2556*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)this + 72))(this); /*0x4e255d*/
+    this->MarkDirty(); /*0x4e255d*/
   }
   this->u32_2D = 1; /*0x4e2562*/
   this->u32_2E = a5 > a6; /*0x4e2569*/
@@ -1994,7 +1989,7 @@ int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsig
   if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[880] ) /*0x4f4353*/
   {
     if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&((unsigned int *)&stru_A8EB00)[880] + 92))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[880]) ) /*0x4f4357*/
-      (*(void (__thiscall **)(GScreenClass *, unsigned int))(this->vfptr[0] + 56))(this, 0); /*0x4f4364*/
+      this->MarkForRedraw(0); /*0x4f4364*/
     v5 = g_DSurface_Hidden_2; /*0x4f436e*/
     g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x4f4374*/
     v6 = a2; /*0x4f4385*/
@@ -2004,15 +1999,15 @@ int InputManager_ProcessEvents::Vtable(unsigned int *a2, unsigned int *a3, unsig
   else
   {
     v6 = a2; /*0x4f439f*/
-    v7 = (uint16_t)EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x4f43a3*/
+    v7 = (uint16_t)EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x4f43a3*/
     *a2 = v7; /*0x4f43a8*/
     if ( v7 ) /*0x4f43aa*/
-      *a2 = (uint16_t)EventQueue::Read(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x4f43bc*/
+      *a2 = (uint16_t)EventQueue::Read(*(EventQueue **)&g_BinkMoviePlayer); /*0x4f43bc*/
   }
   v10[0] = *a3; /*0x4f43c5*/
   v8 = this->vfptr[0]; /*0x4f43c9*/
   v10[1] = *a4; /*0x4f43d5*/
-  return (*(int (__thiscall **)(GScreenClass *, unsigned int *, unsigned int *))(v8 + 40))(this, v6, v10); /*0x4f43dc*/
+  return v8->Count(this, v6, v10); /*0x4f43dc*/
 }
 } // namespace gamemd
 
@@ -2216,7 +2211,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
         EventClass::Enqueue((EventClass *)this, wParam, 1); /*0x54f852*/
         goto LABEL_45; /*0x54f857*/
       case 0x102u: /*0x54f81d*/
-        if ( stru_A8BB1C.__pad_87[214] ) /*0x54f863*/
+        if ( g_abs_A8BC79 ) /*0x54f863*/
         {
           if ( !((unsigned int *)&stru_A8EB00)[440] ) /*0x54f870*/
           {
@@ -2274,9 +2269,9 @@ int ListClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8,
   this->u32_40 = 1; /*0x557280*/
   this->u32_34 = 0; /*0x557284*/
   this->u32_48 = 10; /*0x55728b*/
-  ShapeButtonClass::Constructor((ShapeButtonClass *)(this + 88), 0, a8, a3 + a5, a4, 0, 0, 0); /*0x557292*/
-  ShapeButtonClass::Constructor((ShapeButtonClass *)(this + 184), 0, a9, a3 + a5, a4 + a6, 0, 0, 0); /*0x5572af*/
-  SliderClass::Constructor((SliderClass *)(this + 280), 0, a3 + a5, a4, 0, a6, 1); /*0x5572c3*/
+  ShapeButtonClass::Constructor(&this->u32_58, 0, a8, a3 + a5, a4, 0, 0, 0); /*0x557292*/
+  ShapeButtonClass::Constructor(&this->u32_B8, 0, a9, a3 + a5, a4 + a6, 0, 0, 0); /*0x5572af*/
+  SliderClass::Constructor(&this->u32_118, 0, a3 + a5, a4, 0, a6, 1); /*0x5572c3*/
   v10 = this->u32_CC; /*0x5572c8*/
   v11 = this->u32_6C; /*0x5572d4*/
   v12 = this->__pad_019; /*0x5572d7*/
@@ -2292,7 +2287,7 @@ int ListClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8,
   v16 = this->u32_124 - v15; /*0x55730f*/
   v17 = this->u32_70; /*0x557311*/
   this->u32_124 = v16; /*0x557314*/
-  this->u32_128 = v17 + this->__pad_004; /*0x557321*/
+  this->u32_128 = v17 + this->X; /*0x557321*/
   this->u32_130 -= v14 + v17; /*0x557331*/
   if ( v11 <= v10 ) /*0x557337*/
     v11 = v10; /*0x557339*/
@@ -2317,20 +2312,20 @@ int ListClass::Destruct() {
   void *v4; // eax
 
   v2 = this->Enabled; /*0x557606*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x557609*/
+  *(unsigned int *)this->vtable1 = 0; /*0x557609*/
   if ( v2 ) /*0x557611*/
   {
     v3 = this->u32_118; /*0x55761c*/
-    this->ListClass_field_0x14 += this->u32_12C; /*0x557624*/
+    this->Visible += this->u32_12C; /*0x557624*/
     this->Enabled = 0; /*0x55762d*/
-    (*(void (__thiscall **)(char *))(v3 + 36))((char *)this + 280); /*0x557630*/
-    (*(void (__thiscall **)(char *))(this->u32_58 + 36))((char *)this + 88); /*0x557639*/
-    (*(void (__thiscall **)(char *))(this->u32_B8 + 36))((char *)this + 184); /*0x557648*/
-    (*(void (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x55764f*/
+    (*(void (__thiscall **)(char *))(v3 + 36))(&this->u32_118); /*0x557630*/
+    this->u32_58->OnDblClick(&this->u32_58); /*0x557639*/
+    this->u32_B8->OnDblClick(&this->u32_B8); /*0x557648*/
+    this->AddItem_1(); /*0x55764f*/
   }
-  SliderClass::Destructor((SliderClass *)((char *)this + 280)); /*0x557658*/
-  ShapeButtonClass::Destructor((int)this + 184); /*0x557663*/
-  ShapeButtonClass::Destructor((int)this + 88); /*0x55766b*/
+  SliderClass::Destructor(&this->u32_118); /*0x557658*/
+  ShapeButtonClass::Destructor((int)&this->u32_124); /*0x557663*/
+  ShapeButtonClass::Destructor((int)&this->Y8); /*0x55766b*/
   v4 = (void *)this->u32_38; /*0x557670*/
   this->u32_34 = 0; /*0x557673*/
   if ( v4 && this->u32_41 ) /*0x55767e*/
@@ -2358,23 +2353,19 @@ int ListClass::AddItem(int a2) {
     if ( this->u32_44 < v3 /*0x5576d5*/
       || (this->u32_41 || !v3)
       && (v4 = this->u32_48, v4 > 0)
-      && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(this->u32_34 + 8))(
-           (char *)this + 52,
-           v3 + v4,
-           0) )
+      && this->u32_34->InputThunkB(&this->u32_34, v3 + v4, 0) )
     {
       v5 = this->u32_44; /*0x5576dc*/
       v6 = this->u32_38; /*0x5576df*/
       this->u32_44 = v5 + 1; /*0x5576e5*/
       *(unsigned int *)(v6 + 4 * v5) = a2; /*0x5576e8*/
     }
-    (*(void (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x5576ef*/
+    this->AddItem_1(); /*0x5576ef*/
     if ( this->u32_44 > this->u32_50 ) /*0x5576fb*/
-      (*(void (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 140))(this); /*0x557701*/
+      this->InitControls(); /*0x557701*/
     if ( this->Enabled ) /*0x557707*/
-      (*(void (__thiscall **)(char *, unsigned int))(this->u32_118 + 136))( /*0x55771e*/
-        (char *)this + 280,
-        this->u32_44);
+      this->u32_118->AddItem_0(/*0x55771e*/
+        &this->u32_118, this->u32_44);
   }
   return this->u32_44 - 1; /*0x557727*/
 }
@@ -2393,7 +2384,7 @@ unsigned int * SliderClass::QueryInterface(char a2) {
   SliderClass::Destructor(this); /*0x558183*/
   if ( (a2 & 1) != 0 ) /*0x55818d*/
     operator delete((void *)(this)); /*0x558190*/
-  return this->__pad_0; /*0x55819a*/
+  return this->vtable1; /*0x55819a*/
 }
 } // namespace gamemd
 
@@ -2456,7 +2447,7 @@ wchar_t ** ListBox::Constructor() {
     v1 = 1; /*0x5c1054*/
     v4 = FormatWideString((wchar_t **)&v6, (const wchar_t *)this); /*0x5c1059*/
     MultiplayerTeam::Constructor(v3, (const wchar_t **)v4, (wchar_t *)this); /*0x5c1062*/
-    *(unsigned int *)v3->__pad_0 = 0; /*0x5c1067*/
+    *(unsigned int *)v3->vtable1 = 0; /*0x5c1067*/
   }
   else
   {
@@ -2625,33 +2616,32 @@ int ListBox::FillPlayers(HWND hWnd, int a3) {
   int v11; // [esp+14h] [ebp+8h]
 
   ListBox::Clear((ListBox *)hWnd); /*0x5d6549*/
-  for ( i = 0; i < this->MultiplayerGameMode_field_0x18; ++i ) /*0x5d6555*/
+  for ( i = 0; i < this->q018; ++i ) /*0x5d6555*/
   {
-    v5 = *(void (__thiscall ****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * i); /*0x5d655a*/
+    v5 = *(void (__thiscall ****)(unsigned int, int))(this->q00C + 4 * i); /*0x5d655a*/
     if ( v5 ) /*0x5d655f*/
       (**v5)(v5, 1); /*0x5d6565*/
   }
-  (*(void (__thiscall **)(int *))(this->MultiplayerGameMode_field_0x08 + 12))(&this->MultiplayerGameMode_field_0x08); /*0x5d6577*/
-  (*(void (__thiscall **)(MultiplayerGameMode *, int *))(*(unsigned int *)this->__pad_0 + 192))( /*0x5d657f*/
-    this,
-    &this->MultiplayerGameMode_field_0x08);
+  this->q008.StubReturnFalse3(); /*0x5d6577*/
+  this->AddEntries(/*0x5d657f*/
+    this, &this->q008);
   result = a3; /*0x5d6585*/
   if ( a3 >= 0 && a3 < dword_A8DA84 ) /*0x5d6593*/
   {
     v7 = 0; /*0x5d659b*/
     v11 = *(unsigned int *)(dword_A8DA78[a3] + 107); /*0x5d65a3*/
-    result = this->MultiplayerGameMode_field_0x18; /*0x5d65a7*/
+    result = this->q018; /*0x5d65a7*/
     if ( result > 0 ) /*0x5d65ac*/
     {
       do /*0x5d6608*/
       {
-        v8 = *(unsigned int *)(this->MultiplayerGameMode_field_0x0C + 4 * v7); /*0x5d65b2*/
+        v8 = *(unsigned int *)(this->q00C + 4 * v7); /*0x5d65b2*/
         v9 = WideString::GetOrEmpty_Alt((wchar_t **)(v8 + 4)); /*0x5d65b8*/
         v10 = SendMessageA(hWnd, 0x143u, 0, (LPARAM)v9); /*0x5d65d3*/
         if ( *(unsigned int *)(v8 + 8) == v11 ) /*0x5d65db*/
           SendMessageA(hWnd, 0x14Eu, v10, 0); /*0x5d65ea*/
         SendMessageA(hWnd, 0x151u, v10, v8); /*0x5d65fc*/
-        result = this->MultiplayerGameMode_field_0x18; /*0x5d6602*/
+        result = this->q018; /*0x5d6602*/
         ++v7; /*0x5d6605*/
       }
       while ( v7 < result ); /*0x5d6608*/
@@ -2683,36 +2673,30 @@ int ListBox::AddEntries() {
     v2 = MPCombatTeam::Constructor(v1); /*0x5d66a8*/
   else
     v2 = 0; /*0x5d66ac*/
-  MultiplayerGameMode_field_0x08 = this->MultiplayerGameMode_field_0x08; /*0x5d66b2*/
-  if ( this->MultiplayerGameMode_field_0x10 < MultiplayerGameMode_field_0x08 /*0x5d66d7*/
-    || ((((unsigned char *)&(this->MultiplayerGameMode_field_0x0C))[1]) || !MultiplayerGameMode_field_0x08)
-    && (MultiplayerGameMode_field_0x14 = this->MultiplayerGameMode_field_0x14, MultiplayerGameMode_field_0x14 > 0)
-    && (*(uint8_t (__thiscall **)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
-         this,
-         MultiplayerGameMode_field_0x08 + MultiplayerGameMode_field_0x14,
-         0) )
+  MultiplayerGameMode_field_0x08 = this->q008; /*0x5d66b2*/
+  if ( this->q010 < MultiplayerGameMode_field_0x08 /*0x5d66d7*/
+    || ((this->u32_D) || !MultiplayerGameMode_field_0x08)
+    && (MultiplayerGameMode_field_0x14 = this->q014, MultiplayerGameMode_field_0x14 > 0)
+    && this->StubReturnFalse2(MultiplayerGameMode_field_0x08 + MultiplayerGameMode_field_0x14, 0) )
   {
-    MultiplayerGameMode_field_0x10 = this->MultiplayerGameMode_field_0x10; /*0x5d66de*/
-    MultiplayerGameMode_field_0x04 = this->MultiplayerGameMode_field_0x04; /*0x5d66e1*/
-    this->MultiplayerGameMode_field_0x10 = MultiplayerGameMode_field_0x10 + 1; /*0x5d66e7*/
+    MultiplayerGameMode_field_0x10 = this->q010; /*0x5d66de*/
+    MultiplayerGameMode_field_0x04 = this->q004; /*0x5d66e1*/
+    this->q010 = MultiplayerGameMode_field_0x10 + 1; /*0x5d66e7*/
     *(unsigned int *)(MultiplayerGameMode_field_0x04 + 4 * MultiplayerGameMode_field_0x10) = v2; /*0x5d66ea*/
   }
   result = dword_A8B548; /*0x5d66ed*/
   for ( i = 1; i <= dword_A8B548; ++i ) /*0x5d66f9*/
   {
     v9 = ListBox::Constructor((ListBox *)i); /*0x5d6705*/
-    v10 = this->MultiplayerGameMode_field_0x08; /*0x5d6707*/
-    if ( this->MultiplayerGameMode_field_0x10 < v10 /*0x5d6729*/
-      || ((((unsigned char *)&(this->MultiplayerGameMode_field_0x0C))[1]) || !v10)
-      && (v11 = this->MultiplayerGameMode_field_0x14, v11 > 0)
-      && (*(uint8_t (__thiscall **)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
-           this,
-           v10 + v11,
-           0) )
+    v10 = this->q008; /*0x5d6707*/
+    if ( this->q010 < v10 /*0x5d6729*/
+      || ((this->u32_D) || !v10)
+      && (v11 = this->q014, v11 > 0)
+      && this->StubReturnFalse2(v10 + v11, 0) )
     {
-      v12 = this->MultiplayerGameMode_field_0x10; /*0x5d6730*/
-      v13 = this->MultiplayerGameMode_field_0x04; /*0x5d6733*/
-      this->MultiplayerGameMode_field_0x10 = v12 + 1; /*0x5d6739*/
+      v12 = this->q010; /*0x5d6730*/
+      v13 = this->q004; /*0x5d6733*/
+      this->q010 = v12 + 1; /*0x5d6739*/
       *(unsigned int *)(v13 + 4 * v12) = v9; /*0x5d673c*/
     }
     result = dword_A8B548; /*0x5d673f*/
@@ -2724,14 +2708,14 @@ int ListBox::AddEntries() {
 // 0x600670
 namespace gamemd {
 int ComboBoxOwnerDraw::GetWidthHeight() {
-  return *(unsigned int *)this->__pad_0 * this->ComboBoxOwnerDraw_field_0x04; /*0x600676*/
+  return *(unsigned int *)this->vtable1 * this->q004; /*0x600676*/
 }
 } // namespace gamemd
 
 // 0x600680
 namespace gamemd {
 bool ComboBoxOwnerDraw::MatchDimensions(unsigned int *a2) {
-  return a2[1] == this->ComboBoxOwnerDraw_field_0x04 && *a2 == *(unsigned int *)this->__pad_0; /*0x60068d*/
+  return a2[1] == this->q004 && *a2 == *(unsigned int *)this->__pad_000; /*0x60068d*/
 }
 } // namespace gamemd
 
@@ -2743,19 +2727,19 @@ unsigned int * Control::CreateControlDialog() {
   int v3; // eax
   Control *v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = *(unsigned int **)&g_DialogPool.__pad_208[60]; /*0x60cf01*/
+  result = *(unsigned int **)&g_DialogHashMap_Count; /*0x60cf01*/
   v4 = this; /*0x60cf09*/
-  if ( *(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60cf0d*/
+  if ( *(unsigned int *)&g_DialogHashMap_Count ) /*0x60cf0d*/
   {
-    result = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60cf32*/
+    result = *(unsigned int **)(*(unsigned int *)&g_DialogHashMap_Base /*0x60cf32*/
                         + 4
-                        * ((*(int (__thiscall **)(Control **))&g_DialogPool.__pad_208[80])(&v4)
-                         & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                        * ((*(int (__thiscall **)(Control **))&g_DialogHashMap_Hasher)(&v4)
+                         & ((1 << g_DialogHashMap_Buckets) - 1)));
     if ( result ) /*0x60cf37*/
     {
       while ( (Control *)*result != v4 ) /*0x60cf43*/
       {
-        result = (unsigned int *)result[129]; /*0x60cf45*/
+        result = result->q204; /*0x60cf45*/
         if ( !result ) /*0x60cf4d*/
           return result; /*0x60cf4d*/
       }
@@ -2768,35 +2752,35 @@ unsigned int * Control::CreateControlDialog() {
           case 148: /*0x60cf6d*/
             result = (unsigned int *)CreatureClass::GetManager(); /*0x60cf6f*/
             v2[29] = result; /*0x60cf74*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[700]; /*0x60cf7d*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[700]; /*0x60cf89*/
+            v2[56] = *(unsigned int *)&DataGlobal_B0FA6C; /*0x60cf7d*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA6C; /*0x60cf89*/
             return result; /*0x60cf91*/
           case 259: /*0x60cf6d*/
             goto LABEL_10; /*0x60cf97*/
           case 264: /*0x60cf6d*/
             v2[29] = UI_Create_72D820(); /*0x60cfc7*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876]; /*0x60cfd0*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[876]; /*0x60cfd6*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876]; /*0x60cfdb*/
+            v2[56] = *(unsigned int *)&DataGlobal_B0FB1C; /*0x60cfd0*/
+            result = *(unsigned int **)&DataGlobal_B0FB1C; /*0x60cfd6*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FB1C; /*0x60cfdb*/
             break;
           case 3014: /*0x60cf6d*/
             result = (unsigned int *)VtableStub_72D450(); /*0x60cfeb*/
             v2[29] = result; /*0x60cff0*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900]; /*0x60cff9*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900]; /*0x60d005*/
+            v2[56] = *(unsigned int *)&DataGlobal_B0FB34; /*0x60cff9*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FB34; /*0x60d005*/
             break;
           case 3015: /*0x60cf6d*/
   LABEL_10:
             v2[29] = VtableStub_72D450(); /*0x60cf99*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[900]; /*0x60cfa1*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900]; /*0x60cfa6*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900]; /*0x60cfb2*/
+            result = *(unsigned int **)&DataGlobal_B0FB34; /*0x60cfa1*/
+            v2[56] = *(unsigned int *)&DataGlobal_B0FB34; /*0x60cfa6*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FB34; /*0x60cfb2*/
             return result; /*0x60cfba*/
           case 107: /*0x60cf6d*/
             v2[29] = UI_Create_72D210(); /*0x60d01f*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d028*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[776]; /*0x60d02e*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[776]; /*0x60d033*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d028*/
+            result = *(unsigned int **)&DataGlobal_B0FAB8; /*0x60d02e*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FAB8; /*0x60d033*/
             break;
           case 258: /*0x60cf6d*/
           case 188: /*0x60cf6d*/
@@ -2805,84 +2789,84 @@ unsigned int * Control::CreateControlDialog() {
           case 201: /*0x60cf6d*/
             result = (unsigned int *)UI_Create_72D030(); /*0x60d294*/
             v2[29] = result; /*0x60d299*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d2a2*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[616]; /*0x60d2ae*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d2a2*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA18; /*0x60d2ae*/
             break;
           case 275: /*0x60cf6d*/
             result = (unsigned int *)UI_Create_72CE50(); /*0x60d07a*/
             v2[29] = result; /*0x60d07f*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d088*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[764]; /*0x60d094*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d088*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FAAC; /*0x60d094*/
             break;
           case 276: /*0x60cf6d*/
             v2[29] = UI_Create_72CAB0(); /*0x60d0a9*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d0ac*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d0b1*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[688]; /*0x60d0bd*/
+            result = *(unsigned int **)&g_DialogControlPool; /*0x60d0ac*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d0b1*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA60; /*0x60d0bd*/
             break;
           case 270: /*0x60cf6d*/
           case 284: /*0x60cf6d*/
             v2[29] = UI_Create_72C8D0(); /*0x60d277*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d280*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[568]; /*0x60d286*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[568]; /*0x60d28b*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d280*/
+            result = *(unsigned int **)&DataGlobal_B0F9E8; /*0x60d286*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0F9E8; /*0x60d28b*/
             break;
           case 271: /*0x60cf6d*/
           case 285: /*0x60cf6d*/
             v2[29] = UI_Create_72C6F0(); /*0x60d255*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d258*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d25d*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[860]; /*0x60d269*/
+            result = *(unsigned int **)&g_DialogControlPool; /*0x60d258*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d25d*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FB0C; /*0x60d269*/
             break;
           case 230: /*0x60cf6d*/
           case 243: /*0x60cf6d*/
           case 244: /*0x60cf6d*/
             result = (unsigned int *)UI_Create_72C510(); /*0x60d22d*/
             v2[29] = result; /*0x60d232*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d23b*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[692]; /*0x60d247*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d23b*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA64; /*0x60d247*/
             break;
           case 231: /*0x60cf6d*/
             v2[29] = UI_Create_72C330(); /*0x60d11f*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d128*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[640]; /*0x60d12e*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[640]; /*0x60d133*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d128*/
+            result = *(unsigned int **)&DataGlobal_B0FA30; /*0x60d12e*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA30; /*0x60d133*/
             break;
           case 278: /*0x60cf6d*/
             result = (unsigned int *)UI_Create_72C150(); /*0x60d143*/
             v2[29] = result; /*0x60d148*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d151*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[668]; /*0x60d15d*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d151*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA4C; /*0x60d15d*/
             break;
           case 279: /*0x60cf6d*/
             v2[29] = UI_Create_72BF70(); /*0x60d172*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d175*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d17a*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[748]; /*0x60d186*/
+            result = *(unsigned int **)&g_DialogControlPool; /*0x60d175*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d17a*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA9C; /*0x60d186*/
             break;
           case 274: /*0x60cf6d*/
             v2[29] = UI_Create_72BD90(); /*0x60d19b*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d1a4*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[744]; /*0x60d1aa*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[744]; /*0x60d1af*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d1a4*/
+            result = *(unsigned int **)&DataGlobal_B0FA98; /*0x60d1aa*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA98; /*0x60d1af*/
             break;
           case 700: /*0x60cf6d*/
             result = (unsigned int *)UI_Create_72BBB0(); /*0x60d1bf*/
             v2[29] = result; /*0x60d1c4*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d1cd*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x60d1d9*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d1cd*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FB2C; /*0x60d1d9*/
             break;
           case 214: /*0x60cf6d*/
             v2[29] = UI_Create_72B9D0(); /*0x60d1ee*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d1f1*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d1f6*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[932]; /*0x60d202*/
+            result = *(unsigned int **)&g_DialogControlPool; /*0x60d1f1*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d1f6*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FB54; /*0x60d202*/
             break;
           default:
             v2[29] = VtableStub_72E280(); /*0x60d210*/
-            v2[56] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928]; /*0x60d219*/
-            result = *(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[596]; /*0x60d21f*/
-            v2[57] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[596]; /*0x60d224*/
+            v2[56] = *(unsigned int *)&g_DialogControlPool; /*0x60d219*/
+            result = *(unsigned int **)&DataGlobal_B0FA04; /*0x60d21f*/
+            v2[57] = *(unsigned int *)&DataGlobal_B0FA04; /*0x60d224*/
             break;
         }
       }
@@ -2908,17 +2892,17 @@ void ComboBoxOwnerDraw::SortItems() {
   int v12; // eax
   unsigned int *v13; // [esp+4h] [ebp-4h]
 
-  if ( (*((unsigned char *)&(this->ComboBoxOwnerDraw_field_0x14))) != 1 ) /*0x6252f8*/
+  if ( (this->q014) != 1 ) /*0x6252f8*/
   {
-    ComboBoxOwnerDraw_field_0x08 = this->ComboBoxOwnerDraw_field_0x08; /*0x625300*/
-    v3 = *(unsigned int **)this->__pad_0; /*0x625303*/
-    v4 = this->ComboBoxOwnerDraw_field_0x0C + 1; /*0x62530c*/
-    this->ComboBoxOwnerDraw_field_0x08 = 2 * ComboBoxOwnerDraw_field_0x08; /*0x62530d*/
+    ComboBoxOwnerDraw_field_0x08 = this->q008; /*0x625300*/
+    v3 = *(unsigned int **)this->__pad_000; /*0x625303*/
+    v4 = this->q00C + 1; /*0x62530c*/
+    this->q008 = 2 * ComboBoxOwnerDraw_field_0x08; /*0x62530d*/
     v13 = v3; /*0x625310*/
-    this->ComboBoxOwnerDraw_field_0x0C = v4; /*0x625318*/
+    this->q00C = v4; /*0x625318*/
     v5 = (void *)operator new(8 * ComboBoxOwnerDraw_field_0x08); /*0x625323*/
-    v6 = 4 * this->ComboBoxOwnerDraw_field_0x08; /*0x625328*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x62532f*/
+    v6 = 4 * this->q008; /*0x625328*/
+    *(unsigned int *)this->__pad_000 = v5; /*0x62532f*/
     memset(v5, 0, v6); /*0x625334*/
     if ( ComboBoxOwnerDraw_field_0x08 > 0 ) /*0x62533f*/
     {
@@ -2931,10 +2915,10 @@ void ComboBoxOwnerDraw::SortItems() {
         {
           do /*0x625371*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComboBoxOwnerDraw_field_0x18)(v9) /*0x62535b*/
-                & ((1 << this->ComboBoxOwnerDraw_field_0x0C) - 1);
-            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x62535f*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x625365*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) /*0x62535b*/
+                & ((1 << this->q00C) - 1);
+            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x62535f*/
+            *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x625365*/
             v12 = *(unsigned int *)(v9 + 12); /*0x625367*/
             *(unsigned int *)(v9 + 12) = v11; /*0x62536a*/
             v9 = v12; /*0x62536d*/
@@ -2964,7 +2948,7 @@ int CheckSum::AccumulateModulo(int16_t a2) {
 
   v3 = Hash_Check_5C61E0(); /*0x632c49*/
   result = (int)Hash_Check(); /*0x632c4b*/
-  this->__tail_0[0] = 0; /*0x632c52*/
+  this->tail_0 = 0; /*0x632c52*/
   if ( v3 > 0 ) /*0x632c55*/
   {
     v5 = 2; /*0x632c5d*/
@@ -2974,10 +2958,10 @@ int CheckSum::AccumulateModulo(int16_t a2) {
       *(unsigned short *)&this->__tail_0[v5] += a2; /*0x632c64*/
       for ( i = *(unsigned short *)(result + v5 - 2); *(unsigned short *)&this->__tail_0[v5] >= i; i = *(unsigned short *)(result + v5 - 2) ) /*0x632c74*/
         *(unsigned short *)&this->__tail_0[v5] -= i; /*0x632c76*/
-      v8 = this->__tail_0[0] || !*(unsigned short *)&this->__tail_0[v5]; /*0x632c98*/
+      v8 = this->tail_0 || !*(unsigned short *)&this->__tail_0[v5]; /*0x632c98*/
       v5 += 2; /*0x632c9d*/
       --v6; /*0x632ca0*/
-      this->__tail_0[0] = v8; /*0x632ca1*/
+      this->tail_0 = v8; /*0x632ca1*/
     }
     while ( v6 ); /*0x632ca3*/
   }
@@ -3013,7 +2997,7 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
   this->u32_54 = result; /*0x6a8721*/
   if ( result > 0 ) /*0x6a8726*/
   {
-    for ( i = (int *)(this + 22); ; i += 13 ) /*0x6a872c*/
+    for ( i = &this->u32_16; ; i += 13 ) /*0x6a872c*/
     {
       v7 = a2; /*0x6a8734*/
       if ( RadarClass::GetBlip(a2, a3, i[1], *i) ) /*0x6a8742*/
@@ -3043,7 +3027,7 @@ int TabCameoListClass::AddCameo_ReplaceItAll(int a2, int a3) {
     if ( v7 == 7 ) /*0x6a87a1*/
       v12[24] = (TabCameoListClass)GetHouseTechLevel(7, a3); /*0x6a87aa*/
     v12[25] = 0; /*0x6a87b3*/
-    *((unsigned int *)this + 12 * v4 + v4 + 26) = 0; /*0x6a87bd*/
+    *(&this->u32_30 * v4 + v4 + 26) = 0; /*0x6a87bd*/
     v12[27] = 0; /*0x6a87c0*/
     v13 = *(TabCameoListClass *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6a87c3*/
     v12[32] = 0; /*0x6a87c8*/
@@ -3094,7 +3078,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   int v33; // [esp-10h] [ebp-30h]
 
   ListClass::Constructor((int)this, a2, a3, a4, a5, a6); /*0x6b1b44*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x6b1b51*/
+  *(unsigned int *)this->vtable1 = 0; /*0x6b1b51*/
   this->u32_44 = a7 != 0; /*0x6b1b5c*/
   this->u32_3C = 0; /*0x6b1b5f*/
   this->u32_40 = 0; /*0x6b1b62*/
@@ -3103,8 +3087,8 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     v8 = (ShapeButtonClass *)operator new(0x60u); /*0x6b1b72*/
     if ( v8 ) /*0x6b1b79*/
     {
-      SliderClass_field_0x10 = this->SliderClass_field_0x10; /*0x6b1b87*/
-      v30 = this->SliderClass_field_0x14 + this->SliderClass_field_0x0C + 2; /*0x6b1b8c*/
+      SliderClass_field_0x10 = this->Height; /*0x6b1b87*/
+      v30 = this->Visible + this->Width + 2; /*0x6b1b8c*/
       v9 = SearchMIXFile(aBtnPlusShp, 0); /*0x6b1b94*/
       v10 = ShapeButtonClass::Constructor(v8, a2, (int)v9, v30, SliderClass_field_0x10, 0, 0, 0); /*0x6b1b9d*/
     }
@@ -3116,8 +3100,8 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     v11 = (ShapeButtonClass *)operator new(0x60u); /*0x6b1bb0*/
     if ( v11 ) /*0x6b1bb7*/
     {
-      v33 = this->SliderClass_field_0x10; /*0x6b1bc5*/
-      v31 = this->SliderClass_field_0x0C - 6; /*0x6b1bc6*/
+      v33 = this->Height; /*0x6b1bc5*/
+      v31 = this->Width - 6; /*0x6b1bc6*/
       v12 = SearchMIXFile(aBtnMinsShp, 0); /*0x6b1bce*/
       v13 = ShapeButtonClass::Constructor(v11, a2, (int)v12, v31, v33, 0, 0, 0); /*0x6b1bd7*/
     }
@@ -3130,30 +3114,30 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     if ( v14 ) /*0x6b1be8*/
     {
       (*(void (__thiscall **)(int, SliderClass *))(*(unsigned int *)v14 + 132))(v14, this); /*0x6b1bed*/
-      (*(void (__thiscall **)(unsigned int, SliderClass *))(**((unsigned int **)&this->__pad_0045) + 12))(this->u32_3C, this); /*0x6b1bf9*/
-      (*(void (__thiscall **)(unsigned int))(**((unsigned int **)&this->__pad_0045) + 72))(this->u32_3C); /*0x6b1c01*/
+      this->q045->InsertAfter(this->u32_3C, this); /*0x6b1bf9*/
+      this->q045->MarkDirty(this->u32_3C); /*0x6b1c01*/
     }
     v15 = this->u32_40; /*0x6b1c04*/
     if ( v15 ) /*0x6b1c09*/
     {
       (*(void (__thiscall **)(int, SliderClass *))(*(unsigned int *)v15 + 132))(v15, this); /*0x6b1c0e*/
-      (*(void (__thiscall **)(unsigned int, SliderClass *))(**((unsigned int **)&this->__pad_0046) + 12))(this->u32_40, this); /*0x6b1c1a*/
-      (*(void (__thiscall **)(unsigned int))(**((unsigned int **)&this->__pad_0046) + 72))(this->u32_40); /*0x6b1c22*/
+      this->q046->InsertAfter(this->u32_40, this); /*0x6b1c1a*/
+      this->q046->MarkDirty(this->u32_40); /*0x6b1c22*/
     }
   }
-  SliderClass_field_0x30 = this->SliderClass_field_0x30; /*0x6b1c25*/
+  SliderClass_field_0x30 = this->q030; /*0x6b1c25*/
   if ( SliderClass_field_0x30 > 1 ) /*0x6b1c2b*/
     SliderClass_field_0x30 = 1; /*0x6b1c2d*/
   this->u32_48 = SliderClass_field_0x30; /*0x6b1c35*/
-  v17 = *(unsigned int *)this->__pad_0; /*0x6b1c3f*/
+  v17 = *(unsigned int *)this->vtable1; /*0x6b1c3f*/
   this->u32_48 = 1; /*0x6b1c43*/
-  (*(void (__thiscall **)(SliderClass *))(v17 + 72))(this); /*0x6b1c46*/
-  v18 = (((unsigned char *)&(this->SliderClass_field_0x2C))[2]); /*0x6b1c49*/
+  v17->MarkDirty(this); /*0x6b1c46*/
+  v18 = (this->u32_2E); /*0x6b1c49*/
   if ( v18 ) /*0x6b1c4e*/
-    SliderClass_field_0x14 = this->SliderClass_field_0x14; /*0x6b1c50*/
+    SliderClass_field_0x14 = this->Visible; /*0x6b1c50*/
   else
-    SliderClass_field_0x14 = this->SliderClass_field_0x18; /*0x6b1c55*/
-  v20 = (double)this->SliderClass_field_0x30; /*0x6b1c58*/
+    SliderClass_field_0x14 = this->ID; /*0x6b1c55*/
+  v20 = (double)this->q030; /*0x6b1c58*/
   (*((unsigned short *)&(v21))) = Math::RoundToInt(v20); /*0x6b1c74*/
   v22 = v21; /*0x6b1c7c*/
   if ( v21 <= 4 ) /*0x6b1c7e*/
@@ -3165,9 +3149,9 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     v24 = SliderClass_field_0x14 - v22; /*0x6b1c9e*/
   this->u32_50 = v24; /*0x6b1ca2*/
   if ( v18 ) /*0x6b1ca5*/
-    SliderClass_field_0x18 = this->SliderClass_field_0x14; /*0x6b1ca7*/
+    SliderClass_field_0x18 = this->Visible; /*0x6b1ca7*/
   else
-    SliderClass_field_0x18 = this->SliderClass_field_0x18; /*0x6b1cac*/
+    SliderClass_field_0x18 = this->ID; /*0x6b1cac*/
   (*((unsigned short *)&(v26))) = Math::RoundToInt(v23); /*0x6b1cbd*/
   v27 = v26; /*0x6b1cc5*/
   if ( v26 <= 4 ) /*0x6b1cc7*/
@@ -3177,8 +3161,8 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
   if ( v28 >= SliderClass_field_0x18 - v27 ) /*0x6b1ce0*/
     v28 = SliderClass_field_0x18 - v27; /*0x6b1ce2*/
   this->u32_50 = v28; /*0x6b1ce4*/
-  (*((unsigned char *)&(this->SliderClass_field_0x2C))) = 0; /*0x6b1ce7*/
-  return (int *)this->__pad_0; /*0x6b1ced*/
+  (this->q02C) = 0; /*0x6b1ce7*/
+  return (int *)this->vtable1; /*0x6b1ced*/
 }
 } // namespace gamemd
 
@@ -3189,7 +3173,7 @@ int SliderClass::Destructor() {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v2 = (void (__thiscall ***)(unsigned int, int))this->u32_3C; /*0x6b1d03*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x6b1d06*/
+  *(unsigned int *)this->vtable1 = 0; /*0x6b1d06*/
   if ( v2 ) /*0x6b1d0e*/
   {
     (**v2)(v2, 1); /*0x6b1d14*/
@@ -3216,11 +3200,11 @@ int SliderClass::GetValue(int a2) {
 
   if ( !GaugeClass::SetValue((GaugeClass *)this, a2) ) /*0x6b1d48*/
     return 0; /*0x6b1db0*/
-  if ( (((unsigned char *)&(this->SliderClass_field_0x2C))[2]) ) /*0x6b1d51*/
-    SliderClass_field_0x14 = this->SliderClass_field_0x14; /*0x6b1d5a*/
+  if ( (this->u32_2E) ) /*0x6b1d51*/
+    SliderClass_field_0x14 = this->Visible; /*0x6b1d5a*/
   else
-    SliderClass_field_0x14 = this->SliderClass_field_0x18; /*0x6b1d5f*/
-  SliderClass_field_0x30 = (double)this->SliderClass_field_0x30; /*0x6b1d62*/
+    SliderClass_field_0x14 = this->ID; /*0x6b1d5f*/
+  SliderClass_field_0x30 = (double)this->q030; /*0x6b1d62*/
   (*((unsigned short *)&(v5))) = Math::RoundToInt(SliderClass_field_0x30); /*0x6b1d74*/
   v6 = v5; /*0x6b1d7c*/
   if ( v5 <= 4 ) /*0x6b1d7e*/
@@ -3242,36 +3226,36 @@ void ToolTipClass::updateString() {
   int v4; // edx
   void *v5; // eax
 
-  ToolTipClass_field_0x08 = (HWND)this->ToolTipClass_field_0x08; /*0x7240ba*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x7240bd*/
+  ToolTipClass_field_0x08 = (HWND)this->Y; /*0x7240ba*/
+  *(unsigned int *)this->vtable1 = 0; /*0x7240bd*/
   KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
-  if ( this->ToolTipClass_field_0x04 ) /*0x7240ca*/
-    (*(void (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, &this->ToolTipClass_field_0x18); /*0x7240db*/
-  operator delete((void *)(*((void **)this + 147))); /*0x7240e5*/
+  if ( this->X ) /*0x7240ca*/
+    this->InputThunkB(&this->ID); /*0x7240db*/
+  operator delete((void *)(this->u32_24C7))); /*0x7240e5*/
   this->u32_24C = 0; /*0x7240ea*/
   this->u32_250 = 0; /*0x7240f0*/
   this->u32_254 = 0; /*0x7240f6*/
   this->u32_258 = 0; /*0x7240fc*/
   this->u32_25C = 0; /*0x724102*/
-  for ( i = 0; i < this->u32_244; ++i ) /*0x724115*/
+  for ( i = 0; i < this->__pad_244; ++i ) /*0x724115*/
   {
-    v4 = this->u32_238; /*0x724117*/
+    v4 = this->__pad_238; /*0x724117*/
     if ( *(unsigned int *)(v4 + 4 * i) ) /*0x72411d*/
       operator delete((void *)(*(void **)(v4 + 4 * i))); /*0x724125*/
   }
-  (*(void (__thiscall **)(char *))(this->u32_234 + 12))((char *)this + 564); /*0x724146*/
-  operator delete((void *)(*((void **)this + 147))); /*0x724150*/
-  this->u32_24C = 0; /*0x724155*/
+  this->__pad_234->ddtor(&this->__pad_234); /*0x724146*/
+  operator delete((void *)(this->CommandClass_24C))); /*0x724150*/
+  this->CommandClass_24C = 0; /*0x724155*/
   this->u32_250 = 0; /*0x72415b*/
   this->u32_254 = 0; /*0x724161*/
   this->u32_258 = 0; /*0x724167*/
   this->u32_25C = 0; /*0x72416d*/
-  v5 = (void *)this->u32_238; /*0x724173*/
-  this->u32_234 = 0; /*0x72417b*/
+  v5 = (void *)this->__pad_238; /*0x724173*/
+  this->__pad_234 = 0; /*0x72417b*/
   if ( v5 && this->u32_241 ) /*0x724183*/
   {
     operator delete((void *)(v5)); /*0x724189*/
-    this->u32_238 = 0; /*0x724191*/
+    this->__pad_238 = 0; /*0x724191*/
   }
   this->u32_241 = 0; /*0x724194*/
   this->u32_23C = 0; /*0x724197*/
@@ -3284,14 +3268,14 @@ int Tooltip::Enable(char a2) {
   int result; // eax
 
   (*((unsigned char *)&(result))) = a2; /*0x7241a0*/
-  if ( this->u32_C != a2 ) /*0x7241aa*/
+  if ( this->ToolTipText != a2 ) /*0x7241aa*/
   {
-    this->u32_C = a2; /*0x7241ae*/
+    this->ToolTipText = a2; /*0x7241ae*/
     if ( !a2 ) /*0x7241b1*/
     {
-      KillTimer(*((HWND *)this + 2), 0x54544950u); /*0x7241bc*/
-      if ( this->u32_4 ) /*0x7241c2*/
-        (*(void (__thiscall **)(Tooltip *, Tooltip *))(*(unsigned int *)this + 8))(this, this + 6); /*0x7241d1*/
+      KillTimer(this->u32_8, 0x54544950u); /*0x7241bc*/
+      if ( this->Position ) /*0x7241c2*/
+        this->release(this + 6); /*0x7241d1*/
     }
     return Debug::Log(); /*0x7241eb*/
   }
@@ -3324,7 +3308,7 @@ char TooltipClass::GetText(unsigned int a2, void *a3) {
   {
     if ( !this->u32_258 ) /*0x7248e2*/
     {
-      qsort(*((void **)this + 147), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7248fb*/
+      qsort(this->u32_87), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7248fb*/
       this->u32_25C = 0; /*0x724903*/
       this->u32_258 = 1; /*0x72490d*/
     }
@@ -3372,7 +3356,7 @@ char TooltipClass::GetText(unsigned int a2, void *a3) {
   }
   if ( !this->u32_258 ) /*0x72498a*/
   {
-    qsort(*((void **)this + 147), v11, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7249a3*/
+    qsort(this->u32_87), v11, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc2Int); /*0x7249a3*/
     this->u32_25C = 0; /*0x7249ab*/
     this->u32_258 = 1; /*0x7249b5*/
   }
@@ -3419,45 +3403,43 @@ int ToolTipClass::initString() {
   const wchar_t *v5; // edi
   int ToolTipClass_field_0x10; // edx
 
-  ToolTipClass_field_0x04 = (unsigned int *)this->ToolTipClass_field_0x04; /*0x724ad7*/
+  ToolTipClass_field_0x04 = (unsigned int *)this->Position; /*0x724ad7*/
   if ( ToolTipClass_field_0x04 ) /*0x724adc*/
   {
     v3 = (wchar_t *)ToolTipClass_field_0x04[5]; /*0x724ae2*/
     if ( v3 ) /*0x724ae7*/
       StringCSF = GetStringCSF(v3, 0, aDRa2mdpostTool, 563); /*0x724b01*/
     else
-      StringCSF = (wchar_t *)(*(int (__thiscall **)(ToolTipClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 20))( /*0x724af0*/
-                               this,
-                               *ToolTipClass_field_0x04);
+      StringCSF = (wchar_t *)this->vt_slot_20(/*0x724af0*/
+                               this, *ToolTipClass_field_0x04);
     v5 = StringCSF; /*0x724b06*/
     if ( StringCSF && wcslen(StringCSF) ) /*0x724b0d*/
     {
-      wcsncpy((wchar_t *)&this->ToolTipClass_field_0x28, v5, 0x100u); /*0x724b23*/
-      ToolTipClass_field_0x10 = this->ToolTipClass_field_0x10; /*0x724b28*/
-      this->ToolTipClass_field_0x1C = this->ToolTipClass_field_0x14; /*0x724b36*/
-      this->ToolTipClass_field_0x18 = ToolTipClass_field_0x10; /*0x724b39*/
-      if ( !(*(uint8_t (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 4))( /*0x724b3e*/
-              this,
-              &this->ToolTipClass_field_0x18) )
+      wcsncpythis->q028, v5, 0x100u); /*0x724b23*/
+      ToolTipClass_field_0x10 = this->Duration; /*0x724b28*/
+      this->q01C = this->DisplayTimer; /*0x724b36*/
+      this->q018 = ToolTipClass_field_0x10; /*0x724b39*/
+      if ( !this->vt_slot_4(/*0x724b3e*/
+              this, &this->q018) )
       {
-        this->ToolTipClass_field_0x18 = 0; /*0x724b47*/
-        this->ToolTipClass_field_0x1C = 0; /*0x724b49*/
-        this->ToolTipClass_field_0x20 = 0; /*0x724b4c*/
-        this->ToolTipClass_field_0x24 = 0; /*0x724b4f*/
-        this->ToolTipClass_field_0x04 = 0; /*0x724b54*/
+        this->q018 = 0; /*0x724b47*/
+        this->q01C = 0; /*0x724b49*/
+        this->TextBuffer = 0; /*0x724b4c*/
+        this->q024 = 0; /*0x724b4f*/
+        this->Position = 0; /*0x724b54*/
         return 0; /*0x724b5f*/
       }
     }
     else
     {
-      this->ToolTipClass_field_0x18 = 0; /*0x724b60*/
-      this->ToolTipClass_field_0x1C = 0; /*0x724b63*/
-      this->ToolTipClass_field_0x20 = 0; /*0x724b66*/
-      this->ToolTipClass_field_0x24 = 0; /*0x724b69*/
-      this->ToolTipClass_field_0x04 = 0; /*0x724b6c*/
+      this->q018 = 0; /*0x724b60*/
+      this->q01C = 0; /*0x724b63*/
+      this->TextBuffer = 0; /*0x724b66*/
+      this->q024 = 0; /*0x724b69*/
+      this->Position = 0; /*0x724b6c*/
     }
   }
-  return this->ToolTipClass_field_0x04 != 0; /*0x724b59*/
+  return this->Position != 0; /*0x724b59*/
 }
 } // namespace gamemd
 
@@ -3474,8 +3456,8 @@ void * ToolTipClass::Destructor(char a2) {
 // 0x724C60
 namespace gamemd {
 unsigned int ToolTipClass::write(int a2) {
-  if ( (*((unsigned char *)&(this->m_C))) ) /*0x724c60*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x724c75*/
+  if ( (this->IsInitialized) ) /*0x724c60*/
+    return (unsigned int)(a2 - *&this->Items) >> 2; /*0x724c75*/
   else
     return 0; /*0x724c67*/
 }
@@ -3484,7 +3466,7 @@ unsigned int ToolTipClass::write(int a2) {
 // 0x724C80
 namespace gamemd {
 int ToolTipClass::seek(int a2) {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x724c8a*/
+  return *(unsigned int *)(*&this->Position + 4 * a2); /*0x724c8a*/
 }
 } // namespace gamemd
 
@@ -3504,7 +3486,7 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   *this = (Campaign_WorldDominationTour)0; /*0x765606*/
-  DeleteAndZero((ObjectClass *)(this + 18)); /*0x76560c*/
+  DeleteAndZero(&this->ObjectClass_12); /*0x76560c*/
   v3 = (void (__thiscall ***)(unsigned int, int))this->u32_1C; /*0x765611*/
   this->u32_18 = 0; /*0x765614*/
   if ( v3 && this->u32_25 ) /*0x76561f*/
@@ -3515,9 +3497,9 @@ void ** Campaign_WorldDominationTour::QueryInterface(char a2) {
   this->u32_25 = 0; /*0x76563a*/
   this->u32_20 = 0; /*0x76563e*/
   this->u32_10 = 0; /*0x765645*/
-  ComPtr::Release((ComPtr *)(this + 4)); /*0x76564b*/
+  ComPtr::Release(&this->ComPtr_4); /*0x76564b*/
   this->u32_8 = 0; /*0x765653*/
-  ComPtr::Release((ComPtr *)(this + 2)); /*0x765659*/
+  ComPtr::Release(&this->ComPtr_2); /*0x765659*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x765660*/
   if ( (a2 & 1) != 0 ) /*0x76566a*/
     operator delete((void *)(this)); /*0x76566d*/
@@ -3585,42 +3567,42 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
   wchar_t String; // [esp+4h] [ebp-4h] BYREF
   int16_t v15; // [esp+6h] [ebp-2h]
 
-  if ( *(unsigned int *)this->__pad_0 ) /*0x7b72f4*/
+  if ( *(unsigned int *)this->__pad_000 ) /*0x7b72f4*/
   {
-    v7 = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7362*/
+    v7 = wcslen(*(const wchar_t **)this->__pad_000); /*0x7b7362*/
     v8 = a3; /*0x7b7367*/
     if ( a3 > v7 ) /*0x7b7370*/
       v8 = v7; /*0x7b7372*/
     v9 = 2 * v8; /*0x7b7380*/
     v10 = (wchar_t *)operator new(2 * v7 + 4); /*0x7b7382*/
-    v11 = (wchar_t *)(v9 + *(unsigned int *)this->__pad_0); /*0x7b7388*/
+    v11 = (wchar_t *)(v9 + *(unsigned int *)this->__pad_000); /*0x7b7388*/
     String = *v11; /*0x7b738b*/
     *v11 = 0; /*0x7b7390*/
-    v12 = *(const wchar_t **)this->__pad_0; /*0x7b7397*/
+    v12 = *(const wchar_t **)this->__pad_000; /*0x7b7397*/
     v15 = 0; /*0x7b7399*/
     wcscpy(v10, v12); /*0x7b73a0*/
-    *(unsigned short *)(v9 + *(unsigned int *)this->__pad_0) = String; /*0x7b73b1*/
+    *(unsigned short *)(v9 + *(unsigned int *)this->__pad_000) = String; /*0x7b73b1*/
     String = a2; /*0x7b73bb*/
     wcscat(v10, &String); /*0x7b73c0*/
-    wcscat(v10, (const wchar_t *)(*(unsigned int *)this->__pad_0 + v9)); /*0x7b73c9*/
-    operator delete((void *)(*(void **)this->__pad_0)); /*0x7b73d1*/
-    *(unsigned int *)this->__pad_0 = v10; /*0x7b73d9*/
+    wcscat(v10, (const wchar_t *)(*(unsigned int *)this->__pad_000 + v9)); /*0x7b73c9*/
+    operator delete((void *)(*(void **)this->__pad_000)); /*0x7b73d1*/
+    *(unsigned int *)this->__pad_000 = v10; /*0x7b73d9*/
     return 1; /*0x7b73db*/
   }
   else
   {
     String = a2; /*0x7b7305*/
     v15 = 0; /*0x7b730a*/
-    *(unsigned int *)this->__pad_0 = 0; /*0x7b7311*/
+    *(unsigned int *)this->__pad_000 = 0; /*0x7b7311*/
     if ( &v13 == (int *)-4 ) /*0x7b7317*/
       v4 = 1; /*0x7b7329*/
     else
       v4 = wcslen(&String) + 1; /*0x7b7326*/
     v5 = (unsigned short *)operator new(2 * v4); /*0x7b7331*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x7b733d*/
+    *(unsigned int *)this->__pad_000 = v5; /*0x7b733d*/
     *v5 = 0; /*0x7b733f*/
     if ( &String ) /*0x7b7346*/
-      wcscpy(*(wchar_t **)this->__pad_0, &String); /*0x7b7350*/
+      wcscpy(*(wchar_t **)this->__pad_000, &String); /*0x7b7350*/
     return 1; /*0x7b7358*/
   }
 }
@@ -3650,7 +3632,7 @@ int FontRenderer::InitContext(int *a2) {
     result = result; /*0x434950*/
     if ( v7 | v5 ) /*0x434954*/
     {
-      (*((unsigned char *)&(result))) = sub_434840((unsigned int *)this + 12, (unsigned int *)this + 12, &v10); /*0x434980*/
+      (*((unsigned char *)&(result))) = sub_434840(&this->u32_30, &this->u32_30, &v10); /*0x434980*/
     }
     else
     {

@@ -47,59 +47,59 @@ int KeyboardConfig::LoadINI()
 
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
-  *(unsigned int *)v9.__pad_0 = &CCINIClass_Vtable; /*0x533d3f*/
+  *(unsigned int *)v9.vtable1 = &CCINIClass_Vtable; /*0x533d3f*/
   CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
   if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
   {
-    operator delete((void *)(*(void **)&stru_87F5F0.__pad_58[56])); /*0x533d6c*/
+    operator delete((void *)(*(void **)&Base)); /*0x533d6c*/
     v1 = 0; /*0x533d74*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[56] = 0; /*0x533d7a*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[60] = 0; /*0x533d85*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[64] = 0; /*0x533d8b*/
-    stru_87F5F0.__pad_58[68] = 0; /*0x533d91*/
-    *(unsigned int *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
-    for ( i = 0; i < INIClass::GetKeyCount(v9.__pad_0, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
+    *(unsigned int *)&Base = 0; /*0x533d7a*/
+    *(unsigned int *)&NumOfElements = 0; /*0x533d85*/
+    *(unsigned int *)&DataGlobal_87F688 = 0; /*0x533d8b*/
+    g_FileSystemInitFlag = 0; /*0x533d91*/
+    *(unsigned int *)&g_FileSystemPool = 0; /*0x533d97*/
+    for ( i = 0; i < INIClass::GetKeyCount(v9.vtable1, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v9.__pad_0, g_INI_Key_Hotkey, v1); /*0x533dbf*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v9.vtable1, g_INI_Key_Hotkey, v1); /*0x533dbf*/
       v3 = 0; /*0x533dd1*/
-      Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)v9.__pad_0, g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
-      if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
+      Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)v9.vtable1, g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
+      if ( *(int *)&g_CommandClassVector_State > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
-                  (const char *)(*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
+                  (const char *)(*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&g_CommandClass_Capacity
                                                                             + 4 * v3)
-                                                              + 4))(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
+                                                              + 4))(*(unsigned int *)(*(unsigned int *)&g_CommandClass_Capacity
                                                                               + 4 * v3)),
                   (const char *)StringByIndex) )
         {
-          if ( ++v3 >= *(int *)&stru_87F5F0.__pad_58[32] ) /*0x533e29*/
+          if ( ++v3 >= *(int *)&g_CommandClassVector_State ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
-        v4 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[20] + 4 * v3); /*0x533e32*/
+        v4 = *(unsigned int *)(*(unsigned int *)&g_CommandClass_Capacity + 4 * v3); /*0x533e32*/
         if ( v4 && Int_Overwrite ) /*0x533e3f*/
         {
-          v5 = *(unsigned int *)&stru_87F5F0.__pad_58[64]; /*0x533e47*/
-          if ( *(unsigned int *)&stru_87F5F0.__pad_58[60] + 1 <= *(int *)&stru_87F5F0.__pad_58[64] ) /*0x533e4f*/
+          v5 = *(unsigned int *)&DataGlobal_87F688; /*0x533e47*/
+          if ( *(unsigned int *)&NumOfElements + 1 <= *(int *)&DataGlobal_87F688 ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
-          if ( !*(unsigned int *)&stru_87F5F0.__pad_58[64] ) /*0x533e53*/
+          if ( !*(unsigned int *)&DataGlobal_87F688 ) /*0x533e53*/
             v5 = 10; /*0x533e55*/
-          if ( KeyboardConfig::ReleaseBuffer((int)&stru_87F5F0.__pad_58[56], v5) ) /*0x533e60*/
+          if ( KeyboardConfig::ReleaseBuffer((int)&Base, v5) ) /*0x533e60*/
           {
   LABEL_13:
-            *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60]) = Int_Overwrite; /*0x533e74*/
-            *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60] + 4) = v4; /*0x533e83*/
-            stru_87F5F0.__pad_58[68] = 0; /*0x533e8d*/
-            ++*(unsigned int *)&stru_87F5F0.__pad_58[60]; /*0x533e93*/
+            *(unsigned int *)(*(unsigned int *)&Base + 8 * *(unsigned int *)&NumOfElements) = Int_Overwrite; /*0x533e74*/
+            *(unsigned int *)(*(unsigned int *)&Base + 8 * *(unsigned int *)&NumOfElements + 4) = v4; /*0x533e83*/
+            g_FileSystemInitFlag = 0; /*0x533e8d*/
+            ++*(unsigned int *)&NumOfElements; /*0x533e93*/
           }
         }
       }
   LABEL_14:
       ++i; /*0x533e98*/
     }
-    *(unsigned int *)v10.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x533ec0*/
+    *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
-    *(unsigned int *)v10.__tail_0 = (unsigned int)(&off_7E1668); /*0x533ed8*/
+    *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x533ed8*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
     return 1; /*0x533eee*/
@@ -107,10 +107,10 @@ int KeyboardConfig::LoadINI()
   else
   {
     Debug::Log(); /*0x533efe*/
-    *(unsigned int *)v10.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
+    *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
-    *(unsigned int *)v10.__tail_0 = (unsigned int)(&off_7E1668); /*0x533f25*/
+    *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x533f25*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
     return 0; /*0x533f3b*/

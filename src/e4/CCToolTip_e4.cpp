@@ -17,10 +17,10 @@
 namespace gamemd {  // G42.18 ns repair
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->__pad_0 = &vt_CCToolTip; /*0x7784a3*/
+  *(unsigned int *)Block->tail_0 = &vt_CCToolTip; /*0x7784a3*/
   ToolTipClass::updateString((ToolTipClass *)Block); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     operator delete((void *)(Block)); /*0x7784b6*/
-  return Block->__pad_0; /*0x7784c0*/
+  return Block->tail_0; /*0x7784c0*/
 }  // G42.18 ns repair
 } // namespace gamemd

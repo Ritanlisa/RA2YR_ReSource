@@ -103,7 +103,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
   int *v49; // [esp+40h] [ebp+4h]
   unsigned int v50; // [esp+40h] [ebp+4h]
 
-  result = aP1->__pad_0; /*0x5d1fdc*/
+  result = aP1->__pad_000; /*0x5d1fdc*/
   v4 = a1[2]; /*0x5d1fde*/
   v37 = v4; /*0x5d1fe8*/
   if ( v4 <= 0 ) /*0x5d1fec*/
@@ -163,7 +163,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
             break; /*0x5d2227*/
           v23 = v42; /*0x5d21b6*/
         }
-        result = aP1->__pad_0; /*0x5d2229*/
+        result = aP1->__pad_000; /*0x5d2229*/
       }
       v30 = result[3]; /*0x5d222d*/
       v31 = v45; /*0x5d2230*/
@@ -188,7 +188,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
   }
   v6 = *a1; /*0x5d2010*/
   v7 = a1[1]; /*0x5d2012*/
-  v8 = (int *)result[3]; /*0x5d2015*/
+  v8 = result->LockCount; /*0x5d2015*/
   while ( 1 ) /*0x5d2020*/
   {
     v48 = 0; /*0x5d2020*/
@@ -220,7 +220,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
     v8 += 4; /*0x5d2063*/
     if ( ++v34 >= Width ) /*0x5d2071*/
     {
-      result = aP1->__pad_0; /*0x5d2073*/
+      result = aP1->__pad_000; /*0x5d2073*/
       goto LABEL_18; /*0x5d2073*/
     }
     v4 = v37; /*0x5d201a*/
@@ -385,10 +385,10 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   CCFileClass::Construct(&v9, Source); /*0x641dc0*/
   if ( !(unsigned __int8)CCFileClass::Open(&v9, 0) ) /*0x641dcb*/
     goto LABEL_11; /*0x641dcb*/
-  if ( *(unsigned int *)this->__pad_0 ) /*0x641dd8*/
+  if ( *(unsigned int *)this->vtable1 ) /*0x641dd8*/
   {
-    (***(void (****)(unsigned int, int))this->__pad_0)(*(unsigned int *)this->__pad_0, 1); /*0x641de2*/
-    *(unsigned int *)this->__pad_0 = 0; /*0x641de4*/
+    (***(void (****)(unsigned int, int))this->vtable1)(*(unsigned int *)this->vtable1, 1); /*0x641de2*/
+    *(unsigned int *)this->vtable1 = 0; /*0x641de4*/
   }
   v3 = DecodeFrameSHP((int)&v9, 0, 0, 0); /*0x641df9*/
   if ( v3 && (*(int (**)(unsigned int *))(*v3 + 124))(v3) && (*(int (**)(unsigned int *))(*v3 + 128))(v3) ) /*0x641e16*/
@@ -404,10 +404,10 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     {
       v6 = 0; /*0x641e55*/
     }
-    *(unsigned int *)this->__pad_0 = v6; /*0x641e57*/
+    *(unsigned int *)this->vtable1 = v6; /*0x641e57*/
     (*(void (**)(char *, unsigned int))(*(unsigned int *)v6 + 24))(v6, 0); /*0x641e5f*/
-    (*(void (**)(unsigned int, unsigned int *, unsigned int, int))(**(unsigned int **)this->__pad_0 + 4))( /*0x641e6b*/
-      *(unsigned int *)this->__pad_0,
+    (*(void (**)(unsigned int, unsigned int *, unsigned int, int))(**(unsigned int **)this->vtable1 + 4))( /*0x641e6b*/
+      *(unsigned int *)this->vtable1,
       v3,
       0,
       1);
@@ -489,7 +489,7 @@ int Surface::RenderRadar()
   int v51[4]; // [esp+8Ch] [ebp-10h] BYREF
 
   v2 = 0; /*0x65525b*/
-  v3 = *((unsigned int *)this + 1165); /*0x65525d*/
+  v3 = this->u32_1234; /*0x65525d*/
   v36 = 0; /*0x655263*/
   v4 = v3 - 1; /*0x655267*/
   v37 = 0; /*0x655268*/
@@ -499,21 +499,21 @@ int Surface::RenderRadar()
   {
     while ( 1 ) /*0x65528b*/
     {
-      *(unsigned int *)v35 = *(unsigned int *)(*((unsigned int *)this + 1162) + 4 * v4); /*0x65528b*/
+      *(unsigned int *)v35 = *(unsigned int *)(this->u32_1228 + 4 * v4); /*0x65528b*/
       if ( !(unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, v35, 1) ) /*0x655298*/
         goto LABEL_32; /*0x655298*/
-      v5 = v35[0] + *((unsigned int *)this + 1316) - v35[1]; /*0x6552b8*/
+      v5 = v35[0] + this->u32_1490 - v35[1]; /*0x6552b8*/
       v6 = 2; /*0x6552bf*/
       if ( v5 == -1 ) /*0x6552c4*/
         break; /*0x6552c4*/
-      if ( v5 == 2 * *((unsigned int *)this + 65) - 1 ) /*0x6552d6*/
+      if ( v5 == 2 * this->u32_104 - 1 ) /*0x6552d6*/
         goto LABEL_6; /*0x6552d6*/
 LABEL_7:
-      v40 = v35[0] + v35[1] - *((unsigned int *)this + 1318); /*0x6552dd*/
+      v40 = v35[0] + v35[1] - this->u32_1498; /*0x6552dd*/
       v41 = v6; /*0x6552e8*/
-      v7 = *((unsigned int *)this + 1168); /*0x6552ec*/
+      v7 = this->u32_1240; /*0x6552ec*/
       v42 = 1; /*0x6552f2*/
-      v8 = *((unsigned int *)this + 1169); /*0x6552f6*/
+      v8 = this->u32_1244; /*0x6552f6*/
       v47[0] = 0; /*0x6552fd*/
       v47[1] = 0; /*0x655301*/
       v47[2] = v7; /*0x65530a*/
@@ -532,13 +532,13 @@ LABEL_7:
         v31 = 0; /*0x65536d*/
         v32 = 0; /*0x655377*/
         v11 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v35); /*0x65537c*/
-        v12 = v39 + v40 * *((unsigned int *)this + 1168); /*0x655390*/
+        v12 = v39 + v40 * this->u32_1240; /*0x655390*/
         GetCellRadarColors((int)v11, (int)&v33, (int)&v31); /*0x65539e*/
         if ( v5 ) /*0x6553ab*/
         {
           if ( v41 != 1 ) /*0x6553d2*/
             goto LABEL_14; /*0x6553d2*/
-          v14 = 3 * v12 + *((unsigned int *)this + 1167); /*0x6553de*/
+          v14 = 3 * v12 + this->u32_123C; /*0x6553de*/
           *(unsigned short *)v14 = v33; /*0x6553e5*/
           v15 = v34; /*0x6553e8*/
         }
@@ -546,28 +546,28 @@ LABEL_7:
         {
           if ( v41 == 1 ) /*0x6553b0*/
           {
-            v13 = *((unsigned int *)this + 1167) + 3 * v12 + 3; /*0x6553bc*/
+            v13 = this->u32_123C + 3 * v12 + 3; /*0x6553bc*/
             *(unsigned short *)v13 = v31; /*0x6553c3*/
             *(unsigned char *)(v13 + 2) = v32; /*0x6553ca*/
             goto LABEL_16; /*0x6553cd*/
           }
 LABEL_14:
-          v16 = *((unsigned int *)this + 1167) + 3 * v12; /*0x6553ee*/
+          v16 = this->u32_123C + 3 * v12; /*0x6553ee*/
           *(unsigned short *)v16 = v33; /*0x6553ff*/
           *(unsigned char *)(v16 + 2) = v34; /*0x655406*/
-          v14 = *((unsigned int *)this + 1167) + 3 * v12 + 3; /*0x655413*/
+          v14 = this->u32_123C + 3 * v12 + 3; /*0x655413*/
           *(unsigned short *)v14 = v31; /*0x65541a*/
           v15 = v32; /*0x65541d*/
         }
         *(unsigned char *)(v14 + 2) = v15; /*0x655421*/
 LABEL_16:
-        v17 = *((unsigned int *)this + 1168); /*0x655424*/
-        v18 = *((unsigned int *)this + 1169); /*0x65542a*/
+        v17 = this->u32_1240; /*0x655424*/
+        v18 = this->u32_1244; /*0x65542a*/
         v48[0] = 0; /*0x655430*/
         v48[1] = 0; /*0x655434*/
         v48[2] = v17; /*0x655439*/
         v48[3] = v18; /*0x655441*/
-        v19 = GenerateImageThumbnail((float *)this->__pad_0, v51, v48, &v39, 0); /*0x655455*/
+        v19 = GenerateImageThumbnail((float *)this->vtable1, v51, v48, &v39, 0); /*0x655455*/
         v20 = *v19; /*0x65545e*/
         v44 = v19[1]; /*0x655463*/
         v21 = v19[2]; /*0x655467*/
@@ -625,10 +625,10 @@ LABEL_6:
     goto LABEL_7; /*0x6552d8*/
   }
 LABEL_33:
-  (*(void (**)(char *))(*((unsigned int *)this + 1161) + 12))((char *)this + 4644); /*0x655528*/
+  (*(void (**)(char *))(this->u32_1224 + 12))(&this->u32_1224); /*0x655528*/
   result = v36; /*0x655537*/
   v28 = v37; /*0x65553b*/
-  v29 = (int *)this + 1170; /*0x65553f*/
+  v29 = &this->u32_1248; /*0x65553f*/
   v30 = v38; /*0x655545*/
   *v29 = v36; /*0x655549*/
   v29[1] = v28; /*0x65554b*/
@@ -667,20 +667,20 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
   int v27; // [esp+74h] [ebp+14h]
 
   v5 = aP1; /*0x6ba3e4*/
-  result = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x6ba3f3*/
+  result = (*(int (**)(int, unsigned int, unsigned int))(*&aP1->q_170))(aP1, 0, 0); /*0x6ba3f3*/
   v20 = result; /*0x6ba3f8*/
   if ( result )
   {
     v7 = a3; /*0x6ba408*/
-    v21 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a3 + 92))(a3, 0, 0); /*0x6ba41b*/
+    v21 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba41b*/
     if ( v21 )
     {
-      v17 = (*(int (**)(int))(*(unsigned int *)aP1 + 116))(aP1) / 2; /*0x6ba442*/
-      v18 = (*(int (**)(int))(*(unsigned int *)a3 + 116))(a3) / 2; /*0x6ba452*/
-      v8 = (*(int (**)(int, unsigned char *))(*(unsigned int *)a3 + 120))(a3, v24); /*0x6ba45d*/
+      v17 = (*(int (**)(int))(*&aP1->q_1D0))(aP1) / 2; /*0x6ba442*/
+      v18 = (*(int (**)(int))(*&a3->u32_1D0))(a3) / 2; /*0x6ba452*/
+      v8 = (*(int (**)(int, unsigned char *))(*&a3->u32_1E0))(a3, v24); /*0x6ba45d*/
       v22 = *(unsigned int *)(v8 + 8); /*0x6ba470*/
       v23 = *(unsigned int *)(v8 + 12); /*0x6ba480*/
-      (*(void (**)(int, unsigned int *))(*(unsigned int *)aP1 + 120))(aP1, v25); /*0x6ba484*/
+      (*(void (**)(int, unsigned int *))(*&aP1->q1E0))(aP1, v25); /*0x6ba484*/
       v10 = aP0[2]; /*0x6ba48f*/
       v11 = aP0[3]; /*0x6ba492*/
       v19 = (v22 - v10) / 2 <= 0 ? 0 : (v22 - v10) / 2;
@@ -717,13 +717,13 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
         }
         while ( v12 < aP0[3] ); /*0x6ba558*/
       }
-      (*(void (**)(int))(*(unsigned int *)v7 + 96))(v7); /*0x6ba562*/
-      result = (*(int (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x6ba569*/
+      (*(void (**)(int))(*&v7->u32_180))(v7); /*0x6ba562*/
+      result = (*(int (**)(int))(*&v5->q_180))(v5); /*0x6ba569*/
       LOBYTE(result) = 1; /*0x6ba56f*/
     }
     else
     {
-      result = (*(int (**)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x6ba425*/
+      result = (*(int (**)(int))(*&aP1->q_180))(aP1); /*0x6ba425*/
       LOBYTE(result) = 0; /*0x6ba429*/
     }
   }
@@ -752,17 +752,17 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
   int v16; // [esp+1Ch] [ebp-8h]
   int *v17; // [esp+28h] [ebp+4h]
 
-  result = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x6ba594*/
+  result = (*(int (**)(int, unsigned int, unsigned int))(*&aP1->q_170))(aP1, 0, 0); /*0x6ba594*/
   result = result; /*0x6ba599*/
   if ( result ) /*0x6ba59d*/
   {
-    v5 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a3 + 92))(a3, 0, 0); /*0x6ba5bb*/
+    v5 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba5bb*/
     if ( v5 ) /*0x6ba5bf*/
     {
       v6 = *a0; /*0x6ba5d8*/
       v7 = a0[1]; /*0x6ba5da*/
-      v16 = (*(int (**)(int))(*(unsigned int *)a3 + 124))(a3); /*0x6ba5f2*/
-      v8 = (*(int (**)(int))(*(unsigned int *)a3 + 128))(a3); /*0x6ba604*/
+      v16 = (*(int (**)(int))(*&a3->u32_1F0))(a3); /*0x6ba5f2*/
+      v8 = (*(int (**)(int))(*&a3->u32_200))(a3); /*0x6ba604*/
       v9 = (*(int (**)(int))(aP1->isOnMap)(aP1) / 2; /*0x6ba60e*/
       if ( v8 > 0 ) /*0x6ba612*/
       {
@@ -794,7 +794,7 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
         while ( v8 ); /*0x6ba65a*/
       }
       (*(void (**)(int))(aP1->nextArrayIndex)(aP1); /*0x6ba662*/
-      result = (*(int (**)(int))(*(unsigned int *)a3 + 96))(a3); /*0x6ba66b*/
+      result = (*(int (**)(int))(*&a3->u32_180))(a3); /*0x6ba66b*/
       (*((unsigned char *)&(result))) = 1; /*0x6ba671*/
     }
     else
@@ -886,7 +886,7 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   char v76[16]; // [esp+84h] [ebp-210h] BYREF
   unsigned short v77[256]; // [esp+94h] [ebp-200h] BYREF
 
-  v8 = (*(int (**)(int, char *))(*(unsigned int *)a3 + 120))(a3, v76); /*0x6ba6a8*/
+  v8 = (*(int (**)(int, char *))(*&a3->u32_1E0))(a3, v76); /*0x6ba6a8*/
   v9 = 0; /*0x6ba6b8*/
   v10 = 0; /*0x6ba6bd*/
   v56 = 0; /*0x6ba6c3*/
@@ -959,13 +959,13 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   v64 = 0; /*0x6ba7ed*/
   if ( a5 ) /*0x6ba7f1*/
   {
-    v64 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a3 + 92))(a3, 0, 0); /*0x6ba843*/
+    v64 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba843*/
     if ( !v64 ) /*0x6ba847*/
       goto LABEL_21; /*0x6ba847*/
   }
   else
   {
-    v19 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a3 + 92))(a3, 0, 0); /*0x6ba805*/
+    v19 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba805*/
     v53 = v19; /*0x6ba809*/
     if ( !v19 ) /*0x6ba80d*/
     {
@@ -1004,7 +1004,7 @@ LABEL_21:
     v12 = v75; /*0x6ba8fd*/
   }
   v72 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2) / 2; /*0x6ba91b*/
-  v26 = (*(int (**)(int))(*(unsigned int *)a3 + 116))(a3); /*0x6ba91f*/
+  v26 = (*(int (**)(int))(*&a3->u32_1D0))(a3); /*0x6ba91f*/
   v69 = v26; /*0x6ba929*/
   if ( !a5 ) /*0x6ba92f*/
   {
@@ -1115,7 +1115,7 @@ LABEL_43:
     while ( v50 ); /*0x6ba992*/
   }
   (*(void (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x6babfe*/
-  (*(void (**)(int))(*(unsigned int *)a3 + 96))(a3); /*0x6bac13*/
+  (*(void (**)(int))(*&a3->u32_180))(a3); /*0x6bac13*/
   result = (*(int (**)(int))(*(unsigned int *)a4 + 96))(a4); /*0x6bac1f*/
   LOBYTE(result) = 1; /*0x6bac25*/
   return result; /*0x6ba7cf*/
@@ -1168,25 +1168,25 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   v41 = (__int16 *)*((unsigned int *)a1 + 2); /*0x7074a2*/
   Surface::Construct(&v37, v9, v8); /*0x7074a6*/
   v38 = 0; /*0x7074b8*/
-  *(unsigned int *)v37.__pad_0 = &XSurface_Vtable; /*0x7074c0*/
+  *(unsigned int *)v37.vtable1 = &XSurface_Vtable; /*0x7074c0*/
   v39 = 1; /*0x7074c8*/
   Buffer::Init((Buffer *)v40, (int)v41, v8 * v9); /*0x7074d0*/
-  v11 = *(unsigned int *)this->__pad_0; /*0x7074d9*/
-  *(unsigned int *)v37.__pad_0 = &BSurface_Vtable; /*0x7074dd*/
+  v11 = *(unsigned int *)this->vtable1; /*0x7074d9*/
+  *(unsigned int *)v37.vtable1 = &BSurface_Vtable; /*0x7074dd*/
   v12 = aP4 & 0xFFFFFFEF; /*0x7074e5*/
-  if ( (*(int (**)(Surface *))(v11 + 44))(this) == 1 && *((unsigned char *)this + 1747) ) /*0x7074f0*/
+  if ( (*(int (**)(Surface *))(v11 + 44))(this) == 1 && this->u32_6D3 ) /*0x7074f0*/
     v13 = (LightConvertClass *)dword_B1D140; /*0x7074fa*/
   else
-    v13 = (LightConvertClass *)(*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 484))(this); /*0x707505*/
+    v13 = (LightConvertClass *)(*(int (**)(Surface *))(*(unsigned int *)this->vtable1 + 484))(this); /*0x707505*/
   v43 = (int *)LightConvertClass::SelectRLEBlitter(v13, v12); /*0x707516*/
   v42 = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
   {
     v14 = (*(int (**)(int *))(this->Width + 16))(&this->Width); /*0x707534*/
-    LOWORD(v15) = Math::RoundToInt(*((float *)this + 147)); /*0x707536*/
+    LOWORD(v15) = Math::RoundToInt(this->u32_24C); /*0x707536*/
     v42 = (v14 + v15) % 400; /*0x707545*/
   }
-  if ( (*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 44))(this) == 1 ) /*0x707557*/
+  if ( (*(int (**)(Surface *))(*(unsigned int *)this->vtable1 + 44))(this) == 1 ) /*0x707557*/
   {
     v16 = *aP2 + *a1; /*0x70756b*/
     v17 = aP2[1] + a1[1]; /*0x707571*/
@@ -1254,10 +1254,10 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v24 = a1[2]; /*0x7076c8*/
     v36[1] = v23 + a1[1]; /*0x7076ce*/
     v36[2] = v24; /*0x7076d2*/
-    v25 = *(unsigned int *)this->__pad_0; /*0x7076e3*/
+    v25 = *(unsigned int *)this->vtable1; /*0x7076e3*/
     v36[3] = (unsigned __int16)a1[3]; /*0x7076e5*/
     v27 = (*(int (**)(Surface *))(v25 + 752))(this); /*0x707703*/
-    v26 = (*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 748))(this); /*0x707706*/
+    v26 = (*(int (**)(Surface *))(*(unsigned int *)this->vtable1 + 748))(this); /*0x707706*/
     BlitterRLEBlitSHP( /*0x707736*/
       (int)g_DSurface_Hidden_2,
       (CellStruct *)aP3,
@@ -1365,7 +1365,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
   unsigned int *v90; // [esp+4Ch] [ebp+8h]
 
   v58 = ZCoordToScreenY(this->WaveClass_field_168); /*0x7602f8*/
-  v74 = (*(int (**)(AudioStream *, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 92))( /*0x760309*/
+  v74 = (*(int (**)(AudioStream *, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 92))( /*0x760309*/
           g_DSurface_Hidden_2,
           0,
           0);
@@ -1380,7 +1380,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
     v6 = a2[1] - this->WaveClass_field_17C; /*0x760359*/
     v57 = *a2 - this->WaveClass_field_178; /*0x760367*/
     v6 = v6; /*0x76036b*/
-    ProcessVoxelVertexData((unsigned int *)(&this->WaveClass_field_12C8), (int *)(&this->WaveClass_field_1506)); /*0x76036f*/
+    ProcessVoxelVertexData(&this->q148, &this->q148); /*0x76036f*/
     if ( this->WaveClass_field_1A8_d ) /*0x760374*/
     {
       v7 = this->WaveClass_field_1A0_d; /*0x760398*/
@@ -1404,7 +1404,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                                     (int *)g_ZBufferDescriptor,
                                     0,
                                     v8 - (char *)DSurface_ViewBounds.field_4);
-        v35 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x7606c4*/
+        v35 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 124))(g_DSurface_Hidden_2); /*0x7606c4*/
         (*(((unsigned short *)&(v36)) + 1)) = (*(((unsigned short *)&(g_ZBufferDescriptor)) + 1)); /*0x7606c7*/
         v81 = v9 - (unsigned int)v8; /*0x7606d8*/
         m_Stream = g_ZBufferDescriptor[2].m_Stream; /*0x7606e0*/
@@ -1434,7 +1434,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                               + 2
                               * (v50
                                + v56
-                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1)));
+                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1)));
                 v51 = v56 - (unsigned int)DSurface_ViewBounds.field_4; /*0x760910*/
                 v50 = v50; /*0x760914*/
                 for ( i = abs32(v56 - v6 - this->WaveClass_field_17C); v50 >= v60; --v68 ) /*0x760925*/
@@ -1460,7 +1460,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
         }
         else
         {
-          v83 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1; /*0x760709*/
+          v83 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1; /*0x760709*/
           v37 = (unsigned short *)(v74 + 2 * v9 * v83); /*0x76071a*/
           v90 = (unsigned int *)(this->WaveClass_field_1A8_d + 8 * v81); /*0x760728*/
           v87 = (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))) - v9 - v58 - 2; /*0x760740*/
@@ -1516,7 +1516,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       {
         v86 = (*((unsigned short *)&(g_ZBufferDescriptor[1].Stream_field_10))) - v58 - (unsigned short)v8 - 2; /*0x7603f4*/
         v11 = ((Audio *)((int *)g_ZBufferDescriptor))->GetSamplePosition(0, v8 - (char *)DSurface_ViewBounds.field_4); /*0x760406*/
-        v12 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 124))(g_DSurface_Hidden_2); /*0x76040a*/
+        v12 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 124))(g_DSurface_Hidden_2); /*0x76040a*/
         v70 = g_ZBufferDescriptor[2].m_Stream; /*0x760418*/
         if ( (unsigned int)(v11 + 2 * (v12 + (unsigned int)v70 * (v9 - v61 + 1))) >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x760437*/
         {
@@ -1544,7 +1544,7 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                               + 2
                               * (v32
                                + v27
-                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1)));
+                               * ((*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1)));
                 v33 = v27 - (unsigned int)DSurface_ViewBounds.field_4; /*0x7605fd*/
                 v85 = v27 - (unsigned int)DSurface_ViewBounds.field_4; /*0x760607*/
                 v34 = abs32(v27 - v6 - this->WaveClass_field_17C); /*0x760616*/
@@ -1575,11 +1575,11 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
         }
         else
         {
-          v13 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) >> 1; /*0x760448*/
+          v13 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) >> 1; /*0x760448*/
           v13 = v13; /*0x760455*/
           v14 = (unsigned short *)(v74 + 2 * v61 * v13); /*0x760459*/
           v15 = v61; /*0x76045c*/
-          v16 = *(unsigned int **)(&this->WaveClass_field_1544); /*0x760460*/
+          v16 = *&this->u32_1A8; /*0x760460*/
           v16 = v16; /*0x760468*/
           for ( k = v61; v15 <= v9; k = v15 ) /*0x760470*/
           {
@@ -1627,10 +1627,10 @@ void   Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
         }
       }
     }
-    (*(void (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 96))(g_DSurface_Hidden_2); /*0x7609a7*/
+    (*(void (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x7609a7*/
     if ( this->WaveClass_field_1A8_d ) /*0x7609aa*/
     {
-      operator delete((void *)(*(void **)(&this->WaveClass_field_1544))); /*0x7609b7*/
+      operator delete((void *)(*&this->u32_D0)); /*0x7609b7*/
       this->WaveClass_field_1A8_d = 0; /*0x7609bf*/
     }
   }
@@ -1723,24 +1723,24 @@ int Surface::CommitSurfaceBuffersAudio()
 
   if ( !this->u32_88 ) /*0x7bd699*/
     return -8; /*0x7bd6af*/
-  v3 = *(unsigned char *)((char *)&this->u32_EA + 9) * *(unsigned char *)((char *)&this->u32_EA + 8) * *((uint16_t *)&this->LockCount4) + 4; /*0x7bd6cf*/
+  v3 = *(unsigned char *)this->u8_EA + 9) * *(unsigned char *)this->u8_EA + 8) * this->u32_F3) + 4; /*0x7bd6cf*/
   (*((unsigned char *)&(v3))) = v3 & 0xFC; /*0x7bd6d2*/
   this->u32_774 = v3; /*0x7bd6d4*/
-  v4 = this->u32_108; /*0x7bd6da*/
+  v4 = this->u8_108; /*0x7bd6da*/
   if ( v4 == 1 || v4 == 4 ) /*0x7bd6e8*/
     this->u32_774 = 2 * v3; /*0x7bd6ec*/
-  v5 = *(unsigned int *)(char *)((char *)&this->u32_108 + 2); /*0x7bd6f2*/
+  v5 = *(unsigned int *)(char *)this->u8_108 + 2); /*0x7bd6f2*/
   v6 = this->u32_774; /*0x7bd6f8*/
   if ( v5 > v6 ) /*0x7bd700*/
     return -3; /*0x7bd70e*/
   if ( !v5 ) /*0x7bd711*/
-    *(unsigned int *)(char *)((char *)&this->u32_108 + 2) = v6; /*0x7bd713*/
+    *(unsigned int *)(char *)this->u8_108 + 2) = v6; /*0x7bd713*/
   if ( this->u32_8C > 0 ) /*0x7bd721*/
     goto LABEL_57; /*0x7bd721*/
-  if ( this->u32_74C ) /*0x7bd727*/
-    v7 = *(unsigned short *)((char *)&this->u32_74C + 2); /*0x7bd735*/
+  if ( this->u8_74C ) /*0x7bd727*/
+    v7 = *(unsigned short *)this->u8_74C + 2); /*0x7bd735*/
   else
-    v7 = *(unsigned char *)((char *)&this->u32_EA + 11); /*0x7bd746*/
+    v7 = *(unsigned char *)this->u8_EA + 11); /*0x7bd746*/
   if ( v7 != this->BytesPerPixel ) /*0x7bd74b*/
   {
     v8 = this->u32_88; /*0x7bd75c*/
@@ -1750,20 +1750,20 @@ int Surface::CommitSurfaceBuffersAudio()
     v52 = (v8 - 2) / v7 + 1; /*0x7bd77a*/
     if ( (this->u32_84 & 0x20) == 0 ) /*0x7bd786*/
       goto LABEL_56; /*0x7bd786*/
-    if ( !this->u32_714 ) /*0x7bd78c*/
+    if ( !this->u16_714 ) /*0x7bd78c*/
     {
       v9 = (v8 - 2) / v7 + 3; /*0x7bd79c*/
       goto LABEL_55; /*0x7bd79f*/
     }
     v10 = (unsigned short *)this->u32_71C; /*0x7bd7a4*/
-    v11 = *(unsigned char *)((char *)&this->u32_EA + 11); /*0x7bd7ac*/
-    v55 = *(unsigned short *)&this->u32_714; /*0x7bd7bb*/
+    v11 = *(unsigned char *)this->u8_EA + 11); /*0x7bd7ac*/
+    v55 = *&this->u16_714; /*0x7bd7bb*/
     if ( this->u32_F5 ) /*0x7bd7ac*/
     {
       v12 = 0; /*0x7bd7c1*/
       v53 = 0; /*0x7bd7c5*/
       v54 = 0; /*0x7bd7c9*/
-      if ( this->u32_714 ) /*0x7bd7b4*/
+      if ( this->u16_714 ) /*0x7bd7b4*/
       {
         v13 = (uint16_t *)this->u32_71C; /*0x7bd7cf*/
         while ( !(*v13 % v11) ) /*0x7bd7db*/
@@ -1777,7 +1777,7 @@ int Surface::CommitSurfaceBuffersAudio()
       }
   LABEL_27:
       v14 = 0; /*0x7bd7f3*/
-      if ( this->u32_714 ) /*0x7bd7b4*/
+      if ( this->u16_714 ) /*0x7bd7b4*/
       {
         v15 = v10 + 1; /*0x7bd801*/
         while ( !(*v15 % v11) ) /*0x7bd810*/
@@ -1797,16 +1797,16 @@ int Surface::CommitSurfaceBuffersAudio()
     {
       v53 = 1; /*0x7bd837*/
       v54 = 1; /*0x7bd83b*/
-      v16 = *(unsigned short *)&this->u32_74C; /*0x7bd84b*/
+      v16 = *&this->u8_74C; /*0x7bd84b*/
       v58 = 0; /*0x7bd84d*/
-      if ( this->u32_714 ) /*0x7bd7b4*/
+      if ( this->u16_714 ) /*0x7bd7b4*/
       {
         while ( 1 ) /*0x7bd85b*/
         {
           if ( v53 ) /*0x7bd861*/
           {
             v17 = 0; /*0x7bd863*/
-            if ( this->u32_74C ) /*0x7bd84b*/
+            if ( this->u8_74C ) /*0x7bd84b*/
             {
               v18 = (unsigned short *)this->u32_754; /*0x7bd86d*/
               while ( *v10 != *v18 ) /*0x7bd872*/
@@ -1823,7 +1823,7 @@ int Surface::CommitSurfaceBuffersAudio()
           if ( v54 ) /*0x7bd88c*/
           {
             v19 = 0; /*0x7bd88e*/
-            if ( this->u32_74C ) /*0x7bd84b*/
+            if ( this->u8_74C ) /*0x7bd84b*/
             {
               v20 = (unsigned short *)this->u32_754; /*0x7bd898*/
               while ( v10[1] != *v20 ) /*0x7bd89d*/
@@ -1863,23 +1863,23 @@ int Surface::CommitSurfaceBuffersAudio()
   v49 = this->u32_774; /*0x7bd8ff*/
   this->u32_154 |= 1u; /*0x7bd90f*/
   v21 = 0; /*0x7bd91b*/
-  this->u32_768 = (*(unsigned int *)(char *)((char *)&this->u32_108 + 2) + 16) & 0xFFFFFFFC; /*0x7bd927*/
+  this->u32_768 = (*(unsigned int *)(char *)this->u8_108 + 2) + 16) & 0xFFFFFFFC; /*0x7bd927*/
   v22 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))&this->Width7))(this, 2, 0, v49); /*0x7bd92d*/
   this->u32_6F0 = v22; /*0x7bd935*/
   if ( !v22 ) /*0x7bd93b*/
     goto LABEL_103; /*0x7bd93b*/
-  (*((void (__cdecl **)(BSurface *, int, int, unsigned int))&this->Width7))(this, 4, v22, this->u32_774); /*0x7bd95c*/
+  (*((void (__cdecl **)(BSurface *, int, int, unsigned int))&this->Width7))(this, 4, v22, this->q044); /*0x7bd95c*/
   this->LockCount += this->u32_774; /*0x7bd96d*/
   v56 = 0; /*0x7bd978*/
   if ( this->u32_8C > 0 ) /*0x7bd97c*/
   {
     while ( 1 ) /*0x7bd991*/
     {
-      v23 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))&this->Width7))(this, 2, 0, this->u32_768 + 24); /*0x7bd991*/
+      v23 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))&this->Width7))(this, 2, 0, this->q044 + 24); /*0x7bd991*/
       v24 = (unsigned int *)v23; /*0x7bd994*/
       if ( !v23 ) /*0x7bd99b*/
         goto LABEL_103; /*0x7bd99b*/
-      (*((void (__cdecl **)(BSurface *, int, int, int))&this->Width7))(this, 4, v23, this->u32_768 + 24); /*0x7bd9af*/
+      (*((void (__cdecl **)(BSurface *, int, int, int))&this->Width7))(this, 4, v23, this->q044 + 24); /*0x7bd9af*/
       this->LockCount += this->u32_768 + 24; /*0x7bd9c4*/
       memset(v24, 0, 0x18u); /*0x7bd9cc*/
       *v24 = v24 + 6; /*0x7bd9d6*/
@@ -1897,8 +1897,8 @@ int Surface::CommitSurfaceBuffersAudio()
       {
         if ( v24 ) /*0x7bda00*/
         {
-          v24[1] = this->u32_6EC; /*0x7bda08*/
-          *(unsigned int *)(this->u32_6EC + 8) = v24; /*0x7bda11*/
+          v24[1] = this->Width; /*0x7bda08*/
+          *(unsigned int *)(this->Height + 8) = v24; /*0x7bda11*/
         }
         break; /*0x7bda11*/
       }
@@ -1913,15 +1913,15 @@ int Surface::CommitSurfaceBuffersAudio()
   v27 = 0; /*0x7bda69*/
   v28 = (2 /*0x7bda72*/
        * *((uint16_t *)&this->LockCount0)
-       / (int)*(unsigned char *)((char *)&this->u32_EA + 9)
-       * (*(unsigned short *)((char *)&this->u32_EA + 4)
-        / (int)*(unsigned char *)((char *)&this->u32_EA + 8))
+       / (int)*(unsigned char *)this->u8_EA + 9)
+       * (*(unsigned short *)this->u8_EA + 4)
+        / (int)*(unsigned char *)this->u8_EA + 8))
        + 4)
       & 0xFFFFFFFC;
   this->u32_778 = v28; /*0x7bda75*/
   if ( this->u32_FE ) /*0x7bda7b*/
   {
-    v29 = *((uint16_t *)&this->LockCount7); /*0x7bda8b*/
+    v29 = this->u32_FE); /*0x7bda8b*/
     if ( this->u32_E8 > 2u ) /*0x7bda98*/
       v29 <<= 8; /*0x7bda9a*/
   }
@@ -1942,7 +1942,7 @@ int Surface::CommitSurfaceBuffersAudio()
     DSurface::CommitBuffers(); /*0x7bdf14*/
     return -8; /*0x7bdf27*/
   }
-  (*((void (__cdecl **)(BSurface *, int, int, unsigned int))&this->Width7))(this, 4, v31, this->u32_778); /*0x7bdaf1*/
+  (*((void (__cdecl **)(BSurface *, int, int, unsigned int))&this->Width7))(this, 4, v31, this->q044); /*0x7bdaf1*/
   this->LockCount += this->u32_778; /*0x7bdb02*/
   v57 = 0; /*0x7bdb0d*/
   if ( this->u32_88 > 0 ) /*0x7bdb11*/
@@ -1993,7 +1993,7 @@ int Surface::CommitSurfaceBuffersAudio()
   this->u32_6DC = v34; /*0x7bdbf4*/
   this->u32_770 = v35 - 4; /*0x7bdc03*/
   this->u32_76C = v36 - 4; /*0x7bdc09*/
-  v37 = this->u32_EA; /*0x7bdc0f*/
+  v37 = this->u8_EA; /*0x7bdc0f*/
   if ( (v37 & 1) != 0 ) /*0x7bdc18*/
   {
     v38 = this->u32_84; /*0x7bdc1e*/
@@ -2004,22 +2004,22 @@ int Surface::CommitSurfaceBuffersAudio()
         if ( (v38 & 0x40) != 0 && (v37 & 2) != 0 ) /*0x7bdc57*/
         {
           this->u32_3C = this->u32_104; /*0x7bdc60*/
-          this->u32_3E = this->u32_106; /*0x7bdc6a*/
+          this->u8_3E = this->u32_106; /*0x7bdc6a*/
           v39 = this->u32_107; /*0x7bdc6d*/
         }
         else
         {
           this->u32_3C = this->u32_100; /*0x7bdc7c*/
-          this->u32_3E = this->u32_102; /*0x7bdc86*/
+          this->u8_3E = this->u32_102; /*0x7bdc86*/
           v39 = this->u32_103; /*0x7bdc89*/
         }
-        v40 = *((uint16_t *)&this->LockCount0) * (v39 >> 3); /*0x7bdc9c*/
+        v40 = this->u32_76C) * (v39 >> 3); /*0x7bdc9c*/
         this->u32_3F = v39; /*0x7bdc9f*/
-        this->u32_7CC = *(unsigned char *)&this->u32_3E * v40; /*0x7bdcaa*/
+        this->u32_7CC = *&this->u8_3E * v40; /*0x7bdcaa*/
       }
       else
       {
-        this->u32_3E = 1; /*0x7bdc3c*/
+        this->u8_3E = 1; /*0x7bdc3c*/
         this->u32_3C = 22050; /*0x7bdc40*/
         this->u32_3F = 8; /*0x7bdc44*/
         this->u32_7CC = 22050; /*0x7bdc48*/
@@ -2063,7 +2063,7 @@ int Surface::CommitSurfaceBuffersAudio()
       (*((void (__cdecl **)(BSurface *, int, int, int))&this->Width7))(this, 4, v44, 2 * this->u32_79C); /*0x7bddf4*/
       this->LockCount += 2 * this->u32_79C; /*0x7bde04*/
       memset(this->u32_798, 0, 2 * this->u32_79C); /*0x7bde1c*/
-      v48 = 2 * (this->u32_7CC / (unsigned int)*(unsigned char *)((char *)&this->u32_EA + 10)) + 100; /*0x7bde3b*/
+      v48 = 2 * (this->u32_7CC / (unsigned int)*(unsigned char *)this->u8_EA + 10)) + 100; /*0x7bde3b*/
       this->u32_7B4 = v48; /*0x7bde41*/
       v45 = (*((int (__cdecl **)(BSurface *, int, unsigned int, unsigned int))&this->Width7))(this, 2, 0, v48); /*0x7bde47*/
       this->u32_7A8 = v45; /*0x7bde4d*/
@@ -2084,12 +2084,12 @@ int Surface::CommitSurfaceBuffersAudio()
           this,
           2,
           0,
-          4 * *(unsigned short *)((char *)&this->u32_EA + 2));
+          4 * *(unsigned short *)this->u8_EA + 2));
   this->u32_764 = v47; /*0x7bdf0a*/
   if ( !v47 ) /*0x7bdf12*/
     goto LABEL_103; /*0x7bdf12*/
-  (*((void (__cdecl **)(BSurface *, int, int, int))&this->Width7))(this, 4, v47, 4 * *(unsigned short *)((char *)&this->u32_EA + 2)); /*0x7bdf4d*/
-  this->LockCount += 4 * *(unsigned short *)((char *)&this->u32_EA + 2); /*0x7bdf65*/
+  (*((void (__cdecl **)(BSurface *, int, int, int))&this->Width7))(this, 4, v47, 4 * *(unsigned short *)this->u8_EA + 2)); /*0x7bdf4d*/
+  this->LockCount += 4 * *(unsigned short *)this->u8_EA + 2); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
 }
 }  // G42.18c ns repair
@@ -2155,7 +2155,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
       v5 = (char *)&unk_89FC95; /*0x4a47b6*/
       do /*0x4a47e5*/
       {
-        v6 = (uint8_t)v4->__pad_0[0]; /*0x4a47bf*/
+        v6 = (uint8_t)v4->vtable1; /*0x4a47bf*/
         v9 = v4->__pad_0[1]; /*0x4a47c5*/
         v7 = &v4->__pad_0[2]; /*0x4a47c9*/
         v5 += 4; /*0x4a47cc*/
@@ -2194,8 +2194,8 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, v
 
   aP1->Width = aP2; /*0x4aec6a*/
   aP1->Height = a3; /*0x4aec6d*/
-  *(unsigned int *)aP1->__pad_0 = &Surface_Vtable; /*0x4aec70*/
-  return aP1->__pad_0; /*0x4aec76*/
+  *(unsigned int *)aP1->vtable1 = &Surface_Vtable; /*0x4aec70*/
+  return aP1->vtable1; /*0x4aec76*/
 
 }
 }  // G42.18c ns repair

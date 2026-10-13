@@ -61,7 +61,7 @@ HWND E4Recv_696AE0::sub_696AE0()
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
         SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
-        *(unsigned int *)&this->isInLogic = v6; /*0x696c2e*/
+        *&this->M152 = v6; /*0x696c2e*/
         return (int)this; /*0x696c2a*/
       }
     }
@@ -110,7 +110,7 @@ HWND E4Recv_696C40::sub_696C40()
           --v4; /*0x696cd2*/
         SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
         result = SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
-        *(unsigned int *)&this->isInLogic = v4; /*0x696ce9*/
+        *&this->M152 = v4; /*0x696ce9*/
       }
     }
   }

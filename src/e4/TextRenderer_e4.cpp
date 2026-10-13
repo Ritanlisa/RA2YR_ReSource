@@ -143,7 +143,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
   result = a2; /*0x642c80*/
   if ( a2 == -1 && aP2 == -1 ) /*0x642c9a*/
   {
-    v19 = *((char *)this + 97); /*0x642cb1*/
+    v19 = this->u32_61; /*0x642cb1*/
     FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
     v9 = 0; /*0x642cbc*/
     Default = 0; /*0x642cc2*/
@@ -181,18 +181,18 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
     Viewport = Display::GetViewport(v21); /*0x642d8d*/
     v16 = Viewport[2] - v13; /*0x642dac*/
     result = (Viewport[3] - v14) / 2; /*0x642db9*/
-    *((char *)this + 26) = v16 / 2; /*0x642dbb*/
-    *((char *)this + 27) = result; /*0x642dbe*/
+    this->u32_1A = v16 / 2; /*0x642dbb*/
+    this->u32_1B = result; /*0x642dbe*/
   }
   else
   {
-    *((char *)this + 26) = a2; /*0x642dc4*/
-    *((char *)this + 27) = aP2; /*0x642dc7*/
+    this->u32_1A = a2; /*0x642dc4*/
+    this->u32_1B = aP2; /*0x642dc7*/
   }
   LOBYTE(result) = a6; /*0x642dd2*/
-  *((char *)this + 20) = aP3; /*0x642dd6*/
-  *((unsigned char *)this + 112) = aP4; /*0x642dd9*/
-  *((unsigned char *)this + 113) = a6; /*0x642ddc*/
+  this->u32_14 = aP3; /*0x642dd6*/
+  this->u32_70 = aP4; /*0x642dd9*/
+  this->u32_71 = a6; /*0x642ddc*/
   return result; /*0x642ddf*/
 
 }

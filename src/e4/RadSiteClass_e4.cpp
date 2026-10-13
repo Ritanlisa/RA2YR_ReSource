@@ -44,7 +44,7 @@ RadSiteClass::RadSiteClass()
   this->RadTimeLeft = 0; /*0x65b225*/
   this->AbstractClass = &RadSiteClass::`vftable'; /*0x65b228*/
   this->? = &RadSiteClass::`vftable'; /*0x65b22e*/
-  this->? = &RadSiteClass::`vftable'; /*0x65b235*/
+  this->vtable3 = &RadSiteClass::`vftable'; /*0x65b235*/
   this->? = &RadSiteClass::`vftable'; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
@@ -100,7 +100,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0->vfptr2 = &vt_RadSiteClass; /*0x65b423*/
       aP0->vfptr3 = &vt_RadSiteClass; /*0x65b42a*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->LightSource); /*0x65b43a*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->vtable4); /*0x65b43a*/
   }
   return Prefix_0; /*0x65b441*/
 }

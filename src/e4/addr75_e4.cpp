@@ -173,8 +173,8 @@ double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   v4 = (ObjectClass *)a3; /*0x750ac9*/
   *a1 = 0; /*0x750acd*/
   v21 = 0.0; /*0x750ade*/
-  v23 = (double)*(int *)DSurface_ViewBounds.__pad_8 * 0.5; /*0x750aec*/
-  v25 = (double)*(int *)&DSurface_ViewBounds.__pad_8[4] * 0.5; /*0x750afc*/
+  v23 = (double)*(int *)g_Map_VisibleRectOffset * 0.5; /*0x750aec*/
+  v25 = (double)*(int *)&g_DSurface_WindowOffset * 0.5; /*0x750afc*/
   v22 = v23 + v23; /*0x750b06*/
   a3 = 60 * sub_405130(v4); /*0x750b1a*/
   v20 = (float)a3; /*0x750b22*/
@@ -188,7 +188,7 @@ double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   (*(((unsigned short *)&(a3)) + 1)) = v9; /*0x750b5d*/
   if ( (unsigned short)v8 == *(unsigned short *)&stru_B1D290.needsRedraw && (unsigned short)v9 == *(unsigned short *)&stru_B1D290.inOpenToppedTransport ) /*0x750b73*/
     return 0.0; /*0x750b82*/
-  if ( (*((unsigned char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
+  if ( (*((unsigned char *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
     return 0.0; /*0x750b9d*/
   LABEL_7:
   ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(aP0, v26); /*0x750bb9*/
@@ -807,7 +807,7 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
   v19 = -971227136; /*0x754161*/
   *v7 = a1; /*0x754169*/
   v8[2] = v11; /*0x75416b*/
-  v12 = (float *)(v7 + 11); /*0x754175*/
+  v12 = &v7->u32_B; /*0x754175*/
   v20 = (float *)(Info + 64); /*0x754178*/
   v7[7] = (VoxelSection *)v17; /*0x75417c*/
   v7[8] = (VoxelSection *)v18; /*0x754182*/
@@ -820,38 +820,38 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
     *v12 = v14[1]; /*0x7541aa*/
     v12[1] = v14[2]; /*0x7541b0*/
     *v12 = -*v12; /*0x7541b7*/
-    if ( *(v12 - 1) < (double)*((float *)v7 + 4) ) /*0x7541c3*/
+    if ( *(v12 - 1) < (double)v7->u32_10 ) /*0x7541c3*/
       v7[4] = *v13; /*0x7541c7*/
-    if ( *(float *)v13 > (double)*((float *)v7 + 7) ) /*0x7541d4*/
+    if ( *(float *)v13 > (double)v7->u32_1C ) /*0x7541d4*/
       v7[7] = *v13; /*0x7541d8*/
-    if ( *v12 < (double)*((float *)v7 + 5) ) /*0x7541e5*/
+    if ( *v12 < (double)v7->u32_14 ) /*0x7541e5*/
       v7[5] = *(VoxelSection **)v12; /*0x7541e9*/
-    if ( *v12 > (double)*((float *)v7 + 8) ) /*0x7541f6*/
+    if ( *v12 > (double)v7->q020 ) /*0x7541f6*/
       v7[8] = *(VoxelSection **)v12; /*0x7541fa*/
-    if ( v12[1] < (double)*((float *)v7 + 6) ) /*0x754208*/
+    if ( v12[1] < (double)v7->u32_18 ) /*0x754208*/
     {
-      v15 = (VoxelSection *)*((unsigned int *)v12 + 1); /*0x75420a*/
+      v15 = (VoxelSection *)v12->u32_4; /*0x75420a*/
       v7[3] = (VoxelSection *)v9; /*0x75420d*/
       v7[6] = v15; /*0x754210*/
     }
-    if ( v12[1] > (double)*((float *)v7 + 9) ) /*0x75421e*/
-      v7[9] = (VoxelSection *)*((unsigned int *)v12 + 1); /*0x754223*/
+    if ( v12[1] > (double)v7->__pad_024 ) /*0x75421e*/
+      v7[9] = (VoxelSection *)v12->u32_4; /*0x754223*/
     ++v9; /*0x75422a*/
     v12 += 3; /*0x75422e*/
     v20 += 3; /*0x754234*/
   }
   while ( v9 < 8 ); /*0x754238*/
-  if ( *((float *)v7 + 4) < (double)*(float *)&dword_B2D5E0 ) /*0x75424c*/
+  if ( v7->u32_10 < (double)*(float *)&dword_B2D5E0 ) /*0x75424c*/
     dword_B2D5E0 = (int)v7[4]; /*0x754251*/
-  if ( *((float *)v7 + 5) < (double)*(float *)&dword_B2D5E4 ) /*0x754265*/
+  if ( v7->u32_14 < (double)*(float *)&dword_B2D5E4 ) /*0x754265*/
     dword_B2D5E4 = (int)v7[5]; /*0x75426a*/
-  if ( *((float *)v7 + 6) < (double)*(float *)&dword_B2D5E8 ) /*0x75427e*/
+  if ( v7->u32_18 < (double)*(float *)&dword_B2D5E8 ) /*0x75427e*/
     dword_B2D5E8 = (int)v7[6]; /*0x754283*/
-  if ( *((float *)v7 + 7) > (double)*(float *)&stru_B2D93C.Buffer_field_0C ) /*0x754296*/
+  if ( v7->u32_1C > (double)*(float *)&stru_B2D93C.Buffer_field_0C ) /*0x754296*/
     stru_B2D93C.Buffer_field_0C = (int)v7[7]; /*0x75429b*/
-  if ( *((float *)v7 + 8) > (double)*(float *)&stru_B2D93C.Buffer_field_10 ) /*0x7542af*/
+  if ( v7->q020 > (double)*(float *)&stru_B2D93C.Buffer_field_10 ) /*0x7542af*/
     stru_B2D93C.Buffer_field_10 = (int)v7[8]; /*0x7542b4*/
-  if ( *((float *)v7 + 9) > (double)*(float *)&stru_B2D93C.Buffer_field_14 ) /*0x7542c8*/
+  if ( v7->__pad_024 > (double)*(float *)&stru_B2D93C.Buffer_field_14 ) /*0x7542c8*/
     stru_B2D93C.Buffer_field_14 = (int)v7[9]; /*0x7542cd*/
   return ++stru_B2D804.Buffer_field_1C; /*0x7542d7*/
 }
@@ -937,7 +937,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
         do /*0x7543c3*/
         {
           v15 = *(unsigned int *)v12; /*0x7543aa*/
-          if ( *(float *)(*(unsigned int *)v12 + 36) > (double)*(float *)(*(unsigned int *)v13 + 36) ) /*0x7543b9*/
+          if ( *(float *)(*&v12->u32_90) > (double)*(float *)(*(unsigned int *)v13 + 36) ) /*0x7543b9*/
           {
             *(unsigned int *)v12 = *(unsigned int *)v13; /*0x7543bb*/
             *(unsigned int *)v13 = v15; /*0x7543bd*/
@@ -1980,10 +1980,10 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (**)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = this->?; /*0x758aed*/
-  vtable1 = this->?; /*0x758af0*/
+  vtable2 = this->M8; /*0x758aed*/
+  vtable1 = this->M4; /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = this->?; /*0x758af7*/
+  vtable3 = this->M12; /*0x758af7*/
   v9[2] = vtable2; /*0x758afa*/
   v9[1] = vtable1; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
@@ -2032,7 +2032,7 @@ void sub_7591C0()
 namespace gamemd {
 int E4Recv_759790::sub_759790()
 {
-  return Surface::CreateSurfacePalette(Surface *)((char *)&this->u32_10 + 156);
+  return Surface::CreateSurfacePalette(Surface *)this->u32_10 + 156);
 }
 }
 // 0x75A120
@@ -2055,9 +2055,9 @@ int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
     case 3: /*0x75a136*/
       a2 = 0; /*0x75a143*/
       a3 = 0; /*0x75a147*/
-      if ( !LookupFileInfoCache((const char *)((char *)&this->u32_1C0 + 4), 0, &a3, &a2, 0) ) /*0x75a15e*/
+      if ( !LookupFileInfoCache((const char *)this->u32_1C0 + 4), 0, &a3, &a2, 0) ) /*0x75a15e*/
         goto LABEL_5; /*0x75a15e*/
-      v6 = (*(int (__thiscall **)(int, int, int))(this->M4 + 32))(&this->M4, a3[3], 1) == 0; /*0x75a17c*/
+      v6 = this->M4.vt_slot_32(a3[3], 1) == 0; /*0x75a17c*/
       v7 = this->M4; /*0x75a17e*/
       a2 = a2; /*0x75a180*/
       this->M112 = !v6; /*0x75a186*/
@@ -2069,19 +2069,19 @@ int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
       return 0; /*0x75a276*/
     case 5: /*0x75a136*/
       a4 = a4; /*0x75a1a0*/
-      return (*(int (__thiscall **)(int, int *, int))(this->M4 + 36))(&this->M4, a3, a4) != a4; /*0x75a1b3*/
+      return this->M4.vt_slot_36(a3, a4) != a4; /*0x75a1b3*/
     case 6: /*0x75a136*/
   LABEL_5:
       result = 1; /*0x75a1b6*/
       break; /*0x75a1bc*/
     case 7: /*0x75a136*/
-      result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(&this->M4, a4, a3) == 0; /*0x75a1d7*/
+      result = this->M4.vt_slot_40(a4, a3) == 0; /*0x75a1d7*/
       break; /*0x75a1d8*/
     case 8: /*0x75a136*/
       if ( a4 <= 0 ) /*0x75a1e1*/
       {
         v10 = &this->M4; /*0x75a21c*/
-        result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(&this->M4, a4, a3) == 0; /*0x75a22a*/
+        result = this->M4.vt_slot_40(a4, a3) == 0; /*0x75a22a*/
         if ( !result ) /*0x75a22b*/
         {
           result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v10, &a4, 1) != 1; /*0x75a240*/
@@ -2092,7 +2092,7 @@ int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
       else
       {
         v9 = &this->M4; /*0x75a1ea*/
-        result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(&this->M4, a4 - 1, a3) == 0; /*0x75a1f9*/
+        result = this->M4.vt_slot_40(a4 - 1, a3) == 0; /*0x75a1f9*/
         if ( !result ) /*0x75a1fa*/
           result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v9, &a4, 1) != 1; /*0x75a210*/
       }
@@ -3061,7 +3061,7 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
   v13[1] = aP1; /*0x753fd3*/
   v13[2] = aP2; /*0x753fd6*/
   v13[17] = a9; /*0x753fd9*/
-  v14 = (float *)(v13 + 3); /*0x753fdc*/
+  v14 = &v13->u32_3; /*0x753fdc*/
   v15 = (float *)(Info + 64); /*0x753fdf*/
   do /*0x7540c6*/
   {
@@ -3085,7 +3085,7 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
     if ( *v14 < (double)*(float *)&dword_B2D5E0 ) /*0x75406e*/
       dword_B2D5E0 = *(unsigned int *)v14; /*0x754072*/
     if ( v14[1] < (double)*(float *)&dword_B2D5E4 ) /*0x754085*/
-      dword_B2D5E4 = *((unsigned int *)v14 + 1); /*0x75408a*/
+      dword_B2D5E4 = v14->vtable2; /*0x75408a*/
     if ( *v14 > (double)*(float *)&stru_B2D93C.Buffer_field_0C ) /*0x75409d*/
       stru_B2D93C.Buffer_field_0C = *(int *)v14; /*0x7540a1*/
     if ( v14[1] > (double)*(float *)&stru_B2D93C.Buffer_field_10 ) /*0x7540b5*/
@@ -3447,12 +3447,12 @@ unsigned int * E4Recv_755CB0::sub_755CB0()
 {
 
   LOBYTE(this->AbstractClass) = 0; /*0x755cb4*/
-  this->? = 0; /*0x755cb6*/
-  this->? = 0; /*0x755cb9*/
-  this->? = 0; /*0x755cbc*/
-  this->? = 0; /*0x755cbf*/
-  this->? = 0; /*0x755cc2*/
-  this->? = 0; /*0x755cc5*/
+  this->M4 = 0; /*0x755cb6*/
+  this->M8 = 0; /*0x755cb9*/
+  this->M12 = 0; /*0x755cbc*/
+  this->M16 = 0; /*0x755cbf*/
+  this->M20 = 0; /*0x755cc2*/
+  this->q018 = 0; /*0x755cc5*/
   return &this->AbstractClass; /*0x755cc8*/
 
 }
@@ -3463,7 +3463,7 @@ namespace gamemd {
 int E4Recv_7564A0::sub_7564A0(int a2)
 {
 
-  return this->? + 12 * a2; /*0x7564ad*/
+  return this->M16 + 12 * a2; /*0x7564ad*/
 
 }
 } // namespace gamemd
@@ -3485,8 +3485,8 @@ float * E4Recv_7564E0::sub_7564E0(float * a2, int a3, int a4)
   float v14; // [esp+10h] [ebp-8h]
   float v15; // [esp+14h] [ebp-4h]
 
-  uniqueId = this->?; /*0x7564e7*/
-  abstractFlags = this->?; /*0x7564ea*/
+  uniqueId = this->M16; /*0x7564e7*/
+  abstractFlags = this->M20; /*0x7564ea*/
   v6 = 41 * (a4 + *(unsigned int *)(uniqueId + 12 * a3)); /*0x7564fc*/
   v7 = *(float *)(abstractFlags + 4 * v6 + 112) + *(float *)(abstractFlags + 4 * v6 + 88); /*0x756503*/
   v8 = (float *)(abstractFlags + 164 * (a4 + *(unsigned int *)(uniqueId + 12 * a3))); /*0x75650b*/
@@ -3509,7 +3509,7 @@ namespace gamemd {
 int E4Recv_756570::sub_756570()
 {
 
-  return (int)this->? + 164 * (int)this->? + 12 * (int)this->? + 28; /*0x75658c*/
+  return (int)this->M12 + 164 * (int)this->M12 + 12 * (int)this->M12 + 28; /*0x75658c*/
 
 }
 } // namespace gamemd
@@ -3522,7 +3522,7 @@ BOOL E4Recv_7589F0::sub_7589F0(int a2)
   BOOL v4; // ebx
 
   (*(void (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x758a01*/
-  v4 = (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, this->?, 768) != 768; /*0x758a1b*/
+  v4 = (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, this->M16, 768) != 768; /*0x758a1b*/
   (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2); /*0x758a24*/
   return v4; /*0x758a27*/
 
@@ -3542,7 +3542,7 @@ char E4Recv_758E10::sub_758E10(float a2, float a3, float a4)
   double v9; // st4
   float v11; // [esp+4h] [ebp-8h]
 
-  uniqueId = (unsigned __int8 *)this->?; /*0x758e13*/
+  uniqueId = (unsigned __int8 *)this->M16; /*0x758e13*/
   v5 = 0; /*0x758e17*/
   v11 = 100000.0; /*0x758e19*/
   for ( i = 0; i < 256; ++i ) /*0x758e21*/

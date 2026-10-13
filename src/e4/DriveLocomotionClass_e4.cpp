@@ -71,12 +71,12 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x4af81b*/
   if ( !v4->Piggybackee ) /*0x4af826*/
   {
-    v12 = *(unsigned int *)v3->__pad_0; /*0x4af8c3*/
+    v12 = *(unsigned int *)v3->IStream_field_00; /*0x4af8c3*/
     (*((unsigned char *)&(a3))) = 0; /*0x4af8cf*/
     (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
     return IPersistStream; /*0x4af8d8*/
   }
-  v6 = *(unsigned int *)v3->__pad_0; /*0x4af82c*/
+  v6 = *(unsigned int *)v3->IStream_field_00; /*0x4af82c*/
   (*((unsigned char *)&(a3))) = 1; /*0x4af838*/
   (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
   Piggybackee = v4->Piggybackee; /*0x4af840*/
@@ -135,8 +135,8 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)Block->0 = &vt_DriveLocomotionClass; /*0x4b4d03*/
-  *(unsigned int *)&Block->0[4] = &vt_DriveLocomotionClass; /*0x4b4d09*/
-  *(unsigned int *)Block->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
+  *&Block->u32_68 = &vt_DriveLocomotionClass; /*0x4b4d09*/
+  *(unsigned int *)Block->u32_18 = &off_7E7E8C; /*0x4b4d10*/
   Piggybackee = Block->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/

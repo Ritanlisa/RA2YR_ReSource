@@ -62,7 +62,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 
   ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x5fe259*/
   this->Strength = 1; /*0x5fe265*/
-  *(unsigned int *)&this->Wall = 1; /*0x5fe26b*/
+  *&this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
   this->RadarColor[1] = 1; /*0x5fe277*/
   this->LandType[0] = -1; /*0x5fe280*/
@@ -79,33 +79,33 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->IsARock = 0; /*0x5fe2c6*/
   this->RadarColor[0] = 0; /*0x5fe2cc*/
   this->RadarColor[2] = 0; /*0x5fe2d2*/
-  this->__tail_2B5[0] = 0; /*0x5fe2d8*/
-  this->__tail_2B5[1] = 0; /*0x5fe2de*/
-  this->__tail_2B5[2] = 0; /*0x5fe2e4*/
-  *((unsigned char *)this + 696) = 0; /*0x5fe2ea*/
+  this->IsARock_d = 0; /*0x5fe2d8*/
+  this->q2B6 = 0; /*0x5fe2de*/
+  this->q2B7 = 0; /*0x5fe2e4*/
+  this->ParticleTypeClass_2B8 = 0; /*0x5fe2ea*/
   this->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
   this->? = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
-  this->? = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
+  this->vtable3 = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
   this->? = &OverlayTypeClass::`vftable'; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
-  this->? = 1; /*0x5fe310*/
-  this->? = 0; /*0x5fe317*/
-  this->? = 1; /*0x5fe31d*/
-  this->? = 0; /*0x5fe324*/
-  v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fe32a*/
-  if ( *(int *)&stru_A83D50.__pad_3C[4] < (int)stru_A83D50.SuperClass_field_0x38 /*0x5fe368*/
-    || (stru_A83D50.__pad_3C[1] || !stru_A83D50.SuperClass_field_0x38)
-    && *(int *)&stru_A83D50.__pad_3C[8] > 0
-    && (v4 = (*((unsigned __int8 (**)(void **, char *, unsigned int))stru_A83D50.SuperClass_field_0x30 + 2))(
-               &stru_A83D50.SuperClass_field_0x30,
-               (char *)stru_A83D50.SuperClass_field_0x38 + *(unsigned int *)&stru_A83D50.__pad_3C[8],
+  this->RadarInvisible_d = 1; /*0x5fe310*/
+  this->Selectable_d = 0; /*0x5fe317*/
+  this->Insignificant_d = 1; /*0x5fe31d*/
+  this->AllowCellContent_d = 0; /*0x5fe324*/
+  v3 = *(unsigned int *)&g_ObjectTypeConfig; /*0x5fe32a*/
+  if ( *(int *)&g_ObjectTypeConfig < (int)DataGlobal_A83D88 /*0x5fe368*/
+    || (DataGlobal_A83D8D || !DataGlobal_A83D88)
+    && *(int *)&DataGlobal_A83D94 > 0
+    && (v4 = (*((unsigned __int8 (**)(void **, char *, unsigned int))DataGlobal_A83D80 + 2))(
+               &DataGlobal_A83D80,
+               (char *)DataGlobal_A83D88 + *(unsigned int *)&DataGlobal_A83D94,
                0) == 0,
-        v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4],
+        v3 = *(unsigned int *)&g_ObjectTypeConfig,
         !v4) )
   {
-    *(unsigned int *)&stru_A83D50.__pad_3C[4] = v3 + 1; /*0x5fe36d*/
-    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3) = this; /*0x5fe377*/
-    v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fe37a*/
+    *(unsigned int *)&g_ObjectTypeConfig = v3 + 1; /*0x5fe36d*/
+    *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v3) = this; /*0x5fe377*/
+    v3 = *(unsigned int *)&g_ObjectTypeConfig; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
   if ( v3 <= 0 ) /*0x5fe383*/
@@ -116,7 +116,7 @@ LABEL_11:
   }
   else
   {
-    v6 = *(OverlayTypeClass ***)stru_A83D50.__pad_34; /*0x5fe385*/
+    v6 = *(OverlayTypeClass ***)g_BuildingTypeClass_Array; /*0x5fe385*/
     while ( *v6 != this ) /*0x5fe38d*/
     {
       ++v5; /*0x5fe38f*/
@@ -217,7 +217,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   aP1->DamageLevels = (int)v13; /*0x5fe8a0*/
   aP1->Strength_2 = INIClass::ReadInt_Overwrite( /*0x5fe8c3*/
-                       (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                       (bool *)&DataGlobal_887180,
                        (uint8_t *)aP1->ImageFile,
                        aDamagelevels,
                        aP1->Strength_2);
@@ -318,24 +318,24 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   int v6; // [esp+68h] [ebp-208h]
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
-  result = this->?; /*0x5fede9*/
+  result = this->Image; /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
     Debug::Log(); /*0x5fee0e*/
-    if ( this->? ) /*0x5fee13*/
+    if ( this->Theater_d ) /*0x5fee13*/
     {
-      _makepath(Buffer, 0, 0, this->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
+      _makepath(Buffer, 0, 0, this->LandType, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x5fee4f*/
     }
-    else if ( this->? ) /*0x5fee59*/
+    else if ( this->NewTheater_d ) /*0x5fee59*/
     {
-      _makepath(Buffer, 0, 0, this->?, Ext); /*0x5fee78*/
+      _makepath(Buffer, 0, 0, this->LandType, Ext); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
     v3 = (SHPStruct *)CCFileClass::ReadEntireFile(&v4); /*0x5feead*/
-    this->? = v3; /*0x5feeb1*/
+    this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
-      this->? = 1; /*0x5feeb9*/
+      this->ImageAllocated = 1; /*0x5feeb9*/
     *(unsigned int *)v4.CDFileClass = &CCFileClass::`vftable'; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
@@ -356,56 +356,56 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
 
   ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
-  *(unsigned int *)&this->RadarColor[2] = -1; /*0x6440b9*/
-  *((unsigned int *)this + 174) = -1; /*0x6440bf*/
+  *&this->ChargerBarrels_0x12 = -1; /*0x6440b9*/
+  this->ParticleTypeClass_2B8 = -1; /*0x6440bf*/
   LOBYTE(this->CellAnim) = 0; /*0x6440c5*/
   this->DamageLevels = 1; /*0x6440cb*/
   this->Strength = 0; /*0x6440d5*/
-  *(unsigned int *)&this->Wall = 50; /*0x6440db*/
-  *(unsigned int *)&this->NoUseTileLandType = 0; /*0x6440e5*/
-  *(unsigned int *)&this->Explodes = 0; /*0x6440eb*/
-  *(unsigned int *)&this->IsRubble = 0; /*0x6440f1*/
-  *((unsigned int *)this + 175) = 0; /*0x6440fc*/
-  *((unsigned int *)this + 176) = 0; /*0x644102*/
-  *((unsigned int *)this + 177) = 0; /*0x644108*/
-  *((unsigned int *)this + 178) = -1717986918; /*0x64410e*/
-  *((unsigned int *)this + 180) = -1717986918; /*0x644114*/
-  *((unsigned int *)this + 182) = 0; /*0x64411a*/
-  *((unsigned int *)this + 184) = 0; /*0x644120*/
-  *((unsigned int *)this + 186) = 0; /*0x644126*/
-  *((unsigned int *)this + 188) = 0; /*0x64412c*/
-  *((unsigned int *)this + 190) = 0; /*0x644132*/
-  *((unsigned int *)this + 179) = 1069128089; /*0x64413b*/
-  *((unsigned int *)this + 181) = 1067030937; /*0x644145*/
-  *((unsigned int *)this + 183) = 1077477376; /*0x64414f*/
-  *((unsigned int *)this + 185) = 0; /*0x644159*/
-  *((unsigned int *)this + 187) = 0; /*0x64415f*/
-  *((unsigned int *)this + 189) = 0; /*0x644165*/
-  *((unsigned int *)this + 191) = 0; /*0x64416b*/
-  *((unsigned int *)this + 192) = 0; /*0x644171*/
-  *((unsigned int *)this + 193) = 0; /*0x644177*/
-  *((unsigned char *)this + 776) = 0; /*0x64417d*/
-  *((unsigned char *)this + 777) = 0; /*0x644183*/
-  *((unsigned char *)this + 778) = 0; /*0x644189*/
-  *((unsigned char *)this + 779) = 0; /*0x644190*/
-  *((unsigned char *)this + 780) = 0; /*0x644196*/
+  *&this->Wall = 50; /*0x6440db*/
+  *&this->NoUseTileLandType = 0; /*0x6440e5*/
+  *&this->Explodes = 0; /*0x6440eb*/
+  *&this->IsRubble = 0; /*0x6440f1*/
+  this->u32_2BC = 0; /*0x6440fc*/
+  this->q2C0 = 0; /*0x644102*/
+  this->u32_2C4 = 0; /*0x644108*/
+  this->u32_2C8 = -1717986918; /*0x64410e*/
+  this->u32_2D0 = -1717986918; /*0x644114*/
+  this->u32_2D8 = 0; /*0x64411a*/
+  this->q2E0 = 0; /*0x644120*/
+  this->u32_2E8 = 0; /*0x644126*/
+  this->u32_2F0 = 0; /*0x64412c*/
+  this->u32_2F8 = 0; /*0x644132*/
+  this->u32_2CC = 1069128089; /*0x64413b*/
+  this->u32_2D4 = 1067030937; /*0x644145*/
+  this->u32_2DC = 1077477376; /*0x64414f*/
+  this->u32_2E4 = 0; /*0x644159*/
+  this->u32_2EC = 0; /*0x64415f*/
+  this->u32_2F4 = 0; /*0x644165*/
+  this->u32_2FC = 0; /*0x64416b*/
+  this->u32_300 = 0; /*0x644171*/
+  this->u32_304 = 0; /*0x644177*/
+  this->u32_308 = 0; /*0x64417d*/
+  this->u32_309 = 0; /*0x644183*/
+  this->u32_30A = 0; /*0x644189*/
+  this->u32_30B = 0; /*0x644190*/
+  this->u32_30C = 0; /*0x644196*/
   this->ObjectTypeClass = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
   this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
-  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
+  this->vtable3 = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
   this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6441b6*/
-  if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
-    || (BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(unsigned int *)&stru_A83D50.__pad_14[12])
-    && (int)stru_A83D50.SuperClass_field_0x2C > 0
-    && (*(unsigned __int8 (**)(char *, char *, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 8))(
-         &stru_A83D50.__pad_14[4],
-         (char *)stru_A83D50.SuperClass_field_0x2C + *(unsigned int *)&stru_A83D50.__pad_14[12],
+  AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
+  if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
+    || (BYTE1(DataGlobal_A83D74) || !*(unsigned int *)&DataGlobal_A83D70)
+    && (int)DataGlobal_A83D7C > 0
+    && (*(unsigned __int8 (**)(char *, char *, unsigned int))(*(unsigned int *)&DataGlobal_A83D68 + 8))(
+         &DataGlobal_A83D68,
+         (char *)DataGlobal_A83D7C + *(unsigned int *)&DataGlobal_A83D70,
          0) )
   {
-    v3 = stru_A83D50.SuperClass_field_0x28++; /*0x6441fc*/
-    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = this; /*0x64420b*/
+    v3 = g_InfantryTypeInitState++; /*0x6441fc*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * (unsigned int)v3) = this; /*0x64420b*/
   }
-  this->? = 1; /*0x64420e*/
+  this->IsLogic_d = 1; /*0x64420e*/
   return &this->ObjectTypeClass; /*0x644217*/
 
 }
@@ -499,7 +499,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
     (int)g_DSurface_Hidden_2,
-    *(int *)&stru_87F5F0.__pad_58[112],
+    *(int *)&DataGlobal_87F6B8,
     v5,
     a4,
     v6,
@@ -522,8 +522,8 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1)
 {
   a0->vfptr = (void *)*aP1; /*0x5fea3d*/
-  a0->vfptr1 = (void *)aP1[1]; /*0x5fea42*/
-  a0->vfptr2 = (void *)aP1[2]; /*0x5fea49*/
+  a0->vfptr1 = aP1->vtable2; /*0x5fea42*/
+  a0->vfptr2 = aP1->vtable3; /*0x5fea49*/
   return &a0->vfptr; /*0x5fea45*/
 }
 }  // G42.18c ns repair
@@ -542,7 +542,7 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
   Power::TimerProcess(this->Strength); /*0x5fea83*/
-  Power::TimerProcess(*(unsigned int *)&this->Wall); /*0x5fea91*/
+  Power::TimerProcess(*&this->Wall); /*0x5fea91*/
   LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
   Power::FlagProcess((Power *)a2, v3); /*0x5fea9f*/
   LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
@@ -604,7 +604,7 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
     {
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
       *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
-      *(unsigned char *)(a2 + 2) = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
+      a2->u8_2 = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
       return a2; /*0x5feda4*/
     }
     else
@@ -612,17 +612,17 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
       v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
       v11 = *(unsigned short *)v7; /*0x5fed67*/
       v8 = HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
-      BYTE1(a3) = *(unsigned char *)(v7 + 2); /*0x5fed73*/
+      BYTE1(a3) = v7->u32_2; /*0x5fed73*/
       LOBYTE(a3) = v11; /*0x5fed7b*/
       *(unsigned short *)a2 = a3; /*0x5fed86*/
-      *(unsigned char *)(a2 + 2) = v8; /*0x5fed8a*/
+      a2->u8_2 = v8; /*0x5fed8a*/
       return a2; /*0x5fed77*/
     }
   }
   else
   {
     *(unsigned short *)a2 = 0; /*0x5fedd2*/
-    *(unsigned char *)(a2 + 2) = 0; /*0x5fedd6*/
+    a2->u8_2 = 0; /*0x5fedd6*/
     return a2; /*0x5fedbb*/
   }
 
@@ -656,20 +656,20 @@ namespace gamemd {
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
     this->ObjectTypeClass = &vt_OverlayTypeClass;
-    ((unsigned int *)this)[0] = &vt_OverlayTypeClass;
-    ((unsigned int *)this)[0] = &vt_OverlayTypeClass;
-    ((unsigned int *)this)[0] = &vt_OverlayTypeClass;
+    this->vtable1 = &vt_OverlayTypeClass;
+    this->vtable1 = &vt_OverlayTypeClass;
+    this->vtable1 = &vt_OverlayTypeClass;
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
-  v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
-         &stru_A83D50.SuperClass_field_0x30,
+  v3 = (*((int (**)(void **, OverlayTypeClass **))DataGlobal_A83D80 + 4))( /*0x5fef6a*/
+         &DataGlobal_A83D80,
          &v5);
-  if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fef7a*/
+  if ( v3 != -1 && v3 < *(int *)&g_ObjectTypeConfig ) /*0x5fef7a*/
   {
-    --*(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fef7f*/
+    --*(unsigned int *)&g_ObjectTypeConfig; /*0x5fef7f*/
     for ( ; /*0x5fef85*/
-          v3 < *(int *)&stru_A83D50.__pad_3C[4];
-          *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
+          v3 < *(int *)&g_ObjectTypeConfig;
+          *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array
                                                                                 + 4 * v3) )
     {
       ++v3; /*0x5fef8d*/

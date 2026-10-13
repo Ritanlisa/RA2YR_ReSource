@@ -45,10 +45,10 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
   else
     v5 = 0; /*0x4138f4*/
   v6 = 19; /*0x41390d*/
-  if ( v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20) <= 19 ) /*0x413921*/
-    v6 = v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413923*/
-  v7 = *(unsigned int *)&stru_87F5F0.__pad_58[720] / 20; /*0x41393e*/
-  v8 = v5 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x413941*/
+  if ( v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20) <= 19 ) /*0x413921*/
+    v6 = v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413923*/
+  v7 = *(unsigned int *)&g_AircraftTrackerState / 20; /*0x41393e*/
+  v8 = v5 / (*(unsigned int *)&g_AircraftTrackerState / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
   v9 = v6 + 20 * v8; /*0x413957*/
@@ -60,7 +60,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
     v11 = (*((signed short *)(((unsigned char *)&(aP3)) + 2))); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
-  v12 = v10 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413975*/
+  v12 = v10 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413975*/
   v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
@@ -111,8 +111,8 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 
   int v3; // [esp+0h] [ebp-4h]
 
-  LOWORD(v3) = *(unsigned int *)this->__pad_0 / 256; /*0x413a3f*/
-  HIWORD(v3) = *(unsigned int *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
+  LOWORD(v3) = *(unsigned int *)this->__pad_000 / 256; /*0x413a3f*/
+  HIWORD(v3) = *&this->u32_4 / 256; /*0x413a53*/
   *aP1 = v3; /*0x413a60*/
   return aP1; /*0x413a63*/
 
@@ -123,10 +123,10 @@ namespace gamemd {
 void * Coord::Subtract(int aP1, int aP2, int aP3)
 {
 
-  *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
-  *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
-  this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
-  return this->__pad_0; /*0x41c246*/
+  *(unsigned int *)this->__pad_000 = aP1; /*0x41c23a*/
+  *&this->u32_4 = aP2; /*0x41c240*/
+  this->u32_8 = (void *)aP3; /*0x41c243*/
+  return this->__pad_000; /*0x41c246*/
 
 }
 }
@@ -139,10 +139,10 @@ int Coord::Length()
   __int64 result; // rax
   int v3; // kr00_4
 
-  Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
+  Coord_field_0x8 = (double)(int)this->u32_8; /*0x41c380*/
   Math::Sqrt( /*0x41c3a4*/
-    (double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0
-  + (double)*(int *)&this->Coord_field_0x2[2] * (double)*(int *)&this->Coord_field_0x2[2]
+    (double)*(int *)this->__pad_000 * (double)*(int *)this->__pad_000
+  + (double)*&this->u32_4 * (double)*&this->u32_4
   + Coord_field_0x8 * Coord_field_0x8);
   v3 = Math::RoundToInt(Coord_field_0x8); /*0x41c3ac*/
   WORD2(result) = HIWORD(v3); /*0x41c3ac*/
@@ -167,8 +167,8 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
   v6 = v6; /*0x4399ba*/
   (*((unsigned short *)&(v8))) = Math::RoundToInt(*(float *)(v2 + 32)); /*0x4399bc*/
   *outCoords = v4; /*0x4399c7*/
-  outCoords->u32_4 = v6; /*0x4399cb*/
-  outCoords->u32_8 = v8; /*0x4399cf*/
+  outCoords->vtable2 = v6; /*0x4399cb*/
+  outCoords->vtable3 = v8; /*0x4399cf*/
   return (int)outCoords; /*0x4399c9*/
 }
 }
@@ -198,9 +198,9 @@ void * Coord::To_Cell(unsigned int *aP1)
 
   v2 = aP1[1] / 256; /*0x56574f*/
   v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
-  if ( v3 >= 0 && v3 < *((unsigned int *)this + 80) ) /*0x565764*/
+  if ( v3 >= 0 && v3 < this->u32_140 ) /*0x565764*/
   {
-    v4 = (CellClass *)*((unsigned int *)this->Coord_field_0x13C + v3); /*0x56576c*/
+    v4 = (CellClass *)*((unsigned int *)this->q13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
@@ -233,19 +233,19 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 
   v4 = *aP2; /*0x6557f7*/
   v5 = aP2[1]; /*0x6557f9*/
-  LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (*((unsigned int *)this + 1316) << 8) - v5) * *((float *)this + 1314) * 0.00390625); /*0x655820*/
+  LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625); /*0x655820*/
   v8 = v7; /*0x65582b*/
-  LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (*((unsigned int *)this + 1318) << 8)) * *((float *)this + 1314) * 0.00390625); /*0x655848*/
+  LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625); /*0x655848*/
   if ( a4 ) /*0x655853*/
   {
     if ( v8 < 0 ) /*0x655857*/
       v8 = 0; /*0x655859*/
-    v10 = *((unsigned int *)this + 1321); /*0x65585b*/
+    v10 = this->u32_14A4; /*0x65585b*/
     if ( v8 >= v10 ) /*0x655863*/
       v8 = v10 - 1; /*0x655865*/
     if ( v9 < 0 ) /*0x65586a*/
       v9 = 0; /*0x65586c*/
-    v11 = *((unsigned int *)this + 1322); /*0x65586e*/
+    v11 = this->u32_14A8; /*0x65586e*/
     if ( v9 >= v11 ) /*0x655876*/
       v9 = v11 - 1; /*0x655878*/
   }
@@ -273,8 +273,8 @@ AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
   LOWORD(v6) = Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
   *a3 = v4; /*0x6d21fd*/
   a3[1] = v5 - v6; /*0x6d21ff*/
-  v7 = *a3 - *(unsigned int *)&this->__pad_C[164]; /*0x6d2213*/
-  v8 = a3[1] - *(unsigned int *)&this->__pad_C[168]; /*0x6d2215*/
+  v7 = *a3 - *&this->u32_B0; /*0x6d2213*/
+  v8 = a3[1] - *&this->u32_B4; /*0x6d2215*/
   *a3 = v7; /*0x6d2217*/
   a3[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
@@ -297,9 +297,9 @@ void * Coord::Divide(int * a2, int a3)
 
   if ( a3 ) /*0x710708*/
   {
-    v4 = *(unsigned int *)&this->Coord_field_0x2[2] / a3; /*0x71072f*/
-    v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
-    *a2 = *(unsigned int *)this->__pad_0 / a3; /*0x71073d*/
+    v4 = *&this->u32_4 / a3; /*0x71072f*/
+    v5 = (int)this->u32_8 / a3; /*0x710735*/
+    *a2 = *(unsigned int *)this->__pad_000 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/
   }

@@ -170,13 +170,13 @@ void Lobby::UpdatePlayerLabels()
     v34 = 0; /*0x5eb13d*/
     if ( v36 == g_MPCooperativeState ) /*0x5eb142*/
     {
-      if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5eb151*/
+      if ( *(unsigned int *)&g_GameRulesOptions == -1 ) /*0x5eb151*/
       {
         PlayerCountMap = 8; /*0x5eb153*/
       }
       else
       {
-        PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb165*/
+        PlayerCountMap = ReadPlayerCountMap(*(int *)&g_GameRulesOptions); /*0x5eb165*/
         if ( dword_A8B23C ) /*0x5eb169*/
         {
           v4 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5eb16d*/
@@ -209,33 +209,33 @@ void Lobby::UpdatePlayerLabels()
     }
     if ( v36 )
     {
-      if ( v36 == (ObjectClass *)1 )
+      if ( v36 == 1 )
       {
         v6 = 1042; /*0x5eb203*/
       }
-      else if ( v36 == (ObjectClass *)2 )
+      else if ( v36 == 2 )
       {
         v6 = 1043; /*0x5eb20f*/
       }
-      else if ( v36 == (ObjectClass *)3 )
+      else if ( v36 == 3 )
       {
         v6 = 1044; /*0x5eb21b*/
       }
-      else if ( v36 == (ObjectClass *)4 )
+      else if ( v36 == 4 )
       {
         v6 = 1045; /*0x5eb227*/
       }
-      else if ( v36 == (ObjectClass *)5 )
+      else if ( v36 == 5 )
       {
         v6 = 1046; /*0x5eb233*/
       }
-      else if ( v36 == (ObjectClass *)6 )
+      else if ( v36 == 6 )
       {
         v6 = 1047; /*0x5eb23f*/
       }
       else
       {
-        v6 = v36 != (ObjectClass *)7 ? -1 : 1048;
+        v6 = v36 != 7 ? -1 : 1048;
       }
     }
     else
@@ -290,7 +290,7 @@ void Lobby::UpdatePlayerLabels()
     }
     ((WideString *)((wchar_t **)&v38))->Assign(v10); /*0x5eb39f*/
     v12 = CharToWideString(unk_A8B380); /*0x5eb3a9*/
-    if ( !wcscmp((const wchar_t *)v12, (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5eb3b4*/
+    if ( !wcscmp((const wchar_t *)v12, (const wchar_t *)&g_CurrentPlayerName) ) /*0x5eb3b4*/
     {
       if ( v9 /*0x5eb3fe*/
         && v9 != (wchar_t *)g_HouseClass_ObserverFlags
@@ -313,13 +313,13 @@ void Lobby::UpdatePlayerLabels()
         {
           if ( !v34 || v36 != g_MPCooperativeState ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
-          if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5eb458*/
+          if ( *(unsigned int *)&g_GameRulesOptions == -1 ) /*0x5eb458*/
           {
             v17 = 8; /*0x5eb45a*/
           }
           else
           {
-            v17 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb46c*/
+            v17 = ReadPlayerCountMap(*(int *)&g_GameRulesOptions); /*0x5eb46c*/
             if ( dword_A8B23C ) /*0x5eb470*/
             {
               v18 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 38))(dword_A8B23C); /*0x5eb474*/
@@ -380,7 +380,7 @@ void Lobby::UpdatePlayerLabels()
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
     DeleteAndZero::Alt((DeleteAndZero *)&v38); /*0x5eb638*/
-    v36 = (ObjectClass *)((char *)&v16->vfptr + 1); /*0x5eb641*/
+    v36 = (ObjectClass *)v16->vtable1 + 1); /*0x5eb641*/
   }
   while ( (int)&v16->vfptr + 1 < 8 );
 }
@@ -419,37 +419,37 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
     {
       if ( v1 ) /*0x5eba2a*/
       {
-        if ( v1 == (ObjectClass *)1 ) /*0x5eba3b*/
+        if ( v1 == 1 ) /*0x5eba3b*/
         {
           v3 = 1747; /*0x5eba3d*/
           v4 = 1042; /*0x5eba42*/
         }
-        else if ( v1 == (ObjectClass *)2 ) /*0x5eba4c*/
+        else if ( v1 == 2 ) /*0x5eba4c*/
         {
           v3 = 1748; /*0x5eba4e*/
           v4 = 1043; /*0x5eba53*/
         }
-        else if ( v1 == (ObjectClass *)3 ) /*0x5eba5d*/
+        else if ( v1 == 3 ) /*0x5eba5d*/
         {
           v3 = 1749; /*0x5eba5f*/
           v4 = 1044; /*0x5eba64*/
         }
-        else if ( v1 == (ObjectClass *)4 ) /*0x5eba6e*/
+        else if ( v1 == 4 ) /*0x5eba6e*/
         {
           v3 = 1750; /*0x5eba70*/
           v4 = 1045; /*0x5eba75*/
         }
-        else if ( v1 == (ObjectClass *)5 ) /*0x5eba7f*/
+        else if ( v1 == 5 ) /*0x5eba7f*/
         {
           v3 = 1751; /*0x5eba81*/
           v4 = 1046; /*0x5eba86*/
         }
-        else if ( v1 == (ObjectClass *)6 ) /*0x5eba90*/
+        else if ( v1 == 6 ) /*0x5eba90*/
         {
           v3 = 1752; /*0x5eba92*/
           v4 = 1047; /*0x5eba97*/
         }
-        else if ( v1 == (ObjectClass *)7 ) /*0x5ebaa1*/
+        else if ( v1 == 7 ) /*0x5ebaa1*/
         {
           v3 = 1753; /*0x5ebaa3*/
           v4 = 1048; /*0x5ebaa8*/

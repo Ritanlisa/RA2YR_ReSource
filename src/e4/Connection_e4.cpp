@@ -12,7 +12,7 @@ int Connection::GetSpeed()
 {
 
   if ( this->Initialized && this->Active ) /*0x5422f7*/
-    return *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 18) + 4) + 56); /*0x542304*/
+    return *(unsigned int *)(*(unsigned int *)(this->u32_48 + 4) + 56); /*0x542304*/
   else
     return 0; /*0x542308*/
 
@@ -25,9 +25,9 @@ int Connection::Close()
 
   int result; // eax
 
-  result = (int)this->Connection_field_0x48; /*0x543090*/
+  result = (int)this->u32_48; /*0x543090*/
   if ( result ) /*0x543095*/
-    *(unsigned char *)(result + 200) = 1; /*0x543097*/
+    result->u8_C8 = 1; /*0x543097*/
   return result; /*0x54309e*/
 
 }

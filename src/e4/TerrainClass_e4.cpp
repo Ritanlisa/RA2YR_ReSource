@@ -277,11 +277,11 @@ LABEL_162:
         return 1;
       *(unsigned int *)&v54-((unsigned int *)(>q000))[8] = CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
                                                                       + 4584));
-      *(unsigned int *)v54->q000 = -1;
+      *(unsigned int *)v54->vtable1 = -1;
       ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x19:
-      int v57 = CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4584));
+      int v57 = CDTimerClass::TimeRemaining((*&HouseClass_Player->u32_1D390 + 4584));
       ((Timer *)(&v131))->Start((int)((DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57)));
       int v58 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
       *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v131);
@@ -292,9 +292,9 @@ LABEL_162:
       ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x1A:
-      if ( CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
+      if ( CDTimerClass::TimeRemaining((*&HouseClass_Player->u32_1D390 + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
       {
-        int v60 = CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4584));
+        int v60 = CDTimerClass::TimeRemaining((*&HouseClass_Player->u32_1D390 + 4584));
         ((Timer *)(&v113))->Start((int)((DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144))));
         ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)))))));
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = (unsigned int)(v113);
@@ -331,10 +331,10 @@ LABEL_162:
       ((ObjectClass *)(&(&stru_87C374)[13428]))->PreDraw();
       return 1;
     case 0x1C:
-      ((ScenarioClass *)(*(unsigned char **)&((unsigned int *)HouseClass_Player)[29924]))->SetGlobalToByID(*(unsigned int *)((char *)a1 +44), 1);
+      ((ScenarioClass *)(*&HouseClass_Player->u32_1D390))->SetGlobalToByID(*(unsigned int *)((char *)a1 +44), 1);
       return 1;
     case 0x1D:
-      ((ScenarioClass *)(*(unsigned char **)&((unsigned int *)HouseClass_Player)[29924]))->SetGlobalToByID(*(unsigned int *)((char *)a1 +44), 0);
+      ((ScenarioClass *)(*&HouseClass_Player->u32_1D390))->SetGlobalToByID(*(unsigned int *)((char *)a1 +44), 0);
       return 1;
     case 0x1E:
       if ( !*(unsigned char *)((unsigned int)(a1)+ 144) )
@@ -446,7 +446,7 @@ LABEL_157:
       UpdateMouse();
       return 1;
     case 0x30:
-      v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned int *)HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)((unsigned int)(a1)+ 68));
+      v112 = (IUnknown *)*((ScenarioClass*)(*&HouseClass_Player->u32_1D390))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)((unsigned int)(a1)+ 68));
       v82 = (CellStruct **)((CoordStruct *)&v131)->Set2((int16_t *)((IUnknown *)&v112), 0);
       v113 = *v82;
       v128 = v82[1];
@@ -467,7 +467,7 @@ LABEL_157:
       *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44976] + 192) = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652]
                                                                                + 1360);
       *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44976] + 196) = *(unsigned int *)(v83 + 4);
-      ((unsigned int *)HouseClass_Player)[45136] = 1;
+      HouseClass_Player->u32_2C140 = 1;
       ((Timer*)(*(HWND **)&((unsigned char *)&stru_87C374)[13308]))->PumpMessages();
       (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 12))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
       ((Mouse *)((unsigned char *)&stru_87C374 + 13428))->ReleaseCapture();
@@ -913,8 +913,8 @@ LABEL_60:
         if ( ((ScenarioClass *)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Is_Waypoint_Valid(v66) )
         {
           ++v65;
-          *(unsigned int *)v67->q000 = *((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), v66);
-          v67 = (AbstractClass *)((char *)v67 + 4);
+          *(unsigned int *)v67->vtable1 = *((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), v66);
+          v67 = &v67->vtable2;
           if ( v65 == 400 )
             break;
         }
@@ -922,7 +922,7 @@ LABEL_60:
       }
       while ( v66 < 702 );
       int v68 = Random::Range((gamemd::Random *)((*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 536)), 0, (int)(v65 - 1));
-      unsigned int * v69 = ((CoordStruct *)&v131)->Set2( (IUnknown *)((char *)aP0 + 4 * v68), 0);
+      unsigned int * v69 = ((CoordStruct *)&v131)->Set2( &aP0->vtable2 * v68), 0);
       PlayAudioAt2(*(IUnknown **)(a1 + 144), v69, 0);
       return 1;
     case 0x63:
@@ -1080,10 +1080,10 @@ LABEL_290:
       {
         unsigned int v5; // esi
 
-          v5 = *(unsigned int *)&this->pad_6E[34];
+          v5 = *&this->HouseClass_A20;
         if ( v5 >= 4 || !(uint8_t)PlayerClass::HasPlayers((PlayerClass *)(3988 * v5 + 8916268)) ) /*0x6e4124*/
           return 0; /*0x6e413e*/
-        ((SidebarClass *)((int)&stru_87F5F0.__pad_58[416]))->SwitchTab(v5); /*0x6e4133*/
+        ((SidebarClass *)((int)&DataGlobal_87F7E8))->SwitchTab(v5); /*0x6e4133*/
         return 1; /*0x6e413a*/
       }
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
@@ -1155,8 +1155,8 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       ((ObjectClass *)(v2))->Init((int)&a1); /*0x71ce93*/
       v2->vtable1 = &vt_TerrainClass; /*0x71ce98*/
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
-      ((unsigned int *)v2)[0] = (unsigned int)&vt_TerrainClass; /*0x71cea5*/
-      ((unsigned int *)v2)[0] = (unsigned int)&vt_TerrainClass; /*0x71ceac*/
+      v2->vtable1 = (unsigned int)&vt_TerrainClass; /*0x71cea5*/
+      v2->vtable1 = (unsigned int)&vt_TerrainClass; /*0x71ceac*/
     }
     v14 = (*((int (**)(void **))*p_vtable1 + 4))( (void **)(p_vtable1)); /*0x71cebf*/
     vtable2 = (int)((char *)&g_BuildingLoadQueue_Array); /*0x71cec1*/
@@ -1208,7 +1208,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     LOWORD(aP2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
     HIWORD(aP2) = v5 + v8; /*0x71d06d*/
     a1 = aP2; /*0x71d076*/
-    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a1); /*0x71d080*/
+    v9 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
   v10 = (unsigned int *)(*((int (**)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
@@ -1216,14 +1216,14 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
   this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
   this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
-  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
+  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
-    if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/
-                              + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
+    if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array /*0x71d108*/
+                              + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->__pad_28[28])
                   + 681) )
     {
-      *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
-      Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
+      *(unsigned int *)&Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->__pad_28[28] = -1; /*0x71d123*/
+      Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v3)->powerup = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/

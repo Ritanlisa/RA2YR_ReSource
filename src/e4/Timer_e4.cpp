@@ -15,9 +15,9 @@ namespace gamemd {  // G42.18 ns repair
 void * Timer::Start(int aP1)
 {
 
-  *(unsigned int *)this->__pad_0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x46b64c*/
-  *(unsigned int *)&this->__pad_6[2] = aP1; /*0x46b64e*/
-  return this->__pad_0; /*0x46b651*/
+  *(unsigned int *)this->q000 = *(unsigned int *)&TeamTypeClass_Array; /*0x46b64c*/
+  *&this->ptr_8 = aP1; /*0x46b64e*/
+  return this->q000; /*0x46b651*/
 
 }
 }  // G42.18 ns repair
@@ -33,14 +33,14 @@ int Timer::StartDouble(double a2)
   if ( LOBYTE(this->m_18) || (LOBYTE(result) = BYTE1(this->m_18), (unsigned char)result) ) /*0x4a5252*/
   {
     LOBYTE(this->m_18) = 1; /*0x4a525e*/
-    *(double *)this->__pad_0 = a2 * 900.0; /*0x4a5262*/
+    *(double *)this->q000 = a2 * 900.0; /*0x4a5262*/
     LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
     v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4a5269*/
     BYTE1(this->m_18) = 0; /*0x4a5272*/
-    *(unsigned int *)&this->__pad_6[2] = v4; /*0x4a5276*/
-    *(unsigned int *)&this->__pad_6[6] = v5; /*0x4a527c*/
-    *(unsigned int *)&this->__pad_6[10] = result; /*0x4a527f*/
-    *(unsigned int *)&this->__pad_6[14] = result; /*0x4a5282*/
+    *&this->ptr_8 = v4; /*0x4a5276*/
+    *&this->u32_C = v5; /*0x4a527c*/
+    *&this->u32_10 = result; /*0x4a527f*/
+    *&this->u32_14 = result; /*0x4a5282*/
   }
   return result; /*0x4a5285*/
 
@@ -51,8 +51,8 @@ namespace gamemd {
 DWORD * Timer::Init(DWORD a2)
 {
 
-  *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
-  *(unsigned int *)&this->__pad_6[2] = a2; /*0x4f1b11*/
+  *(unsigned int *)this->q000 = Timer::GetTicks(); /*0x4f1b0b*/
+  *&this->ptr_8 = a2; /*0x4f1b11*/
   return (DWORD *)this; /*0x4f1b16*/
 
 }
@@ -65,10 +65,10 @@ int Timer::GetRemainingMs()
   int v1; // edi
   int v2; // ecx
 
-  v1 = *(unsigned int *)&this->__pad_6[2]; /*0x4f1b26*/
-  if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x4f1b2c*/
-    return *(unsigned int *)&this->__pad_6[2]; /*0x4f1b4c*/
-  v2 = Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
+  v1 = *&this->ptr_8; /*0x4f1b26*/
+  if ( *(unsigned int *)this->q000 == -1 ) /*0x4f1b2c*/
+    return *&this->ptr_8; /*0x4f1b4c*/
+  v2 = Timer::GetTicks() - *(unsigned int *)this->q000; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
   else
@@ -84,19 +84,19 @@ DWORD * Timer::PumpMessages()
   int v2; // eax
   int result; // eax
 
-  if ( (*((unsigned int *)this + 198) + 1) % 256 != *((unsigned int *)this + 197) ) /*0x54f73e*/
+  if ( (this->u32_318 + 1) % 256 != this->u32_314 ) /*0x54f73e*/
     MessageLoop(); /*0x54f740*/
-  v2 = *((unsigned int *)this + 198); /*0x54f745*/
-  *((unsigned int *)this + 197) = v2; /*0x54f74b*/
+  v2 = this->u32_318; /*0x54f745*/
+  this->u32_314 = v2; /*0x54f74b*/
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
   {
-    result = *((unsigned int *)this + 198); /*0x54f77b*/
-    *((unsigned int *)this + 197) = result; /*0x54f781*/
+    result = this->u32_318; /*0x54f77b*/
+    this->u32_314 = result; /*0x54f781*/
   }
   else
   {
     result = (int)MessageLoop(); /*0x54f768*/
-    *((unsigned int *)this + 197) = *((unsigned int *)this + 198); /*0x54f773*/
+    this->u32_314 = this->u32_318; /*0x54f773*/
   }
   return result; /*0x54f779*/
 
@@ -125,9 +125,9 @@ int Timer::GetElapsed()
 
   int v1; // edi
 
-  v1 = *(unsigned int *)&this->__pad_6[2]; /*0x5f1396*/
-  if ( *(unsigned int *)this->__pad_0 != -1 ) /*0x5f139c*/
-    v1 += Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x5f13a8*/
+  v1 = *&this->ptr_8; /*0x5f1396*/
+  if ( *(unsigned int *)this->q000 != -1 ) /*0x5f139c*/
+    v1 += Timer::GetTicks() - *(unsigned int *)this->q000; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
 
 }
@@ -181,9 +181,9 @@ char Timer::SetFlag(char a2)
 
   LOBYTE(result) = a2; /*0x7500b0*/
   if ( a2 ) /*0x7500b6*/
-    *(unsigned int *)this->__pad_0 = 0x40000000; /*0x7500b8*/
+    *(unsigned int *)this->q000 = 0x40000000; /*0x7500b8*/
   else
-    *(unsigned int *)this->__pad_0 = 0; /*0x7500c1*/
+    *(unsigned int *)this->q000 = 0; /*0x7500c1*/
   return result; /*0x7500be*/
 
 }

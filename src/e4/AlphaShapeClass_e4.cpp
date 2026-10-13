@@ -38,7 +38,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int Prefix; // eax
 
-  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x420e4f*/
+  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x420e4f*/
   return Prefix >= 0 ? 0 : Prefix;
 }
 } // namespace gamemd
@@ -50,8 +50,8 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
   int result; // eax
 
   result = a2; /*0x420e70*/
-  if ( a2 == this->AlphaShapeClass_field_0x24 ) /*0x420e79*/
-    *((unsigned char *)this + 60) = 1; /*0x420e7b*/
+  if ( a2 == this->q024 ) /*0x420e79*/
+    this->u32_3C = 1; /*0x420e7b*/
   return result; /*0x420e7f*/
 
 }
@@ -114,12 +114,12 @@ int  AlphaShapeClass::SD_vt05(int aP1)
     if ( this ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)this, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)this->q000 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
-      this->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
-      this->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
-      this->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/
+      *(unsigned int *)this->vtable1 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
+      this->vtable2 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
+      this->vtable3 = (int)&vt_AlphaShapeClass; /*0x420e14*/
+      this->vtable4 = (int)&vt_AlphaShapeClass; /*0x420e1b*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&this->q024)); /*0x420e2b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,&this->q024); /*0x420e2b*/
     this->u32_38 = 0; /*0x420e30*/
   }
   return Prefix_0; /*0x420e39*/

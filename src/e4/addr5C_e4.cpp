@@ -102,7 +102,7 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
       v9 = v6; /*0x5c0164*/
       v8 = Rect.left + v7; /*0x5c016e*/
       v11 = v5; /*0x5c0172*/
-      return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5c0187*/
+      return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary /*0x5c0187*/
               + 2))(
                g_DSurface_Primary,
                &v8,
@@ -169,7 +169,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
       result[4] = v9; /*0x5c089d*/
       if ( v9 ) /*0x5c08a0*/
       {
-        result[2] = *(unsigned int *)v9[1]; /*0x5c08ab*/
+        result[2] = *v9->u32_4; /*0x5c08ab*/
         result[3] = *(unsigned int *)(v9[1] + 4); /*0x5c08b4*/
       }
       return result; /*0x5c08c1*/
@@ -207,13 +207,13 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   int v12; // [esp+10h] [ebp-4h] BYREF
 
   v3 = 0; /*0x5c17c3*/
-  MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c17c5*/
+  MPCooperative_field_0x33C = this->q33C; /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, MPCooperative_field_0x33C, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
-  MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c17e7*/
+  MPCooperative_field_0x40 = (int *)this->u32_40; /*0x5c17e7*/
   if ( MPCooperative_field_0x40 ) /*0x5c17ec*/
   {
     if ( (unsigned __int8)Movie::GetState(MPCooperative_field_0x40, &v11) ) /*0x5c17f3*/
@@ -2723,18 +2723,18 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
 
   if ( a2[2] <= 0 || a2[3] <= 0 ) /*0x5cd6ac*/
   {
-    v20 = (unsigned int *)((char *)&this->q096 + 74); /*0x5cd81e*/
-    v21 = ((WideString *)((wchar_t **)(&this->M88)))->GetOrEmpty(); /*0x5cd825*/
-    result = sub_5D30C0(this->M52, v21, (unsigned int *)((char *)&this->q096 + 74)); /*0x5cd82e*/
+    v20 = (unsigned int *)this->q096 + 74); /*0x5cd81e*/
+    v21 = (&this->u32_1C)->GetOrEmpty(); /*0x5cd825*/
+    result = sub_5D30C0(this->M52, v21, (unsigned int *)this->q096 + 74)); /*0x5cd82e*/
     v22 = this->M8; /*0x5cd836*/
     *v20 = this->M4; /*0x5cd839*/
     this->M60 = v22; /*0x5cd83b*/
   }
   else
   {
-    v4 = (int *)((char *)&this->q096 + 74); /*0x5cd6b2*/
-    v23 = (unsigned int *)((char *)&this->q096 + 74); /*0x5cd6b6*/
-    v5 = ((WideString *)((wchar_t **)(&this->M88)))->GetOrEmpty(); /*0x5cd6ba*/
+    v4 = (int *)this->q096 + 74); /*0x5cd6b2*/
+    v23 = (unsigned int *)this->q096 + 74); /*0x5cd6b6*/
+    v5 = (&this->u32_1C)->GetOrEmpty(); /*0x5cd6ba*/
     sub_5D30C0(this->M52, v5, v23); /*0x5cd6c3*/
     v6 = this->M52; /*0x5cd6dc*/
     this->M4 += (a2[2] - this->M64) / 2; /*0x5cd6df*/
@@ -2922,47 +2922,47 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
           v7 -= (*(int (**)(int *, int))(v17 + 4))(a2, v16); /*0x5cda14*/
           WideString::AssignFromPtr((WideString *)&v31, ecx0); /*0x5cda17*/
           ((String *)(&v31))->TruncateTo(v3); /*0x5cda21*/
-          WideString::AssignFromPtr((WideString *)&v30.DeleteAndZero_field_0x08, ecx0); /*0x5cda2b*/
-          ((WideString *)((WideString *)&v30.DeleteAndZero_field_0x08))->Erase(0, v3); /*0x5cda37*/
-          v18 = ((WideString *)((WideString *)&v35.DeleteAndZero_field_0x08))->Assign(asc_830174); /*0x5cda4f*/
+          WideString::AssignFromPtr((WideString *)&v30.u32_8, ecx0); /*0x5cda2b*/
+          ((WideString *)((WideString *)&v30.u32_8))->Erase(0, v3); /*0x5cda37*/
+          v18 = ((WideString *)((WideString *)&v35.u32_8))->Assign(asc_830174); /*0x5cda4f*/
           v19 = WideString::ConcatAlloc( /*0x5cda5e*/
                   (WideString *)&v31,
-                  (wchar_t **)&v35.DeleteAndZero_field_0x04,
+                  (wchar_t **)&v35.q004,
                   (const wchar_t **)v18);
           v20 = WideString::ConcatAlloc( /*0x5cda65*/
                   (WideString *)v19,
                   (wchar_t **)&v35,
-                  (const wchar_t **)&v30.DeleteAndZero_field_0x08);
+                  (const wchar_t **)&v30.u32_8);
           WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v20); /*0x5cda6d*/
           DeleteAndZero::Alt(&v35); /*0x5cda76*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x04); /*0x5cda7f*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v35.DeleteAndZero_field_0x08); /*0x5cda88*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v30.DeleteAndZero_field_0x08); /*0x5cda91*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v35.q004); /*0x5cda7f*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v35.u32_8); /*0x5cda88*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v30.u32_8); /*0x5cda91*/
           p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v31; /*0x5cda96*/
         }
         else
         {
-          WideString::AssignFromPtr((WideString *)&v30.DeleteAndZero_field_0x04, ecx0); /*0x5cdaf1*/
-          ((String *)((String *)&v30.DeleteAndZero_field_0x04))->TruncateTo(++v3); /*0x5cdafc*/
+          WideString::AssignFromPtr((WideString *)&v30.q004, ecx0); /*0x5cdaf1*/
+          ((String *)((String *)&v30.q004))->TruncateTo(++v3); /*0x5cdafc*/
           WideString::AssignFromPtr((WideString *)&v30, ecx0); /*0x5cdb06*/
           ((WideString *)((WideString *)&v30))->Erase(0, v3); /*0x5cdb12*/
-          v23 = ((WideString *)((WideString *)&v34.DeleteAndZero_field_0x08))->Assign(asc_830174); /*0x5cdb2a*/
+          v23 = ((WideString *)((WideString *)&v34.u32_8))->Assign(asc_830174); /*0x5cdb2a*/
           v24 = WideString::ConcatAlloc( /*0x5cdb39*/
-                  (WideString *)&v30.DeleteAndZero_field_0x04,
-                  (wchar_t **)&v34.DeleteAndZero_field_0x04,
+                  (WideString *)&v30.q004,
+                  (wchar_t **)&v34.q004,
                   (const wchar_t **)v23);
           v25 = WideString::ConcatAlloc((WideString *)v24, (wchar_t **)&v34, (const wchar_t **)&v30); /*0x5cdb40*/
           WideString::Reassign_Alt((WideString *)ecx0, (const wchar_t **)v25); /*0x5cdb48*/
           DeleteAndZero::Alt(&v34); /*0x5cdb51*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x04); /*0x5cdb5a*/
-          DeleteAndZero::Alt((DeleteAndZero *)&v34.DeleteAndZero_field_0x08); /*0x5cdb63*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v34.q004); /*0x5cdb5a*/
+          DeleteAndZero::Alt((DeleteAndZero *)&v34.u32_8); /*0x5cdb63*/
           DeleteAndZero::Alt(&v30); /*0x5cdb6c*/
-          p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.DeleteAndZero_field_0x04; /*0x5cdb71*/
+          p_DeleteAndZero_field_0x04 = (DeleteAndZero *)&v30.q004; /*0x5cdb71*/
         }
         DeleteAndZero::Alt(p_DeleteAndZero_field_0x04); /*0x5cda9a*/
       }
-      if ( v7 > *(int *)&v31.m_3[1] ) /*0x5cdaa3*/
-        *(unsigned int *)&v31.m_3[1] = v7; /*0x5cdaa5*/
+      if ( v7 > *(int *)&v31.ptr_4 ) /*0x5cdaa3*/
+        *(unsigned int *)&v31.ptr_4 = v7; /*0x5cdaa5*/
       if ( (uint16_t)((WideString *)((WideString *)ecx0))->GetChar(v3) ) /*0x5cdaac*/
       {
         v28 = v3++; /*0x5cdaba*/
@@ -2995,10 +2995,10 @@ int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
   int v18; // [esp+24h] [ebp-8h]
   int v19; // [esp+30h] [ebp+4h]
 
-  nextArrayIndex = this->?; /*0x5ce0cb*/
-  if ( this->? != -1 ) /*0x5ce0d1*/
+  nextArrayIndex = this->nextArrayIndex; /*0x5ce0cb*/
+  if ( this->nextArrayIndex != -1 ) /*0x5ce0d1*/
   {
-    v5 = Timer::GetTicks() - this->?; /*0x5ce0db*/
+    v5 = Timer::GetTicks() - this->uniqueId; /*0x5ce0db*/
     if ( v5 >= nextArrayIndex ) /*0x5ce0e0*/
       goto LABEL_5; /*0x5ce0e0*/
     nextArrayIndex -= v5; /*0x5ce0e2*/
@@ -3013,13 +3013,13 @@ LABEL_24:
     return 0; /*0x5ce296*/
   }
 LABEL_5:
-  if ( LOBYTE(this->?) != 1 ) /*0x5ce0f6*/
+  if ( LOBYTE(this->vtable4) != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
   fallRate = this->fallRate; /*0x5ce0fc*/
-  this->? = Timer::GetTicks(); /*0x5ce108*/
-  this->? = v18; /*0x5ce10f*/
-  this->? = fallRate; /*0x5ce112*/
-  if ( this->? >= WideString::Length((const wchar_t **)&this->?) ) /*0x5ce122*/
+  this->uniqueId = Timer::GetTicks(); /*0x5ce108*/
+  this->abstractFlags = v18; /*0x5ce10f*/
+  this->nextArrayIndex = fallRate; /*0x5ce112*/
+  if ( this->NeedsSaveOrLink >= WideString::Length((const wchar_t **)&this->NeedsSaveOrLink) ) /*0x5ce122*/
   {
     LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
@@ -3033,12 +3033,12 @@ LABEL_5:
       &this->customSound_controller[1],
       0,
       1);
-  vtable1 = (char *)this->?; /*0x5ce179*/
+  vtable1 = (char *)this->vtable2; /*0x5ce179*/
   if ( BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
     vtable1 += this->ambientSoundController[4]; /*0x5ce180*/
-  NeedsSaveOrLink = (char *)this->?; /*0x5ce18b*/
+  NeedsSaveOrLink = (char *)this->NeedsSaveOrLink; /*0x5ce18b*/
   v10 = NeedsSaveOrLink + 1; /*0x5ce18c*/
-  for ( i = WideString::GetChar((const wchar_t **)&this->?, (size_t)NeedsSaveOrLink); /*0x5ce198*/
+  for ( i = WideString::GetChar((const wchar_t **)&this->NeedsSaveOrLink, (size_t)NeedsSaveOrLink); /*0x5ce198*/
         (unsigned short)i != 10;
         i = WideString::GetChar((const wchar_t **)&this->?, v17) )
   {
@@ -3068,7 +3068,7 @@ LABEL_5:
     this->customSound_controller[2] = 0; /*0x5ce20e*/
     this->customSound_controller[3] = 0; /*0x5ce211*/
     this->customSound_controller[4] = 0; /*0x5ce214*/
-    this->? = v10; /*0x5ce217*/
+    this->NeedsSaveOrLink = v10; /*0x5ce217*/
     if ( (unsigned short)i == 10 ) /*0x5ce21a*/
     {
       LOWORD(v14) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce228*/
@@ -3983,7 +3983,7 @@ unsigned int E4Recv_5C8470::sub_5C8470()
 {
   unsigned int result; // eax
 
-  result = ((((((*((unsigned short *)&(g_MissionQueueFrame.localVariables[711]))) * (unsigned int)(uint16_t)~(*((unsigned short *)&(this->vfptr)))) >> 1) /*0x5c84f0*/
+  result = ((((((*((unsigned short *)&(g_MissionQueueFrame.localVariables[711]))) * (unsigned int)(uint16_t)~(this->u16_-4)) >> 1) /*0x5c84f0*/
             + (((((*((unsigned short *)&(g_MissionQueueFrame.localVariables[780])))
                 * ((unsigned int)(uint16_t)~*((unsigned short *)this - 2) + 1)) >> 1)
               + (((uint16_t)~*((unsigned short *)this - 1)
@@ -4657,13 +4657,13 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   int v16; // [esp+3Ch] [ebp+20h]
   int v17; // [esp+40h] [ebp+24h]
 
-  this->MSAnim_field_0x08 = a4; /*0x5cd581*/
-  this->MSAnim_field_0x04 = a3; /*0x5cd587*/
-  *((unsigned char *)this + 12) = 1; /*0x5cd58a*/
+  this->M8 = a4; /*0x5cd581*/
+  this->M4 = a3; /*0x5cd587*/
+  this->M12 = 1; /*0x5cd58a*/
   v11 = 0; /*0x5cd597*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd59c*/
-  *((unsigned int *)this + 6) = 0; /*0x5cd59f*/
-  *(unsigned int *)this->__pad_0 = &MSAnim::`vftable'; /*0x5cd5a5*/
+  this->M16 = Timer::GetTicks(); /*0x5cd59c*/
+  this->u32_18 = 0; /*0x5cd59f*/
+  *(unsigned int *)this->vfptr = &MSAnim::`vftable'; /*0x5cd5a5*/
   WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd5ab*/
   *((unsigned int *)this + 11) = a8; /*0x5cd5c0*/
   *((unsigned char *)this + 48) = a9; /*0x5cd5c7*/
@@ -4675,29 +4675,29 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   *((unsigned char *)this + 73) = a10; /*0x5cd5dd*/
   *((unsigned int *)this + 19) = 0; /*0x5cd5e0*/
   *(unsigned int *)this->__pad_0 = &MSPrintAnim::`vftable'; /*0x5cd5e3*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd5f6*/
-  *((unsigned int *)this + 5) = v15; /*0x5cd5f9*/
-  *((unsigned int *)this + 6) = a7; /*0x5cd5ff*/
+  this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
+  this->M20 = v15; /*0x5cd5f9*/
+  this->u32_18 = a7; /*0x5cd5ff*/
   sub_5CD690((int)this, a6); /*0x5cd602*/
   if ( a10 ) /*0x5cd60b*/
   {
     v17 = 0; /*0x5cd611*/
-    v16 = *(unsigned int *)(*((unsigned int *)this + 13) + 4); /*0x5cd618*/
+    v16 = *(unsigned int *)(this->u32_34 + 4); /*0x5cd618*/
     if ( (unsigned __int16)WideString::GetChar((const wchar_t **)this + 7, 0) ) /*0x5cd61e*/
     {
       do /*0x5cd658*/
       {
         if ( (unsigned __int16)WideString::GetChar((const wchar_t **)this + 7, v11) == 10 ) /*0x5cd634*/
           break; /*0x5cd634*/
-        v12 = **((unsigned int **)this + 13); /*0x5cd63c*/
+        v12 = *this->u32_343); /*0x5cd63c*/
         Char = WideString::GetChar((const wchar_t **)this + 7, v11++); /*0x5cd63e*/
-        v17 += (*(int (**)(unsigned int, int))(v12 + 4))(*((unsigned int *)this + 13), Char); /*0x5cd651*/
+        v17 += (*(int (**)(unsigned int, int))(v12 + 4))(this->u32_34, Char); /*0x5cd651*/
       }
       while ( (unsigned __int16)WideString::GetChar((const wchar_t **)this + 7, v11) ); /*0x5cd658*/
     }
-    *((unsigned int *)this + 19) = (*((unsigned int *)this + 16) - v17 - v16) / 2; /*0x5cd676*/
+    this->M76 = (this->M40 - v17 - v16) / 2; /*0x5cd676*/
   }
-  return (int)this->__pad_0; /*0x5cd67b*/
+  return (int)this->vfptr; /*0x5cd67b*/
 
 }
 } // namespace gamemd
@@ -4790,16 +4790,16 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     || (v4 = ClipRectIntersection(v17, a3, (int *)&this->attachedBomb, 0, 0), result = v4[2], v6 = v4[3], result > 0)
     && v6 > 0 )
   {
-    result = (int)this->?; /*0x5ce3e7*/
-    vtable2 = (int *)this->?; /*0x5ce3ea*/
-    vtable1 = (char *)this->?; /*0x5ce3ed*/
+    result = (int)this->q020; /*0x5ce3e7*/
+    vtable2 = (int *)this->M8; /*0x5ce3ea*/
+    vtable1 = (char *)this->M4; /*0x5ce3ed*/
     v9 = 0; /*0x5ce3f0*/
     v18 = vtable2; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
       if ( (unsigned __int16)WideString::GetChar((const wchar_t **)&this->?, v9) == 10 ) /*0x5ce40f*/
       {
-        vtable1 = (char *)this->?; /*0x5ce414*/
+        vtable1 = (char *)this->M4; /*0x5ce414*/
         vtable2 = (int *)((char *)vtable2 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
         v14 = this->attachedTag->?; /*0x5ce420*/
         v18 = vtable2; /*0x5ce426*/
@@ -4810,7 +4810,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       else
       {
         vtable0 = (void (**)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
-        Char = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce45b*/
+        Char = WideString::GetChar((const wchar_t **)&this->M52, v9); /*0x5ce45b*/
         vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
         v10 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
         v11 = WideString::GetChar((const wchar_t **)&this->?, v9); /*0x5ce46d*/

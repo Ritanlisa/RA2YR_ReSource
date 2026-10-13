@@ -70,8 +70,8 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
   {
     v6 = a1; /*0x4fa36d*/
     v8 = TechnoTypeClass::GetByTypeAndIndex((int)a1, aP2); /*0x4fa375*/
-    if ( a1 == (HouseClass *)6 || a1 == (HouseClass *)7 ) /*0x4fa382*/
-      v22 = *(unsigned int *)(v8 + 3592); /*0x4fa394*/
+    if ( a1 == 6 || a1 == 7 ) /*0x4fa382*/
+      v22 = v8->qE08; /*0x4fa394*/
     else
       v22 = 0; /*0x4fa384*/
     v7 = v22; /*0x4fa398*/
@@ -161,7 +161,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     if ( !v10 ) /*0x4fa4fe*/
       goto LABEL_40; /*0x4fa4fe*/
   }
-  if ( v10->queuedCapacity && !v10->isSuspended && v6 == (HouseClass *)7 ) /*0x4fa531*/
+  if ( v10->queuedCapacity && !v10->isSuspended && v6 == 7 ) /*0x4fa531*/
     goto LABEL_40; /*0x4fa531*/
   switch ( (unsigned int)v6 ) /*0x4fa564*/
   {
@@ -193,7 +193,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
   v13 = 0; /*0x4fa5a8*/
   if ( v10->isSuspended ) /*0x4fa5a8*/
   {
-    v14 = v10->u32_58; /*0x4fa5b1*/
+    v14 = v10->q058; /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
       if ( (*(int (**)(int))(*(unsigned int *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
@@ -206,7 +206,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
           if ( !v16 && *(unsigned int *)&dword_A8B238 && this->u32_1EC ) /*0x4fa63a*/
           {
-            v17 = (*(int (**)(unsigned int))(*v10->u32_58 + 132))(v10->u32_58); /*0x4fa649*/
+            v17 = (*(int (**)(unsigned int))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
             v18 = (int)(54 * ((int)dword_A8B558 * (int)dword_A8B550 / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (**)(int))(*(unsigned int *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
@@ -215,13 +215,13 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
               v10->production = v18; /*0x4fa68f*/
           }
           if ( dword_A83D4C == (Object *)this ) /*0x4fa698*/
-            Sidebar::FindProductionType((Sidebar *)&stru_87F5F0.__pad_58[416], v10, (int)a1, aP2); /*0x4fa6aa*/
+            Sidebar::FindProductionType((Sidebar *)&DataGlobal_87F7E8, v10, (int)a1, aP2); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
         else
         {
           Status = HouseClass::GetStatus(a1, 0); /*0x4fa602*/
-          ((Sidebar *)((int *)&stru_87F5F0.__pad_58[416]))->ActivateTab(Status); /*0x4fa60d*/
+          ((Sidebar *)((int *)&DataGlobal_87F7E8))->ActivateTab(Status); /*0x4fa60d*/
           return 0; /*0x4fa615*/
         }
       }
@@ -230,16 +230,16 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
   if ( ((FactoryClass *)(v10))->DemandProduction(v9, (void *)this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
-  if ( v10->abstractFlags || v10->u32_58 ) /*0x4fa6d9*/
+  if ( v10->abstractFlags || v10->q058 ) /*0x4fa6d9*/
     return 3; /*0x4fa807*/
   Debug::Log(); /*0x4fa6ec*/
   Debug::Log(); /*0x4fa6fc*/
   Debug::Log(); /*0x4fa70a*/
-  v19 = v10->u32_58; /*0x4fa70f*/
+  v19 = v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
     (*(void (**)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
   Debug::Log(); /*0x4fa729*/
-  v20 = v10->u32_58; /*0x4fa72e*/
+  v20 = v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
     (*(void (**)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
   Debug::Log(); /*0x4fa748*/
@@ -292,29 +292,29 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
       goto LABEL_3;
     case 2: /*0x5007b7*/
     case 3: /*0x5007b7*/
-      *((unsigned char *)aP1 + 21456) = a5_2; /*0x500807*/
+      aP1->HouseClass_field_53D0 = a5_2; /*0x500807*/
       break; /*0x500807*/
     case 6: /*0x5007b7*/
     case 7: /*0x5007b7*/
       if ( a5_2 == 5 ) /*0x5007e5*/
       {
-        *((unsigned char *)aP1 + 21464) = a5_2; /*0x5007ec*/
+        aP1->u32_53D8 = a5_2; /*0x5007ec*/
       }
       else
       {
-        *((unsigned char *)aP1 + 21460) = a5_2; /*0x5007fa*/
+        aP1->u32_53D4 = a5_2; /*0x5007fa*/
         result = a5_2; /*0x5007f5*/
       }
       break; /*0x5007f2*/
     case 15: /*0x5007b7*/
     case 16: /*0x5007b7*/
-      *((unsigned char *)aP1 + 21457) = a5_2; /*0x5007be*/
+      aP1->u32_53D1 = a5_2; /*0x5007be*/
   LABEL_3:
       result = a5_2; /*0x5007c4*/
       if ( a5_2 ) /*0x5007ca*/
-        *((unsigned char *)aP1 + 21459) = a5_2; /*0x5007cc*/
+        aP1->u32_53D3 = a5_2; /*0x5007cc*/
       else
-        *((unsigned char *)aP1 + 21458) = a5_2; /*0x5007d6*/
+        aP1->u32_53D2 = a5_2; /*0x5007d6*/
       break; /*0x5007d3*/
     default:
       return result;
@@ -372,76 +372,76 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
   void *Block; // [esp+14h] [ebp-8h] BYREF
   int v17; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)Block->__pad_14; /*0x636319*/
+  v2 = *(unsigned int *)Block->Straw_14; /*0x636319*/
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
-    v4 = (Array *)*((unsigned int *)Block->Sidebar_field_0x8 + i); /*0x63632c*/
-    Value = Array::FindValue(v4, *(unsigned int *)Block->__pad_0); /*0x636334*/
+    v4 = (Array *)*((unsigned int *)Block->u32_8 + i); /*0x63632c*/
+    Value = Array::FindValue(v4, *(unsigned int *)Block->tail_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
     else
-      v6 = (void *)*((unsigned int *)v4->Array_field_0x4 + Value); /*0x636345*/
+      v6 = (void *)*((unsigned int *)v4->q004 + Value); /*0x636345*/
     Block = v6; /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
-      FactoryClass::FinishProduction((int *)v4->__pad_0, (int)v6); /*0x636353*/
+      FactoryClass::FinishProduction((int *)v4->__pad_000, (int)v6); /*0x636353*/
       __3_YAXPAX_Z(*((void **)Block + 1)); /*0x636360*/
-      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))(v4, &Block); /*0x636371*/
+      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_000 + 16))(v4, &Block); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy((Vector4 *)v4, v7); /*0x63637c*/
       __3_YAXPAX_Z(Block); /*0x636386*/
-      if ( !v4->Array_field_0x10 && v4 ) /*0x636397*/
+      if ( !v4->u32_10 && v4 ) /*0x636397*/
         FactoryClass::RemoveFromArrays((FactoryClass *)v4, 1); /*0x63639d*/
     }
   }
   if ( v2 ) /*0x6363ad*/
   {
-    Block = *(void **)Block->__pad_0; /*0x6363b1*/
+    Block = *(void **)Block->tail_0; /*0x6363b1*/
     v8 = *((unsigned int *)Block + 135); /*0x6363b5*/
     Object_field_0x30 = *(void **)(v8 + 48); /*0x6363bb*/
     if ( (unsigned __int8)House::IsHumanPlayer((House *)v8) && dword_A83D4C ) /*0x6363ce*/
-      Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x6363d0*/
+      Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x6363d0*/
     DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6363d5*/
-    VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&Block); /*0x6363e4*/
+    VectorClass::EraseAt((VectorClass *)&DataGlobal_AC4C40, (int)&Block); /*0x6363e4*/
   }
-  Sidebar_field_0x4 = Block->Sidebar_field_0x4; /*0x6363ec*/
-  (*(void (**)(int *))(Block->Sidebar_field_0x4[0] + 12))(Block->Sidebar_field_0x4); /*0x6363f1*/
+  Sidebar_field_0x4 = Block->__pad_004; /*0x6363ec*/
+  (*(void (**)(int *))(Block->__pad_004 + 12))(Block->__pad_004); /*0x6363f1*/
   Block->__pad_70[40] = 0; /*0x6363f7*/
-  *(unsigned int *)&Block->__pad_70[28] = -1; /*0x636400*/
-  *(unsigned int *)&Block->__pad_70[32] = -1; /*0x636406*/
-  *(unsigned int *)&Block->__pad_70[36] = -1; /*0x63640c*/
+  *&Block->u32_8C = -1; /*0x636400*/
+  *&Block->u32_90 = -1; /*0x636406*/
+  *&Block->u32_94 = -1; /*0x63640c*/
   Block->__pad_70[41] = 0; /*0x636412*/
-  *(unsigned int *)Block->__pad_0 = 0; /*0x636419*/
+  *(unsigned int *)Block->tail_0 = 0; /*0x636419*/
   if ( Block ) /*0x63641f*/
   {
-    if ( *(unsigned int *)Block->__pad_0 ) /*0x636425*/
-      BuildingClass::SetType(*(BuildingClass **)Block->__pad_0, 0); /*0x63642d*/
+    if ( *(unsigned int *)Block->tail_0 ) /*0x636425*/
+      BuildingClass::SetType(*(BuildingClass **)Block->tail_0, 0); /*0x63642d*/
     Block = Block; /*0x636437*/
-    if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
+    if ( !DataGlobal_AC4CF5 ) /*0x63643d*/
     {
-      v11 = (*(int (**)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/
-              &stru_AC4B30.__pad_EC[92],
+      v11 = (*(int (**)(char *, void **))(*(unsigned int *)&DataGlobal_AC4C78 + 16))( /*0x63644f*/
+              &DataGlobal_AC4C78,
               &Block);
       if ( v11 != -1 ) /*0x636454*/
-        Sidebar::RemoveItem((Sidebar *)&stru_AC4B30.__pad_EC[92], v11); /*0x63645c*/
+        Sidebar::RemoveItem((Sidebar *)&DataGlobal_AC4C78, v11); /*0x63645c*/
     }
-    v12 = *(unsigned int *)Block->__pad_14; /*0x636461*/
+    v12 = *(unsigned int *)Block->Straw_14; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
-      TeamClass::DestroyAllMembers(*((TeamClass **)Block->Sidebar_field_0x8 + j), *(unsigned int **)Block->__pad_0); /*0x63647a*/
+      TeamClass::DestroyAllMembers(*((TeamClass **)Block->u32_8 + j), *(unsigned int **)Block->tail_0); /*0x63647a*/
     if ( v12 ) /*0x63648a*/
     {
-      v17 = *(unsigned int *)Block->__pad_0; /*0x63648e*/
+      v17 = *(unsigned int *)Block->tail_0; /*0x63648e*/
       LeaderIndex = TeamClass::GetLeaderIndex((TeamClass *)v17); /*0x636492*/
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
-      VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&v17); /*0x6364a8*/
+      VectorClass::EraseAt((VectorClass *)&DataGlobal_AC4C40, (int)&v17); /*0x6364a8*/
     }
-    (*(void (**)(int *))(*Sidebar_field_0x4 + 12))(Block->Sidebar_field_0x4); /*0x6364b1*/
+    (*(void (**)(int *))(*Sidebar_field_0x4 + 12))(Block->__pad_004); /*0x6364b1*/
     Block->__pad_70[40] = 0; /*0x6364b7*/
-    *(unsigned int *)&Block->__pad_70[28] = -1; /*0x6364be*/
-    *(unsigned int *)&Block->__pad_70[32] = -1; /*0x6364c4*/
-    *(unsigned int *)&Block->__pad_70[36] = -1; /*0x6364ca*/
+    *&Block->u32_8C = -1; /*0x6364be*/
+    *&Block->u32_90 = -1; /*0x6364c4*/
+    *&Block->u32_94 = -1; /*0x6364ca*/
     Block->__pad_70[41] = 0; /*0x6364d0*/
-    Sidebar_field_0x8 = Block->Sidebar_field_0x8; /*0x6364d7*/
+    Sidebar_field_0x8 = Block->u32_8; /*0x6364d7*/
     *Sidebar_field_0x4 = (int)&VectorClass<PlanningNodeClass *>::`vftable'; /*0x6364de*/
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
     {
@@ -518,7 +518,7 @@ ObjectClass * * Sidebar::Render(char a2)
       v3 = 5; /*0x63fb69*/
     NeedsSaveOrLink = (int)dword_A8B230[374].NeedsSaveOrLink; /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
-    v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/
+    v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar + 30))( /*0x63fb8c*/
                   DSurface_Sidebar,
                   &NeedsSaveOrLink);
     v6 = this->field_1530; /*0x63fb91*/
@@ -537,8 +537,8 @@ ObjectClass * * Sidebar::Render(char a2)
         v17 = v4; /*0x63fc17*/
         DrawToSurfaceSHP( /*0x63fc1b*/
           (int)DSurface_Sidebar,
-          *(int *)&stru_87F5F0.__pad_58[132],
-          *(int *)&stru_AC4B30.__pad_EC[600],
+          *(int *)&g_SidebarConfig,
+          *(int *)&dword_AC4E74,
           0,
           &NeedsSaveOrLink,
           v18,
@@ -557,7 +557,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       while ( v9 ); /*0x63fc24*/
     }
-    v10 = *(unsigned int *)&this->__pad_1510[12]; /*0x63fc26*/
+    v10 = *&this->u32_151C; /*0x63fc26*/
     v11 = 0; /*0x63fc2c*/
     if ( v10 > 0 && (v10 & 1) == 0 ) /*0x63fc3e*/
     {
@@ -565,8 +565,8 @@ ObjectClass * * Sidebar::Render(char a2)
       v17 = v4; /*0x63fc79*/
       DrawToSurfaceSHP( /*0x63fc7d*/
         (int)DSurface_Sidebar,
-        *(int *)&stru_87F5F0.__pad_58[132],
-        *(int *)&stru_AC4B30.__pad_EC[600],
+        *(int *)&g_SidebarConfig,
+        *(int *)&dword_AC4E74,
         4u,
         &NeedsSaveOrLink,
         v18,
@@ -594,8 +594,8 @@ ObjectClass * * Sidebar::Render(char a2)
           v17 = v4; /*0x63fccf*/
           DrawToSurfaceSHP( /*0x63fcd3*/
             (int)DSurface_Sidebar,
-            *(int *)&stru_87F5F0.__pad_58[132],
-            *(int *)&stru_AC4B30.__pad_EC[600],
+            *(int *)&g_SidebarConfig,
+            *(int *)&dword_AC4E74,
             1u,
             &NeedsSaveOrLink,
             v18,
@@ -627,8 +627,8 @@ ObjectClass * * Sidebar::Render(char a2)
           v17 = v4; /*0x63fd2d*/
           DrawToSurfaceSHP( /*0x63fd31*/
             (int)DSurface_Sidebar,
-            *(int *)&stru_87F5F0.__pad_58[132],
-            *(int *)&stru_AC4B30.__pad_EC[600],
+            *(int *)&g_SidebarConfig,
+            *(int *)&dword_AC4E74,
             2u,
             &NeedsSaveOrLink,
             v18,
@@ -658,8 +658,8 @@ ObjectClass * * Sidebar::Render(char a2)
         v17 = v4; /*0x63fd8b*/
         DrawToSurfaceSHP( /*0x63fd8f*/
           (int)DSurface_Sidebar,
-          *(int *)&stru_87F5F0.__pad_58[132],
-          *(int *)&stru_AC4B30.__pad_EC[600],
+          *(int *)&g_SidebarConfig,
+          *(int *)&dword_AC4E74,
           3u,
           &NeedsSaveOrLink,
           v18,
@@ -693,10 +693,10 @@ int Sidebar::ActivateTab(int aP1)
   int result; // eax
 
   result = aP1; /*0x6a60a0*/
-  if ( aP1 == *((char *)this + 5351) ) /*0x6a60ac*/
+  if ( aP1 == this->u32_14E7 ) /*0x6a60ac*/
   {
-    *((unsigned char *)this + 21414) = 1; /*0x6a60b8*/
-    *((unsigned char *)this + 3988 * aP1 + 5504) = 1; /*0x6a60c6*/
+    this->u32_53A6 = 1; /*0x6a60b8*/
+    *(&this->u8_F94 * aP1 + 5504) = 1; /*0x6a60c6*/
     return (int)MapClass::MarkForRedraw(&dword_87F7E8, 0, v2); /*0x6a60d2*/
   }
   return result; /*0x6a60d8*/
@@ -735,33 +735,33 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     goto LABEL_13; /*0x6a723a*/
   }
   g_TooltipActive = 0; /*0x6a7166*/
-  if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1522] != dword_B07DC8
-    || *(unsigned int *)&stru_87F5F0.__pad_E12[1526] != dword_B07DCC
-    || *(unsigned int *)&stru_87F5F0.__pad_E12[1530] != dword_B07DD0
-    || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
+  if ( *(unsigned int *)&DataGlobal_8809F4 != dword_B07DC8
+    || *(unsigned int *)&DataGlobal_8809F8 != dword_B07DCC
+    || *(unsigned int *)&DataGlobal_8809FC != dword_B07DD0
+    || *(unsigned int *)&DataGlobal_880A00 != dword_B07DD4 )
   {
   LABEL_13:
     (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a7241*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
-    if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1522] == dword_B07DC8
-      && *(unsigned int *)&stru_87F5F0.__pad_E12[1526] == dword_B07DCC
-      && *(unsigned int *)&stru_87F5F0.__pad_E12[1530] == dword_B07DD0
-      && *(unsigned int *)&stru_87F5F0.__pad_E12[1534] == dword_B07DD4
+    if ( *(unsigned int *)&DataGlobal_8809F4 == dword_B07DC8
+      && *(unsigned int *)&DataGlobal_8809F8 == dword_B07DCC
+      && *(unsigned int *)&DataGlobal_8809FC == dword_B07DD0
+      && *(unsigned int *)&DataGlobal_880A00 == dword_B07DD4
       && !a2 )
     {
       if ( this->u32_53A8 )
       {
         y = Point.y; /*0x6a72d1*/
-        v10 = Point.x + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
+        v10 = Point.x + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)g_Map_VisibleRectOffset : 0);
         v14 = 0; /*0x6a72f3*/
         v15 = 0; /*0x6a72f7*/
         v16 = dword_886F98; /*0x6a72fb*/
         v17 = 16; /*0x6a72ff*/
         v12 = dword_886F98; /*0x6a7303*/
         v13 = 16; /*0x6a7307*/
-        (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a7312*/
+        (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary /*0x6a7312*/
          + 2))(
           g_DSurface_Primary,
           &v10,
@@ -777,13 +777,13 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v4 = g_DSurface_SidebarBounds + Point.y; /*0x6a734e*/
       v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
       v16 = dword_886F98; /*0x6a735b*/
-      v5 = ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0) + Point.x;
-      v6 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar); /*0x6a7363*/
+      v5 = ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)g_Map_VisibleRectOffset : 0) + Point.x;
+      v6 = (*((int (**)(DSurface *))DSurface_Sidebar + 32))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
       v12 = dword_886F98; /*0x6a738e*/
       v13 = v6 - g_DSurface_SidebarBounds; /*0x6a7392*/
-      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a739d*/
+      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary /*0x6a739d*/
        + 2))(
         g_DSurface_Primary,
         &v10,
@@ -794,7 +794,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     }
     else if ( g_TooltipActive )
     {
-      v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6a73be*/
+      v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar + 30))( /*0x6a73be*/
              DSurface_Sidebar,
              &v10);
       v14 = 0; /*0x6a73dd*/
@@ -802,11 +802,11 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v16 = *(unsigned int *)(v7 + 8); /*0x6a73ec*/
       v8 = *(unsigned int *)(v7 + 12); /*0x6a73f0*/
       y = Point.y; /*0x6a73fd*/
-      v10 = Point.x + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
+      v10 = Point.x + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)g_Map_VisibleRectOffset : 0);
       v17 = v8; /*0x6a741b*/
       v12 = v16; /*0x6a741f*/
       v13 = v8; /*0x6a7423*/
-      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a742e*/
+      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary /*0x6a742e*/
        + 2))(
         g_DSurface_Primary,
         &v10,
@@ -817,18 +817,18 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     }
     else
     {
-      v15 = Point.y + *(unsigned int *)&stru_87F5F0.__pad_E12[1526]; /*0x6a7458*/
+      v15 = Point.y + *(unsigned int *)&DataGlobal_8809F8; /*0x6a7458*/
       v14 = Point.x
-          + *(unsigned int *)&stru_87F5F0.__pad_E12[1522]
-          + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
-      v16 = *(unsigned int *)&stru_87F5F0.__pad_E12[1530]; /*0x6a746f*/
-      v17 = *(unsigned int *)&stru_87F5F0.__pad_E12[1534]; /*0x6a7473*/
-      (*((void (**)(DSurface *, int *, DSurface *, char *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a747e*/
+          + *(unsigned int *)&DataGlobal_8809F4
+          + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)g_Map_VisibleRectOffset : 0);
+      v16 = *(unsigned int *)&DataGlobal_8809FC; /*0x6a746f*/
+      v17 = *(unsigned int *)&DataGlobal_880A00; /*0x6a7473*/
+      (*((void (**)(DSurface *, int *, DSurface *, char *, unsigned int, int))g_DSurface_Primary /*0x6a747e*/
        + 2))(
         g_DSurface_Primary,
         &v14,
         DSurface_Sidebar,
-        &stru_87F5F0.__pad_E12[1522],
+        &DataGlobal_8809F4,
         0,
         1);
     }
@@ -841,14 +841,14 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       DSurface_Sidebar,
       1);
     v15 = Point.y; /*0x6a71eb*/
-    v14 = Point.x + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
+    v14 = Point.x + ((*((unsigned char *)&(stru_A8EB00.vfptr[31]))) != 0 ? *(unsigned int *)g_Map_VisibleRectOffset : 0);
     v10 = 0; /*0x6a720d*/
     y = 0; /*0x6a7211*/
     v12 = dword_886F98; /*0x6a7215*/
     v13 = 16; /*0x6a7219*/
     v16 = dword_886F98; /*0x6a721d*/
     v17 = 16; /*0x6a7221*/
-    (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a722c*/
+    (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary /*0x6a722c*/
      + 2))(
       g_DSurface_Primary,
       &v14,
@@ -922,7 +922,7 @@ int v27; // ecx
  v70 = (CampaignScore *)(a2);
       *(unsigned char *)((char *)a1 +0) = 0;
       (&stru_B05488)[24720] = 1;
-      *(unsigned int *)aP3[0] = 0;
+      *aP3->vtable1 = 0;
       *(unsigned int *)&(&aP3.field_2)[2] = 0;
       *(unsigned int *)&aP3[8] = (*(int (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[44940] + 124))(*(unsigned int *)&(&stru_87C374)[44940]);
       int v5 = (*(int (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[44940] + 128))(*(unsigned int *)&(&stru_87C374)[44940]);
@@ -948,7 +948,7 @@ int v27; // ecx
       }
 LABEL_13:
       int v11 = 26;
-      if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 13496) )
+      if ( *(unsigned int *)(*&HouseClass_Player->u32_1D390 + 13496) )
         v11 = 18;
       int v85 = 0;
   int v12; // eax
@@ -998,7 +998,7 @@ LABEL_13:
               }
               else
               {
-                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, ((unsigned int *)HouseClass_Player)[45136]) )
+                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, HouseClass_Player->u32_2C140) )
                   IDA_HIBYTE(v73) = 0;
                 int v21 = *(unsigned int *)(v84 + 52 * v90 + 92);
                 int * v22 = (int *)(v84 + 52 * v90);
@@ -1006,9 +1006,9 @@ LABEL_13:
                 if ( v21 == 31 )
                 {
                   unsigned int v31 = v22[22];
-                  int v32 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[42472] + 4 * v31);
+                  int v32 = *(unsigned int *)(*&HouseClass_Player->u32_297A0 + 4 * v31);
                   v80 = *(int **)(v32 + 96);
-                  if ( v31 >= *(unsigned int *)&((unsigned int *)HouseClass_Player)[42484] )
+                  if ( v31 >= *&HouseClass_Player->u32_297D0 )
                     aP2 = (ConvertClass *)(0);
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
@@ -1181,8 +1181,8 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *(int *)&((unsigned int *)HouseClass_Player)[45112]
-                  && *(unsigned int *)&((unsigned int *)HouseClass_Player)[45112] % 16 > 8 )
+                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *&HouseClass_Player->u32_2C0E0
+                  && *&HouseClass_Player->u32_2C0E0 % 16 > 8 )
                 {
                   *(unsigned int *)&aP3[120] = v15;
                   *(unsigned int *)&aP3[124] = v17;
@@ -1705,7 +1705,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
   }
   v6 = 997 * v5; /*0x6a61bb*/
   v7 = 0; /*0x6a61be*/
-  v8 = (char *)aP1 + 4 * v6 + 5444; /*0x6a61c0*/
+  v8 = &aP1->vtable2 * v6 + 5444; /*0x6a61c0*/
   v9 = *((unsigned int *)aP1 + v6 + 1382); /*0x6a61c7*/
   if ( v9 <= 0 ) /*0x6a61d0*/
     return 0; /*0x6a61e6*/
@@ -1717,7 +1717,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
   *(unsigned int *)&v8[52 * v7 + 100] = aP2; /*0x6a61fa*/
   v8[61] = 1; /*0x6a61fe*/
   v8[60] = 1; /*0x6a6202*/
-  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6a620b*/
+  MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x6a620b*/
   return 1; /*0x6a61e6*/
 }
 } // namespace gamemd

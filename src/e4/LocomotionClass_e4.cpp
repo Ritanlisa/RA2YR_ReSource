@@ -30,33 +30,33 @@ int LocomotionClass::Initialize()
   int v3; // ecx
 
   LocomotionClass::Init(this); /*0x4af543*/
-  *((unsigned int *)this + 7) = 0; /*0x4af54d*/
-  *((unsigned int *)this + 8) = 0; /*0x4af550*/
+  this->u32_1C = 0; /*0x4af54d*/
+  this->q020 = 0; /*0x4af550*/
   v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4af553*/
-  *((unsigned int *)this + 11) = 0; /*0x4af559*/
-  *((unsigned int *)this + 9) = v2; /*0x4af55c*/
-  *((unsigned int *)this + 12) = 0; /*0x4af55f*/
-  *((unsigned int *)this + 13) = g_DDraw_ClipRect; /*0x4af568*/
+  this->u32_2C = 0; /*0x4af559*/
+  this->u32_24 = v2; /*0x4af55c*/
+  this->ptr_30 = 0; /*0x4af55f*/
+  this->u32_34 = g_DDraw_ClipRect; /*0x4af568*/
   *((unsigned long long *)this + 7) = qword_8A0794; /*0x4af570*/
-  *((unsigned int *)this + 16) = g_DDraw_ClipRect; /*0x4af585*/
-  *((unsigned int *)this + 17) = qword_8A0794; /*0x4af58e*/
+  this->q040 = g_DDraw_ClipRect; /*0x4af585*/
+  this->q044 = qword_8A0794; /*0x4af58e*/
   v3 = HIDWORD(qword_8A0794); /*0x4af591*/
-  *((unsigned int *)this + 20) = 0; /*0x4af597*/
-  *((unsigned int *)this + 19) = 0; /*0x4af59a*/
-  *((unsigned int *)this + 18) = v3; /*0x4af59d*/
-  *((unsigned int *)this + 21) = 0; /*0x4af5a3*/
-  *((unsigned int *)this + 22) = -1; /*0x4af5a6*/
-  *((unsigned int *)this + 23) = -1; /*0x4af5a9*/
-  *((unsigned char *)this + 96) = 0; /*0x4af5ac*/
-  *((unsigned char *)this + 97) = 0; /*0x4af5af*/
-  *((unsigned char *)this + 98) = 0; /*0x4af5b2*/
-  *((unsigned char *)this + 99) = 0; /*0x4af5b5*/
-  *((unsigned char *)this + 100) = 0; /*0x4af5b8*/
-  *((unsigned char *)this + 101) = 1; /*0x4af5bb*/
-  *((unsigned int *)this + 26) = 0; /*0x4af5bf*/
+  this->__pad_50 = 0; /*0x4af597*/
+  this->u32_4C = 0; /*0x4af59a*/
+  this->u32_48 = v3; /*0x4af59d*/
+  this->u32_54 = 0; /*0x4af5a3*/
+  this->u32_58 = -1; /*0x4af5a6*/
+  this->u32_5C = -1; /*0x4af5a9*/
+  this->u32_60 = 0; /*0x4af5ac*/
+  this->u32_61 = 0; /*0x4af5af*/
+  this->u32_62 = 0; /*0x4af5b2*/
+  this->u32_63 = 0; /*0x4af5b5*/
+  this->u32_64 = 0; /*0x4af5b8*/
+  this->u32_65 = 1; /*0x4af5bb*/
+  this->u32_68 = 0; /*0x4af5bf*/
   *(unsigned int *)this->ILocomotion = &DriveLocomotionClass::`vftable'; /*0x4af5c2*/
   *(unsigned int *)&this->ILocomotion[4] = &DriveLocomotionClass::`vftable'; /*0x4af5c8*/
-  *((unsigned int *)this + 6) = &off_7E7E8C; /*0x4af5cf*/
+  this->u32_18 = &off_7E7E8C; /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 
 }
@@ -98,7 +98,7 @@ int LocomotionClass::CheckBridgeBlock()
   {
     vtable1 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
     if ( vtable1 == 2 /*0x4cfacc*/
-      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, *(unsigned char *)(vtable1 + 3597))
+      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, vtable1->u8_E0D)
       && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
           v5 = Cell::IsBridge(v4),
           LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
@@ -108,10 +108,10 @@ int LocomotionClass::CheckBridgeBlock()
     }
     else
     {
-      *((unsigned char *)this + 80) = 0; /*0x4cfadf*/
-      *((unsigned char *)this + 81) = 1; /*0x4cfae3*/
-      *((unsigned char *)this + 82) = 0; /*0x4cfae7*/
-      *((unsigned int *)this + 14) = 0; /*0x4cfaeb*/
+      this->__pad_50 = 0; /*0x4cfadf*/
+      this->u32_51 = 1; /*0x4cfae3*/
+      this->u32_52 = 0; /*0x4cfae7*/
+      this->u32_38 = 0; /*0x4cfaeb*/
     }
   }
   return vtable1; /*0x4cfadc*/
@@ -136,24 +136,24 @@ int LocomotionClass::ProcessData()
 {
 
   LocomotionClass::Init(this); /*0x513c24*/
-  *((unsigned int *)this + 6) = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c34*/
-  *((unsigned int *)this + 7) = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c3d*/
-  *((unsigned int *)this + 8) = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c49*/
-  *((unsigned int *)this + 9) = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c51*/
-  *((unsigned int *)this + 10) = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c59*/
-  *((unsigned int *)this + 11) = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c64*/
-  FrameSnapshot::InitMax((FrameSnapshot *)this + 6, 0); /*0x513c67*/
-  *((unsigned int *)this + 18) = 0; /*0x513c6c*/
-  *((unsigned int *)this + 20) = 0; /*0x513c6f*/
-  *((unsigned int *)this + 22) = 0; /*0x513c72*/
-  *((unsigned int *)this + 24) = 0; /*0x513c75*/
-  *((unsigned int *)this + 19) = 0; /*0x513c78*/
-  *((unsigned int *)this + 21) = 0; /*0x513c7b*/
-  *((unsigned int *)this + 23) = 1072693248; /*0x513c7e*/
-  *((unsigned int *)this + 25) = 0; /*0x513c85*/
-  *((unsigned char *)this + 104) = 0; /*0x513c88*/
-  *((unsigned int *)this + 27) = 0; /*0x513c8b*/
-  *((unsigned char *)this + 112) = 0; /*0x513c8e*/
+  this->u32_18 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c34*/
+  this->u32_1C = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c3d*/
+  this->q020 = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c49*/
+  this->u32_24 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c51*/
+  this->u32_28 = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c59*/
+  this->u32_2C = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c64*/
+  FrameSnapshot::InitMax(&this->u32_18, 0); /*0x513c67*/
+  this->u32_48 = 0; /*0x513c6c*/
+  this->__pad_50 = 0; /*0x513c6f*/
+  this->u32_58 = 0; /*0x513c72*/
+  this->u32_60 = 0; /*0x513c75*/
+  this->u32_4C = 0; /*0x513c78*/
+  this->u32_54 = 0; /*0x513c7b*/
+  this->u32_5C = 1072693248; /*0x513c7e*/
+  this->u32_64 = 0; /*0x513c85*/
+  this->u32_68 = 0; /*0x513c88*/
+  this->u32_6C = 0; /*0x513c8b*/
+  this->u32_70 = 0; /*0x513c8e*/
   *(unsigned int *)this->ILocomotion = &HoverLocomotionClass::`vftable'; /*0x513c91*/
   *(unsigned int *)&this->ILocomotion[4] = &HoverLocomotionClass::`vftable'; /*0x513c97*/
   return (int)this->ILocomotion; /*0x513ca0*/
@@ -177,7 +177,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   a1->DestinationCoords[2] = v2; /*0x54ac70*/
   FrameSnapshot::InitMax( /*0x54ac82*/
     (FrameSnapshot *)&a1->__pad_50[4],
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
+    *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1036));
   a1->CurrentHeight = 0; /*0x54ac87*/
   *(unsigned int *)&a1->__pad_74[4] = 0; /*0x54ac8a*/
   *(unsigned int *)&a1->DestinationReached = 0; /*0x54ac8d*/

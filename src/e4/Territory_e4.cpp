@@ -23,7 +23,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   int v6; // [esp+4h] [ebp-8h]
 
   LOBYTE(Ticks) = a2; /*0x7718a0*/
-  this->__pad_C[0] = a2; /*0x7718a9*/
+  this->q00C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
     v3 = this->field_1C; /*0x7718af*/
@@ -50,19 +50,19 @@ signed int Territory_WorldDominationTour_8::Release()
   signed int result; // eax
   int v3; // edi
 
-  result = *(unsigned int *)&this->__pad_C[4]; /*0x771903*/
+  result = *&this->Ticks; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
     v3 = this->field_18; /*0x77190c*/
-    result = Timer::GetTicks() - *(unsigned int *)&this->__pad_C[4]; /*0x77191c*/
+    result = Timer::GetTicks() - *&this->Ticks; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       this->field_18 = 0; /*0x771934*/
-      *(unsigned int *)&this->__pad_C[4] = -1; /*0x771937*/
+      *&this->Ticks = -1; /*0x771937*/
     }
     else
     {
-      *(unsigned int *)&this->__pad_C[4] = -1; /*0x771925*/
+      *&this->Ticks = -1; /*0x771925*/
       this->field_18 = v3 - result; /*0x77192c*/
     }
   }
@@ -75,8 +75,8 @@ namespace gamemd {
 signed int Territory_WorldDominationTour_8::ddtor()
 {
 
-  if ( *(unsigned int *)&this->__pad_C[4] == -1 ) /*0x771957*/
-    *(unsigned int *)&this->__pad_C[4] = Timer::GetTicks(); /*0x771961*/
+  if ( *&this->Ticks == -1 ) /*0x771957*/
+    *&this->Ticks = Timer::GetTicks(); /*0x771961*/
 
 }
 } // namespace gamemd
@@ -111,11 +111,11 @@ void Territory_WorldDominationTour_8::Close(int a2, void *a2_2)
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->__pad_0 = &vt_WorldDominationTourVoicesAnim; /*0x771a33*/
+  *(unsigned int *)Block->tail_0 = &vt_WorldDominationTourVoicesAnim; /*0x771a33*/
   VtableStub::sub_5CB6C0(Block); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     operator delete((void *)(Block)); /*0x771a46*/
-  return Block->__pad_0; /*0x771a50*/
+  return Block->tail_0; /*0x771a50*/
 }
 }
 // 0x771990

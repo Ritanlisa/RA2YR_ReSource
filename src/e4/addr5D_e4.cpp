@@ -197,7 +197,7 @@ int sub_5D2350(int a1, int * a2)
       GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d237b*/
       ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d238c*/
       if ( dword_887640 ) /*0x5d239e*/
-        (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x5d23a5*/
+        (*(void (**)(int, int, unsigned int))(*&dword_887640->q0F0))(dword_887640, a1, 0); /*0x5d23a5*/
       v3 = *a2; /*0x5d23af*/
       v4 = a2[1]; /*0x5d23b3*/
       v5[2] = a2[2]; /*0x5d23b9*/
@@ -212,7 +212,7 @@ int sub_5D2350(int a1, int * a2)
                  0,
                  1);
       if ( dword_887640 ) /*0x5d23f1*/
-        return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x5d23f8*/
+        return (*(int (**)(int, int, unsigned int))(*&dword_887640->q_100))(dword_887640, a1, 0); /*0x5d23f8*/
     }
   }
   return result; /*0x5d23fb*/
@@ -272,7 +272,7 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
       v4 = 0; /*0x5d266a*/
       if ( this->ambientSoundController[1] > 0 ) /*0x5d266e*/
       {
-        while ( _strcmpi((char *)a2, **((char ***)&this->attachedTag->AbstractClass + v4)) ) /*0x5d2684*/
+        while ( _strcmpi((char *)a2, *this->M52 + v4)) ) /*0x5d2684*/
         {
           if ( ++v4 >= this->ambientSoundController[1] ) /*0x5d268c*/
             return; /*0x5d268c*/
@@ -336,19 +336,19 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     (((unsigned char *)&(v7))[1]) = (((unsigned char *)&(aP0))[1]) & 0xF7; /*0x5d453c*/
     if ( v7 == 1 || v7 == 2 ) /*0x5d4547*/
     {
-      if ( ((unsigned int)(aP0)& 2) != 0 && *(unsigned char *)(aP0 + 25) ) /*0x5d4552*/
+      if ( ((unsigned int)(aP0)& 2) != 0 && aP0->q019 ) /*0x5d4552*/
       {
         DisableIME(); /*0x5d455d*/
-        if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4562*/
+        if ( aP0->q019 ) /*0x5d4562*/
         {
           v8 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d4569*/
-          *(unsigned char *)(aP0 + 25) = 0; /*0x5d456c*/
+          aP0->q019 = 0; /*0x5d456c*/
           if ( v8 ) /*0x5d4572*/
             (**v8)(v8, 1); /*0x5d4578*/
           nullsub_48(); /*0x5d457a*/
-          if ( *(unsigned char *)(aP0 + 26) ) /*0x5d457f*/
+          if ( aP0->q01A ) /*0x5d457f*/
           {
-            if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4586*/
+            if ( aP0->q019 ) /*0x5d4586*/
               v9 = aP0->ScrollOffset + aP0->MessageTimer; /*0x5d4593*/
             else
               v9 = aP0->ScrollOffset; /*0x5d4597*/
@@ -372,7 +372,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
       return 0; /*0x5d4643*/
     }
   }
-  if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d45c7*/
+  if ( !aP0->q019 ) /*0x5d45c7*/
     return (gamemd::CampaignScore **)(v4); /*0x5d4990*/
   if ( a4 ) /*0x5d45d0*/
   {
@@ -402,66 +402,66 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
   {
     if ( *a2 != 8 ) /*0x5d495d*/
     {
-      v39 = *(unsigned int *)(aP0 + 688); /*0x5d495f*/
-      if ( v39 > *(unsigned int *)(aP0 + 692) ) /*0x5d496d*/
+      v39 = aP0->u32_2B0; /*0x5d495f*/
+      if ( v39 > aP0->u32_2B4 ) /*0x5d496d*/
       {
         v40 = v39 - 1; /*0x5d496f*/
         v4 = 2; /*0x5d4970*/
-        *(unsigned int *)(aP0 + 688) = v40; /*0x5d4975*/
+        aP0->u32_2B0 = v40; /*0x5d4975*/
         *(unsigned short *)(aP0 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
     *a2 = (gamemd::CampaignScore **)(0);
-    (*(void (**)(unsigned int))(**(unsigned int **)(aP0 + 36) + 80))(*(unsigned int *)(aP0 + 36)); /*0x5d498d*/
+    (*(void (**)(unsigned int))(*aP0->u32_24 + 80))(aP0->u32_24); /*0x5d498d*/
     return (gamemd::CampaignScore **)(v4); /*0x5d498d*/
   }
   if ( v12 != 13 ) /*0x5d4658*/
   {
     if ( v12 != 27 ) /*0x5d4661*/
     {
-      (*(void (**)(unsigned int))(**(unsigned int **)(aP0 + 36) + 80))(*(unsigned int *)(aP0 + 36)); /*0x5d466c*/
+      (*(void (**)(unsigned int))(*aP0->u32_24 + 80))(aP0->u32_24); /*0x5d466c*/
       if ( v12 > 31 ) /*0x5d4672*/
       {
-        if ( *(unsigned short *)(aP0 + 2 * *(unsigned int *)(aP0 + 688) + 40) ) /*0x5d468a*/
+        if ( *(unsigned short *)(aP0 + 2 * aP0->u32_2B0 + 40) ) /*0x5d468a*/
         {
-          v15 = *(unsigned int *)(aP0 + 692); /*0x5d4694*/
+          v15 = aP0->u32_2B4; /*0x5d4694*/
           v16 = aP0->DisplayDuration - 1; /*0x5d469a*/
           do /*0x5d46b2*/
           {
-            if ( *(unsigned int *)(aP0 + 688) - v15 >= v16 ) /*0x5d46a9*/
+            if ( aP0->u32_2B0 - v15 >= v16 ) /*0x5d46a9*/
               break; /*0x5d46a9*/
-            v17 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d46ab*/
-            *(unsigned int *)(aP0 + 688) = v17; /*0x5d46ac*/
+            v17 = aP0->u32_2B0 + 1; /*0x5d46ab*/
+            aP0->u32_2B0 = v17; /*0x5d46ac*/
           }
           while ( *(unsigned short *)(aP0 + 2 * v17 + 40) ); /*0x5d46b2*/
         }
-        if ( *(unsigned int *)(aP0 + 688) - *(unsigned int *)(aP0 + 692) >= aP0->DisplayDuration - 1 ) /*0x5d46cf*/
+        if ( aP0->u32_2B0 - aP0->u32_2B4 >= aP0->DisplayDuration - 1 ) /*0x5d46cf*/
           goto LABEL_46; /*0x5d46cf*/
-        *(unsigned short *)(aP0 + 2 * *(unsigned int *)(aP0 + 688) + 40) = v12; /*0x5d46d1*/
-        v18 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d46dc*/
+        *(unsigned short *)(aP0 + 2 * aP0->u32_2B0 + 40) = v12; /*0x5d46d1*/
+        v18 = aP0->u32_2B0 + 1; /*0x5d46dc*/
         v4 = 1; /*0x5d46dd*/
-        *(unsigned int *)(aP0 + 688) = v18; /*0x5d46e4*/
+        aP0->u32_2B0 = v18; /*0x5d46e4*/
         *(unsigned short *)(aP0 + 2 * v18 + 40) = 0; /*0x5d46ea*/
         TextRenderer::GetInstance(); /*0x5d46f5*/
-        if ( Text::MeasureWidth((int)(aP0 + 40), 0) >= *(unsigned int *)(aP0 + 708) - 10 ) /*0x5d4711*/
+        if ( Text::MeasureWidth((int)(aP0 + 40), 0) >= aP0->u32_2C4 - 10 ) /*0x5d4711*/
         {
-          v19 = *(unsigned int *)(aP0 + 688) - 1; /*0x5d4719*/
-          *(unsigned int *)(aP0 + 688) = v19; /*0x5d471a*/
+          v19 = aP0->u32_2B0 - 1; /*0x5d4719*/
+          aP0->u32_2B0 = v19; /*0x5d471a*/
           *(unsigned short *)(aP0 + 2 * v19 + 40) = 0; /*0x5d4720*/
   LABEL_46:
-          if ( *(unsigned char *)(aP0 + 24) ) /*0x5d4725*/
+          if ( aP0->q018 ) /*0x5d4725*/
           {
-            v20 = *(unsigned int *)(aP0 + 688) /*0x5d475f*/
+            v20 = aP0->u32_2B0 /*0x5d475f*/
                 - WideString::WordWrap(
-                    (wchar_t *)(aP0 + 364),
-                    (wchar_t *)(aP0 + 2 * *(unsigned int *)(aP0 + 692) + 40),
-                    *(unsigned int *)(aP0 + 700),
-                    *(unsigned int *)(aP0 + 704),
+                    &aP0->u32_16C,
+                    (wchar_t *)(aP0 + 2 * aP0->u32_2B4 + 40),
+                    aP0->u32_2BC,
+                    aP0->u32_2C0,
                     1);
-            *(unsigned int *)(aP0 + 688) = v20; /*0x5d4768*/
+            aP0->u32_2B0 = v20; /*0x5d4768*/
             *(unsigned short *)(aP0 + 2 * v20 + 40) = v12; /*0x5d476e*/
-            v21 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d4779*/
-            *(unsigned int *)(aP0 + 688) = v21; /*0x5d477a*/
+            v21 = aP0->u32_2B0 + 1; /*0x5d4779*/
+            aP0->u32_2B0 = v21; /*0x5d477a*/
             *(unsigned short *)(aP0 + 2 * v21 + 40) = 0; /*0x5d4780*/
             *a2 = 0; /*0x5d4788*/
             return (gamemd::CampaignScore **)(4); /*0x5d478d*/
@@ -473,19 +473,19 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
       return (gamemd::CampaignScore **)(v4); /*0x5d479e*/
     }
     DisableIME(); /*0x5d47a1*/
-    if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d47a6*/
+    if ( !aP0->q019 ) /*0x5d47a6*/
       goto LABEL_77; /*0x5d47a6*/
     v22 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
-    *(unsigned char *)(aP0 + 25) = 0; /*0x5d47b4*/
+    aP0->q019 = 0; /*0x5d47b4*/
     if ( v22 ) /*0x5d47ba*/
       (**v22)(v22, 1); /*0x5d47c0*/
     nullsub_48(); /*0x5d47c2*/
-    if ( !*(unsigned char *)(aP0 + 26) ) /*0x5d47c7*/
+    if ( !aP0->q01A ) /*0x5d47c7*/
     {
   LABEL_77: *a2 = (gamemd::CampaignScore **)(0);
       return 2; /*0x5d48c1*/
     }
-    if ( *(unsigned char *)(aP0 + 25) ) /*0x5d47d2*/
+    if ( aP0->q019 ) /*0x5d47d2*/
       v23 = aP0->ScrollOffset + aP0->MessageTimer; /*0x5d47df*/
     else
       v23 = aP0->ScrollOffset; /*0x5d47e3*/
@@ -505,35 +505,35 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     ++aP0->TextColorIndex; /*0x5d48ad*/
     goto LABEL_77; /*0x5d48ad*/
   }
-  v26 = *(unsigned int *)(aP0 + 692); /*0x5d4808*/
-  if ( *(unsigned int *)(aP0 + 688) < v26 ) /*0x5d4816*/
-    *(unsigned int *)(aP0 + 688) = v26; /*0x5d4818*/
-  if ( *(unsigned short *)(aP0 + 2 * *(unsigned int *)(aP0 + 688) + 40) ) /*0x5d4824*/
+  v26 = aP0->u32_2B4; /*0x5d4808*/
+  if ( aP0->u32_2B0 < v26 ) /*0x5d4816*/
+    aP0->u32_2B0 = v26; /*0x5d4818*/
+  if ( *(unsigned short *)(aP0 + 2 * aP0->u32_2B0 + 40) ) /*0x5d4824*/
   {
     v27 = aP0->DisplayDuration - 1; /*0x5d482e*/
     do /*0x5d4846*/
     {
-      if ( *(unsigned int *)(aP0 + 688) - v26 >= v27 ) /*0x5d483d*/
+      if ( aP0->u32_2B0 - v26 >= v27 ) /*0x5d483d*/
         break; /*0x5d483d*/
-      v28 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d483f*/
-      *(unsigned int *)(aP0 + 688) = v28; /*0x5d4840*/
+      v28 = aP0->u32_2B0 + 1; /*0x5d483f*/
+      aP0->u32_2B0 = v28; /*0x5d4840*/
     }
     while ( *(unsigned short *)(aP0 + 2 * v28 + 40) ); /*0x5d4846*/
   }
-  v29 = *(unsigned int *)(aP0 + 688); /*0x5d484d*/
+  v29 = aP0->u32_2B0; /*0x5d484d*/
   if ( v29 == v26 ) /*0x5d4855*/
   {
     DisableIME(); /*0x5d4857*/
-    if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d485c*/
+    if ( !aP0->q019 ) /*0x5d485c*/
       goto LABEL_77; /*0x5d485c*/
     v30 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d4863*/
-    *(unsigned char *)(aP0 + 25) = 0; /*0x5d4866*/
+    aP0->q019 = 0; /*0x5d4866*/
     if ( v30 ) /*0x5d486c*/
       (**v30)(v30, 1); /*0x5d4872*/
     nullsub_48(); /*0x5d4874*/
-    if ( !*(unsigned char *)(aP0 + 26) ) /*0x5d4879*/
+    if ( !aP0->q01A ) /*0x5d4879*/
       goto LABEL_77; /*0x5d487e*/
-    if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4880*/
+    if ( aP0->q019 ) /*0x5d4880*/
       v31 = aP0->ScrollOffset + aP0->MessageTimer; /*0x5d488d*/
     else
       v31 = aP0->ScrollOffset; /*0x5d4891*/
@@ -554,21 +554,21 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
   if ( v29 - v26 < aP0->DisplayDuration - 1 ) /*0x5d48ce*/
   {
     *(unsigned short *)(aP0 + 2 * v29 + 40) = 32; /*0x5d48d0*/
-    v34 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d48dd*/
-    *(unsigned int *)(aP0 + 688) = v34; /*0x5d48de*/
+    v34 = aP0->u32_2B0 + 1; /*0x5d48dd*/
+    aP0->u32_2B0 = v34; /*0x5d48de*/
     *(unsigned short *)(aP0 + 2 * v34 + 40) = 0; /*0x5d48e4*/
   }
   DisableIME(); /*0x5d48e9*/
-  if ( *(unsigned char *)(aP0 + 25) ) /*0x5d48ee*/
+  if ( aP0->q019 ) /*0x5d48ee*/
   {
     v35 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
-    *(unsigned char *)(aP0 + 25) = 0; /*0x5d48f8*/
+    aP0->q019 = 0; /*0x5d48f8*/
     if ( v35 ) /*0x5d48fe*/
       (**v35)(v35, 1); /*0x5d4904*/
     nullsub_48(); /*0x5d4906*/
-    if ( *(unsigned char *)(aP0 + 26) ) /*0x5d490b*/
+    if ( aP0->q01A ) /*0x5d490b*/
     {
-      if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4912*/
+      if ( aP0->q019 ) /*0x5d4912*/
         v36 = aP0->ScrollOffset + aP0->MessageTimer; /*0x5d491f*/
       else
         v36 = aP0->ScrollOffset; /*0x5d4923*/
@@ -886,27 +886,27 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
             {
               g_MultiplayerMode = v16 | 1; /*0x5d79eb*/
               MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d79f0*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d79fa*/
-              *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = &vt_DynamicVectorClass; /*0x5d7a05*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7a0b*/
+              DataGlobal_ABFDB4 = 10; /*0x5d79fa*/
+              *(unsigned int *)g_MultiplayerModeConfig = &vt_DynamicVectorClass; /*0x5d7a05*/
+              g_MultiplayerGameList = 0; /*0x5d7a0b*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a11*/
               v16 = g_MultiplayerMode; /*0x5d7a16*/
             }
-            if ( v15 >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7a2b*/
+            if ( v15 >= g_MultiplayerGameList ) /*0x5d7a2b*/
               break; /*0x5d7a2b*/
             if ( (v16 & 1) == 0 ) /*0x5d7a2f*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d7a38*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7a3d*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7a43*/
-              (*((unsigned short *)&(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C))) = 1; /*0x5d7a49*/
-              *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = &vt_DynamicVectorClass; /*0x5d7a56*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7a5c*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7a62*/
+              Src = 0; /*0x5d7a3d*/
+              DataGlobal_ABFDA8 = 0; /*0x5d7a43*/
+              (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7a49*/
+              *(unsigned int *)g_MultiplayerModeConfig = &vt_DynamicVectorClass; /*0x5d7a56*/
+              DataGlobal_ABFDB4 = 10; /*0x5d7a5c*/
+              g_MultiplayerGameList = 0; /*0x5d7a62*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a68*/
               v16 = g_MultiplayerMode; /*0x5d7a6d*/
             }
-            if ( *(unsigned int *)(*(unsigned int *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * v15) + 40) > *(unsigned int *)(v19.occupant + 40) ) /*0x5d7a88*/
+            if ( *(unsigned int *)(*(unsigned int *)(Src + 4 * v15) + 40) > *(unsigned int *)(v19.occupant + 40) ) /*0x5d7a88*/
               break; /*0x5d7a88*/
             ++v15; /*0x5d7a8a*/
           }
@@ -915,69 +915,69 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
             if ( (v16 & 1) == 0 ) /*0x5d7b56*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d7b5f*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7b64*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7b6a*/
-              (*((unsigned short *)&(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C))) = 1; /*0x5d7b70*/
-              *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = &vt_DynamicVectorClass; /*0x5d7b7d*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7b83*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7b89*/
+              Src = 0; /*0x5d7b64*/
+              DataGlobal_ABFDA8 = 0; /*0x5d7b6a*/
+              (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7b70*/
+              *(unsigned int *)g_MultiplayerModeConfig = &vt_DynamicVectorClass; /*0x5d7b7d*/
+              DataGlobal_ABFDB4 = 10; /*0x5d7b83*/
+              g_MultiplayerGameList = 0; /*0x5d7b89*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7b8f*/
             }
             v17 = v15 - 1; /*0x5d7ba2*/
-            if ( g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 /*0x5d7bcc*/
-              && (!(((unsigned char *)&(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C))[1])
-               && g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-               || g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 <= 0
-               || !(*(uint8_t (**)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)g_MultiplayerModeConfig.__pad_0
+            if ( g_MultiplayerGameList >= DataGlobal_ABFDA8 /*0x5d7bcc*/
+              && (!(((unsigned char *)&(DataGlobal_ABFDAC))[1])
+               && DataGlobal_ABFDA8
+               || DataGlobal_ABFDB4 <= 0
+               || !(*(uint8_t (**)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)g_MultiplayerModeConfig
                                                                                          + 8))(
                      &g_MultiplayerModeConfig,
-                     g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-                   + g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14,
+                     DataGlobal_ABFDA8
+                   + DataGlobal_ABFDB4,
                      0)) )
             {
               goto LABEL_45; /*0x5d7bd1*/
             }
-            if ( v17 < g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 - 1 ) /*0x5d7bde*/
+            if ( v17 < g_MultiplayerGameList - 1 ) /*0x5d7bde*/
               memcpy( /*0x5d7bff*/
-                (void *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * v17 + 8),
-                (const void *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * (v17 + 1)),
-                4 * (g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 + 0x3FFFFFFF * (v17 + 1)));
-            *(unsigned int *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * v17 + 4) = v19.occupant; /*0x5d7c10*/
+                (void *)(Src + 4 * v17 + 8),
+                (const void *)(Src + 4 * (v17 + 1)),
+                4 * (g_MultiplayerGameList + 0x3FFFFFFF * (v17 + 1)));
+            *(unsigned int *)(Src + 4 * v17 + 4) = v19.occupant; /*0x5d7c10*/
           }
           else
           {
             if ( (v16 & 1) == 0 ) /*0x5d7a9a*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d7aa3*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7aa8*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7aae*/
-              (*((unsigned short *)&(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C))) = 1; /*0x5d7ab4*/
-              *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = &vt_DynamicVectorClass; /*0x5d7ac1*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7ac7*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7acd*/
+              Src = 0; /*0x5d7aa8*/
+              DataGlobal_ABFDA8 = 0; /*0x5d7aae*/
+              (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7ab4*/
+              *(unsigned int *)g_MultiplayerModeConfig = &vt_DynamicVectorClass; /*0x5d7ac1*/
+              DataGlobal_ABFDB4 = 10; /*0x5d7ac7*/
+              g_MultiplayerGameList = 0; /*0x5d7acd*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7ad3*/
             }
-            if ( g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 /*0x5d7b16*/
-              && (!(((unsigned char *)&(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C))[1])
-               && g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-               || g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 <= 0
-               || !(*(uint8_t (**)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)g_MultiplayerModeConfig.__pad_0
+            if ( g_MultiplayerGameList >= DataGlobal_ABFDA8 /*0x5d7b16*/
+              && (!(((unsigned char *)&(DataGlobal_ABFDAC))[1])
+               && DataGlobal_ABFDA8
+               || DataGlobal_ABFDB4 <= 0
+               || !(*(uint8_t (**)(MultiplayerGameMode *, int, unsigned int))(*(unsigned int *)g_MultiplayerModeConfig
                                                                                          + 8))(
                      &g_MultiplayerModeConfig,
-                     g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-                   + g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14,
+                     DataGlobal_ABFDA8
+                   + DataGlobal_ABFDB4,
                      0)) )
             {
               goto LABEL_45; /*0x5d7b1b*/
             }
-            if ( g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7b28*/
+            if ( g_MultiplayerGameList ) /*0x5d7b28*/
               memcpy( /*0x5d7b3c*/
-                (void *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4),
-                (const void *)g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04,
-                4 * g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10);
-            *(unsigned int *)g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = v19.occupant; /*0x5d7b4d*/
+                (void *)(Src + 4),
+                (const void *)Src,
+                4 * g_MultiplayerGameList);
+            *(unsigned int *)Src = v19.occupant; /*0x5d7b4d*/
           }
-          ++g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10; /*0x5d7c14*/
+          ++g_MultiplayerGameList; /*0x5d7c14*/
         }
   LABEL_45:
         DeleteAndZero((ObjectClass *)&v19.abstractFlags); /*0x5d7c1a*/
@@ -1016,7 +1016,7 @@ int GameInit_Complete()
       GameInit::InitMultiplayerModes((GameInit *)&g_MultiplayerModeConfig, 0, 0); /*0x5d7d08*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7d12*/
     }
-    if ( i >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7d20*/
+    if ( i >= g_MultiplayerGameList ) /*0x5d7d20*/
       break; /*0x5d7d20*/
     v2 = *(void (****)(unsigned int, int))(System_Init()[1] + 4 * i); /*0x5d7d2a*/
     if ( v2 ) /*0x5d7d32*/
@@ -1272,11 +1272,11 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   char v25[112]; // [esp+BCh] [ebp-70h] BYREF
 
   v2 = a1; /*0x5da75d*/
-  v4 = *(unsigned int *)&dword_A8022C->vfptr[4 * a1]; /*0x5da762*/
+  v4 = *&dword_A8022C->vtable1; /*0x5da762*/
   a1 = a1; /*0x5da76c*/
   if ( byte_A8ED74 ) /*0x5da770*/
     Debug::Log(); /*0x5da77f*/
-  if ( !v4 || !*(unsigned char *)(v4 + 492) ) /*0x5da78f*/
+  if ( !v4 || !v4->u32_1EC ) /*0x5da78f*/
     return; /*0x5da797*/
   String[0] = 0; /*0x5da7a0*/
   if ( a2 == 1 ) /*0x5da7a7*/
@@ -1292,7 +1292,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   if ( wcslen(String) ) /*0x5da802*/
   {
     v5 = Math::RoundToInt(*(double *)&dword_8871E0[1].__pad_A0 * 900.0); /*0x5da822*/
-    MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(*(unsigned int *)(v4 + 52) + 192), 16454, v5, 0); /*0x5da845*/
+    MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v4->__pad_34 + 192), 16454, v5, 0); /*0x5da845*/
     MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5da851*/
   }
   ((void (__stdcall *)(int))Network::sendData)(v2); /*0x5da85d*/
@@ -1300,7 +1300,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   {
     if ( dword_A8ED84 ) /*0x5da871*/
     {
-      v6 = EventClass::Add2(v25, *((unsigned int *)dword_A83D4C + 12), 0x23u, v2); /*0x5da893*/
+      v6 = EventClass::Add2(v25, dword_A83D4C->relatedTagsCount, 0x23u, v2); /*0x5da893*/
       if ( dword_A802C8 < 128 ) /*0x5da8a2*/
       {
         memcpy(&byte_A802D4[111 * dword_A802D0], v6, 0x6Fu); /*0x5da8c2*/
@@ -1325,8 +1325,8 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
           v7 = v7; /*0x5da977*/
           if ( v7 != -1 ) /*0x5da97c*/
           {
-            v9 = *(unsigned int *)&dword_A8022C->vfptr[4 * v7]; /*0x5da987*/
-            v22 = *(unsigned int *)&dword_A8022C->vfptr[4 * v7]; /*0x5da98c*/
+            v9 = *&dword_A8022C->vtable1; /*0x5da987*/
+            v22 = *&dword_A8022C->vtable1; /*0x5da98c*/
             if ( v9 ) /*0x5da990*/
             {
               if ( dword_A8DA84 > 2 ) /*0x5da99f*/
@@ -1452,11 +1452,11 @@ int CheckNetworkGameTimeout()
   v2 = 1; /*0x5db72c*/
   for ( i = 1; i < dword_A8DA6C; ++i ) /*0x5db737*/
   {
-    if ( wcscmp(*(const wchar_t **)(dword_A8DA60 + 4 * i), (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5db74b*/
+    if ( wcscmp(*(const wchar_t **)(dword_A8DA60 + 4 * i), (const wchar_t *)&g_CurrentPlayerName) ) /*0x5db74b*/
     {
-      v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db760*/
-      if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db769*/
-        v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db77b*/
+      v4 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5db760*/
+      if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x5db769*/
+        v4 += TimerGetTicks() - *(unsigned int *)&g_LastPerformanceTick; /*0x5db77b*/
       if ( (unsigned int)(v4 - *(unsigned int *)(*(unsigned int *)(dword_A8DA60 + 4 * i) + 53)) > 0x12C ) /*0x5db78f*/
       {
         Debug::Log(); /*0x5db797*/
@@ -1480,24 +1480,24 @@ int CheckNetworkGameTimeout()
     {
       if ( !*(unsigned int *)(*(unsigned int *)(dword_A8DA48 + 4 * v2) + 52) ) /*0x5db818*/
       {
-        v6 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db824*/
-        if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db82d*/
-          v6 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db83f*/
+        v6 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5db824*/
+        if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x5db82d*/
+          v6 += TimerGetTicks() - *(unsigned int *)&g_LastPerformanceTick; /*0x5db83f*/
         *(unsigned int *)(*(unsigned int *)(dword_A8DA48 + 4 * v2) + 52) = v6; /*0x5db849*/
       }
-      v7 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db84c*/
-      v8 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db852*/
-      if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db85b*/
+      v7 = *(unsigned int *)&g_LastPerformanceTick; /*0x5db84c*/
+      v8 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5db852*/
+      if ( *(unsigned int *)&g_LastPerformanceTick != -1 ) /*0x5db85b*/
       {
         Ticks = TimerGetTicks(); /*0x5db862*/
-        v7 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db867*/
-        v8 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db86f*/
+        v7 = *(unsigned int *)&g_LastPerformanceTick; /*0x5db867*/
+        v8 += Ticks - *(unsigned int *)&g_LastPerformanceTick; /*0x5db86f*/
       }
       if ( (unsigned int)(v8 - *(unsigned int *)(*(unsigned int *)(dword_A8DA48 + 4 * v2) + 52)) <= 0x168 ) /*0x5db882*/
       {
-        v11 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db8e5*/
+        v11 = *(unsigned int *)&g_PerformanceTickOffset; /*0x5db8e5*/
         if ( v7 != -1 ) /*0x5db8ee*/
-          v11 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db900*/
+          v11 += TimerGetTicks() - *(unsigned int *)&g_LastPerformanceTick; /*0x5db900*/
         v12 = dword_A8DA48; /*0x5db902*/
         v13 = *(unsigned int *)(dword_A8DA48 + 4 * v2); /*0x5db908*/
         if ( (unsigned int)(v11 - *(unsigned int *)(v13 + 52)) > 0x12C && !*(unsigned char *)(v13 + 56) ) /*0x5db916*/
@@ -1559,7 +1559,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
     }
   }
   v6 = CharToWideString(v3); /*0x5dbe4e*/
-  if ( !wcscmp((const wchar_t *)v6, (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5dbe54*/
+  if ( !wcscmp((const wchar_t *)v6, (const wchar_t *)&g_CurrentPlayerName) ) /*0x5dbe54*/
     v4 = 1; /*0x5dbe60*/
   v7 = 0; /*0x5dbe6a*/
   if ( dword_A8DA84 > 0 ) /*0x5dbe6e*/
@@ -1750,7 +1750,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
       }
     }
   }
-  *(unsigned int *)&stru_A8B250.__pad_0[4] = -1; /*0x5dda8c*/
+  *(unsigned int *)&g_GameRulesOptions = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddaaa*/
   v7 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.TurretAnimData[2], 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
   Dialog::ShowMessageBox(v7, StringCSF, 0, 0, 0, v1); /*0x5ddabf*/
@@ -2194,7 +2194,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    vtable2 = (char *)this->?; /*0x5d30e2*/
+    vtable2 = (char *)this->M8; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( LOWORD(v6) = *v3; *v3; LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -2209,7 +2209,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         v10 = v4; /*0x5d3112*/
       if ( *v3 == 10 ) /*0x5d311a*/
       {
-        v6 = (int)this->?; /*0x5d311c*/
+        v6 = (int)this->M8; /*0x5d311c*/
         ++v3; /*0x5d311f*/
         vtable2 += v6; /*0x5d3122*/
       }
@@ -2217,7 +2217,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    vtable1 = (char *)this->?; /*0x5d312a*/
+    vtable1 = (char *)this->M4; /*0x5d312a*/
     a3[3] = vtable2; /*0x5d3137*/
     a3[2] = &vtable1[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
@@ -2489,7 +2489,7 @@ int sub_5D5AA0()
 namespace gamemd {
 int sub_5D7550(int a1)
 {
-  return *(unsigned int *)(*(unsigned int *)&dword_A8022C->vfptr[4 * a1] + 90204); /*0x5d7563*/
+  return *(unsigned int *)(*&dword_A8022C->vtable1 + 90204); /*0x5d7563*/
 }
 } // namespace gamemd
 
@@ -2824,9 +2824,9 @@ unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 {
 
   this->AbstractClass = 0; /*0x5d8fb4*/
-  this->? = 0; /*0x5d8fb6*/
-  this->? = 0; /*0x5d8fb9*/
-  this->? = 0; /*0x5d8fbc*/
+  this->M4 = 0; /*0x5d8fb6*/
+  this->M8 = 0; /*0x5d8fb9*/
+  this->M12 = 0; /*0x5d8fbc*/
   return &this->AbstractClass; /*0x5d8fbf*/
 
 }
@@ -3325,8 +3325,8 @@ unsigned char sub_5DAF20()
     || dword_B76180 < (unsigned int)(time(0) - 3) && dword_B777A0 > 10
     || dword_B76180 < (unsigned int)(time(0) - 15) && dword_B777A0 > 0 )
   {
-    *(unsigned int *)&v29.m_3[1] = 0; /*0x77fb14*/
-    *(unsigned int *)v29.__pad_0 = 0; /*0x77fb18*/
+    *(unsigned int *)&v29.ptr_4 = 0; /*0x77fb14*/
+    *(unsigned int *)v29.q000 = 0; /*0x77fb18*/
     do /*0x77fbde*/
     {
       if ( dword_B777A0 <= 0 ) /*0x77fb23*/
@@ -3345,22 +3345,22 @@ unsigned char sub_5DAF20()
         v8[9] = 0; /*0x77fb93*/
       strcpy(v6 + 36, v8); /*0x77fbb1*/
       if ( v1 ) /*0x77fbbc*/
-        *(unsigned int *)(v1 + 32) = v6; /*0x77fbc4*/
+        v1->NeedsSaveOrLink = v6; /*0x77fbc4*/
       else
-        *(unsigned int *)&v29.m_3[1] = v6; /*0x77fbbe*/
+        *(unsigned int *)&v29.ptr_4 = v6; /*0x77fbbe*/
       v1 = (signed int)v6; /*0x77fbcb*/
       DeleteAndZero((ObjectClass *)&v31); /*0x77fbcd*/
-      ++*(unsigned int *)v29.__pad_0; /*0x77fbda*/
+      ++*(unsigned int *)v29.q000; /*0x77fbda*/
     }
-    while ( *(int *)v29.__pad_0 < 10 ); /*0x77fbde*/
+    while ( *(int *)v29.q000 < 10 ); /*0x77fbde*/
     if ( ppv ) /*0x77fbeb*/
-      (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 192))(ppv, *(unsigned int *)&v29.m_3[1]); /*0x77fbf5*/
-    v9 = *(unsigned int **)&v29.m_3[1]; /*0x77fc03*/
-    if ( *(unsigned int *)&v29.m_3[1] ) /*0x77fc05*/
+      (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 192))(ppv, *(unsigned int *)&v29.ptr_4); /*0x77fbf5*/
+    v9 = *(unsigned int **)&v29.ptr_4; /*0x77fc03*/
+    if ( *(unsigned int *)&v29.ptr_4 ) /*0x77fc05*/
     {
       do /*0x77fc17*/
       {
-        v10 = (unsigned int *)v9[8]; /*0x77fc07*/
+        v10 = v9->needsSave; /*0x77fc07*/
         __3_YAXPAX_Z(v9); /*0x77fc0b*/
         v9 = v10; /*0x77fc13*/
       }
@@ -3372,23 +3372,23 @@ unsigned char sub_5DAF20()
   if ( dword_B765F8 > 200 ) /*0x77fc34*/
   {
     for ( j = 0; j < dword_B765F8; ++j ) /*0x77fc3a*/
-      DeleteAndZero((ObjectClass *)((char *)dword_B76600 + 4 * j)); /*0x77fc45*/
+      DeleteAndZero(&dword_B76600->vtable2 * j)); /*0x77fc45*/
     dword_B765F8 = 0; /*0x77fc54*/
   }
   if ( dword_B7617C < (unsigned int)(time(0) - 2) && dword_B765F8 > 65 /*0x77fcb8*/
     || dword_B7617C < (unsigned int)(time(0) - 3) && dword_B765F8 > 10
     || dword_B7617C < (unsigned int)(time(0) - 15) && dword_B765F8 > 0 )
   {
-    *(unsigned int *)v29.__pad_0 = 0; /*0x77fcbe*/
-    *(unsigned int *)&v29.m_3[1] = 0; /*0x77fcc2*/
-    *(unsigned int *)v30.__pad_0 = 0; /*0x77fcc6*/
+    *(unsigned int *)v29.q000 = 0; /*0x77fcbe*/
+    *(unsigned int *)&v29.ptr_4 = 0; /*0x77fcc2*/
+    *(unsigned int *)v30.q000 = 0; /*0x77fcc6*/
     do /*0x77fe52*/
     {
       if ( dword_B765F8 <= 0 ) /*0x77fcd1*/
         break; /*0x77fcd1*/
       v12 = (char *)__2_YAPAXI_Z(0x6Cu); /*0x77fcde*/
       memset(v12, 0, 0x6Cu); /*0x77fce9*/
-      *(unsigned int *)&v31.m_3[1] = v12; /*0x77fcf2*/
+      *(unsigned int *)&v31.ptr_4 = v12; /*0x77fcf2*/
       unknown_libname_73(&v31); /*0x77fcf6*/
       v13 = dword_B765F8 - 1; /*0x77fd00*/
       if ( dword_B765F8 - 1 >= 0 && v13 < dword_B765F8 ) /*0x77fd0d*/
@@ -3398,10 +3398,10 @@ unsigned char sub_5DAF20()
         {
           if ( v13 >= dword_B765F8 ) /*0x77fd34*/
             v13 = dword_B765F8 - 1; /*0x77fd36*/
-          DeleteAndZero((ObjectClass *)((char *)dword_B76600 + 4 * v13)); /*0x77fd42*/
+          DeleteAndZero(&dword_B76600->vtable2 * v13)); /*0x77fd42*/
           memcpy( /*0x77fd6b*/
-            (char *)dword_B76600 + 4 * v13,
-            (char *)dword_B76600 + 4 * v13 + 4,
+            &dword_B76600->vtable2 * v13,
+            &dword_B76600->vtable2 * v13 + 4,
             4 * (dword_B765F8 + 0x3FFFFFFF * (v13 + 1)));
           --dword_B765F8; /*0x77fd7f*/
           if ( 3 * dword_B765F8 <= dword_B765FC ) /*0x77fd89*/
@@ -3421,7 +3421,7 @@ unsigned char sub_5DAF20()
               }
               __3_YAXPAX_Z(v16); /*0x77fdcf*/
               dword_B76600 = v17; /*0x77fdd4*/
-              v12 = *(char **)&v31.m_3[1]; /*0x77fdda*/
+              v12 = *(char **)&v31.ptr_4; /*0x77fdda*/
               dword_B765FC = v14; /*0x77fde1*/
             }
           }
@@ -3431,23 +3431,23 @@ unsigned char sub_5DAF20()
       if ( strlen(v18) > 9 ) /*0x77fe01*/
         v18[9] = 0; /*0x77fe03*/
       strcpy(v12 + 36, v18); /*0x77fe23*/
-      if ( *(unsigned int *)&v29.m_3[1] ) /*0x77fe2e*/
-        *(unsigned int *)(*(unsigned int *)&v29.m_3[1] + 32) = v12; /*0x77fe36*/
+      if ( *(unsigned int *)&v29.ptr_4 ) /*0x77fe2e*/
+        *(unsigned int *)(*(unsigned int *)&v29.ptr_4 + 32) = v12; /*0x77fe36*/
       else
-        *(unsigned int *)v29.__pad_0 = v12; /*0x77fe30*/
-      *(unsigned int *)&v29.m_3[1] = v12; /*0x77fe3d*/
+        *(unsigned int *)v29.q000 = v12; /*0x77fe30*/
+      *(unsigned int *)&v29.ptr_4 = v12; /*0x77fe3d*/
       DeleteAndZero((ObjectClass *)&v31); /*0x77fe41*/
-      ++*(unsigned int *)v30.__pad_0; /*0x77fe4e*/
+      ++*(unsigned int *)v30.q000; /*0x77fe4e*/
     }
-    while ( *(int *)v30.__pad_0 < 10 ); /*0x77fe52*/
+    while ( *(int *)v30.q000 < 10 ); /*0x77fe52*/
     if ( ppv ) /*0x77fe5f*/
-      (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 188))(ppv, *(unsigned int *)v29.__pad_0); /*0x77fe69*/
-    v19 = *(unsigned int **)v29.__pad_0; /*0x77fe77*/
-    if ( *(unsigned int *)v29.__pad_0 ) /*0x77fe79*/
+      (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 188))(ppv, *(unsigned int *)v29.q000); /*0x77fe69*/
+    v19 = *(unsigned int **)v29.q000; /*0x77fe77*/
+    if ( *(unsigned int *)v29.q000 ) /*0x77fe79*/
     {
       do /*0x77fe8b*/
       {
-        v20 = (unsigned int *)v19[8]; /*0x77fe7b*/
+        v20 = v19->needsSave; /*0x77fe7b*/
         __3_YAXPAX_Z(v19); /*0x77fe7f*/
         v19 = v20; /*0x77fe87*/
       }
@@ -3494,14 +3494,14 @@ unsigned char sub_5DAF20()
           if ( v22 >= 0 && v1 < v21 ) /*0x780023*/
             qmemcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
           String::Assign(&v29, (const char *)&Buffer[9]); /*0x780042*/
-          v23 = String::ToLowerCopy(&v29, (char **)&v31.m_3[1]); /*0x780050*/
-          v30.__tail_7[0] = String::Compare(&v30, (const char **)v23); /*0x780063*/
-          DeleteAndZero((ObjectClass *)&v31.m_3[1]); /*0x780067*/
-          if ( !v30.__tail_7[0] && Buffer[6].S_un.S_addr ) /*0x78007a*/
+          v23 = String::ToLowerCopy(&v29, (char **)&v31.ptr_4); /*0x780050*/
+          v30.tail_7 = String::Compare(&v30, (const char **)v23); /*0x780063*/
+          DeleteAndZero((ObjectClass *)&v31.ptr_4); /*0x780067*/
+          if ( !v30.tail_7 && Buffer[6].S_un.S_addr ) /*0x78007a*/
           {
             v24 = *(unsigned int *)g_UIPointerTable; /*0x78008c*/
             v25 = ntoainet(Buffer[6]); /*0x78008f*/
-            (*(void (**)(LPVOID, char *, int, char *))(v24 + 24))(g_UIPointerTable, v25, 1000, &v29.m_3[1]); /*0x78009b*/
+            (*(void (**)(LPVOID, char *, int, char *))(v24 + 24))(g_UIPointerTable, v25, 1000, &v29.ptr_4); /*0x78009b*/
           }
           DeleteAndZero((ObjectClass *)&v29); /*0x7800a2*/
           v21 = dword_B77900; /*0x7800a7*/

@@ -44,13 +44,13 @@ int GraphicMenuImageItem::QueryInterface(char a2)
   ObjectClass *v3; // edi
 
   v3 = (ObjectClass *)this->u32_30; /*0x4f3844*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x4f3847*/
+  *(unsigned int *)this->vtable1 = 0; /*0x4f3847*/
   if ( v3 ) /*0x4f384f*/
   {
     j_DeleteAndZero(v3); /*0x4f3853*/
     operator delete((void *)(v3)); /*0x4f3859*/
   }
-  DeleteAndZero((ObjectClass *)((char *)this + 52)); /*0x4f3864*/
+  DeleteAndZero(&this->q034); /*0x4f3864*/
   GraphicMenuItem::Dtor((GraphicMenuItem *)this); /*0x4f386b*/
   if ( (a2 & 1) != 0 ) /*0x4f3875*/
     operator delete((void *)(this)); /*0x4f3878*/
@@ -63,13 +63,13 @@ int StringVector::StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !(*((unsigned char *)&(this->m_C))) ) /*0x49ef40*/
+  if ( !(this->m_C) ) /*0x49ef40*/
     return 0; /*0x49ef48*/
-  m_8 = this->m_8; /*0x49ef4e*/
+  m_8 = this->q008; /*0x49ef4e*/
   result = 0; /*0x49ef51*/
   if ( m_8 <= 0 ) /*0x49ef55*/
     return -1; /*0x49ef6c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *(unsigned int *)(a2); ++i ) /*0x49ef5b*/
+  for ( i = *&this->q004; *i != *(unsigned int *)(a2); ++i ) /*0x49ef5b*/
   {
     if ( ++result >= m_8 ) /*0x49ef6a*/
       return -1; /*0x49ef6a*/

@@ -66,19 +66,19 @@ char MovementAI::Check()
   char result; // al
 
   result = 0; /*0x4a5363*/
-  if ( (*((unsigned char *)&(this->MovementAI_field_18))) ) /*0x4a5360*/
+  if ( (this->MovementAI_field_18) ) /*0x4a5360*/
   {
-    if ( (((unsigned char *)&(this->MovementAI_field_18))[1]) ) /*0x4a5369*/
+    if ( (this->u8_19) ) /*0x4a5369*/
     {
-      (*((unsigned char *)&(this->MovementAI_field_18))) = 0; /*0x4a536e*/
-      (((unsigned char *)&(this->MovementAI_field_18))[1]) = 1; /*0x4a5371*/
+      (this->MovementAI_field_18) = 0; /*0x4a536e*/
+      (this->u8_19) = 1; /*0x4a5371*/
     }
-    if ( (*((unsigned char *)&(this->MovementAI_field_18))) ) /*0x4a5375*/
+    if ( (this->MovementAI_field_18) ) /*0x4a5375*/
     {
-      if ( !(((unsigned char *)&(this->MovementAI_field_18))[1]) ) /*0x4a537a*/
+      if ( !(this->u8_19) ) /*0x4a537a*/
       {
-        (*((unsigned char *)&(this->MovementAI_field_18))) = 0; /*0x4a537f*/
-        (((unsigned char *)&(this->MovementAI_field_18))[1]) = 0; /*0x4a5382*/
+        (this->MovementAI_field_18) = 0; /*0x4a537f*/
+        (this->u8_19) = 0; /*0x4a5382*/
       }
     }
   }

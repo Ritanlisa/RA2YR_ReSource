@@ -237,7 +237,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
         if ( v34 ) /*0x531367*/
         {
           v10 = aGlssmdShp; /*0x53136e*/
-          if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x531378*/
+          if ( g_DisplayWidth != 640 ) /*0x531378*/
             v10 = aGlslmdShp; /*0x53137a*/
           Block = (void *)SearchMIXFile(v10, 0); /*0x531386*/
           v4 = (int16_t *)Block; /*0x53138a*/
@@ -305,10 +305,10 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   }
   if ( v34 ) /*0x531630*/
     (**(void (***)(int, int))v34)(v34, 1); /*0x531636*/
-  *(unsigned int *)v42.__tail_0 = &vt_CCFileClass; /*0x53163f*/
+  *(unsigned int *)v42.vtable1 = &vt_CCFileClass; /*0x53163f*/
   v44 = 0; /*0x531647*/
   Vector::Clear((int)v43); /*0x531652*/
-  *(unsigned int *)v42.__tail_0 = &off_7E1668; /*0x53165b*/
+  *(unsigned int *)v42.vtable1 = &off_7E1668; /*0x53165b*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v42))->Dtor(); /*0x531668*/
 }
 }
@@ -342,7 +342,7 @@ char BulkData_Initialize()
   }
   Event::Dispatch(); /*0x5316f9*/
   Event::Dispatch(); /*0x5316fe*/
-  MouseClass::LoadTypeData((MouseClass *)&stru_87F5F0.__pad_58[416]); /*0x531708*/
+  MouseClass::LoadTypeData((MouseClass *)&DataGlobal_87F7E8); /*0x531708*/
   nullsub_29(v3); /*0x531712*/
   BulkData::InitMissionHashing((BulkData *)&dword_A8B238); /*0x53171c*/
   FileSystem::InitPipShapes(); /*0x531721*/
@@ -370,10 +370,10 @@ char BulkData_Initialize()
   LABEL_11:
     Debug::Log(); /*0x53178f*/
   LABEL_12:
-    *(unsigned int *)v7.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x53179c*/
+    *(unsigned int *)v7.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x53179c*/
     v9 = 0; /*0x5317a8*/
     Vector::Clear((int)v8); /*0x5317ac*/
-    *(unsigned int *)v7.__tail_0 = (unsigned int)(&off_7E1668); /*0x5317b5*/
+    *(unsigned int *)v7.vtable1 = (unsigned int)(&off_7E1668); /*0x5317b5*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x5317bd*/
     return 0; /*0x5317cb*/
   }
@@ -389,22 +389,22 @@ char BulkData_Initialize()
   {
   LABEL_16:
     Debug::Log(); /*0x531805*/
-    *(unsigned int *)v10.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x531819*/
+    *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x531819*/
     v12 = 0; /*0x531821*/
     Vector::Clear((int)v11); /*0x531828*/
-    *(unsigned int *)v10.__tail_0 = (unsigned int)(&off_7E1668); /*0x531831*/
+    *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x531831*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
-  *(unsigned int *)v10.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x531852*/
+  *(unsigned int *)v10.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x531852*/
   v12 = 0; /*0x53185a*/
   Vector::Clear((int)v11); /*0x531861*/
-  *(unsigned int *)v10.__tail_0 = (unsigned int)(&off_7E1668); /*0x53186a*/
+  *(unsigned int *)v10.vtable1 = (unsigned int)(&off_7E1668); /*0x53186a*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x531872*/
-  *(unsigned int *)v7.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x53187b*/
+  *(unsigned int *)v7.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x53187b*/
   v9 = 0; /*0x531883*/
   Vector::Clear((int)v8); /*0x531887*/
-  *(unsigned int *)v7.__tail_0 = (unsigned int)(&off_7E1668); /*0x531890*/
+  *(unsigned int *)v7.vtable1 = (unsigned int)(&off_7E1668); /*0x531890*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v7))->Dtor(); /*0x531898*/
   return 1; /*0x5317c4*/
 }
@@ -1971,14 +1971,14 @@ void TheaterClass_LoadMIX(int a1)
   wsprintfA(v37, "%sMD.MIX", &aIsotem[v2]); /*0x534a2d*/
   wsprintfA(v35, "%sMD.MIX", v3); /*0x534a3a*/
   Debug::Log(); /*0x534a48*/
-  *((unsigned int *)dword_A8B230 + 1174) = a1; /*0x534a5d*/
+  dword_A8B230->theater = a1; /*0x534a5d*/
   Multiplayer::ShowProgress(dword_A8B238, 8); /*0x534a63*/
-  if ( *((unsigned int *)dword_A8B230 + 1174) != dword_822CF8 ) /*0x534a7a*/
+  if ( dword_A8B230->theater != dword_822CF8 ) /*0x534a7a*/
   {
     if ( dword_884E0C ) /*0x534a8a*/
       (**(void (***)(int, int))dword_884E0C)(dword_884E0C, 1); /*0x534a90*/
     dword_884E0C = 0; /*0x534a97*/
-    if ( *((unsigned int *)dword_A8B230 + 1174) == 1 ) /*0x534aa4*/
+    if ( dword_A8B230->theater == 1 ) /*0x534aa4*/
     {
       v4 = operator new(0x28u); /*0x534aa8*/
       if ( v4 ) /*0x534ab2*/
@@ -2311,7 +2311,7 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
   v3 = 0; /*0x538e78*/
   do
   {
-    v4 = (char *)this + 2 * (v3 % 256) + v3 % 256; /*0x538e92*/
+    v4 = &this->u8_2 * (v3 % 256) + v3 % 256; /*0x538e92*/
     v5 = ComputeColorSaturation((unsigned int)v4, (int)v10, (int)v10); /*0x538e97*/
     v6 = *(unsigned char *)(v5 + 2); /*0x538ea1*/
     (*((unsigned short *)&(v12.Color_field_00))) = *(unsigned short *)v5; /*0x538ea4*/
@@ -2369,10 +2369,10 @@ char sub_538F20(int a1, int a2, char * Source)
         CCFileClass::Reset(&v20); /*0x538f8d*/
         byte_A9F91C = 0; /*0x538f92*/
       }
-      *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x538f9d*/
+      *(unsigned int *)v20.vtable1 = &vt_CCFileClass; /*0x538f9d*/
       v22 = 0; /*0x538fa5*/
       Vector::Clear((int)v21); /*0x538fad*/
-      *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x538fb6*/
+      *(unsigned int *)v20.vtable1 = &off_7E1668; /*0x538fb6*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x538fba*/
     }
     if ( byte_A9F91C ) /*0x538fc6*/
@@ -2387,10 +2387,10 @@ char sub_538F20(int a1, int a2, char * Source)
       FileClass::Write(&v20, &byte_A8F91C, 0x10000u); /*0x539003*/
       CCFileClass::Reset(&v20); /*0x53900c*/
     }
-    *(unsigned int *)v20.__tail_0 = &vt_CCFileClass; /*0x539015*/
+    *(unsigned int *)v20.vtable1 = &vt_CCFileClass; /*0x539015*/
     v22 = 0; /*0x53901d*/
     Vector::Clear((int)v21); /*0x539025*/
-    *(unsigned int *)v20.__tail_0 = &off_7E1668; /*0x53902e*/
+    *(unsigned int *)v20.vtable1 = &off_7E1668; /*0x53902e*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x539032*/
   }
   DDraw::WaitForIdle((DDraw *)v16); /*0x539037*/
@@ -2499,7 +2499,7 @@ int SuperWeapon_Update()
       NukeFlash_Duration = 15; /*0x53a6f6*/
       NukeFlash_StartTime = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x53a700*/
       ScenarioClass::UpdateLighting(); /*0x53a705*/
-      MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 1); /*0x53a711*/
+      MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 1); /*0x53a711*/
     }
   }
   else if ( NukeFlash_Status == 2 /*0x53a736*/
@@ -2605,7 +2605,7 @@ int SuperWeapon_Update()
         v17 = v29 / 225; /*0x53aadd*/
         if ( !v30 ) /*0x53aae1*/
         {
-          (*((unsigned char *)&(v17))) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6064); /*0x53aae9*/
+          (*((unsigned char *)&(v17))) = *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 6064); /*0x53aae9*/
           if ( (unsigned char)v17 ) /*0x53aaf1*/
           {
             v31 = 3; /*0x53aaf8*/
@@ -2614,7 +2614,7 @@ int SuperWeapon_Update()
             ((VoxClass *)(&stru_828080))->FindAndPlay(-1); /*0x53ab11*/
             StringCSF = GetStringCSF(aTxtLightningSt_0, 0, g_Str_File_Ion_cpp, 974); /*0x53ab31*/
             (*((unsigned char *)&(v17))) = MessageListClass::AddMessage( /*0x53ab40*/
-                            (MessageListClass *)&stru_A8BB1C.__pad_87[189],
+                            (MessageListClass *)&g_GameNetworkObject,
                             0,
                             0,
                             StringCSF,
@@ -2638,12 +2638,12 @@ int SuperWeapon_Update()
     if ( LightningStorm_Duration == -1 /*0x53a933*/
       || LightningStorm_Duration + LightningStorm_StartTime >= *(int *)&((unsigned int *)&stru_A8EB00)[416] )
     {
-      v19 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x53a944*/
-      if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6048)) ) /*0x53a94d*/
+      v19 = *(unsigned int *)&g_RulesClass_Instance; /*0x53a944*/
+      if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6048)) ) /*0x53a94d*/
       {
         LightningStorm::Strike(LightningStorm_Coords); /*0x53a95e*/
         v18 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x53a963*/
-        v19 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x53a969*/
+        v19 = *(unsigned int *)&g_RulesClass_Instance; /*0x53a969*/
       }
       v17 = v18 / v19->EngineerCaptureLevel; /*0x53a972*/
       if ( !(v18 % v19->EngineerCaptureLevel) ) /*0x53a972*/
@@ -2674,7 +2674,7 @@ int SuperWeapon_Update()
               v28 = v37[1] - (int16_t)(v25[1] / 256); /*0x53aa26*/
               if ( v28 < 0 ) /*0x53aa28*/
                 v28 = (int16_t)(v25[1] / 256) - v37[1]; /*0x53aa2a*/
-              if ( v27 + v28 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6060) ) /*0x53aa3a*/
+              if ( v27 + v28 < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6060) ) /*0x53aa3a*/
                 break; /*0x53aa3a*/
               if ( ++v24 >= dword_A9F9E0 ) /*0x53aa44*/
                 goto LABEL_52; /*0x53aa44*/
@@ -2682,7 +2682,7 @@ int SuperWeapon_Update()
             v36 = 1; /*0x53aa48*/
           }
   LABEL_52:
-          if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CoordinatesLegal(v37) && !v36 ) /*0x53aa66*/
+          if ( (uint8_t)((LayerClass *)((LayerClass *)&DataGlobal_87F7E8))->CoordinatesLegal(v37) && !v36 ) /*0x53aa66*/
             break; /*0x53aa66*/
           (*((unsigned char *)&(v17))) = --v38; /*0x53aa6c*/
           if ( v38 <= 0 ) /*0x53aa73*/
@@ -2717,7 +2717,7 @@ AnimClass * * PsyDom::Update(void *a1, void *a2, void *a3, void *a4)
       break; /*0x53af63*/
     case 2: /*0x53af50*/
       v4 = *(unsigned int *)(PsyDom_Anim + 172); /*0x53af6f*/
-      if ( (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 772) * 0.01 <= (double)v4 /*0x53afaa*/
+      if ( (double)*(int *)(*(unsigned int *)&g_RulesClass_Instance + 772) * 0.01 <= (double)v4 /*0x53afaa*/
                                                                                          / (double)*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(PsyDom_Anim + 200) + 156))(*(unsigned int *)(PsyDom_Anim + 200)) + 6) )
       {
         PsyDom_Status = 3; /*0x53afb0*/
@@ -2789,7 +2789,7 @@ void sub_53B460(int a1, Scenario * a2)
     AudioMixer::Shutdown(); /*0x53b501*/
     StopThemeClass(1); /*0x53b508*/
     AudioController::Init(&stru_A9F9B8); /*0x53b512*/
-    PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
+    PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
     SetVocClassEnabled(0); /*0x53b538*/
     byte_A9FAD1 = (((unsigned char *)&(dword_A8B230[381].vfptr3))[2]); /*0x53b549*/
     Scenario::ClearScreen(a2); /*0x53b54f*/
@@ -2836,7 +2836,7 @@ AnimClass * * UpdateChronosphereEffect()
         ChronoScreenEffect_Status = 3; /*0x53b68f*/
         SetVocClassEnabled(1); /*0x53b699*/
         ((Mixer*)((int **)&dword_A9F9B8))->ReleaseChannel(); /*0x53b6a3*/
-        PlayVocClass(((unsigned int *)g_RulesClass_Instance)[0], 0x2000, 1.0, (int)&dword_A9F9B8); /*0x53b6c2*/
+        PlayVocClass(g_RulesClass_Instance->DetailMinFrameRateNormal, 0x2000, 1.0, (int)&dword_A9F9B8); /*0x53b6c2*/
         SetVocClassEnabled(0); /*0x53b6c9*/
       }
       break; /*0x53b6c9*/
@@ -3432,7 +3432,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
     {
       GetCursorPos(&Point); /*0x53e7a2*/
       dword_AA0434 = (int64_t)Point; /*0x53e7b0*/
-      (*(void (**)(int, int64_t *, char *))(*(unsigned int *)dword_887640 + 68))( /*0x53e7ce*/
+      (*(void (**)(int, int64_t *, char *))(*&dword_887640->CellIterator_NextY))( /*0x53e7ce*/
         dword_887640,
         &dword_AA0434,
         (char *)&dword_AA0434 + 4);
@@ -3443,7 +3443,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
         v21 = dword_AA0430; /*0x53e809*/
         v20 = dword_A8ED84; /*0x53e80d*/
         EnterCriticalSection(&unk_AA0400); /*0x53e811*/
-        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)dword_887640 + 56))( /*0x53e827*/
+        (*(void (**)(int, unsigned int, unsigned int))(*&dword_887640->q0E0))( /*0x53e827*/
           dword_887640,
           dword_AA0434,
           (*(((unsigned int *)&(dword_AA0434)) + 1)));
@@ -3495,7 +3495,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
                   v6(&unk_AA0400); /*0x53e9e3*/
                   dword_AA0434 = (int64_t)Point; /*0x53e9f5*/
                   if ( dword_887640 ) /*0x53ea00*/
-                    (*(void (**)(int, LONG, LONG))(*(unsigned int *)dword_887640 + 56))( /*0x53ea06*/
+                    (*(void (**)(int, LONG, LONG))(*&dword_887640->q0E0))( /*0x53ea06*/
                       dword_887640,
                       Point.x,
                       Point.y);
@@ -3685,10 +3685,10 @@ int E4Recv_538C40::sub_538C40(char * Source)
     CCFileClass::Reset(&v2); /*0x538c7e*/
     byte_A9F91C = 0; /*0x538c83*/
   }
-  *(unsigned int *)v2.__tail_0 = &vt_CCFileClass; /*0x538c8e*/
+  *(unsigned int *)v2.vtable1 = &vt_CCFileClass; /*0x538c8e*/
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
-  *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538ca7*/
+  *(unsigned int *)v2.vtable1 = &off_7E1668; /*0x538ca7*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v2))->Dtor(); /*0x538cb4*/
 }
 } // namespace gamemd
@@ -3708,10 +3708,10 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
     FileClass::Write(&v2, &byte_A8F91C, 0x10000u); /*0x538cf5*/
     CCFileClass::Reset(&v2); /*0x538cfe*/
   }
-  *(unsigned int *)v2.__tail_0 = &vt_CCFileClass; /*0x538d07*/
+  *(unsigned int *)v2.vtable1 = &vt_CCFileClass; /*0x538d07*/
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
-  *(unsigned int *)v2.__tail_0 = &off_7E1668; /*0x538d20*/
+  *(unsigned int *)v2.vtable1 = &off_7E1668; /*0x538d20*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v2))->Dtor(); /*0x538d2d*/
 }
 } // namespace gamemd

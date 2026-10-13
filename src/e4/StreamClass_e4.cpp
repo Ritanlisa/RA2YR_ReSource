@@ -28,7 +28,7 @@ unsigned int StreamClass::ReadAndSeek(int aP1, int aP2)
   (*(void (**)(unsigned int))(*(unsigned int *)this->u32_14 + 96))(this->u32_14); /*0x4114cd*/
   result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
   if ( result >= (unsigned int)this->u32_1C ) /*0x4114da*/
-    result -= this->__pad_008; /*0x4114dc*/
+    result -= this->m_Size; /*0x4114dc*/
   return result; /*0x4114df*/
 }
 } // namespace gamemd
@@ -47,25 +47,25 @@ int StreamClass::Set2(unsigned int * a2)
     if ( v3 >= 0 ) /*0x45aec1*/
     {
       v5 = a2; /*0x45aedf*/
-      if ( *(unsigned int *)this->__pad_0 ) /*0x45aedc*/
-        (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45aeea*/
-      *(unsigned int *)this->__pad_0 = v5; /*0x45aeed*/
+      if ( *(unsigned int *)this->m_Position ) /*0x45aedc*/
+        (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45aeea*/
+      *(unsigned int *)this->m_Position = v5; /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
     {
-      if ( *(unsigned int *)this->__pad_0 ) /*0x45aec3*/
-        (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45aecc*/
-      *(unsigned int *)this->__pad_0 = 0; /*0x45aed1*/
+      if ( *(unsigned int *)this->m_Position ) /*0x45aec3*/
+        (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45aecc*/
+      *(unsigned int *)this->m_Position = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
   }
   else
   {
-    v6 = *(unsigned int *)this->__pad_0; /*0x45aef7*/
-    if ( *(unsigned int *)this->__pad_0 ) /*0x45aef7*/
+    v6 = *(unsigned int *)this->m_Position; /*0x45aef7*/
+    if ( *(unsigned int *)this->m_Position ) /*0x45aef7*/
     {
-      *(unsigned int *)this->__pad_0 = 0; /*0x45aefd*/
+      *(unsigned int *)this->m_Position = 0; /*0x45aefd*/
       (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af06*/
     }
     return -2147467262; /*0x45af0e*/
@@ -88,25 +88,25 @@ int StreamClass::Set(unsigned int *aP1)
     if ( v3 >= 0 ) /*0x45af41*/
     {
       v5 = aP1; /*0x45af5f*/
-      if ( *(unsigned int *)this->__pad_0 ) /*0x45af5c*/
-        (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af6a*/
-      *(unsigned int *)this->__pad_0 = v5; /*0x45af6d*/
+      if ( *(unsigned int *)this->m_Position ) /*0x45af5c*/
+        (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45af6a*/
+      *(unsigned int *)this->m_Position = v5; /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else
     {
-      if ( *(unsigned int *)this->__pad_0 ) /*0x45af43*/
-        (*(void (**)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af4c*/
-      *(unsigned int *)this->__pad_0 = 0; /*0x45af51*/
+      if ( *(unsigned int *)this->m_Position ) /*0x45af43*/
+        (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45af4c*/
+      *(unsigned int *)this->m_Position = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
   }
   else
   {
-    v6 = *(unsigned int *)this->__pad_0; /*0x45af77*/
-    if ( *(unsigned int *)this->__pad_0 ) /*0x45af77*/
+    v6 = *(unsigned int *)this->m_Position; /*0x45af77*/
+    if ( *(unsigned int *)this->m_Position ) /*0x45af77*/
     {
-      *(unsigned int *)this->__pad_0 = 0; /*0x45af7d*/
+      *(unsigned int *)this->m_Position = 0; /*0x45af7d*/
       (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af86*/
     }
     return -2147467262; /*0x45af8e*/
@@ -118,7 +118,7 @@ int StreamClass::Set(unsigned int *aP1)
 namespace gamemd {
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
-  return (((unsigned char *)&(aP0->field_10))[1]) == 0; /*0x4b4c3e*/
+  return (aP0->q012) == 0; /*0x4b4c3e*/
 }
 } // namespace gamemd
 // 0x4B4C50
@@ -134,7 +134,7 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
 
   aP0->Owner = (FootClass *)a2; /*0x55a718*/
-  *(unsigned int *)&aP0->ILocomotion[4] = a2; /*0x55a71b*/
+  *&aP0->vtable2 = a2; /*0x55a71b*/
   return 0; /*0x55a720*/
 
 }

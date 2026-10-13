@@ -29,12 +29,12 @@ int GameSetup::LookupDialogHash()
   GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
+  if ( !*(unsigned int *)&g_DialogHashMap_Count ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
+  v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogHashMap_Base /*0x60d34d*/
                       + 4
-                      * ((*(int (**)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
-                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                      * ((*(int (**)(GameSetup **))&g_DialogHashMap_Hasher)(&v4)
+                       & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
@@ -71,7 +71,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   INIClass::SetBool(aP1, Block, aMcvrepacks, this->u32_17); /*0x69903e*/
   INIClass::SetBool(aP1, Block, aCratesappear, this->u32_18); /*0x69904f*/
   v4 = 1; /*0x699054*/
-  v5 = (int *)((char *)&this->q095 + 27); /*0x699059*/
+  v5 = (int *)this->q095 + 27); /*0x699059*/
   do /*0x69908e*/
   {
     sprintf(Buffer, "Slot%02d", v4); /*0x699067*/

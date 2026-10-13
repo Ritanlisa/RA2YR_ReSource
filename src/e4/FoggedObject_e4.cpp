@@ -25,11 +25,11 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   int v10; // edx
 
   v4 = 0; /*0x4d2db9*/
-  this->FoggedObject_field_0x4 = 0; /*0x4d2dbd*/
-  *((unsigned int *)this + 2) = aP1; /*0x4d2dc0*/
-  *((unsigned char *)this + 12) = 1; /*0x4d2dc3*/
-  *((unsigned char *)this + 13) = 0; /*0x4d2dc7*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2dca*/
+  this->ptr_4 = 0; /*0x4d2dbd*/
+  this->u32_8 = aP1; /*0x4d2dc0*/
+  this->u32_C = 1; /*0x4d2dc3*/
+  this->u32_D = 0; /*0x4d2dc7*/
+  *(unsigned int *)this->__pad_000 = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
@@ -83,16 +83,16 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x4d2d13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d16*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x4d2d20*/
+  v3 = *&Block->__pad_004; /*0x4d2d13*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4d2d16*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4d2d20*/
   {
     operator delete((void *)(v3)); /*0x4d2d28*/
-    *(unsigned int *)&Block->q004 = 0; /*0x4d2d30*/
+    *&Block->__pad_004 = 0; /*0x4d2d30*/
   }
-  (((unsigned char *)&(*(unsigned int *)&Block->q00C))[1]) = 0; /*0x4d2d3b*/
-  *(unsigned int *)&Block->q008 = 0; /*0x4d2d41*/
+  (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4d2d3b*/
+  *&Block->u32_8 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
     operator delete((void *)(Block)); /*0x4d2d4b*/
-  return Block->__pad_0; /*0x4d2d55*/
+  return Block->tail_0; /*0x4d2d55*/
 }

@@ -11,7 +11,7 @@
 namespace gamemd {  // G42.18 ns repair
 int BufferIOFileClass::Destruct()
 {
-  *(unsigned int *)this->__tail_0 = (unsigned int)(&off_7E1668); /*0x535a60*/
+  *(unsigned int *)this->vtable1 = (unsigned int)(&off_7E1668); /*0x535a60*/
   return BufferIOFileClass::Dtor();
 }  // G42.18 ns repair
 } // namespace gamemd

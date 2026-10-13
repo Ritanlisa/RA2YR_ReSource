@@ -42,7 +42,7 @@ int CCFileClass::Open(int a2)
   }
   else
   {
-    result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 24))(this); /*0x473c69*/
+    result = this->Destru_vt06(); /*0x473c69*/
     if ( (unsigned char)result ) /*0x473c6e*/
     {
       this->u32_68 = 1; /*0x473c70*/
@@ -50,7 +50,7 @@ int CCFileClass::Open(int a2)
     }
     else
     {
-      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 4))(this); /*0x473c84*/
+      v4 = (const char *)this->GetMember06(); /*0x473c84*/
       if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
       {
         this->u32_68 = 1; /*0x473c94*/
@@ -81,12 +81,12 @@ void* CCFileClass::ReadEntireFile()
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
-  if ( (*(uint8_t (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->__tail_0 + 20))(this, 0) ) /*0x4a389a*/
+  if ( this->Open(0) ) /*0x4a389a*/
   {
-    v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 44))(this); /*0x4a38a8*/
+    v3 = this->GetSize(); /*0x4a38a8*/
     v2 = (void *)operator new(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
-      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->__tail_0 + 36))(this, v2, v3); /*0x4a38bf*/
+      this->Read(v2, v3); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }

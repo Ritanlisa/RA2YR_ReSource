@@ -217,7 +217,7 @@ LABEL_51:
               if ( v13 ) /*0x4f4ada*/
               {
                 v34 = abs32(v13); /*0x4f4ae7*/
-                v43 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
+                v43 = (*(int (**)(int))(*&a1->u32_1F0))(a1); /*0x4f4af0*/
                 LODWORD(v42) = v40; /*0x4f4af9*/
                 v44 = v34; /*0x4f4aff*/
                 if ( dword_87F7F0 >= 0 ) /*0x4f4b03*/
@@ -273,6 +273,6 @@ LABEL_51:
 namespace gamemd {
 TechnoTypeClass * Frame::Init()
 {
-  return this->u32_4 != 0; /*0x724c0a*/
+  return this->q004 != 0; /*0x724c0a*/
 }
 } // namespace gamemd

@@ -39,15 +39,15 @@ int GadgetGrid::InsertItem(int a2)
     v6 = (*((signed short *)(((unsigned char *)&(v16)) + 2))); /*0x4134e5*/
   else
     v6 = 0; /*0x4134e1*/
-  v7 = v5 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413504*/
+  v7 = v5 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413504*/
   v8 = 19; /*0x413506*/
   if ( v7 <= 19 ) /*0x41350e*/
     v8 = v7; /*0x413510*/
-  v9 = v6 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x41352f*/
+  v9 = v6 / (*(unsigned int *)&g_AircraftTrackerState / 20); /*0x41352f*/
   if ( v9 > 19 ) /*0x413534*/
     v9 = 19; /*0x413536*/
   v10 = 3 * (v8 + 20 * v9); /*0x413541*/
-  result = *((unsigned int *)((char *)&this->__pad_00C + 468) * v9 + 6 * v8 + 2); /*0x413544*/
+  result = *((unsigned int *)this->__pad_00C + 468) * v9 + 6 * v8 + 2); /*0x413544*/
   v12 = this + v10; /*0x413548*/
   if ( *(unsigned int *)v12[2].__pad_0 < result /*0x413574*/
     || ((((unsigned char *)&(v12[1].GadgetGrid_field_0x04))[1]) || !result)
@@ -81,7 +81,7 @@ int GadgetGrid::RemoveItem(int a2)
   __int16 v13; // [esp+Ah] [ebp-6h]
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
 
-  v3 = *(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14); /*0x4135ec*/
+  v3 = *(unsigned int *)(*(int (**)(int, char *))(*&a2->u32_BD0))(a2, v14); /*0x4135ec*/
   v13 = HIWORD(v3); /*0x4135f4*/
   (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, dword_887850); /*0x4135fb*/
   if ( (v3 & 0x8000u) == 0 ) /*0x413604*/
@@ -92,15 +92,15 @@ int GadgetGrid::RemoveItem(int a2)
     v4 = v13; /*0x41361c*/
   else
     v4 = 0; /*0x413618*/
-  v5 = v3 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x41363b*/
+  v5 = v3 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x41363b*/
   v6 = 19; /*0x41363d*/
   if ( v5 <= 19 ) /*0x413645*/
     v6 = v5; /*0x413647*/
-  v7 = v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x413666*/
+  v7 = v4 / (*(unsigned int *)&g_AircraftTrackerState / 20); /*0x413666*/
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
   v8 = *(unsigned int *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
-  v9 = (unsigned int *)this + 60 * v7 + 3 * v6; /*0x413683*/
+  v9 = &this->u32_F0 * v7 + 3 * v6; /*0x413683*/
   result = (*(int (**)(GadgetGrid *, int *))(v8 + 16))(v9, &a2); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/
   {

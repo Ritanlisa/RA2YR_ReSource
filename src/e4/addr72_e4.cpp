@@ -175,11 +175,11 @@ AbstractClass * * sub_725C70()
   int v7; // eax
   unsigned int *v8; // [esp+8h] [ebp-4h] BYREF
 
-  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12]; /*0x725c71*/
+  result = *(unsigned int *)&DataGlobal_B0F6A8; /*0x725c71*/
   v2 = 0; /*0x725c77*/
-  while ( v2 < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] ) /*0x725c7b*/
+  while ( v2 < *(int *)&DataGlobal_B0F6A8 ) /*0x725c7b*/
   {
-    v8 = *(unsigned int **)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v2); /*0x725c89*/
+    v8 = *(unsigned int **)(*(unsigned int *)DataGlobal_B0F69C + 4 * v2); /*0x725c89*/
     result = (*(int (**)(void))(*v8 + 68))(); /*0x725c8f*/
     if ( (unsigned char)result ) /*0x725c94*/
     {
@@ -188,12 +188,12 @@ AbstractClass * * sub_725C70()
         v3 = (*(int (**)(int *, unsigned int **))(g_BuildingLoadQueue_Array.ToTile + 16))( /*0x725caa*/
                &g_BuildingLoadQueue_Array.ToTile,
                &v8);
-        if ( v3 == -1 || v3 >= *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] ) /*0x725cba*/
+        if ( v3 == -1 || v3 >= *(int *)&DataGlobal_B0F6A8 ) /*0x725cba*/
           break; /*0x725cba*/
-        --*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12]; /*0x725cbf*/
+        --*(unsigned int *)&DataGlobal_B0F6A8; /*0x725cbf*/
         for ( ; /*0x725cc5*/
-              v3 < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12];
-              *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v3) )
+              v3 < *(int *)&DataGlobal_B0F6A8;
+              *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * v3) )
         {
           ++v3; /*0x725ccd*/
         }
@@ -337,7 +337,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v5 = 0; /*0x72ae38*/
     }
     *v3 = (unsigned char *)(v5);
-    v8 = (unsigned char *)(v4 + 1); /*0x72ae3e*/
+    v8 = &v4->u8_1; /*0x72ae3e*/
     v9 = 0; /*0x72ae45*/
     while ( 1 ) /*0x72ae5d*/
     {
@@ -361,10 +361,10 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v13 = 0; /*0x72aed2*/
     *a3 = (unsigned int)(v13); /*0x72aedb*/
   }
-  *(unsigned int *)v17.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x72aee1*/
+  *(unsigned int *)v17.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x72aee1*/
   v19 = 0; /*0x72aee9*/
   Vector::Clear((int)v18); /*0x72aef1*/
-  *(unsigned int *)v17.__tail_0 = (unsigned int)(&off_7E1668); /*0x72aefa*/
+  *(unsigned int *)v17.vtable1 = (unsigned int)(&off_7E1668); /*0x72aefa*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x72af07*/
 }
 }
@@ -423,76 +423,76 @@ int * * LoadingScreen_InitResources()
   LoadingScreen *v1; // [esp+0h] [ebp-4h]
   ObjectClass *v2; // [esp+0h] [ebp-4h]
 
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72dfba*/
+  if ( !DataGlobal_B0FBE0 ) /*0x72dfba*/
     goto LABEL_3; /*0x72dfba*/
-  g_BuildingLoadQueue_Array.__pad_F70[1072] = 0; /*0x72dfc0*/
+  DataGlobal_B0FBE0 = 0; /*0x72dfc0*/
   LoadingScreen::DestroyFileTrees(); /*0x72dfc6*/
   LoadingScreen::CleanupObjects(v1); /*0x72dfcb*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120])); /*0x72dfd6*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1120] = 0; /*0x72dfe1*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1124])); /*0x72dfe8*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1124] = 0; /*0x72dff3*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1128])); /*0x72dffa*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1128] = 0; /*0x72e004*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1132])); /*0x72e00b*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1132] = 0; /*0x72e016*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1136])); /*0x72e01d*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1136] = 0; /*0x72e028*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1140])); /*0x72e02f*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1140] = 0; /*0x72e039*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1144])); /*0x72e040*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1144] = 0; /*0x72e04b*/
-  operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1148])); /*0x72e052*/
-  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1148] = 0; /*0x72e05a*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC10)); /*0x72dfd6*/
+  *(unsigned int *)&DataGlobal_B0FC10 = 0; /*0x72dfe1*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC14)); /*0x72dfe8*/
+  *(unsigned int *)&DataGlobal_B0FC14 = 0; /*0x72dff3*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC18)); /*0x72dffa*/
+  *(unsigned int *)&DataGlobal_B0FC18 = 0; /*0x72e004*/
+  operator delete((void *)(*(void **)&g_GadgetAnimState)); /*0x72e00b*/
+  *(unsigned int *)&g_GadgetAnimState = 0; /*0x72e016*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC20)); /*0x72e01d*/
+  *(unsigned int *)&DataGlobal_B0FC20 = 0; /*0x72e028*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC24)); /*0x72e02f*/
+  *(unsigned int *)&DataGlobal_B0FC24 = 0; /*0x72e039*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC28)); /*0x72e040*/
+  *(unsigned int *)&DataGlobal_B0FC28 = 0; /*0x72e04b*/
+  operator delete((void *)(*(void **)&DataGlobal_B0FC2C)); /*0x72e052*/
+  *(unsigned int *)&DataGlobal_B0FC2C = 0; /*0x72e05a*/
   result = ReleaseLoadingResources(v2); /*0x72e060*/
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72e06b*/
+  if ( !DataGlobal_B0FBE0 ) /*0x72e06b*/
   {
   LABEL_3:
     AssetClass::ReleaseAndReload((AssetClass *)v1); /*0x72e071*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[788] = LoadFileSHP( /*0x72e091*/
+    *(unsigned int *)&DataGlobal_B0FAC4 = LoadFileSHP( /*0x72e091*/
                                                              off_844CD4,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1253]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[556] = LoadFileSHP( /*0x72e0a6*/
+                                                             (bool *)&DataGlobal_B0FC95);
+    *(unsigned int *)&DataGlobal_B0F9DC = LoadFileSHP( /*0x72e0a6*/
                                                              off_844CD8,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1254]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[784] = LoadFileSHP( /*0x72e0bb*/
+                                                             (bool *)&DataGlobal_B0FC96);
+    *(unsigned int *)&DataGlobal_B0FAC0 = LoadFileSHP( /*0x72e0bb*/
                                                              off_844CDC,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1255]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928] = LoadFileSHP( /*0x72e0d0*/
+                                                             (bool *)&DataGlobal_B0FC97);
+    *(unsigned int *)&g_DialogControlPool = LoadFileSHP( /*0x72e0d0*/
                                                              off_844CE0,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1256]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[596] = LoadFileSHP( /*0x72e0e5*/
+                                                             (bool *)&DataGlobal_B0FC98);
+    *(unsigned int *)&DataGlobal_B0FA04 = LoadFileSHP( /*0x72e0e5*/
                                                              off_844CE4,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1257]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[840] = LoadFileSHP( /*0x72e0fa*/
+                                                             (bool *)&DataGlobal_B0FC99);
+    *(unsigned int *)&DataGlobal_B0FAF8 = LoadFileSHP( /*0x72e0fa*/
                                                              off_844CE8,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1258]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[708] = LoadFileSHP( /*0x72e10f*/
+                                                             (bool *)&DataGlobal_B0FC9A);
+    *(unsigned int *)&DataGlobal_B0FA74 = LoadFileSHP( /*0x72e10f*/
                                                              off_844CEC,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1259]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[648] = LoadFileSHP( /*0x72e124*/
+                                                             (bool *)&DataGlobal_B0FC9B);
+    *(unsigned int *)&DataGlobal_B0FA38 = LoadFileSHP( /*0x72e124*/
                                                              off_844CF0,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1260]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[824] = LoadFileSHP( /*0x72e139*/
+                                                             (bool *)&DataGlobal_B0FC9C);
+    *(unsigned int *)&DataGlobal_B0FAE8 = LoadFileSHP( /*0x72e139*/
                                                              off_844CF4,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1261]);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[676] = LoadFileSHP( /*0x72e153*/
+                                                             (bool *)&DataGlobal_B0FC9D);
+    *(unsigned int *)&DataGlobal_B0FA54 = LoadFileSHP( /*0x72e153*/
                                                              off_844CF8,
-                                                             (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1262]);
+                                                             (bool *)&DataGlobal_B0FC9E);
     LoadPaletteSimple( /*0x72e158*/
       off_844BE4,
-      (int *)&g_BuildingLoadQueue_Array.__pad_F70[1048],
-      &g_BuildingLoadQueue_Array.__pad_F70[1052]);
+      (int *)&DataGlobal_B0FBC8,
+      &DataGlobal_B0FBCC);
     LoadPaletteSimple( /*0x72e16d*/
       off_844BE8,
-      (int *)&g_BuildingLoadQueue_Array.__pad_F70[1056],
-      &g_BuildingLoadQueue_Array.__pad_F70[1060]);
+      (int *)&DataGlobal_B0FBD0,
+      &DataGlobal_B0FBD4);
     LoadPaletteSimple( /*0x72e182*/
       off_844BEC,
-      (int *)&g_BuildingLoadQueue_Array.__pad_F70[1064],
-      &g_BuildingLoadQueue_Array.__pad_F70[1068]);
+      (int *)&DataGlobal_B0FBD8,
+      &DataGlobal_B0FBDC);
     result = (uint8_t)SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e193*/
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 1; /*0x72e198*/
+    DataGlobal_B0FBE0 = 1; /*0x72e198*/
   }
   return (int **)(result);
 }
@@ -593,24 +593,24 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
   int v15; // [esp+18h] [ebp-8h]
   int v16; // [esp+1Ch] [ebp-4h]
 
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72e460*/
+  if ( !DataGlobal_B0FBE0 ) /*0x72e460*/
   {
     AssetClass::ReleaseAndReload(v11); /*0x72e462*/
     Render_Render_72EB50(); /*0x72e467*/
     LoadPaletteSimple( /*0x72e47c*/
       off_844BE4,
-      (int *)&g_BuildingLoadQueue_Array.__pad_F70[1048],
-      &g_BuildingLoadQueue_Array.__pad_F70[1052]);
+      (int *)&DataGlobal_B0FBC8,
+      &DataGlobal_B0FBCC);
     LoadPaletteSimple( /*0x72e491*/
       off_844BE8,
-      (int *)&g_BuildingLoadQueue_Array.__pad_F70[1056],
-      &g_BuildingLoadQueue_Array.__pad_F70[1060]);
+      (int *)&DataGlobal_B0FBD0,
+      &DataGlobal_B0FBD4);
     LoadPaletteSimple( /*0x72e4a6*/
       off_844BEC,
-      (int *)&g_BuildingLoadQueue_Array.__pad_F70[1064],
-      &g_BuildingLoadQueue_Array.__pad_F70[1068]);
+      (int *)&DataGlobal_B0FBD8,
+      &DataGlobal_B0FBDC);
     SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e4b7*/
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 1; /*0x72e4bc*/
+    DataGlobal_B0FBE0 = 1; /*0x72e4bc*/
   }
   DrawScoreScreenStats(a1, (int)a2); /*0x72e4c9*/
   v5 = a2[1]; /*0x72e4d0*/
@@ -626,12 +626,12 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
     v15 = (v6 - 800) / 2 + 800; /*0x72e509*/
   if ( v7 > 600 ) /*0x72e513*/
     v16 = (v7 - 600) / 2 + 600; /*0x72e525*/
-  v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1136]; /*0x72e537*/
-  i = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1136] + 4); /*0x72e53e*/
+  v12 = **(unsigned int **)&DataGlobal_B0FC20; /*0x72e537*/
+  i = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC20 + 4); /*0x72e53e*/
   DrawToSurfaceSHP( /*0x72e56a*/
     (int)a1,
-    *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1052],
-    *(int *)&g_BuildingLoadQueue_Array.__pad_F70[840],
+    *(int *)&DataGlobal_B0FBCC,
+    *(int *)&DataGlobal_B0FAF8,
     0,
     &v12,
     v14,
@@ -646,16 +646,16 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
     0,
     0);
   v8 = 0; /*0x72e574*/
-  v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1140]; /*0x72e578*/
-  v9 = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[624]; /*0x72e57f*/
-  for ( i = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1140] + 4); /*0x72e58a*/
-        v8 < *(int *)&g_BuildingLoadQueue_Array.__pad_F70[624];
-        v9 = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[624] )
+  v12 = **(unsigned int **)&DataGlobal_B0FC24; /*0x72e578*/
+  v9 = *(unsigned int *)&DataGlobal_B0FA20; /*0x72e57f*/
+  for ( i = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC24 + 4); /*0x72e58a*/
+        v8 < *(int *)&DataGlobal_B0FA20;
+        v9 = *(unsigned int *)&DataGlobal_B0FA20 )
   {
     DrawToSurfaceSHP( /*0x72e5c1*/
       (int)a1,
-      *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1060],
-      *(int *)&g_BuildingLoadQueue_Array.__pad_F70[708],
+      *(int *)&DataGlobal_B0FBD4,
+      *(int *)&DataGlobal_B0FA74,
       0,
       &v12,
       v14,
@@ -670,21 +670,21 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
       0,
       0);
     ++v8; /*0x72e5d4*/
-    i += *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1140] + 12); /*0x72e5d5*/
+    i += *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC24 + 12); /*0x72e5d5*/
   }
   if ( !a3 ) /*0x72e5e8*/
   {
     v10 = 0; /*0x72e5f0*/
-    v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1120]; /*0x72e5f6*/
-    i = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1120] + 4); /*0x72e5fd*/
+    v12 = **(unsigned int **)&DataGlobal_B0FC10; /*0x72e5f6*/
+    i = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC10 + 4); /*0x72e5fd*/
     if ( v9 > 0 ) /*0x72e601*/
     {
       do /*0x72e65a*/
       {
         DrawToSurfaceSHP( /*0x72e63a*/
           (int)a1,
-          *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1068],
-          *(int *)&g_BuildingLoadQueue_Array.__pad_F70[788],
+          *(int *)&DataGlobal_B0FBDC,
+          *(int *)&DataGlobal_B0FAC4,
           0xAu,
           &v12,
           v14,
@@ -699,17 +699,17 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
           0,
           0);
         ++v10; /*0x72e653*/
-        i += *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1120] + 12); /*0x72e654*/
+        i += *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC10 + 12); /*0x72e654*/
       }
-      while ( v10 < *(int *)&g_BuildingLoadQueue_Array.__pad_F70[624] ); /*0x72e65a*/
+      while ( v10 < *(int *)&DataGlobal_B0FA20 ); /*0x72e65a*/
     }
   }
-  v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1144]; /*0x72e663*/
-  i = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1144] + 4); /*0x72e688*/
+  v12 = **(unsigned int **)&DataGlobal_B0FC28; /*0x72e663*/
+  i = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC28 + 4); /*0x72e688*/
   DrawToSurfaceSHP( /*0x72e69f*/
     (int)a1,
-    *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1052],
-    *(int *)&g_BuildingLoadQueue_Array.__pad_F70[648],
+    *(int *)&DataGlobal_B0FBCC,
+    *(int *)&DataGlobal_B0FA38,
     0,
     &v12,
     v14,
@@ -723,13 +723,13 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
     0,
     0,
     0);
-  v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1148]; /*0x72e6ad*/
-  i = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1148] + 4); /*0x72e6b9*/
-  if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72e6c2*/
+  v12 = **(unsigned int **)&DataGlobal_B0FC2C; /*0x72e6ad*/
+  i = *(unsigned int *)(*(unsigned int *)&DataGlobal_B0FC2C + 4); /*0x72e6b9*/
+  if ( g_DisplayWidth == 640 ) /*0x72e6c2*/
     DrawToSurfaceSHP( /*0x72e6ec*/
       (int)a1,
-      *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1052],
-      *(int *)&g_BuildingLoadQueue_Array.__pad_F70[824],
+      *(int *)&DataGlobal_B0FBCC,
+      *(int *)&DataGlobal_B0FAE8,
       0,
       &v12,
       v14,
@@ -746,8 +746,8 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
   else
     DrawToSurfaceSHP( /*0x72e71f*/
       (int)a1,
-      *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1052],
-      *(int *)&g_BuildingLoadQueue_Array.__pad_F70[676],
+      *(int *)&DataGlobal_B0FBCC,
+      *(int *)&DataGlobal_B0FA54,
       0,
       &v12,
       v14,
@@ -907,7 +907,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   }
   v20 = *((int16_t *)dword_B0F9DC + 1); /*0x72ee33*/
   v21 = *((int16_t *)dword_B0F9DC + 2); /*0x72ee37*/
-  v22 = *((unsigned int *)dword_B0FC24 + 1) + *((unsigned int *)dword_B0FC24 + 3) - v21; /*0x72ee48*/
+  v22 = dword_B0FC24->vtable2 + *((unsigned int *)dword_B0FC24 + 3) - v21; /*0x72ee48*/
   v23 = operator new(0x10u); /*0x72ee4a*/
   if ( v23 ) /*0x72ee54*/
   {
@@ -921,11 +921,11 @@ int * * MouseClass_SetupResources(int a1, int a2)
   {
     dword_B0FC14 = 0; /*0x72ee6e*/
   }
-  dword_B0FA20 = (v36 - *((unsigned int *)dword_B0FC20 + 3)) / *((unsigned int *)dword_B0FC24 + 3); /*0x72ee95*/
-  v24 = dword_B0FA20 * *((unsigned int *)dword_B0FC24 + 3); /*0x72ee9d*/
+  dword_B0FA20 = (v36 - *((unsigned int *)dword_B0FC20 + 3)) / dword_B0FC24->vtable4; /*0x72ee95*/
+  v24 = dword_B0FA20 * dword_B0FC24->vtable4; /*0x72ee9d*/
   v25 = v24 + *((unsigned int *)dword_B0FC20 + 3); /*0x72eeab*/
   v26 = *((int16_t *)dword_B0FA38 + 1); /*0x72eead*/
-  v27 = v24 + *((unsigned int *)dword_B0FC24 + 1); /*0x72eeb1*/
+  v27 = v24 + dword_B0FC24->vtable2; /*0x72eeb1*/
   v28 = operator new(0x10u); /*0x72eeb3*/
   if ( v28 ) /*0x72eebd*/
   {
@@ -1546,13 +1546,13 @@ unsigned int ObjectClass::sub_720440()
 {
   this->owningHouseIndex0 = 0; /*0x720444*/
   this->chronoLockRemaining = 0; /*0x72044a*/
-  (*((unsigned char *)&(this->chronoDestCoords[0]))) = 1; /*0x720450*/
-  (((unsigned char *)&(this->chronoDestCoords[0]))[1]) = 0; /*0x720457*/
-  (((unsigned char *)&(this->chronoDestCoords[0]))[2]) = 0; /*0x72045d*/
+  (this->q288) = 1; /*0x720450*/
+  (this->u8_28A) = 0; /*0x720457*/
+  (this->q28C) = 0; /*0x72045d*/
   this->chronoDestCoords[1] = -1; /*0x720463*/
-  (*((unsigned char *)&(this->vfptr))) = 0; /*0x72046d*/
-  (*((unsigned char *)&(this->animation[2]))) = 0; /*0x72046f*/
-  (*((unsigned short *)&(this->reloadTimer[1]))) = 0; /*0x720475*/
+  (this->vtable1) = 0; /*0x72046d*/
+  (this->u32_100) = 0; /*0x72046f*/
+  (this->q_200) = 0; /*0x720475*/
   return &this->vfptr; /*0x72047c*/
 }
 } // namespace gamemd
@@ -1565,13 +1565,13 @@ unsigned int ObjectClass::sub_720960()
   this->vfptr1 = (void *)-1; /*0x720967*/
   this->vfptr2 = (void *)-1; /*0x72096a*/
   this->vfptr3 = (void *)255; /*0x72096f*/
-  (*((unsigned char *)&(this->uniqueId))) = 0; /*0x720976*/
-  (((unsigned char *)&(this->uniqueId))[1]) = 0; /*0x720979*/
-  (((unsigned char *)&(this->uniqueId))[2]) = 0; /*0x72097c*/
+  (this->uniqueId) = 0; /*0x720976*/
+  (this->q011) = 0; /*0x720979*/
+  (this->IsInitialized) = 0; /*0x72097c*/
   this->nextArrayIndex = 0; /*0x72097f*/
   this->referenceCount = 0; /*0x720982*/
-  (*((unsigned char *)&(this->NeedsSaveOrLink))) = 1; /*0x720985*/
-  (((unsigned char *)&(this->NeedsSaveOrLink))[1]) = 0; /*0x720989*/
+  (this->NeedsSaveOrLink) = 1; /*0x720985*/
+  (this->alignmentPadding) = 0; /*0x720989*/
   this->abstractFlags = (int)&vt_DynamicVectorClass; /*0x72098c*/
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
@@ -1755,29 +1755,29 @@ void E4Recv_722A20::sub_722A20()
   int i; // ecx
   void **v4; // edi
 
-  v2 = (unsigned int *)this->u32_F4; /*0x722a26*/
+  v2 = (unsigned int *)this->M244; /*0x722a26*/
   if ( v2 ) /*0x722a2e*/
   {
     for ( i = 0; i <= *v2; *(unsigned int *)(v2[2] + 4 * i - 4) = 0 ) /*0x722a36*/
       ++i; /*0x722a3b*/
     *v2 = 0; /*0x722a47*/
-    v4 = (void **)this->u32_F4; /*0x722a49*/
+    v4 = (void **)this->M244; /*0x722a49*/
     if ( v4 ) /*0x722a51*/
     {
       operator delete((void *)(v4[2])); /*0x722a57*/
       operator delete((void *)(v4)); /*0x722a5d*/
     }
-    this->u32_F4 = 0; /*0x722a65*/
+    this->M244 = 0; /*0x722a65*/
   }
-  if ( this->u32_FC ) /*0x722a6c*/
+  if ( this->M252 ) /*0x722a6c*/
   {
-    operator delete((void *)(*((void **)&this->nextArrayIndex3))); /*0x722a77*/
-    this->u32_FC = 0; /*0x722a7f*/
+    operator delete((void *)(this->u32_4))); /*0x722a77*/
+    this->M252 = 0; /*0x722a7f*/
   }
-  if ( this->u32_F8 ) /*0x722a85*/
+  if ( this->M248 ) /*0x722a85*/
   {
-    operator delete((void *)(*((void **)&this->nextArrayIndex2))); /*0x722a90*/
-    this->u32_F8 = 0; /*0x722a98*/
+    operator delete((void *)(this->u32_4))); /*0x722a90*/
+    this->M248 = 0; /*0x722a98*/
   }
   this->ambientSoundController = 0; /*0x722a9e*/
 }
@@ -1791,31 +1791,31 @@ void E4Recv_723510::sub_723510()
   int i; // ecx
   void **v4; // edi
 
-  v2 = (unsigned int *)this->u32_110; /*0x723516*/
+  v2 = (unsigned int *)this->M272; /*0x723516*/
   if ( v2 ) /*0x72351e*/
   {
     for ( i = 0; i <= *v2; *(unsigned int *)(v2[2] + 4 * i - 4) = 0 ) /*0x723526*/
       ++i; /*0x72352b*/
     *v2 = 0; /*0x723537*/
-    v4 = (void **)this->u32_110; /*0x723539*/
+    v4 = (void **)this->M272; /*0x723539*/
     if ( v4 ) /*0x723541*/
     {
       operator delete((void *)(v4[2])); /*0x723547*/
       operator delete((void *)(v4)); /*0x72354d*/
     }
-    this->u32_110 = 0; /*0x723555*/
+    this->M272 = 0; /*0x723555*/
   }
-  if ( this->u32_118 ) /*0x72355c*/
+  if ( this->M280 ) /*0x72355c*/
   {
-    operator delete((void *)(*((void **)&this->referenceCount0))); /*0x723567*/
-    this->u32_118 = 0; /*0x72356f*/
+    operator delete((void *)(this->u32_4))); /*0x723567*/
+    this->M280 = 0; /*0x72356f*/
   }
-  if ( this->u32_114 ) /*0x723575*/
+  if ( this->M276 ) /*0x723575*/
   {
-    operator delete((void *)(*((void **)&this->nextArrayIndex9))); /*0x723580*/
-    this->u32_114 = 0; /*0x723588*/
+    operator delete((void *)(this->u32_4))); /*0x723580*/
+    this->M276 = 0; /*0x723588*/
   }
-  this->u32_10C = 0; /*0x72358e*/
+  this->M268 = 0; /*0x72358e*/
 }
 } // namespace gamemd
 
@@ -3215,19 +3215,19 @@ int E4Recv_7294E0::sub_7294E0()
   unsigned int v6[2]; // [esp+8h] [ebp-Ch] BYREF
   int v7; // [esp+10h] [ebp-4h]
 
-  vtable3 = this->?; /*0x7294e6*/
+  vtable3 = this->M12; /*0x7294e6*/
   v6[0] = vtable3[39]; /*0x7294f5*/
   v6[1] = vtable3[40]; /*0x7294fc*/
   v7 = vtable3[41]; /*0x729508*/
   if ( v7 <= -256 ) /*0x72950c*/
   {
     result = (*(int (**)(unsigned int *, unsigned int))(*vtable3 + 292))(vtable3, 0); /*0x729569*/
-    this->? = 4; /*0x72956f*/
+    this->q018 = 4; /*0x72956f*/
   }
   else
   {
     v5 = (*(int (**)(unsigned int *))(*vtable3 + 1336))(vtable3); /*0x72951c*/
-    LOWORD(v3) = Math::RoundToInt((double)v5 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 32)); /*0x729527*/
+    LOWORD(v3) = Math::RoundToInt((double)v5 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 32)); /*0x729527*/
     if ( v3 <= 5 ) /*0x72952f*/
       v3 = 5; /*0x729531*/
     v7 -= v3; /*0x729542*/
@@ -3922,33 +3922,33 @@ void FileTree_Cleanup()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1321] ) /*0x72cf9a*/
+  if ( DataGlobal_B0FCD9 ) /*0x72cf9a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1320] ) /*0x72cfa2*/
+    if ( DataGlobal_B0FCD8 ) /*0x72cfa2*/
     {
-      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[616]; /*0x72cfa5*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[616] ) /*0x72cfad*/
+      v1 = *(void **)&DataGlobal_B0FA18; /*0x72cfa5*/
+      if ( *(unsigned int *)&DataGlobal_B0FA18 ) /*0x72cfad*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[616]); /*0x72cfb1*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FA18); /*0x72cfb1*/
         operator delete((void *)(v1)); /*0x72cfb7*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1320] = 0; /*0x72cfbf*/
+      DataGlobal_B0FCD8 = 0; /*0x72cfbf*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[616] = 0; /*0x72cfcb*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1324] ) /*0x72cfd3*/
+    *(unsigned int *)&DataGlobal_B0FA18 = 0; /*0x72cfcb*/
+    if ( *(unsigned int *)&DataGlobal_B0FCDC ) /*0x72cfd3*/
     {
-      operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1324])); /*0x72cfd6*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1324] = 0; /*0x72cfde*/
+      operator delete((void *)(*(void **)&DataGlobal_B0FCDC)); /*0x72cfd6*/
+      *(unsigned int *)&DataGlobal_B0FCDC = 0; /*0x72cfde*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328] ) /*0x72cfec*/
+    if ( *(unsigned int *)&DataGlobal_B0FCE0 ) /*0x72cfec*/
     {
-      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1328])( /*0x72cff2*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328],
+      (***(void (****)(unsigned int, int))&DataGlobal_B0FCE0)( /*0x72cff2*/
+        *(unsigned int *)&DataGlobal_B0FCE0,
         1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328] = 0; /*0x72cff4*/
+      *(unsigned int *)&DataGlobal_B0FCE0 = 0; /*0x72cff4*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1321] = 0; /*0x72cffa*/
+  DataGlobal_B0FCD9 = 0; /*0x72cffa*/
 }
 } // namespace gamemd
 

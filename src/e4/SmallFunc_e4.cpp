@@ -106,7 +106,7 @@ void sub_40D1B0()
   int v1; // edi
   ObjectClass *v2; // [esp+0h] [ebp-8h]
 
-  *(unsigned int *)&stru_87F5F0.__pad_58[416] = &vt_MouseClass; /*0x40d1b2*/
+  *(unsigned int *)&DataGlobal_87F7E8 = &vt_MouseClass; /*0x40d1b2*/
   dword_884D00 = (int)&vt_MouseClass; /*0x40d1bc*/
   v0 = &dword_884B84; /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
@@ -118,7 +118,7 @@ void sub_40D1B0()
     --v1; /*0x40d1ef*/
   }
   while ( v1 ); /*0x40d1f0*/
-  RadarClass::Destruct((RadarClass *)&stru_87F5F0.__pad_58[416]); /*0x40d1f7*/
+  RadarClass::Destruct((RadarClass *)&DataGlobal_87F7E8); /*0x40d1f7*/
 }
 } // namespace gamemd
 
@@ -160,11 +160,11 @@ int sub_59C530()
   LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c536*/
   for ( result = LayerClass::CellIteratorNext(&dword_87F7E8); result; result = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x59c549*/
   {
-    v1 = *(unsigned int *)(result + 56); /*0x59c54b*/
+    v1 = result->u32_38; /*0x59c54b*/
     if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
     {
-      *(unsigned int *)(result + 56) = 0; /*0x59c55f*/
-      *(unsigned char *)(result + 282) = 0; /*0x59c562*/
+      result->u32_38 = 0; /*0x59c55f*/
+      result->u8_11A = 0; /*0x59c562*/
     }
   }
   return result; /*0x59c576*/
@@ -256,15 +256,15 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 {
   Scenario *v5; // [esp+0h] [ebp-4h]
 
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x6e2669*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x6e266f*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x6e2675*/
-  Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x6e267f*/
-  BuildingClass::TogglePower2((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e268a*/
-  BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e2695*/
-  stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/
-  stru_87F5F0.__pad_E12[1433] = 0; /*0x6e26a0*/
-  stru_87F5F0.__pad_E12[1434] = 0; /*0x6e26a6*/
+  *(unsigned int *)&g_RadarBlipPool = 0; /*0x6e2669*/
+  *(unsigned int *)&g_RadarBlipManager = 0; /*0x6e266f*/
+  *(unsigned int *)&DataGlobal_880994 = -1; /*0x6e2675*/
+  Mouse::SetBounds((int)&DataGlobal_87F7E8, 0); /*0x6e267f*/
+  BuildingClass::TogglePower2((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x6e268a*/
+  BuildingClass::TogglePower((BuildingClass *)&DataGlobal_87F7E8, 0); /*0x6e2695*/
+  DataGlobal_88099A = 0; /*0x6e269a*/
+  DataGlobal_88099B = 0; /*0x6e26a0*/
+  DataGlobal_88099C = 0; /*0x6e26a6*/
   Scenario::ClearScreen(v5); /*0x6e26ac*/
   return 1; /*0x6e26b3*/
 }
@@ -281,7 +281,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
   v7 = *(HouseClass **)(a1 + 144); /*0x6e3121*/
   if ( !a6 ) /*0x6e312d*/
     return 0; /*0x6e312d*/
-  if ( v7 == (HouseClass *)8997 ) /*0x6e3135*/
+  if ( v7 == 8997 ) /*0x6e3135*/
   {
     Field11 = Property::GetField11(a6); /*0x6e3137*/
   }
@@ -308,9 +308,9 @@ int E4Recv_728A00::sub_728A00()
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x728a03*/
   this->CurrentState[0] = 0; /*0x728a0d*/
-  this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
-  this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
-  this->CurrentState[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
+  this->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F910; /*0x728a16*/
+  this->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F914; /*0x728a1e*/
+  this->CurrentState[3] = *(unsigned int *)&DataGlobal_B0F918; /*0x728a27*/
   this->CurrentState[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x728a30*/
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/

@@ -74,12 +74,12 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x69ef2b*/
   if ( !v4->Piggybackee ) /*0x69ef36*/
   {
-    v12 = *(unsigned int *)v3->__pad_0; /*0x69efd3*/
+    v12 = *(unsigned int *)v3->IStream_field_00; /*0x69efd3*/
     (*((unsigned char *)&(a3))) = 0; /*0x69efdf*/
     (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
     return IPersistStream; /*0x69efe8*/
   }
-  v6 = *(unsigned int *)v3->__pad_0; /*0x69ef3c*/
+  v6 = *(unsigned int *)v3->IStream_field_00; /*0x69ef3c*/
   (*((unsigned char *)&(a3))) = 1; /*0x69ef48*/
   (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
   Piggybackee = v4->Piggybackee; /*0x69ef50*/
@@ -136,8 +136,8 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)Block->0 = &vt_ShipLocomotionClass; /*0x6a42b3*/
-  *(unsigned int *)&Block->0[4] = &vt_ShipLocomotionClass; /*0x6a42b9*/
-  *(unsigned int *)Block->__pad_18 = &off_7F2D68; /*0x6a42c0*/
+  *&Block->u32_68 = &vt_ShipLocomotionClass; /*0x6a42b9*/
+  *(unsigned int *)Block->u32_18 = &off_7F2D68; /*0x6a42c0*/
   Piggybackee = Block->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/

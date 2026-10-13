@@ -13,11 +13,11 @@ unsigned int * Gadget::InitProperties()
 
   unknown_libname_74(&this->m_1[3]); /*0x600636*/
   unknown_libname_74(&this->m_5[3]); /*0x60063e*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x600646*/
-  *((unsigned int *)this + 3) = -1; /*0x60064c*/
-  *((unsigned int *)this + 5) = -1; /*0x60064f*/
-  *((unsigned int *)this + 4) = 0; /*0x600652*/
-  return this->__pad_0; /*0x60065b*/
+  *(unsigned int *)this->q000 = 0; /*0x600646*/
+  this->u32_C = -1; /*0x60064c*/
+  this->u32_14 = -1; /*0x60064f*/
+  this->u32_10 = 0; /*0x600652*/
+  return this->q000; /*0x60065b*/
 
 }
 }  // G42.18 ns repair

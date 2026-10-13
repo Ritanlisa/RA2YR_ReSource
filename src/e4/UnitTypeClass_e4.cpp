@@ -90,7 +90,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
       v8[1] = v1; /*0x6b4e01*/
       v3 = CellCoord::To_CellObj(&dword_87F7E8, v8); /*0x6b4e0b*/
       v4 = v3[18]; /*0x6b4e0d*/
-      if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
+      if ( v4 != -1 && !v3->u8_11F ) /*0x6b4e15*/
       {
         v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/
         sprintf(Buffer, "%d", v7); /*0x6b4e37*/
@@ -345,7 +345,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   INIClass::ResetSection(); /*0x747637*/
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v79) ) /*0x74763f*/
     return 0; /*0x747ea0*/
-  p_occupant = (uint8_t *)&v4->occupant; /*0x747654*/
+  p_occupant = &v4->u32_11F; /*0x747654*/
   v4[1].__pad_6B8[21] = INIClass::ReadBool_Overwrite( /*0x747665*/
                           (int *)this,
                           (uint8_t *)&v4->occupant,
@@ -363,10 +363,10 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
                           (uint8_t *)&v4->occupant,
                           aIssimpledeploy,
                           v71);
-  v7 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aHarvester, v4[1].__pad_6B8[22]); /*0x7476ae*/
+  v7 = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aHarvester, v4[1].__pad_6B8[22]); /*0x7476ae*/
   v8 = v4[1].__pad_6B8[23]; /*0x7476b3*/
   v4[1].__pad_6B8[22] = v7; /*0x7476b9*/
-  v4[1].__pad_6B8[23] = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aWeeder, v8); /*0x7476cd*/
+  v4[1].__pad_6B8[23] = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aWeeder, v8); /*0x7476cd*/
   if ( v4->Audio7[1] == -1 ) /*0x7476dc*/
     v4->Audio7[1] = 2 - (v4[1].RequiresDamageFires != 0); /*0x7476eb*/
   TypeMember_476FC0 = ObjectTypeClass::loadTypeMember_476FC0( /*0x747700*/
@@ -376,10 +376,10 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
                         v4->Audio7[1]);
   v10 = v4[1].__pad_6B8[28]; /*0x747705*/
   v4->Audio7[1] = TypeMember_476FC0; /*0x74770b*/
-  v11 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aIstilter, v10); /*0x74771a*/
+  v11 = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aIstilter, v10); /*0x74771a*/
   v72 = v4[1].__pad_6B8[34]; /*0x747727*/
   v4[1].__pad_6B8[28] = v11; /*0x74772e*/
-  v12 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aCarriescrate, v72); /*0x747734*/
+  v12 = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aCarriescrate, v72); /*0x747734*/
   v13 = (((unsigned char *)&(v4[1].Anims[1]))[1]); /*0x747739*/
   v4[1].__pad_6B8[34] = v12; /*0x74773f*/
   v73 = v4[1].__pad_6B8[30]; /*0x74774d*/
@@ -403,17 +403,17 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
   if ( v4[1].__pad_6B8[22] || v4[1].__pad_6B8[23] ) /*0x7477a7*/
     v4->primaryFacing[4] = 10; /*0x7477b1*/
   v16 = INIClass::ReadBool_Overwrite( /*0x7477d3*/
-          (int *)&DSurface_ViewBounds.__pad_FC[228],
+          (int *)&DataGlobal_887180,
           (uint8_t *)&v4->isTargetedByChrono,
           aUseturretshado,
           v4[1].__pad_6B8[29]);
   ProductionTimer_low = (*((signed char *)&(v4[1].ProductionTimer))); /*0x7477df*/
   v4[1].__pad_6B8[29] = v16; /*0x7477eb*/
-    (*((unsigned char *)&(v4[1].ProductionTimer))) = INIClass::ReadInt_Overwrite( /*0x7477f6*/                                     (bool *)&DSurface_ViewBounds.__pad_FC[228],                                     (uint8_t *)&v4->isTargetedByChrono,(uint8_t *)(aWalkframes),                                     ProductionTimer_low);
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74780f*/                     (bool *)&DSurface_ViewBounds.__pad_FC[228],                     (uint8_t *)&v4->isTargetedByChrono,(uint8_t *)(aFiringframes),                     (*(((signed char *)&(v4[1].ProductionTimer)) + 1)));
+    (*((unsigned char *)&(v4[1].ProductionTimer))) = INIClass::ReadInt_Overwrite( /*0x7477f6*/                                     (bool *)&DataGlobal_887180,                                     &v4->u32_11F,(uint8_t *)(aWalkframes),                                     ProductionTimer_low);
+    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74780f*/                     (bool *)&DataGlobal_887180,                     &v4->u32_11F,(uint8_t *)(aFiringframes),                     (*(((signed char *)&(v4[1].ProductionTimer)) + 1)));
   v18 = v4[1].__pad_6B8[20]; /*0x747814*/
   (((unsigned char *)&(v4[1].ProductionTimer))[1]) = Int_Overwrite; /*0x74781a*/
-  v19 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aPassive, v18); /*0x747829*/
+  v19 = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aPassive, v18); /*0x747829*/
   v75 = *(unsigned int *)&v4[1].__pad_6B8[4]; /*0x747836*/
   v4[1].__pad_6B8[20] = v19; /*0x74783d*/
   *(unsigned int *)&v4[1].__pad_6B8[4] = OverlayTypeClass::ReadINIString( /*0x747848*/
@@ -421,10 +421,10 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
                                      (uint8_t *)&v4->occupant,
                                      aMovementrestri,
                                      v75);
-  v20 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aCanbeach, v4[1].__pad_6B8[31]); /*0x74785d*/
+  v20 = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aCanbeach, v4[1].__pad_6B8[31]); /*0x74785d*/
   v21 = v4[1].__pad_6B8[32]; /*0x747862*/
   v4[1].__pad_6B8[31] = v20; /*0x747868*/
-  v22 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)&v4->occupant, aSmallvisceroid, v21); /*0x747877*/
+  v22 = INIClass::ReadBool_Overwrite((int *)this, &v4->u32_11F, aSmallvisceroid, v21); /*0x747877*/
   v76 = v4[1].__pad_6B8[33]; /*0x747884*/
   v4[1].__pad_6B8[32] = v22; /*0x74788b*/
   v4[1].__pad_6B8[33] = INIClass::ReadBool_Overwrite( /*0x747896*/
@@ -439,17 +439,17 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
                           v4[1].__pad_6B8[35]);
   if ( (*(((signed char *)&(v4[1].ProductionTimer)) + 1)) > 0 ) /*0x7478be*/
     *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC = 1; /*0x7478c0*/
-    v23 = INIClass::ReadInt_Overwrite( /*0x7478dc*/           (bool *)&DSurface_ViewBounds.__pad_FC[228],           (uint8_t *)&v4->isTargetedByChrono,(uint8_t *)(aStandingframes),           *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC);
+    v23 = INIClass::ReadInt_Overwrite( /*0x7478dc*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aStandingframes),           *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC);
   v77 = *(unsigned int *)&v4[1].NoCrew; /*0x7478ec*/
   *(unsigned int *)&v4[1].BuildingClass_field_bool_6DC = v23; /*0x7478f3*/
-    *(unsigned int *)&v4[1].NoCrew = INIClass::ReadInt_Overwrite( /*0x7478fe*/                                (bool *)&DSurface_ViewBounds.__pad_FC[228],                                (uint8_t *)&v4->isTargetedByChrono,(uint8_t *)(aDeathframes),                                v77);
-    v24 = INIClass::ReadInt_Overwrite( /*0x747916*/           (bool *)&DSurface_ViewBounds.__pad_FC[228],           (uint8_t *)&v4->isTargetedByChrono,(uint8_t *)(aDeathframerate),           *(unsigned int *)&v4[1].ActuallyPlacedOnMap);
+    *(unsigned int *)&v4[1].NoCrew = INIClass::ReadInt_Overwrite( /*0x7478fe*/                                (bool *)&DataGlobal_887180,                                &v4->u32_11F,(uint8_t *)(aDeathframes),                                v77);
+    v24 = INIClass::ReadInt_Overwrite( /*0x747916*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aDeathframerate),           *(unsigned int *)&v4[1].ActuallyPlacedOnMap);
   *(unsigned int *)&v4[1].ActuallyPlacedOnMap = v24; /*0x747920*/
   if ( v24 < 1 ) /*0x747928*/
     *(unsigned int *)&v4[1].ActuallyPlacedOnMap = 1; /*0x74792a*/
   if ( !(((unsigned char *)&(v4[1].ProductionTimer))[1]) && !(((unsigned char *)&(v4[1].Anims[1]))[1]) ) /*0x74793a*/
     v4[1].BuildingClass_field_int_6FC = 1; /*0x747944*/
-    v25 = INIClass::ReadInt_Overwrite( /*0x74795c*/           (bool *)&DSurface_ViewBounds.__pad_FC[228],           (uint8_t *)&v4->isTargetedByChrono,(uint8_t *)(aFacings),           v4[1].BuildingClass_field_int_6FC);
+    v25 = INIClass::ReadInt_Overwrite( /*0x74795c*/           (bool *)&DataGlobal_887180,           &v4->u32_11F,(uint8_t *)(aFacings),           v4[1].BuildingClass_field_int_6FC);
   v26 = *(unsigned int *)&v4[1].CloakRadius; /*0x747961*/
   v4[1].BuildingClass_field_int_6FC = v25; /*0x74796c*/
   if ( v26 == -1 ) /*0x747972*/
@@ -478,44 +478,44 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
       v29 = -1; /*0x7479ea*/
     v30 = *(unsigned int *)&v4[1].NoCrew; /*0x747a03*/
     v4[1].SecretProduction = (TechnoTypeClass *)v29; /*0x747a09*/
-    *(unsigned int *)v4[1].ColorAdd = v30 + v29; /*0x747a11*/
+    *v4->vtable2.ColorAdd = v30 + v29; /*0x747a11*/
   }
   *(unsigned int *)&v4[1].IsBeingRepaired = INIClass::ReadInt_Overwrite( /*0x747a2e*/
-                                        (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                                        (bool *)&DataGlobal_887180,
                                         (uint8_t *)&v4->isTargetedByChrono,
                                         aStartstandfram,
                                         *(unsigned int *)&v4[1].IsBeingRepaired);
   v31 = INIClass::ReadInt_Overwrite( /*0x747a46*/
-          (bool *)&DSurface_ViewBounds.__pad_FC[228],
+          (bool *)&DataGlobal_887180,
           (uint8_t *)&v4->isTargetedByChrono,
           aStartwalkframe,
           *(unsigned int *)&v4[1].CloakRadius);
   StorageFilledSlots = v4[1].StorageFilledSlots; /*0x747a4b*/
   *(unsigned int *)&v4[1].CloakRadius = v31; /*0x747a51*/
   v33 = INIClass::ReadInt_Overwrite( /*0x747a63*/
-          (bool *)&DSurface_ViewBounds.__pad_FC[228],
+          (bool *)&DataGlobal_887180,
           (uint8_t *)&v4->isTargetedByChrono,
           aStartfiringfra,
           StorageFilledSlots);
   parent_gap = (int)v4[1].SecretProduction->vfptr; /*0x747a73*/
   v4[1].StorageFilledSlots = v33; /*0x747a7a*/
   v4[1].SecretProduction = (TechnoTypeClass *)INIClass::ReadInt_Overwrite( /*0x747a85*/
-                                                (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                                                (bool *)&DataGlobal_887180,
                                                 (uint8_t *)&v4->isTargetedByChrono,
                                                 aStartdeathfram,
                                                 parent_gap);
-  *(unsigned int *)v4[1].ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
-                                (bool *)&DSurface_ViewBounds.__pad_FC[228],
+  *v4->vtable2.ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
+                                (bool *)&DataGlobal_887180,
                                 (uint8_t *)&v4->isTargetedByChrono,
                                 aMaxdeathcounte,
-                                *(unsigned int *)v4[1].ColorAdd);
+                                *v4->vtable2.ColorAdd);
   v82 = 0; /*0x747aae*/
-  BuildingClass_field_short_700 = (int *)v4[1].BuildingClass_field_short_700; /*0x747ab6*/
+  BuildingClass_field_short_700 = v4->vtable2.BuildingClass_field_short_700; /*0x747ab6*/
   do /*0x747b01*/
   {
     sprintf((char *const)Buffer, "FiringSyncFrame%d", v82); /*0x747ac9*/
     *BuildingClass_field_short_700 = INIClass::ReadInt_Overwrite( /*0x747aec*/
-                                       (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                                       (bool *)&DataGlobal_887180,
                                        (uint8_t *)&v4->isTargetedByChrono,
                                        (uint8_t *)Buffer,
                                        *BuildingClass_field_short_700);
@@ -683,7 +683,7 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 namespace gamemd {  // G42.18c ns repair
 int UnitTypeClass::GetGameplayValue()
 {
-  return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5836); /*0x747f2b*/
+  return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5836); /*0x747f2b*/
 }
 }  // G42.18c ns repair
 // 0x747F30

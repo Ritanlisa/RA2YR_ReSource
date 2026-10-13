@@ -29,18 +29,18 @@ int RefCount::Increment(int a2)
   int i; // eax
   int RefCount_field_04; // ecx
 
-  v3 = *((unsigned int *)this + 2); /*0x49fa09*/
+  v3 = this->u32_8; /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
 LABEL_5:
     ++*(unsigned int *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
     RefCount_field_04 = this->RefCount_field_04; /*0x49fa4d*/
-    ++*((unsigned int *)this + 4); /*0x49fa51*/
+    ++this->q010; /*0x49fa51*/
     return *(unsigned int *)(RefCount_field_04 + 4 * a2); /*0x49fa59*/
   }
   if ( (*(unsigned __int8 (**)(RefCount *, int, unsigned int))(this->m_RefCount + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
   {
-    for ( i = v3; i < *((unsigned int *)this + 2); *(unsigned int *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
+    for ( i = v3; i < this->u32_8; *(unsigned int *)(this->RefCount_field_04 + 4 * i - 4) = 0 ) /*0x49fa28*/
       ++i; /*0x49fa2d*/
     goto LABEL_5; /*0x49fa3b*/
   }

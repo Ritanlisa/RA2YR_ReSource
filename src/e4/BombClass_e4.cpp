@@ -35,13 +35,13 @@ int BombClass::AbstractClass()
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->AbstractClass = &BombClass::`vftable'; /*0x4385e1*/
   this->? = &BombClass::`vftable'; /*0x4385e7*/
-  this->? = &BombClass::`vftable'; /*0x4385ee*/
+  this->vtable3 = &BombClass::`vftable'; /*0x4385ee*/
   this->? = &BombClass::`vftable'; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
-  AudioController::Init((AudioController *)&this->audioController[3]); /*0x438605*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
+  AudioController::Init(&this->HouseClass_6C); /*0x438605*/
+  *&this->soundIndex = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 524); /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
@@ -64,13 +64,13 @@ void * BombClass::GetCurrentFrame()
 {
   int v2; // ecx
 
-  if ( *(unsigned short *)&this->audioController == 1 ) /*0x438a04*/
+  if ( *&this->audioController == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 /*0x438a4c*/
      * ((*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - this->audioController[1])
       / (*(unsigned int *)(*(unsigned int *)&(&DSurface_ViewBounds.__pad_FC)[324] + 4048)
        / 6));
-  if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
+  if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % (2 * *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4056)) >= *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4056) ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)v2); /*0x438a59*/
@@ -109,7 +109,7 @@ int BombClass::Stat(int * a2)
     v5 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
-  v6 = *(unsigned int *)this->__pad_24; /*0x438ab7*/
+  v6 = *(unsigned int *)this->__pad_024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
     v7 = (*(int (**)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
@@ -211,9 +211,9 @@ BombClass * BombClass::CopyTo(char a2)
 
   this->AbstractClass = &BombClass::`vftable'; /*0x4393f7*/
   this->? = &BombClass::`vftable'; /*0x4393fd*/
-  this->? = &BombClass::`vftable'; /*0x439404*/
+  this->vtable3 = &BombClass::`vftable'; /*0x439404*/
   this->? = &BombClass::`vftable'; /*0x43940b*/
-  AudioFileClass::Release((AudioFileClass *)&this->audioController[3]); /*0x439412*/
+  AudioFileClass::Release(&this->HouseClass_6C); /*0x439412*/
   v5 = this; /*0x439427*/
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/

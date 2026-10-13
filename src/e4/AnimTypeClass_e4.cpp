@@ -37,34 +37,34 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   int v3; // eax
 
   AbstractTypeClass::Constructor((int *)this, Source); /*0x41e359*/
-  *(unsigned int *)this->? = -1; /*0x41e363*/
-  *(unsigned int *)&this->? = -1; /*0x41e369*/
-  this->?[0] = 0; /*0x41e374*/
-  this->?[1] = 0; /*0x41e37a*/
-  this->?[3] = 0; /*0x41e380*/
-  this->?[0] = 1072693248; /*0x41e386*/
-  this->?[2] = 1072693248; /*0x41e38c*/
-  this->?[4] = 1072693248; /*0x41e392*/
+  *(unsigned int *)this->ptr_98 = -1; /*0x41e363*/
+  *&this->ImageAllocated = -1; /*0x41e369*/
+  this->BarrelVoxel = 0; /*0x41e374*/
+  this->u32_C0 = 0; /*0x41e37a*/
+  this->u32_C8 = 0; /*0x41e380*/
+  this->ChargerTurrets = 1072693248; /*0x41e386*/
+  this->q0C4 = 1072693248; /*0x41e38c*/
+  this->q0CC = 1072693248; /*0x41e392*/
   BYTE2(this->?[5]) = 1; /*0x41e39a*/
   HIBYTE(this->?[5]) = 1; /*0x41e3a0*/
-  LOBYTE(this->?[6]) = 1; /*0x41e3a6*/
-  this->?[0] = 0; /*0x41e3b9*/
-  this->? = 0; /*0x41e3bf*/
-  LOBYTE(this->?) = 0; /*0x41e3c5*/
-  this->? = 0; /*0x41e3cb*/
-  this->?[0] = 0; /*0x41e3d1*/
-  LOBYTE(this->?[5]) = 0; /*0x41e3d7*/
+  LOBYTE(this->u32_D4) = 1; /*0x41e3a6*/
+  this->Armor = 0; /*0x41e3b9*/
+  this->Strength = 0; /*0x41e3bf*/
+  LOBYTE(this->Image) = 0; /*0x41e3c5*/
+  this->AlphaImage = 0; /*0x41e3cb*/
+  this->MainVoxel = 0; /*0x41e3d1*/
+  LOBYTE(this->q0D0) = 0; /*0x41e3d7*/
   BYTE1(this->?[5]) = 0; /*0x41e3dd*/
-  this->?[7] = 0; /*0x41e3e3*/
-  this->?[8] = 0; /*0x41e3e9*/
-  this->?[9] = 0; /*0x41e3ef*/
-  this->?[0] = 0; /*0x41e3f5*/
-  this->?[1] = 0; /*0x41e3fb*/
+  this->q0D8 = 0; /*0x41e3e3*/
+  this->u32_DC = 0; /*0x41e3e9*/
+  this->q0E0 = 0; /*0x41e3ef*/
+  this->ChargerBarrels = 0; /*0x41e3f5*/
+  this->q108 = 0; /*0x41e3fb*/
   this->ObjectTypeClass = &AITriggerTypeClass::`vftable'; /*0x41e401*/
   this->? = &AITriggerTypeClass::`vftable'; /*0x41e407*/
-  this->? = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
+  this->vtable3 = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
   this->? = &AITriggerTypeClass::`vftable'; /*0x41e415*/
-  memset(&this->?[10], 0, 0x20u); /*0x41e41c*/
+  memset(&this->vtable4, 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
     && dword_A8B214 > 0
@@ -170,22 +170,22 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
   this->ShouldFogRemove = 1; /*0x42772a*/
   this->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x427731*/
   this->? = &AnimTypeClass::`vftable'; /*0x427737*/
-  this->? = &AnimTypeClass::`vftable'; /*0x42773d*/
+  this->vtable3 = &AnimTypeClass::`vftable'; /*0x42773d*/
   this->? = &AnimTypeClass::`vftable'; /*0x427744*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x42774b*/
-  this->? = 1; /*0x427750*/
-  this->? = 1; /*0x427757*/
-  this->? = 0; /*0x42775e*/
-  this->? = 0; /*0x427764*/
-  this->? = 1; /*0x42776a*/
-  this->? = 1; /*0x427771*/
-  this->? = 0; /*0x427778*/
+  AbstractClass::GenerateUniqueID(&this->vtable4); /*0x42774b*/
+  this->IsLogic_d = 1; /*0x427750*/
+  this->RadarInvisible_d = 1; /*0x427757*/
+  this->Selectable_d = 0; /*0x42775e*/
+  this->LegalTarget_d = 0; /*0x427764*/
+  this->Insignificant_d = 1; /*0x42776a*/
+  this->Immune_d = 1; /*0x427771*/
+  this->AllowCellContent_d = 0; /*0x427778*/
   if ( FootClass_Array.?[0] < FootClass_Array.?[4] /*0x4277b0*/
-    || (BYTE1(FootClass_Array.?[5]) || !FootClass_Array.?[4])
+    || (BYTE1(FootClass_Array.?[5]) || !DataGlobal_8B3DC4)
     && FootClass_Array.?[1] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(FootClass_Array.?[2] + 8))(
          &FootClass_Array.?[2],
-         FootClass_Array.?[4] + FootClass_Array.?[1],
+         DataGlobal_8B3DC4 + FootClass_Array.?[1],
          0) )
   {
     v3 = FootClass_Array.?[0]++; /*0x4277bd*/
@@ -203,19 +203,19 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
-  if ( FootClass_Array.?[0] <= 0 ) /*0x42782c*/
+  if ( FootClass_Array <= 0 ) /*0x42782c*/
   {
 LABEL_17:
     v5 = -1; /*0x427840*/
   }
   else
   {
-    v6 = (AnimTypeClass **)FootClass_Array.?[3]; /*0x42782e*/
+    v6 = (AnimTypeClass **)dword_8B4154; /*0x42782e*/
     while ( *v6 != this ) /*0x427836*/
     {
       ++v5; /*0x427838*/
       ++v6; /*0x427839*/
-      if ( v5 >= FootClass_Array.?[0] ) /*0x42783e*/
+      if ( v5 >= FootClass_Array ) /*0x42783e*/
         goto LABEL_17; /*0x42783e*/
     }
   }
@@ -241,35 +241,35 @@ void* AnimTypeClass::GetWarhead(int a2)
   LOBYTE(v3) = this->DemandLoad; /*0x427b59*/
   if ( !(unsigned char)v3 ) /*0x427b61*/
   {
-    if ( this->? ) /*0x427b67*/
+    if ( this->Theater_d ) /*0x427b67*/
     {
       LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
     }
     else
     {
-      if ( this->? && this->? ) /*0x427b85*/
+      if ( this->vtable4 && this->vtable4 ) /*0x427b85*/
       {
-        __3_YAXPAX_Z(this->?); /*0x427b90*/
-        this->? = 0; /*0x427b98*/
+        __3_YAXPAX_Z(this->vtable4); /*0x427b90*/
+        this->ImageAllocated = 0; /*0x427b98*/
       }
-      v4 = this->?[0]; /*0x427b9f*/
-      ImageFile = this->?; /*0x427ba5*/
-      this->? = 0; /*0x427bad*/
+      v4 = this->ImageFile; /*0x427b9f*/
+      ImageFile = this->ImageFile; /*0x427ba5*/
+      this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
-        ImageFile = (const char *)this->?; /*0x427bb9*/
+        ImageFile = (const char *)this->LoopStart; /*0x427bb9*/
       _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x427bcb*/
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
       v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427be9*/
-      this->? = v3; /*0x427bf0*/
+      this->Image = v3; /*0x427bf0*/
       if ( !v3 ) /*0x427bf6*/
       {
         ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x427bfc*/
         v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427c07*/
-        this->? = v3; /*0x427c0c*/
+        this->Image = v3; /*0x427c0c*/
       }
     }
   }
-  Image = this->?; /*0x427c12*/
+  Image = this->Image; /*0x427c12*/
   if ( Image ) /*0x427c1a*/
   {
     End = this->End; /*0x427c1c*/
@@ -492,7 +492,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source, int a2, int aP0, int
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x428b9c*/
     return 0; /*0x428bff*/
   v2 = 0; /*0x428bad*/
-  if ( FootClass_Array.?[0] <= 0 ) /*0x428bb1*/
+  if ( FootClass_Array <= 0 ) /*0x428bb1*/
   {
 LABEL_6:
     v3 = (AnimTypeClass *)__2_YAPAXI_Z(0x378u); /*0x428bd6*/
@@ -500,12 +500,12 @@ LABEL_6:
       return AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
-  while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * v2) + 36), Source) ) /*0x428bca*/
+  while ( _strcmpi((char *)(*(unsigned int *)(dword_8B4154 + 4 * v2) + 36), Source) ) /*0x428bca*/
   {
-    if ( ++v2 >= FootClass_Array.?[0] ) /*0x428bd4*/
+    if ( ++v2 >= FootClass_Array ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/
   }
-  return *(unsigned int **)(FootClass_Array.?[3] + 4 * v2); /*0x428bef*/
+  return *(unsigned int **)(dword_8B4160 + 4 * v2); /*0x428bef*/
 
 }
 }
@@ -527,37 +527,37 @@ int AnimTypeClass::GetDamage()
   int v12; // [esp+D4h] [ebp-208h]
   char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
 
-  result = (int)this->?; /*0x428c39*/
+  result = (int)this->Image; /*0x428c39*/
   if ( !result && this->DemandLoad ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
-    ImageFile = this->?; /*0x428c69*/
-    if ( !this->?[0] ) /*0x428c63*/
-      ImageFile = (const char *)this->?; /*0x428c76*/
+    ImageFile = this->ImageFile; /*0x428c69*/
+    if ( !this->ImageFile ) /*0x428c63*/
+      ImageFile = (const char *)this->LoopStart; /*0x428c76*/
     _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
-    if ( this->? ) /*0x428c90*/
+    if ( this->Theater_d ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, (const char *)this->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428ccc*/
+      _makepath(Buffer, 0, 0, (const char *)this->vtable4, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x428ccc*/
     }
-    else if ( this->? ) /*0x428cd6*/
+    else if ( this->NewTheater_d ) /*0x428cd6*/
     {
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
     CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
     v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
-    this->? = v4; /*0x428d14*/
+    this->Image = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
     {
-      this->? = 1; /*0x428d1c*/
+      this->ImageAllocated = 1; /*0x428d1c*/
     }
     else
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
       v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
-      this->? = v5; /*0x428d4d*/
+      this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
-        this->? = 1; /*0x428d55*/
+        this->ImageAllocated = 1; /*0x428d55*/
       *(unsigned int *)v10.CDFileClass = &CCFileClass::`vftable'; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
@@ -611,7 +611,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
   {
     --FootClass_Array.?[0]; /*0x428f31*/
     for ( ; /*0x428f37*/
-          v4 < FootClass_Array.?[0];
+          v4 < FootClass_Array;
           *(unsigned int *)(FootClass_Array.?[3] + 4 * v4 - 4) = *(unsigned int *)(FootClass_Array.?[3] + 4 * v4) )
     {
       ++v4; /*0x428f3f*/
@@ -654,26 +654,26 @@ char AnimTypeClass::GetLoopCount(int a2)
   SHPStruct *v2; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  LOBYTE(v2) = stru_A8EB00.?[391]; /*0x427a80*/
-  if ( stru_A8EB00.?[391] || a2 != dword_822CF8 ) /*0x427aa0*/
+  LOBYTE(v2) = byte_A8ED6B; /*0x427a80*/
+  if ( byte_A8ED6B || a2 != dword_822CF8 ) /*0x427aa0*/
   {
-    if ( !this->? || this->DemandLoad ) /*0x427ab0*/
+    if ( !this->DemandLoad || this->DemandLoad ) /*0x427ab0*/
     {
-      LOBYTE(v2) = this->?; /*0x427b2b*/
+      LOBYTE(v2) = this->NewTheater_d; /*0x427b2b*/
       if ( (unsigned char)v2 ) /*0x427b33*/
         LOBYTE(v2) = (*((char (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, a2); /*0x427b3a*/
     }
     else
     {
-      if ( this->? && this->? ) /*0x427ac4*/
+      if ( this->vtable4 && this->vtable4 ) /*0x427ac4*/
       {
-        __3_YAXPAX_Z(this->?); /*0x427acf*/
-        this->? = 0; /*0x427ad7*/
+        __3_YAXPAX_Z(this->vtable4); /*0x427acf*/
+        this->ImageAllocated = 0; /*0x427ad7*/
       }
-      this->? = 0; /*0x427af6*/
-      _makepath(Buffer, 0, 0, (const char *)this->?, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
+      this->Image = 0; /*0x427af6*/
+      _makepath(Buffer, 0, 0, (const char *)this->vtable4, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
       v2 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427b15*/
-      this->? = v2; /*0x427b1a*/
+      this->Image = v2; /*0x427b1a*/
     }
   }
   return (char)v2; /*0x427b20*/

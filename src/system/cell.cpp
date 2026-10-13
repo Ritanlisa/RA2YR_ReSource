@@ -255,19 +255,19 @@ int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
   float v14; // [esp+14h] [ebp+4h]
 
   v13 = Cell::PosToIndex((Cell *)a2); /*0x7235b8*/
-  result = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x7235bc*/
+  result = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x7235bc*/
   if ( result[286] < 0xBu ) /*0x7235c8*/
   {
     if ( *(unsigned int *)this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)this); /*0x7235e2*/
-    *(unsigned int *)(*(unsigned int *)&this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
-    *(float *)(*(unsigned int *)&this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
+    *(unsigned int *)(*&this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
+    *(float *)(*&this->unknown118 + 8 * *(unsigned int *)this->CellClass_field_10C + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
     v4 = *(unsigned int *)this->CellClass_field_10C; /*0x723636*/
     v5 = *(unsigned int **)this->unknown110; /*0x723642*/
-    v6 = *(unsigned int *)&this->unknown118 + 8 * v4; /*0x723648*/
+    v6 = *&this->unknown118 + 8 * v4; /*0x723648*/
     *(unsigned int *)this->CellClass_field_10C = v4 + 1; /*0x72364c*/
     v7 = *v5 + 1; /*0x723657*/
-    v14 = *(float *)(v6 + 4); /*0x72365a*/
+    v14 = v6->q004; /*0x72365a*/
     v12 = v6; /*0x723661*/
     v8 = v7 >> 1; /*0x723665*/
     if ( v7 < v5[1] ) /*0x723669*/
@@ -326,7 +326,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v5 = this->firstObject; /*0x47e8b8*/
   if ( content ) /*0x47e8c4*/
   {
-    if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
+    if ( content->getAltitude() == 6 && v5 ) /*0x47e8d9*/
     {
       for ( i = v5->vtable4; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
         v5 = i; /*0x47e8e2*/
@@ -364,18 +364,18 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           !Game::Stub3((int)&v15))
       || dword_A8B238[0] )
     {
-      (*(void (__thiscall **)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
+      content->IsNotNull(dword_A83D4C); /*0x47e9dc*/
     }
-    v3 = (*(int (__thiscall **)(unsigned int *))(*content + 44))(content); /*0x47e9e7*/
+    v3 = content->getAltitude(); /*0x47e9e7*/
     if ( v3 != 15 ) /*0x47e9ee*/
     {
-      (*((unsigned char *)&(v3))) = (*(int (__thiscall **)(unsigned int *))(*content + 192))(content); /*0x47e9f9*/
+      (*((unsigned char *)&(v3))) = content->getCoordCenter(); /*0x47e9f9*/
       if ( (unsigned char)v3 ) /*0x47ea01*/
       {
-        if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
+        if ( content->getAltitude() == 6 ) /*0x47ea0e*/
         {
-          v9 = *(int16_t *)(&this->vtable46); /*0x47ea10*/
-          v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
+          v9 = *&this->smudgeTypeIndex; /*0x47ea10*/
+          v10 = *&this->q026; /*0x47ea14*/
           v11 = *content; /*0x47ea18*/
           v17 = 0; /*0x47ea1b*/
           v15 = (v9 << 8) + 128; /*0x47ea2e*/
@@ -409,9 +409,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   if ( !content ) /*0x47ea9d*/
     return; /*0x47ea9d*/
   if ( on_bridge ) /*0x47eaa9*/
-    v4 = *(unsigned int **)(&this->CellClass_field_5C2); /*0x47eaab*/
+    v4 = *&this->altObject; /*0x47eaab*/
   else
-    v4 = *(unsigned int **)(&this->altInfantryOwnerIndex8); /*0x47eab3*/
+    v4 = *&this->firstObject; /*0x47eab3*/
   if ( v4 == content ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
@@ -437,13 +437,13 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     goto LABEL_14; /*0x47eaed*/
   }
   LABEL_15:
-  if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) != 15 /*0x47eb0b*/
-    && (*(uint8_t (__thiscall **)(unsigned int *))(*content + 192))(content) )
+  if ( content->getAltitude() != 15 /*0x47eb0b*/
+    && content->getCoordCenter() )
   {
-    if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
+    if ( content->getAltitude() == 6 ) /*0x47eb1f*/
     {
-      v6 = *(int16_t *)(&this->vtable46); /*0x47eb21*/
-      v7 = *(int16_t *)(&this->vtable48); /*0x47eb25*/
+      v6 = *&this->smudgeTypeIndex; /*0x47eb21*/
+      v7 = *&this->q026; /*0x47eb25*/
       v8 = *content; /*0x47eb29*/
       v11 = 0; /*0x47eb2b*/
       v9 = (v6 << 8) + 128; /*0x47eb3c*/
@@ -528,8 +528,8 @@ void CellClass::SetWallOwner(int a1, int a5, int a6)
   v7 = a1; /*0x47d214*/
   if ( result != -1 ) /*0x47d21b*/
   {
-    result = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * result); /*0x47d227*/
-    if ( *(unsigned char *)(result + 680) ) /*0x47d22a*/
+    result = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * result); /*0x47d227*/
+    if ( result->u8_2A8 ) /*0x47d22a*/
     {
       result = stru_A8EB00.vfptr[20]; /*0x47d234*/
       v2 = -1; /*0x47d23b*/
@@ -666,7 +666,7 @@ const wchar_t* CellClass::GetUIName() const
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_28[28]); /*0x484ff3*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*&this->q044); /*0x484ff3*/
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else
@@ -780,22 +780,22 @@ void CellClass::ReduceTiberium(int v23)
   v17 = *(CellClass **)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
   if ( this->powerup == 11 ) /*0x480b99*/
     CellClass::RegisterForRedraw(v17, (int16_t *)&this->vtable28); /*0x480ba1*/
-  if ( *((uint8_t *)&this->unknown706) + 1 <= v16 ) /*0x480bb9*/
+  if ( this->AbstractClass_1) + 1 <= v16 ) /*0x480bb9*/
   {
-    v16 = *((uint8_t *)&this->unknown706); /*0x480bc8*/
+    v16 = this->powerup); /*0x480bc8*/
     *(&this->vtable27) = -1; /*0x480bce*/
     this->powerup = 0; /*0x480bd5*/
     House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
     v18 = &this->smudgeTypeIndex; /*0x480be1*/
-    BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)v18); /*0x480bea*/
+    BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v18); /*0x480bea*/
     CellClass::ClearCrateStateForAll((CellClass *)v18); /*0x480bf1*/
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {
       v20 = i & 7; /*0x480bfa*/
       (*((unsigned short *)&(v23))) = *(unsigned short *)v18 + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v20 + 82]))); /*0x480c1b*/
-      (*(((unsigned short *)&(v23)) + 1)) = *((unsigned short *)v18 + 1) + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v20 + 82])) + 1)); /*0x480c24*/
+      (*(((unsigned short *)&(v23)) + 1)) = v18->q002 + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v20 + 82])) + 1)); /*0x480c24*/
       v23 = v23; /*0x480c33*/
-      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&v23) ) /*0x480c37*/
+      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, (int16_t *)&v23) ) /*0x480c37*/
       {
         if ( !*((unsigned char *)&v17->radSite->vfptr + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
           BuildingClass::AddOccupancy(v17->mapCoords, (int16_t *)&v23); /*0x480c5c*/
@@ -863,6 +863,6 @@ int CellClass::IsTunnelEntrance()
 {
   int16_t v1; // ax
 
-  v1 = (*(((unsigned short *)&(this->passengers[0])) + 1)); /*0x484ab0*/
+  v1 = (*(this->tubeIndex + 1)); /*0x484ab0*/
   return v1 >= 0 && v1 < FootClass_Array.primaryFacing[0] && this->radioLinks[3] == 10; /*0x484ad7*/
 }

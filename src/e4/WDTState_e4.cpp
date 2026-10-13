@@ -28,7 +28,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   m_8 = a2; /*0x76ba73*/
   if ( a2 ) /*0x76ba7d*/
   {
-    LOBYTE(this->m_C) = 0; /*0x76ba87*/
+    LOBYTE(this->__pad_00C) = 0; /*0x76ba87*/
     if ( a3 ) /*0x76ba8d*/
     {
       *a3 = a2; /*0x76bad1*/
@@ -39,7 +39,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
+          *(unsigned int *)v8->__pad_000 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -113,13 +113,13 @@ int WDTState_4::ddtor()
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->q004; /*0x76b716*/
-  this->q010 = 0; /*0x76b719*/
-  if ( v2 && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x76b720*/
+  this->m_10 = 0; /*0x76b719*/
+  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x76b720*/
   {
     result = (**v2)(v2, 3); /*0x76b72d*/
-    *(unsigned int *)&this->q004 = 0; /*0x76b72f*/
+    *&this->q004 = 0; /*0x76b72f*/
   }
-  (((unsigned char *)&(this->q00C))[1]) = 0; /*0x76b732*/
+  (this->IsAllocated) = 0; /*0x76b732*/
   this->Capacity = 0; /*0x76b735*/
   return result; /*0x76b738*/
 }
@@ -129,8 +129,8 @@ int WDTState_4::ddtor()
 namespace gamemd {
 unsigned int WDTState_4::Write(int a2)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x76b740*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x76b755*/
+  if ( (this->__pad_00C) ) /*0x76b740*/
+    return (unsigned int)(a2 - *&this->q004) >> 3; /*0x76b755*/
   else
     return 0; /*0x76b747*/
 }
@@ -162,18 +162,18 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 {
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (****)(unsigned int, int))&Block->q004; /*0x76bc13*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76bc16*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x76bc20*/
+  v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x76bc13*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x76bc16*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
-    *(unsigned int *)&Block->q004 = 0; /*0x76bc31*/
+    *&Block->__pad_004 = 0; /*0x76bc31*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x76bc3c*/
+  (Block->u32_D) = 0; /*0x76bc3c*/
   Block->Capacity = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     operator delete((void *)(Block)); /*0x76bc4c*/
-  return Block->__pad_0; /*0x76bc56*/
+  return Block->tail_0; /*0x76bc56*/
 }
 } // namespace gamemd
 
@@ -183,7 +183,7 @@ int WDTState_4::Constructor()
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76bc63*/
-  *(unsigned int *)this->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76bc68*/
+  *(unsigned int *)this->__pad_000 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

@@ -92,7 +92,7 @@ LABEL_8:
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
   {
-    v7 = (HWND *)v7[129]; /*0x61423d*/
+    v7 = v7->HWND_204; /*0x61423d*/
     if ( !v7 ) /*0x614245*/
       return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
   }

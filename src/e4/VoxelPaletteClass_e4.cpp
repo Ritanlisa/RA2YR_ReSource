@@ -30,7 +30,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   v3 = 0; /*0x758a42*/
   if ( !(*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1) ) /*0x758a44*/
     goto LABEL_5; /*0x758a44*/
-  if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)a2 + 36))(a2, v9, 16) != 16 ) /*0x758a5c*/
+  if ( (*(int (**)(int, unsigned int *, int))(*&a2->u32_90))(a2, v9, 16) != 16 ) /*0x758a5c*/
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/
@@ -41,7 +41,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   this->u32_4 = v5; /*0x758a76*/
   this->u32_C = v6; /*0x758a79*/
   if ( (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, v7, 768) != 768 /*0x758aaa*/
-    || (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 36))(
+    || (*(int (**)(int, unsigned int, unsigned int))(*&a2->u32_90))(
          a2,
          this->u32_14,
          this->u32_8 << 8) != this->u32_8 << 8 )
@@ -64,8 +64,8 @@ int VoxelPaletteClass::LoadFromFile()
 
   VoxelPalette::Init(&v4, (int)&unk_B2FB78, (int)g_VoxelColorPalette); /*0x753b84*/
   v2 = VoxelPaletteClass::ConvertFromFile((VoxelPaletteClass *)&v4, (int)this); /*0x753b93*/
-  dword_B2FB74 = *(unsigned int *)v4.__pad_0; /*0x753ba1*/
-  dword_B4317C = v4.VoxelPalette_field_0x04; /*0x753baa*/
+  dword_B2FB74 = *(unsigned int *)v4.__pad_000; /*0x753ba1*/
+  dword_B4317C = v4.q004; /*0x753baa*/
   dword_B2FB58 = v5; /*0x753bb4*/
   dword_B43178 = v6; /*0x753bba*/
   VoxelPalette::Reset(&v4); /*0x753bbf*/

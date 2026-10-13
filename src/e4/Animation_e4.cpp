@@ -62,7 +62,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v27; // ebp
   int j; // edi
 
-  v2 = (*(uint8_t (**)(Animation *))(*(unsigned int *)((char *)&this->u32_9A4 + 924)))(this) == 0; /*0x4549bd*/
+  v2 = (*(uint8_t (**)(Animation *))(*(unsigned int *)this->u32_9A4 + 924)))(this) == 0; /*0x4549bd*/
   v3 = this->u32_520; /*0x4549bf*/
   v4 = *(unsigned int *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
@@ -88,7 +88,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       }
     }
     if ( v5[3281] && !this->u32_269 ) /*0x454a4b*/
-      (*(void (**)(Animation *))(*(unsigned int *)((char *)&this->q1046 + 10)))(this); /*0x454a59*/
+      (*(void (**)(Animation *))(*(unsigned int *)this->q1046 + 10)))(this); /*0x454a59*/
     v7 = this->u32_520; /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       this->BuildingClass::ProcessAnimationStates(); /*0x454a7b*/
@@ -101,7 +101,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
         if ( *(unsigned char *)(i + this->u32_520 + 3983) ) /*0x454aa7*/
         {
           BuildingClass::GetHealthRatio(); /*0x454ab4*/
-          _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x454ab9*/
+          _EDX = *(unsigned int *)&g_RulesClass_Instance; /*0x454ab9*/
           __asm /*0x454abf*/
           {
             fcomp qword ptr [edx+1700h]
@@ -120,7 +120,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
           }
           if ( v13 ) /*0x454af1*/
           {
-            if ( (*((unsigned char *)&(v13->vfptr))) ) /*0x454af3*/
+            if ( (v13->vtable1) ) /*0x454af3*/
               BuildingClass::PlayAnim(_EDX, v13, v8, v12, 0, 0); /*0x454b01*/
           }
         }
@@ -150,7 +150,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     if ( this->u32_269 ) /*0x454b9b*/
     {
-      (*(void (**)(Animation *))(*(unsigned int *)((char *)&this->q1046 + 26)))(this); /*0x454ba9*/
+      (*(void (**)(Animation *))(*(unsigned int *)this->q1046 + 26)))(this); /*0x454ba9*/
       if ( this->u32_268 ) /*0x454baf*/
       {
         v17 = this->u32_21C; /*0x454bb9*/
@@ -181,7 +181,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     {
   LABEL_52:
       BuildingClass::GetHealthRatio(); /*0x454c59*/
-      _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x454c60*/
+      _EDX = *(unsigned int *)&g_RulesClass_Instance; /*0x454c60*/
       __asm /*0x454c66*/
       {
         fcomp qword ptr [edx+1700h]
@@ -197,8 +197,8 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
         v25 = 0; /*0x454c8b*/
         v26 = (AnimTypeClass *)(this->u32_520 + 5208); /*0x454c8d*/
       }
-      if ( v26 && (*((unsigned char *)&(v26->vfptr))) ) /*0x454c96*/
-        BuildingClass::PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v26, 19, v25, 0, 0); /*0x454ca5*/
+      if ( v26 && (v26->vtable1) ) /*0x454c96*/
+        BuildingClass::PlayAnim(*(int *)&g_RulesClass_Instance, v26, 19, v25, 0, 0); /*0x454ca5*/
       v27 = 0; /*0x454caa*/
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/
       {
@@ -225,10 +225,10 @@ int Animation::GetProgress()
   (*((unsigned char *)&(result))) = this->u32_60; /*0x4a52f0*/
   if ( (unsigned char)result ) /*0x4a52f8*/
   {
-    if ( this->u32_14 ) /*0x4a52fb*/
+    if ( this->q014 ) /*0x4a52fb*/
     {
-      v2 = this->u32_8; /*0x4a5311*/
-      result = this->u32_10; /*0x4a5314*/
+      v2 = this->q008; /*0x4a5311*/
+      result = this->q010; /*0x4a5314*/
       if ( v2 != -1 ) /*0x4a531a*/
       {
         if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v2 >= result ) /*0x4a5326*/
@@ -271,8 +271,8 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v3 = (char **)aP2; /*0x770554*/
   v4 = (INIClass *)a1; /*0x770559*/
   v22 = this; /*0x77055f*/
-  v5 = (INIClass *)&this->q010; /*0x770563*/
-  *(unsigned int *)&v23.ptr_4 = 6; /*0x770566*/
+  v5 = &this->q010; /*0x770563*/
+  *(unsigned int *)&v23.headNode = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
     v6 = *(void **)this; /*0x770574*/
@@ -285,17 +285,17 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     ((String *)(&v23))->Assign((const char *)(aDraw)); /*0x7705cf*/
     INIClass::ReadTokenizedPair(v5,(unsigned int *)(v4), v3, v6, 2, (char **)&v23); /*0x7705e0*/
     DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
-    v5 = (INIClass *)((char *)v5 + 148); /*0x7705f2*/
-    if ( !--*(unsigned int *)&v23.ptr_4 ) /*0x7705fd*/
+    v5 = &v5->__pad_094; /*0x7705f2*/
+    if ( !--*(unsigned int *)&v23.headNode ) /*0x7705fd*/
       break; /*0x7705fd*/
     this = v22; /*0x770570*/
   }
   ((String *)(&v23))->Assign((const char *)(aStartup)); /*0x77060c*/
   v7 = StaticString::Factory(*(StaticString **)v22); /*0x77061c*/
-  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.ptr_4), (const char **)v7, (char **)&v23); /*0x770627*/
+  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.headNode), (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
   ((String *)((String *)&aP2))->Assign(&g_INI_DefaultBuffer); /*0x77063e*/
-  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.ptr_4, (char **)&aP2, (int)&a1); /*0x770655*/
+  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.headNode, (char **)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
@@ -327,14 +327,14 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   }
   DeleteAndZero((ObjectClass *)&aP2); /*0x770702*/
   DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
-  DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x770714*/
+  DeleteAndZero((ObjectClass *)&v23.headNode); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   ((String *)(&v23))->Assign((const char *)(aTerritoryselec)); /*0x77072b*/
   v14 = StaticString::Factory(*(StaticString **)v22); /*0x77073b*/
-  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.ptr_4), (const char **)v14, (char **)&v23); /*0x770746*/
+  ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.headNode), (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
   ((String *)((String *)&aP2))->Assign(&g_INI_DefaultBuffer); /*0x77075d*/
-  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.ptr_4, (char **)&aP2, (int)&a1); /*0x770774*/
+  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.headNode, (char **)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
@@ -366,7 +366,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   }
   DeleteAndZero((ObjectClass *)&aP2); /*0x77081b*/
   DeleteAndZero((ObjectClass *)&a1); /*0x770824*/
-  DeleteAndZero((ObjectClass *)&v23.ptr_4); /*0x77082d*/
+  DeleteAndZero((ObjectClass *)&v23.headNode); /*0x77082d*/
   DeleteAndZero((ObjectClass *)&v23); /*0x770836*/
 }
 } // namespace gamemd

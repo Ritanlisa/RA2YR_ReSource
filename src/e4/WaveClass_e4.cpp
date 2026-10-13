@@ -56,18 +56,18 @@ int WaveClass::LoadWaveData(int a2, int a3)
     if ( v4 ) /*0x75f672*/
     {
       ObjectClass::Init((ObjectClass *)v4, (int)&a3); /*0x75f67b*/
-      *(unsigned int *)(v4 + 332) = 0; /*0x75f680*/
-      *(unsigned int *)(v4 + 424) = 0; /*0x75f68c*/
-      ((FrameSnapshot *)((FrameSnapshot *)(v4 + 472)))->Init(); /*0x75f692*/
-      WaveClass::Constructor_7632D0((WaveClass *)(v4 + 496), 0, 0); /*0x75f69f*/
+      v4->q14C = 0; /*0x75f680*/
+      v4->AbstractClass_1A8 = 0; /*0x75f68c*/
+      (&v4->u32_1D8)->Init(); /*0x75f692*/
+      WaveClass::Constructor_7632D0(&v4->q_1F0, 0, 0); /*0x75f69f*/
       *(unsigned int *)v4 = (unsigned int)(&vt_WaveClass); /*0x75f6a4*/
       v4->vtable2 = &vt_WaveClass; /*0x75f6aa*/
       v4->vtable3 = &vt_WaveClass; /*0x75f6b1*/
       v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
     }
-    *(unsigned int *)(v4 + 332) = v4->fallRate == 3 ? v4 + 384 : v4 + 336;
+    v4->q14C = v4->fallRate == 3 ? v4 + 384 : v4 + 336;
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x75f6ee*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 468)); /*0x75f6ff*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->q1D4); /*0x75f6ff*/
     Register = (*(int (__stdcall **)(int, int *, int, unsigned int))(a3->vtable4)(a3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/
     {
@@ -82,7 +82,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
           do /*0x75f7b8*/
             ObjectPtr::RegisterForTracking( /*0x75f7ae*/
               (int)&SwizzleManagerClass_Instance,
-              (int *)(*(unsigned int *)(v4 + 500) + 4 * v11++));
+              (int *)(v4->u32_1F4 + 4 * v11++));
           while ( v11 < a2 ); /*0x75f7b8*/
         }
       }
@@ -93,14 +93,14 @@ int WaveClass::LoadWaveData(int a2, int a3)
           Register = (*(int (__stdcall **)(int, int *, int, unsigned int))(a3->vtable4)(a3, &v13, 4, 0); /*0x75f737*/
           if ( Register < 0 ) /*0x75f73b*/
             break; /*0x75f73b*/
-          v7 = *(unsigned int *)(v4 + 504); /*0x75f73d*/
+          v7 = v4->u8_1F8; /*0x75f73d*/
           if ( v4->needsRedraw < v7 /*0x75f76e*/
-            || (*(unsigned char *)(v4 + 509) || !v7)
+            || (v4->u8_1FD || !v7)
             && (v8 = v4->inLimbo, v8 > 0)
             && (*(uint8_t (**)(int, int, unsigned int))(v4->visibilityFlags + 8))(v4 + 496, v7 + v8, 0) )
           {
             v9 = v4->needsRedraw; /*0x75f775*/
-            v10 = *(unsigned int *)(v4 + 500); /*0x75f778*/
+            v10 = *&v4->u32_1F4; /*0x75f778*/
             v4->needsRedraw = v9 + 1; /*0x75f77e*/
             *(unsigned int *)(v10 + 4 * v9) = v13; /*0x75f785*/
           }
@@ -186,15 +186,15 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v16 = v2; /*0x75f34a*/
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5[1] / 256; /*0x75f372*/
-    v6 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&aP1); /*0x75f391*/
+    v6 = (char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&aP1); /*0x75f391*/
     v7 = (*(int (**)(void *, unsigned int))(*(unsigned int *)this->Owner + 1016))(this->Owner, 0); /*0x75f395*/
     v8 = *(unsigned int *)v7; /*0x75f39b*/
     v17 = *(unsigned int *)(*(unsigned int *)v7 + 172); /*0x75f3a9*/
     v18 = *(unsigned int *)(*(unsigned int *)v7 + 152); /*0x75f3ad*/
-    if ( (*((unsigned int *)v6 + 80) & 0x100) != 0 && this->WaveClass_field_BC >= dword_B725C8 * (v6[283] + 4) ) /*0x75f3d5*/
-      v9 = (unsigned int *)*((unsigned int *)v6 + 58); /*0x75f3d7*/
+    if ( (v6->flags & 0x100) != 0 && this->WaveClass_field_BC >= dword_B725C8 * (v6[283] + 4) ) /*0x75f3d5*/
+      v9 = (unsigned int *)v6->altObject; /*0x75f3d7*/
     else
-      v9 = (unsigned int *)*((unsigned int *)v6 + 57); /*0x75f3df*/
+      v9 = (unsigned int *)v6->firstObject; /*0x75f3df*/
     for ( ; v9; v9 = (unsigned int *)v9[12] ) /*0x75f3e7*/
     {
       v10 = this->Owner; /*0x75f3e9*/
@@ -209,13 +209,13 @@ char WaveClass::DamageArea(ObjectClass * aP1)
           0,
           0);
     }
-    v11 = *((unsigned int *)v6 + 17); /*0x75f439*/
+    v11 = v6->q044; /*0x75f439*/
     if ( v11 != -1 ) /*0x75f43f*/
     {
-      v12 = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v11); /*0x75f447*/
+      v12 = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v11); /*0x75f447*/
       if ( *(unsigned char *)(v12 + 689) ) /*0x75f44a*/
       {
-        aP1 = (unsigned int *)*((unsigned int *)v6 + 9); /*0x75f45b*/
+        aP1 = (unsigned int *)v6->smudgeTypeIndex; /*0x75f45b*/
         CellChainReact(v16); /*0x75f45f*/
       }
       if ( *(unsigned char *)(v12 + 680) ) /*0x75f464*/
@@ -224,10 +224,10 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     LOBYTE(Owner) = CellClass::IsActiveOrNext((CellClass *)v6); /*0x75f47e*/
     if ( (unsigned char)Owner ) /*0x75f486*/
     {
-      v13 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x75f497*/
+      v13 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6092); /*0x75f497*/
       Owner = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99); /*0x75f4a3*/
       if ( (int)Owner < v13 ) /*0x75f4aa*/
-        LOBYTE(Owner) = LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v14, (int)v6); /*0x75f4b2*/
+        LOBYTE(Owner) = LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v14, (int)v6); /*0x75f4b2*/
     }
   }
   return (char)Owner; /*0x75f4b7*/

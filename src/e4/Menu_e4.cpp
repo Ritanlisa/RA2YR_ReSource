@@ -13,9 +13,9 @@ int Menu::Reset(void *a1, void *a2)
   this->u32_34 = 0; /*0x4c614c*/
   this->u32_38 = 0; /*0x4c614f*/
   this->u32_3C = 1; /*0x4c6152*/
-  this->u32_40 = 0; /*0x4c6159*/
+  this->u16_40 = 0; /*0x4c6159*/
   memset(0, 0x30u); /*0x4c615d*/
-  this->u32_30 = 0; /*0x4c615f*/
+  this->u16_30 = 0; /*0x4c615f*/
   return (int)this; /*0x4c6163*/
 }  // G42.18 ns repair
 } // namespace gamemd

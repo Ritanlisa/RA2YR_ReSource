@@ -92,16 +92,16 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
         v53[1] = (int)DSurface_ViewBounds.field_4; /*0x5ff8e6*/
         v6 = v3[3]; /*0x5ff8ed*/
-        v53[3] = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x5ff8f0*/
+        v53[3] = *(unsigned int *)&g_DSurface_WindowOffset; /*0x5ff8f0*/
         v7 = byte_83358C[v6]; /*0x5ff8ff*/
         v52[1] = v47[1] - 64; /*0x5ff906*/
         v39 = g_DSurface_Hidden_2; /*0x5ff912*/
         v52[2] = 255; /*0x5ff916*/
         v52[3] = 127; /*0x5ff91e*/
-        v53[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x5ff925*/
+        v53[2] = *(unsigned int *)g_Map_VisibleRectOffset; /*0x5ff925*/
         if ( v7 < 64 ) /*0x5ff92c*/
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
-        v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
+        v8 = *(unsigned int *)g_DSurface_Hidden_2; /*0x5ff946*/
         v40 = dword_AC1698[v7]; /*0x5ff94a*/
         v9 = (*(int (**)(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/

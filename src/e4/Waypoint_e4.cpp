@@ -26,7 +26,7 @@ unsigned int * Waypoint::FindByCell(unsigned short *aP1)
 
   v2 = 0; /*0x5023b8*/
   v10 = 0; /*0x5023bb*/
-  for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
+  for ( i = &this->u8_210; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
@@ -66,17 +66,17 @@ namespace gamemd {
 unsigned char * Waypoint::InitInvalid()
 {
 
-  this->__pad_0[0] = -1; /*0x53ecb4*/
+  this->q000 = -1; /*0x53ecb4*/
   this->__pad_0[1] = -1; /*0x53ecb6*/
   this->__pad_0[2] = -1; /*0x53ecb9*/
   this->__pad_0[3] = -1; /*0x53ecbc*/
-  this->__pad_0[4] = -1; /*0x53ecbf*/
+  this->ptr_4 = -1; /*0x53ecbf*/
   this->__pad_0[5] = -1; /*0x53ecc2*/
   this->__pad_0[6] = -1; /*0x53ecc5*/
   this->__pad_0[7] = -1; /*0x53ecc8*/
-  this->__pad_0[8] = -1; /*0x53eccb*/
+  this->ptr_8 = -1; /*0x53eccb*/
   this->__pad_0[9] = -1; /*0x53ecce*/
-  return this->__pad_0; /*0x53ecd1*/
+  return this->q000; /*0x53ecd1*/
 
 }
 }
@@ -95,7 +95,7 @@ int Waypoint::FindCell(unsigned int * a2)
   v6 = this->field_38; /*0x763a64*/
   if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = *(unsigned int **)&this->__pad_0[44]; /*0x763a6e*/
+  for ( i = *&this->u32_2C; /*0x763a6e*/
         (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
         i += 3 )
@@ -103,7 +103,7 @@ int Waypoint::FindCell(unsigned int * a2)
     if ( ++v3 >= (int)v6 ) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
-  *(unsigned int *)&v7->__pad_0[36] = v3; /*0x763ad0*/
+  *&v7->q024 = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
 
 }

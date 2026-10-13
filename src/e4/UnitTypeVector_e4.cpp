@@ -12,11 +12,11 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
 
-  this->UnitTypeVector_field_0x04 = 0; /*0x51394b*/
-  this->UnitTypeVector_field_0x08 = a2; /*0x51394e*/
-  LOBYTE(this->UnitTypeVector_field_0x0C) = 1; /*0x513951*/
-  BYTE1(this->UnitTypeVector_field_0x0C) = 0; /*0x513955*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x513958*/
+  this->ptr_4 = 0; /*0x51394b*/
+  this->__pad_008 = a2; /*0x51394e*/
+  LOBYTE(this->q00C) = 1; /*0x513951*/
+  BYTE1(this->q00C) = 0; /*0x513955*/
+  *(unsigned int *)this->__pad_000 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
     if ( a3 ) /*0x513966*/

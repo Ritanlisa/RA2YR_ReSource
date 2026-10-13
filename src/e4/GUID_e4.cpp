@@ -25,7 +25,7 @@ bool __fastcall GUID::Compare(int a2)
   result = (int)this; /*0x53ee70*/
   if ( dword_828140 == 2 ) /*0x53ee7d*/
   {
-    if ( this->Data4 == *(unsigned int *)(a2 + 4) ) /*0x53ee91*/
+    if ( this->Data4 == a2->u32_4 ) /*0x53ee91*/
     {
       (*((unsigned short *)&(result))) = *(unsigned short *)this; /*0x53ee97*/
       if ( *(unsigned short *)this == *(unsigned short *)a2 ) /*0x53ee9d*/
@@ -39,11 +39,11 @@ bool __fastcall GUID::Compare(int a2)
     return result; /*0x53ef1b*/
   }
   if ( (*this || this->Data4 || this->Data3 || this->u32_C) /*0x53eed8*/
-    && (*(unsigned char *)a2 || *(unsigned char *)(a2 + 1) || *(unsigned char *)(a2 + 2) || *(unsigned char *)(a2 + 3)) )
+    && (*(unsigned char *)a2 || a2->u32_1 || a2->u32_2 || a2->u32_3) )
   {
     v7 = 3; /*0x53eef8*/
-    v8 = (unsigned short *)(a2 + 4); /*0x53eefd*/
-    v9 = (unsigned short *)(result + 4); /*0x53ef00*/
+    v8 = &a2->u32_4; /*0x53eefd*/
+    v9 = &result->u32_4; /*0x53ef00*/
     v10 = 1; /*0x53ef03*/
     do /*0x53ef05*/
     {
@@ -64,9 +64,9 @@ bool __fastcall GUID::Compare(int a2)
     }
     goto LABEL_23; /*0x53ef11*/
   }
-  v3 = (unsigned short *)(a2 + 4); /*0x53eedf*/
+  v3 = &a2->u32_4; /*0x53eedf*/
   v4 = 3; /*0x53eee2*/
-  v5 = (unsigned short *)(result + 4); /*0x53eee7*/
+  v5 = &result->u32_4; /*0x53eee7*/
   v6 = 1; /*0x53eeea*/
   do /*0x53eeec*/
   {

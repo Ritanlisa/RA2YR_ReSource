@@ -33,15 +33,15 @@ void ParticleTypeClass::GetClassIdentifier()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->vtable2; /*0x477906*/
-  *(unsigned int *)&this->q010 = 0; /*0x477909*/
-  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x477910*/
+  v2 = *&this->vtable2; /*0x477906*/
+  *&this->uniqueId = 0; /*0x477909*/
+  if ( v2 && (this->IsAllocated) ) /*0x477910*/
   {
     operator delete((void *)(v2)); /*0x477916*/
-    *(unsigned int *)&this->vtable2 = 0; /*0x47791e*/
+    *&this->vtable2 = 0; /*0x47791e*/
   }
-  (((unsigned char *)&(this->vtable4))[1]) = 0; /*0x477921*/
-  *(unsigned int *)&this->vtable3 = 0; /*0x477924*/
+  (this->IsAllocated) = 0; /*0x477921*/
+  *&this->vtable3 = 0; /*0x477924*/
 }
 }  // G42.18 ns repair
 // 0x4784F0
@@ -66,7 +66,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   if ( a2 ) /*0x4784fe*/
   {
     v5 = a3; /*0x478504*/
-    LOBYTE(this->m_C) = 0; /*0x478508*/
+    LOBYTE(this->vtable4) = 0; /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
@@ -110,12 +110,12 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v5 = 0; /*0x47853d*/
       }
     }
-    LOBYTE(this->m_C) = 1; /*0x47855c*/
+    LOBYTE(this->vtable4) = 1; /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x478562*/
+    if ( *&this->vtable2 ) /*0x478562*/
     {
-      m_8 = this->m_8; /*0x478567*/
+      m_8 = this->vtable3; /*0x478567*/
       if ( a2 < m_8 ) /*0x47856c*/
         m_8 = a2; /*0x47856e*/
       if ( m_8 > 0 ) /*0x478572*/
@@ -123,7 +123,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v12 = 0; /*0x478574*/
         do /*0x478590*/
         {
-          v13 = *(unsigned int *)&this->m_1[3] + v12; /*0x47857b*/
+          v13 = *&this->vtable2 + v12; /*0x47857b*/
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --m_8; /*0x478583*/
@@ -133,23 +133,23 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         while ( m_8 ); /*0x478590*/
         v3 = a2; /*0x478592*/
       }
-      if ( BYTE1(this->m_C) ) /*0x478598*/
+      if ( BYTE1(this->vtable4) ) /*0x478598*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4785a1*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x4785a9*/
+        __3_YAXPAX_Z(*&this->vtable2); /*0x4785a1*/
+        *&this->vtable2 = 0; /*0x4785a9*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x4785b4*/
-    this->m_8 = v3; /*0x4785ba*/
-    BYTE1(this->m_C) = a3 == 0; /*0x4785bd*/
+    *&this->vtable2 = v5; /*0x4785b4*/
+    this->vtable3 = v3; /*0x4785ba*/
+    BYTE1(this->vtable4) = a3 == 0; /*0x4785bd*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4785c6*/
+    (*(void (**)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x4785c6*/
   }
-  v15 = this->m_8; /*0x4785c9*/
-  if ( v15 < this->m_10 ) /*0x4785d1*/
-    this->m_10 = v15; /*0x4785d3*/
+  v15 = this->vtable3; /*0x4785c9*/
+  if ( v15 < this->uniqueId ) /*0x4785d1*/
+    this->uniqueId = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
 
 }
@@ -308,30 +308,30 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   FilePipe_38::ddtor((int)v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
-                    (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+                    (unsigned __int8 *)&this->BarrelVoxel,
                     aMaxdc,
-                    this->ParticleTypeClass_field_0x2DC[0]);
-  ParticleTypeClass_field_0x2F8 = this->ParticleTypeClass_field_0x2E0[0]; /*0x645002*/
+                    this->MaxDC_d);
+  ParticleTypeClass_field_0x2F8 = this->MaxEC_d; /*0x645002*/
   v48 = aMaxec; /*0x645003*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x645008*/
-  this->ParticleTypeClass_field_0x2DC[0] = Int_Overwrite; /*0x645009*/
-  this->ParticleTypeClass_field_0x2E0[0] = INIClass::ReadInt_Overwrite( /*0x645014*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x645008*/
+  this->MaxDC_d = Int_Overwrite; /*0x645009*/
+  this->MaxEC_d = INIClass::ReadInt_Overwrite( /*0x645014*/
                                              (bool *)aP1,
                                              p_ParticleTypeClass_field_0x24,
                                              v48,
                                              ParticleTypeClass_field_0x2F8);
   v9 = INIClass::ReadInt_Overwrite( /*0x645029*/
          (bool *)aP1,
-         (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+         (unsigned __int8 *)&this->BarrelVoxel,
          g_INI_Key_Damage,
-         this->ParticleTypeClass_field_0x2E8[0]);
-  ParticleTypeClass_field_0x2E4 = this->ParticleTypeClass_field_0x2E4; /*0x64502e*/
+         this->Damage_d);
+  ParticleTypeClass_field_0x2E4 = this->__pad_2E4; /*0x64502e*/
   ParticleTypeClass_field_0x2F8 = 128; /*0x645038*/
   v48 = (unsigned __int8 *)Destination; /*0x64503d*/
   p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&g_INI_DefaultBuffer; /*0x64503e*/
   v46 = g_INI_Key_Warhead; /*0x645043*/
-  v45 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x645048*/
-  this->ParticleTypeClass_field_0x2E8[0] = v9; /*0x64504b*/
+  v45 = (unsigned __int8 *)&this->BarrelVoxel; /*0x645048*/
+  this->Damage_d = v9; /*0x64504b*/
   if ( INIClass::GetString( /*0x645051*/
          (INIClass *)aP1,
          v45,
@@ -346,169 +346,169 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   {
     v11 = ParticleTypeClass_field_0x2E4; /*0x645065*/
   }
-  ParticleTypeClass_field_0x2F8 = this->ParticleTypeClass_field_0x2EC[0]; /*0x64506f*/
+  ParticleTypeClass_field_0x2F8 = this->StartFrame; /*0x64506f*/
   v48 = aStartframe; /*0x645070*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x645075*/
-  this->ParticleTypeClass_field_0x2E4 = v11; /*0x645076*/
-  this->ParticleTypeClass_field_0x2EC[0] = INIClass::ReadInt_Overwrite( /*0x645081*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x645075*/
+  this->__pad_2E4 = v11; /*0x645076*/
+  this->StartFrame = INIClass::ReadInt_Overwrite( /*0x645081*/
                                              (bool *)aP1,
                                              p_ParticleTypeClass_field_0x24,
                                              v48,
                                              ParticleTypeClass_field_0x2F8);
   v12 = INIClass::ReadInt_Overwrite( /*0x645096*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aNumloopframes,
-          this->ParticleTypeClass_field_0x2F0[0]);
-  ParticleTypeClass_field_0x2F4 = this->ParticleTypeClass_field_0x2F4; /*0x64509b*/
-  this->ParticleTypeClass_field_0x2F0[0] = v12; /*0x6450a1*/
+          this->NumLoopFrames);
+  ParticleTypeClass_field_0x2F4 = this->Translucency_d; /*0x64509b*/
+  this->NumLoopFrames = v12; /*0x6450a1*/
   v14 = INIClass::ReadInt_Overwrite( /*0x6450b0*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aTranslucency,
           ParticleTypeClass_field_0x2F4);
-  ParticleTypeClass_field_0x2F8 = this->ParticleTypeClass_field_0x2F8; /*0x6450bd*/
+  ParticleTypeClass_field_0x2F8 = this->WindEffect_d; /*0x6450bd*/
   v48 = aWindeffect; /*0x6450be*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x6450c3*/
-  this->ParticleTypeClass_field_0x2F4 = v14; /*0x6450c4*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x6450c3*/
+  this->Translucency_d = v14; /*0x6450c4*/
   v15 = INIClass::ReadInt_Overwrite((bool *)aP1, p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6450ca*/
-  v16 = *(float *)this->__pad_2FC; /*0x6450cf*/
-  this->ParticleTypeClass_field_0x2F8 = v15; /*0x6450da*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)&this->ParticleTypeClass_field_0x24, aVelocity, v16); /*0x6450e9*/
-  *(float *)this->__pad_2FC = v2; /*0x6450ee*/
+  v16 = *(float *)this->u32_2FC; /*0x6450cf*/
+  this->WindEffect_d = v15; /*0x6450da*/
+  INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)&this->BarrelVoxel, aVelocity, v16); /*0x6450e9*/
+  *(float *)this->u32_2FC = v2; /*0x6450ee*/
   INIClass::ReadDouble_Overwrite( /*0x645108*/
     (double *)aP1,
-    (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+    (unsigned __int8 *)&this->BarrelVoxel,
     aDeacc,
-    *(float *)&this->ParticleTypeClass_field_0x300);
-  ParticleTypeClass_field_0x304 = this->ParticleTypeClass_field_0x304; /*0x64510d*/
-  *(float *)&this->ParticleTypeClass_field_0x300 = v3; /*0x645115*/
+    *&this->q300);
+  ParticleTypeClass_field_0x304 = this->Deacc; /*0x64510d*/
+  *&this->q300 = v3; /*0x645115*/
   v18 = INIClass::ReadInt_Overwrite( /*0x645122*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aRadius,
           ParticleTypeClass_field_0x304);
-  v19 = this->__pad_308[0]; /*0x645127*/
-  this->ParticleTypeClass_field_0x304 = v18; /*0x64512d*/
+  v19 = this->DeleteOnStateLimit_d; /*0x645127*/
+  this->Deacc = v18; /*0x64512d*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x64513c*/
                      (int *)aP1,
-                     (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+                     (unsigned __int8 *)&this->BarrelVoxel,
                      aDeleteonstatel,
                      v19);
-  ParticleTypeClass_field_0x2F8 = this->__pad_308[1]; /*0x645148*/
+  ParticleTypeClass_field_0x2F8 = this->EndStateAI_d; /*0x645148*/
   v48 = aEndstateai; /*0x645149*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x64514e*/
-  this->__pad_308[0] = Bool_Overwrite; /*0x645151*/
-  this->__pad_308[1] = INIClass::ReadInt_Overwrite( /*0x64515c*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x64514e*/
+  this->DeleteOnStateLimit_d = Bool_Overwrite; /*0x645151*/
+  this->EndStateAI_d = INIClass::ReadInt_Overwrite( /*0x64515c*/
                          (bool *)aP1,
                          p_ParticleTypeClass_field_0x24,
                          v48,
                          ParticleTypeClass_field_0x2F8);
   v21 = INIClass::ReadInt_Overwrite( /*0x645172*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aStartstateai,
-          this->__pad_308[2]);
-  ParticleTypeClass_field_0x2F8 = this->__pad_308[3]; /*0x64517e*/
+          this->StartStateAI_d);
+  ParticleTypeClass_field_0x2F8 = this->StateAIAdvance_d; /*0x64517e*/
   v48 = aStateaiadvance; /*0x64517f*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x645184*/
-  this->__pad_308[2] = v21; /*0x645187*/
-  this->__pad_308[3] = INIClass::ReadInt_Overwrite( /*0x645192*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x645184*/
+  this->StartStateAI_d = v21; /*0x645187*/
+  this->StateAIAdvance_d = INIClass::ReadInt_Overwrite( /*0x645192*/
                          (bool *)aP1,
                          p_ParticleTypeClass_field_0x24,
                          v48,
                          ParticleTypeClass_field_0x2F8);
-  this->__pad_308[6] = INIClass::ReadInt_Overwrite( /*0x6451ae*/
+  this->Translucent50State = INIClass::ReadInt_Overwrite( /*0x6451ae*/
                          (bool *)aP1,
-                         (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+                         (unsigned __int8 *)&this->BarrelVoxel,
                          aTranslucent50s,
-                         (unsigned __int8)this->__pad_308[6]);
+                         (unsigned __int8)this->Translucent50State);
   v22 = INIClass::ReadInt_Overwrite( /*0x6451c5*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aTranslucent25s,
-          (unsigned __int8)this->__pad_308[5]);
-  v23 = this->__pad_308[7]; /*0x6451ca*/
-  this->__pad_308[5] = v22; /*0x6451d0*/
+          (unsigned __int8)this->Translucent25State);
+  v23 = this->Normalized; /*0x6451ca*/
+  this->Translucent25State = v22; /*0x6451d0*/
   v24 = INIClass::ReadBool_Overwrite( /*0x6451df*/
           (int *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           g_INI_Key_Normalized,
           v23);
-  HIDWORD(v25) = this->ParticleTypeClass_field_0x2B4; /*0x6451e4*/
-  this->__pad_308[7] = v24; /*0x6451ea*/
-  LODWORD(v25) = this->ParticleTypeClass_field_0x2B0; /*0x6451f0*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)&this->ParticleTypeClass_field_0x24, aColorspeed, v25); /*0x645200*/
-  ParticleTypeClass_field_0x2A0 = this->ParticleTypeClass_field_0x2A0; /*0x645205*/
-  *(double *)&this->ParticleTypeClass_field_0x2B0 = v4; /*0x64520b*/
+  HIDWORD(v25) = this->q2B4; /*0x6451e4*/
+  this->Normalized = v24; /*0x6451ea*/
+  LODWORD(v25) = this->__pad_2B0; /*0x6451f0*/
+  INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)&this->BarrelVoxel, aColorspeed, v25); /*0x645200*/
+  ParticleTypeClass_field_0x2A0 = this->XVelocity; /*0x645205*/
+  *&this->__pad_2B0 = v4; /*0x64520b*/
   v27 = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x64521a*/
                       (bool *)aP1,
-                      (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+                      (unsigned __int8 *)&this->BarrelVoxel,
                       aXvelocity,
                       (int)ParticleTypeClass_field_0x2A0);
-  ParticleTypeClass_field_0x2F8 = (int)this->ParticleTypeClass_field_0x2A4; /*0x645227*/
+  ParticleTypeClass_field_0x2F8 = (int)this->YVelocity; /*0x645227*/
   v48 = aYvelocity; /*0x645228*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x64522d*/
-  this->ParticleTypeClass_field_0x2A0 = v27; /*0x64522e*/
-  this->ParticleTypeClass_field_0x2A4 = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x645239*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x64522d*/
+  this->XVelocity = v27; /*0x64522e*/
+  this->YVelocity = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x645239*/
                                                       (bool *)aP1,
                                                       p_ParticleTypeClass_field_0x24,
                                                       v48,
                                                       ParticleTypeClass_field_0x2F8);
   v28 = INIClass::ReadInt_Overwrite( /*0x64524e*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aMinzvelocity,
-          this->ParticleTypeClass_field_0x2A8[0]);
-  v29 = this->ParticleTypeClass_field_0x2AC[0]; /*0x645253*/
-  this->ParticleTypeClass_field_0x2A8[0] = v28; /*0x645259*/
+          this->MinZVelocity);
+  v29 = this->ZVelocityRange; /*0x645253*/
+  this->MinZVelocity = v28; /*0x645259*/
   v30 = INIClass::ReadInt_Overwrite( /*0x645268*/
           (bool *)aP1,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aZvelocityrange,
           v29);
-  ParticleTypeClass_field_0x2F8 = (int)&this->__pad_248[76]; /*0x645277*/
+  ParticleTypeClass_field_0x2F8 = (int)&this->q294; /*0x645277*/
   v48 = aNextparticleof; /*0x645278*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x64527d*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x64527d*/
   v46 = (unsigned __int8 *)v53; /*0x64527e*/
-  this->ParticleTypeClass_field_0x2AC[0] = v30; /*0x645281*/
+  this->ZVelocityRange = v30; /*0x645281*/
   Coord2 = INIClass::GetCoord2( /*0x645287*/
              (INIClass *)aP1,
              (int *)v46,
              p_ParticleTypeClass_field_0x24,
              v48,
              (int *)ParticleTypeClass_field_0x2F8);
-  *(unsigned int *)&this->__pad_248[76] = *Coord2; /*0x64528e*/
-  *(unsigned int *)&this->__pad_248[80] = Coord2[1]; /*0x645298*/
-  *(unsigned int *)&this->__pad_248[84] = Coord2[2]; /*0x64529e*/
+  *&this->q294 = *Coord2; /*0x64528e*/
+  *&this->q298 = Coord2[1]; /*0x645298*/
+  *&this->q29C = Coord2[2]; /*0x64529e*/
   Coord = INIClass::GetCoord( /*0x6452b1*/
             (INIClass *)aP1,
             (int)&v50,
-            (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+            (unsigned __int8 *)&this->BarrelVoxel,
             aStartcolor1,
-            (unsigned __int8 *)&this->ParticleTypeClass_field_0x2D4);
-  LOWORD(this->ParticleTypeClass_field_0x2D4) = *(unsigned short *)Coord; /*0x6452bd*/
-  BYTE2(this->ParticleTypeClass_field_0x2D4) = *(unsigned char *)(Coord + 2); /*0x6452c4*/
+            (unsigned __int8 *)&this->q2D4);
+  LOWORD(this->q2D4) = *(unsigned short *)Coord; /*0x6452bd*/
+  BYTE2(this->q2D4) = *(unsigned char *)(Coord + 2); /*0x6452c4*/
   v33 = INIClass::GetCoord( /*0x6452d7*/
           (INIClass *)aP1,
           (int)&v50,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+          (unsigned __int8 *)&this->BarrelVoxel,
           aStartcolor2,
-          (unsigned __int8 *)&this->ParticleTypeClass_field_0x2D4 + 3);
+          (unsigned __int8 *)&this->q2D4 + 3);
   v34 = *(unsigned short *)v33; /*0x6452e3*/
-  ParticleTypeClass_field_0x2F8 = this->__pad_308[1]; /*0x6452e6*/
-  *(unsigned short *)((char *)&this->ParticleTypeClass_field_0x2D4 + 3) = v34; /*0x6452e7*/
+  ParticleTypeClass_field_0x2F8 = this->EndStateAI_d; /*0x6452e6*/
+  *(unsigned short *)this->q2D4 + 3) = v34; /*0x6452e7*/
   v48 = aFinaldamagesta; /*0x6452eb*/
   LOBYTE(v33) = *(unsigned char *)(v33 + 2); /*0x6452f0*/
-  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x6452f3*/
-  this->__pad_2D8[1] = v33; /*0x6452f6*/
+  p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x6452f3*/
+  this->u8_2D9 = v33; /*0x6452f6*/
   v35 = INIClass::ReadInt_Overwrite((bool *)aP1, p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6452f9*/
   ParticleTypeClass_field_0x2F8 = 32; /*0x645302*/
   v48 = (unsigned __int8 *)Source; /*0x645304*/
   p_ParticleTypeClass_field_0x24 = 0; /*0x645305*/
   v46 = aNextparticle; /*0x645307*/
-  v45 = (unsigned __int8 *)&this->ParticleTypeClass_field_0x24; /*0x64530c*/
-  this->__pad_308[4] = v35; /*0x64530f*/
+  v45 = (unsigned __int8 *)&this->BarrelVoxel; /*0x64530c*/
+  this->FinalDamageState = v35; /*0x64530f*/
   if ( INIClass::GetString( /*0x645315*/
          (INIClass *)aP1,
          v45,
@@ -520,7 +520,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
     if ( _strcmpi(Source, g_Str__none_) ) /*0x64532c*/
     {
       v36 = 0; /*0x64533d*/
-      if ( *(int *)&stru_A83D50.__pad_3C[28] <= 0 ) /*0x645341*/
+      if ( *(int *)&g_BuildingTypeInitState <= 0 ) /*0x645341*/
       {
 LABEL_10:
         v37 = (BuildingTypeClass *)__2_YAPAXI_Z(0x318u); /*0x64536b*/
@@ -529,19 +529,19 @@ LABEL_10:
         else
           v38 = 0; /*0x64538a*/
         v39 = 0; /*0x645392*/
-        if ( *(int *)&stru_A83D50.__pad_3C[28] <= 0 ) /*0x645396*/
+        if ( *(int *)&g_BuildingTypeInitState <= 0 ) /*0x645396*/
         {
 LABEL_17:
           v39 = -1; /*0x6453aa*/
         }
         else
         {
-          v40 = *(unsigned int **)&stru_A83D50.__pad_3C[16]; /*0x645398*/
+          v40 = *(unsigned int **)&g_BuildingProductionQueue; /*0x645398*/
           while ( (unsigned int *)*v40 != v38 ) /*0x6453a0*/
           {
             ++v39; /*0x6453a2*/
             ++v40; /*0x6453a3*/
-            if ( v39 >= *(int *)&stru_A83D50.__pad_3C[28] ) /*0x6453a8*/
+            if ( v39 >= *(int *)&g_BuildingTypeInitState ) /*0x6453a8*/
               goto LABEL_17; /*0x6453a8*/
           }
         }
@@ -549,9 +549,9 @@ LABEL_17:
       }
       else
       {
-        while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v36) + 36)) ) /*0x64535f*/
+        while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue + 4 * v36) + 36)) ) /*0x64535f*/
         {
-          if ( ++v36 >= *(int *)&stru_A83D50.__pad_3C[28] ) /*0x645369*/
+          if ( ++v36 >= *(int *)&g_BuildingTypeInitState ) /*0x645369*/
             goto LABEL_10; /*0x645369*/
         }
       }
@@ -560,12 +560,12 @@ LABEL_17:
     {
       v36 = -1; /*0x6453b1*/
     }
-    this->ParticleTypeClass_field_0x310 = v36; /*0x6453b4*/
+    this->q310 = v36; /*0x6453b4*/
   }
   Source[0] = 0; /*0x6453cb*/
   INIClass::GetString( /*0x6453d0*/
     (INIClass *)aP1,
-    (unsigned __int8 *)&this->ParticleTypeClass_field_0x24,
+    (unsigned __int8 *)&this->BarrelVoxel,
     aBehaveslike,
     0,
     Source,
@@ -599,34 +599,34 @@ int ParticleTypeClass::ProcessPower(int *a2)
   int v7; // ecx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6454e9*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2DC[0]); /*0x6454f7*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2E0[0]); /*0x645505*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2E8[0]); /*0x645513*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2EC[0]); /*0x645521*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2F0[0]); /*0x64552f*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2F4); /*0x64553d*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2F8); /*0x64554b*/
-  Checksummer::Add_float((Checksummer *)a2, *(unsigned int *)this->__pad_2FC); /*0x645559*/
-  Checksummer::Add_float((Checksummer *)a2, this->ParticleTypeClass_field_0x300); /*0x645567*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x304); /*0x645575*/
-  LOBYTE(v3) = this->__pad_308[0]; /*0x64557a*/
+  Power::TimerProcess(this->MaxDC_d); /*0x6454f7*/
+  Power::TimerProcess(this->MaxEC_d); /*0x645505*/
+  Power::TimerProcess(this->Damage_d); /*0x645513*/
+  Power::TimerProcess(this->StartFrame); /*0x645521*/
+  Power::TimerProcess(this->NumLoopFrames); /*0x64552f*/
+  Power::TimerProcess(this->Translucency_d); /*0x64553d*/
+  Power::TimerProcess(this->WindEffect_d); /*0x64554b*/
+  Checksummer::Add_float((Checksummer *)a2, *(unsigned int *)this->u32_2FC); /*0x645559*/
+  Checksummer::Add_float((Checksummer *)a2, this->q300); /*0x645567*/
+  Power::TimerProcess(this->Deacc); /*0x645575*/
+  LOBYTE(v3) = this->DeleteOnStateLimit_d; /*0x64557a*/
   Power::FlagProcess((Power *)a2, v3); /*0x645583*/
-  LOBYTE(v4) = this->__pad_308[1]; /*0x645588*/
+  LOBYTE(v4) = this->EndStateAI_d; /*0x645588*/
   v5 = Power::FinalizeDrain((Power *)a2, v4); /*0x645591*/
-  LOBYTE(v5) = this->__pad_308[2]; /*0x645596*/
+  LOBYTE(v5) = this->StartStateAI_d; /*0x645596*/
   Power::FinalizeDrain((Power *)a2, v5); /*0x64559f*/
-  LOBYTE(v6) = this->__pad_308[3]; /*0x6455a4*/
+  LOBYTE(v6) = this->StateAIAdvance_d; /*0x6455a4*/
   Power::FinalizeDrain((Power *)a2, v6); /*0x6455ad*/
-  Power::TimerProcess((unsigned __int8)this->__pad_308[5]); /*0x6455bd*/
-  Power::TimerProcess((unsigned __int8)this->__pad_308[6]); /*0x6455cd*/
-  LOBYTE(v7) = this->__pad_308[7]; /*0x6455d2*/
+  Power::TimerProcess((unsigned __int8)this->Translucent25State); /*0x6455bd*/
+  Power::TimerProcess((unsigned __int8)this->Translucent50State); /*0x6455cd*/
+  LOBYTE(v7) = this->Normalized; /*0x6455d2*/
   Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x310); /*0x6455e9*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x314); /*0x6455f7*/
+  Power::TimerProcess(this->q310); /*0x6455e9*/
+  Power::TimerProcess(this->q314); /*0x6455f7*/
   return Checksummer::Add_double( /*0x645611*/
            (Checksummer *)a2,
-           (int)this->ParticleTypeClass_field_0x2B0,
-           (int)this->ParticleTypeClass_field_0x2B4);
+           (int)this->__pad_2B0,
+           (int)this->q2B4);
 
 }
 }
@@ -656,14 +656,14 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( v3 ) /*0x645680*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
-      ParticleTypeClass::Constructor((ParticleTypeClass *)&v3->ParticleTypeClass_field_0x2B8, 0, 0); /*0x645698*/
-      v3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_TypeList; /*0x64569d*/
+      ParticleTypeClass::Constructor(&v3->ParticleTypeClass_2B8, 0, 0); /*0x645698*/
+      v3->ParticleTypeClass_2B8 = (VectorClass *)&vt_TypeList; /*0x64569d*/
       v3->ArrayIndex = &vt_ParticleTypeClass; /*0x6456a3*/
       v3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x6456a9*/
       v3->BehavesLike = &vt_ParticleTypeClass; /*0x6456b0*/
-      v3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x6456b7*/
+      v3->vtable4 = &vt_ParticleTypeClass; /*0x6456b7*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->ParticleTypeClass_field_0x2E4); /*0x6456ca*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->u32_2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
     a1 = 0; /*0x6456db*/
     result = (*(int (__stdcall **)(int *, ParticleTypeClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x6456df*/
@@ -686,19 +686,19 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
           result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v6 + 12))(v2, &a2, 3, 0); /*0x645712*/
           if ( result < 0 ) /*0x645717*/
             break; /*0x645717*/
-          v7 = *(unsigned int *)v3->__pad_2C0; /*0x645719*/
+          v7 = *(unsigned int *)v3->q2C0; /*0x645719*/
           if ( (int)v3->ColorList < v7 /*0x645747*/
             || (v3->__pad_2C0[5] || !v7)
-            && (ParticleTypeClass_field_0x2CC = (int)v3->ParticleTypeClass_field_0x2CC, ParticleTypeClass_field_0x2CC > 0)
-            && ((uint8_t (__thiscall *)(VectorClass **, int, unsigned int))v3->ParticleTypeClass_field_0x2B8->Capacity)(
-                 &v3->ParticleTypeClass_field_0x2B8,
+            && (ParticleTypeClass_field_0x2CC = (int)v3->u32_2CC, ParticleTypeClass_field_0x2CC > 0)
+            && ((uint8_t (__thiscall *)(VectorClass **, int, unsigned int))v3->ParticleTypeClass_2B8->Capacity)(
+                 &v3->ParticleTypeClass_2B8,
                  v7 + ParticleTypeClass_field_0x2CC,
                  0) )
           {
             ColorList = v3->ColorList; /*0x64574e*/
-            v10 = (VectorClass *)((char *)&ColorList->vfptr + 1); /*0x645751*/
+            v10 = (VectorClass *)ColorList->vtable1 + 1); /*0x645751*/
             v11 = 3 * (unsigned int)ColorList; /*0x645754*/
-            ParticleTypeClass_field_0x2BC = v3->ParticleTypeClass_field_0x2BC; /*0x645757*/
+            ParticleTypeClass_field_0x2BC = v3->u32_2BC; /*0x645757*/
             v3->ColorList = v10; /*0x64575a*/
             v13 = (char *)ParticleTypeClass_field_0x2BC + v11; /*0x64575d*/
             *(unsigned short *)v13 = a2; /*0x645764*/
@@ -720,9 +720,9 @@ int ParticleTypeClass::GetType(int a2, int a3)
 
   int result; // eax
 
-  result = (int)this->ParticleTypeClass_field_0x2E4; /*0x6458b0*/
+  result = (int)this->__pad_2E4; /*0x6458b0*/
   if ( result == a2 ) /*0x6458bc*/
-    this->ParticleTypeClass_field_0x2E4 = 0; /*0x6458be*/
+    this->__pad_2E4 = 0; /*0x6458be*/
   return result; /*0x6458c8*/
 
 }
@@ -758,15 +758,15 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
     }
   }
   v7 = a3; /*0x6459cf*/
-  v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/
-         &stru_A83D50.__pad_3C[12],
+  v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&DataGlobal_A83D98 + 16))( /*0x6459d3*/
+         &DataGlobal_A83D98,
          &v7);
-  if ( v4 != -1 && v4 < *(int *)&stru_A83D50.__pad_3C[28] ) /*0x6459e3*/
+  if ( v4 != -1 && v4 < *(int *)&g_BuildingTypeInitState ) /*0x6459e3*/
   {
-    --*(unsigned int *)&stru_A83D50.__pad_3C[28]; /*0x6459e8*/
+    --*(unsigned int *)&g_BuildingTypeInitState; /*0x6459e8*/
     for ( ; /*0x6459ee*/
-          v4 < *(int *)&stru_A83D50.__pad_3C[28];
-          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16]
+          v4 < *(int *)&g_BuildingTypeInitState;
+          *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue
                                                                                      + 4 * v4) )
     {
       ++v4; /*0x6459f6*/
@@ -862,8 +862,8 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2)
 namespace gamemd {
 unsigned int ParticleTypeClass::LoadTypeData(int a2)
 {
-  if ( (*((unsigned char *)&(this->vtable4))) ) /*0x477930*/
-    return (a2 - *(unsigned int *)&this->vtable2) / 3u; /*0x47794e*/
+  if ( (this->vtable4) ) /*0x477930*/
+    return (a2 - *&this->vtable2) / 3u; /*0x47794e*/
   else
     return 0; /*0x477937*/
 }
@@ -898,11 +898,11 @@ int ParticleTypeClass::Init(unsigned char * a2)
   int result; // eax
   unsigned char *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x4785f2*/
+  m_10 = *&this->uniqueId; /*0x4785f2*/
   result = 0; /*0x4785f5*/
   if ( m_10 <= 0 ) /*0x4785fa*/
     return -1; /*0x478621*/
-  for ( i = *(unsigned char **)&this->vtable2; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
+  for ( i = *&this->vtable2; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
   {
     if ( ++result >= m_10 ) /*0x47861f*/
       return -1; /*0x47861f*/
@@ -935,7 +935,7 @@ int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2
         {
           if ( (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)aP1 + 16))( /*0x6457fa*/
                  aP1,
-                 (char *)aP0->ParticleTypeClass_field_0x2BC + v6,
+                 (char *)aP0->strength + v6,
                  3,
                  0) < 0 )
             break; /*0x6457fa*/

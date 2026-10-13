@@ -41,7 +41,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
     {
       memset(&v22[1], 0, 198); /*0x488560*/
       v17 = *result; /*0x48856b*/
-      v22[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
+      v22[0] = result->u32_4 != 0 ? 3 : 32;
       v22[1] = 32; /*0x48857e*/
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
@@ -49,16 +49,16 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
       if ( a6 ) /*0x4885a7*/
       {
         ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
-        v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type) + 796); /*0x4885bd*/
-        if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x4885c9*/
-          v13 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + v12); /*0x4885d6*/
+        v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * Type) + 796); /*0x4885bd*/
+        if ( *(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4885c9*/
+          v13 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + v12); /*0x4885d6*/
         else
-          v13 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 2 * v12); /*0x4885e2*/
+          v13 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 2 * v12); /*0x4885e2*/
         v19[0] = (unsigned int)(a3); /*0x4885f4*/
         v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
         v19[1] = (unsigned int)(a4); /*0x488606*/
         v19[2] = (unsigned int)(a5); /*0x48860a*/
-        (*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
+        (*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x488615*/
           g_DSurface_Hidden_2,
           v19,
           v13);
@@ -71,8 +71,8 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
       v20[0] = (unsigned int)(a3); /*0x488639*/
       v18 = ListClass_field_0x10; /*0x488643*/
       v20[1] = (unsigned int)(a4); /*0x488644*/
-      v16 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type); /*0x488659*/
-      v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/
+      v16 = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * Type); /*0x488659*/
+      v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))( /*0x488662*/
               g_DSurface_Hidden_2,
               v21);
             return FillRectangle((IUnknown *)(/*0x488675*/                v19),                (int)v22,                (int)g_DSurface_Hidden_2,                v15,                (int)v20,                v16,                0,                ListClass_field_0x0C,                a5,                v18);
@@ -94,9 +94,9 @@ int CheckListClass::ddtor(int a2)
 {
   if ( this->Enabled ) /*0x557e18*/
   {
-    (*(void (**)(char *, int))(this->u32_118 + 12))((char *)&this->u32_118, a2); /*0x557e2c*/
-    (*(void (**)(char *, int))(this->u32_B8 + 12))((char *)&this->u32_B8, a2); /*0x557e3c*/
-    (*(void (**)(char *, int))(this->Count + 12))((char *)&this->subList1, a2); /*0x557e46*/
+    (*(void (**)(char *, int))(this->u32_118 + 12))this->u32_118, a2); /*0x557e2c*/
+    (*(void (**)(char *, int))(this->u32_B8 + 12))this->u32_B8, a2); /*0x557e3c*/
+    (*(void (**)(char *, int))(this->Count + 12))this->Width, a2); /*0x557e46*/
   }
   return LinkedList::InsertAfter(a2); /*0x557e51*/
 }

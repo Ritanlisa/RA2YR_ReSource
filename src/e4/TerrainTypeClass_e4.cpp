@@ -94,9 +94,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned char *)aP4 + 774) = 0; /*0x5448bc*/
   *((unsigned int *)aP4 + 194) = 0; /*0x5448c2*/
   aP4->ObjectTypeClass = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
-  aP4->? = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
+  aP4->vtable2 = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
   aP4->? = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
-  aP4->? = &IsometricTileTypeClass::`vftable'; /*0x5448dd*/
+  aP4->vtable4 = &IsometricTileTypeClass::`vftable'; /*0x5448dd*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -252,7 +252,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)aP1, aP1) ) /*0x71debb*/
   {
     if ( aP1->? == -1 ) /*0x71decf*/
-      aP1->? = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4420); /*0x71dedc*/
+      aP1->? = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4420); /*0x71dedc*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsveinhole, aP1->IsVeinhole); /*0x71def6*/
     aP1->IsVeinhole = Bool_Overwrite; /*0x71defd*/
     if ( Bool_Overwrite ) /*0x71df03*/
@@ -268,7 +268,7 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
     aP1->SpawnsTiberium = v8; /*0x71df50*/
     aP1->IsFlammable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsflammable, IsFlammable); /*0x71df5b*/
     v9 = INIClass::LookupEnum( /*0x71df79*/
-           (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
+           (INIClass *)&DataGlobal_887180,
            (unsigned __int8 *)aP1->?,
            g_INI_Key_Foundation,
            aP1->Foundation);

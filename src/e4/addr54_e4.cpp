@@ -71,7 +71,7 @@ namespace gamemd {  // G42.18 ns repair
 int E4Recv_540C50::sub_540C50()
 {
 
-  return LOBYTE(this->?); /*0x540c55*/
+  return LOBYTE(this->M4); /*0x540c55*/
 
 }
 }  // G42.18 ns repair
@@ -103,12 +103,12 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   }
   LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
   v10 = (unsigned int *)(dword_A8DA78[v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->?; /*0x5411c9*/
+  vtable1 = (char)this->M4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
   v15[2] = v10[2]; /*0x5411e2*/
-  if ( !vtable1 || !BYTE1(this->?) ) /*0x5411e8*/
+  if ( !vtable1 || !BYTE1(this->M5) ) /*0x5411e8*/
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr((Network *)v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
@@ -235,7 +235,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     while ( 1 ) /*0x544ef6*/
     {
       result = *(unsigned int *)v5; /*0x544ef6*/
-      if ( *(unsigned int *)(*(unsigned int *)v5 + 408) == a1 && *(unsigned int *)(result + 412) == a2 && *(unsigned int *)(result + 416) == a3 ) /*0x544f0e*/
+      if ( *(unsigned int *)(*&v5->u32_660) == a1 && result->u32_19C == a2 && result->u32_1A0 == a3 ) /*0x544f0e*/
         break; /*0x544f0e*/
       ++v4; /*0x544f14*/
       v5 += 4; /*0x544f15*/
@@ -476,8 +476,8 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     int v19 = 768;
     do
     {
-      ((unsigned int *)&v18->q000)[0] *= 4;
-      v18 = (CampaignScore *)((char *)v18 + 1);
+      v18->onBridge)[0] *= 4;
+      v18 = &v18->CampaignScore_1;
       --v19;
     }
     while ( v19 );
@@ -498,7 +498,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v94 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295B8, (int)0xFFFFFFFF);
   v115 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295AC, (int)0xFFFFFFFF);
   v96 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295A0, (int)0xFFFFFFFF);
-  v116 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829594,(int)((INIClass *)0xFFFFFFFF));
+  v116 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829594,(int)((INIClass *)-1));
   v98 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829588, (int)0xFFFFFFFF);
   v118 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829578, (int)0xFFFFFFFF);
   v100 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829568, (int)0xFFFFFFFF);
@@ -591,7 +591,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[79868] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082931C), (int)0xFFFFFFFF);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[81676] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082930C), (int)0xFFFFFFFF);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[78084] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292FC), (int)0xFFFFFFFF);
-  dword_ABC1D0 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292E8),(int)((INIClass *)0xFFFFFFFF));
+  dword_ABC1D0 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292E8),(int)((INIClass *)-1));
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[81668] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292D4), (int)0xFFFFFFFF);
   g_TerrainSoundTable2 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292C4), (int)0xFFFFFFFF);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[80364] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292B4), (int)0xFFFFFFFF);
@@ -715,12 +715,12 @@ LABEL_26:
       dword_ABB10C = (unsigned int)(v21);
     if ( v20 == (INIClass *)v107 )
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] =(unsigned int)v21;
-    sprintf((char *const)&aP2.q02C,(const char *const)(stru_8292A8), v20);
+    sprintf((char *const)&aP2.SuperClass_field_0x2C,(const char *const)(stru_8292A8), v20);
     INIClass::ResetSection(((INIClass*)v77));
-    v71 = (ObjectClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82929C, (int)0xFFFFFFFF);
+    v71 = (ObjectClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_82929C, (int)0xFFFFFFFF);
     if ( v71 == (ObjectClass *)-1 )
       break;
-    v26 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82928C, (int)0xFFFFFFFF);
+    v26 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_82928C, (int)0xFFFFFFFF);
     v27 = v26;
     if ( v26 == (AbstractClass *)-1 || v26 == (AbstractClass *)v71 )
     {
@@ -733,7 +733,7 @@ LABEL_26:
       v76 = v28;
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
       v28->field_0 =(void *)(int)&v72->q000[(unsigned int)v27];
-      v28->q004 = (void *)v29;
+      v28->__pad_004 = (void *)v29;
       if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
         || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
         && *(int *)&(&g_NetworkPlayerBuffer)[80464] > 0
@@ -748,38 +748,38 @@ LABEL_26:
       v31 = v75;
     }
     v72 = v31;
-    ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
-    ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
-    v75 = (CCINIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829258, (int)0xFFFF);
-    v86 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829244,(int)((INIClass *)0xFFFF));
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829238, 0);
-    char v64 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829228, 1);
-    char v66 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829218, 1);
+    ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.SuperClass_field_0x2C, &unk_82927C, &unk_829284, &aP4, 64);
+    ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.SuperClass_field_0x2C, &unk_829268, &unk_829274, &v183, 64);
+    v75 = (CCINIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_829258, (int)0xFFFF);
+    v86 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_829244,(int)((INIClass *)0xFFFF));
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_829238, 0);
+    char v64 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_829228, 1);
+    char v66 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, &unk_829218, 1);
   char v62; // [esp+13h] [ebp-9FDh]
     v62 = INIClass::ReadBool_Overwrite(
             (int)v77,
-            (uint8_t *)&aP2.q02C,
+            (uint8_t *)&aP2.SuperClass_field_0x2C,
             (CCINIClass *)&DataGlobal_008291B8.unknown50,
             0);
     var9FC_2 = INIClass::ReadBool_Overwrite(
                  (int)v77,
-                 (uint8_t *)&aP2.q02C,
+                 (uint8_t *)&aP2.SuperClass_field_0x2C,
                  (CCINIClass *)&DataGlobal_008291B8.ownsFile,
                  0);
     v109 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
-                              (uint8_t *)&aP2.q02C,
+                              (uint8_t *)&aP2.SuperClass_field_0x2C,
                               (CCINIClass *)&DataGlobal_008291B8.unknown30,
-                              (INIClass *)0xFFFFFFFF);
+                              (INIClass *)-1);
     v111 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
-                              (uint8_t *)&aP2.q02C,
+                              (uint8_t *)&aP2.SuperClass_field_0x2C,
                               (CCINIClass *)&DataGlobal_008291B8.sectionCount,
-                              (INIClass *)0xFFFFFFFF);
+                              (INIClass *)-1);
   char v32; // al
     v32 = INIClass::ReadBool_Overwrite(
             (int)v77,
-            (uint8_t *)&aP2.q02C,
+            (uint8_t *)&aP2.SuperClass_field_0x2C,
             (CCINIClass *)&(&DataGlobal_008291B8.headNode)[2],
             0);
     char v63 = v32;
@@ -787,11 +787,11 @@ LABEL_26:
     {
       v33 = (INIClass *)v89;
       *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * (unsigned int)v89 + 57940] = (unsigned int)v70;
-      v89 = (AbstractClass *)&v33->q000[1];
+      v89 = &v33->u32_1;
     }
     v88 = (AbstractClass *)(0);
     if ( v32 )
-      v88 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, (unsigned char *)(&DataGlobal_008291B8), 0);
+      v88 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.SuperClass_field_0x2C, (unsigned char *)(&DataGlobal_008291B8), 0);
     int v34 = (int)(INIClass::BinarySearchSection( (gamemd::INIClass *)(int)v77, (void *)(&aP4)));
     v69 = (MapClass *)(0);
     var9F4_1 = v34 != 0;
@@ -825,8 +825,8 @@ LABEL_26:
             if ( v36 )
             {
               v37 = v70;
-              v70 = (MapClass *)((char *)v70 + 1);
-              v87 = (AbstractClass *)((char *)v87 + 1);
+              v70 = &v70->q001_;
+              v87 = &v87->AbstractClass_1;
               v3 = ((TerrainTypeClass *)((int)(v36)))->Construct((int)((TerrainTypeClass *)((int)(v36))), (int)v37, 0xBFu, 0, (char)((MapClass *)Filename), 0);
             }
             else
@@ -876,7 +876,7 @@ LABEL_26:
                 v42 = (AnimTypeClass *)AnimTypeClass::FindOrCreate((AbstractClass *)&v184);
                 if ( v42 )
                 {
-                  v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)&v42->vtable1 + 64))( (AnimTypeClass *)(v42));
+                  v3[178] = (*(int (**)(AnimTypeClass *))(*&v42->vtable1 + 64))( (AnimTypeClass *)(v42));
                   sprintf(aP2[0], DataGlobal_00829184, v35);
                   v3[179] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (int)((INIClass *)v3[179]));
                   sprintf(aP2[0], DataGlobal_00829174, v35);
@@ -1031,7 +1031,7 @@ LABEL_190:
             *((unsigned char *)v3 + 737) = v63;
           v45 = var974;
           v3[168] = *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * dword_ABC558 + 58212];
-          *(unsigned int *)&v45->q298[36] =(unsigned int)v3;
+          *&v45->u32_2BC =(unsigned int)v3;
           (*(void (**)(unsigned int *))(v3[169] + 12))(v3 + 169);
           var974 = (MapClass *)v3;
           if ( !v44 )
@@ -1051,9 +1051,9 @@ LABEL_207:
           int v48 = 0;
           v3[185] = *v44;
           v3[186] = v44[4];
-          if ( *((unsigned int *)v44 + 1) * *(unsigned int *)v44 > 0 )
+          if ( v44->u32_4 * *(unsigned int *)v44 > 0 )
           {
-            ecx209 = (unsigned int *)(v44 + 16);
+            ecx209 = &v44->ptr_10;
             do
             {
               unsigned int v50 = *ecx209;
@@ -1062,11 +1062,11 @@ LABEL_207:
               ++v48;
               ++ecx209;
             }
-            while ( v48 < *((unsigned int *)v44 + 1) * *(unsigned int *)v44 );
+            while ( v48 < v44->u32_4 * *(unsigned int *)v44 );
           }
           ((TerrainClass *)(v3))->InitTheatre();
 LABEL_217:
-          v65 = (MapClass *)((char *)v65 + 1);
+          v65 = &v65->q001_;
         }
         while ( v44 || v60 );
         if ( (int)v65 > 1 )
@@ -1078,15 +1078,15 @@ LABEL_217:
             int v53 = (char)v65 - 1;
             do
             {
-              *(unsigned int *)&v49->q298[88] = v52;
-              v49 = *(MapClass **)&v49->q298[36];
+              *&v49->u32_2F0 = v52;
+              v49 = *&v49->u32_2BC;
               --v52;
               --v53;
             }
             while ( v53 );
           }
         }
-        v69 = (MapClass *)((char *)v69 + 1);
+        v69 = &v69->q001_;
         if ( (int)v69 >= (int)v71 )
         {
           v20 = (INIClass *)v90;
@@ -1096,7 +1096,7 @@ LABEL_217:
     }
     v23 = var978;
     v21 = (CCINIClass *)v70;
-    v20 = (INIClass *)((char *)v20 + 1);
+    v20 = &v20->u32_1;
     v90 = (AbstractClass *)v20;
   }
   for ( j = 0; j < *(int *)&(&g_NetworkPlayerBuffer)[5884]; ++j )
@@ -1110,7 +1110,7 @@ LABEL_217:
     if ( v58 != 0xFFFF )
       v55[167] = v56 + *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * v58 + 58216];
   }
-  if ( v91 == (AbstractClass *)5 )
+  if ( v91 == 5 )
   {
     dword_ABAD28 = -1;
     *(unsigned int *)&(&g_NetworkPlayerBuffer)[78076 ]= -1;
@@ -1234,24 +1234,24 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
       {
         do /*0x546fdc*/
         {
-          if ( *(unsigned char *)(v17 + 756) && strlen((const char *)(v17 + 757)) ) /*0x546f68*/
+          if ( v17->u32_2F4 && strlen((const char *)(v17 + 757)) ) /*0x546f68*/
           {
-            if ( a1 || *(unsigned int *)(v17 + 776) || a2 && *(unsigned char *)(v17 + 739) ) /*0x546f8e*/
+            if ( a1 || v17->q308 || a2 && v17->u8_2E3 ) /*0x546f8e*/
             {
-              if ( !*(unsigned int *)(v17 + 164) ) /*0x546fc0*/
+              if ( !v17->u32_A4 ) /*0x546fc0*/
               {
                 v13 += MapClass::LoadFileData(v17); /*0x546fd1*/
                 ++v12; /*0x546fd3*/
               }
             }
-            else if ( *(unsigned int *)(v17 + 164) ) /*0x546f98*/
+            else if ( v17->u32_A4 ) /*0x546f98*/
             {
-              operator delete((void *)(*(void **)(v17 + 164))); /*0x546fa5*/
-              *(unsigned int *)(v17 + 164) = 0; /*0x546fad*/
-              *(unsigned char *)(v17 + 168) = 0; /*0x546fb7*/
+              operator delete((void *)(v17->u32_A4)); /*0x546fa5*/
+              v17->u32_A4 = 0; /*0x546fad*/
+              v17->u32_A8 = 0; /*0x546fb7*/
             }
           }
-          v17 = *(unsigned int *)(v17 + 700); /*0x546fd4*/
+          v17 = v17->q2BC; /*0x546fd4*/
         }
         while ( v17 ); /*0x546fdc*/
         v15 = v20; /*0x546fe2*/
@@ -1751,20 +1751,20 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   _ESI = v2; /*0x54ba35*/
   v4 = (*(int (**)(unsigned int))(**(unsigned int **)(v2 + 12) + 456))(*(unsigned int *)(v2 + 12)); /*0x54ba43*/
   v5 = *(unsigned int *)(_ESI + 12); /*0x54ba45*/
-  if ( !*(unsigned char *)(v5 + 140) ) /*0x54ba48*/
+  if ( !v5->q08C ) /*0x54ba48*/
   {
-    v6 = (int *)(v5 + 156); /*0x54ba52*/
+    v6 = &v5->Coord_9C; /*0x54ba52*/
     v34 = *v6; /*0x54ba59*/
     v35 = v6[1]; /*0x54ba65*/
     v36 = v6[2]; /*0x54ba71*/
-    if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v34)->flags[0] & 0x100) != 0 && v4 >= dword_ABC5DC ) /*0x54ba8c*/
+    if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v34)->flags[0] & 0x100) != 0 && v4 >= dword_ABC5DC ) /*0x54ba8c*/
       v4 -= dword_ABC5DC; /*0x54ba8e*/
   }
   v7 = *(unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(_ESI + 12) + 440))(*(unsigned int *)(_ESI + 12), &v33); /*0x54baa0*/
   v8 = *(unsigned int *)(_ESI + 12); /*0x54baa2*/
   *(unsigned int *)v31 = v7; /*0x54baa5*/
-  if ( (unsigned short)v7 != *(unsigned short *)(v8 + 1376) || v31[1] != *(unsigned short *)(v8 + 1378) ) /*0x54babe*/
-    Coord::ToGridIndex((char *)&g_CellClassManager, v8, *(unsigned int *)(v8 + 1376), v7); /*0x54bace*/
+  if ( (unsigned short)v7 != v8->q560 || v31[1] != v8->q562 ) /*0x54babe*/
+    Coord::ToGridIndex((char *)&g_CellClassManager, v8, v8->q560, v7); /*0x54bace*/
   if ( v4 < *(unsigned int *)(_ESI + 128) ) /*0x54bade*/
   {
     if ( (*(int (**)(unsigned int))(**(unsigned int **)(_ESI + 12) + 44))(*(unsigned int *)(_ESI + 12)) == 1 /*0x54bba2*/
@@ -1810,7 +1810,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       {
         if ( (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x54bc73*/
         {
-          v23 = *(unsigned char **)(v22 + 1312); /*0x54bc75*/
+          v23 = v22->u32_520; /*0x54bc75*/
           if ( v23[5821] || v23[5860] || v23[5861] || v23[5862] ) /*0x54bc99*/
             (**(void (***)(int, int, unsigned int))(*(unsigned int *)(_ESI + 12) + 8))( /*0x54bcb3*/
               *(unsigned int *)(_ESI + 12) + 8,
@@ -1825,23 +1825,23 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
         v25 = *(unsigned char **)(_ESI + 12); /*0x54bd03*/
         *(unsigned int *)(_ESI + 128) = v24; /*0x54bd06*/
         v26 = v25[116]; /*0x54bd10*/
-        (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v25 + 292))(v25, 0); /*0x54bd13*/
+        (*(void (**)(unsigned char *, unsigned int))(*&v25->u32_490))(v25, 0); /*0x54bd13*/
         v27 = *(unsigned int *)(_ESI + 12); /*0x54bd19*/
         *(unsigned int *)(_ESI + 80) = 3; /*0x54bd1c*/
-        *(unsigned char *)(v27 + 116) = v26; /*0x54bd23*/
+        v27->unknown74 = v26; /*0x54bd23*/
       }
     }
   }
   else if ( (unsigned __int8)ObjectClass::HasLinkedObject(*(unsigned int *)(_ESI + 12)) ) /*0x54baea*/
   {
     v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
-    v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31); /*0x54bb14*/
+    v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v31); /*0x54bb14*/
     v11 = **(unsigned int **)(_ESI + 12); /*0x54bb1f*/
     NeighbourContent = Cell::GetNeighbourContent(v10, v9); /*0x54bb23*/
     (*(void (**)(unsigned int, void *, int))(v11 + 1152))(*(unsigned int *)(_ESI + 12), NeighbourContent, 1); /*0x54bb2c*/
     v13 = *(unsigned char **)(_ESI + 12); /*0x54bb32*/
     LOBYTE(v11) = v13[116]; /*0x54bb39*/
-    (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v13 + 292))(v13, 0); /*0x54bb3c*/
+    (*(void (**)(unsigned char *, unsigned int))(*&v13->u32_490))(v13, 0); /*0x54bb3c*/
     *(unsigned char *)(*(unsigned int *)(_ESI + 12) + 116) = v11; /*0x54bb46*/
     *(unsigned int *)(_ESI + 80) = 3; /*0x54bb49*/
   }
@@ -1851,7 +1851,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     CellClass::AttachObject(v14, v30); /*0x54bb64*/
     v15 = *(unsigned char **)(_ESI + 12); /*0x54bb69*/
     v16 = v15[116]; /*0x54bb70*/
-    (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v15 + 292))(v15, 0); /*0x54bb73*/
+    (*(void (**)(unsigned char *, unsigned int))(*&v15->u32_490))(v15, 0); /*0x54bb73*/
     *(unsigned char *)(*(unsigned int *)(_ESI + 12) + 116) = v16; /*0x54bb7d*/
     *(unsigned int *)(_ESI + 80) = 2; /*0x54bb80*/
   }
@@ -2034,19 +2034,19 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   this->v10 = v10; /*0x540996*/
   this->Active = 0; /*0x54099f*/
   this->Initialized = a3; /*0x5409a2*/
-  this->u32_24 = 0; /*0x5409a5*/
-  this->u32_44 = 0; /*0x5409a8*/
+  this->M24 = 0; /*0x5409a5*/
+  this->M68 = 0; /*0x5409a8*/
   this->u32_54 = 0; /*0x5409ab*/
   memset(&this->M160, 0, 0x1Cu); /*0x5409ae*/
-  this->u32_48 = 0; /*0x5409b3*/
-  this->u32_A8 = -1; /*0x5409b6*/
-  this->u32_5C = -1; /*0x5409bc*/
-  this->u32_4C = 0; /*0x5409bf*/
-  this->u32_50 = 0; /*0x5409c2*/
-  this->u32_A0 = 0; /*0x5409c5*/
-  this->u32_A4 = 0; /*0x5409cb*/
-  this->u32_58 = 2; /*0x5409d1*/
-  this->u32_60 = 60; /*0x5409d8*/
+  this->M72 = 0; /*0x5409b3*/
+  this->M168 = -1; /*0x5409b6*/
+  this->M92 = -1; /*0x5409bc*/
+  this->M76 = 0; /*0x5409bf*/
+  this->q050 = 0; /*0x5409c2*/
+  this->M160 = 0; /*0x5409c5*/
+  this->M164 = 0; /*0x5409cb*/
+  this->M88 = 2; /*0x5409d1*/
+  this->M96 = 60; /*0x5409d8*/
   return this; /*0x5409e1*/
 }
 } // namespace gamemd
@@ -2214,7 +2214,7 @@ int nullsub_0(int a1, unsigned int * a2)
 namespace gamemd {
 int E4Recv_543AF0::nullsub_0_0()
 {
-  return this->u32_AC; /*0x543af6*/
+  return this->M172; /*0x543af6*/
 }
 } // namespace gamemd
 
@@ -2586,15 +2586,15 @@ int E4Recv_54A990::sub_54A990()
   {
     do /*0x54a9a4*/
     {
-      v3 = (((unsigned char *)&(v1->vfptr))[1]); /*0x54a99d*/
+      v3 = (v1->AbstractClass_1); /*0x54a99d*/
       ++v2; /*0x54a9a0*/
-      v1 = (ObjectClass *)((char *)v1 + 1); /*0x54a9a1*/
+      v1 = &v1->AbstractClass_1; /*0x54a9a1*/
     }
     while ( !v3 ); /*0x54a9a4*/
   }
   for ( i = 0; i < 8; ++i ) /*0x54a9a6*/
   {
-    if ( ((uint8_t)(1 << (i % 8)) & *((unsigned char *)&v1->vfptr + i / 8)) != 0 ) /*0x54a9c9*/
+    if ( ((uint8_t)(1 << (i % 8)) & v1->vtable1 + i / 8)) != 0 ) /*0x54a9c9*/
       break; /*0x54a9c9*/
   }
   return i + 8 * v2; /*0x54a9d4*/
@@ -2616,15 +2616,15 @@ int E4Recv_54A9E0::sub_54A9E0()
   {
     do /*0x54a9f4*/
     {
-      v3 = (((unsigned char *)&(v1->vfptr))[1]); /*0x54a9ed*/
+      v3 = (v1->AbstractClass_1); /*0x54a9ed*/
       ++v2; /*0x54a9f0*/
-      v1 = (ObjectClass *)((char *)v1 + 1); /*0x54a9f1*/
+      v1 = &v1->AbstractClass_1; /*0x54a9f1*/
     }
     while ( v3 == -1 ); /*0x54a9f4*/
   }
   for ( i = 0; i < 8; ++i ) /*0x54a9f6*/
   {
-    if ( ((uint8_t)(1 << (i % 8)) & *((unsigned char *)&v1->vfptr + i / 8)) == 0 ) /*0x54aa19*/
+    if ( ((uint8_t)(1 << (i % 8)) & v1->vtable1 + i / 8)) == 0 ) /*0x54aa19*/
       break; /*0x54aa19*/
   }
   return i + 8 * v2; /*0x54aa24*/
@@ -2939,13 +2939,13 @@ unsigned int * E4Recv_54E360::sub_54E360()
 
   void *v2; // [esp+8h] [ebp-8h]
 
-  this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e370*/
-  this->? = 0; /*0x54e375*/
-  this->? = 0; /*0x54e378*/
-  this->? = 0; /*0x54e37b*/
-  LOBYTE(this->?) = 1; /*0x54e37e*/
-  BYTE1(this->?) = 0; /*0x54e382*/
-  this->? = &DynamicVectorClass<KamikazeControl *>::`vftable'; /*0x54e385*/
+  this->AbstractClass = *(void **)&TeamTypeClass_Array; /*0x54e370*/
+  this->M8 = 0; /*0x54e375*/
+  this->M16 = 0; /*0x54e378*/
+  this->M20 = 0; /*0x54e37b*/
+  LOBYTE(this->q018) = 1; /*0x54e37e*/
+  BYTE1(this->M25) = 0; /*0x54e382*/
+  this->M12 = &DynamicVectorClass<KamikazeControl *>::`vftable'; /*0x54e385*/
   this->? = (void *)10; /*0x54e38c*/
   this->? = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e39e*/
@@ -2968,11 +2968,11 @@ void E4Recv_54E690::sub_54E690()
   int abstractFlags; // edi
   void *v7; // eax
 
-  for ( i = this->? - 1; i >= 0; --i ) /*0x54e699*/
-    __3_YAXPAX_Z(*(void **)(this->? + 4 * i)); /*0x54e6a2*/
-  vtable3 = (void (**)(void **))this->?; /*0x54e6ad*/
-  p_vtable3 = &this->?; /*0x54e6b0*/
-  v5 = &this->?; /*0x54e6b3*/
+  for ( i = this->q050 - 1; i >= 0; --i ) /*0x54e699*/
+    __3_YAXPAX_Z(*(void **)(this->q050 + 4 * i)); /*0x54e6a2*/
+  vtable3 = (void (**)(void **))this->M12; /*0x54e6ad*/
+  p_vtable3 = &this->M12; /*0x54e6b0*/
+  v5 = &this->q050; /*0x54e6b3*/
   abstractFlags = this->?; /*0x54e6b5*/
   vtable3[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/

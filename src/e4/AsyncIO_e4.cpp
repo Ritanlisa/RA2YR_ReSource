@@ -74,7 +74,7 @@ int AsyncIO::WaitCompletion()
   int v10; // [esp+18h] [ebp-8h]
 
   Ticks = TimerGetTicks(); /*0x774bcf*/
-  v2 = this->u32_51; /*0x774bd3*/
+  v2 = this->u8_51; /*0x774bd3*/
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
@@ -83,7 +83,7 @@ int AsyncIO::WaitCompletion()
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
     {
-      if ( GetOverlappedResult(*(unsigned int *)((char *)&this->q146 + 42), (LPOVERLAPPED)((char *)&this->q092 + 94), &NumberOfBytesTransferred, 0) /*0x774c29*/
+      if ( GetOverlappedResult(*(unsigned int *)this->q146 + 42), (LPOVERLAPPED)this->q092 + 94), &NumberOfBytesTransferred, 0) /*0x774c29*/
         || GetLastError() != 996 )
       {
         break; /*0x774c29*/
@@ -98,9 +98,9 @@ int AsyncIO::WaitCompletion()
       }
     }
     while ( v9 ); /*0x774c4d*/
-    this->u32_51 = 0; /*0x774c4f*/
+    this->u8_51 = 0; /*0x774c4f*/
   }
-  return ResetEvent(*(unsigned int *)((char *)&this->q129 + 7)); /*0x774c60*/
+  return ResetEvent(*(unsigned int *)this->q129 + 7)); /*0x774c60*/
 }
 } // namespace gamemd
 // 0x5BF500

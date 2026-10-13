@@ -45,7 +45,7 @@ void BulkData::InitMissionHashing()
       while ( v5 < strlen(v4) ); /*0x697b35*/
     }
   }
-  *((unsigned int *)this + 81) = Time; /*0x697b41*/
+  this->ptr_144 = Time; /*0x697b41*/
   Debug::Log(); /*0x697b47*/
 
 }

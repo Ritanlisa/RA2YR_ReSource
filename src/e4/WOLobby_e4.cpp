@@ -391,33 +391,33 @@ void sub_72BB10()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1441] ) /*0x72bb1a*/
+  if ( DataGlobal_B0FD51 ) /*0x72bb1a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1440] ) /*0x72bb22*/
+    if ( DataGlobal_B0FD50 ) /*0x72bb22*/
     {
-      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x72bb25*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
+      v1 = *(void **)&DataGlobal_B0FB2C; /*0x72bb25*/
+      if ( *(unsigned int *)&DataGlobal_B0FB2C ) /*0x72bb2d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]); /*0x72bb31*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&DataGlobal_B0FB2C); /*0x72bb31*/
         operator delete((void *)(v1)); /*0x72bb37*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1440] = 0; /*0x72bb3f*/
+      DataGlobal_B0FD50 = 0; /*0x72bb3f*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
+    *(unsigned int *)&DataGlobal_B0FB2C = 0; /*0x72bb4b*/
+    if ( *(unsigned int *)&DataGlobal_B0FD54 ) /*0x72bb53*/
     {
-      operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1444])); /*0x72bb56*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
+      operator delete((void *)(*(void **)&DataGlobal_B0FD54)); /*0x72bb56*/
+      *(unsigned int *)&DataGlobal_B0FD54 = 0; /*0x72bb5e*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
+    if ( *(unsigned int *)&DataGlobal_B0FD58 ) /*0x72bb6c*/
     {
-      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
+      (***(void (****)(unsigned int, int))&DataGlobal_B0FD58)( /*0x72bb72*/
+        *(unsigned int *)&DataGlobal_B0FD58,
         1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
+      *(unsigned int *)&DataGlobal_B0FD58 = 0; /*0x72bb74*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1441] = 0; /*0x72bb7a*/
+  DataGlobal_B0FD51 = 0; /*0x72bb7a*/
 }
 } // namespace gamemd
 

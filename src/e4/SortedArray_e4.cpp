@@ -29,18 +29,18 @@ int SortedArray::BinarySearch(int *aP1)
   int SortedArray_field_0x04; // ecx
   int v7; // esi
 
-  result = this->SortedArray_field_0x04; /*0x52b623*/
+  result = this->u32_4; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !LOBYTE(this->SortedArray_field_0x0C) ) /*0x52b62e*/
+    if ( !LOBYTE(this->u32_C) ) /*0x52b62e*/
     {
-      qsort(*(void **)this->__pad_0, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
-      this->SortedArray_field_0x10 = 0; /*0x52b648*/
-      LOBYTE(this->SortedArray_field_0x0C) = 1; /*0x52b64f*/
+      qsort(*(void **)this->__pad_000, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
+      this->u32_10 = 0; /*0x52b648*/
+      LOBYTE(this->u32_C) = 1; /*0x52b64f*/
     }
-    v4 = *(unsigned int *)this->__pad_0; /*0x52b659*/
+    v4 = *(unsigned int *)this->__pad_000; /*0x52b659*/
     v5 = *aP1; /*0x52b65b*/
-    SortedArray_field_0x04 = this->SortedArray_field_0x04; /*0x52b65d*/
+    SortedArray_field_0x04 = this->u32_4; /*0x52b65d*/
     if ( SortedArray_field_0x04 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
@@ -79,14 +79,14 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   int v11; // eax
 
   v4 = this->u32_20; /*0x5387da*/
-  if ( this->q010 + 1 <= v4 ) /*0x5387e0*/
+  if ( this->u32_10 + 1 <= v4 ) /*0x5387e0*/
   {
   LABEL_9:
-    *(unsigned int *)(((unsigned int)(this->u32_20)) * this->q010) = *aP1; /*0x53885b*/
-    *(unsigned int *)(((unsigned int)(this->u32_20)) * this->q010 + 4) = *a2; /*0x538875*/
-    v11 = this->q010 + 1; /*0x53887c*/
-    *(unsigned char *)&this->q00C = 0; /*0x53887d*/
-    this->q010 = v11; /*0x538881*/
+    *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10) = *aP1; /*0x53885b*/
+    *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10 + 4) = *a2; /*0x538875*/
+    v11 = this->u32_10 + 1; /*0x53887c*/
+    *&this->u32_C = 0; /*0x53887d*/
+    this->u32_10 = v11; /*0x538881*/
     return 1; /*0x53888a*/
   }
   if ( v4 ) /*0x5387e4*/
@@ -102,7 +102,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   v6 = (char *)operator new(8 * (v4 + v5)); /*0x538807*/
   if ( v6 ) /*0x53880e*/
   {
-    for ( i = 0; i < this->q010; *(unsigned int *)&v6[v8 + 4] = v9[1] ) /*0x53881c*/
+    for ( i = 0; i < this->u32_10; *(unsigned int *)&v6[v8 + 4] = v9[1] ) /*0x53881c*/
     {
       v8 = 8 * i; /*0x538820*/
       v9 = (unsigned int *)(((unsigned int)(this->u32_20)) * i++); /*0x538829*/
@@ -112,7 +112,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
     v10 = this->u32_20; /*0x538847*/
     *(unsigned int *)this = v6; /*0x53884f*/
     this->u32_20 = v5 + v10; /*0x538851*/
-    *(unsigned int *)&this->q040 = 0; /*0x538854*/
+    *&this->q040 = 0; /*0x538854*/
     goto LABEL_9; /*0x538854*/
   }
   return 0; /*0x538864*/
@@ -136,16 +136,16 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
 
-  v3 = *((unsigned int *)this + 1); /*0x5388a9*/
+  v3 = this->u32_4; /*0x5388a9*/
   if ( !v3 ) /*0x5388ae*/
     return 0; /*0x5388ae*/
-  if ( !*((unsigned char *)this + 12) ) /*0x5388b0*/
+  if ( !this->u32_C ) /*0x5388b0*/
   {
     qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
-    *((unsigned int *)this + 4) = 0; /*0x5388ca*/
-    *((unsigned char *)this + 12) = 1; /*0x5388d1*/
+    this->u32_10 = 0; /*0x5388ca*/
+    this->u32_C = 1; /*0x5388d1*/
   }
-  v4 = *((unsigned int *)this + 1); /*0x5388d9*/
+  v4 = this->u32_4; /*0x5388d9*/
   v5 = *(unsigned int **)this; /*0x5388e0*/
   v15 = *aP1; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
@@ -172,18 +172,18 @@ LABEL_9:
   v9 = (int)&v7[-*(unsigned int *)this] >> 3; /*0x53892b*/
   if ( v9 == -1 ) /*0x538931*/
     return 0; /*0x538920*/
-  for ( i = v9 + 1; i < *((unsigned int *)this + 1); *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) ) /*0x538939*/
+  for ( i = v9 + 1; i < this->u32_4; *(unsigned int *)(v12 - 4) = *(unsigned int *)(v12 + 4) ) /*0x538939*/
   {
-    v11 = *(unsigned int *)(*(unsigned int *)this + 8 * i); /*0x53893d*/
-    v12 = *(unsigned int *)this + 8 * i++; /*0x538940*/
+    v11 = *(unsigned int *)(*&this->u32_20 * i); /*0x53893d*/
+    v12 = *&this->u32_20 * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
   v13 = *(unsigned int **)this; /*0x538957*/
-  v14 = *((unsigned int *)this + 1) - 1; /*0x538959*/
-  *((unsigned int *)this + 1) = v14; /*0x53895c*/
+  v14 = this->u32_4 - 1; /*0x538959*/
+  this->u32_4 = v14; /*0x53895c*/
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
-  *((unsigned int *)this + 4) = 0; /*0x538966*/
+  this->u32_10 = 0; /*0x538966*/
   return 1; /*0x538917*/
 
 }
@@ -201,19 +201,19 @@ int SortedArray::FindPair(int * a2)
   int v9; // esi
   char *v10; // edx
 
-  v3 = *((unsigned int *)this + 1); /*0x538985*/
+  v3 = this->u32_4; /*0x538985*/
   if ( !v3 ) /*0x53898b*/
     return 0; /*0x53898b*/
-  v4 = *(unsigned int **)((char *)this + 16); /*0x53898d*/
+  v4 = *&this->u32_10; /*0x53898d*/
   if ( v4 && *v4 == *a2 ) /*0x53899e*/
     return 1; /*0x5389a6*/
-  if ( !*((unsigned char *)this + 12) ) /*0x5389a9*/
+  if ( !this->u32_C ) /*0x5389a9*/
   {
     qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
-    *((unsigned int *)this + 4) = 0; /*0x5389c3*/
-    *((unsigned char *)this + 12) = 1; /*0x5389ca*/
+    this->u32_10 = 0; /*0x5389c3*/
+    this->u32_C = 1; /*0x5389ca*/
   }
-  v6 = *((unsigned int *)this + 1); /*0x5389ce*/
+  v6 = this->u32_4; /*0x5389ce*/
   v7 = *a2; /*0x5389d1*/
   v8 = *(unsigned int **)this; /*0x5389d3*/
   if ( v6 <= 0 ) /*0x5389d7*/
@@ -237,7 +237,7 @@ LABEL_12:
   }
   if ( !v10 ) /*0x538a09*/
     return 0; /*0x538a04*/
-  *((unsigned int *)this + 4) = v10; /*0x538a0d*/
+  this->u32_10 = v10; /*0x538a0d*/
   return 1; /*0x5389a0*/
 
 }

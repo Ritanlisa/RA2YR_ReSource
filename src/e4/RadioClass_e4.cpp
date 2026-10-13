@@ -44,7 +44,7 @@ namespace gamemd {
 int RadioClass::ProcessCmd()
 {
 
-  if ( !this->? ) /*0x65aa83*/
+  if ( !this->inLimbo ) /*0x65aa83*/
     (*((void (**)(RadioClass *, int))this->MissionClass + 160))(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy((ObjectClass *)this); /*0x65aa9e*/
 
@@ -165,7 +165,7 @@ int RadioClass::FindLinkIndex(int a2)
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
-  for ( i = (unsigned int *)this->q0E4; *i != a2; ++i ) /*0x65ada5*/
+  for ( i = (unsigned int *)this->Tactical_E4; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
       return -1; /*0x65adb5*/
@@ -186,7 +186,7 @@ int RadioClass::HasFreeLink()
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (unsigned int *)this->q0E4; *i; ++i ) /*0x65adcc*/
+  for ( i = (unsigned int *)this->Tactical_E4; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/

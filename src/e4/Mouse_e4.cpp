@@ -184,21 +184,21 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
   int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v13 = (int)this; /*0x7b93f5*/
-  v5 = *(MixFileClass **)&this->m_1[3]; /*0x7b93f9*/
-  if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
+  v5 = *&this->u32_4; /*0x7b93f9*/
+  if ( v5 && aP1 && *(unsigned int *)&DataGlobal_87F6C8 ) /*0x7b9418*/
   {
-    v6 = *((unsigned int *)this + 20); /*0x7b942e*/
-    v7 = *((unsigned int *)this + 21); /*0x7b9431*/
-    v8 = aP2 + *((unsigned int *)this + 18); /*0x7b9438*/
-    v9 = a4 + *((unsigned int *)this + 19); /*0x7b943e*/
-    SubFile = MixFileClass::GetSubFile(v5, *(unsigned int *)&this->__pad_5[3]); /*0x7b9440*/
+    v6 = this->u32_50; /*0x7b942e*/
+    v7 = this->u32_54; /*0x7b9431*/
+    v8 = aP2 + this->u32_48; /*0x7b9438*/
+    v9 = a4 + this->u32_4C; /*0x7b943e*/
+    SubFile = MixFileClass::GetSubFile(v5, *&this->u32_8); /*0x7b9440*/
     v20[1] = v6; /*0x7b9447*/
     v20[2] = v7; /*0x7b9454*/
     v20[3] = 0; /*0x7b9458*/
     v20[4] = 1; /*0x7b9468*/
     Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
     v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
-    if ( aP1 == *(int **)(v13 + 36) ) /*0x7b9488*/
+    if ( aP1 == v13->Buffer_field_24 ) /*0x7b9488*/
     {
       v15 = 0; /*0x7b9499*/
       v16 = 0; /*0x7b949d*/
@@ -219,7 +219,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
       v18 = v7; /*0x7b94f2*/
       v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
     }
-    BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
+    BlitterDrawSHP(aP1, *(int *)&DataGlobal_87F6C8, v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
     Vector::Clear((int)v21); /*0x7b951f*/
   }
 
@@ -229,7 +229,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
 namespace gamemd {
 SHORT Mouse::GetKeyState(uint8_t vKey)
 {
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
+  if ( g_StreamBufferState ) /*0x53ec97*/
     return word_AA0168[(uint8_t)vKey]; /*0x53eca7*/
   else
     return GetAsyncKeyState((uint8_t)vKey); /*0x53ec9a*/

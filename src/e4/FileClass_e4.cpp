@@ -27,8 +27,8 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 
   if ( this->u32_58 ) /*0x473ae3*/
   {
-    v4 = *(unsigned int *)this->__tail_0; /*0x473aeb*/
-    v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)this->__tail_0 + 4))(this); /*0x473aed*/
+    v4 = *(unsigned int *)this->vtable1; /*0x473aeb*/
+    v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)this->vtable1 + 4))(this); /*0x473aed*/
     (*(void (**)(CCFileClass *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
   return FileClass::BufferedWriter((char *)aP1, nNumberOfBytesToWrite); /*0x473b0c*/
@@ -52,7 +52,7 @@ int FileClass::Open(int a2)
   DWORD LastError; // eax
   int v6; // [esp-4h] [ebp-Ch]
 
-  result = *(unsigned int *)&this->FileNameAllocated; /*0x65cbf4*/
+  result = *&this->u32_18; /*0x65cbf4*/
   if ( !result ) /*0x65cbf9*/
   {
     LOBYTE(result) = 0; /*0x65cbfc*/
@@ -63,7 +63,7 @@ int FileClass::Open(int a2)
     goto LABEL_14; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    result = (int)CreateFileA(*(LPCSTR *)&this->FileNameAllocated, 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
+    result = (int)CreateFileA(*&this->u32_18, 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
     *(unsigned int *)this->FileTimeDateLo = result; /*0x65cc62*/
     if ( result == -1 ) /*0x65cc65*/
     {
@@ -74,7 +74,7 @@ int FileClass::Open(int a2)
     if ( result ) /*0x65cc77*/
       goto LABEL_13; /*0x65cc77*/
     v4 = *(unsigned int *)this->FileClass; /*0x65cc7c*/
-    v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc7e*/
+    v6 = *&this->u32_18; /*0x65cc7e*/
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(this, (const CHAR *)1); /*0x65cc1d*/
@@ -89,7 +89,7 @@ LABEL_13:
       goto LABEL_14; /*0x65cc8d*/
     }
     v4 = *(unsigned int *)this->FileClass; /*0x65cc3e*/
-    v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc40*/
+    v6 = *&this->u32_18; /*0x65cc40*/
 LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
     result = (*(int (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
@@ -160,7 +160,7 @@ int FileClass::Read(char *aP1, signed int aP2)
       if ( byte_B04BEC ) /*0x65cd7c*/
         break; /*0x65cd7c*/
       v9 = *(unsigned int *)this->FileClass; /*0x65cd81*/
-      v12 = *(unsigned int *)&this->FileNameAllocated; /*0x65cd83*/
+      v12 = *&this->u32_14; /*0x65cd83*/
       LastError = GetLastError(); /*0x65cd86*/
       (*(void (**)(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToReada; /*0x65cd92*/
@@ -271,7 +271,7 @@ LABEL_27:
                 if ( v18 == -1 ) /*0x65d035*/
                 {
                   v19 = *(unsigned int *)this->FileClass; /*0x65d03a*/
-                  v26 = *(unsigned int *)&this->FileNameAllocated; /*0x65d03c*/
+                  v26 = *&this->u32_14; /*0x65d03c*/
                   LastError = GetLastError(); /*0x65d03f*/
                   (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v19 + 64))(this, LastError, 0, v26); /*0x65d048*/
                   v18 = 0; /*0x65d04b*/
@@ -291,7 +291,7 @@ LABEL_27:
             return result; /*0x65d024*/
           }
           v14 = *(unsigned int *)this->FileClass; /*0x65cfde*/
-          v25 = *(unsigned int *)&this->FileNameAllocated; /*0x65cfe0*/
+          v25 = *&this->u32_14; /*0x65cfe0*/
           v15 = GetLastError(); /*0x65cfe3*/
           (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v14 + 64))(this, v15, 0, v25); /*0x65cfec*/
         }
@@ -307,7 +307,7 @@ LABEL_27:
         goto LABEL_26; /*0x65cfef*/
       }
       v9 = *(unsigned int *)this->FileClass; /*0x65cf95*/
-      v24 = *(unsigned int *)&this->FileNameAllocated; /*0x65cf97*/
+      v24 = *&this->u32_14; /*0x65cf97*/
       v10 = GetLastError(); /*0x65cf9a*/
       (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v9 + 64))(this, v10, 0, v24); /*0x65cfa3*/
     }
@@ -344,7 +344,7 @@ LABEL_27:
     if ( result == -1 ) /*0x65d0ae*/
     {
       v22 = *(unsigned int *)this->FileClass; /*0x65d0b3*/
-      v27 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0b5*/
+      v27 = *&this->u32_14; /*0x65d0b5*/
       v23 = GetLastError(); /*0x65d0b8*/
       (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v22 + 64))(this, v23, 0, v27); /*0x65d0c1*/
       return 0; /*0x65d0c4*/
@@ -383,7 +383,7 @@ namespace gamemd {
 unsigned int * FileClass::loc_401950()
 {
 
-  return *(unsigned int *)&this->FileNameAllocated; /*0x401943*/
+  return *&this->u32_18; /*0x401943*/
 
 }
 } // namespace gamemd

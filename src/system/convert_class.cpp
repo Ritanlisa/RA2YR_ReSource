@@ -160,8 +160,8 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   v6 = this->u32_16C; /*0x556098*/
   if ( v6 >= 1 )
   {
-    if ( !this->u32_190 ) /*0x5560a8*/
-      this->u32_190 = &unk_829C20; /*0x5560b2*/
+    if ( !this->__pad_190 ) /*0x5560a8*/
+      this->__pad_190 = &unk_829C20; /*0x5560b2*/
     v7 = red; /*0x5560bc*/
     if ( red == -1 )
     {
@@ -197,7 +197,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         this->u32_1A8 = v11; /*0x55614b*/
         this->u32_1AC = v12; /*0x556151*/
       }
-      this->u32_1B0 = 1; /*0x55613c*/
+      this->u8_1B0 = 1; /*0x55613c*/
     }
     else
     {
@@ -213,14 +213,14 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         this->u32_19C = v11; /*0x55617f*/
         this->u32_1A0 = v12; /*0x556185*/
       }
-      this->u32_1B0 = 0; /*0x55618b*/
+      this->u8_1B0 = 0; /*0x55618b*/
     }
     v32 = Math::RoundToInt((double)(1000 * v7) * 0.065536); /*0x5561b1*/
     v34 = Math::RoundToInt((double)(1000 * v11) * 0.065536); /*0x5561d5*/
     v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
-    v14 = *(unsigned short **)(this + 368); /*0x55621e*/
+    v14 = *&this->q170; /*0x55621e*/
     v31 = (30 * v6 / 200 - 1) & ((30 * v6 / 200 - 1 <= 0) - 1); /*0x55623a*/
     if ( v31 >= (v6 - 1) >> 1 ) /*0x55623e*/
       v31 = (v6 - 1) >> 1; /*0x556240*/
@@ -256,7 +256,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
               v14,
               ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->u32_190);
+              this->__pad_190);
             v14 += 256; /*0x556300*/
             break; /*0x556306*/
           case 1: /*0x5562de*/
@@ -265,7 +265,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
               v14,
               ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->u32_190);
+              this->__pad_190);
             v14 += 256; /*0x556326*/
             break; /*0x55632c*/
           case 2: /*0x5562de*/
@@ -274,7 +274,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
               v14,
               ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->u32_190);
+              this->__pad_190);
             v14 += 256; /*0x55634c*/
             break; /*0x556352*/
           case 3: /*0x5562de*/
@@ -283,7 +283,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
               v14,
               ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->u32_190);
+              this->__pad_190);
             v14 += 256; /*0x556372*/
             break; /*0x556378*/
           default:
@@ -293,7 +293,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
             while ( 1 ) /*0x5563bb*/
             {
               v20 = (uint8_t *)(this->u32_188 + 3 * (v19 % 256)); /*0x5563bb*/
-              if ( *(unsigned char *)(this->u32_190 + v19) ) /*0x55639a*/
+              if ( *(unsigned char *)(this->__pad_190 + v19) ) /*0x55639a*/
               {
                 v21 = (v15 * *v20) >> 16; /*0x5563d7*/
                 v22 = (v37 * v20[1]) >> 16; /*0x5563da*/

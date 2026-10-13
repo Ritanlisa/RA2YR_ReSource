@@ -190,7 +190,7 @@ LABEL_39:
           return 0; /*0x4f13bf*/
         if ( dword_A8B238[0] && dword_A8B238[0] != 5 ) /*0x4f13d1*/
         {
-          v15 = EventClass::AddEvent(v29, *((unsigned int *)dword_A83D4C + 12), 0x1Du); /*0x4f13e5*/
+          v15 = EventClass::AddEvent(v29, dword_A83D4C->relatedTagsCount, 0x1Du); /*0x4f13e5*/
           ((void (*)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
           *WindowLongA = 1311; /*0x4f13f6*/
           return 0; /*0x4f1408*/
@@ -239,7 +239,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = EventClass::Add2(v31, *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19); /*0x4f15c6*/
+            v20 = EventClass::Add2(v31, dword_A83D4C->relatedTagsCount, 0x24u, (int)v19); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             Debug::Log(); /*0x4f15dc*/
           }
@@ -257,7 +257,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = EventClass::Add2(v30, *((unsigned int *)dword_A83D4C + 12), 0xDu, v22); /*0x4f166f*/
+            v23 = EventClass::Add2(v30, dword_A83D4C->relatedTagsCount, 0xDu, v22); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -309,7 +309,7 @@ AbstractClass * * Options::Screen_Save()
     if ( stru_A8EB00.ObjectTypeClass[30] != v3 ) /*0x55fad9*/
     {
       stru_A8EB00.ObjectTypeClass[30] = v3; /*0x55fae0*/
-      TacticalClass::Initialize((TacticalClass *)&stru_87F5F0.__pad_58[416]); /*0x55fae5*/
+      TacticalClass::Initialize((TacticalClass *)&DataGlobal_87F7E8); /*0x55fae5*/
     }
   }
   v4 = GetDlgItem((HWND)this, 1295); /*0x55faf0*/
@@ -439,9 +439,9 @@ int Options::DeleteAndZero()
   int result; // eax
 
   v2 = 0; /*0x6244e4*/
-  if ( *(int *)this->__pad_0 <= 0 ) /*0x6244e9*/
+  if ( *(int *)this->q000 <= 0 ) /*0x6244e9*/
   {
-    *(unsigned int *)this->__pad_0 = 0; /*0x62451b*/
+    *(unsigned int *)this->q000 = 0; /*0x62451b*/
   }
   else
   {
@@ -449,14 +449,14 @@ int Options::DeleteAndZero()
     do /*0x62450e*/
     {
       v4 = (char *)this->field_8 + v3; /*0x6244f4*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v4 + 8)); /*0x6244f9*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v4 + 4)); /*0x624501*/
-      result = *(unsigned int *)this->__pad_0; /*0x624506*/
+      DeleteAndZero::Alt(&v4->u32_8); /*0x6244f9*/
+      DeleteAndZero::Alt(&v4->__pad_004); /*0x624501*/
+      result = *(unsigned int *)this->q000; /*0x624506*/
       ++v2; /*0x624508*/
       v3 += 24; /*0x624509*/
     }
-    while ( v2 < *(unsigned int *)this->__pad_0 ); /*0x62450e*/
-    *(unsigned int *)this->__pad_0 = 0; /*0x624511*/
+    while ( v2 < *(unsigned int *)this->q000 ); /*0x62450e*/
+    *(unsigned int *)this->q000 = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 
@@ -474,7 +474,7 @@ char Options::EnsureCapacity()
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x6248a5*/
+  v2 = *(unsigned int *)this->q000; /*0x6248a5*/
   v3 = (int)this->field_4; /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
@@ -487,7 +487,7 @@ char Options::EnsureCapacity()
   v7 = this->field_8; /*0x6248e2*/
   v8 = v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
-    qmemcpy(v6, v7, 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
+    qmemcpy(v6, v7, 24 * *(unsigned int *)this->q000); /*0x624901*/
   __3_YAXPAX_Z(this->field_8); /*0x62490f*/
   this->field_8 = v8; /*0x62491b*/
   this->field_4 = (void *)v5; /*0x62491e*/
@@ -505,8 +505,8 @@ int Options::GrowBuffer()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x6253b4*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->field_4 ) /*0x6253bb*/
+  v2 = *(unsigned int *)this->q000; /*0x6253b4*/
+  if ( *(unsigned int *)this->q000 < (int)this->field_4 ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/
   v6 = 2 * v2; /*0x6253cb*/
@@ -519,7 +519,7 @@ int Options::GrowBuffer()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( this->field_8 ) /*0x625403*/
   {
-    qmemcpy(v5, this->field_8, 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
+    qmemcpy(v5, this->field_8, 4 * *(unsigned int *)this->q000); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
   __3_YAXPAX_Z(this->field_8); /*0x625429*/
@@ -541,7 +541,7 @@ int Options::ReadOptionValue()
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x6254d5*/
+  v2 = *(unsigned int *)this->q000; /*0x6254d5*/
   v3 = (int)this->field_4; /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
@@ -554,7 +554,7 @@ int Options::ReadOptionValue()
   v7 = this->field_8; /*0x625512*/
   v8 = v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
-    qmemcpy(v6, v7, 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
+    qmemcpy(v6, v7, 20 * *(unsigned int *)this->q000); /*0x625531*/
   __3_YAXPAX_Z(this->field_8); /*0x62553f*/
   this->field_8 = v8; /*0x62554b*/
   this->field_4 = (void *)v5; /*0x62554e*/
@@ -571,12 +571,12 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
   unsigned int *v5; // edx
   void *v6; // esi
 
-  if ( *(unsigned int *)&Block->__pad_14[24] ) /*0x625563*/
+  if ( *&Block->u32_2C ) /*0x625563*/
   {
-    operator delete((void *)(*(void **)&Block->__pad_14[24])); /*0x62556b*/
-    *(unsigned int *)&Block->__pad_14[24] = 0; /*0x625573*/
+    operator delete((void *)(*&Block->u32_2C)); /*0x62556b*/
+    *&Block->u32_2C = 0; /*0x625573*/
   }
-  for ( i = *(unsigned int **)&Block->__pad_34[4]; i; i = *(unsigned int **)&Block->__pad_34[4] ) /*0x62557f*/
+  for ( i = *&Block->u32_38; i; i = *&Block->u32_38 ) /*0x62557f*/
   {
     v4 = i; /*0x625581*/
     v5 = 0; /*0x625583*/
@@ -590,15 +590,15 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *(unsigned int *)&Block->__pad_34[4] = *v4; /*0x6255a7*/
+      *&Block->u32_38 = *v4; /*0x6255a7*/
     operator delete((void *)(v4)); /*0x6255ab*/
   LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = *(void **)&Block->__pad_34[12]; /*0x6255bb*/
+  v6 = *&Block->u32_40; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    DeleteAndZero::Alt(*(DeleteAndZero **)&Block->__pad_34[12]); /*0x6255c4*/
+    DeleteAndZero::Alt(*&Block->u32_40); /*0x6255c4*/
     operator delete((void *)(v6)); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
@@ -633,16 +633,16 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   v2 = aP1; /*0x6255f5*/
   v3 = (int *)this; /*0x6255fb*/
   v4 = 0; /*0x625600*/
-  *(unsigned int *)this->__pad_0 = *aP1; /*0x625602*/
+  *(unsigned int *)this->q000 = *aP1; /*0x625602*/
   v5 = &this->field_8; /*0x625607*/
-  this->field_4 = (void *)aP1[1]; /*0x62560a*/
+  this->field_4 = aP1->q004; /*0x62560a*/
   this->field_8 = 0; /*0x625615*/
   this->field_C = 0; /*0x625617*/
   this->field_10 = 0; /*0x62561a*/
   unknown_libname_74(&v19); /*0x62561d*/
-  unknown_libname_74(&v19.DeleteAndZero_field_0x04); /*0x625626*/
+  unknown_libname_74(&v19.q004); /*0x625626*/
   v18 = 0; /*0x62562e*/
-  v19.DeleteAndZero_field_0x08 = -1; /*0x625632*/
+  v19.u32_8 = -1; /*0x625632*/
   v21 = -1; /*0x625636*/
   v6 = (int)*v5; /*0x62563a*/
   v20 = 0; /*0x62563c*/
@@ -651,9 +651,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     v7 = 0; /*0x625644*/
     do /*0x625665*/
     {
-      v8 = (char *)v5[2] + v7; /*0x62564b*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 8)); /*0x625650*/
-      DeleteAndZero::Alt((DeleteAndZero *)(v8 + 4)); /*0x625658*/
+      v8 = v5->u32_2 + v7; /*0x62564b*/
+      DeleteAndZero::Alt(&v8->u32_8); /*0x625650*/
+      DeleteAndZero::Alt(&v8->__pad_004); /*0x625658*/
       ++v4; /*0x62565f*/
       v7 += 24; /*0x625660*/
     }
@@ -675,8 +675,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
         v12 = v11 + v2[4]; /*0x625699*/
         v18 = *(unsigned int *)v12; /*0x6256a5*/
         WideString::Reassign_Alt((void **)&v19, (const wchar_t **)(v12 + 4)); /*0x6256a9*/
-        WideString::Reassign_Alt((void **)&v19.DeleteAndZero_field_0x04, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
-        v19.DeleteAndZero_field_0x08 = *(unsigned int *)(v12 + 12); /*0x6256be*/
+        WideString::Reassign_Alt((void **)&v19.q004, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
+        v19.u32_8 = *(unsigned int *)(v12 + 12); /*0x6256be*/
         v20 = *(unsigned int *)(v12 + 16); /*0x6256c5*/
         v21 = *(unsigned int *)(v12 + 20); /*0x6256cc*/
       }
@@ -686,8 +686,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
       if ( (int)*v5 >= (int)v5[1] ) /*0x6256e7*/
         DynamicVector::GrowCapacity((DynamicVector *)v5); /*0x6256eb*/
       if ( v13 < (int)*v5 ) /*0x6256f4*/
-        memcpy((char *)v5[2] + 24 * v13 + 24, (char *)v5[2] + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
-      v14 = (Struct *)((char *)v5[2] + 24 * v13); /*0x625721*/
+        memcpy(v5->u32_2 + 24 * v13 + 24, v5->u32_2 + 24 * v13, 24 * (unsigned int)*v5 - 24 * v13); /*0x625713*/
+      v14 = (Struct *)(v5->u32_2 + 24 * v13); /*0x625721*/
       if ( v14 ) /*0x625726*/
         Struct::WideStringCopy(v14, (int)&v18); /*0x62572d*/
       ++v10; /*0x625739*/
@@ -701,7 +701,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     v3 = (int *)this; /*0x625752*/
   }
-  DeleteAndZero::Alt((DeleteAndZero *)&v19.DeleteAndZero_field_0x04); /*0x62575a*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v19.q004); /*0x62575a*/
   DeleteAndZero::Alt(&v19); /*0x625763*/
   return v3; /*0x62576a*/
 
@@ -718,8 +718,8 @@ int Options::SaveOptionValue()
   void *v6; // esi
   void *v7; // [esp+4h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x625a24*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->field_4 ) /*0x625a2b*/
+  v2 = *(unsigned int *)this->q000; /*0x625a24*/
+  if ( *(unsigned int *)this->q000 < (int)this->field_4 ) /*0x625a2b*/
     return 0; /*0x625a2d*/
   v4 = 2 * v2; /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
@@ -729,7 +729,7 @@ int Options::SaveOptionValue()
   v7 = v5; /*0x625a64*/
   v6 = this->field_8; /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
-    qmemcpy(v5, v6, 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
+    qmemcpy(v5, v6, 20 * *(unsigned int *)this->q000); /*0x625a80*/
   __3_YAXPAX_Z(this->field_8); /*0x625a8d*/
   this->field_4 = (void *)v4; /*0x625a99*/
   this->field_8 = v7; /*0x625a9c*/
@@ -826,7 +826,7 @@ int Options::(float volume, int pad, void *a3_1)
   (*((unsigned short *)&(v4))) = Math::RoundToInt(v3 * 16384.0); /*0x5fa539*/
   EndBufferMixer((int *)g_MixerChannel_Score, v4); /*0x5fa546*/
   if ( a3_1 ) /*0x5fa551*/
-    PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, 1.0, 0); /*0x5fa56a*/
+    PlayVocClass(*&dword_8871E0->q710, 0x2000, 1.0, 0); /*0x5fa56a*/
   return Debug::Log(); /*0x5fa586*/
 }
 } // namespace gamemd
@@ -849,7 +849,7 @@ int Options::(float volume, int pad, void *a3_1)
   (*((unsigned short *)&(v6))) = Math::RoundToInt(*((float *)volume + 15) * 16384.0); /*0x5fa5ce*/
   EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fa5db*/
   if ( a3_1 ) /*0x5fa5e6*/
-        PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, *((float *)this + 15), 0);
+        PlayVocClass(*&dword_8871E0->q710, 0x2000, *((float *)this + 15), 0);
   return Debug::Log(); /*0x5fa61b*/
 }
 } // namespace gamemd
@@ -1275,8 +1275,8 @@ namespace gamemd {
 void Options::ClearComboBoxes()
 {
 
-  DeleteAndZero::Alt((DeleteAndZero *)&this->field_8); /*0x624466*/
-  DeleteAndZero::Alt((DeleteAndZero *)&this->field_4); /*0x62446e*/
+  DeleteAndZero::Alt(&this->q008); /*0x624466*/
+  DeleteAndZero::Alt(&this->q004); /*0x62446e*/
 
 }
 } // namespace gamemd

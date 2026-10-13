@@ -35,8 +35,8 @@ int AbstractClassVector::Read(unsigned int * a2, void *a2_2)
 namespace gamemd {
 unsigned int AbstractClassVector::Write(int a2)
 {
-  if ( (*((unsigned char *)&(*(unsigned int *)&this->q00C))) ) /*0x4e0480*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x4e0495*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x4e0480*/
+    return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4e0495*/
   else
     return 0; /*0x4e0487*/
 }
@@ -46,11 +46,11 @@ namespace gamemd {
 int AbstractClassVector::Construct(int aP1, int aP2)
 {
 
-  this->AbstractClassVector_field_0x04 = 0; /*0x4e0e8b*/
-  this->AbstractClassVector_field_0x08 = aP1; /*0x4e0e8e*/
-  LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
-  BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<AbstractClass *>::`vftable'; /*0x4e0e98*/
+  this->q004 = 0; /*0x4e0e8b*/
+  this->q008 = aP1; /*0x4e0e8e*/
+  LOBYTE(this->m_C) = 1; /*0x4e0e91*/
+  BYTE1(this->m_C) = 0; /*0x4e0e95*/
+  *(unsigned int *)this->__pad_000 = &VectorClass<AbstractClass *>::`vftable'; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

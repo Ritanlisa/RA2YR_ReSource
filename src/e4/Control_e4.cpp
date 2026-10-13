@@ -57,12 +57,12 @@ int Control::RepositionControlsDialog(HWND hWnd)
   v3 = v18.top - Rect.top; /*0x60b9ab*/
   nWidth = v18.right - v18.left; /*0x60b9ad*/
   v14 = Parent; /*0x60b9b3*/
-  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60b9b7*/
+  if ( !*(unsigned int *)&g_DialogHashMap_Count ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60b9d8*/
+  v4 = *(unsigned int **)(*(unsigned int *)&g_DialogHashMap_Base /*0x60b9d8*/
                   + 4
-                  * ((*(int (**)(HWND *))&g_DialogPool.__pad_208[80])(&v14)
-                   & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                  * ((*(int (**)(HWND *))&g_DialogHashMap_Hasher)(&v14)
+                   & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -83,64 +83,64 @@ int Control::RepositionControlsDialog(HWND hWnd)
   v14 = (HWND)v3; /*0x60ba16*/
   v16 = nWidth; /*0x60ba1a*/
   v17 = nHeight; /*0x60ba1e*/
-  if ( v5 == (Dialog *)268 /*0x60bb57*/
-    || v5 == (Dialog *)148
-    || v5 == (Dialog *)163
-    || v5 == (Dialog *)115
-    || v5 == (Dialog *)216
-    || v5 == (Dialog *)3003
-    || v5 == (Dialog *)245
-    || v5 == (Dialog *)261
-    || v5 == (Dialog *)226
-    || v5 == (Dialog *)213
-    || v5 == (Dialog *)693
-    || v5 == (Dialog *)183
-    || v5 == (Dialog *)692
-    || v5 == (Dialog *)3015
-    || v5 == (Dialog *)257
-    || v5 == (Dialog *)297
-    || v5 == (Dialog *)3014
-    || v5 == (Dialog *)215
-    || v5 == (Dialog *)264
-    || v5 == (Dialog *)188
-    || v5 == (Dialog *)189
-    || v5 == (Dialog *)187
-    || v5 == (Dialog *)181
-    || v5 == (Dialog *)3002
-    || v5 == (Dialog *)255
-    || v5 == (Dialog *)107
-    || v5 == (Dialog *)256
-    || v5 == (Dialog *)258
-    || v5 == (Dialog *)184
-    || v5 == (Dialog *)214
-    || v5 == (Dialog *)259
+  if ( v5 == 268 /*0x60bb57*/
+    || v5 == 148
+    || v5 == 163
+    || v5 == 115
+    || v5 == 216
+    || v5 == 3003
+    || v5 == 245
+    || v5 == 261
+    || v5 == 226
+    || v5 == 213
+    || v5 == 693
+    || v5 == 183
+    || v5 == 692
+    || v5 == 3015
+    || v5 == 257
+    || v5 == 297
+    || v5 == 3014
+    || v5 == 215
+    || v5 == 264
+    || v5 == 188
+    || v5 == 189
+    || v5 == 187
+    || v5 == 181
+    || v5 == 3002
+    || v5 == 255
+    || v5 == 107
+    || v5 == 256
+    || v5 == 258
+    || v5 == 184
+    || v5 == 214
+    || v5 == 259
     || (result = ((Dialog *)(v5))->IsSpecialTemplate(), (unsigned char)result) )
   {
     if ( DlgCtrlID == 1684 ) /*0x60bb63*/
     {
-      if ( v5 == (Dialog *)268 /*0x60bc38*/
-        || v5 == (Dialog *)148
-        || v5 == (Dialog *)163
-        || v5 == (Dialog *)115
-        || v5 == (Dialog *)216
-        || v5 == (Dialog *)3003
-        || v5 == (Dialog *)245
-        || v5 == (Dialog *)261
-        || v5 == (Dialog *)226
-        || v5 == (Dialog *)213
-        || v5 == (Dialog *)693
-        || v5 == (Dialog *)183
-        || v5 == (Dialog *)692
-        || v5 == (Dialog *)3015
-        || v5 == (Dialog *)257
-        || v5 == (Dialog *)297
-        || v5 == (Dialog *)3014
-        || v5 == (Dialog *)215
-        || v5 == (Dialog *)264 )
+      if ( v5 == 268 /*0x60bc38*/
+        || v5 == 148
+        || v5 == 163
+        || v5 == 115
+        || v5 == 216
+        || v5 == 3003
+        || v5 == 245
+        || v5 == 261
+        || v5 == 226
+        || v5 == 213
+        || v5 == 693
+        || v5 == 183
+        || v5 == 692
+        || v5 == 3015
+        || v5 == 257
+        || v5 == 297
+        || v5 == 3014
+        || v5 == 215
+        || v5 == 264 )
       {
         goto LABEL_74; /*0x60bc38*/
       }
-      if ( v5 == (Dialog *)188 ) /*0x60bc40*/
+      if ( v5 == 188 ) /*0x60bc40*/
       {
   LABEL_75:
         result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60bce4*/
@@ -149,24 +149,24 @@ int Control::RepositionControlsDialog(HWND hWnd)
         ++v3; /*0x60bcf6*/
         goto LABEL_170; /*0x60bcf7*/
       }
-      if ( v5 == (Dialog *)189 /*0x60bc99*/
-        || v5 == (Dialog *)187
-        || v5 == (Dialog *)181
-        || v5 == (Dialog *)3002
-        || v5 == (Dialog *)255
-        || v5 == (Dialog *)107
-        || v5 == (Dialog *)256
-        || v5 == (Dialog *)258
-        || v5 == (Dialog *)184
-        || v5 == (Dialog *)214
-        || v5 == (Dialog *)259 )
+      if ( v5 == 189 /*0x60bc99*/
+        || v5 == 187
+        || v5 == 181
+        || v5 == 3002
+        || v5 == 255
+        || v5 == 107
+        || v5 == 256
+        || v5 == 258
+        || v5 == 184
+        || v5 == 214
+        || v5 == 259 )
       {
   LABEL_74:
-        if ( v5 == (Dialog *)189 /*0x60bcda*/
-          || v5 == (Dialog *)258
-          || v5 == (Dialog *)3014
-          || v5 == (Dialog *)261
-          || v5 == (Dialog *)107 )
+        if ( v5 == 189 /*0x60bcda*/
+          || v5 == 258
+          || v5 == 3014
+          || v5 == 261
+          || v5 == 107 )
         {
           goto LABEL_75; /*0x60bcda*/
         }
@@ -178,26 +178,26 @@ int Control::RepositionControlsDialog(HWND hWnd)
       }
       else
       {
-        if ( v5 != (Dialog *)293 /*0x60bdfc*/
-          && v5 != (Dialog *)231
-          && v5 != (Dialog *)278
-          && (v5 == (Dialog *)194
-           || v5 != (Dialog *)201
-           && v5 != (Dialog *)285
-           && v5 != (Dialog *)284
-           && v5 != (Dialog *)276
-           && v5 != (Dialog *)700
-           && v5 != (Dialog *)275
-           && v5 != (Dialog *)265
-           && v5 != (Dialog *)271
-           && v5 != (Dialog *)279
-           && v5 != (Dialog *)230
-           && v5 != (Dialog *)243
-           && v5 != (Dialog *)244
-           && v5 != (Dialog *)270
-           && v5 != (Dialog *)274)
-          || v5 == (Dialog *)201
-          || v5 == (Dialog *)275 )
+        if ( v5 != 293 /*0x60bdfc*/
+          && v5 != 231
+          && v5 != 278
+          && (v5 == 194
+           || v5 != 201
+           && v5 != 285
+           && v5 != 284
+           && v5 != 276
+           && v5 != 700
+           && v5 != 275
+           && v5 != 265
+           && v5 != 271
+           && v5 != 279
+           && v5 != 230
+           && v5 != 243
+           && v5 != 244
+           && v5 != 270
+           && v5 != 274)
+          || v5 == 201
+          || v5 == 275 )
         {
           return result; /*0x60bdfc*/
         }
@@ -209,7 +209,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
       return MoveWindow(hWnd, X, v3, nWidth, nHeight, 0); /*0x60c0a9*/
     }
   }
-  if ( v5 == (Dialog *)258 ) /*0x60be10*/
+  if ( v5 == 258 ) /*0x60be10*/
   {
     if ( DlgCtrlID == 1292 ) /*0x60be18*/
     {
@@ -229,13 +229,13 @@ int Control::RepositionControlsDialog(HWND hWnd)
     }
     goto LABEL_167; /*0x60be4a*/
   }
-  if ( v5 == (Dialog *)187 ) /*0x60be79*/
+  if ( v5 == 187 ) /*0x60be79*/
   {
     if ( DlgCtrlID != 1344 ) /*0x60be81*/
       return result; /*0x60be81*/
     --nWidth; /*0x60be87*/
   }
-  else if ( v5 == (Dialog *)188 || v5 == (Dialog *)189 ) /*0x60bea2*/
+  else if ( v5 == 188 || v5 == 189 ) /*0x60bea2*/
   {
     if ( DlgCtrlID != 1343 ) /*0x60c027*/
     {
@@ -259,7 +259,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
   }
   else
   {
-    if ( v5 == (Dialog *)259 ) /*0x60beae*/
+    if ( v5 == 259 ) /*0x60beae*/
     {
       if ( DlgCtrlID != 1779 /*0x60beee*/
         && DlgCtrlID != 1780
@@ -278,9 +278,9 @@ int Control::RepositionControlsDialog(HWND hWnd)
       v3 -= 50; /*0x60bf20*/
       goto LABEL_170; /*0x60bf22*/
     }
-    if ( v5 == (Dialog *)3015 ) /*0x60bf2d*/
+    if ( v5 == 3015 ) /*0x60bf2d*/
       return result; /*0x60bf2d*/
-    if ( v5 == (Dialog *)264 ) /*0x60bf39*/
+    if ( v5 == 264 ) /*0x60bf39*/
     {
       if ( DlgCtrlID == 1939 || DlgCtrlID == 1940 || DlgCtrlID == 1938 || DlgCtrlID == 1941 ) /*0x60bf5d*/
         ++v3; /*0x60bf5f*/
@@ -302,9 +302,9 @@ int Control::RepositionControlsDialog(HWND hWnd)
       v10 = X + 1; /*0x60bfd3*/
       goto LABEL_168; /*0x60bfd4*/
     }
-    if ( v5 != (Dialog *)275 ) /*0x60bfdf*/
+    if ( v5 != 275 ) /*0x60bfdf*/
     {
-      if ( v5 != (Dialog *)270 || DlgCtrlID != 1951 ) /*0x60c014*/
+      if ( v5 != 270 || DlgCtrlID != 1951 ) /*0x60c014*/
         return result; /*0x60c014*/
       v10 = X + 1; /*0x60c01e*/
       goto LABEL_168; /*0x60c01f*/
@@ -337,19 +337,19 @@ int Control::CheckControlTypeDialog()
   int v2; // ecx
   Control *v3; // [esp+4h] [ebp-4h] BYREF
 
-  result = *(unsigned int *)&g_DialogPool.__pad_208[60]; /*0x60c541*/
+  result = *(unsigned int *)&g_DialogHashMap_Count; /*0x60c541*/
   v3 = this; /*0x60c549*/
-  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60c54d*/
+  if ( !*(unsigned int *)&g_DialogHashMap_Count ) /*0x60c54d*/
     goto LABEL_7; /*0x60c54d*/
-  result = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60c570*/
+  result = *(unsigned int *)(*(unsigned int *)&g_DialogHashMap_Base /*0x60c570*/
                      + 4
-                     * ((*(int (**)(Control **))&g_DialogPool.__pad_208[80])(&v3)
-                      & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                     * ((*(int (**)(Control **))&g_DialogHashMap_Hasher)(&v3)
+                      & ((1 << g_DialogHashMap_Buckets) - 1)));
   if ( !result ) /*0x60c575*/
     goto LABEL_7; /*0x60c575*/
   while ( *(Control **)result != v3 ) /*0x60c57d*/
   {
-    result = *(unsigned int *)(result + 516); /*0x60c57f*/
+    result = result->u32_204; /*0x60c57f*/
     if ( !result ) /*0x60c587*/
     {
       (*((unsigned char *)&(result))) = 0; /*0x60c589*/
@@ -359,7 +359,7 @@ int Control::CheckControlTypeDialog()
   v2 = result + 4; /*0x60c592*/
   if ( result != -4 ) /*0x60c597*/
   {
-    result = *(unsigned int *)(result + 112); /*0x60c59e*/
+    result = *&result->u16_70; /*0x60c59e*/
     if ( result == 268 /*0x60c7b0*/
       || result == 148
       || result == 182

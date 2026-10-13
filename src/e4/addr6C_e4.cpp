@@ -377,13 +377,13 @@ int ProcessGameResults(char a1)
     do
     {
       eax72 = *(CampaignScore **)v55;
-      if ( *(unsigned char *)((unsigned int **)((char *)v55 + 0x7B0) && eax72 != v57 ))
+      if ( *&v55->u32_7B0 && eax72 != v57 ))
       {
         v60 = aP2;
         *ecx71++ = eax72;
-        aP2 = (ObjectClass *)&v60->q000[1];
+        aP2 = &v60->AbstractClass_1;
       }
-      v55 =(IUnknown *)(unsigned int)((HouseClass *)((char *)v55 + 4));
+      v55 =(IUnknown *)(unsigned int)(&v55->u32_4);
       v59 =(unsigned int)(IUnknown *)((char *)v59 - 1);
     }
     while ( v59 );
@@ -404,7 +404,7 @@ int ProcessGameResults(char a1)
         {
           int v66 = *(unsigned int *)v64;
           int v67 = *((unsigned int *)v64 - 1);
-          if ( _strcmpi((char *)(v67 + 90100), (char *)(*(unsigned int *)v64 + 90100)) > 0 )
+          if ( _strcmpi((char *)(v67 + 90100), (char *)(*&v64->u32_57FD0)) > 0 )
           {
             *((unsigned int *)v64 - 1) = v66;
             *(unsigned int *)v64 = v67;
@@ -416,7 +416,7 @@ int ProcessGameResults(char a1)
         v62 = v268;
       }
       v61 = aP2;
-      v62 = (IUnknown *)((char *)v62 + 1);
+      v62 = &v62->u32_1;
       v268 = v62;
     }
     while ( v62 < (IUnknown *)aP2 );
@@ -429,7 +429,7 @@ int ProcessGameResults(char a1)
     do
     {
       int v71 = *(unsigned int *)v69;
-      if ( !_strcmpi((char *)(*(unsigned int *)v69 + 90100), (const char *)&byte_B779E0) )
+      if ( !_strcmpi((char *)(*&v69->u32_57FD0), (const char *)&byte_B779E0) )
       {
         int v72 = v282;
         v282 = v71;
@@ -446,7 +446,7 @@ int ProcessGameResults(char a1)
     int * v74 = &v282;
     while ( _strcmpi((char *)(*v74 + 90100), (const char *)&byte_B77830) )
     {
-      v73 = (IUnknown *)((char *)v73 + 1);
+      v73 = &v73->u32_1;
       ++v74;
       if ( v73 >= v68 )
         goto LABEL_95;
@@ -1138,8 +1138,8 @@ LABEL_341:
 LABEL_342:
       ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v240);
 LABEL_343:
-      v268 = (IUnknown *)((char *)v225 + 1);
-      if ( (char *)v225 + 1 >= (char *)aP2 )
+      v268 = &v225->u32_1;
+      if ( &v225->u32_1 >= (char *)aP2 )
         break;
       v104 = v268;
     }
@@ -1231,7 +1231,7 @@ LABEL_343:
       }
       if ( (int)v269 < v249 )
       {
-memcpy( (void *)(&v255[32776 * ((unsigned int)(char *)v269 + 1)]), (const void *)(&v255[32776 * (unsigned int)v269]), 32776 * v249 - 32776 * (unsigned int)v269);
+memcpy( (void *)(&v255[32776 * ((unsigned int)&v269->u32_1)]), (const void *)(&v255[32776 * (unsigned int)v269]), 32776 * v249 - 32776 * (unsigned int)v269);
 
 
 
@@ -1349,21 +1349,21 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
     AudioController::Init(stru_B0BF28); /*0x6c90a2*/
     dword_B0BF64 = 1; /*0x6c90ad*/
     v6 = 0; /*0x6c90b7*/
-    v7 = *((unsigned int *)dword_A8B230 + 387); /*0x6c90b9*/
+    v7 = dword_A8B230->difficulty2; /*0x6c90b9*/
     if ( v7 ) /*0x6c90c1*/
     {
       if ( v7 == 1 ) /*0x6c90ce*/
       {
-        v6 = *((unsigned int *)dword_A8B230 + 3434); /*0x6c90d0*/
+        v6 = dword_A8B230->parTimeMedium; /*0x6c90d0*/
       }
       else if ( v7 == 2 ) /*0x6c90db*/
       {
-        v6 = *((unsigned int *)dword_A8B230 + 3435); /*0x6c90dd*/
+        v6 = dword_A8B230->parTimeDifficult; /*0x6c90dd*/
       }
     }
     else
     {
-      v6 = *((unsigned int *)dword_A8B230 + 3433); /*0x6c90c3*/
+      v6 = dword_A8B230->parTimeEasy; /*0x6c90c3*/
     }
     v8 = v6 / 60; /*0x6c90fc*/
     swprintf( /*0x6c9146*/
@@ -1374,10 +1374,10 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
       v6 / 60 % 60);
     DlgItem = GetDlgItem(hWnd, 1777); /*0x6c915a*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x6c9169*/
-    v10 = *((unsigned int *)dword_A8B230 + 391); /*0x6c9174*/
-    if ( *((unsigned int *)dword_A8B230 + 389) != -1 ) /*0x6c9187*/
+    v10 = dword_A8B230->pauseTimer; /*0x6c9174*/
+    if ( dword_A8B230->u32_614 != -1 ) /*0x6c9187*/
     {
-      v11 = (char *)dword_A8B230 + 1556; /*0x6c917a*/
+      v11 = &dword_A8B230->u32_614; /*0x6c917a*/
       Formatb = (wchar_t *)*((unsigned int *)dword_A8B230 + 391); /*0x6c9180*/
       v10 = (int)Formatb + TimerGetTicks() - *v11; /*0x6c9199*/
     }
@@ -1392,13 +1392,13 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
     SendMessageA(v13, 0x4B2u, 0, (LPARAM)lParam); /*0x6c9226*/
     if ( v12 > v8 ) /*0x6c9233*/
     {
-      v14 = (wchar_t *)((char *)dword_A8B230 + 13806); /*0x6c9243*/
-      v15 = (wchar_t *)((char *)dword_A8B230 + 13837); /*0x6c9249*/
+      v14 = &dword_A8B230->overParTitle; /*0x6c9243*/
+      v15 = &dword_A8B230->overParMessage; /*0x6c9249*/
     }
     else
     {
-      v14 = (wchar_t *)((char *)dword_A8B230 + 13744); /*0x6c9235*/
-      v15 = (wchar_t *)((char *)dword_A8B230 + 13775); /*0x6c923b*/
+      v14 = &dword_A8B230->underParTitle; /*0x6c9235*/
+      v15 = &dword_A8B230->underParMessage; /*0x6c923b*/
     }
     String = GetStringCSF(v14, 0, aDRa2mdpostStls, 138); /*0x6c926e*/
     v17 = GetStringCSF(v15, 0, aDRa2mdpostStls, 139); /*0x6c927b*/
@@ -1417,7 +1417,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT, WPARAM wParam, LPARAM)
     {
       do /*0x6c930e*/
       {
-        v24 = *(unsigned int *)&dword_A8022C->vfptr[4 * v23]; /*0x6c92be*/
+        v24 = *&dword_A8022C->vtable1; /*0x6c92be*/
         if ( *(unsigned char *)(v24 + 493) ) /*0x6c92c1*/
         {
           v25 = (char *)v22 + SumArray((int *)(v24 + 9032)); /*0x6c92dc*/
@@ -1732,10 +1732,10 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   int Instance; // ebx
 
   GadgetClass::Construct((ShpButtonClass *)this, aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
-  Buffer::Init((Buffer *)((char *)this + 36), 0, 0); /*0x6c656c*/
-  *((unsigned int *)this + 12) = 0; /*0x6c657e*/
-  *((unsigned int *)this + 13) = a4; /*0x6c6585*/
-  *(unsigned int *)this->__pad_0 = &StaticButtonClass::`vftable'; /*0x6c6588*/
+  Buffer::Init(&this->u32_24, 0, 0); /*0x6c656c*/
+  this->M48 = 0; /*0x6c657e*/
+  this->M52 = a4; /*0x6c6585*/
+  *(unsigned int *)this->vfptr = &StaticButtonClass::`vftable'; /*0x6c6588*/
   StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
@@ -1948,7 +1948,7 @@ char E4Recv_6C8900::sub_6C8900()
   void *v7; // [esp+4h] [ebp-4h]
 
   vtable0 = this->AbstractClass; /*0x6c8904*/
-  if ( (int)this->AbstractClass < (int)this->? ) /*0x6c890b*/
+  if ( (int)this->AbstractClass < (int)this->M4 ) /*0x6c890b*/
     return 0; /*0x6c890d*/
   v4 = 2 * (unsigned int)vtable0; /*0x6c8913*/
   if ( 2 * (int)vtable0 < 10 ) /*0x6c891b*/
@@ -1956,12 +1956,12 @@ char E4Recv_6C8900::sub_6C8900()
   v5 = (void *)__2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   v7 = v5; /*0x6c8947*/
-  vtable2 = this->?; /*0x6c894d*/
+  vtable2 = this->M8; /*0x6c894d*/
   if ( vtable2 ) /*0x6c8952*/
     qmemcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
-  __3_YAXPAX_Z(this->?); /*0x6c8974*/
-  this->? = (void *)v4; /*0x6c8980*/
-  this->? = v7; /*0x6c8983*/
+  __3_YAXPAX_Z(this->M8); /*0x6c8974*/
+  this->M4 = (void *)v4; /*0x6c8980*/
+  this->M8 = v7; /*0x6c8983*/
   return 1; /*0x6c890f*/
 
 }
@@ -1988,8 +1988,8 @@ void * E4Recv_6C89B0::sub_6C89B0(size_t Size)
 
   this->AbstractClass = (void *)Size; /*0x6c89b8*/
   v3 = (void *)__2_YAPAXI_Z(Size); /*0x6c89ba*/
-  this->? = v3; /*0x6c89c2*/
-  this->? = v3; /*0x6c89c5*/
+  this->M4 = v3; /*0x6c89c2*/
+  this->M8 = v3; /*0x6c89c5*/
   return &this->AbstractClass; /*0x6c89ca*/
 
 }
@@ -2010,18 +2010,18 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   unsigned char *v14; // [esp+2Ch] [ebp+Ch]
   int v15; // [esp+30h] [ebp+10h]
 
-  vtable2 = this->?; /*0x6c8b19*/
-  if ( (char *)(vtable2 + 6) > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
+  vtable2 = this->M8; /*0x6c8b19*/
+  if ( &vtable2->u32_6 > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   v12 = this->?; /*0x6c8b2c*/
-  this->? = vtable2 + 6; /*0x6c8b30*/
+  this->M8 = vtable2 + 6; /*0x6c8b30*/
   if ( !vtable2 ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/
   *vtable2 = a4; /*0x6c8b4f*/
   vtable2[1] = a5; /*0x6c8b52*/
   vtable2[2] = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
   vtable2[3] = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
-  *((unsigned int *)vtable2 + 2) = this->?; /*0x6c8b70*/
+  vtable2->vtable3 = this->M8; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
   v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 92))(a2, *v8, v8[1]); /*0x6c8b92*/
@@ -2031,8 +2031,8 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
     while ( 1 ) /*0x6c8bbb*/
     {
       v10 = Map_Append(v14, (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 8)); /*0x6c8bbb*/
-      v11 = (char *)this->?; /*0x6c8bc0*/
-      if ( &v11[v10] > (char *)this->? + (unsigned int)this->AbstractClass || (this->? = &v11[v10], !v11) ) /*0x6c8bd4*/
+      v11 = (char *)this->M8; /*0x6c8bc0*/
+      if ( &v11[v10] > (char *)this->M8 + (unsigned int)this->AbstractClass || (this->M8 = &v11[v10], !v11) ) /*0x6c8bd4*/
       {
         (*(void (**)(int))(*(unsigned int *)v9 + 96))(v9); /*0x6c8c16*/
         return 0; /*0x6c8c22*/
@@ -2373,8 +2373,8 @@ unsigned int * E4Recv_6C96E0::sub_6C96E0(unsigned int * a2, int a3)
   v6 = (char *)((char *)&v9 - (char *)v3); /*0x6c9707*/
   do /*0x6c9716*/
   {
-    v7 = *(float *)((char *)&v3->vfptr + v5) + *(float *)&v3->vfptr; /*0x6c970c*/
-    v3 = (ObjectClass *)((char *)v3 + 4); /*0x6c970e*/
+    v7 = *(float *)v3->vtable1 + v5) + *&v3->vtable1; /*0x6c970c*/
+    v3 = &v3->vtable2; /*0x6c970e*/
     --v4; /*0x6c9711*/
     *(float *)((char *)v3 + (unsigned int)v6 - 4) = v7; /*0x6c9712*/
   }
@@ -2452,7 +2452,7 @@ int E4Recv_6C9940::sub_6C9940(char a2, char a3, unsigned char a4)
   HIBYTE(v4) = a2; /*0x6c9946*/
   LOBYTE(v4) = a3; /*0x6c9950*/
   result = a4 | (v4 << 8); /*0x6c9957*/
-  this->? = (void *)result; /*0x6c9959*/
+  this->M8 = (void *)result; /*0x6c9959*/
   return result; /*0x6c995c*/
 
 }
@@ -2466,16 +2466,16 @@ void E4Recv_6C9960::sub_6C9960(wchar_t * String)
   int v3; // eax
   wchar_t *v4; // eax
 
-  if ( this->? ) /*0x6c9964*/
+  if ( this->M20 ) /*0x6c9964*/
   {
     __3_YAXPAX_Z((void *)this->?); /*0x6c996c*/
-    this->? = 0; /*0x6c9974*/
+    this->M20 = 0; /*0x6c9974*/
   }
   if ( String ) /*0x6c9981*/
   {
     v3 = wcslen(String); /*0x6c9984*/
     v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x6c998e*/
-    this->? = (int)v4; /*0x6c9996*/
+    this->M20 = (int)v4; /*0x6c9996*/
     if ( v4 ) /*0x6c999b*/
       wcscpy(v4, String); /*0x6c999f*/
   }
@@ -2501,14 +2501,14 @@ void * E4Recv_6C9AC0::sub_6C9AC0()
 {
 
   this->AbstractClass = 0; /*0x6c9ac4*/
-  this->? = 0; /*0x6c9ac6*/
-  this->? = 0; /*0x6c9ac9*/
-  this->? = 0; /*0x6c9acc*/
-  this->? = 0; /*0x6c9acf*/
-  this->? = 0; /*0x6c9ad2*/
-  this->? = 0; /*0x6c9ad5*/
-  this->? = 0; /*0x6c9ad8*/
-  this->? = 0; /*0x6c9adb*/
+  this->M4 = 0; /*0x6c9ac6*/
+  this->M8 = 0; /*0x6c9ac9*/
+  this->M12 = 0; /*0x6c9acc*/
+  this->M16 = 0; /*0x6c9acf*/
+  this->M20 = 0; /*0x6c9ad2*/
+  this->q018 = 0; /*0x6c9ad5*/
+  this->M28 = 0; /*0x6c9ad8*/
+  this->q020 = 0; /*0x6c9adb*/
   return &this->AbstractClass; /*0x6c9ade*/
 
 }

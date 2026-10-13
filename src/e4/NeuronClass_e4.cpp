@@ -39,16 +39,16 @@ NeuronClass::NeuronClass()
   int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
-  *((unsigned int *)this + 9) = 0; /*0x43a358*/
-  *((unsigned int *)this + 10) = 0; /*0x43a35f*/
-  *((unsigned int *)this + 11) = 0; /*0x43a366*/
-  *((unsigned int *)this + 12) = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
-  *(unsigned int *)this->__pad_0 = &NeuronClass::`vftable'; /*0x43a375*/
+  this->u32_24 = 0; /*0x43a358*/
+  this->u32_28 = 0; /*0x43a35f*/
+  this->u32_2C = 0; /*0x43a366*/
+  this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
+  *(unsigned int *)this->vtable1 = &NeuronClass::`vftable'; /*0x43a375*/
   this->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a37b*/
-  this->NeuronClass_field_0x08 = (int)&NeuronClass::`vftable'; /*0x43a382*/
+  this->vtable3 = (int)&NeuronClass::`vftable'; /*0x43a382*/
   this->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a389*/
   if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
-    || (BYTE1(g_BuildingLoadQueue_Array.?[0]) || !g_BuildingLoadQueue_Array.?)
+    || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
     && g_BuildingLoadQueue_Array.?[2] > 0
     && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&g_BuildingLoadQueue_Array.?[2] + 8))(
          &g_BuildingLoadQueue_Array.?[2],
@@ -69,7 +69,7 @@ NeuronClass::NeuronClass()
     v3 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x43a428*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3) = this; /*0x43a437*/
   }
-  return (int)this->__pad_0; /*0x43a43c*/
+  return (int)this->vtable1; /*0x43a43c*/
 
 }
 }  // G42.18c ns repair
@@ -81,10 +81,10 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   int v4; // eax
   NeuronClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->__pad_0 = &vt_NeuronClass; /*0x43a9cd*/
-  Block->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a9d3*/
-  Block->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a9da*/
-  Block->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a9e1*/
+  *(unsigned int *)Block->tail_0 = &vt_NeuronClass; /*0x43a9cd*/
+  Block->__pad_004 = (int)&vt_NeuronClass; /*0x43a9d3*/
+  Block->u32_8 = (int)&vt_NeuronClass; /*0x43a9da*/
+  Block->u32_C = (int)&vt_NeuronClass; /*0x43a9e1*/
   v6 = Block; /*0x43a9ef*/
   v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -101,8 +101,8 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
     }
   }
   v6 = Block; /*0x43aa38*/
-  v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_D96[2] + 16))( /*0x43aa3c*/
-         &g_BuildingLoadQueue_Array.__pad_D96[2],
+  v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&DataGlobal_B0F5D8 + 16))( /*0x43aa3c*/
+         &DataGlobal_B0F5D8,
          &v6);
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.PaletteFile[1] ) /*0x43aa4c*/
   {
@@ -117,14 +117,14 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   AbstractClass::DTOR((AbstractClass *)Block); /*0x43aa73*/
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
     operator delete((void *)(Block)); /*0x43aa80*/
-  return Block->__pad_0; /*0x43aa8a*/
+  return Block->tail_0; /*0x43aa8a*/
 }
 }  // G42.18c ns repair
 // 0x43AB20
 namespace gamemd {
 int NeuronClass_25::Update(int a2, void *a2_2, void *a3_1, void *a4_1)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x43ab2a*/
+  return *(unsigned int *)(*&this->q004 + 4 * a2); /*0x43ab2a*/
 }
 } // namespace gamemd
 
@@ -137,13 +137,13 @@ char NeuronClass_25::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x43ab32*/
+  m_8 = this->m_8; /*0x43ab32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x43ab3d*/
   {
     v3 = 0; /*0x43ab3f*/
     if ( m_8 <= 0 ) /*0x43ab43*/
       return 1; /*0x43ab63*/
-    v4 = *(unsigned int **)&this->q004; /*0x43ab45*/
+    v4 = *&this->q004; /*0x43ab45*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x43ab4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x43ab54*/
     {
@@ -176,20 +176,20 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x43aba6*/
     if ( v4 ) /*0x43abaa*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x43abb5*/
+      if ( *&this->q004 ) /*0x43abb5*/
       {
         m_8 = this->m_8; /*0x43abbc*/
         if ( a2 < m_8 ) /*0x43abc1*/
           m_8 = a2; /*0x43abc3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x43abc9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
         if ( BYTE1(this->m_C) ) /*0x43abdb*/
         {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x43abe6*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x43abee*/
+          __3_YAXPAX_Z(*&this->q004); /*0x43abe6*/
+          *&this->q004 = 0; /*0x43abee*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x43abf7*/
+      *&this->q004 = v4; /*0x43abf7*/
       this->m_8 = a2; /*0x43abff*/
       BYTE1(this->m_C) = a3 == 0; /*0x43ac02*/
       return 1; /*0x43ac08*/
@@ -201,7 +201,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVNeuronClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x43ac12*/
+    (*(void (**)(_VectorClass_PAVNeuronClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x43ac12*/
     return 1; /*0x43ac18*/
   }
 
@@ -212,13 +212,13 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int NeuronClass_25::ddtor()
 {
-  if ( *(unsigned int *)&this->IsAllocated && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x43ac2d*/
+  if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x43ac2d*/
   {
-    operator delete((void *)(*(void **)&this->q004)); /*0x43ac33*/
-    *(unsigned int *)&this->q004 = 0; /*0x43ac3b*/
+    operator delete((void *)(*&this->q004)); /*0x43ac33*/
+    *&this->q004 = 0; /*0x43ac3b*/
   }
-  (((unsigned char *)&(*(unsigned int *)&this->q00C))[1]) = 0; /*0x43ac3e*/
-  this->q008 = 0; /*0x43ac41*/
+  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x43ac3e*/
+  this->m_8 = 0; /*0x43ac41*/
 }
 } // namespace gamemd
 
@@ -230,13 +230,13 @@ int NeuronClass_25::Activate(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !(*((unsigned char *)&(*(unsigned int *)&this->q00C))) ) /*0x43ac50*/
+  if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x43ac50*/
     return 0; /*0x43ac58*/
-  m_8 = this->q008; /*0x43ac5e*/
+  m_8 = this->m_8; /*0x43ac5e*/
   result = 0; /*0x43ac61*/
   if ( m_8 <= 0 ) /*0x43ac65*/
     return -1; /*0x43ac7c*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x43ac6b*/
+  for ( i = *&this->q004; *i != *a2; ++i ) /*0x43ac6b*/
   {
     if ( ++result >= m_8 ) /*0x43ac7a*/
       return -1; /*0x43ac7a*/
@@ -249,8 +249,8 @@ int NeuronClass_25::Activate(unsigned int * a2)
 namespace gamemd {
 unsigned int NeuronClass_25::Fire(int a2)
 {
-  if ( (*((unsigned char *)&(*(unsigned int *)&this->q00C))) ) /*0x43ac90*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x43aca5*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x43ac90*/
+    return (unsigned int)(a2 - *&this->q004) >> 2; /*0x43aca5*/
   else
     return 0; /*0x43ac97*/
 }
@@ -262,17 +262,17 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x43acb3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x43acb6*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x43acc0*/
+  v3 = *&Block->__pad_004; /*0x43acb3*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x43acb6*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x43acc0*/
   {
     operator delete((void *)(v3)); /*0x43acc8*/
-    *(unsigned int *)&Block->q004 = 0; /*0x43acd0*/
+    *&Block->__pad_004 = 0; /*0x43acd0*/
   }
-  (((unsigned char *)&(*(unsigned int *)&Block->q00C))[1]) = 0; /*0x43acdb*/
-  Block->q008 = 0; /*0x43ace1*/
+  (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x43acdb*/
+  Block->u32_8 = 0; /*0x43ace1*/
   if ( (a2 & 1) != 0 ) /*0x43ace8*/
     operator delete((void *)(Block)); /*0x43aceb*/
-  return Block->__pad_0; /*0x43acf5*/
+  return Block->tail_0; /*0x43acf5*/
 }
 } // namespace gamemd

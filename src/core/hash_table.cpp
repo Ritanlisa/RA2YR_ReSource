@@ -33,7 +33,7 @@ int Hash::InsertOrdered(void* table, const void* entry, int a2)
 {
   int result; // eax
 
-  result = (*(int (__thiscall **)(GScreenClass *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
+  result = this->vt_slot_44(a2); /*0x4f4418*/
   if ( (unsigned char)result ) /*0x4f441d*/
   {
     (*((unsigned char *)&(result))) = 0; /*0x4f441f*/
@@ -56,7 +56,7 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
   int *v5; // edi
   int v6; // ebx
 
-  this->__pad_0[0] = 0; /*0x69d96f*/
+  this->state = 0; /*0x69d96f*/
   SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
   a3 = a3; /*0x69d977*/
   if ( a3 ) /*0x69d97d*/
@@ -67,7 +67,7 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
       v6 = a3 / 64; /*0x69d996*/
       do /*0x69d9bb*/
       {
-        SHA1::Transform(v5, (unsigned int *)this + 6); /*0x69d99c*/
+        SHA1::Transform(v5, &this->u32_18); /*0x69d99c*/
         v5 += 16; /*0x69d9ab*/
         this->u32_2C += 64; /*0x69d9ad*/
         --v6; /*0x69d9b6*/

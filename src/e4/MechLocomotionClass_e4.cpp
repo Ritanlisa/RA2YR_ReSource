@@ -50,7 +50,7 @@ namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
   *(unsigned int *)Block->0 = &vt_MechLocomotionClass; /*0x5b1b53*/
-  *(unsigned int *)&Block->0[4] = &vt_MechLocomotionClass; /*0x5b1b59*/
+  *&Block->__pad_004 = &vt_MechLocomotionClass; /*0x5b1b59*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     operator delete((void *)(Block)); /*0x5b1b6d*/

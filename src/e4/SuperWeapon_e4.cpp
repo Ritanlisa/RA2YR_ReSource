@@ -10,6 +10,6 @@
 namespace gamemd {  // G42.18 ns repair
 char SuperWeapon::GetField10()
 {
-  return *(unsigned char *)(this->u32_28 + 230); /*0x6cc2a9*/
+  return *(unsigned char *)(this->q028 + 230); /*0x6cc2a9*/
 }
 }  // G42.18 ns repair

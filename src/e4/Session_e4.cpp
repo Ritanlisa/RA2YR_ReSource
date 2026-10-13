@@ -58,7 +58,7 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
         if ( result < v4 ) /*0x5d1db4*/
         {
           v5 = (void *)(v4 - 1); /*0x5d1db6*/
-          for ( v3[4] = v5; result < (int)v3[4]; *((unsigned int *)v3[1] + result - 1) = *((unsigned int *)v3[1] + result) ) /*0x5d1dbc*/
+          for ( v3[4] = v5; result < (int)v3[4]; *(v3->vtable2 + result - 1) = *(v3->vtable2 + result) ) /*0x5d1dbc*/
             ++result; /*0x5d1dc1*/
         }
       }
@@ -293,7 +293,7 @@ int Session::StartGame(HWND hWnd)
   ObjectClass *v3; // eax
   Skirmish *v4; // eax
 
-  if ( !(unsigned __int8)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
+  if ( !(unsigned __int8)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions)) ) /*0x5ed381*/
     return Session::PrepareGame(hWnd); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/

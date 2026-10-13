@@ -192,10 +192,10 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   Debug::Log(); /*0x5350f0*/
   v6 = CCFileClass::Construct(&v18, Buffer); /*0x535101*/
   v7 = (*(int (**)(unsigned int *, unsigned int))(*v6 + 20))(v6, 0); /*0x535115*/
-  v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535117*/
+  v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535117*/
   v20 = 0; /*0x53511f*/
   Vector::Clear((int)v19); /*0x535126*/
-  v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x535134*/
+  v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x535134*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x535138*/
   if ( v7 ) /*0x53513f*/
   {
@@ -210,10 +210,10 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   Debug::Log(); /*0x535193*/
   v9 = CCFileClass::Construct(&v18, Buffer); /*0x5351a4*/
   v10 = (*(int (**)(unsigned int *, unsigned int))(*v9 + 20))(v9, 0); /*0x5351b8*/
-  v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x5351ba*/
+  v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
   Vector::Clear((int)v19); /*0x5351c9*/
-  v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5351d2*/
+  v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5351d2*/
   ((BufferIOFileClass *)(&v18))->Dtor(); /*0x5351d6*/
   if ( v10 ) /*0x5351dd*/
   {
@@ -238,10 +238,10 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     Debug::Log(); /*0x53526a*/
     v13 = CCFileClass::Construct(&v18, Buffer); /*0x53527b*/
     v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x535294*/
-    v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535296*/
+    v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535296*/
     v20 = 0; /*0x53529a*/
     Vector::Clear((int)v19); /*0x5352a1*/
-    v18.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5352aa*/
+    v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5352aa*/
     ((gamemd::BufferIOFileClass *)(&v18))->Dtor(); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
     {
@@ -258,20 +258,20 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     {
       SidebarClass::ReadButtonList((SidebarClass *)dword_8871E0); /*0x53533d*/
       SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/
-      v21.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535353*/
+      v21.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535353*/
       v23 = 0; /*0x53535a*/
       Vector::Clear((int)v22); /*0x535361*/
-      v21.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x53536d*/
+      v21.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x53536d*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x535374*/
       return 1; /*0x535379*/
     }
     else
     {
       Debug::Log(); /*0x53538b*/
-      v21.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x53539a*/
+      v21.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x53539a*/
       v23 = 0; /*0x5353a1*/
       Vector::Clear((int)v22); /*0x5353a8*/
-      v21.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5353b4*/
+      v21.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x5353b4*/
       ((BufferIOFileClass *)(&v21))->Dtor(); /*0x5353bb*/
       return 0; /*0x5353c0*/
     }
@@ -328,8 +328,8 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
 
   v2 = this; /*0x627598*/
   v36 = this; /*0x62759c*/
-  v3 = *(unsigned int *)this->__pad_0; /*0x6275a0*/
-  if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x6275a6*/
+  v3 = *(unsigned int *)this->__pad_000; /*0x6275a0*/
+  if ( *(unsigned int *)this->__pad_000 == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
   strcpy(String, a2); /*0x6275d6*/
   strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
@@ -341,7 +341,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   do /*0x627697*/
   {
     Struct::Zero3(v5); /*0x62768e*/
-    v5 = (Struct *)((char *)v5 + 3); /*0x627693*/
+    v5 = &v5->Struct_3; /*0x627693*/
     --v6; /*0x627696*/
   }
   while ( v6 ); /*0x627697*/
@@ -352,14 +352,14 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   qmemcpy(v39, v7, sizeof(v39)); /*0x6276c7*/
   for ( i = 0; i < 256; ++i ) /*0x6276c9*/
   {
-    v10 = (char *)v39 + 2 * (i % 256) + i % 256; /*0x6276e2*/
+    v10 = &v39->u32_2 * (i % 256) + i % 256; /*0x6276e2*/
     v31 = *(unsigned short *)v10; /*0x6276ea*/
     v11 = v10[2]; /*0x6276ef*/
     *v10 = 4 * *(unsigned short *)v10; /*0x6276f9*/
     v10[1] = 4 * HIBYTE(v31); /*0x627706*/
     v10[2] = 4 * v11; /*0x62770f*/
   }
-  v12 = *(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 16); /*0x627719*/
+  v12 = *(unsigned int *)(*v2->u32_4.__pad_0 + 16); /*0x627719*/
   v37 = v12; /*0x62771c*/
   v13 = __2_YAPAXI_Z(0x18u); /*0x627720*/
   v14 = (unsigned int *)v13; /*0x627725*/
@@ -387,9 +387,9 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     while ( 1 ) /*0x62779b*/
     {
       v15 = *(char **)(*((unsigned int *)v2->field_4 + 1) + 4 * v8); /*0x62779b*/
-      v16 = (__int16 *)(v32 + *(unsigned int *)(*(unsigned int *)v36[1].__pad_0 + 4)); /*0x6277a1*/
+      v16 = (__int16 *)(v32 + *(unsigned int *)(*v36->u32_4.__pad_0 + 4)); /*0x6277a1*/
       v33 = *v16; /*0x6277a6*/
-      v34 = *((unsigned char *)v16 + 2); /*0x6277ae*/
+      v34 = v16->u32_2; /*0x6277ae*/
       v17 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x6277b2*/
       if ( v17 ) /*0x6277bc*/
         inited = FontClass::InitMetrics(v17, v15, (int)&v33, (int)v39, (int)&FileSystem_TEMPERAT_PAL, 1, 0); /*0x6277dc*/
@@ -399,7 +399,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
       *(unsigned int *)inited = v19; /*0x6277e4*/
       v20 = v14[2]; /*0x6277e6*/
       if ( v14[4] < v20 /*0x627809*/
-        || (*((unsigned char *)v14 + 13) || !v20)
+        || (v14->u32_D || !v20)
         && (v21 = v14[5], v21 > 0)
         && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v14 + 8))(v14, v20 + v21, 0) )
       {
@@ -416,7 +416,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
       *(unsigned int *)v25 = v19 + 1; /*0x627855*/
       v26 = v14[2]; /*0x627857*/
       if ( v14[4] < v26 /*0x62787a*/
-        || (*((unsigned char *)v14 + 13) || !v26)
+        || (v14->u32_D || !v26)
         && (v27 = v14[5], v27 > 0)
         && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v14 + 8))(v14, v26 + v27, 0) )
       {

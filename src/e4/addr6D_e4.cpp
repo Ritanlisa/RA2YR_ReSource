@@ -466,9 +466,9 @@ namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
 
-  *(unsigned int *)this->__pad_0 = &Tactical::`vftable'; /*0x6d1e80*/
+  *(unsigned int *)this->vfptr = &Tactical::`vftable'; /*0x6d1e80*/
   *(unsigned int *)&this->Tactical_field_0x2[2] = &Tactical::`vftable'; /*0x6d1e86*/
-  this->Tactical_field_0x8[0] = (int)&Tactical::`vftable'; /*0x6d1e8d*/
+  this->M8 = (int)&Tactical::`vftable'; /*0x6d1e8d*/
   this->Tactical_field_0xC[0] = (int)&Tactical::`vftable'; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
   AbstractClass::DTOR((AbstractClass *)this); /*0x6d1ea5*/

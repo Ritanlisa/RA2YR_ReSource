@@ -46,7 +46,7 @@ int MoveFeedback::ProcessCommand()
   v1 = g_MoveFeedback; /*0x7327d9*/
   v15 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
-  if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x7327f5*/
+  if ( DataGlobal_B0FE64 ) /*0x7327f5*/
   {
     result = __2_YAPAXI_Z(0x18u); /*0x7327fb*/
     v3 = result; /*0x732800*/
@@ -99,8 +99,8 @@ int MoveFeedback::ProcessCommand()
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
       *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
-      *(unsigned int *)(v3 + 20) = 10; /*0x7328ae*/
-      *(unsigned int *)(v3 + 16) = 0; /*0x7328b5*/
+      v3->u32_14 = 10; /*0x7328ae*/
+      v3->q010 = 0; /*0x7328b5*/
     }
     else
     {
@@ -115,7 +115,7 @@ int MoveFeedback::ProcessCommand()
         result = GetCoordDataMap(v10); /*0x7328d4*/
         if ( result ) /*0x7328db*/
         {
-          if ( (*(unsigned char *)(result + 20) & 1) != 0 ) /*0x7328e7*/
+          if ( (result->AudioBuffer_14 & 1) != 0 ) /*0x7328e7*/
           {
             v17 = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
@@ -128,10 +128,10 @@ int MoveFeedback::ProcessCommand()
       while ( v10 < v11 ); /*0x73290b*/
     }
   }
-  v12 = *(unsigned int *)(v3 + 16); /*0x73290d*/
+  v12 = v3->q010; /*0x73290d*/
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
-    v14 = *(unsigned int *)(*(unsigned int *)(v3 + 4) + 4 * i); /*0x732919*/
+    v14 = *(unsigned int *)(v3->Items + 4 * i); /*0x732919*/
     result = (*(int (**)(int))(*(unsigned int *)v14 + 332))(v14); /*0x73291e*/
   }
   if ( v3 ) /*0x73292b*/
@@ -150,13 +150,13 @@ char MoveFeedback::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = *(unsigned int *)&this->q008; /*0x40b962*/
+  m_8 = *&this->m_8; /*0x40b962*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
   {
     v3 = 0; /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-    v4 = *(unsigned int **)&this->q004; /*0x40b975*/
+    v4 = *&this->m_Capacity; /*0x40b975*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
     {
@@ -177,11 +177,11 @@ int MoveFeedback::Draw(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x40bb90*/
+  m_10 = *&this->m_10; /*0x40bb90*/
   result = 0; /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40bb9e*/
+  for ( i = *&this->m_Capacity; *i != *a2; ++i ) /*0x40bb9e*/
   {
     if ( ++result >= m_10 ) /*0x40bbad*/
       return -1; /*0x40bbad*/
@@ -217,23 +217,23 @@ void MoveFeedback::Destroy()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->q004; /*0x40be56*/
-  *(unsigned int *)&this->q010 = 0; /*0x40be59*/
-  if ( v2 && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x40be60*/
+  v2 = *&this->m_Capacity; /*0x40be56*/
+  *&this->m_10 = 0; /*0x40be59*/
+  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x40be60*/
   {
     operator delete((void *)(v2)); /*0x40be66*/
-    *(unsigned int *)&this->q004 = 0; /*0x40be6e*/
+    *&this->m_Capacity = 0; /*0x40be6e*/
   }
-  (((unsigned char *)&(*(unsigned int *)&this->q00C))[1]) = 0; /*0x40be71*/
-  *(unsigned int *)&this->q008 = 0; /*0x40be74*/
+  (((unsigned char *)&(*&this->m_C))[1]) = 0; /*0x40be71*/
+  *&this->m_8 = 0; /*0x40be74*/
 }
 } // namespace gamemd
 // 0x40BE80
 namespace gamemd {
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
-  if ( (*((unsigned char *)&(*(unsigned int *)&this->q00C))) ) /*0x40be80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x40be95*/
+  if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x40be80*/
+    return (unsigned int)(a2 - *&this->m_Capacity) >> 2; /*0x40be95*/
   else
     return 0; /*0x40be87*/
 }
@@ -258,26 +258,26 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x40c068*/
+    if ( *&this->m_Capacity ) /*0x40c068*/
     {
       m_8 = this->m_8; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->m_Capacity + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
       if ( BYTE1(this->m_C) ) /*0x40c08e*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x40c099*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x40c0a1*/
+        __3_YAXPAX_Z(*&this->m_Capacity); /*0x40c099*/
+        *&this->m_Capacity = 0; /*0x40c0a1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40c0aa*/
+    *&this->m_Capacity = v4; /*0x40c0aa*/
     this->m_8 = a2; /*0x40c0b2*/
     BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c0be*/
+    (*(void (**)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->m_Items + 12))(this); /*0x40c0be*/
   }
   v7 = this->m_8; /*0x40c0c1*/
   if ( v7 < this->m_10 ) /*0x40c0c9*/
@@ -294,11 +294,11 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x40c0e0*/
+  m_10 = *&this->m_10; /*0x40c0e0*/
   result = 0; /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40c0ee*/
+  for ( i = *&this->m_Capacity; *i != *a2; ++i ) /*0x40c0ee*/
   {
     if ( ++result >= m_10 ) /*0x40c0fd*/
       return -1; /*0x40c0fd*/
@@ -313,8 +313,8 @@ unsigned int * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, cha
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x40c163*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
+  v3 = *&Block->__pad_004; /*0x40c163*/
+  *(unsigned int *)Block->tail_0 = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/

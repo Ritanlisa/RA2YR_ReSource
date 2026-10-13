@@ -16,13 +16,13 @@ int Voice::Stop()
 
   v1 = v1; /*0x4025b1*/
   (*(void (**)(void))(*(unsigned int *)(v1 + 212) + 40))(); /*0x4025b9*/
-  if ( (*(unsigned char *)(v1 + 164) & 5) != 0 ) /*0x4025c3*/
+  if ( (v1->u32_A4 & 5) != 0 ) /*0x4025c3*/
     (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 16))(v1); /*0x4025cd*/
   (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 44))(v1); /*0x4025d8*/
-  result = *(unsigned int *)(v1 + 188); /*0x4025db*/
+  result = v1->q0BC; /*0x4025db*/
   if ( result ) /*0x4025e3*/
     result = result(v1); /*0x4025e7*/
-  *(unsigned int *)(v1 + 360) = 0; /*0x4025e9*/
+  v1->u32_168 = 0; /*0x4025e9*/
   return result; /*0x4025f3*/
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -47,7 +47,7 @@ int Voice::DetachChannel()
     *(unsigned int *)(this->u32_B0 + 144) = 0; /*0x4041a4*/
     *(unsigned int *)(this->u32_B0 + 152) = 0; /*0x4041b0*/
     result = this->u32_B0; /*0x4041b6*/
-    *(unsigned int *)(result + 156) = 0; /*0x4041bc*/
+    result->u32_9C = 0; /*0x4041bc*/
     this->u32_B0 = 0; /*0x4041c2*/
   }
   return result; /*0x4041c8*/

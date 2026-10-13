@@ -51,7 +51,7 @@ int FactoryClass::UpdateProduction()
   LOBYTE(Speed) = this->isSuspended; /*0x4c9b28*/
   if ( !(unsigned char)Speed ) /*0x4c9b2d*/
   {
-    Speed = *(unsigned int *)&this->__pad_42[22]; /*0x4c9b33*/
+    Speed = *&this->q058; /*0x4c9b33*/
     if ( Speed ) /*0x4c9b38*/
     {
       if ( this->production[0] == 54 ) /*0x4c9b4d*/
@@ -64,7 +64,7 @@ int FactoryClass::UpdateProduction()
     if ( this->specialItem == -1 || this->production[0] != 54 ) /*0x4c9b5d*/
     {
       v3 = &this->production[2]; /*0x4c9b63*/
-      Speed = Locomotor::GetSpeed((Locomotor *)&this->production[2]); /*0x4c9b68*/
+      Speed = Locomotor::GetSpeed(&this->object); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
         LOBYTE(this->production[1]) = 0; /*0x4c9bba*/
@@ -76,8 +76,8 @@ int FactoryClass::UpdateProduction()
         *v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4c9b92*/
         this->queuedObjects[0] = v11; /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
-        v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4c9b9a*/
-        this->__pad_42[27] = 1; /*0x4c9b9f*/
+        v4 = *&this->q058; /*0x4c9b9a*/
+        this->u8_5D = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
           v5 = this->production[0]; /*0x4c9ba4*/
@@ -96,14 +96,14 @@ int FactoryClass::UpdateProduction()
         {
           HouseClass::ProcessPowerDrain((int *)this->owner, balance); /*0x4c9bf5*/
           v8 = this->balance; /*0x4c9bfa*/
-          this->__pad_42[26] = 0; /*0x4c9bfd*/
+          this->q05C = 0; /*0x4c9bfd*/
           Speed = v8 - balance; /*0x4c9c01*/
           this->balance = Speed; /*0x4c9c03*/
         }
         else
         {
           v7 = this->production[0]; /*0x4c9be5*/
-          this->__pad_42[26] = 1; /*0x4c9be8*/
+          this->q05C = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
           this->production[0] = Speed; /*0x4c9bec*/
         }
@@ -131,8 +131,8 @@ int FactoryClass::HasProgressChanged()
 {
   char result; // al
 
-  result = this->__pad_42[27]; /*0x4c9c60*/
-  this->__pad_42[27] = 0; /*0x4c9c63*/
+  result = this->u8_5D; /*0x4c9c60*/
+  this->u8_5D = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
 }
@@ -158,43 +158,43 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
     && this->abstractFlags <= 0
-    && (!this->u32_58 || !this->isSuspended)
+    && (!this->q058 || !this->isSuspended)
     || a4 )
   {
-    this->u32_5D = 1; /*0x4c9d6e*/
+    this->u8_5D = 1; /*0x4c9d6e*/
     this->isSuspended = 1; /*0x4c9d72*/
-    this->u32_2C = dword_A8ED84; /*0x4c9d85*/
+    this->q02C = dword_A8ED84; /*0x4c9d85*/
     this->queuedCapacity = 0; /*0x4c9d8b*/
     this->queuedObjects = v17; /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
     this->production = 0; /*0x4c9d95*/
-    this->u32_58 = (*(int (**)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    this->q058 = (*(int (**)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(uint8_t)((House *)(a3))->IsCurrentPlayer() ) /*0x4c9da7*/
     {
-      v12 = this->u32_58; /*0x4c9db1*/
+      v12 = this->q058; /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
       {
         if ( (*(int (**)(int))(*(unsigned int *)v12 + 44))(v12) == 6 ) /*0x4c9dc0*/
-          *(unsigned char *)(this->u32_58 + 1738) = 1; /*0x4c9dc5*/
+          *(unsigned char *)(this->q058 + 1738) = 1; /*0x4c9dc5*/
       }
     }
-    v13 = this->u32_58; /*0x4c9dcc*/
+    v13 = this->q058; /*0x4c9dcc*/
     if ( v13 ) /*0x4c9dd1*/
     {
       v14 = *(unsigned int *)(v13 + 540); /*0x4c9dd3*/
       this->owner = v14; /*0x4c9ddb*/
       v15 = (*(int (**)(int, int))(*(unsigned int *)a2 + 132))(a2, v14); /*0x4c9de1*/
-      v16 = this->u32_58; /*0x4c9de7*/
+      v16 = this->q058; /*0x4c9de7*/
       this->balance = v15; /*0x4c9dea*/
       *(unsigned int *)(v16 + 768) = v15; /*0x4c9ded*/
     }
-    return this->u32_58 != 0; /*0x4c9dfc*/
+    return this->q058 != 0; /*0x4c9dfc*/
   }
   else if ( this->abstractFlags >= dword_8871E0->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(this->owner, a2) )
   {
     if ( (uint8_t)((House *)(a3))->IsHumanPlayer() ) /*0x4c9d3f*/
-      PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
+      PlayVocClass(dword_8871E0->AmmoCrateDamage, 0x2000, 1.0, 0); /*0x4c9d5f*/
     return 0; /*0x4c9d65*/
   }
   else
@@ -225,7 +225,7 @@ int FactoryClass::SetObject(int a2)
   int v5; // [esp+8h] [ebp-8h]
 
   BuildingClass::AbandonProduction((int)this); /*0x4c9e16*/
-  *(unsigned int *)&this->__pad_42[22] = a2; /*0x4c9e21*/
+  *&this->q058 = a2; /*0x4c9e21*/
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = v3; /*0x4c9e30*/
@@ -234,7 +234,7 @@ int FactoryClass::SetObject(int a2)
   this->queuedObjects[0] = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
   this->production[0] = 54; /*0x4c9e49*/
-  this->__pad_42[27] = 1; /*0x4c9e50*/
+  this->u8_5D = 1; /*0x4c9e50*/
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
 
@@ -249,21 +249,21 @@ int FactoryClass::StartProduction(char a2)
   int result; // eax
   int v4; // [esp+4h] [ebp-8h]
 
-  if ( *((unsigned char *)this + 112) ) /*0x4c9e60*/
+  if ( this->isSuspended ) /*0x4c9e60*/
   {
     LOBYTE(result) = 0; /*0x4c9e98*/
   }
   else
   {
-    *((unsigned char *)this + 113) = a2; /*0x4c9e71*/
-    *((unsigned char *)this + 112) = 1; /*0x4c9e74*/
+    this->isManual = a2; /*0x4c9e71*/
+    this->isSuspended = 1; /*0x4c9e74*/
     v2 = dword_A8ED84; /*0x4c9e78*/
-    *((char *)this + 14) = 0; /*0x4c9e80*/
-    *((char *)this + 11) = (int)v2; /*0x4c9e83*/
+    this->u32_E = 0; /*0x4c9e80*/
+    this->u32_B = (int)v2; /*0x4c9e83*/
     result = v4; /*0x4c9e85*/
-    *((char *)this + 12) = v4; /*0x4c9e89*/
+    this->vtable4 = v4; /*0x4c9e89*/
     LOBYTE(result) = 1; /*0x4c9e8c*/
-    *((char *)this + 13) = 0; /*0x4c9e8e*/
+    this->u8_D = 0; /*0x4c9e8e*/
   }
   return result; /*0x4c9e92*/
 
@@ -278,7 +278,7 @@ int FactoryClass::GetBuildTimeFrames()
   int v3; // edx
   int result; // eax
 
-  v1 = *(HouseClass **)&this->__pad_42[22]; /*0x4c9fb0*/
+  v1 = *&this->q058; /*0x4c9fb0*/
   v2 = 0; /*0x4c9fb3*/
   if ( v1 ) /*0x4c9fb7*/
     v2 = HouseClass::CalcProductionSpeed(v1); /*0x4c9fbe*/
@@ -318,14 +318,14 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
     {
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
-      TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
-      *(unsigned int *)&v3->onHold = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
+      TechnoTypeVector::Constructor(&v3->q060, 0, 0); /*0x4ca2b2*/
+      *&v3->q060 = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
       v3->AbstractClass = &FactoryClass::`vftable'; /*0x4ca2c7*/
-      v3->? = &FactoryClass::`vftable'; /*0x4ca2cd*/
+      v3->vtable2 = &FactoryClass::`vftable'; /*0x4ca2cd*/
       v3->? = &FactoryClass::`vftable'; /*0x4ca2d4*/
-      v3->? = &FactoryClass::`vftable'; /*0x4ca2db*/
+      v3->vtable4 = &FactoryClass::`vftable'; /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -397,9 +397,9 @@ AbstractClass * * FactoryClass::Stat(int * a2)
 
   Debug::Log(); /*0x4ca43f*/
   Debug::Log(); /*0x4ca44d*/
-  (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_42[22] + 44))(*(unsigned int *)&this->__pad_42[22]); /*0x4ca45a*/
+  (*(void (**)(unsigned int))(**&this->q058 + 44))(*&this->q058); /*0x4ca45a*/
   Debug::Log(); /*0x4ca463*/
-  (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_42[22] + 64))(*(unsigned int *)&this->__pad_42[22]); /*0x4ca470*/
+  (*(void (**)(unsigned int))(**&this->q058 + 64))(*&this->q058); /*0x4ca470*/
   Debug::Log(); /*0x4ca479*/
   Debug::Log(); /*0x4ca489*/
   Debug::Log(); /*0x4ca499*/
@@ -408,16 +408,16 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4c3*/
   (*((void (**)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca4d4*/
   Debug::Log(); /*0x4ca4dd*/
-  (*((void (**)(void **))this->? + 4))(&this->?); /*0x4ca4ec*/
+  (*((void (**)(void **))this->balance + 4))(&this->balance); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
   Power::FlagProcess((Power *)a2, v3); /*0x4ca50f*/
-  LOBYTE(v4) = this->__pad_42[27]; /*0x4ca514*/
+  LOBYTE(v4) = this->u8_5D; /*0x4ca514*/
   Power::FlagProcess((Power *)a2, v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
   Power::TimerProcess(this->originalBalance); /*0x4ca530*/
-  v5 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca535*/
+  v5 = *&this->q058; /*0x4ca535*/
   if ( v5 ) /*0x4ca53a*/
   {
     v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
@@ -436,8 +436,8 @@ int FactoryClass::Revert(int a2, int a3)
   int result; // eax
 
   result = a2; /*0x4ca580*/
-  if ( a2 == *(unsigned int *)&this->__pad_42[22] ) /*0x4ca589*/
-    *(unsigned int *)&this->__pad_42[22] = 0; /*0x4ca58b*/
+  if ( a2 == *&this->q058 ) /*0x4ca589*/
+    *&this->q058 = 0; /*0x4ca58b*/
   return result; /*0x4ca592*/
 }
 }
@@ -455,23 +455,23 @@ int FactoryClass::StartProduction_2()
   int v9; // [esp-Ch] [ebp-14h]
   char v10; // [esp-8h] [ebp-10h]
 
-  v2 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca5a4*/
+  v2 = *&this->u32_50; /*0x4ca5a4*/
   if ( v2 ) /*0x4ca5a9*/
   {
-    v2 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca5ab*/
+    v2 = *&this->q058; /*0x4ca5ab*/
     if ( !v2 ) /*0x4ca5b0*/
     {
       if ( !this->queuedCapacity || (LOBYTE(v2) = this->isSuspended, (unsigned char)v2) ) /*0x4ca5be*/
       {
-        v3 = **(unsigned char ***)&this->__pad_42[2]; /*0x4ca5c3*/
-        v4 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca5c5*/
+        v3 = **&this->q044; /*0x4ca5c3*/
+        v4 = *&this->u32_50; /*0x4ca5c5*/
         if ( v4 > 0 ) /*0x4ca5ca*/
         {
           v5 = v4 - 1; /*0x4ca5cc*/
           v6 = 0; /*0x4ca5cf*/
-          for ( *(unsigned int *)&this->__pad_42[14] = v5; /*0x4ca5d6*/
-                v6 < *(unsigned int *)&this->__pad_42[14];
-                *(unsigned int *)(*(unsigned int *)&this->__pad_42[2] + 4 * v6 - 4) = *(unsigned int *)(*(unsigned int *)&this->__pad_42[2]
+          for ( *&this->u32_50 = v5; /*0x4ca5d6*/
+                v6 < *&this->u32_50;
+                *(unsigned int *)(*&this->q044 + 4 * v6 - 4) = *(unsigned int *)(*&this->q044
                                                                                     + 4 * v6) )
           {
             ++v6; /*0x4ca5db*/
@@ -502,13 +502,13 @@ int FactoryClass::CountType(int aP1)
   unsigned int *v6; // esi
 
   v3 = 0; /*0x4ca679*/
-  v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca67b*/
+  v4 = *&this->q058; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
     v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) == aP1; /*0x4ca68e*/
-  v5 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca693*/
+  v5 = *&this->u32_50; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
-    v6 = *(unsigned int **)&this->__pad_42[2]; /*0x4ca69a*/
+    v6 = *&this->q044; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
       if ( *v6 == aP1 ) /*0x4ca69f*/
@@ -529,11 +529,11 @@ int FactoryClass::IsQueued(int a2)
   int v3; // eax
   unsigned int *i; // ecx
 
-  v2 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca6b0*/
+  v2 = *&this->u32_50; /*0x4ca6b0*/
   v3 = 0; /*0x4ca6b3*/
   if ( v2 <= 0 ) /*0x4ca6b8*/
     return 0; /*0x4ca6cd*/
-  for ( i = *(unsigned int **)&this->__pad_42[2]; a2 != *i; ++i ) /*0x4ca6ba*/
+  for ( i = *&this->q044; a2 != *i; ++i ) /*0x4ca6ba*/
   {
     if ( ++v3 >= v2 ) /*0x4ca6cb*/
       return 0; /*0x4ca6cb*/
@@ -556,15 +556,15 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   Block->vfptr3 = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(&Block->vfptr, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
-  v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
-         &stru_A83D50.__pad_C8[24],
+  v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&DataGlobal_A83E30 + 16))( /*0x4ca7aa*/
+         &DataGlobal_A83E30,
          &v7);
-  if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_C8[40] ) /*0x4ca7ba*/
+  if ( v3 != -1 && v3 < *(int *)&g_TeamTypeCapacity ) /*0x4ca7ba*/
   {
-    --*(unsigned int *)&stru_A83D50.__pad_C8[40]; /*0x4ca7bf*/
+    --*(unsigned int *)&g_TeamTypeCapacity; /*0x4ca7bf*/
     for ( ; /*0x4ca7c5*/
-          v3 < *(int *)&stru_A83D50.__pad_C8[40];
-          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28]
+          v3 < *(int *)&g_TeamTypeCapacity;
+          *(unsigned int *)(*(unsigned int *)&g_TeamTypeCount + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&g_TeamTypeCount
                                                                                      + 4 * v3) )
     {
       ++v3; /*0x4ca7cd*/
@@ -587,15 +587,15 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
       ++v4; /*0x4ca826*/
     }
   }
-  v5 = *(void **)&Block->__pad_42[2]; /*0x4ca838*/
-  *(unsigned int *)&Block->onHold = &vt_VectorClass; /*0x4ca83b*/
+  v5 = *&Block->u32_60; /*0x4ca838*/
+  *&Block->u32_60 = &vt_VectorClass; /*0x4ca83b*/
   if ( v5 && Block->__pad_42[11] ) /*0x4ca846*/
   {
     operator delete((void *)(v5)); /*0x4ca84e*/
-    *(unsigned int *)&Block->__pad_42[2] = 0; /*0x4ca856*/
+    *&Block->u32_60 = 0; /*0x4ca856*/
   }
   Block->__pad_42[11] = 0; /*0x4ca85f*/
-  *(unsigned int *)&Block->__pad_42[6] = 0; /*0x4ca863*/
+  *&Block->u32_60 = 0; /*0x4ca863*/
   AbstractClass::DTOR((AbstractClass *)Block); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     operator delete((void *)(Block)); /*0x4ca877*/
@@ -622,10 +622,10 @@ int FactoryClass::FinishProduction(int a2)
   if ( result != -1 ) /*0x635091*/
   {
     result = *(unsigned int *)(this->production + 4 * result); /*0x635096*/
-    *(unsigned int *)(result + 116) = -1; /*0x635099*/
+    result->u8_74 = -1; /*0x635099*/
     *(&this->uniqueId5) = -1; /*0x63509c*/
-    v5 = *(unsigned int *)(result + 112) - 1; /*0x6350a5*/
-    *(unsigned int *)(result + 112) = v5; /*0x6350a6*/
+    v5 = result->u16_70 - 1; /*0x6350a5*/
+    result->u16_70 = v5; /*0x6350a6*/
     if ( !v5 ) /*0x6350a9*/
     {
       if ( this ) /*0x6350ad*/
@@ -707,7 +707,7 @@ char FactoryClass::RemoveOneFromQueue(char a2)
   int v5; // ecx
 
   p_onHold = &this->onHold; /*0x4ca624*/
-  v3 = (*(int (**)(char *, char *))(*(unsigned int *)&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
+  v3 = (*(int (**)(char *, char *))(*&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
   if ( v3 == -1 ) /*0x4ca634*/
     return 0; /*0x4ca634*/
   v4 = *((unsigned int *)p_onHold + 4); /*0x4ca636*/
@@ -760,13 +760,13 @@ char FactoryClass_33::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x4ca8f2*/
+  m_8 = this->q008; /*0x4ca8f2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4ca8fd*/
   {
     v3 = 0; /*0x4ca8ff*/
     if ( m_8 <= 0 ) /*0x4ca903*/
       return 1; /*0x4ca923*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4ca905*/
+    v4 = *&this->q004; /*0x4ca905*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4ca90b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4ca914*/
     {
@@ -792,30 +792,30 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4ca93c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x4ca946*/
+    LOBYTE(this->q00C) = 0; /*0x4ca946*/
     if ( a3 ) /*0x4ca94c*/
       v4 = a3; /*0x4ca962*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x4ca95e*/
-    LOBYTE(this->m_C) = 1; /*0x4ca966*/
+    LOBYTE(this->q00C) = 1; /*0x4ca966*/
     if ( v4 ) /*0x4ca96a*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4ca975*/
+      if ( *&this->q004 ) /*0x4ca975*/
       {
-        m_8 = this->m_8; /*0x4ca97c*/
+        m_8 = this->q008; /*0x4ca97c*/
         if ( a2 < m_8 ) /*0x4ca981*/
           m_8 = a2; /*0x4ca983*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4ca989*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x4ca989*/
           ++i; /*0x4ca98e*/
-        if ( BYTE1(this->m_C) ) /*0x4ca99b*/
+        if ( BYTE1(this->q00C) ) /*0x4ca99b*/
         {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4ca9a6*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9ae*/
+          __3_YAXPAX_Z(*&this->q004); /*0x4ca9a6*/
+          *&this->q004 = 0; /*0x4ca9ae*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4ca9b7*/
-      this->m_8 = a2; /*0x4ca9bf*/
-      BYTE1(this->m_C) = a3 == 0; /*0x4ca9c2*/
+      *&this->q004 = v4; /*0x4ca9b7*/
+      this->q008 = a2; /*0x4ca9bf*/
+      BYTE1(this->q00C) = a3 == 0; /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/
     }
     else
@@ -825,7 +825,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ca9d2*/
+    (*(void (**)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4ca9d2*/
     return 1; /*0x4ca9d8*/
   }
 
@@ -837,13 +837,13 @@ namespace gamemd {
 void FactoryClass_33::ddtor()
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x4ca9ed*/
+  if ( *&this->q004 && BYTE1(this->q00C) ) /*0x4ca9ed*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x4ca9f3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9fb*/
+    __3_YAXPAX_Z(*&this->q004); /*0x4ca9f3*/
+    *&this->q004 = 0; /*0x4ca9fb*/
   }
-  BYTE1(this->m_C) = 0; /*0x4ca9fe*/
-  this->m_8 = 0; /*0x4caa01*/
+  BYTE1(this->q00C) = 0; /*0x4ca9fe*/
+  this->q008 = 0; /*0x4caa01*/
 
 }
 } // namespace gamemd
@@ -876,8 +876,8 @@ namespace gamemd {
 unsigned int FactoryClass_33::Write(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x4caa50*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4caa65*/
+  if ( LOBYTE(this->q00C) ) /*0x4caa50*/
+    return (unsigned int)(a2 - *&this->q004) >> 2; /*0x4caa65*/
   else
     return 0; /*0x4caa57*/
 
@@ -890,18 +890,18 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x4cab53*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4cab56*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x4cab60*/
+  v3 = *&Block->__pad_004; /*0x4cab53*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4cab56*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4cab60*/
   {
     operator delete((void *)(v3)); /*0x4cab68*/
-    *(unsigned int *)&Block->q004 = 0; /*0x4cab70*/
+    *&Block->__pad_004 = 0; /*0x4cab70*/
   }
-  (((unsigned char *)&(*(unsigned int *)&Block->q00C))[1]) = 0; /*0x4cab7b*/
-  Block->q008 = 0; /*0x4cab81*/
+  (((unsigned char *)&(*&Block->u32_C))[1]) = 0; /*0x4cab7b*/
+  Block->u32_8 = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
     operator delete((void *)(Block)); /*0x4cab8b*/
-  return Block->__pad_0; /*0x4cab95*/
+  return Block->tail_0; /*0x4cab95*/
 }
 } // namespace gamemd
 

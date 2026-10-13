@@ -65,7 +65,7 @@ namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
   *(unsigned int *)Block->0 = &vt_HoverLocomotionClass; /*0x5172c3*/
-  *(unsigned int *)&Block->0[4] = &vt_HoverLocomotionClass; /*0x5172c9*/
+  *&Block->__pad_004 = &vt_HoverLocomotionClass; /*0x5172c9*/
   ((LocomotionClass *)((LocomotionClass *)Block))->Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     operator delete((void *)(Block)); /*0x5172dd*/

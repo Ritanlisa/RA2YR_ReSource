@@ -17,11 +17,11 @@
 namespace gamemd {  // G42.18 ns repair
 void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->__pad_0 = &vt_MSFrameAnim; /*0x769bd3*/
+  *(unsigned int *)Block->tail_0 = &vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::sub_5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     operator delete((void *)(Block)); /*0x769be6*/
-  return Block->__pad_0; /*0x769bf0*/
+  return Block->tail_0; /*0x769bf0*/
 }
 }  // G42.18 ns repair
 // 0x769FE0
@@ -54,7 +54,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a05b*/
+          *(unsigned int *)v8->__pad_000 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -192,15 +192,15 @@ int MSFrameAnim::initAnimation()
   int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (****)(unsigned int, int))&this->q004; /*0x769c56*/
-  *(unsigned int *)&this->q010 = 0; /*0x769c59*/
-  if ( v2 && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x769c60*/
+  v2 = *(int (****)(unsigned int, int))&this->__pad_004; /*0x769c56*/
+  *&this->INIClass_10 = 0; /*0x769c59*/
+  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x769c60*/
   {
     result = (**v2)(v2, 3); /*0x769c6d*/
-    *(unsigned int *)&this->q004 = 0; /*0x769c6f*/
+    *&this->__pad_004 = 0; /*0x769c6f*/
   }
-  (((unsigned char *)&(this->q00C))[1]) = 0; /*0x769c72*/
-  *(unsigned int *)&this->q008 = 0; /*0x769c75*/
+  (this->IsAllocated) = 0; /*0x769c72*/
+  *&this->m_8 = 0; /*0x769c75*/
   return result; /*0x769c78*/
 }
 } // namespace gamemd
@@ -209,8 +209,8 @@ int MSFrameAnim::initAnimation()
 namespace gamemd {
 unsigned int MSFrameAnim::startAnimation(int a2)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x769c80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x769c95*/
+  if ( (this->m_C) ) /*0x769c80*/
+    return (unsigned int)(a2 - *&this->__pad_004) >> 3; /*0x769c95*/
   else
     return 0; /*0x769c87*/
 }
@@ -222,15 +222,15 @@ void MSFrameAnim::stopAnimation()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->q004; /*0x769cd6*/
-  *(unsigned int *)&this->q010 = 0; /*0x769cd9*/
-  if ( v2 && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x769ce0*/
+  v2 = *&this->__pad_004; /*0x769cd6*/
+  *&this->m_8 = 0; /*0x769cd9*/
+  if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x769ce0*/
   {
     operator delete((void *)(v2)); /*0x769ce6*/
-    *(unsigned int *)&this->q004 = 0; /*0x769cee*/
+    *&this->__pad_004 = 0; /*0x769cee*/
   }
-  (((unsigned char *)&(this->q00C))[1]) = 0; /*0x769cf1*/
-  *(unsigned int *)&this->q008 = 0; /*0x769cf4*/
+  (this->IsAllocated) = 0; /*0x769cf1*/
+  *&this->m_8 = 0; /*0x769cf4*/
 }
 } // namespace gamemd
 
@@ -238,8 +238,8 @@ void MSFrameAnim::stopAnimation()
 namespace gamemd {
 unsigned int MSFrameAnim::pauseAnimation(int a2)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x769d00*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x769d15*/
+  if ( (this->m_C) ) /*0x769d00*/
+    return (unsigned int)(a2 - *&this->__pad_004) >> 2; /*0x769d15*/
   else
     return 0; /*0x769d07*/
 }
@@ -249,11 +249,11 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
 {
-  *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x769d93*/
+  *(unsigned int *)Block->tail_0 = &vt_rc_ptr; /*0x769d93*/
   ComPtr::Release((ComPtr *)Block); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     operator delete((void *)(Block)); /*0x769da6*/
-  return Block->__pad_0; /*0x769db0*/
+  return Block->tail_0; /*0x769db0*/
 }
 } // namespace gamemd
 
@@ -265,11 +265,11 @@ int MSFrameAnim::getCurrentFrame(int a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x76a100*/
+  m_10 = *&this->m_8; /*0x76a100*/
   result = 0; /*0x76a103*/
   if ( m_10 <= 0 ) /*0x76a108*/
     return -1; /*0x76a123*/
-  for ( i = (unsigned int *)(*(unsigned int *)&this->q004 + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76a111*/
+  for ( i = (unsigned int *)(*&this->__pad_004 + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76a111*/
   {
     if ( ++result >= m_10 ) /*0x76a121*/
       return -1; /*0x76a121*/
@@ -297,31 +297,31 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x76a2e2*/
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x76a2e8*/
+    if ( *&this->__pad_004 ) /*0x76a2e8*/
     {
       m_8 = this->m_8; /*0x76a2ef*/
       if ( a2 < m_8 ) /*0x76a2f4*/
         m_8 = a2; /*0x76a2f6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x76a2fc*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->__pad_004 + 4 * i - 4) ) /*0x76a2fc*/
         ++i; /*0x76a301*/
       if ( BYTE1(this->m_C) ) /*0x76a30e*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x76a319*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x76a321*/
+        __3_YAXPAX_Z(*&this->__pad_004); /*0x76a319*/
+        *&this->__pad_004 = 0; /*0x76a321*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x76a32a*/
+    *&this->__pad_004 = v4; /*0x76a32a*/
     this->m_8 = a2; /*0x76a332*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a335*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
+    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->vtable1 /*0x76a33e*/
                                                                                               + 12))(this);
   }
   v7 = this->m_8; /*0x76a341*/
-  if ( v7 < this->m_10 ) /*0x76a349*/
-    this->m_10 = v7; /*0x76a34b*/
+  if ( v7 < this->INIClass_10 ) /*0x76a349*/
+    this->INIClass_10 = v7; /*0x76a34b*/
   return 1; /*0x76a34e*/
 
 }
@@ -335,11 +335,11 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *(unsigned int *)&this->q010; /*0x76a360*/
+  m_10 = *&this->m_8; /*0x76a360*/
   result = 0; /*0x76a363*/
   if ( m_10 <= 0 ) /*0x76a368*/
     return -1; /*0x76a37f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x76a36e*/
+  for ( i = *&this->__pad_004; *i != *a2; ++i ) /*0x76a36e*/
   {
     if ( ++result >= m_10 ) /*0x76a37d*/
       return -1; /*0x76a37d*/
@@ -353,18 +353,18 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
 {
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (****)(unsigned int, int))&Block->q004; /*0x76a683*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76a686*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x76a690*/
+  v3 = *(void (****)(unsigned int, int))&Block->__pad_004; /*0x76a683*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClassrc_ptr; /*0x76a686*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
-    *(unsigned int *)&Block->q004 = 0; /*0x76a6a1*/
+    *&Block->__pad_004 = 0; /*0x76a6a1*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x76a6ac*/
-  *(unsigned int *)&Block->q008 = 0; /*0x76a6b2*/
+  (Block->u32_D) = 0; /*0x76a6ac*/
+  *&Block->u32_8 = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
     operator delete((void *)(Block)); /*0x76a6bc*/
-  return Block->__pad_0; /*0x76a6c6*/
+  return Block->tail_0; /*0x76a6c6*/
 }
 } // namespace gamemd
 
@@ -374,18 +374,18 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x76a723*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x76a726*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x76a730*/
+  v3 = *&Block->__pad_004; /*0x76a723*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x76a726*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x76a730*/
   {
     operator delete((void *)(v3)); /*0x76a738*/
-    *(unsigned int *)&Block->q004 = 0; /*0x76a740*/
+    *&Block->__pad_004 = 0; /*0x76a740*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x76a74b*/
-  *(unsigned int *)&Block->q008 = 0; /*0x76a751*/
+  (Block->u32_D) = 0; /*0x76a74b*/
+  *&Block->u32_8 = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     operator delete((void *)(Block)); /*0x76a75b*/
-  return Block->__pad_0; /*0x76a765*/
+  return Block->tail_0; /*0x76a765*/
 }
 } // namespace gamemd
 

@@ -244,49 +244,49 @@ bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool u
   char v13; // [esp+14h] [ebp+4h]
 
   v5 = (DisplayClass *)CellCoord::To_CellObj((CellCoord *)this, cell); /*0x4a9cae*/
-  DisplayClass_field_0x140 = v5->DisplayClass_field_0x140; /*0x4a9cb0*/
+  DisplayClass_field_0x140 = v5->__pad_140; /*0x4a9cb0*/
   v7 = ((uint8_t)DisplayClass_field_0x140 & 2) == 0; /*0x4a9cbc*/
-  if ( ((uint8_t)DisplayClass_field_0x140 & 2) == 0 || (v13 = 0, ((int)v5->DisplayClass_field_0x12C & 8) == 0) ) /*0x4a9cd1*/
+  if ( ((uint8_t)DisplayClass_field_0x140 & 2) == 0 || (v13 = 0, ((int)v5->q12C & 8) == 0) ) /*0x4a9cd1*/
     v13 = 1; /*0x4a9cd3*/
   (*((unsigned char *)&(DisplayClass_field_0x140))) = (uint8_t)DisplayClass_field_0x140 & 0xBD | 2; /*0x4a9cde*/
   v12 = v13; /*0x4a9ce0*/
-  v5->DisplayClass_field_0x140 = DisplayClass_field_0x140; /*0x4a9ce4*/
+  v5->__pad_140 = DisplayClass_field_0x140; /*0x4a9ce4*/
   if ( unk ) /*0x4a9cf2*/
     DisplayClass::AdvanceFrameCounter(v5); /*0x4a9cf4*/
   else
     DisplayClass::UpdateDisplayTimer(v5); /*0x4a9cfb*/
   AdjacentPassableMask = Cell::GetAdjacentPassableMask(cell, 0); /*0x4a9d09*/
-  if ( AdjacentPassableMask != v5->__pad_34[236] ) /*0x4a9d14*/
+  if ( AdjacentPassableMask != v5->ZoneIterator_Y ) /*0x4a9d14*/
   {
     v13 = 1; /*0x4a9d16*/
-    v5->__pad_34[236] = AdjacentPassableMask; /*0x4a9d1b*/
+    v5->ZoneIterator_Y = AdjacentPassableMask; /*0x4a9d1b*/
   }
-  if ( v5->__pad_34[236] == -1 ) /*0x4a9d28*/
+  if ( v5->ZoneIterator_Y == -1 ) /*0x4a9d28*/
   {
-    DisplayClass_field_0x12C = v5->DisplayClass_field_0x12C; /*0x4a9d2a*/
+    DisplayClass_field_0x12C = v5->q12C; /*0x4a9d2a*/
     (*((unsigned char *)&(DisplayClass_field_0x12C))) = (uint8_t)DisplayClass_field_0x12C | 0x10; /*0x4a9d30*/
-    v5->DisplayClass_field_0x12C = DisplayClass_field_0x12C; /*0x4a9d32*/
+    v5->q12C = DisplayClass_field_0x12C; /*0x4a9d32*/
   }
   v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
-  if ( v10 == v5->__pad_34[237] ) /*0x4a9d50*/
+  if ( v10 == v5->q121 ) /*0x4a9d50*/
   {
     result = v13; /*0x4a9d60*/
   }
   else
   {
     result = 1; /*0x4a9d52*/
-    v5->__pad_34[237] = v10; /*0x4a9d54*/
+    v5->q121 = v10; /*0x4a9d54*/
     v13 = 1; /*0x4a9d5a*/
   }
-  if ( v5->__pad_34[237] == -1 ) /*0x4a9d6b*/
-    v5->DisplayClass_field_0x140 = (void *)((int)v5->DisplayClass_field_0x140 | 1); /*0x4a9d6d*/
+  if ( v5->q121 == -1 ) /*0x4a9d6b*/
+    v5->__pad_140 = (void *)((int)v5->__pad_140 | 1); /*0x4a9d6d*/
   if ( result ) /*0x4a9d76*/
   {
     Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
     CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
     result = v13; /*0x4a9d99*/
   }
-  if ( ((int)v5->DisplayClass_field_0x140 & 2) != 0 && v7 && ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x4a9db5*/
+  if ( ((int)v5->__pad_140 & 2) != 0 && v7 && ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x4a9db5*/
   {
     CellClass::UpdateZone((CellClass *)v5); /*0x4a9db9*/
     return v13; /*0x4a9dbe*/

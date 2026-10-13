@@ -81,7 +81,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   v21 = v8; /*0x7587a7*/
   if ( v9 > 0 ) /*0x7587ab*/
   {
-    v11 = (float *)(v5 + 4); /*0x7587b1*/
+    v11 = &v5->vtable2; /*0x7587b1*/
     do /*0x758856*/
     {
       v12 = v11[1] * a1[2] + *v11 * a1[1] + *(v11 - 1) * *a1; /*0x7587c7*/

@@ -37,20 +37,20 @@ int Theme::QueueSong(int aP1)
       if ( !byte_A8ED64 ) /*0x720b3c*/
       {
         LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/
-        *((unsigned int *)this + 2) = aP1; /*0x720b45*/
-        if ( aP1 != -1 && aP1 != -2 && aP1 != *((unsigned int *)this + 1) ) /*0x720b52*/
+        this->u32_8 = aP1; /*0x720b45*/
+        if ( aP1 != -1 && aP1 != -2 && aP1 != this->ptr_4 ) /*0x720b52*/
         {
           LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
-          if ( *((unsigned int *)this + 11) ) /*0x720b5f*/
+          if ( this->audioSample ) /*0x720b5f*/
           {
-            if ( *((unsigned char *)this + 17) && !AudioSample::IsBuffering() ) /*0x720b70*/
-              Audio::Release(*((unsigned int *)this + 11)); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*((unsigned int *)this + 11)) != 0; /*0x720b8b*/
+            if ( this->u32_11 && !AudioSample::IsBuffering() ) /*0x720b70*/
+              Audio::Release(this->audioSample); /*0x720b7c*/
+            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
-              if ( *((unsigned int *)this + 11) ) /*0x720b92*/
+              if ( this->audioSample ) /*0x720b92*/
                 LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/
-              *((unsigned char *)this + 17) = 1; /*0x720b9e*/
+              this->u32_11 = 1; /*0x720b9e*/
             }
           }
         }
@@ -85,8 +85,8 @@ int Theme::Stop(char aP1)
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( this->u32_11 && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
-          Audio::Release(*((Audio **)&this->ptr_41)); /*0x720ef5*/
-        if ( Audio::IsSoundPlaying(*((Audio **)&this->ptr_41)) != 0 ) /*0x720f04*/
+          Audio::Release(this->ptr_41)); /*0x720ef5*/
+        if ( Audio::IsSoundPlaying(this->ptr_41)) != 0 ) /*0x720f04*/
         {
           result = Debug::Log(); /*0x720f14*/
           v5 = (ThemeClass *)this->audioSample; /*0x720f19*/
@@ -123,8 +123,8 @@ bool Theme::IsPlaying()
   if ( this->u32_11 ) /*0x720fda*/
   {
     if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
-      Audio::Release(*((Audio **)&this->ptr_41)); /*0x720fed*/
+      Audio::Release(this->ptr_41)); /*0x720fed*/
   }
-  return Audio::IsSoundPlaying(*((Audio **)&this->ptr_41)) != 0; /*0x720ffe*/
+  return Audio::IsSoundPlaying(this->ptr_41)) != 0; /*0x720ffe*/
 }
 } // namespace gamemd

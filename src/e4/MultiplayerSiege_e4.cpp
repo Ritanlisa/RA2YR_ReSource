@@ -348,7 +348,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
     return AI::CreateMCV((MultiplayerGameMode *)ppv, a2); /*0x5cab24*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x5cab45*/
                          (HouseClass *)ppv,
-                         *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2220);
+                         *(unsigned int *)&g_RulesClass_Instance + 2220);
   if ( !BuildableFromArray ) /*0x5cab49*/
     return 0; /*0x5cab49*/
   v6 = (int)(operator new(0x720u)); /*0x5cab50*/

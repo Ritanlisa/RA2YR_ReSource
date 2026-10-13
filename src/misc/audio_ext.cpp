@@ -40,7 +40,7 @@ float * Audio3D::Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 
   v8[0] = *v3; /*0x55a7e5*/
   v8[1] = v3[1]; /*0x55a7f1*/
   v8[2] = v3[2]; /*0x55a7fd*/
-  slopeIndex = (uint8_t)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v8)->slopeIndex; /*0x55a812*/
+  slopeIndex = (uint8_t)Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v8)->slopeIndex; /*0x55a812*/
   memcpy(v9,(const void *)(CopyAudioData(v10, slopeIndex)), sizeof(v9)); /*0x55a828*/
   v6 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(this->field_8 + 904), &v7) >> 10) + 1) >> 1) /*0x55a85a*/
                     & 0x1F)

@@ -27,7 +27,7 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   if ( aP1 ) /*0x69acd9*/
   {
     result = wcsncpy((wchar_t *)Destination, aP1, 0x2Cu); /*0x69acdf*/
-    *(unsigned short *)&Destination->__pad_0[86] = 0; /*0x69ace7*/
+    *&Destination->q056 = 0; /*0x69ace7*/
   }
   else
   {
@@ -45,13 +45,13 @@ void * GameOption::SetDigest(char *aP1)
 
   if ( aP1 ) /*0x69ad89*/
   {
-    result = strncpy(((char *)&this->q148 + 20), aP1, 0x20u); /*0x69ad95*/
+    result = strncpy(this->q148 + 20), aP1, 0x20u); /*0x69ad95*/
     this->u32_5EC = 0; /*0x69ad9d*/
   }
   else
   {
     result = (char *)(strlen((const char *)(g_Str_No_Digest)) + 1); /*0x69adb3*/
-    memcpy(((char *)&this->q148 + 20),(const void *)(g_Str_No_Digest), (unsigned int)result); /*0x69adc8*/
+    memcpy(this->q148 + 20),(const void *)(g_Str_No_Digest), (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
 }

@@ -139,7 +139,7 @@ char sub_46D8B0()
   v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v4 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x46d8c1*/
+    v4 = CharToWideString(&g_NetworkPlayerBuffer); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v3; /*0x46d8d6*/
@@ -170,11 +170,11 @@ char sub_46D8B0()
       }
     }
   }
-  if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)stru_A8D600.Network_field_0x6F ) /*0x46d979*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d979*/
     v1 = 1; /*0x46d97b*/
-  if ( IsAvailableColorhWnd(*(int *)stru_A8D600.Network_field_0x6F) ) /*0x46d97d*/
+  if ( IsAvailableColorhWnd(*(int *)DataGlobal_A8D66F) ) /*0x46d97d*/
   {
-    if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)stru_A8D600.Network_field_0x6F ) /*0x46d998*/
+    if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)DataGlobal_A8D66F ) /*0x46d998*/
     {
       SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], -2); /*0x46d9a3*/
       v1 = 1; /*0x46d9a8*/
@@ -182,13 +182,13 @@ char sub_46D8B0()
   }
   else
   {
-    SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)stru_A8D600.Network_field_0x6F); /*0x46d9b9*/
+    SessionClass::SetPlayerColor((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)DataGlobal_A8D66F); /*0x46d9b9*/
   }
-  if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x46d9d2*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9d2*/
     v1 = 1; /*0x46d9d4*/
-  if ( sub_4E50A0(*(int *)&stru_A8D600.__pad_64[3]) ) /*0x46d9d6*/
+  if ( sub_4E50A0(*(int *)&DataGlobal_A8D667) ) /*0x46d9d6*/
   {
-    if ( SessionClass::GetOption((int *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x46d9f1*/
+    if ( SessionClass::GetOption((int *)((unsigned int *)(dword_A8DA90))[v2]) != *(unsigned int *)&DataGlobal_A8D667 ) /*0x46d9f1*/
     {
       SessionClass::SetOption((int *)((unsigned int *)(dword_A8DA90))[v2], -2); /*0x46d9fc*/
       return v1; /*0x46da06*/
@@ -196,7 +196,7 @@ char sub_46D8B0()
   }
   else
   {
-    SessionClass::SetOption((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)&stru_A8D600.__pad_64[3]); /*0x46da15*/
+    SessionClass::SetOption((int *)((unsigned int *)(dword_A8DA90))[v2], *(int *)&DataGlobal_A8D667); /*0x46da15*/
   }
   return v1; /*0x46d8e2*/
 }
@@ -232,7 +232,7 @@ void sub_46DA70()
   {
     v3 = *((unsigned int *)stru_A80220.vfptr3 + v2); /*0x46da9a*/
     if ( v3 /*0x46dab7*/
-      && *(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) != 1
+      && *(unsigned char *)(v3->u32_34 + 422) != 1
       && (uint8_t)((House *)(*((House **)stru_A80220.vfptr3 + v2)))->IsCurrentPlayer() )
     {
       v4 = dword_A8D580++; /*0x46dacf*/
@@ -244,13 +244,13 @@ void sub_46DA70()
       *((unsigned int *)&dword_A8D23C + 28 * v4) = 0; /*0x46db05*/
       *((unsigned int *)&dword_A8D24C + 28 * v4) = 0; /*0x46db0b*/
       dword_A8D25C[28 * v4] = 0; /*0x46db11*/
-      *((unsigned int *)&dword_A8D224 + 28 * v4) = *(unsigned int *)(v3 + 90196); /*0x46db1d*/
-      if ( !*(unsigned char *)(v3 + 501) ) /*0x46db23*/
+      *((unsigned int *)&dword_A8D224 + 28 * v4) = v3->u32_16054; /*0x46db1d*/
+      if ( !v3->u32_1F5 ) /*0x46db23*/
       {
         ++*((unsigned int *)&dword_A8D228 + 28 * v4); /*0x46db34*/
         dword_A8D584 = v4; /*0x46db3a*/
       }
-      v7 = (int *)(v3 + 21476); /*0x46db40*/
+      v7 = &v3->u32_53E4; /*0x46db40*/
       v8 = 20; /*0x46db46*/
       do /*0x46db53*/
       {
@@ -259,7 +259,7 @@ void sub_46DA70()
         --v8; /*0x46db52*/
       }
       while ( v8 ); /*0x46db53*/
-      v10 = (int *)(v3 + 21560); /*0x46db55*/
+      v10 = &v3->u32_5438; /*0x46db55*/
       v11 = 20; /*0x46db5b*/
       do /*0x46db68*/
       {
@@ -270,14 +270,14 @@ void sub_46DA70()
       while ( v11 ); /*0x46db68*/
       *(unsigned int *)((char *)&dword_A8D23C + v5) = v6; /*0x46db6a*/
       *(unsigned int *)((char *)&dword_A8D22C + v5) = *(unsigned int *)(v3 + 21640) + *(unsigned int *)(v3 + 21556); /*0x46db84*/
-      Count = VectorClass::GetCount((VectorClass *)(v3 + 21840)); /*0x46db95*/
-      v14 = VectorClass::GetCount((VectorClass *)(v3 + 21860)) + Count; /*0x46dba2*/
-      v15 = VectorClass::GetCount((VectorClass *)(v3 + 21880)) + v14; /*0x46dbaf*/
+      Count = VectorClass::GetCount(&v3->VectorClass_5550); /*0x46db95*/
+      v14 = VectorClass::GetCount(&v3->VectorClass_5564) + Count; /*0x46dba2*/
+      v15 = VectorClass::GetCount(&v3->VectorClass_5578) + v14; /*0x46dbaf*/
       *(unsigned int *)((char *)&dword_A8D24C + v5) = *(unsigned int *)(v3 + 21640) /*0x46dbc8*/
-                                              + VectorClass::GetCount((VectorClass *)(v3 + 21900))
+                                              + VectorClass::GetCount(&v3->VectorClass_558C)
                                               + v15
-                                              + *(unsigned int *)(v3 + 21556);
-      v16 = *(unsigned int *)(v3 + 21736); /*0x46dbce*/
+                                              + v3->u32_5434;
+      v16 = v3->u32_54E8; /*0x46dbce*/
       if ( v16 > 0 ) /*0x46dbd6*/
         dword_A8D25C[v5 / 4u] += v16; /*0x46dbd8*/
       Debug::Log(); /*0x46dc1c*/

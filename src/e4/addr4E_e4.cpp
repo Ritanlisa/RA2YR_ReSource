@@ -156,8 +156,8 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
     }
   }
   this->vtable0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
-  *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
-  *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
+  this->u32_14 = 10; /*0x4e0a90*/
+  this->q010 = 0; /*0x4e0a97*/
   return &this->vtable0; /*0x4e0aa0*/
 
 }
@@ -2018,7 +2018,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)&this->Items2))(this); /*0x4e92e2*/
+    (*(void (**)(void *))(*&this->IsInitialized))(this); /*0x4e92e2*/
     return 1; /*0x4e92e8*/
   }
 }
@@ -2033,30 +2033,30 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
 
   if ( a2 ) /*0x4e9e2c*/
   {
-    (*((unsigned char *)&(this->m_C))) = 0; /*0x4e9e36*/
+    (this->u8_C) = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
       v4 = (unsigned int *)operator new(4 * a2); /*0x4e9e4e*/
-    (*((unsigned char *)&(this->m_C))) = 1; /*0x4e9e56*/
+    (this->u8_C) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4e9e65*/
+      if ( *&this->u32_4 ) /*0x4e9e65*/
       {
         m_8 = this->m_8; /*0x4e9e6c*/
         if ( a2 < m_8 ) /*0x4e9e71*/
           m_8 = a2; /*0x4e9e73*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e9e79*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
-        if ( (((unsigned char *)&(this->m_C))[1]) ) /*0x4e9e8b*/
+        if ( (this->u8_D) ) /*0x4e9e8b*/
         {
-          operator delete((void *)(*(void **)&this->m_1[3])); /*0x4e9e96*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4e9e9e*/
+          operator delete((void *)(*&this->u32_4)); /*0x4e9e96*/
+          *&this->u32_4 = 0; /*0x4e9e9e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4e9ea7*/
+      *&this->u32_4 = v4; /*0x4e9ea7*/
       this->m_8 = a2; /*0x4e9eaf*/
-      (((unsigned char *)&(this->m_C))[1]) = a3 == 0; /*0x4e9eb2*/
+      (this->u8_D) = a3 == 0; /*0x4e9eb2*/
       return 1; /*0x4e9eb8*/
     }
     else
@@ -2066,7 +2066,7 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9ec2*/
+    (*(void (**)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->u8_C + 12))(this); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
 }
@@ -2075,13 +2075,13 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
 namespace gamemd {
 void _VectorClass_PAVParticleClass::ParticleSystemClass__vt_03_()
 {
-  if ( *(unsigned int *)&this->m_1[3] && (((unsigned char *)&(this->m_C))[1]) ) /*0x4e9edd*/
+  if ( *&this->u32_4 && (this->u8_D) ) /*0x4e9edd*/
   {
-    operator delete((void *)(*(void **)&this->m_1[3])); /*0x4e9ee3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4e9eeb*/
+    operator delete((void *)(*&this->u32_4)); /*0x4e9ee3*/
+    *&this->u32_4 = 0; /*0x4e9eeb*/
   }
-  (((unsigned char *)&(this->m_C))[1]) = 0; /*0x4e9eee*/
-  this->m_8 = 0; /*0x4e9ef1*/
+  (this->u8_D) = 0; /*0x4e9eee*/
+  this->u8_D = 0; /*0x4e9ef1*/
 }
 }
 // 0x4E0C30
@@ -2099,8 +2099,8 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4e0ce3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
+  v3 = *&Block->__pad_004; /*0x4e0ce3*/
+  *(unsigned int *)Block->tail_0 = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/
@@ -2422,8 +2422,8 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   int v8; // eax
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
-  v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
-  *(unsigned int *)this->__pad_0 = &GaugeClass::`vftable'; /*0x4e2a83*/
+  v7 = this->M48; /*0x4e2a79*/
+  *(unsigned int *)this->vfptr = &GaugeClass::`vftable'; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
@@ -2444,7 +2444,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   *((unsigned int *)this + 15) = 0; /*0x4e2ac7*/
   *((unsigned int *)this + 16) = 0; /*0x4e2ace*/
   *(unsigned int *)this->__pad_0 = &TriColorGaugeClass::`vftable'; /*0x4e2ad5*/
-  return (int)this->__pad_0; /*0x4e2add*/
+  return (int)this->vfptr; /*0x4e2add*/
 
 }
 } // namespace gamemd
@@ -2922,12 +2922,12 @@ namespace gamemd {
 int E4Recv_4E6070::sub_4E6070()
 {
 
-  *(unsigned int *)&this->bombVisible = 0; /*0x4e6087*/
+  *&this->M104 = 0; /*0x4e6087*/
   this->health = 0; /*0x4e608a*/
   Debug::Log(); /*0x4e608d*/
   memset(this, 0xFFu, 0x18u); /*0x4e609f*/
-  LOWORD(this->?) = -1; /*0x4e60a9*/
-  *((unsigned int *)&this->AbstractClass + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
+  LOWORD(this->M108) = -1; /*0x4e60a9*/
+  this->u32_-41 + (*&this->u32_-41)++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
   return (int)this; /*0x4e612c*/
 
@@ -4978,14 +4978,14 @@ unsigned int * _VectorClass_PAVParticleClass::ParticleSystemClass_vt_00(_VectorC
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->m_1[3]; /*0x4ef803*/
+  v3 = *&Block->u32_4; /*0x4ef803*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef806*/
-  if ( v3 && (((unsigned char *)&(Block->m_C))[1]) ) /*0x4ef810*/
+  if ( v3 && (Block->u8_D) ) /*0x4ef810*/
   {
     operator delete((void *)(v3)); /*0x4ef818*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x4ef820*/
+    *&Block->u32_4 = 0; /*0x4ef820*/
   }
-  (((unsigned char *)&(Block->m_C))[1]) = 0; /*0x4ef82b*/
+  (Block->u8_D) = 0; /*0x4ef82b*/
   Block->m_8 = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
     operator delete((void *)(Block)); /*0x4ef83b*/

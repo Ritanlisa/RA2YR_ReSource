@@ -83,7 +83,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x6cf607*/
     if ( v5 ) /*0x6cf60b*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf616*/
+      if ( *&this->q004 ) /*0x6cf616*/
       {
         m_8 = this->m_8; /*0x6cf61b*/
         if ( a2 < m_8 ) /*0x6cf620*/
@@ -94,7 +94,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           do /*0x6cf647*/
           {
             v14 = 2 * v13; /*0x6cf62d*/
-            v15 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v13++); /*0x6cf636*/
+            v15 = (unsigned int *)(*&this->q004 + 8 * v13++); /*0x6cf636*/
             v5[v14] = *v15; /*0x6cf63d*/
             v5[v14 + 1] = v15[1]; /*0x6cf643*/
           }
@@ -103,11 +103,11 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
         }
         if ( BYTE1(this->m_C) ) /*0x6cf64f*/
         {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf658*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x6cf660*/
+          __3_YAXPAX_Z(*&this->q004); /*0x6cf658*/
+          *&this->q004 = 0; /*0x6cf660*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v5; /*0x6cf66b*/
+      *&this->q004 = v5; /*0x6cf66b*/
       this->m_8 = v3; /*0x6cf671*/
       BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
@@ -119,7 +119,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf684*/
+    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
 
@@ -192,7 +192,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x6cf787*/
     if ( !v5 ) /*0x6cf78b*/
       return 0; /*0x6cf814*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf791*/
+    if ( *&this->q004 ) /*0x6cf791*/
     {
       m_8 = this->m_8; /*0x6cf796*/
       if ( a2 < m_8 ) /*0x6cf79b*/
@@ -203,7 +203,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         do /*0x6cf7c2*/
         {
           v13 = 2 * v12; /*0x6cf7a8*/
-          v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v12++); /*0x6cf7b1*/
+          v14 = (unsigned int *)(*&this->q004 + 8 * v12++); /*0x6cf7b1*/
           v5[v13] = *v14; /*0x6cf7b8*/
           v5[v13 + 1] = v14[1]; /*0x6cf7be*/
         }
@@ -212,17 +212,17 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       }
       if ( BYTE1(this->m_C) ) /*0x6cf7ca*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6cf7d3*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x6cf7db*/
+        __3_YAXPAX_Z(*&this->q004); /*0x6cf7d3*/
+        *&this->q004 = 0; /*0x6cf7db*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x6cf7e6*/
+    *&this->q004 = v5; /*0x6cf7e6*/
     this->m_8 = v3; /*0x6cf7ec*/
     BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
+    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6cf7f8*/
   }
   v15 = this->m_8; /*0x6cf7fb*/
   if ( v15 < this->m_10 ) /*0x6cf803*/
@@ -291,8 +291,8 @@ void SwizzleManagerClass_19::ClearBuffer(void *a1_1)
 namespace gamemd {
 unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x6cf520*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x6cf535*/
+  if ( (this->m_C) ) /*0x6cf520*/
+    return (unsigned int)(a2 - *&this->q004) >> 3; /*0x6cf535*/
   else
     return 0; /*0x6cf527*/
 }
@@ -304,7 +304,7 @@ unsigned int * SwizzleManagerClass_19::Lookup(unsigned int * a2, int a3)
 {
   int v3; // edx
 
-  v3 = *(unsigned int *)&this->q004; /*0x6cf540*/
+  v3 = *&this->q004; /*0x6cf540*/
   *a2 = *(unsigned int *)(v3 + 8 * a3); /*0x6cf54f*/
   a2[1] = *(unsigned int *)(v3 + 8 * a3 + 4); /*0x6cf556*/
   return a2; /*0x6cf551*/
@@ -320,13 +320,13 @@ char SwizzleManagerClass_19::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->q008; /*0x6cf562*/
+  m_8 = this->m_8; /*0x6cf562*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x6cf56d*/
   {
     v3 = 0; /*0x6cf56f*/
     if ( m_8 <= 0 ) /*0x6cf573*/
       return 1; /*0x6cf593*/
-    v4 = *(unsigned int **)&this->q004; /*0x6cf575*/
+    v4 = *&this->q004; /*0x6cf575*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6cf57b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6cf584*/
     {
@@ -344,13 +344,13 @@ char SwizzleManagerClass_19::AddRef(int a2)
 namespace gamemd {
 void SwizzleManagerClass_19::ddtor()
 {
-  if ( *(unsigned int *)&this->IsAllocated && (((unsigned char *)&(*(unsigned int *)&this->IsAllocated))[1]) ) /*0x6cf69d*/
+  if ( *&this->IsAllocated && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x6cf69d*/
   {
-    operator delete((void *)(*(void **)&this->q004)); /*0x6cf6a3*/
-    *(unsigned int *)&this->q004 = 0; /*0x6cf6ab*/
+    operator delete((void *)(*&this->q004)); /*0x6cf6a3*/
+    *&this->q004 = 0; /*0x6cf6ab*/
   }
-  (((unsigned char *)&(this->q00C))[1]) = 0; /*0x6cf6ae*/
-  this->q008 = 0; /*0x6cf6b1*/
+  (this->IsAllocated) = 0; /*0x6cf6ae*/
+  this->m_8 = 0; /*0x6cf6b1*/
 }
 } // namespace gamemd
 
@@ -362,13 +362,13 @@ int SwizzleManagerClass_19::Init(unsigned int * a2, void *a2_2, void *a3_1, void
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !(*((unsigned char *)&(this->q00C))) ) /*0x6cf6c0*/
+  if ( !(this->m_C) ) /*0x6cf6c0*/
     return 0; /*0x6cf6c8*/
-  m_8 = this->q008; /*0x6cf6ce*/
+  m_8 = this->m_8; /*0x6cf6ce*/
   result = 0; /*0x6cf6d1*/
   if ( m_8 <= 0 ) /*0x6cf6d5*/
     return -1; /*0x6cf6ec*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; i += 2 ) /*0x6cf6db*/
+  for ( i = *&this->q004; *i != *a2; i += 2 ) /*0x6cf6db*/
   {
     if ( ++result >= m_8 ) /*0x6cf6ea*/
       return -1; /*0x6cf6ea*/
@@ -381,8 +381,8 @@ int SwizzleManagerClass_19::Init(unsigned int * a2, void *a2_2, void *a3_1, void
 namespace gamemd {
 unsigned int SwizzleManagerClass_19::Add(int a2, void *a2_2, void *a3_1)
 {
-  if ( (*((unsigned char *)&(this->q00C))) ) /*0x6cf700*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x6cf715*/
+  if ( (this->m_C) ) /*0x6cf700*/
+    return (unsigned int)(a2 - *&this->q004) >> 3; /*0x6cf715*/
   else
     return 0; /*0x6cf707*/
 }
@@ -396,11 +396,11 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->q010; /*0x6cf820*/
+  m_10 = this->m_10; /*0x6cf820*/
   result = 0; /*0x6cf823*/
   if ( m_10 <= 0 ) /*0x6cf828*/
     return -1; /*0x6cf83f*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; i += 2 ) /*0x6cf82e*/
+  for ( i = *&this->q004; *i != *a2; i += 2 ) /*0x6cf82e*/
   {
     if ( ++result >= m_10 ) /*0x6cf83d*/
       return -1; /*0x6cf83d*/
@@ -414,18 +414,18 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x6cf853*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf856*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x6cf860*/
+  v3 = *&Block->__pad_004; /*0x6cf853*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6cf856*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x6cf860*/
   {
     operator delete((void *)(v3)); /*0x6cf868*/
-    *(unsigned int *)&Block->q004 = 0; /*0x6cf870*/
+    *&Block->__pad_004 = 0; /*0x6cf870*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x6cf87b*/
-  Block->q008 = 0; /*0x6cf881*/
+  (Block->u32_D) = 0; /*0x6cf87b*/
+  Block->u32_8 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
     operator delete((void *)(Block)); /*0x6cf88b*/
-  return Block->__pad_0; /*0x6cf895*/
+  return Block->tail_0; /*0x6cf895*/
 }
 } // namespace gamemd
 
@@ -435,17 +435,17 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->q004; /*0x6cf8a3*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6cf8a6*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x6cf8b0*/
+  v3 = *&Block->__pad_004; /*0x6cf8a3*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6cf8a6*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x6cf8b0*/
   {
     operator delete((void *)(v3)); /*0x6cf8b8*/
-    *(unsigned int *)&Block->q004 = 0; /*0x6cf8c0*/
+    *&Block->__pad_004 = 0; /*0x6cf8c0*/
   }
-  (((unsigned char *)&(Block->q00C))[1]) = 0; /*0x6cf8cb*/
-  Block->q008 = 0; /*0x6cf8d1*/
+  (Block->u32_D) = 0; /*0x6cf8cb*/
+  Block->u32_8 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
     operator delete((void *)(Block)); /*0x6cf8db*/
-  return Block->__pad_0; /*0x6cf8e5*/
+  return Block->tail_0; /*0x6cf8e5*/
 }
 } // namespace gamemd

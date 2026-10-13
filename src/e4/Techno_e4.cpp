@@ -17,8 +17,8 @@ int Techno::GetOwnerHouse()
   result = this->u32_C4; /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
-    if ( BuildingType::IsSpecialType(*(unsigned int *)((char *)&this->q296 + 138)) ) /*0x6f2083*/
-      return ((BuildingType *)(*(unsigned int *)((char *)&this->q296 + 138)))->FindOwnerHouse(); /*0x6f2093*/
+    if ( BuildingType::IsSpecialType(*(unsigned int *)this->q296 + 138)) ) /*0x6f2083*/
+      return ((BuildingType *)(*(unsigned int *)this->q296 + 138)))->FindOwnerHouse(); /*0x6f2093*/
     else
       return 0; /*0x6f2098*/
   }

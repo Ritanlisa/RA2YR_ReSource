@@ -100,7 +100,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       while ( v5 < 357 ); /*0x451475*/
     }
     BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(a1)); /*0x451479*/
-    _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x45147e*/
+    _EDX = *(unsigned int *)&g_RulesClass_Instance; /*0x45147e*/
     __asm /*0x451484*/
     {
       fcomp qword ptr [edx+1700h]
@@ -134,7 +134,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     a1->needsRedraw = 1; /*0x4514ec*/
   }
   v15 = a1->Type; /*0x4514f9*/
-  if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x451505*/
+  if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 2172) ) /*0x451505*/
   {
     SuperWeaponToken = a1->SuperWeaponToken; /*0x45150b*/
     v17 = SuperWeaponToken + 1; /*0x451511*/
@@ -169,7 +169,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     {
       a1->UpgradeLevel = UpgradeLevel + 1; /*0x45160a*/
       BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(a1)); /*0x451610*/
-      _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x451615*/
+      _EAX = *(unsigned int *)&g_RulesClass_Instance; /*0x451615*/
       __asm /*0x45161a*/
       {
         fcomp qword ptr [eax+1700h]
@@ -261,7 +261,7 @@ int sub_452000(unsigned int * a1)
   {
     result = *v12; /*0x45214b*/
     if ( *v12 ) /*0x45214b*/
-      *(unsigned char *)(result + 376) = v11; /*0x452151*/
+      result->u8_178 = v11; /*0x452151*/
     ++v12; /*0x452157*/
     --v13; /*0x45215a*/
   }
@@ -917,7 +917,7 @@ int E4Recv_4517D0::sub_4517D0()
   v4 = v2[2]; /*0x4517f7*/
   result = (int)&this->u32_55C; /*0x4517fa*/
   v4 = v4; /*0x451800*/
-  v12 = (int **)(char *)&this->u32_55C; /*0x451804*/
+  v12 = &this->u32_55C; /*0x451804*/
   do /*0x451879*/
   {
     v6 = *v12; /*0x45180c*/
@@ -1108,7 +1108,7 @@ char E4Recv_457A10::sub_457A10()
   int16_t v5[2]; // [esp+10h] [ebp-4h] BYREF
 
   v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vfptr + 440))(this, v5); /*0x457a2d*/
-  for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(**((unsigned int **)&this->needsRedraw8) + 144))( /*0x457a42*/
+  for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(*this->u32_524) + 144))( /*0x457a42*/
                        this->gattlingValue,
                        0); *i != 0x7FFF || i[1] != 0x7FFF; i += 2 )
   {
@@ -1292,10 +1292,10 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
   char *v6; // edx
 
   result = 3 * a2 + 963; /*0x45e8bc*/
-  v6 = (char *)this + 12 * a2; /*0x45e8c3*/
+  v6 = &this->u32_C * a2; /*0x45e8c3*/
   *((unsigned int *)v6 + 961) = a3; /*0x45e8c6*/
   *((unsigned int *)v6 + 962) = a4; /*0x45e8d0*/
-  *((unsigned int *)&this->AbstractClass + result) = a5; /*0x45e8da*/
+  this->u32_524 + result) = a5; /*0x45e8da*/
   return result; /*0x45e8dd*/
 
 }

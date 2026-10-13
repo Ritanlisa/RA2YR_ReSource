@@ -26,20 +26,20 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
   this->u32_C = (unsigned int)(&vt_IsometricTileClass); /*0x5437b6*/
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
-    this->u32_81 = 0; /*0x543805*/
+    this->inLimbo = 0; /*0x543805*/
     ObjectClass::SetPosition(); /*0x54380c*/
-    (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)((char *)&this->q48F + 1)))(this, 1); /*0x543818*/
+    (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)this->q48F + 1)))(this, 1); /*0x543818*/
   }
-  if ( *(int *)&stru_87F5F0.__pad_58[280] < *(int *)&stru_87F5F0.__pad_58[272] /*0x543855*/
-    || (stru_87F5F0.__pad_58[277] || !*(unsigned int *)&stru_87F5F0.__pad_58[272])
-    && *(int *)&stru_87F5F0.__pad_58[284] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_87F5F0.__pad_58[264] + 8))(
-         &stru_87F5F0.__pad_58[264],
-         *(unsigned int *)&stru_87F5F0.__pad_58[272] + *(unsigned int *)&stru_87F5F0.__pad_58[284],
+  if ( *(int *)&DataGlobal_87F760 < *(int *)&DataGlobal_87F758 /*0x543855*/
+    || (DataGlobal_87F75D || !*(unsigned int *)&DataGlobal_87F758)
+    && *(int *)&DataGlobal_87F764 > 0
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&DataGlobal_87F750 + 8))(
+         &DataGlobal_87F750,
+         *(unsigned int *)&DataGlobal_87F758 + *(unsigned int *)&DataGlobal_87F764,
          0) )
   {
-    v4 = (*(unsigned int *)&stru_87F5F0.__pad_58[280])++; /*0x543862*/
-    *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[268] + 4 * v4) = this; /*0x543871*/
+    v4 = (*(unsigned int *)&DataGlobal_87F760)++; /*0x543862*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_87F754 + 4 * v4) = this; /*0x543871*/
   }
   return this; /*0x543876*/
 }

@@ -31,7 +31,7 @@ void * RadBeam::Create()
     v4 = dword_B04A70++; /*0x659177*/
     *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
   }
-  inited[3] = (double)(this != (RadBeam *)1 ? 20 : 10);
+  inited[3] = (double)(this != 1 ? 20 : 10);
   return (int)inited; /*0x6591a1*/
 
 }
@@ -42,17 +42,17 @@ namespace gamemd {
 unsigned int * RadBeam::InitState(int aP1)
 {
 
-  this->? = 0; /*0x6593fe*/
+  this->nextArrayIndex = 0; /*0x6593fe*/
   this->AbstractClass = 0; /*0x659401*/
-  this->? = 0; /*0x659403*/
-  LOBYTE(this->?) = 0; /*0x659406*/
-  BYTE1(this->?) = 1; /*0x659409*/
-  this->? = 0; /*0x65940c*/
-  this->? = aP1; /*0x65940f*/
-  this->? = 0; /*0x659412*/
-  LOBYTE(this->?) = 0; /*0x659415*/
-  BYTE1(this->?) = 0; /*0x659418*/
-  BYTE2(this->?) = 0; /*0x65941b*/
+  this->__pad_004 = 0; /*0x659403*/
+  LOBYTE(this->u32_8) = 0; /*0x659406*/
+  BYTE1(this->u8_9) = 1; /*0x659409*/
+  this->memberAtOffset12 = 0; /*0x65940c*/
+  this->uniqueId = aP1; /*0x65940f*/
+  this->referenceCount = 0; /*0x659412*/
+  LOBYTE(this->NeedsSaveOrLink) = 0; /*0x659415*/
+  BYTE1(this->u8_21) = 0; /*0x659418*/
+  BYTE2(this->u8_22) = 0; /*0x65941b*/
   this->range[0] = 0; /*0x65941e*/
   this->range[1] = 0; /*0x659421*/
   this->data[0] = 0; /*0x659424*/

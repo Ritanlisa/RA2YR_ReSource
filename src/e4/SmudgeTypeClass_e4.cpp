@@ -52,17 +52,17 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   void **v6; // edx
 
   ObjectTypeClass::ConstructFull((int)a2, a2); /*0x6b5269*/
-  *((unsigned int *)a2 + 165) = -1; /*0x6b5277*/
-  *((unsigned int *)a2 + 166) = 1; /*0x6b5281*/
-  *((unsigned int *)a2 + 167) = 1; /*0x6b5287*/
+  a2->u32_294 = -1; /*0x6b5277*/
+  a2->u32_298 = 1; /*0x6b5281*/
+  a2->u32_29C = 1; /*0x6b5287*/
   *(a2 + 672) = 0; /*0x6b528d*/
   *(a2 + 673) = 0; /*0x6b5294*/
   *(unsigned int *)a2 = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
   *((unsigned int *)a2 + 1) = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  *((unsigned int *)a2 + 2) = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
+  a2->VtableStub_8 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
   *((unsigned int *)a2 + 3) = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(a2 + 4)); /*0x6b52b5*/
-  *(unsigned short *)(a2 + 559) = 1; /*0x6b52ba*/
+  a2->u16_22F = 1; /*0x6b52ba*/
   *(a2 + 561) = 0; /*0x6b52c7*/
   *(a2 + 562) = 1; /*0x6b52ce*/
   *(a2 + 563) = 1; /*0x6b52d4*/
@@ -86,7 +86,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   if ( v3 <= 0 ) /*0x6b533d*/
   {
 LABEL_11:
-    *((unsigned int *)a2 + 165) = -1; /*0x6b5351*/
+    a2->u32_294 = -1; /*0x6b5351*/
     return a2; /*0x6b535a*/
   }
   else
@@ -99,7 +99,7 @@ LABEL_11:
       if ( v5 >= v3 ) /*0x6b534f*/
         goto LABEL_11; /*0x6b534f*/
     }
-    *((unsigned int *)a2 + 165) = v5; /*0x6b5361*/
+    a2->u32_294 = v5; /*0x6b5361*/
     return a2; /*0x6b5367*/
   }
 
@@ -131,7 +131,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
       v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
-    v10 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a6); /*0x6b5674*/
+    v10 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a6); /*0x6b5674*/
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
@@ -154,10 +154,10 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x6b56eb*/
   {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aCrater, this->Crater); /*0x6b570b*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aCrater, this->Crater); /*0x6b570b*/
     Burn = this->Burn; /*0x6b5710*/
     this->Crater = Bool_Overwrite; /*0x6b5716*/
-    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->?, aBurn, Burn); /*0x6b5725*/
+    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aBurn, Burn); /*0x6b5725*/
     Width = this->Width; /*0x6b5732*/
     this->Burn = v6; /*0x6b5739*/
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
@@ -170,12 +170,12 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
                      (unsigned __int8 *)this->?,
                      (unsigned __int8 *)g_INI_Key_Height,
                      this->Height);
-    if ( this->? ) /*0x6b5764*/
-      _makepath(Buffer, 0, 0, this->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
+    if ( this->Theater_d ) /*0x6b5764*/
+      _makepath(Buffer, 0, 0, this->ArrayIndex, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
     else
-      _makepath(Buffer, 0, 0, this->?, Ext); /*0x6b5784*/
+      _makepath(Buffer, 0, 0, this->ArrayIndex, Ext); /*0x6b5784*/
     result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
-    this->? = (SHPStruct *)result; /*0x6b57c7*/
+    this->Image = (SHPStruct *)result; /*0x6b57c7*/
     LOBYTE(result) = 1; /*0x6b57ce*/
   }
   else

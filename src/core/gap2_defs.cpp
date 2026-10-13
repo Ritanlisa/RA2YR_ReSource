@@ -48,8 +48,8 @@ int WTFMode::ResetUnitFlags() {
   (*((unsigned char *)&(v1))) = byte_A8E9A0; /*0x41db40*/
   if ( byte_A8E9A0 ) /*0x41db4d*/
   {
-    v3 = this->u32_5C; /*0x41db53*/
-    v1 = (WTFMode *)this->u32_5C; /*0x41db56*/
+    v3 = this->q05C; /*0x41db53*/
+    v1 = (WTFMode *)this->q05C; /*0x41db56*/
     if ( v1 ) /*0x41db5a*/
     {
       while ( *(unsigned int *)&v1[764] ) /*0x41db62*/
@@ -58,7 +58,7 @@ int WTFMode::ResetUnitFlags() {
         if ( !v1 ) /*0x41db6c*/
           goto LABEL_8; /*0x41db6c*/
       }
-      v1 = (WTFMode *)this->u32_5C; /*0x41db74*/
+      v1 = (WTFMode *)this->q05C; /*0x41db74*/
       if ( v3 ) /*0x41db78*/
       {
         do /*0x41db88*/
@@ -70,7 +70,7 @@ int WTFMode::ResetUnitFlags() {
       }
     }
   LABEL_8:
-    v4 = (unsigned int *)this->u32_5C; /*0x41db8a*/
+    v4 = (unsigned int *)this->q05C; /*0x41db8a*/
     v5 = 0; /*0x41db8f*/
     if ( v4 ) /*0x41db93*/
     {
@@ -84,12 +84,12 @@ int WTFMode::ResetUnitFlags() {
       }
       while ( v5 <= 100 && v4 ); /*0x41dbc8*/
     }
-    v6 = (unsigned int *)this->u32_50; /*0x41dbca*/
-    this->u32_3D = 0; /*0x41dbcd*/
+    v6 = (unsigned int *)this->q050; /*0x41dbca*/
+    this->u8_3D = 0; /*0x41dbcd*/
     if ( v6 ) /*0x41dbd2*/
     {
       v1 = (WTFMode *)(*(int (__thiscall **)(unsigned int *))(*v6 + 44))(v6); /*0x41dbd8*/
-      if ( v1 == (WTFMode *)6 && (WTFMode *)v6[165] == this ) /*0x41dbe6*/
+      if ( v1 == 6 && (WTFMode *)v6[165] == this ) /*0x41dbe6*/
       {
         (*((unsigned char *)&(v1))) = dword_889FC8; /*0x41dbe8*/
         v7 = 0; /*0x41dbed*/
@@ -114,7 +114,7 @@ int WTFMode::ResetUnitFlags() {
           v6[165] = 0; /*0x41dc34*/
       }
     }
-    this->u32_50 = 0; /*0x41dc3b*/
+    this->q050 = 0; /*0x41dc3b*/
   }
   return (char)v1; /*0x41dc3f*/
 }
@@ -126,12 +126,12 @@ void* WTFMode::FindObjectByType(int a1) {
 
   if ( !byte_A8E9A0 ) /*0x47ec48*/
     return 0; /*0x47ec48*/
-  v2 = (unsigned int *)(a1 ? this->u32_E8 : this->u32_E4);
+  v2 = (unsigned int *)(a1 ? this->q0E8 : this->q0E4);
   if ( !v2 ) /*0x47ec62*/
     return 0; /*0x47ec77*/
-  while ( (*(int (__thiscall **)(unsigned int *))(*v2 + 44))(v2) != 15 ) /*0x47ec6e*/
+  while ( v2->vt_slot_44() != 15 ) /*0x47ec6e*/
   {
-    v2 = (unsigned int *)v2[12]; /*0x47ec70*/
+    v2 = v2->u32_30; /*0x47ec70*/
     if ( !v2 ) /*0x47ec75*/
       return 0; /*0x47ec75*/
   }
@@ -143,7 +143,7 @@ namespace gamemd {
 int CStreamClass::IsEmpty(int a2) {
   if ( a2 ) /*0x4a31f9*/
     sub_7DC720(-2147467261); /*0x4a3200*/
-  return *(unsigned int *)this->__pad_0 == 0; /*0x4a320e*/
+  return *(unsigned int *)this->IStream_field_00 == 0; /*0x4a320e*/
 }
 }
 // 0x4A4AD0
@@ -151,22 +151,22 @@ namespace gamemd {
 void CStreamClass::ClearBuffer() {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x4a4ad6*/
+  v2 = *&this->IStream_field_00; /*0x4a4ad6*/
   this->m_10 = 0; /*0x4a4ad9*/
-  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x4a4ae0*/
+  if ( v2 && (this->IsAllocated) ) /*0x4a4ae0*/
   {
     operator delete((void *)(v2)); /*0x4a4ae6*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4aee*/
+    *&this->IStream_field_00 = 0; /*0x4a4aee*/
   }
-  (((unsigned char *)&(this->m_C))[1]) = 0; /*0x4a4af1*/
-  this->m_8 = 0; /*0x4a4af4*/
+  (this->IsAllocated) = 0; /*0x4a4af1*/
+  this->__pad_008 = 0; /*0x4a4af4*/
 }
 }
 // 0x4A4B00
 namespace gamemd { 
 int CStreamClass::PointerToIndex(int a2) {
-  if ( (*((unsigned char *)&(this->m_C))) ) /*0x4a4b00*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a4b15*/
+  if ( (this->m_C) ) /*0x4a4b00*/
+    return (unsigned int)(a2 - *&this->IStream_field_00) >> 2; /*0x4a4b15*/
   else
     return 0; /*0x4a4b07*/
 }
@@ -181,36 +181,36 @@ int CStreamClass::CopyItems(int a1, void* a2) {
 
   if ( a1 ) /*0x4a4cbc*/
   {
-    (*((unsigned char *)&(this->m_C))) = 0; /*0x4a4cc2*/
+    (this->m_C) = 0; /*0x4a4cc2*/
     if ( a2 ) /*0x4a4cc8*/
       v4 = a2; /*0x4a4cde*/
     else
       v4 = (unsigned int *)operator new(4 * a1); /*0x4a4cda*/
-    (*((unsigned char *)&(this->m_C))) = 1; /*0x4a4ce2*/
+    (this->m_C) = 1; /*0x4a4ce2*/
     if ( !v4 ) /*0x4a4ce6*/
       return 0; /*0x4a4d5a*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x4a4ce8*/
+    if ( *&this->IStream_field_00 ) /*0x4a4ce8*/
     {
-      m_8 = this->m_8; /*0x4a4cef*/
+      m_8 = this->__pad_008; /*0x4a4cef*/
       if ( a1 < m_8 ) /*0x4a4cf4*/
         m_8 = a1; /*0x4a4cf6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a4cfc*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->IStream_field_00 + 4 * i - 4) ) /*0x4a4cfc*/
         ++i; /*0x4a4d01*/
-      if ( (((unsigned char *)&(this->m_C))[1]) ) /*0x4a4d0e*/
+      if ( (this->IsAllocated) ) /*0x4a4d0e*/
       {
-        operator delete((void *)(*(void **)&this->m_1[3])); /*0x4a4d19*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x4a4d21*/
+        operator delete((void *)(*&this->IStream_field_00)); /*0x4a4d19*/
+        *&this->IStream_field_00 = 0; /*0x4a4d21*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4a4d2a*/
-    this->m_8 = a1; /*0x4a4d32*/
-    (((unsigned char *)&(this->m_C))[1]) = a2 == 0; /*0x4a4d35*/
+    *&this->IStream_field_00 = v4; /*0x4a4d2a*/
+    this->__pad_008 = a1; /*0x4a4d32*/
+    (this->IsAllocated) = a2 == 0; /*0x4a4d35*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
+    this->StubReturnNullPointer(); /*0x4a4d3e*/
   }
-  v7 = this->m_8; /*0x4a4d41*/
+  v7 = this->__pad_008; /*0x4a4d41*/
   if ( v7 < this->m_10 ) /*0x4a4d49*/
     this->m_10 = v7; /*0x4a4d4b*/
   return 1; /*0x4a4d4e*/
@@ -227,7 +227,7 @@ int CStreamClass::FindItem(unsigned int * a2) {
   result = 0; /*0x4a4d63*/
   if ( m_10 <= 0 ) /*0x4a4d68*/
     return -1; /*0x4a4d7f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a4d6e*/
+  for ( i = *&this->IStream_field_00; *i != *a2; ++i ) /*0x4a4d6e*/
   {
     if ( ++result >= m_10 ) /*0x4a4d7d*/
       return -1; /*0x4a4d7d*/
@@ -240,18 +240,18 @@ namespace gamemd {
 void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x4a4de6*/
-  if ( v3 && (((unsigned char *)&(this->m_C))[1]) ) /*0x4a4df0*/
+  v3 = *&this->IStream_field_00; /*0x4a4de3*/
+  *(unsigned int *)this->IStream_field_00 = 0; /*0x4a4de6*/
+  if ( v3 && (this->IsAllocated) ) /*0x4a4df0*/
   {
     operator delete((void *)(v3)); /*0x4a4df8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4e00*/
+    *&this->IStream_field_00 = 0; /*0x4a4e00*/
   }
-  (((unsigned char *)&(this->m_C))[1]) = 0; /*0x4a4e0b*/
-  this->m_8 = 0; /*0x4a4e11*/
+  (this->IsAllocated) = 0; /*0x4a4e0b*/
+  this->__pad_008 = 0; /*0x4a4e11*/
   if ( (a2 & 1) != 0 ) /*0x4a4e18*/
     operator delete((void *)(this)); /*0x4a4e1b*/
-  return this->__pad_0; /*0x4a4e25*/
+  return this->IStream_field_00; /*0x4a4e25*/
 }
 }
 // 0x55A150
@@ -259,15 +259,15 @@ namespace gamemd {
 void LoadOptions::vt03() {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x55a156*/
-  this->m_10 = 0; /*0x55a159*/
-  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x55a160*/
+  v2 = *&this->mode; /*0x55a156*/
+  this->max_entries = 0; /*0x55a159*/
+  if ( v2 && (this->IsAllocated) ) /*0x55a160*/
   {
     operator delete((void *)(v2)); /*0x55a166*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x55a16e*/
+    *&this->mode = 0; /*0x55a16e*/
   }
-  (((unsigned char *)&(this->m_C))[1]) = 0; /*0x55a171*/
-  this->m_8 = 0; /*0x55a174*/
+  (this->IsAllocated) = 0; /*0x55a171*/
+  this->Capacity = 0; /*0x55a174*/
 }
 }
 // 0x5AE6F0
@@ -275,9 +275,9 @@ namespace gamemd {
 void* Matrix3D::Constructor(float a1, float a2) {
   float v5; // [esp+0h] [ebp-8h]
 
-  *(unsigned int *)&this->m_1[3] = 0; /*0x5ae6fa*/
-  *(unsigned int *)&this->m_5[3] = 0; /*0x5ae6fd*/
-  *(unsigned int *)&this->m_9[3] = 0; /*0x5ae700*/
+  *&this->q004 = 0; /*0x5ae6fa*/
+  *&this->u32_8 = 0; /*0x5ae6fd*/
+  *&this->q00C = 0; /*0x5ae700*/
   this->u32_10 = 0; /*0x5ae703*/
   this->u32_18 = 0; /*0x5ae706*/
   this->u32_1C = 0; /*0x5ae709*/
@@ -417,11 +417,11 @@ int Stream::ReadPacket() {
      + this->u32_58;
   this->u32_58 = v3; /*0x5f1c9c*/
   if ( v3 < 0xB ) /*0x5f1c9f*/
-    return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1c9f*/
+    return (*(int (__thiscall **)(unsigned int))(**&this->u32_58 + 20))(this->u32_38); /*0x5f1c9f*/
   v4 = 0; /*0x5f1cb4*/
   if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
     goto LABEL_11; /*0x5f1cb8*/
-  v5 = *(char **)(&this->Active0); /*0x5f1cba*/
+  v5 = *&this->q050; /*0x5f1cba*/
   while ( *(unsigned short *)&v5[v4] != 0xDABD ) /*0x5f1cc3*/
   {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
@@ -430,7 +430,7 @@ int Stream::ReadPacket() {
   if ( v4 == -1 ) /*0x5f1ccf*/
   {
   LABEL_11:
-    memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v4), 1u); /*0x5f1cd1*/
+    memcpy(*&this->q050, (const void *)(this->PacketsReceived + v4), 1u); /*0x5f1cd1*/
     v6 = this->u32_38; /*0x5f1ce0*/
     this->u32_58 = 1; /*0x5f1ce3*/
     return (*(int (__thiscall **)(int))(v6->abstractFlags)(v6); /*0x5f1cef*/
@@ -452,25 +452,25 @@ int Stream::ReadPacket() {
             memcpy(v5, &v5[v4], v3 - v4); /*0x5f1dcc*/
             this->u32_58 -= v4; /*0x5f1dd9*/
           }
-          return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1cb0*/
+          return (*(int (__thiscall **)(unsigned int))(**&this->u32_38 + 20))(this->u32_38); /*0x5f1cb0*/
         }
         if ( Audio_Read(v7 + 6, v11) == *(unsigned int *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
         {
-          if ( !(*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->PacketsReceived6) + 12))( /*0x5f1e58*/
+          if ( !(*(int (__thiscall **)(unsigned int, int, int))(**&this->Stream_field_0C + 12))( /*0x5f1e58*/
                   this->u32_38,
                   this->PacketsReceived + v4 + 6,
                   v11) )
             ++this->u32_6C; /*0x5f1e5f*/
-          memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v16), this->u32_58 - v16); /*0x5f1e74*/
+          memcpy(*&this->u32_58, (const void *)(this->PacketsReceived + v16), this->u32_58 - v16); /*0x5f1e74*/
           this->u32_58 -= v16; /*0x5f1e81*/
-          return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1e8b*/
+          return (*(int (__thiscall **)(unsigned int))(**&this->u32_14 + 20))(this->u32_38); /*0x5f1e8b*/
         }
         else
         {
           ++this->u32_70; /*0x5f1e11*/
           Debug::Log(aSerialPacketFa); /*0x5f1e14*/
           v14 = v4 + 2; /*0x5f1e1f*/
-          memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v14), this->u32_58 - v14); /*0x5f1e2a*/
+          memcpy(*&this->u32_58, (const void *)(this->PacketsReceived + v14), this->u32_58 - v14); /*0x5f1e2a*/
           v15 = this->u32_38; /*0x5f1e32*/
           this->u32_58 -= v14; /*0x5f1e3a*/
           return (*(int (__thiscall **)(int))(v15->abstractFlags)(v15); /*0x5f1e3f*/
@@ -480,7 +480,7 @@ int Stream::ReadPacket() {
       {
         Debug::Log("Serial packet length too long by %d bytes\n", v11 - v10); /*0x5f1d7f*/
         v12 = v4 + 2; /*0x5f1d8a*/
-        memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v12), this->u32_58 - v12); /*0x5f1d95*/
+        memcpy(*&this->u32_58, (const void *)(this->PacketsReceived + v12), this->u32_58 - v12); /*0x5f1d95*/
         v13 = this->u32_38; /*0x5f1d9d*/
         this->u32_58 -= v12; /*0x5f1da5*/
         return (*(int (__thiscall **)(int))(v13->abstractFlags)(v13); /*0x5f1daa*/
@@ -499,7 +499,7 @@ int Stream::ReadPacket() {
   {
     memcpy(v5, &v5[v4], v3 - v4); /*0x5f1d0d*/
     this->u32_58 -= v4; /*0x5f1d1a*/
-    return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1d24*/
+    return (*(int (__thiscall **)(unsigned int))(**&this->u32_14 + 20))(this->u32_38); /*0x5f1d24*/
   }
 }
 // 0x5AF080
@@ -609,7 +609,7 @@ void* StreamWrapper::QueryInterface(int a2)
   void (__thiscall ***v5)(unsigned int, int); // ecx
 
   v3 = (void (__thiscall ***)(unsigned int, int))this->u32_10; /*0x7b0443*/
-  *(unsigned int *)this->__pad_0 = 0; /*0x7b0446*/
+  *(unsigned int *)this->__pad_000 = 0; /*0x7b0446*/
   if ( v3 ) /*0x7b044e*/
     (**v3)(v3, 1); /*0x7b0454*/
   v4 = (void (__thiscall ***)(unsigned int, int))this->u32_14; /*0x7b0456*/
@@ -621,7 +621,7 @@ void* StreamWrapper::QueryInterface(int a2)
   OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
   if ( (a2 & 1) != 0 ) /*0x7b047c*/
     operator delete((void *)(this)); /*0x7b047f*/
-  return this->__pad_0; /*0x7b0489*/
+  return this->__pad_000; /*0x7b0489*/
 }
 }
 // 0x7BCAE0

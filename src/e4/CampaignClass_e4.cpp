@@ -46,7 +46,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
   this->? = &CampaignClass::`vftable'; /*0x46cb82*/
-  this->? = &CampaignClass::`vftable'; /*0x46cb89*/
+  this->vtable3 = &CampaignClass::`vftable'; /*0x46cb89*/
   this->? = &CampaignClass::`vftable'; /*0x46cb90*/
   if ( dword_A83D08 < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
@@ -60,7 +60,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
     *((unsigned int *)dword_A83CFC + v3) = this; /*0x46cbe8*/
   }
   LOBYTE(this->scenario[29]) = 0; /*0x46cbf7*/
-  wcscpy((wchar_t *)&this->description[29], &g_TypeClass_DefaultString); /*0x46cbfe*/
+  wcscpythis->u32_1F2C, &g_TypeClass_DefaultString); /*0x46cbfe*/
   return (int)this; /*0x46cc08*/
 
 }
@@ -79,12 +79,12 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(this->__pad_0, (unsigned __int8 *)&stru_81AF8C.?[2]); /*0x46ce1c*/
+  result = INIClass::GetKeyCount(this->vtable1, (unsigned __int8 *)&stru_81AF8C.?[2]); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x46ce48*/
-                                         this->__pad_0,
+                                         this->vtable1,
                                          (unsigned __int8 *)&stru_81AF8C.?[2],
                                          v3);
     INIClass::GetString(this, (unsigned __int8 *)&stru_81AF8C.?[2], StringByIndex, &g_INI_DefaultBuffer, Source, 32); /*0x46ce55*/
@@ -182,8 +182,8 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49c5ac*/
   if ( !LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  p_referenceCount = &this->?; /*0x49c5c4*/
-  if ( !LOBYTE(this->?) ) /*0x49c5c1*/
+  p_referenceCount = &this->referenceCount; /*0x49c5c4*/
+  if ( !LOBYTE(this->referenceCount) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = this->scenario[7]; /*0x49c5d4*/
   if ( !LOBYTE(g_DDrawSurfaceManager.scenario[14]) ) /*0x49c5d9*/
@@ -194,11 +194,11 @@ AbstractClass * * CampaignClass::SaveProgress()
   if ( this->scenario[6] == this->scenario[4] ) /*0x49c616*/
     return 1; /*0x49c61b*/
   CCFileClass::Construct(&v33, g_Str_File_coopsave_ini); /*0x49c631*/
-  v28.?[0] = 0; /*0x49c63a*/
-  v28.?[1] = 0; /*0x49c63e*/
-  INISectionList::Constructor((INISectionList *)&v28.?[2]); /*0x49c642*/
-  Node::Init((Node *)&v28.?[8]); /*0x49c64b*/
-  v28.? = 0; /*0x49c65e*/
+  v28.u32_9C = 0; /*0x49c63a*/
+  v28.u32_9C = 0; /*0x49c63e*/
+  INISectionList::Constructor((INISectionList *)&v28.u32_9C); /*0x49c642*/
+  Node::Init((Node *)&v28.u32_9C); /*0x49c64b*/
+  v28.u32_9C = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
   *(unsigned int *)v28.INIClass = &CCINIClass_Vtable; /*0x49c667*/
   CCINIClass::Load(&v28, (int)&v33, 0, 0); /*0x49c66f*/
@@ -245,7 +245,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   }
   g_IsWindowed[v5] = 0; /*0x49c720*/
   strcpy(Block, g_IsWindowed); /*0x49c73a*/
-  v13 = (char *)&this->?; /*0x49c743*/
+  v13 = &this->Coord_9C; /*0x49c743*/
   v14 = 0; /*0x49c745*/
   for ( i = *(unsigned char *)p_referenceCount; i; ++v13 )
   {
@@ -297,7 +297,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &stru_A8B250.__pad_0[80]; /*0x49c909*/
+    v24 = &DataGlobal_A8B2A0; /*0x49c909*/
     while ( *(unsigned int *)v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/
@@ -414,7 +414,7 @@ void ** CampaignClass::DTOR(char a2)
 
   this->AbstractClass = &CampaignClass::`vftable'; /*0x46d096*/
   this->? = &CampaignClass::`vftable'; /*0x46d09c*/
-  this->? = &CampaignClass::`vftable'; /*0x46d0a3*/
+  this->vtable3 = &CampaignClass::`vftable'; /*0x46d0a3*/
   this->? = &CampaignClass::`vftable'; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x46d0b1*/
   v5 = this; /*0x46d0c6*/

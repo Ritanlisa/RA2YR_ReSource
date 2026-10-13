@@ -46,14 +46,14 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   uint8_t vtable0; // bl
   unsigned int result; // eax
 
-  v3 = (((unsigned char *)&(this->vfptr))[1]); /*0x517394*/
-  (((unsigned char *)&(this->vfptr))[2]) += a2 * (a3[2] - (((unsigned char *)&(this->vfptr))[2])) / 256; /*0x517397*/
+  v3 = (this->M1); /*0x517394*/
+  (this->M2) += a2 * (a3[2] - (this->M2)) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   vtable0 = (uint8_t)this->vfptr; /*0x5173ba*/
-  (((unsigned char *)&(this->vfptr))[1]) = v4; /*0x5173bc*/
+  (this->M1) = v4; /*0x5173bc*/
   result = a2 * (*a3 - vtable0) / 256; /*0x5173db*/
   (*((unsigned char *)&(result))) = vtable0 + result; /*0x5173de*/
-  (*((unsigned char *)&(this->vfptr))) = result; /*0x5173e1*/
+  (this->vfptr) = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
 }
@@ -65,15 +65,15 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
   int v3; // edx
   int v4; // eax
 
-  v2 = (*((unsigned char *)&(this->vfptr))) - *a2; /*0x517400*/
+  v2 = (this->vfptr) - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
-    v2 = *a2 - (*((unsigned char *)&(this->vfptr))); /*0x517404*/
-  v3 = (((unsigned char *)&(this->vfptr))[1]) - a2[1]; /*0x517410*/
+    v2 = *a2 - (this->vfptr); /*0x517404*/
+  v3 = (this->M1) - a2[1]; /*0x517410*/
   if ( v3 < 0 ) /*0x517412*/
-    v3 = a2[1] - (((unsigned char *)&(this->vfptr))[1]); /*0x517414*/
-  v4 = (((unsigned char *)&(this->vfptr))[2]) - a2[2]; /*0x517422*/
+    v3 = a2[1] - (this->M1); /*0x517414*/
+  v4 = (this->M2) - a2[2]; /*0x517422*/
   if ( v4 < 0 ) /*0x517424*/
-    v4 = a2[2] - (((unsigned char *)&(this->vfptr))[2]); /*0x517426*/
+    v4 = a2[2] - (this->M2); /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
 }
 }
@@ -109,9 +109,9 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
 
   INIClass::ClearSection(v3, (int)&g_INI_Key_Special.SidebarImage, 0); /*0x51ff02*/
   result = 0; /*0x51ff0d*/
-  for ( i = 0; result < *(int *)&stru_A83D50.__pad_80[40]; i = result ) /*0x51ff15*/
+  for ( i = 0; result < *(int *)&g_BuildingClass_Count; i = result ) /*0x51ff15*/
   {
-    v6 = *(BuildingClass **)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * result); /*0x51ff25*/
+    v6 = *(BuildingClass **)(*(unsigned int *)&g_InfantryClassLimit + 4 * result); /*0x51ff25*/
     if ( !v6->inLimbo ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
@@ -121,7 +121,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vfptr + 97))(v6); /*0x51ff89*/
       v7 = (unsigned int)(*(unsigned int *)(ProgressTimer)::GetValue((ProgressTimer *)v6->primaryFacing, &v27)); /*0x51ff9d*/
       owner = (gamemd::HouseClass *)(v6->owner); /*0x51ffab*/
-      v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
+      v9 = *&v6->q6C0 + 36; /*0x51ffb3*/
       v24.Input_field_00 = v6->location[0]; /*0x51ffb6*/
       isRecruitableByEnemy = (uint8_t)v6->isRecruitableByEnemy; /*0x51ffbf*/
       v25 = v6->location[1]; /*0x51ffc5*/
@@ -620,7 +620,7 @@ namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
   *(unsigned int *)this->0 = &vt_HoverLocomotionClass; /*0x513d00*/
-  *(unsigned int *)&this->0[4] = &vt_HoverLocomotionClass; /*0x513d06*/
+  *&this->M4 = &vt_HoverLocomotionClass; /*0x513d06*/
   this->LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd
@@ -640,16 +640,16 @@ int E4Recv_517110::sub_517110()
 
   v5 = 1; /*0x51717d*/
   if ( this->occupant != *(unsigned int *)&stru_A8EB00.?[1436] /*0x517138*/
-    || this->owningHouseIndex != *(unsigned int *)&stru_A8EB00.?[1440]
+    || this->owningHouseIndex != *(unsigned int *)&DataGlobal_A8F0A0
     || this->fallRate != *(unsigned int *)&stru_A8EB00.?[1444] )
   {
     v2 = this->occupant / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->? + 440))(this->?, v8); /*0x517167*/
+    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->M12 + 440))(this->M12, v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = this->?; /*0x51717f*/
+  vtable3 = this->M12; /*0x51717f*/
   this->ambientSoundController[3] = 0; /*0x517182*/
   this->ambientSoundController[4] = 1072693248; /*0x517189*/
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
@@ -698,7 +698,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-  LOBYTE(this->?) = 0; /*0x51779f*/
+  LOBYTE(this->M4) = 0; /*0x51779f*/
   strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
@@ -707,7 +707,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
       v4 = *(void **)v7; /*0x517819*/
-      LOBYTE(this->?) = 1; /*0x51781d*/
+      LOBYTE(this->M4) = 1; /*0x51781d*/
       this->AbstractClass = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/

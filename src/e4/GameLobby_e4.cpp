@@ -54,33 +54,33 @@ char GameLobby_Setup(HWND hDlg, void * a2)
   }
   if ( a2 )
   {
-    if ( a2 == (void *)1 )
+    if ( a2 == 1 )
     {
       v6 = 1042; /*0x5ea22d*/
     }
-    else if ( a2 == (void *)2 )
+    else if ( a2 == 2 )
     {
       v6 = 1043; /*0x5ea239*/
     }
-    else if ( a2 == (void *)3 )
+    else if ( a2 == 3 )
     {
       v6 = 1044; /*0x5ea245*/
     }
-    else if ( a2 == (void *)4 )
+    else if ( a2 == 4 )
     {
       v6 = 1045; /*0x5ea251*/
     }
-    else if ( a2 == (void *)5 )
+    else if ( a2 == 5 )
     {
       v6 = 1046; /*0x5ea25d*/
     }
-    else if ( a2 == (void *)6 )
+    else if ( a2 == 6 )
     {
       v6 = 1047; /*0x5ea269*/
     }
     else
     {
-      v6 = a2 != (void *)7 ? -1 : 1048;
+      v6 = a2 != 7 ? -1 : 1048;
     }
   }
   else

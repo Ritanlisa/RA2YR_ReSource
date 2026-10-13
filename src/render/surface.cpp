@@ -355,9 +355,9 @@ bool DSurface::BlitPart(
   unsigned char v11[28]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v12[4]; // [esp+28h] [ebp-4h] BYREF
 
-  DSurface_field_0x0 = (int (__thiscall **)(DSurface *, int))this->DSurface_field_0x0; /*0x4bb098*/
+  DSurface_field_0x0 = (int (__thiscall **)(DSurface *, int))this->vtable1; /*0x4bb098*/
   v8 = (*(int (__thiscall **)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*((int (__thiscall **)(DSurface *, unsigned char *, int, int, int))this->DSurface_field_0x0 + 30))( /*0x4bb0b9*/
+  v9 = (*((int (__thiscall **)(DSurface *, unsigned char *, int, int, int))this->vtable1 + 30))( /*0x4bb0b9*/
          this,
          v12,
          a5,

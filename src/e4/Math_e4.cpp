@@ -35,7 +35,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 namespace gamemd {
 int Math::Hypotenuse2D()
 {
-  return Math::Sqrt(*(double *)this * *(double *)this + this->u32_8 * this->u32_8); /*0x41c36e*/
+  return Math::Sqrt(*(double *)this * *(double *)this + this->q008 * this->q008); /*0x41c36e*/
 }
 }
 // 0x4CAC40
@@ -229,7 +229,7 @@ int Math::DistSq2D(unsigned int *aP1)
   unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->q000 + 72))(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
@@ -383,7 +383,7 @@ namespace gamemd {
 unsigned int * Math::Sub16(unsigned int *aP1, unsigned short *aP2)
 {
 
-  LOWORD(aP2) = *(unsigned short *)this->__pad_0 - *aP2; /*0x5b295a*/
+  LOWORD(aP2) = *(unsigned short *)this->q000 - *aP2; /*0x5b295a*/
   *aP1 = aP2; /*0x5b2967*/
   return aP1; /*0x5b2969*/
 
@@ -395,7 +395,7 @@ namespace gamemd {
 bool Math::Abs16Cmp(unsigned short *aP1, int16_t *aP2)
 {
 
-  return abs16(*aP2) >= (int)abs16(*(unsigned short *)this->__pad_0 - *aP1); /*0x5b29b3*/
+  return abs16(*aP2) >= (int)abs16(*(unsigned short *)this->q000 - *aP1); /*0x5b29b3*/
 
 }
 } // namespace gamemd

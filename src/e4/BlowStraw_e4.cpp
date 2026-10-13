@@ -59,8 +59,8 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
   int v19; // eax
   TechnoClass *v21; // [esp+0h] [ebp-10h]
 
-  v4 = *((unsigned int *)this + 5454); /*0x6d068b*/
-  v5 = *((unsigned int *)this + 5456); /*0x6d0691*/
+  v4 = this->u32_5538; /*0x6d068b*/
+  v5 = this->u32_5540; /*0x6d0691*/
   if ( v4 != -1 ) /*0x6d069a*/
   {
     if ( (int)dword_A8ED84 - v4 >= v5 ) /*0x6d06a6*/
@@ -69,8 +69,8 @@ int BlowStraw_29::Seek(int *aP1, unsigned int *a2)
   }
   if ( v5 == 1 ) /*0x6d06ac*/
   {
-    TabClass_field_0x0 = this->TabClass_field_0x0; /*0x6d06ae*/
-    *((unsigned char *)this + 21829) = 1; /*0x6d06b4*/
+    TabClass_field_0x0 = this->__pad_000; /*0x6d06ae*/
+    this->u32_5545 = 1; /*0x6d06b4*/
     (*(void (**)(TabClass *, unsigned int))(TabClass_field_0x0 + 56))(this, 0); /*0x6d06ba*/
   }
 LABEL_6:
@@ -87,10 +87,10 @@ LABEL_6:
     if ( v9 == 33008 ) /*0x6d0842*/
     {
       PlayVocClass(dword_8871E0->UpgradeVeteranSound, 0x2000, 1.0, 0); /*0x6d0860*/
-      if ( *((unsigned char *)this + 21828) ) /*0x6d0865*/
+      if ( this->u32_5544 ) /*0x6d0865*/
       {
         SidebarUpdateAll((ObjectClass *)this); /*0x6d0875*/
-        (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CCB0); /*0x6d0883*/
+        (*(void (**)(TabClass *, GadgetClass *))(this->__pad_000 + 52))(this, &stru_B0CCB0); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
@@ -98,12 +98,12 @@ LABEL_6:
             HashTable::Remove((HashTable *)dword_887368, *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
         }
         HashTable::Remove((HashTable *)dword_887368, 240); /*0x6d08b3*/
-        v16 = this->TabClass_field_0x0; /*0x6d08b8*/
-        *((unsigned char *)this + 21828) = 0; /*0x6d08c1*/
+        v16 = this->__pad_000; /*0x6d08b8*/
+        this->u32_5544 = 0; /*0x6d08c1*/
         (*(void (**)(TabClass *, GadgetClass *))(v16 + 48))(this, &stru_B0CC40); /*0x6d08c8*/
         PushCommandClass::Execute(&stru_B0CC40, (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
-        v17 = this->TabClass_field_0x0; /*0x6d08da*/
-        *((unsigned char *)this + 21829) = 1; /*0x6d08e0*/
+        v17 = this->__pad_000; /*0x6d08da*/
+        this->u32_5545 = 1; /*0x6d08e0*/
         (*(void (**)(TabClass *, unsigned int))(v17 + 56))(this, 0); /*0x6d08e6*/
       }
     }
@@ -112,14 +112,14 @@ LABEL_6:
       if ( !dword_A8B538[0] ) /*0x6d08fc*/
       {
         PlayVocClass(dword_8871E0->SpySatDeactivationSound, 0x2000, 1.0, 0); /*0x6d091a*/
-        if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
+        if ( !this->u32_5544 ) /*0x6d091f*/
         {
-          (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CC40); /*0x6d0932*/
+          (*(void (**)(TabClass *, GadgetClass *))(this->__pad_000 + 52))(this, &stru_B0CC40); /*0x6d0932*/
           HashTable::Remove((HashTable *)dword_887368, 241); /*0x6d0940*/
-          *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
+          this->u32_5544 = 1; /*0x6d0947*/
           CommandClass::BuildBar((CommandClass *)this); /*0x6d094d*/
-          v18 = this->TabClass_field_0x0; /*0x6d0952*/
-          *((unsigned char *)this + 21829) = 1; /*0x6d0958*/
+          v18 = this->__pad_000; /*0x6d0952*/
+          this->u32_5545 = 1; /*0x6d0958*/
           (*(void (**)(TabClass *, unsigned int))(v18 + 56))(this, 0); /*0x6d095e*/
         }
       }
@@ -193,7 +193,7 @@ LABEL_6:
       }
     }
   }
-  CountdownTimer::UpdateDisplay((CountdownTimer *)this + 5447, 0); /*0x6d099d*/
+  CountdownTimer::UpdateDisplay(&this->CountdownTimer_551C, 0); /*0x6d099d*/
   return SidebarClass::UpdateStrips((SidebarClass *)this, aP1, a2); /*0x6d09af*/
 
 }
@@ -219,7 +219,7 @@ CellStruct * * sub_731AF0()
     if ( dword_A83D4C ) /*0x731b1f*/
       v3 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x731b21*/
     result = (wchar_t *)MessageListClass::AddMessage( /*0x731b3e*/
-                          (MessageListClass *)&stru_A8BB1C.__pad_87[189],
+                          (MessageListClass *)&g_GameNetworkObject,
                           0,
                           0,
                           StringCSF,
@@ -261,7 +261,7 @@ CellStruct * * sub_731AF0()
   if ( dword_A83D4C ) /*0x731bad*/
     v8 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x731baf*/
   return (wchar_t *)MessageListClass::AddMessage( /*0x731b43*/
-                      (MessageListClass *)&stru_A8BB1C.__pad_87[189],
+                      (MessageListClass *)&g_GameNetworkObject,
                       0,
                       0,
                       v7,

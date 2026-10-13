@@ -67,72 +67,72 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   __int16 v15; // ax
   __int16 v16; // ax
 
-  v2 = *((unsigned short *)this + 132) + (__int16)(1000 * LOWORD(dword_A8B230[378].vtable1)) / 100; /*0x4846ab*/
-  *((unsigned short *)this + 133) = v2; /*0x4846b2*/
-  *((unsigned short *)this + 135) = v2; /*0x4846b9*/
+  v2 = this->u32_108 + (__int16)(1000 * LOWORD(dword_A8B230[378].vtable1)) / 100; /*0x4846ab*/
+  this->u32_10A = v2; /*0x4846b2*/
+  this->u32_10E = v2; /*0x4846b9*/
   if ( (unsigned __int8)LightningStorm::IsActive() ) /*0x4846c0*/
   {
-    v3 = *((char *)this + 283); /*0x4846cf*/
-    *((unsigned short *)this + 133) += v3 * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vtable3); /*0x4846ec*/
+    v3 = this->u32_11B; /*0x4846cf*/
+    this->u32_10A += v3 * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vtable3); /*0x4846ec*/
     v4 = (v3 + 4) * LOWORD(dword_A8B230[379].uniqueId) - LOWORD(dword_A8B230[379].vtable3); /*0x484703*/
   }
   else if ( (unsigned __int8)PsyDom::IsActive() ) /*0x48470f*/
   {
-    v5 = *((char *)this + 283); /*0x48471e*/
-    *((unsigned short *)this + 133) += v5 * LOWORD(dword_A8B230[380].NeedsSaveOrLink) - LOWORD(dword_A8B230[380].referenceCount); /*0x48473b*/
+    v5 = this->u32_11B; /*0x48471e*/
+    this->u32_10A += v5 * LOWORD(dword_A8B230[380].NeedsSaveOrLink) - LOWORD(dword_A8B230[380].referenceCount); /*0x48473b*/
     v4 = (v5 + 4) * LOWORD(dword_A8B230[380].NeedsSaveOrLink) - LOWORD(dword_A8B230[380].referenceCount); /*0x484752*/
   }
   else
   {
     v6 = !NukeFlash::IsActive(); /*0x484766*/
-    v7 = *((char *)this + 283); /*0x484768*/
+    v7 = this->u32_11B; /*0x484768*/
     if ( v6 ) /*0x484770*/
     {
-      *((unsigned short *)this + 133) += v7 * LOWORD(dword_A8B230[378].referenceCount) - LOWORD(dword_A8B230[378].nextArrayIndex); /*0x4847bc*/
+      this->u32_10A += v7 * LOWORD(dword_A8B230[378].referenceCount) - LOWORD(dword_A8B230[378].nextArrayIndex); /*0x4847bc*/
       v4 = (v7 + 4) * LOWORD(dword_A8B230[378].referenceCount) - LOWORD(dword_A8B230[378].nextArrayIndex); /*0x4847d3*/
     }
     else
     {
-      *((unsigned short *)this + 133) += v7 * LOWORD(dword_A8B230[380].vtable1) - LOWORD(dword_A8B230[380].vtable0); /*0x484787*/
+      this->u32_10A += v7 * LOWORD(dword_A8B230[380].vtable1) - LOWORD(dword_A8B230[380].vtable0); /*0x484787*/
       v4 = (v7 + 4) * LOWORD(dword_A8B230[380].vtable1) - LOWORD(dword_A8B230[380].vtable0); /*0x48479e*/
     }
   }
-  v8 = *((__int16 *)this + 133); /*0x4847da*/
-  v9 = *((unsigned int *)this + 65); /*0x4847e1*/
-  *((unsigned short *)this + 135) += v4; /*0x4847e7*/
-  *((unsigned short *)this + 134) = (unsigned int)(v9 * v8) >> 16; /*0x4847f4*/
-  v10 = v9 * *((__int16 *)this + 135); /*0x484802*/
-  v11 = *((unsigned short *)this + 133); /*0x484805*/
+  v8 = this->u32_214; /*0x4847da*/
+  v9 = this->u32_104; /*0x4847e1*/
+  this->u32_10E += v4; /*0x4847e7*/
+  this->u32_10C = (unsigned int)(v9 * v8) >> 16; /*0x4847f4*/
+  v10 = v9 * this->u32_21C; /*0x484802*/
+  v11 = this->u32_10A; /*0x484805*/
   v12 = v10 >> 16; /*0x48480c*/
-  *((unsigned short *)this + 135) = v12; /*0x484814*/
+  this->u32_10E = v12; /*0x484814*/
   if ( v11 >= 2000 ) /*0x48481e*/
     v11 = 2000; /*0x484820*/
-  *((unsigned short *)this + 133) = v11; /*0x484825*/
-  v13 = *((unsigned short *)this + 134); /*0x484838*/
+  this->u32_10A = v11; /*0x484825*/
+  v13 = this->u32_10C; /*0x484838*/
   if ( v13 >= 2000 ) /*0x48483b*/
     v13 = 2000; /*0x48483d*/
-  *((unsigned short *)this + 134) = v13; /*0x484846*/
+  this->u32_10C = v13; /*0x484846*/
   v14 = v12; /*0x48484d*/
   if ( (__int16)v12 >= 2000 ) /*0x484850*/
     v14 = 2000; /*0x484852*/
-  v15 = *((unsigned short *)this + 133); /*0x484857*/
-  *((unsigned short *)this + 135) = v14; /*0x48485e*/
+  v15 = this->u32_10A; /*0x484857*/
+  this->u32_10E = v14; /*0x48485e*/
   if ( v15 <= 0 ) /*0x484868*/
     v15 = 0; /*0x48486f*/
-  *((unsigned short *)this + 133) = v15; /*0x484874*/
+  this->u32_10A = v15; /*0x484874*/
   if ( v13 <= 0 ) /*0x48487b*/
     v16 = 0; /*0x484882*/
   else
     v16 = v13; /*0x48487d*/
-  *((unsigned short *)this + 134) = v16; /*0x484887*/
+  this->u32_10C = v16; /*0x484887*/
   if ( v14 <= 0 ) /*0x48488e*/
   {
-    *((unsigned short *)this + 135) = 0; /*0x48489e*/
+    this->u32_10E = 0; /*0x48489e*/
     return 0; /*0x48489c*/
   }
   else
   {
-    *((unsigned short *)this + 135) = v14; /*0x484893*/
+    this->u32_10E = v14; /*0x484893*/
     return v14; /*0x484890*/
   }
 
@@ -167,7 +167,7 @@ int TacticalMap::Redraw()
     (*(void (**)(GScreenClass *, bool))(this->vfptr[0] + 64))(this, v7); /*0x4f4502*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 2); /*0x4f4515*/
   }
-  if ( byte_B0B519 && !stru_A8EB00.?[391] ) /*0x4f452b*/
+  if ( byte_B0B519 && !byte_A8ED6B ) /*0x4f452b*/
   {
     (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x4f453d*/
       stru_887598.lineTrailer,
@@ -175,12 +175,12 @@ int TacticalMap::Redraw()
       1);
     byte_B0B519 = 0; /*0x4f4540*/
   }
-  if ( *(unsigned int *)&stru_A8EB00.?[880] ) /*0x4f454f*/
+  if ( *(unsigned int *)&DataGlobal_A8EE70 ) /*0x4f454f*/
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_A8EB00.?[880] + 44))(*(unsigned int *)&stru_A8EB00.?[880], 0); /*0x4f4555*/
-  TacticalMap::DrawCursor((TacticalMap *)&stru_A8BB1C.__pad_87[189]); /*0x4f455d*/
-  if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x4f456a*/
-    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_88732C.__pad_1C[32] + 12))( /*0x4f4570*/
-      *(unsigned int *)&stru_88732C.__pad_1C[32],
+  TacticalMap::DrawCursor((TacticalMap *)&g_GameNetworkObject); /*0x4f455d*/
+  if ( *(unsigned int *)&g_TacticalRender ) /*0x4f456a*/
+    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&g_TacticalRender + 12))( /*0x4f4570*/
+      *(unsigned int *)&g_TacticalRender,
       0);
   if ( byte_A8B8B4 ) /*0x4f457a*/
     DrawHUD(v5); /*0x4f457e*/
@@ -244,8 +244,8 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
       v10[1] = v4[4]; /*0x5d4a39*/
       v10[0] = v3 + v5; /*0x5d4a3d*/
       v8 = v4[11]; /*0x5d4a4c*/
-      v7 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * v4[13]); /*0x5d4a56*/
-      v6 = (unsigned int *)(*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x5d4a65*/
+      v7 = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * v4[13]); /*0x5d4a56*/
+      v6 = (unsigned int *)(*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))( /*0x5d4a65*/
                        g_DSurface_Hidden_2,
                        v12);
       TextRenderer::DrawText(&v11, (size_t)&v9, (int)g_DSurface_Hidden_2, v6, (int)v10, v7, 0, v8); /*0x5d4a79*/
@@ -392,8 +392,8 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v26 = DSurface_ViewBounds.field_4; /*0x6d2bda*/
           v28 = *(Coord2D *)&DSurface_ViewBounds.field_0; /*0x6d2bde*/
           v25 = DSurface_ViewBounds.field_0; /*0x6d2be7*/
-          v23 = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d2bf5*/
-          v22 = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x6d2bfa*/
+          v23 = *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d2bf5*/
+          v22 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d2bfa*/
           v8 = Coord2D::Sub(&v28, v29, &v25); /*0x6d2c05*/
           v9 = Rect::Construct(&v35, v8, v22, v23); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
@@ -444,7 +444,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
   if ( result > 0 && !arg0 ) /*0x6d2d17*/
   {
     v17 = 0; /*0x6d2d1d*/
-    v18 = (CellClass **)(char *)((char *)&this->u32_E0 + 4); /*0x6d2d27*/
+    v18 = (CellClass **)(char *)this->u32_E0 + 4); /*0x6d2d27*/
     do /*0x6d2dc2*/
     {
       Coords = CellClass::GetCoords(*v18, &v30); /*0x6d2d34*/
@@ -453,10 +453,10 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       v27 = 0; /*0x6d2d59*/
       v20 = Coord::To_ScreenRaw(v29, &v25); /*0x6d2d61*/
       v21 = v20[1] - this->u32_B4; /*0x6d2d81*/
-      *(unsigned int *)v28.__pad_0 = *v20 - this->u32_B0 + DSurface_ViewBounds.field_0 - 30; /*0x6d2d8d*/
-      v28.Coord2D_field_0x04 = (int)DSurface_ViewBounds.field_4 + v21 - 15; /*0x6d2d9c*/
+      *(unsigned int *)v28.__pad_000 = *v20 - this->u32_B0 + DSurface_ViewBounds.field_0 - 30; /*0x6d2d8d*/
+      v28.q004 = (int)DSurface_ViewBounds.field_4 + v21 - 15; /*0x6d2d9c*/
       if ( g_hWnd ) /*0x6d2da0*/
-        DSurface::Process((int)*v18, (int *)v28.__pad_0, (int *)a2); /*0x6d2db1*/
+        DSurface::Process((int)*v18, (int *)v28.__pad_000, (int *)a2); /*0x6d2db1*/
       result = this->u32_E0; /*0x6d2db6*/
       ++v17; /*0x6d2dbc*/
       ++v18; /*0x6d2dbd*/
@@ -630,42 +630,42 @@ int TacticalMap::RenderAllObjects(int a2)
   char v110[12]; // [esp+FCh] [ebp-18h] BYREF
   char v111[12]; // [esp+108h] [ebp-Ch] BYREF
 
-  v2 = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x6d8db7*/
+  v2 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d8db7*/
   v3 = this->u32_B0; /*0x6d8dc4*/
   v4 = this->u32_B4; /*0x6d8dd5*/
-  v81 = v3 + *(unsigned int *)DSurface_ViewBounds.__pad_8 / 2; /*0x6d8ddb*/
-  v77 = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d8de5*/
-  v5 = (float *)(char *)&this->u32_DE4; /*0x6d8deb*/
-  *(float *)v83.__pad_0 = (float)v81; /*0x6d8df1*/
-  v82 = v4 - *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d8df5*/
+  v81 = v3 + *(unsigned int *)g_Map_VisibleRectOffset / 2; /*0x6d8ddb*/
+  v77 = *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d8de5*/
+  v5 = &this->u32_DE4; /*0x6d8deb*/
+  *(float *)v83.__pad_000 = (float)v81; /*0x6d8df1*/
+  v82 = v4 - *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d8df5*/
   v84 = 0; /*0x6d8e08*/
-  *(float *)&v83.IsoCoord_field_0x04 = (float)(v4 - *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]); /*0x6d8e10*/
-  v6 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, (float *)&this->u32_DE4, (float *)v83.__pad_0); /*0x6d8e14*/
+  *(float *)&v83.IsoCoord_field_0x04 = (float)(v4 - *(unsigned int *)&g_DSurface_WindowOffset); /*0x6d8e10*/
+  v6 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_000, &this->u32_DE4, (float *)v83.__pad_000); /*0x6d8e14*/
   v83 = *v6; /*0x6d8e1b*/
-  v84 = *(unsigned int *)v6[1].__pad_0; /*0x6d8e2d*/
-  (*((unsigned short *)&(v7))) = Math::RoundToInt(*(float *)v83.__pad_0); /*0x6d8e31*/
+  v84 = *v6->IsoCoord_field_0x04.__pad_0; /*0x6d8e2d*/
+  (*((unsigned short *)&(v7))) = Math::RoundToInt(*(float *)v83.__pad_000); /*0x6d8e31*/
   v86 = v7; /*0x6d8e3a*/
   (*((unsigned short *)&(v8))) = Math::RoundToInt(*(float *)&v83.IsoCoord_field_0x04); /*0x6d8e3e*/
   v8 = v8; /*0x6d8e43*/
   v81 = v3 + 2 * v2; /*0x6d8e4a*/
-  *(float *)v83.__pad_0 = (float)v81; /*0x6d8e62*/
+  *(float *)v83.__pad_000 = (float)v81; /*0x6d8e62*/
   v78 = v77 / 2 + v4; /*0x6d8e74*/
   v82 = v78; /*0x6d8e66*/
   v84 = 0; /*0x6d8e78*/
   *(float *)&v83.IsoCoord_field_0x04 = (float)v78; /*0x6d8e80*/
-  v9 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, v5, (float *)v83.__pad_0); /*0x6d8e84*/
+  v9 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_000, v5, (float *)v83.__pad_000); /*0x6d8e84*/
   v83 = *v9; /*0x6d8e8b*/
-  v84 = *(unsigned int *)v9[1].__pad_0; /*0x6d8e9d*/
-  (*((unsigned short *)&(v10))) = Math::RoundToInt(*(float *)v83.__pad_0); /*0x6d8ea1*/
+  v84 = *v9->IsoCoord_field_0x04.__pad_0; /*0x6d8e9d*/
+  (*((unsigned short *)&(v10))) = Math::RoundToInt(*(float *)v83.__pad_000); /*0x6d8ea1*/
   v10 = v10; /*0x6d8ea8*/
   v81 = v3 - v2; /*0x6d8eae*/
   v82 = v78; /*0x6d8eb6*/
-  *(float *)v83.__pad_0 = (float)(v3 - v2); /*0x6d8eba*/
+  *(float *)v83.__pad_000 = (float)(v3 - v2); /*0x6d8eba*/
   *(float *)&v83.IsoCoord_field_0x04 = (float)v78; /*0x6d8ecd*/
   v84 = 0; /*0x6d8ed1*/
-  v12 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, v5, (float *)v83.__pad_0); /*0x6d8ed9*/
+  v12 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_000, v5, (float *)v83.__pad_000); /*0x6d8ed9*/
   v83 = *v12; /*0x6d8ee0*/
-  v84 = *(unsigned int *)v12[1].__pad_0; /*0x6d8ef2*/
+  v84 = *v12->IsoCoord_field_0x04.__pad_0; /*0x6d8ef2*/
   (*((unsigned short *)&(v13))) = Math::RoundToInt(*(float *)&v83.IsoCoord_field_0x04); /*0x6d8ef6*/
   v14 = v86; /*0x6d8efb*/
   v95 = 2 * (v10 - v86); /*0x6d8f03*/
@@ -799,16 +799,16 @@ int TacticalMap::RenderAllObjects(int a2)
               v46 = v46; /*0x6d9335*/
               v45 = v45; /*0x6d9343*/
               v49 = ZCoordToScreenY(v47); /*0x6d934a*/
-              *(unsigned int *)v94.__pad_0 = v45 / 256; /*0x6d935f*/
-              v94.Vector2_field_0x04 = v46 / 256 - v49; /*0x6d936e*/
+              *(unsigned int *)v94.__pad_000 = v45 / 256; /*0x6d935f*/
+              v94.q004 = v46 / 256 - v49; /*0x6d936e*/
               v50 = g_TacticalClass_Instance[45]; /*0x6d9378*/
               v100[0] = g_TacticalClass_Instance[44]; /*0x6d9383*/
               v100[1] = v50; /*0x6d938a*/
               Vector2::Subtract(&v94, v100); /*0x6d9391*/
-              if ( *(int *)v94.__pad_0 >= -360 /*0x6d93ca*/
-                && *(int *)v94.__pad_0 <= dword_B0CE30 + 360
-                && v94.Vector2_field_0x04 >= -180
-                && v94.Vector2_field_0x04 <= dword_B0CE34 + 180 )
+              if ( *(int *)v94.__pad_000 >= -360 /*0x6d93ca*/
+                && *(int *)v94.__pad_000 <= dword_B0CE30 + 360
+                && v94.q004 >= -180
+                && v94.q004 <= dword_B0CE34 + 180 )
               {
                 v51 = *v18; /*0x6d93cc*/
                 *((unsigned char *)v18 + 153) = 1; /*0x6d93da*/
@@ -883,10 +883,10 @@ int TacticalMap::RenderAllObjects(int a2)
             v93 = v64; /*0x6d94e7*/
             if ( v63 >= -360 && v63 <= dword_B0CE30 + 360 && v64 >= -180 && v64 <= dword_B0CE34 + 180 ) /*0x6d9516*/
             {
-              v101[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x6d952a*/
+              v101[2] = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d952a*/
               v101[0] = DSurface_ViewBounds.field_0; /*0x6d9539*/
               v101[1] = (int)DSurface_ViewBounds.field_4; /*0x6d9540*/
-              v101[3] = *(unsigned int *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d9547*/
+              v101[3] = *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d9547*/
               BuildingClass::DrawVisible(v54, &v92, v101); /*0x6d957a*/
             }
             v14 = v86; /*0x6d957f*/
@@ -931,8 +931,8 @@ int TacticalMap::RenderAllObjects(int a2)
                 v69 = *v68; /*0x6d9683*/
                 v99 = v68[1]; /*0x6d9689*/
                 v92 = v68[2]; /*0x6d9697*/
-                *(unsigned int *)v83.__pad_0 = -60 * v99 / 2 + 60 * v69 / 2; /*0x6d96d0*/
-                v70 = *(unsigned int *)v83.__pad_0 / 256; /*0x6d96f7*/
+                *(unsigned int *)v83.__pad_000 = -60 * v99 / 2 + 60 * v69 / 2; /*0x6d96d0*/
+                v70 = *(unsigned int *)v83.__pad_000 / 256; /*0x6d96f7*/
                 v71 = (30 * v99 / 2 + 30 * v69 / 2) / 256; /*0x6d96fa*/
                 (*((unsigned short *)&(v72))) = Math::RoundToInt((double)v92 * dbl_B0CD48 + (double)(v92 >= 728) + 0.5); /*0x6d9721*/
                 v81 = v70; /*0x6d972d*/
@@ -998,15 +998,15 @@ int TacticalMap::DrawOccupiedRegion()
       v5 = v4; /*0x6da1c8*/
     }
     v8 = v3 - v2 + 1; /*0x6da1ce*/
-    if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x6da1dc*/
-      v9 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 15); /*0x6da1ea*/
+    if ( *(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x6da1dc*/
+      v9 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 15); /*0x6da1ea*/
     else
-      v9 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 30); /*0x6da1f7*/
+      v9 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + 30); /*0x6da1f7*/
     v10[2] = v8; /*0x6da201*/
     v10[0] = v2; /*0x6da209*/
     v10[1] = v4; /*0x6da20d*/
     v10[3] = v5 - v4 + 1; /*0x6da211*/
-    return (*(int (**)(AudioStream *, CellStruct *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 /*0x6da21e*/
+    return (*(int (**)(AudioStream *, CellStruct *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x6da21e*/
                                                                              + 84))(
              g_DSurface_Hidden_2,
              &DSurface_ViewBounds,

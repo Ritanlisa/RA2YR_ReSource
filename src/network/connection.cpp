@@ -98,7 +98,7 @@ int ConnectionClass::connect()
 
   v2 = 0; /*0x48c5a4*/
   PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5a6*/
-  if ( PlayerIndex->Terrain_field_0x38 > 0 ) /*0x48c5ae*/
+  if ( PlayerIndex->u32_38 > 0 ) /*0x48c5ae*/
   {
     do /*0x48c5e7*/
     {
@@ -112,7 +112,7 @@ int ConnectionClass::connect()
       PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5e0*/
       ++v2; /*0x48c5e3*/
     }
-    while ( v2 < PlayerIndex->Terrain_field_0x38 ); /*0x48c5e7*/
+    while ( v2 < PlayerIndex->u32_38 ); /*0x48c5e7*/
   }
   return 1; /*0x48c5e9*/
 }
@@ -121,9 +121,9 @@ bool IPXConnClass::initConnection(int a2, int a3, int a4, int16_t a5, int a6, in
 {
   CommBufferClass *v10; // eax
 
-  (*((unsigned short *)&(a1->PhoneNumber[3]))) = a1; /*0x48be73*/
+  (a1->q024) = a1; /*0x48be73*/
   a1->PhoneNumber[4] = a1; /*0x48be7b*/
-  *(unsigned int *)a1->__pad_0 = 0; /*0x48be83*/
+  *(unsigned int *)a1->vtable1 = 0; /*0x48be83*/
   a1->PhoneNumber[1] = a1 + 14; /*0x48be89*/
   a1->PhoneNumber[5] = a1; /*0x48be8c*/
   a1->PhoneNumber[6] = a1; /*0x48be8f*/
@@ -154,10 +154,10 @@ bool IPXConnClass::closeConnection(int a2, int a1, int a3, int a4, int a5, int a
 // 0x53f5d0
 bool IPXConnClass::send(int a2, int a3, int a4, int a5, int a6, int a7)
 {
-  return (*(bool (__stdcall **)(int, int, char *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 40))( /*0x53f5ec*/
+  return (*(bool (__stdcall **)(int, int, char *, unsigned int, int, unsigned int))(*(unsigned int *)this->vtable1 + 40))( /*0x53f5ec*/
            a2,
            a3,
-           (char *)this + 76,
+           &this->u32_4C,
            0,
            a6,
            0);
@@ -197,7 +197,7 @@ int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
   v10 = a2; /*0x53f6c9*/
   if ( !*(unsigned char *)(a2 + 3) ) /*0x53f6cd*/
   {
-    LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], this->u32_64); /*0x53f6dd*/
+    LinkedIndex = Factory::GetLinkedIndex((Factory *)&g_NetworkEventQueue, this->u32_64); /*0x53f6dd*/
     if ( !LinkedIndex ) /*0x53f6e4*/
       return 0; /*0x53f6ef*/
     *(unsigned char *)(a2 + 3) = LinkedIndex; /*0x53f6f2*/
@@ -283,7 +283,7 @@ int IPXManagerClass::Init(int a2, int a3, int a4, int a5, int a6, int a7)
     return EventClass::SetData(*(EventClass **)(this->u32_48 + 4), a3, a4, a5, a6, a7); /*0x543008*/
   result = *((unsigned int *)this + a2 + 10); /*0x543010*/
   if ( result ) /*0x543016*/
-    return EventClass::SetData(*(EventClass **)(result + 4), a3, a4, a5, a6, a7); /*0x543034*/
+    return EventClass::SetData(result->u32_4, a3, a4, a5, a6, a7); /*0x543034*/
   return result; /*0x54300d*/
 }
 // 0x48ba90
@@ -337,7 +337,7 @@ int IPXManagerClass::processPacket()
   }
   else
   {
-    v8 = this + 40; /*0x540a46*/
+    v8 = &this->q280; /*0x540a46*/
     do /*0x540a60*/
     {
       if ( *(unsigned int *)v8 ) /*0x540a49*/
@@ -363,7 +363,7 @@ IPXConnClass* IPXManagerClass::createConnection()
   {
     this->u32_64 = result[10]; /*0x540d4a*/
     this->u32_68 = result[11]; /*0x540d50*/
-    result = (unsigned int *)result[12]; /*0x540d53*/
+    result = result->q030; /*0x540d53*/
     this->u32_6C = result; /*0x540d56*/
   }
   return result; /*0x540d59*/
@@ -373,13 +373,13 @@ void IPXManagerClass::destroyConnection(IPXConnClass* conn)
 {
   int result; // eax
 
-  result = *((unsigned int *)conn + 18); /*0x540d60*/
+  result = conn->q048; /*0x540d60*/
   if ( result ) /*0x540d65*/
   {
-    result->u32_28 = *((unsigned int *)conn + 25); /*0x540d6a*/
-    *(unsigned int *)(*((unsigned int *)conn + 18) + 44) = *((unsigned int *)conn + 26); /*0x540d73*/
-    result = *((unsigned int *)conn + 18); /*0x540d76*/
-    *(unsigned int *)(result + 48) = *((unsigned int *)conn + 27); /*0x540d7c*/
+    result->u32_28 = conn->u32_64; /*0x540d6a*/
+    *(unsigned int *)(conn->q048 + 44) = conn->q068; /*0x540d73*/
+    result = conn->q048; /*0x540d76*/
+    result->q030 = conn->q06C; /*0x540d7c*/
   }
   return result; /*0x540d7f*/
 }
@@ -424,7 +424,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
     return 0; /*0x5414e1*/
   if ( a4 != -1 ) /*0x5414ee*/
   {
-    v13 = (*(int (__thiscall **)(IPXManagerClass *, int))(this->Socket + 24))(this, a4); /*0x54159b*/
+    v13 = this->send(a4); /*0x54159b*/
     if ( v13 != -1 ) /*0x5415a1*/
     {
       v14 = (unsigned int *)*((unsigned int *)this + v13 + 10); /*0x5415a3*/
@@ -450,7 +450,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
     while ( *(unsigned int *)(*(unsigned int *)(v10->Socket + 4) + 40) != *(unsigned int *)(*(unsigned int *)(v10->Socket + 4) + 4) ) /*0x541550*/
     {
       ++v9; /*0x541556*/
-      v10 = (IPXManagerClass *)((char *)v10 + 4); /*0x541557*/
+      v10 = &v10->Initialized; /*0x541557*/
       if ( v9 >= v6 ) /*0x54155c*/
         goto LABEL_13; /*0x54155c*/
     }
@@ -465,7 +465,7 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
     v12 = &this->Active; /*0x541568*/
     do /*0x541588*/
     {
-      (*(void (__thiscall **)(int, int, int, int, unsigned int))(*(unsigned int *)v12->Socket + 8))(v12->Socket, a4, a2, a3, 0); /*0x54157c*/
+      v12->release(v12->Socket, a4, a2, a3, 0); /*0x54157c*/
       ++v11; /*0x541582*/
       v12 = (IPXManagerClass *)((char *)v12 + 4); /*0x541583*/
     }

@@ -20,8 +20,8 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*((unsigned int *)this + 12); /*0x6c6883*/
-  *(unsigned int *)this->__pad_0 = &StaticButtonClass::`vftable'; /*0x6c6886*/
+  v3 = (void *)this->u32_30; /*0x6c6883*/
+  *(unsigned int *)this->vtable1 = &StaticButtonClass::`vftable'; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
   Vector::Clear((int)(unsigned int *)this + 36); /*0x6c689c*/

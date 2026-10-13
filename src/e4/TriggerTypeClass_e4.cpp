@@ -91,13 +91,13 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     temporalUsing = a0->temporalUsing; /*0x6fc159*/
     if ( temporalUsing ) /*0x6fc161*/
     {
-      if ( aP2 == *(unsigned char **)temporalUsing->__pad_28 ) /*0x6fc166*/
+      if ( aP2 == *(unsigned char **)temporalUsing->__pad_028 ) /*0x6fc166*/
         return 3; /*0x6fc174*/
     }
   }
   v8 = (aP2[20] & 1) != 0 ? (#375 **)aP2 : 0;
   v9 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)aP2 + 72))(aP2, &v39); /*0x6fc18e*/
-  v10 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v9); /*0x6fc19e*/
+  v10 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v9); /*0x6fc19e*/
   if ( a0 ) /*0x6fc1a0*/
   {
     if ( (a0->? & 4) != 0 && *((unsigned char *)a0 + 1709) ) /*0x6fc1a8*/
@@ -177,7 +177,7 @@ LABEL_52:
       return 5; /*0x6fc43d*/
     if ( *(unsigned char *)(v15 + 347) )
     {
-      if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 )
+      if ( (*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1 )
       {
         v16 = (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2); /*0x6fc469*/
         if ( (unsigned __int8)TechnoClass::HasDeployFlags(v16 == 1 ? (TechnoClass *)aP2 : 0) )
@@ -189,11 +189,11 @@ LABEL_52:
   if ( v17
     && *(unsigned char *)(v17 + 347)
     && (aP2[20] & 4) != 0
-    && *(unsigned char *)((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 132))(aP2) + 3476) )
+    && *(unsigned char *)((*(int (**)(unsigned char *))(*&aP2->displayProductionTo))(aP2) + 3476) )
   {
-    if ( !*((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652) )
+    if ( !*((aP2[20] & 4) != 0 ? &aP2->q674 : (unsigned int *)1652) )
       WinAPI::Wrapper(-2147467261); /*0x6fc4cf*/
-    v37 = *((aP2[20] & 4) != 0 ? (unsigned int *)(aP2 + 1652) : (unsigned int *)1652);
+    v37 = *((aP2[20] & 4) != 0 ? &aP2->q674 : (unsigned int *)1652);
     if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)v37 + 128))(v37) ) /*0x6fc4dd*/
       return 5; /*0x6fc4dd*/
   }
@@ -201,12 +201,12 @@ LABEL_52:
   if ( v18 )
   {
     if ( *(unsigned char *)(v18 + 347)
-      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1
-      && *(unsigned char *)(*((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1
-                    ? (unsigned int *)(aP2 + 1732)
+      && (*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1
+      && *(unsigned char *)(*((*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1
+                    ? &aP2->u32_6C4
                     : (unsigned int *)1732)
                   + 3603)
-      && *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 1 ? (unsigned int *)(aP2 + 172) : (unsigned int *)172) == 16 )
+      && *((*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 1 ? &aP2->currentMission : (unsigned int *)172) == 16 )
     {
       return 5; /*0x6fc546*/
     }
@@ -272,13 +272,13 @@ LABEL_98:
   {
     return 6; /*0x6fc6ff*/
   }
-  if ( (*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)aP2 + 84))(aP2)
+  if ( (*(unsigned __int8 (**)(unsigned char *))(*&aP2->initialOwner))(aP2)
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
     return aP2 != (unsigned char *)a0->locomotorTarget ? 5 : 3;
   }
   if ( (aP2[20] & 4) != 0 /*0x6fc75c*/
-    && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 120))(aP2) != 2
+    && (*(int (**)(unsigned char *))(*&aP2->infantryBlinkTimer))(aP2) != 2
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
     return 5; /*0x6fc75c*/
@@ -297,19 +297,19 @@ LABEL_98:
     {
       return 5; /*0x6fc7ca*/
     }
-    if ( !(*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)aP2 + 80))(aP2) || v23 ) /*0x6fc7e3*/
+    if ( !(*(unsigned __int8 (**)(unsigned char *))(*&aP2->currentRank))(aP2) || v23 ) /*0x6fc7e3*/
       goto LABEL_139; /*0x6fc7e3*/
   }
   else
   {
-    if ( !(*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)aP2 + 84))(aP2) /*0x6fc7fc*/
+    if ( !(*(unsigned __int8 (**)(unsigned char *))(*&aP2->initialOwner))(aP2) /*0x6fc7fc*/
       && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 677) )
     {
       return 5; /*0x6fc812*/
     }
-    if ( (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) != 11
-      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 2
-      || *((*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) == 11 ? (unsigned int *)(aP2 + 236) : (unsigned int *)236) == 6 )
+    if ( (*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) != 11
+      || *((*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 11 ? &aP2->animation : (unsigned int *)236) == 2
+      || *((*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) == 11 ? &aP2->animation : (unsigned int *)236) == 6 )
     {
       goto LABEL_139; /*0x6fc855*/
     }
@@ -324,7 +324,7 @@ LABEL_139:
     if ( locomotorTarget /*0x6fc8ad*/
       && locomotorTarget != (FootClass *)aP2
       && a0->damageParticles_2
-      && (*(int (**)(unsigned char *))(*(unsigned int *)aP2 + 44))(aP2) != 6 )
+      && (*(int (**)(unsigned char *))(*&aP2->suspendedMission))(aP2) != 6 )
     {
       return 3; /*0x6fc8bb*/
     }
@@ -391,7 +391,7 @@ LABEL_164:
     return 5; /*0x6fcac2*/
   }
   v32 = *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (v25->? & 4) != 0 && *(int *)&stru_A8EB00.?[416] < v25->unknown698 ) /*0x6fcae9*/
+  if ( v32 && (v25->transporter_2 & 4) != 0 && *(int *)&stru_A8EB00.?[416] < v25->unknown698 ) /*0x6fcae9*/
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
@@ -473,10 +473,10 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
       aP0->vfptr2 = &vt_TriggerTypeClass; /*0x727c21*/
       aP0->vfptr3 = &vt_TriggerTypeClass; /*0x727c28*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->NextTrigger); /*0x727c3b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->FirstEvent); /*0x727c4c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->FirstAction); /*0x727c5d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->House); /*0x727c6e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c3b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c4c*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c5d*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q11C); /*0x727c6e*/
     return 0; /*0x727c73*/
   }
   return result; /*0x727c75*/

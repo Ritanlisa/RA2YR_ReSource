@@ -23,7 +23,7 @@ unsigned int * AddTeamCommand::Construct(int a2, void *a2_2, void *a3, void *a4,
 namespace gamemd {
 char * AddTeamCommand::AddRef()
 {
-  sprintf(&((unsigned int *)&stru_A8EB00)[2512], "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); /*0x5360de*/
+  sprintf(&((unsigned int *)&stru_A8EB00)[2512], "TeamAddSelect_%d", *&this->AddTeamCommand_field_00); /*0x5360de*/
   return &((unsigned int *)&stru_A8EB00)[2512]; /*0x5360eb*/
 }
 } // namespace gamemd

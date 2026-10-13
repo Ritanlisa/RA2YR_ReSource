@@ -163,7 +163,7 @@ char TriggerTypeClass::SaveToINI(char * a2) {
     v12 = (void *)(v4 + 36); /*0x41fb3c*/
   v5 = this->u32_E0; /*0x41fb40*/
   if ( v5 ) /*0x41fb48*/
-    v13 = (void *)(v5 + 36); /*0x41fb4d*/
+    v13 = &v5->objectTypeFlags; /*0x41fb4d*/
   if ( this->MustTransfer == 1 ) /*0x41fb58*/
   {
     v6 = this->NextTrigger; /*0x41fb65*/
@@ -190,7 +190,7 @@ char TriggerTypeClass::SaveToINI(char * a2) {
   sprintf( /*0x41fc64*/
     Source,
     (const char *const)&g_INI_Key_Civilian.uniqueId,
-    (char *)&this->Name,
+    &this->Name,
     v12,
     v3,
     this->FirstAction,
@@ -214,7 +214,7 @@ char TriggerTypeClass::SaveToINI(char * a2) {
   return INIClass::SetString( /*0x41fc8a*/
            a2,
            (uint8_t *)aAitriggertypes,
-           (char *)&this->AITriggerTypeClass_field_0x24,
+           &this->idxArray,
            Source);
 }
 } // namespace gamemd
@@ -231,33 +231,33 @@ char CampaignClass::GetMapData(uint8_t ***a2) {
     return 0; /*0x46cdf7*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x46cd0c*/
                     (bool *)a2,
-                    (uint8_t *)&this->idxCd,
+                    &this->idxCd,
                     (uint8_t *)&stru_81AF8C.VoxelCaches[1],
                     this->scenario[28]);
   v4 = this->description[28]; /*0x46cd11*/
   this->scenario[28] = Int_Overwrite; /*0x46cd17*/
   this->description[28] = INIClass::GetBool( /*0x46cd40*/
                             (INIClass *)a2,
-                            (uint8_t *)&this->idxCd,
+                            &this->idxCd,
                             (uint8_t *)&stru_81AF8C.LineTrailColor[1],
                             v4);
   INIClass::GetString( /*0x46cd46*/
     (INIClass *)a2,
-    (uint8_t *)&this->idxCd,
+    &this->idxCd,
     (uint8_t *)&stru_81AF8C.Selectable,
-    (char *)&this->scenario[29],
-    (char *)&this->scenario[29],
+    &this->u8_3A28,
+    &this->u8_3A28,
     512);
-  _strupr((char *)&this->scenario[29]); /*0x46cd4c*/
+  _struprthis->u8_3A28); /*0x46cd4c*/
   if ( (uint8_t)INIClass::ReadBool_Overwrite( /*0x46cd5e*/
                           (int *)a2,
-                          (uint8_t *)&this->idxCd,
+                          &this->idxCd,
                           (uint8_t *)&stru_81AF8C.AlphaImageFile[17],
                           0) )
   {
     INIClass::GetString( /*0x46cda3*/
       (INIClass *)a2,
-      (uint8_t *)&this->idxCd,
+      &this->idxCd,
       (uint8_t *)&stru_81AF8C.AlphaImageFile[5],
       0,
       Destination,
@@ -269,9 +269,9 @@ char CampaignClass::GetMapData(uint8_t ***a2) {
   {
     INIClass::GetStringEx( /*0x46cd7b*/
       (int)a2,
-      (uint8_t *)&this->idxCd,
+      &this->idxCd,
       (uint8_t *)&stru_81AF8C.AlphaImageFile[5],
-      (wchar_t *)&this->description[29],
+      &this->u32_1F2C,
       0x80u);
   }
   return 1; /*0x46cd82*/
@@ -283,7 +283,7 @@ namespace gamemd {
 int CampaignClass::Stat(int *a2) {
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x46cfc9*/
   Power::TimerProcess(this->scenario[28]); /*0x46cfd7*/
-  Checksum::AddString((Checksum *)a2, (uint8_t *)&this->scenario[29]); /*0x46cfe5*/
+  Checksum::AddString((Checksum *)a2, &this->u8_3A28); /*0x46cfe5*/
   return Power::TimerProcess(this->description[28]); /*0x46cff8*/
 }
 } // namespace gamemd
@@ -307,8 +307,8 @@ namespace gamemd {
 unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
   this->vfptr1 = 0; /*0x49f09b*/
   this->vfptr2 = (void *)a2; /*0x49f09e*/
-  (*((unsigned char *)&(this->vfptr3))) = 1; /*0x49f0a1*/
-  (((unsigned char *)&(this->vfptr3))[1]) = 0; /*0x49f0a5*/
+  (this->vtable4) = 1; /*0x49f0a1*/
+  (this->q00D) = 0; /*0x49f0a5*/
   this->vfptr = 0; /*0x49f0a8*/
   if ( a2 ) /*0x49f0ae*/
   {
@@ -318,7 +318,7 @@ unsigned int * CampaignClass::Constructor_0(int a2, int a3) {
       return &this->vfptr; /*0x49f0be*/
     }
     this->vfptr1 = (void *)operator new(4 * a2); /*0x49f0cd*/
-    (((unsigned char *)&(this->vfptr3))[1]) = 1; /*0x49f0d0*/
+    (this->q00D) = 1; /*0x49f0d0*/
   }
   return &this->vfptr; /*0x49f0bd*/
 }
@@ -339,7 +339,7 @@ char TriggerClass::ValidateTeamTriggerConditions(int a2) {
   v2 = a2; /*0x509616*/
   if ( !a2 ) /*0x50961f*/
     return 0; /*0x50961f*/
-  v4 = *(unsigned int *)(a2 + 228); /*0x509625*/
+  v4 = a2->Tactical_E4; /*0x509625*/
   if ( !v4 ) /*0x50962d*/
     return 0; /*0x5096f1*/
   v11 = 0; /*0x509639*/
@@ -371,7 +371,7 @@ char TriggerClass::ValidateTeamTriggerConditions(int a2) {
         }
         v2 = a2; /*0x5096b9*/
       }
-      v4 = *(unsigned int *)(v2 + 228); /*0x5096bd*/
+      v4 = v2->Tactical_E4; /*0x5096bd*/
       v8 = ++v11 < *(unsigned int *)(v4 + 156); /*0x5096d5*/
       v10 += 8; /*0x5096db*/
     }
@@ -406,7 +406,7 @@ int CampaignClass::ReleaseSubobjectsAndDestruct() {
     (**v4)(v4, 1); /*0x5ae4a5*/
     this->scenario[33] = 0; /*0x5ae4a7*/
   }
-  return SessionClass::Destruct((SessionClass *)&this->scenario[10]); /*0x5ae4b9*/
+  return SessionClass::Destruct(&this->q1428); /*0x5ae4b9*/
 }
 } // namespace gamemd
 
@@ -446,8 +446,8 @@ int CampaignClass::DeleteAndZero(const char **a2) {
 
 namespace gamemd {
 int CampaignClass::Check(int a2) {
-    if ( *(int *)((char *)&this->q01A) > a2 ) /*0x5cf81e +10 count*/
-      return *((unsigned int *)(*(unsigned int *)&this->vtable2) + a2); /*0x5cf828 +4 items*/
+    if ( *(int *)this->q01A) > a2 ) /*0x5cf81e +10 count*/
+      return *((unsigned int *)(*&this->vtable2) + a2); /*0x5cf828 +4 items*/
     else
       return 0; /*0x5cf820*/
 }
@@ -535,9 +535,9 @@ void * ScriptClass::Construct(int a2) {
     this->buildingType = (ScriptTypeClass *)a2; /*0x6913d3*/
     this->idxCurrentLine = -1; /*0x6913d6*/
     *(void **)(char *)this = 0; /*0x6913dd vfptr0*/
-    *(void **)&this->vtable2 = 0; /*0x6913e3 vfptr1*/
-    *(void **)&this->vtable3 = 0; /*0x6913ea vfptr2*/
-    *(void **)&this->vtable4 = 0; /*0x6913f1 vfptr3*/
+    *&this->vtable2 = 0; /*0x6913e3 vfptr1*/
+    *&this->vtable3 = 0; /*0x6913ea vfptr2*/
+    *&this->vtable4 = 0; /*0x6913f1 vfptr3*/
     if ( dword_8872C0 < dword_8872B8 /*0x69142f*/
       || (byte_8872BD || !dword_8872B8)
       && dword_8872C4 > 0
@@ -572,7 +572,7 @@ int ScriptTypeClass::GetParameter(void *a2) {
   if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x691802*/
     return 0; /*0x691885*/
   v3 = 0; /*0x69180d*/
-  v4 = (ScriptTypeClass *)&this->scriptActions[29]; /*0x69180f*/
+  v4 = &this->ScriptTypeClass_2D80; /*0x69180f*/
   do /*0x691873*/
   {
     sprintf(Buffer, "%d", v3); /*0x691820*/
@@ -584,10 +584,10 @@ int ScriptTypeClass::GetParameter(void *a2) {
     else
     {
       ScriptTypeClass::FormatToString(v4, Source); /*0x691840*/
-      INIClass::SetString(a2, (uint8_t *)&this->arrayIndex, Buffer, Source); /*0x691855*/
+      INIClass::SetString(a2, &this->arrayIndex, Buffer, Source); /*0x691855*/
     }
     ++v3; /*0x69186c*/
-    v4 = (ScriptTypeClass *)((char *)v4 + 8); /*0x69186d*/
+    v4 = &v4->vtable3; /*0x69186d*/
   }
   while ( v3 < 50 ); /*0x691873*/
   return 1; /*0x691877*/
@@ -614,7 +614,7 @@ int ScriptTypeClass::GetEvent(void *a2) {
     String::Trim(Buffer); /*0x6918ec*/
     if ( INIClass::GetString( /*0x69190f*/
            (INIClass *)a2,
-           (uint8_t *)&this->arrayIndex,
+           &this->arrayIndex,
            (uint8_t *)Buffer,
            &g_INI_DefaultBuffer,
            Destination,
@@ -687,7 +687,7 @@ int TeamClass::SumMemberCounts() {
   result = 0; /*0x6e8166*/
   if ( v1 > 0 ) /*0x6e816a*/
   {
-    v3 = (TeamClass *)((char *)&this->focus4); /*0x6e816d*/
+    v3 = (TeamClass *)this->Coord_9C); /*0x6e816d*/
     do /*0x6e817b*/
     {
       vtable0 = v3->vfptr; /*0x6e8173*/
@@ -729,7 +729,7 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
     if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
       TeamClass::SelectMember((int)this, (int)CellFromArray); /*0x6ecd3b*/
   }
-  (*((unsigned short *)&(v6))) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4432) * 900.0); /*0x6ecd52*/
+  (*((unsigned short *)&(v6))) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 4432) * 900.0); /*0x6ecd52*/
   if ( !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % v6) ) /*0x6ecd5f*/
   {
     firstUnit = this->firstUnit; /*0x6ecd69*/
@@ -819,8 +819,8 @@ int TeamClass::AssignAttackTarget(int a2, int a3) {
   FootClass *i; // esi
   AbstractClass *target; // eax
 
-  p_spawnCell = (AbstractClass **)&this->spawnCell; /*0x6edb57*/
-  TeamClass::FindClosestEnemy((int)this, (void **)&this->spawnCell, &this->unknown38); /*0x6edb5c*/
+  p_spawnCell = &this->spawnCell; /*0x6edb57*/
+  TeamClass::FindClosestEnemy((int)this, &this->spawnCell, &this->unknown38); /*0x6edb5c*/
   this->focus = *p_spawnCell; /*0x6edb63*/
   TeamClass::UpdateMembers(this); /*0x6edb68*/
   health = AbstractClass::IsTechnoType(*p_spawnCell); /*0x6edb6f*/
@@ -838,12 +838,12 @@ int TeamClass::AssignAttackTarget(int a2, int a3) {
           if ( dword_A8E7AC || ((*((unsigned char *)&(health))) = i->inLimbo, !(unsigned char)health) ) /*0x6edbb3*/
           {
             if ( i->isTeamLeader /*0x6edbcd*/
-              || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vfptr + 11))(i), health == (unsigned int *)2) )
+              || (health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vfptr + 11))(i), health == 2) )
             {
               target = i->target; /*0x6edbd3*/
-              if ( target && target != (AbstractClass *)v6[173] ) /*0x6edbe3*/
+              if ( target && target != v6->u32_2B4 ) /*0x6edbe3*/
                 (*((void (__thiscall **)(FootClass *, unsigned int))i->vfptr + 242))(i, 0); /*0x6edbeb*/
-              health = (unsigned int *)v6[173]; /*0x6edbf1*/
+              health = v6->u32_2B4; /*0x6edbf1*/
               if ( health ) /*0x6edbf9*/
               {
                 if ( !i->locomotor[0] ) /*0x6edbfb*/
@@ -855,7 +855,7 @@ int TeamClass::AssignAttackTarget(int a2, int a3) {
                   if ( (unsigned char)health ) /*0x6edc2b*/
                   {
                     health = (unsigned int *)(*((int (__thiscall **)(FootClass *))i->vfptr + 97))(i); /*0x6edc31*/
-                    if ( health == (unsigned int *)5 ) /*0x6edc3a*/
+                    if ( health == 5 ) /*0x6edc3a*/
                     {
                       (*((void (__thiscall **)(FootClass *, int, unsigned int))i->vfptr + 122))(i, 1, 0); /*0x6edc44*/
                       (*((unsigned char *)&(health))) = (*((int (__thiscall **)(FootClass *, unsigned int))i->vfptr + 242))(i, v6[173]); /*0x6edc55*/
@@ -894,27 +894,27 @@ int TeamClass::CreateOneOf(int a2) {
   OwnerHouse = a2; /*0x6f09ce*/
   if ( !a2 ) /*0x6f09d7*/
   {
-    OwnerHouse = *(TeamClass **)(&this->__pad_04C6); /*0x6f09d9*/
+    OwnerHouse = *&this->u32_C4; /*0x6f09d9*/
     if ( !OwnerHouse ) /*0x6f09e1*/
     {
-      if ( !(uint8_t)BuildingType::IsSpecialType(*(void **)(&this->abstractFlags0)) ) /*0x6f09e9*/
+      if ( !(uint8_t)BuildingType::IsSpecialType(*&this->Coord_9C) ) /*0x6f09e9*/
         return 0; /*0x6f09e9*/
-      OwnerHouse = (TeamClass *)BuildingType::FindOwnerHouse(*(void **)(&this->abstractFlags0)); /*0x6f09fd*/
+      OwnerHouse = (TeamClass *)BuildingType::FindOwnerHouse(*&this->Coord_9C); /*0x6f09fd*/
       if ( !OwnerHouse ) /*0x6f0a01*/
         return 0; /*0x6f0a01*/
     }
   }
   if ( !dword_A8E7AC ) /*0x6f0a0a*/
   {
-    v4 = this->u32_B8; /*0x6f0a0c*/
+    v4 = this->q0B8; /*0x6f0a0c*/
     if ( v4 >= 0 ) /*0x6f0a14*/
     {
       if ( *(unsigned int *)&dword_A8B238 ) /*0x6f0a1e*/
       {
-        if ( TeamClass::CountActiveTeamsForType(OwnerHouse, this) >= this->u32_B8 ) /*0x6f0a3d*/
+        if ( TeamClass::CountActiveTeamsForType(OwnerHouse, this) >= this->q0B8 ) /*0x6f0a3d*/
           return 0; /*0x6f0a3d*/
       }
-      else if ( this->u32_DC >= v4 ) /*0x6f0a26*/
+      else if ( this->q0DC >= v4 ) /*0x6f0a26*/
       {
         return 0; /*0x6f0a2c*/
       }
@@ -942,23 +942,23 @@ int TriggerClass::UnlinkTags() {
     this->nextTrigger[8].timer[1] = 0; /*0x71ad56*/
     this->nextTrigger = 0; /*0x71ad5c*/
   }
-  v3 = *(unsigned int *)&this->enabled; /*0x71ad5f*/
+  v3 = *&this->enabled; /*0x71ad5f*/
   if ( v3 ) /*0x71ad64*/
   {
     if ( *(TriggerClass **)(v3 + 64) == this ) /*0x71ad69*/
       *(unsigned int *)(v3 + 64) = 0; /*0x71ad6b*/
-    TagClass::Unlink(*(TagClass **)&this->enabled); /*0x71ad71*/
-    *(unsigned int *)&this->enabled = 0; /*0x71ad76*/
+    TagClass::Unlink(*&this->enabled); /*0x71ad71*/
+    *&this->enabled = 0; /*0x71ad76*/
   }
   result = this->occuredEvents; /*0x71ad79*/
   if ( result ) /*0x71ad7e*/
   {
-    if ( *(TriggerClass **)(result + 68) == this ) /*0x71ad83*/
-      *(unsigned int *)(result + 68) = 0; /*0x71ad85*/
+    if ( result->ptr_44 == this ) /*0x71ad83*/
+      result->ptr_44 = 0; /*0x71ad85*/
     result = TagClass::Unlink((TagClass *)this->occuredEvents); /*0x71ad8b*/
     this->occuredEvents = 0; /*0x71ad90*/
   }
-  *(unsigned int *)&this->enabled = 0; /*0x71ad93*/
+  *&this->enabled = 0; /*0x71ad93*/
   this->occuredEvents = 0; /*0x71ad96*/
   this->timer[2] = 0; /*0x71ad99*/
   this->timer[1] = 0; /*0x71ad9c*/
@@ -979,9 +979,9 @@ void * TriggerTypeClass::ParseActionData() {
   char Destination[24]; // [esp+10h] [ebp-1Ch] BYREF
   char v10; // [esp+28h] [ebp-4h]
 
-  this->__pad_24[4] = 0; /*0x71f4f0*/
+  this->u32_28 = 0; /*0x71f4f0*/
   v2 = strtok(0, Str); /*0x71f4f7*/
-  this->__pad_24[2] = atoi(v2); /*0x71f509*/
+  this->q026 = atoi(v2); /*0x71f509*/
   v3 = strtok(0, Str); /*0x71f50c*/
   v4 = atoi(v3); /*0x71f51e*/
   v5 = strtok(0, Str); /*0x71f525*/
@@ -996,7 +996,7 @@ void * TriggerTypeClass::ParseActionData() {
     {
       if ( v8 == 1 ) /*0x71f550*/
       {
-        this->__pad_24[4] = v6; /*0x71f554*/
+        this->u32_28 = v6; /*0x71f554*/
         if ( result ) /*0x71f557*/
         {
           result = strncpy(Destination, result, 0x18u); /*0x71f567*/
@@ -1006,9 +1006,9 @@ void * TriggerTypeClass::ParseActionData() {
         {
           Destination[0] = 0; /*0x71f559*/
         }
-        if ( Destination != (char *)&this->__pad_24[5] ) /*0x71f57d*/
+        if ( Destination != &this->q029 ) /*0x71f57d*/
         {
-          memcpy(&this->__pad_24[5], Destination, 0x18u); /*0x71f588*/
+          memcpy(&this->q029, Destination, 0x18u); /*0x71f588*/
           this->UINameLabel[19] = v10; /*0x71f58a*/
         }
       }
@@ -1016,12 +1016,12 @@ void * TriggerTypeClass::ParseActionData() {
     else
     {
       result = (char *)TeamTypeClass::FindByName((TeamTypeClass *)v5); /*0x71f595*/
-      this->__pad_24[3] = (int)result; /*0x71f59a*/
+      this->q030 = (int)result; /*0x71f59a*/
     }
   }
   else
   {
-    this->__pad_24[4] = v6; /*0x71f5a5*/
+    this->u32_28 = v6; /*0x71f5a5*/
   }
   return result; /*0x71f58b*/
 }
@@ -1078,7 +1078,7 @@ int TriggerTypeClass::GetActionCategoryFlags() {
     default:
       break;
   }
-  if ( this == (TriggerTypeClass *)8 || this == (TriggerTypeClass *)24 ) /*0x71f6bb*/
+  if ( this == 8 || this == 24 ) /*0x71f6bb*/
     v1 |= 4u; /*0x71f6bd*/
   switch ( (unsigned int)this ) /*0x71f6d0*/
   {
@@ -1211,19 +1211,19 @@ namespace gamemd {
 int TeamClass::AddToBuildQueue() {
   int result; // eax
 
-  (*((unsigned char *)&(this->target))) = 1; /*0x726723*/
-  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x726727*/
-  if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x726760*/
-    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+  (this->target) = 1; /*0x726723*/
+  result = *(unsigned int *)&DataGlobal_B0F6A0; /*0x726727*/
+  if ( *(int *)&DataGlobal_B0F6A8 < *(int *)&DataGlobal_B0F6A0 /*0x726760*/
+    || (DataGlobal_B0F6A5 || !*(unsigned int *)&DataGlobal_B0F6A0)
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
     && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
-                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                   *(unsigned int *)&DataGlobal_B0F6A0 + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
         (unsigned char)result) )
   {
-    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x726768*/
-    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x726777*/
+    result = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x726768*/
+    *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = this; /*0x726777*/
   }
   return result; /*0x72677a*/
 }
@@ -1361,9 +1361,9 @@ int TriggerClass::ProcessEvents() {
   {
     do /*0x726e8c*/
     {
-      v4 = (unsigned int *)v3[10]; /*0x726e7a*/
+      v4 = v3->TActionClass_field_28; /*0x726e7a*/
       if ( v3 ) /*0x726e7f*/
-        (*(void (__thiscall **)(unsigned int *, int))(*v3 + 32))(v3, 1); /*0x726e85*/
+        v3->Destructor_16(1); /*0x726e85*/
       v3 = v4; /*0x726e8a*/
     }
     while ( v4 ); /*0x726e8c*/
@@ -1373,9 +1373,9 @@ int TriggerClass::ProcessEvents() {
   {
     do /*0x726eaa*/
     {
-      v6 = (unsigned int *)v5[10]; /*0x726e98*/
+      v6 = v5->TEventClass_field_28; /*0x726e98*/
       if ( v5 ) /*0x726e9d*/
-        (*(void (__thiscall **)(unsigned int *, int))(*v5 + 32))(v5, 1); /*0x726ea3*/
+        v5->Fire_0(1); /*0x726ea3*/
       v5 = v6; /*0x726ea8*/
     }
     while ( v6 ); /*0x726eaa*/
@@ -1458,7 +1458,7 @@ int TriggerTypeClass::GetParameter(void *a2) {
   char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
 
   NextTrigger = this->NextTrigger; /*0x7276ab*/
-  pad_24 = (const char *)NextTrigger->__pad_24; /*0x7276b4*/
+  pad_24 = (const char *)NextTrigger->idxArray; /*0x7276b4*/
   if ( !NextTrigger ) /*0x7276b7*/
     pad_24 = g_Str__none_; /*0x7276b9*/
   House = this->House; /*0x7276be*/
@@ -1477,9 +1477,9 @@ int TriggerTypeClass::GetParameter(void *a2) {
     this->Difficulty[1] != 0,
     this->Difficulty[2] != 0,
     this->MustTransfer != 0);
-  v7 = this->__pad_24; /*0x72773a*/
-  v15 = this->__pad_24; /*0x727747*/
-  INIClass::SetString(a2, (uint8_t *)aTriggers, (char *)this->__pad_24, Buffer); /*0x72774b*/
+  v7 = this->idxArray; /*0x72773a*/
+  v15 = this->idxArray; /*0x727747*/
+  INIClass::SetString(a2, (uint8_t *)aTriggers, (char *)this->idxArray, Buffer); /*0x72774b*/
   FirstEvent = this->FirstEvent; /*0x727750*/
   for ( i = 0; FirstEvent; ++i ) /*0x72775a*/
     FirstEvent = (TEventClass *)FirstEvent->TEventClass_field_28; /*0x72775c*/
@@ -1494,7 +1494,7 @@ int TriggerTypeClass::GetParameter(void *a2) {
       v10 = (TEventClass *)v10->TEventClass_field_28; /*0x7277bb*/
     }
     while ( v10 ); /*0x7277c0*/
-    v7 = this->__pad_24; /*0x7277c2*/
+    v7 = this->idxArray; /*0x7277c2*/
   }
   INIClass::SetString(a2, (uint8_t *)aEvents, (char *)v7, Buffer); /*0x7277da*/
   FirstAction = this->FirstAction; /*0x7277df*/
@@ -1583,10 +1583,10 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
 
   v5 = this->u32_DC; /*0x41e726*/
   v7 = 1; /*0x41e74e*/
-  if ( !v5 || !*(unsigned char *)(v5 + 246) ) /*0x41e730*/
+  if ( !v5 || !v5->q0F6 ) /*0x41e730*/
   {
     v6 = this->u32_E0; /*0x41e73a*/
-    if ( !v6 || !*(unsigned char *)(v6 + 246) ) /*0x41e744*/
+    if ( !v6 || !v6->u8_F6 ) /*0x41e744*/
       v7 = 0; /*0x41e738*/
   }
   if ( !v5 ) /*0x41e756*/
@@ -1594,8 +1594,8 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
   if ( a3 ) /*0x41e762*/
   {
     v8 = a2; /*0x41e769*/
-    if ( !*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6131) /*0x41e78c*/
-      || a2[307].abstractFlags >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5012)
+    if ( !*(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 6131) /*0x41e78c*/
+      || a2[307].abstractFlags >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5012)
                                             + 4 * a2[5].referenceCount) )
     {
       if ( !v7 ) /*0x41e7a3*/
@@ -1613,7 +1613,7 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
   if ( a4 ) /*0x41e7ab*/
     return 0; /*0x41e7ab*/
   LABEL_17:
-  if ( this->u32_9C == 1 && (*((unsigned char *)&(dword_A8B230[374].referenceCount))) == 1 || !this->u32_A4 ) /*0x41e7cd*/
+  if ( this->Coord_9C == 1 && (*((unsigned char *)&(dword_A8B230[374].referenceCount))) == 1 || !this->House ) /*0x41e7cd*/
     return 0; /*0x41e7d5*/
   if ( *(unsigned int *)&dword_A8B238 ) /*0x41e7df*/
   {
@@ -1641,9 +1641,9 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
       goto LABEL_36; /*0x41e84a*/
     return 0; /*0x41e852*/
   }
-  if ( vtable0 != (void *)1 ) /*0x41e800*/
+  if ( vtable0 != 1 ) /*0x41e800*/
   {
-    if ( vtable0 != (void *)2 ) /*0x41e805*/
+    if ( vtable0 != 2 ) /*0x41e805*/
       goto LABEL_36; /*0x41e805*/
     goto LABEL_28; /*0x41e805*/
   }
@@ -1835,17 +1835,17 @@ int CampaignClass::LoadFromINI() {
   v2 = 0; /*0x49db18*/
   if ( !CCINIClass::Load((CCINIClass *)this, (int)&v71, 0, 0) ) /*0x49db23*/
   {
-    *(unsigned int *)&this->scenario[52] = 0; /*0x49db33*/
-    *(unsigned int *)&this->scenario[48] = 0; /*0x49db36*/
+    *&this->u32_6828 = 0; /*0x49db33*/
+    *&this->q6028 = 0; /*0x49db36*/
     this->scenario[56] = 0; /*0x49db39*/
-    v71.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)0; /*0x49db3c*/
+    v71.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)0; /*0x49db3c*/
     v73 = 0; /*0x49db44*/
     Vector::Clear((int)v72); /*0x49db4b*/
-    v71.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x49db54*/
+    v71.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x49db54*/
     return BufferIOFileClass::Dtor(&v71); /*0x49db69*/
   }
   KeyCount = INIClass::GetKeyCount((char *)this, g_INI_Key_Campaigns); /*0x49db78*/
-  *(unsigned int *)&this->scenario[52] = KeyCount; /*0x49db7c*/
+  *&this->u32_6828 = KeyCount; /*0x49db7c*/
   if ( KeyCount > 0 ) /*0x49db7f*/
   {
     v5 = (int *)operator new(76 * KeyCount + 4); /*0x49db9a*/
@@ -1879,12 +1879,12 @@ int CampaignClass::LoadFromINI() {
     {
       v10 = 0; /*0x49dbff*/
     }
-    *(unsigned int *)&this->scenario[48] = v10; /*0x49dc03*/
+    *&this->q6028 = v10; /*0x49dc03*/
     if ( !v10 ) /*0x49dc06*/
       goto LABEL_80; /*0x49dc06*/
     v11 = 0; /*0x49dc0f*/
     v68 = 0; /*0x49dc13*/
-    if ( *(int *)&this->scenario[52] <= 0 ) /*0x49dc17*/
+    if ( *&this->u32_6828 <= 0 ) /*0x49dc17*/
       goto LABEL_80; /*0x49dc17*/
     while ( 1 ) /*0x49dc25*/
     {
@@ -1902,8 +1902,8 @@ int CampaignClass::LoadFromINI() {
                128) )
         {
           StringCSF = GetStringCSF(word_89F5D8, 0, aDRa2mdpostCoop, 1048); /*0x49dca7*/
-          *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 4) = operator new(0x102u); /*0x49dcb4*/
-          v14 = *(wchar_t **)(*(unsigned int *)&this->scenario[48] + v2 + 4); /*0x49dcbb*/
+          *(unsigned int *)(*&this->q6028 + v2 + 4) = operator new(0x102u); /*0x49dcb4*/
+          v14 = *(wchar_t **)(*&this->q6028 + v2 + 4); /*0x49dcbb*/
           if ( v14 ) /*0x49dcc1*/
             wcscpy(v14, StringCSF); /*0x49dcc5*/
         }
@@ -1914,7 +1914,7 @@ int CampaignClass::LoadFromINI() {
           0,
           (char *)word_89F5D8,
           128);
-        String::Assign_Alt((String *)(*(unsigned int *)&this->scenario[48] + v2 + 68), (const char *)word_89F5D8); /*0x49dcf9*/
+        String::Assign_Alt((String *)(*&this->q6028 + v2 + 68), (const char *)word_89F5D8); /*0x49dcf9*/
         INIClass::GetString( /*0x49dd19*/
           (INIClass *)this,
           (uint8_t *)Destination,
@@ -1922,7 +1922,7 @@ int CampaignClass::LoadFromINI() {
           0,
           (char *)word_89F5D8,
           128);
-        String::Assign_Alt((String *)(*(unsigned int *)&this->scenario[48] + v2 + 72), (const char *)word_89F5D8); /*0x49dd2a*/
+        String::Assign_Alt((String *)(*&this->q6028 + v2 + 72), (const char *)word_89F5D8); /*0x49dd2a*/
         INIClass::GetString( /*0x49dd4d*/
           (INIClass *)this,
           (uint8_t *)Destination,
@@ -1930,11 +1930,11 @@ int CampaignClass::LoadFromINI() {
           g_INI_Key_Easy,
           (char *)word_89F5D8,
           128);
-        *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 64) = operator new(strlen((const char *)word_89F5D8) + 1); /*0x49dd71*/
-        strcpy(*(char **)(*(unsigned int *)&this->scenario[48] + v2 + 64), (const char *)word_89F5D8); /*0x49dd8f*/
-        *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2) = v68; /*0x49dd9b*/
-        *(unsigned char *)(*(unsigned int *)&this->scenario[48] + v2 + 8) = Int_Overwrite; /*0x49dda5*/
-        *(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) = operator new(780 * Int_Overwrite); /*0x49ddc7*/
+        *(unsigned int *)(*&this->q6028 + v2 + 64) = operator new(strlen((const char *)word_89F5D8) + 1); /*0x49dd71*/
+        strcpy(*(char **)(*&this->q6028 + v2 + 64), (const char *)word_89F5D8); /*0x49dd8f*/
+        *(unsigned int *)(*&this->q6028 + v2) = v68; /*0x49dd9b*/
+        *(unsigned char *)(*&this->q6028 + v2 + 8) = Int_Overwrite; /*0x49dda5*/
+        *(unsigned int *)(*&this->q6028 + v2 + 12) = operator new(780 * Int_Overwrite); /*0x49ddc7*/
         v15 = 1; /*0x49ddcb*/
         v67 = 1; /*0x49ddd2*/
         v69 = Int_Overwrite + 1; /*0x49ddd6*/
@@ -1955,13 +1955,13 @@ int CampaignClass::LoadFromINI() {
             {
               v16 = strtok((char *)word_89F5D8, Str); /*0x49de35*/
               if ( v16 ) /*0x49de3f*/
-                strcpy((char *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) + v61 - 780), v16); /*0x49de69*/
+                strcpy((char *)(*(unsigned int *)(*&this->q6028 + v2 + 12) + v61 - 780), v16); /*0x49de69*/
               v17 = strtok(0, Str); /*0x49de79*/
               if ( v17 ) /*0x49de83*/
-                strcpy((char *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) + v61 - 520), v17); /*0x49dead*/
+                strcpy((char *)(*(unsigned int *)(*&this->q6028 + v2 + 12) + v61 - 520), v17); /*0x49dead*/
               v18 = strtok(0, Str); /*0x49debd*/
               if ( v18 ) /*0x49dec7*/
-                strcpy((char *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 12) + v61 - 260), v18); /*0x49def1*/
+                strcpy((char *)(*(unsigned int *)(*&this->q6028 + v2 + 12) + v61 - 260), v18); /*0x49def1*/
             }
             v19 = operator new(0x18u); /*0x49df01*/
             if ( !v19 ) /*0x49df0a*/
@@ -1969,11 +1969,11 @@ int CampaignClass::LoadFromINI() {
             v19->vtable2 = 0; /*0x49df10*/
             v19->vtable3 = 0; /*0x49df13*/
             v19->vtable4 = 1; /*0x49df16*/
-            *(unsigned char *)(v19 + 13) = 0; /*0x49df1a*/
+            v19->q00D = 0; /*0x49df1a*/
             *(unsigned int *)v19 = 0; /*0x49df1d*/
             v19->abstractFlags = 10; /*0x49df23*/
             v19->uniqueId = 0; /*0x49df2a*/
-            v20 = *(unsigned int *)&this->scenario[48]; /*0x49df2d*/
+            v20 = *&this->q6028; /*0x49df2d*/
             v21 = *(unsigned int *)(v20 + v2 + 24); /*0x49df30*/
             v22 = (unsigned int *)(v20 + v2 + 16); /*0x49df34*/
             if ( *(unsigned int *)(v20 + v2 + 32) < v21 /*0x49df5b*/
@@ -2002,7 +2002,7 @@ int CampaignClass::LoadFromINI() {
                 v28 = (char *)operator new(strlen(v26) + 1); /*0x49dfe2*/
                 v28 = v28; /*0x49dfee*/
                 strcpy(v28, v26); /*0x49e001*/
-                v29 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 20) + v66 - 4); /*0x49e015*/
+                v29 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 20) + v66 - 4); /*0x49e015*/
                 v30 = *(unsigned int *)(v29 + 8); /*0x49e019*/
                 if ( *(unsigned int *)(v29 + 16) < v30 ) /*0x49e021*/
                   goto LABEL_42; /*0x49e021*/
@@ -2027,7 +2027,7 @@ int CampaignClass::LoadFromINI() {
                 v34 = (char *)operator new(strlen(i) + 1); /*0x49e082*/
                 v34 = v34; /*0x49e08e*/
                 strcpy(v34, i); /*0x49e0a1*/
-                v35 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 20) + v66 - 4); /*0x49e0b5*/
+                v35 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 20) + v66 - 4); /*0x49e0b5*/
                 v36 = *(unsigned int *)(v35 + 8); /*0x49e0b9*/
                 if ( *(unsigned int *)(v35 + 16) >= v36 ) /*0x49e0c1*/
                 {
@@ -2056,7 +2056,7 @@ int CampaignClass::LoadFromINI() {
               *(unsigned int *)v39 = 0; /*0x49e134*/
               *(unsigned int *)(v39 + 20) = 10; /*0x49e13a*/
               *(unsigned int *)(v39 + 16) = 0; /*0x49e141*/
-              v40 = *(unsigned int *)&this->scenario[48]; /*0x49e144*/
+              v40 = *&this->q6028; /*0x49e144*/
               v41 = *(unsigned int *)(v40 + v2 + 48); /*0x49e147*/
               v42 = (unsigned int *)(v40 + v2 + 40); /*0x49e14f*/
               if ( *(unsigned int *)(v40 + v2 + 56) < v41 /*0x49e172*/
@@ -2085,7 +2085,7 @@ int CampaignClass::LoadFromINI() {
                   v48 = (char *)operator new(strlen(v46) + 1); /*0x49e1f9*/
                   v48 = v48; /*0x49e205*/
                   strcpy(v48, v46); /*0x49e218*/
-                  v49 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 44) + v66 - 4); /*0x49e22c*/
+                  v49 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 44) + v66 - 4); /*0x49e22c*/
                   v50 = *(unsigned int *)(v49 + 8); /*0x49e230*/
                   if ( *(unsigned int *)(v49 + 16) < v50 ) /*0x49e238*/
                     goto LABEL_67; /*0x49e238*/
@@ -2110,7 +2110,7 @@ int CampaignClass::LoadFromINI() {
                   v54 = (char *)operator new(strlen(j) + 1); /*0x49e299*/
                   v54 = v54; /*0x49e2a5*/
                   strcpy(v54, j); /*0x49e2b8*/
-                  v55 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&this->scenario[48] + v2 + 44) + v66 - 4); /*0x49e2cc*/
+                  v55 = *(unsigned int *)(*(unsigned int *)(*&this->q6028 + v2 + 44) + v66 - 4); /*0x49e2cc*/
                   v56 = *(unsigned int *)(v55 + 8); /*0x49e2d0*/
                   if ( *(unsigned int *)(v55 + 16) >= v56 ) /*0x49e2d8*/
                   {
@@ -2145,18 +2145,18 @@ int CampaignClass::LoadFromINI() {
       ++v11; /*0x49e35d*/
       v2 += 76; /*0x49e35e*/
       v68 = v11; /*0x49e363*/
-      if ( v11 >= *(unsigned int *)&this->scenario[52] ) /*0x49e367*/
+      if ( v11 >= *&this->u32_6828 ) /*0x49e367*/
         goto LABEL_80; /*0x49e367*/
     }
   }
-  *(unsigned int *)&this->scenario[52] = 0; /*0x49db81*/
-  *(unsigned int *)&this->scenario[48] = 0; /*0x49db84*/
+  *&this->u32_6828 = 0; /*0x49db81*/
+  *&this->q6028 = 0; /*0x49db84*/
   LABEL_80:
   this->scenario[56] = 1; /*0x49e36f*/
-  v71.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)0; /*0x49e37a*/
+  v71.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)0; /*0x49e37a*/
   v73 = 0; /*0x49e382*/
   Vector::Clear((int)v72); /*0x49e389*/
-  v71.__tail_0.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x49e392*/
+  v71.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&off_7E1668; /*0x49e392*/
   return BufferIOFileClass::Dtor(&v71); /*0x49db61*/
 }
 } // namespace gamemd
@@ -2166,8 +2166,8 @@ namespace gamemd {
 void * CampaignClass::Constructor(int a2, int a3) {
   this->vfptr1 = 0; /*0x49ecd9*/
   this->vfptr2 = (void *)a2; /*0x49ece0*/
-  (*((unsigned char *)&(this->vfptr3))) = 1; /*0x49ece3*/
-  (((unsigned char *)&(this->vfptr3))[1]) = 0; /*0x49ece7*/
+  (this->vtable4) = 1; /*0x49ece3*/
+  (this->q00D) = 0; /*0x49ece7*/
   this->vfptr = 0; /*0x49eceb*/
   if ( a2 ) /*0x49ecf1*/
   {
@@ -2178,7 +2178,7 @@ void * CampaignClass::Constructor(int a2, int a3) {
     else
     {
       this->vfptr1 = (void *)operator new(4 * a2); /*0x49ed0c*/
-      (((unsigned char *)&(this->vfptr3))[1]) = 1; /*0x49ed0f*/
+      (this->q00D) = 1; /*0x49ed0f*/
     }
   }
   this->vfptr = 0; /*0x49ed13*/
@@ -2195,9 +2195,9 @@ void * CampaignClass::Constructor(int a2, int a3) {
 // 0x5D2E00
 namespace gamemd {
 void * CampaignClass::Constructor_1(int a2) {
-  (*((unsigned char *)&(this->vfptr3))) = 0; /*0x5d2e05*/
-  (((unsigned char *)&(this->vfptr3))[1]) = 0; /*0x5d2e08*/
-  (((unsigned char *)&(this->vfptr3))[2]) = 0; /*0x5d2e0b*/
+  (this->vtable4) = 0; /*0x5d2e05*/
+  (this->q00D) = 0; /*0x5d2e08*/
+  (this->q00E) = 0; /*0x5d2e0b*/
   this->vfptr = 0; /*0x5d2e13*/
   FontClass::LoadFontResources((int)this, a2); /*0x5d2e19*/
   ++*(unsigned int *)&g_MissionQueueFrame.underParMessage[25]; /*0x5d2e24*/
@@ -2456,7 +2456,7 @@ int TActionClass::ctor() {
     *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v7) = this; /*0x6dd16a*/
   }
   this->TActionClass_field_6D = 0; /*0x6dd16d*/
-  *(unsigned int *)&this->pad_6E[34] = 0; /*0x6dd170*/
+  *&this->HouseClass_A20 = 0; /*0x6dd170*/
   return (int)this; /*0x6dd178*/
 }
 } // namespace gamemd
@@ -2541,7 +2541,7 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
     {
       if ( (*(int (__thiscall **)(void *))(*(unsigned int *)CellFromArray + 44))(CellFromArray) == 11 ) /*0x6ec9d2*/
       {
-        v6 = (((unsigned char *)&(v5->currentRank))[1]) & 1; /*0x6ec9e1*/
+        v6 = (v5->u8_9D) & 1; /*0x6ec9e1*/
         v10[0] = 0; /*0x6ec9e3*/
         v10[1] = 0; /*0x6ec9ef*/
         ObjectCell = Object::FindObjectCell((Object *)v5, v10, v6); /*0x6ec9f7*/
@@ -2553,9 +2553,9 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
   }
   if ( this->queuedFocus && (firstUnit = (int *)this->firstUnit) != 0 ) /*0x6eca16*/
   {
-    while ( *(int *)((*(int (__thiscall **)(int *))(*firstUnit + 132))(firstUnit) + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6eca34*/
+    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6eca34*/
     {
-      firstUnit = (int *)firstUnit[374]; /*0x6eca36*/
+      firstUnit = firstUnit->FootClass_field_5D8; /*0x6eca36*/
       if ( !firstUnit ) /*0x6eca3e*/
         goto LABEL_12; /*0x6eca3e*/
     }
@@ -2588,8 +2588,8 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
     CellFromArray = (Object *)ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->vtable2); /*0x6eca8d*/
     v5 = CellFromArray; /*0x6eca92*/
     if ( !CellFromArray /*0x6ecadc*/
-      || (*(int (__thiscall **)(Object *))(*(unsigned int *)CellFromArray->__pad_0 + 44))(CellFromArray) != 11
-      || (v6 = (((unsigned char *)&(*(unsigned int *)v5->__pad_140))[1]) & 1,
+      || CellFromArray->vt_slot_44() != 11
+      || (v6 = (((unsigned char *)&(*(unsigned int *)v5->q140))[1]) & 1,
           v11[0] = 0,
           v11[1] = 0,
           ObjectCell = Object::FindObjectCell(v5, v11, v6),
@@ -2602,9 +2602,9 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
   }
   if ( this->queuedFocus && (firstUnit = (int *)this->firstUnit) != 0 ) /*0x6ecaf4*/
   {
-    while ( *(int *)((*(int (__thiscall **)(int *))(*firstUnit + 132))(firstUnit) + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6ecb12*/
+    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6ecb12*/
     {
-      firstUnit = (int *)firstUnit[374]; /*0x6ecb14*/
+      firstUnit = firstUnit->FootClass_field_5D8; /*0x6ecb14*/
       if ( !firstUnit ) /*0x6ecb1c*/
         goto LABEL_13; /*0x6ecb1c*/
     }
@@ -2683,11 +2683,11 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
   v3 = (TeamClass *)this; /*0x6ed094*/
   if ( !this->queuedFocus ) /*0x6ed09b*/
   {
-    v4 = *(int **)(&this->NeedsSaveOrLink4); /*0x6ed0a6*/
+    v4 = *&this->Coord_9C; /*0x6ed0a6*/
     if ( v4 ) /*0x6ed0ab*/
     {
       v5 = -1; /*0x6ed0b2*/
-      v6 = *(int **)(&this->NeedsSaveOrLink4); /*0x6ed0b6*/
+      v6 = *&this->Coord_9C; /*0x6ed0b6*/
       do /*0x6ed11a*/
       {
         v7 = *(unsigned int *)((*(int (__thiscall **)(int *))(*v4 + 132))(v4) + 1532); /*0x6ed0c6*/
@@ -2713,7 +2713,7 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
       (*((unsigned char *)&(v10))) = *(unsigned char *)(v10 + 247); /*0x6ed14f*/
       v11 = (*(int (__thiscall **)(int *, int, unsigned int *, int))(v9 + 964))(v6, SuperWeaponTypeFlag, v16, v10); /*0x6ed15e*/
       TeamClass::SelectMember(this, v11); /*0x6ed167*/
-      if ( this->queuedFocus && (v12 = *(int **)(&this->NeedsSaveOrLink4)) != 0 ) /*0x6ed17a*/
+      if ( this->queuedFocus && (v12 = *&this->Coord_9C) != 0 ) /*0x6ed17a*/
       {
         while ( *(int *)((*(int (__thiscall **)(int *))(*v12 + 132))(v12) + 1668) > 0 && v12[191] <= 0 ) /*0x6ed198*/
         {
@@ -2734,9 +2734,9 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
   firstUnit = (int *)v3->firstUnit; /*0x6ed1b2*/
   if ( firstUnit ) /*0x6ed1b7*/
   {
-    while ( *(int *)((*(int (__thiscall **)(int *))(*firstUnit + 132))(firstUnit) + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6ed1d5*/
+    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6ed1d5*/
     {
-      firstUnit = (int *)firstUnit[374]; /*0x6ed1d7*/
+      firstUnit = firstUnit->FootClass_field_5D8; /*0x6ed1d7*/
       if ( !firstUnit ) /*0x6ed1df*/
         goto LABEL_25; /*0x6ed1df*/
     }
@@ -2775,7 +2775,7 @@ int TeamClass::SelectAreaAttackTarget(int a2, int a3) {
              *((unsigned int *)dword_A83C6C + (uint16_t)a2->vtable2),
              v5,
              firstUnit,
-             (uint16_t)(*(((unsigned short *)&(a2->vtable2)) + 1)),
+             (uint16_t)(*(a2->vtable2 + 1)),
              (*(((unsigned char *)&(this->buildingType[2].vfptr3)) + (sizeof(this->buildingType[2].vfptr3) - 1))));
       if ( v7 ) /*0x6ee37e*/
         TeamClass::SelectMember((int)this, (int)v7); /*0x6ee383*/
@@ -2794,7 +2794,7 @@ int TeamClass::SelectAreaAttackTarget(int a2, int a3) {
     goto LABEL_13; /*0x6ee394*/
   while ( *(int *)((*(int (__thiscall **)(int *))(this->u32_D8)(v8) + 1668) > 0 && v8[191] <= 0 ) /*0x6ee3b2*/
   {
-    v8 = (int *)v8[374]; /*0x6ee3b4*/
+    v8 = v8->FootClass_field_5D8; /*0x6ee3b4*/
     if ( !v8 ) /*0x6ee3bc*/
       goto LABEL_13; /*0x6ee3bc*/
   }
@@ -2839,7 +2839,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
              *((unsigned int *)dword_A83C6C + (uint16_t)a2->vtable2),
              v5,
              (int)firstUnit,
-             (uint16_t)(*(((unsigned short *)&(a2->vtable2)) + 1)),
+             (uint16_t)(*(a2->vtable2 + 1)),
              (*(((unsigned char *)&(this->buildingType[2].vfptr3)) + (sizeof(this->buildingType[2].vfptr3) - 1))));
       if ( v7 ) /*0x6ee466*/
       {
@@ -2858,10 +2858,10 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
         (*(((unsigned short *)&(v25)) + 1)) = v13[1] / 256; /*0x6ee50d*/
         (*((unsigned char *)&(v13))) = firstUnit->onBridge; /*0x6ee516*/
         *(unsigned int *)v25 = v25; /*0x6ee520*/
-        TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v25, v8, (char)v13); /*0x6ee538*/
+        TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, v25, v8, (char)v13); /*0x6ee538*/
         v14 = (*((int (__thiscall **)(FootClass *))firstUnit->vfptr + 33))(firstUnit); /*0x6ee53b*/
         *(unsigned int *)v19 = *LayerClass::Pathfinding_Find( /*0x6ee565*/
-                            (Type *)&stru_87F5F0.__pad_58[416],
+                            (Type *)&DataGlobal_87F7E8,
                             (int)&v22,
                             &v22,
                             (int16_t *)&v25,
@@ -2884,7 +2884,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
         }
         else
         {
-          v16 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v19); /*0x6ee588*/
+          v16 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x6ee588*/
           TeamClass::SelectMember((int)this, (int)v16); /*0x6ee589*/
         }
       }
@@ -2928,7 +2928,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
     {
       v5 = this->firstUnit; /*0x6ee5f9*/
       a3 = -1; /*0x6ee5fb*/
-      v6 = (uint16_t)(*(((unsigned short *)&(a2->vtable2)) + 1)); /*0x6ee613*/
+      v6 = (uint16_t)(*(a2->vtable2 + 1)); /*0x6ee613*/
       a2 = *((unsigned int *)dword_A83C6C + (uint16_t)a2->vtable2); /*0x6ee61b*/
       do /*0x6ee683*/
       {
@@ -2964,10 +2964,10 @@ void TeamClass::SelectBestMember(int a2, int a3) {
         (*(((unsigned short *)&(a3)) + 1)) = v14[1] / 256; /*0x6ee743*/
         (*((unsigned char *)&(v14))) = firstUnit->onBridge; /*0x6ee74c*/
         *(unsigned int *)a3 = a3; /*0x6ee756*/
-        TileIndex = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], a3, v9, (char)v14); /*0x6ee76e*/
+        TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, a3, v9, (char)v14); /*0x6ee76e*/
         v15 = (*((int (__thiscall **)(FootClass *))firstUnit->vfptr + 33))(firstUnit); /*0x6ee771*/
         *(unsigned int *)v19 = *LayerClass::Pathfinding_Find( /*0x6ee79b*/
-                            (Type *)&stru_87F5F0.__pad_58[416],
+                            (Type *)&DataGlobal_87F7E8,
                             (int)&v22,
                             &v22,
                             (int16_t *)&a3,
@@ -2990,7 +2990,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
         }
         else
         {
-          v17 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v19); /*0x6ee7be*/
+          v17 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x6ee7be*/
           TeamClass::SelectMember((int)this, (int)v17); /*0x6ee7bf*/
         }
       }
@@ -3266,7 +3266,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     (*((unsigned int *)&(v25))) = v14 - 0x3FFF; /*0x6efb61*/
     __asm { fild dword ptr [esp+48h+var_38] } /*0x6efb65*/
     __asm { fmul ds:dbl_7E2810 }
-    (*((unsigned int *)&(v27))) = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3444) << 8; /*0x6efb78*/
+    (*((unsigned int *)&(v27))) = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3444) << 8; /*0x6efb78*/
     __asm /*0x6efb7c*/
     {
       fstp [esp+48h+var_38]
@@ -3296,7 +3296,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     (*((unsigned int *)&(v25))) = 0; /*0x6efc0d*/
     v20 = ((int (__thiscall *)(HouseClass **))(*i)->occupiablesCount)(i); /*0x6efc1e*/
     *(unsigned int *)v24 = *LayerClass::Pathfinding_Find( /*0x6efc4b*/
-                        (Type *)&stru_87F5F0.__pad_58[416],
+                        (Type *)&DataGlobal_87F7E8,
                         (int)&v27,
                         &v27,
                         v24,
@@ -3313,7 +3313,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
                         (int16_t *)&v25,
                         0,
                         0);
-    v21 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v24); /*0x6efc4f*/
+    v21 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v24); /*0x6efc4f*/
     TeamClass::SelectMember((int)v26, (int)v21); /*0x6efc59*/
     this = v26; /*0x6efc5e*/
   }
@@ -3351,7 +3351,7 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
   int v27; // [esp+38h] [ebp+4h]
   int v28; // [esp+38h] [ebp+4h]
 
-  v3 = *(int **)(&this->needsSave4); /*0x6f0136*/
+  v3 = *&this->Coord_9C; /*0x6f0136*/
   v4 = -1; /*0x6f0139*/
   v23 = this; /*0x6f013f*/
   v5 = v3; /*0x6f0143*/
@@ -3359,15 +3359,15 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
   {
     do /*0x6f0188*/
     {
-      v6 = *(unsigned int *)((*(int (__thiscall **)(int *))(*v3 + 132))(v3) + 1532); /*0x6f0151*/
+      v6 = *(unsigned int *)(v3->Vt34Thunk() + 1532); /*0x6f0151*/
       if ( TechnoClass::IsDeployed((int)v3) /*0x6f017a*/
-        && (*((unsigned char *)v3 + 1673) || (*(int (__thiscall **)(int *))(*v3 + 44))(v3) == 2)
+        && (v3->u8_689 || v3->getAltitude() == 2)
         && v6 > v4 )
       {
         v5 = v3; /*0x6f017c*/
         v4 = v6; /*0x6f017e*/
       }
-      v3 = (int *)v3[374]; /*0x6f0180*/
+      v3 = v3->q5D8; /*0x6f0180*/
     }
     while ( v3 ); /*0x6f0188*/
     this = v23; /*0x6f018a*/
@@ -3375,11 +3375,11 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
   v7 = 0; /*0x6f018e*/
   if ( !v5 ) /*0x6f0192*/
     goto LABEL_33; /*0x6f0192*/
-  v8 = (int *)v5[135]; /*0x6f0198*/
+  v8 = v5->owner; /*0x6f0198*/
   DefaultTimer = 0; /*0x6f019e*/
   if ( v8[153] <= 0 ) /*0x6f01aa*/
     goto LABEL_33; /*0x6f01aa*/
-  v9 = (int *)v8[150]; /*0x6f01b0*/
+  v9 = v8->q258; /*0x6f01b0*/
   v10 = v8[153]; /*0x6f01b6*/
   do /*0x6f01d7*/
   {
@@ -3416,7 +3416,7 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
     v28 = v22; /*0x6f0343*/
   LABEL_28:
     DefaultTimer = Super::GetDefaultTimer((unsigned int *)v7); /*0x6f0347*/
-    if ( *(unsigned char *)(v7 + 109) && 1.0 - *(float *)&((unsigned int *)dword_8871E0)[0] >= (double)v28 / (double)DefaultTimer ) /*0x6f037d*/
+    if ( *(unsigned char *)(v7 + 109) && 1.0 - *&dword_8871E0->DetailMinFrameRateNormal >= (double)v28 / (double)DefaultTimer ) /*0x6f037d*/
       return; /*0x6f037d*/
     goto LABEL_32; /*0x6f037d*/
   }
@@ -3425,14 +3425,14 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
   v25[1] = v5[40]; /*0x6f022f*/
   v13 = *v5; /*0x6f0233*/
   v25[2] = v5[41]; /*0x6f0239*/
-  v14 = v23->u32_24; /*0x6f0241*/
+  v14 = v23->buildingType; /*0x6f0241*/
   (*((unsigned char *)&(v14))) = *(unsigned char *)(v14 + 247); /*0x6f0244*/
   v15 = v5->SelectAutoTarget_Start_AU(v12, v25, v14); /*0x6f0253*/
   v23 = v23; /*0x6f0259*/
   v15 = v15; /*0x6f025d*/
   if ( v15 ) /*0x6f0261*/
   {
-    v18 = (unsigned int *)(*(int (__thiscall **)(unsigned int, unsigned int *))(*v23->spawnCell + 72))(v23->spawnCell, v26); /*0x6f0271*/
+    v18 = (unsigned int *)v23->spawnCell->GetInvalidCoord(v26); /*0x6f0271*/
     (*((unsigned short *)&(v27))) = *v18 / 256; /*0x6f0284*/
     (*(((unsigned short *)&(v27)) + 1)) = v18[1] / 256; /*0x6f029c*/
     v19 = *(unsigned int *)(v7 + 40); /*0x6f02a5*/
@@ -3461,11 +3461,11 @@ int TriggerClass::Construct(int a2) {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x725fa4*/
   this->a2 = a2; /*0x725faf*/
-  this->u32_28 = 0; /*0x725fb2*/
-  this->u32_2C = 0; /*0x725fb5*/
+  this->nextTrigger = 0; /*0x725fb2*/
+  this->house = 0; /*0x725fb5*/
   this->vtable4 = 0; /*0x725fb8*/
   v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x725fbb*/
-  this->u32_3C = 0; /*0x725fc1*/
+  this->q03C = 0; /*0x725fc1*/
   this->timer = v3; /*0x725fc4*/
   this->occuredEvents = 0; /*0x725fc7*/
   this->enabled = 1; /*0x725fca*/
@@ -3508,10 +3508,10 @@ int TriggerClass::Construct(int a2) {
   }
   if ( this->buildingType ) /*0x7260e0*/
   {
-    if ( (BuildingClass::ProcessUpgradeEffects((BuildingClass *)this), v7 = *(unsigned char **)(&this->vtable46), !v7[159]) /*0x726121*/
+    if ( (BuildingClass::ProcessUpgradeEffects((BuildingClass *)this), v7 = *&this->u8_9E, !v7[159]) /*0x726121*/
       || (vtable0 = dword_A8B230[43].vfptr) == 0 && !v7[156]
-      || vtable0 == (void *)1 && !v7[157]
-      || vtable0 == (void *)2 && !v7[158] )
+      || vtable0 == 1 && !v7[157]
+      || vtable0 == 2 && !v7[158] )
     {
       this->enabled = 0; /*0x726129*/
     }
@@ -3642,7 +3642,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
   if ( !INIClass::GetString( /*0x72727b*/
           (INIClass *)a2,
           (uint8_t *)aTriggers,
-          (uint8_t *)this->__pad_24,
+          (uint8_t *)this->idxArray,
           &g_INI_DefaultBuffer,
           String,
           512) )
@@ -3709,7 +3709,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
   if ( INIClass::GetString( /*0x7274bb*/
          (INIClass *)a2,
          (uint8_t *)aEvents,
-         (uint8_t *)this->__pad_24,
+         (uint8_t *)this->idxArray,
          &g_INI_DefaultBuffer,
          String,
          512) )
@@ -3728,7 +3728,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
           v19 = 0; /*0x7274fb*/
         TriggerTypeClass::ParseActionData(v19); /*0x7274ff*/
         --v17; /*0x72750a*/
-        v19->__pad_24[1] = (int)this->FirstEvent; /*0x72750b*/
+        v19->q025 = (int)this->FirstEvent; /*0x72750b*/
         this->FirstEvent = (TEventClass *)v19; /*0x72750e*/
       }
       while ( v17 ); /*0x727514*/
@@ -3737,7 +3737,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
   if ( INIClass::GetString( /*0x727537*/
          (INIClass *)a2,
          (uint8_t *)aActions,
-         (uint8_t *)this->__pad_24,
+         (uint8_t *)this->idxArray,
          &g_INI_DefaultBuffer,
          String,
          512) )
@@ -3758,7 +3758,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
           v25 = 0; /*0x727582*/
         ScriptAction::ParseScriptActionParams(v25); /*0x727586*/
         if ( this->FirstAction ) /*0x72758b*/
-          *(unsigned int *)v22->__pad_28 = v25; /*0x72759d*/
+          *(unsigned int *)v22->u32_28 = v25; /*0x72759d*/
         else
           this->FirstAction = (TActionClass *)v25; /*0x727595*/
         --v23; /*0x7275a0*/
@@ -3774,8 +3774,8 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
 // 0x5CF810
 namespace gamemd {
 int CampaignClass::Check(uint16_t a2) {
-    if ( ((unsigned int *)this)[0] > a2 ) /*0x5cf81e*/
-      return *((unsigned int *)((unsigned int *)this)[0] + a2); /*0x5cf828*/
+    if ( this->vtable1 > a2 ) /*0x5cf81e*/
+      return *((unsigned int *)this->vtable1 + a2); /*0x5cf828*/
     else
       return 0; /*0x5cf820*/
 }

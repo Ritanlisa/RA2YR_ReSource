@@ -141,7 +141,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
 
   v17 = (MapClass *)aP0; /*0x56dc27*/
   v18 = *aP3; /*0x56dc33*/
-  v19 = (Type *)aP3[1]; /*0x56dc36*/
+  v19 = aP3->u32_4; /*0x56dc36*/
   v81 = aP0; /*0x56dc49*/
   v78 = 0; /*0x56dc4d*/
   v86 = v18; /*0x56dc51*/
@@ -150,7 +150,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   if ( aP5 == 0xFFFF ) /*0x56dc5e*/
     aP5 = -1; /*0x56dc60*/
   v20 = v18 + ((unsigned int)v19 << 9); /*0x56dc6e*/
-  if ( v20 >= 0x40000 || (v21 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v20)) == 0 ) /*0x56dc84*/
+  if ( v20 >= 0x40000 || (v21 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x56dc84*/
   {
     g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP3; /*0x56dc88*/
     v21 = &g_MissionQueueFrame.briefing[130]; /*0x56dc8d*/
@@ -159,7 +159,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   if ( aP7 ) /*0x56dca6*/
   {
     v22 = *aP3 + (aP3[1] << 9); /*0x56dcb2*/
-    if ( v22 >= 0x40000 || (v23 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v22)) == 0 ) /*0x56dcc2*/
+    if ( v22 >= 0x40000 || (v23 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x56dcc2*/
     {
       v23 = &g_MissionQueueFrame.briefing[130]; /*0x56dcc6*/
       g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP3; /*0x56dccb*/
@@ -192,7 +192,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v28 = (int16_t)(v86 + v26) + (v27 << 9); /*0x56dd61*/
         if ( v28 < 0x40000 ) /*0x56dd63*/
         {
-          v29 = *(Cell **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v28); /*0x56dd72*/
+          v29 = *(Cell **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v28); /*0x56dd72*/
           if ( v29 ) /*0x56dd78*/
           {
             v25 = v79; /*0x56dd7a*/
@@ -213,11 +213,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
             if ( !aP11 /*0x56de4c*/
-              || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30->Cell_field_0x11B[0],
+              || (v31 = v84 - 4 * (((unsigned int)v30->u32_140 >> 8) & 1) - v30->u32_11B,
                   (int)(((*(((unsigned int *)&(v31)) + 1)) ^ v31) - (*(((unsigned int *)&(v31)) + 1))) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
-                && (aP13 || ((int)v30->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v30->u32_140 & 0x100) == 0)
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v99, -1)) )
               {
                 v32 = v87; /*0x56deaa*/
@@ -251,7 +251,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v37 = (int16_t)(v86 + v26) + (v36 << 9); /*0x56df77*/
         if ( v37 < 0x40000 ) /*0x56df79*/
         {
-          v38 = *(Cell **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v37); /*0x56df88*/
+          v38 = *(Cell **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v37); /*0x56df88*/
           if ( v38 ) /*0x56df8e*/
           {
             v25 = v79; /*0x56df90*/
@@ -272,11 +272,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
             if ( !aP11 /*0x56e062*/
-              || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39->Cell_field_0x11B[0],
+              || (v40 = v84 - 4 * (((unsigned int)v39->u32_140 >> 8) & 1) - v39->u32_11B,
                   (int)(((*(((unsigned int *)&(v40)) + 1)) ^ v40) - (*(((unsigned int *)&(v40)) + 1))) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
-                && (aP13 || ((int)v39->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v39->u32_140 & 0x100) == 0)
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v98, -1)) )
               {
                 v41 = v87; /*0x56e0c0*/
@@ -319,7 +319,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v47 = (int16_t)(v86 - v79) + ((int16_t)(v45 + (unsigned short)v82) << 9); /*0x56e1b9*/
         if ( v47 < 0x40000 ) /*0x56e1bb*/
         {
-          v48 = *(Cell **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v47); /*0x56e1ca*/
+          v48 = *(Cell **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v47); /*0x56e1ca*/
           if ( v48 ) /*0x56e1cf*/
           {
             v17 = (MapClass *)v81; /*0x56e1d1*/
@@ -340,11 +340,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
             if ( !aP11 /*0x56e2a5*/
-              || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49->Cell_field_0x11B[0],
+              || (v50 = v84 - 4 * (((unsigned int)v49->u32_140 >> 8) & 1) - v49->u32_11B,
                   (int)(((*(((unsigned int *)&(v50)) + 1)) ^ v50) - (*(((unsigned int *)&(v50)) + 1))) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
-                && (aP13 || ((int)v49->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v49->u32_140 & 0x100) == 0)
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v100, -1)) )
               {
                 v51 = v76; /*0x56e303*/
@@ -373,7 +373,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v54 = (int16_t)(v79 + v86) + ((int16_t)(v45 + (unsigned short)v82) << 9); /*0x56e3bb*/
         if ( v54 < 0x40000 ) /*0x56e3bd*/
         {
-          v55 = *(Cell **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v54); /*0x56e3cc*/
+          v55 = *(Cell **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v54); /*0x56e3cc*/
           if ( v55 ) /*0x56e3d1*/
           {
             v17 = (MapClass *)v81; /*0x56e3d3*/
@@ -394,11 +394,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {
             if ( !aP11 /*0x56e4a7*/
-              || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56->Cell_field_0x11B[0],
+              || (v57 = v84 - 4 * (((unsigned int)v56->u32_140 >> 8) & 1) - v56->u32_11B,
                   (int)(((*(((unsigned int *)&(v57)) + 1)) ^ v57) - (*(((unsigned int *)&(v57)) + 1))) < 2) )
             {
               if ( (!aP12 || (uint8_t)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
-                && (aP13 || ((int)v56->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v56->u32_140 & 0x100) == 0)
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v17, v97, -1)) )
               {
                 v58 = v76; /*0x56e501*/
@@ -460,7 +460,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
     }
     else
     {
-      v67 = (Type *)((char *)&v82->Type_field_00 + 1); /*0x56e665*/
+      v67 = (Type *)v82->Type_field_00 + 1); /*0x56e665*/
       *v61 = *(unsigned int *)v62; /*0x56e666*/
       v82 = v67; /*0x56e668*/
       ++v61; /*0x56e66c*/
@@ -549,10 +549,10 @@ LABEL_8:
     v8 = 0; /*0x577dff*/
   }
   result = dword_A83D4C; /*0x577e04*/
-  if ( !dword_A83D4C->__pad_140[256] ) /*0x577e09*/
+  if ( !dword_A83D4C->visionary ) /*0x577e09*/
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
-    dword_A83D4C->__pad_140[256] = 1; /*0x577e29*/
+    dword_A83D4C->visionary = 1; /*0x577e29*/
     dword_87F8F8 = dword_87F8DC; /*0x577e3a*/
     dword_87F8F4 = 1; /*0x577e42*/
     dword_87F8FC = dword_87F8DC - 1; /*0x577e4b*/
@@ -568,18 +568,18 @@ LABEL_8:
         v6 = *(__int16 *)(v4 + 38); /*0x577e7a*/
         if ( v5 != 7 ) /*0x577e81*/
           break; /*0x577e81*/
-        if ( v6 != *((unsigned int *)this + 61) + 5 ) /*0x577e8e*/
+        if ( v6 != this->u32_F4 + 5 ) /*0x577e8e*/
           goto LABEL_21; /*0x577e8e*/
 LABEL_24:
         v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
-      if ( v5 == 13 && v6 == *((unsigned int *)this + 61) + 11 ) /*0x577ea2*/
+      if ( v5 == 13 && v6 == this->u32_F4 + 11 ) /*0x577ea2*/
         goto LABEL_24; /*0x577ea2*/
 LABEL_21:
-      v7 = *((unsigned int *)this + 62); /*0x577ea4*/
-      if ( v5 == v7 + 13 && v6 == *((unsigned int *)this + 61) + v7 - 15 ) /*0x577ebd*/
+      v7 = this->u32_F8; /*0x577ea4*/
+      if ( v5 == v7 + 13 && v6 == this->u32_F4 + v7 - 15 ) /*0x577ebd*/
         goto LABEL_24; /*0x577ebd*/
 LABEL_23:
       *(unsigned int *)(v4 + 304) = 0; /*0x577ebf*/
@@ -612,38 +612,38 @@ int LayerClass::CellIteratorNext()
   int v9; // edx
   int v10; // eax
 
-  v1 = *((unsigned int *)this + 69); /*0x578290*/
-  v2 = (int *)*((unsigned int *)this + 70); /*0x578297*/
+  v1 = this->u32_114; /*0x578290*/
+  v2 = (int *)this->u32_118; /*0x578297*/
   if ( v1 ) /*0x5782a0*/
   {
-    v3 = *((unsigned int *)this + 68) - 1; /*0x5782af*/
-    ++*((unsigned int *)this + 67); /*0x5782b1*/
-    *((unsigned int *)this + 69) = v1 - 1; /*0x5782b7*/
-    *((unsigned int *)this + 68) = v3; /*0x5782c3*/
-    *((unsigned int *)this + 70) = v2 - 511; /*0x5782c9*/
+    v3 = this->u32_110 - 1; /*0x5782af*/
+    ++this->u32_10C; /*0x5782b1*/
+    this->u32_114 = v1 - 1; /*0x5782b7*/
+    this->u32_110 = v3; /*0x5782c3*/
+    this->u32_118 = v2 - 511; /*0x5782c9*/
     return *v2; /*0x5782cf*/
   }
   else
   {
-    v5 = *((unsigned int *)this + 68); /*0x5782d5*/
-    v6 = *((unsigned int *)this + 67); /*0x5782db*/
-    v7 = *((unsigned int *)this + 61); /*0x5782e1*/
-    *((unsigned int *)this + 67) = v5; /*0x5782e8*/
-    *((unsigned int *)this + 68) = v6; /*0x5782f2*/
+    v5 = this->u32_110; /*0x5782d5*/
+    v6 = this->u32_10C; /*0x5782db*/
+    v7 = this->u32_F4; /*0x5782e1*/
+    this->u32_10C = v5; /*0x5782e8*/
+    this->u32_110 = v6; /*0x5782f2*/
     if ( (((unsigned char)v5 - (unsigned char)v7 + (unsigned char)v6 - 1) & 1) != 0 ) /*0x5782ff*/
     {
       v8 = v7 - 1; /*0x578302*/
-      *((unsigned int *)this + 68) = v6 + 1; /*0x578303*/
+      this->u32_110 = v6 + 1; /*0x578303*/
     }
     else
     {
       v8 = v7 - 2; /*0x57830c*/
-      *((unsigned int *)this + 67) = v5 + 1; /*0x57830f*/
+      this->u32_10C = v5 + 1; /*0x57830f*/
     }
-    v9 = *((unsigned int *)this + 67); /*0x57831b*/
-    v10 = *((unsigned int *)this + 68) << 9; /*0x578321*/
-    *((unsigned int *)this + 69) = v8; /*0x578324*/
-    *((unsigned int *)this + 70) = *((unsigned int *)this + 79) + 4 * (v9 + v10); /*0x578337*/
+    v9 = this->u32_10C; /*0x57831b*/
+    v10 = this->u32_110 << 9; /*0x578321*/
+    this->u32_114 = v8; /*0x578324*/
+    this->u32_118 = this->u32_13C + 4 * (v9 + v10); /*0x578337*/
     return *v2; /*0x57833d*/
   }
 
@@ -683,7 +683,7 @@ int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2)
   if ( aP2 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/
-    if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v6)) == 0 ) /*0x578494*/
+    if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x578494*/
     {
       g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP1; /*0x578498*/
       v7 = &g_MissionQueueFrame.briefing[130]; /*0x57849d*/

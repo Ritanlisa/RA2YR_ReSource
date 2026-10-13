@@ -68,8 +68,8 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
     }
     while ( v2 < g_FootClassConfig ); /*0x4d16bb*/
   }
-  v3 = *(unsigned int *)(aP0 + 56); /*0x4d16d7*/
-  v17[0] = *(unsigned int *)(aP0 + 52) / 256; /*0x4d16df*/
+  v3 = aP0->u32_38; /*0x4d16d7*/
+  v17[0] = aP0->u32_34 / 256; /*0x4d16df*/
   v17[1] = v3 / 256; /*0x4d16e4*/
   *(unsigned int *)v18 = *(unsigned int *)v17; /*0x4d16f3*/
   v4 = g_MissionState; /*0x4d170e*/
@@ -106,7 +106,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   }
   if ( aP0->vtable4 == (void *)(6) ) /*0x4d17d0*/
   {
-    v11 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v18); /*0x4d17dc*/
+    v11 = (Cell *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v18); /*0x4d17dc*/
     v12 = ((Cell *)(v11))->IsBridge(); /*0x4d17e3*/
     if ( v12 ) /*0x4d17ea*/
     {
@@ -126,19 +126,19 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   if ( g_TacticalClass_Instance ) /*0x4d1817*/
     Cell::CreateCrater( /*0x4d184b*/
       aP0->Count - *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[44],
-      *(unsigned int *)(aP0 + 68) - *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[45],
+      aP0->u32_44 - *(unsigned int *)&((unsigned int *)(g_TacticalClass_Instance))[45],
       aP0->IsInitialized,
       aP0->IsAllocated,
       0);
   v15 = (void *)((unsigned int)(aP0->nextArrayIndex));
-  *(unsigned int *)(aP0 + 92) = (unsigned int)(&vt_VectorClass); /*0x4d1855*/
-  if ( v15 && *(unsigned char *)(aP0 + 105) ) /*0x4d1860*/
+  aP0->u32_5C = (unsigned int)(&vt_VectorClass); /*0x4d1855*/
+  if ( v15 && aP0->u32_69 ) /*0x4d1860*/
   {
     operator delete((void *)(v15)); /*0x4d1866*/
     aP0->nextArrayIndex = 0; /*0x4d186e*/
   }
-  *(unsigned char *)(aP0 + 105) = 0; /*0x4d1873*/
-  *(unsigned int *)(aP0 + 100) = 0; /*0x4d1876*/
+  aP0->u32_69 = 0; /*0x4d1873*/
+  aP0->u32_64 = 0; /*0x4d1876*/
   return ((AbstractClass *)((AbstractClass *)aP0))->DTOR(); /*0x4d187e*/
 }
 }  // G42.18 ns repair
@@ -181,7 +181,7 @@ int sub_4D2370()
         (*((unsigned short *)&(v9))) = v5 + *v4; /*0x4d2408*/
         (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(v5)) + 1)) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
+        v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6[80] |= 0x400000u; /*0x4d2439*/
       }
@@ -193,7 +193,7 @@ int sub_4D2370()
       v13[0] = *v7; /*0x4d2442*/
       v13[1] = v7[1]; /*0x4d244e*/
       v13[2] = v7[2]; /*0x4d2455*/
-      v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x4d245e*/
+      v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x4d245e*/
       v8->flags[0] |= 0x400000u; /*0x4d2474*/
     }
     result = g_FootClassConfig; /*0x4d247c*/
@@ -256,16 +256,16 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   LPVOID ppv; // [esp+20h] [ebp-8h] BYREF
   int v8; // [esp+24h] [ebp-4h] BYREF
 
-  v2 = *((unsigned int *)this + 413); /*0x4db8a7*/
+  v2 = this->M1652; /*0x4db8a7*/
   if ( v2 ) /*0x4db8af*/
-    (*(void (**)(unsigned int))(*(unsigned int *)v2 + 4))(*((unsigned int *)this + 413)); /*0x4db8b4*/
+    (*(void (**)(unsigned int))(*(unsigned int *)v2 + 4))(this->M1652); /*0x4db8b4*/
   ppv = 0; /*0x4db8c4*/
   InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
   if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x4db8da*/
     WinAPI::Wrapper(InstanceCOM); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/
     WinAPI::Wrapper(-2147467261); /*0x4db8ef*/
-  (*(void (**)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))(ppv, this); /*0x4db8fc*/
+  (*(void (**)(LPVOID, TechnoClass *))(*&ppv->u32_30))(ppv, this); /*0x4db8fc*/
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
@@ -276,19 +276,19 @@ int E4Recv_4DB8A0::sub_4DB8A0()
 LABEL_13:
     WinAPI::Wrapper(-2147467261); /*0x4db93b*/
   (*(void (**)(int, int))(*(unsigned int *)v8 + 12))(v8, v2); /*0x4db949*/
-  v5 = (LPVOID)*((unsigned int *)this + 413); /*0x4db94c*/
+  v5 = (LPVOID)this->M1652; /*0x4db94c*/
   result = (int)ppv; /*0x4db952*/
   if ( v5 != ppv ) /*0x4db958*/
   {
-    *((unsigned int *)this + 413) = ppv; /*0x4db95c*/
+    this->M1652 = ppv; /*0x4db95c*/
     if ( result ) /*0x4db962*/
     {
-      (*(void (**)(int))(*(unsigned int *)result + 4))(result); /*0x4db967*/
+      (*(void (**)(int))(*&result->u32_10))(result); /*0x4db967*/
       result = (int)ppv; /*0x4db96a*/
     }
     if ( v5 ) /*0x4db970*/
     {
-      (*(void (**)(LPVOID))(*(unsigned int *)v5 + 8))(v5); /*0x4db975*/
+      (*(void (**)(LPVOID))(*&v5->u32_20))(v5); /*0x4db975*/
       result = (int)ppv; /*0x4db978*/
     }
   }
@@ -298,7 +298,7 @@ LABEL_13:
     result = (int)ppv; /*0x4db98b*/
   }
   if ( result ) /*0x4db991*/
-    result = (*(int (**)(int))(*(unsigned int *)result + 8))(result); /*0x4db996*/
+    result = (*(int (**)(int))(*&result->u32_20))(result); /*0x4db996*/
   if ( v2 ) /*0x4db99b*/
     return (*(int (**)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4db9a0*/
   return result; /*0x4db9a3*/
@@ -697,7 +697,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
-    v4 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v10); /*0x4d5010*/
+    v4 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v10); /*0x4d5010*/
     v5 = Cell::IsBridge(v4); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/

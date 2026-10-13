@@ -565,7 +565,7 @@ void NetworkAssignAddress(void* addr, void* port, int arg) {
   unsigned int *result; // eax
 
   result = this;
-  char * v5 = &this->u32_4;
+  char * v5 = &this->m_Port;
   *(unsigned int *)v5 = *(unsigned int *)a3;
   *((unsigned short *)v5 + 2) = *(unsigned short *)(a3 + 4);
   if ( dword_828140 == 1 )
@@ -675,7 +675,7 @@ FILE * DumpNetworkStats() {
           dword_83ED20 = *(unsigned int *)g_GameModeOptions; /*0x69badd*/
         if ( !*(unsigned int *)result ) /*0x69bae2*/
           *(unsigned int *)g_GameModeOptions = 2; /*0x69bae7*/
-        if ( !*((unsigned char *)g_ScenarioClass_Instance + 13730) ) /*0x69baf7*/
+        if ( !g_ScenarioClass_Instance->ScenarioClass_field_35A2 ) /*0x69baf7*/
         {
           Scenario::ClearScreen(); /*0x69bb01*/
           dword_B07784 = (int)g_CurrentFrame + 3; /*0x69bb0f*/
@@ -851,7 +851,7 @@ int result; // eax
 {
   int result; // eax
 
-  stru_A8D600.q010 = ((stru_A8D600.q010) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x5da72b*/
+  g_CurrentPlayerName = ((g_CurrentPlayerName) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x5da72b*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
     result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
   *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/

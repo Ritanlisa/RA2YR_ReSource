@@ -67,7 +67,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
   int v41; // [esp+40h] [ebp-8h]
   int v42; // [esp+44h] [ebp-4h]
 
-  v3 = (int *)&this->__pad_C[144]; /*0x425d1d*/
+  v3 = &this->u32_9C; /*0x425d1d*/
   v4 = v3[1]; /*0x425d29*/
   v5 = (unsigned __int8)(*v3 >> 31) + *v3; /*0x425d32*/
   v37 = 10000; /*0x425d34*/
@@ -96,18 +96,18 @@ AnimClass * * Building::ComputePosition(int *aP1)
         {
           v35[0] = v9; /*0x425da0*/
           v35[1] = v13; /*0x425da5*/
-          if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v35, 1) ) /*0x425daa*/
+          if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, v35, 1) ) /*0x425daa*/
           {
             v36[0] = v9; /*0x425dbb*/
             v36[1] = v13; /*0x425dc6*/
-            v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x425dcb*/
+            v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v36); /*0x425dcb*/
             v15 = v14; /*0x425dd0*/
-            if ( *(unsigned int *)&v14->__pad_E8[4] == 2 /*0x425e18*/
-              && ((int)v14->Cell_field_0x140 & 0x100) == 0
+            if ( *&v14->u32_EC == 2 /*0x425e18*/
+              && ((int)v14->u32_140 & 0x100) == 0
               && (*((unsigned int *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
               && (*((unsigned int *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
             {
-              if ( *(unsigned int *)&v15->__pad_1C[8] == v39 ) /*0x425e27*/
+              if ( *&v15->u32_24 == v39 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
               }
@@ -243,11 +243,11 @@ int Building::GetNthOfType()
 
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_C[56]); /*0x485026*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*&this->u32_44); /*0x485026*/
   if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return ((unsigned __int8)this->__pad_A4[122] + 1) /*0x48504f*/
+    return ((unsigned __int8)this->u32_11E + 1) /*0x48504f*/
          * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 184);
 
 }
@@ -260,7 +260,7 @@ int Building::GetRenderType()
   unsigned char *Building_field_0xA0; // ecx
   int result; // eax
 
-  Building_field_0xA0 = this->Building_field_0xA0; /*0x772a90*/
+  Building_field_0xA0 = this->q0A0; /*0x772a90*/
   result = 0; /*0x772a96*/
   if ( Building_field_0xA0[676] ) /*0x772a98*/
     result = 4; /*0x772aa2*/
@@ -283,7 +283,7 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
   int v7; // edi
 
   v2 = MixFileClass::LoadSubFile(); /*0x69e7e0*/
-  if ( v2 && a2 < *(__int16 *)(v2 + 6) && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
+  if ( v2 && a2 < v2->u32_6 && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
     v4 = *v3; /*0x69e800*/
     v5 = v3[1]; /*0x69e803*/

@@ -88,7 +88,7 @@ LABEL_11:
 LABEL_13:
     v2 = a2; /*0x41f3a9*/
     if ( a2 == 1 ) /*0x41f3b0*/
-      *((unsigned char *)v7 + 164) = 1; /*0x41f3b2*/
+      v7->q0A4 = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
     ++v5; /*0x41f3bd*/
   }
@@ -180,10 +180,10 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v17 = -1009589776; /*0x4742bd*/
   *(unsigned int *)v12.__pad_0 = &SHAPipe::`vftable'; /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
-  SHA1::ComputeThunk(&v12, this->__pad_41); /*0x4742da*/
+  SHA1::ComputeThunk(&v12, this->__pad_041); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/
-  v8 = memcmp(v20, this->__pad_41, 0x14u) == 0; /*0x4742fa*/
+  v8 = memcmp(v20, this->__pad_041, 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
 LABEL_7:
@@ -208,8 +208,8 @@ CCINIClass::CCINIClass()
   int v7; // edi
 
   result = this->INIClass; /*0x535b30*/
-  sectionHead = this->?; /*0x535b36*/
-  p_sectionCount = &this->?; /*0x535b39*/
+  sectionHead = this->sectionHead; /*0x535b36*/
+  p_sectionCount = &this->sectionCount; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
   result[2] = 0; /*0x535b3f*/
   sectionHead[1] = 0; /*0x535b42*/
@@ -245,10 +245,10 @@ CCINIClass::CCINIClass()
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/
   result[12] = 0; /*0x535baa*/
-  *((unsigned char *)result + 52) = 0; /*0x535bad*/
+  result->needsSave_flag = 0; /*0x535bad*/
   result[14] = 0; /*0x535bb0*/
   result[15] = 0; /*0x535bb4*/
-  *((unsigned char *)result + 64) = 0; /*0x535bb7*/
+  result->ownsFile = 0; /*0x535bb7*/
   *result = &CCINIClass_Vtable; /*0x535bba*/
   return result; /*0x535ba3*/
 
@@ -318,7 +318,7 @@ IUnknown * CCINIClass::WriteHouses()
   result = dword_A80238; /*0x501174*/
   for ( i = 0; i < dword_A80238; ++i ) /*0x50117d*/
   {
-    strcpy(Source, (const char *)(*(unsigned int *)&dword_A8022C->AbstractClass[4 * i] + 90100)); /*0x5011ac*/
+    strcpy(Source, (const char *)(*&dword_A8022C->psychicDetectionBuildings + 90100)); /*0x5011ac*/
     sprintf(Buffer, g_Str_Trace, i); /*0x5011ba*/
     INIClass::SetString(this, (unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = dword_A80238; /*0x5011d8*/
@@ -328,7 +328,7 @@ IUnknown * CCINIClass::WriteHouses()
   {
     do /*0x501200*/
     {
-      HouseClass::SaveToINI(*(unsigned int *)&dword_A8022C->AbstractClass[4 * v4], this); /*0x5011f3*/
+      HouseClass::SaveToINI(*&dword_A8022C->psychicDetectionBuildings, this); /*0x5011f3*/
       result = dword_A80238; /*0x5011f8*/
       ++v4; /*0x5011fd*/
     }

@@ -185,14 +185,14 @@ int Team::ReleaseAll(int aP1)
   int v5; // ecx
 
   v3 = 0; /*0x5d26c4*/
-  result = *(unsigned int *)&this->__pad_0[40]; /*0x5d26c6*/
+  result = *&this->u32_28; /*0x5d26c6*/
   if ( result > 0 ) /*0x5d26cb*/
   {
     do /*0x5d26e4*/
     {
-      v5 = *(unsigned int *)(*(unsigned int *)&this->__pad_0[28] + 4 * v3); /*0x5d26d6*/
+      v5 = *(unsigned int *)(*&this->u32_1C + 4 * v3); /*0x5d26d6*/
       (*(void (**)(int, int))(*(unsigned int *)v5 + 32))(v5, aP1); /*0x5d26db*/
-      result = *(unsigned int *)&this->__pad_0[40]; /*0x5d26de*/
+      result = *&this->u32_28; /*0x5d26de*/
       ++v3; /*0x5d26e1*/
     }
     while ( v3 < result ); /*0x5d26e4*/
@@ -358,12 +358,12 @@ Game * * E4Recv_634B20::sub_634B20()
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
       Debug::Log(); /*0x634b7d*/
-      uniqueId = this->?; /*0x634b82*/
+      uniqueId = this->M16; /*0x634b82*/
       v5 = 0; /*0x634b88*/
       v14 = uniqueId; /*0x634b8a*/
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
       {
-        v6 = (unsigned int *)*((unsigned int *)this->? + v5); /*0x634b99*/
+        v6 = (unsigned int *)*((unsigned int *)this->M4 + v5); /*0x634b99*/
         if ( v6[2] == v2 ) /*0x634b9f*/
         {
           v7 = *v6; /*0x634ba1*/
@@ -384,11 +384,11 @@ Game * * E4Recv_634B20::sub_634B20()
     qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
-    v8 = this->?; /*0x634c48*/
+    v8 = this->M16; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      v10 = (unsigned char *)*((unsigned int *)this->? + v9); /*0x634c5b*/
+      v10 = (unsigned char *)*((unsigned int *)this->M4 + v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
         v11 = *(unsigned int *)v10; /*0x634c65*/
@@ -415,51 +415,51 @@ void ** E4Recv_637640::sub_637640()
   _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
 
   v5 = this; /*0x637647*/
-  v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x637655*/
-         &stru_AC4B30.__pad_EC[124],
+  v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&g_ScriptConfig + 16))( /*0x637655*/
+         &g_ScriptConfig,
          &v5);
-  if ( v1 != -1 && v1 < *(int *)&stru_AC4B30.__pad_EC[140] ) /*0x637665*/
+  if ( v1 != -1 && v1 < *(int *)&DataGlobal_AC4CA8 ) /*0x637665*/
   {
-    --*(unsigned int *)&stru_AC4B30.__pad_EC[140]; /*0x63766a*/
+    --*(unsigned int *)&DataGlobal_AC4CA8; /*0x63766a*/
     for ( ; /*0x637670*/
-          v1 < *(int *)&stru_AC4B30.__pad_EC[140];
-          *(unsigned int *)(*(unsigned int *)&stru_AC4B30.__pad_EC[128] + 4 * v1 - 4) = *(unsigned int *)(*(unsigned int *)&stru_AC4B30.__pad_EC[128]
+          v1 < *(int *)&DataGlobal_AC4CA8;
+          *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4C9C + 4 * v1 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4C9C
                                                                                       + 4 * v1) )
     {
       ++v1; /*0x637678*/
     }
   }
-  v2 = (*(int (**)(Array *, _UNKNOWN **))(*(unsigned int *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &retaddr); /*0x63769a*/
-  if ( v2 != -1 && v2 < (int)stru_AC4B30.Array_field_0x10 ) /*0x6376aa*/
+  v2 = (*(int (**)(Array *, _UNKNOWN **))(*(unsigned int *)DataGlobal_AC4B30 + 16))(&stru_AC4B30, &retaddr); /*0x63769a*/
+  if ( v2 != -1 && v2 < (int)DataGlobal_AC4B40 ) /*0x6376aa*/
   {
-    --stru_AC4B30.Array_field_0x10; /*0x6376af*/
+    --DataGlobal_AC4B40; /*0x6376af*/
     for ( ; /*0x6376b5*/
-          v2 < (int)stru_AC4B30.Array_field_0x10;
-          *((unsigned int *)stru_AC4B30.Array_field_0x4 + v2 - 1) = *((unsigned int *)stru_AC4B30.Array_field_0x4 + v2) )
+          v2 < (int)DataGlobal_AC4B40;
+          *((unsigned int *)DataGlobal_AC4B34 + v2 - 1) = *((unsigned int *)DataGlobal_AC4B34 + v2) )
     {
       ++v2; /*0x6376bd*/
     }
   }
   v5 = (ObjectClass *)&retaddr; /*0x6376d9*/
-  v3 = (*((int (**)(void **))stru_AC4B30.Array_field_0xE8 + 4))(&stru_AC4B30.Array_field_0xE8); /*0x6376df*/
-  if ( v3 != -1 && v3 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x6376ef*/
+  v3 = (*((int (**)(void **))DataGlobal_AC4C18 + 4))(&DataGlobal_AC4C18); /*0x6376df*/
+  if ( v3 != -1 && v3 < *(int *)&DataGlobal_AC4C28 ) /*0x6376ef*/
   {
-    --*(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x6376f4*/
+    --*(unsigned int *)&DataGlobal_AC4C28; /*0x6376f4*/
     for ( ; /*0x6376fa*/
-          v3 < *(int *)&stru_AC4B30.__pad_EC[12];
-          *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC
+          v3 < *(int *)&DataGlobal_AC4C28;
+          *(unsigned int *)(*(unsigned int *)DataGlobal_AC4C1C + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)DataGlobal_AC4C1C
                                                                                 + 4 * v3) )
     {
       ++v3; /*0x637702*/
     }
   }
   result = (_UNKNOWN **)v5; /*0x637714*/
-  if ( *(ObjectClass **)&stru_AC4B30.__pad_EC[176] == v5 ) /*0x637722*/
-    *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x637724*/
-  if ( *(ObjectClass **)&stru_AC4B30.__pad_EC[28] == v5 ) /*0x637730*/
-    *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x637732*/
-  if ( *(ObjectClass **)&stru_AC4B30.__pad_70[80] == v5 ) /*0x63773e*/
-    *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x637740*/
+  if ( *(ObjectClass **)&g_ScriptPool == v5 ) /*0x637722*/
+    *(unsigned int *)&g_ScriptPool = 0; /*0x637724*/
+  if ( *(ObjectClass **)&g_ScriptState == v5 ) /*0x637730*/
+    *(unsigned int *)&g_ScriptState = 0; /*0x637732*/
+  if ( *(ObjectClass **)&g_ScriptActionPool == v5 ) /*0x63773e*/
+    *(unsigned int *)&g_ScriptActionPool = 0; /*0x637740*/
   return result; /*0x637747*/
 
 }
@@ -699,7 +699,7 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
     *(unsigned int *)v4 = (unsigned int)(&vt_ReferenceCounted); /*0x765f84*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x765f8a*/
     *v6 = (unsigned int)(&vt_rc_ptr); /*0x765f8f*/
-    ComPtr::Set((ComPtr *)(v5 + 8), *(unsigned int *)(a2 + 4)); /*0x765f9b*/
+    ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x765f9b*/
     *(unsigned int *)v5 = &vt_WorldDominationTourConflict; /*0x765fa0*/
   }
   else
@@ -707,7 +707,7 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x765fa9*/
   }
   ComPtr::Constructor(a1); /*0x765fad*/
-  *(unsigned int *)a1->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x765fb4*/
+  *(unsigned int *)a1->vfptr = (unsigned int)(&vt_rc_ptr); /*0x765fb4*/
   ComPtr::Set(a1, v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
@@ -730,7 +730,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     *(unsigned int *)v4 = (unsigned int)(&vt_ReferenceCounted); /*0x767b24*/
     ComPtr::Constructor((ComPtr *)(v4 + 8)); /*0x767b2a*/
     *v6 = (unsigned int)(&vt_rc_ptr); /*0x767b2f*/
-    ComPtr::Set((ComPtr *)(v5 + 8), *(unsigned int *)(a2 + 4)); /*0x767b3b*/
+    ComPtr::Set(&v5->u32_8, *(unsigned int *)(a2 + 4)); /*0x767b3b*/
     *(unsigned int *)v5 = &vt_WorldDominationTourHistory; /*0x767b40*/
   }
   else
@@ -738,7 +738,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x767b49*/
   }
   ComPtr::Constructor(a1); /*0x767b4d*/
-  *(unsigned int *)a1->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x767b54*/
+  *(unsigned int *)a1->vfptr = (unsigned int)(&vt_rc_ptr); /*0x767b54*/
   ComPtr::Set(a1, v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }

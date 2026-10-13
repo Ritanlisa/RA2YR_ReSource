@@ -97,24 +97,24 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 
   v4 = 0; /*0x504793*/
   aP0 = aP0; /*0x50479c*/
-  if ( *(int *)(aP0 + 22036) > 0 ) /*0x5047a2*/
+  if ( aP0->u32_5614 > 0 ) /*0x5047a2*/
   {
     do /*0x5047c8*/
     {
-      v6 = *(unsigned int *)(aP0 + 22024); /*0x5047ac*/
+      v6 = aP0->u32_5608; /*0x5047ac*/
       v7 = *(unsigned int *)(v6 + 8 * (*(((unsigned int *)&(aP0)) + 1))); /*0x5047b2*/
       v8 = v6 + 8 * (*(((unsigned int *)&(aP0)) + 1)); /*0x5047b5*/
       if ( v7 == a4 ) /*0x5047ba*/
         *(unsigned int *)(v8 + 4) += a3; /*0x5047bc*/
       ++(*(((unsigned int *)&(aP0)) + 1)); /*0x5047c5*/
     }
-    while ( (*((signed int *)(((unsigned char *)&(aP0)) + 4))) < *(unsigned int *)(aP0 + 22036) ); /*0x5047c8*/
+    while ( (*((signed int *)(((unsigned char *)&(aP0)) + 4))) < aP0->u32_5614 ); /*0x5047c8*/
   }
   v12 = 0; /*0x5047d0*/
-  if ( *(int *)(aP0 + 22036) <= 0 ) /*0x5047d6*/
+  if ( aP0->u32_5614 <= 0 ) /*0x5047d6*/
     goto LABEL_18; /*0x5047d6*/
-  v9 = *(unsigned int **)(aP0 + 22024); /*0x5047d8*/
-  v13 = *(unsigned int *)(aP0 + 22036); /*0x5047de*/
+  v9 = aP0->u32_5608; /*0x5047d8*/
+  v13 = *&aP0->u32_5614; /*0x5047de*/
   do /*0x504832*/
   {
     (*(((unsigned int *)&(aP0)) + 1)) = *v9; /*0x5047e5*/
@@ -134,10 +134,10 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   }
   while ( v13 ); /*0x504832*/
   if ( v12 ) /*0x50483a*/
-    *(unsigned int *)(aP0 + 22016) = *(unsigned int *)(v12 + 48); /*0x504842*/
+    aP0->u32_5600 = *(unsigned int *)(v12 + 48); /*0x504842*/
   else
   LABEL_18:
-    *(unsigned int *)(aP0 + 22016) = -1; /*0x50484f*/
+    aP0->u32_5600 = -1; /*0x50484f*/
 }
 }
 // 0x5004E0
@@ -150,7 +150,7 @@ int House_GetTechLevel(int a1, int a2)
     return 0; /*0x5004e7*/
   v4 = TechnoTypeClass::GetByTypeAndIndex(a1, a2); /*0x5004ed*/
   if ( a1 == 6 || a1 == 7 ) /*0x5004fa*/
-    return *(unsigned int *)(v4 + 3592); /*0x500500*/
+    return v4->qE08; /*0x500500*/
   else
     return 0; /*0x5004fc*/
 }
@@ -255,7 +255,7 @@ int HouseClass::sub_5092F0(int a2)
   int v8[3]; // [esp+8h] [ebp-Ch] BYREF
 
   result = a2; /*0x5092f0*/
-  this->u32_54E4 |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184); /*0x509313*/
+  this->radarVisibleTo |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184); /*0x509313*/
   if ( (Object *)a2 == (gamemd::Object *)(dword_A83D4C) ) /*0x509321*/
   {
     for ( i = 0; i < dword_A8EC88; ++i ) /*0x509330*/
@@ -368,7 +368,7 @@ double E4Recv_50C160::sub_50C160()
 namespace gamemd {
 int E4Recv_50DA40::sub_50DA40(int a2)
 {
-  this->u32_54F8 = a2; /*0x50da44*/
+  this->M21752 = a2; /*0x50da44*/
   return a2; /*0x50da4a*/
 }
 } // namespace gamemd

@@ -11,7 +11,7 @@
 namespace gamemd {  // G42.18 ns repair
 char * AnimFile::Stub()
 {
-  return (char *)((char *)&this->q368 + 420); /*0x427296*/
+  return (char *)this->q368 + 420); /*0x427296*/
 }  // G42.18 ns repair
 } // namespace gamemd
 // 0x4272A0
@@ -22,7 +22,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   void (***v4)(unsigned int, int); // ecx
 
   v3 = *((unsigned char *)Block + 137); /*0x4272a6*/
-  *(unsigned int *)Block->__pad_0 = &vt_AnimFile; /*0x4272ac*/
+  *(unsigned int *)Block->Return_field_00 = &vt_AnimFile; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)Block + 33) + 52))(*((unsigned int *)Block + 33)); /*0x4272be*/
@@ -41,7 +41,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
     *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
   *((unsigned char *)Block + 136) = 0; /*0x427300*/
-  *(unsigned int *)Block->__pad_0 = &vt_Animate; /*0x427308*/
+  *(unsigned int *)Block->Return_field_00 = &vt_Animate; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     operator delete((void *)(Block)); /*0x427311*/
   return Block; /*0x42731b*/

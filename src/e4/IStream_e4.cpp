@@ -32,7 +32,7 @@ int IStream::Read(void * pstm, ULONG cb)
   result = (*(int (__stdcall **)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))(v4[2], v4 + 9, 8, &pv); /*0x4a307a*/
   if ( result >= 0 )
   {
-    if ( pv == (void *)8 )
+    if ( pv == 8 )
     {
       if ( !v4[2] ) /*0x4a3093*/
         sub_7DC720(-2147467261); /*0x4a309f*/

@@ -143,13 +143,13 @@ int sub_5E95E0()
         && v3 != g_Lobby_MaxPlayers
         && (wchar_t *)v3 != (wchar_t *)(g_Lobby_PlayerReady)
         && v1 == (gamemd::ObjectClass *)(g_MPCooperativeState)
-        && *(unsigned int *)(v3 + 107) == -1 )
+        && v3->u32_6B == -1 )
       {
         break; /*0x5e9645*/
       }
     }
     ++v2; /*0x5e9647*/
-    v1 = (ObjectClass *)((char *)v1 + 1); /*0x5e964a*/
+    v1 = &v1->AbstractClass_1; /*0x5e964a*/
     if ( (int)v2 >= (int)&dword_A8DAB0 ) /*0x5e9651*/
     {
       v5 = 0; /*0x5e9653*/
@@ -200,7 +200,7 @@ int sub_796960()
       goto LABEL_10; /*0x7969b8*/
   }
   if ( &g_WebBrowserConfig == (int *)((ObjectClass *))-36 /*0x7969df*/
-    || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(),
+    || (v4 = ((String *)((String *)&g_WebBrowser))->GetOrEmpty_Alt(),
         (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
     owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969e5*/
@@ -231,7 +231,7 @@ int sub_796960()
           if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x796ac3*/
             break; /*0x796ac3*/
           ++v5; /*0x796ac5*/
-          nextObject = (ObjectClass *)((char *)nextObject + 108); /*0x796ac6*/
+          nextObject = &nextObject->health; /*0x796ac6*/
           if ( v5 >= g_WOL_UserList.owningHouseIndex ) /*0x796acb*/
             goto LABEL_24; /*0x796acb*/
         }
@@ -337,7 +337,7 @@ int sub_786270()
   Debug::Log(); /*0x786353*/
   (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
-    &g_WindowManager.__pad_70[28],
+    &DataGlobal_B73B34,
     stru_B76AC4.ambientSoundController[3],
     3);
   return 1; /*0x78631f*/
@@ -435,64 +435,64 @@ bool Event::IsValidActionType()
 {
   int result; // eax
 
-  (*((unsigned char *)&(result))) = this == (Event *)268 /*0x6015d5*/
-                || this == (Event *)148
-                || this == (Event *)182
-                || this == (Event *)163
-                || this == (Event *)115
-                || this == (Event *)216
-                || this == (Event *)3003
-                || this == (Event *)245
-                || this == (Event *)261
-                || this == (Event *)226
-                || this == (Event *)213
-                || this == (Event *)693
-                || this == (Event *)183
-                || this == (Event *)692
-                || this == (Event *)257
-                || this == (Event *)297
-                || this == (Event *)3015
-                || this == (Event *)3014
-                || this == (Event *)215
-                || this == (Event *)264
-                || this == (Event *)188
-                || this == (Event *)189
-                || this == (Event *)187
-                || this == (Event *)181
-                || this == (Event *)3002
-                || this == (Event *)255
-                || this == (Event *)234
-                || this == (Event *)107
-                || this == (Event *)256
-                || this == (Event *)258
-                || this == (Event *)184
-                || this == (Event *)214
-                || this == (Event *)259
-                || this == (Event *)287
-                || this == (Event *)293
-                || this == (Event *)277
-                || this == (Event *)290
-                || this == (Event *)274
-                || this == (Event *)231
-                || this == (Event *)278
-                || this == (Event *)194
-                || this == (Event *)201
-                || this == (Event *)285
-                || this == (Event *)284
-                || this == (Event *)275
-                || this == (Event *)254
-                || this == (Event *)265
-                || this == (Event *)271
-                || this == (Event *)279
-                || this == (Event *)276
-                || this == (Event *)195
-                || this == (Event *)292
-                || this == (Event *)230
-                || this == (Event *)243
-                || this == (Event *)244
-                || this == (Event *)700
-                || this == (Event *)283
-                || this == (Event *)270;
+  (*((unsigned char *)&(result))) = this == 268 /*0x6015d5*/
+                || this == 148
+                || this == 182
+                || this == 163
+                || this == 115
+                || this == 216
+                || this == 3003
+                || this == 245
+                || this == 261
+                || this == 226
+                || this == 213
+                || this == 693
+                || this == 183
+                || this == 692
+                || this == 257
+                || this == 297
+                || this == 3015
+                || this == 3014
+                || this == 215
+                || this == 264
+                || this == 188
+                || this == 189
+                || this == 187
+                || this == 181
+                || this == 3002
+                || this == 255
+                || this == 234
+                || this == 107
+                || this == 256
+                || this == 258
+                || this == 184
+                || this == 214
+                || this == 259
+                || this == 287
+                || this == 293
+                || this == 277
+                || this == 290
+                || this == 274
+                || this == 231
+                || this == 278
+                || this == 194
+                || this == 201
+                || this == 285
+                || this == 284
+                || this == 275
+                || this == 254
+                || this == 265
+                || this == 271
+                || this == 279
+                || this == 276
+                || this == 195
+                || this == 292
+                || this == 230
+                || this == 243
+                || this == 244
+                || this == 700
+                || this == 283
+                || this == 270;
   return result; /*0x6015d4*/
 }
 } // namespace gamemd

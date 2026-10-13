@@ -12,41 +12,41 @@
 namespace gamemd {  // G42.18 ns repair
 void sub_72B460()
 {
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[972] ) /*0x72b46a*/
+  if ( *(unsigned int *)&DataGlobal_B0FB7C ) /*0x72b46a*/
   {
-    operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[972])); /*0x72b46d*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[972] = 0; /*0x72b475*/
+    operator delete((void *)(*(void **)&DataGlobal_B0FB7C)); /*0x72b46d*/
+    *(unsigned int *)&DataGlobal_B0FB7C = 0; /*0x72b475*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976] ) /*0x72b483*/
+  if ( *(unsigned int *)&DataGlobal_B0FB80 ) /*0x72b483*/
   {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[976])( /*0x72b489*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976],
+    (***(void (****)(unsigned int, int))&DataGlobal_B0FB80)( /*0x72b489*/
+      *(unsigned int *)&DataGlobal_B0FB80,
       1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976] = 0; /*0x72b48b*/
+    *(unsigned int *)&DataGlobal_B0FB80 = 0; /*0x72b48b*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[980] ) /*0x72b498*/
+  if ( *(unsigned int *)&DataGlobal_B0FB84 ) /*0x72b498*/
   {
-    operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[980])); /*0x72b49b*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[980] = 0; /*0x72b4a3*/
+    operator delete((void *)(*(void **)&DataGlobal_B0FB84)); /*0x72b49b*/
+    *(unsigned int *)&DataGlobal_B0FB84 = 0; /*0x72b4a3*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984] ) /*0x72b4b1*/
+  if ( *(unsigned int *)&DataGlobal_B0FB88 ) /*0x72b4b1*/
   {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[984])( /*0x72b4b7*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984],
+    (***(void (****)(unsigned int, int))&DataGlobal_B0FB88)( /*0x72b4b7*/
+      *(unsigned int *)&DataGlobal_B0FB88,
       1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984] = 0; /*0x72b4b9*/
+    *(unsigned int *)&DataGlobal_B0FB88 = 0; /*0x72b4b9*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[988] ) /*0x72b4c6*/
+  if ( *(unsigned int *)&DataGlobal_B0FB8C ) /*0x72b4c6*/
   {
-    operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[988])); /*0x72b4c9*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[988] = 0; /*0x72b4d1*/
+    operator delete((void *)(*(void **)&DataGlobal_B0FB8C)); /*0x72b4c9*/
+    *(unsigned int *)&DataGlobal_B0FB8C = 0; /*0x72b4d1*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] ) /*0x72b4df*/
+  if ( *(unsigned int *)&DataGlobal_B0FB90 ) /*0x72b4df*/
   {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[992])( /*0x72b4e5*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992],
+    (***(void (****)(unsigned int, int))&DataGlobal_B0FB90)( /*0x72b4e5*/
+      *(unsigned int *)&DataGlobal_B0FB90,
       1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] = 0; /*0x72b4e7*/
+    *(unsigned int *)&DataGlobal_B0FB90 = 0; /*0x72b4e7*/
   }
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -55,29 +55,29 @@ void sub_72B460()
 namespace gamemd {
 void sub_72B870()
 {
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008] ) /*0x72b87b*/
+  if ( *(unsigned int *)&dword_B0FBA0 ) /*0x72b87b*/
   {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1008])( /*0x72b881*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008],
+    (***(void (****)(unsigned int, int))&dword_B0FBA0)( /*0x72b881*/
+      *(unsigned int *)&dword_B0FBA0,
       1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008] = 0; /*0x72b883*/
+    *(unsigned int *)&dword_B0FBA0 = 0; /*0x72b883*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1004] ) /*0x72b890*/
+  if ( *(unsigned int *)&dword_B0FB9C ) /*0x72b890*/
   {
-    operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004])); /*0x72b893*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1004] = 0; /*0x72b89b*/
+    operator delete((void *)(*(void **)&dword_B0FB9C)); /*0x72b893*/
+    *(unsigned int *)&dword_B0FB9C = 0; /*0x72b89b*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[996] ) /*0x72b8a8*/
+  if ( *(unsigned int *)&DataGlobal_B0FB94 ) /*0x72b8a8*/
   {
-    operator delete((void *)(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996])); /*0x72b8ab*/
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[996] = 0; /*0x72b8b3*/
+    operator delete((void *)(*(void **)&DataGlobal_B0FB94)); /*0x72b8ab*/
+    *(unsigned int *)&DataGlobal_B0FB94 = 0; /*0x72b8b3*/
   }
-  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000] ) /*0x72b8c1*/
+  if ( *(unsigned int *)&g_PaletteManagerPool ) /*0x72b8c1*/
   {
-    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1000])( /*0x72b8c7*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000],
+    (***(void (****)(unsigned int, int))&g_PaletteManagerPool)( /*0x72b8c7*/
+      *(unsigned int *)&g_PaletteManagerPool,
       1);
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000] = 0; /*0x72b8c9*/
+    *(unsigned int *)&g_PaletteManagerPool = 0; /*0x72b8c9*/
   }
 }
 } // namespace gamemd

@@ -35,7 +35,7 @@ int LinkClass::Destruct()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  *(unsigned int *)this->__pad_0 = &LinkClass::`vftable'; /*0x5565a5*/
+  *(unsigned int *)this->vtable1 = &LinkClass::`vftable'; /*0x5565a5*/
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
   m_Prev = this->m_Prev; /*0x5565ba*/
@@ -59,6 +59,6 @@ LinkClass * LinkClass::Destru_vt00(unsigned int * Block, char a2)
   LinkClass::Destruct(Block); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
     operator delete((void *)(Block)); /*0x4e1ae0*/
-  return Block->__pad_0; /*0x4e1aea*/
+  return Block->tail_0; /*0x4e1aea*/
 }
 } // namespace gamemd

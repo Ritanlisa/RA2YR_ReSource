@@ -53,40 +53,40 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
     return 0; /*0x526820*/
   memset(v15, 0, sizeof(v15)); /*0x52682d*/
   v3 = Checksummer::Add_Buffer(v15, a2, strlen((const char *)a2)); /*0x526844*/
-  v4 = *(unsigned int *)(aP1 + 44); /*0x526849*/
+  v4 = aP1->INIClass_field_2C; /*0x526849*/
   v5 = v3; /*0x52684c*/
   v16 = v3; /*0x526850*/
   if ( !v4 ) /*0x526854*/
     return 0; /*0x526854*/
-  v6 = *(unsigned int **)(aP1 + 56); /*0x52685a*/
+  v6 = aP1->unknown38; /*0x52685a*/
   if ( v6 && *v6 == v5 ) /*0x526863*/
     goto LABEL_9; /*0x526863*/
-  if ( !*(unsigned char *)(aP1 + 52) ) /*0x526865*/
+  if ( !aP1->needsSave_flag ) /*0x526865*/
   {
     qsort(*(void **)(aP1 + 40), v4, 8u, CompareFunc4Int); /*0x526876*/
-    *(unsigned int *)(aP1 + 56) = 0; /*0x52687e*/
-    *(unsigned char *)(aP1 + 52) = 1; /*0x526881*/
+    aP1->unknown38 = 0; /*0x52687e*/
+    aP1->needsSave_flag = 1; /*0x526881*/
   }
   v15[0] = v5; /*0x526890*/
   v7 = System_Search(v15); /*0x526894*/
   if ( !v7 ) /*0x52689b*/
     return 0; /*0x526938*/
-  *(unsigned int *)(aP1 + 56) = v7; /*0x5268a1*/
+  aP1->unknown38 = v7; /*0x5268a1*/
 LABEL_9:
-  v8 = *(unsigned int *)(aP1 + 44); /*0x5268a4*/
+  v8 = aP1->INIClass_field_2C; /*0x5268a4*/
   if ( !v8 ) /*0x5268aa*/
     return unk_B7882C; /*0x5268aa*/
-  v9 = *(unsigned int **)(aP1 + 56); /*0x5268ac*/
+  v9 = aP1->unknown38; /*0x5268ac*/
   if ( v9 && *v9 == v5 ) /*0x5268b5*/
-    return *(unsigned int *)(*(unsigned int *)(aP1 + 56) + 4); /*0x526933*/
-  if ( !*(unsigned char *)(aP1 + 52) ) /*0x5268b7*/
+    return *(unsigned int *)(aP1->unknown38 + 4); /*0x526933*/
+  if ( !aP1->needsSave_flag ) /*0x5268b7*/
   {
     qsort(*(void **)(aP1 + 40), v8, 8u, CompareFunc4Int); /*0x5268c8*/
-    *(unsigned int *)(aP1 + 56) = 0; /*0x5268d0*/
-    *(unsigned char *)(aP1 + 52) = 1; /*0x5268d3*/
+    aP1->unknown38 = 0; /*0x5268d0*/
+    aP1->needsSave_flag = 1; /*0x5268d3*/
   }
-  v10 = *(unsigned int *)(aP1 + 44); /*0x5268d7*/
-  v11 = *(unsigned int *)(aP1 + 40); /*0x5268da*/
+  v10 = aP1->INIClass_field_2C; /*0x5268d7*/
+  v11 = aP1->needsSave_flag; /*0x5268da*/
   if ( v10 <= 0 ) /*0x5268df*/
     return unk_B7882C; /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
@@ -108,8 +108,8 @@ LABEL_19:
   }
   if ( v13 ) /*0x52691f*/
   {
-    *(unsigned int *)(aP1 + 56) = v13; /*0x526921*/
-    return *(unsigned int *)(*(unsigned int *)(aP1 + 56) + 4); /*0x526921*/
+    aP1->unknown38 = v13; /*0x526921*/
+    return *(unsigned int *)(aP1->unknown38 + 4); /*0x526921*/
   }
   return unk_B7882C; /*0x526912*/
 
@@ -136,29 +136,29 @@ int INIClass::GetKeyCount(INIClass * aP1, void *a2)
   v2 = aP1 + 40; /*0x5269a2*/
   v3 = Checksummer::Add_Buffer(v12, a2, strlen((const char *)a2)); /*0x5269a5*/
   a2 = (uint8_t *)v3; /*0x5269a7*/
-  if ( !*((unsigned int *)v2 + 1) ) /*0x5269ab*/
+  if ( !v2->u32_4 ) /*0x5269ab*/
     return 0; /*0x5269b0*/
-  v4 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269b2*/
+  v4 = (unsigned int *)v2->u32_10; /*0x5269b2*/
   if ( !v4 || *v4 != v3 ) /*0x5269bb*/
   {
     v5 = SortedArray::BinarySearch(&a2); /*0x5269c4*/
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
-    *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
+    v2->u32_10 = v5; /*0x5269cd*/
   }
-  v6 = *((unsigned int *)v2 + 1); /*0x5269d0*/
+  v6 = v2->u32_4; /*0x5269d0*/
   a2 = (uint8_t *)v3; /*0x5269d3*/
   if ( v6 ) /*0x5269d9*/
   {
-    v7 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269db*/
+    v7 = (unsigned int *)v2->u32_10; /*0x5269db*/
     if ( v7 && *v7 == v3 ) /*0x5269e4*/
       goto LABEL_12; /*0x5269e4*/
     v8 = SortedArray::BinarySearch(&a2); /*0x5269ed*/
     if ( v8 ) /*0x5269f4*/
     {
-      *((unsigned int *)v2 + 4) = v8; /*0x5269f6*/
+      v2->u32_10 = v8; /*0x5269f6*/
   LABEL_12:
-      v9 = (int *)(*((unsigned int *)v2 + 4) + 4); /*0x5269f9*/
+      v9 = (int *)(v2->u32_10 + 4); /*0x5269f9*/
       goto LABEL_14; /*0x5269ff*/
     }
   }
@@ -219,7 +219,7 @@ unsigned int INIClass::GetString(uint8_t *a2, uint8_t *a3, char *Source, char *D
   unknown38 = (unsigned __int8 **)aP4->unknown38; /*0x528b26*/
   if ( unknown38 && *unknown38 == v19 ) /*0x528b2f*/
     goto LABEL_24; /*0x528b2f*/
-  v21 = SortedArray::BinarySearch((SortedArray *)&aP4->__pad_20[8], (int *)&aP4); /*0x528b38*/
+  v21 = SortedArray::BinarySearch(&aP4->__pad_028, (int *)&aP4); /*0x528b38*/
   if ( !v21 ) /*0x528b3f*/
   {
 LABEL_29:
@@ -232,7 +232,7 @@ LABEL_29:
   aP4->unknown38 = v21; /*0x528b41*/
 LABEL_24:
   aP4 = v19; /*0x528b44*/
-  if ( (unsigned __int8)HashTable::BinarySearch((int *)&aP4->__pad_20[8], (int *)&aP4) ) /*0x528b4f*/
+  if ( (unsigned __int8)HashTable::BinarySearch(&aP4->__pad_028, (int *)&aP4) ) /*0x528b4f*/
     v22 = (int *)(aP4->unknown38 + 4); /*0x528b5b*/
   else
     v22 = (int *)&unk_B7882C; /*0x528b60*/
@@ -248,26 +248,26 @@ LABEL_7:
   {
     memset(v26, 0, sizeof(v26)); /*0x528a60*/
     v11 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v26, v9, strlen((const char *)v9)); /*0x528a7e*/
-    v12 = *(unsigned int *)(v10 + 48); /*0x528a83*/
+    v12 = v10->u32_30; /*0x528a83*/
     v13 = (HashTable *)(v10 + 44); /*0x528a86*/
     aP4 = v11; /*0x528a8b*/
     if ( v12 ) /*0x528a8f*/
     {
-      HashTable_field_0x10 = (unsigned __int8 **)v13->HashTable_field_0x10; /*0x528a95*/
+      HashTable_field_0x10 = (unsigned __int8 **)v13->u32_10; /*0x528a95*/
       if ( HashTable_field_0x10 && *HashTable_field_0x10 == v11 ) /*0x528a9e*/
       {
 LABEL_13:
         if ( v13->HashTable_field_0x04 ) /*0x528abb*/
         {
-          v16 = (unsigned __int8 **)v13->HashTable_field_0x10; /*0x528ac6*/
+          v16 = (unsigned __int8 **)v13->u32_10; /*0x528ac6*/
           if ( v16 && *v16 == v11 ) /*0x528acf*/
             goto LABEL_18; /*0x528acf*/
           v17 = HashTable::BinarySearchAlt(v13, (int *)&aP4); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
-            v13->HashTable_field_0x10 = v17; /*0x528ae5*/
+            v13->u32_10 = v17; /*0x528ae5*/
 LABEL_18:
-            v18 = (int *)(v13->HashTable_field_0x10 + 4); /*0x528ae8*/
+            v18 = (int *)(v13->u32_10 + 4); /*0x528ae8*/
 LABEL_31:
             v24 = *v18; /*0x528b97*/
             if ( v24 ) /*0x528b9b*/
@@ -288,7 +288,7 @@ LABEL_31:
       v15 = HashTable::BinarySearchAlt(v13, (int *)&aP4); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
-        v13->HashTable_field_0x10 = v15; /*0x528ab4*/
+        v13->u32_10 = v15; /*0x528ab4*/
         v11 = aP4; /*0x528ab7*/
         goto LABEL_13; /*0x528ab7*/
       }
@@ -380,7 +380,7 @@ INIClass::INIClass()
   int v6; // esi
   int v7; // esi
 
-  result = this->__pad_0; /*0x535aa0*/
+  result = this->vtable1; /*0x535aa0*/
   sectionHead = this->sectionHead; /*0x535aa6*/
   v3 = result + 7; /*0x535aa9*/
   result[1] = 0; /*0x535aac*/
@@ -418,7 +418,7 @@ INIClass::INIClass()
   result[10] = 0; /*0x535b13*/
   result[11] = 0; /*0x535b16*/
   result[12] = 0; /*0x535b19*/
-  *((unsigned char *)result + 52) = 0; /*0x535b1c*/
+  result->needsSave_flag = 0; /*0x535b1c*/
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
   *result = &INIClass::`vftable'; /*0x535b27*/
@@ -475,14 +475,14 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
   v3 = aP1 + 40; /*0x526d02*/
   v4 = Checksummer::Add_Buffer(v10, aP2, strlen((const char *)aP2)); /*0x526d05*/
   aP2 = (unsigned __int8 *)v4; /*0x526d07*/
-  if ( !*((unsigned int *)v3 + 1) ) /*0x526d0b*/
+  if ( !v3->u32_4 ) /*0x526d0b*/
     return 0; /*0x526d10*/
   if ( !(unsigned __int8)SortedArray::CheckCache(&aP2) ) /*0x526d19*/
   {
     v5 = SortedArray::BinarySearch(&aP2); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
-    *((unsigned int *)v3 + 4) = v5; /*0x526d32*/
+    v3->u32_10 = v5; /*0x526d32*/
   }
   aP2 = (unsigned __int8 *)v4; /*0x526d3c*/
   v6 = *(unsigned int *)SortedArray::FindValue(&aP2); /*0x526d45*/
@@ -498,7 +498,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
         {
           if ( !v7 ) /*0x526d6d*/
             return v8[3]; /*0x526d80*/
-          v8 = (unsigned int *)v8[1]; /*0x526d6f*/
+          v8 = v8->u32_4; /*0x526d6f*/
           --v7; /*0x526d71*/
         }
       }

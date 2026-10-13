@@ -29,19 +29,19 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
     *(unsigned int *)v5 = (unsigned int)(&vt_ReferenceCounted); /*0x76f494*/
     ComPtr::Constructor((ComPtr *)(v5 + 8)); /*0x76f49a*/
     *v7 = (unsigned int)(&vt_rc_ptr); /*0x76f49f*/
-    ComPtr::Set((ComPtr *)(v6 + 8), *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
-    *(unsigned int *)(v6 + 16) = 0; /*0x76f4b0*/
+    ComPtr::Set(&v6->u32_8, *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
+    v6->u32_10 = 0; /*0x76f4b0*/
     *(unsigned int *)v6 = &vt_WorldDominationTourState; /*0x76f4b7*/
-    v8 = *(unsigned int *)(v6 + 12); /*0x76f4bd*/
+    v8 = v6->u32_C; /*0x76f4bd*/
     if ( v8 && a3 < *(unsigned int *)(v8 + 36) ) /*0x76f4ce*/
-      *(unsigned int *)(v6 + 16) = *(unsigned int *)(*(unsigned int *)(v8 + 68) + 4 * a3); /*0x76f4d6*/
+      v6->u32_10 = *(unsigned int *)(*(unsigned int *)(v8 + 68) + 4 * a3); /*0x76f4d6*/
   }
   else
   {
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  *(unsigned int *)a1->__pad_0 = (unsigned int)(&vt_rc_ptr); /*0x76f4e6*/
+  *(unsigned int *)a1->vfptr = (unsigned int)(&vt_rc_ptr); /*0x76f4e6*/
   ComPtr::Set(a1, v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }  // G42.18 ns repair

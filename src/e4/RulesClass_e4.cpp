@@ -36,7 +36,7 @@ extern char a0None[];  // data: 0x83d4ac truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 double RulesClass::GetFiringDistance()
 {
-  return (double)*((int *)dword_8871E0 + 1454) * 0.5; /*0x48ad01*/
+  return (double)dword_8871E0->RepairRate * 0.5; /*0x48ad01*/
 }  // G42.18 ns repair
 } // namespace gamemd
 
@@ -46,8 +46,8 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
 {
   this->DetailMinFrameRateMovie = 0; /*0x538b3b*/
   this->DetailBufferZoneWidth = a2; /*0x538b3e*/
-  (*((unsigned char *)&(this->AmmoCrateDamage))) = 1; /*0x538b41*/
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x538b45*/
+  (this->AmmoCrateDamage) = 1; /*0x538b41*/
+  (this->u8_D) = 0; /*0x538b45*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
@@ -57,7 +57,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
       return &this->DetailMinFrameRateNormal; /*0x538b5e*/
     }
     this->DetailMinFrameRateMovie = operator new(4 * a2); /*0x538b6d*/
-    (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 1; /*0x538b70*/
+    (this->u8_D) = 1; /*0x538b70*/
   }
   return &this->DetailMinFrameRateNormal; /*0x538b5d*/
 }
@@ -212,14 +212,14 @@ void* RulesClass::readAudioVisual()
     BerserkColor = this->BerserkColor; /*0x66d1af*/
     IronCurtainColor = this->IronCurtainColor; /*0x66d1b5*/
     __asm { fstp qword ptr [esi+1840h] } /*0x66d1bb*/
-    *(double *)&this->ColorAdd[11] = _RT1; /*0x66d1bb*/
+    *&this->RepairRate = _RT1; /*0x66d1bb*/
     result = INIClass::ReadDouble_Overwrite( /*0x66d1d1*/
                (double *)v10,
                (unsigned __int8 *)aElevationmodel,
                aElevationbonus,
                COERCE_DOUBLE(__PAIR64__(BerserkColor, IronCurtainColor)));
     __asm { fstp qword ptr [esi+1848h] } /*0x66d1d6*/
-    *(double *)&this->IronCurtainColor = _RT1; /*0x66d1d6*/
+    *&this->IronCurtainColor = _RT1; /*0x66d1d6*/
     LOBYTE(result) = 1; /*0x66d1dd*/
   }
   else
@@ -457,12 +457,12 @@ void RulesClass::readMaximums()
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fa9*/
-  if ( DetailMinFrameRateMovie && (((unsigned char *)&(this->AmmoCrateDamage))[1]) ) /*0x679fb3*/
+  if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fb3*/
   {
     operator delete((void *)(DetailMinFrameRateMovie)); /*0x679fb9*/
     this->DetailMinFrameRateMovie = 0; /*0x679fc1*/
   }
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x679fc4*/
+  (this->u8_D) = 0; /*0x679fc4*/
   this->DetailBufferZoneWidth = 0; /*0x679fc7*/
 }
 }  // G42.18c ns repair
@@ -474,12 +474,12 @@ void RulesClass::readInfantryTypes()
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fd9*/
-  if ( DetailMinFrameRateMovie && (((unsigned char *)&(this->AmmoCrateDamage))[1]) ) /*0x679fe3*/
+  if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fe3*/
   {
     operator delete((void *)(DetailMinFrameRateMovie)); /*0x679fe9*/
     this->DetailMinFrameRateMovie = 0; /*0x679ff1*/
   }
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x679ff4*/
+  (this->u8_D) = 0; /*0x679ff4*/
   this->DetailBufferZoneWidth = 0; /*0x679ff7*/
 }
 }  // G42.18c ns repair
@@ -491,12 +491,12 @@ void RulesClass::readCountries()
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a009*/
-  if ( DetailMinFrameRateMovie && (((unsigned char *)&(this->AmmoCrateDamage))[1]) ) /*0x67a013*/
+  if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a013*/
   {
     operator delete((void *)(DetailMinFrameRateMovie)); /*0x67a019*/
     this->DetailMinFrameRateMovie = 0; /*0x67a021*/
   }
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67a024*/
+  (this->u8_D) = 0; /*0x67a024*/
   this->DetailBufferZoneWidth = 0; /*0x67a027*/
 }
 }  // G42.18c ns repair
@@ -508,12 +508,12 @@ void RulesClass::readVehicleTypes()
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a069*/
-  if ( DetailMinFrameRateMovie && (((unsigned char *)&(this->AmmoCrateDamage))[1]) ) /*0x67a073*/
+  if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a073*/
   {
     operator delete((void *)(DetailMinFrameRateMovie)); /*0x67a079*/
     this->DetailMinFrameRateMovie = 0; /*0x67a081*/
   }
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67a084*/
+  (this->u8_D) = 0; /*0x67a084*/
   this->DetailBufferZoneWidth = 0; /*0x67a087*/
 }
 }  // G42.18c ns repair
@@ -539,7 +539,7 @@ void *  RulesClass::readAircraftTypes(int * a2)
       {
         DetailBufferZoneWidth = this->DetailBufferZoneWidth; /*0x67a1c2*/
         v6 = 0; /*0x67a1c5*/
-        (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 1; /*0x67a1c9*/
+        (this->u8_D) = 1; /*0x67a1c9*/
         if ( DetailBufferZoneWidth > 0 ) /*0x67a1cd*/
         {
           do /*0x67a1e1*/
@@ -554,7 +554,7 @@ void *  RulesClass::readAircraftTypes(int * a2)
     else
     {
       this->DetailMinFrameRateMovie = 0; /*0x67a1e5*/
-      (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67a1ec*/
+      (this->u8_D) = 0; /*0x67a1ec*/
     }
   }
   this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a1f3*/
@@ -585,7 +585,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
       {
         DetailBufferZoneWidth = this->DetailBufferZoneWidth; /*0x67a242*/
         v6 = 0; /*0x67a245*/
-        (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 1; /*0x67a249*/
+        (this->u8_D) = 1; /*0x67a249*/
         if ( DetailBufferZoneWidth > 0 ) /*0x67a24d*/
         {
           do /*0x67a261*/
@@ -600,11 +600,11 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
     else
     {
       this->DetailMinFrameRateMovie = 0; /*0x67a265*/
-      (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67a26c*/
+      (this->u8_D) = 0; /*0x67a26c*/
     }
   }
-  this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a273*/
-  this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a279*/
+  this->LargeVisceroid = a2->uniqueId; /*0x67a273*/
+  this->SmallVisceroid = a2->abstractFlags; /*0x67a279*/
   this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
   return &this->DetailMinFrameRateNormal; /*0x67a284*/
 }
@@ -631,7 +631,7 @@ void * RulesClass::readBuildingTypes(int * a2)
       {
         DetailBufferZoneWidth = this->DetailBufferZoneWidth; /*0x67a342*/
         v6 = 0; /*0x67a345*/
-        (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 1; /*0x67a349*/
+        (this->u8_D) = 1; /*0x67a349*/
         if ( DetailBufferZoneWidth > 0 ) /*0x67a34d*/
         {
           do /*0x67a361*/
@@ -646,7 +646,7 @@ void * RulesClass::readBuildingTypes(int * a2)
     else
     {
       this->DetailMinFrameRateMovie = 0; /*0x67a365*/
-      (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67a36c*/
+      (this->u8_D) = 0; /*0x67a36c*/
     }
   }
   this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a373*/
@@ -661,8 +661,8 @@ unsigned int * RulesClass::readParticles()
 {
   this->DetailMinFrameRateMovie = 0; /*0x67a8b4*/
   this->DetailBufferZoneWidth = 0; /*0x67a8b7*/
-  (*((unsigned char *)&(this->AmmoCrateDamage))) = 1; /*0x67a8ba*/
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67a8be*/
+  (this->AmmoCrateDamage) = 1; /*0x67a8ba*/
+  (this->u8_D) = 0; /*0x67a8be*/
   this->SmallVisceroid = (UnitTypeClass *)10; /*0x67a8c1*/
   this->LargeVisceroid = 0; /*0x67a8c8*/
   this->DetailMinFrameRateNormal = (int)&vt_TypeList; /*0x67a8cb*/
@@ -680,7 +680,7 @@ int  RulesClass::readAI(unsigned int * a2)
   DetailBufferZoneWidth = this->DetailBufferZoneWidth; /*0x67b483*/
   result = (int)this->LargeVisceroid; /*0x67b486*/
   if ( result < DetailBufferZoneWidth /*0x67b4ad*/
-    || ((((unsigned char *)&(this->AmmoCrateDamage))[1]) || !DetailBufferZoneWidth)
+    || ((this->u8_D) || !DetailBufferZoneWidth)
     && (result = (int)this->SmallVisceroid, result > 0)
     && (result = (*(int (**)(RulesClass *, int, unsigned int))(this->DetailMinFrameRateNormal + 8))(
                    this,
@@ -814,8 +814,8 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
 {
   this->DetailMinFrameRateMovie = 0; /*0x67c43b*/
   this->DetailBufferZoneWidth = a2; /*0x67c43e*/
-  (*((unsigned char *)&(this->AmmoCrateDamage))) = 1; /*0x67c441*/
-  (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 0; /*0x67c445*/
+  (this->AmmoCrateDamage) = 1; /*0x67c441*/
+  (this->u8_D) = 0; /*0x67c445*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67c448*/
   if ( a2 ) /*0x67c44e*/
   {
@@ -825,7 +825,7 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
       return &this->DetailMinFrameRateNormal; /*0x67c45e*/
     }
     this->DetailMinFrameRateMovie = operator new(4 * a2); /*0x67c46d*/
-    (((unsigned char *)&(this->AmmoCrateDamage))[1]) = 1; /*0x67c470*/
+    (this->u8_D) = 1; /*0x67c470*/
   }
   return &this->DetailMinFrameRateNormal; /*0x67c45d*/
 }

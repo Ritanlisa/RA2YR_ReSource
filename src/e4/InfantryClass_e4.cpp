@@ -57,7 +57,7 @@ int InfantryClass::ScanTarget(int * a1)
   {
     vtable0 = (void (**)(FootClass *, void *, int))a1->vfptr; /*0x4d4de8*/
     PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((char *)a1,(unsigned int *)(&v17), (int)a1); /*0x4d4df4*/
-    v4 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
+    v4 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(PlacementCellsAlt); /*0x4d4dff*/
     vtable0[288](a1, v4, 1); /*0x4d4e07*/
   }
   if ( a1->FootClass_field_bool_68E ) /*0x4d4e0d*/
@@ -147,7 +147,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         if ( slaveManager ) /*0x4d5545*/
           FactoryClass::ResetProductionTimers(slaveManager); /*0x4d5547*/
         vtable0 = (void (**)(FootClass *, void *, int))a1->vfptr; /*0x4d554c*/
-        v9 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v13); /*0x4d555a*/
+        v9 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v13); /*0x4d555a*/
         vtable0[288](a1, v9, 1); /*0x4d5562*/
         (*((void (**)(FootClass *, int, int))a1->vfptr + 122))(a1, 2, 1); /*0x4d5570*/
       }
@@ -215,11 +215,11 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   unsigned int *v15; // eax
   int v17[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  p_vtable1 = (AbstractClass *)&a1->?; /*0x517d9a*/
+  p_vtable1 = &a1->vtable2; /*0x517d9a*/
   a1->FootClass = &InfantryClass::`vftable'; /*0x517d9d*/
   a1->? = &InfantryClass::`vftable'; /*0x517da3*/
-  a1->? = &off_7EB02C; /*0x517daa*/
-  a1->? = &InfantryClass::`vftable'; /*0x517db1*/
+  a1->vtable4 = &off_7EB02C; /*0x517daa*/
+  a1->vtable4 = &InfantryClass::`vftable'; /*0x517db1*/
   if ( byte_A8E9A0 ) /*0x517dbe*/
   {
     Type = a1->Type; /*0x517dc4*/

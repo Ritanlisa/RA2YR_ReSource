@@ -54,9 +54,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
     case 3: /*0x728c17*/
       a1->RefCount = 5; /*0x728dd0*/
   LABEL_11:
-      a1->CurrentState[0] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728de0*/
-      a1->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728df0*/
-      a1->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728df9*/
+      a1->CurrentState[0] = *(unsigned int *)&DataGlobal_B0F910; /*0x728de0*/
+      a1->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F914; /*0x728df0*/
+      a1->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F918; /*0x728df9*/
       break; /*0x728df9*/
     case 4: /*0x728c17*/
       CurrentState = a1->CurrentState; /*0x728c29*/
@@ -94,9 +94,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                                       v13);
         v11[0] = 0; /*0x728cc4*/
         v11[1] = 0; /*0x728cc9*/
-        TileIndex = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(v10, 0, 0); /*0x728cce*/
+        TileIndex = ((MapClass *)((MapClass *)&DataGlobal_87F7E8))->GetTileIndex(v10, 0, 0); /*0x728cce*/
         v8 = *LayerClass::Pathfinding_Find( /*0x728cea*/
-                (Type *)&stru_87F5F0.__pad_58[416],
+                (Type *)&DataGlobal_87F7E8,
                 (int)&v14,
                 &v14,
                 v10,
@@ -114,14 +114,14 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                 0,
                 0);
         this_2 = (*(((unsigned short *)&(v8)) + 1)); /*0x728cf3*/
-        if ( (unsigned short)v8 != *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728cf7*/
+        if ( (unsigned short)v8 != *(unsigned short *)&DataGlobal_B0F8F0 ) /*0x728cf7*/
           goto LABEL_8; /*0x728cf7*/
         if ( (*(((unsigned short *)&(v8)) + 1)) == *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[322] ) /*0x728d09*/
         {
           v12[0] = 0; /*0x728d33*/
           v12[1] = 0; /*0x728d38*/
           v8 = *LayerClass::Pathfinding_Find( /*0x728d42*/
-                  (Type *)&stru_87F5F0.__pad_58[416],
+                  (Type *)&DataGlobal_87F7E8,
                   (int)v12,
                   &v15,
                   v10,
@@ -140,19 +140,19 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                   0);
           this_2 = (*(((unsigned short *)&(v8)) + 1)); /*0x728d44*/
         }
-        if ( (((unsigned int)(unsigned short)(v8)) | ((unsigned int)(unsigned short)(this_2) << 16)) == *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728d4f*/
+        if ( (((unsigned int)(unsigned short)(v8)) | ((unsigned int)(unsigned short)(this_2) << 16)) == *(unsigned int *)&DataGlobal_B0F8F0 ) /*0x728d4f*/
         {
           (*((void (__stdcall **)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->Owner->vfptr + 91))( /*0x728d7c*/
             &a1->Owner->health,
             0,
-            *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+            *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
             0,
             1,
             1,
             0);
-          *CurrentState = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728d88*/
-          a1->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728d90*/
-          a1->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728d99*/
+          *CurrentState = *(unsigned int *)&DataGlobal_B0F910; /*0x728d88*/
+          a1->CurrentState[1] = *(unsigned int *)&DataGlobal_B0F914; /*0x728d90*/
+          a1->CurrentState[2] = *(unsigned int *)&DataGlobal_B0F918; /*0x728d99*/
         }
         else
         {

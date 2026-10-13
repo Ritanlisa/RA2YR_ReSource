@@ -169,17 +169,17 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   int v5; // eax
 
   AbstractTypeClass::Constructor((int *)this, aP1); /*0x7216ca*/
-  this->?[1] = -1717986918; /*0x7216dc*/
+  this->u32_A0 = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
-  *(unsigned int *)&this->? = -1; /*0x7216f1*/
-  this->?[0] = 0; /*0x7216fb*/
-  this->?[2] = 1069128089; /*0x721701*/
-  this->? = 0; /*0x721707*/
+  *&this->isInLogic = -1; /*0x7216f1*/
+  this->Spread = 0; /*0x7216fb*/
+  this->q0A4 = 1069128089; /*0x721701*/
+  this->Growth_d = 0; /*0x721707*/
   this->SpreadPercentage[0] = 1069128089; /*0x72170d*/
   this->SpreadPercentage[1] = 0; /*0x721713*/
   this->Growth = 0; /*0x721719*/
   this->GrowthPercentage[0] = 0; /*0x72171f*/
-  AnimTypeVector::Constructor((AnimTypeVector *)&this->GrowthPercentage[1], 0, 0); /*0x721725*/
+  AnimTypeVector::Constructor(&this->Power_d, 0, 0); /*0x721725*/
   this->Image = (OverlayTypeClass *)10; /*0x72172a*/
   this->Debris[0] = 0; /*0x721731*/
   this->GrowthPercentage[1] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x721734*/
@@ -201,9 +201,9 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->ObjectClass = &TiberiumClass::`vftable'; /*0x7217a6*/
-  this->? = &TiberiumClass::`vftable'; /*0x7217ac*/
+  this->vtable2 = &TiberiumClass::`vftable'; /*0x7217ac*/
   this->? = &TiberiumClass::`vftable'; /*0x7217b3*/
-  this->? = &TiberiumClass::`vftable'; /*0x7217ba*/
+  this->vtable4 = &TiberiumClass::`vftable'; /*0x7217ba*/
   *(unsigned int *)&this->? = g_BuildingLoadQueue_Array.?[0]; /*0x7217c6*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[3] /*0x7217fe*/
     || (g_BuildingLoadQueue_Array.?[0] || !g_BuildingLoadQueue_Array.?[3])
@@ -261,42 +261,42 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   INIClass::ResetSection((INIClass *)aP1); /*0x721a63*/
   if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)v5, (uint8_t ***)aP1) ) /*0x721a6b*/
     return 0; /*0x721cea*/
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/                     (bool *)aP1,                     (uint8_t *)(v5 + 36),(uint8_t *)(aSpread),                     *(unsigned int *)(v5 + 156));
-  v20 = *(double *)(v5 + 160); /*0x721a9d*/
-  *(unsigned int *)(v5 + 156) = Int_Overwrite; /*0x721aa6*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(v5 + 36), aSpreadpercenta, v20); /*0x721aac*/
-  v7 = *(unsigned int *)(v5 + 168); /*0x721ab1*/
+    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/                     (bool *)aP1,                     &v5->objectTypeFlags,(uint8_t *)(aSpread),                     v5->Spread);
+  v20 = v5->u32_A0; /*0x721a9d*/
+  v5->Spread = Int_Overwrite; /*0x721aa6*/
+  INIClass::ReadDouble_Overwrite((double *)aP1, &v5->objectTypeFlags, aSpreadpercenta, v20); /*0x721aac*/
+  v7 = v5->Growth_d; /*0x721ab1*/
   __asm { fstp qword ptr [esi+0A0h] } /*0x721ab9*/
-  *(double *)(v5 + 160) = _RT1; /*0x721ab9*/
-  v9 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)(v5 + 36),(uint8_t *)(aGrowth), v7); /*0x721ac6*/
-  v21 = *(double *)(v5 + 176); /*0x721ad8*/
-  *(unsigned int *)(v5 + 168) = v9; /*0x721ae1*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(v5 + 36), aGrowthpercenta, v21); /*0x721ae7*/
-  v10 = *(unsigned int *)(v5 + 184); /*0x721aec*/
+  v5->u32_A0 = _RT1; /*0x721ab9*/
+  v9 = INIClass::ReadInt_Overwrite((bool *)aP1, &v5->objectTypeFlags,(uint8_t *)(aGrowth), v7); /*0x721ac6*/
+  v21 = v5->Spread_d; /*0x721ad8*/
+  v5->Growth_d = v9; /*0x721ae1*/
+  INIClass::ReadDouble_Overwrite((double *)aP1, &v5->objectTypeFlags, aGrowthpercenta, v21); /*0x721ae7*/
+  v10 = v5->GrowthPercentage; /*0x721aec*/
   __asm { fstp qword ptr [esi+0B0h] } /*0x721af4*/
-  *(double *)(v5 + 176) = _RT1; /*0x721af4*/
-  v12 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)(v5 + 36),(uint8_t *)(aValue), v10); /*0x721b01*/
-  v13 = *(unsigned int *)(v5 + 188); /*0x721b06*/
-  *(unsigned int *)(v5 + 184) = v12; /*0x721b0c*/
-  v14 = INIClass::ReadInt_Overwrite((bool *)aP1, (uint8_t *)(v5 + 36),(uint8_t *)(aPower_0), v13); /*0x721b1b*/
-  v22 = *(unsigned int *)(v5 + 192); /*0x721b28*/
-  *(unsigned int *)(v5 + 188) = v14; /*0x721b2f*/
-  *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
+  v5->Spread_d = _RT1; /*0x721af4*/
+  v12 = INIClass::ReadInt_Overwrite((bool *)aP1, &v5->objectTypeFlags,(uint8_t *)(aValue), v10); /*0x721b01*/
+  v13 = v5->Power_d; /*0x721b06*/
+  v5->GrowthPercentage = v12; /*0x721b0c*/
+  v14 = INIClass::ReadInt_Overwrite((bool *)aP1, &v5->objectTypeFlags,(uint8_t *)(aPower_0), v13); /*0x721b1b*/
+  v22 = v5->GrowthPercentage_d; /*0x721b28*/
+  v5->Power_d = v14; /*0x721b2f*/
+  v5->GrowthPercentage_d = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                             (BuildingTypeClass *)aP1,
-                            (uint8_t *)(v5 + 36),
-                            (uint8_t *)&stru_81AF8C.__pad_14D[95],
+                            &v5->objectTypeFlags,
+                            (uint8_t *)&g_INI_Key_Color,
                             v22);
   if ( INIClass::GetString( /*0x721b57*/
          (INIClass *)aP1,
-         (uint8_t *)(v5 + 36),
+         &v5->objectTypeFlags,
          aDebris,
          &g_INI_DefaultBuffer,
-         (char *)&v25.DynamicVector_field_0x1C,
+         (char *)&v25.q01C,
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
-    *(unsigned int *)v25.__pad_0 = &vt_TypeList; /*0x721b7b*/
-    for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
+    *(unsigned int *)v25.WeaponType = &vt_TypeList; /*0x721b7b*/
+    for ( i = strtok((char *)&v25.q01C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
@@ -305,17 +305,17 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
-    *(unsigned int *)v25.__pad_0 = &vt_VectorClass; /*0x721bd6*/
+    *(unsigned int *)v25.WeaponType = &vt_VectorClass; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else
   {
-    TypeList::AnimTypeCopy(&v24, (unsigned int *)(v5 + 196)); /*0x721bf0*/
+    TypeList::AnimTypeCopy(&v24, &v5->u32_C4); /*0x721bf0*/
   }
-  VectorClass::CopyDefault((VectorClass *)(v5 + 196), &v24); /*0x721c03*/
+  VectorClass::CopyDefault(&v5->u32_C4, &v24); /*0x721c03*/
   CapacityIncrement = (int)(((char *)&v24)); /*0x721c0c*/
   unknown_18 = v24.unknown_18; /*0x721c10*/
-  *(unsigned int *)(v5 + 212) = (unsigned int)(((char *)&v24)); /*0x721c14*/
+  *&v5->Debris = (unsigned int)(((char *)&v24)); /*0x721c14*/
   Items = ((char *)&v24); /*0x721c17*/
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
@@ -324,29 +324,29 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
     operator delete((void *)(Items)); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
              (bool *)aP1,
-             (uint8_t *)(v5 + 36),
+             &v5->objectTypeFlags,
              (uint8_t *)g_INI_Key_Image,
              -1) )
   {
     case -1: /*0x721c55*/
       goto LABEL_19;
     case 2: /*0x721c55*/
-      *(unsigned int *)(v5 + 224) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 108); /*0x721c69*/
-      *(unsigned int *)(v5 + 228) = 12; /*0x721c6f*/
-      *(unsigned int *)(v5 + 232) = 12; /*0x721c75*/
+      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 108); /*0x721c69*/
+      v5->Tactical_E4 = 12; /*0x721c6f*/
+      v5->q0E8 = 12; /*0x721c75*/
       return 1; /*0x721c85*/
     case 3: /*0x721c55*/
-      *(unsigned int *)(v5 + 224) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 508); /*0x721c94*/
+      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 508); /*0x721c94*/
       goto LABEL_18; /*0x721c9a*/
     case 4: /*0x721c55*/
-      *(unsigned int *)(v5 + 224) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 588); /*0x721ca8*/
+      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 588); /*0x721ca8*/
       goto LABEL_18; /*0x721cae*/
     default:
-      *(unsigned int *)(v5 + 224) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 408); /*0x721cbb*/
+      v5->Image_d = *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 408); /*0x721cbb*/
   LABEL_18:
       *(unsigned int *)(v5 + 236) = 8; /*0x721cc1*/
-      *(unsigned int *)(v5 + 228) = 12; /*0x721cd0*/
-      *(unsigned int *)(v5 + 232) = 12; /*0x721cd6*/
+      v5->Tactical_E4 = 12; /*0x721cd0*/
+      v5->q0E8 = 12; /*0x721cd6*/
   LABEL_19:
       result = 1; /*0x721cdc*/
       break; /*0x721ce6*/
@@ -427,14 +427,14 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     if ( v2 ) /*0x721f92*/
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
-      DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v2->GrowthPercentage[1], 0, 0); /*0x721fa4*/
+      DynamicVectorClass::AnimTypeConstructor(&v2->u32_E8, 0, 0); /*0x721fa4*/
       v2->GrowthPercentage[1] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x721fb0*/
       Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
       v2->ObjectClass = &TiberiumClass::`vftable'; /*0x721fc7*/
-      v2->? = &TiberiumClass::`vftable'; /*0x721fcd*/
+      v2->vtable2 = &TiberiumClass::`vftable'; /*0x721fcd*/
       v2->? = &TiberiumClass::`vftable'; /*0x721fd4*/
-      v2->? = &TiberiumClass::`vftable'; /*0x721fdb*/
+      v2->vtable4 = &TiberiumClass::`vftable'; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/

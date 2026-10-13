@@ -49,14 +49,14 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
   {
     v16 = dword_A83D4C == (Object *)ownerHouse; /*0x50af31*/
     result = 0; /*0x50af36*/
-    for ( i = 0; i < *((unsigned int *)ownerHouse + 153); ++i ) /*0x50af3a*/
+    for ( i = 0; i < ownerHouse->lastBuiltInfantryType; ++i ) /*0x50af3a*/
     {
-      v3 = *(unsigned char **)(*((unsigned int *)ownerHouse + 150) + 4 * result); /*0x50af4d*/
-      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !*((unsigned char *)ownerHouse + 501) ) /*0x50af70*/
+      v3 = *(unsigned char **)(ownerHouse->supersCount + 4 * result); /*0x50af4d*/
+      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !ownerHouse->defeated ) /*0x50af70*/
         goto LABEL_55; /*0x50af78*/
       HasPower = 0; /*0x50af84*/
       v15 = 0; /*0x50af88*/
-      if ( !*((unsigned char *)ownerHouse + 501) ) /*0x50af7e*/
+      if ( !ownerHouse->defeated ) /*0x50af7e*/
       {
         v5 = 0; /*0x50af99*/
         for ( j = 0; v5 < stru_A8EB00.vfptr[20]; j = ++v5 ) /*0x50afa1*/
@@ -96,26 +96,26 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
           }
         }
       }
-      v10 = *(unsigned char **)(*(unsigned int *)(*((unsigned int *)ownerHouse + 150) + 4 * i) + 40); /*0x50b078*/
-      if ( v10[231] && !stru_A8B250.__pad_0[19] ) /*0x50b099*/
+      v10 = *(unsigned char **)(*(unsigned int *)(ownerHouse->supersCount + 4 * i) + 40); /*0x50b078*/
+      if ( v10[231] && !SWAllowed ) /*0x50b099*/
         v15 = 0; /*0x50b09b*/
-      v11 = *((unsigned int *)ownerHouse + 5353); /*0x50b0a0*/
-      v12 = *((unsigned int *)ownerHouse + 5354); /*0x50b0a6*/
+      v11 = ownerHouse->powerOutput; /*0x50b0a0*/
+      v12 = ownerHouse->powerDrain; /*0x50b0a6*/
       if ( v11 < v12 && v12 && (!v11 || (double)*((int *)ownerHouse + 5353) / (double)*((int *)ownerHouse + 5354) < 1.0) ) /*0x50b0d3*/
         HasPower = 0; /*0x50b0d5*/
       (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/
       Status = HouseClass::GetStatus((HouseClass *)0x39, 0); /*0x50b0ea*/
-      if ( !v15 || *((unsigned char *)ownerHouse + 501) ) /*0x50b0f4*/
+      if ( !v15 || ownerHouse->defeated ) /*0x50b0f4*/
       {
-        if ( !SuperClass::Lose(*(SuperClass **)(*((unsigned int *)ownerHouse + 150) + 4 * i)) || !dword_A83D4C ) /*0x50b179*/
+        if ( !SuperClass::Lose(*(SuperClass **)(ownerHouse->supersCount + 4 * i)) || !dword_A83D4C ) /*0x50b179*/
           goto LABEL_55; /*0x50b179*/
         if ( !v16 ) /*0x50b181*/
           goto LABEL_54; /*0x50b181*/
-        if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1438] == i ) /*0x50b18e*/
+        if ( *(unsigned int *)&g_BuildingPlacementState == i ) /*0x50b18e*/
   LABEL_52:
-          *(unsigned int *)&stru_87F5F0.__pad_E12[1438] = -1; /*0x50b190*/
+          *(unsigned int *)&g_BuildingPlacementState = -1; /*0x50b190*/
   LABEL_53:
-        Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x50b19a*/
+        Sidebar::ActivateTab((int *)&DataGlobal_87F7E8, Status); /*0x50b19a*/
         goto LABEL_54; /*0x50b1a0*/
       }
       if ( HasPower ) /*0x50b100*/
@@ -125,23 +125,23 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       else
       {
         v14 = i; /*0x50b108*/
-        if ( SuperWeapon::GetField10(*(SuperWeapon **)(*((unsigned int *)ownerHouse + 150) + 4 * i)) /*0x50b123*/
-          && (uint8_t)SuperClass::SetOnHold(*(unsigned int *)(*((unsigned int *)ownerHouse + 150) + 4 * i), 1) )
+        if ( SuperWeapon::GetField10(*(SuperWeapon **)(ownerHouse->supersCount + 4 * i)) /*0x50b123*/
+          && (uint8_t)SuperClass::SetOnHold(*(unsigned int *)(ownerHouse->supersCount + 4 * i), 1) )
         {
           goto LABEL_45; /*0x50b12a*/
         }
       }
-      if ( !HasPower || !(uint8_t)SuperClass::SetOnHold(*(unsigned int *)(*((unsigned int *)ownerHouse + 150) + 4 * v14), 0) ) /*0x50b141*/
+      if ( !HasPower || !(uint8_t)SuperClass::SetOnHold(*(unsigned int *)(ownerHouse->supersCount + 4 * v14), 0) ) /*0x50b141*/
         goto LABEL_55; /*0x50b148*/
   LABEL_45:
       if ( v16 ) /*0x50b150*/
       {
-        if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1438] == v14 ) /*0x50b158*/
+        if ( *(unsigned int *)&g_BuildingPlacementState == v14 ) /*0x50b158*/
           goto LABEL_52; /*0x50b158*/
         goto LABEL_53; /*0x50b158*/
       }
   LABEL_54:
-      *((unsigned char *)ownerHouse + 508) = 1; /*0x50b1a5*/
+      ownerHouse->recheckTechTree = 1; /*0x50b1a5*/
   LABEL_55:
       result = i + 1; /*0x50b1ac*/
     }

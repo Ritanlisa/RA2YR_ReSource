@@ -119,13 +119,13 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
           goto LABEL_31; /*0x6106f8*/
         goto LABEL_30; /*0x6106f8*/
       }
-      v11 = (HWND *)v8[2]; /*0x6106fc*/
+      v11 = v8->HWND_8; /*0x6106fc*/
       if ( v11 ) /*0x610701*/
       {
         while ( *v11 != hWnd ) /*0x610705*/
         {
           v8 = v11; /*0x610707*/
-          v11 = (HWND *)v11[2]; /*0x610709*/
+          v11 = v11->HWND_8; /*0x610709*/
           if ( !v11 ) /*0x61070e*/
             goto LABEL_29; /*0x61070e*/
         }
@@ -210,26 +210,26 @@ char sub_610B50()
   int64_t v3; // [esp+Ch] [ebp-18h]
   unsigned long long v4[2]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !*(unsigned int *)&g_DialogPool.__pad_208[772] ) /*0x610b5d*/
+  if ( !*(unsigned int *)&DataGlobal_AC1DCC ) /*0x610b5d*/
     return 0; /*0x610b5f*/
-  if ( *(unsigned int *)&g_DialogPool.__pad_208[776] == 1 ) /*0x610b6d*/
+  if ( *(unsigned int *)&DataGlobal_AC1DD0 == 1 ) /*0x610b6d*/
     return 0; /*0x610b6f*/
-  if ( !*(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610b7e*/
+  if ( !*(unsigned int *)&DataGlobal_AC1CC8 ) /*0x610b7e*/
     return 0; /*0x610b80*/
   v2[0] = 0; /*0x610b9e*/
   v2[1] = 0; /*0x610ba2*/
-  v4[0] = *(unsigned long long *)&g_DialogPool.__pad_208[496]; /*0x610bab*/
+  v4[0] = *(unsigned long long *)&DataGlobal_AC1CB8; /*0x610bab*/
   v4[1] = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc4*/
   v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc8*/
-  (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610bd3*/
+  (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary /*0x610bd3*/
    + 2))(
     g_DSurface_Primary,
     v4,
-    *(unsigned int *)&g_DialogPool.__pad_208[512],
+    *(unsigned int *)&DataGlobal_AC1CC8,
     v2,
     0,
     1);
-  *(unsigned int *)&g_DialogPool.__pad_208[776] = 1; /*0x610bd6*/
+  *(unsigned int *)&DataGlobal_AC1DD0 = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
 }
 }
@@ -241,33 +241,33 @@ AbstractClass * * sub_610BF0()
   int64_t v3; // [esp+Ch] [ebp-18h]
   unsigned long long v4[2]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !*(unsigned int *)&g_DialogPool.__pad_208[772] ) /*0x610bfd*/
+  if ( !*(unsigned int *)&DataGlobal_AC1DCC ) /*0x610bfd*/
     return 0; /*0x610c05*/
-  if ( *(unsigned int *)&g_DialogPool.__pad_208[776] == 1 ) /*0x610c0d*/
+  if ( *(unsigned int *)&DataGlobal_AC1DD0 == 1 ) /*0x610c0d*/
     goto LABEL_6; /*0x610c0d*/
-  if ( *(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610c17*/
+  if ( *(unsigned int *)&DataGlobal_AC1CC8 ) /*0x610c17*/
   {
-    v4[0] = *(unsigned long long *)&g_DialogPool.__pad_208[496]; /*0x610c35*/
+    v4[0] = *(unsigned long long *)&DataGlobal_AC1CB8; /*0x610c35*/
     v4[1] = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610c4f*/
     v2[0] = 0; /*0x610c53*/
     v2[1] = 0; /*0x610c57*/
     v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610c5b*/
-    (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610c66*/
+    (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary /*0x610c66*/
      + 2))(
       g_DSurface_Primary,
       v4,
-      *(unsigned int *)&g_DialogPool.__pad_208[512],
+      *(unsigned int *)&DataGlobal_AC1CC8,
       v2,
       0,
       1);
-    *(unsigned int *)&g_DialogPool.__pad_208[776] = 1; /*0x610c69*/
+    *(unsigned int *)&DataGlobal_AC1DD0 = 1; /*0x610c69*/
   LABEL_6:
-    if ( *(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610c7c*/
-      (***(void (****)(unsigned int, int))&g_DialogPool.__pad_208[512])(*(unsigned int *)&g_DialogPool.__pad_208[512], 1); /*0x610c82*/
+    if ( *(unsigned int *)&DataGlobal_AC1CC8 ) /*0x610c7c*/
+      (***(void (****)(unsigned int, int))&DataGlobal_AC1CC8)(*(unsigned int *)&DataGlobal_AC1CC8, 1); /*0x610c82*/
   }
-  *(unsigned int *)&g_DialogPool.__pad_208[512] = 0; /*0x610c84*/
-  *(unsigned int *)&g_DialogPool.__pad_208[772] = 0; /*0x610c8a*/
-  *(unsigned int *)&g_DialogPool.__pad_208[776] = 0; /*0x610c90*/
+  *(unsigned int *)&DataGlobal_AC1CC8 = 0; /*0x610c84*/
+  *(unsigned int *)&DataGlobal_AC1DCC = 0; /*0x610c8a*/
+  *(unsigned int *)&DataGlobal_AC1DD0 = 0; /*0x610c90*/
   return 1; /*0x610c01*/
 }
 }
@@ -296,7 +296,7 @@ void sub_612930()
     while ( v2 ) /*0x612949*/
     {
       v3 = v2; /*0x61294b*/
-      v2 = (unsigned int *)v2[3]; /*0x61294d*/
+      v2 = v2->vtable4; /*0x61294d*/
       operator delete((void *)(v3)); /*0x612951*/
     }
     *((unsigned int *)stru_AC1858 + i++) = 0; /*0x612964*/
@@ -564,7 +564,7 @@ int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
         {
           while ( *(HWND *)result != v18 ) /*0x61edf4*/
           {
-            result = *(unsigned int *)(result + 516); /*0x61edf6*/
+            result = result->u32_204; /*0x61edf6*/
             if ( !result ) /*0x61edfe*/
               return result; /*0x61edfe*/
           }
@@ -1125,14 +1125,14 @@ unsigned int * E4Recv_6107E0::sub_6107E0()
 {
 
   this->AbstractClass = 0; /*0x6107e4*/
-  this->? = 0; /*0x6107e6*/
-  this->? = 0; /*0x6107e9*/
-  this->? = 0; /*0x6107ec*/
-  this->? = 0; /*0x6107ef*/
-  LOWORD(this->?) = 0; /*0x6107f2*/
-  *((unsigned int *)this + 69) = 0; /*0x6107f6*/
-  *((unsigned int *)this + 70) = 0; /*0x6107fc*/
-  *((unsigned int *)this + 71) = 0; /*0x610802*/
+  this->M4 = 0; /*0x6107e6*/
+  this->M8 = 0; /*0x6107e9*/
+  this->M12 = 0; /*0x6107ec*/
+  this->M16 = 0; /*0x6107ef*/
+  LOWORD(this->M20) = 0; /*0x6107f2*/
+  this->M276 = 0; /*0x6107f6*/
+  this->M280 = 0; /*0x6107fc*/
+  this->M284 = 0; /*0x610802*/
   return &this->AbstractClass; /*0x610808*/
 
 }

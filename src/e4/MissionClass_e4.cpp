@@ -41,16 +41,16 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v4 = g_Str__none_; /*0x5b37a0*/
   else
     v4 = off_816CAC[(int)this->ObjectClass]; /*0x5b37a7*/
-  LOBYTE(this->?) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+  LOBYTE(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                       a2,
                       (unsigned __int8 *)v4,
-                      (unsigned __int8 *)&stru_82BA00.?[8],
+                      (unsigned __int8 *)&g_INI_Key_Neutral,
                       (char)this->?);
   if ( this->ObjectClass == (void *)-1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
   else
     v5 = off_816CAC[(int)this->ObjectClass]; /*0x5b37d0*/
-  BYTE1(this->?) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
+  BYTE1(this->q005) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                      a2,
                      (unsigned __int8 *)v5,
                      (unsigned __int8 *)&stru_82BA00.?[6],
@@ -59,7 +59,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v6 = g_Str__none_; /*0x5b37f2*/
   else
     v6 = off_816CAC[(int)this->ObjectClass]; /*0x5b37f9*/
-  BYTE2(this->?) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
+  BYTE2(this->q006) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                      a2,
                      (unsigned __int8 *)v6,
                      (unsigned __int8 *)&stru_82BA00.?[3],
@@ -68,7 +68,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v7 = g_Str__none_; /*0x5b381b*/
   else
     v7 = off_816CAC[(int)this->ObjectClass]; /*0x5b3822*/
-  HIBYTE(this->?) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
+  HIBYTE(this->q007) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                       a2,
                       (unsigned __int8 *)v7,
                       (unsigned __int8 *)stru_82BA00.?,
@@ -77,7 +77,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v8 = g_Str__none_; /*0x5b3844*/
   else
     v8 = off_816CAC[(int)this->ObjectClass]; /*0x5b384b*/
-  LOBYTE(this->?) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+  LOBYTE(this->vtable3) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                       a2,
                       (unsigned __int8 *)v8,
                       (unsigned __int8 *)&stru_82BA00.?[30],
@@ -86,7 +86,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v9 = g_Str__none_; /*0x5b386d*/
   else
     v9 = off_816CAC[(int)this->ObjectClass]; /*0x5b3874*/
-  BYTE1(this->?) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
+  BYTE1(this->q009) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                      a2,
                      (unsigned __int8 *)v9,
                      (unsigned __int8 *)&stru_82BA00.?[28],
@@ -102,14 +102,14 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     *(double *)&this->?);
   vtable0 = this->ObjectClass; /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
-  *(double *)&this->? = _RT1; /*0x5b38bb*/
+  *&this->uniqueId = _RT1; /*0x5b38bb*/
   if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
     v13 = off_816CAC[(unsigned int)vtable0]; /*0x5b38ca*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, (unsigned __int8 *)&stru_82BA00.?[26], 0.0); /*0x5b38dd*/
+  INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)v13, (unsigned __int8 *)&aAarate, 0.0); /*0x5b38dd*/
   __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
-  *(double *)&this->? = _RT1; /*0x5b38e2*/
+  *&this->AARate = _RT1; /*0x5b38e2*/
   __asm /*0x5b38e5*/
   {
     fcomp ds:dbl_7E2800
@@ -117,9 +117,9 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
   }
   if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
   {
-    abstractFlags = this->?; /*0x5b38f5*/
-    this->? = this->?; /*0x5b38f8*/
-    this->? = abstractFlags; /*0x5b38fb*/
+    abstractFlags = this->abstractFlags; /*0x5b38f5*/
+    this->AARate = this->AARate; /*0x5b38f8*/
+    this->referenceCount = abstractFlags; /*0x5b38fb*/
   }
   return 1; /*0x5b38fe*/
 

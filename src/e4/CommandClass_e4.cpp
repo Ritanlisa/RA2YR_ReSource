@@ -71,12 +71,12 @@ int CommandClass::BuildBar()
   v2 = &stru_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/
   {
-    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->__pad_0 + 32))(v2); /*0x6d1210*/
-    (*(void (**)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)this + 48))(this, v2); /*0x6d1218*/
+    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->vtable1 + 32))(v2); /*0x6d1210*/
+    (*(void (**)(CommandClass *, ShapeButtonClass *))(*&this->u32_C0))(this, v2); /*0x6d1218*/
     v2 += 8; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
-  (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)this + 48))(this, &stru_B0CCB0); /*0x6d122f*/
+  (*(void (**)(CommandClass *, GadgetClass *))(*&this->u32_C0))(this, &stru_B0CCB0); /*0x6d122f*/
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
@@ -94,8 +94,8 @@ int CommandClass::BuildBar()
       v37.Struct_field_00 = v6; /*0x6d1283*/
       v42 = aTipAttackmove; /*0x6d1287*/
       v40 = ShapeButtonClass_field_0x08; /*0x6d128f*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v6); /*0x6d1293*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d12a3*/
+      HashTable::Remove(*(HashTable **)&g_TacticalRender, v6); /*0x6d1293*/
+      CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d12a3*/
     }
   }
   v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
@@ -115,8 +115,8 @@ int CommandClass::BuildBar()
       v37.Struct_field_00 = v12; /*0x6d12f8*/
       v42 = aTipBeacon; /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v12); /*0x6d1308*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1318*/
+      HashTable::Remove(*(HashTable **)&g_TacticalRender, v12); /*0x6d1308*/
+      CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d1318*/
     }
   }
   v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
@@ -136,8 +136,8 @@ int CommandClass::BuildBar()
       v37.Struct_field_00 = v18; /*0x6d136e*/
       v42 = aTipCheer; /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v18); /*0x6d137e*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d138e*/
+      HashTable::Remove(*(HashTable **)&g_TacticalRender, v18); /*0x6d137e*/
+      CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d138e*/
     }
   }
   v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
@@ -157,8 +157,8 @@ int CommandClass::BuildBar()
       v37.Struct_field_00 = v24; /*0x6d13e3*/
       v42 = aTipDeploy; /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v24); /*0x6d13f3*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1403*/
+      HashTable::Remove(*(HashTable **)&g_TacticalRender, v24); /*0x6d13f3*/
+      CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d1403*/
     }
   }
   v27 = g_ObjectTrackingPool[dword_B0CB68]; /*0x6d1410*/
@@ -231,7 +231,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
     result->nextArrayIndex = *(unsigned char *)(a2 + 24); /*0x724611*/
     v7 = aP1->u32_23C; /*0x724614*/
     if ( aP1->u32_244 < v7 /*0x724641*/
-      || (*((unsigned char *)aP1 + 577) || !v7)
+      || (aP1->u8_241 || !v7)
       && (v8 = aP1->u32_248, v8 > 0)
       && (*(uint8_t (**)(int *, int, unsigned int))(aP1->u32_234 + 8))(aP1 + 141, v7 + v8, 0) )
     {
@@ -246,7 +246,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
         *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
         *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
-        *((unsigned char *)v4 + 12) = 0; /*0x72470c*/
+        v4->vtable4 = 0; /*0x72470c*/
         v4[1] = result; /*0x724710*/
         goto LABEL_20; /*0x724710*/
       }

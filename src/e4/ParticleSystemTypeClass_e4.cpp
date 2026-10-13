@@ -296,17 +296,17 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   int v3; // ecx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x644709*/
-  Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
-  LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
+  Power::TimerProcess((int)this->q294); /*0x644717*/
+  LOBYTE(v3) = this->q298; /*0x64471c*/
   Power::FlagProcess((Power *)a2, v3); /*0x644725*/
-  Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x29C); /*0x644733*/
-  Checksummer::Add_float((Checksummer *)a2, (int)this->ParticleSystemTypeClass_field_0x2A0); /*0x644741*/
-  Power::TimerProcess(LODWORD(this->ParticleSystemTypeClass_field_0x2A4)); /*0x64474f*/
-  Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2A8); /*0x64475d*/
-  Checksummer::Add_float((Checksummer *)a2, this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
+  Power::TimerProcess((int)this->q29C); /*0x644733*/
+  Checksummer::Add_float((Checksummer *)a2, (int)this->q2A0); /*0x644741*/
+  Power::TimerProcess(LODWORD(this->q2A4)); /*0x64474f*/
+  Power::TimerProcess(this->q2A8); /*0x64475d*/
+  Checksummer::Add_float((Checksummer *)a2, this->q2AC); /*0x64476b*/
   Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/
-  Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
-  return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
+  Power::TimerProcess(this->__pad_2B4); /*0x644787*/
+  return Power::TimerProcess(this->ParticleTypeClass_2B8); /*0x64479a*/
 
 }
 }
@@ -317,21 +317,21 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ParticleSystemTypeClass_field_0x0 = &vt_ParticleSystemTypeClass; /*0x644966*/
-  Block->ParticleSystemTypeClass_field_0x4 = &vt_ParticleSystemTypeClass; /*0x64496c*/
-  Block->ParticleSystemTypeClass_field_0x8 = &vt_ParticleSystemTypeClass; /*0x644973*/
+  Block->tail_0 = &vt_ParticleSystemTypeClass; /*0x644966*/
+  Block->__pad_004 = &vt_ParticleSystemTypeClass; /*0x64496c*/
+  Block->u32_8 = &vt_ParticleSystemTypeClass; /*0x644973*/
   Block->SpawnCount = &vt_ParticleSystemTypeClass; /*0x64497a*/
-  AbstractClass::AnnounceExpiredPointer(&Block->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
+  AbstractClass::AnnounceExpiredPointer(&Block->tail_0, 1); /*0x644981*/
   v5 = Block; /*0x644996*/
-  v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
-         &stru_A83D50.__pad_14[4],
+  v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&DataGlobal_A83D68 + 16))( /*0x64499a*/
+         &DataGlobal_A83D68,
          &v5);
-  if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/
+  if ( v3 != -1 && v3 < (int)g_InfantryTypeInitState ) /*0x6449aa*/
   {
-    --stru_A83D50.SuperClass_field_0x28; /*0x6449af*/
+    --g_InfantryTypeInitState; /*0x6449af*/
     for ( ; /*0x6449b5*/
-          v3 < (int)stru_A83D50.SuperClass_field_0x28;
-          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8]
+          v3 < (int)g_InfantryTypeInitState;
+          *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C
                                                                                     + 4 * v3) )
     {
       ++v3; /*0x6449bd*/
@@ -340,7 +340,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   ObjectTypeClass::Destruct((int)Block); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
     operator delete((void *)(Block)); /*0x6449de*/
-  return &Block->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/
+  return &Block->tail_0; /*0x6449e8*/
 }
 } // namespace gamemd
 
@@ -403,9 +403,9 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6447ff*/
-    aP0->ParticleSystemTypeClass_field_0x0 = &vt_ParticleSystemTypeClass; /*0x644804*/
-    aP0->ParticleSystemTypeClass_field_0x4 = &vt_ParticleSystemTypeClass; /*0x64480a*/
-    aP0->ParticleSystemTypeClass_field_0x8 = &vt_ParticleSystemTypeClass; /*0x644811*/
+    aP0->vtable1 = &vt_ParticleSystemTypeClass; /*0x644804*/
+    aP0->vtable2 = &vt_ParticleSystemTypeClass; /*0x64480a*/
+    aP0->vtable3 = &vt_ParticleSystemTypeClass; /*0x644811*/
     aP0->SpawnCount = &vt_ParticleSystemTypeClass; /*0x644818*/
   }
   return 0; /*0x644821*/

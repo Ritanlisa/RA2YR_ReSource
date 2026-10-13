@@ -270,7 +270,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         (*((unsigned char *)&(v32))) = 0; /*0x73cb1e*/
         (*(((unsigned char *)&(v32)) + (sizeof(v32) - 1))) = v31; /*0x73cb27*/
         (*((unsigned short *)&(v59))) = v32; /*0x73cb2e*/
-        FacingClass::Set_SyncLog(v75.__pad_0, &v59); /*0x73cb33*/
+        FacingClass::Set_SyncLog(v75.__pad_000, &v59); /*0x73cb33*/
       }
       if ( *((unsigned int *)a1 + 260) ) /*0x73cb38*/
       {
@@ -381,7 +381,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       a7,
       v41,
       a9);
-    result = (*(int (**)(AudioStream *, int *, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x73cdf0*/
+    result = (*(int (**)(AudioStream *, int *, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x73cdf0*/
                g_DSurface_Hidden_2,
                &dword_B1CFC0,
                0);

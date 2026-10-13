@@ -1633,9 +1633,9 @@ char sub_53D850()
   int i; // esi
   int v7; // [esp+4h] [ebp-8h] BYREF
 
-  if ( (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) != dword_AA0150 ) /*0x53d865*/
+  if ( (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2) != dword_AA0150 ) /*0x53d865*/
   {
-    v1 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
+    v1 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
     dword_A9FAE8[0] = 0; /*0x53d876*/
     dword_AA0150 = v1; /*0x53d880*/
     v2 = 1; /*0x53d886*/
@@ -1736,18 +1736,18 @@ AbstractClass * * sub_63B0A0()
   int i; // esi
   int v6; // edi
 
-  *(unsigned int *)&stru_AC4B30.__pad_EC[12] = 0; /*0x63b0ad*/
-  if ( *(unsigned int *)stru_AC4B30.__pad_EC && stru_AC4B30.__pad_EC[9] ) /*0x63b0bb*/
+  *(unsigned int *)&DataGlobal_AC4C28 = 0; /*0x63b0ad*/
+  if ( *(unsigned int *)DataGlobal_AC4C1C && DataGlobal_AC4C25 ) /*0x63b0bb*/
   {
-    operator delete((void *)(*(void **)stru_AC4B30.__pad_EC)); /*0x63b0be*/
-    *(unsigned int *)stru_AC4B30.__pad_EC = 0; /*0x63b0c6*/
+    operator delete((void *)(*(void **)DataGlobal_AC4C1C)); /*0x63b0be*/
+    *(unsigned int *)DataGlobal_AC4C1C = 0; /*0x63b0c6*/
   }
-  Array_field_0x10 = stru_AC4B30.Array_field_0x10; /*0x63b0cc*/
+  Array_field_0x10 = DataGlobal_AC4B40; /*0x63b0cc*/
   v2 = 0; /*0x63b0d2*/
-  stru_AC4B30.__pad_EC[9] = 0; /*0x63b0d6*/
-  for ( *(unsigned int *)&stru_AC4B30.__pad_EC[4] = 0; v2 < (int)Array_field_0x10; ++v2 ) /*0x63b0e2*/
+  DataGlobal_AC4C25 = 0; /*0x63b0d6*/
+  for ( *(unsigned int *)&DataGlobal_AC4C20 = 0; v2 < (int)Array_field_0x10; ++v2 ) /*0x63b0e2*/
   {
-    v3 = *((unsigned int *)stru_AC4B30.Array_field_0x4 + v2); /*0x63b0e9*/
+    v3 = *((unsigned int *)DataGlobal_AC4B34 + v2); /*0x63b0e9*/
     if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
       RenderScenarioActionLines((ObjectClass *)v3); /*0x63b10b*/
   }
@@ -1755,7 +1755,7 @@ AbstractClass * * sub_63B0A0()
   for ( i = 0; i < v4; ++i ) /*0x63b11f*/
   {
     v6 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[152] + 4 * i); /*0x63b12d*/
-    if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(v6 + 540), (void *)dword_A83D4C) ) /*0x63b136*/
+    if ( (uint8_t)HouseClass::IsAlliedWith(v6->u32_21C, (void *)dword_A83D4C) ) /*0x63b136*/
       ScriptAction::ProcessIdleAction((ScriptAction *)v6); /*0x63b141*/
   }
 }
@@ -1788,10 +1788,10 @@ int sub_660000()
   int v4; // esi
   int v5; // eax
 
-  result = stru_B04DA8.LoadGame_field_0x10; /*0x660000*/
-  for ( i = 0; i < stru_B04DA8.LoadGame_field_0x10; ++i ) /*0x660006*/
+  result = g_TriggerEventState; /*0x660000*/
+  for ( i = 0; i < g_TriggerEventState; ++i ) /*0x660006*/
   {
-    v3 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x660012*/
+    v3 = *(unsigned int *)(g_TriggerPool + 4 * i); /*0x660012*/
     v4 = *(unsigned int *)(v3 + 48); /*0x660015*/
     v5 = *(unsigned int *)(v3 + 56); /*0x660018*/
     if ( v4 != -1 ) /*0x66001e*/
@@ -1806,7 +1806,7 @@ int sub_660000()
     if ( *(unsigned char *)(v3 + 60) ) /*0x660032*/
   LABEL_7:
       RenderGradientTrapezoid((float *)v3); /*0x660039*/
-    result = stru_B04DA8.LoadGame_field_0x10; /*0x66003e*/
+    result = g_TriggerEventState; /*0x66003e*/
   }
   return result; /*0x660049*/
 }
@@ -1824,10 +1824,10 @@ void sub_6603B0()
   int v7; // eax
   int v8; // [esp+4h] [ebp-4h] BYREF
 
-  v1 = stru_B04DA8.LoadGame_field_0x10 - 1; /*0x6603b7*/
-  if ( stru_B04DA8.LoadGame_field_0x10 - 1 >= 0 ) /*0x6603bc*/
+  v1 = g_TriggerEventState - 1; /*0x6603b7*/
+  if ( g_TriggerEventState - 1 >= 0 ) /*0x6603bc*/
   {
-    LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x6603c4*/
+    LoadGame_field_0x04 = g_TriggerPool; /*0x6603c4*/
     do /*0x6603ca*/
     {
       v3 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v1); /*0x6603ca*/
@@ -1848,20 +1848,20 @@ void sub_6603B0()
           if ( v6 ) /*0x6603f6*/
           {
             v8 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v1); /*0x660408*/
-            v7 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v8); /*0x66040c*/
-            if ( v7 != -1 && v7 < stru_B04DA8.LoadGame_field_0x10 ) /*0x66041c*/
+            v7 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)DataGlobal_B04DA8 + 16))(&stru_B04DA8, &v8); /*0x66040c*/
+            if ( v7 != -1 && v7 < g_TriggerEventState ) /*0x66041c*/
             {
-              --stru_B04DA8.LoadGame_field_0x10; /*0x660421*/
+              --g_TriggerEventState; /*0x660421*/
               for ( ; /*0x660427*/
-                    v7 < stru_B04DA8.LoadGame_field_0x10;
-                    *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v7 - 4) = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04
+                    v7 < g_TriggerEventState;
+                    *(unsigned int *)(g_TriggerPool + 4 * v7 - 4) = *(unsigned int *)(g_TriggerPool
                                                                                           + 4 * v7) )
               {
                 ++v7; /*0x66042f*/
               }
             }
             operator delete((void *)(v6)); /*0x660442*/
-            LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660447*/
+            LoadGame_field_0x04 = g_TriggerPool; /*0x660447*/
           }
         }
       }
@@ -2110,7 +2110,7 @@ int Render_Get(ScoreScreen * aP0)
   {
     do /*0x68ee21*/
     {
-      v4 = *(unsigned int *)&dword_A8022C->vfptr[4 * v10]; /*0x68edad*/
+      v4 = *&dword_A8022C->vtable1; /*0x68edad*/
       if ( (uint8_t)HouseClass::IsAlliedWith(aP0, (void *)v4) /*0x68edca*/
         && (uint8_t)HouseClass::IsAlliedWith((void *)v4, aP0)
         || aP0 == (void *)v4 )
@@ -2134,7 +2134,7 @@ int Render_Get(ScoreScreen * aP0)
   Debug::Log(); /*0x68ee65*/
   (*(void (__stdcall **)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36); /*0x68ee82*/
   Debug::Log(); /*0x68ee8b*/
-  othera = (void *)(*((unsigned int *)aP0 + 184) + *((unsigned int *)aP0 + 119)); /*0x68eea3*/
+  othera = (void *)(aP0->u32_2E0 + *((unsigned int *)aP0 + 119)); /*0x68eea3*/
   if ( (int)othera <= 0 ) /*0x68eea7*/
     otherb = 0.0; /*0x68eec1*/
   else

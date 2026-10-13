@@ -31,7 +31,7 @@ int ToolTipManager::ddtor(char a2)
     ToolTipClass::initString((ToolTipClass *)this); /*0x724b8b*/
   result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (*(int (**)(ToolTipManager *, int *))(*(unsigned int *)&this->IsVisible + 16))( /*0x724b9f*/
+    return (*(int (**)(ToolTipManager *, int *))(*&this->Duration + 16))( /*0x724b9f*/
              this,
              &this->DisplayTimer[1]);
   return result; /*0x724ba2*/
@@ -58,17 +58,17 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&Block->Items; /*0x724f43*/
-  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x724f46*/
-  if ( v3 && (((unsigned char *)&(*(unsigned int *)&Block->IsAllocated))[1]) ) /*0x724f50*/
+  v3 = *&Block->__pad_004; /*0x724f43*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x724f46*/
+  if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x724f50*/
   {
     operator delete((void *)(v3)); /*0x724f58*/
     Block->Items = (unsigned int)(0); /*0x724f60*/
   }
-  (((unsigned char *)&(Block->m_C))[1]) = 0; /*0x724f6b*/
+  (Block->u32_D) = 0; /*0x724f6b*/
   Block->Capacity = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     operator delete((void *)(Block)); /*0x724f7b*/
-  return Block->__pad_0; /*0x724f85*/
+  return Block->tail_0; /*0x724f85*/
 }
 } // namespace gamemd

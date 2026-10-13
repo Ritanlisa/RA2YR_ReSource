@@ -47,7 +47,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       && DSurface::RestoreIfLost(DSurface_Tile)
       && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)&((unsigned int *)&stru_A8EB00)[416] > 16) )
     {
-      (*((void (**)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))(DSurface_Tile, 0); /*0x777504*/
+      (*((void (**)(DSurface *, unsigned int))DSurface_Tile + 6))(DSurface_Tile, 0); /*0x777504*/
     }
     if ( DSurface_Sidebar ) /*0x77750f*/
     {
@@ -55,20 +55,20 @@ AbstractClass * * sub_777420(ObjectClass *self)
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
         if ( !((unsigned int *)&stru_A8EB00)[376] || *(int *)&((unsigned int *)&stru_A8EB00)[416] > 16 ) /*0x777530*/
-          (*((void (**)(DSurface *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 6))(DSurface_Sidebar, 0); /*0x77753c*/
+          (*((void (**)(DSurface *, unsigned int))DSurface_Sidebar + 6))(DSurface_Sidebar, 0); /*0x77753c*/
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
       && DSurface::RestoreIfLost(g_DSurface_Primary)
       && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)&((unsigned int *)&stru_A8EB00)[416] > 16) )
     {
-      (*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/
+      (*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary + 5))( /*0x777572*/
         g_DSurface_Primary,
-        &DSurface_ViewBounds.__pad_8[8],
+        &DSurface_WindowBounds,
         0);
     }
   }
-  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x77757c*/
+  MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x77757c*/
   InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
   (*((unsigned char *)&(v2))) = 0; /*0x777592*/
   AsyncIO::Read(v2); /*0x777594*/
@@ -110,12 +110,12 @@ char * E4Recv_724000::sub_724000(int a2)
   char *v3; // ecx
   int v4; // edx
 
-  v3 = (unsigned char *)this + 564; /*0x72400a*/
-  *((unsigned int *)this + 1) = 0; /*0x724010*/
-  *((unsigned int *)this + 2) = a2; /*0x724013*/
-  *((unsigned char *)this + 12) = 0; /*0x724016*/
-  *((unsigned int *)this + 138) = 1000; /*0x724019*/
-  *((unsigned int *)this + 140) = 10000; /*0x724023*/
+  v3 = &this->u8_234; /*0x72400a*/
+  this->M4 = 0; /*0x724010*/
+  this->M8 = a2; /*0x724013*/
+  this->M12 = 0; /*0x724016*/
+  this->M552 = 1000; /*0x724019*/
+  this->M560 = 10000; /*0x724023*/
   *((unsigned int *)v3 + 1) = 0; /*0x72402d*/
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
@@ -131,12 +131,12 @@ char * E4Recv_724000::sub_724000(int a2)
   v4 = *(unsigned int *)v3; /*0x724068*/
   *(unsigned int *)this = &ToolTipManager::`vftable'; /*0x72406a*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
-  __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
-  *((unsigned int *)this + 147) = 0; /*0x724082*/
-  *((unsigned int *)this + 148) = 0; /*0x724088*/
-  *((unsigned int *)this + 149) = 0; /*0x72408e*/
-  *((unsigned char *)this + 600) = 0; /*0x724094*/
-  *((unsigned int *)this + 151) = 0; /*0x72409a*/
+  __3_YAXPAX_Z(this->u8_234)); /*0x72407a*/
+  this->M588 = 0; /*0x724082*/
+  this->M592 = 0; /*0x724088*/
+  this->M596 = 0; /*0x72408e*/
+  this->M600 = 0; /*0x724094*/
+  this->M604 = 0; /*0x72409a*/
   return this; /*0x7240a2*/
 
 }

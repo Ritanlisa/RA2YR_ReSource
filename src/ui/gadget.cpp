@@ -234,15 +234,15 @@ void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isS
     p->u32_C = x;
     p->ptr_10 = y;
     p->ptr_14 = w;
-    p->ptr_18 = h;
+    p->q018 = h;
     p->u32_0 = 0; // LinkClass::Next
     p->u32_4 = 0; // LinkClass::Prev
     p[0x1C] = 0; // NeedsRedraw = false
     p[0x1E] = 0; // Disabled = false
     p[0x1D] = isSticky ? 1 : 0;
-    p->ptr_20 = flags;
+    p->q020 = flags;
     if (isSticky)
-        p->ptr_20 = flags | 5;
+        p->q020 = flags | 5;
 }
 
 // IDA 0x4E1390: GadgetClass::Dtor — destructor, clears global gadget pointers
@@ -259,9 +259,9 @@ int GadgetClass::Dtor()
 
     if ((void*)this == g_focusedGadget) {
         uint8_t* p = (uint8_t*)(this);
-        unsigned flags = p->ptr_20;
+        unsigned flags = p->q020;
         flags &= ~1u;
-        p->ptr_20 = flags;
+        p->q020 = flags;
         g_focusedGadget = nullptr;
     }
     if ((void*)this == g_prevGadget)
@@ -304,7 +304,7 @@ void GadgetClass::Hide()
 void GadgetClass::SetTooltip(const wchar_t* tooltip)
 {
     uint8_t* p = (uint8_t*)(this);
-    wchar_t** tooltipPtr = (wchar_t**)(p + 0x28); // offset +10 dwords = 0x28
+    wchar_t** tooltipPtr = &p->u16_28; // offset +10 dwords = 0x28
 
     // Free existing tooltip
     if (*tooltipPtr) {
@@ -336,11 +336,11 @@ char GadgetClass::TrackState(int newState, int eventType)
                 p[0x08] = 1; // NeedsRedraw-like byte at +0x08
             }
         }
-    } else if ((!curState || eventType >= p->ptr_18) && newState) {
+    } else if ((!curState || eventType >= p->q018) && newState) {
         if (eventType == 3)
             p[0x14] = 0;
         p->ptr_10 = newState;
-        p->ptr_18 = eventType;
+        p->q018 = eventType;
         p[0x08] = 1;
     }
     return (char)(curState);
@@ -389,7 +389,7 @@ void DialogControl::Constructor()
     memset(p, 0, 0x200);
 
     p->u32_68 = 11;     // +26 dwords = 0x68: default value 11
-    p->ptr_64 = 1;      // +25 dwords: g_FogOfWarState-like
+    p->q064 = 1;      // +25 dwords: g_FogOfWarState-like
 
     // Allocate internal sub-struct
     void* sub = operator new(4);

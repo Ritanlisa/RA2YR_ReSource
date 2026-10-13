@@ -94,7 +94,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
         hWnd = GetDlgItem(hDlg, dword_839260[v38]); /*0x657e84*/
         v10 = v32; /*0x657e8b*/
         v31 = v32; /*0x657e8d*/
-        if ( v32 == *((unsigned int *)dword_A83D4C + 12) ) /*0x657e91*/
+        if ( v32 == dword_A83D4C->relatedTagsCount ) /*0x657e91*/
         {
           v31 = 0; /*0x657e93*/
           v10 = 0; /*0x657e9b*/
@@ -254,7 +254,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           break; /*0x6582b2*/
         }
       }
-      if ( v28 == *((unsigned int *)dword_A83D4C + 12) ) /*0x6582bd*/
+      if ( v28 == dword_A83D4C->relatedTagsCount ) /*0x6582bd*/
         v28 = 0; /*0x6582bf*/
       *((unsigned char *)&byte_A8D108 + v28) = HIWORD(a3) == 1; /*0x6582c3*/
       return 0; /*0x6582d0*/
@@ -276,7 +276,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   }
   v26 = v24; /*0x65824e*/
 LABEL_60:
-  if ( v26 == *((unsigned int *)dword_A83D4C + 12) ) /*0x658241*/
+  if ( v26 == dword_A83D4C->relatedTagsCount ) /*0x658241*/
     v26 = 0; /*0x658243*/
   if ( HIWORD(a3) ) /*0x65820e*/
     SendMessageA(a4, 0xF1u, 0, 0); /*0x658261*/
@@ -297,5 +297,5 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 // 0x656580
 char * Diplomacy::GetField(int a2)
 {
-  return ((char *)&this->__pad_00C + 12) * a2->DeployingAnim_d + 4728; /*0x656595*/
+  return this->__pad_00C + 12) * a2->DeployingAnim_d + 4728; /*0x656595*/
 }

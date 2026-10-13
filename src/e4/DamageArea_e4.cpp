@@ -234,11 +234,11 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, int16_t * a3)
   int v9; // ecx
   __int16 *v11; // [esp+20h] [ebp+8h]
 
-  v3 = *((unsigned int *)this + 61); /*0x565668*/
-  v4 = *((unsigned int *)this + 63); /*0x56566f*/
+  v3 = this->u32_F4; /*0x565668*/
+  v4 = this->u32_FC; /*0x56566f*/
   v5 = a3[1]; /*0x565676*/
   v6 = *a3; /*0x56567b*/
-  v7 = *((unsigned int *)this + 64); /*0x56567e*/
+  v7 = this->u32_100; /*0x56567e*/
   v8 = *a3; /*0x565684*/
   if ( (v3 & 1) != 0 ) /*0x56568d*/
     v9 = v8 - v5 + 1; /*0x565691*/

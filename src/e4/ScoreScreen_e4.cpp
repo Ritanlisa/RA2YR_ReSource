@@ -38,22 +38,22 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   int v6[3]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  this->ScoreScreen_field_0x04 = 0; /*0x690a19*/
-  this->ScoreScreen_field_0x08 = 0; /*0x690a1c*/
-  this->ScoreScreen_field_0x0C = 0; /*0x690a1f*/
-  this->ScoreScreen_field_0x14 = 0; /*0x690a22*/
-  *(unsigned int *)this->__pad_0 = &ScoreFontClass::`vftable'; /*0x690a25*/
+  this->u32_4 = 0; /*0x690a19*/
+  this->u32_8 = 0; /*0x690a1c*/
+  this->u32_C = 0; /*0x690a1f*/
+  this->q014 = 0; /*0x690a22*/
+  *(unsigned int *)this->__pad_000 = &ScoreFontClass::`vftable'; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
   *(unsigned int *)this->__pad_0 = &ScoreFullFontClass::`vftable'; /*0x690a44*/
-  LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690a4a*/
+  LOBYTE(this->u32_10) = 0; /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
-  this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
+  this->u32_C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
   {
     CCFileClass::Construct(&v5, g_Str_File_FULLFNT3_SHP); /*0x690a62*/
-    this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
-    LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690a77*/
+    this->u32_C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690a74*/
+    LOBYTE(this->u32_10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
     *(unsigned int *)v5.CDFileClass = &CCFileClass::`vftable'; /*0x690a91*/
@@ -79,22 +79,22 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   int v6[3]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  this->ScoreScreen_field_0x04 = 0; /*0x690ae9*/
-  this->ScoreScreen_field_0x08 = 0; /*0x690aec*/
-  this->ScoreScreen_field_0x0C = 0; /*0x690aef*/
-  this->ScoreScreen_field_0x14 = 0; /*0x690af2*/
-  *(unsigned int *)this->__pad_0 = &ScoreFontClass::`vftable'; /*0x690af5*/
+  this->u32_4 = 0; /*0x690ae9*/
+  this->u32_8 = 0; /*0x690aec*/
+  this->u32_C = 0; /*0x690aef*/
+  this->q014 = 0; /*0x690af2*/
+  *(unsigned int *)this->__pad_000 = &ScoreFontClass::`vftable'; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
   *(unsigned int *)this->__pad_0 = &ScoreBigFontClass::`vftable'; /*0x690b14*/
-  LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690b1a*/
+  LOBYTE(this->u32_10) = 0; /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
-  this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
+  this->u32_C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
     CCFileClass::Construct(&v5, aBigfontShp); /*0x690b32*/
-    this->ScoreScreen_field_0x0C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
-    LOBYTE(this->ScoreScreen_field_0x10) = 1; /*0x690b47*/
+    this->u32_C = (int)CCFileClass::ReadEntireFile(&v5); /*0x690b44*/
+    LOBYTE(this->u32_10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
     *(unsigned int *)v5.CDFileClass = &CCFileClass::`vftable'; /*0x690b61*/
@@ -115,12 +115,12 @@ namespace gamemd {
 unsigned int * ScoreScreen::Constructor(int aP1, int a3, int a4)
 {
 
-  this->ScoreScreen_field_0x08 = a3; /*0x690f3b*/
-  this->ScoreScreen_field_0x04 = aP1; /*0x690f41*/
-  this->ScoreScreen_field_0x0C = Timer::GetTicks(); /*0x690f4d*/
-  this->ScoreScreen_field_0x14 = 0; /*0x690f50*/
-  this->ScoreScreen_field_0x18 = a4; /*0x690f57*/
-  *(unsigned int *)this->__pad_0 = &ScoreAnimClass::`vftable'; /*0x690f5a*/
+  this->u32_8 = a3; /*0x690f3b*/
+  this->u32_4 = aP1; /*0x690f41*/
+  this->u32_C = Timer::GetTicks(); /*0x690f4d*/
+  this->q014 = 0; /*0x690f50*/
+  this->u32_18 = a4; /*0x690f57*/
+  *(unsigned int *)this->__pad_000 = &ScoreAnimClass::`vftable'; /*0x690f5a*/
   return this->__pad_0; /*0x690f62*/
 
 }
@@ -149,57 +149,57 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
   int v23; // eax
   DeleteAndZero v25; // [esp+10h] [ebp-10h] BYREF
 
-  v7 = *((unsigned int *)this + 244); /*0x7712d5*/
+  v7 = this->u32_3D0; /*0x7712d5*/
   v8 = v7 - 1; /*0x7712d7*/
-  if ( v7 > *((unsigned int *)this + 239) ) /*0x7712da*/
+  if ( v7 > this->u32_3BC ) /*0x7712da*/
   {
     do /*0x77131c*/
     {
-      v9 = *((unsigned int *)this + 244); /*0x7712dc*/
+      v9 = this->u32_3D0; /*0x7712dc*/
       if ( v8 < v9 ) /*0x7712e4*/
       {
         v10 = v9 - 1; /*0x7712e6*/
         v11 = v8; /*0x7712e7*/
-        for ( *((unsigned int *)this + 244) = v10; v11 < *((unsigned int *)this + 244); ++v11 ) /*0x7712f1*/
+        for ( this->u32_3D0 = v10; v11 < this->u32_3D0; ++v11 ) /*0x7712f1*/
           String::Reassign( /*0x771301*/
-            (String *)(*((unsigned int *)this + 241) + 4 * v11),
-            (const char **)(*((unsigned int *)this + 241) + 4 * v11 + 4));
+            (String *)(this->u32_3C4 + 4 * v11),
+            (const char **)(this->u32_3C4 + 4 * v11 + 4));
       }
       v12 = v8--; /*0x771317*/
     }
-    while ( v12 > *((unsigned int *)this + 239) ); /*0x77131c*/
+    while ( v12 > this->u32_3BC ); /*0x77131c*/
   }
-  if ( !*((unsigned int *)this + 239) ) /*0x77131e*/
-    *((unsigned char *)this + 952) = 1; /*0x771328*/
+  if ( !this->u32_3BC ) /*0x77131e*/
+    this->u32_3B8 = 1; /*0x771328*/
   unknown_libname_73(&v25); /*0x771333*/
   v13 = &this->__pad_0[148 * a2 + 48 * a3]; /*0x771352*/
-  if ( Map_Remove(*(unsigned int *)this->__pad_0, (int)(v13 + 8), (void **)&v25) )
+  if ( Map_Remove(*(unsigned int *)this->__pad_000, (int)(v13 + 8), (void **)&v25) )
   {
     if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
     {
-      *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x771386*/
-      *((unsigned int *)this + 236) = v25.DeleteAndZero_field_0x08; /*0x771390*/
-      *((unsigned int *)this + 237) = a6; /*0x771393*/
+      this->u32_3AC = Timer::GetTicks(); /*0x771386*/
+      this->u32_3B0 = v25.vtable3; /*0x771390*/
+      this->u32_3B4 = a6; /*0x771393*/
     }
-    v14 = *((unsigned int *)this + 242); /*0x771396*/
-    v15 = (unsigned int *)this + 24; /*0x7713a2*/
-    if ( *((unsigned int *)this + 244) < v14 /*0x7713c7*/
-      || (*((unsigned char *)this + 973) || !v14)
-      && (v16 = *((unsigned int *)this + 245), v16 > 0)
+    v14 = this->u32_3C8; /*0x771396*/
+    v15 = &this->u32_60; /*0x7713a2*/
+    if ( this->u32_3D0 < v14 /*0x7713c7*/
+      || (this->u32_3CD || !v14)
+      && (v16 = this->u32_3D4, v16 > 0)
       && (*(unsigned __int8 (**)(ScoreScreen *, int, unsigned int))(*(unsigned int *)v15->__pad_0 + 8))(
-           (unsigned int *)this + 24,
+           &this->u32_60,
            v14 + v16,
            0) )
     {
-      v17 = *((unsigned int *)this + 244); /*0x7713ce*/
-      *((unsigned int *)this + 244) = v17 + 1; /*0x7713d9*/
-      String::Reassign((String *)(*((unsigned int *)this + 241) + 4 * v17), (const char **)&v25); /*0x7713e2*/
+      v17 = this->u32_3D0; /*0x7713ce*/
+      this->u32_3D0 = v17 + 1; /*0x7713d9*/
+      String::Reassign((String *)(this->u32_3C4 + 4 * v17), (const char **)&v25); /*0x7713e2*/
     }
     if ( a5 ) /*0x7713ed*/
-      ++*((unsigned int *)this + 239); /*0x7713ef*/
+      ++this->u32_3BC; /*0x7713ef*/
     if ( aP3 )
     {
-      v18 = *(unsigned int *)this->__pad_0; /*0x771401*/
+      v18 = *(unsigned int *)this->__pad_000; /*0x771401*/
       DeleteAndZero::Alt2(&v25); /*0x771407*/
       v19 = *((unsigned int *)v13 + 12); /*0x77140c*/
       if ( v19 > 0 )
@@ -207,21 +207,21 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
         v20 = v19 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v19 - 1);
         if ( Map_Remove_770CE0(v18, *(unsigned int *)(*((unsigned int *)v13 + 9) + 4 * v20), (char **)&v25) ) /*0x77143b*/
         {
-          v21 = *((unsigned int *)this + 242); /*0x771444*/
-          if ( *((unsigned int *)this + 244) < v21 /*0x771469*/
-            || (*((unsigned char *)this + 973) || !v21)
-            && (v22 = *((unsigned int *)this + 245), v22 > 0)
+          v21 = this->u32_3C8; /*0x771444*/
+          if ( this->u32_3D0 < v21 /*0x771469*/
+            || (this->u32_3CD || !v21)
+            && (v22 = this->u32_3D4, v22 > 0)
             && (*(unsigned __int8 (**)(ScoreScreen *, int, unsigned int))(*(unsigned int *)v15->__pad_0 + 8))(
-                 (unsigned int *)this + 24,
+                 &this->u32_60,
                  v21 + v22,
                  0) )
           {
-            v23 = *((unsigned int *)this + 244); /*0x771470*/
-            *((unsigned int *)this + 244) = v23 + 1; /*0x77147b*/
-            String::Reassign((String *)(*((unsigned int *)this + 241) + 4 * v23), (const char **)&v25); /*0x771484*/
+            v23 = this->u32_3D0; /*0x771470*/
+            this->u32_3D0 = v23 + 1; /*0x77147b*/
+            String::Reassign((String *)(this->u32_3C4 + 4 * v23), (const char **)&v25); /*0x771484*/
           }
           if ( a5 ) /*0x77148f*/
-            ++*((unsigned int *)this + 239); /*0x771491*/
+            ++this->u32_3BC; /*0x771491*/
         }
       }
     }
@@ -343,10 +343,10 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     }
     (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
   }
-  *(unsigned int *)v38.__tail_0 = (unsigned int)(&vt_CCFileClass); /*0x778461*/
+  *(unsigned int *)v38.vtable1 = (unsigned int)(&vt_CCFileClass); /*0x778461*/
   v40 = 0; /*0x778469*/
   Vector::Clear((int)v39); /*0x778474*/
-  *(unsigned int *)v38.__tail_0 = (unsigned int)(&off_7E1668); /*0x77847d*/
+  *(unsigned int *)v38.vtable1 = (unsigned int)(&off_7E1668); /*0x77847d*/
   return ((gamemd::BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
 }
 }

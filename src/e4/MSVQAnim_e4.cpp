@@ -33,7 +33,7 @@ void * MSVQAnim::GetFrameRect(int * a2)
     *(unsigned int *)&g_MissionQueueFrame.underParTitle[4] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  MSVQAnim_field_0x1C = this->MSVQAnim_field_0x1C; /*0x5cd2d1*/
+  MSVQAnim_field_0x1C = this->q01C; /*0x5cd2d1*/
   p_parTimeMedium = (int *)(MSVQAnim_field_0x1C + 52); /*0x5cd2d6*/
   if ( !MSVQAnim_field_0x1C ) /*0x5cd2d9*/
     p_parTimeMedium = &g_MissionQueueFrame.parTimeMedium; /*0x5cd2db*/
@@ -61,8 +61,8 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   MovieContext *MSVQAnim_field_0x1C; // ecx
   void *v5; // edi
 
-  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 10); /*0x5cecb3*/
-  *(unsigned int *)this->__pad_0 = &MSVQAnim::`vftable'; /*0x5cecb6*/
+  v3 = (void (***)(unsigned int, int))this->u32_28; /*0x5cecb3*/
+  *(unsigned int *)this->vtable1 = &MSVQAnim::`vftable'; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
   MSVQAnim_field_0x1C = (MovieContext *)this->MSVQAnim_field_0x1C; /*0x5cecc6*/
@@ -79,7 +79,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = &MSAnim::`vftable'; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     __3_YAXPAX_Z(this); /*0x5cecfa*/
-  return this->__pad_0; /*0x5ced04*/
+  return this->vtable1; /*0x5ced04*/
 
 }
 } // namespace gamemd

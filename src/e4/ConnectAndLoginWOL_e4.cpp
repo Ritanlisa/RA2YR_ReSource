@@ -18,7 +18,7 @@
 namespace gamemd {  // G42.18 ns repair
 void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 {
-  *(unsigned int *)this->__pad_0 = (unsigned int)(&off_7F7624); /*0x77d1f0*/
+  *(unsigned int *)this->q000 = (unsigned int)(&off_7F7624); /*0x77d1f0*/
   this->OwnerDrawControl::InitVtable(); /*0x77d1f6*/
 }  // G42.18 ns repair
 } // namespace gamemd

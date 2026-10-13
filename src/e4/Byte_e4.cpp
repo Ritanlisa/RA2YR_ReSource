@@ -10,7 +10,7 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned char * Byte::Zero()
 {
-  (*((unsigned char *)&(this->Byte_field_00))) = 0; /*0x4f4c22*/
+  (this->Byte_field_00) = 0; /*0x4f4c22*/
   return (unsigned char *)(this); /*0x4f4c25*/
 }  // G42.18 ns repair
 } // namespace gamemd
