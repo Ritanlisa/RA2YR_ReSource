@@ -91,7 +91,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
-          v7 = (unsigned char *)(v6 + 2); /*0x478527*/
+          v7 = &v6->ptr_2; /*0x478527*/
           v8 = a2; /*0x47852a*/
           do /*0x478537*/
           {
@@ -479,8 +479,8 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
              v48,
              (int *)ParticleTypeClass_field_0x2F8);
   *&this->q294 = *Coord2; /*0x64528e*/
-  *&this->q298 = Coord2[1]; /*0x645298*/
-  *&this->q29C = Coord2[2]; /*0x64529e*/
+  *&this->q298 = Coord2->u32_4; /*0x645298*/
+  *&this->q29C = Coord2->u32_8; /*0x64529e*/
   Coord = INIClass::GetCoord( /*0x6452b1*/
             (INIClass *)aP1,
             (int)&v50,
@@ -499,7 +499,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   ParticleTypeClass_field_0x2F8 = this->EndStateAI_d; /*0x6452e6*/
   *(unsigned short *)this->q2D4 + 3) = v34; /*0x6452e7*/
   v48 = aFinaldamagesta; /*0x6452eb*/
-  LOBYTE(v33) = *(unsigned char *)(v33 + 2); /*0x6452f0*/
+  LOBYTE(v33) = v33->UINameLabel[0x20]; /*0x6452f0*/
   p_ParticleTypeClass_field_0x24 = (unsigned __int8 *)&this->BarrelVoxel; /*0x6452f3*/
   this->u8_2D9 = v33; /*0x6452f6*/
   v35 = INIClass::ReadInt_Overwrite((bool *)aP1, p_ParticleTypeClass_field_0x24, v48, ParticleTypeClass_field_0x2F8); /*0x6452f9*/

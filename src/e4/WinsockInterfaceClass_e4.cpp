@@ -27,7 +27,7 @@ void WinsockInterfaceClass::Constructor(void *aP1) { new (aP1) WinsockInterfaceC
   void *v4; // eax
   void *v5; // eax
 
-  v2 = *(unsigned char *)(aP1 + 258152); /*0x7b1ab6*/
+  v2 = aP1->u32_3F068; /*0x7b1ab6*/
   *(unsigned int *)aP1 = &WinsockInterfaceClass::`vftable'; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
@@ -80,12 +80,12 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   if ( v2 ) /*0x7b1ac4*/
   {
     NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
-    (*(void (**)(int))(*(unsigned int *)this + 4))(this); /*0x7b1ad0*/
+    (*(void (**)(int))(*&this->u32_10))(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
-    *((unsigned char *)this + 258152) = 0; /*0x7b1ad8*/
+    this->u32_3F068 = 0; /*0x7b1ad8*/
   }
-  v3 = *(void **)((char *)this + 60); /*0x7b1ade*/
-  *((unsigned int *)this + 14) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
+  v3 = *&this->u32_3C; /*0x7b1ade*/
+  this->u32_38 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
@@ -95,15 +95,15 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   this->u32_40 = 0; /*0x7b1b00*/
   v4 = *&this->u32_24; /*0x7b1b03*/
   this->u32_20 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
-  if ( v4 && *((unsigned char *)this + 45) ) /*0x7b1b11*/
+  if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
-    *((unsigned int *)this + 9) = 0; /*0x7b1b1f*/
+    this->u32_24 = 0; /*0x7b1b1f*/
   }
-  *((unsigned char *)this + 45) = 0; /*0x7b1b22*/
-  *((unsigned int *)this + 10) = 0; /*0x7b1b25*/
-  v5 = *(void **)((char *)this + 12); /*0x7b1b28*/
-  *((unsigned int *)this + 2) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
+  this->u32_2D = 0; /*0x7b1b22*/
+  this->u32_28 = 0; /*0x7b1b25*/
+  v5 = *&this->u32_C; /*0x7b1b28*/
+  this->__pad_008 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/

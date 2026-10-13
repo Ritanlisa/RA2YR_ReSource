@@ -275,8 +275,8 @@ int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
     this->animation[2] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x51da34*/
     v19 = v25; /*0x51da3a*/
   }
-  v18[1] = v19; /*0x51da3e*/
-  v18[2] = ProductionTimeMult; /*0x51da41*/
+  v18->u32_4 = v19; /*0x51da3e*/
+  v18->u32_8 = ProductionTimeMult; /*0x51da41*/
   this->animation[5] = ProductionTimeMult; /*0x51da44*/
   if ( a4 ) /*0x51da50*/
   {
@@ -438,7 +438,7 @@ bool InfantryClass::CanDeployAtCell(int16_t *a2, int16_t *a3)
     }
   }
   v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a3); /*0x52224a*/
-  if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, a2, a3, 7, this->onBridge, (((unsigned char *)&(v6[80]))[1]) & 1, 0) ) /*0x52226b*/
+  if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, a2, a3, 7, this->onBridge, (v6->q141) & 1, 0) ) /*0x52226b*/
     return 1; /*0x52226b*/
   if ( *a2 == *a3 && a2[1] == a3[1] ) /*0x522288*/
     return 0; /*0x522290*/
@@ -774,7 +774,7 @@ char __stdcall HoverLocomotionClass::DeployAnimation()
       v9 = (*((int (__thiscall **)(FootClass *, int *))v8->vfptr + 18))(v8, &v65); /*0x514399*/
       Int64::Equal((Int64 *)v9, &this->Dest[2]); /*0x5143a1*/
       Math::CalcAngle( /*0x5143be*/
-        (double)*(int *)(v9 + 4) - (double)this->HeadToCoord[0],
+        (double)v9->u32_4 - (double)this->HeadToCoord[0],
         (double)this->Dest[2] - (double)*(int *)v9);
       v10 = Math::RoundToInt(v6); /*0x5143d7*/
       if ( !(*((unsigned int *)&(v56))) /*0x514403*/
@@ -829,10 +829,8 @@ char __stdcall HoverLocomotionClass::DeployAnimation()
         (*((unsigned int *)&(v57))) = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1404]; /*0x514596*/
         if ( Member ) /*0x51459a*/
         {
-          v21 = (unsigned int *)(*(int (__thiscall **)(int, int *, FootClass *))(*(unsigned int *)Member + 76))( /*0x5145a9*/
-                            Member,
-                            &v65,
-                            this->Owner);
+          v21 = (unsigned int *)Member->vt_slot_76(/*0x5145a9*/
+                            Member, &v65, this->Owner);
           (*((unsigned short *)&(v57))) = *v21 / 256; /*0x5145bc*/
           (((unsigned short *)&(v57))[1]) = v21[1] / 256; /*0x5145d0*/
           v20 = (*((unsigned short *)&(v57))); /*0x5145d5*/
@@ -1307,7 +1305,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
     if ( *(unsigned char *)(v18 + 336) && v8 != (int *)(*((int (__thiscall **)(InfantryClass *))_EBX->vfptr + 111))(_EBX) ) /*0x51cb1e*/
       return 5; /*0x51cb2b*/
     v19 = *(unsigned int *)(v18 + 172); /*0x51cb2e*/
-    if ( v19 && *(unsigned char *)(v19 + 343) && v8 && (v8[5] & 2) != 0 && v8[14] ) /*0x51cb4c*/
+    if ( v19 && *(unsigned char *)(v19 + 343) && v8 && (v8->abstractFlags & 2) != 0 && v8->attachedBomb ) /*0x51cb4c*/
     {
       return 5; /*0x51cb55*/
     }
@@ -1946,32 +1944,32 @@ bool InfantryClass::CanMoveThroughCell()
   v4 = v3; /*0x484dc4*/
   if ( !v3 ) /*0x484dc8*/
     return 0; /*0x484dc8*/
-  occupant = v3[9]; /*0x484dd5*/
+  occupant = v3->ptr_24; /*0x484dd5*/
   *(unsigned int *)v15 = *CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484def*/
   v5 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x484df8*/
   if ( !v5 ) /*0x484dff*/
     return 0; /*0x484dff*/
   v6 = v4->q116; /*0x484e05*/
-  if ( v6 >= 0 && v6 < FootClass_Array.primaryFacing[0] && v4[59] == 10 ) /*0x484e24*/
+  if ( v6 >= 0 && v6 < FootClass_Array.primaryFacing[0] && v4->u32_EC == 10 ) /*0x484e24*/
     return 1; /*0x484e24*/
-  v7 = v5[139]; /*0x484e2a*/
-  if ( v7 >= 0 && v7 < FootClass_Array.primaryFacing[0] && *((unsigned int *)v5 + 59) == 10 ) /*0x484e43*/
+  v7 = v5->q116; /*0x484e2a*/
+  if ( v7 >= 0 && v7 < FootClass_Array.primaryFacing[0] && v5->u32_EC == 10 ) /*0x484e43*/
     return 1; /*0x484e43*/
-  v8 = v4[9]; /*0x484e49*/
+  v8 = v4->ptr_24; /*0x484e49*/
   (*((unsigned short *)&(occupant))) = (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[86]))) + v8; /*0x484e58*/
   (*(((unsigned short *)&(occupant)) + 1)) = (*(((unsigned short *)&(v8)) + 1)) + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[86])) + 1)); /*0x484e6d*/
   *(unsigned int *)v15 = occupant; /*0x484e76*/
   v9 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x484e88*/
-  occupant = v4[9]; /*0x484e97*/
+  occupant = v4->ptr_24; /*0x484e97*/
   *(unsigned int *)v16 = *CellStruct::Add((CellStruct *)&occupant, &v17, &g_DDrawSurfaceManager.scenario[84]); /*0x484eac*/
   v10 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v16); /*0x484eb0*/
   if ( !v9 || !v10 ) /*0x484ebb*/
     return 0; /*0x484ebb*/
-  v11 = v9[139]; /*0x484ebd*/
-  if ( v11 >= 0 && v11 < FootClass_Array.primaryFacing[0] && *((unsigned int *)v9 + 59) == 10 ) /*0x484edc*/
+  v11 = v9->q116; /*0x484ebd*/
+  if ( v11 >= 0 && v11 < FootClass_Array.primaryFacing[0] && v9->u32_EC == 10 ) /*0x484edc*/
     return 1; /*0x484edc*/
-  v12 = v10[139]; /*0x484ede*/
-  return v12 >= 0 && v12 < FootClass_Array.primaryFacing[0] && *((unsigned int *)v10 + 59) == 10; /*0x484efb*/
+  v12 = v10->q116; /*0x484ede*/
+  return v12 >= 0 && v12 < FootClass_Array.primaryFacing[0] && v10->u32_EC == 10; /*0x484efb*/
 }
 // 0x51dff0
 int InfantryClass::MoveToCell(int* a2, int a3)
@@ -1993,15 +1991,15 @@ int InfantryClass::MoveToCell(int* a2, int a3)
   v3 = a2; /*0x51dff5*/
   GroundHeight = Cell::GetGroundHeight(a2); /*0x51e007*/
   v13 = *v3; /*0x51e00d*/
-  v14 = v3[1]; /*0x51e014*/
-  v15 = v3[2]; /*0x51e01d*/
+  v14 = v3->u32_4; /*0x51e014*/
+  v15 = v3->u32_8; /*0x51e01d*/
   if ( v15 == GroundHeight ) /*0x51e021*/
   {
     v6 = 1; /*0x51e078*/
     if ( !dword_A8E7AC ) /*0x51e02e*/
     {
       (*((unsigned short *)&(a2))) = *v3 / 256; /*0x51e045*/
-      (*(((unsigned short *)&(a2)) + 1)) = v3[1] / 256; /*0x51e05e*/
+      (*(((unsigned short *)&(a2)) + 1)) = v3->u32_4 / 256; /*0x51e05e*/
       if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, (int16_t *)&a2, 1) ) /*0x51e06b*/
         v6 = 0; /*0x51e02e*/
     }
@@ -2010,9 +2008,9 @@ int InfantryClass::MoveToCell(int* a2, int a3)
     v8 = ObjectPlacement::CalcPosition((ObjectPlacement *)v7, v16, v3, v12, 0, 0); /*0x51e0a0*/
     result = *v8; /*0x51e0a2*/
     v13 = result; /*0x51e0a4*/
-    v10 = v8[1]; /*0x51e0aa*/
+    v10 = v8->vtable2; /*0x51e0aa*/
     v14 = v10; /*0x51e0ad*/
-    v11 = v8[2]; /*0x51e0b1*/
+    v11 = v8->vtable3; /*0x51e0b1*/
     if ( result == dword_A8F200 && v10 == dword_A8F204 && v11 == dword_A8F208 ) /*0x51e0c4*/
       goto LABEL_16; /*0x51e0c4*/
     v15 = GroundHeight; /*0x51e0c6*/
@@ -2231,8 +2229,8 @@ int InfantryClass::CalcMoveTarget()
               this->unknownCoords568[1] + g_DDrawSurfaceManager.scenario[2 * (v17 & 7) + 103],
               this->unknownCoords568[2]);
       v77 = *v18; /*0x51b506*/
-      v78 = v18[1]; /*0x51b512*/
-      v79 = v18[2]; /*0x51b51f*/
+      v78 = v18->u32_4; /*0x51b512*/
+      v79 = v18->u32_8; /*0x51b51f*/
       v19 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->unknownCoords568); /*0x51b523*/
       Coords = CellClass::GetCoords(v19, v75); /*0x51b52f*/
       v21 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v77); /*0x51b540*/
@@ -2245,7 +2243,7 @@ int InfantryClass::CalcMoveTarget()
       this->unknownCoords568[1] = v24; /*0x51b56f*/
       this->unknownCoords568[2] = v25; /*0x51b574*/
       this->unknownCoords568[2] += v14; /*0x51b584*/
-      v27 = (int *)v26[18](this, &v86); /*0x51b58a*/
+      v27 = v26->u32_48(this, &v86); /*0x51b58a*/
       v28 = *(unsigned int *)Cell::GetHeight((Cell *)&v74[1], v27, this->unknownCoords568); /*0x51b597*/
       v83 = this->location[0]; /*0x51b5a5*/
       v29 = this->location[2]; /*0x51b5af*/
@@ -2468,15 +2466,15 @@ int InfantryClass::FindMoveTarget()
       return (char)MissionControl; /*0x51d148*/
     }
   }
-  if ( !v7[413] ) /*0x51d150*/
+  if ( !v7->Locomotor ) /*0x51d150*/
     sub_7DC720(-2147467261); /*0x51d15d*/
-  if ( (*(uint8_t (__stdcall **)(int))(*v7->Locomotor + 16))(v7[413]) ) /*0x51d16b*/
+  if ( (*(uint8_t (__stdcall **)(int))(*v7->Locomotor + 16))(v7->Locomotor) ) /*0x51d16b*/
     v6 = 0; /*0x51d172*/
   MissionControl = MissionClass::GetMissionControl((MissionClass *)v7); /*0x51d176*/
   if ( MissionControl[9] || v6 )
   {
-    (*((unsigned char *)&(MissionControl))) = *(unsigned char *)(v7[432] + 3775); /*0x51d190*/
-    if ( (unsigned char)MissionControl || !v7[173] || v6 )
+    (*((unsigned char *)&(MissionControl))) = v7->Type->Fraidycat_2; /*0x51d190*/
+    if ( (unsigned char)MissionControl || !v7->target || v6 )
     {
       MissionControl = v7->q1B1; /*0x51d1aa*/
       if ( MissionControl == (char *)-1 || MissionControl == 31 || byte_7EAF7C[4 * (unsigned int)MissionControl] )
@@ -2489,14 +2487,14 @@ int InfantryClass::FindMoveTarget()
           if ( !v6 ) /*0x51d210*/
           {
   LABEL_33:
-            (*((unsigned char *)&(MissionControl))) = *(unsigned char *)(v7[432] + 3775); /*0x51d212*/
+            (*((unsigned char *)&(MissionControl))) = v7->Type->Fraidycat_2; /*0x51d212*/
             if ( !(unsigned char)MissionControl ) /*0x51d220*/
               return (char)MissionControl; /*0x51d220*/
           }
         }
         else if ( !v6 ) /*0x51d1fe*/
         {
-          if ( !v7[373] ) /*0x51d206*/
+          if ( !v7->FootClass_field_5D4 ) /*0x51d206*/
             return (char)MissionControl; /*0x51d206*/
           goto LABEL_33; /*0x51d206*/
         }
@@ -2536,17 +2534,17 @@ int InfantryClass::FindMoveTarget()
           v17 = *v7; /*0x51d38a*/
           v46 = ((((v15 >> 12) + 1) >> 1) & 7) + v16 - 2; /*0x51d390*/
           a3 = 0; /*0x51d39f*/
-          v18 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned short *, unsigned int))(v17 + 76))(v7, v54, 0); /*0x51d3ae*/
+          v18 = (unsigned int *)v17->GetCoordsEx(v7, v54, 0); /*0x51d3ae*/
           (*((unsigned short *)&(vtable0))) = *v18 / 256; /*0x51d3c5*/
           (*(((unsigned short *)&(vtable0)) + 1)) = v18[1] / 256; /*0x51d3de*/
           (*((unsigned char *)&(v18))) = v7->onBridge; /*0x51d3e7*/
           this = (InfantryClass *)vtable0; /*0x51d3f1*/
           *(unsigned int *)v45 = *LayerClass::Pathfinding_Find( /*0x51d42b*/
                               &DataGlobal_87F7E8,
-                              *(unsigned int *)(v7[432] + 1660),
+                              v7->Type->SpeedType,
                               &v48,
                               (int16_t *)&this,
-                              *(unsigned int *)(v7[432] + 1660),
+                              v7->Type->SpeedType,
                               -1,
                               0,
                               (char)v18,
@@ -2563,16 +2561,16 @@ int InfantryClass::FindMoveTarget()
           {
             v19 = *v7; /*0x51d43f*/
             v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v45); /*0x51d44d*/
-            (*(void (__thiscall **)(int *, void *, int))(v19 + 1152))(v7, v20, 1); /*0x51d455*/
-            if ( !v7[413] ) /*0x51d45b*/
+            v19->Stub(v7, v20, 1); /*0x51d455*/
+            if ( !v7->Locomotor ) /*0x51d45b*/
               sub_7DC720(-2147467261); /*0x51d46a*/
-            (*((unsigned char *)&(MissionControl))) = (*(char (__stdcall **)(int))(*v7->Locomotor + 64))(v7[413]); /*0x51d478*/
+            (*((unsigned char *)&(MissionControl))) = (*(char (__stdcall **)(int))(*v7->Locomotor + 64))(v7->Locomotor); /*0x51d478*/
             return (char)MissionControl; /*0x51d482*/
           }
         }
         else
         {
-          v50 = v7[39]; /*0x51d266*/
+          v50 = v7->location; /*0x51d266*/
           __asm { fild [esp+60h+var_24] } /*0x51d26a*/
           v51 = v7[40]; /*0x51d271*/
           __asm { fisub dword ptr [esp+60h+arg_8] } /*0x51d275*/
@@ -2594,7 +2592,7 @@ int InfantryClass::FindMoveTarget()
         v21 = *v7; /*0x51d487*/
         this = 0; /*0x51d491*/
         a3 = 0; /*0x51d49b*/
-        v22 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned short *, unsigned int))(v21 + 76))(v7, v54, 0); /*0x51d4a5*/
+        v22 = (unsigned int *)v21->GetCoordsEx(v7, v54, 0); /*0x51d4a5*/
         (*((unsigned short *)&(vtable0))) = *v22 / 256; /*0x51d4b8*/
         (*(((unsigned short *)&(vtable0)) + 1)) = v22[1] / 256; /*0x51d4d0*/
         *(unsigned int *)v43 = vtable0; /*0x51d4d9*/
@@ -2622,13 +2620,8 @@ int InfantryClass::FindMoveTarget()
           {
             v31 = *v7; /*0x51d596*/
             LandHeight = ObjectClass::GetLandHeight((ObjectClass *)v7); /*0x51d59e*/
-            if ( !(*(int (__thiscall **)(int *, void *, int, int, unsigned int, int))(v31 + 428))( /*0x51d5a8*/
-                    v7,
-                    v30,
-                    v27,
-                    LandHeight,
-                    0,
-                    1) )
+            if ( !v31->COMStub_107(/*0x51d5a8*/
+                    v7, v30, v27, LandHeight, 0, 1) )
             {
               v33 = *(unsigned short *)&((unsigned int *)&stru_A8EB00)[1532]; /*0x51d5b6*/
               v34 = *(unsigned short *)&((unsigned int *)&stru_A8EB00)[1534]; /*0x51d5bc*/
@@ -2663,7 +2656,7 @@ int InfantryClass::FindMoveTarget()
                   v7->MissionDispatch(2, 0); /*0x51d6c4*/
                   v36 = *v7; /*0x51d6ca*/
                   v37 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v44); /*0x51d6d8*/
-                  (*((unsigned char *)&(MissionControl))) = (*(char (__thiscall **)(int *, void *, int))(v36 + 1152))(v7, v37, 1); /*0x51d6e0*/
+                  (*((unsigned char *)&(MissionControl))) = v36->Stub(v7, v37, 1); /*0x51d6e0*/
                 }
                 return (char)MissionControl; /*0x51d6e0*/
               }
@@ -3294,14 +3287,14 @@ int InfantryClass::SetMission()
     v4 = CellCoord::To_CellObj(&dword_87F7E8, v3 + 18); /*0x7282c6*/
     if ( InfantryClass::IsInBounds((int)v4) ) /*0x7282ca*/
     {
-      v4[139] = ++i; /*0x7282f6*/
+      v4->q116 = ++i; /*0x7282f6*/
     }
     else
     {
       if ( v3 ) /*0x7282d5*/
         v3->vt_slot_32(1); /*0x7282dd*/
       --v1; /*0x7282e0*/
-      v4[139] = -1; /*0x7282e1*/
+      v4->q116 = -1; /*0x7282e1*/
       --v2; /*0x7282ea*/
     }
   }
@@ -3724,7 +3717,7 @@ int InfantryClass::UpdateBehavior()
             result = (int)Cell::IsBridge((Cell *)v15); /*0x7368b3*/
             if ( result ) /*0x7368ba*/
             {
-              if ( *(unsigned char *)(*(unsigned int *)(result + 1312) + 5819) ) /*0x7368c6*/
+              if ( *(unsigned char *)(result->u32_520 + 5819) ) /*0x7368c6*/
               {
                 v16 = (unsigned short *)result->vt_slot_440(v25); /*0x7368dd*/
                 v17 = *v16 + 3; /*0x7368f0*/
@@ -3811,8 +3804,8 @@ void* InfantryClass::CalcFacingToTarget()
   v11 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2); /*0x51dceb*/
   v12 = ObjectPlacement::CalcPosition((ObjectPlacement *)v11, v36, &v32, 0, v24, 0); /*0x51dcf2*/
   *a2 = *v12; /*0x51dcfb*/
-  a2[1] = v12[1]; /*0x51dd00*/
-  a2[2] = v12[2]; /*0x51dd06*/
+  a2[1] = v12->vtable2; /*0x51dd00*/
+  a2[2] = v12->vtable3; /*0x51dd06*/
   if ( *a2 == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1564] /*0x51dd32*/
     && a2[1] == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1568]
     && a2[2] == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1572] )
@@ -3839,8 +3832,8 @@ void* InfantryClass::CalcFacingToTarget()
       v20 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v30); /*0x51de61*/
       v21 = ObjectPlacement::CalcPosition((ObjectPlacement *)v20, v35, &v32, 1, v25, 0); /*0x51de68*/
       *a2 = *v21; /*0x51de71*/
-      a2[1] = v21[1]; /*0x51de76*/
-      a2[2] = v21[2]; /*0x51de7c*/
+      a2[1] = v21->vtable2; /*0x51de76*/
+      a2[2] = v21->vtable3; /*0x51de7c*/
     }
   }
   if ( *a2 == *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1564] /*0x51deb0*/
@@ -3914,13 +3907,13 @@ int InfantryClass::EvaluateTarget()
   Type = (unsigned int *)InfantryClass::GetType((InfantryClass *)a2); /*0x51bff2*/
   if ( a3 == 8 ) /*0x51c000*/
   {
-    if ( Type && (((unsigned int)(unsigned short)((*(((unsigned short *)&(Type[9])) + 1)))) | ((unsigned int)(unsigned short)(Type[10]) << 16)) != (((unsigned int)(unsigned short)((*(((unsigned short *)&(Type[10])) + 1)))) | ((unsigned int)(unsigned short)(Type[9]) << 16)) ) /*0x51c01b*/
+    if ( Type && (((unsigned int)(unsigned short)((*(Type->objectTypeFlags + 1)))) | ((unsigned int)(unsigned short)(Type->owningHouseIndex) << 16)) != (((unsigned int)(unsigned short)((*(Type->owningHouseIndex + 1)))) | ((unsigned int)(unsigned short)(Type->objectTypeFlags) << 16)) ) /*0x51c01b*/
       return 0; /*0x51c036*/
     return 7; /*0x51c01b*/
   }
   if ( Type ) /*0x51c03b*/
   {
-    v12 = abs32(a3 - Type[11]); /*0x51c047*/
+    v12 = abs32(a3 - Type->fallRate); /*0x51c047*/
     if ( v12 > 2 && v12 < 6 && a3 != -1 ) /*0x51c056*/
       return 7; /*0x51c064*/
   }
@@ -4335,7 +4328,7 @@ int InfantryClass::EvaluateTarget()
             }
             if ( (*((int (**)(InfantryClass *))this->vtable1 + 97))(this) == 11 ) /*0x51c42a*/
             {
-              focus = ((unsigned int *)this)[0]; /*0x51c42c*/
+              focus = this->vtable1; /*0x51c42c*/
               if ( focus == (AbstractClass *)v23 /*0x51c43e*/
                 && (*((int (**)(AbstractClass *))focus->vtable1 + 11))(focus) == 1 )
               {
@@ -4417,7 +4410,7 @@ int InfantryClass::EvaluateTarget()
                 }
                 else if ( v37 == 15 ) /*0x51c5e8*/
                 {
-                  if ( (*(uint8_t (**)(int, HouseClass *))(*(unsigned int *)v23 + 200))(v23, ((unsigned int *)this)[0]) ) /*0x51c611*/
+                  if ( (*(uint8_t (**)(int, HouseClass *))(*(unsigned int *)v23 + 200))(v23, this->vtable1) ) /*0x51c611*/
                     v19 = 6; /*0x51c61f*/
                 }
                 else if ( v37 != 36 && v19 < 5 ) /*0x51c5f6*/
@@ -4938,11 +4931,11 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
             v33 = StreamClass::Set((StreamClass *)&dest, this->locomotor); /*0x51afe1*/
             if ( v33 < 0 && v33 != -2147467262 ) /*0x51afef*/
               sub_7DC720(v33); /*0x51aff2*/
-            if ( dest && (*(uint8_t (__stdcall **)(int *))(*dest + 28))(dest) ) /*0x51b002*/
+            if ( dest && dest->GetSizeMax() ) /*0x51b002*/
             {
               if ( !dest ) /*0x51b00f*/
                 sub_7DC720(-2147467261); /*0x51b016*/
-              if ( (*(uint8_t (__stdcall **)(int *))(*dest + 20))(dest) ) /*0x51b022*/
+              if ( dest->GenerateUniqueID() ) /*0x51b022*/
               {
                 if ( *locomotor ) /*0x51b029*/
                   (*(void (__stdcall **)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x51b032*/
@@ -4950,7 +4943,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
                 *locomotor = 0; /*0x51b039*/
                 if ( !v34 ) /*0x51b03d*/
                   sub_7DC720(-2147467261); /*0x51b044*/
-                (*(void (__stdcall **)(int *, int *))(*v34 + 16))(v34, this->locomotor); /*0x51b051*/
+                v34->IsClean(this->locomotor); /*0x51b051*/
               }
             }
           }
@@ -4974,7 +4967,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
           v37 = dest; /*0x51b0de*/
           if ( dest ) /*0x51b0e4*/
           {
-            (*(void (__stdcall **)(int *, int))(*dest + 12))(dest, *locomotor); /*0x51b0ec*/
+            dest->vt_entry_68(*locomotor); /*0x51b0ec*/
             InfantryClass::checkBridgeClearance((InfantryClass *)this->locomotor, *(int *)ppv.__pad_000); /*0x51b0f6*/
             v37 = dest; /*0x51b0fb*/
           }
@@ -4984,7 +4977,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
             v37 = dest; /*0x51b10d*/
           }
           if ( v37 ) /*0x51b113*/
-            (*(void (__stdcall **)(int *))(*v37 + 8))(v37); /*0x51b11c*/
+            v37->COMStub_Release(); /*0x51b11c*/
         }
       }
       else if ( CanDeployAtCell ) /*0x51b126*/
@@ -4999,11 +4992,11 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
             sub_7DC720(v40); /*0x51b15a*/
           if ( dest ) /*0x51b165*/
           {
-            if ( (*(uint8_t (__stdcall **)(int *))(*dest + 28))(dest) ) /*0x51b16a*/
+            if ( dest->GetSizeMax() ) /*0x51b16a*/
             {
               if ( !dest ) /*0x51b177*/
                 sub_7DC720(-2147467261); /*0x51b17e*/
-              if ( (*(uint8_t (__stdcall **)(int *))(*dest + 20))(dest) ) /*0x51b18a*/
+              if ( dest->GenerateUniqueID() ) /*0x51b18a*/
               {
                 if ( *v39 ) /*0x51b191*/
                   (*(void (__stdcall **)(int))(*(unsigned int *)*v39 + 8))(*v39); /*0x51b19a*/
@@ -5011,11 +5004,11 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
                 *v39 = 0; /*0x51b1a1*/
                 if ( !v41 ) /*0x51b1a5*/
                   sub_7DC720(-2147467261); /*0x51b1ac*/
-                (*(void (__stdcall **)(int *, int *))(*v41 + 16))(v41, this->locomotor); /*0x51b1b9*/
+                v41->IsClean(this->locomotor); /*0x51b1b9*/
               }
             }
             if ( dest ) /*0x51b1c2*/
-              (*(void (__stdcall **)(int *))(*dest + 8))(dest); /*0x51b1c7*/
+              dest->COMStub_Release(); /*0x51b1c7*/
           }
         }
       }
@@ -5150,13 +5143,13 @@ int InfantryClass::ValidateAttackPosition()
   v5 = v4; /*0x484b48*/
   if ( v4 ) /*0x484b4c*/
   {
-    occupant = v4[9]; /*0x484b59*/
+    occupant = v4->ptr_24; /*0x484b59*/
     *(unsigned int *)v20 = *CellStruct::Add((CellStruct *)&occupant, v21, &g_DDrawSurfaceManager.scenario[82]); /*0x484b73*/
     v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v20); /*0x484b81*/
     if ( v6 ) /*0x484b85*/
     {
-      v7 = *((unsigned short *)v5 + 139); /*0x484b8b*/
-      if ( v7 >= 0 && v7 < FootClass_Array.primaryFacing[0] && v5[59] == 10 ) /*0x484baa*/
+      v7 = v5->q116; /*0x484b8b*/
+      if ( v7 >= 0 && v7 < FootClass_Array.primaryFacing[0] && v5->u32_EC == 10 ) /*0x484baa*/
       {
         v8 = v6->q116; /*0x484bac*/
         if ( v8 < 0 || v8 >= FootClass_Array.primaryFacing[0] || v6->animation != 10 ) /*0x484bc5*/
@@ -5170,8 +5163,8 @@ int InfantryClass::ValidateAttackPosition()
         v10 = v6->q116; /*0x484c00*/
         if ( v10 >= 0 && v10 < FootClass_Array.primaryFacing[0] && v6->animation == 10 ) /*0x484c1f*/
         {
-          v11 = v9[139]; /*0x484c21*/
-          if ( v11 < 0 || v11 >= FootClass_Array.primaryFacing[0] || *((unsigned int *)v9 + 59) != 10 ) /*0x484c3a*/
+          v11 = v9->q116; /*0x484c21*/
+          if ( v11 < 0 || v11 >= FootClass_Array.primaryFacing[0] || v9->u32_EC != 10 ) /*0x484c3a*/
             return 1; /*0x484c45*/
         }
       }
@@ -5183,13 +5176,13 @@ int InfantryClass::ValidateAttackPosition()
   v13 = v12; /*0x484c71*/
   if ( !v12 ) /*0x484c75*/
     return 0; /*0x484c75*/
-  *(unsigned int *)v21 = v12[9]; /*0x484c80*/
+  *(unsigned int *)v21 = v12->ptr_24; /*0x484c80*/
   *(unsigned int *)v19 = *NeighborCoord(&v22, v21, 6); /*0x484c9d*/
   v14 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x484ca6*/
   if ( !v14 ) /*0x484caa*/
     return 0; /*0x484caa*/
-  v15 = *((unsigned short *)v13 + 139); /*0x484cb0*/
-  if ( v15 >= 0 && v15 < FootClass_Array.primaryFacing[0] && v13[59] == 10 ) /*0x484ccf*/
+  v15 = v13->q116; /*0x484cb0*/
+  if ( v15 >= 0 && v15 < FootClass_Array.primaryFacing[0] && v13->u32_EC == 10 ) /*0x484ccf*/
   {
     v16 = (*(v14->passengers + 1)); /*0x484cd1*/
     if ( v16 < 0 || v16 >= FootClass_Array.primaryFacing[0] || v14->radioLinks[3] != 10 ) /*0x484cea*/
@@ -5407,7 +5400,7 @@ int InfantryClass::HandleCursorOverCell()
             v16 = *v20; /*0x51f98f*/
             if ( *(unsigned char *)(*v20 + 116) ) /*0x51f991*/
             {
-              if ( *(unsigned int *)(v16 + 48) == 6 ) /*0x51f99b*/
+              if ( v16->nextObject == 6 ) /*0x51f99b*/
                 break; /*0x51f99b*/
             }
             ++v19; /*0x51f99d*/
@@ -5415,7 +5408,7 @@ int InfantryClass::HandleCursorOverCell()
             if ( v19 >= v18 ) /*0x51f9a3*/
               goto LABEL_37; /*0x51f9a3*/
           }
-          v15 = **(unsigned int **)(v16 + 96); /*0x51f9ee*/
+          v15 = *v16->u32_60; /*0x51f9ee*/
         }
       }
     }
@@ -5425,7 +5418,7 @@ int InfantryClass::HandleCursorOverCell()
     goto LABEL_55; /*0x51fa16*/
   if ( *(unsigned char *)(v15 + 5814) ) /*0x51fa1f*/
   {
-    v22 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v16 + 72))(v16, v24); /*0x51fa32*/
+    v22 = (unsigned int *)v16->GetCoords_0(v24); /*0x51fa32*/
     (*((unsigned short *)&(v25))) = *v22 / 256; /*0x51fa45*/
     (*(((unsigned short *)&(v25)) + 1)) = v22[1] / 256; /*0x51fa5d*/
     a4 = v25; /*0x51fa66*/
@@ -6113,8 +6106,8 @@ int InfantryClass::ComputeTransform()
   }
   v10 = v9; /*0x5232cd*/
   *a2 = *v10; /*0x5232d8*/
-  a2[1] = v10[1]; /*0x5232dd*/
-  a2[2] = v10[2]; /*0x5232e5*/
+  a2[1] = v10->vtable2; /*0x5232dd*/
+  a2[2] = v10->vtable3; /*0x5232e5*/
   return a2; /*0x5232d5*/
 }
 // 0x701140
@@ -6535,7 +6528,7 @@ int InfantryClass::ProcessTiberiumHarvest()
   vtable0 = (int (__thiscall **)(InfantryClass *))this->vfptr; /*0x522e7b*/
   if ( this->Type->Storage ) /*0x522e7d*/
   {
-    v5 = (Cell *)vtable0[111](this); /*0x522eb4*/
+    v5 = vtable0->airstrikeTintTimer_d(this); /*0x522eb4*/
     if ( !(uint8_t)Cell::IsBridge2(v5) ) /*0x522eb8*/
       goto LABEL_13; /*0x522eb8*/
     (*((void (__thiscall **)(InfantryClass *))this->vfptr + 173))(this); /*0x522ec9*/
@@ -7384,11 +7377,11 @@ int InfantryClass::RepairBridge()
       }
       goto LABEL_193; /*0x51a7f2*/
     }
-    v100 = (TeamClass *)v98[13]; /*0x51a507*/
+    v100 = v98->q034; /*0x51a507*/
     if ( v100 ) /*0x51a50c*/
       TeamClass::Update_0(v100, 1, (int)this, dword_A8F1E0, 0, 0); /*0x51a51c*/
-    if ( (*(int (__thiscall **)(unsigned int *))(*v98 + 388))(v98) != 19 /*0x51a538*/
-      && !(*(uint8_t (__thiscall **)(unsigned int *))(*v98 + 352))(v98) )
+    if ( v98->vt_slot_388() != 19 /*0x51a538*/
+      && !v98->vt_slot_352() )
     {
       if ( *((unsigned char *)v98 + 1759) ) /*0x51a546*/
       {
@@ -7398,7 +7391,7 @@ int InfantryClass::RepairBridge()
         this->diskLaserTimer[0] = (int)dword_A8ED84; /*0x51a57a*/
         this->diskLaserTimer[1] = v155; /*0x51a582*/
         this->diskLaserTimer[2] = v101; /*0x51a587*/
-        v103 = (*(int (__thiscall **)(unsigned int *, int *, int, int))(*v98 + 72))(v98, &v154, 1, 1); /*0x51a591*/
+        v103 = v98->vt_slot_72(&v154, 1, 1); /*0x51a591*/
         v102->FindMoveTarget(this, v103); /*0x51a597*/
         return; /*0x51a5a4*/
       }
@@ -7436,7 +7429,7 @@ int InfantryClass::RepairBridge()
     this->diskLaserTimer[0] = (int)dword_A8ED84; /*0x51a63a*/
     this->diskLaserTimer[1] = v155; /*0x51a642*/
     this->diskLaserTimer[2] = v114; /*0x51a647*/
-    v116 = (*(int (__thiscall **)(unsigned int *, int *, int, int))(*v98 + 72))(v98, &v154, 1, 1); /*0x51a651*/
+    v116 = v98->vt_slot_72(&v154, 1, 1); /*0x51a651*/
     v115->FindMoveTarget(this, v116); /*0x51a657*/
 }
 
@@ -7679,7 +7672,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
   v19 = *v16; /*0x518fa0*/
   vfptr = this->vfptr; /*0x518fa3*/
   v72 = vfptr1; /*0x518fb0*/
-  v20 = *(unsigned int *)(*(int (__thiscall **)(int *, int *))(v19 + 448))(v16, &v69.StreamClass_field_0C); /*0x518fba*/
+  v20 = *(unsigned int *)v19->CoordToCell(v16, &v69.StreamClass_field_0C); /*0x518fba*/
   v21 = *(unsigned char *)(v17 + 664); /*0x518fbc*/
   v69.m_Data = v20; /*0x518fc4*/
   v68 = 0; /*0x518fca*/
@@ -7720,7 +7713,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
   LABEL_7:
   v29 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v17 + 72))(v17, &v73); /*0x519082*/
   *(unsigned short *)v69.m_Position = *v29 / 256; /*0x51909f*/
-  *(unsigned short *)&v69.__pad_0[2] = v29[1] / 256; /*0x5190b7*/
+  *(unsigned short *)&v69.__pad_0[2] = v29->vtable2 / 256; /*0x5190b7*/
   v69.m_Position = *(unsigned int *)v69.m_Position; /*0x5190c0*/
   v30 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&v69.m_Position); /*0x5190ca*/
   if ( (uint8_t)CellClass::QuickPassable(v30) ) /*0x5190d1*/

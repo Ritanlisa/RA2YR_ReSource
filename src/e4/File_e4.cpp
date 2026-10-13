@@ -88,8 +88,8 @@ AbstractClass * File::LoadFont(char *Source)
     v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
-      if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0) /*0x4339f0*/
-        || !(*(int (**)(unsigned int *, int))(*v6 + 28))(v6, 1)
+      if ( !v5->vt_slot_20(0) /*0x4339f0*/
+        || !v6->vt_slot_28(1)
         || (v3 = (unsigned int *)operator new(0x24u)) == 0 )
       {
   LABEL_35:
@@ -102,7 +102,7 @@ AbstractClass * File::LoadFont(char *Source)
       if ( v7 ) /*0x433a15*/
       {
         memset(v7, 0, 0x20000u); /*0x433a22*/
-        if ( (*(int (**)(unsigned int *, unsigned int *, int))(*v6 + 36))(v6, v25, 28) == 28 ) /*0x433a35*/
+        if ( v6->vt_slot_36(v25, 28) == 28 ) /*0x433a35*/
         {
           if ( v25[0] == 1416523622 ) /*0x433a44*/
           {
@@ -113,13 +113,13 @@ AbstractClass * File::LoadFont(char *Source)
             v3[5] = v25[6]; /*0x433a6a*/
             v8 = v3[6]; /*0x433a71*/
             v3[4] = v25[5]; /*0x433a74*/
-            if ( (*(int (**)(unsigned int *, int, int))(*v6 + 36))(v6, v8, 0x20000) == 0x20000 ) /*0x433a84*/
+            if ( v6->vt_slot_36(v8, 0x20000) == 0x20000 ) /*0x433a84*/
               goto LABEL_24; /*0x433a84*/
           }
           else if ( v25[0] == 1951297350 ) /*0x433a94*/
           {
-            (*(void (**)(unsigned int *, unsigned int, unsigned int))(*v6 + 40))(v6, 0, 0); /*0x433aa0*/
-            if ( (*(int (**)(unsigned int *, char *, int))(*v6 + 36))(v6, v26, 36) == 36 ) /*0x433ab4*/
+            v6->vt_slot_40(0, 0); /*0x433aa0*/
+            if ( v6->vt_slot_36(v26, 36) == 36 ) /*0x433ab4*/
             {
               v9 = v28; /*0x433abe*/
               v10 = v29; /*0x433ac2*/
@@ -134,8 +134,8 @@ AbstractClass * File::LoadFont(char *Source)
               v24 = v13; /*0x433af3*/
               if ( v13 ) /*0x433af7*/
               {
-                (*(void (**)(unsigned int *, int, unsigned int))(*v6 + 40))(v6, v33, 0); /*0x433b07*/
-                v14 = (*(int (**)(unsigned int *, void **, unsigned int))(*v6 + 36))(v6, v13, 12 * v31); /*0x433b1a*/
+                v6->vt_slot_40(v33, 0); /*0x433b07*/
+                v14 = v6->vt_slot_36(v13, 12 * v31); /*0x433b1a*/
                 v15 = v31; /*0x433b1d*/
                 if ( v14 == 12 * v31 ) /*0x433b29*/
                 {
@@ -167,7 +167,7 @@ AbstractClass * File::LoadFont(char *Source)
                     v13 = v24; /*0x433b69*/
                   }
                   free(v13); /*0x433b6e*/
-                  (*(void (**)(unsigned int *, int, unsigned int))(*v6 + 40))(v6, v34, 0); /*0x433b81*/
+                  v6->vt_slot_40(v34, 0); /*0x433b81*/
   LABEL_24:
                   v19 = v3->u32_C; /*0x433b84*/
                   v20 = v3[5] * v3[4]; /*0x433b8a*/
@@ -183,7 +183,7 @@ AbstractClass * File::LoadFont(char *Source)
                   while ( v21 ); /*0x433ba4*/
                   v22 = operator new(v20); /*0x433ba7*/
                   v3[7] = v22; /*0x433bb1*/
-                  if ( v22 && (*(int (**)(unsigned int *, int, size_t))(*v6 + 36))(v6, v22, v20) == v20 ) /*0x433bc1*/
+                  if ( v22 && v6->vt_slot_36(v22, v20) == v20 ) /*0x433bc1*/
                     goto LABEL_35; /*0x433bc1*/
                 }
               }

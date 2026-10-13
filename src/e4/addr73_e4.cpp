@@ -681,8 +681,8 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     {
       (*((unsigned char *)&(HeightMap))) = (uint8_t)EventClass::resetEvent((int *)HeightMap, 0, 0); /*0x733022*/
       *v4 = (int)(&vt_DynamicVectorClass); /*0x733027*/
-      v4[5] = 10; /*0x73302d*/
-      v4[4] = 0; /*0x733034*/
+      v4->u32_14 = 10; /*0x73302d*/
+      v4->q010 = 0; /*0x733034*/
     }
     else
     {
@@ -697,16 +697,16 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
         (*((unsigned char *)&(HeightMap))) = StepTechnoClassCleanupIfHuman(v7, a1); /*0x733057*/
         if ( (unsigned char)HeightMap ) /*0x73305e*/
         {
-          v8 = v4[2]; /*0x733060*/
-          if ( v4[4] < v8 /*0x73308a*/
+          v8 = v4->Capacity; /*0x733060*/
+          if ( v4->q010 < v8 /*0x73308a*/
             || (((*((unsigned char *)&(HeightMap))) = v4->IsAllocated, (unsigned char)HeightMap) || !v8)
-            && (HeightMap = v4[5], HeightMap > 0)
-            && ((*((unsigned char *)&(HeightMap))) = (*(int (**)(int *, int, int))(*v4 + 8))(v4, v8 + HeightMap, 0),
+            && (HeightMap = v4->u32_14, HeightMap > 0)
+            && ((*((unsigned char *)&(HeightMap))) = v4->Release(v8 + HeightMap, 0),
                 (unsigned char)HeightMap) )
           {
-            HeightMap = v4[4]; /*0x73308c*/
-            v9 = v4[1]; /*0x73308f*/
-            v4[4] = HeightMap + 1; /*0x733095*/
+            HeightMap = v4->q010; /*0x73308c*/
+            v9 = v4->Items; /*0x73308f*/
+            v4->q010 = HeightMap + 1; /*0x733095*/
             *(int *)(v9 + 4 * HeightMap) = v7; /*0x733098*/
           }
         }
@@ -723,8 +723,8 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     {
       EventClass::resetEvent(v10, 0, 0); /*0x7330b9*/
       *v4 = (int)(&vt_DynamicVectorClass); /*0x7330be*/
-      v4[5] = 10; /*0x7330c4*/
-      v4[4] = 0; /*0x7330cb*/
+      v4->u32_14 = 10; /*0x7330c4*/
+      v4->q010 = 0; /*0x7330cb*/
     }
     else
     {
@@ -747,7 +747,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
       }
     }
   }
-  v13 = v4[4]; /*0x733129*/
+  v13 = v4->q010; /*0x733129*/
   for ( j = 0; j < v13; ++j ) /*0x733130*/
     (*((unsigned char *)&(HeightMap))) = v18(*(int *)(v4[1] + 4 * j), a3); /*0x73313e*/
   if ( v4 ) /*0x733149*/
@@ -1497,10 +1497,10 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   if ( v9 ) /*0x733e93*/
   {
     VectorClass::Construct(v9, 0, 0); /*0x733e99*/
-    v10[4] = 0; /*0x733e9e*/
+    v10->q010 = 0; /*0x733e9e*/
     v11 = v10; /*0x733ea1*/
     *v10 = &vt_DynamicVectorClass; /*0x733ea3*/
-    v10[5] = 10; /*0x733ea9*/
+    v10->u32_14 = 10; /*0x733ea9*/
     v36 = v10; /*0x733eb0*/
   }
   else
@@ -1513,15 +1513,15 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
   {
     do /*0x733f09*/
     {
-      v13 = v11[2]; /*0x733ec9*/
-      if ( v11[4] < v13 /*0x733eee*/
+      v13 = v11->Capacity; /*0x733ec9*/
+      if ( v11->q010 < v13 /*0x733eee*/
         || (v11->IsAllocated || !v13)
-        && (v14 = v11[5], v14 > 0)
-        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v11 + 8))(v11, v13 + v14, 0) )
+        && (v14 = v11->u32_14, v14 > 0)
+        && v11->Release(v13 + v14, 0) )
       {
-        v15 = v11[4]; /*0x733ef5*/
-        v16 = v11[1]; /*0x733ef8*/
-        v11[4] = v15 + 1; /*0x733efe*/
+        v15 = v11->q010; /*0x733ef5*/
+        v16 = v11->Items; /*0x733ef8*/
+        v11->q010 = v15 + 1; /*0x733efe*/
         *(unsigned int *)(v16 + 4 * v15) = 0; /*0x733f01*/
       }
       --v40; /*0x733f08*/

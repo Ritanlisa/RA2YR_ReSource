@@ -258,9 +258,9 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (*a5)(
   v6 = (int *)(*(int (**)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
   v7 = ClipRectIntersection(&v26, (int *)a2, v6, 0, 0); /*0x7babaf*/
   v35 = *v7; /*0x7babb6*/
-  v36 = v7[1]; /*0x7babbd*/
-  v37 = v7[2]; /*0x7babc4*/
-  v38 = v7[3]; /*0x7babcf*/
+  v36 = v7->vtable2; /*0x7babbd*/
+  v37 = v7->vtable3; /*0x7babc4*/
+  v38 = v7->vtable4; /*0x7babcf*/
   v8 = v36 + a3[1]; /*0x7babda*/
   v29 = v35 + *a3; /*0x7babdc*/
   v30 = v8; /*0x7babe0*/
@@ -455,27 +455,27 @@ XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
   v6 = (int *)(*(int (**)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
   v7 = ClipRectIntersection(&v50, a2, v6, 0, 0); /*0x7bb08f*/
   v46[0] = *v7; /*0x7bb096*/
-  v46[1] = v7[1]; /*0x7bb09c*/
+  v46[1] = v7->vtable2; /*0x7bb09c*/
   v8 = *a3; /*0x7bb09f*/
-  v46[2] = v7[2]; /*0x7bb0a4*/
+  v46[2] = v7->vtable3; /*0x7bb0a4*/
   v9 = a3[1]; /*0x7bb0a7*/
-  v46[3] = v7[3]; /*0x7bb0ad*/
-  v10 = a2[1]; /*0x7bb0b2*/
+  v46[3] = v7->vtable4; /*0x7bb0ad*/
+  v10 = a2->Width; /*0x7bb0b2*/
   v51 = v8 + *a2; /*0x7bb0b7*/
   v11 = v9 + v10; /*0x7bb0bd*/
   v12 = a3[2]; /*0x7bb0c0*/
   v52 = v11; /*0x7bb0c3*/
   v13 = Rect::Construct(&v44, &v51, v12, a3[3]); /*0x7bb0cf*/
   v45[0] = *v13; /*0x7bb0d8*/
-  v45[1] = v13[1]; /*0x7bb0e0*/
-  v45[2] = v13[2]; /*0x7bb0e6*/
-  v45[3] = v13[3]; /*0x7bb0f2*/
+  v45[1] = v13->Y; /*0x7bb0e0*/
+  v45[2] = v13->Width; /*0x7bb0e6*/
+  v45[3] = v13->Height; /*0x7bb0f2*/
   v14 = ClipRectIntersection(v43, v46, v45, 0, 0); /*0x7bb0f9*/
   v47[0] = *v14; /*0x7bb100*/
-  v47[1] = v14[1]; /*0x7bb106*/
-  v15 = v14[2]; /*0x7bb109*/
+  v47[1] = v14->vtable2; /*0x7bb106*/
+  v15 = v14->vtable3; /*0x7bb109*/
   v48 = v15; /*0x7bb10c*/
-  v16 = v14[3]; /*0x7bb10f*/
+  v16 = v14->vtable4; /*0x7bb10f*/
   v49 = v16; /*0x7bb114*/
   if ( v15 <= 0 ) /*0x7bb117*/
     return 0; /*0x7bb117*/
@@ -484,7 +484,7 @@ XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
   v56 = (unsigned int *)v16; /*0x7bb125*/
   v58 = (int *)(*(int (**)(XSurface *))(*(unsigned int *)v4->Surface + 116))(v4); /*0x7bb132*/
   v17 = CellStruct::Copy((CellStruct *)v47, &v51); /*0x7bb139*/
-  v18 = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->Surface + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  v18 = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->Surface + 92))(v4, *v17, v17->q004); /*0x7bb154*/
   v53 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
     return 0; /*0x7bb333*/

@@ -329,7 +329,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     }
     while ( 1 ) /*0x401d57*/
     {
-      v17 = v2[6]; /*0x401d57*/
+      v17 = v2->u32_18; /*0x401d57*/
       if ( v17 > v9 ) /*0x401d5b*/
         v17 = v9; /*0x401d5d*/
       v10 = LinkedList::Next(v2->u8_4); /*0x401d69*/
@@ -513,14 +513,14 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
   v7 = (int *)v4[v2 + 7]; /*0x402cdb*/
   if ( !v7 ) /*0x402ce1*/
   {
-    v12 = v4[3]; /*0x402cef*/
+    v12 = v4->u32_C; /*0x402cef*/
     v8 = (int *)operator new(0x1E8u); /*0x402cf8*/
     memset(v8, 0, 0x1E8u); /*0x402d03*/
     DListNode::InitEmpty(v8); /*0x402d0a*/
     v8[6] = (int)v4; /*0x402d13*/
     v8[7] = v10; /*0x402d16*/
     v8[4] = 0; /*0x402d19*/
-    ++v4[4]; /*0x402d20*/
+    ++v4->u32_10; /*0x402d20*/
     v4[v10 + 7] = (int)v8; /*0x402d27*/
     v8[116] = *(unsigned int *)(v12 + 36); /*0x402d34*/
     DListNode::Init(v8 + 62); /*0x402d3a*/
@@ -1216,8 +1216,8 @@ int E4Recv_405AC0::sub_405AC0()
   if ( *(unsigned int *)(v2[9] + 92) < 0x21u ) /*0x405adb*/
     goto LABEL_2; /*0x405adb*/
   BindChannelAudioStream(0); /*0x405af0*/
-  v5 = v2[9]; /*0x405af5*/
-  if ( (*(unsigned char *)(v5 + 16) & 0x88) == 0 || v3 || v2[154] ) /*0x405b02*/
+  v5 = v2->q024; /*0x405af5*/
+  if ( (*(unsigned char *)(v5 + 16) & 0x88) == 0 || v3 || v2->q268 ) /*0x405b02*/
   {
     v6 = Random::Range(&Randomizer_Global, *(unsigned int *)(v5 + 88), *(unsigned int *)(v5 + 92)); /*0x405b19*/
     if ( v6 < 0x21 ) /*0x405b21*/
@@ -1226,7 +1226,7 @@ int E4Recv_405AC0::sub_405AC0()
       BindChannelAudioStream(v3); /*0x405add*/
       return 0; /*0x405aeb*/
     }
-    v2[79] = v6; /*0x405b32*/
+    v2->q13C = v6; /*0x405b32*/
     v2[82] = v3; /*0x405b38*/
   }
   return 0; /*0x405ae8*/
@@ -1254,7 +1254,7 @@ unsigned int * E4Recv_405E80::sub_405E80()
       if ( this->AbstractClass ) /*0x405ea7*/
       {
         v3 = vtable0->u32_24; /*0x405eb1*/
-        if ( result[2] != v3 || result[1] != vtable0->u32_138 ) /*0x405eca*/
+        if ( result->vtable3 != v3 || result->vtable2 != vtable0->u32_138 ) /*0x405eca*/
         {
 LABEL_19:
           *result = 0; /*0x405fc1*/
@@ -1397,7 +1397,7 @@ LABEL_11:
     }
     g_MixerChannel_SFX = &g_Audio_Enabled->q068; /*0x406c4c*/
     v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
-    v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
+    v4 = v3->vt_slot_20(0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = &CCFileClass::`vftable'; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
@@ -1818,10 +1818,10 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
             v3->u32_4 = 0; /*0x4086df*/
             v3->u32_8 = 0; /*0x4086e2*/
             v3->u32_C = 0; /*0x4086e5*/
-            v3[8] = 0; /*0x4086e8*/
+            v3->u32_10 = 0; /*0x4086e8*/
           }
           (*(void (__thiscall **)(int, uint16_t *, size_t))(*(unsigned int *)a1 + 36))(a1, v3, Size); /*0x40871e*/
-          v3[8] = Size; /*0x408726*/
+          v3->u32_10 = Size; /*0x408726*/
         }
         else
         {
@@ -1832,7 +1832,7 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
               return v4; /*0x40874b*/
             if ( *v3 == 17 ) /*0x408758*/
             {
-              v7 = v3[6]; /*0x40875c*/
+              v7 = v3->u32_C; /*0x40875c*/
               a2[1] = 1; /*0x408760*/
               a2[6] = v7; /*0x408767*/
               a2[4] = 2; /*0x40876a*/
@@ -1948,7 +1948,7 @@ int E4Recv_408970::sub_408970()
   {
     *(v13 - 3) = (int)v7; /*0x408a17*/
     *v13 = -1001; /*0x408a1a*/
-    v13[1] = *v13; /*0x408a22*/
+    v13->AudioController_field_04 = *v13; /*0x408a22*/
     *(v13 - 1) = 0; /*0x408a27*/
     *(v13 - 2) = 0; /*0x408a2a*/
     *(v13 - 10) = (int)v7; /*0x408a2d*/
@@ -2832,9 +2832,9 @@ void sub_40A850()
     if ( Enabled ) /*0x40a86a*/
     {
       (*(void (__stdcall **)(unsigned int))(**(unsigned int **)&DataGlobal_87E8A0 + 72))(*(unsigned int *)&DataGlobal_87E8A0); /*0x40a873*/
-      v3 = Enabled[40]; /*0x40a878*/
+      v3 = Enabled->customSound_controller; /*0x40a878*/
       v4 = *((unsigned int *)Enabled + 19); /*0x40a87c*/
-      v5 = Enabled[42]; /*0x40a87f*/
+      v5 = Enabled->q054; /*0x40a87f*/
       v6[1] = v3; /*0x40a887*/
       v7 = v4; /*0x40a890*/
       v6[0] = 1; /*0x40a898*/
@@ -3348,7 +3348,7 @@ int AudioStream_BindChannel(unsigned int * a1, unsigned int * a2)
     {
       v6 = (unsigned int *)a1[90]; /*0x4027d2*/
       a1[92] = *v6; /*0x4027da*/
-      result = v6[1]; /*0x4027e0*/
+      result = v6->AudioController_field_04; /*0x4027e0*/
       a1[93] = result; /*0x4027e3*/
       a1[94] = result; /*0x4027e9*/
     }
@@ -3876,23 +3876,23 @@ int E4Recv_405A00::sub_405A00()
   int64_t v6; // rax
 
   v1 = (unsigned int *)this->nextObject; /*0x405a01*/
-  v2 = v1[6]; /*0x405a07*/
+  v2 = v1->q018; /*0x405a07*/
   (*((unsigned char *)&(v2))) = v2 & 0xFD; /*0x405a0a*/
-  v1[6] = v2; /*0x405a0c*/
+  v1->q018 = v2; /*0x405a0c*/
   v3 = 4; /*0x405a0f*/
-  if ( v1[7] == 4 ) /*0x405a19*/
+  if ( v1->u32_1C == 4 ) /*0x405a19*/
     return 0; /*0x405a1b*/
-  if ( v1[82] || v1[154] || v1[79] ) /*0x405a34*/
+  if ( v1[82] || v1->q268 || v1->q13C ) /*0x405a34*/
     v3 = 1; /*0x405a46*/
   else
-    v1[79] = 0; /*0x405a3e*/
-  if ( v1[79] ) /*0x405a4b*/
+    v1->q13C = 0; /*0x405a3e*/
+  if ( v1->q13C ) /*0x405a4b*/
   {
-    v5 = v1[79]; /*0x405a56*/
-    v1[8] = v3; /*0x405a5c*/
+    v5 = v1->q13C; /*0x405a56*/
+    v1->u32_20 = v3; /*0x405a5c*/
     if ( v1[86] ) /*0x405a5f*/
     {
-      v1[80] = v5; /*0x405a69*/
+      v1->u32_140 = v5; /*0x405a69*/
       v1[81] = 0; /*0x405a6f*/
     }
     else
@@ -3900,13 +3900,13 @@ int E4Recv_405A00::sub_405A00()
       (*((unsigned int *)&(v6))) = Audio::Callback(); /*0x405a88*/
       *((unsigned long long *)v1 + 40) = v5 + v6; /*0x405a91*/
     }
-    v1[7] = 2; /*0x405a75*/
-    v1[79] = 0; /*0x405a7c*/
+    v1->u32_1C = 2; /*0x405a75*/
+    v1->q13C = 0; /*0x405a7c*/
     return 0; /*0x405a84*/
   }
   else
   {
-    v1[7] = v3; /*0x405ab0*/
+    v1->u32_1C = v3; /*0x405ab0*/
     return 0; /*0x405ab4*/
   }
 }
@@ -4563,9 +4563,9 @@ int RequestBufferMixer(VolumeStruct* volume, int rate)
 namespace gamemd {
 int SetRateMixerSample(unsigned int * a0, int a2, unsigned int a3, ObjectClass * aP3)
 {
-  a0[4] = a3; /*0x4071ae*/
-  a0[3] = (a2 << 16) / a3; /*0x4071b2*/
-  a0[5] = aP3; /*0x4071b9*/
+  a0->uniqueId = a3; /*0x4071ae*/
+  a0->vtable4 = (a2 << 16) / a3; /*0x4071b2*/
+  a0->abstractFlags = aP3; /*0x4071b9*/
   return aP3; /*0x4071b1*/
 }
 } // namespace gamemd
@@ -5127,12 +5127,12 @@ int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
       memset(v7, 0, 0x3Cu); /*0x408b8b*/
       DListNode::InitEmpty(v7); /*0x408b92*/
       v8 = operator new(Sizea); /*0x408b9c*/
-      v7[4] = v8; /*0x408ba4*/
+      v7->u32_10 = v8; /*0x408ba4*/
       if ( !v8 ) /*0x408ba9*/
         break; /*0x408ba9*/
-      v7[5] = Size; /*0x408baf*/
+      v7->u32_14 = Size; /*0x408baf*/
       v7[7] = a3; /*0x408bc1*/
-      v7[6] = (-1 << Size) & ((unsigned int)v8 + v13 - 1); /*0x408bc8*/
+      v7->u32_18 = (-1 << Size) & ((unsigned int)v8 + v13 - 1); /*0x408bc8*/
       if ( v7 ) /*0x408bcb*/
       {
         InsertBeforeLinkedList(a1 + 1, v7); /*0x408bd2*/
@@ -5140,7 +5140,7 @@ int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
         ++*a1; /*0x408bdd*/
         a1[5] = v7[7] + v9; /*0x408be4*/
         v10 = v12; /*0x408be7*/
-        v7[12] = a1; /*0x408beb*/
+        v7->u32_30 = a1; /*0x408beb*/
         a1[4] &= ~2u; /*0x408bfc*/
         ++v11; /*0x408c01*/
         --v12; /*0x408c05*/
@@ -5188,12 +5188,12 @@ unsigned int * sub_408D80(int a1, int a2)
   memset(v4, 0, 0x3Cu); /*0x408d9a*/
   DListNode::InitEmpty(v4); /*0x408da1*/
   v5 = operator new((1 << a2) + a1); /*0x408db3*/
-  v4[4] = v5; /*0x408dbb*/
+  v4->u32_10 = v5; /*0x408dbb*/
   if ( v5 ) /*0x408dc0*/
   {
-    v4[5] = a2; /*0x408ddf*/
+    v4->u32_14 = a2; /*0x408ddf*/
     v4[7] = a1; /*0x408de4*/
-    v4[6] = (-1 << a2) & ((unsigned int)v5 + (1 << a2) - 1); /*0x408dec*/
+    v4->u32_18 = (-1 << a2) & ((unsigned int)v5 + (1 << a2) - 1); /*0x408dec*/
     return v4; /*0x408dea*/
   }
   else

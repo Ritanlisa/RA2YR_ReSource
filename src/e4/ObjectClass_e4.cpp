@@ -318,16 +318,16 @@ int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, un
   }
   if ( !v5 || !a1 ) /*0x4d9ccf*/
     return 0; /*0x4d9ccf*/
-  if ( *a3 == -1 && (v5[80] & 0x100) != 0 ) /*0x4d9ce8*/
+  if ( *a3 == -1 && (v5->u32_140 & 0x100) != 0 ) /*0x4d9ce8*/
   {
-    *a3 = *((char *)v5 + 283) + 4; /*0x4d9cf4*/
+    *a3 = *(&v5->u32_11B) + 4; /*0x4d9cf4*/
     if ( (*((unsigned int *)a1 + 80) & 0x200) == 0 ) /*0x4d9d00*/
       return 7; /*0x4d9d0b*/
   }
   v10 = *((char *)a1 + 283); /*0x4d9d14*/
   v18 = (int *)(v5[80] & 0x100); /*0x4d9d20*/
   if ( v18 ) /*0x4d9d24*/
-    v11 = *((char *)v5 + 283); /*0x4d9d26*/
+    v11 = v5->u32_11B; /*0x4d9d26*/
   else
     v11 = *a3; /*0x4d9d2f*/
   v12 = v11 - v10; /*0x4d9d32*/
@@ -344,7 +344,7 @@ int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, un
   {
     if ( v12 <= 0 ) /*0x4d9dda*/
     {
-      if ( !*((unsigned char *)v5 + 284) ) /*0x4d9df2*/
+      if ( !v5->u32_11C ) /*0x4d9df2*/
         return 7; /*0x4d9e05*/
     }
     else if ( !*((unsigned char *)a1 + 284) ) /*0x4d9ddc*/
@@ -355,7 +355,7 @@ int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, un
   }
   if ( v14 != 3 ) /*0x4d9d4e*/
     return 7; /*0x4d9d59*/
-  v15 = *((char *)v5 + 283); /*0x4d9d5c*/
+  v15 = v5->u32_11B; /*0x4d9d5c*/
   if ( v15 == v10 - 4 ) /*0x4d9d68*/
   {
     if ( *a3 != v10 ) /*0x4d9d6d*/
@@ -682,7 +682,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   GroundHeight = Cell::GetGroundHeight(v38); /*0x4de23e*/
   if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v38)->flags[0] & 0x100) != 0 ) /*0x4de250*/
     GroundHeight += (int)FootClass_Array.?; /*0x4de25d*/
-  if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3213) && (unsigned __int8)Cell::IsPassable(v38) ) /*0x4de27d*/
+  if ( !*(unsigned char *)(v7->Vt34Thunk() + 3213) && (unsigned __int8)Cell::IsPassable(v38) ) /*0x4de27d*/
     goto LABEL_36; /*0x4de284*/
   v12 = *v7; /*0x4de28c*/
   *(unsigned int *)v34 = *(unsigned int *)v8; /*0x4de293*/
@@ -699,16 +699,16 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   {
     v16 = 7; /*0x4de2da*/
   }
-  if ( (*(unsigned __int8 (**)(unsigned int *))(*v7 + 84))(v7) /*0x4de333*/
-    || *(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3372)
-    || (*(int (**)(unsigned int *))(*v7 + 44))(v7) == 15
+  if ( v7->IsHeightAboveThreshold_0() /*0x4de333*/
+    || *(unsigned char *)(v7->Vt34Thunk() + 3372)
+    || v7->getAltitude() == 15
     && *(unsigned char *)(v7[432] + 3476)
     && !HouseClass::IonSensitivesShouldBeOffline()
-    || (v17 = (*(int (**)(unsigned int *))(*v7 + 44))(v7), LOBYTE(a5) = 0, v17 == 2) )
+    || (v17 = v7->getAltitude(), LOBYTE(a5) = 0, v17 == 2) )
   {
     LOBYTE(a5) = 1; /*0x4de335*/
   }
-  v18 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 188))(v7, 0); /*0x4de33f*/
+  v18 = v7->CheckHeightDiff(0); /*0x4de33f*/
   v19 = v8[1]; /*0x4de345*/
   v36[0] = v18; /*0x4de349*/
   v20 = *v8; /*0x4de34f*/
@@ -721,15 +721,15 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   IsPassable = Cell::IsPassable(v40); /*0x4de3b5*/
   if ( (unsigned char)a4 && v35 == 2 ) /*0x4de3cb*/
   {
-    if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3372) /*0x4de3f7*/
-      || (v22 = (*(int (**)(unsigned int *))(*v7 + 456))(v7), a2 = (unsigned int *)1, v22 >= 0) )
+    if ( !*(unsigned char *)(v7->Vt34Thunk() + 3372) /*0x4de3f7*/
+      || (v22 = v7->GetZAboveGround(), a2 = (unsigned int *)1, v22 >= 0) )
     {
       a2 = 0; /*0x4de3f9*/
     }
     v33 = (char)a2; /*0x4de40e*/
     a4 = 0; /*0x4de41b*/
     v31 = BYTE1(*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8) + 80)) & 1; /*0x4de439*/
-    v29 = *(unsigned int *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 1660); /*0x4de44d*/
+    v29 = *(unsigned int *)(v7->Vt34Thunk() + 1660); /*0x4de44d*/
     v24 = (void **)LayerClass::Pathfinding_Find( /*0x4de450*/
                      &DataGlobal_87F7E8,
                      v23,
@@ -753,7 +753,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   if ( !(unsigned char)a2 /*0x4de4b4*/
     || IsPassable
     || !(unsigned char)a4
-    && (!*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 3284) || v35 == 2)
+    && (!*(unsigned char *)(v7->Vt34Thunk() + 3284) || v35 == 2)
     && (v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8),
         !MapSeed::CheckTileMatch(
            (MapSeed *)&DataGlobal_87F7E8,
@@ -767,7 +767,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
     a4 = 0; /*0x4de4d7*/
     v32 = BYTE1(*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v8) + 80)) & 1; /*0x4de4fc*/
     TileIndex = MapClass::GetTileIndex((MapClass *)&DataGlobal_87F7E8, (__int16 *)(v37 + 36), v16, v36[0]); /*0x4de50b*/
-    v26 = (*(int (**)(unsigned int *))(*v7 + 132))(v7); /*0x4de510*/
+    v26 = v7->Vt34Thunk(); /*0x4de510*/
     v24 = (void **)LayerClass::Pathfinding_Find( /*0x4de528*/
                      &DataGlobal_87F7E8,
                      (int)&a2,
@@ -1524,7 +1524,7 @@ LABEL_41:
           lineTrailer = this->lineTrailer; /*0x5f51c4*/
           v17 = *(unsigned char *)(v15 + 573); /*0x5f51d4*/
           *(unsigned short *)lineTrailer = *(unsigned short *)(v15 + 571); /*0x5f51d7*/
-          lineTrailer[2] = v17; /*0x5f51da*/
+          lineTrailer->ptr_2 = v17; /*0x5f51da*/
         }
         v19 = (*((int (**)(ObjectClass *))this->AbstractClass + 34))(this); /*0x5f51ef*/
         result = ObjectClass::updateMissionState((ObjectClass *)this->lineTrailer, *(unsigned int *)(v19 + 576)); /*0x5f5202*/

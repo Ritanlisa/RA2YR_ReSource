@@ -153,7 +153,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   int v16; // ecx
   int v17; // [esp+Ch] [ebp-8h]
 
-  if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 ) /*0x4c9c85*/
+  if ( (*(int (**)(int))(*&a2->u32_B0))(a2) == 7 ) /*0x4c9c85*/
     BuildingClass::AbandonProduction(); /*0x4c9c89*/
   if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
@@ -324,7 +324,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
       v3->AbstractClass = &FactoryClass::`vftable'; /*0x4ca2c7*/
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2cd) */
-      v3->? = &FactoryClass::`vftable'; /*0x4ca2d4*/
+      v3->vtable3 = &FactoryClass::`vftable'; /*0x4ca2d4*/
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2db) */
     }
     v5 = *v2; /*0x4ca2e2*/

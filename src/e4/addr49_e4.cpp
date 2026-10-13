@@ -246,11 +246,11 @@ int E4Recv_490400::sub_490400()
 
   /* X11: vtable install elided (implicit via ConvertClass virtuals 0x490404) */
   COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 368)); /*0x490416*/
-  v2 = *(void **)((char *)this + 376); /*0x49041b*/
-  *((unsigned int *)this + 92) = 0; /*0x490421*/
+  __3_YAXPAX_Z(*&this->M368); /*0x490416*/
+  v2 = *&this->M376; /*0x49041b*/
+  this->M368 = 0; /*0x490421*/
   __3_YAXPAX_Z(v2); /*0x49042c*/
-  *((unsigned int *)this + 94) = 0; /*0x490434*/
+  this->M376 = 0; /*0x490434*/
   v4 = this; /*0x49044d*/
   result = (*(int (**)(int *, int *))(dword_89ECF8 + 16))(&dword_89ECF8, &v4); /*0x490451*/
   if ( result != -1 && result < dword_89ED08 && result < --dword_89ED08 ) /*0x49046d*/
@@ -6400,15 +6400,15 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result = &this->AbstractClass; /*0x49da60*/
   p_uniqueId = &this->u32_10; /*0x49da66*/
   p_referenceCount = &this->u32_1C; /*0x49da69*/
-  result[1] = 0; /*0x49da6c*/
-  result[2] = 0; /*0x49da6f*/
-  p_uniqueId[1] = 0; /*0x49da72*/
-  p_uniqueId[2] = 0; /*0x49da75*/
+  result->vtable2 = 0; /*0x49da6c*/
+  result->vtable3 = 0; /*0x49da6f*/
+  p_uniqueId->vtable2 = 0; /*0x49da72*/
+  p_uniqueId->vtable3 = 0; /*0x49da75*/
   *p_uniqueId = (int)&GenericNode::`vftable'; /*0x49da78*/
   p_referenceCount[1] = 0; /*0x49da7e*/
   p_referenceCount[2] = 0; /*0x49da81*/
   *p_referenceCount = (int)&GenericNode::`vftable'; /*0x49da84*/
-  result[3] = &GenericList::`vftable'; /*0x49da8d*/
+  result->vtable4 = &GenericList::`vftable'; /*0x49da8d*/
   if ( p_referenceCount ) /*0x49da94*/
   {
     v4 = p_referenceCount[1]; /*0x49da96*/
@@ -6432,12 +6432,12 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
     *(unsigned int *)(v7 + 8) = p_referenceCount; /*0x49dac6*/
   p_uniqueId[1] = (int)p_referenceCount; /*0x49dac9*/
   result[3] = &List<INIClass::INISection *>::`vftable'; /*0x49dacc*/
-  result[10] = 0; /*0x49dad4*/
-  result[11] = 0; /*0x49dad7*/
-  result[12] = 0; /*0x49dada*/
+  result->owningHouseIndex = 0; /*0x49dad4*/
+  result->fallRate = 0; /*0x49dad7*/
+  result->nextObject = 0; /*0x49dada*/
   result->attachedTag = 0; /*0x49dadd*/
-  result[14] = 0; /*0x49dae0*/
-  result[15] = 0; /*0x49dae4*/
+  result->attachedBomb = 0; /*0x49dae0*/
+  result->ambientSoundController = 0; /*0x49dae4*/
   result->q040 = 0; /*0x49dae7*/
   *result = &CCINIClass_Vtable; /*0x49daea*/
   result->q060 = 0; /*0x49daf0*/

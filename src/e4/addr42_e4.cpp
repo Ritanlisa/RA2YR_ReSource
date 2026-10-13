@@ -232,10 +232,10 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v51 = dword_886FA4 + v6; /*0x420fd2*/
         v7 = ClipRectIntersection(v70, (int *)&v50, v54, 0, 0); /*0x420fe2*/
         v68[0] = *v7; /*0x420fe9*/
-        v68[1] = v7[1]; /*0x420ff7*/
-        v68[2] = v7[2]; /*0x421001*/
+        v68[1] = v7->vtable2; /*0x420ff7*/
+        v68[2] = v7->vtable3; /*0x421001*/
         v8 = v3[1]; /*0x421008*/
-        v9 = v7[3]; /*0x42100b*/
+        v9 = v7->vtable4; /*0x42100b*/
         v10 = *v3; /*0x42100e*/
         v68[3] = v9; /*0x421010*/
         v63 = v8; /*0x42101b*/
@@ -245,9 +245,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v11 = ClipRectIntersection(v71, v68, &v62, 0, 0); /*0x42104d*/
         v12 = *v11; /*0x42104f*/
         v55 = *v11; /*0x421051*/
-        v13 = v11[1]; /*0x421055*/
-        v14 = v11[2]; /*0x421058*/
-        v15 = v11[3]; /*0x42105d*/
+        v13 = v11->vtable2; /*0x421055*/
+        v14 = v11->vtable3; /*0x421058*/
+        v15 = v11->vtable4; /*0x42105d*/
         v56 = v14; /*0x421060*/
         v57 = v15; /*0x421064*/
         if ( v14 > 0 && v15 > 0 ) /*0x421070*/
@@ -261,9 +261,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           FoundationSize = Building::GetFoundationSize(v72, 0); /*0x4210b6*/
           v41 = v13; /*0x4210b8*/
           v20 = *FoundationSize; /*0x4210bc*/
-          v66 = FoundationSize[1]; /*0x4210c1*/
-          v21 = FoundationSize[2]; /*0x4210c8*/
-          v67 = FoundationSize[3]; /*0x4210ce*/
+          v66 = FoundationSize->vtable2; /*0x4210c1*/
+          v21 = FoundationSize->vtable3; /*0x4210c8*/
+          v67 = FoundationSize->vtable4; /*0x4210ce*/
           if ( v13 <= v58 + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
           v60 = v41 - v58 - v66; /*0x4210fd*/
@@ -343,8 +343,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
                     *v25 = (uint8_t)byte_88A118[256 * v45 + (uint16_t)*v25]; /*0x42126a*/
                     v26 = dword_87E8A4; /*0x42126d*/
                   }
-                  if ( (unsigned int)++v25 >= v26[7] ) /*0x42127b*/
-                    v25 = (unsigned short *)((char *)v25 - v26[8]); /*0x42127d*/
+                  if ( (unsigned int)++v25 >= v26->u32_1C ) /*0x42127b*/
+                    v25 = (unsigned short *)((char *)v25 - v26->u32_20); /*0x42127d*/
                   --v30; /*0x421280*/
                 }
                 while ( v30 ); /*0x421281*/
@@ -353,8 +353,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
               v27 += v48; /*0x42128b*/
               v28 += v43; /*0x421291*/
               v25 += v47; /*0x421297*/
-              if ( (unsigned int)v25 >= v26[7] ) /*0x42129f*/
-                v25 = (unsigned short *)((char *)v25 - v26[8]); /*0x4212a1*/
+              if ( (unsigned int)v25 >= v26->u32_1C ) /*0x42129f*/
+                v25 = (unsigned short *)((char *)v25 - v26->u32_20); /*0x4212a1*/
               --v38; /*0x4212a9*/
             }
             while ( v38 ); /*0x4212ad*/
@@ -524,8 +524,8 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
         }
         location = this->location; /*0x424e9b*/
         v18 = *location; /*0x424ea7*/
-        v19 = location[1]; /*0x424eae*/
-        v20 = location[2]; /*0x424eba*/
+        v19 = location->Y; /*0x424eae*/
+        v20 = location->Z; /*0x424eba*/
         PlaySoundEffectAt( /*0x424ed1*/
           &v18,
           *&dword_8871E0->q568,
@@ -534,7 +534,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
           0,
           0);
         House::AnnounceUpgrade((int)v5, -1); /*0x424eda*/
-        p_smudgeTypeIndex = (__int16 *)&v5->smudgeTypeIndex; /*0x424edf*/
+        p_smudgeTypeIndex = &v5->u32_568; /*0x424edf*/
         Cell::SetRadar((Cell *)&dword_87F7E8, p_smudgeTypeIndex); /*0x424ee8*/
         Radar::Update((Radar *)&dword_87F7E8, p_smudgeTypeIndex); /*0x424ef3*/
       }
@@ -732,8 +732,8 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
       if ( (self->u8_1AA) ) /*0x425b61*/
         goto LABEL_47; /*0x425b69*/
       v37 = Building::ComputePosition((Building *)self, &v54); /*0x425b7b*/
-      v38 = v37[1]; /*0x425b7f*/
-      v39 = v37[2]; /*0x425b82*/
+      v38 = v37->vtable2; /*0x425b7f*/
+      v39 = v37->vtable3; /*0x425b82*/
       if ( *v37 == Map_InvalidCoord_X && v38 == Map_InvalidCoord_Y && v39 == Map_InvalidCoord_Z ) /*0x425b9d*/
       {
         *v4 = Map_InvalidCoord_X; /*0x425bad*/
@@ -767,8 +767,8 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
     v56 = self->animation[6]; /*0x425709*/
     v8 = ((Coord *)((Coord *)&v51))->Subtract(v6 - v54, v47, 0); /*0x425718*/
     v54 = *v8; /*0x42571f*/
-    v55 = v8[1]; /*0x42572a*/
-    v56 = v8[2]; /*0x425731*/
+    v55 = v8->u32_4; /*0x42572a*/
+    v56 = v8->u32_8; /*0x425731*/
     if ( (int)((Coord *)((Coord *)&v54))->Length() > 18 ) /*0x42573d*/
     {
       v54 = *location; /*0x4258f3*/
@@ -806,8 +806,8 @@ int ObjectClass::ConstructionPositionTracker(TechnoClass *self)
       v9 = Building::ComputePosition((Building *)self, &v54); /*0x425758*/
       v10 = *v9; /*0x42575d*/
       v51 = *v9; /*0x425765*/
-      v52 = v9[1]; /*0x42576c*/
-      v53 = v9[2]; /*0x425773*/
+      v52 = v9->vtable2; /*0x42576c*/
+      v53 = v9->vtable3; /*0x425773*/
       v11 = (Coord::To_Cell((Coord *)&dword_87F7E8, &self->animation[4])->landType == 2 /*0x4257ab*/
           || Coord::To_Cell((Coord *)&dword_87F7E8, &self->animation[4])->landType == 6)
          && (*(int (**)(TechnoClass *))(self->vfptr + 456))(self) <= Map_CellHeight;
@@ -1566,13 +1566,13 @@ int sub_42B080(short * a1, int a2)
     do /*0x42b18f*/
     {
       (*((unsigned short *)&(v11))) = v4 + *v2; /*0x42b0dc*/
-      (*(((unsigned short *)&(v11)) + 1)) = v10 + v2[1]; /*0x42b0e5*/
+      (*(((unsigned short *)&(v11)) + 1)) = v10 + v2->q002_; /*0x42b0e5*/
       a1 = v11; /*0x42b0f4*/
       v5 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x42b0fd*/
-      if ( (v5[80] & 0x100) != 0 && (v6 = *((char *)v5 + 283) - a2, (int)(((*(((unsigned int *)&(v6)) + 1)) ^ v6) - (*(((unsigned int *)&(v6)) + 1))) > 2) ) /*0x42b11d*/
-        v7 = v5[58]; /*0x42b11f*/
+      if ( (v5->u32_140 & 0x100) != 0 && (v6 = *(&v5->u32_11B) - a2, (int)(((*(((unsigned int *)&(v6)) + 1)) ^ v6) - (*(((unsigned int *)&(v6)) + 1))) > 2) ) /*0x42b11d*/
+        v7 = v5->q0E8; /*0x42b11f*/
       else
-        v7 = v5[57]; /*0x42b127*/
+        v7 = v5->u32_E4; /*0x42b127*/
       if ( v7 ) /*0x42b12f*/
       {
         while ( 1 ) /*0x42b137*/
@@ -1806,7 +1806,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
       }
       v26 = 1; /*0x42b5f5*/
       if ( !(*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*a1 + 428))(a1, v25, v51, v24, 0, 1) /*0x42b5c2*/
-        && (v25[80] & 0x40000) == 0 )
+        && (v25->u32_140 & 0x40000) == 0 )
       {
         TileDataCellClass = CellClass::GetTileData((int16_t *)&v49, v57); /*0x42b5d8*/
         if ( (double)TileDataCellClass * v60 < 1.0 ) /*0x42b5ef*/
@@ -1819,7 +1819,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
       (*(((unsigned short *)&(v55)) + 1)) = v28; /*0x42b61b*/
       v50 = v55; /*0x42b624*/
       v25 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50); /*0x42b633*/
-      v29 = *((char *)v25 + 283); /*0x42b635*/
+      v29 = v25->u32_11B; /*0x42b635*/
       if ( v24 - v29 == 4 ) /*0x42b641*/
       {
         v24 = v29 + 4; /*0x42b649*/
@@ -2016,7 +2016,7 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
   v15 = a5; /*0x42beb7*/
   v30 = v14 - v29; /*0x42bebf*/
   v39 = LocomotionClass::GetSpeedMultiplier(a5); /*0x42bec8*/
-  v37 = v15[135]; /*0x42bedd*/
+  v37 = v15->q21C; /*0x42bedd*/
   while ( 1 ) /*0x42beed*/
   {
     v16 = v29; /*0x42beed*/
@@ -2052,11 +2052,11 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
       v21 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42bf6c*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((int16_t *)&a5, v37) * v39 >= 0.01 ) /*0x42bfa1*/
         ++v31; /*0x42bfa3*/
-      v18 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v15 + 428))(v15, v21, v32, v17, 0, 1) /*0x42bfe5*/
-         || (v21[80] & 0x40000) != 0
+      v18 = v15->vt_slot_428(v21, v32, v17, 0, 1) /*0x42bfe5*/
+         || (v21->u32_140 & 0x40000) != 0
          || v31 > 3
          || !a7 && v31 > 0;
-      v22 = *((char *)v21 + 283); /*0x42bfe7*/
+      v22 = v21->u32_11B; /*0x42bfe7*/
       --v16; /*0x42bff0*/
       if ( v17 - v22 == 4 ) /*0x42bff4*/
       {
@@ -2080,13 +2080,13 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
       v24 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42c070*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData((int16_t *)&a5, v37) * v39 >= 0.01 ) /*0x42c0a5*/
         ++v31; /*0x42c0a7*/
-      v18 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v15 + 428))(v15, v24, v33, v17, 0, 1) /*0x42c0e9*/
-         || (v24[80] & 0x40000) != 0
+      v18 = v15->vt_slot_428(v24, v33, v17, 0, 1) /*0x42c0e9*/
+         || (v24->u32_140 & 0x40000) != 0
          || v31 > 3
          || !a7 && v31 > 0;
       --v34; /*0x42c0eb*/
-      v25 = *((char *)v24 + 283); /*0x42c0ef*/
-      if ( v17 - v25 != 4 || (v17 = v25 + 4, (v24[80] & 0x100) == 0) ) /*0x42c109*/
+      v25 = v24->u32_11B; /*0x42c0ef*/
+      if ( v17 - v25 != 4 || (v17 = v25 + 4, (v24->u32_140 & 0x100) == 0) ) /*0x42c109*/
         v17 = *((char *)v24 + 283); /*0x42c10b*/
       if ( v34 <= 0 ) /*0x42c113*/
         goto LABEL_47; /*0x42c113*/
@@ -2163,11 +2163,11 @@ void * ObjectClass::FindPathWithRetry(short * a2, int aP4, int a5, int a6, int a
   else
     aP6 = aP3; /*0x42c993*/
   v14 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(a2); /*0x42c9b7*/
-  v15 = ((MapClass *)((MapClass *)&DataGlobal_87F7E8))->GetTileIndex(a2, aP6, (((unsigned char *)&(v14[80]))[1]) & 1); /*0x42c9d7*/
+  v15 = ((MapClass *)((MapClass *)&DataGlobal_87F7E8))->GetTileIndex(a2, aP6, (v14->q141) & 1); /*0x42c9d7*/
   v15 = v15; /*0x42c9e0*/
   (*((unsigned char *)&(v15))) = aP4[140]; /*0x42c9e4*/
   *(unsigned int *)v29 = *Pathfinding::CrossBridge(&aP6, (int)v30, v15); /*0x42ca01*/
-  v16 = v12[80] >> 8; /*0x42ca0b*/
+  v16 = v12->u32_140 >> 8; /*0x42ca0b*/
   (*((unsigned char *)&(v16))) = v16 & 1; /*0x42ca0e*/
   *(unsigned int *)v28 = *Pathfinding::CrossBridge(&aP6, (int)v12, v16); /*0x42ca23*/
   if ( aP3 == -1 ) /*0x42ca27*/
@@ -2224,7 +2224,7 @@ void * ObjectClass::FindPathWithRetry(short * a2, int aP4, int a5, int a6, int a
     v30 = result; /*0x42cc09*/
     if ( result || !(unsigned char)aP6 ) /*0x42cc19*/
       break; /*0x42cc19*/
-    v24 = abs32(this[1] - a2[1]); /*0x42cc31*/
+    v24 = abs32(this[1] - a2->ptr_2); /*0x42cc31*/
     v25 = *this - *a2; /*0x42cc38*/
     v26 = ((*(((unsigned int *)&(v25)) + 1)) ^ v25) - (*(((unsigned int *)&(v25)) + 1)); /*0x42cc3b*/
     if ( v26 <= v24 ) /*0x42cc3f*/
@@ -3192,22 +3192,22 @@ void AnimFile::sub_4266D0()
   /* X11: vtable install elided (implicit via AnimFile virtuals 0x4266dc) */
   if ( v2 ) /*0x4266e4*/
   {
-    (*(void (**)(unsigned int))(**((unsigned int **)this + 33) + 52))(*((unsigned int *)this + 33)); /*0x4266ee*/
-    *((unsigned char *)this + 137) = 0; /*0x4266f1*/
+    (*(void (**)(unsigned int))(*this->u32_343) + 52))(this->u32_84); /*0x4266ee*/
+    this->u32_89 = 0; /*0x4266f1*/
   }
-  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 899); /*0x4266f7*/
-  *((unsigned int *)this + 33) = 0; /*0x4266fd*/
+  v3 = (void (***)(unsigned int, int))this->u32_E0C; /*0x4266f7*/
+  this->u32_84 = 0; /*0x4266fd*/
   if ( v3 ) /*0x426705*/
   {
     (**v3)(v3, 1); /*0x42670b*/
-    *((unsigned int *)this + 899) = 0; /*0x42670d*/
+    this->u32_E0C = 0; /*0x42670d*/
   }
-  if ( *((unsigned int *)this + 900) ) /*0x426713*/
+  if ( this->u32_E10 ) /*0x426713*/
   {
-    __3_YAXPAX_Z(*((void **)this + 900)); /*0x42671e*/
-    *((unsigned int *)this + 900) = 0; /*0x426726*/
+    __3_YAXPAX_Z(this->u32_E0C0)); /*0x42671e*/
+    this->u32_E10 = 0; /*0x426726*/
   }
-  *((unsigned char *)this + 136) = 0; /*0x42672c*/
+  this->u32_88 = 0; /*0x42672c*/
   *(unsigned int *)this->__pad_0 = &Animate::`vftable'; /*0x426732*/
 
 }

@@ -92,7 +92,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   LABEL_10:
       Base = 0; /*0x6f1a84*/
   LABEL_11:
-    result = (*(int (**)(unsigned int *, INIClass *))(*Base + 100))(Base, a1); /*0x6f1a86*/
+    result = Base->LoadFromINI_15(a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
   return (gamemd::TeamTypeClass **)(result);

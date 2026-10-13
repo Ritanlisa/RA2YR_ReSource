@@ -208,8 +208,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     (*((unsigned short *)&(v26))) = Math::RoundToInt(a3); /*0x5b22e1*/
     v78 = (((unsigned long)(unsigned int)((*(((unsigned int *)&(v92)) + 1)) + a2->vtable2)) | ((unsigned long)(unsigned int)(v26 + a2->vtable3) << 32)); /*0x5b22f9*/
     v27 = ((Coord *)((Coord *)&v92))->Subtract(*(unsigned int *)a2->vtable1 + v24, v78, (*((signed int *)(((unsigned char *)&(v78)) + 4)))); /*0x5b22ff*/
-    v28 = v27[1]; /*0x5b2308*/
-    v29 = v27[2]; /*0x5b230b*/
+    v28 = v27->u32_4; /*0x5b2308*/
+    v29 = v27->u32_8; /*0x5b230b*/
     *(unsigned int *)a2->vtable1 = *v27; /*0x5b230e*/
     a2->vtable2 = v28; /*0x5b2310*/
     a2->vtable3 = v29; /*0x5b2313*/
@@ -255,8 +255,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
           *(unsigned int *)a2->vtable1 + v33,
           a2->vtable2 + (*(((unsigned int *)&(v92)) + 1)),
           a2->vtable3 + v35);
-  v37 = v36[1]; /*0x5b23b2*/
-  v38 = v36[2]; /*0x5b23b5*/
+  v37 = v36->u32_4; /*0x5b23b2*/
+  v38 = v36->u32_8; /*0x5b23b5*/
   *(unsigned int *)a2->vtable1 = *v36; /*0x5b23b8*/
   a2->vtable2 = v37; /*0x5b23be*/
   a2->vtable3 = v38; /*0x5b23c4*/
@@ -400,8 +400,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
   v62 = (double *)Coord::Subtract( /*0x5b26b9*/
                     (Coord *)v87,
                     *(unsigned int *)a2->vtable1 + *v61,
-                    a2->vtable2 + v61[1],
-                    a2->vtable3 + v61[2]);
+                    a2->vtable2 + v61->u32_4,
+                    a2->vtable3 + v61->u32_8);
   v90 = *v62; /*0x5b26c0*/
   (*((unsigned int *)&(v91))) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/

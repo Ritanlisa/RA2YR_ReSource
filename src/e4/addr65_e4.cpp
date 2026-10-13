@@ -1094,12 +1094,12 @@ AbstractClass * * UpdateProjectileTrails()
         *(unsigned int *)Block = 0; /*0x659333*/
         v16 = (unsigned int *)(Block); /*0x659335*/
       }
-      v18 = v16[1]; /*0x659339*/
+      v18 = v16->vtable2; /*0x659339*/
       if ( v18
-        && (*(unsigned char *)(v18 + 20) & 1) != 0
-        && *(unsigned int **)((*(unsigned char *)(v18 + 20) & 1) != 0 ? v18 + 0x510 : 1296) == v16 )
+        && (v18->__pad_014 & 1) != 0
+        && *(unsigned int **)((v18->__pad_014 & 1) != 0 ? v18 + 0x510 : 1296) == v16 )
       {
-        *(unsigned int *)((*(unsigned char *)(v18 + 20) & 1) != 0 ? v18 + 0x510 : 1296) = 0;
+        *(unsigned int *)((v18->__pad_014 & 1) != 0 ? v18 + 0x510 : 1296) = 0;
         *((unsigned int *)Block + 1) = 0; /*0x659380*/
       }
       v19 = (*(int (**)(int *, void **))(RadBeam_Array + 16))(&RadBeam_Array, &Block); /*0x659393*/
@@ -1311,12 +1311,12 @@ void * RAMFileClass::nullsub_0_10(char a2)
 
   v3 = this->u32_1D; /*0x65c5a3*/
   /* X11: vtable install elided (implicit via RAMFileClass virtuals 0x65c5a6) */
-  *((unsigned char *)this + 28) = 0; /*0x65c5ae*/
+  this->u32_1C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
     __3_YAXPAX_Z(this->RAMFileClass_field_0x8); /*0x65c5b8*/
     this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
-    *((unsigned char *)this + 29) = 0; /*0x65c5c7*/
+    this->u32_1D = 0; /*0x65c5c7*/
   }
   *(unsigned int *)this->__pad_0 = &FileClass::`vftable'; /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
@@ -1644,7 +1644,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         if ( v26 <= 2 ) /*0x65daa5*/
         {
           CellClass::AddObject((CellClass *)&v16[1].bombVisible, v22); /*0x65dadd*/
-          (*(void (**)(unsigned int *))(*v22 + 284))(v22); /*0x65dae6*/
+          v22->vt_slot_284(); /*0x65dae6*/
           (*((void (**)(ObjectClass *, int, unsigned int))v16->vfptr + 122))(v16, 16, 0); /*0x65daf4*/
           ++v23; /*0x65dafa*/
           goto LABEL_41; /*0x65dafb*/
@@ -1666,7 +1666,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   LABEL_39:
           if ( v22 ) /*0x65daff*/
   LABEL_40:
-            (*(void (**)(unsigned int *, int))(*v22 + 32))(v22, 1); /*0x65db01*/
+            v22->vt_slot_32(1); /*0x65db01*/
         }
   LABEL_41:
         if ( !v22 ) /*0x65db0c*/
@@ -1824,7 +1824,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   v7 = aP1; /*0x65e035*/
   if ( aP1 ) /*0x65e037*/
   {
-    while ( !memcmp((const void *)((*(int (**)(unsigned int *))(*v7 + 132))(v7) + 844), &stru_7E9A50, 0x10u) ) /*0x65e057*/
+    while ( !memcmp((const void *)(v7->COMStub_Return0_33() + 844), &stru_7E9A50, 0x10u) ) /*0x65e057*/
     {
       v7 = v7->nextObject; /*0x65e059*/
       if ( !v7 ) /*0x65e05e*/
@@ -1877,7 +1877,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
     v52 = v9; /*0x65e0bd*/
   }
   v13 = v5->nextObject; /*0x65e128*/
-  v5[12] = 0; /*0x65e12b*/
+  v5->nextObject = 0; /*0x65e12b*/
   v14 = 0; /*0x65e132*/
   v49 = v10; /*0x65e13b*/
   v50 = v13; /*0x65e13f*/
@@ -1917,16 +1917,16 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v19 = *v5; /*0x65e216*/
         v20 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e225*/
         v5->vt_slot_1152(v20, 1); /*0x65e22d*/
-        if ( !v5[413] ) /*0x65e23d*/
+        if ( !v5->u32_674 ) /*0x65e23d*/
           sub_7DC720(-2147467261); /*0x65e260*/
         (*(void (__stdcall **)(unsigned int, int, int, unsigned int))(*v5->u32_674 + 68))( /*0x65e27b*/
-          v5[413],
+          v5->u32_674,
           ((int16_t)v49 << 8) + 128,
           ((*((signed short *)(((unsigned char *)&(v49)) + 2))) << 8) + 128,
           0);
-        (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*v5 + 1160))(v5, 0, 0, 0, 0, 0); /*0x65e28d*/
+        v5->vt_slot_1160(0, 0, 0, 0, 0); /*0x65e28d*/
         v58[0] = v5[39]; /*0x65e29d*/
-        v21 = v5[152]; /*0x65e2a1*/
+        v21 = v5->q260; /*0x65e2a1*/
         v58[1] = v5[40]; /*0x65e2ad*/
         v58[2] = v5[41]; /*0x65e2c1*/
         MapClass::RevealArea2(v58, 0, v21 + 3, 0); /*0x65e2c5*/
@@ -1936,8 +1936,8 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         (*((unsigned char *)&(aP1_4))) = 1; /*0x65e447*/
         if ( v5->vt_slot_44() != 2 ) /*0x65e455*/
         {
-          (*(void (**)(unsigned int *, int, unsigned int))(*v5 + 488))(v5, 5, 0); /*0x65e460*/
-          (*(void (**)(unsigned int *))(*v5 + 492))(v5); /*0x65e46b*/
+          v5->vt_slot_488(5, 0); /*0x65e460*/
+          v5->vt_slot_492(); /*0x65e46b*/
         }
         if ( (unsigned char)v48 ) /*0x65e477*/
         {
@@ -1975,8 +1975,8 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v22 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e2ee*/
         Coords = CellClass::GetCoords(v22, v61); /*0x65e2f5*/
         v24 = *Coords; /*0x65e2fa*/
-        v25 = Coords[1]; /*0x65e2fc*/
-        v26 = Coords[2]; /*0x65e2ff*/
+        v25 = Coords->vtable2; /*0x65e2fc*/
+        v26 = Coords->vtable3; /*0x65e2ff*/
         v59[1] = v25; /*0x65e302*/
         v27 = *v5; /*0x65e306*/
         v59[2] = v26 - 400; /*0x65e312*/
@@ -1987,7 +1987,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
                        (uint8_t)(((v17 >> 7) + 1) >> 1));
         if ( !(unsigned char)a2 ) /*0x65e339*/
           goto LABEL_39; /*0x65e339*/
-        v28 = (*(int (**)(unsigned int *))(*v5 + 464))(v5); /*0x65e344*/
+        v28 = v5->GetMember41(); /*0x65e344*/
         v60[0] = v5[39]; /*0x65e35b*/
         v60[1] = v5[40]; /*0x65e367*/
         v29 = *v5; /*0x65e36b*/
@@ -1996,11 +1996,11 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v30 = *v5; /*0x65e37f*/
         v31 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e38e*/
         v5->vt_slot_1152(v31, 1); /*0x65e396*/
-        (*(void (**)(unsigned int *, unsigned int, int))(*v5 + 1348))(v5, 0, 1072693248); /*0x65e3a8*/
-        if ( !v5[413] ) /*0x65e3b8*/
+        v5->vt_slot_1348(0, 1072693248); /*0x65e3a8*/
+        if ( !v5->u32_674 ) /*0x65e3b8*/
           sub_7DC720(-2147467261); /*0x65e3db*/
         (*(void (__stdcall **)(unsigned int, int, int, unsigned int))(*v5->u32_674 + 68))( /*0x65e3f6*/
-          v5[413],
+          v5->u32_674,
           ((int16_t)v49 << 8) + 128,
           ((*((signed short *)(((unsigned char *)&(v49)) + 2))) << 8) + 128,
           0);
@@ -2039,7 +2039,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         {
           v49 = dword_B04C38; /*0x65e5a0*/
   LABEL_45:
-          (*(void (**)(unsigned int *, int))(*v5 + 32))(v5, 1); /*0x65e5a4*/
+          v5->CreateInstance_0(1); /*0x65e5a4*/
           goto LABEL_46; /*0x65e5ab*/
         }
       }
@@ -2050,7 +2050,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
     }
   }
   if ( v5 ) /*0x65e603*/
-    (*(void (**)(unsigned int *, int))(*v5 + 32))(v5, 1); /*0x65e60c*/
+    v5->CreateInstance_0(1); /*0x65e60c*/
   LABEL_53:
   if ( v13 ) /*0x65e61a*/
   {
@@ -2058,9 +2058,9 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
     {
       v46 = v13->nextObject; /*0x65e622*/
       v50 = v46; /*0x65e62a*/
-      v13[12] = 0; /*0x65e630*/
+      v13->nextObject = 0; /*0x65e630*/
       if ( v13 ) /*0x65e636*/
-        (*(void (**)(unsigned int *, int))(*v13 + 32))(v13, 1); /*0x65e63c*/
+        v13->CreateInstance_0(1); /*0x65e63c*/
       if ( !v46 ) /*0x65e641*/
         break; /*0x65e641*/
       v13 = v50; /*0x65e61e*/
@@ -2496,8 +2496,8 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         v22 = ObjectPlacement::CalcPosition(v16, (int *)&v49[132], v21, 0, 0, 0); /*0x65efa6*/
       }
       v14 = *v22; /*0x65efbc*/
-      v15 = v22[1]; /*0x65efbe*/
-      *(unsigned int *)&v49[84] = v22[2]; /*0x65efc9*/
+      v15 = v22->vtable2; /*0x65efbe*/
+      *(unsigned int *)&v49[84] = v22->vtable3; /*0x65efc9*/
       ++*(unsigned int *)v49; /*0x65efcd*/
     }
     *(unsigned int *)&v49[12] = v14; /*0x65efe0*/

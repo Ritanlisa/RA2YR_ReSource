@@ -241,7 +241,7 @@ int MapClass::SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2)
 
   v4 = aP1; /*0x4a95a2*/
   LOWORD(result) = *aP1; /*0x4a95aa*/
-  if ( *aP1 != *(unsigned short *)&stru_8A0390.bombVisible || aP1[1] != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
+  if ( *aP1 != *(unsigned short *)&stru_8A0390.bombVisible || aP1->q002_ != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
   {
     v6 = *&this->q117C; /*0x4a95c4*/
     v7 = (char)a2; /*0x4a95ca*/
@@ -258,11 +258,11 @@ int MapClass::SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2)
       if ( (unsigned char)result ) /*0x4a9611*/
       {
         result = (int)CellCoord::To_CellObj((CellCoord *)this, (__int16 *)&aP1); /*0x4a961a*/
-        v10 = result->u32_12C; /*0x4a961f*/
+        v10 = result->copyFlags; /*0x4a961f*/
         if ( v7 ) /*0x4a9627*/
-          result->u32_12C = v10 | 2; /*0x4a962c*/
+          result->copyFlags = v10 | 2; /*0x4a962c*/
         else
-          result->u32_12C = v10 & 0xFFFFFFFD; /*0x4a9637*/
+          result->copyFlags = v10 & 0xFFFFFFFD; /*0x4a9637*/
       }
     }
   }
@@ -604,25 +604,25 @@ void* MapClass::Destruct()
   Map_Destroy(); /*0x5652d0*/
   BuildingClass::FreeUpgradeQueue(); /*0x5652d5*/
   BuildingClass::FreeUpgradeQueue2(); /*0x5652da*/
-  if ( *((unsigned int *)this + 26) ) /*0x5652df*/
+  if ( this->somecount_4C ) /*0x5652df*/
   {
-    __3_YAXPAX_Z(*((void **)this + 26)); /*0x5652e9*/
-    *((unsigned int *)this + 26) = 0; /*0x5652f1*/
+    __3_YAXPAX_Z(*((void **)&this->q002_6)); /*0x5652e9*/
+    this->somecount_4C = 0; /*0x5652f1*/
   }
-  v2 = (unsigned int *)*((unsigned int *)this + 5); /*0x5652f6*/
+  v2 = (unsigned int *)this->q014; /*0x5652f6*/
   if ( v2 ) /*0x5652fb*/
   {
     if ( *v2 ) /*0x5652fd*/
       (**(void (***)(unsigned int, int))*v2)(*v2, 3); /*0x565307*/
     __3_YAXPAX_Z(v2); /*0x56530a*/
-    *((unsigned int *)this + 5) = 0; /*0x565312*/
+    this->q014 = 0; /*0x565312*/
   }
-  if ( *((unsigned int *)this + 28) ) /*0x565315*/
+  if ( this->__pad_070 ) /*0x565315*/
   {
-    __3_YAXPAX_Z(*((void **)this + 28)); /*0x56531d*/
-    *((unsigned int *)this + 28) = 0; /*0x565325*/
+    __3_YAXPAX_Z(this->u32_708)); /*0x56531d*/
+    this->__pad_070 = 0; /*0x565325*/
   }
-  v3 = (unsigned int **)((unsigned char *)this + 128); /*0x565328*/
+  v3 = &this->q080; /*0x565328*/
   v12 = 3; /*0x56532e*/
   do /*0x565361*/
   {
@@ -638,8 +638,8 @@ void* MapClass::Destruct()
     --v12; /*0x56535d*/
   }
   while ( v12 ); /*0x565361*/
-  v5 = (void *)*((unsigned int *)this + 1112); /*0x565363*/
-  *((unsigned int *)this + 1111) = &VectorClass<Cell>::`vftable'; /*0x565370*/
+  v5 = (void *)this->u32_1160; /*0x565363*/
+  this->u32_115C = &VectorClass<Cell>::`vftable'; /*0x565370*/
   if ( v5 && this->u32_1169 ) /*0x565378*/
   {
     __3_YAXPAX_Z(v5); /*0x565381*/
@@ -649,15 +649,15 @@ void* MapClass::Destruct()
   this->u32_1164 = 0; /*0x565395*/
   v6 = (void *)this->__pad_13C; /*0x56539b*/
   this->MaxLevel = &VectorClass<CellClass *>::`vftable'; /*0x5653a1*/
-  if ( v6 && *((unsigned char *)this + 325) ) /*0x5653af*/
+  if ( v6 && this->u32_145 ) /*0x5653af*/
   {
     __3_YAXPAX_Z(v6); /*0x5653b8*/
-    *((unsigned int *)this + 79) = 0; /*0x5653c0*/
+    this->__pad_13C = 0; /*0x5653c0*/
   }
-  *((unsigned char *)this + 325) = 0; /*0x5653c6*/
-  *((unsigned int *)this + 80) = 0; /*0x5653cc*/
-  v7 = (void *)*((unsigned int *)this + 54); /*0x5653d2*/
-  *((unsigned int *)this + 53) = &VectorClass<Cell>::`vftable'; /*0x5653d8*/
+  this->u32_145 = 0; /*0x5653c6*/
+  this->q140 = 0; /*0x5653cc*/
+  v7 = (void *)this->u32_D8; /*0x5653d2*/
+  this->u32_D4 = &VectorClass<Cell>::`vftable'; /*0x5653d8*/
   if ( v7 && this->u32_E1 ) /*0x5653e2*/
   {
     __3_YAXPAX_Z(v7); /*0x5653eb*/
@@ -672,18 +672,18 @@ void* MapClass::Destruct()
     v10 = (void *)*((unsigned int *)v8 - 5); /*0x565410*/
     v8 -= 24; /*0x565413*/
     *(unsigned int *)v8 = &VectorClass<SubzoneTrackingStruct>::`vftable'; /*0x565418*/
-    if ( v10 && v8[13] ) /*0x565420*/
+    if ( v10 && v8->u8_D ) /*0x565420*/
     {
       SubzoneConnectionVector::Destruct(v10, 3); /*0x56542b*/
-      *((unsigned int *)v8 + 1) = 0; /*0x565430*/
+      v8->u32_4 = 0; /*0x565430*/
     }
     --v9; /*0x565433*/
-    v8[13] = 0; /*0x565434*/
-    *((unsigned int *)v8 + 2) = 0; /*0x565437*/
+    v8->u8_D = 0; /*0x565434*/
+    v8->u32_8 = 0; /*0x565437*/
   }
   while ( v9 ); /*0x56543a*/
-  v11 = (void *)*((unsigned int *)this + 21); /*0x56543c*/
-  *((unsigned int *)this + 20) = &VectorClass<ZoneConnectionClass>::`vftable'; /*0x565442*/
+  v11 = (void *)this->__pad_054; /*0x56543c*/
+  this->ptr_50 = &VectorClass<ZoneConnectionClass>::`vftable'; /*0x565442*/
   if ( v11 && this->u32_5D ) /*0x56544c*/
   {
     __3_YAXPAX_Z(v11); /*0x565452*/
@@ -1174,20 +1174,20 @@ LABEL_22:
         }
         v32 = *((__int16 *)v29 + 18); /*0x5677bf*/
         v33 = (void *)*((__int16 *)v29 + 19); /*0x5677c3*/
-        v29[80] &= ~0x40u; /*0x5677cc*/
+        v29->flags &= ~0x40u; /*0x5677cc*/
         if ( !v56 ) /*0x5677d2*/
         {
 LABEL_54:
           if ( aP1 ) /*0x567827*/
           {
-            v35 = v29[80]; /*0x567829*/
-            if ( ((v35 & 1) == 0 || (v35 & 2) == 0) && (v29[75] & 8) != 0 ) /*0x56783e*/
+            v35 = v29->flags; /*0x567829*/
+            if ( ((v35 & 1) == 0 || (v35 & 2) == 0) && (v29->copyFlags & 8) != 0 ) /*0x56783e*/
               DisplayClass::ProcessCellReveal((DisplayClass *)&DataGlobal_87F7E8, v47, (int)aP1); /*0x56784f*/
           }
           else
           {
-            v36 = v29[75]; /*0x567856*/
-            if ( (v36 & 8) == 0 || (v36 & 0x10) == 0 || (v37 = v29[80], (v37 & 1) == 0) || (v37 & 2) == 0 ) /*0x567870*/
+            v36 = v29->copyFlags; /*0x567856*/
+            if ( (v36 & 8) == 0 || (v36 & 0x10) == 0 || (v37 = v29->flags, (v37 & 1) == 0) || (v37 & 2) == 0 ) /*0x567870*/
             {
               if ( !aP1 ) /*0x567878*/
               {
@@ -1896,14 +1896,14 @@ int MapClass::GetTileIndex(int16_t *aP1, int aP2, char aP3)
           g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP1; /*0x56d2e0*/
         }
         for ( i = *(unsigned short *)(v9 + 4) != *(unsigned short *)v9 ? 2 : 4;
-              (NeighbourContent[80] & 0x100) != 0;
+              (NeighbourContent->u32_140 & 0x100) != 0;
               NeighbourContent = (int *)Cell::GetNeighbourContent((Cell *)NeighbourContent, i) )
         {
           ; /*0x56d30d*/
         }
         if ( ((uint8_t)Cell::IsInRange((Cell *)NeighbourContent) /*0x56d337*/
            || (uint8_t)Cell::IsInRange2((Cell *)NeighbourContent))
-          && NeighbourContent[59] != 3 )
+          && NeighbourContent->u32_EC != 3 )
         {
           v4 = (int16_t *)(v9 + 4); /*0x56d339*/
         }
@@ -3693,8 +3693,8 @@ unsigned int * MapClass::allocateMapBuffers()
   this->MapClass_field_0x10 = 0; /*0x589bf0*/
   VectorClass::CleanupSubzone((int)this); /*0x589bf3*/
   *(unsigned short *)this->__pad_18 = 0; /*0x589bf9*/
-  *(unsigned int *)&this->__pad_18[4] = 0; /*0x589bfd*/
-  *(unsigned int *)&this->__pad_18[8] = 0; /*0x589c00*/
+  *&this->q01C = 0; /*0x589bfd*/
+  *&this->CapacityIncrement = 0; /*0x589c00*/
   return &this->MapClass_field_0x0; /*0x589c05*/
 
 }
@@ -3902,8 +3902,8 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         if ( g_MissionQueueFrame.localVariables[163] ) /*0x5a04ad*/
           *(unsigned int *)(80 * ((int16_t)v9 + g_MapCellWidth * v31[1]) + g_MissionQueueFrame.localVariables[163] + 56) = a4; /*0x5a04ca*/
         v10 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v31); /*0x5a04d8*/
-        *((unsigned int *)v10 + 14) = 0; /*0x5a04dd*/
-        v10[282] = 0; /*0x5a04e0*/
+        v10->u32_38 = 0; /*0x5a04dd*/
+        v10->Tactical_11A = 0; /*0x5a04e0*/
         --j; /*0x5a04ed*/
       }
       if ( v30 < a3 - 1 ) /*0x5a0501*/
@@ -4155,7 +4155,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
     v35 = v11 - v10; /*0x6d8316*/
   }
   smudgeTypeIndex = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v34)->smudgeTypeIndex; /*0x6d8329*/
-  v13 = v3[2]; /*0x6d833c*/
+  v13 = v3->u32_8; /*0x6d833c*/
   v28 = HIWORD(smudgeTypeIndex) + 3; /*0x6d8344*/
   v27 = smudgeTypeIndex - 2; /*0x6d835d*/
   v14 = 0; /*0x6d8367*/
@@ -4356,9 +4356,9 @@ int MapClass::ProcessVisibilityFlags()
         v12[0] = j; /*0x4acaf0*/
         v12[1] = i; /*0x4acaf8*/
         v4 = CellCoord::To_CellObj((CellCoord *)this, v12); /*0x4acafd*/
-        v5 = v4[75]; /*0x4acb02*/
+        v5 = v4->u32_12C; /*0x4acb02*/
         if ( (v5 & 0x10) == 0 && (v5 & 8) != 0 ) /*0x4acb10*/
-          v4[80] |= 0x20u; /*0x4acb12*/
+          v4->u32_140 |= 0x20u; /*0x4acb12*/
       }
     }
   }
@@ -4372,7 +4372,7 @@ int MapClass::ProcessVisibilityFlags()
         && (*((unsigned char *)CellCoord::To_CellObj((CellCoord *)this, &v10) + 320) & 0x20) != 0 )
       {
         v8 = CellCoord::To_CellObj((CellCoord *)this, &v10); /*0x4acb63*/
-        v8[80] &= ~0x20u; /*0x4acb7a*/
+        v8->u32_140 &= ~0x20u; /*0x4acb7a*/
         MapClass::RevealCell(this, &v10); /*0x4acb7f*/
       }
     }
@@ -4426,10 +4426,10 @@ char   MapClass::RevealCell()
   if ( (unsigned char)v4 ) /*0x4acdb1*/
   {
     v4 = ((CellCoord *)((CellCoord *)this))->To_CellObj(v2); /*0x4acdba*/
-    v5 = v4[75]; /*0x4acdbf*/
+    v5 = v4->u32_12C; /*0x4acdbf*/
     if ( (v5 & 8) != 0 ) /*0x4acdc8*/
     {
-      v4[75] = v5 & 0xFFFFFFE7; /*0x4acdd2*/
+      v4->u32_12C = v5 & 0xFFFFFFE7; /*0x4acdd2*/
       Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v4); /*0x4acddf*/
       for ( i = 0; i < 8; ++i ) /*0x4acde4*/
       {
@@ -4440,7 +4440,7 @@ char   MapClass::RevealCell()
         v4 = ((CellCoord *)((CellCoord *)this))->To_CellObj((int16_t *)&this); /*0x4ace22*/
         if ( this != *(int16_t **)v2 ) /*0x4ace2f*/
         {
-          v4[75] &= ~0x10u; /*0x4ace46*/
+          v4->u32_12C &= ~0x10u; /*0x4ace46*/
           (*((unsigned char *)&(v4))) = Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v4); /*0x4ace52*/
         }
       }
@@ -4570,7 +4570,7 @@ int MapClass::BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknow
       v6 = 0; /*0x57a387*/
       v7 = (unsigned char)aP3 == 0; /*0x57a38a*/
       aP1->__pad_038 = 0xFFFF; /*0x57a38d*/
-      aP1->u32_11A = 0; /*0x57a394*/
+      aP1->Tactical_11A = 0; /*0x57a394*/
       if ( !v7 ) /*0x57a39a*/
         *((unsigned int *)Tactical::GetCellData(&aP1->outBuffer) + 14) = aP2; /*0x57a3a8*/
       do /*0x57a41e*/

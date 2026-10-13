@@ -91,7 +91,7 @@ unsigned int * Rect::Construct(unsigned int *aP1, int aP2, int aP3)
 {
 
   this->X = *aP1; /*0x45a138*/
-  this->Y = aP1[1]; /*0x45a141*/
+  this->Y = aP1->Y; /*0x45a141*/
   this->Width = aP2; /*0x45a148*/
   this->Height = aP3; /*0x45a14b*/
   return &this->X; /*0x45a14e*/

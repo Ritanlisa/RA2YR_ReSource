@@ -41,7 +41,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
     {
       memset(&v22[1], 0, 198); /*0x488560*/
       v17 = *result; /*0x48856b*/
-      v22[0] = result->u32_4 != 0 ? 3 : 32;
+      v22[0] = result->X != 0 ? 3 : 32;
       v22[1] = 32; /*0x48857e*/
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/

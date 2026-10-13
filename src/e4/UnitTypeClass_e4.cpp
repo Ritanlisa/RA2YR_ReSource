@@ -89,7 +89,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
       v3 = CellCoord::To_CellObj(&dword_87F7E8, v8); /*0x6b4e0b*/
-      v4 = v3[18]; /*0x6b4e0d*/
+      v4 = v3->u32_48; /*0x6b4e0d*/
       if ( v4 != -1 && !v3->u8_11F ) /*0x6b4e15*/
       {
         v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/

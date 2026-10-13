@@ -143,17 +143,17 @@ LABEL_24:
     {
       do /*0x688643*/
       {
-        v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&stru_87F5F0.__pad_58[720] - 10); /*0x688551*/
-        LOWORD(v22) = *(unsigned short *)&stru_87F5F0.__pad_58[708] /*0x688573*/
+        v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&g_AircraftTrackerState - 10); /*0x688551*/
+        LOWORD(v22) = *(unsigned short *)&DataGlobal_87F90C /*0x688573*/
                     + Random::Range(
                         (Random *)&dword_A8B230[14].NeedsSaveOrLink,
                         10,
-                        *(unsigned int *)&stru_87F5F0.__pad_58[716] - 10);
-        HIWORD(v22) = v14 + *(unsigned short *)&stru_87F5F0.__pad_58[712] + 10; /*0x688588*/
+                        *(unsigned int *)&g_AircraftTrackerPool - 10);
+        HIWORD(v22) = v14 + *(unsigned short *)&DataGlobal_87F910 + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
-                 (Type *)&stru_87F5F0.__pad_58[416],
+                 (Type *)&DataGlobal_87F7E8,
                  (int)&v23,
                  &v24,
                  (__int16 *)&v19,

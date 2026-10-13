@@ -41,9 +41,9 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
   (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))) = (unsigned char)(a1); /*0x52fecb*/
   if ( !a2 ) /*0x52fecf*/
     v4 = (int *)(g_DSurface_Hidden); /*0x52fed1*/
-  (*(void (**)(int *, unsigned int, int, int))(*v4 + 24))(v4, 0, a4, a3); /*0x52fede*/
-  v5 = (*(int (**)(int *))(*v4 + 124))(v4); /*0x52fee8*/
-  v6 = (*(int (**)(int *))(*v4 + 128))(v4); /*0x52fef4*/
+  v4->COMStub_6(0, a4, a3); /*0x52fede*/
+  v5 = v4->IsAboveScreenMargin(); /*0x52fee8*/
+  v6 = v4->vt_slot_128(); /*0x52fef4*/
   v13[0] = 0; /*0x52fef6*/
   v13[1] = 0; /*0x52fefc*/
   retaddr = v5; /*0x52ff00*/
@@ -64,7 +64,7 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
     v8 = 0; /*0x52ff48*/
   }
   Render_Draw((int)v8, v13, 0); /*0x52ff52*/
-  result = (*(int (**)(int *, unsigned int *))(*v4 + 4))(v4, v8); /*0x52ff60*/
+  result = v4->COMStub_AddRef(v8); /*0x52ff60*/
   if ( v8 ) /*0x52ff67*/
     result = (*(int (**)(unsigned int *, int))*v8)(v8, 1); /*0x52ff6f*/
   (*((unsigned char *)&(result))) = (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))); /*0x52ff71*/

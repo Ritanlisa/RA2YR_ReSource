@@ -227,7 +227,7 @@ int ThemeClass::ClearQueues()
       for ( k = result; result; k = result ) /*0x752429*/
       {
         LinkedList::Init((unsigned int **)k); /*0x75242d*/
-        *(unsigned int *)(*(unsigned int *)(k + 12) + 80) = (gamemd::Init)(2); /*0x752436*/
+        *(unsigned int *)(k->vtable4 + 80) = (gamemd::Init)(2); /*0x752436*/
         operator delete((void *)((void *)k)); /*0x752439*/
         result = ((AudioQueue *)(v3))->GetNext(); /*0x752443*/
       }

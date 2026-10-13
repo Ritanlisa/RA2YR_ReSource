@@ -588,8 +588,8 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log(); /*0x775626*/
-    CloseHandle(*((HANDLE *)this + 23)); /*0x775632*/
-    *((unsigned int *)this + 23) = -1; /*0x775638*/
+    CloseHandle(this->u32_5C); /*0x775632*/
+    this->u32_5C = -1; /*0x775638*/
   }
   if ( this->WinModemClass_field_0x24 ) /*0x77563f*/
     __3_YAXPAX_Z((void *)this->WinModemClass_field_0x24); /*0x775647*/

@@ -101,7 +101,7 @@ int AbstractTypeClass::Dtor()
   this->AbstractClass = &AbstractTypeClass::`vftable'; /*0x4109cd*/
   this->? = &AbstractTypeClass::`vftable'; /*0x4109d3*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
-  this->? = &AbstractTypeClass::`vftable'; /*0x4109e1*/
+  this->vtable4 = &AbstractTypeClass::`vftable'; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/

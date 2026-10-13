@@ -49,7 +49,7 @@ LABEL_12:
   while ( 1 ) /*0x5023f7*/
   {
     Element = (unsigned int *)Array::GetElement(v6, v7); /*0x5023f7*/
-    if ( (unsigned __int16)(*Element / 256) == *aP1 && (unsigned __int16)(Element[1] / 256) == aP1[1] ) /*0x502422*/
+    if ( (unsigned __int16)(*Element / 256) == *aP1 && (unsigned __int16)(Element->q004 / 256) == aP1[1] ) /*0x502422*/
       return Element; /*0x502441*/
     v6 = *(unsigned int **)i; /*0x502424*/
     if ( ++v7 >= *(unsigned int *)(*(unsigned int *)i + 56) ) /*0x50242a*/

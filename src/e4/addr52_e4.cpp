@@ -208,10 +208,10 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     IntVector::Copy((IntVector *)a1,(unsigned int *)(&v22)); /*0x525514*/
     *(unsigned int *)a1 = (unsigned int)(&vt_TypeList); /*0x52551e*/
     v16 = v24; /*0x525528*/
-    *(unsigned int *)(a1 + 16) = v23; /*0x52552c*/
+    a1->q010 = v23; /*0x52552c*/
     Items = v22.Items; /*0x52552f*/
     v18 = v22.Items == 0; /*0x525533*/
-    *(unsigned int *)(a1 + 20) = v16; /*0x525535*/
+    a1->u32_14 = v16; /*0x525535*/
     /* X11: vtable install elided (implicit via VectorClass virtuals 0x525538) */
     if ( !v18 && v22.IsAllocated ) /*0x525542*/
     {
@@ -227,19 +227,19 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   }
   else
   {
-    *(unsigned int *)(a1 + 4) = 0; /*0x525587*/
-    *(unsigned int *)(a1 + 8) = 0; /*0x52558a*/
-    *(unsigned char *)(a1 + 12) = 1; /*0x52558d*/
-    *(unsigned char *)(a1 + 13) = 0; /*0x525591*/
+    a1->Items = 0; /*0x525587*/
+    a1->Capacity = 0; /*0x52558a*/
+    a1->IsInitialized = 1; /*0x52558d*/
+    a1->IsAllocated = 0; /*0x525591*/
     *(unsigned int *)a1 = (unsigned int)(&vt_VectorClass); /*0x525594*/
     TypeList::Copy((TypeList *)a1, &a5); /*0x525596*/
     *(unsigned int *)a1 = (unsigned int)(&vt_TypeList); /*0x52559b*/
     a5 = &vt_VectorClass; /*0x5255a1*/
     v20 = a10; /*0x5255af*/
-    *(unsigned int *)(a1 + 16) = a9; /*0x5255b6*/
+    a1->q010 = a9; /*0x5255b6*/
     v19 = a6; /*0x5255b9*/
     v18 = a6 == 0; /*0x5255c0*/
-    *(unsigned int *)(a1 + 20) = v20; /*0x5255c2*/
+    a1->u32_14 = v20; /*0x5255c2*/
     if ( !v18 && (*(((unsigned char *)&(a8)) + (sizeof(a8) - 1))) ) /*0x5255ce*/
   LABEL_20:
       operator delete((void *)(v19)); /*0x5255d0*/
@@ -657,7 +657,7 @@ LABEL_18:
 LABEL_19:
   *a2 = v14; /*0x52a4b8*/
   a2->Prev = v15; /*0x52a4c0*/
-  a2[2] = v16; /*0x52a4c3*/
+  a2->Next = v16; /*0x52a4c3*/
   return a2; /*0x52a4c6*/
 
 }

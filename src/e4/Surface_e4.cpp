@@ -117,7 +117,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
   if ( Width <= 0 ) /*0x5d200e*/
   {
   LABEL_18:
-    if ( Width >= result[4] ) /*0x5d207c*/
+    if ( Width >= result->BytesPerPixel ) /*0x5d207c*/
     {
       v22 = 0; /*0x5d2165*/
       v50 = -1; /*0x5d2169*/
@@ -165,7 +165,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
         }
         result = aP1->__pad_000; /*0x5d2229*/
       }
-      v30 = result[3]; /*0x5d222d*/
+      v30 = result->LockCount; /*0x5d222d*/
       v31 = v45; /*0x5d2230*/
       v32 = (int *)(v30 + 16 * v22); /*0x5d2237*/
       *v32 = v44; /*0x5d223d*/
@@ -182,7 +182,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
       v11[1] = a1[1]; /*0x5d2093*/
       v11[2] = a1[2]; /*0x5d2099*/
       v11[3] = a1[3]; /*0x5d20a0*/
-      ++result[1]; /*0x5d20a8*/
+      ++result->Width; /*0x5d20a8*/
     }
     return result; /*0x5d20af*/
   }
@@ -298,8 +298,8 @@ int sub_626C60()
     {
       StringVector::Construct(v2, 0, 0); /*0x626ca0*/
       *v3 =(unsigned int)(void*)&DynamicVectorClass_char___vftable; /*0x626caa*/
-      v3[5] = 10; /*0x626cb0*/
-      v3[4] = 0; /*0x626cb3*/
+      v3->u32_14 = 10; /*0x626cb0*/
+      v3->q010 = 0; /*0x626cb3*/
     }
     else
     {
@@ -312,8 +312,8 @@ int sub_626C60()
     {
       VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
       *v5 =(unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x626ce1*/
-      v5[5] = 10; /*0x626ce7*/
-      v5[4] = 0; /*0x626cea*/
+      v5->u32_14 = 10; /*0x626ce7*/
+      v5->q010 = 0; /*0x626cea*/
     }
     else
     {
@@ -521,9 +521,9 @@ LABEL_7:
       v39 = v5; /*0x65531e*/
       v9 = ClipRectIntersection(v50, &v39, v47, 0, 0); /*0x655322*/
       v39 = *v9; /*0x65532b*/
-      v40 = v9[1]; /*0x655332*/
-      v41 = v9[2]; /*0x655339*/
-      v10 = v9[3]; /*0x65533d*/
+      v40 = v9->vtable2; /*0x655332*/
+      v41 = v9->vtable3; /*0x655339*/
+      v10 = v9->vtable4; /*0x65533d*/
       v42 = v10; /*0x655342*/
       if ( v41 > 0 && v10 > 0 ) /*0x65534e*/
       {
@@ -569,17 +569,17 @@ LABEL_16:
         v48[3] = v18; /*0x655441*/
         v19 = GenerateImageThumbnail((float *)this->vtable1, v51, v48, &v39, 0); /*0x655455*/
         v20 = *v19; /*0x65545e*/
-        v44 = v19[1]; /*0x655463*/
-        v21 = v19[2]; /*0x655467*/
+        v44 = v19->__pad_004; /*0x655463*/
+        v21 = v19->q008; /*0x655467*/
         v45 = v21; /*0x65546a*/
-        v22 = v19[3]; /*0x65546e*/
+        v22 = v19->u32_C; /*0x65546e*/
         v46 = v22; /*0x655471*/
         if ( v2 <= 0 || v38 <= 0 ) /*0x655481*/
         {
           v26 = *v19; /*0x655501*/
-          v24 = v19[1]; /*0x655503*/
-          v2 = v19[2]; /*0x655506*/
-          v25 = v19[3]; /*0x655509*/
+          v24 = v19->__pad_004; /*0x655503*/
+          v2 = v19->q008; /*0x655506*/
+          v25 = v19->u32_C; /*0x655509*/
         }
         else if ( v21 <= 0 || v22 <= 0 ) /*0x655489*/
         {
@@ -631,9 +631,9 @@ LABEL_33:
   v29 = &this->u32_1248; /*0x65553f*/
   v30 = v38; /*0x655545*/
   *v29 = v36; /*0x655549*/
-  v29[1] = v28; /*0x65554b*/
-  v29[2] = v2; /*0x65554e*/
-  v29[3] = v30; /*0x655551*/
+  v29->vtable2 = v28; /*0x65554b*/
+  v29->vtable3 = v2; /*0x65554e*/
+  v29->vtable4 = v30; /*0x655551*/
   return result; /*0x655554*/
 
 }
@@ -1163,9 +1163,9 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v42; // [esp+64h] [ebp+4h]
   int *v43; // [esp+70h] [ebp+10h]
 
-  v8 = a1[3]; /*0x70748e*/
-  v9 = a1[2]; /*0x707492*/
-  v41 = (__int16 *)*((unsigned int *)a1 + 2); /*0x7074a2*/
+  v8 = a1->u32_6; /*0x70748e*/
+  v9 = a1->vtable2; /*0x707492*/
+  v41 = (__int16 *)a1->vtable3; /*0x7074a2*/
   Surface::Construct(&v37, v9, v8); /*0x7074a6*/
   v38 = 0; /*0x7074b8*/
   /* X11: vtable install elided (implicit via XSurface virtuals 0x7074c0) */
@@ -1189,7 +1189,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   if ( (*(int (**)(Surface *))(*(unsigned int *)this->vtable1 + 44))(this) == 1 ) /*0x707557*/
   {
     v16 = *aP2 + *a1; /*0x70756b*/
-    v17 = aP2[1] + a1[1]; /*0x707571*/
+    v17 = aP2[1] + a1->ptr_2; /*0x707571*/
     v18 = (unsigned __int16)a1[3]; /*0x707575*/
     v19 = (unsigned __int16)a1[2]; /*0x70757b*/
     v33 = v17; /*0x70757f*/
@@ -1251,7 +1251,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v29 = 0; /*0x7076b1*/
     v23 = aP2[1]; /*0x7076bb*/
     v36[0] = *aP2 + v22; /*0x7076be*/
-    v24 = a1[2]; /*0x7076c8*/
+    v24 = a1->vtable2; /*0x7076c8*/
     v36[1] = v23 + a1[1]; /*0x7076ce*/
     v36[2] = v24; /*0x7076d2*/
     v25 = *(unsigned int *)this->vtable1; /*0x7076e3*/

@@ -77,7 +77,7 @@ LABEL_4:
         goto LABEL_18; /*0x416de2*/
       if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(this->Object_21C5), (int)v6) ) /*0x416df7*/
         goto LABEL_18; /*0x416df7*/
-      if ( (v6[20] & 1) != 0 ) /*0x416e0e*/
+      if ( (v6->u32_14 & 1) != 0 ) /*0x416e0e*/
       {
         v7 = (Object *)(*(int (**)(unsigned char *))(*(unsigned int *)v6 + 60))(v6); /*0x416e15*/
         if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(v7, (int)this) ) /*0x416e1a*/

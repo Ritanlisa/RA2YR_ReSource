@@ -256,7 +256,7 @@ int CellClass::RegisterForRedraw(int16_t *a2, int a1, int a5, int a6)
 
   v13 = Cell::PosToIndex((Cell *)a2); /*0x7235b8*/
   result = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x7235bc*/
-  if ( result[286] < 0xBu ) /*0x7235c8*/
+  if ( result->u32_11E < 0xBu ) /*0x7235c8*/
   {
     if ( *(unsigned int *)this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)this); /*0x7235e2*/
@@ -720,30 +720,30 @@ void CellClass::ReduceTiberium(int v23)
 
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31); /*0x480a97*/
   StartCoords = House::GetStartCoords((House *)this, v32); /*0x480a9c*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x480ab1*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x480ab1*/
   {
     v12 = *PlacementRect; /*0x480b44*/
-    v13 = PlacementRect[1]; /*0x480b46*/
-    v14 = PlacementRect[2]; /*0x480b49*/
-    v9 = PlacementRect[3]; /*0x480b4c*/
+    v13 = PlacementRect->u32_4; /*0x480b46*/
+    v14 = PlacementRect->u32_8; /*0x480b49*/
+    v9 = PlacementRect->q00C; /*0x480b4c*/
   }
   else
   {
-    v22 = PlacementRect[2]; /*0x480abc*/
-    if ( v22 <= 0 || (v25 = PlacementRect[3], v25 <= 0) ) /*0x480acb*/
+    v22 = PlacementRect->u32_8; /*0x480abc*/
+    if ( v22 <= 0 || (v25 = PlacementRect->q00C, v25 <= 0) ) /*0x480acb*/
     {
       v12 = *StartCoords; /*0x480b37*/
-      v13 = StartCoords[1]; /*0x480b39*/
-      v14 = StartCoords[2]; /*0x480b3c*/
-      v9 = StartCoords[3]; /*0x480b3f*/
+      v13 = StartCoords->vtable2; /*0x480b39*/
+      v14 = StartCoords->vtable3; /*0x480b3c*/
+      v9 = StartCoords->vtable4; /*0x480b3f*/
     }
     else
     {
       v5 = *StartCoords; /*0x480acd*/
       v6 = *PlacementRect; /*0x480acf*/
-      v7 = StartCoords[2]; /*0x480ad1*/
-      v8 = StartCoords[1]; /*0x480ad4*/
-      v9 = StartCoords[3]; /*0x480ad7*/
+      v7 = StartCoords->vtable3; /*0x480ad1*/
+      v8 = StartCoords->vtable2; /*0x480ad4*/
+      v9 = StartCoords->vtable4; /*0x480ad7*/
       v28 = v7; /*0x480adc*/
       if ( v5 > *PlacementRect ) /*0x480ae0*/
       {
@@ -751,7 +751,7 @@ void CellClass::ReduceTiberium(int v23)
         v5 = *PlacementRect; /*0x480ae6*/
         v28 = v7; /*0x480ae8*/
       }
-      v10 = PlacementRect[1]; /*0x480aec*/
+      v10 = PlacementRect->u32_4; /*0x480aec*/
       v10 = v10; /*0x480af1*/
       if ( v8 > v10 ) /*0x480af5*/
       {

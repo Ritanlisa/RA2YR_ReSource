@@ -52,7 +52,7 @@ int TemporalClass::Constructor()
   this->AbstractClass = &TemporalClass::`vftable'; /*0x71a467*/
   this->? = &TemporalClass::`vftable'; /*0x71a46d*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a474) */
-  this->? = &TemporalClass::`vftable'; /*0x71a47b*/
+  this->vtable4 = &TemporalClass::`vftable'; /*0x71a47b*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a4b7*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
     && g_BuildingLoadQueue_Array.?[1] > 0
@@ -83,7 +83,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   this->AbstractClass = &TemporalClass::`vftable'; /*0x71a501*/
   this->? = &TemporalClass::`vftable'; /*0x71a507*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a50e) */
-  this->? = &TemporalClass::`vftable'; /*0x71a515*/
+  this->vtable4 = &TemporalClass::`vftable'; /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_028 = 0; /*0x71a51f*/
   *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a529*/
@@ -164,7 +164,7 @@ void ** TemporalClass::ProcessTimeWarp()
   v3 = *(unsigned int **)this->__pad_028; /*0x71a76b*/
   if ( v3 && v3->temporalTargetingMe == this && this->q040 )
   {
-    v3[158] = 0; /*0x71a77f*/
+    v3->temporalTargetingMe = 0; /*0x71a77f*/
     *(unsigned char *)(*(unsigned int *)this->__pad_028 + 624) = 0; /*0x71a78a*/
     return (void **)TagClass::Unlink((TagClass *)this); /*0x71a790*/
   }
@@ -177,7 +177,7 @@ void ** TemporalClass::ProcessTimeWarp()
       goto LABEL_10; /*0x71a7a8*/
     if ( !v3 ) /*0x71a7b6*/
       goto LABEL_10; /*0x71a7b6*/
-    v6 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v3 + 72))(v3, v44); /*0x71a7c9*/
+    v6 = (unsigned int *)v3->GetCoords_0(v44); /*0x71a7c9*/
     v7 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->creationFrame + 72))(this->creationFrame, v45); /*0x71a7d2*/
     v8 = v6[1]; /*0x71a7d9*/
     v9 = *v7 - *v6; /*0x71a7dc*/
@@ -281,10 +281,10 @@ LABEL_10:
               this->u32_3C = 0; /*0x71a9eb*/
             }
             v31 = *(unsigned int **)this->__pad_028; /*0x71a9ee*/
-            if ( v31[185] )
+            if ( v31->bunkerLinkedUnit )
             {
               if ( v31 )
-                v32 = (*(int (**)(unsigned int))(*v31 + 44))(*(unsigned int *)this->__pad_028) == 6
+                v32 = v31->getAltitude(*(unsigned int *)this->__pad_028) == 6
                     ? (BuildingClass *)v31
                     : 0;
               else
@@ -486,7 +486,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     {
       if ( (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71aec2*/
       {
-        if ( *(unsigned char *)(v3[328] + 5821) ) /*0x71aeca*/
+        if ( v3->q520->WeaponsFactory ) /*0x71aeca*/
         {
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/

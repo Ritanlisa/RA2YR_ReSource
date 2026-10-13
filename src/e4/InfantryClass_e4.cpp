@@ -225,25 +225,25 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     Type = a1->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
-      if ( HouseClass::CanBuild(a1->?, (int)Type, 0, 0) == -1 ) /*0x517de3*/
-        a1->?->recheckTechTree = 1; /*0x517deb*/
-      team = (int *)a1->?; /*0x517df2*/
+      if ( HouseClass::CanBuild(a1->owner, (int)Type, 0, 0) == -1 ) /*0x517de3*/
+        a1->reloadTimer->recheckTechTree = 1; /*0x517deb*/
+      team = (int *)a1->FootClass_field_5D4; /*0x517df2*/
       if ( team ) /*0x517dfa*/
       {
         TeamClass::LiberateMember_Start(team, (int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
-        a1->? = 0; /*0x517e05*/
+        a1->FootClass_field_5D4 = 0; /*0x517e05*/
       }
-      slaveOwner = a1->?; /*0x517e0b*/
+      slaveOwner = a1->isPlayingDamageSound; /*0x517e0b*/
       if ( slaveOwner ) /*0x517e13*/
       {
         slaveManager = slaveOwner->slaveManager; /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
       }
-      HouseClass::DecrementUnitCount(a1->?, a1); /*0x517e2e*/
-      if ( !a1->?[0] ) /*0x517e33*/
+      HouseClass::DecrementUnitCount(a1->owner, a1); /*0x517e2e*/
+      if ( !a1->Locomotor ) /*0x517e33*/
         WinAPI::Wrapper(-2147467261); /*0x517e40*/
-      (*(void (**)(int))(*(unsigned int *)a1->?[0] + 172))(a1->?[0]); /*0x517e4e*/
+      (*(void (**)(int))(*(unsigned int *)a1->currentMission + 172))(a1->currentMission); /*0x517e4e*/
       a1->unknown_int_6E8 = 2; /*0x517e56*/
       a1->Crawling = 0; /*0x517e60*/
       a1->SequenceAnim[0] = 0; /*0x517e66*/
@@ -278,9 +278,9 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         (size_t)g_BuildingLoadQueue_Array.?,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.?; /*0x517ef3*/
-      g_BuildingLoadQueue_Array.? = 0; /*0x517efc*/
-      LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x517f02*/
+      vtable1 = dword_B0E844; /*0x517ef3*/
+      dword_B0E850 = 0; /*0x517efc*/
+      LOBYTE(byte_B0E84C) = 1; /*0x517f02*/
     }
     v17[0] = v10; /*0x517f0d*/
     v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, v17); /*0x517f18*/
@@ -305,7 +305,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       }
     }
   }
-  a1->? = 0; /*0x517f83*/
+  a1->isAliveFlag = 0; /*0x517f83*/
   return FootClass::Destruct((FootClass *)a1); /*0x517f8e*/
 
 }

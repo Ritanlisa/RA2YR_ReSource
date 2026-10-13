@@ -325,7 +325,7 @@ void sub_50B920(int a1, int a2, int a3)
     *(unsigned int *)a2 = 0; /*0x50b970*/
     *(unsigned int *)(a2 + 4) = 1081073664; /*0x50b976*/
     *(unsigned int *)a1 = 0; /*0x50b979*/
-    *(unsigned int *)(a1 + 4) = 1081073664; /*0x50b97f*/
+    a1->u32_4 = 1081073664; /*0x50b97f*/
   }
   else
   {
@@ -334,7 +334,7 @@ void sub_50B920(int a1, int a2, int a3)
     if ( v6 > 255.0 ) /*0x50b9a6*/
     {
       *(unsigned int *)a1 = 0; /*0x50b9a8*/
-      *(unsigned int *)(a1 + 4) = 1081073664; /*0x50b9ae*/
+      a1->u32_4 = 1081073664; /*0x50b9ae*/
     }
     v7 = *(double *)a2 * 240.0 / v5; /*0x50b9b9*/
     *(double *)a2 = v7; /*0x50b9bb*/

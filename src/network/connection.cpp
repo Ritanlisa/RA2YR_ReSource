@@ -361,7 +361,7 @@ IPXConnClass* IPXManagerClass::createConnection()
   result = (unsigned int *)this->u32_48; /*0x540d40*/
   if ( result ) /*0x540d45*/
   {
-    this->u32_64 = result[10]; /*0x540d4a*/
+    this->u32_64 = result->u32_28; /*0x540d4a*/
     this->u32_68 = result[11]; /*0x540d50*/
     result = result->q030; /*0x540d53*/
     this->u32_6C = result; /*0x540d56*/

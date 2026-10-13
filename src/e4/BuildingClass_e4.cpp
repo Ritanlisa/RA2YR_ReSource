@@ -779,11 +779,11 @@ v110.q00C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v6 + 440)
                   (*(void (**)(int))(*(unsigned int *)v21 + 248))(v21); /*0x73a104*/
                 }
               }
-              while ( p_ComPtr_field_0x14[70] ); /*0x73a10a*/
+              while ( p_ComPtr_field_0x14->u32_118 ); /*0x73a10a*/
             }
-            v23 = (*(int (**)(int *))(*p_ComPtr_field_0x14 + 700))( (int *)(p_ComPtr_field_0x14)); /*0x73a118*/
+            v23 = p_ComPtr_field_0x14->vt_slot_700((int *)(p_ComPtr_field_0x14)); /*0x73a118*/
             ((HouseClass *)v11->u32_21C)->AddPower( v23); /*0x73a125*/
-            (*(void (**)(int *))(*p_ComPtr_field_0x14 + 248))( (int *)(p_ComPtr_field_0x14)); /*0x73a12e*/
+            p_ComPtr_field_0x14->vt_slot_248((int *)(p_ComPtr_field_0x14)); /*0x73a12e*/
           }
         }
         v24 = *(unsigned int *)(_EBP + 1684); /*0x73a13e*/
@@ -1014,7 +1014,7 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.q004 +
         if ( v59
           || !Member
           || (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) != 6
-          || !*(unsigned char *)(v64[328] + 5821)
+          || !v64->q520->WeaponsFactory
           || (v110.q014 = *(unsigned int *)(_EBP + 156),
               v110.q018 = *(unsigned int *)(_EBP + 160),
               v110.q01C = *(unsigned int *)(_EBP + 164),
@@ -1035,7 +1035,7 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.q004 +
               }
             }
             if ( v64 )
-              v68 = (*(int (**)(unsigned int *))(*v64 + 44))( (unsigned int *)(v64)) == 6 ? v64 : 0;
+              v68 = v64->ReturnZeroPos((unsigned int *)(v64)) == 6 ? v64 : 0;
             else
               v68 = (unsigned int *)(0); /*0x73a990*/
             v69 = *(unsigned int *)(_EBP + 1732); /*0x73a9a8*/
@@ -1174,8 +1174,8 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.q004 +
           v84 = v84; /*0x73ad98*/
           if ( v84 ) /*0x73ad9c*/
           {
-            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(v84 + 4) + 12))(v84 + 4) == 6 /*0x73adb3*/
-              && *(unsigned char *)(*(unsigned int *)(v84 + 1312) + 5820) )
+            if ( (*(int (__stdcall **)(int))(v84->u32_4 + 12))(v84 + 4) == 6 /*0x73adb3*/
+              && *(unsigned char *)(v84->q520 + 5820) )
             {
               (*(void (**)(int, int))(*(unsigned int *)_EBP + 628))(_EBP, 3); /*0x73adc4*/
             }

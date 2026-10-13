@@ -110,7 +110,7 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   result = Stream_field_10; /*0x67a4c0*/
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
+    aP1->IsClean(this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
     result = Stream_field_10; /*0x67a4db*/
   }
   return result; /*0x67a4e4*/

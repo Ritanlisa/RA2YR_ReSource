@@ -45,7 +45,7 @@ char AI_CreateMCV(MultiplayerGameMode *self)
         CurrentOption = (int16_t *)HouseClass::GetCurrentOption(v3, &this); /*0x5d70b6*/
         if ( FindInfantryDeployPosition(v7,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5d70bf*/
           return 1; /*0x5d70cf*/
-        (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/
+        v7->Seek_0(1); /*0x5d70d8*/
       }
     }
   }

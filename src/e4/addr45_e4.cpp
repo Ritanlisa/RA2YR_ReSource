@@ -261,7 +261,7 @@ int sub_452000(unsigned int * a1)
   {
     result = *v12; /*0x45214b*/
     if ( *v12 ) /*0x45214b*/
-      result->u8_178 = v11; /*0x452151*/
+      result->radarFlashTimer_d = v11; /*0x452151*/
     ++v12; /*0x452157*/
     --v13; /*0x45215a*/
   }
@@ -362,8 +362,8 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   v49[3] = v12; /*0x456a5a*/
   v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47), v49, &DSurface_ViewBounds, 0, 0); /*0x456a66*/
   v48 = *v13; /*0x456a6a*/
-  v14 = *((unsigned int *)v13 + 2); /*0x456a75*/
-  if ( v14 > 0 && *((int *)v13 + 3) > 0 ) /*0x456a85*/
+  v14 = v13->vtable3; /*0x456a75*/
+  if ( v14 > 0 && v13->vtable4 > 0 ) /*0x456a85*/
   {
     v39 = (((unsigned char *)&(a6))[2]); /*0x456a92*/
     v34 = 0; /*0x456a9c*/
@@ -477,11 +477,11 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
   int v4; // edi
   unsigned int *v5; // eax
 
-  v4 = (*(int (**)(unsigned int *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
-  if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1) ) /*0x456fc9*/
+  v4 = a1->vt_slot_1124(a3); /*0x456fc7*/
+  if ( a1->vt_slot_352() ) /*0x456fc9*/
     return ((Techno *)(v4))->StartInvulnerability(); /*0x456fc9*/
-  if ( a1[165]
-    && (a1 ? (v5 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v5 = 0),
+  if ( a1->armed
+    && (a1 ? (v5 = a1->GetTypeIdentifier() == 6 ? a1 : 0) : (v5 = 0),
         *(unsigned int **)(a1[165] + 80) == v5) )
   {
     return ((Techno *)(v4))->StartInvulnerability(); /*0x457005*/
@@ -928,8 +928,8 @@ int E4Recv_4517D0::sub_4517D0()
              v17,
              (int *)(this->M1312 + v3 + 3964));
       v8 = v13 + *v7; /*0x45183a*/
-      v9 = v7[1]; /*0x45183c*/
-      v10 = v7[2]; /*0x45183f*/
+      v9 = v7->vtable2; /*0x45183c*/
+      v10 = v7->vtable3; /*0x45183f*/
       v16[1] = v14 + v9; /*0x45184a*/
       v11 = *v6; /*0x45184e*/
       v16[2] = v4 + v10; /*0x451850*/

@@ -41,9 +41,9 @@ CampaignClass * RadarClass::Destruct()
   int result; // eax
 
   /* X11: vtable install elided (implicit via RadarClass virtuals 0x652c0c) */
-  AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
+  AudioFileClass::Release(&this->RadarSoundChannel); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
-  p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
+  p_RadarClass_field_0x1488 = &this->radarSizeFactor; /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
@@ -62,15 +62,15 @@ CampaignClass * RadarClass::Destruct()
   while ( v3 ); /*0x652c53*/
   RadarClass_field_0x1260 = this->ptr_1260; /*0x652c55*/
   this->RadarPoints = (VectorClass *)&VectorClass<Point2D>::`vftable'; /*0x652c5b*/
-  if ( RadarClass_field_0x1260 && this->__pad_1264[5] ) /*0x652c69*/
+  if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
     this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
   }
-  this->__pad_1264[5] = 0; /*0x652c80*/
+  this->u8_1269 = 0; /*0x652c80*/
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
-  this->RadarClass_field_0x1224 = (VectorClass *)&VectorClass<Cell>::`vftable'; /*0x652c92*/
+  this->RadarCells = (VectorClass *)&VectorClass<Cell>::`vftable'; /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1228); /*0x652ca9*/
@@ -112,22 +112,22 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
   if ( result > 0 && (int)v2[1322] > 0 ) /*0x654671*/
   {
     v6 = (void (***)(unsigned int, int))v2[1160]; /*0x654677*/
-    v3[1320] = 0.0; /*0x65467d*/
+    v3->u32_14A0 = 0.0; /*0x65467d*/
     *v5 = 0; /*0x654685*/
     if ( v6 ) /*0x654687*/
     {
       (**v6)(v6, 1); /*0x65468d*/
-      v3[1160] = 0.0; /*0x65468f*/
+      v3->RadarSurface = 0.0; /*0x65468f*/
     }
     if ( v3->RadarCellBuffer ) /*0x654695*/
     {
       operator delete((void *)(*((void **)v3 + 1167))); /*0x6546a0*/
-      v3[1167] = 0.0; /*0x6546a8*/
+      v3->RadarCellBuffer = 0.0; /*0x6546a8*/
     }
     if ( v3->RadarPointBuffer ) /*0x6546ae*/
     {
       operator delete((void *)(*((void **)v3 + 1181))); /*0x6546b9*/
-      v3[1181] = 0.0; /*0x6546c1*/
+      v3->RadarPointBuffer = 0.0; /*0x6546c1*/
     }
     GenerateImageThumbnail(v3, v19, v5, v5, 1); /*0x6546d3*/
     v7 = (*(int (**)(unsigned int, int))(*v3->RadarSurface + 124))(v3->RadarSurface, a2); /*0x6546e0*/
@@ -148,7 +148,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     if ( v13 ) /*0x654752*/
     {
       (**v13)(v13, 1); /*0x654758*/
-      v3[1159] = 0.0; /*0x65475a*/
+      v3->RadarSurfaceAlt = 0.0; /*0x65475a*/
     }
     v14 = (char *)operator new(0x24u); /*0x654767*/
     if ( v14 ) /*0x65476e*/
@@ -242,7 +242,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   v16 = v33; /*0x6a84ef*/
   v17 = *(unsigned int *)(dword_A83D4C->relatedTagsCapacity + 188); /*0x6a84fc*/
   v18 = v17 == *(unsigned int *)(v33 + 1744); /*0x6a850a*/
-  v19 = v17 == *(unsigned int *)(v7 + 1744); /*0x6a850f*/
+  v19 = v17 == v7->q6D0; /*0x6a850f*/
   if ( v18 ) /*0x6a8514*/
   {
     if ( !v19 ) /*0x6a8518*/
@@ -286,7 +286,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   if ( a3 == 40 || a3 == 3 ) /*0x6a8592*/
   {
     v23 = 1; /*0x6a85b4*/
-    if ( *(unsigned char *)(v7 + 3478) ) /*0x6a85ae*/
+    if ( v7->u8_D96 ) /*0x6a85ae*/
     {
       v24 = 1; /*0x6a85ba*/
       goto LABEL_42; /*0x6a85bc*/

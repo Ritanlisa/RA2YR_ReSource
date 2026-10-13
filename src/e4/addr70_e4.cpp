@@ -103,14 +103,14 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v12 = Coord2D::Add(&v35, v37, v34); /*0x704a8d*/
     v13 = (int *)(Rect::Construct(v47, v12, 3, 3)); /*0x704a97*/
     v39 = *v13; /*0x704aa0*/
-    v40 = v13[1]; /*0x704aa9*/
-    v41 = (int *)(v13[2]);
-    v42 = v13[3]; /*0x704ac2*/
+    v40 = v13->Y; /*0x704aa9*/
+    v41 = (int *)(v13->Width);
+    v42 = v13->Height; /*0x704ac2*/
     v14 = (int *)(ClipRectIntersection((RectangleStruct *)(v48), &DSurface_ViewBounds, &v39, 0, 0)); /*0x704acc*/
     v43 = *v14; /*0x704ad4*/
-    v44 = v14[1]; /*0x704adb*/
-    v45 = v14[2]; /*0x704ae2*/
-    v46 = v14[3]; /*0x704aef*/
+    v44 = v14->vtable2; /*0x704adb*/
+    v45 = v14->vtable3; /*0x704ae2*/
+    v46 = v14->vtable4; /*0x704aef*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v43, v11); /*0x704afa*/
     if ( *(unsigned int *)(dword_87F6C4 + 4) == 1 ) /*0x704b05*/
       v15 = **(uint8_t **)(dword_87F6C4 + 372); /*0x704b11*/
@@ -121,14 +121,14 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v16 = Coord2D::Add(&v35, v37, v33); /*0x704b41*/
     v17 = (int *)(Rect::Construct(v48, v16, 3, 3)); /*0x704b4e*/
     v43 = *v17; /*0x704b57*/
-    v44 = v17[1]; /*0x704b60*/
-    v45 = v17[2]; /*0x704b6c*/
-    v46 = v17[3]; /*0x704b7c*/
+    v44 = v17->Y; /*0x704b60*/
+    v45 = v17->Width; /*0x704b6c*/
+    v46 = v17->Height; /*0x704b7c*/
     v18 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704b80*/
     v39 = *v18; /*0x704b88*/
-    v40 = v18[1]; /*0x704b8f*/
-    v41 = v18[2]; /*0x704b9c*/
-    v42 = v18[3]; /*0x704ba3*/
+    v40 = v18->vtable2; /*0x704b8f*/
+    v41 = v18->vtable3; /*0x704b9c*/
+    v42 = v18->vtable4; /*0x704ba3*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v15); /*0x704bae*/
     v9 = dword_886FA4; /*0x704bb1*/
   }
@@ -156,28 +156,28 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3)); /*0x704cb1*/
   v43 = *v22; /*0x704cba*/
-  v44 = v22[1]; /*0x704cc3*/
-  v45 = v22[2]; /*0x704cca*/
-  v46 = v22[3]; /*0x704cd9*/
+  v44 = v22->Y; /*0x704cc3*/
+  v45 = v22->Width; /*0x704cca*/
+  v46 = v22->Height; /*0x704cd9*/
   v23 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704ce3*/
   v39 = *v23; /*0x704ceb*/
-  v40 = v23[1]; /*0x704cf2*/
-  v41 = v23[2]; /*0x704cf9*/
-  v42 = v23[3]; /*0x704d06*/
+  v40 = v23->vtable2; /*0x704cf2*/
+  v41 = v23->vtable3; /*0x704cf9*/
+  v42 = v23->vtable4; /*0x704d06*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = -2; /*0x704d21*/
   v24 = Coord2D::Add(&v35, v37, &v29); /*0x704d35*/
   v25 = (int *)(Rect::Construct(v48, v24, 3, 3)); /*0x704d42*/
   v43 = *v25; /*0x704d49*/
-  v44 = v25[1]; /*0x704d52*/
-  v45 = v25[2]; /*0x704d5f*/
-  v46 = v25[3]; /*0x704d70*/
+  v44 = v25->Y; /*0x704d52*/
+  v45 = v25->Width; /*0x704d5f*/
+  v46 = v25->Height; /*0x704d70*/
   v26 = (int *)(ClipRectIntersection((RectangleStruct *)(v47), &DSurface_ViewBounds, &v43, 0, 0)); /*0x704d74*/
   v39 = *v26; /*0x704d7c*/
-  v40 = v26[1]; /*0x704d83*/
-  v41 = v26[2]; /*0x704d90*/
-  v42 = v26[3]; /*0x704d97*/
+  v40 = v26->vtable2; /*0x704d83*/
+  v41 = v26->vtable3; /*0x704d90*/
+  v42 = v26->vtable4; /*0x704d97*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704da2*/
   if ( a8 ) /*0x704dae*/
   {
@@ -266,27 +266,27 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
      | ((((unsigned char *)&(a7))[2]) >> g_BitMask_Red << g_BitShift_Blue);
   v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
   v34 = *v8; /*0x704f2e*/
-  v35 = v8[1]; /*0x704f37*/
-  v36 = v8[2]; /*0x704f3e*/
-  v37 = v8[3]; /*0x704f50*/
+  v35 = v8->Y; /*0x704f37*/
+  v36 = v8->Width; /*0x704f3e*/
+  v37 = v8->Height; /*0x704f50*/
   v9 = ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0); /*0x704f5a*/
   v30 = *v9; /*0x704f61*/
-  v31 = v9[1]; /*0x704f68*/
-  v32 = v9[2]; /*0x704f6f*/
-  v33 = v9[3]; /*0x704f7c*/
+  v31 = v9->vtable2; /*0x704f68*/
+  v32 = v9->vtable3; /*0x704f6f*/
+  v33 = v9->vtable4; /*0x704f7c*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
   v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
   v30 = *v10; /*0x704fba*/
-  v31 = v10[1]; /*0x704fc3*/
-  v32 = v10[2]; /*0x704fca*/
-  v33 = v10[3]; /*0x704fdc*/
+  v31 = v10->Y; /*0x704fc3*/
+  v32 = v10->Width; /*0x704fca*/
+  v33 = v10->Height; /*0x704fdc*/
   v11 = ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0); /*0x704fe6*/
   v34 = *v11; /*0x704fee*/
-  v35 = v11[1]; /*0x704ff5*/
-  v36 = v11[2]; /*0x704ffc*/
-  v37 = v11[3]; /*0x705009*/
+  v35 = v11->vtable2; /*0x704ff5*/
+  v36 = v11->vtable3; /*0x704ffc*/
+  v37 = v11->vtable4; /*0x705009*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
   v44[0] = DSurface_ViewBounds; /*0x705028*/
   v44[1] = dword_886FA4; /*0x705031*/
@@ -467,9 +467,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       v41 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x707110*/
       v23 = (int *)(ClipRectIntersection(v49, &v43, &v39, 0, 0)); /*0x70711e*/
       v43 = *v23; /*0x707125*/
-      v44 = v23[1]; /*0x70712c*/
-      v45 = v23[2]; /*0x707133*/
-      v46 = v23[3]; /*0x70713a*/
+      v44 = v23->vtable2; /*0x70712c*/
+      v45 = v23->vtable3; /*0x707133*/
+      v46 = v23->vtable4; /*0x70713a*/
     }
   }
   v24 = (gamemd::BuildingClass *)(v19 & 0xFFFFFFEF);
@@ -562,16 +562,16 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
     for ( i = v2[288] - 1; i >= 0; --i ) /*0x70957f*/
     {
       v5 = 0; /*0x709587*/
-      v6 = v3[282]; /*0x70958c*/
+      v6 = v3->q468; /*0x70958c*/
       if ( v6 <= 0 ) /*0x709594*/
       {
   LABEL_8:
-        v8 = v3[288]; /*0x7095a8*/
+        v8 = v3->__pad_480; /*0x7095a8*/
         if ( i < v8 ) /*0x7095b0*/
         {
           v9 = v8 - 1; /*0x7095b2*/
           v10 = i; /*0x7095b5*/
-          for ( v3[288] = v9; v10 < v3[288]; *(unsigned int *)(v3[285] + 4 * v10 - 4) = *(unsigned int *)(v3[285] + 4 * v10) ) /*0x7095bf*/
+          for ( v3->__pad_480 = v9; v10 < v3->__pad_480; *(unsigned int *)(v3[285] + 4 * v10 - 4) = *(unsigned int *)(v3[285] + 4 * v10) ) /*0x7095bf*/
             ++v10; /*0x7095c7*/
         }
       }
@@ -592,14 +592,14 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
     v38 = 10; /*0x7095fa*/
     v37 = 0; /*0x7095fe*/
     VectorClass::Construct(&v30, 0, 0); /*0x709602*/
-    v11 = v3[288]; /*0x709607*/
+    v11 = v3->__pad_480; /*0x709607*/
     /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x70960d) */
     v32 = 10; /*0x709617*/
     v31 = 0; /*0x70961b*/
     if ( v11 > 0 ) /*0x70961f*/
     {
       v12 = 0; /*0x70962b*/
-      v29 = v3[282]; /*0x70962f*/
+      v29 = v3->q468; /*0x70962f*/
       for ( j = 0; j < v29; ++j ) /*0x709637*/
       {
         v13 = 4 * v12; /*0x709643*/
@@ -620,7 +620,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
               v17 = v37++; /*0x7096a1*/
               *((unsigned int *)v34 + v17) = v15; /*0x7096ac*/
             }
-            v18 = (unsigned int *)(v13 + v3[273]); /*0x7096bd*/
+            v18 = (unsigned int *)(v13 + v3->vecInt_Items); /*0x7096bd*/
             if ( v31 < v30.Capacity /*0x7096e4*/
               || (((unsigned int *)(v30.IsAllocated))[0] || !v30.Capacity)
               && v32 > 0
@@ -650,17 +650,17 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
           v24 = *(unsigned int *)((unsigned int)(v30.Items)+ 4 * k); /*0x709782*/
         }
       }
-      (*(void (**)(unsigned int *, int))(*v3 + 968))(v3, v25); /*0x709792*/
+      v3->AssignTarget_SyncLog(v25); /*0x709792*/
     }
     else
     {
       (*(void (**)(unsigned int *, int))(v3[284] + 12))(v3 + 284, a2); /*0x709728*/
-      v20 = v3[282]; /*0x70972b*/
+      v20 = v3->q468; /*0x70972b*/
       v21 = 0; /*0x709731*/
       v22 = 0; /*0x709735*/
       if ( v20 > 0 ) /*0x709739*/
       {
-        v23 = v3[273]; /*0x70973b*/
+        v23 = v3->vecInt_Items; /*0x70973b*/
         do /*0x709756*/
         {
           if ( *(unsigned int *)(v23 + 4 * v22) > v21 ) /*0x709746*/
@@ -669,7 +669,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
         }
         while ( v22 < v20 ); /*0x709756*/
       }
-      (*(void (**)(unsigned int *))(*v3 + 968))(v3); /*0x70975d*/
+      v3->AssignTarget_SyncLog(); /*0x70975d*/
     }
     /* X11: vtable install elided (implicit via VectorClass virtuals) */
     if ( v30.Items && ((unsigned int *)(v30.IsAllocated))[0] ) /*0x7097b0*/

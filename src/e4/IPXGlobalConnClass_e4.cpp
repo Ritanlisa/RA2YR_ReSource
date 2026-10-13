@@ -340,12 +340,12 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/
-    *((unsigned int *)this + 52) = 0; /*0x54068c*/
+    this->u32_D0 = 0; /*0x54068c*/
   }
-  if ( *((unsigned int *)this + 51) ) /*0x540696*/
+  if ( this->u32_CC ) /*0x540696*/
   {
     __3_YAXPAX_Z(*((void **)this + 51)); /*0x5406a1*/
-    *((unsigned int *)this + 51) = 0; /*0x5406a9*/
+    this->u32_CC = 0; /*0x5406a9*/
   }
   *(unsigned int *)this->__pad_0 = &IPXConnClass::`vftable'; /*0x5406b5*/
   ConnectionClass::dtor((ConnectionClass *)this); /*0x5406bb*/

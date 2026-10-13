@@ -100,7 +100,7 @@ char PlaceCabhutMap(FootClass * aP0)
     (*(((unsigned short *)&(aP0)) + 1)) = v2; /*0x5904e6*/
     v4 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP0)); /*0x5904eb*/
     v4 = v4; /*0x5904f0*/
-    if ( v4[17] == -1 && Cell::IsEmpty(v4) && !v4[57] ) /*0x590503*/
+    if ( v4->u32_44 == -1 && Cell::IsEmpty(v4) && !v4->u32_E4 ) /*0x590503*/
       break; /*0x590503*/
     if ( ++v3 >= aP0[2] + *aP0 + 1 ) /*0x59051a*/
       goto LABEL_7; /*0x59051a*/
@@ -184,7 +184,7 @@ int sub_594190(int * a1, int a2)
               {
                 v2 = a1; /*0x594298*/
   LABEL_19:
-                v10[283] = g_abs_10; /*0x59429c*/
+                v10->u32_11B = g_abs_10; /*0x59429c*/
                 v5 = dword_ABED04; /*0x5942a7*/
               }
               else
@@ -205,7 +205,7 @@ int sub_594190(int * a1, int a2)
                 v3 = v14; /*0x594278*/
                 v2 = a1; /*0x59427c*/
                 v6 = v13; /*0x594280*/
-                v10[283] = *(unsigned char *)(*((unsigned int *)dword_ABDF94 + v11) + 16); /*0x59428a*/
+                v10->u32_11B = *(unsigned char *)(*((unsigned int *)dword_ABDF94 + v11) + 16); /*0x59428a*/
                 v5 = dword_ABED04; /*0x594290*/
               }
             }
@@ -268,7 +268,7 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
     v5 = RandomMap::TerrainTileDataConstructor(v4, *(unsigned int *)(a1 + 36)); /*0x594445*/
   else
     v5 = 0; /*0x594449*/
-  v6 = v5[2]; /*0x59444b*/
+  v6 = v5->__pad_008; /*0x59444b*/
   v27 = v5; /*0x594456*/
   v29 = v6; /*0x59445a*/
   VectorClass::CellConstructor(&v32, 0, 0); /*0x59445e*/
@@ -308,11 +308,11 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
         }
       }
       *((unsigned int *)dword_ABED10 + 20 * (int16_t)v13 + 20 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v13)) + 2))) + 14) = v6; /*0x59454a*/
-      ++v5[3]; /*0x594552*/
+      ++v5->q00C; /*0x594552*/
       v14 = v5[12]; /*0x594555*/
       if ( v5[14] < v14 /*0x594578*/
         || (v5->u32_35 || !v14)
-        && (v15 = v5[15], v15 > 0)
+        && (v15 = v5->u32_3C, v15 > 0)
         && (*(uint8_t (**)(unsigned int *, int, unsigned int))(v5[10] + 8))(v5 + 10, v14 + v15, 0) )
       {
         v16 = v5[14]; /*0x59457f*/
@@ -782,7 +782,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x595fe5*/
   {
     WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.ComPtr_field_0x08, *(int *)dword_A8B240); /*0x595ff1*/
-    ComPtr::Set(&v17, WDTTerritoryClass[1]); /*0x595ffe*/
+    ComPtr::Set(&v17, WDTTerritoryClass->u32_4); /*0x595ffe*/
     v17.ComPtr_field_0x08 = (int)&vt_rc_ptr; /*0x596007*/
     ComPtr::Release((ComPtr *)&v17.ComPtr_field_0x08); /*0x59600b*/
   }
@@ -1059,15 +1059,15 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       v28 = *((unsigned int *)v44 + v16); /*0x59abc8*/
       do /*0x59ac53*/
       {
-        v18 = *(unsigned int *)(a1 + 8); /*0x59abda*/
-        if ( *(unsigned int *)(a1 + 16) < v18 /*0x59ac02*/
-          || (*(unsigned char *)(a1 + 13) || !v18)
-          && (v19 = *(unsigned int *)(a1 + 20), v19 > 0)
-          && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)a1 + 8))(a1, v18 + v19, 0) )
+        v18 = a1->vtable3; /*0x59abda*/
+        if ( a1->uniqueId < v18 /*0x59ac02*/
+          || (a1->u32_D || !v18)
+          && (v19 = a1->abstractFlags, v19 > 0)
+          && (*(uint8_t (**)(int, int, unsigned int))(*&a1->needsSave))(a1, v18 + v19, 0) )
         {
-          v20 = *(unsigned int *)(a1 + 16); /*0x59ac09*/
-          *(unsigned int *)(a1 + 16) = v20 + 1; /*0x59ac0f*/
-          v21 = (unsigned int *)(*(unsigned int *)(a1 + 4) + 16 * v20); /*0x59ac1a*/
+          v20 = a1->uniqueId; /*0x59ac09*/
+          a1->uniqueId = v20 + 1; /*0x59ac0f*/
+          v21 = (unsigned int *)(a1->vtable2 + 16 * v20); /*0x59ac1a*/
           *v21 = v33 + 2; /*0x59ac23*/
           v21[1] = v34 + 2; /*0x59ac25*/
           v21[2] = v24 - 4; /*0x59ac28*/
@@ -1138,8 +1138,8 @@ int sub_59C630()
         || *((unsigned char *)NeighbourContent + 282)
         || v3[14] != g_CellPassabilityLUT
         || *((unsigned char *)v3 + 282)
-        || v4[14] != g_CellPassabilityLUT
-        || *((unsigned char *)v4 + 282) )
+        || v4->q038 != g_CellPassabilityLUT
+        || v4->u32_11A )
       {
         goto LABEL_25; /*0x59c6ce*/
       }
@@ -1226,7 +1226,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
               if ( g_MissionQueueFrame.localVariables[163] ) /*0x594360*/
                 *(unsigned int *)(80 * ((int16_t)v6 + g_MapCellWidth * v7) + g_MissionQueueFrame.localVariables[163] + 56) = v12->vfptr2; /*0x59437a*/
               v9 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v11); /*0x594388*/
-              v9[283] = v12->uniqueId; /*0x594394*/
+              v9->u32_11B = v12->uniqueId; /*0x594394*/
               v5 = g_MissionQueueFrame.localVariables[160]; /*0x59439a*/
             }
             v3 = v10; /*0x5943a0*/

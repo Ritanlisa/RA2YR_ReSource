@@ -187,7 +187,7 @@ LABEL_17:
   }
 LABEL_28:
   v28 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&g_RulesClass_Instance + 2360); /*0x4f670b*/
-  v29 = (*(int (**)(unsigned int *, SuperWeaponTypeClass *))(*v28 + 132))(v28, this); /*0x4f6728*/
+  v29 = v28->vt_slot_132(this); /*0x4f6728*/
   if ( !v34 && v35 ) /*0x4f6738*/
   {
     if ( v33 ) /*0x4f6740*/
@@ -197,7 +197,7 @@ LABEL_28:
     return v32 && v11 >= v27 + v29; /*0x4f6772*/
   }
   v30 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&g_RulesClass_Instance + 2276); /*0x4f678f*/
-  v31 = (*(int (**)(unsigned int *, SuperWeaponTypeClass *))(*v30 + 132))(v30, this); /*0x4f6799*/
+  v31 = v30->GetSpecialValue(this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
     if ( v33 ) /*0x4f67b5*/
@@ -283,18 +283,18 @@ int SuperWeaponTypeClass::Construct(char *aP1)
   *((unsigned int *)this + 95) = 10; /*0x511520*/
   *((unsigned int *)this + 94) = 0; /*0x511527*/
   *((unsigned int *)this + 90) = &TypeList<UnitTypeClass const *>::`vftable'; /*0x51152a*/
-  AircraftTypeVector::Constructor(&this->q184, 0, 0); /*0x51153a*/
+  AircraftTypeVector::Constructor(&this->AbstractClass_184, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  this->q184 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x51154c*/
+  this->AbstractClass_184 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x51154c*/
   *((unsigned int *)this + 105) = 16777281; /*0x511552*/
   *((unsigned char *)this + 424) = 0; /*0x51156c*/
   this->AbstractTypeClass = &HouseTypeClass::`vftable'; /*0x511572*/
   this->WarheadTypeClass_1A8 = &HouseTypeClass::`vftable'; /*0x511578*/
   this->? = &HouseTypeClass::`vftable'; /*0x51157f*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511586) */
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x51158d*/
-  *((unsigned char *)this + 416) = 0; /*0x511592*/
+  AbstractClass::GenerateUniqueID(&this->AbstractClass_184); /*0x51158d*/
+  this->q1A0 = 0; /*0x511592*/
   v4 = dword_A83CA8; /*0x511598*/
   if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
     || (byte_A83CA5 || !dword_A83CA0)
@@ -646,7 +646,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
   this->AbstractTypeClass = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
   this->? = &SuperWeaponTypeClass::`vftable'; /*0x6ceff3*/
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceffa) */
-  this->? = &SuperWeaponTypeClass::`vftable'; /*0x6cf001*/
+  this->vtable4 = &SuperWeaponTypeClass::`vftable'; /*0x6cf001*/
   v5 = this; /*0x6cf00f*/
   v3 = (*(int (**)(unsigned int *, SuperWeaponTypeClass **))(dword_A8E330 + 16))(&dword_A8E330, &v5); /*0x6cf013*/
   if ( v3 != -1 && v3 < dword_A8E340 && v3 < --dword_A8E340 ) /*0x6cf02e*/

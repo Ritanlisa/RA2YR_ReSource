@@ -825,30 +825,30 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
             if ( v26 ) /*0x41b30a*/
             {
               v27 = atoi(v26); /*0x41b30d*/
-              FootClass::SetField((gamemd::FootClass *)((int *)(v12 + 336)), v27); /*0x41b31c*/
+              FootClass::SetField(&v12->initialOwner, v27); /*0x41b31c*/
             }
             v28 = strtok(0, Str); /*0x41b328*/
             if ( v28 ) /*0x41b332*/
-              *(unsigned int *)(v12 + 532) = atoi(v28); /*0x41b33d*/
+              v12->displayProductionTo = atoi(v28); /*0x41b33d*/
             v29 = strtok(0, Str); /*0x41b34a*/
             if ( v29 ) /*0x41b354*/
-              *(unsigned char *)(v12 + 1057) = atoi(v29) != 0; /*0x41b364*/
+              v12->isRecruitableByAlly_d = atoi(v29) != 0; /*0x41b364*/
             v30 = strtok(0, Str); /*0x41b371*/
             if ( v30 ) /*0x41b37b*/
-              *(unsigned char *)(v12 + 1058) = atoi(v30) != 0; /*0x41b38b*/
+              v12->isRecruitableByEnemy_d = atoi(v30) != 0; /*0x41b38b*/
             if ( (*(uint8_t (**)(int, unsigned int *, int, int))(*(unsigned int *)v12 + 216))(v12, v40, v20, a2) ) /*0x41b39b*/
             {
-              v31 = *(unsigned int *)(v12 + 1732); /*0x41b3a9*/
-              (*((unsigned short *)&(v32))) = Math::RoundToInt((double)v39 * (double)*(int *)(v31 + 160) * 0.00390625); /*0x41b3bb*/
-              *(unsigned int *)(v12 + 108) = v32; /*0x41b3c0*/
-              v33 = *(unsigned int *)(v31 + 160); /*0x41b3c3*/
+              v31 = v12->Type; /*0x41b3a9*/
+              (*((unsigned short *)&(v32))) = Math::RoundToInt((double)v39 * (double)v31->Strength * 0.00390625); /*0x41b3bb*/
+              v12->health = v32; /*0x41b3c0*/
+              v33 = v31->Strength; /*0x41b3c3*/
               if ( v32 > v33 - 3 ) /*0x41b3ce*/
-                *(unsigned int *)(v12 + 108) = v33; /*0x41b3d0*/
-              if ( !*(unsigned int *)(v12 + 108) ) /*0x41b3d3*/
-                *(unsigned int *)(v12 + 108) = 1; /*0x41b3da*/
+                v12->health = v33; /*0x41b3d0*/
+              if ( !v12->health ) /*0x41b3d3*/
+                v12->health = 1; /*0x41b3da*/
               v34 = *(unsigned int *)v12; /*0x41b3e4*/
               a2 = 0; /*0x41b3e6*/
-              *(unsigned int *)(v12 + 112) = *(unsigned int *)(v12 + 108); /*0x41b3eb*/
+              v12->estimatedHealth = *&v12->health; /*0x41b3eb*/
               (*(void (**)(int, int))(v34 + 488))(v12, v22); /*0x41b3ee*/
               (*(void (**)(int))(*(unsigned int *)v12 + 492))(v12); /*0x41b3f8*/
             }

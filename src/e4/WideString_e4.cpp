@@ -553,7 +553,7 @@ short WideString::Erase(int a2, int a3_2)
   if ( v6 <= 0 ) /*0x7b6dbd*/
     return 0; /*0x7b6dc1*/
   v8 = (wchar_t *)operator new(2 * (v4 + 0x7FFFFFFF * v6) + 2); /*0x7b6de0*/
-  *(unsigned short *)(*(unsigned int *)a3_2 + 2 * v5) = 0; /*0x7b6de2*/
+  *(unsigned short *)(*&a3_2->vtable3 * v5) = 0; /*0x7b6de2*/
   v9 = 2 * (v6 + v5); /*0x7b6dec*/
   *(unsigned short *)(v9 + *(unsigned int *)a3_2 - 2) = 0; /*0x7b6dee*/
   wcscpy(v8, *(const wchar_t **)a3_2); /*0x7b6df9*/

@@ -280,7 +280,7 @@ bool GetField(HWND hWnd)
 int GetMode3(void* dialog_data)
 {
     uint8_t* ptr = (uint8_t*)(dialog_data);
-    return ptr[60] != 0 ? 3 : -2;
+    return ptr->u32_3C != 0 ? 3 : -2;
 }
 
 // IDA 0x5D5DC0: Dialog::GetModeNeg2 — returns 0 if *(this+63) else -2

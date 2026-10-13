@@ -292,7 +292,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
   v4 = *(unsigned int *)(v2 + 632); /*0x414bdb*/
   if ( v4 ) /*0x414be3*/
     v4->ProcessTimeWarp(); /*0x414be7*/
-  if ( ((*(uint8_t (__usercall **)(int *, double))(*v3 + 468))(v3, a2) /*0x414c11*/
+  if ( (v3->GetShroudByte(a2) /*0x414c11*/
      || v3->GetFogByte())
     && !((int)dword_A8ED84 % 24) )
   {
@@ -301,7 +301,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
       v5 = (AnimClass *)operator new(0x1C8u); /*0x414c2c*/
       if ( v5 ) /*0x414c36*/
       {
-        v31 = v3[39]; /*0x414c4b*/
+        v31 = v3->location; /*0x414c4b*/
         v32 = v3[40]; /*0x414c54*/
         v33 = v3[41]; /*0x414c60*/
         AnimClass::ctor(v5, *&dword_8871E0->q344, &v31, 0, 1, (void *)0x600, 0, 0); /*0x414c73*/
@@ -313,33 +313,33 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
   {
     goto LABEL_70; /*0x414c94*/
   }
-  if ( !v3[413] ) /*0x414c9e*/
+  if ( !v3->locomotor ) /*0x414c9e*/
     sub_7DC720(-2147467261); /*0x414cad*/
-  (*(void (__stdcall **)(int))(*v3->locomotor + 64))(v3[413]); /*0x414cbb*/
+  (*(void (__stdcall **)(int))(*v3->locomotor + 64))(v3->locomotor); /*0x414cbb*/
   (*((unsigned char *)&(v6))) = v3->isAliveFlag; /*0x414cbe*/
   if ( (unsigned char)v6 )
   {
   LABEL_70:
-    if ( v3->GetFogByte() && v3[158]
+    if ( v3->GetFogByte() && v3->temporalTargetingMe
       || v3->GetShroudByte() )
     {
-      if ( v3[173] ) /*0x414cf2*/
+      if ( v3->AbstractClass_2B4 ) /*0x414cf2*/
         v3->AssignTarget_SyncLog(0); /*0x414d02*/
-      v6 = v3[361]; /*0x414d08*/
+      v6 = v3->movementDestination; /*0x414d08*/
       if ( v6 ) /*0x414d10*/
         (*((unsigned char *)&(v6))) = v3->AssignDestination(0, 1); /*0x414d1e*/
     }
     else
     {
-      v7 = v3[173]; /*0x414d2c*/
+      v7 = v3->AbstractClass_2B4; /*0x414d2c*/
       if ( v7 ) /*0x414d34*/
       {
-        if ( (*(uint8_t (__thiscall **)(int))(*(unsigned int *)v7 + 84))(v7) /*0x414d8b*/
+        if ( v7->COMStub_Return0_21() /*0x414d8b*/
           || (v8 = v3->u8_AD) != 0
           && (v8[20] & 1) != 0
           && !(uint8_t)Object::IsAlliedWithObjectSimpleHouse(v3->focus, v8)
           && (v9 = v3->AbstractClass_2B4, v9[136] == 2)
-          && !(*(uint8_t (__thiscall **)(unsigned int *, int))(*v9 + 812))(v9, v3[135]) )
+          && !(*(uint8_t (__thiscall **)(unsigned int *, int))(*v9 + 812))(v9, v3->focus) )
         {
           v3->AssignTarget_SyncLog(0); /*0x414d9b*/
         }
@@ -350,7 +350,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
       {
         if ( v3->isSinking_d ) /*0x414db6*/
         {
-          v31 = v3[39]; /*0x414dce*/
+          v31 = v3->location; /*0x414dce*/
           v34 = v31; /*0x414dd2*/
           v10 = *v3; /*0x414dd9*/
           v32 = v3[40]; /*0x414ddb*/
@@ -379,22 +379,22 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
               AnimClass::ctor(v16, (void *)dword_8871E0->InfantryBrute, &v31, 0, 1, (void *)0x600, 0, 0); /*0x414ecb*/
           }
         }
-        v37[0] = v3[39]; /*0x414ede*/
+        v37[0] = v3->location; /*0x414ede*/
         v37[1] = v3[40]; /*0x414ee5*/
-        v17 = v3[433]; /*0x414ee9*/
+        v17 = v3->Type; /*0x414ee9*/
         v37[2] = v3[41]; /*0x414ef2*/
-        if ( *(unsigned int *)(v17 + 3584) ) /*0x414ef6*/
+        if ( v17->qE00 ) /*0x414ef6*/
         {
-          if ( !((int)dword_A8ED84 % *(unsigned int *)(v17 + 3588)) ) /*0x414f06*/
+          if ( !((int)dword_A8ED84 % v17->SpawnDelay_d) ) /*0x414f06*/
           {
             v18 = (AnimClass *)operator new(0x1C8u); /*0x414f15*/
             if ( v18 ) /*0x414f1f*/
-              AnimClass::ctor(v18, *(void **)(v3[433] + 3584), v37, (void *)1, 1, (void *)0x600, 0, 0); /*0x414f42*/
+              AnimClass::ctor(v18, v3->Type->qE00, v37, (void *)1, 1, (void *)0x600, 0, 0); /*0x414f42*/
           }
         }
-        v19 = v3[433]; /*0x414f47*/
-        if ( (*(unsigned char *)(v19 + 3595)
-           || *(unsigned char *)(v19 + 3596)
+        v19 = v3->Type; /*0x414f47*/
+        if ( (v19->FlyBy_2
+           || v19->FlyBack
            || (v20 = (int16_t *)v3->GetCellCoords_Alt(&v30),
                (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&dword_87F7E8, v20, 1))
            || !v3->Destru_vt311())
@@ -416,16 +416,16 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
           }
           if ( v3->vt_entry_200() ) /*0x41504a*/
             v3->ProcessPassengerEjection(); /*0x415058*/
-          if ( v3->AircraftClass_field_bool_6C8 && v3[43] != 1 ) /*0x41506f*/
+          if ( v3->AircraftClass_field_bool_6C8 && v3->currentMission != 1 ) /*0x41506f*/
           {
-            v22 = v3[191]; /*0x415071*/
+            v22 = v3->pitchAngle; /*0x415071*/
             v3->AircraftClass_field_bool_6C8 = 0; /*0x415077*/
-            v3[191] = v22 - 1; /*0x41507f*/
+            v3->pitchAngle = v22 - 1; /*0x41507f*/
           }
           BuildingClass::GetHealthRatio((BuildingClass *)v3); /*0x415087*/
           if ( a2 < *(double *)dword_8871E0->RefundPercent && v3->GetZAboveGround() > 0 )
           {
-            v23 = v3[27] != 0 ? 10 : 80;
+            v23 = v3->health != 0 ? 10 : 80;
             if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v23 ) /*0x4150d4*/
             {
               v24 = (AnimClass *)operator new(0x1C8u); /*0x4150e0*/
@@ -1212,7 +1212,7 @@ int FootClass::DrawPlacementPreview() {
   LABEL_31:
     v26 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, unsigned char *))this->vtable1 + 18))(this, v126); /*0x43dd8e*/
     v106 = ((v106) & 0xFFFF0000u) | ((unsigned int)(*v26 / 256) & 0xFFFFu); /*0x43ddae*/
-    v106 = ((v106) & 0xFFFFu) | (((unsigned int)(v26[1] / 256) & 0xFFFFu) << 16); /*0x43ddc6*/
+    v106 = ((v106) & 0xFFFFu) | (((unsigned int)(v26->vtable2 / 256) & 0xFFFFu) << 16); /*0x43ddc6*/
     *(unsigned int *)v105 = v106; /*0x43ddcf*/
     v27 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v105); /*0x43ddd9*/
     if ( (uint8_t)CellClass::QuickPassable(v27) ) /*0x43dde0*/
@@ -1604,7 +1604,7 @@ int ObjectClass::HandleRallyPointCommand() {
       {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v10, this); /*0x4437ce*/
         v8 = *(unsigned int *)WaypointCoords; /*0x4437df*/
-        v9 = WaypointCoords[4]; /*0x4437e3*/
+        v9 = WaypointCoords->vtable2; /*0x4437e3*/
         v7 = this->computeDistanceSquared(); /*0x4437e8*/
         result = (int)EventClass::Add(v11, v7, 0x16u, v8, v9); /*0x4437f0*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4437ff*/
@@ -1681,9 +1681,9 @@ int ObjectClass::GetScreenCoords() {
     Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v22, &v18); /*0x455cb2*/
     v11 = CalculateBuildingFoundationBounds(this->nextArrayIndex), v25); /*0x455cc2*/
     v7 = v18 + *v11; /*0x455cd4*/
-    v8 = v8 + v11[1]; /*0x455cda*/
-    v12 = v11[2]; /*0x455cdc*/
-    v13 = v11[3]; /*0x455cdf*/
+    v8 = v8 + v11->vtable2; /*0x455cda*/
+    v12 = v11->vtable3; /*0x455cdc*/
+    v13 = v11->vtable4; /*0x455cdf*/
     this->u32_64C = v22; /*0x455ce2*/
     v12 = v12; /*0x455cec*/
     this->u32_650 = v4; /*0x455cf0*/
@@ -1694,10 +1694,10 @@ int ObjectClass::GetScreenCoords() {
     v8 = v8; /*0x455d1a*/
     v13 = v13; /*0x455d1e*/
     *v14 = v7; /*0x455d22*/
-    v14[1] = v8; /*0x455d24*/
-    v14[2] = v12; /*0x455d27*/
+    v14->vtable2 = v8; /*0x455d24*/
+    v14->vtable3 = v12; /*0x455d27*/
     v10 = v13; /*0x455d2a*/
-    v14[3] = v13; /*0x455d2c*/
+    v14->vtable4 = v13; /*0x455d2c*/
     v9 = v12; /*0x455d2f*/
   }
   *v7 = v7; /*0x455d39*/
@@ -1879,8 +1879,8 @@ void* AbstractClass::checkPointer(void* a1) {
   if ( (*((int (__thiscall **)(AbstractClass *))this->vfptr + 39))(this) ) /*0x45ebd5*/
   {
     FoundationSize = Building::GetFoundationSize(v6, 0); /*0x45ebe8*/
-    v3 = FoundationSize[2]; /*0x45ebfa*/
-    v4 = FoundationSize[3]; /*0x45ebfd*/
+    v3 = FoundationSize->vtable3; /*0x45ebfa*/
+    v4 = FoundationSize->vtable4; /*0x45ebfd*/
   }
   else
   {
@@ -2138,7 +2138,7 @@ void FootClass::updateMovementAnimation(int aP1) {
     vtable1 = this->vfptr1; /*0x4734b9*/
     if ( vtable1 ) /*0x4734be*/
     {
-      v3 = (unsigned int *)vtable1[12]; /*0x4734c0*/
+      v3 = vtable1->nextObject; /*0x4734c0*/
       if ( vtable1 == (unsigned int *)aP1 ) /*0x4734c5*/
       {
         this->vfptr1 = v3; /*0x4734c7*/
@@ -2153,7 +2153,7 @@ void FootClass::updateMovementAnimation(int aP1) {
           if ( !v3 ) /*0x4734e2*/
             return; /*0x4734e2*/
         }
-        vtable1[12] = *(unsigned int *)(vtable1[12] + 48); /*0x4734ee*/
+        vtable1->nextObject = *(unsigned int *)(vtable1[12] + 48); /*0x4734ee*/
         --this->vfptr; /*0x4734f4*/
       }
     }
@@ -2207,7 +2207,7 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
     {
       v10 = (unsigned int *)this; /*0x48195f*/
     }
-    if ( FindBuildingByTiberiumType(v10[17]) == v5 ) /*0x4819b5*/
+    if ( FindBuildingByTiberiumType(v10->u32_44) == v5 ) /*0x4819b5*/
       ++v6; /*0x4819b7*/
     v9 = (unsigned int)++v8 < 8; /*0x4819b9*/
   }
@@ -3160,7 +3160,7 @@ int AbstractClass::evaluateTarget(int a1, void* a2) {
           do /*0x50f3e6*/
           {
             *(unsigned int *)v7 = 0; /*0x50f3dd*/
-            v7[4] = 0; /*0x50f3df*/
+            v7->vtable2 = 0; /*0x50f3df*/
             v7 += 8; /*0x50f3e2*/
             --a1; /*0x50f3e5*/
           }
@@ -3226,7 +3226,7 @@ int AbstractClass::selectBestTarget(int a2) {
   result = 0; /*0x50f4a6*/
   if ( v2 <= 0 ) /*0x50f4ab*/
     return -1; /*0x50f4cc*/
-  for ( i = this->Items; *(unsigned int *)i != *(unsigned int *)a2 || *(unsigned char *)(i + 4) != *(unsigned char *)(a2 + 4); i += 8 ) /*0x50f4b1*/
+  for ( i = this->Items; *(unsigned int *)i != *(unsigned int *)a2 || i->vtable2 != *(unsigned char *)(a2 + 4); i += 8 ) /*0x50f4b1*/
   {
     if ( ++result >= v2 ) /*0x50f4ca*/
       return -1; /*0x50f4ca*/
@@ -3680,8 +3680,8 @@ int MissionClass::ForceMission()
     this->missionData = 0; /*0x5b3010*/
     missionTimer = this->missionTimer; /*0x5b301b*/
     *missionTimer = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x5b3021*/
-    missionTimer[1] = v3; /*0x5b3027*/
-    missionTimer[2] = 0; /*0x5b302a*/
+    missionTimer->Reserved = v3; /*0x5b3027*/
+    missionTimer->TimeLeft = 0; /*0x5b302a*/
     return v3; /*0x5b3023*/
   }
   return result; /*0x5b302d*/
@@ -4574,22 +4574,22 @@ int ObjectClass::DetectCloaked() {
           this->missionStartTime = 1; /*0x5f4096*/
           location = this->location; /*0x5f409c*/
           *p_queuedMission = (int)v15; /*0x5f40a2*/
-          p_queuedMission[1] = v24; /*0x5f40a8*/
-          p_queuedMission[2] = 1; /*0x5f40ab*/
+          p_queuedMission->q004 = v24; /*0x5f40a8*/
+          p_queuedMission->q008 = 1; /*0x5f40ab*/
           v18 = *location; /*0x5f40c0*/
-          location[4] = 8 * *(unsigned int *)(location[11] + 848) + 1; /*0x5f40c2*/
+          location->u32_10 = 8 * *(unsigned int *)(location[11] + 848) + 1; /*0x5f40c2*/
           v23 = v18; /*0x5f40c5*/
-          v24 = location[1]; /*0x5f40d1*/
-          v25 = location[2]; /*0x5f40d8*/
+          v24 = location->Y; /*0x5f40d1*/
+          v25 = location->Z; /*0x5f40d8*/
           result = (int)Coord::To_Cell((Coord *)&dword_87F7E8, &v23); /*0x5f40e1*/
-          if ( result->u32_EC == 2 ) /*0x5f40ed*/
+          if ( result->animation == 2 ) /*0x5f40ed*/
           {
             result = operator new(0x1C8u); /*0x5f40f4*/
             if ( result ) /*0x5f40fe*/
             {
               v19 = *location; /*0x5f4100*/
-              v20 = location[1]; /*0x5f4102*/
-              v21 = location[2]; /*0x5f4105*/
+              v20 = location->Y; /*0x5f4102*/
+              v21 = location->Z; /*0x5f4105*/
               v23 = v19; /*0x5f410c*/
               v24 = v20; /*0x5f4126*/
               v25 = v21 + 3; /*0x5f412a*/
@@ -4788,9 +4788,9 @@ int ObjectClass::GetPlacementScreenRect() {
   {
     FoundationSize = Building::GetFoundationSize(v16, 0); /*0x5f47a0*/
     v6 = *FoundationSize; /*0x5f47a5*/
-    v7 = FoundationSize[1]; /*0x5f47a7*/
-    v8 = FoundationSize[2]; /*0x5f47aa*/
-    v9 = FoundationSize[3]; /*0x5f47ad*/
+    v7 = FoundationSize->vtable2; /*0x5f47a7*/
+    v8 = FoundationSize->vtable3; /*0x5f47aa*/
+    v9 = FoundationSize->vtable4; /*0x5f47ad*/
     v10 = *(int16_t *)(v3 + 2); /*0x5f47b5*/
     v17 = v9; /*0x5f47b7*/
     v11 = v14 + v6 - v10 / 2; /*0x5f47c3*/
@@ -5041,7 +5041,7 @@ int ObjectClass::ParachuteDrop() {
             else
             {
               v9 = *v1; /*0x5f5a9d*/
-              v10 = v1[1]; /*0x5f5a9f*/
+              v10 = v1->u32_4; /*0x5f5a9f*/
               v11 = v1[2] + 75; /*0x5f5aaa*/
               v14[0] = v9; /*0x5f5aad*/
               v14[1] = v10; /*0x5f5ab1*/
@@ -5074,7 +5074,7 @@ int ObjectClass::ParachuteDrop() {
               {
                 v8->lastCommands[0] = this->vt_slot_484(); /*0x5f5b19*/
                 result = this->GetCellCoords(); /*0x5f5b23*/
-                v8->animation[1] = *(int16_t *)(result + 266); /*0x5f5b30*/
+                v8->animation[1] = result->u32_10A; /*0x5f5b30*/
               }
             }
             goto LABEL_19; /*0x5f5b30*/
@@ -5311,8 +5311,8 @@ int ObjectClass::SetPosition() {
 
   v1 = &this->field_9C; /*0x5f6944*/
   *v1 = *v3; /*0x5f694c*/
-  v1[1] = v3[1]; /*0x5f6951*/
-  result = v3[2]; /*0x5f6954*/
+  v1[1] = v3->vtable2; /*0x5f6951*/
+  result = v3->vtable3; /*0x5f6954*/
   v1[2] = result; /*0x5f6957*/
   return result; /*0x5f695a*/
 }
@@ -5333,8 +5333,8 @@ int ObjectClass::GetCellCoords() {
   v6 = *(unsigned int *)this->q0A0; /*0x5f697f*/
   v7 = this->field_A4; /*0x5f6986*/
   Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v5); /*0x5f698a*/
-  v2 = v1[2]; /*0x5f6991*/
-  v3 = v1[1]; /*0x5f6994*/
+  v2 = v1->u32_8; /*0x5f6991*/
+  v3 = v1->u32_4; /*0x5f6994*/
   v5 = *v1; /*0x5f6997*/
   v7 = v2; /*0x5f699f*/
   v6 = v3; /*0x5f69a9*/
@@ -5390,7 +5390,7 @@ int ObjectClass::CheckGroundHeightDiff() {
   if ( v5 - GroundHeight > 3 * dword_AC13C8 ) /*0x5f6af8*/
   {
     result = (int)Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v7); /*0x5f6b04*/
-    if ( (result->u8_140 & 0x100) != 0 ) /*0x5f6b12*/
+    if ( (result->currentRank & 0x100) != 0 ) /*0x5f6b12*/
     {
       (*((unsigned char *)&(result))) = 1; /*0x5f6b17*/
       return result; /*0x5f6b1d*/
@@ -5697,8 +5697,8 @@ int RadBeam::drawPipScale(int* a2) {
 
   p_occupant = &this->occupant; /*0x6594a4*/
   *p_occupant = *a2; /*0x6594a9*/
-  p_occupant[1] = a2[1]; /*0x6594ae*/
-  result = a2[2]; /*0x6594b1*/
+  p_occupant[1] = a2->vtable2; /*0x6594ae*/
+  result = a2->vtable3; /*0x6594b1*/
   p_occupant[2] = result; /*0x6594b4*/
   return result; /*0x6594b7*/
 }
@@ -5944,7 +5944,7 @@ void* AbstractClass::checkAICondition(int a1) {
   if ( vtable1 ) /*0x65d4de*/
   {
     this->vfptr1 = 0; /*0x65d4e0*/
-    (*(void (__thiscall **)(void *))(*(unsigned int *)vtable1 + 8))(vtable1); /*0x65d4e9*/
+    vtable1->COMStub_Release(); /*0x65d4e9*/
   }
   if ( (a1 & 1) != 0 ) /*0x65d4f1*/
     operator delete((void *)(this)); /*0x65d4f4*/
@@ -6613,7 +6613,7 @@ void* TechnoClass::GetTurretOffset(void* a1, int a2) {
     Transform::Copy(v30, v5); /*0x6f3dbf*/
     vtable0 = (int (__thiscall **)(TechnoClass *, unsigned char *))this->vfptr; /*0x6f3dc4*/
     memcpy(&v29, v30, sizeof(v29)); /*0x6f3dd3*/
-    v7 = (unsigned int *)vtable0[170](this, v27); /*0x6f3ded*/
+    v7 = vtable0->rockerLinkedUnit(this, v27); /*0x6f3ded*/
     v24 = (double)(int)((((unsigned int)((*v7 >> 10) + 1) >> 1) & 0x1F) - 8) * -0.1963495408493621 /*0x6f3e2e*/
         - (double)(int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v24) >> 10) + 1) >> 1)
                        & 0x1F)
@@ -6840,14 +6840,14 @@ int TechnoClass::DrawTargetLine() {
     v24[0] = v12 - 2; /*0x6ffa48*/
     v6 = Rect::Construct(&v29, v24, 3, 3); /*0x6ffa4c*/
     v20 = *v6; /*0x6ffa55*/
-    v21 = v6[1]; /*0x6ffa5e*/
-    v22 = v6[2]; /*0x6ffa65*/
-    v23 = v6[3]; /*0x6ffa74*/
+    v21 = v6->Y; /*0x6ffa5e*/
+    v22 = v6->Width; /*0x6ffa65*/
+    v23 = v6->Height; /*0x6ffa74*/
     v7 = ClipRectIntersection(v28, &DSurface_ViewBounds.field_0, &v20, 0, 0); /*0x6ffa7e*/
     v16 = *v7; /*0x6ffa86*/
-    v17 = v7[1]; /*0x6ffa8d*/
-    v18 = v7[2]; /*0x6ffa94*/
-    v19 = v7[3]; /*0x6ffaa1*/
+    v17 = v7->vtable2; /*0x6ffa8d*/
+    v18 = v7->vtable3; /*0x6ffa94*/
+    v19 = v7->vtable4; /*0x6ffaa1*/
     g_DSurface_Hidden_2->vt_slot_20(/*0x6ffaac*/
       g_DSurface_Hidden_2, &v16, v5);
     v8 = *(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 4) == 1
@@ -6859,9 +6859,9 @@ int TechnoClass::DrawTargetLine() {
     v19 = 3; /*0x6ffb08*/
     v9 = ClipRectIntersection(v28, &DSurface_ViewBounds.field_0, &v16, 0, 0); /*0x6ffb0c*/
     v20 = *v9; /*0x6ffb14*/
-    v21 = v9[1]; /*0x6ffb1b*/
-    v22 = v9[2]; /*0x6ffb22*/
-    v23 = v9[3]; /*0x6ffb2f*/
+    v21 = v9->vtable2; /*0x6ffb1b*/
+    v22 = v9->vtable3; /*0x6ffb22*/
+    v23 = v9->vtable4; /*0x6ffb2f*/
     g_DSurface_Hidden_2->vt_slot_20(/*0x6ffb3a*/
       g_DSurface_Hidden_2, &v20, v8);
     v27[1] = (int)DSurface_ViewBounds.field_4; /*0x6ffb4e*/
@@ -6959,7 +6959,7 @@ int TechnoClass::GetDrawHeight() {
   int v41; // ecx
   int16_t v42[2]; // [esp+10h] [ebp-5Ch] BYREF
   int v43; // [esp+14h] [ebp-58h]
-  int16_t v34[2]; // [esp+18h] [ebp-54h] BYREF
+  int16_t v34->u32_2; // [esp+18h] [ebp-54h] BYREF
   int16_t v45[2]; // [esp+1Ch] [ebp-50h] BYREF
   int16_t v46[2]; // [esp+20h] [ebp-4Ch] BYREF
   int16_t v48[2]; // [esp+28h] [ebp-44h] BYREF
@@ -6985,7 +6985,7 @@ int TechnoClass::GetDrawHeight() {
   vtable0 = (int (__thiscall **)(TechnoClass *, int16_t *))this->vfptr; /*0x704368*/
   v5 = -v3; /*0x704372*/
   v43 = -v3; /*0x704375*/
-  *(unsigned int *)v42 = *(unsigned int *)vtable0[110](this, v53); /*0x704385*/
+  *(unsigned int *)v42 = *vtable0->airstrikeTintTimer(this, v53); /*0x704385*/
   v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v42); /*0x704394*/
   v7 = (int (__thiscall **)(TechnoClass *))this->vfptr; /*0x704396*/
   v6 = v6; /*0x70439a*/
@@ -7011,7 +7011,7 @@ int TechnoClass::GetDrawHeight() {
       }
     }
   }
-  if ( v6[284] ) /*0x704421*/
+  if ( v6->u32_11C ) /*0x704421*/
   {
     v34[0] = (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[86]))) + v42[0]; /*0x70444b*/
     v34[1] = (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[86])) + 1)) + v42[1]; /*0x704450*/
@@ -7028,13 +7028,13 @@ int TechnoClass::GetDrawHeight() {
     {
       if ( v13 && v14 ) /*0x7044ef*/
       {
-        v15 = v12[17]; /*0x7044f5*/
+        v15 = v12->u32_44; /*0x7044f5*/
         if ( v15 == -1 ) /*0x7044fb*/
         {
-          v16 = v13[17]; /*0x704522*/
+          v16 = v13->u32_44; /*0x704522*/
           if ( v16 == -1 ) /*0x704528*/
           {
-            v17 = v14[17]; /*0x70454e*/
+            v17 = v14->u32_44; /*0x70454e*/
             if ( v17 != -1 && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v17) + 693) ) /*0x70455f*/
               return g_INI_Key_TRUCKA.Locomotor[3] + v5 - 1; /*0x70457a*/
           }
@@ -7063,50 +7063,50 @@ int TechnoClass::GetDrawHeight() {
        - 1)
       & 7;
   v23 = v42[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v22 + 82])) + 1)); /*0x70460a*/
-  v34[0] = v42[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v22 + 82]))); /*0x704616*/
-  v34[1] = v23; /*0x70461f*/
+  v34->q000 = v42[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v22 + 82]))); /*0x704616*/
+  v34->u32_1 = v23; /*0x70461f*/
   *(unsigned int *)v49 = *(unsigned int *)v34; /*0x70462e*/
   *(unsigned int *)v45 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v49); /*0x70463e*/
   v24 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)primaryFacing, &v57) >> 12) + 1) >> 1) & 7; /*0x704654*/
   v25 = v42[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v24 + 82])) + 1)); /*0x704667*/
-  v34[0] = (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v24 + 82]))) + v42[0]; /*0x704673*/
-  v34[1] = v25; /*0x70467c*/
+  v34->q000 = (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v24 + 82]))) + v42[0]; /*0x704673*/
+  v34->u32_1 = v25; /*0x70467c*/
   *(unsigned int *)v50 = *(unsigned int *)v34; /*0x70468b*/
   *(unsigned int *)v46 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v50); /*0x70469b*/
   v26 = ((uint8_t)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)primaryFacing, &v58) >> 12) + 1) >> 1) /*0x7046b4*/
        - 4)
       & 7;
   v27 = v42[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v26 + 82])) + 1)); /*0x7046c7*/
-  v34[0] = (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v26 + 82]))) + v42[0]; /*0x7046d3*/
-  v34[1] = v27; /*0x7046dc*/
+  v34->q000 = (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v26 + 82]))) + v42[0]; /*0x7046d3*/
+  v34->u32_1 = v27; /*0x7046dc*/
   *(unsigned int *)v51 = *(unsigned int *)v34; /*0x7046eb*/
   v28 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v51); /*0x7046fb*/
   v29 = ((uint8_t)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)primaryFacing, &v59) >> 12) + 1) >> 1) /*0x70470d*/
        + 3)
       & 7;
   v30 = v42[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v29 + 82])) + 1)); /*0x704725*/
-  v34[0] = v42[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v29 + 82]))); /*0x704731*/
-  v34[1] = v30; /*0x70473a*/
+  v34->q000 = v42[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v29 + 82]))); /*0x704731*/
+  v34->u32_1 = v30; /*0x70473a*/
   *(unsigned int *)v52 = *(unsigned int *)v34; /*0x704749*/
   v31 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v52); /*0x704759*/
   v32 = ((uint8_t)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)primaryFacing, &v60) >> 12) + 1) >> 1) /*0x70476b*/
        - 3)
       & 7;
   v33 = v42[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v32 + 82])) + 1)); /*0x704783*/
-  v34[0] = v42[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v32 + 82]))); /*0x70478f*/
-  v34[1] = v33; /*0x704798*/
+  v34->q000 = v42[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[v32 + 82]))); /*0x70478f*/
+  v34->u32_1 = v33; /*0x704798*/
   *(unsigned int *)v53 = *(unsigned int *)v34; /*0x7047a7*/
   v34 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v53); /*0x7047ab*/
   *(unsigned int *)v34 = v34; /*0x7047b2*/
   if ( !v21 || !*(unsigned int *)v45 || !*(unsigned int *)v46 ) /*0x7047ce*/
     return v43 - 1; /*0x7047ce*/
-  if ( v21[284] || *(unsigned char *)(*(unsigned int *)v45 + 284) || *(unsigned char *)(*(unsigned int *)v46 + 284) ) /*0x7047ee*/
+  if ( v21->u32_11C || *(unsigned char *)(*(unsigned int *)v45 + 284) || *(unsigned char *)(*(unsigned int *)v46 + 284) ) /*0x7047ee*/
     return g_INI_Key_TRUCKA.Locomotor[2] + v43; /*0x7047ee*/
   if ( !v28 || !v31 || !v34 ) /*0x70480e*/
     return v43 - 1; /*0x70480e*/
-  if ( v28[284] || v31[284] || v34[284] ) /*0x704830*/
+  if ( v28->u32_11C || v31[284] || v34->u32_11C ) /*0x704830*/
     return g_INI_Key_TRUCKA.Locomotor[2] + v43; /*0x7049b6*/
-  if ( v6[284] ) /*0x704842*/
+  if ( v6->u32_11C ) /*0x704842*/
     return v43 + g_INI_Key_TRUCKA.Locomotor[1]; /*0x70485e*/
   if ( (((uint8_t)(*ProgressTimer::GetValue((ProgressTimer *)primaryFacing, &v60) >> 12) + 1) & 0xE) == 0xC /*0x70488d*/
     || (((uint8_t)(*ProgressTimer::GetValue((ProgressTimer *)primaryFacing, &v60) >> 12) + 1) & 0xE) == 0 )
@@ -7126,7 +7126,7 @@ int TechnoClass::GetDrawHeight() {
     v63 = *(unsigned char **)v45; /*0x7048d2*/
     v64 = *(unsigned int *)v46; /*0x7048d6*/
   }
-  if ( (*((unsigned int *)v6 + 80) & 0x10000) != 0 ) /*0x7048fb*/
+  if ( (v6->u32_140 & 0x10000) != 0 ) /*0x7048fb*/
     return v43 - 1; /*0x704999*/
   v35 = 0; /*0x704901*/
   v36 = &v62; /*0x704903*/
@@ -7369,7 +7369,7 @@ int ObjectClass::NotifyExpired(void* a1, void* a2) {
   rockerLinkedUnit = (int *)this->rockerLinkedUnit; /*0x707b4e*/
   if ( a1 == rockerLinkedUnit ) /*0x707b56*/
   {
-    rockerLinkedUnit[170] = 0; /*0x707b58*/
+    rockerLinkedUnit->q2A8 = 0; /*0x707b58*/
     this->rockerLinkedUnit = 0; /*0x707b5e*/
   }
   if ( a1 == (int *)this->locomotorTarget ) /*0x707b6a*/
@@ -8457,9 +8457,9 @@ int TechnoClass::DrawPowerIndicator() {
     p_arrayIndex = (uint16_t *)TextBoundingRect[3]; /*0x70ab2f*/
     v7 = ClipRectIntersection(v23, &v19, v28, 0, 0); /*0x70ab37*/
     v19 = *v7; /*0x70ab3e*/
-    v20 = v7[1]; /*0x70ab45*/
-    v21 = v7[2]; /*0x70ab4c*/
-    v8 = (uint16_t *)v7[3]; /*0x70ab52*/
+    v20 = v7->vtable2; /*0x70ab45*/
+    v21 = v7->vtable3; /*0x70ab4c*/
+    v8 = v7->vtable4; /*0x70ab52*/
     v9 = &this->owner[4] + 1; /*0x70ab5b*/
     p_arrayIndex = v8; /*0x70ab60*/
     v10 = (*v9 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x70abae*/
@@ -8499,9 +8499,9 @@ int TechnoClass::DrawPowerIndicator() {
   v14 = ClipRectIntersection(v24, &v18, v28, 0, 0); /*0x70ac8d*/
   owner = (uint8_t *)this->owner; /*0x70ac94*/
   v18 = *v14; /*0x70ac9a*/
-  v19 = v14[1]; /*0x70aca9*/
-  v20 = v14[2]; /*0x70acb0*/
-  v21 = v14[3]; /*0x70acbf*/
+  v19 = v14->vtable2; /*0x70aca9*/
+  v20 = v14->vtable3; /*0x70acb0*/
+  v21 = v14->vtable4; /*0x70acbf*/
   v16 = (owner[22265] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x70ad07*/
       | (owner[22266] >> g_BitMask_Blue << g_BitMask_Green)
       | (owner[22267] >> g_BitMask_Red << g_BitShift_Blue);
@@ -9492,9 +9492,9 @@ int TechnoClass::Draw(void* a1, void* a2) {
           vtable0,
           v41,
           *v27,
-          v27[1],
-          v27[2],
-          v27[3],
+          v27->vtable2,
+          v27->vtable3,
+          v27->vtable4,
           v18,
           0);
     }
@@ -9505,9 +9505,9 @@ int TechnoClass::Draw(void* a1, void* a2) {
         vtable0,
         v41,
         *v27,
-        v27[1],
-        v27[2],
-        v27[3],
+        v27->vtable2,
+        v27->vtable3,
+        v27->vtable4,
         v18,
         0);
     }
@@ -9714,7 +9714,7 @@ int ObjectClass::IsCellSuitableForPlacement() {
         (*(((unsigned short *)&(v11)) + 1)) = v8 + (*(this->vtable1 + 1)); /*0x74d70d*/
         *(unsigned int *)v11 = v11; /*0x74d71a*/
         v10 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v11); /*0x74d724*/
-        if ( v10[284] || *((unsigned int *)v10 + 59) || (char)v10[283] != v6 ) /*0x74d746*/
+        if ( v10->u32_11C || v10->u32_EC || (char)v10[283] != v6 ) /*0x74d746*/
           break; /*0x74d746*/
         if ( ++v9 > 1 ) /*0x74d74c*/
         {

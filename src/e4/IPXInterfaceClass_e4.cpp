@@ -506,7 +506,7 @@ int16_t IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   memcpy(v5 + 32, a1, a3); /*0x7b2505*/
   v5->q010 = a3; /*0x7b250e*/
   this->SetAddress(v5); /*0x7b2516*/
-  v5[20] = 1; /*0x7b251d*/
+  v5->q014 = 1; /*0x7b251d*/
   if ( aP3 ) /*0x7b2523*/
   {
     v6 = this->q_40; /*0x7b2525*/
@@ -771,13 +771,13 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
 
   v3 = *&this->Initialized; /*0x7b2b53*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x7b2b56) */
-  if ( v3 && BYTE1(this->m_C) ) /*0x7b2b60*/
+  if ( v3 && BYTE1(this->LocalNode) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x7b2b70*/
+    *&this->Initialized = 0; /*0x7b2b70*/
   }
-  BYTE1(this->m_C) = 0; /*0x7b2b7b*/
-  this->m_8 = 0; /*0x7b2b81*/
+  BYTE1(this->LocalNode) = 0; /*0x7b2b7b*/
+  this->LocalNetwork = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
     __3_YAXPAX_Z(this); /*0x7b2b8b*/
   return this->__pad_0; /*0x7b2b95*/

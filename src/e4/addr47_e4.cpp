@@ -622,9 +622,9 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
 
   v4 = (CellClass *)a1; /*0x47e04a*/
   if ( a3 ) /*0x47e053*/
-    *(unsigned char *)(a1 + 286) = 9; /*0x47e05e*/
+    a1->u32_11E = 9; /*0x47e05e*/
   else
-    *(unsigned char *)(a1 + 286) = 0; /*0x47e055*/
+    a1->u32_11E = 0; /*0x47e055*/
   a4 = a4; /*0x47e065*/
   v6 = a4 & 1; /*0x47e06b*/
   v40 = v6 << 9; /*0x47e079*/
@@ -633,7 +633,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   v39 = v6 << 8; /*0x47e090*/
   a4 = ((unsigned char)a4 == 0) << 10; /*0x47e097*/
   v38 = (a3 == 0) << 11; /*0x47e0af*/
-  v9 = (v6 << 8) | *(unsigned int *)(a1 + 320) & 0xFFFFFE7F; /*0x47e0bf*/
+  v9 = (v6 << 8) | a1->u32_140 & 0xFFFFFE7F; /*0x47e0bf*/
   (((unsigned char *)&(v9))[1]) &= ~2u; /*0x47e0c5*/
   v10 = (v6 << 9) | v9; /*0x47e0c8*/
   (((unsigned char *)&(v10))[1]) &= ~0x10u; /*0x47e0ce*/
@@ -641,14 +641,14 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   (((unsigned char *)&(v11))[1]) &= ~4u; /*0x47e0db*/
   v12 = a4 | v11; /*0x47e0de*/
   (((unsigned char *)&(v12))[1]) &= ~8u; /*0x47e0e4*/
-  *(unsigned int *)(a1 + 320) = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e0f0*/
+  a1->u32_140 = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e0f0*/
   if ( a4 )
   {
-    *(unsigned char *)(a1 + 286) = a3 != 0 ? 9 : 0;
+    a1->u32_11E = a3 != 0 ? 9 : 0;
   }
   else
   {
-    *(unsigned char *)(a1 + 286) = 0; /*0x47e10d*/
+    a1->u32_11E = 0; /*0x47e10d*/
     CellClass::UpdateAnimations((CellClass *)a1); /*0x47e114*/
   }
   p_smudgeTypeIndex = &v4->smudgeTypeIndex; /*0x47e122*/
@@ -728,9 +728,9 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   {
     mapCoords = v4->mapCoords; /*0x47e2d5*/
   }
-  v26 = mapCoords[80]; /*0x47e321*/
+  v26 = mapCoords->u32_140; /*0x47e321*/
   (((unsigned char *)&(v26))[1]) &= ~0x10u; /*0x47e327*/
-  mapCoords[80] = v7 | v26; /*0x47e32c*/
+  mapCoords->u32_140 = v7 | v26; /*0x47e32c*/
   v27 = ((unsigned char)v24 - 4) & 7; /*0x47e335*/
   if ( v27 < 8 ) /*0x47e33b*/
   {
@@ -833,9 +833,9 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 
   v4 = (CellClass *)a1; /*0x47e47a*/
   if ( a3 ) /*0x47e483*/
-    *(unsigned char *)(a1 + 286) = 9; /*0x47e48e*/
+    a1->u32_11E = 9; /*0x47e48e*/
   else
-    *(unsigned char *)(a1 + 286) = 0; /*0x47e485*/
+    a1->u32_11E = 0; /*0x47e485*/
   a4 = a4; /*0x47e495*/
   v6 = a4 & 1; /*0x47e49b*/
   v40 = v6 << 9; /*0x47e4a9*/
@@ -844,7 +844,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   v39 = v6 << 8; /*0x47e4c0*/
   a4 = ((unsigned char)a4 == 0) << 10; /*0x47e4c7*/
   v38 = (a3 == 0) << 11; /*0x47e4df*/
-  v9 = (v6 << 8) | *(unsigned int *)(a1 + 320) & 0xFFFFFE7F; /*0x47e4ef*/
+  v9 = (v6 << 8) | a1->u32_140 & 0xFFFFFE7F; /*0x47e4ef*/
   (((unsigned char *)&(v9))[1]) &= ~2u; /*0x47e4f5*/
   v10 = (v6 << 9) | v9; /*0x47e4f8*/
   (((unsigned char *)&(v10))[1]) &= ~0x10u; /*0x47e4fe*/
@@ -852,14 +852,14 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   (((unsigned char *)&(v11))[1]) &= ~4u; /*0x47e50b*/
   v12 = a4 | v11; /*0x47e50e*/
   (((unsigned char *)&(v12))[1]) &= ~8u; /*0x47e514*/
-  *(unsigned int *)(a1 + 320) = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e520*/
+  a1->u32_140 = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e520*/
   if ( a4 )
   {
-    *(unsigned char *)(a1 + 286) = a3 != 0 ? 9 : 0;
+    a1->u32_11E = a3 != 0 ? 9 : 0;
   }
   else
   {
-    *(unsigned char *)(a1 + 286) = 0; /*0x47e53d*/
+    a1->u32_11E = 0; /*0x47e53d*/
     CellClass::UpdateAnimations((CellClass *)a1); /*0x47e544*/
   }
   p_smudgeTypeIndex = &v4->smudgeTypeIndex; /*0x47e552*/
@@ -939,9 +939,9 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   {
     mapCoords = v4->mapCoords; /*0x47e705*/
   }
-  v26 = mapCoords[80]; /*0x47e751*/
+  v26 = mapCoords->u32_140; /*0x47e751*/
   (((unsigned char *)&(v26))[1]) &= ~0x10u; /*0x47e757*/
-  mapCoords[80] = v7 | v26; /*0x47e75c*/
+  mapCoords->u32_140 = v7 | v26; /*0x47e75c*/
   v27 = ((unsigned char)v24 - 4) & 7; /*0x47e765*/
   if ( v27 < 8 ) /*0x47e76b*/
   {
@@ -1047,10 +1047,10 @@ unsigned int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
   FoundationSize = Building::GetFoundationSize(v25, a3); /*0x47f046*/
   v26 = *FoundationSize; /*0x47f053*/
   v5 = a2[1]; /*0x47f059*/
-  v27 = FoundationSize[1]; /*0x47f05c*/
-  v28 = FoundationSize[2]; /*0x47f062*/
+  v27 = FoundationSize->ptr_4; /*0x47f05c*/
+  v28 = FoundationSize->ptr_8; /*0x47f062*/
   v6 = a1[1]; /*0x47f065*/
-  result = v27 + v6 + FoundationSize[3]; /*0x47f06d*/
+  result = v27 + v6 + FoundationSize->u32_C; /*0x47f06d*/
   v30 = result; /*0x47f074*/
   if ( (int)result >= v5 + 1 ) /*0x47f077*/
   {
@@ -1140,16 +1140,16 @@ unsigned int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
                     v15 = dword_87E8A4; /*0x47f1c7*/
                   }
                   result += 2; /*0x47f1d0*/
-                  if ( result >= v15[7] ) /*0x47f1d5*/
-                    result -= v15[8]; /*0x47f1d7*/
+                  if ( result >= v15->u32_1C ) /*0x47f1d5*/
+                    result -= v15->u32_20; /*0x47f1d7*/
                   --v16; /*0x47f1da*/
                 }
                 while ( v16 ); /*0x47f1db*/
               }
               result += 2 * v30; /*0x47f1e6*/
               v41 += v31; /*0x47f1f0*/
-              if ( result >= v15[7] ) /*0x47f1f3*/
-                result -= v15[8]; /*0x47f1f5*/
+              if ( result >= v15->u32_1C ) /*0x47f1f3*/
+                result -= v15->u32_20; /*0x47f1f5*/
               --v36; /*0x47f1fc*/
             }
             while ( v36 ); /*0x47f1ff*/
@@ -1211,9 +1211,9 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
   }
   FoundationSizeBuilding = Building::GetFoundationSize(v33, a3); /*0x47f288*/
   v31 = *FoundationSizeBuilding; /*0x47f293*/
-  v5 = FoundationSizeBuilding[1]; /*0x47f297*/
+  v5 = FoundationSizeBuilding->ptr_4; /*0x47f297*/
   v6 = a2[1]; /*0x47f29a*/
-  v32 = FoundationSizeBuilding[2]; /*0x47f2a3*/
+  v32 = FoundationSizeBuilding->ptr_8; /*0x47f2a3*/
   v7 = *(unsigned int *)(a1 + 4); /*0x47f2ae*/
   result = (unsigned short *)(v5 + v7 + FoundationSizeBuilding[3]); /*0x47f2b3*/
   v29 = result; /*0x47f2b7*/
@@ -1318,16 +1318,16 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
                     *result = v20; /*0x47f43d*/
                     v16 = dword_87E8A4; /*0x47f440*/
                   }
-                  if ( (unsigned int)++result >= v16[7] ) /*0x47f44e*/
-                    result = (unsigned short *)((char *)result - v16[8]); /*0x47f450*/
+                  if ( (unsigned int)++result >= v16->u32_1C ) /*0x47f44e*/
+                    result = (unsigned short *)((char *)result - v16->u32_20); /*0x47f450*/
                   --v18; /*0x47f453*/
                 }
                 while ( v18 );
               }
               v17 += v28; /*0x47f45a*/
               result += v30; /*0x47f45c*/
-              if ( (unsigned int)result >= v16[7] ) /*0x47f464*/
-                result = (unsigned short *)((char *)result - v16[8]); /*0x47f466*/
+              if ( (unsigned int)result >= v16->u32_1C ) /*0x47f464*/
+                result = (unsigned short *)((char *)result - v16->u32_20); /*0x47f466*/
               --v36; /*0x47f46e*/
             }
             while ( v36 );

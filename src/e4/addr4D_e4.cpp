@@ -110,7 +110,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
     v12 = ((Cell *)(v11))->IsBridge(); /*0x4d17e3*/
     if ( v12 ) /*0x4d17ea*/
     {
-      *((unsigned char *)v12 + 1767) = 0; /*0x4d17ec*/
+      v12->u8_6E7 = 0; /*0x4d17ec*/
       v13 = v12 + 343; /*0x4d17f2*/
       v14 = 21; /*0x4d17f8*/
       do /*0x4d180d*/
@@ -183,7 +183,7 @@ int sub_4D2370()
         v11 = v9; /*0x4d241c*/
         v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
-        v6[80] |= 0x400000u; /*0x4d2439*/
+        v6->u32_140 |= 0x400000u; /*0x4d2439*/
       }
       v2 = i; /*0x4d2478*/
     }
@@ -704,7 +704,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     {
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
-        v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
+        v7 = v5->vt_slot_60(); /*0x4d5039*/
         if ( v7 == (*((int (**)(ObjectClass *))this->AbstractClass + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }

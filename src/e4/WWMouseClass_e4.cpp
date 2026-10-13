@@ -38,14 +38,14 @@ unsigned int * WWMouseClass::initSurface()
     WWMouseClass_field_0x24 = this->outBuffer; /*0x7b9054*/
     if ( WWMouseClass_field_0x24 ) /*0x7b9059*/
     {
-      v3 = result[17]; /*0x7b905b*/
+      v3 = result->__pad_044; /*0x7b905b*/
       if ( v3 ) /*0x7b9060*/
       {
-        v4 = result[21]; /*0x7b9069*/
-        v5 = result[19]; /*0x7b906d*/
-        v6 = result[20]; /*0x7b9071*/
+        v4 = result->q054; /*0x7b9069*/
+        v5 = result->q04C; /*0x7b906d*/
+        v6 = result->q050; /*0x7b9071*/
         v9[0] = result[11] + result[18]; /*0x7b9074*/
-        v7 = result[12]; /*0x7b9078*/
+        v7 = result->q_30; /*0x7b9078*/
         v8[0] = 0; /*0x7b907f*/
         v8[1] = 0; /*0x7b9083*/
         v9[2] = v6; /*0x7b908f*/

@@ -77,13 +77,13 @@ double TechnoTypeClass::Dispatch(unsigned int * aP1)
 
   double result; // st7
 
-  switch ( (*(int (**)(unsigned int *))(*aP1 + 44))(aP1) ) /*0x50be0f*/
+  switch ( aP1->getAltitude() ) /*0x50be0f*/
   {
     case 3: /*0x50be0f*/
       result = *(float *)(this->ObjectTypeClass[13] + 284); /*0x50be37*/
       break; /*0x50be3d*/
     case 7: /*0x50be0f*/
-      if ( aP1[898] == 5 ) /*0x50be47*/
+      if ( aP1->qE08 == 5 ) /*0x50be47*/
         result = *(float *)(this->ObjectTypeClass[13] + 292); /*0x50be4e*/
       else
         result = *(float *)(this->ObjectTypeClass[13] + 288); /*0x50be5c*/
@@ -112,7 +112,7 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 {
   double result; // st7
 
-  switch ( (*(int (**)(unsigned int *))(*aP1 + 44))(aP1) ) /*0x50becf*/
+  switch ( aP1->getAltitude() ) /*0x50becf*/
   {
     case 3: /*0x50becf*/
       result = this->u32_5398; /*0x50beec*/
@@ -181,7 +181,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   this->AbstractClass = &TeamTypeClass::`vftable'; /*0x6f07fd*/
   this->? = &TeamTypeClass::`vftable'; /*0x6f0803*/
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
-  this->? = &TeamTypeClass::`vftable'; /*0x6f0811*/
+  this->vtable4 = &TeamTypeClass::`vftable'; /*0x6f0811*/
   v3 = *(unsigned int *)&stru_A8EB00.?[204]; /*0x6f0818*/
   if ( *(int *)&stru_A8EB00.?[204] < *(int *)&stru_A8EB00.?[196] /*0x6f0857*/
     || (stru_A8EB00.?[201] || !*(unsigned int *)&stru_A8EB00.?[196])
@@ -681,7 +681,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->u32_DCC = 0; /*0x71167a*/
   this->u32_DF0 = 0; /*0x711680*/
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711686) */
-  *((unsigned int *)this + 1) = &TechnoTypeClass::`vftable'; /*0x71168c*/
+  this->vtable2 = &TechnoTypeClass::`vftable'; /*0x71168c*/
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711693) */
   *((unsigned int *)this + 3) = &TechnoTypeClass::`vftable'; /*0x71169a*/
   this->u32_DD0 = 0; /*0x7116a7*/
@@ -1589,7 +1589,7 @@ int  TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
   result = v6; /*0x717b40*/
   for ( i = 0; i < v6; ++i ) /*0x717b48*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->ObjectTypeClass[1] + 4 * i, 4, 0); /*0x717b58*/
+    aP1->IsClean(this->ObjectTypeClass[1] + 4 * i, 4, 0); /*0x717b58*/
     result = v6; /*0x717b5b*/
   }
   return result; /*0x717b64*/

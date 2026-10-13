@@ -170,8 +170,8 @@ LABEL_11:
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
-    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))(v10, a1); /*0x6e831a*/
-    v10[40] = a2; /*0x6e831d*/
+    result = v10->GetUnitCount(a1); /*0x6e831a*/
+    v10->q0A0 = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
     goto LABEL_13; /*0x6e8323*/
   }
@@ -249,7 +249,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
       v4 = TaskForceClass::ParseUnitCountAndType(&v8, v8.q028); /*0x6e8491*/
       v5 = this->Coord_9C; /*0x6e8496*/
       *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
-      *(&this->vtable3 * v5 + 42) = v4[1]; /*0x6e84a8*/
+      *(&this->vtable3 * v5 + 42) = v4->vtable2; /*0x6e84a8*/
       v6 = this->Coord_9C; /*0x6e84af*/
       if ( *(&this->vtable3 * v6 + 42) ) /*0x6e84b5*/
         this->Coord_9C = v6 + 1; /*0x6e84c1*/

@@ -593,7 +593,7 @@ unsigned int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3,
       if ( v7 == 37 ) /*0x7cca94*/
       {
         dword_B78BAC = 0; /*0x7ccac8*/
-        v8 = &v6->u8_1; /*0x7ccacf*/
+        v8 = &v6->CampaignScore_1; /*0x7ccacf*/
         if ( *v8 == 35 ) /*0x7ccad3*/
         {
           dword_B78BAC = 1; /*0x7ccad5*/

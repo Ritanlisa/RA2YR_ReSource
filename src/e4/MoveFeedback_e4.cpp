@@ -99,8 +99,8 @@ int MoveFeedback::ProcessCommand()
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
       *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
-      v3->u32_14 = 10; /*0x7328ae*/
-      v3->q010 = 0; /*0x7328b5*/
+      v3->CapacityIncrement = 10; /*0x7328ae*/
+      v3->Count = 0; /*0x7328b5*/
     }
     else
     {
@@ -128,7 +128,7 @@ int MoveFeedback::ProcessCommand()
       while ( v10 < v11 ); /*0x73290b*/
     }
   }
-  v12 = v3->q010; /*0x73290d*/
+  v12 = v3->Count; /*0x73290d*/
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
     v14 = *(unsigned int *)(v3->Items + 4 * i); /*0x732919*/

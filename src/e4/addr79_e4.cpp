@@ -4460,7 +4460,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
     {
       unknown_libname_73(&v14.vfptr3); /*0x79cbc1*/
       if ( v2 >= 0 && v2 < *(int *)g_WindowManager ) /*0x79cbd0*/
-        ((String *)((String *)&v14.vfptr3))->Reassign((const char **)(*(unsigned int *)g_WOL_LoginQueue + 4 * v2)); /*0x79cbdf*/
+        ((String *)((String *)&v14.vfptr3))->Reassign((const char **)(*&g_WOL_LoginQueue->uniqueId * v2)); /*0x79cbdf*/
       if ( (uint8_t)((String *)((String *)&v14.vfptr3))->Compare(vtable1) ) /*0x79cbe9*/
         break; /*0x79cbe9*/
       DeleteAndZero((ObjectClass *)&v14.vfptr3); /*0x79cbf6*/
@@ -4473,10 +4473,10 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
         v2 = 0; /*0x79cc21*/
       if ( v2 >= *(int *)g_WindowManager ) /*0x79cc25*/
         v2 = *(unsigned int *)g_WindowManager - 1; /*0x79cc27*/
-      DeleteAndZero((ObjectClass *)(*(unsigned int *)g_WOL_LoginQueue + 4 * v2)); /*0x79cc33*/
+      DeleteAndZero((ObjectClass *)(*&g_WOL_LoginQueue->uniqueId * v2)); /*0x79cc33*/
       memcpy( /*0x79cc5c*/
-        (void *)(*(unsigned int *)g_WOL_LoginQueue + 4 * v2),
-        (const void *)(*(unsigned int *)g_WOL_LoginQueue + 4 * (v2 + 1)),
+        (void *)(*&g_WOL_LoginQueue->uniqueId * v2),
+        (const void *)(*&g_WOL_LoginQueue->uniqueId * (v2 + 1)),
         4 * (*(unsigned int *)g_WindowManager + 0x3FFFFFFF * (v2 + 1)));
       --*(unsigned int *)g_WindowManager; /*0x79cc70*/
       if ( 3 * *(unsigned int *)g_WindowManager <= (int)DataGlobal_B73AAC ) /*0x79cc7a*/
@@ -4520,7 +4520,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
                             (const char **)&v14) )
     {
       v9 = *(unsigned int **)(*(unsigned int *)&stru_B76900.isAliveFlag + 4 * v7); /*0x79cd6a*/
-      v10 = v9[2]; /*0x79cd6f*/
+      v10 = v9->vtable3; /*0x79cd6f*/
       if ( v9 ) /*0x79cd72*/
       {
         DeleteAndZero(*(ObjectClass **)(*(unsigned int *)&stru_B76900.isAliveFlag + 4 * v7)); /*0x79cd76*/

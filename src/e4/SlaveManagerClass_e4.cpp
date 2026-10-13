@@ -100,10 +100,10 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1f8) */
   *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af206) */
-  *((unsigned int *)this + 11) = a4; /*0x6af20d*/
-  *((unsigned int *)this + 12) = a5; /*0x6af210*/
-  *((unsigned int *)this + 13) = a6; /*0x6af213*/
-  for ( i = 0; i < *((unsigned int *)this + 11); ++i ) /*0x6af21a*/
+  this->slaveOwner = a4; /*0x6af20d*/
+  this->slaveType = a5; /*0x6af210*/
+  this->slaveCount = a6; /*0x6af213*/
+  for ( i = 0; i < this->slaveOwner; ++i ) /*0x6af21a*/
   {
     v7 = (int *)__2_YAPAXI_Z(0x14u); /*0x6af223*/
     if ( v7 ) /*0x6af22d*/
@@ -117,41 +117,41 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
     {
       v9 = 0; /*0x6af23f*/
     }
-    v10 = **(unsigned int **)((char *)this + 40); /*0x6af249*/
-    v11 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 60))(*((unsigned int *)this + 9)); /*0x6af24b*/
-    v12 = (*(int (**)(unsigned int, int))(v10 + 140))(*((unsigned int *)this + 10), v11); /*0x6af252*/
+    v10 = **&this->house; /*0x6af249*/
+    v11 = (*(int (**)(unsigned int))(**&this->master + 60))(this->master); /*0x6af24b*/
+    v12 = (*(int (**)(unsigned int, int))(v10 + 140))(this->house, v11); /*0x6af252*/
     *v9 = v12; /*0x6af25a*/
     if ( v12 ) /*0x6af25f*/
     {
       (*(void (**)(int))(*(unsigned int *)v12 + 212))(v12); /*0x6af265*/
-      *(unsigned int *)(*v9 + 732) = *((unsigned int *)this + 9); /*0x6af274*/
+      *(unsigned int *)(*v9 + 732) = this->master; /*0x6af274*/
       v9[1] = 0; /*0x6af27a*/
       v9[2] = (int)dword_A8ED84; /*0x6af284*/
       v9[3] = v19; /*0x6af28a*/
       v9[4] = 0; /*0x6af28d*/
     }
-    v13 = *((unsigned int *)this + 16); /*0x6af290*/
-    if ( *((unsigned int *)this + 18) >= v13 ) /*0x6af298*/
+    v13 = this->slaveVectorCapacity; /*0x6af290*/
+    if ( this->slaveVectorCount >= v13 ) /*0x6af298*/
     {
-      if ( !*((unsigned char *)this + 69) && v13 ) /*0x6af2a1*/
+      if ( !this->u32_45 && v13 ) /*0x6af2a1*/
         continue; /*0x6af2a1*/
-      v14 = *((unsigned int *)this + 19); /*0x6af2a3*/
+      v14 = this->slaveVectorCapacity; /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
-        || !(*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
+        || !(*(unsigned __int8 (**)(int, int, unsigned int))(this->slaves + 8))(&this->slaves, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
     }
-    v15 = *((unsigned int *)this + 18); /*0x6af2b9*/
-    v16 = *((unsigned int *)this + 15); /*0x6af2bc*/
-    *((unsigned int *)this + 18) = v15 + 1; /*0x6af2c2*/
+    v15 = this->slaveVectorCount; /*0x6af2b9*/
+    v16 = this->slaveVectorCount; /*0x6af2bc*/
+    this->slaveVectorCount = v15 + 1; /*0x6af2c2*/
     *(unsigned int *)(v16 + 4 * v15) = v9; /*0x6af2c5*/
   }
-  *((unsigned int *)this + 20) = dword_A8ED84; /*0x6af2e7*/
-  *((unsigned int *)this + 21) = v19; /*0x6af2ee*/
-  *((unsigned int *)this + 22) = 10; /*0x6af2f1*/
-  *((unsigned int *)this + 23) = 0; /*0x6af2f4*/
-  *((unsigned int *)this + 24) = 0; /*0x6af2f7*/
+  this->creationFrame = dword_A8ED84; /*0x6af2e7*/
+  this->SlaveManagerClass_field_54 = v19; /*0x6af2ee*/
+  this->SlaveManagerClass_field_58 = 10; /*0x6af2f1*/
+  this->SlaveManagerClass_field_5C = 0; /*0x6af2f4*/
+  this->SlaveManagerClass_field_60 = 0; /*0x6af2f7*/
   if ( dword_B0B600 < dword_B0B5F8 /*0x6af32e*/
     || (byte_B0B5FD || !dword_B0B5F8)
     && dword_B0B604 > 0
@@ -188,7 +188,7 @@ int SlaveManagerClass::Constructor()
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
   this->AbstractClass = &SlaveManagerClass::`vftable'; /*0x6af39b*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a1) */
-  this->? = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
+  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3af) */
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
@@ -228,7 +228,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   int v6; // [esp+8h] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af4a5) */
-  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
+  this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af4b2) */
   *((unsigned int *)this + 3) = &SlaveManagerClass::`vftable'; /*0x6af4b9*/
   for ( i = this->slaveVectorCount - 1; i >= 0; --i ) /*0x6af4c4*/
@@ -905,10 +905,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
           if ( *(unsigned int *)a1->slaveVectorCount < slaveVectorCapacity /*0x6b128a*/
             || ((a1->u32_45) || !slaveVectorCapacity)
             && (v11 = *&a1->slaveVectorCapacity, v11 > 0)
-            && (*(uint8_t (**)(int *, int, unsigned int))(*slaves + 8))(
-                 a1->slaves,
-                 slaveVectorCapacity + v11,
-                 0) )
+            && slaves->Release(a1->slaves, slaveVectorCapacity + v11, 0) )
           {
             v12 = *(unsigned int *)a1->slaveVectorCount; /*0x6b1291*/
             slaveVectorCount = a1->slaveVectorCount; /*0x6b1294*/
@@ -1089,8 +1086,8 @@ namespace gamemd {
 unsigned int SlaveManagerClass_25::Write(int a2)
 {
 
-  if ( LOBYTE(this->q00C) ) /*0x6b13e0*/
-    return (unsigned int)(a2 - *&this->q004) >> 2; /*0x6b13f5*/
+  if ( LOBYTE(this->IsInitialized) ) /*0x6b13e0*/
+    return (unsigned int)(a2 - *&this->Items) >> 2; /*0x6b13f5*/
   else
     return 0; /*0x6b13e7*/
 
@@ -1117,13 +1114,13 @@ char SlaveManagerClass_25::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->u32_8; /*0x6b1472*/
+  v2 = this->Capacity; /*0x6b1472*/
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x6b147d*/
   {
     v3 = 0; /*0x6b147f*/
     if ( v2 <= 0 ) /*0x6b1483*/
       return 1; /*0x6b14a3*/
-    v4 = *&this->q004; /*0x6b1485*/
+    v4 = *&this->Items; /*0x6b1485*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6b148b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6b1494*/
     {
@@ -1150,38 +1147,38 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b15fc*/
   {
-    LOBYTE(this->q00C) = 0; /*0x6b1602*/
+    LOBYTE(this->IsInitialized) = 0; /*0x6b1602*/
     if ( a3 ) /*0x6b1608*/
       v4 = a3; /*0x6b161e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6b161a*/
-    LOBYTE(this->q00C) = 1; /*0x6b1622*/
+    LOBYTE(this->IsInitialized) = 1; /*0x6b1622*/
     if ( !v4 ) /*0x6b1626*/
       return 0; /*0x6b169a*/
-    if ( *&this->q004 ) /*0x6b1628*/
+    if ( *&this->Items ) /*0x6b1628*/
     {
-      m_8 = this->u32_8; /*0x6b162f*/
+      m_8 = this->Capacity; /*0x6b162f*/
       if ( a2 < m_8 ) /*0x6b1634*/
         m_8 = a2; /*0x6b1636*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6b163c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x6b163c*/
         ++i; /*0x6b1641*/
-      if ( BYTE1(this->q00C) ) /*0x6b164e*/
+      if ( BYTE1(this->IsInitialized) ) /*0x6b164e*/
       {
-        __3_YAXPAX_Z(*&this->q004); /*0x6b1659*/
-        *&this->q004 = 0; /*0x6b1661*/
+        __3_YAXPAX_Z(*&this->Items); /*0x6b1659*/
+        *&this->Items = 0; /*0x6b1661*/
       }
     }
-    *&this->q004 = v4; /*0x6b166a*/
-    this->u32_8 = a2; /*0x6b1672*/
-    BYTE1(this->q00C) = a3 == 0; /*0x6b1675*/
+    *&this->Items = v4; /*0x6b166a*/
+    this->Capacity = a2; /*0x6b1672*/
+    BYTE1(this->IsInitialized) = a3 == 0; /*0x6b1675*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x6b167e*/
+    (*(void (**)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(unsigned int *)this->ClearAndFree2_ph + 12))(this); /*0x6b167e*/
   }
-  v7 = this->u32_8; /*0x6b1681*/
-  if ( v7 < this->q010 ) /*0x6b1689*/
-    this->q010 = v7; /*0x6b168b*/
+  v7 = this->Capacity; /*0x6b1681*/
+  if ( v7 < this->Count ) /*0x6b1689*/
+    this->Count = v7; /*0x6b168b*/
   return 1; /*0x6b168e*/
 
 }

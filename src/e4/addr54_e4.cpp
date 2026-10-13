@@ -366,20 +366,20 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   INIClass v184; // [esp+990h] [ebp-80h] BYREF
   unsigned int * v3 = 0;
   v91 = a1;
-  v77[1] = 0;
-  v77[2] = 0;
+  v77->u32_1 = 0;
+  v77->u32_2 = 0;
   unsigned int v78[3]; // [esp+48h] [ebp-9C8h] BYREF
   ((GenericNode *)(v78))->Constructor();
   unsigned int v79[6]; // [esp+54h] [ebp-9BCh] BYREF
   ((GenericNode *)(v79))->Constructor();
   ((LinkedList_flat *)v78)->Prepend((int)v79);
-  v77[3] = (uint8_t **)&vt_List_INIClass_INISection;
+  v77->q003 = (uint8_t **)&vt_List_INIClass_INISection;
   memset( (void *)(&v79[3]), 0, 12);
   var9A4 = 0;
   int v81 = 0;
   v80 = (AbstractClass *)(0);
   var998 = 0;
-  v77[0] = (uint8_t **)&CCINIClass_Vtable;
+  v77->q000 = (uint8_t **)&CCINIClass_Vtable;
   Ticks = (INIClass *)((Timer *)0)->GetTicks();
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80368] = 0;
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80372] = 0;
@@ -1050,7 +1050,7 @@ LABEL_207:
             goto LABEL_215;
           int v48 = 0;
           v3[185] = *v44;
-          v3[186] = v44[4];
+          v3[186] = v44->u32_4;
           if ( v44->u32_4 * *(unsigned int *)v44 > 0 )
           {
             ecx209 = &v44->ptr_10;

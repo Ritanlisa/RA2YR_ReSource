@@ -387,7 +387,7 @@ AbstractClass * * sub_7318F0()
       if ( result != (char *)dword_A83D4C ) /*0x731926*/
       {
         result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&((unsigned int *)&stru_A8EB00)[216] + 60))(**(unsigned int **)&((unsigned int *)&stru_A8EB00)[216]); /*0x731935*/
-        if ( result[492] ) /*0x731938*/
+        if ( result->q1EC ) /*0x731938*/
         {
           result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&((unsigned int *)&stru_A8EB00)[216] + 56))(**(unsigned int **)&((unsigned int *)&stru_A8EB00)[216]); /*0x73194f*/
           if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
@@ -1224,7 +1224,7 @@ unsigned int * E4Recv_642E00::UI_Render(unsigned int *a1, unsigned int *a2)
   unsigned int v5[4]; // [esp+10h] [ebp-10h] BYREF
 
   FoundationSize = Building::GetFoundationSize(v5, 0); /*0x642e0d*/
-  v3 = FoundationSize[3]; /*0x642e2b*/
+  v3 = FoundationSize->vtable4; /*0x642e2b*/
   *a1 = FoundationSize[2] + 6; /*0x642e2e*/
   *a2 = v3 + 6; /*0x642e37*/
   return a2; /*0x642e39*/

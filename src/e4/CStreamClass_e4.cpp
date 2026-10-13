@@ -34,31 +34,31 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
     return -2147467261; /*0x4a2ceb*/
   if ( a1 < 0 ) /*0x4a2cf0*/
     return -2147024809; /*0x4a2cfb*/
-  if ( !a1->q008 ) /*0x4a2d02*/
+  if ( !a1->Y ) /*0x4a2d02*/
     return -2147467259; /*0x4a2d12*/
-  if ( LOBYTE(a1->q010) ) /*0x4a2d15*/
+  if ( LOBYTE(a1->Height) ) /*0x4a2d15*/
     return -2147467259; /*0x4a2d25*/
-  BYTE1(a1->q010) = 1; /*0x4a2d2a*/
+  BYTE1(a1->Height) = 1; /*0x4a2d2a*/
   if ( !a1 ) /*0x4a2d2e*/
     return 0; /*0x4a2d2e*/
   if ( a1 ) /*0x4a2d3a*/
     *a1 = 0; /*0x4a2d3c*/
-  CStreamClass_field_0x14 = a1->u32_14; /*0x4a2d42*/
+  CStreamClass_field_0x14 = a1->Visible; /*0x4a2d42*/
   if ( CStreamClass_field_0x14 > 0 ) /*0x4a2d47*/
   {
     if ( a1 >= 0x10000 - CStreamClass_field_0x14 ) /*0x4a2d52*/
       v5 = 0x10000 - CStreamClass_field_0x14; /*0x4a2d54*/
-    memcpy((void *)(a1->u32_18 + a1->u32_14), a1, v5); /*0x4a2d61*/
-    v9 = v5 + a1->u32_14; /*0x4a2d72*/
+    memcpy((void *)(a1->ID + a1->Visible), a1, v5); /*0x4a2d61*/
+    v9 = v5 + a1->Visible; /*0x4a2d72*/
     v4 = (IStream *)((char *)a1 + v5); /*0x4a2d74*/
     v6 = a1 - v5; /*0x4a2d76*/
-    a1->u32_14 = v9; /*0x4a2d7d*/
+    a1->Visible = v9; /*0x4a2d7d*/
     if ( v9 == 0x10000 ) /*0x4a2d80*/
     {
-      result = IStream::Read((IStream *)a1->u32_18, (void *)0x10000, v10); /*0x4a2d8d*/
+      result = IStream::Read((IStream *)a1->ID, (void *)0x10000, v10); /*0x4a2d8d*/
       if ( result < 0 ) /*0x4a2d94*/
         return result; /*0x4a2d94*/
-      a1->u32_14 = 0; /*0x4a2d96*/
+      a1->Visible = 0; /*0x4a2d96*/
     }
     v5 = a1; /*0x4a2d9d*/
   }
@@ -67,9 +67,9 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
 LABEL_23:
     if ( v6 > 0 ) /*0x4a2dd4*/
     {
-      memcpy((void *)a1->u32_18, v4, v6); /*0x4a2ddc*/
+      memcpy((void *)a1->ID, v4, v6); /*0x4a2ddc*/
       v5 = a1; /*0x4a2de1*/
-      a1->u32_14 = v6; /*0x4a2de8*/
+      a1->Visible = v6; /*0x4a2de8*/
     }
     if ( a1 ) /*0x4a2df1*/
       *a1 = v5; /*0x4a2df3*/

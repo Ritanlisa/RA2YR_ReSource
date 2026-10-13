@@ -33,27 +33,27 @@ char Window::ClampToScreen(int * a1)
   v2 = *a1; /*0x776d89*/
   if ( *a1 < 0 ) /*0x776d8d*/
   {
-    v3 = a1[2]; /*0x776d8f*/
+    v3 = a1->q008; /*0x776d8f*/
     *a1 = 0; /*0x776d92*/
     v1 = 1; /*0x776d9a*/
-    a1[2] = v3 - v2; /*0x776d9c*/
+    a1->q008 = v3 - v2; /*0x776d9c*/
   }
-  v4 = a1[1]; /*0x776d9f*/
+  v4 = a1->__pad_004; /*0x776d9f*/
   if ( v4 < 0 ) /*0x776da4*/
   {
-    v5 = a1[3]; /*0x776da6*/
-    a1[1] = 0; /*0x776da9*/
+    v5 = a1->CampaignScore_field_0x0C; /*0x776da6*/
+    a1->__pad_004 = 0; /*0x776da9*/
     v1 = 1; /*0x776db2*/
-    a1[3] = v5 - v4; /*0x776db4*/
+    a1->CampaignScore_field_0x0C = v5 - v4; /*0x776db4*/
   }
-  if ( a1[2] > GetSystemMetrics(16) ) /*0x776dc4*/
+  if ( a1->q008 > GetSystemMetrics(16) ) /*0x776dc4*/
   {
-    *a1 += GetSystemMetrics(16) - a1[2]; /*0x776dd5*/
-    a1[2] = GetSystemMetrics(16); /*0x776dd9*/
+    *a1 += GetSystemMetrics(16) - a1->q008; /*0x776dd5*/
+    a1->q008 = GetSystemMetrics(16); /*0x776dd9*/
     v1 = 1; /*0x776ddc*/
   }
   result = GetSystemMetrics(17); /*0x776de0*/
-  if ( a1[3] <= result ) /*0x776de5*/
+  if ( a1->CampaignScore_field_0x0C <= result ) /*0x776de5*/
   {
     (*((unsigned char *)&(result))) = v1; /*0x776e08*/
   }
@@ -61,7 +61,7 @@ char Window::ClampToScreen(int * a1)
   {
     a1[1] += GetSystemMetrics(17) - a1[3]; /*0x776df7*/
     result = GetSystemMetrics(17); /*0x776dfa*/
-    a1[3] = result; /*0x776dfc*/
+    a1->CampaignScore_field_0x0C = result; /*0x776dfc*/
     (*((unsigned char *)&(result))) = 1; /*0x776dff*/
   }
   return result; /*0x776e01*/

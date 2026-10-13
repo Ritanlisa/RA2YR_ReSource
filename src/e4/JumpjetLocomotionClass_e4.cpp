@@ -249,8 +249,8 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
       if ( v20 ) /*0x439cda*/
       {
         if ( *(unsigned char *)(v20[328] + 5823) ) /*0x439ce2*/
-          v66 = v20[390] < 8; /*0x439cf5*/
-        if ( (*(unsigned __int8 (**)(unsigned int *))(*v20 + 128))(v20) ) /*0x439cfe*/
+          v66 = v20->u32_618 < 8; /*0x439cf5*/
+        if ( v20->vt_slot_128() ) /*0x439cfe*/
           v66 = 0; /*0x439d08*/
       }
     }
@@ -768,7 +768,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       *v6 = g_DDraw_ClipRect; /*0x4b0cb6*/
       a1->HeadToCoord[0] = qword_8A0794; /*0x4b0cbd*/
       v7 = (*(((unsigned int *)&(qword_8A0794)) + 1)); /*0x4b0cc0*/
-      v5[99] = 0; /*0x4b0cc6*/
+      v5->u32_63 = 0; /*0x4b0cc6*/
       a1->HeadToCoord[1] = v7; /*0x4b0cca*/
       v4 = g_DDraw_ClipRect; /*0x4b0ccd*/
     }
@@ -776,7 +776,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       || ((*((unsigned char *)&(v4))) = (((unsigned char *)&(qword_8A0794))[4]), (*(((unsigned int *)&(a4)) + 1)) != (*(((unsigned int *)&(qword_8A0794)) + 1))) )
     {
       v8 = v13; /*0x4b0cf4*/
-      v5[99] = 1; /*0x4b0cfa*/
+      v5->u32_63 = 1; /*0x4b0cfa*/
       *v6 = a3; /*0x4b0cfe*/
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x4b0d00*/
       v11 = v5->q00C; /*0x4b0d0d*/
@@ -789,7 +789,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
           (*((unsigned char *)&(v4))) = g_DDraw_ClipRect; /*0x4b0d77*/
           *v6 = g_DDraw_ClipRect; /*0x4b0d7c*/
           *(unsigned long long *)a1->HeadToCoord = qword_8A0794; /*0x4b0d84*/
-          v5[99] = 0; /*0x4b0d90*/
+          v5->u32_63 = 0; /*0x4b0d90*/
         }
       }
       else
@@ -863,7 +863,7 @@ int JumpjetLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v20[1] = v14; /*0x4b49cf*/
             v15 = JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1); /*0x4b49e1*/
             v16 = *v15; /*0x4b49e6*/
-            v17 = v15[1]; /*0x4b49e8*/
+            v17 = v15->vtable2; /*0x4b49e8*/
             location = v4->Owner->location; /*0x4b49ee*/
             v21[0] = *location; /*0x4b49f5*/
             v21[1] = location[1]; /*0x4b49fc*/
@@ -1581,8 +1581,8 @@ unsigned int * JumpjetLocomotionClass::SetMovementTarget(int a1, int a2, int a3,
   p_RefCount = &a1->RefCount; /*0x514da7*/
   v9 = &a1->RefCount; /*0x514daa*/
   a1->RefCount = a2; /*0x514dac*/
-  v9[1] = v7; /*0x514dae*/
-  v9[2] = v4; /*0x514db1*/
+  v9->u32_4 = v7; /*0x514dae*/
+  v9->u32_8 = v4; /*0x514db1*/
   result = (unsigned int *)(*((int (**)(FootClass *))v6->Owner->vfptr + 224))(v6->Owner); /*0x514db9*/
   if ( !(unsigned char)result ) /*0x514dc1*/
   {
@@ -1598,7 +1598,7 @@ unsigned int * JumpjetLocomotionClass::SetMovementTarget(int a1, int a2, int a3,
     v20[1] = v7; /*0x514e13*/
     v20[2] = a4; /*0x514e17*/
     result = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v20); /*0x514e1b*/
-    if ( (result[80] & 0x100) != 0 ) /*0x514e29*/
+    if ( (result->u32_140 & 0x100) != 0 ) /*0x514e29*/
     {
       result = (unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[1488] + v6->Dest[1]); /*0x514e34*/
       v6->Dest[1] = (int)result; /*0x514e36*/
@@ -1946,8 +1946,8 @@ int JumpjetLocomotionClass::SmoothObjectPlacement(int a1, int a2, int a3, int a4
     a4 = 0; /*0x54b3a8*/
     v10 = JumpjetLocomotionClass::ProcessLanding((JumpjetLocomotionClass *)((char *)v4 - 4), v17, &a2); /*0x54b3b0*/
     v11 = *v10; /*0x54b3b5*/
-    v12 = v10[1]; /*0x54b3b7*/
-    v13 = v10[2]; /*0x54b3ba*/
+    v12 = v10->u32_4; /*0x54b3b7*/
+    v13 = v10->u32_8; /*0x54b3ba*/
     result = dword_ABC5A8; /*0x54b3bd*/
     if ( v11 != dword_ABC5A8 || v12 != dword_ABC5AC || v13 != dword_ABC5B0 ) /*0x54b3d4*/
     {
@@ -3264,7 +3264,7 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell(int arg0, unsigned int
             aP1_4 = v5; /*0x4afdc4*/
             aP3 = v6; /*0x4afdce*/
             result = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &a1); /*0x4afdd2*/
-            if ( (result[80] & 0x100) != 0 ) /*0x4afde0*/
+            if ( (result->currentRank & 0x100) != 0 ) /*0x4afde0*/
             {
               result = (unsigned int *)(dword_8A07C4 + arg0->Dest[1]); /*0x4afdeb*/
               arg0->Dest[1] = (int)result; /*0x4afded*/
@@ -3949,11 +3949,11 @@ char JumpjetLocomotionClass::IsMapCoordVisible()
     v6 = (unsigned int *)LinkedList::Pop(i + 23); /*0x4cd57c*/
     if ( sub_413CD0((int)v6) ) /*0x4cd580*/
       *(unsigned char *)(v6[135] + 505) = 1; /*0x4cd58f*/
-    v7 = v6[373]; /*0x4cd595*/
+    v7 = v6->u32_5D4; /*0x4cd595*/
     if ( v7 ) /*0x4cd59d*/
       *(unsigned char *)(v7 + 130) = 1; /*0x4cd59f*/
     if ( v6 ) /*0x4cd5a7*/
-      (*(void (**)(unsigned int *, int))(*v6 + 32))(v6, 1); /*0x4cd5ae*/
+      v6->vt_slot_32(1); /*0x4cd5ae*/
   }
   team = this->LinkedTo->team; /*0x4cd5c2*/
   if ( team ) /*0x4cd5ca*/
@@ -4277,7 +4277,7 @@ unsigned int * JumpjetLocomotionClass::HasScoreDisplayChanged_516320(unsigned in
     a1->Dest[0] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1440]; /*0x516351*/
     a1->Dest[1] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1444]; /*0x51635a*/
     result = &a1->Owner->vfptr; /*0x51635d*/
-    result[376] = -1; /*0x516360*/
+    result->u32_5E0 = -1; /*0x516360*/
   }
   return result; /*0x51636a*/
 }
@@ -5538,7 +5538,7 @@ int JumpjetLocomotionClass::ConvertCoordToCell_1(int a1, int aP1, IUnknown * aP2
           a1->MovingDestination[0] = v5; /*0x5b00e4*/
           a1->MovingDestination[1] = v6; /*0x5b00ec*/
           result = (int)Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &aP1); /*0x5b00ef*/
-          if ( (result->u8_140 & 0x100) != 0 ) /*0x5b00fe*/
+          if ( (result->currentRank & 0x100) != 0 ) /*0x5b00fe*/
           {
             result = Coord::ScaleToScreenY((Coord *)0x3C); /*0x5b0105*/
             a1->MovingDestination[1] += result; /*0x5b010a*/
@@ -5961,7 +5961,7 @@ unsigned int * JumpjetLocomotionClass::ConvertCoordToCell_2(int arg0, unsigned i
             aP1_4 = v5; /*0x69f4d4*/
             aP3 = v6; /*0x69f4de*/
             result = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &a1); /*0x69f4e2*/
-            if ( (result[80] & 0x100) != 0 ) /*0x69f4f0*/
+            if ( (result->currentRank & 0x100) != 0 ) /*0x69f4f0*/
             {
               result = (unsigned int *)(dword_B0782C + arg0->Dest[1]); /*0x69f4fb*/
               arg0->Dest[1] = (int)result; /*0x69f4fd*/

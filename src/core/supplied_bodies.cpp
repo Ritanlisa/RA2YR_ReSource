@@ -221,7 +221,7 @@ unsigned int * GraphicMenuImageItem::ddtor(unsigned int * a2) {
   NullGuard::Call((GraphicMenuItem *)this, (int)a2); /*0x4f37ad*/
   v3 = &this->q034; /*0x4f37b2*/
   v4 = CCFileClass::Construct2(&v7, v3); /*0x4f37ba*/
-  v5 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x4f37cc*/
+  v5 = v4->Open(0); /*0x4f37cc*/
   /* X11: vtable install elided (implicit via class virtuals 0x4f37ce) — binary-proven install, was 0 */
   v9 = 0; /*0x4f37d6*/
   Vector::Clear((int)v8); /*0x4f37de*/
@@ -1123,8 +1123,8 @@ int * Vector3::Subtract(int *a2, unsigned int *a3) {
   v4 = this->u32_4 - a3[1]; /*0x437175*/
   v6 = this->u32_8 - a3[2]; /*0x43717e*/
   *a2 = v3; /*0x437182*/
-  a2[1] = v4; /*0x437184*/
-  a2[2] = v6; /*0x437187*/
+  a2->u32_4 = v4; /*0x437184*/
+  a2->u32_8 = v6; /*0x437187*/
   return a2; /*0x43718a*/
 }
 } // namespace gamemd
@@ -2318,7 +2318,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
           v29 = (House *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&((unsigned int *)&stru_A8EB00)[216] + 60))(**(unsigned int **)&((unsigned int *)&stru_A8EB00)[216]); /*0x4abd4b*/
           if ( (uint8_t)House::IsHumanPlayer(v29) ) /*0x4abd50*/
           {
-            if ( v6->q083 ) /*0x4abd59*/
+            if ( v6->isSelected ) /*0x4abd59*/
             {
               if ( Selection::GetFlag() ) /*0x4abd63*/
               {
@@ -2350,13 +2350,13 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
     {
       if ( a5 ) /*0x4abde3*/
         goto LABEL_64; /*0x4abde3*/
-      if ( !v6 || !(*(uint8_t (__thiscall **)(House **))&(*v6)->__pad_7C[188])(v6) || v6->q083 ) /*0x4abe03*/
+      if ( !v6 || !(*(uint8_t (__thiscall **)(House **))&(*v6)->__pad_7C[188])(v6) || v6->isSelected ) /*0x4abe03*/
         goto LABEL_120; /*0x4abe0b*/
       v28 = 0; /*0x4abe11*/
   LABEL_56:
       if ( (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) != 6 /*0x4abe40*/
         || (uint8_t)House::IsHumanPlayer(v6[135])
-        || v6->q6ED != 15
+        || v6->Translucency != 15
         || (*(uint8_t (__thiscall **)(House **))&(*v6)->__pad_2B0[120])(v6) )
       {
         MapClass::UnselectAll_ClearLimboLaunchers(v53); /*0x4abe4a*/
@@ -2570,7 +2570,7 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
           (void **)this->q11A8,
           0,0,0,
           0);
-  if ( !v10 || (v11 = v10[3278], (*((unsigned char *)&(v56[0]))) = 1, !v11) ) /*0x4abaee*/
+  if ( !v10 || (v11 = v10->u8_CCE, (*((unsigned char *)&(v56[0]))) = 1, !v11) ) /*0x4abaee*/
     (*((unsigned char *)&(v56[0]))) = 0; /*0x4abaf0*/
   v12 = a3[1] + *&this->u16_117A; /*0x4abb06*/
   v13 = *&this->q11A4; /*0x4abb0a*/
@@ -4504,7 +4504,7 @@ unsigned int * Vector2::Subtract(unsigned int *a2) {
 
   Vector2_field_0x04 = this->q004; /*0x6dc4cd*/
   *(unsigned int *)this->__pad_000 -= *a2; /*0x6dc4d0*/
-  this->q004 = Vector2_field_0x04 - a2[1]; /*0x6dc4d8*/
+  this->q004 = Vector2_field_0x04 - a2->q004; /*0x6dc4d8*/
   return this->__pad_000; /*0x6dc4d7*/
 }
 } // namespace gamemd

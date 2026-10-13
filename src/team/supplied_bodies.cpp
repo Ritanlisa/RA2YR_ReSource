@@ -726,7 +726,7 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
   {
     Entry = SessionClass::GetEntry((SessionClass *)this->currentScript, &v15); /*0x6ecd24*/
     v16[0] = *Entry; /*0x6ecd2b*/
-    if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
+    if ( Entry->u32_4 < 0x2BEu ) /*0x6ecd36*/
       TeamClass::SelectMember((int)this, (int)CellFromArray); /*0x6ecd3b*/
   }
   (*((unsigned short *)&(v6))) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 4432) * 900.0); /*0x6ecd52*/
@@ -1862,8 +1862,8 @@ int CampaignClass::LoadFromINI() {
         {
           CampaignClass::Constructor_0((CampaignClass *)v8, 0, 0); /*0x49dbbe*/
           *v8 = 0; /*0x49dbca*/
-          v8[5] = 10; /*0x49dbd0*/
-          v8[4] = 0; /*0x49dbd7*/
+          v8->u32_14 = 10; /*0x49dbd0*/
+          v8->q010 = 0; /*0x49dbd7*/
           CampaignClass::Constructor((CampaignClass *)(v8 + 6), 0, 0); /*0x49dbde*/
           unknown_libname_73(v8 + 13); /*0x49dbe6*/
           unknown_libname_73(v8 + 14); /*0x49dbee*/
@@ -2539,7 +2539,7 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
     v5 = (int)CellFromArray; /*0x6ec9c2*/
     if ( CellFromArray ) /*0x6ec9c6*/
     {
-      if ( (*(int (__thiscall **)(void *))(*(unsigned int *)CellFromArray + 44))(CellFromArray) == 11 ) /*0x6ec9d2*/
+      if ( CellFromArray->ReturnZeroPos() == 11 ) /*0x6ec9d2*/
       {
         v6 = (v5->u8_9D) & 1; /*0x6ec9e1*/
         v10[0] = 0; /*0x6ec9e3*/
@@ -2553,7 +2553,7 @@ int TeamClass::SelectWaypointTarget(int a2, int a3) {
   }
   if ( this->queuedFocus && (firstUnit = (int *)this->firstUnit) != 0 ) /*0x6eca16*/
   {
-    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6eca34*/
+    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit->pitchAngle <= 0 ) /*0x6eca34*/
     {
       firstUnit = firstUnit->FootClass_field_5D8; /*0x6eca36*/
       if ( !firstUnit ) /*0x6eca3e*/
@@ -2602,7 +2602,7 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
   }
   if ( this->queuedFocus && (firstUnit = (int *)this->firstUnit) != 0 ) /*0x6ecaf4*/
   {
-    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6ecb12*/
+    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit->pitchAngle <= 0 ) /*0x6ecb12*/
     {
       firstUnit = firstUnit->FootClass_field_5D8; /*0x6ecb14*/
       if ( !firstUnit ) /*0x6ecb1c*/
@@ -2734,7 +2734,7 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
   firstUnit = (int *)v3->firstUnit; /*0x6ed1b2*/
   if ( firstUnit ) /*0x6ed1b7*/
   {
-    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit[191] <= 0 ) /*0x6ed1d5*/
+    while ( *(int *)(firstUnit->Vt34Thunk() + 1668) > 0 && firstUnit->pitchAngle <= 0 ) /*0x6ed1d5*/
     {
       firstUnit = firstUnit->FootClass_field_5D8; /*0x6ed1d7*/
       if ( !firstUnit ) /*0x6ed1df*/
@@ -2792,7 +2792,7 @@ int TeamClass::SelectAreaAttackTarget(int a2, int a3) {
   v8 = (int *)this->firstUnit; /*0x6ee38f*/
   if ( !v8 ) /*0x6ee394*/
     goto LABEL_13; /*0x6ee394*/
-  while ( *(int *)((*(int (__thiscall **)(int *))(this->u32_D8)(v8) + 1668) > 0 && v8[191] <= 0 ) /*0x6ee3b2*/
+  while ( *(int *)((*(int (__thiscall **)(int *))(this->u32_D8)(v8) + 1668) > 0 && v8->pitchAngle <= 0 ) /*0x6ee3b2*/
   {
     v8 = v8->FootClass_field_5D8; /*0x6ee3b4*/
     if ( !v8 ) /*0x6ee3bc*/
@@ -3050,7 +3050,7 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
   char v46[12]; // [esp+7Ch] [ebp-Ch] BYREF
 
   result = 0; /*0x6eeeb3*/
-  v6 = a2[135]; /*0x6eeeb5*/
+  v6 = a2->owner; /*0x6eeeb5*/
   v7 = 0; /*0x6eeebb*/
   v28 = 0; /*0x6eeebd*/
   v27 = -1; /*0x6eeec1*/
@@ -3071,7 +3071,7 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
           case 0: /*0x6eef0e*/
             v11 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*v9 + 72))(v9, v45); /*0x6eef1e*/
             (*((unsigned short *)&(v25))) = *v11 / 256; /*0x6eef31*/
-            v12 = a2[135]; /*0x6eef42*/
+            v12 = a2->owner; /*0x6eef42*/
             (*(((unsigned short *)&(v25)) + 1)) = v11[1] / 256; /*0x6eef4b*/
             v25 = v25; /*0x6eef58*/
             v10 = 0x7FFFFFFF - CellClass::GetTileData((int16_t *)&v25, v12); /*0x6eef6d*/
@@ -3079,13 +3079,13 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
           case 1: /*0x6eef0e*/
             v13 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*v9 + 72))(v9, v46); /*0x6eef7d*/
             (*((unsigned short *)&(v26))) = *v13 / 256; /*0x6eef90*/
-            v14 = a2[135]; /*0x6eefa1*/
+            v14 = a2->owner; /*0x6eefa1*/
             (*(((unsigned short *)&(v26)) + 1)) = v13[1] / 256; /*0x6eefaa*/
             v26 = v26; /*0x6eefb7*/
             TileData = CellClass::GetTileData((int16_t *)&v26, v14); /*0x6eefc2*/
             goto LABEL_10; /*0x6eefc7*/
           case 2: /*0x6eef0e*/
-            v16 = a2[39]; /*0x6eefd5*/
+            v16 = a2->location; /*0x6eefd5*/
             v41 = a2[40]; /*0x6eefda*/
             v42 = a2[41]; /*0x6eefe9*/
             v17 = v9[40]; /*0x6eeff5*/
@@ -3116,7 +3116,7 @@ void * TeamClass::ScoreMember(unsigned int *a2, int a3, int a4) {
             v10 = 0x7FFFFFFF - v19; /*0x6ef046*/
             break; /*0x6ef048*/
           case 3: /*0x6eef0e*/
-            v20 = a2[39]; /*0x6ef053*/
+            v20 = a2->location; /*0x6ef053*/
             v43 = a2[40]; /*0x6ef058*/
             v44 = a2[41]; /*0x6ef065*/
             v21 = v9[40]; /*0x6ef073*/
@@ -3231,15 +3231,15 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     }
     StartCoords = HouseClass::GetStartCoords(i[135], &v28); /*0x6efaae*/
     v10 = *StartCoords; /*0x6efab3*/
-    v11 = StartCoords[1]; /*0x6efab7*/
+    v11 = StartCoords->vtable2; /*0x6efab7*/
     v30 = *StartCoords; /*0x6efaba*/
     v31 = v11; /*0x6efabe*/
-    v32 = StartCoords[2]; /*0x6efac5*/
+    v32 = StartCoords->vtable3; /*0x6efac5*/
     if ( v7 ) /*0x6efac9*/
     {
       v15 = HouseClass::GetStartCoords(v7, &v28); /*0x6efaf7*/
       v16 = v15[1] - v31; /*0x6efb0f*/
-      v17 = v15[2]; /*0x6efb11*/
+      v17 = v15->vtable3; /*0x6efb11*/
       (*((unsigned int *)&(v28))) = *v15 - v10; /*0x6efb14*/
       __asm { fild [esp+58h+var_20] } /*0x6efb18*/
       (*((unsigned int *)&(v25))) = -v16; /*0x6efb1e*/
@@ -3377,9 +3377,9 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
     goto LABEL_33; /*0x6f0192*/
   v8 = v5->owner; /*0x6f0198*/
   DefaultTimer = 0; /*0x6f019e*/
-  if ( v8[153] <= 0 ) /*0x6f01aa*/
+  if ( v8->lastBuiltInfantryType <= 0 ) /*0x6f01aa*/
     goto LABEL_33; /*0x6f01aa*/
-  v9 = v8->q258; /*0x6f01b0*/
+  v9 = v8->supersCount; /*0x6f01b0*/
   v10 = v8[153]; /*0x6f01b6*/
   do /*0x6f01d7*/
   {

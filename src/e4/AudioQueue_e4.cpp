@@ -593,7 +593,7 @@ int AudioQueue::DeactivateAllMatching(int a1, int a2)
   result = ((AudioQueue *)((AudioQueue *)(a1 + 248)))->GetNext(); /*0x40377a*/
   for ( i = result; result; i = result ) /*0x403783*/
   {
-    if ( (*(unsigned char *)(i + 164) & 1) != 0 && (a2 == -1 || *(unsigned int *)(i + 12) == a2) ) /*0x403796*/
+    if ( (i->u8_A4 & 1) != 0 && (a2 == -1 || i->u32_C == a2) ) /*0x403796*/
       result = AudioChannel::DeactivatePlay((AudioChannel *)i); /*0x40379a*/
     if ( !i ) /*0x4037a1*/
       break; /*0x4037a1*/

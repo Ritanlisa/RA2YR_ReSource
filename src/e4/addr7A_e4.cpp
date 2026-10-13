@@ -183,7 +183,7 @@ int CollectWOLConnectionTokens(void *a1)
           String::AssignFromPtr(v13, (const char **)&v15); /*0x7a063f*/
           vtable3 = (int)stru_B76AC4.vfptr3; /*0x7a0644*/
         }
-        stru_B76AC4.vfptr3 = &vtable3->u32_1; /*0x7a064e*/
+        stru_B76AC4.vfptr3 = &vtable3->AbstractClass_1; /*0x7a064e*/
         DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
         v3 = v16; /*0x7a0658*/
         v2 = *(unsigned int *)&v15.ptr_4; /*0x7a065c*/
@@ -1500,7 +1500,7 @@ int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
             Dialog::DrawBackground(hWnd); /*0x7af77e*/
             if ( DSurface_Alternate ) /*0x7af78a*/
             {
-              v8 = v7[7]; /*0x7af78c*/
+              v8 = v7->CampaignScore_field_0x1C; /*0x7af78c*/
               if ( v8 ) /*0x7af791*/
               {
                 v9 = (int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v8 + 120))(v8, v15); /*0x7af79a*/
@@ -1515,7 +1515,7 @@ int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
                 (*(void (**)(int, int *, unsigned int, int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x7af7e4*/
                   DSurface_Alternate,
                   &v11,
-                  v7[7],
+                  v7->CampaignScore_field_0x1C,
                   &v11,
                   0,
                   1);
@@ -1665,7 +1665,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   v21 = 0; /*0x7afc61*/
   *(unsigned int *)v19.owningHouseIndex = 0; /*0x7afc65*/
   v7 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, g_Str_File_WDT_MIX); /*0x7afc69*/
-  v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x7afc82*/
+  v8 = v7->vt_slot_20(0); /*0x7afc82*/
   v23.ComPtr_field_0x08 = (int)&vt_CCFileClass; /*0x7afc84*/
   v25 = 0; /*0x7afc88*/
   Vector::Clear((int)v24); /*0x7afc8f*/
@@ -1680,7 +1680,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
       v22 = 0; /*0x7afcce*/
   }
   v10 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aWdtvoxMix); /*0x7afcdb*/
-  v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))(v10, 0); /*0x7afcef*/
+  v11 = v10->vt_slot_20(0); /*0x7afcef*/
   v23.ComPtr_field_0x08 = (int)&vt_CCFileClass; /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
   Vector::Clear((int)v24); /*0x7afcfc*/
@@ -1695,7 +1695,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
       v21 = 0; /*0x7afd3b*/
   }
   v13 = CCFileClass::Construct((CCFileClass *)&v23.ComPtr_field_0x08, aLocalMix_1); /*0x7afd48*/
-  v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x7afd5c*/
+  v14 = v13->vt_slot_20(0); /*0x7afd5c*/
   v23.ComPtr_field_0x08 = (int)&vt_CCFileClass; /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/
   Vector::Clear((int)v24); /*0x7afd69*/

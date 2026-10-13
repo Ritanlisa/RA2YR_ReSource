@@ -19,10 +19,10 @@ int LCWPipe::Dtor()
   v2 = (void *)this->u32_14; /*0x552063*/
   /* X11: vtable install elided (implicit via LCWPipe virtuals 0x552066) */
   __3_YAXPAX_Z(v2); /*0x55206d*/
-  v3 = (void *)*((unsigned int *)this + 6); /*0x552072*/
-  *((unsigned int *)this + 5) = 0; /*0x552075*/
+  v3 = (void *)this->u32_18; /*0x552072*/
+  this->u32_14 = 0; /*0x552075*/
   __3_YAXPAX_Z(v3); /*0x55207d*/
-  *((unsigned int *)this + 6) = 0; /*0x552087*/
+  this->u32_18 = 0; /*0x552087*/
   return Pipe::Dtor((Pipe *)this); /*0x552093*/
 
 }

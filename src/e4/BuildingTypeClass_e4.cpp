@@ -394,8 +394,8 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   while ( v19 ); /*0x45e4c4*/
   v20 = a2->u32_1788; /*0x45e4c6*/
   *v20 = 0; /*0x45e4d2*/
-  v20[1] = 0; /*0x45e4d6*/
-  v20[2] = 0; /*0x45e4d9*/
+  v20->u32_4 = 0; /*0x45e4d6*/
+  v20->u32_8 = 0; /*0x45e4d9*/
   a2->u8_D35 = 1; /*0x45e4dc*/
   a2->u8_D36 = 1; /*0x45e4e3*/
   a2->u8_D3B = 0; /*0x45e4ea*/
@@ -420,7 +420,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   *&this->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e54e*/
   this->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e558*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
-  this->? = &BuildingTypeClass::`vftable'; /*0x45e565*/
+  this->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e565*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e56c) */
   return &this->TechnoTypeClass; /*0x45e575*/
 
@@ -440,7 +440,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   a1->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e58d*/
   a1->? = &BuildingTypeClass::`vftable'; /*0x45e595*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
-  a1->? = &BuildingTypeClass::`vftable'; /*0x45e5a3*/
+  a1->vtable4 = &BuildingTypeClass::`vftable'; /*0x45e5a3*/
   if ( BuildupLoaded && a1->Buildup[0] ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1->Buildup[0]); /*0x45e5b7*/
@@ -497,13 +497,13 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   }
   v4 = *&a1->PreventsPlacementOverlap; /*0x45e707*/
   *&a1->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e70d*/
-  if ( v4 && a1->__pad_1714[125] ) /*0x45e71b*/
+  if ( v4 && a1->u32_1791 ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
-    *(unsigned int *)&a1->__pad_1714[116] = 0; /*0x45e72c*/
+    *&a1->PreventsPlacementOverlap = 0; /*0x45e72c*/
   }
-  a1->__pad_1714[125] = 0; /*0x45e734*/
-  *(unsigned int *)&a1->__pad_1714[120] = 0; /*0x45e73a*/
+  a1->u32_1791 = 0; /*0x45e734*/
+  *&a1->ProductionCompletionThreshold = 0; /*0x45e73a*/
   return TechnoTypeClass::DTOR((int)a1); /*0x45e745*/
 
 }
@@ -1573,7 +1573,7 @@ int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
   result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&aP1, 1); /*0x59403a*/
   if ( (unsigned char)result )
   {
-    v6 = v3[2]; /*0x594052*/
+    v6 = v3->vtable2; /*0x594052*/
     LOWORD(aP1) = *((unsigned int *)v3 + 2) + *(unsigned int *)v3 - 1; /*0x59405a*/
     HIWORD(aP1) = v6; /*0x594065*/
     result = LayerClass::IsWithinUsableArea((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&aP1, 1); /*0x59406a*/
@@ -1740,7 +1740,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   aP1->?[0] = -1; /*0x644cee*/
   aP1->TechnoTypeClass = &ParticleTypeClass::`vftable'; /*0x644cf4*/
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644cfa) */
-  aP1->? = &ParticleTypeClass::`vftable'; /*0x644d01*/
+  aP1->vtable3 = &ParticleTypeClass::`vftable'; /*0x644d01*/
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d08) */
   if ( *(int *)&stru_A83D50.__pad_3C[28] < *(int *)&stru_A83D50.__pad_3C[20] /*0x644d43*/
     || (stru_A83D50.__pad_3C[25] || !*(unsigned int *)&stru_A83D50.__pad_3C[20])
@@ -2028,7 +2028,7 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2, double a3,
     v18[1] = v7; /*0x7178e6*/
     v8 = (int *)World::ToScreen(v17, v18, a2); /*0x7178fb*/
     v9 = *v8; /*0x717900*/
-    v10 = v8[1]; /*0x717905*/
+    v10 = v8->vtable2; /*0x717905*/
     v17[0] = 10 * v5->ClearAllWeapons; /*0x71791b*/
     __asm { fild [esp+2Ch+var_14] } /*0x717921*/
     v11 = (void *)(v9 - v17[0]); /*0x717927*/

@@ -524,7 +524,7 @@ void sub_4C2830()
       {
         v11 = -(v10->u8_2C != 0); /*0x4c2904*/
         (*((unsigned char *)&(v11))) = v11 & 0xFB; /*0x4c2906*/
-        Lightning::Draw((Lightning *)v10, *v10, v10[1], v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
+        Lightning::Draw((Lightning *)v10, *v10, v10->__pad_004, v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
       }
       ++v10[7]; /*0x4c293d*/
     }
@@ -998,7 +998,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   {
     if ( Array::Contains(*v6, (int)v14) ) /*0x4cf0d9*/
     {
-      v18 = (int *)(*(int (**)(unsigned int *, int *, int *))(*v14 + 168))(v14, v63, *v6); /*0x4cf142*/
+      v18 = (int *)v14->vt_slot_168(v63, *v6); /*0x4cf142*/
       v11 = *v18; /*0x4cf148*/
       v12 = v18[1]; /*0x4cf14a*/
       v62 = v18[2]; /*0x4cf150*/
@@ -1705,7 +1705,7 @@ char * sub_4C3A20(int a1, int a2, int a3, char * a4)
       do /*0x4c3aa5*/
       {
         v4[*(v7 - 1)] = v5; /*0x4c3a80*/
-        sub_4C37D0(a1, v6, *v7, v7[1]); /*0x4c3a90*/
+        sub_4C37D0(a1, v6, *v7, v7->u8_1); /*0x4c3a90*/
         v6 += 256; /*0x4c3a95*/
         ++v5; /*0x4c3a9b*/
         v7 += 4; /*0x4c3aa0*/

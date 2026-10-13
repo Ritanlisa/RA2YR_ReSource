@@ -559,28 +559,28 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
     v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
-    v40 = v12[1]; /*0x705405*/
-    v41 = v12[2]; /*0x70540c*/
-    v42 = v12[3]; /*0x70541e*/
+    v40 = v12->Y; /*0x705405*/
+    v41 = v12->Width; /*0x70540c*/
+    v42 = v12->Height; /*0x70541e*/
     v13 = ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0); /*0x705428*/
     v35 = *v13; /*0x705430*/
-    v36 = v13[1]; /*0x705437*/
-    v37 = v13[2]; /*0x70543e*/
-    v38 = v13[3]; /*0x70544b*/
+    v36 = v13->vtable2; /*0x705437*/
+    v37 = v13->vtable3; /*0x70543e*/
+    v38 = v13->vtable4; /*0x70544b*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v35, v8); /*0x705456*/
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     v14 = Coord2D::Add(&v27, v52, v44); /*0x70547d*/
     v15 = Rect::Construct(v54, v14, 3, 3); /*0x70548a*/
     v35 = *v15; /*0x705493*/
-    v36 = v15[1]; /*0x70549c*/
-    v37 = v15[2]; /*0x7054a8*/
-    v38 = v15[3]; /*0x7054bb*/
+    v36 = v15->Y; /*0x70549c*/
+    v37 = v15->Width; /*0x7054a8*/
+    v38 = v15->Height; /*0x7054bb*/
     v16 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
-    v40 = v16[1]; /*0x7054cd*/
-    v41 = v16[2]; /*0x7054d4*/
-    v42 = v16[3]; /*0x7054e1*/
+    v40 = v16->vtable2; /*0x7054cd*/
+    v41 = v16->vtable3; /*0x7054d4*/
+    v42 = v16->vtable4; /*0x7054e1*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7054ed*/
   }
   v51[0] = DSurface_ViewBounds; /*0x705501*/
@@ -603,27 +603,27 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v28 = v30 - 2; /*0x70558b*/
   v18 = Rect::Construct(v54, &v27, 3, 3); /*0x705597*/
   v35 = *v18; /*0x7055a0*/
-  v36 = v18[1]; /*0x7055a9*/
-  v37 = v18[2]; /*0x7055b0*/
-  v38 = v18[3]; /*0x7055c2*/
+  v36 = v18->Y; /*0x7055a9*/
+  v37 = v18->Width; /*0x7055b0*/
+  v38 = v18->Height; /*0x7055c2*/
   v19 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7055cc*/
   v39 = *v19; /*0x7055d4*/
-  v40 = v19[1]; /*0x7055db*/
-  v41 = v19[2]; /*0x7055e2*/
-  v42 = v19[3]; /*0x7055ef*/
+  v40 = v19->vtable2; /*0x7055db*/
+  v41 = v19->vtable3; /*0x7055e2*/
+  v42 = v19->vtable4; /*0x7055ef*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
   v20 = Rect::Construct(v54, &v27, 3, 3); /*0x705623*/
   v35 = *v20; /*0x70562c*/
-  v36 = v20[1]; /*0x705635*/
-  v37 = v20[2]; /*0x70563c*/
-  v38 = v20[3]; /*0x70564e*/
+  v36 = v20->Y; /*0x705635*/
+  v37 = v20->Width; /*0x70563c*/
+  v38 = v20->Height; /*0x70564e*/
   v21 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x705658*/
   v39 = *v21; /*0x705660*/
-  v40 = v21[1]; /*0x705667*/
-  v41 = v21[2]; /*0x70566e*/
-  v42 = v21[3]; /*0x70567b*/
+  v40 = v21->vtable2; /*0x705667*/
+  v41 = v21->vtable3; /*0x70566e*/
+  v42 = v21->vtable4; /*0x70567b*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v8); /*0x705686*/
   v45 = a1; /*0x70569e*/
   v46 = a2; /*0x7056a2*/
@@ -1999,7 +1999,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   GameOptionsClass::UnlockMovieIfNeeded_MoviesList(dword_A8EB60, Source); /*0x5c06a3*/
   strcpy(v3, aBik_0); /*0x5c06c9*/
   v5 = CCFileClass::Construct(v11, Source); /*0x5c06d6*/
-  v6 = (*(int (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0); /*0x5c06e8*/
+  v6 = v5->vt_slot_20(0); /*0x5c06e8*/
   v11[0] = &vt_CCFileClass; /*0x5c06ea*/
   v13 = 0; /*0x5c06f2*/
   Vector::Clear((int)v12); /*0x5c06fa*/
@@ -2009,7 +2009,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   {
     strcpy(v3, aVqa); /*0x5c0735*/
     v7 = CCFileClass::Construct(v11, Source); /*0x5c0742*/
-    v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x5c0754*/
+    v8 = v7->vt_slot_20(0); /*0x5c0754*/
     v11[0] = &vt_CCFileClass; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
     Vector::Clear((int)v12); /*0x5c0766*/

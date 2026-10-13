@@ -174,7 +174,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
   Color v74[3]; // [esp+D0h] [ebp-Ch] BYREF
 
   v64 = this; /*0x70c6a0*/
-  v5 = (int *)(*(int (**)(int *, float *))(*aP3 + 72))(aP3, &v68); /*0x70c6b2*/
+  v5 = (int *)aP3->GetInvalidCoord(&v68); /*0x70c6b2*/
   v55 = *v5; /*0x70c6ba*/
   v56 = v5[1]; /*0x70c6c4*/
   _ECX = aP2; /*0x70c6c8*/

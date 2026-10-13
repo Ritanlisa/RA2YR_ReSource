@@ -1325,7 +1325,7 @@ int sub_6A4DC0()
   {
     ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0); /*0x6a4ddb*/
     v0[11] = 0; /*0x6a4de0*/
-    v0[12] = 0; /*0x6a4de3*/
+    v0->q030 = 0; /*0x6a4de3*/
     *v0 = &vt_SidebarClassStripClassSelectClass; /*0x6a4de6*/
     v0 += 14; /*0x6a4dec*/
     --v1; /*0x6a4def*/

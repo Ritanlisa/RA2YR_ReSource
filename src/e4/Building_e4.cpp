@@ -188,8 +188,8 @@ AnimClass * * Building::ComputePosition(int *aP1)
       if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f78*/
       {
         *aP1 = (v21 << 8) + 128; /*0x425f99*/
-        aP1[1] = (v31 << 8) + 128; /*0x425fa2*/
-        aP1[2] = 0; /*0x425fa7*/
+        aP1->u32_4 = (v31 << 8) + 128; /*0x425fa2*/
+        aP1->u32_8 = 0; /*0x425fa7*/
         return aP1; /*0x425fb0*/
       }
       v38[1] = v22; /*0x425fb8*/
@@ -197,8 +197,8 @@ AnimClass * * Building::ComputePosition(int *aP1)
       if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425fd3*/
       {
         *aP1 = (v8 << 8) + 128; /*0x425ff0*/
-        aP1[1] = (v22 << 8) + 128; /*0x425ffa*/
-        aP1[2] = 0; /*0x425ffd*/
+        aP1->u32_4 = (v22 << 8) + 128; /*0x425ffa*/
+        aP1->u32_8 = 0; /*0x425ffd*/
         return aP1; /*0x426006*/
       }
     }
@@ -207,8 +207,8 @@ AnimClass * * Building::ComputePosition(int *aP1)
   {
 LABEL_39:
     *aP1 = Map_InvalidCoord_X; /*0x426090*/
-    aP1[1] = Map_InvalidCoord_Y; /*0x4260a3*/
-    aP1[2] = Map_InvalidCoord_Z; /*0x4260ac*/
+    aP1->u32_4 = Map_InvalidCoord_Y; /*0x4260a3*/
+    aP1->u32_8 = Map_InvalidCoord_Z; /*0x4260ac*/
     return aP1; /*0x4260b5*/
   }
   v26 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
@@ -230,8 +230,8 @@ LABEL_39:
   v23 = (v34[0] << 8) + 128; /*0x4260c5*/
 LABEL_41:
   *aP1 = v23; /*0x4260cb*/
-  aP1[1] = (v24 << 8) + 128; /*0x4260dd*/
-  aP1[2] = 0; /*0x4260e0*/
+  aP1->u32_4 = (v24 << 8) + 128; /*0x4260dd*/
+  aP1->u32_8 = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/
 
 }
@@ -262,9 +262,9 @@ int Building::GetRenderType()
 
   Building_field_0xA0 = this->q0A0; /*0x772a90*/
   result = 0; /*0x772a96*/
-  if ( Building_field_0xA0[676] ) /*0x772a98*/
+  if ( Building_field_0xA0->q2A4 ) /*0x772a98*/
     result = 4; /*0x772aa2*/
-  if ( Building_field_0xA0[677] ) /*0x772aa7*/
+  if ( Building_field_0xA0->u8_2A5 ) /*0x772aa7*/
     LOBYTE(result) = result | 0xB8; /*0x772ab1*/
   return result; /*0x772ab3*/
 
@@ -290,17 +290,17 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
     v6 = v3[2]; /*0x69e809*/
     v7 = v3[3]; /*0x69e80e*/
     *a1 = v4; /*0x69e818*/
-    a1[1] = v5; /*0x69e81a*/
-    a1[2] = v6; /*0x69e81d*/
-    a1[3] = v7; /*0x69e820*/
+    a1->vtable2 = v5; /*0x69e81a*/
+    a1->vtable3 = v6; /*0x69e81d*/
+    a1->vtable4 = v7; /*0x69e820*/
     return a1; /*0x69e812*/
   }
   else
   {
     *a1 = dword_B077A0; /*0x69e835*/
-    a1[1] = dword_B077A4; /*0x69e83d*/
-    a1[2] = dword_B077A8; /*0x69e846*/
-    a1[3] = dword_B077AC; /*0x69e84f*/
+    a1->vtable2 = dword_B077A4; /*0x69e83d*/
+    a1->vtable3 = dword_B077A8; /*0x69e846*/
+    a1->vtable4 = dword_B077AC; /*0x69e84f*/
     return a1; /*0x69e829*/
   }
 

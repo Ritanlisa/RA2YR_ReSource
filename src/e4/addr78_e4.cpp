@@ -680,7 +680,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
     if ( a2 ) /*0x781152*/
       goto LABEL_12; /*0x781152*/
   LABEL_6:
-    if ( (aP0[7] & 0x100) != 0 ) /*0x781157*/
+    if ( (aP0->referenceCount & 0x100) != 0 ) /*0x781157*/
       return 1; /*0x78115e*/
     goto LABEL_8; /*0x781157*/
   }
@@ -690,7 +690,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
   if ( a2 ) /*0x781168*/
     return 0; /*0x78116f*/
   LABEL_13:
-  if ( (aP0[7] & 0x100) == 0 ) /*0x78117f*/
+  if ( (aP0->referenceCount & 0x100) == 0 ) /*0x78117f*/
     return 1; /*0x781186*/
   LABEL_15:
   if ( g_WOL_GameListRender != 4 ) /*0x781194*/
@@ -740,7 +740,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
     if ( a2 ) /*0x7811f9*/
       goto LABEL_42; /*0x7811f9*/
   LABEL_36:
-    if ( (aP0[8] & 0x600) != 0 ) /*0x7811fe*/
+    if ( (aP0->needsSave & 0x600) != 0 ) /*0x7811fe*/
       return 1; /*0x781205*/
     goto LABEL_38; /*0x7811fe*/
   }
@@ -750,7 +750,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
   if ( a2 ) /*0x78120f*/
     return 0; /*0x781216*/
   LABEL_43:
-  if ( (aP0[8] & 0x600) == 0 ) /*0x78122a*/
+  if ( (aP0->needsSave & 0x600) == 0 ) /*0x78122a*/
     return 1; /*0x781231*/
   LABEL_45:
   if ( g_WOL_GameListRender != 8 ) /*0x781237*/
@@ -770,7 +770,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
     if ( a2 ) /*0x781247*/
       goto LABEL_56; /*0x781247*/
   LABEL_50:
-    if ( aP0[5] ) /*0x781249*/
+    if ( aP0->abstractFlags ) /*0x781249*/
       return 1; /*0x781255*/
     goto LABEL_52; /*0x78124e*/
   }
@@ -780,7 +780,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
   if ( a2 ) /*0x78125f*/
     return 0; /*0x781266*/
   LABEL_57:
-  if ( !aP0[5] ) /*0x781277*/
+  if ( !aP0->abstractFlags ) /*0x781277*/
     return 1; /*0x781283*/
   LABEL_59:
   if ( g_WOL_GameListRender != 10 ) /*0x78128f*/
@@ -800,7 +800,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
     if ( a2 ) /*0x78129f*/
       goto LABEL_71; /*0x78129f*/
   LABEL_64:
-    if ( dword_A8B238[0] == 4 && (aP0[8] & 0x100) != 0 ) /*0x7812b3*/
+    if ( dword_A8B238[0] == 4 && (aP0->needsSave & 0x100) != 0 ) /*0x7812b3*/
       return 1; /*0x7812ba*/
     goto LABEL_67; /*0x7812b3*/
   }
@@ -810,7 +810,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
   if ( a2 ) /*0x7812c4*/
     return 0; /*0x7812cb*/
   LABEL_72:
-  if ( dword_A8B238[0] != 4 || (aP0[8] & 0x100) == 0 ) /*0x7812ee*/
+  if ( dword_A8B238[0] != 4 || (aP0->needsSave & 0x100) == 0 ) /*0x7812ee*/
     return 1; /*0x7812f5*/
   LABEL_75:
   if ( g_WOL_GameListRender != 12 ) /*0x7812fb*/
@@ -825,12 +825,12 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
   LABEL_88:
       if ( a2 != 1 ) /*0x78134d*/
         return 0; /*0x78134d*/
-      return dword_A8B238[0] == 4 && (aP0[5] || (aP0[8] & 0x100) != 0); /*0x78134d*/
+      return dword_A8B238[0] == 4 && (aP0->abstractFlags || (aP0->needsSave & 0x100) != 0); /*0x78134d*/
     }
     if ( a2 ) /*0x78130b*/
       goto LABEL_88; /*0x78130b*/
   LABEL_80:
-    if ( dword_A8B238[0] != 4 || !aP0[5] && (aP0[8] & 0x100) == 0 ) /*0x781326*/
+    if ( dword_A8B238[0] != 4 || !aP0->abstractFlags && (aP0->needsSave & 0x100) == 0 ) /*0x781326*/
       return 1; /*0x78132d*/
     goto LABEL_84; /*0x781326*/
   }
@@ -839,7 +839,7 @@ bool FilterWOLGameListEntry(unsigned int * aP0, int a2, int a3, int a4)
   LABEL_85:
   if ( a2 ) /*0x781337*/
     return 0; /*0x78133e*/
-  return dword_A8B238[0] == 4 && (aP0[5] || (aP0[8] & 0x100) != 0); /*0x781370*/
+  return dword_A8B238[0] == 4 && (aP0->abstractFlags || (aP0->needsSave & 0x100) != 0); /*0x781370*/
 }
 }
 // 0x781380
@@ -986,7 +986,7 @@ void GameListRenderWOL(CampaignScore * a1)
             memcpy(v58, (const void *)(v2 + stru_B76AC4.occupant), sizeof(v58)); /*0x781684*/
           v14 = v58[10]; /*0x781686*/
           *v6 = v13; /*0x78168d*/
-          v6[1] = v14; /*0x78168f*/
+          v6->vtable2 = v14; /*0x78168f*/
           ++v13; /*0x781692*/
           v2 += 268; /*0x781693*/
           v6 += 2; /*0x781699*/
@@ -1012,7 +1012,7 @@ void GameListRenderWOL(CampaignScore * a1)
         memcpy(v58, (const void *)(v2 + stru_B76AC4.occupant), sizeof(v58)); /*0x7815de*/
       v9 = v58[10]; /*0x7815e0*/
       *v6 = v8; /*0x7815e7*/
-      v6[1] = v9; /*0x7815e9*/
+      v6->vtable2 = v9; /*0x7815e9*/
       ++v8; /*0x7815ec*/
       v2 += 268; /*0x7815ed*/
       v6 += 2; /*0x7815f3*/
@@ -4221,7 +4221,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
     if ( Flag::IsNot2(&v28) ) /*0x789732*/
     {
       PlayerProfile = LoadPlayerProfile(v25, (const char **)&dword_B73E40); /*0x789744*/
-      ComPtr::Set(&v26, PlayerProfile[1]); /*0x789751*/
+      ComPtr::Set(&v26, PlayerProfile->vtable2); /*0x789751*/
       v25[0] = &vt_rc_ptr; /*0x78975a*/
       ComPtr::Release(v25); /*0x78975e*/
     }

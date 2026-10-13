@@ -540,9 +540,9 @@ LABEL_12:
   {
 LABEL_13:
     *aP1 = 0; /*0x47fd43*/
-    aP1[1] = 0; /*0x47fd53*/
-    aP1[2] = 0; /*0x47fd56*/
-    aP1[3] = 0; /*0x47fd59*/
+    aP1->u32_4 = 0; /*0x47fd53*/
+    aP1->u32_8 = 0; /*0x47fd56*/
+    aP1->q00C = 0; /*0x47fd59*/
     return aP1; /*0x47fd63*/
   }
   House::Constructor(v23); /*0x47fd66*/
@@ -552,13 +552,13 @@ LABEL_13:
   v17 = v26 - *&v23->q004 / 2; /*0x47fd9f*/
   FoundationSize = Building::GetFoundationSize(v27, v24); /*0x47fda7*/
   v19 = v16 + *FoundationSize; /*0x47fdb1*/
-  v20 = v17 + FoundationSize[1]; /*0x47fdb7*/
-  v21 = FoundationSize[2]; /*0x47fdb9*/
-  v22 = FoundationSize[3]; /*0x47fdbc*/
+  v20 = v17 + FoundationSize->ptr_4; /*0x47fdb7*/
+  v21 = FoundationSize->ptr_8; /*0x47fdb9*/
+  v22 = FoundationSize->u32_C; /*0x47fdbc*/
   *aP1 = v19; /*0x47fdc1*/
-  aP1[1] = v20; /*0x47fdc3*/
-  aP1[2] = v21; /*0x47fdc6*/
-  aP1[3] = v22; /*0x47fdc9*/
+  aP1->u32_4 = v20; /*0x47fdc3*/
+  aP1->u32_8 = v21; /*0x47fdc6*/
+  aP1->q00C = v22; /*0x47fdc9*/
   return aP1; /*0x47fd5c*/
 
 }
@@ -1034,7 +1034,7 @@ LABEL_24:
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dcd9*/
   v38 = 1; /*0x50dce3*/
   v18 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50dceb*/
-  v19 = v18[1]; /*0x50dcfd*/
+  v19 = v18->vtable2; /*0x50dcfd*/
   v37 = smudgeTypeIndex_low - *v18; /*0x50dd00*/
   v38 = smudgeTypeIndex_high - v19; /*0x50dd06*/
   __asm /*0x50dd0a*/
@@ -1056,7 +1056,7 @@ LABEL_24:
   v37 = *(unsigned int *)&DataGlobal_87F8EC; /*0x50dd3e*/
   v38 = *(unsigned int *)&DataGlobal_87F8F0; /*0x50dd51*/
   v22 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50dd55*/
-  v23 = v22[1]; /*0x50dd61*/
+  v23 = v22->vtable2; /*0x50dd61*/
   v37 = smudgeTypeIndex_low - *v22; /*0x50dd6c*/
   v38 = smudgeTypeIndex_high - v23; /*0x50dd70*/
   __asm /*0x50dd74*/
@@ -1078,7 +1078,7 @@ LABEL_24:
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dda6*/
   v38 = 2 * *(unsigned int *)&DataGlobal_87F8F0; /*0x50ddc2*/
   v26 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50ddc6*/
-  v27 = v26[1]; /*0x50ddd2*/
+  v27 = v26->vtable2; /*0x50ddd2*/
   v37 = smudgeTypeIndex_low - *v26; /*0x50dddd*/
   v38 = smudgeTypeIndex_high - v27; /*0x50dde1*/
   __asm /*0x50dde5*/
@@ -1100,7 +1100,7 @@ LABEL_24:
   v38 = *(unsigned int *)&DataGlobal_87F8F0; /*0x50de1d*/
   v37 = 0; /*0x50de28*/
   v29 = HexCoord::Convert((HexCoord *)&DataGlobal_87F7E8, v39, &v37); /*0x50de30*/
-  v30 = v29[1]; /*0x50de3e*/
+  v30 = v29->vtable2; /*0x50de3e*/
   v37 = smudgeTypeIndex_low - *v29; /*0x50de41*/
   v38 = smudgeTypeIndex_high - v30; /*0x50de47*/
   __asm /*0x50de4b*/
@@ -1426,7 +1426,7 @@ void House_Play_6D1660(int a2)
     while ( (int)v6 < (int)byte_B0CBDC ); /*0x6d16d0*/
     HashTable::Remove(*(HashTable **)&g_TacticalRender, 240); /*0x6d16dd*/
     v9 = *(unsigned int *)v3; /*0x6d16e2*/
-    v3[21828] = 0; /*0x6d16eb*/
+    v3->q5544 = 0; /*0x6d16eb*/
     (*(void (**)(unsigned char *, GadgetClass *))(v9 + 48))(v3, &stru_B0CC40); /*0x6d16f2*/
     if ( &stru_B0CC40 ) /*0x6d16fd*/
     {
@@ -1441,7 +1441,7 @@ void House_Play_6D1660(int a2)
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)v12); /*0x6d1754*/
     }
     v10 = *(unsigned int *)v3; /*0x6d1759*/
-    v3[21829] = 1; /*0x6d175f*/
+    v3->u32_5545 = 1; /*0x6d175f*/
     return (*(char (**)(unsigned char *, unsigned int))(v10 + 56))(v3, 0); /*0x6d1766*/
   }
   return result; /*0x6d1769*/

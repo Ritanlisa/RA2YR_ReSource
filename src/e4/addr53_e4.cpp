@@ -2028,7 +2028,7 @@ void TheaterClass_LoadMIX(int a1)
       v12 = 0; /*0x534c0d*/
       do /*0x534c56*/
       {
-        v13 = v11[1]; /*0x534c11*/
+        v13 = v11->AbstractClass_1; /*0x534c11*/
         v14 = 4 * *v11; /*0x534c14*/
         v15 = v11 + 1; /*0x534c17*/
         IDA_LOBYTE(v29) = v14; /*0x534c18*/

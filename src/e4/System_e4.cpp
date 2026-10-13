@@ -256,8 +256,8 @@ char sub_626AB0(const char * a1, int a2)
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
         *v5 = (unsigned int)(&vt_DynamicVectorClass); /*0x626b06*/
-        v5[5] = 10; /*0x626b0c*/
-        v5[4] = 0; /*0x626b0f*/
+        v5->u32_14 = 10; /*0x626b0c*/
+        v5->q010 = 0; /*0x626b0f*/
       }
       else
       {
@@ -270,8 +270,8 @@ char sub_626AB0(const char * a1, int a2)
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
         *v7 = (unsigned int)(&vt_DynamicVectorClass); /*0x626b38*/
-        v7[5] = 10; /*0x626b3e*/
-        v7[4] = 0; /*0x626b41*/
+        v7->u32_14 = 10; /*0x626b3e*/
+        v7->q010 = 0; /*0x626b41*/
       }
       else
       {

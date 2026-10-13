@@ -1259,12 +1259,12 @@ LABEL_5:
       v8 = 0; /*0x60f843*/
     *v8 = a1; /*0x60f854*/
     DialogClass::CopyTemplateStruct(v13); /*0x60f856*/
-    v8[129] = 0; /*0x60f862*/
+    v8->q204 = 0; /*0x60f862*/
     v9 = dword_AC1B18(&a1) & ((1 << dword_AC1B0C) - 1); /*0x60f882*/
     v10 = *((unsigned int *)dword_AC1B00 + v9); /*0x60f884*/
     *((unsigned int *)dword_AC1B00 + v9) = v8; /*0x60f887*/
     if ( v10 ) /*0x60f88c*/
-      v8[129] = v10; /*0x60f88e*/
+      v8->q204 = v10; /*0x60f88e*/
     if ( (double)(unsigned int)++dword_AC1B04 / (double)dword_AC1B08 >= dbl_AC1B28 ) /*0x60f8c9*/
       HashTable::Grow2(&dword_AC1B00); /*0x60f8d0*/
     if ( dword_AC1B04 ) /*0x60f8db*/
@@ -1592,7 +1592,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM)
   v27 = v33 == 0; /*0x61029e*/
   *(unsigned int *)v15 = v25; /*0x6102a0*/
   if ( !v27 ) /*0x6102a3*/
-    v15->q054 = v26[1]; /*0x6102a8*/
+    v15->q054 = v26->AbstractClass_1; /*0x6102a8*/
   v28 = 0; /*0x6102bd*/
   v31 = 0; /*0x6102bf*/
   if ( (uint8_t)Dialog::UpdateControlState(&hWnd, &v31) && v31 ) /*0x6102d2*/
@@ -1893,7 +1893,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   if ( v19 ) /*0x613a8a*/
   {
     (*(void (**)(int))(*(unsigned int *)v19 + 128))(v19); /*0x613a90*/
-    v66 = (*(int (**)(int))(*(unsigned int *)v20 + 124))(v20); /*0x613aa7*/
+    v66 = (*(int (**)(int))(*&v20->u32_1F0))(v20); /*0x613aa7*/
     v64 = Rect.right - v66; /*0x613ab0*/
     v65 = Rect.top; /*0x613ab9*/
     v67 = Rect.bottom - Rect.top; /*0x613acc*/
@@ -1903,7 +1903,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   v22 = v21; /*0x613ae5*/
   if ( v21 ) /*0x613ae9*/
   {
-    v23 = (*(int (**)(int))(*(unsigned int *)v21 + 128))(v21); /*0x613af5*/
+    v23 = (*(int (**)(int))(*&v21->u32_200))(v21); /*0x613af5*/
     (*(void (**)(int))(*(unsigned int *)v22 + 124))(v22); /*0x613afb*/
     v64 = Rect.left; /*0x613b0a*/
     v65 = Rect.top; /*0x613b16*/
@@ -1915,7 +1915,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   v25 = v24; /*0x613b44*/
   if ( v24 ) /*0x613b48*/
   {
-    v26 = (*(int (**)(int))(*(unsigned int *)v24 + 128))(v24); /*0x613b54*/
+    v26 = (*(int (**)(int))(*&v24->u32_200))(v24); /*0x613b54*/
     (*(void (**)(int))(*(unsigned int *)v25 + 124))(v25); /*0x613b5a*/
     v64 = Rect.left; /*0x613b6b*/
     v65 = Rect.bottom - v26; /*0x613b77*/
@@ -1927,7 +1927,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   v28 = v27; /*0x613ba5*/
   if ( v27 ) /*0x613ba9*/
   {
-    v29 = (*(int (**)(int))(*(unsigned int *)v27 + 128))(v27); /*0x613bb5*/
+    v29 = (*(int (**)(int))(*&v27->u32_200))(v27); /*0x613bb5*/
     v30 = (*(int (**)(int))(*&v28->q_1F0))(v28); /*0x613bbb*/
     v74 = Rect.top; /*0x613bc6*/
     v73 = Rect.left; /*0x613bca*/
@@ -1948,7 +1948,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   v31 = HashTable::Find(g_DialogHashTable, aTabFtrPcx, 0); /*0x613c0f*/
   if ( v31 ) /*0x613c13*/
   {
-    v32 = (*(int (**)(int))(*(unsigned int *)v31 + 128))(v31); /*0x613c23*/
+    v32 = (*(int (**)(int))(*&v31->u32_200))(v31); /*0x613c23*/
     v33 = (*(int (**)(int))(*(unsigned int *)v31 + 124))(v31); /*0x613c25*/
     v65 = Rect.top; /*0x613c32*/
     v64 = Rect.right - v33; /*0x613c36*/
@@ -1969,7 +1969,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   v34 = HashTable::Find(g_DialogHashTable, aTabFblPcx, 0); /*0x613c7b*/
   if ( v34 ) /*0x613c7f*/
   {
-    v35 = (*(int (**)(int))(*(unsigned int *)v34 + 128))(v34); /*0x613c8f*/
+    v35 = (*(int (**)(int))(*&v34->u32_200))(v34); /*0x613c8f*/
     v36 = (*(int (**)(int))(*(unsigned int *)v34 + 124))(v34); /*0x613c91*/
     v64 = Rect.left; /*0x613c9e*/
     v65 = Rect.bottom - v35; /*0x613ca8*/
@@ -1990,8 +1990,8 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
   v37 = HashTable::Find(g_DialogHashTable, aTabFbrPcx, 0); /*0x613ce7*/
   if ( v37 ) /*0x613ceb*/
   {
-    v38 = (*(int (**)(int))(*(unsigned int *)v37 + 128))(v37); /*0x613cfb*/
-    v39 = (*(int (**)(int))(*(unsigned int *)v37 + 124))(v37); /*0x613cfd*/
+    v38 = (*(int (**)(int))(*&v37->u32_200))(v37); /*0x613cfb*/
+    v39 = (*(int (**)(int))(*&v37->u32_1F0))(v37); /*0x613cfd*/
     v65 = Rect.bottom - v38; /*0x613d0c*/
     v64 = Rect.right - v39; /*0x613d10*/
     v73 = 0; /*0x613d22*/
@@ -2049,9 +2049,9 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
     v50 = v49; /*0x613e92*/
     if ( v49 ) /*0x613e96*/
     {
-      v81 = (*(int (**)(int))(*(unsigned int *)v49 + 128))(v49); /*0x613ea2*/
+      v81 = (*(int (**)(int))(*&v49->u32_200))(v49); /*0x613ea2*/
       (*(void (**)(int))(*&v50->u32_1F0))(v50); /*0x613eaa*/
-      v51 = (*(int (**)(int))(*(unsigned int *)v48 + 124))(v48); /*0x613eb1*/
+      v51 = (*(int (**)(int))(*&v48->u32_1F0))(v48); /*0x613eb1*/
       v52 = *(unsigned int *)v48; /*0x613eb8*/
       v53 = v71 - 2 * v51; /*0x613ebc*/
       v82 = top; /*0x613ec4*/
@@ -2083,8 +2083,8 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
     v59 = v58; /*0x613fe4*/
     if ( v58 ) /*0x613fe8*/
     {
-      v60 = (*(int (**)(int))(*(unsigned int *)v58 + 128))(v58); /*0x613ff8*/
-      v87 = (*(int (**)(int))(*(unsigned int *)v59 + 124))(v59); /*0x61400b*/
+      v60 = (*(int (**)(int))(*&v58->u32_200))(v58); /*0x613ff8*/
+      v87 = (*(int (**)(int))(*&v59->u32_1F0))(v59); /*0x61400b*/
       v86[0] = left + v71 - v87; /*0x614018*/
       v86[1] = top; /*0x61402a*/
       v88 = v60; /*0x61403b*/
@@ -2447,8 +2447,8 @@ AbstractClass * * Dialog::DrawBackground(HWND hWnd)
         v36 = v36; /*0x6222f9*/
         v39 = left - v38.left; /*0x6222fd*/
         v40 = top - v38.top; /*0x622301*/
-        v26 = (*(int (**)(int))(*(unsigned int *)v25 + 124))(v25); /*0x62230c*/
-        v27 = (*(int (**)(int))(*(unsigned int *)v25 + 128))(v25); /*0x622318*/
+        v26 = (*(int (**)(int))(*&v25->u32_1F0))(v25); /*0x62230c*/
+        v27 = (*(int (**)(int))(*&v25->u32_200))(v25); /*0x622318*/
         if ( (int)g_DisplayWidth > v26 ) /*0x622321*/
           v30 += (int)&g_DisplayWidth->__pad_0[-v26] / -2; /*0x622332*/
         if ( (int)*(&g_DisplayWidth + 1) > v27 ) /*0x62233d*/
@@ -2741,7 +2741,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
         wcscpy(v14, v12); /*0x624d9c*/
         v10 = (int ***)v42; /*0x624da1*/
       }
-      SymbolTable::Rebuild((SymbolTable *)Block, v10[13]); /*0x624dae*/
+      SymbolTable::Rebuild((SymbolTable *)Block, v10->u32_34); /*0x624dae*/
       v6 = v38; /*0x624db3*/
     }
     v15 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v6); /*0x624dba*/
@@ -2789,8 +2789,8 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
                 v29 = (*(int (**)(int))&this->u32_18)(v28) & ((1 << (int)this->q00C) - 1); /*0x624e9b*/
                 v30 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v29); /*0x624ea0*/
                 *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v29) = v28; /*0x624ea6*/
-                v31 = *(unsigned int *)(v28 + 516); /*0x624ea8*/
-                *(unsigned int *)(v28 + 516) = v30; /*0x624eae*/
+                v31 = v28->q204; /*0x624ea8*/
+                v28->q204 = v30; /*0x624eae*/
                 v28 = v31; /*0x624eb4*/
               }
               while ( v31 ); /*0x624eb8*/

@@ -459,7 +459,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     (*((unsigned char *)&(v3))) = i->q090; /*0x6ed801*/
     if ( (unsigned char)v3 )
     {
-      if ( i[27] && (dword_A8E7AC || !i->q081) && !i->u8_689 ) /*0x6ed831*/
+      if ( i->HouseClass_6C && (dword_A8E7AC || !i->q081) && !i->u8_689 ) /*0x6ed831*/
       {
         v7 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v19); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
@@ -470,47 +470,47 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
         {
           i->u8_689 = 1; /*0x6ed8b2*/
         }
-        else if ( !i[361] ) /*0x6ed87c*/
+        else if ( !i->q5A4 ) /*0x6ed87c*/
         {
-          (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed88e*/
-          (*(void (**)(int *, unsigned int))(*i + 968))(i, 0); /*0x6ed89a*/
-          (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, this->ptr_34, 1); /*0x6ed8aa*/
+          i->vt_slot_488(2, 0); /*0x6ed88e*/
+          i->vt_slot_968(0); /*0x6ed89a*/
+          i->vt_slot_1152(this->ptr_34, 1); /*0x6ed8aa*/
         }
       }
       (*((unsigned char *)&(v3))) = i->q090; /*0x6ed8b9*/
       if ( (unsigned char)v3 )
       {
-        v3 = i[27]; /*0x6ed8c7*/
+        v3 = i->HouseClass_6C; /*0x6ed8c7*/
         if ( v3 )
         {
           if ( dword_A8E7AC || ((*((unsigned char *)&(v3))) = i->q081, !(unsigned char)v3) )
           {
-            if ( i->u8_689 || (v3 = (*(int (**)(int *))(*i + 44))(i), v3 == 2) )
+            if ( i->u8_689 || (v3 = i->getAltitude(), v3 == 2) )
             {
-              v3 = i[173]; /*0x6ed903*/
+              v3 = i->u32_2B4; /*0x6ed903*/
               if ( !v3 )
               {
-                if ( i[361]
+                if ( i->q5A4
                   || ((v9 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
                       ObjectClass::DistanceTo(i, this->ptr_34) <= 2 * v10 || v4 == 11) )
                 {
-                  v3 = i[173]; /*0x6eda11*/
+                  v3 = i->u32_2B4; /*0x6eda11*/
                   if ( !v3 ) /*0x6eda19*/
                   {
-                    v3 = i[361]; /*0x6eda1b*/
+                    v3 = i->q5A4; /*0x6eda1b*/
                     if ( !v3 ) /*0x6eda23*/
                     {
-                      v3 = (*(int (**)(int *))(*i + 388))(i); /*0x6eda29*/
+                      v3 = i->vt_slot_388(); /*0x6eda29*/
                       if ( v3 != v4 ) /*0x6eda31*/
                       {
-                        if ( v4 != 5 || (v3 = (*(int (**)(int *))(*i + 388))(i), v3 != 16) ) /*0x6eda45*/
+                        if ( v4 != 5 || (v3 = i->vt_slot_388(), v3 != 16) ) /*0x6eda45*/
                         {
                           TechnoClass::SetFocus(i, 0); /*0x6eda4b*/
-                          (*(void (**)(int *, int, unsigned int))(*i + 488))(i, v4, 0); /*0x6eda57*/
-                          (*(void (**)(int *, unsigned int))(*i + 968))(i, 0); /*0x6eda63*/
-                          (*((unsigned char *)&(v3))) = (*(int (**)(int *, unsigned int, int))(*i + 1152))(i, 0, 1); /*0x6eda71*/
+                          i->vt_slot_488(v4, 0); /*0x6eda57*/
+                          i->vt_slot_968(0); /*0x6eda63*/
+                          (*((unsigned char *)&(v3))) = i->vt_slot_1152(0, 1); /*0x6eda71*/
                         }
                       }
                     }
@@ -518,9 +518,9 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                 }
                 else
                 {
-                  (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed97a*/
-                  (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, this->ptr_34, 1); /*0x6ed98a*/
-                  (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed998*/
+                  i->vt_slot_488(2, 0); /*0x6ed97a*/
+                  i->vt_slot_1152(this->ptr_34, 1); /*0x6ed98a*/
+                  i->vt_slot_488(2, 0); /*0x6ed998*/
                   v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*this->ptr_34 + 72))( /*0x6ed9a8*/
                                     this->ptr_34,
                                     v21);

@@ -356,7 +356,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
         {
           if ( *(unsigned char *)(v11[328] + 5824) ) /*0x5881a5*/
           {
-            v12 = v11[135]; /*0x5881af*/
+            v12 = v11->u32_21C; /*0x5881af*/
             if ( *(unsigned char *)(v12 + 506) ) /*0x5881b5*/
             {
               if ( v12 != a4 ) /*0x5881c2*/
@@ -399,7 +399,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
           {
             if ( *(unsigned char *)(v22[328] + 5824) ) /*0x588292*/
             {
-              v23 = v22[135]; /*0x58829c*/
+              v23 = v22->u32_21C; /*0x58829c*/
               if ( *(unsigned char *)(v23 + 506) ) /*0x5882a2*/
               {
                 if ( v23 != a4 ) /*0x5882af*/
@@ -455,7 +455,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
           {
             if ( *(unsigned char *)(v32[328] + 5824) ) /*0x5884aa*/
             {
-              v33 = v32[135]; /*0x5884b4*/
+              v33 = v32->u32_21C; /*0x5884b4*/
               if ( *(unsigned char *)(v33 + 506) ) /*0x5884ba*/
               {
                 if ( v33 != a4 ) /*0x5884c7*/

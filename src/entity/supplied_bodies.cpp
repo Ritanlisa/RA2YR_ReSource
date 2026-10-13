@@ -113,7 +113,7 @@ int AnimClass::SimpleCtor()
   this->AnimClass_field_0x104 = 0; /*0x42278f*/
   this->__pad_118 = 0; /*0x422795*/
   this->q119 = 0; /*0x42279b*/
-  this->q11A = 0; /*0x4227a1*/
+  this->Tactical_11A = 0; /*0x4227a1*/
   this->q11B = 0; /*0x4227a7*/
   this->AnimClass_field_0x11C = 0; /*0x4227ad*/
   this->q_120 = 0; /*0x4227b3*/
@@ -205,8 +205,8 @@ int * AnimClass::UpdateZAdjust(int * a2)
     v4 = (unsigned int *)this->AnimClass_field_0xCC->UpdateZAdjust(/*0x422c0a*/
                      this->AnimClass_field_0xCC, &v12);
     v5 = *Coords + *v4; /*0x422c14*/
-    v6 = Coords[1]; /*0x422c16*/
-    v7 = Coords[2]; /*0x422c19*/
+    v6 = Coords->vtable2; /*0x422c16*/
+    v7 = Coords->vtable3; /*0x422c19*/
     v8 = v4[1] + v6; /*0x422c1c*/
     v9 = v4[2]; /*0x422c1e*/
     *a2 = v5; /*0x422c29*/
@@ -218,8 +218,8 @@ int * AnimClass::UpdateZAdjust(int * a2)
   {
     v11 = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x422c45*/
     *a2 = *v11; /*0x422c50*/
-    a2[1] = v11[1]; /*0x422c55*/
-    a2[2] = v11[2]; /*0x422c5c*/
+    a2[1] = v11->vtable2; /*0x422c55*/
+    a2[2] = v11->vtable3; /*0x422c5c*/
     return a2; /*0x422c47*/
   }
 }
@@ -279,7 +279,7 @@ int AnimClass::UpdateProjectileTrajectory()
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x423948*/
   v24 = v4; /*0x42394e*/
   if ( AnimClass_field_0xC8[2].__pad_C[202] ) /*0x423952*/
-    *((float *)v3 + 11) = *((float *)v3 + 11) + *((double *)v3 + 1); /*0x423962*/
+    v3->fallRate = v3->fallRate + v3->vtable3; /*0x423962*/
   if ( v4 == 1 ) /*0x423968*/
   {
     if ( *&this->u32_CA.__pad_C[116] ) /*0x423987*/
@@ -461,7 +461,7 @@ int AnimClass::resetAnimation()
   ClosestObjectCell = Object::FindClosestObjectCell(v5, &v13, 0, (int)this); /*0x4495f2*/
   if ( !ClosestObjectCell ) /*0x4495f9*/
     return 0; /*0x44969e*/
-  (*(void (__thiscall **)(int))(*(unsigned int *)ClosestObjectCell + 132))(ClosestObjectCell); /*0x449603*/
+  ClosestObjectCell->vt_slot_132(); /*0x449603*/
   Debug::Log(); /*0x449612*/
   Cell::ApplyDamage((Cell *)v5, (int)&g_BuildingClassPool, 1, 1, 0); /*0x449626*/
   for ( i = 0; i < 8; ++i ) /*0x44962b*/
@@ -472,7 +472,7 @@ int AnimClass::resetAnimation()
     v8 = Object::FindClosestObjectCell(NeighbourContent, &v13, 0, (int)this); /*0x44964e*/
     if ( v8 ) /*0x449655*/
     {
-      (*(void (__thiscall **)(int))(*(unsigned int *)v8 + 132))(v8); /*0x44965b*/
+      v8->vt_slot_132(); /*0x44965b*/
       Debug::Log(); /*0x44966a*/
       Cell::ApplyDamage((Cell *)NeighbourContent, (int)v15, 1, 1, 0); /*0x44967e*/
     }
@@ -643,7 +643,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
   this->q119 = 0; /*0x421f4a*/
   *&this->IsBuildingAnim = v10; /*0x421f50*/
   this->AnimClass_field_0x114 = 0; /*0x421f53*/
-  this->q11A = 0; /*0x421f59*/
+  this->Tactical_11A = 0; /*0x421f59*/
   this->q11B = 0; /*0x421f5f*/
   this->AnimClass_field_0x11C = 0; /*0x421f65*/
   this->q_120 = 0; /*0x421f6b*/
@@ -787,8 +787,8 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
         {
           v38 = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x42248d*/
           vfptr = *v38; /*0x422494*/
-          v67 = v38[1]; /*0x42249b*/
-          v37 = v38[2]; /*0x42249f*/
+          v67 = v38->vtable2; /*0x42249b*/
+          v37 = v38->vtable3; /*0x42249f*/
         }
         v39 = this->AnimClass_field_0xC8; /*0x4224a2*/
         v68 = v37; /*0x4224ae*/
@@ -1105,7 +1105,7 @@ int RadSiteClass::Radiate(int a1)
         v18[1] = i; /*0x65ba2e*/
         v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)(a1 + 64)); /*0x65ba38*/
         v7 = CellCoord::To_CellObj(&dword_87F7E8, v18); /*0x65ba4b*/
-        v8 = (int *)(*(int (__thiscall **)(void *, char *))(*(unsigned int *)v6 + 72))(v6, v30); /*0x65ba54*/
+        v8 = (int *)v6->vt_slot_72(v30); /*0x65ba54*/
         v9 = *v8; /*0x65ba57*/
         v10 = v8[1]; /*0x65ba5e*/
         v11 = v8[2]; /*0x65ba61*/

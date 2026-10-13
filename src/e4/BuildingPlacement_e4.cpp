@@ -68,11 +68,11 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   DataGlobal_88099B = 0; /*0x4fb89b*/
   DataGlobal_88099C = 0; /*0x4fb8a2*/
   *(unsigned int *)&g_BuildingPlacementState = -1; /*0x4fb8a9*/
-  v6 = v5[328]; /*0x4fb8b3*/
+  v6 = v5->q520; /*0x4fb8b3*/
   *(unsigned int *)&g_RadarBlipPool = v5; /*0x4fb8b9*/
   *(unsigned int *)&g_RadarBlipManager = v6; /*0x4fb8bf*/
   *(unsigned int *)&DataGlobal_880994 = this->q030; /*0x4fb8c7*/
-  v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
+  v7 = (const void *)v5->vt_slot_264(1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&DataGlobal_87F7E8, v7); /*0x4fb8df*/
   v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
   Tactical::MouseMove((Tactical *)&DataGlobal_87F7E8, &a3, v8); /*0x4fb8fe*/
@@ -450,16 +450,16 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   LOWORD(v4) = Math::RoundToInt(v2); /*0x594f8d*/
   v5 = a2; /*0x594f92*/
   v40 = v4; /*0x594f99*/
-  if ( !BuildingPlacement_field_0x20 && *(int *)(a2 + 16) > 0 ) /*0x594fa4*/
+  if ( !BuildingPlacement_field_0x20 && a2->q010 > 0 ) /*0x594fa4*/
   {
-    v40 = *(unsigned int *)(a2 + 16); /*0x594fa6*/
+    v40 = a2->q010; /*0x594fa6*/
     v4 = v40; /*0x594faa*/
   }
-  if ( v4 > *(unsigned int *)(a2 + 16) || !v4 ) /*0x594fb5*/
+  if ( v4 > a2->q010 || !v4 ) /*0x594fb5*/
   {
     if ( !BuildingPlacement_field_0x20 ) /*0x594fb9*/
       return 0; /*0x594fc3*/
-    v40 = *(unsigned int *)(a2 + 16); /*0x594fc6*/
+    v40 = a2->q010; /*0x594fc6*/
   }
   v7 = (VectorClass *)__2_YAPAXI_Z(0x18u); /*0x594fcc*/
   v8 = v7; /*0x594fd1*/
@@ -476,7 +476,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     v39 = 0; /*0x594ff9*/
     v8 = 0; /*0x594ffd*/
   }
-  v9 = *(unsigned int *)(a2 + 16); /*0x594fff*/
+  v9 = a2->q010; /*0x594fff*/
   v37 = 0; /*0x595002*/
   v10 = g_MissionQueueFrame.localVariables[163]; /*0x595006*/
   if ( v9 - 1 > 0 )
@@ -530,12 +530,12 @@ LABEL_26:
           v10 = g_MissionQueueFrame.localVariables[163]; /*0x595112*/
           ++v12; /*0x595118*/
         }
-        while ( v12 < *(unsigned int *)(a2 + 16) );
+        while ( v12 < a2->q010 );
         v12 = v37 + 1; /*0x595122*/
         v8 = v39; /*0x595126*/
       }
       v37 = v12; /*0x59512d*/
-      v9 = *(unsigned int *)(a2 + 16); /*0x595131*/
+      v9 = a2->q010; /*0x595131*/
       if ( v12 >= v9 - 1 ) /*0x595139*/
         break; /*0x595139*/
       v5 = a2; /*0x595019*/
@@ -556,7 +556,7 @@ LABEL_26:
 LABEL_36:
         vtable0 = v8[1].vtable0; /*0x595181*/
         v19 = v8->Items; /*0x595184*/
-        v8[1].vtable0 = (char *)vtable0 + 1; /*0x59518a*/
+        v8[1].vtable0 = &vtable0->AbstractClass_1; /*0x59518a*/
         v19[(unsigned int)vtable0] = *v15; /*0x59518f*/
       }
       v10 = g_MissionQueueFrame.localVariables[163]; /*0x595192*/
@@ -566,7 +566,7 @@ LABEL_38:
     }
     v5 = a2; /*0x5951d7*/
   }
-  if ( !*(unsigned int *)(v5 + 16) )
+  if ( !v5->q010 )
   {
 LABEL_39:
     v20 = (int)v8[1].vtable0; /*0x59519b*/
@@ -577,7 +577,7 @@ LABEL_39:
         v59 = 0xBFF0000000000000uLL; /*0x5951ad*/
         v47 = -1; /*0x5951bf*/
         v38 = 0; /*0x5951c7*/
-        if ( *(int *)(v5 + 16) > 0 )
+        if ( v5->q010 > 0 )
         {
           while ( 1 )
           {
@@ -635,7 +635,7 @@ LABEL_39:
               v59 = *(unsigned long long *)&v44; /*0x595358*/
               v47 = v38; /*0x595364*/
             }
-            if ( ++v38 >= *(unsigned int *)(a2 + 16) ) /*0x595379*/
+            if ( ++v38 >= a2->q010 ) /*0x595379*/
               break; /*0x595379*/
             v5 = a2; /*0x595238*/
           }
@@ -656,7 +656,7 @@ LABEL_39:
 LABEL_72:
           v33 = v8[1].vtable0; /*0x5953bf*/
           v34 = v8->Items; /*0x5953c2*/
-          v8[1].vtable0 = (char *)v33 + 1; /*0x5953c8*/
+          v8[1].vtable0 = &v33->AbstractClass_1; /*0x5953c8*/
           v34[(unsigned int)v33] = *v57; /*0x5953d1*/
         }
         v10 = g_MissionQueueFrame.localVariables[163]; /*0x5953d4*/
@@ -669,7 +669,7 @@ LABEL_74:
     return &v8->vtable0; /*0x5951a4*/
   }
   v21 = v8->Capacity; /*0x5951e1*/
-  v22 = *(unsigned int **)(v5 + 4); /*0x5951e7*/
+  v22 = v5->__pad_004; /*0x5951e7*/
   if ( (int)v8[1].vtable0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)
@@ -677,7 +677,7 @@ LABEL_74:
   {
     v24 = v8[1].vtable0; /*0x59521c*/
     v25 = v8->Items; /*0x59521f*/
-    v8[1].vtable0 = (char *)v24 + 1; /*0x595225*/
+    v8[1].vtable0 = &v24->AbstractClass_1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/
     return &v8->vtable0; /*0x595235*/
   }

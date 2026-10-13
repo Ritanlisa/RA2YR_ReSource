@@ -47,7 +47,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   this->description[28] = -1; /*0x46cb7c*/
   this->? = &CampaignClass::`vftable'; /*0x46cb82*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46cb89) */
-  this->? = &CampaignClass::`vftable'; /*0x46cb90*/
+  this->vtable4 = &CampaignClass::`vftable'; /*0x46cb90*/
   if ( dword_A83D08 < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -237,7 +237,7 @@ AbstractClass * * CampaignClass::SaveProgress()
           g_IsWindowed[v5] = v11; /*0x49c6e5*/
         }
       }
-      v12 = v6[1]; /*0x49c709*/
+      v12 = v6->AbstractClass_1; /*0x49c709*/
       ++v5; /*0x49c70c*/
       ++v6; /*0x49c70d*/
     }
@@ -415,7 +415,7 @@ void ** CampaignClass::DTOR(char a2)
   this->AbstractClass = &CampaignClass::`vftable'; /*0x46d096*/
   this->? = &CampaignClass::`vftable'; /*0x46d09c*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0a3) */
-  this->? = &CampaignClass::`vftable'; /*0x46d0aa*/
+  this->vtable4 = &CampaignClass::`vftable'; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x46d0b1*/
   v5 = this; /*0x46d0c6*/
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/

@@ -60,7 +60,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       a1->HeadToCoord[0] = qword_B077FC; /*0x6a038d*/
       v7 = (*(((unsigned int *)&(qword_B077FC)) + 1)); /*0x6a0390*/
-      v5[99] = 0; /*0x6a0396*/
+      v5->u32_63 = 0; /*0x6a0396*/
       a1->HeadToCoord[1] = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
@@ -68,7 +68,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       || ((*((unsigned char *)&(v4))) = (((unsigned char *)&(qword_B077FC))[4]), (*(((unsigned int *)&(a4)) + 1)) != (*(((unsigned int *)&(qword_B077FC)) + 1))) )
     {
       v8 = v13; /*0x6a03c4*/
-      v5[99] = 1; /*0x6a03ca*/
+      v5->u32_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = v5->q00C; /*0x6a03dd*/
@@ -81,7 +81,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
           (*((unsigned char *)&(v4))) = g_OverlayTypeConfig; /*0x6a0447*/
           *v6 = g_OverlayTypeConfig; /*0x6a044c*/
           *(unsigned long long *)a1->HeadToCoord = qword_B077FC; /*0x6a0454*/
-          v5[99] = 0; /*0x6a0460*/
+          v5->u32_63 = 0; /*0x6a0460*/
         }
       }
       else

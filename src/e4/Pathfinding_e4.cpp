@@ -130,8 +130,8 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     *v5 = 0; /*0x5a53b9*/
     v5[1] = v2; /*0x5a53bb*/
     v7 = __2_YAPAXI_Z(4 * v2 + 4); /*0x5a53be*/
-    v8 = v6[1]; /*0x5a53c3*/
-    v6[2] = (int)v7; /*0x5a53c6*/
+    v8 = v6->__pad_004; /*0x5a53c3*/
+    v6->u32_8 = (int)v7; /*0x5a53c6*/
     v9 = 0; /*0x5a53cc*/
     if ( v8 >= 0 ) /*0x5a53d0*/
     {
@@ -140,7 +140,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         ++v9; /*0x5a53d5*/
         *(unsigned int *)(v6[2] + 4 * v9 - 4) = 0; /*0x5a53d6*/
       }
-      while ( v9 <= v6[1] ); /*0x5a53df*/
+      while ( v9 <= v6->__pad_004 ); /*0x5a53df*/
     }
   }
   else
@@ -168,18 +168,18 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   v13 = a1; /*0x5a544e*/
   *v4 = *(unsigned int *)a1; /*0x5a5454*/
-  v4[1] = 0; /*0x5a5456*/
+  v4->vtable2 = 0; /*0x5a5456*/
   v14 = 5 * (*v13 + g_MapCellWidth * v13[1]); /*0x5a546f*/
   v76 = 1; /*0x5a547a*/
   *((unsigned int *)dword_ABED10 + 4 * v14 + 15) = 1; /*0x5a547e*/
   v15 = *v6 + 1; /*0x5a5487*/
-  v80 = v4[1]; /*0x5a548a*/
+  v80 = v4->vtable2; /*0x5a548a*/
   v16 = v15 >> 1; /*0x5a5491*/
-  if ( v15 < v6[1] ) /*0x5a5495*/
+  if ( v15 < v6->__pad_004 ) /*0x5a5495*/
   {
     for ( ; v15 > 1; v16 >>= 1 ) /*0x5a5499*/
     {
-      v17 = v6[2]; /*0x5a549b*/
+      v17 = v6->u32_8; /*0x5a549b*/
       v18 = *(unsigned int *)(v17 + 4 * v16); /*0x5a549e*/
       if ( *(float *)(v18 + 4) <= (double)*(float *)&v80 ) /*0x5a54ad*/
         break; /*0x5a54ad*/
@@ -187,16 +187,16 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       v15 = v16; /*0x5a54b2*/
     }
     *(unsigned int *)(v6[2] + 4 * v15) = v4; /*0x5a54c0*/
-    v19 = v6[3]; /*0x5a54c5*/
+    v19 = v6->u32_C; /*0x5a54c5*/
     ++*v6; /*0x5a54cb*/
     if ( (unsigned int)v4 > v19 ) /*0x5a54cd*/
-      v6[3] = (int)v4; /*0x5a54cf*/
-    if ( (unsigned int)v4 < v6[4] ) /*0x5a54d5*/
-      v6[4] = (int)v4; /*0x5a54d7*/
+      v6->u32_C = (int)v4; /*0x5a54cf*/
+    if ( (unsigned int)v4 < v6->u32_10 ) /*0x5a54d5*/
+      v6->u32_10 = (int)v4; /*0x5a54d7*/
   }
   if ( *v6 ) /*0x5a54da*/
   {
-    v21 = v6[2]; /*0x5a54e4*/
+    v21 = v6->u32_8; /*0x5a54e4*/
     v22 = *(unsigned short **)(v21 + 4); /*0x5a54ec*/
     *(unsigned int *)(v21 + 4) = *(unsigned int *)(v21 + 4 * *v6); /*0x5a54ef*/
     *(unsigned int *)(v6[2] + 4 * (*v6)--) = 0; /*0x5a54f7*/

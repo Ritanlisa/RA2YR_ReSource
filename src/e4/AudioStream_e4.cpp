@@ -516,7 +516,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
               {
                 do /*0x4a353c*/
                 {
-                  SamplePosition = (unsigned short *)((Audio *)(v5))->GetSamplePosition(0, v7 - v5[1]); /*0x4a34d4*/
+                  SamplePosition = (unsigned short *)((Audio *)(v5))->GetSamplePosition(0, v7 - v5->Width); /*0x4a34d4*/
                   v10 = (unsigned short *)StreamClass::ReadAndSeek( /*0x4a34df*/
                                    *(int **)&g_VisibleSurfaceDescriptor,
                                    0,
@@ -675,10 +675,10 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
   v9 = ClipRectIntersection(&v76, a2, v8, 0, 0); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v84 = *v9; /*0x4beafe*/
-  v11 = v9[1]; /*0x4beb02*/
+  v11 = v9->vtable2; /*0x4beb02*/
   v85 = v11; /*0x4beb05*/
-  v86 = v9[2]; /*0x4beb0c*/
-  v12 = v9[3]; /*0x4beb10*/
+  v86 = v9->vtable3; /*0x4beb0c*/
+  v12 = v9->vtable4; /*0x4beb10*/
   v87 = v12; /*0x4beb15*/
   if ( !v86 && !v12 ) /*0x4beb1d*/
     return 0; /*0x4beb1d*/

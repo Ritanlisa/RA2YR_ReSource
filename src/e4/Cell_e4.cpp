@@ -60,7 +60,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
     if ( ClosestObjectCell ) /*0x419b62*/
     {
       if ( ClosestObjectCell[180] /*0x419b7c*/
-        || *(unsigned char *)((*(int (**)(unsigned int *))(*ClosestObjectCell + 132))(ClosestObjectCell) + 3412) )
+        || *(unsigned char *)(ClosestObjectCell->vt_slot_132() + 3412) )
       {
         return 1; /*0x419b7c*/
       }
@@ -85,7 +85,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
     if ( v10 && (!v16 || this->Cell_5A41) != v10) && (a3 || v10 != this) && !v10->u32_81 && v10->u32_74 ) /*0x419c1d*/
     {
       v11 = (unsigned short *)(*(int (**)(Cell *, unsigned int *))(v10->__pad_000 + 440))(v10, v15); /*0x419c2d*/
-      if ( *v11 == *a2 && v11[1] == a2[1] ) /*0x419c44*/
+      if ( *v11 == *a2 && v11[1] == a2->ptr_2 ) /*0x419c44*/
         break; /*0x419c44*/
       if ( *(void **)&v10[2].__pad_3C[40] == v14 ) /*0x419c52*/
         break; /*0x419c52*/
@@ -151,8 +151,8 @@ int Cell::CanPlaceBuilding(unsigned int * a2)
   Coords = CellClass::GetCoords((gamemd::CellClass *)(a2), (int *)v16); /*0x43b542*/
   v10 = Math::Sqrt( /*0x43b58b*/
           (double)(v6 - *Coords) * (double)(v6 - *Coords)
-        + (double)(v7 - Coords[1]) * (double)(v7 - Coords[1])
-        + (double)(v8 - Coords[2]) * (double)(v8 - Coords[2]));
+        + (double)(v7 - Coords->vtable2) * (double)(v7 - Coords->vtable2)
+        + (double)(v8 - Coords->vtable3) * (double)(v8 - Coords->vtable3));
   if ( (int)Math::RoundToInt(v10) > *(unsigned int *)(v4[328] + 5900) << 8 ) /*0x43b5a9*/
   {
     v2 = v12; /*0x43b5ab*/
@@ -567,7 +567,7 @@ int Cell::SearchEnemies(int aP1)
     while ( 1 ) /*0x487a2d*/
     {
       v5 = v3->nextObject; /*0x487a2d*/
-      if ( (*(int (**)(unsigned int *, int, int, int, unsigned int, int))(*v3 + 428))(v3, this, -1, -1, 0, 1) == 7 ) /*0x487a44*/
+      if ( v3->COMStub_107(this, -1, -1, 0, 1) == 7 ) /*0x487a44*/
         goto LABEL_10; /*0x487a44*/
       if ( !aP1 ) /*0x487a48*/
         goto LABEL_8; /*0x487a48*/
@@ -578,15 +578,15 @@ int Cell::SearchEnemies(int aP1)
       if ( !v5 ) /*0x487aa8*/
         goto LABEL_12; /*0x487aa8*/
     }
-    if ( (v3[5] & 1) == 0 || !*(unsigned char *)((*(int (**)(unsigned int *))(*v3 + 132))(v3) + 3476) ) /*0x487a5e*/
+    if ( (v3[5] & 1) == 0 || !*(unsigned char *)(v3->COMStub_Return0_33() + 3476) ) /*0x487a5e*/
     {
   LABEL_8:
-      if ( !v3 || (*(int (**)(unsigned int *))(*v3 + 44))(v3) != 2 ) /*0x487a76*/
+      if ( !v3 || v3->getAltitude() != 2 ) /*0x487a76*/
         goto LABEL_11; /*0x487a76*/
     }
   LABEL_10:
     v6 = *v3; /*0x487a78*/
-    aP1 = v3[27]; /*0x487a84*/
+    aP1 = v3->health; /*0x487a84*/
     (*(void (**)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
       v3,
       &aP1,
@@ -617,7 +617,7 @@ int Cell::SearchEnemies(int aP1)
       v9 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP1); /*0x487b28*/
       if ( v9 != (unsigned int *)this ) /*0x487b2f*/
       {
-        v10 = (int *)v9[57]; /*0x487b35*/
+        v10 = v9->u32_E4; /*0x487b35*/
         if ( v10 ) /*0x487b3d*/
         {
           do /*0x487bdb*/
@@ -722,11 +722,11 @@ Coord * * Cell::IsValidDestination(short * a2)
     if ( this->u32_41A ) /*0x4dcea9*/
     {
       v4 = (*a2 << 8) + 128; /*0x4dceca*/
-      v15[1] = (a2[1] << 8) + 128; /*0x4dcecf*/
+      v15[1] = (a2->Coord_field_0x2 << 8) + 128; /*0x4dcecf*/
       v15[0] = v4; /*0x4dced9*/
       v15[2] = 0; /*0x4dcedd*/
       GroundHeight = Cell::GetGroundHeight(v15); /*0x4dcee5*/
-      v6 = a2[1]; /*0x4dceed*/
+      v6 = a2->Coord_field_0x2; /*0x4dceed*/
       v7 = (*a2 << 8) + 128; /*0x4dcef4*/
       v16[2] = GroundHeight; /*0x4dcefa*/
       v16[0] = v7; /*0x4dcf0b*/
@@ -745,7 +745,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4dcfa1*/
-  return v12[59] == 5 /*0x4dcfc7*/
+  return v12->u32_EC == 5 /*0x4dcfc7*/
       && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))(this->__pad_000 + 428))(
             this,
             v12,
@@ -1005,15 +1005,15 @@ char Cell::SetTileType(int16_t *a1, int a2, int a3, int a4, int a5)
     ((Coord *)(g_TacticalClass_Instance))->To_Screen(v23, &v21); /*0x56ec0a*/
     v22 -= 15 * v8->u8_11B; /*0x56ec33*/
     result = Cell::CreateCrater(v21 - 128, v22 - 128, 256, 256, 0); /*0x56ec53*/
-    v12 = v8[14]; /*0x56ec58*/
+    v12 = v8->u32_38; /*0x56ec58*/
     v10 = a2; /*0x56ec5b*/
     if ( a2 == v12 ) /*0x56ec61*/
       return result; /*0x56ec61*/
   }
-  if ( v8[14] != v10 ) /*0x56ec70*/
+  if ( v8->u32_38 != v10 ) /*0x56ec70*/
   {
     v20 = a4; /*0x56ec7c*/
-    v8[14] = v10; /*0x56ec7d*/
+    v8->u32_38 = v10; /*0x56ec7d*/
     ((House *)((int)v8))->AnnounceUpgrade(v20); /*0x56ec80*/
     BuildingClass::AddUpgrade(v8 + 9); /*0x56ec8e*/
     v13 = 0; /*0x56ec93*/
@@ -1358,7 +1358,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
   char IsValidHeight; // [esp+24h] [ebp+4h]
 
   v3 = g_CellPassabilityLUT; /*0x57b214*/
-  v5 = aP1[9]; /*0x57b224*/
+  v5 = aP1->outBuffer; /*0x57b224*/
   v30 = g_CellPassabilityLUT + 14; /*0x57b239*/
   IsValidHeight = Cell::IsValidHeight((Cell *)aP1); /*0x57b248*/
   v6 = SHIWORD(v5) + (__int16)v5; /*0x57b254*/
@@ -1373,7 +1373,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
   {
     if ( a3 == 1 ) /*0x57b2a1*/
     {
-      v8 = aP1[14]; /*0x57b2a3*/
+      v8 = aP1->__pad_038; /*0x57b2a3*/
       if ( v8 >= v3 && v8 < v30 ) /*0x57b2ae*/
         return 0; /*0x57b2b9*/
     }
@@ -1382,7 +1382,7 @@ int Cell::GetTerrainMask(int *aP1, int a3)
   {
     return 0; /*0x57b29b*/
   }
-  a3 = aP1[9]; /*0x57b2c3*/
+  a3 = aP1->outBuffer; /*0x57b2c3*/
   CellData = Tactical::GetCellData((Tactical *)&a3); /*0x57b2c7*/
   if ( !CellData[74] ) /*0x57b2cc*/
     return 0; /*0x57b2d6*/
@@ -1583,11 +1583,11 @@ void* Cell::CreateCrater(int a1, int a2, int a3, int a4, int a5)
     v6 = ClipRectIntersection(v40, &v35, &a1, 0, 0); /*0x6d27f6*/
     v7 = v38; /*0x6d2801*/
     v31 = *v6; /*0x6d2805*/
-    v32 = v6[1]; /*0x6d280c*/
+    v32 = v6->vtable2; /*0x6d280c*/
     v8 = v36; /*0x6d2810*/
-    v33 = v6[2]; /*0x6d2817*/
+    v33 = v6->vtable3; /*0x6d2817*/
     v9 = v35; /*0x6d281b*/
-    v34 = v6[3]; /*0x6d2824*/
+    v34 = v6->vtable4; /*0x6d2824*/
     if ( v37 <= 0 || v38 <= 0 ) /*0x6d2830*/
     {
       v10 = a4; /*0x6d28c8*/
@@ -1750,7 +1750,7 @@ int Cell::GetAdjacentPassableMask(int16_t *aP0, int a2)
   v4 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(aP0); /*0x6d8713*/
   if ( !(unsigned char)a2 ) /*0x6d871e*/
   {
-    v16 = v4[75]; /*0x6d88f4*/
+    v16 = v4->u32_12C; /*0x6d88f4*/
     if ( (v16 & 0x18) == 0 ) /*0x6d88fc*/
       v3 = -2; /*0x6d88fe*/
     v6 = 8; /*0x6d8903*/
@@ -1799,7 +1799,7 @@ int Cell::GetAdjacentPassableMask(int16_t *aP0, int a2)
     }
     return v3; /*0x6d8ad4*/
   }
-  v5 = v4[80]; /*0x6d8724*/
+  v5 = v4->u32_140; /*0x6d8724*/
   if ( (v5 & 3) == 0 ) /*0x6d872c*/
     v3 = -2; /*0x6d872e*/
   v6 = 2; /*0x6d8733*/
@@ -1861,7 +1861,7 @@ unsigned short * Cell::GetHeight(int *aP1, int *a2)
 
   _EAX = aP1; /*0x4265b0*/
   _ECX = a2; /*0x4265b8*/
-  if ( *aP1 == *a2 && aP1[1] == a2[1] ) /*0x4265ca*/
+  if ( *aP1 == *a2 && aP1->q004 == a2[1] ) /*0x4265ca*/
     LOWORD(this->__pad_000) = 0; /*0x4265cc*/
   __asm { fild dword ptr [ecx] } /*0x4265d1*/
   __asm
@@ -1921,10 +1921,10 @@ int Cell::GetGroundHeight(unsigned int * a1)
   unsigned int v6[2]; // [esp+4h] [ebp-8h] BYREF
   int v7; // [esp+10h] [ebp+4h]
 
-  v1 = a1[1]; /*0x57808a*/
+  v1 = a1->u32_4; /*0x57808a*/
   v6[0] = *a1; /*0x57808d*/
   v6[1] = v1; /*0x578091*/
-  v2 = a1[1] / 256; /*0x5780ac*/
+  v2 = a1->u32_4 / 256; /*0x5780ac*/
   v3 = v6[0] / 256 + (v2 << 9); /*0x5780b7*/
   if ( v3 < 0 /*0x5780ce*/
     || v3 >= *(int *)&DataGlobal_87F928
@@ -2011,15 +2011,15 @@ unsigned int * Cell::GetWorldCoords(unsigned int *v5, int a3)
   unsigned char v9[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObjthis->q004 * a3 + 793); /*0x68bd1b*/
-  v4 = (int *)(*(int (**)(unsigned int *, unsigned char *))(*v3 + 72))(v3, v9); /*0x68bd26*/
+  v4 = (int *)v3->vt_slot_72(v9); /*0x68bd26*/
   v5 = *v4; /*0x68bd29*/
   v6 = v4[1]; /*0x68bd2b*/
   v7 = v4[2]; /*0x68bd2e*/
-  if ( (v3[80] & 0x500) != 0 ) /*0x68bd3a*/
+  if ( (v3->u32_140 & 0x500) != 0 ) /*0x68bd3a*/
     v7 += dword_B054BC; /*0x68bd3c*/
   *v5 = v5; /*0x68bd48*/
-  v5[1] = v6; /*0x68bd4a*/
-  v5[2] = v7; /*0x68bd4e*/
+  v5->Items = v6; /*0x68bd4a*/
+  v5->Capacity = v7; /*0x68bd4e*/
   return v5; /*0x68bd4d*/
 }
 } // namespace gamemd

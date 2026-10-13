@@ -1741,9 +1741,9 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   {
     Instance = TextRenderer::GetInstance(); /*0x6c65a8*/
     if ( aP3 == -1 ) /*0x6c65aa*/
-      this->StaticButtonClass_field_0x14 = Text::MeasureWidth(*((unsigned int *)this + 12), 0); /*0x6c65b9*/
+      this->M20 = Text::MeasureWidth(this->M48, 0); /*0x6c65b9*/
     if ( aP4 == -1 ) /*0x6c65bf*/
-      *((unsigned int *)this + 6) = *(unsigned int *)(Instance + 28); /*0x6c65c4*/
+      this->M24 = *(unsigned int *)(Instance + 28); /*0x6c65c4*/
   }
   return this->__pad_0; /*0x6c65c9*/
 
@@ -2019,12 +2019,12 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
     return 0; /*0x6c8b35*/
   *vtable2 = a4; /*0x6c8b4f*/
   vtable2[1] = a5; /*0x6c8b52*/
-  vtable2[2] = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
-  vtable2[3] = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
+  vtable2->ptr_4 = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
+  vtable2->u32_6 = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
   vtable2->vtable3 = this->M8; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
-  v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 92))(a2, *v8, v8[1]); /*0x6c8b92*/
+  v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 92))(a2, *v8, v8->q004); /*0x6c8b92*/
   v15 = 0; /*0x6c8b9b*/
   if ( *(int *)(a3 + 12) > 0 ) /*0x6c8ba3*/
   {
@@ -2993,7 +2993,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
         do /*0x6cf961*/
         {
           *v8 = 0; /*0x6cf958*/
-          v8[1] = 0; /*0x6cf95a*/
+          v8->vtable2 = 0; /*0x6cf95a*/
           v8 += 2; /*0x6cf95d*/
           --v9; /*0x6cf960*/
         }
@@ -3018,7 +3018,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     do /*0x6cf92d*/
     {
       *v4 = 0; /*0x6cf924*/
-      v4[1] = 0; /*0x6cf926*/
+      v4->vtable2 = 0; /*0x6cf926*/
       v4 += 2; /*0x6cf929*/
       --v5; /*0x6cf92c*/
     }

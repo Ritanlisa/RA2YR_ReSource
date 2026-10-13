@@ -178,7 +178,7 @@ LABEL_23:
                       v17 = (unsigned __int8)v35 + 256; /*0x5ffcd0*/
                       v44 = (unsigned __int8)(*v10 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ffcdf*/
                       v45 = (unsigned __int8)(v16 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ffd00*/
-                      v18 = v43[5]; /*0x5ffd0a*/
+                      v18 = v43->u32_14; /*0x5ffd0a*/
                       v46 = (unsigned __int8)(v16 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ffd0d*/
                       v19 = v44; /*0x5ffd1d*/
                       v20 = v45; /*0x5ffd22*/

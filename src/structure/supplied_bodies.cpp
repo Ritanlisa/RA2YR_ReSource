@@ -2768,7 +2768,7 @@ namespace gamemd {
             v21 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v26); /*0x42af88*/
             ++v15; /*0x42af9e*/
             ++v13; /*0x42afad*/
-            v21[80] ^= (v21[80] ^ ~v20[80]) & 0x40000; /*0x42afae*/
+            v21->u32_140 ^= (v21->u32_140 ^ ~v20->u32_140) & 0x40000; /*0x42afae*/
           }
           while ( *v15 != -1 ); /*0x42afb5*/
           v7 = v27; /*0x42afbb*/
@@ -2797,11 +2797,11 @@ namespace gamemd {
             (*(((unsigned short *)&(bug)) + 1)) = v23 + (*(((unsigned short *)&(v30)) + 1)); /*0x42afe9*/
             *(unsigned int *)v33 = bug; /*0x42affc*/
             v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v33); /*0x42b000*/
-            if ( *((unsigned char *)v24 + 292) ) /*0x42b005*/
+            if ( v24->q124 ) /*0x42b005*/
             {
-              v31 = v24[9]; /*0x42b017*/
+              v31 = v24->ptr_24; /*0x42b017*/
               if ( v31 != *(unsigned int *)v28 ) /*0x42b01b*/
-                v24[80] ^= (v24[80] ^ ~v24[80]) & 0x40000; /*0x42b03d*/
+                v24->u32_140 ^= (v24->u32_140 ^ ~v24->u32_140) & 0x40000; /*0x42b03d*/
             }
             ++v23; /*0x42b043*/
           }
@@ -2915,7 +2915,7 @@ namespace gamemd {
             bug = ((bug) & 0xFFFFu) | (((unsigned int)(v23 + (unsigned short)((v30) >> 16)) & 0xFFFFu) << 16); /*0x42afe9*/
             *(unsigned int *)v33 = bug; /*0x42affc*/
             v24 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v33); /*0x42b000*/
-            if ( *((unsigned char *)v24 + 292) ) /*0x42b005*/
+            if ( v24->q124 ) /*0x42b005*/
             {
               v31 = v24[9]; /*0x42b017*/
               if ( v31 != *(unsigned int *)v28 ) /*0x42b01b*/
@@ -3145,7 +3145,7 @@ namespace gamemd {
           if ( v24->UnitRepair || v24->Bunker ) /*0x43c960*/
           {
             Member = Team::GetMember((Team *)bug, 0); /*0x43c972*/
-            v26 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)Member + 72))(Member, v60); /*0x43c985*/
+            v26 = (unsigned int *)Member->vt_slot_72(v60); /*0x43c985*/
             v27 = (unsigned int *)bug->GetExitCoords(v61); /*0x43c98e*/
             v28 = *v27 - *v26; /*0x43c996*/
             v29 = v27[1]; /*0x43c998*/
@@ -3182,7 +3182,7 @@ namespace gamemd {
         {
           *v16 = bug; /*0x43ca13*/
           v33 = (unsigned char *)bug->Type; /*0x43ca15*/
-          if ( v33[5811] || v33[5820] ) /*0x43ca25*/
+          if ( v33->DockUnload || v33[5820] ) /*0x43ca25*/
           {
             v34 = (unsigned short *)bug->GetCellCoords_Alt(&v54); /*0x43ca7a*/
             (*((unsigned short *)&(v64))) = *v34 + 3; /*0x43ca8d*/
@@ -3358,9 +3358,9 @@ namespace gamemd {
       if ( bug->GetPrimaryOrFallback() == 19 ) /*0x43c6ff*/
         return 10; /*0x43c70d*/
       v13 = (unsigned char *)bug->Type; /*0x43c710*/
-      if ( v13[5806] || v13[5807] ) /*0x43c724*/
+      if ( v13->UnitAbsorb || v13->InfantryAbsorb ) /*0x43c724*/
         return 1; /*0x43c72c*/
-      if ( v13[5801] || v13[5802] || v13[5825] || v13[5826] ) /*0x43c750*/
+      if ( v13->UnitRepair || v13->UnitReload || v13->Hospital || v13->Armory ) /*0x43c750*/
       {
         vfptr = bug->vfptr; /*0x43c7b5*/
         bug->BuildingClass_field_bool_6DD[0] = 1; /*0x43c7bd*/
@@ -3368,14 +3368,14 @@ namespace gamemd {
         v62->vt_slot_488(0, 0); /*0x43c7d4*/
         return 1; /*0x43c7dd*/
       }
-      else if ( v13[5803] ) /*0x43c75a*/
+      else if ( v13->Bunker ) /*0x43c75a*/
       {
         v14 = bug->vfptr; /*0x43c764*/
         bug->BuildingClass_field_bool_6DD[0] = 1; /*0x43c76c*/
         v14->vt_slot_488(bug, 20, 0); /*0x43c773*/
         return 1; /*0x43c77c*/
       }
-      else if ( v13[5811] ) /*0x43c788*/
+      else if ( v13->DockUnload ) /*0x43c788*/
       {
         v62->vt_slot_488(16, 0); /*0x43c7a0*/
         return 1; /*0x43c7a9*/
@@ -3423,9 +3423,9 @@ namespace gamemd {
   bug->needsRedraw[0] = 0; /*0x43cefd*/
   v3 = ClipRectIntersection(v16, v17, &DSurface_ViewBounds.field_0, 0, 0); /*0x43cf04*/
   *v17 = *v3; /*0x43cf0d*/
-  v17[1] = v3[1]; /*0x43cf12*/
-  v17[2] = v3[2]; /*0x43cf18*/
-  v17[3] = v3[3]; /*0x43cf1e*/
+  v17[1] = v3->vtable2; /*0x43cf12*/
+  v17[2] = v3->vtable3; /*0x43cf18*/
+  v17[3] = v3->vtable4; /*0x43cf1e*/
   v4 = DSurface_ViewBounds.field_0; /*0x43cf23*/
   v5 = dword_886FA4; /*0x43cf29*/
   v6 = (unsigned int *)bug->GetScreenCoords(v16); /*0x43cf36*/
@@ -3582,7 +3582,7 @@ namespace gamemd {
         if ( bug->GetPrimaryOrFallback() == 16 && *(unsigned int *)(bug->Type + 5348) ) /*0x43d0ac*/
         {
           Type = AbstractClass::GetType((AbstractClass *)bug->Factory); /*0x43d0bc*/
-          if ( Type && *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)Type + 132))(Type) + 3476) ) /*0x43d0cf*/
+          if ( Type && *(unsigned char *)(Type->GetSpecialValue() + 3476) ) /*0x43d0cf*/
             v5 = *(unsigned int *)(bug->Type + 5372); /*0x43d0df*/
           else
             v5 = *(unsigned int *)(bug->Type + 5348); /*0x43d0ed*/
@@ -3829,14 +3829,14 @@ namespace gamemd {
       if ( bug->BuildingClass_field_int_534 == 1 ) /*0x43f115*/
         return v3 + 1; /*0x43f11c*/
       v12 = (unsigned int *)bug->Type; /*0x43f11d*/
-      v13 = v12[967]; /*0x43f12f*/
+      v13 = v12->BuildingAnim; /*0x43f12f*/
       v14 = v12[964] + v12[965]; /*0x43f135*/
-      if ( v14 <= v13 + v12[968] ) /*0x43f141*/
-        v14 = v13 + v12[968]; /*0x43f143*/
-      v15 = v12[973]; /*0x43f14b*/
+      if ( v14 <= v13 + v12->qF20 ) /*0x43f141*/
+        v14 = v13 + v12->qF20; /*0x43f143*/
+      v15 = v12->u32_F34; /*0x43f14b*/
       if ( v14 <= v15 + v12[974] ) /*0x43f155*/
         v14 = v15 + v12[974]; /*0x43f157*/
-      v16 = v12[976]; /*0x43f15f*/
+      v16 = v12->qF40; /*0x43f15f*/
       if ( v14 <= v16 + v12[977] ) /*0x43f169*/
         v14 = v16 + v12[977]; /*0x43f16b*/
       v3 += v14; /*0x43f16d*/
@@ -4167,7 +4167,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
           v24 = Cell::IsBridge((Cell *)v19); /*0x440727*/
           if ( v24 && *(unsigned char *)(v24[328] + 5823) ) /*0x440736*/
           {
-            v25 = (*(int (__thiscall **)(unsigned int *))(*v24 + 56))(v24); /*0x440747*/
+            v25 = v24->vt_slot_56(); /*0x440747*/
             if ( v25 == (*(int (__thiscall **)(BuildingClass *))((char *)this->vtable1 + 56))(this) ) /*0x440752*/
             {
               *(unsigned int *)v155 = v19->u32_24; /*0x440757*/
@@ -4181,7 +4181,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
     }
   LABEL_33:
     v26 = (unsigned char *)this->Type; /*0x440774*/
-    if ( v26[5489] ) /*0x44077a*/
+    if ( v26->Wall ) /*0x44077a*/
     {
       v27 = this->vtable1; /*0x440788*/
       v28 = Coord::To_Cell((Coord *)&dword_87F7E8, v2); /*0x440798*/
@@ -4228,7 +4228,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       }
       goto LABEL_46; /*0x4407e0*/
     }
-    if ( v26[3720] ) /*0x440871*/
+    if ( v26->SecretUnit ) /*0x440871*/
     {
       v31 = v2->vtable1; /*0x44087f*/
       v157 = 0; /*0x44088b*/
@@ -4289,7 +4289,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
       }
       goto LABEL_49; /*0x44094f*/
     }
-    if ( v26[5823] ) /*0x440a32*/
+    if ( v26->LaserFence ) /*0x440a32*/
     {
       v38 = ((v38) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x440a3c*/
       v38 = ((v38) & 0xFFFF00FFu) | (((unsigned int)((unsigned char)v162) & 0xFFu) << 8); /*0x440a3e*/
@@ -4301,7 +4301,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
     }
     if ( (unsigned char)v7 ) /*0x440a6f*/
     {
-      if ( v26[5822] ) /*0x440a75*/
+      if ( v26->LaserFencePost ) /*0x440a75*/
       {
         this->LaserFenceFrame = 0; /*0x440a83*/
         v154 = ((v154) & 0xFFFF0000u) | ((unsigned int)(v2->vtable1 / 256) & 0xFFFFu); /*0x440aa1*/
@@ -4865,7 +4865,7 @@ namespace gamemd {
     while ( v3 < bug->radioLinks[2] ); /*0x442356*/
   }
   Type = (unsigned char *)bug->Type; /*0x442358*/
-  if ( Type[5823] && !(unsigned char)v89 ) /*0x442371*/
+  if ( Type->LaserFence && !(unsigned char)v89 ) /*0x442371*/
   {
     v67 = 0; /*0x442377*/
     if ( Block && (((unsigned char *)&(v70))[1]) ) /*0x442389*/
@@ -4875,7 +4875,7 @@ namespace gamemd {
     }
     return 0; /*0x442389*/
   }
-  if ( Type[5814] && Type[563] ) /*0x4423ad*/
+  if ( Type->BridgeRepairHut && Type->Immune_d ) /*0x4423ad*/
   {
     v67 = 0; /*0x4423bb*/
     if ( Block && (((unsigned char *)&(v70))[1]) ) /*0x4423cd*/
@@ -5019,8 +5019,8 @@ namespace gamemd {
             v18 = (unsigned int *)bug->GetExitCoords(v86); /*0x442543*/
             v19 = Coord::Subtract((Coord *)v83, *v18 - *v17, v18[1] - v17[1], v18[2] - v17[2]); /*0x442564*/
             v75 = *v19; /*0x44256b*/
-            v76 = v19[1]; /*0x442576*/
-            GroundHeight = v19[2]; /*0x44257d*/
+            v76 = v19->u32_4; /*0x442576*/
+            GroundHeight = v19->u32_8; /*0x44257d*/
             if ( (int)Coord::Length((Coord *)&v75) < 256 || *(unsigned char *)(bug->Type + 5835) ) /*0x442593*/
             {
               v20 = (*(int (__thiscall **)(unsigned int *))(*v16 + 132))(v16); /*0x4425ba*/
@@ -5740,7 +5740,7 @@ namespace gamemd {
   else
   {
     Type = (unsigned char *)bug->Type; /*0x4471c5*/
-    (*((unsigned char *)&(result))) = Type[5824]; /*0x4471cb*/
+    (*((unsigned char *)&(result))) = Type->FirestormWall; /*0x4471cb*/
     if ( (unsigned char)result ) /*0x4471d3*/
     {
       Type->GetSpecialValue(bug->owner); /*0x4471de*/
@@ -5792,7 +5792,7 @@ namespace gamemd {
     v4 = v13; /*0x44757d*/
     v5 = TechnoClass::HandleCursor((TechnoClass *)bug, v13, 0, v15); /*0x447592*/
     v6 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13); /*0x447594*/
-    v7 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned int *))(*(unsigned int *)v6 + 72))(v6, v12); /*0x4475a2*/
+    v7 = (unsigned int *)v6->vt_slot_72(v12); /*0x4475a2*/
     if ( !(uint8_t)Cell::IsPassable(v7) ) /*0x4475ab*/
     {
       if ( v5 == 1 ) /*0x4475b7*/
@@ -6238,7 +6238,7 @@ namespace gamemd {
   if ( Type->Refinery ) /*0x447b9e*/
   {
     Coords_Alt = (unsigned int *)ObjectClass::GetCoords_Alt((IUnknown *)bug); /*0x447bb4*/
-    v12 = Coords_Alt[1]; /*0x447bbb*/
+    v12 = Coords_Alt->u32_4; /*0x447bbb*/
     v13 = *Coords_Alt + 128; /*0x447bbe*/
   LABEL_15:
     v17 = Coords_Alt[2]; /*0x447ce1*/
@@ -6286,8 +6286,8 @@ namespace gamemd {
   {
     v18 = (int *)ObjectClass::GetCoords_Alt((IUnknown *)bug); /*0x447d1d*/
     *v38 = *v18; /*0x447d28*/
-    v38[1] = v18[1]; /*0x447d2d*/
-    v38[2] = v18[2]; /*0x447d34*/
+    v38[1] = v18->u32_4; /*0x447d2d*/
+    v38[2] = v18->u32_8; /*0x447d34*/
     return (int)v38; /*0x447d3a*/
   }
   v19 = *&Type->NumberOfDocks; /*0x447d3d*/
@@ -6407,9 +6407,9 @@ namespace gamemd {
     if ( LinkIndex >= 0 ) /*0x447d59*/
     {
       v21 = bug->Type; /*0x447d5b*/
-      if ( LinkIndex < *(unsigned int *)&v21->__pad_1714[108] ) /*0x447d67*/
+      if ( LinkIndex < *&v21->NumberOfDocks ) /*0x447d67*/
       {
-        v22 = (int *)(*(unsigned int *)&v21->__pad_1714[116] + 12 * LinkIndex); /*0x447d74*/
+        v22 = (int *)(*&v21->PreventsPlacementOverlap + 12 * LinkIndex); /*0x447d74*/
         v23 = (int *)(*((int (__thiscall **)(BuildingClass *, char *))bug->vfptr + 18))(bug, v35); /*0x447d7e*/
         v24 = *v22; /*0x447d81*/
         v25 = *v23; /*0x447d83*/
@@ -7191,7 +7191,7 @@ void BuildingClass::ProcessSuperWeaponEffects()
           v5 = this->vtable1; /*0x44c9ed*/
           v6 = v4; /*0x44c9f8*/
           v7 = *(void **)(*(unsigned int *)((char *)&FootClass_Array + 892) + 4 * AnimTypeClass::FindIndex((AnimTypeClass * *)((char *)&stru_818E00 + 72))); /*0x44ca0f*/
-          v8 = (int *)(*(int (__thiscall **)(void *, unsigned int *))(*(unsigned int *)v6 + 72))(v6, v89); /*0x44ca14*/
+          v8 = (int *)v6->vt_slot_72(v89); /*0x44ca14*/
           v82[0] = *v8; /*0x44ca1e*/
           v82[1] = v8[1]; /*0x44ca25*/
           v83 = v8[2]; /*0x44ca2c*/
@@ -7849,8 +7849,8 @@ namespace gamemd {
           v42 = Member; /*0x44dd5e*/
           if ( Member ) /*0x44dd62*/
           {
-            (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)Member + 488))(Member, 5, 0); /*0x44dd6b*/
-            (*(void (__thiscall **)(int))(*(unsigned int *)v42 + 492))(v42); /*0x44dd75*/
+            Member->vt_slot_488(5, 0); /*0x44dd6b*/
+            v42->vt_slot_492(); /*0x44dd75*/
           }
           RateScaler::Init((RateScaler *)bug->storedTiberium, *(double *)bug->Type->DeployTime); /*0x44dd95*/
           v43 = bug->Type->vtable2; /*0x44dda2*/
@@ -8200,7 +8200,7 @@ namespace gamemd {
                             0,
                             v81);
     v27 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44db05*/
-    v28 = (unsigned int *)(*(int (__thiscall **)(void *, char *))(*(unsigned int *)v27 + 72))(v27, v91); /*0x44db13*/
+    v28 = (unsigned int *)v27->vt_slot_72(v91); /*0x44db13*/
     i = *(unsigned int *)CellStruct::Set((CellStruct *)&v87, *v28 / 256, v28[1] / 256); /*0x44db42*/
     v24 = 0; /*0x44db5f*/
     v88 = ((int16_t)i << 8) + 128; /*0x44db61*/
@@ -8347,7 +8347,7 @@ namespace gamemd {
                             0,
                             v81);
     v27 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v84.m_Data); /*0x44db05*/
-    v28 = (unsigned int *)(*(int (__thiscall **)(void *, char *))(*(unsigned int *)v27 + 72))(v27, v91); /*0x44db13*/
+    v28 = (unsigned int *)v27->vt_slot_72(v91); /*0x44db13*/
     i = *(unsigned int *)CellStruct::Set((CellStruct *)&v87, *v28 / 256, v28[1] / 256); /*0x44db42*/
     v24 = 0; /*0x44db5f*/
     v88 = ((int16_t)i << 8) + 128; /*0x44db61*/
@@ -8703,7 +8703,7 @@ namespace gamemd {
         bug->inLimbo = 1; /*0x44ec68*/
         if ( v9 ) /*0x44ec6f*/
         {
-          v12 = (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 132))(v9); /*0x44ec75*/
+          v12 = v9->GetSpecialValue(); /*0x44ec75*/
           if ( !(*(int (__thiscall **)(int, int, unsigned int, unsigned int, HouseClass *))(*(unsigned int *)v12 + 148))( /*0x44ec8c*/
                   v12,
                   1,
@@ -8727,7 +8727,7 @@ namespace gamemd {
         bug->inLimbo = 1; /*0x44ece9*/
         if ( v16 ) /*0x44ecf0*/
         {
-          v19 = (*(int (__thiscall **)(int))(*(unsigned int *)v16 + 132))(v16); /*0x44ecf6*/
+          v19 = v16->GetSpecialValue(); /*0x44ecf6*/
           if ( !(*(int (__thiscall **)(int, int, unsigned int, unsigned int, HouseClass *))(*(unsigned int *)v19 + 148))( /*0x44ed0d*/
                   v19,
                   1,
@@ -8751,7 +8751,7 @@ namespace gamemd {
         bug->inLimbo = 1; /*0x44ed6a*/
         if ( v23 ) /*0x44ed71*/
         {
-          v26 = (*(int (__thiscall **)(int))(*(unsigned int *)v23 + 132))(v23); /*0x44ed77*/
+          v26 = v23->GetSpecialValue(); /*0x44ed77*/
           if ( !(*(int (__thiscall **)(int, int, unsigned int, unsigned int, HouseClass *))(*(unsigned int *)v26 + 148))( /*0x44ed8e*/
                   v26,
                   1,
@@ -8775,7 +8775,7 @@ namespace gamemd {
         bug->inLimbo = 1; /*0x44edeb*/
         if ( v30 ) /*0x44edf2*/
         {
-          v33 = (*(int (__thiscall **)(int))(*(unsigned int *)v30 + 132))(v30); /*0x44edf8*/
+          v33 = v30->GetSpecialValue(); /*0x44edf8*/
           if ( !(*(int (__thiscall **)(int, int, unsigned int, unsigned int, HouseClass *))(*(unsigned int *)v33 + 148))( /*0x44ee0f*/
                   v33,
                   1,
@@ -8818,7 +8818,7 @@ namespace gamemd {
         return ObjectClass::Destroy2((ObjectClass *)bug); /*0x44eed4*/
       }
     }
-    v40 = (*(int (__thiscall **)(int, int))(*(unsigned int *)v37 + 132))(v37, v48); /*0x44ee79*/
+    v40 = v37->GetSpecialValue(v48); /*0x44ee79*/
     if ( !(*(int (__thiscall **)(int, int, unsigned int, unsigned int))(*(unsigned int *)v40 + 148))(v40, 1, 0, 0) ) /*0x44ee90*/
     {
       v41 = v39->GetSpecialValue(); /*0x44ee9e*/
@@ -9430,8 +9430,8 @@ namespace gamemd {
     result = (unsigned char *)*Anims; /*0x452225*/
     if ( *Anims ) /*0x452225*/
     {
-      result[282] = 0; /*0x45222b*/
-      result[283] = 1; /*0x452231*/
+      result->Tactical_11A = 0; /*0x45222b*/
+      result->u8_11B = 1; /*0x452231*/
       result[281] = 0; /*0x452238*/
     }
     ++Anims; /*0x45223e*/
@@ -9665,7 +9665,7 @@ namespace gamemd {
         {
           if ( *(unsigned char *)(v10[328] + 5823) ) /*0x452b21*/
           {
-            v12 = (*(int (__thiscall **)(unsigned int *))(*v10 + 56))(v10); /*0x452b32*/
+            v12 = v10->vt_slot_56(); /*0x452b32*/
             if ( (*((int (__thiscall **)(BuildingClass *))this->vfptr + 14))(this) == v12 /*0x452b5f*/
               && (v4 & 3) == (((unsigned int)((*ProgressTimer::GetValue(&v11->ProgressTimer_E2, &v17) >> 12) + 1) >> 1)
                             & 3) )
@@ -9754,7 +9754,7 @@ namespace gamemd {
       goto LABEL_19; /*0x452ca2*/
     if ( *(unsigned char *)(v13[328] + 5822) ) /*0x452caa*/
     {
-      v15 = (*(int (__thiscall **)(unsigned int *))(*v13 + 56))(v13); /*0x452cbb*/
+      v15 = v13->vt_slot_56(); /*0x452cbb*/
       if ( (*((int (__thiscall **)(BuildingClass *))this->vfptr + 14))(this) == v15 ) /*0x452cc6*/
         a4 = v14; /*0x452cc8*/
     }
@@ -9812,7 +9812,7 @@ namespace gamemd {
       goto LABEL_19; /*0x452ca2*/
     if ( *(unsigned char *)(v13[328] + 5822) ) /*0x452caa*/
     {
-      v15 = (*(int (__thiscall **)(unsigned int *))(*v13 + 56))(v13); /*0x452cbb*/
+      v15 = v13->vt_slot_56(); /*0x452cbb*/
       if ( (*((int (__thiscall **)(BuildingClass *))this->vfptr + 14))(this) == v15 ) /*0x452cc6*/
         a4 = v14; /*0x452cc8*/
     }
@@ -9933,7 +9933,7 @@ namespace gamemd {
               v16 = (int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v19); /*0x452fe8*/
               if ( BuildingClass::FindByCellHash((BuildingClass *)v16) != -1 ) /*0x452ff4*/
                 CellClass::ReduceTiberium(v16, 12); /*0x452ffa*/
-              if ( v16[17] == 126 ) /*0x453002*/
+              if ( v16->u32_44 == 126 ) /*0x453002*/
                 Helper_486E30((ObjectClass *)v16); /*0x453006*/
               (*((unsigned short *)&(v27))) = *v6 + v19[0]; /*0x45301c*/
               (*(((unsigned short *)&(v27)) + 1)) = v19[1] + v6[1]; /*0x453021*/
@@ -9995,7 +9995,7 @@ namespace gamemd {
     for ( v9 = v9; ; v9 = v9 ) /*0x453100*/
     {
       (*((unsigned short *)&(v20))) = a2 + *v9; /*0x45311b*/
-      (*(((unsigned short *)&(v20)) + 1)) = (*(((unsigned short *)&(a2)) + 1)) + v9[1]; /*0x453120*/
+      (*(((unsigned short *)&(v20)) + 1)) = (*(((unsigned short *)&(a2)) + 1)) + v9->ptr_2; /*0x453120*/
       a2 = v20; /*0x453133*/
       v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&a2); /*0x453137*/
       result = (int)Cell::IsBridge(v10); /*0x45313e*/
@@ -10204,7 +10204,7 @@ namespace gamemd {
       {
         if ( *(unsigned char *)(v11[328] + 5823) ) /*0x4534d9*/
         {
-          v14 = (*(int (__thiscall **)(unsigned int *))(*v11 + 56))(v11); /*0x4534ee*/
+          v14 = v11->vt_slot_56(); /*0x4534ee*/
           if ( (*((int (__thiscall **)(BuildingClass *))v2->vfptr + 14))(v2) == v14 /*0x45351c*/
             && (((unsigned int)((*ProgressTimer::GetValue(&v12->ProgressTimer_E2, &v43) >> 12) + 1) >> 1) & 3) == v13 )
           {
@@ -10236,7 +10236,7 @@ namespace gamemd {
               if ( v27 /*0x4535f4*/
                 && BridgeSegment
                 && BridgeSegment->IsPoweredActive()
-                && BridgeSegment[1770]
+                && BridgeSegment->u8_6EA
                 && BridgeSegment->GetPrimaryOrFallback() != 19
                 && BridgeSegment->GetPrimaryOrFallback() != 18 )
               {
@@ -10282,9 +10282,9 @@ namespace gamemd {
                   break; /*0x4536c4*/
                 v39 = v12; /*0x4536ce*/
                 if ( v12 == v40 ) /*0x4536d4*/
-                  v12[390] = v16; /*0x4536d6*/
+                  v12->u32_618 = v16; /*0x4536d6*/
                 else
-                  v12[390] = v29; /*0x4536e2*/
+                  v12->u32_618 = v29; /*0x4536e2*/
                 v12->u32_80 = 1; /*0x4536ec*/
                 if ( v28 ) /*0x4536f5*/
                 {
@@ -10331,13 +10331,13 @@ namespace gamemd {
                   if ( v40 == v39 ) /*0x4537c2*/
                   {
                     if ( v34 == 2 ) /*0x4537c9*/
-                      v39[390] = 3; /*0x4537cb*/
+                      v39->u32_618 = 3; /*0x4537cb*/
                     else
-                      v39[390] = 7; /*0x4537d7*/
+                      v39->u32_618 = 7; /*0x4537d7*/
                   }
                   else
                   {
-                    v39[390] = v31; /*0x4537e7*/
+                    v39->u32_618 = v31; /*0x4537e7*/
                   }
                   v39->u32_80 = 1; /*0x4537ed*/
                 }
@@ -10449,7 +10449,7 @@ namespace gamemd {
   v36[0] = v25; /*0x453d2c*/
   v31[0] = v24; /*0x453d30*/
   v27 = (unsigned int *)World::ToScreen(&v32, v31, v30); /*0x453d34*/
-  v28 = v27[1]; /*0x453d3b*/
+  v28 = v27->vtable2; /*0x453d3b*/
   *a2 = (*((unsigned int *)&(v25))) + *v27; /*0x453d4a*/
   a2[1] = v28 + v26; /*0x453d4c*/
   a2[2] = v23; /*0x453d4f*/
@@ -10518,9 +10518,9 @@ namespace gamemd {
 
   v1 = v5; /*0x453d60*/
   (*((unsigned short *)&(v5))) = *v5 / 256; /*0x453d72*/
-  (*(((unsigned short *)&(v5)) + 1)) = v1[1] / 256; /*0x453d8b*/
+  (*(((unsigned short *)&(v5)) + 1)) = v1->vtable2 / 256; /*0x453d8b*/
   v2 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v5); /*0x453d9d*/
-  v3 = v2[73]; /*0x453da2*/
+  v3 = v2->q124; /*0x453da2*/
   result = (int)(v2 + 73); /*0x453da8*/
   (*((unsigned char *)&(v3))) = v3 | 0x80; /*0x453dad*/
   *(unsigned int *)result = v3; /*0x453db0*/
@@ -10538,9 +10538,9 @@ namespace gamemd {
 
   v1 = v5; /*0x453dc0*/
   (*((unsigned short *)&(v5))) = *v5 / 256; /*0x453dd2*/
-  (*(((unsigned short *)&(v5)) + 1)) = v1[1] / 256; /*0x453deb*/
+  (*(((unsigned short *)&(v5)) + 1)) = v1->vtable2 / 256; /*0x453deb*/
   v2 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v5); /*0x453dfd*/
-  v3 = v2[73]; /*0x453e02*/
+  v3 = v2->q124; /*0x453e02*/
   result = (int)(v2 + 73); /*0x453e08*/
   (*((unsigned char *)&(v3))) = v3 & 0x7F; /*0x453e0d*/
   *(unsigned int *)result = v3; /*0x453e10*/
@@ -11756,7 +11756,7 @@ namespace gamemd {
       do /*0x4586fe*/
       {
         v8 = (int *)World::ToScreen(&v22, (void **)this->Type + v27), v21); /*0x45862b*/
-        v9 = v8[1]; /*0x458630*/
+        v9 = v8->vtable2; /*0x458630*/
         vtable0 = (int (__thiscall **)(BuildingClass *, char *))this->vfptr; /*0x458635*/
         v23 = *v8; /*0x458637*/
         v24 = v9; /*0x45863f*/
@@ -12383,7 +12383,7 @@ namespace gamemd {
   v2 = bug->location[0]; /*0x459efa*/
   v3 = bug->location[1]; /*0x459efc*/
   v4 = v2 - 128; /*0x459eff*/
-  v6 = location[2]; /*0x459f09*/
+  v6 = location->vtable3; /*0x459f09*/
   *v7 = v4; /*0x459f0e*/
   v7[1] = v3 - 128; /*0x459f10*/
   v7[2] = v6; /*0x459f13*/
@@ -12420,10 +12420,10 @@ namespace gamemd {
     if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&dword_87F7E8, v13) ) /*0x45eef1*/
     {
       v7 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v13); /*0x45ef04*/
-      v8 = v7[17]; /*0x45ef09*/
+      v8 = v7->u32_44; /*0x45ef09*/
       if ( v8 != -1 && (this != (BuildingClass *)dword_8871E0->NukeDown || v8 != 2) ) /*0x45ef26*/
         return 2; /*0x45f017*/
-      v9 = v7[57]; /*0x45ef2c*/
+      v9 = v7->u32_E4; /*0x45ef2c*/
       if ( v9 ) /*0x45ef34*/
       {
         if ( (*(int (__thiscall **)(int))(v9->fallRate)(v9) == 36 ) /*0x45ef44*/
@@ -12786,7 +12786,7 @@ namespace gamemd {
     Coord::To_Screen((Coord *)g_TacticalClass_Instance, v23, &v21); /*0x47feca*/
     v8 = BuildingClass::CalcDrawPos(this, v20); /*0x47fed6*/
     v21 += *v8; /*0x47fee7*/
-    v9 = v8[1]; /*0x47feeb*/
+    v9 = v8->u32_4; /*0x47feeb*/
     (*((unsigned char *)&(v8))) = this->gattlingStage; /*0x47feee*/
     v10 = v9 + v22; /*0x47fef4*/
     v11 = v21 - 30; /*0x47fef6*/
@@ -13166,18 +13166,18 @@ namespace gamemd {
   StartCoords = House::GetStartCoords((House *)v1, &v79); /*0x485b3a*/
   if ( (int)StartCoords[2] <= 0 || (int)StartCoords[3] <= 0 ) /*0x485b4b*/
   {
-    v7 = PlacementRect[3]; /*0x485bdb*/
+    v7 = PlacementRect->q00C; /*0x485bdb*/
   }
   else
   {
-    if ( PlacementRect[2] > 0 ) /*0x485b5a*/
+    if ( PlacementRect->u32_8 > 0 ) /*0x485b5a*/
     {
-      v72 = PlacementRect[3]; /*0x485b61*/
+      v72 = PlacementRect->q00C; /*0x485b61*/
       if ( v72 > 0 ) /*0x485b65*/
       {
-        v4 = StartCoords[1]; /*0x485b6b*/
-        v5 = StartCoords[3]; /*0x485b71*/
-        v6 = PlacementRect[1]; /*0x485b7e*/
+        v4 = StartCoords->vtable2; /*0x485b6b*/
+        v5 = StartCoords->vtable4; /*0x485b71*/
+        v6 = PlacementRect->u32_4; /*0x485b7e*/
         if ( v4 > v6 ) /*0x485b87*/
         {
           v5 += v4 - v6; /*0x485b8b*/
@@ -13190,7 +13190,7 @@ namespace gamemd {
         goto LABEL_14; /*0x485bc4*/
       }
     }
-    v7 = StartCoords[3]; /*0x485bce*/
+    v7 = StartCoords->vtable4; /*0x485bce*/
   }
   v75 = v7; /*0x485bde*/
   LABEL_14:
@@ -13248,7 +13248,7 @@ namespace gamemd {
           {
             v14 = BuildingClass::GetPlacementRect(NeighbourContent, v97); /*0x485d86*/
             v15 = House::GetStartCoords((House *)NeighbourContent, v92); /*0x485d92*/
-            if ( v15[2] <= 0 || v15[3] <= 0 ) /*0x485da7*/
+            if ( v15->vtable3 <= 0 || v15->vtable4 <= 0 ) /*0x485da7*/
             {
               v76 = v14[2]; /*0x485e60*/
               v20 = v14[3]; /*0x485e67*/
@@ -13258,17 +13258,17 @@ namespace gamemd {
               v66 = v14[2]; /*0x485db2*/
               if ( v66 <= 0 || (v71 = v14[3], v71 <= 0) ) /*0x485dc5*/
               {
-                v23 = v15[2]; /*0x485e43*/
-                v20 = v15[3]; /*0x485e4b*/
+                v23 = v15->vtable3; /*0x485e43*/
+                v20 = v15->vtable4; /*0x485e4b*/
                 v76 = v23; /*0x485e4e*/
               }
               else
               {
                 v16 = *v15; /*0x485dc7*/
                 v17 = *v14; /*0x485dc9*/
-                v18 = v15[2]; /*0x485dcc*/
-                v19 = v15[1]; /*0x485dcf*/
-                v20 = v15[3]; /*0x485dd2*/
+                v18 = v15->vtable3; /*0x485dcc*/
+                v19 = v15->vtable2; /*0x485dcf*/
+                v20 = v15->vtable4; /*0x485dd2*/
                 v21 = v16 <= *v14; /*0x485dd5*/
                 v80 = v18; /*0x485dd7*/
                 if ( !v21 ) /*0x485dde*/
@@ -13351,7 +13351,7 @@ namespace gamemd {
             v35 = (Coord2D *)CellStruct::Copy((CellStruct *)v34, &v84); /*0x4860cb*/
             v36 = Coord2D::Sub(v35, &v89, v78); /*0x4860d2*/
             v37 = Rect::Construct(&v91, v36, v49, v54); /*0x4860df*/
-            Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0); /*0x486124*/
+            Cell::CreateCrater(*v37, v37[1], v37[2], v37->Height, 0); /*0x486124*/
             v9 = v68; /*0x486129*/
             v1 = v73; /*0x48612d*/
           }
@@ -13377,7 +13377,7 @@ namespace gamemd {
   v44 = (struct tagRECT *)Rect::Union(v48, &v87, v59); /*0x486309*/
   v45 = (Bounds *)Rect::Union(v44, v52, v60); /*0x48631a*/
   v46 = Bounds::Subtract(v45, v53, v61); /*0x486321*/
-  Cell::CreateCrater(*v46, v46[1], v46[2], v46[3], 0); /*0x486366*/
+  Cell::CreateCrater(*v46, v46[1], v46[2], v46->u32_C, 0); /*0x486366*/
   House::AnnounceUpgrade((int)v1, -1); /*0x48636f*/
 }
   else
@@ -13616,7 +13616,7 @@ namespace gamemd {
       while ( 1 ) /*0x486976*/
       {
         if ( v2->GetZAboveGround() <= 5 /*0x4869bd*/
-          && (v2[5] & 1) != 0
+          && (v2->abstractFlags & 1) != 0
           && !*(unsigned char *)(v2->Vt34Thunk() + 3217)
           && !(uint8_t)TechnoTypeClass::HasVoiceResponse(v2, 8) )
         {
@@ -13678,36 +13678,36 @@ namespace gamemd {
 
   ScreenRect = CellClass::GetScreenRect((CellClass *)bug, v21); /*0x486e8b*/
   StartCoords = House::GetStartCoords((House *)bug, v22); /*0x486e90*/
-  if ( ScreenRect[2] <= 0 || ScreenRect[3] <= 0 ) /*0x486ea1*/
+  if ( ScreenRect->u32_8 <= 0 || ScreenRect->q00C <= 0 ) /*0x486ea1*/
   {
     v5 = *StartCoords; /*0x486f19*/
-    v7 = StartCoords[1]; /*0x486f1b*/
-    v8 = StartCoords[2]; /*0x486f1e*/
-    v9 = StartCoords[3]; /*0x486f21*/
+    v7 = StartCoords->vtable2; /*0x486f1b*/
+    v8 = StartCoords->vtable3; /*0x486f1e*/
+    v9 = StartCoords->vtable4; /*0x486f21*/
   }
   else
   {
-    v4 = StartCoords[2]; /*0x486ea3*/
-    if ( v4 <= 0 || (v20 = StartCoords[3], v20 <= 0) ) /*0x486eb7*/
+    v4 = StartCoords->vtable3; /*0x486ea3*/
+    if ( v4 <= 0 || (v20 = StartCoords->vtable4, v20 <= 0) ) /*0x486eb7*/
     {
       v5 = *ScreenRect; /*0x486f0c*/
-      v7 = ScreenRect[1]; /*0x486f0e*/
-      v8 = ScreenRect[2]; /*0x486f11*/
-      v9 = ScreenRect[3]; /*0x486f14*/
+      v7 = ScreenRect->u32_4; /*0x486f0e*/
+      v8 = ScreenRect->u32_8; /*0x486f11*/
+      v9 = ScreenRect->q00C; /*0x486f14*/
     }
     else
     {
       v5 = *ScreenRect; /*0x486eb9*/
       v6 = *StartCoords; /*0x486ebb*/
-      v7 = ScreenRect[1]; /*0x486ebd*/
-      v8 = ScreenRect[2]; /*0x486ec0*/
-      v9 = ScreenRect[3]; /*0x486ec3*/
+      v7 = ScreenRect->u32_4; /*0x486ebd*/
+      v8 = ScreenRect->u32_8; /*0x486ec0*/
+      v9 = ScreenRect->q00C; /*0x486ec3*/
       if ( v5 > *StartCoords ) /*0x486ec8*/
       {
         v8 += v5 - v6; /*0x486ecc*/
         v5 = *StartCoords; /*0x486ece*/
       }
-      v10 = StartCoords[1]; /*0x486ed0*/
+      v10 = StartCoords->vtable2; /*0x486ed0*/
       if ( v7 > v10 ) /*0x486ed9*/
       {
         v9 += v7 - v10; /*0x486edd*/
@@ -13723,16 +13723,16 @@ namespace gamemd {
   if ( v8 <= 0 || v9 <= 0 ) /*0x486f38*/
   {
     v5 = *PlacementRect; /*0x486f9e*/
-    v15 = PlacementRect[1]; /*0x486fa0*/
-    v8 = PlacementRect[2]; /*0x486fa3*/
-    v16 = PlacementRect[3]; /*0x486fa6*/
+    v15 = PlacementRect->vtable2; /*0x486fa0*/
+    v8 = PlacementRect->vtable3; /*0x486fa3*/
+    v16 = PlacementRect->vtable4; /*0x486fa6*/
   }
   else
   {
-    v12 = PlacementRect[2]; /*0x486f3a*/
+    v12 = PlacementRect->vtable3; /*0x486f3a*/
     if ( v12 > 0 ) /*0x486f43*/
     {
-      v19 = PlacementRect[3]; /*0x486f4a*/
+      v19 = PlacementRect->vtable4; /*0x486f4a*/
       if ( v19 > 0 ) /*0x486f4e*/
       {
         v13 = *PlacementRect; /*0x486f50*/
@@ -13741,7 +13741,7 @@ namespace gamemd {
           v8 += v5 - v13; /*0x486f5a*/
           v5 = *PlacementRect; /*0x486f5c*/
         }
-        v14 = PlacementRect[1]; /*0x486f5e*/
+        v14 = PlacementRect->vtable2; /*0x486f5e*/
         if ( v7 > v14 ) /*0x486f67*/
         {
           v9 += v7 - v14; /*0x486f6b*/
@@ -14340,37 +14340,37 @@ namespace gamemd {
     }
     PlacementRect = BuildingClass::GetPlacementRect(v3, v19); /*0x4a19a4*/
     StartCoords = House::GetStartCoords((House *)v3, v20); /*0x4a19a9*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4a19be*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x4a19be*/
     {
       v9 = *PlacementRect; /*0x4a1a45*/
-      v11 = PlacementRect[1]; /*0x4a1a47*/
-      v15 = PlacementRect[2]; /*0x4a1a4a*/
-      v13 = PlacementRect[3]; /*0x4a1a4d*/
+      v11 = PlacementRect->vtable2; /*0x4a1a47*/
+      v15 = PlacementRect->vtable3; /*0x4a1a4a*/
+      v13 = PlacementRect->vtable4; /*0x4a1a4d*/
     }
     else
     {
-      v8 = PlacementRect[2]; /*0x4a19c4*/
-      if ( v8 <= 0 || (v18 = PlacementRect[3], v18 <= 0) ) /*0x4a19d8*/
+      v8 = PlacementRect->vtable3; /*0x4a19c4*/
+      if ( v8 <= 0 || (v18 = PlacementRect->vtable4, v18 <= 0) ) /*0x4a19d8*/
       {
         v9 = *StartCoords; /*0x4a1a34*/
-        v11 = StartCoords[1]; /*0x4a1a36*/
-        v15 = StartCoords[2]; /*0x4a1a39*/
-        v13 = StartCoords[3]; /*0x4a1a3c*/
+        v11 = StartCoords->vtable2; /*0x4a1a36*/
+        v15 = StartCoords->vtable3; /*0x4a1a39*/
+        v13 = StartCoords->vtable4; /*0x4a1a3c*/
         v1 = v17; /*0x4a1a3f*/
       }
       else
       {
         v9 = *StartCoords; /*0x4a19da*/
         v10 = *PlacementRect; /*0x4a19dc*/
-        v11 = StartCoords[1]; /*0x4a19de*/
-        v12 = StartCoords[2]; /*0x4a19e1*/
-        v13 = StartCoords[3]; /*0x4a19e4*/
+        v11 = StartCoords->vtable2; /*0x4a19de*/
+        v12 = StartCoords->vtable3; /*0x4a19e1*/
+        v13 = StartCoords->vtable4; /*0x4a19e4*/
         if ( v9 > *PlacementRect ) /*0x4a19e9*/
         {
           v12 += v9 - v10; /*0x4a19ed*/
           v9 = *PlacementRect; /*0x4a19ef*/
         }
-        v14 = PlacementRect[1]; /*0x4a19f1*/
+        v14 = PlacementRect->vtable2; /*0x4a19f1*/
         if ( v11 > v14 ) /*0x4a19fa*/
         {
           v13 += v11 - v14; /*0x4a19fe*/
@@ -14499,11 +14499,11 @@ namespace gamemd {
   v4 = 0; /*0x4db9d2*/
   if ( Member ) /*0x4db9d6*/
   {
-    Member = (*(int (__thiscall **)(int))(*(unsigned int *)Member + 44))(Member); /*0x4db9dc*/
+    Member = Member->ReturnZeroPos(); /*0x4db9dc*/
     if ( Member == 6 ) /*0x4db9e2*/
       v4 = v3; /*0x4db9e4*/
   }
-  (*((unsigned char *)&(Member))) = bug->currentMission == 7 && v4 && *(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5801); /*0x4dba03*/
+  (*((unsigned char *)&(Member))) = bug->currentMission == 7 && v4 && *(unsigned char *)(v4->q520 + 5801); /*0x4dba03*/
   (*((unsigned char *)&(Member))) = (unsigned char)Member == 0; /*0x4dba0f*/
   return (*((int (__thiscall **)(FootClass *, unsigned int, int))bug->vfptr + 289))(bug, 0, Member); /*0x4dba1d*/
 }
@@ -14672,7 +14672,7 @@ namespace gamemd {
              -1,
              0,
              1);
-  if ( !result && v16[59] == 11 && *((unsigned char *)v16 + 286) >= 0x30u ) /*0x4ddb6c*/
+  if ( !result && v16->u32_EC == 11 && v16->u32_11E >= 0x30u ) /*0x4ddb6c*/
     (*((unsigned char *)&(result))) = 1; /*0x4ddb6f*/
   else
   LABEL_10:
@@ -14703,7 +14703,7 @@ namespace gamemd {
              -1,
              0,
              1);
-  if ( !result && v16[59] == 11 && *((unsigned char *)v16 + 286) >= 0x30u ) /*0x4ddb6c*/
+  if ( !result && v16[59] == 11 && v16->u32_11E >= 0x30u ) /*0x4ddb6c*/
     result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x4ddb6f*/
   else
   LABEL_10:
@@ -14954,7 +14954,7 @@ namespace gamemd {
             else
             {
               v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x4fd37d*/
-              v20 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v43); /*0x4fd38b*/
+              v20 = (int *)v19->vt_slot_72(v43); /*0x4fd38b*/
               v16 = *v20; /*0x4fd38e*/
               v14 = v39; /*0x4fd390*/
               v17 = v20[1]; /*0x4fd394*/
@@ -15113,7 +15113,7 @@ namespace gamemd {
             else
             {
               v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v15); /*0x4fd37d*/
-              v20 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v43); /*0x4fd38b*/
+              v20 = (int *)v19->vt_slot_72(v43); /*0x4fd38b*/
               v16 = *v20; /*0x4fd38e*/
               v14 = v39; /*0x4fd390*/
               v17 = v20[1]; /*0x4fd394*/
@@ -16065,7 +16065,7 @@ namespace gamemd {
       {
         result = *(unsigned int **)(bug->ambientSoundController[0] + 4 * i); /*0x6b0ef2*/
         v13 = *result; /*0x6b0ef8*/
-        if ( result[1] != 6 ) /*0x6b0efc*/
+        if ( result->u32_4 != 6 ) /*0x6b0efc*/
         {
           if ( v13 ) /*0x6b0f00*/
             result = (unsigned int *)(*(int (__thiscall **)(int))(*(unsigned int *)v13 + 976))(v13); /*0x6b0f04*/
@@ -16094,7 +16094,7 @@ namespace gamemd {
         {
           result = *(unsigned int **)(bug->ambientSoundController[0] + 4 * j); /*0x6b0fcd*/
           v20 = *result; /*0x6b0fd3*/
-          if ( result[1] != 6 && v20 ) /*0x6b0fdb*/
+          if ( result->u32_4 != 6 && v20 ) /*0x6b0fdb*/
             result = (unsigned int *)(*(int (__thiscall **)(int))(*(unsigned int *)v20 + 976))(v20); /*0x6b0fdf*/
         }
       }
@@ -16556,8 +16556,8 @@ int UnitClass::ProcessExitQueue()
                   v91 = v9[40],
                   v47 = v9[41],
                   v90 = *location,
-                  v91 = location[1],
-                  v47 - location[2] < 20) )
+                  v91 = location->Y,
+                  v47 - location->Z < 20) )
             {
               (*(void (__thiscall **)(unsigned int *))(*v9 + 212))(v9); /*0x6b7803*/
               *(unsigned int *)(*(unsigned int *)(this->spawnVectorCount + 4 * v5) + 4) = 6; /*0x6b780f*/
@@ -16979,55 +16979,55 @@ namespace gamemd {
         Coord::Subtract((Coord *)&v30, -v27, v12, v29); /*0x6f61b1*/
         v15 = Coord::Subtract((Coord *)v42, v11 + v30, v13 + v31, v14 + v32); /*0x6f61d1*/
         v36 = *v15; /*0x6f61da*/
-        v37 = v15[1]; /*0x6f61e2*/
-        v38 = v15[2]; /*0x6f61f2*/
+        v37 = v15->u32_4; /*0x6f61e2*/
+        v38 = v15->u32_8; /*0x6f61f2*/
         Coord::Subtract((Coord *)&v33, -v27, v12, 0); /*0x6f61f6*/
         v16 = Coord::Subtract((Coord *)v42, v11 + v33, v13 + v34, v14 + v35); /*0x6f6216*/
         v39 = *v16; /*0x6f621d*/
-        v40 = v16[1]; /*0x6f6229*/
-        v41 = v16[2]; /*0x6f6238*/
+        v40 = v16->u32_4; /*0x6f6229*/
+        v41 = v16->u32_8; /*0x6f6238*/
         DrawTacticalLine3D(&v39, &v36, v26); /*0x6f623c*/
         Coord::Subtract((Coord *)&v39, v27, v12, 0); /*0x6f624d*/
         v17 = Coord::Subtract((Coord *)v42, v11 + v39, v13 + v40, v14 + v41); /*0x6f626d*/
         v33 = *v17; /*0x6f6274*/
-        v34 = v17[1]; /*0x6f627b*/
-        v35 = v17[2]; /*0x6f628e*/
+        v34 = v17->u32_4; /*0x6f627b*/
+        v35 = v17->u32_8; /*0x6f628e*/
         Coord::Subtract((Coord *)&v36, -v27, v12, 0); /*0x6f6292*/
         v18 = Coord::Subtract((Coord *)v42, v11 + v36, v13 + v37, v14 + v38); /*0x6f62b2*/
         v30 = *v18; /*0x6f62b9*/
-        v31 = v18[1]; /*0x6f62c5*/
-        v32 = v18[2]; /*0x6f62d4*/
+        v31 = v18->u32_4; /*0x6f62c5*/
+        v32 = v18->u32_8; /*0x6f62d4*/
         DrawTacticalLine3D(&v30, &v33, v26); /*0x6f62d8*/
         Coord::Subtract((Coord *)&v39, -v27, v28, 0); /*0x6f62ed*/
         v19 = Coord::Subtract((Coord *)v42, v11 + v39, v13 + v40, v14 + v41); /*0x6f630d*/
         v33 = *v19; /*0x6f6316*/
-        v34 = v19[1]; /*0x6f6322*/
-        v35 = v19[2]; /*0x6f632e*/
+        v34 = v19->u32_4; /*0x6f6322*/
+        v35 = v19->u32_8; /*0x6f632e*/
         Coord::Subtract((Coord *)&v36, -v27, v12, 0); /*0x6f6332*/
         v20 = Coord::Subtract((Coord *)v42, v11 + v36, v13 + v37, v14 + v38); /*0x6f6352*/
         v30 = *v20; /*0x6f6359*/
-        v31 = v20[1]; /*0x6f6364*/
-        v32 = v20[2]; /*0x6f636b*/
+        v31 = v20->u32_4; /*0x6f6364*/
+        v32 = v20->u32_8; /*0x6f636b*/
         DrawTacticalLine3D(&v30, &v33, v26); /*0x6f6378*/
         v21 = Coord::Subtract((Coord *)v42, v11 - v27, v13 + v28, v14 + v29); /*0x6f6398*/
         v36 = *v21; /*0x6f639f*/
-        v37 = v21[1]; /*0x6f63ab*/
-        v38 = v21[2]; /*0x6f63bc*/
+        v37 = v21->u32_4; /*0x6f63ab*/
+        v38 = v21->u32_8; /*0x6f63bc*/
         Coord::Subtract((Coord *)&v39, -v27, v12, v29); /*0x6f63c0*/
         v22 = Coord::Subtract((Coord *)v42, v11 + v39, v13 + v40, v14 + v41); /*0x6f63e0*/
         v33 = *v22; /*0x6f63e7*/
-        v34 = v22[1]; /*0x6f63ee*/
-        v35 = v22[2]; /*0x6f63fd*/
+        v34 = v22->u32_4; /*0x6f63ee*/
+        v35 = v22->u32_8; /*0x6f63fd*/
         DrawTacticalLine3D(&v33, &v36, v26); /*0x6f6406*/
         v23 = Coord::Subtract((Coord *)v42, v11 + v27, v13 + v12, v14 + v29); /*0x6f6423*/
         v36 = *v23; /*0x6f642a*/
-        v37 = v23[1]; /*0x6f6431*/
-        v38 = v23[2]; /*0x6f6447*/
+        v37 = v23->u32_4; /*0x6f6431*/
+        v38 = v23->u32_8; /*0x6f6447*/
         Coord::Subtract((Coord *)&v39, -v27, v12, v29); /*0x6f644b*/
         v24 = Coord::Subtract((Coord *)v42, v11 + v39, v40 + v13, v41 + v14); /*0x6f6469*/
         v33 = *v24; /*0x6f6470*/
-        v34 = v24[1]; /*0x6f6477*/
-        v35 = v24[2]; /*0x6f6486*/
+        v34 = v24->u32_4; /*0x6f6477*/
+        v35 = v24->u32_8; /*0x6f6486*/
         return DrawTacticalLine3D(&v33, &v36, v26); /*0x6f648f*/
       }
     }
@@ -17141,7 +17141,7 @@ namespace gamemd {
                 (*((unsigned short *)&(v26))) = v13 + v31; /*0x6fb2a4*/
                 (*(((unsigned short *)&(v26)) + 1)) = v12 + v32; /*0x6fb2a9*/
                 *(unsigned int *)v25 = v26; /*0x6fb2b2*/
-                v18 = (House *)vtable0[15](bug); /*0x6fb2b8*/
+                v18 = vtable0->ambientSoundController(bug); /*0x6fb2b8*/
                 if ( !(uint8_t)House::IsHumanPlayer(v18) /*0x6fb2e9*/
                   && !(uint8_t)HouseClass::IsAlliedWith((void *)bug->owner, (void *)dword_A83D4C)
                   && !dword_A83D4C->defeated )
@@ -17150,16 +17150,16 @@ namespace gamemd {
                     && *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) >= 0 )
                   {
                     v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb338*/
-                    ++v19[76]; /*0x6fb349*/
+                    ++v19->q130; /*0x6fb349*/
                   }
                   v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb355*/
-                  ++v20[77]; /*0x6fb366*/
+                  ++v20->q134; /*0x6fb366*/
                   if ( *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) >= 1 ) /*0x6fb37d*/
                   {
                     v21 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb389*/
-                    v21[75] &= ~0x10u; /*0x6fb3a0*/
+                    v21->u32_12C &= ~0x10u; /*0x6fb3a0*/
                     v22 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb3a8*/
-                    v22[75] &= ~8u; /*0x6fb3bb*/
+                    v22->u32_12C &= ~8u; /*0x6fb3bb*/
                   }
                   v16 = v27; /*0x6fb3bd*/
                 }
@@ -17268,25 +17268,25 @@ namespace gamemd {
               (*((unsigned short *)&(v26))) = v13 + v30; /*0x6fb58e*/
               (*(((unsigned short *)&(v26)) + 1)) = v12 + v31; /*0x6fb593*/
               *(unsigned int *)v25 = v26; /*0x6fb59c*/
-              v18 = (House *)vtable0[15](bug); /*0x6fb5a2*/
+              v18 = vtable0->ambientSoundController(bug); /*0x6fb5a2*/
               if ( !(uint8_t)House::IsHumanPlayer(v18) /*0x6fb5d3*/
                 && !(uint8_t)HouseClass::IsAlliedWith((void *)bug->owner, (void *)dword_A83D4C)
                 && !dword_A83D4C->defeated )
               {
                 v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb5eb*/
-                --v19[77]; /*0x6fb5fc*/
+                --v19->q134; /*0x6fb5fc*/
                 if ( dword_A83D4C[33].__pad_B0[42] ) /*0x6fb603*/
                 {
                   if ( *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 77) <= 0 ) /*0x6fb628*/
                   {
                     v20 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb634*/
-                    --v20[76]; /*0x6fb645*/
+                    --v20->q130; /*0x6fb645*/
                     if ( *((int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25) + 76) <= 0 ) /*0x6fb65e*/
                     {
                       v21 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb66a*/
-                      v21[75] |= 8u; /*0x6fb681*/
+                      v21->u32_12C |= 8u; /*0x6fb681*/
                       v22 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6fb689*/
-                      v22[75] |= 0x10u; /*0x6fb69c*/
+                      v22->u32_12C |= 0x10u; /*0x6fb69c*/
                     }
                   }
                 }
@@ -17457,7 +17457,7 @@ namespace gamemd {
 
   vtable0 = (int (__thiscall **)(TechnoClass *, char *))bug->vfptr; /*0x70f8f8*/
   v20 = *(unsigned int *)&g_BuildingLoadQueue_Array.ImageFile[24]; /*0x70f8fa*/
-  v2 = (unsigned int *)vtable0[18](bug, (char *)&v28 + 2); /*0x70f903*/
+  v2 = vtable0->u32_48(bug, (char *)&v28 + 2); /*0x70f903*/
   v19[0] = *v2 / 256; /*0x70f916*/
   v19[1] = v2[1] / 256; /*0x70f92e*/
   *(unsigned int *)v27 = *(unsigned int *)v19; /*0x70f937*/

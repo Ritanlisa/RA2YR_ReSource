@@ -905,9 +905,9 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       FoundationSize = Building::GetFoundationSize(v21, (unsigned int)this->M4); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       abstractFlags = this->M20; /*0x7b95d4*/
-      v9 = FoundationSize[1]; /*0x7b95d7*/
-      v4 = FoundationSize[2]; /*0x7b95da*/
-      v10 = FoundationSize[3]; /*0x7b95dd*/
+      v9 = FoundationSize->vtable2; /*0x7b95d7*/
+      v4 = FoundationSize->vtable3; /*0x7b95da*/
+      v10 = FoundationSize->vtable4; /*0x7b95dd*/
       nextArrayIndex = this->q018; /*0x7b95e0*/
       v20 = v10; /*0x7b95e3*/
       v2 = abstractFlags - this->ambientSoundController[0] + v7; /*0x7b95f2*/
@@ -1038,14 +1038,14 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   {
     v20 = ClipRectIntersection(v23, aP0, (int *)a2, 0, 0); /*0x7bbf71*/
     *aP0 = *v20; /*0x7bbf7e*/
-    aP0[1] = v20[1]; /*0x7bbf83*/
-    aP0[2] = v20[2]; /*0x7bbf89*/
-    aP0[3] = v20[3]; /*0x7bbf93*/
+    aP0[1] = v20->vtable2; /*0x7bbf83*/
+    aP0[2] = v20->vtable3; /*0x7bbf89*/
+    aP0[3] = v20->vtable4; /*0x7bbf93*/
     v21 = ClipRectIntersection(v23, aP2, (int *)a4, 0, 0); /*0x7bbf9d*/
     *aP2 = *v21; /*0x7bbfa6*/
-    aP2[1] = v21[1]; /*0x7bbfab*/
-    aP2[2] = v21[2]; /*0x7bbfb1*/
-    aP2[3] = v21[3]; /*0x7bbfb7*/
+    aP2[1] = v21->vtable2; /*0x7bbfab*/
+    aP2[2] = v21->vtable3; /*0x7bbfb1*/
+    aP2[3] = v21->vtable4; /*0x7bbfb7*/
   }
   return aP0[2] > 0 && aP0[3] > 0 && aP2[2] > 0 && aP2[3] > 0; /*0x7bbfd6*/
 }
@@ -1084,11 +1084,11 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   if ( v11 <= 0 /*0x7bc0d8*/
     || *&aP2->q00C <= 0
     || *(int *)a1->__pad_8 <= 0
-    || *(int *)&a1->__pad_8[4] <= 0
+    || *&a1->q00C <= 0
     || *(int *)aP5->u32_8 <= 0
     || *&aP5->q00C <= 0
     || *(int *)a4->__pad_8 <= 0
-    || *(int *)&a4->__pad_8[4] <= 0
+    || *&a4->q00C <= 0
     || !(uint8_t)IntersectSurfaceRects(&aP2->field_0, (int)a1, &aP5->field_0, (int)a4) )
   {
     return 0; /*0x7bc0d8*/
@@ -1116,18 +1116,18 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   v23 = CellStruct::Copy(aP2, v26); /*0x7bc14f*/
   v16 = (Coord2D *)CellStruct::Copy(v10, v27); /*0x7bc154*/
   v17 = Coord2D::Add(v16, v25, v23); /*0x7bc15b*/
-  v18 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v9 + 92))(v9, *v17, v17[1]); /*0x7bc173*/
+  v18 = v9->ClearDirty(*v17, v17->vtable2); /*0x7bc173*/
   *a7 = v18; /*0x7bc17c*/
   if ( !v18 ) /*0x7bc17e*/
     return 0; /*0x7bc17e*/
   v24 = CellStruct::Copy(aP5, v27); /*0x7bc190*/
   v19 = (Coord2D *)CellStruct::Copy(a4, v25); /*0x7bc19b*/
   v20 = Coord2D::Add(v19, v26, v24); /*0x7bc1a2*/
-  v21 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)arg4 + 92))(arg4, *v20, v20[1]); /*0x7bc1bc*/
+  v21 = arg4->ClearDirty(*v20, v20->vtable2); /*0x7bc1bc*/
   *a8 = v21; /*0x7bc1c5*/
   if ( !v21 ) /*0x7bc1c7*/
   {
-    (*(void (__thiscall **)(int))(*(unsigned int *)v9 + 96))(v9); /*0x7bc1cd*/
+    v9->GetDirty(); /*0x7bc1cd*/
     return 0; /*0x7bc1d9*/
   }
   return 1; /*0x7bc1d2*/

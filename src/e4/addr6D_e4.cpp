@@ -88,8 +88,8 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
   while ( 1 ) /*0x6d6bdf*/
   {
     result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6bdf*/
-    v5 = result[80]; /*0x6d6be4*/
-    if ( (v5 & 0x80u) != 0 && result[17] && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
+    v5 = result->u32_140; /*0x6d6be4*/
+    if ( (v5 & 0x80u) != 0 && result->u32_44 && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
     ++(*(((unsigned short *)&(a1)) + 1)); /*0x6d6bff*/
     if ( ++v3 >= 5 ) /*0x6d6c08*/
@@ -101,8 +101,8 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
       while ( 1 ) /*0x6d6c31*/
       {
         result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6c31*/
-        v8 = result[80]; /*0x6d6c36*/
-        if ( (v8 & 0x80u) != 0 && result[17] && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
+        v8 = result->u32_140; /*0x6d6c36*/
+        if ( (v8 & 0x80u) != 0 && result->u32_44 && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
         ++(*(((unsigned short *)&(a1)) + 1)); /*0x6d6c51*/
         if ( ++v7 >= 5 ) /*0x6d6c5a*/
@@ -114,8 +114,8 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
           while ( 1 ) /*0x6d6c85*/
           {
             result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6c85*/
-            v11 = result[80]; /*0x6d6c8a*/
-            if ( (v11 & 0x80u) != 0 && result[17] && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
+            v11 = result->u32_140; /*0x6d6c8a*/
+            if ( (v11 & 0x80u) != 0 && result->u32_44 && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
             (*((unsigned short *)&(a1))) = (unsigned short)a1 + 1; /*0x6d6ca1*/
             if ( ++v10 >= 5 ) /*0x6d6caa*/
@@ -127,8 +127,8 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
               while ( 1 ) /*0x6d6cd3*/
               {
                 result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6cd3*/
-                v14 = result[80]; /*0x6d6cd8*/
-                if ( (v14 & 0x80u) != 0 && result[17] && (v14 & 0x800) == 0 ) /*0x6d6ced*/
+                v14 = result->u32_140; /*0x6d6cd8*/
+                if ( (v14 & 0x80u) != 0 && result->u32_44 && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
                 (*((unsigned short *)&(a1))) = (unsigned short)a1 + 1; /*0x6d6cef*/
                 if ( ++v13 >= 5 ) /*0x6d6cf8*/
@@ -467,9 +467,9 @@ void E4Recv_6D1E80::sub_6D1E80()
 {
 
   /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e80) */
-  *(unsigned int *)&this->Tactical_field_0x2[2] = &Tactical::`vftable'; /*0x6d1e86*/
+  *&this->M4 = &Tactical::`vftable'; /*0x6d1e86*/
   this->M8 = (int)&Tactical::`vftable'; /*0x6d1e8d*/
-  this->Tactical_field_0xC[0] = (int)&Tactical::`vftable'; /*0x6d1e94*/
+  this->M12 = (int)&Tactical::`vftable'; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
   AbstractClass::DTOR((AbstractClass *)this); /*0x6d1ea5*/
 

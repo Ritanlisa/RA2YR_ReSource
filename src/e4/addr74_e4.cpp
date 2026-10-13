@@ -206,16 +206,16 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
               if ( v26 ) /*0x743497*/
               {
                 v27 = atoi(v26); /*0x74349a*/
-                FootClass::SetField((gamemd::FootClass *)((int *)(v12 + 336)), v27); /*0x7434a9*/
+                FootClass::SetField(&v12->veterancy, v27); /*0x7434a9*/
               }
               v28 = strtok(0, Str); /*0x7434b5*/
               if ( v28 ) /*0x7434bf*/
-                *(unsigned int *)(v12 + 532) = atoi(v28); /*0x7434ca*/
+                v12->displayProductionTo = atoi(v28); /*0x7434ca*/
               v29 = strtok(0, Str); /*0x7434d7*/
               if ( v29 ) /*0x7434e1*/
               {
                 v30 = atoi(v29) != 0; /*0x7434ee*/
-                *(unsigned char *)(v12 + 140) = v30; /*0x7434f3*/
+                v12->onBridge = v30; /*0x7434f3*/
                 if ( v30 ) /*0x7434f9*/
                   v59 = dword_B1D0AC + Cell::GetGroundHeight(v58); /*0x743510*/
               }
@@ -234,27 +234,27 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
               }
               v34 = strtok(0, Str); /*0x74357f*/
               if ( v34 ) /*0x743589*/
-                *(unsigned char *)(v12 + 1057) = atoi(v34) != 0; /*0x743599*/
+                v12->isRecruitableByAlly_d = atoi(v34) != 0; /*0x743599*/
               v35 = strtok(0, Str); /*0x7435a6*/
               if ( v35 ) /*0x7435b0*/
-                *(unsigned char *)(v12 + 1058) = atoi(v35) != 0; /*0x7435c0*/
+                v12->isRecruitableByEnemy_d = atoi(v35) != 0; /*0x7435c0*/
               if ( (*(uint8_t (**)(int, unsigned int *, int, int))(*(unsigned int *)v12 + 216))( /*0x7435d0*/
                      v12,
                      v58,
                      v20,
                      a2) )
               {
-                v36 = *(unsigned int *)(v12 + 1732); /*0x7435de*/
-                (*((unsigned short *)&(v37))) = Math::RoundToInt((double)v61 * (double)*(int *)(v36 + 160) * 0.00390625); /*0x7435f0*/
-                *(unsigned int *)(v12 + 108) = v37; /*0x7435f5*/
-                v38 = *(unsigned int *)(v36 + 160); /*0x7435f8*/
+                v36 = v12->Type; /*0x7435de*/
+                (*((unsigned short *)&(v37))) = Math::RoundToInt((double)v61 * (double)v36->Strength * 0.00390625); /*0x7435f0*/
+                v12->health = v37; /*0x7435f5*/
+                v38 = v36->Strength; /*0x7435f8*/
                 if ( v37 > v38 - 3 ) /*0x743603*/
-                  *(unsigned int *)(v12 + 108) = v38; /*0x743605*/
-                if ( !*(unsigned int *)(v12 + 108) ) /*0x743608*/
-                  *(unsigned int *)(v12 + 108) = 1; /*0x74360f*/
+                  v12->health = v38; /*0x743605*/
+                if ( !v12->health ) /*0x743608*/
+                  v12->health = 1; /*0x74360f*/
                 v39 = *(unsigned int *)v12; /*0x743619*/
                 a2 = 0; /*0x74361b*/
-                *(unsigned int *)(v12 + 112) = *(unsigned int *)(v12 + 108); /*0x743620*/
+                v12->estimatedHealth = *&v12->health; /*0x743620*/
                 (*(void (**)(int, int))(v39 + 488))(v12, v22); /*0x743623*/
                 if ( (*(uint8_t (**)(int))(*(unsigned int *)v12 + 512))(v12) ) /*0x74362d*/
                   (*(void (**)(int))(*(unsigned int *)v12 + 492))(v12); /*0x74363b*/

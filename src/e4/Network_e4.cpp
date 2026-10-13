@@ -911,7 +911,7 @@ void * Network::CopyAddress(unsigned int *a2, int a3)
   result = &this->q004; /*0x53eda4*/
   *(unsigned int *)a3 = this->q004; /*0x53edaa*/
   LOWORD(result) = this->q008; /*0x53edad*/
-  *(unsigned short *)(a3 + 4) = (unsigned short)result; /*0x53edb1*/
+  a3->vtable2 = (unsigned short)result; /*0x53edb1*/
   *a2 = this->__pad_000; /*0x53edbb*/
   return result; /*0x53edac*/
 
@@ -1864,8 +1864,8 @@ unsigned int * Network::SetPlayerCoords(IPXManagerClass * aP1)
   {
     result += 19; /*0x54305b*/
     *result = *aP1; /*0x543060*/
-    result[1] = aP1[1]; /*0x543065*/
-    result[2] = aP1[2]; /*0x54306b*/
+    result->q004 = aP1[1]; /*0x543065*/
+    result->q008 = aP1[2]; /*0x54306b*/
   }
   return result; /*0x54306e*/
 
@@ -4337,8 +4337,8 @@ HashTable_flat * * Network::ProcessAddressChange()
         *(unsigned int *)&v4[1] = *(int *)((char *)&dword_B04E9C + 2); /*0x664169*/
         v4[3] = 0; /*0x664174*/
         Waypoint::InitInvalid(&v6); /*0x664179*/
-        NetworkID::Assign((NetworkID *)&v6, &v6.u32_18, (int)&v4[1], 0); /*0x66418e*/
-        inited = Network::initConnection(&v6.u32_1C, (int)dword_A83D4C->relatedTagsCount, &v6, v2); /*0x6641a7*/
+        NetworkID::Assign((NetworkID *)&v6, &v6.nextArrayIndex, (int)&v4[1], 0); /*0x66418e*/
+        inited = Network::initConnection(&v6.referenceCount, (int)dword_A83D4C->relatedTagsCount, &v6, v2); /*0x6641a7*/
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6641b6*/
         {
           memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, inited, 0x6Fu); /*0x6641d2*/
@@ -4611,7 +4611,7 @@ int Network::finalizeSession()
   this->q3F330 = 0; /*0x7b2e21*/
   this->q3F568 = 0; /*0x7b2e27*/
   /* X11: vtable install elided (implicit via UDPInterfaceClass virtuals 0x7b2e2d) */
-  *((unsigned int *)this + 64717) = -1; /*0x7b2e33*/
+  this->q3F334 = -1; /*0x7b2e33*/
   return (int)this; /*0x7b2e3f*/
 
 }
@@ -4891,7 +4891,7 @@ char * Network::FormatAddress(uint16_t *aP1)
   p_Network_field_0x0 = aP1; /*0x53f0e0*/
   if ( !aP1 ) /*0x53f0e9*/
     p_Network_field_0x0 = &this->__pad_000; /*0x53f0eb*/
-  v3 = p_Network_field_0x0[1]; /*0x53f0f3*/
+  v3 = p_Network_field_0x0->u32_4; /*0x53f0f3*/
   if ( dword_828140 == 1 )
     sprintf(
       &DataGlobal_AA047C,
@@ -4974,7 +4974,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   if ( aP0->u32_C == *(unsigned int *)&dword_841F3C ) /*0x5416e8*/
   {
     aP0->u32_C = aP4; /*0x5416f2*/
-    aP0->u32_8 = *(unsigned int *)(a4 + 4); /*0x541701*/
+    aP0->u32_8 = a4->Initialized; /*0x541701*/
     Network::FormatAddress((uint16_t *)a4, 0); /*0x541704*/
     Debug::Log(); /*0x54170f*/
     (*((unsigned short *)&(v5))) = dword_841F3C; /*0x541714*/

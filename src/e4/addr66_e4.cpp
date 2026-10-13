@@ -840,7 +840,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   if ( !dword_A8DA84 ) /*0x663e22*/
   {
     v4 = (uint8_t *)(*(int (**)(unsigned int *, unsigned int))(*dword_887628 + 76))(dword_887628, 0); /*0x663e2d*/
-    sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
+    sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", *v4, v4->u8_1, v4->u32_2, v4->ptr_3); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
   v5 = (Network *)(*dword_A8DA78 + 40); /*0x663e69*/
@@ -958,9 +958,9 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   this->M4 = 0; /*0x6616bd*/
   this->M8 = 0; /*0x6616c0*/
   /* X11: vtable install elided (implicit via Straw virtuals 0x6616c3) */
-  *((unsigned int *)this + 3) = 0; /*0x6616c9*/
-  *((unsigned int *)this + 4) = 0; /*0x6616cc*/
-  v3 = (ObjectClass *)((char *)this + 20); /*0x6616cf*/
+  this->M12 = 0; /*0x6616c9*/
+  this->M16 = 0; /*0x6616cc*/
+  v3 = &this->ptr_14; /*0x6616cf*/
   do /*0x6616df*/
   {
     sub_65C890(v3, 0, 0); /*0x6616d6*/
@@ -968,8 +968,8 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
     --v2; /*0x6616de*/
   }
   while ( v2 ); /*0x6616df*/
-  *((unsigned int *)this + 3) = 0; /*0x6616e1*/
-  *((unsigned int *)this + 4) = 0; /*0x6616e4*/
+  this->M12 = 0; /*0x6616e1*/
+  this->M16 = 0; /*0x6616e4*/
   *(unsigned int *)this->__pad_0 = &RandomStraw::`vftable'; /*0x6616f1*/
   memset(&this->ptr_14, 0, 0x100u); /*0x6616f7*/
   return this->vfptr; /*0x6616fb*/

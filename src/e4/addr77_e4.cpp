@@ -999,7 +999,7 @@ void * E4Recv_777BB0::sub_777BB0(char * Buffer)
   char v4; // [esp+4h] [ebp-100h] BYREF
   char v5; // [esp+5h] [ebp-FFh]
   char v6; // [esp+6h] [ebp-FEh]
-  char Buffer[128]; // [esp+84h] [ebp-80h] BYREF
+  char Buffer->u32_80; // [esp+84h] [ebp-80h] BYREF
 
   sprintf(Buffer, "%d", dword_822D1C); /*0x777bcc*/
   v4 = g_Str_gsmallwoo[0]; /*0x777bde*/
@@ -3804,8 +3804,8 @@ DWORD E4Recv_7717A0::sub_7717A0()
   result = Timer::GetTicks(); /*0x7717ca*/
   v3 = &this->secondaryFacing[3]; /*0x7717d5*/
   *v3 = result; /*0x7717db*/
-  v3[1] = v4; /*0x7717dd*/
-  v3[2] = 0; /*0x7717e0*/
+  v3->vtable2 = v4; /*0x7717dd*/
+  v3->vtable3 = 0; /*0x7717e0*/
   return result; /*0x7717e3*/
 
 }

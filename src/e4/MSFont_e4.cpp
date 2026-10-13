@@ -64,7 +64,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
           do /*0x5d55e6*/
           {
             *v7 = 0; /*0x5d55dd*/
-            v7[1] = 0; /*0x5d55df*/
+            v7->vtable2 = 0; /*0x5d55df*/
             v7 += 2; /*0x5d55e2*/
             --v8; /*0x5d55e5*/
           }
@@ -404,7 +404,7 @@ int MSFont_18::FindPair8(unsigned int * a2)
   result = 0; /*0x5d56a5*/
   if ( m_10 <= 0 ) /*0x5d56ab*/
     return -1; /*0x5d56cc*/
-  for ( i = *&this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d56b1*/
+  for ( i = *&this->q004; *i != *a2 || i->vtable2 != a2[1]; i += 2 ) /*0x5d56b1*/
   {
     if ( ++result >= m_10 ) /*0x5d56ca*/
       return -1; /*0x5d56ca*/

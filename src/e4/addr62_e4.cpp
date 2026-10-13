@@ -3302,9 +3302,9 @@ int E4Recv_62D510::sub_62D510()
   v5 = this->location[2]; /*0x62d539*/
   v6 = this->location[0]; /*0x62d53c*/
   v15[2] = v5; /*0x62d53e*/
-  v7 = location[1]; /*0x62d544*/
+  v7 = location->u32_4; /*0x62d544*/
   v12 = v6; /*0x62d547*/
-  v8 = location[2]; /*0x62d54e*/
+  v8 = location->u32_8; /*0x62d54e*/
   v13 = v7; /*0x62d551*/
   v14 = v8; /*0x62d555*/
   v15[1] = v4; /*0x62d559*/

@@ -89,7 +89,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
         do /*0x7b33b7*/
         {
           ++v4; /*0x7b339e*/
-          *v9 = v9[1]; /*0x7b339f*/
+          *v9 = v9->vtable2; /*0x7b339f*/
           *v8 = v8[1]; /*0x7b33a5*/
           ++v9; /*0x7b33ae*/
           ++v8; /*0x7b33b1*/
@@ -285,8 +285,8 @@ LABEL_71:
       v13 = IPXInterfaceClass::processPacket((IPXInterfaceClass *)a3); /*0x7b3f80*/
       v13->uniqueId = v27 - 4; /*0x7b3f8f*/
       v13->referenceCount = *((unsigned int *)a3 + 64541); /*0x7b3f98*/
-      v13[23] = v39; /*0x7b3fa0*/
-      v13[24] = 0; /*0x7b3fa6*/
+      v13->q017 = v39; /*0x7b3fa0*/
+      v13->nextArrayIndex = 0; /*0x7b3fa6*/
       qmemcpy(v13 + 32, a3 + 32271, v27 - 4); /*0x7b3fab*/
       if ( !(*(unsigned __int8 (**)(UDPInterfaceClass *, unsigned char *))(a3->Socket + 88))(a3, v13) ) /*0x7b3fb9*/
       {
@@ -295,13 +295,13 @@ LABEL_71:
         Debug::Log(); /*0x7b4000*/
         if ( !byte_B78124 ) /*0x7b400f*/
           byte_B78124 = 1; /*0x7b4011*/
-        if ( v13[22] ) /*0x7b4018*/
+        if ( v13->q016 ) /*0x7b4018*/
         {
           __3_YAXPAX_Z(v13); /*0x7b4024*/
           return 0; /*0x7b4035*/
         }
 LABEL_60:
-        v13[21] = 0; /*0x7b3e9e*/
+        v13->u8_15 = 0; /*0x7b3e9e*/
         --*((unsigned int *)a3 + 64536); /*0x7b3eaa*/
         return 0; /*0x7b3eb8*/
       }
@@ -451,7 +451,7 @@ LABEL_43:
         ++v25; /*0x7b3e73*/
       }
     }
-    if ( v13[22] ) /*0x7b3e82*/
+    if ( v13->q016 ) /*0x7b3e82*/
     {
       __3_YAXPAX_Z(v13); /*0x7b3e8a*/
       return 0; /*0x7b3e9b*/
@@ -470,13 +470,13 @@ LABEL_43:
       ++v22; /*0x7b3e17*/
     }
   }
-  if ( v13[22] ) /*0x7b3e26*/
+  if ( v13->q016 ) /*0x7b3e26*/
   {
     __3_YAXPAX_Z(v13); /*0x7b3e2e*/
   }
   else
   {
-    v13[21] = 0; /*0x7b3e42*/
+    v13->u8_15 = 0; /*0x7b3e42*/
     --*((unsigned int *)a3 + 64537); /*0x7b3e4e*/
   }
   return 0; /*0x7b3b27*/

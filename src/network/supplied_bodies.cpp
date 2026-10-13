@@ -134,7 +134,7 @@ namespace gamemd {
 int16_t NetworkID::Assign(unsigned int * a2, int a3, int16_t a4)
 {
   this->q004 = *(unsigned int *)a3; /*0x53ed2a*/
-  this->u32_8 = *(unsigned short *)(a3 + 4); /*0x53ed31*/
+  this->u32_8 = a3->u32_4; /*0x53ed31*/
   if ( dword_828140 == 1 ) /*0x53ed3d*/
   {
     *(unsigned int *)this->__pad_000 = *a2; /*0x53ed45*/
@@ -1991,7 +1991,7 @@ void ModemHost::InitDialog()
   SendMessageA(v50, 0x4B2u, 0, (LPARAM)g_abs_A8B322); /*0x5b8b76*/
   DataGlobal_A8D60C = ((DataGlobal_A8D60C) & 0xFF00FFFFu) | (((unsigned int)(1) & 0xFFu) << 16); /*0x5b8b81*/
   v51 = CCFileClass::Construct((CCFileClass *)&v59.FilePointer, byte_A8B8E0); /*0x5b8b88*/
-  v52 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v51 + 20))(v51, 0); /*0x5b8b9a*/
+  v52 = v51->vt_slot_20(0); /*0x5b8b9a*/
   v61 = 0; /*0x5b8ba4*/
   Vector::Clear((int)v60); /*0x5b8bac*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5b8bb5) */
@@ -3813,7 +3813,7 @@ bool NullModemClass::Init()
       inited = 0; /*0x5f174b*/
     v12 = *(&this->Active3); /*0x5f174d*/
     *(&this->PlayerIndex4) = (int)inited; /*0x5f1750*/
-    inited[10] = v12; /*0x5f1753*/
+    inited->u32_28 = v12; /*0x5f1753*/
     *(unsigned int *)(*(&this->PlayerIndex4) + 44) = *(&this->Active4); /*0x5f175c*/
     *(unsigned int *)(*(&this->PlayerIndex4) + 48) = *(&this->Active5); /*0x5f1765*/
     v23 = *(&this->PlayerIndex8) * (*(unsigned int *)(*(&this->PlayerIndex4) + 28) + 11); /*0x5f1775*/

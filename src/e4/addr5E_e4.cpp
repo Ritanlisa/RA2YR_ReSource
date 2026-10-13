@@ -2902,7 +2902,7 @@ char LoadScenarioClassByIndex(int a1)
     return 0; /*0x5e7c2a*/
   }
   v3 = CCFileClass::Construct(v17, (char *)(*(unsigned int *)(dword_A8B8CC + 4 * a1) + 88)); /*0x5e7c3b*/
-  v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x5e7c46*/
+  v4 = v3->vt_slot_20(0); /*0x5e7c46*/
   v17[0] = &vt_CCFileClass; /*0x5e7c4f*/
   v5 = v4 == 0; /*0x5e7c57*/
   v19 = 0; /*0x5e7c5a*/
@@ -2950,14 +2950,14 @@ char LoadScenarioClassByIndex(int a1)
     }
     dword_A8BB0C = PlayerCountMap; /*0x5e7e2a*/
     v13 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e30*/
-    dword_A8BB04 = (*(int (**)(unsigned int *))(*v13 + 44))(v13); /*0x5e7e45*/
+    dword_A8BB04 = v13->vt_slot_44(); /*0x5e7e45*/
     v17[0] = &vt_CCFileClass; /*0x5e7e4a*/
     v19 = 0; /*0x5e7e4e*/
     Vector::Clear((int)v18); /*0x5e7e52*/
     v17[0] = (unsigned int)&off_7E1668; /*0x5e7e60*/
     ((BufferIOFileClass *)(v17))->Dtor(); /*0x5e7e64*/
     v14 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e72*/
-    dword_A8BB04 = (*(int (**)(unsigned int *))(*v14 + 44))(v14); /*0x5e7e82*/
+    dword_A8BB04 = v14->vt_slot_44(); /*0x5e7e82*/
     v17[0] = &vt_CCFileClass; /*0x5e7e87*/
     v19 = 0; /*0x5e7e8b*/
     Vector::Clear((int)v18); /*0x5e7e8f*/
@@ -5190,11 +5190,11 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
   *(unsigned int *)&g_Rules_EngineerCount = a2->u32_8; /*0x5edcb1*/
   *(unsigned int *)&g_Rules_Bases = a2->u32_C; /*0x5edcba*/
   *(unsigned int *)&g_Rules_MultiEngineer = a2->__pad_004; /*0x5edcc3*/
-  ShortGame = a2->q014; /*0x5edccc*/
+  ShortGame = a2->abstractFlags; /*0x5edccc*/
   SWAllowed = a2->u32_15; /*0x5edcd5*/
   g_Rules_ShortGame = a2->q016; /*0x5edcde*/
   dword_A8B320 = a2->u32_17; /*0x5edce7*/
-  Crates = a2->q018; /*0x5edcf0*/
+  Crates = a2->nextArrayIndex; /*0x5edcf0*/
   return a2; /*0x5edcaa*/
 }
 }

@@ -79,7 +79,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   this->ObjectTypeClass = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
   this->? = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
   /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
-  this->? = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  this->vtable4 = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
   this->LegalTarget_d = 0; /*0x74ae8c*/
   this->IsLogic_d = 1; /*0x74ae92*/

@@ -400,7 +400,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         v96[1] = v95[1] + (unsigned short)((g_DDrawSurfaceManager.scenario[v12 + 82]) >> 16); /*0x5151b5*/
         v15 = (CellClass *)CellCoord_To_CellObj((CellCoord *)&DataGlobal_87F7E8, v96); /*0x5151d1*/
         Coords = CellClass::GetCoords(v15, &v108); /*0x5151d8*/
-        v17 = Coords[1]; /*0x5151df*/
+        v17 = Coords->vtable2; /*0x5151df*/
         v18 = *Coords - (v13 + 128); /*0x5151e5*/
         v19 = (unsigned int *)this->m_State; /*0x5151e7*/
         v110 = Coords[2]; /*0x5151ea*/
@@ -486,7 +486,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
             this->q0B0);
     v102 = *v41; /*0x5154d7*/
     v103 = v41[1]; /*0x5154e3*/
-    v104 = v41[2]; /*0x5154ef*/
+    v104 = v41->u32_8; /*0x5154ef*/
  v42 = (CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v102)); /*0x5154f3*/
     v43 = this->m_State; /*0x5154fe*/
     if ( this->u32_98 != (((unsigned int)v42->flags[0] >> 8) & 1) ) /*0x51550f*/
@@ -725,7 +725,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
                   v56[2] - this->u32_8);
           v105 = *v57; /*0x51584f*/
           v106 = v57[1]; /*0x51585a*/
-          v107 = v57[2]; /*0x515861*/
+          v107 = v57->u32_8; /*0x515861*/
           if ( (int)Coord_Length((void *)&v105) < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 5912) ) /*0x515876*/
           {
             v58 = (int *)(this->m_State + 156); /*0x51587f*/
@@ -1109,8 +1109,8 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
             v20[1] - a1->q01C,
             v20[2] - a1->u32_20);
     v62 = *v21; /*0x51672b*/
-    v22 = v21[1]; /*0x51672f*/
-    v23 = v21[2]; /*0x516736*/
+    v22 = v21->u32_4; /*0x51672f*/
+    v23 = v21->u32_8; /*0x516736*/
     v63 = v22; /*0x516739*/
     v64 = v23; /*0x516741*/
     Math::Sqrt((double)v23 * (double)v23 + (double)v22 * (double)v22 + (double)v62 * (double)v62); /*0x516762*/
@@ -5081,11 +5081,11 @@ int RulesClass::ReadDataList() {
              v6[43],
              (int)v21);
       TypeList::Copy((TypeList *)(v6 + 38), v7); /*0x672514*/
-      v6[42] = v7[4]; /*0x67251e*/
-      v6[43] = v7[5]; /*0x672524*/
+      v6[42] = v7->Count; /*0x67251e*/
+      v6[43] = v7->CapacityIncrement; /*0x672524*/
       v8 = Block; /*0x672527*/
       v9 = Block == 0; /*0x67252e*/
-      v6[44] = v7[6]; /*0x672530*/
+      v6[44] = v7->q018; /*0x672530*/
       v24 = 0; /*0x672533*/
       if ( !v9 && v27 ) /*0x672543*/
       {
@@ -6271,82 +6271,82 @@ int RulesClass::SaveLoad_Prefix(void* a1) {
   int result; // eax
 
   a1 = a1; /*0x674732*/
-  (*(void (__stdcall **)(int *, RulesClass *, int, unsigned int))(*a1 + 16))(a1, this, 6336, 0); /*0x674744*/
+  a1->IsClean(this, 6336, 0); /*0x674744*/
   v4 = *a1; /*0x67474d*/
   a1 = *&this->q11A4; /*0x674759*/
   a1->IsClean(&a1, 4, 0); /*0x67475d*/
   for ( i = 0; i < (int)a1; ++i ) /*0x674768*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1198 + 4 * i, 4, 0); /*0x67477b*/
+    a1->IsClean(*&this->q1198 + 4 * i, 4, 0); /*0x67477b*/
   v6 = *a1; /*0x67478d*/
   a1 = *&this->q11C0; /*0x674799*/
   a1->IsClean(&a1, 4, 0); /*0x67479d*/
   for ( j = 0; j < (int)a1; ++j ) /*0x6747a8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q11B4 + 4 * j, 4, 0); /*0x6747bb*/
+    a1->IsClean(*&this->q11B4 + 4 * j, 4, 0); /*0x6747bb*/
   v8 = *a1; /*0x6747cd*/
   a1 = *&this->q11DC; /*0x6747d9*/
   a1->IsClean(&a1, 4, 0); /*0x6747dd*/
   for ( k = 0; k < (int)a1; ++k ) /*0x6747e8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q11D0 + 4 * k, 4, 0); /*0x6747fb*/
+    a1->IsClean(*&this->q11D0 + 4 * k, 4, 0); /*0x6747fb*/
   v10 = *a1; /*0x67480d*/
   a1 = *&this->q11F8; /*0x674819*/
   a1->IsClean(&a1, 4, 0); /*0x67481d*/
   for ( m = 0; m < (int)a1; ++m ) /*0x674828*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q11EC + 4 * m, 4, 0); /*0x67483b*/
+    a1->IsClean(*&this->q11EC + 4 * m, 4, 0); /*0x67483b*/
   v12 = *a1; /*0x67484d*/
   a1 = *&this->q1214; /*0x674859*/
   a1->IsClean(&a1, 4, 0); /*0x67485d*/
   for ( n = 0; n < (int)a1; ++n ) /*0x674868*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1208 + 4 * n, 4, 0); /*0x67487b*/
+    a1->IsClean(*&this->q1208 + 4 * n, 4, 0); /*0x67487b*/
   v14 = *a1; /*0x67488d*/
   a1 = *&this->q1230; /*0x674899*/
   a1->IsClean(&a1, 4, 0); /*0x67489d*/
   for ( ii = 0; ii < (int)a1; ++ii ) /*0x6748a8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1224 + 4 * ii, 4, 0); /*0x6748bb*/
+    a1->IsClean(*&this->q1224 + 4 * ii, 4, 0); /*0x6748bb*/
   v16 = *a1; /*0x6748cd*/
   a1 = *&this->q124C; /*0x6748d9*/
   a1->IsClean(&a1, 4, 0); /*0x6748dd*/
   for ( jj = 0; jj < (int)a1; ++jj ) /*0x6748e8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1240 + 4 * jj, 4, 0); /*0x6748fb*/
+    a1->IsClean(*&this->q1240 + 4 * jj, 4, 0); /*0x6748fb*/
   v18 = *a1; /*0x67490d*/
   a1 = *&this->q1268; /*0x674919*/
   a1->IsClean(&a1, 4, 0); /*0x67491d*/
   for ( kk = 0; kk < (int)a1; ++kk ) /*0x674928*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q125C + 4 * kk, 4, 0); /*0x67493b*/
+    a1->IsClean(*&this->q125C + 4 * kk, 4, 0); /*0x67493b*/
   v20 = *a1; /*0x67494d*/
   a1 = *&this->q1284; /*0x674959*/
   a1->IsClean(&a1, 4, 0); /*0x67495d*/
   for ( mm = 0; mm < (int)a1; ++mm ) /*0x674968*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1278 + 4 * mm, 4, 0); /*0x67497b*/
+    a1->IsClean(*&this->q1278 + 4 * mm, 4, 0); /*0x67497b*/
   v22 = *a1; /*0x67498d*/
   a1 = *&this->q12A0; /*0x674999*/
   a1->IsClean(&a1, 4, 0); /*0x67499d*/
   for ( nn = 0; nn < (int)a1; ++nn ) /*0x6749a8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1294 + 4 * nn, 4, 0); /*0x6749bb*/
+    a1->IsClean(*&this->q1294 + 4 * nn, 4, 0); /*0x6749bb*/
   v24 = *a1; /*0x6749cd*/
   a1 = *&this->q12BC; /*0x6749d9*/
   a1->IsClean(&a1, 4, 0); /*0x6749dd*/
   for ( i1 = 0; i1 < (int)a1; ++i1 ) /*0x6749e8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q12B0 + 4 * i1, 4, 0); /*0x6749fb*/
+    a1->IsClean(*&this->q12B0 + 4 * i1, 4, 0); /*0x6749fb*/
   v26 = *a1; /*0x674a0d*/
   a1 = *&this->q12D8; /*0x674a19*/
   a1->IsClean(&a1, 4, 0); /*0x674a1d*/
   for ( i2 = 0; i2 < (int)a1; ++i2 ) /*0x674a28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q12CC + 4 * i2, 4, 0); /*0x674a3b*/
+    a1->IsClean(*&this->q12CC + 4 * i2, 4, 0); /*0x674a3b*/
   v28 = *a1; /*0x674a4d*/
   a1 = *&this->q12F4; /*0x674a59*/
   a1->IsClean(&a1, 4, 0); /*0x674a5d*/
   for ( i3 = 0; i3 < (int)a1; ++i3 ) /*0x674a68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q12E8 + 4 * i3, 4, 0); /*0x674a7b*/
+    a1->IsClean(*&this->q12E8 + 4 * i3, 4, 0); /*0x674a7b*/
   v30 = *a1; /*0x674a8d*/
   a1 = *&this->q1400; /*0x674a99*/
   a1->IsClean(&a1, 4, 0); /*0x674a9d*/
   for ( i4 = 0; i4 < (int)a1; ++i4 ) /*0x674aa8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q13F4 + 4 * i4, 4, 0); /*0x674abb*/
+    a1->IsClean(*&this->q13F4 + 4 * i4, 4, 0); /*0x674abb*/
   v32 = *a1; /*0x674acd*/
   a1 = *&this->q1168; /*0x674ad9*/
   a1->IsClean(&a1, 4, 0); /*0x674add*/
   for ( i5 = 0; i5 < (int)a1; ++i5 ) /*0x674ae8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q115C + 4 * i5, 4, 0); /*0x674afb*/
+    a1->IsClean(*&this->q115C + 4 * i5, 4, 0); /*0x674afb*/
   v34 = *a1; /*0x674b0d*/
   a1 = (int *)this->PowerEmergency[0]; /*0x674b19*/
   a1->IsClean(&a1, 4, 0); /*0x674b1d*/
@@ -6356,62 +6356,62 @@ int RulesClass::SaveLoad_Prefix(void* a1) {
   a1 = *&this->qD90; /*0x674b59*/
   a1->IsClean(&a1, 4, 0); /*0x674b5d*/
   for ( i7 = 0; i7 < (int)a1; ++i7 ) /*0x674b68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qD84 + 4 * i7, 4, 0); /*0x674b7b*/
+    a1->IsClean(*&this->qD84 + 4 * i7, 4, 0); /*0x674b7b*/
   v38 = *a1; /*0x674b8d*/
   a1 = *&this->qDAC; /*0x674b99*/
   a1->IsClean(&a1, 4, 0); /*0x674b9d*/
   for ( i8 = 0; i8 < (int)a1; ++i8 ) /*0x674ba8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qDA0 + 4 * i8, 4, 0); /*0x674bbb*/
+    a1->IsClean(*&this->qDA0 + 4 * i8, 4, 0); /*0x674bbb*/
   v40 = *a1; /*0x674bcd*/
   a1 = *&this->qDC8; /*0x674bd9*/
   a1->IsClean(&a1, 4, 0); /*0x674bdd*/
   for ( i9 = 0; i9 < (int)a1; ++i9 ) /*0x674be8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qDBC + 4 * i9, 4, 0); /*0x674bfb*/
+    a1->IsClean(*&this->qDBC + 4 * i9, 4, 0); /*0x674bfb*/
   v42 = *a1; /*0x674c0d*/
   a1 = *&this->qEF8; /*0x674c19*/
   a1->IsClean(&a1, 4, 0); /*0x674c1d*/
   for ( i10 = 0; i10 < (int)a1; ++i10 ) /*0x674c28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qEEC + 4 * i10, 4, 0); /*0x674c3b*/
+    a1->IsClean(*&this->qEEC + 4 * i10, 4, 0); /*0x674c3b*/
   v44 = *a1; /*0x674c4d*/
   a1 = *&this->qF14; /*0x674c59*/
   a1->IsClean(&a1, 4, 0); /*0x674c5d*/
   for ( i11 = 0; i11 < (int)a1; ++i11 ) /*0x674c68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qF08 + 4 * i11, 4, 0); /*0x674c7b*/
+    a1->IsClean(*&this->qF08 + 4 * i11, 4, 0); /*0x674c7b*/
   v46 = *a1; /*0x674c8d*/
   a1 = *&this->qF30; /*0x674c99*/
   a1->IsClean(&a1, 4, 0); /*0x674c9d*/
   for ( i12 = 0; i12 < (int)a1; ++i12 ) /*0x674ca8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qF24 + 4 * i12, 4, 0); /*0x674cbb*/
+    a1->IsClean(*&this->qF24 + 4 * i12, 4, 0); /*0x674cbb*/
   v48 = *a1; /*0x674ccd*/
   a1 = *&this->qE20; /*0x674cd9*/
   a1->IsClean(&a1, 4, 0); /*0x674cdd*/
   for ( i13 = 0; i13 < (int)a1; ++i13 ) /*0x674ce8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qE14 + 4 * i13, 4, 0); /*0x674cfb*/
+    a1->IsClean(*&this->qE14 + 4 * i13, 4, 0); /*0x674cfb*/
   v50 = *a1; /*0x674d0d*/
   a1 = *&this->qED4; /*0x674d19*/
   a1->IsClean(&a1, 4, 0); /*0x674d1d*/
   for ( i14 = 0; i14 < (int)a1; ++i14 ) /*0x674d28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qEC8 + 4 * i14, 4, 0); /*0x674d3b*/
+    a1->IsClean(*&this->qEC8 + 4 * i14, 4, 0); /*0x674d3b*/
   v52 = *a1; /*0x674d4d*/
   a1 = *&this->qE3C; /*0x674d59*/
   a1->IsClean(&a1, 4, 0); /*0x674d5d*/
   for ( i15 = 0; i15 < (int)a1; ++i15 ) /*0x674d68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qE30 + 4 * i15, 4, 0); /*0x674d7b*/
+    a1->IsClean(*&this->qE30 + 4 * i15, 4, 0); /*0x674d7b*/
   v54 = *a1; /*0x674d8d*/
   a1 = *&this->qDE4; /*0x674d99*/
   a1->IsClean(&a1, 4, 0); /*0x674d9d*/
   for ( i16 = 0; i16 < (int)a1; ++i16 ) /*0x674da8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->qDD8 + 4 * i16, 4, 0); /*0x674dbb*/
+    a1->IsClean(*&this->qDD8 + 4 * i16, 4, 0); /*0x674dbb*/
   v56 = *a1; /*0x674dcd*/
   a1 = *&this->q13A0; /*0x674dd9*/
   a1->IsClean(&a1, 4, 0); /*0x674ddd*/
   for ( i17 = 0; i17 < (int)a1; ++i17 ) /*0x674de8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q1394 + 4 * i17, 4, 0); /*0x674dfb*/
+    a1->IsClean(*&this->q1394 + 4 * i17, 4, 0); /*0x674dfb*/
   v58 = *a1; /*0x674e0d*/
   a1 = *&this->q13BC; /*0x674e19*/
   a1->IsClean(&a1, 4, 0); /*0x674e1d*/
   for ( i18 = 0; i18 < (int)a1; ++i18 ) /*0x674e28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *&this->q13B0 + 4 * i18, 4, 0); /*0x674e3b*/
+    a1->IsClean(*&this->q13B0 + 4 * i18, 4, 0); /*0x674e3b*/
   DynamicVector::Read(&this->DynamicVector_E4C, a1); /*0x674e4e*/
   DynamicVector::Read(&this->DynamicVector_E68, a1); /*0x674e5a*/
   DynamicVector::Read(&this->DynamicVector_E84, a1); /*0x674e66*/
@@ -8094,7 +8094,7 @@ bool RulesClass::IsTypeBuildable(int a1) {
     (*((unsigned char *)&(result))) = 0; /*0x72116c*/
     return result; /*0x72116e*/
   }
-  if ( !result->q288 ) /*0x721171*/
+  if ( !result->WeatherConBolts ) /*0x721171*/
   {
     (*((unsigned char *)&(result))) = 0; /*0x72117b*/
     return result; /*0x72117d*/

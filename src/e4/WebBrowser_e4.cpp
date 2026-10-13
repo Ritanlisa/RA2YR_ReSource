@@ -266,11 +266,11 @@ int WebBrowser::Release(void *a1_1)
   unsigned int *v2; // [esp+4h] [ebp+4h]
 
   result = v2[1] - 1; /*0x773ab7*/
-  v2[1] = result; /*0x773ab8*/
+  v2->__pad_004 = result; /*0x773ab8*/
   if ( !result ) /*0x773abb*/
   {
     if ( v2 ) /*0x773abf*/
-      (*(void (**)(unsigned int *, int))(*v2 + 68))(v2, 1); /*0x773ac5*/
+      v2->GoForward(1); /*0x773ac5*/
     return 0; /*0x773ac8*/
   }
   return result; /*0x773aca*/
@@ -432,7 +432,7 @@ int WebBrowser::GoBack()
   ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
   if ( (uint8_t)Flag::IsNot2(v4) ) /*0x773dba*/
   {
-    FindChannelWOL((const char *)&v4[0].Flag_field_0x08, (int)v5, 1u, *(unsigned int *)(v3 + 16)); /*0x773dd5*/
+    FindChannelWOL((const char *)&v4[0].Flag_field_0x08, (int)v5, 1u, v3->u32_10); /*0x773dd5*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
   }
   ((String *)((String *)&g_WebBrowser))->Assign_Alt((const char *)&v4[0].Flag_field_0x08); /*0x773dee*/

@@ -330,16 +330,16 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     dword_ABC874 = 0; /*0x550b19*/
     atexit(nullsub_22); /*0x550b1f*/
   }
-  v2 = v1[9]; /*0x550b2a*/
-  v59 = v1[12]; /*0x550b33*/
+  v2 = v1->BarrelVoxel; /*0x550b2a*/
+  v59 = v1->TargetSpecialThreatCoefficient; /*0x550b33*/
   v58 = v2; /*0x550b37*/
   v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
   (*((unsigned short *)&(v59))) = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x550b6f*/
   v59 = (((v59 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen(v1 + 9, &v75); /*0x550b91*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen(v1 + 12, (int *)&v74); /*0x550ba2*/
-  v4 = v1[15] - ZCoordToScreenY(v1[11]) - 2; /*0x550bb7*/
-  v5 = -2 - ZCoordToScreenY(v1[14]); /*0x550bc4*/
+  v4 = v1[15] - ZCoordToScreenY(v1->ChargerBarrels_0x12) - 2; /*0x550bb7*/
+  v5 = -2 - ZCoordToScreenY(v1->TargetStrengthCoefficient); /*0x550bc4*/
   v66 = v5; /*0x550bc6*/
   if ( (unsigned int)dword_ABCD44 < PingPongBuffer::GetWriteOffset() || (v53 = 1, !dword_A8EB78) ) /*0x550be3*/
     v53 = 0; /*0x550be5*/
@@ -393,7 +393,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   v69 = v76; /*0x550cef*/
   v67 = v74; /*0x550cf7*/
   v62 = v74; /*0x550cff*/
-  v15 = v1[7]; /*0x550d03*/
+  v15 = v1->referenceCount; /*0x550d03*/
   v55 = v11; /*0x550d11*/
   v70 = 1; /*0x550d15*/
   if ( v15 >= 1 )
@@ -2452,7 +2452,7 @@ void GameFrameLoop()
     {
       v22 = RequestMapSnapshot((ObjectClass *)g_TacticalClass_Instance, &v50.u32_30); /*0x55d92b*/
       Time = *v22; /*0x55d936*/
-      *(unsigned int *)v50.q000 = v22[1]; /*0x55d945*/
+      *(unsigned int *)v50.q000 = v22->vtable2; /*0x55d945*/
       FileClass::Write(&dword_A8D58C, &Time, 8u); /*0x55d949*/
       *(unsigned int *)&v50.ptr_8 = dword_A8ECC8; /*0x55d960*/
       FileClass::Write(&dword_A8D58C, &v50.ptr_8, 4u); /*0x55d964*/
@@ -2462,7 +2462,7 @@ void GameFrameLoop()
         WaypointCoords = ScriptAction::GetWaypointCoords( /*0x55d983*/
                            (ScriptAction *)&v50.u32_14,
                            *((unsigned int **)dword_A8ECBC + v23));
-        v25 = WaypointCoords[4]; /*0x55d988*/
+        v25 = WaypointCoords->vtable2; /*0x55d988*/
         if ( v25 ) /*0x55d98d*/
           v26 = *(unsigned int *)WaypointCoords & 0xFFFFFF | (v25 << 24); /*0x55d9a4*/
         else
@@ -2473,7 +2473,7 @@ void GameFrameLoop()
       for ( i = 0; i < *(int *)&v50.ptr_8; ++i ) /*0x55d9d0*/
       {
         v28 = ScriptAction::GetWaypointCoords((ScriptAction *)&v50.u32_14, *((unsigned int **)dword_A8ECBC + i)); /*0x55d9e0*/
-        v29 = v28[4]; /*0x55d9e5*/
+        v29 = v28->vtable2; /*0x55d9e5*/
         if ( v29 ) /*0x55d9ea*/
           v30 = *(unsigned int *)v28 & 0xFFFFFF | (v29 << 24); /*0x55da02*/
         else
@@ -2497,7 +2497,7 @@ void GameFrameLoop()
         for ( *(unsigned int *)&v50.u32_C = 0; v31 < (int)dword_A8ECC8; *(unsigned int *)&v50.u32_C += v34 ) /*0x55daaa*/
         {
           v32 = ScriptAction::GetWaypointCoords((ScriptAction *)&v50.u32_14, *((unsigned int **)dword_A8ECBC + v31)); /*0x55daba*/
-          v33 = v32[4]; /*0x55dabf*/
+          v33 = v32->vtable2; /*0x55dabf*/
           if ( v33 ) /*0x55dac4*/
             v34 = *(unsigned int *)v32 & 0xFFFFFF | (v33 << 24); /*0x55dadb*/
           else
@@ -4163,7 +4163,7 @@ int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
             case 0x525u: /*0x558a9a*/
               if ( v5 == 2 && SendMessageA(a4, 0x18Bu, 0, 0) > 0 ) /*0x558adb*/
               {
-                *(unsigned int *)(v7 + 24) = 1039; /*0x558ae1*/
+                v7->CampaignScore_field_0x18 = 1039; /*0x558ae1*/
                 return 0; /*0x558aee*/
               }
               break;

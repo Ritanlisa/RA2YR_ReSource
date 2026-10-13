@@ -303,10 +303,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   v25.q018 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76da6a*/
   v25.VectorCursor_field_0x0C = (int)&VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76da76*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x76da7e) */
-  if ( v28.? && BYTE1(v28.?) ) /*0x76da8b*/
+  if ( v28.vtable2 && BYTE1(v28.vtable2) ) /*0x76da8b*/
   {
-    __3_YAXPAX_Z((void *)v28.?); /*0x76da8e*/
-    v28.? = 0; /*0x76da96*/
+    __3_YAXPAX_Z((void *)v28.vtable2); /*0x76da8e*/
+    v28.vtable2 = 0; /*0x76da96*/
   }
   v28.owningHouseIndex = (int)&VectorClass<MSAnim *>::`vftable'; /*0x76da9e*/
   v28.vtable2 = 0; /*0x76daa2*/

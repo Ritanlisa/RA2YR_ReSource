@@ -4665,15 +4665,15 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->u32_18 = 0; /*0x5cd59f*/
   /* X11: vtable install elided (implicit via MSAnim virtuals 0x5cd5a5) */
   WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd5ab*/
-  *((unsigned int *)this + 11) = a8; /*0x5cd5c0*/
-  *((unsigned char *)this + 48) = a9; /*0x5cd5c7*/
-  *((unsigned int *)this + 8) = 0; /*0x5cd5ce*/
-  *((unsigned int *)this + 9) = a7; /*0x5cd5d1*/
-  *((unsigned int *)this + 10) = 0; /*0x5cd5d4*/
-  *((unsigned int *)this + 13) = a5; /*0x5cd5d7*/
-  *((unsigned char *)this + 72) = 0; /*0x5cd5da*/
-  *((unsigned char *)this + 73) = a10; /*0x5cd5dd*/
-  *((unsigned int *)this + 19) = 0; /*0x5cd5e0*/
+  this->M44 = a8; /*0x5cd5c0*/
+  this->M48 = a9; /*0x5cd5c7*/
+  this->q020 = 0; /*0x5cd5ce*/
+  this->M24 = a7; /*0x5cd5d1*/
+  this->u32_28 = 0; /*0x5cd5d4*/
+  this->u32_34 = a5; /*0x5cd5d7*/
+  this->u32_48 = 0; /*0x5cd5da*/
+  this->M73 = a10; /*0x5cd5dd*/
+  this->M76 = 0; /*0x5cd5e0*/
   *(unsigned int *)this->__pad_0 = &MSPrintAnim::`vftable'; /*0x5cd5e3*/
   this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
   this->M20 = v15; /*0x5cd5f9*/

@@ -308,8 +308,8 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
             v17 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
             v18 = Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
-            v26[1] = v18[1]; /*0x56c485*/
-            v26[2] = v18[2]; /*0x56c490*/
+            v26[1] = v18->u32_4; /*0x56c485*/
+            v26[2] = v18->u32_8; /*0x56c490*/
             v16 = Coord::Length((Coord *)v26); /*0x56c494*/
 LABEL_20:
             if ( v16 >= 0 && (!v21 || v16 < v22) ) /*0x56c4a9*/
@@ -368,7 +368,7 @@ char sub_5902C0(int a1)
   (*(((unsigned short *)&(a1)) + 1)) = a1->Items; /*0x5902d6*/
   (*((unsigned short *)&(a1))) = v2; /*0x5902e1*/
   v3 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x5902e6*/
-  v4 = v1[1]; /*0x5902f2*/
+  v4 = v1->Items; /*0x5902f2*/
   v16 = v3[283]; /*0x5902f5*/
   v5 = *v1; /*0x5902f9*/
   v6 = (int16_t)*v1; /*0x590301*/
@@ -376,7 +376,7 @@ char sub_5902C0(int a1)
   a1 = (int16_t)v4 + v6; /*0x590310*/
   if ( a1 > dword_ABED04 && v6 - (int16_t)v4 < dword_ABED04 && (int16_t)v4 - v6 < dword_ABED04 && a1 <= dword_ABED08 ) /*0x59033c*/
   {
-    v7 = v1[2]; /*0x590342*/
+    v7 = v1->__pad_008; /*0x590342*/
     a1 = (int16_t)(v5 + v7 - 1); /*0x59034f*/
     if ( (int16_t)v4 + a1 > dword_ABED04 /*0x590387*/
       && a1 - (int16_t)v4 < dword_ABED04
@@ -415,9 +415,9 @@ char sub_5902C0(int a1)
             (*(((unsigned short *)&(a1)) + 1)) = v9; /*0x590440*/
             v11 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x590445*/
             v11 = v11; /*0x59044a*/
-            if ( v11[17] != -1 || v11->u32_11B != v16 || !Cell::IsEmpty(v11) && !((Cell *)(v11))->IsGroundTypeRange() ) /*0x59046c*/
+            if ( v11->u32_44 != -1 || v11->u32_11B != v16 || !Cell::IsEmpty(v11) && !((Cell *)(v11))->IsGroundTypeRange() ) /*0x59046c*/
               break; /*0x59046c*/
-            v7 = v1[2]; /*0x590475*/
+            v7 = v1->__pad_008; /*0x590475*/
             v5 = *v1; /*0x590478*/
             if ( ++v5 >= v7 + *v1 + 1 ) /*0x590481*/
               goto LABEL_24; /*0x590481*/
@@ -653,7 +653,7 @@ LABEL_20:
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
       (int)g_DSurface_Hidden_2,
-      v25[13],
+      v25->ptr_34,
       v5,
       0,
       &v30,
@@ -662,7 +662,7 @@ LABEL_20:
       0,
       -2 - v29,
       0,
-      *((__int16 *)v25 + 134),
+      v25->u32_218,
       0,
       0,
       0,
@@ -758,8 +758,8 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
     v5 = a2; /*0x62ac4a*/
 LABEL_39:
     *v5 = v4; /*0x62af27*/
-    v5[1] = dword_AC494C; /*0x62af31*/
-    v5[2] = dword_AC4950; /*0x62af3c*/
+    v5->vtable2 = dword_AC494C; /*0x62af31*/
+    v5->vtable3 = dword_AC4950; /*0x62af3c*/
     return result; /*0x62af3c*/
   }
   if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
@@ -797,8 +797,8 @@ LABEL_39:
     v19 = ObjectPlacement::CalcPosition(NeighbourContent, v31, v18, 0, 0, 0); /*0x62ade9*/
     v27 = *v19; /*0x62adf0*/
     v20 = *&this->q024; /*0x62adf4*/
-    v28 = v19[1]; /*0x62adfa*/
-    v29 = v19[2]; /*0x62ae03*/
+    v28 = v19->vtable2; /*0x62adfa*/
+    v29 = v19->vtable3; /*0x62ae03*/
     if ( v20 && (*(int (**)(int))(*(unsigned int *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
     {
       v21 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27); /*0x62ae1d*/
@@ -840,8 +840,8 @@ LABEL_34:
     if ( v27 != dword_AC4948 || v28 != dword_AC494C || v29 != dword_AC4950 ) /*0x62af07*/
     {
       *a2 = v27; /*0x62af0f*/
-      a2[1] = v24; /*0x62af11*/
-      a2[2] = v25; /*0x62af14*/
+      a2->vtable2 = v24; /*0x62af11*/
+      a2->vtable3 = v25; /*0x62af14*/
       return a2; /*0x62af1e*/
     }
     result = a2; /*0x62af21*/
@@ -873,8 +873,8 @@ LABEL_34:
   else
     *(unsigned char *)(*&this->q024 + 140) = 0; /*0x62acef*/
   *a2 = v27; /*0x62ad03*/
-  a2[1] = v28; /*0x62ad0a*/
-  a2[2] = v29; /*0x62ad11*/
+  a2->vtable2 = v28; /*0x62ad0a*/
+  a2->vtable3 = v29; /*0x62ad11*/
   return a2; /*0x62ad00*/
 
 }
@@ -1597,8 +1597,8 @@ int sub_5A7E90(int a1, unsigned short * a2)
               v2 = v10; /*0x5a7f38*/
               if ( *(unsigned int *)(v13 + 4 * (i + v4 * v10[185]) + 16) ) /*0x5a7f4b*/
               {
-                v8[14] = 0xFFFF; /*0x5a7f53*/
-                *((unsigned char *)v8 + 282) = 0; /*0x5a7f5a*/
+                v8->q038 = 0xFFFF; /*0x5a7f53*/
+                v8->u8_11A = 0; /*0x5a7f5a*/
               }
               v5 = dword_ABED04; /*0x5a7f61*/
             }
@@ -1726,7 +1726,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
 
   v3 = aP1; /*0x5fd271*/
   (*((unsigned short *)&(aP1))) = *aP1 / 256; /*0x5fd290*/
-  (*(((unsigned short *)&(aP1)) + 1)) = v3[1] / 256; /*0x5fd2a4*/
+  (*(((unsigned short *)&(aP1)) + 1)) = v3->u32_4 / 256; /*0x5fd2a4*/
   v5 = (CellClass *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&aP1); /*0x5fd2b1*/
   if ( CellClass::FindInfantry(v5, 0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/

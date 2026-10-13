@@ -495,7 +495,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
-  v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
+  v16 = (unsigned char *)aP1->COMStub_Return0_23(*v7, v7->q004); /*0x6c8a61*/
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/
   v14 = 0; /*0x6c8a6a*/
   if ( v9 > 0 ) /*0x6c8a72*/
@@ -507,7 +507,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
       {
-        (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/
+        v8->GetDirty(); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
       qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
@@ -521,7 +521,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
     Buffer_field_08 = v15; /*0x6c8af5*/
     v8 = aP1; /*0x6c8af9*/
   }
-  (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
+  v8->GetDirty(); /*0x6c8b01*/
   return Buffer_field_08; /*0x6c8a08*/
 
 }

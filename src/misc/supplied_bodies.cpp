@@ -280,7 +280,7 @@ int * AudioPool::ProcessQueue() {
   v2[85] = 0; /*0x40527e*/
   v2[154] = 0; /*0x405284*/
   v2[120] = 0; /*0x40528a*/
-  v2[42] = 0; /*0x405290*/
+  v2->u32_A8 = 0; /*0x405290*/
   AudioMixer::Init((AudioMixer *)(v2 + 46)); /*0x405296*/
   v2[86] = 0; /*0x40529b*/
   InsertAfterDListNode((int)&g_AudioStreamObject, v2); /*0x4052a8*/
@@ -351,8 +351,8 @@ unsigned int * AudioFileClass::Release() {
       }
     }
   }
-  result[2] = 0; /*0x405d31*/
-  result[3] = 0; /*0x405d34*/
+  result->u32_8 = 0; /*0x405d31*/
+  result->u32_C = 0; /*0x405d34*/
   return result; /*0x405d37*/
 }
 }
@@ -564,7 +564,7 @@ void AudioSample::InitLinkedList() {
   {
     *(v13 - 3) = v6; /*0x4088e5*/
     *v13 = -1001; /*0x4088e8*/
-    v13[1] = *v13; /*0x4088f0*/
+    v13->vtable2 = *v13; /*0x4088f0*/
     *(v13 - 1) = 0; /*0x4088f6*/
     AudioSample::SetField((AudioSample *)(v13 - 13)); /*0x4088fd*/
     v13 += 16; /*0x408902*/
@@ -848,11 +848,11 @@ char Pathfinding::AStar(int16_t *a2, int16_t *a3, int a4, int a5) {
     v83 = (unsigned int *)this->IsInitialized.Pathfinding_field_0x14; /*0x42c404*/
     v14 = *v83 + 1; /*0x42c40a*/
     v15 = v14 >> 1; /*0x42c40d*/
-    if ( v14 < v83[1] ) /*0x42c412*/
+    if ( v14 < v83->Items ) /*0x42c412*/
     {
       for ( ; v14 > 1; v15 >>= 1 ) /*0x42c417*/
       {
-        v99 = v83[2]; /*0x42c420*/
+        v99 = v83->Capacity; /*0x42c420*/
         _EAX = *(unsigned int *)(v99 + 4 * v15); /*0x42c424*/
         __asm /*0x42c427*/
         {
@@ -868,10 +868,10 @@ char Pathfinding::AStar(int16_t *a2, int16_t *a3, int a4, int a5) {
       }
       *(unsigned int *)(v83[2] + 4 * v14) = v97; /*0x42c459*/
       ++*v83; /*0x42c463*/
-      if ( (unsigned int)v97 > v83[3] ) /*0x42c46a*/
-        v83[3] = v97; /*0x42c46c*/
-      if ( (unsigned int)v97 < v83[4] ) /*0x42c472*/
-        v83[4] = v97; /*0x42c474*/
+      if ( (unsigned int)v97 > v83->IsInitialized ) /*0x42c46a*/
+        v83->IsInitialized = v97; /*0x42c46c*/
+      if ( (unsigned int)v97 < v83->Count ) /*0x42c472*/
+        v83->Count = v97; /*0x42c474*/
     }
     v87 = 1; /*0x42c482*/
     *(unsigned int *)(v85 + 4 * v11) = this->Items.Pathfinding_field_0x0C; /*0x42c48a*/
@@ -1904,7 +1904,7 @@ char DropPod::ProcessLanding() {
     }
   }
   if ( v49 ) /*0x4cef96*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v49 + 8))(v49); /*0x4cef9b*/
+    v49->vt_slot_8(); /*0x4cef9b*/
   return v48; /*0x4ce852*/
 }
 }
@@ -1963,7 +1963,7 @@ int PathfindingClass::FindPath(unsigned int *a2) {
   else
   {
     v11 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v23); /*0x4ffbb4*/
-    v12 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v11 + 72))(v11, v27); /*0x4ffbc5*/
+    v12 = (int *)v11->vt_slot_72(v27); /*0x4ffbc5*/
     v9 = *v12; /*0x4ffbc7*/
     v10 = v12[1]; /*0x4ffbc9*/
     v3 = v12[2]; /*0x4ffbcc*/
@@ -1993,7 +1993,7 @@ int PathfindingClass::FindPath(unsigned int *a2) {
   else
   {
     v19 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v23); /*0x4ffc7b*/
-    v20 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v27); /*0x4ffc89*/
+    v20 = (int *)v19->vt_slot_72(v27); /*0x4ffc89*/
     v24 = *v20; /*0x4ffc8e*/
     v25 = v20[1]; /*0x4ffc95*/
     v18 = v20[2]; /*0x4ffc99*/

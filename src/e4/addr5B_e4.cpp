@@ -202,7 +202,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     goto LABEL_9; /*0x5b4130*/
   while ( 1 ) /*0x5b4132*/
   {
-    v5 = v4[2]; /*0x5b4132*/
+    v5 = v4->u32_8; /*0x5b4132*/
     v6 = v5 < v3; /*0x5b4135*/
     if ( v5 == v3 ) /*0x5b4137*/
       break; /*0x5b4137*/
@@ -214,7 +214,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     if ( !v4 ) /*0x5b414b*/
       goto LABEL_9; /*0x5b414b*/
   }
-  if ( !v4[3] ) /*0x5b4139*/
+  if ( !v4->q00C ) /*0x5b4139*/
   {
     v6 = v5 < v3; /*0x5b413e*/
     goto LABEL_5; /*0x5b413e*/
@@ -1326,7 +1326,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15->u8_45 = 0; /*0x5bfb0e*/
   v15->q048 = 0; /*0x5bfb11*/
   v16 = CCFileClass::Construct(&v53, Source); /*0x5bfb14*/
-  v17 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x5bfb1e*/
+  v17 = v16->vt_slot_20(0); /*0x5bfb1e*/
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x5bfb2a) */
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
@@ -1390,9 +1390,9 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v26 = (*(int (__thiscall **)(int *))(*a2 + 124))(a2); /*0x5bfd3d*/
   v27 = ClipRectIntersection(&v46, &a3, v52, 0, 0); /*0x5bfd3f*/
   v15->objectTypeFlags = *v27; /*0x5bfd46*/
-  v15->owningHouseIndex = v27[1]; /*0x5bfd4c*/
-  v15->fallRate = v27[2]; /*0x5bfd54*/
-  v28 = v27[3]; /*0x5bfd59*/
+  v15->owningHouseIndex = v27->vtable2; /*0x5bfd4c*/
+  v15->fallRate = v27->vtable3; /*0x5bfd54*/
+  v28 = v27->vtable4; /*0x5bfd59*/
   v47 = 0; /*0x5bfd5c*/
   v15->nextObject = v28; /*0x5bfd64*/
   v48 = v26; /*0x5bfd69*/
@@ -3081,7 +3081,7 @@ char sub_5BC460(int a1)
     ++v3; /*0x5bc495*/
   }
   while ( v2 < 25 ); /*0x5bc49b*/
-  v1[10036] = 1; /*0x5bc4a5*/
+  v1->q2734 = 1; /*0x5bc4a5*/
   Text::DrawRepeated(v1, 0, 0, 80, 25); /*0x5bc4ac*/
   return Text::DrawRepeated((void *)dword_ABF23C, 0, 0, 80, 25); /*0x5bc4c4*/
 }
@@ -3445,11 +3445,11 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
 
   SmallFunc_692290((int)this); /*0x5bda43*/
   /* X11: vtable install elided (implicit via MouseClass virtuals 0x5bda4a) */
-  *((unsigned char *)this + 21852) = 0; /*0x5bda50*/
-  *((unsigned int *)this + 5464) = 0; /*0x5bda56*/
-  *((unsigned int *)this + 5465) = 0; /*0x5bda5c*/
-  *((unsigned int *)this + 5466) = 0; /*0x5bda62*/
-  *((unsigned int *)this + 5446) = &MouseClass::`vftable'; /*0x5bda68*/
+  this->M21852 = 0; /*0x5bda50*/
+  this->M21856 = 0; /*0x5bda56*/
+  this->M21860 = 0; /*0x5bda5c*/
+  this->M21864 = 0; /*0x5bda62*/
+  this->M21784 = &MouseClass::`vftable'; /*0x5bda68*/
   return this; /*0x5bda74*/
 
 }

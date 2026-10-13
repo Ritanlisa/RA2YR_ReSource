@@ -213,7 +213,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
     result = CommandClass::BinarySearchAction((char **)v4, (unsigned int *)&a2); /*0x7245b8*/
     if ( result ) /*0x7245bf*/
     {
-      v4[4] = result; /*0x7245c1*/
+      v4->uniqueId = result; /*0x7245c1*/
       (*((unsigned char *)&(result))) = 0; /*0x7245c7*/
       return result; /*0x7245ca*/
     }
@@ -239,7 +239,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       v10 = aP1->u32_238; /*0x72464f*/
       aP1->u32_244 = v9 + 1; /*0x724655*/
       *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
-      result = v4[2]; /*0x72465e*/
+      result = v4->vtable3; /*0x72465e*/
       if ( v4[1] + 1 <= result ) /*0x724664*/
       {
   LABEL_19:
@@ -247,12 +247,12 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
         *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
         v4->vtable4 = 0; /*0x72470c*/
-        v4[1] = result; /*0x724710*/
+        v4->vtable2 = result; /*0x724710*/
         goto LABEL_20; /*0x724710*/
       }
       if ( result ) /*0x72466c*/
       {
-        a2 = v4[2]; /*0x72467c*/
+        a2 = v4->vtable3; /*0x72467c*/
         if ( result < 0 ) /*0x724680*/
           goto LABEL_20; /*0x724680*/
       }
@@ -266,17 +266,17 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       if ( result ) /*0x7246a1*/
       {
         Array::ForEach((int *)result, 8, v11, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
-        for ( i = 0; i < v4[1]; *(unsigned int *)(result + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
+        for ( i = 0; i < v4->vtable2; *(unsigned int *)(result + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
         {
           v14 = (char *)*v4; /*0x7246ba*/
           ++i; /*0x7246bc*/
           *(unsigned int *)(result + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
         operator delete((void *)((void *)*v4)); /*0x7246d7*/
-        v15 = a2 + v4[2]; /*0x7246e6*/
+        v15 = a2 + v4->vtable3; /*0x7246e6*/
         *v4 = result; /*0x7246e8*/
-        v4[2] = v15; /*0x7246ea*/
-        v4[4] = 0; /*0x7246ed*/
+        v4->vtable3 = v15; /*0x7246ea*/
+        v4->uniqueId = 0; /*0x7246ed*/
         goto LABEL_19; /*0x7246ed*/
       }
   LABEL_20:

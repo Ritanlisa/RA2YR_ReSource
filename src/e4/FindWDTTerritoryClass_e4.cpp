@@ -51,7 +51,7 @@ int E4Recv_766060::sub_766060()
 
   vtable3 = this->M12; /*0x766060*/
   if ( vtable3 ) /*0x766065*/
-    return vtable3[2]; /*0x766067*/
+    return vtable3->vtable3; /*0x766067*/
   else
     return 0; /*0x76606b*/
 

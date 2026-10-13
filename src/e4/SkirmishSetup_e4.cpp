@@ -425,12 +425,12 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
     return 0; /*0x5e6e20*/
   }
   v29 = a5; /*0x5e6e44*/
-  v30 = (void **)(a5 + 8); /*0x5e6e51*/
+  v30 = &a5->vtable3; /*0x5e6e51*/
   DlgCtrlID = GetDlgCtrlID(*(HWND *)a5); /*0x5e6e58*/
   WideString::Assign_Alt(v30, 0); /*0x5e6e5a*/
   if ( DlgCtrlID == 1771 ) /*0x5e6e65*/
   {
-    v32 = *(unsigned int *)(v29 + 4); /*0x5e6e67*/
+    v32 = v29->vtable2; /*0x5e6e67*/
     if ( v32 != -1 ) /*0x5e6e6d*/
     {
       v33 = SendDlgItemMessageA((HWND)this, 1771, 0x199u, v32, 0); /*0x5e6e7d*/

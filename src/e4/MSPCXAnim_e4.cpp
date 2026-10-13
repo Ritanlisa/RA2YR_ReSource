@@ -306,7 +306,7 @@ int MSPCXAnim_42::FindIndex_Pair(unsigned int * a2)
   result = 0; /*0x5d0aa5*/
   if ( m_10 <= 0 ) /*0x5d0aab*/
     return -1; /*0x5d0acc*/
-  for ( i = *&this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d0ab1*/
+  for ( i = *&this->q004; *i != *a2 || i->vtable2 != a2[1]; i += 2 ) /*0x5d0ab1*/
   {
     if ( ++result >= m_10 ) /*0x5d0aca*/
       return -1; /*0x5d0aca*/

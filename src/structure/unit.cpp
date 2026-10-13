@@ -278,8 +278,8 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* a2)
         (*(((unsigned short *)&(v9)) + 1)) = v7 + a2[1]; /*0x6b60c6*/
         v9 = v9; /*0x6b60d5*/
         v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v9); /*0x6b60d9*/
-        v6[18] = *(&this->q405); /*0x6b60ea*/
-        *((unsigned char *)v6 + 287) = i + this->storedTiberium * v7; /*0x6b60f5*/
+        v6->q048 = *(&this->q405); /*0x6b60ea*/
+        v6->u8_11F = i + this->storedTiberium * v7; /*0x6b60f5*/
         BuildingClass::CreatePlacementCrater(v6); /*0x6b60fb*/
       }
       result = ++v7; /*0x6b6115*/
@@ -587,8 +587,8 @@ int UnitClass::Deploy()
         {
           location = v2->Owner->location; /*0x71940b*/
           v56 = *location; /*0x71941c*/
-          v57 = location[1]; /*0x719423*/
-          v58 = location[2]; /*0x71942f*/
+          v57 = location->Y; /*0x719423*/
+          v58 = location->Z; /*0x71942f*/
           AnimClass::ctor( /*0x719442*/
             v11,
             *(void **)(*(unsigned int *)&g_RulesClass_Instance + 828),
@@ -644,9 +644,9 @@ int UnitClass::Deploy()
           v25 = &v2->State; /*0x719523*/
         }
         *p_State = *v25; /*0x71953d*/
-        v2->Timer[0] = v25[1]; /*0x719542*/
+        v2->Timer[0] = v25->u32_4; /*0x719542*/
         v26 = this; /*0x719548*/
-        v2->Timer[1] = v25[2]; /*0x71954c*/
+        v2->Timer[1] = v25->u32_8; /*0x71954c*/
         if ( (int)v26 < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3072) ) /*0x71955b*/
         {
           v27 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3068); /*0x719562*/
@@ -1785,7 +1785,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
           if ( this->voiceHandle ) /*0x73774a*/
           {
             if ( Member /*0x737771*/
-              && (*(int (__thiscall **)(int))(*(unsigned int *)Member + 44))(Member) == 6
+              && Member->ReturnZeroPos() == 6
               && (*(int (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)&this->isInLogic8))(this) == 7 )
             {
               (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*&this->u32_FC2))(this, 21, Member); /*0x73777a*/
@@ -2731,8 +2731,8 @@ int UnitClass::CalcMoveTarget()
               this->unknownCoords568[1] + g_DDrawSurfaceManager.scenario[2 * (v18 & 7) + 103],
               this->unknownCoords568[2]);
       v75 = *v19; /*0x735b99*/
-      ObjectVector_field_0x04 = v19[1]; /*0x735ba5*/
-      ObjectVector_field_0x08 = v19[2]; /*0x735bb2*/
+      ObjectVector_field_0x04 = v19->u32_4; /*0x735ba5*/
+      ObjectVector_field_0x08 = v19->u32_8; /*0x735bb2*/
       v20 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, this->unknownCoords568); /*0x735bb6*/
       Coords = CellClass::GetCoords(v20, v74); /*0x735bc2*/
       v22 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v75); /*0x735bd3*/
@@ -3065,7 +3065,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
         if ( *(int *)(this->Type + 1504) > 0 ) /*0x741aea*/
         {
           Member = Team::GetMember((Team *)this, 0); /*0x741af0*/
-          if ( (*(int (__thiscall **)(int))(*(unsigned int *)Member + 44))(Member) == 15 ) /*0x741aff*/
+          if ( Member->ReturnZeroPos() == 15 ) /*0x741aff*/
           {
             if ( !((unsigned int)(a2)) ) /*0x741b03*/
               goto LABEL_49; /*0x741b03*/
@@ -3083,12 +3083,12 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
             if ( this->voiceHandle ) /*0x741b4a*/
             {
               v13 = Team::GetMember((Team *)this, 0); /*0x741b58*/
-              if ( (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13) == 2 ) /*0x741b67*/
+              if ( v13->ReturnZeroPos() == 2 ) /*0x741b67*/
               {
                 v14 = (unsigned int *)Team::GetMember((Team *)this, 0); /*0x741b6d*/
                 if ( *(unsigned char *)(v14[433] + 3580) ) /*0x741b78*/
                 {
-                  (*(void (__thiscall **)(unsigned int *, unsigned int, int))(*v14 + 1152))(v14, 0, 1); /*0x741b8a*/
+                  v14->vt_slot_1152(0, 1); /*0x741b8a*/
                   (*(void (__thiscall **)(Class_7F5C70 *, int))(*&this->vtable2))(this, 25); /*0x741b97*/
                   (*(void (__thiscall **)(Class_7F5C70 *, int))(*&this->vtable2))(this, 3); /*0x741ba4*/
                 }
@@ -3415,8 +3415,8 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
           v131 = 1; /*0x742467*/
           if ( !v48 ) /*0x74246c*/
             goto LABEL_182; /*0x74246c*/
-          if ( (*(int (__thiscall **)(int))(*(unsigned int *)v48 + 44))(v48) != 6
-            || ((v50 = (*(int (__thiscall **)(int))(*(unsigned int *)v48 + 44))(v48) == 6 ? v48 : 0, ((unsigned int)(a2)))
+          if ( v48->ReturnZeroPos() != 6
+            || ((v50 = v48->ReturnZeroPos() == 6 ? v48 : 0, ((unsigned int)(a2)))
               ? (v51 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)((unsigned int)(a2)) + 44))(((unsigned int)(a2))) == 11
                      ? (CellClass *)((unsigned int)(a2))
                      : 0)
@@ -7580,9 +7580,9 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
     v14 = (unsigned int *)Team::GetMember((Team *)this, 0); /*0x737ccc*/
     if ( v14 ) /*0x737cd0*/
     {
-      if ( (*(int (__thiscall **)(unsigned int *))(*v14 + 44))(v14) == 6 ) /*0x737cdc*/
+      if ( v14->ReturnZeroPos() == 6 ) /*0x737cdc*/
       {
-        if ( *(unsigned char *)(v14[328] + 5821) ) /*0x737ce4*/
+        if ( v14->q520->WeaponsFactory ) /*0x737ce4*/
         {
           v69 = this->location; /*0x737cfa*/
           v70 = this->locationY; /*0x737d06*/
@@ -7890,7 +7890,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
     v50 = (ObjectClass *)v47; /*0x7382a1*/
     if ( v47 ) /*0x7382a5*/
     {
-      *&v47->q08C = *(&this->attachedBomb0); /*0x7382b7*/
+      *&v47->onBridge = *(&this->attachedBomb0); /*0x7382b7*/
       v72 = this->location; /*0x7382c1*/
       v73 = this->locationY; /*0x7382ca*/
       v51 = *(unsigned int *)v47; /*0x7382ce*/
@@ -8796,7 +8796,7 @@ void UnitClass::Destructor()
         {
           v5 = LinkedList::Pop((LinkedList *)this->passengers); /*0x735833*/
           if ( v5 ) /*0x73583a*/
-            (*(void (__thiscall **)(int, int))(*(unsigned int *)v5 + 32))(v5, 1); /*0x735842*/
+            v5->vt_slot_32(1); /*0x735842*/
         }
         while ( this->passengers[1] ); /*0x735845*/
       }

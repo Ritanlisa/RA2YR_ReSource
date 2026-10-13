@@ -79,7 +79,7 @@ int HouseClass::GetRepairStepAmount()
   int result; // eax
 
   v1 = (unsigned int *)this->builtInfantryTypes[126]; /*0x459840*/
-  result = v1[937]; /*0x459846*/
+  result = v1->qEA4; /*0x459846*/
   if ( !result ) /*0x45984e*/
   {
     result = v1[938]; /*0x459850*/
@@ -2135,7 +2135,7 @@ LABEL_107:
           if ( v92 >= 0 ) /*0x507abd*/
           {
             v93 = (unsigned int *)(*(unsigned int *)(_EBP + 22280) + 16 * v92); /*0x507ad3*/
-            while ( v93[1] != v106 || *v93 != BuildableFromArray[894] ) /*0x507aee*/
+            while ( v93[1] != v106 || *v93 != BuildableFromArray->ArrayIndex ) /*0x507aee*/
             {
               --v92; /*0x507af2*/
               v93 -= 4; /*0x507af3*/
@@ -2624,7 +2624,7 @@ int HouseClass_RespawnStartingBuildings(void ** a2, unsigned int * a3, int a4)
       v9 = v7 + 2; /*0x50d355*/
       v10 = (Cell *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v7 + 2); /*0x50d35e*/
       v11 = ((Cell *)(v10))->IsBridge(); /*0x50d365*/
-      if ( v11 && (v12 = v11[328], v12 == v8) && v11[135] == v5 )
+      if ( v11 && (v12 = v11->u32_520, v12 == v8) && v11->u32_21C == v5 )
       {
         v13 = *v11; /*0x50d386*/
         v22[0] = -*(unsigned int *)(v12 + 160); /*0x50d38a*/
@@ -2647,7 +2647,7 @@ int HouseClass_RespawnStartingBuildings(void ** a2, unsigned int * a3, int a4)
           v15 = 0; /*0x50d3c5*/
         v16 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v9); /*0x50d3e3*/
         a2 = &retaddr; /*0x50d3ee*/
-        v17 = (unsigned int *)(*(int (__thiscall **)(void *))(*(unsigned int *)v16 + 72))(v16); /*0x50d3f1*/
+        v17 = (unsigned int *)v16->vt_slot_72(); /*0x50d3f1*/
         a4 = 0; /*0x50d3f6*/
         v23[0] = *v17; /*0x50d3f8*/
         v23[1] = v17[1]; /*0x50d3ff*/

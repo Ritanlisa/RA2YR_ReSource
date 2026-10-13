@@ -57,7 +57,7 @@ AbstractClass * FootClass::Destruct()
   this->TechnoClass = &FootClass::`vftable'; /*0x4d359d*/
   this->? = &FootClass::`vftable'; /*0x4d35a5*/
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35ac) */
-  this->? = &FootClass::`vftable'; /*0x4d35b3*/
+  this->vtable4 = &FootClass::`vftable'; /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -89,13 +89,13 @@ AbstractClass * FootClass::Destruct()
     (*(void (**)(int))(*(unsigned int *)v7 + 8))(this->locomotor[0]); /*0x4d3690*/
   v8 = *(void **)this->q_5B0; /*0x4d3693*/
   this->FootClass_field_abstract_array_5AC[0] = (int)&VectorClass<AbstractClass *>::`vftable'; /*0x4d36a0*/
-  if ( v8 && this->__pad_5B0[9] ) /*0x4d36a8*/
+  if ( v8 && this->u32_5B9 ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
-    *(unsigned int *)this->__pad_5B0 = 0; /*0x4d36b9*/
+    *(unsigned int *)this->q_5B0 = 0; /*0x4d36b9*/
   }
-  this->__pad_5B0[9] = 0; /*0x4d36bf*/
-  *(unsigned int *)&this->__pad_5B0[4] = 0; /*0x4d36c5*/
+  this->u32_5B9 = 0; /*0x4d36bf*/
+  *&this->q5B4 = 0; /*0x4d36c5*/
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
   this->unknownAbstractArray588[0] = (int)&VectorClass<AbstractClass *>::`vftable'; /*0x4d36d1*/
   if ( v9 && this->u32_595 ) /*0x4d36dc*/
@@ -192,7 +192,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
     v8 = v6->u32_694; /*0x710026*/
     if ( v8 && v8[423] && *(unsigned char *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 3278) ) /*0x710042*/
       BuildingClass::Deploy(v27, v4, v5); /*0x710058*/
-    v9 = v6[413]; /*0x71005d*/
+    v9 = v6->u32_674; /*0x71005d*/
     v10 = v6 + 413; /*0x710063*/
     *(unsigned int *)v28.m_Position = 0; /*0x71006b*/
     if ( v9 ) /*0x710073*/
@@ -201,7 +201,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       if ( v11 < 0 && v11 != -2147467262 ) /*0x710088*/
         WinAPI::Wrapper(v11); /*0x71008b*/
     }
-    if ( *(unsigned char *)((*(int (**)(int *))(*v6 + 132))(v6) + 1516)
+    if ( *(unsigned char *)(v6->GetSpecialValue() + 1516)
       && *(unsigned int *)v28.m_Position
       && !v6[172]
       && (*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)v28.m_Position + 28))(*(unsigned int *)v28.m_Position) )
@@ -215,8 +215,8 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( !v13 ) /*0x710126*/
           WinAPI::Wrapper(-2147467261); /*0x71012d*/
         (*(void (**)(int))(*(unsigned int *)*v10 + 72))(*v10); /*0x710137*/
-        (*(void (**)(int *, int))(*v6 + 496))(v6, -1); /*0x710140*/
-        (*(void (**)(int *, int, unsigned int))(*v6 + 488))(v6, 13, 0); /*0x71014e*/
+        v6->vt_slot_496(-1); /*0x710140*/
+        v6->vt_slot_488(13, 0); /*0x71014e*/
       }
       else
       {
@@ -245,7 +245,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         dword_B0EA94,
         v29);
       v15 = *v6; /*0x7101b6*/
-      v16 = (*(int (**)(int *, int *))(*v6 + 72))(v6, &v28.StreamClass_field_0C); /*0x7101bf*/
+      v16 = v6->vt_slot_72(&v28.StreamClass_field_0C); /*0x7101bf*/
       (*(void (**)(int *, int))(v15 + 244))(v6, v16); /*0x7101c5*/
       v17 = *v6; /*0x7101cb*/
       v6->u32_6B6 = 1; /*0x7101cf*/
@@ -280,7 +280,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         m_Size = v28.m_Size; /*0x710297*/
         if ( *(unsigned int *)(v28.m_Size + 684) ) /*0x71029b*/
           TechnoClass::EjectPassengers((TechnoClass *)v28.m_Size, 0); /*0x7102a6*/
-        if ( v6[171] ) /*0x7102ab*/
+        if ( v6->u32_2AC ) /*0x7102ab*/
           TechnoClass::EjectPassengers((TechnoClass *)v6, 1); /*0x7102b7*/
         if ( !v28.m_Data ) /*0x7102c4*/
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
@@ -293,8 +293,8 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           if ( v22 ) /*0x7102f0*/
             (*(void (**)(int))(*(unsigned int *)v22 + 8))(v22); /*0x7102f6*/
         }
-        m_Size->locomotorTarget = (v6[5] & 1) != 0 ? v6 : 0;
-        *((v6[5] & 1) != 0 ? v6 + 172 : (int *)688) = m_Size;
+        m_Size->locomotorTarget = (v6->u32_14 & 1) != 0 ? v6 : 0;
+        *((v6->u32_14 & 1) != 0 ? v6 + 172 : (int *)688) = m_Size;
         (*(void (**)(unsigned int, int, int))(*m_Size->locomotorTarget + 1152))( /*0x710326*/
           m_Size->locomotorTarget,
           m_Size,
@@ -306,7 +306,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         v6->u32_6AD = 1; /*0x710352*/
         Member = Team::GetMember((Team *)v6, 0); /*0x710359*/
         if ( Member && (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/
-          (*(void (**)(int *, int))(*v6 + 640))(v6, 3); /*0x710374*/
+          v6->vt_slot_640(3); /*0x710374*/
         (*(void (**)(unsigned int, int, int))(*m_Size->locomotorTarget + 488))(m_Size->locomotorTarget, 5, 1); /*0x710386*/
         v25 = m_Size->locomotorTarget; /*0x71038c*/
         if ( !*(unsigned char *)(v25[135] + 492) && !*(unsigned char *)((*(int (**)(unsigned int *))(*v25 + 132))(v25) + 1516) ) /*0x7103aa*/

@@ -849,14 +849,14 @@ unsigned int * SessionClass::GetEntry(unsigned int *aP1)
   if ( v2 == -1 ) /*0x691506*/
   {
     *aP1 = -1; /*0x691510*/
-    aP1[1] = 0; /*0x691512*/
+    aP1->u32_4 = 0; /*0x691512*/
     return aP1; /*0x691508*/
   }
   else
   {
     v4 = this->Config[3]; /*0x691518*/
     *aP1 = *(unsigned int *)(v4 + 8 * v2 + 164); /*0x691527*/
-    aP1[1] = *(unsigned int *)(v4 + 8 * v2 + 168); /*0x691531*/
+    aP1->u32_4 = *(unsigned int *)(v4 + 8 * v2 + 168); /*0x691531*/
     return aP1; /*0x69151b*/
   }
 }
@@ -2008,8 +2008,8 @@ AbstractClass * * SessionClass::LoadMissionList()
                       v36 = v35; /*0x699e61*/
                       if ( v35 ) /*0x699e65*/
                       {
-                        v37 = *((unsigned int *)v35 + 97); /*0x699e6b*/
-                        v38 = *((unsigned int *)v35 + 96); /*0x699e71*/
+                        v37 = v35->u32_184; /*0x699e6b*/
+                        v38 = v35->u32_180; /*0x699e71*/
                         if ( v38 == v37 ) /*0x699e7b*/
                           swprintf(Buffer, (const size_t)&off_83F4CC, (const wchar_t *const)0x28, v38, 41); /*0x699ea8*/
                         else

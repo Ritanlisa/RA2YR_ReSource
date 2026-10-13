@@ -848,7 +848,7 @@ int PostLoadInitScenario()
     if ( (Debug::AccumFlags((Debug *)v7) & 8) != 0 ) /*0x684e3b*/
     {
       v12 = TeamClass::FindOrCreate(v7); /*0x684e44*/
-      Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(v12->u32_24 + 160) + 164) + 184)); /*0x684e5b*/
+      Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(v12->buildingType + 160) + 164) + 184)); /*0x684e5b*/
       if ( Owner ) /*0x684e62*/
       {
         v14 = *(unsigned int *)(Owner + 64); /*0x684e64*/
@@ -1198,7 +1198,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
   if ( byte_A8ED6B ) /*0x687d29*/
   {
     v4 = CCFileClass::Construct((CCFileClass *)&v10.customSound_controller[3], Source); /*0x687d34*/
-    v5 = (*(int (**)(unsigned int *, unsigned int))(*v4 + 20))(v4, 0); /*0x687d3e*/
+    v5 = v4->vt_slot_20(0); /*0x687d3e*/
     v10.customSound_controller[3] = (int)&vt_CCFileClass; /*0x687d48*/
     v8 = v5; /*0x687d50*/
     v12 = 0; /*0x687d54*/
@@ -1630,7 +1630,7 @@ void GenerateScenarioUnits(char a1)
   LABEL_16:
     v12 = *&dword_A8022C->vtable1; /*0x688825*/
     ppv = v12; /*0x68882e*/
-    v13 = v12[13]; /*0x688832*/
+    v13 = v12->relatedTagsCapacity; /*0x688832*/
     if ( *(unsigned char *)(v13 + 422) ) /*0x688835*/
       goto LABEL_111; /*0x68883d*/
     v54[252] = v13 + 36; /*0x688846*/
@@ -1810,7 +1810,7 @@ void GenerateScenarioUnits(char a1)
           }
           else if ( v42 ) /*0x688bd0*/
           {
-            (*(void (**)(int *, int))(*v42 + 32))(v42, 1); /*0x688bd8*/
+            v42->Seek_0(1); /*0x688bd8*/
           }
         }
         v45 = Block; /*0x688c0b*/
@@ -2128,7 +2128,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
           v25 = (Object *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v28); /*0x6891ee*/
           v26 = ((Object *)(v25))->FindClosestObjectCell(&v42, 0, 0); /*0x6891f5*/
           if ( !v26 /*0x689218*/
-            || (*(int (**)(int))(*(unsigned int *)v26 + 44))(v26) == 15
+            || (*(int (**)(int))(*&v26->q0B0))(v26) == 15
             && (*(int (**)(int *))(*v24 + 44))(v24) == 15 )
           {
             ((Coord *)((Coord *)v45))->Subtract((v28[0] << 8) + 128, (v28[1] << 8) + 128, 0); /*0x68923d*/

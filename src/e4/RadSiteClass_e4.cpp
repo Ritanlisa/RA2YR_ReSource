@@ -45,7 +45,7 @@ RadSiteClass::RadSiteClass()
   this->AbstractClass = &RadSiteClass::`vftable'; /*0x65b228*/
   this->? = &RadSiteClass::`vftable'; /*0x65b22e*/
   /* X11: vtable install elided (implicit via RadSiteClass virtuals 0x65b235) */
-  this->? = &RadSiteClass::`vftable'; /*0x65b23c*/
+  this->vtable4 = &RadSiteClass::`vftable'; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0

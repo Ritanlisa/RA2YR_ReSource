@@ -141,12 +141,12 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
     if ( v3 ) /*0x691c73*/
     {
       ((AbstractTypeClass *)(v3))->Constructor(Source); /*0x691c7c*/
-      v4[39] = 0; /*0x691c81*/
-      v4[40] = 0; /*0x691c8b*/
+      v4->q09C = 0; /*0x691c81*/
+      v4->q0A0 = 0; /*0x691c8b*/
       *v4 = (int)&vt_ScriptTypeClass; /*0x691c95*/
-      v4[1] = (int)&vt_ScriptTypeClass; /*0x691c9b*/
-      v4[2] = (int)&vt_ScriptTypeClass; /*0x691ca2*/
-      v4[3] = (int)&vt_ScriptTypeClass; /*0x691ca9*/
+      v4->u32_4 = (int)&vt_ScriptTypeClass; /*0x691c9b*/
+      v4->u32_8 = (int)&vt_ScriptTypeClass; /*0x691ca2*/
+      v4->q00C = (int)&vt_ScriptTypeClass; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)
@@ -179,7 +179,7 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
             goto LABEL_17; /*0x691d21*/
         }
       }
-      v4[38] = v7; /*0x691d26*/
+      v4->u32_98 = v7; /*0x691d26*/
       return v4; /*0x691d30*/
     }
     return 0; /*0x691d3e*/
@@ -1358,7 +1358,7 @@ int TeamTypeClass_28::FindItem(unsigned int * a2)
   result = 0; /*0x6f2645*/
   if ( m_10 <= 0 ) /*0x6f264b*/
     return -1; /*0x6f266c*/
-  for ( i = *&this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2651*/
+  for ( i = *&this->q004; *i != *a2 || i->vtable2 != a2[1]; i += 2 ) /*0x6f2651*/
   {
     if ( ++result >= m_10 ) /*0x6f266a*/
       return -1; /*0x6f266a*/

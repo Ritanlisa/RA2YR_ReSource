@@ -70,7 +70,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
     return result; /*0x655c86*/
   if ( v5 >= *(unsigned int *)result + result->vtable3 ) /*0x655c93*/
     return result; /*0x655c93*/
-  v6 = a2[1]; /*0x655c99*/
+  v6 = a2->__pad_004; /*0x655c99*/
   v7 = result->vtable2; /*0x655c9c*/
   if ( v6 < v7 ) /*0x655ca5*/
     return result; /*0x655ca5*/
@@ -97,7 +97,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
   while ( 1 ) /*0x655dc4*/
   {
     v13 = *(v12 - 1); /*0x655dc4*/
-    if ( *v12 != *a2 || v12[1] != a2[1] ) /*0x655dd7*/
+    if ( *v12 != *a2 || v12[1] != a2->__pad_004 ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
     if ( (!v42 || (uint8_t)((House *)(*(void **)(v13 + 540)))->IsHumanPlayer()) /*0x655e10*/
       && (!*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 559)
@@ -334,9 +334,9 @@ void FogOfWar::RevealCell(unsigned int *aP1)
   if ( (int)*aP1 >= 0 /*0x656310*/
     && *aP1 < (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C)
     && (int)aP1[1] >= 0
-    && aP1[1] < (*(int (**)(unsigned int))(*this->u32_121C + 128))(this->u32_121C) )
+    && aP1->u32_4 < (*(int (**)(unsigned int))(*this->u32_121C + 128))(this->u32_121C) )
   {
-    v3 = *aP1 + aP1[1] * (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C); /*0x656329*/
+    v3 = *aP1 + aP1->u32_4 * (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C); /*0x656329*/
     v4 = 1 << (v3 & 7); /*0x656333*/
     v5 = (unsigned char *)(this->u32_1274 + (v3 >> 3)); /*0x65633e*/
     if ( (*v5 & (uint8_t)v4) == 0 ) /*0x656344*/
@@ -352,7 +352,7 @@ void FogOfWar::RevealCell(unsigned int *aP1)
         v9 = this->u32_1260; /*0x656380*/
         this->u32_126C = v8 + 1; /*0x656386*/
         *(unsigned int *)(v9 + 8 * v8) = *aP1; /*0x65638b*/
-        *(unsigned int *)(v9 + 8 * v8 + 4) = aP1[1]; /*0x656391*/
+        *(unsigned int *)(v9 + 8 * v8 + 4) = aP1->u32_4; /*0x656391*/
       }
       this->u32_14D9 = 1; /*0x656395*/
     }

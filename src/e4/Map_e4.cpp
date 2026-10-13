@@ -930,7 +930,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
           v14 = *(unsigned int *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
             && (!Cell::IsEmpty(v13) && !sub_4863A0(v13)
-             || *((uint8_t *)v13 + 284) != *(char *)(v14 + 42)
+             || v13->u32_470 != *(char *)(v14 + 42)
              || a3 && *((unsigned char *)dword_ABED10 + 80 * (int16_t)v17 + 80 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v17)) + 2))) + 70)) )
           {
             return 0; /*0x5a7e7a*/
@@ -1142,8 +1142,8 @@ char sub_63AB60(int a1, int a2)
     goto LABEL_11; /*0x63ab98*/
   Coords = ScriptAction::GetCoords((unsigned int **)dword_AC4CCC, v10); /*0x63aba3*/
   v9[0] = *Coords; /*0x63abaa*/
-  v9[1] = Coords[1]; /*0x63abb5*/
-  v9[2] = Coords[2]; /*0x63abc0*/
+  v9[1] = Coords->u32_4; /*0x63abb5*/
+  v9[2] = Coords->u32_8; /*0x63abc0*/
   v5 = ToCoordPixel(&v8, v9); /*0x63abc4*/
   ((Rect *)(v11))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63abe0*/
   v10[0] = v11[0]; /*0x63abf9*/
@@ -1691,7 +1691,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x76a428*/
         {
-          v7 = (unsigned int *)(v6 + 8); /*0x76a42a*/
+          v7 = &v6->vtable3; /*0x76a42a*/
           v8 = a2; /*0x76a42d*/
           do /*0x76a43a*/
           {

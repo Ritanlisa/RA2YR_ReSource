@@ -61,13 +61,13 @@ int InfantryClass::PerFrameUpdate(int a2)
 
   v2 = v2; /*0x517cc2*/
   result = TechnoClass::Update((int)(v14), a2); /*0x517cc4*/
-  v5 = *(BuildingClass **)(v2 + 540); /*0x517cc9*/
+  v5 = v2->owner; /*0x517cc9*/
   if ( v5 ) /*0x517cd1*/
     result = (unsigned int *)BuildingClass::PowerUpdate(v5, (unsigned char *)v2); /*0x517cd4*/
-  v6 = *(unsigned int *)(v2 + 1728); /*0x517cd9*/
+  v6 = v2->Type; /*0x517cd9*/
   if ( v6 ) /*0x517ce1*/
   {
-    v7 = *(unsigned int *)(v2 + 540); /*0x517ce7*/
+    v7 = v2->owner; /*0x517ce7*/
     if ( v7 ) /*0x517cef*/
     {
       v8 = 0; /*0x517cf4*/
@@ -83,21 +83,21 @@ int InfantryClass::PerFrameUpdate(int a2)
           if ( v8 >= v10 ) /*0x517d0f*/
             goto LABEL_11; /*0x517d0f*/
         }
-        ((char)((Power *)(v2 + 336)))->ChangedHouse((void *)(1)); /*0x517d1b*/
+        ((char)(&v2->veterancy))->ChangedHouse((void *)(1)); /*0x517d1b*/
       }
     }
   LABEL_11:
-    v12 = *(unsigned int *)(v2 + 540); /*0x517d20*/
-    if ( v12 && v12->barracksInfiltrated && *(unsigned char *)(*(unsigned int *)(v2 + 1728) + 3214) ) /*0x517d3a*/
-      ((char)((Power *)(v2 + 336)))->ChangedHouse((void *)(1)); /*0x517d4c*/
-    result = *(unsigned int **)(v2 + 1728); /*0x517d51*/
-    *(unsigned int *)(v2 + 108) = result[40]; /*0x517d5d*/
-    *(unsigned int *)(v2 + 112) = result[40]; /*0x517d66*/
-    v13 = result[416]; /*0x517d69*/
+    v12 = v2->owner; /*0x517d20*/
+    if ( v12 && v12->barracksInfiltrated && *(unsigned char *)(v2->Type + 3214) ) /*0x517d3a*/
+      ((char)(&v2->veterancy))->ChangedHouse((void *)(1)); /*0x517d4c*/
+    result = v2->Type; /*0x517d51*/
+    v2->health = result->q0A0; /*0x517d5d*/
+    v2->estimatedHealth = result->q0A0; /*0x517d66*/
+    v13 = result->q680; /*0x517d69*/
     if ( v13 == -1 ) /*0x517d72*/
-      v13 = result[417]; /*0x517d74*/
-    *(unsigned int *)(v2 + 764) = v13; /*0x517d7a*/
-    *(unsigned char *)(v2 + 978) = *((unsigned char *)result + 3280); /*0x517d86*/
+      v13 = result->__pad_684; /*0x517d74*/
+    v2->barrelRecoil = v13; /*0x517d7a*/
+    v2->q3D2 = result->u8_CD0; /*0x517d86*/
   }
   return (int)(result); /*0x517d8c*/
 }
@@ -582,8 +582,8 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                   v29 = (unsigned int *)v28[18](this, &v90); /*0x435e42*/
                   v30 = Coord::Subtract((Coord *)v93, *v29 - v75, v29[1] - v76, v29[2] - v27); /*0x435e65*/
                   v71 = *v30; /*0x435e6c*/
-                  v72 = v30[1]; /*0x435e77*/
-                  v73 = v30[2]; /*0x435e7e*/
+                  v72 = v30->u32_4; /*0x435e77*/
+                  v73 = v30->u32_8; /*0x435e7e*/
                   Blocka = (void *)Coord::Length((Coord *)&v71); /*0x435e89*/
                   v62 = BuildingLightClass::CalculateDistanceIntensity(this); /*0x435e92*/
                   __asm /*0x435e96*/
@@ -702,7 +702,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                     v81 += DSurface_ViewBounds.field_0; /*0x4360e6*/
                     v88[0] = v81; /*0x4360ea*/
                     v46 = ZCoordToScreenY(v27 + 400); /*0x4360f5*/
-                    v47 = location[1]; /*0x4360f7*/
+                    v47 = location->Y; /*0x4360f7*/
                     v48 = -v46; /*0x4360fd*/
                     v49 = location[2] + 250; /*0x4360ff*/
                     v78 = *location; /*0x436105*/
@@ -923,9 +923,9 @@ int BuildingLightClass::SD_vt23() {
       location = FollowingObject->location; /*0x43632f*/
       v18 = *location; /*0x436335*/
       v80 = *location; /*0x436337*/
-      v19 = location[1]; /*0x43633b*/
+      v19 = location->Y; /*0x43633b*/
       v81 = v19; /*0x43633e*/
-      v20 = location[2]; /*0x436342*/
+      v20 = location->Z; /*0x436342*/
       v82 = v20; /*0x43634b*/
       v21 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 1936) * 4.0 + *&this->__pad_0B4; /*0x43635b*/
       *&this->__pad_0B4 = v21; /*0x436367*/
@@ -993,8 +993,8 @@ int BuildingLightClass::SD_vt23() {
       break;
   }
   v84 = *v4; /*0x43630e*/
-  v85 = v4[1]; /*0x436315*/
-  v16 = v4[2]; /*0x436319*/
+  v85 = v4->u32_4; /*0x436315*/
+  v16 = v4->u32_8; /*0x436319*/
   LABEL_30:
   v16 = v16; /*0x436606*/
   LABEL_31:
@@ -1031,8 +1031,8 @@ int BuildingLightClass::SD_vt23() {
             v51 = (unsigned int *)(*((int (__thiscall **)(BuildingLightClass *, float *))this->vfptr + 18))(this, v96); /*0x4366b9*/
             v52 = Coord::Subtract((Coord *)v95, *v51 - *v50, v51[1] - v50[1], v51[2] - v50[2]); /*0x4366dc*/
             v80 = *v52; /*0x4366e6*/
-            v81 = v52[1]; /*0x4366ed*/
-            v82 = v52[2]; /*0x4366f8*/
+            v81 = v52->u32_4; /*0x4366ed*/
+            v82 = v52->u32_8; /*0x4366f8*/
             Math::Sqrt((double)v80 * (double)v80 + (double)v82 * (double)v82 + (double)v81 * (double)v81); /*0x43671d*/
             (*((unsigned short *)&(v53))) = Math::RoundToInt(v1); /*0x436725*/
             v54 = *(unsigned int *)&g_RulesClass_Instance; /*0x43672a*/
@@ -1408,7 +1408,7 @@ int BuildingClass::HandleFactoryCommand() {
       {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v20, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
-        v17 = WaypointCoords[4]; /*0x443487*/
+        v17 = WaypointCoords->vtable2; /*0x443487*/
         v4 = this->GetID(); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
@@ -1442,7 +1442,7 @@ int BuildingClass::HandleFactoryCommand() {
                       *(unsigned int *)(this->attachedBomb->BombClass_field_28 + 48),
                       0xAu,
                       *(unsigned int *)v7,
-                      v7[4]);
+                      v7->vtable2);
       break;
     case 1: /*0x443422*/
       v8 = this->Type->BuildingTypeClass_field_ED8; /*0x443627*/
@@ -1457,10 +1457,10 @@ int BuildingClass::HandleFactoryCommand() {
       }
       v9 = ScriptAction::GetWaypointCoords((ScriptAction *)v20, v24); /*0x443648*/
       v16 = *(unsigned int *)v9; /*0x443658*/
-      v18 = v9[4]; /*0x44365e*/
+      v18 = v9->vtable2; /*0x44365e*/
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
-      v14 = v10[4]; /*0x443676*/
+      v14 = v10->vtable2; /*0x443676*/
       v11 = this->GetID(); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
@@ -1569,7 +1569,7 @@ int BuildingClass::HandleFactoryCommand() {
       {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v20, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
-        v17 = WaypointCoords[4]; /*0x443487*/
+        v17 = WaypointCoords->vtable2; /*0x443487*/
         v4 = this->GetID(); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
@@ -1603,7 +1603,7 @@ int BuildingClass::HandleFactoryCommand() {
                       *(unsigned int *)(this->attachedBomb->BombClass_field_28 + 48),
                       0xAu,
                       *(unsigned int *)v7,
-                      v7[4]);
+                      v7->vtable2);
       break;
     case 1: /*0x443422*/
       v8 = this->Type->BuildingTypeClass_field_ED8; /*0x443627*/
@@ -1618,10 +1618,10 @@ int BuildingClass::HandleFactoryCommand() {
       }
       v9 = ScriptAction::GetWaypointCoords((ScriptAction *)v20, v24); /*0x443648*/
       v16 = *(unsigned int *)v9; /*0x443658*/
-      v18 = v9[4]; /*0x44365e*/
+      v18 = v9->vtable2; /*0x44365e*/
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
-      v14 = v10[4]; /*0x443676*/
+      v14 = v10->vtable2; /*0x443676*/
       v11 = this->GetID(); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
@@ -1721,7 +1721,7 @@ int BuildingClass::HandleFactoryCommand() {
       {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v20, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
-        v17 = WaypointCoords[4]; /*0x443487*/
+        v17 = WaypointCoords->vtable2; /*0x443487*/
         v4 = this->GetID(); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
@@ -1755,7 +1755,7 @@ int BuildingClass::HandleFactoryCommand() {
                       *(unsigned int *)(this->attachedBomb->BombClass_field_28 + 48),
                       0xAu,
                       *(unsigned int *)v7,
-                      v7[4]);
+                      v7->vtable2);
       break;
     case 1: /*0x443422*/
       v8 = this->Type->BuildingTypeClass_field_ED8; /*0x443627*/
@@ -1770,10 +1770,10 @@ int BuildingClass::HandleFactoryCommand() {
       }
       v9 = ScriptAction::GetWaypointCoords((ScriptAction *)v20, v24); /*0x443648*/
       v16 = *(unsigned int *)v9; /*0x443658*/
-      v18 = v9[4]; /*0x44365e*/
+      v18 = v9->vtable2; /*0x44365e*/
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
-      v14 = v10[4]; /*0x443676*/
+      v14 = v10->vtable2; /*0x443676*/
       v11 = this->GetID(); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
@@ -1839,7 +1839,7 @@ int BuildingClass::HandleFactoryCommand() {
       {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v20, this); /*0x443472*/
         v15 = *(unsigned int *)WaypointCoords; /*0x443483*/
-        v17 = WaypointCoords[4]; /*0x443487*/
+        v17 = WaypointCoords->vtable2; /*0x443487*/
         v4 = this->GetID(); /*0x44348c*/
         v5 = EventClass::Add(v22, v4, 0x11u, v15, v17); /*0x443494*/
         if ( *(int *)&dword_A802C8 < 128 ) /*0x4434a3*/
@@ -1873,7 +1873,7 @@ int BuildingClass::HandleFactoryCommand() {
                       *(unsigned int *)(this->attachedBomb->BombClass_field_28 + 48),
                       0xAu,
                       *(unsigned int *)v7,
-                      v7[4]);
+                      v7->vtable2);
       break;
     case 1: /*0x443422*/
       v8 = this->Type->BuildingTypeClass_field_ED8; /*0x443627*/
@@ -1888,10 +1888,10 @@ int BuildingClass::HandleFactoryCommand() {
       }
       v9 = ScriptAction::GetWaypointCoords((ScriptAction *)v20, v24); /*0x443648*/
       v16 = *(unsigned int *)v9; /*0x443658*/
-      v18 = v9[4]; /*0x44365e*/
+      v18 = v9->vtable2; /*0x44365e*/
       v10 = ScriptAction::GetWaypointCoords((ScriptAction *)&v20, this); /*0x443661*/
       v13 = *(unsigned int *)v10; /*0x443672*/
-      v14 = v10[4]; /*0x443676*/
+      v14 = v10->vtable2; /*0x443676*/
       v11 = this->GetID(); /*0x44367b*/
       result = (int)ScenarioClass::SetEvent(v22, v11, 30, v13, v14, v16, v18); /*0x443683*/
       break;
@@ -3772,7 +3772,7 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
           else
           {
             v9 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v5); /*0x4fafac*/
-            v10 = (int *)(*(int (__thiscall **)(void *, char *))(*(unsigned int *)v9 + 72))(v9, v17); /*0x4fafba*/
+            v10 = (int *)v9->vt_slot_72(v17); /*0x4fafba*/
             v6 = *v10; /*0x4fafbd*/
             v7 = v10[1]; /*0x4fafbf*/
             v8 = v10[2]; /*0x4fafc2*/
@@ -3780,8 +3780,8 @@ int SuperWeapon::EvaluateAITarget(int v5, void* a2) {
           v11 = (unsigned int *)a2->vt_slot_72(v18); /*0x4fafd0*/
           v12 = Coord::Subtract(v19, v6 - *v11, v7 - v11[1], v8 - v11[2]); /*0x4fafe8*/
           v16[0] = *v12; /*0x4fafef*/
-          v16[1] = v12[1]; /*0x4faffa*/
-          v16[2] = v12[2]; /*0x4fb001*/
+          v16[1] = v12->u32_4; /*0x4faffa*/
+          v16[2] = v12->u32_8; /*0x4fb001*/
           v4 = Coord::Length(v16); /*0x4fb005*/
           if ( v4 <= dword_8871E0->AmmoCrateDamage ) /*0x4fb018*/
           {
@@ -4355,7 +4355,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
               v29 = 3; /*0x51842f*/
             }
             if ( a5 /*0x518451*/
-              && (*(int (__thiscall **)(int))(*(unsigned int *)a5 + 44))(a5) == 6
+              && a5->getAltitude() == 6
               && *(unsigned char *)(*(unsigned int *)(a5 + 1312) + 5823) )
             {
               v29 = 5; /*0x51845b*/
@@ -4495,7 +4495,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
                     *(unsigned int *)vtable0 = vtable0; /*0x518919*/
                     v50 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, vtable0); /*0x518928*/
                     v77 = 0; /*0x51892a*/
-                    for ( i = (unsigned int *)v50[57]; i; i = (unsigned int *)i[12] ) /*0x518937*/
+                    for ( i = v50->u32_E4; i; i = (unsigned int *)i[12] ) /*0x518937*/
                     {
                       if ( (*(int (__thiscall **)(unsigned int *))(*i + 44))(i) == 6 ) /*0x518943*/
                         v77 = 1; /*0x518945*/
@@ -4557,7 +4557,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
                     {
                       Function::Method_424CA0(v61, *(unsigned int *)(a5 + 540)); /*0x518aaa*/
                       v61[7].q010 = *(unsigned int *)(*((unsigned int *)dword_B054D4 /*0x518ac9*/
-                                                               + *(unsigned int *)(*(unsigned int *)(a5 + 540) + 90196))
+                                                               + *(unsigned int *)(a5->owner + 90196))
                                                              + 780);
                     }
                     else if ( a8 ) /*0x518ada*/
@@ -4637,7 +4637,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
       }
       if ( a5 ) /*0x518bbb*/
       {
-        v85 = *(unsigned int *)(a5 + 156); /*0x518bc9*/
+        v85 = *&a5->location; /*0x518bc9*/
         v86 = *(unsigned int *)(a5 + 160); /*0x518bd0*/
         v87 = *(unsigned int *)(a5 + 164); /*0x518bd7*/
         v63 = &v85; /*0x518bdb*/
@@ -4828,12 +4828,12 @@ int InfantryClass::Update() {
           if ( LaserFenceFrame != 12 && LaserFenceFrame != 8 ) /*0x51bd48*/
             goto LABEL_55; /*0x51bd48*/
         }
-        else if ( Type[5824] ) /*0x51bd4c*/
+        else if ( Type->u32_16C0 ) /*0x51bd4c*/
         {
           if ( *(unsigned char *)(v10->owner + 506) ) /*0x51bd5c*/
             goto LABEL_55; /*0x51bd64*/
         }
-        else if ( !Type[5815] || !(uint8_t)BuildingClass::IsPoweredOn(v10) ) /*0x51bd74*/
+        else if ( !Type->q16B7 || !(uint8_t)BuildingClass::IsPoweredOn(v10) ) /*0x51bd74*/
         {
           goto LABEL_55; /*0x51bd7b*/
         }
@@ -5630,15 +5630,15 @@ void SuperWeapon::DispatchTeam(int a1, int a2) {
     this->needsRedraw = 1; /*0x6efecb*/
     return; /*0x6efed8*/
   }
-  v8 = v6[135]; /*0x6efedb*/
+  v8 = v6->owner; /*0x6efedb*/
   v9 = 0; /*0x6efee1*/
   v10 = 0; /*0x6efee3*/
   v25 = 0; /*0x6efee5*/
-  v11 = *(unsigned int *)(v8 + 612); /*0x6efee9*/
+  v11 = v8->lastBuiltInfantryType; /*0x6efee9*/
   DefaultTimerSuper = 0; /*0x6efeef*/
   if ( v11 <= 0 ) /*0x6efef5*/
     goto LABEL_36; /*0x6efef5*/
-  v12 = *(int **)(v8 + 600); /*0x6efefb*/
+  v12 = v8->supersCount; /*0x6efefb*/
   v11 = v11; /*0x6eff01*/
   do /*0x6eff20*/
   {

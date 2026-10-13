@@ -480,7 +480,7 @@ int Warhead::ProcessDamageArea()
     else
       v23 = 0; /*0x65b7b9*/
     this->u32_24 = v23; /*0x65b7bb*/
-    v23[13] = 0; /*0x65b7be*/
+    v23->DetailLevel = 0; /*0x65b7be*/
     Trigger::EnableOnce(*((Trigger **)this + 9), 0); /*0x65b7ca*/
     return RadSiteClass::Radiate((int)this); /*0x65b7d1*/
   }

@@ -51,11 +51,11 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47180d) */
   *((unsigned int *)this + 2) = &CaptureManagerClass::`vftable'; /*0x471814*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47181b) */
-  *((unsigned int *)this + 15) = a3; /*0x471822*/
-  *((unsigned char *)this + 64) = a4; /*0x471825*/
-  *((unsigned char *)this + 65) = 0; /*0x471828*/
-  *((unsigned int *)this + 19) = 30; /*0x47182b*/
-  *((unsigned int *)this + 17) = 0; /*0x471832*/
+  this->originalOwner = a3; /*0x471822*/
+  this->CaptureManagerClass_field_40 = a4; /*0x471825*/
+  this->CaptureManagerClass_field_41 = 0; /*0x471828*/
+  this->linkCount = 30; /*0x47182b*/
+  this->overloadLimit = 0; /*0x471832*/
   if ( dword_89E100 < dword_89E0F8 /*0x471868*/
     || (byte_89E0FD || !dword_89E0F8)
     && dword_89E104 > 0
@@ -299,15 +299,15 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
   result = CaptureManagerClass::CanCapture(a1, v5); /*0x471d6e*/
   if ( result )
   {
-    if ( *(unsigned int *)(a1 + 60) == 1 ) /*0x471d85*/
+    if ( a1->u32_3C == 1 ) /*0x471d85*/
     {
-      for ( i = *(unsigned int *)(a1 + 52) - 1; i >= 0; --i ) /*0x471d8b*/
-        CaptureManagerClass::FreeUnit(**(CaptureManagerClass ***)(*(unsigned int *)(a1 + 40) + 4 * i), a1, a2, v29, v30, v31); /*0x471d98*/
+      for ( i = a1->ptr_34 - 1; i >= 0; --i ) /*0x471d8b*/
+        CaptureManagerClass::FreeUnit(**(CaptureManagerClass ***)(a1->u32_28 + 4 * i), a1, a2, v29, v30, v31); /*0x471d98*/
     }
     v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x471da4*/
     v8 = *v5; /*0x471daa*/
     v9 = v7; /*0x471dac*/
-    v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)(a1 + 72) + 60))(*(unsigned int *)(a1 + 72), 1); /*0x471db2*/
+    v10 = (*(int (**)(unsigned int, int))(**&a1->u32_48 + 60))(*(unsigned int *)(a1 + 72), 1); /*0x471db2*/
     result = (*(int (**)(unsigned int *, int))(v8 + 980))(v5, v10); /*0x471db8*/
     if ( result )
     {
@@ -324,12 +324,12 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       *v12 = v5; /*0x471df0*/
       v14 = *(unsigned int *)(a1 + 44); /*0x471df3*/
       if ( *(unsigned int *)(a1 + 52) < v14 /*0x471e18*/
-        || (*(unsigned char *)(a1 + 49) || !v14)
-        && (v15 = *(unsigned int *)(a1 + 56), v15 > 0)
-        && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(a1 + 36) + 8))(a1 + 36, v14 + v15, 0) )
+        || (a1->q031 || !v14)
+        && (v15 = a1->u32_38, v15 > 0)
+        && (*(unsigned __int8 (**)(int, int, unsigned int))(a1->ptr_24 + 8))(a1 + 36, v14 + v15, 0) )
       {
-        v16 = *(unsigned int *)(a1 + 52); /*0x471e1f*/
-        v17 = *(unsigned int *)(a1 + 40); /*0x471e22*/
+        v16 = *&a1->ptr_34; /*0x471e1f*/
+        v17 = *&a1->u32_28; /*0x471e22*/
         *(unsigned int *)(a1 + 52) = v16 + 1; /*0x471e28*/
         *(unsigned int *)(v17 + 4 * v16) = v12; /*0x471e2b*/
       }
@@ -883,7 +883,7 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
           result = (*(int (__stdcall **)(int *, int **, int, unsigned int))(v10 + 12))(v2, &a2, 4, 0); /*0x4727f9*/
           if ( result < 0 ) /*0x4727fe*/
             break; /*0x4727fe*/
-          result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(*v2 + 12))(v2, &v16, 4, 0); /*0x47280f*/
+          result = v2->vt_entry_68(&v16, 4, 0); /*0x47280f*/
           v18 = result; /*0x472814*/
           if ( result < 0 ) /*0x472818*/
             break; /*0x472818*/

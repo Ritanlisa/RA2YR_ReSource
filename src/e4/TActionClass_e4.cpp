@@ -852,7 +852,7 @@ TActionClass::TActionClass()
   this->AbstractClass = &TEventClass::`vftable'; /*0x71e6c1*/
   this->? = &TEventClass::`vftable'; /*0x71e6c7*/
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6ce) */
-  this->? = &TEventClass::`vftable'; /*0x71e6d5*/
+  this->vtable4 = &TEventClass::`vftable'; /*0x71e6d5*/
   v2 = g_BuildingLoadQueue_Array.?[54]; /*0x71e6dc*/
   if ( g_BuildingLoadQueue_Array.?[54] < g_BuildingLoadQueue_Array.?[52] /*0x71e71a*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[53]) || !g_BuildingLoadQueue_Array.?[52])

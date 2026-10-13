@@ -186,7 +186,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         dword_ABDC74 = v17; /*0x5760ae*/
         v4 = &unk_ABDC50; /*0x5760b4*/
       }
-      v19 = (void **)*((unsigned int *)v4 + 15); /*0x5760b9*/
+      v19 = (void **)v4->u32_3C; /*0x5760b9*/
       if ( v19 ) /*0x5760be*/
         (*((unsigned char *)&(v4))) = TeamClass::Update_0(v19, 31, 0, dword_ABD480, 0, 0); /*0x5760ce*/
       (*((unsigned short *)&(a2))) = a2 + 1; /*0x5760d3*/
@@ -219,7 +219,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         TeamClass::Update_0(v28, 31, 0, dword_ABD480, 0, 0); /*0x57619e*/
       v31 = *CellStruct::Add((unsigned short *)v27 + 18, &v36, &dword_89F6A0); /*0x5761c1*/
       v4 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v31); /*0x5761c5*/
-      v29 = (void **)*((unsigned int *)v4 + 15); /*0x5761ca*/
+      v29 = (void **)v4->u32_3C; /*0x5761ca*/
       if ( v29 ) /*0x5761cf*/
         (*((unsigned char *)&(v4))) = TeamClass::Update_0(v29, 31, 0, dword_ABD480, 0, 0); /*0x5761e0*/
       ++(*(((unsigned short *)&(a2)) + 1)); /*0x5761e5*/
@@ -762,7 +762,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
   LABEL_71:
   v26 = a3; /*0x57b12d*/
   *(unsigned int *)&g_RadarBlipManager = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * (v13 + dword_ABAD28) - 4); /*0x57b143*/
-  v27 = *&a3->ptr_24; /*0x57b149*/
+  v27 = *&a3->outBuffer; /*0x57b149*/
   v28 = g_MissionQueueFrame.briefing[v13 + 71]; /*0x57b14c*/
   v29 = (*(((unsigned short *)&(g_MissionQueueFrame.briefing[v13 + 71])) + 1)); /*0x57b154*/
   (*((unsigned short *)&(a3))) = v27 + v28; /*0x57b168*/
@@ -827,18 +827,18 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   if ( !v34 ) /*0x57b486*/
     return 0; /*0x57b486*/
   v30 = 0; /*0x57b492*/
-  if ( *(int *)(v6 + 744) <= 0 ) /*0x57b49c*/
+  if ( v6->u32_2E8 <= 0 ) /*0x57b49c*/
     return 1; /*0x57b70e*/
   v7 = dword_87F8DC; /*0x57b4a2*/
   while ( 1 ) /*0x57b4a8*/
   {
-    v8 = *(unsigned int *)(v6 + 740); /*0x57b4a8*/
+    v8 = v6->u32_2E4; /*0x57b4a8*/
     v9 = 0; /*0x57b4ae*/
     v32 = 0; /*0x57b4b2*/
     if ( v8 > 0 ) /*0x57b4b6*/
       break; /*0x57b4b6*/
   LABEL_39:
-    if ( ++v30 >= *(unsigned int *)(v6 + 744) ) /*0x57b6a4*/
+    if ( ++v30 >= *&v6->u32_2E8 ) /*0x57b6a4*/
       return 1; /*0x57b6b3*/
   }
   while ( 1 ) /*0x57b4d0*/
@@ -857,7 +857,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
       dword_ABDC74 = v33; /*0x57b537*/
       v14 = &unk_ABDC50; /*0x57b53d*/
     }
-    v15 = v32 + v30 * *(unsigned int *)(v6 + 740); /*0x57b555*/
+    v15 = v32 + v30 * v6->u32_2E4; /*0x57b555*/
     v35 = *(unsigned int *)(v34 + 4 * v15 + 16); /*0x57b55d*/
     v16 = v35; /*0x57b557*/
     if ( v35 ) /*0x57b561*/
@@ -886,7 +886,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   if ( aP3 != -1 ) /*0x57b5ed*/
   {
     v23 = v14[14] - dword_ABAD28; /*0x57b603*/
-    v24 = *(unsigned int *)(v29 + 660) - dword_ABAD28; /*0x57b605*/
+    v24 = v29->u32_294 - dword_ABAD28; /*0x57b605*/
     if ( !Cell::IsEmpty(v14) ) /*0x57b60e*/
     {
       if ( v23 < 0 || v24 < 0 || v23 > 41 || v24 > 41 || dword_82A7F4[v23] != dword_82A7F4[v24] ) /*0x57b703*/
@@ -905,7 +905,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   {
   LABEL_20:
     v19 = v14[14] - dword_ABAD28; /*0x57b58c*/
-    v20 = *(unsigned int *)(v29 + 660) - dword_ABAD28; /*0x57b5a1*/
+    v20 = v29->u32_294 - dword_ABAD28; /*0x57b5a1*/
     if ( v19 >= 0 && v20 >= 0 && v19 <= 41 && v20 <= 41 ) /*0x57b5b7*/
     {
       v21 = dword_82A89C[v19] - dword_82A89C[v20]; /*0x57b5c9*/
@@ -926,17 +926,17 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   }
   MapClass::SetObstruction(&v31, v18); /*0x57b6cc*/
   LABEL_32:
-  if ( Cell::IsEmpty(v14) || (v25 = v14[14], v25 >= aP0) && v25 <= aP1 ) /*0x57b64a*/
+  if ( Cell::IsEmpty(v14) || (v25 = v14->q038, v25 >= aP0) && v25 <= aP1 ) /*0x57b64a*/
   {
-    v14[14] = *(unsigned int *)(v29 + 660); /*0x57b65e*/
+    v14->q038 = v29->u32_294; /*0x57b65e*/
     v14->u32_11A = v15; /*0x57b661*/
     v14->u32_11B = aP2 + *(unsigned char *)(v16 + 40); /*0x57b66c*/
   LABEL_36:
     v7 = dword_87F8DC; /*0x57b672*/
     goto LABEL_37; /*0x57b672*/
   }
-  if ( (uint8_t)CellClass::IsTerrainType(v14) && (uint8_t)Map_Helper(*(unsigned int *)(v29 + 660), v15) /*0x57b774*/
-    || (v28 = *(unsigned int *)(v29 + 660), v28 >= dword_ABAD28) && v28 < dword_ABAD28 + 42 && CellLand::IsBuildable((int)v14) )
+  if ( (uint8_t)CellClass::IsTerrainType(v14) && (uint8_t)Map_Helper(v29->u32_294, v15) /*0x57b774*/
+    || (v28 = v29->u32_294, v28 >= dword_ABAD28) && v28 < dword_ABAD28 + 42 && CellLand::IsBuildable((int)v14) )
   {
   LABEL_58:
     *aP4 = 0; /*0x57b77d*/
@@ -1331,36 +1331,36 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     (*((unsigned char *)&(v54))) = 0; /*0x57de54*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57de62*/
     StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57de67*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57de7c*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57de7c*/
     {
       v19 = *PlacementRect; /*0x57df02*/
-      v15 = PlacementRect[1]; /*0x57df04*/
-      v16 = PlacementRect[2]; /*0x57df07*/
-      v17 = PlacementRect[3]; /*0x57df0a*/
+      v15 = PlacementRect->u32_4; /*0x57df04*/
+      v16 = PlacementRect->u32_8; /*0x57df07*/
+      v17 = PlacementRect->q00C; /*0x57df0a*/
     }
     else
     {
-      right = PlacementRect[2]; /*0x57de87*/
-      if ( right <= 0 || (v50[0] = PlacementRect[3], v50[0] <= 0) ) /*0x57de96*/
+      right = PlacementRect->u32_8; /*0x57de87*/
+      if ( right <= 0 || (v50[0] = PlacementRect->q00C, v50[0] <= 0) ) /*0x57de96*/
       {
         v19 = *StartCoords; /*0x57def5*/
-        v15 = StartCoords[1]; /*0x57def7*/
-        v16 = StartCoords[2]; /*0x57defa*/
-        v17 = StartCoords[3]; /*0x57defd*/
+        v15 = StartCoords->vtable2; /*0x57def7*/
+        v16 = StartCoords->vtable3; /*0x57defa*/
+        v17 = StartCoords->vtable4; /*0x57defd*/
       }
       else
       {
         v13 = *StartCoords; /*0x57de98*/
         v14 = *PlacementRect; /*0x57de9a*/
-        v15 = StartCoords[1]; /*0x57de9c*/
-        v16 = StartCoords[2]; /*0x57de9f*/
-        v17 = StartCoords[3]; /*0x57dea2*/
+        v15 = StartCoords->vtable2; /*0x57de9c*/
+        v16 = StartCoords->vtable3; /*0x57de9f*/
+        v17 = StartCoords->vtable4; /*0x57dea2*/
         if ( v13 > *PlacementRect ) /*0x57dea7*/
         {
           v16 += v13 - v14; /*0x57deab*/
           v13 = *PlacementRect; /*0x57dead*/
         }
-        v18 = PlacementRect[1]; /*0x57deaf*/
+        v18 = PlacementRect->u32_4; /*0x57deaf*/
         v52[0] = v18; /*0x57deb4*/
         if ( v15 > v18 ) /*0x57deb8*/
         {
@@ -1477,10 +1477,10 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       v37 = Coord2D::Sub(v36, v50, v62); /*0x57e184*/
       v38 = Rect::Construct(v55, v37, v42, v43); /*0x57e18e*/
       v58 = *v38; /*0x57e19c*/
-      v59 = v38[1]; /*0x57e1a3*/
-      v60 = v38[2]; /*0x57e1aa*/
-      v61 = v38[3]; /*0x57e1b3*/
-      Cell::CreateCrater(*v38, v38[1], v38[2], v38[3], 0); /*0x57e1d3*/
+      v59 = v38->Y; /*0x57e1a3*/
+      v60 = v38->Width; /*0x57e1aa*/
+      v61 = v38->Height; /*0x57e1b3*/
+      Cell::CreateCrater(*v38, v38->Y, v38->Width, v38->Height, 0); /*0x57e1d3*/
       if ( v23 == 100 ) /*0x57e1db*/
       {
         (*((unsigned char *)&(v54))) = 1; /*0x57e1e8*/
@@ -1620,36 +1620,36 @@ void* CreateCliffStraightMap(IUnknown * aP0)
     (*((unsigned char *)&(v55))) = 0; /*0x57e393*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v62); /*0x57e3a1*/
     StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57e3a6*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57e3bb*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57e3bb*/
     {
       v21 = *PlacementRect; /*0x57e448*/
-      v17 = PlacementRect[1]; /*0x57e44a*/
-      v18 = PlacementRect[2]; /*0x57e44d*/
-      v19 = PlacementRect[3]; /*0x57e450*/
+      v17 = PlacementRect->u32_4; /*0x57e44a*/
+      v18 = PlacementRect->u32_8; /*0x57e44d*/
+      v19 = PlacementRect->q00C; /*0x57e450*/
     }
     else
     {
-      right = PlacementRect[2]; /*0x57e3c6*/
-      if ( right <= 0 || (v51[0] = PlacementRect[3], v51[0] <= 0) ) /*0x57e3d5*/
+      right = PlacementRect->u32_8; /*0x57e3c6*/
+      if ( right <= 0 || (v51[0] = PlacementRect->q00C, v51[0] <= 0) ) /*0x57e3d5*/
       {
         v21 = *StartCoords; /*0x57e43b*/
-        v17 = StartCoords[1]; /*0x57e43d*/
-        v18 = StartCoords[2]; /*0x57e440*/
-        v19 = StartCoords[3]; /*0x57e443*/
+        v17 = StartCoords->vtable2; /*0x57e43d*/
+        v18 = StartCoords->vtable3; /*0x57e440*/
+        v19 = StartCoords->vtable4; /*0x57e443*/
       }
       else
       {
         v15 = *StartCoords; /*0x57e3d7*/
         v16 = *PlacementRect; /*0x57e3d9*/
-        v17 = StartCoords[1]; /*0x57e3db*/
-        v18 = StartCoords[2]; /*0x57e3de*/
-        v19 = StartCoords[3]; /*0x57e3e1*/
+        v17 = StartCoords->vtable2; /*0x57e3db*/
+        v18 = StartCoords->vtable3; /*0x57e3de*/
+        v19 = StartCoords->vtable4; /*0x57e3e1*/
         if ( v15 > *PlacementRect ) /*0x57e3e6*/
         {
           v18 += v15 - v16; /*0x57e3ea*/
           v15 = *PlacementRect; /*0x57e3ec*/
         }
-        v20 = PlacementRect[1]; /*0x57e3ee*/
+        v20 = PlacementRect->u32_4; /*0x57e3ee*/
         v56[0] = v20; /*0x57e3f3*/
         if ( v17 > v20 ) /*0x57e3f7*/
         {
@@ -1763,10 +1763,10 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v38 = Coord2D::Sub(v37, v51, v61); /*0x57e679*/
       v39 = Rect::Construct(v62, v38, v45, v46); /*0x57e683*/
       v57 = *v39; /*0x57e691*/
-      v58 = v39[1]; /*0x57e698*/
-      v59 = v39[2]; /*0x57e69f*/
-      v60 = v39[3]; /*0x57e6a8*/
-      Cell::CreateCrater(*v39, v39[1], v39[2], v39[3], 0); /*0x57e6c8*/
+      v58 = v39->Y; /*0x57e698*/
+      v59 = v39->Width; /*0x57e69f*/
+      v60 = v39->Height; /*0x57e6a8*/
+      Cell::CreateCrater(*v39, v39->Y, v39->Width, v39->Height, 0); /*0x57e6c8*/
       if ( v23 == 101 ) /*0x57e6d0*/
       {
         (*((unsigned char *)&(v55))) = 1; /*0x57e6e4*/
@@ -1905,36 +1905,36 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
     (*((unsigned char *)&(v54))) = 0; /*0x57e8a8*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v55); /*0x57e8b6*/
     StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57e8bb*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57e8d0*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57e8d0*/
     {
       v19 = *PlacementRect; /*0x57e956*/
-      v15 = PlacementRect[1]; /*0x57e958*/
-      v16 = PlacementRect[2]; /*0x57e95b*/
-      v17 = PlacementRect[3]; /*0x57e95e*/
+      v15 = PlacementRect->u32_4; /*0x57e958*/
+      v16 = PlacementRect->u32_8; /*0x57e95b*/
+      v17 = PlacementRect->q00C; /*0x57e95e*/
     }
     else
     {
-      right = PlacementRect[2]; /*0x57e8db*/
-      if ( right <= 0 || (v50[0] = PlacementRect[3], v50[0] <= 0) ) /*0x57e8ea*/
+      right = PlacementRect->u32_8; /*0x57e8db*/
+      if ( right <= 0 || (v50[0] = PlacementRect->q00C, v50[0] <= 0) ) /*0x57e8ea*/
       {
         v19 = *StartCoords; /*0x57e949*/
-        v15 = StartCoords[1]; /*0x57e94b*/
-        v16 = StartCoords[2]; /*0x57e94e*/
-        v17 = StartCoords[3]; /*0x57e951*/
+        v15 = StartCoords->vtable2; /*0x57e94b*/
+        v16 = StartCoords->vtable3; /*0x57e94e*/
+        v17 = StartCoords->vtable4; /*0x57e951*/
       }
       else
       {
         v13 = *StartCoords; /*0x57e8ec*/
         v14 = *PlacementRect; /*0x57e8ee*/
-        v15 = StartCoords[1]; /*0x57e8f0*/
-        v16 = StartCoords[2]; /*0x57e8f3*/
-        v17 = StartCoords[3]; /*0x57e8f6*/
+        v15 = StartCoords->vtable2; /*0x57e8f0*/
+        v16 = StartCoords->vtable3; /*0x57e8f3*/
+        v17 = StartCoords->vtable4; /*0x57e8f6*/
         if ( v13 > *PlacementRect ) /*0x57e8fb*/
         {
           v16 += v13 - v14; /*0x57e8ff*/
           v13 = *PlacementRect; /*0x57e901*/
         }
-        v18 = PlacementRect[1]; /*0x57e903*/
+        v18 = PlacementRect->u32_4; /*0x57e903*/
         v52[0] = v18; /*0x57e908*/
         if ( v15 > v18 ) /*0x57e90c*/
         {
@@ -2051,10 +2051,10 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v37 = Coord2D::Sub(v36, v50, v62); /*0x57ebde*/
       v38 = Rect::Construct(v55, v37, v42, v43); /*0x57ebe8*/
       v58 = *v38; /*0x57ebf6*/
-      v59 = v38[1]; /*0x57ebfd*/
-      v60 = v38[2]; /*0x57ec04*/
-      v61 = v38[3]; /*0x57ec0d*/
-      Cell::CreateCrater(*v38, v38[1], v38[2], v38[3], 0); /*0x57ec2d*/
+      v59 = v38->Y; /*0x57ebfd*/
+      v60 = v38->Width; /*0x57ec04*/
+      v61 = v38->Height; /*0x57ec0d*/
+      Cell::CreateCrater(*v38, v38->Y, v38->Width, v38->Height, 0); /*0x57ec2d*/
       if ( v23 == 231 ) /*0x57ec38*/
       {
         (*((unsigned char *)&(v54))) = 1; /*0x57ec45*/
@@ -2194,36 +2194,36 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
     (*((unsigned char *)&(v55))) = 0; /*0x57edf7*/
     PlacementRect = BuildingClass::GetPlacementRect((int)v5, v62); /*0x57ee05*/
     StartCoords = ((House *)((int)v5))->GetStartCoords(&rcDst); /*0x57ee0a*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57ee1f*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57ee1f*/
     {
       v21 = *PlacementRect; /*0x57eeac*/
-      v17 = PlacementRect[1]; /*0x57eeae*/
-      v18 = PlacementRect[2]; /*0x57eeb1*/
-      v19 = PlacementRect[3]; /*0x57eeb4*/
+      v17 = PlacementRect->u32_4; /*0x57eeae*/
+      v18 = PlacementRect->u32_8; /*0x57eeb1*/
+      v19 = PlacementRect->q00C; /*0x57eeb4*/
     }
     else
     {
-      right = PlacementRect[2]; /*0x57ee2a*/
-      if ( right <= 0 || (v51[0] = PlacementRect[3], v51[0] <= 0) ) /*0x57ee39*/
+      right = PlacementRect->u32_8; /*0x57ee2a*/
+      if ( right <= 0 || (v51[0] = PlacementRect->q00C, v51[0] <= 0) ) /*0x57ee39*/
       {
         v21 = *StartCoords; /*0x57ee9f*/
-        v17 = StartCoords[1]; /*0x57eea1*/
-        v18 = StartCoords[2]; /*0x57eea4*/
-        v19 = StartCoords[3]; /*0x57eea7*/
+        v17 = StartCoords->vtable2; /*0x57eea1*/
+        v18 = StartCoords->vtable3; /*0x57eea4*/
+        v19 = StartCoords->vtable4; /*0x57eea7*/
       }
       else
       {
         v15 = *StartCoords; /*0x57ee3b*/
         v16 = *PlacementRect; /*0x57ee3d*/
-        v17 = StartCoords[1]; /*0x57ee3f*/
-        v18 = StartCoords[2]; /*0x57ee42*/
-        v19 = StartCoords[3]; /*0x57ee45*/
+        v17 = StartCoords->vtable2; /*0x57ee3f*/
+        v18 = StartCoords->vtable3; /*0x57ee42*/
+        v19 = StartCoords->vtable4; /*0x57ee45*/
         if ( v15 > *PlacementRect ) /*0x57ee4a*/
         {
           v18 += v15 - v16; /*0x57ee4e*/
           v15 = *PlacementRect; /*0x57ee50*/
         }
-        v20 = PlacementRect[1]; /*0x57ee52*/
+        v20 = PlacementRect->u32_4; /*0x57ee52*/
         v56[0] = v20; /*0x57ee57*/
         if ( v17 > v20 ) /*0x57ee5b*/
         {
@@ -2337,10 +2337,10 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v38 = Coord2D::Sub(v37, v51, v61); /*0x57f0e3*/
       v39 = Rect::Construct(v62, v38, v45, v46); /*0x57f0ed*/
       v57 = *v39; /*0x57f0fb*/
-      v58 = v39[1]; /*0x57f102*/
-      v59 = v39[2]; /*0x57f109*/
-      v60 = v39[3]; /*0x57f112*/
-      Cell::CreateCrater(*v39, v39[1], v39[2], v39[3], 0); /*0x57f132*/
+      v58 = v39->Y; /*0x57f102*/
+      v59 = v39->Width; /*0x57f109*/
+      v60 = v39->Height; /*0x57f112*/
+      Cell::CreateCrater(*v39, v39->Y, v39->Width, v39->Height, 0); /*0x57f132*/
       if ( v23 == 232 ) /*0x57f13d*/
       {
         (*((unsigned char *)&(v55))) = 1; /*0x57f151*/

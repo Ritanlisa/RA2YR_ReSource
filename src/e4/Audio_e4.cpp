@@ -899,9 +899,9 @@ void sub_752590(int a1, int a2, int a3)
 
   v5 = operator new(0x20u); /*0x75259f*/
   DListNode::InitEmpty(v5); /*0x7525a6*/
-  v5[3] = a1; /*0x7525af*/
-  v5[5] = a3; /*0x7525b2*/
-  v5[6] = a2; /*0x7525b5*/
+  v5->u32_C = a1; /*0x7525af*/
+  v5->u32_14 = a3; /*0x7525b2*/
+  v5->u32_18 = a2; /*0x7525b5*/
   v5[7] = dword_B1D4C0 % 100; /*0x7525c5*/
   ++dword_B1D4C0; /*0x7525d2*/
   *(unsigned int *)(a1 + 80) = 1; /*0x7525d8*/
@@ -1449,7 +1449,7 @@ int sub_7BE830(int a1, int a2)
         v19 = v7; /*0x7be874*/
         do /*0x7be89e*/
         {
-          if ( v8[1] == a2 ) /*0x7be881*/
+          if ( v8->vtable2 == a2 ) /*0x7be881*/
             (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v4, *(v8 - 1), *v8); /*0x7be88c*/
           v8 += 3; /*0x7be896*/
           --v19; /*0x7be89a*/
@@ -1481,7 +1481,7 @@ int sub_7BE830(int a1, int a2)
         v22 = v15; /*0x7be8f0*/
         do /*0x7be91a*/
         {
-          if ( v16[1] == a2 ) /*0x7be8fd*/
+          if ( v16->vtable2 == a2 ) /*0x7be8fd*/
             (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v12, *(v16 - 1), *v16); /*0x7be908*/
           v16 += 3; /*0x7be912*/
           --v22; /*0x7be916*/

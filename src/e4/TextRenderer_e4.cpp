@@ -222,7 +222,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   FoundationSize = Building::GetFoundationSize(v17, 0); /*0x642f01*/
   v5 = 0; /*0x642f08*/
   v6 = 0; /*0x642f0e*/
-  v16 = FoundationSize[2]; /*0x642f1a*/
+  v16 = FoundationSize->vtable3; /*0x642f1a*/
   v15 = FoundationSize[3] + 6; /*0x642f24*/
   if ( a4 ) /*0x642f2e*/
   {

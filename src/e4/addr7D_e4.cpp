@@ -99,7 +99,7 @@ int __sbh_heap_check()
       lp = v4; /*0x7d03fa*/
       v27 = (int *)(v3 + 81); /*0x7d0403*/
       v5 = v3 + 49; /*0x7d0409*/
-      v32 = v2[2]; /*0x7d040f*/
+      v32 = v2->vtable3; /*0x7d040f*/
       v31 = 0; /*0x7d0412*/
       v25 = 0; /*0x7d0415*/
       v22 = v5; /*0x7d0418*/
@@ -234,7 +234,7 @@ int __sbh_heap_check()
         v22 = ++v5; /*0x7d064a*/
       }
       while ( v25 < 32 ); /*0x7d064d*/
-      if ( v26 != *v2 || v31 != v2[1] ) /*0x7d0660*/
+      if ( v26 != *v2 || v31 != v2->vtable2 ) /*0x7d0660*/
         return -17; /*0x7d06b9*/
       v2 += 5; /*0x7d0662*/
       ++v29; /*0x7d0665*/
@@ -623,7 +623,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
       default:
         memcpy(a0, aP1, 4 * v5); /*0x7d0a53*/
         v3 = &aP1->u32_4 * v5; /*0x7d0a53*/
-        v4 = (char *)a0 + 4 * v5; /*0x7d0a53*/
+        v4 = &a0->X * v5; /*0x7d0a53*/
         switch ( (unsigned int)(aP2)& 3 ) /*0x7d0a55*/
         {
           case 0u: /*0x7d0a55*/
@@ -645,7 +645,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
   TrailUp3_0:
             *v4 = *v3; /*0x7d0ba0*/
             v4[1] = v3[1]; /*0x7d0ba7*/
-            v4[2] = v3[2]; /*0x7d0bad*/
+            v4->u32_2 = v3->q002_; /*0x7d0bad*/
             result = a0; /*0x7d0bb0*/
             break; /*0x7d0bb6*/
         }
@@ -2422,7 +2422,7 @@ unsigned int * _getstream()
     if ( v0 ) /*0x7d2e4c*/
     {
       v0[4] = -1; /*0x7d2e4e*/
-      v0[1] = 0; /*0x7d2e52*/
+      v0->q004 = 0; /*0x7d2e52*/
       v0[3] = 0; /*0x7d2e55*/
       v0[2] = 0; /*0x7d2e58*/
       *v0 = 0; /*0x7d2e5b*/
@@ -2574,9 +2574,9 @@ int _ioinit()
   uNumber = 32; /*0x7d318c*/
   for ( i = (unsigned int)(v1 + 1152); (unsigned int)v2 < i; i = dword_B78A80[0] + 1152 ) /*0x7d3196*/
   {
-    v2[4] = 0; /*0x7d31a0*/
+    v2->ptr_4 = 0; /*0x7d31a0*/
     *(unsigned int *)v2 = -1; /*0x7d31a4*/
-    *((unsigned int *)v2 + 2) = 0; /*0x7d31a7*/
+    v2->ptr_8 = 0; /*0x7d31a7*/
     v2[5] = 10; /*0x7d31ab*/
     v2 += 36; /*0x7d31b4*/
   }
@@ -2600,7 +2600,7 @@ int _ioinit()
         *v6 = v7; /*0x7d3217*/
         for ( j = (unsigned int)(v7 + 1152); (unsigned int)v7 < j; j = *v6 + 1152 ) /*0x7d3219*/
         {
-          v7[4] = 0; /*0x7d3223*/
+          v7->ptr_4 = 0; /*0x7d3223*/
           *(unsigned int *)v7 = -1; /*0x7d3227*/
           v7->u32_8 = 0; /*0x7d322a*/
           v7[5] = 10; /*0x7d322e*/
@@ -2756,7 +2756,7 @@ int _setmbcp(int CodePage)
         {
           do /*0x7d3582*/
           {
-            v12 = v11[1]; /*0x7d355b*/
+            v12 = v11->u8_1; /*0x7d355b*/
             if ( !v12 ) /*0x7d3560*/
               break; /*0x7d3560*/
             v13 = *v11; /*0x7d3562*/
@@ -6914,7 +6914,7 @@ int _alloc_osfhnd()
     dword_B78A80[v2] = (int)v6; /*0x7d9489*/
     while ( (unsigned int)v6 < v7 ) /*0x7d948d*/
     {
-      v6[4] = 0; /*0x7d948f*/
+      v6->ptr_4 = 0; /*0x7d948f*/
       *(unsigned int *)v6 = -1; /*0x7d9493*/
       v6->u32_8 = 0; /*0x7d9496*/
       v6[5] = 10; /*0x7d949a*/
@@ -7373,9 +7373,9 @@ ControlClass * * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int
           }
         }
         v29 = v40 | v27; /*0x7d9cfb*/
-        *(unsigned int *)(a1 + 6) = v26; /*0x7d9cff*/
-        *(unsigned int *)(a1 + 2) = v25; /*0x7d9d02*/
-        *(unsigned short *)(a1 + 10) = v29; /*0x7d9d05*/
+        a1->q006 = v26; /*0x7d9cff*/
+        a1->u32_2 = v25; /*0x7d9d02*/
+        a1->u16_A = v29; /*0x7d9d05*/
         result = v45; /*0x7d9d09*/
         *(unsigned short *)a1 = v28; /*0x7d9d0d*/
         return result;
@@ -7798,21 +7798,21 @@ int _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
     return -1; /*0x7da657*/
   if ( !a2[2] ) /*0x7da659*/
     _getbuf(a2); /*0x7da660*/
-  v5 = v3[3]; /*0x7da666*/
+  v5 = v3->Width; /*0x7da666*/
   if ( (v5 & 0x40) != 0
-    || (v3[4] == -1 ? (v6 = (char *)&unk_87C928) : (v6 = (char *)(dword_B78A80[(int)v3[4] >> 5] + 36 * (v3[4] & 0x1F))),
+    || (v3->Height == -1 ? (v6 = (char *)&unk_87C928) : (v6 = (char *)(dword_B78A80[(int)v3[4] >> 5] + 36 * (v3->Height & 0x1F))),
         v6[4] >= 0) )
   {
-    if ( *v3 == v3[2] ) /*0x7da6fe*/
+    if ( *v3 == v3->Y ) /*0x7da6fe*/
     {
-      if ( v3[1] ) /*0x7da700*/
+      if ( v3->X ) /*0x7da700*/
         return -1; /*0x7da704*/
       *v3 += 2; /*0x7da709*/
     }
     v3[1] += 2; /*0x7da70b*/
     (*((unsigned char *)&(v5))) = v5 & 0xEE | 1; /*0x7da711*/
     *v3 -= 2; /*0x7da713*/
-    v3[3] = v5; /*0x7da716*/
+    v3->Width = v5; /*0x7da716*/
     *(unsigned short *)*v3 = v2; /*0x7da71b*/
     return *(unsigned short *)*v3; /*0x7da720*/
   }
@@ -7824,9 +7824,9 @@ int _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
       *_errno() = 42; /*0x7da6b1*/
       return -1; /*0x7da6be*/
     }
-    if ( *v3 == v3[2] ) /*0x7da6c4*/
+    if ( *v3 == v3->Y ) /*0x7da6c4*/
     {
-      if ( v3[1] ) /*0x7da6c6*/
+      if ( v3->X ) /*0x7da6c6*/
         return -1; /*0x7da6ca*/
       *v3 += v7; /*0x7da6ce*/
     }
@@ -7834,9 +7834,9 @@ int _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
       *(unsigned char *)--*v3 = (*(((unsigned char *)&(MbCh)) + (sizeof(MbCh) - 1))); /*0x7da6dc*/
     *(unsigned char *)--*v3 = MbCh; /*0x7da6e5*/
     v3[1] += v7; /*0x7da6e7*/
-    v9 = v3[3]; /*0x7da6ea*/
+    v9 = v3->Width; /*0x7da6ea*/
     (*((unsigned char *)&(v9))) = v9 & 0xEE | 1; /*0x7da6ef*/
-    v3[3] = v9; /*0x7da6f1*/
+    v3->Width = v9; /*0x7da6f1*/
     return v2; /*0x7da6f4*/
   }
 }
@@ -9052,18 +9052,18 @@ int _filwbuf(unsigned short ** a1)
     *a1 = a1[2]; /*0x7dc2ce*/
   else
     _getbuf(a1); /*0x7dc2c3*/
-  v2 = _read((int)a1[4], a1[2], (unsigned int)a1[6]); /*0x7dc2d9*/
+  v2 = _read((int)a1[4], a1->X, (unsigned int)a1[6]); /*0x7dc2d9*/
   a1[1] = (uint16_t *)v2; /*0x7dc2e1*/
   if ( v2 < 2 || v2 == -1 )
   {
-    a1[3] = (uint16_t *)((v2 != 0 ? 32 : 16) | (unsigned int)a1[3]);
+    a1->q006 = (uint16_t *)((v2 != 0 ? 32 : 16) | (unsigned int)a1[3]);
     a1[1] = 0; /*0x7dc36d*/
     return 0xFFFF; /*0x7dc36d*/
   }
   v3 = a1[3]; /*0x7dc2f2*/
   if ( ((uint8_t)v3 & 0x82) == 0 )
   {
-    v4 = a1[4] == (uint16_t *)-1
+    v4 = a1->Y == (uint16_t *)-1
        ? &unk_87C928
        : (unsigned char *)(dword_B78A80[(int)a1[4] >> 5] + 36 * ((unsigned int)a1[4] & 0x1F));
     if ( (v4[4] & 0x82) == 0x82 ) /*0x7dc329*/
@@ -9759,7 +9759,7 @@ int _getch()
           if ( v3 ) /*0x7dd2a9*/
           {
             AsciiChar = *v3; /*0x7dd2bd*/
-            dword_87DD70 = v3[1]; /*0x7dd2c4*/
+            dword_87DD70 = v3->u8_1; /*0x7dd2c4*/
             goto LABEL_17; /*0x7dd2c9*/
           }
         }
@@ -10428,8 +10428,8 @@ unsigned int  ConvertRGB24to556(int a1, unsigned short * a2, __m64, __m64, int a
     do /*0x7de420*/
     {
       v25 = *v10; /*0x7de3c3*/
-      v26 = v10[1]; /*0x7de3c6*/
-      v27 = v10[2]; /*0x7de3ca*/
+      v26 = v10->u8_1; /*0x7de3c6*/
+      v27 = v10->u32_2; /*0x7de3ca*/
       if ( *v11 ) /*0x7de3c0*/
       {
         v28 = a3.m64_i32[0] * v25; /*0x7de3d0*/
@@ -10469,12 +10469,12 @@ unsigned int  ConvertRGB24to556(int a1, unsigned short * a2, __m64, __m64, int a
     {
       while ( 1 )
       {
-        (*((unsigned char *)&(v8))) = v6[1]; /*0x7de442*/
+        (*((unsigned char *)&(v8))) = v6->u8_1; /*0x7de442*/
         v31 = 0; /*0x7de445*/
         v32 = *v6; /*0x7de447*/
         if ( !*v7 ) /*0x7de449*/
           break; /*0x7de449*/
-        (*((unsigned char *)&(v31))) = v6[2]; /*0x7de44e*/
+        (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7de44e*/
         ++v7; /*0x7de451*/
         v6 += 3; /*0x7de461*/
         v33 = (8 /*0x7de4aa*/
@@ -10496,7 +10496,7 @@ unsigned int  ConvertRGB24to556(int a1, unsigned short * a2, __m64, __m64, int a
         if ( v34 ) /*0x7de4b9*/
           return result; /*0x7de4b9*/
       }
-      (*((unsigned char *)&(v31))) = v6[2]; /*0x7de4c2*/
+      (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7de4c2*/
       ++v7; /*0x7de4c5*/
       v6 += 3; /*0x7de4d5*/
       v35 = (8 /*0x7de51e*/
@@ -10611,8 +10611,8 @@ unsigned int  ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64, __m64, in
     do /*0x7de760*/
     {
       v25 = *v10; /*0x7de703*/
-      v26 = v10[1]; /*0x7de706*/
-      v27 = v10[2]; /*0x7de70a*/
+      v26 = v10->u8_1; /*0x7de706*/
+      v27 = v10->u32_2; /*0x7de70a*/
       if ( *v11 ) /*0x7de700*/
       {
         v28 = a3.m64_i32[0] * v25; /*0x7de710*/
@@ -10652,12 +10652,12 @@ unsigned int  ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64, __m64, in
     {
       while ( 1 )
       {
-        (*((unsigned char *)&(v8))) = v6[1]; /*0x7de782*/
+        (*((unsigned char *)&(v8))) = v6->u8_1; /*0x7de782*/
         v31 = 0; /*0x7de785*/
         v32 = *v6; /*0x7de787*/
         if ( !*v7 ) /*0x7de789*/
           break; /*0x7de789*/
-        (*((unsigned char *)&(v31))) = v6[2]; /*0x7de78e*/
+        (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7de78e*/
         ++v7; /*0x7de791*/
         v6 += 3; /*0x7de7a1*/
         v33 = (4 /*0x7de7ea*/
@@ -10679,7 +10679,7 @@ unsigned int  ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64, __m64, in
         if ( v34 ) /*0x7de7f9*/
           return result; /*0x7de7f9*/
       }
-      (*((unsigned char *)&(v31))) = v6[2]; /*0x7de802*/
+      (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7de802*/
       ++v7; /*0x7de805*/
       v6 += 3; /*0x7de815*/
       v35 = (4 /*0x7de85e*/
@@ -10794,8 +10794,8 @@ unsigned int  ConvertRGB24to655(int a1, unsigned short * a2, __m64, __m64, int a
     do /*0x7deaa0*/
     {
       v25 = *v10; /*0x7dea43*/
-      v26 = v10[1]; /*0x7dea46*/
-      v27 = v10[2]; /*0x7dea4a*/
+      v26 = v10->u8_1; /*0x7dea46*/
+      v27 = v10->u32_2; /*0x7dea4a*/
       if ( *v11 ) /*0x7dea40*/
       {
         v28 = a3.m64_i32[0] * v25; /*0x7dea50*/
@@ -10835,12 +10835,12 @@ unsigned int  ConvertRGB24to655(int a1, unsigned short * a2, __m64, __m64, int a
     {
       while ( 1 )
       {
-        (*((unsigned char *)&(v8))) = v6[1]; /*0x7deac2*/
+        (*((unsigned char *)&(v8))) = v6->u8_1; /*0x7deac2*/
         v31 = 0; /*0x7deac5*/
         v32 = *v6; /*0x7deac7*/
         if ( !*v7 ) /*0x7deac9*/
           break; /*0x7deac9*/
-        (*((unsigned char *)&(v31))) = v6[2]; /*0x7deace*/
+        (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7deace*/
         ++v7; /*0x7dead1*/
         v6 += 3; /*0x7deae1*/
         v33 = (8 /*0x7deb2a*/
@@ -10862,7 +10862,7 @@ unsigned int  ConvertRGB24to655(int a1, unsigned short * a2, __m64, __m64, int a
         if ( v34 ) /*0x7deb39*/
           return result; /*0x7deb39*/
       }
-      (*((unsigned char *)&(v31))) = v6[2]; /*0x7deb42*/
+      (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7deb42*/
       ++v7; /*0x7deb45*/
       v6 += 3; /*0x7deb55*/
       v35 = (8 /*0x7deb9e*/
@@ -10977,8 +10977,8 @@ unsigned int  ConvertRGB24to565(int a1, unsigned short * a2, __m64, __m64, int a
     do /*0x7dede0*/
     {
       v25 = *v10; /*0x7ded83*/
-      v26 = v10[1]; /*0x7ded86*/
-      v27 = v10[2]; /*0x7ded8a*/
+      v26 = v10->u8_1; /*0x7ded86*/
+      v27 = v10->u32_2; /*0x7ded8a*/
       if ( *v11 ) /*0x7ded80*/
       {
         v28 = a3.m64_i32[0] * v25; /*0x7ded90*/
@@ -11018,12 +11018,12 @@ unsigned int  ConvertRGB24to565(int a1, unsigned short * a2, __m64, __m64, int a
     {
       while ( 1 )
       {
-        (*((unsigned char *)&(v8))) = v6[1]; /*0x7dee02*/
+        (*((unsigned char *)&(v8))) = v6->u8_1; /*0x7dee02*/
         v31 = 0; /*0x7dee05*/
         v32 = *v6; /*0x7dee07*/
         if ( !*v7 ) /*0x7dee09*/
           break; /*0x7dee09*/
-        (*((unsigned char *)&(v31))) = v6[2]; /*0x7dee0e*/
+        (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7dee0e*/
         ++v7; /*0x7dee11*/
         v6 += 3; /*0x7dee21*/
         v33 = (4 /*0x7dee6a*/
@@ -11045,7 +11045,7 @@ unsigned int  ConvertRGB24to565(int a1, unsigned short * a2, __m64, __m64, int a
         if ( v34 ) /*0x7dee79*/
           return result; /*0x7dee79*/
       }
-      (*((unsigned char *)&(v31))) = v6[2]; /*0x7dee82*/
+      (*((unsigned char *)&(v31))) = v6->u32_2; /*0x7dee82*/
       ++v7; /*0x7dee85*/
       v6 += 3; /*0x7dee95*/
       v35 = (4 /*0x7deede*/
@@ -11577,11 +11577,11 @@ int _freebuf(MouseClass * a1)
   result = a1->ptr_30; /*0x7d2b59*/
   if ( (result & 0x83) != 0 && (result & 8) != 0 ) /*0x7d2b62*/
   {
-    free(a1->u32_8); /*0x7d2b67*/
+    free(a1->Y); /*0x7d2b67*/
     a1->ptr_30 &= 0xFBF7u; /*0x7d2b6c*/
     *(unsigned int *)a1 = 0; /*0x7d2b75*/
-    a1->u32_8 = 0; /*0x7d2b77*/
-    a1->u32_4 = 0; /*0x7d2b7a*/
+    a1->Y = 0; /*0x7d2b77*/
+    a1->X = 0; /*0x7d2b7a*/
     return 0; /*0x7d2b72*/
   }
   return result; /*0x7d2b7d*/
@@ -12867,7 +12867,7 @@ char fix_grouping(CCINIClass * a1)
         v3 = v1; /*0x7d681d*/
         do /*0x7d6829*/
         {
-          *v3 = v3[1]; /*0x7d6825*/
+          *v3 = v3->u8_1; /*0x7d6825*/
           ++v3; /*0x7d6827*/
         }
         while ( *v3 ); /*0x7d6829*/

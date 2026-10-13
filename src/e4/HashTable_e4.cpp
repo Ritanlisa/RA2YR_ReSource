@@ -547,7 +547,7 @@ CampaignClass * * HashTable_flat::Clear(void *a1)
     v8 = *(unsigned int *)a1->__pad_0; /*0x6b95a9*/
     memcpy(&v30[20], v7 + 1, 0x304u); /*0x6b95b8*/
     v9 = *(unsigned int **)(v8 + 4 * v5); /*0x6b95ba*/
-    v10 = v9[194]; /*0x6b95bf*/
+    v10 = v9->q308; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
     {
       DeleteAndZero(*(ObjectClass **)(v8 + 4 * v5)); /*0x6b95c9*/
@@ -739,7 +739,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
       if ( (unsigned __int8)String::Compare((String *)v9, (const char **)v16) ) /*0x6ba30b*/
       {
         v10 = *(unsigned int **)(*(unsigned int *)this->q000 + 4 * v8); /*0x6ba316*/
-        v11 = v10[194]; /*0x6ba31b*/
+        v11 = v10->q308; /*0x6ba31b*/
         if ( v10 ) /*0x6ba321*/
         {
           DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->q000 + 4 * v8)); /*0x6ba325*/
@@ -839,7 +839,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x304u); /*0x6bacca*/
     v9 = *(unsigned int **)(*(unsigned int *)this->q000 + 4 * v7); /*0x6baccf*/
-    v10 = v9[194]; /*0x6bacd4*/
+    v10 = v9->q308; /*0x6bacd4*/
     if ( v9 ) /*0x6bacda*/
     {
       DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->q000 + 4 * v7)); /*0x6bacde*/
@@ -1405,7 +1405,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
     v9 = *(unsigned int **)(*(unsigned int *)this->q000 + 4 * v7); /*0x7add5f*/
-    v10 = v9[28]; /*0x7add64*/
+    v10 = v9->estimatedHealth; /*0x7add64*/
     if ( v9 ) /*0x7add67*/
     {
       DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->q000 + 4 * v7)); /*0x7add6b*/
@@ -1816,7 +1816,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
   {
     qmemcpy(a3, (const void *)(v8 + 4), 0x10Cu); /*0x7ae9da*/
     v9 = *(unsigned int **)(*(unsigned int *)this->q000 + 4 * v7); /*0x7ae9df*/
-    v10 = v9[68]; /*0x7ae9e4*/
+    v10 = v9->ParticleSystemClass_110; /*0x7ae9e4*/
     if ( v9 ) /*0x7ae9ea*/
     {
       DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->q000 + 4 * v7)); /*0x7ae9ee*/

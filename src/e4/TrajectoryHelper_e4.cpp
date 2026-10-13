@@ -171,17 +171,17 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   }
   if ( *(unsigned char *)(a7 + 664) ) /*0x4cc405*/
   {
-    v13 = v10[17]; /*0x4cc413*/
+    v13 = v10->u32_44; /*0x4cc413*/
     v14 = v13 != -1 && *(unsigned char *)(*(unsigned int *)&dword_A83D84->vfptr[4 * v13] + 680); /*0x4cc432*/
     if ( v10 != (unsigned int *)v8 /*0x4cc47c*/
       && v14
-      && a1[283] <= v8[283]
+      && a1->u32_11B <= v8->u32_11B
       && (!(*((unsigned char *)&(dword_8871E0[1][3])))
        || (v15 = *&dword_A8022C->vtable1]) == 0
        || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
   LABEL_16:
-      v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))(v10, &v45); /*0x4cc489*/
+      v16 = (unsigned int *)v10->vt_slot_72(&v45); /*0x4cc489*/
       v17 = a4 - *v16; /*0x4cc49c*/
       v18 = v16[1]; /*0x4cc4a2*/
       v19 = v16[2]; /*0x4cc4a7*/
@@ -229,7 +229,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
           {
             v37 = v33[17]; /*0x4cc5e0*/
             v38 = v37 != -1 && *(unsigned char *)(*(unsigned int *)&dword_A83D84->vfptr[4 * v37] + 680); /*0x4cc5ff*/
-            if ( v33 != (unsigned int *)a2 && v38 && v44[283] <= a2[283] ) /*0x4cc61f*/
+            if ( v33 != (unsigned int *)a2 && v38 && v44->u32_11B <= a2[283] ) /*0x4cc61f*/
             {
               if ( !(*((unsigned char *)&(dword_8871E0[1][3]))) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/

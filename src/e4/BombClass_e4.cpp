@@ -36,7 +36,7 @@ int BombClass::AbstractClass()
   this->AbstractClass = &BombClass::`vftable'; /*0x4385e1*/
   this->? = &BombClass::`vftable'; /*0x4385e7*/
   /* X11: vtable install elided (implicit via BombClass virtuals 0x4385ee) */
-  this->? = &BombClass::`vftable'; /*0x4385f5*/
+  this->vtable4 = &BombClass::`vftable'; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
@@ -212,7 +212,7 @@ BombClass * BombClass::CopyTo(char a2)
   this->AbstractClass = &BombClass::`vftable'; /*0x4393f7*/
   this->? = &BombClass::`vftable'; /*0x4393fd*/
   /* X11: vtable install elided (implicit via BombClass virtuals 0x439404) */
-  this->? = &BombClass::`vftable'; /*0x43940b*/
+  this->vtable4 = &BombClass::`vftable'; /*0x43940b*/
   AudioFileClass::Release(&this->HouseClass_6C); /*0x439412*/
   v5 = this; /*0x439427*/
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/

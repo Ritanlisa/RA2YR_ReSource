@@ -191,7 +191,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   sprintf(Buffer, "SIDEC%02dMD.MIX", v2 + 1); /*0x5350e1*/
   Debug::Log(); /*0x5350f0*/
   v6 = CCFileClass::Construct(&v18, Buffer); /*0x535101*/
-  v7 = (*(int (**)(unsigned int *, unsigned int))(*v6 + 20))(v6, 0); /*0x535115*/
+  v7 = v6->vt_slot_20(0); /*0x535115*/
   v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535117*/
   v20 = 0; /*0x53511f*/
   Vector::Clear((int)v19); /*0x535126*/
@@ -209,7 +209,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
   sprintf(Buffer, "SIDEC%02d.MIX", v5); /*0x535184*/
   Debug::Log(); /*0x535193*/
   v9 = CCFileClass::Construct(&v18, Buffer); /*0x5351a4*/
-  v10 = (*(int (**)(unsigned int *, unsigned int))(*v9 + 20))(v9, 0); /*0x5351b8*/
+  v10 = v9->vt_slot_20(0); /*0x5351b8*/
   v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
   Vector::Clear((int)v19); /*0x5351c9*/
@@ -237,7 +237,7 @@ AbstractClass * * MixFile::LoadSide(void * aUimdIni)
     sprintf(Buffer, "SIDENC%02d.MIX", v5); /*0x53525b*/
     Debug::Log(); /*0x53526a*/
     v13 = CCFileClass::Construct(&v18, Buffer); /*0x53527b*/
-    v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x535294*/
+    v14 = v13->vt_slot_20(0); /*0x535294*/
     v18.vtable1.__tail_0.__tail_0.__tail_0 = (FileClass)&vt_CCFileClass; /*0x535296*/
     v20 = 0; /*0x53529a*/
     Vector::Clear((int)v19); /*0x5352a1*/

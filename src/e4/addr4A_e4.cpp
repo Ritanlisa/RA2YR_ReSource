@@ -226,9 +226,9 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   this->M28 = 0; /*0x4a0340*/
   this->q020 = 0; /*0x4a0343*/
   /* X11: vtable install elided (implicit via EnumConnectionsClass virtuals 0x4a0346) */
-  for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0353*/
+  for ( i = 0; i < this->M20; ++i ) /*0x4a0353*/
   {
-    v12 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a035b*/
+    v12 = *(unsigned int *)(this->M8 + 8 * i); /*0x4a035b*/
     (*(void (**)(int))(*(unsigned int *)v12 + 4))(v12); /*0x4a035e*/
   }
   return this->__pad_0; /*0x4a036b*/
@@ -298,9 +298,9 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   this->q020 = 0; /*0x4a041e*/
   this->M28 = v10; /*0x4a0421*/
   /* X11: vtable install elided (implicit via EnumConnectionsClass virtuals 0x4a0424) */
-  for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0431*/
+  for ( i = 0; i < this->M20; ++i ) /*0x4a0431*/
   {
-    v13 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a0439*/
+    v13 = *(unsigned int *)(this->M8 + 8 * i); /*0x4a0439*/
     (*(void (**)(int))(*(unsigned int *)v13 + 4))(v13); /*0x4a043c*/
   }
   return this->__pad_0; /*0x4a0449*/
@@ -1347,7 +1347,7 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
 
   v11 = Color::ConvertToRGB((uint8_t *)(a6 + 776), (int)&a6); /*0x4a6028*/
   (*((unsigned short *)&(v14))) = *(unsigned short *)v11; /*0x4a6036*/
-  (((unsigned char *)&(v14))[2]) = *(unsigned char *)(v11 + 2); /*0x4a603e*/
+  (((unsigned char *)&(v14))[2]) = v11->ConvertClass_field_0x2; /*0x4a603e*/
   v12 = RenderTextLabel( /*0x4a60b2*/
           &v14,
           a2,
@@ -1613,7 +1613,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( !this->M8 ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
   vtable1 = this->M4; /*0x4a6951*/
-  this->M16 = vtable1[1]; /*0x4a6957*/
+  this->M16 = vtable1->vtable2; /*0x4a6957*/
   uniqueId = this->M16; /*0x4a6962*/
   this->M20 = abs32(vtable1[2]); /*0x4a6965*/
   v13 = uniqueId + 3; /*0x4a6968*/
@@ -1890,7 +1890,7 @@ char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
     || !aP2
     || *(unsigned int *)aP3 == dword_8A03F8
     || !aP0
-    || (*(int (**)(unsigned int *))(*aP0 + 44))(aP0) != 7 )
+    || aP0->IsSameType() != 7 )
   {
     return 1; /*0x4a905d*/
   }
@@ -1930,7 +1930,7 @@ char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
             v16 = v15; /*0x4a8fd1*/
             if ( v15 ) /*0x4a8fd5*/
             {
-              v17 = v15[135]; /*0x4a8fd7*/
+              v17 = v15->u32_21C; /*0x4a8fd7*/
               if ( *(unsigned int *)(v17 + 48) == a2 && *(unsigned char *)(v15[328] + 5455) ) /*0x4a8fec*/
                 v25 = 1; /*0x4a8ff5*/
               if ( (unsigned char)g_abs_A8B264 /*0x4a900e*/
@@ -2534,10 +2534,10 @@ namespace gamemd {
       v63 = a6[3]; /*0x4aee12*/
       v21 = ClipRectIntersection(&v50, a6, v66, 0, 0); /*0x4aee1f*/
       v60 = *v21; /*0x4aee23*/
-      v61 = v21[1]; /*0x4aee2a*/
-      result = v21[2]; /*0x4aee2e*/
+      v61 = v21->vtable2; /*0x4aee2a*/
+      result = v21->vtable3; /*0x4aee2e*/
       v62 = result; /*0x4aee31*/
-      v22 = v21[3]; /*0x4aee35*/
+      v22 = v21->vtable4; /*0x4aee35*/
       v63 = v22; /*0x4aee3a*/
       if ( result > 0 && v22 > 0 ) /*0x4aee46*/
       {
@@ -2567,18 +2567,18 @@ namespace gamemd {
         {
           v28 = Building::GetFoundationSize(&v50, a14); /*0x4aef37*/
           v46 = *v28; /*0x4aef3e*/
-          v47 = v28[1]; /*0x4aef47*/
-          v48 = v28[2]; /*0x4aef4e*/
-          v49 = v28[3]; /*0x4aef55*/
+          v47 = v28->ptr_4; /*0x4aef47*/
+          v48 = v28->ptr_8; /*0x4aef4e*/
+          v49 = v28->u32_C; /*0x4aef55*/
           v29 = operator new(0x20u); /*0x4aef5e*/
           if ( v29 ) /*0x4aef65*/
           {
             v38 = MixFileClass::GetSubFile((char **)a13, a14); /*0x4aef7c*/
             Surface::Construct(v29, v48, v49); /*0x4aef86*/
-            v29[3] = 0; /*0x4aef8b*/
+            v29->u32_C = 0; /*0x4aef8b*/
             *v29 = &XSurface_Vtable; /*0x4aef92*/
             v35 = v49 * v48; /*0x4aefa5*/
-            v29[4] = 1; /*0x4aefaa*/
+            v29->u32_10 = 1; /*0x4aefaa*/
             Buffer::Init(v29 + 5, v38, v35); /*0x4aefb1*/
             *v29 = &BSurface_Vtable; /*0x4aefb6*/
             v39 = (void (***)(unsigned int, int))v29; /*0x4aefbc*/
@@ -2622,9 +2622,9 @@ namespace gamemd {
         v53 = v49; /*0x4af0cb*/
         v30 = ClipRectIntersection(&v46, &v42, &v50, 0, 0); /*0x4af0d4*/
         v42 = *v30; /*0x4af0d8*/
-        v43 = v30[1]; /*0x4af0df*/
-        v44 = v30[2]; /*0x4af0e6*/
-        v31 = v30[3]; /*0x4af0ea*/
+        v43 = v30->vtable2; /*0x4af0df*/
+        v44 = v30->vtable3; /*0x4af0e6*/
+        v31 = v30->vtable4; /*0x4af0ea*/
         v45 = v31; /*0x4af0ef*/
         if ( v44 > 0 && v31 > 0 ) /*0x4af0fb*/
         {
@@ -2828,8 +2828,8 @@ void E4Recv_4A08D0::sub_4A08D0()
   ConnectionPointClass_field_0x18 = this->M24; /*0x4a08d4*/
   /* X11: vtable install elided (implicit via ConnectionPointClass virtuals 0x4a08d7) */
   (*(void (**)(int))(*(unsigned int *)ConnectionPointClass_field_0x18 + 8))(ConnectionPointClass_field_0x18); /*0x4a08e0*/
-  ConnectionPointClass_field_0x1C = this->ConnectionPointClass_field_0x1C; /*0x4a08e3*/
-  p_ConnectionPointClass_field_0x1C = &this->ConnectionPointClass_field_0x1C; /*0x4a08e6*/
+  ConnectionPointClass_field_0x1C = this->M28; /*0x4a08e3*/
+  p_ConnectionPointClass_field_0x1C = &this->M28; /*0x4a08e6*/
   (*(void (**)(int *))(ConnectionPointClass_field_0x1C + 12))(p_ConnectionPointClass_field_0x1C); /*0x4a08eb*/
   v5 = (void *)p_ConnectionPointClass_field_0x1C[1]; /*0x4a08ee*/
   *p_ConnectionPointClass_field_0x1C = (int)&VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a08f5*/
@@ -2900,9 +2900,9 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   this->EnumConnectionPointsClass_field_0x20 = a2[8]; /*0x4a0d6d*/
   *p_EnumConnectionPointsClass_field_0x0C = (int)&DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0d70*/
   /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0d76) */
-  for ( i = 0; i < this->EnumConnectionPointsClass_field_0x1C; ++i ) /*0x4a0d83*/
+  for ( i = 0; i < this->M28; ++i ) /*0x4a0d83*/
   {
-    v10 = *(unsigned int *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a0d8b*/
+    v10 = *(unsigned int *)(this->M16 + 4 * i); /*0x4a0d8b*/
     (*(void (**)(int))(*(unsigned int *)v10 + 4))(v10); /*0x4a0d8e*/
   }
   return this->__pad_0; /*0x4a0d9b*/
@@ -3258,7 +3258,7 @@ void E4Recv_4A2880::sub_4A2880()
 
   CStreamClass_field_0x08 = this->M8; /*0x4a2886*/
   /* X11: vtable install elided (implicit via CStreamClass virtuals 0x4a2889) */
-  this->CStreamClass_field_0x04 = (int)&CStreamClass::`vftable'; /*0x4a2891*/
+  this->M4 = (int)&CStreamClass::`vftable'; /*0x4a2891*/
   if ( CStreamClass_field_0x08 ) /*0x4a2898*/
   {
     if ( BYTE1(this->M8) && this->M20 > 0 && this->M8 ) /*0x4a28aa*/
@@ -3924,7 +3924,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
 
   v12 = Color::ConvertToRGB((uint8_t *)(a6 + 776), (int)&a6); /*0x4a6518*/
   v16 = *(unsigned short *)v12; /*0x4a6526*/
-  v17 = *(unsigned char *)(v12 + 2); /*0x4a652e*/
+  v17 = v12->ConvertClass_field_0x2; /*0x4a652e*/
   v13 = (unsigned int *)RenderTextLabelWordWrap( /*0x4a65a7*/
                     &v16,
                     aP1,
@@ -3939,7 +3939,7 @@ unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int
                     a9,
                     a10);
   *aP0 = *v13; /*0x4a65ae*/
-  v14 = v13[1]; /*0x4a65b1*/
+  v14 = v13->X; /*0x4a65b1*/
   aP0[1] = v14; /*0x4a65b6*/
   return aP0; /*0x4a65b0*/
 }

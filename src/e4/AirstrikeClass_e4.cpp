@@ -355,7 +355,7 @@ AirstrikeClass::AirstrikeClass(int a2)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
   /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d389) */
-  *((unsigned int *)this + 1) = &AirstrikeClass::`vftable'; /*0x41d38f*/
+  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41d38f*/
   /* X11: vtable install elided (implicit via AirstrikeClass virtuals 0x41d396) */
   *((unsigned int *)this + 3) = &AirstrikeClass::`vftable'; /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/

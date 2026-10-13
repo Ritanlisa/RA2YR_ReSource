@@ -1263,9 +1263,9 @@ LABEL_72:
             *(unsigned int *)&v2->__pad_64[24 * i + 56] = v38 + 1; /*0x5849ae*/
             v39 = *(unsigned int *)&v2->__pad_64[24 * i + 44] + 36 * v38; /*0x5849b8*/
             Radar::CopyDataArray((Radar *)v39, (int *)&v122); /*0x5849be*/
-            *(unsigned short *)(v39 + 24) = v125; /*0x5849cb*/
-            *(unsigned int *)(v39 + 28) = v126; /*0x5849d6*/
-            *(unsigned int *)(v39 + 32) = v127; /*0x5849e0*/
+            v39->u32_18 = v125; /*0x5849cb*/
+            v39->q01C = v126; /*0x5849d6*/
+            v39->q020 = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
           /* X11: vtable install elided (implicit via VectorClass virtuals 0x5849eb) */

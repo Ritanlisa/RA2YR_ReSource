@@ -23,6 +23,7 @@ Usage:
 
 from bisect import bisect_right
 from collections import defaultdict
+import re
 
 
 # ── X86 register set (must match engine.py _X86_REGISTERS) ──────────────────
@@ -40,6 +41,16 @@ X86_REGISTERS = frozenset({
 _IDA_PREFIXES = (
     "dword_", "byte_", "word_", "flt_", "off_", "qword_", "unk_",
 )
+
+# X14: pre-scoped register write names (X2-generation extractor emission).
+# RETURN_TO rows name the receiver SSA version directly — `{func}::eax_v{site}`
+# — instead of spelling a bare register. These ARE register write points; if
+# they are not registered, every subsequent read/copy of the receiver register
+# scopes to the PREVIOUS write (or the entry `_v0` version) and the call-return
+# value never reaches its uses (measured: 83,503 RETURN_TO edges disconnected
+# at X14 start — the `.return` channel typed only the immediate receiver var).
+_RE_PRESCOPED_REG = re.compile(
+    r"^(0x[0-9A-Fa-f]{8})::([a-z][a-z0-9]*)_v0x([0-9A-Fa-f]+)$")
 
 
 # ── helpers ────────────────────────────────────────────────────────────────
@@ -105,7 +116,10 @@ def _detect_writes(constraints: list[dict], func_addrs: list[int]) -> dict:
     Register write rules (``to`` is an x86 register):
         ASSIGN       — register ← register/member  (mov ecx, esi)
         FUNC_PARAM   — parameter loaded into register (mov ecx, [esp+4] at entry)
-        RETURN_TO    — call return value stored in register (mov eax, call_result)
+        RETURN_TO    — call return value stored in register (mov eax, call_result).
+                       X2-generation rows spell the pre-scoped SSA name
+                       `{func}::eax_v{site}` directly — registered as a write
+                       at `site` too (X14, see _RE_PRESCOPED_REG).
         STACK_ACCESS — stack load into register (mov ecx, [ebp+8])
 
     X3 (I91 ②): PTR_ARITH.to=<reg> is intentionally NOT a write point —
@@ -141,6 +155,16 @@ def _detect_writes(constraints: list[dict], func_addrs: list[int]) -> dict:
             continue
 
         clean_to = c_to.lstrip("*").lower()
+
+        # X14: pre-scoped register write point (X2-generation RETURN_TO
+        # emission — see _RE_PRESCOPED_REG). The embedded (func, reg, site)
+        # is the extractor's own SSA claim; register it as a write so later
+        # reads of the register pick up THIS version.
+        if isinstance(c_to, str) and c_to.startswith("0x"):
+            m_ps = _RE_PRESCOPED_REG.match(c_to)
+            if m_ps and m_ps.group(2).lower() in X86_REGISTERS:
+                writes[(int(m_ps.group(1), 16), m_ps.group(2).lower())].append(
+                    int(m_ps.group(3), 16))
 
         # Register write detection
         if clean_to in X86_REGISTERS and c_type in (

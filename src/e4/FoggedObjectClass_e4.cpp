@@ -70,7 +70,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a0c) */
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
+  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a1a) */
   v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
@@ -206,7 +206,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   *((unsigned char *)this + 116) = 1; /*0x4d0cae*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cb8) */
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
+  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cc6) */
   v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
@@ -369,7 +369,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   *(unsigned char *)(aP1 + 116) = a3; /*0x4d0fa2*/
   *(unsigned int *)aP1 = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fab) */
-  *(unsigned int *)(aP1 + 8) = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
+  aP1->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fb9) */
   v8 = (unsigned int *)(*(int (**)(int *, char *))(*aP2 + 300))(aP2, v52); /*0x4d0fc5*/
   *(unsigned int *)(aP1 + 64) = *v8; /*0x4d0fd2*/
@@ -581,7 +581,7 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned char *)this + 116) = 1; /*0x4d140a*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d140e*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1414) */
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d141b*/
+  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d141b*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1422) */
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
   *((unsigned int *)this + 16) = *v5; /*0x4d143b*/
@@ -767,10 +767,10 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
       return result; /*0x4d2779*/
     vtable1 = a1[2].vfptr1; /*0x4d25de*/
     if ( (int)a1[2].vfptr3 < (int)vtable1 /*0x4d2605*/
-      || ((((unsigned char *)&(a1[2].vfptr2))[1]) || !vtable1)
-      && (uniqueId = a1[2].uniqueId, uniqueId > 0)
-      && (*(uint8_t (**)(int *, int, unsigned int))(a1[1].Cell[0] + 8))(
-           a1[1].Cell,
+      || ((((unsigned char *)&(a1->vtable3.vfptr2))[1]) || !vtable1)
+      && (uniqueId = a1->vtable3.uniqueId, uniqueId > 0)
+      && (*(uint8_t (**)(int *, int, unsigned int))(a1->vtable2.Cell[0] + 8))(
+           a1->vtable2.Cell,
            (int)vtable1 + uniqueId,
            0) )
     {
@@ -779,9 +779,9 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
       a1[2].vfptr3 = (char *)vtable3 + 1; /*0x4d2616*/
       v11 = a1->ptr_2.vfptr + 16 * (unsigned int)vtable3; /*0x4d261f*/
       *v11 = v18; /*0x4d2621*/
-      v11[1] = v19; /*0x4d2627*/
-      v11[2] = v20; /*0x4d262e*/
-      v11[3] = v21; /*0x4d2635*/
+      v11->__pad_004 = v19; /*0x4d2627*/
+      v11->q008 = v20; /*0x4d262e*/
+      v11->q00C = v21; /*0x4d2635*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1->vtable3.vfptr + 4 * (int)a1[2].vfptr3 - 4); /*0x4d264b*/
     if ( ++v17 >= (int)a1 ) /*0x4d265f*/
@@ -949,7 +949,7 @@ int FoggedObjectClass::Read(unsigned int * a2, void *a2_2)
   result = 0; /*0x4d2cd5*/
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
-  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i[1] != a2_2[1]; i += 4 ) /*0x4d2ce1*/
+  for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i->vtable2 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/

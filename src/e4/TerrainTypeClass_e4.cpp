@@ -95,7 +95,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned int *)aP4 + 194) = 0; /*0x5448c2*/
   aP4->ObjectTypeClass = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
-  aP4->? = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
+  aP4->q008 = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -389,7 +389,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned 
   unsigned int *v11; // edx
 
   v7 = (unsigned int *)this->vtable2; /*0x53ffa0*/
-  if ( v7[14] < a2 ) /*0x53ffaa*/
+  if ( v7->q038 < a2 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
   TileType = ((Terrain *)(v7))->GetTileType(a2); /*0x53ffad*/
   if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x53ffb9*/

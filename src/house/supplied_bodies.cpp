@@ -525,11 +525,8 @@ void HouseClass::Update_TogglePower(double a2)
         {
           v33 = 0; /*0x4f8990*/
         }
-        (*(void (__thiscall **)(int, unsigned int *, int, int))(*(unsigned int *)ClosestObjectCell + 372))( /*0x4f899f*/
-          ClosestObjectCell,
-          &dword_A8EFF8,
-          1,
-          1);
+        ClosestObjectCell->vt_slot_372(/*0x4f899f*/
+          ClosestObjectCell, &dword_A8EFF8, 1, 1);
         v34 = 0; /*0x4f89a5*/
   LABEL_112:
         if ( (!v33 || !v33->u32_5A4) && !v34 ) /*0x4f89b7*/

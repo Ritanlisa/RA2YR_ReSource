@@ -943,7 +943,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
   result = INIClass::BinarySearchSection((int)v13, (uint8_t *)aColoradd); /*0x66d494*/
   if ( result ) /*0x66d4a2*/
   {
-    result = INIClass::GetKeyCount(v1->__pad_0, (uint8_t *)aColoradd); /*0x66d4ae*/
+    result = INIClass::GetKeyCount(v1->unused, (uint8_t *)aColoradd); /*0x66d4ae*/
     v4 = 0; /*0x66d4b3*/
     v12 = result; /*0x66d4b7*/
     if ( result > 0 ) /*0x66d4bb*/
@@ -951,7 +951,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
       v5 = (char *)aColoradd + 6260; /*0x66d4bd*/
       do /*0x66d511*/
       {
-        StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1->__pad_0, (uint8_t *)aColoradd, v4); /*0x66d4cd*/
+        StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1->unused, (uint8_t *)aColoradd, v4); /*0x66d4cd*/
         (*((unsigned short *)&(v13))) = 0; /*0x66d4e6*/
         (((unsigned char *)&(v13))[2]) = 0; /*0x66d4ee*/
         Coord = INIClass::GetCoord(v1, (int)v11, (uint8_t *)aColoradd, StringByIndex, (uint8_t *)&v13); /*0x66d4f2*/
@@ -1074,7 +1074,7 @@ int  RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
   result = (int)LargeVisceroid; /*0x67a3e0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a3e8*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a3f8*/
+    aP1->IsClean(this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a3f8*/
     result = (int)LargeVisceroid; /*0x67a3fb*/
   }
   return result; /*0x67a404*/
@@ -1109,7 +1109,7 @@ int  RulesClass::readAnimations(TechnoTypeClass * aP1)
   result = (int)LargeVisceroid; /*0x67a7f0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a7f8*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a808*/
+    aP1->IsClean(this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a808*/
     result = (int)LargeVisceroid; /*0x67a80b*/
   }
   return result; /*0x67a814*/

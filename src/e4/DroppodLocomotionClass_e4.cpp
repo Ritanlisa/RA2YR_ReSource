@@ -131,8 +131,8 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
           v25 = RandomCoordScatter((int *)&v33, &a1->IsOutOfMap, v7, 85, 0); /*0x4b5f6d*/
           v26 = v20[51]; /*0x4b5f74*/
           v34[0] = *v25; /*0x4b5f7a*/
-          v34[1] = v25[1]; /*0x4b5f86*/
-          v35 = v25[2]; /*0x4b5f8d*/
+          v34[1] = v25->vtable2; /*0x4b5f86*/
+          v35 = v25->vtable3; /*0x4b5f8d*/
           v27 = Random::State(&Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(v20[48] + 4 * (v27 % v26)),(unsigned int *)(&v36), 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v34, 2 * v20[41], &a1->Owner->vfptr, v20[43], 1, 0); /*0x4b5fc7*/
@@ -317,7 +317,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
         {
           v9 = (int *)a1; /*0x4b6339*/
           if ( pPStm ) /*0x4b633f*/
-            (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x4b6344*/
+            pPStm->Release(); /*0x4b6344*/
           pPStm = v9; /*0x4b6347*/
         }
         else
@@ -330,7 +330,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
       }
       v10 = OleSaveToStream((LPPERSISTSTREAM)pPStm, v3); /*0x4b636a*/
       if ( pPStm ) /*0x4b6372*/
-        (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x4b6377*/
+        pPStm->Release(); /*0x4b6377*/
       return v10; /*0x4b637a*/
     }
     else

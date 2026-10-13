@@ -266,7 +266,7 @@ int Scenario::ReadTeams()
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference((ObjectClass *)v29, v31); /*0x44fb4a*/
                   }
-                  v29->u8_6DC = v58; /*0x44fb5b*/
+                  v29->BuildingClass_field_bool_6DC = v58; /*0x44fb5b*/
                   v29->Tactical_6CA = v57; /*0x44fb61*/
                   v29->Tactical_6CB = v56; /*0x44fb70*/
                   v29->Tactical_6C9 = v26; /*0x44fb78*/
@@ -288,28 +288,28 @@ int Scenario::ReadTeams()
                   v74[1] = v60; /*0x44fbe9*/
                   if ( (*(unsigned __int8 (**)(int, unsigned int *, int))(v36 + 216))(v29, v74, v67) ) /*0x44fbf9*/
                   {
-                    v37 = v29->q600; /*0x44fc07*/
+                    v37 = v29->Spotlight; /*0x44fc07*/
                     if ( v37 ) /*0x44fc0f*/
                       BuildingLightClass::FindTarget(v37, (unsigned int *)v70); /*0x44fc16*/
                     if ( v55 ) /*0x44fc21*/
                     {
-                      if ( !v29->q660 && !v29->u32_504 ) /*0x44fc35*/
+                      if ( !v29->HasPower && !v29->empLockRemaining ) /*0x44fc35*/
                       {
-                        v38 = v29->u32_21C; /*0x44fc43*/
-                        v29->q660 = 1; /*0x44fc49*/
+                        v38 = v29->owner; /*0x44fc43*/
+                        v29->HasPower = 1; /*0x44fc49*/
                         v29->needsRedraw = 1; /*0x44fc50*/
                         v38->q5778 = 1; /*0x44fc57*/
-                        *(unsigned char *)(v29->u32_21C + 22393) = 1; /*0x44fc64*/
-                        v39 = v29->u32_21C; /*0x44fc6b*/
+                        *(unsigned char *)(v29->owner + 22393) = 1; /*0x44fc64*/
+                        v39 = v29->owner; /*0x44fc6b*/
                         v39->u32_1FC = 1; /*0x44fc71*/
-                        v40 = v29->q614; /*0x44fc78*/
-                        v29->u32_6EA = 1; /*0x44fc80*/
+                        v40 = v29->LightSource; /*0x44fc78*/
+                        v29->StuffEnabled = 1; /*0x44fc80*/
                         if ( v40 ) /*0x44fc87*/
                           Trigger::EnableOnce(v40, 0); /*0x44fc8b*/
                         if ( *(unsigned char *)(v29->field_520 + 5822) ) /*0x44fc96*/
                           BuildingClass::RepairPlacement((BuildingClass *)v29, 0); /*0x44fca4*/
                         v41 = 0; /*0x44fca9*/
-                        v42 = &v29->q55C; /*0x44fcab*/
+                        v42 = &v29->Anims; /*0x44fcab*/
                         do /*0x44fcda*/
                         {
                           if ( *(unsigned char *)(v41 + *&v29->field_520 + 3980) && *v42 ) /*0x44fcc2*/
@@ -323,9 +323,9 @@ int Scenario::ReadTeams()
                         if ( v44 ) /*0x44fcea*/
                         {
                           LOBYTE(v39) = *(unsigned char *)(v43 + 3278); /*0x44fcec*/
-                          HouseClass::UpdateProduction(v29->u32_21C, v44, v39, 0); /*0x44fcfc*/
+                          HouseClass::UpdateProduction(v29->owner, v44, v39, 0); /*0x44fcfc*/
                         }
-                        if ( (unsigned __int8)House::IsHumanPlayer(v29->u32_21C) ) /*0x44fd07*/
+                        if ( (unsigned __int8)House::IsHumanPlayer(v29->owner) ) /*0x44fd07*/
                           VoxClass::FindAndPlay((VoxClass *)&stru_818E00.Next, -1); /*0x44fd1a*/
                       }
                     }
@@ -334,7 +334,7 @@ int Scenario::ReadTeams()
                       BuildingClass::PowerOff((BuildingClass *)v29); /*0x44fd23*/
                     }
                     v45 = v29->field_520; /*0x44fd28*/
-                    v29->u8_41D = 0; /*0x44fd2e*/
+                    v29->isSelectedByPlayer_d = 0; /*0x44fd2e*/
                     if ( *(unsigned char *)(v45 + 5458) && !v29->q6CC ) /*0x44fd3f*/
                       BuildingClass::Deactivate((BuildingClass *)v29); /*0x44fd4b*/
                     if ( v62 > 0 ) /*0x44fd56*/
@@ -572,7 +572,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
       v10 = v8 + 321; /*0x552c74*/
     }
     *a2 = v9; /*0x552c62*/
-    a2[1] = v10; /*0x552c64*/
+    a2->q004 = v10; /*0x552c64*/
   }
   else
   {
@@ -584,7 +584,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
     else
       v5 = Scenario_field_0x2C + 164; /*0x552c1f*/
     *a2 = v5; /*0x552c0c*/
-    a2[1] = Scenario_field_0x30 + 7; /*0x552c0e*/
+    a2->q004 = Scenario_field_0x30 + 7; /*0x552c0e*/
   }
   return result; /*0x552c11*/
 
@@ -777,8 +777,8 @@ LABEL_38:
   LOWORD(v19) = Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5696) * 900.0); /*0x55b259*/
   v20 = v65; /*0x55b26a*/
   *p_nextArrayIndex = v15; /*0x55b26e*/
-  p_nextArrayIndex[1] = v20; /*0x55b270*/
-  p_nextArrayIndex[2] = v19; /*0x55b278*/
+  p_nextArrayIndex->u32_4 = v20; /*0x55b270*/
+  p_nextArrayIndex->u32_8 = v19; /*0x55b278*/
   MapClass::ProcessVisibilityFlags((MapClass *)&DataGlobal_87F7E8); /*0x55b27b*/
   v14 = dword_A8B230; /*0x55b280*/
   v13 = *(unsigned int *)&g_RulesClass_Instance; /*0x55b286*/
@@ -1130,7 +1130,7 @@ char Scenario::LoadWithProgress()
     }
     v24 = *(unsigned int *)&dword_A8B238 != 0; /*0x684819*/
     v9 = Scenario::ComputeDialogPos(Instance, v30); /*0x68481e*/
-    TextRenderer::MeasureBuilding((int *)g_UIManager, *v9, v9[1], (int)v3, v24, v24); /*0x68482f*/
+    TextRenderer::MeasureBuilding((int *)g_UIManager, *v9, v9->vtable2, (int)v3, v24, v24); /*0x68482f*/
     v10 = Map_Load(); /*0x684836*/
     Scenario::SetDword30((Scenario *)&dword_AC4F58, v10); /*0x684841*/
     if ( dword_887628 ) /*0x68484d*/

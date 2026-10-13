@@ -24,7 +24,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   /* X11: vtable install elided (implicit via StaticButtonClass virtuals 0x6c6886) */
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
-  Vector::Clear((int)(unsigned int *)this + 36); /*0x6c689c*/
+  Vector::Clear((int)&this->u32_90); /*0x6c689c*/
   GadgetClass::Dtor((ShpButtonClass *)this); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     __3_YAXPAX_Z(this); /*0x6c68b0*/

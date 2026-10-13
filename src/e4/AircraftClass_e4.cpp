@@ -62,10 +62,10 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
 
   v3 = v2; /*0x413f83*/
   result = TechnoClass::Update(v17, a2); /*0x413f85*/
-  v5 = v3[433]; /*0x413f8a*/
+  v5 = v3->Type; /*0x413f8a*/
   if ( v5 ) /*0x413f92*/
   {
-    v6 = v3[135]; /*0x413f98*/
+    v6 = v3->focus; /*0x413f98*/
     if ( v6 ) /*0x413fa1*/
     {
       v7 = 0; /*0x413fa6*/
@@ -85,21 +85,21 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
       }
     }
 LABEL_9:
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), *(unsigned int *)(v3[433] + 1820)); /*0x413fd2*/
-    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), *(unsigned int *)(v3[433] + 1820)); /*0x414001*/
+    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), v3->Type->ROT); /*0x413fd2*/
+    BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), v3->Type->ROT); /*0x414001*/
     Value = ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18); /*0x41400d*/
     FacingClass::Set_SyncLog(&v3->secondaryFacing, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
     v13 = (*(int (**)(int))(*v3->Type + 188))(v3[433]); /*0x414024*/
     (*(void (**)(int *, int))(v12 + 460))(v3, v13); /*0x41402d*/
     v14 = v3->Type; /*0x414033*/
-    v15 = v14[416]; /*0x41403a*/
+    v15 = v14->InitialAmmo; /*0x41403a*/
     if ( v15 == -1 ) /*0x414043*/
-      v15 = v14[417]; /*0x414045*/
-    v3[191] = v15; /*0x41404b*/
+      v15 = v14->Ammo; /*0x414045*/
+    v3->pitchAngle = v15; /*0x41404b*/
     result = v14->Strength; /*0x414051*/
-    v3[27] = (int)result; /*0x414057*/
-    v3[28] = (int)result; /*0x41405a*/
+    v3->health = (int)result; /*0x414057*/
+    v3->estimatedHealth = (int)result; /*0x41405a*/
   }
   v16 = v3->focus; /*0x41405d*/
   if ( v16 ) /*0x414065*/
@@ -523,9 +523,9 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
         }
   LABEL_35:
         v13 = (*(int (**)(Class_7E22A4 *))(*(unsigned int *)a1 + 444))(a1); /*0x41acc0*/
-        if ( (*(unsigned int *)(v13 + 320) & 0x100) == 0 ) /*0x41acd3*/
+        if ( (v13->u32_140 & 0x100) == 0 ) /*0x41acd3*/
         {
-          v14 = *(unsigned int *)(v13 + 228); /*0x41acd9*/
+          v14 = v13->u32_E4; /*0x41acd9*/
           if ( v14 ) /*0x41ace1*/
           {
             while ( (Class_7E22A4 *)v14 == a1 || (*(int (**)(int))(*(unsigned int *)v14 + 44))(v14) != 6 ) /*0x41acf5*/

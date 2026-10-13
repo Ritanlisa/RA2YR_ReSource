@@ -86,7 +86,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
   this->? = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
   /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
-  this->? = &OverlayTypeClass::`vftable'; /*0x5fe304*/
+  this->vtable4 = &OverlayTypeClass::`vftable'; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
   this->RadarInvisible_d = 1; /*0x5fe310*/
   this->Selectable_d = 0; /*0x5fe317*/
@@ -392,7 +392,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   this->ObjectTypeClass = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
   this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
   /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
-  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
+  this->vtable4 = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
   AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
   if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
     || (BYTE1(DataGlobal_A83D74) || !*(unsigned int *)&DataGlobal_A83D70)
@@ -604,7 +604,7 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
     {
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
       *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
-      a2->u8_2 = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
+      a2->UINameLabel[0x20] = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
       return a2; /*0x5feda4*/
     }
     else
@@ -615,14 +615,14 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
       BYTE1(a3) = v7->u32_2; /*0x5fed73*/
       LOBYTE(a3) = v11; /*0x5fed7b*/
       *(unsigned short *)a2 = a3; /*0x5fed86*/
-      a2->u8_2 = v8; /*0x5fed8a*/
+      a2->UINameLabel[0x20] = v8; /*0x5fed8a*/
       return a2; /*0x5fed77*/
     }
   }
   else
   {
     *(unsigned short *)a2 = 0; /*0x5fedd2*/
-    a2->u8_2 = 0; /*0x5fedd6*/
+    a2->UINameLabel[0x20] = 0; /*0x5fedd6*/
     return a2; /*0x5fedbb*/
   }
 

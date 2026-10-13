@@ -87,15 +87,15 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
         {
           while ( 1 ) /*0x436c98*/
           {
-            if ( ((*(int (**)(unsigned int *))(*v8 + 44))(v8) == 15 /*0x436cb9*/
-               || (*(int (**)(unsigned int *))(*v8 + 44))(v8) == 1)
+            if ( (v8->ReturnZeroPos() == 15 /*0x436cb9*/
+               || v8->ReturnZeroPos() == 1)
               && !(unsigned __int8)Object::IsAlliedWithObjectHouse(nextArrayIndex, (int)v8) )
             {
               v9 = *v8; /*0x436ccc*/
               location = v4->FollowingObject; /*0x436cce*/
               v11 = v4->FollowingObject; /*0x436cd0*/
-              v12 = location[1]; /*0x436cd2*/
-              v29 = location[2]; /*0x436cdf*/
+              v12 = location->vtable2; /*0x436cd2*/
+              v29 = location->vtable3; /*0x436cdf*/
               v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(v9 + 72))(v8, v30); /*0x436ce3*/
               v14 = v13[1] - v12; /*0x436ced*/
               v26 = *v13 - v11; /*0x436cf3*/

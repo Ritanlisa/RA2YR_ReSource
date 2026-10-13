@@ -161,11 +161,11 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
   int v8; // eax
 
   v2 = v2; /*0x4399a2*/
-  (*((unsigned short *)&(v4))) = Math::RoundToInt(*(float *)(v2 + 24)); /*0x4399a8*/
+  (*((unsigned short *)&(v4))) = Math::RoundToInt(v2->nextArrayIndex); /*0x4399a8*/
   v4 = v4; /*0x4399b0*/
-  (*((unsigned short *)&(v6))) = Math::RoundToInt(*(float *)(v2 + 28)); /*0x4399b2*/
+  (*((unsigned short *)&(v6))) = Math::RoundToInt(v2->referenceCount); /*0x4399b2*/
   v6 = v6; /*0x4399ba*/
-  (*((unsigned short *)&(v8))) = Math::RoundToInt(*(float *)(v2 + 32)); /*0x4399bc*/
+  (*((unsigned short *)&(v8))) = Math::RoundToInt(v2->needsSave); /*0x4399bc*/
   *outCoords = v4; /*0x4399c7*/
   outCoords->vtable2 = v6; /*0x4399cb*/
   outCoords->vtable3 = v8; /*0x4399cf*/

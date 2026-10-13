@@ -464,7 +464,7 @@ int WDT_InitGameOptions()
   v1 = System_Init_766880(sub_7667F0, (char)v25, v26); /*0x76612f*/
   ComPtr::Constructor(&v27); /*0x766131*/
   v27 = &vt_rc_ptr; /*0x76613f*/
-  ComPtr::Set(&v27, *(unsigned int *)(v1 + 4)); /*0x766147*/
+  ComPtr::Set(&v27, v1->u32_4); /*0x766147*/
   if ( dword_B72770 < dword_B72768 /*0x766183*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -489,7 +489,7 @@ int WDT_InitGameOptions()
   v5 = ConstructorWDTFlagOption(v29, 16, v23, v24, v25, v26); /*0x7661fa*/
   ComPtr::Constructor(&v27); /*0x7661fc*/
   v27 = &vt_rc_ptr; /*0x766201*/
-  ComPtr::Set(&v27, v5[1]); /*0x76620d*/
+  ComPtr::Set(&v27, v5->u32_4); /*0x76620d*/
   if ( dword_B72770 < dword_B72768 /*0x766249*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -514,7 +514,7 @@ int WDT_InitGameOptions()
   v9 = ConstructorWDTFlagOption(v29, 1024, v23, v24, v25, v26); /*0x7662c0*/
   ComPtr::Constructor(&v27); /*0x7662c2*/
   v27 = &vt_rc_ptr; /*0x7662c7*/
-  ComPtr::Set(&v27, v9[1]); /*0x7662d3*/
+  ComPtr::Set(&v27, v9->u32_4); /*0x7662d3*/
   if ( dword_B72770 < dword_B72768 /*0x76630f*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -536,7 +536,7 @@ int WDT_InitGameOptions()
   v12 = System_Init_766880(sub_7667E0, (char)v25, v26); /*0x76637c*/
   ComPtr::Constructor(&v27); /*0x76637e*/
   v27 = &vt_rc_ptr; /*0x766383*/
-  ComPtr::Set(&v27, *(unsigned int *)(v12 + 4)); /*0x76638f*/
+  ComPtr::Set(&v27, v12->u32_4); /*0x76638f*/
   if ( dword_B72770 < dword_B72768 /*0x7663cb*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -561,7 +561,7 @@ int WDT_InitGameOptions()
   v16 = ConstructorWDTFlagOption(v29, 32, v23, v24, v25, v26); /*0x766442*/
   ComPtr::Constructor(&v27); /*0x766444*/
   v27 = &vt_rc_ptr; /*0x766449*/
-  ComPtr::Set(&v27, v16[1]); /*0x766455*/
+  ComPtr::Set(&v27, v16->u32_4); /*0x766455*/
   if ( dword_B72770 < dword_B72768 /*0x766491*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
@@ -586,7 +586,7 @@ int WDT_InitGameOptions()
   v20 = ConstructorWDTFlagOption(v29, 256, v23, v24, v25, v26); /*0x766508*/
   ComPtr::Constructor(&v27); /*0x76650a*/
   v27 = &vt_rc_ptr; /*0x76650f*/
-  ComPtr::Set(&v27, v20[1]); /*0x76651b*/
+  ComPtr::Set(&v27, v20->u32_4); /*0x76651b*/
   System_Init_766EE0(&v27); /*0x76652a*/
   v27 = &vt_rc_ptr; /*0x766533*/
   ComPtr::Release(&v27); /*0x766537*/
@@ -1119,14 +1119,14 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   aP3 = aP3; /*0x76fa7d*/
   CoordPair = INIClass::GetCoordPair(a2, v35, aP3, v16, &this->ptr_10); /*0x76fa8c*/
   v19 = *CoordPair; /*0x76fa91*/
-  v20 = CoordPair[1]; /*0x76fa93*/
+  v20 = CoordPair->headNode; /*0x76fa93*/
   this->ptr_10 = v19; /*0x76fa96*/
   this->ptr_14 = v20; /*0x76fa9c*/
   DeleteAndZero((void **)&a4); /*0x76fa9f*/
   v21 = ProcessStringAndCopy((char **)&a4, aOrigin_0, (char **)&aP1); /*0x76fab3*/
   v22 = INIClass::GetCoordPair(a2, v35, aP3, v21, &this->ptr_18); /*0x76fac3*/
   v23 = *v22; /*0x76fac8*/
-  v24 = v22[1]; /*0x76faca*/
+  v24 = v22->headNode; /*0x76faca*/
   this->ptr_18 = v23; /*0x76facd*/
   this->u32_1C = v24; /*0x76fad3*/
   DeleteAndZero((void **)&a4); /*0x76fad6*/
@@ -1137,7 +1137,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
       ((String *)((char **)&a4))->Assign(aTarget800); /*0x76fb00*/
       v25 = INIClass::GetCoordPair(a2, v35, aP3, (char **)&a4, &this->ptr_10); /*0x76fb15*/
       v26 = *v25; /*0x76fb1a*/
-      v27 = v25[1]; /*0x76fb1c*/
+      v27 = v25->headNode; /*0x76fb1c*/
       *v8 = v26; /*0x76fb1f*/
       this->ptr_14 = v27; /*0x76fb25*/
       DeleteAndZero((void **)&a4); /*0x76fb28*/
@@ -1147,7 +1147,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
       ((String *)((char **)&a4))->Assign(aOrigin800); /*0x76fb42*/
       v28 = INIClass::GetCoordPair(a2, v35, aP3, (char **)&a4, &this->ptr_18); /*0x76fb57*/
       v29 = *v28; /*0x76fb5c*/
-      v30 = v28[1]; /*0x76fb5e*/
+      v30 = v28->headNode; /*0x76fb5e*/
       *v9 = v29; /*0x76fb61*/
       this->u32_1C = v30; /*0x76fb67*/
       DeleteAndZero((void **)&a4); /*0x76fb6a*/
@@ -2291,8 +2291,8 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
   vtable1 = (char *)this->vtable2; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   v4 = (char *)this->M8 + 1; /*0x7694aa*/
-  result[1] = &vtable1[a2[1]]; /*0x7694ab*/
-  result[2] = v4; /*0x7694ae*/
+  result->vtable2 = &vtable1[a2[1]]; /*0x7694ab*/
+  result->vtable3 = v4; /*0x7694ae*/
   return result; /*0x7694b1*/
 
 }

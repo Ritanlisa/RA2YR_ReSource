@@ -1048,6 +1048,100 @@ def member_type_str(cls, name):
     return None
 
 
+# ------------------------------------------------- X14 return-type closure
+# The X14 CSP pass typed the receivers of resolved class-pointer returns
+# (`v4 = PlacementList::FindByID(...)` -> v4 : BuildingClass). The forms
+# below close the remaining constant-offset accesses on those class-typed
+# bases: bare local indexing (`v4[328]`), member-value chains
+# (`*(T *)(v4[135] + 90196)`) and vptr-slot dispatch (`(*v4 + 104)(...)`).
+
+_PTRW = {'unsigned int': 4, 'int': 4, '_DWORD': 4, 'uint32_t': 4, 'long': 4,
+         'unsigned long': 4, 'float': 4, 'BOOL': 4, 'DWORD': 4, 'void': 4,
+         'unsigned char': 1, 'char': 1, '_BYTE': 1, 'uint8_t': 1, 'bool': 1,
+         'unsigned short': 2, 'short': 2, '_WORD': 2, 'uint16_t': 2,
+         'wchar_t': 2}
+
+
+def _decl_ptr_width(seg, var):
+    """byte width of `Type *var`'s pointee (None if no pointer decl).
+    Matches local declarations (line-anchored) and function parameters."""
+    rx = re.compile(
+        r'(?:^\s*|(?<=[(,]))(?:struct\s+|union\s+|const\s+)*'
+        r'(unsigned\s+(?:int|char|short|long)|int|_DWORD|_BYTE|_WORD|'
+        r'uint\w+_t|char|short|long|float|double|bool|BOOL|DWORD)\s*\*+\s*'
+        + re.escape(var) + r'\b', re.M)
+    m = rx.search(seg)
+    if not m:
+        return None
+    return _PTRW.get(re.sub(r'\s+', ' ', m.group(1)).strip())
+
+
+_SIG_FUNCS = None
+
+
+def _func_addr_from_markers(seg):
+    """X14: containing-function address recovered from the first /*0xADDR*/
+    site marker of a span (unannotated defs carry no function address; the
+    defsite typing channel needs it)."""
+    global _SIG_FUNCS
+    m = re.search(r'/\*0x([0-9A-Fa-f]{6,8})\*/', seg)
+    if not m:
+        return 0
+    site = int(m.group(1), 16)
+    if _SIG_FUNCS is None:
+        import bisect  # noqa: F401
+        addrs = []
+        for _k, _v in (_J(ROOT / 'signals.json').get('symbols') or {}).items():
+            if _v.get('kind') == 'function':
+                try:
+                    addrs.append(int(_v['address'], 16))
+                except (ValueError, TypeError):
+                    pass
+        addrs.sort()
+        _SIG_FUNCS = addrs
+    import bisect
+    i = bisect.bisect_right(_SIG_FUNCS, site) - 1
+    return _SIG_FUNCS[i] if i >= 0 else 0
+
+
+def off_member_name(cls, off):
+    """declared/authority member name at absolute offset `off` (chain)."""
+    for c in chain(cls):
+        d = MTABI.get(c.lower())
+        if d and off in d and d[off][0]:
+            return d[off][0]
+        d2 = DECL.get(c.lower())
+        if d2 and off in d2 and d2[off][0]:
+            return d2[off][0]
+    return None
+
+
+def off_member_class(cls, off):
+    """class pointee of the member at `off` (MTAB declared type first, then
+    binary access authority). None when the member is not a class pointer."""
+    cands = []
+    for c in chain(cls):
+        d = MTABI.get(c.lower())
+        if d and off in d and d[off][1]:
+            cands.append((d[off][1], d[off][2]))
+            break
+    a = AUTH.get((cls.lower(), off))
+    if a:
+        cands.append(((a.get('type') or ''), (a.get('size') or 0)))
+    for t, sz in cands:
+        if not t:
+            continue
+        if sz not in (None, 0, 4) and '*' not in t:
+            continue
+        c2 = re.sub(r'^(?:const\s+)?(?:struct\s+|union\s+|class\s+)?',
+                    '', t).rstrip('*& ').strip()
+        if not re.match(r'^[A-Za-z_]\w*$', c2):
+            continue
+        if _known_class(c2):
+            return c2
+    return None
+
+
 # --------------------------------------------------------------- handlers
 def h_qmark(seg, ctx):
     pat = re.compile(r'(?P<recv>(?<![\w.>])(?:this|[A-Za-z_]\w*)|' + GLOB +
@@ -1214,7 +1308,15 @@ def h_fptr(seg, ctx):
         if not m:
             break
         expr = m.group('expr')
-        if bad_span(seg, m) or '__thiscall' not in seg[max(0, m.start() - 220):m.start()]:
+        # X14: vptr-deref dispatch `(*recv + SLOT)` on a class-typed receiver
+        # is a thiscall dispatch even when the cast spells `int (**)(...)`
+        # (the mechanical render drops __thiscall); the class+slot lookup
+        # below is the real gate.
+        vptr_form = bool(re.match(
+            r'^\*\s*\(?\s*[A-Za-z_]\w*\s*\)?\s*$', expr.strip()))
+        if bad_span(seg, m) or (
+                '__thiscall' not in seg[max(0, m.start() - 220):m.start()]
+                and not vptr_form):
             pos = m.end()
             continue
         slot = int(m.group('slot'), 0)
@@ -1738,10 +1840,11 @@ def h_index(seg, ctx):
                 ledger_add('F-INDEX', ctx, m.start(), m.group(0), cls, off,
                            how)
                 continue
-            if not _x5b_arith_ok(ctx, m.end(), cls, nm, cty):
+            if not _x14_arith_ptr_ok(ctx, m.end(), cls, nm, cty):
                 # X5b: `(T *)recv[N] + K` -- renaming to a member of a
-                # different width changes the scale of the following + K
-                # (measured: `((unsigned int *)v9[50] + 176)` -> wrong)
+                # different width changes the scale of the following + K;
+                # X14: scale also changes when the member is not a pointer
+                # of the same pointee width (filler scalars refused).
                 ledger_add('F-INDEX', ctx, m.start(), m.group(0), cls, off,
                            'arith-width')
                 continue
@@ -1753,6 +1856,132 @@ def h_index(seg, ctx):
         out.append(seg[last:])
         seg = ''.join(out)
     return seg, n
+
+
+# X14: bare local-pointer index on a class-typed base: `recv[N]` -> recv->M.
+# (The cast-wrapped shapes `((T *)recv)[N]` / `(T *)recv[N]` stay F-INDEX's.)
+BIDX = re.compile(r'(?<![\w.>])\b([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]')
+
+
+def h_bidx(seg, ctx):
+    n = 0
+    mask = mask_text(seg)
+    out = []
+    last = 0
+    for m in BIDX.finditer(mask):
+        if bad_span(seg, m):
+            continue
+        recv, N = m.group(1), int(m.group(2))
+        pre = seg[max(0, m.start() - 24):m.start()].rstrip()
+        if pre.endswith(')') or pre.endswith('*'):
+            # cast-wrapped index reach (F-INDEX/F-PTHIS domain)
+            continue
+        nxt = seg[m.end():m.end() + 4].lstrip()
+        if nxt and nxt[0] in '+-':
+            # arithmetic continuation: scale would change (handled by
+            # F-BCHAIN / F-PTHIS on the typed member form)
+            continue
+        cls = ctx.recv_class(recv, m.start())
+        if cls is None:
+            if _decl_ptr_width(seg, recv):
+                ledger_add('F-BIDX', ctx, m.start(), m.group(0), None,
+                           None, 'noclass')
+            continue
+        w = _decl_ptr_width(seg, recv)
+        if not w:
+            ledger_add('F-BIDX', ctx, m.start(), m.group(0), cls, None,
+                       'no-width')
+            continue
+        off = N * w
+        site = ctx.site_of(m.start())
+        if site:
+            bd = back_disp(site)
+            if bd and bd[0] != off and not _off_in_stmt_window(
+                    site, off, _prev_anchor_addr(ctx, m.start())):
+                ledger_add('F-BIDX', ctx, m.start(), m.group(0), cls, off,
+                           'disp-mismatch:%d' % bd[0])
+                continue
+        nm, how = resolve_member(cls, off)
+        if not nm:
+            ledger_add('F-BIDX', ctx, m.start(), m.group(0), cls, off, how)
+            continue
+        repl = '%s->%s' % (recv, nm)
+        if repl == seg[m.start():m.end()]:
+            continue
+        out.append(seg[last:m.start()])
+        out.append(repl)
+        last = m.end()
+        n += 1
+        STATS['F-BIDX/' + how] += 1
+    out.append(seg[last:])
+    return ''.join(out), n
+
+
+# X14: member-value chain: `*(T *)(recv[N] + K)` / `(T *)(recv[N] + K)` ->
+# recv->M->M2 / &recv->M->M2, where M is class-typed at offset N*w and M2 is
+# the member at K of M's class.
+BCHAIN = re.compile(
+    r'(?P<deref>\*\s*)?\(\s*(?:const\s+)?(?P<cty>' + CTY +
+    r')\s*\*+\s*\)\s*\(\s*(?P<recv>[A-Za-z_]\w*)\s*\[\s*(?P<n>\d+)\s*\]'
+    r'\s*\+\s*(?P<k>\d+)\s*\)')
+
+
+def h_bchain(seg, ctx):
+    n = 0
+    mask = mask_text(seg)
+    out = []
+    last = 0
+    for m in BCHAIN.finditer(mask):
+        if bad_span(seg, m):
+            continue
+        recv = m.group('recv')
+        cls = ctx.recv_class(recv, m.start())
+        if cls is None:
+            ledger_add('F-BCHAIN', ctx, m.start(), m.group(0), None, None,
+                       'noclass')
+            continue
+        w = _decl_ptr_width(seg, recv)
+        if not w:
+            ledger_add('F-BCHAIN', ctx, m.start(), m.group(0), cls, None,
+                       'no-width')
+            continue
+        off1 = int(m.group('n')) * w
+        k = int(m.group('k'))
+        site = ctx.site_of(m.start())
+        if site:
+            bd = back_disp(site)
+            if bd and bd[0] != off1 and not _off_in_stmt_window(
+                    site, off1, _prev_anchor_addr(ctx, m.start())):
+                ledger_add('F-BCHAIN', ctx, m.start(), m.group(0), cls, off1,
+                           'disp-mismatch:%d' % bd[0])
+                continue
+        nm1, how1 = resolve_member(cls, off1)
+        if not nm1:
+            ledger_add('F-BCHAIN', ctx, m.start(), m.group(0), cls, off1,
+                       how1)
+            continue
+        d2 = off_member_class(cls, off1)
+        if not d2:
+            ledger_add('F-BCHAIN', ctx, m.start(), m.group(0), cls, off1,
+                       'chain-not-class')
+            continue
+        nm2, how2 = resolve_member(d2, k)
+        if not nm2:
+            ledger_add('F-BCHAIN', ctx, m.start(), m.group(0), d2, k, how2)
+            continue
+        if m.group('deref'):
+            repl = '%s->%s->%s' % (recv, nm1, nm2)
+        else:
+            repl = '&%s->%s->%s' % (recv, nm1, nm2)
+        if repl == seg[m.start():m.end()]:
+            continue
+        out.append(seg[last:m.start()])
+        out.append(repl)
+        last = m.end()
+        n += 1
+        STATS['F-BCHAIN/' + how2] += 1
+    out.append(seg[last:])
+    return ''.join(out), n
 
 
 I2P = re.compile(r'\(\s*(' + CTY + r')\s*\*\s*\)\s*(0[xX][0-9A-Fa-f]+|[1-9]\d*)\b')
@@ -1813,6 +2042,8 @@ HANDLERS = [
     ('F-THIS', h_this_arith),
     ('F-PTHIS', h_pthis),
     ('F-INDEX', h_index),
+    ('F-BCHAIN', h_bchain),
+    ('F-BIDX', h_bidx),
     ('F-I2P', h_int2ptr),
 ]
 
@@ -2038,6 +2269,36 @@ def _x5b_arith_ok(ctx, end_pos, cls, nm, cty):
     return _x5b_member_width(cls, nm) == cw
 
 
+def _pointee_width(t):
+    """byte width of the pointee of a declared pointer type, or None."""
+    t = re.sub(r'^(?:const\s+)?(?:struct\s+|union\s+|class\s+)?', '',
+               (t or '').strip())
+    stars = len(t) - len(t.rstrip('*& '))
+    if stars == 0:
+        return None
+    base = t.rstrip('*& ').strip()
+    if stars >= 2:
+        return 4
+    if base in _DECL_W:
+        return _DECL_W[base]
+    return 4  # class / unknown pointee -> 4-byte pointer slot
+
+
+def _x14_arith_ptr_ok(ctx, end_pos, cls, nm, cty):
+    """F-INDEX variant (X14 audit): `(T *)recv[N] + K` scales K by sizeof(T);
+    the converted form `recv->M + K` scales by sizeof(*M) only when M is a
+    POINTER of that pointee width. A scalar member would silently change the
+    scale (measured: `(unsigned int *)v9[50] + 176` with a u32 filler)."""
+    nxt = ctx.seg[end_pos:end_pos + 4].lstrip()
+    if not nxt or nxt[0] not in '+-[':
+        return True
+    t = member_type_str(cls, nm)
+    if not t or '*' not in t:
+        return False
+    cw = WIDTHS.get(cty.strip(), 4)
+    return _pointee_width(t) == cw
+
+
 def _x5b_enrich_env(seg, env, cls, addr):
     """Position-aware receiver typing for the X5b intake forms.
 
@@ -2108,6 +2369,21 @@ def _x5b_enrich_env(seg, env, cls, addr):
                 if t:
                     grew |= put(var, li, t)
                     continue
+            # X14: index read of a class-typed base: `var = recv[N]` — the
+            # member at N*w is class-typed -> var holds that class pointer.
+            m = re.fullmatch(r'([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]', rhs0)
+            if m:
+                r0, n0 = m.group(1), int(m.group(2))
+                rc = get(r0, li)
+                if rc and _known_class(rc):
+                    w0 = _decl_ptr_width(seg, r0)
+                    if w0:
+                        off0 = n0 * w0
+                        if off_member_name(rc, off0):
+                            t0 = off_member_class(rc, off0)
+                            if t0:
+                                grew |= put(var, li, t0)
+                                continue
             if site and ai:
                 for reg in ('eax', 'ecx', 'edx', 'ebx', 'esi', 'edi',
                             'al', 'bl', 'cl', 'dl'):
@@ -2212,9 +2488,13 @@ def process_file(p, apply=None):
         if dm:
             cls = dm.group(1)
         seg = '\n'.join(lines[def_i:end_i + 1])
-        env = build_env(seg, cls, addr)
+        # X14: unannotated defs (gap2 style) carry no function address; the
+        # defsite typing channel needs it — recover it from the first site
+        # marker via the signals function table.
+        addr_eff = addr or _func_addr_from_markers(seg)
+        env = build_env(seg, cls, addr_eff)
         cls_eff = env.get('this') or cls
-        ctx = Ctx(cls_eff, addr, env, rel, seg, def_i + 1, includes)
+        ctx = Ctx(cls_eff, addr_eff, env, rel, seg, def_i + 1, includes)
         n_total = 0
         for _pass in range(2):
             n_pass = 0

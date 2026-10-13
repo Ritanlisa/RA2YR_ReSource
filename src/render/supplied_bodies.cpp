@@ -418,7 +418,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
     v6 = *(unsigned int **)&DataGlobal_88097C; /*0x47eccc*/
   v7 = -1; /*0x47ecd2*/
   if ( v6 && v6->ReturnZeroPos() == 7 ) /*0x47ece3*/
-    v7 = v6[415]; /*0x47ece5*/
+    v7 = v6->u32_67C; /*0x47ece5*/
   v8 = 15 * this->u32_11B; /*0x47ecf5*/
   v23 = -1 - v8; /*0x47ecfa*/
   v9 = -2 - v8; /*0x47ed03*/
@@ -506,7 +506,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
   LABEL_43:
   if ( (this->u32_12C & 4) != 0 )
   {
-    v13 = a2[1]; /*0x47eee4*/
+    v13 = a2->u32_4; /*0x47eee4*/
     v24 = *a2 + 30; /*0x47eef7*/
     v25 = v23 + v13; /*0x47ef00*/
     DrawToSurfaceSHP(
@@ -531,7 +531,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
   {
     if ( v22 )
     {
-      v14 = a2[1]; /*0x47ef30*/
+      v14 = a2->u32_4; /*0x47ef30*/
       v24 = *a2 + 30; /*0x47ef43*/
       v21 = v9; /*0x47ef4b*/
       v25 = v23 + v14; /*0x47ef4c*/
@@ -541,7 +541,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
     }
     else
     {
-      v15 = v23 + a2[1]; /*0x47ef70*/
+      v15 = v23 + a2->u32_4; /*0x47ef70*/
       v21 = v9; /*0x47ef7e*/
       v20 = a4 != 0 ? 67072 : 132608;
       v16 = this->u32_11C; /*0x47ef86*/
@@ -1380,7 +1380,7 @@ unsigned short * FrameSnapshot::InitMax(int a2)
     v4 = 127; /*0x4c9204*/
   (*((unsigned char *)&(v5))) = 0; /*0x4c9209*/
   (*(((unsigned char *)&(v5)) + (sizeof(v5) - 1))) = v4; /*0x4c920b*/
-  result[10] = v5; /*0x4c920d*/
+  result->u32_14 = v5; /*0x4c920d*/
   return result; /*0x4c9211*/
 }
 } // namespace gamemd
@@ -2339,7 +2339,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
       v14 = (char *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v36); /*0x6d8040*/
       v15 = 0; /*0x6d8042*/
       v14 = v14; /*0x6d8044*/
-      v16 = v14[283]; /*0x6d804b*/
+      v16 = v14->u32_11B; /*0x6d804b*/
       v44 = 0; /*0x6d8056*/
       if ( v11 == 1 ) /*0x6d805a*/
       {
@@ -2354,12 +2354,12 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
       {
         goto LABEL_11; /*0x6d805f*/
       }
-      if ( v14[285] > 0 && !v15 ) /*0x6d8087*/
+      if ( v14->u8_11D > 0 && !v15 ) /*0x6d8087*/
       {
         v17 = v16 - v31; /*0x6d808f*/
         if ( v11 != 1 ) /*0x6d8094*/
         {
-          if ( v17 < 0 && v17 + v14[285] >= 0 ) /*0x6d80a7*/
+          if ( v17 < 0 && v17 + v14->u8_11D >= 0 ) /*0x6d80a7*/
           {
             v15 = 1; /*0x6d80a9*/
             goto LABEL_21; /*0x6d80ab*/
@@ -2386,7 +2386,7 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
         v42 = ((((int16_t)v13 << 8) + 128) / 256) << 8; /*0x6d819d*/
         v43 = 0; /*0x6d81a1*/
         v23 = IsoCoord::ToPixel(&v40, v41, v42); /*0x6d81a5*/
-        v24 = v23[1]; /*0x6d81b2*/
+        v24 = v23->IsoCoord_field_0x04; /*0x6d81b2*/
         v25 = *v23 / 256; /*0x6d81c0*/
         v26 = ZCoordToScreenY(v43); /*0x6d81c3*/
         v27 = v25 - this->u32_B0; /*0x6d81ea*/
@@ -4055,9 +4055,9 @@ void XSurface::XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a
   v6 = (int *)this->vt_slot_120(v43); /*0x7ba622*/
   v7 = ClipRectIntersection(v44, (int *)a2, v6, 0, 0); /*0x7ba632*/
   v39 = *v7; /*0x7ba639*/
-  v40 = v7[1]; /*0x7ba640*/
-  v41 = v7[2]; /*0x7ba647*/
-  v42 = v7[3]; /*0x7ba652*/
+  v40 = v7->vtable2; /*0x7ba640*/
+  v41 = v7->vtable3; /*0x7ba647*/
+  v42 = v7->vtable4; /*0x7ba652*/
   v8 = v40 + a3[1]; /*0x7ba65d*/
   v35 = v39 + *a3; /*0x7ba65f*/
   v36 = v8; /*0x7ba663*/

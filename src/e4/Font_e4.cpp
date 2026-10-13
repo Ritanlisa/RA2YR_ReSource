@@ -168,7 +168,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
                       (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue,
                       (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
               v55 = *(unsigned short *)v23; /*0x434e3b*/
-              v56 = v23[2]; /*0x434e4c*/
+              v56 = v23->ptr_2; /*0x434e4c*/
               Color::Lerp((uint8_t *)&v55, v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
               v22 = PackRGB565((uint8_t)v55, (*(((unsigned char *)&(v55)) + (sizeof(v55) - 1))), v56); /*0x434e7c*/
             }

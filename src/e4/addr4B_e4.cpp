@@ -509,9 +509,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v11 = Coord2D::Add(&v44, &v42, &v40); /*0x4b992f*/
   v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
   v46[0] = *v12; /*0x4b9942*/
-  v46[1] = v12[1]; /*0x4b994b*/
-  v46[2] = v12[2]; /*0x4b9958*/
-  v46[3] = v12[3]; /*0x4b9963*/
+  v46[1] = v12->Y; /*0x4b994b*/
+  v46[2] = v12->Width; /*0x4b9958*/
+  v46[3] = v12->Height; /*0x4b9963*/
   v38 = 0; /*0x4b9967*/
   v39 = 0; /*0x4b996b*/
   SHPFrame = (int *)BuildingClass::GetSHPFrame(a2, 0); /*0x4b996f*/
@@ -727,9 +727,9 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   ListClass::Construct((int)&this->u32_2C0, 0, aP5, aP6 + *(__int16 *)(a11 + 4), aP7 + *(__int16 *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
   /* X11: vtable install elided (implicit via DropListClass virtuals 0x4b4eac) */
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
-  v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
-  this->DropListClass_field_0x18 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
-  (*(void (**)(char *, DropListClass *))(v13 + 132))((char *)this + 176, this); /*0x4b4ec4*/
+  v13 = this->M176; /*0x4b4eba*/
+  this->M24 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
+  (*(void (**)(char *, DropListClass *))(v13 + 132))(&this->M176, this); /*0x4b4ec4*/
   (*(void (**)(int *, DropListClass *))(this->DropListClass_field_0x50 + 132))( /*0x4b4ecf*/
     &this->DropListClass_field_0x50,
     this);

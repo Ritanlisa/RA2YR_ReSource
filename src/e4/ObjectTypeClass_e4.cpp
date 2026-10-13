@@ -168,7 +168,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   do /*0x5f710b*/
   {
     *v3 = 0; /*0x5f7102*/
-    v3[1] = 0; /*0x5f7104*/
+    v3->u32_4 = 0; /*0x5f7104*/
     v3 += 2; /*0x5f7107*/
     --v4; /*0x5f710a*/
   }
@@ -320,7 +320,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
   this->AbstractTypeClass = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
   this->? = &ObjectTypeClass::`vftable'; /*0x5f73df*/
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73e6) */
-  this->? = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  this->vtable4 = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 
 }
@@ -338,7 +338,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   int v8; // [esp+Ch] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f740b) */
-  *((unsigned int *)this + 1) = &ObjectTypeClass::`vftable'; /*0x5f7411*/
+  this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f7411*/
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7418) */
   *((unsigned int *)this + 3) = &ObjectTypeClass::`vftable'; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
@@ -791,7 +791,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
           (unsigned __int8 *)this->LineTrailColor);
   *(unsigned short *)this->LineTrailColor = *(unsigned short *)v21; /*0x5f95bc*/
   LineTrailColorDecrement = this->LineTrailColorDecrement; /*0x5f95cd*/
-  this->LineTrailColor[2] = *(unsigned char *)(v21 + 2); /*0x5f95d4*/
+  this->LineTrailColor[2] = v21->UINameLabel[0x20]; /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (bool *)&DataGlobal_887180,
           (unsigned __int8 *)this->ImageFile,

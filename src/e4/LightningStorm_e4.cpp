@@ -128,9 +128,9 @@ int LightningStorm::Strike(int aP0)
 
   v1 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&aP0); /*0x53a159*/
   v2 = (*(int (**)(unsigned int))(**(unsigned int **)dword_8871E0->q730 + 156))(*(unsigned int *)dword_8871E0->q730); /*0x53a165*/
-  v3 = ((v1[80] & 0x100) != 0 ? dword_A9FA84 : 0)
+  v3 = ((v1->u32_140 & 0x100) != 0 ? dword_A9FA84 : 0)
      + Coord::ScaleToScreenY((void *)(*(__int16 *)(v2 + 4) / 2))
-     + dword_A9FA90 * *((char *)v1 + 283);
+     + dword_A9FA90 * v1->u32_11B;
   result = ((__int16)aP0 << 8) + 128; /*0x53a1bb*/
   v9[0] = result; /*0x53a1c8*/
   v9[1] = (SHIWORD(aP0) << 8) + 128; /*0x53a1cc*/
@@ -211,8 +211,8 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
 
   v3 = Coord::To_Cell(&dword_87F7E8, &a1); /*0x53a31a*/
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
-  v5 = Coords[1]; /*0x53a328*/
-  v6 = Coords[2]; /*0x53a32b*/
+  v5 = Coords->vtable2; /*0x53a328*/
+  v6 = Coords->vtable3; /*0x53a32b*/
   v34[0] = *Coords; /*0x53a32e*/
   v34[1] = v5; /*0x53a337*/
   v34[2] = v6; /*0x53a33b*/
@@ -233,9 +233,9 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     v10 = dword_A9FA28++; /*0x53a3d5*/
     *((unsigned int *)dword_A9FA1C + v10) = v9; /*0x53a3e4*/
   }
-  v27 = v3[9]; /*0x53a40f*/
+  v27 = v3->objectTypeFlags; /*0x53a40f*/
   v28 = *((char *)v3 + 283); /*0x53a413*/
-  v11 = (void **)(v28 * dword_A9FA90 + ((v3[80] & 0x100) != 0 ? dword_A9FA84 : 0));
+  v11 = (void **)(v28 * dword_A9FA90 + ((v3->currentRank & 0x100) != 0 ? dword_A9FA84 : 0));
   v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
   v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
   v33 = v11; /*0x53a445*/
@@ -269,7 +269,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     }
     if ( !v18 && !v20 ) /*0x53a55f*/
     {
-      switch ( v3[59] ) /*0x53a575*/
+      switch ( v3->animation ) /*0x53a575*/
       {
         case 1: /*0x53a575*/
         case 3: /*0x53a575*/

@@ -329,7 +329,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
   else
     v6 = 0; /*0x633fea*/
   memcpy(v6, a3, 0x6Fu); /*0x633ff8*/
-  v5[1] = v6; /*0x633ffd*/
+  v5->vtable2 = v6; /*0x633ffd*/
   v7 = this->u32_8; /*0x634000*/
   if ( this->u32_10 < v7 /*0x634024*/
     || (this->u8_D || !v7)
@@ -373,11 +373,11 @@ unsigned int * ScriptAction::GetCoords(unsigned int *a2)
                                 v7,
                                 *(unsigned char **)(*(unsigned int *)this->u32_4 + 4));
   v3 = *ScenarioClassActionCoords; /*0x6343d6*/
-  v4 = ScenarioClassActionCoords[1]; /*0x6343d8*/
-  v5 = ScenarioClassActionCoords[2]; /*0x6343db*/
+  v4 = ScenarioClassActionCoords->vtable2; /*0x6343d8*/
+  v5 = ScenarioClassActionCoords->vtable3; /*0x6343db*/
   *a2 = v3; /*0x6343e4*/
-  a2[1] = v4; /*0x6343e6*/
-  a2[2] = v5; /*0x6343e9*/
+  a2->u32_4 = v4; /*0x6343e6*/
+  a2->u32_8 = v5; /*0x6343e9*/
   return a2; /*0x6343ec*/
 }
 } // namespace gamemd
@@ -395,12 +395,12 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int *a2)
                                 v5,
                                 *(unsigned char **)(*(unsigned int *)this->u32_4 + 4));
   v6[0] = *ScenarioClassActionCoords; /*0x634416*/
-  v6[1] = ScenarioClassActionCoords[1]; /*0x63441d*/
-  v6[2] = ScenarioClassActionCoords[2]; /*0x634434*/
+  v6[1] = ScenarioClassActionCoords->vtable2; /*0x63441d*/
+  v6[2] = ScenarioClassActionCoords->vtable3; /*0x634434*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x634438*/
   v3 = (char *)DSurface_ViewBounds.field_4 + v5[1]; /*0x634452*/
   *a2 = DSurface_ViewBounds.field_0 + v5[0]; /*0x634458*/
-  a2[1] = v3; /*0x63445a*/
+  a2->u32_4 = v3; /*0x63445a*/
   return a2; /*0x63445d*/
 }
 } // namespace gamemd
@@ -415,7 +415,7 @@ BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
   ScenarioClassActionCoords = GetScenarioClassActionCoords( /*0x634560*/
                                 v6,
                                 *(unsigned char **)(*(unsigned int *)this->u32_4 + 4));
-  return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords[1] == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
+  return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords->vtable2 == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
 }
 } // namespace gamemd
 
@@ -751,9 +751,9 @@ char ScriptAction::HitTest(int a1, int a2)
         ScreenPos = ScriptAction::GetScreenPos(v6, &v14); /*0x63a93b*/
         v8 = ComputeBounds(v22, 8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
         v18 = *v8; /*0x63a957*/
-        v19 = v8[1]; /*0x63a95e*/
-        v20 = v8[2]; /*0x63a965*/
-        v21 = v8[3]; /*0x63a970*/
+        v19 = v8->u32_4; /*0x63a95e*/
+        v20 = v8->u32_8; /*0x63a965*/
+        v21 = v8->q00C; /*0x63a970*/
         ShrinkRect(&v18, 4); /*0x63a979*/
         if ( a1 >= v18 && a1 < v18 + v20 && a2 >= v19 && a2 < v19 + v21 ) /*0x63a9a4*/
           break; /*0x63a9a4*/
@@ -924,9 +924,9 @@ char ScriptAction::ProcessIdleAction()
     v56 = *Viewport->Coord3D_field_0x04.__pad_0; /*0x63b76f*/
     v16 = ComputeBounds(&v72, 6, v61, v62); /*0x63b778*/
     v63 = *v16; /*0x63b77f*/
-    v64 = v16[1]; /*0x63b787*/
-    v65 = v16[2]; /*0x63b78e*/
-    v66 = v16[3]; /*0x63b79b*/
+    v64 = v16->u32_4; /*0x63b787*/
+    v65 = v16->u32_8; /*0x63b78e*/
+    v66 = v16->q00C; /*0x63b79b*/
     (*(void (__thiscall **)(AudioStream *, Coord3D *, int *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63b7ab*/
                                                                              + 84))(
       DSurface_Composite,
@@ -1164,8 +1164,8 @@ int ScriptAction::DrawPlacementMarker()
   v12[3] = v4; /*0x63ce71*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(unsigned char **)(v5->vtable2); /*0x63ce7e*/
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
-  v9[1] = ScenarioClassActionCoords[1]; /*0x63ce8c*/
-  v9[2] = ScenarioClassActionCoords[2]; /*0x63cea3*/
+  v9[1] = ScenarioClassActionCoords->vtable2; /*0x63ce8c*/
+  v9[2] = ScenarioClassActionCoords->vtable3; /*0x63cea3*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v9, v8); /*0x63cea7*/
   v8[0] += DSurface_ViewBounds.field_0; /*0x63cec7*/
   v11[0] = v8[0] - 4 + 1; /*0x63cedb*/
@@ -1685,7 +1685,7 @@ int ScriptAction::ExecuteMissionCmd()
       v14,
       (int)dword_A83D4C->relatedTagsCount,
       *(unsigned int *)WaypointCoords,
-      WaypointCoords[4],
+      WaypointCoords->vtable2,
       v3,
       v9[22],
       v9[23],
@@ -1768,7 +1768,7 @@ int ScriptAction::ExecuteMissionCmd()
     ScriptAction::GetWaypointCoords((ScriptAction *)v11, v19); /*0x6ffdb1*/
     ScriptAction::GetWaypointCoords((ScriptAction *)v12, v18); /*0x6ffdbb*/
     v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v13, this); /*0x6ffdce*/
-    Object_Init(v3, (int)v12, *(unsigned int *)v8, v8[4], (int)v11); /*0x6ffde6*/
+    Object_Init(v3, (int)v12, *(unsigned int *)v8, v8->vtable2, (int)v11); /*0x6ffde6*/
     (*((unsigned char *)&(result))) = 1; /*0x6ffdee*/
   }
   return result; /*0x6ffcb0*/
@@ -2434,7 +2434,7 @@ int COMClass::RegisterAll() {
 namespace gamemd {
 int16_t NetworkID::Assign(unsigned int *a2, int a3, int16_t a4) {
     this->q004 = *(unsigned int *)a3; /*0x53ed2a*/
-    this->u32_8 = *(unsigned short *)(a3 + 4); /*0x53ed31*/
+    this->u32_8 = a3->u32_4; /*0x53ed31*/
     if ( dword_828140 == 1 ) /*0x53ed3d*/
     {
       *(unsigned int *)this->__pad_000 = *a2; /*0x53ed45*/

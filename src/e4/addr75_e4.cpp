@@ -362,9 +362,9 @@ int ThemeManager_Update(int a1, int a2, int a3)
         if ( v5 != (int *)dword_B1D4C4 ) /*0x7524c1*/
         {
           if ( a2 == -1 ) /*0x7524ca*/
-            v4 = v5[19]; /*0x7524cc*/
+            v4 = v5->u32_4C; /*0x7524cc*/
           if ( a3 == -1 ) /*0x7524d4*/
-            a3 = v5[18]; /*0x7524d9*/
+            a3 = v5->u32_48; /*0x7524d9*/
           if ( dword_B1D4C4 && v4 == 2 ) /*0x7524e4*/
           {
             for ( i = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7524f5*/
@@ -476,11 +476,11 @@ void ThemeClass_Update()
   LABEL_22:
   if ( v3 ) /*0x7528a9*/
   {
-    v7 = v3[3]; /*0x7528af*/
+    v7 = v3->vtable4; /*0x7528af*/
     if ( v9 != (unsigned char *)-20 ) /*0x7528b8*/
-      v11 = v3[6]; /*0x7528bd*/
+      v11 = v3->nextArrayIndex; /*0x7528bd*/
     if ( v9 != (unsigned char *)-16 ) /*0x7528c7*/
-      v10 = v3[5]; /*0x7528cc*/
+      v10 = v3->abstractFlags; /*0x7528cc*/
     operator delete((void *)(v3)); /*0x7528d1*/
     if ( v7 ) /*0x7528db*/
     {
@@ -2511,7 +2511,7 @@ int VocClass_Update()
     do /*0x750f30*/
     {
       v2 = ((AudioQueue *)(v1))->GetNextAlt(); /*0x750eda*/
-      if ( !*(unsigned int *)(v1 + 48) ) /*0x750edc*/
+      if ( !v1->u32_30 ) /*0x750edc*/
         StartAudioController(v1 + 32, v1 + 12); /*0x750ee9*/
       result = AudioSource::Get(v1 + 12); /*0x750ef3*/
       if ( !result ) /*0x750efa*/
@@ -2542,7 +2542,7 @@ int sub_750F40(unsigned int * a1, int a2)
   result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x750f4c*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x750f55*/
   {
-    if ( (a2 & i[11]) != 0 && i[8] == *a1 && i[9] == a1[1] && i[10] == a1[2] ) /*0x750f77*/
+    if ( (a2 & i->q02C) != 0 && i->u32_20 == *a1 && i->u32_24 == a1[1] && i->u32_28 == a1[2] ) /*0x750f77*/
       AudioFile::Stop(i + 3); /*0x750f7c*/
     result = ((AudioQueue *)(i))->GetNextAlt(); /*0x750f83*/
   }
@@ -2561,8 +2561,8 @@ int sub_751040()
   result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x751046*/
   for ( i = result; result; i = result ) /*0x75104f*/
   {
-    ++*(unsigned int *)(i + 48); /*0x751055*/
-    v2 = AudioSource::Get((int **)(i + 12)); /*0x75105b*/
+    ++i->u32_30; /*0x751055*/
+    v2 = AudioSource::Get(&i->u32_C); /*0x75105b*/
     if ( v2 ) /*0x751062*/
       sub_4053E0((int)v2); /*0x751066*/
     result = ((AudioQueue *)((int *)i))->GetNextAlt(); /*0x75106d*/
@@ -2583,13 +2583,13 @@ int sub_751080()
   result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x751086*/
   for ( i = result; result; i = result ) /*0x75108f*/
   {
-    if ( *(unsigned int *)(i + 48) ) /*0x751091*/
+    if ( i->u32_30 ) /*0x751091*/
     {
-      v2 = *(unsigned int *)(i + 48) - 1; /*0x75109b*/
-      *(unsigned int *)(i + 48) = v2; /*0x75109e*/
+      v2 = i->u32_30 - 1; /*0x75109b*/
+      i->u32_30 = v2; /*0x75109e*/
       if ( v2 < 0 ) /*0x7510a1*/
-        *(unsigned int *)(i + 48) = 0; /*0x7510a3*/
-      v3 = AudioSource::Get((int **)(i + 12)); /*0x7510ad*/
+        i->u32_30 = 0; /*0x7510a3*/
+      v3 = AudioSource::Get(&i->u32_C); /*0x7510ad*/
       if ( v3 ) /*0x7510b4*/
         sub_405430((int)v3); /*0x7510b8*/
     }

@@ -155,7 +155,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     *&this->u32_24 = v18; /*0x5d4318*/
     if ( a6 <= 0 ) /*0x5d431d*/
       v19 = *&this->u32_2C4; /*0x5d431f*/
-    *(unsigned int *)(v18 + 56) = v19; /*0x5d4325*/
+    v18->q038 = v19; /*0x5d4325*/
     v20 = *&this->u32_24; /*0x5d4328*/
     if ( v20 ) /*0x5d432d*/
     {
@@ -1813,7 +1813,7 @@ char NetworkLobby::FillOptionCombo()
     v2 = g_abs_A8B2FC; /*0x5ee414*/
     do /*0x5ee419*/
     {
-      v3 = v2[2533]; /*0x5ee419*/
+      v3 = v2->u32_2794; /*0x5ee419*/
       ResourceID4 = (HWND)GetResourceID4CSF(v1); /*0x5ee41f*/
       if ( (int)ResourceID4 < 0 ) /*0x5ee426*/
         goto LABEL_19; /*0x5ee426*/

@@ -78,7 +78,7 @@ char DynamicVector::AddItem(unsigned int *aP1)
   {
     result = (int)this->Count; /*0x413aa5*/
     v5 = *&this->Items; /*0x413aa8*/
-    this->Count = (void *)(result + 1); /*0x413aae*/
+    this->Count = &result->AbstractClass_1; /*0x413aae*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x413ab8*/
     LOBYTE(result) = 1; /*0x413abb*/
   }
@@ -182,7 +182,7 @@ char DynamicVector::Add_Alt(unsigned int *aP1)
   {
     result = (int)this->Count; /*0x477ef5*/
     v5 = *&this->Items; /*0x477ef8*/
-    this->Count = (void *)(result + 1); /*0x477efe*/
+    this->Count = &result->AbstractClass_1; /*0x477efe*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x477f08*/
     LOBYTE(result) = 1; /*0x477f0b*/
   }
@@ -246,7 +246,7 @@ char DynamicVector::Add_Alt4(unsigned int *aP1)
   {
     result = (int)this->Count; /*0x5253e5*/
     v5 = *&this->Items; /*0x5253e8*/
-    this->Count = (void *)(result + 1); /*0x5253ee*/
+    this->Count = &result->AbstractClass_1; /*0x5253ee*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5253f8*/
     LOBYTE(result) = 1; /*0x5253fb*/
   }
@@ -315,7 +315,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
   {
     result = (int)this->Count; /*0x5ad805*/
     v5 = *&this->Items; /*0x5ad808*/
-    this->Count = (void *)(result + 1); /*0x5ad80e*/
+    this->Count = &result->AbstractClass_1; /*0x5ad80e*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5ad818*/
     LOBYTE(result) = 1; /*0x5ad81b*/
   }
@@ -401,11 +401,8 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
   result = (int)DynamicVector_field_0x10; /*0x67a700*/
   for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a708*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( /*0x67a718*/
-      aP1,
-      *&this->Items + 4 * i,
-      4,
-      0);
+    aP1->IsClean(/*0x67a718*/
+      aP1, *&this->Items + 4 * i, 4, 0);
     result = (int)DynamicVector_field_0x10; /*0x67a71b*/
   }
   return result; /*0x67a724*/
@@ -427,15 +424,15 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   {
     if ( a3 ) /*0x67ac99*/
     {
-      *(unsigned int *)&this->DynamicVector_field_0x1[3] = a3; /*0x67ac9b*/
+      *&this->Items = a3; /*0x67ac9b*/
     }
     else
     {
-      *(unsigned int *)&this->DynamicVector_field_0x1[3] = __2_YAPAXI_Z(4 * a2); /*0x67acac*/
-      this->__pad_C[1] = 1; /*0x67acaf*/
+      *&this->Items = __2_YAPAXI_Z(4 * a2); /*0x67acac*/
+      this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67acb3*/
+  *(unsigned int *)this->ClearAndFree2_ph = &DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
   return this->vtable1; /*0x67acc9*/
@@ -465,7 +462,7 @@ char DynamicVector::Add2(unsigned int *aP1)
   {
     result = (int)this->Count; /*0x67adb5*/
     v5 = *&this->Items; /*0x67adb8*/
-    this->Count = (void *)(result + 1); /*0x67adbe*/
+    this->Count = &result->AbstractClass_1; /*0x67adbe*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x67adc8*/
     LOBYTE(result) = 1; /*0x67adcb*/
   }
@@ -584,15 +581,15 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   {
     if ( a3 ) /*0x7342f9*/
     {
-      *(unsigned int *)&this->DynamicVector_field_0x1[3] = a3; /*0x7342fb*/
+      *&this->Items = a3; /*0x7342fb*/
     }
     else
     {
-      *(unsigned int *)&this->DynamicVector_field_0x1[3] = __2_YAPAXI_Z(4 * a2); /*0x73430c*/
-      this->__pad_C[1] = 1; /*0x73430f*/
+      *&this->Items = __2_YAPAXI_Z(4 * a2); /*0x73430c*/
+      this->IsAllocated = 1; /*0x73430f*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x734313*/
+  *(unsigned int *)this->ClearAndFree2_ph = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x734313*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x734319*/
   this->Count = 0; /*0x734320*/
   return this->vtable1; /*0x734329*/

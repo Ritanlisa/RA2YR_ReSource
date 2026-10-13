@@ -213,7 +213,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   *(unsigned int *)a1 = &SuperClass::`vftable'; /*0x6cb127*/
   *(unsigned int *)(a1 + 4) = &SuperClass::`vftable'; /*0x6cb12f*/
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb136) */
-  *(unsigned int *)(a1 + 12) = &SuperClass::`vftable'; /*0x6cb13d*/
+  a1->vtable4 = &SuperClass::`vftable'; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
@@ -782,7 +782,7 @@ int SuperClass::AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshi
     }
     v6 = this->u32_28; /*0x6cc17e*/
     this->u32_74 = dword_A8ED84; /*0x6cc187*/
-    result = *(unsigned char *)(v6 + 229); /*0x6cc18a*/
+    result = v6->u8_E5; /*0x6cc18a*/
     if ( result ) /*0x6cc192*/
       this->u32_7C = 1; /*0x6cc194*/
   }

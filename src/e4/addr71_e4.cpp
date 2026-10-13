@@ -145,12 +145,12 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         v17 = v12->threatAvoidValue; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
-          TechnoClass::MutateAll(v17, v12[266], v12[267]); /*0x718aef*/
+          TechnoClass::MutateAll(v17, v12->q428, v12->q42C); /*0x718aef*/
           v18 = *(unsigned int *)(this->vtable3 + 728); /*0x718af7*/
           if ( v18 ) /*0x718aff*/
             (*(void (**)(int, int))(*(unsigned int *)v18 + 32))(v18, 1); /*0x718b05*/
           v12 = (unsigned int *)this->vtable3; /*0x718b08*/
-          v12[182] = 0; /*0x718b0e*/
+          v12->poweredUnitCenters = 0; /*0x718b0e*/
         }
       }
     }
@@ -1281,9 +1281,9 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/
     if ( aP4 == -1 ) /*0x71ff7c*/
-      *(unsigned int *)&this->__pad_0[20] = Text::MeasureWidth(this->field_38, 0) + 8; /*0x71ff8e*/
+      *&this->u32_14 = Text::MeasureWidth(this->field_38, 0) + 8; /*0x71ff8e*/
     if ( aP5 == -1 ) /*0x71ff94*/
-      *(unsigned int *)&this->__pad_0[24] = *(unsigned int *)(Instance + 28) + 2; /*0x71ff9c*/
+      *&this->u32_18 = *(unsigned int *)(Instance + 28) + 2; /*0x71ff9c*/
   }
   return (int)this->__pad_0; /*0x71ffa1*/
 

@@ -67,7 +67,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           do /*0x6cf5e6*/
           {
             *v7 = 0; /*0x6cf5dd*/
-            v7[1] = 0; /*0x6cf5df*/
+            v7->vtable2 = 0; /*0x6cf5df*/
             v7 += 2; /*0x6cf5e2*/
             --v8; /*0x6cf5e5*/
           }
@@ -176,7 +176,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
           do /*0x6cf766*/
           {
             *v7 = 0; /*0x6cf75d*/
-            v7[1] = 0; /*0x6cf75f*/
+            v7->vtable2 = 0; /*0x6cf75f*/
             v7 += 2; /*0x6cf762*/
             --v8; /*0x6cf765*/
           }

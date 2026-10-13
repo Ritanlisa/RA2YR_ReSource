@@ -662,7 +662,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     v3 = (int *)this; /*0x62566b*/
   }
   *v5 = 0; /*0x62566f*/
-  v9 = v2[2]; /*0x625675*/
+  v9 = v2->vtable3; /*0x625675*/
   v10 = 0; /*0x625678*/
   if ( v9 > 0 ) /*0x62567c*/
   {

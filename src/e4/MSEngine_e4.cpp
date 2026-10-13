@@ -208,12 +208,12 @@ CampaignClass * MSEngine::Destructor()
   DeleteAndZero(&this->m_8); /*0x5ceeb8*/
   MSEngine_field_0x4 = this->__pad_004; /*0x5ceebd*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ceec0) */
-  if ( MSEngine_field_0x4 && BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
+  if ( MSEngine_field_0x4 && BYTE1(this->m_C) ) /*0x5ceeca*/
   {
     __3_YAXPAX_Z(MSEngine_field_0x4); /*0x5ceed0*/
     this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
   }
-  BYTE1(this->MSEngine_field_0xC[0]) = 0; /*0x5ceedb*/
+  BYTE1(this->m_C) = 0; /*0x5ceedb*/
   this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 
 }
@@ -491,7 +491,7 @@ int MSEngine::FindItem(unsigned int * a2)
   result = 0; /*0x5acfc6*/
   if ( m_10 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
-  for ( i = *&this->__pad_004; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
+  for ( i = *&this->__pad_004; *i != *a2 || i->vtable2 != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
   {
     if ( ++result >= m_10 ) /*0x5acffe*/
       return -1; /*0x5acffe*/

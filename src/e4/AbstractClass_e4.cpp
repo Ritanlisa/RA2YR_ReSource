@@ -118,7 +118,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     this->ptr_30 = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 528) != -1 ) /*0x438fde*/
     {
-      if ( (unsigned __int8)House::IsHumanPlayer(aP1->u32_21C) ) /*0x438fe6*/
+      if ( (unsigned __int8)House::IsHumanPlayer(aP1->owner) ) /*0x438fe6*/
       {
         v12[0] = aP2[39]; /*0x438ffc*/
         v12[1] = aP2[40]; /*0x439007*/
@@ -774,7 +774,7 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0,
   if ( result >= 0 ) /*0x41034d*/
   {
     v6 = *aP0; /*0x410352*/
-    v7 = (*(int (**)(int *, unsigned int))(*aP0 + 48))(aP0, 0); /*0x410358*/
+    v7 = aP0->COMStub_Ret176_12(0); /*0x410358*/
     result = aP0->IsClean(aP0, v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
     {
@@ -805,7 +805,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
     v4 = aP0[7]; /*0x4103be*/
     v5 = *v2; /*0x4103c1*/
-    v6 = (*(int (**)(unsigned int *, unsigned int))(*aP0 + 48))(aP0, 0); /*0x4103c7*/
+    v6 = aP0->COMStub_Ret176_12(0); /*0x4103c7*/
     result = v2->vt_entry_68(aP0, v6); /*0x4103cd*/
     aP0[7] = v4; /*0x4103d0*/
   }

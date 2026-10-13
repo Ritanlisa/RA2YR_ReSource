@@ -145,7 +145,7 @@ LABEL_103:
                     goto LABEL_88; /*0x7aaa40*/
                 }
                 Debug::Log(); /*0x7aaa54*/
-                *(unsigned int *)(v8 + 40) = *((unsigned int *)a3 + 10); /*0x7aaa5f*/
+                v8->q028 = *((unsigned int *)a3 + 10); /*0x7aaa5f*/
               }
             }
           }

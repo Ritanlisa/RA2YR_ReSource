@@ -76,7 +76,7 @@ void PsyDom::Fire()
   {
     v4 = 0; /*0x53b0d2*/
   }
-  v4[4] = 1; /*0x53b0d4*/
+  v4->u32_10 = 1; /*0x53b0d4*/
   v5 = *(void **)(*(unsigned int *)&g_RulesClass_Instance + 768); /*0x53b0e6*/
   v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(&PsyDom_Coords); /*0x53b0f1*/
   v7 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v6 + 72))(v6, v34); /*0x53b0ff*/

@@ -57,7 +57,7 @@ void MixFileClass::CleanupCache()
           }
           __3_YAXPAX_Z(v1); /*0x69e276*/
         }
-        v0[3] = 0; /*0x69e27e*/
+        v0->vtable4 = 0; /*0x69e27e*/
         v0->uniqueId = 0; /*0x69e281*/
       }
       v0 = v0->nextArrayIndex; /*0x69e284*/

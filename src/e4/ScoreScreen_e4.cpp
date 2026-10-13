@@ -300,8 +300,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       (**(void (***)(int, int))v10)(v10, 1); /*0x7782da*/
     v11 = 0; /*0x7782e0*/
     v12 = 0; /*0x7782e2*/
-    v29 = (*(int (**)(int *))(*v8 + 124))(v8); /*0x7782eb*/
-    v30[0] = (*(int (**)(int *))(*v8 + 128))(v8); /*0x7782f5*/
+    v29 = v8->vt_slot_124(); /*0x7782eb*/
+    v30[0] = v8->vt_slot_128(); /*0x7782f5*/
     if ( (*(int (**)(int *))(*(unsigned int *)(a2) + 124))(a2) > 1024 ) /*0x778306*/
     {
       Viewport = (int *)(Display::GetViewport(v37));
@@ -310,7 +310,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v11 = (Viewport[2] - v29) / 2; /*0x77833e*/
       v12 = (Viewport[3] - v30[0]) / 2; /*0x778340*/
     }
-    if ( a7 && (*(int (**)(int *))(*v8 + 112))(v8) == 1 ) /*0x77835b*/
+    if ( a7 && v8->vt_slot_112() == 1 ) /*0x77835b*/
     {
       v14 = (int)((ConvertClass *)operator new(0x188u));
       if ( v14 ) /*0x778370*/
@@ -319,14 +319,14 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/
       v26 = (*(int (**)(int *, int *))(v15 + 120))(a2, v37); /*0x7783c2*/
-      v16 = (unsigned int *)(*(int (**)(int *))(*v8 + 120))(v8); /*0x7783c9*/
+      v16 = (unsigned int *)v8->vt_slot_120(); /*0x7783c9*/
       BlitterDrawSHP(a2, (int)v27, v8, v16, v31, v30, v26, 0, 0, 0, 0, 1000, 0); /*0x7783d6*/
       if ( v27 ) /*0x7783dd*/
         (**v27)(v27, 1); /*0x7783e5*/
     }
     else
     {
-      v17 = (*(int (**)(int *))(*v8 + 124))(v8); /*0x7783ed*/
+      v17 = v8->vt_slot_124(); /*0x7783ed*/
       v18 = *v8; /*0x7783f0*/
       v31[0] = v17; /*0x7783f4*/
       v19 = (*(int (**)(int *))(v18 + 128))(v8); /*0x7783f8*/
@@ -337,7 +337,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v21 = (int)(*(unsigned int *)(a2)); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
       v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))(v20 + 120))(v8, &v38, 0, 1); /*0x778421*/
-      v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))(v8, v41, v22); /*0x778431*/
+      v23 = v8->vt_slot_120(v41, v22); /*0x778431*/
       v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))(a2, &retaddr, v32, v8, v23); /*0x778447*/
       (*(void (**)(int *, int))(v21 + 12))(a2, v24); /*0x77844d*/
     }

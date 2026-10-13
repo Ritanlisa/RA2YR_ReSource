@@ -414,10 +414,10 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     if ( ((MapClass *)((MapClass *)&DataGlobal_87F7E8))->GetTileIndex(a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
-  v14 = v11[58]; /*0x6f89bf*/
+  v14 = v11->q0E8; /*0x6f89bf*/
   v15 = 0; /*0x6f89c5*/
   if ( !v14 ) /*0x6f89c9*/
-    v14 = v11[57]; /*0x6f89cb*/
+    v14 = v11->u32_E4; /*0x6f89cb*/
   transporter = a1->transporter; /*0x6f89d1*/
   owner = 0; /*0x6f89d7*/
   v25 = 0; /*0x6f89db*/
@@ -889,7 +889,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
 
   v5 = (int *)(((Coord *)(v26))->Subtract((3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
-  v6 = a1[1]; /*0x6f5f47*/
+  v6 = a1->vtable2; /*0x6f5f47*/
   v7 = (int *)(*v5); /*0x6f5f4a*/
   v8 = v5[1]; /*0x6f5f4c*/
   v9 = v5[2]; /*0x6f5f4f*/
@@ -898,12 +898,12 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v21[0] = v7; /*0x6f5f59*/
   v11 = *a2; /*0x6f5f5d*/
   v22 = v9; /*0x6f5f5f*/
-  v12 = ((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1[2]) / 4); /*0x6f5fa0*/
-  v13 = v12[1]; /*0x6f5fa9*/
-  v14 = (int *)(v12[2]); /*0x6f5fac*/
+  v12 = ((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->vtable3) / 4); /*0x6f5fa0*/
+  v13 = v12->u32_4; /*0x6f5fa9*/
+  v14 = (int *)(v12->u32_8); /*0x6f5fac*/
   v23 = *v12; /*0x6f5faf*/
   v24 = v13; /*0x6f5fb3*/
-  v15 = a1[2]; /*0x6f5fb7*/
+  v15 = a1->vtable3; /*0x6f5fb7*/
   v25 = v14; /*0x6f5fca*/
   lpVtbl = g_TacticalClass_Instance; /*0x6f5fd1*/
   if ( v15 <= v22 ) /*0x6f5fd3*/

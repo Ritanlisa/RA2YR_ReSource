@@ -594,7 +594,7 @@ LABEL_89:
     LODWORD(v41) |= v48 | (32 * ((32 * v49) | v50)); /*0x4234ee*/
     *(float *)v100 = v41; /*0x4234f0*/
   }
-  if ( !(*(unsigned __int8 (**)(unsigned int *))(*v93 + 352))(v93) || v93[113] != 1 ) /*0x423513*/
+  if ( !v93->vt_slot_352() || v93[113] != 1 ) /*0x423513*/
     goto LABEL_99; /*0x423513*/
   v52 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6320); /*0x42351f*/
   v53 = *(unsigned int *)&g_RulesClass_Instance + 2 * v52; /*0x423525*/
@@ -1178,7 +1178,7 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // eax
   int v5; // ecx
 
-  q0D4 = *(IUnknown **)&aP0->u32_D4; /*0x4253b6*/
+  q0D4 = *&aP0->u32_D4; /*0x4253b6*/
   if ( q0D4 && (v4 = *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1, *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1 >= 0) ) /*0x4253c8*/
   {
     v5 = *(unsigned int *)((char *)&stru_B054D0 + 0x4) + 4 * v4; /*0x4253d0*/
@@ -1189,12 +1189,12 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
       if ( v4 < 0 ) /*0x4253e3*/
         goto LABEL_6; /*0x4253e3*/
     }
-    *(unsigned int *)&aP0->q0D8 = v4; /*0x425404*/
+    *&aP0->q0D8 = v4; /*0x425404*/
   }
   else
   {
 LABEL_6:
-    *(unsigned int *)&aP0->q0D8 = -1; /*0x4253e5*/
+    *&aP0->q0D8 = -1; /*0x4253e5*/
   }
   return AbstractClass::SaveLoad_Prefix((int *)((ObjectTypeClass *)aP0), (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4253ff*/
 

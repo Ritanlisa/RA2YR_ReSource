@@ -157,9 +157,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   *(float *)&v17 = -*&this->M4; /*0x645de0*/
   v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
   v29[0] = *v9; /*0x645dea*/
-  v29[1] = v9[1]; /*0x645df1*/
-  v29[2] = v9[2]; /*0x645df8*/
-  v29[3] = v9[3]; /*0x645e03*/
+  v29[1] = v9->q004; /*0x645df1*/
+  v29[2] = v9->u32_8; /*0x645df8*/
+  v29[3] = v9->u32_C; /*0x645e03*/
   v10 = sub_6460C0(v31, a2); /*0x645e09*/
   v11 = QuaternionMathMultiply(v32, v29, v10); /*0x645e17*/
   vtable0 = *(void **)v11; /*0x645e1e*/
@@ -1789,7 +1789,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
       }
       if ( !v11 ) /*0x64a13f*/
       {
-        v12 = (char *)(v6 + 7); /*0x64a145*/
+        v12 = &v6->u32_7; /*0x64a145*/
         v10 = v10; /*0x64a148*/
         v13 = v6 + 7; /*0x64a14c*/
         do /*0x64a372*/
@@ -1884,17 +1884,17 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   }
   v24 = (unsigned int *)(a5 + 24 * v8); /*0x64a3b9*/
   v39 = v24; /*0x64a3be*/
-  if ( *v24 < *(unsigned int *)(v6 + 3) - *(uint8_t *)(v6 + 13) ) /*0x64a3c7*/
+  if ( *v24 < *(unsigned int *)(v6 + 3) - v6->u32_D ) /*0x64a3c7*/
   {
     if ( *v24 == -1 ) /*0x64a3cc*/
     {
       v41 = 1; /*0x64a3d3*/
       Debug::Log(); /*0x64a3db*/
     }
-    *v24 = *(unsigned int *)(v6 + 3) - *(uint8_t *)(v6 + 13); /*0x64a3ef*/
+    *v24 = v6->u32_3 - v6->u32_D; /*0x64a3ef*/
     Network_Process_652110(a5, v8); /*0x64a3f4*/
   }
-  v25 = *(uint16_t *)(v6 + 11); /*0x64a3fe*/
+  v25 = v6->u32_B; /*0x64a3fe*/
   if ( (unsigned int)(uint16_t)v25 > v24[1] ) /*0x64a404*/
     v24[1] = v25; /*0x64a406*/
   if ( *(unsigned char *)v6 == 25 ) /*0x64a40c*/
@@ -1904,7 +1904,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
       Network::GetClass(unk_A8E9C0, a3); /*0x64a5ca*/
       Debug::Log(); /*0x64a5d5*/
     }
-    if ( *(unsigned int *)(v6 + 7) != dword_A8E7A8 ) /*0x64a5e8*/
+    if ( v6->u32_7 != dword_A8E7A8 ) /*0x64a5e8*/
       return 2; /*0x64a5f9*/
     v24[3] = TimerGetTicks() - *a6; /*0x64a60d*/
     return v41; /*0x64a60d*/
@@ -3037,7 +3037,7 @@ void Network_ProcessMapEvent(int a1, int a2)
             v7 = BuildingLoadQueue::Find((unsigned char *)&dword_A83EE3 + 111 * (uint8_t)(v6 + dword_A83ED4)); /*0x64ce72*/
             v8 = v7; /*0x64ce77*/
             if ( v7 /*0x64cec3*/
-              && (v7[20] & 4) != 0
+              && (v7->abstractFlags & 4) != 0
               && (char)v7[1668] < 0
               && (v81 < v79
                || (v80 || !v79)
@@ -3074,8 +3074,8 @@ void Network_ProcessMapEvent(int a1, int a2)
                                   &v112);
                 v17 = (float *)((Coord *)(&v115))->Subtract(*v16 - v13, v16[1] - v14, v16[2] - v15); /*0x64cf94*/
                 v106 = *v17; /*0x64cf9b*/
-                v107 = v17[1]; /*0x64cfac*/
-                v108 = v17[2]; /*0x64cfb6*/
+                v107 = v17->u32_4; /*0x64cfac*/
+                v108 = v17->u32_8; /*0x64cfb6*/
                 v18 = ((Coord *)((int *)&v106))->Length(); /*0x64cfbd*/
                 v19 = (char *)Block + 4 * v10; /*0x64cfcc*/
                 v20 = v10 + 1000 * v18; /*0x64cfd6*/
@@ -3162,9 +3162,9 @@ void Network_ProcessMapEvent(int a1, int a2)
                 if ( !v28 ) /*0x64d229*/
                 {
                   v30 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v73); /*0x64d235*/
-                  v31 = v30[80]; /*0x64d23a*/
+                  v31 = v30->u32_140; /*0x64d23a*/
                   (((unsigned char *)&(v31))[1]) |= 0x80u; /*0x64d245*/
-                  v30[80] = v31; /*0x64d248*/
+                  v30->u32_140 = v31; /*0x64d248*/
                   *(unsigned char *)v95 = 1; /*0x64d24e*/
                   goto LABEL_84; /*0x64d251*/
                 }
@@ -3279,7 +3279,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                         &dword_87F7E8,
                         (int16_t *)&v75,
                         *(unsigned int *)(v127 + 1460),
-                        (((unsigned char *)&(v42[80]))[1]) & 1);
+                        (v42->q141) & 1);
                 v44 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v29 + 428))( /*0x64d535*/
                         v29,
                         v42,
@@ -3302,13 +3302,13 @@ void Network_ProcessMapEvent(int a1, int a2)
               }
               if ( (v45 & 0x100) != 0 ) /*0x64d55d*/
               {
-                v46 = v36 - *((char *)v42 + 283) - 4; /*0x64d56d*/
+                v46 = v36 - *(&v42->u32_11B) - 4; /*0x64d56d*/
                 if ( (int)(((*(((unsigned int *)&(v46)) + 1)) ^ v46) - (*(((unsigned int *)&(v46)) + 1))) > 2 ) /*0x64d575*/
                   goto LABEL_75; /*0x64d575*/
               }
               if ( (v42[80] & 0x100) == 0 ) /*0x64d57d*/
               {
-                v47 = v36 - *((char *)v42 + 283); /*0x64d58a*/
+                v47 = v36 - v42->u32_11B; /*0x64d58a*/
                 if ( (int)(((*(((unsigned int *)&(v47)) + 1)) ^ v47) - (*(((unsigned int *)&(v47)) + 1))) > 2 ) /*0x64d592*/
                   goto LABEL_75; /*0x64d592*/
               }
@@ -4028,7 +4028,7 @@ int sub_6431C0(char a1)
   if ( !v9 ) /*0x643281*/
     return v8 / 2; /*0x64328e*/
   (*(void (**)(int))(*(unsigned int *)v9 + 124))(v9); /*0x64329a*/
-  return (v8 - (*(int (**)(int))(*(unsigned int *)v9 + 128))(v9)) / 2; /*0x643289*/
+  return (v8 - (*(int (**)(int))(*&v9->u32_200))(v9)) / 2; /*0x643289*/
 }
 } // namespace gamemd
 

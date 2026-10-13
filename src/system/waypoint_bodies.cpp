@@ -44,7 +44,7 @@ bool WaypointClass::IsCoordinateUsed(const CellStruct&) const
   {
     Element = (int *)Array::GetElement(v6, v7); /*0x502338*/
     v9 = *Element; /*0x50234a*/
-    v10 = Element[1] / 256; /*0x50235b*/
+    v10 = Element->q004 / 256; /*0x50235b*/
     if ( (uint16_t)(v9 / 256) == *a2 && (unsigned short)v10 == a2[1] && v12 != this->padding_18[113] ) /*0x502378*/
       return 0; /*0x502397*/
     v6 = (Array *)*i; /*0x50237a*/

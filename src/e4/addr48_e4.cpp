@@ -948,9 +948,9 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
   if ( dword_A8EB78 && (v7 = (wchar_t *)PingPongBuffer::GetWriteOffset(), dword_ABCD44 >= v7) || (a7 & 0xF) != 0 ) /*0x48a644*/
   {
     IDA_LOBYTE(v7) = a6; /*0x48a64a*/
-    if ( a6 || a2 && (IDA_LOBYTE(v7) = *(unsigned char *)(a2 + 336), (unsigned char)v7) ) /*0x48a662*/
+    if ( a6 || a2 && (IDA_LOBYTE(v7) = a2->q150, (unsigned char)v7) ) /*0x48a662*/
     {
-      v10 = *(float *)(a2 + 316); /*0x48a668*/
+      v10 = a2->q13C; /*0x48a668*/
       if ( v10 <= 0.0 ) /*0x48a679*/
       {
         v12 = (char)(a1 >> 2); /*0x48a6a2*/
@@ -1047,16 +1047,16 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   int v9; // edi
 
   /* X11: vtable install elided (implicit via CommBufferClass virtuals 0x48b0fd) */
-  *(unsigned int *)&this->__pad_0[4] = a2; /*0x48b103*/
+  *&this->__pad_004 = a2; /*0x48b103*/
   this->CommBufferClass_field_0x8 = a3; /*0x48b106*/
   *(unsigned int *)this->__pad_C = Size; /*0x48b109*/
   this->CommBufferClass_field_0x10 = (AbstractClass *)a5; /*0x48b10c*/
   this->CommBufferClass_field_0x24 = __2_YAPAXI_Z(36 * a2); /*0x48b117*/
   this->CommBufferClass_field_0x34 = __2_YAPAXI_Z(24 * a3); /*0x48b123*/
-  *(unsigned int *)&this->__pad_28[8] = __2_YAPAXI_Z(4 * a2); /*0x48b13a*/
-  *((unsigned int *)this + 16) = __2_YAPAXI_Z(4 * a3); /*0x48b143*/
+  *&this->ptr_30 = __2_YAPAXI_Z(4 * a2); /*0x48b13a*/
+  this->u32_40 = __2_YAPAXI_Z(4 * a3); /*0x48b143*/
   v6 = 0; /*0x48b14c*/
-  if ( *(int *)&this->__pad_0[4] > 0 ) /*0x48b150*/
+  if ( *&this->__pad_004 > 0 ) /*0x48b150*/
   {
     v7 = 0; /*0x48b152*/
     do /*0x48b191*/
@@ -1069,7 +1069,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
       ++v6; /*0x48b18b*/
       v7 += 36; /*0x48b18c*/
     }
-    while ( v6 < *(unsigned int *)&this->__pad_0[4] ); /*0x48b191*/
+    while ( v6 < *&this->__pad_004 ); /*0x48b191*/
   }
   v8 = 0; /*0x48b196*/
   if ( this->CommBufferClass_field_0x8 > 0 ) /*0x48b19a*/
@@ -1742,7 +1742,7 @@ int E4Recv_486D90::sub_486D90(char a2)
     {
       p_vtable0 = &this->AbstractClass; /*0x486dbe*/
     }
-    if ( (v3 & p_vtable0[55]) != 0 ) /*0x486e11*/
+    if ( (v3 & p_vtable0->u32_DC) != 0 ) /*0x486e11*/
       v6 |= 1 << v5; /*0x486e1c*/
     v7 = (unsigned int)++v5 < 8; /*0x486e1f*/
   }
@@ -1902,8 +1902,8 @@ int E4Recv_4887F0::sub_4887F0()
   v2 = this->M372; /*0x4887f5*/
   v3 = &this->M372; /*0x4887fb*/
   /* X11: vtable install elided (implicit via ColorListClass virtuals 0x488803) */
-  (*(void (**)(char *))(v2 + 12))((char *)this + 372); /*0x488809*/
-  *((unsigned int *)this + 100) = 0; /*0x48880e*/
+  (*(void (**)(char *))(v2 + 12))(&this->M372); /*0x488809*/
+  this->M400 = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
   *(unsigned int *)v3 = &VectorClass<int>::`vftable'; /*0x488819*/
   if ( v4 && v3[13] ) /*0x488821*/
@@ -2212,7 +2212,7 @@ void CommBufferClass::sub_48B1F0()
       ++v2; /*0x48b22d*/
       v4 += 36; /*0x48b22e*/
     }
-    while ( v2 < *(unsigned int *)&this->__pad_0[4] ); /*0x48b233*/
+    while ( v2 < *&this->__pad_004 ); /*0x48b233*/
   }
   v6 = 0; /*0x48b238*/
   if ( this->CommBufferClass_field_0x8 > 0 ) /*0x48b23c*/
@@ -2231,8 +2231,8 @@ void CommBufferClass::sub_48B1F0()
   }
   __3_YAXPAX_Z((void *)this->CommBufferClass_field_0x24); /*0x48b273*/
   __3_YAXPAX_Z((void *)this->CommBufferClass_field_0x34); /*0x48b27c*/
-  __3_YAXPAX_Z(*(void **)&this->__pad_28[8]); /*0x48b285*/
-  __3_YAXPAX_Z(*((void **)this + 16)); /*0x48b28e*/
+  __3_YAXPAX_Z(*&this->ptr_30); /*0x48b285*/
+  __3_YAXPAX_Z(this->u32_346)); /*0x48b28e*/
 
 }
 } // namespace gamemd

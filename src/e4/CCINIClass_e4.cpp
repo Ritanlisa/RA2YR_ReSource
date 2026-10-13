@@ -73,8 +73,8 @@ LABEL_9:
 LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
-            (*(void (**)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
-            v7[39] = a2; /*0x41f3a3*/
+            v7->LoadFromINI_18(a1); /*0x41f39c*/
+            v7->Coord_9C = a2; /*0x41f3a3*/
           }
           goto LABEL_13; /*0x41f3a3*/
         }
@@ -210,15 +210,15 @@ CCINIClass::CCINIClass()
   result = this->INIClass; /*0x535b30*/
   sectionHead = this->sectionHead; /*0x535b36*/
   p_sectionCount = &this->sectionCount; /*0x535b39*/
-  result[1] = 0; /*0x535b3c*/
-  result[2] = 0; /*0x535b3f*/
-  sectionHead[1] = 0; /*0x535b42*/
-  sectionHead[2] = 0; /*0x535b45*/
+  result->headNode = 0; /*0x535b3c*/
+  result->__pad_008 = 0; /*0x535b3f*/
+  sectionHead->Prev = 0; /*0x535b42*/
+  sectionHead->Next = 0; /*0x535b45*/
   *sectionHead = (int)&GenericNode::`vftable'; /*0x535b48*/
   p_sectionCount[1] = 0; /*0x535b4e*/
   p_sectionCount[2] = 0; /*0x535b51*/
   *p_sectionCount = (int)&GenericNode::`vftable'; /*0x535b54*/
-  result[3] = &GenericList::`vftable'; /*0x535b5d*/
+  result->u32_C = &GenericList::`vftable'; /*0x535b5d*/
   if ( p_sectionCount ) /*0x535b64*/
   {
     v4 = p_sectionCount[1]; /*0x535b66*/
@@ -242,12 +242,12 @@ CCINIClass::CCINIClass()
     *(unsigned int *)(v7 + 8) = p_sectionCount; /*0x535b96*/
   sectionHead[1] = (int)p_sectionCount; /*0x535b99*/
   result[3] = &List<INIClass::INISection *>::`vftable'; /*0x535b9c*/
-  result[10] = 0; /*0x535ba4*/
-  result[11] = 0; /*0x535ba7*/
-  result[12] = 0; /*0x535baa*/
+  result->needsSave_flag = 0; /*0x535ba4*/
+  result->INIClass_field_2C = 0; /*0x535ba7*/
+  result->unknown30 = 0; /*0x535baa*/
   result->needsSave_flag = 0; /*0x535bad*/
-  result[14] = 0; /*0x535bb0*/
-  result[15] = 0; /*0x535bb4*/
+  result->unknown38 = 0; /*0x535bb0*/
+  result->INIClass_field_3C = 0; /*0x535bb4*/
   result->ownsFile = 0; /*0x535bb7*/
   *result = &CCINIClass_Vtable; /*0x535bba*/
   return result; /*0x535ba3*/

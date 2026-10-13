@@ -54,7 +54,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
   int v21; // [esp+20h] [ebp-4h]
 
   v3 = aP1; /*0x6a01a0*/
-  if ( *aP1 != g_OverlayTypeConfig || aP1[1] != (unsigned int)qword_B077FC || (v5 = aP1[2], v5 != HIDWORD(qword_B077FC)) ) /*0x6a01ce*/
+  if ( *aP1 != g_OverlayTypeConfig || aP1->vtable2 != (unsigned int)qword_B077FC || (v5 = aP1->vtable3, v5 != HIDWORD(qword_B077FC)) ) /*0x6a01ce*/
   {
     LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
     v6 = aP3; /*0x6a01d7*/
@@ -619,7 +619,7 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
   WalkLocomotion_field_0x40 = (char *)this->q040; /*0x6a3e12*/
   WalkLocomotion_field_0x44 = (char *)this->q044; /*0x6a3e15*/
   *aP1 = &WalkLocomotion_field_0x40[v6]; /*0x6a3e22*/
-  aP1[1] = &WalkLocomotion_field_0x44[v7]; /*0x6a3e25*/
+  aP1->ptr_4 = &WalkLocomotion_field_0x44[v7]; /*0x6a3e25*/
   return aP1; /*0x6a3e20*/
 
 }

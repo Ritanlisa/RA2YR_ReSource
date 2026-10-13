@@ -243,7 +243,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
       {
         if ( a2 - 1 >= 0 ) /*0x6284d5*/
         {
-          v7 = (unsigned char *)(v6 + 2); /*0x6284d7*/
+          v7 = &v6->ptr_2; /*0x6284d7*/
           v8 = a2; /*0x6284da*/
           do /*0x6284e7*/
           {

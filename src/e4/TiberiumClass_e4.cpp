@@ -202,7 +202,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->ObjectClass = &TiberiumClass::`vftable'; /*0x7217a6*/
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ac) */
-  this->? = &TiberiumClass::`vftable'; /*0x7217b3*/
+  this->vtable3 = &TiberiumClass::`vftable'; /*0x7217b3*/
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ba) */
   *(unsigned int *)&this->? = g_BuildingLoadQueue_Array.?[0]; /*0x7217c6*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[3] /*0x7217fe*/
@@ -433,7 +433,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
       v2->ObjectClass = &TiberiumClass::`vftable'; /*0x721fc7*/
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fcd) */
-      v2->? = &TiberiumClass::`vftable'; /*0x721fd4*/
+      v2->vtable3 = &TiberiumClass::`vftable'; /*0x721fd4*/
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fdb) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/

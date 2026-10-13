@@ -397,14 +397,14 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v8 = Coord2D::Sub(&v28, v29, &v25); /*0x6d2c05*/
           v9 = Rect::Construct(&v35, v8, v22, v23); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
-          v34[1] = v9[1]; /*0x6d2c21*/
-          v34[2] = v9[2]; /*0x6d2c28*/
-          v34[3] = v9[3]; /*0x6d2c37*/
+          v34[1] = v9->Y; /*0x6d2c21*/
+          v34[2] = v9->Width; /*0x6d2c28*/
+          v34[3] = v9->Height; /*0x6d2c37*/
           v10 = ClipRectIntersection(v36, v34, &v30, 0, 0); /*0x6d2c40*/
           v30 = *v10; /*0x6d2c49*/
-          v31 = v10[1]; /*0x6d2c50*/
-          v32 = v10[2]; /*0x6d2c57*/
-          v33 = v10[3]; /*0x6d2c64*/
+          v31 = v10->vtable2; /*0x6d2c50*/
+          v32 = v10->vtable3; /*0x6d2c57*/
+          v33 = v10->vtable4; /*0x6d2c64*/
           v11 = (int *)((char *)g_CraterPool + v7); /*0x6d2c68*/
           *v11 = v30; /*0x6d2c6b*/
           v11[1] = v31; /*0x6d2c72*/
@@ -449,7 +449,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
     {
       Coords = CellClass::GetCoords(*v18, &v30); /*0x6d2d34*/
       v25 = *Coords; /*0x6d2d3b*/
-      v26 = (void *)Coords[1]; /*0x6d2d47*/
+      v26 = Coords->vtable2; /*0x6d2d47*/
       v27 = 0; /*0x6d2d59*/
       v20 = Coord::To_ScreenRaw(v29, &v25); /*0x6d2d61*/
       v21 = v20[1] - this->u32_B4; /*0x6d2d81*/
@@ -794,7 +794,7 @@ int TacticalMap::RenderAllObjects(int a2)
               v41 = v41; /*0x6d9319*/
               v44 = IsoCoord::ToPixel(&v97, *v41, v41[1]); /*0x6d932b*/
               v45 = *v44; /*0x6d932d*/
-              v46 = v44[1]; /*0x6d932f*/
+              v46 = v44->IsoCoord_field_0x04; /*0x6d932f*/
               v47 = v41[2]; /*0x6d9332*/
               v46 = v46; /*0x6d9335*/
               v45 = v45; /*0x6d9343*/

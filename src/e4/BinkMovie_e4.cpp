@@ -304,7 +304,7 @@ int BinkMovie::IsAtEnd(void *a1_1)
 
   tempPath = a1_1->tempPath; /*0x432c50*/
   v2 = tempPath->width; /*0x432c54*/
-  return (unsigned int)v2 >= tempPath[2] || v2 < a1_1->memoryBuffer; /*0x432c5c*/
+  return (unsigned int)v2 >= tempPath->renderTarget || v2 < a1_1->memoryBuffer; /*0x432c5c*/
 }
 }
 // 0x432C70
@@ -1058,8 +1058,8 @@ AbstractClass * * BinkMovie::ProcessKeyframe(unsigned int *aP1)
     Property::Set( /*0x6c9dba*/
       (Property *)g_FogOfWarState,
       ((int)(unsigned __int8)aP1[2] >> g_BitMask_Red << g_BitShift_Blue)
-    | ((unsigned __int8)BYTE2(aP1[2]) >> g_BitShift_Green_0 << g_BitShift_Red)
-    | ((unsigned __int8)BYTE1(aP1[2]) >> g_BitMask_Blue << g_BitMask_Green));
+    | ((unsigned __int8)BYTE2(aP1->vtable3) >> g_BitShift_Green_0 << g_BitShift_Red)
+    | ((unsigned __int8)BYTE1(aP1->vtable3) >> g_BitMask_Blue << g_BitMask_Green));
     v6 = (*(int (**)(int))(*(unsigned int *)this->u32_10 + 124))(this->u32_10); /*0x6c9dca*/
     v16 = (*(int (**)(int))(*(unsigned int *)this->u32_10 + 128))(this->u32_10); /*0x6c9dd6*/
     v20[3] = v16; /*0x6c9ddc*/
@@ -1070,7 +1070,7 @@ AbstractClass * * BinkMovie::ProcessKeyframe(unsigned int *aP1)
     v17 = aP1->u16_A; /*0x6c9e0d*/
     Text::Layout((Text *)v5, v17, &v15, &v19, v6); /*0x6c9e11*/
     v14 = 0; /*0x6c9e1e*/
-    v7 = aP1[4]; /*0x6c9e26*/
+    v7 = aP1->uniqueId; /*0x6c9e26*/
     v8 = *(unsigned int *)&v5[7] * (aP1[3] - 1); /*0x6c9e29*/
     if ( v7 == 2 ) /*0x6c9e30*/
     {
@@ -1138,14 +1138,14 @@ int * BinkMovie::CreateSurfaceTracker(char * FullPath)
   if ( !v2 ) /*0x6c9a06*/
     return 0; /*0x6c9aa3*/
   *v2 = 0; /*0x6c9a14*/
-  v2[1] = 0; /*0x6c9a16*/
-  v2[2] = 0; /*0x6c9a19*/
-  v2[3] = 0; /*0x6c9a1c*/
-  v2[4] = 0; /*0x6c9a1f*/
-  v2[5] = 0; /*0x6c9a23*/
-  v2[6] = 0; /*0x6c9a26*/
-  v2[7] = 0; /*0x6c9a29*/
-  v2[8] = 0; /*0x6c9a2c*/
+  v2->u32_4 = 0; /*0x6c9a16*/
+  v2->u32_8 = 0; /*0x6c9a19*/
+  v2->u32_C = 0; /*0x6c9a1c*/
+  v2->u32_10 = 0; /*0x6c9a1f*/
+  v2->u32_14 = 0; /*0x6c9a23*/
+  v2->u32_18 = 0; /*0x6c9a26*/
+  v2->u32_1C = 0; /*0x6c9a29*/
+  v2->q_20 = 0; /*0x6c9a2c*/
   _splitpath(FullPath, 0, 0, Filename, 0); /*0x6c9a2f*/
   if ( (uint8_t)BinkMovie::InitKeyframeTracking(Filename) == 1 ) /*0x6c9a45*/
   {
@@ -1161,7 +1161,7 @@ int * BinkMovie::CreateSurfaceTracker(char * FullPath)
       Buffer::Init(0, 0x4FB00u); /*0x6c9a7e*/
       *v4 = &BSurface_Vtable; /*0x6c9a83*/
       (*(void (**)(unsigned int *, unsigned int))(*v4 + 24))(v4, 0); /*0x6c9a8e*/
-      v2[4] = v4; /*0x6c9a91*/
+      v2->u32_10 = v4; /*0x6c9a91*/
     }
   }
   return v2; /*0x6c9a97*/

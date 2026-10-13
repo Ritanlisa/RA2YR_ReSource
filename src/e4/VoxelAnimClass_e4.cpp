@@ -520,7 +520,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v90 = v30[190]; /*0x74a1f6*/
         v31 = v30[188]; /*0x74a1fa*/
         v32 = (int *)Coord::GetCoords(&v101, 0); /*0x74a205*/
-        CreateSmokeEffectAt(v31, v90, *v32, v32[1], v32[2], v85, 0); /*0x74a225*/
+        CreateSmokeEffectAt(v31, v90, *v32, v32->vtable2, v32->vtable3, v85, 0); /*0x74a225*/
       }
     }
     else if ( *((unsigned char *)v1->q104 + 720) ) /*0x74a040*/
@@ -595,8 +595,8 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       {
         v34 = (int *)Coord::GetCoords(&v101, v86); /*0x74a269*/
         v97 = *v34; /*0x74a270*/
-        v98 = v34[1]; /*0x74a277*/
-        v99 = v34[2]; /*0x74a27e*/
+        v98 = v34->vtable2; /*0x74a277*/
+        v99 = v34->vtable3; /*0x74a27e*/
         v35 = v1->q104; /*0x74a282*/
         if ( v35[181] ) /*0x74a288*/
         {
@@ -642,7 +642,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 v94 = __2_YAPAXI_Z(0xB0u); /*0x74a3ca*/
                 if ( v94 ) /*0x74a3d0*/
                 {
-                  v93 = *((unsigned int *)v43 + 9); /*0x74a3e8*/
+                  v93 = v43->ptr_24; /*0x74a3e8*/
                   v45 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x74a3ec*/
                   Object::SpawnAtCell( /*0x74a427*/
                     (#374 *)v94,
@@ -658,7 +658,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 v94 = __2_YAPAXI_Z(0xB0u); /*0x74a431*/
                 if ( v94 ) /*0x74a437*/
                 {
-                  v95 = *((unsigned int *)v43 + 9); /*0x74a44b*/
+                  v95 = v43->ptr_24; /*0x74a44b*/
                   v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
                     (#374 *)v94,
@@ -668,7 +668,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 }
               }
               v94 = (int)(v43 + 36); /*0x74a482*/
-              CellClass::RegisterForRedraw(v44, (__int16 *)v43 + 18); /*0x74a486*/
+              CellClass::RegisterForRedraw(v44, &v43->u32_48); /*0x74a486*/
               v43[286] = 0; /*0x74a48f*/
               StartCoords = House::GetStartCoords((House *)v43, v100); /*0x74a49e*/
               v48 = *StartCoords; /*0x74a4a6*/

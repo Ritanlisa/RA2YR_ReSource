@@ -453,7 +453,7 @@ char MixFileClass::Bootstrap()
   {
     sprintf(Buffer, "EXPANDMD%02d.MIX", i); /*0x5301ca*/
     v2 = RawFileClass::Construct(&v18, (int)Buffer); /*0x5301db*/
-    v3 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v2 + 20))(v2, 0); /*0x5301ee*/
+    v3 = v2->Open_1(0); /*0x5301ee*/
     RawFileClass::Dtor(&v18); /*0x5301f0*/
     if ( v3 ) /*0x5301f7*/
     {

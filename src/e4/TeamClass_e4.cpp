@@ -798,7 +798,7 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
         v32 = v13[2]; /*0x63684e*/
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v29, aP1); /*0x63684f*/
         *(unsigned int *)&v30[7] = *(unsigned int *)WaypointCoords; /*0x636858*/
-        v30[11] = WaypointCoords[4]; /*0x63685f*/
+        v30[11] = WaypointCoords->vtable2; /*0x63685f*/
         v15 = operator new(0x10u); /*0x636863*/
         v16 = 0; /*0x636868*/
         if ( v15 ) /*0x63686f*/
@@ -818,7 +818,7 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
         memcpy(v17, v30, 0x6Cu); /*0x6368ab*/
         *((unsigned short *)v17 + 54) = v31; /*0x6368ad*/
         v17[110] = v32; /*0x6368af*/
-        v16[1] = v17; /*0x6368b0*/
+        v16->vtable2 = v17; /*0x6368b0*/
         v18 = *(unsigned int *)(v8 + 8); /*0x6368b3*/
         if ( *(unsigned int *)(v8 + 16) < v18 /*0x6368d7*/
           || (*(unsigned char *)(v8 + 13) || !v18)
@@ -929,15 +929,15 @@ LABEL_13:
         v31 = v11[2]; /*0x636a1c*/
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v28, a2); /*0x636a1d*/
         *(unsigned int *)&v29[7] = *(unsigned int *)WaypointCoords; /*0x636a26*/
-        v29[11] = WaypointCoords[4]; /*0x636a2d*/
+        v29[11] = WaypointCoords->vtable2; /*0x636a2d*/
         v13 = __2_YAPAXI_Z(0x10u); /*0x636a31*/
         v14 = 0; /*0x636a36*/
         if ( v13 ) /*0x636a3d*/
         {
           *(unsigned int *)v13 = 0; /*0x636a3f*/
-          *(unsigned int *)(v13 + 4) = 0; /*0x636a41*/
-          *(unsigned char *)(v13 + 12) = 0; /*0x636a44*/
-          *(unsigned int *)(v13 + 8) = -1; /*0x636a47*/
+          v13->vtable2 = 0; /*0x636a41*/
+          v13->vtable4 = 0; /*0x636a44*/
+          v13->vtable3 = -1; /*0x636a47*/
           v14 = (unsigned int *)v13; /*0x636a4e*/
         }
         *v14 = a2; /*0x636a59*/
@@ -949,7 +949,7 @@ LABEL_13:
         qmemcpy(v15, v29, 0x6Cu); /*0x636a79*/
         *((unsigned short *)v15 + 54) = v30; /*0x636a7b*/
         v15[110] = v31; /*0x636a7d*/
-        v14[1] = v15; /*0x636a7e*/
+        v14->vtable2 = v15; /*0x636a7e*/
         v16 = *(unsigned int *)(v6 + 8); /*0x636a81*/
         if ( *(unsigned int *)(v6 + 16) < v16 /*0x636aa5*/
           || (*(unsigned char *)(v6 + 13) || !v16)
@@ -1915,10 +1915,10 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
               {
                 v11 = (unsigned int *)(*(int (**)(char *, int *))(*(unsigned int *)v10 + 72))(v10, &v39); /*0x6eafa7*/
                 v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v42); /*0x6eafb0*/
-                v13 = Coord::Subtract(v43, *v12 - *v11, v12[1] - v11[1], v12[2] - v11[2]); /*0x6eafd0*/
+                v13 = Coord::Subtract(v43, *v12 - *v11, v12[1] - v11->u32_4, v12[2] - v11->u32_8); /*0x6eafd0*/
                 v36 = *v13; /*0x6eafd7*/
-                v37 = v13[1]; /*0x6eafe2*/
-                v38 = v13[2]; /*0x6eafe9*/
+                v37 = v13->u32_4; /*0x6eafe2*/
+                v38 = v13->u32_8; /*0x6eafe9*/
                 v14 = Coord::Length(&v36); /*0x6eafed*/
                 if ( v8 == -1 || v14 < v8 ) /*0x6eaff9*/
                 {
@@ -1951,8 +1951,8 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                 v17 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v6 + 72))(v6, v42); /*0x6eb0b3*/
                 v18 = Coord::Subtract(&v39, *v17 - *v16, v17[1] - v16[1], v17[2] - v16[2]); /*0x6eb0d3*/
                 v36 = *v18; /*0x6eb0dd*/
-                v37 = v18[1]; /*0x6eb0e4*/
-                v38 = v18[2]; /*0x6eb0ef*/
+                v37 = v18->u32_4; /*0x6eb0e4*/
+                v38 = v18->u32_8; /*0x6eb0ef*/
                 v19 = Math::Sqrt((double)v36 * (double)v36 + (double)v38 * (double)v38 + (double)v37 * (double)v37); /*0x6eb114*/
                 v20 = Math::RoundToInt(v19); /*0x6eb11c*/
                 if ( v8 == -1 || v20 < v8 ) /*0x6eb128*/
@@ -2162,7 +2162,7 @@ void* TeamClass::AttackCoordinator()
         v12 = v1->firstUnit,
         v13 = 0,
         v19 = *p_vtable0,
-        v20 = p_vtable0[1],
+        v20 = p_vtable0->vtable2,
         !v12) )
   {
 LABEL_72:
@@ -2872,16 +2872,16 @@ char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
       for ( ; v5; v5 = v5->FootClass_field_5D8 ) /*0x6e9069*/
       {
         v6 = aP1->__pad_3C; /*0x6e906c*/
-        v7 = v5[361]; /*0x6e9075*/
+        v7 = v5->FootClass_field_5A4; /*0x6e9075*/
         v12 = v5[173] == v6; /*0x6e9082*/
         v8 = v7 == v6; /*0x6e9086*/
         if ( v5[173] == v6 || v7 == v6 ) /*0x6e908f*/
         {
-          (*(void (**)(unsigned int *, int, unsigned int))(*v5 + 488))(v5, 5, 0); /*0x6e9099*/
+          v5->MissionDispatch(5, 0); /*0x6e9099*/
           if ( v8 ) /*0x6e90a1*/
-            (*(void (**)(unsigned int *, unsigned int, int))(*v5 + 1152))(v5, 0, 1); /*0x6e90ab*/
+            v5->AssignDestination(0, 1); /*0x6e90ab*/
           if ( v12 ) /*0x6e90b7*/
-            (*(void (**)(unsigned int *, unsigned int))(*v5 + 968))(v5, 0); /*0x6e90bf*/
+            v5->AssignTarget_SyncLog(0); /*0x6e90bf*/
         }
       }
     }
@@ -2904,7 +2904,7 @@ char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
       {
         v10 = aP1->u32_54; /*0x6e9106*/
         for ( aP1->u32_82 = 1; v10; v10 = v10->FootClass_field_5D8 ) /*0x6e9112*/
-          (*((unsigned char *)&(v9))) = (*(int (**)(unsigned int *, unsigned int, int))(*v10 + 1152))(v10, 0, 1); /*0x6e911c*/
+          (*((unsigned char *)&(v9))) = v10->AssignDestination(0, 1); /*0x6e911c*/
       }
     }
   }
@@ -2958,7 +2958,7 @@ char TeamClass::AddMember(int aP1, char aP2)
       (*((unsigned char *)&(result))) = 1; /*0x6ea5e7*/
       this->TeamClass_field_7E = 1; /*0x6ea5e9*/
       this->needsToDisappear = 1; /*0x6ea5ec*/
-      aP1->isRecruitableByEnemy_d = *(unsigned char *)(v11 + 245); /*0x6ea5f5*/
+      aP1->isRecruitableByEnemy_d = v11->u8_F5; /*0x6ea5f5*/
     }
   }
   else

@@ -305,10 +305,10 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       }
     }
     v30 = aP0; /*0x4375a7*/
-    v31 = (*(int (**)(int *))(*aP0 + 112))(aP0); /*0x4375af*/
+    v31 = aP0->vt_slot_112(); /*0x4375af*/
     v32 = v19 * v31; /*0x4375b6*/
-    if ( v32 == (*(int (**)(int *))(*v30 + 116))(v30) /*0x4375d8*/
-      && (v33 = (*(int (**)(int *))(*v30 + 116))(v30), v33 == (*(int (**)(int *))(*aP3 + 116))(aP3)) )
+    if ( v32 == v30->vt_slot_116() /*0x4375d8*/
+      && (v33 = v30->vt_slot_116(), v33 == aP3->vt_slot_116()) )
     {
       v34 = v17 * v15; /*0x4375e2*/
       if ( v17 * v15 >= v20 * v19 ) /*0x4375ee*/
@@ -330,8 +330,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
     else
     {
       aP3 = aP3; /*0x43763e*/
-      aP7 = (*(int (**)(int *))(*aP3 + 116))(aP3); /*0x437649*/
-      v37 = (*(int (**)(int *))(*v30 + 116))(v30); /*0x437654*/
+      aP7 = aP3->vt_slot_116(); /*0x437649*/
+      v37 = v30->vt_slot_116(); /*0x437654*/
       a4 = v37; /*0x43765d*/
       if ( g_ZBufferDescriptor ) /*0x437661*/
         v65 = *((unsigned int *)g_ZBufferDescriptor + 10); /*0x437666*/
@@ -403,15 +403,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
             else
             {
               v50 = v63; /*0x4377bb*/
-              (*(void (**)(int *, int, char *, int, int, unsigned int, unsigned int, int))(*aP6 + 12))( /*0x4377d4*/
-                aP6,
-                v43,
-                v48,
-                v15,
-                v18,
-                v63,
-                v61,
-                v46);
+              aP6->Blit(/*0x4377d4*/
+                aP6, v43, v48, v15, v18, v63, v61, v46);
             }
             v43 = a4 + v62; /*0x4377e3*/
             v62 += a4; /*0x4377e9*/
@@ -472,16 +465,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
           else
           {
             v57 = v63; /*0x4378c6*/
-            (*(void (**)(int *, int, int *, int, int, unsigned int, unsigned int, int, int))(*aP6 + 4))( /*0x4378e4*/
-              aP6,
-              v43,
-              aP2,
-              v15,
-              v18,
-              v63,
-              v61,
-              v54,
-              v21);
+            aP6->BlitWhole(/*0x4378e4*/
+              aP6, v43, aP2, v15, v18, v63, v61, v54, v21);
           }
           v43 = a4 + v62; /*0x4378f3*/
           v21 ^= 3u; /*0x4378f9*/
@@ -516,8 +501,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       }
       v30 = aP0; /*0x43797a*/
     }
-    (*(void (**)(int *))(*v30 + 96))(v30); /*0x437982*/
-    (*(void (**)(int *))(*aP3 + 96))(aP3); /*0x43798b*/
+    v30->Unlock(); /*0x437982*/
+    aP3->Unlock(); /*0x43798b*/
     return 1; /*0x43798e*/
   }
   return result; /*0x43746a*/
@@ -613,7 +598,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
   v21 = (Coord2D *)CellStruct::Copy((gamemd::CellStruct *)(a1), &v55); /*0x437b02*/
   v22 = Coord2D::Add(v21, v54, v41); /*0x437b09*/
-  v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22[1]); /*0x437b28*/
+  v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))(aP0, *v22, v22->vtable2); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/
     return 0; /*0x437b3a*/
   if ( g_ZBufferDescriptor ) /*0x437b45*/
@@ -809,7 +794,7 @@ void BrainClass::sub_43A600()
 
   v2 = 0; /*0x43a608*/
   /* X11: vtable install elided (implicit via BrainClass virtuals 0x43a60a) */
-  v3 = this->u32_14; /*0x43a610*/
+  v3 = this->abstractFlags; /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
     do /*0x43a632*/
@@ -1264,10 +1249,10 @@ unsigned char * E4Recv_434700::sub_434700()
         *result = *v5; /*0x434748*/
         v7 = this->M4; /*0x43474a*/
         v8 = 0; /*0x434750*/
-        for ( result = (char *)this->M8 + 1; v8 < v7[2]; ++v8 ) /*0x434752*/
+        for ( result = (char *)this->M8 + 1; v8 < v7->vtable3; ++v8 ) /*0x434752*/
         {
           v9 = 0; /*0x43475e*/
-          if ( v7[1] ) /*0x43475b*/
+          if ( v7->vtable2 ) /*0x43475b*/
           {
             do /*0x434774*/
             {
@@ -1648,7 +1633,7 @@ char sub_437290(int * a1, int a2, int * a3)
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4372a5*/
     return 0; /*0x4372a8*/
   v6 = *a3; /*0x4372ba*/
-  v7 = (*(int (**)(int *))(*a1 + 112))(a1); /*0x4372bc*/
+  v7 = a1->vt_slot_112(); /*0x4372bc*/
   v8 = *(unsigned int *)(a2 + 12); /*0x4372c2*/
   v13 = *(unsigned int *)(a2 + 8); /*0x4372c5*/
   v14 = v8; /*0x4372d5*/
@@ -1685,7 +1670,7 @@ char BlitterCopySimpleSHP(XSurface * a1, XSurface * a2, int a3, int a4, int * a5
   int v15[3]; // [esp+20h] [ebp-Ch] BYREF
 
   v13 = (unsigned int *)(*(int (**)(int, unsigned char *, int))(*&a3->q1E0))(a3, v14, a4); /*0x43738e*/
-  v11 = (unsigned int *)(*(int (**)(int *))(*a1 + 120))(a1); /*0x437396*/
+  v11 = (unsigned int *)a1->GetRect(); /*0x437396*/
   return BlitterCopySHP(a1, v11, v15, a2, a3, v13, a5, a6, a7, a8, a9, 0); /*0x4373a2*/
 }
 } // namespace gamemd
@@ -1699,7 +1684,7 @@ bool sub_4379A0(IUnknown * a1, IUnknown * a2, unsigned int * a3, int a4, TechnoC
   unsigned char v14[20]; // [esp+Ch] [ebp-20h] BYREF
   int v15[3]; // [esp+20h] [ebp-Ch] BYREF
 
-  v13 = (int *)(*(int (**)(unsigned int *, unsigned char *, int))(*a3 + 120))(a3, v14, a4); /*0x4379e4*/
+  v13 = (int *)a3->GetRect(v14, a4); /*0x4379e4*/
   v11 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)a1 + 120))(a1); /*0x4379ec*/
   return BlitterRLEBlitSHP(a1, v11, v15, a2, a3, v13, a5, a6, a7, a8, a9, 0, 0, 0, 0); /*0x4379f8*/
 }
@@ -2184,9 +2169,9 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
     }
     while ( v4 < abstractFlags ); /*0x43a6dd*/
   }
-  (*((void (**)(void **))this->? + 3))(&this->?); /*0x43a6e5*/
+  (*((void (**)(void **))this->vtable4 + 3))(&this->vtable4); /*0x43a6e5*/
   this->M28 = a2; /*0x43a6f0*/
-  this->q020 = (void *)a3; /*0x43a6f3*/
+  this->NeedsSaveOrLink = (void *)a3; /*0x43a6f3*/
   return a2; /*0x43a6f6*/
 
 }

@@ -545,7 +545,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
             (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x6841d8*/
           result = dword_A8B230; /*0x6841ea*/
         }
-        result[13730] = 0; /*0x6841ef*/
+        result->ScenarioClass_field_35A2 = 0; /*0x6841ef*/
         stru_A8EB00.?[440] = 0; /*0x6841fc*/
         Timer::PumpMessages(*(Timer **)&g_BinkMoviePlayer); /*0x684203*/
         result = dword_A8B230; /*0x684208*/
@@ -1440,7 +1440,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   *(unsigned int *)&g_abs_A8D63C = INIClass::ReadInt_Overwrite(
                                                    (int)aP1,
                                                    (uint8_t *)v117,
-                                                   (CCINIClass *)aP3[0],
+                                                   aP3->q000,
                                                    aP3[1]);
   v10 = *(INIClass **)this->u8_B608);
   aP3[1] = *(INIClass **)this->u8_B642);
@@ -1694,7 +1694,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   this->iceGrowthEnabled = INIClass::ReadBool_Overwrite(
                                (int)aP1,
                                (uint8_t *)v117,
-                               (CCINIClass *)aP3[0],
+                               aP3->q000,
                                (char)aP3[1]);
   v36 = INIClass::ReadBool_Overwrite(
           (int)aP1,
@@ -1712,7 +1712,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   aP3[0] = (INIClass *)&stru_830620.q579C[33328];
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   this->freeRadar = v38;
-  this->altHomeCell = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)v117, (CCINIClass *)aP3[0], aP3[1]);
+  this->altHomeCell = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)v117, aP3->q000, aP3[1]);
   Int_Overwrite = INIClass::ReadInt_Overwrite(
                     (int)aP1,
                     (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
@@ -1722,7 +1722,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   aP3[0] = (INIClass *)&stru_830620.q579C[33308];
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   this->uniqueId = Int_Overwrite;
-  INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)v117, (CCINIClass *)aP3[0], (char)aP3[1]);
+  INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)v117, aP3->q000, (char)aP3[1]);
   v40 = this->dropshipUnitCounts - this->blue;
   v122 = 0;
   if ( v40 > 0 )
@@ -1790,8 +1790,8 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   this->parTimeDifficult = INIClass::ReadTimeString(
                                 (int)aP1,
                                 (uint8_t *)v117,
-                                (uint8_t *)aP3[0],
-                                (CCINIClass *)aP3[1]);
+                                aP3->q000,
+                                aP3->u32_4);
   INIClass::GetString(
     (uint8_t ***)aP1,
     (INIClass *)&g_INI_Key_Ranking,

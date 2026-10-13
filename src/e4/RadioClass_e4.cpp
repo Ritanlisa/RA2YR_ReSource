@@ -273,7 +273,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
       {
         while ( 1 ) /*0x65ac93*/
         {
-          result = (*(int (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
+          result = aP1->GetVtable3(a0->radioLinks[1] + 4 * v5, 4, 0); /*0x65ac93*/
           if ( result < 0 ) /*0x65ac98*/
             break; /*0x65ac98*/
           if ( ++v5 >= aP2 ) /*0x65aca1*/

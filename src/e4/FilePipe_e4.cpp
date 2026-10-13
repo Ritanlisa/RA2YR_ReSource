@@ -57,7 +57,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
         {
-          v7 = (unsigned char *)(v6 + 2); /*0x478377*/
+          v7 = &v6->ptr_2; /*0x478377*/
           v8 = a2; /*0x47837a*/
           do /*0x478387*/
           {

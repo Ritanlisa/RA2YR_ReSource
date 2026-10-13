@@ -724,7 +724,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   *((unsigned int *)p_IsInitialized + 5) = a2_1[5]; /*0x4a0ca3*/
   *(unsigned int *)p_IsInitialized = &DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0ca6*/
   /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0cac) */
-  for ( i = 0; i < *(unsigned int *)&aP1->__tail_18[4]; ++i ) /*0x4a0cb9*/
+  for ( i = 0; i < *&aP1->q01C; ++i ) /*0x4a0cb9*/
   {
     v10 = *((unsigned int *)aP1->Count + i); /*0x4a0cc1*/
     (*(void (**)(int))(*(unsigned int *)v10 + 4))(v10); /*0x4a0cc4*/
@@ -1296,7 +1296,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
       do /*0x6dc8d6*/
       {
         Rect::Set((Rect *)v5, 0, 0, 0, 0); /*0x6dc8c9*/
-        v5[16] = 0; /*0x6dc8ce*/
+        v5->ptr_10 = 0; /*0x6dc8ce*/
         v5 += 20; /*0x6dc8d2*/
         --v8; /*0x6dc8d5*/
       }
@@ -1315,7 +1315,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
       do /*0x6dc8a9*/
       {
         Rect::Set((Rect *)v5, 0, 0, 0, 0); /*0x6dc89c*/
-        v5[16] = 0; /*0x6dc8a1*/
+        v5->ptr_10 = 0; /*0x6dc8a1*/
         v5 += 20; /*0x6dc8a5*/
         --v6; /*0x6dc8a8*/
       }
@@ -1399,8 +1399,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
       do /*0x6b450b*/
       {
         *v5 = 0; /*0x6b44ff*/
-        v5[1] = 0; /*0x6b4501*/
-        v5[2] = 0; /*0x6b4504*/
+        v5->vtable2 = 0; /*0x6b4501*/
+        v5->vtable3 = 0; /*0x6b4504*/
         v5 += 3; /*0x6b4507*/
         --v9; /*0x6b450a*/
       }
@@ -1423,8 +1423,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
       do /*0x6b44eb*/
       {
         *v6 = 0; /*0x6b44df*/
-        v6[1] = 0; /*0x6b44e1*/
-        v6[2] = 0; /*0x6b44e4*/
+        v6->vtable2 = 0; /*0x6b44e1*/
+        v6->vtable3 = 0; /*0x6b44e4*/
         v6 += 3; /*0x6b44e7*/
         --v7; /*0x6b44ea*/
       }
@@ -1503,8 +1503,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
       do /*0x6b46bb*/
       {
         *v5 = 0; /*0x6b46af*/
-        v5[1] = 0; /*0x6b46b1*/
-        v5[2] = 0; /*0x6b46b4*/
+        v5->vtable2 = 0; /*0x6b46b1*/
+        v5->vtable3 = 0; /*0x6b46b4*/
         v5 += 3; /*0x6b46b7*/
         --v9; /*0x6b46ba*/
       }
@@ -1523,8 +1523,8 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
       do /*0x6b469b*/
       {
         *v6 = 0; /*0x6b468f*/
-        v6[1] = 0; /*0x6b4691*/
-        v6[2] = 0; /*0x6b4694*/
+        v6->vtable2 = 0; /*0x6b4691*/
+        v6->vtable3 = 0; /*0x6b4694*/
         v6 += 3; /*0x6b4697*/
         --v7; /*0x6b469a*/
       }
@@ -1672,7 +1672,7 @@ char VectorClass_flat::Release(int a2, char * a3)
           do /*0x40b1c6*/
           {
             *(unsigned int *)v7 = 0; /*0x40b1bd*/
-            v7[4] = 0; /*0x40b1bf*/
+            v7->vtable2 = 0; /*0x40b1bf*/
             v7 += 8; /*0x40b1c2*/
             --a2; /*0x40b1c5*/
           }
@@ -3455,10 +3455,10 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
   {
     if ( a3_1 ) /*0x45ae76*/
     {
-      *(unsigned int *)&aP1->m_1[3] = a3_1; /*0x45ae78*/
+      *&aP1->vtable2 = a3_1; /*0x45ae78*/
       return aP1->__pad_0; /*0x45ae7e*/
     }
-    *(unsigned int *)&aP1->m_1[3] = __2_YAPAXI_Z(4 * aP2); /*0x45ae8d*/
+    *&aP1->vtable2 = __2_YAPAXI_Z(4 * aP2); /*0x45ae8d*/
     BYTE1(aP1->m_C) = 1; /*0x45ae90*/
   }
   return aP1->__pad_0; /*0x45ae7d*/
@@ -6696,7 +6696,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1
   v5 = v4; /*0x502524*/
   if ( !v4 ) /*0x502528*/
     return -2147024882; /*0x50252b*/
-  (*(void (__stdcall **)(unsigned int *))(*v4 + 4))(v4); /*0x502537*/
+  v4->AddRef(); /*0x502537*/
   *a2 = v5; /*0x50253a*/
   return 0; /*0x5024fa*/
 }
@@ -7994,7 +7994,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
         do /*0x58ace1*/
         {
           *(unsigned int *)v8 = 0; /*0x58acd8*/
-          v8[4] = 0; /*0x58acda*/
+          v8->vtable2 = 0; /*0x58acda*/
           v8 += 8; /*0x58acdd*/
           --v9; /*0x58ace0*/
         }
@@ -8655,7 +8655,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
     {
       if ( a2 - 1 >= 0 ) /*0x628e53*/
       {
-        v9 = (unsigned char *)(v8 + 2); /*0x628e55*/
+        v9 = &v8->ptr_2; /*0x628e55*/
         v10 = a2; /*0x628e58*/
         do /*0x628e65*/
         {
@@ -9126,7 +9126,7 @@ int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
   result = Count; /*0x67a650*/
   for ( i = 0; i < Count; ++i ) /*0x67a658*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Items + 4 * i, 4, 0); /*0x67a668*/
+    aP1->IsClean(this->Items + 4 * i, 4, 0); /*0x67a668*/
     result = Count; /*0x67a66b*/
   }
   return result; /*0x67a674*/
@@ -9147,7 +9147,7 @@ int VectorClass_flat::SaveLoad(TechnoTypeClass * aP1)
   result = Count; /*0x67a870*/
   for ( i = 0; i < Count; ++i ) /*0x67a878*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Items + 4 * i, 4, 0); /*0x67a888*/
+    aP1->IsClean(this->Items + 4 * i, 4, 0); /*0x67a888*/
     result = Count; /*0x67a88b*/
   }
   return result; /*0x67a894*/
@@ -9739,7 +9739,7 @@ int VectorClass_K_8::ddtor(int a1, int a2, int a3, unsigned int * a4)
     return -2147024882; /*0x6bef58*/
   v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6bef6c*/
   if ( v8 < 0 ) /*0x6bef70*/
-    (*(void (**)(unsigned int *, int))(*v7 + 56))(v7, 1); /*0x6bef78*/
+    v7->ddtor_15(1); /*0x6bef78*/
   return v8; /*0x6bef1a*/
 }
 // 0x6BEF90

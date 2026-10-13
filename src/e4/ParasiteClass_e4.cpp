@@ -54,7 +54,7 @@ int ParasiteClass::Constructor()
   this->AbstractClass = &ParasiteClass::`vftable'; /*0x629231*/
   this->? = &ParasiteClass::`vftable'; /*0x629237*/
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62923e) */
-  this->? = &ParasiteClass::`vftable'; /*0x629245*/
+  this->vtable4 = &ParasiteClass::`vftable'; /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
@@ -206,10 +206,10 @@ void ParasiteClass::DeploySquad()
   v48[1] = *v3; /*0x629812*/
   v5 = *(unsigned int *)(v48[1] + 172); /*0x629816*/
   v48[0] = v5; /*0x629822*/
-  v55 = v4[39]; /*0x629828*/
+  v55 = v4->q09C; /*0x629828*/
   v56 = v4[40]; /*0x62982f*/
   v57 = v4[41]; /*0x629836*/
-  v6 = (Cell *)(*(int (**)(int *))(*v4 + 444))(v4); /*0x62983c*/
+  v6 = (Cell *)v4->GetCellCoords(); /*0x62983c*/
   v44 = 0x3FF0000000000000LL; /*0x629844*/
   if ( !v6 || (uint8_t)Cell::IsValidHeight(v6) ) /*0x629854*/
   {
@@ -378,7 +378,7 @@ void ParasiteClass::DeploySquad()
           v30 = *(unsigned char **)_ESI->__pad_28; /*0x629c5d*/
           BuildingClass::Deploy(v43, 0, (int)v30); /*0x629c62*/
           v31 = *(unsigned int *)v30; /*0x629c67*/
-          v30[973] = 1; /*0x629c69*/
+          v30->u8_3CD = 1; /*0x629c69*/
           (*(void (**)(unsigned char *, int))(v31 + 952))(v30, _ESI->creationFrame); /*0x629c76*/
           (*(void (**)(unsigned char *))(*(unsigned int *)v30 + 928))(v30); /*0x629c80*/
           vtable0 = _ESI[1].vfptr; /*0x629c86*/
@@ -710,7 +710,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
     if ( !*v12 ) /*0x62aaf8*/
       WinAPI::Wrapper(-2147467261); /*0x62ab03*/
     result = (*(int (**)(unsigned int, int, int, int, int))(*(unsigned int *)*v12 + 112))(*v12, -1, v13, v16, v17); /*0x62ab24*/
-    a2[421] = this->creationFrame; /*0x62ab2b*/
+    a2->q694 = this->creationFrame; /*0x62ab2b*/
     this->__pad_028 = a2; /*0x62ab31*/
   }
   else
@@ -1030,8 +1030,8 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
         if ( v19 ) /*0x62c006*/
         {
           if ( *(unsigned char *)(v19[328] + 5823) ) /*0x62c00e*/
-            v56 = v19[390] < 8; /*0x62c021*/
-          if ( (*(unsigned __int8 (**)(unsigned int *))(*v19 + 128))(v19) ) /*0x62c02a*/
+            v56 = v19->u32_618 < 8; /*0x62c021*/
+          if ( v19->vt_slot_128() ) /*0x62c02a*/
             v56 = 0; /*0x62c034*/
         }
       }

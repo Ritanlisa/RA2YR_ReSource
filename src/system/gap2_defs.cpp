@@ -1005,7 +1005,7 @@ bool CellClass::Get(void* a1) {
   v7 = v4[2]; /*0x452963*/
   Coords = CellClass::GetCoords((CellClass *)a1, &v9); /*0x452966*/
   v9 = v5 - *Coords; /*0x452972*/
-  v10 = Coords[2]; /*0x452979*/
+  v10 = Coords->vtable3; /*0x452979*/
   v14 = v6 - Coords[1]; /*0x45297c*/
   v9 = v9; /*0x452986*/
   v15 = v7 - v10; /*0x45298a*/
@@ -1100,7 +1100,7 @@ void CellClass::AddObject(void* aP1) {
     while ( 1 ) /*0x47340c*/
     {
       ++this->mapCoords; /*0x47340c*/
-      v6 = v2[12]; /*0x47340e*/
+      v6 = v2->ptr_30; /*0x47340e*/
       if ( !v6 || (v6->abstractFlags & 4) == 0 ) /*0x473422*/
         break; /*0x473422*/
       v2 = v2->ptr_30; /*0x473424*/
@@ -1826,7 +1826,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
   LABEL_8:
       v15 = WaypointCoords; /*0x4760d1*/
       v16 = *(unsigned int *)WaypointCoords; /*0x4760d3*/
-      (*((unsigned char *)&(v29))) = v15[4]; /*0x4760da*/
+      (*((unsigned char *)&(v29))) = v15->vtable2; /*0x4760da*/
       if ( (unsigned char)v29 ) /*0x4760de*/
       {
         v17 = v16 & 0xFFFFFF | ((uint8_t)v29 << 24); /*0x4760f6*/
@@ -1977,8 +1977,8 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
     Items = ((char *)&v22); /*0x476611*/
     CapacityIncrement = ((char *)&v22); /*0x476619*/
     v18 = ((char *)&v22) == 0; /*0x476622*/
-    *(unsigned int *)(a1 + 16) = ((char *)&v22); /*0x476624*/
-    *(unsigned int *)(a1 + 20) = CapacityIncrement; /*0x476627*/
+    a1->q010 = ((char *)&v22); /*0x476624*/
+    a1->u32_14 = CapacityIncrement; /*0x476627*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x47662a*/
     v22.DynamicVectorClass = &vt_VectorClass; /*0x476630*/
     if ( !v18 && ((char *)&v22) ) /*0x47663a*/
@@ -1996,17 +1996,17 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
   else
   {
     v15 = a1; /*0x47666e*/
-    *(unsigned int *)(a1 + 4) = 0; /*0x476686*/
-    *(unsigned int *)(a1 + 8) = 0; /*0x476689*/
-    *(unsigned char *)(a1 + 12) = 1; /*0x47668c*/
-    *(unsigned char *)(a1 + 13) = 0; /*0x476690*/
+    a1->Items = 0; /*0x476686*/
+    a1->Capacity = 0; /*0x476689*/
+    a1->u32_C = 1; /*0x47668c*/
+    a1->IsAllocated = 0; /*0x476690*/
     *(unsigned int *)a1 = &vt_VectorClass; /*0x476693*/
     INIClass::writeSection((INIClass *)a1, &a4); /*0x476695*/
     v19 = a5; /*0x47669a*/
     v20 = a9; /*0x4766a8*/
     v18 = a5 == 0; /*0x4766af*/
-    *(unsigned int *)(a1 + 16) = a8; /*0x4766b1*/
-    *(unsigned int *)(a1 + 20) = v20; /*0x4766b4*/
+    a1->q010 = a8; /*0x4766b1*/
+    a1->u32_14 = v20; /*0x4766b4*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x4766b7*/
     a4 = &vt_VectorClass; /*0x4766bd*/
     if ( !v18 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x4766cd*/
@@ -2278,8 +2278,8 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
     v17 = Block; /*0x476ca1*/
     v18 = v31; /*0x476ca9*/
     v19 = Block == 0; /*0x476cb2*/
-    *(unsigned int *)(a1 + 16) = v30; /*0x476cb4*/
-    *(unsigned int *)(a1 + 20) = v18; /*0x476cb7*/
+    a1->uniqueId = v30; /*0x476cb4*/
+    a1->abstractFlags = v18; /*0x476cb7*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x476cba*/
     v26 = &vt_VectorClass; /*0x476cc0*/
     if ( !v19 && v29 ) /*0x476cca*/
@@ -2297,17 +2297,17 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
   else
   {
     v16 = a1; /*0x476cfe*/
-    *(unsigned int *)(a1 + 4) = 0; /*0x476d16*/
-    *(unsigned int *)(a1 + 8) = 0; /*0x476d19*/
-    *(unsigned char *)(a1 + 12) = 1; /*0x476d1c*/
-    *(unsigned char *)(a1 + 13) = 0; /*0x476d20*/
+    a1->vtable2 = 0; /*0x476d16*/
+    a1->vtable3 = 0; /*0x476d19*/
+    a1->vtable4 = 1; /*0x476d1c*/
+    a1->u32_D = 0; /*0x476d20*/
     *(unsigned int *)a1 = &vt_VectorClass; /*0x476d23*/
     ParticleTypeClass::EnsureCapacity((ParticleTypeClass *)a1, &a4); /*0x476d25*/
     v20 = a5; /*0x476d2a*/
     v21 = a9; /*0x476d38*/
     v19 = a5 == 0; /*0x476d3f*/
-    *(unsigned int *)(a1 + 16) = a8; /*0x476d41*/
-    *(unsigned int *)(a1 + 20) = v21; /*0x476d44*/
+    a1->uniqueId = a8; /*0x476d41*/
+    a1->abstractFlags = v21; /*0x476d44*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x476d47*/
     a4 = &vt_VectorClass; /*0x476d4d*/
     if ( !v19 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x476d5d*/
@@ -2767,9 +2767,9 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
       v21 = 0; /*0x47c7d3*/
       if ( byte_A8E9A0 && (v11 = (unsigned int *)this->firstObject) != 0 ) /*0x47c7e1*/
       {
-        while ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) != 2 ) /*0x47c7ed*/
+        while ( v11->Mission_Construction() != 2 ) /*0x47c7ed*/
         {
-          v11 = (unsigned int *)v11[12]; /*0x47c7ef*/
+          v11 = v11->nextObject; /*0x47c7ef*/
           if ( !v11 ) /*0x47c7f4*/
             goto LABEL_44; /*0x47c7f4*/
         }
@@ -2784,16 +2784,16 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
         if ( !result ) /*0x47c81c*/
           goto LABEL_52; /*0x47c81c*/
       }
-      result = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x47c822*/
+      result = v11->Mission_Construction(); /*0x47c822*/
       if ( result != 6 ) /*0x47c828*/
       {
         (*((unsigned char *)&(result))) = 0; /*0x47c82d*/
         return result; /*0x47c833*/
       }
-      result = v11[328]; /*0x47c836*/
+      result = v11->Type; /*0x47c836*/
       if ( result->u8_16BF ) /*0x47c83c*/
       {
-        result = (*(int (__thiscall **)(unsigned int *))(*v11 + 60))(v11); /*0x47c84a*/
+        result = v11->GetTarget(); /*0x47c84a*/
         if ( result == aP3 ) /*0x47c851*/
         {
   LABEL_52:
@@ -3135,7 +3135,7 @@ bool CellClass::DetermineTileType() {
       {
         mapCoords = this->mapCoords; /*0x47cbc9*/
       }
-      v7 = mapCoords[14]; /*0x47cc0a*/
+      v7 = mapCoords->u32_38; /*0x47cc0a*/
       if ( v7 != v2 && (v7 < v55 || v7 > v49) ) /*0x47cc1b*/
         v3 |= 1 << i; /*0x47cc26*/
       v4 = ((unsigned char)v4 + 2) & 7; /*0x47cc2b*/
@@ -3169,7 +3169,7 @@ bool CellClass::DetermineTileType() {
         {
           v13 = this->mapCoords; /*0x47cc7d*/
         }
-        v15 = v13[14]; /*0x47cccf*/
+        v15 = v13->u32_38; /*0x47cccf*/
         if ( v15 != v9 && (v15 < v47 || v15 > v50) ) /*0x47cce0*/
           v10 |= 1 << j; /*0x47cceb*/
         v11 = ((unsigned char)v11 + 2) & 7; /*0x47ccf0*/
@@ -3204,7 +3204,7 @@ bool CellClass::DetermineTileType() {
         {
           v21 = this->mapCoords; /*0x47cd46*/
         }
-        v23 = v21[14]; /*0x47cd98*/
+        v23 = v21->u32_38; /*0x47cd98*/
         if ( v23 != v17 && (v23 < v52 || v23 > v51) && (v23 < v76 || v23 > v58) && (v23 < *(int *)v77 || v23 > v59) ) /*0x47cdc1*/
           v18 |= 1 << k; /*0x47cdcc*/
         v19 = ((unsigned char)v19 + 2) & 7; /*0x47cdd1*/
@@ -3239,7 +3239,7 @@ bool CellClass::DetermineTileType() {
         {
           v29 = this->mapCoords; /*0x47ce27*/
         }
-        v31 = v29[14]; /*0x47ce79*/
+        v31 = v29->u32_38; /*0x47ce79*/
         if ( v31 != v25 /*0x47ceae*/
           && (v31 < v54 || v31 > v53)
           && (v31 < v78 || v31 > v61)
@@ -3898,7 +3898,7 @@ int CellClass::GetBridgeBitfield() {
     {
       mapCoords = this->mapCoords; /*0x4853ab*/
     }
-    v7 = mapCoords[17]; /*0x4853fb*/
+    v7 = mapCoords->u32_44; /*0x4853fb*/
     if ( v7 != -1 && (!mapCoords->slopeIndex || *(unsigned char *)(*(unsigned int *)(v1 + 4 * v7) + 686)) ) /*0x485410*/
     {
       if ( v7 == 126 ) /*0x48541c*/
@@ -4008,36 +4008,36 @@ void CellClass::ProcessBridgeRepair() {
   v59 = 0; /*0x4855b3*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)this, &v70); /*0x4855c0*/
   StartCoords = House::GetStartCoords((House *)v1, &rcDst); /*0x4855c5*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4855d6*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x4855d6*/
   {
     v4 = *PlacementRect; /*0x48565e*/
-    v6 = PlacementRect[1]; /*0x485660*/
-    v7 = PlacementRect[2]; /*0x485663*/
-    v8 = PlacementRect[3]; /*0x485666*/
+    v6 = PlacementRect->u32_4; /*0x485660*/
+    v7 = PlacementRect->u32_8; /*0x485663*/
+    v8 = PlacementRect->q00C; /*0x485666*/
     goto LABEL_16; /*0x485666*/
   }
-  v53 = PlacementRect[2]; /*0x4855e1*/
-  if ( v53 <= 0 || (v65 = PlacementRect[3], v65 <= 0) ) /*0x4855f0*/
+  v53 = PlacementRect->u32_8; /*0x4855e1*/
+  if ( v53 <= 0 || (v65 = PlacementRect->q00C, v65 <= 0) ) /*0x4855f0*/
   {
     v4 = *StartCoords; /*0x485651*/
-    v6 = StartCoords[1]; /*0x485653*/
-    v7 = StartCoords[2]; /*0x485656*/
-    v8 = StartCoords[3]; /*0x485659*/
+    v6 = StartCoords->vtable2; /*0x485653*/
+    v7 = StartCoords->vtable3; /*0x485656*/
+    v8 = StartCoords->vtable4; /*0x485659*/
   LABEL_16:
     v64 = v8; /*0x485669*/
     goto LABEL_17; /*0x485669*/
   }
   v4 = *StartCoords; /*0x4855f2*/
   v5 = *PlacementRect; /*0x4855f4*/
-  v6 = StartCoords[1]; /*0x4855f6*/
-  v7 = StartCoords[2]; /*0x4855f9*/
-  v8 = StartCoords[3]; /*0x4855fc*/
+  v6 = StartCoords->vtable2; /*0x4855f6*/
+  v7 = StartCoords->vtable3; /*0x4855f9*/
+  v8 = StartCoords->vtable4; /*0x4855fc*/
   if ( v4 > *PlacementRect ) /*0x485601*/
   {
     v7 += v4 - v5; /*0x485605*/
     v4 = *PlacementRect; /*0x485607*/
   }
-  v9 = PlacementRect[1]; /*0x485609*/
+  v9 = PlacementRect->u32_4; /*0x485609*/
   v60 = v9; /*0x48560e*/
   if ( v6 > v9 ) /*0x485612*/
   {
@@ -4188,10 +4188,10 @@ void CellClass::ProcessBridgeRepair() {
       v33 = Coord2D::Sub(v32, &v75, v69); /*0x4859bd*/
       v34 = Rect::Construct((Rect *)&rcSrc1, v33, v39, v43); /*0x4859ca*/
       v61 = *v34; /*0x4859d8*/
-      v62 = v34[1]; /*0x4859df*/
-      v63 = v34[2]; /*0x4859e6*/
-      v64 = v34[3]; /*0x4859ef*/
-      Cell::CreateCrater(*v34, v34[1], v34[2], v34[3], 0); /*0x485a0f*/
+      v62 = v34->Y; /*0x4859df*/
+      v63 = v34->Width; /*0x4859e6*/
+      v64 = v34->Height; /*0x4859ef*/
+      Cell::CreateCrater(*v34, v34->Y, v34->Width, v34->Height, 0); /*0x485a0f*/
       BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&NeighbourContent->smudgeTypeIndex); /*0x485a1d*/
       v1 = v66; /*0x485a22*/
     }
@@ -4208,8 +4208,8 @@ void CellClass::ProcessBridgeRepair() {
   v56 = *v37; /*0x485a9c*/
   v57 = v37[1]; /*0x485aa3*/
   v58 = v37[2]; /*0x485aaa*/
-  v59 = v37[3]; /*0x485ab3*/
-  Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0); /*0x485ad3*/
+  v59 = v37->u32_C; /*0x485ab3*/
+  Cell::CreateCrater(*v37, v37[1], v37[2], v37->u32_C, 0); /*0x485ad3*/
   House::AnnounceUpgrade((int)v1, -1); /*0x485adc*/
 }
 }
@@ -4421,7 +4421,7 @@ void* CellClass::UpdateZone() {
     v3 = result->u8_11B; /*0x486c0d*/
     if ( v3 >= i - 2 && v3 <= i ) /*0x486c1d*/
     {
-      result[80] &= ~0x400000u; /*0x486c2b*/
+      result->u32_140 &= ~0x400000u; /*0x486c2b*/
       result = (unsigned int *)CellClass::ClearCellContents((CellClass *)result); /*0x486c33*/
     }
     ++v4[0]; /*0x486c38*/
@@ -4564,7 +4564,7 @@ int Crate::FindPlacement(int a1, int a2) {
   unsigned int v60[4]; // [esp+84h] [ebp-10h] BYREF
 
   v4 = *(CellClass **)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * a1); /*0x4871af*/
-  v57[0] = (int *)v4; /*0x4871b2*/
+  v57->vtable1 = (int *)v4; /*0x4871b2*/
   if ( a2 >= (int)v4->firstObject ) /*0x4871bc*/
     return 0; /*0x4871bc*/
   if ( (uint8_t)IsCoordValidMap(this, (int)v4) ) /*0x4871c3*/
@@ -4622,7 +4622,7 @@ int Crate::FindPlacement(int a1, int a2) {
     v11 = (Coord2D *)CellStruct::Copy((CellStruct *)v47, &v50); /*0x487326*/
     v12 = Coord2D::Sub(v11, v52, v57); /*0x48732d*/
     v13 = Rect::Construct(&v58, v12, v48, v10); /*0x487337*/
-    Cell::CreateCrater(*v13, v13[1], v13[2], v13[3], 0); /*0x48735d*/
+    Cell::CreateCrater(*v13, v13->Y, v13->Width, v13->Height, 0); /*0x48735d*/
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, &this->u32_C6); /*0x487368*/
     return 1; /*0x487379*/
   }
@@ -4647,31 +4647,31 @@ int Crate::FindPlacement(int a1, int a2) {
   this->q11E = v17; /*0x487418*/
   ScreenRect = CellClass::GetScreenRect((CellClass *)this, &v58.X); /*0x487431*/
   v20 = House::GetStartCoords((House *)this, v60); /*0x487436*/
-  if ( ScreenRect[2] <= 0 || ScreenRect[3] <= 0 ) /*0x48744b*/
+  if ( ScreenRect->u32_8 <= 0 || ScreenRect->q00C <= 0 ) /*0x48744b*/
   {
     v21 = *v20; /*0x4874e5*/
-    v29 = v20[2]; /*0x4874e7*/
-    v25 = v20[3]; /*0x4874ea*/
+    v29 = v20->vtable3; /*0x4874e7*/
+    v25 = v20->vtable4; /*0x4874ea*/
     v51 = v20[1]; /*0x4874ed*/
   }
   else
   {
-    v46 = v20[2]; /*0x487456*/
-    if ( v46 <= 0 || (v52[0] = v20[3], v52[0] <= 0) ) /*0x487465*/
+    v46 = v20->vtable3; /*0x487456*/
+    if ( v46 <= 0 || (v52[0] = v20->vtable4, v52[0] <= 0) ) /*0x487465*/
     {
-      v30 = ScreenRect[1]; /*0x4874d1*/
+      v30 = ScreenRect->u32_4; /*0x4874d1*/
       v21 = *ScreenRect; /*0x4874d4*/
-      v29 = ScreenRect[2]; /*0x4874d6*/
-      v25 = ScreenRect[3]; /*0x4874d9*/
+      v29 = ScreenRect->u32_8; /*0x4874d6*/
+      v25 = ScreenRect->q00C; /*0x4874d9*/
       v51 = v30; /*0x4874dc*/
     }
     else
     {
       v21 = *ScreenRect; /*0x487467*/
       v22 = *v20; /*0x487469*/
-      v23 = ScreenRect[2]; /*0x48746b*/
-      v24 = ScreenRect[1]; /*0x48746e*/
-      v25 = ScreenRect[3]; /*0x487471*/
+      v23 = ScreenRect->u32_8; /*0x48746b*/
+      v24 = ScreenRect->u32_4; /*0x48746e*/
+      v25 = ScreenRect->q00C; /*0x487471*/
       v26 = v21 <= *v20; /*0x487474*/
       v48 = v23; /*0x487476*/
       if ( !v26 ) /*0x48747a*/
@@ -4680,7 +4680,7 @@ int Crate::FindPlacement(int a1, int a2) {
         v21 = v22; /*0x487480*/
         v48 = v23; /*0x487482*/
       }
-      v27 = v20[1]; /*0x487486*/
+      v27 = v20->vtable2; /*0x487486*/
       v50 = v27; /*0x48748b*/
       if ( v24 > v27 ) /*0x48748f*/
       {
@@ -4701,14 +4701,14 @@ int Crate::FindPlacement(int a1, int a2) {
   if ( v29 <= 0 || v25 <= 0 ) /*0x487507*/
   {
     v21 = *v31; /*0x487599*/
-    v36 = v31[1]; /*0x48759b*/
-    v29 = v31[2]; /*0x48759e*/
-    v35 = v31[3]; /*0x4875a1*/
+    v36 = v31->u32_4; /*0x48759b*/
+    v29 = v31->u32_8; /*0x48759e*/
+    v35 = v31->q00C; /*0x4875a1*/
   }
   else
   {
-    v46 = v31[2]; /*0x487512*/
-    if ( v46 <= 0 || (v52[0] = v31[3], v52[0] <= 0) ) /*0x487521*/
+    v46 = v31->u32_8; /*0x487512*/
+    if ( v46 <= 0 || (v52[0] = v31->q00C, v52[0] <= 0) ) /*0x487521*/
     {
       v36 = v51; /*0x487591*/
       v35 = v25; /*0x487595*/
@@ -4729,7 +4729,7 @@ int Crate::FindPlacement(int a1, int a2) {
         v29 += v21 - v32; /*0x487539*/
         v21 = v32; /*0x48753b*/
       }
-      v34 = v31[1]; /*0x487543*/
+      v34 = v31->u32_4; /*0x487543*/
       v50 = v34; /*0x487548*/
       if ( v51 > v34 ) /*0x48754c*/
       {
@@ -4751,8 +4751,8 @@ int Crate::FindPlacement(int a1, int a2) {
   v29 = v29; /*0x4875cf*/
   v52[0] = DSurface_ViewBounds.field_0; /*0x4875d3*/
   v37 = Bounds::Subtract(&v53, v59, v52); /*0x4875d7*/
-  Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0); /*0x4875fd*/
-  BuildingClass::AddOccupancy(v57[0], &this->u32_C6); /*0x48760a*/
+  Cell::CreateCrater(*v37, v37->u32_4, v37->u32_8, v37->u32_C, 0); /*0x4875fd*/
+  BuildingClass::AddOccupancy(v57->vtable1, &this->u32_C6); /*0x48760a*/
   return 1; /*0x48736f*/
 }
 }
@@ -4816,7 +4816,7 @@ void CellClass::AddObject(void* aP1) {
     while ( 1 ) /*0x47340c*/
     {
       ++this->mapCoords; /*0x47340c*/
-      v6 = v2[12]; /*0x47340e*/
+      v6 = v2->ptr_30; /*0x47340e*/
       if ( !v6 || (v6->abstractFlags & 4) == 0 ) /*0x473422*/
         break; /*0x473422*/
       v2 = v2->ptr_30; /*0x473424*/
@@ -5541,7 +5541,7 @@ int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, i
   LABEL_8:
       v15 = WaypointCoords; /*0x4760d1*/
       v16 = *(unsigned int *)WaypointCoords; /*0x4760d3*/
-      (*((unsigned char *)&(v29))) = v15[4]; /*0x4760da*/
+      (*((unsigned char *)&(v29))) = v15->vtable2; /*0x4760da*/
       if ( (unsigned char)v29 ) /*0x4760de*/
       {
         v17 = v16 & 0xFFFFFF | ((uint8_t)v29 << 24); /*0x4760f6*/
@@ -5692,8 +5692,8 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
     Items = ((char *)&v22); /*0x476611*/
     CapacityIncrement = ((char *)&v22); /*0x476619*/
     v18 = ((char *)&v22) == 0; /*0x476622*/
-    *(unsigned int *)(a1 + 16) = ((char *)&v22); /*0x476624*/
-    *(unsigned int *)(a1 + 20) = CapacityIncrement; /*0x476627*/
+    a1->q010 = ((char *)&v22); /*0x476624*/
+    a1->u32_14 = CapacityIncrement; /*0x476627*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x47662a*/
     v22.DynamicVectorClass = &vt_VectorClass; /*0x476630*/
     if ( !v18 && ((char *)&v22) ) /*0x47663a*/
@@ -5711,17 +5711,17 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
   else
   {
     v15 = a1; /*0x47666e*/
-    *(unsigned int *)(a1 + 4) = 0; /*0x476686*/
-    *(unsigned int *)(a1 + 8) = 0; /*0x476689*/
-    *(unsigned char *)(a1 + 12) = 1; /*0x47668c*/
-    *(unsigned char *)(a1 + 13) = 0; /*0x476690*/
+    a1->Items = 0; /*0x476686*/
+    a1->Capacity = 0; /*0x476689*/
+    a1->u32_C = 1; /*0x47668c*/
+    a1->IsAllocated = 0; /*0x476690*/
     *(unsigned int *)a1 = &vt_VectorClass; /*0x476693*/
     INIClass::writeSection((INIClass *)a1, &a4); /*0x476695*/
     v19 = a5; /*0x47669a*/
     v20 = a9; /*0x4766a8*/
     v18 = a5 == 0; /*0x4766af*/
-    *(unsigned int *)(a1 + 16) = a8; /*0x4766b1*/
-    *(unsigned int *)(a1 + 20) = v20; /*0x4766b4*/
+    a1->q010 = a8; /*0x4766b1*/
+    a1->u32_14 = v20; /*0x4766b4*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x4766b7*/
     a4 = &vt_VectorClass; /*0x4766bd*/
     if ( !v18 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x4766cd*/
@@ -5993,8 +5993,8 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
     v17 = Block; /*0x476ca1*/
     v18 = v31; /*0x476ca9*/
     v19 = Block == 0; /*0x476cb2*/
-    *(unsigned int *)(a1 + 16) = v30; /*0x476cb4*/
-    *(unsigned int *)(a1 + 20) = v18; /*0x476cb7*/
+    a1->uniqueId = v30; /*0x476cb4*/
+    a1->abstractFlags = v18; /*0x476cb7*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x476cba*/
     v26 = &vt_VectorClass; /*0x476cc0*/
     if ( !v19 && v29 ) /*0x476cca*/
@@ -6012,17 +6012,17 @@ int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, i
   else
   {
     v16 = a1; /*0x476cfe*/
-    *(unsigned int *)(a1 + 4) = 0; /*0x476d16*/
-    *(unsigned int *)(a1 + 8) = 0; /*0x476d19*/
-    *(unsigned char *)(a1 + 12) = 1; /*0x476d1c*/
-    *(unsigned char *)(a1 + 13) = 0; /*0x476d20*/
+    a1->vtable2 = 0; /*0x476d16*/
+    a1->vtable3 = 0; /*0x476d19*/
+    a1->vtable4 = 1; /*0x476d1c*/
+    a1->u32_D = 0; /*0x476d20*/
     *(unsigned int *)a1 = &vt_VectorClass; /*0x476d23*/
     ParticleTypeClass::EnsureCapacity((ParticleTypeClass *)a1, &a4); /*0x476d25*/
     v20 = a5; /*0x476d2a*/
     v21 = a9; /*0x476d38*/
     v19 = a5 == 0; /*0x476d3f*/
-    *(unsigned int *)(a1 + 16) = a8; /*0x476d41*/
-    *(unsigned int *)(a1 + 20) = v21; /*0x476d44*/
+    a1->uniqueId = a8; /*0x476d41*/
+    a1->abstractFlags = v21; /*0x476d44*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x476d47*/
     a4 = &vt_VectorClass; /*0x476d4d*/
     if ( !v19 && (*(((unsigned char *)&(a7)) + (sizeof(a7) - 1))) ) /*0x476d5d*/
@@ -6483,9 +6483,9 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
       v21 = 0; /*0x47c7d3*/
       if ( byte_A8E9A0 && (v11 = (unsigned int *)this->firstObject) != 0 ) /*0x47c7e1*/
       {
-        while ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) != 2 ) /*0x47c7ed*/
+        while ( v11->Mission_Construction() != 2 ) /*0x47c7ed*/
         {
-          v11 = (unsigned int *)v11[12]; /*0x47c7ef*/
+          v11 = v11->nextObject; /*0x47c7ef*/
           if ( !v11 ) /*0x47c7f4*/
             goto LABEL_44; /*0x47c7f4*/
         }
@@ -6500,16 +6500,16 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
         if ( !result ) /*0x47c81c*/
           goto LABEL_52; /*0x47c81c*/
       }
-      result = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x47c822*/
+      result = v11->Mission_Construction(); /*0x47c822*/
       if ( result != 6 ) /*0x47c828*/
       {
         (*((unsigned char *)&(result))) = 0; /*0x47c82d*/
         return result; /*0x47c833*/
       }
-      result = v11[328]; /*0x47c836*/
+      result = v11->Type; /*0x47c836*/
       if ( result->u8_16BF ) /*0x47c83c*/
       {
-        result = (*(int (__thiscall **)(unsigned int *))(*v11 + 60))(v11); /*0x47c84a*/
+        result = v11->GetTarget(); /*0x47c84a*/
         if ( result == aP3 ) /*0x47c851*/
         {
   LABEL_52:
@@ -6851,7 +6851,7 @@ bool CellClass::DetermineTileType() {
       {
         mapCoords = this->mapCoords; /*0x47cbc9*/
       }
-      v7 = mapCoords[14]; /*0x47cc0a*/
+      v7 = mapCoords->u32_38; /*0x47cc0a*/
       if ( v7 != v2 && (v7 < v55 || v7 > v49) ) /*0x47cc1b*/
         v3 |= 1 << i; /*0x47cc26*/
       v4 = ((unsigned char)v4 + 2) & 7; /*0x47cc2b*/
@@ -6885,7 +6885,7 @@ bool CellClass::DetermineTileType() {
         {
           v13 = this->mapCoords; /*0x47cc7d*/
         }
-        v15 = v13[14]; /*0x47cccf*/
+        v15 = v13->u32_38; /*0x47cccf*/
         if ( v15 != v9 && (v15 < v47 || v15 > v50) ) /*0x47cce0*/
           v10 |= 1 << j; /*0x47cceb*/
         v11 = ((unsigned char)v11 + 2) & 7; /*0x47ccf0*/
@@ -6920,7 +6920,7 @@ bool CellClass::DetermineTileType() {
         {
           v21 = this->mapCoords; /*0x47cd46*/
         }
-        v23 = v21[14]; /*0x47cd98*/
+        v23 = v21->u32_38; /*0x47cd98*/
         if ( v23 != v17 && (v23 < v52 || v23 > v51) && (v23 < v76 || v23 > v58) && (v23 < *(int *)v77 || v23 > v59) ) /*0x47cdc1*/
           v18 |= 1 << k; /*0x47cdcc*/
         v19 = ((unsigned char)v19 + 2) & 7; /*0x47cdd1*/
@@ -6955,7 +6955,7 @@ bool CellClass::DetermineTileType() {
         {
           v29 = this->mapCoords; /*0x47ce27*/
         }
-        v31 = v29[14]; /*0x47ce79*/
+        v31 = v29->u32_38; /*0x47ce79*/
         if ( v31 != v25 /*0x47ceae*/
           && (v31 < v54 || v31 > v53)
           && (v31 < v78 || v31 > v61)
@@ -7614,7 +7614,7 @@ int CellClass::GetBridgeBitfield() {
     {
       mapCoords = this->mapCoords; /*0x4853ab*/
     }
-    v7 = mapCoords[17]; /*0x4853fb*/
+    v7 = mapCoords->u32_44; /*0x4853fb*/
     if ( v7 != -1 && (!mapCoords->slopeIndex || *(unsigned char *)(*(unsigned int *)(v1 + 4 * v7) + 686)) ) /*0x485410*/
     {
       if ( v7 == 126 ) /*0x48541c*/
@@ -7724,36 +7724,36 @@ void CellClass::ProcessBridgeRepair() {
   v59 = 0; /*0x4855b3*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)this, &v70); /*0x4855c0*/
   StartCoords = House::GetStartCoords((House *)v1, &rcDst); /*0x4855c5*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4855d6*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x4855d6*/
   {
     v4 = *PlacementRect; /*0x48565e*/
-    v6 = PlacementRect[1]; /*0x485660*/
-    v7 = PlacementRect[2]; /*0x485663*/
-    v8 = PlacementRect[3]; /*0x485666*/
+    v6 = PlacementRect->u32_4; /*0x485660*/
+    v7 = PlacementRect->u32_8; /*0x485663*/
+    v8 = PlacementRect->q00C; /*0x485666*/
     goto LABEL_16; /*0x485666*/
   }
-  v53 = PlacementRect[2]; /*0x4855e1*/
-  if ( v53 <= 0 || (v65 = PlacementRect[3], v65 <= 0) ) /*0x4855f0*/
+  v53 = PlacementRect->u32_8; /*0x4855e1*/
+  if ( v53 <= 0 || (v65 = PlacementRect->q00C, v65 <= 0) ) /*0x4855f0*/
   {
     v4 = *StartCoords; /*0x485651*/
-    v6 = StartCoords[1]; /*0x485653*/
-    v7 = StartCoords[2]; /*0x485656*/
-    v8 = StartCoords[3]; /*0x485659*/
+    v6 = StartCoords->vtable2; /*0x485653*/
+    v7 = StartCoords->vtable3; /*0x485656*/
+    v8 = StartCoords->vtable4; /*0x485659*/
   LABEL_16:
     v64 = v8; /*0x485669*/
     goto LABEL_17; /*0x485669*/
   }
   v4 = *StartCoords; /*0x4855f2*/
   v5 = *PlacementRect; /*0x4855f4*/
-  v6 = StartCoords[1]; /*0x4855f6*/
-  v7 = StartCoords[2]; /*0x4855f9*/
-  v8 = StartCoords[3]; /*0x4855fc*/
+  v6 = StartCoords->vtable2; /*0x4855f6*/
+  v7 = StartCoords->vtable3; /*0x4855f9*/
+  v8 = StartCoords->vtable4; /*0x4855fc*/
   if ( v4 > *PlacementRect ) /*0x485601*/
   {
     v7 += v4 - v5; /*0x485605*/
     v4 = *PlacementRect; /*0x485607*/
   }
-  v9 = PlacementRect[1]; /*0x485609*/
+  v9 = PlacementRect->u32_4; /*0x485609*/
   v60 = v9; /*0x48560e*/
   if ( v6 > v9 ) /*0x485612*/
   {
@@ -7904,10 +7904,10 @@ void CellClass::ProcessBridgeRepair() {
       v33 = Coord2D::Sub(v32, &v75, v69); /*0x4859bd*/
       v34 = Rect::Construct((Rect *)&rcSrc1, v33, v39, v43); /*0x4859ca*/
       v61 = *v34; /*0x4859d8*/
-      v62 = v34[1]; /*0x4859df*/
-      v63 = v34[2]; /*0x4859e6*/
-      v64 = v34[3]; /*0x4859ef*/
-      Cell::CreateCrater(*v34, v34[1], v34[2], v34[3], 0); /*0x485a0f*/
+      v62 = v34->Y; /*0x4859df*/
+      v63 = v34->Width; /*0x4859e6*/
+      v64 = v34->Height; /*0x4859ef*/
+      Cell::CreateCrater(*v34, v34->Y, v34->Width, v34->Height, 0); /*0x485a0f*/
       BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)&NeighbourContent->smudgeTypeIndex); /*0x485a1d*/
       v1 = v66; /*0x485a22*/
     }
@@ -7924,8 +7924,8 @@ void CellClass::ProcessBridgeRepair() {
   v56 = *v37; /*0x485a9c*/
   v57 = v37[1]; /*0x485aa3*/
   v58 = v37[2]; /*0x485aaa*/
-  v59 = v37[3]; /*0x485ab3*/
-  Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0); /*0x485ad3*/
+  v59 = v37->u32_C; /*0x485ab3*/
+  Cell::CreateCrater(*v37, v37[1], v37[2], v37->u32_C, 0); /*0x485ad3*/
   House::AnnounceUpgrade((int)v1, -1); /*0x485adc*/
 }
 }
@@ -8137,7 +8137,7 @@ void* CellClass::UpdateZone() {
     v3 = result->u8_11B; /*0x486c0d*/
     if ( v3 >= i - 2 && v3 <= i ) /*0x486c1d*/
     {
-      result[80] &= ~0x400000u; /*0x486c2b*/
+      result->u32_140 &= ~0x400000u; /*0x486c2b*/
       result = (unsigned int *)CellClass::ClearCellContents((CellClass *)result); /*0x486c33*/
     }
     ++v4[0]; /*0x486c38*/
@@ -8280,7 +8280,7 @@ int Crate::FindPlacement(int a1, int a2) {
   unsigned int v60[4]; // [esp+84h] [ebp-10h] BYREF
 
   v4 = *(CellClass **)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * a1); /*0x4871af*/
-  v57[0] = (int *)v4; /*0x4871b2*/
+  v57->vtable1 = (int *)v4; /*0x4871b2*/
   if ( a2 >= (int)v4->firstObject ) /*0x4871bc*/
     return 0; /*0x4871bc*/
   if ( (uint8_t)IsCoordValidMap(this, (int)v4) ) /*0x4871c3*/
@@ -8338,7 +8338,7 @@ int Crate::FindPlacement(int a1, int a2) {
     v11 = (Coord2D *)CellStruct::Copy((CellStruct *)v47, &v50); /*0x487326*/
     v12 = Coord2D::Sub(v11, v52, v57); /*0x48732d*/
     v13 = Rect::Construct(&v58, v12, v48, v10); /*0x487337*/
-    Cell::CreateCrater(*v13, v13[1], v13[2], v13[3], 0); /*0x48735d*/
+    Cell::CreateCrater(*v13, v13->Y, v13->Width, v13->Height, 0); /*0x48735d*/
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, &this->u32_C6); /*0x487368*/
     return 1; /*0x487379*/
   }
@@ -8363,31 +8363,31 @@ int Crate::FindPlacement(int a1, int a2) {
   this->q11E = v17; /*0x487418*/
   ScreenRect = CellClass::GetScreenRect((CellClass *)this, &v58.X); /*0x487431*/
   v20 = House::GetStartCoords((House *)this, v60); /*0x487436*/
-  if ( ScreenRect[2] <= 0 || ScreenRect[3] <= 0 ) /*0x48744b*/
+  if ( ScreenRect->u32_8 <= 0 || ScreenRect->q00C <= 0 ) /*0x48744b*/
   {
     v21 = *v20; /*0x4874e5*/
-    v29 = v20[2]; /*0x4874e7*/
-    v25 = v20[3]; /*0x4874ea*/
+    v29 = v20->vtable3; /*0x4874e7*/
+    v25 = v20->vtable4; /*0x4874ea*/
     v51 = v20[1]; /*0x4874ed*/
   }
   else
   {
-    v46 = v20[2]; /*0x487456*/
-    if ( v46 <= 0 || (v52[0] = v20[3], v52[0] <= 0) ) /*0x487465*/
+    v46 = v20->vtable3; /*0x487456*/
+    if ( v46 <= 0 || (v52[0] = v20->vtable4, v52[0] <= 0) ) /*0x487465*/
     {
-      v30 = ScreenRect[1]; /*0x4874d1*/
+      v30 = ScreenRect->u32_4; /*0x4874d1*/
       v21 = *ScreenRect; /*0x4874d4*/
-      v29 = ScreenRect[2]; /*0x4874d6*/
-      v25 = ScreenRect[3]; /*0x4874d9*/
+      v29 = ScreenRect->u32_8; /*0x4874d6*/
+      v25 = ScreenRect->q00C; /*0x4874d9*/
       v51 = v30; /*0x4874dc*/
     }
     else
     {
       v21 = *ScreenRect; /*0x487467*/
       v22 = *v20; /*0x487469*/
-      v23 = ScreenRect[2]; /*0x48746b*/
-      v24 = ScreenRect[1]; /*0x48746e*/
-      v25 = ScreenRect[3]; /*0x487471*/
+      v23 = ScreenRect->u32_8; /*0x48746b*/
+      v24 = ScreenRect->u32_4; /*0x48746e*/
+      v25 = ScreenRect->q00C; /*0x487471*/
       v26 = v21 <= *v20; /*0x487474*/
       v48 = v23; /*0x487476*/
       if ( !v26 ) /*0x48747a*/
@@ -8396,7 +8396,7 @@ int Crate::FindPlacement(int a1, int a2) {
         v21 = v22; /*0x487480*/
         v48 = v23; /*0x487482*/
       }
-      v27 = v20[1]; /*0x487486*/
+      v27 = v20->vtable2; /*0x487486*/
       v50 = v27; /*0x48748b*/
       if ( v24 > v27 ) /*0x48748f*/
       {
@@ -8417,14 +8417,14 @@ int Crate::FindPlacement(int a1, int a2) {
   if ( v29 <= 0 || v25 <= 0 ) /*0x487507*/
   {
     v21 = *v31; /*0x487599*/
-    v36 = v31[1]; /*0x48759b*/
-    v29 = v31[2]; /*0x48759e*/
-    v35 = v31[3]; /*0x4875a1*/
+    v36 = v31->u32_4; /*0x48759b*/
+    v29 = v31->u32_8; /*0x48759e*/
+    v35 = v31->q00C; /*0x4875a1*/
   }
   else
   {
-    v46 = v31[2]; /*0x487512*/
-    if ( v46 <= 0 || (v52[0] = v31[3], v52[0] <= 0) ) /*0x487521*/
+    v46 = v31->u32_8; /*0x487512*/
+    if ( v46 <= 0 || (v52[0] = v31->q00C, v52[0] <= 0) ) /*0x487521*/
     {
       v36 = v51; /*0x487591*/
       v35 = v25; /*0x487595*/
@@ -8445,7 +8445,7 @@ int Crate::FindPlacement(int a1, int a2) {
         v29 += v21 - v32; /*0x487539*/
         v21 = v32; /*0x48753b*/
       }
-      v34 = v31[1]; /*0x487543*/
+      v34 = v31->u32_4; /*0x487543*/
       v50 = v34; /*0x487548*/
       if ( v51 > v34 ) /*0x48754c*/
       {
@@ -8467,8 +8467,8 @@ int Crate::FindPlacement(int a1, int a2) {
   v29 = v29; /*0x4875cf*/
   v52[0] = DSurface_ViewBounds.field_0; /*0x4875d3*/
   v37 = Bounds::Subtract(&v53, v59, v52); /*0x4875d7*/
-  Cell::CreateCrater(*v37, v37[1], v37[2], v37[3], 0); /*0x4875fd*/
-  BuildingClass::AddOccupancy(v57[0], &this->u32_C6); /*0x48760a*/
+  Cell::CreateCrater(*v37, v37->u32_4, v37->u32_8, v37->u32_C, 0); /*0x4875fd*/
+  BuildingClass::AddOccupancy(v57->vtable1, &this->u32_C6); /*0x48760a*/
   return 1; /*0x48736f*/
 }
 }
@@ -10653,36 +10653,36 @@ int CellClass::DestroyOverlay() {
   }
   PlacementRect = BuildingClass::GetPlacementRect(v2, v18); /*0x4a1b10*/
   StartCoords = House::GetStartCoords((House *)v2, v19); /*0x4a1b19*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4a1b2e*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x4a1b2e*/
   {
     v14 = *PlacementRect; /*0x4a1bad*/
-    v10 = PlacementRect[1]; /*0x4a1baf*/
-    v11 = PlacementRect[2]; /*0x4a1bb2*/
-    v12 = PlacementRect[3]; /*0x4a1bb5*/
+    v10 = PlacementRect->vtable2; /*0x4a1baf*/
+    v11 = PlacementRect->vtable3; /*0x4a1bb2*/
+    v12 = PlacementRect->vtable4; /*0x4a1bb5*/
   }
   else
   {
-    v7 = PlacementRect[2]; /*0x4a1b30*/
-    if ( v7 <= 0 || (v16 = PlacementRect[3], v16 <= 0) ) /*0x4a1b44*/
+    v7 = PlacementRect->vtable3; /*0x4a1b30*/
+    if ( v7 <= 0 || (v16 = PlacementRect->vtable4, v16 <= 0) ) /*0x4a1b44*/
     {
       v14 = *StartCoords; /*0x4a1ba0*/
-      v10 = StartCoords[1]; /*0x4a1ba2*/
-      v11 = StartCoords[2]; /*0x4a1ba5*/
-      v12 = StartCoords[3]; /*0x4a1ba8*/
+      v10 = StartCoords->vtable2; /*0x4a1ba2*/
+      v11 = StartCoords->vtable3; /*0x4a1ba5*/
+      v12 = StartCoords->vtable4; /*0x4a1ba8*/
     }
     else
     {
       v8 = *StartCoords; /*0x4a1b46*/
       v9 = *PlacementRect; /*0x4a1b48*/
-      v10 = StartCoords[1]; /*0x4a1b4a*/
-      v11 = StartCoords[2]; /*0x4a1b4d*/
-      v12 = StartCoords[3]; /*0x4a1b50*/
+      v10 = StartCoords->vtable2; /*0x4a1b4a*/
+      v11 = StartCoords->vtable3; /*0x4a1b4d*/
+      v12 = StartCoords->vtable4; /*0x4a1b50*/
       if ( v8 > *PlacementRect ) /*0x4a1b55*/
       {
         v11 += v8 - v9; /*0x4a1b59*/
         v8 = *PlacementRect; /*0x4a1b5b*/
       }
-      v13 = PlacementRect[1]; /*0x4a1b5d*/
+      v13 = PlacementRect->vtable2; /*0x4a1b5d*/
       if ( v10 > v13 ) /*0x4a1b66*/
       {
         v12 += v10 - v13; /*0x4a1b6a*/
@@ -11048,7 +11048,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
   v72 = v27 / 2; /*0x4aa6c9*/
   v28 = HexCoord::Convert((HexCoord *)v10, &v75, &v71); /*0x4aa6cd*/
   (*((unsigned short *)&(a3))) = *v28; /*0x4aa6d6*/
-  (*(((unsigned short *)&(a3)) + 1)) = v28[1]; /*0x4aa6e2*/
+  (*(((unsigned short *)&(a3)) + 1)) = v28->vtable2; /*0x4aa6e2*/
   if ( v65 )
   {
     v82 = 0; /*0x4aa702*/
@@ -11065,12 +11065,12 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
         v32 = HexCoord::Convert((HexCoord *)v10, v77, &v73); /*0x4aa742*/
         v75 = v71; /*0x4aa74d*/
         v76 = v31; /*0x4aa751*/
-        v33 = v32[1]; /*0x4aa757*/
+        v33 = v32->vtable2; /*0x4aa757*/
         (*((unsigned short *)&(a2))) = *v32; /*0x4aa75a*/
         (*(((unsigned short *)&(a2)) + 1)) = v33; /*0x4aa75f*/
         v34 = HexCoord::Convert((HexCoord *)v10, v78, &v75); /*0x4aa770*/
         v35 = *v34; /*0x4aa775*/
-        v36 = v34[1]; /*0x4aa77e*/
+        v36 = v34->vtable2; /*0x4aa77e*/
         if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)v10, (int16_t *)&a2, 1) ) /*0x4aa783*/
         {
           v69 = v35; /*0x4aa7a7*/
@@ -11115,7 +11115,7 @@ void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int 
           v75 = v41; /*0x4aa855*/
           v76 = v43 + 2 * v44; /*0x4aa860*/
           v45 = HexCoord::Convert((HexCoord *)v10, v78, &v75); /*0x4aa867*/
-          v46 = v45[1]; /*0x4aa877*/
+          v46 = v45->vtable2; /*0x4aa877*/
           (*((unsigned short *)&(a5))) = *v45; /*0x4aa87a*/
           (*(((unsigned short *)&(a5)) + 1)) = v46; /*0x4aa882*/
           if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)v10, (int16_t *)&a5, 1) ) /*0x4aa88c*/
@@ -11597,7 +11597,7 @@ int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5
           v49 = **(unsigned char ***)&((unsigned int *)&stru_A8EB00)[216]; /*0x4ab3ff*/
           if ( **(unsigned int **)&((unsigned int *)&stru_A8EB00)[216] ) /*0x4ab3ff*/
           {
-            if ( (v49[20] & 1) != 0 && *(unsigned char *)(v49->vt_slot_132() + 3213) ) /*0x4ab423*/
+            if ( (v49->u32_14 & 1) != 0 && *(unsigned char *)(v49->vt_slot_132() + 3213) ) /*0x4ab423*/
               goto LABEL_55; /*0x4ab42b*/
           }
         }
@@ -11939,17 +11939,17 @@ int CellClass::ProcessVisibility(void* a1) {
       (*(((unsigned short *)&(v12)) + 1)) = a1[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[v8 + 82])) + 1)); /*0x4acce0*/
       *(unsigned int *)v13 = v12; /*0x4accec*/
       v9 = CellCoord::To_CellObj((CellCoord *)this, v13); /*0x4accfb*/
-      v14 = v9[9]; /*0x4acd07*/
+      v14 = v9->ptr_24; /*0x4acd07*/
       AdjacentPassableMask = Cell::GetAdjacentPassableMask((int16_t *)&v14, 1); /*0x4acd0b*/
       if ( AdjacentPassableMask != -2 || v9->q121 == 0xFE ) /*0x4acd1b*/
       {
-        v11 = v9[80]; /*0x4acd2b*/
+        v11 = v9->u32_140; /*0x4acd2b*/
         if ( ((v11 & 1) != 0 || AdjacentPassableMask != v9->q121) /*0x4acd4c*/
           && AdjacentPassableMask >= 0
           && v9->q121 >= -1 )
         {
           v9->q121 = AdjacentPassableMask; /*0x4acd51*/
-          v9[80] = v11 & 0xFFFFFFFC | 2; /*0x4acd5b*/
+          v9->u32_140 = v11 & 0xFFFFFFFC | 2; /*0x4acd5b*/
           Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v9); /*0x4acd67*/
         }
       }
@@ -12030,10 +12030,10 @@ void ScenarioClass::LoadMapData(void* a1) {
          (uint8_t *)g_Str_EVA_CannotDeployHere.Type,
          v47);
   v48[0] = *v3; /*0x4acece*/
-  v48[1] = v3[1]; /*0x4aced8*/
-  v48[2] = v3[2]; /*0x4acee4*/
+  v48[1] = v3->u32_4; /*0x4aced8*/
+  v48[2] = v3->u32_8; /*0x4acee4*/
   DisplayClass_field_0x0 = (void (__thiscall **)(DisplayClass *))this->vtable1; /*0x4aceeb*/
-  v48[3] = v3[3]; /*0x4acef1*/
+  v48[3] = v3->u32_C; /*0x4acef1*/
   DisplayClass_field_0x0[24](this); /*0x4acef8*/
   v5 = 0; /*0x4acefe*/
   (*((void (__thiscall **)(DisplayClass *, unsigned int *, int, unsigned int, int))this->vtable1 + 28))( /*0x4acf0d*/
@@ -12296,9 +12296,9 @@ void ScenarioClass::LoadMapData(void* a1) {
           (uint8_t *)&g_Str_EVA_CannotDeployHere.RussianVoice[3],
           (unsigned int *)(v46.Buffer_field_18 + 236));
   *v36 = *v37; /*0x4ad784*/
-  v36[1] = v37[1]; /*0x4ad789*/
-  v36[2] = v37[2]; /*0x4ad78f*/
-  v36[3] = v37[3]; /*0x4ad795*/
+  v36->__pad_004 = v37->u32_4; /*0x4ad789*/
+  v36->q008 = v37->u32_8; /*0x4ad78f*/
+  v36->u32_C = v37->u32_C; /*0x4ad795*/
   Shroud::ProcessCellVisibility((RadarClass *)&DataGlobal_87F7E8, v36); /*0x4ad79d*/
   ScenarioClass::CalcMinShroudLevel((ScenarioClass *)&DataGlobal_87F7E8); /*0x4ad7a7*/
   dword_822CF8 = dword_A8B230[130].uniqueId; /*0x4ad7bc*/
@@ -12579,7 +12579,7 @@ void* CellClass::ScanOccupiers(void* a1) {
     v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v26); /*0x50038f*/
     Building = CellClass::FindBuilding(v8, 1); /*0x500396*/
     v10 = Building; /*0x50039b*/
-    if ( Building && !Building[129] )
+    if ( Building && !Building->inLimbo )
     {
       v11 = (*(int (**)(unsigned char *))(*(unsigned int *)Building + 60))(Building); /*0x5003b7*/
       if ( !v11
@@ -12591,13 +12591,13 @@ void* CellClass::ScanOccupiers(void* a1) {
           : (v13 = 1),
             !v13) )
       {
-        v14 = v10->q21C; /*0x5003f9*/
-        v15 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v10 + 72))(v10, v30); /*0x500406*/
+        v14 = v10->owner; /*0x5003f9*/
+        v15 = (unsigned int *)v10->GetCoords_0(v30); /*0x500406*/
         if ( PathfindingClass::FindPath(v14, v15) == -1 /*0x500434*/
-          && (*(int (**)(unsigned int *))(*v10 + 456))(v10) >= -20
-          && v10[136] != 2 )
+          && v10->GetZAboveGround() >= -20
+          && v10->cloakState != 2 )
         {
-          v16 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v10 + 72))(v10, v31); /*0x50043f*/
+          v16 = (unsigned int *)v10->GetCoords_0(v31); /*0x50043f*/
           v17 = a1[1]; /*0x500446*/
           v27 = *a1 - *v16; /*0x50044b*/
           v18 = a1[2]; /*0x500454*/
@@ -12761,17 +12761,17 @@ int INIClass::ClearSection(int a1, void* a2) {
     v16 = (v15 - *v12) >> 3; /*0x525963*/
     if ( v16 != -1 ) /*0x525969*/
     {
-      for ( i = v16 + 1; i < v12[1]; *(v18 - 1) = v18[1] ) /*0x525973*/
+      for ( i = v16 + 1; i < v12->HashTable_field_0x04; *(v18 - 1) = v18[1] ) /*0x525973*/
       {
         v18 = (unsigned int *)(*v12 + 8 * i++); /*0x525977*/
         *(v18 - 2) = *v18; /*0x52597d*/
       }
       v19 = *v12; /*0x525990*/
       v20 = v12[1] - 1; /*0x525992*/
-      v12[1] = v20; /*0x525995*/
+      v12->HashTable_field_0x04 = v20; /*0x525995*/
       *(unsigned int *)(v19 + 8 * v20) = 0; /*0x52599a*/
       *(unsigned int *)(v19 + 8 * v20 + 4) = 0; /*0x52599d*/
-      v12[4] = 0; /*0x5259a1*/
+      v12->u32_10 = 0; /*0x5259a1*/
     }
   }
   result = (**(int (__thiscall ***)(int, int))v13)(v13, 1); /*0x5259ab*/
@@ -13049,17 +13049,17 @@ int INIClass::LoadFile(int a1, int a2) {
     {
       v22 = _strdup((const char *)&v96.unknown30 + 1); /*0x525e07*/
       v23 = 0; /*0x525e0f*/
-      *(unsigned int *)(v21 + 4) = 0; /*0x525e16*/
-      *(unsigned int *)(v21 + 8) = 0; /*0x525e19*/
+      v21->u32_4 = 0; /*0x525e16*/
+      v21->q008 = 0; /*0x525e19*/
       *(unsigned int *)v21 = &vt_Node; /*0x525e1c*/
-      *(unsigned int *)(v21 + 12) = v22; /*0x525e22*/
-      GenericList::Constructor((GenericList *)(v21 + 16)); /*0x525e25*/
+      v21->u32_C = v22; /*0x525e22*/
+      GenericList::Constructor(&v21->u32_10); /*0x525e25*/
       v24 = v21 + 44; /*0x525e2a*/
-      *(unsigned int *)(v21 + 16) = &vt_List; /*0x525e2d*/
-      INIClass::getValue((INIClass *)(v21 + 44)); /*0x525e35*/
+      *&v21->u32_10 = &vt_List; /*0x525e2d*/
+      INIClass::getValue(&v21->INIClass_2C); /*0x525e35*/
       k = k; /*0x525e3a*/
       *(unsigned int *)v21 = &vt_INIClassINISection; /*0x525e3e*/
-      *(unsigned int *)(v21 + 64) = k; /*0x525e44*/
+      v21->q040 = k; /*0x525e44*/
       v86 = 0; /*0x525e4d*/
       for ( k = 0; !v83; v23 = (void **)k ) /*0x525e55*/
       {
@@ -13252,7 +13252,7 @@ int INIClass::LoadFile(int a1, int a2) {
                   }
                 }
               }
-              v56 = *(unsigned int *)(v21 + 40); /*0x52619f*/
+              v56 = *&v21->q028; /*0x52619f*/
               v57 = v36[1]; /*0x5261a2*/
               if ( v57 ) /*0x5261a7*/
               {
@@ -13281,7 +13281,7 @@ int INIClass::LoadFile(int a1, int a2) {
       }
       if ( !a2 ) /*0x526200*/
       {
-        v61 = *(unsigned int *)(v21 + 24); /*0x526202*/
+        v61 = *&v21->q018; /*0x526202*/
         if ( !v61 || !v61->headNode || !v61->__pad_020 ) /*0x526210*/
         {
           if ( v23 ) /*0x526219*/
@@ -13305,14 +13305,14 @@ int INIClass::LoadFile(int a1, int a2) {
             continue; /*0x52637e*/
           }
   LABEL_50:
-          v89[15] = (int)k; /*0x525d59*/
+          v89->INIClass_field_3C = (int)k; /*0x525d59*/
   LABEL_51:
           Vector::Clear((int)&v96); /*0x525d64*/
           Straw::Dtor(&v94); /*0x525d71*/
           return 1; /*0x525d85*/
         }
       }
-      v63 = *(uint8_t **)(v21 + 12); /*0x526246*/
+      v63 = v21->u32_C; /*0x526246*/
       memset(&v96.unknown30, 0, 12); /*0x526252*/
       v64 = (char *)Checksummer::Add_Buffer((Checksummer *)&v96.unknown30, v63, strlen((const char *)v63)); /*0x526269*/
       v89 = v89; /*0x52626e*/
@@ -13365,7 +13365,7 @@ int INIClass::LoadFile(int a1, int a2) {
           }
         }
       }
-      v74 = *(unsigned int *)(v21 + 4); /*0x526331*/
+      v74 = v21->u32_4; /*0x526331*/
       v75 = v89[9]; /*0x526334*/
       if ( v74 ) /*0x526339*/
       {
@@ -13373,18 +13373,18 @@ int INIClass::LoadFile(int a1, int a2) {
         if ( v76 ) /*0x526340*/
         {
           v76->u32_4 = v74; /*0x526342*/
-          *(unsigned int *)(*(unsigned int *)(v21 + 4) + 8) = *(unsigned int *)(v21 + 8); /*0x52634b*/
+          *(unsigned int *)(v21->u32_4 + 8) = *&v21->q008; /*0x52634b*/
           *(unsigned int *)(v21 + 8) = 0; /*0x52634e*/
-          *(unsigned int *)(v21 + 4) = 0; /*0x526351*/
+          v21->u32_4 = 0; /*0x526351*/
         }
       }
-      v77 = v75->u32_4; /*0x526354*/
+      v77 = v75->Prev; /*0x526354*/
       *(unsigned int *)(v21 + 8) = v75; /*0x526357*/
-      *(unsigned int *)(v21 + 4) = v77; /*0x52635a*/
-      v78 = v75->u32_4; /*0x52635d*/
+      v21->u32_4 = v77; /*0x52635a*/
+      v78 = v75->Prev; /*0x52635d*/
       if ( v78 ) /*0x526362*/
         v78->vtable3 = v21; /*0x526364*/
-      v75->u32_4 = v21; /*0x526367*/
+      v75->Prev = v21; /*0x526367*/
       goto LABEL_133; /*0x526367*/
     }
     break;
@@ -13598,7 +13598,7 @@ LABEL_34:
     }
     INIClass_field_3C = INIClass_field_3C->headNode; /*0x5267e1*/
   }
-  return v3 + (*(int (**)(int))(*&a1->__pad_020))(a1); /*0x5267f3*/
+  return v3 + (*(int (**)(int))(*&a1->needsSave))(a1); /*0x5267f3*/
 
 }
 }
@@ -13803,7 +13803,7 @@ int INIClass::GetBase64Data() {
   v25 = (int *)this; /*0x526fc6*/
   if ( !a2 ) /*0x526fca*/
     return 0; /*0x526fd7*/
-  *(unsigned int *)&v26.q004 = 0; /*0x526fef*/
+  *(unsigned int *)&v26.headNode = 0; /*0x526fef*/
   *(unsigned int *)&v26.q008 = 0; /*0x526ff3*/
   v26.field_C = 1; /*0x526ff7*/
   v26.field_10 = 0; /*0x526fff*/
@@ -14230,8 +14230,8 @@ int INIClass::ReadGUID_Overwrite(int a1, void* a2, void* a3, int a4, int a5, int
   }
   LABEL_32:
   *(unsigned int *)a1 = a4; /*0x527b46*/
-  a1->u32_4 = a5; /*0x527b62*/
-  a1->q008 = a6; /*0x527b6c*/
+  a1->Prev = a5; /*0x527b62*/
+  a1->Next = a6; /*0x527b6c*/
   a1->u32_C = a7; /*0x527b76*/
   return a1; /*0x527b23*/
 }
@@ -14397,9 +14397,9 @@ void* INIClass::ParseValue(void* a1, void* a2, void* a3, void* a4) {
   LABEL_31:
   v21 = a4; /*0x527ef2*/
   *a1 = *a4; /*0x527f02*/
-  a1[1] = v21[1]; /*0x527f07*/
-  a1[2] = v21[2]; /*0x527f0d*/
-  a1[3] = v21[3]; /*0x527f15*/
+  a1[1] = v21->u32_4; /*0x527f07*/
+  a1[2] = v21->u32_8; /*0x527f0d*/
+  a1[3] = v21->u32_C; /*0x527f15*/
   return a1; /*0x527ed7*/
 }
 }
@@ -14766,7 +14766,7 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
     v9 = _strdup((const char *)v14); /*0x528706*/
     GenericNode::Constructor(v8); /*0x528708*/
     *v8 = &vt_Node; /*0x528710*/
-    v8[3] = v9; /*0x528716*/
+    v8->GenericNode_C = v9; /*0x528716*/
     INIClass::sectionExists(v8 + 4); /*0x528719*/
     INIClass::getValue(v8 + 11); /*0x528721*/
     v8[16] = 0; /*0x52872a*/
@@ -14820,7 +14820,7 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
     v43 = v18; /*0x528839*/
     v40[6] = 0; /*0x52883d*/
     v19 = strlen((const char *)v40[3]) + 1; /*0x52884e*/
-    v36 = (uint8_t *)v40[3]; /*0x528854*/
+    v36 = v40->u32_C; /*0x528854*/
     v20 = (unsigned int *)KeyValuePair::Init(0); /*0x52885a*/
     v42 = Checksummer::Add_Buffer(v20, v36, v19 - 1); /*0x52886d*/
     v21 = HashTable::BinarySearchAlt(&v42); /*0x528871*/
@@ -14829,7 +14829,7 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
       v22 = (v21 - *v15) >> 3; /*0x52887c*/
       if ( v22 != -1 ) /*0x528882*/
       {
-        for ( i = v22 + 1; i < v15[1]; *(unsigned int *)(v25 - 4) = *(unsigned int *)(v25 + 4) ) /*0x52888c*/
+        for ( i = v22 + 1; i < v15->HashTable_field_0x04; *(unsigned int *)(v25 - 4) = *(unsigned int *)(v25 + 4) ) /*0x52888c*/
         {
           v24 = *(unsigned int *)(*v15 + 8 * i); /*0x528890*/
           v25 = *v15 + 8 * i++; /*0x528893*/
@@ -14837,10 +14837,10 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
         }
         v26 = *v15; /*0x5288aa*/
         v27 = v15[1] - 1; /*0x5288ac*/
-        v15[1] = v27; /*0x5288af*/
+        v15->HashTable_field_0x04 = v27; /*0x5288af*/
         *(unsigned int *)(v26 + 8 * v27) = 0; /*0x5288b4*/
         *(unsigned int *)(v26 + 8 * v27 + 4) = 0; /*0x5288b7*/
-        v15[4] = 0; /*0x5288bb*/
+        v15->u32_10 = 0; /*0x5288bb*/
       }
     }
     if ( v40 ) /*0x5288c4*/
@@ -14861,7 +14861,7 @@ int INIClass::SetString(void* v14, void* a2, void* a3) {
       goto LABEL_28; /*0x528936*/
     LinkedList::Prepend(v29); /*0x528982*/
     v32 = strlen((const char *)v40[3]) + 1; /*0x528995*/
-    v38 = (uint8_t *)v40[3]; /*0x52899b*/
+    v38 = v40->u32_C; /*0x52899b*/
     v33 = (unsigned int *)KeyValuePair::Init(0); /*0x5289a1*/
     a2 = (char *)Checksummer::Add_Buffer(v33, v38, v32 - 1); /*0x5289ad*/
     INIClass::setValue(&a2, &v40); /*0x5289bd*/
@@ -15850,8 +15850,8 @@ void* INIClass::ReadPoint3D_Overwrite(void* a1, void* a2, int a3, void* a4) {
   LABEL_18:
   v18 = a4; /*0x529e3f*/
   *a1 = *a4; /*0x529e4f*/
-  a1[1] = v18[1]; /*0x529e54*/
-  a1[2] = v18[2]; /*0x529e5c*/
+  a1[1] = v18->u32_4; /*0x529e54*/
+  a1[2] = v18->u32_8; /*0x529e5c*/
   return a1; /*0x529dc7*/
 }
 }
@@ -15951,7 +15951,7 @@ int INIClass::ReadTimeString(void* a1, void* a2, int a3) {
   v25 = 0; /*0x52a7a7*/
   v26 = 0; /*0x52a7b1*/
   v7 = Checksummer::Add_Buffer(&v24, a2, strlen((const char *)a2)); /*0x52a7b5*/
-  v8 = *(unsigned int *)(v6 + 48); /*0x52a7ba*/
+  v8 = v6->u32_30; /*0x52a7ba*/
   v9 = v6 + 44; /*0x52a7bd*/
   a1 = (uint8_t *)v7; /*0x52a7c2*/
   if ( !v8 ) /*0x52a7c6*/
@@ -16298,7 +16298,7 @@ int LayerClass::Save(void* v5) {
     {
       while ( 1 ) /*0x551b6a*/
       {
-        result = (*(int (__stdcall **)(unsigned int *, int, int, unsigned int))(*v5 + 16))(v5, this->count + 4 * v7, 4, 0); /*0x551b6a*/
+        result = v5->Destru_vt04_0(this->count + 4 * v7, 4, 0); /*0x551b6a*/
         if ( result < 0 ) /*0x551b6f*/
           break; /*0x551b6f*/
         if ( ++v7 >= (int)v5 ) /*0x551b78*/
@@ -16932,8 +16932,8 @@ int RadarClass::RenderMapPreview() {
   {
     RadarClass::RenderJammerRadius(v2, 0, 0); /*0x5650c8*/
     *v2 = &vt_DynamicVectorClass; /*0x5650cd*/
-    v2[5] = 10; /*0x5650d3*/
-    v2[4] = 0; /*0x5650da*/
+    v2->CapacityIncrement = 10; /*0x5650d3*/
+    v2->Count = 0; /*0x5650da*/
     v2 += 6; /*0x5650dd*/
     --v3; /*0x5650e0*/
   }
@@ -16987,16 +16987,16 @@ void* RadarClass::Render(int a2) {
   this->ptr_50 = 0; /*0x5651a9*/
   RadarClass::drawRadarTerrain(&this->ptr_50, 0, 0); /*0x5651ac*/
   *v3 = &vt_DynamicVectorClass; /*0x5651b1*/
-  v3[5] = 10; /*0x5651b7*/
-  v3[4] = 0; /*0x5651be*/
+  v3->u32_14 = 10; /*0x5651b7*/
+  v3->q010 = 0; /*0x5651be*/
   v4 = &this->LevelAndPassabilityStruct2pointer_70; /*0x5651c1*/
   v5 = 3; /*0x5651c7*/
   do /*0x5651e9*/
   {
     RadarClass::RenderJammerRadius(v4, 0, 0); /*0x5651d0*/
     *v4 = &vt_DynamicVectorClass; /*0x5651d5*/
-    v4[5] = 10; /*0x5651db*/
-    v4[4] = 0; /*0x5651e2*/
+    v4->CapacityIncrement = 10; /*0x5651db*/
+    v4->Count = 0; /*0x5651e2*/
     v4 += 6; /*0x5651e5*/
     --v5; /*0x5651e8*/
   }
@@ -17594,7 +17594,7 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
           v69->q116 = v66->u16_116; /*0x566742*/
           v69->u32_118 = v66[280]; /*0x56674f*/
           v69->u8_119 = v66[281]; /*0x56675b*/
-          v69->u8_11A = v66[282]; /*0x566767*/
+          v69->Tactical_11A = v66[282]; /*0x566767*/
           v69->u32_11B = v66[283]; /*0x566773*/
           v69->u32_11C = v66[284]; /*0x56677f*/
           v69->u8_11D = v66[285]; /*0x56678b*/
@@ -17616,54 +17616,54 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
           v69[75] = v77 ^ ((uint8_t)v66->u32_12C ^ (uint8_t)v77) & 0x10; /*0x56684e*/
           v69[76] = v66->u32_130; /*0x56685a*/
           v69[77] = v66->u32_134; /*0x566866*/
-          v78 = v69[80]; /*0x566872*/
+          v78 = v69->q140; /*0x566872*/
           v69->q138 = v66[312]; /*0x566878*/
           v69[79] = v66->u32_13C; /*0x566884*/
           v79 = v78 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v78) & 1; /*0x566897*/
-          v69[80] = v79; /*0x566899*/
+          v69->q140 = v79; /*0x566899*/
           v80 = v79 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v79) & 2; /*0x5668ac*/
-          v69[80] = v80; /*0x5668ae*/
+          v69->q140 = v80; /*0x5668ae*/
           v81 = v80 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v80) & 4; /*0x5668c1*/
-          v69[80] = v81; /*0x5668c3*/
+          v69->q140 = v81; /*0x5668c3*/
           v82 = v81 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v81) & 8; /*0x5668d6*/
-          v69[80] = v82; /*0x5668d8*/
+          v69->q140 = v82; /*0x5668d8*/
           v83 = v82 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v82) & 0x10; /*0x5668eb*/
-          v69[80] = v83; /*0x5668ed*/
+          v69->q140 = v83; /*0x5668ed*/
           v84 = v83 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v83) & 0x20; /*0x566900*/
-          v69[80] = v84; /*0x566902*/
+          v69->q140 = v84; /*0x566902*/
           v85 = v84 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v84) & 0x40; /*0x566915*/
-          v69[80] = v85; /*0x566917*/
+          v69->q140 = v85; /*0x566917*/
           v86 = v85 ^ ((uint8_t)v66->u32_140 ^ (uint8_t)v85) & 0x80; /*0x56692d*/
-          v69[80] = v86; /*0x56692f*/
+          v69->q140 = v86; /*0x56692f*/
           v87 = v86 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v86) & 0x100; /*0x566944*/
-          v69[80] = v87; /*0x566946*/
+          v69->q140 = v87; /*0x566946*/
           v88 = v87 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v87) & 0x200; /*0x56695c*/
-          v69[80] = v88; /*0x56695e*/
+          v69->q140 = v88; /*0x56695e*/
           v89 = v88 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v88) & 0x400; /*0x566973*/
-          v69[80] = v89; /*0x566975*/
+          v69->q140 = v89; /*0x566975*/
           v90 = v89 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v89) & 0x800; /*0x56698b*/
-          v69[80] = v90; /*0x56698d*/
+          v69->q140 = v90; /*0x56698d*/
           v91 = v90 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v90) & 0x1000; /*0x5669a2*/
-          v69[80] = v91; /*0x5669a4*/
+          v69->q140 = v91; /*0x5669a4*/
           v92 = v91 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v91) & 0x2000; /*0x5669ba*/
-          v69[80] = v92; /*0x5669bc*/
+          v69->q140 = v92; /*0x5669bc*/
           v93 = v92 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v92) & 0x4000; /*0x5669d1*/
-          v69[80] = v93; /*0x5669d3*/
+          v69->q140 = v93; /*0x5669d3*/
           v94 = v93 ^ ((uint16_t)v66->u32_140 ^ (uint16_t)v93) & 0x8000; /*0x5669e9*/
-          v69[80] = v94; /*0x5669eb*/
+          v69->q140 = v94; /*0x5669eb*/
           v95 = v94 ^ (v66->u32_140 ^ v94) & 0x10000; /*0x566a00*/
-          v69[80] = v95; /*0x566a02*/
+          v69->q140 = v95; /*0x566a02*/
           v96 = v95 ^ (v66->u32_140 ^ v95) & 0x20000; /*0x566a18*/
-          v69[80] = v96; /*0x566a1a*/
+          v69->q140 = v96; /*0x566a1a*/
           v97 = v96 ^ (v66->u32_140 ^ v96) & 0x40000; /*0x566a2f*/
-          v69[80] = v97; /*0x566a31*/
+          v69->q140 = v97; /*0x566a31*/
           v98 = v97 ^ (v66->u32_140 ^ v97) & 0x80000; /*0x566a47*/
-          v69[80] = v98; /*0x566a49*/
+          v69->q140 = v98; /*0x566a49*/
           v99 = v98 ^ (v66->u32_140 ^ v98) & 0x100000; /*0x566a5e*/
-          v69[80] = v99; /*0x566a60*/
+          v69->q140 = v99; /*0x566a60*/
           v100 = v99 ^ (v66->u32_140 ^ v99) & 0x200000; /*0x566a76*/
-          v69[80] = v100; /*0x566a78*/
-          v69[80] = v100 ^ (v66->u32_140 ^ v100) & 0x400000; /*0x566a94*/
+          v69->q140 = v100; /*0x566a78*/
+          v69->q140 = v100 ^ (v66->u32_140 ^ v100) & 0x400000; /*0x566a94*/
           ObjectClass::SetMember09((ObjectClass *)v69, &v153); /*0x566a9d*/
         }
         v65 += 82; /*0x566aa6*/
@@ -18279,36 +18279,36 @@ int CellClass::CreateBuildingCrater(void* a1) {
     {
       PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v7, v20); /*0x56c0ff*/
       StartCoords = House::GetStartCoords((House *)v7, v21); /*0x56c104*/
-      if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x56c119*/
+      if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x56c119*/
       {
         v18 = *PlacementRect; /*0x56c198*/
-        v14 = PlacementRect[1]; /*0x56c19a*/
-        v15 = PlacementRect[2]; /*0x56c19d*/
-        v16 = PlacementRect[3]; /*0x56c1a0*/
+        v14 = PlacementRect->u32_4; /*0x56c19a*/
+        v15 = PlacementRect->u32_8; /*0x56c19d*/
+        v16 = PlacementRect->q00C; /*0x56c1a0*/
       }
       else
       {
-        v11 = PlacementRect[2]; /*0x56c11b*/
-        if ( v11 <= 0 || (v19 = PlacementRect[3], v19 <= 0) ) /*0x56c12f*/
+        v11 = PlacementRect->u32_8; /*0x56c11b*/
+        if ( v11 <= 0 || (v19 = PlacementRect->q00C, v19 <= 0) ) /*0x56c12f*/
         {
           v18 = *StartCoords; /*0x56c18b*/
-          v14 = StartCoords[1]; /*0x56c18d*/
-          v15 = StartCoords[2]; /*0x56c190*/
-          v16 = StartCoords[3]; /*0x56c193*/
+          v14 = StartCoords->vtable2; /*0x56c18d*/
+          v15 = StartCoords->vtable3; /*0x56c190*/
+          v16 = StartCoords->vtable4; /*0x56c193*/
         }
         else
         {
           v12 = *StartCoords; /*0x56c131*/
           v13 = *PlacementRect; /*0x56c133*/
-          v14 = StartCoords[1]; /*0x56c135*/
-          v15 = StartCoords[2]; /*0x56c138*/
-          v16 = StartCoords[3]; /*0x56c13b*/
+          v14 = StartCoords->vtable2; /*0x56c135*/
+          v15 = StartCoords->vtable3; /*0x56c138*/
+          v16 = StartCoords->vtable4; /*0x56c13b*/
           if ( v12 > *PlacementRect ) /*0x56c140*/
           {
             v15 += v12 - v13; /*0x56c144*/
             v12 = *PlacementRect; /*0x56c146*/
           }
-          v17 = PlacementRect[1]; /*0x56c148*/
+          v17 = PlacementRect->u32_4; /*0x56c148*/
           if ( v14 > v17 ) /*0x56c151*/
           {
             v16 += v14 - v17; /*0x56c155*/
@@ -18631,10 +18631,10 @@ int CellClass::RecursiveTileUpdate(void* a1, int a2, void* a3) {
       v29 = v34; /*0x570e50*/
     }
     *v27 = v30; /*0x570e67*/
-    v27[1] = v31; /*0x570e6a*/
+    v27->vtable2 = v31; /*0x570e6a*/
     v20 = v49; /*0x570e6d*/
-    v27[2] = v28; /*0x570e71*/
-    v27[3] = v29; /*0x570e74*/
+    v27->vtable3 = v28; /*0x570e71*/
+    v27->vtable4 = v29; /*0x570e74*/
   }
   v35 = 0; /*0x570e7a*/
   result = v52; /*0x570e86*/
@@ -18652,10 +18652,10 @@ int CellClass::RecursiveTileUpdate(void* a1, int a2, void* a3) {
     v38 = v54; /*0x570ea4*/
     while ( 1 ) /*0x570ea8*/
     {
-      v39 = v20[80]; /*0x570ea8*/
+      v39 = v20->flags; /*0x570ea8*/
       if ( (v39 & 0x80) != 0 && v35 ) /*0x570eb9*/
       {
-        v36 = v20[9]; /*0x570ebb*/
+        v36 = v20->smudgeTypeIndex; /*0x570ebb*/
         v56 = v36; /*0x570ebe*/
       }
       if ( (v39 & 0x80) == 0 && !v35 && ((unsigned short)v36 != 0xFFFF || (*(((unsigned short *)&(v56)) + 1)) != 0xFFFF) ) /*0x570edb*/
@@ -18666,7 +18666,7 @@ int CellClass::RecursiveTileUpdate(void* a1, int a2, void* a3) {
         UpdateTeamsInAreaMap(v38, v53); /*0x570f00*/
         v37 = 1; /*0x570f05*/
       }
-      v50 = v20[9]; /*0x570f10*/
+      v50 = v20->smudgeTypeIndex; /*0x570f10*/
       (*((unsigned short *)&(v55))) = *v61 + v50; /*0x570f23*/
       (*(((unsigned short *)&(v55)) + 1)) = (*(((unsigned short *)&(v50)) + 1)) + v61[1]; /*0x570f2b*/
       v40 = (int16_t)v55 + ((*((signed short *)(((unsigned char *)&(v55)) + 2))) << 9); /*0x570f36*/
@@ -18706,8 +18706,8 @@ int CellClass::RecursiveTileUpdate(void* a1, int a2, void* a3) {
       SetCellClassOccupancyFlags((int)v48, v45, 0, 0); /*0x570ff6*/
     else
       SetCellClassOccupancyFlags((int)v48, v45, 6u, 0); /*0x570ffc*/
-    *((unsigned char *)v48 + 286) = 0; /*0x571001*/
-    v48[17] = -1; /*0x571008*/
+    v48->u32_11E = 0; /*0x571001*/
+    v48->u32_44 = -1; /*0x571008*/
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)(v48 + 9)); /*0x571014*/
     result = CellClass::RecursiveTileUpdate(v60, a1, a2, a3); /*0x571028*/
     (*((unsigned char *)&(result))) = 1; /*0x571030*/
@@ -20666,10 +20666,10 @@ int CellClass::RecursiveCraterUpdate(void* a1, int a2, void* a3) {
       v29 = v34; /*0x576570*/
     }
     *v27 = v30; /*0x576587*/
-    v27[1] = v31; /*0x57658a*/
+    v27->vtable2 = v31; /*0x57658a*/
     v20 = v49; /*0x57658d*/
-    v27[2] = v28; /*0x576591*/
-    v27[3] = v29; /*0x576594*/
+    v27->vtable3 = v28; /*0x576591*/
+    v27->vtable4 = v29; /*0x576594*/
   }
   v35 = 0; /*0x57659a*/
   result = v52; /*0x5765a6*/
@@ -20687,10 +20687,10 @@ int CellClass::RecursiveCraterUpdate(void* a1, int a2, void* a3) {
     v38 = v54; /*0x5765c4*/
     while ( 1 ) /*0x5765c8*/
     {
-      v39 = v20[80]; /*0x5765c8*/
+      v39 = v20->flags; /*0x5765c8*/
       if ( (v39 & 0x80) != 0 && v35 ) /*0x5765d9*/
       {
-        v36 = v20[9]; /*0x5765db*/
+        v36 = v20->smudgeTypeIndex; /*0x5765db*/
         v56 = v36; /*0x5765de*/
       }
       if ( (v39 & 0x80) == 0 && !v35 && ((unsigned short)v36 != 0xFFFF || (*(((unsigned short *)&(v56)) + 1)) != 0xFFFF) ) /*0x5765fb*/
@@ -20701,7 +20701,7 @@ int CellClass::RecursiveCraterUpdate(void* a1, int a2, void* a3) {
         UpdateTeamsInAreaMap(v38, v53); /*0x576620*/
         v37 = 1; /*0x576625*/
       }
-      v50 = v20[9]; /*0x576630*/
+      v50 = v20->smudgeTypeIndex; /*0x576630*/
       (*((unsigned short *)&(v55))) = *v61 + v50; /*0x576643*/
       (*(((unsigned short *)&(v55)) + 1)) = (*(((unsigned short *)&(v50)) + 1)) + v61[1]; /*0x57664b*/
       v40 = (int16_t)v55 + ((*((signed short *)(((unsigned char *)&(v55)) + 2))) << 9); /*0x576656*/
@@ -20741,8 +20741,8 @@ int CellClass::RecursiveCraterUpdate(void* a1, int a2, void* a3) {
       UpdateCellClassNeighborTerrain((int)v48, v45, 0, 0); /*0x576716*/
     else
       UpdateCellClassNeighborTerrain((int)v48, v45, 6u, 0); /*0x57671c*/
-    *((unsigned char *)v48 + 286) = 0; /*0x576721*/
-    v48[17] = -1; /*0x576728*/
+    v48->u32_11E = 0; /*0x576721*/
+    v48->u32_44 = -1; /*0x576728*/
     BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)(v48 + 9)); /*0x576734*/
     result = CellClass::RecursiveCraterUpdate(v60, a1, a2, a3); /*0x576748*/
     (*((unsigned char *)&(result))) = 1; /*0x576750*/
@@ -21541,29 +21541,29 @@ int CellClass::ApplyTileModification(void* a1) {
   v57 = 0; /*0x57bdcf*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v73); /*0x57bde0*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57bde2*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57bdf7*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57bdf7*/
   {
     v15 = *PlacementRect; /*0x57bea8*/
-    v24 = PlacementRect[1]; /*0x57beaa*/
-    right = PlacementRect[2]; /*0x57bead*/
-    bottom = PlacementRect[3]; /*0x57beb0*/
+    v24 = PlacementRect->vtable2; /*0x57beaa*/
+    right = PlacementRect->vtable3; /*0x57bead*/
+    bottom = PlacementRect->vtable4; /*0x57beb0*/
   }
   else
   {
-    v50 = PlacementRect[2]; /*0x57be02*/
-    if ( v50 <= 0 || (v62 = PlacementRect[3], v62 <= 0) ) /*0x57be15*/
+    v50 = PlacementRect->vtable3; /*0x57be02*/
+    if ( v50 <= 0 || (v62 = PlacementRect->vtable4, v62 <= 0) ) /*0x57be15*/
     {
       v15 = *StartCoords; /*0x57be9b*/
-      v24 = StartCoords[1]; /*0x57be9d*/
-      right = StartCoords[2]; /*0x57bea0*/
-      bottom = StartCoords[3]; /*0x57bea3*/
+      v24 = StartCoords->vtable2; /*0x57be9d*/
+      right = StartCoords->vtable3; /*0x57bea0*/
+      bottom = StartCoords->vtable4; /*0x57bea3*/
     }
     else
     {
-      v14 = StartCoords[2]; /*0x57be1b*/
+      v14 = StartCoords->vtable3; /*0x57be1b*/
       v15 = *StartCoords; /*0x57be1e*/
-      v16 = StartCoords[1]; /*0x57be20*/
-      v17 = StartCoords[3]; /*0x57be23*/
+      v16 = StartCoords->vtable2; /*0x57be20*/
+      v17 = StartCoords->vtable4; /*0x57be23*/
       rcDst.right = v14; /*0x57be26*/
       v18 = *PlacementRect; /*0x57be2a*/
       v19 = v15 <= *PlacementRect; /*0x57be2c*/
@@ -21574,7 +21574,7 @@ int CellClass::ApplyTileModification(void* a1) {
         v15 = v18; /*0x57be3c*/
         rcDst.right = v20; /*0x57be3e*/
       }
-      v21 = PlacementRect[1]; /*0x57be42*/
+      v21 = PlacementRect->vtable2; /*0x57be42*/
       rcSrc2.left = v21; /*0x57be47*/
       if ( v16 > v21 ) /*0x57be4b*/
       {
@@ -21718,10 +21718,10 @@ int CellClass::ApplyTileModification(void* a1) {
   v42 = (Bounds *)Rect::Union(&rcDst, &rcSrc1, &rcSrc2); /*0x57c1d5*/
   v43 = Bounds::Subtract(v42, v48, v49); /*0x57c1dc*/
   v68 = *v43; /*0x57c1e9*/
-  v69 = v43[1]; /*0x57c1f0*/
-  v70 = v43[2]; /*0x57c1f7*/
-  v71 = v43[3]; /*0x57c200*/
-  Cell::CreateCrater(*v43, v43[1], v43[2], v43[3], 0); /*0x57c220*/
+  v69 = v43->u32_4; /*0x57c1f0*/
+  v70 = v43->u32_8; /*0x57c1f7*/
+  v71 = v43->u32_C; /*0x57c200*/
+  Cell::CreateCrater(*v43, v43->u32_4, v43[2], v43[3], 0); /*0x57c220*/
   House::AnnounceUpgrade((int)v4, -1); /*0x57c229*/
   House::AnnounceUpgrade(v59, -1); /*0x57c234*/
   v44 = v58; /*0x57c239*/
@@ -21859,29 +21859,29 @@ int CellClass::ApplyTileModification2(void* a1) {
   v54 = 0; /*0x57c38f*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v70); /*0x57c3a0*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57c3a2*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57c3b7*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57c3b7*/
   {
     v15 = *PlacementRect; /*0x57c468*/
-    v24 = PlacementRect[1]; /*0x57c46a*/
-    right = PlacementRect[2]; /*0x57c46d*/
-    bottom = PlacementRect[3]; /*0x57c470*/
+    v24 = PlacementRect->vtable2; /*0x57c46a*/
+    right = PlacementRect->vtable3; /*0x57c46d*/
+    bottom = PlacementRect->vtable4; /*0x57c470*/
   }
   else
   {
-    v50 = PlacementRect[2]; /*0x57c3c2*/
-    if ( v50 <= 0 || (v59 = PlacementRect[3], v59 <= 0) ) /*0x57c3d5*/
+    v50 = PlacementRect->vtable3; /*0x57c3c2*/
+    if ( v50 <= 0 || (v59 = PlacementRect->vtable4, v59 <= 0) ) /*0x57c3d5*/
     {
       v15 = *StartCoords; /*0x57c45b*/
-      v24 = StartCoords[1]; /*0x57c45d*/
-      right = StartCoords[2]; /*0x57c460*/
-      bottom = StartCoords[3]; /*0x57c463*/
+      v24 = StartCoords->vtable2; /*0x57c45d*/
+      right = StartCoords->vtable3; /*0x57c460*/
+      bottom = StartCoords->vtable4; /*0x57c463*/
     }
     else
     {
-      v14 = StartCoords[2]; /*0x57c3db*/
+      v14 = StartCoords->vtable3; /*0x57c3db*/
       v15 = *StartCoords; /*0x57c3de*/
-      v16 = StartCoords[1]; /*0x57c3e0*/
-      v17 = StartCoords[3]; /*0x57c3e3*/
+      v16 = StartCoords->vtable2; /*0x57c3e0*/
+      v17 = StartCoords->vtable4; /*0x57c3e3*/
       rcDst.right = v14; /*0x57c3e6*/
       v18 = *PlacementRect; /*0x57c3ea*/
       v19 = v15 <= *PlacementRect; /*0x57c3ec*/
@@ -21892,7 +21892,7 @@ int CellClass::ApplyTileModification2(void* a1) {
         v15 = v18; /*0x57c3fc*/
         rcDst.right = v20; /*0x57c3fe*/
       }
-      v21 = PlacementRect[1]; /*0x57c402*/
+      v21 = PlacementRect->vtable2; /*0x57c402*/
       rcSrc2.left = v21; /*0x57c407*/
       if ( v16 > v21 ) /*0x57c40b*/
       {
@@ -22025,10 +22025,10 @@ int CellClass::ApplyTileModification2(void* a1) {
   v42 = (Bounds *)Rect::Union(&rcDst, &rcSrc1, &rcSrc2); /*0x57c795*/
   v43 = Bounds::Subtract(v42, v48, v49); /*0x57c79c*/
   v65 = *v43; /*0x57c7a9*/
-  v66 = v43[1]; /*0x57c7b0*/
-  v67 = v43[2]; /*0x57c7b7*/
-  v68 = v43[3]; /*0x57c7c0*/
-  Cell::CreateCrater(*v43, v43[1], v43[2], v43[3], 0); /*0x57c7e0*/
+  v66 = v43->u32_4; /*0x57c7b0*/
+  v67 = v43->u32_8; /*0x57c7b7*/
+  v68 = v43->u32_C; /*0x57c7c0*/
+  Cell::CreateCrater(*v43, v43->u32_4, v43[2], v43[3], 0); /*0x57c7e0*/
   House::AnnounceUpgrade((int)v4, -1); /*0x57c7e9*/
   House::AnnounceUpgrade(v56, -1); /*0x57c7f4*/
   v44 = v55; /*0x57c7f9*/
@@ -22169,29 +22169,29 @@ int CellClass::ApplyTileModification3(void* a1) {
   v57 = 0; /*0x57d03f*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v73); /*0x57d050*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57d052*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57d067*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57d067*/
   {
     v15 = *PlacementRect; /*0x57d118*/
-    v24 = PlacementRect[1]; /*0x57d11a*/
-    right = PlacementRect[2]; /*0x57d11d*/
-    bottom = PlacementRect[3]; /*0x57d120*/
+    v24 = PlacementRect->vtable2; /*0x57d11a*/
+    right = PlacementRect->vtable3; /*0x57d11d*/
+    bottom = PlacementRect->vtable4; /*0x57d120*/
   }
   else
   {
-    v50 = PlacementRect[2]; /*0x57d072*/
-    if ( v50 <= 0 || (v62 = PlacementRect[3], v62 <= 0) ) /*0x57d085*/
+    v50 = PlacementRect->vtable3; /*0x57d072*/
+    if ( v50 <= 0 || (v62 = PlacementRect->vtable4, v62 <= 0) ) /*0x57d085*/
     {
       v15 = *StartCoords; /*0x57d10b*/
-      v24 = StartCoords[1]; /*0x57d10d*/
-      right = StartCoords[2]; /*0x57d110*/
-      bottom = StartCoords[3]; /*0x57d113*/
+      v24 = StartCoords->vtable2; /*0x57d10d*/
+      right = StartCoords->vtable3; /*0x57d110*/
+      bottom = StartCoords->vtable4; /*0x57d113*/
     }
     else
     {
-      v14 = StartCoords[2]; /*0x57d08b*/
+      v14 = StartCoords->vtable3; /*0x57d08b*/
       v15 = *StartCoords; /*0x57d08e*/
-      v16 = StartCoords[1]; /*0x57d090*/
-      v17 = StartCoords[3]; /*0x57d093*/
+      v16 = StartCoords->vtable2; /*0x57d090*/
+      v17 = StartCoords->vtable4; /*0x57d093*/
       rcDst.right = v14; /*0x57d096*/
       v18 = *PlacementRect; /*0x57d09a*/
       v19 = v15 <= *PlacementRect; /*0x57d09c*/
@@ -22202,7 +22202,7 @@ int CellClass::ApplyTileModification3(void* a1) {
         v15 = v18; /*0x57d0ac*/
         rcDst.right = v20; /*0x57d0ae*/
       }
-      v21 = PlacementRect[1]; /*0x57d0b2*/
+      v21 = PlacementRect->vtable2; /*0x57d0b2*/
       rcSrc2.left = v21; /*0x57d0b7*/
       if ( v16 > v21 ) /*0x57d0bb*/
       {
@@ -22346,10 +22346,10 @@ int CellClass::ApplyTileModification3(void* a1) {
   v42 = (Bounds *)Rect::Union(&rcDst, &rcSrc1, &rcSrc2); /*0x57d44b*/
   v43 = Bounds::Subtract(v42, v48, v49); /*0x57d452*/
   v68 = *v43; /*0x57d45f*/
-  v69 = v43[1]; /*0x57d466*/
-  v70 = v43[2]; /*0x57d46d*/
-  v71 = v43[3]; /*0x57d476*/
-  Cell::CreateCrater(*v43, v43[1], v43[2], v43[3], 0); /*0x57d496*/
+  v69 = v43->u32_4; /*0x57d466*/
+  v70 = v43->u32_8; /*0x57d46d*/
+  v71 = v43->u32_C; /*0x57d476*/
+  Cell::CreateCrater(*v43, v43->u32_4, v43[2], v43[3], 0); /*0x57d496*/
   House::AnnounceUpgrade((int)v4, -1); /*0x57d49f*/
   House::AnnounceUpgrade(v59, -1); /*0x57d4aa*/
   v44 = v58; /*0x57d4af*/
@@ -22484,29 +22484,29 @@ int CellClass::ApplyTileModification4(void* a1) {
   v53 = 0; /*0x57d60a*/
   PlacementRect = BuildingClass::GetPlacementRect(v4, &v68); /*0x57d61b*/
   StartCoords = House::GetStartCoords((House *)v4, &rcSrc2); /*0x57d61d*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57d632*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57d632*/
   {
     v15 = *PlacementRect; /*0x57d6e3*/
-    v24 = PlacementRect[1]; /*0x57d6e5*/
-    right = PlacementRect[2]; /*0x57d6e8*/
-    bottom = PlacementRect[3]; /*0x57d6eb*/
+    v24 = PlacementRect->vtable2; /*0x57d6e5*/
+    right = PlacementRect->vtable3; /*0x57d6e8*/
+    bottom = PlacementRect->vtable4; /*0x57d6eb*/
   }
   else
   {
-    v50 = PlacementRect[2]; /*0x57d63d*/
-    if ( v50 <= 0 || (v58 = PlacementRect[3], v58 <= 0) ) /*0x57d650*/
+    v50 = PlacementRect->vtable3; /*0x57d63d*/
+    if ( v50 <= 0 || (v58 = PlacementRect->vtable4, v58 <= 0) ) /*0x57d650*/
     {
       v15 = *StartCoords; /*0x57d6d6*/
-      v24 = StartCoords[1]; /*0x57d6d8*/
-      right = StartCoords[2]; /*0x57d6db*/
-      bottom = StartCoords[3]; /*0x57d6de*/
+      v24 = StartCoords->vtable2; /*0x57d6d8*/
+      right = StartCoords->vtable3; /*0x57d6db*/
+      bottom = StartCoords->vtable4; /*0x57d6de*/
     }
     else
     {
-      v14 = StartCoords[2]; /*0x57d656*/
+      v14 = StartCoords->vtable3; /*0x57d656*/
       v15 = *StartCoords; /*0x57d659*/
-      v16 = StartCoords[1]; /*0x57d65b*/
-      v17 = StartCoords[3]; /*0x57d65e*/
+      v16 = StartCoords->vtable2; /*0x57d65b*/
+      v17 = StartCoords->vtable4; /*0x57d65e*/
       rcDst.right = v14; /*0x57d661*/
       v18 = *PlacementRect; /*0x57d665*/
       v19 = v15 <= *PlacementRect; /*0x57d667*/
@@ -22517,7 +22517,7 @@ int CellClass::ApplyTileModification4(void* a1) {
         v15 = v18; /*0x57d677*/
         rcDst.right = v20; /*0x57d679*/
       }
-      v21 = PlacementRect[1]; /*0x57d67d*/
+      v21 = PlacementRect->vtable2; /*0x57d67d*/
       rcSrc2.left = v21; /*0x57d682*/
       if ( v16 > v21 ) /*0x57d686*/
       {
@@ -22648,10 +22648,10 @@ int CellClass::ApplyTileModification4(void* a1) {
   v42 = (Bounds *)Rect::Union(&rcDst, &rcSrc1, &rcSrc2); /*0x57da0e*/
   v43 = Bounds::Subtract(v42, v48, v49); /*0x57da15*/
   v63 = *v43; /*0x57da22*/
-  v64 = v43[1]; /*0x57da29*/
-  v65 = v43[2]; /*0x57da30*/
-  v66 = v43[3]; /*0x57da39*/
-  Cell::CreateCrater(*v43, v43[1], v43[2], v43[3], 0); /*0x57da59*/
+  v64 = v43->u32_4; /*0x57da29*/
+  v65 = v43->u32_8; /*0x57da30*/
+  v66 = v43->u32_C; /*0x57da39*/
+  Cell::CreateCrater(*v43, v43->u32_4, v43->u32_8, v43->u32_C, 0); /*0x57da59*/
   House::AnnounceUpgrade((int)v4, -1); /*0x57da62*/
   v44 = v56; /*0x57da67*/
   House::AnnounceUpgrade(v56, -1); /*0x57da6f*/
@@ -22991,36 +22991,36 @@ void CellClass::ApplyTileModification6(void* a1) {
     }
     PlacementRect = BuildingClass::GetPlacementRect(v6, v77); /*0x57f7d0*/
     StartCoords = House::GetStartCoords((House *)v6, v74); /*0x57f7dc*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57f7f1*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57f7f1*/
     {
       v13 = *PlacementRect; /*0x57f877*/
-      v15 = PlacementRect[1]; /*0x57f879*/
-      v19 = PlacementRect[2]; /*0x57f87c*/
-      v17 = PlacementRect[3]; /*0x57f87f*/
+      v15 = PlacementRect->vtable2; /*0x57f879*/
+      v19 = PlacementRect->vtable3; /*0x57f87c*/
+      v17 = PlacementRect->vtable4; /*0x57f87f*/
     }
     else
     {
-      v59 = PlacementRect[2]; /*0x57f7fc*/
-      if ( v59 <= 0 || (v50 = PlacementRect[3], v50 <= 0) ) /*0x57f80b*/
+      v59 = PlacementRect->vtable3; /*0x57f7fc*/
+      if ( v59 <= 0 || (v50 = PlacementRect->vtable4, v50 <= 0) ) /*0x57f80b*/
       {
         v13 = *StartCoords; /*0x57f86a*/
-        v15 = StartCoords[1]; /*0x57f86c*/
-        v19 = StartCoords[2]; /*0x57f86f*/
-        v17 = StartCoords[3]; /*0x57f872*/
+        v15 = StartCoords->vtable2; /*0x57f86c*/
+        v19 = StartCoords->vtable3; /*0x57f86f*/
+        v17 = StartCoords->vtable4; /*0x57f872*/
       }
       else
       {
         v13 = *StartCoords; /*0x57f80d*/
         v14 = *PlacementRect; /*0x57f80f*/
-        v15 = StartCoords[1]; /*0x57f811*/
-        v16 = StartCoords[2]; /*0x57f814*/
-        v17 = StartCoords[3]; /*0x57f817*/
+        v15 = StartCoords->vtable2; /*0x57f811*/
+        v16 = StartCoords->vtable3; /*0x57f814*/
+        v17 = StartCoords->vtable4; /*0x57f817*/
         if ( v13 > *PlacementRect ) /*0x57f81c*/
         {
           v16 += v13 - v14; /*0x57f820*/
           v13 = *PlacementRect; /*0x57f822*/
         }
-        v18 = PlacementRect[1]; /*0x57f824*/
+        v18 = PlacementRect->vtable2; /*0x57f824*/
         v67 = v18; /*0x57f829*/
         if ( v15 > v18 ) /*0x57f82d*/
         {
@@ -23118,10 +23118,10 @@ void CellClass::ApplyTileModification6(void* a1) {
           v34 = Coord2D::Sub(v33, &v72, v69); /*0x57fa1e*/
           v35 = Rect::Construct(&v78, v34, v37, v39); /*0x57fa2b*/
           v62 = *v35; /*0x57fa39*/
-          v63 = v35[1]; /*0x57fa40*/
-          v64 = v35[2]; /*0x57fa47*/
-          v65 = v35[3]; /*0x57fa53*/
-          Cell::CreateCrater(*v35, v35[1], v35[2], v35[3], 0); /*0x57fa76*/
+          v63 = v35->Y; /*0x57fa40*/
+          v64 = v35->Width; /*0x57fa47*/
+          v65 = v35->Height; /*0x57fa53*/
+          Cell::CreateCrater(*v35, v35->Y, v35->Width, v35->Height, 0); /*0x57fa76*/
           if ( v20 == 100 ) /*0x57fa7e*/
           {
             BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v45); /*0x57fa8e*/
@@ -23305,36 +23305,36 @@ void CellClass::ApplyTileModification7(void* a1) {
     }
     PlacementRect = BuildingClass::GetPlacementRect(v6, v81); /*0x57fcfc*/
     StartCoords = House::GetStartCoords((House *)v6, v78); /*0x57fcfe*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x57fd13*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x57fd13*/
     {
       v18 = *PlacementRect; /*0x57fd92*/
-      v20 = PlacementRect[1]; /*0x57fd94*/
-      v24 = PlacementRect[2]; /*0x57fd97*/
-      v22 = PlacementRect[3]; /*0x57fd9a*/
+      v20 = PlacementRect->vtable2; /*0x57fd94*/
+      v24 = PlacementRect->vtable3; /*0x57fd97*/
+      v22 = PlacementRect->vtable4; /*0x57fd9a*/
     }
     else
     {
-      v71 = PlacementRect[2]; /*0x57fd1a*/
-      if ( v71 <= 0 || (v55 = PlacementRect[3], v55 <= 0) ) /*0x57fd29*/
+      v71 = PlacementRect->vtable3; /*0x57fd1a*/
+      if ( v71 <= 0 || (v55 = PlacementRect->vtable4, v55 <= 0) ) /*0x57fd29*/
       {
         v18 = *StartCoords; /*0x57fd85*/
-        v20 = StartCoords[1]; /*0x57fd87*/
-        v24 = StartCoords[2]; /*0x57fd8a*/
-        v22 = StartCoords[3]; /*0x57fd8d*/
+        v20 = StartCoords->vtable2; /*0x57fd87*/
+        v24 = StartCoords->vtable3; /*0x57fd8a*/
+        v22 = StartCoords->vtable4; /*0x57fd8d*/
       }
       else
       {
         v18 = *StartCoords; /*0x57fd2b*/
         v19 = *PlacementRect; /*0x57fd2d*/
-        v20 = StartCoords[1]; /*0x57fd2f*/
-        v21 = StartCoords[2]; /*0x57fd32*/
-        v22 = StartCoords[3]; /*0x57fd35*/
+        v20 = StartCoords->vtable2; /*0x57fd2f*/
+        v21 = StartCoords->vtable3; /*0x57fd32*/
+        v22 = StartCoords->vtable4; /*0x57fd35*/
         if ( v18 > *PlacementRect ) /*0x57fd3a*/
         {
           v21 += v18 - v19; /*0x57fd3e*/
           v18 = *PlacementRect; /*0x57fd40*/
         }
-        v23 = PlacementRect[1]; /*0x57fd42*/
+        v23 = PlacementRect->vtable2; /*0x57fd42*/
         v70 = v23; /*0x57fd47*/
         if ( v20 > v23 ) /*0x57fd4b*/
         {
@@ -23432,10 +23432,10 @@ void CellClass::ApplyTileModification7(void* a1) {
           v39 = Coord2D::Sub(v38, &v77, v73); /*0x57ff3b*/
           v40 = Rect::Construct(&v82, v39, v41, v43); /*0x57ff48*/
           v63 = *v40; /*0x57ff56*/
-          v64 = v40[1]; /*0x57ff5d*/
-          v65 = v40[2]; /*0x57ff64*/
-          v66 = v40[3]; /*0x57ff6d*/
-          Cell::CreateCrater(*v40, v40[1], v40[2], v40[3], 0); /*0x57ff8d*/
+          v64 = v40->Y; /*0x57ff5d*/
+          v65 = v40->Width; /*0x57ff64*/
+          v66 = v40->Height; /*0x57ff6d*/
+          Cell::CreateCrater(*v40, v40->Y, v40->Width, v40->Height, 0); /*0x57ff8d*/
           if ( v25 == 101 ) /*0x57ff95*/
           {
             BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v48); /*0x57ffa5*/
@@ -23603,36 +23603,36 @@ void CellClass::ApplyTileModification5(void* a1) {
     }
     PlacementRect = BuildingClass::GetPlacementRect(v6, v77); /*0x580204*/
     StartCoords = House::GetStartCoords((House *)v6, v74); /*0x580210*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x580225*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x580225*/
     {
       v13 = *PlacementRect; /*0x5802ab*/
-      v15 = PlacementRect[1]; /*0x5802ad*/
-      v19 = PlacementRect[2]; /*0x5802b0*/
-      v17 = PlacementRect[3]; /*0x5802b3*/
+      v15 = PlacementRect->vtable2; /*0x5802ad*/
+      v19 = PlacementRect->vtable3; /*0x5802b0*/
+      v17 = PlacementRect->vtable4; /*0x5802b3*/
     }
     else
     {
-      v59 = PlacementRect[2]; /*0x580230*/
-      if ( v59 <= 0 || (v50 = PlacementRect[3], v50 <= 0) ) /*0x58023f*/
+      v59 = PlacementRect->vtable3; /*0x580230*/
+      if ( v59 <= 0 || (v50 = PlacementRect->vtable4, v50 <= 0) ) /*0x58023f*/
       {
         v13 = *StartCoords; /*0x58029e*/
-        v15 = StartCoords[1]; /*0x5802a0*/
-        v19 = StartCoords[2]; /*0x5802a3*/
-        v17 = StartCoords[3]; /*0x5802a6*/
+        v15 = StartCoords->vtable2; /*0x5802a0*/
+        v19 = StartCoords->vtable3; /*0x5802a3*/
+        v17 = StartCoords->vtable4; /*0x5802a6*/
       }
       else
       {
         v13 = *StartCoords; /*0x580241*/
         v14 = *PlacementRect; /*0x580243*/
-        v15 = StartCoords[1]; /*0x580245*/
-        v16 = StartCoords[2]; /*0x580248*/
-        v17 = StartCoords[3]; /*0x58024b*/
+        v15 = StartCoords->vtable2; /*0x580245*/
+        v16 = StartCoords->vtable3; /*0x580248*/
+        v17 = StartCoords->vtable4; /*0x58024b*/
         if ( v13 > *PlacementRect ) /*0x580250*/
         {
           v16 += v13 - v14; /*0x580254*/
           v13 = *PlacementRect; /*0x580256*/
         }
-        v18 = PlacementRect[1]; /*0x580258*/
+        v18 = PlacementRect->vtable2; /*0x580258*/
         v67 = v18; /*0x58025d*/
         if ( v15 > v18 ) /*0x580261*/
         {
@@ -23730,10 +23730,10 @@ void CellClass::ApplyTileModification5(void* a1) {
           v34 = Coord2D::Sub(v33, &v72, v69); /*0x580457*/
           v35 = Rect::Construct(&v78, v34, v37, v39); /*0x580464*/
           v62 = *v35; /*0x580472*/
-          v63 = v35[1]; /*0x580479*/
-          v64 = v35[2]; /*0x580480*/
-          v65 = v35[3]; /*0x58048c*/
-          Cell::CreateCrater(*v35, v35[1], v35[2], v35[3], 0); /*0x5804af*/
+          v63 = v35->Y; /*0x580479*/
+          v64 = v35->Width; /*0x580480*/
+          v65 = v35->Height; /*0x58048c*/
+          Cell::CreateCrater(*v35, v35->Y, v35->Width, v35->Height, 0); /*0x5804af*/
           if ( v20 == 231 ) /*0x5804ba*/
           {
             BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v45); /*0x5804ca*/
@@ -23917,36 +23917,36 @@ void CellClass::ApplyTileModification8(void* a1) {
     }
     PlacementRect = BuildingClass::GetPlacementRect(v6, v81); /*0x580740*/
     StartCoords = House::GetStartCoords((House *)v6, v78); /*0x580742*/
-    if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x580757*/
+    if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x580757*/
     {
       v18 = *PlacementRect; /*0x5807d6*/
-      v20 = PlacementRect[1]; /*0x5807d8*/
-      v24 = PlacementRect[2]; /*0x5807db*/
-      v22 = PlacementRect[3]; /*0x5807de*/
+      v20 = PlacementRect->vtable2; /*0x5807d8*/
+      v24 = PlacementRect->vtable3; /*0x5807db*/
+      v22 = PlacementRect->vtable4; /*0x5807de*/
     }
     else
     {
-      v71 = PlacementRect[2]; /*0x58075e*/
-      if ( v71 <= 0 || (v55 = PlacementRect[3], v55 <= 0) ) /*0x58076d*/
+      v71 = PlacementRect->vtable3; /*0x58075e*/
+      if ( v71 <= 0 || (v55 = PlacementRect->vtable4, v55 <= 0) ) /*0x58076d*/
       {
         v18 = *StartCoords; /*0x5807c9*/
-        v20 = StartCoords[1]; /*0x5807cb*/
-        v24 = StartCoords[2]; /*0x5807ce*/
-        v22 = StartCoords[3]; /*0x5807d1*/
+        v20 = StartCoords->vtable2; /*0x5807cb*/
+        v24 = StartCoords->vtable3; /*0x5807ce*/
+        v22 = StartCoords->vtable4; /*0x5807d1*/
       }
       else
       {
         v18 = *StartCoords; /*0x58076f*/
         v19 = *PlacementRect; /*0x580771*/
-        v20 = StartCoords[1]; /*0x580773*/
-        v21 = StartCoords[2]; /*0x580776*/
-        v22 = StartCoords[3]; /*0x580779*/
+        v20 = StartCoords->vtable2; /*0x580773*/
+        v21 = StartCoords->vtable3; /*0x580776*/
+        v22 = StartCoords->vtable4; /*0x580779*/
         if ( v18 > *PlacementRect ) /*0x58077e*/
         {
           v21 += v18 - v19; /*0x580782*/
           v18 = *PlacementRect; /*0x580784*/
         }
-        v23 = PlacementRect[1]; /*0x580786*/
+        v23 = PlacementRect->vtable2; /*0x580786*/
         v70 = v23; /*0x58078b*/
         if ( v20 > v23 ) /*0x58078f*/
         {
@@ -24044,10 +24044,10 @@ void CellClass::ApplyTileModification8(void* a1) {
           v39 = Coord2D::Sub(v38, &v77, v73); /*0x580984*/
           v40 = Rect::Construct(&v82, v39, v41, v43); /*0x580991*/
           v63 = *v40; /*0x58099f*/
-          v64 = v40[1]; /*0x5809a6*/
-          v65 = v40[2]; /*0x5809ad*/
-          v66 = v40[3]; /*0x5809b6*/
-          Cell::CreateCrater(*v40, v40[1], v40[2], v40[3], 0); /*0x5809d6*/
+          v64 = v40->Y; /*0x5809a6*/
+          v65 = v40->Width; /*0x5809ad*/
+          v66 = v40->Height; /*0x5809b6*/
+          Cell::CreateCrater(*v40, v40->Y, v40->Width, v40->Height, 0); /*0x5809d6*/
           if ( v25 == 232 ) /*0x5809e1*/
           {
             BuildingClass::AddUpgrade((int *)&DataGlobal_87F7E8, (int)v48); /*0x5809f1*/
@@ -24251,7 +24251,7 @@ int RadarClass::RenderBlips(void* a1, int a2) {
     if ( !Type || !result ) /*0x582edb*/
       return result; /*0x582edb*/
     *(unsigned int *)v60 = *WalkPathClassPath(&v11, (int *)v58, *(unsigned int *)(Type + 448), (int *)(Type + 48)); /*0x582efe*/
-    *(unsigned int *)v61 = *WalkPathClassPath(&v11, (int *)&a1, result->u32_1C0, &result->u32_30); /*0x582f19*/
+    *(unsigned int *)v61 = *WalkPathClassPath(&v11, (int *)&a1, result->q_1C0, &result->nextObject); /*0x582f19*/
   }
   v28 = Cell::CoordToIndex((Cell *)this, (int16_t *)&v5); /*0x582fb9*/
   if ( v28 >= 0 ) /*0x582fc0*/
@@ -25267,7 +25267,7 @@ void* RadarClass::RenderJammerRadius(int a1, void* a2) {
       v4 = v9; /*0x58af5f*/
     }
     v3->RadarClass_field_0x4 = v4; /*0x58af61*/
-    v3->__pad_C[1] = 1; /*0x58af64*/
+    v3->IsAllocated = 1; /*0x58af64*/
     return &v3->RadarClass_field_0x0; /*0x58af64*/
   }
   *a2 = a1; /*0x58ae95*/
@@ -26108,9 +26108,9 @@ int ScenarioClass::AdvanceSHPAnimationFrame(void* a1, void* a2) {
   v32 = a2; /*0x5cbf94*/
   a2 = a2; /*0x5cbf9a*/
   *a2 = *v31; /*0x5cbf9c*/
-  a2[1] = v31[1]; /*0x5cbfa1*/
-  a2[2] = v31[2]; /*0x5cbfa7*/
-  a2[3] = v31[3]; /*0x5cbfad*/
+  a2[1] = v31->vtable2; /*0x5cbfa1*/
+  a2[2] = v31->vtable3; /*0x5cbfa7*/
+  a2[3] = v31->vtable4; /*0x5cbfad*/
   v34 = *&this->Items + *v32; /*0x5cbfb5*/
   v35 = v32[1]; /*0x5cbfb7*/
   *v32 = v34; /*0x5cbfba*/
@@ -26203,10 +26203,10 @@ void ScenarioClass::DrawConstructionFrame(int a1, void* a2) {
     goto LABEL_6; /*0x5cc131*/
   FoundationSize = Building::GetFoundationSize(v16, this->q028); /*0x5cc143*/
   v17 = *FoundationSize; /*0x5cc14a*/
-  v18 = FoundationSize[1]; /*0x5cc151*/
-  v19 = FoundationSize[2]; /*0x5cc158*/
+  v18 = FoundationSize->ptr_4; /*0x5cc151*/
+  v19 = FoundationSize->ptr_8; /*0x5cc158*/
   v5 = *&this->Capacity + v18; /*0x5cc162*/
-  v20 = FoundationSize[3]; /*0x5cc164*/
+  v20 = FoundationSize->u32_C; /*0x5cc164*/
   v6 = *&this->Items + v17; /*0x5cc16b*/
   v7 = this->q038; /*0x5cc16d*/
   v17 = v6; /*0x5cc173*/
@@ -26219,9 +26219,9 @@ void ScenarioClass::DrawConstructionFrame(int a1, void* a2) {
   }
   v9 = ClipRectIntersection(v16, a2, &v17, 0, 0); /*0x5cc1b1*/
   v17 = *v9; /*0x5cc1ba*/
-  v18 = v9[1]; /*0x5cc1c1*/
-  v19 = v9[2]; /*0x5cc1c8*/
-  v10 = v9[3]; /*0x5cc1ce*/
+  v18 = v9->vtable2; /*0x5cc1c1*/
+  v19 = v9->vtable3; /*0x5cc1c8*/
+  v10 = v9->vtable4; /*0x5cc1ce*/
   v20 = v10; /*0x5cc1d1*/
   if ( v19 > 0 && v10 > 0 ) /*0x5cc1d9*/
   {
@@ -26296,10 +26296,10 @@ void ScenarioClass::DrawPlacementPreview(int a1, void* a2) {
     MSOverlayAnim_field_0x04 = this->Items; /*0x5cc589*/
     v19 = *FoundationSize; /*0x5cc58c*/
     v7 = MSOverlayAnim_field_0x04 + v19; /*0x5cc590*/
-    v20 = FoundationSize[1]; /*0x5cc595*/
-    v21 = FoundationSize[2]; /*0x5cc59c*/
+    v20 = FoundationSize->ptr_4; /*0x5cc595*/
+    v21 = FoundationSize->ptr_8; /*0x5cc59c*/
     v8 = this->Capacity + v20; /*0x5cc5a6*/
-    v22 = FoundationSize[3]; /*0x5cc5a8*/
+    v22 = FoundationSize->u32_C; /*0x5cc5a8*/
     v9 = this->q038; /*0x5cc5ac*/
     v19 += MSOverlayAnim_field_0x04; /*0x5cc5b2*/
     v20 = v8; /*0x5cc5b6*/
@@ -26794,9 +26794,9 @@ int ScenarioClass::AdvanceSHPAnimationFrame(void* a1, void* a2) {
   v32 = a2; /*0x5cbf94*/
   a2 = a2; /*0x5cbf9a*/
   *a2 = *v31; /*0x5cbf9c*/
-  a2[1] = v31[1]; /*0x5cbfa1*/
-  a2[2] = v31[2]; /*0x5cbfa7*/
-  a2[3] = v31[3]; /*0x5cbfad*/
+  a2[1] = v31->vtable2; /*0x5cbfa1*/
+  a2[2] = v31->vtable3; /*0x5cbfa7*/
+  a2[3] = v31->vtable4; /*0x5cbfad*/
   v34 = *&this->Items + *v32; /*0x5cbfb5*/
   v35 = v32[1]; /*0x5cbfb7*/
   *v32 = v34; /*0x5cbfba*/
@@ -26889,10 +26889,10 @@ void ScenarioClass::DrawConstructionFrame(int a1, void* a2) {
     goto LABEL_6; /*0x5cc131*/
   FoundationSize = Building::GetFoundationSize(v16, this->q028); /*0x5cc143*/
   v17 = *FoundationSize; /*0x5cc14a*/
-  v18 = FoundationSize[1]; /*0x5cc151*/
-  v19 = FoundationSize[2]; /*0x5cc158*/
+  v18 = FoundationSize->ptr_4; /*0x5cc151*/
+  v19 = FoundationSize->ptr_8; /*0x5cc158*/
   v5 = *&this->Capacity + v18; /*0x5cc162*/
-  v20 = FoundationSize[3]; /*0x5cc164*/
+  v20 = FoundationSize->u32_C; /*0x5cc164*/
   v6 = *&this->Items + v17; /*0x5cc16b*/
   v7 = this->q038; /*0x5cc16d*/
   v17 = v6; /*0x5cc173*/
@@ -26905,9 +26905,9 @@ void ScenarioClass::DrawConstructionFrame(int a1, void* a2) {
   }
   v9 = ClipRectIntersection(v16, a2, &v17, 0, 0); /*0x5cc1b1*/
   v17 = *v9; /*0x5cc1ba*/
-  v18 = v9[1]; /*0x5cc1c1*/
-  v19 = v9[2]; /*0x5cc1c8*/
-  v10 = v9[3]; /*0x5cc1ce*/
+  v18 = v9->vtable2; /*0x5cc1c1*/
+  v19 = v9->vtable3; /*0x5cc1c8*/
+  v10 = v9->vtable4; /*0x5cc1ce*/
   v20 = v10; /*0x5cc1d1*/
   if ( v19 > 0 && v10 > 0 ) /*0x5cc1d9*/
   {
@@ -26982,10 +26982,10 @@ void ScenarioClass::DrawPlacementPreview(int a1, void* a2) {
     MSOverlayAnim_field_0x04 = this->Items; /*0x5cc589*/
     v19 = *FoundationSize; /*0x5cc58c*/
     v7 = MSOverlayAnim_field_0x04 + v19; /*0x5cc590*/
-    v20 = FoundationSize[1]; /*0x5cc595*/
-    v21 = FoundationSize[2]; /*0x5cc59c*/
+    v20 = FoundationSize->ptr_4; /*0x5cc595*/
+    v21 = FoundationSize->ptr_8; /*0x5cc59c*/
     v8 = this->Capacity + v20; /*0x5cc5a6*/
-    v22 = FoundationSize[3]; /*0x5cc5a8*/
+    v22 = FoundationSize->u32_C; /*0x5cc5a8*/
     v9 = this->q038; /*0x5cc5ac*/
     v19 += MSOverlayAnim_field_0x04; /*0x5cc5b2*/
     v20 = v8; /*0x5cc5b6*/
@@ -28328,8 +28328,8 @@ int ScenarioClass::RenderAction(int a2) {
   v20 = v4; /*0x63537b*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*&v5->uniqueId)); /*0x635388*/
   v11[0] = *ScenarioClassActionCoords; /*0x63538f*/
-  v11[1] = ScenarioClassActionCoords[1]; /*0x635396*/
-  v11[2] = ScenarioClassActionCoords[2]; /*0x6353a1*/
+  v11[1] = ScenarioClassActionCoords->vtable2; /*0x635396*/
+  v11[2] = ScenarioClassActionCoords->vtable3; /*0x6353a1*/
   v7 = ToCoordPixel(&v10, v11); /*0x6353a9*/
   v8 = v7[1]; /*0x6353bc*/
   v13 = *v7 - 4; /*0x6353bf*/
@@ -29380,10 +29380,10 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
         v11 = ClipRectIntersection(v31, &v27, a2, 0, 0); /*0x654f4f*/
         v12 = *v11; /*0x654f56*/
         v27 = *v11; /*0x654f58*/
-        v13 = v11[1]; /*0x654f5c*/
+        v13 = v11->vtable2; /*0x654f5c*/
         v28 = v13; /*0x654f5f*/
-        v29 = v11[2]; /*0x654f66*/
-        v14 = v11[3]; /*0x654f6a*/
+        v29 = v11->vtable3; /*0x654f66*/
+        v14 = v11->vtable4; /*0x654f6a*/
         v30 = v14; /*0x654f6f*/
         if ( v29 > 0 && v14 > 0 ) /*0x654f7b*/
         {
@@ -29393,7 +29393,7 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
           {
             v16 = (int)v25->RadarCellBuffer + 3 * v15; /*0x654fb4*/
             *(unsigned short *)v16 = v23; /*0x654fbb*/
-            *(unsigned char *)(v16 + 2) = v24; /*0x654fc2*/
+            v16->u32_2 = v24; /*0x654fc2*/
           }
           else
           {
@@ -29413,7 +29413,7 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
               *(unsigned short *)v17 = v23; /*0x65501c*/
               v18 = v24; /*0x65501f*/
             }
-            *(unsigned char *)(v17 + 2) = v18; /*0x655023*/
+            v17->u32_2 = v18; /*0x655023*/
           }
         }
       }
@@ -29822,10 +29822,10 @@ void CellClass::RevealFogRect(void* a1) {
   v10 = v10; /*0x656633*/
   v11 = ClipRectIntersection(v30, &v26, &v21, 0, 0); /*0x656637*/
   v26 = *v11; /*0x65663e*/
-  v27 = v11[1]; /*0x656645*/
-  v28 = v11[2]; /*0x65664c*/
+  v27 = v11->vtable2; /*0x656645*/
+  v28 = v11->vtable3; /*0x65664c*/
   v12 = this->u32_121C; /*0x656650*/
-  v29 = v11[3]; /*0x656659*/
+  v29 = v11->vtable4; /*0x656659*/
   v13 = (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 124))(v12); /*0x656668*/
   v14 = this->u32_121C->vt_slot_128(); /*0x65666c*/
   v28 = v28; /*0x656672*/
@@ -31982,7 +31982,7 @@ void* FileSystem::findFile() {
     {
       v9 = 0; /*0x627258*/
     }
-    v10 = v5[2]; /*0x62725a*/
+    v10 = v5->Capacity; /*0x62725a*/
     *v5 = v9; /*0x62725d*/
     v11 = 0; /*0x62725f*/
     if ( v10 > 0 ) /*0x627264*/
@@ -31994,7 +31994,7 @@ void* FileSystem::findFile() {
         *(unsigned int *)(*v5 + v12 + 20) = 10; /*0x62726b*/
         v12 += 24; /*0x627276*/
       }
-      while ( v11 < v5[2] ); /*0x62727b*/
+      while ( v11 < v5->Capacity ); /*0x62727b*/
     }
     *(unsigned int *)&v1[12] = v5; /*0x62727d*/
     return v1; /*0x627280*/
@@ -32492,8 +32492,8 @@ int ScenarioClass::RenderAction(int a2) {
   v20 = v4; /*0x63537b*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*&v5->uniqueId)); /*0x635388*/
   v11[0] = *ScenarioClassActionCoords; /*0x63538f*/
-  v11[1] = ScenarioClassActionCoords[1]; /*0x635396*/
-  v11[2] = ScenarioClassActionCoords[2]; /*0x6353a1*/
+  v11[1] = ScenarioClassActionCoords->vtable2; /*0x635396*/
+  v11[2] = ScenarioClassActionCoords->vtable3; /*0x6353a1*/
   v7 = ToCoordPixel(&v10, v11); /*0x6353a9*/
   v8 = v7[1]; /*0x6353bc*/
   v13 = *v7 - 4; /*0x6353bf*/
@@ -33543,10 +33543,10 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
         v11 = ClipRectIntersection(v31, &v27, a2, 0, 0); /*0x654f4f*/
         v12 = *v11; /*0x654f56*/
         v27 = *v11; /*0x654f58*/
-        v13 = v11[1]; /*0x654f5c*/
+        v13 = v11->vtable2; /*0x654f5c*/
         v28 = v13; /*0x654f5f*/
-        v29 = v11[2]; /*0x654f66*/
-        v14 = v11[3]; /*0x654f6a*/
+        v29 = v11->vtable3; /*0x654f66*/
+        v14 = v11->vtable4; /*0x654f6a*/
         v30 = v14; /*0x654f6f*/
         if ( v29 > 0 && v14 > 0 ) /*0x654f7b*/
         {
@@ -33556,7 +33556,7 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
           {
             v16 = (int)v25->RadarCellBuffer + 3 * v15; /*0x654fb4*/
             *(unsigned short *)v16 = v23; /*0x654fbb*/
-            *(unsigned char *)(v16 + 2) = v24; /*0x654fc2*/
+            v16->u32_2 = v24; /*0x654fc2*/
           }
           else
           {
@@ -33576,7 +33576,7 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
               *(unsigned short *)v17 = v23; /*0x65501c*/
               v18 = v24; /*0x65501f*/
             }
-            *(unsigned char *)(v17 + 2) = v18; /*0x655023*/
+            v17->u32_2 = v18; /*0x655023*/
           }
         }
       }
@@ -33988,10 +33988,10 @@ void CellClass::RevealFogRect(void* a1) {
   v10 = v10; /*0x656633*/
   v11 = ClipRectIntersection(v30, &v26, &v21, 0, 0); /*0x656637*/
   v26 = *v11; /*0x65663e*/
-  v27 = v11[1]; /*0x656645*/
-  v28 = v11[2]; /*0x65664c*/
+  v27 = v11->vtable2; /*0x656645*/
+  v28 = v11->vtable3; /*0x65664c*/
   v12 = this->u32_121C; /*0x656650*/
-  v29 = v11[3]; /*0x656659*/
+  v29 = v11->vtable4; /*0x656659*/
   v13 = (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 124))(v12); /*0x656668*/
   v14 = this->u32_121C->vt_slot_128(); /*0x65666c*/
   v28 = v28; /*0x656672*/
@@ -34998,8 +34998,8 @@ int ScenarioClass::RenderAction(int a2) {
   v20 = v4; /*0x63537b*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*&v5->uniqueId)); /*0x635388*/
   v11[0] = *ScenarioClassActionCoords; /*0x63538f*/
-  v11[1] = ScenarioClassActionCoords[1]; /*0x635396*/
-  v11[2] = ScenarioClassActionCoords[2]; /*0x6353a1*/
+  v11[1] = ScenarioClassActionCoords->vtable2; /*0x635396*/
+  v11[2] = ScenarioClassActionCoords->vtable3; /*0x6353a1*/
   v7 = ToCoordPixel(&v10, v11); /*0x6353a9*/
   v8 = v7[1]; /*0x6353bc*/
   v13 = *v7 - 4; /*0x6353bf*/
@@ -36051,10 +36051,10 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
         v11 = ClipRectIntersection(v31, &v27, a2, 0, 0); /*0x654f4f*/
         v12 = *v11; /*0x654f56*/
         v27 = *v11; /*0x654f58*/
-        v13 = v11[1]; /*0x654f5c*/
+        v13 = v11->vtable2; /*0x654f5c*/
         v28 = v13; /*0x654f5f*/
-        v29 = v11[2]; /*0x654f66*/
-        v14 = v11[3]; /*0x654f6a*/
+        v29 = v11->vtable3; /*0x654f66*/
+        v14 = v11->vtable4; /*0x654f6a*/
         v30 = v14; /*0x654f6f*/
         if ( v29 > 0 && v14 > 0 ) /*0x654f7b*/
         {
@@ -36064,7 +36064,7 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
           {
             v16 = (int)v25->RadarCellBuffer + 3 * v15; /*0x654fb4*/
             *(unsigned short *)v16 = v23; /*0x654fbb*/
-            *(unsigned char *)(v16 + 2) = v24; /*0x654fc2*/
+            v16->u32_2 = v24; /*0x654fc2*/
           }
           else
           {
@@ -36084,7 +36084,7 @@ int RadarClass::UpdateBlips(int a1, void* a2) {
               *(unsigned short *)v17 = v23; /*0x65501c*/
               v18 = v24; /*0x65501f*/
             }
-            *(unsigned char *)(v17 + 2) = v18; /*0x655023*/
+            v17->u32_2 = v18; /*0x655023*/
           }
         }
       }
@@ -36496,10 +36496,10 @@ void CellClass::RevealFogRect(void* a1) {
   v10 = v10; /*0x656633*/
   v11 = ClipRectIntersection(v30, &v26, &v21, 0, 0); /*0x656637*/
   v26 = *v11; /*0x65663e*/
-  v27 = v11[1]; /*0x656645*/
-  v28 = v11[2]; /*0x65664c*/
+  v27 = v11->vtable2; /*0x656645*/
+  v28 = v11->vtable3; /*0x65664c*/
   v12 = this->RadarSurfaceAlt; /*0x656650*/
-  v29 = v11[3]; /*0x656659*/
+  v29 = v11->vtable4; /*0x656659*/
   v13 = (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 124))(v12); /*0x656668*/
   v14 = this->RadarSurfaceAlt->LoadMapData(); /*0x65666c*/
   v28 = v28; /*0x656672*/
@@ -38500,8 +38500,8 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     {
       *(unsigned int *)v24 = *(void **)((char *)&dword_A8B230[44].vfptr + 4 * v13 + 2); /*0x68aff3*/
       v15 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v24); /*0x68b000*/
-      v16 = (*(int (__thiscall **)(void *))(*(unsigned int *)v15 + 72))(v15); /*0x68b011*/
-      v17 = (int *)(*(int (__thiscall **)(void *, char *, unsigned int))(*(unsigned int *)v15 + 72))(v15, v31, *(unsigned int *)(v16 + 4)); /*0x68b021*/
+      v16 = v15->vt_slot_72(); /*0x68b011*/
+      v17 = (int *)v15->vt_slot_72(v31, *(unsigned int *)(v16 + 4)); /*0x68b021*/
       IsoCoord::ToScreenOffset(*v17, (int)v30, &v25, &v23); /*0x68b02d*/
       v26[0] = v25 / 60; /*0x68b061*/
       v26[1] = v23 / 30; /*0x68b06a*/
@@ -38804,7 +38804,7 @@ int ScenarioClass::ReadWaypoints(int a1) {
         || ((*((unsigned short *)&(Int_Overwrite))) = waypoints[1], (unsigned short)Int_Overwrite != (*(((unsigned short *)&(dword_B05458)) + 1))) )
       {
         v7 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, waypoints); /*0x68be60*/
-        v8 = v7[80]; /*0x68be65*/
+        v8 = v7->u32_140; /*0x68be65*/
         Int_Overwrite = (signed int)(v7 + 80); /*0x68be6b*/
         *(unsigned int *)Int_Overwrite = v8 | 4; /*0x68be73*/
       }
@@ -39528,7 +39528,7 @@ int ScenarioClass::CheckExists(int a2) {
   if ( a2 == -2 ) /*0x69ac3d*/
   {
     v2 = RawFileClass::Construct(&v9, (int)&this->nextScenario[22]); /*0x69ac47*/
-    v3 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v2 + 20))(v2, 0); /*0x69ac59*/
+    v3 = v2->Open_1(0); /*0x69ac59*/
     result = RawFileClass::Dtor(&v9); /*0x69ac5b*/
     (*((unsigned char *)&(result))) = v3; /*0x69ac61*/
     return result; /*0x69ac68*/
@@ -39862,7 +39862,7 @@ int FactoryClass::PlaceExitUnits() {
       if ( (((unsigned int)(unsigned short)(v12)) | ((unsigned int)(unsigned short)(v22) << 16)) != dword_B0B5B8 ) /*0x6b059b*/
       {
         v13 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v25); /*0x6b05b9*/
-        v14 = (int *)(*(int (__thiscall **)(void *, char *))(*(unsigned int *)v13 + 72))(v13, v31); /*0x6b05c7*/
+        v14 = (int *)v13->vt_slot_72(v31); /*0x6b05c7*/
         v28 = *v14; /*0x6b05ce*/
         v29 = v14[1]; /*0x6b05d5*/
         v30 = v14[2]; /*0x6b05eb*/
@@ -40196,16 +40196,16 @@ int TacticalClass::ClickFindBuilding(void* a1, void* a2, int a3) {
       v20 += (int)DSurface_ViewBounds.field_4; /*0x6d39e7*/
       v10 = ClipRectIntersection(&v23, &DSurface_ViewBounds.field_0, &v19, 0, 0); /*0x6d39eb*/
       v19 = *v10; /*0x6d39f4*/
-      v20 = v10[1]; /*0x6d39fb*/
-      v21 = v10[2]; /*0x6d3a02*/
-      v11 = v10[3]; /*0x6d3a06*/
+      v20 = v10->vtable2; /*0x6d39fb*/
+      v21 = v10->vtable3; /*0x6d3a02*/
+      v11 = v10->vtable4; /*0x6d3a06*/
       v22 = v11; /*0x6d3a0b*/
       if ( v21 > 0 && v11 > 0 ) /*0x6d3a13*/
       {
-        v12 = v10[1]; /*0x6d3a17*/
+        v12 = v10->vtable2; /*0x6d3a17*/
         v27 = *v10; /*0x6d3a1a*/
-        v13 = v10[2]; /*0x6d3a1e*/
-        v14 = v10[3]; /*0x6d3a21*/
+        v13 = v10->vtable3; /*0x6d3a1e*/
+        v14 = v10->vtable4; /*0x6d3a21*/
         v28 = (char *)v12; /*0x6d3a24*/
         v29 = v13; /*0x6d3a28*/
         v30 = v14; /*0x6d3a3a*/
@@ -40299,16 +40299,16 @@ int TacticalClass::ClickFindOverlay(void* a1, void* a2, int a3) {
       v20 += (int)DSurface_ViewBounds.field_4; /*0x6d3c37*/
       v10 = ClipRectIntersection(&v23, &DSurface_ViewBounds.field_0, &v19, 0, 0); /*0x6d3c3b*/
       v19 = *v10; /*0x6d3c44*/
-      v20 = v10[1]; /*0x6d3c4b*/
-      v21 = v10[2]; /*0x6d3c52*/
-      v11 = v10[3]; /*0x6d3c56*/
+      v20 = v10->vtable2; /*0x6d3c4b*/
+      v21 = v10->vtable3; /*0x6d3c52*/
+      v11 = v10->vtable4; /*0x6d3c56*/
       v22 = v11; /*0x6d3c5b*/
       if ( v21 > 0 && v11 > 0 ) /*0x6d3c63*/
       {
-        v12 = v10[1]; /*0x6d3c67*/
+        v12 = v10->vtable2; /*0x6d3c67*/
         v27 = *v10; /*0x6d3c6a*/
-        v13 = v10[2]; /*0x6d3c6e*/
-        v14 = v10[3]; /*0x6d3c71*/
+        v13 = v10->vtable3; /*0x6d3c6e*/
+        v14 = v10->vtable4; /*0x6d3c71*/
         v28 = (char *)v12; /*0x6d3c74*/
         v29 = v13; /*0x6d3c78*/
         v30 = v14; /*0x6d3c8a*/
@@ -40654,7 +40654,7 @@ int RadarClass::DrawBlip(int a1, int a2) {
         {
           if ( *(unsigned char *)(v11[328] + 5824) ) /*0x6d5a5c*/
           {
-            result = House::IsHumanPlayer((House *)v11[135]); /*0x6d5a6c*/
+            result = House::IsHumanPlayer(v11->u32_21C); /*0x6d5a6c*/
             if ( (unsigned char)result ) /*0x6d5a73*/
               break; /*0x6d5a73*/
           }
@@ -41042,7 +41042,7 @@ void* FactoryClass::CompleteItem() {
       result = *&this->balance; /*0x71ac76*/
       if ( result ) /*0x71ac7b*/
       {
-        result[17] = *&this->q044; /*0x71ac80*/
+        result->u32_44 = *&this->q044; /*0x71ac80*/
         this->production[1] = 0; /*0x71ac83*/
         *&this->q044 = 0; /*0x71ac86*/
         *&this->balance = 0; /*0x71ac89*/
@@ -41053,7 +41053,7 @@ void* FactoryClass::CompleteItem() {
     }
     else
     {
-      result[17] = 0; /*0x71ac95*/
+      result->u32_44 = 0; /*0x71ac95*/
     }
     goto LABEL_14; /*0x71ac7b*/
   }
@@ -41061,9 +41061,9 @@ void* FactoryClass::CompleteItem() {
   if ( v3 ) /*0x71abd9*/
   {
     if ( result ) /*0x71abdd*/
-      result[158] = v3; /*0x71abdf*/
+      result->temporalTargetingMe = v3; /*0x71abdf*/
     result = *&this->q044; /*0x71abe5*/
-    result[16] = 0; /*0x71abe8*/
+    result->q040 = 0; /*0x71abe8*/
     *(unsigned int *)(*&this->field44 + 72) = *&this->field48; /*0x71abf1*/
     this->production[1] = 0; /*0x71abf4*/
     *&this->field44 = 0; /*0x71abf7*/
@@ -41082,7 +41082,7 @@ void* FactoryClass::CompleteItem() {
     this->queuedCapacity = 0; /*0x71aca4*/
     return result; /*0x71aca4*/
   }
-  result[158] = 0; /*0x71ac0e*/
+  result->temporalTargetingMe = 0; /*0x71ac0e*/
   *(unsigned char *)(this->production[1] + 624) = 0; /*0x71ac17*/
   if ( this->vt_slot_44(this->production[1]) == 6 ) /*0x71ac28*/
   {
@@ -41896,7 +41896,7 @@ LABEL_90:
         return 10; /*0x73d73c*/
       *(float *)v111 = *(float *)(*(int (**)(Class_7F5C70 *, char *))(*(unsigned int *)_ESI + 440))(_ESI, v113); /*0x73d752*/
       v12 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v111); /*0x73d75c*/
-      if ( !*(unsigned int *)&_ESI[1444] && v12[59] == 2 ) /*0x73d770*/
+      if ( !*(unsigned int *)&_ESI[1444] && v12->u32_EC == 2 ) /*0x73d770*/
       {
         v13 = *(unsigned int *)_ESI; /*0x73d786*/
         v106 = 0; /*0x73d795*/
@@ -42034,7 +42034,7 @@ LABEL_41:
   {
     v110[0] = 0; /*0x73daac*/
     v110[1] = 0; /*0x73dab1*/
-    v38 = (*(int (**)(unsigned int *, int))(*v21 + 132))(v21, -1); /*0x73dabe*/
+    v38 = v21->Vt34Thunk(-1); /*0x73dabe*/
     *(float *)v105 = *(float *)LayerClass::Pathfinding_Find( /*0x73dae8*/
                                  (Type *)&dword_87F7E8,
                                  (int)v105,
@@ -42062,10 +42062,8 @@ LABEL_41:
   }
   v112[0] = (unsigned short)v24 << 13; /*0x73db48*/
   v120 = v37; /*0x73db60*/
-  v42 = (*(int (**)(unsigned int *, int *, unsigned int))(*v21 + 216))( /*0x73db6a*/
-          v21,
-          &v118,
-          (unsigned __int8)((unsigned int)((*(unsigned int *)v112 >> 7) + 1) >> 1));
+  v42 = v21->FinishDeploy(/*0x73db6a*/
+          v21, &v118, (unsigned __int8)((unsigned int)((*(unsigned int *)v112 >> 7) + 1) >> 1));
   --dword_A8E7AC; /*0x73db79*/
   if ( !v42 ) /*0x73db7f*/
   {
@@ -42073,13 +42071,13 @@ LABEL_63:
     CellClass::AddObject((CellClass *)&_ESI[276], v21); /*0x73dc71*/
     if ( *(unsigned char *)((*(int (**)(Class_7F5C70 *))(*(unsigned int *)_ESI + 132))(_ESI) + 2053) ) /*0x73dc87*/
       (*(void (**)(Class_7F5C70 *, unsigned int *))(*(unsigned int *)_ESI + 1236))(_ESI, v21); /*0x73dc96*/
-    (*(void (**)(unsigned int *))(*v21 + 284))(v21); /*0x73dca0*/
+    v21->CheckPlayerOwned(); /*0x73dca0*/
     goto LABEL_150; /*0x73dca6*/
   }
   if ( *(unsigned char *)(*(unsigned int *)&_ESI[1732] + 1508) ) /*0x73db8b*/
     TechnoClass::ExitedOpenTopped((int)v21); /*0x73db98*/
   if ( *(unsigned char *)(*(unsigned int *)&_ESI[1732] + 1508) && *(unsigned int *)&_ESI[540] != v21[135] ) /*0x73dbbb*/
-    (*(void (**)(unsigned int *, unsigned int))(*v21 + 968))(v21, 0); /*0x73dbc3*/
+    v21->AssignTarget_SyncLog(0); /*0x73dbc3*/
   v43 = *v21; /*0x73dbc9*/
   v21[71] = 0; /*0x73dbd1*/
   (*(void (**)(unsigned int *, int, unsigned int, TechnoClass *))(v43 + 488))(v21, 2, 0, v100); /*0x73dbdb*/

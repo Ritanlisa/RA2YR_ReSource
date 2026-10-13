@@ -169,7 +169,7 @@ LABEL_61:
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
-  v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
+  v16 = v15->vt_slot_20(0, a2); /*0x47953f*/
   v24.? = (int)&CCFileClass::`vftable'; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/

@@ -1702,10 +1702,10 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   this->M8 = &TaskForceClass::`vftable'; /*0x6e808b*/
   this->? = &TaskForceClass::`vftable'; /*0x6e8092*/
   v3 = &this->location[2]; /*0x6e809f*/
-  result[38] = *(unsigned int *)(a2 + 152); /*0x6e80a5*/
-  result[39] = *(unsigned int *)(a2 + 156); /*0x6e80b1*/
-  v4 = result[39]; /*0x6e80bd*/
-  result[40] = *(unsigned int *)(a2 + 160); /*0x6e80c3*/
+  result->q098 = *(unsigned int *)(a2 + 152); /*0x6e80a5*/
+  result->Coord_9C = *(unsigned int *)(a2 + 156); /*0x6e80b1*/
+  v4 = result->Coord_9C; /*0x6e80bd*/
+  result->q0A0 = *(unsigned int *)(a2 + 160); /*0x6e80c3*/
   v5 = 0; /*0x6e80c9*/
   if ( v4 > 0 ) /*0x6e80cd*/
   {
@@ -1717,7 +1717,7 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
       v3[1] = *(int *)((char *)v3 + v6 + 4); /*0x6e80db*/
       v3 += 2; /*0x6e80e4*/
     }
-    while ( v5 < result[39] ); /*0x6e80e9*/
+    while ( v5 < result->Coord_9C ); /*0x6e80e9*/
   }
   return result; /*0x6e80eb*/
 

@@ -580,8 +580,8 @@ int AircraftClass::Mission_Retreat()
         v47 = a2; /*0x416817*/
         v19 = Coord::Subtract((Coord *)v50, v36, v37, 0); /*0x41681b*/
         v46[0] = *v19; /*0x416822*/
-        v46[1] = v19[1]; /*0x416829*/
-        v47 = v19[2]; /*0x416834*/
+        v46[1] = v19->u32_4; /*0x416829*/
+        v47 = v19->u32_8; /*0x416834*/
         if ( (int)Coord::Length((Coord *)v46) < 256 ) /*0x416847*/
         {
   LABEL_15:
@@ -706,32 +706,32 @@ int AircraftClass::Mission_Retreat()
 
   v3 = v2; /*0x419c85*/
   if ( (*(int (**)(void))(*v2 + 456))()
-    || !*(unsigned char *)(v3[433] + 3597)
-    || !v3[361]
+    || !v3->Type->AirportBound_2
+    || !v3->movementDestination
     || (v4 = v3->movementDestination, v5 = (Cell *)v3->GetCellCoords(), v4 == Cell::IsBridge(v5)) )
   {
     if ( v3->GetZAboveGround() > 0 )
     {
-      v9 = v3[361]; /*0x419d19*/
-      if ( v3[435] != v9 && v9 && (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 44))(v9) == 6 )
+      v9 = v3->movementDestination; /*0x419d19*/
+      if ( v3->AircraftClass_field_6CC != v9 && v9 && (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 44))(v9) == 6 )
       {
-        v10 = v3[361]; /*0x419d37*/
+        v10 = v3->movementDestination; /*0x419d37*/
         if ( v10 )
-          v11 = (*(int (__thiscall **)(int))(*(unsigned int *)v10 + 44))(v3[361]) == 6 ? v10 : 0;
+          v11 = (*(int (__thiscall **)(int))(*(unsigned int *)v10 + 44))(v3->movementDestination) == 6 ? v10 : 0;
         else
           v11 = 0; /*0x419d41*/
-        v3[435] = v11; /*0x419d57*/
+        v3->AircraftClass_field_6CC = v11; /*0x419d57*/
       }
     }
-    if ( v3[361] /*0x419d86*/
+    if ( v3->movementDestination /*0x419d86*/
       || v3->ProcessDockCheck() == 2
       || v3->ThunkTo159x4(14) == 1
       || TechnoClass::PlaceAtCell((TechnoClass *)v3) )
     {
-      switch ( v3[47] ) /*0x419dbc*/
+      switch ( v3->missionStatus ) /*0x419dbc*/
       {
         case 0: /*0x419dbc*/
-          v3[47] = 6; /*0x419dc3*/
+          v3->missionStatus = 6; /*0x419dc3*/
           goto LABEL_24; /*0x419dc3*/
         case 1: /*0x419dbc*/
         case 2: /*0x419dbc*/
@@ -742,16 +742,16 @@ int AircraftClass::Mission_Retreat()
           v3->AircraftClass_field_bool_6D4 = 1; /*0x419dcd*/
           return 1; /*0x419ddf*/
         case 6: /*0x419dbc*/
-          if ( *(unsigned char *)(v3[433] + 3597) && v3->GetZAboveGround() ) /*0x419df4*/
+          if ( v3->Type->AirportBound_2 && v3->GetZAboveGround() ) /*0x419df4*/
             v3->ThunkTo159x4(14); /*0x419e04*/
           if ( (uint8_t)Team::AllMembersValid((Team *)v3) ) /*0x419e0c*/
           {
-            if ( !v3[413] ) /*0x419eaa*/
+            if ( !v3->locomotor ) /*0x419eaa*/
               sub_7DC720(-2147467261); /*0x419eb9*/
-            if ( (*(int (__stdcall **)(int))(*v3->locomotor + 144))(v3[413]) == 1 /*0x419ee6*/
-              || *(unsigned char *)(v3[433] + 3597) && !v3->GetZAboveGround() )
+            if ( (*(int (__stdcall **)(int))(*v3->locomotor + 144))(v3->locomotor) == 1 /*0x419ee6*/
+              || v3->Type->AirportBound_2 && !v3->GetZAboveGround() )
             {
-              v3[47] = 7; /*0x419ef0*/
+              v3->missionStatus = 7; /*0x419ef0*/
               v3->AircraftClass_field_bool_6D4 = 0; /*0x419ef6*/
             }
             result = 3; /*0x419eff*/
@@ -760,14 +760,14 @@ int AircraftClass::Mission_Retreat()
           {
             if ( !TechnoClass::PlaceAtCell((TechnoClass *)v3) ) /*0x419e1b*/
             {
-              if ( !v3[413] ) /*0x419e24*/
+              if ( !v3->locomotor ) /*0x419e24*/
                 sub_7DC720(-2147467261); /*0x419e33*/
-              if ( (*(int (__stdcall **)(int))(*v3->locomotor + 144))(v3[413]) == 1 ) /*0x419e4a*/
+              if ( (*(int (__stdcall **)(int))(*v3->locomotor + 144))(v3->locomotor) == 1 ) /*0x419e4a*/
               {
-                v3[47] = 7; /*0x419e4c*/
+                v3->missionStatus = 7; /*0x419e4c*/
                 v3->AircraftClass_field_bool_6D4 = 1; /*0x419e52*/
               }
-              if ( v3[45] == -1 ) /*0x419e5f*/
+              if ( v3->queuedMission == -1 ) /*0x419e5f*/
               {
                 v3->AssignDestination(0, 1); /*0x419e69*/
                 v3->ValidatePlacement(0, 1); /*0x419e77*/
@@ -781,21 +781,21 @@ int AircraftClass::Mission_Retreat()
           }
           break; /*0x419ea9*/
         case 7: /*0x419dbc*/
-          if ( !v3[413] ) /*0x419f09*/
+          if ( !v3->locomotor ) /*0x419f09*/
             sub_7DC720(-2147467261); /*0x419f18*/
-          if ( (*(int (__stdcall **)(int))(*v3->locomotor + 144))(v3[413]) == 1 ) /*0x419f2f*/
+          if ( (*(int (__stdcall **)(int))(*v3->locomotor + 144))(v3->locomotor) == 1 ) /*0x419f2f*/
           {
-            v12 = v3[361]; /*0x419f35*/
+            v12 = v3->movementDestination; /*0x419f35*/
             if ( v12 ) /*0x419f3d*/
             {
-              if ( (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 44))(v3[361]) == 6 ) /*0x419f4d*/
+              if ( (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 44))(v3->movementDestination) == 6 ) /*0x419f4d*/
                 v13 = (int *)(*(int (__thiscall **)(int, unsigned char *, int *))(*(unsigned int *)v12 + 168))(v12, v30, v3); /*0x419f59*/
               else
-                v13 = (int *)v3->movementDestination->GetCoords_0(v3[361], v31); /*0x419f6e*/
+                v13 = (int *)v3->movementDestination->GetCoords_0(v3->movementDestination, v31); /*0x419f6e*/
               v14 = *v13; /*0x419f71*/
               v15 = v13[1]; /*0x419f73*/
               v32 = v13[2]; /*0x419f79*/
-              v16 = v3[39]; /*0x419f85*/
+              v16 = v3->location; /*0x419f85*/
               v17 = v14 - v16; /*0x419f87*/
               v18 = v3[40]; /*0x419f89*/
               v19 = v15 - v18; /*0x419f8c*/
@@ -822,7 +822,7 @@ int AircraftClass::Mission_Retreat()
               v21 = *v3; /*0x419fcd*/
               v29[0] = v17 + v16; /*0x419fcf*/
               v29[1] = v20; /*0x419fda*/
-              (*(void (__thiscall **)(int *, unsigned int *))(v21 + 436))(v3, v29); /*0x419fde*/
+              v21->SetPosition(v3, v29); /*0x419fde*/
             }
             v3->AircraftClass_field_bool_6D4 = 1; /*0x419fe4*/
             return 1; /*0x419fed*/
@@ -831,7 +831,7 @@ int AircraftClass::Mission_Retreat()
           {
             v22 = *v3; /*0x419ff7*/
             v3->AircraftClass_field_bool_6D4 = 1; /*0x419ffd*/
-            v23 = (*(int (__thiscall **)(int *, int))(v22 + 628))(v3, 21) - 1; /*0x41a00a*/
+            v23 = v22->ThunkTo159x4(v3, 21) - 1; /*0x41a00a*/
             if ( v23 ) /*0x41a00b*/
             {
               if ( v23 == 4 ) /*0x41a010*/
@@ -846,7 +846,7 @@ int AircraftClass::Mission_Retreat()
               }
               return 1; /*0x41a022*/
             }
-            else if ( *(unsigned char *)(v3[433] + 3580) && v3[70] ) /*0x41a06d*/
+            else if ( v3->Type->Carryall_d && v3->q118 ) /*0x41a06d*/
             {
               v25 = Team::GetMember((Team *)v3, 0); /*0x41a08b*/
               v26 = (unsigned int *)LinkedList::Pop((LinkedList *)v3 + 23); /*0x41a09a*/
@@ -862,7 +862,7 @@ int AircraftClass::Mission_Retreat()
               {
                 v27 = *v3; /*0x41a0f6*/
                 ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((TechnoClass *)v3); /*0x41a0fc*/
-                (*(void (__thiscall **)(int *, void *))(v27 + 1152))(v3, ClosestPlacementCell); /*0x41a104*/
+                v27->Stub(v3, ClosestPlacementCell); /*0x41a104*/
               }
               v3->ProcessLanding(2, 0); /*0x41a0e3*/
               return 1; /*0x41a0ec*/
@@ -890,8 +890,8 @@ int AircraftClass::Mission_Retreat()
     else
       v6 = 0; /*0x419cc9*/
     v7 = *v3; /*0x419cdf*/
-    v3[435] = (int)v6; /*0x419ce5*/
-    (*(void (__thiscall **)(int *, int))(v7 + 628))(v3, 3); /*0x419ceb*/
+    v3->AircraftClass_field_6CC = (int)v6; /*0x419ce5*/
+    v7->ThunkTo159x4(v3, 3); /*0x419ceb*/
     v3->ProcessLanding(2, 1); /*0x419cf9*/
     return 1; /*0x419d01*/
   }
@@ -956,7 +956,7 @@ int AircraftClass::Mission_Retreat()
           if ( (*((int (__thiscall **)(AircraftClass *, int, void **, unsigned int *))this->vfptr + 159))(this, 18, a4, a2) == 1 ) /*0x419431*/
           {
             Member = Team::GetMember((Team *)this, 0); /*0x419450*/
-            (*(void (__thiscall **)(int))(*(unsigned int *)Member + 336))(Member); /*0x419459*/
+            Member->Remove(); /*0x419459*/
             return 1; /*0x41945f*/
           }
           else
@@ -1524,7 +1524,7 @@ int AircraftClass::CheckReloadTimer()
     if ( (uint8_t)Team::AllMembersValid((Team *)A92B) ) /*0x41a70a*/
     {
       Member = Team::GetMember((Team *)A92B, 0); /*0x41a71b*/
-      if ( (*(int (__thiscall **)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x41a72a*/
+      if ( Member->ReturnZeroPos() == 6 ) /*0x41a72a*/
       {
         if ( *(unsigned char *)(*(unsigned int *)(Team::GetMember((Team *)A92B, 0) + 1312) + 5802) ) /*0x41a73f*/
           return 1; /*0x41a74e*/

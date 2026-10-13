@@ -365,7 +365,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   CurrentOption = (int16_t *)HouseClass::GetCurrentOption((HouseClass *)ppv,(unsigned int *)(&a2)); /*0x5cab91*/
   if ( FindInfantryDeployPosition(v7,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
-  (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5caba9*/
+  v7->ScalarDtor_0(1); /*0x5caba9*/
   return 0; /*0x5cab08*/
 }
 } // namespace gamemd

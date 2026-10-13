@@ -129,7 +129,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237ee) */
   *((unsigned int *)this + 2) = &InfantryTypeClass::`vftable'; /*0x5237f4*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237fb) */
-  AbstractClass::GenerateUniqueID((char *)this + 4); /*0x523802*/
+  AbstractClass::GenerateUniqueID(&this->vtable2); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
     || (byte_A8E355 || !dword_A8E350)
@@ -162,41 +162,41 @@ LABEL_11:
         goto LABEL_11; /*0x523872*/
     }
   }
-  *((unsigned int *)this + 894) = v5; /*0x52387e*/
-  *((unsigned int *)this + 898) = 0; /*0x523886*/
-  *((unsigned int *)this + 897) = 0; /*0x523890*/
-  *((unsigned int *)this + 899) = 0; /*0x523896*/
-  *((unsigned int *)this + 901) = 0; /*0x523899*/
-  *((unsigned int *)this + 902) = 0; /*0x52389f*/
-  *((unsigned char *)this + 3612) = 0; /*0x5238a5*/
-  *((unsigned int *)this + 900) = 0; /*0x5238ab*/
-  *((unsigned int *)this + 904) = 0; /*0x5238b4*/
-  *((unsigned int *)this + 908) = 0; /*0x5238ba*/
-  *((unsigned int *)this + 905) = 0; /*0x5238c0*/
-  *((unsigned int *)this + 909) = 0; /*0x5238c3*/
-  *((unsigned char *)this + 3640) = 0; /*0x5238c9*/
-  *((unsigned int *)this + 454) = 8; /*0x5238cf*/
-  *((unsigned int *)this + 906) = 0; /*0x5238d9*/
-  *((unsigned char *)this + 3227) = 0; /*0x5238dc*/
-  *((unsigned char *)this + 557) = 1; /*0x5238e2*/
-  *((unsigned char *)this + 3276) = 0; /*0x5238e9*/
-  *((unsigned int *)this + 907) = 0; /*0x5238ef*/
-  *((unsigned char *)this + 3277) = 0; /*0x5238f2*/
-  *((unsigned char *)this + 3381) = 0; /*0x5238f8*/
-  *((unsigned char *)this + 3382) = 0; /*0x5238fe*/
-  *((unsigned char *)this + 3387) = 0; /*0x523904*/
-  *((unsigned char *)this + 3384) = 1; /*0x52390a*/
-  *((unsigned char *)this + 3479) = 1; /*0x523911*/
-  *((unsigned char *)this + 3478) = 0; /*0x523918*/
-  *((unsigned char *)this + 3374) = 0; /*0x52391e*/
-  *((unsigned int *)this + 911) = __2_YAPAXI_Z(0x5E8u); /*0x52392c*/
-  for ( i = 0; i < 1512; *(unsigned int *)(i + *((unsigned int *)this + 911) - 20) = 0 ) /*0x523932*/
+  this->ArrayIndex = v5; /*0x52387e*/
+  this->u32_E08 = 0; /*0x523886*/
+  this->OccupyWeapon_d = 0; /*0x523890*/
+  this->u32_E0C = 0; /*0x523896*/
+  this->u32_E14 = 0; /*0x523899*/
+  this->u32_E18 = 0; /*0x52389f*/
+  this->u32_E1C = 0; /*0x5238a5*/
+  this->qE10 = 0; /*0x5238ab*/
+  this->EliteOccupyWeapon = 0; /*0x5238b4*/
+  this->qE30 = 0; /*0x5238ba*/
+  this->u32_E24 = 0; /*0x5238c0*/
+  this->u32_E34 = 0; /*0x5238c3*/
+  this->u32_E38 = 0; /*0x5238c9*/
+  this->RotCount = 8; /*0x5238cf*/
+  this->u32_E28 = 0; /*0x5238d9*/
+  this->RadarVisible = 0; /*0x5238dc*/
+  this->Crushable_d = 1; /*0x5238e2*/
+  this->Repairable = 0; /*0x5238e9*/
+  this->u32_E2C = 0; /*0x5238ef*/
+  this->Crewed = 0; /*0x5238f2*/
+  this->u32_D35 = 0; /*0x5238f8*/
+  this->u32_D36 = 0; /*0x5238fe*/
+  this->u32_D3B = 0; /*0x523904*/
+  this->SpawnRegenRate = 1; /*0x52390a*/
+  this->DisableShadowCache = 1; /*0x523911*/
+  this->DisableVoxelCache = 0; /*0x523918*/
+  this->u32_D2E = 0; /*0x52391e*/
+  this->RecordTable = __2_YAPAXI_Z(0x5E8u); /*0x52392c*/
+  for ( i = 0; i < 1512; *(unsigned int *)(i + this->RecordTable - 20) = 0 ) /*0x523932*/
   {
     i += 36; /*0x52393a*/
-    *(unsigned int *)(i + *((unsigned int *)this + 911) - 36) = 0; /*0x523942*/
-    *(unsigned int *)(i + *((unsigned int *)this + 911) - 32) = 0; /*0x52394c*/
-    *(unsigned int *)(i + *((unsigned int *)this + 911) - 28) = 0; /*0x523956*/
-    *(unsigned int *)(i + *((unsigned int *)this + 911) - 24) = -1; /*0x523960*/
+    *(unsigned int *)(i + this->RecordTable - 36) = 0; /*0x523942*/
+    *(unsigned int *)(i + this->RecordTable - 32) = 0; /*0x52394c*/
+    *(unsigned int *)(i + this->RecordTable - 28) = 0; /*0x523956*/
+    *(unsigned int *)(i + this->RecordTable - 24) = -1; /*0x523960*/
   }
   return this; /*0x523972*/
 
@@ -213,7 +213,7 @@ unsigned int * InfantryTypeClass::Constructor_523980(int aP1)
   this->VoiceComment[0] = (int)&TypeList<int>::`vftable'; /*0x52399e*/
   this->TechnoTypeClass = &InfantryTypeClass::`vftable'; /*0x5239a8*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239ae) */
-  this->? = &InfantryTypeClass::`vftable'; /*0x5239b5*/
+  this->vtable3 = &InfantryTypeClass::`vftable'; /*0x5239b5*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239bc) */
   return &this->TechnoTypeClass; /*0x5239c5*/
 
@@ -249,9 +249,9 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x523bb9*/
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
-      v10 = v9[1]; /*0x523bd5*/
+      v10 = v9->vtable2; /*0x523bd5*/
       v14[1] = v10; /*0x523bd9*/
-      v11 = v9[2]; /*0x523bdd*/
+      v11 = v9->vtable3; /*0x523bdd*/
       v14[2] = v11; /*0x523be0*/
       if ( v14[0] != *(unsigned int *)&stru_A8EB00.?[1692] /*0x523bf4*/
         || v10 != *(unsigned int *)&DataGlobal_A8F1A0
@@ -841,15 +841,15 @@ unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1)
   if ( this == (InfantryTypeClass *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
   (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
-  v3 = aP1->u32_8; /*0x524f31*/
+  v3 = aP1->Capacity; /*0x524f31*/
   this->vtable3 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
     this->vtable2 = 0; /*0x524f86*/
     BYTE1(this->u8_D) = 0; /*0x524f8d*/
 LABEL_8:
-    this->uniqueId = aP1[4]; /*0x524f91*/
-    this->abstractFlags = aP1[5]; /*0x524f9a*/
+    this->uniqueId = aP1->q010; /*0x524f91*/
+    this->abstractFlags = aP1->u32_14; /*0x524f9a*/
     return &this->TechnoTypeClass; /*0x524f9d*/
   }
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x524f43*/
@@ -867,8 +867,8 @@ LABEL_8:
     ++v6; /*0x524f6e*/
   }
   while ( v6 < (int)this->vtable3 ); /*0x524f71*/
-  this->uniqueId = aP1[4]; /*0x524f76*/
-  this->abstractFlags = aP1[5]; /*0x524f7c*/
+  this->uniqueId = aP1->q010; /*0x524f76*/
+  this->abstractFlags = aP1->u32_14; /*0x524f7c*/
   return &this->TechnoTypeClass; /*0x524f81*/
 
 }

@@ -226,7 +226,7 @@ int MPCooperative::WriteCoopSaveINI()
         v3 = v4 + 1; /*0x49bf0d*/
         g_IsWindowed[v3] = EncodeDigitHex(*v1 & 0xF); /*0x49bf13*/
       }
-      v7 = v1[1]; /*0x49bf23*/
+      v7 = v1->u32_1; /*0x49bf23*/
       ++v3; /*0x49bf26*/
       ++v1; /*0x49bf27*/
     }
@@ -517,11 +517,8 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     }
   }
   v18 = *&this->q32C; /*0x5c1598*/
-    (*(void (**)(int *))(*p_MPCooperative_field_0x324 + 12))(&this->q324);
-    (*(void (**)(int *, int, unsigned int))(*p_MPCooperative_field_0x324 + 8))(
-    &this->q324,
-    v18,
-    0);
+    p_MPCooperative_field_0x324->Cleanup5(&this->q324);
+    p_MPCooperative_field_0x324->Release(&this->q324, v18, 0);
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&aP4)); /*0x5c15b3*/
   for ( aP6 = 0; (int)aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
@@ -629,11 +626,11 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     if ( v13 && p_MultiplayerGameMode_field_0x14->IsAllocated ) /*0x5c1723*/
     {
       operator delete((void *)(v13)); /*0x5c1729*/
-      p_MultiplayerGameMode_field_0x14[1] = 0; /*0x5c1731*/
+      p_MultiplayerGameMode_field_0x14->Items = 0; /*0x5c1731*/
     }
     --v12; /*0x5c1734*/
     p_MultiplayerGameMode_field_0x14->IsAllocated = 0; /*0x5c1735*/
-    p_MultiplayerGameMode_field_0x14[2] = 0; /*0x5c1738*/
+    p_MultiplayerGameMode_field_0x14->Capacity = 0; /*0x5c1738*/
   }
   while ( v12 ); /*0x5c173b*/
   p_MultiplayerGameMode_field_0x18 = &v3[21].MultiplayerGameMode_field_0x18; /*0x5c173d*/
@@ -646,11 +643,11 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     if ( v16 && p_MultiplayerGameMode_field_0x18->IsAllocated ) /*0x5c1758*/
     {
       operator delete((void *)(v16)); /*0x5c175e*/
-      p_MultiplayerGameMode_field_0x18[1] = 0; /*0x5c1766*/
+      p_MultiplayerGameMode_field_0x18->Items = 0; /*0x5c1766*/
     }
     --v15; /*0x5c1769*/
     p_MultiplayerGameMode_field_0x18->IsAllocated = 0; /*0x5c176a*/
-    p_MultiplayerGameMode_field_0x18[2] = 0; /*0x5c176d*/
+    p_MultiplayerGameMode_field_0x18->Capacity = 0; /*0x5c176d*/
   }
   while ( v15 ); /*0x5c1770*/
   v17 = v3->u32_C.MultiplayerGameMode_field_0x08; /*0x5c1772*/
@@ -710,24 +707,21 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
     else
       v9 = 0; /*0x5c1922*/
     Movie::SetupScreen((int)v9, j); /*0x5c1927*/
-    v10 = p_MPCooperative_field_0x324[2]; /*0x5c192c*/
-    if ( p_MPCooperative_field_0x324[4] >= v10 ) /*0x5c1934*/
+    v10 = p_MPCooperative_field_0x324->Capacity; /*0x5c192c*/
+    if ( p_MPCooperative_field_0x324->q010 >= v10 ) /*0x5c1934*/
     {
       if ( !p_MPCooperative_field_0x324->IsAllocated && v10 ) /*0x5c193f*/
         continue; /*0x5c193f*/
-      v11 = p_MPCooperative_field_0x324[5]; /*0x5c1941*/
+      v11 = p_MPCooperative_field_0x324->u32_14; /*0x5c1941*/
       if ( v11 <= 0 /*0x5c1951*/
-        || !(*(unsigned __int8 (**)(int *, int, unsigned int))(*p_MPCooperative_field_0x324 + 8))(
-              p_MPCooperative_field_0x324,
-              v10 + v11,
-              0) )
+        || !p_MPCooperative_field_0x324->Release(v10 + v11, 0) )
       {
         continue; /*0x5c1951*/
       }
     }
-    v12 = p_MPCooperative_field_0x324[4]; /*0x5c1958*/
-    v13 = p_MPCooperative_field_0x324[1]; /*0x5c195b*/
-    p_MPCooperative_field_0x324[4] = v12 + 1; /*0x5c1961*/
+    v12 = p_MPCooperative_field_0x324->q010; /*0x5c1958*/
+    v13 = p_MPCooperative_field_0x324->Items; /*0x5c195b*/
+    p_MPCooperative_field_0x324->q010 = v12 + 1; /*0x5c1961*/
     *(unsigned int *)(v13 + 4 * v12) = v9; /*0x5c1964*/
   }
   return 1; /*0x5c1970*/
@@ -1912,9 +1906,9 @@ AbstractClass * * MPCooperative::GetMapData()
     do /*0x5c337f*/
     {
       v2 = *(unsigned int *)((char *)stru_A80220.vfptr3 + v9); /*0x5c325b*/
-      ToWideStringChar((char *)(v2 + 90154)); /*0x5c3264*/
+      ToWideStringChar(&v2->ObjectClass_1602A); /*0x5c3264*/
       Debug::Log(); /*0x5c3276*/
-      if ( *(unsigned char *)(*(unsigned int *)(v2 + 52) + 422) || !*(unsigned char *)(v2 + 492) ) /*0x5c328f*/
+      if ( *(unsigned char *)(v2->ptr_34 + 422) || !v2->u32_1EC ) /*0x5c328f*/
       {
         nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5c34e1*/
       }
@@ -1927,12 +1921,12 @@ AbstractClass * * MPCooperative::GetMapData()
           do /*0x5c3360*/
           {
             v4 = *((unsigned int *)stru_A80220.vfptr3 + v1); /*0x5c32b4*/
-            ToWideStringChar((char *)(v4 + 90154)); /*0x5c32bf*/
+            ToWideStringChar(&v4->ObjectClass_1602A); /*0x5c32bf*/
             Debug::Log(); /*0x5c32ca*/
-            if ( !*(unsigned char *)(*(unsigned int *)(v4 + 52) + 422) && *(unsigned char *)(v4 + 492) ) /*0x5c32df*/
+            if ( !*(unsigned char *)(v4->ptr_34 + 422) && v4->u32_1EC ) /*0x5c32df*/
             {
-              ToWideStringChar((char *)(v4 + 90154)); /*0x5c32eb*/
-              ToWideStringChar((char *)(v2 + 90154)); /*0x5c32f8*/
+              ToWideStringChar(&v4->ObjectClass_1602A); /*0x5c32eb*/
+              ToWideStringChar(&v2->ObjectClass_1602A); /*0x5c32f8*/
               Debug::Log(); /*0x5c3334*/
               HouseClass::HandleAlliance((int *)v2, v4, 0); /*0x5c3341*/
               HouseClass::HandleAlliance((int *)v4, v2, 0); /*0x5c334b*/
@@ -1958,9 +1952,9 @@ AbstractClass * * MPCooperative::GetMapData()
       do /*0x5c34d1*/
       {
         v6 = *(unsigned int *)((char *)stru_A80220.vfptr3 + v10); /*0x5c33a8*/
-        ToWideStringChar((char *)(v6 + 90154)); /*0x5c33b1*/
+        ToWideStringChar(&v6->ObjectClass_1602A); /*0x5c33b1*/
         Debug::Log(); /*0x5c33c3*/
-        if ( !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) && !*(unsigned char *)(v6 + 492) ) /*0x5c33dc*/
+        if ( !*(unsigned char *)(v6->ptr_34 + 422) && !v6->u32_1EC ) /*0x5c33dc*/
         {
           v14 = v5; /*0x5c33ef*/
           if ( v5 < stru_A80220.nextArrayIndex ) /*0x5c33f5*/
@@ -1968,12 +1962,12 @@ AbstractClass * * MPCooperative::GetMapData()
             do /*0x5c34ac*/
             {
               v7 = *((unsigned int *)stru_A80220.vfptr3 + v5); /*0x5c3400*/
-              ToWideStringChar((char *)(v7 + 90154)); /*0x5c340b*/
+              ToWideStringChar(&v7->ObjectClass_1602A); /*0x5c340b*/
               Debug::Log(); /*0x5c3416*/
-              if ( !*(unsigned char *)(*(unsigned int *)(v7 + 52) + 422) && !*(unsigned char *)(v7 + 492) ) /*0x5c342b*/
+              if ( !*(unsigned char *)(v7->ptr_34 + 422) && !v7->u32_1EC ) /*0x5c342b*/
               {
-                ToWideStringChar((char *)(v7 + 90154)); /*0x5c3437*/
-                ToWideStringChar((char *)(v6 + 90154)); /*0x5c3444*/
+                ToWideStringChar(&v7->ObjectClass_1602A); /*0x5c3437*/
+                ToWideStringChar(&v6->ObjectClass_1602A); /*0x5c3444*/
                 Debug::Log(); /*0x5c3480*/
                 HouseClass::HandleAlliance((int *)v6, v7, 0); /*0x5c348d*/
                 HouseClass::HandleAlliance((int *)v7, v6, 0); /*0x5c3497*/
@@ -2208,8 +2202,8 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   v17 = 0; /*0x5c3c49*/
   IsometricTileTypeClass::Constructor_0(&v27, 0, 0); /*0x5c3c51*/
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5c3c60) */
-  v27.IsometricTileTypeClass_field_0x14 = 10; /*0x5c3c68*/
-  v27.IsometricTileTypeClass_field_0x10 = 0; /*0x5c3c70*/
+  v27.abstractFlags = 10; /*0x5c3c68*/
+  v27.uniqueId = 0; /*0x5c3c70*/
   SmallFunc_49E740((int)&g_DDrawSurfaceManager, &v27); /*0x5c3c74*/
   IsometricTileTypeClass_field_0x08 = v27.IsometricTileTypeClass_field_0x08; /*0x5c3c86*/
   if ( v27.IsometricTileTypeClass_field_0x08 > 0 ) /*0x5c3c8a*/
@@ -2218,13 +2212,13 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
     {
       if ( *(unsigned int *)(v27.IsometricTileTypeClass_field_0x04 + 4 * v17) ) /*0x5c3c94*/
       {
-        Array::GetElementAt(*(int **)(*(unsigned int *)v4->__pad_328 + 4 * v17), &v27.IsometricTileTypeClass_field_0x18, -1); /*0x5c3cae*/
+        Array::GetElementAt(*(int **)(*(unsigned int *)v4->__pad_328 + 4 * v17), &v27.nextArrayIndex, -1); /*0x5c3cae*/
         v24 = *(unsigned int *)(a3 + 16); /*0x5c3cc5*/
         v18 = 0; /*0x5c3cc9*/
         sprintf( /*0x5c3ccb*/
-          (char *const)&v27.IsometricTileTypeClass_field_0x1C,
+          (char *const)&v27.referenceCount,
           "%s.MAP",
-          (const char *)v27.IsometricTileTypeClass_field_0x18);
+          (const char *)v27.nextArrayIndex);
         v19 = 0; /*0x5c3cd7*/
         if ( v24 <= 0 ) /*0x5c3cdb*/
         {
@@ -2237,7 +2231,7 @@ LABEL_34:
           {
             if ( !_strcmpi( /*0x5c3cf4*/
                     (char *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v19) + 88),
-                    (char *)&v27.IsometricTileTypeClass_field_0x1C) )
+                    (char *)&v27.referenceCount) )
               v18 = *(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v19); /*0x5c3d03*/
             if ( ++v19 >= v24 ) /*0x5c3d0d*/
             {
@@ -2266,8 +2260,8 @@ LABEL_34:
   {
     if ( MPCooperative::ReadCoopSaveINI(v20) && !BYTE1(v4->MPCooperative_field_0x48) ) /*0x5c3db4*/
     {
-      LoadCoopCampaignSave((char *)v4->MPCooperative_field_0x40, (char *)&v27.IsometricTileTypeClass_field_0x1C); /*0x5c3dc7*/
-      strcat((char *)&v27.IsometricTileTypeClass_field_0x1C, g_Str_File__MAP); /*0x5c3df1*/
+      LoadCoopCampaignSave((char *)v4->MPCooperative_field_0x40, (char *)&v27.referenceCount); /*0x5c3dc7*/
+      strcat((char *)&v27.referenceCount, g_Str_File__MAP); /*0x5c3df1*/
       IsometricTileTypeClass_field_0x08 = *(unsigned int *)(a3 + 16); /*0x5c3dfb*/
       v21 = 0; /*0x5c3e01*/
       v22 = 0; /*0x5c3e03*/
@@ -2277,7 +2271,7 @@ LABEL_34:
         {
           if ( !_strcmpi( /*0x5c3e1c*/
                   (char *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v22) + 88),
-                  (char *)&v27.IsometricTileTypeClass_field_0x1C) )
+                  (char *)&v27.referenceCount) )
             v21 = *(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v22); /*0x5c3e2b*/
           if ( ++v22 >= IsometricTileTypeClass_field_0x08 ) /*0x5c3e35*/
           {
@@ -2866,45 +2860,45 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   void *MPCooperative_field_0x8; // ecx
   int v6; // eax
 
-  this->__pad_004 = 0; /*0x5c4f3d*/
-  this->u32_8 = 0; /*0x5c4f40*/
-  LOBYTE(this->u32_C) = 1; /*0x5c4f43*/
-  BYTE1(this->u32_C) = 0; /*0x5c4f47*/
+  this->Items = 0; /*0x5c4f3d*/
+  this->Capacity = 0; /*0x5c4f40*/
+  LOBYTE(this->IsInitialized) = 1; /*0x5c4f43*/
+  BYTE1(this->IsInitialized) = 0; /*0x5c4f47*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5c4f4a) */
   if ( this != (MPCooperative *)a2 ) /*0x5c4f50*/
   {
     MPCooperative::ddtor((int)this); /*0x5c4f52*/
     v3 = (void *)a2[2]; /*0x5c4f58*/
-    this->MPCooperative_field_0x8 = v3; /*0x5c4f5d*/
+    this->Capacity = v3; /*0x5c4f5d*/
     if ( v3 ) /*0x5c4f60*/
     {
       v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x5c4f66*/
-      this->MPCooperative_field_0x4 = v4; /*0x5c4f70*/
+      this->Items = v4; /*0x5c4f70*/
       if ( v4 ) /*0x5c4f73*/
       {
-        MPCooperative_field_0x8 = this->MPCooperative_field_0x8; /*0x5c4f75*/
+        MPCooperative_field_0x8 = this->Capacity; /*0x5c4f75*/
         v6 = 0; /*0x5c4f78*/
-        BYTE1(this->MPCooperative_field_0xC) = 1; /*0x5c4f7c*/
+        BYTE1(this->IsInitialized) = 1; /*0x5c4f7c*/
         if ( (int)MPCooperative_field_0x8 > 0 ) /*0x5c4f80*/
         {
           do /*0x5c4f94*/
           {
-            *((unsigned int *)this->MPCooperative_field_0x4 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5c4f8b*/
+            *((unsigned int *)this->Items + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5c4f8b*/
             ++v6; /*0x5c4f91*/
           }
-          while ( v6 < (int)this->MPCooperative_field_0x8 ); /*0x5c4f94*/
+          while ( v6 < (int)this->Capacity ); /*0x5c4f94*/
         }
       }
     }
     else
     {
-      this->MPCooperative_field_0x4 = 0; /*0x5c4f98*/
-      BYTE1(this->MPCooperative_field_0xC) = 0; /*0x5c4f9b*/
+      this->Items = 0; /*0x5c4f98*/
+      BYTE1(this->IsInitialized) = 0; /*0x5c4f9b*/
     }
   }
   this->MPCooperative_field_0x10 = (void *)a2[4]; /*0x5c4fa1*/
   this->MPCooperative_field_0x14 = a2[5]; /*0x5c4fa7*/
-  this->MPCooperative_field_0x0 = &DynamicVectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4faa*/
+  this->ClearAndFree2_ph = &DynamicVectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4faa*/
   return &this->vtable1; /*0x5c4fb2*/
 
 }
@@ -2935,7 +2929,7 @@ unsigned int * MPCooperative::initGame()
   this->MPCooperative_field_0x4 = 0; /*0x46d33a*/
   dword_89E050 = 0; /*0x46d33d*/
   stru_81AF8C.?[6] = -1; /*0x46d343*/
-  return &this->MPCooperative_field_0x0; /*0x46d34d*/
+  return &this->onBridge; /*0x46d34d*/
 
 }
 } // namespace gamemd
@@ -3226,15 +3220,15 @@ void MPCooperative::loadGameState()
 {
   void *v2; // eax
 
-  v2 = this->__pad_004; /*0x5c5016*/
-  this->__pad_004 = 0; /*0x5c5019*/
+  v2 = this->Items; /*0x5c5016*/
+  this->Items = 0; /*0x5c5019*/
   if ( v2 && this->IsAllocated ) /*0x5c5020*/
   {
     operator delete((void *)(v2)); /*0x5c5026*/
     this->Items = 0; /*0x5c502e*/
   }
   this->IsAllocated = 0; /*0x5c5031*/
-  this->u32_8 = 0; /*0x5c5034*/
+  this->Capacity = 0; /*0x5c5034*/
 }
 } // namespace gamemd
 
@@ -3254,7 +3248,7 @@ namespace gamemd {
 int MPCooperative::dispatchEvent(int a2)
 {
 
-  return *(unsigned int *)(*&this->__pad_004 + 4 * a2); /*0x5c506a*/
+  return *(unsigned int *)(*&this->Items + 4 * a2); /*0x5c506a*/
 
 }
 } // namespace gamemd
@@ -3265,15 +3259,15 @@ void MPCooperative::processPlayerInput()
 {
   void *v2; // eax
 
-  v2 = this->__pad_004; /*0x5c50d6*/
-  this->__pad_004 = 0; /*0x5c50d9*/
+  v2 = this->Items; /*0x5c50d6*/
+  this->Items = 0; /*0x5c50d9*/
   if ( v2 && this->IsAllocated ) /*0x5c50e0*/
   {
     operator delete((void *)(v2)); /*0x5c50e6*/
     this->Items = 0; /*0x5c50ee*/
   }
   this->IsAllocated = 0; /*0x5c50f1*/
-  this->u32_8 = 0; /*0x5c50f4*/
+  this->Capacity = 0; /*0x5c50f4*/
 }
 } // namespace gamemd
 
@@ -3298,13 +3292,13 @@ char MPCooperative::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->u32_8; /*0x5c5132*/
+  v2 = this->Capacity; /*0x5c5132*/
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5c513d*/
   {
     v3 = 0; /*0x5c513f*/
     if ( v2 <= 0 ) /*0x5c5143*/
       return 1; /*0x5c5163*/
-    v4 = *&this->__pad_004; /*0x5c5145*/
+    v4 = *&this->Items; /*0x5c5145*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5c514b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5c5154*/
     {
@@ -3346,7 +3340,7 @@ char MPCooperative::Release(int a2, unsigned int * a3)
           ++i; /*0x5c51ce*/
         if ( this->IsAllocated ) /*0x5c51db*/
         {
-          operator delete((void *)(this->__pad_004)); /*0x5c51e6*/
+          operator delete((void *)(this->Items)); /*0x5c51e6*/
           this->Items = 0; /*0x5c51ee*/
         }
       }
@@ -3374,8 +3368,8 @@ void MPCooperative::ddtor()
 {
   if ( this->Items && this->IsAllocated ) /*0x5c522d*/
   {
-    operator delete((void *)(this->__pad_004)); /*0x5c5233*/
-    this->__pad_004 = 0; /*0x5c523b*/
+    operator delete((void *)(this->Items)); /*0x5c5233*/
+    this->Items = 0; /*0x5c523b*/
   }
   this->IsAllocated = 0; /*0x5c523e*/
   this->Capacity = 0; /*0x5c5241*/
@@ -3437,26 +3431,26 @@ char MPCooperative::migrateHost(int a2, unsigned int * a3)
       return 0; /*0x5c535a*/
     if ( this->Items ) /*0x5c52e8*/
     {
-      v5 = this->u32_8; /*0x5c52ef*/
+      v5 = this->Capacity; /*0x5c52ef*/
       if ( a2 < v5 ) /*0x5c52f4*/
         v5 = a2; /*0x5c52f6*/
       for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x5c52fc*/
         ++i; /*0x5c5301*/
       if ( this->IsAllocated ) /*0x5c530e*/
       {
-        operator delete((void *)(this->__pad_004)); /*0x5c5319*/
+        operator delete((void *)(this->Items)); /*0x5c5319*/
         this->Items = 0; /*0x5c5321*/
       }
     }
     this->Items = v4; /*0x5c532a*/
-    this->u32_8 = a2; /*0x5c5332*/
+    this->Capacity = a2; /*0x5c5332*/
     this->IsAllocated = a3 == 0; /*0x5c5335*/
   }
   else
   {
-    (*(void (**)(void *))(*&this->q010))(this); /*0x5c533e*/
+    (*(void (**)(void *))(*&this->Count))(this); /*0x5c533e*/
   }
-  v7 = this->u32_8; /*0x5c5341*/
+  v7 = this->Capacity; /*0x5c5341*/
   if ( v7 < this->Items ) /*0x5c5349*/
     this->Items = v7; /*0x5c534b*/
   return 1; /*0x5c534e*/
@@ -3510,7 +3504,7 @@ char MPCooperative::processTeamChat(int a2, unsigned int * a3)
           ++i; /*0x5c542e*/
         if ( this->IsAllocated ) /*0x5c543b*/
         {
-          operator delete((void *)(this->__pad_004)); /*0x5c5446*/
+          operator delete((void *)(this->Items)); /*0x5c5446*/
           this->Items = 0; /*0x5c544e*/
         }
       }
@@ -3538,8 +3532,8 @@ void MPCooperative::updateScoreBoard()
 {
   if ( this->Items && this->IsAllocated ) /*0x5c548d*/
   {
-    operator delete((void *)(this->__pad_004)); /*0x5c5493*/
-    this->__pad_004 = 0; /*0x5c549b*/
+    operator delete((void *)(this->Items)); /*0x5c5493*/
+    this->Items = 0; /*0x5c549b*/
   }
   this->IsAllocated = 0; /*0x5c549e*/
   this->Capacity = 0; /*0x5c54a1*/
@@ -3601,26 +3595,26 @@ char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
       return 0; /*0x5c581a*/
     if ( this->Items ) /*0x5c57a8*/
     {
-      v5 = this->u32_8; /*0x5c57af*/
+      v5 = this->Capacity; /*0x5c57af*/
       if ( a2 < v5 ) /*0x5c57b4*/
         v5 = a2; /*0x5c57b6*/
       for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x5c57bc*/
         ++i; /*0x5c57c1*/
       if ( this->IsAllocated ) /*0x5c57ce*/
       {
-        operator delete((void *)(this->__pad_004)); /*0x5c57d9*/
+        operator delete((void *)(this->Items)); /*0x5c57d9*/
         this->Items = 0; /*0x5c57e1*/
       }
     }
     this->Items = v4; /*0x5c57ea*/
-    this->u32_8 = a2; /*0x5c57f2*/
+    this->Capacity = a2; /*0x5c57f2*/
     this->IsAllocated = a3 == 0; /*0x5c57f5*/
   }
   else
   {
-    (*(void (**)(void *))(*&this->q010))(this); /*0x5c57fe*/
+    (*(void (**)(void *))(*&this->Count))(this); /*0x5c57fe*/
   }
-  v7 = this->u32_8; /*0x5c5801*/
+  v7 = this->Capacity; /*0x5c5801*/
   if ( v7 < this->Items ) /*0x5c5809*/
     this->Items = v7; /*0x5c580b*/
   return 1; /*0x5c580e*/
@@ -3715,22 +3709,22 @@ namespace gamemd {
 unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
 {
 
-  this->__pad_004 = 0; /*0x5c59eb*/
-  this->u32_8 = (void *)a2; /*0x5c59ee*/
-  LOBYTE(this->u32_C) = 1; /*0x5c59f1*/
-  BYTE1(this->u32_C) = 0; /*0x5c59f5*/
+  this->Items = 0; /*0x5c59eb*/
+  this->Capacity = (void *)a2; /*0x5c59ee*/
+  LOBYTE(this->IsInitialized) = 1; /*0x5c59f1*/
+  BYTE1(this->IsInitialized) = 0; /*0x5c59f5*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5c59f8) */
   if ( a2 ) /*0x5c59fe*/
   {
     if ( a3 ) /*0x5c5a06*/
     {
-      this->MPCooperative_field_0x4 = (void *)a3; /*0x5c5a08*/
-      return &this->MPCooperative_field_0x0; /*0x5c5a0e*/
+      this->Items = (void *)a3; /*0x5c5a08*/
+      return &this->ClearAndFree2_ph; /*0x5c5a0e*/
     }
-    this->MPCooperative_field_0x4 = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a1d*/
-    BYTE1(this->MPCooperative_field_0xC) = 1; /*0x5c5a20*/
+    this->Items = (void *)__2_YAPAXI_Z(4 * a2); /*0x5c5a1d*/
+    BYTE1(this->IsInitialized) = 1; /*0x5c5a20*/
   }
-  return &this->MPCooperative_field_0x0; /*0x5c5a0d*/
+  return &this->ClearAndFree2_ph; /*0x5c5a0d*/
 
 }
 } // namespace gamemd

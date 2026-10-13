@@ -622,7 +622,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
   JumpjetLocomotion_field_0x40 = (char *)this->q040; /*0x4b47e2*/
   JumpjetLocomotion_field_0x44 = (char *)this->q044; /*0x4b47e5*/
   *aP1 = &JumpjetLocomotion_field_0x40[v6]; /*0x4b47f2*/
-  aP1[1] = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
+  aP1->vtable2 = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
   return aP1; /*0x4b47f0*/
 
 }
@@ -736,7 +736,7 @@ void* JumpjetLocomotion::Land()
   if ( (*(int (**)(unsigned int))(**(unsigned int **)this->u32_C + 456))(*(unsigned int *)this->u32_C) > 0 && !v45 ) /*0x54cc30*/
     goto LABEL_74; /*0x54cc30*/
   v11 = *(unsigned char **)this->u32_C; /*0x54cc36*/
-  if ( !v11[1063] ) /*0x54cc39*/
+  if ( !v11->u8_427 ) /*0x54cc39*/
     goto LABEL_74; /*0x54cc41*/
   v47 = 0; /*0x54cc4e*/
   v12 = (unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)v11 + 72))(v11, &v54); /*0x54cc53*/
@@ -872,13 +872,13 @@ void* JumpjetLocomotion::Land()
         *(unsigned int *)(*(unsigned int *)this->u32_C + 728) = 0; /*0x54cefb*/
       }
       v33 = *(unsigned int **)this->u32_C; /*0x54cf05*/
-      if ( v33[266] ) /*0x54cf08*/
+      if ( v33->u32_428 ) /*0x54cf08*/
       {
-        (*(void (**)(unsigned int *, unsigned int))(*v33 + 224))(v33, v33[266]); /*0x54cf15*/
+        v33->vt_slot_224(v33[266]); /*0x54cf15*/
       }
-      else if ( v33[267] ) /*0x54cf20*/
+      else if ( v33->q42C ) /*0x54cf20*/
       {
-        (*(void (**)(unsigned int *, unsigned int))(*v33 + 228))(v33, v33[267]); /*0x54cf31*/
+        v33->vt_slot_228(v33[267]); /*0x54cf31*/
       }
       goto LABEL_65; /*0x54cf1b*/
     }
@@ -1029,11 +1029,11 @@ void* JumpjetLocomotion::UpdateFacing()
   if ( v2 == 2 || (v55 = 1, v2 == 3) ) /*0x54d10f*/
     v55 = 0; /*0x54d111*/
   v3 = *(unsigned char **)this->u32_C; /*0x54d116*/
-  v58 = v3[116]; /*0x54d11c*/
+  v58 = v3->u32_74; /*0x54d11c*/
   if ( v55 ) /*0x54d126*/
     (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v3 + 292))(v3, 0); /*0x54d12c*/
   else
-    v3[116] = 0; /*0x54d134*/
+    v3->u32_74 = 0; /*0x54d134*/
   if ( *(double *)this->__pad_78 > *&this->u32_70 ) /*0x54d143*/
   {
     v4 = *&this->u32_30 + *&this->u32_70; /*0x54d148*/
@@ -1228,7 +1228,7 @@ LABEL_50:
   v66[2] = v41; /*0x54d5fc*/
   (*(void (**)(int, unsigned int *))(*(unsigned int *)v47 + 436))(v47, v66); /*0x54d607*/
   v48 = *(unsigned char **)this->u32_C; /*0x54d60d*/
-  if ( !v48[1709] )
+  if ( !v48->u32_6AD )
   {
     if ( v48
       && (*(int (**)(unsigned char *))(*&v48->u32_B0))(v48) == 15

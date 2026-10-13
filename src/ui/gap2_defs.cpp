@@ -314,9 +314,9 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
     v10 = Array::GetClamped((ListClass *)this, this->u32_16C); /*0x4884f6*/
     if ( v10 ) /*0x4884fd*/
     {
-      if ( *(unsigned char *)(v10 + 4) != v9 ) /*0x488502*/
+      if ( v10->X != v9 ) /*0x488502*/
       {
-        *(unsigned char *)(v10 + 4) = v9; /*0x488504*/
+        v10->X = v9; /*0x488504*/
         this->AddItem_1(); /*0x48850b*/
       }
     }
@@ -1821,7 +1821,7 @@ int MouseClass::LoadGameAssets() {
             do /*0x5be1b6*/
             {
               *v22 = 7; /*0x5be1ab*/
-              v22[1] = 0; /*0x5be1ae*/
+              v22->AbstractClass_1 = 0; /*0x5be1ae*/
               v22 += 4; /*0x5be1b2*/
               --v23; /*0x5be1b5*/
             }
@@ -3674,8 +3674,8 @@ void* FontClass::InitMetrics(void* a1, int a2, int a3, int a4, int a5, int a6) {
   do /*0x68c72d*/
   {
     *v9 = 0; /*0x68c721*/
-    v9[1] = 0; /*0x68c723*/
-    v9[2] = 0; /*0x68c726*/
+    v9->zero_3C = 0; /*0x68c723*/
+    v9->UINameLabel[0x20] = 0; /*0x68c726*/
     v9 += 3; /*0x68c729*/
     --v8; /*0x68c72c*/
   }
@@ -3856,7 +3856,7 @@ void* TabClass::initTabData() {
   do /*0x6a4eac*/
   {
     *(unsigned int *)v2 = 0; /*0x6a4e79*/
-    v2[4] = 0; /*0x6a4e7b*/
+    v2->__pad_004 = 0; /*0x6a4e7b*/
     v2->u32_8 = dword_A8ED84; /*0x6a4e8f*/
     v2->Count = 0; /*0x6a4e92*/
     v2->CapacityIncrement = 0; /*0x6a4e96*/
@@ -4094,12 +4094,12 @@ int SidebarClass::Init() {
           ProductionData = SidebarClass::FindProductionData((SidebarClass *)(v16 + 90154)); /*0x6a5741*/
           if ( ProductionData ) /*0x6a5748*/
           {
-            *((unsigned int *)this + this->u32_5510 + 5395) = ProductionData[7]; /*0x6a5754*/
-            *((unsigned int *)this + this->u32_5510 + 5403) = ProductionData[4]; /*0x6a5764*/
-            *((unsigned int *)this + this->u32_5510 + 5411) = ProductionData[2]; /*0x6a5774*/
-            *((unsigned int *)this + this->u32_5510 + 5419) = ProductionData[3]; /*0x6a5784*/
-            *((unsigned int *)this + this->u32_5510 + 5427) = ProductionData[8]; /*0x6a5794*/
-            *((unsigned int *)this + this->u32_5510 + 5435) = ProductionData[12]; /*0x6a57a4*/
+            *((unsigned int *)this + this->u32_5510 + 5395) = ProductionData->referenceCount; /*0x6a5754*/
+            *((unsigned int *)this + this->u32_5510 + 5403) = ProductionData->uniqueId; /*0x6a5764*/
+            *((unsigned int *)this + this->u32_5510 + 5411) = ProductionData->vtable3; /*0x6a5774*/
+            *((unsigned int *)this + this->u32_5510 + 5419) = ProductionData->vtable4; /*0x6a5784*/
+            *((unsigned int *)this + this->u32_5510 + 5427) = ProductionData->needsSave; /*0x6a5794*/
+            *((unsigned int *)this + this->u32_5510 + 5435) = ProductionData->ptr_30; /*0x6a57a4*/
             operator delete((void *)(ProductionData)); /*0x6a57ab*/
           }
         }
@@ -4800,7 +4800,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
               Type = AbstractClass::GetType(v19); /*0x6a8d67*/
               if ( Type ) /*0x6a8d6e*/
               {
-                if ( (*(int (__thiscall **)(int))(*(unsigned int *)Type + 44))(Type) == 6 ) /*0x6a8d7a*/
+                if ( Type->getAltitude() == 6 ) /*0x6a8d7a*/
                 {
   LABEL_53:
                   SidebarClass::startButtonFlash( /*0x6a8e85*/
@@ -4842,14 +4842,14 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
               v23 = AbstractClass::GetType(v22); /*0x6a8dfb*/
               if ( v23 )
               {
-                switch ( (*(int (__thiscall **)(int))(*(unsigned int *)v23 + 44))(v23) )
+                switch ( v23->getAltitude() )
                 {
                   case 1:
                   case 2:
                   case 15:
-                    v56 = *(uint8_t *)((*(int (__thiscall **)(int))(*(unsigned int *)v23 + 132))(v23) + 3278); /*0x6a8ed1*/
-                    v55 = (*(int (__thiscall **)(int))(*(unsigned int *)v23 + 44))(v23); /*0x6a8ed9*/
-                    v25 = (*(int (__thiscall **)(int))(*(unsigned int *)v23 + 56))(v23); /*0x6a8ee0*/
+                    v56 = *(uint8_t *)(v23->GetSpecialValue() + 3278); /*0x6a8ed1*/
+                    v55 = v23->getAltitude(); /*0x6a8ed9*/
+                    v25 = v23->computeDistanceSquared(); /*0x6a8ee0*/
                     v26 = (const void *)EventClass::Init(v25, 11, v55, -1, v56, &word_B07DD8); /*0x6a8ee8*/
                     if ( dword_A802C8 < 128 ) /*0x6a8ef7*/
                     {
@@ -4862,7 +4862,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
                     break; /*0x6a8f42*/
                   case 6:
                     VoxClass::FindAndPlay(unk_83FA80, -1); /*0x6a8e2f*/
-                    v24 = (*(int (__thiscall **)(int))(*(unsigned int *)v23 + 44))(v23); /*0x6a8e38*/
+                    v24 = v23->getAltitude(); /*0x6a8e38*/
                     SidebarClass::registerBuildingType(v24 == 6 ? v23 : 0);
                     break; /*0x6a8e4d*/
                   default:
@@ -4892,8 +4892,8 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
           dword_A8ED84 = dword_A8ED84; /*0x6a8fa2*/
           v29[3] = 0; /*0x6a8fac*/
           *v29 = (int)dword_A8ED84; /*0x6a8faf*/
-          v29[1] = v61; /*0x6a8fb5*/
-          v29[2] = 0; /*0x6a8fb8*/
+          v29->u32_4 = v61; /*0x6a8fb5*/
+          v29->q008 = 0; /*0x6a8fb8*/
           *(v29 - 2) = 0; /*0x6a8fbb*/
         }
         if ( Locomotor::GetSpeed(v29) || (v32 = v29[3]) == 0 ) /*0x6a8fd2*/
@@ -4907,14 +4907,14 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
           *(v29 - 2) = v33; /*0x6a8fe4*/
           v57 = 1; /*0x6a8fef*/
           *v29 = (int)dword_A8ED84; /*0x6a8ff4*/
-          v29[1] = v61; /*0x6a8ffa*/
-          v29[2] = v32; /*0x6a8ffd*/
+          v29->u32_4 = v61; /*0x6a8ffa*/
+          v29->q008 = v32; /*0x6a8ffd*/
           if ( *(v29 - 2) >= 53 ) /*0x6a9006*/
           {
             *v29 = (int)dword_A8ED84; /*0x6a900f*/
             v29[3] = 0; /*0x6a9011*/
-            v29[1] = v61; /*0x6a9014*/
-            v29[2] = 0; /*0x6a9017*/
+            v29->u32_4 = v61; /*0x6a9014*/
+            v29->q008 = 0; /*0x6a9017*/
           }
         }
       }
@@ -4941,7 +4941,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
               v36 = (unsigned int *)SidebarClass::FindProductionData(v35 + 90154); /*0x6a9091*/
               if ( v36 ) /*0x6a9098*/
               {
-                *v34 = v36[7]; /*0x6a909e*/
+                *v34 = v36->referenceCount; /*0x6a909e*/
                 v34[8] = v36[4]; /*0x6a90a3*/
                 v34[16] = v36[2]; /*0x6a90a9*/
                 v34[24] = v36[3]; /*0x6a90af*/
@@ -5221,7 +5221,7 @@ int SidebarClass::UpdateProduction() {
           v3 = v3; /*0x6aa93d*/
           do /*0x6aa99b*/
           {
-            if ( *(unsigned int *)v15 == *v9 && *((unsigned int *)v15 + 1) == v9[1] ) /*0x6aa94f*/
+            if ( *(unsigned int *)v15 == *v9 && *((unsigned int *)v15 + 1) == v9->X ) /*0x6aa94f*/
             {
               memset(v52, 0, 16); /*0x6aa957*/
               v52[5] = 0; /*0x6aa967*/
@@ -5501,7 +5501,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             {
               PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 396), 0x2000, 1.0, 0); /*0x6aae2a*/
               VoxClass::FindAndPlay(&aEvaCanceled, -1); /*0x6aae39*/
-              v62 = *(uint8_t *)(v12 + 3278); /*0x6aae5b*/
+              v62 = v12->u8_CCE; /*0x6aae5b*/
               v60 = v67; /*0x6aae5f*/
               v59 = v10; /*0x6aae60*/
               if ( v65 ) /*0x6aae44*/
@@ -5519,7 +5519,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                     0xFu,
                     v10,
                     v67,
-                    *(uint8_t *)(v12 + 3278));
+                    v12->u8_CCE);
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab039*/
             {
               qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x6ab055*/
@@ -5546,7 +5546,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                       0xFu,
                       v10,
                       v67,
-                      *(uint8_t *)(v12 + 3278));
+                      v12->u8_CCE);
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab13a*/
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v19, 0x6Fu); /*0x6ab156*/
@@ -5559,7 +5559,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             BuildLimit = (FactoryClass *)HouseClass::GetBuildLimit( /*0x6ab1a0*/
                                            (HouseClass *)dword_A83D4C,
                                            v10,
-                                           *(unsigned char *)(v12 + 3278),
+                                           v12->u8_CCE,
                                            v74);
             if ( BuildLimit && FactoryClass::IsQueued(BuildLimit, v12) ) /*0x6ab1b0*/
             {
@@ -5572,12 +5572,12 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                         0x10u,
                         v10,
                         v67,
-                        *(uint8_t *)(v12 + 3278));
+                        v12->u8_CCE);
                 if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x6ab240*/
                   goto LABEL_45; /*0x6ab240*/
                 goto LABEL_44; /*0x6ab240*/
               }
-              v62 = *(uint8_t *)(v12 + 3278); /*0x6ab1f2*/
+              v62 = v12->u8_CCE; /*0x6ab1f2*/
               v60 = v67; /*0x6ab1f6*/
               v59 = v10; /*0x6ab1f7*/
               v58 = 46; /*0x6ab1f8*/
@@ -5599,15 +5599,15 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
         {
           if ( !v69 || v69->attachedBomb && !(unsigned char)(v69->estimatedHealth) ) /*0x6ab2b0*/
           {
-            v40 = HouseClass::GetBuildLimit((HouseClass *)dword_A83D4C, v10, *(unsigned char *)(v75 + 3278), v74); /*0x6ab61e*/
+            v40 = HouseClass::GetBuildLimit((HouseClass *)dword_A83D4C, v10, *&v75->u8_CCE, v74); /*0x6ab61e*/
             v41 = TechnoTypeClass::GetByTypeAndIndex( /*0x6ab632*/
                     *(unsigned int *)(v9 + v73[2].q00C + 92),
                     *(unsigned int *)(v9 + v73[2].q00C + 88));
-            if ( !v41 || (v42 = *(unsigned char *)(v41 + 3278), IDA_LOBYTE(v69) = 1, !v42) ) /*0x6ab648*/
+            if ( !v41 || (v42 = *&v41->u8_CCE, IDA_LOBYTE(v69) = 1, !v42) ) /*0x6ab648*/
               v69 = ((v69) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x6ab64a*/
             ShouldDisableCameo = HouseClass::ShouldDisableCameo((HouseClass *)dword_A83D4C, v41); /*0x6ab65d*/
             if ( v40 /*0x6ab67d*/
-              && (*(unsigned int *)(v40 + 56) && !*(unsigned char *)(v40 + 112) || *(unsigned int *)(v40 + 88) || *(int *)(v40 + 80) > 0) )
+              && (v40->u32_38 && !v40->q070 || v40->u32_58 || v40->q050 > 0) )
             {
               v72 = 1; /*0x6ab682*/
               if ( v10 == 7 ) /*0x6ab687*/
@@ -5633,7 +5633,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             TypeProductionCount = SidebarClass::getTypeProductionCount( /*0x6ab6e6*/
                                     (SidebarClass *)dword_A83D4C,
                                     v10,
-                                    *(unsigned char *)(v75 + 3278),
+                                    v75->u8_CCE,
                                     v74);
             v71 = 0; /*0x6ab6f0*/
             if ( !ShouldDisableCameo ) /*0x6ab6f5*/
@@ -5684,14 +5684,10 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                                                * (*(int (__thiscall **)(unsigned char *, Object *))(v47 + 132))(v45, dword_A83D4C)) >> 32) >> 4;
                   if ( (*(int (__stdcall **)(char *))(*(unsigned int *)v48 + 24))(v48) >= (int)((v49 >> 31) + v49) ) /*0x6ab87b*/
                   {
-                    if ( (*(int (__thiscall **)(unsigned char *, int, unsigned int, unsigned int, Object *))(*(unsigned int *)v45 + 148))( /*0x6ab891*/
-                           v45,
-                           1,
-                           0,
-                           0,
-                           dword_A83D4C) )
+                    if ( v45->Stub3(/*0x6ab891*/
+                           v45, 1, 0, 0, dword_A83D4C) )
                     {
-                      v50 = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v45 + 136))(v45); /*0x6ab8a9*/
+                      v50 = v45->updateLayer(); /*0x6ab8a9*/
                       v51 = *(unsigned int *)v45; /*0x6ab8ab*/
                       v76 = v50; /*0x6ab8af*/
                       if ( (*(int (__thiscall **)(unsigned char *))(v51 + 44))(v45) == 7 && v45[5489] ) /*0x6ab8bb*/
@@ -5795,11 +5791,11 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             goto LABEL_117; /*0x6ab2f1*/
           }
           PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 396), 0x2000, 1.0, 0); /*0x6ab30d*/
-          v23 = (*(int (__thiscall **)(unsigned int *, unsigned int, unsigned int))(*Type + 400))(Type, 0, 0); /*0x6ab320*/
+          v23 = Type->Fire(0, 0); /*0x6ab320*/
           if ( !v23 ) /*0x6ab324*/
           {
             v63 = *(uint8_t *)(v75 + 3278); /*0x6ab33a*/
-            v24 = (*(int (__thiscall **)(unsigned int *))(*Type + 56))(Type); /*0x6ab341*/
+            v24 = Type->computeDistanceSquared(); /*0x6ab341*/
             v25 = EventClass::AddEventEx(v78, v24, 0x10u, v10, v67, v63); /*0x6ab349*/
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab358*/
             {
@@ -5810,13 +5806,13 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             }
             goto LABEL_85; /*0x6ab3a2*/
           }
-          if ( (*(int (__thiscall **)(unsigned int *))(*Type + 44))(Type) == 6 ) /*0x6ab3c5*/
+          if ( Type->getAltitude() == 6 ) /*0x6ab3c5*/
           {
             BuildingPlacement::Activate(dword_A83D4C, v23, Type); /*0x6ab3cf*/
             goto LABEL_117; /*0x6ab3d4*/
           }
           v61 = *(uint8_t *)(v75 + 3278); /*0x6ab3ec*/
-          v26 = (*(int (__thiscall **)(unsigned int *))(*Type + 56))(Type); /*0x6ab3f4*/
+          v26 = Type->computeDistanceSquared(); /*0x6ab3f4*/
           v15 = EventClass::Init(v78, v26, 11, v10, -1, v61, &word_B07DD8); /*0x6ab3fc*/
   LABEL_60:
           if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab40b*/
@@ -7000,7 +6996,7 @@ int ToolTipClass::readString(int a1, void* a2) {
       v4 = a2; /*0x724d02*/
     else
       v4 = (unsigned int *)operator new(4 * a1); /*0x724cfe*/
-    (this->m_C) = 1; /*0x724d06*/
+    (this->IsInitialized) = 1; /*0x724d06*/
     if ( v4 ) /*0x724d0a*/
     {
       if ( *&this->Items ) /*0x724d15*/
@@ -7090,7 +7086,7 @@ int ToolTipClass::release(int a1, void* a2) {
       v4 = a2; /*0x724e3e*/
     else
       v4 = (unsigned int *)operator new(4 * a1); /*0x724e3a*/
-    (this->m_C) = 1; /*0x724e42*/
+    (this->IsInitialized) = 1; /*0x724e42*/
     if ( !v4 ) /*0x724e46*/
       return 0; /*0x724eba*/
     if ( *&this->Items ) /*0x724e48*/
@@ -7152,7 +7148,7 @@ void* ToolTipClass::compareString(int a2) {
     *&this->Items = 0; /*0x724f10*/
   }
   (this->IsAllocated) = 0; /*0x724f1b*/
-  this->m_8 = 0; /*0x724f21*/
+  this->Capacity = 0; /*0x724f21*/
   if ( (a2 & 1) != 0 ) /*0x724f28*/
     operator delete((void *)(this)); /*0x724f2b*/
   return this->vtable1; /*0x724f35*/
@@ -7192,9 +7188,9 @@ void* SidebarClass::calcSidebarRect() {
   v3 = stru_A8EB00.vfptr[33] - 168; /*0x72adc0*/
   v4 = stru_A8EB00.vfptr[34] - 32; /*0x72adc6*/
   *result = v2; /*0x72adc9*/
-  result[1] = 0; /*0x72adcb*/
-  result[2] = v3; /*0x72adcf*/
-  result[3] = v4; /*0x72add2*/
+  result->__pad_004 = 0; /*0x72adcb*/
+  result->u32_8 = v3; /*0x72adcf*/
+  result->q00C = v4; /*0x72add2*/
   return result; /*0x72adce*/
 }
 }

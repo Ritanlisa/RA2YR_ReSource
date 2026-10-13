@@ -365,10 +365,10 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->Anim, 0, 0); /*0x772d2b*/
       v5-((unsigned int *)(>Anim))[0] = (int)&vt_TypeList; /*0x772d30*/
     }
-    (*(void (__stdcall **)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))(v7, &aP0, 4, 0, v4); /*0x772d42*/
+    v7->vt_entry_68(&aP0, 4, 0, v4); /*0x772d42*/
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
-      (*(void (__stdcall **)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772d5b*/
+      v7->vt_entry_68(&a3, 4, 0); /*0x772d5b*/
       DynamicVector::Add_Alt4((DynamicVector *)v5->Anim, &a3); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
@@ -376,18 +376,18 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       DynamicVectorClass::Construct((DynamicVectorClass *)Report, 0, 0); /*0x772d7f*/
       *Report = (int)&vt_TypeList; /*0x772d84*/
     }
-    (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772d97*/
+    v7->vt_entry_68(&a2, 4, 0); /*0x772d97*/
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
-      (*(void (__stdcall **)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772db0*/
+      v7->vt_entry_68(&a3, 4, 0); /*0x772db0*/
       DynamicVector::Add_Alt((DynamicVector *)Report, &a3); /*0x772dba*/
     }
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
-    (*(void (__stdcall **)(int *, int **, int))(*v7 + 12))(v7, &a2, 4); /*0x772de3*/
+    v7->vt_entry_68(&a2, 4); /*0x772de3*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
-      (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772dfc*/
+      v7->vt_entry_68(&a2, 4, 0); /*0x772dfc*/
       DynamicVector::Add_Alt((DynamicVector *)v5->DownReport, &a2); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
@@ -592,7 +592,7 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   this->Anim[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x771f1e*/
   this->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771f28*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f2e) */
-  this->? = &WeaponTypeClass::`vftable'; /*0x771f35*/
+  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f35*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f3c) */
   return &this->AbstractTypeClass; /*0x771f45*/
 

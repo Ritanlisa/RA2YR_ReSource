@@ -272,16 +272,16 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
     HIWORD(v34) = v12; /*0x4a99ab*/
     *(unsigned int *)v32 = v34; /*0x4a99b7*/
     v14 = CellCoord::To_CellObj((CellCoord *)this, v32); /*0x4a99c5*/
-    if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14[75] & 0x10) == 0 ) /*0x4a99e2*/
+    if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14->u32_12C & 0x10) == 0 ) /*0x4a99e2*/
     {
       v15 = Cell::GetAdjacentPassableMask(v32, 0); /*0x4a99f5*/
       if ( v15 == -1 ) /*0x4a99fd*/
       {
-        v16 = v14[75]; /*0x4a9a03*/
+        v16 = v14->u32_12C; /*0x4a9a03*/
         if ( (v16 & 8) == 0 ) /*0x4a9a0b*/
           goto LABEL_20; /*0x4a9a0b*/
         LOBYTE(v16) = v16 | 0x10; /*0x4a9a26*/
-        v14[75] = v16; /*0x4a9a29*/
+        v14->u32_12C = v16; /*0x4a9a29*/
         Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v14); /*0x4a9a35*/
         for ( j = 0; j < 8; ++j ) /*0x4a9a3a*/
         {
@@ -293,9 +293,9 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
           *(unsigned int *)v36 = v35; /*0x4a9a73*/
           v20 = CellCoord::To_CellObj((CellCoord *)this, v36); /*0x4a9a89*/
           v21 = Cell::GetAdjacentPassableMask(v36, 0); /*0x4a9a8b*/
-          if ( v21 != v20[288] ) /*0x4a9a96*/
+          if ( v21 != v20->q120 ) /*0x4a9a96*/
           {
-            v20[288] = v21; /*0x4a9a98*/
+            v20->q120 = v21; /*0x4a9a98*/
             Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v20); /*0x4a9aa5*/
           }
         }
@@ -304,7 +304,7 @@ char DisplayClass::UpdateCellPassability(int16_t *a1, int aP2)
       }
       else
       {
-        if ( v15 != -2 && (v14[75] & 8) == 0 ) /*0x4a9ac6*/
+        if ( v15 != -2 && (v14->u32_12C & 8) == 0 ) /*0x4a9ac6*/
         {
 LABEL_20:
           (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 36))(this, v32, aP2); /*0x4a9a0d*/
@@ -318,16 +318,16 @@ LABEL_20:
       }
     }
 LABEL_31:
-    if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14[80] & 1) == 0 ) /*0x4a9b1f*/
+    if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14->u32_140 & 1) == 0 ) /*0x4a9b1f*/
     {
       v22 = Cell::GetAdjacentPassableMask(v32, 1); /*0x4a9b32*/
       if ( v22 == -1 ) /*0x4a9b3a*/
       {
-        v23 = v14[80]; /*0x4a9b40*/
+        v23 = v14->u32_140; /*0x4a9b40*/
         if ( (v23 & 2) == 0 ) /*0x4a9b48*/
           goto LABEL_36; /*0x4a9b48*/
         LOBYTE(v23) = v23 | 1; /*0x4a9b63*/
-        v14[80] = v23; /*0x4a9b66*/
+        v14->u32_140 = v23; /*0x4a9b66*/
         Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v14); /*0x4a9b72*/
         for ( k = 0; k < 8; ++k ) /*0x4a9b77*/
         {
@@ -339,9 +339,9 @@ LABEL_31:
           *(unsigned int *)v36 = v37; /*0x4a9bb0*/
           v27 = CellCoord::To_CellObj((CellCoord *)this, v36); /*0x4a9bc6*/
           v28 = Cell::GetAdjacentPassableMask(v36, 1); /*0x4a9bc8*/
-          if ( v28 != v27[289] ) /*0x4a9bd3*/
+          if ( v28 != v27->u32_121 ) /*0x4a9bd3*/
           {
-            v27[289] = v28; /*0x4a9bd5*/
+            v27->u32_121 = v28; /*0x4a9bd5*/
             Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v27); /*0x4a9be2*/
           }
         }
@@ -350,7 +350,7 @@ LABEL_31:
       }
       else
       {
-        if ( v22 != -2 && (v14[80] & 2) == 0 ) /*0x4a9c03*/
+        if ( v22 != -2 && (v14->u32_140 & 2) == 0 ) /*0x4a9c03*/
         {
 LABEL_36:
           (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 36))(this, v32, aP2); /*0x4a9b4a*/
@@ -433,16 +433,16 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
     HIWORD(v24) = v11; /*0x4a9e90*/
     *(unsigned int *)v22 = v24; /*0x4a9e9c*/
     v12 = CellCoord::To_CellObj((CellCoord *)this, v22); /*0x4a9eaa*/
-    if ( (v22[0] != *aP1 || v22[1] != aP1[1]) && (v12[80] & 1) == 0 ) /*0x4a9ec7*/
+    if ( (v22[0] != *aP1 || v22[1] != aP1[1]) && (v12->u32_140 & 1) == 0 ) /*0x4a9ec7*/
     {
       v13 = Cell::GetAdjacentPassableMask(v22, 1); /*0x4a9eda*/
       if ( v13 == -1 ) /*0x4a9ee2*/
       {
-        v14 = v12[80]; /*0x4a9ee8*/
+        v14 = v12->u32_140; /*0x4a9ee8*/
         if ( (v14 & 2) == 0 ) /*0x4a9ef0*/
           goto LABEL_13; /*0x4a9ef0*/
         LOBYTE(v14) = v14 | 1; /*0x4a9f0c*/
-        v12[80] = v14; /*0x4a9f0f*/
+        v12->u32_140 = v14; /*0x4a9f0f*/
         Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v12); /*0x4a9f1b*/
         for ( j = 0; j < 8; ++j ) /*0x4a9f20*/
         {
@@ -454,9 +454,9 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
           *(unsigned int *)v26 = v25; /*0x4a9f5d*/
           v18 = CellCoord::To_CellObj((CellCoord *)this, v26); /*0x4a9f73*/
           v19 = Cell::GetAdjacentPassableMask(v26, 1); /*0x4a9f75*/
-          if ( v19 != v18[289] ) /*0x4a9f80*/
+          if ( v19 != v18->u32_121 ) /*0x4a9f80*/
           {
-            v18[289] = v19; /*0x4a9f82*/
+            v18->u32_121 = v19; /*0x4a9f82*/
             Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v18); /*0x4a9f8f*/
           }
         }
@@ -464,7 +464,7 @@ char DisplayClass::ProcessCellReveal(int16_t *aP1, int aP2)
       }
       else
       {
-        if ( v13 != -2 && (v12[80] & 2) == 0 ) /*0x4a9fac*/
+        if ( v13 != -2 && (v12->u32_140 & 2) == 0 ) /*0x4a9fac*/
         {
 LABEL_13:
           (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 38))(this, v22, aP2); /*0x4a9ef2*/
@@ -519,11 +519,11 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
   v3 = a1; /*0x4aa057*/
   v5 = CellCoord::To_CellObj((CellCoord *)this, a1); /*0x4aa063*/
   v28 = (int)v5; /*0x4aa068*/
-  v6 = v5[75]; /*0x4aa06c*/
+  v6 = v5->u32_12C; /*0x4aa06c*/
   v7 = v6; /*0x4aa072*/
   LOBYTE(v6) = v6 | 8; /*0x4aa074*/
   v8 = (v7 & 8) == 0; /*0x4aa07b*/
-  v5[75] = v6; /*0x4aa07e*/
+  v5->u32_12C = v6; /*0x4aa07e*/
   LOBYTE(v27) = v8; /*0x4aa08a*/
   AdjacentPassableMask = Cell::GetAdjacentPassableMask(a1, 0); /*0x4aa08e*/
   if ( AdjacentPassableMask != v5->q120 ) /*0x4aa099*/
@@ -533,9 +533,9 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
   }
   if ( v5->q120 == 0xFF ) /*0x4aa0aa*/
   {
-    v10 = v5[75]; /*0x4aa0ac*/
+    v10 = v5->u32_12C; /*0x4aa0ac*/
     LOBYTE(v10) = v10 | 0x10; /*0x4aa0b2*/
-    v5[75] = v10; /*0x4aa0b4*/
+    v5->u32_12C = v10; /*0x4aa0b4*/
   }
   if ( v8 ) /*0x4aa0bc*/
     Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v5); /*0x4aa0c5*/
@@ -547,16 +547,16 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
     HIWORD(v24) = v12; /*0x4aa100*/
     *(unsigned int *)v22 = v24; /*0x4aa10c*/
     v13 = CellCoord::To_CellObj((CellCoord *)this, v22); /*0x4aa11a*/
-    if ( (v22[0] != *v3 || v22[1] != v3[1]) && (v13[75] & 0x10) == 0 ) /*0x4aa137*/
+    if ( (v22[0] != *v3 || v22[1] != v3[1]) && (v13->u32_12C & 0x10) == 0 ) /*0x4aa137*/
     {
       v14 = Cell::GetAdjacentPassableMask(v22, 0); /*0x4aa14a*/
       if ( v14 == -1 ) /*0x4aa152*/
       {
-        v15 = v13[75]; /*0x4aa158*/
+        v15 = v13->u32_12C; /*0x4aa158*/
         if ( (v15 & 8) == 0 ) /*0x4aa160*/
           goto LABEL_13; /*0x4aa160*/
         LOBYTE(v15) = v15 | 0x10; /*0x4aa17c*/
-        v13[75] = v15; /*0x4aa17f*/
+        v13->u32_12C = v15; /*0x4aa17f*/
         Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v13); /*0x4aa18b*/
         for ( j = 0; j < 8; ++j ) /*0x4aa190*/
         {
@@ -568,9 +568,9 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
           *(unsigned int *)v26 = v25; /*0x4aa1c9*/
           v19 = CellCoord::To_CellObj((CellCoord *)this, v26); /*0x4aa1df*/
           v20 = Cell::GetAdjacentPassableMask(v26, 0); /*0x4aa1e1*/
-          if ( v20 != v19[288] ) /*0x4aa1ec*/
+          if ( v20 != v19->q120 ) /*0x4aa1ec*/
           {
-            v19[288] = v20; /*0x4aa1ee*/
+            v19->q120 = v20; /*0x4aa1ee*/
             Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)v19); /*0x4aa1fb*/
           }
         }
@@ -578,7 +578,7 @@ bool DisplayClass::RevealFogCell(int16_t *a1, int aP2)
       }
       else
       {
-        if ( v14 != -2 && (v13[75] & 8) == 0 ) /*0x4aa218*/
+        if ( v14 != -2 && (v13->u32_12C & 8) == 0 ) /*0x4aa218*/
         {
 LABEL_13:
           (*((void (**)(DisplayClass *, __int16 *, int))this->vtable1 + 39))(this, v22, aP2); /*0x4aa162*/

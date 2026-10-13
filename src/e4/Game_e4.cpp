@@ -686,7 +686,7 @@ int Game::MakeScreenshot(int a1)
         {
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
-          v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x537d3b*/
+          v8 = v7->vt_slot_20(0); /*0x537d3b*/
           /* X11: vtable install elided (implicit via CCFileClass virtuals 0x537d3d) */
           v21 = 0; /*0x537d48*/
           Vector::Clear((int)v20); /*0x537d4f*/

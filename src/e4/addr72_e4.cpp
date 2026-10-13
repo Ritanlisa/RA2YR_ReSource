@@ -143,8 +143,8 @@ void * sub_722C40()
         (*((unsigned short *)&(v9))) = Math::RoundToInt(v6); /*0x722cce*/
         v10 = (unsigned int *)(*(unsigned int *)(v7 + 4 * i) + 284); /*0x722cd6*/
         *v10 = v8; /*0x722cde*/
-        v10[1] = v11; /*0x722ce0*/
-        v10[2] = v9; /*0x722ce3*/
+        v10->u32_4 = v11; /*0x722ce0*/
+        v10->u32_8 = v9; /*0x722ce3*/
       }
       result = (void *)g_BuildingLoadQueue_Array.BarrelAnimData[0]; /*0x722ce6*/
     }
@@ -241,14 +241,14 @@ void sub_728200()
     v3 = (unsigned short *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v2 + 18)); /*0x72822f*/
     if ( InfantryClass::IsInBounds((gamemd::InfantryClass *)((int)v3)) ) /*0x728233*/
     {
-      v3[139] = ++i; /*0x72825f*/
+      v3->q116 = ++i; /*0x72825f*/
     }
     else
     {
       if ( v2 ) /*0x72823e*/
         (*(void (**)(int16_t *, int))(*(unsigned int *)v2 + 32))(v2, 1); /*0x728246*/
       --v0; /*0x728249*/
-      v3[139] = -1; /*0x72824a*/
+      v3->q116 = -1; /*0x72824a*/
       --v1; /*0x728253*/
     }
   }
@@ -896,9 +896,9 @@ int * * MouseClass_SetupResources(int a1, int a2)
   if ( v19 ) /*0x72ee0e*/
   {
     *v19 = v18; /*0x72ee10*/
-    v19[1] = v15; /*0x72ee12*/
-    v19[2] = v16; /*0x72ee15*/
-    v19[3] = v17; /*0x72ee18*/
+    v19->vtable2 = v15; /*0x72ee12*/
+    v19->vtable3 = v16; /*0x72ee15*/
+    v19->vtable4 = v17; /*0x72ee18*/
     dword_B0FC10 = v19; /*0x72ee1b*/
   }
   else

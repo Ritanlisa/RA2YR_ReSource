@@ -148,7 +148,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
           }
           __3_YAXPAX_Z(v3); /*0x69e38e*/
         }
-        v1[3] = 0; /*0x69e396*/
+        v1->vtable4 = 0; /*0x69e396*/
         v1->uniqueId = 0; /*0x69e399*/
       }
       v1 = v1->nextArrayIndex; /*0x69e39c*/

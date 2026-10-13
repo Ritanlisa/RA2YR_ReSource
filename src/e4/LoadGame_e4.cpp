@@ -327,8 +327,8 @@ int LoadGame::RestoreAudioState()
                 {
                   AudioController::Init((AudioController *)(v8 + 3)); /*0x751823*/
                   DListNode::InitEmpty((DListNode *)v9); /*0x75182a*/
-                  v9[12] = 0; /*0x751831*/
-                  v9[11] = 0; /*0x75183a*/
+                  v9->u32_30 = 0; /*0x751831*/
+                  v9->u32_2C = 0; /*0x75183a*/
                   v9[8] = v6; /*0x75183d*/
                   v10 = v17; /*0x75183f*/
                   v9[9] = v7; /*0x751843*/

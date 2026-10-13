@@ -758,7 +758,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
             if ( !(*(((unsigned short *)&(a3)) + 1)) ) /*0x63188c*/
             {
               Network_Set(); /*0x631895*/
-              *(unsigned int *)(v6 + 4) = 1; /*0x6318a1*/
+              v6->__pad_004 = 1; /*0x6318a1*/
               return 0; /*0x6318b1*/
             }
             break;
@@ -884,8 +884,8 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v21[3] = v4; /*0x63558c*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*&vtable1->uniqueId)); /*0x635599*/
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
-  v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
-  v15[2] = ScenarioClassActionCoords[2]; /*0x6355b2*/
+  v15[1] = ScenarioClassActionCoords->vtable2; /*0x6355a7*/
+  v15[2] = ScenarioClassActionCoords->vtable3; /*0x6355b2*/
   v7 = ToCoordPixel(&v14, v15); /*0x6355ba*/
   v8 = ComputeBounds(v22, 8, *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
@@ -957,8 +957,8 @@ int E4Recv_635680::sub_635680(int a2)
   v20[3] = Viewport[3]; /*0x6356b0*/
   Coords = ScriptAction::GetCoords((ScriptAction *)this, v11); /*0x6356b4*/
   v10[0] = *Coords; /*0x6356bb*/
-  v10[1] = Coords[1]; /*0x6356c6*/
-  v10[2] = Coords[2]; /*0x6356d1*/
+  v10[1] = Coords->u32_4; /*0x6356c6*/
+  v10[2] = Coords->u32_8; /*0x6356d1*/
   v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
   v6 = ComputeBounds(v21, 8, *v5, v5[1]); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
@@ -1180,9 +1180,9 @@ char ExecutePlanningQueue()
         }
       }
       v33 = v17; /*0x6373a7*/
-      if ( v17 && !*(unsigned char *)(v17 + 28) ) /*0x6373ad*/
+      if ( v17 && !v17->u32_1C ) /*0x6373ad*/
       {
-        *(unsigned char *)(v17 + 28) = 1; /*0x6373b8*/
+        v17->u32_1C = 1; /*0x6373b8*/
         VectorClass::Append((DynamicVectorClass *)&dword_AC4C98, &v33); /*0x6373c2*/
       }
       TeamClass::Cleanup(v4, v5); /*0x6373ca*/
@@ -1757,9 +1757,9 @@ AbstractClass * * sub_638E60()
         ScreenPos = ((ScriptAction *)((ScriptAction *)v4))->GetScreenPos(&v8); /*0x638eac*/
         v6 = ComputeBounds(v13, 8, *ScreenPos, ScreenPos[1]); /*0x638ec1*/
         v9 = *v6; /*0x638ec8*/
-        v10 = v6[1]; /*0x638ecf*/
-        v11 = v6[2]; /*0x638ed6*/
-        v12 = v6[3]; /*0x638ee1*/
+        v10 = v6->u32_4; /*0x638ecf*/
+        v11 = v6->u32_8; /*0x638ed6*/
+        v12 = v6->q00C; /*0x638ee1*/
         ShrinkRect(&v9, 4); /*0x638eea*/
         if ( v1 >= v9 && v1 < v9 + v11 && v2 >= v10 && v2 < v10 + v12 ) /*0x638f11*/
           break; /*0x638f11*/
@@ -2121,7 +2121,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
             v19 = v37; /*0x63991d*/
             WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v38, v37); /*0x639926*/
             *(unsigned int *)&v39[7] = *(unsigned int *)WaypointCoords; /*0x63992d*/
-            v39[11] = WaypointCoords[4]; /*0x63993e*/
+            v39[11] = WaypointCoords->vtable2; /*0x63993e*/
             ScriptAction::CreatePlacementAction(v32, v19, v39); /*0x639942*/
             v33 = &v33->ScriptAction_1; /*0x63994e*/
           }
@@ -2159,8 +2159,8 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
     }
   }
   v22 = v32; /*0x639987*/
-  v11[36] = v17; /*0x63998f*/
-  v11[37] = v22; /*0x639995*/
+  v11->q090 = v17; /*0x63998f*/
+  v11->u32_94 = v22; /*0x639995*/
   v11->q098 = 1; /*0x63999b*/
   if ( v2 ) /*0x6399a1*/
     ScriptAction::FindSquadMember(v2); /*0x6399a5*/
@@ -2292,9 +2292,9 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     ScreenPosScriptAction = ((ScriptAction *)(v7))->GetScreenPos(&v18); /*0x63a60a*/
     v9 = ComputeBounds(v27, 8, *ScreenPosScriptAction, ScreenPosScriptAction[1]); /*0x63a61f*/
     v22 = *v9; /*0x63a626*/
-    v23 = v9[1]; /*0x63a62d*/
-    v24 = v9[2]; /*0x63a634*/
-    v25 = v9[3]; /*0x63a63f*/
+    v23 = v9->u32_4; /*0x63a62d*/
+    v24 = v9->u32_8; /*0x63a634*/
+    v25 = v9->q00C; /*0x63a63f*/
     ShrinkRect(&v22, 4); /*0x63a648*/
     v26[1] = v23; /*0x63a659*/
     v26[0] = v22; /*0x63a661*/
@@ -2508,7 +2508,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
       {
         WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v29, _63B050); /*0x63af6f*/
         v19 = *(unsigned int *)WaypointCoords; /*0x63af74*/
-        (*((unsigned char *)&(WaypointCoords))) = WaypointCoords[4]; /*0x63af7b*/
+        (*((unsigned char *)&(WaypointCoords))) = WaypointCoords->vtable2; /*0x63af7b*/
         *(unsigned int *)&v23[104] = v19; /*0x63af7f*/
         (*((unsigned char *)&(v24))) = (unsigned char)WaypointCoords; /*0x63af81*/
         v20 = ScriptAction::GetWaypointCoords((ScriptAction *)&v29[12], v16); /*0x63af88*/
@@ -2517,7 +2517,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
           (int)dword_A83D4C->relatedTagsCount,
           42,
           *(unsigned int *)v20,
-          v20[4],
+          v20->vtable2,
           *(int *)&v23[104],
           v24);
         memcpy(v23, &v29[20], sizeof(v23)); /*0x63afc2*/
@@ -2624,8 +2624,8 @@ AbstractClass * * sub_63B150()
       v23[3] = Viewport[3]; /*0x63b1f7*/
       Coords = ScriptAction::GetCoords((ScriptAction *)v5, v18); /*0x63b1fb*/
       v17[0] = *Coords; /*0x63b202*/
-      v17[1] = Coords[1]; /*0x63b20d*/
-      v17[2] = Coords[2]; /*0x63b218*/
+      v17[1] = Coords->u32_4; /*0x63b20d*/
+      v17[2] = Coords->u32_8; /*0x63b218*/
       v9 = ToCoordPixel(&v16, v17); /*0x63b21c*/
       v10 = ComputeBounds(v25, 8, *v9, v9[1]); /*0x63b236*/
       v19 = *v10; /*0x63b23a*/
@@ -2709,7 +2709,7 @@ int RenderScriptActionHighlight()
     v25 = Viewport[2]; /*0x63b370*/
     v26 = Viewport[3]; /*0x63b37e*/
     ScreenPos = ((ScriptAction *)(v1))->GetScreenPos(&v15); /*0x63b382*/
-    v6 = ComputeBounds(v27, 8, *ScreenPos, ScreenPos[1]); /*0x63b397*/
+    v6 = ComputeBounds(v27, 8, *ScreenPos, ScreenPos->u32_4); /*0x63b397*/
     v7 = v6[1] - 4; /*0x63b3a6*/
     v8 = v6[2] + 8; /*0x63b3ac*/
     v9 = v6[3]; /*0x63b3af*/
@@ -4132,8 +4132,8 @@ BOOL E4Recv_634470::sub_634470(int a2, int a3)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v13, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x634481*/
   v12[0] = *ScenarioClassActionCoords; /*0x634488*/
-  v12[1] = ScenarioClassActionCoords[1]; /*0x63448f*/
-  v12[2] = ScenarioClassActionCoords[2]; /*0x63449a*/
+  v12[1] = ScenarioClassActionCoords->vtable2; /*0x63448f*/
+  v12[2] = ScenarioClassActionCoords->vtable3; /*0x63449a*/
   v4 = ToCoordPixel(&v11, v12); /*0x6344a2*/
   v5 = ComputeBounds(v14, 8, *v4, v4[1]); /*0x6344bc*/
   v6 = *v5 - 4; /*0x6344c4*/
@@ -4458,8 +4458,8 @@ unsigned int * E4Recv_635DF0::sub_635DF0(unsigned int * a2)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v7, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x635e02*/
   v6[0] = *ScenarioClassActionCoords; /*0x635e09*/
-  v6[1] = ScenarioClassActionCoords[1]; /*0x635e10*/
-  v6[2] = ScenarioClassActionCoords[2]; /*0x635e27*/
+  v6[1] = ScenarioClassActionCoords->vtable2; /*0x635e10*/
+  v6[2] = ScenarioClassActionCoords->vtable3; /*0x635e27*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v6, v5); /*0x635e2b*/
   v5[0] += DSurface_ViewBounds.field_0; /*0x635e48*/
   v4 = (char *)DSurface_ViewBounds.field_4 + v5[1] - 8; /*0x635e64*/
@@ -4491,8 +4491,8 @@ int * E4Recv_635E90::sub_635E90(int * a2)
 
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v12, *(unsigned char **)(*(unsigned int *)this->? + 4)); /*0x635ea2*/
   v11[0] = *ScenarioClassActionCoords; /*0x635ea9*/
-  v11[1] = ScenarioClassActionCoords[1]; /*0x635eb0*/
-  v11[2] = ScenarioClassActionCoords[2]; /*0x635ebb*/
+  v11[1] = ScenarioClassActionCoords->vtable2; /*0x635eb0*/
+  v11[2] = ScenarioClassActionCoords->vtable3; /*0x635ebb*/
   v3 = ToCoordPixel(&v10, v11); /*0x635ec3*/
   v4 = ComputeBounds(v13, 8, *v3, v3[1]); /*0x635edd*/
   v5 = *v4 - 8; /*0x635ee7*/
@@ -4653,8 +4653,8 @@ int sub_638F90(int a1, int a2)
     return 0; /*0x638f9d*/
   Coords = ScriptAction::GetCoords((unsigned int **)dword_AC4CCC, v8); /*0x638fa8*/
   v7[0] = *Coords; /*0x638faf*/
-  v7[1] = Coords[1]; /*0x638fba*/
-  v7[2] = Coords[2]; /*0x638fc5*/
+  v7[1] = Coords->u32_4; /*0x638fba*/
+  v7[2] = Coords->u32_8; /*0x638fc5*/
   v3 = ToCoordPixel(&v6, v7); /*0x638fc9*/
   ((Rect *)(v9))->Set(*v3 - 4, v3[1] - 4, 8, 8); /*0x638fe5*/
   v8[0] = v9[0]; /*0x638ffe*/
@@ -4709,7 +4709,7 @@ char sub_6394E0(IUnknown * a1, int a2)
   {
     WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)&v12[8], Next); /*0x639537*/
     v7 = *(unsigned int *)WaypointCoords; /*0x63953c*/
-    (*((unsigned char *)&(WaypointCoords))) = WaypointCoords[4]; /*0x639543*/
+    (*((unsigned char *)&(WaypointCoords))) = WaypointCoords->vtable2; /*0x639543*/
     *(unsigned int *)&v10[104] = v7; /*0x639547*/
     (*((unsigned char *)&(v11))) = (unsigned char)WaypointCoords; /*0x639549*/
     v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v12, a1); /*0x639550*/
@@ -4718,7 +4718,7 @@ char sub_6394E0(IUnknown * a1, int a2)
       (int)dword_A83D4C->relatedTagsCount,
       42,
       *(unsigned int *)v8,
-      v8[4],
+      v8->vtable2,
       *(int *)&v10[104],
       v11);
     memcpy(v10, &v12[128], sizeof(v10)); /*0x63958d*/

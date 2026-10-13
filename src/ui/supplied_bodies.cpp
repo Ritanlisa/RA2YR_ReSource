@@ -1810,7 +1810,7 @@ int InputManager::ProcessEvents() {
       (*(void (**)(void))(*(unsigned int *)dword_8B3E94 + 116))(); /*0x4e16eb*/
     dword_8B3E94 = (int)BestHitElement; /*0x4e16f0*/
     if ( BestHitElement ) /*0x4e16f6*/
-      (*(void (__thiscall **)(unsigned int *))(*BestHitElement + 112))(BestHitElement); /*0x4e16fc*/
+      BestHitElement->StubReturnVoid(); /*0x4e16fc*/
   }
   v6 = 0; /*0x4e1703*/
   if ( v11 ) /*0x4e1707*/
@@ -2424,7 +2424,7 @@ unsigned int * ListNode::Alloc(unsigned int *a2) {
   }
   this->u32_4 = v3; /*0x5a9a58*/
   *(unsigned int *)v3 = *a2; /*0x5a9a5d*/
-  *(unsigned int *)(v3 + 4) = a2[1]; /*0x5a9a62*/
+  *(unsigned int *)(v3 + 4) = a2->u32_4; /*0x5a9a62*/
   return this; /*0x5a9a67*/
 }
 } // namespace gamemd
@@ -2515,7 +2515,7 @@ char FontClass::LoadFontResources(int16_t a2) {
     }
     while ( v6 < 256 ); /*0x5d2f7f*/
     v10 = v5[205]; /*0x5d2f87*/
-    v11 = v5[204]; /*0x5d2f8d*/
+    v11 = v5->q0CC; /*0x5d2f8d*/
     this->u32_E = 4 * v5[206]; /*0x5d2f9d*/
     this->u32_C = 4 * v11; /*0x5d2fa2*/
     this->u32_D = 4 * v10; /*0x5d2fa5*/
@@ -2537,8 +2537,8 @@ char FontClass::LoadFontResources(int16_t a2) {
       return 0; /*0x5d306f*/
     }
     v15 = this->__pad_014; /*0x5d3072*/
-    this->ptr_10 = *(int16_t *)(v15 + 2); /*0x5d3079*/
-    this->u32_8 = *(int16_t *)(v15 + 4); /*0x5d3080*/
+    this->ptr_10 = v15->ptr_2; /*0x5d3079*/
+    this->u32_8 = v15->vtable2; /*0x5d3080*/
   }
   Audio::IsSoundEnabled(); /*0x5d3083*/
   v16[0] = 0; /*0x5d308c*/
@@ -2713,7 +2713,7 @@ int ComboBoxOwnerDraw::GetWidthHeight() {
 // 0x600680
 namespace gamemd {
 bool ComboBoxOwnerDraw::MatchDimensions(unsigned int *a2) {
-  return a2[1] == this->q004 && *a2 == *(unsigned int *)this->__pad_000; /*0x60068d*/
+  return a2->q004 == this->q004 && *a2 == *(unsigned int *)this->__pad_000; /*0x60068d*/
 }
 } // namespace gamemd
 

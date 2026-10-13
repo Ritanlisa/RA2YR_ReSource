@@ -602,7 +602,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
       if ( a2 != 1257 ) /*0x6ae4a9*/
         return 0; /*0x6ae4b1*/
       WideString::Assign_Alt(0); /*0x6ae4bb*/
-      if ( *(unsigned int *)a4 && *(unsigned int *)(a4 + 4) != -1 ) /*0x6ae4ce*/
+      if ( *(unsigned int *)a4 && a4->__pad_004 != -1 ) /*0x6ae4ce*/
       {
         DlgCtrlID = GetDlgCtrlID(*(HWND *)a4); /*0x6ae4d5*/
         v7 = DlgCtrlID; /*0x6ae4db*/
@@ -614,7 +614,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           || DlgCtrlID == 1308
           || DlgCtrlID == 1309 )
         {
-          v14 = *(unsigned int *)(a4 + 4); /*0x6ae5da*/
+          v14 = a4->__pad_004; /*0x6ae5da*/
           if ( v14 == -1 ) /*0x6ae5e6*/
             v14 = SendDlgItemMessageA(hDlg, v7, 0x147u, 0, 0); /*0x6ae5f3*/
           v15 = SendDlgItemMessageA(hDlg, v7, 0x150u, v14, 0); /*0x6ae5ff*/
@@ -643,14 +643,14 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
         {
           if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
           {
-            v10 = GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae589*/
+            v10 = GetComboBoxSelectedRaw(hDlg, v7, a4->__pad_004); /*0x6ae589*/
             v11 = (wchar_t *)GameSetup::GetColorTooltip(v10); /*0x6ae590*/
             WideString::Assign_Alt(v11); /*0x6ae598*/
             return 1; /*0x6ae5a6*/
           }
           if ( Dialog::SideIDToIndex(v7) != -1 ) /*0x6ae553*/
           {
-            v8 = SetComboBoxSelection(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae561*/
+            v8 = SetComboBoxSelection(hDlg, v7, a4->__pad_004); /*0x6ae561*/
             v9 = (wchar_t *)sub_4E4F30(v8); /*0x6ae568*/
             WideString::Assign_Alt(v9); /*0x6ae570*/
             return 1; /*0x6ae57e*/
@@ -658,7 +658,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
         }
         else
         {
-          v12 = GetComboBoxSelected(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae5b1*/
+          v12 = GetComboBoxSelected(hDlg, v7, a4->__pad_004); /*0x6ae5b1*/
           if ( v12 != -1 ) /*0x6ae5b9*/
           {
             v13 = (wchar_t *)SideClass::GetName(v12); /*0x6ae5c1*/
@@ -946,7 +946,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
   nIDDlgItema = *(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions); /*0x6aeb5e*/
   if ( !(uint8_t)MapPreview::Check(v28, nIDDlgItema) ) /*0x6aeb62*/
   {
-    v30 = (*(int (**)(char *))(*&v28->u32_110))(v28); /*0x6aeb6f*/
+    v30 = (*(int (**)(char *))(*&v28->ParticleSystemClass_110))(v28); /*0x6aeb6f*/
     if ( v30 == -1 ) /*0x6aeb75*/
     {
       First = (HWND)MultiplayerGameMode::GetFirst(); /*0x6aeb7f*/

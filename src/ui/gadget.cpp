@@ -509,7 +509,7 @@ int DialogQueue::RemoveEntry()
 bool DialogClass_GetFlag(void* self)
 {
     uint8_t* p = (uint8_t*)(self);
-    return p[52] != 0;
+    return p->q034 != 0;
 }
 
 // IDA 0x623610: DialogClass::CopyTemplateStruct — copy DLGTEMPLATE into internal buffer
@@ -590,7 +590,7 @@ static TextLabelResult RenderTextLabel(TextLabelResult* out, int surfaceObj,
     int yTop  = bounds[1] + yPos;
 
     // Text::Layout — compute text layout
-    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds[2]);
+    TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds->vtable3);
 
     // Apply alignment flags
     if (flags & 0x100) { // center horizontally
@@ -642,12 +642,12 @@ static void RenderTextLabelWordWrap(int surfaceObj, int strObj,
 {
     if (!strObj) return;
 
-    int totalWidth = textBounds[2]; // text width
+    int totalWidth = textBounds->Y; // text width
     int offset = 0;
     int* bounds = textBounds;
 
     while (offset < totalWidth) {
-        TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds[2]);
+        TextTextLayout(surfaceObj, &totalWidth, &bounds, bounds->Y);
 
         if (xPos + bounds[0] + totalWidth > maxWidth) {
             // Would overflow — break here (word wrap)
@@ -656,8 +656,8 @@ static void RenderTextLabelWordWrap(int surfaceObj, int strObj,
 
         TextLabelResult result;
         RenderTextLabel(&result, surfaceObj, strObj, bounds, totalWidth, flags, xPos, yPos);
-        yPos += bounds[3]; // move to next line
-        offset += bounds[2];
+        yPos += bounds->Width; // move to next line
+        offset += bounds->Y;
     }
 }
 

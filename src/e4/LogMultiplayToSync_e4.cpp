@@ -261,17 +261,17 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
                   "COORD:%x   Facing:%d   Facing2:%d   Mission:%d   Type:%d(%s)   Tgt:%s(%d)  NavCom:%s(%d)   TrkNum:%d T"
                   "rkInd:%d SpdAc:%d\n",
                   *(unsigned int *)(v26 - 92),
-                  *(uint8_t *)(v26 + 8),
-                  *(uint8_t *)(v26 + 9),
-                  *(uint8_t *)(v26 + 10),
+                  v26->vtable3,
+                  v26->u32_9,
+                  v26->u32_A,
                   *(unsigned int *)(v26 - 88),
                   (const char *)(v26 - 84),
                   (const char *)(v26 - 52),
                   *(unsigned int *)(v26 - 56),
                   (const char *)(v26 - 24),
                   *(unsigned int *)(v26 - 28),
-                  *(int16_t *)(v26 + 4),
-                  *(int16_t *)(v26 + 6),
+                  v26->vtable2,
+                  v26->u32_6,
                   *(unsigned int *)v26);
               v26 += 104; /*0x651c2e*/
               ++v25; /*0x651c31*/
@@ -284,7 +284,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       }
       while ( v23 ); /*0x651c50*/
     }
-    v27 = *(unsigned int *)(v4 + 756); /*0x651c56*/
+    v27 = *&v4->u32_2F4; /*0x651c56*/
     v55 = 0; /*0x651c60*/
     v58 += 104 * v27; /*0x651c77*/
     if ( v56 > 0 ) /*0x651c7b*/
@@ -325,7 +325,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       }
       while ( v23 ); /*0x651d1d*/
     }
-    v30 = *(unsigned int *)(v4 + 760); /*0x651d23*/
+    v30 = *&v4->u32_2F8; /*0x651d23*/
     v55 = 0; /*0x651d2d*/
     v58 += 104 * v30; /*0x651d44*/
     if ( v56 > 0 ) /*0x651d48*/
@@ -378,7 +378,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
         {
           v36 = &v54[v34[5]]; /*0x651e1e*/
           fprintf(v6, "Object %d: %x ", v35, *(unsigned int *)v36);
-          v37 = *((unsigned short *)v36 + 18); /*0x651e2f*/
+          v37 = v36->u32_24; /*0x651e2f*/
           if ( v37 == 43 || v37 == 19 ) /*0x651e40*/
           {
             v39 = AbstractType::FindName((void *)v37); /*0x651e68*/
@@ -386,7 +386,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
           }
           else
           {
-            v50 = *((unsigned int *)v36 + 1); /*0x651e49*/
+            v50 = v36->vtable2; /*0x651e49*/
             v38 = AbstractType::FindName((void *)v37); /*0x651e4d*/
             fprintf(v6, "%s\t(Type:%d(%s)) ", v38, v50, v36 + 8); /*0x651e59*/
           }

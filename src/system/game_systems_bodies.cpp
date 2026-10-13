@@ -984,7 +984,7 @@ int GameResult::CalcScore()
       return result; /*0x4c62f6*/
     }
   }
-  result[6864] = this->u32_40; /*0x4c630d*/
+  result->__pad_35A0 = this->u32_40; /*0x4c630d*/
   return result; /*0x4c62ea*/
 }
 // 0x60d540
@@ -1793,7 +1793,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
             {
               if ( *v98 == *(unsigned int *)dy.__pad_000 ) /*0x60e96b*/
               {
-                v99 = v98[2]; /*0x60e971*/
+                v99 = v98->vtable3; /*0x60e971*/
                 delete[] (*(void **)(*(unsigned int *)&g_DialogHashMap_Entries + 4 * v97)); /*0x60e975*/
                 v100 = *(float *)&dy.q004; /*0x60e983*/
                 *(unsigned int *)(*(unsigned int *)&g_DialogHashMap_Entries + 4 * v97) = v99; /*0x60e987*/
@@ -1854,7 +1854,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                     if ( !v110 ) /*0x60ea63*/
                       goto LABEL_206; /*0x60ea63*/
                   }
-                  v98[2] = v110[2]; /*0x60ea6b*/
+                  v98->vtable3 = v110->vtable3; /*0x60ea6b*/
                   --*(unsigned int *)&g_DialogHashMap_Grow; /*0x60ea75*/
                   delete[] (v110); /*0x60ea7b*/
                 }
@@ -2080,7 +2080,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
             {
               if ( *v146 == *(unsigned int *)dy.__pad_000 ) /*0x60ef73*/
               {
-                v147 = v146[2]; /*0x60ef79*/
+                v147 = v146->vtable3; /*0x60ef79*/
                 delete[] (*(void **)(*(unsigned int *)g_DialogPool + 4 * v145)); /*0x60ef7d*/
                 v148 = *(float *)&dy.q004; /*0x60ef8b*/
                 *(unsigned int *)(*(unsigned int *)g_DialogPool + 4 * v145) = v147; /*0x60ef8f*/
@@ -2140,7 +2140,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                     if ( !v158 ) /*0x60f073*/
                       goto LABEL_280; /*0x60f073*/
                   }
-                  v146[2] = v158[2]; /*0x60f07b*/
+                  v146->vtable3 = v158->vtable3; /*0x60f07b*/
                   --*(unsigned int *)&g_DialogPoolCount; /*0x60f085*/
                   delete[] (v158); /*0x60f08b*/
                 }
@@ -3642,10 +3642,10 @@ void LoadScreen::RenderLoop()
       SubFile = MixFileClass::GetSubFile((MixFileClass *)v7, 0); /*0x4b6dae*/
       Surface::Construct((Surface *)v9, v11, v10); /*0x4b6db5*/
       v249 = SubFile; /*0x4b6dc5*/
-      *(unsigned int *)(v9 + 12) = 0; /*0x4b6dc9*/
+      v9->u32_C = 0; /*0x4b6dc9*/
       *(unsigned int *)v9 = &XSurface_Vtable; /*0x4b6dd0*/
-      *(unsigned int *)(v9 + 16) = 1; /*0x4b6dd6*/
-      Buffer::Init((Buffer *)(v9 + 20), v249, v10 * v11); /*0x4b6ddd*/
+      v9->u32_10 = 1; /*0x4b6dd6*/
+      Buffer::Init(&v9->q014, v249, v10 * v11); /*0x4b6ddd*/
       *(unsigned int *)v9 = &BSurface_Vtable; /*0x4b6de2*/
       v304 = (int *)v9; /*0x4b6de8*/
     }
@@ -3663,7 +3663,7 @@ void LoadScreen::RenderLoop()
     do /*0x4b6e44*/
     {
       Struct::Zero3(v14); /*0x4b6e3b*/
-      v14 = (Struct *)((char *)v14 + 3); /*0x4b6e40*/
+      v14 = &v14->Struct_3; /*0x4b6e40*/
       --v16; /*0x4b6e43*/
     }
     while ( v16 ); /*0x4b6e44*/
@@ -3848,7 +3848,7 @@ void LoadScreen::RenderLoop()
       v51[20] = *(unsigned int *)&DataGlobal_87F6B0; /*0x4b72ec*/
       *(unsigned int *)(v47 + 4 * v46) = v51; /*0x4b72ef*/
       if ( v46 ) /*0x4b72f5*/
-        (*(void (**)(unsigned int *, GadgetClass *))(*v51 + 12))(v51, v310); /*0x4b7309*/
+        v51->InsertAfter(v310); /*0x4b7309*/
       else
         v310 = *(GadgetClass **)v47; /*0x4b72fa*/
       ++v48; /*0x4b730c*/
@@ -3865,7 +3865,7 @@ void LoadScreen::RenderLoop()
     {
       v54 = 0; /*0x4b7359*/
     }
-    *((unsigned int *)v54 + 20) = v23; /*0x4b7363*/
+    *(&v54->u32_50) = v23; /*0x4b7363*/
     v54[29] = 1; /*0x4b7366*/
     *(unsigned int *)(v47 + 32) = v54; /*0x4b736a*/
     (*(void (**)(unsigned char *, GadgetClass *))(v54->Width)(v54, v310); /*0x4b7372*/
@@ -3880,7 +3880,7 @@ void LoadScreen::RenderLoop()
     {
       v58 = 0; /*0x4b73b8*/
     }
-    *((unsigned int *)v58 + 20) = v23; /*0x4b73be*/
+    *(&v58->u32_50) = v23; /*0x4b73be*/
     v58[29] = 1; /*0x4b73c1*/
     *(unsigned int *)(v47 + 36) = v58; /*0x4b73c5*/
     (*(void (**)(unsigned char *, GadgetClass *))(v58->Width)(v58, v310); /*0x4b73d1*/
@@ -3924,7 +3924,7 @@ void LoadScreen::RenderLoop()
         }
         v65[20] = *(unsigned int *)&DataGlobal_87F6B0; /*0x4b7463*/
         *v307 = v65; /*0x4b7466*/
-        (*(void (**)(unsigned int *, GadgetClass *))(*v65 + 12))(v65, v310); /*0x4b7471*/
+        v65->InsertAfter(v310); /*0x4b7471*/
         ++v60; /*0x4b7474*/
         v62 += 66; /*0x4b7475*/
         ++v61; /*0x4b747f*/
@@ -4259,7 +4259,7 @@ void LoadScreen::RenderLoop()
                   goto LABEL_152; /*0x4b7c67*/
               }
             }
-            v105 = (*(int (**)(int))(*(unsigned int *)v77 + 172))(v77); /*0x4b7d2e*/
+            v105 = (*(int (**)(int))(*&v77->u32_2B0))(v77); /*0x4b7d2e*/
             v318 -= v105; /*0x4b7d34*/
           }
         }
@@ -5382,8 +5382,8 @@ void LoadScreen::RenderProgressBackground()
   unsigned int v24[4]; // [esp+48h] [ebp-10h] BYREF
 
   FoundationSize = Building::GetFoundationSize(v24, 0); /*0x643413*/
-  v7 = FoundationSize[2]; /*0x643430*/
-  v8 = FoundationSize[3]; /*0x64343c*/
+  v7 = FoundationSize->vtable3; /*0x643430*/
+  v8 = FoundationSize->vtable4; /*0x64343c*/
   v20[1] = (*(((unsigned int *)&(a2)) + 1)) + 3; /*0x643446*/
   v19 = (*((unsigned int *)&(a2))) + 3; /*0x64344e*/
   v20[0] = (*((unsigned int *)&(a2))) + 3; /*0x643452*/
@@ -5950,7 +5950,7 @@ void LoadingScreen::Render()
                                                      | (word_A83CDA >> g_BitMask_Blue << g_BitMask_Green)
                                                      | (g_abs_A83CDB >> g_BitMask_Red << g_BitShift_Blue)) >> g_BitShift_Blue) << g_BitMask_Red);
           *(unsigned short *)v81.__pad_000 = *(unsigned short *)v53; /*0x553cb0*/
-          v81.q000[2] = v53[2]; /*0x553cbc*/
+          v81.q000[2] = v53->ptr_2; /*0x553cbc*/
           PrintFontLayout( /*0x553d01*/
             v81.q010,
             v91,
@@ -6223,7 +6223,7 @@ void LoadingScreen::Render()
             wcscpy(Destination, result); /*0x5530f5*/
             v21 = Color::ConvertToRGB(LoadScreenAnim + 194, (int)&v80); /*0x553108*/
             v72 = *(unsigned short *)v21; /*0x553115*/
-            v79 = *(unsigned char *)(v21 + 2); /*0x553123*/
+            v79 = v21->ConvertClass_field_0x2; /*0x553123*/
             v81.q018 = 0; /*0x553170*/
             v81.q01C = 0; /*0x553174*/
             v22 = ((uint8_t)v72 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x55318a*/
@@ -6672,7 +6672,7 @@ void SaveLoadDialog::DlgProc()
           if ( v34 ) /*0x559324*/
           {
             v36 = RawFileClass::Construct(&v62, (int)v34); /*0x559332*/
-            v37 = (*(uint8_t (**)(unsigned int *, unsigned int))(*v36 + 20))(v36, 0) == 1; /*0x559349*/
+            v37 = v36->Open_1(0) == 1; /*0x559349*/
             RawFileClass::Dtor(&v62); /*0x55934c*/
             if ( v37 /*0x5593aa*/
               && (v53 = GetStringCSF(g_Str_TXT_NO, 0, g_Str_File_LoadDlg_CPP, 594),
@@ -7269,7 +7269,7 @@ void SkirmishMapGen::DlgProc()
                   break; /*0x59652a*/
               }
             }
-            v11[1099] = dword_ABDFD4; /*0x596531*/
+            v11->startX = dword_ABDFD4; /*0x596531*/
             dword_A8B230->startY = dword_ABDFD0; /*0x596543*/
             dword_A8B230->width = dword_ABEC90; /*0x596554*/
             dword_A8B230->height = dword_ABECD0; /*0x596565*/
