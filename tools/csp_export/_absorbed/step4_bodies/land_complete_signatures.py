@@ -32,12 +32,13 @@ Outputs (always):
 """
 import json
 import re
+import struct
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from signature_authority import Authority  # noqa: E402
+from signature_authority import Authority, sanitize_params  # noqa: E402
 
 APPLY = "--apply" in sys.argv
 VERBOSE = "--verbose" in sys.argv
@@ -242,6 +243,372 @@ def name_ok(site_name, r):
     if sn.replace('::', '_').lower() == sl:
         return True
     return False
+
+
+# ======================================================================
+# X13: G42 stub-block signature sync.
+#
+# Sweep-scope extension for X4.  Historical G42 sig-sync waves froze a
+# block of CLASS-MEMBER declarations to their STUBBED definitions and
+# tagged them
+#     // G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache
+# X4's `...` sweep never matched them: their parameter lists are closed
+# (non-variadic) shapes with wrong content, so the site regex skipped them.
+#
+# X13 rewrites BOTH the declaration and the matching definition head from
+# the same signature authority X4 uses (signals.json), and rules
+# virtualness from the X11 vtable authority plus an independent PE scan
+# ("is this VA materialized as a 4-byte value anywhere in the image?" --
+# a function never stored as a pointer cannot be dispatched through a
+# vtable; vtables are arrays of such pointers in .rdata).
+#
+# Virtualness rules (never guess; fail-loud):
+#   * addr is an authority vtable slot           -> `virtual` present
+#   * declared virtual, addr stored as an
+#     ALIGNED pointer in .rdata, but no slot     -> FLAG: keep as-is, record
+#   * declared virtual, no slot / no aligned
+#     .rdata pointer                             -> drop `virtual` (record)
+#   * identity guard: authority symbol's class::
+#     method must equal the declaring class and
+#     the marker's method name; otherwise skip + record the gap
+# ======================================================================
+X13_MARKER = 'G42 sig-sync: def stubbed pending retranslation'
+X13_DIR = ROOT / '.omo' / 'evidence' / 'optimization' / 'x13'
+X13_LEDGER = X13_DIR / 'x13_g42_ledger.json'
+VT_AUTH_PATH = ROOT / 'anchors' / 'vtable_authority.json'
+GAMEMD_EXE = Path(r'D:\RA2MD\gamemd.exe')
+X13_CC_KW = {'stdcall': '__stdcall', 'fastcall': '__fastcall',
+             'cdecl': '__cdecl'}
+X13_STMT_KW = {'return', 'else', 'if', 'while', 'for', 'switch', 'case',
+               'do', 'catch', 'throw', 'sizeof', 'new', 'delete'}
+
+
+def x13_norm(a):
+    s = str(a).strip().lower()
+    if s.startswith('0x'):
+        s = s[2:]
+    return '0x' + (s.lstrip('0') or '0')
+
+
+def x13_load_slots():
+    d = json.loads(VT_AUTH_PATH.read_text(encoding='utf-8'))
+    slots = {}
+    for vk, vv in d.get('vtables', {}).items():
+        cls = vv.get('class_rtti') or ''
+        for sl in vv.get('slots') or []:
+            f = sl.get('func')
+            if f:
+                slots.setdefault(x13_norm(f), []).append(
+                    [vk, sl.get('slot'), cls])
+    return slots
+
+
+class X13Binary:
+    """Independent PE scan: is the VA materialized as a 4-byte LE value?"""
+
+    def __init__(self, path):
+        self.ok = False
+        self.d = b''
+        self.secs = []
+        try:
+            d = path.read_bytes()
+        except OSError:
+            return
+        if d[:2] != b'MZ':
+            return
+        e = struct.unpack_from('<I', d, 0x3C)[0]
+        if d[e:e + 4] != b'PE\0\0':
+            return
+        coff = e + 4
+        nsec, = struct.unpack_from('<H', d, coff + 2)
+        opt_size, = struct.unpack_from('<H', d, coff + 16)
+        opt = coff + 20
+        image_base, = struct.unpack_from('<I', d, opt + 28)
+        s = opt + opt_size
+        for _ in range(nsec):
+            name = d[s:s + 8].rstrip(b'\0').decode('latin-1')
+            _vsize, va, rawsize, rawptr = struct.unpack_from('<IIII', d, s + 8)
+            self.secs.append((name, image_base + va, rawsize, rawptr))
+            s += 40
+        self.d = d
+        self.ok = True
+
+    def occurrences(self, va):
+        out = []
+        pat = struct.pack('<I', va)
+        for name, sva, rs, rp in self.secs:
+            raw = self.d[rp:rp + rs]
+            off = raw.find(pat)
+            while off != -1:
+                out.append((name, sva + off))
+                off = raw.find(pat, off + 1)
+        return out
+
+
+def _x13_strip(code, in_block):
+    """Blank line/block comments; returns (code, in_block_state)."""
+    out = []
+    i = 0
+    while i < len(code):
+        if in_block:
+            k = code.find('*/', i)
+            if k == -1:
+                return ''.join(out), True
+            in_block = False
+            i = k + 2
+            continue
+        k2 = code.find('//', i)
+        kb = code.find('/*', i)
+        if k2 != -1 and (kb == -1 or k2 < kb):
+            out.append(code[i:k2])
+            return ''.join(out), False
+        if kb != -1:
+            out.append(code[i:kb])
+            i = kb + 2
+            in_block = True
+            continue
+        out.append(code[i:])
+        return ''.join(out), False
+    return ''.join(out), in_block
+
+
+def x13_scan_sites():
+    """All files carrying the X13 marker, with declaring-class context."""
+    sites = []
+    for p in sorted(SRC.rglob('*')):
+        if p.suffix.lower() not in EXTS or not p.is_file():
+            continue
+        try:
+            lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
+        except OSError:
+            continue
+        stack = []
+        pending = None
+        in_block = False
+        for i, ln in enumerate(lines):
+            code, in_block = _x13_strip(ln, in_block)
+            cm = re.match(
+                r'^\s*(?:class|struct)\s+([A-Za-z_]\w*)\b(.*)$', code)
+            if cm and ';' not in cm.group(2).split('{')[0]:
+                if '{' in cm.group(2):
+                    stack.append(cm.group(1))
+                else:
+                    pending = cm.group(1)    # brace on the next line(s)
+            elif pending and '{' in code:
+                stack.append(pending)
+                pending = None
+            if X13_MARKER in ln:
+                sites.append({'file': p, 'idx': i, 'line': ln,
+                              'cls': stack[-1] if stack else None})
+            if re.match(r'^\s*\}', code) and stack:
+                stack.pop()
+    return sites
+
+
+def x13_find_defs(cls, mth):
+    """Strict definition-head lookup `RET Class::Method(...)`; call-shaped
+    lines (`return X::Y(...)`) are excluded by a statement guard."""
+    name_re = re.compile(
+        r'^\s*(?P<pre>[A-Za-z_][\w:<>,\s\*&]*?)\b' + re.escape(cls) + r'::'
+        + re.escape(mth) + r'\s*\(')
+    hits = []
+    for p in sorted(SRC.rglob('*.cpp')):
+        try:
+            lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
+        except OSError:
+            continue
+        for i, ln in enumerate(lines):
+            m = name_re.match(ln)
+            if not m:
+                continue
+            first = re.split(r'[\s\*&]+', ln.strip())[0]
+            if first in X13_STMT_KW:
+                continue
+            # locate matching close paren; tail must be a definition tail
+            depth = 0
+            pos = None
+            for j in range(m.end() - 1, len(ln)):
+                if ln[j] == '(':
+                    depth += 1
+                elif ln[j] == ')':
+                    depth -= 1
+                    if depth == 0:
+                        pos = j
+                        break
+            if pos is None:
+                continue
+            tail = ln[pos + 1:]
+            tail_code = re.sub(r'/\*.*?\*/', '', tail)
+            tail_code = tail_code.split('//')[0]
+            if ';' in tail_code:
+                continue    # statement, not a definition
+            hits.append((p, i, m.start(), pos, tail))
+    return hits
+
+
+def x13_run(au, binary, apply):
+    """Plan + (optionally) apply the X13 stub-block sync.  Returns ledger."""
+    slots = x13_load_slots()
+    sites = x13_scan_sites()
+    print('X13 G42-stub-block: %d site(s) with marker' % len(sites),
+          flush=True)
+    rows = []
+    gaps = []
+    edits = {}   # file -> {idx: newline}
+    for s in sites:
+        row = {'file': str(s['file'].relative_to(ROOT)),
+               'line': s['idx'] + 1, 'cls': s['cls'],
+               'old_decl': s['line'].strip()}
+        am = re.search(r'//\s*(0x[0-9A-Fa-f]{6,8})\b', s['line'])
+        mm = re.search(r'([A-Za-z_~]\w*)\s*\(([^)]*)\)', s['line'])
+        if not am or not mm:
+            row['gap'] = 'no address or no method name'
+            gaps.append(row)
+            rows.append(row)
+            continue
+        row['addr'] = x13_norm(am.group(1))
+        mth = mm.group(1)
+        r = au.resolve(addr=row['addr'])
+        if r is None or r.params is None:
+            row['gap'] = 'no complete signature authority entry'
+            gaps.append(row)
+            rows.append(row)
+            continue
+        sn = r.sig_name or ''
+        scls = sn.rsplit('::', 1)[0] if '::' in sn else ''
+        slast = sn.rsplit('::', 1)[-1]
+        if slast != mth or (scls and s['cls'] and scls != s['cls']):
+            row['gap'] = ('identity mismatch: authority=%s declaring=%s::%s'
+                          % (sn, s['cls'], mth))
+            gaps.append(row)
+            rows.append(row)
+            continue
+        ret = re.sub(r'#\d+', 'void', (r.ret or 'void')).strip() or 'void'
+        params = sanitize_params(r.params.strip())
+        # ida_cache fill protos carry the thiscall receiver as an explicit
+        # first parameter (`Cls *this` -> `Cls *p_this`): the member form
+        # declares it implicitly -- drop the leading receiver.
+        segs = params.split(', ') if params else []
+        if segs and re.search(r'\bp_this\s*$', segs[0]):
+            segs = segs[1:]
+            params = ', '.join(segs)
+        cc = (r.cc or '').strip().lower()
+        cckw = X13_CC_KW.get(cc, '')
+        code = s['line'].split('//')[0]
+        cur_virtual = bool(re.search(r'\bvirtual\b', code))
+        va = int(row['addr'], 16)
+        hits = slots.get(row['addr'], [])
+        occ = binary.occurrences(va) if binary.ok else []
+        rdata_aligned = [o for o in occ if o[0] == '.rdata' and o[1] % 4 == 0]
+        if hits:
+            new_virtual, vnote = True, 'slot'
+            row['vtable_slots'] = hits
+        elif cur_virtual and rdata_aligned:
+            new_virtual, vnote = True, 'flagged(rdata-ptr)'
+            row['flag'] = ['%s@0x%x' % (o[0], o[1]) for o in rdata_aligned]
+        else:
+            new_virtual = False
+            vnote = ('dropped(no-binary-vtable)'
+                     if cur_virtual else 'nonvirtual')
+            if cur_virtual:
+                row['binary_occurrences'] = [
+                    '%s@0x%x' % (o[0], o[1]) for o in occ]
+        row['truth'] = {'ret': ret, 'cc': cc, 'params': params,
+                        'sig_name': sn}
+        row['virtual'] = {'was': cur_virtual, 'now': new_virtual,
+                          'note': vnote}
+        sig = ' '.join(x for x in [ret, cckw, '%s(%s)' % (mth, params)] if x)
+        if new_virtual:
+            sig = 'virtual ' + sig
+        lead = s['line'][:len(s['line']) - len(s['line'].lstrip())]
+        new_decl = '%s%s;  // %s (x13:signals; virt=%s)' % (
+            lead, sig, am.group(1), vnote)
+        row['new_decl'] = new_decl.strip()
+        if new_decl.rstrip() != s['line'].rstrip():
+            edits.setdefault(s['file'], {})[s['idx']] = new_decl
+        # definition
+        ds = x13_find_defs(s['cls'], mth)
+        if len(ds) != 1:
+            row['def_gap'] = '%d definition site(s)' % len(ds)
+            if ds:
+                row['def_sites'] = ['%s:%d' % (str(d[0].relative_to(ROOT)),
+                                               d[1] + 1) for d in ds]
+            gaps.append(row)
+        else:
+            dp, di, _ms, pos, tail = ds[0]
+            dln = dp.read_text(encoding='utf-8', errors='replace').split(
+                '\n')[di]
+            dindent = dln[:len(dln) - len(dln.lstrip())]
+            dparts = [ret] + ([cckw] if cckw else []) + [
+                '%s::%s(%s)' % (s['cls'], mth, params)]
+            new_def = dindent + ' '.join(dparts) + tail
+            row['def'] = {'file': str(dp.relative_to(ROOT)), 'line': di + 1,
+                          'old': dln.strip(), 'new': new_def.strip()}
+            if new_def.rstrip() != dln.rstrip():
+                edits.setdefault(dp, {})[di] = new_def
+        rows.append(row)
+    n_edit = sum(len(v) for v in edits.values())
+    n_virt_slot = sum(1 for x in rows if x.get('virtual')
+                      and x['virtual']['note'] == 'slot')
+    n_virt_flag = sum(1 for x in rows if x.get('virtual')
+                      and x['virtual']['note'].startswith('flagged'))
+    n_virt_drop = sum(1 for x in rows if x.get('virtual')
+                      and x['virtual']['note'].startswith('dropped'))
+    n_virt_add = sum(1 for x in rows if x.get('virtual')
+                     and not x['virtual']['was'] and x['virtual']['now'])
+    print('  truth resolved: %d; gaps: %d' % (len(rows) - len(gaps),
+                                              len(gaps)))
+    print('  virtual: slot-kept=%d added=%d dropped=%d flagged=%d'
+          % (n_virt_slot, n_virt_add, n_virt_drop, n_virt_flag))
+    print('  planned line edits: %d in %d file(s)'
+          % (n_edit, len(edits)))
+    for g in gaps:
+        print('  GAP %s:%d %s::%s -- %s'
+              % (g['file'], g['line'], g.get('cls'), g.get('old_decl',
+                 '')[:60], g.get('gap') or g.get('def_gap')), flush=True)
+    if apply:
+        n_file = 0
+        for f, changes in edits.items():
+            try:
+                text = f.read_text(encoding='utf-8', errors='replace')
+            except OSError as ex:
+                print('  !! unreadable %s: %s' % (f, ex))
+                continue
+            lines = text.split('\n')
+            for i in sorted(changes, reverse=True):
+                lines[i] = changes[i]
+            ok = False
+            for k in range(5):
+                try:
+                    f.write_text('\n'.join(lines), encoding='utf-8',
+                                 newline='')
+                    ok = True
+                    break
+                except PermissionError:
+                    import time
+                    time.sleep(0.5 * (k + 1))
+            if ok:
+                n_file += 1
+            else:
+                print('  !! write failed %s' % f)
+        print('  applied: %d file(s) rewritten' % n_file)
+    X13_DIR.mkdir(parents=True, exist_ok=True)
+    if sites:
+        sig_path = ROOT / 'signals.json'
+        st = sig_path.stat()
+        X13_LEDGER.write_text(json.dumps({
+            'schema': 'x13-g42-stub-sync/v1',
+            'marker': X13_MARKER,
+            'signals_mtime_ns': st.st_mtime_ns,
+            'signals_size': st.st_size,
+            'sites': len(sites), 'gaps': len(gaps),
+            'virtual': {'slot_kept': n_virt_slot, 'added': n_virt_add,
+                        'dropped': n_virt_drop, 'flagged': n_virt_flag},
+            'planned_edits': n_edit,
+            'rows': rows,
+        }, indent=1, ensure_ascii=False, sort_keys=True), encoding='utf-8')
+        print('  ledger: %s' % X13_LEDGER.relative_to(ROOT))
+    return rows, edits
 
 
 def main():
@@ -456,8 +823,27 @@ def main():
         'entries': ledger,
     }, indent=1, ensure_ascii=False, sort_keys=True), encoding='utf-8')
     print('report: %s' % (REPORT / 'x4_land_signatures.json'))
+
+    # ---- X13: G42 stub-block sync (class-member decls the `...` sweep
+    # cannot see; marker-driven, idempotent, fail-loud) -------------------
+    binary = X13Binary(GAMEMD_EXE)
+    if not binary.ok:
+        print('X13 G42-stub-block: !! binary unavailable at %s -- '
+              'pass skipped (fail-closed, no writes)' % GAMEMD_EXE)
+    else:
+        x13_run(au, binary, APPLY)
+
     print('APPLIED' if APPLY else 'DRY RUN (use --apply)')
 
 
 if __name__ == '__main__':
-    main()
+    if '--x13-only' in sys.argv:
+        _au = Authority(ROOT)
+        _bin = X13Binary(GAMEMD_EXE)
+        if not _bin.ok:
+            print('X13: !! binary unavailable at %s' % GAMEMD_EXE)
+            sys.exit(2)
+        x13_run(_au, _bin, APPLY)
+        print('APPLIED' if APPLY else 'DRY RUN (use --apply)')
+    else:
+        main()

@@ -952,11 +952,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~InfantryTypeVector() = default;
 
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x512AE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(int a2, unsigned int * a3);  // 0x512C80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void AddType(unsigned int * a2);  // 0x512D60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Remove(int a2);  // 0x512DA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Construct(int a2, int a3);  // 0x512DC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x512AE0 (x13:signals; virt=slot)
+    virtual char Release(int p0, int* p1);  // 0x512C80 (x13:signals; virt=slot)
+    virtual int AddType(int* p0);  // 0x512D60 (x13:signals; virt=slot)
+    virtual unsigned int Remove(int p0);  // 0x512DA0 (x13:signals; virt=slot)
+    _DWORD * Construct(int p0, int p1);  // 0x512DC0 (x13:signals; virt=nonvirtual)
     // +3 more virtual methods
 
     uint8_t InfantryTypeVector_field_0x04[4];
@@ -984,8 +984,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~IsoCoord() = default;
 
-    virtual void ToPixel(int a2, Tactical * aP2);  // 0x6D1EB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ToScreenOffset(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, AbstractClass * aP3);  // 0x6D62E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * ToPixel(int p0, int p1);  // 0x6D1EB0 (x13:signals; virt=dropped(no-binary-vtable))
+    int __stdcall ToScreenOffset(int p0, int p1, int* p2, int* p3);  // 0x6D62E0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t IsoCoord_field_0x04[4];
 
@@ -998,10 +998,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~IsoTile() = default;
 
-    virtual void Decode16Bit(int a1, uint16_t * a2, int * a3, int a4, int a5, int a6);  // 0x748750 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Decode8BitV2(int a1, uint8_t * a2, int * a3, unsigned int a4, int a5, int a6);  // 0x748C30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Decode16BitV2(int a1, uint16_t * a2, int * a3, int a4, int a5, int a6);  // 0x7C39C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Decode8Bit(int a1, uint8_t * a2, int * a3, unsigned int a4, int a5, int a6);  // 0x7C3EB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int * __cdecl Decode16Bit(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x748750 (x13:signals; virt=dropped(no-binary-vtable))
+    unsigned int __cdecl Decode8BitV2(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x748C30 (x13:signals; virt=dropped(no-binary-vtable))
+    char * __cdecl Decode16BitV2(int p0, uint16_t* p1, int* p2, int p3, int p4, int p5);  // 0x7C39C0 (x13:signals; virt=dropped(no-binary-vtable))
+    unsigned int __cdecl Decode8Bit(int p0, uint8_t* p1, int* p2, unsigned int p3, int p4, int p5);  // 0x7C3EB0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t IsoTile_field_0x04[4];
     uint8_t IsoTile_field_0x08[4];
@@ -1027,9 +1027,9 @@ public:
 
     virtual void CleanupMembers(); // 0x544A70
     virtual void LoadTileFileData(); // 0x544CB0
-    virtual void GetTerrainType(unsigned short * a2, int a3);  // 0x549AA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void GetHeight(int a2);  // 0x549AE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void vt_entry_6C(unsigned int * a0, IsometricTileTypeClass * aP1);  // 0x549B50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual bool GetTerrainType(uint16_t* p0, int p1);  // 0x549AA0 (x13:signals; virt=slot)
+    virtual IsometricTileClass * GetHeight(int p0);  // 0x549AE0 (x13:signals; virt=slot)
+    virtual _DWORD * __stdcall vt_entry_6C(int* p0, int* p1);  // 0x549B50 (x13:signals; virt=slot)
     // +15 more virtual methods
 
     uint8_t IsometricTileTypeClass_field_0x04[4];
@@ -1087,7 +1087,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Lightning() = default;
 
-    virtual void Draw(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x4C1F20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Draw(int p0, int p1, int p2, int p3, int p4, int p5, int p6);  // 0x4C1F20 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_18;  // X10 supply (member_lookup)
@@ -1118,11 +1118,11 @@ class MapFile
 public:
     virtual ~MapFile() = default;  // 0x69C500
 
-    virtual void LoadDescription(wchar_t * String_v, uint8_t *** a2, INIClass * aP1);  // 0x69A3B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    wchar_t * LoadDescription(uint8_t*** p0, char* p1);  // 0x69A3B0 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void ddtor(); // 0x69C500
-    virtual void Write(int a2);  // 0x69C560 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(int a2, unsigned int * a3);  // 0x69CBC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Read(const char ** a2);  // 0x69CD00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual unsigned int Write(int p0);  // 0x69C560 (x13:signals; virt=slot)
+    virtual char Release(int p0, int* p1);  // 0x69CBC0 (x13:signals; virt=slot)
+    virtual int Read(const char** p0);  // 0x69CD00 (x13:signals; virt=slot)
     // +2 more virtual methods
 
     uint8_t MapFile_field_0x04[4];
@@ -1146,7 +1146,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapPreview() = default;
 
-    virtual void Check(int a2);  // 0x5D63E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Check(int p0);  // 0x5D63E0 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void Upload(); // 0x5E7EB0
 
     uint8_t MapPreview_field_0x04[4];
@@ -1201,11 +1201,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MapSeed() = default;
 
-    virtual void CheckTileMatch(int16_t *aP1, int16_t *aP2, int aP3, char aP4, char aP5, char aP6);  // 0x56D100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    bool CheckTileMatch(int16_t* p0, int16_t* p1, int p2, char p3, char p4, char p5);  // 0x56D100 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int IsInitialized(); // 0x58B7D0 (G42 sig-sync: returns dword_ABED0C)
-    virtual void PlaceCityBlock(int16_t * a2, int16_t * a3, void * a4);  // 0x5910F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void PlaceCityBuildings(int16_t * a2, int16_t * a3, void * a4);  // 0x591D80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void PlaceCityBlock2(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // 0x593550 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char PlaceCityBlock(int16_t* p0, int16_t* p1, void* p2);  // 0x5910F0 (x13:signals; virt=dropped(no-binary-vtable))
+    char PlaceCityBuildings(int16_t* p0, int16_t* p1, void* p2);  // 0x591D80 (x13:signals; virt=dropped(no-binary-vtable))
+    char PlaceCityBlock2(int16_t* p0, int16_t* p1, void* p2);  // 0x593550 (x13:signals; virt=dropped(no-binary-vtable))
     // +4 more virtual methods
 
     uint8_t MapSeed_field_0x04[4];
@@ -1235,9 +1235,9 @@ public:
     virtual ~MapSeedClass() = default;  // 0x597D50
 
     virtual int Constructor(); // 0x595680
-    virtual void Release(char * a2, wchar_t * Source);  // 0x597760 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(char * Source);  // 0x597A30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual bool ddtor(char* lpFileName);  // 0x597D50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char Release(char* p0, int* p1);  // 0x597760 (x13:signals; virt=slot)
+    virtual char AddRef(char* p0);  // 0x597A30 (x13:signals; virt=slot)
+    virtual bool __stdcall ddtor();  // 0x597D50 (x13:signals; virt=slot)
     void * Generate(); // 0x597F80 (G42 sig-sync: def)
     // +7 more virtual methods
 
@@ -1294,7 +1294,7 @@ public:
 
     int Read(); // 0x767740
     virtual int ddtor();  // G42 sig-sync: table lookup return // 0x767800
-    virtual void QueryInterface(char a2);  // 0x7678C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x7678C0 (x13:signals; virt=slot)
 
     uint8_t MapSizeGameOption_WorldDominationTour_field_0x04[4];
     uint8_t MapSizeGameOption_WorldDominationTour_field_0x08[4];
@@ -1308,7 +1308,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Map_WorldDominationTour() = default;
 
-    virtual void QueryInterface(char a2);  // 0x769C00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void * QueryInterface(char p0);  // 0x769C00 (x13:signals; virt=slot)
 
 };
 // 2 methods in IDA
@@ -1318,8 +1318,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Matrix() = default;
 
-    virtual void Copy12Float(int a2);  // 0x5AE5E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Scale(float a2);  // 0x5BD730 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Copy12Float(int p0);  // 0x5AE5E0 (x13:signals; virt=dropped(no-binary-vtable))
+    unsigned int Scale(float p0);  // 0x5BD730 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t Matrix_field_0x04[4];
 
@@ -1335,7 +1335,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Matrix2D() = default;
 
-    virtual void Rotate(float aP1);  // 0x5AF1A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void Rotate(float p0);  // 0x5AF1A0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 5 methods in IDA
@@ -1346,11 +1346,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Matrix3x3() = default;
 
-    virtual void Multiply(float *a2);  // 0x5AE8F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ApplyCol0(AbstractClass * aP1);  // 0x5AE9B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ApplyCol1(AbstractClass * aP1);  // 0x5AE9E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void RotateX(float aP1);  // 0x5AEF60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void TransformPoint(float *aP1, float *a2);  // 0x5AF4D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    float * Multiply(float* p0);  // 0x5AE8F0 (x13:signals; virt=dropped(no-binary-vtable))
+    void ApplyCol0(float p0);  // 0x5AE9B0 (x13:signals; virt=dropped(no-binary-vtable))
+    void ApplyCol1(float p0);  // 0x5AE9E0 (x13:signals; virt=dropped(no-binary-vtable))
+    void RotateX(float p0);  // 0x5AEF60 (x13:signals; virt=dropped(no-binary-vtable))
+    float * TransformPoint(float* p0, float* p1);  // 0x5AF4D0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t Matrix3x3_field_0x04[4];
     uint8_t Matrix3x3_field_0x08[4];
@@ -1375,8 +1375,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PlacementList() = default;
 
-    virtual void FindByID(int a2, TechnoClass * aP2);  // 0x47C4D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void FindByType(char a2);  // 0x47EBF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * FindByID(int p0, char p1);  // 0x47C4D0 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * FindByType(char p0);  // 0x47EBF0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t PlacementList_field_0x04[4];
 
@@ -1390,7 +1390,7 @@ public:
     virtual ~PlanningNodeClass() = default; // 0x6370B0
 
     virtual void CleanupAll(); // 0x6370B0
-    virtual void RemoveFromArray(DynamicVector * aP1);  // 0x63EBD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char RemoveFromArray(int p0);  // 0x63EBD0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t PlanningNodeClass_field_0x04[4];
 
@@ -1405,10 +1405,10 @@ public:
     virtual ~RadarHashVector();  // 0x658A70
 
     int Clear(); // 0x658890
-    virtual void GetCount(int a2);  // 0x6588C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Seek(unsigned int * a2, int a3);  // 0x6588E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(int a2);  // 0x658910 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(int a2, char * a3);  // 0x658970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual unsigned int GetCount(int p0);  // 0x6588C0 (x13:signals; virt=slot)
+    virtual _DWORD * Seek(int* p0, int p1);  // 0x6588E0 (x13:signals; virt=slot)
+    virtual char AddRef(int p0);  // 0x658910 (x13:signals; virt=slot)
+    virtual char Release(int p0, char* p1);  // 0x658970 (x13:signals; virt=slot)
     // +8 more virtual methods
 
     uint8_t RadarHashVector_field_0x04[4];
@@ -1444,11 +1444,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreAnimClass() = default;
 
-    virtual void AdvanceFrame(int a2);  // 0x690C00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char AdvanceFrame(int p0);  // 0x690C00 (x13:signals; virt=slot)
     virtual void AnimateText(); // 0x690D60
     virtual int AddRef(); // 0x690F70 (G42 sig-sync: body returns timer result)
     virtual void Release(); // 0x690FC0
-    virtual void Constructor_ScoreAnimClass(unsigned int * Block, char a2);  // 0x690FE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * Constructor_ScoreAnimClass(char p0);  // 0x690FE0 (x13:signals; virt=slot)
     // +3 more virtual methods
 
     uint8_t ScoreAnimClass_field_0x04[4];
@@ -1491,7 +1491,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreClass() = default;
 
-    virtual void SetState(char a2);  // 0x5CD3C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char SetState(char p0);  // 0x5CD3C0 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_30;  // X10 supply (member_lookup)
@@ -1503,10 +1503,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreFontClass() = default;
 
-    virtual void Release(int16_t * a2);  // 0x6907A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(int16_t szSrc);  // 0x6907E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x691040 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Constructor_ScoreFontClass(unsigned int * Block, char a2);  // 0x691100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Release(int16_t* p0);  // 0x6907A0 (x13:signals; virt=slot)
+    virtual int __stdcall AddRef(int16_t p0);  // 0x6907E0 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x691040 (x13:signals; virt=slot)
+    virtual _DWORD * Constructor_ScoreFontClass(char p0);  // 0x691100 (x13:signals; virt=slot)
 
     uint8_t ScoreFontClass_field_0x04[4];
     uint8_t ScoreFontClass_field_0x08[4];
@@ -1520,9 +1520,9 @@ public:
     virtual ~ScoreScreen() = default;
 
     virtual void Display(); // 0x68CD20
-    virtual void Check(char a2);  // 0x68EC00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    bool Check(char p0);  // 0x68EC00 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int AccumulateScoreStats(); // 0x68EF20
-    virtual void DisplayTimeText(unsigned int a2);  // 0x68F9B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int DisplayTimeText(unsigned int p0);  // 0x68F9B0 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void LoadAudio(); // 0x690640
     // +5 more virtual methods
 
@@ -1572,7 +1572,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreScreenClass() = default;
 
-    virtual void ProcessFrame(char * a1, int a2);  // 0x691970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __fastcall ProcessFrame(char* p0, int p1);  // 0x691970 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 2 methods in IDA
@@ -1583,8 +1583,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoreText() = default;
 
-    virtual void ShowAlt(const wchar_t **aP1, int a3);  // 0x76EA20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Show(ObjectClass * aP1);  // 0x76EAF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void ShowAlt(const int** p0, int p1);  // 0x76EA20 (x13:signals; virt=dropped(no-binary-vtable))
+    void Show(const int** p0);  // 0x76EAF0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t ScoreText_field_0x04[4];
 
@@ -1600,8 +1600,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ShroudClass() = default;
 
-    virtual void UpdateVisibility(int *aP1);  // 0x567230 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Reset(IUnknown * aP1);  // 0x577AB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int UpdateVisibility(int* p0);  // 0x567230 (x13:signals; virt=slot)
+    int Reset(int p0);  // 0x577AB0 (x13:signals; virt=nonvirtual)
 
     uint8_t ShroudClass_field_0x04[4];
 
@@ -1622,7 +1622,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SpawnControlVector() = default;
 
-    void* Constructor(int a2, int a3);  // 0x6B8880 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x6B8880 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -1632,7 +1632,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SuperClassVector() = default;
 
-    int Construct(int a2, int a3);  // 0x510500 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x510500 (x13:signals; virt=nonvirtual)
 
 };
 // 5 methods in IDA
@@ -1646,7 +1646,7 @@ public:
     virtual int LoadFromSaveStream(); // 0x539890
     virtual int ProcessCharged(); // 0x6C5640
     virtual int UpdateAll(); // 0x6DA740
-    virtual void CreateChemLauncher(int a2, int a3, int a4, IUnknown * aP4);  // 0x6E38F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char CreateChemLauncher(int p0, int p1, int p2, int p3);  // 0x6E38F0 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int FindByName(); // 0x773030
 
     uint8_t SuperWeaponClass_field_0x04[4];
@@ -1749,7 +1749,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TeamTypeVector() = default;
 
-    virtual void CopyConstruct(unsigned int * a2);  // 0x50E830 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * CopyConstruct(int* p0);  // 0x50E830 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 
@@ -1763,10 +1763,10 @@ class AbstractClassVector
 public:
     virtual ~AbstractClassVector() = default;  // 0x4E0410
 
-    virtual void Seek(int a2);  // 0x4E01E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x4E02D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(int a2);  // 0x4E0320 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(int a2, unsigned int * a3);  // 0x4E0360 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Seek(int p0);  // 0x4E01E0 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x4E02D0 (x13:signals; virt=slot)
+    virtual char AddRef(int p0);  // 0x4E0320 (x13:signals; virt=slot)
+    virtual char Release(int p0, int* p1);  // 0x4E0360 (x13:signals; virt=slot)
     virtual void ddtor(); // 0x4E0410
     // +3 more virtual methods
 
@@ -1793,7 +1793,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ActionQueue() = default;
 
-    virtual void PushEntry(int a2, int a3, int a4);  // 0x53CB10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * PushEntry(int p0, int p1, int p2);  // 0x53CB10 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -1803,7 +1803,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Actions() = default;
 
-    int Reset(int * a1, MouseClass * aP2);  // 0x5BDDC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Reset(int* p0, int* p1);  // 0x5BDDC0 (x13:signals; virt=slot)
 
 
     unsigned int u32_555C;  // X10 supply (member_types)
@@ -1827,7 +1827,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AircraftTypeVector() = default;
 
-    void* Constructor(int a2, int a3);  // 0x513990 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x513990 (x13:signals; virt=nonvirtual)
 
 
     unsigned int u32_4;  // X10 supply (member_lookup)
@@ -1839,9 +1839,9 @@ class AlphaShapeClass
 public:
     virtual ~AlphaShapeClass() = default;  // 0x421730
 
-    virtual void CTOR(ObjectClass * aP1, int a3, AbstractClass * aP3);  // 0x420960 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int CTOR(int p0, int p1, int p2);  // 0x420960 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int Constructor(); // 0x420AF0
-    virtual void SD_vt03(int a1, unsigned int * a2);  // 0x420D40 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall SD_vt03(int p0, int* p1);  // 0x420D40 (x13:signals; virt=slot)
     virtual int SD_vt11();  // G42 sig-sync // 0x420D80
     virtual int SD_vt12();  // G42 sig-sync // 0x420D90
     // +5 more virtual methods
@@ -1874,7 +1874,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AngerVector() = default;
 
-    int Construct(int a2, unsigned int * a3);  // 0x5106E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int* p1);  // 0x5106E0 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -1884,7 +1884,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AppState() = default;
 
-    virtual void CallMethod(int a1);  // 0x5F3320 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __stdcall CallMethod(int p0);  // 0x5F3320 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -1904,7 +1904,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ArmorType() = default;
 
-    int FindIndex(CCINIClass * aP1, uint8_t * a2, Armor);  // 0x4753F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int FindIndex(uint8_t* p0, uint8_t* p1, int p2);  // 0x4753F0 (x13:signals; virt=nonvirtual)
     virtual int LookupByName();  // G42 sig-sync: returns index // 0x772A50
 
     uint8_t ArmorType_field_0x04[4];
@@ -1917,11 +1917,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~ArtConfig() = default;
 
-    virtual void loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5);  // 0x5CC760 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ReadLayout(INIClass * a2, PriorityQueue * a3, int a4);  // 0x7681E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ParseLayoutEntry(unsigned int * a1, ObjectClass * aP2, char ** a3, int a5);  // 0x768F50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void saveConfig(ObjectClass * aP1);  // 0x7691E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void resetConfig(unsigned int * a1, int a3, Selection_WorldDominationTour * aP3);  // 0x76FB90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * loadConfig(char** p0, int p1, int p2, int* p3, char p4);  // 0x5CC760 (x13:signals; virt=dropped(no-binary-vtable))
+    int ReadLayout(int p0, int p1, int p2);  // 0x7681E0 (x13:signals; virt=dropped(no-binary-vtable))
+    int ParseLayoutEntry(int* p0, char** p1, char** p2, int p3);  // 0x768F50 (x13:signals; virt=dropped(no-binary-vtable))
+    char * saveConfig(const char** p0);  // 0x7691E0 (x13:signals; virt=dropped(no-binary-vtable))
+    int resetConfig(int* p0, int p1, int* p2);  // 0x76FB90 (x13:signals; virt=dropped(no-binary-vtable))
     // +1 more virtual methods
 
     uint8_t ArtConfig_field_0x04[4];
@@ -2003,11 +2003,11 @@ class BaseNodeClass_Vector
 public:
     virtual ~BaseNodeClass_Vector() = default;  // 0x42FAB0
 
-    virtual void Release(int a2, char * a3);  // 0x42F9C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char Release(int p0, char* p1);  // 0x42F9C0 (x13:signals; virt=slot)
     virtual void ddtor(); // 0x42FAB0
-    int Read(int a2);  // 0x42FAE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Write(int a2);  // 0x42FB30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x42FB50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Read(int p0);  // 0x42FAE0 (x13:signals; virt=slot)
+    virtual unsigned int Write(int p0);  // 0x42FB30 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x42FB50 (x13:signals; virt=slot)
 
     uint8_t BaseNodeClass_Vector_field_0x04[4];
     uint8_t BaseNodeClass_Vector_field_0x08[4];
@@ -2023,10 +2023,10 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~BigInt() = default;
 
-    virtual void ArrayArithmetic(int * a1, char * a2, unsigned int * a3, int a4);  // 0x5C6FE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void DecryptBlock(Pipe * aP1, Pipe * aP2, Pipe * aP3);  // 0x632740 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void RSAOperation(AbstractClass * Src, int a3, char * a4);  // 0x632870 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    bool Compare(int a2);  // 0x632BC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __fastcall ArrayArithmetic(int* p0, char* p1, int* p2, int p3);  // 0x5C6FE0 (x13:signals; virt=dropped(no-binary-vtable))
+    int DecryptBlock(char* p0, int p1, char* p2);  // 0x632740 (x13:signals; virt=dropped(no-binary-vtable))
+    int RSAOperation(char* p0, int p1, char* p2);  // 0x632870 (x13:signals; virt=dropped(no-binary-vtable))
+    bool Compare(int p0);  // 0x632BC0 (x13:signals; virt=nonvirtual)
 
     uint8_t BigInt_field_0x04[4];
     uint8_t BigInt_field_0x08[4];
@@ -2043,11 +2043,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BinkMovieClass() = default;
 
-    virtual void SetPosition(DSurface * aP1, int a3, int a4);  // 0x433180 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * SetPosition(int p0, int p1, int p2);  // 0x433180 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void RenderFrameToSurface(); // 0x4333F0  [BinkMovie::RenderFrameToSurface non-virtual variant at 0x433040, anchor removed]
-    virtual void AllocateRenderSurface(unsigned char * a1, unsigned char * a2, int a3);  // 0x4335E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ReleaseRenderSurface(uint8_t * a1, unsigned char * a2, int a3);  // 0x4336C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void OpenFile(uint8_t * a1, unsigned char * a2, unsigned int a3);  // 0x433770 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __fastcall AllocateRenderSurface(uint8_t* p0, uint8_t* p1, int p2);  // 0x4335E0 (x13:signals; virt=dropped(no-binary-vtable))
+    unsigned int __fastcall ReleaseRenderSurface(uint8_t* p0, uint8_t* p1, int p2);  // 0x4336C0 (x13:signals; virt=dropped(no-binary-vtable))
+    unsigned int __fastcall OpenFile(uint8_t* p0, uint8_t* p1, unsigned int p2);  // 0x433770 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t BinkMovieClass_field_0x04[4];
     uint8_t BinkMovieClass_field_0x08[4];
@@ -2087,11 +2087,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BlowPipe() = default;
 
-    virtual void Draw(int a2, int a3, int a4);  // 0x438000 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void DrawAlt(int a2, int a3, int a4);  // 0x438030 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Draw(int p0, int p1, int p2);  // 0x438000 (x13:signals; virt=dropped(no-binary-vtable))
+    int DrawAlt(int p0, int p1, int p2);  // 0x438030 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void AddRef(); // 0x438060
-    int Read(BombClass * aP1, signed int Size);  // 0x4380A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(int * Block, char a2);  // 0x632F90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char * Read(char* p0, int p1);  // 0x4380A0 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x632F90 (x13:signals; virt=slot)
 
     uint8_t BlowPipe_field_0x04[4];
     uint8_t BlowPipe_field_0x08[4];
@@ -2110,9 +2110,9 @@ class BlowStraw
 public:
     virtual ~BlowStraw() = default;
 
-    virtual void Get(Straw * aP1, signed int Size);  // 0x438210 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(int * Block, char a2);  // 0x5B45C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Constructor_MixFileClass(void * Block, char a2);  // 0x5B4630 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual size_t Get(char *a2, signed int Size);  // 0x438210 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x5B45C0 (x13:signals; virt=slot)
+    virtual void * Constructor_MixFileClass(char p0);  // 0x5B4630 (x13:signals; virt=flagged(rdata-ptr))
 
     uint8_t BlowStraw_field_0x04[4];
     uint8_t BlowStraw_field_0x08[4];
@@ -2129,7 +2129,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BoolVector() = default;
 
-    int Construct(MapClass * aP1, MapClass * aP2);  // 0x510920 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(size_t Size, int a3);  // 0x510920 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -2140,7 +2140,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BridgeClass() = default;
 
-    virtual void GetCellData(int a2);  // 0x42E820 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * GetCellData(int p0);  // 0x42E820 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_74;  // X10 supply (member_lookup)
@@ -2153,7 +2153,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildLocation() = default;
 
-    virtual void InitCandidate(int a2, IUnknown * aP2);  // 0x50E450 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * InitCandidate(int p0, int* p1);  // 0x50E450 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -2163,7 +2163,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildLocationVector() = default;
 
-    virtual void Grow(int a2);  // 0x510860 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Grow(int p0);  // 0x510860 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -2172,7 +2172,7 @@ class C07EFB9C
 public:
     virtual ~C07EFB9C() = default;  // 0x6301A0
 
-    virtual int ddtor(int a1, unsigned int *a2);  // 0x6301A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall ddtor(int p0, int* p1);  // 0x6301A0 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -2181,7 +2181,7 @@ class C07F0188
 public:
     virtual ~C07F0188() = default;  // 0x645620
 
-    virtual int ddtor(int a1, unsigned int *a2);  // 0x645620 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall ddtor(int p0, int* p1);  // 0x645620 (x13:signals; virt=slot)
 
 };
 // 5 methods in IDA
@@ -2190,11 +2190,11 @@ class C07F5C70
 public:
     virtual ~C07F5C70() = default;  // 0x746DE0
 
-    virtual void Write(IPersistStream * a0, LPPERSISTSTREAM pPStm, FootClass * aP2);  // 0x744600 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual HRESULT __stdcall Write(LPPERSISTSTREAM pPStm, struct IPersistStreamVtbl *a3);  // 0x744600 (x13:signals; virt=slot)
     virtual int StubReturn2280(); // 0x746DD0
-    virtual int ddtor(int a1, unsigned int *a2);  // 0x746DE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall ddtor(int p0, int* p1);  // 0x746DE0 (x13:signals; virt=slot)
     virtual int StubReturn1(); // 0x746E20
-    virtual void Seek(void ** Block, char a2);  // 0x746E80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void ** Seek(char p0);  // 0x746E80 (x13:signals; virt=slot)
 
     uint8_t C07F5C70_field_0x04[4];
     uint8_t C07F5C70_field_0x08[4];
@@ -2208,11 +2208,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CCToolTip() = default;
 
-    virtual void CalculatePopupPosition(unsigned int * a2);  // 0x478BA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(unsigned int * a2);  // 0x478DB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw1(char a2);  // 0x478E10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char CalculatePopupPosition(int* p0);  // 0x478BA0 (x13:signals; virt=slot)
+    virtual int Release(int* p0);  // 0x478DB0 (x13:signals; virt=slot)
+    virtual int Draw1(char p0);  // 0x478E10 (x13:signals; virt=slot)
     virtual void Draw2(); // 0x478E30
-    virtual void Show(int a1);  // 0x479050 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall Show(int p0);  // 0x479050 (x13:signals; virt=slot)
     // +1 more virtual methods
 
     uint8_t CCToolTip_field_0x04[4];
@@ -2237,11 +2237,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CChatEventSink() = default;
 
-    virtual void HandleServerList(int a1, int a2, int a3);  // 0x7A41C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char * a4);  // 0x7A5890 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void HandleChannelJoin(int a1, int a2, int a3, const char * a4);  // 0x7A7110 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void HandleLobbyPlayerUpdate(int a1, int a2, int a3, int a4);  // 0x7A8260 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void HandleUserSearch(int a2, void * a3);  // 0x7A9970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall HandleServerList(int p0, int p1, int p2);  // 0x7A41C0 (x13:signals; virt=slot)
+    virtual int __stdcall HandleChatEvent(int p0, int p1, uint8_t* p2, char* p3);  // 0x7A5890 (x13:signals; virt=slot)
+    virtual int __stdcall HandleChannelJoin(int p0, int p1, int p2, const char* p3);  // 0x7A7110 (x13:signals; virt=slot)
+    virtual int __stdcall HandleLobbyPlayerUpdate(int p0, int p1, int p2, int p3);  // 0x7A8260 (x13:signals; virt=slot)
+    virtual int __stdcall HandleUserSearch(int p0, int p1, const char* p2);  // 0x7A9970 (x13:signals; virt=slot)
     // +8 more virtual methods
 
     uint8_t CChatEventSink_field_0x04[4];
@@ -2278,8 +2278,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~CDROM() = default;
 
-    BOOL DeviceIoControl(HANDLE hDevice, int a2);  // 0x47A3F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void LockVolume(ObjectClass * aP0, AnimClass * aP1, uint8_t a3, DWORD BytesReturned, int16_t a5);  // 0x47A6F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    bool __stdcall DeviceIoControl(HANDLE hDevice, int a2);  // 0x47A3F0 (x13:signals; virt=nonvirtual)
+    char __stdcall LockVolume(int a1, HANDLE hDevice, unsigned __int8 a3, DWORD BytesReturned, __int16 a5);  // 0x47A6F0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t CDROM_field_0x04[4];
 };
@@ -2290,7 +2290,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CarryoverClass() = default;
 
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x473920 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x473920 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -2299,7 +2299,7 @@ class CellClassVector
 public:
     virtual ~CellClassVector() = default;  // 0x5AD570
 
-    int Destruct(unsigned int * Block, char a2);  // 0x5AD570 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * Destruct(char p0);  // 0x5AD570 (x13:signals; virt=slot)
 
 };
 // G42.36: CellCoord moved to core/cellcoord.hpp (top include)
@@ -2341,7 +2341,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Char() = default;
 
-    virtual void Swap(char aP1);  // 0x433C90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Swap(char p0);  // 0x433C90 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     uint8_t u8_41;  // X10 supply (member_lookup)
@@ -2373,7 +2373,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ChatDialog() = default;
 
-    virtual void DlgProc(HWND hWnd, UINT, WPARAM, HWND a4);  // 0x79DB50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __stdcall DlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND a4);  // 0x79DB50 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -2383,7 +2383,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ChatEvent() = default;
 
-    virtual void ProcessStrings(char *a2, int a3, int a4, int a5);  // 0x6B9740 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char ProcessStrings(const char* p0, int p1, int p2, int p3);  // 0x6B9740 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -2414,7 +2414,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Cliff() = default;
 
-    virtual void ProcessTransitions(MapClass * aP0, BombClass * aP1);  // 0x579010 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char __stdcall ProcessTransitions(int p0, int p1);  // 0x579010 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 16 methods in IDA
@@ -2471,7 +2471,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Compression() = default;
 
-    int Read(AbstractClass * aP1, IUnknown * aP2);  // 0x55C350 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Read(int p0, int p1);  // 0x55C350 (x13:signals; virt=slot)
 
 
     unsigned char __pad_004;  // X10 supply (member_lookup)
@@ -2488,8 +2488,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Conditions() = default;
 
-    virtual void CheckResult(int a1, IUnknown * aP1);  // 0x653810 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void CheckResult3(MouseClass * aP0, IUnknown * aP1, char aP3);  // 0x653830 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual bool __stdcall CheckResult(int p0, int p1);  // 0x653810 (x13:signals; virt=slot)
+    virtual bool __stdcall CheckResult3(int p0, int p1, char p2);  // 0x653830 (x13:signals; virt=slot)
 
     uint8_t Conditions_field_0x04[4];
 };
@@ -2500,7 +2500,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Conflict_WorldDominationTour() = default;
 
-    virtual void QueryInterface(char a2);  // 0x7667A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x7667A0 (x13:signals; virt=slot)
 
 };
 // 9 methods in IDA
@@ -2510,11 +2510,11 @@ class ConnectionPointClass
 public:
     virtual ~ConnectionPointClass() = default;  // 0x4A05D0
 
-    virtual void QueryInterface(int a1, const void * a2, unsigned int * a3);  // 0x4A04B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(int a1);  // 0x4A0520 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(volatile LONG * Block);  // 0x4A0540 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual int ddtor(unsigned int *a1, unsigned int *a2);  // 0x4A05D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Advise(int a1, int a2);  // 0x4A0610 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall QueryInterface(int p0, const void* p1, int* p2);  // 0x4A04B0 (x13:signals; virt=slot)
+    virtual LONG __stdcall AddRef();  // 0x4A0520 (x13:signals; virt=slot)
+    virtual LONG __stdcall Release();  // 0x4A0540 (x13:signals; virt=slot)
+    virtual int __stdcall ddtor(int* p0, int* p1);  // 0x4A05D0 (x13:signals; virt=slot)
+    virtual int __stdcall Advise(int p0, int p1);  // 0x4A0610 (x13:signals; virt=slot)
     // +4 more virtual methods
 
     uint8_t ConnectionPointClass_field_0x04[4];
@@ -2538,7 +2538,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ConnectionPointVector() = default;
 
-    int Construct(int a2, int a3);  // 0x5105F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x5105F0 (x13:signals; virt=nonvirtual)
 
 
     unsigned char __pad_004;  // X10 supply (member_lookup)
@@ -2551,7 +2551,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~CrateClass() = default;
 
-    virtual void ProcessPickup(int aP1);  // 0x481A00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char ProcessPickup(int p0);  // 0x481A00 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void Update(); // 0x56BBE0
     virtual void FindPlacement(); // 0x56BD40
 
@@ -2583,7 +2583,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Crypto() = default;
 
-    virtual void DecodeByte(unsigned int * a2);  // 0x632AA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void * DecodeByte(int p0);  // 0x632AA0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 2 methods in IDA
@@ -2610,10 +2610,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Dial8Class() = default;
 
-    void* Constructor(ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5, int a7);  // 0x4A53B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void SetValue(unsigned int a2, ControlClass * aP2, int a4);  // 0x4A5660 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1, int p2, int p3, unsigned int p4, int p5);  // 0x4A53B0 (x13:signals; virt=nonvirtual)
+    virtual int SetValue(unsigned int p0, int* p1, int p2);  // 0x4A5660 (x13:signals; virt=slot)
     virtual int GetValue(); // 0x4A57B0
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x4A59A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x4A59A0 (x13:signals; virt=slot)
 
     uint8_t Dial8Class_field_0x04[4];
     uint8_t Dial8Class_field_0x08[4];
@@ -2658,11 +2658,11 @@ class DiskLaserClass
 public:
     virtual ~DiskLaserClass() = default;  // 0x4A7C30
 
-    virtual void Fire(int a2, InfantryClass * aP2, DiskLaserClass * aP3, DiskLaserClass * aP4);  // 0x4A71A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Fire(int p0, int p1, int p2, int p3);  // 0x4A71A0 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void Update(); // 0x4A7340
     void PointerGotInvalid(AbstractClass * aP1);  // G42 sig-sync: def
     DiskLaserClass(); // 0x4A7A30 (constructor)
-    virtual void Stat(AbstractClass * aP1);  // 0x4A7B80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Stat(int p0);  // 0x4A7B80 (x13:signals; virt=slot)
     // +6 more virtual methods
 
     uint8_t DiskLaserClass_field_0x04[4];
@@ -2712,7 +2712,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DistributionVector_BuildingType() = default;
 
-    int Construct(int a2, unsigned int * a3);  // 0x510970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int* p1);  // 0x510970 (x13:signals; virt=nonvirtual)
 
 };
 // 5 methods in IDA
@@ -2722,10 +2722,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicArray() = default;
 
-    virtual void AddFromList(int a2);  // 0x4129C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Resize(int *a1, unsigned int *aP2);  // 0x6249A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int AddFromList(int p0);  // 0x4129C0 (x13:signals; virt=dropped(no-binary-vtable))
+    char Resize(int* p0, int* p1);  // 0x6249A0 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int ShrinkCapacity(); // 0x625440
-    virtual void Remove(int a2);  // 0x7ACD60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Remove(int p0);  // 0x7ACD60 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int Grow(); // 0x7AD9D0
 
     uint8_t DynamicArray_field_0x04[4];
@@ -2751,7 +2751,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicClass() = default;
 
-    virtual void Insert(HashTable * aP1, IUnknown * aP2);  // 0x7ACA00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Insert(const void* p0, int p1);  // 0x7ACA00 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_4;  // X10 supply (member_lookup)
@@ -2764,7 +2764,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicStringArray() = default;
 
-    virtual void Get(ObjectClass * aP1, int a3);  // 0x7ACE30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Get(char** p0, int p1);  // 0x7ACE30 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     uint32_t u32_8;  // X10 supply (member_lookup)
@@ -2777,7 +2777,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DynamicVectorArray() = default;
 
-    void* Constructor(int a2, int a3, int a4);  // 0x628070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int * Constructor(int p0, int p1, int p2);  // 0x628070 (x13:signals; virt=nonvirtual)
 
 
     int u32_4;  // X10 supply (member_lookup)
@@ -2825,7 +2825,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Field() = default;
 
-    virtual void Int_Set(int aP1);  // 0x434110 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Int_Set(int p0);  // 0x434110 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     void* q020;  // X10 supply (member_lookup)
@@ -2837,7 +2837,7 @@ class FractalNoise
 public:
     virtual ~FractalNoise() = default;
 
-    virtual void Release(CCINIClass * aP0);  // 0x420270 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void __stdcall Release(void* p0);  // 0x420270 (x13:signals; virt=dropped(no-binary-vtable))
     static void Dtor(void *aP0);  // G42.35 R5-style static sync (cache-verbatim Blit-dtor bodies 0x49A2xx/0x49AAxx call FractalNoise::Dtor; def in e4/e4_static_stubs.cpp, decl mirror of _tree_full_e4.hpp)
 
 };
@@ -2849,10 +2849,10 @@ public:
     virtual ~Function() = default;
 
     virtual void Method_41C430(); // 0x41C430
-    virtual void Method_424CA0(int a2);  // 0x424CA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Method_46B260(int a2);  // 0x46B260 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Method_424CA0(int p0);  // 0x424CA0 (x13:signals; virt=dropped(no-binary-vtable))
+    int Method_46B260(int p0);  // 0x46B260 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int Method_4B4D60(); // 0x4B4D60
-    virtual void Method_6342D0(int a2);  // 0x6342D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Method_6342D0(int p0);  // 0x6342D0 (x13:signals; virt=dropped(no-binary-vtable))
     // +2 more virtual methods
 
     uint8_t Function_field_0x04[4];
@@ -2887,9 +2887,9 @@ public:
 
     virtual int SetValue(int a2); // 0x4E2580 (G42.35 def truth)
     static int SetValue(void *aP0, int aP1);  // 0x4E2580 G42.35 static-form sync (ui/supplied site 0x6B1D48)
-    virtual void GetValue(SliderClass * aP1);  // 0x4E25A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void GetRange(int a2);  // 0x4E25D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void SetColor(int a2);  // 0x4E2650 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int GetValue(int p0);  // 0x4E25A0 (x13:signals; virt=slot)
+    virtual __int64 GetRange(int p0);  // 0x4E25D0 (x13:signals; virt=slot)
+    virtual __int64 SetColor(int p0);  // 0x4E2650 (x13:signals; virt=slot)
     virtual void SetRange(); // 0x4E29A0
     // +3 more virtual methods
 
@@ -2917,8 +2917,8 @@ public:
     virtual ~GenericVector() = default;
 
     virtual void StubReturnFalse(); // 0x40CC10
-    virtual void Resize(int a2, unsigned int * a3);  // 0x40CE50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Resize2(int a2, unsigned int * a3);  // 0x50EA90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char Resize(int p0, int* p1);  // 0x40CE50 (x13:signals; virt=slot)
+    virtual char Resize2(int p0, int* p1);  // 0x50EA90 (x13:signals; virt=slot)
 
     uint8_t GenericVector_field_0x04[4];
     uint8_t GenericVector_field_0x08[4];
@@ -2941,8 +2941,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GlobalInit() = default;
 
-    virtual void RegisterSingleton(int a1);  // 0x5F7640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void SingletonGetter(int a2);  // 0x71DE40 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * __stdcall RegisterSingleton(int p0);  // 0x5F7640 (x13:signals; virt=slot)
+    virtual int * SingletonGetter(int p0);  // 0x71DE40 (x13:signals; virt=slot)
 
     uint8_t GlobalInit_field_0x04[4];
 };
@@ -2963,8 +2963,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~HVAAnimation() = default;
 
-    virtual void LoadFromFile(int a2);  // 0x759540 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ParseFrames(int a2, void * a3, unsigned int a4);  // 0x759670 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int LoadFromFile(int p0);  // 0x759540 (x13:signals; virt=dropped(no-binary-vtable))
+    int ParseFrames(int p0, void* p1, unsigned int p2);  // 0x759670 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t HVAAnimation_field_0x04[4];
 
@@ -2983,7 +2983,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Heap() = default;
 
-    virtual void SiftDown(int a2);  // 0x5AD870 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void SiftDown(int p0);  // 0x5AD870 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_8;  // X10 supply (member_lookup)
@@ -2995,7 +2995,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~HexCoord() = default;
 
-    virtual void Convert(IUnknown * aP1, IUnknown * aP2);  // 0x5654A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Convert(int* p0, int* p1);  // 0x5654A0 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     void* q0F4;  // X10 supply (member_lookup)
@@ -3009,7 +3009,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~History_WorldDominationTour() = default;
 
-    virtual void QueryInterface(char a2);  // 0x767C10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x767C10 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -3019,7 +3019,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~IDXContainer() = default;
 
-    virtual void LoadSample(int a1, int a2);  // 0x4016F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __fastcall LoadSample(int p0, int p1);  // 0x4016F0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -3043,11 +3043,11 @@ class ImageList
 public:
     virtual ~ImageList() = default; // 0x7C89FE
 
-    virtual void DragEnter(HWND hwndLock, int x, int y);  // 0x7C89F2 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot);  // 0x7C89F8 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Destroy(HIMAGELIST himl);  // 0x7C89FE (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    BOOL __stdcall DragEnter(HWND hwndLock, int x, int y);  // 0x7C89F2 (x13:signals; virt=dropped(no-binary-vtable))
+    BOOL __stdcall BeginDrag(HIMAGELIST himlTrack, int iTrack, int dxHotspot, int dyHotspot);  // 0x7C89F8 (x13:signals; virt=dropped(no-binary-vtable))
+    BOOL __stdcall Destroy(HIMAGELIST himl);  // 0x7C89FE (x13:signals; virt=dropped(no-binary-vtable))
     virtual void EndDrag(); // 0x7C8A04
-    virtual void DragMove(int x, int y);  // 0x7C8A0A (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    BOOL __stdcall DragMove(int x, int y);  // 0x7C8A0A (x13:signals; virt=dropped(no-binary-vtable))
     // +1 more virtual methods
 
     uint8_t ImageList_field_0x04[4];
@@ -3064,7 +3064,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Int4() = default;
 
-    virtual void Set(int aP1, int aP2, int aP3, int a5);  // 0x645C30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Set(int p0, int p1, int p2, int p3);  // 0x645C30 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t Int4_field_0x04[4];
     public:  // symbol-anchor
@@ -3084,7 +3084,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Int64() = default;
 
-    int Equal(IUnknown * aP1);  // 0x517310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    BOOL Equal(_DWORD *a2);  // 0x517310 (x13:signals; virt=nonvirtual)
 
 
     unsigned int u32_4;  // X10 supply (member_lookup)
@@ -3096,8 +3096,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~IntDynamicVector() = default;
 
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x477B10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Construct(ObjectTypeClass * aP1);  // 0x717BD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x477B10 (x13:signals; virt=slot)
+    _DWORD * Construct(int p0);  // 0x717BD0 (x13:signals; virt=nonvirtual)
 
     uint8_t IntDynamicVector_field_0x04[4];
 };
@@ -3132,7 +3132,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~KeyValuePair() = default;
 
-    virtual void Init(INIClass * aP1);  // 0x52AEC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Init(int p0);  // 0x52AEC0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -3143,7 +3143,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~KeywordClass() = default;
 
-    virtual void FindOrCreate(ObjectClass * Source);  // 0x41CEF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int FindOrCreate(char *Source);  // 0x41CEF0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -3154,7 +3154,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~KeywordType() = default;
 
-    virtual void FindOrCreate2(ObjectClass * Source);  // 0x524CB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int FindOrCreate2(char *Source);  // 0x524CB0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 3 methods in IDA
@@ -3164,9 +3164,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~LCW() = default;
 
-    virtual void Compress(BombClass * aP1, signed int Size);  // 0x5520A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void DecompressReader(BombClass * aP1, signed int Size);  // 0x552490 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Decompress(CCINIClass * aP1, signed int Size);  // 0x55C7C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char * Compress(char* p0, int p1);  // 0x5520A0 (x13:signals; virt=slot)
+    virtual int DecompressReader(char* p0, int p1);  // 0x552490 (x13:signals; virt=slot)
+    virtual int Decompress(char* p0, int p1);  // 0x55C7C0 (x13:signals; virt=slot)
 
     uint8_t LCW_field_0x04[4];
     uint8_t LCW_field_0x08[4];
@@ -3182,7 +3182,7 @@ class LCWPipe
 public:
     virtual ~LCWPipe() = default;  // 0x552060
 
-    void* Constructor(int a2, int a3);  // 0x551FF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x551FF0 (x13:signals; virt=nonvirtual)
     virtual void Destructor(); // 0x552060
 
     uint8_t LCWPipe_field_0x04[4];
@@ -3205,7 +3205,7 @@ public:
     virtual ~LCWPipe_Destru() = default;
 
     virtual void AddRef(); // 0x5522D0
-    virtual void QueryInterface(int * Block, char a2);  // 0x552390 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * QueryInterface(char p0);  // 0x552390 (x13:signals; virt=slot)
 
     uint8_t LCWPipe_Destru_field_0x04[4];
 
@@ -3221,7 +3221,7 @@ class LCWStraw
 public:
     virtual ~LCWStraw() = default; // 0x552450
 
-    void* Constructor(int a2, int a3);  // 0x5523E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x5523E0 (x13:signals; virt=nonvirtual)
     virtual void Destructor(); // 0x552450
 
     uint8_t LCWStraw_field_0x04[4];
@@ -3242,7 +3242,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~LCWStraw_Destru() = default;
 
-    virtual void QueryInterface(int * Block, char a2);  // 0x5525F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * QueryInterface(char p0);  // 0x5525F0 (x13:signals; virt=slot)
 
 };
 // 2 methods in IDA
@@ -3251,7 +3251,7 @@ class LZOPipe
 public:
     virtual ~LZOPipe() = default; // 0x55C310
 
-    void* Constructor(int a2, TechnoTypeClass * aP2);  // 0x55C2B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x55C2B0 (x13:signals; virt=nonvirtual)
     virtual void Destructor(); // 0x55C310
 
     uint8_t LZOPipe_field_0x04[4];
@@ -3274,7 +3274,7 @@ public:
     virtual ~LZOPipe_Destru() = default;
 
     virtual void AddRef(); // 0x55C5E0
-    virtual void QueryInterface(int * Block, char a2);  // 0x55C6D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * QueryInterface(char p0);  // 0x55C6D0 (x13:signals; virt=slot)
 
     uint8_t LZOPipe_Destru_field_0x04[4];
 
@@ -3290,7 +3290,7 @@ class LZOStraw
 public:
     virtual ~LZOStraw() = default; // 0x55C780
 
-    void* Constructor(int a2, int a3);  // 0x55C720 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x55C720 (x13:signals; virt=nonvirtual)
     virtual void Destructor(); // 0x55C780
 
     uint8_t LZOStraw_field_0x04[4];
@@ -3311,7 +3311,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~LZOStraw_Destru() = default;
 
-    virtual void QueryInterface(int * Block, char a2);  // 0x55C990 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * QueryInterface(char p0);  // 0x55C990 (x13:signals; virt=slot)
 
 };
 // 9 methods in IDA
@@ -3322,11 +3322,11 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Lobby() = default;
 
-    virtual void UpdateReadyIcons(HWND hDlg);  // 0x46FA20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    HWND UpdateReadyIcons();  // 0x46FA20 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void SetupAllFactionSlots(); // 0x46FAC0
-    virtual void EnableStartButton(HWND hDlg);  // 0x46FB50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void FillPlayerFactions(HWND hDlg);  // 0x4E4820 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void InvalidateFactionCombos(HWND hDlg);  // 0x4E5310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    HWND EnableStartButton();  // 0x46FB50 (x13:signals; virt=dropped(no-binary-vtable))
+    char FillPlayerFactions();  // 0x4E4820 (x13:signals; virt=dropped(no-binary-vtable))
+    int InvalidateFactionCombos();  // 0x4E5310 (x13:signals; virt=dropped(no-binary-vtable))
     // +4 more virtual methods
 
     uint8_t Lobby_field_0x04[4];
@@ -3401,9 +3401,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSAnim() = default;
 
-    bool GetField(unsigned int a2);  // 0x5CB840 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void SetField(unsigned int a2);  // 0x5CB860 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Reset(int a2);  // 0x5CC6A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    unsigned int GetField(unsigned int p0);  // 0x5CB840 (x13:signals; virt=nonvirtual)
+    unsigned int SetField(unsigned int p0);  // 0x5CB860 (x13:signals; virt=dropped(no-binary-vtable))
+    int Reset(int p0);  // 0x5CC6A0 (x13:signals; virt=nonvirtual)
 
     uint8_t MSAnim_field_0x04[4];
     uint8_t MSAnim_field_0x08[4];
@@ -3421,11 +3421,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSBinkAnim() = default;
 
-    virtual void Pause(unsigned int * a2);  // 0x5CC850 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * Pause(int* p0);  // 0x5CC850 (x13:signals; virt=slot)
     virtual int Stop(); // 0x5CC880
-    virtual int Load(int a2, unsigned int * a3);  // 0x5CC8A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Play(int a2, int a3);  // 0x5CC970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(BinkMovie ** Block, char a2);  // 0x5CEC70 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual bool Load(int p0, int* p1);  // 0x5CC8A0 (x13:signals; virt=slot)
+    virtual int Play(int p0, int p1);  // 0x5CC970 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x5CEC70 (x13:signals; virt=slot)
 
     uint8_t MSBinkAnim_field_0x04[4];
     uint8_t MSBinkAnim_field_0x08[4];
@@ -3449,11 +3449,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSBitPrintAnim() = default;
 
-    int Construct(const wchar_t ** a1, MSAnim * aP2, MPCooperative * aP3);  // 0x5CD330 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Update(unsigned int * a2);  // 0x5CD3D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void * Construct(const int** p0, int* p1, char p2);  // 0x5CD330 (x13:signals; virt=nonvirtual)
+    virtual _DWORD * Update(int* p0);  // 0x5CD3D0 (x13:signals; virt=slot)
     virtual void Stub(); // 0x5CD400
-    virtual void SetText(int a2, unsigned int * a3);  // 0x5CD410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw(int a2, int * a3);  // 0x5CD4D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual BOOL SetText(int a2, _DWORD *a3);  // 0x5CD410 (x13:signals; virt=slot)
+    virtual char Draw(int p0, int* p1);  // 0x5CD4D0 (x13:signals; virt=slot)
     // +1 more virtual methods
 
     uint8_t MSBitPrintAnim_field_0x04[4];
@@ -3486,8 +3486,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSChoiceClass() = default;
 
-    virtual void LoadFromINI(unsigned int *arg0, const char **aP2);  // 0x5CF8E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int DeleteAndZero(ObjectClass * aP1);  // 0x5D0290 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char ** LoadFromINI(int* p0, const char** p1);  // 0x5CF8E0 (x13:signals; virt=dropped(no-binary-vtable))
+    char * DeleteAndZero(const int** p0);  // 0x5D0290 (x13:signals; virt=nonvirtual)
 
     uint8_t MSChoiceClass_field_0x04[4];
 
@@ -3508,10 +3508,10 @@ public:
     virtual ~MSEngine_Destru() = default;
 
     virtual void CheckStringNotEmpty(); // 0x5AE4C0
-    virtual void StubReturnFalse(int a1);  // 0x5AE590 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void DestroyComposite(char a2);  // 0x5AE5A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual unknown StubReturnFalse();  // 0x5AE590 (x13:signals; virt=slot)
+    virtual void ** DestroyComposite(char p0);  // 0x5AE5A0 (x13:signals; virt=slot)
     virtual void Release(); // 0x5D26F0
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x5D2700 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x5D2700 (x13:signals; virt=slot)
 
     uint8_t MSEngine_Destru_field_0x04[4];
     uint8_t MSEngine_Destru_field_0x08[4];
@@ -3525,10 +3525,10 @@ public:
     virtual ~MSFont() = default;  // 0x5D3330
 
     virtual void Constructor_MSFont(); // 0x5D2E30
-    virtual void Release(int16_t * a2);  // 0x5D3170 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(uint8_t szSrc);  // 0x5D31D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    HWND Create(int * a2, uint8_t szSrc, int a4, int a5, int a6, int a7);  // 0x5D3250 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual short ddtor(int a2, unsigned short *a3, int a4, int a5, int a6);  // 0x5D3330 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Release(int16_t* p0);  // 0x5D3170 (x13:signals; virt=slot)
+    virtual int __stdcall AddRef(uint8_t p0);  // 0x5D31D0 (x13:signals; virt=slot)
+    virtual void Create(int* p0, uint8_t p1, int p2, int p3, int p4, int p5);  // 0x5D3250 (x13:signals; virt=slot)
+    virtual __int16 ddtor(int p0, uint16_t* p1, int p2, int p3, int p4);  // 0x5D3330 (x13:signals; virt=slot)
     // +1 more virtual methods
 
     uint8_t MSFont_field_0x04[4];
@@ -3555,11 +3555,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSOverlayAnim() = default;
 
-    virtual int Load(int a2, int * a3);  // 0x5CB880 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw(int a2, int * a3);  // 0x5CBB80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Update(int * a2);  // 0x5CBCB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Init(ObjectClass * aP1, int a3, int a4, int a5, int a6, MSShapeAnim * aP6, char a8, int a9, char a10);  // 0x5CC250 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual char AddRef(char a2);  // 0x5CEAC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char Load(int p0, int* p1);  // 0x5CB880 (x13:signals; virt=slot)
+    virtual void Draw(int p0, int* p1);  // 0x5CBB80 (x13:signals; virt=slot)
+    virtual int * Update(int* p0);  // 0x5CBCB0 (x13:signals; virt=slot)
+    void * Init(char** p0, int p1, int p2, int p3, int p4, int p5, char p6, int p7, char p8);  // 0x5CC250 (x13:signals; virt=dropped(no-binary-vtable))
+    virtual char AddRef(char p0);  // 0x5CEAC0 (x13:signals; virt=slot)
     // +2 more virtual methods
 
     uint8_t MSOverlayAnim_field_0x04[4];
@@ -3597,11 +3597,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSPCXAnim() = default;
 
-    int Construct(ObjectClass * aP1, MSAnim * aP2, unsigned int * a3, char a5);  // 0x5CE640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual int Load(unsigned int * a2, unsigned int * a3);  // 0x5CE7D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw(int * a2, int * a3);  // 0x5CE8C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(const char** p0, int p1, int* p2, char p3);  // 0x5CE640 (x13:signals; virt=nonvirtual)
+    virtual BOOL Load(_DWORD *pad_0, _DWORD *a3);  // 0x5CE7D0 (x13:signals; virt=slot)
+    virtual char Draw(int* p0, int* p1);  // 0x5CE8C0 (x13:signals; virt=slot)
     void SetPalette(int a2);  // G42 sig-sync: def
-    virtual void GetFrame(unsigned int * a2);  // 0x5CEA80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * GetFrame(int* p0);  // 0x5CEA80 (x13:signals; virt=slot)
     // +2 more virtual methods
 
     uint8_t MSPCXAnim_field_0x04[4];
@@ -3639,11 +3639,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSPrintAnim() = default;
 
-    virtual void SetText(int a2, unsigned int * a3);  // 0x5CDC50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw(int a2, int * a3);  // 0x5CDEE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Update(unsigned int * a2);  // 0x5CE2B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual bool SetText(int p0, int* p1);  // 0x5CDC50 (x13:signals; virt=slot)
+    virtual int Draw(int p0, int* p1);  // 0x5CDEE0 (x13:signals; virt=slot)
+    virtual _DWORD * Update(int* p0);  // 0x5CE2B0 (x13:signals; virt=slot)
     int Clear(); // 0x5CE300
-    virtual void QueryInterface(void ** Block, char a2);  // 0x5CED40 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void ** QueryInterface(char p0);  // 0x5CED40 (x13:signals; virt=slot)
     // +1 more virtual methods
 
     uint8_t MSPrintAnim_field_0x04[4];
@@ -3684,7 +3684,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSSfxClass() = default;
 
-    virtual void FindByName(ObjectClass * aP1);  // 0x76EBE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char FindByName(const char** p0);  // 0x76EBE0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 2 methods in IDA
@@ -3694,8 +3694,8 @@ class MSShapeAnim
 public:
     virtual ~MSShapeAnim() = default;  // 0x5CEBD0
 
-    void* Constructor(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, MSShapeAnim * aP4, int a6, MSShapeAnim * aP6, MSShapeAnim * aP7);  // 0x5CB6D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Destruct(unsigned int * Block, char a2);  // 0x5CEBD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void * Constructor(char** p0, int p1, int p2, int p3, int p4, char p5, int p6);  // 0x5CB6D0 (x13:signals; virt=nonvirtual)
+    virtual _DWORD * Destruct(char p0);  // 0x5CEBD0 (x13:signals; virt=slot)
 
     uint8_t MSShapeAnim_field_0x04[4];
 
@@ -3717,12 +3717,12 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MSVQAnim() = default;
 
-    int Construct(char ** a2, int a3, int a4, unsigned int * a5, char a6);  // 0x5CCA20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ConstructMSVQAnimHidden(char **aP1, int *aP2, int aP3, char aP3a);  // 0x5CCC30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(char** p0, int p1, int p2, int* p3, char p4);  // 0x5CCA20 (x13:signals; virt=nonvirtual)
+    _DWORD * ConstructMSVQAnimHidden(char** p0, int* p1, int p2, char p3);  // 0x5CCC30 (x13:signals; virt=dropped(no-binary-vtable))
     static unsigned int * ConstructMSVQAnimHidden(void *aP0, char **aP1, int *aP2, int aP3, char aP4);  // 0x5CCC30 G42.33 b3 static-form sync
-    virtual int Load(int a2, unsigned int * a3);  // 0x5CCE90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Play(int a2, int * a3);  // 0x5CD0E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Stop(int a2);  // 0x5CD240 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual BOOL Load(int a2, _DWORD *a3);  // 0x5CCE90 (x13:signals; virt=slot)
+    virtual void Play(int p0, int* p1);  // 0x5CD0E0 (x13:signals; virt=slot)
+    virtual char Stop(int p0);  // 0x5CD240 (x13:signals; virt=slot)
     // +3 more virtual methods
 
     uint8_t MSVQAnim_field_0x04[4];
@@ -3758,7 +3758,7 @@ public:
     virtual ~Megawealth() = default;
 
     virtual void ProcessTick(); // 0x5C9430
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x5C9440 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x5C9440 (x13:signals; virt=slot)
 
     uint8_t Megawealth_field_0x04[4];
 };
@@ -3781,7 +3781,7 @@ public:
     virtual ~MiniMap() = default;
 
     virtual void Render(); // 0x641140
-    virtual void SavePreviewToINI(char * a2);  // 0x6418B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    bool SavePreviewToINI(char* p0);  // 0x6418B0 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t MiniMap_field_0x04[4];
 
@@ -3794,9 +3794,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MovieClass() = default;
 
-    virtual void ReadConfig(HWND aP1, int nIDDlgItem);  // 0x5C23B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    HWND ReadConfig(HWND hDlg, int nIDDlgItem);  // 0x5C23B0 (x13:signals; virt=dropped(no-binary-vtable))
     HWND Create(); // 0x5C3EC0
-    virtual void RenderLoop(int a2, char a3);  // 0x759940 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    BOOL RenderLoop(int a2, char a3);  // 0x759940 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void GetWidth(); // 0x759F70
     virtual void GetHeight(); // 0x759F80
     // +1 more virtual methods
@@ -3848,7 +3848,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MultiMissionVector() = default;
 
-    void* Constructor(int a2, int a3);  // 0x5EF0B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x5EF0B0 (x13:signals; virt=nonvirtual)
 
 
     unsigned int u32_D;  // X10 supply (member_types)
@@ -3871,8 +3871,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~NetMessage() = default;
 
-    virtual void Pack4(char * Destination, RandomStruct * aP1, int a3);  // 0x4CB700 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Pack(char * Destination, char * Source, IUnknown * aP2, IUnknown * aP3);  // 0x4CB830 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char * Pack4(char* p0, char p1);  // 0x4CB700 (x13:signals; virt=dropped(no-binary-vtable))
+    char * Pack(char* p0, char* p1, uint16_t p2);  // 0x4CB830 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t NetMessage_field_0x04[4];
 };
@@ -3884,8 +3884,8 @@ public:
     virtual ~NeuronClass() = default; // 0x43A350
 
     NeuronClass(); // 0x43A350 (constructor)
-    virtual void Fire(AbstractClass * aP0, int aP1);  // 0x43A540 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Update(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x43A5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall Fire(int* p0, int p1);  // 0x43A540 (x13:signals; virt=slot)
+    virtual int __stdcall Update(int* p0, int* p1, int p2);  // 0x43A5B0 (x13:signals; virt=slot)
     virtual int StubReturn60(); // 0x43A9A0
     virtual int StubReturn56(); // 0x43A9B0
     // +1 more virtual methods
@@ -3907,7 +3907,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~NullGuard() = default;
 
-    virtual void Call(ObjectClass * aP1);  // 0x4F3B10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Call(int p0);  // 0x4F3B10 (x13:signals; virt=slot)
     static int Call(void *aP0, int aP1);  // 0x4F3B10 G42.33 b3 static-form sync (cache: NullGuard::Call(obj,int))
 
 };
@@ -3966,8 +3966,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ObjectPlacement() = default;
 
-    virtual void CalcPosition(int * a1, IUnknown * aP2, char a4, char a5, char a6);  // 0x481180 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void CalcPosition_Wrapper(MouseClass * aP0, IUnknown * aP1, char a3);  // 0x4ACA10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int * CalcPosition(int* p0, int* p1, char p2, char p3, char p4);  // 0x481180 (x13:signals; virt=dropped(no-binary-vtable))
+    int * __stdcall CalcPosition_Wrapper(int* p0, int* p1, char p2);  // 0x4ACA10 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t ObjectPlacement_field_0x04[4];
 
@@ -3982,7 +3982,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ObjectPtr() = default;
 
-    virtual void RegisterForTracking(SwizzleManagerClass * aP0, MouseClass * aP1);  // 0x6CF240 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall RegisterForTracking(int p0, int* p1);  // 0x6CF240 (x13:signals; virt=slot)
 
 };
 // 6 methods in IDA
@@ -3992,11 +3992,11 @@ class ObjectVector
 public:
     virtual ~ObjectVector() = default;  // 0x40CDC0
 
-    virtual void Release(int a2, unsigned int * a3);  // 0x40CD10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char Release(int p0, int* p1);  // 0x40CD10 (x13:signals; virt=slot)
     virtual void ddtor(); // 0x40CDC0
-    virtual void Add(unsigned int * a2);  // 0x40CDF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Remove(int a2);  // 0x40CE30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x40CF30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int Add(int* p0);  // 0x40CDF0 (x13:signals; virt=slot)
+    virtual unsigned int Remove(int p0);  // 0x40CE30 (x13:signals; virt=slot)
+    virtual _DWORD * QueryInterface(char p0);  // 0x40CF30 (x13:signals; virt=slot)
     // +1 more virtual methods
 
     uint8_t ObjectVector_field_0x04[4];
@@ -4016,7 +4016,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ObserverClass() = default;
 
-    virtual void FindStartingCell(unsigned int * a1, int a2, int a3, int a4);  // 0x5D6890 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * __stdcall FindStartingCell(int* p0, int p1, int p2, int p3);  // 0x5D6890 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -4026,7 +4026,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~OptionQueue() = default;
 
-    virtual void PushEntry(IUnknown * aP1);  // 0x4F1AA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int PushEntry(const void* p0);  // 0x4F1AA0 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     int u32_8;  // X10 supply (member_lookup)
@@ -4038,7 +4038,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~OreManagerClass() = default;
 
-    virtual void AssignMinerToRefinery(unsigned int * a2);  // 0x71AF20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void * AssignMinerToRefinery(int* p0);  // 0x71AF20 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned char q02C;  // X10 supply (member_lookup)
@@ -4064,9 +4064,9 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PKStrawClass() = default;
 
-    virtual void Initialize(int a2, Straw * aP2);  // 0x633050 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void RelayBlowfishKey(int a2);  // 0x6330C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void SetSource(int a2);  // 0x633110 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Initialize(int p0, int p1);  // 0x633050 (x13:signals; virt=dropped(no-binary-vtable))
+    virtual void RelayBlowfishKey(int p0);  // 0x6330C0 (x13:signals; virt=slot)
+    int SetSource(int p0);  // 0x633110 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t PKStrawClass_field_0x04[4];
     uint8_t PKStrawClass_field_0x08[4];
@@ -4137,8 +4137,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PacketQueue() = default;
 
-    virtual void ExtractEntry(void * a2, unsigned int * a3, int a4, void * a5, unsigned int * a6, unsigned short * a7);  // 0x48B570 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ReleaseEntry(void *a1, unsigned int *a2, int aP3, void *a4, unsigned int *a5);  // 0x48B890 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int ExtractEntry(void* p0, int* p1, int p2, void* p3, int* p4, uint16_t* p5);  // 0x48B570 (x13:signals; virt=dropped(no-binary-vtable))
+    int ReleaseEntry(void* p0, int* p1, int p2, void* p3, int* p4);  // 0x48B890 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t PacketQueue_field_0x04[4];
 
@@ -4188,9 +4188,9 @@ class Pipe
 public:
     virtual ~Pipe() = default;  // 0x631C80
 
-    virtual void QueryInterface(int * Block, char a2);  // 0x4AEC80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * QueryInterface(char p0);  // 0x4AEC80 (x13:signals; virt=slot)
     virtual void Dtor(); // 0x631C80
-    virtual void SetDelegate(int a2);  // 0x631CC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void SetDelegate(int p0);  // 0x631CC0 (x13:signals; virt=slot)
     bool GetField(); // 0x7B7D80
 
     uint8_t Pipe_field_0x04[4];
@@ -4218,7 +4218,7 @@ public:
     virtual ~PowerBar() = default;
 
     virtual int CalcFill(); // 0x63F850
-    int ComputeFill(PowerClass * aP0, ObjectClass * aP1, ObjectClass * aP2);  // 0x63F960 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __stdcall ComputeFill(int* p0, int* p1, int* p2);  // 0x63F960 (x13:signals; virt=nonvirtual)
 
     uint8_t PowerBar_field_0x04[4];
 };
@@ -4230,8 +4230,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PreviewClass() = default;
 
-    virtual void ReadPreview(char *Source);  // 0x641EE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void RenderMapPreview(CCINIClass * aP1);  // 0x689D30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char ReadPreview(char* p0);  // 0x641EE0 (x13:signals; virt=dropped(no-binary-vtable))
+    char RenderMapPreview(int* p0);  // 0x689D30 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t PreviewClass_field_0x04[4];
 
@@ -4263,7 +4263,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PrintTimerOnTactical() = default;
 
-    virtual void Start(int ecx0, int a2, int a3, wchar_t * Format, unsigned int * a5, bool * a6);  // 0x6D4B50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int * __fastcall Start(int p0, int p1, int p2, int* p3, int* p4, bool* p5);  // 0x6D4B50 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 2 methods in IDA
@@ -4273,7 +4273,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PriorityQueue() = default;
     int Pop(); // 0x5AC960 (G42 sig-sync: def)
-    virtual void Add(int aP1);  // 0x5D1C20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int Add(int p0);  // 0x5D1C20 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t PriorityQueue_field_0x04[4];
 
@@ -4287,7 +4287,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ProductionClass() = default;
 
-    virtual void StartTimer(char a2);  // 0x4C9EA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char StartTimer(char p0);  // 0x4C9EA0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -4322,7 +4322,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Property() = default;
 
-    virtual void Set(int16_t aP1);  // 0x433C70 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    __int16 Set(int16_t p0);  // 0x433C70 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void GetField11(); // 0x726910
 
     uint8_t Property_field_0x04[4];
@@ -4338,7 +4338,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~PushCommandClass() = default;
 
-    virtual void Execute(unsigned int * a1, int a2);  // 0x6D09C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char __fastcall Execute(int* p0, int p1);  // 0x6D09C0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -4349,7 +4349,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~RateScaler() = default;
 
-    virtual void Init(double a2);  // 0x4A51F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Init(double p0);  // 0x4A51F0 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned char __pad_004;  // X10 supply (member_lookup)
@@ -4394,7 +4394,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SHPClass() = default;
 
-    virtual int Load(char *Source, char *aP2, int aP3);  // 0x642C20 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void Load(char* p0, char* p1, int p2);  // 0x642C20 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 2 methods in IDA
@@ -4404,7 +4404,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SafeDelete() = default;
 
-    virtual void Conditional(int a1, int a2, void * Block, int a4, int16_t a5, int a6, int a7);  // 0x5C0EB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char __stdcall Conditional(int p0, int p1, void* p2, int p3, int16_t p4, int p5, int p6);  // 0x5C0EB0 (x13:signals; virt=slot)
     virtual int Ptr(); // 0x7B7040
 
     uint8_t SafeDelete_field_0x04[4];
@@ -4415,7 +4415,7 @@ class Scalar
 public:
     virtual ~Scalar() = default;
 
-    virtual void Dtor(void ** Block, char a2);  // 0x5ac340 (G42 sig-sync: def stubbed pending retranslation)
+    void ** Dtor(char p0);  // 0x5ac340 (x13:signals; virt=dropped(no-binary-vtable))
 
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
@@ -4430,7 +4430,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScalarDtor() = default;
 
-    int DeleteAndZero(void ** Block, char a2);  // 0x7AD310 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void ** DeleteAndZero(char p0);  // 0x7AD310 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -4440,7 +4440,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScoutVector() = default;
 
-    int Construct(int a2, int a3);  // 0x510780 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x510780 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -4460,7 +4460,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ScriptActionVector() = default;
 
-    virtual void PushBack(DynamicVector * aP1);  // 0x63EB80 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char PushBack(int* p0);  // 0x63EB80 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_14;  // X10 supply (member_lookup)
@@ -4497,8 +4497,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ShapeButton() = default;
 
-    virtual void SetShape(int a2, int a3, int a4);  // 0x69DE00 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw(int a2);  // 0x69DEB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int SetShape(int p0, int p1, int p2);  // 0x69DE00 (x13:signals; virt=slot)
+    virtual int Draw(int p0);  // 0x69DEB0 (x13:signals; virt=slot)
 
     uint8_t ShapeButton_field_0x04[4];
 
@@ -4523,7 +4523,7 @@ public:
     virtual ~ShapeButtonClass() = default;
 
     virtual int Init(); // 0x69DCF0
-    void* Constructor(ControlClass * aP1, ShapeButtonClass * aP2, ShapeButtonClass * aP3, ControlClass * aP4, int a6, int a7, char a8);  // 0x69DD30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _BYTE * Constructor(int p0, int p1, int p2, int p3, int p4, int p5, char p6);  // 0x69DD30 (x13:signals; virt=nonvirtual)
     static unsigned char * Constructor(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, int aP6, char aP7);  // 0x69DD30 G42.35 static-form sync (ui/supplied sites 0x557292/0x5572AF)
     virtual void Destructor(); // 0x69DDC0
     static int Destructor(void *aP0);  // 0x69DDC0 G42.35 static-form sync (ui/supplied sites 0x557663/0x55766B)
@@ -4552,7 +4552,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ShapeButtonClass_Destru() = default;
 
-    virtual void QueryInterface(void * Block, char a2);  // 0x4B57F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void * QueryInterface(char p0);  // 0x4B57F0 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -4583,7 +4583,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SlaveControlVector() = default;
 
-    void* Constructor(int a2, int a3);  // 0x6B1AB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x6B1AB0 (x13:signals; virt=nonvirtual)
 
 
     unsigned int u32_D;  // X10 supply (member_types)
@@ -4595,7 +4595,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SmudgeTypeList() = default;
 
-    virtual void Copy(CCINIClass * aP1);  // 0x67C280 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Copy(int* p0);  // 0x67C280 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 6 methods in IDA
@@ -4605,11 +4605,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SmudgeTypeVector() = default;
 
-    virtual void Release(int a2, unsigned int * a3);  // 0x67AEB0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void AddSmudge(unsigned int * a2);  // 0x67AF90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Remove(int a2);  // 0x67AFD0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Construct(int a2, int a3);  // 0x67AFF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Add(CCINIClass * aP1);  // 0x67B100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char Release(int p0, int* p1);  // 0x67AEB0 (x13:signals; virt=slot)
+    virtual int AddSmudge(int* p0);  // 0x67AF90 (x13:signals; virt=slot)
+    virtual unsigned int Remove(int p0);  // 0x67AFD0 (x13:signals; virt=slot)
+    _DWORD * Construct(int p0, int p1);  // 0x67AFF0 (x13:signals; virt=nonvirtual)
+    char Add(int* p0);  // 0x67B100 (x13:signals; virt=dropped(no-binary-vtable))
     // +1 more virtual methods
 
     uint8_t SmudgeTypeVector_field_0x04[4];
@@ -4633,11 +4633,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SortedArray() = default;
 
-    virtual void GetIndex(int a2);  // 0x42D570 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Find(CCINIClass * aP1);  // 0x52B170 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void BinarySearch2(Color * aP1);  // 0x52B210 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void FindValue(INIClass * aP1);  // 0x52B430 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void CheckCache(unsigned int * a2);  // 0x52B600 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual unsigned int GetIndex(int p0);  // 0x42D570 (x13:signals; virt=slot)
+    char Find(int* p0);  // 0x52B170 (x13:signals; virt=dropped(no-binary-vtable))
+    void * BinarySearch2(int* p0);  // 0x52B210 (x13:signals; virt=dropped(no-binary-vtable))
+    void * FindValue(int* p0);  // 0x52B430 (x13:signals; virt=dropped(no-binary-vtable))
+    bool CheckCache(int* p0);  // 0x52B600 (x13:signals; virt=dropped(no-binary-vtable))
     // +4 more virtual methods
 
     uint8_t SortedArray_field_0x04[4];
@@ -4668,7 +4668,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SortedStateVector() = default;
 
-    virtual void BinarySearch(IUnknown * aP1);  // 0x7107E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    size_t BinarySearch(int *a2);  // 0x7107E0 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_10;  // X10 supply (member_lookup)
@@ -4682,7 +4682,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SortedVector() = default;
 
-    virtual void BinarySearch(int * a2);  // 0x55F6E0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    size_t BinarySearch(int *a2);  // 0x55F6E0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 2 methods in IDA
@@ -4715,7 +4715,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StartingTechnoVector() = default;
 
-    int Construct(int a2, int a3);  // 0x510690 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x510690 (x13:signals; virt=nonvirtual)
 
 
     unsigned char __pad_004;  // X10 supply (member_lookup)
@@ -4729,7 +4729,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~State_WorldDominationTour() = default;
 
-    virtual void QueryInterface(char a2);  // 0x76F6C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x76F6C0 (x13:signals; virt=slot)
 
 };
 // 6 methods in IDA
@@ -4739,11 +4739,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StaticButtonClass() = default;
 
-    virtual void ReleaseBuffer(unsigned int * a2);  // 0x43AE10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void SetText(ControlClass * aP1);  // 0x6C6640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Draw(DropListClass * aP1, char a3);  // 0x6C6680 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int ReleaseBuffer(int* p0);  // 0x43AE10 (x13:signals; virt=dropped(no-binary-vtable))
+    virtual int SetText(int p0);  // 0x6C6640 (x13:signals; virt=slot)
+    virtual void Draw(int* p0, char p1);  // 0x6C6680 (x13:signals; virt=slot)
     virtual void HitTest(); // 0x6C6740
-    virtual void OnClick(size_t a2);  // 0x6C67F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * OnClick(size_t a2);  // 0x6C67F0 (x13:signals; virt=slot)
     // +1 more virtual methods
 
     uint8_t StaticButtonClass_field_0x04[4];
@@ -4776,7 +4776,7 @@ class Straw
 public:
     virtual ~Straw() = default;  // 0x6C9850
 
-    virtual void QueryInterface(int * Block, char a2);  // 0x4AEC10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int * QueryInterface(char p0);  // 0x4AEC10 (x13:signals; virt=slot)
     virtual void Dtor(); // 0x6C9850
 
     uint8_t Straw_field_0x04[4];
@@ -4791,9 +4791,9 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Subzone() = default;
 
-    virtual void BuildGraph(IUnknown * aP2);  // 0x581F90 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    void* Constructor(int a2, int a3);  // 0x589100 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void CopyDataFrom(int a2);  // 0x58A500 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int BuildGraph(int p0);  // 0x581F90 (x13:signals; virt=dropped(no-binary-vtable))
+    _DWORD * Constructor(int p0, int p1);  // 0x589100 (x13:signals; virt=nonvirtual)
+    int * CopyDataFrom(int p0);  // 0x58A500 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t Subzone_field_0x04[4];
     uint8_t Subzone_field_0x08[4];
@@ -4818,9 +4818,9 @@ class SubzoneConnectionVector
 public:
     virtual ~SubzoneConnectionVector() = default;  // 0x40B070
 
-    int Destruct(unsigned int * Block, char a2);  // 0x40B070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char * Destruct(char p0);  // 0x40B070 (x13:signals; virt=nonvirtual)
     virtual void ClearAndFree(); // 0x588D60
-    virtual void FindByCoord(int a2);  // 0x589C10 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int FindByCoord(int p0);  // 0x589C10 (x13:signals; virt=slot)
 
     uint8_t SubzoneConnectionVector_field_0x04[4];
     uint8_t SubzoneConnectionVector_field_0x08[4];
@@ -4833,7 +4833,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SubzoneHashVector() = default;
 
-    int Construct(int a2, int a3);  // 0x58B070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x58B070 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -4842,7 +4842,7 @@ class SubzoneTrackingVector
 public:
     virtual ~SubzoneTrackingVector() = default;  // 0x58A5B0
 
-    int Destruct(unsigned int * Block, char a2);  // 0x58A5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * Destruct(char p0);  // 0x58A5B0 (x13:signals; virt=slot)
 
 };
 // 2 methods in IDA
@@ -4852,8 +4852,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SwizzleManager() = default;
 
-    virtual void SaveLoad(int * a1, int * a2);  // 0x55AAC0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ConvertWrapper(SwizzleManagerClass * aP0);  // 0x6CF230 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __stdcall SaveLoad(int* p0, int* p1);  // 0x55AAC0 (x13:signals; virt=dropped(no-binary-vtable))
+    virtual int __stdcall ConvertWrapper(int p0);  // 0x6CF230 (x13:signals; virt=slot)
 
     uint8_t SwizzleManager_field_0x04[4];
 };
@@ -4866,10 +4866,10 @@ public:
     virtual ~SwizzleManagerClass() = default;
 
     virtual void Register(); // 0x6CF0F0
-    virtual void Here_I_Am(SwizzleManagerClass * aP0, AbstractClass * aP1, AbstractClass * aP2);  // 0x6CF2C0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall Here_I_Am(int p0, int p1, int p2);  // 0x6CF2C0 (x13:signals; virt=slot)
     virtual void ConvertNodes(); // 0x6CF350
-    int Clear(int a1, unsigned int * a2);  // 0x6CF410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Process(SwizzleManagerClass * aP0, const void * a1, unsigned int * a2);  // 0x6CF430 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int __stdcall Clear(int p0, int* p1);  // 0x6CF410 (x13:signals; virt=slot)
+    virtual int __stdcall Process(int p0, const void* p1, int* p2);  // 0x6CF430 (x13:signals; virt=slot)
     // +5 more virtual methods
 
     uint8_t SwizzleManagerClass_field_0x04[4];
@@ -4904,8 +4904,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~SymbolTable() = default;
 
-    virtual void Rebuild(int ** a2);  // 0x6234B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Insert(unsigned int * a2, int *** Block);  // 0x624530 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void Rebuild(int** p0);  // 0x6234B0 (x13:signals; virt=dropped(no-binary-vtable))
+    char Insert(int* p0, int*** p1);  // 0x624530 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t SymbolTable_field_0x04[4];
 
@@ -5897,7 +5897,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TagClassVector() = default;
 
-    int Construct(int a2, int a3);  // 0x510640 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x510640 (x13:signals; virt=nonvirtual)
 
 
     unsigned int u32_4;  // X10 supply (member_lookup)
@@ -5911,7 +5911,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Targeting() = default;
 
-    virtual void Readd(IUnknown * aP0);  // 0x4A9720 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void __stdcall Readd(int* p0);  // 0x4A9720 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -5937,8 +5937,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TechnoTypeVector() = default;
 
-    void* Constructor(int a2, int a3);  // 0x4CABF0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Construct(int a2, int a3);  // 0x68C200 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x4CABF0 (x13:signals; virt=nonvirtual)
+    _DWORD * Construct(int p0, int p1);  // 0x68C200 (x13:signals; virt=nonvirtual)
 
     uint8_t TechnoTypeVector_field_0x04[4];
 
@@ -5955,7 +5955,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TeknoClass() = default;
 
-    virtual void GetType(TeamTypeClass * aP1);  // 0x6E4DE0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int GetType(int p0);  // 0x6E4DE0 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_24;  // X10 supply (member_types)
@@ -5969,7 +5969,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TerrainTypeVector() = default;
 
-    int Construct(int a2, int a3);  // 0x67B370 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0, int p1);  // 0x67B370 (x13:signals; virt=nonvirtual)
 
 };
 // 1 methods in IDA
@@ -5979,7 +5979,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~Territory_WorldDominationTour() = default;
 
-    virtual void QueryInterface(char a2);  // 0x770020 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void ** QueryInterface(char p0);  // 0x770020 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -6040,7 +6040,7 @@ public:
     virtual int LookupMapTile(); // 0x58D0A0
     virtual void BuildNodes(); // 0x58D620
     virtual void AnalyzeTileConnectivity(); // 0x58E5D0
-    void* Constructor(ObjectClass * aP1, ObjectClass * aP2);  // 0x5AD740 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x5AD740 (x13:signals; virt=nonvirtual)
 
     uint8_t TileSystem_field_0x04[4];
     uint8_t TileSystem_field_0x08[4];
@@ -6063,7 +6063,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~TileVector() = default;
 
-    virtual void PushBack(MouseClass * aP1);  // 0x589C50 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char PushBack(int* p0);  // 0x589C50 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     uint32_t u32_10;  // X10 supply (member_lookup)
@@ -6078,8 +6078,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ToggleClass() = default;
 
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x4B5810 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Construct(ControlClass * aP1, ControlClass * aP2, ControlClass * aP3, ControlClass * aP4, ControlClass * aP5);  // 0x723E60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x4B5810 (x13:signals; virt=slot)
+    int Construct(int p0, int p1, int p2, int p3, int p4);  // 0x723E60 (x13:signals; virt=nonvirtual)
 
     uint8_t ToggleClass_field_0x04[4];
 
@@ -6094,7 +6094,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~ToggleRepairModeCommandClass() = default;
 
-    virtual void Execute(int a1);  // 0x536FA0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual char __stdcall Execute(int p0);  // 0x536FA0 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -6105,7 +6105,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Triple() = default;
 
-    virtual void Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);  // 0x43A0B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Set(int p0, int p1, int p2);  // 0x43A0B0 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -6127,11 +6127,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~UnitTypeVector() = default;
 
-    virtual void QueryInterface(unsigned int * Block, char a2);  // 0x512B30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(int a2, unsigned int * a3);  // 0x513050 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Add(unsigned int * a2);  // 0x513130 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Remove(int a2);  // 0x513170 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    int Construct(int a2, int a3);  // 0x513190 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * QueryInterface(char p0);  // 0x512B30 (x13:signals; virt=slot)
+    virtual char Release(int p0, int* p1);  // 0x513050 (x13:signals; virt=slot)
+    virtual int Add(int* p0);  // 0x513130 (x13:signals; virt=slot)
+    virtual unsigned int Remove(int p0);  // 0x513170 (x13:signals; virt=slot)
+    _DWORD * Construct(int p0, int p1);  // 0x513190 (x13:signals; virt=nonvirtual)
     // +2 more virtual methods
 
     uint8_t UnitTypeVector_field_0x04[4];
@@ -6158,7 +6158,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VQAClass() = default;
 
-    virtual void AdvanceFrame(unsigned char * a2);  // 0x759C30 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char AdvanceFrame(uint8_t* p0);  // 0x759C30 (x13:signals; virt=dropped(no-binary-vtable))
 
 
     unsigned int u32_1450;  // X10 supply (member_types)
@@ -6191,10 +6191,10 @@ class VeinholeMonsterClass
 public:
     virtual ~VeinholeMonsterClass() = default;  // 0x74F2D0
 
-    int Construct(AbstractClass * aP1);  // 0x74C420 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    void* Constructor(IUnknown * aP1);  // 0x74C5B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Construct(int p0);  // 0x74C420 (x13:signals; virt=nonvirtual)
+    void * Constructor(int16_t* p0);  // 0x74C5B0 (x13:signals; virt=nonvirtual)
     virtual void UpdateGrowth(); // 0x74CE50
-    virtual void ProcessExpansion(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x74D5D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int ProcessExpansion(int p0, int p1, int p2, int p3, int p4, int p5, int p6);  // 0x74D5D0 (x13:signals; virt=slot)
     virtual void PlaceGrowth(); // 0x74E930
     // +6 more virtual methods
 
@@ -6269,7 +6269,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~Viewport() = default;
 
-    virtual void ProcessScroll(unsigned int * a2);  // 0x692B60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void ProcessScroll(int* p0);  // 0x692B60 (x13:signals; virt=dropped(no-binary-vtable))
     virtual int Clear(); // 0x753E00
 
     uint8_t Viewport_field_0x04[4];
@@ -6286,7 +6286,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~VtableStub() = default;
 
-    virtual void Push_407510(void * Block);  // 0x407510 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    void Push_407510();  // 0x407510 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void Method_425270(); // 0x425270
     virtual int Method_477740(); // 0x477740
     virtual void Method_5175D0(); // 0x5175D0
@@ -6312,8 +6312,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WDTClass() = default;
 
-    virtual void GetCellType(unsigned int a2);  // 0x76F600 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void CountCellType(int a2);  // 0x76F670 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int GetCellType(unsigned int p0);  // 0x76F600 (x13:signals; virt=dropped(no-binary-vtable))
+    int CountCellType(int p0);  // 0x76F670 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t WDTClass_field_0x04[4];
 
@@ -6328,10 +6328,10 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WDTGame() = default;
 
-    virtual void ToggleTeamMode(ObjectClass * aP1, ObjectClass * aP2);  // 0x7693F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void ProcessTerritorySelection(unsigned int * a1, ObjectClass * aP2);  // 0x76D180 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char ToggleTeamMode(int* p0, char p1);  // 0x7693F0 (x13:signals; virt=dropped(no-binary-vtable))
+    void ProcessTerritorySelection(int* p0, bool* p1);  // 0x76D180 (x13:signals; virt=dropped(no-binary-vtable))
     virtual void ReviewHistory(); // 0x76E4F0
-    void* Constructor(ObjectClass * aP1);  // 0x76F030 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0);  // 0x76F030 (x13:signals; virt=nonvirtual)
 
     uint8_t WDTGame_field_0x04[4];
     uint8_t WDTGame_field_0x08[4];
@@ -6368,7 +6368,7 @@ public:
     virtual ~WDTState() = default; // 0x76AFC0
 
     virtual void Constructor_WDTState(); // 0x76AFC0
-    virtual void QueryInterface(void * Block, char a2);  // 0x76B6F0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void * QueryInterface(char p0);  // 0x76B6F0 (x13:signals; virt=slot)
 
     uint8_t WDTState_field_0x04[4];
 
@@ -6385,8 +6385,8 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WDTSurface() = default;
 
-    virtual void ToggleState(ObjectClass * aP1, ObjectClass * aP2);  // 0x7693A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void PointInRect(unsigned int * a2);  // 0x769440 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char ToggleState(int* p0, char p1);  // 0x7693A0 (x13:signals; virt=dropped(no-binary-vtable))
+    BOOL PointInRect(_DWORD *a2);  // 0x769440 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t WDTSurface_field_0x04[4];
 
@@ -6402,8 +6402,8 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~WString() = default;
 
-    virtual void Append(CampaignScore * aP1);  // 0x7B6970 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void TrimRight(const wchar_t ** a2);  // 0x7B6F40 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    char Append(int* p0);  // 0x7B6970 (x13:signals; virt=dropped(no-binary-vtable))
+    void TrimRight(const int** p0);  // 0x7B6F40 (x13:signals; virt=dropped(no-binary-vtable))
 
     uint8_t WString_field_0x04[4];
 
@@ -6416,7 +6416,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WaypointPath() = default;
 
-    void* Constructor(rc_ptr_base * aP1, rc_ptr_base * aP2);  // 0x5A9A70 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int* p0, int* p1);  // 0x5A9A70 (x13:signals; virt=nonvirtual)
 
 
     unsigned char AnimClass_8[4];  /* AnimClass */  // X10 supply (member_lookup)
@@ -6429,7 +6429,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WideChar() = default;
 
-    virtual void ToLong(BlowStraw * aP0, int a2, int a3);  // 0x7CBB76 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    int __cdecl ToLong(int p0, int p1, int p2);  // 0x7CBB76 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -6445,10 +6445,10 @@ class WinModemClass
 public:
     virtual ~WinModemClass() = default;  // 0x7754A0
     unsigned int * Construct(); // 0x774120 (G42 sig-sync: def)
-    virtual char AddRef(const char * a2, DWORD a3, BYTE a4, BYTE a5, char a6);  // 0x774410 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Release(int a2);  // 0x7748A0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void GetClassIdentifier(DWORD a1);  // 0x7748B0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
-    virtual void Init(char a2);  // 0x774900 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual int AddRef(const char *a2, DWORD a3, BYTE a4, BYTE a5, char a6);  // 0x774410 (x13:signals; virt=slot)
+    virtual int Release(int p0);  // 0x7748A0 (x13:signals; virt=slot)
+    virtual int __fastcall GetClassIdentifier();  // 0x7748B0 (x13:signals; virt=slot)
+    virtual void Init(char p0);  // 0x774900 (x13:signals; virt=slot)
     // +10 more virtual methods
 
     uint8_t WinModemClass_field_0x04[4];
@@ -6522,7 +6522,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WonlineStringDialogControl() = default;
 
-    virtual void QueryInterface(DialogControl_OwnerDraw * Block, char a2);  // 0x7AC5D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual void ** QueryInterface(char p0);  // 0x7AC5D0 (x13:signals; virt=slot)
 
 };
 // 1 methods in IDA
@@ -6532,7 +6532,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~WordVector() = default;
 
-    void* Constructor(int a2, int a3);  // 0x42DD60 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * Constructor(int p0, int p1);  // 0x42DD60 (x13:signals; virt=nonvirtual)
 
 
     unsigned char __pad_004;  // X10 supply (member_lookup)
@@ -6546,7 +6546,7 @@ public:
     // design: default destructor (compiler-generated), no callgraph reference
     virtual ~World() = default;
 
-    virtual void ToScreen(AbstractClass * aP1, AbstractClass * aP2);  // 0x6D2070 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    _DWORD * ToScreen(int* p0, int* p1);  // 0x6D2070 (x13:signals; virt=dropped(no-binary-vtable))
 
 };
 // 1 methods in IDA
@@ -6595,7 +6595,7 @@ class ZoneConnectionVector
 public:
     virtual ~ZoneConnectionVector() = default;  // 0x58A3D0
 
-    int Destruct(unsigned int * Block, char a2);  // 0x58A3D0 (G42 sig-sync: def stubbed pending retranslation; IDA truth in ida_cache)
+    virtual _DWORD * Destruct(char p0);  // 0x58A3D0 (x13:signals; virt=slot)
 
 };
 
