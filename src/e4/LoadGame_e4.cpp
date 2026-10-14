@@ -287,7 +287,7 @@ int LoadGame::RestoreAudioState()
     do /*0x751763*/
     {
       NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751737*/
-      ((AudioController *)((AudioController *)(Next + 12)))->Stop(); /*0x751739*/
+      (&Next->u32_C)->Stop(); /*0x751739*/
       LinkedList::Init((LinkedList *)Next); /*0x751740*/
       PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), Next); /*0x75174d*/
       Next = NextAlt; /*0x751758*/

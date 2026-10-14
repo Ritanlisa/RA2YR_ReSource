@@ -413,7 +413,7 @@ int ConnectionClass::serviceSendQueue()
   v2 = 0; /*0x48c3e9*/
   v21 = 0; /*0x48c3eb*/
   PlayerIndex = this->PlayerIndex; /*0x48c3f3*/
-  if ( *(int *)(PlayerIndex + 40) > 0 ) /*0x48c3fb*/
+  if ( PlayerIndex->q028 > 0 ) /*0x48c3fb*/
   {
     do /*0x48c45f*/
     {
@@ -433,7 +433,7 @@ int ConnectionClass::serviceSendQueue()
       PlayerIndex = this->PlayerIndex; /*0x48c458*/
       ++v2; /*0x48c45b*/
     }
-    while ( v2 < *(unsigned int *)(PlayerIndex + 40) ); /*0x48c45f*/
+    while ( v2 < PlayerIndex->q028 ); /*0x48c45f*/
   }
   v7 = 0; /*0x48c464*/
   v22 = *(unsigned int *)(this->PlayerIndex + 40); /*0x48c46b*/

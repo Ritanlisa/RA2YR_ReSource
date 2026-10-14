@@ -806,20 +806,20 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   int v5; // eax
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  v3 = *((unsigned int *)Block + 17); /*0x62af77*/
+  v3 = Block->u32_44; /*0x62af77*/
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af7a) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af82) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af89) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af90) */
-  *((unsigned int *)Block + 19) = 0; /*0x62af97*/
-  *((unsigned int *)Block + 20) = 0; /*0x62af9a*/
-  *((unsigned int *)Block + 18) = 0; /*0x62af9d*/
+  Block->q04C = 0; /*0x62af97*/
+  Block->u32_50 = 0; /*0x62af9a*/
+  Block->u32_48 = 0; /*0x62af9d*/
   if ( v3 ) /*0x62afa0*/
   {
     (*(void (**)(int))(*(unsigned int *)v3 + 248))(v3); /*0x62afa4*/
-    *((unsigned int *)Block + 17) = 0; /*0x62afaa*/
+    Block->u32_44 = 0; /*0x62afaa*/
   }
-  if ( *((unsigned char *)Block + 84) ) /*0x62afad*/
+  if ( Block->u32_54 ) /*0x62afad*/
   {
     v7 = Block; /*0x62afc2*/
     v4 = (*(int (**)(int *, ParasiteClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x62afc6*/
@@ -836,7 +836,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
         ++v4; /*0x62afe9*/
       }
     }
-    *((unsigned char *)Block + 84) = 0; /*0x62affb*/
+    Block->u32_54 = 0; /*0x62affb*/
   }
   v7 = Block; /*0x62b00e*/
   v5 = (*(int (**)(int *, ParasiteClass **))(dword_AC4910 + 16))(&dword_AC4910, &v7); /*0x62b012*/

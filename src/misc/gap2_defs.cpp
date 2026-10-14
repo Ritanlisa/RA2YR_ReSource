@@ -1227,9 +1227,9 @@ int* Pathfinding::CheckCliff(unsigned int *a2, int16_t *a3, int a4, int a5) {
         if ( (*((unsigned int *)NeighbourContent + 80) & 0x100) == 0 /*0x5838fb*/
           && ((uint8_t)Cell::IsInRange((Cell *)NeighbourContent)
            || (uint8_t)Cell::IsInRange2((Cell *)NeighbourContent))
-          && *((unsigned int *)NeighbourContent + 59) != 3 )
+          && NeighbourContent->u32_EC != 3 )
         {
-          a3 = (int16_t *)*((unsigned int *)NeighbourContent + 9); /*0x583900*/
+          a3 = (int16_t *)NeighbourContent->u32_24; /*0x583900*/
         }
       }
       if ( (*p_Cell_field_0x140 & 0x100) != 0 ) /*0x58390d*/

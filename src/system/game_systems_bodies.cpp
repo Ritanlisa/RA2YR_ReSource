@@ -5405,7 +5405,7 @@ void LoadScreen::RenderProgressBackground()
   v10 = a4; /*0x64349e*/
   if ( this->u32_71 ) /*0x64349b*/
   {
-    v11 = Color::ConvertToRGB((uint8_t *)(BuildingAnimByName + 776), (int)&a5); /*0x6434b5*/
+    v11 = Color::ConvertToRGB(&BuildingAnimByName->q308, (int)&a5); /*0x6434b5*/
     v18 = *(unsigned short *)v11; /*0x6434bd*/
     v12 = *(unsigned char *)(v11 + 2); /*0x6434c8*/
     v13 = *v10; /*0x6434cb*/

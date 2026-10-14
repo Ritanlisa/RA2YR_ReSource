@@ -24440,7 +24440,7 @@ void FactoryClass::FindAvailable() {
     if ( v8 ) /*0x63601d*/
     {
       FactoryClass::FinishProduction((int *)v6->__pad_000, (int)v8); /*0x636022*/
-      operator delete((void *)(*((void **)Block + 1))); /*0x63602f*/
+      operator delete((void *)(Block->vtable2)); /*0x63602f*/
       FactoryClass::RemoveItemAt((FactoryClass *)v6, (int)&Block); /*0x63603e*/
       operator delete((void *)(Block)); /*0x636048*/
       if ( !v6->u32_10 ) /*0x63604d*/
@@ -24453,7 +24453,7 @@ void FactoryClass::FindAvailable() {
   if ( abstractFlags ) /*0x63606f*/
   {
     Block = this->vfptr; /*0x636073*/
-    v9 = *((unsigned int *)Block + 135); /*0x636077*/
+    v9 = Block->q21C; /*0x636077*/
     Object_field_0x30 = *(void **)(v9 + 48); /*0x63607d*/
     if ( (uint8_t)House::IsHumanPlayer((House *)v9) && dword_A83D4C ) /*0x636090*/
       Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x636092*/
@@ -28604,7 +28604,7 @@ void FactoryClass::FindAvailable() {
     if ( v8 ) /*0x63601d*/
     {
       FactoryClass::FinishProduction((int *)v6->__pad_000, (int)v8); /*0x636022*/
-      operator delete((void *)(*((void **)Block + 1))); /*0x63602f*/
+      operator delete((void *)(Block->vtable2)); /*0x63602f*/
       FactoryClass::RemoveItemAt((FactoryClass *)v6, (int)&Block); /*0x63603e*/
       operator delete((void *)(Block)); /*0x636048*/
       if ( !v6->u32_10 ) /*0x63604d*/
@@ -28617,7 +28617,7 @@ void FactoryClass::FindAvailable() {
   if ( abstractFlags ) /*0x63606f*/
   {
     Block = this->vfptr; /*0x636073*/
-    v9 = *((unsigned int *)Block + 135); /*0x636077*/
+    v9 = Block->q21C; /*0x636077*/
     Object_field_0x30 = *(void **)(v9 + 48); /*0x63607d*/
     if ( (uint8_t)House::IsHumanPlayer((House *)v9) && dword_A83D4C ) /*0x636090*/
       Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x636092*/
@@ -31110,7 +31110,7 @@ void FactoryClass::FindAvailable() {
     if ( v8 ) /*0x63601d*/
     {
       FactoryClass::FinishProduction((int *)v6->__pad_000, (int)v8); /*0x636022*/
-      operator delete((void *)(*((void **)Block + 1))); /*0x63602f*/
+      operator delete((void *)(Block->vtable2)); /*0x63602f*/
       FactoryClass::RemoveItemAt((FactoryClass *)v6, (int)&Block); /*0x63603e*/
       operator delete((void *)(Block)); /*0x636048*/
       if ( !v6->u32_10 ) /*0x63604d*/
@@ -31123,7 +31123,7 @@ void FactoryClass::FindAvailable() {
   if ( abstractFlags ) /*0x63606f*/
   {
     Block = this->vfptr; /*0x636073*/
-    v9 = *((unsigned int *)Block + 135); /*0x636077*/
+    v9 = Block->q21C; /*0x636077*/
     Object_field_0x30 = *(void **)(v9 + 48); /*0x63607d*/
     if ( (uint8_t)House::IsHumanPlayer((House *)v9) && dword_A83D4C ) /*0x636090*/
       Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x636092*/

@@ -941,7 +941,7 @@ int TActionClass::ExecuteAction(int a2, int a3)
 
   TActionClass_field_28 = this->TActionClass_field_28; /*0x6dd2c0*/
   if ( TActionClass_field_28 == (void *)a2 ) /*0x6dd2c9*/
-    this->TActionClass_field_28 = (void *)*((unsigned int *)TActionClass_field_28 + 10); /*0x6dd2ce*/
+    this->TActionClass_field_28 = (void *)TActionClass_field_28->TActionClass_field_28; /*0x6dd2ce*/
   result = 0; /*0x6dd2d5*/
   if ( this->TActionClass_field_30 == (void *)a2 ) /*0x6dd2d9*/
     this->TActionClass_field_30 = 0; /*0x6dd2db*/

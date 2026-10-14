@@ -4039,8 +4039,8 @@ int MapClass::FindPassableNeighbor()
     {
       NeighbourContent = Cell::GetNeighbourContent((unsigned int *)i, 4u); /*0x5a1842*/
       v4 = Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a184c*/
-      if ( *(unsigned int *)(i + 56) == *((unsigned int *)NeighbourContent + 14) /*0x5a1867*/
-        && *(unsigned char *)(i + 282) > *((unsigned char *)NeighbourContent + 282) )
+      if ( *(unsigned int *)(i + 56) == *(&NeighbourContent->q038) /*0x5a1867*/
+        && *(unsigned char *)(i + 282) > NeighbourContent->u32_11A )
       {
         v5 = SelectTerrainTileVariant(*(unsigned int *)(i + 56)); /*0x5a1872*/
         v6 = *(unsigned int *)(i + 56); /*0x5a1877*/

@@ -963,10 +963,10 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
         v7 = a3; /*0x4b6086*/
         p_IsOutOfMap = &a1->IsOutOfMap; /*0x4b608c*/
         *(double *)_ESI = VeteranCombat_low; /*0x4b608d*/
-        *((unsigned int *)_ESI + 2) = v7; /*0x4b6097*/
+        _ESI->u32_8 = v7; /*0x4b6097*/
         v4->DestinationCoords[1] = Cell::GetGroundHeight(p_IsOutOfMap); /*0x4b609f*/
         v19[0] = *(unsigned int *)_ESI; /*0x4b60a6*/
-        v19[1] = *((unsigned int *)_ESI + 1); /*0x4b60ad*/
+        v19[1] = _ESI->u32_4; /*0x4b60ad*/
         _EAX = *(unsigned int *)&g_RulesClass_Instance; /*0x4b60b4*/
         v19[2] = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1448) + *((unsigned int *)_ESI + 2); /*0x4b60c3*/
         __asm { fild dword ptr [eax+5A8h] } /*0x4b60cd*/

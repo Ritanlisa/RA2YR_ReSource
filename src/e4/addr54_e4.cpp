@@ -1750,7 +1750,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
 
   _ESI = v2; /*0x54ba35*/
   v4 = (*(int (**)(unsigned int))(**(unsigned int **)(v2 + 12) + 456))(*(unsigned int *)(v2 + 12)); /*0x54ba43*/
-  v5 = *(unsigned int *)(_ESI + 12); /*0x54ba45*/
+  v5 = _ESI->vtable4; /*0x54ba45*/
   if ( !v5->q08C ) /*0x54ba48*/
   {
     v6 = &v5->Coord_9C; /*0x54ba52*/
@@ -1760,15 +1760,15 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v34)->flags[0] & 0x100) != 0 && v4 >= dword_ABC5DC ) /*0x54ba8c*/
       v4 -= dword_ABC5DC; /*0x54ba8e*/
   }
-  v7 = *(unsigned int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)(_ESI + 12) + 440))(*(unsigned int *)(_ESI + 12), &v33); /*0x54baa0*/
-  v8 = *(unsigned int *)(_ESI + 12); /*0x54baa2*/
+  v7 = *(unsigned int *)(*(int (**)(unsigned int, int *))(*_ESI->vtable4 + 440))(_ESI->vtable4, &v33); /*0x54baa0*/
+  v8 = _ESI->vtable4; /*0x54baa2*/
   *(unsigned int *)v31 = v7; /*0x54baa5*/
   if ( (unsigned short)v7 != v8->q560 || v31[1] != v8->q562 ) /*0x54babe*/
     Coord::ToGridIndex((char *)&g_CellClassManager, v8, v8->q560, v7); /*0x54bace*/
-  if ( v4 < *(unsigned int *)(_ESI + 128) ) /*0x54bade*/
+  if ( v4 < _ESI->needsRedraw ) /*0x54bade*/
   {
-    if ( (*(int (**)(unsigned int))(**(unsigned int **)(_ESI + 12) + 44))(*(unsigned int *)(_ESI + 12)) == 1 /*0x54bba2*/
-      && *(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)(_ESI + 12) + 132))(*(unsigned int *)(_ESI + 12)) + 3434) )
+    if ( (*(int (**)(unsigned int))(*_ESI->vtable4 + 44))(_ESI->vtable4) == 1 /*0x54bba2*/
+      && *(unsigned char *)((*(int (**)(unsigned int))(*_ESI->vtable4 + 132))(_ESI->vtable4) + 3434) )
     {
       v17 = *(unsigned int *)(_ESI + 128) / 2; /*0x54bbb5*/
     }
@@ -1779,15 +1779,15 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     if ( v4 > v17 ) /*0x54bbca*/
     {
       __asm { fild dword ptr [esi+20h] } /*0x54bbd0*/
-      v18 = (int *)(*(unsigned int *)(_ESI + 12) + 156); /*0x54bbd6*/
+      v18 = (int *)(_ESI->vtable4 + 156); /*0x54bbd6*/
       __asm { fstp qword ptr [esi+78h] } /*0x54bbdc*/
-      *(double *)(_ESI + 120) = _RT1; /*0x54bbdc*/
+      _ESI->spawnStatus = _RT1; /*0x54bbdc*/
       v34 = *v18; /*0x54bbe1*/
       v20 = v18[1]; /*0x54bbe5*/
       v35 = v20; /*0x54bbe8*/
       v36 = v18[2]; /*0x54bbef*/
-      v33 = *(unsigned int *)(_ESI + 64); /*0x54bbf8*/
-      if ( v34 == v33 && v20 == *(unsigned int *)(_ESI + 68) ) /*0x54bc01*/
+      v33 = _ESI->q040; /*0x54bbf8*/
+      if ( v34 == v33 && v20 == _ESI->u32_44 ) /*0x54bc01*/
         LOWORD(v32) = 0; /*0x54bc03*/
       __asm { fild [esp+24h+var_10] } /*0x54bc0a*/
       __asm
@@ -1803,8 +1803,8 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       __asm { fmul ds:dbl_7E2818 }
       LOWORD(v33) = Math::RoundToInt(result); /*0x54bc3f*/
       v32 = v33; /*0x54bc50*/
-      FacingClass::Update((char *)(_ESI + 84), &v32); /*0x54bc54*/
-      Member = Team::GetMember(*(Team **)(_ESI + 12), 0); /*0x54bc5e*/
+      FacingClass::Update(&_ESI->u32_54, &v32); /*0x54bc54*/
+      Member = Team::GetMember(_ESI->vtable4, 0); /*0x54bc5e*/
       v22 = Member; /*0x54bc63*/
       if ( Member ) /*0x54bc67*/
       {
@@ -1812,48 +1812,48 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
         {
           v23 = v22->u32_520; /*0x54bc75*/
           if ( v23[5821] || v23[5860] || v23[5861] || v23[5862] ) /*0x54bc99*/
-            (**(void (***)(int, int, unsigned int))(*(unsigned int *)(_ESI + 12) + 8))( /*0x54bcb3*/
-              *(unsigned int *)(_ESI + 12) + 8,
+            (**(void (***)(int, int, unsigned int))(_ESI->vtable4 + 8))( /*0x54bcb3*/
+              _ESI->vtable4 + 8,
               4475,
               0);
         }
       }
       if ( *(unsigned int *)v31 == __PAIR32__(*(unsigned int *)(_ESI + 68) / 256, *(unsigned int *)(_ESI + 64) / 256) /*0x54bcee*/
-        && !*(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)(_ESI + 12) + 132))(*(unsigned int *)(_ESI + 12)) + 3434) )
+        && !*(unsigned char *)((*(int (**)(unsigned int))(*_ESI->vtable4 + 132))(_ESI->vtable4) + 3434) )
       {
-        v24 = (*(int (**)(unsigned int))(**(unsigned int **)(_ESI + 12) + 456))(*(unsigned int *)(_ESI + 12)); /*0x54bcfd*/
-        v25 = *(unsigned char **)(_ESI + 12); /*0x54bd03*/
-        *(unsigned int *)(_ESI + 128) = v24; /*0x54bd06*/
+        v24 = (*(int (**)(unsigned int))(*_ESI->vtable4 + 456))(_ESI->vtable4); /*0x54bcfd*/
+        v25 = _ESI->vtable4; /*0x54bd03*/
+        _ESI->needsRedraw = v24; /*0x54bd06*/
         v26 = v25[116]; /*0x54bd10*/
         (*(void (**)(unsigned char *, unsigned int))(*&v25->u32_490))(v25, 0); /*0x54bd13*/
-        v27 = *(unsigned int *)(_ESI + 12); /*0x54bd19*/
-        *(unsigned int *)(_ESI + 80) = 3; /*0x54bd1c*/
+        v27 = _ESI->vtable4; /*0x54bd19*/
+        _ESI->customSound_controller = 3; /*0x54bd1c*/
         v27->unknown74 = v26; /*0x54bd23*/
       }
     }
   }
-  else if ( (unsigned __int8)ObjectClass::HasLinkedObject(*(unsigned int *)(_ESI + 12)) ) /*0x54baea*/
+  else if ( (unsigned __int8)ObjectClass::HasLinkedObject(_ESI->vtable4) ) /*0x54baea*/
   {
     v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
     v10 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v31); /*0x54bb14*/
-    v11 = **(unsigned int **)(_ESI + 12); /*0x54bb1f*/
+    v11 = *_ESI->vtable4; /*0x54bb1f*/
     NeighbourContent = Cell::GetNeighbourContent(v10, v9); /*0x54bb23*/
-    (*(void (**)(unsigned int, void *, int))(v11 + 1152))(*(unsigned int *)(_ESI + 12), NeighbourContent, 1); /*0x54bb2c*/
-    v13 = *(unsigned char **)(_ESI + 12); /*0x54bb32*/
+    (*(void (**)(unsigned int, void *, int))(v11 + 1152))(_ESI->vtable4, NeighbourContent, 1); /*0x54bb2c*/
+    v13 = _ESI->vtable4; /*0x54bb32*/
     LOBYTE(v11) = v13[116]; /*0x54bb39*/
     (*(void (**)(unsigned char *, unsigned int))(*&v13->u32_490))(v13, 0); /*0x54bb3c*/
-    *(unsigned char *)(*(unsigned int *)(_ESI + 12) + 116) = v11; /*0x54bb46*/
-    *(unsigned int *)(_ESI + 80) = 3; /*0x54bb49*/
+    *(unsigned char *)(_ESI->vtable4 + 116) = v11; /*0x54bb46*/
+    _ESI->customSound_controller = 3; /*0x54bb49*/
   }
   else
   {
-    v14 = (CellClass *)(*(int (**)(unsigned int))(**(unsigned int **)(_ESI + 12) + 444))(*(unsigned int *)(_ESI + 12)); /*0x54bb5c*/
+    v14 = (CellClass *)(*(int (**)(unsigned int))(*_ESI->vtable4 + 444))(_ESI->vtable4); /*0x54bb5c*/
     CellClass::AttachObject(v14, v30); /*0x54bb64*/
-    v15 = *(unsigned char **)(_ESI + 12); /*0x54bb69*/
+    v15 = _ESI->vtable4; /*0x54bb69*/
     v16 = v15[116]; /*0x54bb70*/
     (*(void (**)(unsigned char *, unsigned int))(*&v15->u32_490))(v15, 0); /*0x54bb73*/
-    *(unsigned char *)(*(unsigned int *)(_ESI + 12) + 116) = v16; /*0x54bb7d*/
-    *(unsigned int *)(_ESI + 80) = 2; /*0x54bb80*/
+    *(unsigned char *)(_ESI->vtable4 + 116) = v16; /*0x54bb7d*/
+    _ESI->customSound_controller = 2; /*0x54bb80*/
   }
   return result; /*0x54bb45*/
 

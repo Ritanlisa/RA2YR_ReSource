@@ -1002,7 +1002,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     INIClassIntList = (int)&v58; /*0x772362*/
     IntVector::Copy(&v58, &v3->Report); /*0x772366*/
     v5 = (unsigned int *)INIClassIntList; /*0x77236b*/
-    *(unsigned int *)(INIClassIntList + 16) = v3->OpenToppedAnim; /*0x772377*/
+    INIClassIntList->uniqueId = v3->OpenToppedAnim; /*0x772377*/
     v5->u32_14 = v3->AttachedParticleSystem; /*0x77237d*/
     *v5 = (unsigned int)(void*)(void*)&TypeList_int_vftable; /*0x772382*/
     inited = (uint8_t *)__0Iostream_init_QAE_XZ_4(&v3->__pad_024); /*0x772388*/
@@ -1020,7 +1020,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
                         v63);
     TypeList::Copy(&v3->Report, (unsigned int *)INIClassIntList); /*0x7723a0*/
     v7 = INIClassIntList; /*0x7723a5*/
-    v3->OpenToppedAnim = *(unsigned int *)(INIClassIntList + 16); /*0x7723ac*/
+    v3->OpenToppedAnim = INIClassIntList->uniqueId; /*0x7723ac*/
     v3->AttachedParticleSystem = v7->BarrelThickness; /*0x7723b2*/
     v8 = v7->TurretLocked; /*0x7723b5*/
     v9 = *(void **)&v65.FLH; /*0x7723b8*/
@@ -1031,7 +1031,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     INIClassIntList = (int)&v58; /*0x7723e8*/
     IntVector::Copy(&v58, &v3->DownReport); /*0x7723ec*/
     v10 = (unsigned int *)INIClassIntList; /*0x7723f1*/
-    *(unsigned int *)(INIClassIntList + 16) = v3->CellRangefinding; /*0x7723fd*/
+    INIClassIntList->uniqueId = v3->CellRangefinding; /*0x7723fd*/
     v10->u32_14 = v3->TerrainFire; /*0x772405*/
     *v10 = (unsigned int)(void*)(void*)&TypeList_int_vftable; /*0x772408*/
     v11 = (uint8_t *)__0Iostream_init_QAE_XZ_4(&v3->__pad_024); /*0x77240e*/
@@ -1049,7 +1049,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
                         v63);
     TypeList::Copy(&v3->DownReport, (unsigned int *)INIClassIntList); /*0x772426*/
     v12 = INIClassIntList; /*0x77242b*/
-    v3->CellRangefinding = *(unsigned int *)(INIClassIntList + 16); /*0x772432*/
+    v3->CellRangefinding = INIClassIntList->uniqueId; /*0x772432*/
     v3->TerrainFire = v12->BarrelThickness; /*0x772438*/
     v3->DisguiseFakeBlinkTime = v12->TurretLocked; /*0x77243e*/
     *(unsigned int *)v65.WeaponType = (unsigned int)(void*)(void*)&VectorClass_int_vftable; /*0x772447*/

@@ -1090,16 +1090,16 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
   _EBX = (int)v4; /*0x468681*/
   if ( !(uint8_t)ObjectClass::Deploy(v4) ) /*0x468684*/
     return 0; /*0x468b7f*/
-  memcpy((void *)(_EBX + 232), a1, 0x18u); /*0x4686a0*/
-  *(unsigned int *)(_EBX + 308) = *(unsigned int *)this->vtable1; /*0x4686b1*/
+  memcpy(&_EBX->q0E8, a1, 0x18u); /*0x4686a0*/
+  _EBX->q134 = *(unsigned int *)this->vtable1; /*0x4686b1*/
   *(unsigned int *)(_EBX + 312) = this->vtable2; /*0x4686b6*/
   *(unsigned int *)(_EBX + 316) = this->vtable3; /*0x4686bc*/
   (*((unsigned short *)&(v46))) = *(unsigned int *)(_EBX + 308) / 256; /*0x4686cd*/
   (*(((unsigned short *)&(v46)) + 1)) = *(unsigned int *)(_EBX + 312) / 256; /*0x4686e6*/
-  *(unsigned int *)(_EBX + 332) = v46; /*0x4686ef*/
+  _EBX->NextAnim = v46; /*0x4686ef*/
   RemoveTarget(_EBX); /*0x4686f5*/
   v6 = (int *)(*(int (__thiscall **)(unsigned int, unsigned int *))(**(unsigned int **)(_EBX + 268) + 88))( /*0x46870a*/
-                *(unsigned int *)(_EBX + 268),
+                _EBX->AbstractClass_10C,
                 &v56[1]);
   v7 = *v6; /*0x468712*/
   v58 = v7; /*0x468714*/
@@ -1110,7 +1110,7 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
   v60 = v9; /*0x468724*/
   *(unsigned int *)(_EBX + 324) = v8; /*0x468728*/
   *(unsigned int *)(_EBX + 328) = v9; /*0x46872b*/
-  v10 = *(unsigned int *)(_EBX + 172); /*0x46872e*/
+  v10 = _EBX->u32_AC; /*0x46872e*/
   if ( *(unsigned char *)(v10 + 675) && *(unsigned char *)(v10 + 670) ) /*0x468741*/
   {
     v47 = *(unsigned int *)this->vtable1 - v7; /*0x468755*/
@@ -1192,9 +1192,9 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
     v59 = v54; /*0x4688a1*/
     v60 = v15; /*0x4688a5*/
   }
-  if ( *(unsigned char *)(*(unsigned int *)(_EBX + 172) + 670) ) /*0x4688af*/
+  if ( *(unsigned char *)(_EBX->u32_AC + 670) ) /*0x4688af*/
   {
-    v18 = *(unsigned int *)(_EBX + 176); /*0x4688bd*/
+    v18 = _EBX->q_B0; /*0x4688bd*/
     if ( v18 ) /*0x4688c5*/
       v19 = v18->u32_21C; /*0x4688c7*/
     else
@@ -1207,7 +1207,7 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
     v57 = v22; /*0x4688ff*/
     if ( v56[1] == dword_89DE30 && (((unsigned long)(unsigned int)(v21)) | ((unsigned long)(unsigned int)(v22) << 32)) == qword_89DE34 ) /*0x46890b*/
     {
-      FirstObstacle = TrajectoryHelper::FindFirstObstacle(this, &v58, *(unsigned int *)(_EBX + 172), v19); /*0x46894a*/
+      FirstObstacle = TrajectoryHelper::FindFirstObstacle(this, &v58, _EBX->u32_AC, v19); /*0x46894a*/
       if ( FirstObstacle ) /*0x468953*/
       {
         v26 = *(unsigned int *)_EBX; /*0x468957*/
@@ -1219,7 +1219,7 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
         _EBX->SetPosition(&v58); /*0x468977*/
       }
       _EBX->SetPosition(&v58); /*0x468986*/
-      *(unsigned int *)(_EBX + 272) = 0; /*0x46898c*/
+      _EBX->ParticleSystemClass_110 = 0; /*0x46898c*/
       __asm /*0x468992*/
       {
         fld qword ptr [ebx+0E8h]
@@ -1244,8 +1244,8 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
           }
           if ( (_AX & 0x4000) != 0 ) /*0x4689c9*/
           {
-            *(unsigned int *)(_EBX + 232) = 0; /*0x4689cb*/
-            *(unsigned int *)(_EBX + 236) = 1079574528; /*0x4689d1*/
+            _EBX->q0E8 = 0; /*0x4689cb*/
+            _EBX->q0EC = 1079574528; /*0x4689d1*/
           }
         }
       }
@@ -1278,20 +1278,20 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
         fmul qword ptr [ebx+0E8h]
         fstp qword ptr [ebx+0E8h]
       }
-      *(double *)(_EBX + 232) = _RT1; /*0x468a1f*/
+      _EBX->q0E8 = _RT1; /*0x468a1f*/
       __asm /*0x468a25*/
       {
         fld st
         fmul qword ptr [ebx+0F0h]
         fstp qword ptr [ebx+0F0h]
       }
-      *(double *)(_EBX + 240) = _RT1; /*0x468a2d*/
+      _EBX->q0F0 = _RT1; /*0x468a2d*/
       __asm /*0x468a33*/
       {
         fmul qword ptr [ebx+0F8h]
         fstp qword ptr [ebx+0F8h]
       }
-      *(double *)(_EBX + 248) = _RT1; /*0x468a39*/
+      _EBX->u32_F8 = _RT1; /*0x468a39*/
     }
     else
     {
@@ -1301,16 +1301,16 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
       (*(void (__thiscall **)(int, unsigned int *))(v24 + 436))(_EBX, &v56[1]); /*0x468931*/
     }
   }
-  v34 = *(unsigned int *)(_EBX + 268); /*0x468a3f*/
+  v34 = _EBX->AbstractClass_10C; /*0x468a3f*/
   if ( v34 && (*(int (__thiscall **)(int))(*(unsigned int *)v34 + 44))(v34) == 2 ) /*0x468a51*/
     v35 = 0; /*0x468a53*/
   else
-    v35 = *(unsigned int *)(*(unsigned int *)(_EBX + 172) + 752); /*0x468a5d*/
-  v56[1] = *(unsigned int *)(_EBX + 156); /*0x468a75*/
+    v35 = *(unsigned int *)(_EBX->u32_AC + 752); /*0x468a5d*/
+  v56[1] = _EBX->Coord_9C; /*0x468a75*/
   v56[2] = *(unsigned int *)(_EBX + 160); /*0x468a7c*/
   v57 = *(unsigned int *)(_EBX + 164); /*0x468a88*/
-  BulletClass::InitDetonationTimer((BulletClass *)(_EBX + 184), &v56[1], &v58, v35, 0x7FFFFFFF); /*0x468a93*/
-  if ( *(int *)(*(unsigned int *)(_EBX + 172) + 732) > 0 ) /*0x468aa6*/
+  BulletClass::InitDetonationTimer(&_EBX->Data, &v56[1], &v58, v35, 0x7FFFFFFF); /*0x468a93*/
+  if ( *(int *)(_EBX->u32_AC + 732) > 0 ) /*0x468aa6*/
   {
     __asm /*0x468aac*/
     {
@@ -1336,8 +1336,8 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
         }
         if ( (_AX & 0x4000) != 0 ) /*0x468ae3*/
         {
-          *(unsigned int *)(_EBX + 232) = 0; /*0x468ae5*/
-          *(unsigned int *)(_EBX + 236) = 1079574528; /*0x468aef*/
+          _EBX->q0E8 = 0; /*0x468ae5*/
+          _EBX->q0EC = 1079574528; /*0x468aef*/
         }
       }
     }
@@ -1370,22 +1370,22 @@ int BulletClass::ProcessObstacle(void* a1, void* a2) {
       fmul qword ptr [ebx+0E8h]
       fstp qword ptr [ebx+0E8h]
     }
-    *(double *)(_EBX + 232) = _RT1; /*0x468b3d*/
+    _EBX->q0E8 = _RT1; /*0x468b3d*/
     __asm /*0x468b43*/
     {
       fld st
       fmul qword ptr [ebx+0F0h]
       fstp qword ptr [ebx+0F0h]
     }
-    *(double *)(_EBX + 240) = _RT1; /*0x468b4b*/
+    _EBX->q0F0 = _RT1; /*0x468b4b*/
     __asm /*0x468b51*/
     {
       fmul qword ptr [ebx+0F8h]
       fstp qword ptr [ebx+0F8h]
     }
-    *(double *)(_EBX + 248) = _RT1; /*0x468b57*/
+    _EBX->u32_F8 = _RT1; /*0x468b57*/
   }
-  if ( *(unsigned char *)(_EBX + 144) ) /*0x468b5d*/
+  if ( _EBX->isAliveFlag ) /*0x468b5d*/
     Targeting::Readd((unsigned int *)_EBX); /*0x468b6d*/
   return 1; /*0x468b74*/
 }
@@ -5633,32 +5633,32 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
 
   _ESI = (int)this; /*0x62b5e7*/
   ObjectClass::ctor(this); /*0x62b5e9*/
-  *(unsigned int *)(_ESI + 172) = a1; /*0x62b5f4*/
-  *(unsigned char *)(_ESI + 176) = 0; /*0x62b5fa*/
-  *(unsigned char *)(_ESI + 177) = 0; /*0x62b600*/
-  *(unsigned char *)(_ESI + 178) = 0; /*0x62b606*/
-  *(unsigned int *)(_ESI + 184) = 0; /*0x62b60c*/
-  *(unsigned int *)(_ESI + 180) = 0; /*0x62b612*/
-  *(unsigned int *)(_ESI + 188) = 0; /*0x62b618*/
+  _ESI->u32_AC = a1; /*0x62b5f4*/
+  _ESI->q_B0 = 0; /*0x62b5fa*/
+  _ESI->q0B1 = 0; /*0x62b600*/
+  _ESI->q0B2 = 0; /*0x62b606*/
+  _ESI->q0B8 = 0; /*0x62b60c*/
+  _ESI->u32_B4 = 0; /*0x62b612*/
+  _ESI->u32_BC = 0; /*0x62b618*/
   v7 = a3; /*0x62b61e*/
-  *(unsigned int *)(_ESI + 192) = 0; /*0x62b622*/
-  *(unsigned int *)(_ESI + 196) = 0; /*0x62b628*/
-  *(unsigned int *)(_ESI + 200) = 0; /*0x62b62e*/
-  *(unsigned int *)(_ESI + 204) = 0; /*0x62b634*/
-  *(unsigned int *)(_ESI + 208) = 0; /*0x62b63a*/
-  *(unsigned int *)(_ESI + 212) = -1082130432; /*0x62b640*/
-  *(unsigned int *)(_ESI + 216) = 0; /*0x62b64a*/
-  *(unsigned int *)(_ESI + 220) = 0; /*0x62b650*/
-  *(unsigned int *)(_ESI + 224) = 0; /*0x62b656*/
-  *(unsigned int *)(_ESI + 228) = *(unsigned int *)(*(unsigned int *)(_ESI + 172) + 764); /*0x62b66e*/
+  _ESI->q0C0 = 0; /*0x62b622*/
+  _ESI->u32_C4 = 0; /*0x62b628*/
+  _ESI->u32_C8 = 0; /*0x62b62e*/
+  _ESI->q0CC = 0; /*0x62b634*/
+  _ESI->q0D0 = 0; /*0x62b63a*/
+  _ESI->u32_D4 = -1082130432; /*0x62b640*/
+  _ESI->u32_D8 = 0; /*0x62b64a*/
+  _ESI->u32_DC = 0; /*0x62b650*/
+  _ESI->FootClass_E0 = 0; /*0x62b656*/
+  _ESI->Tactical_E4 = *(unsigned int *)(_ESI->u32_AC + 764); /*0x62b66e*/
   *(unsigned int *)(_ESI + 232) = *(unsigned int *)(*((unsigned int *)&(v7))); /*0x62b678*/
   *(unsigned int *)(_ESI + 236) = *(unsigned int *)((*((unsigned int *)&(v7))) + 4); /*0x62b67d*/
   _EDI = a2; /*0x62b680*/
   *(unsigned int *)(_ESI + 240) = *(unsigned int *)((*((unsigned int *)&(v7))) + 8); /*0x62b687*/
-  *(unsigned int *)(_ESI + 244) = *a2; /*0x62b694*/
+  _ESI->u32_F4 = *a2; /*0x62b694*/
   *(unsigned int *)(_ESI + 248) = a2[1]; /*0x62b699*/
   *(unsigned int *)(_ESI + 252) = a2[2]; /*0x62b69f*/
-  *(unsigned int *)(_ESI + 256) = dword_AC49D8; /*0x62b6ae*/
+  _ESI->q0100 = dword_AC49D8; /*0x62b6ae*/
   *(unsigned int *)(_ESI + 260) = dword_AC49DC; /*0x62b6ba*/
   *(unsigned int *)(_ESI + 264) = dword_AC49E0; /*0x62b6c3*/
   v43 = *(unsigned int *)((*((unsigned int *)&(v7))) + 8) - a2[2]; /*0x62b6d6*/
@@ -5666,7 +5666,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   v44 = *(unsigned int *)((*((unsigned int *)&(v7))) + 4) - a2[1]; /*0x62b6e2*/
   __asm { fild [esp+28h+arg_0] } /*0x62b6e8*/
   v45 = *(unsigned int *)(*((unsigned int *)&(v7))) - *a2; /*0x62b6ec*/
-  _EBP = (float *)(_ESI + 268); /*0x62b6f0*/
+  _EBP = &_ESI->AbstractClass_10C; /*0x62b6f0*/
   __asm { fild [esp+28h+arg_0] } /*0x62b6f6*/
   v10 = a4; /*0x62b6fa*/
   __asm { fstp dword ptr [ebp+0] } /*0x62b6fe*/
@@ -5682,25 +5682,25 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
     fild dword ptr [edi]
     fstp dword ptr [esi+118h]
   }
-  *(float *)(_ESI + 280) = _ET1; /*0x62b70f*/
+  _ESI->StateAIAdvance = _ET1; /*0x62b70f*/
   __asm { fstp dword ptr [esi+11Ch] } /*0x62b715*/
-  *(float *)(_ESI + 284) = _ET1; /*0x62b715*/
+  _ESI->__pad_11C = _ET1; /*0x62b715*/
   __asm { fstp dword ptr [esi+120h] } /*0x62b71b*/
-  *(float *)(_ESI + 288) = _ET1; /*0x62b71b*/
-  *(unsigned int *)(_ESI + 292) = v10; /*0x62b721*/
-  v17 = *(unsigned char **)(_ESI + 172); /*0x62b727*/
+  _ESI->q_120 = _ET1; /*0x62b71b*/
+  _ESI->u32_124 = v10; /*0x62b721*/
+  v17 = _ESI->u32_AC; /*0x62b727*/
   v18 = v17[779]; /*0x62b72d*/
-  *(unsigned char *)(_ESI + 301) = 0; /*0x62b733*/
-  *(unsigned char *)(_ESI + 300) = v18; /*0x62b739*/
-  *(unsigned char *)(_ESI + 302) = v17[778]; /*0x62b745*/
-  *(unsigned char *)(_ESI + 303) = v17[756]; /*0x62b754*/
-  *(unsigned char *)(_ESI + 304) = 0; /*0x62b75b*/
-  *(unsigned char *)(_ESI + 305) = 0; /*0x62b761*/
+  _ESI->u32_12D = 0; /*0x62b733*/
+  _ESI->u32_12C = v18; /*0x62b739*/
+  _ESI->StartStateAI = v17[778]; /*0x62b745*/
+  _ESI->Translucency = v17[756]; /*0x62b754*/
+  _ESI->u32_130 = 0; /*0x62b75b*/
+  _ESI->u32_131 = 0; /*0x62b761*/
   *(unsigned int *)_ESI = 0; /*0x62b767*/
   *(unsigned int *)(_ESI + 4) = 0; /*0x62b76d*/
-  *(unsigned int *)(_ESI + 8) = 0; /*0x62b773*/
-  *(unsigned int *)(_ESI + 12) = 0; /*0x62b77a*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)(_ESI + 4)); /*0x62b781*/
+  _ESI->vtable3 = 0; /*0x62b773*/
+  _ESI->vtable4 = 0; /*0x62b77a*/
+  AbstractClass::GenerateUniqueID(&_ESI->vtable2); /*0x62b781*/
   if ( *(int *)&DataGlobal_A83DD8 < *(int *)DataGlobal_A83DD0 /*0x62b7b9*/
     || (DataGlobal_A83DD5 || !*(unsigned int *)DataGlobal_A83DD0)
     && *(int *)&DataGlobal_A83DDC > 0
@@ -5712,7 +5712,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
     v19 = (*(unsigned int *)&DataGlobal_A83DD8)++; /*0x62b7c6*/
     *((unsigned int *)DataGlobal_A83DCC + v19) = _ESI; /*0x62b7d5*/
   }
-  if ( *(unsigned int *)(*(unsigned int *)(_ESI + 172) + 788) == 1 ) /*0x62b7e5*/
+  if ( *(unsigned int *)(_ESI->u32_AC + 788) == 1 ) /*0x62b7e5*/
   {
     v46 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 2; /*0x62b803*/
     __asm /*0x62b807*/
@@ -5721,17 +5721,17 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
       fadd dword ptr [esi+0E4h]
       fstp dword ptr [esi+0E4h]
     }
-    *(float *)(_ESI + 228) = _ET1; /*0x62b811*/
+    _ESI->Tactical_E4 = _ET1; /*0x62b811*/
   }
-  v21 = *(unsigned int *)(_ESI + 172); /*0x62b817*/
-  *(unsigned short *)(_ESI + 298) = *(unsigned short *)(v21 + 732); /*0x62b824*/
+  v21 = _ESI->u32_AC; /*0x62b817*/
+  _ESI->u32_12A = *(unsigned short *)(v21 + 732); /*0x62b824*/
   if ( *(unsigned int *)(v21 + 788) == 4 ) /*0x62b834*/
-    v22 = *(unsigned short *)(*(unsigned int *)(_ESI + 172) + 736) /*0x62b85c*/
+    v22 = *(unsigned short *)(_ESI->u32_AC + 736) /*0x62b85c*/
         + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 10);
   else
-    v22 = *(unsigned short *)(*(unsigned int *)(_ESI + 172) + 736) /*0x62b889*/
-        + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % *(unsigned int *)(*(unsigned int *)(_ESI + 172) + 736));
-  *(unsigned short *)(_ESI + 296) = v22; /*0x62b890*/
+    v22 = *(unsigned short *)(_ESI->u32_AC + 736) /*0x62b889*/
+        + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % *(unsigned int *)(_ESI->u32_AC + 736));
+  _ESI->q128 = v22; /*0x62b890*/
   v38 = a2[2]; /*0x62b8ad*/
   if ( v38 <= (int)Cell::GetGroundHeight(a2) ) /*0x62b8ba*/
     Cell::GetGroundHeight(a2); /*0x62b8c2*/
@@ -5790,7 +5790,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   *_EBP = v24; /*0x62b94a*/
   *(float *)(_ESI + 272) = v25; /*0x62b950*/
   *(float *)(_ESI + 276) = v26; /*0x62b953*/
-  if ( *(unsigned char *)(*(unsigned int *)(_ESI + 172) + 783) ) /*0x62b95c*/
+  if ( *(unsigned char *)(_ESI->u32_AC + 783) ) /*0x62b95c*/
   {
     __asm { fld dword ptr [ebp+0] } /*0x62b96e*/
     __asm { fmul dword ptr [esi+0E4h] }
@@ -5852,7 +5852,7 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
         }
       }
     }
-    (*((unsigned int *)&(a3))) = *(char *)(*(unsigned int *)(_ESI + 172) + 780) + 1; /*0x62ba34*/
+    (*((unsigned int *)&(a3))) = *(char *)(_ESI->u32_AC + 780) + 1; /*0x62ba34*/
     __asm /*0x62ba38*/
     {
       fild [esp+28h+arg_8.Color_field_00]
@@ -5860,9 +5860,9 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
       fadd ds:dbl_7E1718
     }
     __asm { fstp st }
-    *(unsigned char *)(_ESI + 300) = Math::RoundToInt(a2); /*0x62ba4b*/
+    _ESI->u32_12C = Math::RoundToInt(a2); /*0x62ba4b*/
   }
-  v32 = *(unsigned int *)(_ESI + 172); /*0x62ba51*/
+  v32 = _ESI->u32_AC; /*0x62ba51*/
   if ( *(int *)(v32 + 712) > 0 ) /*0x62ba5d*/
   {
     if ( *(unsigned char *)(v32 + 724) /*0x62ba8b*/
@@ -5879,15 +5879,15 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
         fmul ds:dbl_7E3570
         fstp [esp+2Ch+var_30+4]; float
       }
-      v34 = Color::Lerp2((Color *)&a3, *(unsigned int *)(_ESI + 172) + 724, *(unsigned int *)(_ESI + 172) + 727, v37); /*0x62baee*/
-      *(unsigned short *)(_ESI + 176) = *(unsigned short *)v34; /*0x62baf6*/
-      *(unsigned char *)(_ESI + 178) = v34->u32_2; /*0x62bb00*/
+      v34 = Color::Lerp2((Color *)&a3, _ESI->u32_AC + 724, _ESI->u32_AC + 727, v37); /*0x62baee*/
+      _ESI->q_B0 = *(unsigned short *)v34; /*0x62baf6*/
+      _ESI->q0B2 = v34->u32_2; /*0x62bb00*/
     }
     else
     {
       v33 = *(unsigned int *)(v32 + 700); /*0x62ba93*/
-      *(unsigned short *)(_ESI + 176) = *(unsigned short *)v33; /*0x62ba9c*/
-      *(unsigned char *)(_ESI + 178) = *(unsigned char *)(v33 + 2); /*0x62baa6*/
+      _ESI->q_B0 = *(unsigned short *)v33; /*0x62ba9c*/
+      _ESI->q0B2 = *(unsigned char *)(v33 + 2); /*0x62baa6*/
     }
   }
   ObjectClass::Deploy((ObjectClass *)_ESI); /*0x62bb0e*/

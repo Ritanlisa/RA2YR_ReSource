@@ -838,7 +838,7 @@ int AircraftClass::Mission_Retreat()
               {
                 v3->CleanupDirection(); /*0x41a030*/
                 Member = Team::GetMember((Team *)v3, 0); /*0x41a03b*/
-                CellClass::AddObject((CellClass *)(Member + 276), v3); /*0x41a048*/
+                CellClass::AddObject(&Member->u32_114, v3); /*0x41a048*/
               }
               else
               {
@@ -1078,7 +1078,7 @@ int AircraftClass::Mission_Retreat()
   Type = this->Type; /*0x414324*/
   v16 = a2[1]; /*0x41432d*/
   v17 = a2[2]; /*0x414334*/
-  if ( !*(unsigned char *)(Type + 3432) ) /*0x414338*/
+  if ( !Type->__pad_D68 ) /*0x414338*/
   {
     if ( this->vfptr.vfptr.isALoaner[0] || !(uint8_t)IsCoordVisibleMap((ObjectClass *)&dword_87F7E8, a2) ) /*0x414352*/
     {

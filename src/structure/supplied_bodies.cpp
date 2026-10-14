@@ -3261,7 +3261,7 @@ namespace gamemd {
       if ( !bug->HasPower[0] ) /*0x43c422*/
         return 10; /*0x43c438*/
       _EBX = bug->Type; /*0x43c43b*/
-      if ( !*(unsigned char *)(_EBX + 5806) && !*(unsigned char *)(_EBX + 5807) ) /*0x43c453*/
+      if ( !*(unsigned char *)(_EBX + 5806) && !_EBX->InfantryAbsorb ) /*0x43c453*/
         goto LABEL_33; /*0x43c453*/
       if ( v62->getAltitude() == 1 && !*(unsigned char *)(bug->Type + 5806) /*0x43c487*/
         || v62->getAltitude() == 15 && !*(unsigned char *)(bug->Type + 5807) )
@@ -3272,7 +3272,7 @@ namespace gamemd {
       if ( captureManager && (uint8_t)CellClass::HasContent(captureManager) ) /*0x43c4aa*/
         return 10; /*0x43c4bf*/
       _EBX = bug->Type; /*0x43c4c2*/
-      if ( bug->passengers[0] + 1 <= *(unsigned int *)(_EBX + 1504) ) /*0x43c4d5*/
+      if ( bug->passengers[0] + 1 <= _EBX->Passengers ) /*0x43c4d5*/
       {
         _EAX = v62->GetSpecialValue(); /*0x43c4db*/
         __asm /*0x43c4e1*/
@@ -3285,9 +3285,9 @@ namespace gamemd {
           return 1; /*0x43c4f2*/
       }
   LABEL_33:
-      if ( *(unsigned char *)(_EBX + 5805) ) /*0x43c4f8*/
+      if ( _EBX->Grinding ) /*0x43c4f8*/
         return 1; /*0x43c500*/
-      if ( *(unsigned char *)(_EBX + 5803) ) /*0x43c506*/
+      if ( _EBX->Bunker ) /*0x43c506*/
       {
         if ( TechnoClass::CanSelfRepair(v62) /*0x43c52f*/
           && bug->ThunkTo636(35, v62) != 1 )
@@ -3296,7 +3296,7 @@ namespace gamemd {
         }
         return 10; /*0x43cb74*/
       }
-      if ( *(unsigned char *)(_EBX + 5801) ) /*0x43c544*/
+      if ( _EBX->UnitRepair ) /*0x43c544*/
       {
         if ( (v62->getAltitude() == 1 /*0x43c57a*/
            || v62->getAltitude() == 2)
@@ -3306,7 +3306,7 @@ namespace gamemd {
         }
         return 10; /*0x43c57a*/
       }
-      if ( !*(unsigned char *)(_EBX + 5826) && !*(unsigned char *)(_EBX + 5825)
+      if ( !*(unsigned char *)(_EBX + 5826) && !_EBX->Hospital
         || v62->getAltitude() != 15 )
       {
         v12 = bug->Type; /*0x43c620*/
@@ -3750,8 +3750,8 @@ namespace gamemd {
   v2 = bug->GetMember41(); /*0x43e905*/
   v3 = ZCoordToScreenY(v2); /*0x43e90d*/
   Type = bug->Type; /*0x43e912*/
-  if ( *(unsigned char *)(Type + 5829) ) /*0x43e91c*/
-    return *(unsigned int *)(Type + 4584) - v3; /*0x43e92d*/
+  if ( Type->TurretAnimIsVoxel ) /*0x43e91c*/
+    return Type->u32_11E8 - v3; /*0x43e92d*/
   else
     return -v3; /*0x43e930*/
 }
@@ -3769,14 +3769,14 @@ namespace gamemd {
 
   Type = bug->Type; /*0x43ef94*/
   v3 = bug->animation[0]; /*0x43ef9a*/
-  if ( *(unsigned char *)(Type + 5823) ) /*0x43efa0*/
+  if ( Type->LaserFence ) /*0x43efa0*/
     return bug->LaserFenceFrame; /*0x43efb2*/
-  if ( *(unsigned char *)(Type + 5824) ) /*0x43efb3*/
+  if ( Type->FirestormWall ) /*0x43efb3*/
     return bug->FirestormWallFrame; /*0x43efc5*/
   if ( !bug->BuildingClass_field_int_534 ) /*0x43efc6*/
   {
-    if ( *(unsigned char *)(Type + 5815) ) /*0x43efd0*/
-      v3 = *(unsigned int *)(Type + 3844) + *(unsigned int *)(Type + 3848) - v3 - 1; /*0x43efeb*/
+    if ( Type->Gate ) /*0x43efd0*/
+      v3 = *(unsigned int *)(Type + 3844) + Type->u32_F08 - v3 - 1; /*0x43efeb*/
     if ( bug->GetPrimaryOrFallback() == 19 ) /*0x43effa*/
       return *(unsigned int *)(bug->Type + 12 * bug->BuildingClass_field_int_534 + 3844) /*0x43f02b*/
            + *(unsigned int *)(bug->Type + 12 * bug->BuildingClass_field_int_534 + 3848)
@@ -3784,7 +3784,7 @@ namespace gamemd {
            - 1;
     return v3; /*0x43f16f*/
   }
-  if ( *(unsigned char *)(Type + 5499) ) /*0x43f02c*/
+  if ( Type->CanBeOccupied ) /*0x43f02c*/
   {
     v3 = 0; /*0x43f03e*/
     if ( bug->MissionStubReturnZero6() > 0 ) /*0x43f048*/
@@ -3815,7 +3815,7 @@ namespace gamemd {
       return 1; /*0x43f0bc*/
     return v3; /*0x43f0ad*/
   }
-  if ( !*(unsigned char *)(Type + 5815) ) /*0x43f0c7*/
+  if ( !Type->Gate ) /*0x43f0c7*/
   {
     BuildingClass::GetHealthRatio(bug); /*0x43f0f6*/
     _ECX = dword_8871E0; /*0x43f0fb*/
@@ -4126,7 +4126,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
           goto LABEL_14; /*0x440650*/
         }
       }
-      else if ( *(unsigned int *)(Type + 3668) ) /*0x440606*/
+      else if ( Type->ToOverlay ) /*0x440606*/
       {
         v9 = Coord::To_Cell((Coord *)&dword_87F7E8, v2); /*0x440616*/
         v15 = v9->wallOwnerIndex; /*0x44061b*/
@@ -4140,7 +4140,7 @@ void BuildingClass::Unlimbo_UnitDeliveryFix()
           goto LABEL_13; /*0x44064a*/
         }
       }
-      else if ( *(unsigned char *)(Type + 5815) ) /*0x440666*/
+      else if ( Type->Gate ) /*0x440666*/
       {
         (v45) = ((v45) & ~0xFFFF) | ((unsigned int)(v2->vtable1 / 256) & 0xFFFF); /*0x440685*/
         (v45) = ((v45) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)(v2->vtable1 / 256) & 0xFFFF) << 16) /*0x440699*/
@@ -4907,7 +4907,7 @@ namespace gamemd {
             fmul ds:flt_7E4460
             fstp dword ptr [eax+0E8h]
           }
-          *(float *)(_EAX + 232) = _ET1; /*0x4426c2*/
+          _EAX->u32_E8 = _ET1; /*0x4426c2*/
         }
         goto LABEL_64; /*0x4426c2*/
       case 3: /*0x442476*/
@@ -5785,7 +5785,7 @@ namespace gamemd {
   char v15; // [esp+24h] [ebp+Ch]
 
   Type = bug->Type; /*0x447548*/
-  if ( *(unsigned char *)(Type + 5889) ) /*0x44754e*/
+  if ( Type->InvisibleInGame ) /*0x44754e*/
     return 0; /*0x447560*/
   if ( *(unsigned int *)(Type + 1032) && v14 ) /*0x447577*/
   {
@@ -9182,7 +9182,7 @@ namespace gamemd {
     {
       case 0:
         Type = (int)this->Type; /*0x451b8e*/
-        if ( *(unsigned char *)(Type + 5801) )
+        if ( Type->UnitRepair )
         {
           if ( !(uint8_t)Team::AllMembersValid((Team *)this) /*0x451bba*/
             || (*((int (__thiscall **)(BuildingClass *))this->vfptr + 97))(this) != 20 )
@@ -9212,7 +9212,7 @@ namespace gamemd {
           if ( Type && *(unsigned char *)Type ) /*0x451bfd*/
             (*((unsigned char *)&(Type))) = BuildingClass::PlayAnim(this, v5, (AnimTypeClass *)Type, 11, v8, 0, 0); /*0x451c10*/
         }
-        else if ( *(unsigned char *)(Type + 5799) )
+        else if ( Type->IsAnimDelayedFire )
         {
           (*((unsigned char *)&(Type))) = *(unsigned char *)(bug + 377); /*0x451c40*/
           if ( (unsigned char)Type )
@@ -9244,7 +9244,7 @@ namespace gamemd {
         break; /*0x451c17*/
       case 2:
         Type = (int)this->Type; /*0x451cd2*/
-        if ( *(unsigned char *)(Type + 5801) ) /*0x451cd8*/
+        if ( Type->UnitRepair ) /*0x451cd8*/
         {
           (*((unsigned char *)&(Type))) = *(unsigned char *)(bug + 377); /*0x451ce6*/
           if ( (unsigned char)Type ) /*0x451cee*/
@@ -15702,7 +15702,7 @@ namespace gamemd {
     BuildingClass::SetType((BuildingClass *)this, v20); /*0x639652*/
     Type = v20; /*0x639657*/
   }
-  v8 = *(unsigned int *)(Type + 4); /*0x63965b*/
+  v8 = Type->u32_4; /*0x63965b*/
   v21 = v2; /*0x639665*/
   if ( (*(int (__thiscall **)(int, ScriptAction **))(v8 + 16))(Type + 4, &v21) == -1 ) /*0x639670*/
     return CompleteBuildingProduction((unsigned int *)this, (int)v2); /*0x639727*/

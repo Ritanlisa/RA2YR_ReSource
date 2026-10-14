@@ -515,7 +515,7 @@ void HouseClass::Update_TogglePower(double a2)
         if ( (*(unsigned char *)(ClosestObjectCell + 20) & 4) != 0 ) /*0x4f897e*/
         {
           v33 = ClosestObjectCell; /*0x4f8986*/
-          if ( *(unsigned int *)(ClosestObjectCell + 1444) ) /*0x4f8980*/
+          if ( ClosestObjectCell->u32_5A4 ) /*0x4f8980*/
           {
             v34 = 1; /*0x4f898c*/
             goto LABEL_112; /*0x4f898e*/

@@ -195,9 +195,9 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     v20 = *(unsigned int *)_ESI; /*0x5b22ab*/
     __asm { fst qword ptr [esi+10h] } /*0x5b22ad*/
     _ESI[2] = _RT1; /*0x5b22ad*/
-    v92 = (unsigned long)((((unsigned long)(unsigned int)(v20)) | ((unsigned long)(unsigned int)(*((unsigned int *)_ESI + 1)) << 32))); /*0x5b22b3*/
+    v92 = (unsigned long)((((unsigned long)(unsigned int)(v20)) | ((unsigned long)(unsigned int)(_ESI->BuildingTypeClass_4) << 32))); /*0x5b22b3*/
     __asm { fld [esp+98h+var_30] } /*0x5b22be*/
-    v22 = *((unsigned int *)_ESI + 3); /*0x5b22c2*/
+    v22 = _ESI->u32_C; /*0x5b22c2*/
     v93[0] = *((unsigned int *)_ESI + 2); /*0x5b22c5*/
     v93[1] = v22; /*0x5b22c9*/
     (*((unsigned short *)&(v23))) = Math::RoundToInt(a3); /*0x5b22cd*/
@@ -362,10 +362,10 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
     fchs
     fstp qword ptr [esi+8]
   }
-  *(double *)(_ESI + 8) = _RT1; /*0x5b25bd*/
+  _ESI->vtable3 = _RT1; /*0x5b25bd*/
   Math::Hypotenuse2D((int *)_ESI); /*0x5b25c0*/
   __asm { fstp [esp+0A0h+var_A0]; double } /*0x5b25ce*/
-  Math::CalcAngle(*(double *)(_ESI + 16), v82); /*0x5b25d3*/
+  Math::CalcAngle(_ESI->uniqueId, v82); /*0x5b25d3*/
   __asm { fsub ds:dbl_7E2820 } /*0x5b25d8*/
   __asm { fmul ds:dbl_7E2818 }
   *(unsigned short *)v88.vtable1 = Math::RoundToInt(v46); /*0x5b25ec*/

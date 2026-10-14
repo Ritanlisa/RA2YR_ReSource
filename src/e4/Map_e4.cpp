@@ -1143,7 +1143,7 @@ char sub_63AB60(int a1, int a2)
   Coords = ScriptAction::GetCoords((unsigned int **)dword_AC4CCC, v10); /*0x63aba3*/
   v9[0] = *Coords; /*0x63abaa*/
   v9[1] = Coords->u32_4; /*0x63abb5*/
-  v9[2] = Coords->u32_8; /*0x63abc0*/
+  v9[2] = Owner; /*0x63abc0*/
   v5 = ToCoordPixel(&v8, v9); /*0x63abc4*/
   ((Rect *)(v11))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63abe0*/
   v10[0] = v11[0]; /*0x63abf9*/

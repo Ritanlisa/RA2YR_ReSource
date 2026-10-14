@@ -452,13 +452,13 @@ void AudioSample::InitLinkedList() {
     do /*0x4088a0*/
     {
       LinkedList::Init((LinkedList *)AudioSample_field_0x04); /*0x40885c*/
-      v4 = *(unsigned int **)(AudioSample_field_0x04 + 48); /*0x408861*/
-      *(unsigned int *)(AudioSample_field_0x04 + 48) = 0; /*0x408864*/
-      v5 = v4[5]; /*0x40886d*/
+      v4 = AudioSample_field_0x04->ptr_30; /*0x408861*/
+      AudioSample_field_0x04->ptr_30 = 0; /*0x408864*/
+      v5 = v4->abstractFlags; /*0x40886d*/
       --*v4; /*0x408871*/
-      v4[5] = v5 - *(unsigned int *)(AudioSample_field_0x04 + 28); /*0x408878*/
-      v4[4] &= ~2u; /*0x408880*/
-      if ( *(unsigned int *)(AudioSample_field_0x04 + 16) ) /*0x408883*/
+      v4->abstractFlags = v5 - AudioSample_field_0x04->referenceCount; /*0x408878*/
+      v4->uniqueId &= ~2u; /*0x408880*/
+      if ( AudioSample_field_0x04->uniqueId ) /*0x408883*/
         operator delete((void *)(*(void **)(AudioSample_field_0x04 + 16))); /*0x40888b*/
       operator delete((void *)((void *)AudioSample_field_0x04)); /*0x408894*/
       AudioSample_field_0x04 = *p_AudioSample_field_0x04; /*0x408899*/
@@ -2148,14 +2148,14 @@ char AudioEvent::LoadFromINI(uint8_t ***a2) {
 
   _ESI = this; /*0x752dc0*/
   INIClass::ResetSection((INIClass *)a2); /*0x752dc4*/
-  *((unsigned int *)_ESI + 10) = 1065353216; /*0x752dcc*/
+  _ESI->u32_28 = 1065353216; /*0x752dcc*/
   if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)_ESI) ) /*0x752dd3*/
     return 0; /*0x752fec*/
   __asm { fld dword ptr [esi+28h] } /*0x752de7*/
   __asm { fstp [esp+20Ch+var_20C]; double }
   INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)_ESI, g_INI_Key_Volume, v5); /*0x752df9*/
   __asm { fstp dword ptr [esi+28h] } /*0x752dfe*/
-  *((float *)_ESI + 10) = _ET1; /*0x752dfe*/
+  _ESI->u32_28 = _ET1; /*0x752dfe*/
   INIClass::GetString( /*0x752e18*/
     (INIClass *)a2,
     (uint8_t *)_ESI,
@@ -2172,21 +2172,21 @@ char AudioEvent::LoadFromINI(uint8_t ***a2) {
         if ( _strcmpi(Source, aInterrupt) ) /*0x752e71*/
         {
           if ( !_strcmpi(Source, aQueuedInterrup) ) /*0x752e90*/
-            *((unsigned int *)_ESI + 19) = 3; /*0x752e9c*/
+            _ESI->u32_4C = 3; /*0x752e9c*/
         }
         else
         {
-          *((unsigned int *)_ESI + 19) = 2; /*0x752e7d*/
+          _ESI->u32_4C = 2; /*0x752e7d*/
         }
       }
       else
       {
-        *((unsigned int *)_ESI + 19) = 0; /*0x752e62*/
+        _ESI->u32_4C = 0; /*0x752e62*/
       }
     }
     else
     {
-      *((unsigned int *)_ESI + 19) = 1; /*0x752e43*/
+      _ESI->u32_4C = 1; /*0x752e43*/
     }
   }
   INIClass::GetString( /*0x752eba*/
@@ -2205,32 +2205,32 @@ char AudioEvent::LoadFromINI(uint8_t ***a2) {
         if ( _strcmpi(Source, aImportant) ) /*0x752f14*/
         {
           if ( !_strcmpi(Source, aCritical) ) /*0x752f33*/
-            *((unsigned int *)_ESI + 18) = 3; /*0x752f3f*/
+            _ESI->u32_48 = 3; /*0x752f3f*/
         }
         else
         {
-          *((unsigned int *)_ESI + 18) = 2; /*0x752f20*/
+          _ESI->u32_48 = 2; /*0x752f20*/
         }
       }
       else
       {
-        *((unsigned int *)_ESI + 18) = 1; /*0x752f01*/
+        _ESI->u32_48 = 1; /*0x752f01*/
       }
     }
     else
     {
-      *((unsigned int *)_ESI + 18) = 0; /*0x752ee6*/
+      _ESI->u32_48 = 0; /*0x752ee6*/
     }
   }
   INIClass::GetString((INIClass *)a2, (uint8_t *)_ESI, aYuri, &g_INI_DefaultBuffer, Source, 500); /*0x752f5d*/
-  strncpy((char *)_ESI + 44, Source, 9u); /*0x752f6d*/
-  *((unsigned char *)_ESI + 52) = 0; /*0x752f79*/
+  strncpy(&_ESI->u8_2C, Source, 9u); /*0x752f6d*/
+  _ESI->u8_34 = 0; /*0x752f79*/
   INIClass::GetString((INIClass *)a2, (uint8_t *)_ESI, aRussian, &g_INI_DefaultBuffer, Source, 500); /*0x752f8f*/
-  strncpy((char *)_ESI + 53, Source, 9u); /*0x752f9f*/
-  *((unsigned char *)_ESI + 61) = 0; /*0x752fab*/
+  strncpy(&_ESI->u8_35, Source, 9u); /*0x752f9f*/
+  _ESI->u8_3D = 0; /*0x752fab*/
   INIClass::GetString((INIClass *)a2, (uint8_t *)_ESI, aAllied, &g_INI_DefaultBuffer, Source, 500); /*0x752fc1*/
-  strncpy((char *)_ESI + 62, Source, 9u); /*0x752fd1*/
-  *((unsigned char *)_ESI + 70) = 0; /*0x752fd9*/
+  strncpy(&_ESI->u8_3E, Source, 9u); /*0x752fd1*/
+  _ESI->u8_46 = 0; /*0x752fd9*/
   return 1; /*0x752fde*/
 }
 }

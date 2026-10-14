@@ -255,7 +255,7 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
         if ( (*(unsigned char *)(Next + 164) & 4) == 0 ) /*0x403bb5*/
           v7 = aFree; /*0x403bb7*/
       }
-      v8 = *(unsigned int *)(Next + 12); /*0x403bbc*/
+      v8 = Next->u32_C; /*0x403bbc*/
       if ( v8 < 4096 ) /*0x403bc4*/
       {
         v9 = aStd; /*0x403bd0*/
@@ -267,18 +267,18 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
         v9 = aUser; /*0x403bc6*/
       }
       v15[0] = 0; /*0x403bdc*/
-      if ( *(unsigned int *)(Next + 384) ) /*0x403be4*/
+      if ( Next->u32_180 ) /*0x403be4*/
         v10 = 4; /*0x403bf9*/
       else
-        v10 = 8 * *(unsigned int *)(Next + 396); /*0x403bf4*/
+        v10 = 8 * Next->__pad_18C; /*0x403bf4*/
       sprintf(
         v16,
         "%02d-%2d-%c%c%c",
         *(unsigned int *)(Next + 388) / 1000,
         v10,
-        *(unsigned int *)(Next + 392) != 1 ? 83 : 77,
-        *(unsigned int *)(Next + 412) != 0 ? 42 : 32,
-        *(unsigned int *)(Next + 416) != 0 ? 43 : 32);
+        Next->q188 != 1 ? 83 : 77,
+        Next->u32_19C != 0 ? 42 : 32,
+        Next->u32_1A0 != 0 ? 43 : 32);
       sprintf( /*0x403ca0*/
         Buffer,
         "#%2d :%s:%s:%s:%4d:%3d:%.10s\n",
@@ -286,8 +286,8 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
         v9,
         v7,
         v16,
-        *(unsigned int *)(Next + 160),
-        (unsigned int)(100 * (*(((unsigned short *)&(*(unsigned int *)(Next + 220))) + 1))) >> 14,
+        Next->u32_A0,
+        (unsigned int)(100 * (*(Next->u32_DC + 1))) >> 14,
         v15);
       a2(Buffer); /*0x403cac*/
       ++v6; /*0x403cb0*/
@@ -17791,7 +17791,7 @@ int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
   Coords = ScriptAction::GetCoords((ScriptAction *)this, &v40); /*0x63caf1*/
   v30 = *Coords; /*0x63caf8*/
   v31 = Coords->u32_4; /*0x63cb03*/
-  v32 = Coords->u32_8; /*0x63cb0e*/
+  v32 = Owner; /*0x63cb0e*/
   v3 = ToCoordPixel(&v35, &v30); /*0x63cb12*/
   v33 = *v3; /*0x63cb1c*/
   v29 = -1; /*0x63cb20*/

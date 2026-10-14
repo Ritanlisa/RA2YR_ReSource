@@ -286,7 +286,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
   }
   DynamicVector_field_0x10 = this->Count; /*0x5387b5*/
   v7 = *&this->Items; /*0x5387b8*/
-  this->Count = (char *)DynamicVector_field_0x10 + 1; /*0x5387be*/
+  this->Count = &DynamicVector_field_0x10->AbstractClass_1; /*0x5387be*/
   *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *aP1; /*0x5387c8*/
   return 1; /*0x5387b1*/
 
@@ -560,7 +560,7 @@ char DynamicVector::Add(DynamicVector * aP1, void *a2_1, void *a3_1)
   }
   DynamicVector_field_0x10 = aP1->Count; /*0x6c6435*/
   v7 = *&aP1->Items; /*0x6c6438*/
-  aP1->Count = (char *)DynamicVector_field_0x10 + 1; /*0x6c643e*/
+  aP1->Count = &DynamicVector_field_0x10->AbstractClass_1; /*0x6c643e*/
   *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *a2_1; /*0x6c6448*/
   return 1; /*0x6c6431*/
 

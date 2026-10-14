@@ -575,14 +575,14 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
           case 1u: /*0x630cc4*/
             if ( !(*(((unsigned short *)&(a3)) + 1)) && (uint8_t)UI_Get_630EA0(WindowLongA) == 1 ) /*0x630dbe*/
             {
-              *(unsigned int *)(WindowLongA + 4) = 1; /*0x630dc4*/
+              WindowLongA->__pad_004 = 1; /*0x630dc4*/
               return 0; /*0x630dd1*/
             }
             break;
           case 2u: /*0x630cc4*/
             if ( !(*(((unsigned short *)&(a3)) + 1)) ) /*0x630d93*/
             {
-              *(unsigned int *)(WindowLongA + 4) = 2; /*0x630d9c*/
+              WindowLongA->__pad_004 = 2; /*0x630d9c*/
               return 0; /*0x630da9*/
             }
             break;
@@ -605,7 +605,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
                     }
                     while ( v7 < (int)dword_A8DB44 ); /*0x630d4f*/
                   }
-                  *(unsigned char *)(WindowLongA + 8) = 1; /*0x630d53*/
+                  WindowLongA->q008 = 1; /*0x630d53*/
                   PhoneEditor::PopulateList((HWND *)WindowLongA); /*0x630d57*/
                   if ( dword_A8DABC == -1 ) /*0x630d63*/
                   {
@@ -765,7 +765,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
           case 2u: /*0x631805*/
             if ( !(*(((unsigned short *)&(a3)) + 1)) ) /*0x63186d*/
             {
-              *(unsigned int *)(WindowLongA + 4) = 2; /*0x631879*/
+              WindowLongA->__pad_004 = 2; /*0x631879*/
               return 0; /*0x631889*/
             }
             break;
@@ -958,7 +958,7 @@ int E4Recv_635680::sub_635680(int a2)
   Coords = ScriptAction::GetCoords((ScriptAction *)this, v11); /*0x6356b4*/
   v10[0] = *Coords; /*0x6356bb*/
   v10[1] = Coords->u32_4; /*0x6356c6*/
-  v10[2] = Coords->u32_8; /*0x6356d1*/
+  v10[2] = Owner; /*0x6356d1*/
   v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
   v6 = ComputeBounds(v21, 8, *v5, v5[1]); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
@@ -1159,14 +1159,14 @@ char ExecutePlanningQueue()
   LABEL_23:
       Type = BuildingClass::GetType(vfptr); /*0x637364*/
       v33 = v14; /*0x637374*/
-      v16 = (*(int (**)(int, int *))(*(unsigned int *)(Type + 4) + 16))(Type + 4, &v33); /*0x63737e*/
+      v16 = (*(int (**)(int, int *))(Type->vtable2 + 16))(Type + 4, &v33); /*0x63737e*/
       if ( v16 == -1 ) /*0x637384*/
       {
         v17 = 0; /*0x637386*/
       }
       else
       {
-        v18 = *(unsigned int *)(Type + 20); /*0x63738a*/
+        v18 = Type->abstractFlags; /*0x63738a*/
         if ( v18 == 1 ) /*0x637390*/
         {
           v17 = v14; /*0x637392*/
@@ -2625,7 +2625,7 @@ AbstractClass * * sub_63B150()
       Coords = ScriptAction::GetCoords((ScriptAction *)v5, v18); /*0x63b1fb*/
       v17[0] = *Coords; /*0x63b202*/
       v17[1] = Coords->u32_4; /*0x63b20d*/
-      v17[2] = Coords->u32_8; /*0x63b218*/
+      v17[2] = Owner; /*0x63b218*/
       v9 = ToCoordPixel(&v16, v17); /*0x63b21c*/
       v10 = ComputeBounds(v25, 8, *v9, v9[1]); /*0x63b236*/
       v19 = *v10; /*0x63b23a*/
@@ -4654,7 +4654,7 @@ int sub_638F90(int a1, int a2)
   Coords = ScriptAction::GetCoords((unsigned int **)dword_AC4CCC, v8); /*0x638fa8*/
   v7[0] = *Coords; /*0x638faf*/
   v7[1] = Coords->u32_4; /*0x638fba*/
-  v7[2] = Coords->u32_8; /*0x638fc5*/
+  v7[2] = Owner; /*0x638fc5*/
   v3 = ToCoordPixel(&v6, v7); /*0x638fc9*/
   ((Rect *)(v9))->Set(*v3 - 4, v3[1] - 4, 8, 8); /*0x638fe5*/
   v8[0] = v9[0]; /*0x638ffe*/

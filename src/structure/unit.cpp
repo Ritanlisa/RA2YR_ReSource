@@ -7688,13 +7688,13 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
       BuildingClass::UpdateDamageAnim(v19); /*0x737d97*/
     }
     _EAX = this->Type; /*0x737d9c*/
-    if ( *(int *)(_EAX + 3616) <= 0 ) /*0x737daf*/
+    if ( _EAX->DeathFrames <= 0 ) /*0x737daf*/
     {
-      if ( !*(unsigned char *)(_EAX + 3278) ) /*0x737de2*/
+      if ( !_EAX->Naval ) /*0x737de2*/
         goto LABEL_25; /*0x737de2*/
-      if ( *(unsigned char *)(_EAX + 3433) ) /*0x737dec*/
+      if ( _EAX->qD69 ) /*0x737dec*/
         goto LABEL_25; /*0x737dec*/
-      if ( *(unsigned char *)(_EAX + 3479) ) /*0x737df6*/
+      if ( _EAX->DisableShadowCache ) /*0x737df6*/
         goto LABEL_25; /*0x737df6*/
       __asm { fld qword ptr [eax+370h] } /*0x737e00*/
       _EAX = dword_8871E0; /*0x737e06*/

@@ -1272,14 +1272,14 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
       case 1u: /*0x695826*/
         if ( !(*(((unsigned short *)&(a3)) + 1)) && (uint8_t)ApplyModemConfigSettings(WindowLongA) == 1 ) /*0x695886*/
         {
-          *(unsigned int *)(WindowLongA + 4) = 1; /*0x69588c*/
+          WindowLongA->__pad_004 = 1; /*0x69588c*/
           return 0; /*0x695899*/
         }
         return 0; /*0x695886*/
       case 2u: /*0x695826*/
         if ( !(*(((unsigned short *)&(a3)) + 1)) ) /*0x69585b*/
         {
-          *(unsigned int *)(WindowLongA + 4) = 2; /*0x695864*/
+          WindowLongA->__pad_004 = 2; /*0x695864*/
           return 0; /*0x695871*/
         }
         return 0; /*0x69585e*/
@@ -1302,7 +1302,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
     wParamb = SendMessageA(a4, 0x147u, 0, 0); /*0x6959b9*/
     if ( SendMessageA(a4, 0x150u, wParamb, 0) == 4 ) /*0x6959c2*/
     {
-      v12 = (const char *)(WindowLongA + 8); /*0x6959c8*/
+      v12 = &WindowLongA->q008; /*0x6959c8*/
       SendMessageA(a4, 0x4BDu, wParamb, WindowLongA + 8); /*0x6959d3*/
       v13 = GetDlgItem(*(HWND *)WindowLongA, 1631); /*0x6959dd*/
       goto LABEL_38; /*0x6959dd*/
@@ -1322,10 +1322,10 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
         ShowWindow(v9, 0); /*0x6958e7*/
         EnableWindow(v10, 0); /*0x6958f0*/
         SendMessageA(v10, 0x4B5u, 0x10u, WindowLongA + 8); /*0x695902*/
-        *(unsigned char *)(WindowLongA + 23) = 0; /*0x69590a*/
-        String::Trim((char *)(WindowLongA + 8)); /*0x69590e*/
-        _strupr((char *)(WindowLongA + 8)); /*0x695914*/
-        ListBox::SetCustomEntry((HWND *)WindowLongA, 1625, 3, (void *)(WindowLongA + 8)); /*0x695926*/
+        WindowLongA->u8_17 = 0; /*0x69590a*/
+        String::Trim(&WindowLongA->q008); /*0x69590e*/
+        _strupr(&WindowLongA->q008); /*0x695914*/
+        ListBox::SetCustomEntry((HWND *)WindowLongA, 1625, 3, &WindowLongA->q008); /*0x695926*/
         return 0; /*0x695931*/
       }
     }
@@ -1337,7 +1337,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   wParama = SendMessageA(a4, 0x147u, 0, 0); /*0x69595b*/
   if ( SendMessageA(a4, 0x150u, wParama, 0) != 3 ) /*0x695964*/
     goto LABEL_34; /*0x695964*/
-  v12 = (const char *)(WindowLongA + 8); /*0x69596a*/
+  v12 = &WindowLongA->q008; /*0x69596a*/
   SendMessageA(a4, 0x4BDu, wParama, WindowLongA + 8); /*0x695975*/
   v13 = GetDlgItem(*(HWND *)WindowLongA, 1626); /*0x69597f*/
   LABEL_38:

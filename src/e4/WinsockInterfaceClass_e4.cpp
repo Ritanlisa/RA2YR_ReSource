@@ -101,42 +101,42 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   void *v5; // eax
   void *v6; // eax
 
-  v3 = *((unsigned char *)Block + 258152); /*0x7b2786*/
+  v3 = Block->u8_3F068; /*0x7b2786*/
   Block->Socket = (int)&vt_WinsockInterfaceClass; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
     NetworkClass::UnregisterAsync(Block); /*0x7b2796*/
     (*(void (**)(WinsockInterfaceClass *))(Block->Socket + 4))(Block); /*0x7b27a0*/
     WSACleanup(); /*0x7b27a3*/
-    *((unsigned char *)Block + 258152) = 0; /*0x7b27a8*/
+    Block->u8_3F068 = 0; /*0x7b27a8*/
   }
-  v4 = (void *)*((unsigned int *)Block + 15); /*0x7b27ae*/
-  *((unsigned int *)Block + 14) = &vt_VectorClass; /*0x7b27b1*/
-  if ( v4 && *((unsigned char *)Block + 69) ) /*0x7b27bc*/
+  v4 = (void *)Block->u32_3C; /*0x7b27ae*/
+  Block->u32_38 = &vt_VectorClass; /*0x7b27b1*/
+  if ( v4 && Block->u8_45 ) /*0x7b27bc*/
   {
     operator delete((void *)(v4)); /*0x7b27c2*/
-    *((unsigned int *)Block + 15) = 0; /*0x7b27ca*/
+    Block->u32_3C = 0; /*0x7b27ca*/
   }
-  *((unsigned char *)Block + 69) = 0; /*0x7b27cd*/
-  *((unsigned int *)Block + 16) = 0; /*0x7b27d0*/
-  v5 = (void *)*((unsigned int *)Block + 9); /*0x7b27d3*/
-  *((unsigned int *)Block + 8) = &vt_VectorClass; /*0x7b27d6*/
-  if ( v5 && *((unsigned char *)Block + 45) ) /*0x7b27e1*/
+  Block->u8_45 = 0; /*0x7b27cd*/
+  Block->u32_40 = 0; /*0x7b27d0*/
+  v5 = (void *)Block->q024; /*0x7b27d3*/
+  Block->u32_20 = &vt_VectorClass; /*0x7b27d6*/
+  if ( v5 && Block->u8_2D ) /*0x7b27e1*/
   {
     operator delete((void *)(v5)); /*0x7b27e7*/
-    *((unsigned int *)Block + 9) = 0; /*0x7b27ef*/
+    Block->q024 = 0; /*0x7b27ef*/
   }
-  *((unsigned char *)Block + 45) = 0; /*0x7b27f2*/
-  *((unsigned int *)Block + 10) = 0; /*0x7b27f5*/
-  v6 = (void *)*((unsigned int *)Block + 3); /*0x7b27f8*/
+  Block->u8_2D = 0; /*0x7b27f2*/
+  Block->u32_28 = 0; /*0x7b27f5*/
+  v6 = (void *)Block->q00C; /*0x7b27f8*/
   Block->LocalAddress = (int)&vt_VectorClass; /*0x7b27fb*/
-  if ( v6 && *((unsigned char *)Block + 21) ) /*0x7b2806*/
+  if ( v6 && Block->u8_15 ) /*0x7b2806*/
   {
     operator delete((void *)(v6)); /*0x7b280c*/
-    *((unsigned int *)Block + 3) = 0; /*0x7b2814*/
+    Block->q00C = 0; /*0x7b2814*/
   }
-  *((unsigned char *)Block + 21) = 0; /*0x7b281b*/
-  *((unsigned int *)Block + 4) = 0; /*0x7b2820*/
+  Block->u8_15 = 0; /*0x7b281b*/
+  Block->u32_10 = 0; /*0x7b2820*/
   if ( (a2 & 1) != 0 ) /*0x7b2823*/
     operator delete((void *)(Block)); /*0x7b2826*/
   return (SOCKET *)Block; /*0x7b2830*/

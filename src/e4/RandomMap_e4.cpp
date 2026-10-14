@@ -3152,22 +3152,22 @@ AbstractClass * * LoadInfo(wchar_t * Destination, int a2)
          0x80u) <= 0 )
   {
     *(unsigned short *)Destination->__pad_0 = 0; /*0x597e7f*/
-    *((unsigned char *)Destination + 437) = 1; /*0x597e82*/
-    *((unsigned char *)Destination + 436) = 0; /*0x597e89*/
+    Destination->u8_1B5 = 1; /*0x597e82*/
+    Destination->u8_1B4 = 0; /*0x597e89*/
   }
   else
   {
     wcsncpy((wchar_t *)Destination, Source, 0x80u); /*0x597e68*/
-    *((unsigned char *)Destination + 437) = 0; /*0x597e70*/
-    *((unsigned char *)Destination + 436) = 1; /*0x597e76*/
+    Destination->u8_1B5 = 0; /*0x597e70*/
+    Destination->u8_1B4 = 1; /*0x597e76*/
   }
-  *((unsigned int *)Destination + 72) = 0; /*0x597e9a*/
-  *((unsigned int *)Destination + 73) = 0; /*0x597ea0*/
-  strncpy((char *)Destination + 256, v2, 0x20u); /*0x597ea6*/
+  Destination->u32_120 = 0; /*0x597e9a*/
+  Destination->u32_124 = 0; /*0x597ea0*/
+  strncpy(&Destination->q100, v2, 0x20u); /*0x597ea6*/
   if ( !strlen((const char *)Destination + 256) ) /*0x597ead*/
     strncpy((char *)Destination + 256, (const char *)(a2 + 304), 0x20u); /*0x597ecd*/
-  *((unsigned int *)Destination + 108) = *(unsigned int *)(a2 + 24); /*0x597ee5*/
-  *((unsigned int *)Destination + 107) = *(unsigned int *)(a2 + 20); /*0x597eee*/
+  Destination->u32_1B0 = *(unsigned int *)(a2 + 24); /*0x597ee5*/
+  Destination->u32_1AC = *(unsigned int *)(a2 + 20); /*0x597eee*/
   HashTable::DestroyHashTableINIClass(&v4); /*0x597ef4*/
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x597f00) */
   v7 = 0; /*0x597f08*/
@@ -8271,7 +8271,7 @@ int RandomMap::RemoveMatching(int a2)
     {
       NeighbourContent = Cell::GetNeighbourContent((Cell *)a2, i); /*0x74ef43*/
       v8 = 0; /*0x74ef5b*/
-      if ( *((unsigned int *)NeighbourContent + 17) == 126 ) /*0x74ef4b*/
+      if ( NeighbourContent->u32_44 == 126 ) /*0x74ef4b*/
       {
         v7 = NeighbourContent->u32_11E; /*0x74ef4d*/
         if ( v7 < 0x30u || v7 > 0x33u ) /*0x74ef59*/

@@ -2833,7 +2833,7 @@ void sub_40A850()
     {
       (*(void (__stdcall **)(unsigned int))(**(unsigned int **)&DataGlobal_87E8A0 + 72))(*(unsigned int *)&DataGlobal_87E8A0); /*0x40a873*/
       v3 = Enabled->customSound_controller; /*0x40a878*/
-      v4 = *((unsigned int *)Enabled + 19); /*0x40a87c*/
+      v4 = Enabled->q04C; /*0x40a87c*/
       v5 = Enabled->q054; /*0x40a87f*/
       v6[1] = v3; /*0x40a887*/
       v7 = v4; /*0x40a890*/

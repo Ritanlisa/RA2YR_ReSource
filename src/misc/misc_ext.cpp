@@ -1906,10 +1906,10 @@ int CoordinateTables::Init()  // G42 sig-sync: hpp declares int (matches IDA int
     v18 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x749688*/
     VoxelAnimClass_field_0x104 = this->q104; /*0x74968d*/
     v47 = v18; /*0x749693*/
-    v20 = *(double *)(VoxelAnimClass_field_0x104 + 696); /*0x749697*/
+    v20 = VoxelAnimClass_field_0x104->q2B8; /*0x749697*/
     (*((unsigned short *)&(v21))) = Math::RoundToInt(v20); /*0x7496a5*/
-    v45 = (double)((int)abs32(v49) % v21) - *(double *)(VoxelAnimClass_field_0x104 + 712); /*0x7496d2*/
-    v50 = (double)((int)abs32(v47) % v21) - *(double *)(VoxelAnimClass_field_0x104 + 712); /*0x7496e4*/
+    v45 = (double)((int)abs32(v49) % v21) - VoxelAnimClass_field_0x104->q2C8; /*0x7496d2*/
+    v50 = (double)((int)abs32(v47) % v21) - VoxelAnimClass_field_0x104->q2C8; /*0x7496e4*/
     v51 = v45; /*0x7496e8*/
     v52 = v20; /*0x7496ec*/
     v22 = -v45; /*0x7496f4*/
@@ -39928,7 +39928,7 @@ void TileSystem::BuildNodes()
               v101 = *(unsigned int *)(80 * (*(int16_t *)v157.__pad_000 + g_MapCellWidth * *(int16_t *)&v157.__pad_002) /*0x58e070*/
                                + g_MissionQueueFrame.localVariables[163]
                                + 56);
-              if ( v101 >= 0 && v101 != *((unsigned int *)Block + 2) ) /*0x58e07f*/
+              if ( v101 >= 0 && v101 != Block->__pad_8 ) /*0x58e07f*/
                 *((unsigned char *)n + v101) = 1; /*0x58e085*/
             }
             ++v99; /*0x58e089*/
@@ -41411,7 +41411,7 @@ void VeinholeMonsterClass::PlaceGrowth()
       NeighbourContent->u32_44 = -1; /*0x74e981*/
     else
       NeighbourContent->u32_44 = 126; /*0x74e98a*/
-    *((unsigned char *)NeighbourContent + 286) = 0; /*0x74e992*/
+    NeighbourContent->u32_11E = 0; /*0x74e992*/
   }
   v5 = -2; /*0x74e99d*/
   do /*0x74e9f2*/

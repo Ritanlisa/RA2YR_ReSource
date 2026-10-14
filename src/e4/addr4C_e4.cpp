@@ -529,7 +529,7 @@ void sub_4C2830()
       ++v10[7]; /*0x4c293d*/
     }
     *v9 >>= 1; /*0x4c2944*/
-    if ( !*((unsigned int *)Block + 10) ) /*0x4c294a*/
+    if ( !Block->DiskLaserClass_field_0x28 ) /*0x4c294a*/
     {
       v12 = (*(int (**)(int *, void **))(dword_8A0E88 + 16))(&dword_8A0E88, &Block); /*0x4c2960*/
       if ( v12 != -1 && v12 < dword_8A0E98 && v12 < --dword_8A0E98 ) /*0x4c297b*/
@@ -544,8 +544,8 @@ void sub_4C2830()
       v13 = Block; /*0x4c299b*/
       if ( Block ) /*0x4c299d*/
       {
-        v14 = *((unsigned int *)Block + 8); /*0x4c299f*/
-        v15 = (unsigned int *)((char *)Block + 32); /*0x4c29a2*/
+        v14 = Block->needsSave; /*0x4c299f*/
+        v15 = &Block->needsSave; /*0x4c29a2*/
         if ( v14 ) /*0x4c29a7*/
         {
           *(unsigned int *)(v14 + 1756) = 0; /*0x4c29a9*/

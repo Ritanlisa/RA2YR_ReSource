@@ -2717,27 +2717,27 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
     v10 = &v7->AbstractClass_1; /*0x624d22*/
     v11 = Block == &v7->AbstractClass_1; /*0x624d25*/
     v42 = v7 + 1; /*0x624d27*/
-    v40 = *((unsigned int *)Block + 13); /*0x624d2e*/
-    Blocka = (char *)*((unsigned int *)Block + 10); /*0x624d35*/
-    v37 = *((unsigned int *)Block + 15); /*0x624d3c*/
+    v40 = Block->q034; /*0x624d2e*/
+    Blocka = (char *)Block->DiskLaserClass_field_0x28; /*0x624d35*/
+    v37 = Block->__pad_3C; /*0x624d3c*/
     if ( !v11 ) /*0x624d40*/
     {
       qmemcpy(Block, v10, 0x200u); /*0x624d4f*/
-      *((unsigned int *)Block + 15) = v37; /*0x624d55*/
-      *((unsigned int *)Block + 10) = Blocka; /*0x624d5c*/
-      *((unsigned int *)Block + 13) = v40; /*0x624d5f*/
+      Block->__pad_3C = v37; /*0x624d55*/
+      Block->DiskLaserClass_field_0x28 = Blocka; /*0x624d5c*/
+      Block->q034 = v40; /*0x624d5f*/
       v12 = (const wchar_t *)v7[11]; /*0x624d62*/
       if ( Blocka ) /*0x624d67*/
       {
         __3_YAXPAX_Z(Blocka); /*0x624d6a*/
         v10 = (int ***)v42; /*0x624d6f*/
-        *((unsigned int *)Block + 10) = 0; /*0x624d76*/
+        Block->DiskLaserClass_field_0x28 = 0; /*0x624d76*/
       }
       if ( v12 && *v12 ) /*0x624d81*/
       {
         v13 = wcslen(v12); /*0x624d88*/
         v14 = (wchar_t *)__2_YAPAXI_Z(2 * v13 + 2); /*0x624d92*/
-        *((unsigned int *)Block + 10) = v14; /*0x624d99*/
+        Block->DiskLaserClass_field_0x28 = v14; /*0x624d99*/
         wcscpy(v14, v12); /*0x624d9c*/
         v10 = (int ***)v42; /*0x624da1*/
       }
@@ -2823,15 +2823,15 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
         v32 = v32->q204; /*0x624ef3*/
       }
       v11 = Block == &v32->AbstractClass_1; /*0x624f19*/
-      v35 = *((unsigned int *)Block + 13); /*0x624f1e*/
+      v35 = Block->q034; /*0x624f1e*/
       Blockc = (char *)*((unsigned int *)Block + 10); /*0x624f21*/
-      v41 = *((unsigned int *)Block + 15); /*0x624f28*/
+      v41 = Block->__pad_3C; /*0x624f28*/
       if ( !v11 ) /*0x624f2c*/
       {
         qmemcpy(Block, v32 + 1, 0x200u); /*0x624f37*/
-        *((unsigned int *)Block + 13) = v35; /*0x624f3d*/
-        *((unsigned int *)Block + 10) = Blockc; /*0x624f40*/
-        *((unsigned int *)Block + 15) = v41; /*0x624f47*/
+        Block->q034 = v35; /*0x624f3d*/
+        Block->DiskLaserClass_field_0x28 = Blockc; /*0x624f40*/
+        Block->__pad_3C = v41; /*0x624f47*/
         GadgetClass::SetTooltip((GadgetClass *)Block, v32->SuperClass_field_0x2C); /*0x624f50*/
         SymbolTable::Rebuild((SymbolTable *)Block, (int **)v43[14]); /*0x624f62*/
         v7 = v36; /*0x624f67*/

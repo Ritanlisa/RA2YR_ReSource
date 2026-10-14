@@ -1773,15 +1773,15 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
     if ( ++result >= dword_A80238 ) /*0x49b824*/
       return result; /*0x49b824*/
   }
-  *((unsigned int *)Destination + 11) = 0; /*0x49b831*/
+  Destination->u32_2C = 0; /*0x49b831*/
   wcscpy(Destination, (const wchar_t *)(v6 + 90154)); /*0x49b836*/
-  *((unsigned int *)Destination + 12) = 0; /*0x49b83b*/
-  *((unsigned int *)Destination + 16) = 0; /*0x49b83e*/
-  *((unsigned int *)Destination + 20) = 0; /*0x49b841*/
-  *((unsigned int *)Destination + 24) = 0; /*0x49b844*/
-  *((unsigned int *)Destination + 10) = *(unsigned int *)(v6 + 90196); /*0x49b850*/
+  Destination->ptr_30 = 0; /*0x49b83b*/
+  Destination->q040 = 0; /*0x49b83e*/
+  Destination->u32_50 = 0; /*0x49b841*/
+  Destination->q060 = 0; /*0x49b844*/
+  Destination->u32_28 = *(unsigned int *)(v6 + 90196); /*0x49b850*/
   if ( !*(unsigned char *)(v6 + 501) ) /*0x49b853*/
-    ++*((unsigned int *)Destination + 11); /*0x49b85d*/
+    ++Destination->u32_2C; /*0x49b85d*/
   v7 = 0; /*0x49b860*/
   v8 = (unsigned int *)(v6 + 21476); /*0x49b862*/
   v9 = 20; /*0x49b868*/
@@ -1800,18 +1800,18 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
     --v11; /*0x49b884*/
   }
   while ( v11 ); /*0x49b885*/
-  *((unsigned int *)Destination + 16) = v7; /*0x49b887*/
-  *((unsigned int *)Destination + 12) = *(unsigned int *)(v6 + 21640) + *(unsigned int *)(v6 + 21556); /*0x49b89e*/
+  Destination->q040 = v7; /*0x49b887*/
+  Destination->ptr_30 = *(unsigned int *)(v6 + 21640) + *(unsigned int *)(v6 + 21556); /*0x49b89e*/
   Count = VectorClass::GetCount((unsigned int *)(v6 + 21840)); /*0x49b8ac*/
   v14 = VectorClass::GetCount((unsigned int *)(v6 + 21860)) + Count; /*0x49b8b9*/
   v15 = VectorClass::GetCount((unsigned int *)(v6 + 21880)) + v14; /*0x49b8c6*/
-  *((unsigned int *)Destination + 20) = VectorClass::GetCount((unsigned int *)(v6 + 21900)) /*0x49b8df*/
+  Destination->u32_50 = VectorClass::GetCount((unsigned int *)(v6 + 21900)) /*0x49b8df*/
                                 + v15
                                 + *(unsigned int *)(v6 + 21640)
                                 + *(unsigned int *)(v6 + 21556);
   v16 = *(unsigned int *)(v6 + 21736); /*0x49b8e2*/
   if ( v16 > 0 ) /*0x49b8ea*/
-    *((unsigned int *)Destination + 24) += v16; /*0x49b8ec*/
+    Destination->q060 += v16; /*0x49b8ec*/
   ToWideStringChar((char *)Destination); /*0x49b902*/
   return Debug::Log(); /*0x49b826*/
 }

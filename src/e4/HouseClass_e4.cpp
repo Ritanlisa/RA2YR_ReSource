@@ -1627,7 +1627,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
     --v6; /*0x506f62*/
   }
   while ( v6 ); /*0x506f63*/
-  v7 = 4 * *(unsigned int *)(_EBP + 22364) * *(unsigned int *)(_EBP + 22368); /*0x506f72*/
+  v7 = 4 * *(unsigned int *)(_EBP + 22364) * _EBP->q5760; /*0x506f72*/
   Block = (void *)__2_YAPAXI_Z(v7); /*0x506f82*/
   v123 = (void *)__2_YAPAXI_Z(v7); /*0x506f8e*/
   v118 = (void *)__2_YAPAXI_Z(v7); /*0x506f99*/
@@ -1692,8 +1692,8 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
     {
       v23 = *(unsigned int *)(*(unsigned int *)(_EBP + 108) + 4 * v22); /*0x5070f5*/
       v24 = (unsigned short *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v23 + 440))(v23, v125); /*0x5070fc*/
-      v25 = *v24 - *(unsigned short *)(_EBP + 22352); /*0x507109*/
-      v26 = v24[1] - *(unsigned short *)(_EBP + 22354); /*0x507110*/
+      v25 = *v24 - _EBP->q5750; /*0x507109*/
+      v26 = v24[1] - _EBP->q5752; /*0x507110*/
       if ( v25 || v26 ) /*0x50711f*/
       {
         v152[0] = v25; /*0x50712b*/
@@ -1723,9 +1723,9 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
           *((unsigned int *)&v119.vtable0 + v29) = v31; /*0x5071cc*/
           v33 = Block; /*0x5071d8*/
           *(&Base + v29) = (void *)(v110 + v32); /*0x5071de*/
-          MapClass::CalcVisibleCellRange(v23, v30, (int)v33, (int *)(_EBP + 22356)); /*0x5071ec*/
-          MapClass::CalcVisibleCellRange(v23, SLODWORD(v109), (int)v123, (int *)(_EBP + 22356)); /*0x5071ff*/
-          MapClass::CalcVisibleCellRange(v23, v110, (int)v118, (int *)(_EBP + 22356)); /*0x507212*/
+          MapClass::CalcVisibleCellRange(v23, v30, (int)v33, &_EBP->q5754); /*0x5071ec*/
+          MapClass::CalcVisibleCellRange(v23, SLODWORD(v109), (int)v123, &_EBP->q5754); /*0x5071ff*/
+          MapClass::CalcVisibleCellRange(v23, v110, (int)v118, &_EBP->q5754); /*0x507212*/
         }
       }
       v22 = ++LODWORD(v107); /*0x507222*/
@@ -1759,7 +1759,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   v107 = v41; /*0x50729d*/
   HouseClass::ComputePowerDistribution((float *)_EBP); /*0x5072a1*/
   VectorClass::BuildingTypeConstructor(&v126, 0, 0); /*0x5072ae*/
-  v42 = *(unsigned int *)(_EBP + 120); /*0x5072b3*/
+  v42 = _EBP->bunkersCount; /*0x5072b3*/
   v43 = 0; /*0x5072b6*/
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x5072ba) */
   v128 = 10; /*0x5072c2*/
@@ -1769,7 +1769,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
     Capacity = v126.Capacity; /*0x5072de*/
     do /*0x5072e5*/
     {
-      v45 = *(unsigned int *)(*(unsigned int *)(_EBP + 108) + 4 * v43); /*0x5072e5*/
+      v45 = *(unsigned int *)(_EBP->absorbersCount + 4 * v43); /*0x5072e5*/
       v46 = *(unsigned int *)(v45 + 1312); /*0x5072e8*/
       if ( !*(unsigned char *)(v46 + 5894) && v46 != *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x507304*/
       {
@@ -1867,20 +1867,20 @@ LABEL_43:
     if ( (_AX & 0x4100) != 0 ) /*0x507469*/
     {
       v51 = &v137; /*0x507487*/
-      *(unsigned int *)(_EBP + 90208) = v118; /*0x50748e*/
+      _EBP->waypointPath = v118; /*0x50748e*/
       v52 = 2; /*0x507494*/
     }
     else
     {
       v51 = &v147; /*0x50746f*/
-      *(unsigned int *)(_EBP + 90208) = v123; /*0x507476*/
+      _EBP->waypointPath = v123; /*0x507476*/
       v52 = 1; /*0x50747c*/
     }
   }
   else
   {
     v51 = &v142; /*0x50744b*/
-    *(unsigned int *)(_EBP + 90208) = Block; /*0x507452*/
+    _EBP->waypointPath = Block; /*0x507452*/
     v52 = 0; /*0x507458*/
   }
   v54 = v51[4]; /*0x507499*/
@@ -1898,20 +1898,20 @@ LABEL_43:
         }
         v51 = &v142; /*0x507508*/
         v52 = 0; /*0x50750f*/
-        *(unsigned int *)(_EBP + 90208) = Block; /*0x507511*/
+        _EBP->waypointPath = Block; /*0x507511*/
       }
       else
       {
         v51 = &v137; /*0x5074e7*/
         v52 = 2; /*0x5074ee*/
-        *(unsigned int *)(_EBP + 90208) = v118; /*0x5074f3*/
+        _EBP->waypointPath = v118; /*0x5074f3*/
       }
     }
     else
     {
       v51 = &v147; /*0x5074b4*/
       v52 = 1; /*0x5074bb*/
-      *(unsigned int *)(_EBP + 90208) = v123; /*0x5074c0*/
+      _EBP->waypointPath = v123; /*0x5074c0*/
     }
   }
   if ( v51[4] == 1 ) /*0x5074ca*/
@@ -2114,27 +2114,27 @@ LABEL_107:
     if ( v112 == 0.0 ) /*0x507a52*/
     {
       v101 = v111; /*0x507b60*/
-      *(unsigned int *)(*(unsigned int *)(_EBP + 22280) + v111) = *(unsigned int *)(LODWORD(v109) + 3576); /*0x507b6a*/
-      *(unsigned int *)(*(unsigned int *)(_EBP + 22280) + v101 + 4) = v106; /*0x507b77*/
+      *(unsigned int *)(_EBP->u32_5708 + v111) = *(unsigned int *)(LODWORD(v109) + 3576); /*0x507b6a*/
+      *(unsigned int *)(_EBP->u32_5708 + v101 + 4) = v106; /*0x507b77*/
     }
     else
     {
       v89 = v111; /*0x507a5e*/
-      *(unsigned int *)(*(unsigned int *)(_EBP + 22280) + v111 + 4) = v106; /*0x507a66*/
-      v90 = (unsigned int *)(*(unsigned int *)(_EBP + 22280) + 16 * (a3 + 1)); /*0x507a7b*/
+      *(unsigned int *)(_EBP->u32_5708 + v111 + 4) = v106; /*0x507a66*/
+      v90 = (unsigned int *)(_EBP->u32_5708 + 16 * (a3 + 1)); /*0x507a7b*/
       if ( *v90 == -1 ) /*0x507a80*/
       {
         *v90 = *(unsigned int *)(LODWORD(v88) + 3576); /*0x507a8e*/
-        *(unsigned int *)(*(unsigned int *)(_EBP + 22280) + v89 + 20) = v106; /*0x507a9a*/
+        *(unsigned int *)(_EBP->u32_5708 + v89 + 20) = v106; /*0x507a9a*/
         if ( v82 ) /*0x507a9e*/
         {
           BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x507ab1*/
                                  (HouseClass *)_EBP,
                                  *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2640);
-          v92 = *(unsigned int *)(_EBP + 22292) - 1; /*0x507abc*/
+          v92 = _EBP->u32_5714 - 1; /*0x507abc*/
           if ( v92 >= 0 ) /*0x507abd*/
           {
-            v93 = (unsigned int *)(*(unsigned int *)(_EBP + 22280) + 16 * v92); /*0x507ad3*/
+            v93 = (unsigned int *)(_EBP->u32_5708 + 16 * v92); /*0x507ad3*/
             while ( v93[1] != v106 || *v93 != BuildableFromArray->ArrayIndex ) /*0x507aee*/
             {
               --v92; /*0x507af2*/
@@ -2142,18 +2142,18 @@ LABEL_107:
               if ( v92 < 0 ) /*0x507af8*/
                 goto LABEL_56; /*0x507af8*/
             }
-            v94 = *(unsigned int *)(_EBP + 22292); /*0x507aff*/
+            v94 = _EBP->u32_5714; /*0x507aff*/
             if ( v92 < v94 ) /*0x507b07*/
             {
               v95 = v94 - 1; /*0x507b0d*/
               v96 = v92; /*0x507b0e*/
-              *(unsigned int *)(_EBP + 22292) = v95; /*0x507b12*/
+              _EBP->u32_5714 = v95; /*0x507b12*/
               if ( v92 < v95 ) /*0x507b18*/
               {
                 v97 = 16 * v92; /*0x507b1e*/
                 do /*0x507b4f*/
                 {
-                  v98 = *(unsigned int *)(_EBP + 22280); /*0x507b21*/
+                  v98 = _EBP->u32_5708; /*0x507b21*/
                   v99 = (unsigned int *)(v98 + v97 + 16); /*0x507b27*/
                   v100 = (unsigned int *)(v97 + v98); /*0x507b2b*/
                   ++v96; /*0x507b2d*/
@@ -2163,7 +2163,7 @@ LABEL_107:
                   v100[2] = v99[2]; /*0x507b3e*/
                   v100[3] = v99[3]; /*0x507b44*/
                 }
-                while ( v96 < *(unsigned int *)(_EBP + 22292) ); /*0x507b4f*/
+                while ( v96 < _EBP->u32_5714 ); /*0x507b4f*/
               }
             }
           }
@@ -2181,7 +2181,7 @@ LABEL_56:
   __3_YAXPAX_Z(v118); /*0x507539*/
   v56 = v138; /*0x50753e*/
   v57 = v138 == 0; /*0x50754d*/
-  *(unsigned int *)(_EBP + 90208) = 0; /*0x50754f*/
+  _EBP->waypointPath = 0; /*0x50754f*/
   v137 = (int)&VectorClass<BuildingTypeClass *>::`vftable'; /*0x507555*/
   if ( !v57 && BYTE1(v140) ) /*0x507567*/
   {

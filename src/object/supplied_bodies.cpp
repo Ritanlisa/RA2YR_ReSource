@@ -8240,7 +8240,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           {
             NeighbourContent = ((Cell *)v7)->GetNeighbourContent(i); /*0x5fc67c*/
             NeighbourContent->u32_44 = 178; /*0x5fc682*/
-            *((unsigned char *)NeighbourContent + 286) = 0; /*0x5fc68c*/
+            NeighbourContent->u32_11E = 0; /*0x5fc68c*/
           }
           *(unsigned int *)(v7 + 68) = 167; /*0x5fc69a*/
           *(unsigned char *)(v7 + 286) = 0; /*0x5fc6a1*/
@@ -19667,7 +19667,7 @@ int TechnoClass::ProcessAIDecision()
     return v17 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x740a4f*/
   }
   Type = this->Type; /*0x740854*/
-  if ( *(unsigned char *)(Type + 3598) || *(unsigned char *)(Type + 3599) ) /*0x740864*/
+  if ( *(unsigned char *)(Type + 3598) || Type->Weeder_2 ) /*0x740864*/
   {
     if ( (uint8_t)House::IsCurrentPlayer((House *)this->owner) ) /*0x740874*/
     {

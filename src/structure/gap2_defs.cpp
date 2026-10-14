@@ -1322,7 +1322,7 @@ int BuildingClass::HandleFactoryCommand() {
         this->ExecuteMissionCmd(/*0x443514*/
           this, 16, v24, 0, 0);
       Type = this->Type; /*0x44351a*/
-      if ( *(unsigned char *)(Type + 5806) || *(unsigned char *)(Type + 5807) ) /*0x44352a*/
+      if ( *(unsigned char *)(Type + 5806) || Type->InfantryAbsorb ) /*0x44352a*/
         this->ExecuteMissionCmd(/*0x44353f*/
           this, 16, v24, 0, 0);
       result = this->MissionStubReturnZero6(); /*0x443549*/

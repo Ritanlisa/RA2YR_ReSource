@@ -4897,8 +4897,8 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
       v6 = MultiplayerGameMode::GetFirst(); /*0x5ed623*/
     First = (char *)v6; /*0x5ed628*/
   }
-  *(unsigned int *)a2 = *((unsigned int *)First + 10); /*0x5ed62d*/
-  *(unsigned int *)stru_A8B250 = *((unsigned int *)First + 10); /*0x5ed633*/
+  *(unsigned int *)a2 = First->DiskLaserClass_field_0x28; /*0x5ed62d*/
+  *(unsigned int *)stru_A8B250 = First->DiskLaserClass_field_0x28; /*0x5ed633*/
   v7 = a2->__pad_004; /*0x5ed639*/
   if ( v7 < 0 || v7 >= dword_A8B8D8 ) /*0x5ed646*/
     a2->__pad_004 = 0; /*0x5ed648*/
@@ -4922,8 +4922,8 @@ int SetupMultiplayerLobbyPlayers(HWND hDlg, int a2)
     if ( v10 == -1 ) /*0x5ed6b7*/
     {
       First = (char *)MultiplayerGameMode::GetFirst(); /*0x5ed6be*/
-      *(unsigned int *)a2 = *((unsigned int *)First + 10); /*0x5ed6c3*/
-      *(unsigned int *)stru_A8B250 = *((unsigned int *)First + 10); /*0x5ed6c9*/
+      *(unsigned int *)a2 = First->DiskLaserClass_field_0x28; /*0x5ed6c3*/
+      *(unsigned int *)stru_A8B250 = First->DiskLaserClass_field_0x28; /*0x5ed6c9*/
       v10 = (*(int (**)(char *))(*(unsigned int *)First + 68))(First); /*0x5ed6d3*/
     }
     a2->__pad_004 = v10; /*0x5ed6d6*/

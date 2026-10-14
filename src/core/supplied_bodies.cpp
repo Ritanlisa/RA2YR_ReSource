@@ -3687,7 +3687,7 @@ int Random::Gaussian() {
     }
     *(unsigned char *)_ESI = 1; /*0x59814c*/
     __asm { fstp qword ptr [esi+8] } /*0x59814f*/
-    *((double *)_ESI + 1) = _RT1; /*0x59814f*/
+    _ESI->q008 = _RT1; /*0x59814f*/
     __asm { fmul [esp+14h+var_10] } /*0x598153*/
   }
   return result; /*0x5980d7*/

@@ -388,7 +388,7 @@ int WebBrowser::Clone()
   if ( v1 ) /*0x773c30*/
     return 0; /*0x773d06*/
   v2 = (char *)(strrchr((const char *)Data, 92)); /*0x773c43*/
-  if ( !v2 || strlen((const char *)Data) > v2 - (char *)Data + 1 ) /*0x773c63*/
+  if ( !v2 || strlen((const char *)Data) > v2 - &Data->u8_1 ) /*0x773c63*/
     strcat((char *)Data,(const char *)(asc_815E74)); /*0x773c8b*/
   mbstowcs((wchar_t *)(v9 + 12), (const char *)Data, 0x104u); /*0x773caa*/
   wcscat((wchar_t *)(v9 + 12), L"BadPage.htm"); /*0x773cb5*/

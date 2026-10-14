@@ -6745,7 +6745,7 @@ int InfantryClass::RepairBridge()
     if ( (*(int (__thiscall **)(InfantryClass *))((char *)this->vtable1 + 388))(this) == 8 ) /*0x519682*/
     {
       Type = this->Type; /*0x519688*/
-      if ( *(unsigned char *)(Type + 3765) || *(unsigned char *)(Type + 3764) ) /*0x519698*/
+      if ( *(unsigned char *)(Type + 3765) || Type->Occupier_d ) /*0x519698*/
       {
         movementDestination = this->movementDestination; /*0x5196a6*/
         if ( movementDestination ) /*0x5196ae*/

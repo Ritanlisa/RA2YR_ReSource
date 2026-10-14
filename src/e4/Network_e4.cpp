@@ -1831,7 +1831,7 @@ int Network::GetLobbyStatus()
 
   Network_field_0x48 = this->u32_48; /*0x5424c0*/
   if ( Network_field_0x48 ) /*0x5424c5*/
-    return CellClass::GetBridgeIndex(*(CellClass **)(Network_field_0x48 + 4)); /*0x5424ca*/
+    return CellClass::GetBridgeIndex(Network_field_0x48->q004); /*0x5424ca*/
   else
     return 0; /*0x5424cf*/
 

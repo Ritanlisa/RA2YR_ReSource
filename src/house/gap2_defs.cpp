@@ -3058,7 +3058,7 @@ int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
           v27 = 1; /*0x4fb2d1*/
           if ( dword_A83D4C == (Object *)this ) /*0x4fb2d8*/
           {
-            if ( *((unsigned char *)Type + 144) && !*((unsigned char *)Type + 1051) ) /*0x4fb2e8*/
+            if ( *(&Type->q090) && !Type->u8_41B ) /*0x4fb2e8*/
               Type->vt_slot_408(this); /*0x4fb2f7*/
             PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1772), 0x2000, 1.0, 0); /*0x4fb314*/
             if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x4fb320*/

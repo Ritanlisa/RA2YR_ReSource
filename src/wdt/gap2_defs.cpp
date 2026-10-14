@@ -176,7 +176,7 @@ int Conflict::GetOwnerHouse()
 
   Outcome = this->Outcome; /*0x76bfe0*/
   if ( Outcome ) /*0x76bfe5*/
-    return *(unsigned int *)(Outcome + 36) - 1; /*0x76bfea*/
+    return Outcome->q024 - 1; /*0x76bfea*/
   else
     return 0; /*0x76bfec*/
 }

@@ -513,7 +513,7 @@ if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->q000 
               *(unsigned int *)&Formatb[-1].IsInitialized = v43;
               Formatb->vtable1 = (void *)((unsigned int)((void *)v41));
               Formatb->Items = (unsigned int)((void *)ComboBoxSelectedRaw);
-              Formatb = (VectorClass_flat *)((char *)Formatb + 12);
+              Formatb = &Formatb->vtable4;
             }
             while ( (int)(v36 + 1) < 8 );
             v44 = GetComboBoxSelectedRaw((HWND)((ReferenceCounted *)hWnd), 1698, 0xFFFFFFFF);

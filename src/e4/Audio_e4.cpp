@@ -877,7 +877,7 @@ void * Audio::LoadSoundINI()
       do /*0x7514b1*/
       {
         NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751485*/
-        ((AudioController *)((AudioController *)(Next + 12)))->Stop(); /*0x751487*/
+        (&Next->u32_C)->Stop(); /*0x751487*/
         LinkedList::Init((LinkedList *)Next); /*0x75148e*/
         PushFrontLinkedListAlt(dword_B1D3A4, Next); /*0x75149b*/
         Next = NextAlt; /*0x7514a6*/

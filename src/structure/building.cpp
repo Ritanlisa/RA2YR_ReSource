@@ -626,12 +626,12 @@ int BuildingClass::Dtor()
     Type = this->Type; /*0x43bdff*/
     if ( Type ) /*0x43be07*/
     {
-      if ( *(unsigned char *)(Type + 5831) ) /*0x43be09*/
+      if ( Type->CloakGenerator ) /*0x43be09*/
       {
         v11 = this->CloakRadius[0]; /*0x43be13*/
         this->HasCloakingData[0] = -1; /*0x43be19*/
         if ( !v11 ) /*0x43be22*/
-          this->CloakRadius[0] = *(unsigned char *)(Type + 5895); /*0x43be2a*/
+          this->CloakRadius[0] = Type->CloakRadiusInCells; /*0x43be2a*/
         this->needsRedraw[0] = 1; /*0x43be34*/
         this->CloakRadius[0] = 1; /*0x43be3b*/
         BuildingClass::CleanupOccupation(this); /*0x43be42*/
@@ -3217,11 +3217,11 @@ int BuildingClass::Sell()
       }
     }
     Type = this->Type; /*0x445946*/
-    if ( *(unsigned char *)(Type + 5835) ) /*0x44594c*/
+    if ( Type->Helipad ) /*0x44594c*/
     {
       if ( this->ActuallyPlacedOnMap[0] ) /*0x445956*/
       {
-        *(unsigned int *)(this->owner + 724) -= *(unsigned int *)(Type + 6016); /*0x445974*/
+        *(unsigned int *)(this->owner + 724) -= Type->NumberOfDocks; /*0x445974*/
         v9 = this->owner; /*0x44597a*/
         if ( this->queuedVoiceIndex < 0 ) /*0x445986*/
           this->queuedVoiceIndex = 0; /*0x445988*/
@@ -8027,7 +8027,7 @@ bool BuildingClass::CheckMissionAttack()
       v3 = *(BuildingClass **)v2; /*0x6349dd*/
       Type = BuildingClass::GetType(*(BuildingClass **)v2); /*0x6349e6*/
       v24[0] = (int)above; /*0x6349ed*/
-      if ( (*(int (__thiscall **)(int, int *))(*(unsigned int *)(Type + 4) + 16))(Type + 4, v24) == *(unsigned int *)(Type + 148) ) /*0x634a00*/
+      if ( (*(int (__thiscall **)(int, int *))(Type->vtable2 + 16))(Type + 4, v24) == Type->q094 ) /*0x634a00*/
       {
         *(unsigned char *)(v2 + 12) = 1; /*0x634a02*/
         v5 = (char *)above->q0A8 + 1; /*0x634a10*/
@@ -8917,7 +8917,7 @@ void BuildingClass::EjectCrew()
     v46 += 6; /*0x442ddf*/
   v47 = this->GetCrewCount(); /*0x442dee*/
   Type = this->Type; /*0x442df2*/
-  if ( *(unsigned char *)(Type + 5806) || *(unsigned char *)(Type + 5807) )
+  if ( *(unsigned char *)(Type + 5806) || Type->InfantryAbsorb )
   {
     Type = this->passengers[0]; /*0x442e0c*/
     if ( Type > 0 )

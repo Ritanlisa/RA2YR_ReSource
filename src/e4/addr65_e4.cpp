@@ -1061,7 +1061,7 @@ AbstractClass * * UpdateProjectileTrails()
           v14 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, 99); /*0x6592e8*/
           (*((unsigned short *)&(v15))) = Math::RoundToInt(v24 * 100.0); /*0x6592f4*/
           if ( v14 < v15 ) /*0x6592fb*/
-            *((unsigned char *)Block + 9) = 0; /*0x659301*/
+            Block->u32_9 = 0; /*0x659301*/
         }
         v13 = Weapon_Update(v20, 0); /*0x65930a*/
         goto LABEL_22; /*0x65930a*/
@@ -1100,7 +1100,7 @@ AbstractClass * * UpdateProjectileTrails()
         && *(unsigned int **)((v18->__pad_014 & 1) != 0 ? v18 + 0x510 : 1296) == v16 )
       {
         *(unsigned int *)((v18->__pad_014 & 1) != 0 ? v18 + 0x510 : 1296) = 0;
-        *((unsigned int *)Block + 1) = 0; /*0x659380*/
+        Block->vtable2 = 0; /*0x659380*/
       }
       v19 = (*(int (**)(int *, void **))(RadBeam_Array + 16))(&RadBeam_Array, &Block); /*0x659393*/
       if ( v19 != -1 && v19 < dword_B04A70 && v19 < --dword_B04A70 ) /*0x6593ae*/
