@@ -66,6 +66,136 @@ def _get_default_compile_args():
 
 
 # ===================================================
+# X24: pointer-vs-array declaration resolution helpers
+# ===================================================
+#
+# USER design ruling 2026-10-14: the gate must distinguish a POINTER (e.g.
+# obtained from &) from an ARRAY.  In C++ an array operand in `a + 1` or
+# `a[i]` decays to `int *` in the expression type, so expression types alone
+# conflate the two.  These helpers resolve the DECLARATION (VarDecl/FieldDecl)
+# or the innermost non-decayed expression type, which retains the array type.
+
+_ARRAY_TYPE_KINDS = {
+    clang.cindex.TypeKind.CONSTANTARRAY,
+    clang.cindex.TypeKind.INCOMPLETEARRAY,
+    clang.cindex.TypeKind.VARIABLEARRAY,
+    clang.cindex.TypeKind.DEPENDENTSIZEDARRAY,
+}
+
+_WRAPPER_KIND_NAMES = ('UNEXPOSED_EXPR', 'IMPLICIT_CAST_EXPR', 'PAREN_EXPR')
+
+
+def _is_array_type(typ):
+    """True for array types (including reference-to-array).
+
+    A decayed pointer expression (`a` in `a + 1` where a is `int[10]`) has
+    kind POINTER; only the declaration / innermost expression keeps the array
+    kind, which is exactly what makes this distinction reliable."""
+    try:
+        if typ.kind in _ARRAY_TYPE_KINDS:
+            return True
+        if typ.kind in (clang.cindex.TypeKind.LVALUEREFERENCE,
+                        clang.cindex.TypeKind.RVALUEREFERENCE):
+            return typ.get_pointee().kind in _ARRAY_TYPE_KINDS
+    except Exception:
+        pass
+    return False
+
+
+def _unwrap_expr(node):
+    """Strip wrapper expressions (parens, implicit casts, unexposed wrappers)
+    down to the innermost expression.  Never crosses a cast or unary operator:
+    `((int*)p)[i]` stays a cast, `(*(int**)&p)[i]` stays a deref."""
+    cur = node
+    for _ in range(12):
+        ch = list(cur.get_children())
+        if cur.kind.name == 'PAREN_EXPR' and len(ch) == 1:
+            cur = ch[0]
+            continue
+        if cur.kind.name in _WRAPPER_KIND_NAMES and len(ch) == 1:
+            cur = ch[0]
+            continue
+        break
+    return cur
+
+
+def _resolves_to_array(node):
+    """Resolve an expression to the array/pointer distinction.
+
+    Returns (is_array, innermost_node).  True when the underlying declaration
+    or the innermost expression carries an array type (array-to-pointer decay
+    hides it at the top level of the expression)."""
+    cur = _unwrap_expr(node)
+    if _is_array_type(cur.type):
+        return True, cur
+    try:
+        ref = cur.referenced
+    except Exception:
+        ref = None
+    if ref is not None:
+        try:
+            if _is_array_type(ref.type):
+                return True, cur
+        except Exception:
+            pass
+    return False, cur
+
+
+def _cast_operand(node):
+    """Extract the operand expression of a cast node.
+
+    libclang emits the operand as the LAST child; array-bound casts such as
+    `(int (*)[10])p` additionally emit the bound INTEGER_LITERAL as a FIRST
+    child (a known binding quirk), so children[0] is NOT the operand there."""
+    ch = list(node.get_children())
+    while ch and ch[-1].kind == clang.cindex.CursorKind.TYPE_REF:
+        ch = ch[:-1]
+    return ch[-1] if ch else None
+
+
+def _top_level_binary_op(node, lhs, rhs):
+    """Return the operator spelling of a binary/compound-assignment node
+    ('+', '-', '+=', '-='), or None.  Token position is bounded by the child
+    extents so nested operators inside either operand never leak in."""
+    try:
+        lhs_end = lhs.extent.end.offset
+        rhs_start = rhs.extent.start.offset
+    except Exception:
+        return None
+    for t in node.get_tokens():
+        if t.spelling in ('+', '-', '+=', '-='):
+            try:
+                ts, te = t.extent.start.offset, t.extent.end.offset
+            except Exception:
+                continue
+            if lhs_end <= ts and te <= rhs_start:
+                return t.spelling
+    return None
+
+
+def _is_null_literal(node):
+    """True for the null pointer constants 0 / nullptr (directly or wrapped)."""
+    cur = node
+    for _ in range(6):
+        if cur.kind == clang.cindex.CursorKind.CXX_NULL_PTR_LITERAL_EXPR:
+            return True
+        if cur.kind == clang.cindex.CursorKind.INTEGER_LITERAL:
+            toks = list(cur.get_tokens())
+            try:
+                if int("".join(t.spelling for t in toks).strip(), 0) == 0:
+                    return True
+            except ValueError:
+                pass
+            return False
+        ch = list(cur.get_children())
+        if len(ch) == 1 and cur.kind.name in _WRAPPER_KIND_NAMES:
+            cur = ch[0]
+            continue
+        break
+    return False
+
+
+# ===================================================
 # ClangChecker
 # ===================================================
 
@@ -84,6 +214,8 @@ class ClangChecker:
         self._tu = None
         self._index = None
         self._violations = []
+        # X24: allowed-usage ledger (R5 array subscript), filled by run_all_checks.
+        self._allowed_usage = []
 
     @property
     def tu(self):
@@ -211,59 +343,136 @@ class ClangChecker:
     # -- Check: Pointer arithmetic (ptr + int, cast + int) --
 
     def check_pointer_arithmetic(self):
-        """Detect pointer arithmetic: pointer-typed operand in '+' binary expr.
+        """Detect pointer/array arithmetic: pointer-or-array operand in a
+        binary '+'/'-' (or compound '+='/'−=' / unary ++/--) expression.
 
-        Catches:
-          - (char*)this + 692
-          - ptr + index (where ptr is a pointer variable)
-          - (type*)expr + offset
-          - reinterpret_cast<char*>(ptr) + offset
+        X24 (USER design ruling 2026-10-14): the operand class is resolved
+        from the DECLARATION (VarDecl/FieldDecl) / innermost expression type,
+        not from the (array-decayed) expression type:
+
+          R3 violation (`ptr-arithmetic`)  -- a POINTER must not use + / -:
+              `p + 1`, `p - 1`, `g_ptr + i`, `s.ptr + 1`, `this + 1`,
+              `(char*)this + 692`, `p - q` (pointer - pointer)
+          R4 violation (`array-arithmetic`) -- an ARRAY must not use + / -:
+              `a + 1`, `a - 1`, `g_arr + i`, `s.arr + 1`   (a: int[10])
+          R5 allowed: array subscripting (handled in check_pointer_subscript)
 
         Returns list of (line_no, category, detail) tuples.
         """
         results = []
 
-        # Helper: check pointer type via clang type system (not string matching)
-        def _is_pointer_type(typ):
-            if typ.kind == clang.cindex.TypeKind.POINTER:
-                return True
-            if typ.get_pointee().kind != clang.cindex.TypeKind.INVALID:
-                return True
-            return False
+        def _operand_class(node):
+            """'array' | 'ptr' | 'other' -- declaration-first resolution."""
+            def _is_ptr_like(t):
+                if t.kind == clang.cindex.TypeKind.POINTER:
+                    return True
+                try:
+                    return t.get_pointee().kind != clang.cindex.TypeKind.INVALID
+                except Exception:
+                    return False
+            is_arr, cur = _resolves_to_array(node)
+            if is_arr:
+                return 'array'
+            if _is_ptr_like(node.type) or _is_ptr_like(cur.type):
+                return 'ptr'
+            try:
+                ref = cur.referenced
+            except Exception:
+                ref = None
+            if ref is not None:
+                try:
+                    if _is_ptr_like(ref.type):
+                        return 'ptr'
+                except Exception:
+                    pass
+            return 'other'
 
         def predicate(node):
-            if node.kind != clang.cindex.CursorKind.BINARY_OPERATOR:
+            if node.kind == clang.cindex.CursorKind.UNARY_OPERATOR:
+                # X24: pointer ++ / -- (unary inc/dec) is the same address
+                # arithmetic as `p + 1` -- same rule (R3).
+                ch = list(node.get_children())
+                if len(ch) != 1:
+                    return False
+                operand = ch[0]
+                op = None
+                try:
+                    o_start = operand.extent.start.offset
+                    o_end = operand.extent.end.offset
+                except Exception:
+                    return False
+                for t in node.get_tokens():
+                    if t.spelling in ('++', '--'):
+                        try:
+                            ts, te = t.extent.start.offset, t.extent.end.offset
+                        except Exception:
+                            continue
+                        if te <= o_start or ts >= o_end:  # prefix or postfix op
+                            op = t.spelling
+                            break
+                if op is None:
+                    return False
+                return _operand_class(operand) == 'ptr'
+            if node.kind not in (clang.cindex.CursorKind.BINARY_OPERATOR,
+                                 clang.cindex.CursorKind.COMPOUND_ASSIGNMENT_OPERATOR):
                 return False
             children = list(node.get_children())
             if len(children) < 2:
                 return False
             lhs, rhs = children[0], children[1]
-            # Use clang type system -- NOT string matching on spelling
-            lhs_ptr = _is_pointer_type(lhs.type)
-            rhs_ptr = _is_pointer_type(rhs.type)
-            # Must have exactly one pointer operand (XOR: not both, not neither)
-            if not (lhs_ptr ^ rhs_ptr):
+            op = _top_level_binary_op(node, lhs, rhs)
+            if op not in ('+', '-', '+=', '-='):
                 return False
-            # Confirm it's a '+' operation (not +=, not other binary ops)
-            tokens = list(node.get_tokens())
-            has_plus = any(t.spelling == "+" for t in tokens)
-            if not has_plus:
-                return False
-            # Skip member access chains: g->X + 5
-            # Check if left operand is preceded by '->' or '.'
-            toks = [t.spelling for t in tokens]
-            for i, t in enumerate(toks):
-                if t == "+" and i > 1:
-                    if toks[i - 1] in (">", ".") and toks[i - 2] == "-":
-                        return False
-            return True
+            lc, rc = _operand_class(lhs), _operand_class(rhs)
+            # R4: any array operand in +/- is a violation (user ruling).
+            if lc == 'array' or rc == 'array':
+                return True
+            lp, rp = (lc == 'ptr'), (rc == 'ptr')
+            # R3: pointer +/- integer (exactly one pointer operand).
+            if lp != rp:
+                return True
+            # R3: pointer - pointer (distance arithmetic on pointers).
+            if lp and rp and op in ('-', '-='):
+                return True
+            return False
 
         for node, line in self._collect(predicate, skip_system=True):
             if not self._is_target_file_loc(node.location):
                 continue
+            if node.kind == clang.cindex.CursorKind.UNARY_OPERATOR:
+                operand = list(node.get_children())[0]
+                toks = [t.spelling for t in node.get_tokens()]
+                op = '++' if '++' in toks else '--'
+                tokens = list(node.get_tokens())
+                code = "".join(t.spelling for t in tokens)
+                if len(code) > 120:
+                    code = code[:117] + "..."
+                subtype = "ptr-inc" if op == '++' else "ptr-dec"
+                if operand.kind == clang.cindex.CursorKind.CXX_THIS_EXPR:
+                    subtype += "/this"
+                results.append((line, "ptr-arithmetic",
+                               f"{op} {subtype} lhs={operand.type.spelling} code={code}"))
+                continue
             children = list(node.get_children())
-            lhs_type = children[0].type.spelling if children else "?"
-            rhs_type = children[1].type.spelling if len(children) > 1 else "?"
+            lhs, rhs = children[0], children[1]
+            op = _top_level_binary_op(node, lhs, rhs)
+            lc, rc = _operand_class(lhs), _operand_class(rhs)
+            if lc == 'array' or rc == 'array':
+                cat = "array-arithmetic"
+                side = ("lhs" if lc == 'array' else
+                        "rhs" if rc == 'array' else "both")
+                subtype = f"array{op}int/array-op-{side}"
+            else:
+                cat = "ptr-arithmetic"
+                if lc == 'ptr' and rc == 'ptr':
+                    subtype = "ptr-ptr"
+                elif lc == 'ptr':
+                    subtype = "ptr-int"
+                else:
+                    subtype = "int-ptr"
+                if (lhs.kind == clang.cindex.CursorKind.CXX_THIS_EXPR
+                        or rhs.kind == clang.cindex.CursorKind.CXX_THIS_EXPR):
+                    subtype += "/this"
             # Extract actual integer offset value from either child
             offset_str = "?"
             for child in children:
@@ -280,71 +489,35 @@ class ClangChecker:
             code = "".join(t.spelling for t in tokens)
             if len(code) > 120:
                 code = code[:117] + "..."
-            results.append((line, "ptr-arithmetic",
-                           f"offset={offset_str} lhs={lhs_type} rhs={rhs_type} code={code}"))
+            results.append((line, cat,
+                           f"{op} {subtype} offset={offset_str} "
+                           f"lhs={lhs.type.spelling} rhs={rhs.type.spelling} "
+                           f"code={code}"))
         return results
 
     # -- Check: Array subscript on pointer type (non-array pointer indexing) --
 
     def check_pointer_subscript(self):
-        """Detect pointer subscript: pointer_var[index] where pointer_var is a
-        pointer (not an array).
+        """Detect pointer subscript: pointer_var[index] where the base resolves
+        to a POINTER (not an array).
 
-        Catches:
-          - ((int*)this)[47]
-          - ptr[offset] (where ptr is declared as a pointer)
-          - typeData[2048/4] (pointer arithmetic disguised as array access)
-          - (*(void***)this)[19] (complex dereference + cast patterns)
+        X24 (USER design ruling 2026-10-14):
+          R2 violation (`cast-index`): a POINTER must not use [] --
+              `p[i]`, `s.ptr[i]`, `((int*)this)[47]`, `(*(int**)&p)[i]`,
+              `(p + 1)[i]`, `s.pp[i][0]`
+          R5 ALLOWED (counted in self._allowed_usage as `array-subscript-ok`,
+          never reported as a violation): an ARRAY may use [] --
+              `a[i]`, `g_arr[i]`, `s.arr[i]`, `ap[i]` (int *ap[10]),
+              `m[1][2]` (2-D array), `"ab"[0]` (string literal)
+
+        The base is resolved through wrappers to its declaration / innermost
+        expression type: array-to-pointer decay makes the *expression* type a
+        pointer, but the declaration (`int a[10]`) or the innermost expression
+        (`m[1]` : int[4]) still carries the array type.
 
         Returns list of (line_no, category, detail) tuples.
         """
         results = []
-
-        def _is_array_typ(typ):
-            """Check if a clang type is a declared array (not decayed pointer)."""
-            return typ.kind in (
-                clang.cindex.TypeKind.CONSTANTARRAY,
-                clang.cindex.TypeKind.INCOMPLETEARRAY,
-                clang.cindex.TypeKind.VARIABLEARRAY,
-            )
-
-        def _is_pointer_typ(typ):
-            """Check if a clang type is a pointer (not array) using type system."""
-            if typ.kind == clang.cindex.TypeKind.POINTER:
-                return True
-            try:
-                if typ.get_pointee().kind != clang.cindex.TypeKind.INVALID:
-                    return True
-            except Exception:
-                pass
-            return False
-
-        def _base_is_declared_array(base_node):
-            """Check if base expression references a declared array variable/field.
-            When a declared array is used as subscript base, Clang decays the type
-            to a pointer in the AST, but the underlying declaration retains the
-            array type. We detect this to avoid false positives on legitimate
-            fixed-size member arrays like `this->Upgrades[slot]`."""
-            try:
-                ref = base_node.referenced
-                if ref and _is_array_typ(ref.type):
-                    return True
-            except Exception:
-                pass
-            return False
-
-        def _base_involves_cast_or_deref(base_node):
-            """Check if base expression involves C-style cast or dereference --
-            these are always pointer manipulation, never declared array access."""
-            if base_node.kind == clang.cindex.CursorKind.UNARY_OPERATOR:
-                return True  # *ptr -- dereferencing a pointer
-            if base_node.kind == clang.cindex.CursorKind.CSTYLE_CAST_EXPR:
-                return True  # (type*)expr -- casting to pointer
-            if base_node.kind == clang.cindex.CursorKind.PAREN_EXPR:
-                return _base_involves_cast_or_deref(
-                    list(base_node.get_children())[0] if list(base_node.get_children()) else base_node
-                )
-            return False
 
         def predicate(node):
             if node.kind != clang.cindex.CursorKind.ARRAY_SUBSCRIPT_EXPR:
@@ -352,24 +525,22 @@ class ClangChecker:
             children = list(node.get_children())
             if not children:
                 return False
-            base_type = children[0].type.spelling
-            base_type_obj = children[0].type
-            # If the base expression references a declared array, it's a
-            # legitimate subscript (e.g. this->Upgrades[slot]), not pointer
-            # arithmetic disguised as array access.
-            if _base_is_declared_array(children[0]):
+            base = children[0]
+            # R5: declared-array / array-typed base -> legitimate subscript.
+            is_arr, _cur = _resolves_to_array(base)
+            if is_arr:
+                if self._is_target_file_loc(node.location):
+                    toks = list(node.get_tokens())
+                    code = "".join(t.spelling for t in toks)
+                    if len(code) > 120:
+                        code = code[:117] + "..."
+                    self._allowed_usage.append((
+                        node.location.line, "array-subscript-ok",
+                        f"base_type={base.type.spelling} code={code}"))
                 return False
-            # Only flag if base is a pointer type (not a declared array)
-            # Use string matching AND type-system fallback
-            if "*" not in base_type:
-                # Fallback: check via Clang type system
-                if not _is_pointer_typ(base_type_obj):
-                    # Additional fallback: check if base involves cast/dereference patterns
-                    if not _base_involves_cast_or_deref(children[0]):
-                        return False
-            # Skip if base is a string literal (const char *)
-            if "const char *" in base_type and len(list(node.get_tokens())) <= 3:
-                return False
+            # Everything else in a built-in subscript is pointer-family
+            # (overloaded operator[] is a CALL/CXX_OPERATOR_CALL node, not
+            # ARRAY_SUBSCRIPT_EXPR, so no class-type false positives here).
             return True
 
         for node, line in self._collect(predicate, skip_system=True):
@@ -382,7 +553,7 @@ class ClangChecker:
             if len(code) > 120:
                 code = code[:117] + "..."
             results.append((line, "cast-index",
-                           f"base_type={base_type} code={code}"))
+                           f"R2 base_type={base_type} code={code}"))
         return results
 
     # -- Check: Hex literal pointer casts --
@@ -402,25 +573,24 @@ class ClangChecker:
             # Check if the cast target is a pointer type
             if "*" not in node.type.spelling:
                 return False
-            # Check if any child is a hex integer literal
-            for child in node.get_children():
-                if child.kind == clang.cindex.CursorKind.INTEGER_LITERAL:
-                    tokens = list(child.get_tokens())
-                    hex_str = "".join(t.spelling for t in tokens)
-                    if hex_str.startswith("0x") or hex_str.startswith("0X"):
-                        return True
+            # X24: operand = LAST child; array-bound literals inside the cast
+            # type (e.g. `(int (*)[0x10])p`) must not count as hex operands.
+            operand = _cast_operand(node)
+            if operand is not None and operand.kind == clang.cindex.CursorKind.INTEGER_LITERAL:
+                tokens = list(operand.get_tokens())
+                hex_str = "".join(t.spelling for t in tokens)
+                if hex_str.startswith("0x") or hex_str.startswith("0X"):
+                    return True
             return False
 
         for node, line in self._collect(predicate, skip_system=True):
             if not self._is_target_file_loc(node.location):
                 continue
-            children = list(node.get_children())
+            operand = _cast_operand(node)
             hex_val = "?"
-            for c in children:
-                if c.kind == clang.cindex.CursorKind.INTEGER_LITERAL:
-                    tokens = list(c.get_tokens())
-                    hex_val = "".join(t.spelling for t in tokens)
-                    break
+            if operand is not None and operand.kind == clang.cindex.CursorKind.INTEGER_LITERAL:
+                tokens = list(operand.get_tokens())
+                hex_val = "".join(t.spelling for t in tokens)
             cast_type = node.type.spelling
             results.append((line, "hex-ptr",
                            f"({cast_type}){hex_val}"))
@@ -445,15 +615,23 @@ class ClangChecker:
             target_type = node.type.spelling
             if "*" not in target_type:
                 return False
-            children = list(node.get_children())
-            if not children:
+            # X24: operand is the LAST child (array-bound casts emit the bound
+            # INTEGER_LITERAL as a first child -- children[0] was wrong there).
+            src_expr = _cast_operand(node)
+            if src_expr is None:
                 return False
-            src_type = children[0].type.spelling
-            # children[0] is TYPE_REF (the type in the cast, e.g. "SwTimerLayout")
-            # children[1] is the expression being cast (e.g. "swType")
-            src_expr = children[1] if len(children) > 1 else children[0]
+            # X24: array-involving casts are owned by check_ptr_array_casts
+            # (R1d/R1c) -- do not double-report them here.
+            is_arr, _cur = _resolves_to_array(src_expr)
+            if is_arr:
+                return False
+            try:
+                if _is_array_type(node.type.get_pointee()):
+                    return False
+            except Exception:
+                pass
             # If source expression type is unresolvable (DEPENDENT / UNEXPOSED),
-            # conservatively assume it might be a pointer -&gt; skip (avoid false positive)
+            # conservatively assume it might be a pointer -> skip (avoid false positive)
             if src_expr.type.kind == clang.cindex.TypeKind.DEPENDENT:
                 return False
             if src_expr.kind == clang.cindex.CursorKind.UNEXPOSED_EXPR:
@@ -466,16 +644,17 @@ class ClangChecker:
                 src_is_ptr = True
             elif src_expr.type.get_pointee().kind != clang.cindex.TypeKind.INVALID:
                 src_is_ptr = True
-            # If source IS a pointer, this is ptr-to-ptr cast -&gt; legitimate
+            # If source IS a pointer, this is ptr-to-ptr cast -> legitimate
             if src_is_ptr:
                 return False
             # Skip function-to-pointer conversions (function names decay to function ptrs)
             # These are needed for callback registration
+            src_type = src_expr.type.spelling
             if "(" in src_type and ")" in src_type:
                 return False
             # Skip integer literal casts like (char*)0 (null pointer constants)
-            if children[0].kind == clang.cindex.CursorKind.INTEGER_LITERAL:
-                tokens = list(children[0].get_tokens())
+            if src_expr.kind == clang.cindex.CursorKind.INTEGER_LITERAL:
+                tokens = list(src_expr.get_tokens())
                 val = "".join(t.spelling for t in tokens).strip()
                 try:
                     if int(val, 0) == 0:
@@ -487,17 +666,128 @@ class ClangChecker:
         for node, line in self._collect(predicate, skip_system=True):
             if not self._is_target_file_loc(node.location):
                 continue
-            children = list(node.get_children())
-            # children[0] is TYPE_REF (the cast type), children[1] is the source expression
-            src_expr = children[1] if len(children) > 1 else children[0]
-            src_type = src_expr.type.spelling if src_expr.type.spelling else "?"
+            # X24: operand extraction must use the LAST child (see predicate).
+            src_expr = _cast_operand(node)
+            src_type = src_expr.type.spelling if src_expr and src_expr.type.spelling else "?"
             target_type = node.type.spelling
             tokens = list(node.get_tokens())
             code = "".join(t.spelling for t in tokens)
             if len(code) > 120:
                 code = code[:117] + "..."
             results.append((line, "non-ptr-to-ptr",
-                           f"cast from non-ptr {src_type} to ({target_type}) code={code}"))
+                           f"R1b cast from non-ptr {src_type} to ({target_type}) code={code}"))
+        return results
+
+    # -- Check: casts between the pointer and array type families (X24 R1) --
+
+    def check_ptr_array_casts(self):
+        """Detect casts between the pointer family and the array family.
+
+        USER design ruling 2026-10-14 (R1): "a POINTER must NOT be cast
+        to/from an array".  Sub-classified by direction:
+
+          R1d `array-to-ptr`   -- `(int*)a`, `(char*)a` where `a` is int[10]
+                                  (array-to-pointer decay cast; element type
+                                  comparison is recorded: same-elem/diff-elem)
+          R1c `ptr-to-arrayptr`-- `(int (*)[10])p` (pointer to array pointer)
+
+        Identity casts (canonical types equal) and null-pointer constants are
+        exempt.  Non-pointer/non-array sources (`(T*)intVar`) and unrelated
+        pointer-to-pointer casts (`(char*)p`) stay with the existing R1
+        categories (`non-ptr-to-ptr` / `ptr-nonptr-conv` / `illegal-ptr-cast`).
+
+        Returns list of (line_no, category, detail) tuples.
+        """
+        results = []
+
+        _CAST_KINDS = {
+            clang.cindex.CursorKind.CSTYLE_CAST_EXPR,
+            clang.cindex.CursorKind.CXX_STATIC_CAST_EXPR,
+            clang.cindex.CursorKind.CXX_REINTERPRET_CAST_EXPR,
+        }
+
+        def predicate(node):
+            if node.kind not in _CAST_KINDS:
+                return False
+            target_type = node.type
+            if target_type.kind != clang.cindex.TypeKind.POINTER:
+                return False
+            src_expr = _cast_operand(node)
+            if src_expr is None:
+                return False
+            # null pointer constants: (T*)0, (T*)nullptr -- allowed
+            if _is_null_literal(src_expr):
+                return False
+            # X24: resolve array FIRST.  For `(int*)a` with `a` : int[10] the
+            # expression type is already decayed to `int *`, so an identity
+            # check on the expression type would wrongly exempt it.
+            is_arr, _cur = _resolves_to_array(src_expr)
+            if is_arr:
+                return True
+            # identity cast (same canonical type) -- allowed
+            try:
+                if (src_expr.type.get_canonical().spelling
+                        == target_type.get_canonical().spelling):
+                    return False
+            except Exception:
+                pass
+            try:
+                if _is_array_type(target_type.get_pointee()):
+                    return True
+            except Exception:
+                pass
+            return False
+
+        for node, line in self._collect(predicate, skip_system=True):
+            if not self._is_target_file_loc(node.location):
+                continue
+            target_type = node.type
+            src_expr = _cast_operand(node)
+            src_type = src_expr.type.spelling if src_expr else "?"
+            is_arr, cur = _resolves_to_array(src_expr) if src_expr else (False, None)
+            try:
+                tgt_is_arrayptr = _is_array_type(target_type.get_pointee())
+            except Exception:
+                tgt_is_arrayptr = False
+            if is_arr:
+                subtype = "array-to-arrayptr" if tgt_is_arrayptr else "array-to-ptr"
+                # element comparison for transparency (same-element decay casts
+                # vs element-changing casts)
+                try:
+                    elem = None
+                    if cur is not None:
+                        if _is_array_type(cur.type):
+                            elem = cur.type.get_array_element_type()
+                        else:
+                            ref = cur.referenced
+                            if ref is not None and _is_array_type(ref.type):
+                                elem = ref.type.get_array_element_type()
+                    if elem is not None and elem.kind != clang.cindex.TypeKind.INVALID:
+                        if (elem.get_canonical().spelling
+                                == target_type.get_pointee().get_canonical().spelling):
+                            subtype += "/same-elem"
+                        else:
+                            subtype += "/diff-elem"
+                except Exception:
+                    pass
+                # show the DECLARED source type (int[10]), not the decayed one
+                try:
+                    if cur is not None and _is_array_type(cur.type):
+                        src_type = cur.type.spelling
+                    else:
+                        ref = cur.referenced if cur is not None else None
+                        if ref is not None and _is_array_type(ref.type):
+                            src_type = ref.type.spelling
+                except Exception:
+                    pass
+            else:
+                subtype = "ptr-to-arrayptr"
+            tokens = list(node.get_tokens())
+            code = "".join(t.spelling for t in tokens)
+            if len(code) > 120:
+                code = code[:117] + "..."
+            results.append((line, "ptr-array-cast",
+                           f"R1 {subtype} {src_type} -> {target_type.spelling} code={code}"))
         return results
 
     # -- Check: vN variables (IDA decompiler artifact) --
@@ -901,19 +1191,14 @@ class ClangChecker:
         def _get_source_expr(cast_node):
             """Extract the expression being cast from a cast node.
 
-            CStyleCastExpr children: [TYPE_REF, sub_expr]
-            CXXStaticCastExpr children: [TYPE_REF, sub_expr]
-            CXXReinterpretCastExpr children: [TYPE_REF, sub_expr]
-            CXXDynamicCastExpr children: [TYPE_REF, sub_expr]
+            X24: the operand is the LAST child.  Array-bound casts like
+            `(int (*)[10])p` emit the bound INTEGER_LITERAL as a first child
+            (libclang quirk), so 'first non-TYPE_REF child' mis-picked it.
             """
-            children = list(cast_node.get_children())
-            if not children:
-                return None
-            # For explicit casts, first child is TYPE_REF, second is the expression
-            for child in children:
-                if child.kind != clang.cindex.CursorKind.TYPE_REF:
-                    return child
-            return children[-1] if children else None
+            ch = list(cast_node.get_children())
+            while ch and ch[-1].kind == clang.cindex.CursorKind.TYPE_REF:
+                ch = ch[:-1]
+            return ch[-1] if ch else None
 
         # -- Check explicit casts (C-style, static, reinterpret) --
         _EXPLICIT_CAST_KINDS = {
@@ -943,6 +1228,18 @@ class ClangChecker:
             if _is_pointer_typ(target_type) and _is_null_expr(src_expr):
                 return False
 
+            # X24: array-involving casts are owned by check_ptr_array_casts
+            # (R1c/R1d) -- do not double-report them here.
+            is_arr, _cur = _resolves_to_array(src_expr)
+            if is_arr:
+                return False
+            if _is_pointer_typ(target_type):
+                try:
+                    if _is_array_type(target_type.get_pointee()):
+                        return False
+                except Exception:
+                    pass
+
             src_is_ptr = _is_pointer_typ(src_type)
             tgt_is_ptr = _is_pointer_typ(target_type)
 
@@ -959,12 +1256,13 @@ class ClangChecker:
             tgt_is_ptr = _is_pointer_typ(node.type)
 
             direction = "pointer-to-non-pointer" if src_is_ptr else "non-pointer-to-pointer"
+            rule_tag = "R1a" if src_is_ptr else "R1b"
             # Build code snippet
             tokens = list(node.get_tokens())
             code = "".join(t.spelling for t in tokens)
             if len(code) > 120:
                 code = code[:117] + "..."
-            detail = f"{src_type} -&gt; {target_type} ({direction}) code={code}"
+            detail = f"{rule_tag} {src_type} -> {target_type} ({direction}) code={code}"
             results.append((line, "ptr-nonptr-conv", detail))
 
         # -- Check std::bit_cast calls (UnexposedExpr: not a cast expression,
@@ -1043,7 +1341,7 @@ class ClangChecker:
             code = "".join(t.spelling for t in tokens)
             if len(code) > 120:
                 code = code[:117] + "..."
-            detail = f"std::bit_cast<{tgt_typename}>({src_type}) -- implicit non-pointer-to-pointer conversion code={code}"
+            detail = f"R1b std::bit_cast<{tgt_typename}>({src_type}) -- implicit non-pointer-to-pointer conversion code={code}"
             results.append((line, "ptr-nonptr-conv", detail))
 
         results.sort(key=lambda x: x[1])
@@ -1189,13 +1487,8 @@ class ClangChecker:
             target_type = node.type
             if not _is_pointer_typ(target_type):
                 return False
-            # Find source expression (skip TYPE_REF child)
-            children = list(node.get_children())
-            src_expr = None
-            for child in children:
-                if child.kind != clang.cindex.CursorKind.TYPE_REF:
-                    src_expr = child
-                    break
+            # X24: operand = LAST child (array-bound casts emit bound literal first)
+            src_expr = _cast_operand(node)
             if src_expr is None:
                 return False
             src_type = src_expr.type
@@ -1206,11 +1499,21 @@ class ClangChecker:
             if src_type.kind == clang.cindex.TypeKind.DEPENDENT:
                 return False
 
+            # X24: array-involving casts are owned by check_ptr_array_casts.
+            is_arr, _cur = _resolves_to_array(src_expr)
+            if is_arr:
+                return False
+            try:
+                if _is_array_type(target_type.get_pointee()):
+                    return False
+            except Exception:
+                pass
+
             # Both are pointers -- now check rules
-            # Null pointer constant: (T*)0, (T*)nullptr -&gt; allowed
+            # Null pointer constant: (T*)0, (T*)nullptr -> allowed
             if _unwrap_null_expr(src_expr):
                 return False
-            # void* involved -&gt; banned
+            # void* involved -> banned
             if _is_void_ptr(src_type) or _is_void_ptr(target_type):
                 return True
 
@@ -1221,19 +1524,14 @@ class ClangChecker:
                 if _is_upcast(src_pointee, tgt_pointee):
                     return False  # upcast is OK
 
-            # Unrelated or downcast -&gt; banned
+            # Unrelated or downcast -> banned
             return True
 
         for node, line in self._collect(predicate_cstyle, skip_system=True):
             if not self._is_target_file_loc(node.location):
                 continue
             target_type = node.type.spelling
-            children = list(node.get_children())
-            src_expr = None
-            for child in children:
-                if child.kind != clang.cindex.CursorKind.TYPE_REF:
-                    src_expr = child
-                    break
+            src_expr = _cast_operand(node)
             src_type = src_expr.type.spelling if src_expr else "?"
             tokens = list(node.get_tokens())
             code = "".join(t.spelling for t in tokens)
@@ -1243,27 +1541,31 @@ class ClangChecker:
                 reason = "void* conversion"
             else:
                 reason = "C-style cast between unrelated pointer types"
-            detail = f"{src_type} -&gt; {target_type} ({reason}) -- only parent-child class pointer casts allowed code={code}"
+            detail = f"R1 {src_type} -> {target_type} ({reason}) -- only parent-child class pointer casts allowed code={code}"
             results.append((line, "illegal-ptr-cast", detail))
 
         # -- Check C++-style casts --
         def predicate_cxx_cast(node):
-            # reinterpret_cast -&gt; always banned (if both pointers)
+            # reinterpret_cast -> always banned (if both pointers)
             if node.kind == clang.cindex.CursorKind.CXX_REINTERPRET_CAST_EXPR:
                 target_type = node.type
                 if not _is_pointer_typ(target_type):
                     return False
-                children = list(node.get_children())
-                src_expr = None
-                for child in children:
-                    if child.kind != clang.cindex.CursorKind.TYPE_REF:
-                        src_expr = child
-                        break
+                src_expr = _cast_operand(node)
                 if src_expr is None or not _is_pointer_typ(src_expr.type):
                     return False
-                return True  # reinterpret_cast between pointers -&gt; banned
+                # X24: array-involving casts are owned by check_ptr_array_casts.
+                is_arr, _cur = _resolves_to_array(src_expr)
+                if is_arr:
+                    return False
+                try:
+                    if _is_array_type(target_type.get_pointee()):
+                        return False
+                except Exception:
+                    pass
+                return True  # reinterpret_cast between pointers -> banned
 
-            # dynamic_cast -&gt; always OK (runtime checked)
+            # dynamic_cast -> always OK (runtime checked)
             if node.kind == clang.cindex.CursorKind.CXX_DYNAMIC_CAST_EXPR:
                 return False
 
@@ -1273,12 +1575,7 @@ class ClangChecker:
             target_type = node.type
             if not _is_pointer_typ(target_type):
                 return False
-            children = list(node.get_children())
-            src_expr = None
-            for child in children:
-                if child.kind != clang.cindex.CursorKind.TYPE_REF:
-                    src_expr = child
-                    break
+            src_expr = _cast_operand(node)
             if src_expr is None or not _is_pointer_typ(src_expr.type):
                 return False
 
@@ -1288,7 +1585,17 @@ class ClangChecker:
             if src_type.kind == clang.cindex.TypeKind.DEPENDENT:
                 return False
 
-            # void* involved -&gt; banned
+            # X24: array-involving casts are owned by check_ptr_array_casts.
+            is_arr, _cur = _resolves_to_array(src_expr)
+            if is_arr:
+                return False
+            try:
+                if _is_array_type(target_type.get_pointee()):
+                    return False
+            except Exception:
+                pass
+
+            # void* involved -> banned
             if _is_void_ptr(src_type) or _is_void_ptr(target_type):
                 return True
 
@@ -1299,19 +1606,14 @@ class ClangChecker:
                 if _is_upcast(src_pointee, tgt_pointee):
                     return False
 
-            # static_cast downcast or unrelated -&gt; banned
+            # static_cast downcast or unrelated -> banned
             return True
 
         for node, line in self._collect(predicate_cxx_cast, skip_system=True):
             if not self._is_target_file_loc(node.location):
                 continue
             target_type = node.type.spelling
-            children = list(node.get_children())
-            src_expr = None
-            for child in children:
-                if child.kind != clang.cindex.CursorKind.TYPE_REF:
-                    src_expr = child
-                    break
+            src_expr = _cast_operand(node)
             src_type = src_expr.type.spelling if src_expr else "?"
             tokens = list(node.get_tokens())
             code = "".join(t.spelling for t in tokens)
@@ -1323,7 +1625,7 @@ class ClangChecker:
                 reason = "void* conversion via static_cast"
             else:
                 reason = "static_cast downcast or unrelated pointer types"
-            detail = f"{src_type} -&gt; {target_type} ({reason}) -- only parent-child class pointer casts allowed code={code}"
+            detail = f"R1 {src_type} -> {target_type} ({reason}) -- only parent-child class pointer casts allowed code={code}"
             results.append((line, "illegal-ptr-cast", detail))
 
         results.sort(key=lambda x: x[1])
@@ -1519,13 +1821,95 @@ class ClangChecker:
         results.sort(key=lambda x: x[0])
         return results
 
+    # -- X24: line-coverage ledger (for population reconciliation) --
+
+    def collect_line_coverage(self):
+        """Target-file line coverage of the AST, for reconciliation between
+        the AST gate and the textual (regex) gate.
+
+        Returns dict:
+          node_runs       -- merged [start,end] line runs that carry >= 1 AST
+                             node START in the target file.
+          expr_runs       -- merged [start,end] runs covering the EXTENTS of
+                             expression-kind nodes only (no function/class/
+                             block containers).  A statement dropped by clang
+                             error recovery leaves a hole here, while a
+                             continuation line of a multi-line expression is
+                             covered by its expression node's extent.
+          dependent_lines -- lines carrying any node typed `<dependent type>`
+                             (unresolvable types -- the AST sees the node but
+                             cannot classify pointer-vs-array).
+        """
+        lines = set()
+        expr_lines = set()
+        dependent = set()
+
+        _EXPR_KINDS = {
+            'CSTYLE_CAST_EXPR', 'CXX_STATIC_CAST_EXPR',
+            'CXX_REINTERPRET_CAST_EXPR', 'CXX_DYNAMIC_CAST_EXPR',
+            'CXX_FUNCTIONAL_CAST_EXPR', 'ARRAY_SUBSCRIPT_EXPR',
+            'BINARY_OPERATOR', 'COMPOUND_ASSIGNMENT_OPERATOR',
+            'UNARY_OPERATOR', 'CONDITIONAL_OPERATOR', 'CALL_EXPR',
+            'CXX_MEMBER_CALL_EXPR', 'CXX_OPERATOR_CALL_EXPR',
+            'MEMBER_REF_EXPR', 'DECL_REF_EXPR', 'INTEGER_LITERAL',
+            'FLOATING_LITERAL', 'STRING_LITERAL', 'CXX_THIS_EXPR',
+            'CXX_NULL_PTR_LITERAL_EXPR', 'PAREN_EXPR', 'UNEXPOSED_EXPR',
+            'INIT_LIST_EXPR',
+        }
+
+        def visitor(node):
+            try:
+                if not node.location.file or not self._is_target_file_loc(node.location):
+                    return
+                ln = node.location.line
+                if ln <= 0:
+                    return
+                lines.add(ln)
+                if node.kind.name in _EXPR_KINDS:
+                    try:
+                        a = node.extent.start.line
+                        b = node.extent.end.line
+                        if a > 0 and b >= a and (b - a) <= 2000:
+                            for x in range(a, b + 1):
+                                expr_lines.add(x)
+                    except Exception:
+                        pass
+                ts = node.type.spelling
+                if ts and ('dependent' in ts or ts.startswith('<invalid')):
+                    dependent.add(ln)
+            except Exception:
+                pass
+
+        self._walk(visitor, None)
+
+        def _runs(s):
+            out = []
+            for ln in sorted(s):
+                if out and ln == out[-1][1] + 1:
+                    out[-1][1] = ln
+                else:
+                    out.append([ln, ln])
+            return out
+
+        return {'node_runs': _runs(lines), 'expr_runs': _runs(expr_lines),
+                'dependent_lines': sorted(dependent)}
+
     # -- Run all checks --
+
+    def get_allowed_usage(self):
+        """X24: allowed-usage records collected by the last run_all_checks()
+        call (currently `array-subscript-ok` = R5: array [] is legal).
+        Returns list of (line_no, category, detail) tuples."""
+        return list(self._allowed_usage)
 
     def run_all_checks(self):
         """Run all violation checks and return combined results.
 
         Returns list of (line_no, category, detail) tuples.
         """
+        # X24: allowed-usage ledger (R5) -- populated by the checks below,
+        # never a violation; consumed via get_allowed_usage().
+        self._allowed_usage = []
         all_results = []
         all_results.extend(self.check_cxx_casts())
         all_results.extend(self.check_goto_statements())
@@ -1533,6 +1917,7 @@ class ClangChecker:
         all_results.extend(self.check_pointer_subscript())
         all_results.extend(self.check_hex_pointers())
         all_results.extend(self.check_nonptr_to_ptr_casts())
+        all_results.extend(self.check_ptr_array_casts())
         all_results.extend(self.check_vn_variables())
         all_results.extend(self.check_func_ptr_cast_calls())
         all_results.extend(self.check_memcpy_bypass())

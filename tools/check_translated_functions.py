@@ -23,11 +23,28 @@ Checks applied per-function:
      - 0 ptr-nonptr-conv (pointer<->non-pointer conversions, bidirectional)
      - 0 illegal-ptr-cast (C-style unrelated ptr casts, reinterpret_cast, void*, static downcast)
 
+  X24 type-aware pointer/array rules (declaration-resolved; USER ruling
+  2026-10-14):
+     R1 `ptr-nonptr-conv` / `non-ptr-to-ptr` / `illegal-ptr-cast` /
+        `ptr-array-cast` -- pointer cast to/from a different type family
+        (int, unrelated class pointer, array)
+     R2 `cast-index`     -- pointer []
+     R3 `ptr-arithmetic` -- pointer + / -
+     R4 `array-arithmetic` -- array + / -
+     R5 array []         -- ALLOWED; counted via get_allowed_usage()
+        (`array-subscript-ok`), never reported as a violation
+
+  Tree-wide mode (`--tree`): runs the same AST checks over the whole CMake
+  compile set (all decompilation-output TUs) via the content-addressed gate
+  cache, and reports per-category counts.  This is the honest population;
+  the changed-set mode above remains the per-function enforcement gate.
+
   Source-based (unchanged):
     - >= 3 real code lines (stub detection)
     - Comment-to-code ratio < 50% (comment shell)
 
 Exit code: 0 = all modified functions pass, 1 = >= 1 function fails.
+(Tree mode is report-only: exit 0.)
 """
 
 import argparse
@@ -35,6 +52,8 @@ import subprocess
 import sys
 import os
 import re
+import time
+from collections import Counter
 
 # Ensure tools/ is importable
 _tools_dir = os.path.dirname(os.path.abspath(__file__))
@@ -69,6 +88,153 @@ def _should_skip(filepath):
         if pat in norm:
             return True
     return False
+
+
+# ===================================================
+# Phase 0 (X24): tree-wide AST scan mode
+# ===================================================
+#
+# The default mode above is changed-set scoped (git diff vs auto-fill-baseline).
+# `--tree` runs the SAME AST checks over the whole compiled decompilation
+# output -- the CMake compile set -- and reports per-category counts.  This is
+# the honest population the type-aware gate judges; the regex gate
+# (tools/check_pointer_arithmetic.py) remains a fast textual pre-filter.
+#
+# Compile-set model (CMakeLists.txt): glob src/**/*.cpp, exclude src/app/ and
+# src/_generated/, then re-add src/_generated/{named_free_stubs,sub_stubs}.cpp
+# plus the 4 explicit app TUs.
+
+_APP_TUS = ['app/main.cpp', 'app/game_loop.cpp', 'app/ddraw_init.cpp',
+            'app/cmdline.cpp']
+_REGEN_TUS = ['src/_generated/named_free_stubs.cpp', 'src/_generated/sub_stubs.cpp']
+
+
+def _cmake_tu_model(repo_root):
+    """Return the CMake compile-set .cpp list (repo-relative, forward slashes)."""
+    import glob as _glob
+    tus = []
+    for rel in _glob.glob('src/**/*.cpp', root_dir=repo_root, recursive=True):
+        n = rel.replace('\\', '/')
+        if n.startswith('src/app/') or n.startswith('src/_generated/'):
+            continue
+        tus.append(n)
+    tus.extend(_REGEN_TUS)
+    tus.extend(_APP_TUS)
+    return sorted(set(tus))
+
+
+def run_tree_scan(args):
+    """X24: run the AST gate over the whole compile set (report mode).
+
+    Uses the content-addressed gate cache (tools/gate_clang_cache.py); cache
+    misses parse in a process pool.  Prints per-category counts and optionally
+    writes a machine-readable JSON report plus per-site JSONL ledgers.
+    Exit code 0 (report mode -- enforcement stays with the changed-set gate).
+    """
+    import json as _json
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    tus = _cmake_tu_model(repo_root)
+    if args.files:
+        # small-cohort mode: restrict to the named files
+        want = {f.replace('\\', '/') for f in args.files}
+        tus = [t for t in tus if t in want]
+    pairs = [(rel, os.path.join(repo_root, rel)) for rel in tus]
+    pairs = [(rel, ap) for rel, ap in pairs if os.path.isfile(ap)]
+
+    # cache-hit measurement before gathering (load_payload is a pure read)
+    hits = sum(1 for _rel, ap in pairs
+               if gate_clang_cache.load_payload(ap) is not None)
+
+    t0 = time.time()
+    payloads = gate_clang_cache.gather_payloads(
+        [ap for _rel, ap in pairs], workers=args.workers)
+    elapsed = time.time() - t0
+
+    cat_counts = Counter()
+    allowed_counts = Counter()
+    per_file = Counter()
+    diag_errors_total = 0
+    error_files = []
+    sites = []
+    allowed_sites = []
+    for rel, ap in pairs:
+        pay = payloads.get(ap)
+        if not pay or pay.get('error'):
+            error_files.append({'file': rel,
+                                'error': (pay or {}).get('error', 'missing')})
+            continue
+        de = pay.get('diag_errors')
+        if isinstance(de, int) and de > 0:
+            diag_errors_total += de
+        for line, cat, det in pay.get('all', []):
+            cat_counts[cat] += 1
+            per_file[rel] += 1
+            sites.append([rel, line, cat, det])
+        for line, cat, det in pay.get('allowed', []):
+            allowed_counts[cat] += 1
+            allowed_sites.append([rel, line, cat, det])
+
+    print('X24 tree-wide AST scan (compile set)')
+    print('  TUs: %d | cache hits: %d | misses: %d | wall: %.1fs'
+          % (len(pairs), hits, len(pairs) - hits, elapsed))
+    print('  parse-error TUs: %d | sum(diag errors, parsed TUs): %d'
+          % (len(error_files), diag_errors_total))
+    print('  violation categories:')
+    for cat in sorted(cat_counts, key=lambda c: -cat_counts[c]):
+        print('    %-24s %d' % (cat, cat_counts[cat]))
+    print('  violations total: %d in %d files'
+          % (sum(cat_counts.values()), len(per_file)))
+    print('  allowed usage (not violations):')
+    for cat in sorted(allowed_counts, key=lambda c: -allowed_counts[c]):
+        print('    %-24s %d' % (cat, allowed_counts[cat]))
+    if error_files:
+        print('  error TUs:')
+        for e in error_files[:10]:
+            print('    %s: %s' % (e['file'], e['error']))
+
+    if args.json:
+        jp = args.json if os.path.isabs(args.json) \
+            else os.path.join(repo_root, args.json)
+        os.makedirs(os.path.dirname(jp), exist_ok=True)
+        with open(jp, 'w', encoding='utf-8') as f:
+            _json.dump({
+                'schema': 'ast-tree-report/v1',
+                'tus': len(pairs),
+                'cache_hits': hits,
+                'cache_misses': len(pairs) - hits,
+                'wall_s': round(elapsed, 1),
+                'error_tus': error_files,
+                'diag_errors_total': diag_errors_total,
+                'violations_total': sum(cat_counts.values()),
+                'violations_by_category': dict(cat_counts),
+                'files_with_violations': len(per_file),
+                'allowed_by_category': dict(allowed_counts),
+                'allowed_total': sum(allowed_counts.values()),
+            }, f, indent=1)
+        print('  report: %s' % jp)
+
+    if args.sites_out:
+        sp = args.sites_out if os.path.isabs(args.sites_out) \
+            else os.path.join(repo_root, args.sites_out)
+        os.makedirs(os.path.dirname(sp), exist_ok=True)
+        with open(sp, 'w', encoding='utf-8') as f:
+            for rel, line, cat, det in sites:
+                f.write(_json.dumps({'file': rel, 'line': line,
+                                     'cat': cat, 'detail': det}) + '\n')
+        print('  sites: %s (%d rows)' % (sp, len(sites)))
+
+    if args.allowed_out:
+        apath = args.allowed_out if os.path.isabs(args.allowed_out) \
+            else os.path.join(repo_root, args.allowed_out)
+        os.makedirs(os.path.dirname(apath), exist_ok=True)
+        with open(apath, 'w', encoding='utf-8') as f:
+            for rel, line, cat, det in allowed_sites:
+                f.write(_json.dumps({'file': rel, 'line': line,
+                                     'cat': cat, 'detail': det}) + '\n')
+        print('  allowed sites: %s (%d rows)' % (apath, len(allowed_sites)))
+
+    sys.exit(0)
 
 
 # ===================================================
@@ -544,11 +710,26 @@ def main():
                         help='Enable IDA-based structural verification')
     parser.add_argument('--min-ida-ratio', type=float, default=0.3)
     parser.add_argument('--max-ida-stub-ratio', type=float, default=0.3)
+    parser.add_argument('--tree', action='store_true',
+                        help='X24: tree-wide AST scan over the CMake compile '
+                             'set (report mode; per-category counts)')
+    parser.add_argument('--workers', type=int, default=None,
+                        help='X24 tree mode: process-pool workers for cache '
+                             'misses (default: min(8, cpu_count))')
+    parser.add_argument('--json', dest='json', default=None,
+                        help='X24 tree mode: write JSON report to PATH')
+    parser.add_argument('--sites-out', dest='sites_out', default=None,
+                        help='X24 tree mode: write per-site violation JSONL')
+    parser.add_argument('--allowed-out', dest='allowed_out', default=None,
+                        help='X24 tree mode: write per-site allowed-usage JSONL')
     parser.add_argument('files', nargs='*', metavar='FILE',
                         help='Check ALL functions in specified .cpp files')
     args = parser.parse_args()
 
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    if args.tree:
+        run_tree_scan(args)
 
     if args.files:
         changed_files = {}

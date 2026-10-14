@@ -26,7 +26,9 @@ from concurrent.futures import ProcessPoolExecutor
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE_DIR = os.path.join(REPO, '.omo', 'cache', 'gate_clang')
-SCHEMA = 'gate-clang-v1'
+# v2 (X24): payload additionally carries the allowed-usage ledger
+# (R5 array subscript, never a violation) and the parse diagnostics count.
+SCHEMA = 'gate-clang-v2'
 _PRUNE_KEEP = 6000
 
 _ING = None
@@ -113,9 +115,25 @@ def compute_payload(abs_path):
     from clang_ast_checker import ClangChecker
     checker = ClangChecker(abs_path)
     checker.parse()
+    violations = [list(v) for v in checker.run_all_checks()]
+    allowed = [list(v) for v in checker.get_allowed_usage()]
+    # X24: line-coverage ledger (error-recovery gaps + dependent-typed lines),
+    # consumed by the AST-vs-regex population reconciliation.
+    coverage = checker.collect_line_coverage()
+    # Parse diagnostics count (severity >= 3).  Diagnostic attribute access can
+    # raise OSError on malformed diagnostics -- degrade to -1 instead of dying.
+    try:
+        diag_errors = sum(1 for d in checker.tu.diagnostics if d.severity >= 3)
+    except Exception:
+        diag_errors = -1
     payload = {
-        'all': [list(v) for v in checker.run_all_checks()],
+        'all': violations,
         'hpp_impl': [list(v) for v in checker.check_hpp_implementations()],
+        'allowed': allowed,
+        'diag_errors': diag_errors,
+        'node_runs': coverage['node_runs'],
+        'expr_runs': coverage['expr_runs'],
+        'dependent_lines': coverage['dependent_lines'],
     }
     store_payload(abs_path, payload)
     return payload

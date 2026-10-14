@@ -227,6 +227,56 @@ for _n, _a in (_J(ROOT / 'signals.json').get('globals') or {}).items():
     except (TypeError, ValueError):
         continue
     _reg_sym(_n, _ai)
+
+# X23: callee DECLARED return types (signals symbols).  Used to refuse a
+# register-channel receiver class that contradicts the callee signature --
+# measured: `Coord = INIClass::GetCoord(...)` took `AnimTypeClass` from the
+# call-site register while the declared return is `int` (10 false member
+# accesses, reverted).  A class-typed register value may only stand when the
+# declared return is unknown/class-typed; primitive/void returns block it.
+RETTY = {}
+_RETTY_AMBIG = set()
+for _k, _v in (_J(ROOT / 'signals.json').get('symbols') or {}).items():
+    if not isinstance(_v, dict):
+        continue
+    _n, _r = _v.get('name'), _v.get('return_type')
+    if not _n or not _r:
+        continue
+    if _n in RETTY and RETTY[_n] != _r:
+        _RETTY_AMBIG.add(_n)
+    else:
+        RETTY[_n] = _r
+
+
+def _callee_ret(name):
+    """declared return type of a callee name (exact, else unambiguous base)."""
+    r = RETTY.get(name)
+    if r:
+        return r
+    base = name.split('::')[-1]
+    if base in RETTY and base not in _RETTY_AMBIG:
+        return RETTY[base]
+    return None
+
+
+def _ret_blocks(t):
+    """True when a declared return type contradicts a class receiver value:
+    void / primitive / pointer-to-primitive returns."""
+    t = (t or '').strip()
+    if not t:
+        return False
+    if t == 'void':
+        return True
+    base = re.sub(r'^(?:const\s+)', '', t).rstrip('*& ').strip()
+    if base in ('int', 'unsigned int', 'char', 'unsigned char', 'short',
+                'unsigned short', 'long', 'unsigned long', 'float', 'double',
+                'bool', 'BOOL', 'DWORD', 'UINT', 'WORD', 'BYTE', '_BYTE',
+                '_WORD', '_DWORD', '_QWORD', '__int8', '__int16', '__int32',
+                '__int64', 'int8_t', 'uint8_t', 'int16_t', 'uint16_t',
+                'int32_t', 'uint32_t', 'int64_t', 'uint64_t', 'size_t',
+                'wchar_t', 'unknown', 'VOID_PTR', 'void*'):
+        return True
+    return False
 for _p in sorted((ROOT / 'src').rglob('*.hpp')):
     _s = str(_p).replace('\\', '/')
     if any(x in _s for x in ('raw_decomp',)):
@@ -590,6 +640,9 @@ def _registry():
     return _REG
 
 
+IDENT_RE = re.compile(r'^[A-Za-z_]\w*$')
+
+
 def decl_name(cls, off):
     best = None
     for c in chain(cls):
@@ -597,6 +650,12 @@ def decl_name(cls, off):
         for d in (MTABI.get(cl), DECL.get(cl), _registry().get(cl)):
             if d and off in d and d[off][0]:
                 nm, ty = d[off][0], d[off][1]
+                # X23: a member name must be a C++ identifier.  The registry
+                # (member_lookup) carries historical supplies whose "name" is
+                # a declaration fragment (`UINameLabel[0x20]`); using it emits
+                # uncompilable member accesses (measured 10 sites, reverted).
+                if not IDENT_RE.match(nm):
+                    continue
                 if not _is_ph_name(nm):
                     return nm, ty
                 if best is None:
@@ -604,7 +663,7 @@ def decl_name(cls, off):
     if best is None:
         for c in chain(cls):
             s = SUPPLIED.get((c.lower(), off))
-            if s:
+            if s and IDENT_RE.match(s[0]):
                 return s[0], s[1]
     return best if best else (None, None)
 
@@ -1377,6 +1436,18 @@ def h_fptr(seg, ctx):
                        cls, slot, 'receiver-unresolved')
             pos = m.end()
             continue
+        # X23: a NON-PRIMARY vptr member (`recv->vtable2` etc., base_off != 0)
+        # indexes a different vtable table than the class's primary slot
+        # table; naming the slot from the primary table is a false resolution
+        # (measured: `*(unsigned int *)(Type + 4) + 16` -> `IsClean` while the
+        # binary's [Type+4] table holds `AbstractClass::GetVtable3` at +0x10
+        # -- [Type+4] = 0x7E4554 installed by the ctor @0x45E55E, its +0x10 =
+        # 0x410220).  Fail loud until the per-table slot tables exist.
+        if base_off not in (None, 0):
+            ledger_add('F-FPTR', ctx, m.start(), seg[m.start():m.end()],
+                       cls, slot, 'slot-nonprimary')
+            pos = m.end()
+            continue
         try:
             import _vtable
             meth = _vtable.slot_name(cls, slot)
@@ -1941,20 +2012,25 @@ def h_this_arith(seg, ctx):
 
 
 PTHIS_FORMS = [
+    # X23: the receiver token is [A-Za-z_]\w* (was [a-z]\w*): the mechanical
+    # bodies carry uppercase/underscore receivers (`Next`, `Block`, `_ESI`,
+    # `_EBP`) that the narrow token silently excluded from the handler --
+    # never converted AND never ledgered (measured on the widened gate: 488
+    # rows UNTOUCHED purely because of this). Same guards as before apply.
     ('deref1', re.compile(
         r'\*\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*\(\s*'
-        r'(?:\(\s*char\s*\*\s*\)\s*)?(?P<recv>[a-z]\w*)\s*\+\s*'
+        r'(?:\(\s*char\s*\*\s*\)\s*)?(?P<recv>[A-Za-z_]\w*)\s*\+\s*'
         r'(?P<num>' + NUM + r')\s*\)')),
     ('deref2', re.compile(
         r'\*\s*\(\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
-        r'(?P<recv>[a-z]\w*)\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
+        r'(?P<recv>[A-Za-z_]\w*)\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('cast1', re.compile(
         r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*\(\s*'
-        r'(?:\(\s*char\s*\*\s*\)\s*)?(?P<recv>[a-z]\w*)\s*\+\s*'
+        r'(?:\(\s*char\s*\*\s*\)\s*)?(?P<recv>[A-Za-z_]\w*)\s*\+\s*'
         r'(?P<num>' + NUM + r')\s*\)')),
     ('cast2', re.compile(
         r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
-        r'(?P<recv>[a-z]\w*)\s*\+\s*(?P<num>' + NUM + r')')),
+        r'(?P<recv>[A-Za-z_]\w*)\s*\+\s*(?P<num>' + NUM + r')')),
 ]
 
 
@@ -1974,6 +2050,23 @@ def h_pthis(seg, ctx):
             if recv == 'this':
                 continue
             raw = int(gd['num'], 0)
+            if kind in ('deref2', 'cast2'):
+                off = raw * _cast_elem_width(cty, len(gd.get('st') or '*'))
+            else:
+                off = raw
+            # X23: cast2 is `(T *)recv + N` = recv-as-T* + N elements (an
+            # ADDRESS).  When an unconsumed deref sits immediately before the
+            # cast (`*(T *)recv + N`), the text parses as (value at recv) + N
+            # -- a deref-then-add, NOT an address computation (classic vtable
+            # slot read: `*(unsigned int *)v + 44`).  Converting that to
+            # `&recv->M` would rewrite a vtable slot into an object member;
+            # refuse, fail loud.  (cast1 `*(T *)(recv + N)` stays SAFE: its
+            # replacement `&recv->M` + the outer `*` is value-equivalent to
+            # deref1, and deref1/deref2 run first and consume their own star.)
+            if kind == 'cast2' and seg[:pos].rstrip()[-1:] == '*':
+                ledger_add('F-PTHIS', ctx, pos, m.group(0), None, off,
+                           'cast2-deref')
+                continue
             if kind in ('deref2', 'cast2'):
                 off = raw * _cast_elem_width(cty, len(gd.get('st') or '*'))
             else:
@@ -2651,6 +2744,14 @@ def _x5b_enrich_env(seg, env, cls, addr):
                             if t0:
                                 grew |= put(var, li, t0)
                                 continue
+            # X23: a call-rhs line may not take the register class when the
+            # callee's declared return contradicts it (int/void/primitive
+            # pointer); the register value is then NOT the typed object.
+            cm0 = re.match(r'^\s*([A-Za-z_]\w*(?:::\w+)*)\s*\(', rhs0)
+            if cm0:
+                _rt = _callee_ret(cm0.group(1))
+                if _rt is not None and _ret_blocks(_rt):
+                    continue
             if site and ai:
                 for reg in ('eax', 'ecx', 'edx', 'ebx', 'esi', 'edi',
                             'al', 'bl', 'cl', 'dl'):
