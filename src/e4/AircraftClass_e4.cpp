@@ -398,41 +398,6 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
 
 }
 }
-// 0x41A940
-namespace gamemd {
-int AircraftClass::EvaluateTargetingState()
-{
-
-  int v2; // edi
-
-  v2 = (*(int (**)(AircraftTypeClass *))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41a956*/
-  if ( (*((int (**)(AircraftClass *))this->FootClass + 114))(this) == v2 ) /*0x41a960*/
-  {
-    if ( !this->team ) /*0x41a962*/
-      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a974*/
-    return 1; /*0x41a97b*/
-  }
-  else
-  {
-    if ( !this->focus /*0x41a99c*/
-      && (*((unsigned __int8 (**)(AircraftClass *))this->FootClass + 171))(this)
-      && !(unsigned __int8)Team::AllMembersValid((Team *)this) )
-    {
-      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a9ad*/
-    }
-    if ( this->AbstractClass_2B4 ) /*0x41a9b3*/
-    {
-      (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 1, 0); /*0x41a9c5*/
-      return 1; /*0x41a9cc*/
-    }
-    else
-    {
-      return FootClass::FindAITarget((FootClass *)this); /*0x41a9d5*/
-    }
-  }
-
-}
-}
 // 0x41AA80
 namespace gamemd {
 void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, void * a4)
@@ -898,15 +863,6 @@ char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 }
 } // namespace gamemd
 
-// 0x41ADC0
-namespace gamemd {
-int AircraftClass::ProcessDockCheck()
-{
-  if ( !this->locomotor[0] ) /*0x41adc3*/
-    sub_7DC720(-2147467261); /*0x41add2*/
-  return (*(int (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 116))(this->locomotor[0]); /*0x41ade3*/
-}
-} // namespace gamemd
 
 // 0x41B5C0
 namespace gamemd {
@@ -916,72 +872,11 @@ HRESULT AircraftClass::CheckPassengerCount(int a1, int pPStm, int a3)
 }
 } // namespace gamemd
 
-// 0x41B980
-namespace gamemd {
-int AircraftClass::IsBelowScreen()
-{
 
-  AircraftTypeClass *Type; // eax
 
-  Type = this->Type; /*0x41b989*/
-  if ( Type != *(AircraftTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 1248) /*0x41b99d*/
-    && Type != *(AircraftTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 1300) )
-  {
-    return ObjectClass::IsBelowScreen((IUnknown *)this); /*0x41b9a1*/
-  }
-  if ( !this->locomotor ) /*0x41b9a8*/
-    WinAPI::Wrapper(-2147467261); /*0x41b9b7*/
-  return (*(unsigned __int8 (**)(int))(*(unsigned int *)this->focus + 128))(this->focus) == 0; /*0x41b9a6*/
 
-}
-} // namespace gamemd
 
-// 0x41BE60
-namespace gamemd {
-int AircraftClass::LandingCheckStub()
-{
-  return 0; /*0x41be62*/
-}
-} // namespace gamemd
 
-// 0x41BE80
-namespace gamemd {
-int AircraftClass::CheckStateFlag()
-{
-  int result; // eax
-
-  return result; /*0x41be80*/
-}
-} // namespace gamemd
-
-// 0x41BE90
-namespace gamemd {
-int AircraftClass::CheckStateFlag2()
-{
-  int result; // eax
-
-  return result; /*0x41be90*/
-}
-} // namespace gamemd
-
-// 0x41C020
-namespace gamemd {
-int AircraftClass::CheckReloadTimer()
-{
-  int result; // eax
-
-  (*((unsigned char *)&(result))) = this->isDisguisedFlag; /*0x41c020*/
-  return result; /*0x41c026*/
-}
-} // namespace gamemd
-
-// 0x41C070
-namespace gamemd {
-char AircraftClass::CheckDockState()
-{
-  return this->frozenStill; /*0x41c076*/
-}
-} // namespace gamemd
 
 // 0x41C190
 namespace gamemd {
@@ -997,21 +892,7 @@ int AircraftClass::PowerDrainProcess(int a1, unsigned int * a2)
 }
 } // namespace gamemd
 
-// 0x41C1D0
-namespace gamemd {
-int AircraftClass::CheckMissionAbort()
-{
-  return *&this->Type[96]; /*0x41c1d9*/
-}
-} // namespace gamemd
 
-// 0x41C200
-namespace gamemd {
-int AircraftClass::CheckMissionFail()
-{
-  return (int)this->Type; /*0x41c206*/
-}
-} // namespace gamemd
 
 // 0x41C210
 namespace gamemd {
@@ -1026,18 +907,4 @@ AircraftClass * AircraftClass::CheckActionStatus(char a2)
 }
 } // namespace gamemd
 
-// 0x5B2E90
-namespace gamemd {
-int AircraftClass::CheckMissionStatus()
-{
-  return 450; /*0x5b2e95*/
-}
-} // namespace gamemd
 
-// 0x5B2F30
-namespace gamemd {
-int AircraftClass::CheckMissionStatus2()
-{
-  return 450; /*0x5b2f35*/
-}
-} // namespace gamemd

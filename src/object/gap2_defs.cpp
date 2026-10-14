@@ -135,17 +135,6 @@ namespace gamemd {
 
 // 0x410540
 namespace ra2 { namespace game { 
-CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
-  int *v1; // ecx
-  unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
-  CoordStruct *out; // [esp+14h] [ebp+4h]
-
-  v1 = (int *)out->vt_slot_72(v3); /*0x41054e*/
-  out->vfptr = (void *)*v1; /*0x410558*/
-  out[1].vfptr = (void *)v1[1]; /*0x41055d*/
-  out[2].vfptr = (void *)v1[2]; /*0x410564*/
-  return (int)out; /*0x410560*/
-}
 // 0x4101C0
 namespace ra2 { namespace game { 
 void* AbstractClass::InitVtables(int a1) {

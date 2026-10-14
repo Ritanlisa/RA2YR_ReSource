@@ -476,6 +476,7 @@ int FontClass::RenderText(uint16_t *a2, int v14, int yTop, int a5, int a6) {
 } // namespace gamemd
 
 namespace gamemd {
+// 0x4348F0
 int FontRenderer::InitContext(int * a2) {
     int v3; // edx
     int v4; // eax
@@ -3603,45 +3604,6 @@ char EditControl::GrowBuffer(wchar_t a2, size_t a3) {
       wcscpy(*(wchar_t **)this->__pad_000, &String); /*0x7b7350*/
     return 1; /*0x7b7358*/
   }
-}
-} // namespace gamemd
-// 0x4348F0
-namespace gamemd {
-int FontRenderer::InitContext(int *a2) {
-    int v3; // edx
-    int v4; // eax
-    int v5; // edx
-    int result; // eax
-    int v7; // edi
-    int v10; // [esp+8h] [ebp-10h] BYREF
-    int v11; // [esp+Ch] [ebp-Ch]
-    int v12; // [esp+10h] [ebp-8h]
-
-    this->u32_C = (*(int (__thiscall **)(int *, unsigned int, unsigned int))(*a2 + 92))(a2, 0, 0); /*0x434908*/
-    this->u32_10 = (unsigned int)(*(int (__thiscall **)(int *))(*a2 + 116))(a2) >> 1; /*0x434914*/
-    v3 = *a2; /*0x434917*/
-    v10 = 0; /*0x43491b*/
-    v11 = 0; /*0x434923*/
-    v12 = (*(int (__thiscall **)(int *))(v3 + 124))(a2) - 1; /*0x434931*/
-    v4 = (*(int (__thiscall **)(int *))(*a2 + 128))(a2); /*0x434937*/
-    v5 = this->u32_34 | this->u32_3C | this->u32_38; /*0x43494b*/
-    result = v4 - 1; /*0x43494d*/
-    v7 = this->u32_30; /*0x43494e*/
-    result = result; /*0x434950*/
-    if ( v7 | v5 ) /*0x434954*/
-    {
-      (*((unsigned char *)&(result))) = sub_434840(&this->u32_30, &this->u32_30, &v10); /*0x434980*/
-    }
-    else
-    {
-      v10 = v10; /*0x434958*/
-      this->u32_3C = result; /*0x43495c*/
-      this->u32_30 = v10; /*0x43495f*/
-      v12 = v12; /*0x434965*/
-      this->u32_34 = v11; /*0x434969*/
-      this->u32_38 = v12; /*0x43496c*/
-    }
-    return result; /*0x43496f*/
 }
 } // namespace gamemd
 

@@ -254,44 +254,6 @@ void sub_728200()
   }
 }
 }
-// 0x72AA40
-namespace gamemd {
-unsigned char LoadMouseClassResources()
-{
-  uint8_t result; // al
-
-  dword_B0FC80 = (unsigned int)(LoadFileSHP((char *)(off_844C44), (bool *)&byte_B0FC90));
-  dword_B0FC84 = (unsigned int)(LoadFileSHP((char *)(off_844C48), (bool *)&byte_B0FC91)); /*0x72aa70*/
-  dword_B0FC88 = (unsigned int)(LoadFileSHP((char *)(off_844C4C), (bool *)&byte_B0FC92)); /*0x72aa85*/
-  dword_B0FC8C = (unsigned int)(LoadFileSHP((char *)(off_844C50), (bool *)&byte_B0FC93)); /*0x72aa9a*/
-  dword_B0FACC = (unsigned int)(LoadFileSHP((char *)(off_844C54), (bool *)&byte_B0FC94)); /*0x72aab4*/
-  LoadPaletteSimple((char *)(off_844BA4), &dword_B0FB64, &dword_B0FB68); /*0x72aab9*/
-  LoadPaletteSimple((char *)(off_844BA0), &dword_B0FB6C, &dword_B0FB70); /*0x72aace*/
-  LoadPaletteSimple((char *)(off_844B9C), &dword_B0FB5C, &dword_B0FB60); /*0x72aae3*/
-  LoadPaletteSimple((char *)(off_844BA8), &dword_B0FB74, &dword_B0FB78); /*0x72aaf8*/
-  result = byte_B0FBE0; /*0x72aafd*/
-  if ( !byte_B0FBE0 ) /*0x72ab04*/
-  {
-    AssetClass::ReleaseAndReload(); /*0x72ab0a*/
-    dword_B0FAC4 = (unsigned int)(LoadFileSHP((char *)(off_844CD4), (bool *)&byte_B0FC95)); /*0x72ab2a*/
-    dword_B0F9DC = (unsigned int)(LoadFileSHP((char *)(off_844CD8), (bool *)&byte_B0FC96)); /*0x72ab3f*/
-    dword_B0FAC0 = (unsigned int)(LoadFileSHP((char *)(off_844CDC), (bool *)&byte_B0FC97)); /*0x72ab54*/
-    dword_B0FB50 = (unsigned int)(LoadFileSHP((char *)(off_844CE0), (bool *)&byte_B0FC98)); /*0x72ab69*/
-    dword_B0FA04 = (unsigned int)(LoadFileSHP((char *)(off_844CE4), (bool *)&byte_B0FC99)); /*0x72ab7e*/
-    dword_B0FAF8 = (unsigned int)(LoadFileSHP((char *)(off_844CE8), (bool *)&byte_B0FC9A)); /*0x72ab93*/
-    dword_B0FA74 = (unsigned int)(LoadFileSHP((char *)(off_844CEC), (bool *)&byte_B0FC9B)); /*0x72aba8*/
-    dword_B0FA38 = (unsigned int)(LoadFileSHP((char *)(off_844CF0), (bool *)&byte_B0FC9C)); /*0x72abbd*/
-    dword_B0FAE8 = (unsigned int)(LoadFileSHP((char *)(off_844CF4), (bool *)&byte_B0FC9D)); /*0x72abd2*/
-    dword_B0FA54 = (unsigned int)(LoadFileSHP((char *)(off_844CF8), (bool *)&byte_B0FC9E)); /*0x72abec*/
-    LoadPaletteSimple((char *)(off_844BE4), &dword_B0FBC8, &dword_B0FBCC); /*0x72abf1*/
-    LoadPaletteSimple((char *)(off_844BE8), &dword_B0FBD0, &dword_B0FBD4); /*0x72ac06*/
-    LoadPaletteSimple((char *)(off_844BEC), &dword_B0FBD8, &dword_B0FBDC); /*0x72ac1b*/
-    result = (uint8_t)SetupMouseClassResources(g_DisplayWidth,(int)(g_abs_8A00A8)); /*0x72ac2c*/
-    byte_B0FBE0 = 1; /*0x72ac31*/
-  }
-  return result; /*0x72ac38*/
-}
-}
 // 0x72ADE0
 namespace gamemd {
 int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)

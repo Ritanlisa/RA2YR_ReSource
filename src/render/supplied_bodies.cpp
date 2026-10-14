@@ -2202,28 +2202,6 @@ int BuildingDebris::Init(int a2)
 }
 } // namespace gamemd
 
-// 0x67C310
-namespace gamemd {
-unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
-{
-  this->u32_4 = 0; /*0x67c31b*/
-  this->u32_8 = a2; /*0x67c31e*/
-  this->u32_C = 1; /*0x67c321*/
-  this->u32_D = 0; /*0x67c325*/
-  *this = (VoxelAnimTypeVector)0; /*0x67c328*/
-  if ( a2 ) /*0x67c32e*/
-  {
-    if ( a3 ) /*0x67c336*/
-    {
-      this->u32_4 = a3; /*0x67c338*/
-      return this; /*0x67c33e*/
-    }
-    this->Items = operator new(4 * a2); /*0x67c34d*/
-    this->IsAllocated = 1; /*0x67c350*/
-  }
-  return this; /*0x67c33d*/
-}
-} // namespace gamemd
 
 // 0x6D6000
 namespace gamemd {
@@ -3216,33 +3194,6 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
 }
 } // namespace gamemd
 
-// 0x758950
-namespace gamemd {
-unsigned int * VoxelPalette::Init(int a2, int a3)
-{
-  if ( a2 ) /*0x758959*/
-  {
-    this->u32_10 = a2; /*0x758974*/
-    this->u32_18 = 0; /*0x758977*/
-  }
-  else
-  {
-    this->u32_10 = operator new(0x300u); /*0x758968*/
-    this->u32_18 = 1; /*0x75896b*/
-  }
-  if ( a3 ) /*0x758984*/
-  {
-    this->u32_14 = a3; /*0x7589a3*/
-    this->u32_1C = 0; /*0x7589a6*/
-  }
-  else
-  {
-    this->u32_14 = operator new(0x8000u); /*0x758993*/
-    this->u32_1C = 1; /*0x758996*/
-  }
-  return this->__pad_000; /*0x75899f*/
-}
-} // namespace gamemd
 
 // 0x7589C0
 namespace gamemd {

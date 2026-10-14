@@ -5276,13 +5276,6 @@ int FootClass::vt_entry_4F0()
 }
 } // namespace ra2::game
 
-// 0x4DA1C0
-namespace ra2::game {
-void FootClass::ClearSomeVector()
-{
-  return this->vt_entry_68(this->FootClass_field_abstract_array_5AC);
-}
-} // namespace ra2::game
 
 // 0x4DA1D0
 namespace ra2::game {

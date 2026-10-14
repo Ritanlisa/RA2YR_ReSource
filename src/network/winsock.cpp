@@ -19,12 +19,52 @@ namespace gamemd
 
 WinsockInterfaceClass* WinsockInterfaceClass::Instance = nullptr;
 
+// 0x7B1AB0
 WinsockInterfaceClass::WinsockInterfaceClass() noexcept
-    : Socket(0)
-    , Initialized(false)
-    , BoundPort(0)
-    , LocalAddress(0)
 {
+
+  char v2; // al
+  void *v3; // eax
+  void *v4; // eax
+  void *v5; // eax
+
+  v2 = this->u32_3F068; /*0x7b1ab6*/
+  /* X11: vtable install elided (implicit via WinsockInterfaceClass virtuals 0x7b1abc) */
+  if ( v2 ) /*0x7b1ac4*/
+  {
+    NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
+    (*(void (**)(int))(*&this->u32_10))(this); /*0x7b1ad0*/
+    WSACleanup(); /*0x7b1ad3*/
+    this->u32_3F068 = 0; /*0x7b1ad8*/
+  }
+  v3 = *&this->u32_3C; /*0x7b1ade*/
+  this->u32_38 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
+  if ( v3 && this->u32_45 ) /*0x7b1aec*/
+  {
+    __3_YAXPAX_Z(v3); /*0x7b1af2*/
+    this->u32_3C = 0; /*0x7b1afa*/
+  }
+  this->u32_45 = 0; /*0x7b1afd*/
+  this->u32_40 = 0; /*0x7b1b00*/
+  v4 = *&this->u32_24; /*0x7b1b03*/
+  this->u32_20 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
+  if ( v4 && this->u32_2D ) /*0x7b1b11*/
+  {
+    __3_YAXPAX_Z(v4); /*0x7b1b17*/
+    this->u32_24 = 0; /*0x7b1b1f*/
+  }
+  this->u32_2D = 0; /*0x7b1b22*/
+  this->u32_28 = 0; /*0x7b1b25*/
+  v5 = *&this->u32_C; /*0x7b1b28*/
+  this->__pad_008 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
+  if ( v5 && this->u32_15 ) /*0x7b1b36*/
+  {
+    __3_YAXPAX_Z(v5); /*0x7b1b3c*/
+    this->u32_C = 0; /*0x7b1b44*/
+  }
+  this->u32_15 = 0; /*0x7b1b47*/
+  this->u32_10 = 0; /*0x7b1b4a*/
+
 }
 
 WinsockInterfaceClass::~WinsockInterfaceClass()

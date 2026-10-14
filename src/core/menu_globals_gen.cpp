@@ -505,9 +505,6 @@ int CampaignMenu_DlgProc(void* /*CampaignMenu*/ self) {
 
 // MenuSelect @ 0x52D9A0 (4536B)
 REVERSE(0x52D9A0, "IDA decompilation", "None")
-int MenuSelect(void) {
-    return 0;
-}
 
 // CampaignSelect::DlgProc @ 0x52EC00 (2024B)
 REVERSE(0x52EC00, "IDA decompilation", "None")
@@ -823,9 +820,6 @@ int Dialog_GetMode3(void* /*Dialog*/ self) {
 
 // DialogClass::GetFlag @ 0x5D6350 (4B)
 REVERSE(0x5D6350, "IDA decompilation", "None")
-int DialogClass_GetFlag(void* /*DialogClass*/ self) {
-    return 0;
-}
 
 // VectorClass_ptr_MultiplayerTeam::Get @ 0x5D8100 (13B)
 REVERSE(0x5D8100, "IDA decompilation", "None")
@@ -901,8 +895,93 @@ int UpdateMultiplayerPlayerOptions(void) {
 
 // SynchronizeMultiplayerGameStart @ 0x5DD8A0 (804B)
 REVERSE(0x5DD8A0, "IDA decompilation", "None")
-int SynchronizeMultiplayerGameStart(void) {
-    return 0;
+// 0x5DD8A0
+int SynchronizeMultiplayerGameStart(void)
+{
+  int v1; // edi
+  int v2; // eax
+  int v3; // eax
+  int LobbyStatus; // eax
+  int v5; // ecx
+  int *v7; // eax
+  int i; // esi
+  wchar_t *StringCSF; // [esp-18h] [ebp-1F4h]
+  char v10[16]; // [esp+4h] [ebp-1D8h] BYREF
+  int v11[113]; // [esp+14h] [ebp-1C8h] BYREF
+  int16_t v12; // [esp+1D8h] [ebp-4h]
+  char v13; // [esp+1DAh] [ebp-2h]
+
+  if ( (unsigned int)(Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2) <= 0x1E ) /*0x5dd8b6*/
+    v2 = 30; /*0x5dd8c7*/
+  else
+    v2 = Network::GetLobbyStatus((Network *)&unk_A8E9C0) + 2; /*0x5dd8c2*/
+  v3 = Network::SetConnectionParams(&unk_A8E9C0, v2, -1, 1000, 1); /*0x5dd8dd*/
+  (*((unsigned char *)&(v3))) = dword_A8BB08; /*0x5dd8e2*/
+  if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v3, 1) == 1 ) /*0x5dd906*/
+  {
+    Debug::Log(); /*0x5dd911*/
+    memset(v11, 0, sizeof(v11)); /*0x5dd924*/
+    v12 = 0; /*0x5dd92a*/
+    v13 = 0; /*0x5dd942*/
+    v11[0] = 19; /*0x5dd943*/
+    Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 1, (int)&stru_A8BB1C, 0, 0); /*0x5dd94b*/
+    while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x5dd95c*/
+    {
+      if ( !Network::ReceiveLoop(&unk_A8E9C0) ) /*0x5dd963*/
+        break; /*0x5dd96a*/
+      Event::Dispatch(); /*0x5dd96c*/
+    }
+    goto LABEL_8; /*0x5dd97d*/
+  }
+  Debug::Log(); /*0x5dda12*/
+  if ( !dword_A8BB08 || (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5dda28*/
+  {
+    SynchronizeMultiplayerGameStart_Start(); /*0x5dda31*/
+    if ( RequestNetworkFile(byte_A8B8E0, 3, 1) ) /*0x5dda42*/
+    {
+      if ( !(uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() || RequestNetworkFile(v10, 3, 1) ) /*0x5dda68*/
+      {
+  LABEL_8:
+        strcpy((char *)&dword_A8B230[130].abstractFlags, byte_A8B8E0); /*0x5dd97f*/
+        LobbyStatus = Network::GetLobbyStatus((Network *)&unk_A8E9C0); /*0x5dd9b1*/
+        if ( LobbyStatus < 20 ) /*0x5dd9b9*/
+        {
+          Debug::Log(); /*0x5dd9c1*/
+          LobbyStatus = 20; /*0x5dd9c9*/
+        }
+        v5 = 8 * LobbyStatus; /*0x5dd9ce*/
+        if ( 8 * LobbyStatus < 120 ) /*0x5dd9d8*/
+          v5 = 120; /*0x5dd9da*/
+        Network::SetConnectionParams(&unk_A8E9C0, LobbyStatus, -1, v5, 1); /*0x5dd9ea*/
+        TacticalClass::SetCameraPosition(&unk_A8E9C0, 60, -1, 600); /*0x5dd9fd*/
+        return 1; /*0x5dda0c*/
+      }
+    }
+  }
+  *(unsigned int *)&g_GameRulesOptions = -1; /*0x5dda8c*/
+  StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddaaa*/
+  v7 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.TurretAnimData[2], 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
+  Dialog::ShowMessageBox(v7, StringCSF, 0, 0, 0, v1); /*0x5ddabf*/
+  memset(v11, 0, sizeof(v11)); /*0x5ddad3*/
+  v12 = 0; /*0x5ddad5*/
+  v13 = 0; /*0x5ddad7*/
+  v11[0] = 10; /*0x5ddae2*/
+  strcpy((char *)&v11[1], unk_A8B380); /*0x5ddaf9*/
+  for ( i = 1; i < dword_A8DA54; ++i ) /*0x5ddb0e*/
+  {
+    Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 1, *(unsigned int *)(dword_A8DA48 + 4 * i) + 40, 0, 0); /*0x5ddb32*/
+    Event::Dispatch(); /*0x5ddb37*/
+  }
+  Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 0, 0, 0, 0); /*0x5ddb5d*/
+  if ( dword_A8D5FC ) /*0x5ddb69*/
+    Network::SendMessage(&unk_A8E9C0.Socket, (int)v11, 455, 0, (int)&stru_A8D600, 0, 0); /*0x5ddb85*/
+  while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x5ddb96*/
+  {
+    if ( !Network::ReceiveLoop(&unk_A8E9C0) ) /*0x5ddb9d*/
+      break; /*0x5ddba4*/
+    Event::Dispatch(); /*0x5ddba6*/
+  }
+  return 0; /*0x5dda06*/
 }
 
 // SkirmishDialogProc @ 0x5DF180 (648B)
@@ -1025,9 +1104,6 @@ int Network_ModemConnectionDialog(void* /*Network*/ self) {
 
 // CleanupCampaignResources @ 0x5F0070 (175B)
 REVERSE(0x5F0070, "IDA decompilation", "None")
-int CleanupCampaignResources(void) {
-    return 0;
-}
 
 // Dialog::RunModemDialing @ 0x5F2950 (903B)
 REVERSE(0x5F2950, "IDA decompilation", "None")
@@ -1043,9 +1119,6 @@ int Dialog_CheckButtonState(void* /*Dialog*/ self) {
 
 // Gadget::InitProperties @ 0x600630 (45B)
 REVERSE(0x600630, "IDA decompilation", "None")
-int Gadget_InitProperties(void* /*Gadget*/ self) {
-    return 0;
-}
 
 // NavigateDialogTab @ 0x600C70 (47B)
 REVERSE(0x600C70, "IDA decompilation", "None")
@@ -1462,8 +1535,122 @@ int RulesClass_ReadMultiplayerDefaults(void* /*RulesClass*/ self) {
 
 // WaitForMultiplayerLoadSync @ 0x684370 (676B)
 REVERSE(0x684370, "IDA decompilation", "None")
-int WaitForMultiplayerLoadSync(void) {
-    return 0;
+// 0x684370
+int WaitForMultiplayerLoadSync(void)
+{
+  int v1; // ebx
+  int v2; // esi
+  int v3; // eax
+  int v6; // esi
+  int v7; // eax
+  int i; // esi
+  char *v11; // edi
+  int v12; // edi
+  int64_t v13; // [esp+10h] [ebp-40h]
+  int64_t v14; // [esp+18h] [ebp-38h]
+  int v15; // [esp+20h] [ebp-30h]
+  int v16; // [esp+28h] [ebp-28h]
+  int Ticks; // [esp+2Ch] [ebp-24h]
+  int v18; // [esp+34h] [ebp-1Ch]
+
+  if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x68438d*/
+    return 1; /*0x68460b*/
+  TimerGetTicks(); /*0x684397*/
+  Ticks = TimerGetTicks(); /*0x6843b5*/
+  v18 = 300; /*0x6843b9*/
+  v15 = TimerGetTicks(); /*0x6843cb*/
+  v16 = 3600; /*0x6843d3*/
+  Progress::GetAverage((Progress *)&g_UIManager); /*0x6843e0*/
+  __asm { fstp [esp+50h+var_40] } /*0x6843e5*/
+  while ( 1 )
+  {
+    EventQueue::Process(*(EventQueue **)&g_BinkMoviePlayer); /*0x6843ef*/
+    Event::Dispatch(); /*0x6843f4*/
+    v1 = 1; /*0x6843fe*/
+    if ( *(unsigned int *)&dword_A8B238 == 1 /*0x684418*/
+      && g_ClipboardBuffer
+      && (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 )
+    {
+      Debug::Log(); /*0x684524*/
+      return 0; /*0x684535*/
+    }
+    v2 = v16; /*0x684422*/
+    if ( v15 != -1 ) /*0x68442b*/
+    {
+      v3 = TimerGetTicks() - v15; /*0x684436*/
+      if ( v3 >= v16 ) /*0x68443c*/
+        break; /*0x68443c*/
+      v2 = v16 - v3; /*0x684442*/
+    }
+    if ( v2 <= 0 ) /*0x684446*/
+      break; /*0x684446*/
+    Progress::GetAverage((Progress *)&g_UIManager); /*0x684451*/
+    __asm /*0x684456*/
+    {
+      fcom ds:dbl_7F0E70
+      fst [esp+50h+var_38]
+      fnstsw ax
+    }
+    if ( (_AX & 0x100) == 0 )
+    {
+      __asm { fstp st } /*0x6845ed*/
+      Multiplayer::ShowProgress((int)((Multiplayer *)&dword_A8B238), (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) != 0 ? 200 : 100);
+      return 1; /*0x684605*/
+    }
+    __asm /*0x68446b*/
+    {
+      fcomp [esp+50h+var_40]
+      fnstsw ax
+    }
+    if ( (_AX & 0x4000) == 0 ) /*0x684474*/
+    {
+      v15 = TimerGetTicks(); /*0x684490*/
+      v16 = 7200; /*0x684498*/
+      v13 = v14; /*0x6844a4*/
+    }
+    v6 = v18; /*0x6844b0*/
+    if ( Ticks != -1 ) /*0x6844b6*/
+    {
+      v7 = TimerGetTicks() - Ticks; /*0x6844c1*/
+      if ( v7 >= v18 ) /*0x6844c7*/
+        goto LABEL_18; /*0x6844c7*/
+      v6 = v18 - v7; /*0x6844c9*/
+    }
+    if ( v6 <= 0 )
+    {
+  LABEL_18:
+      Ticks = TimerGetTicks(); /*0x6844d3*/
+      v18 = 60; /*0x6844f1*/
+      Multiplayer::ShowProgress((int)((Multiplayer *)&dword_A8B238), (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) != 0 ? 200 : 100);
+    }
+  }
+  for ( i = 1; i < dword_A8DA84; ++i ) /*0x68453f*/
+  {
+    Progress::GetWeighted((int)&g_UIManager, v1); /*0x68454b*/
+    __asm /*0x684550*/
+    {
+      fcomp ds:dbl_7F0E68
+      fnstsw ax
+    }
+    if ( (_AX & 0x100) != 0 ) /*0x68455b*/
+    {
+      v11 = (char *)((unsigned int *)(dword_A8DA78))[i]; /*0x684562*/
+      ToWideStringChar((IUnknown *)(v11)); /*0x684567*/
+      ToWideStringChar((IUnknown *)(v11)); /*0x684570*/
+      Debug::Log(); /*0x68457c*/
+      v12 = *(unsigned int *)((&dword_A8DA78)[i] + 111); /*0x684591*/
+      HandleNetworkPlayerDisconnect((wchar_t *)(v12), 1); /*0x684596*/
+      if ( SessionClass::IsValidHouse((void *)((int)&dword_A8B238), *((void **)stru_A80220.vfptr3 + v12)) ) /*0x6845aa*/
+      {
+        dword_A8E2AC = -1; /*0x6845bf*/
+        memset((void *)(word_A8E258), 0, 0x28u); /*0x6845c9*/
+        ((unsigned int *)(word_A8E258))[20] = 0; /*0x6845cb*/
+      }
+      --i; /*0x6845cd*/
+    }
+    ++v1; /*0x6845d3*/
+  }
+  return 0; /*0x68452e*/
 }
 
 // Multiplayer::FindStartPositions @ 0x688380 (813B)

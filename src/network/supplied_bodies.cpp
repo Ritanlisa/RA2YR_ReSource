@@ -500,64 +500,6 @@ int IPXManagerClass::ProcessQueue() {
   return result; /*0x542614*/
 }
 }
-// 0x542520
-namespace gamemd {
-int IPXManagerClass::ProcessQueue()
-{
-  int v2; // ebx
-  int result; // eax
-  IPXManagerClass *v4; // edi
-  int *v5; // esi
-  Object *v6; // ecx
-  int *v7; // eax
-  int v8; // ecx
-  int v9; // eax
-  unsigned int v10; // kr00_4
-  signed int v11; // eax
-
-  v2 = 0; /*0x542524*/
-  result = this->u32_44; /*0x542526*/
-  if ( result > 0 ) /*0x54252b*/
-  {
-    v4 = &this->Active; /*0x542533*/
-    v5 = (int *)&unk_A8B5B4; /*0x542536*/
-    do /*0x54260c*/
-    {
-      v6 = (Object *)*((unsigned int *)stru_A80220.vfptr3 + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
-      if ( v6 && v6 != dword_A83D4C ) /*0x542557*/
-      {
-        if ( !*((unsigned char *)v5 - 64) ) /*0x54255d*/
-        {
-          CopyWideToChar((unsigned char *)v5 - 64, (char *)(v4->Socket + 104), -1); /*0x54256c*/
-          v7 = (int *)(v4->Socket + 76); /*0x542576*/
-          v5[7] = *v7; /*0x54257b*/
-          v5[8] = v7[1]; /*0x542580*/
-          v5[9] = v7[2]; /*0x542586*/
-        }
-        v8 = 1000 * IPXManagerClass::init(*(IPXManagerClass **)(v4->Socket + 4)); /*0x5425a1*/
-        v9 = *v5; /*0x5425b2*/
-        if ( *v5 <= v8 / 60 ) /*0x5425b6*/
-          v9 = v8 / 60; /*0x5425b8*/
-        *v5 = v9; /*0x5425ba*/
-        v10 = 1000 * CellClass::GetBridgeIndex(*(CellClass **)(v4->Socket + 4)); /*0x5425c6*/
-        v11 = v5[4]; /*0x5425d9*/
-        if ( (int)(v10 / 0x3C) > v11 ) /*0x5425e1*/
-          v11 = v10 / 0x3C; /*0x5425e3*/
-        v5[4] = v11; /*0x5425e5*/
-        v5[1] = *(unsigned int *)(v4->Socket + 8); /*0x5425ed*/
-        v5[2] = *(unsigned int *)(v4->Socket + 12); /*0x5425f5*/
-        v5[3] = *(unsigned int *)(v4->Socket + 16); /*0x5425fd*/
-      }
-      result = this->u32_44; /*0x542600*/
-      ++v2; /*0x542603*/
-      v4 = (IPXManagerClass *)((char *)v4 + 4); /*0x542604*/
-      v5 += 26; /*0x542607*/
-    }
-    while ( v2 < result ); /*0x54260c*/
-  }
-  return result; /*0x542614*/
-}
-} // namespace gamemd
 
 // 0x542EC0
 namespace gamemd {
@@ -2615,62 +2557,10 @@ char MultiplayerSiegeDefenderTeam::AddRef() {
   return result; /*0x5caea1*/
 }
 }
-// 0x5C10B0
-namespace gamemd {
-bool MultiplayerBattleTeam::Release(int a2) {
-  return PlayerClass::SetHouse((MultiplayerTeam *)this, a2) != 0; /*0x5c10bf*/
-}
-} // namespace gamemd
 
-// 0x5C10D0
-namespace gamemd {
-void ** MultiplayerBattleTeam::QueryInterface(char a2) {
-  MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c10d3*/
-  if ( (a2 & 1) != 0 ) /*0x5c10dd*/
-    operator delete((void *)(this)); /*0x5c10e0*/
-  return (void **)this; /*0x5c10ea*/
-}
-} // namespace gamemd
 
-// 0x5C94C0
-namespace gamemd {
-bool MultiplayerObserverTeam::AddRef() {
-  return PlayerClass::IsValidIndex((int)this); /*0x5c94ca*/
-}
-} // namespace gamemd
 
-// 0x5C94D0
-namespace gamemd {
-void ** MultiplayerObserverTeam::QueryInterface(char a2) {
-  MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c94d3*/
-  if ( (a2 & 1) != 0 ) /*0x5c94dd*/
-    operator delete((void *)(this)); /*0x5c94e0*/
-  return (void **)this; /*0x5c94ea*/
-}
-} // namespace gamemd
 
-// 0x5CAE70
-namespace gamemd {
-char MultiplayerSiegeDefenderTeam::AddRef() {
-  MultiplayerSiegeDefenderTeam *v1; // ecx
-  char result; // al
-  unsigned int *i; // esi
-
-  v1 = 0; /*0x5cae77*/
-  result = 1; /*0x5cae7d*/
-  if ( dword_A8DA84 > 0 ) /*0x5cae82*/
-  {
-    for ( i = dword_A8DA78; this == v1 || *(unsigned int *)(*i + 107) != 1; ++i ) /*0x5cae84*/
-    {
-      v1 = (MultiplayerSiegeDefenderTeam *)((char *)v1 + 1); /*0x5cae99*/
-      if ( (int)v1 >= dword_A8DA84 ) /*0x5cae9f*/
-        return result; /*0x5cae9f*/
-    }
-    return 0; /*0x5caea7*/
-  }
-  return result; /*0x5caea1*/
-}
-}
 // 0x5C10D0
 namespace gamemd {
 void MultiplayerBattleTeam::QueryInterface()
@@ -2682,45 +2572,8 @@ void MultiplayerBattleTeam::QueryInterface()
 }
 } // namespace gamemd
 
-// 0x5C94C0
-namespace gamemd {
-bool MultiplayerObserverTeam::AddRef() {
-  return PlayerClass::IsValidIndex((int)this); /*0x5c94ca*/
-}
-} // namespace gamemd
 
-// 0x5C94D0
-namespace gamemd {
-void ** MultiplayerObserverTeam::QueryInterface(char a2) {
-  MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5c94d3*/
-  if ( (a2 & 1) != 0 ) /*0x5c94dd*/
-    operator delete((void *)(this)); /*0x5c94e0*/
-  return (void **)this; /*0x5c94ea*/
-}
-} // namespace gamemd
 
-// 0x5CAE70
-namespace gamemd {
-char MultiplayerSiegeDefenderTeam::AddRef() {
-  MultiplayerSiegeDefenderTeam *v1; // ecx
-  char result; // al
-  unsigned int *i; // esi
-
-  v1 = 0; /*0x5cae77*/
-  result = 1; /*0x5cae7d*/
-  if ( dword_A8DA84 > 0 ) /*0x5cae82*/
-  {
-    for ( i = dword_A8DA78; this == v1 || *(unsigned int *)(*i + 107) != 1; ++i ) /*0x5cae84*/
-    {
-      v1 = (MultiplayerSiegeDefenderTeam *)((char *)v1 + 1); /*0x5cae99*/
-      if ( (int)v1 >= dword_A8DA84 ) /*0x5cae9f*/
-        return result; /*0x5cae9f*/
-    }
-    return 0; /*0x5caea7*/
-  }
-  return result; /*0x5caea1*/
-}
-}
 // 0x5C94D0
 namespace gamemd {
 void MultiplayerObserverTeam::QueryInterface()
@@ -2732,29 +2585,6 @@ void MultiplayerObserverTeam::QueryInterface()
 }
 } // namespace gamemd
 
-// 0x5CAE70
-namespace gamemd {
-void MultiplayerSiegeDefenderTeam::AddRef()
-{
-  MultiplayerSiegeDefenderTeam *v1; // ecx
-  char result; // al
-  unsigned int *i; // esi
-
-  v1 = 0; /*0x5cae77*/
-  result = 1; /*0x5cae7d*/
-  if ( dword_A8DA84 > 0 ) /*0x5cae82*/
-  {
-    for ( i = dword_A8DA78; this == v1 || *(unsigned int *)(*i + 107) != 1; ++i ) /*0x5cae84*/
-    {
-      v1 = (MultiplayerSiegeDefenderTeam *)((char *)v1 + 1); /*0x5cae99*/
-      if ( (int)v1 >= dword_A8DA84 ) /*0x5cae9f*/
-        return result; /*0x5cae9f*/
-    }
-    return 0; /*0x5caea7*/
-  }
-  return result; /*0x5caea1*/
-}
-} // namespace gamemd
 
 // 0x5CAF10
 namespace gamemd {
@@ -5015,27 +4845,7 @@ uint8_t WOLOption::SetValue(const char **a2) {
   return result; /*0x77a4c4*/
 }
 }
-// 0x74FDB0
-namespace gamemd {
-int NetworkBuffer::GetField3() {
-  return 0x20000; /*0x74fdb5*/
-}
-} // namespace gamemd
 
-// 0x77A4A0
-namespace gamemd {
-uint8_t WOLOption::SetValue(const char **a2) {
-  uint8_t result; // al
-
-  result = String::Compare(a2, (const char **)(this + 12)); /*0x77a4af*/
-  if ( !result ) /*0x77a4b6*/
-  {
-    result = (uint8_t)String::Reassign((char **)(this + 12), a2); /*0x77a4bb*/
-    this->u32_8 = 1; /*0x77a4c0*/
-  }
-  return result; /*0x77a4c4*/
-}
-}
 // 0x77A4A0
 namespace gamemd {
 void WOLOption::SetValue()

@@ -13,7 +13,6 @@ MouseCursor::MouseCursor(int32_t frame, int32_t count, int32_t interval,
 
 void WWMouseClass::Draw(const CellStruct& coords, const SHPStruct* pImage, int32_t idxFrame) {}
 
-bool WWMouseClass::IsRefCountNegative() { return false; }
 
 void WWMouseClass::HideCursor() {}
 

@@ -30,49 +30,6 @@
 #include "e4/classes/NukeFlash_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
 
-// 0x43A350
-namespace gamemd {  // G42.18 ns repair
-NeuronClass::NeuronClass()
-{
-
-  int v2; // eax
-  int v3; // eax
-
-  AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
-  this->u32_24 = 0; /*0x43a358*/
-  this->u32_28 = 0; /*0x43a35f*/
-  this->u32_2C = 0; /*0x43a366*/
-  this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
-  /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a375) */
-  this->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a37b*/
-  /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a382) */
-  this->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a389*/
-  if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
-    || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
-    && g_BuildingLoadQueue_Array.?[2] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&g_BuildingLoadQueue_Array.?[2] + 8))(
-         &g_BuildingLoadQueue_Array.?[2],
-         g_BuildingLoadQueue_Array.? + g_BuildingLoadQueue_Array.?[2],
-         0) )
-  {
-    v2 = g_BuildingLoadQueue_Array.?[1]++; /*0x43a3d2*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.?[0] + 4 * v2) = this; /*0x43a3e1*/
-  }
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a41b*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
-         0) )
-  {
-    v3 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x43a428*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3) = this; /*0x43a437*/
-  }
-  return (int)this->vtable1; /*0x43a43c*/
-
-}
-}  // G42.18c ns repair
 // 0x43A9C0
 namespace gamemd {  // G42.18c ns repair
 void * NeuronClass::Reset(unsigned int * Block, char a2)

@@ -1275,6 +1275,7 @@ int AircraftClass::Mission_Unload_full()
 }
 
 // IDA: 0x41BE60 (LandingCheckStub, 5B) — q000 entry, always returns 0
+// 0x41BE60
 int AircraftClass::LandingCheckStub()
 {
     return 0;
@@ -1303,11 +1304,12 @@ int AircraftClass::CheckPassengerCount()
 // Phase 3: Spawn/Dock
 // ============================================================
 
-// IDA: 0x41ADC0 (ProcessDockCheck, 37B)  [0x41ADF0 is RevealSight, a different function]
+// 0x41ADC0
 int AircraftClass::ProcessDockCheck()
 {
-    // Check docking status with airfield/helipad
-    return 0;
+  if ( !this->locomotor[0] ) /*0x41adc3*/
+    sub_7DC720(-2147467261); /*0x41add2*/
+  return (*(int (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 116))(this->locomotor[0]); /*0x41ade3*/
 }
 
 // IDA: 0x41B9F0 (UpdateDocking, 77B)
@@ -1317,18 +1319,19 @@ int AircraftClass::UpdateDocking()
     return 0;
 }
 
-// IDA: 0x41C070 (CheckDockState, 7B)
+// 0x41C070
 int AircraftClass::CheckDockState()
 {
-    // Check if docked
-    return 0;
+  return this->frozenStill; /*0x41c076*/
 }
 
-// IDA: 0x41C020 (CheckReloadTimer, 9B)
+// 0x41C020
 int AircraftClass::CheckReloadTimer()
 {
-    // Check reload timer
-    return 0;
+  int result; // eax
+
+  (*((unsigned char *)&(result))) = this->isDisguisedFlag; /*0x41c020*/
+  return result; /*0x41c026*/
 }
 
 // ============================================================
@@ -1576,11 +1579,38 @@ int AircraftClass::CheckReloadTimer()
     return 45; /*0x41a854*/
   }
 }
-// IDA: 0x41A940 (EvaluateTargetingState, 157B)
+// 0x41A940
 int AircraftClass::EvaluateTargetingState()
 {
-    // Evaluate targeting state
-    return 0;
+
+  int v2; // edi
+
+  v2 = (*(int (**)(AircraftTypeClass *))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41a956*/
+  if ( (*((int (**)(AircraftClass *))this->FootClass + 114))(this) == v2 ) /*0x41a960*/
+  {
+    if ( !this->team ) /*0x41a962*/
+      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a974*/
+    return 1; /*0x41a97b*/
+  }
+  else
+  {
+    if ( !this->focus /*0x41a99c*/
+      && (*((unsigned __int8 (**)(AircraftClass *))this->FootClass + 171))(this)
+      && !(unsigned __int8)Team::AllMembersValid((Team *)this) )
+    {
+      (*((void (**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a9ad*/
+    }
+    if ( this->AbstractClass_2B4 ) /*0x41a9b3*/
+    {
+      (*((void (**)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 1, 0); /*0x41a9c5*/
+      return 1; /*0x41a9cc*/
+    }
+    else
+    {
+      return FootClass::FindAITarget((FootClass *)this); /*0x41a9d5*/
+    }
+  }
+
 }
 
 // IDA: 0x41AA80 (AssignDestination_SyncLog, 831B)
@@ -1771,25 +1801,34 @@ int AircraftClass::GetActionOnObject()
     sub_7DC720(-2147467261); /*0x41b957*/
   return (*(uint8_t (__stdcall **)(int))(*(unsigned int *)verified->locomotor[0] + 128))(verified->locomotor[0]) != 0; /*0x41b946*/
 }
-// IDA: 0x41B980 (IsBelowScreen, 82B)
+// 0x41B980
 int AircraftClass::IsBelowScreen()
 {
-    // Check if aircraft is below screen bounds
-    return 0;
+
+  AircraftTypeClass *Type; // eax
+
+  Type = this->Type; /*0x41b989*/
+  if ( Type != *(AircraftTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 1248) /*0x41b99d*/
+    && Type != *(AircraftTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 1300) )
+  {
+    return ObjectClass::IsBelowScreen((IUnknown *)this); /*0x41b9a1*/
+  }
+  if ( !this->locomotor ) /*0x41b9a8*/
+    WinAPI::Wrapper(-2147467261); /*0x41b9b7*/
+  return (*(unsigned __int8 (**)(int))(*(unsigned int *)this->focus + 128))(this->focus) == 0; /*0x41b9a6*/
+
 }
 
-// IDA: 0x41C1D0 (CheckMissionAbort, 10B)
+// 0x41C1D0
 int AircraftClass::CheckMissionAbort()
 {
-    // Check if mission should abort
-    return 0;
+  return *&this->Type[96]; /*0x41c1d9*/
 }
 
-// IDA: 0x41C200 (CheckMissionFail, 7B)
+// 0x41C200
 int AircraftClass::CheckMissionFail()
 {
-    // Check if mission failed
-    return 0;
+  return (int)this->Type; /*0x41c206*/
 }
 
 // IDA: 0x41C210 (CheckActionStatus, 30B)
@@ -1799,32 +1838,32 @@ int AircraftClass::CheckActionStatus()
     return 0;
 }
 
-// IDA: 0x5B2E90 (CheckMissionStatus, 6B)
+// 0x5B2E90
 int AircraftClass::CheckMissionStatus()
 {
-    // Check mission status
-    return 0;
+  return 450; /*0x5b2e95*/
 }
 
-// IDA: 0x5B2F30 (CheckMissionStatus2, 6B)
+// 0x5B2F30
 int AircraftClass::CheckMissionStatus2()
 {
-    // Check mission status (variant)
-    return 0;
+  return 450; /*0x5b2f35*/
 }
 
-// IDA: 0x41BE80 (CheckStateFlag, 3B)
+// 0x41BE80
 int AircraftClass::CheckStateFlag()
 {
-    // Check state flag
-    return 0;
+  int result; // eax
+
+  return result; /*0x41be80*/
 }
 
-// IDA: 0x41BE90 (CheckStateFlag2, 3B)
+// 0x41BE90
 int AircraftClass::CheckStateFlag2()
 {
-    // Check state flag (variant)
-    return 0;
+  int result; // eax
+
+  return result; /*0x41be90*/
 }
 
 // ============================================================

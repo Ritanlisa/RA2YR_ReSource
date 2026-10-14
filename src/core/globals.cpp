@@ -1307,11 +1307,7 @@ pop     ebx
 retn    8
 */
 
-// IDA: 0x55D360 -- GameFrameLoop stub
-bool GameFrameLoop() { return false; }
 
-// IDA: 0x55CFD0 -- GameFrameCheck stub
-bool GameFrameCheck() { return false; }
 
 // IDA: 0x48C8B0 -- MainGameFrame stub
 void MainGameFrame() {

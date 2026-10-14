@@ -42839,10 +42839,79 @@ _DWORD * ZoneConnectionVector::Destruct(char p0)
 // 0x55CBF0 numeric-name legalized
 // 0x543780 constructor placeholder
 IsometricTileClass::IsometricTileClass() {}  // G42: placeholder ctor synced to hpp decl (params were placeholders)
-// 0x4A7A30 constructor placeholder
-DiskLaserClass::DiskLaserClass() {}
-// 0x43A350 constructor placeholder
-NeuronClass::NeuronClass() {}
+// 0x4A7A30
+DiskLaserClass::DiskLaserClass()
+{
+
+  int v2; // eax
+
+  AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
+  /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a3a) */
+  this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass::`vftable'; /*0x4a7a40*/
+  /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a47) */
+  this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass::`vftable'; /*0x4a7a4e*/
+  this->q024 = 0; /*0x4a7a55*/
+  this->q028 = 0; /*0x4a7a58*/
+  this->u32_2C = 0; /*0x4a7a5b*/
+  this->q030 = 0; /*0x4a7a5e*/
+  this->u32_34 = 0; /*0x4a7a61*/
+  this->u32_38 = 0; /*0x4a7a64*/
+  this->u32_3C = 0; /*0x4a7a67*/
+  if ( dword_8A0218 < dword_8A0210 /*0x4a7a9e*/
+    || (byte_8A0215 || !dword_8A0210)
+    && dword_8A021C > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_8A0208 + 8))(
+         &dword_8A0208,
+         dword_8A0210 + dword_8A021C,
+         0) )
+  {
+    v2 = dword_8A0218++; /*0x4a7aab*/
+    *((unsigned int *)dword_8A020C + v2) = this; /*0x4a7aba*/
+  }
+  return (int)this->vtable1; /*0x4a7abf*/
+
+}
+// 0x43A350
+NeuronClass::NeuronClass()
+{
+
+  int v2; // eax
+  int v3; // eax
+
+  AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
+  this->u32_24 = 0; /*0x43a358*/
+  this->u32_28 = 0; /*0x43a35f*/
+  this->u32_2C = 0; /*0x43a366*/
+  this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
+  /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a375) */
+  this->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a37b*/
+  /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a382) */
+  this->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a389*/
+  if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
+    || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
+    && g_BuildingLoadQueue_Array.?[2] > 0
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&g_BuildingLoadQueue_Array.?[2] + 8))(
+         &g_BuildingLoadQueue_Array.?[2],
+         g_BuildingLoadQueue_Array.? + g_BuildingLoadQueue_Array.?[2],
+         0) )
+  {
+    v2 = g_BuildingLoadQueue_Array.?[1]++; /*0x43a3d2*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.?[0] + 4 * v2) = this; /*0x43a3e1*/
+  }
+  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a41b*/
+    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
+    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+         &g_BuildingLoadQueue_Array.LightVisibility,
+         g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
+         0) )
+  {
+    v3 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x43a428*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3) = this; /*0x43a437*/
+  }
+  return (int)this->vtable1; /*0x43a43c*/
+
+}
 
 WorldDominationTour::WorldDominationTour() {
 }  // L-fix: close namespace tail 1

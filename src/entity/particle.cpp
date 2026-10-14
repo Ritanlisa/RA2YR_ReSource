@@ -146,8 +146,64 @@ AbstractType __stdcall ParticleClass::whatAmI() const { return kObjectTypeId; }
 int ParticleClass::objectSize() const { return sizeof(ParticleClass); }
 int ParticleClass::onParticleExpired() { return 0; }
 
-// 0x62d5e0 -- ParticleClass::AdjustHeight (moved from building.cpp stub land;
-// original owner BuildingClass was a misattribution, see particle.hpp comment)
-int ParticleClass::AdjustHeight() {}
+// 0x62D5E0
+int ParticleClass::AdjustHeight()
+{
+  int v2; // eax
+  int v3; // eax
+  int result; // eax
+  double v5; // st7
+  int v6; // ebx
+  int v7; // edi
+  int v8; // eax
+  int GroundHeight; // edi
+  int v10; // [esp+4h] [ebp-18h] BYREF
+  int v11; // [esp+8h] [ebp-14h]
+  int v12; // [esp+Ch] [ebp-10h]
+  unsigned int v13[3]; // [esp+10h] [ebp-Ch] BYREF
+
+  v2 = *(unsigned int *)(*(&this->q0103) + 788); /*0x62d5ec*/
+  if ( !v2 ) /*0x62d5f5*/
+    return BuildingClass::UpdateFloatPosition(); /*0x62d6db*/
+  v3 = v2 - 1; /*0x62d5fb*/
+  if ( v3 ) /*0x62d5fc*/
+  {
+    result = v3 - 1; /*0x62d602*/
+    if ( !result ) /*0x62d603*/
+    {
+      v5 = this->Tactical_E4; /*0x62d609*/
+      v13[0] = *(&this->vtable49); /*0x62d623*/
+      v6 = *(&this->q0100); /*0x62d627*/
+      v13[2] = *(&this->q0101); /*0x62d630*/
+      v7 = *(&this->q0101); /*0x62d636*/
+      v10 = v13[0]; /*0x62d639*/
+      v11 = v6; /*0x62d640*/
+      v12 = v7; /*0x62d644*/
+      v13[1] = v6; /*0x62d648*/
+      if ( v5 > 0.0 ) /*0x62d64c*/
+      {
+        v8 = this->u32_108; /*0x62d654*/
+        v10 = this->q0100 + v13[0]; /*0x62d65c*/
+        v11 = this->u32_104 + v6; /*0x62d66a*/
+        v12 = v8 + v7; /*0x62d66e*/
+      }
+      if ( this->Tactical_E4 > 0.0 ) /*0x62d683*/
+      {
+        GroundHeight = Cell::GetGroundHeight(v13); /*0x62d69e*/
+        if ( (int)Cell::GetGroundHeight(&v10) > GroundHeight ) /*0x62d6a7*/
+        {
+          this->u32_12D = 1; /*0x62d6ab*/
+          this->u32_131 = 1; /*0x62d6b1*/
+        }
+      }
+      return (&v10); /*0x62d6c0*/
+    }
+  }
+  else
+  {
+    ParticleClass::CheckWaterImpact(); /*0x62d6cf*/
+  }
+  return result; /*0x62d6c8*/
+}
 
 } // namespace gamemd

@@ -29,13 +29,6 @@ int DialogControl::DialogControl::Show(void *a1, void *a2)
   return ();
 }
 } // namespace gamemd
-// 0x4E1470
-namespace gamemd {
-int DialogControl::IsHidden()
-{
-  return this->u32_1E == 0; /*0x4e147a*/
-}
-} // namespace gamemd
 // 0x623340
 namespace gamemd {
 unsigned int * DialogControl::Constructor()

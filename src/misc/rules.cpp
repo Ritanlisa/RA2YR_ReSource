@@ -22,24 +22,6 @@ namespace gamemd {
 //   Wake=7, NukeTakeOff=21, InfantryExplode=15
 //   + TypeList/VectorClass constructors at various offsets
 
-// ============================================================
-// IDA 0x52CD70 -- InitRules (1728B)
-// Loads RULESMD.INI chain + ARTMD.INI + AIMD.INI + LANGRULE.INI
-// ============================================================
-bool InitRules()
-{
-    // IDA 0x52CD82: RulesClass::ClearINIChain(0, 0)
-    // IDA 0x52CDB2: FindFirstFileA("RULEMD*.INI") -- dynamic INI chain
-    // IDA 0x52D0FF: RulesClass::ReadColors -- [Colors] section
-    // IDA 0x52D111: RulesClass::ReadColorAdd -- [ColorAdd] section
-    // IDA 0x52D121: RulesClass::ReadMovies -- ARTMD.INI [Movies]
-    // IDA 0x52D132: RulesClass::ReadMiscINI
-    // IDA 0x52D144: Dialog::ReadMultiplayerDialogSettings
-    // IDA 0x52D159-0x52D20D: Copy RulesClass settings -- global vars
-    // IDA 0x52D231-0x52D317: LANGRULE.INI + RulesClass::Addition
-    // IDA 0x52D363-0x52D3A5: AIMD.INI load
-    return true; // TODO: full INI chain
-}
 
 // ============================================================
 REVERSE(0x530000, "LoadExpansionMixFiles: IDA verified", "None")

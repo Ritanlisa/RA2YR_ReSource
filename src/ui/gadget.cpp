@@ -246,33 +246,6 @@ void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isS
         p->q020 = flags | 5;
 }
 
-// IDA 0x4E1390: GadgetClass::Dtor — destructor, clears global gadget pointers
-int GadgetClass::Dtor()
-{
-    // IDA: *this = &GadgetClass::vftable (restore q000)
-    // Clears dword_8B3E90, dword_8B3E88, dword_8B3E8C if they point to this
-    // Returns LinkClass::Destruct()
-
-    // Global gadget state pointers (IDA .data)
-    static void* g_focusedGadget = nullptr;   // dword_8B3E90
-    static void* g_prevGadget = nullptr;      // dword_8B3E88
-    static void* g_otherGadget = nullptr;     // dword_8B3E8C
-
-    if ((void*)this == g_focusedGadget) {
-        uint8_t* p = (uint8_t*)(this);
-        unsigned flags = p->q020;
-        flags &= ~1u;
-        p->q020 = flags;
-        g_focusedGadget = nullptr;
-    }
-    if ((void*)this == g_prevGadget)
-        g_prevGadget = nullptr;
-    if ((void*)this == g_otherGadget)
-        g_otherGadget = nullptr;
-    if ((void*)this == g_focusedGadget)
-        g_focusedGadget = nullptr;
-    return 0; // LinkClass::Destruct equivalent
-}
 
 // IDA 0x4E1550: GadgetClass::ClearState — clear sticky/selected state
 bool GadgetClass::ClearState(bool force)
@@ -284,14 +257,6 @@ bool GadgetClass::ClearState(bool force)
     return true;
 }
 
-// IDA 0x723EA0: GadgetClass::Show — make gadget visible
-void GadgetClass::Show()
-{
-    uint8_t* p = (uint8_t*)(this);
-    // IDA: q000 call to vfunc at +72 (update/redraw), set byte at +45 (0x2D) to 1
-    p[0x2D] = 1; // Visible flag at offset 0x2D
-    // q000[72/4=18]() — redraw callback, skipped for modern C++
-}
 
 // IDA 0x723EB0: GadgetClass::Hide — hide gadget
 void GadgetClass::Hide()
@@ -383,36 +348,7 @@ static void SimpleDialogControl_Construct(void* self)
 // Size 0x200 (512 bytes), used for menu screen control tracking
 // ============================================================================
 
-// IDA 0x623340: DialogControl::Constructor — zero-init 0x200 bytes, set defaults
-void DialogControl::Constructor()
-{
-    uint8_t* p = (uint8_t*)(this);
-    memset(p, 0, 0x200);
 
-    p->u32_68 = 11;     // +26 dwords = 0x68: default value 11
-    p->q064 = 1;      // +25 dwords: g_FogOfWarState-like
-
-    // Allocate internal sub-struct
-    void* sub = operator new(4);
-    if (sub) {
-        memset(sub, 0, 4);
-        p->u32_3C = (int)(sub); // +15 dwords
-    } else {
-        p->u32_3C = 0;
-    }
-
-    p->u32_40 = 0;      // +16 dwords = 0
-    p->u32_5C = 0;      // +23 dwords = 0
-    p->u32_90 = -1;     // +36 dwords = -1
-}
-
-// IDA 0x4E1450: DialogControl::Hide
-void DialogControl::Hide()
-{
-    uint8_t* p = (uint8_t*)(this);
-    p[0x1E] = 0; // byte at +30 = 0 (visible flag off)
-    p[0x1C] = 1; // byte at +28 = 1 (needs redraw)
-}
 
 // IDA 0x4E1460: DialogControl::Show
 void DialogControl::Show()
@@ -423,6 +359,7 @@ void DialogControl::Show()
 }
 
 // IDA 0x4E1470: DialogControl::IsHidden
+// 0x4E1470
 bool DialogControl::IsHidden()
 {
     uint8_t* p = (uint8_t*)(this);
@@ -485,21 +422,6 @@ void DialogQueue::PushEntry(int entryType, int param)
     p->u32_0 = count + 1;
 }
 
-// IDA 0x5D4ED0: DialogQueue::RemoveEntry — remove entry from front of queue
-// Returns: 0 = queue empty, 1 = removed entry
-int DialogQueue::RemoveEntry()
-{
-    uint8_t* p = (uint8_t*)(this);
-    int count = p->u32_0;
-    if (count <= 0) return 0;
-
-    // Shift entries left
-    int tail = count - 1;
-    if (tail > 0)
-        memmove(p + 0x04, p + 0x0C, tail * 8);
-    p->u32_0 = tail;
-    return 1;
-}
 
 // ============================================================================
 // DialogClass methods (original binary)

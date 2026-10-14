@@ -1375,14 +1375,7 @@ static char ShowExitDialog() {
     return result;
 }
 
-// ============================================================================
-// Section 19: ShowSaveLoadDialog / ShowGameDialog / ShowConfirmDialog stubs
-// ============================================================================
-// (REVERSE marker moved to menu_globals_gen.cpp)
-static void ShowSaveLoadDialog() {}
 
-// (REVERSE marker moved to menu_globals_gen.cpp)
-static void ShowGameDialog() {}
 
 // (REVERSE marker moved to menu_globals_gen.cpp)
 static bool ShowConfirmDialog(const wchar_t*) { return true; }
@@ -1390,183 +1383,21 @@ static bool ShowConfirmDialog(const wchar_t*) { return true; }
 // (REVERSE marker moved to menu_globals_gen.cpp)
 static void ShowHotkeyOptionsDialog() { ShowHotkeyOptionsDialog_Impl(); }
 
-// (REVERSE marker moved to menu_globals_gen.cpp)
-static void ShowDiplomacyDialog() {}
 
 // (REVERSE marker moved to menu_globals_gen.cpp)
 static void ShowAudioSettingsDialog() { ShowAudioSettingsDialog_Impl(); }
 
-// (REVERSE marker moved to menu_globals_gen.cpp)
-static void ShowWOLLobbyDialog() {}
 
-// ============================================================================
-// Section 20: Game Frame Stubs (IDA: 0x55D360, 0x55CFD0, 0x48C8B0)
-// ============================================================================
-static bool GameFrameLoop() {
-    Event_Dispatch();
-    return true;
-}
 
 static bool GameFrameCheck() {
     return (GetAsyncKeyState(VK_ESCAPE) & 0x8000) != 0;
 }
 
-static void MainGameFrame() {
-    Event_Dispatch();
-}
 
-// ============================================================================
-// Section 21: MenuSelect — IDA 0x52D9A0 (4536B, 222BBs, 19-case state machine)
-// ============================================================================
-// (REVERSE marker moved to menu_globals_gen.cpp)
-char MenuSelect() {
-    g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
-    g_GameMode = 0;
-
-    while (true) {
-        Event_Dispatch();
-        switch (g_MenuState) {
-        // IDA case -1 (Reset): go to MainMenu
-        case MenuState::Reset:
-        case MenuState::MainMenu:
-            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
-            break;
-
-        // IDA case 1: Campaign::Screen(1)
-        case MenuState::Campaign:
-            g_MenuState = (gamemd::MenuState)(Campaign_Screen(1));
-            break;
-
-        // IDA case 2: Skirmish
-        case MenuState::Skirmish:
-            g_GameMode = (int)((void *)(GMODE_SKIRMISH));
-            g_MenuState = (gamemd::MenuState)(MenuState::NetworkGameFlow);
-            MultiplayerScreen(2);
-            break;
-
-        // IDA case 3: Internet/Multiplayer
-        case MenuState::Multiplayer:
-            g_GameMode = (int)((void *)(GMODE_INTERNET));
-            g_MenuState = (gamemd::MenuState)(MenuState::NetworkGameFlow);
-            MultiplayerScreen(1);
-            break;
-
-        // IDA case 4: Campaign second path
-        case MenuState::CampaignSub:
-            g_MenuState = (gamemd::MenuState)(Campaign_Screen(1));
-            break;
-
-        // IDA case 5: Options
-        case MenuState::Options:
-            Options_Screen_Dialog();
-            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
-            break;
-
-        // IDA case 6: Exit confirm
-        case MenuState::ExitConfirm:
-            g_MenuState = ShowExitDialog()
-                ? MenuState::StartScenario
-                : MenuState::MenuIdle;
-            break;
-
-        // IDA case 7: Exit process
-        case MenuState::StartScenario:
-            Event_Dispatch();
-            return 0;
-
-        // IDA case 8: New game start → return 1
-        case MenuState::WOLInternet:
-            Event_Dispatch();
-            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
-            Event_Dispatch();
-            Event_Dispatch();
-            return 1;
-
-        // IDA case 9: Load savegame
-        case MenuState::SaveLoadGame:
-            ShowSaveLoadDialog();
-            g_MenuState = (gamemd::MenuState)(MenuState::Campaign);
-            break;
-
-        // IDA case 10: Back to campaign
-        case MenuState::QuickMatch:
-            g_MenuState = (gamemd::MenuState)(MenuState::Campaign);
-            break;
-
-        // IDA case 11: Skirmish Mode 5
-        case MenuState::NetworkGame5:
-            g_GameMode = (int)((void *)(GMODE_SKIRMISH_SETUP));
-            goto L81;
-
-        // IDA case 13: Play movie
-        case MenuState::CampaignInit:
-            g_MenuState = (gamemd::MenuState)(MenuState::CampaignSub);
-            break;
-
-        // IDA case 14: Campaign + CD check
-        case MenuState::CampaignLoadCD:
-            g_MenuState = (gamemd::MenuState)(MenuState::CampaignSub);
-            break;
-
-        // IDA case 15: Credits
-        case MenuState::CampaignIntro:
-            Event_Dispatch();
-            g_MenuState = (gamemd::MenuState)(MenuState::CampaignSub);
-            break;
-
-        // IDA case 16/17: Network game flow
-        case MenuState::NetworkGameFlow:
-        case MenuState::NetworkGameFlow2:
-            goto L81;
-
-        // IDA case 18: MainMenu
-        case MenuState::MenuIdle:
-            g_MenuState = (gamemd::MenuState)(MainMenu_Screen());
-            break;
-        }
-        continue;
-
-    L81:
-        switch (g_GameMode) {
-        case GMODE_MENU:
-            g_MenuState = (gamemd::MenuState)(MenuState::MenuIdle);
-            break;
-        case GMODE_CAMPAIGN:
-        case GMODE_CAMPAIGN_SUB:
-            return 1;
-        case GMODE_INTERNET:
-            return 1;
-        case GMODE_SKIRMISH:
-            g_MenuState = (gamemd::MenuState)(SkirmishSetupScreen());
-            break;
-        case GMODE_SKIRMISH_SETUP:
-            g_MenuState = (gamemd::MenuState)(SkirmishSetupScreen());
-            break;
-        }
-    }
-}
 
 // ============================================================================
 // Section 22: MainGame — IDA 0x48CCC0 (780B, 51BBs)
 // ============================================================================
 REVERSE(0x48ccc0, "MainGame: IDA verified", "None")
-void MainGame() {
-    LOG_INFO("MainGame: entering");
-    int r;
-    for (r = MenuSelect(); r; r = MenuSelect()) {
-        LOG_INFO("MenuSelect=%d GameMode=%d", r, g_GameMode);
-        if (!InitGame(CmdLine_NoCD)) {
-            LOG_ERROR("InitGame failed");
-            return;
-        }
-        for (;;) {
-            if (GameFrameLoop() && GameFrameCheck()) break;
-            MainGameFrame();
-        }
-        CmdLine_NoCD = true;  // data: 0x89e410
-    }
-    Event_Dispatch();
-    LOG_INFO("MainGame: exiting");
-}
 
 } // namespace gamemd

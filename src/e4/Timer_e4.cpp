@@ -164,13 +164,6 @@ int Timer::UpdateDelta()
 }
 } // namespace gamemd
 
-// 0x6C8C40
-namespace gamemd {
-DWORD TimerGetTicks()
-{
-  return timeGetTime() >> 4; /*0x6c8c49*/
-}
-} // namespace gamemd
 
 // 0x7500B0
 namespace gamemd {

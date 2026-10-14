@@ -163,23 +163,6 @@ int AudioChannel::DeactivatePlay() {
   return this->u32_D4->vt_slot_44();
 }
 }
-// 0x402600
-namespace gamemd {
-int AudioChannel::DeactivatePlay() {
-  int v2; // eax
-
-  (*(void (**)(void))(this->u32_D4 + 40))(); /*0x402609*/
-  if ( (this->u32_A4 & 1) != 0 ) /*0x402613*/
-  {
-    this->u32_A4 &= ~1u; /*0x40261e*/
-    this->u32_D4->vt_slot_20(); /*0x40262c*/
-    v2 = this->u32_A4; /*0x40262f*/
-    (*((unsigned char *)&(v2))) = v2 | 4; /*0x402635*/
-    this->u32_A4 = v2; /*0x402637*/
-  }
-  return this->u32_D4->vt_slot_44();
-}
-}
 // 0x402650
 namespace gamemd {
 int AudioChannel::ActivatePlay() {
@@ -379,54 +362,6 @@ int AudioList::GetNextEntry() {
 }
 } // namespace gamemd
 
-// 0x407A90
-namespace gamemd {
-int AudioSample::Destructor() {
-  Count *v2; // ecx
-  Count *v3; // ecx
-  AudioSample *v4; // ecx
-  AudioSample *v5; // ecx
-  void (__thiscall ***v6)(unsigned int, int); // ecx
-  int result; // eax
-  Voice *v8; // [esp+0h] [ebp-Ch]
-
-  if ( (AudioSample *)this->q004 != this ) /*0x407aa4*/
-  {
-    EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407aab*/
-    LinkedList::Init((LinkedList *)this); /*0x407aaf*/
-    LeaveCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407ab9*/
-  }
-  if ( !this->u32_88 && this->u32_14 ) /*0x407ac5*/
-  {
-    EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407ad1*/
-    Voice::Stop(v8); /*0x407ad6*/
-    LeaveCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407ae0*/
-  }
-  v2 = (Count *)this->u32_34; /*0x407ae2*/
-  if ( v2 ) /*0x407ae7*/
-  {
-    Count::DecrementRefCountsAudio(v2); /*0x407ae9*/
-    this->u32_34 = 0; /*0x407aee*/
-  }
-  v3 = (Count *)this->u32_38; /*0x407af5*/
-  if ( v3 ) /*0x407afa*/
-  {
-    Count::DecrementRefCountsAudio(v3); /*0x407afc*/
-    this->u32_38 = 0; /*0x407b01*/
-  }
-  v4 = (AudioSample *)this->u32_30; /*0x407b08*/
-  if ( v4 ) /*0x407b0d*/
-    AudioSample::InitLinkedList(v4); /*0x407b0f*/
-  v5 = (AudioSample *)this->u32_14; /*0x407b14*/
-  if ( v5 ) /*0x407b19*/
-    AudioSample::ResetState(v5); /*0x407b1b*/
-  v6 = (void (__thiscall ***)(unsigned int, int))this->u32_7C; /*0x407b20*/
-  if ( v6 ) /*0x407b25*/
-    (**v6)(v6, 1); /*0x407b2b*/
-  operator delete((void *)(this)); /*0x407b2e*/
-  return result; /*0x407b36*/
-}
-}
 // 0x407A90
 namespace gamemd {
 int AudioSample::Destructor() {
@@ -1264,36 +1199,6 @@ int DriveLocomotionClass::QueryInterface(const void *a2, int *a3) {
   return result; /*0x4af764*/
 }
 }
-// 0x4AF720
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-int DriveLocomotionClass::QueryInterface(const void *a2, int *a3) {
-  int result; // eax
-  char *pad_18; // eax
-
-  result = LocomotionClass::QueryInterface((LocomotionClass *)this, a2, a3); /*0x4af732*/
-  if ( result == -2147467262 ) /*0x4af73c*/
-  {
-    if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4af74b*/
-    {
-      if ( this ) /*0x4af752*/
-        pad_18 = this->vtable3; /*0x4af754*/
-      else
-        pad_18 = 0; /*0x4af759*/
-      *a3 = (int)pad_18; /*0x4af75b*/
-    }
-    if ( *a3 ) /*0x4af75e*/
-    {
-      (*(void (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)this->0 + 4))(this); /*0x4af772*/
-      return 0; /*0x4af775*/
-    }
-    else
-    {
-      return -2147467262; /*0x4af766*/
-    }
-  }
-  return result; /*0x4af764*/
-}
-}
 // 0x4B4CB0
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 LONG DriveLocomotionClass::AddRef() {
@@ -1338,43 +1243,7 @@ int DropPodLocomotionClass::QueryInterface(const void *a2, int *a3) {
   return result; /*0x4b64b4*/
 }
 }
-// 0x4B4CC0
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-LONG DriveLocomotionClass::Release() {
-  return COM::ReleaseRef((LocomotionClass *)this); /*0x4b4cca*/
-}
-} // namespace ra2::gamemd::LocomotorCLSID::ILocoVTable
 
-// 0x4B6470
-namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
-int DropPodLocomotionClass::QueryInterface(const void *a2, int *a3) {
-  int result; // eax
-  char *pad_18; // eax
-
-  result = LocomotionClass::QueryInterface((LocomotionClass *)this, a2, a3); /*0x4b6482*/
-  if ( result == -2147467262 ) /*0x4b648c*/
-  {
-    if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4b649b*/
-    {
-      if ( this ) /*0x4b64a2*/
-        pad_18 = this->q018; /*0x4b64a4*/
-      else
-        pad_18 = 0; /*0x4b64a9*/
-      *a3 = (int)pad_18; /*0x4b64ab*/
-    }
-    if ( *a3 ) /*0x4b64ae*/
-    {
-      (*(void (__stdcall **)(DropPodLocomotionClass *))(*(unsigned int *)this->0 + 4))(this); /*0x4b64c2*/
-      return 0; /*0x4b64c5*/
-    }
-    else
-    {
-      return -2147467262; /*0x4b64b6*/
-    }
-  }
-  return result; /*0x4b64b4*/
-}
-}
 // 0x4C9220
 namespace ra2::gamemd::LocomotorCLSID::ILocoVTable {
 int FacingClass::Update(unsigned short *a2) {
@@ -2386,77 +2255,6 @@ void * AudioConfig::InitDefault() {
 }
 } // namespace gamemd
 
-// 0x756BB0
-namespace gamemd {
-int AudioOcclusion::ComputeBoundingVertices() {
-  unsigned int v2; // ecx
-  int result; // eax
-  int v4; // eax
-  int v5; // ebx
-  float *v6; // edx
-  float v7; // [esp+4h] [ebp-78h]
-  int v8; // [esp+8h] [ebp-74h]
-  float v9; // [esp+8h] [ebp-74h]
-  float v10; // [esp+Ch] [ebp-70h]
-  int v11; // [esp+10h] [ebp-6Ch]
-  int v12; // [esp+14h] [ebp-68h]
-  float v13; // [esp+18h] [ebp-64h]
-  float v14; // [esp+1Ch] [ebp-60h]
-  float v15; // [esp+24h] [ebp-58h]
-
-  v2 = 0; /*0x756bb6*/
-  result = this->u32_8; /*0x756bb8*/
-  if ( result ) /*0x756bbd*/
-  {
-    result = 0; /*0x756bc4*/
-    v11 = 0; /*0x756bc8*/
-    do /*0x756dc0*/
-    {
-      v4 = this->u32_14 + result; /*0x756bd1*/
-      v5 = *(uint8_t *)(v4 + 161); /*0x756bdb*/
-      v12 = *(uint8_t *)(v4 + 162); /*0x756bff*/
-      v14 = (double)*(uint8_t *)(v4 + 160) * 0.5; /*0x756c05*/
-      v8 = -*(uint8_t *)(v4 + 160); /*0x756c22*/
-      v13 = (double)v5 * 0.5; /*0x756c29*/
-      *(float *)(v4 + 64) = v14; /*0x756c39*/
-      *(float *)(v4 + 68) = v13; /*0x756c48*/
-      v15 = (double)-v12 * 0.5; /*0x756c4b*/
-      *(float *)(v4 + 72) = v15; /*0x756c5d*/
-      *(float *)(v4 + 76) = v14; /*0x756c64*/
-      v10 = (double)-v5 * 0.5; /*0x756c6c*/
-      *(float *)(v4 + 80) = v10; /*0x756c82*/
-      *(float *)(v4 + 84) = v15; /*0x756c8f*/
-      v7 = (double)v8 * 0.5; /*0x756c92*/
-      *(float *)(v4 + 88) = v7; /*0x756ca2*/
-      *(float *)(v4 + 92) = v10; /*0x756cae*/
-      *(float *)(v4 + 96) = v15; /*0x756cb9*/
-      *(float *)(v4 + 100) = v7; /*0x756cdd*/
-      *(float *)(v4 + 104) = v13; /*0x756ce9*/
-      *(float *)(v4 + 108) = v15; /*0x756cf0*/
-      v9 = (double)v12 * 0.5; /*0x756cfa*/
-      *(float *)(v4 + 112) = v14; /*0x756d02*/
-      *(float *)(v4 + 116) = v13; /*0x756d0c*/
-      *(float *)(v4 + 120) = v9; /*0x756d13*/
-      *(float *)(v4 + 124) = v14; /*0x756d2d*/
-      *(float *)(v4 + 128) = v10; /*0x756d34*/
-      *(float *)(v4 + 132) = v9; /*0x756d3b*/
-      v6 = (float *)(v4 + 136); /*0x756d5a*/
-      v4 += 148; /*0x756d60*/
-      ++v2; /*0x756d65*/
-      *v6 = v7; /*0x756d66*/
-      v6[1] = v10; /*0x756d6c*/
-      v6[2] = v9; /*0x756d73*/
-      *(float *)v4 = v7; /*0x756d98*/
-      *(float *)(v4 + 4) = v13; /*0x756da1*/
-      *(float *)(v4 + 8) = v9; /*0x756dab*/
-      result = v11 + 164; /*0x756db5*/
-      v11 += 164; /*0x756dbc*/
-    }
-    while ( v2 < this->u32_8 ); /*0x756dc0*/
-  }
-  return result; /*0x756dc9*/
-}
-}
 // 0x756BB0
 namespace gamemd {
 int AudioOcclusion::ComputeBoundingVertices() {

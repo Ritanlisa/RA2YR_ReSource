@@ -164,7 +164,7 @@ char PlayIntroSequence();  // 0x52CB50
 void InitRandomSeed();  // 0x52FC20
 
 // IDA 0x532150 -- InitCommands
-void InitCommands();  // 0x532150
+int  InitCommands();  // 0x532150
 
 // IDA 0x5D7CE0 -- CompleteGameInit
 void CompleteGameInit();  // 0x5D7CE0

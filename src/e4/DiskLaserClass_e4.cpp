@@ -30,40 +30,6 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 
-// 0x4A7A30
-namespace gamemd {  // G42.18 ns repair
-DiskLaserClass::DiskLaserClass()
-{
-
-  int v2; // eax
-
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
-  /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a3a) */
-  this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass::`vftable'; /*0x4a7a40*/
-  /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a47) */
-  this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass::`vftable'; /*0x4a7a4e*/
-  this->q024 = 0; /*0x4a7a55*/
-  this->q028 = 0; /*0x4a7a58*/
-  this->u32_2C = 0; /*0x4a7a5b*/
-  this->q030 = 0; /*0x4a7a5e*/
-  this->u32_34 = 0; /*0x4a7a61*/
-  this->u32_38 = 0; /*0x4a7a64*/
-  this->u32_3C = 0; /*0x4a7a67*/
-  if ( dword_8A0218 < dword_8A0210 /*0x4a7a9e*/
-    || (byte_8A0215 || !dword_8A0210)
-    && dword_8A021C > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_8A0208 + 8))(
-         &dword_8A0208,
-         dword_8A0210 + dword_8A021C,
-         0) )
-  {
-    v2 = dword_8A0218++; /*0x4a7aab*/
-    *((unsigned int *)dword_8A020C + v2) = this; /*0x4a7aba*/
-  }
-  return (int)this->vtable1; /*0x4a7abf*/
-
-}
-}  // G42.18c ns repair
 // 0x4A7C90
 namespace gamemd {  // G42.18c ns repair
 void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
