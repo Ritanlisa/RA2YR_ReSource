@@ -287,7 +287,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
   v44[0] = &TypeList<RGBClass>::`vftable'; /*0x644f8a*/
-  inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&this->ParticleTypeClass_field_0x24); /*0x644f9a*/
+  inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4this->BarrelVoxel); /*0x644f9a*/
   RGBColorList = INIClass::ReadRGBColorList( /*0x644fac*/
                    (INIClass *)aP1,
                    (int)v52,
@@ -300,8 +300,8 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
                    (int)p_ParticleTypeClass_field_0x24,
                    (int)v48,
                    ParticleTypeClass_field_0x2F8);
-  ParticleTypeClass::EnsureCapacity((ParticleTypeClass *)&this->ParticleTypeClass_field_0x2B8, (unsigned int *)RGBColorList); /*0x644fb5*/
-  this->ParticleTypeClass_field_0x2C8 = *(VectorClass **)(RGBColorList + 16); /*0x644fbd*/
+  ParticleTypeClass::EnsureCapacity(&this->ParticleTypeClass_2B8, (unsigned int *)RGBColorList); /*0x644fb5*/
+  this->ColorList = *(VectorClass **)(RGBColorList + 16); /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = *(VectorClass **)(RGBColorList + 20); /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = *(unsigned int *)(RGBColorList + 24); /*0x644fd3*/
   v52[0] = (int)&VectorClass<RGBClass>::`vftable'; /*0x644fd9*/

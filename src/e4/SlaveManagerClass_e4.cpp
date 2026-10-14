@@ -90,15 +90,15 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
   SlaveControlVector::Constructor(&this->slaves, 0, 0); /*0x6af1b6*/
   this->slaves = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af1c3*/
-  *((unsigned int *)this + 19) = 10; /*0x6af1c9*/
-  *((unsigned int *)this + 18) = 0; /*0x6af1d0*/
-  *((unsigned int *)this + 20) = dword_A8ED84; /*0x6af1d8*/
-  *((unsigned int *)this + 22) = 0; /*0x6af1df*/
-  *((unsigned int *)this + 9) = aP1; /*0x6af1e2*/
-  *((unsigned int *)this + 10) = a3; /*0x6af1e9*/
+  this->slaveVectorCapacity = 10; /*0x6af1c9*/
+  this->slaveVectorCount = 0; /*0x6af1d0*/
+  this->creationFrame = dword_A8ED84; /*0x6af1d8*/
+  this->SlaveManagerClass_field_58 = 0; /*0x6af1df*/
+  this->master = aP1; /*0x6af1e2*/
+  this->house = a3; /*0x6af1e9*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1f2) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1f8) */
-  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
+  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af1ff) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af206) */
   this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
@@ -137,7 +137,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
         continue; /*0x6af2a1*/
       v14 = this->slaveVectorCapacity; /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
-        || !(*(unsigned __int8 (**)(int, int, unsigned int))(this->slaves + 8))(&this->slaves, v13 + v14, 0) )
+        || !(*(unsigned __int8 (**)(int, int, unsigned int))&this->slaves->Capacity)(&this->slaves, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
@@ -182,20 +182,20 @@ int SlaveManagerClass::Constructor()
   LOBYTE(this->creationFrame) = 1; /*0x6af377*/
   BYTE1(this->creationFrame) = 0; /*0x6af37b*/
   this->slaves[0] = (int)&DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af37e*/
-  *(unsigned int *)&this->__pad_48[4] = 10; /*0x6af385*/
-  *(unsigned int *)this->__pad_48 = 0; /*0x6af38c*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af395*/
+  *&this->slaveVectorCapacity = 10; /*0x6af385*/
+  *(unsigned int *)this->slaveVectorCount = 0; /*0x6af38c*/
+  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
   this->AbstractClass = &SlaveManagerClass::`vftable'; /*0x6af39b*/
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a1) */
-  this->vtable3 = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
+  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3a8) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af3af) */
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
   this->slaveType = 0; /*0x6af3bf*/
   this->slaveCount = 0; /*0x6af3c2*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+  *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6af3cb*/
   this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -228,17 +228,17 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   int v6; // [esp+8h] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af4a5) */
-  this->vtable2 = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
+  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af4ab) */
   /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af4b2) */
-  *((unsigned int *)this + 3) = &SlaveManagerClass::`vftable'; /*0x6af4b9*/
+  /* X11: vtable install elided (implicit via SlaveManagerClass virtuals 0x6af4b9) */
   for ( i = this->slaveVectorCount - 1; i >= 0; --i ) /*0x6af4c4*/
   {
     if ( *(unsigned int *)(this->slaveVectorCount + 4 * i) ) /*0x6af4c9*/
       __3_YAXPAX_Z(*(void **)(this->slaveVectorCount + 4 * i)); /*0x6af4d1*/
   }
   v3 = this->slaveVectorCapacity; /*0x6af4e5*/
-  (*(void (**)(int))(this->slaves + 12))(&this->slaves); /*0x6af4e8*/
-  (*(void (**)(int, int, unsigned int))(this->slaves + 8))(&this->slaves, v3, 0); /*0x6af4f2*/
+  (*(void (**)(int))&this->slaves->IsInitialized)(&this->slaves); /*0x6af4e8*/
+  (*(void (**)(int, int, unsigned int))&this->slaves->Capacity)(&this->slaves, v3, 0); /*0x6af4f2*/
   v6 = this; /*0x6af505*/
   v4 = (*(int (**)(int *, int *))(SlaveManagerClass_Array + 16))(&SlaveManagerClass_Array, &v6); /*0x6af509*/
   if ( v4 != -1 && v4 < dword_B0B600 && v4 < --dword_B0B600 ) /*0x6af525*/
@@ -252,13 +252,13 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   }
   v5 = *&this->slaveVectorCount; /*0x6af53f*/
   this->slaves = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af542*/
-  if ( v5 && *((unsigned char *)this + 69) ) /*0x6af54c*/
+  if ( v5 && this->u32_45 ) /*0x6af54c*/
   {
     __3_YAXPAX_Z(v5); /*0x6af554*/
-    *((unsigned int *)this + 15) = 0; /*0x6af55c*/
+    this->slaveVectorCount = 0; /*0x6af55c*/
   }
-  *((unsigned char *)this + 69) = 0; /*0x6af565*/
-  *((unsigned int *)this + 16) = 0; /*0x6af569*/
+  this->u32_45 = 0; /*0x6af565*/
+  this->slaveVectorCapacity = 0; /*0x6af569*/
   AbstractClass::DTOR((AbstractClass *)this); /*0x6af570*/
 
 }

@@ -407,14 +407,14 @@ INIClass::INIClass()
       }
     }
   }
-  v6 = sectionHead[1]; /*0x535af6*/
+  v6 = sectionHead->Prev; /*0x535af6*/
   result[9] = sectionHead; /*0x535af9*/
   result[8] = v6; /*0x535afc*/
-  v7 = sectionHead[1]; /*0x535aff*/
+  v7 = sectionHead->Prev; /*0x535aff*/
   if ( v7 ) /*0x535b04*/
-    *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/
-  sectionHead[1] = (int)v3; /*0x535b09*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x535b0c*/
+    v7->Next = v3; /*0x535b06*/
+  sectionHead->Prev = (int)v3; /*0x535b09*/
+  result->q00C = &List<INIClass::INISection *>::`vftable'; /*0x535b0c*/
   result->needsSave_flag = 0; /*0x535b13*/
   result->INIClass_field_2C = 0; /*0x535b16*/
   result->unknown30 = 0; /*0x535b19*/

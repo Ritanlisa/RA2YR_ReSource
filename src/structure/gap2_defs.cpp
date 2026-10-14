@@ -138,7 +138,7 @@ int AircraftClass::Construct(int a1, void* a2) {
   if ( v5 ) /*0x413db9*/
   {
     v6 = &this->locomotor; /*0x413dbb*/
-    v7 = (const IID *)(v5 + 844); /*0x413dc1*/
+    v7 = &v5->q34C; /*0x413dc1*/
     v8 = this->locomotor; /*0x413dc7*/
     if ( v8 ) /*0x413dcb*/
       (*(void (__stdcall **)(unsigned int))(*&v8->q020))(this->locomotor); /*0x413dd0*/
@@ -3096,7 +3096,7 @@ int InfantryClass::Construct(int a1, void* a2) {
   if ( v6 ) /*0x517b4c*/
   {
     v7 = &this->uniqueId; /*0x517b4e*/
-    v8 = (const IID *)(v6 + 844); /*0x517b54*/
+    v8 = &v6->q34C; /*0x517b54*/
     v9 = this->Locomotor; /*0x517b5a*/
     if ( v9 ) /*0x517b5e*/
       (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v9 + 8))(this->Locomotor); /*0x517b63*/

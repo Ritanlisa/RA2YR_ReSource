@@ -1944,7 +1944,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     v30 = operator new(*(unsigned int *)(v29 + 11)); /*0x64a467*/
     v31 = *(unsigned int *)(v29 + 11); /*0x64a46c*/
     *(unsigned int *)(v29 + 7) = v30; /*0x64a472*/
-    memcpy(v30, (const void *)(v6 + 111), v31); /*0x64a47f*/
+    memcpy(v30, &v6->u32_6F, v31); /*0x64a47f*/
     v32 = *(unsigned int *)(v29 + 11); /*0x64a488*/
     v6 = a2; /*0x64a48f*/
     v26 += v32; /*0x64a493*/
@@ -3876,7 +3876,7 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
   LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
   this->visibilityFlags = 0; /*0x642a20*/
   this->AbstractClass = &ProgressScreenClass::`vftable'; /*0x642a23*/
-  memset(&this->?, 0, 0x40u); /*0x642a29*/
+  memset(&this->M124, 0, 0x40u); /*0x642a29*/
   return &this->AbstractClass; /*0x642a2d*/
 
 }

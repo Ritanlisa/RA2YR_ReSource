@@ -850,9 +850,9 @@ TActionClass::TActionClass()
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *&this->TActionClass_field_54 = 0; /*0x71e6be*/
   this->AbstractClass = &TEventClass::`vftable'; /*0x71e6c1*/
-  this->? = &TEventClass::`vftable'; /*0x71e6c7*/
+  /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6c7) */
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6ce) */
-  this->vtable4 = &TEventClass::`vftable'; /*0x71e6d5*/
+  /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6d5) */
   v2 = g_BuildingLoadQueue_Array.?[54]; /*0x71e6dc*/
   if ( g_BuildingLoadQueue_Array.?[54] < g_BuildingLoadQueue_Array.?[52] /*0x71e71a*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[53]) || !g_BuildingLoadQueue_Array.?[52])
@@ -1756,7 +1756,7 @@ char TActionClass::executePsychicDominatorAction(int a2, int a3, int a4, IUnknow
   v5 = *&this->Value; /*0x6e4101*/
   if ( v5 >= 4 || !(uint8_t)PlayerClass::HasPlayers((PlayerClass *)(3988 * v5 + 8916268)) ) /*0x6e4124*/
     return 0; /*0x6e413e*/
-  ((SidebarClass *)((int)&DataGlobal_87F7E8))->SwitchTab(v5); /*0x6e4133*/
+  ((SidebarClass*)(&DataGlobal_87F7E8))->SwitchTab(v5); /*0x6e4133*/
   return 1; /*0x6e413a*/
 }
 } // namespace gamemd

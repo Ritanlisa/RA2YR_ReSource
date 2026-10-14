@@ -84,9 +84,9 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->q2B7 = 0; /*0x5fe2e4*/
   this->ParticleTypeClass_2B8 = 0; /*0x5fe2ea*/
   this->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
-  this->? = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
+  this->ParticleTypeClass_2B8 = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
   /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe2fd) */
-  this->vtable4 = &OverlayTypeClass::`vftable'; /*0x5fe304*/
+  /* X11: vtable install elided (implicit via OverlayTypeClass virtuals 0x5fe304) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
   this->RadarInvisible_d = 1; /*0x5fe310*/
   this->Selectable_d = 0; /*0x5fe317*/
@@ -390,9 +390,9 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   this->u32_30B = 0; /*0x644190*/
   this->u32_30C = 0; /*0x644196*/
   this->ObjectTypeClass = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
-  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
+  this->u32_30C = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
   /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
-  this->vtable4 = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
+  /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
   AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
   if ( (int)g_InfantryTypeInitState < *(int *)&DataGlobal_A83D70 /*0x6441ef*/
     || (BYTE1(DataGlobal_A83D74) || !*(unsigned int *)&DataGlobal_A83D70)

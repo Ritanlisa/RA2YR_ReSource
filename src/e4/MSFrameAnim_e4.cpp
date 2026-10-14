@@ -91,22 +91,22 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x76a06f*/
     if ( !v6 ) /*0x76a073*/
       return 0; /*0x76a0f6*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x76a075*/
+    if ( *&this->__pad_004 ) /*0x76a075*/
     {
       if ( a2 >= this->m_8 ) /*0x76a081*/
         m_8 = this->m_8; /*0x76a083*/
       for ( i = 0; i < m_8; ++i ) /*0x76a089*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76a096*/
+        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->__pad_004 + 8 * i + 4)); /*0x76a096*/
       if ( BYTE1(this->m_C) ) /*0x76a0a0*/
       {
-        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76a0a7*/
+        v11 = *(void (****)(unsigned int, int))&this->__pad_004; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
           (**v11)(v11, 3); /*0x76a0b2*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x76a0b4*/
+        *&this->__pad_004 = 0; /*0x76a0b4*/
       }
       m_8 = a2; /*0x76a0bb*/
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x76a0ca*/
+    *&this->__pad_004 = v6; /*0x76a0ca*/
     this->m_8 = m_8; /*0x76a0cd*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a0d0*/
   }
@@ -115,8 +115,8 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a0d9*/
   }
   v12 = this->m_8; /*0x76a0dc*/
-  if ( v12 < this->m_10 ) /*0x76a0e4*/
-    this->m_10 = v12; /*0x76a0e6*/
+  if ( v12 < this->INIClass_10 ) /*0x76a0e4*/
+    this->INIClass_10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
 
 }

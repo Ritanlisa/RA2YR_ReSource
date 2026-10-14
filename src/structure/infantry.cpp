@@ -2021,7 +2021,7 @@ int InfantryClass::MoveToCell(int* a2, int a3)
     (*((unsigned char *)&(result))) = 0; /*0x51e129*/
     return result; /*0x51e12b*/
   }
-  if ( !*(unsigned int *)(this->Type + 1512) ) /*0x51e0e5*/
+  if ( !*(unsigned int *)&this->Type->Sight ) /*0x51e0e5*/
     this->vfptr.vfptr.isDiscoveredByCurrentPlayer[0] = 0; /*0x51e0ef*/
   result = GroundHeight + dword_A8F234; /*0x51e0ff*/
   if ( v15 <= GroundHeight + dword_A8F234 ) /*0x51e103*/
@@ -3385,7 +3385,7 @@ int InfantryClass::IdleStateMachine()
           v7 = (AnimClass *)operator new(0x1C8u); /*0x728f25*/
           if ( v7 ) /*0x728f2f*/
           {
-            v8 = (int *)(this->Owner + 156); /*0x728f36*/
+            v8 = (int *)&this->Owner->Coord_9C; /*0x728f36*/
             v21 = *v8; /*0x728f49*/
             v22 = v8[1]; /*0x728f50*/
             retaddr = v8[2]; /*0x728f5c*/
@@ -3470,13 +3470,13 @@ int InfantryClass::IdleStateMachine()
   {
     if ( !(uint8_t)House::IsHumanPlayer(v15->q21C) ) /*0x72910e*/
     {
-      v16 = (int *)(this->Owner + 156); /*0x72911a*/
+      v16 = (int *)&this->Owner->Coord_9C; /*0x72911a*/
       v20 = *v16; /*0x729122*/
       v21 = v16[1]; /*0x72912e*/
       v22 = v16[2]; /*0x72913a*/
       if ( (uint8_t)Cell::IsPassable(&v20) /*0x72917b*/
         || (dword_A8B230->vfptr & 0x1000) != 0
-        && (v17 = (int *)(this->Owner + 156),
+        && (v17 = (int *)&this->Owner->Coord_9C,
             v20 = *v17,
             v21 = v17[1],
             v22 = v17[2],
@@ -7210,7 +7210,7 @@ int InfantryClass::RepairBridge()
           (*(void (__thiscall **)(InfantryClass *))((char *)this->vtable1 + 212))(this); /*0x51a31a*/
           if ( InfantryClass::updateDeployAnimation((InfantryClass *)Building) && this->isCountedAsOwned_special[0] ) /*0x51a32b*/
           {
-            --*(unsigned int *)(this->owner + 756); /*0x51a342*/
+            --*(unsigned int *)&this->owner->ownedInfantry; /*0x51a342*/
             this->isCountedAsOwned_special[0] = 0; /*0x51a348*/
           }
           v94 = Building[328]; /*0x51a34f*/

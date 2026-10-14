@@ -420,7 +420,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   *&this->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e54e*/
   this->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e558*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
-  this->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e565*/
+  /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e565) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e56c) */
   return &this->TechnoTypeClass; /*0x45e575*/
 
@@ -438,9 +438,9 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
 
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
   a1->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e58d*/
-  a1->? = &BuildingTypeClass::`vftable'; /*0x45e595*/
+  /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e595) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
-  a1->vtable4 = &BuildingTypeClass::`vftable'; /*0x45e5a3*/
+  /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e5a3) */
   if ( BuildupLoaded && a1->Buildup[0] ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1->Buildup[0]); /*0x45e5b7*/
@@ -548,7 +548,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         }
         else
         {
-          _makepath(Buffer, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * v1); /*0x45ea08*/
+          _makepath(Buffer, 0, 0, &v4->ImageFile_0x19, (const char *)&off_7E1BC6 + 112 * v1); /*0x45ea08*/
           v4->Image_d = SearchMIXFile(Buffer, 0); /*0x45ea1b*/
         }
         if ( v4->u32_1761 ) /*0x45ea42*/
@@ -562,7 +562,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         }
         else
         {
-          _makepath(Buffer, 0, 0, (const char *)(v4 + 3676), (const char *)&off_7E1BC6 + 112 * v1); /*0x45ea6b*/
+          _makepath(Buffer, 0, 0, &v4->qE5C, (const char *)&off_7E1BC6 + 112 * v1); /*0x45ea6b*/
           v4->u32_E00 = SearchMIXFile(Buffer, 0); /*0x45ea7e*/
         }
         v5 = v4->u32_E00; /*0x45eaa5*/
@@ -1348,7 +1348,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
   }
   if ( v1[1].q14EC && *v1->vtable2.CameoAllocated ) /*0x46509a*/
   {
-    operator delete((void *)(*(void **)v1[1].CameoAllocated)); /*0x4650a5*/
+    operator delete((void *)(*v1->vtable2.CameoAllocated)); /*0x4650a5*/
     *v1->vtable2.CameoAllocated = 0; /*0x4650ad*/
     v1[1].AltCameoFile[3] = 0; /*0x4650b3*/
   }
@@ -1714,33 +1714,33 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   aP1->abstractFlags = 10; /*0x644c3c*/
   aP1->uniqueId = 0; /*0x644c43*/
   *&aP1->uniqueId = &TypeList<RGBClass>::`vftable'; /*0x644c46*/
-  aP1->?[1] = 0; /*0x644c4c*/
-  LOBYTE(aP1->?[0]) = 0; /*0x644c66*/
+  aP1->u32_2D4 = 0; /*0x644c4c*/
+  LOBYTE(aP1->q2D8) = 0; /*0x644c66*/
   BYTE1(aP1->?[0]) = 0; /*0x644c6c*/
   BYTE1(aP1->?[1]) = -1; /*0x644c72*/
   BYTE2(aP1->?[1]) = -1; /*0x644c78*/
-  aP1->?[1] = 0; /*0x644c81*/
-  aP1->?[0] = 1; /*0x644c87*/
-  aP1->?[1] = 0; /*0x644c8d*/
-  aP1->?[0] = 0; /*0x644c93*/
+  aP1->q2DC = 0; /*0x644c81*/
+  aP1->q2E0 = 1; /*0x644c87*/
+  aP1->u32_2E4 = 0; /*0x644c8d*/
+  aP1->u32_2E8 = 0; /*0x644c93*/
   aP1->?[1] = 0; /*0x644c99*/
-  aP1->?[0] = 1; /*0x644c9f*/
-  aP1->?[1] = 0; /*0x644ca5*/
-  aP1->? = 0; /*0x644cab*/
-  aP1->?[0] = 0; /*0x644cb1*/
-  aP1->?[0] = 0; /*0x644cb7*/
-  aP1->?[1] = 0; /*0x644cbd*/
-  LOBYTE(aP1->?[0]) = 0; /*0x644cc3*/
+  aP1->u32_2F0 = 1; /*0x644c9f*/
+  aP1->u32_2F4 = 0; /*0x644ca5*/
+  aP1->u32_2F8 = 0; /*0x644cab*/
+  aP1->u32_2FC = 0; /*0x644cb1*/
+  aP1->q300 = 0; /*0x644cb7*/
+  aP1->q304 = 0; /*0x644cbd*/
+  LOBYTE(aP1->q308) = 0; /*0x644cc3*/
   BYTE1(aP1->?[0]) = 0; /*0x644cc9*/
-  BYTE2(aP1->?[0]) = 0; /*0x644ccf*/
+  BYTE2(aP1->q30A) = 0; /*0x644ccf*/
   HIBYTE(aP1->?[0]) = 4; /*0x644cd5*/
-  LOBYTE(aP1->?[1]) = 0; /*0x644cdc*/
+  LOBYTE(aP1->q30C) = 0; /*0x644cdc*/
   HIBYTE(aP1->?[1]) = 0; /*0x644ce2*/
-  aP1->? = -1; /*0x644ce8*/
-  aP1->?[0] = -1; /*0x644cee*/
+  aP1->q310 = -1; /*0x644ce8*/
+  aP1->q314 = -1; /*0x644cee*/
   aP1->TechnoTypeClass = &ParticleTypeClass::`vftable'; /*0x644cf4*/
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644cfa) */
-  aP1->vtable3 = &ParticleTypeClass::`vftable'; /*0x644d01*/
+  /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d01) */
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d08) */
   if ( *(int *)&stru_A83D50.__pad_3C[28] < *(int *)&stru_A83D50.__pad_3C[20] /*0x644d43*/
     || (stru_A83D50.__pad_3C[25] || !*(unsigned int *)&stru_A83D50.__pad_3C[20])
@@ -1764,7 +1764,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x644da3*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = aP1; /*0x644db2*/
   }
-  aP1->? = 0; /*0x644db5*/
+  aP1->__pad_234 = 0; /*0x644db5*/
   return &aP1->TechnoTypeClass; /*0x644dbd*/
 
 }
@@ -2439,7 +2439,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     {
       if ( a2 - 1 >= 0 ) /*0x4788b3*/
       {
-        v9 = (unsigned char *)(v8 + 2); /*0x4788b5*/
+        v9 = &v8->ptr_2; /*0x4788b5*/
         v10 = a2; /*0x4788b8*/
         do /*0x4788c5*/
         {
@@ -2453,8 +2453,8 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
       }
       v4 = (void *)v8; /*0x4788c7*/
     }
-    this->? = v4; /*0x4788c9*/
-    BYTE1(this->?) = 1; /*0x4788cc*/
+    this->vtable2 = v4; /*0x4788c9*/
+    BYTE1(this->u32_D) = 1; /*0x4788cc*/
     return &this->TechnoTypeClass; /*0x4788cc*/
   }
   if ( a2 - 1 >= 0 ) /*0x47887f*/
@@ -2471,7 +2471,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
     }
     while ( v6 ); /*0x478891*/
   }
-  this->? = (void *)a3; /*0x478893*/
+  this->vtable2 = (void *)a3; /*0x478893*/
   return &this->TechnoTypeClass; /*0x478898*/
 
 }

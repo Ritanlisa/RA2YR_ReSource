@@ -344,7 +344,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
   }
   if ( this->u32_CC ) /*0x540696*/
   {
-    __3_YAXPAX_Z(*((void **)this + 51)); /*0x5406a1*/
+    __3_YAXPAX_Z(this->u32_CC); /*0x5406a1*/
     this->u32_CC = 0; /*0x5406a9*/
   }
   *(unsigned int *)this->__pad_0 = &IPXConnClass::`vftable'; /*0x5406b5*/

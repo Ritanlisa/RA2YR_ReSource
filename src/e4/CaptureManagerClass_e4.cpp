@@ -44,12 +44,12 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   this->controlNodeCapacity = 0; /*0x4717e9*/
   this->CaptureManagerClass_field_31 = 0; /*0x4717ec*/
   this->controlNodes = &DynamicVectorClass<ControlNode *>::`vftable'; /*0x4717ef*/
-  *((unsigned int *)this + 14) = 10; /*0x4717f6*/
-  *((unsigned int *)this + 13) = 0; /*0x4717fd*/
-  *((unsigned int *)this + 18) = a2; /*0x471800*/
+  this->CaptureManagerClass_field_30 = 10; /*0x4717f6*/
+  this->originalOwner = 0; /*0x4717fd*/
+  this->overloadCount = a2; /*0x471800*/
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471807) */
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47180d) */
-  *((unsigned int *)this + 2) = &CaptureManagerClass::`vftable'; /*0x471814*/
+  /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x471814) */
   /* X11: vtable install elided (implicit via CaptureManagerClass virtuals 0x47181b) */
   this->originalOwner = a3; /*0x471822*/
   this->CaptureManagerClass_field_40 = a4; /*0x471825*/
@@ -1341,11 +1341,11 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   {
     if ( a3 ) /*0x473166*/
     {
-      this->? = (void *)a3; /*0x473168*/
+      this->vtable2 = (void *)a3; /*0x473168*/
       return &this->AbstractClass; /*0x47316e*/
     }
-    this->? = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
-    BYTE1(this->?) = 1; /*0x473180*/
+    this->vtable2 = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
+    BYTE1(this->IsAllocated) = 1; /*0x473180*/
   }
   return &this->AbstractClass; /*0x47316d*/
 

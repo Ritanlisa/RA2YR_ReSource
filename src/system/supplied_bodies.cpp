@@ -85,7 +85,7 @@ int CellClass::QuickPassable() {
   unsigned int v6[3]; // [esp+10h] [ebp-Ch] BYREF
 
   v1 = ((int16_t)this->smudgeTypeIndex << 8) + 128; /*0x48796f*/
-  v2 = ((int16_t)(*(this->smudgeTypeIndex + 1)) << 8) + 128; /*0x487971*/
+  v2 = ((int16_t)(*&this->smudgeTypeIndex->AbstractClass_1) << 8) + 128; /*0x487971*/
   v5[0] = 128; /*0x487973*/
   v5[1] = 128; /*0x487977*/
   inited = Isometric::InitTables((int)this, v5); /*0x487980*/
@@ -341,7 +341,7 @@ int * CellClass::GetScreenRect(int *a2) {
   int v20; // [esp+24h] [ebp-4h]
 
   v3 = ((this->smudgeTypeIndex) << 8) + 128; /*0x47ffab*/
-  v4 = ((*((signed short *)(this->smudgeTypeIndex + 2))) << 8) + 128; /*0x47ffb8*/
+  v4 = ((*((signed short *)&this->smudgeTypeIndex->Tactical_field_0x2)) << 8) + 128; /*0x47ffb8*/
   v19 = 0; /*0x47ffba*/
   v18 = (v4 / 256) << 8; /*0x47ffc4*/
   v17 = (v3 / 256) << 8; /*0x47ffde*/
@@ -406,7 +406,7 @@ unsigned int * GenericList::Constructor() {
   int v6; // edi
 
   result = &this->vtable; /*0x52ace0*/
-  v2 = this + 4; /*0x52ace9*/
+  v2 = &this->u32_10; /*0x52ace9*/
   this->u32_8 = 0; /*0x52acef*/
   this->u32_C = 0; /*0x52acf2*/
   this->u32_4 = 0; /*0x52acf5*/
@@ -430,7 +430,7 @@ unsigned int * GenericList::Constructor() {
     }
   }
   v5 = this->u32_8; /*0x52ad2f*/
-  this->u32_18 = this + 1; /*0x52ad32*/
+  this->u32_18 = &this->u32_8; /*0x52ad32*/
   this->u32_14 = v5; /*0x52ad35*/
   v6 = this->u32_8; /*0x52ad38*/
   if ( v6 ) /*0x52ad3d*/

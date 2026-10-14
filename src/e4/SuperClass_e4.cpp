@@ -156,7 +156,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   *(unsigned int *)aP2 = &SuperClass::`vftable'; /*0x6caff7*/
   *(unsigned int *)(aP2 + 4) = &SuperClass::`vftable'; /*0x6caffd*/
   aP2->FileSize = &SuperClass::`vftable'; /*0x6cb003*/
-  *(unsigned int *)(aP2 + 12) = &SuperClass::`vftable'; /*0x6cb00a*/
+  aP2->u32_C = &SuperClass::`vftable'; /*0x6cb00a*/
   AbstractClass::GenerateUniqueID(aP2 + 4); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -211,9 +211,9 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
 
   v2 = a1->u32_68; /*0x6cb124*/
   *(unsigned int *)a1 = &SuperClass::`vftable'; /*0x6cb127*/
-  *(unsigned int *)(a1 + 4) = &SuperClass::`vftable'; /*0x6cb12f*/
+  /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb12f) */
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb136) */
-  a1->vtable4 = &SuperClass::`vftable'; /*0x6cb13d*/
+  /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb13d) */
   if ( v2 ) /*0x6cb144*/
   {
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/

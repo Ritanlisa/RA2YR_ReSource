@@ -32,9 +32,9 @@ int AbstractTypeClass::Constructor(char *aP1)
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
   *this = (int)&AbstractTypeClass::`vftable'; /*0x410822*/
-  *((char *)this + 1) = (int)&AbstractTypeClass::`vftable'; /*0x410829*/
+  this->zero_3C = (int)&AbstractTypeClass::`vftable'; /*0x410829*/
   this->UINameLabel[0x20] = (int)&AbstractTypeClass::`vftable'; /*0x410830*/
-  *((char *)this + 3) = (int)&AbstractTypeClass::`vftable'; /*0x410837*/
+  this->u32_3 = (int)&AbstractTypeClass::`vftable'; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -99,9 +99,9 @@ int AbstractTypeClass::Dtor()
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &AbstractTypeClass::`vftable'; /*0x4109cd*/
-  this->? = &AbstractTypeClass::`vftable'; /*0x4109d3*/
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109d3) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
-  this->vtable4 = &AbstractTypeClass::`vftable'; /*0x4109e1*/
+  /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109e1) */
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/

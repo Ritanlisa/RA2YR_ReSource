@@ -98,7 +98,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     fprintf(v5, "RA2 Sync\n"); /*0x651788*/
     ModuleVersion = (char *)(GetModuleVersion()); /*0x651790*/
     fprintf(v6, "\nVersion %s\n", ModuleVersion); /*0x65179c*/
-    ModuleInternalVersion = GetModuleInternalVersion((void *)((int)&dword_A8ECE0)); /*0x6517a9*/
+    ModuleInternalVersion = GetModuleInternalVersion((void*)(&dword_A8ECE0)); /*0x6517a9*/
     fprintf(v6, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     ((Time *)(v62))->FormatDate(); /*0x6517cb*/
@@ -201,7 +201,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     v55 = 0; /*0x651abc*/
     if ( v56 > 0 ) /*0x651ac4*/
     {
-      v54 = (const char *)(v4 + 12); /*0x651acd*/
+      v54 = &v4->vtable4; /*0x651acd*/
       do /*0x651b6b*/
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651ad9*/
@@ -243,7 +243,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     v58 += 104 * v24; /*0x651b92*/
     if ( v56 > 0 ) /*0x651b96*/
     {
-      v54 = (const char *)(v4 + 12); /*0x651b9f*/
+      v54 = &v4->vtable4; /*0x651b9f*/
       do /*0x651c50*/
       {
         if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651bab*/

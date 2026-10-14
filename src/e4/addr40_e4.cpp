@@ -5258,7 +5258,7 @@ int BufferedAudioStreamRead(AudioStream * a1, AudioStream * a2, signed int a3)
       break; /*0x408f13*/
     if ( a1[5] ) /*0x408f15*/
     {
-      v6 = (const void *)a1[1]; /*0x408f1e*/
+      v6 = a1->u8_4; /*0x408f1e*/
     }
     else
     {

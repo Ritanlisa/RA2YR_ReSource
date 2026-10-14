@@ -68,11 +68,11 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   Map_Save_681280((ObjectClass *)v9, &ppstgOpen[0].ComPtr_field_0x14); /*0x67d022*/
   Map_Save_681200((ObjectClass *)v9, &ppstgOpen[0].ComPtr_field_0x14); /*0x67d033*/
   Map_Save_681240((ObjectClass *)v9, &ppstgOpen[0].ComPtr_field_0x14); /*0x67d044*/
-  GameOptions::SaveLoad((int *)((int)v9), *(int **)ppstgOpen[0].__pad_0); /*0x67d055*/
+  GameOptions::SaveLoad((int *)((int)v9), *ppstgOpen->__pad_000.__pad_0); /*0x67d055*/
   ppstgOpen[0].ComPtr_field_0x08 = 0; /*0x67d05a*/
   if ( !*ppstgOpen->__pad_000.__pad_0 ) /*0x67d064*/
     sub_7DC720(-2147467261); /*0x67d06b*/
-  if ( (*(int (__stdcall **)(unsigned int, void **, int, unsigned int, unsigned int, int *))(**(unsigned int **)ppstgOpen[0].__pad_0 + 12))( /*0x67d08d*/
+  if ( (*(int (__stdcall **)(unsigned int, void **, int, unsigned int, unsigned int, int *))(**ppstgOpen->__pad_000.__pad_0 + 12))( /*0x67d08d*/
          *ppstgOpen->__pad_000.__pad_0,
          &off_83D5A8,
          4114,
@@ -85,7 +85,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( *ppstgOpen->__pad_000.__pad_0 ) /*0x67d0a3*/
     {
   LABEL_9:
-      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)ppstgOpen[0].__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d0a9*/
+      (*(void (__stdcall **)(unsigned int))(**ppstgOpen->__pad_000.__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d0a9*/
       return 0; /*0x67d0bb*/
     }
     return 0; /*0x67d0a3*/
@@ -113,7 +113,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( ppstgOpen[0].ComPtr_field_0x08 ) /*0x67d159*/
       (*(void (__stdcall **)(int))(*ppstgOpen->__pad_000.ComPtr_field_0x08 + 8))(ppstgOpen[0].ComPtr_field_0x08); /*0x67d15e*/
     if ( *ppstgOpen->__pad_000.__pad_0 ) /*0x67d167*/
-      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)ppstgOpen[0].__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d16c*/
+      (*(void (__stdcall **)(unsigned int))(**ppstgOpen->__pad_000.__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d16c*/
     return 0; /*0x67d17b*/
   }
   ppstgOpen[0].ComPtr_field_0x0C = 0; /*0x67d182*/
@@ -146,7 +146,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   ppstgOpen[0].ComPtr_field_0x08 = 0; /*0x67d23e*/
   if ( !*ppstgOpen->__pad_000.__pad_0 ) /*0x67d248*/
     sub_7DC720(-2147467261); /*0x67d24f*/
-  if ( (*(int (__stdcall **)(unsigned int, unsigned int))(**(unsigned int **)ppstgOpen[0].__pad_0 + 36))( /*0x67d261*/
+  if ( (*(int (__stdcall **)(unsigned int, unsigned int))(**ppstgOpen->__pad_000.__pad_0 + 36))( /*0x67d261*/
          *ppstgOpen->__pad_000.__pad_0,
          0) < 0 )
   {
@@ -157,7 +157,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( ppstgOpen[0].ComPtr_field_0x08 ) /*0x67d285*/
       (*(void (__stdcall **)(int))(*ppstgOpen->__pad_000.ComPtr_field_0x08 + 8))(ppstgOpen[0].ComPtr_field_0x08); /*0x67d28a*/
     if ( *ppstgOpen->__pad_000.__pad_0 ) /*0x67d293*/
-      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)ppstgOpen[0].__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d298*/
+      (*(void (__stdcall **)(unsigned int))(**ppstgOpen->__pad_000.__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d298*/
     return 0; /*0x67d2a7*/
   }
   Debug::Log(); /*0x67d2b1*/
@@ -168,7 +168,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   if ( ppstgOpen[0].ComPtr_field_0x08 ) /*0x67d2db*/
     (*(void (__stdcall **)(int))(*ppstgOpen->__pad_000.ComPtr_field_0x08 + 8))(ppstgOpen[0].ComPtr_field_0x08); /*0x67d2e0*/
   if ( *ppstgOpen->__pad_000.__pad_0 ) /*0x67d2e9*/
-    (*(void (__stdcall **)(unsigned int))(**(unsigned int **)ppstgOpen[0].__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d2ee*/
+    (*(void (__stdcall **)(unsigned int))(**ppstgOpen->__pad_000.__pad_0 + 8))(*ppstgOpen->__pad_000.__pad_0); /*0x67d2ee*/
   return v7; /*0x67cf57*/
 }
 }  // G42.18 ns repair

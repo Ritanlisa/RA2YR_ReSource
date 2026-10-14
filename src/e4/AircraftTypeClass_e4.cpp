@@ -311,9 +311,9 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     {
       TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
       *(unsigned int *)aP0->TechnoTypeClass = &AircraftTypeClass::`vftable'; /*0x41ce44*/
-      *(unsigned int *)&aP0->TechnoTypeClass[4] = &AircraftTypeClass::`vftable'; /*0x41ce4a*/
+      /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce4a) */
       *&aP0->u32_D2E = &AircraftTypeClass::`vftable'; /*0x41ce51*/
-      *(unsigned int *)&aP0->TechnoTypeClass[12] = &AircraftTypeClass::`vftable'; /*0x41ce58*/
+      /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/
     VoxelAnimType::LoadAnim(aP0->TechnoTypeClass); /*0x41ce72*/

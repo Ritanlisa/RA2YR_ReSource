@@ -756,7 +756,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
       }
     }
     v97 = v12->ptr_24; /*0x6b332a*/
-    BuildingClass::AddUpgrade((gamemd::BuildingClass *)((int)&dword_87F7E8), (int)&v97); /*0x6b3333*/
+    BuildingClass::AddUpgrade((gamemd::BuildingClass*)(&dword_87F7E8), (int)&v97); /*0x6b3333*/
     if ( (int16_t)v97 < v78 ) /*0x6b3341*/
       v78 = v97; /*0x6b3343*/
     if ( (int16_t)v97 > v80 ) /*0x6b334d*/
@@ -801,7 +801,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     v12->u32_38 = v47; /*0x6b3402*/
     ((House *)((int)v12))->AnnounceUpgrade(-1); /*0x6b3409*/
     v77 = v12->ptr_24; /*0x6b341b*/
-    BuildingClass::AddUpgrade((gamemd::BuildingClass *)((int)&dword_87F7E8), (int)&v77); /*0x6b341f*/
+    BuildingClass::AddUpgrade((gamemd::BuildingClass*)(&dword_87F7E8), (int)&v77); /*0x6b341f*/
     v48 = ((CellClass *)((int)v12))->GetScreenRect(v113); /*0x6b342e*/
     v49 = v87; /*0x6b3433*/
     if ( v87 <= 0 || v88 <= 0 ) /*0x6b3445*/
@@ -3781,7 +3781,7 @@ AllocateSurfaceScreenSurfaces( (int)&((unsigned char *)&stru_87C374)[44092], (Ob
   IDA_LOBYTE(v203) = 1;
   Frame::Present(v203, 0);
   *(unsigned int *)&((unsigned char *)&HouseClass_Player)[45196] = 1;
-  ((ThemeManager *)(int)&g_BuildingTypeClass_Count)->Cleanup();
+  ((ThemeManager*)&g_BuildingTypeClass_Count)->Cleanup();
   Audio::Shutdown();
   PostMessageA(g_hWnd, 2u, 0, 0);
   do

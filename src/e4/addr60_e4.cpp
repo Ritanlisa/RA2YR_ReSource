@@ -1710,7 +1710,7 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
   v62 = a1;
   if ( !g_DialogHashMap_Count )
     goto LABEL_6;
-  int v3 = ((HashTable_flat*)(unsigned int *)((int)&g_DialogHashMap_Base))->ComputeHash((int)&v62);
+  int v3 = ((HashTable_flat*)(unsigned int*)(&g_DialogHashMap_Base))->ComputeHash((int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v3);
   if ( !v4 )
@@ -1732,7 +1732,7 @@ LABEL_6:
   v62 = (HWND)v2;
   if ( !g_DialogHashMap_Count )
     goto LABEL_17;
-  int v5 = ((HashTable_flat*)((int)&g_DialogHashMap_Base))->ComputeHash((int)&v62);
+  int v5 = ((HashTable_flat*)(&g_DialogHashMap_Base))->ComputeHash((int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v6 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v5);
   if ( !v6 )
@@ -1754,7 +1754,7 @@ LABEL_17:
   v62 = (HWND)v2;
   if ( !g_DialogHashMap_Count )
     goto LABEL_23;
-  int v9 = ((HashTable_flat*)((int)&g_DialogHashMap_Base))->ComputeHash((int)&v62);
+  int v9 = ((HashTable_flat*)(&g_DialogHashMap_Base))->ComputeHash((int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
   unsigned int * v10 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v9);
   if ( !v10 )

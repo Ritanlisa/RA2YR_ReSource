@@ -214,24 +214,24 @@ void * WinsockInterface::ProcessPacket(int a2)
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
     *v6 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7702ce*/
-    v6[5] = 10; /*0x7702d4*/
-    v6[4] = 0; /*0x7702db*/
+    v6->u32_14 = 10; /*0x7702d4*/
+    v6->q010 = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
-  *((unsigned int *)this + 237) = 0; /*0x7702fc*/
-  *((unsigned char *)this + 952) = 1; /*0x770305*/
-  *((unsigned int *)this + 239) = 0; /*0x77030c*/
-  VectorClass::WstringConstructor((unsigned int *)this + 240, 0, 0); /*0x770312*/
-  *((unsigned int *)this + 240) = &DynamicVectorClass<Wstring>::`vftable'; /*0x770317*/
+  this->u32_3AC = Timer::GetTicks(); /*0x7702f6*/
+  this->u32_3B4 = 0; /*0x7702fc*/
+  this->u32_3B8 = 1; /*0x770305*/
+  this->u32_3BC = 0; /*0x77030c*/
+  VectorClass::WstringConstructor(&this->u32_3C0, 0, 0); /*0x770312*/
+  this->u32_3C0 = &DynamicVectorClass<Wstring>::`vftable'; /*0x770317*/
   this->u32_3D4 = 10; /*0x77031d*/
   this->u32_3D0 = 0; /*0x770324*/
   this->u32_3D8 = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
-  String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
+  String::Reassign(&this->ptr_4, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
   String::Assign((char **)&a2, aHistory); /*0x77035f*/
   String::Reassignthis->u8_988, (const char **)&a2); /*0x77036f*/

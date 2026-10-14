@@ -39,7 +39,7 @@ int GameSetup::LookupDialogHash()
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
   {
-    v1 = (GameSetup **)v1[129]; /*0x60d35c*/
+    v1 = v1->GameSetup_204; /*0x60d35c*/
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }

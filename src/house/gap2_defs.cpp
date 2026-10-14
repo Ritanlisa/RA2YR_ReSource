@@ -825,7 +825,7 @@ int CounterClass::Load(int a1) {
     this->count = 0; /*0x49fbff*/
   }
   a1 = a1; /*0x49fc02*/
-  result = (*(int (__stdcall **)(int, CounterClass *, int, unsigned int))(a1->vtable4)(a1, this + 2, 4, 0); /*0x49fc10*/
+  result = (*(int (__stdcall **)(int, CounterClass *, int, unsigned int))(a1->vtable4)(a1, &this->IsInitialized, 4, 0); /*0x49fc10*/
   if ( result >= 0 ) /*0x49fc15*/
   {
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(a1->vtable4)(a1, &a1, 4, 0); /*0x49fc22*/
@@ -1017,7 +1017,7 @@ int TagClassVectorHost::COMStub_2(int a1, void* a2) {  // g57w10 r4 (raw this=Dy
         ++i; /*0x4e93d1*/
       if ( this->IsAllocated ) /*0x4e93de*/
       {
-        operator delete((void *)(*((void **)this + 1))); /*0x4e93e9*/
+        operator delete((void *)(this->ptr_4)); /*0x4e93e9*/
         this->Items = 0; /*0x4e93f1*/
       }
     }
@@ -1190,7 +1190,7 @@ int GraphicMenuItemVectorHost::processWaypointPlanning(int a1, void* a2) {  // g
         ++i; /*0x4f2ab1*/
       if ( this->IsAllocated ) /*0x4f2abe*/
       {
-        operator delete((void *)(*((void **)this + 1))); /*0x4f2ac9*/
+        operator delete((void *)(this->ptr_4)); /*0x4f2ac9*/
         this->Items = 0; /*0x4f2ad1*/
       }
     }
@@ -4155,7 +4155,7 @@ int HouseClass::ManageProduction(int a1) {
           if ( this->u32_5714 < v55 /*0x4fe1bd*/
             || (this->u32_5711 || !v55)
             && (v57 = this->u32_5718, v57 > 0)
-            && this->u32_5704->COMStub_Ret1_2(this + 22276, v55 + v57, 0) )
+            && this->u32_5704->COMStub_Ret1_2(&this->u32_5704, v55 + v57, 0) )
           {
             v58 = this->u32_5714; /*0x4fe1c4*/
             if ( v56 < v58 - 1 ) /*0x4fe1cc*/
@@ -4245,7 +4245,7 @@ int HouseClass::ManageProduction(int a1) {
         if ( this->u32_5714 < v70 /*0x4fe344*/
           || (this->u32_5711 || !v70)
           && (v71 = this->u32_5718, v71 > 0)
-          && this->u32_5704->COMStub_Ret1_2(this + 22276, v71 + v70, 0) )
+          && this->u32_5704->COMStub_Ret1_2(&this->u32_5704, v71 + v70, 0) )
         {
           v72 = this->u32_5714; /*0x4fe34b*/
           if ( v69 - 1 < v72 - 1 ) /*0x4fe353*/
@@ -5743,7 +5743,7 @@ int HouseClass::ReadFromINI(void* a1) {
                               v6 = v8; /*0x5276e5*/
                               if ( v8 ) /*0x5276eb*/
                               {
-                                if ( a2 == *((uint8_t **)this + 1) ) /*0x5276f8*/
+                                if ( a2 == this->headNode ) /*0x5276f8*/
                                 {
                                   v7 = this->q008; /*0x5276fe*/
                             LABEL_5:
@@ -7457,7 +7457,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
     v10 = HouseClass::FirstBuildableFromArray(this, *(unsigned int *)&g_RulesClass_Instance + 2176); /*0x506128*/
     v11 = BuildingTypeClass::GetFoundationHeight(v10, 0) + 2; /*0x50613b*/
     if ( (this->baseCenter) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] /*0x506155*/
-      && (*(this->baseCenter + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
+      && (*&this->baseCenter->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
     {
       v64 = this->baseSpawnCell[0]; /*0x50615d*/
     }
@@ -7838,7 +7838,7 @@ void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
     else
     {
       if ( (this->baseCenter) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] /*0x506293*/
-        && (*(this->baseCenter + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
+        && (*&this->baseCenter->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
       {
         v19 = this->baseSpawnCell[0]; /*0x506295*/
       }
@@ -9072,7 +9072,7 @@ void HouseClass::Find(int a1) {
   {
     v3 = (this->preferredTargetCell) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509b38*/
     v7 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509b3f*/
-    if ( v3 && (*(this->preferredTargetCell + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] ) /*0x509b53*/
+    if ( v3 && (*&this->preferredTargetCell->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] ) /*0x509b53*/
     {
       if ( this->preferredTargetType == 1 ) /*0x509b66*/
         SWBuilding = HouseClass::FindSWBuilding(this, &v8); /*0x509b6f*/
@@ -9107,7 +9107,7 @@ void HouseClass::FireStoredSW(int a1) {
   {
     v3 = (this->preferredTargetCell) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509c28*/
     v7 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509c2f*/
-    if ( v3 && (*(this->preferredTargetCell + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] ) /*0x509c43*/
+    if ( v3 && (*&this->preferredTargetCell->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] ) /*0x509c43*/
     {
       if ( this->preferredTargetType == 1 ) /*0x509c56*/
         SWBuilding = HouseClass::FindSWBuilding(this, &v8); /*0x509c5f*/
@@ -9155,7 +9155,7 @@ int HouseClass::Fire_ParaDrop(int a2) {
     if ( v2->preferredTargetType == 1 ) /*0x509d2a*/
     {
       if ( (this->baseCenter) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] /*0x509d51*/
-        && (*(this->baseCenter + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
+        && (*&this->baseCenter->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
       {
         v6 = this->baseSpawnCell[0]; /*0x509d53*/
       }
@@ -11044,7 +11044,7 @@ int HouseClass::GetTransitionCount() {
 namespace gamemd { 
 void* HouseClass::GetCurrentOption(void* aP1) {
   if ( (this->baseCenter) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] /*0x50df0e*/
-    && (*(this->baseCenter + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
+    && (*&this->baseCenter->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
   {
     *aP1 = this->baseSpawnCell[0]; /*0x50df1a*/
     return aP1; /*0x50df10*/
@@ -11066,7 +11066,7 @@ void* HouseClass::GetStartCoords(void* aP1) {
   unsigned char v7[12]; // [esp+8h] [ebp-Ch] BYREF
 
   if ( (this->baseCenter) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] /*0x50df4f*/
-    && (*(this->baseCenter + 1)) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
+    && (*&this->baseCenter->CellStruct_1) == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950] )
   {
     v2 = this->baseSpawnCell[0]; /*0x50df51*/
   }

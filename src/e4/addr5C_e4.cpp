@@ -4664,7 +4664,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->M16 = Timer::GetTicks(); /*0x5cd59c*/
   this->u32_18 = 0; /*0x5cd59f*/
   /* X11: vtable install elided (implicit via MSAnim virtuals 0x5cd5a5) */
-  WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd5ab*/
+  WideString::AssignFromPtr(&this->u32_1C, a2); /*0x5cd5ab*/
   this->M44 = a8; /*0x5cd5c0*/
   this->M48 = a9; /*0x5cd5c7*/
   this->q020 = 0; /*0x5cd5ce*/
@@ -4683,17 +4683,17 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   {
     v17 = 0; /*0x5cd611*/
     v16 = *(unsigned int *)(this->u32_34 + 4); /*0x5cd618*/
-    if ( (unsigned __int16)WideString::GetChar((const wchar_t **)this + 7, 0) ) /*0x5cd61e*/
+    if ( (unsigned __int16)WideString::GetChar(&this->u32_1C, 0) ) /*0x5cd61e*/
     {
       do /*0x5cd658*/
       {
-        if ( (unsigned __int16)WideString::GetChar((const wchar_t **)this + 7, v11) == 10 ) /*0x5cd634*/
+        if ( (unsigned __int16)WideString::GetChar(&this->u32_1C, v11) == 10 ) /*0x5cd634*/
           break; /*0x5cd634*/
         v12 = *this->u32_343); /*0x5cd63c*/
-        Char = WideString::GetChar((const wchar_t **)this + 7, v11++); /*0x5cd63e*/
+        Char = WideString::GetChar(&this->u32_1C, v11++); /*0x5cd63e*/
         v17 += (*(int (**)(unsigned int, int))(v12 + 4))(this->u32_34, Char); /*0x5cd651*/
       }
-      while ( (unsigned __int16)WideString::GetChar((const wchar_t **)this + 7, v11) ); /*0x5cd658*/
+      while ( (unsigned __int16)WideString::GetChar(&this->u32_1C, v11) ); /*0x5cd658*/
     }
     this->M76 = (this->M40 - v17 - v16) / 2; /*0x5cd676*/
   }

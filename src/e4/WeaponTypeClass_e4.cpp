@@ -175,7 +175,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   aP1->IsMagBeam = 0; /*0x771e71*/
   aP1->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771e77*/
   aP1->q15C = &WeaponTypeClass::`vftable'; /*0x771e7d*/
-  aP1->? = &WeaponTypeClass::`vftable'; /*0x771e83*/
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e83) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e8a) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
@@ -592,7 +592,7 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   this->Anim[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x771f1e*/
   this->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771f28*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f2e) */
-  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771f35*/
+  /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f35) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f3c) */
   return &this->AbstractTypeClass; /*0x771f45*/
 

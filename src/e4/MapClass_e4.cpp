@@ -924,8 +924,8 @@ int MapClass::InitCellVector()
     v2[13] = 0; /*0x565abf*/
     *(unsigned int *)v2 = &VectorClass<CellClass *>::`vftable'; /*0x565ac3*/
   }
-  (*(void (**)(char *, unsigned int, unsigned int))(*(unsigned int *)v2 + 8))(v2, *(unsigned int *)&this->__pad_144[16], 0); /*0x565ad4*/
-  for ( result = 0; result < *(unsigned int *)&this->__pad_144[16]; *((unsigned int *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
+  (*(void (**)(char *, unsigned int, unsigned int))(*(unsigned int *)v2 + 8))(v2, *&this->q154, 0); /*0x565ad4*/
+  for ( result = 0; result < *&this->q154; *((unsigned int *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
     ++result; /*0x565ae9*/
   return result; /*0x565afc*/
 
@@ -3832,9 +3832,9 @@ int MapClass::ProcessTile()
     }
   }
   g_MissionQueueFrame.localVariables[164] = 0; /*0x59960f*/
-  MapClass::PostProcessReveal((MapClass *)&stru_87F5F0.__pad_58[416], 1); /*0x599615*/
+  MapClass::PostProcessReveal((MapClass *)&DataGlobal_87F7E8, 1); /*0x599615*/
   Debug::Log(); /*0x59961f*/
-  Shroud::ProcessCellVisibility((RadarClass *)&stru_87F5F0.__pad_58[416], (int *)&stru_87F5F0.__pad_58[668]); /*0x599631*/
+  Shroud::ProcessCellVisibility((RadarClass *)&DataGlobal_87F7E8, (int *)&DataGlobal_87F8E4); /*0x599631*/
   return RadarClass::RecreateSurface(v6, 0); /*0x599640*/
 
 }

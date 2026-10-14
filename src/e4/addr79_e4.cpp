@@ -4245,7 +4245,7 @@ void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
     return 0; /*0x79bae1*/
   }
   v17 = 0; /*0x79bb32*/
-  strcpy(String, (const char *)(aP0 + 224)); /*0x79bb39*/
+  strcpy(String, &aP0->u32_E0); /*0x79bb39*/
   v15 = 0; /*0x79bb3d*/
   v16 = 0; /*0x79bb44*/
   v13 = 0; /*0x79bb4e*/

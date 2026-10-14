@@ -1758,7 +1758,7 @@ int FootClass::Release(int a1, void* a2) {
           ++i; /*0x45a47e*/
         if ( this->IsAllocated ) /*0x45a48b*/
         {
-          operator delete((void *)(*((void **)this + 1))); /*0x45a496*/
+          operator delete((void *)(this->vtable2)); /*0x45a496*/
           this->Items = 0; /*0x45a49e*/
         }
       }
@@ -2479,7 +2479,7 @@ int AbstractClass::executeScriptAction(int a2, void* a3) {
         ++i; /*0x4caac1*/
       if ( this->IsAllocated ) /*0x4caace*/
       {
-        operator delete((void *)(*((void **)this + 1))); /*0x4caad9*/
+        operator delete((void *)(this->vtable2)); /*0x4caad9*/
         this->Items = 0; /*0x4caae1*/
       }
     }
@@ -2864,7 +2864,7 @@ int AbstractClass::completeMission(int a2, void* a3) {
         ++i; /*0x4e04f1*/
       if ( this->IsAllocated ) /*0x4e04fe*/
       {
-        operator delete((void *)(*((void **)this + 1))); /*0x4e0509*/
+        operator delete((void *)(this->vtable2)); /*0x4e0509*/
         this->Items = 0; /*0x4e0511*/
       }
     }
@@ -3185,7 +3185,7 @@ int AbstractClass::evaluateTarget(int a1, void* a2) {
       }
       if ( this->IsAllocated ) /*0x50f44a*/
       {
-        operator delete((void *)(*((void **)this + 1))); /*0x50f453*/
+        operator delete((void *)(this->vtable2)); /*0x50f453*/
         this->Items = 0; /*0x50f45b*/
       }
     }
@@ -3247,7 +3247,7 @@ void* AbstractClass::updateThreatMap(int a2) {
 // 0x5224f0
 namespace ra2 { namespace game { 
 bool TechnoClass::updateTurretRotation() {
-  return *(unsigned int *)(this->q6C0 + 1732) > -1; /*0x522504*/
+  return *(unsigned int *)&this->q6C0->u32_6C4 > -1; /*0x522504*/
 }
 }
 }
@@ -4058,7 +4058,7 @@ void* AbstractClass::getWeaponSpeed(int a1) {
       if ( nextArrayIndex ) /*0x5b473b*/
       {
         *(unsigned int *)(nextArrayIndex + 4) = abstractFlags; /*0x5b473d*/
-        *(unsigned int *)(this->abstractFlags + 8) = this->nextArrayIndex; /*0x5b4746*/
+        *(unsigned int *)&this->abstractFlags->vtable3 = this->nextArrayIndex; /*0x5b4746*/
         this->nextArrayIndex = 0; /*0x5b4749*/
         this->abstractFlags = 0; /*0x5b474c*/
       }
@@ -4240,7 +4240,7 @@ int AbstractClass::checkCombatFlags(int a2, void* a3) {
           ++i; /*0x5c0b6e*/
         if ( this->IsAllocated ) /*0x5c0b7b*/
         {
-          operator delete((void *)(*((void **)this + 1))); /*0x5c0b86*/
+          operator delete((void *)(this->vtable2)); /*0x5c0b86*/
           this->Items = 0; /*0x5c0b8e*/
         }
       }
@@ -5999,7 +5999,7 @@ int AbstractClass::getAIPriority(int a2, void* a3) {
           ++i; /*0x6b150e*/
         if ( this->IsAllocated ) /*0x6b151b*/
         {
-          operator delete((void *)(*((void **)this + 1))); /*0x6b1526*/
+          operator delete((void *)(this->vtable2)); /*0x6b1526*/
           this->Items = 0; /*0x6b152e*/
         }
       }
@@ -6112,7 +6112,7 @@ int AbstractClass::allocatePathMemory(int a2, void* a3) {
           ++i; /*0x6b82be*/
         if ( this->IsAllocated ) /*0x6b82cb*/
         {
-          operator delete((void *)(*((void **)this + 1))); /*0x6b82d6*/
+          operator delete((void *)(this->vtable2)); /*0x6b82d6*/
           this->Items = 0; /*0x6b82de*/
         }
       }
@@ -6989,7 +6989,7 @@ int TechnoClass::GetDrawHeight() {
         return v5 - 3; /*0x7043e0*/
       }
     }
-    if ( *(unsigned char *)(this->u32_6C4 + 3598) ) /*0x7043e7*/
+    if ( *(unsigned char *)&this->u32_6C4->u32_E0E ) /*0x7043e7*/
     {
       v10 = (Cell *)(*((int (__thiscall **)(TechnoClass *))this->vfptr + 111))(this); /*0x7043f5*/
       v11 = Cell::IsBridge(v10); /*0x7043fd*/
@@ -9549,7 +9549,7 @@ int TechnoClass::updateTargeting() {
   storedTiberium = this->storedTiberium; /*0x740b14*/
   this->u32_6D2 = 0; /*0x740b1a*/
   if ( !(uint8_t)Flag::CheckNone((Flag *)this->storedTiberium) ) /*0x740b23*/
-    Timer::StartDouble((Timer *)storedTiberium, *(double *)(this->u32_6C4 + 968)); /*0x740b42*/
+    Timer::StartDouble((Timer *)storedTiberium, *(double *)&this->u32_6C4->AudioController_3C8); /*0x740b42*/
   return UnitClass::ApproachEvaluate((FootClass *)this); /*0x740b4e*/
 }
 }
@@ -9584,7 +9584,7 @@ bool TechnoClass::checkSpawnState() {
 // 0x746d00
 namespace ra2 { namespace game { 
 int TechnoClass::updateSpawnManager() {
-  return *(unsigned char *)(this->u32_6C4 + 1708); /*0x746d0c*/
+  return *(unsigned char *)&this->u32_6C4->q6AC; /*0x746d0c*/
 }
 }
 }
@@ -9700,7 +9700,7 @@ int ObjectClass::IsCellSuitableForPlacement() {
       while ( 1 ) /*0x74d708*/
       {
         (*((unsigned short *)&(v11))) = v9 + (this->vtable1); /*0x74d708*/
-        (*(((unsigned short *)&(v11)) + 1)) = v8 + (*(this->vtable1 + 1)); /*0x74d70d*/
+        (*(((unsigned short *)&(v11)) + 1)) = v8 + (*&this->vtable1->AbstractClass_1); /*0x74d70d*/
         *(unsigned int *)v11 = v11; /*0x74d71a*/
         v10 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v11); /*0x74d724*/
         if ( v10->u32_11C || v10->u32_EC || (char)v10[283] != v6 ) /*0x74d746*/
@@ -9722,7 +9722,7 @@ int ObjectClass::IsCellSuitableForPlacement() {
       v4 = (this->vtable1) - *(int16_t *)(*(unsigned int *)v3 + 248); /*0x74d6ab*/
       if ( (int)(((*(((unsigned int *)&(v4)) + 1)) ^ v4) - (*(((unsigned int *)&(v4)) + 1))) < 3 ) /*0x74d6b3*/
       {
-        v5 = (*((signed short *)(this->vtable1 + 2))) - *(int16_t *)(*(unsigned int *)v3 + 250); /*0x74d6c2*/
+        v5 = (*((signed short *)&this->vtable1->ptr_2)) - *(int16_t *)(*(unsigned int *)v3 + 250); /*0x74d6c2*/
         if ( (int)(((*(((unsigned int *)&(v5)) + 1)) ^ v5) - (*(((unsigned int *)&(v5)) + 1))) < 3 ) /*0x74d6ca*/
           break; /*0x74d6ca*/
       }
@@ -9789,7 +9789,7 @@ int IRTTITypeInfo::SetCapacity(int a1, void* a2) {
         ++i; /*0x74f591*/
       if ( this->u32_D ) /*0x74f59e*/
       {
-        operator delete((void *)(*((void **)this + 1))); /*0x74f5a9*/
+        operator delete((void *)(this->u32_4)); /*0x74f5a9*/
         this->u32_4 = 0; /*0x74f5b1*/
       }
     }

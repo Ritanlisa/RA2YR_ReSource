@@ -1355,8 +1355,8 @@ LABEL_108:
   CCINIClass::CCINIClass(v100);
   if ( !((CCINIClass *)(v100))->Load( (int)(v101), 0, 0) )
     goto LABEL_106;
-  ((ThemeManager *)(int)&g_BuildingTypeClass_Count)->Cleanup();
-  ((ThemeClass *)(int)&g_BuildingTypeClass_Count)->InitializeThemes( (char *)v100);
+  ((ThemeManager*)&g_BuildingTypeClass_Count)->Cleanup();
+  ((ThemeClass*)&g_BuildingTypeClass_Count)->InitializeThemes( (char *)v100);
   Audio::LoadWAVFiles( (void *)(&g_BuildingTypeClass_Count));
   Debug::Log();
   if ( !InitBulkData() )
@@ -1868,7 +1868,7 @@ LABEL_2:
   unk_8B41C0 = 0;
   byte_A83D48 = 0;
   *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30700] = 0;
-  ((Mouse *)((int)&((unsigned char *)&stru_87C374)[13428]))->SetBounds(0);
+  ((Mouse*)(&((unsigned char *)&stru_87C374)[13428]))->SetBounds(0);
   *(unsigned int *)&((unsigned char *)&stru_87C374)[17944] = 0;
   *(unsigned int *)&((unsigned char *)&stru_87C374)[17948] = 0;
   *(unsigned int *)&((unsigned char *)&stru_87C374)[17952] = -1;
@@ -1942,7 +1942,7 @@ LABEL_20:
       if ( ((unsigned char *)&HouseClass_Player)[40532] )
       {
         if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44224] )
-          ((NetworkEventQueueClass *)((int)&g_NetworkEventQueue))->WaitForResponse();
+          ((NetworkEventQueueClass*)(&g_NetworkEventQueue))->WaitForResponse();
         v11 = *(void (****)(unsigned int, int))&((unsigned char *)&stru_87C374)[45748];
         ((unsigned char *)&HouseClass_Player)[40532] = 0;
       }
@@ -2023,7 +2023,7 @@ LABEL_40:
         else
         {
           esi12 = 7;
-          ((ScenarioClass *)((int)&((unsigned char *)&HouseClass_Player)[44564]))->SaveGameOptions();
+          ((ScenarioClass*)(&((unsigned char *)&HouseClass_Player)[44564]))->SaveGameOptions();
         }
         goto LABEL_134;
       case 7:
@@ -2032,7 +2032,7 @@ LABEL_40:
         if ( *(unsigned int *)&((unsigned char *)&stru_87C374)[44996] != -1 )
           v40 += TimerGetTicks() - *(unsigned int *)&((unsigned char *)&stru_87C374)[44996];
         int v41 = v40 + 3000;
-        while ( ((Theme *)(int)&g_BuildingTypeClass_Count)->IsPlaying() )
+        while ( ((Theme*)&g_BuildingTypeClass_Count)->IsPlaying() )
         {
           if ( !(uint8_t)Audio::IsPlaying() )
             break;
@@ -2309,7 +2309,7 @@ LABEL_189:
           Frame::Present(v50, 0);
           (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 16))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
           *(unsigned int *)&((unsigned char *)&stru_87C374)[44960] = *(unsigned int *)&((unsigned char *)&stru_87C374)[44952];
-          ((Mouse *)((int)&((unsigned char *)&stru_87C374)[13428]))->SetCursor( (int)((ObjectClass *)0x13), 0);
+          ((Mouse*)(&((unsigned char *)&stru_87C374)[13428]))->SetCursor( (int)((ObjectClass *)0x13), 0);
           ((MouseClass *)(&((unsigned char *)&stru_87C374)[13428]))->GetPosition();
           if ( !((unsigned char *)&HouseClass_Player)[45087] )
             TacticalClass::BuildCommandBar(&((unsigned char *)&stru_87C374)[13428], j, 1);
@@ -2381,13 +2381,13 @@ LABEL_134:
         esi12 = 4;
         CreditsPower::Display(0, j, 4);
         v17 = (IUnknown *)((StringList *)(&g_BuildingTypeClass_Count))->Find(g_INI_Key_INTRO);
-        ((Theme*)((int)&g_BuildingTypeClass_Count))->QueueSong( (int)(v17));
+        ((Theme*)(&g_BuildingTypeClass_Count))->QueueSong( (int)(v17));
         Screen::Capture(1, 0, 0, -1);
         goto LABEL_134;
       case 16:
       case 17:
 LABEL_81:
-        ((ScenarioClass *)((int)&((unsigned char *)&HouseClass_Player)[29932]))->LoadNetworkConfig();
+        ((ScenarioClass*)(&((unsigned char *)&HouseClass_Player)[29932]))->LoadNetworkConfig();
         for ( j = 0; j < g_SuperWeaponTypeArray; ++j )
           (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)g_SuperWeaponTypeCount + j) + 100))(
             *((unsigned int *)g_SuperWeaponTypeCount + j),
@@ -2452,7 +2452,7 @@ LABEL_116:
                   v32 += 4;
                 }
                 while ( (int)v32 < (int)g_PlayerHouseFlags_End );
-                ((ScenarioClass *)((int)&((unsigned char *)&HouseClass_Player)[29932]))->LoadNetworkConfig();
+                ((ScenarioClass*)(&((unsigned char *)&HouseClass_Player)[29932]))->LoadNetworkConfig();
                 if ( *(unsigned int *)&((unsigned char *)&stru_87C374)[45748] )
                 {
                   (***(void (****)(unsigned int, int))&((unsigned char *)&stru_87C374)[45748])(

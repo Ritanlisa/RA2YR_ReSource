@@ -1866,7 +1866,7 @@ namespace gamemd {
         v100 = (int *)v54; /*0x42a03d*/
         if ( v97 ) /*0x42a041*/
         {
-          v55 = *(unsigned int **)(this + 20); /*0x42a052*/
+          v55 = this->u32_14; /*0x42a052*/
           v56 = *v55 + 1; /*0x42a05c*/
           if ( *v55 == -1 ) /*0x42a05f*/
           {
@@ -1958,7 +1958,7 @@ namespace gamemd {
     v69 = (int ***)v97; /*0x42a1b3*/
     if ( !v97 ) /*0x42a1b9*/
     {
-      v79 = *(int **)(this + 20); /*0x42a2bb*/
+      v79 = this->u32_14; /*0x42a2bb*/
       if ( !*v79 ) /*0x42a2be*/
       {
         v95 = 0; /*0x42a2c4*/
@@ -2016,7 +2016,7 @@ namespace gamemd {
       while ( v84 != v81 ); /*0x42a3af*/
       goto LABEL_143; /*0x42a3af*/
     }
-    v70 = *(int **)(this + 20); /*0x42a1bf*/
+    v70 = this->u32_14; /*0x42a1bf*/
     if ( !*v70 ) /*0x42a1c2*/
       goto LABEL_144; /*0x42a1c2*/
     v71 = v70[2]; /*0x42a1cb*/

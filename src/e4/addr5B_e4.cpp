@@ -542,7 +542,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
           && g_Rules_ShortGame == ((v3 & 0x40) != 0)
           && MultiEngineer == ((v3 & 0x80) != 0)
           && !_strcmpi(byte_A8B8E0, &aP0->q0A3)
-          && !strcmp(&byte_A8BAE2, (const char *)(aP0 + 176))
+          && !strcmp(&byte_A8BAE2, &aP0->u32_B0)
           && dword_A8BB04 == aP0->u32_9E )
         {
           return 0; /*0x5b69de*/
@@ -590,7 +590,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   {
     Debug::Log(); /*0x5b6baf*/
     strcpy(byte_A8B8E0, (const char *)(aP0 + 163)); /*0x5b6bce*/
-    strcpy(&byte_A8BAE2, (const char *)(aP0 + 176)); /*0x5b6bf4*/
+    strcpy(&byte_A8BAE2, &aP0->u32_B0); /*0x5b6bf4*/
     v9 = (aP0->inOpenToppedTransport & 0x10) != 0; /*0x5b6c0b*/
     v9 = v9; /*0x5b6c12*/
     dword_A8BB04 = aP0->u32_9E; /*0x5b6c1d*/

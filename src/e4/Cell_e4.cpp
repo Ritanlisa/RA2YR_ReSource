@@ -229,7 +229,7 @@ LABEL_11:
       if ( (v19 || !v10) && v11 > 0 ) /*0x481725*/
         break; /*0x481725*/
 LABEL_24:
-      v8 = (unsigned int *)v8[12]; /*0x481750*/
+      v8 = v8->nextObject; /*0x481750*/
       if ( !v8 ) /*0x481755*/
         goto LABEL_25; /*0x481755*/
       v11 = v21; /*0x48170d*/
@@ -254,7 +254,7 @@ LABEL_25:
         || *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6125)
         || v13
         && ((unsigned __int8)TechnoTypeClass::HasVoiceResponse(v13, 3)
-         || *(unsigned int *)(v13[135] + 588) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5196)) )
+         || v13->owner->iqLevel2 >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5196)) )
       {
         (*(void (**)(unsigned int, int, int, int))(**((unsigned int **)Block + v9) + 372))( /*0x4817d3*/
           *((unsigned int *)Block + v9),
@@ -735,18 +735,18 @@ Coord * * Cell::IsValidDestination(short * a2)
         return 0; /*0x4dcf19*/
     }
   }
-  v8 = (unsigned int *)(*(int (**)(Cell *, unsigned int *, unsigned int))(this->__pad_000 + 76))(this, v16, 0); /*0x4dcf31*/
+  v8 = (unsigned int *)(*(int (**)(Cell *, unsigned int *, unsigned int))&this->__pad_000->u32_4C)(this, v16, 0); /*0x4dcf31*/
   LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   Cell_field_0x0 = this->__pad_000; /*0x4dcf5b*/
   HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
   *(unsigned int *)v14 = v17; /*0x4dcf69*/
   v10 = (*(int (**)(Cell *))(Cell_field_0x0 + 188))(this); /*0x4dcf6f*/
-  v11 = (*(int (**)(Cell *, int))(this->__pad_000 + 132))(this, v10); /*0x4dcf7a*/
+  v11 = (*(int (**)(Cell *, int))&this->__pad_000->q084)(this, v10); /*0x4dcf7a*/
   if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4dcfa1*/
   return v12->u32_EC == 5 /*0x4dcfc7*/
-      && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))(this->__pad_000 + 428))(
+      && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))&this->__pad_000->u32_1AC)(
             this,
             v12,
             -1,

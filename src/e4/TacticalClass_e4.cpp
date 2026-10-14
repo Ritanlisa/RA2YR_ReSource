@@ -1687,7 +1687,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
         }
         else
         {
-          v28 = (const char **)v2[1]; /*0x732e57*/
+          v28 = v2->Items; /*0x732e57*/
           while ( strcmp(v12, *v28) ) /*0x732e8e*/
           {
             ++v13; /*0x732e97*/
@@ -1710,7 +1710,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
         v19 = 0; /*0x732f1d*/
         if ( (int)v2[4] <= 0 ) /*0x732f21*/
           goto LABEL_40; /*0x732f21*/
-        v29 = (const char **)v2[1]; /*0x732f26*/
+        v29 = v2->Items; /*0x732f26*/
         while ( strcmp(v18, *v29) ) /*0x732f5d*/
         {
           ++v19; /*0x732f66*/
@@ -1737,7 +1737,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
     }
     else
     {
-      v27 = (const char **)v2[1]; /*0x732d8c*/
+      v27 = v2->Items; /*0x732d8c*/
       while ( strcmp(v6, *v27) ) /*0x732dc3*/
       {
         ++v7; /*0x732dc9*/

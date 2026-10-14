@@ -34,7 +34,7 @@ void WinsockInterfaceClass::Constructor(void *aP1) { new (aP1) WinsockInterfaceC
     NetworkClass::UnregisterAsync((SOCKET *)aP1); /*0x7b1ac6*/
     (*(void (**)(int))(*(unsigned int *)aP1 + 4))(aP1); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
-    *(unsigned char *)(aP1 + 258152) = 0; /*0x7b1ad8*/
+    aP1->u32_3F068 = 0; /*0x7b1ad8*/
   }
   v3 = *(void **)(aP1 + 60); /*0x7b1ade*/
   *(unsigned int *)(aP1 + 56) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/

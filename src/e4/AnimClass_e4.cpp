@@ -94,10 +94,10 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
     AnimClass_field_0xC8 = a2->AnimClass_field_0xC8; /*0x422967*/
     if ( AnimClass_field_0xC8 && AnimClass_field_0xC8[2].__pad_C[201] ) /*0x422971*/
     {
-      v13[0] = a2->AnimClass_field_0x9C; /*0x422985*/
+      v13[0] = a2->Coord_9C; /*0x422985*/
       v13[1] = *(unsigned int *)a2->__pad_A0; /*0x422991*/
       v13[2] = a2->AnimClass_field_0xA4; /*0x422998*/
-      v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x4229a1*/
+      v6 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (unsigned __int8)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
@@ -121,13 +121,13 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   v8 = (AnimClass *)a2->AnimClass_field_0xC8; /*0x422a18*/
   if ( v8 ) /*0x422a20*/
     AnimClass::FreeRenderBuffer(v8); /*0x422a22*/
-  Mixer::ReleaseChannel((Mixer *)a2->AnimClass_field_0x1A0); /*0x422a2f*/
-  Mixer::ReleaseChannel((Mixer *)&a2->AnimClass_field_0x1B4); /*0x422a3c*/
-  AudioFileClass::Release((AudioFileClass *)a2->AnimClass_field_0x1A0); /*0x422a43*/
-  AudioFileClass::Release((AudioFileClass *)&a2->AnimClass_field_0x1B4); /*0x422a4a*/
+  Mixer::ReleaseChannel((Mixer *)a2->AudioController_1A0); /*0x422a2f*/
+  Mixer::ReleaseChannel(&a2->AudioController_1B4); /*0x422a3c*/
+  AudioFileClass::Release((AudioFileClass *)a2->AudioController_1A0); /*0x422a43*/
+  AudioFileClass::Release(&a2->AudioController_1B4); /*0x422a4a*/
   a2->AnimClass_field_0xCC = 0; /*0x422a52*/
   a2->AnimClass_field_0xC8 = 0; /*0x422a59*/
-  if ( AbstractClass::GetVtable3((AbstractClass *)&a2->AnimClass_field_0x4) == -2 ) /*0x422a67*/
+  if ( AbstractClass::GetVtable3(&a2->vtable2) == -2 ) /*0x422a67*/
   {
     v12 = a2; /*0x422a79*/
     v9 = (*((int (**)(void **, AnimClass **))stru_A83D50.SuperClass_field_0xB0 + 4))( /*0x422a7d*/
@@ -1513,7 +1513,7 @@ int AnimClass::ProcessFrame()
   if ( v4 >= 0 ) /*0x76107b*/
     return ObjectClass::DetectCloaked((UnitClass *)this); /*0x76108f*/
   else
-    return (*(int (**)(AnimClass *))(this->vtable1 + 248))(this); /*0x761081*/
+    return (*(int (**)(AnimClass *))&this->vtable1->q0F8)(this); /*0x761081*/
 
 }
 } // namespace gamemd

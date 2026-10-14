@@ -133,7 +133,7 @@ LABEL_103:
                     v8 = occupant; /*0x7aa9f2*/
                   if ( v8 ) /*0x7aa9f6*/
                   {
-                    v11 = strcmp((const char *)(v8 + 52), v6 + 52); /*0x7aaa04*/
+                    v11 = strcmp(&v8->u32_34, v6 + 52); /*0x7aaa04*/
                     v6 = a3; /*0x7aaa27*/
                     if ( !v11 ) /*0x7aaa30*/
                       break; /*0x7aaa30*/

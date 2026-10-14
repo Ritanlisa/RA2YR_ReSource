@@ -178,7 +178,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v15 = -1732584194; /*0x4742ad*/
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
-  *(unsigned int *)v12.__pad_0 = &SHAPipe::`vftable'; /*0x4742c5*/
+  *(unsigned int *)v12.state = &SHAPipe::`vftable'; /*0x4742c5*/
   INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
   SHA1::ComputeThunk(&v12, this->__pad_041); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
@@ -234,14 +234,14 @@ CCINIClass::CCINIClass()
       }
     }
   }
-  v6 = sectionHead[1]; /*0x535b86*/
+  v6 = sectionHead->Prev; /*0x535b86*/
   p_sectionCount[2] = (int)sectionHead; /*0x535b89*/
   p_sectionCount[1] = v6; /*0x535b8c*/
-  v7 = sectionHead[1]; /*0x535b8f*/
+  v7 = sectionHead->Prev; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = p_sectionCount; /*0x535b96*/
-  sectionHead[1] = (int)p_sectionCount; /*0x535b99*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x535b9c*/
+  sectionHead->Prev = (int)p_sectionCount; /*0x535b99*/
+  result->u32_C = &List<INIClass::INISection *>::`vftable'; /*0x535b9c*/
   result->needsSave_flag = 0; /*0x535ba4*/
   result->INIClass_field_2C = 0; /*0x535ba7*/
   result->unknown30 = 0; /*0x535baa*/

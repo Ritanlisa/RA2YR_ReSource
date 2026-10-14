@@ -1756,7 +1756,7 @@ int EnumConnectionsClass::QueryInterface(const void *a2, unsigned int *a3) {
 namespace gamemd {
 LONG EnumConnectionsClass::AddRef() {
   ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x49ffff*/
-  return InterlockedIncrement((volatile LONG *)this + 8); /*0x4a000b*/
+  return InterlockedIncrement(&this->q020); /*0x4a000b*/
 }
 } // namespace gamemd
 
@@ -1769,7 +1769,7 @@ LONG EnumConnectionsClass::Release() {
   int v4; // [esp-8h] [ebp-10h]
 
   --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x4a0020*/
-  result = InterlockedDecrement((volatile LONG *)this + 8); /*0x4a0027*/
+  result = InterlockedDecrement(&this->q020); /*0x4a0027*/
   if ( !result && this ) /*0x4a0035*/
   {
     /* X11: vtable install elided (implicit via class virtuals 0x4a0037) — binary-proven install, was 0 */
@@ -2878,7 +2878,7 @@ int GraphicMenuImageItem::Load(char a2) {
   v7 = this->u32_2C; /*0x4f36da*/
   if ( v7 ) /*0x4f36df*/
     (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, (this->u8_9) == 0); /*0x4f36ec*/
-  Team::ReleaseAll((Team *)this->q010, (int)(this + 1)); /*0x4f36f6*/
+  Team::ReleaseAll((Team *)this->q010, (int)(&this->q010)); /*0x4f36f6*/
   result = DSurface::Flip2(); /*0x4f36fe*/
   if ( a2 ) /*0x4f3705*/
   {
@@ -2913,7 +2913,7 @@ int GraphicMenuImageItem::Draw(char a2) {
   v7 = this->u32_2C; /*0x4f376a*/
   if ( v7 ) /*0x4f376f*/
     (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, a2 == 0); /*0x4f3779*/
-  Team::ReleaseAll((Team *)this->q010, (int)(this + 1)); /*0x4f3783*/
+  Team::ReleaseAll((Team *)this->q010, (int)(&this->q010)); /*0x4f3783*/
   return DSurface::Flip2(); /*0x4f3790*/
 }
 } // namespace gamemd
@@ -2970,7 +2970,7 @@ char GraphicMenuShortcutItem::AddRef(int a2) {
 
   if ( !this->u32_9 ) /*0x4f3ee0*/
     return 0; /*0x4f3eea*/
-  *(unsigned int *)&v3.m_1[3] = this + 2; /*0x4f3ef6*/
+  *(unsigned int *)&v3.m_1[3] = &this->u32_9; /*0x4f3ef6*/
   v4 = 0; /*0x4f3efe*/
   *(unsigned int *)v3.__pad_0 = 0; /*0x4f3f06*/
   if ( VectorCursor_uint_DynamicVectorClass_uint::AddRef(&v3) ) /*0x4f3f0e*/
@@ -3103,7 +3103,7 @@ int HashTableSection::FindSection(uint8_t *a2, uint8_t *a3) {
   v17 = (uint8_t **)this->u32_38; /*0x526c3e*/
   if ( v17 && *v17 == v16 ) /*0x526c47*/
     goto LABEL_24; /*0x526c47*/
-  v18 = SortedArray::BinarySearch((char **)this + 10, (int *)&a2); /*0x526c50*/
+  v18 = SortedArray::BinarySearch(&this->u8_28, (int *)&a2); /*0x526c50*/
   if ( !v18 ) /*0x526c57*/
   {
   LABEL_29:
@@ -4709,7 +4709,7 @@ int HashMap::Shrink2() {
         {
           do /*0x7adffd*/
           {
-            v11 = (*((int (__thiscall **)(int))this + 6))(v10) & ((1 << this->u32_C) - 1); /*0x7adfe7*/
+            v11 = (*((int (__thiscall **)(int))&this->u32_C))(v10) & ((1 << this->u32_C) - 1); /*0x7adfe7*/
             v12 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v11); /*0x7adfeb*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v11) = v10; /*0x7adff1*/
             v13 = *(unsigned int *)(v10 + 112); /*0x7adff3*/
@@ -4778,7 +4778,7 @@ int HashMap::Shrink() {
         {
           do /*0x7ae4ed*/
           {
-            v11 = (*((int (__thiscall **)(int))this + 6))(v10) & ((1 << this->u32_C) - 1); /*0x7ae4d7*/
+            v11 = (*((int (__thiscall **)(int))&this->u32_C))(v10) & ((1 << this->u32_C) - 1); /*0x7ae4d7*/
             v12 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v11); /*0x7ae4db*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v11) = v10; /*0x7ae4e1*/
             v13 = *(unsigned int *)(v10 + 8); /*0x7ae4e3*/

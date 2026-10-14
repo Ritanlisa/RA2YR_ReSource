@@ -81,7 +81,12 @@ HARD_PATTERNS = [
     ("INT2PTR", re.compile(
         r"\(\s*[\w:]+\s*\*+\s*\)\s*(?:0[xX]" + _HEX + r"|[1-9]\d*)\b")),
     ("PTR2INT", re.compile(
-        r"\(\s*" + _INT_TYPES + r"\s*\)\s*(?:\(\s*[\w:]+\s*\*+|&\s*[\w\>\.])")),
+        # X20 precision fix (X19 §5.3): the inner alternative must be a REAL
+        # `(T*)` cast -- requiring the closing `)` after the stars.  Without
+        # it `(int)(g_ScoreVolume * 10.0 + 0.5)` matched `(int)(g_ScoreVolume *`
+        # (a multiplication, not a cast; 127 false positives measured).
+        # True positives `(int)(T*)x`, `(unsigned int)(T **)x` still match.
+        r"\(\s*" + _INT_TYPES + r"\s*\)\s*(?:\(\s*[\w:]+\s*\*+\s*\)|&\s*[\w\>\.])")),
 ]
 INFO_PATTERNS = [
     ("IDA-NAME", re.compile(

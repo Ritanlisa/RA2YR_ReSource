@@ -411,7 +411,7 @@ char BulkData_Initialize()
 }
   v175 = 32; /*0x533d0f*/
 // 0x5387d0
-  return ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
+  return ((SortedArray*)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
   {
     int v4; // eax
     int v5; // ebx
@@ -1559,7 +1559,7 @@ AnimClass * * UpdateChronosphereEffect()
       {
         ScenarioClass::ProcessIntroTimer(); /*0x53b6e6*/
         ((Mixer*)((int **)&dword_A9F9B8))->ReleaseChannel(); /*0x53b6f0*/
-        SetAudioSource( (AudioMixer *)((int)&dword_A9F9B8), 0, 0); /*0x53b6fe*/
+        SetAudioSource( (AudioMixer*)(&dword_A9F9B8), 0, 0); /*0x53b6fe*/
         AudioFileClass::Release( (gamemd::AudioFileClass *)(&dword_A9F9B8)); /*0x53b708*/
         SetVocClassEnabled(1); /*0x53b70f*/
         ChronoScreenEffect::DecrementCounter(); /*0x53b714*/
@@ -2156,7 +2156,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
         v21 = dword_AA0430; /*0x53e809*/
         v20 = dword_A8ED84; /*0x53e80d*/
         EnterCriticalSection(&unk_AA0400); /*0x53e811*/
-        (*(void (**)(int, unsigned int, unsigned int))(*&dword_887640->q0E0))( /*0x53e827*/
+        (*(void (**)(int, unsigned int, unsigned int))(*&dword_887640->FootClass_E0))( /*0x53e827*/
           dword_887640,
           dword_AA0434,
           (*(((unsigned int *)&(dword_AA0434)) + 1)));
@@ -2208,7 +2208,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
                   v6(&unk_AA0400); /*0x53e9e3*/
                   dword_AA0434 = (int64_t)Point; /*0x53e9f5*/
                   if ( dword_887640 ) /*0x53ea00*/
-                    (*(void (**)(int, LONG, LONG))(*&dword_887640->q0E0))( /*0x53ea06*/
+                    (*(void (**)(int, LONG, LONG))(*&dword_887640->FootClass_E0))( /*0x53ea06*/
                       dword_887640,
                       Point.x,
                       Point.y);

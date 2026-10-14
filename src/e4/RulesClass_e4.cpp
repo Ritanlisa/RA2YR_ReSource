@@ -528,7 +528,7 @@ void *  RulesClass::readAircraftTypes(int * a2)
 
   if ( this != (RulesClass *)a2 ) /*0x67a19a*/
   {
-    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a19e*/
+    (*(void (**)(RulesClass *))&this->DetailMinFrameRateNormal->IsInitialized)(this); /*0x67a19e*/
     v3 = a2->DetailBufferZoneWidth; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
@@ -574,7 +574,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
 
   if ( this != (RulesClass *)a2 ) /*0x67a21a*/
   {
-    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a21e*/
+    (*(void (**)(RulesClass *))&this->DetailMinFrameRateNormal->IsInitialized)(this); /*0x67a21e*/
     v3 = a2->DetailBufferZoneWidth; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
@@ -620,7 +620,7 @@ void * RulesClass::readBuildingTypes(int * a2)
 
   if ( this != (RulesClass *)a2 ) /*0x67a31a*/
   {
-    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a31e*/
+    (*(void (**)(RulesClass *))&this->DetailMinFrameRateNormal->IsInitialized)(this); /*0x67a31e*/
     v3 = a2->DetailBufferZoneWidth; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
@@ -682,7 +682,7 @@ int  RulesClass::readAI(unsigned int * a2)
   if ( result < DetailBufferZoneWidth /*0x67b4ad*/
     || ((this->u8_D) || !DetailBufferZoneWidth)
     && (result = (int)this->SmallVisceroid, result > 0)
-    && (result = (*(int (**)(RulesClass *, int, unsigned int))(this->DetailMinFrameRateNormal + 8))(
+    && (result = (*(int (**)(RulesClass *, int, unsigned int))&this->DetailMinFrameRateNormal->Capacity)(
                    this,
                    DetailBufferZoneWidth + result,
                    0),

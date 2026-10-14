@@ -656,13 +656,13 @@ CampaignClass * * SessionClass::loadSettings()
   }
   v7 = *&this->q058; /*0x5d00cf*/
   *&this->u32_54 = &VectorClass<MapSelection *>::`vftable'; /*0x5d00d2*/
-  if ( v7 && this->__pad_50[17] ) /*0x5d00dd*/
+  if ( v7 && this->u8_61 ) /*0x5d00dd*/
   {
     __3_YAXPAX_Z(v7); /*0x5d00e3*/
-    *(unsigned int *)&this->__pad_50[8] = 0; /*0x5d00eb*/
+    *&this->q058 = 0; /*0x5d00eb*/
   }
-  this->__pad_50[17] = 0; /*0x5d00ee*/
-  *(unsigned int *)&this->__pad_50[12] = 0; /*0x5d00f1*/
+  this->u8_61 = 0; /*0x5d00ee*/
+  *&this->q05C = 0; /*0x5d00f1*/
   v8 = (void *)this->Handle[2]; /*0x5d00f4*/
   this->Handle[1] = (int)&VectorClass<MSTextEntry *>::`vftable'; /*0x5d00f7*/
   if ( v8 && BYTE1(this->Handle[4]) ) /*0x5d0102*/
@@ -681,9 +681,9 @@ CampaignClass * * SessionClass::loadSettings()
   }
   BYTE1(this->Config[6]) = 0; /*0x5d013b*/
   this->Config[5] = 0; /*0x5d013e*/
-  DeleteAndZero((ObjectClass *)&this->Config[2]); /*0x5d0141*/
+  DeleteAndZerothis->__pad_050); /*0x5d0141*/
   v10 = 2; /*0x5d0149*/
-  v11 = (ObjectClass *)&this->Config[2]; /*0x5d014e*/
+  v11 = &this->__pad_050; /*0x5d014e*/
   do /*0x5d015c*/
   {
     v11 = (ObjectClass *)((char *)v11 - 4); /*0x5d0151*/
@@ -1761,7 +1761,7 @@ int  SessionClass::IsValidHouse(void * a2)
   v3 = this->u32_3074; /*0x697e8e*/
   if ( v3 != -1 ) /*0x697e97*/
     return v2->u32_30 == v3; /*0x697ea8*/
-  if ( !_wcsicmp((const wchar_t *)v2 + 45077, (const wchar_t *)this->u32_C060 + 32)) ) /*0x697eb9*/
+  if ( !_wcsicmp(&v2->u32_1602A, (const wchar_t *)this->u32_C060 + 32)) ) /*0x697eb9*/
     return 1; /*0x697ec7*/
   LABEL_9:
   v5 = 0; /*0x697ed3*/
@@ -1865,7 +1865,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   v3 = this->unknown_310[224]; /*0x69999f*/
   v4 = &this->unknown_310[224]; /*0x6999a5*/
   v60.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x6999ad*/
-  memset(&v60.__pad_20[8], 0, 13); /*0x6999b5*/
+  memset(&v60.needsSave_flag, 0, 13); /*0x6999b5*/
   v60.unknown38 = 0; /*0x6999c6*/
   v60.INIClass_field_3C = 0; /*0x6999ca*/
   *(unsigned int *)v60.__pad_0 = &INIClass::`vftable'; /*0x6999ce*/

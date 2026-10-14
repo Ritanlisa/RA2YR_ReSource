@@ -143,7 +143,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   aP1->houseTypes = &TypeList<int>::`vftable'; /*0x6a458c*/
   aP1->AbstractClass = &SideClass::`vftable'; /*0x6a4597*/
   aP1->u32_98 = &SideClass::`vftable'; /*0x6a459d*/
-  aP1->? = &SideClass::`vftable'; /*0x6a45a3*/
+  aP1->u32_8 = &SideClass::`vftable'; /*0x6a45a3*/
   aP1->q00C = &SideClass::`vftable'; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x6a45b1*/
   if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
@@ -201,7 +201,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
       v2->AbstractClass = &SideClass::`vftable'; /*0x6a47e1*/
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47e7) */
-      v2->vtable3 = &SideClass::`vftable'; /*0x6a47ee*/
+      /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47ee) */
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47f5) */
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/

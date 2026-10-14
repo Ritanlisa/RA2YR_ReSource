@@ -75,30 +75,30 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x76baff*/
     if ( !v6 ) /*0x76bb03*/
       return 0; /*0x76bb86*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x76bb05*/
+    if ( *&this->q004 ) /*0x76bb05*/
     {
-      if ( a2 >= this->m_8 ) /*0x76bb11*/
-        m_8 = this->m_8; /*0x76bb13*/
+      if ( a2 >= this->Capacity ) /*0x76bb11*/
+        m_8 = this->Capacity; /*0x76bb13*/
       for ( i = 0; i < m_8; ++i ) /*0x76bb19*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76bb26*/
+        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->q004 + 8 * i + 4)); /*0x76bb26*/
       if ( BYTE1(this->m_C) ) /*0x76bb30*/
       {
-        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76bb37*/
+        v11 = *(void (****)(unsigned int, int))&this->q004; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
           (**v11)(v11, 3); /*0x76bb42*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x76bb44*/
+        *&this->q004 = 0; /*0x76bb44*/
       }
       m_8 = a2; /*0x76bb4b*/
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x76bb5a*/
-    this->m_8 = m_8; /*0x76bb5d*/
+    *&this->q004 = v6; /*0x76bb5a*/
+    this->Capacity = m_8; /*0x76bb5d*/
     BYTE1(this->m_C) = a3 == 0; /*0x76bb60*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76bb69*/
   }
-  v12 = this->m_8; /*0x76bb6c*/
+  v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->m_10 ) /*0x76bb74*/
     this->m_10 = v12; /*0x76bb76*/
   return 1; /*0x76bb79*/

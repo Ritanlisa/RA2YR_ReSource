@@ -2668,7 +2668,7 @@ int Audio::IsPlaying()
     && !dword_B1D4B8 )
   {
     v0 = stru_B1D450; /*0x752a19*/
-    while ( *((char **)v0 + 1) == v0 ) /*0x752a21*/
+    while ( v0->q004 == v0 ) /*0x752a21*/
     {
       v0 += 12; /*0x752a23*/
       if ( (int)v0 >= (int)&unk_B1D480 ) /*0x752a2b*/

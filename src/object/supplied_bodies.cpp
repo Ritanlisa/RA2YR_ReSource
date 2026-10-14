@@ -1436,7 +1436,7 @@ void * TechnoClass::FindClosestPlacementCell()
   v34[0] = 0; /*0x41a171*/
   v34[1] = 0; /*0x41a176*/
   v30 = -1; /*0x41a189*/
-  if ( *(int *)(this->u32_6C4 + 1016) > 0 ) /*0x41a197*/
+  if ( *(int *)&this->u32_6C4->u32_3F8 > 0 ) /*0x41a197*/
   {
     v3 = 0; /*0x41a1a3*/
     v31 = 0; /*0x41a1a5*/
@@ -1455,7 +1455,7 @@ void * TechnoClass::FindClosestPlacementCell()
           v41 = v7->u32_4; /*0x41a222*/
           v42 = v7->u32_8; /*0x41a229*/
           v8 = Coord::Length((Coord *)&v40); /*0x41a238*/
-          if ( v4->BuildingTypeClass_520 == **(unsigned int **)(this->u32_6C4 + 1004) ) /*0x41a248*/
+          if ( v4->BuildingTypeClass_520 == **(unsigned int **)&this->u32_6C4->u32_3EC ) /*0x41a248*/
             v8 /= 4; /*0x41a255*/
           if ( v30 == -1 || v8 < v30 ) /*0x41a262*/
           {
@@ -1501,7 +1501,7 @@ void * TechnoClass::FindClosestPlacementCell()
           v36 = 0; /*0x41a339*/
           v12 = (int16_t *)vfptr->GetCellCoords_Alt(this, &v39); /*0x41a33e*/
           v29 = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, v12, 0, 0); /*0x41a351*/
-          v13 = ((int64_t (__thiscall *)(TechnoClass *, int *))*(unsigned int *)(this->vfptr + 440))(this, &v38); /*0x41a35a*/
+          v13 = ((int64_t (__thiscall *)(TechnoClass *, int *))*(unsigned int *)&this->vfptr->airstrikeTintTimer)(this, &v38); /*0x41a35a*/
           *(unsigned int *)v37 = *LayerClass::Pathfinding_Find( /*0x41a37c*/
                               (Type *)&dword_87F7E8,
                               (*((signed int *)(((unsigned char *)&(v13)) + 4))),
@@ -1618,7 +1618,7 @@ int TechnoClass::ComputeTeamAttackPriority()
   unsigned int *v1; // edi
   int v2; // edi
 
-  if ( *(unsigned char *)(this->vfptr1 + 3580) ) /*0x41b6aa*/
+  if ( *(unsigned char *)&this->vfptr1->qDFC ) /*0x41b6aa*/
   {
     if ( !*((unsigned int *)this - 362) ) /*0x41b6b4*/
     {
@@ -1640,8 +1640,8 @@ int TechnoClass::ComputeTeamAttackPriority()
       }
     }
   }
-  if ( (!(uint8_t)Team::AllMembersValid((Team *)((char *)this - 1728)) || !*(unsigned char *)(this->vfptr1 + 3580)) /*0x41b73c*/
-    && (!*((unsigned int *)this - 362) || !*(unsigned char *)(this->vfptr1 + 3580)) )
+  if ( (!(uint8_t)Team::AllMembersValid((Team *)((char *)this - 1728)) || !*(unsigned char *)&this->vfptr1->qDFC) /*0x41b73c*/
+    && (!*((unsigned int *)this - 362) || !*(unsigned char *)&this->vfptr1->qDFC) )
   {
     return 0; /*0x41b753*/
   }
@@ -9471,7 +9471,7 @@ void * ObjectClass::GetSidebarTooltip(int a2)
   else
   {
     v16 = v7->GetSpecialValue(dword_A83D4C); /*0x6a938c*/
-    v14 = (const wchar_t *)v7[24]; /*0x6a938d*/
+    v14 = v7->ptr_30; /*0x6a938d*/
     v11 = GetStringCSF((wchar_t *)&stru_83FA64.RussianVoice[3], 0, g_Str_File_Sidebar_CPP, 3182); /*0x6a939f*/
     swprintf(&SidebarClass_TooltipBuffer, (const size_t)v11, v14, v16); /*0x6a93aa*/
   }
@@ -19574,7 +19574,7 @@ int TechnoClass::GetInfantryCursorAction() const
       goto LABEL_46; /*0x7405ef*/
     v15 = v7->u32_EC; /*0x7405ff*/
     if ( (v15 == 5 || v9 != -1 && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v9) + 681) && a3) /*0x740629*/
-      && *(unsigned char *)(this->u32_6C4 + 3598) )
+      && *(unsigned char *)&this->u32_6C4->u32_E0E )
     {
       return 6; /*0x74063e*/
     }
@@ -19686,7 +19686,7 @@ int TechnoClass::ProcessAIDecision()
           }
           if ( (int)++v11 >= 8 ) /*0x74099c*/
           {
-            if ( ((double (__thiscall *)(UnitClass *))*(unsigned int *)(this->vfptr + 692))(this) != 1.0 ) /*0x7409b3*/
+            if ( ((double (__thiscall *)(UnitClass *))*(unsigned int *)&this->vfptr->target)(this) != 1.0 ) /*0x7409b3*/
               break; /*0x7409b3*/
             if ( !this->locomotor ) /*0x7409b9*/
               sub_7DC720(-2147467261); /*0x7409c8*/
@@ -19704,7 +19704,7 @@ int TechnoClass::ProcessAIDecision()
       if ( v4->PoweredUnit > 0 ) /*0x740891*/
       {
         while ( DynamicVector::GetOrGrow( /*0x7408b6*/
-                  (DynamicVector *)(this->owner + 21760),
+                  (DynamicVector *)&this->owner->ownedBuildingTypes,
                   *(unsigned int *)(*(unsigned int *)(v4->DeploysInto + 4 * v5) + 3576)) <= 0 )
         {
           v4 = this->Type; /*0x7408b8*/
@@ -19777,7 +19777,7 @@ int TechnoClass::CheckRepairNeeded() const
   else
   {
     if ( !(uint8_t)Flag::CheckNone((Flag *)this->storedTiberium) ) /*0x740ac1*/
-      Timer::StartDouble((Timer *)this->storedTiberium, *(double *)(this->u32_6C4 + 968)); /*0x740ae0*/
+      Timer::StartDouble((Timer *)this->storedTiberium, *(double *)&this->u32_6C4->AudioController_3C8); /*0x740ae0*/
     return FootClass::Destru_vt139((FootClass *)this); /*0x740ae7*/
   }
 }
@@ -19907,7 +19907,7 @@ int TechnoClass::FindBestMovementDirection()
     *v20 = v27; /*0x740db2*/
     result = dword_8458D0[v28]; /*0x740db4*/
   }
-  if ( *(unsigned char *)(this->u32_6C4 + 3220) ) /*0x740dc1*/
+  if ( *(unsigned char *)&this->u32_6C4->qC94 ) /*0x740dc1*/
     return ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &v27) >> 12) + 1) >> 1) & 7; /*0x740de3*/
   return result; /*0x740de6*/
 }
@@ -20259,7 +20259,7 @@ int TechnoClass::ProcessSpecialUnitDeployCrush()
         {
           if ( !ObjectClass::IsCrushable(v9, this) /*0x741811*/
             || (uint8_t)Object::IsAlliedWithObjectHouse((Object *)this->owner, (int)v9)
-            && !*(unsigned char *)(this->u32_6C4 + 3220)
+            && !*(unsigned char *)&this->u32_6C4->qC94
             || (v10 = (unsigned int *)v9->GetCoords_0(v20),
                 Math::DistSq2D((Math *)this, v10) >= 0x4000)
             || v9->isFallingDown[0] )
@@ -20268,8 +20268,8 @@ int TechnoClass::ProcessSpecialUnitDeployCrush()
           }
           else if ( v9->getAltitude(v16) == 15 /*0x741849*/
                  && *(unsigned char *)(v9[1].ironTintTimer[1] + 3782)
-                 && *(TechnoClass **)v9[1].hasParachute == this
-                 && !*(unsigned char *)(this->u32_6C4 + 3220) )
+                 && *v9->vtable2.hasParachute == this
+                 && !*(unsigned char *)&this->u32_6C4->qC94 )
           {
             vfptr = this->vfptr; /*0x741859*/
             nextObject = (TechnoClass *)v9->nextObject; /*0x74185b*/
@@ -20751,7 +20751,7 @@ int TechnoClass::GetCommandTooltip() const
     || !(*((int (__thiscall **)(TechnoClass *, int))this->vfptr + 51))(this, 1) )
   {
     if ( !(uint8_t)TechnoClass::OwnerHasPower(this) || !TechnoClass::processEMPulse(this) ) /*0x746b7c*/
-      return *(unsigned int *)(this->u32_6C4 + 96); /*0x746c81*/
+      return *(unsigned int *)&this->u32_6C4->q060; /*0x746c81*/
     DB = (unsigned int *)CCINIClass::GetDB((CCINIClass *)this->passengers); /*0x746b96*/
     if ( !DB || (*(int (__thiscall **)(unsigned int *))(*DB + 44))(DB) != 15 ) /*0x746baa*/
       goto LABEL_20; /*0x746baa*/
@@ -20786,7 +20786,7 @@ int TechnoClass::GetCommandTooltip() const
         (wchar_t *const)&this->facing,
         (const size_t)&off_826960,
         StringCSF,
-        *(unsigned int *)(this->u32_6C4 + 96));
+        *(unsigned int *)&this->u32_6C4->q060);
       return (int)&this->unknown_short_3C88; /*0x746c79*/
     }
   LABEL_20:

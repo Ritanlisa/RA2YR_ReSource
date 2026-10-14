@@ -266,14 +266,14 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
   {
     a1->Piggybackee = 0; /*0x4b625c*/
     *(unsigned int *)a1->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b6263*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &DropPodLocomotionClass::`vftable'; /*0x4b6269*/
+    *&a1->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b6269*/
     *(unsigned int *)a1->q018 = &DropPodLocomotionClass::`vftable'; /*0x4b6270*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(unsigned char)pStm ) /*0x4b628c*/
     return v3; /*0x4b62b8*/
   Piggybackee = a1->Piggybackee; /*0x4b628e*/
-  p_Piggybackee = (LPVOID *)&a1->Piggybackee; /*0x4b6291*/
+  p_Piggybackee = &a1->Piggybackee; /*0x4b6291*/
   if ( Piggybackee ) /*0x4b6296*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b629b*/
   *p_Piggybackee = 0; /*0x4b62a5*/

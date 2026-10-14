@@ -756,7 +756,7 @@ char CleanupCampaignResources() {
     v5 = 0;
     char v6 = 0;
     v4[0] = 19;
-    ((Stream*)(int)&DataGlobal_87F7E8[539810])->WriteBlock((int)v4, 111, 0);
+    ((Stream*)&DataGlobal_87F7E8[539810])->WriteBlock((int)v4, 111, 0);
     Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
     int v1 = DataGlobal_87F7E8[7894];
     if ( DataGlobal_87F7E8[7892] != -1 )

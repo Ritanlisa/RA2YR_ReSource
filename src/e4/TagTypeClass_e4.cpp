@@ -35,9 +35,9 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   this->Coord_9C = 0; /*0x6e5b82*/
   this->q0A0 = 0; /*0x6e5b88*/
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5b8e) */
-  this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5b95*/
+  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5b95) */
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5b9c) */
-  *((unsigned int *)this + 3) = &TagTypeClass::`vftable'; /*0x6e5ba3*/
+  /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5ba3) */
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/

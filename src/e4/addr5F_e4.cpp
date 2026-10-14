@@ -146,7 +146,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         v7 = 0; /*0x5f028b*/
         if ( dword_A8DA84 > 0 ) /*0x5f028f*/
         {
-          while ( _wcsicmp(*(const wchar_t **)(dword_A8DA78 + 4 * v7), (const wchar_t *)(v3 + 90154)) ) /*0x5f02b0*/
+          while ( _wcsicmp(*(const wchar_t **)(dword_A8DA78 + 4 * v7), &v3->ObjectClass_1602A) ) /*0x5f02b0*/
           {
             if ( ++v7 >= dword_A8DA84 ) /*0x5f02ba*/
               goto LABEL_20; /*0x5f02ba*/

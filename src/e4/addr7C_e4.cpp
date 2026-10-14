@@ -12413,7 +12413,7 @@ BOOL E4Recv_7C8AEE::__9type_info_QBEHABV0__Z(int a2)
 namespace gamemd {
 BOOL E4Recv_7C8B0A::_before_type_info__QBEHABV1__Z(const struct type_info * a2)
 {
-  return strcmp((const char *)a2 + 9, (const char *)this + 9) > 0; /*0x7c8b26*/
+  return strcmp((const char *)a2 + 9, &this->u32_9) > 0; /*0x7c8b26*/
 }
 } // namespace gamemd
 
@@ -13544,7 +13544,7 @@ int _flush(unsigned int * aP0)  // G42.33 b24: dword-index body (MSVC6 _iobuf dw
   v1 = 0; /*0x7cb1ff*/
   if ( (aP0->Width & 3) == 2 && (aP0->Width & 0x108) != 0 ) /*0x7cb213*/
   {
-    v2 = (const void *)aP0[2]; /*0x7cb215*/
+    v2 = aP0->Y; /*0x7cb215*/
     if ( *aP0 - (int)v2 > 0 ) /*0x7cb21e*/
     {
       v3 = *aP0 - (unsigned int)v2; /*0x7cb21a*/
@@ -14692,7 +14692,7 @@ char * _strcats(char * aP0, int a2)  // G42.33 b25: truth (ida_cache 0x7CE049)
     v3 = &a2; /*0x7ce053*/
     do /*0x7ce069*/
     {
-      v5 = (const char *)v3[1]; /*0x7ce057*/
+      v5 = v3->u32_1; /*0x7ce057*/
       ++v3; /*0x7ce05a*/
       result = strcat(aP0, v5); /*0x7ce061*/
       --v2; /*0x7ce067*/

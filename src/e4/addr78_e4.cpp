@@ -4230,7 +4230,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
       ComPtr::Set(&v26, dword_B75E4C); /*0x789770*/
     }
     if ( v27 ) /*0x78977b*/
-      ((String *)((char **)&v21))->Reassign((const char **)(v27 + 12)); /*0x789785*/
+      ((String *)((char **)&v21))->Reassign(&v27->u32_C); /*0x789785*/
     EnableWindow(hWnd, 1); /*0x78978c*/
     v7 = g_WOL_UserList; /*0x789792*/
     wParam = -1; /*0x78979f*/

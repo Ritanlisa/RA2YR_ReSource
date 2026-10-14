@@ -324,7 +324,7 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
   if ( v3 && BYTE1(this->m_C) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a1510*/
+    *&this->q004 = 0; /*0x4a1510*/
   }
   BYTE1(this->m_C) = 0; /*0x4a151b*/
   this->m_8 = 0; /*0x4a1521*/

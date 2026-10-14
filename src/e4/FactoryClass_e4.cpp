@@ -320,11 +320,11 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor(&v3->q060, 0, 0); /*0x4ca2b2*/
       *&v3->q060 = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
-      *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
-      *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
+      *&v3->u32_54 = 10; /*0x4ca2bd*/
+      *&v3->q050 = 0; /*0x4ca2c4*/
       v3->AbstractClass = &FactoryClass::`vftable'; /*0x4ca2c7*/
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2cd) */
-      v3->vtable3 = &FactoryClass::`vftable'; /*0x4ca2d4*/
+      /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2d4) */
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2db) */
     }
     v5 = *v2; /*0x4ca2e2*/
@@ -343,11 +343,11 @@ LABEL_14:
           do /*0x4ca390*/
             ObjectPtr::RegisterForTracking( /*0x4ca386*/
               (int)&SwizzleManagerClass_Instance,
-              (int *)(*(unsigned int *)&v3->__pad_42[2] + 4 * v12++));
+              (int *)(*&v3->u32_44 + 4 * v12++));
           while ( v12 < (int)a1 ); /*0x4ca390*/
         }
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->owner); /*0x4ca39b*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->__pad_42[22]); /*0x4ca3a9*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->HouseClass_6C); /*0x4ca39b*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->u32_58); /*0x4ca3a9*/
         return 0; /*0x4ca3ae*/
       }
       else
@@ -359,18 +359,18 @@ LABEL_14:
           result = (*(int (**)(int *, int **, int, unsigned int))(v7 + 12))(v2, &a2, 4, 0); /*0x4ca319*/
           if ( result < 0 ) /*0x4ca31e*/
             break; /*0x4ca31e*/
-          v8 = *(unsigned int *)&v3->__pad_42[6]; /*0x4ca324*/
-          if ( *(unsigned int *)&v3->__pad_42[14] < v8 /*0x4ca349*/
+          v8 = *&v3->u32_48; /*0x4ca324*/
+          if ( *&v3->q050 < v8 /*0x4ca349*/
             || (v3->__pad_42[11] || !v8)
-            && (v9 = *(unsigned int *)&v3->__pad_42[18], v9 > 0)
+            && (v9 = *&v3->u32_54, v9 > 0)
             && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&v3->onHold + 8))(
                  &v3->onHold,
                  v8 + v9,
                  0) )
           {
-            v10 = *(unsigned int *)&v3->__pad_42[14]; /*0x4ca350*/
-            v11 = *(unsigned int *)&v3->__pad_42[2]; /*0x4ca353*/
-            *(unsigned int *)&v3->__pad_42[14] = v10 + 1; /*0x4ca359*/
+            v10 = *&v3->q050; /*0x4ca350*/
+            v11 = *&v3->u32_44; /*0x4ca353*/
+            *&v3->q050 = v10 + 1; /*0x4ca359*/
             *(unsigned int *)(v11 + 4 * v10) = a2; /*0x4ca360*/
           }
           v6 = a1; /*0x4ca367*/

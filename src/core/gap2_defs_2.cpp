@@ -307,7 +307,7 @@ int Struct::Copy6Bytes(int a2, int aP1, int a3, int a4, int a5, int a1) {
   char *v2; // ecx
   int16_t result; // ax
 
-  v2 = this + 4; /*0x53ede4*/
+  v2 = &this->u32_4; /*0x53ede4*/
   *(unsigned int *)v2 = *(unsigned int *)a2; /*0x53ede9*/
   result = a2->Initialized; /*0x53edeb*/
   *((unsigned short *)v2 + 2) = result; /*0x53edef*/
@@ -318,9 +318,9 @@ int Struct::Copy6Bytes(int a2, int aP1, int a3, int a4, int a5, int a1) {
 namespace gamemd { 
 void* Rect::Set4(int a2, int a3, int a4, int a5) {
   *this = a2; /*0x54a12a*/
-  *(this + 1) = a3; /*0x54a130*/
-  *(this + 2) = a4; /*0x54a137*/
-  *(this + 3) = a5; /*0x54a13a*/
+  this->Y = a3; /*0x54a130*/
+  this->Width = a4; /*0x54a137*/
+  this->Height = a5; /*0x54a13a*/
   return this; /*0x54a13d*/
 }
 }
@@ -476,8 +476,8 @@ int unknown::Release(int a1, void* a2) {
 namespace gamemd { 
 void* Struct::WideStringCopy(int a1) {
   this->Struct_field_00 = *(int *)a1; /*0x6247e1*/
-  WideString::AssignFromPtr((wchar_t **)this + 1, (const wchar_t **)(a1 + 4)); /*0x6247e3*/
-  WideString::AssignFromPtr((wchar_t **)this + 2, (const wchar_t **)(a1 + 8)); /*0x6247ef*/
+  WideString::AssignFromPtr(&this->u32_4, (const wchar_t **)(a1 + 4)); /*0x6247e3*/
+  WideString::AssignFromPtr(&this->u32_8, (const wchar_t **)(a1 + 8)); /*0x6247ef*/
   this->u32_C = a1->q00C; /*0x6247f7*/
   this->u32_10 = a1->__pad_10; /*0x6247fd*/
   this->u32_14 = a1->u32_14; /*0x624803*/

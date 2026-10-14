@@ -995,10 +995,10 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)a1->__pad_C = &off_7F6BC8; /*0x75ecbe*/
   if ( *(int *)&stru_A8EB00.?[100] < *(int *)&stru_A8EB00.?[92] /*0x75ecfb*/
     || (stru_A8EB00.?[97] || !*(unsigned int *)&stru_A8EB00.?[92])
-    && *(int *)&stru_A8EB00.?[104] > 0
-    && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[84] + 8))(
-         &stru_A8EB00.?[84],
-         *(unsigned int *)&stru_A8EB00.?[92] + *(unsigned int *)&stru_A8EB00.?[104],
+    && *(int *)&DataGlobal_A8EB68 > 0
+    && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&DataGlobal_A8EB54 + 8))(
+         &DataGlobal_A8EB54,
+         *(unsigned int *)&stru_A8EB00.?[92] + *(unsigned int *)&DataGlobal_A8EB68,
          0) )
   {
     v2 = (*(unsigned int *)&stru_A8EB00.?[100])++; /*0x75ed08*/

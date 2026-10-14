@@ -1652,7 +1652,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
       }
       if ( (BuildingClass *)Team::GetMember((Team *)this, 0) != a2 ) /*0x737829*/
       {
-        v26 = *(unsigned int *)(this->Type + 1504); /*0x737841*/
+        v26 = *(unsigned int *)&this->Type->Passengers; /*0x737841*/
         v12 = HouseClass::SumPowerDrain(&this->vtable2); /*0x737845*/
         vtable0 = a2->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr; /*0x73784a*/
         v29 = (double)v12; /*0x737856*/
@@ -1685,9 +1685,9 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
       {
         v4 = a3; /*0x737990*/
   LABEL_69:
-        if ( *(int *)(this->Type + 1504) <= 0 ) /*0x7379a2*/
+        if ( *(int *)&this->Type->Passengers <= 0 ) /*0x7379a2*/
           return FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x7379a2*/
-        v32 = *(unsigned int **)(this->Type + 1504); /*0x7379ae*/
+        v32 = *(unsigned int **)&this->Type->Passengers; /*0x7379ae*/
         v19 = HouseClass::SumPowerDrain(&this->vtable2); /*0x7379b2*/
         v20 = a2->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr; /*0x7379b7*/
         v29 = (double)v19; /*0x7379c3*/
@@ -1723,7 +1723,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
       }
       break; /*0x737a95*/
     case 0xFu:
-      if ( !*(unsigned int *)(this->Type + 1504) /*0x7375ad*/
+      if ( !*(unsigned int *)&this->Type->Passengers /*0x7375ad*/
         || !a2
         || !(uint8_t)Object::IsAlliedWithObjectHouse(*((Object **)&this->attachedTag5), (int)a2) )
       {
@@ -1750,7 +1750,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
         }
         else
         {
-          v33 = *(int ***)(this->Type + 1504); /*0x73763d*/
+          v33 = *(int ***)&this->Type->Passengers; /*0x73763d*/
           v25 = (double)HouseClass::SumPowerDrain(&this->vtable2); /*0x737652*/
           if ( (double)(int)v33 < v25 /*0x737698*/
                                 + *(double *)(a2->Vt34Thunk()
@@ -1769,7 +1769,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
       }
       break; /*0x7375cd*/
     case 0x15u:
-      v11 = *(unsigned int *)(this->Type + 1504); /*0x73779b*/
+      v11 = *(unsigned int *)&this->Type->Passengers; /*0x73779b*/
       if ( HouseClass::SumPowerDrain(&this->vtable2) == v11 ) /*0x7377a8*/
         Timer::StartDouble(&this->vtable2, this->Type->DeployTime); /*0x7377c4*/
       return 5; /*0x7377d5*/
@@ -3008,7 +3008,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
     unsigned char v141[16]; // [esp+17Ch] [ebp-10h] BYREF
 
     v5 = (short *)((unsigned int)(a2)); /*0x74197a*/
-    if ( *(unsigned char *)(this->Type + 3434) )
+    if ( *(unsigned char *)&this->Type->qD6A )
     {
       if ( !((unsigned int)(a2)) )
       {
@@ -3062,7 +3062,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
       }
       if ( (uint8_t)Team::AllMembersValid((Team *)this) ) /*0x741ad3*/
       {
-        if ( *(int *)(this->Type + 1504) > 0 ) /*0x741aea*/
+        if ( *(int *)&this->Type->Passengers > 0 ) /*0x741aea*/
         {
           Member = Team::GetMember((Team *)this, 0); /*0x741af0*/
           if ( Member->ReturnZeroPos() == 15 ) /*0x741aff*/
@@ -3215,7 +3215,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
           }
         }
   LABEL_80:
-        if ( v5 && *(unsigned char *)(this->Type + 3372) ) /*0x741ea1*/
+        if ( v5 && *(unsigned char *)&this->Type->Spawned ) /*0x741ea1*/
         {
           v26 = &this->Locomotor; /*0x741eb5*/
           if ( !this->Locomotor ) /*0x741eaf*/
@@ -3298,7 +3298,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
           this->FootClass_DVC_588->vt_entry_68(&this->isFallingDown6); /*0x7423ca*/
           goto LABEL_143; /*0x7423ca*/
         }
-        if ( !*(unsigned char *)(this->Type + 3372) ) /*0x7420a5*/
+        if ( !*(unsigned char *)&this->Type->Spawned ) /*0x7420a5*/
           goto LABEL_128; /*0x7420a5*/
         if ( !(((a2) >> 32) & 0xFF) ) /*0x7420b4*/
           goto LABEL_143; /*0x7420b4*/
@@ -3393,7 +3393,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
             a2 = Coord::To_Cell((Coord *)&dword_87F7E8, v137); /*0x7423b5*/
           }
   LABEL_143:
-          if ( !*(unsigned char *)(this->Type + 3284) /*0x7423fd*/
+          if ( !*(unsigned char *)&this->Type->Teleporter /*0x7423fd*/
             || this->firingParticles
             || this->q_2B0
             || this->isAttackedByLocomotor )
@@ -6316,7 +6316,7 @@ int UnitClass::ApproachTarget_DisallowMoving(char a2)
     || !ObjectClass::IsCrushable(v4, this)
     || !*(unsigned char *)(this->Type + 3373) && (uint8_t)House::IsCurrentPlayer(*((House **)&this->attachedTag5)) )
   {
-    if ( *(unsigned char *)(this->Type + 3434) ) /*0x74159f*/
+    if ( *(unsigned char *)&this->Type->qD6A ) /*0x74159f*/
     {
       v5 = *(unsigned int *)this; /*0x7415af*/
       v6 = (*(int (__thiscall **)(Class_7F5C70 *, unsigned int))(*&this->vtable2))(this, this->AbstractClass_2B4); /*0x7415b4*/
@@ -6338,7 +6338,7 @@ int UnitClass::ApproachTarget_DisallowMoving(char a2)
         }
       }
     }
-    if ( !*(unsigned char *)(this->Type + 3369) ) /*0x741609*/
+    if ( !*(unsigned char *)&this->Type->qD29 ) /*0x741609*/
       return FootClass::CalculateApproachPath((FootClass *)this, 0); /*0x741609*/
     v10 = this->AbstractClass_2B4; /*0x741613*/
     if ( !v10 || *(unsigned char *)(this->owner + 492) && this->shouldLoseTarget ) /*0x74162d*/
@@ -6975,7 +6975,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
                      (int)&v37.StreamClass_field_0C,
                      &v37.StreamClass_field_0C,
                      (int16_t *)&v38,
-                     *(unsigned int *)(this->Type + 1660),
+                     *(unsigned int *)&this->Type->SpeedType,
                      -1,
                      0,
                      v13,
@@ -7773,7 +7773,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
       this->isAliveFlag = 1; /*0x737dd6*/
     }
     (*(void (__thiscall **)(Class_7F5C70 *, unsigned int))(*&this->vtable2))(this, 0); /*0x737f7a*/
-    if ( *(unsigned char *)(this->Type + 1508) ) /*0x737f86*/
+    if ( *(unsigned char *)&this->Type->OpenTopped ) /*0x737f86*/
       TechnoClass::MarkPassengersAsExited((TechnoClass *)this); /*0x737f92*/
     if ( (*(int (__thiscall **)(Class_7F5C70 *))(*&this->vtable2))(this) > 208 ) /*0x737fa6*/
       TechnoClass::CleanupAll((TechnoClass *)this, (int)v17); /*0x737fab*/

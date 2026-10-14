@@ -281,7 +281,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
     __3_YAXPAX_Z(this); /*0x52ae57*/
-  return this->__pad_0; /*0x52ae61*/
+  return this->m_items; /*0x52ae61*/
 
 }
 } // namespace gamemd

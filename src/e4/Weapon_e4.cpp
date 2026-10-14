@@ -239,18 +239,18 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     }
     v12 = Color::RGBFromFloat(v74, (int)&v55, v39); /*0x70c7b0*/
     v49 = *v12; /*0x70c7b9*/
-    v50 = v12[1]; /*0x70c7c0*/
-    v51 = v12[2]; /*0x70c7c7*/
+    v50 = v12->u32_4; /*0x70c7c0*/
+    v51 = v12->u32_8; /*0x70c7c7*/
     if ( __PAIR32__(v50 / 256, v49 / 256) != *(unsigned int *)v48 ) /*0x70c7ec*/
     {
       LOWORD(v44) = v49 / 256; /*0x70c7f9*/
       HIWORD(v44) = v50 / 256; /*0x70c802*/
       *(unsigned int *)v48 = v44; /*0x70c811*/
-      v13 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x70c815*/
-      if ( (v13[80] & 0x100) != 0 && v51 >= g_BuildingLoadQueue_Array.?[1] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
-        v14 = v13[58]; /*0x70c83e*/
+      v13 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v48); /*0x70c815*/
+      if ( (v13->u32_140 & 0x100) != 0 && v51 >= g_BuildingLoadQueue_Array.?[1] * (*(&v13->u32_11B) + 4) ) /*0x70c83c*/
+        v14 = v13->q0E8; /*0x70c83e*/
       else
-        v14 = v13[57]; /*0x70c846*/
+        v14 = v13->u32_E4; /*0x70c846*/
       while ( v14 ) /*0x70c84e*/
       {
         if ( (Weapon *)v14 == v64 ) /*0x70c858*/
@@ -444,13 +444,13 @@ LABEL_55:
       {
         do /*0x70cbf5*/
         {
-          v52 = *(unsigned int *)(aP4 + 152); /*0x70cbc3*/
+          v52 = aP4->u32_98; /*0x70cbc3*/
           (*(void (**)(unsigned int, int *, unsigned int, unsigned int, Weapon *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v43.ObjectVector_field_0x04 + 4 * v33) /*0x70cbe8*/
                                                                                                   + 364))(
             *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v33),
             &v52,
             0,
-            *(unsigned int *)(aP4 + 172),
+            aP4->u32_AC,
             v64,
             0,
             0,
@@ -459,13 +459,13 @@ LABEL_55:
         }
         while ( v33 < v43.ObjectVector_field_0x10 ); /*0x70cbf5*/
       }
-      if ( (*(int (**)(int *))(*aP3 + 44))(aP3) == 11 ) /*0x70cc01*/
+      if ( aP3->getAltitude() == 11 ) /*0x70cc01*/
       {
         if ( (unsigned __int8)CellClass::IsActiveOrNext((CellClass *)aP3) ) /*0x70cc05*/
         {
           v34 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cc1e*/
           if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v34 ) /*0x70cc31*/
-            LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v35, (int)aP3); /*0x70cc39*/
+            LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v35, (int)aP3); /*0x70cc39*/
         }
       }
       v36 = v56; /*0x70cc45*/

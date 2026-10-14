@@ -217,7 +217,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 
   p_vtable1 = &a1->vtable2; /*0x517d9a*/
   a1->FootClass = &InfantryClass::`vftable'; /*0x517d9d*/
-  a1->? = &InfantryClass::`vftable'; /*0x517da3*/
+  /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517da3) */
   /* X11: vtable install elided (implicit via off_7EB02C virtuals 0x517daa) */
   /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517db1) */
   if ( byte_A8E9A0 ) /*0x517dbe*/

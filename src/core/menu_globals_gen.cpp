@@ -1640,7 +1640,7 @@ int WaitForMultiplayerLoadSync(void)
       Debug::Log(); /*0x68457c*/
       v12 = *(unsigned int *)((&dword_A8DA78)[i] + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect((wchar_t *)(v12), 1); /*0x684596*/
-      if ( SessionClass::IsValidHouse((void *)((int)&dword_A8B238), *((void **)stru_A80220.vfptr3 + v12)) ) /*0x6845aa*/
+      if ( SessionClass::IsValidHouse((void*)(&dword_A8B238), *((void **)stru_A80220.vfptr3 + v12)) ) /*0x6845aa*/
       {
         dword_A8E2AC = -1; /*0x6845bf*/
         memset((void *)(word_A8E258), 0, 0x28u); /*0x6845c9*/

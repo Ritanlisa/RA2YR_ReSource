@@ -260,7 +260,7 @@ int GameClass::FindOpenSlot()
     {
       if ( !v4->u32_17C && Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
-      inited = GameClass::initPlayerData(v4, (const char **)this + 12); /*0x5d63b7*/
+      inited = GameClass::initPlayerData(v4, &this->GameClass_30); /*0x5d63b7*/
     }
     if ( inited ) /*0x5d63be*/
       return v2; /*0x5d63c5*/

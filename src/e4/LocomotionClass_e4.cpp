@@ -37,7 +37,7 @@ int LocomotionClass::Initialize()
   this->u32_24 = v2; /*0x4af55c*/
   this->ptr_30 = 0; /*0x4af55f*/
   this->u32_34 = g_DDraw_ClipRect; /*0x4af568*/
-  *((unsigned long long *)this + 7) = qword_8A0794; /*0x4af570*/
+  *((unsigned long long *)&this->vtable2) = qword_8A0794; /*0x4af570*/
   this->q040 = g_DDraw_ClipRect; /*0x4af585*/
   this->q044 = qword_8A0794; /*0x4af58e*/
   v3 = HIDWORD(qword_8A0794); /*0x4af591*/
@@ -55,7 +55,7 @@ int LocomotionClass::Initialize()
   this->u32_65 = 1; /*0x4af5bb*/
   this->u32_68 = 0; /*0x4af5bf*/
   *(unsigned int *)this->ILocomotion = &DriveLocomotionClass::`vftable'; /*0x4af5c2*/
-  *(unsigned int *)&this->ILocomotion[4] = &DriveLocomotionClass::`vftable'; /*0x4af5c8*/
+  /* X11: vtable install elided (implicit via DriveLocomotionClass virtuals 0x4af5c8) */
   this->u32_18 = &off_7E7E8C; /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 
@@ -155,7 +155,7 @@ int LocomotionClass::ProcessData()
   this->u32_6C = 0; /*0x513c8b*/
   this->u32_70 = 0; /*0x513c8e*/
   *(unsigned int *)this->ILocomotion = &HoverLocomotionClass::`vftable'; /*0x513c91*/
-  *(unsigned int *)&this->ILocomotion[4] = &HoverLocomotionClass::`vftable'; /*0x513c97*/
+  /* X11: vtable install elided (implicit via HoverLocomotionClass virtuals 0x513c97) */
   return (int)this->ILocomotion; /*0x513ca0*/
 
 }
@@ -210,7 +210,7 @@ int LocomotionClass::Init()
   this->Dirty = 1; /*0x55a6cf*/
   this->RefCount = 0; /*0x55a6d2*/
   *(unsigned int *)this->ILocomotion = &LocomotionClass::`vftable'; /*0x55a6d5*/
-  *(unsigned int *)&this->ILocomotion[4] = &LocomotionClass::`vftable'; /*0x55a6db*/
+  /* X11: vtable install elided (implicit via LocomotionClass virtuals 0x55a6db) */
   return this->ILocomotion; /*0x55a6e2*/
 
 }
@@ -221,7 +221,7 @@ void LocomotionClass::Construct()
 {
 
   *(unsigned int *)this->ILocomotion = &LocomotionClass::`vftable'; /*0x55a6f0*/
-  *(unsigned int *)&this->ILocomotion[4] = &LocomotionClass::`vftable'; /*0x55a6f6*/
+  /* X11: vtable install elided (implicit via LocomotionClass virtuals 0x55a6f6) */
   this->LinkedTo = 0; /*0x55a6fd*/
 
 }

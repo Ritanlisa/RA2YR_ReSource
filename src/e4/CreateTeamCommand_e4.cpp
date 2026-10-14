@@ -155,7 +155,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
         ++i; /*0x5386f1*/
       if ( this->IsAllocated ) /*0x5386fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x538709*/
+        __3_YAXPAX_Z(this->__pad_004); /*0x538709*/
         this->__pad_004 = 0; /*0x538711*/
       }
     }
@@ -436,7 +436,7 @@ char CreateTeamCommand::performAction_6()
   (*((unsigned char *)&(_7342A0))) = PlayerClass::HasPlayers(&stru_880D2C); /*0x535d95*/
   if ( (unsigned char)_7342A0 ) /*0x535d9c*/
   {
-    ((SidebarClass *)((int)&dword_87F7E8))->SwitchTab(0); /*0x535da5*/
+    ((SidebarClass*)(&dword_87F7E8))->SwitchTab(0); /*0x535da5*/
     _7342A0 = UI_Create_7342A0(); /*0x535daa*/
     if ( _7342A0 ) /*0x535db1*/
     {
@@ -494,7 +494,7 @@ char CreateTeamCommand::performAction_11()
   (*((unsigned char *)&(_7342B0))) = PlayerClass::HasPlayers(&stru_881CC0); /*0x535e55*/
   if ( (unsigned char)_7342B0 ) /*0x535e5c*/
   {
-    ((SidebarClass *)((int)&dword_87F7E8))->SwitchTab(1); /*0x535e65*/
+    ((SidebarClass*)(&dword_87F7E8))->SwitchTab(1); /*0x535e65*/
     _7342B0 = UI_Create_7342B0(); /*0x535e6a*/
     if ( _7342B0 ) /*0x535e71*/
     {
@@ -549,7 +549,7 @@ int CreateTeamCommand::performAction_16()
 
   result = PlayerClass::HasPlayers(&stru_882C54); /*0x535f15*/
   if ( (unsigned char)result ) /*0x535f1c*/
-    return ((SidebarClass *)((int)&dword_87F7E8))->SwitchTab(2); /*0x535f25*/
+    return ((SidebarClass*)(&dword_87F7E8))->SwitchTab(2); /*0x535f25*/
   return result; /*0x535f2a*/
 }
 } // namespace gamemd
@@ -596,7 +596,7 @@ int CreateTeamCommand::performAction_21()
 
   result = PlayerClass::HasPlayers(&stru_883BE8); /*0x535fa5*/
   if ( (unsigned char)result ) /*0x535fac*/
-    return ((SidebarClass *)((int)&dword_87F7E8))->SwitchTab(3); /*0x535fb5*/
+    return ((SidebarClass*)(&dword_87F7E8))->SwitchTab(3); /*0x535fb5*/
   return result; /*0x535fba*/
 }
 } // namespace gamemd

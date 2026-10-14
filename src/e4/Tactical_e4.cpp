@@ -107,8 +107,8 @@ void * Tactical::ConstructTacticalSurface()
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
     *v2 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x42a729*/
-    v2[5] = 10; /*0x42a72f*/
-    v2[4] = 0; /*0x42a736*/
+    v2->u32_14 = 10; /*0x42a72f*/
+    v2->q010 = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/
     --v3; /*0x42a73c*/
   }
@@ -139,7 +139,7 @@ void * Tactical::ConstructTacticalSurface()
   {
     v5 = 0; /*0x42a78c*/
   }
-  *((unsigned int *)this + 5) = v5; /*0x42a790*/
+  this->abstractFlags = v5; /*0x42a790*/
   v9 = __2_YAPAXI_Z(0x14u); /*0x42a793*/
   v10 = v9; /*0x42a798*/
   if ( v9 ) /*0x42a79f*/
@@ -166,7 +166,7 @@ void * Tactical::ConstructTacticalSurface()
   {
     v10 = 0; /*0x42a7de*/
   }
-  *((unsigned int *)this + 26) = v10; /*0x42a7e5*/
+  this->u32_68 = v10; /*0x42a7e5*/
   v14 = __2_YAPAXI_Z(0x100004u); /*0x42a7e8*/
   if ( v14 ) /*0x42a7f2*/
   {
@@ -187,17 +187,17 @@ void * Tactical::ConstructTacticalSurface()
   {
     v14 = 0; /*0x42a812*/
   }
-  *((unsigned int *)this + 4) = v14; /*0x42a819*/
+  this->uniqueId = v14; /*0x42a819*/
   v17 = __2_YAPAXI_Z(0x180004u); /*0x42a81c*/
   if ( v17 ) /*0x42a826*/
     v17[393216] = 0; /*0x42a828*/
   else
     v17 = 0; /*0x42a830*/
-  *((unsigned int *)this + 3) = v17; /*0x42a832*/
+  this->vtable4 = v17; /*0x42a832*/
   v17[393216] = 0; /*0x42a835*/
   v18 = 0; /*0x42a83e*/
-  *(unsigned int *)(*((unsigned int *)this + 4) + 0x100000) = 0; /*0x42a840*/
-  v19 = (int *)*((unsigned int *)this + 5); /*0x42a846*/
+  *(unsigned int *)(this->uniqueId + 0x100000) = 0; /*0x42a840*/
+  v19 = (int *)this->abstractFlags; /*0x42a846*/
   if ( *v19 >= 0 ) /*0x42a84b*/
   {
     do /*0x42a859*/
@@ -208,14 +208,14 @@ void * Tactical::ConstructTacticalSurface()
     while ( v18 <= *v19 ); /*0x42a859*/
   }
   *v19 = 0; /*0x42a85b*/
-  v20 = (unsigned int *)*((unsigned int *)this + 26); /*0x42a85d*/
+  v20 = (unsigned int *)this->u32_68; /*0x42a85d*/
   for ( i = 0; i <= *v20; *(unsigned int *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
-  v22 = (unsigned char *)this + 116; /*0x42a87c*/
-  v26 = (unsigned char *)this + 188; /*0x42a87f*/
-  v25 = (unsigned char *)this + 116; /*0x42a883*/
-  v23 = (unsigned char *)this + 76; /*0x42a887*/
+  v22 = &this->q074; /*0x42a87c*/
+  v26 = &this->u32_BC; /*0x42a87f*/
+  v25 = &this->q074; /*0x42a883*/
+  v23 = &this->q04C; /*0x42a887*/
   v27 = 3; /*0x42a88a*/
   while ( 1 ) /*0x42a898*/
   {
@@ -232,7 +232,7 @@ void * Tactical::ConstructTacticalSurface()
       break; /*0x42a8de*/
     v22 = v25; /*0x42a894*/
   }
-  *((unsigned int *)this + 25) = __2_YAPAXI_Z(0x27100u); /*0x42a8ed*/
+  this->u32_64 = __2_YAPAXI_Z(0x27100u); /*0x42a8ed*/
   return this; /*0x42a8f2*/
 
 }
@@ -1609,12 +1609,12 @@ int Tactical::AddCellToDrawList(int aP1)
         && v13 <= dword_886FA8 + DSurface_ViewBounds + 30
         && result <= dword_886FAC + dword_886FA4 + 15 )
       {
-        result = this->u32_E0; /*0x6da938*/
+        result = this->FootClass_E0; /*0x6da938*/
         if ( result < 799 ) /*0x6da943*/
         {
           *(this + result + 57) = aP1; /*0x6da949*/
-          result = this->u32_E0 + 1; /*0x6da956*/
-          this->u32_E0 = result; /*0x6da957*/
+          result = this->FootClass_E0 + 1; /*0x6da956*/
+          this->FootClass_E0 = result; /*0x6da957*/
         }
         aP1->q138 = 0; /*0x6da961*/
         this->u32_D7D = 1; /*0x6da968*/

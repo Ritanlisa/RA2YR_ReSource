@@ -245,7 +245,7 @@ LABEL_162:
       PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
     case 0x14:
-      ((Theme*)((gamemd::IUnknown *)((int)&g_BuildingTypeClass_Count)))->QueueSong( (int)(*(IUnknown **)((unsigned int)(a1)+ 144)));
+      ((Theme*)((gamemd::IUnknown*)(&g_BuildingTypeClass_Count)))->QueueSong( (int)(*(IUnknown **)((unsigned int)(a1)+ 144)));
       return 1;
     case 0x15:
       UpdateThemeManager(*(unsigned int *)((unsigned int)(a1)+ 144), 2, -1);
@@ -376,7 +376,7 @@ LABEL_162:
 LABEL_157:
       ((SidebarClass *)((int *)&(&stru_87C374)[13428]))->AddCameo( 31, (int)(a1->SuperClass_field_0x2C));
       Status = (IUnknown *)((HouseClass *)((IUnknown *)0x1F))->GetStatus(0);
-      ((Sidebar *)((int)&(&stru_87C374)[13428]))->ActivateTab( (int)(Status));
+      ((Sidebar*)(&(&stru_87C374)[13428]))->ActivateTab( (int)(Status));
       return 1;
     case 0x23:
       if ( !a5 )
@@ -434,7 +434,7 @@ LABEL_157:
       *(unsigned int *)&(&stru_87C374)[17944 ]= 0;
       *(unsigned int *)&(&stru_87C374)[17948 ]= 0;
       *(unsigned int *)&(&stru_87C374)[17952 ]= -1;
-      ((Mouse *)((int)&(&stru_87C374)[13428]))->SetBounds(0);
+      ((Mouse*)(&(&stru_87C374)[13428]))->SetBounds(0);
       ((BuildingClass *)(&(&stru_87C374)[13428]))->TogglePower2(0);
       ((BuildingClass *)(&(&stru_87C374)[13428]))->TogglePower(0);
       (&stru_87C374)[17958] = 0;
@@ -1013,7 +1013,7 @@ LABEL_60:
       if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44484] - 1 < 0 )
         goto LABEL_290;
       int v110 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44472] + 4 * (*(unsigned int *)&((unsigned char *)&HouseClass_Player)[44484] - 1);
-      while ( strcmp((const char *)(*(unsigned int *)v110 + 36), (const char *)(a1 + 84)) )
+      while ( strcmp((const char *)(*(unsigned int *)v110 + 36), &a1->u32_54) )
       {
         v110 -= 4;
         v112 = (IUnknown *)((char *)v112 - 1);
@@ -1083,7 +1083,7 @@ LABEL_290:
           v5 = *&this->HouseClass_A20;
         if ( v5 >= 4 || !(uint8_t)PlayerClass::HasPlayers((PlayerClass *)(3988 * v5 + 8916268)) ) /*0x6e4124*/
           return 0; /*0x6e413e*/
-        ((SidebarClass *)((int)&DataGlobal_87F7E8))->SwitchTab(v5); /*0x6e4133*/
+        ((SidebarClass*)(&DataGlobal_87F7E8))->SwitchTab(v5); /*0x6e4133*/
         return 1; /*0x6e413a*/
       }
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)

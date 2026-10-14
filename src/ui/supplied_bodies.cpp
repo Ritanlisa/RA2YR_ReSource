@@ -2046,7 +2046,7 @@ int Keyboard::MapKey(uint16_t a2) {
       if ( (a2 & 0x400) != 0 ) /*0x54f4c6*/
         this->u32_26 = 0x80; /*0x54f4c8*/
       v6 = MapVirtualKeyA(a2, 0); /*0x54f4d4*/
-      v7 = ToAscii(a2, v6, (const BYTE *)this + 20, Char, 0); /*0x54f4e7*/
+      v7 = ToAscii(a2, v6, &this->u32_14, Char, 0); /*0x54f4e7*/
       if ( v5 ) /*0x54f4f0*/
         this->u32_24 = 0; /*0x54f4f2*/
       if ( v9 ) /*0x54f4fc*/
@@ -3274,7 +3274,7 @@ int Tooltip::Enable(char a2) {
     {
       KillTimer(this->u32_8, 0x54544950u); /*0x7241bc*/
       if ( this->Position ) /*0x7241c2*/
-        this->release(this + 6); /*0x7241d1*/
+        this->release(&this->u32_8); /*0x7241d1*/
     }
     return Debug::Log(); /*0x7241eb*/
   }

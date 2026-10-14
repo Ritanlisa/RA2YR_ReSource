@@ -52,9 +52,9 @@ int ParasiteClass::Constructor()
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->AbstractClass = &ParasiteClass::`vftable'; /*0x629231*/
-  this->? = &ParasiteClass::`vftable'; /*0x629237*/
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629237) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62923e) */
-  this->vtable4 = &ParasiteClass::`vftable'; /*0x629245*/
+  /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629245) */
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0

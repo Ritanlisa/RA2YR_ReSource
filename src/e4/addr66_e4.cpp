@@ -458,7 +458,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         v46 = *(ObjectClass **)(a1 + 8);
         v124 = *(CoordStruct *)v46->location;
         int v44 = (*(int (**)(ObjectClass *))(*(unsigned int *)v46->q000 + 132))( (ObjectClass *)(v46));
-        StartAudioControllerAt((int)(*(AudioController **)(v44 + 1324)),(unsigned int *)((int)&v124), 0);
+        StartAudioControllerAt((int)(*(AudioController **)(v44 + 1324)),(unsigned int*)(&v124), 0);
       }
       goto LABEL_111;
     case 3:
@@ -1556,10 +1556,10 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   LOBYTE(this->M12) = 1; /*0x6638ea*/
   BYTE1(this->M13) = 0; /*0x6638ee*/
   this->AbstractClass = &DynamicVectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6638f1*/
-  this->? = 10; /*0x6638f7*/
-  this->? = 0; /*0x6638fe*/
-  LOBYTE(this->?) = 0; /*0x663901*/
-  this->? = 0; /*0x663904*/
+  this->M20 = 10; /*0x6638f7*/
+  this->M16 = 0; /*0x6638fe*/
+  LOBYTE(this->q018) = 0; /*0x663901*/
+  this->M28 = 0; /*0x663904*/
   return &this->AbstractClass; /*0x663907*/
 
 }

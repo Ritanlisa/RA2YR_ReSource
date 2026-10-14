@@ -1575,9 +1575,9 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         v7 = ScriptTypeClass::Constructor(v6, 0); /*0x65d942*/
       else
         v7 = 0; /*0x65d949*/
-      v3->q0E0 = v7; /*0x65d94b*/
+      v3->FootClass_E0 = v7; /*0x65d94b*/
     }
-    v8 = v3->q0E0; /*0x65d951*/
+    v8 = v3->FootClass_E0; /*0x65d951*/
     v9 = v8->isGlobal; /*0x65d957*/
     if ( v9 < 50 ) /*0x65d960*/
     {

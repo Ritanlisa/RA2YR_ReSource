@@ -1352,8 +1352,8 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
     v10 = 0; /*0x7a4cd5*/
     while ( 1 ) /*0x7a4cef*/
     {
-      sprintf(v22, "%s/%s", (const char *)(v4 + 81), (const char *)(v4 + 337)); /*0x7a4cef*/
-      sprintf(v23, "%s\\%s", (const char *)(v4 + 468), (const char *)(v4 + 337)); /*0x7a4d09*/
+      sprintf(v22, "%s/%s", &v4->q051, &v4->q151); /*0x7a4cef*/
+      sprintf(v23, "%s\\%s", &v4->q1D4, &v4->q151); /*0x7a4d09*/
       CreateDirectoryA((LPCSTR)(v4 + 468), 0); /*0x7a4d14*/
       (*(void (__stdcall **)(LPVOID, int, int, int, char *, char *, char *))(*(unsigned int *)dword_AC1174 + 12))( /*0x7a4d49*/
         dword_AC1174,

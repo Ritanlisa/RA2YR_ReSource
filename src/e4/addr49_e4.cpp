@@ -6405,33 +6405,33 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   p_uniqueId->vtable2 = 0; /*0x49da72*/
   p_uniqueId->vtable3 = 0; /*0x49da75*/
   *p_uniqueId = (int)&GenericNode::`vftable'; /*0x49da78*/
-  p_referenceCount[1] = 0; /*0x49da7e*/
-  p_referenceCount[2] = 0; /*0x49da81*/
+  p_referenceCount->vtable2 = 0; /*0x49da7e*/
+  p_referenceCount->vtable3 = 0; /*0x49da81*/
   *p_referenceCount = (int)&GenericNode::`vftable'; /*0x49da84*/
-  result->vtable4 = &GenericList::`vftable'; /*0x49da8d*/
+  /* X11: vtable install elided (implicit via GenericList virtuals 0x49da8d) */
   if ( p_referenceCount ) /*0x49da94*/
   {
-    v4 = p_referenceCount[1]; /*0x49da96*/
+    v4 = p_referenceCount->vtable2; /*0x49da96*/
     if ( v4 ) /*0x49da9b*/
     {
-      v5 = p_referenceCount[2]; /*0x49da9d*/
+      v5 = p_referenceCount->vtable3; /*0x49da9d*/
       if ( v5 ) /*0x49daa2*/
       {
-        *(unsigned int *)(v5 + 4) = v4; /*0x49daa4*/
-        *(unsigned int *)(p_referenceCount[1] + 8) = p_referenceCount[2]; /*0x49daad*/
-        p_referenceCount[2] = 0; /*0x49dab0*/
-        p_referenceCount[1] = 0; /*0x49dab3*/
+        v5->ptr_4 = v4; /*0x49daa4*/
+        p_referenceCount->vtable2->vtable3 = p_referenceCount->vtable3; /*0x49daad*/
+        p_referenceCount->vtable3 = 0; /*0x49dab0*/
+        p_referenceCount->vtable2 = 0; /*0x49dab3*/
       }
     }
   }
-  v6 = p_uniqueId[1]; /*0x49dab6*/
-  p_referenceCount[2] = (int)p_uniqueId; /*0x49dab9*/
-  p_referenceCount[1] = v6; /*0x49dabc*/
-  v7 = p_uniqueId[1]; /*0x49dabf*/
+  v6 = p_uniqueId->vtable2; /*0x49dab6*/
+  p_referenceCount->vtable3 = (int)p_uniqueId; /*0x49dab9*/
+  p_referenceCount->vtable2 = v6; /*0x49dabc*/
+  v7 = p_uniqueId->vtable2; /*0x49dabf*/
   if ( v7 ) /*0x49dac4*/
-    *(unsigned int *)(v7 + 8) = p_referenceCount; /*0x49dac6*/
-  p_uniqueId[1] = (int)p_referenceCount; /*0x49dac9*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x49dacc*/
+    v7->vtable3 = p_referenceCount; /*0x49dac6*/
+  p_uniqueId->vtable2 = (int)p_referenceCount; /*0x49dac9*/
+  /* X11: vtable install elided (implicit via List virtuals 0x49dacc) */
   result->owningHouseIndex = 0; /*0x49dad4*/
   result->fallRate = 0; /*0x49dad7*/
   result->nextObject = 0; /*0x49dada*/

@@ -1356,7 +1356,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
                 ((void (__stdcall *)(int *))Network::SetPlayerCoords)(&qword_A8DBA4); /*0x5daa3f*/
                 v9 = v22; /*0x5daa44*/
               }
-              wcscpy(word_A8E258, (const wchar_t *)(v9 + 90154)); /*0x5daa53*/
+              wcscpy(word_A8E258, &v9->u32_1602A); /*0x5daa53*/
               Debug::Log(); /*0x5daa62*/
               dword_A8E2AC = v7; /*0x5daa6f*/
               if ( SessionClass::IsValidHouse((int)dword_A8B238, 0) ) /*0x5daa77*/

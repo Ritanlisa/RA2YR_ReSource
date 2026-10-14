@@ -171,22 +171,22 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     LOBYTE(this->m_C) = 1; /*0x766e4f*/
     if ( !v6 ) /*0x766e53*/
       return 0; /*0x766ed6*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x766e55*/
+    if ( *&this->u32_4 ) /*0x766e55*/
     {
       if ( a2 >= this->m_8 ) /*0x766e61*/
         m_8 = this->m_8; /*0x766e63*/
       for ( i = 0; i < m_8; ++i ) /*0x766e69*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x766e76*/
+        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->u32_4 + 8 * i + 4)); /*0x766e76*/
       if ( BYTE1(this->m_C) ) /*0x766e80*/
       {
-        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766e87*/
+        v11 = *(void (****)(unsigned int, int))&this->u32_4; /*0x766e87*/
         if ( v11 ) /*0x766e8c*/
           (**v11)(v11, 3); /*0x766e92*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x766e94*/
+        *&this->u32_4 = 0; /*0x766e94*/
       }
       m_8 = a2; /*0x766e9b*/
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x766eaa*/
+    *&this->u32_4 = v6; /*0x766eaa*/
     this->m_8 = m_8; /*0x766ead*/
     BYTE1(this->m_C) = a3 == 0; /*0x766eb0*/
   }

@@ -83,6 +83,28 @@ CTY = (r'(?:unsigned\s+(?:int|short|char|long)|signed\s+(?:int|short|char)|'
        r'int|char|short|long|float|double|bool|BOOL|void|_BYTE|_WORD|_DWORD|'
        r'_QWORD|__int8|__int16|__int32|__int64|uint8_t|uint16_t|uint32_t|'
        r'int8_t|int16_t|int32_t|size_t|[A-Za-z_]\w*(?:::\w+)*)')
+# X20: qualified cast atom + extended width table + element-width helper
+# (consumed by the extended cast/index/chains forms).
+_Q = r'(?:(?:const|volatile)\s+)*'
+CTYQ = _Q + '(?:' + CTY + r')'
+_XW = {'wchar_t': 2, 'LONG': 4, 'ULONG': 4, 'DWORD': 4, 'UINT': 4,
+       'WORD': 2, 'BYTE': 1, 'int8_t': 1, 'uint8_t': 1, 'int16_t': 2,
+       'uint16_t': 2, 'int32_t': 4, 'uint32_t': 4, 'int64_t': 8,
+       'uint64_t': 8, 'size_t': 4, 'long long': 8}
+
+
+def _cast_elem_width(cty, stars):
+    """element byte-width of a cast type: `(T *)` -> sizeof(T) (qualifier-
+    stripped lookup, X19 §5.2d table), `(T **)` -> 4 (pointee is a
+    pointer)."""
+    if stars >= 2:
+        return 4
+    t = re.sub(r'(?:const|volatile)\s+', '', cty).strip()
+    if t in WIDTHS:
+        return WIDTHS[t]
+    return _XW.get(t, 4)
+
+
 MEMBER_EXPR = (r'(?<![\w.>])(?:this|[A-Za-z_]\w*)->(?:[\w]+(?:\[[^\]]*\])?(?:->\w+)*)')
 
 # ---------------------------------------------------------------- data load
@@ -792,6 +814,19 @@ def mask_text(seg):
                 i += 1
                 continue
             if c == "'":
+                # X20/I193: IDA renders MSVC-mangled special names as
+                # `` `vftable' `` / `` `scalar deleting destructor' `` -- the
+                # apostrophe sits right after an identifier char and is NOT a
+                # char-literal opener.  Opening state 4 here used to mask the
+                # REST OF THE SPAN (no EOL reset below), silently disabling
+                # every handler after the first such token (measured:
+                # gap2_global_defs.cpp = 0 conversions over 5,600 lines,
+                # 300 gate hits untouched).  Opening quote of a real literal
+                # is preceded by non-identifier (space/operator/paren).
+                if i > 0 and (seg[i - 1].isalnum() or seg[i - 1] == '_'):
+                    out.append(c)
+                    i += 1
+                    continue
                 st = 4
                 out.append(' ')
                 i += 1
@@ -817,6 +852,14 @@ def mask_text(seg):
                 out.append(' ')
                 i += 2
                 continue
+            if c == '\n':
+                # X20: parity with the gate's strip_to_code -- an unterminated
+                # literal resets at EOL instead of poisoning the rest of the
+                # span.
+                st = 0
+                out.append(' ')
+                i += 1
+                continue
             out.append(' ')
             if c == '"':
                 st = 0
@@ -826,6 +869,11 @@ def mask_text(seg):
                 out.append(' ')
                 out.append(' ')
                 i += 2
+                continue
+            if c == '\n':
+                st = 0
+                out.append(' ')
+                i += 1
                 continue
             out.append(' ')
             if c == "'":
@@ -1464,6 +1512,15 @@ def h_castd(seg, ctx):
             cty, member = m.group(1), m.group('mem')
             tail = m.groupdict().get('tail')
             pos = m.start()
+            # X20: a chained member (`this->a->b`) is NOT resolvable by
+            # name_expr_offset -- it resolves the BASE name's offset and
+            # would silently DROP the chain (measured: the chain form's
+            # `(unsigned int *)&this->q104->q29C` became `&this->q104`).
+            # Fail loud instead.
+            if '->' in member.split('->', 1)[-1]:
+                ledger_add('F-CASTA', ctx, pos, m.group(0), None, None,
+                           'member-chain')
+                continue
             r = name_expr_offset(member, ctx, pos, cast_type=cty)
             if r is None or r[0] != 'ok':
                 ledger_add('F-CASTD', ctx, pos, m.group(0),
@@ -1506,6 +1563,12 @@ def h_castd(seg, ctx):
             STATS['F-CASTD/' + how] += 1
         out.append(seg[last:])
         seg = ''.join(out)
+        # X20/I189: positional lookups (site_of/line_of/recv_class/_x5b_pos)
+        # must see the CURRENT text at the next pattern iteration -- a stale
+        # ctx.seg resolved wrong-line anchors (bare path -> wrong member
+        # names, e.g. `*(this + 24)` read the previous line's 0x4ba5c1
+        # anchor instead of its own 0x4ba5c4).
+        ctx.seg = seg
     return seg, n
 
 
@@ -1622,12 +1685,54 @@ def h_pad(seg, ctx):
             STATS['F-PAD/' + kind + '/' + how] += 1
         out.append(seg[last:])
         seg = ''.join(out)
+        # X20/I189: positional lookups (site_of/line_of/recv_class/_x5b_pos)
+        # must see the CURRENT text at the next pattern iteration -- a stale
+        # ctx.seg resolved wrong-line anchors (bare path -> wrong member
+        # names, e.g. `*(this + 24)` read the previous line's 0x4ba5c1
+        # anchor instead of its own 0x4ba5c4).
+        ctx.seg = seg
     return seg, n
 
 
 CASTA = re.compile(
     r'\(\s*(' + CTY + r')\s*\*+\s*\)\s*(?P<opar>\(\s*)?&\s*'
     r'(?P<mem>' + MEMBER_EXPR + r')')
+
+
+# X20: `(T *)((int)&x)` -- an int round-trip inserted by the old renderer;
+# on 32-bit the truncation is value-identical, so the cast drops:
+# `(T *)(int)&x` -> `(T *)&x` (X19 nested-recast-int family; removes the
+# PTR2INT `(int)&` hit).
+RECAST = re.compile(
+    r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+    r'(?P<o1>\()\s*(?P<o2>\()?\s*'
+    r'(?:unsigned\s+|signed\s+)?'
+    r'(?:int|__int32|long|DWORD|UINT|ULONG|UINT_PTR|DWORD_PTR|intptr_t)'
+    r'\s*\)\s*(?=&)')
+
+
+def h_recast(seg, ctx):
+    n = 0
+    mask = mask_text(seg)
+    out = []
+    last = 0
+    for m in RECAST.finditer(mask):
+        if bad_span(seg, m):
+            continue
+        gd = m.groupdict()
+        # `(T *)(int)&x`   -> `(T *)&x`
+        # `(T *)((int)&x)` -> `(T *)(&x)`   (the wrapper open is STRUCTURAL
+        # -- dropping it left a dangling close paren; X20 QC caught 47)
+        repl = '(%s%s)%s' % (gd['cty'], gd['st'], '(' if gd['o2'] else '')
+        if repl == seg[m.start():m.end()]:
+            continue
+        out.append(seg[last:m.start()])
+        out.append(repl)
+        last = m.end()
+        n += 1
+        STATS['F-RECAST/int-drop'] += 1
+    out.append(seg[last:])
+    return ''.join(out), n
 
 
 def h_castaddr(seg, ctx):
@@ -1641,6 +1746,15 @@ def h_castaddr(seg, ctx):
             continue
         cty, member = m.group(1), m.group('mem')
         pos = m.start()
+        # X20: a chained member (`this->a->b`) is NOT resolvable by
+        # name_expr_offset -- it resolves the BASE name's offset and would
+        # silently DROP the chain (measured: the chain form's
+        # `(unsigned int *)&this->q104->q29C` became `&this->q104`).
+        # Fail loud instead.
+        if '->' in member.split('->', 1)[-1]:
+            ledger_add('F-CASTA', ctx, pos, m.group(0), None, None,
+                       'member-chain')
+            continue
         r = name_expr_offset(member, ctx, pos, cast_type=cty)
         if r is None or r[0] != 'ok':
             ledger_add('F-CASTA', ctx, pos, m.group(0),
@@ -1664,19 +1778,43 @@ def h_castaddr(seg, ctx):
     return ''.join(out), n
 
 
+# ------------------------------------------------- X20 form extensions
+# X19-certified shape families (x19_summary §2.2) that the X5/X14 tables did
+# not reach: multi-star casts (`(char **)this + 5`), qualified casts
+# (`(volatile LONG *)this + 8`, `(const char *)this + 9`), deref of the
+# bare-this paren form (`*(this + N)` -- disasm-rescued offset), member-value
+# chains (`(T*)(this->M + N)` -> pointee class member), and `this + N` in
+# value/argument contexts (`v6 = this + 28;`, `f(this + 4, ...)`) that the
+# original bare guards excluded.  (Helpers _Q/CTYQ/_XW/_cast_elem_width are
+# defined next to CTY at the top of the file.)
 THIS_FORMS = [
     ('deref1', re.compile(
-        r'\*\s*\(\s*(' + CTY + r')\s*\*\s*\)\s*\(\s*this\s*\+\s*(' + NUM + r')\s*\)')),
+        r'\*\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'\(\s*this\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('deref2', re.compile(
-        r'\*\s*\(\s*\(\s*(' + CTY + r')\s*\*\s*\)\s*this\s*\+\s*(' + NUM + r')\s*\)')),
+        r'\*\s*\(\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'this\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('cast1', re.compile(
-        r'\(\s*(' + CTY + r')\s*\*\s*\)\s*\(\s*this\s*\+\s*(' + NUM + r')\s*\)')),
+        r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'\(\s*this\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('cast2', re.compile(
-        r'\(\s*(' + CTY + r')\s*\*\s*\)\s*\(\s*\(\s*char\s*\*\s*\)\s*this\s*\+\s*(' + NUM + r')\s*\)')),
+        r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'\(\s*\(\s*char\s*\*\s*\)\s*this\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('cast3', re.compile(
-        r'\(\s*(' + CTY + r')\s*\*\s*\)\s*this\s*\+\s*(' + NUM + r')')),
+        r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'this\s*\+\s*(?P<num>' + NUM + r')')),
+    ('deref-bare', re.compile(
+        r'(?<![\w\*])\*\s*\(\s*this\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
+    ('chain', re.compile(
+        r'(?<![\w>])\(\s*(?P<amp>(?:\*&\s*)?)this\s*->\s*'
+        r'(?P<mem>[A-Za-z_]\w*)\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('bare', re.compile(
-        r'(?<![\w\*])\bthis\s*\+\s*(' + NUM + r')(?!\s*\))(?!\s*[;,\[])')),
+        # X20: value/argument contexts (`this + N;` / `this + N,` / `this +
+        # N)`) are now claimed (X19 §2.2 'bare-this-arith'); arithmetic
+        # continuations stay excluded (re-scaling a member address by the
+        # member's own type changes the byte math) and `[` stays excluded.
+        r'(?<![\w\*])\bthis\s*\+\s*(?P<num>' + NUM + r')(?!\d)'
+        r'(?!\s*[\[+\-*/%&|^<>=])')),
 ]
 WIDTHS = {'_BYTE': 1, 'char': 1, 'unsigned char': 1, '_WORD': 2,
           'short': 2, 'unsigned short': 2, '_DWORD': 4, 'int': 4,
@@ -1694,17 +1832,55 @@ def h_this_arith(seg, ctx):
             if bad_span(seg, m):
                 continue
             pos = m.start()
-            if kind in ('deref2', 'cast3'):
-                cty = m.group(1)
-                off = int(m.group(2), 0) * WIDTHS.get(cty.strip(), 4)
-            elif kind == 'bare':
-                off = int(m.group(1), 0)
+            gd = m.groupdict()
+            if kind == 'chain':
+                # X20: `(T *)(this->M + N)` -- a byte walk of the member's
+                # VALUE.  Rewrite `&this->M->PM` where PM is the pointee
+                # class's member at byte N (same value, typed); fail loud
+                # when the member's class or PM is not provable.
+                mem = gd['mem']
+                num = int(gd['num'], 0)
+                cls = ctx.recv_class('this', pos)
+                pm = how2 = None
+                if cls is not None:
+                    bo = decl_off_by_name(cls, mem)
+                    if bo is not None:
+                        pcls = off_member_class(cls, bo)
+                        if pcls:
+                            pm, how2 = resolve_member(pcls, num, None)
+                if not pm:
+                    ledger_add('F-THIS', ctx, pos, m.group(0), cls, num,
+                               'chain-not-resolved')
+                    continue
+                nxt = mask[m.end():m.end() + 4].lstrip()
+                if nxt[:1] in ('+', '-', '*', '/', '%', '&', '|', '^'):
+                    # a following arithmetic would re-scale the member
+                    # address by PM's own type -- keep fail loud
+                    ledger_add('F-THIS', ctx, pos, m.group(0), cls, num,
+                               'arith-continuation')
+                    continue
+                out.append(seg[last:pos])
+                out.append('&this->%s->%s' % (mem, pm))
+                last = m.end()
+                n += 1
+                STATS['F-THIS/%s/%s' % (kind, how2)] += 1
+                continue
+            cty = gd.get('cty')
+            stars = len(gd.get('st') or '*')
+            num = int(gd['num'], 0)
+            if kind == 'bare':
+                off = num
+            elif kind == 'deref-bare':
+                off = None            # disasm rescue only (fail loud)
+            elif kind in ('deref2', 'cast3'):
+                # no-paren cast forms: N counts ELEMENTS of the pointee
+                # (binary `(char **)this + 5` -> +0x14 = 5x4; verified)
+                off = num * _cast_elem_width(cty, stars)
             else:
-                cty = m.group(1)
-                off = int(m.group(2), 0)
-            # disasm verification for bare/ambiguous
+                off = num             # deref1/cast1/cast2: paren == bytes
+            # disasm verification for the this+N forms
             site = ctx.site_of(pos)
-            if site and kind == 'bare':
+            if site and kind in ('bare', 'deref-bare'):
                 d = inst_disp(site)
                 if d and not d[1]:
                     off = d[0]
@@ -1712,16 +1888,38 @@ def h_this_arith(seg, ctx):
                     bd = back_disp(site)
                     if bd:
                         off = bd[0]
+            if off is None:
+                ledger_add('F-THIS', ctx, pos, m.group(0), None, None,
+                           'noff')
+                continue
             cls = ctx.recv_class('this', pos)
             if cls is None:
                 ledger_add('F-THIS', ctx, pos, m.group(0), None, off,
                            'noclass')
                 continue
-            cty = m.group(1) if kind != 'bare' else None
-            nm, how = resolve_member(cls, off, cast_type=cty)
+            cty_r = cty if kind not in ('bare', 'deref-bare') else None
+            nm, how = resolve_member(cls, off, cast_type=cty_r)
             if not nm:
                 ledger_add('F-THIS', ctx, pos, m.group(0), cls, off, how)
                 continue
+            if kind == 'cast3':
+                # X20: `(T *)this + N` has no closing delimiter -- a following
+                # arithmetic term re-scales the member address by the member's
+                # own type (or is outright illegal on pointers).  Refuse:
+                #   `(char *)this + 124 + 2 * a2` was rewritten into
+                #   `&this->M124 + 2 * a2` (scale + syntax hazard).
+                nxt = mask[m.end():m.end() + 4].lstrip()
+                c0 = nxt[:1]
+                if c0 in ('*', '/', '%', '&', '|', '^'):
+                    ledger_add('F-THIS', ctx, pos, m.group(0), cls, off,
+                               'arith-continuation')
+                    continue
+                if c0 in ('+', '-', '['):
+                    if _x5b_member_width(cls, nm) != \
+                            _cast_elem_width(cty, stars):
+                        ledger_add('F-THIS', ctx, pos, m.group(0), cls, off,
+                                   'arith-width')
+                        continue
             if kind.startswith('deref'):
                 repl = 'this->%s' % nm
             else:
@@ -1733,21 +1931,30 @@ def h_this_arith(seg, ctx):
             STATS['F-THIS/%s/%s' % (kind, how)] += 1
         out.append(seg[last:])
         seg = ''.join(out)
+        # X20/I189: positional lookups (site_of/line_of/recv_class/_x5b_pos)
+        # must see the CURRENT text at the next pattern iteration -- a stale
+        # ctx.seg resolved wrong-line anchors (bare path -> wrong member
+        # names, e.g. `*(this + 24)` read the previous line's 0x4ba5c1
+        # anchor instead of its own 0x4ba5c4).
+        ctx.seg = seg
     return seg, n
 
 
 PTHIS_FORMS = [
     ('deref1', re.compile(
-        r'\*\s*\(\s*(' + CTY + r')\s*\*+\s*\)\s*\(\s*'
-        r'(?:\(\s*char\s*\*\s*\)\s*)?([a-z]\w*)\s*\+\s*(' + NUM + r')\s*\)')),
+        r'\*\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*\(\s*'
+        r'(?:\(\s*char\s*\*\s*\)\s*)?(?P<recv>[a-z]\w*)\s*\+\s*'
+        r'(?P<num>' + NUM + r')\s*\)')),
     ('deref2', re.compile(
-        r'\*\s*\(\s*\(\s*(' + CTY + r')\s*\*+\s*\)\s*([a-z]\w*)\s*\+\s*'
-        r'(' + NUM + r')\s*\)')),
+        r'\*\s*\(\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'(?P<recv>[a-z]\w*)\s*\+\s*(?P<num>' + NUM + r')\s*\)')),
     ('cast1', re.compile(
-        r'\(\s*(' + CTY + r')\s*\*+\s*\)\s*\(\s*'
-        r'(?:\(\s*char\s*\*\s*\)\s*)?([a-z]\w*)\s*\+\s*(' + NUM + r')\s*\)')),
+        r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*\(\s*'
+        r'(?:\(\s*char\s*\*\s*\)\s*)?(?P<recv>[a-z]\w*)\s*\+\s*'
+        r'(?P<num>' + NUM + r')\s*\)')),
     ('cast2', re.compile(
-        r'\(\s*(' + CTY + r')\s*\*+\s*\)\s*([a-z]\w*)\s*\+\s*(' + NUM + r')')),
+        r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+        r'(?P<recv>[a-z]\w*)\s*\+\s*(?P<num>' + NUM + r')')),
 ]
 
 
@@ -1762,12 +1969,13 @@ def h_pthis(seg, ctx):
             if bad_span(seg, m):
                 continue
             pos = m.start()
-            cty, recv = m.group(1), m.group(2)
+            gd = m.groupdict()
+            cty, recv = gd['cty'], gd['recv']
             if recv == 'this':
                 continue
-            raw = int(m.group(3), 0)
+            raw = int(gd['num'], 0)
             if kind in ('deref2', 'cast2'):
-                off = raw * WIDTHS.get(cty.strip(), 4)
+                off = raw * _cast_elem_width(cty, len(gd.get('st') or '*'))
             else:
                 off = raw
             cls = ctx.recv_class(recv, pos)
@@ -1809,14 +2017,21 @@ def h_pthis(seg, ctx):
             STATS['F-PTHIS/%s/%s' % (kind, how)] += 1
         out.append(seg[last:])
         seg = ''.join(out)
+        # X20/I189: positional lookups (site_of/line_of/recv_class/_x5b_pos)
+        # must see the CURRENT text at the next pattern iteration -- a stale
+        # ctx.seg resolved wrong-line anchors (bare path -> wrong member
+        # names, e.g. `*(this + 24)` read the previous line's 0x4ba5c1
+        # anchor instead of its own 0x4ba5c4).
+        ctx.seg = seg
     return seg, n
 
 
 PINDEX = re.compile(
-    r'\(\s*\(\s*(' + CTY + r')\s*\*\s*\)\s*([A-Za-z_]\w*)\s*\)\s*'
-    r'\[\s*(' + NUM + r')\s*\]')
+    r'\(\s*\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+    r'(?P<recv>[A-Za-z_]\w*)\s*\)\s*\[\s*(?P<num>' + NUM + r')\s*\]')
 PINDEX2 = re.compile(
-    r'\(\s*(' + CTY + r')\s*\*\s*\)\s*([A-Za-z_]\w*)\s*\[\s*(' + NUM + r')\s*\]')
+    r'\(\s*(?P<cty>' + CTYQ + r')\s*(?P<st>\*+)\s*\)\s*'
+    r'(?P<recv>[A-Za-z_]\w*)\s*\[\s*(?P<num>' + NUM + r')\s*\]')
 
 
 def h_index(seg, ctx):
@@ -1828,8 +2043,10 @@ def h_index(seg, ctx):
         for m in pat.finditer(mask):
             if bad_span(seg, m):
                 continue
-            cty, recv, idx = m.group(1), m.group(2), int(m.group(3), 0)
-            off = idx * WIDTHS.get(cty.strip(), 4)
+            gd = m.groupdict()
+            cty, recv = gd['cty'], gd['recv']
+            idx = int(gd['num'], 0)
+            off = idx * _cast_elem_width(cty, len(gd.get('st') or '*'))
             cls = ctx.recv_class(recv, m.start())
             if cls is None:
                 ledger_add('F-INDEX', ctx, m.start(), m.group(0), None, off,
@@ -1855,6 +2072,12 @@ def h_index(seg, ctx):
             STATS['F-INDEX/' + how] += 1
         out.append(seg[last:])
         seg = ''.join(out)
+        # X20/I189: positional lookups (site_of/line_of/recv_class/_x5b_pos)
+        # must see the CURRENT text at the next pattern iteration -- a stale
+        # ctx.seg resolved wrong-line anchors (bare path -> wrong member
+        # names, e.g. `*(this + 24)` read the previous line's 0x4ba5c1
+        # anchor instead of its own 0x4ba5c4).
+        ctx.seg = seg
     return seg, n
 
 
@@ -2082,6 +2305,7 @@ HANDLERS = [
     ('F-BCHAIN', h_bchain),
     ('F-BIDX', h_bidx),
     ('F-I2P', h_int2ptr),
+    ('F-RECAST', h_recast),
 ]
 
 # ------------------------------------------------------------ span scan
@@ -2298,11 +2522,17 @@ def _x5b_member_width(cls, name):
 def _x5b_arith_ok(ctx, end_pos, cls, nm, cty):
     """True when replacing the matched cast expression with the member form
     does not change the scale of a following + / - / [ (the member's width
-    must equal the cast type's width)."""
+    must equal the cast type's width).  X20: `* / % & | ^` continuations are
+    never legal on the pointer expression produced by the replacement --
+    refuse (measured: `(char *)v6 + 8 * i` -> `&v6->q008 * i` manglings)."""
     nxt = ctx.seg[end_pos:end_pos + 4].lstrip()
-    if not nxt or nxt[0] not in '+-[':
+    if not nxt:
         return True
-    cw = WIDTHS.get(cty.strip(), 4)
+    if nxt[0] in '*/%&|^':
+        return False
+    if nxt[0] not in '+-[':
+        return True
+    cw = _cast_elem_width(cty, 1)
     return _x5b_member_width(cls, nm) == cw
 
 
@@ -2517,7 +2747,13 @@ def process_file(p, apply=None):
             if not inc.startswith('src/'):
                 includes.add('src/' + inc)
     changed = False
+    shift = 0   # X20: a handler may LEGITIMATELY collapse a multi-line
+                # statement into one line (F-FPTR/F-CASTD/chain do).  The
+                # span list was computed on the original text -- keep later
+                # span indices aligned with the live line table.
     for (addr, ann_i, def_i, end_i) in spans:
+        def_i += shift
+        end_i += shift
         if def_i >= len(lines) or end_i >= len(lines) or def_i > end_i:
             continue
         cls = None
@@ -2558,7 +2794,9 @@ def process_file(p, apply=None):
             if not n_pass:
                 break
         if n_total:
-            lines[def_i:end_i + 1] = seg.split('\n')
+            new_lines = seg.split('\n')
+            shift += len(new_lines) - (end_i - def_i + 1)
+            lines[def_i:end_i + 1] = new_lines
             changed = True
             STATS['functions/changed'] += 1
     if changed and apply:

@@ -1978,7 +1978,7 @@ int MouseClass::LoadGameAssets() {
               result = (*(int (__stdcall **)(IStream *, int *, int, unsigned int))(v52 + 12))(pStm, &v74, 4, 0); /*0x5be3bd*/
               if ( result >= 0 ) /*0x5be3c4*/
               {
-                (*(void (__thiscall **)(char *))(*&this->u32_50 + 12))(&this->u32_50); /*0x5be3d2*/
+                (*(void (__thiscall **)(char *))&this->u32_50->IsInitialized)(&this->u32_50); /*0x5be3d2*/
                 pStm = 0; /*0x5be3d9*/
                 if ( v74 <= 0 ) /*0x5be3df*/
                 {
@@ -2121,7 +2121,7 @@ int MouseClass::LoadGameAssets() {
                     if ( *&this->q_60 < v54 /*0x5be440*/
                       || (this->q05D || !v54)
                       && (v55 = *&this->q064, v55 > 0)
-                      && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*&this->u32_50 + 8))(
+                      && (*(uint8_t (__thiscall **)(char *, int, unsigned int))&this->u32_50->Capacity)(
                            &this->u32_50,
                            v55 + v54,
                            0) )
@@ -4750,7 +4750,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
   }
   if ( this->__pad_100 != -1 ) /*0x6a8c8c*/
   {
-    v14 = this + 8; /*0x6a8c8e*/
+    v14 = &this->u32_8; /*0x6a8c8e*/
     if ( Locomotor::GetSpeed(&this->u32_8) || (v15 = this->CapacityIncrement) == 0 ) /*0x6a8ca5*/
     {
       this->__pad_004 = 0; /*0x6a8d4d*/

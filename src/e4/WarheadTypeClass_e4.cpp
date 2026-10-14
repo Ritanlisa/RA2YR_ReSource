@@ -192,7 +192,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       if ( v9 ) /*0x52ac70*/
       {
         *(unsigned int *)(v9 + 4) = v8; /*0x52ac72*/
-        *(unsigned int *)(this->__pad_024 + 8) = this->CausesDelayKill; /*0x52ac7b*/
+        *(unsigned int *)&this->__pad_024->vtable3 = this->CausesDelayKill; /*0x52ac7b*/
         this->CausesDelayKill = 0; /*0x52ac7e*/
         this->__pad_024 = 0; /*0x52ac81*/
       }
@@ -209,7 +209,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       if ( v12 ) /*0x52ac9d*/
       {
         *(unsigned int *)(v12 + 4) = v11; /*0x52ac9f*/
-        *(unsigned int *)(this->InfDeath + 8) = this->CellSpread; /*0x52aca8*/
+        *(unsigned int *)&this->InfDeath->u32_8 = this->CellSpread; /*0x52aca8*/
         this->CellSpread = 0; /*0x52acab*/
         this->InfDeath = 0; /*0x52acae*/
       }
@@ -218,17 +218,17 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   /* X11: vtable install elided (implicit via GenericNode virtuals 0x52acb3) */
   if ( this ) /*0x52acb9*/
   {
-    v13 = *((unsigned int *)this + 1); /*0x52acbb*/
+    v13 = this->vtable2; /*0x52acbb*/
     if ( v13 ) /*0x52acc0*/
     {
-      result = (char *)*((unsigned int *)this + 2); /*0x52acc2*/
+      result = (char *)this->vtable3; /*0x52acc2*/
       if ( result ) /*0x52acc7*/
       {
         *((unsigned int *)result + 1) = v13; /*0x52acc9*/
-        result = (char *)*((unsigned int *)this + 1); /*0x52accc*/
-        *((unsigned int *)result + 2) = *((unsigned int *)this + 2); /*0x52acd2*/
-        *((unsigned int *)this + 2) = 0; /*0x52acd5*/
-        *((unsigned int *)this + 1) = 0; /*0x52acd8*/
+        result = (char *)this->vtable2; /*0x52accc*/
+        *((unsigned int *)result + 2) = this->vtable3; /*0x52acd2*/
+        this->vtable3 = 0; /*0x52acd5*/
+        this->vtable2 = 0; /*0x52acd8*/
       }
     }
   }
@@ -368,59 +368,59 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned int *)(aP1 + 276) = 0; /*0x75cf08*/
   *&aP1->q118 = 10; /*0x75cf0b*/
   *(unsigned int *)(aP1 + 260) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x75cf0e*/
-  *(unsigned int *)(aP1 + 288) = 0; /*0x75cf14*/
-  *(unsigned int *)(aP1 + 292) = 0; /*0x75cf1a*/
-  *(unsigned int *)(aP1 + 296) = 0; /*0x75cf25*/
-  *(unsigned int *)(aP1 + 300) = 1065353216; /*0x75cf2b*/
-  *(unsigned char *)(aP1 + 304) = 0; /*0x75cf31*/
-  *(unsigned int *)(aP1 + 308) = 5; /*0x75cf37*/
-  *(unsigned int *)(aP1 + 312) = 1065353216; /*0x75cf41*/
-  *(unsigned int *)(aP1 + 316) = 0; /*0x75cf47*/
-  *(unsigned int *)(aP1 + 320) = 0; /*0x75cf4d*/
-  *(unsigned char *)(aP1 + 324) = 0; /*0x75cf53*/
-  *(unsigned char *)(aP1 + 325) = 0; /*0x75cf59*/
-  *(unsigned char *)(aP1 + 326) = 0; /*0x75cf5f*/
-  *(unsigned char *)(aP1 + 327) = 0; /*0x75cf65*/
-  *(unsigned char *)(aP1 + 328) = 0; /*0x75cf6b*/
-  *(unsigned char *)(aP1 + 329) = 0; /*0x75cf71*/
-  *(unsigned char *)(aP1 + 330) = 0; /*0x75cf77*/
-  *(unsigned char *)(aP1 + 331) = 0; /*0x75cf7d*/
-  *(unsigned char *)(aP1 + 332) = 0; /*0x75cf83*/
-  *(unsigned char *)(aP1 + 333) = 0; /*0x75cf89*/
-  *(unsigned char *)(aP1 + 334) = 0; /*0x75cf8f*/
-  *(unsigned char *)(aP1 + 335) = 0; /*0x75cf95*/
-  *(unsigned char *)(aP1 + 336) = 0; /*0x75cf9b*/
-  *(unsigned char *)(aP1 + 337) = 0; /*0x75cfa1*/
-  *(unsigned char *)(aP1 + 338) = 0; /*0x75cfa7*/
-  *(unsigned char *)(aP1 + 339) = 0; /*0x75cfad*/
-  *(unsigned char *)(aP1 + 340) = 0; /*0x75cfb3*/
-  *(unsigned char *)(aP1 + 341) = 0; /*0x75cfb9*/
-  *(unsigned char *)(aP1 + 342) = 0; /*0x75cfbf*/
-  *(unsigned char *)(aP1 + 343) = 0; /*0x75cfc5*/
-  *(unsigned char *)(aP1 + 344) = 0; /*0x75cfcb*/
-  *(unsigned char *)(aP1 + 345) = 0; /*0x75cfd1*/
-  *(unsigned char *)(aP1 + 346) = 0; /*0x75cfd7*/
-  *(unsigned char *)(aP1 + 347) = 0; /*0x75cfdd*/
-  *(unsigned int *)(aP1 + 348) = 1247291207; /*0x75cfee*/
+  aP1->q120 = 0; /*0x75cf14*/
+  aP1->q124 = 0; /*0x75cf1a*/
+  aP1->q128 = 0; /*0x75cf25*/
+  aP1->q12C = 1065353216; /*0x75cf2b*/
+  aP1->q130 = 0; /*0x75cf31*/
+  aP1->q134 = 5; /*0x75cf37*/
+  aP1->q138 = 1065353216; /*0x75cf41*/
+  aP1->q13C = 0; /*0x75cf47*/
+  aP1->q140 = 0; /*0x75cf4d*/
+  aP1->u32_144 = 0; /*0x75cf53*/
+  aP1->u8_145 = 0; /*0x75cf59*/
+  aP1->q146 = 0; /*0x75cf5f*/
+  aP1->u8_147 = 0; /*0x75cf65*/
+  aP1->q148 = 0; /*0x75cf6b*/
+  aP1->u8_149 = 0; /*0x75cf71*/
+  aP1->u8_14A = 0; /*0x75cf77*/
+  aP1->u8_14B = 0; /*0x75cf7d*/
+  aP1->u32_14C = 0; /*0x75cf83*/
+  aP1->__pad_14D = 0; /*0x75cf89*/
+  aP1->u8_14E = 0; /*0x75cf8f*/
+  aP1->u8_14F = 0; /*0x75cf95*/
+  aP1->q150 = 0; /*0x75cf9b*/
+  aP1->q151 = 0; /*0x75cfa1*/
+  aP1->q152 = 0; /*0x75cfa7*/
+  aP1->q153 = 0; /*0x75cfad*/
+  aP1->q154 = 0; /*0x75cfb3*/
+  aP1->u8_155 = 0; /*0x75cfb9*/
+  aP1->q156 = 0; /*0x75cfbf*/
+  aP1->u8_157 = 0; /*0x75cfc5*/
+  aP1->q158 = 0; /*0x75cfcb*/
+  aP1->u8_159 = 0; /*0x75cfd1*/
+  aP1->u8_15A = 0; /*0x75cfd7*/
+  aP1->u8_15B = 0; /*0x75cfdd*/
+  aP1->q15C = 1247291207; /*0x75cfee*/
   *(unsigned int *)(aP1 + 352) = 298948665; /*0x75cff9*/
   *(unsigned int *)(aP1 + 356) = -1610610249; /*0x75d001*/
-  *(unsigned char *)(aP1 + 364) = 0; /*0x75d009*/
-  *(unsigned char *)(aP1 + 365) = 0; /*0x75d00f*/
+  aP1->q16C = 0; /*0x75d009*/
+  aP1->q16D = 0; /*0x75d00f*/
   *(unsigned int *)(aP1 + 360) = -777003740; /*0x75d015*/
-  *(unsigned char *)(aP1 + 366) = 0; /*0x75d01a*/
-  *(unsigned int *)(aP1 + 368) = 0; /*0x75d020*/
-  *(unsigned char *)(aP1 + 372) = 0; /*0x75d026*/
-  *(unsigned char *)(aP1 + 373) = 0; /*0x75d02c*/
-  *(unsigned char *)(aP1 + 374) = 0; /*0x75d032*/
-  *(unsigned char *)(aP1 + 375) = 0; /*0x75d038*/
-  *(unsigned char *)(aP1 + 376) = 0; /*0x75d03e*/
-  *(unsigned char *)(aP1 + 377) = 1; /*0x75d044*/
-  *(unsigned char *)(aP1 + 378) = 0; /*0x75d04a*/
-  *(unsigned char *)(aP1 + 379) = 0; /*0x75d050*/
-  *(unsigned int *)(aP1 + 380) = 0; /*0x75d056*/
-  *(unsigned int *)(aP1 + 384) = 0; /*0x75d05c*/
-  *(unsigned int *)(aP1 + 388) = 0; /*0x75d06e*/
-  *(unsigned int *)(aP1 + 392) = 0; /*0x75d074*/
+  aP1->u8_16E = 0; /*0x75d01a*/
+  aP1->q170 = 0; /*0x75d020*/
+  aP1->q174 = 0; /*0x75d026*/
+  aP1->q175 = 0; /*0x75d02c*/
+  aP1->q176 = 0; /*0x75d032*/
+  aP1->u8_177 = 0; /*0x75d038*/
+  aP1->u32_178 = 0; /*0x75d03e*/
+  aP1->u8_179 = 1; /*0x75d044*/
+  aP1->u8_17A = 0; /*0x75d04a*/
+  aP1->u8_17B = 0; /*0x75d050*/
+  aP1->u32_17C = 0; /*0x75d056*/
+  aP1->u32_180 = 0; /*0x75d05c*/
+  aP1->u32_184 = 0; /*0x75d06e*/
+  aP1->u32_188 = 0; /*0x75d074*/
   *(unsigned int *)(aP1 + 400) = 0; /*0x75d07a*/
   *(unsigned int *)(aP1 + 404) = 0; /*0x75d07d*/
   *(unsigned char *)(aP1 + 408) = 1; /*0x75d080*/
@@ -435,11 +435,11 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   *(unsigned int *)(aP1 + 444) = 10; /*0x75d0a1*/
   *(unsigned int *)(aP1 + 440) = 0; /*0x75d0a4*/
   *(unsigned int *)(aP1 + 424) = &TypeList<int>::`vftable'; /*0x75d0a7*/
-  *(unsigned int *)(aP1 + 452) = 0; /*0x75d0ae*/
-  *(unsigned int *)(aP1 + 456) = 0; /*0x75d0b4*/
+  aP1->u32_1C4 = 0; /*0x75d0ae*/
+  aP1->u32_1C8 = 0; /*0x75d0b4*/
   *(unsigned int *)aP1 = &WarheadTypeClass::`vftable'; /*0x75d0ba*/
   *(unsigned int *)(aP1 + 4) = &WarheadTypeClass::`vftable'; /*0x75d0c1*/
-  *(unsigned int *)(aP1 + 8) = &WarheadTypeClass::`vftable'; /*0x75d0c7*/
+  /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0c7) */
   /* X11: vtable install elided (implicit via WarheadTypeClass virtuals 0x75d0ce) */
   AbstractClass::GenerateUniqueID(aP1 + 4); /*0x75d0d5*/
   (*(void (**)(int))(*(unsigned int *)(aP1 + 396) + 12))(aP1 + 396); /*0x75d0de*/
@@ -1399,11 +1399,11 @@ void * WarheadTypeClass::parseModifiers(char a2)
   WarheadTypeClass_field_0xC = this->vtable4; /*0x52ad54*/
   this->Deform = &INIClass::INIEntry::`vftable'; /*0x52ad57*/
   free(WarheadTypeClass_field_0xC); /*0x52ad5e*/
-  WarheadTypeClass_field_0x10 = this->WarheadTypeClass_field_0x10; /*0x52ad68*/
+  WarheadTypeClass_field_0x10 = this->uniqueId; /*0x52ad68*/
   this->WarheadTypeClass_field_0xC = 0; /*0x52ad69*/
   free(WarheadTypeClass_field_0x10); /*0x52ad6c*/
   v4 = this->AnimList[0]; /*0x52ad71*/
-  this->WarheadTypeClass_field_0x10 = 0; /*0x52ad79*/
+  this->uniqueId = 0; /*0x52ad79*/
   if ( v4 ) /*0x52ad7c*/
   {
     do /*0x52ada0*/

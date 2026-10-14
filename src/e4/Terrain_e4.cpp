@@ -468,7 +468,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
     if ( v63 ) /*0x569706*/
       Terrain::ConnectivityGraph(); /*0x56970c*/
     if ( *(int *)v81.__tail_10 > 0 ) /*0x569717*/
-      ((LayerClass *)((int)&v81))->Update_Pathfinding_2(); /*0x569722*/
+      ((LayerClass*)(&v81))->Update_Pathfinding_2(); /*0x569722*/
     *(unsigned int *)v81.__pad_0 = &vt_VectorClass; /*0x56972b*/
     if ( *(unsigned int *)&v81.u16_4 ) /*0x569735*/
     {
@@ -683,7 +683,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     do /*0x56c7e0*/
     {
       v19 = (__int16 *)(*(unsigned int *)&v1->__pad_44[16] + v18); /*0x56c6ea*/
-      if ( *((unsigned char *)v19 + 8) ) /*0x56c6e6*/
+      if ( v19->ptr_8 ) /*0x56c6e6*/
       {
         v20 = *(unsigned int *)&v1->__pad_68[144] + *(unsigned int *)&v1->__pad_68[140] + 1; /*0x56c704*/
         v21 = *v19 + v20 * v19[1]; /*0x56c70f*/
@@ -836,7 +836,7 @@ LABEL_48:
         *(unsigned short *)(v77[(unsigned __int16)v58] + 2 * (unsigned __int16)v40[(unsigned __int16)v58]) = v56; /*0x56c920*/
         ++v40[v57]; /*0x56c924*/
         ++v40[(unsigned __int16)v58]; /*0x56c928*/
-        v37 = v90 == (char *)1; /*0x56c937*/
+        v37 = v90 == 1; /*0x56c937*/
         Block += 2; /*0x56c938*/
         --v90; /*0x56c93c*/
       }
@@ -1059,7 +1059,7 @@ int Terrain::FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3)
   }
   while ( v10 == v5 ); /*0x56cbe7*/
   v76 = v7; /*0x56cbeb*/
-  v11 = *((uint16_t *)a1 + 1); /*0x56cbef*/
+  v11 = a1->u32_2; /*0x56cbef*/
   v78 = (uint16_t)v11; /*0x56cbf5*/
   if ( (unsigned short)v11 ) /*0x56cbf9*/
   {
@@ -1116,7 +1116,7 @@ int Terrain::FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3)
     }
     while ( *v8 == v5 ); /*0x56ccfd*/
   }
-  v25 = *((uint16_t *)v8 + 1); /*0x56cd01*/
+  v25 = v8->u32_2; /*0x56cd01*/
   v79 = (uint16_t)v25; /*0x56cd07*/
   if ( (unsigned short)v25 ) /*0x56cd0b*/
   {
@@ -1244,7 +1244,7 @@ int Terrain::FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3)
   {
     do /*0x56d0e6*/
     {
-      v58 = *((uint16_t *)v56 + 1); /*0x56cfab*/
+      v58 = v56->u32_2; /*0x56cfab*/
       if ( (unsigned int)v56 >= v57 - 4 ) /*0x56cfb3*/
       {
         v60 = v39; /*0x56cfbe*/

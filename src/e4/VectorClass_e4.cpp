@@ -3082,7 +3082,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
         ++i; /*0x42f8cb*/
       if ( this->u32_D ) /*0x42f8d8*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x42f8e3*/
+        __3_YAXPAX_Z(this->u32_4); /*0x42f8e3*/
         this->u32_4 = 0; /*0x42f8eb*/
       }
     }
@@ -7042,7 +7042,7 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
   if ( v3 && BYTE1(Block->m_C) ) /*0x510000*/
   {
     __3_YAXPAX_Z(v3); /*0x510008*/
-    *(unsigned int *)&Block->m_1[3] = 0; /*0x510010*/
+    *&Block->ptr_4 = 0; /*0x510010*/
   }
   BYTE1(Block->m_C) = 0; /*0x51001b*/
   Block->m_8 = 0; /*0x510021*/
@@ -10983,7 +10983,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
   v3 = *&this->Items + 8 * a3; /*0x76b76d*/
   ComPtr::Constructor((ComPtr *)a2); /*0x76b772*/
   *a2 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76b777*/
-  ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x76b783*/
+  ComPtr::Set((ComPtr *)a2, v3->u32_4); /*0x76b783*/
   return a2; /*0x76b78a*/
 
 }

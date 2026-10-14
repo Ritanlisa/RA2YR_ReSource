@@ -26,7 +26,7 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
   *(unsigned short *)(this->q020 + 12) = 0; /*0x53fbec*/
   *(unsigned short *)this->q020 = this->q024; /*0x53fbf7*/
   *(unsigned char *)(this->q020 + 2) = !a5 || !a4; /*0x53fc0d*/
-  *(unsigned int *)(this->q020 + 4) = *(unsigned int *)(this->PlayerIndex + 44); /*0x53fc22*/
+  *(unsigned int *)(this->q020 + 4) = *(unsigned int *)&this->PlayerIndex->q02C; /*0x53fc22*/
   if ( a7 ) /*0x53fc2b*/
     *(unsigned int *)(this->q020 + 4) = a7; /*0x53fc30*/
   *(unsigned short *)(this->q020 + 14) = this->__pad_02E; /*0x53fc3f*/

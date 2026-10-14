@@ -67,7 +67,7 @@ int sub_679CC0()
     v4 = 0; /*0x679d08*/
     v5 = 0; /*0x679d0c*/
     v6 = 0; /*0x679d10*/
-    v1[0] = (void *)((unsigned int)&CCINIClass_Vtable); /*0x679d14*/
+    v1[0] = (void*)(&CCINIClass_Vtable); /*0x679d14*/
     CCFileClass::Construct(v7, g_Str_File_CoopCampMD_ini); /*0x679d1c*/
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
@@ -334,7 +334,7 @@ int ArtINI_Load()
   unsigned char v2[12]; // [esp+58h] [ebp-14h] BYREF
   int v3; // [esp+64h] [ebp-8h]
 
-  INIClass::ClearSection((gamemd::INIClass *)((int)&dword_887180), 0, 0); /*0x679eec*/
+  INIClass::ClearSection((gamemd::INIClass*)(&dword_887180), 0, 0); /*0x679eec*/
   CCFileClass::Construct(v1, aArtmdIni); /*0x679efa*/
   CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (unsigned int)(&vt_CCFileClass); /*0x679f16*/

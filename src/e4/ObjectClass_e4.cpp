@@ -434,7 +434,7 @@ LABEL_16:
           v12 = aP0 + 1452; /*0x4db4b9*/
           if ( aP0 != -1452 ) /*0x4db4c1*/
           {
-            AbstractClassVector::Construct((unsigned int *)(aP0 + 1452), 0, 0); /*0x4db4c7*/
+            AbstractClassVector::Construct(&aP0->FootClass_DVC_5AC, 0, 0); /*0x4db4c7*/
             *(unsigned int *)v12 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db4cc*/
             *(unsigned int *)(aP0 + 1472) = 10; /*0x4db4d2*/
             *(unsigned int *)(aP0 + 1468) = 0; /*0x4db4d9*/
@@ -1343,7 +1343,7 @@ AbstractClass * * ObjectClass::Undeploy()
       && *(unsigned char *)((*(int (**)(ObjectClass *))(this->vtable0 + 136))(this) + 564)
       && (!*(unsigned int *)&dword_A8B238
        || *(unsigned int *)&dword_A8B238 == 5
-       || (*(int (**)(int *))(this->vtable1 + 16))(&this->vtable1) != -2) )
+       || (*(int (**)(int *))&this->vtable1->uniqueId)(&this->vtable1) != -2) )
     {
       VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x5f4dd3*/
     }
@@ -1928,7 +1928,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   }
   g_CameoRenderFlag = 1; /*0x6a7fa1*/
   Tactical::UpdateUIVisibility((Tactical *)v7); /*0x6a7fa8*/
-  (*(void (**)(int, int))(*&v7->q0E0))(v7, 2); /*0x6a7fb7*/
+  (*(void (**)(int, int))(*&v7->FootClass_E0))(v7, 2); /*0x6a7fb7*/
   return a5; /*0x6a7fbf*/
 }
 } // namespace ra2

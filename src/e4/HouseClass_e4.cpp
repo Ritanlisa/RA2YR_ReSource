@@ -264,50 +264,50 @@ int HouseClass::Construct(int a2)
   this->IsAllocated = a2; /*0x4f54c2*/
   TagClassVector::Construct(&this->conYards, 0, 0); /*0x4f54c5*/
   this->u32_E = (int)&DynamicVectorClass<TagClass *>::`vftable'; /*0x4f54cf*/
-  *((char *)this + 19) = 10; /*0x4f54d5*/
-  *((char *)this + 18) = 0; /*0x4f54d8*/
-  VectorClass::BuildingConstructor((VectorClass *)this + 5, 0, 0); /*0x4f54e2*/
-  *((char *)this + 20) = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f54e7*/
+  this->IsAllocated = 10; /*0x4f54d5*/
+  this->q012 = 0; /*0x4f54d8*/
+  VectorClass::BuildingConstructor(&this->abstractFlags, 0, 0); /*0x4f54e2*/
+  this->abstractFlags = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f54e7*/
   this->q019 = 10; /*0x4f54ed*/
   this->nextArrayIndex = 0; /*0x4f54f0*/
   VectorClass::BuildingConstructor(&this->q01A, 0, 0); /*0x4f54fa*/
   this->q01A = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f54ff*/
-  *((char *)this + 31) = 10; /*0x4f5505*/
-  *((char *)this + 30) = 0; /*0x4f5508*/
-  VectorClass::BuildingConstructor((VectorClass *)this + 8, 0, 0); /*0x4f5515*/
-  *((char *)this + 32) = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f551a*/
+  this->u8_1F = 10; /*0x4f5505*/
+  this->u32_1E = 0; /*0x4f5508*/
+  VectorClass::BuildingConstructor(&this->NeedsSaveOrLink, 0, 0); /*0x4f5515*/
+  this->NeedsSaveOrLink = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f551a*/
   this->u32_25 = 10; /*0x4f5520*/
   this->vtable5 = 0; /*0x4f5523*/
   VectorClass::BuildingConstructor(&this->u32_26, 0, 0); /*0x4f5530*/
   this->u32_26 = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f5535*/
-  *((char *)this + 43) = 10; /*0x4f553b*/
-  *((char *)this + 42) = 0; /*0x4f553e*/
-  VectorClass::BuildingConstructor((VectorClass *)this + 11, 0, 0); /*0x4f554b*/
-  *((char *)this + 44) = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f5550*/
+  this->q02B = 10; /*0x4f553b*/
+  this->u32_2A = 0; /*0x4f553e*/
+  VectorClass::BuildingConstructor(&this->vtable7, 0, 0); /*0x4f554b*/
+  /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x4f5550) */
   this->u32_31 = 10; /*0x4f5556*/
   this->relatedTagsCount = 0; /*0x4f5559*/
   VectorClass::BuildingConstructor(&this->q032, 0, 0); /*0x4f5566*/
   this->q032 = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f556b*/
-  *((char *)this + 55) = 10; /*0x4f5571*/
-  *((char *)this + 54) = 0; /*0x4f5574*/
-  VectorClass::BuildingConstructor((VectorClass *)this + 14, 0, 0); /*0x4f5581*/
-  *((char *)this + 56) = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f5586*/
+  this->q037 = 10; /*0x4f5571*/
+  this->arrayIndex = 0; /*0x4f5574*/
+  VectorClass::BuildingConstructor(&this->conYards, 0, 0); /*0x4f5581*/
+  this->conYards = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f5586*/
   this->u32_3D = 10; /*0x4f558c*/
   this->conYardsCount = 0; /*0x4f558f*/
   VectorClass::BuildingConstructor(&this->q03E, 0, 0); /*0x4f559c*/
   this->q03E = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55a1*/
-  *((char *)this + 67) = 10; /*0x4f55a7*/
-  *((char *)this + 66) = 0; /*0x4f55aa*/
-  VectorClass::BuildingConstructor((VectorClass *)this + 17, 0, 0); /*0x4f55b7*/
-  *((char *)this + 68) = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55bc*/
+  this->u32_43 = 10; /*0x4f55a7*/
+  this->q042 = 0; /*0x4f55aa*/
+  VectorClass::BuildingConstructor(&this->buildings, 0, 0); /*0x4f55b7*/
+  this->buildings = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55bc*/
   this->u32_49 = 10; /*0x4f55c2*/
   this->buildingsCount = 0; /*0x4f55c5*/
   VectorClass::BuildingConstructor(&this->u32_4A, 0, 0); /*0x4f55d2*/
   this->u32_4A = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55d7*/
-  *((char *)this + 79) = 10; /*0x4f55dd*/
-  *((char *)this + 78) = 0; /*0x4f55e0*/
-  VectorClass::BuildingConstructor((VectorClass *)this + 20, 0, 0); /*0x4f55ed*/
-  *((char *)this + 80) = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55f2*/
+  this->q04F = 10; /*0x4f55dd*/
+  this->q04E = 0; /*0x4f55e0*/
+  VectorClass::BuildingConstructor(&this->unitRepairStations, 0, 0); /*0x4f55ed*/
+  this->unitRepairStations = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55f2*/
   this->u32_55 = 10; /*0x4f55f8*/
   this->repairStationsCount = 0; /*0x4f55fb*/
   this->u32_56 = 0; /*0x4f55fe*/
@@ -317,70 +317,70 @@ int HouseClass::Construct(int a2)
   this->q05A = 0; /*0x4f5620*/
   StartingTechnoVector::Construct(&this->__pad_16C, 0, 0); /*0x4f5626*/
   this->u32_5B = (int)&DynamicVectorClass<HouseClass::StartingTechnoStruct *>::`vftable'; /*0x4f562b*/
-  *((char *)this + 96) = 10; /*0x4f5631*/
-  *((char *)this + 95) = 0; /*0x4f5634*/
-  *((char *)this + 97) = (int)dword_A8B230[43].vtable1; /*0x4f5648*/
-  *((char *)this + 98) = 0; /*0x4f564e*/
-  *((char *)this + 99) = 1072693248; /*0x4f5654*/
-  *((char *)this + 100) = 0; /*0x4f565a*/
-  *((char *)this + 101) = 1072693248; /*0x4f5660*/
-  *((char *)this + 102) = 0; /*0x4f5666*/
-  *((char *)this + 103) = 1072693248; /*0x4f566c*/
-  *((char *)this + 104) = 0; /*0x4f5672*/
-  *((char *)this + 105) = 1072693248; /*0x4f5678*/
-  *((char *)this + 106) = 0; /*0x4f567e*/
-  *((char *)this + 107) = 1072693248; /*0x4f5684*/
-  *((char *)this + 108) = 0; /*0x4f568a*/
-  *((char *)this + 109) = 1072693248; /*0x4f5690*/
-  *((char *)this + 110) = 0; /*0x4f5696*/
-  *((char *)this + 111) = 1072693248; /*0x4f569c*/
-  *((char *)this + 112) = 0; /*0x4f56a2*/
-  *((char *)this + 113) = 0; /*0x4f56a8*/
-  *((char *)this + 114) = 0; /*0x4f56ae*/
-  *((char *)this + 115) = 0; /*0x4f56b7*/
-  *((char *)this + 116) = 0; /*0x4f56bd*/
-  *((char *)this + 117) = 1; /*0x4f56c3*/
-  *((char *)this + 118) = 0; /*0x4f56cd*/
-  *((char *)this + 119) = 0; /*0x4f56d3*/
-  *((char *)this + 120) = -1; /*0x4f56d9*/
-  *((char *)this + 121) = 0; /*0x4f56df*/
-  *((unsigned char *)this + 492) = 0; /*0x4f56e5*/
-  *((unsigned char *)this + 493) = 0; /*0x4f56eb*/
-  *((unsigned char *)this + 494) = 0; /*0x4f56f1*/
-  *((unsigned char *)this + 495) = 0; /*0x4f56f7*/
-  *((unsigned char *)this + 496) = 1; /*0x4f56fd*/
-  *((unsigned char *)this + 497) = 0; /*0x4f5704*/
-  *((unsigned char *)this + 498) = 0; /*0x4f570a*/
-  *((unsigned char *)this + 499) = 0; /*0x4f5710*/
-  *((unsigned char *)this + 500) = 0; /*0x4f5716*/
-  *((unsigned char *)this + 501) = 0; /*0x4f571c*/
-  *((unsigned char *)this + 502) = 0; /*0x4f5722*/
-  *((unsigned char *)this + 503) = 0; /*0x4f5728*/
-  *((unsigned char *)this + 504) = 0; /*0x4f572e*/
-  *((unsigned char *)this + 505) = 0; /*0x4f5734*/
-  *((unsigned char *)this + 506) = 0; /*0x4f573a*/
-  *((unsigned char *)this + 507) = 0; /*0x4f5740*/
-  *((unsigned char *)this + 508) = 1; /*0x4f5746*/
-  *((char *)this + 128) = 0; /*0x4f574d*/
-  *((char *)this + 129) = 0; /*0x4f5753*/
-  *((unsigned char *)this + 520) = 0; /*0x4f5759*/
-  *((char *)this + 131) = -1; /*0x4f575f*/
-  *((unsigned char *)this + 576) = 0; /*0x4f5765*/
-  *((unsigned char *)this + 577) = 0; /*0x4f576b*/
-  *((unsigned char *)this + 578) = 0; /*0x4f5771*/
-  *((unsigned char *)this + 579) = 0; /*0x4f5777*/
-  *((unsigned char *)this + 580) = 0; /*0x4f577d*/
-  *((unsigned char *)this + 581) = 0; /*0x4f5783*/
-  *((unsigned char *)this + 582) = 0; /*0x4f5789*/
-  *((unsigned char *)this + 583) = 0; /*0x4f578f*/
-  *((unsigned char *)this + 584) = 0; /*0x4f5795*/
-  *((unsigned char *)this + 585) = 0; /*0x4f579b*/
-  *((unsigned char *)this + 586) = 0; /*0x4f57a1*/
-  *((unsigned char *)this + 587) = 1; /*0x4f57a7*/
-  *((char *)this + 147) = *((char *)this + 116); /*0x4f57bb*/
-  *((char *)this + 148) = 0; /*0x4f57c4*/
-  SuperClassVector::Construct((SuperClassVector *)this + 149, 0, 0); /*0x4f57ca*/
-  *((char *)this + 149) = (int)&DynamicVectorClass<SuperClass *>::`vftable'; /*0x4f57cf*/
+  this->grindersCount = 10; /*0x4f5631*/
+  this->u32_5F = 0; /*0x4f5634*/
+  this->u32_61 = (int)dword_A8B230[43].vtable1; /*0x4f5648*/
+  this->u32_62 = 0; /*0x4f564e*/
+  this->u32_63 = 1072693248; /*0x4f5654*/
+  this->grindersCapacity = 0; /*0x4f565a*/
+  this->u32_65 = 1072693248; /*0x4f5660*/
+  this->u32_66 = 0; /*0x4f5666*/
+  this->u32_67 = 1072693248; /*0x4f566c*/
+  this->absorbers = 0; /*0x4f5672*/
+  this->u32_69 = 1072693248; /*0x4f5678*/
+  this->u32_6A = 0; /*0x4f567e*/
+  this->u32_6B = 1072693248; /*0x4f5684*/
+  this->absorbersCount = 0; /*0x4f568a*/
+  this->u32_6D = 1072693248; /*0x4f5690*/
+  this->u32_6E = 0; /*0x4f5696*/
+  this->u32_6F = 1072693248; /*0x4f569c*/
+  this->absorbersCapacity = 0; /*0x4f56a2*/
+  this->u32_71 = 0; /*0x4f56a8*/
+  this->u32_72 = 0; /*0x4f56ae*/
+  this->u32_73 = 0; /*0x4f56b7*/
+  this->bunkers = 0; /*0x4f56bd*/
+  this->q075 = 1; /*0x4f56c3*/
+  this->q076 = 0; /*0x4f56cd*/
+  this->u32_77 = 0; /*0x4f56d3*/
+  this->bunkersCount = -1; /*0x4f56d9*/
+  this->q079 = 0; /*0x4f56df*/
+  this->currentPlayer = 0; /*0x4f56e5*/
+  this->PlayerControl = 0; /*0x4f56eb*/
+  this->production = 0; /*0x4f56f1*/
+  this->autocreateAllowed = 0; /*0x4f56f7*/
+  this->HouseClass_field_1F0 = 1; /*0x4f56fd*/
+  this->u32_1F1 = 0; /*0x4f5704*/
+  this->aiTriggersActive = 0; /*0x4f570a*/
+  this->autoBaseBuilding = 0; /*0x4f5710*/
+  this->isDiscoveredByPlayer = 0; /*0x4f5716*/
+  this->defeated = 0; /*0x4f571c*/
+  this->isGameOver = 0; /*0x4f5722*/
+  this->isWinner = 0; /*0x4f5728*/
+  this->isLoser = 0; /*0x4f572e*/
+  this->civiliansEvacuated = 0; /*0x4f5734*/
+  this->firestormActive = 0; /*0x4f573a*/
+  this->hasThreatNode = 0; /*0x4f5740*/
+  this->recheckTechTree = 1; /*0x4f5746*/
+  this->occupiables = 0; /*0x4f574d*/
+  this->u32_81 = 0; /*0x4f5753*/
+  this->u32_208 = 0; /*0x4f5759*/
+  this->q083 = -1; /*0x4f575f*/
+  this->visionary = 0; /*0x4f5765*/
+  this->mapIsClear = 0; /*0x4f576b*/
+  this->unknownBool242 = 0; /*0x4f5771*/
+  this->unknownBool243 = 0; /*0x4f5777*/
+  this->hasBeenThieved = 0; /*0x4f577d*/
+  this->repairing = 0; /*0x4f5783*/
+  this->unknownBool246 = 0; /*0x4f5789*/
+  this->unknownBool247 = 0; /*0x4f578f*/
+  this->unknownBool248 = 0; /*0x4f5795*/
+  this->allToHunt = 0; /*0x4f579b*/
+  this->HouseClass_field_bool_24A = 0; /*0x4f57a1*/
+  this->HouseClass_field_bool_24B = 1; /*0x4f57a7*/
+  this->q093 = this->bunkers; /*0x4f57bb*/
+  this->cloningVatsCapacity = 0; /*0x4f57c4*/
+  SuperClassVector::Construct(&this->supers, 0, 0); /*0x4f57ca*/
+  this->u8_95 = (int)&DynamicVectorClass<SuperClass *>::`vftable'; /*0x4f57cf*/
   this->u32_9A = 10; /*0x4f57d5*/
   this->q099 = 0; /*0x4f57d8*/
   this->u8_9B = -1; /*0x4f57de*/
@@ -504,10 +504,10 @@ int HouseClass::Construct(int a2)
   this->q1580 = -1; /*0x4f5b59*/
   AngerVector::Construct(&this->angerNodes, 0, 0); /*0x4f5b5f*/
   this->u8_1581 = (int)&DynamicVectorClass<AngerStruct>::`vftable'; /*0x4f5b6c*/
-  *((char *)this + 5510) = 10; /*0x4f5b76*/
-  *((char *)this + 5509) = 0; /*0x4f5b7c*/
-  ScoutVector::Construct((ScoutVector *)this + 5511, 0, 0); /*0x4f5b82*/
-  *((char *)this + 5511) = (int)&DynamicVectorClass<ScoutStruct>::`vftable'; /*0x4f5b87*/
+  this->q1586 = 10; /*0x4f5b76*/
+  this->u8_1585 = 0; /*0x4f5b7c*/
+  ScoutVector::Construct(&this->unkTimer3, 0, 0); /*0x4f5b82*/
+  this->q1587 = (int)&DynamicVectorClass<ScoutStruct>::`vftable'; /*0x4f5b87*/
   this->u32_158C = 10; /*0x4f5b91*/
   this->u32_158B = 0; /*0x4f5b97*/
   this->u8_158D = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5ba2*/
@@ -577,28 +577,28 @@ int HouseClass::Construct(int a2)
   this->u8_5818 = 0; /*0x4f5d5d*/
   ConnectionPointVector::Construct(&this->waypointPathCount, 0, 0); /*0x4f5d63*/
   this->u8_5819 = (int)&DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4f5d68*/
-  *((char *)this + 22558) = 10; /*0x4f5d6e*/
-  *((char *)this + 22557) = 0; /*0x4f5d71*/
-  *((char *)this + 22559) = 0; /*0x4f5d74*/
-  *((char *)this + 22560) = 0; /*0x4f5d7a*/
-  *((char *)this + 22562) = 0; /*0x4f5d85*/
-  *((char *)this + 22563) = 1072693248; /*0x4f5d8b*/
-  *((char *)this + 22564) = 0; /*0x4f5d91*/
-  *((char *)this + 22565) = 1072693248; /*0x4f5d97*/
-  *((char *)this + 22567) = 1051260355; /*0x4f5da2*/
-  *((char *)this + 22568) = 1051260355; /*0x4f5da8*/
-  *((char *)this + 22569) = 1051260355; /*0x4f5dae*/
-  *((char *)this + 22570) = 0; /*0x4f5db4*/
-  *((char *)this + 22571) = 0; /*0x4f5dba*/
-  *((char *)this + 22572) = 0; /*0x4f5dc0*/
-  *((char *)this + 22573) = 0; /*0x4f5dc6*/
+  this->u8_581E = 10; /*0x4f5d6e*/
+  this->u8_581D = 0; /*0x4f5d71*/
+  this->u32_581F = 0; /*0x4f5d74*/
+  this->u8_5820 = 0; /*0x4f5d7a*/
+  this->q5822 = 0; /*0x4f5d85*/
+  this->q5823 = 1072693248; /*0x4f5d8b*/
+  this->u8_5824 = 0; /*0x4f5d91*/
+  this->u8_5825 = 1072693248; /*0x4f5d97*/
+  this->u8_5827 = 1051260355; /*0x4f5da2*/
+  this->u8_5828 = 1051260355; /*0x4f5da8*/
+  this->u8_5829 = 1051260355; /*0x4f5dae*/
+  this->u32_582A = 0; /*0x4f5db4*/
+  this->u32_582B = 0; /*0x4f5dba*/
+  this->u32_582C = 0; /*0x4f5dc0*/
+  this->u32_582D = 0; /*0x4f5dc6*/
   *this = (int)&HouseClass::`vftable'; /*0x4f5dcc*/
   this->AbstractClass_1 = (int)&HouseClass::`vftable'; /*0x4f5dd3*/
-  *((char *)this + 2) = (int)&HouseClass::`vftable'; /*0x4f5dda*/
+  this->q002 = (int)&HouseClass::`vftable'; /*0x4f5dda*/
   this->u32_3 = (int)&HouseClass::`vftable'; /*0x4f5de1*/
-  *((char *)this + 9) = (int)&HouseClass::`vftable'; /*0x4f5de8*/
+  this->u32_9 = (int)&HouseClass::`vftable'; /*0x4f5de8*/
   this->u32_A = (int)&HouseClass::`vftable'; /*0x4f5def*/
-  *((char *)this + 11) = (int)&HouseClass::`vftable'; /*0x4f5dfb*/
+  this->u32_B = (int)&HouseClass::`vftable'; /*0x4f5dfb*/
   if ( &g_INI_DefaultBuffer ) /*0x4f5e04*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x1Fu); /*0x4f5e18*/

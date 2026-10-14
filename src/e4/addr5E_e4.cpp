@@ -1056,7 +1056,7 @@ LABEL_101:
       {
         ((String *)((char **)&v198[24]))->Assign((const char *)a2);
         AssignWOLPlayerSide((const char **)&v198[24], (int)v47);
-        j_DeleteAndZero( (void *)((int)&v198[24]));
+        j_DeleteAndZero( (void*)(&v198[24]));
       }
       else
       {
@@ -1072,7 +1072,7 @@ LABEL_101:
       case 'L':
         ((String *)((char **)&v198[24]))->Assign( (const char *)(&Source->u32_1));
         CharStringToWide((ObjectClass *)&v198[32], (const char **)&v198[24]);
-        j_DeleteAndZero( (void *)((int)&v198[24]));
+        j_DeleteAndZero( (void*)(&v198[24]));
         v76 = (CampaignScore *)((WideString *)(wchar_t **)&v198[32])->GetOrEmpty();
         ((NetworkLobby *)v76)->SetupPlayers();
         v77 = (HWND)((gamemd::Dialog*)((void *)0xC9))->FindByHandle();
@@ -1458,7 +1458,7 @@ LABEL_171:
     if ( (bl313 & 2) != 0 )
     {
       bl313 &= ~2u;
-      j_DeleteAndZero( (void *)((int)&v198[24]));
+      j_DeleteAndZero( (void*)(&v198[24]));
     }
     if ( (bl313 & 1) != 0 )
       ((DeleteAndZero*)((void **)&v198[52]))->Alt();

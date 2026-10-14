@@ -285,7 +285,7 @@ unsigned int * AudioFileClass::Release() {
   result = this; /*0x405c01*/
   if ( g_AudioConfigState ) /*0x405c13*/
   {
-    if ( *((int **)this + 3) == &dword_87E294 ) /*0x405c20*/
+    if ( this->u32_C == &dword_87E294 ) /*0x405c20*/
     {
       v2 = *this; /*0x405c26*/
       if ( *this ) /*0x405c26*/
@@ -344,7 +344,7 @@ namespace gamemd {
 int * AudioSource::Get() {
   int *result; // eax
 
-  if ( !g_AudioConfigState || *((int **)this + 3) != &dword_87E294 ) /*0x406140*/
+  if ( !g_AudioConfigState || this->u32_C != &dword_87E294 ) /*0x406140*/
     return 0; /*0x406166*/
   result = (int *)*this; /*0x406142*/
   if ( *(unsigned int *)this && (this->u32_8 != result[9] || this->u32_4 != result[78]) ) /*0x40615e*/
@@ -1513,7 +1513,7 @@ char DropPod::ProcessLanding() {
   if ( !this->u32_51 ) /*0x4ce849*/
     return 1; /*0x4ce859*/
   v48 = 0; /*0x4ce85d*/
-  v3 = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)this + 3) + 456))(this->u32_C); /*0x4ce86d*/
+  v3 = this->u32_C->vt_slot_456(); /*0x4ce86d*/
   v4 = (int *)(this->u32_C + 156); /*0x4ce86f*/
   v50 = v3; /*0x4ce875*/
   v56 = *v4; /*0x4ce87b*/
@@ -1524,7 +1524,7 @@ char DropPod::ProcessLanding() {
     v3 -= dword_8B3CAC; /*0x4ce8b0*/
     v50 = v3; /*0x4ce8b2*/
   }
-  if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int))(**((unsigned int **)this + 3) + 132))(this->u32_C) + 3221) ) /*0x4ce8c1*/
+  if ( *(unsigned char *)(this->u32_C->vt_slot_132() + 3221) ) /*0x4ce8c1*/
   {
     if ( !v3 ) /*0x4ce8cf*/
     {
@@ -1572,18 +1572,13 @@ char DropPod::ProcessLanding() {
   if ( !this->u32_18 ) /*0x4ce99f*/
     goto LABEL_26; /*0x4ce99f*/
   v12 = Cell::IsBridge((Cell *)v11); /*0x4ce9a3*/
-  if ( (uint8_t)Array::Contains(*((Array **)this + 3), (int)v12) ) /*0x4ce9ac*/
+  if ( (uint8_t)Array::Contains(this->u32_C, (int)v12) ) /*0x4ce9ac*/
   {
     if ( this->u32_18 ) /*0x4ce9b5*/
       goto LABEL_32; /*0x4ce9ba*/
   LABEL_26:
-    if ( !(*(int (__thiscall **)(unsigned int, CellClass *, int, int, unsigned int, int))(**((unsigned int **)this + 3) + 428))( /*0x4ce9d5*/
-            this->u32_C,
-            v11,
-            -1,
-            -1,
-            0,
-            1) )
+    if ( !this->u32_C->vt_slot_428(/*0x4ce9d5*/
+            this->u32_C, v11, -1, -1, 0, 1) )
       goto LABEL_32; /*0x4ce9d5*/
   }
   TechnoClass::GetData((TechnoClass *)this); /*0x4ce9db*/
@@ -1615,15 +1610,8 @@ char DropPod::ProcessLanding() {
   v15 = v15; /*0x4cea65*/
   if ( v15 == dword_8B3C58 ) /*0x4cea6e*/
   {
-    (*(void (__thiscall **)(unsigned int, int, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(**((unsigned int **)this + 3) + 364))( /*0x4cebc7*/
-      this->u32_C,
-      this->u32_C + 108,
-      0,
-      *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008),
-      0,
-      1,
-      1,
-      0);
+    this->u32_C->vt_slot_364(/*0x4cebc7*/
+      this->u32_C, this->u32_C + 108, 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 0, 1, 1, 0);
     this->u32_1C = dword_8B3C78; /*0x4cebd3*/
     this->u32_20 = dword_8B3C7C; /*0x4cebda*/
     v49 = v49; /*0x4cebdd*/
@@ -1639,7 +1627,7 @@ char DropPod::ProcessLanding() {
   GroundHeight = Cell::GetGroundHeight(&v56); /*0x4ceab1*/
   if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (int16_t *)&v15) + 80) & 0x100) != 0 ) /*0x4ceacd*/
     GroundHeight += dword_8B3CAC; /*0x4ceadb*/
-  (*(void (__stdcall **)(DropPod *, int, int, int))(this->u32_4 + 68))(this + 1, v56, v57, GroundHeight); /*0x4ceaff*/
+  (*(void (__stdcall **)(DropPod *, int, int, int))(this->u32_4 + 68))(&this->u32_44, v56, v57, GroundHeight); /*0x4ceaff*/
   LABEL_32:
   if ( !this->u32_52 && v50 < 300 ) /*0x4ceb15*/
   {
@@ -1660,7 +1648,7 @@ char DropPod::ProcessLanding() {
         AnimClass::ctor(v19, *(void **)(FootClass_Array.primaryFacing[3] + 4 * Index), &v56, 0, 1, (void *)0x600, 0, 0); /*0x4ceba3*/
       }
     }
-    else if ( (*(int (__thiscall **)(unsigned int))(**((unsigned int **)this + 3) + 44))(this->u32_C) == 2 ) /*0x4cec09*/
+    else if ( this->u32_C->vt_slot_44() == 2 ) /*0x4cec09*/
     {
       if ( *(unsigned char *)(*(unsigned int *)(this->u32_C + 1732) + 3580) ) /*0x4cec14*/
       {
@@ -1695,13 +1683,13 @@ char DropPod::ProcessLanding() {
         if ( GroundHeight >= dword_8B3CAC + v30 ) /*0x4cecfa*/
           *(unsigned char *)(this->u32_C + 140) = 1; /*0x4cecff*/
       }
-      (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)this + 3) + 460))(this->u32_C, v53); /*0x4ced0c*/
+      this->u32_C->vt_slot_460(v53); /*0x4ced0c*/
       v47 = this->u32_C; /*0x4ced1a*/
       this->u32_51 = 0; /*0x4ced1b*/
       this->u32_50 = 0; /*0x4ced1f*/
       v48 = 1; /*0x4ced23*/
       GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, v47); /*0x4ced28*/
-      (*(void (__thiscall **)(unsigned int, unsigned int, unsigned int))(**((unsigned int **)this + 3) + 1348))(this->u32_C, 0, 0); /*0x4ced34*/
+      this->u32_C->vt_slot_1348(0, 0); /*0x4ced34*/
       v31 = (unsigned short *)this->u32_C; /*0x4ced3a*/
       this->u32_48 = 0; /*0x4ced3d*/
       this->u32_40 = 0; /*0x4ced40*/
@@ -1719,9 +1707,8 @@ char DropPod::ProcessLanding() {
           --v34[290]; /*0x4cedb0*/
         }
         v35 = 0; /*0x4cedcd*/
-        *(unsigned int *)(this->u32_C + 1372) = *(unsigned int *)(*(int (__thiscall **)(unsigned int, int *))(**((unsigned int **)this + 3) + 440))( /*0x4cedcf*/
-                                                                 this->u32_C,
-                                                                 &v55);
+        *(unsigned int *)(this->u32_C + 1372) = *(unsigned int *)this->u32_C->vt_slot_440(/*0x4cedcf*/
+                                                                 this->u32_C, &v55);
         do /*0x4cee2a*/
         {
           v36 = *(unsigned short *)(this->u32_C + 1374) + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[(v35 & 7) + 82])) + 1)); /*0x4cedf3*/
@@ -1756,19 +1743,19 @@ char DropPod::ProcessLanding() {
       }
       v41 = this->u32_1C / 256; /*0x4ceec5*/
       v42 = this->u32_20 / 256; /*0x4ceec8*/
-      v43 = (unsigned int *)(*(int (__thiscall **)(unsigned int, char *))(**((unsigned int **)this + 3) + 72))(this->u32_C, v59); /*0x4ceece*/
+      v43 = (unsigned int *)this->u32_C->vt_slot_72(v59); /*0x4ceece*/
       if ( (uint16_t)(*v43 / 256) == (unsigned short)v41 && (uint16_t)(v43[1] / 256) == (unsigned short)v42 /*0x4cef4d*/
         || ((*((unsigned short *)&(v53))) = this->u32_1C / 256,
             (*(((unsigned short *)&(v53)) + 1)) = this->u32_20 / 256,
             *(unsigned int *)v54 = v53,
             v44 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v54),
             v45 = Cell::IsBridge(v44),
-            v45 == (unsigned int *)Team::GetMember(*((Team **)this + 3), 0)) )
+            v45 == (unsigned int *)Team::GetMember(this->u32_C, 0)) )
       {
         v46 = this->u32_4; /*0x4cef52*/
         this->u32_34 = 0; /*0x4cef55*/
-        (*(void (__stdcall **)(DropPod *, int, int, int))(v46 + 68))(this + 1, dword_8B3C78, dword_8B3C7C, dword_8B3C80); /*0x4cef7a*/
-        (*(void (__thiscall **)(unsigned int, unsigned int, int))(**((unsigned int **)this + 3) + 1152))(this->u32_C, 0, 1); /*0x4cef88*/
+        (*(void (__stdcall **)(DropPod *, int, int, int))(v46 + 68))(&this->u32_C, dword_8B3C78, dword_8B3C7C, dword_8B3C80); /*0x4cef7a*/
+        this->u32_C->vt_slot_1152(0, 1); /*0x4cef88*/
       }
     }
   }

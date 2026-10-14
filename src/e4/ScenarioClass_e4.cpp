@@ -1542,7 +1542,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v122 = TechnoTypeList;
   if ( (void ***)this->u8_15204) != TechnoTypeList )
   {
-    (*(void (**)(int))(this->allowableUnits + 12))this->u8_15204);
+    (*(void (**)(int))&this->allowableUnits->vtable4)this->u8_15204);
     v14 = v122[2];
     this->allowableUnitMaximums = v14;
     if ( v14 )
@@ -1755,7 +1755,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       if ( this->ionGround < v47
         || (this->u32_3519 || !v47)
         && (v48 = this->ionLevel, v48 > 0)
-        && (*(uint8_t (**)(int, int, unsigned int))(this->ionAmbient + 8))this->ionAmbient,
+        && (*(uint8_t (**)(int, int, unsigned int))&this->ionAmbient->Capacity)this->ionAmbient,
              v47 + v48,
              0) )
       {

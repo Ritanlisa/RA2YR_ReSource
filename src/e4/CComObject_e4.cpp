@@ -416,7 +416,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, i
         v12,
         v11);
       sprintf(Buffer, "gt%d.bmp", v8); /*0x7a550d*/
-      ((ChatEvent *)((int)&g_DialogHashTable))->ProcessStrings(Buffer, v10, v9, 2); /*0x7a552b*/
+      ((ChatEvent*)(&g_DialogHashTable))->ProcessStrings(Buffer, v10, v9, 2); /*0x7a552b*/
     }
     operator delete((void *)(v6)); /*0x7a5544*/
     dword_B77EA4 = 1; /*0x7a554c*/
@@ -2048,7 +2048,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2,
     {
       while ( 1 ) /*0x7ac24e*/
       {
-        ((String *)((String *)&a3))->Assign((const char *)(v4 + 36)); /*0x7ac24e*/
+        ((String *)((String *)&a3))->Assign(&v4->u32_24); /*0x7ac24e*/
         if ( (uint8_t)MapSeed::CheckName((MapSeed *)&a3) ) /*0x7ac25a*/
           break; /*0x7ac25a*/
   LABEL_20:

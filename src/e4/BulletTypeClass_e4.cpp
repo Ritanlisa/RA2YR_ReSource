@@ -188,9 +188,9 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
   this->animRate = 0; /*0x46bcda*/
   this->Flat_d = 0; /*0x46bce0*/
   *(unsigned int *)this->ObjectTypeClass = &BulletTypeClass::`vftable'; /*0x46bce6*/
-  *(unsigned int *)&this->ObjectTypeClass[4] = &BulletTypeClass::`vftable'; /*0x46bcec*/
+  *&this->Flat_d = &BulletTypeClass::`vftable'; /*0x46bcec*/
   *&this->AbstractClass_E58 = &BulletTypeClass::`vftable'; /*0x46bcf2*/
-  *(unsigned int *)&this->ObjectTypeClass[12] = &BulletTypeClass::`vftable'; /*0x46bcf9*/
+  /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_E58); /*0x46bd00*/
   this->IsLogic_d = 1; /*0x46bd05*/
   this->RadarInvisible_d = 1; /*0x46bd0c*/

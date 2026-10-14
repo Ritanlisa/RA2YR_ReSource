@@ -360,7 +360,7 @@ int AnimClass::SaveLoad_Prefix(int a2, int a3)
     {
       if ( a2->u32_DC ) /*0x42535f*/
       {
-        v6 = FileExtension::MapHandler((const char *)(a2 + 220)); /*0x42536f*/
+        v6 = FileExtension::MapHandler(&a2->u32_DC); /*0x42536f*/
         if ( v6 ) /*0x425376*/
         {
           v7 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v6 + 24))(v6, 0); /*0x42537e*/

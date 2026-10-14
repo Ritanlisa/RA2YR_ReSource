@@ -65,40 +65,40 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->u32_58 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d09e7*/
   this->u32_5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d09ec*/
-  *((unsigned int *)this + 28) = 10; /*0x4d09f2*/
-  *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
-  *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
+  this->q070 = 10; /*0x4d09f2*/
+  this->HouseClass_6C = 0; /*0x4d09f9*/
+  this->u32_74 = 1; /*0x4d0a02*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a0c) */
-  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a13) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a1a) */
-  v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4d0a2a*/
+  v5 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
-  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
+  if ( StartCoords->vtable3 <= 0 || StartCoords->vtable4 <= 0 ) /*0x4d0a4e*/
   {
     v8 = *PlacementRect; /*0x4d0adf*/
-    v15 = PlacementRect[1]; /*0x4d0ae1*/
-    v14 = PlacementRect[2]; /*0x4d0ae4*/
-    v16 = PlacementRect[3]; /*0x4d0ae7*/
+    v15 = PlacementRect->vtable2; /*0x4d0ae1*/
+    v14 = PlacementRect->vtable3; /*0x4d0ae4*/
+    v16 = PlacementRect->vtable4; /*0x4d0ae7*/
   }
   else
   {
-    v28 = PlacementRect[2]; /*0x4d0a59*/
-    if ( v28 <= 0 || (v27 = (unsigned int *)PlacementRect[3], (int)v27 <= 0) ) /*0x4d0a68*/
+    v28 = PlacementRect->vtable3; /*0x4d0a59*/
+    if ( v28 <= 0 || (v27 = PlacementRect->vtable4, (int)v27 <= 0) ) /*0x4d0a68*/
     {
       v8 = *StartCoords; /*0x4d0ad2*/
-      v15 = StartCoords[1]; /*0x4d0ad4*/
-      v14 = StartCoords[2]; /*0x4d0ad7*/
-      v16 = StartCoords[3]; /*0x4d0ada*/
+      v15 = StartCoords->vtable2; /*0x4d0ad4*/
+      v14 = StartCoords->vtable3; /*0x4d0ad7*/
+      v16 = StartCoords->vtable4; /*0x4d0ada*/
     }
     else
     {
       v8 = *StartCoords; /*0x4d0a6a*/
       v9 = *PlacementRect; /*0x4d0a6c*/
-      v10 = StartCoords[2]; /*0x4d0a6e*/
-      v11 = StartCoords[1]; /*0x4d0a71*/
-      v12 = StartCoords[3]; /*0x4d0a74*/
+      v10 = StartCoords->vtable3; /*0x4d0a6e*/
+      v11 = StartCoords->vtable2; /*0x4d0a71*/
+      v12 = StartCoords->vtable4; /*0x4d0a74*/
       v24 = v10; /*0x4d0a79*/
       if ( v8 > *PlacementRect ) /*0x4d0a7d*/
       {
@@ -106,7 +106,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
         v8 = *PlacementRect; /*0x4d0a83*/
         v24 = v10; /*0x4d0a85*/
       }
-      v13 = PlacementRect[1]; /*0x4d0a89*/
+      v13 = PlacementRect->vtable2; /*0x4d0a89*/
       if ( v11 > v13 ) /*0x4d0a92*/
       {
         v12 += v11 - v13; /*0x4d0a96*/
@@ -122,16 +122,16 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
       v16 = v12; /*0x4d0ace*/
     }
   }
-  *((unsigned int *)this + 16) = v8; /*0x4d0aef*/
-  *((unsigned int *)this + 17) = v15; /*0x4d0af1*/
-  *((unsigned int *)this + 18) = v14; /*0x4d0af4*/
-  *((unsigned int *)this + 19) = v16; /*0x4d0af7*/
-  v17 = *((unsigned int *)this + 17); /*0x4d0b00*/
-  *((unsigned int *)this + 16) += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d0b0d*/
-  *((unsigned int *)this + 17) = *(unsigned int *)&g_TacticalClass_Instance[45] + v17; /*0x4d0b1d*/
-  v18 = *((unsigned int *)this + 17) - (unsigned int)DSurface_ViewBounds.field_4; /*0x4d0b33*/
-  *((unsigned int *)this + 16) -= DSurface_ViewBounds.field_0; /*0x4d0b35*/
-  *((unsigned int *)this + 17) = v18; /*0x4d0b37*/
+  this->q040 = v8; /*0x4d0aef*/
+  this->u32_44 = v15; /*0x4d0af1*/
+  this->q048 = v14; /*0x4d0af4*/
+  this->q04C = v16; /*0x4d0af7*/
+  v17 = this->u32_44; /*0x4d0b00*/
+  this->q040 += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d0b0d*/
+  this->u32_44 = *(unsigned int *)&g_TacticalClass_Instance[45] + v17; /*0x4d0b1d*/
+  v18 = this->u32_44 - (unsigned int)DSurface_ViewBounds.field_4; /*0x4d0b33*/
+  this->q040 -= DSurface_ViewBounds.field_0; /*0x4d0b35*/
+  this->u32_44 = v18; /*0x4d0b37*/
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d0b6f*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -143,10 +143,10 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     v19 = g_FootClassConfig++; /*0x4d0b7c*/
     *((unsigned int *)dword_8B3D14 + v19) = this; /*0x4d0b8b*/
   }
-  v20 = (__int16)(*((unsigned int *)this + 13) / 256); /*0x4d0bb4*/
+  v20 = (__int16)(this->u32_34 / 256); /*0x4d0bb4*/
   v21 = dword_8B3CC8; /*0x4d0bcd*/
-  v22 = 74 * ((__int16)(*((unsigned int *)this + 14) / 256) - ((v20 + (__int16)(*((unsigned int *)this + 14) / 256)) << 9) - v20) /*0x4d0bd6*/
-      - *((unsigned int *)this + 12)
+  v22 = 74 * ((__int16)(this->u32_38 / 256) - ((v20 + (__int16)(this->u32_38 / 256)) << 9) - v20) /*0x4d0bd6*/
+      - this->q030
       + 0x7FFFFFFF;
   if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d0bdf*/
     goto LABEL_27; /*0x4d0bdf*/
@@ -201,14 +201,14 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   this->u32_58 = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d0c92*/
   this->u32_5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0c97*/
-  *((unsigned int *)this + 28) = 10; /*0x4d0c9e*/
-  *((unsigned int *)this + 27) = 0; /*0x4d0ca5*/
-  *((unsigned char *)this + 116) = 1; /*0x4d0cae*/
+  this->q070 = 10; /*0x4d0c9e*/
+  this->HouseClass_6C = 0; /*0x4d0ca5*/
+  this->u32_74 = 1; /*0x4d0cae*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cb8) */
-  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cbf) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cc6) */
-  v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4d0ccd*/
+  v6 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
   v23[0] = *aP1; /*0x4d0cda*/
@@ -216,23 +216,23 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   v24 = v8; /*0x4d0ce2*/
   v9 = dword_8B3D68 * v6->level; /*0x4d0ced*/
   v24 = v9; /*0x4d0cf7*/
-  *((unsigned int *)this + 13) = v23[0]; /*0x4d0cfd*/
-  *((unsigned int *)this + 14) = v7; /*0x4d0d03*/
-  *((unsigned int *)this + 15) = v9; /*0x4d0d06*/
+  this->u32_34 = v23[0]; /*0x4d0cfd*/
+  this->u32_38 = v7; /*0x4d0d03*/
+  this->u32_3C = v9; /*0x4d0d06*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v23, &v21); /*0x4d0d15*/
   v10 = v21 - 30; /*0x4d0d25*/
   v22 -= 15; /*0x4d0d32*/
   v11 = v22; /*0x4d0d2a*/
-  *((unsigned int *)this + 16) = v21 - 30; /*0x4d0d36*/
+  this->q040 = v21 - 30; /*0x4d0d36*/
   v25 = 30; /*0x4d0d38*/
   v21 = v10; /*0x4d0d40*/
-  *((unsigned int *)this + 17) = v11; /*0x4d0d44*/
+  this->u32_44 = v11; /*0x4d0d44*/
   v12 = v25; /*0x4d0d47*/
-  *((unsigned int *)this + 18) = 60; /*0x4d0d4b*/
-  *((unsigned int *)this + 19) = v12; /*0x4d0d4e*/
-  v13 = *((unsigned int *)this + 17); /*0x4d0d61*/
-  *((unsigned int *)this + 16) += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d0d64*/
-  *((unsigned int *)this + 17) = *(unsigned int *)&g_TacticalClass_Instance[45] + v13; /*0x4d0d73*/
+  this->q048 = 60; /*0x4d0d4b*/
+  this->q04C = v12; /*0x4d0d4e*/
+  v13 = this->u32_44; /*0x4d0d61*/
+  this->q040 += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d0d64*/
+  this->u32_44 = *(unsigned int *)&g_TacticalClass_Instance[45] + v13; /*0x4d0d73*/
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d0dab*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -245,10 +245,10 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
     *((unsigned int *)dword_8B3D14 + v14) = this; /*0x4d0dc7*/
   }
   v15 = 74 /*0x4d0e11*/
-      * ((__int16)(*((unsigned int *)this + 14) / 256)
-       - (((__int16)(*((unsigned int *)this + 13) / 256) + (__int16)(*((unsigned int *)this + 14) / 256)) << 9)
-       - (__int16)(*((unsigned int *)this + 13) / 256))
-      - *((unsigned int *)this + 12)
+      * ((__int16)(this->u32_38 / 256)
+       - (((__int16)(this->u32_34 / 256) + (__int16)(this->u32_38 / 256)) << 9)
+       - (__int16)(this->u32_34 / 256))
+      - this->q030
       + 0x7FFFFFFF;
   if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d0e1a*/
     goto LABEL_15; /*0x4d0e1a*/
@@ -366,13 +366,13 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   *&aP1->q05C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0f8a*/
   *(unsigned int *)(aP1 + 112) = 10; /*0x4d0f90*/
   *(unsigned int *)(aP1 + 108) = 0; /*0x4d0f97*/
-  *(unsigned char *)(aP1 + 116) = a3; /*0x4d0fa2*/
+  aP1->isOnMap = a3; /*0x4d0fa2*/
   *(unsigned int *)aP1 = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fab) */
-  aP1->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fb2) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fb9) */
-  v8 = (unsigned int *)(*(int (**)(int *, char *))(*aP2 + 300))(aP2, v52); /*0x4d0fc5*/
-  *(unsigned int *)(aP1 + 64) = *v8; /*0x4d0fd2*/
+  v8 = (unsigned int *)aP2->GetBoundsRect(v52); /*0x4d0fc5*/
+  aP1->q040 = *v8; /*0x4d0fd2*/
   *(unsigned int *)(aP1 + 68) = v8[1]; /*0x4d0fd7*/
   *(unsigned int *)(aP1 + 72) = v8[2]; /*0x4d0fdd*/
   *(unsigned int *)(aP1 + 76) = v8[3]; /*0x4d0fe3*/
@@ -392,7 +392,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
       * ((__int16)(*(unsigned int *)(aP1 + 56) / 256)
        - (((__int16)(*(unsigned int *)(aP1 + 52) / 256) + (__int16)(*(unsigned int *)(aP1 + 56) / 256)) << 9)
        - (__int16)(*(unsigned int *)(aP1 + 52) / 256))
-      - *(unsigned int *)(aP1 + 48)
+      - aP1->nextObject
       + 0x7FFFFFFF;
   if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d108a*/
     goto LABEL_11; /*0x4d108a*/
@@ -406,7 +406,7 @@ LABEL_11:
     byte_8B3CCC = 0; /*0x4d10c7*/
     ++g_MissionState; /*0x4d10ce*/
   }
-  *((unsigned char *)aP2 + 1767) = 1; /*0x4d10d5*/
+  aP2->q6E7 = 1; /*0x4d10d5*/
   ProductionFrame = BuildingClass::GetProductionFrame(aP2); /*0x4d10dc*/
   v13 = aP2[328]; /*0x4d10e1*/
   v57 = ProductionFrame; /*0x4d10e7*/
@@ -418,8 +418,8 @@ LABEL_11:
   v16 = *(unsigned int *)(aP1 + 100); /*0x4d1119*/
   if ( *(unsigned int *)(aP1 + 108) < v16 /*0x4d113e*/
     || (*(unsigned char *)(aP1 + 105) || !v16)
-    && (v17 = *(unsigned int *)(aP1 + 112), v17 > 0)
-    && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(aP1 + 92, v16 + v17, 0) )
+    && (v17 = aP1->estimatedHealth, v17 > 0)
+    && (*(unsigned __int8 (**)(int, int, unsigned int))(*&v7->q020))(aP1 + 92, v16 + v17, 0) )
   {
     v18 = *(unsigned int *)(aP1 + 108); /*0x4d1145*/
     *(unsigned int *)(aP1 + 108) = v18 + 1; /*0x4d114b*/
@@ -440,19 +440,19 @@ LABEL_11:
     *(unsigned char *)(*v21 + 409) = 1; /*0x4d1189*/
     v56 = *(unsigned int *)(*v21 + 200); /*0x4d119a*/
     v22 = (int *)(*(int (**)(int, int *))(*(unsigned int *)*v21 + 296))(*v21, v55); /*0x4d11a3*/
-    v23 = (int *)(aP1 + 64); /*0x4d11ac*/
+    v23 = &aP1->q040; /*0x4d11ac*/
     if ( *(int *)(aP1 + 72) <= 0 || *(int *)(aP1 + 76) <= 0 ) /*0x4d11bc*/
     {
       v32 = *v22; /*0x4d1266*/
-      v33 = v22[1]; /*0x4d1268*/
-      v34 = v22[2]; /*0x4d126b*/
+      v33 = v22->vtable2; /*0x4d1268*/
+      v34 = v22->vtable3; /*0x4d126b*/
     }
     else
     {
-      v58 = v22[2]; /*0x4d11c7*/
+      v58 = v22->vtable3; /*0x4d11c7*/
       if ( v58 > 0 ) /*0x4d11cb*/
       {
-        v48 = v22[3]; /*0x4d11d6*/
+        v48 = v22->vtable4; /*0x4d11d6*/
         if ( v48 > 0 ) /*0x4d11da*/
         {
           v24 = *v23; /*0x4d11dc*/
@@ -467,7 +467,7 @@ LABEL_11:
             v24 = *v22; /*0x4d11f9*/
             v50 = v28; /*0x4d11fb*/
           }
-          v29 = v22[1]; /*0x4d11ff*/
+          v29 = v22->vtable2; /*0x4d11ff*/
           v47 = v29; /*0x4d1204*/
           if ( v25 > v29 ) /*0x4d1208*/
           {
@@ -491,10 +491,10 @@ LABEL_11:
       v33 = *(unsigned int *)(aP1 + 68); /*0x4d125e*/
       v34 = *(unsigned int *)(aP1 + 72); /*0x4d1261*/
     }
-    v31 = v22[3]; /*0x4d126e*/
+    v31 = v22->vtable4; /*0x4d126e*/
 LABEL_41:
     LOBYTE(v53) = 0; /*0x4d1271*/
-    *(unsigned int *)(aP1 + 64) = v32; /*0x4d1279*/
+    aP1->q040 = v32; /*0x4d1279*/
     *(unsigned int *)(aP1 + 68) = v33; /*0x4d127f*/
     *(unsigned int *)(aP1 + 72) = v34; /*0x4d1282*/
     *(unsigned int *)(aP1 + 76) = v31; /*0x4d1285*/
@@ -505,8 +505,8 @@ LABEL_41:
     v54 = *(unsigned int *)(*v45 + 256); /*0x4d12a8*/
     if ( v35 < v37 /*0x4d12cb*/
       || (*(unsigned char *)(aP1 + 105) || !v37)
-      && (v38 = *(unsigned int *)(aP1 + 112), v38 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(aP1 + 92, v37 + v38, 0) )
+      && (v38 = aP1->estimatedHealth, v38 > 0)
+      && (*(unsigned __int8 (**)(int, int, unsigned int))(*&v7->q020))(aP1 + 92, v37 + v38, 0) )
     {
       v39 = *(unsigned int *)(aP1 + 108); /*0x4d12d2*/
       *(unsigned int *)(aP1 + 108) = v39 + 1; /*0x4d12dc*/
@@ -525,9 +525,9 @@ LABEL_47:
     --v46; /*0x4d1306*/
   }
   while ( !v43 ); /*0x4d130a*/
-  Cell::CreateCrater(*(unsigned int *)(aP1 + 64), *(unsigned int *)(aP1 + 68), *(unsigned int *)(aP1 + 72), *(unsigned int *)(aP1 + 76), 0); /*0x4d1338*/
+  Cell::CreateCrater(aP1->q040, aP1->q044, aP1->q048, aP1->u32_4C, 0); /*0x4d1338*/
   *(unsigned int *)(aP1 + 64) += g_TacticalClass_Instance[44].__tail_0; /*0x4d134d*/
-  *(unsigned int *)(aP1 + 68) += g_TacticalClass_Instance[45].__tail_0; /*0x4d135f*/
+  aP1->q044 += g_TacticalClass_Instance[45].__tail_0; /*0x4d135f*/
   return aP1; /*0x4d1364*/
 
 }
@@ -576,21 +576,21 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   this->u32_58 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d13f1*/
   this->u32_5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d13f6*/
-  *((unsigned int *)this + 28) = 10; /*0x4d13fc*/
-  *((unsigned int *)this + 27) = 0; /*0x4d1403*/
-  *((unsigned char *)this + 116) = 1; /*0x4d140a*/
+  this->q070 = 10; /*0x4d13fc*/
+  this->HouseClass_6C = 0; /*0x4d1403*/
+  this->u32_74 = 1; /*0x4d140a*/
   this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d140e*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1414) */
-  this->vtable3 = &FoggedObjectClass::`vftable'; /*0x4d141b*/
+  /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d141b) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1422) */
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
-  *((unsigned int *)this + 16) = *v5; /*0x4d143b*/
-  *((unsigned int *)this + 17) = v5[1]; /*0x4d1440*/
-  *((unsigned int *)this + 18) = v5[2]; /*0x4d1446*/
-  *((unsigned int *)this + 19) = v5[3]; /*0x4d144c*/
-  v6 = *((unsigned int *)this + 17); /*0x4d1460*/
-  *((unsigned int *)this + 16) += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d1463*/
-  *((unsigned int *)this + 17) = *(unsigned int *)&g_TacticalClass_Instance[45] + v6; /*0x4d1473*/
+  this->q040 = *v5; /*0x4d143b*/
+  this->u32_44 = v5[1]; /*0x4d1440*/
+  this->q048 = v5[2]; /*0x4d1446*/
+  this->q04C = v5[3]; /*0x4d144c*/
+  v6 = this->u32_44; /*0x4d1460*/
+  this->q040 += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d1463*/
+  this->u32_44 = *(unsigned int *)&g_TacticalClass_Instance[45] + v6; /*0x4d1473*/
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d14ab*/
     || (byte_8B3D1D || !dword_8B3D18)
     && dword_8B3D24 > 0
@@ -602,30 +602,30 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
     v7 = g_FootClassConfig++; /*0x4d14b8*/
     *((unsigned int *)dword_8B3D14 + v7) = this; /*0x4d14c7*/
   }
-  v8 = *((unsigned int *)this + 25); /*0x4d14ca*/
-  v9 = *((unsigned int *)this + 27); /*0x4d14cd*/
+  v8 = this->u32_64; /*0x4d14ca*/
+  v9 = this->HouseClass_6C; /*0x4d14cd*/
   v10 = a2[50]; /*0x4d14d0*/
   LOBYTE(v23) = 0; /*0x4d14da*/
   if ( v9 < v8 /*0x4d14fc*/
-    || (*((unsigned char *)this + 105) || !v8)
-    && (v11 = *((unsigned int *)this + 28), v11 > 0)
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*((unsigned int *)this + 23) + 8))(
-         (char *)this + 92,
+    || (this->u32_69 || !v8)
+    && (v11 = this->q070, v11 > 0)
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))&this->u32_5C->Capacity)(
+         &this->u32_5C,
          v8 + v11,
          0) )
   {
-    v12 = *((unsigned int *)this + 27); /*0x4d1503*/
-    *((unsigned int *)this + 27) = v12 + 1; /*0x4d1509*/
-    v13 = (unsigned int *)(*((unsigned int *)this + 24) + 16 * v12); /*0x4d1514*/
+    v12 = this->HouseClass_6C; /*0x4d1503*/
+    this->HouseClass_6C = v12 + 1; /*0x4d1509*/
+    v13 = (unsigned int *)(this->q060 + 16 * v12); /*0x4d1514*/
     v14 = v23; /*0x4d1516*/
     *v13 = v10; /*0x4d151a*/
     v13[1] = 0; /*0x4d151c*/
     v13[2] = v14; /*0x4d151f*/
     v13[3] = 0; /*0x4d1524*/
   }
-  v15 = (__int16)(*((unsigned int *)this + 13) / 256); /*0x4d154d*/
-  v16 = 74 * ((__int16)(*((unsigned int *)this + 14) / 256) - ((v15 + (__int16)(*((unsigned int *)this + 14) / 256)) << 9) - v15) /*0x4d156f*/
-      - *((unsigned int *)this + 12)
+  v15 = (__int16)(this->u32_34 / 256); /*0x4d154d*/
+  v16 = 74 * ((__int16)(this->u32_38 / 256) - ((v15 + (__int16)(this->u32_38 / 256)) << 9) - v15) /*0x4d156f*/
+      - this->q030
       + 0x7FFFFFFF;
   if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d1578*/
     goto LABEL_21; /*0x4d1578*/

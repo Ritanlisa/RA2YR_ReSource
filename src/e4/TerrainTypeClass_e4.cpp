@@ -71,28 +71,28 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->SpawnsTiberium = 0; /*0x54480b*/
   LODWORD(aP4->AnimationProbability) = &DynamicVectorClass<unsigned short *>::`vftable'; /*0x544811*/
   aP4->FoundationData = (CellStruct *)10; /*0x54481b*/
-  *(unsigned int *)&aP4->IsVeinhole = 0; /*0x544825*/
-  *((unsigned int *)aP4 + 179) = 0; /*0x544830*/
-  *((unsigned int *)aP4 + 176) = -1; /*0x544836*/
-  *((unsigned int *)aP4 + 177) = -1; /*0x54483c*/
-  *((unsigned int *)aP4 + 178) = -1; /*0x544842*/
-  *((unsigned int *)aP4 + 180) = 0; /*0x544848*/
-  *((unsigned int *)aP4 + 181) = -1; /*0x544852*/
-  *((unsigned int *)aP4 + 175) = 0; /*0x544868*/
-  *((unsigned int *)aP4 + 182) = 0; /*0x54486e*/
-  *((unsigned int *)aP4 + 183) = aP4; /*0x544874*/
-  *((unsigned char *)aP4 + 736) = 0; /*0x54487a*/
-  *((unsigned char *)aP4 + 737) = 0; /*0x544880*/
-  *((unsigned char *)aP4 + 738) = 1; /*0x544886*/
-  *((unsigned char *)aP4 + 739) = 0; /*0x54488d*/
-  *((unsigned int *)aP4 + 185) = 0; /*0x544893*/
-  *((unsigned int *)aP4 + 186) = 0; /*0x544899*/
-  *((unsigned int *)aP4 + 187) = aP4; /*0x54489f*/
-  *((unsigned int *)aP4 + 188) = 1; /*0x5448a5*/
-  *((unsigned char *)aP4 + 756) = 0; /*0x5448af*/
-  *((unsigned char *)aP4 + 773) = 1; /*0x5448b5*/
-  *((unsigned char *)aP4 + 774) = 0; /*0x5448bc*/
-  *((unsigned int *)aP4 + 194) = 0; /*0x5448c2*/
+  *&aP4->q2B4 = 0; /*0x544825*/
+  aP4->u32_2CC = 0; /*0x544830*/
+  aP4->u32_2C0 = -1; /*0x544836*/
+  aP4->u32_2C4 = -1; /*0x54483c*/
+  aP4->u32_2C8 = -1; /*0x544842*/
+  aP4->u32_2D0 = 0; /*0x544848*/
+  aP4->u32_2D4 = -1; /*0x544852*/
+  aP4->u32_2BC = 0; /*0x544868*/
+  aP4->u32_2D8 = 0; /*0x54486e*/
+  aP4->u32_2DC = aP4; /*0x544874*/
+  aP4->u8_2E0 = 0; /*0x54487a*/
+  aP4->u8_2E1 = 0; /*0x544880*/
+  aP4->u8_2E2 = 1; /*0x544886*/
+  aP4->u8_2E3 = 0; /*0x54488d*/
+  aP4->q2E4 = 0; /*0x544893*/
+  aP4->q2E8 = 0; /*0x544899*/
+  aP4->q2EC = aP4; /*0x54489f*/
+  aP4->u32_2F0 = 1; /*0x5448a5*/
+  aP4->u32_2F4 = 0; /*0x5448af*/
+  aP4->q305 = 1; /*0x5448b5*/
+  aP4->q306 = 0; /*0x5448bc*/
+  aP4->q0308 = 0; /*0x5448c2*/
   aP4->ObjectTypeClass = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
   aP4->q008 = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
@@ -109,16 +109,16 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = aP4; /*0x544933*/
   }
   if ( !a6_2 /*0x544970*/
-    && (*(int *)&stru_A8EB00.?[340] < *(int *)&stru_A8EB00.?[332]
-     || (stru_A8EB00.?[337] || !*(unsigned int *)&stru_A8EB00.?[332])
-     && *(int *)&stru_A8EB00.?[344] > 0
-     && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[324] + 8))(
-          &stru_A8EB00.?[324],
-          *(unsigned int *)&stru_A8EB00.?[332] + *(unsigned int *)&stru_A8EB00.?[344],
+    && (*(int *)&g_ObjectClass_Capacity < *(int *)&DataGlobal_A8EC4C
+     || (stru_A8EB00.?[337] || !*(unsigned int *)&DataGlobal_A8EC4C)
+     && *(int *)&DataGlobal_A8EC58 > 0
+     && (*(unsigned __int8 (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&g_GameObjectManager + 8))(
+          &g_GameObjectManager,
+          *(unsigned int *)&DataGlobal_A8EC4C + *(unsigned int *)&DataGlobal_A8EC58,
           0)) )
   {
-    v8 = (*(unsigned int *)&stru_A8EB00.?[340])++; /*0x54497d*/
-    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v8) = aP4; /*0x54498c*/
+    v8 = (*(unsigned int *)&g_ObjectClass_Capacity)++; /*0x54497d*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v8) = aP4; /*0x54498c*/
   }
   if ( a6_2 ) /*0x544991*/
   {
@@ -134,10 +134,10 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     qmemcpy(aP4->?, Destination, 0x30u); /*0x5449c1*/
     aP4->?[48] = v11; /*0x5449c3*/
   }
-  *((unsigned char *)aP4 + 757) = 0; /*0x5449c5*/
+  aP4->q2F5 = 0; /*0x5449c5*/
   aP4->? = 1; /*0x5449cb*/
-  aP4->? = 0; /*0x5449d2*/
-  aP4->? = 0; /*0x5449d8*/
+  aP4->u32_230 = 0; /*0x5449d2*/
+  aP4->u32_231 = 0; /*0x5449d8*/
   aP4->? = 1; /*0x5449de*/
   aP4->? = 1; /*0x5449e5*/
   aP4->? = 0; /*0x5449ec*/

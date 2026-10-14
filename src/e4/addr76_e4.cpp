@@ -1036,12 +1036,12 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   {
     v8 = 0; /*0x76b815*/
   }
-  this->? = v8; /*0x76b819*/
+  this->M4 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->AbstractClass; /*0x76b81c*/
-  vtable2 = this->?; /*0x76b81e*/
+  vtable2 = this->M8; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
-  BYTE1(this->?) = 1; /*0x76b825*/
+  BYTE1(this->M13) = 1; /*0x76b825*/
   if ( (int)vtable2 <= 0 ) /*0x76b829*/
     return &this->AbstractClass; /*0x76b829*/
   do /*0x76b84a*/
@@ -1049,7 +1049,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     ComPtr::Set((ComPtr *)((char *)this->? + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
-  while ( v10 < (int)this->? ); /*0x76b84a*/
+  while ( v10 < (int)this->M8 ); /*0x76b84a*/
   return &this->AbstractClass; /*0x76b84e*/
 
 }
@@ -2481,7 +2481,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   this->M52 = 0; /*0x76ac0c*/
   this->M57 = 0; /*0x76ac0f*/
   this->M44 = &DynamicVectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76ac12*/
-  *((unsigned int *)this + 15) = 0; /*0x76ac18*/
+  this->M60 = 0; /*0x76ac18*/
   *(unsigned int *)this->__pad_0 = &WDTState::`vftable'; /*0x76ac1e*/
   this->M20 = 0; /*0x76ac24*/
   this->M24 = 0; /*0x76ac27*/
@@ -2493,12 +2493,12 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   v11 = 0; /*0x76ac3f*/
   v7 = &DynamicVectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76ac43*/
   v12 = 0; /*0x76ac4b*/
-  sub_76B7B0((ObjectClass *)((char *)this + 44), &v7); /*0x76ac4f*/
+  sub_76B7B0(&this->M44, &v7); /*0x76ac4f*/
   v3 = v13; /*0x76ac58*/
-  *((unsigned int *)v2 + 4) = v12; /*0x76ac5c*/
+  v2->uniqueId = v12; /*0x76ac5c*/
   v4 = v8; /*0x76ac5f*/
   v5 = v8 == 0; /*0x76ac63*/
-  *((unsigned int *)v2 + 5) = v3; /*0x76ac65*/
+  v2->abstractFlags = v3; /*0x76ac65*/
   v7 = &VectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76ac68*/
   if ( !v5 && v11 ) /*0x76ac76*/
     (**v4)(v4, 3); /*0x76ac7c*/
@@ -2968,11 +2968,11 @@ unsigned int * E4Recv_76E090::sub_76E090()
   }
   DeleteAndZero((ObjectClass *)&v4); /*0x76e13b*/
   this->currentTargets[2] = -1; /*0x76e144*/
-  ComPtr::Constructor((ComPtr *)&v4.m_3[1]); /*0x76e14e*/
-  *(unsigned int *)&v4.m_3[1] = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76e15a*/
+  ComPtr::Constructor((ComPtr *)&v4.ptr_4); /*0x76e14e*/
+  *(unsigned int *)&v4.ptr_4 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76e15a*/
   TerritorySelectWDT(this, (int)&v4.ptr_4); /*0x76e162*/
   *(unsigned int *)&v4.ptr_4 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76e16b*/
-  return ComPtr::Release((ComPtr *)&v4.m_3[1]); /*0x76e178*/
+  return ComPtr::Release((ComPtr *)&v4.ptr_4); /*0x76e178*/
 
 }
 } // namespace gamemd

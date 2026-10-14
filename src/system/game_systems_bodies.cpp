@@ -651,7 +651,7 @@ int GameOptions::SaveLoad(int a2)
   a2 = 0; /*0x681307*/
   if ( (*v5)(v2, &unk_7F7D00, &a2) >= 0 ) /*0x681313*/
   {
-    String = GameOptions_Load_6829A0(a2, 2, this + 8); /*0x68132b*/
+    String = GameOptions_Load_6829A0(a2, 2, &this->q008); /*0x68132b*/
     if ( String < 0 ) /*0x68132f*/
     {
       if ( a2 ) /*0x681337*/
@@ -911,7 +911,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
     }
     v2 = this; /*0x5fc0b5*/
   }
-  result = *(char **)v2[10].__pad_0; /*0x5fc0b9*/
+  result = *v2->u32_28.__pad_0; /*0x5fc0b9*/
   if ( (int)result >= 0 ) /*0x5fc0be*/
   {
     v13 = result + 1; /*0x5fc0c0*/
@@ -2757,7 +2757,7 @@ void LoadGame::LoadIteratedData()
 
   v2 = a2; /*0x4136c4*/
   v12 = 0; /*0x4136cb*/
-  for ( i = this + 8; ; i += 24 ) /*0x4136d3*/
+  for ( i = &this->s_BlockIndex; ; i += 24 ) /*0x4136d3*/
   {
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &a2, 4, 0); /*0x4136e2*/
     if ( result < 0 ) /*0x4136e7*/
@@ -3041,8 +3041,8 @@ void LoadSaveDialog::FillList()
   Gadget::InitProperties((Gadget *)&lParam); /*0x5596b4*/
   for ( i = 0; i < ((unsigned int)(this->u32_30)); ++i ) /*0x5596c2*/
     operator delete((void *)(*(void **)(((unsigned int)(this->u32_24)) + 4 * i))); /*0x5596cb*/
-  v4 = this + 8; /*0x5596de*/
-  (*(void (**)(LoadSaveDialog *))(((unsigned int)(this->u32_20)) + 12))(this + 8); /*0x5596e3*/
+  v4 = &this->u32_20; /*0x5596de*/
+  (*(void (**)(LoadSaveDialog *))(((unsigned int)(this->u32_20)) + 12))(&this->q00C); /*0x5596e3*/
   if ( ((unsigned int)(this->u32_4)) == 2 ) /*0x5596ea*/
   {
     v5 = operator new(0x1BCu); /*0x5596f5*/
@@ -3092,7 +3092,7 @@ void LoadSaveDialog::FillList()
       || (this->u32_2C.__tail_0[1] || !*(unsigned int *)&v10)
       && (v11 = (int)this->u32_34, v11 > 0)
       && (*(uint8_t (**)(LoadSaveDialog *, int, unsigned int))(this->u32_10)(
-           this + 8,
+           &this->u32_8,
            *(unsigned int *)&v10 + v11,
            0) )
     {
@@ -3144,7 +3144,7 @@ void LoadSaveDialog::FillList()
             || (this->u32_2C.__tail_0[1] || !*(unsigned int *)&v16)
             && (v17 = (int)this->u32_34, v17 > 0)
             && (*(uint8_t (**)(LoadSaveDialog *, int, unsigned int))(this->u32_10)(
-                 this + 8,
+                 &this->u32_8,
                  *(unsigned int *)&v16 + v17,
                  0) )
           {
@@ -6311,7 +6311,7 @@ void MultiplayerGameMode::Dtor()
     if ( v3 ) /*0x5d5d3e*/
       (**v3)(v3, 1); /*0x5d5d44*/
   }
-  (*(void (**)(int *))(this->u32_8 + 12))(&this->u32_8); /*0x5d5d56*/
+  (*(void (**)(int *))&this->u32_8->q00C)(&this->u32_8); /*0x5d5d56*/
   v4 = (void (***)(unsigned int, int))this->u32_38; /*0x5d5d59*/
   if ( v4 ) /*0x5d5d5e*/
     (**v4)(v4, 1); /*0x5d5d64*/
@@ -6698,7 +6698,7 @@ void SaveLoadDialog::DlgProc()
                 SaveLoadDialog::LookupDialogHash((SaveLoadDialog *)Dialog); /*0x559474*/
                 ShowWindow((HWND)Dialog, 0); /*0x55947c*/
                 if ( this->u32_C ) /*0x55947e*/
-                  wcscpy((wchar_t *)lParam, *((const wchar_t **)this + 3)); /*0x55948e*/
+                  wcscpy((wchar_t *)lParam, this->u32_C); /*0x55948e*/
               }
               else
               {
@@ -7397,7 +7397,7 @@ void SkirmishMapGen::LookupDialogHash()
     return 0; /*0x6067d2*/
   while ( *v1 != v4 ) /*0x6067da*/
   {
-    v1 = (SkirmishMapGen **)v1[129]; /*0x6067dc*/
+    v1 = v1->SkirmishMapGen_204; /*0x6067dc*/
     if ( !v1 ) /*0x6067e4*/
       return 0; /*0x6067e4*/
   }

@@ -50,7 +50,7 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
   *(unsigned int *)this->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
-  *(unsigned int *)&this->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4cca12*/
+  /* X11: vtable install elided (implicit via FlyLocomotionClass virtuals 0x4cca12) */
   this->XYZ2[2] = v2; /*0x4cca1b*/
   return (int)this->LocomotionClass; /*0x4cca1e*/
 

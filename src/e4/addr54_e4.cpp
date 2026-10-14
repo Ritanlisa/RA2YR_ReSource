@@ -732,7 +732,7 @@ LABEL_26:
       int v29 = (char *)v71 - (char *)v27;
       v76 = v28;
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
-      v28->field_0 =(void *)(int)&v72->q000[(unsigned int)v27];
+      v28->field_0 =(void*)&v72->q000[(unsigned int)v27];
       v28->__pad_004 = (void *)v29;
       if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
         || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
@@ -2946,11 +2946,11 @@ unsigned int * E4Recv_54E360::sub_54E360()
   LOBYTE(this->q018) = 1; /*0x54e37e*/
   BYTE1(this->M25) = 0; /*0x54e382*/
   this->M12 = &DynamicVectorClass<KamikazeControl *>::`vftable'; /*0x54e385*/
-  this->? = (void *)10; /*0x54e38c*/
-  this->? = 0; /*0x54e393*/
+  this->q020 = (void *)10; /*0x54e38c*/
+  this->M28 = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e39e*/
-  this->? = v2; /*0x54e3a4*/
-  this->? = (void *)100; /*0x54e3a7*/
+  this->M4 = v2; /*0x54e3a4*/
+  this->M8 = (void *)100; /*0x54e3a7*/
   return &this->AbstractClass; /*0x54e3aa*/
 
 }

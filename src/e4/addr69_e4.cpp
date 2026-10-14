@@ -495,7 +495,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   lpBuffer = (LPCVOID)operator new(a2); /*0x694269*/
   if ( a4 ) /*0x694279*/
   {
-    ((ProgressAnim *)((int)&dword_AC4F58))->Init(0, 1079574528, 1, 0); /*0x69428f*/
+    ((ProgressAnim*)(&dword_AC4F58))->Init(0, 1079574528, 1, 0); /*0x69428f*/
     SHPClass::Load((int)&dword_AC4F58, g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF((wchar_t *)(aGuiMaptransfer), 0, aDRa2mdpostSend, 355); /*0x6942c2*/
     TextRenderer::MeasureBuilding((int *)g_UIManager, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/

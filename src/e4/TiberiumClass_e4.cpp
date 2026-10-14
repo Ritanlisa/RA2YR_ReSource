@@ -69,8 +69,8 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
       *v9 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a01a0*/
-      v9[5] = 10; /*0x5a01a6*/
-      v9[4] = 0; /*0x5a01ad*/
+      v9->u32_14 = 10; /*0x5a01a6*/
+      v9->q010 = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
     }
     else
@@ -79,7 +79,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     }
     v10 = v28; /*0x5a01ba*/
     v31 = 0; /*0x5a01be*/
-    v29[5] = 3 * v28[4]; /*0x5a01cc*/
+    v29->u32_14 = 3 * v28[4]; /*0x5a01cc*/
     if ( (int)v28[4] > 0 ) /*0x5a01d4*/
     {
       while ( 2 ) /*0x5a01da*/
@@ -113,15 +113,15 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v21 = v20; /*0x5a02cd*/
             if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
-              v22 = v29[2]; /*0x5a02ff*/
-              if ( v29[4] < v22 /*0x5a0324*/
-                || (*((unsigned char *)v29 + 13) || !v22)
-                && (v23 = v29[5], v23 > 0)
-                && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v29 + 8))(v29, v22 + v23, 0) )
+              v22 = v29->Capacity; /*0x5a02ff*/
+              if ( v29->q010 < v22 /*0x5a0324*/
+                || (*(&v29->IsAllocated) || !v22)
+                && (v23 = v29->u32_14, v23 > 0)
+                && v29->Release(v22 + v23, 0) )
               {
-                v24 = v29[4]; /*0x5a032b*/
-                v25 = v29[1]; /*0x5a032e*/
-                v29[4] = v24 + 1; /*0x5a0334*/
+                v24 = v29->q010; /*0x5a032b*/
+                v25 = v29->Items; /*0x5a032e*/
+                v29->q010 = v24 + 1; /*0x5a0334*/
                 *(unsigned int *)(v25 + 4 * v24) = v30; /*0x5a033b*/
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
@@ -143,7 +143,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
           v10 = v28; /*0x5a01e2*/
         }
         v10 = v28; /*0x5a0383*/
-        v26 = v28[4]; /*0x5a038c*/
+        v26 = v28->q010; /*0x5a038c*/
         if ( ++v31 < v26 ) /*0x5a0395*/
           continue; /*0x5a0395*/
         break;
@@ -184,8 +184,8 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->Debris[0] = 0; /*0x721731*/
   this->GrowthPercentage[1] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x721734*/
   this->NumImages = 0; /*0x72173a*/
-  *(unsigned int *)this->__pad_E4 = 0; /*0x721740*/
-  *(unsigned int *)&this->__pad_E4[4] = 0; /*0x721746*/
+  *(unsigned int *)this->Tactical_E4 = 0; /*0x721740*/
+  *&this->q0E8 = 0; /*0x721746*/
   this->TiberiumClass_field_EC = 0; /*0x72174c*/
   this->TiberiumClass_field_F0 = 0; /*0x721752*/
   this->TiberiumClass_field_F4 = 0; /*0x721758*/
@@ -202,11 +202,11 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->ObjectClass = &TiberiumClass::`vftable'; /*0x7217a6*/
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ac) */
-  this->vtable3 = &TiberiumClass::`vftable'; /*0x7217b3*/
+  /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217b3) */
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ba) */
-  *(unsigned int *)&this->? = g_BuildingLoadQueue_Array.?[0]; /*0x7217c6*/
+  *&this->isInLogic = g_BuildingLoadQueue_Array.?[0]; /*0x7217c6*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[3] /*0x7217fe*/
-    || (g_BuildingLoadQueue_Array.?[0] || !g_BuildingLoadQueue_Array.?[3])
+    || (g_BuildingLoadQueue_Array || !g_BuildingLoadQueue_Array.?[3])
     && g_BuildingLoadQueue_Array.?[1] > 0
     && (*(unsigned __int8 (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.?[1] + 8))(
          &g_BuildingLoadQueue_Array.?[1],
@@ -433,12 +433,12 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
       v2->ObjectClass = &TiberiumClass::`vftable'; /*0x721fc7*/
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fcd) */
-      v2->vtable3 = &TiberiumClass::`vftable'; /*0x721fd4*/
+      /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fd4) */
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fdb) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/
-      AnimTypeList::Constructor((AnimTypeList *)&v2->GrowthPercentage[1]); /*0x721ff9*/
+      AnimTypeList::Constructor(&v2->u32_C4); /*0x721ff9*/
     (*(void (**)(int, TiberiumClass **, int, unsigned int))(*(unsigned int *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
     result = 0; /*0x72200c*/
     if ( (int)a1 > 0 ) /*0x722012*/

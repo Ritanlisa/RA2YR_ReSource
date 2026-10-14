@@ -292,7 +292,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   {
     int v11 = Math::RoundToInt(*(float *)&((unsigned int *)(aP3))[1].spawnStatus);
     AircraftTrackerClass::FillCurrentVector((int)&(&stru_87C374)[46356], (int)aP1a, v11);
-    int v12 = ((VectorClass_flat *)(int)&((unsigned int *)(stru_87C374))[46356])->RemoveObjectById();
+    int v12 = ((VectorClass_flat*)&((unsigned int *)(stru_87C374))[46356])->RemoveObjectById();
     if ( v12 )
     {
       do
@@ -340,7 +340,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
             }
           }
         }
-        v12 = ((VectorClass_flat *)(int)&((unsigned int *)(stru_87C374))[46356])->RemoveObjectById();
+        v12 = ((VectorClass_flat*)&((unsigned int *)(stru_87C374))[46356])->RemoveObjectById();
       }
       while ( v12 );
       v8 = (gamemd::ObjectClass *)(aP3);
@@ -1590,7 +1590,7 @@ char E4Recv_483710::sub_483710()
     return 0; /*0x48372d*/
   v3 = *(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType); /*0x483735*/
   if ( this->M284 /*0x483766*/
-    || *((unsigned __int8 *)this + 286) >= *(unsigned int *)(v3 + 228) - 1
+    || *((unsigned __int8 *)&this->u32_11E) >= *(unsigned int *)(v3 + 228) - 1
     || *(double *)(v3 + 176) < 0.00001 )
   {
     return 0; /*0x48377c*/
@@ -1880,10 +1880,10 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   this->M384 = 1; /*0x4887a5*/
   this->M385 = 0; /*0x4887ab*/
   this->M372 = &DynamicVectorClass<int>::`vftable'; /*0x4887b1*/
-  *((unsigned int *)this + 98) = 10; /*0x4887bb*/
-  *((unsigned int *)this + 97) = 0; /*0x4887c5*/
-  *((unsigned int *)this + 100) = 0; /*0x4887cb*/
-  *((unsigned int *)this + 99) = 1; /*0x4887d1*/
+  this->M392 = 10; /*0x4887bb*/
+  this->M388 = 0; /*0x4887c5*/
+  this->M400 = 0; /*0x4887cb*/
+  this->M396 = 1; /*0x4887d1*/
   *(unsigned int *)this->__pad_0 = &ColorListClass::`vftable'; /*0x4887d7*/
   return this->vfptr; /*0x4887df*/
 

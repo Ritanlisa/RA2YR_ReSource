@@ -1710,7 +1710,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
       }
     }
   }
-  v15.vtable2 = &CCFileClass::`vftable'; /*0x4f3011*/
+  /* X11: vtable install elided (implicit via CCFileClass virtuals 0x4f3011) */
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4f3027) */

@@ -214,8 +214,8 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
     *v24 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a552b*/
-    v24[5] = 10; /*0x5a5531*/
-    v24[4] = 0; /*0x5a5538*/
+    v24->u32_14 = 10; /*0x5a5531*/
+    v24->q010 = 0; /*0x5a5538*/
   }
   else
   {
@@ -223,21 +223,21 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   LODWORD(v78) = v24; /*0x5a5547*/
   v25 = a2 <= 0; /*0x5a554b*/
-  v24[5] = a2 + 2; /*0x5a5550*/
+  v24->u32_14 = a2 + 2; /*0x5a5550*/
   if ( !v25 ) /*0x5a5553*/
   {
     while ( v20 ) /*0x5a5565*/
     {
       *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, v20) + 14) = dword_ABC2B0; /*0x5a557c*/
-      v26 = v24[2]; /*0x5a557f*/
-      if ( v24[4] < v26 /*0x5a55a2*/
-        || (*((unsigned char *)v24 + 13) || !v26)
-        && (v27 = v24[5], v27 > 0)
-        && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v24 + 8))(v24, v26 + v27, 0) )
+      v26 = v24->Capacity; /*0x5a557f*/
+      if ( v24->q010 < v26 /*0x5a55a2*/
+        || (*(&v24->IsAllocated) || !v26)
+        && (v27 = v24->u32_14, v27 > 0)
+        && v24->Release(v26 + v27, 0) )
       {
-        v28 = v24[4]; /*0x5a55a9*/
-        v29 = v24[1]; /*0x5a55ac*/
-        v24[4] = v28 + 1; /*0x5a55b2*/
+        v28 = v24->q010; /*0x5a55a9*/
+        v29 = v24->Items; /*0x5a55ac*/
+        v24->q010 = v28 + 1; /*0x5a55b2*/
         *(unsigned int *)(v29 + 4 * v28) = *(unsigned int *)v20; /*0x5a55b8*/
       }
       LODWORD(v77) = 0; /*0x5a55bf*/
@@ -253,7 +253,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
           && v31 <= dword_ABED08 )
         {
           v32 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v73); /*0x5a563b*/
-          if ( Cell::IsEmpty(v32) && v32[17] == -1 ) /*0x5a5650*/
+          if ( Cell::IsEmpty(v32) && v32->u32_44 == -1 ) /*0x5a5650*/
           {
             v33 = SHIWORD(v73); /*0x5a5656*/
             v34 = (__int16)v73; /*0x5a5667*/
@@ -281,13 +281,13 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
               ++v76; /*0x5a5724*/
               LODWORD(v81[0]) = v43; /*0x5a572a*/
               v45 = v44 >> 1; /*0x5a5731*/
-              if ( v44 < v6[1] ) /*0x5a5735*/
+              if ( v44 < v6->__pad_004 ) /*0x5a5735*/
               {
                 if ( v44 > 1 ) /*0x5a573a*/
                 {
                   do /*0x5a575a*/
                   {
-                    v46 = v6[2]; /*0x5a573c*/
+                    v46 = v6->u32_8; /*0x5a573c*/
                     v47 = *(unsigned int *)(v46 + 4 * v45); /*0x5a573f*/
                     if ( *(float *)(v47 + 4) <= (double)*(float *)v81 ) /*0x5a574e*/
                       break; /*0x5a574e*/
@@ -299,12 +299,12 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
                   v30 = *(float *)&v80; /*0x5a575c*/
                 }
                 *(float *)(v6[2] + 4 * v44) = v42; /*0x5a5763*/
-                v48 = v6[3]; /*0x5a5768*/
+                v48 = v6->u32_C; /*0x5a5768*/
                 ++*v6; /*0x5a576e*/
                 if ( LODWORD(v42) > v48 ) /*0x5a5770*/
-                  *((float *)v6 + 3) = v42; /*0x5a5772*/
-                if ( LODWORD(v42) < v6[4] ) /*0x5a5778*/
-                  *((float *)v6 + 4) = v42; /*0x5a577a*/
+                  v6->u32_C = v42; /*0x5a5772*/
+                if ( LODWORD(v42) < v6->u32_10 ) /*0x5a5778*/
+                  v6->u32_10 = v42; /*0x5a577a*/
               }
             }
           }
@@ -315,7 +315,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       ++v75; /*0x5a5794*/
       if ( *v6 ) /*0x5a5798*/
       {
-        v49 = v6[2]; /*0x5a57a4*/
+        v49 = v6->u32_8; /*0x5a57a4*/
         v50 = *(unsigned short **)(v49 + 4); /*0x5a57ac*/
         *(unsigned int *)(v49 + 4) = *(unsigned int *)(v49 + 4 * *v6); /*0x5a57af*/
         *(unsigned int *)(v6[2] + 4 * (*v6)--) = 0; /*0x5a57b7*/
@@ -339,14 +339,14 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   __3_YAXPAX_Z(v4); /*0x5a57e6*/
   if ( v6 ) /*0x5a57f1*/
   {
-    __3_YAXPAX_Z((void *)v6[2]); /*0x5a57f7*/
+    __3_YAXPAX_Z(v6->u32_8); /*0x5a57f7*/
     __3_YAXPAX_Z(v6); /*0x5a57fd*/
   }
   v51 = globalHelper_0A7640(v81, v24); /*0x5a580b*/
   v83 = *(unsigned long long *)v51; /*0x5a5812*/
   v52 = *(unsigned int *)(v51 + 8); /*0x5a5821*/
   v53 = *(unsigned int *)(v51 + 12); /*0x5a5827*/
-  if ( v75 <= 100 || (v54 = v24[4], a2 = v52 * v53, a1 = (__int16 *)v54, (double)v54 * 1.6 <= (double)(v52 * v53)) ) /*0x5a5853*/
+  if ( v75 <= 100 || (v54 = v24->q010, a2 = v52 * v53, a1 = (__int16 *)v54, (double)v54 * 1.6 <= (double)(v52 * v53)) ) /*0x5a5853*/
   {
     for ( j = v24[4] - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
       v72 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)(v24[1] + 4 * j--)); /*0x5a5ab6*/
@@ -376,12 +376,12 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
             && v58 <= dword_ABED08
             && *((unsigned int *)CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v80) + 14) != dword_ABC2B0 )
           {
-            v59 = v24[4]; /*0x5a58df*/
+            v59 = v24->q010; /*0x5a58df*/
             if ( v55 < v59 ) /*0x5a58e4*/
             {
               v60 = v59 - 1; /*0x5a58e6*/
               v61 = v55; /*0x5a58e9*/
-              for ( v24[4] = v60; v61 < v24[4]; *(unsigned int *)(v24[1] + 4 * v61 - 4) = *(unsigned int *)(v24[1] + 4 * v61) ) /*0x5a58f0*/
+              for ( v24->q010 = v60; v61 < v24->q010; *(unsigned int *)(v24[1] + 4 * v61 - 4) = *(unsigned int *)(v24[1] + 4 * v61) ) /*0x5a58f0*/
                 ++v61; /*0x5a58f5*/
             }
           }
@@ -393,12 +393,12 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         v56 = 0; /*0x5a5866*/
       }
     }
-    for ( k = 0; k < v24[4]; *((unsigned char *)dword_ABED10 + v63 + 69) = 1 ) /*0x5a5926*/
+    for ( k = 0; k < v24->q010; *((unsigned char *)dword_ABED10 + v63 + 69) = 1 ) /*0x5a5926*/
     {
       v63 = 80 * (*(__int16 *)(v24[1] + 4 * k) + g_MapCellWidth * *(__int16 *)(v24[1] + 4 * k + 2)); /*0x5a5948*/
       ++k; /*0x5a594b*/
     }
-    v64 = v24[4]; /*0x5a5958*/
+    v64 = v24->q010; /*0x5a5958*/
     if ( v64 / 3 > 0 ) /*0x5a596b*/
     {
       v80 = v64 / 3; /*0x5a5971*/

@@ -70,8 +70,8 @@ int TeamTypeClass::Construct()
   this->__pad_04C = 1; /*0x4c98e0*/
   this->__pad_4C[1] = 0; /*0x4c98e3*/
   this->taskForce[0] = (int)&DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4c98e6*/
-  *(unsigned int *)&this->__pad_4C[8] = 10; /*0x4c98ed*/
-  *(unsigned int *)&this->__pad_4C[4] = 0; /*0x4c98f4*/
+  *&this->taskForceCapacity = 10; /*0x4c98ed*/
+  *&this->taskForceCount = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
   this->TeamTypeClass_field_58 = 0; /*0x4c98fd*/
   this->TeamTypeClass_field_5C = 0; /*0x4c9901*/
@@ -83,7 +83,7 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
   this->AbstractClass = &FactoryClass::`vftable'; /*0x4c991a*/
   this->TeamTypeClass_field_70 = &FactoryClass::`vftable'; /*0x4c9920*/
-  this->? = &FactoryClass::`vftable'; /*0x4c9926*/
+  /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c9926) */
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c992d) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
@@ -271,9 +271,9 @@ int TeamTypeClass::GetTeam(int a2, int a3)
     this->u32_C4 = 0; /*0x6f104f*/
   if ( this->Tactical_E4 == a2 ) /*0x6f105b*/
     this->Tactical_E4 = 0; /*0x6f105d*/
-  if ( this->q0E0 == a2 ) /*0x6f1069*/
-    this->q0E0 = 0; /*0x6f106b*/
-  v4 = this->q0E0; /*0x6f1071*/
+  if ( this->FootClass_E0 == a2 ) /*0x6f1069*/
+    this->FootClass_E0 = 0; /*0x6f106b*/
+  v4 = this->FootClass_E0; /*0x6f1071*/
   if ( v4 ) /*0x6f1079*/
     return (*(int (**)(int, int, int))(*(unsigned int *)v4 + 40))(v4, a2, a3); /*0x6f1083*/
   return result; /*0x6f1086*/
@@ -1125,7 +1125,7 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_C4); /*0x6f1bfb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q0D0); /*0x6f1c0c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->q0E0); /*0x6f1c1d*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->FootClass_E0); /*0x6f1c1d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 57); /*0x6f1c2e*/
     return 0; /*0x6f1c33*/
   }

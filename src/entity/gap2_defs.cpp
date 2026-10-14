@@ -6020,10 +6020,10 @@ void ParticleClass::UpdateAnimationDrift() {
   {
     v10 = *((unsigned int *)this->u32_AC + 184) /*0x62c664*/
         - *(uint16_t *)this->q128
-        + (*(int (__stdcall **)(char *))(*&this->vtable2 + 16))(&this->vtable2);
+        + (*(int (__stdcall **)(char *))&this->vtable2->uniqueId)(&this->vtable2);
     if ( !(v10 /*0x62c67e*/
          % (*((char *)ParticleClass_field_0xAC + 779)
-          + ((*(int (__stdcall **)(char *))(*&this->vtable2 + 16))(&this->vtable2)
+          + ((*(int (__stdcall **)(char *))&this->vtable2->uniqueId)(&this->vtable2)
            & 1))) )
       ++this->StartStateAI; /*0x62c684*/
     if ( this->StartStateAI == *((unsigned char *)ParticleClass_field_0xAC + 777) && *((unsigned char *)ParticleClass_field_0xAC + 776) ) /*0x62c69a*/
@@ -6497,14 +6497,14 @@ int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
   unsigned int *v17; // ecx
   int v18; // eax
 
-  if ( *(unsigned int *)(this->Type + 660) == -1 ) /*0x62e4d2*/
+  if ( *(unsigned int *)&this->Type->q294 == -1 ) /*0x62e4d2*/
     return 0; /*0x62e4d2*/
   v5 = operator new(0x138u); /*0x62e4dd*/
   if ( !v5 ) /*0x62e4e7*/
     return 0; /*0x62e4e7*/
   v6 = ParticleClass::Construct( /*0x62e515*/
          (int)v5,
-         *((unsigned int *)dword_A83D9C + *(unsigned int *)(this->Type + 660)),
+         *((unsigned int *)dword_A83D9C + *(unsigned int *)&this->Type->q294),
          a1,
          a2,
          this);
@@ -7301,7 +7301,7 @@ int ParticleSystemClass::Write(int a1, void* a1_2) {
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->u32_AC); /*0x62ff94*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->Tactical_E4); /*0x62ffa5*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->q0E0); /*0x62ffb6*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v4->FootClass_E0); /*0x62ffb6*/
     v6 = *a1_2; /*0x62ffbb*/
     a1 = 0; /*0x62ffc7*/
     result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v6 + 12))(a1_2, &a1, 4, 0); /*0x62ffcb*/
@@ -8003,13 +8003,13 @@ void TerrainClass::Draw(void* a1, void* a2) {
     if ( *(unsigned char *)(v12 + 689) ) /*0x71c286*/
     {
       v13 = *(unsigned int *)&FileSystem_GRFTXT_TIBERIUM_PAL; /*0x71c294*/
-      v14 = *((int16_t *)v6 + 133); /*0x71c29a*/
+      v14 = v6->u32_10A; /*0x71c29a*/
       v20 -= 16; /*0x71c2ac*/
     }
     else
     {
       v13 = v6->ptr_34; /*0x71c2b2*/
-      v14 = *((int16_t *)v6 + 134); /*0x71c2b5*/
+      v14 = v6->u32_10C; /*0x71c2b5*/
     }
     if ( *(unsigned char *)(v12 + 691) || this->u32_CD ) /*0x71c2c6*/
       v15 = 11776; /*0x71c2d0*/
@@ -8074,13 +8074,13 @@ void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
     if ( *(unsigned char *)(*&this->u32_C8 + 689) ) /*0x71c415*/
     {
       v11 = *(unsigned int *)&FileSystem_GRFTXT_TIBERIUM_PAL; /*0x71c423*/
-      v12 = *((int16_t *)v4 + 133); /*0x71c429*/
+      v12 = v4->u32_10A; /*0x71c429*/
       v16 -= 16; /*0x71c43b*/
     }
     else
     {
       v11 = v4->ptr_34; /*0x71c441*/
-      v12 = *((int16_t *)v4 + 134); /*0x71c444*/
+      v12 = v4->u32_10C; /*0x71c444*/
     }
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v11, v5, v13, &v15, a2, 3584, 0, v10 - 4, 2, v12, 0, 0, 0, 0, 0); /*0x71c477*/
     if ( byte_822CF1 ) /*0x71c483*/

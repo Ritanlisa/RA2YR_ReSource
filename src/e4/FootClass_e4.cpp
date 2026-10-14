@@ -55,9 +55,9 @@ AbstractClass * FootClass::Destruct()
 
   team = (int *)this->team; /*0x4d3597*/
   this->TechnoClass = &FootClass::`vftable'; /*0x4d359d*/
-  this->? = &FootClass::`vftable'; /*0x4d35a5*/
+  /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35a5) */
   /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35ac) */
-  this->vtable4 = &FootClass::`vftable'; /*0x4d35b3*/
+  /* X11: vtable install elided (implicit via FootClass virtuals 0x4d35b3) */
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -79,8 +79,8 @@ AbstractClass * FootClass::Destruct()
   if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
     v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)this->currentJumpjetMapCoords); /*0x4d365b*/
-    if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
-      v6[56] = 0; /*0x4d3668*/
+    if ( v6->FootClass_E0 == this ) /*0x4d3666*/
+      v6->FootClass_E0 = 0; /*0x4d3668*/
   }
   Mixer::ReleaseChannel((Mixer *)this->audioController7); /*0x4d3677*/
   AudioFileClass::Release((AudioFileClass *)this->audioController7); /*0x4d367e*/

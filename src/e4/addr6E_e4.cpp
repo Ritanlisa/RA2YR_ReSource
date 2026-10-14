@@ -1683,24 +1683,24 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
 
   result = &this->AbstractClass; /*0x6e8004*/
   this->M8 = &INoticeSink::`vftable'; /*0x6e8008*/
-  this->? = &INoticeSource::`vftable'; /*0x6e800f*/
+  this->M12 = &INoticeSource::`vftable'; /*0x6e800f*/
   this->M16 = *(unsigned int *)(a2 + 16); /*0x6e801c*/
   LOBYTE(this->M20) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
   this->q018 = *(unsigned int *)(a2 + 24); /*0x6e8028*/
   this->M28 = *(unsigned int *)(a2 + 28); /*0x6e802e*/
   LOBYTE(this->q020) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
   this->AbstractClass = &AbstractClass::`vftable'; /*0x6e803f*/
-  this->? = &AbstractClass::`vftable'; /*0x6e8045*/
+  this->M4 = &AbstractClass::`vftable'; /*0x6e8045*/
   this->M8 = &AbstractClass::`vftable'; /*0x6e804c*/
-  this->? = &AbstractClass::`vftable'; /*0x6e8053*/
+  this->M12 = &AbstractClass::`vftable'; /*0x6e8053*/
   qmemcpy(&this->occupant, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
   qmemcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   qmemcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
   this->AbstractClass = &TaskForceClass::`vftable'; /*0x6e807e*/
-  this->? = &TaskForceClass::`vftable'; /*0x6e8084*/
+  this->M4 = &TaskForceClass::`vftable'; /*0x6e8084*/
   this->M8 = &TaskForceClass::`vftable'; /*0x6e808b*/
-  this->? = &TaskForceClass::`vftable'; /*0x6e8092*/
+  this->M12 = &TaskForceClass::`vftable'; /*0x6e8092*/
   v3 = &this->location[2]; /*0x6e809f*/
   result->q098 = *(unsigned int *)(a2 + 152); /*0x6e80a5*/
   result->Coord_9C = *(unsigned int *)(a2 + 156); /*0x6e80b1*/

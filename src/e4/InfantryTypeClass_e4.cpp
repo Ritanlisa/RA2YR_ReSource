@@ -92,42 +92,42 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   this->qE60 = 0; /*0x523703*/
   this->u32_E64 = 10; /*0x523706*/
   this->qE50 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523709*/
-  AnimTypeVector::Constructor((unsigned int *)((char *)this + 3692), 0, 0); /*0x523719*/
-  *((unsigned int *)this + 928) = 10; /*0x52371e*/
-  *((unsigned int *)this + 927) = 0; /*0x523721*/
-  *((unsigned int *)this + 923) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523724*/
+  AnimTypeVector::Constructor(&this->u32_E6C, 0, 0); /*0x523719*/
+  this->u32_E80 = 10; /*0x52371e*/
+  this->u32_E7C = 0; /*0x523721*/
+  this->u32_E6C = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523724*/
   VectorClass::Construct(&this->u32_E88, 0, 0); /*0x523734*/
   this->u32_E9C = 10; /*0x523739*/
   this->u32_E98 = 0; /*0x52373c*/
   this->u32_E88 = &TypeList<int>::`vftable'; /*0x52373f*/
-  *((unsigned int *)this + 937) = -1; /*0x523748*/
-  *((unsigned int *)this + 938) = -1; /*0x52374e*/
-  *((unsigned char *)this + 3756) = 0; /*0x523754*/
-  *((unsigned char *)this + 3757) = 0; /*0x52375a*/
-  *((unsigned char *)this + 3758) = 0; /*0x523760*/
-  *((unsigned int *)this + 940) = 0; /*0x523766*/
-  *((unsigned char *)this + 3764) = 0; /*0x52376c*/
-  *((unsigned char *)this + 3765) = 0; /*0x523772*/
-  *((unsigned int *)this + 942) = 1; /*0x523778*/
-  *((unsigned char *)this + 3772) = 0; /*0x523782*/
-  *((unsigned char *)this + 3773) = 1; /*0x523788*/
-  *((unsigned char *)this + 3774) = 0; /*0x52378f*/
-  *((unsigned char *)this + 3775) = 0; /*0x523795*/
-  *((unsigned char *)this + 3776) = 0; /*0x52379b*/
-  *((unsigned char *)this + 3777) = 0; /*0x5237a1*/
-  *((unsigned char *)this + 3778) = 0; /*0x5237a7*/
-  *((unsigned char *)this + 3779) = 0; /*0x5237ad*/
-  *((unsigned char *)this + 3780) = 0; /*0x5237b6*/
-  *((unsigned char *)this + 3781) = 0; /*0x5237bc*/
-  *((unsigned char *)this + 3782) = 0; /*0x5237c3*/
-  *((unsigned char *)this + 3783) = 0; /*0x5237c9*/
-  *((unsigned char *)this + 3784) = 0; /*0x5237cf*/
-  *((unsigned char *)this + 3785) = 1; /*0x5237d5*/
-  *((unsigned char *)this + 3786) = 0; /*0x5237dc*/
-  *((unsigned char *)this + 3787) = 0; /*0x5237e2*/
+  this->u32_EA4 = -1; /*0x523748*/
+  this->u32_EA8 = -1; /*0x52374e*/
+  this->Cyborg_2 = 0; /*0x523754*/
+  this->NotHuman_2 = 0; /*0x52375a*/
+  this->Ivan_2 = 0; /*0x523760*/
+  this->DetectionDistance = 0; /*0x523766*/
+  this->Occupier_d = 0; /*0x52376c*/
+  this->Assaulter_2 = 0; /*0x523772*/
+  this->HarvestRate = 1; /*0x523778*/
+  this->Fearless_d = 0; /*0x523782*/
+  this->__pad_EBD = 1; /*0x523788*/
+  this->Infiltrate_2 = 0; /*0x52378f*/
+  this->Fraidycat_2 = 0; /*0x523795*/
+  this->TiberiumProof_d = 0; /*0x52379b*/
+  this->__pad_EC1 = 0; /*0x5237a1*/
+  this->C4_2 = 0; /*0x5237a7*/
+  this->Engineer_2 = 0; /*0x5237ad*/
+  this->Agent_2 = 0; /*0x5237b6*/
+  this->Thief_2 = 0; /*0x5237bc*/
+  this->VehicleThief_2 = 0; /*0x5237c3*/
+  this->Doggie_2 = 0; /*0x5237c9*/
+  this->Deployer_d = 0; /*0x5237cf*/
+  this->__pad_EC9 = 1; /*0x5237d5*/
+  this->u32_ECA = 0; /*0x5237dc*/
+  this->u32_ECB = 0; /*0x5237e2*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237e8) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237ee) */
-  *((unsigned int *)this + 2) = &InfantryTypeClass::`vftable'; /*0x5237f4*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237f4) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5237fb) */
   AbstractClass::GenerateUniqueID(&this->vtable2); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
@@ -213,7 +213,7 @@ unsigned int * InfantryTypeClass::Constructor_523980(int aP1)
   this->VoiceComment[0] = (int)&TypeList<int>::`vftable'; /*0x52399e*/
   this->TechnoTypeClass = &InfantryTypeClass::`vftable'; /*0x5239a8*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239ae) */
-  this->vtable3 = &InfantryTypeClass::`vftable'; /*0x5239b5*/
+  /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239b5) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239bc) */
   return &this->TechnoTypeClass; /*0x5239c5*/
 
@@ -374,7 +374,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   INIClassIntList = &v44; /*0x524186*/
   DynamicVectorClass::Copy(&v44, &v4->u32_E88); /*0x52418a*/
   *(unsigned int *)INIClassIntList->VectorClass = &TypeList<int>::`vftable'; /*0x524198*/
-  inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x5241a0*/
+  inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->BarrelVoxel); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
                                             (unsigned __int8 ***)a2,
@@ -387,12 +387,12 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                                             v44.Count,
                                             v44.CapacityIncrement,
                                             v45);
-  TypeList::Copy((TypeList *)(v4 + 3720), INIClassIntList); /*0x5241b8*/
+  TypeList::Copy(&v4->u32_E88, INIClassIntList); /*0x5241b8*/
   v11 = INIClassIntList; /*0x5241bd*/
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
-  *(unsigned int *)(v4 + 3744) = *(unsigned int *)v11[1].VectorClass; /*0x5241d4*/
-  *(unsigned int *)v48.__pad_0 = &VectorClass<int>::`vftable'; /*0x5241d7*/
+  *(unsigned int *)(v4 + 3744) = *v11->Items.VectorClass; /*0x5241d4*/
+  *(unsigned int *)v48.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)a2,
@@ -413,7 +413,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
-    *(unsigned int *)v48.__pad_0 = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52427a*/
+    *(unsigned int *)v48.ClearAndFree2_ph = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
@@ -437,7 +437,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
-    *(unsigned int *)v48.__pad_0 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x524309*/
+    *(unsigned int *)v48.ClearAndFree2_ph = &TypeList<AnimTypeClass const *>::`vftable'; /*0x524309*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -452,9 +452,9 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   else
   {
-    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, (unsigned int *)(v4 + 3692)); /*0x52437a*/
+    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v4->u32_E6C); /*0x52437a*/
   }
-  InfantryTypeClass::CopyDataArray((InfantryTypeClass *)(v4 + 3692), &v48.DynamicVector_field_0x1C); /*0x52438c*/
+  InfantryTypeClass::CopyDataArray(&v4->u32_E6C, &v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
   v48.DynamicVector_field_0x1C = (AbstractClass *)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.q01C); /*0x5243a4*/

@@ -50,9 +50,9 @@ int TemporalClass::Constructor()
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *&this->creationFrame = v2; /*0x71a464*/
   this->AbstractClass = &TemporalClass::`vftable'; /*0x71a467*/
-  this->? = &TemporalClass::`vftable'; /*0x71a46d*/
+  /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a46d) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a474) */
-  this->vtable4 = &TemporalClass::`vftable'; /*0x71a47b*/
+  /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a47b) */
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a4b7*/
     || (BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
     && g_BuildingLoadQueue_Array.?[1] > 0
@@ -81,9 +81,9 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->AbstractClass = &TemporalClass::`vftable'; /*0x71a501*/
-  this->? = &TemporalClass::`vftable'; /*0x71a507*/
+  /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a507) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a50e) */
-  this->vtable4 = &TemporalClass::`vftable'; /*0x71a515*/
+  /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a515) */
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_028 = 0; /*0x71a51f*/
   *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a529*/

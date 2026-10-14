@@ -641,11 +641,11 @@ int BuildingClass::Dtor()
   v12 = this->Type->SuperWeapon; /*0x43be50*/
   if ( (v12 == -1 /*0x43bee8*/
      || (v13 = *(unsigned int *)(*(unsigned int *)(*((unsigned int *)dword_A83CBC + v12) + 40) + 200)) == 0
-     || DynamicVector::GetOrGrow((DynamicVector *)(this->owner + 21840), *(unsigned int *)(v13 + 3576)))
+     || DynamicVector::GetOrGrow(&this->owner, *(unsigned int *)(v13 + 3576)))
     && this->Type->SuperWeapon != -1
     || ((v14 = this->Type->SuperWeapon2, v14 == -1)
      || (v15 = *(unsigned int *)(*(unsigned int *)(*((unsigned int *)dword_A83CBC + v14) + 40) + 200)) == 0
-     || DynamicVector::GetOrGrow((DynamicVector *)(this->owner + 21840), *(unsigned int *)(v15 + 3576)))
+     || DynamicVector::GetOrGrow(&this->owner, *(unsigned int *)(v15 + 3576)))
     && this->Type->SuperWeapon2 != -1 )
   {
     SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->owner); /*0x43bef0*/
@@ -653,7 +653,7 @@ int BuildingClass::Dtor()
   if ( byte_A8E9A0 ) /*0x43befc*/
   {
     if ( this->health != this->BuildingClass_field_544 ) /*0x43bf09*/
-      *(unsigned char *)(this->owner + 22392) = 1; /*0x43bf11*/
+      *(unsigned char *)&this->owner->u32_5778 = 1; /*0x43bf11*/
     if ( byte_A8E9A0 && this->Type ) /*0x43bf21*/
     {
       owner = (HouseClass *)this->owner; /*0x43bf29*/
@@ -959,7 +959,7 @@ void BuildingClass::Cleanup(int a2)
     BuildingClass::ClearAnims(this, 9); /*0x43eedf*/
     if ( a2 != -1 ) /*0x43eee7*/
     {
-      strcpy(v5, (const char *)(this->Type + 504)); /*0x43ef17*/
+      strcpy(v5, (const char *)&this->Type->ImageFile); /*0x43ef17*/
       v3 = strlen(asc_818D7C) + 1; /*0x43ef38*/
       memcpy(&v5[strlen(v5)], asc_818D7C, v3); /*0x43ef45*/
       v4 = strlen(v5); /*0x43ef5f*/
@@ -3210,7 +3210,7 @@ int BuildingClass::Sell()
     {
       if ( this->ActuallyPlacedOnMap[0] ) /*0x445915*/
       {
-        --*(unsigned int *)(this->owner + 21388); /*0x44592c*/
+        --*(unsigned int *)&this->owner->numOrePurifiers; /*0x44592c*/
         owner = this->owner; /*0x445932*/
         if ( this->u32_55A8 < 0 ) /*0x44593e*/
           this->u32_55A8 = 0; /*0x445940*/
@@ -3255,7 +3255,7 @@ int BuildingClass::Sell()
     {
       if ( this->Type->SensorArray ) /*0x445a38*/
         this->ScanCircleForUnits(g_TerrainTypeTable); /*0x445a4c*/
-      if ( *(unsigned char *)(this->Type + 3377) ) /*0x445a58*/
+      if ( *(unsigned char *)&this->Type->qD31 ) /*0x445a58*/
         this->ScanCircleForTiberium(g_TerrainTypeTable); /*0x445a6c*/
       v14 = this->Type; /*0x445a72*/
       if ( (!this->BuildingClass_field_timer_550 || !this->CostAccumulator) /*0x445a8e*/
@@ -3376,7 +3376,7 @@ int BuildingClass::Sell()
     if ( Spotlight ) /*0x445d7d*/
       Spotlight->Destroy_0(); /*0x445d81*/
     BuildingClass::DecrementTypeCounter((BuildingClass *)this->owner, this); /*0x445d8e*/
-    *(unsigned char *)(this->owner + 508) = 1; /*0x445d99*/
+    *(unsigned char *)&this->owner->recheckTechTree = 1; /*0x445d99*/
     BuildingClass::CalcExitCoords((BuildingClass *)this->owner); /*0x445da6*/
     if ( (Object *)this->owner == dword_A83D4C ) /*0x445db8*/
     {
@@ -8262,8 +8262,8 @@ bool BuildingClass::CheckMissionAttack()
                     v17 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[56] + 4 * v16); /*0x43f322*/
                     v94 = v15[9]; /*0x43f32a*/
                     v18 = *(unsigned int *)(v17 + 664); /*0x43f334*/
-                    v19 = *((uint8_t *)v15 + 287) % v18; /*0x43f343*/
-                    v20 = *((uint8_t *)v15 + 287) / v18; /*0x43f347*/
+                    v19 = *(&v15->u32_11F) % v18; /*0x43f343*/
+                    v20 = *(&v15->u32_11F) / v18; /*0x43f347*/
                     v21 = *(unsigned int *)(v17 + 668); /*0x43f349*/
                     (v94) = ((v94) & ~0xFFFF) | ((unsigned int)(v94 - v19) & 0xFFFF); /*0x43f34f*/
                     v94 -= (unsigned int)(v20) << 16; /*0x43f354 ((unsigned short)((v94) >> 16) -= v20 u32 环绕等价)*/
@@ -8809,7 +8809,7 @@ int BuildingClass::ProcessStructureAbandoned() {
         if ( (uint8_t)House::IsHumanPlayer(owner) ) /*0x458288*/
         {
           PlayVocClass(dword_8871E0->GeneticMutatorActivateSound, 0x2000, 1.0, 0); /*0x4582a9*/
-          v9 = ((int64_t (__thiscall *)(BuildingClass *, unsigned char *))*(unsigned int *)(this->vfptr + 440))(this, v10); /*0x4582b7*/
+          v9 = ((int64_t (__thiscall *)(BuildingClass *, unsigned char *))*(unsigned int *)&this->vfptr->airstrikeTintTimer)(this, v10); /*0x4582b7*/
           if ( (uint8_t)CreateTriggerClassIfFarEnough(15, (*((signed int *)(((unsigned char *)&(v9)) + 4))), *(unsigned int *)v9) ) /*0x4582c5*/
             VoxClass::FindAndPlay(&stru_81926C, -1); /*0x4582d8*/
         }

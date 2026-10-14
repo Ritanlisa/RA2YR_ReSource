@@ -1020,7 +1020,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM)
   v19 = v2; /*0x60a5d1*/
   if ( dword_AC1B04 ) /*0x60a5d5*/
   {
-    v5 = (unsigned int *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((void *)((int)&dword_AC1B00), (int)&v19)); /*0x60a5ec*/
+    v5 = (unsigned int *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((void*)(&dword_AC1B00), (int)&v19)); /*0x60a5ec*/
     if ( v5 ) /*0x60a5f1*/
     {
       while ( (HWND)*v5 != v19 ) /*0x60a5f9*/
@@ -1047,7 +1047,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM)
         v20 = Parent; /*0x60a70c*/
         if ( dword_AC1B04 ) /*0x60a712*/
         {
-          for ( i = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((void *)((int)&dword_AC1B00), (int)&v20)); /*0x60a72e*/
+          for ( i = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((void*)(&dword_AC1B00), (int)&v20)); /*0x60a72e*/
                 i;
                 i = i->HWND_204 )
           {
@@ -2310,7 +2310,7 @@ AbstractClass * * Dialog::DrawBackground(HWND hWnd)
             {
               while ( *v11 != v29 ) /*0x62203c*/
               {
-                v11 = (Dialog **)v11[129]; /*0x62203e*/
+                v11 = v11->q204; /*0x62203e*/
                 if ( !v11 ) /*0x622046*/
                   goto LABEL_29; /*0x622046*/
               }
@@ -2331,7 +2331,7 @@ AbstractClass * * Dialog::DrawBackground(HWND hWnd)
             goto LABEL_33; /*0x622089*/
           while ( *v13 != v29 ) /*0x622091*/
           {
-            v13 = (Dialog **)v13[129]; /*0x622093*/
+            v13 = v13->q204; /*0x622093*/
             if ( !v13 ) /*0x62209b*/
               goto LABEL_33; /*0x62209b*/
           }
@@ -2352,7 +2352,7 @@ AbstractClass * * Dialog::DrawBackground(HWND hWnd)
             goto LABEL_43; /*0x6220d4*/
           while ( *v15 != v29 ) /*0x6220dc*/
           {
-            v15 = (Dialog **)v15[129]; /*0x6220de*/
+            v15 = v15->q204; /*0x6220de*/
             if ( !v15 ) /*0x6220e6*/
               goto LABEL_43; /*0x6220e6*/
           }

@@ -2684,7 +2684,7 @@ int VoxelTypeClass::ReadINI(double a2)
   {
     if ( !*(unsigned char *)(v4 + 3598) && !*(unsigned char *)(v4 + 3599) ) /*0x73e621*/
       return 450; /*0x73e637*/
-    if ( !*(unsigned int *)(v4 + 1016) && !(uint8_t)House::IsCurrentPlayer(*((House **)this + 135)) /*0x73e67d*/
+    if ( !*(unsigned int *)(v4 + 1016) && !(uint8_t)House::IsCurrentPlayer(this->u32_21C) /*0x73e67d*/
       || (v7 = this->u32_6C4, v8 = 0, *(int *)(v7 + 1016) <= 0) )
     {
   LABEL_10:
@@ -3202,10 +3202,10 @@ void VoxelPalette::Reset()
   int result; // eax
 
   if ( this->u32_18 ) /*0x7589c3*/
-    operator delete((void *)(*((void **)this + 4))); /*0x7589ce*/
+    operator delete((void *)(this->u32_10)); /*0x7589ce*/
   result = this->u32_1C; /*0x7589d6*/
   if ( result ) /*0x7589db*/
-    operator delete((void *)(*((void **)this + 5))); /*0x7589e1*/
+    operator delete((void *)(this->u32_14)); /*0x7589e1*/
   return result; /*0x7589e9*/
 }
 } // namespace gamemd

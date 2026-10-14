@@ -756,10 +756,10 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   LOBYTE(this->M12) = 1; /*0x74bc0a*/
   BYTE1(this->?) = 0; /*0x74bc0e*/
   this->? = &VectorClass<unsigned char>::`vftable'; /*0x74bc11*/
-  this->? = (void *)-1; /*0x74bc17*/
-  LOBYTE(this->?) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
-  this->? = *(void **)(a2 + 8); /*0x74bc27*/
-  if ( &this->? == (void **)(a2 + 12) ) /*0x74bc2a*/
+  this->M8 = (void *)-1; /*0x74bc17*/
+  LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
+  this->M8 = *(void **)(a2 + 8); /*0x74bc27*/
+  if ( &this->M8 == (void **)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
   (*((void (**)(void **))*p_vtable3 + 3))(p_vtable3); /*0x74bc30*/
   v4 = *(unsigned int *)(a2 + 20); /*0x74bc33*/
@@ -2061,7 +2061,7 @@ unsigned int ObjectClass::sub_74F730()
   v2 = this->ambientSoundController[2]; /*0x74f734*/
   this->vfptr1 = 0; /*0x74f737*/
   (this->vtable3) = 0; /*0x74f73d*/
-  (*(this->vtable3 + 1)) = 0; /*0x74f741*/
+  (*&this->vtable3->AbstractClass_1) = 0; /*0x74f741*/
   this->ambientSoundController[0] = 0; /*0x74f745*/
   this->ambientSoundController[1] = 0; /*0x74f748*/
   this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/

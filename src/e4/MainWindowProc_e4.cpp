@@ -123,11 +123,11 @@ char * E4Recv_724000::sub_724000(int a2)
   *(unsigned int *)v3 = &DynamicVectorClass<ToolTip const *>::`vftable'; /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
-  *((unsigned int *)this + 147) = 0; /*0x72404a*/
-  *((unsigned int *)this + 148) = 0; /*0x724050*/
-  *((unsigned int *)this + 149) = 0; /*0x724056*/
-  *((unsigned char *)this + 600) = 0; /*0x72405c*/
-  *((unsigned int *)this + 151) = 0; /*0x724062*/
+  this->M588 = 0; /*0x72404a*/
+  this->M592 = 0; /*0x724050*/
+  this->M596 = 0; /*0x724056*/
+  this->M600 = 0; /*0x72405c*/
+  this->M604 = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
   /* X11: vtable install elided (implicit via ToolTipManager virtuals 0x72406a) */
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/

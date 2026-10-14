@@ -6713,7 +6713,7 @@ int RulesClass::SaveLoad_Prefix_0(int a1) {
     (*(void (__thiscall **)(char *))(*&this->RepairRate + 12))(&this->DynamicVector_1374); /*0x675441*/
     (*(void (__thiscall **)(char *))(*&this->RepairRate + 12))(&this->DynamicVector_13C8); /*0x675450*/
     (*(void (__thiscall **)(char *))(*&this->RepairRate + 12))(&this->DynamicVector_1174); /*0x67545f*/
-    (*(void (__thiscall **)(char *))(*&this->__pad_43C + 12))(&this->__pad_43C); /*0x67546e*/
+    (*(void (__thiscall **)(char *))&this->__pad_43C->IsInitialized)(&this->__pad_43C); /*0x67546e*/
     (*(void (__thiscall **)(char *))(*&this->RepairRate + 12))(&this->DynamicVector_458); /*0x67547d*/
     (*(void (__thiscall **)(char *))(*&this->RepairRate + 12))(&this->DynamicVector_474); /*0x67548c*/
     this->CloakingStages.vt_slot_12(); /*0x67549b*/

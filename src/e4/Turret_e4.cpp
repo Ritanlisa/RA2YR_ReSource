@@ -117,15 +117,15 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8e8d*/
           }
         }
-        sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8ea0*/
+        sprintf(Buffer, "%sBARL", &this->AbstractClass_1F8); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
         CCFileClass::Construct(&v23, Source); /*0x5f8ed0*/
         if ( (unsigned __int8)CCFileClass::Open(&v23, 0) ) /*0x5f8edd*/
         {
-          v11 = (void *)*((unsigned int *)this + 48); /*0x5f8eea*/
+          v11 = (void *)this->u32_C0; /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
           {
-            WaveClass::Destroy(*((WaveClass **)this + 48)); /*0x5f8ef6*/
+            WaveClass::Destroy(this->u32_C0); /*0x5f8ef6*/
             __3_YAXPAX_Z(v11); /*0x5f8efc*/
           }
           v12 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
@@ -133,16 +133,16 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v13 = File::LoadFileVXL(v12, (int)&v23, 0); /*0x5f8f1a*/
           else
             v13 = 0; /*0x5f8f21*/
-          *((unsigned int *)this + 48) = v13; /*0x5f8f25*/
+          this->u32_C0 = v13; /*0x5f8f25*/
           if ( v13 && !*(unsigned char *)v13 ) /*0x5f8f31*/
           {
-            sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8f47*/
+            sprintf(Buffer, "%sBARL", &this->AbstractClass_1F8); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
             CCFileClass::Construct(&v20, Source); /*0x5f8f77*/
-            v14 = (void *)*((unsigned int *)this + 49); /*0x5f8f7c*/
+            v14 = (void *)this->u32_C4; /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
-              String::Release(*((String **)this + 49)); /*0x5f8f88*/
+              String::Release(this->u32_C4); /*0x5f8f88*/
               __3_YAXPAX_Z(v14); /*0x5f8f8e*/
             }
             v15 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8f98*/
@@ -150,10 +150,10 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
               v16 = File::LoadFileHVA(v15, (int)&v20); /*0x5f8fab*/
             else
               v16 = 0; /*0x5f8fb2*/
-            v17 = (VoxelSection *)*((unsigned int *)this + 48); /*0x5f8fb4*/
-            *((unsigned int *)this + 49) = v16; /*0x5f8fbc*/
+            v17 = (VoxelSection *)this->u32_C0; /*0x5f8fb4*/
+            this->u32_C4 = v16; /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
-            Matrix::Scale(*((Matrix **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
+            Matrix::Scale(this->u32_C4, *(float *)(v18 + 12)); /*0x5f8fd1*/
             *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/

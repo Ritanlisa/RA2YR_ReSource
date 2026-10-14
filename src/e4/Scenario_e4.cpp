@@ -949,7 +949,7 @@ LABEL_82:
   }
   ProcessIonCannonEffect(v61); /*0x55b64b*/
   AirstrikeClass::UpdateAll(v62); /*0x55b650*/
-  CrateClass::Update((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b65a*/
+  CrateClass::Update((MapClass *)&DataGlobal_87F7E8); /*0x55b65a*/
   (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x55b667*/
   for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_C8[40]; ++ii ) /*0x55b673*/
     (*(void (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii) + 92))(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii)); /*0x55b680*/
@@ -959,9 +959,9 @@ LABEL_82:
     if ( v53 ) /*0x55b6a2*/
       (*(void (**)(int))(*(unsigned int *)v53 + 92))(v53); /*0x55b6a6*/
   }
-  if ( MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]) ) /*0x55b6b8*/
+  if ( MapClass::GetScrollMode((MapClass *)&DataGlobal_87F7E8) ) /*0x55b6b8*/
   {
-    v54 = (int *)(MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]) + 156); /*0x55b6cf*/
+    v54 = (int *)(MapClass::GetScrollMode((MapClass *)&DataGlobal_87F7E8) + 156); /*0x55b6cf*/
     v64 = *v54; /*0x55b6d6*/
     v65 = v54[1]; /*0x55b6e8*/
     v66 = v54[2]; /*0x55b6ef*/
@@ -982,7 +982,7 @@ char Scenario::LoadOrReloadOptions(int aP1)
 {
 
   if ( aP1 ) /*0x597a16*/
-    return (*(char (**)(Scenario *, int))(this->__pad_000 + 4))(this, aP1); /*0x597a1b*/
+    return (*(char (**)(Scenario *, int))&this->__pad_000->Initialized)(this, aP1); /*0x597a1b*/
   else
     return (unsigned __int8)LoadOptions::Run((LoadOptions *)this) != 0; /*0x597a28*/
 

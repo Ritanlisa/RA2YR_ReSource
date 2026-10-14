@@ -231,9 +231,9 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_28C = 0; /*0x5f7243*/
   this->Image_d = 0; /*0x5f7249*/
   *this = (int)&ObjectTypeClass::`vftable'; /*0x5f7251*/
-  *((char *)this + 1) = (int)&ObjectTypeClass::`vftable'; /*0x5f7258*/
+  this->zero_3C = (int)&ObjectTypeClass::`vftable'; /*0x5f7258*/
   this->UINameLabel[0x20] = (int)&ObjectTypeClass::`vftable'; /*0x5f725f*/
-  *((char *)this + 3) = (int)&ObjectTypeClass::`vftable'; /*0x5f7266*/
+  this->u32_3 = (int)&ObjectTypeClass::`vftable'; /*0x5f7266*/
   if ( &this->u8_9 != &this->u8_7E ) /*0x5f726d*/
     qmemcpy(&this->u8_7E, &this->u8_9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
@@ -318,9 +318,9 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
   this->AbstractTypeClass = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
-  this->? = &ObjectTypeClass::`vftable'; /*0x5f73df*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73df) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73e6) */
-  this->vtable4 = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73ed) */
   return &this->AbstractTypeClass; /*0x5f73f6*/
 
 }
@@ -338,9 +338,9 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   int v8; // [esp+Ch] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f740b) */
-  this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f7411*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7411) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7418) */
-  *((unsigned int *)this + 3) = &ObjectTypeClass::`vftable'; /*0x5f741f*/
+  /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f741f) */
   v8 = this; /*0x5f7431*/
   v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/

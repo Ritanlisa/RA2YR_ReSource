@@ -317,7 +317,7 @@ int EventClass::deserializeEvent(int a2, unsigned int *aP2)
   int result; // eax
   unsigned int *v5; // edx
 
-  result = (*(int (**)(EventClass *, int))(this->__pad_000 + 24))(this, a2); /*0x54228c*/
+  result = (*(int (**)(EventClass *, int))&this->__pad_000->nextArrayIndex)(this, a2); /*0x54228c*/
   if ( result != -1 && result < (int)this->q044 ) /*0x542297*/
   {
     v5 = (unsigned int *)(this->q028 + result) + 76); /*0x5422a1*/

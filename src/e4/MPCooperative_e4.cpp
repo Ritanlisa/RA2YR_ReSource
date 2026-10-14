@@ -385,7 +385,7 @@ int MPCooperative::ReadCoopSaveINI()
         v4 = v5 + 1; /*0x49d243*/
         g_IsWindowed[v4] = EncodeDigitHex(*v1 & 0xF); /*0x49d249*/
       }
-      v8 = v1[1]; /*0x49d259*/
+      v8 = v1->u32_1; /*0x49d259*/
       ++v4; /*0x49d25c*/
       ++v1; /*0x49d25d*/
     }

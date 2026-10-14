@@ -518,41 +518,41 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   void *v9; // eax
 
   this->Socket = (int)&UDPInterfaceClass::`vftable'; /*0x7b2e56*/
-  while ( *((unsigned int *)this + 64722) ) /*0x7b2e5c*/
+  while ( this->M258888 ) /*0x7b2e5c*/
   {
-    __3_YAXPAX_Z(**((void ***)this + 64719)); /*0x7b2e6f*/
-    v2 = *((unsigned int *)this + 64722); /*0x7b2e74*/
+    __3_YAXPAX_Z(*this->M258876); /*0x7b2e6f*/
+    v2 = this->M258888; /*0x7b2e74*/
     if ( v2 > 0 ) /*0x7b2e7f*/
     {
       v3 = v2 - 1; /*0x7b2e81*/
       v4 = 0; /*0x7b2e84*/
-      for ( *((unsigned int *)this + 64722) = v3; /*0x7b2e8e*/
-            v4 < *((unsigned int *)this + 64722);
-            *(unsigned int *)(*((unsigned int *)this + 64719) + 4 * v4 - 4) = *(unsigned int *)(*((unsigned int *)this + 64719) + 4 * v4) )
+      for ( this->M258888 = v3; /*0x7b2e8e*/
+            v4 < this->M258888;
+            *(unsigned int *)(this->M258876 + 4 * v4 - 4) = *(unsigned int *)(this->M258876 + 4 * v4) )
       {
         ++v4; /*0x7b2e96*/
       }
     }
   }
-  while ( *((unsigned int *)this + 64856) ) /*0x7b2eb0*/
+  while ( this->M259424 ) /*0x7b2eb0*/
   {
-    __3_YAXPAX_Z(**((void ***)this + 64853)); /*0x7b2ec1*/
-    v5 = *((unsigned int *)this + 64856); /*0x7b2ec6*/
+    __3_YAXPAX_Z(*this->M259412); /*0x7b2ec1*/
+    v5 = this->M259424; /*0x7b2ec6*/
     if ( v5 > 0 ) /*0x7b2ed1*/
     {
       v6 = v5 - 1; /*0x7b2ed3*/
       v7 = 0; /*0x7b2ed6*/
-      for ( *((unsigned int *)this + 64856) = v6; /*0x7b2ee0*/
-            v7 < *((unsigned int *)this + 64856);
-            *(unsigned int *)(*((unsigned int *)this + 64853) + 4 * v7 - 4) = *(unsigned int *)(*((unsigned int *)this + 64853) + 4 * v7) )
+      for ( this->M259424 = v6; /*0x7b2ee0*/
+            v7 < this->M259424;
+            *(unsigned int *)(this->M259412 + 4 * v7 - 4) = *(unsigned int *)(this->M259412 + 4 * v7) )
       {
         ++v7; /*0x7b2ee8*/
       }
     }
   }
   UDPInterfaceClass::connect(this); /*0x7b2f04*/
-  v8 = (void *)*((unsigned int *)this + 64853); /*0x7b2f09*/
-  *((unsigned int *)this + 64852) = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f0f*/
+  v8 = (void *)this->M259412; /*0x7b2f09*/
+  this->M259408 = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f0f*/
   if ( v8 && this->M259421 ) /*0x7b2f1d*/
   {
     __3_YAXPAX_Z(v8); /*0x7b2f26*/
@@ -562,13 +562,13 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   this->M259416 = 0; /*0x7b2f3a*/
   v9 = (void *)this->M258876; /*0x7b2f40*/
   this->M258872 = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f46*/
-  if ( v9 && *((unsigned char *)this + 258885) ) /*0x7b2f54*/
+  if ( v9 && this->M258885 ) /*0x7b2f54*/
   {
     __3_YAXPAX_Z(v9); /*0x7b2f5d*/
-    *((unsigned int *)this + 64719) = 0; /*0x7b2f65*/
+    this->M258876 = 0; /*0x7b2f65*/
   }
-  *((unsigned char *)this + 258885) = 0; /*0x7b2f6d*/
-  *((unsigned int *)this + 64720) = 0; /*0x7b2f73*/
+  this->M258885 = 0; /*0x7b2f6d*/
+  this->M258880 = 0; /*0x7b2f73*/
   WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b2f79*/
 
 }

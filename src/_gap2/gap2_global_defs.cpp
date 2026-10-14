@@ -2419,7 +2419,7 @@ bool Gap2Recv_43B150::DetectNearbyAlliedThreat()
         if ( !v2 || (v2->abstractFlags & 4) == 0 ) /*0x43b310*/
           goto LABEL_23; /*0x43b310*/
         spawnStatus = v2[1].spawnStatus; /*0x43b316*/
-        v19 = spawnStatus ? *(CellClass **)(v2[1].health + 4 * spawnStatus - 4) : *(CellClass **)v2[1].hasParachute;
+        v19 = spawnStatus ? *(CellClass **)(v2[1].health + 4 * spawnStatus - 4) : *v2->vtable2.hasParachute;
         if ( !v19 ) /*0x43b334*/
           goto LABEL_23; /*0x43b334*/
         if ( (*(int (**)(CellClass *))(v19->mapCoords + 44))(v19) == 11 ) /*0x43b349*/
@@ -4655,7 +4655,7 @@ void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, i
     v11 = v7->vtable3; /*0x4cbc68*/
     a3 = v10; /*0x4cbc6c*/
     __asm { fild dword ptr [esp+34h+arg_4] } /*0x4cbc70*/
-    v12 = *((int16_t *)a4 + 1); /*0x4cbc74*/
+    v12 = a4->ptr_2; /*0x4cbc74*/
     __asm { fsubp st(1), st } /*0x4cbc78*/
     a3 = v11; /*0x4cbc7a*/
     __asm /*0x4cbc7e*/
@@ -9564,8 +9564,8 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     while ( v52 ); /*0x584153*/
   }
   v9 = aP1; /*0x584155*/
-  v10 = (__int16 *)(aP1 + 36); /*0x58415b*/
-  v11 = Cell::CoordToIndex((Cell *)v5, (__int16 *)(aP1 + 36)); /*0x58415f*/
+  v10 = &aP1->u32_24; /*0x58415b*/
+  v11 = Cell::CoordToIndex((Cell *)v5, &aP1->u32_24); /*0x58415f*/
   if ( v11 >= 0 ) /*0x584166*/
   {
     health = v5->health; /*0x58416c*/
@@ -9580,7 +9580,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
   v13 = *(unsigned short *)(v5->estimatedHealth + 2 * (a3 + 4 * v11 + v11)); /*0x58418a*/
   g_MissionQueueFrame.briefing[8] = v9; /*0x58418e*/
   v53 = v13; /*0x584197*/
-  v14 = (v6 - 1) & *(__int16 *)(v9 + 38); /*0x5841a5*/
+  v14 = (v6 - 1) & v9->q026; /*0x5841a5*/
   v15 = 1; /*0x5841a7*/
   *((unsigned char *)&g_MissionQueueFrame.briefing[2 * ((v6 - 1) & *v10) + 256] + v14) = 1; /*0x5841ac*/
   v58 = &dword_82A594[8 * *(unsigned int *)((*(int (**)(int))(*(unsigned int *)j + 132))(j) + 1460)]; /*0x5841ce*/
@@ -9610,10 +9610,10 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
       if ( !(*(int (**)(__int16 *, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)j + 428))( /*0x584286*/
               v17,
               v46,
-              *((char *)v17 + 283),
+              v17->u32_11B,
               0,
               1)
-        || v58[*((unsigned int *)v17 + 19)] != 1 )
+        || v58[v17->u32_4C] != 1 )
       {
         if ( v22 == v53 ) /*0x584291*/
         {
@@ -9663,8 +9663,8 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     v5 = this; /*0x5841d8*/
     v6 = v48; /*0x5841dc*/
   }
-  v26 = (unsigned short *)(aP1 + 36); /*0x58436a*/
-  v27 = (v48 - 1) & *(unsigned short *)(aP1 + 36); /*0x58436d*/
+  v26 = &aP1->u32_24; /*0x58436a*/
+  v27 = (v48 - 1) & aP1->u32_24; /*0x58436d*/
   v28 = (v48 - 1) & *(unsigned short *)(aP1 + 38); /*0x58436f*/
   v47 = 0; /*0x584377*/
   if ( v48 > 0 ) /*0x58437f*/
@@ -9679,7 +9679,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
         aP1 = v56; /*0x5843ba*/
         if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)this, (__int16 *)&aP1, 1) ) /*0x5843c1*/
         {
-          v29 = (__int16)aP1 + SHIWORD(aP1) * (*((unsigned int *)this + 62) + *((unsigned int *)this + 61) + 1); /*0x5843e7*/
+          v29 = (__int16)aP1 + SHIWORD(aP1) * (this->M248 + this->M244 + 1); /*0x5843e7*/
           if ( v29 >= 0 ) /*0x5843e9*/
           {
             v30 = this->health; /*0x5843ef*/
@@ -14209,7 +14209,7 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   this->q054 = 0; /*0x5cee39*/
   (*(void (**)(DynamicVector *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5cee3e*/
   DeleteAndZero::Alt2((DeleteAndZero *)p_DynamicVector_field_0x28); /*0x5cee43*/
-  (*(void (**)(DynamicVector *))(this->M44 + 12))(this + 1); /*0x5cee4c*/
+  (*(void (**)(DynamicVector *))(this->M44 + 12))(&this->M12); /*0x5cee4c*/
   return this->vfptr; /*0x5cee51*/
 }
 // 0x5CF830
@@ -15362,7 +15362,7 @@ int Gap2Recv_60B420::UI_Get_60B420(HWND hWnd) {
     goto LABEL_7; /*0x60b4cd*/
   while ( *v7 != v13 ) /*0x60b4d5*/
   {
-    v7 = (ObjectClass **)v7[129]; /*0x60b4d7*/
+    v7 = v7->q204; /*0x60b4d7*/
     if ( !v7 ) /*0x60b4df*/
       goto LABEL_7; /*0x60b4df*/
   }
@@ -15449,7 +15449,7 @@ int Gap2Recv_60B610::UI_Get_60B610(HWND hWnd) {
     goto LABEL_7; /*0x60b6bd*/
   while ( *v7 != hWnd ) /*0x60b6c5*/
   {
-    v7 = (ObjectClass **)v7[129]; /*0x60b6c7*/
+    v7 = v7->q204; /*0x60b6c7*/
     if ( !v7 ) /*0x60b6cf*/
       goto LABEL_7; /*0x60b6cf*/
   }
@@ -15542,7 +15542,7 @@ char Gap2Recv_60C7D0::UI_Helper_60C7D0() {
     return 0; /*0x60c802*/
   while ( *v1 != v5 ) /*0x60c80a*/
   {
-    v1 = (ObjectClass **)v1[129]; /*0x60c80c*/
+    v1 = v1->q204; /*0x60c80c*/
     if ( !v1 ) /*0x60c814*/
       return 0; /*0x60c819*/
   }
@@ -15593,7 +15593,7 @@ char Gap2Recv_60C930::UI_Helper_60C930() {
     return 0; /*0x60c962*/
   while ( *v1 != v5 ) /*0x60c96a*/
   {
-    v1 = (ObjectClass **)v1[129]; /*0x60c96c*/
+    v1 = v1->q204; /*0x60c96c*/
     if ( !v1 ) /*0x60c974*/
       return 0; /*0x60c979*/
   }
@@ -15635,7 +15635,7 @@ char Gap2Recv_60CAF0::UI_Helper_60CAF0() {
     return 0; /*0x60cb22*/
   while ( *v1 != v5 ) /*0x60cb2a*/
   {
-    v1 = (ObjectClass **)v1[129]; /*0x60cb2c*/
+    v1 = v1->q204; /*0x60cb2c*/
     if ( !v1 ) /*0x60cb34*/
       return 0; /*0x60cb39*/
   }
@@ -15680,7 +15680,7 @@ char Gap2Recv_60CCC0::UI_Helper_60CCC0() {
     return 0; /*0x60ccf2*/
   while ( *v1 != v5 ) /*0x60ccfa*/
   {
-    v1 = (ObjectClass **)v1[129]; /*0x60ccfc*/
+    v1 = v1->q204; /*0x60ccfc*/
     if ( !v1 ) /*0x60cd04*/
       return 0; /*0x60cd09*/
   }
@@ -15717,7 +15717,7 @@ char Gap2Recv_60CDB0::UI_Helper_60CDB0() {
     return 0; /*0x60cde2*/
   while ( *v1 != v5 ) /*0x60cdea*/
   {
-    v1 = (ObjectClass **)v1[129]; /*0x60cdec*/
+    v1 = v1->q204; /*0x60cdec*/
     if ( !v1 ) /*0x60cdf4*/
       return 0; /*0x60cdf9*/
   }
@@ -15992,7 +15992,7 @@ void ParticleClass::Update() {
   v28 = v20; /*0x62ca52*/
   (*((unsigned short *)&(v21))) = Math::RoundToInt(v42); /*0x62ca53*/
   Coord::Subtract((Coord *)&v50, v21, v28, v31); /*0x62ca5d*/
-  (*(void (**)(TechnoClass *, Coord3D *))(this->vfptr + 436))(this, &v50); /*0x62ca6c*/
+  (*(void (**)(TechnoClass *, Coord3D *))&this->vfptr->AudioController_1B4)(this, &v50); /*0x62ca6c*/
   v41 = COERCE_FLOAT(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646)); /*0x62ca8b*/
   currentMission = this->currentMission; /*0x62ca8f*/
   v23 = (double)(*((signed int *)&(v41))) * 4.656612877414201e-10 * 0.05 /*0x62caab*/
@@ -25086,8 +25086,8 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
     return 0; /*0x6c9fe8*/
   Render_Parse_6CABA0(0, 0); /*0x6c9ff4*/
   *v8 = &DynamicVectorClass<SubTitle *>::`vftable'; /*0x6c9ff9*/
-  v8[5] = 10; /*0x6c9fff*/
-  v8[4] = 0; /*0x6ca006*/
+  v8->u32_14 = 10; /*0x6c9fff*/
+  v8->q010 = 0; /*0x6ca006*/
   while ( 1 ) /*0x6ca0e2*/
   {
     do /*0x6ca0e2*/
@@ -25097,9 +25097,9 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
         do /*0x6ca08e*/
         {
           v9 = *(unsigned int *)this; /*0x6ca00d*/
-          v10 = (unsigned char *)this + 4; /*0x6ca010*/
+          v10 = &this->M4; /*0x6ca010*/
           v11 = 0; /*0x6ca018*/
-          *((unsigned short *)this + 2) = 0; /*0x6ca01a*/
+          this->M4 = 0; /*0x6ca01a*/
           do /*0x6ca050*/
           {
             if ( (*(int (**)(int, __int16 *, int))(*(unsigned int *)v9 + 8))(v9, &v23, 2) != 2 || v23 == 10 ) /*0x6ca03b*/
@@ -25113,8 +25113,8 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
           }
           while ( v11 < 1024 ); /*0x6ca050*/
           *((unsigned short *)this + v11 + 2) = 0; /*0x6ca05c*/
-          ++*((unsigned int *)this + 513); /*0x6ca069*/
-          v12 = WideString::Trim((wchar_t *)this + 2); /*0x6ca074*/
+          ++this->M2052; /*0x6ca069*/
+          v12 = WideString::Trim(&this->M4); /*0x6ca074*/
         }
         while ( !wcslen(v12) || *v12 == 59 || !v12 || !wcslen(v12) ); /*0x6ca08e*/
         if ( *v12 == 60 && v12[wcslen(v12) - 1] == 62 ) /*0x6ca0b7*/
@@ -25138,21 +25138,21 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
     if ( (unsigned __int8)Render_Parse_6CA310(v13, v15) == 1 ) /*0x6ca116*/
     {
       v17 = v24; /*0x6ca118*/
-      v18 = *(unsigned int *)(v24 + 8); /*0x6ca11c*/
-      if ( *(unsigned int *)(v24 + 16) < v18 ) /*0x6ca124*/
+      v18 = v24->Capacity; /*0x6ca11c*/
+      if ( v24->q010 < v18 ) /*0x6ca124*/
         goto LABEL_34; /*0x6ca124*/
       if ( *(unsigned char *)(v24 + 13) || !v18 ) /*0x6ca12f*/
       {
-        v19 = *(unsigned int *)(v24 + 20); /*0x6ca135*/
+        v19 = v24->u32_14; /*0x6ca135*/
         if ( v19 > 0 ) /*0x6ca13a*/
         {
           if ( (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v24 + 8))(v24, v18 + v19, 0) ) /*0x6ca14b*/
           {
             v17 = v24; /*0x6ca156*/
 LABEL_34:
-            v20 = *(unsigned int *)(v17 + 16); /*0x6ca15a*/
-            *(unsigned int *)(v17 + 16) = v20 + 1; /*0x6ca160*/
-            *(unsigned int *)(*(unsigned int *)(v17 + 4) + 4 * v20) = v16; /*0x6ca166*/
+            v20 = v17->q010; /*0x6ca15a*/
+            v17->q010 = v20 + 1; /*0x6ca160*/
+            *(unsigned int *)(v17->Items + 4 * v20) = v16; /*0x6ca166*/
           }
         }
       }
@@ -25166,7 +25166,7 @@ LABEL_34:
   Debug::Log(); /*0x6ca1aa*/
 LABEL_39:
   result = v24; /*0x6ca1b2*/
-  if ( !*(unsigned int *)(v24 + 16) ) /*0x6ca1b6*/
+  if ( !v24->q010 ) /*0x6ca1b6*/
   {
     (**(void (***)(int, int))v24)(v24, 1); /*0x6ca1c3*/
     return 0; /*0x6ca1c3*/
@@ -30144,11 +30144,11 @@ int Gap2Recv_74C9F0::DestroyVeinholeMonster() {
   (*((unsigned char *)&(v1[2].VeinholeMonsterClass_field_0x1C))) = 0; /*0x74cc2b*/
   if ( VeinholeMonsterClass_field_0x14 > 0 ) /*0x74cc2f*/
     AbstractClass::AnnounceExpiredPointer((AbstractClass *)v1, v4); /*0x74cc33*/
-  v20 = *(ObjectClass **)v1[4].__pad_0; /*0x74cc38*/
+  v20 = *v1->uniqueId.__pad_0; /*0x74cc38*/
   if ( v20 ) /*0x74cc40*/
   {
     DestroyVeinholeMonster_Destroy(v20); /*0x74cc42*/
-    v21 = *(void ***)v1[4].__pad_0; /*0x74cc47*/
+    v21 = *v1->uniqueId.__pad_0; /*0x74cc47*/
     if ( v21 ) /*0x74cc4f*/
     {
       operator delete((void *)(v21[2])); /*0x74cc55*/
@@ -32023,7 +32023,7 @@ void* Gap2Recv_766A10::System_Init_766A10(int a2, int arg4, void * a3, ObjectCla
   this->M4 = 0; /*0x766a2d*/
   /* X11: vtable install elided (implicit via WorldDominationTourGameOption virtuals 0x766a34) */
   this->M16 = arg4; /*0x766a3a*/
-  String::AssignFromPtr((char **)this + 5, (const char **)&a3); /*0x766a3d*/
+  String::AssignFromPtr(&this->u32_14, (const char **)&a3); /*0x766a3d*/
   /* X11: vtable install elided (implicit via WorldDominationTourValueGameOption virtuals 0x766a46) */
   DeleteAndZero(&a3); /*0x766a4c*/
   return this; /*0x766a53*/
@@ -32079,8 +32079,8 @@ void* Gap2Recv_767820::ConstructorWDTFlagOption_Create(int arg0, void * a2, int 
   this->M4 = 0; /*0x76783d*/
   /* X11: vtable install elided (implicit via WorldDominationTourGameOption virtuals 0x767844) */
   this->M16 = v6; /*0x76784a*/
-  String::AssignFromPtr((char **)this + 5, (const char **)&a4); /*0x76784d*/
-  String::AssignFromPtr((char **)this + 6, (const char **)&a2); /*0x76785a*/
+  String::AssignFromPtr(&this->u32_14, (const char **)&a4); /*0x76784d*/
+  String::AssignFromPtr(&this->ptr_18, (const char **)&a2); /*0x76785a*/
   /* X11: vtable install elided (implicit via WorldDominationTourFlagGameOption virtuals 0x767863) */
   DeleteAndZero(&a2); /*0x767869*/
   DeleteAndZero(&a4); /*0x767872*/
@@ -32624,7 +32624,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
   wchar_t *v8; // ecx
   wchar_t *v9; // eax
 
-  v3 = this + 8; /*0x76bf05*/
+  v3 = &this->u32_8; /*0x76bf05*/
   this->M4 = 0; /*0x76bf08*/
   /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x76bf11) */
   ComPtr::Constructor(&this->u32_8); /*0x76bf17*/
@@ -32643,7 +32643,7 @@ char* Gap2Recv_76BF00::Audio_Create_76BF00(int a2) {
   else
     v8 = aWdtDefaultlong; /*0x76bf72*/
   v9 = GetStringCSF(v8, 0, aDRa2mdpostWdtp, 21); /*0x76bf77*/
-  WideString::Assign((wchar_t **)this + 5, v9); /*0x76bf80*/
+  WideString::Assign(&this->ptr_14, v9); /*0x76bf80*/
   /* X11: vtable install elided (implicit via WorldDominationTourCampaignProperties virtuals 0x76bf85) */
   return this; /*0x76bf8d*/
 }
@@ -32902,7 +32902,7 @@ void Gap2Recv_76C970::ConstructWDTSelection_Create_76C970(unsigned int * a1, Sel
   char **v3; // edi
 
   v3 = (char **)aP2; /*0x76c977*/
-  Animation::LoadSidebarAnimations((void **)(this + 88), a1, aP2); /*0x76c982*/
+  Animation::LoadSidebarAnimations(&this->u32_58, a1, aP2); /*0x76c982*/
   String::Assign((char **)&aP2, aWinningthresho); /*0x76c990*/
   this->ptr_434 = INIClass::ReadInt(v3, (char **)&aP2, this->ptr_434); /*0x76c9ad*/
   DeleteAndZero((void **)&aP2); /*0x76c9b3*/

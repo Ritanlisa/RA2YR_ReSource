@@ -166,7 +166,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   this->u32_D4 = -1; /*0x6f079f*/
   this->q0D8 = -1; /*0x6f07a5*/
   this->u32_DC = 0; /*0x6f07ab*/
-  this->q0E0 = 0; /*0x6f07b1*/
+  this->FootClass_E0 = 0; /*0x6f07b1*/
   this->Tactical_E4 = 0; /*0x6f07b7*/
   this->q0E8 = 0; /*0x6f07bd*/
   this->q0EC = 9; /*0x6f07c3*/
@@ -179,9 +179,9 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   this->u32_F6 = 0; /*0x6f07f1*/
   this->q0F7 = 0; /*0x6f07f7*/
   this->AbstractClass = &TeamTypeClass::`vftable'; /*0x6f07fd*/
-  this->? = &TeamTypeClass::`vftable'; /*0x6f0803*/
+  /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0803) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
-  this->vtable4 = &TeamTypeClass::`vftable'; /*0x6f0811*/
+  /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0811) */
   v3 = *(unsigned int *)&stru_A8EB00.?[204]; /*0x6f0818*/
   if ( *(int *)&stru_A8EB00.?[204] < *(int *)&stru_A8EB00.?[196] /*0x6f0857*/
     || (stru_A8EB00.?[201] || !*(unsigned int *)&stru_A8EB00.?[196])
@@ -286,10 +286,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->q324 = 0; /*0x710bf8*/
   this->q328 = 10; /*0x710bfb*/
   this->DebrisTypes = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x710bfe*/
-  VectorClass::Construct((unsigned int *)this + 204, 0, 0); /*0x710c0f*/
-  *((unsigned int *)this + 209) = 10; /*0x710c14*/
-  *((unsigned int *)this + 208) = 0; /*0x710c17*/
-  *((unsigned int *)this + 204) = &TypeList<int>::`vftable'; /*0x710c1a*/
+  VectorClass::Construct(&this->DebrisMaximums, 0, 0); /*0x710c0f*/
+  this->u32_344 = 10; /*0x710c14*/
+  this->u32_340 = 0; /*0x710c17*/
+  this->DebrisMaximums = &TypeList<int>::`vftable'; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
   this->u32_350 = 298948665; /*0x710c39*/
   this->q354 = -1610610249; /*0x710c42*/
@@ -330,92 +330,92 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->u32_3FC = 10; /*0x710d4b*/
   this->u32_3F8 = 0; /*0x710d51*/
   this->Dock = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x710d57*/
-  *((unsigned int *)this + 257) = 0; /*0x710d61*/
-  *((unsigned int *)this + 258) = 0; /*0x710d67*/
-  *((unsigned int *)this + 259) = 0; /*0x710d6e*/
-  *((unsigned char *)this + 1040) = 0; /*0x710d7b*/
-  VectorClass::Construct((unsigned int *)this + 261, 0, 0); /*0x710d81*/
-  *((unsigned int *)this + 266) = 10; /*0x710d8e*/
-  *((unsigned int *)this + 265) = 0; /*0x710d94*/
-  *((unsigned int *)this + 261) = &TypeList<int>::`vftable'; /*0x710d9a*/
+  this->DeploysInto = 0; /*0x710d61*/
+  this->UndeploysInto = 0; /*0x710d67*/
+  this->PowersUnit = 0; /*0x710d6e*/
+  this->PoweredUnit = 0; /*0x710d7b*/
+  VectorClass::Construct(&this->VoiceSelect, 0, 0); /*0x710d81*/
+  this->u32_428 = 10; /*0x710d8e*/
+  this->ptr_424 = 0; /*0x710d94*/
+  this->VoiceSelect = &TypeList<int>::`vftable'; /*0x710d9a*/
   VectorClass::Construct(&this->VoiceSelectEnslaved, 0, 0); /*0x710da4*/
   this->u32_444 = 10; /*0x710db1*/
   this->u32_440 = 0; /*0x710db7*/
   this->VoiceSelectEnslaved = &TypeList<int>::`vftable'; /*0x710dbd*/
-  VectorClass::Construct((unsigned int *)this + 275, 0, 0); /*0x710dc7*/
-  *((unsigned int *)this + 280) = 10; /*0x710dd4*/
-  *((unsigned int *)this + 279) = 0; /*0x710dda*/
-  *((unsigned int *)this + 275) = &TypeList<int>::`vftable'; /*0x710de0*/
+  VectorClass::Construct(&this->VoiceSelectDeactivated, 0, 0); /*0x710dc7*/
+  this->u32_460 = 10; /*0x710dd4*/
+  this->u32_45C = 0; /*0x710dda*/
+  this->VoiceSelectDeactivated = &TypeList<int>::`vftable'; /*0x710de0*/
   VectorClass::Construct(&this->VoiceMove, 0, 0); /*0x710dea*/
   this->u32_47C = 10; /*0x710df7*/
   this->u32_478 = 0; /*0x710dfd*/
   this->VoiceMove = &TypeList<int>::`vftable'; /*0x710e03*/
-  VectorClass::Construct((unsigned int *)this + 289, 0, 0); /*0x710e0d*/
-  *((unsigned int *)this + 294) = 10; /*0x710e1a*/
-  *((unsigned int *)this + 293) = 0; /*0x710e20*/
-  *((unsigned int *)this + 289) = &TypeList<int>::`vftable'; /*0x710e26*/
+  VectorClass::Construct(&this->VoiceAttack, 0, 0); /*0x710e0d*/
+  this->u32_498 = 10; /*0x710e1a*/
+  this->ptr_494 = 0; /*0x710e20*/
+  this->VoiceAttack = &TypeList<int>::`vftable'; /*0x710e26*/
   VectorClass::Construct(&this->VoiceSpecialAttack, 0, 0); /*0x710e30*/
   this->u32_4B4 = 10; /*0x710e3d*/
   this->u32_4B0 = 0; /*0x710e43*/
   this->VoiceSpecialAttack = &TypeList<int>::`vftable'; /*0x710e49*/
-  VectorClass::Construct((unsigned int *)this + 303, 0, 0); /*0x710e53*/
-  *((unsigned int *)this + 308) = 10; /*0x710e58*/
-  *((unsigned int *)this + 307) = 0; /*0x710e5e*/
-  *((unsigned int *)this + 303) = &TypeList<int>::`vftable'; /*0x710e6c*/
+  VectorClass::Construct(&this->VoiceDie, 0, 0); /*0x710e53*/
+  this->u32_4D0 = 10; /*0x710e58*/
+  this->u32_4CC = 0; /*0x710e5e*/
+  this->VoiceDie = &TypeList<int>::`vftable'; /*0x710e6c*/
   VectorClass::Construct(&this->VoiceFeedback, 0, 0); /*0x710e76*/
   this->u32_4EC = 10; /*0x710e83*/
   this->u32_4E8 = 0; /*0x710e89*/
   this->VoiceFeedback = &TypeList<int>::`vftable'; /*0x710e8f*/
-  VectorClass::Construct((unsigned int *)this + 317, 0, 0); /*0x710e99*/
-  *((unsigned int *)this + 322) = 10; /*0x710ea6*/
-  *((unsigned int *)this + 321) = 0; /*0x710eac*/
-  *((unsigned int *)this + 317) = &TypeList<int>::`vftable'; /*0x710eb2*/
+  VectorClass::Construct(&this->MoveSound, 0, 0); /*0x710e99*/
+  this->u32_508 = 10; /*0x710ea6*/
+  this->u32_504 = 0; /*0x710eac*/
+  this->MoveSound = &TypeList<int>::`vftable'; /*0x710eb2*/
   VectorClass::Construct(&this->DieSound, 0, 0); /*0x710ebc*/
   this->u32_524 = 10; /*0x710ec1*/
   this->BuildingTypeClass_520 = 0; /*0x710ec7*/
   this->DieSound = &TypeList<int>::`vftable'; /*0x710ecd*/
-  *((unsigned int *)this + 331) = -1; /*0x710ed7*/
-  *((unsigned int *)this + 332) = -1; /*0x710edd*/
-  *((unsigned int *)this + 333) = -1; /*0x710ee3*/
-  *((unsigned int *)this + 334) = -1; /*0x710ee9*/
-  *((unsigned int *)this + 335) = -1; /*0x710eef*/
-  *((unsigned int *)this + 336) = -1; /*0x710ef5*/
-  *((unsigned int *)this + 337) = -1; /*0x710efb*/
-  *((unsigned int *)this + 338) = -1; /*0x710f01*/
-  *((unsigned int *)this + 339) = -1; /*0x710f07*/
-  *((unsigned int *)this + 340) = -1; /*0x710f0d*/
-  *((unsigned int *)this + 341) = -1; /*0x710f13*/
-  *((unsigned int *)this + 342) = -1; /*0x710f19*/
-  *((unsigned int *)this + 343) = -1; /*0x710f1f*/
-  *((unsigned int *)this + 344) = -1; /*0x710f25*/
-  *((unsigned int *)this + 345) = -1; /*0x710f2b*/
-  *((unsigned int *)this + 346) = -1; /*0x710f31*/
-  *((unsigned int *)this + 347) = -1; /*0x710f37*/
-  *((unsigned int *)this + 348) = -1; /*0x710f3d*/
-  *((unsigned int *)this + 349) = -1; /*0x710f43*/
-  *((unsigned int *)this + 350) = -1; /*0x710f49*/
-  *((unsigned int *)this + 351) = -1; /*0x710f4f*/
-  *((unsigned int *)this + 352) = -1; /*0x710f55*/
-  *((unsigned int *)this + 353) = -1; /*0x710f5b*/
-  *((unsigned int *)this + 354) = -1; /*0x710f61*/
-  *((unsigned int *)this + 355) = -1; /*0x710f68*/
-  *((unsigned int *)this + 356) = -1; /*0x710f75*/
-  *((unsigned int *)this + 357) = -1; /*0x710f7b*/
-  *((unsigned int *)this + 358) = -1; /*0x710f81*/
-  *((unsigned int *)this + 359) = -1; /*0x710f87*/
-  *((unsigned int *)this + 360) = -1; /*0x710f8d*/
-  *((unsigned int *)this + 361) = -1; /*0x710f93*/
-  *((unsigned int *)this + 362) = -1; /*0x710f99*/
-  *((unsigned int *)this + 363) = -1; /*0x710f9f*/
-  *((unsigned int *)this + 364) = -1; /*0x710fa5*/
-  *((unsigned int *)this + 365) = 0; /*0x710fab*/
-  *((unsigned int *)this + 366) = 0; /*0x710fb1*/
-  *((unsigned int *)this + 367) = 0; /*0x710fb7*/
-  *((unsigned int *)this + 368) = 0; /*0x710fbd*/
-  AnimTypeVector::Constructor((unsigned int *)this + 369, 0, 0); /*0x710fc3*/
-  *((unsigned int *)this + 374) = 10; /*0x710fc8*/
-  *((unsigned int *)this + 373) = 0; /*0x710fce*/
-  *((unsigned int *)this + 369) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x710fd4*/
+  this->AuxSound1 = -1; /*0x710ed7*/
+  this->AuxSound2 = -1; /*0x710edd*/
+  this->CreateSound = -1; /*0x710ee3*/
+  this->DamageSound = -1; /*0x710ee9*/
+  this->ImpactWaterSound = -1; /*0x710eef*/
+  this->ImpactLandSound = -1; /*0x710ef5*/
+  this->CrashingSound = -1; /*0x710efb*/
+  this->SinkingSound = -1; /*0x710f01*/
+  this->VoiceFalling = -1; /*0x710f07*/
+  this->VoiceCrashing = -1; /*0x710f0d*/
+  this->VoiceSinking = -1; /*0x710f13*/
+  this->VoiceEnter = -1; /*0x710f19*/
+  this->VoiceCapture = -1; /*0x710f1f*/
+  this->TurretRotateSound = -1; /*0x710f25*/
+  this->EnterTransportSound = -1; /*0x710f2b*/
+  this->LeaveTransportSound = -1; /*0x710f31*/
+  this->DeploySound = -1; /*0x710f37*/
+  this->UndeploySound = -1; /*0x710f3d*/
+  this->ChronoInSound = -1; /*0x710f43*/
+  this->ChronoOutSound = -1; /*0x710f49*/
+  this->VoiceHarvest = -1; /*0x710f4f*/
+  this->VoicePrimaryWeaponAttack = -1; /*0x710f55*/
+  this->VoicePrimaryEliteWeaponAttack = -1; /*0x710f5b*/
+  this->VoiceSecondaryWeaponAttack = -1; /*0x710f61*/
+  this->VoiceSecondaryEliteWeaponAttack = -1; /*0x710f68*/
+  this->VoiceDeploy = -1; /*0x710f75*/
+  this->VoiceUndeploy = -1; /*0x710f7b*/
+  this->EnterGrinderSound = -1; /*0x710f81*/
+  this->LeaveGrinderSound = -1; /*0x710f87*/
+  this->EnterBioReactorSound = -1; /*0x710f8d*/
+  this->LeaveBioReactorSound = -1; /*0x710f93*/
+  this->ActivateSound = -1; /*0x710f99*/
+  this->DeactivateSound = -1; /*0x710f9f*/
+  this->MindClearedSound = -1; /*0x710fa5*/
+  this->MovementZone = 0; /*0x710fab*/
+  this->GuardRange = 0; /*0x710fb1*/
+  this->MinDebris = 0; /*0x710fb7*/
+  this->MaxDebris = 0; /*0x710fbd*/
+  AnimTypeVector::Constructor(&this->DebrisAnims, 0, 0); /*0x710fc3*/
+  this->u32_5D8 = 10; /*0x710fc8*/
+  this->u32_5D4 = 0; /*0x710fce*/
+  this->DebrisAnims = &TypeList<AnimTypeClass const *>::`vftable'; /*0x710fd4*/
   this->Passengers = 0; /*0x710fde*/
   this->OpenTopped = 0; /*0x710fe4*/
   this->Sight = 0; /*0x710fea*/
@@ -445,10 +445,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->u32_64C = 10; /*0x711099*/
   this->u32_648 = 0; /*0x71109f*/
   this->Prerequisite = &TypeList<int>::`vftable'; /*0x7110a5*/
-  VectorClass::Construct((unsigned int *)this + 405, 0, 0); /*0x7110af*/
-  *((unsigned int *)this + 410) = 10; /*0x7110b8*/
-  *((unsigned int *)this + 409) = 0; /*0x7110be*/
-  *((unsigned int *)this + 405) = &TypeList<int>::`vftable'; /*0x7110c4*/
+  VectorClass::Construct(&this->PrerequisiteOverride, 0, 0); /*0x7110af*/
+  this->VeteranAbilities = 10; /*0x7110b8*/
+  this->IdleRate = 0; /*0x7110be*/
+  this->PrerequisiteOverride = &TypeList<int>::`vftable'; /*0x7110c4*/
   this->ThreatPosed = 0; /*0x7110ce*/
   this->Points = 0; /*0x7110d4*/
   this->Speed = 0; /*0x7110da*/
@@ -516,10 +516,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->u32_740 = 10; /*0x71124a*/
   this->u32_73C = 0; /*0x711250*/
   this->Explosion = &TypeList<AnimTypeClass const *>::`vftable'; /*0x711256*/
-  AnimTypeVector::Constructor((unsigned int *)this + 466, 0, 0); /*0x711260*/
-  *((unsigned int *)this + 471) = 10; /*0x711265*/
-  *((unsigned int *)this + 470) = 0; /*0x71126b*/
-  *((unsigned int *)this + 466) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x711271*/
+  AnimTypeVector::Constructor(&this->DestroyAnim, 0, 0); /*0x711260*/
+  this->u32_75C = 10; /*0x711265*/
+  this->ptr_758 = 0; /*0x71126b*/
+  this->DestroyAnim = &TypeList<AnimTypeClass const *>::`vftable'; /*0x711271*/
   this->NaturalParticleSystem = 0; /*0x71127b*/
   this->NaturalParticleSystemLocation = 0; /*0x711282*/
   this->u32_76C = 0; /*0x711288*/
@@ -530,9 +530,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->VoxelAnimList_Embed = 0; /*0x7112b4*/
   this->DamageParticleSystems = &TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x7112ba*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112c4*/
-  *((unsigned int *)this + 490) = 10; /*0x7112c9*/
-  *((unsigned int *)this + 489) = 0; /*0x7112cf*/
-  *((unsigned int *)this + 485) = &TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x7112d5*/
+  this->u32_7A8 = 10; /*0x7112c9*/
+  this->u32_7A4 = 0; /*0x7112cf*/
+  this->DestroyParticleSystems = &TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x7112d5*/
   this->DamageSmokeOffset = 0; /*0x7112df*/
   this->u32_7B4 = 0; /*0x7112e5*/
   this->u32_7B8 = 0; /*0x7112eb*/
@@ -681,15 +681,15 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   this->u32_DCC = 0; /*0x71167a*/
   this->u32_DF0 = 0; /*0x711680*/
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711686) */
-  this->vtable2 = &TechnoTypeClass::`vftable'; /*0x71168c*/
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x71168c) */
   /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x711693) */
-  *((unsigned int *)this + 3) = &TechnoTypeClass::`vftable'; /*0x71169a*/
+  /* X11: vtable install elided (implicit via TechnoTypeClass virtuals 0x71169a) */
   this->u32_DD0 = 0; /*0x7116a7*/
   this->IsLogic_d = 1; /*0x7116ad*/
-  (*(void (**)(char *))(this->DebrisTypes + 12))(&this->DebrisTypes); /*0x7116b6*/
-  (*(void (**)(char *))(this->DebrisAnims + 12))(&this->DebrisAnims); /*0x7116c5*/
-  (*(void (**)(char *))(this->DebrisMaximums + 12))(&this->DebrisMaximums); /*0x7116d4*/
-  (*(void (**)(char *))(this->Dock + 12))(&this->Dock); /*0x7116e3*/
+  (*(void (**)(char *))&this->DebrisTypes->IsInitialized)(&this->DebrisTypes); /*0x7116b6*/
+  (*(void (**)(char *))&this->DebrisAnims->IsInitialized)(&this->DebrisAnims); /*0x7116c5*/
+  (*(void (**)(char *))&this->DebrisMaximums->IsInitialized)(&this->DebrisMaximums); /*0x7116d4*/
+  (*(void (**)(char *))&this->Dock->IsInitialized)(&this->Dock); /*0x7116e3*/
   v4 = &this->q8A8; /*0x7116e6*/
   v5 = 18; /*0x7116ec*/
   do /*0x71170f*/

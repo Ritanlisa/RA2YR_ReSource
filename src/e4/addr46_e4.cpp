@@ -238,7 +238,7 @@ void sub_46DA70()
       v4 = dword_A8D580++; /*0x46dacf*/
       v5 = 112 * v4; /*0x46dae1*/
       *((unsigned int *)&dword_A8D228 + 28 * v4) = 0; /*0x46daea*/
-      wcscpy((wchar_t *)&unk_A8D1FC + 56 * v4, (const wchar_t *)(v3 + 90154)); /*0x46daf5*/
+      wcscpy((wchar_t *)&unk_A8D1FC + 56 * v4, &v3->u8_1602A); /*0x46daf5*/
       v6 = 0; /*0x46dafa*/
       *((unsigned int *)&dword_A8D22C + 28 * v4) = 0; /*0x46daff*/
       *((unsigned int *)&dword_A8D23C + 28 * v4) = 0; /*0x46db05*/

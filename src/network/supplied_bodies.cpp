@@ -152,7 +152,7 @@ int16_t NetworkID::Assign(unsigned int * a2, int a3, int16_t a4)
 // 0x53EF30
 namespace gamemd {
 int NetworkID::Compare(int a2) {
-  return memcmp(this + 4, (const void *)(a2 + 4), dword_828140 != 2 ? 6 : 4) == 0;
+  return memcmp(&this->q004, &a2->u32_4, dword_828140 != 2 ? 6 : 4) == 0;
 }
 } // namespace gamemd
 
@@ -223,7 +223,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v13 = 0; /*0x53fdc5*/
       while ( 1 ) /*0x53fdc7*/
       {
-        if ( v12 >= *(unsigned int *)(this->PlayerIndex + 60) ) /*0x53fdcd*/
+        if ( v12 >= *(unsigned int *)&this->PlayerIndex->q03C ) /*0x53fdcd*/
         {
   LABEL_23:
           v11 = a5; /*0x53fe05*/
@@ -3867,7 +3867,7 @@ bool NullModemClass::Connect()
   v5 = this->u32_38; /*0x5f1bd2*/
   this->a2 = a2; /*0x5f1bd5*/
   *(unsigned int *)(v5 + 40) = a2; /*0x5f1bd8*/
-  *(unsigned int *)(this->u32_38 + 44) = this->u32_60; /*0x5f1be1*/
+  *(unsigned int *)&this->u32_38->BombClass_field_2C = this->u32_60; /*0x5f1be1*/
   result = this->u32_38; /*0x5f1be4*/
   result->u32_30 = this->a4; /*0x5f1bea*/
   return result; /*0x5f1bed*/
@@ -4067,7 +4067,7 @@ bool NullModemClass::DetectModem()
       if ( *(unsigned int *)(v13 + 24) ) /*0x5f2309*/
       {
         Debug::Log(); /*0x5f2319*/
-        strcpy(&v45[2], *(const char **)(this->u32_34 + 24)); /*0x5f2346*/
+        strcpy(&v45[2], *(const char **)&this->u32_34->nextArrayIndex); /*0x5f2346*/
         v7 = (*(int (__thiscall **)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f236d*/
                g_ClipboardBuffer,
                v45,
@@ -4094,7 +4094,7 @@ bool NullModemClass::DetectModem()
         if ( !*(unsigned int *)(v15 + 16) ) /*0x5f240e*/
           goto LABEL_37; /*0x5f240e*/
         Debug::Log(); /*0x5f2419*/
-        strcpy(&v45[2], *(const char **)(this->u32_34 + 16)); /*0x5f2446*/
+        strcpy(&v45[2], *(const char **)&this->u32_34->uniqueId); /*0x5f2446*/
         (*(void (__thiscall **)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f246a*/
           g_ClipboardBuffer,
           v45,
@@ -4122,7 +4122,7 @@ bool NullModemClass::DetectModem()
         if ( !*(unsigned int *)(v15 + 20) ) /*0x5f2508*/
           goto LABEL_37; /*0x5f2508*/
         Debug::Log(); /*0x5f2513*/
-        strcpy(&v45[2], *(const char **)(this->u32_34 + 20)); /*0x5f2540*/
+        strcpy(&v45[2], *(const char **)&this->u32_34->abstractFlags); /*0x5f2540*/
         (*(void (__thiscall **)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f2564*/
           g_ClipboardBuffer,
           v45,
@@ -4150,7 +4150,7 @@ bool NullModemClass::DetectModem()
         if ( *(unsigned int *)(v18 + 8) ) /*0x5f2601*/
         {
           Debug::Log(); /*0x5f2611*/
-          strcpy(&v45[2], *(const char **)(this->u32_34 + 8)); /*0x5f263e*/
+          strcpy(&v45[2], *(const char **)&this->u32_34->vtable3); /*0x5f263e*/
           (*(void (__thiscall **)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f2662*/
             g_ClipboardBuffer,
             v45,
@@ -4174,7 +4174,7 @@ bool NullModemClass::DetectModem()
       else if ( *(unsigned int *)(v18 + 12) ) /*0x5f26ea*/
       {
         Debug::Log(); /*0x5f26fa*/
-        strcpy(&v45[2], *(const char **)(this->u32_34 + 12)); /*0x5f2727*/
+        strcpy(&v45[2], *(const char **)&this->u32_34->vtable4); /*0x5f2727*/
         (*(void (__thiscall **)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f274b*/
           g_ClipboardBuffer,
           v45,
@@ -4836,10 +4836,10 @@ namespace gamemd {
 uint8_t WOLOption::SetValue(const char **a2) {
   uint8_t result; // al
 
-  result = String::Compare(a2, (const char **)(this + 12)); /*0x77a4af*/
+  result = String::Compare(a2, &this->u32_C); /*0x77a4af*/
   if ( !result ) /*0x77a4b6*/
   {
-    result = (uint8_t)String::Reassign((char **)(this + 12), a2); /*0x77a4bb*/
+    result = (uint8_t)String::Reassign(&this->u32_C, a2); /*0x77a4bb*/
     this->u32_8 = 1; /*0x77a4c0*/
   }
   return result; /*0x77a4c4*/
@@ -4852,10 +4852,10 @@ void WOLOption::SetValue()
 {
   uint8_t result; // al
 
-  result = String::Compare(a2, (const char **)(this + 12)); /*0x77a4af*/
+  result = String::Compare(a2, &this->u32_C); /*0x77a4af*/
   if ( !result ) /*0x77a4b6*/
   {
-    result = (uint8_t)String::Reassign((char **)(this + 12), a2); /*0x77a4bb*/
+    result = (uint8_t)String::Reassign(&this->u32_C, a2); /*0x77a4bb*/
     this->u32_8 = 1; /*0x77a4c0*/
   }
   return result; /*0x77a4c4*/
@@ -4928,7 +4928,7 @@ void WOLPersona::FormatDateTime()
       v9 = 633; /*0x77a659*/
       goto LABEL_26; /*0x77a659*/
   }
-  WideString::Reassign((void **)this + 16, StringCSF); /*0x77a66f*/
+  WideString::Reassign(&this->q040, StringCSF); /*0x77a66f*/
   WString::Append(&this->SafeDelete_20, (wchar_t *)asc_82083C); /*0x77a67e*/
   v5 = CharToWideString(String); /*0x77a687*/
   WString::Append(&this->SafeDelete_20, (wchar_t *)v5); /*0x77a68f*/
@@ -4939,7 +4939,7 @@ void WOLPersona::FormatDateTime()
   v12[0] = 0; /*0x77a6d3*/
   String::Wrapper5to4((int)v12, 64, (int)aHMS, (int)v2); /*0x77a6d8*/
   v7 = CharToWideString(v12); /*0x77a6e4*/
-  result = WideString::Reassign((void **)this + 15, (wchar_t *)v7); /*0x77a6ed*/
+  result = WideString::Reassign(&this->u32_3C, (wchar_t *)v7); /*0x77a6ed*/
   this->u32_8 = 1; /*0x77a6f3*/
   return result; /*0x77a6f2*/
 }
@@ -5936,7 +5936,7 @@ void WOLGameList::GrowBuffer()
         {
           do /*0x7ae0a1*/
           {
-            v10 = (*((int (__thiscall **)(int))this + 6))(v9) & ((1 << this->q00C) - 1); /*0x7ae08b*/
+            v10 = (*((int (__thiscall **)(int))&this->q00C))(v9) & ((1 << this->q00C) - 1); /*0x7ae08b*/
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x7ae08f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x7ae095*/
             v12 = *(unsigned int *)(v9 + 112); /*0x7ae097*/
@@ -5967,7 +5967,7 @@ void UDPInterfaceClass_Destru::GetQueueSize()
 
   for ( result = this->u32_3F348; result; result = this->u32_3F348 ) /*0x7b2f9b*/
   {
-    operator delete((void *)(**((void ***)this + 64719))); /*0x7b2fa6*/
+    operator delete((void *)(*this->u32_3F33C)); /*0x7b2fa6*/
     v3 = this->u32_3F348; /*0x7b2fab*/
     if ( v3 > 0 ) /*0x7b2fb6*/
     {

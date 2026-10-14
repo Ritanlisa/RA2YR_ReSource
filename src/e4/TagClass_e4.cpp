@@ -54,9 +54,9 @@ TriggerClass * * TagClass::Destructor(void * a1)
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
   a1->AbstractClass = &TagClass::`vftable'; /*0x6e4f69*/
-  a1->? = &TagClass::`vftable'; /*0x6e4f6f*/
+  /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f6f) */
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f76) */
-  a1->vtable4 = &TagClass::`vftable'; /*0x6e4f7d*/
+  /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f7d) */
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {

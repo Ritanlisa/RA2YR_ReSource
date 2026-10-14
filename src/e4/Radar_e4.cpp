@@ -908,7 +908,7 @@ AbstractClass * * Radar::Update(int16_t *aP1)
           {
             v118[0] = v12; /*0x584656*/
             v118[1] = v89; /*0x58465b*/
-            v13 = *(unsigned int *)&v2->__pad_64[12] + 10 * CellToTileIndexMap((ObjectClass *)v2, v118); /*0x58466f*/
+            v13 = *&v2->q070 + 10 * CellToTileIndexMap((ObjectClass *)v2, v118); /*0x58466f*/
             v14 = *(unsigned short *)(v13 + 2 * i); /*0x584672*/
             if ( v14 ) /*0x584679*/
             {
@@ -948,7 +948,7 @@ LABEL_20:
             *(unsigned short *)(v13 + 2 * i) = 0; /*0x5846f7*/
             v120[1] = v89; /*0x5846fd*/
             ++v12; /*0x58470a*/
-            *(unsigned short *)(v13 + 6) = *(unsigned short *)(*(unsigned int *)&v2->__pad_64[4] /*0x584712*/
+            *(unsigned short *)(v13 + 6) = *(unsigned short *)(*&v2->q068 /*0x584712*/
                                            + 4 * CellToTileIndexMap((ObjectClass *)v2, v120)
                                            + 2);
             v9 = v106; /*0x584716*/
@@ -1036,7 +1036,7 @@ LABEL_73:
         Radar_field_0x60 = (char *)v2->Radar_field_0x60; /*0x584ad8*/
         do /*0x584b53*/
         {
-          v45 = (int *)(*(unsigned int *)&v2->__pad_34[32] + v44); /*0x584adc*/
+          v45 = (int *)(*&v2->q054 + v44); /*0x584adc*/
           v46 = *(__int16 *)v45; /*0x584adf*/
           if ( v46 >= v11 && v46 < v9 + v11 && (v47 = *((__int16 *)v45 + 1), v47 >= v10) && v47 < v10 + v107 /*0x584b1e*/
             || (v48 = *((__int16 *)v45 + 2), v48 >= v11)
@@ -1053,7 +1053,7 @@ LABEL_73:
             }
           }
           v44 = v100 - 16; /*0x584b47*/
-          v42 = Radar_field_0x60 == (char *)1; /*0x584b4a*/
+          v42 = Radar_field_0x60 == 1; /*0x584b4a*/
           v100 -= 16; /*0x584b4b*/
           --Radar_field_0x60; /*0x584b4f*/
         }
@@ -1744,7 +1744,7 @@ MapClass * * Radar::RenderMinimap()
       FogOfWar::RevealArea((int)this, (int *)(this->u32_1260 + 8 * k)); /*0x657520*/
     (*(void (**)(char *))(this->u32_125C + 12))(&this->u32_125C); /*0x657534*/
     Render_Render_660000(v89); /*0x657537*/
-    v52 = (int *)(*(int (**)(unsigned int, int *))(**((unsigned int **)this + 1159) + 120))( /*0x657549*/
+    v52 = (int *)(*(int (**)(unsigned int, int *))(*this->u32_121C + 120))( /*0x657549*/
                    this->u32_121C,
                    &v101);
     HouseClass::Render((HouseClass *)&g_VisibilitySystem, this->u32_121C, *v52, v52[1], v52[2], v52[3]); /*0x657573*/

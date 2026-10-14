@@ -77,9 +77,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
   this->ObjectTypeClass = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
-  this->? = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
+  this->IsTiberium = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
   /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
-  this->vtable4 = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
   this->LegalTarget_d = 0; /*0x74ae8c*/
   this->IsLogic_d = 1; /*0x74ae92*/
@@ -420,7 +420,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   else
   {
-    _makepath((char *)&Destination.Name[5], 0, 0, (const char *)(v4 + 504), g_Str_File__VXL); /*0x74b584*/
+    _makepath((char *)&Destination.Name[5], 0, 0, &v4->ImageFile, g_Str_File__VXL); /*0x74b584*/
     CCFileClass::Construct((CCFileClass *)&Destination, (char *)&Destination.Name[5]); /*0x74b598*/
     v40 = v4->MainVoxel; /*0x74b59d*/
     if ( v40 ) /*0x74b5a5*/

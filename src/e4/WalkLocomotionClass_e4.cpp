@@ -293,7 +293,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = &WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(unsigned int *)&this->LocomotionClass[4] = &WalkLocomotionClass::`vftable'; /*0x75cbe9*/
+  /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbe9) */
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbf0) */
   Piggybackee = this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/

@@ -55,8 +55,8 @@ int MoveFeedback::ProcessCommand()
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
       *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732814*/
-      *(unsigned int *)(v3 + 20) = 10; /*0x73281a*/
-      *(unsigned int *)(v3 + 16) = 0; /*0x732821*/
+      v3->CapacityIncrement = 10; /*0x73281a*/
+      v3->Count = 0; /*0x732821*/
     }
     else
     {
@@ -71,16 +71,16 @@ int MoveFeedback::ProcessCommand()
         result = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
         if ( (unsigned char)result ) /*0x732847*/
         {
-          v7 = *(unsigned int *)(v3 + 8); /*0x732849*/
-          result = *(unsigned int *)(v3 + 16); /*0x73284c*/
+          v7 = v3->Capacity; /*0x732849*/
+          result = v3->Count; /*0x73284c*/
           if ( result < v7 /*0x732873*/
-            || ((LOBYTE(result) = *(unsigned char *)(v3 + 13), (unsigned char)result) || !v7)
-            && (result = *(unsigned int *)(v3 + 20), result > 0)
-            && (result = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v3 + 8))(v3, v7 + result, 0), (unsigned char)result) )
+            || ((LOBYTE(result) = v3->IsAllocated, (unsigned char)result) || !v7)
+            && (result = v3->CapacityIncrement, result > 0)
+            && (result = (*(int (**)(int, int, unsigned int))(*&v3->q020))(v3, v7 + result, 0), (unsigned char)result) )
           {
-            result = *(unsigned int *)(v3 + 16); /*0x732875*/
-            v8 = *(unsigned int *)(v3 + 4); /*0x732878*/
-            *(unsigned int *)(v3 + 16) = result + 1; /*0x73287e*/
+            result = v3->Count; /*0x732875*/
+            v8 = v3->Items; /*0x732878*/
+            v3->Count = result + 1; /*0x73287e*/
             *(unsigned int *)(v8 + 4 * result) = v6; /*0x732881*/
           }
         }

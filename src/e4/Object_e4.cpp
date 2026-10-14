@@ -764,7 +764,7 @@ LABEL_39:
   }
   if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
   {
-    v12 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(*&this->ptr_28 + 904), &v26) >> 12) /*0x62ad3a*/
+    v12 = ((unsigned int)((*ProgressTimer::GetValue(&this->ptr_28, &v26) >> 12) /*0x62ad3a*/
                         + 1) >> 1)
         & 7;
     v13 = (Cell *)(*(int (**)(unsigned int))(**&this->ptr_28 + 444))(*&this->ptr_28); /*0x62ad43*/
@@ -807,7 +807,7 @@ LABEL_39:
       v28 = v22[1]; /*0x62ae37*/
       v29 = v22[2]; /*0x62ae3e*/
     }
-    if ( *(unsigned char *)(*&this->ptr_28 + 140) ) /*0x62ae45*/
+    if ( *(unsigned char *)&this->ptr_28->q08C ) /*0x62ae45*/
     {
       if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)->flags[0] & 0x100) != 0 ) /*0x62ae67*/
       {
@@ -848,7 +848,7 @@ LABEL_34:
     v5 = a2; /*0x62af25*/
     goto LABEL_39; /*0x62af25*/
   }
-  v6 = (int *)(*&this->ptr_28 + 156); /*0x62ac63*/
+  v6 = (int *)&this->ptr_28->q09C; /*0x62ac63*/
   v27 = *v6; /*0x62ac6a*/
   v7 = *&this->q024; /*0x62ac6e*/
   v28 = v6[1]; /*0x62ac74*/
@@ -868,7 +868,7 @@ LABEL_34:
         v29 = dword_AC497C + v11; /*0x62accf*/
     }
   }
-  if ( *(unsigned char *)(*&this->ptr_28 + 140) ) /*0x62acd6*/
+  if ( *(unsigned char *)&this->ptr_28->q08C ) /*0x62acd6*/
     *(unsigned char *)(*&this->q024 + 140) = 1; /*0x62ace3*/
   else
     *(unsigned char *)(*&this->q024 + 140) = 0; /*0x62acef*/

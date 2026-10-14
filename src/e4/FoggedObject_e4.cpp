@@ -55,7 +55,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
       v4 = (AbstractClass *)v8; /*0x4d2e2f*/
     }
     this->FoggedObject_field_0x4 = v4; /*0x4d2e31*/
-    *((unsigned char *)this + 13) = 1; /*0x4d2e34*/
+    this->u32_D = 1; /*0x4d2e34*/
     return this->__pad_0; /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/

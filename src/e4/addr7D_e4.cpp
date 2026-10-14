@@ -12043,7 +12043,7 @@ int __wtomb_environ()
     if ( !v4 || !WideCharToMultiByte(1u, 0, *(LPCWCH *)v0, -1, v4, v3, 0, 0) ) /*0x7d4663*/
       break; /*0x7d4663*/
     __crtsetenv(Str, 0); /*0x7d466e*/
-    v1 = *(const WCHAR **)(v0 + 4); /*0x7d4673*/
+    v1 = v0->ptr_4; /*0x7d4673*/
     v0 += 4; /*0x7d4676*/
     if ( !v1 ) /*0x7d467d*/
       return 0; /*0x7d467d*/

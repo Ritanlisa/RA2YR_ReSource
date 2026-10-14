@@ -1635,32 +1635,32 @@ int InitCommands()
   ((DynamicVector *)&(&dword_87F5D8)[32])->Add_Alt2( (DynamicVector *)(&v172)); /*0x533c39*/
   v170 = (unsigned int *)operator new(4); /*0x533c12*/
   if ( v170 ) /*0x533c1c*/
-  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533c56*/
+  if ( ((SortedArray*)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533c56*/
   else
     v172 = (unsigned int *)(0); /*0x533c2b*/
-    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
+    ((SortedArray*)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
   KeyboardConfig::LoadINI(); /*0x533c3e*/
   v175 = 46; /*0x533c52*/
-  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
+  ((SortedArray*)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
   {
-  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533c9d*/
-    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
+  if ( ((SortedArray*)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533c9d*/
+    ((SortedArray*)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
   }
-    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
-  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
+    ((SortedArray*)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
+  ((SortedArray*)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
   v175 = 27; /*0x533c99*/
-  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
+  ((SortedArray*)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
   {
-  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
-    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
+  if ( ((SortedArray*)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
+    ((SortedArray*)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
   }
-    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
-  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
+    ((SortedArray*)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
+  ((SortedArray*)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
   v175 = 32; /*0x533ce0*/
-  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
-  return ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
+  if ( ((SortedArray*)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
+  return ((SortedArray*)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
     v175 = 32; /*0x533cf1*/
-    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
+    ((SortedArray*)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
   }
 // CompleteGameInit defined in src/misc/rules.cpp
 

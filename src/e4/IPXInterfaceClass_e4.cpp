@@ -159,7 +159,7 @@ LABEL_6:
         while ( 1 ) /*0x7b1446*/
         {
           v25 = this->u32_3F30C; /*0x7b1446*/
-          v7 = (Network *)**((unsigned int **)this + 9); /*0x7b1447*/
+          v7 = (Network *)*this->u32_24; /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
           *(unsigned short *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
           if ( v7->__pad_14 ) /*0x7b1458*/

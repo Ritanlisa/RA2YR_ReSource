@@ -134,8 +134,8 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   {
     --*(unsigned int *)&stru_A8EB00.?[100]; /*0x76324f*/
     for ( ; /*0x763255*/
-          v3 < *(int *)&stru_A8EB00.?[100];
-          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v3) )
+          v3 < *(int *)&DataGlobal_A8EB64;
+          *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB58 + 4 * v3) )
     {
       ++v3; /*0x76325d*/
     }

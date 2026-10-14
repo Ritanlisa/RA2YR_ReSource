@@ -169,13 +169,13 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
 
   v2 = this; /*0x439b09*/
   v74 = this; /*0x439b0b*/
-  v3 = *(this + 2); /*0x439b17*/
+  v3 = this->Powered; /*0x439b17*/
   v4 = &this->u32_3; /*0x439b1a*/
   *v72->tail_0.__tail_0 = v3; /*0x439b22*/
   v6 = this->Accel; /*0x439b28*/
   v7 = this->Speed; /*0x439b2b*/
   v77 = this->vtable3; /*0x439b2e*/
-  v8 = v6 - *(this + 1); /*0x439b32*/
+  v8 = v6 - this->Owner; /*0x439b32*/
   v9 = this->Climb; /*0x439b35*/
   v5 = &this->Crash; /*0x439b1d*/
   v78 = v7; /*0x439b3a*/

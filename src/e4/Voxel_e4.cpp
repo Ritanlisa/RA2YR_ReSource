@@ -1199,7 +1199,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
             v39 = 1; /*0x75c39e*/
         }
       }
-      v11 = *(unsigned int *)(this->u32_C + 1444); /*0x75c3a6*/
+      v11 = *(unsigned int *)&this->u32_C->u32_5A4; /*0x75c3a6*/
       *(unsigned int *)v32 = v11; /*0x75c3ae*/
       if ( v11 ) /*0x75c3b2*/
       {
@@ -1224,7 +1224,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
         }
       }
     }
-    v18 = *(unsigned int *)(this->u32_C + 732); /*0x75c439*/
+    v18 = *(unsigned int *)&this->u32_C->u32_2DC; /*0x75c439*/
     if ( v18 )
     {
       if ( v18->u32_2D8 )
@@ -1243,7 +1243,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
       }
     }
     if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v38)->flags[0] & 0x100) == 0 /*0x75c513*/
-      || (v23 = (int *)(this->u32_C + 156),
+      || (v23 = (int *)&this->u32_C->q09C,
           v35 = *v23,
           v36 = v23[1],
           v24 = v23[2],

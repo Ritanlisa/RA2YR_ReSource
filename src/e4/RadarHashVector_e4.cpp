@@ -306,7 +306,7 @@ char * RadarHashVector::Destructor(char a2)
   }
   else
   {
-    v11 = *(void **)&this->m_1[3]; /*0x658cc5*/
+    v11 = *&this->q004; /*0x658cc5*/
     *(unsigned int *)this->__pad_0 = &VectorClass<HashObject<RadarTrackingStruct,TechnoClass *>>::`vftable'; /*0x658ccc*/
     if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
     {

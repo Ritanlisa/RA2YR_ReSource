@@ -1564,7 +1564,7 @@ int TeamClass::LiberateMember_Start(int aP1, unsigned int a3, char aP3)
             v9 = 168; /*0x6ea8e7*/
             do /*0x6ea919*/
             {
-              v10 = *(unsigned int *)(this->buildingType + 228); /*0x6ea8f2*/
+              v10 = *(unsigned int *)&this->buildingType->Tactical_E4; /*0x6ea8f2*/
               if ( *(unsigned int *)(v9 + v10) == (*(int (**)(int))(*(unsigned int *)aP1 + 136))(aP1) ) /*0x6ea903*/
                 break; /*0x6ea903*/
               v9 += 8; /*0x6ea910*/
@@ -2017,7 +2017,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                   v41 = *(unsigned int *)(v6 + 164); /*0x6eb251*/
                   v33 += v26; /*0x6eb25e*/
                   ++v22; /*0x6eb262*/
-                  if ( *(unsigned char *)(this->buildingType + 167) /*0x6eb271*/
+                  if ( *(unsigned char *)&this->buildingType->u32_A7 /*0x6eb271*/
                     && (*(unsigned __int8 (**)(int))(*&v6->q1380))(v6) )
                   {
                     v5 += *v24; /*0x6eb27f*/

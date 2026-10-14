@@ -703,31 +703,31 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   {
     VectorClass::Destroy((int)aP1); /*0x477a02*/
     v3 = a2[2]; /*0x477a08*/
-    *(unsigned int *)&aP1->?[3] = v3; /*0x477a0d*/
+    *&aP1->Capacity = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x477a16*/
-      *(unsigned int *)&aP1->?[3] = v4; /*0x477a20*/
+      *&aP1->Items = v4; /*0x477a20*/
       if ( v4 ) /*0x477a23*/
       {
-        v5 = *(unsigned int *)&aP1->?[3]; /*0x477a25*/
+        v5 = *&aP1->Capacity; /*0x477a25*/
         v6 = 0; /*0x477a28*/
-        BYTE1(aP1->?) = 1; /*0x477a2c*/
+        BYTE1(aP1->IsAllocated) = 1; /*0x477a2c*/
         if ( v5 > 0 ) /*0x477a30*/
         {
           do /*0x477a44*/
           {
-            *(unsigned int *)(*(unsigned int *)&aP1->?[3] + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x477a3b*/
+            *(unsigned int *)(*&aP1->Items + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x477a3b*/
             ++v6; /*0x477a41*/
           }
-          while ( v6 < *(unsigned int *)&aP1->?[3] ); /*0x477a44*/
+          while ( v6 < *&aP1->Capacity ); /*0x477a44*/
         }
       }
     }
     else
     {
-      *(unsigned int *)&aP1->?[3] = 0; /*0x477a48*/
-      BYTE1(aP1->?) = 0; /*0x477a4b*/
+      *&aP1->Items = 0; /*0x477a48*/
+      BYTE1(aP1->IsAllocated) = 0; /*0x477a4b*/
     }
   }
   aP1->Count = a2[4]; /*0x477a51*/
@@ -1255,12 +1255,12 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   {
     if ( a3 ) /*0x5ac929*/
     {
-      *(unsigned int *)&this->?[3] = a3; /*0x5ac92b*/
+      *&this->Items = a3; /*0x5ac92b*/
     }
     else
     {
-      *(unsigned int *)&this->?[3] = __2_YAPAXI_Z(4 * a2); /*0x5ac93c*/
-      BYTE1(this->?) = 1; /*0x5ac93f*/
+      *&this->Items = __2_YAPAXI_Z(4 * a2); /*0x5ac93c*/
+      BYTE1(this->IsAllocated) = 1; /*0x5ac93f*/
     }
   }
   *(unsigned int *)this->VectorClass = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac943*/

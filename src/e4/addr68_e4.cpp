@@ -2783,19 +2783,16 @@ int E4Recv_68F8A0::sub_68F8A0()
   if ( this->fallRate < occupant /*0x68f95e*/
     || (BYTE1(this->owningHouseIndex) || !occupant)
     && (nextObject = this->nextObject, (int)nextObject > 0)
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(*p_referenceCount + 8))(
-         &this->?,
-         (int)nextObject + occupant,
-         0) )
+    && p_referenceCount->COMStub_Release(&this->?, (int)nextObject + occupant, 0) )
   {
     fallRate = this->fallRate; /*0x68f965*/
-    NeedsSaveOrLink = this->?; /*0x68f968*/
+    NeedsSaveOrLink = this->M4; /*0x68f968*/
     this->fallRate = fallRate + 1; /*0x68f96e*/
     NeedsSaveOrLink[fallRate] = v4; /*0x68f971*/
   }
   v12 = *p_referenceCount; /*0x68f974*/
   v15 = v4; /*0x68f97d*/
-  for ( result = (*(int (**)(int *, int *))(v12 + 16))(&this->?, &v15); /*0x68f987*/
+  for ( result = (*(int (**)(int *, int *))(v12 + 16))(&this->u32_10, &v15); /*0x68f987*/
         result != -1;
         result = (*(int (**)(int *, int *))(v14 + 16))(&this->?, &v15) )
   {

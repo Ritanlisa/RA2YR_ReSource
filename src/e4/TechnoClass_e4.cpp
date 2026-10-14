@@ -363,7 +363,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->disguisedAsHouse = 0; /*0x6f312a*/
   this->RadioClass = &TechnoClass::`vftable'; /*0x6f3130*/
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f3136) */
-  this->vtable3 = &TechnoClass::`vftable'; /*0x6f313d*/
+  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f313d) */
   /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f314a) */
   AudioController::Init((AudioController *)this->turretRotateSoundController); /*0x6f3151*/
   AudioController::Init((AudioController *)this->gattlingSoundController); /*0x6f315c*/
@@ -603,91 +603,91 @@ int TechnoClass::DTOR()
 
   v2 = *&this->planningToken; /*0x6f4507*/
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f450d) */
-  this->vtable2 = &TechnoClass::`vftable'; /*0x6f4515*/
+  /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f4515) */
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f451c) */
-  *((unsigned int *)this + 3) = &off_7F4934; /*0x6f4523*/
+  /* X11: vtable install elided (implicit via off_7F4934 virtuals 0x6f4523) */
   if ( v2 ) /*0x6f452a*/
   {
     Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
-    *((unsigned int *)this + 325) = 0; /*0x6f4531*/
+    this->planningToken = 0; /*0x6f4531*/
   }
-  v3 = *((unsigned int *)this + 175); /*0x6f4537*/
+  v3 = this->captureManager; /*0x6f4537*/
   if ( v3 ) /*0x6f453f*/
   {
     (*(void (**)(int, int))(*(unsigned int *)v3 + 32))(v3, 1); /*0x6f4545*/
-    *((unsigned int *)this + 175) = 0; /*0x6f4548*/
+    this->captureManager = 0; /*0x6f4548*/
   }
-  v4 = *((unsigned int *)this + 180); /*0x6f454e*/
+  v4 = this->spawnManager; /*0x6f454e*/
   if ( v4 ) /*0x6f4556*/
   {
     (*(void (**)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x6f455c*/
-    *((unsigned int *)this + 180) = 0; /*0x6f455f*/
+    this->spawnManager = 0; /*0x6f455f*/
   }
-  v5 = *(TechnoClass **)((char *)this + 728); /*0x6f4565*/
+  v5 = *&this->slaveManager; /*0x6f4565*/
   if ( v5 ) /*0x6f456d*/
   {
     TechnoClass::MutateAll(v5, 0, 0); /*0x6f4571*/
-    v6 = *((unsigned int *)this + 182); /*0x6f4576*/
+    v6 = this->slaveManager; /*0x6f4576*/
     if ( v6 ) /*0x6f457e*/
       (*(void (**)(int, int))(*(unsigned int *)v6 + 32))(v6, 1); /*0x6f4584*/
-    *((unsigned int *)this + 182) = 0; /*0x6f4587*/
+    this->slaveManager = 0; /*0x6f4587*/
   }
-  v7 = *((unsigned int *)this + 157); /*0x6f458d*/
+  v7 = this->temporalUsing; /*0x6f458d*/
   if ( v7 ) /*0x6f4595*/
   {
     (*(void (**)(int, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6f459b*/
-    *((unsigned int *)this + 157) = 0; /*0x6f459e*/
+    this->temporalUsing = 0; /*0x6f459e*/
   }
-  v8 = *(unsigned int **)((char *)this + 660); /*0x6f45a4*/
+  v8 = *&this->airstrike; /*0x6f45a4*/
   if ( v8 && v8[19] == this ) /*0x6f45b1*/
   {
     (*(void (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x6f45bb*/
-    *((unsigned int *)this + 165) = 0; /*0x6f45be*/
+    this->airstrike = 0; /*0x6f45be*/
   }
-  AudioFile::Stop((AudioFile *)((char *)this + 1160)); /*0x6f45cd*/
-  AudioFileClass::Release((AudioFileClass *)((char *)this + 1160)); /*0x6f45d4*/
-  AudioFile::Stop((AudioFile *)((char *)this + 1188)); /*0x6f45e1*/
-  AudioFileClass::Release((AudioFileClass *)((char *)this + 1188)); /*0x6f45e8*/
-  AudioFile::Stop((AudioFile *)((char *)this + 1216)); /*0x6f45f5*/
-  AudioFileClass::Release((AudioFileClass *)((char *)this + 1216)); /*0x6f45fc*/
-  AudioFileClass::Release((AudioFileClass *)((char *)this + 1244)); /*0x6f4607*/
-  *((unsigned int *)this + 135) = 0; /*0x6f4610*/
-  *((unsigned char *)this + 1050) = 0; /*0x6f4616*/
+  AudioFile::Stop(&this->turretRotateSoundController); /*0x6f45cd*/
+  AudioFileClass::Release(&this->turretRotateSoundController); /*0x6f45d4*/
+  AudioFile::Stop(&this->gattlingSoundController); /*0x6f45e1*/
+  AudioFileClass::Release(&this->gattlingSoundController); /*0x6f45e8*/
+  AudioFile::Stop(&this->unusedGattlingSoundController); /*0x6f45f5*/
+  AudioFileClass::Release(&this->unusedGattlingSoundController); /*0x6f45fc*/
+  AudioFileClass::Release(&this->queuedVoiceSoundController); /*0x6f4607*/
+  this->owner = 0; /*0x6f4610*/
+  this->isOwnedByCurrentPlayer = 0; /*0x6f4616*/
   v18 = this; /*0x6f4628*/
   v9 = (*(int (**)(unsigned char *, int *))(*(unsigned int *)&stru_A8EB00.?[148] + 16))(&stru_A8EB00.?[148], &v18); /*0x6f462c*/
   if ( v9 != -1 ) /*0x6f4633*/
-    FactoryClass::RemoveItem((FactoryClass *)&stru_A8EB00.?[148], v9); /*0x6f463b*/
+    FactoryClass::RemoveItem((FactoryClass *)&byte_A8EB94, v9); /*0x6f463b*/
   v18 = this; /*0x6f4650*/
   v10 = (*(int (**)(char *, int *))(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E88 + 16))( /*0x6f4654*/
           g_BuildingLoadQueue_Array.__pad_E88,
           &v18);
   if ( v10 != -1 ) /*0x6f465a*/
     DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.__pad_E88, v10); /*0x6f4662*/
-  v11 = *((unsigned int *)this + 75); /*0x6f4667*/
+  v11 = this->behindAnim; /*0x6f4667*/
   if ( v11 ) /*0x6f466f*/
   {
     (*(void (**)(int))(*(unsigned int *)v11 + 248))(v11); /*0x6f4673*/
-    *((unsigned int *)this + 75) = 0; /*0x6f4679*/
+    this->behindAnim = 0; /*0x6f4679*/
   }
-  v12 = *((unsigned int *)this + 76); /*0x6f467f*/
+  v12 = this->deployAnim; /*0x6f467f*/
   if ( v12 ) /*0x6f4687*/
   {
     (*(void (**)(int))(*(unsigned int *)v12 + 248))(v12); /*0x6f468b*/
-    *((unsigned int *)this + 76) = 0; /*0x6f4691*/
+    this->deployAnim = 0; /*0x6f4691*/
   }
-  *((unsigned int *)this + 284) = &VectorClass<AbstractClass *>::`vftable'; /*0x6f469d*/
+  this->__pad_470 = &VectorClass<AbstractClass *>::`vftable'; /*0x6f469d*/
   AbstractClassVector::ddtor(&this->__pad_470); /*0x6f46a3*/
   v13 = *&this->attackedTargets; /*0x6f46a8*/
   this->currentTargets = &VectorClass<AbstractClass *>::`vftable'; /*0x6f46ae*/
-  if ( v13 && *((unsigned char *)this + 1125) ) /*0x6f46bc*/
+  if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
   {
     __3_YAXPAX_Z(v13); /*0x6f46c5*/
-    *((unsigned int *)this + 279) = 0; /*0x6f46cd*/
+    this->attackedTargets = 0; /*0x6f46cd*/
   }
-  *((unsigned char *)this + 1125) = 0; /*0x6f46d3*/
-  *((unsigned int *)this + 280) = 0; /*0x6f46d9*/
-  v14 = *(void **)((char *)this + 1092); /*0x6f46df*/
-  *((unsigned int *)this + 272) = &VectorClass<int>::`vftable'; /*0x6f46e5*/
+  this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
+  this->audioController3 = 0; /*0x6f46d9*/
+  v14 = *&this->vecInt_Items; /*0x6f46df*/
+  this->currentTargetThreatValues = &VectorClass<int>::`vftable'; /*0x6f46e5*/
   if ( v14 && this->vecInt_IsAllocated ) /*0x6f46f3*/
   {
     __3_YAXPAX_Z(v14); /*0x6f46fc*/
@@ -697,21 +697,21 @@ int TechnoClass::DTOR()
   this->vecInt_Capacity = 0; /*0x6f4716*/
   nullsub_69(v17); /*0x6f471c*/
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4721) */
-  this->vtable2 = &RadioClass::`vftable'; /*0x6f4727*/
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4727) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f472e) */
-  *((unsigned int *)this + 3) = &RadioClass::`vftable'; /*0x6f4735*/
+  /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4735) */
   v15 = *&this->flashing; /*0x6f473c*/
   this->radioLinks = &VectorClass<TechnoClass *>::`vftable'; /*0x6f4742*/
-  if ( v15 && *((unsigned char *)this + 237) ) /*0x6f4750*/
+  if ( v15 && this->vecTechno_IsAllocated ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/
-    *((unsigned int *)this + 57) = 0; /*0x6f4761*/
+    this->flashing = 0; /*0x6f4761*/
   }
-  *((unsigned char *)this + 237) = 0; /*0x6f4767*/
-  *((unsigned int *)this + 58) = 0; /*0x6f476d*/
+  this->vecTechno_IsAllocated = 0; /*0x6f4767*/
+  this->vecTechno_Capacity = 0; /*0x6f476d*/
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4775) */
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f477b) */
-  *((unsigned int *)this + 2) = &MissionClass::`vftable'; /*0x6f4782*/
+  /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4782) */
   /* X11: vtable install elided (implicit via MissionClass virtuals 0x6f4789) */
   return ObjectClass::Dtor((ObjectClass *)this); /*0x6f4795*/
 
@@ -855,7 +855,7 @@ Coord * * TechnoClass::RegisterKill()
         {
           HouseClass::IncrementStat( /*0x703108*/
             (HouseClass *)(*(unsigned int *)(v28 + 540) + 9032),
-            *(unsigned int *)(this->u32_6C4 + 3576));
+            *(unsigned int *)&this->u32_6C4->qDF8);
           v27 = 1; /*0x70310d*/
         }
 LABEL_55:
@@ -865,14 +865,14 @@ LABEL_55:
           {
             HouseClass::IncrementStat( /*0x703152*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 11088),
-              *(unsigned int *)(this->q6C0 + 3576));
+              *(unsigned int *)&this->q6C0->qDF8);
             v27 = 1; /*0x703157*/
           }
 LABEL_59:
           if ( v28 && !v27 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->RadioClass + 33))(this) + 3231) ) /*0x703175*/
             HouseClass::IncrementStat( /*0x703198*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 13144),
-              *(unsigned int *)(this->u32_6C4 + 3576));
+              *(unsigned int *)&this->u32_6C4->qDF8);
         }
 LABEL_63:
         ++this->owner->killedBuildingsOfHouses[0]; /*0x70319d*/
@@ -901,7 +901,7 @@ LABEL_67:
           {
             HouseClass::IncrementStat( /*0x703093*/
               (HouseClass *)(*(unsigned int *)(v28 + 540) + 15200),
-              *(unsigned int *)(this->BuildingTypeClass_520 + 3576));
+              *(unsigned int *)&this->BuildingTypeClass_520->qDF8);
             v17 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7030a5*/
                            + 4 * (*((int (**)(TechnoClass *))this->RadioClass + 14))(this)
                            + 21560);

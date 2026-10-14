@@ -420,7 +420,7 @@ int BuildingClass::AnimController()
   int v11; // edx
   unsigned int v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  Value = ProgressTimer::GetValue((ProgressTimer *)(this->LightSource + 904), v12); /*0x629736*/
+  Value = ProgressTimer::GetValue(&this->LightSource, v12); /*0x629736*/
   v3 = this->q048; /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
@@ -455,7 +455,7 @@ LABEL_8:
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
       v10[47] = 128; /*0x6297c5*/
-      *(unsigned int *)(this->LightSource + 172) = v5 + this->LightSource + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
+      *(unsigned int *)&this->LightSource->u32_AC = v5 + this->LightSource + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
     }
   }
   return 0; /*0x62978a*/

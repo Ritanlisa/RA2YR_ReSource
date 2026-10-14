@@ -57,13 +57,13 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   BYTE1(this->?[5]) = 0; /*0x41e3dd*/
   this->q0D8 = 0; /*0x41e3e3*/
   this->u32_DC = 0; /*0x41e3e9*/
-  this->q0E0 = 0; /*0x41e3ef*/
+  this->FootClass_E0 = 0; /*0x41e3ef*/
   this->ChargerBarrels = 0; /*0x41e3f5*/
   this->q108 = 0; /*0x41e3fb*/
   this->ObjectTypeClass = &AITriggerTypeClass::`vftable'; /*0x41e401*/
-  this->? = &AITriggerTypeClass::`vftable'; /*0x41e407*/
+  /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e407) */
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e40e) */
-  this->vtable4 = &AITriggerTypeClass::`vftable'; /*0x41e415*/
+  /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e415) */
   memset(&this->vtable4, 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
@@ -169,9 +169,9 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
   this->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x427731*/
-  this->? = &AnimTypeClass::`vftable'; /*0x427737*/
+  this->ShouldFogRemove = &AnimTypeClass::`vftable'; /*0x427737*/
   /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x42773d) */
-  this->vtable4 = &AnimTypeClass::`vftable'; /*0x427744*/
+  /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x427744) */
   AbstractClass::GenerateUniqueID(&this->vtable4); /*0x42774b*/
   this->IsLogic_d = 1; /*0x427750*/
   this->RadarInvisible_d = 1; /*0x427757*/
@@ -565,7 +565,7 @@ int AnimTypeClass::GetDamage()
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
     (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
-    Image = this->?; /*0x428da2*/
+    Image = this->Image; /*0x428da2*/
     *(unsigned int *)v7.CDFileClass = &CCFileClass::`vftable'; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/

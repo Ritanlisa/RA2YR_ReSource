@@ -41,7 +41,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
   *(unsigned int *)this->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x661f19*/
-  *(unsigned int *)&this->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x661f1f*/
+  /* X11: vtable install elided (implicit via RocketLocomotionClass virtuals 0x661f1f) */
   return (int)this->LocomotionClass; /*0x661f28*/
 
 }

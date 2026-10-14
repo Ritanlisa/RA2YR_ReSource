@@ -84,13 +84,13 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
   {
     memset(v7, 0, 0x6Cu); /*0x4ba5f2*/
     *this->DSurface_field_0x20 = 108; /*0x4ba5f7*/
-    *(unsigned int *)(this->DSurface_field_0x20 + 4) = 7; /*0x4ba604*/
-    *(unsigned int *)(this->DSurface_field_0x20 + 12) = aP1; /*0x4ba60e*/
-    *(unsigned int *)(this->DSurface_field_0x20 + 8) = aP2; /*0x4ba618*/
+    *(unsigned int *)&this->DSurface_field_0x20->vtable2 = 7; /*0x4ba604*/
+    *(unsigned int *)&this->DSurface_field_0x20->vtable4 = aP1; /*0x4ba60e*/
+    *(unsigned int *)&this->DSurface_field_0x20->vtable3 = aP2; /*0x4ba618*/
     if ( aP3 == 1 ) /*0x4ba621*/
-      *(unsigned int *)(this->DSurface_field_0x20 + 104) = 2048; /*0x4ba626*/
+      *(unsigned int *)&this->DSurface_field_0x20->SuperClass_field_0x68 = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
-      *(unsigned int *)(this->DSurface_field_0x20 + 104) = 8256; /*0x4ba63e*/
+      *(unsigned int *)&this->DSurface_field_0x20->SuperClass_field_0x68 = 8256; /*0x4ba63e*/
     g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba653*/
       g_lpDirectDraw7,
       (LPDDSURFACEDESC)this->DSurface_field_0x20,
@@ -4160,7 +4160,7 @@ ObjectClass * *  DSurface::RenderToSurface(int *aP1)
     this->Width = 0; /*0x5d1f38*/
     v13 = (int *)aP1->GetThreatLevel(v25); /*0x5d1f44*/
     Surface::CopyRect((XSurface *)this, v13); /*0x5d1f4a*/
-    (*(void (**)(DSurface *, int *))(this->vtable1 + 4))(this, aP1); /*0x5d1f54*/
+    (*(void (**)(DSurface *, int *))&this->vtable1->u32_4)(this, aP1); /*0x5d1f54*/
   }
   result = this->q028; /*0x5d1f57*/
   for ( j = 0; j < result; ++j ) /*0x5d1f5e*/
