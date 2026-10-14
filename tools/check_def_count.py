@@ -9,7 +9,12 @@ address so a function that merely moves between files does not false-fail,
 while a deleted definition (the 1,484-body loss had no detector at all)
 fails closed with the missing function named.
 
-Ratchet semantics (mirrors tools/check_generated_quality.py):
+Preservation-guard semantics (NOT a debt ratchet -- X6 note): this gate
+fails closed on LOSS, it never freezes violations as accepted.  The debt
+ratchets of the mechanical era (ptr_gate_baseline.json /
+quality_gate_baseline.json) were deleted by X6 (user ruling Q3); this
+baseline is retained because its purpose is the opposite: catching a
+silently deleted function definition.
   baseline absent          -> BOOTSTRAP: write baseline from current scan,
                               exit 0 (loudly announced)
   baseline corrupt/empty
@@ -19,8 +24,7 @@ Ratchet semantics (mirrors tools/check_generated_quality.py):
   else                     -> exit 0 (added addresses reported; raise the
                               ratchet with --update)
 
-The baseline is a machine-local ratchet (tools/*.json is gitignored by
-repo policy -- same convention as quality_gate_baseline.json, T3-I12).
+The baseline is machine-local (tools/*.json is gitignored by repo policy).
 A count decrease is never silently accepted: it either fails the gate or
 is consciously re-raised via --update by an operator who has audited the
 deletion.

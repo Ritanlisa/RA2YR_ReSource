@@ -33,12 +33,16 @@ gates = [
     # baseline evidence): block generate+compile on damaged trust artifacts.
     ("fail-closed",    ["tools/check_fail_closed.py"]),
     ("code-standards", ["tools/check_translated_functions.py"]),
+    # X6 zero tolerance (user ruling Q3): no mechanical-era exemption and no
+    # ratchet. THIS-/PTR-ARITH, PTR-INDEX, INT2PTR, PTR2INT must be 0 over
+    # src/ + app/ (incl. src/_generated); IDA-NAME placeholders are INFO.
     ("ida-artifact",   ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
-    # RC2 (project-optimization #9): HARD gate over generated/mechanical
-    # code, independent of ida_compat.h. Rejects shim-vocabulary tokens,
-    # placeholder member accesses, malformed sub_XXX defs, raw pointer
-    # casts, plus cross-table naming pollution (ratcheted baseline in
-    # tools/quality_gate_baseline.json). No e4 exemption, scans all src/**.
+    # X6 zero tolerance over generated/mechanical code, independent of
+    # ida_compat.h: IDA vocab tokens, raw pointer casts and malformed sub_XXX
+    # DEFINITION heads must be 0 (decl/def split; PLACEHOLDER names and
+    # cross-table naming counts are INFO per the Q5 Step-6 deferral), plus
+    # vtable hygiene scored by the X11 authority + ledger (install = 0,
+    # unaccounted = 0). No baseline, no e4 exemption, scans all src/**.
     ("generated-quality", ["tools/check_generated_quality.py"]),
     ("oo-translation", ["tools/check_oo_translation.py"]),
     # exec-flow worker count: measured per-worker steady RSS is ~2.5GB

@@ -1,40 +1,64 @@
 #!/usr/bin/env python3
-"""generated-quality gate (RC2, project-optimization plan #9).
+"""generated-quality gate (X6 rework of RC2, project-optimization #9).
 
 Independent quality gate over generated/mechanical code in src/**. It is
 deliberately INDEPENDENT of src/core/ida_compat.h: the /FI-injected shim can
 make dirty tokens compile silently, so this gate flags them from first
 principles without consulting (or being excused by) any shim vocabulary.
-No e4 exemption, no hpp-only scope, no env bypass.
+No e4 exemption, no hpp-only scope, no env bypass, and -- since the X6 rework
+(user ruling Q3, 2026-10-12) -- NO ratchet/baseline: zero tolerance on every
+HARD category.
 
-Text categories (line-level; comments and string/char literal contents are
-stripped first, so pseudocode kept in comments does not count):
-
-  IDA-BYTE        \\bIDA_BYTE[0-8]?\\(           shim-vocabulary call
+HARD text categories (exit 0 requires 0):
+  IDA-BYTE        \\bIDA_BYTE[0-8]?\\(          shim-vocabulary call
   IDA-MACRO       \\bIDA_LOWORD\\b|\\bIDA_HIWORD\\b|__PAIR
   QMEMCPY         \\bqmemcpy\\b
   MEMORY-REF      \\bMEMORY\\[
-  PLACEHOLDER     ->q[0-9A-F]{3}\\b | ->u32_ | ->field_
-  MALFORMED-DEF   \\bint (sub_[0-9A-F]+)\\s*\\(  malformed definition head
   RAW-PTR-CAST    \\((?:char|uint8_t|_BYTE|_DWORD)\\s*\\*\\)
+  MALFORMED-DEF   \\bint (sub_[0-9A-F]+)\\s*\\(  DEFINITION heads only
+                  (decl/def split: walk to the statement-final token after
+                  the parameter list; ';'/','/'('/'=' -> declaration,
+                  '{' -> definition).  Declaration-file prototypes
+                  (e.g. src/_generated/global_funcs_decls.hpp) are NOT
+                  counted as MALFORMED-DEF -- they are reported under
+                  MALFORMED-DECL (INFO).  X4 leftover I101/I102.)
+
+INFO text categories (counted and printed, never fail):
+  PLACEHOLDER     ->q[0-9A-F]{3}\\b | ->u32_ | ->field_  (Q5: placeholder
+                  names are deferred to Step 6)
+  MALFORMED-DECL  the declaration half of the MALFORMED split
+
+Vtable section (X11 authority + ledger; user ruling 2026-10-13):
+  explicit vtable-pointer stores are illegal -- the compiler must emit the
+  vtable from the class's virtual declarations.  `vfptr =` literally will
+  NOT reach 0 (I126-I133): the residual sites are non-vtable writes with
+  binary-backed reasons recorded in the X11 ledger.  This section therefore
+  scores vtable hygiene by anchors/vtable_authority.json + that ledger:
+    VT-INSTALL      (HARD) a store whose VALUE is a vtable address
+                    (backtick vftable / vt_|__vt_ / X_vftable symbols,
+                    off_HEX or 0xHEX present in the authority vtable set).
+                    Detected on any LHS shape -- X11 enumerated four spellings
+                    for elision, but the operation, not the spelling, is what
+                    the ruling bans.  Target 0.
+    VT-UNACCOUNTED  (HARD) explicit vptr-store site (the SITE_RE population
+                    the ledger was built from) with NO ledger row: no
+                    binary-backed reason on record -> fail-loud.  If the
+                    site is legitimate, regenerate the ledger with
+                    `python tools/csp_export/lower_vtables.py --classify`
+                    (binary evidence decides the family).
+    VT-LEDGER-KEEP  (INFO) site covered by a ledger row; counted, sampled
+                    and included in the JSON -- reported, never silent.
+  The ledger is machine-local evidence
+  (`.omo/evidence/optimization/x11/x11_vfptr_ledger.jsonl`); when vptr
+  sites exist but the ledger is absent the gate exits 2 (cannot score
+  honestly).
 
 Naming-pollution categories (cross-table, computed from the member tables;
-a table that does not exist contributes nothing and is reported as absent):
-
-  XTABLE-CONFLICT        same (class, offset) is a placeholder name in one
-                         table and a semantic name in another
-  XTABLE-DUAL-SEMANTIC   same (class, offset) carries two DIFFERENT semantic
-                         names across tables (authority disagreement)
-  SEMANTIC-OVERWRITTEN   the canon authority table (csp_canon_members) holds
-                         a placeholder while another table holds a semantic
-                         name for the same (class, offset) -- the overwrite
-                         pollution chain (sync_canon_from_til / --align-ml)
-  PROVENANCE-MISSING     a semantic name is absent from
-                         anchors/name_provenance.json; the whole check is
-                         SKIPPED while that file does not exist (N1 owns it).
-                         If the file exists but is unreadable or has an
-                         unrecognized schema -> exit 2 (fail closed, never
-                         silently excused).
+a table that does not exist contributes nothing and is reported as absent).
+INFO since Step 6 owns names (Q5): XTABLE-CONFLICT / XTABLE-DUAL-SEMANTIC /
+SEMANTIC-OVERWRITTEN / PROVENANCE-MISSING are counted and printed with their
+table stats but never fail the gate.  A table that exists but is unreadable
+still exits 2 (fail closed, never silently excused).
 
 Tables read (only if present):
   tools/member_lookup.json       {"Class": {"<dec offset>": {"name": ...}}}
@@ -45,59 +69,98 @@ Placeholder-name test for table entries keeps a single source of truth with
 the RC1 generator (tools/csp_export/gen_cpp_canon.py PLACEHOLDER_RE): copy
 the pattern verbatim and keep the two in sync.
 
-Fail-closed ratchet: tools/quality_gate_baseline.json (machine-local, same
-.gitignore policy as ptr_gate_baseline.json) records per-file per-category
-text counts plus naming counts frozen at baseline creation. Enforcement:
-  - new file with any violation                -> FAIL
-  - existing file, any category count increase -> FAIL
-  - naming count increase (or a previously-skipped category turning nonzero)-> FAIL
-  - count decreases (fixes land)               -> allowed; tighten the
-    baseline explicitly with --update-baseline (records git HEAD).
+Output: `FAIL: file:line: CATEGORY -- source lines` for hard violations
+(display capped via GQ_SHOW, counts always complete); `INFO:` sample lines +
+full counts for INFO categories; summary to stderr; machine-readable
+`--json PATH` (schema generated-quality-report/v2).
 
-Output: FAIL: file:line: CATEGORY -- source lines (display capped, counts
-always complete), summary to stderr, machine-readable --json PATH
-(schema generated-quality-report/v1, includes current baseline counts).
-Exit 0 = pass / bootstrap / --update-baseline.  Exit 1 = violations.
-Exit 2 = usage or environment error (baseline unreadable, table present but
-unreadable, tables present but extraction yields zero entries).
+Exit 0 = zero hard violations.  Exit 1 = hard violations.
+Exit 2 = usage or environment error (authority/table unreadable, ledger
+required but absent, tables present but extraction yields zero entries).
 """
 import argparse
-import datetime
-import hashlib
+import bisect
 import json
 import os
 import re
-import subprocess
 import sys
 import time
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_PATHS = ["src/"]
-BASELINE_PATH = os.path.join(REPO, "tools", "quality_gate_baseline.json")
-SCHEMA = "quality-gate-baseline/v1"
-SUMMARY_SCHEMA = "generated-quality-report/v1"
+SCHEMA = "generated-quality-report/v2"
 MEMBER_LOOKUP = os.path.join(REPO, "tools", "member_lookup.json")
 CANON_MEMBERS = os.path.join(REPO, "anchors", "csp_canon_members.json")
 MEMBER_TYPES = os.path.join(REPO, "anchors", "member_types.json")
 NAME_PROVENANCE = os.path.join(REPO, "anchors", "name_provenance.json")
+VT_AUTHORITY = os.path.join(REPO, "anchors", "vtable_authority.json")
+VT_LEDGER = os.path.join(REPO, ".omo", "evidence", "optimization", "x11",
+                         "x11_vfptr_ledger.jsonl")
 # canon authority table (highest naming authority; gen_cpp_canon output)
 AUTHORITY_TABLE = "csp_canon_members"
 SKIP_DIRS = {".git", ".omo", "build_win", "build_linux", "build_hook",
              "build_hook_release", "decompile-results", "gate_clang_cache",
              "node_modules"}
-SRC_EXTS = (".cpp", ".hpp", ".h", ".cc", ".hh")
+# .inc is scanned too: the X11 ledger (the vtable section's evidence base)
+# covers .inc sites, and the mechanical corpus treats .inc as source text.
+SRC_EXTS = (".cpp", ".hpp", ".h", ".cc", ".hh", ".inc")
+VT_EXTS = SRC_EXTS
 MAX_SHOW = int(os.environ.get("GQ_SHOW", "200"))
+INFO_SHOW = int(os.environ.get("GQ_INFO_SHOW", "20"))
 
-# RC2 text patterns (plan #9 spec, verbatim)
-PATTERNS = [
+# X6 hard text patterns (RC2 spec, minus PLACEHOLDER -> INFO)
+HARD_TEXT_PATTERNS = [
     ("IDA-BYTE", re.compile(r"\bIDA_BYTE[0-8]?\(")),
     ("IDA-MACRO", re.compile(r"\bIDA_LOWORD\b|\bIDA_HIWORD\b|__PAIR")),
     ("QMEMCPY", re.compile(r"\bqmemcpy\b")),
     ("MEMORY-REF", re.compile(r"\bMEMORY\[")),
-    ("PLACEHOLDER", re.compile(r"->q[0-9A-F]{3}\b|->u32_|->field_")),
-    ("MALFORMED-DEF", re.compile(r"\bint (sub_[0-9A-F]+)\s*\(")),
     ("RAW-PTR-CAST", re.compile(r"\((?:char|uint8_t|_BYTE|_DWORD)\s*\*\)")),
 ]
+INFO_TEXT_PATTERNS = [
+    ("PLACEHOLDER", re.compile(r"->q[0-9A-F]{3}\b|->u32_|->field_")),
+]
+# malformed sub_ definition head (decl/def split below decides the category)
+MALFORMED_RE = re.compile(r"\bint (sub_[0-9A-F]+)\s*\(")
+HARD_CATS = {c for c, _ in HARD_TEXT_PATTERNS} | {"MALFORMED-DEF",
+                                                  "VT-INSTALL",
+                                                  "VT-UNACCOUNTED"}
+
+# vtable site enumeration -- verbatim mirror of
+# tools/csp_export/lower_vtables.py SITE_RE (keep in sync: it defines the
+# population the X11 ledger was built from).
+VT_SITE_RE = re.compile(
+    r'\b(?:vfptr\d*|vtable\d*)\s*=(?!=)'
+    r'|\*\s*\(\s*(?:unsigned\s+int|_DWORD|int)\s*\*\s*\)\s*'
+    r'(?:this(?:\s*\+\s*0)?|this\s*->\s*(?:vfptr\d*|vtable\d*))\s*=(?!=)'
+    r'|\*\s*&\s*(?:this\s*->\s*)?(?:vfptr\d*|vtable\d*)\s*=(?!=)'
+)
+# strict value-start grammar for "stores a vtable": after the assignment '=',
+# skip casts / '&' / '*' prefixes, then require a vtable value token and
+# nothing but ';'/')' after it:
+#   [X::]`vftable' | `vtable'      (optionally class-qualified)
+#   vt_x | _vt_x | __vt_x          (X11-generated symbols)
+#   X_vftable                      (gen_vtable_symbols flat names)
+#   off_HEX                        (HEX must be an authority vtable address)
+#   0xHEX                          (must be an authority vtable address)
+# This is the authority-backed install detector: any store whose value IS a
+# vtable address is an explicit vtable operation (the X11 ruling bans them).
+_VT_LEAD = (r"(?:\s*\(\s*[A-Za-z_][\w\s]*?\*+\s*\)\s*"      # (Type *)
+            r"|\s*\(\s*[A-Za-z_][\w\s]*?\s*\)\s*"           # (unsigned int)
+            r"|\s*&\s*|\s*\*\s*)*")
+_VT_TOKEN = (r"("
+             r"(?:[A-Za-z_]\w*(?:\s*<[^;{}]*>)?\s*::\s*)*"
+             r"(?:`vftable\'|`vtable\')"
+             r"|(?:__?)?vt_[A-Za-z_]\w*"
+             r"|[A-Za-z_]\w*_vftable"
+             r"|off_([0-9A-Fa-f]{6,8})"
+             r"|0x([0-9A-Fa-f]{5,8})"
+             r")")
+VT_VALUE_START_RE = re.compile(_VT_LEAD + _VT_TOKEN + r"\s*[;)]?\s*$")
+VT_ASSIGN_RE = re.compile(r"(?<![=!<>+\-*/%&|^])=(?!=)")
+VT_ADDR_RE = re.compile(r"/\*\s*(0x[0-9A-Fa-f]+)\s*\*/")
+VT_RAW_SPELL_RE = re.compile(
+    r'\*\s*\(\s*(?:unsigned\s+int|_DWORD|int)\s*\*\s*\)')
+VT_SLOT_SPELL_RE = re.compile(r'\b(vfptr\d*|vtable\d*)\s*=(?!=)')
 
 # table-entry placeholder test -- keep in sync with the RC1 generator:
 # tools/csp_export/gen_cpp_canon.py PLACEHOLDER_RE (copied verbatim)
@@ -125,14 +188,15 @@ except ImportError as e:  # pragma: no cover
     sys.exit(2)
 
 
-def iter_source_files(roots):
-    """Walk roots for C/C++ sources. Unlike the ptr gate, src/_generated is
-    NOT excluded: RC2 covers all of src/** (plan MUST-NOT: no exemptions)."""
+def iter_source_files(roots, exts=SRC_EXTS):
+    """Walk roots for C/C++ sources.  src/_generated IS scanned (no
+    exemptions); non-source dirs (build outputs / evidence stores /
+    reference dumps) are not walked."""
     for root in roots:
         rp = root.replace("\\", "/").rstrip("/")
         ap = rp if os.path.isabs(rp) else os.path.join(REPO, rp)
         if os.path.isfile(ap):
-            if ap.endswith(SRC_EXTS):
+            if ap.endswith(exts):
                 yield ap
             continue
         if not os.path.isdir(ap):
@@ -141,50 +205,98 @@ def iter_source_files(roots):
         for dirpath, dirnames, filenames in os.walk(ap):
             dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
             for fn in sorted(filenames):
-                if fn.endswith(SRC_EXTS):
+                if fn.endswith(exts):
                     yield os.path.join(dirpath, fn)
 
 
+# ------------------------------------------------- malformed decl/def split
+def _classify_sub_occurrence(joined, m):
+    """Walk from the matched '(' to the first statement-final token after
+    the parameter list closes.  Returns 'def' (next token '{'),
+    'decl' (next token ';'/','/'('/'=' or '}'), or 'unclassified'."""
+    i = m.end() - 1          # position of '('
+    depth = 0
+    n = len(joined)
+    while i < n:
+        c = joined[i]
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth == 0:
+                j = i + 1
+                while j < n:
+                    cj = joined[j]
+                    if cj in " \t\r\n":
+                        j += 1
+                        continue
+                    if joined.startswith("//", j):
+                        k = joined.find("\n", j)
+                        j = n if k < 0 else k + 1
+                        continue
+                    if joined.startswith("/*", j):
+                        k = joined.find("*/", j + 2)
+                        j = n if k < 0 else k + 2
+                        continue
+                    if cj == "{":
+                        return "def"
+                    if cj in ";,=}":
+                        return "decl"
+                    return "unclassified"
+                return "unclassified"
+        elif c == "{":
+            return "unclassified"
+        i += 1
+    return "unclassified"
+
+
 def scan_file(ap):
+    """Return (hard_vios, info_vios, mstats) for one file.  Each vios entry
+    is (line_no, category, code_line); mstats counts the MALFORMED split."""
     try:
         with open(ap, "rb") as f:
             data = f.read()
         text = data.decode("utf-8", errors="replace")
     except OSError as e:
-        return [(0, "READ-ERROR", str(e))]
+        return [(0, "READ-ERROR", str(e))], [], {"def": 0, "decl": 0,
+                                                 "unclassified": 0}
     lines = strip_to_code(text)
-    vios = []
+    hard = []
+    info = []
     for idx, ln in enumerate(lines):
         if len(ln) < 4:
             continue
-        for cat, pat in PATTERNS:
+        for cat, pat in HARD_TEXT_PATTERNS:
             for _m in pat.findall(ln):
-                vios.append((idx + 1, cat, ln.strip()[:160]))
-    return vios
+                hard.append((idx + 1, cat, ln.strip()[:160]))
+        for cat, pat in INFO_TEXT_PATTERNS:
+            for _m in pat.findall(ln):
+                info.append((idx + 1, cat, ln.strip()[:160]))
+
+    mstats = {"def": 0, "decl": 0, "unclassified": 0}
+    joined = "\n".join(lines)
+    line_starts = [0]
+    for ln in lines:
+        line_starts.append(line_starts[-1] + len(ln) + 1)
+    for m in MALFORMED_RE.finditer(joined):
+        lig = bisect.bisect_right(line_starts, m.start())     # 1-based line
+        kind = _classify_sub_occurrence(joined, m)
+        src = lines[lig - 1].strip()[:160] if 0 < lig <= len(lines) else ""
+        if kind == "def":
+            mstats["def"] += 1
+            hard.append((lig, "MALFORMED-DEF", src))
+        elif kind == "decl":
+            mstats["decl"] += 1
+            info.append((lig, "MALFORMED-DECL", src))
+        else:
+            # fail closed: an unclassifiable occurrence counts as a def
+            mstats["unclassified"] += 1
+            hard.append((lig, "MALFORMED-DEF", src))
+    return hard, info, mstats
 
 
 def rel(ap):
     return os.path.relpath(ap, REPO).replace("\\", "/")
-
-
-def sha256_file(ap):
-    h = hashlib.sha256()
-    try:
-        with open(ap, "rb") as f:
-            for chunk in iter(lambda: f.read(1 << 22), b""):
-                h.update(chunk)
-    except OSError:
-        return "unreadable"
-    return h.hexdigest()
-
-
-def git_head():
-    try:
-        r = subprocess.run(["git", "rev-parse", "HEAD"],
-                           capture_output=True, text=True, cwd=REPO)
-        return r.stdout.strip()[:16]
-    except Exception:
-        return "unknown"
 
 
 # ---------------------------------------------------------------- naming
@@ -349,38 +461,34 @@ def scan_naming():
     # smaller tables and probe the bigger ones (measured ~seconds).
     overlaps = {}
 
-    def build_overlap():
-        overlaps.clear()
-        if cn is not None:
-            for cls, members in cn.items():
-                for off, name in members.items():
-                    if name is None:
-                        continue
-                    other = (ml or {}).get(cls, {}).get(off)
-                    other2 = (mt or {}).get(cls, {}).get(off)
-                    if other is not None or other2 is not None:
-                        slot = {}
-                        slot["csp_canon_members"] = name
-                        if other is not None:
-                            slot["member_lookup"] = other
-                        if other2 is not None:
-                            slot["member_types"] = other2
-                        overlaps[(cls, off)] = slot
-        if ml is not None and mt is not None:
-            # ml x mt pair not yet covered where canon absent
-            for cls, members in mt.items():
-                ml_m = ml.get(cls)
-                if ml_m is None:
+    if cn is not None:
+        for cls, members in cn.items():
+            for off, name in members.items():
+                if name is None:
                     continue
-                for off, name in members.items():
-                    if name is None:
-                        continue
-                    other = ml_m.get(off)
-                    if other is not None and (cls, off) not in overlaps:
-                        overlaps[(cls, off)] = {"member_types": name,
-                                                "member_lookup": other}
-
-    build_overlap()
+                other = (ml or {}).get(cls, {}).get(off)
+                other2 = (mt or {}).get(cls, {}).get(off)
+                if other is not None or other2 is not None:
+                    slot = {}
+                    slot["csp_canon_members"] = name
+                    if other is not None:
+                        slot["member_lookup"] = other
+                    if other2 is not None:
+                        slot["member_types"] = other2
+                    overlaps[(cls, off)] = slot
+    if ml is not None and mt is not None:
+        # ml x mt pair not yet covered where canon absent
+        for cls, members in mt.items():
+            ml_m = ml.get(cls)
+            if ml_m is None:
+                continue
+            for off, name in members.items():
+                if name is None:
+                    continue
+                other = ml_m.get(off)
+                if other is not None and (cls, off) not in overlaps:
+                    overlaps[(cls, off)] = {"member_types": name,
+                                            "member_lookup": other}
 
     for (cls, off), slot in overlaps.items():
         if len(slot) < 2:
@@ -420,52 +528,188 @@ def scan_naming():
     return counts, table_stats, notes, hard_errors
 
 
-# ---------------------------------------------------------------- baseline
-def load_baseline(path):
+# ---------------------------------------------------------------- vtable
+def load_vtable_authority():
+    """Returns (vt_bases set, n_vtables).  Fail closed on missing/empty."""
+    try:
+        with open(VT_AUTHORITY, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+    except FileNotFoundError:
+        raise ValueError(f"authority missing: {rel(VT_AUTHORITY)} "
+                         f"(regenerate with tools/csp_export/"
+                         f"vtable_authority.py)")
+    except (OSError, ValueError) as e:
+        raise ValueError(f"authority unreadable: {e}")
+    vt = raw.get("vtables") if isinstance(raw, dict) else None
+    if not isinstance(vt, dict) or not vt:
+        raise ValueError(f"authority has no vtable table -- fail closed")
+    vt_bases = set()
+    for k in vt:
+        try:
+            vt_bases.add(int(k, 16))
+        except ValueError:
+            continue
+    for rec in (raw.get("classes") or {}).values():
+        for va in (rec.get("vtables") or []):
+            try:
+                vt_bases.add(int(va, 16))
+            except (TypeError, ValueError):
+                continue
+    if not vt_bases:
+        raise ValueError(f"authority vtable set empty -- fail closed")
+    return vt_bases, len(vt)
+
+
+def load_vtable_ledger(path):
+    """Returns (rows, by_addr, by_line).  Rows: dicts with normalized 'file'.
+    Missing file -> (None, None, None).  Unreadable -> ValueError."""
+    if not os.path.isfile(path):
+        return None, None, None
+    rows = []
+    by_addr = {}
+    by_line = {}
     try:
         with open(path, "r", encoding="utf-8") as f:
-            m = json.load(f)
-    except FileNotFoundError:
-        return None
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                r = json.loads(line)
+                if not isinstance(r, dict) or not r.get("file"):
+                    continue
+                r["file"] = r["file"].replace("\\", "/")
+                rows.append(r)
+                if r.get("addr"):
+                    try:
+                        by_addr[(r["file"], int(r["addr"], 16))] = r
+                    except (TypeError, ValueError):
+                        pass
+                if isinstance(r.get("line"), int):
+                    by_line[(r["file"], r["line"])] = r
     except (OSError, ValueError) as e:
-        print(f"ERROR: baseline unreadable ({e}) -- fail closed",
-              file=sys.stderr)
-        sys.exit(2)
-    if m.get("schema") != SCHEMA:
-        print(f"ERROR: baseline schema mismatch: {m.get('schema')!r} != "
-              f"{SCHEMA!r} -- fail closed", file=sys.stderr)
-        sys.exit(2)
-    return m
+        raise ValueError(f"ledger unreadable: {e}")
+    return rows, by_addr, by_line
 
 
-def write_baseline(path, text_stats, naming_counts, naming_tables):
-    man = {
-        "schema": SCHEMA,
-        "created_at": datetime.datetime.now(
-            datetime.timezone.utc).isoformat(timespec="seconds"),
-        "git_head": git_head(),
-        "note": ("RC2 ratchet high-water mark over generated/mechanical "
-                 "code. New files / category count increases / naming count "
-                 "increases FAIL. Tighten with --update-baseline after "
-                 "fixes land (T5 regen / N1 naming rounds)."),
-        "text": {"files": text_stats},
-        "naming": {"counts": naming_counts, "tables": naming_tables},
+def _vt_spelling(code):
+    if VT_RAW_SPELL_RE.search(code):
+        return "raw-offset0"
+    m = VT_SLOT_SPELL_RE.search(code)
+    return m.group(1) if m else "other"
+
+
+def _vt_value_kind(rhs, vt_bases):
+    """Return the vtable-value kind of an assignment RHS that IS a vtable
+    address expression, or None.  See the VT_VALUE_START_RE grammar."""
+    m = VT_VALUE_START_RE.match(rhs.strip())
+    if not m:
+        return None
+    tok = m.group(1)
+    if tok.startswith("off_"):
+        return "B-off-vt" if int(m.group(2), 16) in vt_bases else None
+    if tok.startswith("0x"):
+        return "C-hex-vt" if int(m.group(3), 16) in vt_bases else None
+    if tok.endswith("`vftable'") or tok.endswith("`vtable'"):
+        return "A-backtick"
+    if "vt_" in tok:
+        return "A-vt-sym"
+    return "A-vftable"
+
+
+def scan_vtable(roots, vt_bases, ledger_path):
+    """Scan explicit vtable operations:
+      installs   -- every store whose value IS an authority vtable address
+                    (any LHS shape; X11 spelled four forms, the authority
+                    decides -- a store of a vtable value is the operation
+                    the user ruling bans);
+      sites      -- the SITE_RE-shaped vptr-store population (the population
+                    the X11 ledger was built from) for ledger accounting.
+    Ledger coverage is decided addr-first (binary anchor), then
+    line+spelling.  Returns a result dict (see main() for schema)."""
+    rows, by_addr, by_line = load_vtable_ledger(ledger_path)
+    sites = []
+    installs = []
+    for fp in iter_source_files(roots, exts=VT_EXTS):
+        try:
+            with open(fp, "rb") as f:
+                text = f.read().decode("utf-8", errors="replace")
+        except OSError:
+            continue
+        raw_lines = text.split("\n")
+        stripped = strip_to_code(text)
+        r = rel(fp)
+        for i, raw in enumerate(raw_lines):
+            code = raw.split("//", 1)[0]
+            st = stripped[i] if i < len(stripped) else ""
+            # ---- authority-backed install detection (any LHS shape)
+            assign = VT_ASSIGN_RE.search(code)
+            if assign and VT_ASSIGN_RE.search(st):
+                rhs = code[assign.end():].split(";", 1)[0]
+                kind = _vt_value_kind(rhs, vt_bases)
+                if kind:
+                    am = VT_ADDR_RE.search(raw)
+                    installs.append({
+                        "file": r, "line": i + 1,
+                        "addr": int(am.group(1), 16) if am else None,
+                        "spelling": _vt_spelling(code), "kind": kind,
+                        "text": raw.rstrip()[:200],
+                    })
+            # ---- SITE_RE population (ledger accounting)
+            if not (VT_SITE_RE.search(code) and VT_SITE_RE.search(st)):
+                continue            # not code / not a vptr-store site
+            am = VT_ADDR_RE.search(raw)
+            addr = int(am.group(1), 16) if am else None
+            spelling = _vt_spelling(code)
+            site = {"file": r, "line": i + 1, "addr": addr,
+                    "spelling": spelling, "text": raw.rstrip()[:200]}
+            row = None
+            match_how = None
+            if addr is not None and rows is not None:
+                row = by_addr.get((r, addr))
+                if row is not None:
+                    match_how = "addr"
+            if row is None and rows is not None:
+                cand = by_line.get((r, i + 1))
+                if cand is not None and cand.get("spelling") == spelling \
+                        and (addr is None or not cand.get("addr")):
+                    row = cand
+                    match_how = "line"
+            if row is not None:
+                site["ledger_family"] = row.get("family")
+                site["ledger_reason"] = row.get("action_reason")
+                site["match_how"] = match_how
+            sites.append(site)
+
+    install_keys = {(s["file"], s["line"]) for s in installs}
+    unaccounted = [s for s in sites if "ledger_family" not in s
+                   and (s["file"], s["line"]) not in install_keys]
+    covered = [s for s in sites if "ledger_family" in s]
+    by_spelling = {}
+    for s in sites:
+        by_spelling[s["spelling"]] = by_spelling.get(s["spelling"], 0) + 1
+    by_kind = {}
+    for s in installs:
+        by_kind[s["kind"]] = by_kind.get(s["kind"], 0) + 1
+    fams = {}
+    for s in covered:
+        k = s.get("ledger_family") or "?"
+        fams[k] = fams.get(k, 0) + 1
+    return {
+        "sites_total": len(sites),
+        "by_spelling": dict(sorted(by_spelling.items())),
+        "install": installs,
+        "install_by_kind": dict(sorted(by_kind.items())),
+        "unaccounted": unaccounted,
+        "covered": covered,
+        "covered_by_family": dict(sorted(fams.items())),
+        "ledger_rows": len(rows) if rows is not None else 0,
+        "ledger_present": rows is not None,
+        "matched_by_addr": sum(1 for s in covered
+                               if s.get("match_how") == "addr"),
+        "matched_by_line": sum(1 for s in covered
+                               if s.get("match_how") == "line"),
+        "ledger_path": rel(os.path.abspath(ledger_path)),
     }
-    tmp = path + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(man, f, indent=0, sort_keys=True)
-    os.replace(tmp, path)
-
-
-def _text_stats(per_file):
-    stats = {}
-    for fp, vios in per_file.items():
-        cats = {}
-        for _ln, cat, _txt in vios:
-            cats[cat] = cats.get(cat, 0) + 1
-        stats[rel(fp)] = {"sha256": sha256_file(fp), "total": len(vios),
-                          "cats": cats}
-    return stats
 
 
 def main():
@@ -474,34 +718,53 @@ def main():
                     help="files or directories to scan (default: src/)")
     ap.add_argument("--json", dest="json_out", default=None,
                     help="write machine-readable summary to PATH")
-    ap.add_argument("--baseline", default=BASELINE_PATH)
-    ap.add_argument("--update-baseline", action="store_true",
-                    help="rewrite the ratchet baseline from current counts")
     ap.add_argument("--skip-naming", action="store_true",
-                    help="skip the naming-pollution section (iteration aid)")
+                    help="skip the naming-pollution section (iteration aid; "
+                         "acceptance runs must not skip)")
     ap.add_argument("--naming-only", action="store_true",
                     help="run only the naming-pollution section")
+    ap.add_argument("--skip-vtable", action="store_true",
+                    help="skip the vtable section (iteration aid; acceptance "
+                         "runs must not skip)")
+    ap.add_argument("--vt-ledger", default=VT_LEDGER,
+                    help="X11 vtable ledger path (default: the X11 evidence)")
     args = ap.parse_args()
-    baseline_path = os.path.abspath(args.baseline)
 
     roots = args.paths if args.paths else DEFAULT_PATHS
     t0 = time.time()
 
-    # ---- text scan
-    per_file = {}
-    by_cat = {}
+    # skipped sections are recorded loudly -- never a silent escape
+    sections_skipped = []
+    if args.skip_naming:
+        sections_skipped.append("naming")
+    if args.skip_vtable or args.naming_only:
+        sections_skipped.append("vtable")
+    if args.naming_only:
+        sections_skipped.append("text")
+    if sections_skipped:
+        print(f"WARNING: generated-quality: section(s) skipped: "
+              f"{sections_skipped} -- acceptance runs must not skip",
+              file=sys.stderr)
+
+    hard_rows = []          # (rel, line, cat, text)
+    info_rows = []
     files_scanned = 0
+    malformed_total = {"def": 0, "decl": 0, "unclassified": 0}
+
+    # ---- text scan
     if not args.naming_only:
         for fp in iter_source_files(roots):
             files_scanned += 1
-            vios = scan_file(fp)
-            if vios:
-                per_file[fp] = vios
-                for _ln, cat, _txt in vios:
-                    by_cat[cat] = by_cat.get(cat, 0) + 1
-    text_total = sum(len(v) for v in per_file.values())
+            hard, info, mstats = scan_file(fp)
+            r = rel(fp)
+            for ln, cat, txt in hard:
+                hard_rows.append((r, ln, cat, txt))
+            for ln, cat, txt in info:
+                info_rows.append((r, ln, cat, txt))
+            for k in malformed_total:
+                malformed_total[k] += mstats[k]
 
-    # ---- naming scan
+    # ---- naming scan (INFO counts; fail closed on unreadable tables)
     naming_counts, table_stats, naming_notes, hard_errors = {}, {}, [], []
     if not args.skip_naming:
         naming_counts, table_stats, naming_notes, hard_errors = scan_naming()
@@ -512,139 +775,131 @@ def main():
     else:
         naming_notes.append("naming section skipped (--skip-naming)")
 
+    # ---- vtable section (X11 authority + ledger; hard on installs and
+    # unaccounted sites)
+    vt = None
+    if not args.naming_only and not args.skip_vtable:
+        try:
+            vt_bases, n_auth = load_vtable_authority()
+        except ValueError as e:
+            print(f"ERROR: generated-quality: vtable authority: {e}",
+                  file=sys.stderr)
+            sys.exit(2)
+        vt = scan_vtable(roots, vt_bases, os.path.abspath(args.vt_ledger))
+        if not vt["ledger_present"] and vt["sites_total"] > 0:
+            print(f"ERROR: generated-quality: {vt['sites_total']} vptr-store "
+                  f"site(s) found but the X11 ledger is absent "
+                  f"({vt['ledger_path']}) -- cannot score vtable hygiene "
+                  f"honestly; regenerate with `python "
+                  f"tools/csp_export/lower_vtables.py --classify`",
+                  file=sys.stderr)
+            sys.exit(2)
+        for s in vt["install"]:
+            hard_rows.append((s["file"], s["line"], "VT-INSTALL",
+                              s["text"]))
+        for s in vt["unaccounted"]:
+            hard_rows.append((s["file"], s["line"], "VT-UNACCOUNTED",
+                              s["text"]))
+        for s in vt["covered"][:INFO_SHOW]:
+            info_rows.append((s["file"], s["line"], "VT-LEDGER-KEEP",
+                              f"[{s.get('ledger_family')}] {s['text']}"))
+
     elapsed = time.time() - t0
 
-    # ---- update-baseline mode
-    if args.update_baseline:
-        write_baseline(baseline_path, _text_stats(per_file),
-                       naming_counts, table_stats)
-        print(f"generated-quality: baseline written: {len(per_file)} files, "
-              f"{text_total} text violations {dict(sorted(by_cat.items()))}; "
-              f"naming {naming_counts}")
-        sys.exit(0)
+    # ---- aggregate
+    fail_by_cat = {}
+    for _r, _ln, cat, _txt in hard_rows:
+        fail_by_cat[cat] = fail_by_cat.get(cat, 0) + 1
+    info_by_cat = {}
+    for _r, _ln, cat, _txt in info_rows:
+        info_by_cat[cat] = info_by_cat.get(cat, 0) + 1
+    if vt is not None:
+        info_by_cat["VT-LEDGER-KEEP"] = len(vt["covered"])
+    for cat, n in naming_counts.items():
+        if n:
+            info_by_cat[cat] = info_by_cat.get(cat, 0) + n
+    fail_by_cat = {k: fail_by_cat[k] for k in sorted(fail_by_cat)}
+    info_by_cat = {k: info_by_cat[k] for k in sorted(info_by_cat)}
+    fail_total = sum(fail_by_cat.values())
+    read_errors = fail_by_cat.get("READ-ERROR", 0)
 
-    baseline = load_baseline(baseline_path)
-
-    # ---- bootstrap
-    if baseline is None:
-        write_baseline(baseline_path, _text_stats(per_file),
-                       naming_counts, table_stats)
-        print("generated-quality: NO BASELINE -- bootstrapping ratchet at "
-              "current counts. Review tools/quality_gate_baseline.json in "
-              "the commit that introduces it.", file=sys.stderr)
-        print(f"generated-quality: baseline initialized: {len(per_file)} "
-              f"files, {text_total} text violations -- future increases "
-              f"FAIL; naming counts {naming_counts}")
-        sys.exit(0)
-
-    # ---- enforcement: text
-    base_files = baseline.get("text", {}).get("files", {})
-    new_vios = []
-    regressed = set()
-    improved = 0
-    for fp, vios in per_file.items():
-        r = rel(fp)
-        rec = base_files.get(r)
-        counts = {}
-        for _ln, cat, _txt in vios:
-            counts[cat] = counts.get(cat, 0) + 1
-        if rec is None:
-            new_vios.extend((r, ln, cat, txt) for ln, cat, txt in vios)
-            regressed.add(r)
-            continue
-        got_worse = any(cnt > rec.get("cats", {}).get(cat, 0)
-                        for cat, cnt in counts.items())
-        if counts and not got_worse \
-                and sum(counts.values()) < rec.get("total", 0):
-            improved += 1
-        if got_worse:
-            regressed.add(r)
-            new_vios.extend((r, ln, cat, txt) for ln, cat, txt in vios)
-
-    read_errors = by_cat.get("READ-ERROR", 0)
-
-    # ---- enforcement: naming
-    base_naming = baseline.get("naming", {}).get("counts", {})
-    naming_regressions = []
-    for cat, cur in naming_counts.items():
-        base = base_naming.get(cat)
-        if base is None:
-            if cur > 0:
-                naming_regressions.append(
-                    f"{cat}: {cur} (category absent from baseline)")
-        elif cur > base:
-            naming_regressions.append(f"{cat}: {cur} > baseline {base}")
-
-    # ---- output
+    # ---- display
     shown = 0
-    for r, ln, cat, txt in new_vios:
+    for r, ln, cat, txt in hard_rows:
         if shown >= MAX_SHOW:
             break
         print(f"FAIL: {r}:{ln}: {cat} -- {txt}")
         shown += 1
-    if len(new_vios) > shown:
-        print(f"... {len(new_vios) - shown} more new violation(s) suppressed "
-              f"(GQ_SHOW={MAX_SHOW})")
-    for m in naming_regressions:
-        print(f"FAIL: naming: {m}")
-    for note in naming_notes:
-        print(f"note: {note}", file=sys.stderr)
+    if len(hard_rows) > shown:
+        print(f"... {len(hard_rows) - shown} more hard violation(s) "
+              f"suppressed (GQ_SHOW={MAX_SHOW})")
+    ishown = 0
+    for r, ln, cat, txt in info_rows:
+        if ishown >= INFO_SHOW:
+            break
+        print(f"INFO: {r}:{ln}: {cat} -- {txt}")
+        ishown += 1
+    if vt is not None:
+        print(f"INFO: vtable: {vt['sites_total']} explicit vptr-store "
+              f"site(s) scanned; {len(vt['covered'])} covered by the X11 "
+              f"ledger ({vt['covered_by_family']}; addr {vt['matched_by_addr']}"
+              f" / line {vt['matched_by_line']}) -- reported, not silent")
+    for m in naming_notes:
+        print(f"note: {m}", file=sys.stderr)
 
     print(f"generated-quality: scanned {files_scanned} files in "
-          f"{elapsed:.1f}s | files with violations: {len(per_file)} | "
-          f"text total {text_total} | by category: "
-          f"{dict(sorted(by_cat.items()))} | regressed files: "
-          f"{len(regressed)} | improved: {improved} | naming counts: "
-          f"{naming_counts} | table stats: "
-          f"{json.dumps(table_stats, sort_keys=True)}", file=sys.stderr)
-
-    baseline_counts = {
-        "text_total": sum(f.get("total", 0)
-                          for f in base_files.values()),
-        "text_by_category": {},
-        "naming": base_naming,
-    }
-    for rec in base_files.values():
-        for cat, n in rec.get("cats", {}).items():
-            baseline_counts["text_by_category"][cat] = \
-                baseline_counts["text_by_category"].get(cat, 0) + n
+          f"{elapsed:.1f}s | FAIL total {fail_total} | by category: "
+          f"{fail_by_cat} | INFO total {sum(info_by_cat.values())} | "
+          f"INFO by category: {info_by_cat} | malformed split: "
+          f"{malformed_total} | naming counts: {naming_counts} | table "
+          f"stats: {json.dumps(table_stats, sort_keys=True)}",
+          file=sys.stderr)
 
     summary = {
-        "schema": SUMMARY_SCHEMA,
+        "schema": SCHEMA,
         "paths": roots,
+        "sections_skipped": sections_skipped,
         "files_scanned": files_scanned,
-        "files_with_violations": len(per_file),
-        "text_total": text_total,
-        "text_by_category": dict(sorted(by_cat.items())),
-        "new_violations": len(new_vios),
-        "regressed_files": len(regressed),
-        "improved_files": improved,
+        "fail_total": fail_total,
+        "fail_by_category": fail_by_cat,
+        "info_total": sum(info_by_cat.values()),
+        "info_by_category": info_by_cat,
+        "malformed_split": malformed_total,
         "read_errors": read_errors,
         "naming_counts": naming_counts,
         "naming_table_stats": table_stats,
-        "naming_regressions": naming_regressions,
         "naming_notes": naming_notes,
-        "baseline_counts": baseline_counts,
+        "vtable": None if vt is None else {
+            "sites_total": vt["sites_total"],
+            "by_spelling": vt["by_spelling"],
+            "install": len(vt["install"]),
+            "install_by_kind": vt["install_by_kind"],
+            "unaccounted": len(vt["unaccounted"]),
+            "covered": len(vt["covered"]),
+            "covered_by_family": vt["covered_by_family"],
+            "ledger_rows": vt["ledger_rows"],
+            "ledger_present": vt["ledger_present"],
+            "matched_by_addr": vt["matched_by_addr"],
+            "matched_by_line": vt["matched_by_line"],
+            "ledger_path": vt["ledger_path"],
+            # full per-site lists (no cap): X7's work list must not be sampled
+            "install_rows": vt["install"],
+            "unaccounted_rows": vt["unaccounted"],
+        },
         "elapsed_s": round(elapsed, 1),
-        "fail": False,
+        "failed": bool(fail_total),
     }
 
     rc = 0
-    if new_vios or read_errors:
-        summary["fail"] = True
-        print(f"FAIL: generated-quality: {len(new_vios)} new text "
-              f"violation(s) beyond ratchet in {len(regressed)} file(s); "
+    if fail_total:
+        print(f"FAIL: generated-quality: {fail_total} hard violation(s) "
+              f"(zero tolerance, X6/Q3) -- {fail_by_cat}; "
               f"{read_errors} read error(s)", file=sys.stderr)
         rc = 1
-    if naming_regressions:
-        summary["fail"] = True
-        print(f"FAIL: generated-quality: {len(naming_regressions)} naming "
-              f"regression(s) beyond baseline", file=sys.stderr)
-        rc = 1
-    if rc == 0:
-        print(f"OK: generated-quality: no new violations vs ratchet "
-              f"(baseline: text {baseline_counts['text_total']}, naming "
-              f"{base_naming})")
+    else:
+        print(f"OK: generated-quality: 0 hard violations "
+              f"({sum(info_by_cat.values())} INFO occurrence(s) reported: "
+              f"Step-6 names / ledger-covered sites)", file=sys.stderr)
 
     if args.json_out:
         jp = args.json_out if os.path.isabs(args.json_out) \
