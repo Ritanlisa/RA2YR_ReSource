@@ -655,7 +655,7 @@ LABEL_104:
             *(unsigned int *)(v39 + 20) = v40 & 0xFFFFFFF7;
             if ( *(unsigned short *)(a1 + 1880) == 1 )
             {
-              qmemcpy((void *)(a1 + 452), *(const void **)(v39 + 8), v38);
+              memcpy((void *)(a1 + 452), *(const void **)(v39 + 8), v38);
               *(unsigned int *)(a1 + 448) = *(unsigned int *)(v39 + 40);
               int v41 = *(unsigned int *)(a1 + 420);
               (v41) = ((v41) & ~0xFF) | ((unsigned int)(v41 | 1) & 0xFF);

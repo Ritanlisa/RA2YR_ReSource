@@ -119,7 +119,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)v6->queuedMission; /*0x51ff79*/
       else
         queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vfptr + 97))(v6); /*0x51ff89*/
-      v7 = (unsigned int)(*(unsigned int *)(ProgressTimer)::GetValue((ProgressTimer *)v6->primaryFacing, &v27)); /*0x51ff9d*/
+      v7 = (unsigned int *)((unsigned int)(*(unsigned int *)(ProgressTimer)::GetValue((ProgressTimer *)v6->primaryFacing, &v27))); /*0x51ff9d*/
       owner = (gamemd::HouseClass *)(v6->owner); /*0x51ffab*/
       v9 = *&v6->q6C0 + 36; /*0x51ffb3*/
       v24.Input_field_00 = v6->location[0]; /*0x51ffb6*/
@@ -620,7 +620,7 @@ namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
   *(unsigned int *)this->0 = &vt_HoverLocomotionClass; /*0x513d00*/
-  *&this->M4 = &vt_HoverLocomotionClass; /*0x513d06*/
+  *&this->M4 = (unsigned int)(&vt_HoverLocomotionClass); /*0x513d06*/
   this->LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd
@@ -649,7 +649,7 @@ int E4Recv_517110::sub_517110()
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = this->M12; /*0x51717f*/
+  vtable3 = (void *)(this->M12); /*0x51717f*/
   this->ambientSoundController[3] = 0; /*0x517182*/
   this->ambientSoundController[4] = 1072693248; /*0x517189*/
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/

@@ -25,7 +25,7 @@
 
 // 0x597730
 namespace gamemd {  // G42.18 ns repair
-int MapSeed::ValidateName(int a2)
+int MapSeed::ValidateName(int a2, void *a2_1)
 {
   int result; // eax
 
@@ -80,7 +80,7 @@ int MapSeed::CheckName()
         v3)
     || (unsigned __int8)ValidateStringContains((const char **)this, v4, asc_84BA18) )
   {
-    result = DeleteAndZero((ObjectClass *)&v8); /*0x79c5b7*/
+    result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c5b7*/
     LOBYTE(result) = 0; /*0x79c5bc*/
   }
   else
@@ -89,7 +89,7 @@ int MapSeed::CheckName()
     if ( *(int *)g_WindowManager <= 0 ) /*0x79c5cc*/
     {
 LABEL_12:
-      result = DeleteAndZero((ObjectClass *)&v8); /*0x79c624*/
+      result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c624*/
       LOBYTE(result) = 1; /*0x79c62d*/
     }
     else
@@ -107,7 +107,7 @@ LABEL_12:
           goto LABEL_12; /*0x79c622*/
       }
       DeleteAndZero((ObjectClass *)&v8.ptr_4); /*0x79c634*/
-      result = DeleteAndZero((ObjectClass *)&v8); /*0x79c63d*/
+      result = (int)(DeleteAndZero((ObjectClass *)&v8)); /*0x79c63d*/
       LOBYTE(result) = 0; /*0x79c642*/
     }
   }

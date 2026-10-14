@@ -114,7 +114,7 @@ int Audio::ReleaseChannelRefs()
   }
   else
   {
-    v4 = &this->q028; /*0x404d91*/
+    v4 = (gamemd::RefCount **)(&this->q028); /*0x404d91*/
     do /*0x404dad*/
     {
       RefCount::Decrement(*v4); /*0x404d96*/
@@ -146,7 +146,7 @@ int Audio::UpdatePlaybackPosition()
   if ( this != *(Audio **)(v2 + 192) ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   AudioFile::GetCallback((AudioFile *)v2); /*0x4054b7*/
-  v4 = *&this->u32_148; /*0x4054bc*/
+  v4 = (unsigned int *)(*&this->u32_148); /*0x4054bc*/
   v5 = *(unsigned int *)this->q018; /*0x4054c2*/
   LOBYTE(v5) = v5 | 8; /*0x4054c5*/
   *(unsigned int *)this->q018 = v5; /*0x4054c7*/
@@ -163,7 +163,7 @@ int Audio::UpdatePlaybackPosition()
   if ( Audio::GetChannelStatus(*&this->u32_B0) ) /*0x40553e*/
   {
     *&this->u32_1C = 1; /*0x405547*/
-    *&this->u32_148 = v4; /*0x40554e*/
+    *&this->u32_148 = (unsigned int)(v4); /*0x40554e*/
     v8 = *(unsigned int *)this->q018; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
     *(unsigned int *)this->q018 = v8; /*0x405559*/
@@ -201,7 +201,7 @@ void * Audio::ProcessMixerOutput(char * Source)
       return Next; /*0x40648d*/
   }
 LABEL_6:
-  v4 = __2_YAPAXI_Z(0x148u); /*0x4063f4*/
+  v4 = (unsigned int *)(__2_YAPAXI_Z(0x148u)); /*0x4063f4*/
   memset(v4, 0, 0x148u); /*0x40640a*/
   memset(v4, 0, 0x148u); /*0x406413*/
   DListNode::InitEmpty(v4); /*0x40641a*/
@@ -230,7 +230,7 @@ int Audio::ApplyFormatFlags(int * a1, char * a2)
   char *v6; // eax
   int v7; // eax
 
-  v4 = &off_816048; /*0x40687e*/
+  v4 = (char **)(&off_816048); /*0x40687e*/
   if ( off_816048 ) /*0x406883*/
   {
     do /*0x40689d*/
@@ -463,19 +463,19 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
     DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
     DeleteAndZero((ObjectClass *)&v7.MPGameMode); /*0x5d0571*/
   }
-  return this; /*0x5d0578*/
+  return (gamemd::ObjectClass **)(this); /*0x5d0578*/
 }
 }
 // 0x5D5820
 namespace gamemd {
-char ** Audio::SetSoundFileName(char *Source, int a3)
+char ** Audio::SetSoundFileName(char *Source, int a3, void *a3_1)
 {
 
   *(unsigned int *)this->__pad_000 = 0; /*0x5d5825*/
   *&this->u32_4 = 0; /*0x5d5827*/
   this->u32_8 = 0; /*0x5d582a*/
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
-    *(unsigned int *)this->__pad_000 = _strdup(Source); /*0x5d5843*/
+    *(unsigned int *)this->__pad_000 = (unsigned int)(_strdup(Source)); /*0x5d5843*/
   return (char **)this; /*0x5d5847*/
 
 }
@@ -718,7 +718,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
 
   v4 = v3; /*0x7510d9*/
   DListNode::Init((DListNode *)&unk_B1D320); /*0x7510e0*/
-  dword_B1D3A4 = (VtableStub *)AllocLinkedListMemory(200, 60); /*0x7510f6*/
+  dword_B1D3A4 = (unsigned int)((VtableStub *)AllocLinkedListMemory(200, 60)); /*0x7510f6*/
   dword_B1D3A8 = 0; /*0x751100*/
   dword_B1D3AC = 0; /*0x75110a*/
   if ( INIClass::BinarySearchSection((int)v4, g_INI_Key_Defaults) ) /*0x751114*/
@@ -817,7 +817,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
                    0) )
             {
               v16 = g_VocPlayState++; /*0x75139c*/
-              *((unsigned int *)g_VocAudioConfig + v16) = v15; /*0x7513ab*/
+              *((unsigned int *)g_VocAudioConfig + v16) = (unsigned int)(v15); /*0x7513ab*/
             }
             v15->vfptr.vfptr = (int)Audio::ProcessMixerOutput(Destination); /*0x7513b7*/
           }
@@ -868,7 +868,7 @@ void * Audio::LoadSoundINI()
       operator delete((void *)(v1)); /*0x751450*/
     }
   }
-  result = dword_B1D3A4; /*0x751461*/
+  result = (void *)(dword_B1D3A4); /*0x751461*/
   if ( dword_B1D3A4 ) /*0x751468*/
   {
     Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751474*/
@@ -897,7 +897,7 @@ void sub_752590(int a1, int a2, int a3)
 {
   unsigned int *v5; // esi
 
-  v5 = operator new(0x20u); /*0x75259f*/
+  v5 = (unsigned int *)(operator new(0x20u)); /*0x75259f*/
   DListNode::InitEmpty(v5); /*0x7525a6*/
   v5->u32_C = a1; /*0x7525af*/
   v5->u32_14 = a3; /*0x7525b2*/

@@ -160,7 +160,7 @@ LABEL_36:
                 ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Audio7[4] + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
-            Anims = v1->Anims; /*0x45411c*/
+            Anims = (int *)(v1->Anims); /*0x45411c*/
             v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
@@ -168,7 +168,7 @@ LABEL_36:
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
-            Upgrades = v1->Upgrades; /*0x454138*/
+            Upgrades = (int *)(v1->Upgrades); /*0x454138*/
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
@@ -176,7 +176,7 @@ LABEL_36:
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
-            DamageFireAnims = v1->DamageFireAnims; /*0x454154*/
+            DamageFireAnims = (int *)(v1->DamageFireAnims); /*0x454154*/
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
@@ -206,7 +206,7 @@ LABEL_36:
                 v23 = v1->Audio8[2]; /*0x4540df*/
                 v24 = v1->Audio7[4]; /*0x4540e2*/
                 v1->Audio8[2] = v23 + 1; /*0x4540e8*/
-                *(unsigned int *)(v24 + 4 * v23) = v33; /*0x4540ef*/
+                *(unsigned int *)(v24 + 4 * v23) = (unsigned int)(v33); /*0x4540ef*/
               }
               v19 = v34; /*0x4540f2*/
               if ( ++v20 >= v34 ) /*0x4540f9*/
@@ -222,7 +222,7 @@ LABEL_36:
           result = (*(int (**)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0); /*0x453fed*/
           if ( result < 0 ) /*0x453ff2*/
             break; /*0x453ff2*/
-          FiringOccupantIndex = v1->FiringOccupantIndex; /*0x453ff8*/
+          FiringOccupantIndex = (int)(v1->FiringOccupantIndex); /*0x453ff8*/
           if ( v1->Audio7[1] < FiringOccupantIndex /*0x454029*/
             || (BYTE1(v1->Audio7[0]) || !FiringOccupantIndex)
             && (v15 = v1->Audio7[2], v15 > 0)
@@ -234,7 +234,7 @@ LABEL_36:
             v16 = v1->Audio7[1]; /*0x454030*/
             v17 = v1->Occupants[0]; /*0x454033*/
             v1->Audio7[1] = v16 + 1; /*0x454039*/
-            *(unsigned int *)(v17 + 4 * v16) = v33; /*0x454040*/
+            *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v33); /*0x454040*/
           }
           v13 = v34; /*0x454043*/
           if ( ++v4 >= v34 ) /*0x45404a*/
@@ -476,7 +476,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   {
     aP0->planningToken = 0; /*0x70bf79*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 540); /*0x70bf7f*/
-    v3 = aP0 + 772; /*0x70bf84*/
+    v3 = (int)(aP0 + 772); /*0x70bf84*/
     v4 = 8; /*0x70bf8a*/
     do /*0x70bf9e*/
     {
@@ -817,7 +817,7 @@ v110.q00C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v6 + 440)
             BuildingClass::PlayUpgradeAnim((BuildingClass *)v11, 10, (_AX & 0x4100) != 0, 0, 0); /*0x73a21d*/
           }
         }
-        IDA_LOBYTE(v8) = (*(char (**)(int))(*(unsigned int *)_EBP + 248))(_EBP); /*0x73a227*/
+        (*((unsigned char *)&(v8))) = (*(char (**)(int))(*(unsigned int *)_EBP + 248))(_EBP); /*0x73a227*/
         return (void*)v8; /*0x73a234*/
       }
     }
@@ -847,7 +847,7 @@ v110.q00C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)v6 + 440)
   LABEL_105:
       (*(void (**)(int, unsigned int, int))(*(unsigned int *)_EBP + 1152))(_EBP, 0, 1); /*0x73a796*/
       (*(void (**)(int, int, unsigned int))(*(unsigned int *)_EBP + 488))(_EBP, 5, 0); /*0x73a7ae*/
-      IDA_LOBYTE(v8) = (*(char (**)(int, int *, int, int))(*(unsigned int *)_EBP + 372))( _EBP, (int *)(&dword_B1CFE8), 1, 1); /*0x73a7c2*/
+      (*((unsigned char *)&(v8))) = (*(char (**)(int, int *, int, int))(*(unsigned int *)_EBP + 372))( _EBP, (int *)(&dword_B1CFE8), 1, 1); /*0x73a7c2*/
       return (void*)v8; /*0x73a7cf*/
     }
   LABEL_47:
@@ -917,9 +917,9 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.q004 +
               if ( !*(unsigned int *)(_EBP + 1652) ) /*0x73a50d*/
                 sub_7DC720(-2147467261); /*0x73a51c*/
               (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(_EBP + 1652) + 92))(*(unsigned int *)(_EBP + 1652)); /*0x73a52b*/
-              IDA_LOBYTE(v8) = v110.__pad_000; /*0x73a52e*/
+              (*((unsigned char *)&(v8))) = v110.__pad_000; /*0x73a52e*/
               if ( *(unsigned int *)v110.__pad_000 ) /*0x73a534*/
-                IDA_LOBYTE(v8) = (*(char (__stdcall **)(unsigned int))(**(unsigned int **)v110.__pad_000 + 8))(*(unsigned int *)v110.__pad_000); /*0x73a53d*/
+                (*((unsigned char *)&(v8))) = (*(char (__stdcall **)(unsigned int))(**(unsigned int **)v110.__pad_000 + 8))(*(unsigned int *)v110.__pad_000); /*0x73a53d*/
               return (void*)v8; /*0x73a547*/
             }
             if ( *(unsigned int *)v110.__pad_000 ) /*0x73a550*/
@@ -1129,7 +1129,7 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.q004 +
             if ( v79 ) /*0x73ac29*/
               *(unsigned char *)(v79 + 130) = 1; /*0x73ac2b*/
             (*(void (**)(int))(*(unsigned int *)_EBP + 928))(_EBP); /*0x73ac37*/
-            IDA_LOBYTE(v8) = (*(char (**)(int))(*(unsigned int *)_EBP + 248))(_EBP); /*0x73ac42*/
+            (*((unsigned char *)&(v8))) = (*(char (**)(int))(*(unsigned int *)_EBP + 248))(_EBP); /*0x73ac42*/
             return (void*)v8; /*0x73ac4f*/
           }
         }
@@ -1236,7 +1236,7 @@ v95 = (int *)(*(int (**)(int, int *, unsigned int, unsigned int))(*(unsigned int
 
 
           CreateSmokeEffectAt(v94, v93, *v95, v95[1], v95[2], (char)v107, v108); /*0x73af8b*/
-IDA_LOBYTE(v8) = (*(char (**)(int, int *, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)_EBP + 364))( /*0x73afb0*/ _EBP, (int *)(&a5), 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 0, 1);
+(*((unsigned char *)&(v8))) = (*(char (**)(int, int *, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)_EBP + 364))( /*0x73afb0*/ _EBP, (int *)(&a5), 0, *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4008), 0, 1);
 
 
 
@@ -1267,7 +1267,7 @@ IDA_LOBYTE(v8) = (*(char (**)(int, int *, unsigned int, unsigned int, unsigned i
     *(unsigned int *)(_EBP + 284) = (unsigned int)Building; /*0x73a768*/
     if ( v57->OpenTopped ) /*0x73a76e*/
       ((CCINIClass *)_EBP)->IterateNodes( 0); /*0x73a77c*/
-    IDA_LOBYTE(v8) = (*(char (**)(int))(*(unsigned int *)_EBP + 284))(_EBP); /*0x73a786*/
+    (*((unsigned char *)&(v8))) = (*(char (**)(int))(*(unsigned int *)_EBP + 284))(_EBP); /*0x73a786*/
     return (void*)v8; /*0x73a22d*/
 } // namespace gamemd
 }

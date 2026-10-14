@@ -9,7 +9,7 @@ struct E4Recv_491C50 {
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    int  sub_491C50(unsigned char * a2, uint8_t * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11);  // 0x491C50
+    int sub_491C50(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10);  // 0x491C50
     unsigned int m_4;  // 0x4 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
 };

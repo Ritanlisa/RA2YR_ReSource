@@ -79,7 +79,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = &vt_MSAnim; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     __3_YAXPAX_Z(this); /*0x5cecfa*/
-  return this->vtable1; /*0x5ced04*/
+  return (gamemd::MSVQAnim *)(this->vtable1); /*0x5ced04*/
 
 }
 } // namespace gamemd

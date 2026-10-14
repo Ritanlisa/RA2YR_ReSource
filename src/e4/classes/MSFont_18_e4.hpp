@@ -19,7 +19,7 @@ struct MSFont_18 {
     char  AddRef(int a2);  // 0x5D5150
     char  Release(int a2, unsigned int * a3);  // 0x5D5190
     void ddtor(void *a1 = 0);  // 0x5D5240
-    int  Create(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x5D5270
+    int Create(unsigned int * a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0);  // 0x5D5270
     char  SetCapacity(int a2, unsigned int * a3);  // 0x5D52D0
     int  FindItem(unsigned int * a2);  // 0x5D5380
     int  FindPair8(unsigned int * a2);  // 0x5D56A0
@@ -28,7 +28,7 @@ struct MSFont_18 {
     DynamicVector *  Constructor_VectorClass_AcceleratorTracker_(char a2);  // 0x5D57D0
     unsigned int  PointerToIndex(int a2);  // 0x5D50B0
     unsigned int  PointerToIndex8(int a2);  // 0x5D5110
-    unsigned int  Draw(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x5D52B0
+    unsigned int Draw(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x5D52B0
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)

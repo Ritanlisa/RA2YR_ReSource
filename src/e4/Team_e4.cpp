@@ -126,7 +126,7 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
     if ( !Dialog ) /*0x561225*/
       goto LABEL_13; /*0x561225*/
-    v12 = (int)(a3); /*0x56122f*/
+    v12 = (void *)((int)(a3)); /*0x56122f*/
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x561234*/
     ((Dialog *)(Dialog))->Show(); /*0x56123c*/
     Ticks = TimerGetTicks(); /*0x56124a*/
@@ -352,7 +352,7 @@ Game * * E4Recv_634B20::sub_634B20()
     do /*0x634bf7*/
     {
       v3 = *(unsigned char **)(this->occupant + 4 * v2); /*0x634b48*/
-      qmemcpy(v18, v3, 0x6Cu); /*0x634b57*/
+      memcpy(v18, v3, 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
@@ -381,7 +381,7 @@ Game * * E4Recv_634B20::sub_634B20()
   }
   if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
   {
-    qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
+    memcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
     v8 = this->M16; /*0x634c48*/
@@ -414,7 +414,7 @@ void ** E4Recv_637640::sub_637640()
   ObjectClass *v5; // [esp+Ch] [ebp-4h] BYREF
   _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
 
-  v5 = this; /*0x637647*/
+  v5 = (gamemd::ObjectClass *)(this); /*0x637647*/
   v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&g_ScriptConfig + 16))( /*0x637655*/
          &g_ScriptConfig,
          &v5);
@@ -506,7 +506,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
 }
 // 0x65AD30
 namespace gamemd {
-int Team::GetMember(int aP1)
+int Team::GetMember(int aP1, void *a2)
 {
 
   return *((unsigned int *)this->field_E4 + aP1); /*0x65ad3d*/
@@ -614,12 +614,12 @@ bool Team_Start_76ED10(void * a1, void * a2)
       g_abs_A8B258 = (*(unsigned int *)(v10 + 56) & 0x10) != 0; /*0x76ee14*/
       (v7) = ((v7) & ~0xFF) | ((unsigned int)((*(unsigned int *)(v10 + 56) & 0x20) != 0) & 0xFF); /*0x76ee20*/
       byte_A8B31F = 0; /*0x76ee22*/
-      IDA_LOBYTE(dword_A8B320) = v7; /*0x76ee29*/
+      (*((unsigned char *)&(dword_A8B320))) = v7; /*0x76ee29*/
       g_abs_A8B260 = 1; /*0x76ee2f*/
-      g_abs_A8B261 = IDA_BYTE1(*(unsigned int *)(v10 + 56)) & 1; /*0x76ee3d*/
+      g_abs_A8B261 = (((unsigned char *)&(*(unsigned int *)(v10 + 56)))[1]) & 1; /*0x76ee3d*/
       g_abs_A8B262 = (*(unsigned int *)(v10 + 56) & 0x400) != 0; /*0x76ee4b*/
       v8 = (*(unsigned int *)(v10 + 56) & 0x200) != 0; /*0x76ee57*/
-      IDA_LOBYTE(g_abs_A8B264) = 0; /*0x76ee59*/
+      (*((unsigned char *)&(g_abs_A8B264))) = 0; /*0x76ee59*/
       g_abs_A8B263 = v8; /*0x76ee60*/
       g_abs_A8B274 = 0; /*0x76ee65*/
       g_abs_A8B278 = 1; /*0x76ee6f*/
@@ -690,8 +690,8 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
   int v5; // esi
   unsigned int *v6; // edi
 
-  v4 = (int)(operator new(0x10u));
-  v5 = v4; /*0x765f6e*/
+  v4 = (void *)((int)(operator new(0x10u)));
+  v5 = (int)(v4); /*0x765f6e*/
   if ( v4 ) /*0x765f75*/
   {
     v6 = (unsigned int *)(v4 + 8); /*0x765f78*/
@@ -721,8 +721,8 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
   int v5; // esi
   unsigned int *v6; // edi
 
-  v4 = (int)(operator new(0x10u));
-  v5 = v4; /*0x767b0e*/
+  v4 = (void *)((int)(operator new(0x10u)));
+  v5 = (int)(v4); /*0x767b0e*/
   if ( v4 ) /*0x767b15*/
   {
     v6 = (unsigned int *)(v4 + 8); /*0x767b18*/

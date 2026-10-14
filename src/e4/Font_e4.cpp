@@ -115,7 +115,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     (*(((unsigned short *)&(v16)) + 1)) = (*(((unsigned short *)&(aP2)) + 1)); /*0x434d17*/
     v17 = 0; /*0x434d19*/
     v51 = 0; /*0x434d1b*/
-    (*((unsigned short *)&(v16))) = *aP2; /*0x434d1f*/
+    (*((unsigned short *)&(v16))) = (unsigned short)(*aP2); /*0x434d1f*/
     v54 = 0; /*0x434d22*/
     v52 = 0; /*0x434d29*/
     v49 = 0; /*0x434d2d*/
@@ -141,14 +141,14 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             }
             else if ( (aP7 & 2) != 0 ) /*0x434d8b*/
             {
-              v18 = aP5 - v11; /*0x434d8f*/
+              v18 = (int)(aP5 - v11); /*0x434d8f*/
             }
           }
           xLeft = aP1a + v18; /*0x434d97*/
           if ( v12 >= aP2 ) /*0x434da1*/
             goto LABEL_20; /*0x434da1*/
-          v19 = aP8; /*0x434da7*/
-          v20 = aP8 - v49 - 1; /*0x434db7*/
+          v19 = (int)(aP8); /*0x434da7*/
+          v20 = (int)(aP8 - v49 - 1); /*0x434db7*/
           v21 = v49 - aP8 + aP9 + 1; /*0x434dba*/
           while ( 2 ) /*0x434dc4*/
           {
@@ -179,7 +179,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             xLeft = FontClass::RenderGlyph(aP0, v44, xLeft, aP4, v22); /*0x434ea6*/
             if ( v12 < aP2 ) /*0x434eb0*/
             {
-              v19 = aP8; /*0x434dc0*/
+              v19 = (int)(aP8); /*0x434dc0*/
               continue; /*0x434dc0*/
             }
             break;
@@ -198,7 +198,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           goto LABEL_55; /*0x434ee4*/
         case 32: /*0x434d59*/
           v54 = v11; /*0x434f02*/
-          v52 = aP2; /*0x434f06*/
+          v52 = (unsigned short *)(aP2); /*0x434f06*/
           goto LABEL_26; /*0x434f06*/
         default:
   LABEL_26:
@@ -220,7 +220,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             if ( v14 > 1 ) /*0x434f5e*/
             {
               v11 = v54; /*0x434f60*/
-              aP2 = v52; /*0x434f64*/
+              aP2 = (gamemd::AbstractClass *)(v52); /*0x434f64*/
             }
           }
           else if ( v14 > 1 ) /*0x434f6d*/
@@ -237,15 +237,15 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             }
             else if ( (aP7 & 2) != 0 ) /*0x434f9d*/
             {
-              v29 = aP5 - v11; /*0x434fa1*/
+              v29 = (int)(aP5 - v11); /*0x434fa1*/
             }
           }
           xLeft = aP1a + v29; /*0x434fa9*/
           if ( v12 >= aP2 ) /*0x434fb3*/
             goto LABEL_50; /*0x434fb3*/
-          v30 = aP8; /*0x434fb9*/
+          v30 = (int)(aP8); /*0x434fb9*/
           v31 = v49; /*0x434fbd*/
-          v32 = aP8 - v49 - 1; /*0x434fcb*/
+          v32 = (int)(aP8 - v49 - 1); /*0x434fcb*/
           v33 = v49 - aP8 + aP9 + 1; /*0x434fce*/
           break; /*0x434fd2*/
       }
@@ -300,8 +300,8 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           aP4 += v36; /*0x435129*/
   LABEL_55:
           v13 = (int16_t)v53; /*0x43512d*/
-          v37 = aP2 + 1; /*0x435135*/
-          aP2 = v37; /*0x435138*/
+          v37 = (unsigned short *)(aP2 + 1); /*0x435135*/
+          aP2 = (gamemd::AbstractClass *)(v37); /*0x435138*/
           (*((unsigned short *)&(v37))) = *v37; /*0x43513c*/
           v53 = v37; /*0x435142*/
           if ( !(unsigned short)v37 ) /*0x435146*/
@@ -311,7 +311,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           }
           goto LABEL_4; /*0x435146*/
         }
-        v30 = aP8; /*0x434fd4*/
+        v30 = (int)(aP8); /*0x434fd4*/
         v31 = v49; /*0x434fd8*/
       }
     }
@@ -327,14 +327,14 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         }
         else if ( (aP7 & 2) != 0 ) /*0x435188*/
         {
-          v38 = aP5 - v11; /*0x43518c*/
+          v38 = (int)(aP5 - v11); /*0x43518c*/
         }
       }
       xLeft = aP1a + v38; /*0x435194*/
       if ( v12 < aP2 ) /*0x43519e*/
       {
-        v39 = aP8; /*0x4351a4*/
-        v40 = aP8 - v17 - 1; /*0x4351b2*/
+        v39 = (int)(aP8); /*0x4351a4*/
+        v40 = (int)(aP8 - v17 - 1); /*0x4351b2*/
         v41 = v17 - aP8 + aP9 + 1; /*0x4351b5*/
         while ( 1 ) /*0x4351b9*/
         {
@@ -366,7 +366,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           if ( v12 >= aP2 ) /*0x4352c4*/
             break; /*0x4352c4*/
           v17 = v49; /*0x4352c6*/
-          v39 = aP8; /*0x4352ca*/
+          v39 = (int)(aP8); /*0x4352ca*/
         }
       }
     }

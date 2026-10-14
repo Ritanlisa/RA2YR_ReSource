@@ -106,7 +106,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       }
       m_8 = a2; /*0x76a0bb*/
     }
-    *&this->__pad_004 = v6; /*0x76a0ca*/
+    *&this->__pad_004 = (unsigned char)(v6); /*0x76a0ca*/
     this->m_8 = m_8; /*0x76a0cd*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a0d0*/
   }
@@ -117,7 +117,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   v12 = this->m_8; /*0x76a0dc*/
   if ( v12 < this->INIClass_10 ) /*0x76a0e4*/
     this->INIClass_10 = v12; /*0x76a0e6*/
-  return 1; /*0x76a0e9*/
+  return (gamemd::AbstractClass **)(1); /*0x76a0e9*/
 
 }
 }
@@ -135,7 +135,7 @@ char MSFrameAnim::Load(int a1, int * a2, void *a3_1, void *a4_1)
 
 // 0x767EF0
 namespace gamemd {
-void MSFrameAnim::Draw(int a1, int * a2)
+void MSFrameAnim::Draw(int a1, int * a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   int v2; // edi
   int v3; // eax
@@ -222,7 +222,7 @@ void MSFrameAnim::stopAnimation()
 {
   void *v2; // eax
 
-  v2 = *&this->__pad_004; /*0x769cd6*/
+  v2 = (void *)(*&this->__pad_004); /*0x769cd6*/
   *&this->m_8 = 0; /*0x769cd9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x769ce0*/
   {
@@ -310,7 +310,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
         *&this->__pad_004 = 0; /*0x76a321*/
       }
     }
-    *&this->__pad_004 = v4; /*0x76a32a*/
+    *&this->__pad_004 = (unsigned char)(v4); /*0x76a32a*/
     this->m_8 = a2; /*0x76a332*/
     BYTE1(this->m_C) = a3 == 0; /*0x76a335*/
   }

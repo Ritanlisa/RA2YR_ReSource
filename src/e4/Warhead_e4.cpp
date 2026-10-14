@@ -53,7 +53,7 @@ int Warhead::GetWarheadSound(int a2)
   if ( (uint8_t)Audio::IsLoud((int *)(this->u32_4C + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
-    v3 = this->q044; /*0x41d7fa*/
+    v3 = (int)(this->q044); /*0x41d7fa*/
   return !this->u32_F0 && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_50; /*0x41d814*/
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -69,7 +69,7 @@ int Warhead::RemoveFromDamageList(int a2)
   int v7; // eax
   int v8; // edx
 
-  v2 = &this->u32_66C; /*0x452827*/
+  v2 = (gamemd::Warhead *)(&this->u32_66C); /*0x452827*/
   v3 = (*(int (**)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
@@ -479,7 +479,7 @@ int Warhead::ProcessDamageArea()
       v23 = LightSourceClass::Construct(v22, v31, v33, v34, v30, v8, v26, v13, v17); /*0x65b7b2*/
     else
       v23 = 0; /*0x65b7b9*/
-    this->u32_24 = v23; /*0x65b7bb*/
+    this->u32_24 = (unsigned int)(v23); /*0x65b7bb*/
     v23->DetailLevel = 0; /*0x65b7be*/
     Trigger::EnableOnce(this->u32_24, 0); /*0x65b7ca*/
     return RadSiteClass::Radiate((int)this); /*0x65b7d1*/

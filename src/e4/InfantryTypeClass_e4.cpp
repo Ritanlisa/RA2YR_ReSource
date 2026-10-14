@@ -70,7 +70,7 @@ extern unsigned char aVehiclethief;  // data: 0x82593c truth(IDA G42.57w9)
 
 // 0x5236A0
 namespace gamemd {  // G42.18 ns repair
-InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
+InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1, void *a2, void *a3, void *a4)
 {
 
   int v3; // eax
@@ -80,7 +80,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   int i; // eax
 
   TechnoTypeClass::ReadINI((char *)this, aP1, 0); /*0x5236ae*/
-  this->ArrayIndex = -1; /*0x5236b3*/
+  this->ArrayIndex = (void *)(-1); /*0x5236b3*/
   this->Pip_d = 1; /*0x5236bd*/
   this->OccupyPip_d = 7; /*0x5236c7*/
   this->RecordTable = 0; /*0x5236d1*/
@@ -99,7 +99,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   VectorClass::Construct(&this->u32_E88, 0, 0); /*0x523734*/
   this->u32_E9C = 10; /*0x523739*/
   this->u32_E98 = 0; /*0x52373c*/
-  this->u32_E88 = &vt_TypeList; /*0x52373f*/
+  this->u32_E88 = (unsigned int)(&vt_TypeList); /*0x52373f*/
   this->u32_EA4 = -1; /*0x523748*/
   this->u32_EA8 = -1; /*0x52374e*/
   this->Cyborg_2 = 0; /*0x523754*/
@@ -142,7 +142,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
         !v4) )
   {
     dword_A8E358 = v3 + 1; /*0x52384a*/
-    *((unsigned int *)dword_A8E34C + v3) = this; /*0x523854*/
+    *((unsigned int *)dword_A8E34C + v3) = (unsigned int)(this); /*0x523854*/
     v3 = dword_A8E358; /*0x523857*/
   }
   v5 = 0; /*0x52385c*/
@@ -153,7 +153,7 @@ LABEL_11:
   }
   else
   {
-    v6 = dword_A8E34C; /*0x523862*/
+    v6 = (unsigned int *)(dword_A8E34C); /*0x523862*/
     while ( *v6 != this ) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
@@ -162,7 +162,7 @@ LABEL_11:
         goto LABEL_11; /*0x523872*/
     }
   }
-  this->ArrayIndex = v5; /*0x52387e*/
+  this->ArrayIndex = (void *)(v5); /*0x52387e*/
   this->u32_E08 = 0; /*0x523886*/
   this->OccupyWeapon_d = 0; /*0x523890*/
   this->u32_E0C = 0; /*0x523896*/
@@ -189,7 +189,7 @@ LABEL_11:
   this->DisableShadowCache = 1; /*0x523911*/
   this->DisableVoxelCache = 0; /*0x523918*/
   this->u32_D2E = 0; /*0x52391e*/
-  this->RecordTable = __2_YAPAXI_Z(0x5E8u); /*0x52392c*/
+  this->RecordTable = (unsigned int)(__2_YAPAXI_Z(0x5E8u)); /*0x52392c*/
   for ( i = 0; i < 1512; *(unsigned int *)(i + this->RecordTable - 20) = 0 ) /*0x523932*/
   {
     i += 36; /*0x52393a*/
@@ -236,7 +236,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   unsigned int v14[3]; // [esp+10h] [ebp-18h] BYREF
   int v15[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v5 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
+  v5 = (int)(__2_YAPAXI_Z(0x6F0u)); /*0x523b4b*/
   if ( v5 ) /*0x523b55*/
   {
     v6 = InfantryClass::Construct(v5, v3, (int)this, ppv); /*0x523b68*/
@@ -246,7 +246,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v13[0] = (*a2 << 8) + 128; /*0x523b93*/
       v13[1] = v7 + 128; /*0x523b9b*/
       v13[2] = 0; /*0x523bb1*/
-      v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x523bb9*/
+      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x523bb9*/
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
       v10 = v9->vtable2; /*0x523bd5*/
@@ -348,7 +348,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)v44.CapacityIncrement,
          v45) )
   {
-    v7 = InfantryTypeClass::Find(String); /*0x524132*/
+    v7 = (int)(InfantryTypeClass::Find(String)); /*0x524132*/
   }
   else
   {
@@ -364,7 +364,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          String,
          128) )
   {
-    v9 = InfantryTypeClass::Find(String); /*0x52416b*/
+    v9 = (int)(InfantryTypeClass::Find(String)); /*0x52416b*/
   }
   else
   {
@@ -830,7 +830,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
 }  // G42.18c ns repair
 // 0x524F20
 namespace gamemd {  // G42.18c ns repair
-unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1)
+unsigned int * InfantryTypeClass::CopyDataArray(unsigned int *aP1, void *a2)
 {
 
   void *v3; // eax

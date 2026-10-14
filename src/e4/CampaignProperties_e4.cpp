@@ -18,7 +18,7 @@ int CampaignProperties_WorldDominationTour_22::Seek(int a2, void *a2_2, void *a3
 
 // 0x5D2900
 namespace gamemd {
-int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2, void *a2_2)
+int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx

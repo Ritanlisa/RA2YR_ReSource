@@ -33,16 +33,16 @@ struct House {
     TimerStruct * ptr_480;  // 0x480
 // --- flat members (END) ---
     unsigned char __pad_2B0[0x1A0];  // G42.33 b4 C2: flat-carrier vocab ([120] fn-ptr 槽覆盖 0x2B0..0x450)
-    int AnnounceUpgrade(int a2);
+    int AnnounceUpgrade(int aP1);
     unsigned int * GetStartCoords(unsigned int *aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer();  // 0x50B6F0
     int IsCurrentPlayer(void *a1 = 0);  // 0x50B730
-    void * * ChooseHouseEnemy(void * aP1);
-    int  LookupObject(int a2, void *a1 = 0);  // 0x544BE0
-    int  LoadMapFileData(int a2, char a3, void *a1 = 0);  // 0x544C20
+    AbstractClass * * ChooseHouseEnemy(BuildingClass * aP1);
+    int LookupObject(int a2, void *a2_2);  // 0x544BE0
+    int LoadMapFileData(int a2, char a3, void *a3_1 = 0);  // 0x544C20
     void* Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x69E090
-    int  PowerBeginUpdate(int a2);  // 0x70C270
+    int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
     unsigned char u32_702;  // 0x702 (offset-truth)
     unsigned char u32_C6;  // 0xC6 (offset-truth)
     unsigned int u32_C8;  // 0xC8 (ml)

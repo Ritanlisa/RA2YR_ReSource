@@ -277,10 +277,10 @@ unsigned int * Power::UpdateAll()
   Power::TimerProcess(*(int *)&TeamTypeClass_Array); /*0x67ceb0*/
   Power::TimerProcess(*(int *)&Instance); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
-  this->Fla_ph = v53; /*0x67cece*/
+  this->Fla_ph = (void *)(v53); /*0x67cece*/
   v51 = v55; /*0x67ced0*/
-  this->q004 = v50; /*0x67ced5*/
-  this->q008 = v51; /*0x67cedb*/
+  this->q004 = (int)(v50); /*0x67ced5*/
+  this->q008 = (int)(v51); /*0x67cedb*/
   return &this->Fla_ph; /*0x67ced4*/
 
 }
@@ -420,7 +420,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
 }
 // 0x4A1C10
 namespace gamemd {
-int Power::FinalizeDrain(int a2)
+int Power::FinalizeDrain(int a2, void *a2_1)
 {
 
   void *Power_field_0x4; // eax
@@ -430,12 +430,12 @@ int Power::FinalizeDrain(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->q004; /*0x4a1c10*/
+  Power_field_0x4 = (void *)(this->q004); /*0x4a1c10*/
   if ( !Power_field_0x4 ) /*0x4a1c15*/
     this->a2 = 0; /*0x4a1c17*/
   this->q008 + (unsigned int)Power_field_0x4) = a2; /*0x4a1c1f*/
   result = (int)this->q004 + 1; /*0x4a1c27*/
-  this->q004 = (void *)result; /*0x4a1c29*/
+  this->q004 = (int)((void *)result); /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
     LOBYTE(this->q00C) = this->q004; /*0x4a1c34*/
@@ -443,7 +443,7 @@ int Power::FinalizeDrain(int a2)
       i[(unsigned int)&this->q020] = (char)this->a2; /*0x4a1c42*/
     a2 = (int)this->a2; /*0x4a1c50*/
     p_Power_field_0x8 = &a2; /*0x4a1c57*/
-    v6 = ~this->Fla_ph; /*0x4a1c5b*/
+    v6 = (unsigned int)(~this->Fla_ph); /*0x4a1c5b*/
     v7 = 4; /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
@@ -453,7 +453,7 @@ int Power::FinalizeDrain(int a2)
     }
     while ( v7 ); /*0x4a1c7e*/
     result = ~v6; /*0x4a1c80*/
-    this->Fla_ph = result; /*0x4a1c83*/
+    this->Fla_ph = (void *)(result); /*0x4a1c83*/
     this->q004 = 0; /*0x4a1c85*/
   }
   return result; /*0x4a1c8e*/
@@ -521,7 +521,7 @@ char Power::ChangedHouse(char a2)
 
   LOBYTE(result) = a2; /*0x750090*/
   if ( a2 ) /*0x750096*/
-    this->Fla_ph = 1065353216; /*0x750098*/
+    this->Fla_ph = (void *)(1065353216); /*0x750098*/
   else
     this->Fla_ph = 0; /*0x7500a1*/
   return result; /*0x75009e*/

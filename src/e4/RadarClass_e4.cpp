@@ -108,7 +108,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
 
   v3 = (float *)v2; /*0x654655*/
   result = v2[1321]; /*0x65465a*/
-  v5 = v2 + 1319; /*0x654660*/
+  v5 = (int *)(v2 + 1319); /*0x654660*/
   if ( result > 0 && (int)v2[1322] > 0 ) /*0x654671*/
   {
     v6 = (void (***)(unsigned int, int))v2[1160]; /*0x654677*/
@@ -157,7 +157,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
       v15 = v19[0]; /*0x654777*/
       v18 = (*(int (**)(int))(*(unsigned int *)v19[0] + 128))(v19[0]); /*0x654789*/
       v16 = (*(int (**)(int))(*(unsigned int *)v15 + 124))(v15); /*0x65478e*/
-      v17 = DSurface::Construct(v14, v16, v18, 1, 0); /*0x654794*/
+      v17 = (char *)(DSurface::Construct(v14, v16, v18, 1, 0)); /*0x654794*/
     }
     else
     {
@@ -373,7 +373,7 @@ unsigned int * RadarClass::initRadarSurface()
   this->q008 = 0; /*0x4f4227*/
   *(unsigned int *)this->u32_C = 2; /*0x4f422a*/
   /* X11: vtable install elided (implicit via off_7EA6FC virtuals 0x4f4231) */
-  return &this->vtable1; /*0x4f4237*/
+  return (unsigned int *)(&this->vtable1); /*0x4f4237*/
 
 }
 } // namespace gamemd

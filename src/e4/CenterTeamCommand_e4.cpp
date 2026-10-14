@@ -27,7 +27,7 @@ namespace gamemd {
 char * CenterTeamCommand::AddRef()
 {
   sprintf(&((unsigned int *)&stru_A8EB00)[2512], "TeamCenter_%d", *&this->CenterTeamCommand_field_00); /*0x5361ce*/
-  return &((unsigned int *)&stru_A8EB00)[2512]; /*0x5361db*/
+  return (char *)(&((unsigned int *)&stru_A8EB00)[2512]); /*0x5361db*/
 }
 } // namespace gamemd
 // 0x5361E0

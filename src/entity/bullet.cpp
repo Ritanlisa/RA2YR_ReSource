@@ -50,7 +50,7 @@ BulletClass::BulletClass(BulletTypeClass* pType) noexcept
     SpawnNextAnim     = false;
     Range             = 0;
 
-    abstractFlags = kBulletFlag;
+    abstractFlags = (void *)(kBulletFlag);
 }
 
 } // namespace gamemd

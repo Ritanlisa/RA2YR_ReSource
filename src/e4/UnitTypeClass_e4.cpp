@@ -79,7 +79,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
   v1 = 0; /*0x6b4dde*/
-  v9 = this; /*0x6b4de3*/
+  v9 = (char *)(this); /*0x6b4de3*/
   INIClass::ClearSection((int)this, (int)unk_81732C, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
@@ -88,7 +88,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     {
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-      v3 = CellCoord::To_CellObj(&dword_87F7E8, v8); /*0x6b4e0b*/
+      v3 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, v8)); /*0x6b4e0b*/
       v4 = v3->u32_48; /*0x6b4e0d*/
       if ( v4 != -1 && !v3->u8_11F ) /*0x6b4e15*/
       {
@@ -102,7 +102,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     ++v1; /*0x6b4e87*/
   }
   while ( v1 < 512 ); /*0x6b4e8e*/
-  return v4; /*0x6b4e94*/
+  return (gamemd::INIClass **)(v4); /*0x6b4e94*/
 
 }
 } // namespace gamemd
@@ -115,7 +115,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
   int v5; // ecx
 
   TechnoTypeClass::ReadINI(Source, -1); /*0x7470de*/
-  this->ArrayIndex = -1; /*0x7470e3*/
+  this->ArrayIndex = (void *)(-1); /*0x7470e3*/
   this->__pad_DFC = -1; /*0x7470eb*/
   this->Size = 0; /*0x7470f1*/
   this->u32_E04 = 0; /*0x7470f7*/
@@ -167,7 +167,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
         !v4) )
   {
     dword_A83CF0 = v3 + 1; /*0x74722b*/
-    *((unsigned int *)dword_A83CE4 + v3) = this; /*0x747235*/
+    *((unsigned int *)dword_A83CE4 + v3) = (unsigned int)(this); /*0x747235*/
     v3 = dword_A83CF0; /*0x747238*/
   }
   v5 = 0; /*0x74723d*/
@@ -187,7 +187,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
         goto LABEL_11; /*0x747253*/
     }
   }
-  this->ArrayIndex = v5; /*0x747257*/
+  this->ArrayIndex = (void *)(v5); /*0x747257*/
   this->FiringSyncFrame0_d = -1; /*0x74725f*/
   this->FiringSyncFrame1_d = -1; /*0x747267*/
   this->BurstDelay0_d = -1; /*0x74726d*/

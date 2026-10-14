@@ -17,6 +17,6 @@ struct VectorClass_ptr_SpawnManagerClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_SpawnManagerClass___(char a2);  // 0x6B8830
-    int Get(void *a1_1, void *a1 = 0);  // 0x6B81C0
+    int Get(int a2, void *a2_2);  // 0x6B81C0
 };
 } // namespace gamemd

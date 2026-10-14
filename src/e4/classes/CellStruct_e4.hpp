@@ -11,10 +11,10 @@ struct CellStruct {
     short Y;  // 0x2
 // --- flat members (END) ---
     static void* Add(CellStruct *aP0, unsigned int *aP1, unsigned short *aP2);
-    static unsigned int * Copy(CellStruct *aP0, void * aP1);
+    unsigned int * Copy(CellStruct *aP0, void* aP1);
 BOOL Equals(unsigned short * a2, void *a2_2);  // 0x50E470
-    void*  Sub(unsigned int * a2, unsigned short * a3);  // 0x588C60
-    unsigned int *  Set(int16_t a2, int16_t a3, void *a1 = 0);  // 0x42D470
+    void* Sub(unsigned int *aP1, unsigned short *aP2);  // 0x588C60
+    unsigned int * Set(int16_t a2, int16_t a3, void *a3_1 = 0);  // 0x42D470
     unsigned int q004;  // 0x4 (offset-truth)
 };
 #endif // GAMEMD_TREE_UNIVERSE

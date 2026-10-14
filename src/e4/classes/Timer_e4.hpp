@@ -14,10 +14,10 @@ struct Timer {
     unsigned int tail_C9;  // 0xC9
 // --- flat members (END) ---
     unsigned int ReadTSC_ph;  // w18j3: filler renamed (no offset truth; canon Timer::ReadTSC is a method)
-    static unsigned int ReadTSC(int* p0);  // x4:signals@0x7c6064
-    void *  Start(int a2, void *a1 = 0);  // 0x46B640
+    unsigned long long ReadTSC(unsigned int * a1);  // x4:signals@0x7c6064
+    void * Start(int aP1, void *a2 = 0);  // 0x46B640
     int  StartDouble(double a2);  // 0x4A5240
-    DWORD *  Init(DWORD a2, void *a1 = 0);  // 0x4F1B00
+    DWORD * Init(DWORD a2, void *a2_1 = 0);  // 0x4F1B00
     int GetRemainingMs(void *a1 = 0);  // 0x4F1B20
     DWORD * PumpMessages(void *a1 = 0);  // 0x54F720
     int GetHighPrecision();  // 0x5B1E40
@@ -29,7 +29,6 @@ struct Timer {
     char  SetFlag(char a2);  // 0x7500B0
     unsigned long  longReadTSC(unsigned int * a1);  // 0x7C6064
     char __pad_6[18];  // 0x6 (ml)
-    int m_18;  // 0x18 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
 
     unsigned int u32_10;  // X10 supply (member_lookup)

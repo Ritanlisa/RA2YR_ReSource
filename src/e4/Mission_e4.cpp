@@ -87,7 +87,7 @@ int Mission_e4::ExecuteTechnoMissionAction()
             v6 = &v20; /*0x520c96*/
 LABEL_19:
             v9 = (int *)(*(int (**)(Mission *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
-            AnimClass::ctor(v4, v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
+            AnimClass::ctor(v4,(int *)(v7), v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
           }
         }
 LABEL_20:
@@ -300,14 +300,7 @@ char Mission_e4::ProcessUnitMissionAI()
                     0,
                     v10,
                     v19);
-            if ( !MapSeed::CheckTileMatch( /*0x521133*/
-                    (MapSeed *)&DataGlobal_87F7E8,
-                    v24,
-                    v23,
-                    *(unsigned int *)(*&this->u32_6C0 + 1460),
-                    v11,
-                    (char)v25,
-                    0)
+                        if ( !MapSeed::CheckTileMatch((int16_t *)(/*0x521133*/                     (MapSeed *)&DataGlobal_87F7E8),                     v24,                     v23,                     *(unsigned int *)(*&this->u32_6C0 + 1460),                     v11,                     (char)v25,                     0)
               && !*(unsigned char *)(*&this->u32_6C0 + 3774)
               && (*(int (**)(Mission *))(*(unsigned int *)this->__pad_0 + 388))(this) != 7 )
             {
@@ -427,8 +420,8 @@ int Mission_e4::SetAndCall(int a2, int a3, void *a3_2)
   int MouseClass_field_0x0; // edx
 
   MouseClass_field_0x0 = a3_2->MouseClass_field_0x0; /*0x5bda84*/
-  *((unsigned int *)a3_2 + 5465) = a3_2; /*0x5bda8d*/
-  return (*(int (__stdcall **)(int, int))(MouseClass_field_0x0 + 76))(a3_2, a3_2); /*0x5bda96*/
+  *((unsigned int *)a3_2 + 5465) = (unsigned int)(a3_2); /*0x5bda8d*/
+  return (*(int ((int)(__stdcall **))(int, int))(MouseClass_field_0x0 + 76))(a3_2, a3_2); /*0x5bda96*/
 }
 }
 // 0x6ED7E0
@@ -452,8 +445,8 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
   int v20; // [esp+30h] [ebp-14h] BYREF
   unsigned char v21[12]; // [esp+38h] [ebp-Ch] BYREF
 
-  (*((unsigned char *)&(v3))) = aP1; /*0x6ed7e3*/
-  v4 = aP1->vtable2; /*0x6ed7e9*/
+  (*((unsigned char *)&(v3))) = (unsigned char)(aP1); /*0x6ed7e3*/
+  v4 = (int)(aP1->vtable2); /*0x6ed7e9*/
   for ( i = this->ptr_54; i; i = i->q5D8 )
   {
     (*((unsigned char *)&(v3))) = i->q090; /*0x6ed801*/
@@ -461,7 +454,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     {
       if ( i->HouseClass_6C && (dword_A8E7AC || !i->q081) && !i->u8_689 ) /*0x6ed831*/
       {
-        v7 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v19); /*0x6ed848*/
+        v7 = *SessionClass::GetEntry((unsigned int *)(*(unsigned int *)this->ptr_54 + 76)), &v19); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
@@ -491,7 +484,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               if ( !v3 )
               {
                 if ( i->q5A4
-                  || ((v9 = *SessionClass::GetEntry(*(unsigned int *)this->ptr_54 + 76), &v20), v9 == 54) || v9 == 53
+                  || ((v9 = *SessionClass::GetEntry((unsigned int *)(*(unsigned int *)this->ptr_54 + 76)), &v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
                     : (v10 = ((unsigned int *)&dword_8871E0[1])[0]),
                       ObjectClass::DistanceTo(i, this->ptr_34) <= 2 * v10 || v4 == 11) )

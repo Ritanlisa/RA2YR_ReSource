@@ -241,7 +241,7 @@ void Game::initScenario(void *a1_1)
 
   if ( *(unsigned int *)&a1_1->__pad_44[28] ) /*0x430983*/
   {
-    v2 = a1_1; /*0x43098d*/
+    v2 = (gamemd::Game *)(a1_1); /*0x43098d*/
     v3 = 8; /*0x43098f*/
     do /*0x4309b5*/
     {
@@ -253,7 +253,7 @@ void Game::initScenario(void *a1_1)
           __3_YAXPAX_Z(*(void **)v2->__pad_000); /*0x4309a0*/
           *(unsigned int *)v2->__pad_000 = 0; /*0x4309a8*/
         }
-        v2 = &v2->ptr_4; /*0x4309ae*/
+        v2 = (gamemd::Game *)(&v2->ptr_4); /*0x4309ae*/
         --v4; /*0x4309b1*/
       }
       while ( v4 ); /*0x4309b2*/
@@ -346,7 +346,7 @@ int Game::SendCampaignOptions()
         if ( (unsigned char)result ) /*0x46d612*/
         {
           Network::SendToPlayer((int)unk_A8E9C0, (int)&v13, 455, 1, *v12); /*0x46d628*/
-          result = Network::ReceiveLoop(unk_A8E9C0); /*0x46d632*/
+          result = (int)(Network::ReceiveLoop(unk_A8E9C0)); /*0x46d632*/
         }
       }
       ++v12; /*0x46d637*/
@@ -613,7 +613,7 @@ AbstractClass * * Game::DestroyAllObjects()
   MapClass::FreeAllCells((MapClass *)&dword_87F7E8); /*0x534991*/
   ProcessExpiredPointers(v38); /*0x534996*/
   Game::initScenario((Game *)&g_VisibilitySystem); /*0x5349a0*/
-  return --dword_A8E7AC; /*0x5349ab*/
+  return (gamemd::AbstractClass **)(--dword_A8E7AC); /*0x5349ab*/
 
 }
 }
@@ -731,7 +731,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
     return 0; /*0x5b709f*/
   Game::processStartup((Game *)this); /*0x5b70a7*/
   dword_A8B54C = 0; /*0x5b70b1*/
-  v5 = __2_YAPAXI_Z(0x85u); /*0x5b70bb*/
+  v5 = (int)(__2_YAPAXI_Z(0x85u)); /*0x5b70bb*/
   v6 = v5; /*0x5b70c0*/
   if ( v5 ) /*0x5b70ca*/
   {
@@ -753,7 +753,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
     }
     ++dword_A8B54C; /*0x5b714f*/
   }
-  v8 = __2_YAPAXI_Z(0x85u); /*0x5b715a*/
+  v8 = (int)(__2_YAPAXI_Z(0x85u)); /*0x5b715a*/
   v9 = v8; /*0x5b715f*/
   if ( v8 ) /*0x5b7166*/
   {
@@ -819,7 +819,7 @@ LABEL_31:
   dword_A8B24C = 2; /*0x5b7333*/
   dword_A8E960[0] = v18; /*0x5b733d*/
   nullsub_37(a2); /*0x5b7343*/
-  return 1; /*0x5b709d*/
+  return (gamemd::HashTable_flat **)(1); /*0x5b709d*/
 
 }
 }
@@ -882,7 +882,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   *(int *)((char *)&v11[35] + 2) = *(int *)((char *)&v11[35] + 2) & 0xFFFFFFF1 /*0x5ba828*/
                                  | (4 * (dword_A8B320 & 1)) & 0xF5
                                  | (2 * (byte_A8B31D & 1 | (4 * (byte_A8B31F & 1))));
-  BYTE1(v11[35]) = DataGlobal_A8B278; /*0x5ba835*/
+  BYTE1(v11[35]) = (unsigned char)(DataGlobal_A8B278); /*0x5ba835*/
   BYTE2(v11[34]) = g_RulesInitConfig; /*0x5ba842*/
   HIBYTE(v11[34]) = g_Rules_MultiEngineer; /*0x5ba84e*/
   wcscpy((wchar_t *)&v11[9] + 1, *(const wchar_t **)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions)); /*0x5ba85e*/
@@ -1619,7 +1619,7 @@ LABEL_39:
 }
 // 0x680F70
 namespace gamemd {
-int Game::validateScenario(unsigned int *a2)
+int Game::validateScenario(unsigned int *a2, void *a2_1)
 {
 
   int v3; // edi

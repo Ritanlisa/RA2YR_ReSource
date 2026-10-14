@@ -44,13 +44,13 @@ char NullModem_TestConnection(void * a1)
   unsigned int v25[6]; // [esp+114h] [ebp-FCh] BYREF
   int v26; // [esp+12Ch] [ebp-E4h]
 
-  v1 = (HWND)(0);
+  v1 = (char)((HWND)(0));
   v19 = 1; /*0x5f03d0*/
   g_NetworkTestFlag = 0; /*0x5f03d5*/
   StringCSF = GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f1*/
   v3 = GetStringCSF((wchar_t *)(aTxtNullConnerr), 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f3*/
   MessageBox = (HWND)(CreateMessageBox((LPARAM)v3, (LPARAM)StringCSF, (LONG)&g_NetworkTestFlag)); /*0x5f03fc*/
-  hWnd = MessageBox; /*0x5f0403*/
+  hWnd = (HWND)(MessageBox); /*0x5f0403*/
   if ( !MessageBox ) /*0x5f0407*/
     return 0; /*0x5f067c*/
   ((Dialog *)(MessageBox))->Show(); /*0x5f040f*/

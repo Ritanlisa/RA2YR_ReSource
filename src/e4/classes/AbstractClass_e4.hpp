@@ -194,7 +194,7 @@ struct AbstractClass {
     void* BlitterCore;  // 0x0 (no offset truth)
     void* RLEBlitterCore;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    void  Initialize(void * a2, unsigned int * a3);  // 0x438E70
+    void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
     unsigned int *  checkVisibility(char a2);  // 0x5D7FD0
     unsigned int *  updateVisibilityState(char a2);  // 0x5D8030
     unsigned int *  processFogReveal(char a2);  // 0x5D8050
@@ -303,7 +303,7 @@ int DTOR(); // 0x4101F0
     int initVtableBase();  // 0x410100
     static int GetVtable3(AbstractClass * aP0);  // 0x410220
     int GenerateUniqueID(int a1);  // 0x410230
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2);  // 0x410320
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_2, ObjectTypeClass * aP2);  // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
@@ -335,15 +335,15 @@ int DTOR(); // 0x4101F0
     int COMStub_Return0_270();  // 0x459E60
     std::locale::facet *  setOverlayFlags(char a2);  // 0x499D20
     unsigned int  queueMission(int a2);  // 0x4E01C0
-    int  saveToStream(int a1, void * a2, unsigned int * a3);  // 0x510A20
+    int saveToStream(int a1, const void * a2, unsigned int * a3);  // 0x510A20
     int  loadFromStream(int a1);  // 0x510A30
     int  computeSize(int a1);  // 0x510A40
     int  COMStub_6(int * a2, int a3);  // 0x5439F0
     char validatePathNode();  // 0x5C02E0
-    unsigned int *  processRevealArea(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D81F0
-    unsigned int *  computeRevealRadius(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8230
-    unsigned int *  applyRevealToCell(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8270
-    unsigned int *  checkRevealCell(void * a1, void * a2, void * a3, void * a4, int a5, int a6);  // 0x5D82B0
+    unsigned int * processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D81F0
+    unsigned int * computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8230
+    unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8270
+    unsigned int * checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6);  // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
     int COMStub_Return0_38();  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0

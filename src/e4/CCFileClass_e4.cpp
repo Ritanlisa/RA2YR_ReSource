@@ -21,7 +21,7 @@
 
 // 0x4325C0
 namespace gamemd {  // G42.18 ns repair
-AudioController * * CCFileClass::Close(void * a1)
+AudioController * * CCFileClass::Close(void * a1, void *a2)
 {
 
   char result; // al
@@ -41,13 +41,13 @@ AudioController * * CCFileClass::Close(void * a1)
       BYTE1(a1->BufferSize) = 1; /*0x4325e8*/
       BYTE2(a1->BufferOffset) = 0; /*0x4325ec*/
       BYTE1(a1->BufferOffset) = 0; /*0x4325f0*/
-      return result; /*0x4325f5*/
+      return (gamemd::AudioController **)(result); /*0x4325f5*/
     }
     result = FileClass::CloseHandle(a1); /*0x4325f8*/
     BYTE2(a1->BufferOffset) = 0; /*0x4325fd*/
   }
   BYTE1(a1->BufferOffset) = 0; /*0x432601*/
-  return result; /*0x4325f4*/
+  return (gamemd::AudioController **)(result); /*0x4325f4*/
 
 }
 } // namespace gamemd
@@ -119,7 +119,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
   int v10; // eax
   int v11; // eax
 
-  v1 = dword_B077B0; /*0x69e324*/
+  v1 = (unsigned int *)(dword_B077B0); /*0x69e324*/
   if ( dword_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
@@ -155,16 +155,16 @@ void CCFileClass::ProcessStream(unsigned int a1)
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  v6 = dword_B077B4; /*0x69e3a3*/
+  v6 = (void *)(dword_B077B4); /*0x69e3a3*/
   if ( dword_B077B4 ) /*0x69e3ab*/
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)dword_B077B4 + 16; /*0x69e3b6*/
+      v7 = (unsigned char *)((char *)dword_B077B4 + 16); /*0x69e3b6*/
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
         v8 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e3bd*/
-        v9 = (char *)dword_B077B4 + 12; /*0x69e3c0*/
+        v9 = (unsigned int *)((char *)dword_B077B4 + 12); /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/

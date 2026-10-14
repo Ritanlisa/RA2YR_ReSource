@@ -31,11 +31,11 @@ HWND BINK::Background_Setup(HWND hDlg)
     SetWindowPos(v2, 0, v3, v4, -1, -1, 0xDu); /*0x52ba09*/
     SendMessageA(v2, 0x4E3u, 1u, 0); /*0x52ba1f*/
     if ( g_DisplayWidth == 640 ) /*0x52ba2b*/
-      return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x52ba3a*/
+      return (HWND)(SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsS)); /*0x52ba3a*/
     else
-      return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x52ba4c*/
+      return (HWND)(SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsL)); /*0x52ba4c*/
   }
-  return result; /*0x52ba3c*/
+  return (HWND)(result); /*0x52ba3c*/
 
 }
 } // namespace gamemd

@@ -50,7 +50,7 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
     while ( v6 ); /*0x7e0074*/
     v11 = *(unsigned short *)a1; /*0x7e0078*/
     *(unsigned char *)v7 = *(unsigned short *)a1; /*0x7e007b*/
-    v12 = (char *)v7 + 1; /*0x7e007d*/
+    v12 = (unsigned char *)((char *)v7 + 1); /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
     *v12++ = byte_A8F91C[v11]; /*0x7e0087*/
     *v12 = (*(((unsigned char *)&(v11)) + (sizeof(v11) - 1))); /*0x7e008a*/
@@ -80,7 +80,7 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 
   do /*0x7e0167*/
   {
-    v15 = (unsigned int *)((a4 - 2) >> 1);
+    v15 = (unsigned int)((unsigned int *)((a4 - 2) >> 1));
     v6 = (unsigned int *)(&byte_879124); /*0x7e00cb*/
     v7 = (unsigned int *)(a2); /*0x7e00d0*/
     do /*0x7e011b*/
@@ -193,7 +193,7 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
   int v12; // [esp+20h] [ebp+10h]
   unsigned int v13; // [esp+28h] [ebp+18h]
 
-  v8 = (unsigned char *)(a4 >> 1);
+  v8 = (unsigned int)((unsigned char *)(a4 >> 1));
   v13 = a5 >> 1; /*0x7e021e*/
   ObfuscateDataBlock(a1,(unsigned int *)(dword_877D20), a4); /*0x7e022a*/
   v7 = (unsigned int *)(&unk_878720); /*0x7e023b*/

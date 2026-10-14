@@ -27,21 +27,21 @@ struct FoggedObjectClass {
     char Cell[4];  // 0x2C
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
-    int InitTerrainFog(unsigned int *a2, int a3, int a4);  // G57w10-S raw 0x004D0C40 IUnknown 占位清除
+    int InitTerrainFog(unsigned int *aP1, int a3, int a4);  // G57w10-S raw 0x004D0C40 IUnknown 占位清除
     AbstractClass * * ResizeArray(int a2, char * a3);
     DynamicVector * QueryInterface(char a2, int a3);
     FoggedObjectClass * ddtor(char a2, int a3);
     HouseClass * * PowerDrainUpdate(int a2);
     char AddRef(int a2);
-    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3, void *a1 = 0);
+    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2, void *a3, void *a4 = 0);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
     int InitBuildingFog(unsigned int * a2, int a3, int a4);
     int LoadTypeData(int * a1, int a2);
-    int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);
     int   SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
-    unsigned int * CheckVisibility(unsigned int * a2);
+    unsigned int * CheckVisibility(unsigned int * v3);
     unsigned int u32_34;  // 0x34 (offset-truth)
     unsigned int u32_38;  // 0x38 (offset-truth)
     unsigned int u32_3C;  // 0x3C (offset-truth)

@@ -17,7 +17,7 @@ struct DSurface {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
 // --- flat members (END) ---
-    AbstractClass * Construct(int aP1, int aP2, char aP3, char a5, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a6 = 0);
+    AbstractClass * Construct(int aP1, int aP2, char aP3, char a5, void *a5_1 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     AbstractClass * * Process(void* aP1, int * a2);
     Coord * * DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12);
     Coord * * DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9);
@@ -32,16 +32,15 @@ struct DSurface {
     int DrawDashedLineStipple(int * a2, int * a3, int16_t a4, int a5, int a6, char a7);
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);
-    static int FillRectWithColor(int *a1, int a2, short a3, unsigned char a4);
     int Flip();
     static int Flip2();
     int GetBytesPerPixel();
     int LockAndPrepareRect();
     int RestoreIfLost(void *a1 = 0);
     long long ConstructFromHandle();
-    unsigned int * CreateBackBuffer(int a2, void *a1 = 0);
+    unsigned int * CreateBackBuffer(int a2, void *a2_1 = 0);
     AbstractClass * * CreatePrimary(void *a1 = 0);
-    void * loc_4C1AC0(std::codecvt_base *a1);
+    void * loc_4C1AC0(unsigned char a1);
     static void BlitStretch(int a1, int a2, int a3);
     void* DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, int a5, int a6, float * a7, float * a8);
     void* DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8);

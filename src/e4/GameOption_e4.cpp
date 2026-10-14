@@ -32,14 +32,14 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   else
   {
     StringCSF = GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845); /*0x69ad02*/
-    return wcscpy((wchar_t *)Destination, StringCSF); /*0x69ad09*/
+    return (int)(wcscpy((wchar_t *)Destination, StringCSF)); /*0x69ad09*/
   }
-  return result; /*0x69aced*/
+  return (int)(result); /*0x69aced*/
 }
 } // namespace gamemd
 // 0x69AD80
 namespace gamemd {
-void * GameOption::SetDigest(char *aP1)
+void * GameOption::SetDigest(char *aP1, void *a2)
 {
   char *result; // eax
 
@@ -63,7 +63,7 @@ char GameOption::CheckDuplicate()
 
   LPARAM *v0; // eax
 
-  v0 = &dword_A8DA90; /*0x5e9566*/
+  v0 = (LPARAM *)(&dword_A8DA90); /*0x5e9566*/
   while ( *v0 != g_Lobby_MaxPlayers ) /*0x5e956d*/
   {
     if ( (int)++v0 >= (int)&dword_A8DAB0 ) /*0x5e9577*/

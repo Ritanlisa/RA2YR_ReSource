@@ -63,7 +63,7 @@ int DialogClass::Reposition(int hWnd, int a2)
     DestroyWindow(DialogParamA); /*0x775cbb*/
     right = v10.right; /*0x775cc1*/
     bottom = v10.bottom; /*0x775cc5*/
-    dwInitParam = (HWND)v10.right; /*0x775cc9*/
+    dwInitParam = (int)((HWND)v10.right); /*0x775cc9*/
     dword_B72F58 = v10.bottom; /*0x775ccf*/
   }
   v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/
@@ -88,7 +88,7 @@ ATOM DialogClass::RegisterWinClasses()
   if ( dword_AC48CC != 1 ) /*0x60d460*/
   {
     dword_AC48CC = 1; /*0x60d469*/
-    WndClass.hInstance = g_hInstance; /*0x60d48a*/
+    WndClass.hInstance = (HINSTANCE)(g_hInstance); /*0x60d48a*/
     WndClass.style = 3; /*0x60d496*/
     WndClass.lpfnWndProc = (WNDPROC)GameScreen::DlgProc; /*0x60d49e*/
     WndClass.cbClsExtra = 0; /*0x60d4a6*/
@@ -101,9 +101,9 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.lpfnWndProc = sub_60D520; /*0x60d4e4*/
     WndClass.cbClsExtra = 0; /*0x60d4ec*/
     WndClass.cbWndExtra = 0; /*0x60d4f0*/
-    WndClass.hInstance = g_hInstance; /*0x60d4f4*/
+    WndClass.hInstance = (HINSTANCE)(g_hInstance); /*0x60d4f4*/
     memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
-    WndClass.lpszClassName = g_INI_Key_NewEdit; /*0x60d508*/
+    WndClass.lpszClassName = (LPCSTR)(g_INI_Key_NewEdit); /*0x60d508*/
     LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
   }
   return result; /*0x60d515*/

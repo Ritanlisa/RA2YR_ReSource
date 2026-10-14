@@ -16,12 +16,12 @@
 
 // 0x4E12F0
 namespace gamemd {  // G42.18 ns repair
-ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char a7)
+ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char a7, void *a7_1)
 {
 
   unsigned int *result; // eax
 
-  result = this->vtable1; /*0x4e12f4*/
+  result = (unsigned int *)(this->vtable1); /*0x4e12f4*/
   this->Height = a3; /*0x4e12fb*/
   this->Width = a2; /*0x4e1302*/
   this->ID = a5; /*0x4e1309*/
@@ -35,13 +35,13 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
   /* X11: vtable install elided (implicit via GadgetClass virtuals 0x4e132d) */
   if ( a7 ) /*0x4e1334*/
     *(unsigned int *)this->Hovered = a6 | 5; /*0x4e1339*/
-  return result; /*0x4e1333*/
+  return (gamemd::ControlClass)(result); /*0x4e1333*/
 
 }
 }  // G42.18 ns repair
 // 0x4E1390
 namespace gamemd {
-ControlClass GadgetClass::Dtor()
+ControlClass GadgetClass::Dtor(void *a1)
 {
 
   ShpButtonClass *v1; // eax
@@ -80,7 +80,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
   if ( !GadgetClass::ClearState((GadgetClass *)this, aP1) ) /*0x55792e*/
-    return 0; /*0x557a0b*/
+    return (gamemd::ControlClass)(0); /*0x557a0b*/
   (*(void (**)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
     stru_887598.lineTrailer,
     this->Width,
@@ -111,7 +111,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     }
   }
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
-  return 1; /*0x5579fe*/
+  return (gamemd::ControlClass)(1); /*0x5579fe*/
 
 }
 }
@@ -153,8 +153,8 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
         if ( !v4 ) /*0x60ab12*/
           goto LABEL_7; /*0x60ab12*/
       }
-      v3 = v4 + 1; /*0x60ab1a*/
-      v15 = v4 + 1; /*0x60ab1d*/
+      v3 = (unsigned int *)(v4 + 1); /*0x60ab1a*/
+      v15 = (unsigned int *)(v4 + 1); /*0x60ab1d*/
     }
   }
 LABEL_7:
@@ -172,7 +172,7 @@ LABEL_7:
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = v5 + 1; /*0x60acaf*/
+    v9 = (unsigned int *)(v5 + 1); /*0x60acaf*/
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else
@@ -272,13 +272,13 @@ LABEL_85:
       v12 = 192; /*0x60af10*/
 LABEL_87:
       v15[50] = v12; /*0x60af19*/
-      return 1; /*0x60af1d*/
+      return (gamemd::AbstractClass **)(1); /*0x60af1d*/
     }
 LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return 1; /*0x60af23*/
+  return (gamemd::AbstractClass **)(1); /*0x60af23*/
 
 }
 }
@@ -301,7 +301,7 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
     {
       v3 = wcslen(String); /*0x62358a*/
       v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
-      this->u32_28 = v4; /*0x62359b*/
+      this->u32_28 = (unsigned int)(v4); /*0x62359b*/
       wcscpy(v4, String); /*0x62359e*/
     }
   }
@@ -317,7 +317,7 @@ ControlClass GadgetClass::Show()
 
   v1 = *(unsigned int *)this->vtable1; /*0x723ea0*/
   this->u32_2D = 1; /*0x723ea2*/
-  return (*(int (**)(void))(v1 + 72))();
+  return (gamemd::ControlClass)((*(int (**)(void))(v1 + 72))());
 
 }
 }

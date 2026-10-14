@@ -104,7 +104,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
         !v4) )
   {
     *(unsigned int *)&g_ObjectTypeConfig = v3 + 1; /*0x5fe36d*/
-    *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v3) = this; /*0x5fe377*/
+    *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * v3) = (unsigned int)(this); /*0x5fe377*/
     v3 = *(unsigned int *)&g_ObjectTypeConfig; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
@@ -261,7 +261,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                           (uint8_t *)aP1->__pad_24,
                           aIsrubble,
                           aP1->RadarColor[2]);
-  return 1; /*0x5fea11*/
+  return (gamemd::AnimTypeClass **)(1); /*0x5fea11*/
 }
 }  // G42.18c ns repair
 // 0x5FEAF0
@@ -341,15 +341,15 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v4); /*0x5feee5*/
-    return v3; /*0x5feeea*/
+    return (gamemd::AnimTypeClass **)(v3); /*0x5feeea*/
   }
-  return result; /*0x5feeed*/
+  return (gamemd::AnimTypeClass **)(result); /*0x5feeed*/
 
 }
 }  // G42.18c ns repair
 // 0x6440A0
 namespace gamemd {  // G42.18c ns repair
-unsigned int *  OverlayTypeClass::Construct(char *aP1)
+unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   void *v3; // eax
@@ -390,7 +390,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   this->u32_30B = 0; /*0x644190*/
   this->u32_30C = 0; /*0x644196*/
   this->ObjectTypeClass = &vt_ParticleSystemTypeClass; /*0x64419c*/
-  this->u32_30C = &vt_ParticleSystemTypeClass; /*0x6441a2*/
+  this->u32_30C = (unsigned int)(&vt_ParticleSystemTypeClass); /*0x6441a2*/
   /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441a8) */
   /* X11: vtable install elided (implicit via ParticleSystemTypeClass virtuals 0x6441af) */
   AbstractClass::GenerateUniqueID(&this->LandType); /*0x6441b6*/
@@ -402,8 +402,8 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
          (char *)DataGlobal_A83D7C + *(unsigned int *)&DataGlobal_A83D70,
          0) )
   {
-    v3 = g_InfantryTypeInitState++; /*0x6441fc*/
-    *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * (unsigned int)v3) = this; /*0x64420b*/
+    v3 = (void *)(g_InfantryTypeInitState++); /*0x6441fc*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * (unsigned int)v3) = (unsigned int)(this); /*0x64420b*/
   }
   this->IsLogic_d = 1; /*0x64420e*/
   return &this->ObjectTypeClass; /*0x644217*/
@@ -412,7 +412,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
 }  // G42.18c ns repair
 // 0x4754B0
 namespace gamemd {  // G42.18c ns repair
-int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
+int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4, void *a4_1)
 {
   char *v5; // eax
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
@@ -457,7 +457,7 @@ int * OverlayTypeClass::GetTile(int a1)
     dword_AC1644 = 2147450879; /*0x5fe504*/
     atexit(nullsub_213); /*0x5fe50a*/
   }
-  return &dword_AC1640; /*0x5fe518*/
+  return (int *)(&dword_AC1640); /*0x5fe518*/
 
 }
 }  // G42.18c ns repair

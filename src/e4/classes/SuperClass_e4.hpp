@@ -51,8 +51,8 @@ struct SuperClass {
     static wchar_t * SetCurrentFrame(SuperClass *pThis);
     static void AdvanceCountdown(SuperClass *pThis);
     AbstractClass * * Reset(void *a1, void *a2);
-    AbstractClass * * StartTimer(int a2, char a3, char a4);
-    char StopPreclickAnim(int a2);  // G57w10-S raw 0x006CB830 IUnknown 占位清除
+    AbstractClass * * StartTimer(int this, char aP2, char aP3);
+    char StopPreclickAnim(int aP1);  // G57w10-S raw 0x006CB830 IUnknown 占位清除
     SuperClass * * CleanupMembers(void *a1);
     bool ShouldDrawProgress();
     bool ShouldFlashTab();
@@ -61,8 +61,8 @@ struct SuperClass {
     char SetReadiness(char a2);
     int AnnounceReady(DynamicVector * aP1, void *a2);
     int ClickFire(int a2, short * a3);
-    unsigned int * Construct(int aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
-    void* Constructor(int a2, int *a3, int a4, void *a5, unsigned int *a6, int a7);
+    int Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    int Constructor(void *a1, void *a2, void *a3, void *a4 = 0, void *a5 = 0, void *a6 = 0);
     int LoadFromStream(AbstractClass * aP0, int aP1);
     int Lose();
     int PowerDrainUpdate(int * a2);

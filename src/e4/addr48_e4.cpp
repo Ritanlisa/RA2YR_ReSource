@@ -101,12 +101,12 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   int v17; // [esp+10h] [ebp-8h]
   int v18; // [esp+14h] [ebp-4h]
 
-  if ( !Control::DispatchClick((ControlClass *)this, a2) ) /*0x4880fb*/
+  if ( !Control::DispatchClick((int)((ControlClass *)this), a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
   uniqueId = this->M16; /*0x488116*/
   abstractFlags = this->M20; /*0x488119*/
-  vtable3 = this->M20; /*0x48811c*/
+  vtable3 = (void *)(this->M20); /*0x48811c*/
   nextArrayIndex = this->q018; /*0x488120*/
   v16 = uniqueId; /*0x488123*/
   v17 = abstractFlags; /*0x488127*/
@@ -146,7 +146,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
       v10);
   }
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4881f5*/
-  return 1; /*0x4881fd*/
+  return (gamemd::ConvertClass **)(1); /*0x4881fd*/
 
 }
 }  // G42.18 ns repair
@@ -285,8 +285,8 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   char v118 = 0;
   char v114 = 0;
   varC3 = v10 <= 0.5;
-  IDA_LODWORD(v143) = ((int16_t)v115 << 8) + 128;
-  IDA_HIDWORD(v143) = (IDA_SHIWORD(v115) << 8) + 128;
+  (*((unsigned int *)&(v143))) = ((int16_t)v115 << 8) + 128;
+  (*(((unsigned int *)&(v143)) + 1)) = ((*((signed short *)(((unsigned char *)&(v115)) + 2))) << 8) + 128;
   v144 = 0.0;
   if ( Cell::GetGroundHeight( (unsigned int *)((IUnknown *)&v143)) < *&aP0->vtable1)[8] )
   {
@@ -364,9 +364,9 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   int v26; // esi
     while ( 1 )
     {
-      ax29 = (((unsigned int)(v115) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_ABD490)[v110]);
-      IDA_LOWORD(v138) = v115 + IDA_LOWORD((&dword_ABD490)[v110]);
-      IDA_HIWORD(v138) = ax29;
+      ax29 = (((unsigned int)(v115) >> 16) & 0xFFFF) + (*(((unsigned short *)&((&dword_ABD490)[v110])) + 1));
+      (*((unsigned short *)&(v138))) = v115 + (*((unsigned short *)&((&dword_ABD490)[v110])));
+      (*(((unsigned short *)&(v138)) + 1)) = ax29;
       j = v138;
       v22 = (TechnoClass *)((CellCoord *)(&((unsigned int *)(stru_87C374))[13428]))->To_CellObj((int16_t *)&j);
       aP1a = (VectorClass_flat *)v22;
@@ -374,11 +374,11 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
       if ( v24 != -1 )
       {
         int v25 = *(unsigned int *)(HouseClass_Player.conYards + 4 * v24);
-        IDA_LODWORD(v141) = v25;
-        if ( *(unsigned char *)(v25 + 689) && (!*(unsigned char *)(v25 + 681) || IDA_LOBYTE(v8[1].location[0])) && a5 )
+        (*((unsigned int *)&(v141))) = v25;
+        if ( *(unsigned char *)(v25 + 689) && (!*(unsigned char *)(v25 + 681) || (*((unsigned char *)&(v8[1].location[0])))) && a5 )
         {
           ((CellClass *)(int)v22)->ReduceTiberium( (InfantryTypeClass *)((int)v120 / 10));
-          v25 = IDA_LODWORD(v141);
+          v25 = (*((unsigned int *)&(v141)));
         }
         if ( *(unsigned char *)(v25 + 680) )
         {
@@ -446,13 +446,13 @@ LABEL_58:
         eax61a = (unsigned int *)(*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable1 + 18))( (VectorClass_flat *)(aP1a), (int64_t *)(&v130));
         int v148[3];  /* hoisted from cast (G57b) */
         v32 = (IUnknown *)(((Coord *)&v148)->Subtract( (int)((IUnknown *)(*(unsigned int *)aP0->vtable1 - *eax61a)), (int)((IUnknown *)(*(unsigned int *)&aP0-((unsigned int *)(>q000))[4] - eax61a[1])), (int)((IUnknown *)(*&aP0->vtable3 - eax61a[2]))));
-        IDA_LODWORD(v132) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable1;
+        (*((unsigned int *)&(v132))) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable1;
         v34 = (BuildingTypeClass *)*(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable3;
-        IDA_HIDWORD(v132) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable2;
+        (*(((unsigned int *)&(v132)) + 1)) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable2;
         v133 = *(float *)&v34;
   double v35; // st7
         v35 = Math::Sqrt((double)((double)(int)v34 * (double)(int)v34
-                                          + (double)IDA_SHIDWORD(v132) * (double)IDA_SHIDWORD(v132)
+                                          + (double)(*((signed int *)(((unsigned char *)&(v132)) + 4))) * (double)(*((signed int *)(((unsigned char *)&(v132)) + 4)))
                                           + (double)(int)v132 * (double)(int)v132));
         v36 = Math::RoundToInt(v35) - 2 * *(unsigned int *)&((unsigned int *)(stru_89E138))[1848];
 LABEL_66:
@@ -460,8 +460,8 @@ LABEL_66:
 LABEL_67:
         if ( varC3 && !v110 )
         {
-          IDA_HIBYTE(v116) = *(unsigned char *)(v26 + 20) & 1;
-          if ( IDA_HIBYTE(v116) )
+          (*(((unsigned char *)&(v116)) + (sizeof(v116) - 1))) = *(unsigned char *)(v26 + 20) & 1;
+          if ( (*(((unsigned char *)&(v116)) + (sizeof(v116) - 1))) )
           {
             if ( (*(uint8_t (**)(int))(*(unsigned int *)v26 + 352))(v26)
               && !*(unsigned int *)(v26 + 452)
@@ -487,11 +487,11 @@ LABEL_67:
       eax63 = (unsigned int *)(*((int (**)(VectorClass_flat *, char *))aP1a->vtable1 + 18))( (VectorClass_flat *)(aP1a), (char *)(v149));
       int v145[3];  /* hoisted from cast (G57b) */
       v37 = (IUnknown *)(((Coord *)&v145)->Subtract( (int)((IUnknown *)(*(unsigned int *)aP0->vtable1 - *eax63)), (int)((IUnknown *)(*(unsigned int *)&aP0-((unsigned int *)(>q000))[4] - eax63[1])), (int)((IUnknown *)(*&aP0->vtable3 - eax63[2]))));
-      IDA_LODWORD(v139) = ((gamemd::Math*)v37)->q000;
+      (*((unsigned int *)&(v139))) = (unsigned int)(((gamemd::Math*)v37)->q000);
       st7_63 = (double)(int)v139;
       v39 = (BuildingTypeClass *)*(unsigned int *)&((gamemd::Math*)v37)->q008;
-      IDA_HIDWORD(v139) = *(unsigned int *)&((gamemd::Math*)v37)->q004;
-      v41 = (double)IDA_SHIDWORD(v139);
+      (*(((unsigned int *)&(v139)) + 1)) = *(unsigned int *)&((gamemd::Math*)v37)->q004;
+      v41 = (double)(*((signed int *)(((unsigned char *)&(v139)) + 4)));
       v140 = v39;
       v42 = (double)(int)v39;
     }
@@ -526,7 +526,7 @@ LABEL_82:
        || !*(unsigned char *)((&v51->DieSound)[4] + 5889))
       && (!v114
        || v51
-       && (IDA_HIBYTE(v116) = *(unsigned int *)&*(unsigned int *)&v51->abstractFlags & 1) != 0
+       && ((*(((unsigned char *)&(v116)) + (sizeof(v116) - 1))) = *(unsigned int *)&*(unsigned int *)&v51->abstractFlags & 1) != 0
        && (*(uint8_t (**)(BuildingTypeClass *))((char *)v51->vtable1 + 352))( (BuildingTypeClass *)(v51))) )
     {
       if ( (*(int (**)(BuildingTypeClass *))((unsigned int)(v51->vtable1)+ 44))( (BuildingTypeClass *)(v51)) == 2
@@ -578,7 +578,7 @@ LABEL_82:
   else
     v141 = v57;
   v58 = (gamemd::ObjectClass *)(aP3);
-  if ( IDA_BYTE2((&aP3)[1].location[1]) )
+  if ( (((unsigned char *)&((&aP3)[1].location[1]))[2]) )
   {
     if ( v141 > 0.3 )
     {
@@ -588,20 +588,20 @@ LABEL_82:
       {
         do
         {
-          ebx112 = (IUnknown *)(IDA_SHIWORD(v115) - 3);
-          for ( j = ebx112; (int)ebx112 <= IDA_SHIWORD(v115) + 3; j = ebx112 )
+          ebx112 = (IUnknown *)((*((signed short *)(((unsigned char *)&(v115)) + 2))) - 3);
+          for ( j = ebx112; (int)ebx112 <= (*((signed short *)(((unsigned char *)&(v115)) + 2))) + 3; j = ebx112 )
           {
             if ( varC2 )
             {
-              IDA_LOWORD(v134) = v59;
-              IDA_HIWORD(v134) = (unsigned short)ebx112;
+              (*((unsigned short *)&(v134))) = v59;
+              (*(((unsigned short *)&(v134)) + 1)) = (unsigned short)ebx112;
               v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v134)
                                    + 58);
             }
             else
             {
-              IDA_LOWORD(v138) = v59;
-              IDA_HIWORD(v138) = (unsigned short)ebx112;
+              (*((unsigned short *)&(v138))) = v59;
+              (*(((unsigned short *)&(v138)) + 1)) = (unsigned short)ebx112;
               v61 = (ObjectClass *)*((unsigned int *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v138)
                                    + 57);
             }
@@ -614,7 +614,7 @@ LABEL_82:
                 int * v63 = (int *)AbstractClass::IsTechnoType((gamemd::AbstractClass *)(v60));
                 if ( v63 )
                 {
-                  if ( IDA___PAIR32__((uint16_t)ebx112, v112) == v115 && a2 )
+                  if ( (((unsigned int)(unsigned short)(v112)) | ((unsigned int)(unsigned short)((uint16_t)ebx112) << 16)) == v115 && a2 )
                   {
   float v67; // edx
                     v135 = v63[39];
@@ -644,7 +644,7 @@ LABEL_82:
                       v144 = v131 / v66;
                       v67 = v144;
                     }
-                    v140 = (BuildingTypeClass *)IDA_LODWORD(v67);
+                    v140 = (BuildingTypeClass *)(*((unsigned int *)&(v67)));
                     *(float *)&v132 = *(float *)&v139 * 10.0;
                     *((float *)&v132 + 1) = *((float *)&v139 + 1) * 10.0;
                     v130 = v132;
@@ -659,14 +659,14 @@ LABEL_82:
                     v137 = ecx123;
                     aP0a = v141;
                     v129 = (IUnknown *)((char *)v129 + v69);
-                    (*(void (**)(int *, int *, unsigned int, unsigned int))(eax123a + 984))( (int *)(v63), (int *)(&v135), IDA_LODWORD(aP0a), 0);
+                    (*(void (**)(int *, int *, unsigned int, unsigned int))(eax123a + 984))( (int *)(v63), (int *)(&v135), (*((unsigned int *)&(aP0a))), 0);
                     ebx112 = j;
                     v60 = (ObjectClass *)aP1a;
                   }
                   else if ( *(float *)&((unsigned int *)(aP3))[1].spawnStatus > 0.0 )
                   {
                     aP0b = v141;
-(*(void (**)(int *, CoordStruct *, unsigned int, unsigned int))(*v63 + 984))( (int *)(v63), (CoordStruct *)(aP2), IDA_LODWORD(aP0b), 0);
+(*(void (**)(int *, CoordStruct *, unsigned int, unsigned int))(*v63 + 984))( (int *)(v63), (CoordStruct *)(aP2), (*((unsigned int *)&(aP0b))), 0);
 
 
 
@@ -690,12 +690,12 @@ LABEL_82:
   }
   bool v107 = v58 == *(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080);
   v71 = (IUnknown *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v115);
-  if ( (IDA_BYTE1(**&HouseClass_Player->u32_1D390) & 0x80u) != 0 && v58[1].isInLogic )
+  if ( ((((unsigned char *)&(**&HouseClass_Player->u32_1D390))[1]) & 0x80u) != 0 && v58[1].isInLogic )
   {
     v72 = (ParticleSystemClass *)((gamemd::Math*)v71)->field_140;
     int v75 = ((gamemd::Math*)v71)->u32_38 - unk_AA0E28 + 1;
     unsigned int * v113 = 0;
-    if ( (IDA_BYTE1(v72) & 1) != 0
+    if ( ((((unsigned char *)&(v72))[1]) & 1) != 0
       && ((char)v72 >= 0 ? (v122[0] = *(unsigned int *)(*(unsigned int *)&((gamemd::Math*)v71)->u32_2C + 36)) : (v122[0] = ((gamemd::Math*)v71)->u32_24),
           (eax137 = ((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)v122), (v113 = eax137) != 0)
        && ((eax138 = eax137[17], eax138 == 24) || eax138 == 25)) )
@@ -823,8 +823,8 @@ LABEL_163:
               }
               ((Coord *)(*(unsigned int **)&((unsigned char *)&stru_87C374)[44976]))->To_Screen( (unsigned int *)(aP2), (int *)((IUnknown *)&v141));
               ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
-                IDA_LODWORD(v141) - 128,
-                IDA_HIDWORD(v141) - 128,
+                (*((unsigned int *)&(v141))) - 128,
+                (*(((unsigned int *)&(v141)) + 1)) - 128,
                 256,
                 256,
                 0);
@@ -882,16 +882,12 @@ PlaySoundEffectAt( (TechnoClass *)v94, (int)(*(IUnknown **)(*(unsigned int *)&((
       }
       void * v98 = (void *)operator new(0x148u);
       if ( v98 )
-        DamageAnimClass::Constructor(
-          v98,
-          *(VoxelAnimClass **)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 92) + 4 * v97),
-          (IUnknown *)v94,
-          0);
+                DamageAnimClass::Constructor(           v98,(int)(*(VoxelAnimClass **)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 92) + 4 * v97)),           (IUnknown *)v94,           0);
     }
 LABEL_213:
     if ( Random::Range((Random *)((*&HouseClass_Player->u32_1D390 + 536)), 0, (int)0x63) < 25 )
     {
-      int v99 = operator new(0x100u);
+      int v99 = (int)(operator new(0x100u));
       if ( v99 )
       {
         v100 = (gamemd::ParticleSystemClass *)(ParticleSystemClass::Constructor()
@@ -912,7 +908,7 @@ LABEL_213:
   }
   if ( aP3[1].lastLayer )
   {
-    int v101 = operator new(0x100u);
+    int v101 = (int)(operator new(0x100u));
     if ( v101 )
       v102 = (gamemd::ParticleSystemClass *)(ParticleSystemClass::Constructor()
                v101,
@@ -944,11 +940,11 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
   int v12; // esi
   ObjectClass *v13; // eax
 
-  IDA_LOBYTE(v7) = dword_A8EB78; /*0x48a620*/
+  (*((unsigned char *)&(v7))) = dword_A8EB78; /*0x48a620*/
   if ( dword_A8EB78 && (v7 = (wchar_t *)PingPongBuffer::GetWriteOffset(), dword_ABCD44 >= v7) || (a7 & 0xF) != 0 ) /*0x48a644*/
   {
-    IDA_LOBYTE(v7) = a6; /*0x48a64a*/
-    if ( a6 || a2 && (IDA_LOBYTE(v7) = a2->q150, (unsigned char)v7) ) /*0x48a662*/
+    (*((unsigned char *)&(v7))) = a6; /*0x48a64a*/
+    if ( a6 || a2 && ((*((unsigned char *)&(v7))) = a2->q150, (unsigned char)v7) ) /*0x48a662*/
     {
       v10 = a2->q13C; /*0x48a668*/
       if ( v10 <= 0.0 ) /*0x48a679*/
@@ -980,11 +976,11 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
       else
       {
         g_abs_14 |= a7; /*0x48a6f7*/
-        IDA_LOBYTE(v7) = 0; /*0x48a6f5*/
+        (*((unsigned char *)&(v7))) = 0; /*0x48a6f5*/
       }
     }
   }
-  return (char)v7; /*0x48a6ef*/
+  return (gamemd::AbstractClass **)((char)v7); /*0x48a6ef*/
 }
 }
 // 0x48A9D0

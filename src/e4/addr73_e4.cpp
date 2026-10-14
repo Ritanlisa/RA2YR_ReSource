@@ -98,7 +98,7 @@ AbstractClass * * ProcessSelectionExperience()
   (*((unsigned char *)&(v1))) = (unsigned char)dword_A8ECC8; /*0x730af3*/
   v14 = 0; /*0x730afe*/
   if ( (int)dword_A8ECC8 <= 0 ) /*0x730b03*/
-    return v1; /*0x730b03*/
+    return (gamemd::AbstractClass **)(v1); /*0x730b03*/
   (*((unsigned char *)&(v1))) = (unsigned char)dword_A8ECBC; /*0x730b09*/
   if ( !*(unsigned int *)dword_A8ECBC
     || (v2 = *(House ***)dword_A8ECBC,
@@ -107,11 +107,11 @@ AbstractClass * * ProcessSelectionExperience()
     || (v1 = (*(int (**)(House **))&(*v2)->__pad_3D7[49])(v2), v1 <= 0)
     || ((*((unsigned char *)&(v1))) = ((House *)(v2[135]))->IsHumanPlayer(), !(unsigned char)v1) )
   {
-    v4 = dword_A8ECC8; /*0x730b71*/
+    v4 = (wchar_t *)(dword_A8ECC8); /*0x730b71*/
     v5 = 0; /*0x730b77*/
     v12 = 0; /*0x730b7b*/
     v13 = 0; /*0x730b80*/
-    v15 = dword_A8ECC8; /*0x730b85*/
+    v15 = (wchar_t *)(dword_A8ECC8); /*0x730b85*/
     if ( (int)dword_A8ECC8 <= 0 )
     {
   LABEL_24:
@@ -150,7 +150,7 @@ AbstractClass * * ProcessSelectionExperience()
         if ( v14 ) /*0x730d37*/
           goto LABEL_47; /*0x730d37*/
       }
-      return v1; /*0x730d37*/
+      return (gamemd::AbstractClass **)(v1); /*0x730d37*/
     }
     while ( 1 ) /*0x730b95*/
     {
@@ -209,7 +209,7 @@ AbstractClass * * ProcessSelectionExperience()
         (*((unsigned char *)&(v1))) = PlayVocClass(*&dword_8871E0->q72C, 0x2000, 1.0, 0); /*0x730d39*/
     }
   }
-  return v1; /*0x730d55*/
+  return (gamemd::AbstractClass **)(v1); /*0x730d55*/
 }
 }
 // 0x730D60
@@ -244,7 +244,7 @@ CellStruct * * sub_730D60()
           && (*(uint8_t (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4)
           && (*(int (**)(unsigned char *))(*(unsigned int *)v4 + 44))(v4) != 6 )
         {
-          v5 = (gamemd::CellStruct **)(*(unsigned int *)v4);
+          v5 = (int)((gamemd::CellStruct **)(*(unsigned int *)v4));
           v6 = (*(int (**)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v4 + 452))(v4, 0, 0); /*0x730de0*/
           result = (*(int (**)(unsigned char *, int, int))(v5 + 888))(v4, 11, v6); /*0x730deb*/
           v3 = result; /*0x730df1*/
@@ -260,7 +260,7 @@ CellStruct * * sub_730D60()
                               : (unsigned int *)1732)
                             + 3598)) )
         {
-          v7 = (gamemd::CellStruct **)(*(unsigned int *)v4);
+          v7 = (int)((gamemd::CellStruct **)(*(unsigned int *)v4));
           v8 = (*(int (**)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v4 + 452))(v4, 0, 0); /*0x730e4b*/
           result = (*(int (**)(unsigned char *, int, int))(v7 + 888))(v4, 11, v8); /*0x730e56*/
           v3 = result; /*0x730e5c*/
@@ -327,7 +327,7 @@ AbstractClass * * sub_731AA0()
   int v2; // esi
   unsigned char *v3; // ecx
 
-  v1 = (gamemd::AbstractClass **)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[228]);
+  v1 = (int)((gamemd::AbstractClass **)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[228]));
   v2 = 0; /*0x731aa9*/
   if ( *(int *)&((unsigned int *)&stru_A8EB00)[228] <= 0 ) /*0x731aad*/
     return (gamemd::AbstractClass **)(1); /*0x731ad8*/
@@ -805,7 +805,7 @@ char sub_7331B0()
       v5 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[216] + 4 * v1); /*0x73320a*/
       if ( v5 && (*(unsigned char *)(v5 + 20) & 1) != 0 ) /*0x73321b*/
       {
-        EventClass_field_0x8 = v3->u32_8; /*0x73321d*/
+        EventClass_field_0x8 = (void *)(v3->u32_8); /*0x73321d*/
         if ( *(unsigned int *)v3->Count < (int)EventClass_field_0x8 /*0x733242*/
           || ((v3->IsAllocated) || !EventClass_field_0x8)
           && (v7 = *&v3->q014, v7 > 0)
@@ -815,7 +815,7 @@ char sub_7331B0()
                0) )
         {
           v8 = *(unsigned int *)v3->Count; /*0x733249*/
-          EventClass_field_0x4 = v3->q004; /*0x73324c*/
+          EventClass_field_0x4 = (unsigned int *)(v3->q004); /*0x73324c*/
           *(unsigned int *)v3->Count = v8 + 1; /*0x733252*/
           EventClass_field_0x4[v8] = v5; /*0x733255*/
         }
@@ -825,7 +825,7 @@ char sub_7331B0()
     while ( v1 < v4 ); /*0x73325b*/
     v1 = 0; /*0x73325d*/
   }
-  *(unsigned int *)&g_UnitTooltipState = v3; /*0x73325f*/
+  *(unsigned int *)&g_UnitTooltipState = (unsigned int)(v3); /*0x73325f*/
   HeightMap = *(unsigned int *)v3->Count; /*0x733265*/
   if ( !HeightMap ) /*0x73326a*/
   {
@@ -869,7 +869,7 @@ char sub_7331B0()
                 HeightMap = (*(int (**)(House **))&(*v14)->House_field_0x29[3])(v14); /*0x73331a*/
                 if ( HeightMap != 6 ) /*0x733320*/
                 {
-                  v15 = v12->u32_8; /*0x733322*/
+                  v15 = (void *)(v12->u32_8); /*0x733322*/
                   if ( *(unsigned int *)v12->Count < (int)v15 /*0x73334c*/
                     || (((*((unsigned char *)&(HeightMap))) = (v12->IsAllocated), (unsigned char)HeightMap) || !v15)
                     && (HeightMap = *&v12->q014, HeightMap > 0)
@@ -881,7 +881,7 @@ char sub_7331B0()
                         (unsigned char)HeightMap) )
                   {
                     HeightMap = *(unsigned int *)v12->Count; /*0x73334e*/
-                    v16 = v12->q004; /*0x733351*/
+                    v16 = (unsigned int *)(v12->q004); /*0x733351*/
                     *(unsigned int *)v12->Count = HeightMap + 1; /*0x733357*/
                     v16[HeightMap] = (unsigned int)(v14); /*0x73335a*/
                   }
@@ -894,7 +894,7 @@ char sub_7331B0()
       }
       while ( v1 < v13 ); /*0x733360*/
     }
-    *(unsigned int *)&g_UnitTooltipState = v12; /*0x733366*/
+    *(unsigned int *)&g_UnitTooltipState = (unsigned int)(v12); /*0x733366*/
   }
   return HeightMap; /*0x73336c*/
 }
@@ -957,8 +957,8 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
           1);
         *(unsigned int *)&g_UnitTooltipState = 0; /*0x7333af*/
       }
-      v3 = TechnoClass::GatherAllBuildings(); /*0x7333b5*/
-      *(unsigned int *)&g_UnitTooltipState = v3; /*0x7333ba*/
+      v3 = (unsigned int *)(TechnoClass::GatherAllBuildings()); /*0x7333b5*/
+      *(unsigned int *)&g_UnitTooltipState = (unsigned int)(v3); /*0x7333ba*/
       if ( !v3[4] ) /*0x7333bf*/
       {
         if ( v3 ) /*0x7333c8*/
@@ -998,7 +998,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip(char a1, void * aMsgCritical, void * 
       }
       else
       {
-        StringCSF = &g_TypeClass_DefaultString; /*0x7334cb*/
+        StringCSF = (wchar_t *)(&g_TypeClass_DefaultString); /*0x7334cb*/
       }
     }
     else
@@ -1112,8 +1112,8 @@ int DrawUnitExperiencePopup(char a1)
           1);
         *(unsigned int *)&g_UnitTooltipState = 0; /*0x7336ef*/
       }
-      v3 = TechnoClass::GatherAllBuildings(); /*0x7336f5*/
-      *(unsigned int *)&g_UnitTooltipState = v3; /*0x7336fa*/
+      v3 = (unsigned int *)(TechnoClass::GatherAllBuildings()); /*0x7336f5*/
+      *(unsigned int *)&g_UnitTooltipState = (unsigned int)(v3); /*0x7336fa*/
       if ( !v3[4] ) /*0x7336ff*/
       {
         if ( v3 ) /*0x733708*/
@@ -1153,7 +1153,7 @@ int DrawUnitExperiencePopup(char a1)
       }
       else
       {
-        StringCSF = &g_TypeClass_DefaultString; /*0x73380f*/
+        StringCSF = (wchar_t *)(&g_TypeClass_DefaultString); /*0x73380f*/
       }
     }
     else
@@ -1257,8 +1257,8 @@ int SelectUnitsByTheme(char a1)
           1);
         *(unsigned int *)&g_UnitTooltipState = 0; /*0x7339e2*/
       }
-      v4 = TechnoClass::GatherAllBuildings(); /*0x7339e8*/
-      *(unsigned int *)&g_UnitTooltipState = v4; /*0x7339ed*/
+      v4 = (unsigned int *)(TechnoClass::GatherAllBuildings()); /*0x7339e8*/
+      *(unsigned int *)&g_UnitTooltipState = (unsigned int)(v4); /*0x7339ed*/
       if ( !v4[4] ) /*0x7339f2*/
       {
         if ( v4 ) /*0x7339fb*/

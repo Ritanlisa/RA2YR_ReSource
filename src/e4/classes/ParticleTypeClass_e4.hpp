@@ -125,12 +125,12 @@ struct ParticleTypeClass {
     int GetObjectSize();
     int GetType(int a2, int a3);
     int GetTypeIdentifier();
-    int Init(unsigned char * aP1, void *a1 = 0);
-    int ProcessPower(int *a2, void *a1 = 0);
+    int Init(unsigned char * a2, void *a2_1 = 0);
+    int ProcessPower(int *a2, void *a2_1 = 0);
     int SaveLoad_Prefix(int a1, int a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2);
     int StubReturnFalse(int a1);
-    unsigned int * Constructor(int a2, int a3, void *a3_2, void *a1 = 0);
+    unsigned int * Constructor(int a2, int a3, void *a3_2, void *a4 = 0);
     unsigned int * EnsureCapacity(unsigned int * a2, void *a2_2);
     unsigned int LoadTypeData(int a2);
     void GetClassIdentifier();

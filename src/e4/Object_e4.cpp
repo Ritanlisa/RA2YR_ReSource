@@ -70,9 +70,9 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
   v5 = 7 * *aP1; /*0x47c3f2*/
   v6 = 7 * aP1[1]; /*0x47c3fe*/
   if ( aP2 ) /*0x47c405*/
-    Object_field_0xE8 = this->q0E8; /*0x47c407*/
+    Object_field_0xE8 = (unsigned char *)(this->q0E8); /*0x47c407*/
   else
-    Object_field_0xE8 = this->q0E4; /*0x47c40f*/
+    Object_field_0xE8 = (unsigned char *)(this->q0E4); /*0x47c40f*/
   if ( !Object_field_0xE8 ) /*0x47c417*/
     return 0; /*0x47c4bf*/
   v8 = Object_field_0xE8; /*0x47c41d*/
@@ -109,7 +109,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
 
   if ( byte_A8E9A0 ) /*0x47c5ab*/
   {
-    Object_field_0xE4 = this->q0E4; /*0x47c5ad*/
+    Object_field_0xE4 = (unsigned int *)(this->q0E4); /*0x47c5ad*/
     if ( Object_field_0xE4 ) /*0x47c5b5*/
     {
       while ( (*(int (**)(unsigned int *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 2 ) /*0x47c5c1*/
@@ -127,7 +127,7 @@ LABEL_5:
   {
     if ( byte_A8E9A0 ) /*0x47c5e8*/
     {
-      Object_field_0xE4 = this->q0E4; /*0x47c5ea*/
+      Object_field_0xE4 = (unsigned int *)(this->q0E4); /*0x47c5ea*/
       if ( Object_field_0xE4 ) /*0x47c5f2*/
       {
         while ( (*(int (**)(unsigned int *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 36 ) /*0x47c5fe*/
@@ -147,7 +147,7 @@ LABEL_5:
 }
 // 0x4F9A90
 namespace gamemd {
-int Object::IsAlliedWithObjectHouse(int aP1)
+int Object::IsAlliedWithObjectHouse(int aP1, void *a2)
 {
 
   int result; // eax
@@ -306,7 +306,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
           if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
             v17 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
-            v18 = Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            v18 = (unsigned int *)(Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2])); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18->u32_4; /*0x56c485*/
             v26[2] = v18->u32_8; /*0x56c490*/
@@ -430,7 +430,7 @@ char sub_5902C0(int a1)
 }
 // 0x5FC380
 namespace gamemd {  // G42.18 ns repair
-int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)  // G42.41k: dup head + misplaced close removed
+int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4)  // G42.41k: dup head + misplaced close removed
 {
 
   int v5; // eax
@@ -440,7 +440,7 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)  // G42.41k: dup head + 
 
   ObjectClass::ctor((ObjectClass *)this); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
-  *(unsigned int *)this->attachedTag = &vt_OverlayClass; /*0x5fc38f*/
+  *(unsigned int *)this->attachedTag = (unsigned int)(&vt_OverlayClass); /*0x5fc38f*/
   this->Object_field_0xAC = v5; /*0x5fc395*/
   this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
   *&this->q004 = &vt_OverlayClass; /*0x5fc3a6*/
@@ -455,7 +455,7 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)  // G42.41k: dup head + 
          0) )
   {
     v6 = dword_A8EC60++; /*0x5fc3fc*/
-    *((unsigned int *)dword_A8EC54 + v6) = this; /*0x5fc40b*/
+    *((unsigned int *)dword_A8EC54 + v6) = (unsigned int)(this); /*0x5fc40b*/
   }
   if ( *aP2 != word_AC1528 || aP2[1] != word_AC152A ) /*0x5fc429*/
   {
@@ -623,18 +623,18 @@ LABEL_20:
   else
   {
     v21 = *location; /*0x5fdba1*/
-    v22 = this->q004; /*0x5fdba3*/
+    v22 = (int)(this->q004); /*0x5fdba3*/
     v34 = this->u32_5788; /*0x5fdba9*/
     LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
     if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, (__int16 *)&a2) ) /*0x5fdbe3*/
     {
       v23 = this->q008; /*0x5fdbee*/
-      v24 = this->q004; /*0x5fdbf1*/
+      v24 = (int)(this->q004); /*0x5fdbf1*/
       v32 = *location; /*0x5fdbf4*/
       v34 = v23; /*0x5fdbfc*/
       v33 = v24; /*0x5fdc06*/
-      v25 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v32); /*0x5fdc0a*/
+      v25 = (unsigned int *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v32)); /*0x5fdc0a*/
     }
     else
     {
@@ -642,13 +642,13 @@ LABEL_20:
       if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&DataGlobal_87F7E8, v26) ) /*0x5fdc2c*/
       {
         v28 = (__int16 *)Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, &a2, &v30); /*0x5fdc4a*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v28); /*0x5fdc4b*/
+        v25 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v28)); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
         HIWORD(a2) = *(unsigned short *)&g_Cell_PositionLUT; /*0x5fdc5f*/
-        v25 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2); /*0x5fdc6a*/
+        v25 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2)); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
@@ -694,7 +694,7 @@ void * Object::DrawObject(void ** Block, char a2)
   Block->u32_8 = &vt_OverlayClass; /*0x5fdf83*/
   Block->? = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
-  v5 = Block; /*0x5fdfa6*/
+  v5 = (gamemd::OverlayClass *)(Block); /*0x5fdfa6*/
   v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&stru_A8EB00.?[108] + 16))(&stru_A8EB00.?[108], &v5); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[124] ) /*0x5fdfba*/
   {
@@ -760,7 +760,7 @@ LABEL_39:
     *v5 = v4; /*0x62af27*/
     v5->vtable2 = dword_AC494C; /*0x62af31*/
     v5->vtable3 = dword_AC4950; /*0x62af3c*/
-    return result; /*0x62af3c*/
+    return (void **)(result); /*0x62af3c*/
   }
   if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
   {
@@ -801,7 +801,7 @@ LABEL_39:
     v29 = v19->vtable3; /*0x62ae03*/
     if ( v20 && (*(int (**)(int))(*(unsigned int *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
     {
-      v21 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27); /*0x62ae1d*/
+      v21 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)); /*0x62ae1d*/
       v22 = (int *)(*(int (**)(CellClass *, int *))(v21->mapCoords[0] + 72))(v21, v31); /*0x62ae2b*/
       v27 = *v22; /*0x62ae30*/
       v28 = v22[1]; /*0x62ae37*/
@@ -842,7 +842,7 @@ LABEL_34:
       *a2 = v27; /*0x62af0f*/
       a2->vtable2 = v24; /*0x62af11*/
       a2->vtable3 = v25; /*0x62af14*/
-      return a2; /*0x62af1e*/
+      return (void **)(a2); /*0x62af1e*/
     }
     result = a2; /*0x62af21*/
     v5 = a2; /*0x62af25*/
@@ -857,10 +857,10 @@ LABEL_34:
   {
     if ( (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7) == 1 ) /*0x62ac8b*/
     {
-      v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27); /*0x62ac97*/
+      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v27)); /*0x62ac97*/
       v9 = (int *)(*(int (**)(CellClass *, unsigned char *))(v8->mapCoords[0] + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
-      v10 = *&this->ptr_28; /*0x62acae*/
+      v10 = (int)(*&this->ptr_28); /*0x62acae*/
       v28 = v9[1]; /*0x62acb4*/
       v11 = v9[2]; /*0x62acb8*/
       v29 = v11; /*0x62acbb*/
@@ -875,7 +875,7 @@ LABEL_34:
   *a2 = v27; /*0x62ad03*/
   a2->vtable2 = v28; /*0x62ad0a*/
   a2->vtable3 = v29; /*0x62ad11*/
-  return a2; /*0x62ad00*/
+  return (void **)(a2); /*0x62ad00*/
 
 }
 }
@@ -1022,9 +1022,9 @@ char Object_Calc(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, i
   unsigned char *v20; // [esp+10h] [ebp-Ch]
   int v22; // [esp+18h] [ebp-4h]
 
-  v17 = (unsigned char *)(0);
-  v6 = aP0; /*0x7def17*/
-  v20 = aP0; /*0x7def1a*/
+  v17 = (int)((unsigned char *)(0));
+  v6 = (unsigned char *)(aP0); /*0x7def17*/
+  v20 = (unsigned char *)(aP0); /*0x7def1a*/
   v7 = a1; /*0x7def1d*/
   v19 = a1; /*0x7def20*/
   do
@@ -1087,9 +1087,9 @@ char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   unsigned char *v20; // [esp+10h] [ebp-Ch]
   int v22; // [esp+18h] [ebp-4h]
 
-  v17 = (unsigned char *)(0);
-  v6 = aP0; /*0x7deff4*/
-  v20 = aP0; /*0x7deff7*/
+  v17 = (int)((unsigned char *)(0));
+  v6 = (unsigned char *)(aP0); /*0x7deff4*/
+  v20 = (unsigned char *)(aP0); /*0x7deff7*/
   v7 = a1; /*0x7deffa*/
   v19 = a1; /*0x7deffd*/
   do
@@ -1152,7 +1152,7 @@ char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   unsigned char *v20; // [esp+10h] [ebp-Ch]
   int v22; // [esp+18h] [ebp-4h]
 
-  v17 = (unsigned char *)(0);
+  v17 = (int)((unsigned char *)(0));
   v6 = aP0; /*0x7df0d1*/
   v20 = aP0; /*0x7df0d4*/
   v7 = a1; /*0x7df0d7*/

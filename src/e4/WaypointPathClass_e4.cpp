@@ -55,7 +55,7 @@ int WaypointPathClass::Init()
 }  // G42.18 ns repair
 // 0x763810
 namespace gamemd {
-int WaypointPathClass::Construct(unsigned int aP1)
+int WaypointPathClass::Construct(unsigned int aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
   int v3; // eax
 
@@ -82,9 +82,9 @@ int WaypointPathClass::Construct(unsigned int aP1)
           0)) )
   {
     v3 = dword_B72618++; /*0x7638a7*/
-    *((unsigned int *)dword_B7260C + v3) = this; /*0x7638b6*/
+    *((unsigned int *)dword_B7260C + v3) = (unsigned int)(this); /*0x7638b6*/
   }
-  return this; /*0x7638bb*/
+  return (int)(this); /*0x7638bb*/
 }
 }
 // 0x763C70
@@ -179,7 +179,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 }
 // 0x764760
 namespace gamemd {
-unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3)
+unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3, void *a3_1)
 {
 
   unsigned int *v4; // eax
@@ -203,7 +203,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3)
     {
       v8 = v7 + 1; /*0x7647cc*/
       *v7 = a2; /*0x7647cf*/
-      v9 = v7 + 1; /*0x7647d3*/
+      v9 = (unsigned int *)(v7 + 1); /*0x7647d3*/
       if ( a2 - 1 >= 0 ) /*0x7647d5*/
       {
         v10 = a2; /*0x7647d7*/

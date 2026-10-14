@@ -30,7 +30,7 @@ struct ParticleSystemClass_32 {
     DynamicVector *  Constructor_VectorClass_AircraftClass___(char a2);  // 0x4EFEE0
     unsigned int  PointerToIndex(int a2);  // 0x4E8320
     unsigned int  GetIndex2(int a2);  // 0x4E8810
-    unsigned int  Read(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EB620
+    unsigned int Read(int a2, void *a2_2, void *a3 = 0);  // 0x4EB620
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)

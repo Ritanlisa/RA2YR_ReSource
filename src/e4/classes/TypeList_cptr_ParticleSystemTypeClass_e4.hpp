@@ -17,8 +17,8 @@ struct TypeList_cptr_ParticleSystemTypeClass {
 // --- flat members (END) ---
     void GetClassIdentifier();  // 0x459F90
     unsigned int  LoadTypeData(int a2);  // 0x459FC0
-    char  Add(int a2, unsigned int * a3, void *a1 = 0);  // 0x45A300
-    int  Remove(unsigned int * a2, void *a1 = 0);  // 0x45A3B0
+    char Add(int a2, unsigned int * a3, void *a3_2);  // 0x45A300
+    int Remove(unsigned int * a2, void *a2_1 = 0);  // 0x45A3B0
     TypeList_flat *  QueryInterface(char a2);  // 0x717B70
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)

@@ -296,7 +296,6 @@ struct CampaignScore {
 struct DialogControl_OwnerDraw {
     void* vfptr;
     unsigned int m_0;  // 0x0
-    unsigned char __pad_9[4];  // 0x9
 };
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
@@ -418,7 +417,6 @@ struct Gap2Recv_402F60 {
     unsigned int q5684;  // 0x5684
     unsigned int q6294;  // 0x6294
     LineTrail * q6438;  // 0x6438
-    unsigned char *__pad_0;  // 0x0
 };
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
@@ -512,7 +510,6 @@ struct MSAnim {
     void* vtable1;  // 0x0
     int  GetField(unsigned int a2);  // 0x5cb840
     int  SetField(unsigned int a2);  // 0x5cb860
-    void* vftable;  // 0x0 (no offset truth)
 };
 #endif  // GAMEMD_TREE_UNIVERSE (MSAnim)
 
@@ -521,7 +518,6 @@ struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
     static void * Constructor(void *aP1, void *a2, int a3, int a4, int a5, int a6, char a7, int a8);
-    void* vftable;  // 0x0 (no offset truth)
     int EnableOnce(char aP1);
     MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);
     void ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6);
@@ -876,7 +872,6 @@ struct ObjectClass {
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct ShapeButtonClass {
     void* vfptr;
-    unsigned char *__pad_0;  // 0x0
     static int Destructor(void *aP1);
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
@@ -919,9 +914,6 @@ struct VectorClass {
 
     static unsigned int *  ConstructorWithVtable(int a2, int a3);  // 0x45AD80
 
-    void* Items;  // 0x4
-    int Capacity;  // 0x8
-    bool IsInitialized;  // 0xC (G57W14E1 til supply)
     void* ClearAndFree2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon VectorClass::ClearAndFree2 is a method)
     static unsigned int ClearAndFree2(int p_this);  // x4:ida@0x4a10a0
     void* vfptr;
@@ -943,7 +935,6 @@ struct VectorClass {
     unsigned int *  CellConstructor(int a2, int a3);  // 0x42fcb0
     void* vtable0;  // 0x0 (no offset truth)
     unsigned int *  BuildingConstructor(int a2, int a3);  // 0x510550
-    void* vtable1;  // 0x0 (no offset truth)
     AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3);
     // --- W16G3 supply (BEGIN) ---
     static int CleanupTyped(int aP1);
@@ -968,7 +959,6 @@ struct WorldDominationTour {
     void* vfptr;
     void* vt_GameOption;  // 0x0 (no offset truth)
     void* vt_FlagGameOption;  // 0x0 (no offset truth)
-    void* vftable;  // 0x0 (no offset truth)
     void* CampaignProperties;  // 0x0 (no offset truth)
     void* Conflict;  // 0x0 (no offset truth)
     void* GameOption;  // 0x0 (no offset truth)
@@ -1066,6 +1056,5 @@ struct AnimTypeList {
 };
 // VoxelAnimTypeVector  size=4  (TechnoTypeClass_e4.cpp C2027 carrier)
 struct VoxelAnimTypeVector {
-    unsigned char q000[4];  // 0x0
 };
 } // namespace gamemd

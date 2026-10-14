@@ -112,7 +112,7 @@ bool LoadOptions::ddtor(LPCSTR lpFileName)
 
 // 0x559ED0
 namespace gamemd {
-char LoadOptions::Read(wchar_t * Destination, int a2)
+char LoadOptions::Read(wchar_t * Destination, int a2, void *a3)
 {
   const CHAR *v2; // edi
   char Options_Load; // bl
@@ -203,7 +203,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
     __3_YAXPAX_Z(*(void **)(*((unsigned int *)a3 + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(LoadOptionsClass *))(*((unsigned int *)a3 + 8) + 12))(a3 + 2); /*0x55a102*/
   v4 = (void *)*((unsigned int *)a3 + 9); /*0x55a105*/
-  *((unsigned int *)a3 + 8) = &vt_VectorClass; /*0x55a108*/
+  *((unsigned int *)a3 + 8) = (unsigned int)(&vt_VectorClass); /*0x55a108*/
   if ( v4 && *((unsigned char *)a3 + 45) ) /*0x55a112*/
   {
     __3_YAXPAX_Z(v4); /*0x55a11a*/
@@ -213,7 +213,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
   *((unsigned int *)a3 + 10) = 0; /*0x55a133*/
   if ( (a3 & 1) != 0 ) /*0x55a13a*/
     __3_YAXPAX_Z(a3); /*0x55a13d*/
-  return (char *)a3; /*0x55a147*/
+  return (gamemd::LoadOptions *)((char *)a3); /*0x55a147*/
 
 }
 } // namespace gamemd
@@ -246,13 +246,13 @@ char LoadOptions::vt01(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = *&this->Capacity; /*0x55a1b2*/
+  m_8 = (int)(*&this->Capacity); /*0x55a1b2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x55a1bd*/
   {
     v3 = 0; /*0x55a1bf*/
     if ( m_8 <= 0 ) /*0x55a1c3*/
       return 1; /*0x55a1e3*/
-    v4 = *&this->max_entries; /*0x55a1c5*/
+    v4 = (unsigned int *)(*&this->max_entries); /*0x55a1c5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x55a1cb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x55a1d4*/
     {
@@ -288,7 +288,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
       return 0; /*0x55a3da*/
     if ( *&this->mode ) /*0x55a368*/
     {
-      m_8 = this->Capacity; /*0x55a36f*/
+      m_8 = (int)(this->Capacity); /*0x55a36f*/
       if ( a2 < m_8 ) /*0x55a374*/
         m_8 = a2; /*0x55a376*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->mode + 4 * i - 4) ) /*0x55a37c*/
@@ -300,14 +300,14 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
       }
     }
     *&this->mode = v4; /*0x55a3aa*/
-    this->Capacity = a2; /*0x55a3b2*/
+    this->Capacity = (void *)(a2); /*0x55a3b2*/
     BYTE1(this->__pad_00C) = a3 == 0; /*0x55a3b5*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAVFileEntryClass *))(*(unsigned int *)this->extension + 12))(this); /*0x55a3be*/
   }
-  v7 = this->Capacity; /*0x55a3c1*/
+  v7 = (int)(this->Capacity); /*0x55a3c1*/
   if ( v7 < this->max_entries ) /*0x55a3c9*/
     this->max_entries = v7; /*0x55a3cb*/
   return 1; /*0x55a3ce*/
@@ -382,7 +382,7 @@ namespace gamemd {
 char * LoadOptions::GetData(void *a1)
 {
 
-  return a1 + 264; /*0x681106*/
+  return (char *)(a1 + 264); /*0x681106*/
 
 }
 } // namespace gamemd

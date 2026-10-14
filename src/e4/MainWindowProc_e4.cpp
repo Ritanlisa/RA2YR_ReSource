@@ -75,7 +75,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
   result = Dialog::GetCurrent(); /*0x777599*/
   if ( result ) /*0x7775a1*/
   {
-    Current = (gamemd::AbstractClass **)((HWND)Dialog::GetCurrent());
+    Current = (HWND)((gamemd::AbstractClass **)((HWND)Dialog::GetCurrent()));
     SetActiveWindow(Current); /*0x7775a9*/
     v5 = (HWND)Dialog::GetCurrent(); /*0x7775af*/
     return (gamemd::AbstractClass **)((int)SetFocus(v5)); /*0x7775b5*/
@@ -110,7 +110,7 @@ char * E4Recv_724000::sub_724000(int a2)
   char *v3; // ecx
   int v4; // edx
 
-  v3 = &this->u8_234; /*0x72400a*/
+  v3 = (char *)(&this->u8_234); /*0x72400a*/
   this->M4 = 0; /*0x724010*/
   this->M8 = a2; /*0x724013*/
   this->M12 = 0; /*0x724016*/
@@ -120,7 +120,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x72403a*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
   this->M588 = 0; /*0x72404a*/
@@ -137,7 +137,7 @@ char * E4Recv_724000::sub_724000(int a2)
   this->M596 = 0; /*0x72408e*/
   this->M600 = 0; /*0x724094*/
   this->M604 = 0; /*0x72409a*/
-  return this; /*0x7240a2*/
+  return (char *)(this); /*0x7240a2*/
 
 }
 } // namespace gamemd

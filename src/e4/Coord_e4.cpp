@@ -120,13 +120,13 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 }
 // 0x41C230
 namespace gamemd {
-void * Coord::Subtract(int aP1, int aP2, int aP3)
+void * Coord::Subtract(int aP1, int aP2, int aP3, void *a4)
 {
 
   *(unsigned int *)this->__pad_000 = aP1; /*0x41c23a*/
   *&this->u32_4 = aP2; /*0x41c240*/
-  this->u32_8 = (void *)aP3; /*0x41c243*/
-  return this->__pad_000; /*0x41c246*/
+  this->u32_8 = (unsigned int)((void *)aP3); /*0x41c243*/
+  return (void *)(this->__pad_000); /*0x41c246*/
 
 }
 }
@@ -174,7 +174,7 @@ unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
 }
 // 0x43A0D0
 namespace gamemd {
-void * Coord::Scale(float aP1)
+void * Coord::Scale(float aP1, void *a2)
 {
 
   float *v2; // ecx
@@ -182,13 +182,13 @@ void * Coord::Scale(float aP1)
   *v2 = *(float *)&aP1 * *v2; /*0x43a0d8*/
   v2[1] = *(float *)&aP1 * v2[1]; /*0x43a0e1*/
   v2[2] = *(float *)&aP1 * v2[2]; /*0x43a0eb*/
-  return (int)v2; /*0x43a0ee*/
+  return (void *)((int)v2); /*0x43a0ee*/
 
 }
 }
 // 0x565730
 namespace gamemd {
-void * Coord::To_Cell(unsigned int *aP1)
+void * Coord::To_Cell(unsigned int *aP1, void *a2)
 {
 
   int v2; // eax
@@ -231,8 +231,8 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   int v10; // ecx
   int v11; // edi
 
-  v4 = *aP2; /*0x6557f7*/
-  v5 = aP2[1]; /*0x6557f9*/
+  v4 = (int)(*aP2); /*0x6557f7*/
+  v5 = (int)(aP2[1]); /*0x6557f9*/
   LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625); /*0x655820*/
   v8 = v7; /*0x65582b*/
   LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625); /*0x655848*/
@@ -282,7 +282,7 @@ AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
   if ( v7 > dword_B0CE30 + 360 ) /*0x6d2242*/
     return 0; /*0x6d2244*/
   if ( v8 >= -180 ) /*0x6d2251*/
-    return v8 <= dword_B0CE34 + 180; /*0x6d2269*/
+    return (gamemd::AbstractClass **)(v8 <= dword_B0CE34 + 180); /*0x6d2269*/
   return 0; /*0x6d2220*/
 
 }

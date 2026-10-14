@@ -168,7 +168,7 @@ HKEY E4Recv_7741C0::FindRegistrySubKey(HKEY hKey, void *a2, char a3, int a5, int
     return 0; /*0x7742cf*/
   }
   v4 = cbMaxSubKeyLen + 16; /*0x77421f*/
-  v5 = __2_YAPAXI_Z(cbMaxSubKeyLen + 16); /*0x77422c*/
+  v5 = (unsigned char *)(__2_YAPAXI_Z(cbMaxSubKeyLen + 16)); /*0x77422c*/
   lpClass = (LPSTR)__2_YAPAXI_Z(cbMaxClassLen + 1); /*0x774235*/
   v6 = 0; /*0x774240*/
   if ( !cSubKeys ) /*0x774244*/
@@ -194,7 +194,7 @@ LABEL_6:
     RegCloseKey(hKey); /*0x7742de*/
   __3_YAXPAX_Z(v5); /*0x7742e5*/
   __3_YAXPAX_Z(lpClass); /*0x7742ef*/
-  return (int)phkResult; /*0x7742c3*/
+  return (HKEY)((int)phkResult); /*0x7742c3*/
 
 }
 }
@@ -292,7 +292,7 @@ int Dialog_Close(HWND a1, int a2)
 
   if ( a1 || g_DialogTrackingList && (a1 = *(&g_ClipboardBuffer + 2 * g_DialogTrackingList)) != 0 ) /*0x7757fe*/
   {
-    result = (gamemd::ObjectClass *)(0);
+    result = (int)((gamemd::ObjectClass *)(0));
     if ( g_DialogTrackingList <= 0 ) /*0x77580a*/
       goto LABEL_11; /*0x77580a*/
     for ( i = &stru_B72D28; i->vfptr != a1; i = &i->vtable3 ) /*0x77580c*/
@@ -383,7 +383,7 @@ void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void), int a3, char a4,
     while ( (HWND)v8->vfptr[0] != hWnd ) /*0x775a3e*/
     {
       ++v7; /*0x775a40*/
-      v8 = &v8->vtable3; /*0x775a41*/
+      v8 = (gamemd::TechnoTypeClass *)(&v8->vtable3); /*0x775a41*/
       if ( v7 >= g_DialogTrackingList ) /*0x775a46*/
         goto LABEL_23; /*0x775a46*/
     }
@@ -829,7 +829,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
           MainWindowProc_Helper_724000(v17, (int)v13); /*0x7777a3*/
           v18->u32_264 = 7; /*0x7777a8*/
           *(unsigned int *)v18 = (unsigned int)(&vt_CCToolTip); /*0x7777b2*/
-          *(unsigned int *)&g_TacticalRender = v18; /*0x7777b8*/
+          *(unsigned int *)&g_TacticalRender = (unsigned int)(v18); /*0x7777b8*/
         }
         else
         {
@@ -903,7 +903,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
     }
     if ( !byte_B73561 ) /*0x77798b*/
     {
-      byte_B73561 = (const char *)(1);
+      byte_B73561 = (unsigned char)((const char *)(1));
       v20 = (const char *)(aSidebardown); /*0x77799e*/
       if ( (wParam & 0x80000000) == 0 ) /*0x7779a3*/
         v20 = (const char *)(aSidebarup); /*0x7779a5*/
@@ -1005,7 +1005,7 @@ void * E4Recv_777BB0::sub_777BB0(char * Buffer)
   v4 = g_Str_gsmallwoo[0]; /*0x777bde*/
   v5 = 0; /*0x777be2*/
   v6 = 0; /*0x777be7*/
-  v2 = strchr(g_Str_gsmallwoo, 95); /*0x777bec*/
+  v2 = (char *)(strchr(g_Str_gsmallwoo, 95)); /*0x777bec*/
   if ( v2 ) /*0x777bf6*/
     v5 = v2[1]; /*0x777bfb*/
   sprintf((char *const)Buffer, "%s-%s", &v4, Buffer); /*0x777c12*/
@@ -1029,7 +1029,7 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   g_hIcon = (int)LoadIconA(aP0, (LPCSTR)0x5D); /*0x777c50*/
   g_hCursor = (int)LoadCursorA(g_hInstance, (LPCSTR)0x68); /*0x777c6c*/
   WndClass.style = 3; /*0x777c71*/
-  WndClass.lpfnWndProc = MainWindowProc; /*0x777c79*/
+  WndClass.lpfnWndProc = (WNDPROC)(MainWindowProc); /*0x777c79*/
   WndClass.cbClsExtra = 0; /*0x777c81*/
   WndClass.cbWndExtra = 0; /*0x777c85*/
   WndClass.aP0 = aP0; /*0x777c89*/
@@ -1037,11 +1037,11 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   WndClass.hCursor = (HCURSOR)g_hCursor; /*0x777c91*/
   WndClass.hbrBackground = 0; /*0x777c95*/
   WndClass.lpszMenuName = 0; /*0x777c99*/
-  WndClass.lpszClassName = WindowName; /*0x777c9d*/
+  WndClass.lpszClassName = (LPCSTR)(WindowName); /*0x777c9d*/
   RegisterClassA(&WndClass); /*0x777ca5*/
   if ( g_DDraw_Initialized ) /*0x777cb6*/
   {
-    g_hWnd = CreateWindowExA(0, WindowName, WindowName, 0x2CA0000u, 0, 0, 0, 0, 0, 0, aP0, 0); /*0x777cd6*/
+    g_hWnd = (int)(CreateWindowExA(0, WindowName, WindowName, 0x2CA0000u, 0, 0, 0, 0, 0, 0, aP0, 0)); /*0x777cd6*/
     SetRect(&rc, 0, 0, xRight, yBottom); /*0x777cec*/
     WindowLongA = GetWindowLongA(g_hWnd, -20); /*0x777d08*/
     v11 = GetMenu(g_hWnd) != 0; /*0x777d1c*/
@@ -1053,9 +1053,9 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   {
     SystemMetrics = GetSystemMetrics(1); /*0x777d60*/
     v7 = GetSystemMetrics(0); /*0x777d62*/
-    g_hWnd = CreateWindowExA(8u, WindowName, WindowName, 0x82000000, 0, 0, v7, SystemMetrics, 0, 0, aP0, 0); /*0x777d7e*/
+    g_hWnd = (int)(CreateWindowExA(8u, WindowName, WindowName, 0x82000000, 0, 0, v7, SystemMetrics, 0, 0, aP0, 0)); /*0x777d7e*/
   }
-  dword_B7355C = ImmGetContext(g_hWnd); /*0x777d95*/
+  dword_B7355C = (unsigned int)(ImmGetContext(g_hWnd)); /*0x777d95*/
   ImmAssociateContext(g_hWnd, 0); /*0x777d9c*/
   ShowWindow(g_hWnd, 1); /*0x777da9*/
   g_ScreenWidth = a2; /*0x777db5*/
@@ -1063,7 +1063,7 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   SetFocus(g_hWnd); /*0x777dc9*/
   RegisterHotKey(g_hWnd, 1, 7u, 0x4Du); /*0x777ddb*/
   CursorA = LoadCursorA(g_hInstance, (LPCSTR)0x68); /*0x777dea*/
-  return SetCursor(CursorA); /*0x777df3*/
+  return (gamemd::ObjectClass **)(SetCursor(CursorA)); /*0x777df3*/
 }
 }
 // 0x777EA0

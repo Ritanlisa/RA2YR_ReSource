@@ -56,7 +56,7 @@ int LocomotionClass::Initialize()
   this->u32_68 = 0; /*0x4af5bf*/
   *(unsigned int *)this->ILocomotion = &vt_DriveLocomotionClass; /*0x4af5c2*/
   /* X11: vtable install elided (implicit via DriveLocomotionClass virtuals 0x4af5c8) */
-  this->u32_18 = &off_7E7E8C; /*0x4af5cf*/
+  this->u32_18 = (unsigned int)(&off_7E7E8C); /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 
 }

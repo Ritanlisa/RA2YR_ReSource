@@ -89,7 +89,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             FileVXL = File::LoadFileVXL(v4, (int)&v26, 0); /*0x5f8db0*/
           else
             FileVXL = 0; /*0x5f8db7*/
-          this->u32_B8 = FileVXL; /*0x5f8dbb*/
+          this->u32_B8 = (unsigned int)(FileVXL); /*0x5f8dbb*/
           if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f8dc7*/
           {
             sprintf(Buffer, "%sTUR", (const char *)&this->q0324); /*0x5f8ddd*/
@@ -107,7 +107,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             else
               FileHVA = 0; /*0x5f8e48*/
             v9 = (VoxelSection *)this->u32_B8; /*0x5f8e4a*/
-            this->u32_BC = FileHVA; /*0x5f8e52*/
+            this->u32_BC = (unsigned int)(FileHVA); /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(this->Matrix_B87), *(float *)(Info + 12)); /*0x5f8e67*/
             *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8e70*/
@@ -174,7 +174,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
       }
     }
   }
-  return v2; /*0x5f9059*/
+  return (gamemd::AbstractClass **)(v2); /*0x5f9059*/
 
 }
 } // namespace gamemd
@@ -190,7 +190,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
   Matrix3x4 v8; // [esp+10h] [ebp-30h] BYREF
 
   Matrix3x4::Identity(&v8); /*0x55a739*/
-  v3 = a1; /*0x55a73e*/
+  v3 = (gamemd::LocomotionClass *)(a1); /*0x55a73e*/
   a1 = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue( /*0x55a763*/
                                                   (ProgressTimer *)a1->Owner->primaryFacing,
                                                   &v7) >> 10)

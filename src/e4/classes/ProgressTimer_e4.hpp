@@ -12,7 +12,7 @@ struct ProgressTimer {
 
 // --- flat members (END) ---
     void* GetValue(void *aP1);
-    static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
+    void* GetValue(void *aP1, void *a2 = 0);  // G42.39a static-call supply
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     int q008;  // X10 supply (member_lookup)

@@ -159,7 +159,7 @@ extern char* off_832CA0[];  // W13-C raw 词表 0x832CA0
 extern int g_Str_File_Options_CPP;  // data: 0x833370 (e4_globals_decls.hpp:1476 同形)
 extern HWND g_GameScreenManager;  // data: 0xAC48D0 (globals_core.hpp:1016 GetParent 用法适配)
 extern void* dword_AC48C0;  // data: 0xAC48C0 ((HWND)this 写入)
-extern int dword_AC48C4;  // data: 0xAC48C4
+extern unsigned int dword_AC48C4; // data: 0xAC48C4
 
 namespace gamemd {
 // 0x5d86d0
@@ -178,7 +178,7 @@ void GameInit::InitMultiplayerModes(int a2, int a3)  // g57b5 W4: raw 真值补�
     }
     else
     {
-      this->u32_4 = operator new(4 * a2); /*0x5d870c*/
+      this->u32_4 = (unsigned int)(operator new(4 * a2)); /*0x5d870c*/
       this->u32_D = 1; /*0x5d870f*/
     }
   }
@@ -312,7 +312,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT, WPARAM v20, unsigned int a6)  //
         {
           if ( StartCombo::IDToIndex(DlgCtrlID) != -1 ) /*0x5e224d*/
           {
-            ComboBoxSelectedRaw = (wchar_t *)((GameSetup *)GetComboBoxSelectedRaw((HWND)a2, (int)DlgCtrlID, v20->vtable2));
+            ComboBoxSelectedRaw = (gamemd::GameSetup *)((wchar_t *)((GameSetup *)GetComboBoxSelectedRaw((HWND)a2, (int)DlgCtrlID, v20->vtable2)));
             ColorTooltip = GameSetup::GetColorTooltip(ComboBoxSelectedRaw); /*0x5e2260*/
             WideString::Assign_Alt(v36, ColorTooltip); /*0x5e2268*/
             return 1; /*0x5e2279*/
@@ -1931,7 +1931,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                 v124 = v121 + 1; /*0x60ec31*/
                 if ( v214 != (unsigned char *)v124 ) /*0x60ec3d*/
                 {
-                  qmemcpy(v214, v124, sizeof(v214)); /*0x60ec4d*/
+                  memcpy(v214, v124, sizeof(v214)); /*0x60ec4d*/
                   *(unsigned int *)&v214[40] = v123; /*0x60ec4f*/
                   *(unsigned int *)&v214[60] = Y[0]; /*0x60ec5a*/
                   *(unsigned int *)&v214[52] = v122; /*0x60ec61*/
@@ -2008,7 +2008,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                   v193 = *(unsigned int *)&v214[60]; /*0x60ede1*/
                   if ( v214 != (int)v138 + 4 ) /*0x60edf1*/
                   {
-                    qmemcpy(v214, v138 + 4, sizeof(v214)); /*0x60ee01*/
+                    memcpy(v214, v138 + 4, sizeof(v214)); /*0x60ee01*/
                     *(unsigned int *)&v214[52] = v139; /*0x60ee07*/
                     *(unsigned int *)&v214[40] = Y[0]; /*0x60ee0e*/
                     *(unsigned int *)&v214[60] = v193; /*0x60ee19*/

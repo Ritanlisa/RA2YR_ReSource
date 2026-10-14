@@ -67,7 +67,7 @@ LABEL_6:
     if ( ++v2 >= dword_A83C90 ) /*0x46c7e4*/
       goto LABEL_6; /*0x46c7e4*/
   }
-  return (unsigned char *)*((unsigned int *)dword_A83C84 + v2); /*0x46c7ff*/
+  return (gamemd::BulletTypeClass *)((unsigned char *)*((unsigned int *)dword_A83C84 + v2)); /*0x46c7ff*/
 
 }
 } // namespace gamemd
@@ -81,7 +81,7 @@ int ObjectTypeClass::loadTypeMember_473980()
   if ( !this ) /*0x473987*/
     return -1; /*0x4739bd*/
   v2 = 0; /*0x473989*/
-  v3 = off_81B7C8; /*0x47398b*/
+  v3 = (char **)(off_81B7C8); /*0x47398b*/
   while ( _strcmpi(v3[1], (char *)this) && _strcmpi(*v3, (char *)this) ) /*0x4739af*/
   {
     v3 += 2; /*0x4739b1*/
@@ -149,7 +149,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   char v10; // [esp+20h] [ebp-4h]
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  v3 = &this->TurretVoxel; /*0x5f70a3*/
+  v3 = (int *)(&this->TurretVoxel); /*0x5f70a3*/
   this->u32_98 = 0; /*0x5f70a9*/
   this->__pad_099 = 0; /*0x5f70af*/
   this->u32_9A = 0; /*0x5f70b5*/
@@ -185,7 +185,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   while ( v6 ); /*0x5f7121*/
   this->NoSpawnAlt_2 = 0; /*0x5f712e*/
   this->u8_7B = 0; /*0x5f7134*/
-  this->q07C = -1; /*0x5f713a*/
+  this->q07C = (gamemd::VectorClass *)(-1); /*0x5f713a*/
   this->u8_7D = -1; /*0x5f7140*/
   this->ImageFile_0x19 = 0; /*0x5f7146*/
   this->AlternateArcticArt_d = 0; /*0x5f7148*/
@@ -231,11 +231,11 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_28C = 0; /*0x5f7243*/
   this->Image_d = 0; /*0x5f7249*/
   *this = (int)&vt_ObjectTypeClass; /*0x5f7251*/
-  this->zero_3C = (int)&vt_ObjectTypeClass; /*0x5f7258*/
+  this->zero_3C = (void *)((int)&vt_ObjectTypeClass); /*0x5f7258*/
   this->UINameLabel[0x20] = (int)&vt_ObjectTypeClass; /*0x5f725f*/
   this->u32_3 = (int)&vt_ObjectTypeClass; /*0x5f7266*/
   if ( &this->u8_9 != &this->u8_7E ) /*0x5f726d*/
-    qmemcpy(&this->u8_7E, &this->u8_9, 0x19u); /*0x5f7274*/
+    memcpy(&this->u8_7E, &this->u8_9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x18u); /*0x5f7292*/
@@ -247,7 +247,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   }
   if ( Destination != &this->AlphaImageFile ) /*0x5f72aa*/
   {
-    qmemcpy(&this->AlphaImageFile, Destination, 0x18u); /*0x5f72b5*/
+    memcpy(&this->AlphaImageFile, Destination, 0x18u); /*0x5f72b5*/
     this->u32_22B = v10; /*0x5f72b7*/
   }
   if ( dword_AC1428 < dword_AC1420 /*0x5f72ee*/
@@ -259,7 +259,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
          0) )
   {
     v7 = dword_AC1428++; /*0x5f72fb*/
-    *((unsigned int *)dword_AC141C + v7) = this; /*0x5f730a*/
+    *((unsigned int *)dword_AC141C + v7) = (unsigned int)(this); /*0x5f730a*/
   }
   return (int)this; /*0x5f730f*/
 
@@ -267,7 +267,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
 } // namespace gamemd
 // 0x5F7320
 namespace gamemd {
-BulletTypeClass * ObjectTypeClass::Construct(int aP1)
+BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int *v3; // eax
@@ -276,7 +276,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
   int v6; // edx
 
   AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
-  v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
+  v3 = (int *)(&this->ChargerTurrets[3]); /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
@@ -287,7 +287,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  v5 = &this->u32_158; /*0x5f734b*/
+  v5 = (char *)(&this->u32_158); /*0x5f734b*/
   v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -650,7 +650,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
 } // namespace gamemd
 // 0x5F92D0
 namespace gamemd {
-void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
+void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
 {
 
   int CrushSound; // edi
@@ -1802,7 +1802,7 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 } // namespace gamemd
 // 0x5F1C30
 namespace gamemd {
-int ObjectTypeClass::CreateInstance(int aP1, int aP2)
+int ObjectTypeClass::CreateInstance(int aP1, int aP2, void *a3)
 {
   if ( *&this->zero_3C ) /*0x5f1c30*/
     return (*(int (**)(unsigned int, int, int))(**&this->NeedsSaveOrLink + 16))(*&this->NeedsSaveOrLink, aP1, aP2); /*0x5f1c4b*/

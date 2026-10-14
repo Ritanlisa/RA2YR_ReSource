@@ -332,7 +332,7 @@ int BuildingClass::Construct(int a2, int a3)
   int Vtable3; // [esp+18h] [ebp+4h]
 
   TechnoClass::TechnoClass((TechnoClass *)this, a3); /*0x43b74b*/
-  this->Type = a2; /*0x43b756*/
+  this->Type = (gamemd::BuildingTypeClass *)(a2); /*0x43b756*/
   this->Factory = 0; /*0x43b75c*/
   this->C4Timer = dword_A8ED84; /*0x43b76b*/
   this->ammoReloadTimer = 0; /*0x43b771*/
@@ -365,7 +365,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->BuildingClass_field_rect_63C = dword_89C808; /*0x43b82f*/
   this->ironCurtainTimer = dword_89C80C; /*0x43b83b*/
   this->chronoLockRemaining = dword_89C810; /*0x43b844*/
-  this->q648 = dword_89C814; /*0x43b84d*/
+  this->q648 = (void *)(dword_89C814); /*0x43b84d*/
   this->BuildingClass_field_coord_64C = g_BuildingClassPool; /*0x43b85c*/
   this->q650 = dword_89C84C; /*0x43b868*/
   this->q654 = dword_89C850; /*0x43b871*/
@@ -386,7 +386,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->q67C = 0; /*0x43b8d6*/
   this->locomotorSource = 0; /*0x43b8dc*/
   this->Audio8 = 0; /*0x43b8e2*/
-  this->q690 = 1; /*0x43b8e8*/
+  this->q690 = (ra2::game::AudioController *)(1); /*0x43b8e8*/
   this->u32_691 = 0; /*0x43b8ef*/
   this->Occupants_d = 0; /*0x43b8f5*/
   this->q698 = 10; /*0x43b8fb*/
@@ -399,7 +399,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->__pad_6CC = 0; /*0x43b925*/
   dword_A8ED84 = dword_A8ED84; /*0x43b92b*/
   this->q6D8 = 0; /*0x43b931*/
-  this->q6D0 = dword_A8ED84; /*0x43b937*/
+  this->q6D0 = (void *)(dword_A8ED84); /*0x43b937*/
   this->BuildingClass_field_bool_6DC = 1; /*0x43b93d*/
   this->BuildingClass_field_bool_6DD = 0; /*0x43b944*/
   this->NeedsRepairs = 0; /*0x43b94d*/
@@ -427,7 +427,7 @@ int BuildingClass::Construct(int a2, int a3)
   this->BuildingClass_field_short_700 = 1000; /*0x43b9d3*/
   this->UpgradeLevel = 0; /*0x43b9dc*/
   this->GateStage = -1; /*0x43b9e2*/
-  this->PrismStage = 0; /*0x43b9e8*/
+  this->PrismStage = (gamemd::PrismChargeState)(0); /*0x43b9e8*/
   this->DelayBeforeFiring = 0; /*0x43b9ee*/
   this->BunkerState = 0; /*0x43b9f4*/
   /* X11: vtable install elided (implicit via BuildingClass virtuals 0x43b9fa) */
@@ -1672,7 +1672,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
     v15 = (char *)((ScenarioClass *)v37)->SetEvent(v14, 30, v23, v25, v27, v29); /*0x4439cd -- 6-param decl scenario.hpp:274; v37 = 112B event buffer*/
     if ( (int)stru_A80220_raw.lineTrailer < 128 ) /*0x4439dc*/
     {
-      qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v15, 0x6Fu); /*0x4439f8*/
+      memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v15, 0x6Fu); /*0x4439f8*/
       (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x443a09 -- dword_A83A54 declared scalar; binary ring buffer 0x83A54[128]*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x443a20*/
       ++stru_A80220_raw.lineTrailer; /*0x443a26*/
@@ -1710,7 +1710,7 @@ void BuildingClass::SetRallyPoint(CoordStruct* target)
   v22 = (char *)((ScenarioClass *)v37)->SetEvent(v21, 30, v24, v26, v28, v30); /*0x443b17*/
   if ( (int)stru_A80220_raw.lineTrailer < 128 ) /*0x443b26*/
   {
-    qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v22, 0x6Fu); /*0x443b46*/
+    memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v22, 0x6Fu); /*0x443b46*/
     (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x443b5a -- ring buffer*/
     dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x443b71*/
     ++stru_A80220_raw.lineTrailer; /*0x443b77*/
@@ -2248,11 +2248,11 @@ int BuildingClass::UpdateConstruction()
           }
           v118 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, char *))this->vtable1 + 18))(this, v243); /*0x444e00*/
           v199 = 160; /*0x444e05*/
-          IDA_LOWORD(v208) = (unsigned int)(*v118 / 256) & 0xFFFF;
+          (*((unsigned short *)&(v208))) = (unsigned int)(*v118 / 256) & 0xFFFF;
           v119 = v118[1]; /*0x444e1d*/
           v225[2] = 0; /*0x444e27*/
-          IDA_LOWORD(v208) = (unsigned int)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[87]) + (unsigned short)v208) & 0xFFFF;
-          IDA_HIWORD(v208) = v119 / 256 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[87]); /*0x444e5a*/
+          (*((unsigned short *)&(v208))) = (unsigned int)((*((unsigned short *)&(g_DDrawSurfaceManager.scenario[87]))) + (unsigned short)v208) & 0xFFFF;
+          (*(((unsigned short *)&(v208)) + 1)) = v119 / 256 + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[87])) + 1)); /*0x444e5a*/
           ++dword_A8E7AC; /*0x444e63*/
           v204 = (unsigned int)v208; /*0x444e6f*/
           v120 = *(unsigned int *)v244; /*0x444e87*/
@@ -8046,7 +8046,7 @@ bool BuildingClass::CheckMissionAttack()
           else
             v10 = *((unsigned int *)v8->q004 + Value); /*0x634a45*/
           v11 = *(unsigned char **)(v10 + 4); /*0x634a48*/
-          qmemcpy(&above->q034[4], v11, 0x6Cu); /*0x634a50*/
+          memcpy(&above->q034[4], v11, 0x6Cu); /*0x634a50*/
           v11 += 108; /*0x634a50*/
           *(unsigned short *)&above->__pad_9C[8] = *(unsigned short *)v11; /*0x634a52*/
           above->__pad_9C[10] = v11[2]; /*0x634a54*/
@@ -8061,7 +8061,7 @@ bool BuildingClass::CheckMissionAttack()
   if ( result ) /*0x634a7c*/
   {
     result = (int)above->q030; /*0x634a8e*/
-    qmemcpy(v28, &above->q034[4], 0x6Eu); /*0x634a91*/
+    memcpy(v28, &above->q034[4], 0x6Eu); /*0x634a91*/
     v13 = 0; /*0x634a95*/
     v22 = result; /*0x634a97*/
     v28[110] = above->__pad_9C[10]; /*0x634a9d*/
@@ -8070,7 +8070,7 @@ bool BuildingClass::CheckMissionAttack()
       while ( 1 ) /*0x634aaf*/
       {
         v14 = *(unsigned char **)(above->q024 + 4 * v13); /*0x634aaf*/
-        qmemcpy(v29, v14, sizeof(v29)); /*0x634ab6*/
+        memcpy(v29, v14, sizeof(v29)); /*0x634ab6*/
         v14 += 108; /*0x634ab6*/
         v30 = *(unsigned short *)v14; /*0x634ab8*/
         v31 = v14[2]; /*0x634abe*/

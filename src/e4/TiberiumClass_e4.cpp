@@ -63,12 +63,12 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   v28 = (unsigned int *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    v8 = (unsigned int *)(__2_YAPAXI_Z(0x18u)); /*0x5a0189*/
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &vt_DynamicVectorClass; /*0x5a01a0*/
+      *v9 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -171,7 +171,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   AbstractTypeClass::Constructor((int *)this, aP1); /*0x7216ca*/
   this->u32_A0 = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
-  *&this->isInLogic = -1; /*0x7216f1*/
+  *&this->isInLogic = (void *)(-1); /*0x7216f1*/
   this->Spread = 0; /*0x7216fb*/
   this->q0A4 = 1069128089; /*0x721701*/
   this->Growth_d = 0; /*0x721707*/
@@ -372,7 +372,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   int v13; // edi
 
-  v2 = a1; /*0x721e83*/
+  v2 = (gamemd::TiberiumClass *)(a1); /*0x721e83*/
   v3 = 0; /*0x721e87*/
   TiberiumClass_field_F4 = (unsigned int *)a1->TiberiumClass_field_F4; /*0x721e8a*/
   if ( TiberiumClass_field_F4 ) /*0x721e92*/

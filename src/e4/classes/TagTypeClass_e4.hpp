@@ -24,7 +24,7 @@ struct TagTypeClass {
     char persistence[4];  // 0x28
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(void *a1);
-    AbstractTypeClass * Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    AbstractTypeClass * Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     AbstractTypeClass * FindOrCreate(ObjectClass * Source);
     TagTypeClass * ddtor(char a2);
     TriggerTypeClass * * FindOrCreateTriggerType(char *Source);

@@ -1,5 +1,4 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
-#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
@@ -68,7 +67,7 @@ int CommandClass::BuildBar()
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
 
-  v2 = &stru_B0C1C0; /*0x6d1207*/
+  v2 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0); /*0x6d1207*/
   do /*0x6d1224*/
   {
     (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->vtable1 + 32))(v2); /*0x6d1210*/
@@ -80,7 +79,7 @@ int CommandClass::BuildBar()
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
-    v4 = &stru_B0C1C0 + 8 * v3; /*0x6d124e*/
+    v4 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v3); /*0x6d124e*/
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
@@ -92,7 +91,7 @@ int CommandClass::BuildBar()
       ShapeButtonClass_field_0x08 = v4[1].ShapeButtonClass_field_0x08; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37.Struct_field_00 = v6; /*0x6d1283*/
-      v42 = aTipAttackmove; /*0x6d1287*/
+      v42 = (char *)(aTipAttackmove); /*0x6d1287*/
       v40 = ShapeButtonClass_field_0x08; /*0x6d128f*/
       HashTable::Remove(*(HashTable **)&g_TacticalRender, v6); /*0x6d1293*/
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d12a3*/
@@ -101,7 +100,7 @@ int CommandClass::BuildBar()
   v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
-    v10 = &stru_B0C1C0 + 8 * v9; /*0x6d12c3*/
+    v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v9); /*0x6d12c3*/
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
@@ -113,7 +112,7 @@ int CommandClass::BuildBar()
       v14 = *(unsigned int *)v10[2].__pad_0; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
       v37.Struct_field_00 = v12; /*0x6d12f8*/
-      v42 = aTipBeacon; /*0x6d12fc*/
+      v42 = (char *)(aTipBeacon); /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
       HashTable::Remove(*(HashTable **)&g_TacticalRender, v12); /*0x6d1308*/
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d1318*/
@@ -122,7 +121,7 @@ int CommandClass::BuildBar()
   v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
-    v16 = &stru_B0C1C0 + 8 * v15; /*0x6d1339*/
+    v16 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v15); /*0x6d1339*/
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
@@ -134,7 +133,7 @@ int CommandClass::BuildBar()
       v20 = v16[1].ShapeButtonClass_field_0x08; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37.Struct_field_00 = v18; /*0x6d136e*/
-      v42 = aTipCheer; /*0x6d1372*/
+      v42 = (char *)(aTipCheer); /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
       HashTable::Remove(*(HashTable **)&g_TacticalRender, v18); /*0x6d137e*/
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d138e*/
@@ -143,7 +142,7 @@ int CommandClass::BuildBar()
   v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
-    v22 = &stru_B0C1C0 + 8 * v21; /*0x6d13ae*/
+    v22 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v21); /*0x6d13ae*/
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
@@ -155,7 +154,7 @@ int CommandClass::BuildBar()
       v26 = *(unsigned int *)v22[2].__pad_0; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
       v37.Struct_field_00 = v24; /*0x6d13e3*/
-      v42 = aTipDeploy; /*0x6d13e7*/
+      v42 = (char *)(aTipDeploy); /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
       HashTable::Remove(*(HashTable **)&g_TacticalRender, v24); /*0x6d13f3*/
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d1403*/
@@ -165,13 +164,13 @@ int CommandClass::BuildBar()
   if ( v27 > 0x18 ) /*0x6d1419*/
     v28 = 0; /*0x6d142e*/
   else
-    v28 = &stru_B0C1C0 + 8 * v27; /*0x6d1426*/
+    v28 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v27); /*0x6d1426*/
   PushCommandClass::Execute(v28, (int)aTipGuard); /*0x6d1435*/
   v29 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else
-    v30 = &stru_B0C1C0 + 8 * v29; /*0x6d1456*/
+    v30 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v29); /*0x6d1456*/
   PushCommandClass::Execute(v30, (int)aTipPlanningmod); /*0x6d1465*/
   FontClassEntry = GetFontClassEntry(dword_B0CB6C); /*0x6d1470*/
   PushCommandClass::Execute(FontClassEntry, (int)aTipStop); /*0x6d147c*/
@@ -204,8 +203,8 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
   int v15; // ecx
 
   a2 = a2; /*0x724584*/
-  v4 = aP1 + 147; /*0x72458c*/
-  a2 = *(unsigned int *)a2; /*0x724592*/
+  v4 = (int *)(aP1 + 147); /*0x72458c*/
+  a2 = (void *)(*(unsigned int *)a2); /*0x724592*/
   if ( aP1->u32_250 ) /*0x724596*/
   {
     if ( CommandClass::executeAction(aP1 + 147, &a2) ) /*0x7245a4*/
@@ -218,7 +217,7 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       return result; /*0x7245ca*/
     }
   }
-  result = operator new(0x1Cu); /*0x7245cf*/
+  result = (int)(operator new(0x1Cu)); /*0x7245cf*/
   v6 = (unsigned int *)result; /*0x7245d4*/
   if ( result ) /*0x7245db*/
   {
@@ -238,13 +237,13 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       v9 = aP1->u32_244; /*0x72464c*/
       v10 = aP1->u32_238; /*0x72464f*/
       aP1->u32_244 = v9 + 1; /*0x724655*/
-      *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
+      *(unsigned int *)(v10 + 4 * v9) = (unsigned int)(v6); /*0x724658*/
       result = v4->vtable3; /*0x72465e*/
       if ( v4[1] + 1 <= result ) /*0x724664*/
       {
   LABEL_19:
         *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
-        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
+        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = (unsigned int)(v6); /*0x724704*/
         result = v4[1] + 1; /*0x72470b*/
         v4->vtable4 = 0; /*0x72470c*/
         v4->vtable2 = result; /*0x724710*/
@@ -258,9 +257,9 @@ int CommandClass::AddAction(ToolTipManager * aP1, void *a2)
       }
       else
       {
-        a2 = 10; /*0x72466e*/
+        a2 = (void *)(10); /*0x72466e*/
       }
-      v11 = result + a2; /*0x72468a*/
+      v11 = (int)(result + a2); /*0x72468a*/
       result = operator new(8 * (result + a2)); /*0x724695*/
       result = result; /*0x72469a*/
       if ( result ) /*0x7246a1*/

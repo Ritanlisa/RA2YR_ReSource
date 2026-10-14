@@ -21,7 +21,7 @@ struct E4Recv_779690 {
     unsigned int M40;  // 0x40
     unsigned int M52;  // 0x52
 // --- flat members (END) ---
-    void *  LoadAccountInfoWOL_Load(void * a2, int a3, char a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, char a13, void * a14, void * a15);  // 0x779690
+    void * LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void* aP3, void* aP4, int a6, ObjectClass * aP6, void* aP7, void* aP8, void* aP9, void* aP10, void* aP11, void* aP12, void* aP13, void* aP14);  // 0x779690
 
     unsigned int u32_18;  // X10 supply (member_lookup)
     unsigned int u32_28;  // X10 supply (member_lookup)

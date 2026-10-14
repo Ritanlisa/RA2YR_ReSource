@@ -90,22 +90,22 @@ struct CellClass {
     static unsigned int RevealFogRect(int16_t* p0);  // x4:signals@0x6565a0
     char UpdateTerrain(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056F8B0 IUnknown 占位清除
     char UpdateTileVariant2(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056FC80 IUnknown 占位清除
-    char UpdateVariant3(unsigned short *a1, int a2);  // G57w10-S raw 0x0056EF50 IUnknown 占位清除
+    char UpdateVariant3(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056EF50 IUnknown 占位清除
     char UpdateVariant4(unsigned short *aP0, int aP1);  // G57w10-S raw 0x0056F2F0 IUnknown 占位清除
     char UpdateVariant5(unsigned short *aP0, int aP1);  // G57w10-S raw 0x00572DA0 IUnknown 占位清除
-    static char UpdateVariant6(unsigned short *a1, int a2);  // G57w10-S raw 0x00573170 IUnknown 占位清除
+    HouseClass * * UpdateVariant6(IUnknown * aP0, IUnknown * aP1);  // G57w10-S raw 0x00573170 IUnknown 占位清除
     char UpdateVariant7(unsigned short *aP0, int aP1);  // G57w10-S raw 0x00572440 IUnknown 占位清除
     char UpdateVariant8(unsigned short *aP0, int aP1);  // G57w10-S raw 0x005727E0 IUnknown 占位清除
-    char SetTileType13(unsigned short *a1, int a2);  // G57w10-S raw 0x00572B80 IUnknown 占位清除
-    char SetTileType14(unsigned short *a1, int a2);  // G57w10-S raw 0x00572C90 IUnknown 占位清除
-    int CheckTilePassable(int a1);  // G57w10-S raw 0x0057CCF0 IUnknown 占位清除
-    int CheckTilePassable2(int a1);  // G57w10-S raw 0x0057BAA0 IUnknown 占位清除
+    char SetTileType13(IUnknown * aP0, int a2);  // G57w10-S raw 0x00572B80 IUnknown 占位清除
+    char SetTileType14(IUnknown * aP0, int a2);  // G57w10-S raw 0x00572C90 IUnknown 占位清除
+    int CheckTilePassable(IUnknown * aP0);  // G57w10-S raw 0x0057CCF0 IUnknown 占位清除
+    int CheckTilePassable2(IUnknown * aP0);  // G57w10-S raw 0x0057BAA0 IUnknown 占位清除
     int EnsureFileLoaded();
     int GetBridgeIndex();
     int GetByte284(IUnknown * aP0);  // G57w10-S raw 0x006D6AD0 IUnknown 占位清除
     int GetOccupiedRatio();
-    int GetTileData(int16_t *a1, int a2);  // G57w10-S raw 0x0056BCD0 IUnknown 占位清除
-    int SpiralFindClosest(int a1, int a2, char a3);  // G57w10-S raw 0x005865F0 IUnknown 占位清除
+    int GetTileData(IUnknown * aP0, IUnknown * aP1);  // G57w10-S raw 0x0056BCD0 IUnknown 占位清除
+    int SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP2);  // G57w10-S raw 0x005865F0 IUnknown 占位清除
     int StubReturn11();
     int StubReturn328();
     static int DetermineTileType(CellClass * aP1);

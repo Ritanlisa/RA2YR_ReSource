@@ -13,7 +13,7 @@ struct SortedArray {
 // --- flat members (END) ---
     ObjectClass * * RemoveByKey(DynamicVector * aP1);
     int Append(DynamicVector * aP1, unsigned int * a2);
-    int BinarySearch(int *aP1, void *a1 = 0);
+    int BinarySearch(int *aP1, void *a2 = 0);
     int FindPair(int * a2);
     static int CheckCache(SortedArray * aP1, unsigned int *a2);
      void * FindValue(int *a2, void *a1 = 0);

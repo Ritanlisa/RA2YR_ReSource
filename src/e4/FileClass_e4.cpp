@@ -36,15 +36,15 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 } // namespace gamemd
 // 0x473FC0
 namespace gamemd {
-const char* FileClass::SetFileName(char *aP1)
+const char* FileClass::SetFileName(char *aP1, void *a2)
 {
   this->u32_68 = 0; /*0x473fc4*/
-  return FileClass::OpenWithCDSearch(aP1); /*0x473fd1*/
+  return (const char *)(FileClass::OpenWithCDSearch(aP1)); /*0x473fd1*/
 }
 } // namespace gamemd
 // 0x65CBF0
 namespace gamemd {
-int FileClass::Open(int a2)
+int FileClass::Open(int a2, void *a2_1, void *a3)
 {
 
   int result; // eax
@@ -103,7 +103,7 @@ LABEL_14:
 } // namespace gamemd
 // 0x65CCE0
 namespace gamemd {
-int FileClass::Read(char *aP1, signed int aP2)
+int FileClass::Read(char *aP1, signed int aP2, void *a3)
 {
 
   DWORD v4; // ebx
@@ -383,7 +383,7 @@ namespace gamemd {
 unsigned int * FileClass::loc_401950()
 {
 
-  return *&this->u32_18; /*0x401943*/
+  return (unsigned int *)(*&this->u32_18); /*0x401943*/
 
 }
 } // namespace gamemd

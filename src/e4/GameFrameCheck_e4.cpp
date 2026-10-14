@@ -165,6 +165,6 @@ AbstractClass * sub_686570(ObjectClass *a1)
     }
   }
   byte_A8E9A0 = 0; /*0x6866ef*/
-  return result; /*0x6866f5*/
+  return (gamemd::AbstractClass *)(result); /*0x6866f5*/
 }
 }

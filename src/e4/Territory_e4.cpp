@@ -83,7 +83,7 @@ signed int Territory_WorldDominationTour_8::ddtor()
 
 // 0x771970
 namespace gamemd {
-int Territory_WorldDominationTour_8::Read(int a2, int a3)
+int Territory_WorldDominationTour_8::Read(int a2, int a3, void *a3_1)
 {
 
   AudioQueue::Update((AudioQueue *)this->field_1C); /*0x771973*/
@@ -142,7 +142,7 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::Open(void *a1_1, void *a2_1, void *a3_1)
 {
 
-  return (unsigned __int8)Audio::IsPlaying() == 0; /*0x7719ca*/
+  return (unsigned int *)((unsigned __int8)Audio::IsPlaying() == 0); /*0x7719ca*/
 
 }
 } // namespace gamemd

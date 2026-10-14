@@ -238,7 +238,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     __3_YAXPAX_Z(this); /*0x49a36d*/
-  return this->vtable1; /*0x49a377*/
+  return (gamemd::BlitTransLucent25Alpha_ushort *)(this->vtable1); /*0x49a377*/
 
 }
 } // namespace gamemd
@@ -278,7 +278,7 @@ RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitt
   /* X11: vtable install elided (implicit via RLEBlitter virtuals 0x49a769) */
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
     __3_YAXPAX_Z(this); /*0x49a772*/
-  return (std::locale::facet *)this; /*0x49a77c*/
+  return (gamemd::RLEBlitTransXlat *)((std::locale::facet *)this); /*0x49a77c*/
 
 }
 } // namespace gamemd

@@ -42,7 +42,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(16 * a2); /*0x5acd55*/
+      v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x5acd55*/
       if ( v6 ) /*0x5acd5f*/
         v7 = (char *)v6; /*0x5acd64*/
       else
@@ -80,10 +80,10 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           *&this->__pad_004 = 0; /*0x5acde0*/
         }
       }
-      *&this->__pad_004 = v7; /*0x5acde9*/
+      *&this->__pad_004 = (unsigned char)(v7); /*0x5acde9*/
       this->m_8 = v3; /*0x5acdf1*/
       BYTE1(this->m_C) = v5 == 0; /*0x5acdf4*/
-      return 1; /*0x5acdfa*/
+      return (gamemd::AbstractClass **)(1); /*0x5acdfa*/
     }
     else
     {
@@ -93,7 +93,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   else
   {
     (*(void (**)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x5ace05*/
-    return 1; /*0x5ace0b*/
+    return (gamemd::AbstractClass **)(1); /*0x5ace0b*/
   }
 
 }
@@ -124,7 +124,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(16 * a2); /*0x5acef5*/
+      v6 = (int)(__2_YAPAXI_Z(16 * a2)); /*0x5acef5*/
       if ( v6 ) /*0x5aceff*/
         v7 = (char *)v6; /*0x5acf04*/
       else
@@ -162,7 +162,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
         *&this->__pad_004 = 0; /*0x5acf7a*/
       }
     }
-    *&this->__pad_004 = v7; /*0x5acf83*/
+    *&this->__pad_004 = (unsigned char)(v7); /*0x5acf83*/
     this->m_8 = v3; /*0x5acf8b*/
     BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
   }
@@ -173,7 +173,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   v12 = this->m_8; /*0x5acf9a*/
   if ( v12 < this->m_10 ) /*0x5acfa2*/
     this->m_10 = v12; /*0x5acfa4*/
-  return 1; /*0x5acfa7*/
+  return (gamemd::AbstractClass **)(1); /*0x5acfa7*/
 
 }
 }
@@ -299,7 +299,7 @@ CampaignClass * MSEngine::Destruct()
   p_MSEngine_field_0x8 = &this->MSEngine_field_0x8; /*0x5d1ba3*/
   MSEngine_field_0x8[3](p_MSEngine_field_0x8); /*0x5d1ba8*/
   v11 = (void *)*((unsigned int *)v5 + 1); /*0x5d1bab*/
-  *(unsigned int *)v5 = &vt_VectorClass; /*0x5d1bae*/
+  *(unsigned int *)v5 = (unsigned int)(&vt_VectorClass); /*0x5d1bae*/
   if ( v11 && v5[13] ) /*0x5d1bb9*/
   {
     __3_YAXPAX_Z(v11); /*0x5d1bbf*/
@@ -308,7 +308,7 @@ CampaignClass * MSEngine::Destruct()
   v5[13] = 0; /*0x5d1bca*/
   v5->u32_8 = 0; /*0x5d1bcd*/
   v12 = (void *)v8->__pad_004; /*0x5d1bd0*/
-  *(unsigned int *)v8 = &vt_VectorClass; /*0x5d1bd3*/
+  *(unsigned int *)v8 = (unsigned int)(&vt_VectorClass); /*0x5d1bd3*/
   if ( v12 && v8[13] ) /*0x5d1bdd*/
   {
     __3_YAXPAX_Z(v12); /*0x5d1be3*/
@@ -357,14 +357,14 @@ CampaignClass * MSEngine::ClearBuffer(void *a1_1)
 
   void *v2; // eax
 
-  v2 = *&this->__pad_004; /*0x5ac526*/
+  v2 = (void *)(*&this->__pad_004); /*0x5ac526*/
   *&this->m_10 = 0; /*0x5ac529*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x5ac530*/
+  if ( v2 && (((unsigned char *)&(this->m_C))[1]) ) /*0x5ac530*/
   {
     RA2_OPDEL(v2); /*0x5ac536*/
     *&this->__pad_004 = 0; /*0x5ac53e*/
   }
-  IDA_BYTE1(this->q00B) = 0; /*0x5ac541*/
+  (((unsigned char *)&(this->q00B))[1]) = 0; /*0x5ac541*/
   *&this->m_8 = 0; /*0x5ac544*/
 
 }
@@ -415,7 +415,7 @@ char MSEngine::AddRef(int a2)
     if ( m_8 <= 0 ) /*0x5accd6*/
       return 1; /*0x5acd1a*/
     v4 = *(unsigned int *)(a2 + 4); /*0x5accd8*/
-    v5 = *&this->__pad_004; /*0x5accdb*/
+    v5 = (unsigned int *)(*&this->__pad_004); /*0x5accdb*/
     v6 = (unsigned int *)(v4 + 8); /*0x5accde*/
     v7 = v4 - (unsigned int)v5; /*0x5acce1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] ) /*0x5acd07*/
@@ -522,7 +522,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 
 // 0x5AD520
 namespace gamemd {
-CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
+CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   void *v3; // eax

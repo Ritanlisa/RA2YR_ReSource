@@ -106,8 +106,8 @@ struct TacticalClass {
     char StubReturnFalse7();
     int CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass * aP2, int * a3, char a5);
     int CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5);
-    int FindBuilding(int a1, int *a2, int *a3);  // G57w10-S raw 0x006D9920 IUnknown 占位清除
-    int FindOverlay(int a1, int *a2, int *a3);  // G57w10-S raw 0x006D97D0 IUnknown 占位清除
+    int FindBuilding(int a1, IUnknown * aP1, IUnknown * aP2);  // G57w10-S raw 0x006D9920 IUnknown 占位清除
+    int FindOverlay(int a1, IUnknown * aP1, IUnknown * aP2);  // G57w10-S raw 0x006D97D0 IUnknown 占位清除
     int MapSpecialDrawMode(MouseClass * aP1);
     int SetPositionThunk(MouseClass * aP0);
     int StubReturnFalse10();
@@ -118,16 +118,16 @@ struct TacticalClass {
     int StubReturnFalse6();
     int StubReturnFalse8();
     int StubReturnFalse9();
-    signed int RenderIsometricOverlay(int *a2, int *a3, char a4);  // G57w10-S raw 0x006D2DE0 IUnknown 占位清除
+    signed int RenderIsometricOverlay(int *aP1, int *aP2, char a4);  // G57w10-S raw 0x006D2DE0 IUnknown 占位清除
     static int RenderIsometric(void *aP1, void *a2, void *a3);
     static void * CalcBuildingDrawPos(void *aP1, void *a2);
     static unsigned int * CollectSelectedIDs();
     unsigned int * SetDisplayMode(unsigned int *a2, char a3);
-    unsigned int RenderCellFogOfWar(unsigned int *a2, int *a3);  // G57w10-S raw 0x004801F0 IUnknown 占位清除
+    unsigned int RenderCellFogOfWar(unsigned int *aP1, int *aP2);  // G57w10-S raw 0x004801F0 IUnknown 占位清除
     void * IsOccupiedByTechno(unsigned int * a2);
     void CleanupResources();
-    void DrawBuildingPlacement(unsigned int *a2, int *a3);  // G57w10-S raw 0x0047F510 IUnknown 占位清除
-    void DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, void *a1 = 0);
+    void DrawBuildingPlacement(unsigned int *aP1, int *a2);  // G57w10-S raw 0x0047F510 IUnknown 占位清除
+    void DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, void *a10_1 = 0);
     void DrawCellTerrainOverlay(int *a2, int *a3);
     int InterpolateView();
     void StubReturnTrue();

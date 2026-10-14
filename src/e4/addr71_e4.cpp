@@ -181,7 +181,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
   }
-  return (char)v12; /*0x7189d4*/
+  return (gamemd::UnitTypeClass **)((char)v12); /*0x7189d4*/
 
 }
 }

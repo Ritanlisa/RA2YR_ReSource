@@ -220,7 +220,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
-    v14 = *&this->q170; /*0x55621e*/
+    v14 = (unsigned short *)(*&this->q170); /*0x55621e*/
     v31 = (30 * v6 / 200 - 1) & ((30 * v6 / 200 - 1 <= 0) - 1); /*0x55623a*/
     if ( v31 >= (v6 - 1) >> 1 ) /*0x55623e*/
       v31 = (v6 - 1) >> 1; /*0x556240*/
@@ -251,39 +251,19 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         switch ( dword_829D20 ) /*0x5562de*/
         {
           case 0: /*0x5562de*/
-            ConvertRGB24toRGB565( /*0x5562f8*/
-              this->u32_188,
-              v14,
-              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
-              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->__pad_190);
+                        ConvertRGB24toRGB565( /*0x5562f8*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
             v14 += 256; /*0x556300*/
             break; /*0x556306*/
           case 1: /*0x5562de*/
-            ConvertRGB24to655( /*0x55631e*/
-              this->u32_188,
-              v14,
-              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
-              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->__pad_190);
+                        ConvertRGB24to655( /*0x55631e*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
             v14 += 256; /*0x556326*/
             break; /*0x55632c*/
           case 2: /*0x5562de*/
-            ConvertRGB24to556( /*0x556344*/
-              this->u32_188,
-              v14,
-              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
-              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->__pad_190);
+                        ConvertRGB24to556( /*0x556344*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
             v14 += 256; /*0x55634c*/
             break; /*0x556352*/
           case 3: /*0x5562de*/
-            ConvertRGB24to565( /*0x55636a*/
-              this->u32_188,
-              v14,
-              ((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15))),
-              ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),
-              this->__pad_190);
+                        ConvertRGB24to565( /*0x55636a*/               this->u32_188,               v14,(__m64)(((long)(((unsigned long)(unsigned int)(v16) << 32) | (unsigned int)(v15)))),               ((long)(((unsigned long)(unsigned int)(v18) << 32) | (unsigned int)(v17))),               this->__pad_190);
             v14 += 256; /*0x556372*/
             break; /*0x556378*/
           default:

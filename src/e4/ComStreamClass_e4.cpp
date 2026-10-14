@@ -1,5 +1,4 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
-#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
@@ -163,7 +162,7 @@ int ComStreamClass::Release(void *a1)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac834*/
   if ( !v1 && Block ) /*0x7ac83c*/
   {
-    *(unsigned int *)Block = &off_7F766C; /*0x7ac843*/
+    *(unsigned int *)Block = (unsigned int)(&off_7F766C); /*0x7ac843*/
     *((unsigned int *)Block + 1) = 1; /*0x7ac849*/
     InterlockedDecrement(&Addend); /*0x7ac84f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac855*/
@@ -218,7 +217,7 @@ LABEL_17:
   }
   v9 = v3->u8_1 + (unsigned int)a4; /*0x7ac950*/
   (*(void (**)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ac955*/
-  *v10 = v9; /*0x7ac958*/
+  *v10 = (unsigned int)(v9); /*0x7ac958*/
   return 0; /*0x7ac881*/
 
 }
@@ -251,11 +250,11 @@ AbstractClass * * ComStreamClass::readData()
     this->q00C = v4; /*0x7ae108*/
     v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
     v6 = 4 * this->q008; /*0x7ae118*/
-    *(unsigned int *)this->__pad_000 = v5; /*0x7ae11f*/
+    *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
     {
-      v7 = v3; /*0x7ae131*/
+      v7 = (int *)(v3); /*0x7ae131*/
       v8 = ComStreamClass_field_0x08; /*0x7ae133*/
       do /*0x7ae167*/
       {
@@ -313,7 +312,7 @@ void ComStreamClass::flushStream()
     this->q00C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
     v6 = 4 * this->q008; /*0x7aef94*/
-    *(unsigned int *)this->__pad_000 = v5; /*0x7aef9b*/
+    *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
     {
@@ -358,13 +357,13 @@ unsigned int * ComStreamClass::seekToPosition()
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
   ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->q004); /*0x7b022f*/
-  _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
-  v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90); /*0x7b0249*/
+  _76BE90 = (unsigned int *)(Audio_Create_76BE90(v6, (int)this)); /*0x7b023a*/
+  v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3->u32_4); /*0x7b0257*/
-  *(unsigned int *)v5 = &vt_rc_ptr; /*0x7b0260*/
+  *(unsigned int *)v5 = (unsigned int)(&vt_rc_ptr); /*0x7b0260*/
   ComPtr::Release((ComPtr *)v5); /*0x7b0268*/
-  *(unsigned int *)v6 = &vt_rc_ptr; /*0x7b0271*/
-  return ComPtr::Release((ComPtr *)v6); /*0x7b027e*/
+  *(unsigned int *)v6 = (unsigned int)(&vt_rc_ptr); /*0x7b0271*/
+  return (unsigned int *)(ComPtr::Release((ComPtr *)v6)); /*0x7b027e*/
 
 }
 } // namespace gamemd
@@ -379,13 +378,13 @@ unsigned int * ComStreamClass::getStreamSize()
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
   ComPtr::Set((ComPtr *)&DataGlobal_B77F70, this->q004); /*0x7b02af*/
-  _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
-  v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90); /*0x7b02c9*/
+  _76BE90 = (unsigned int *)(Audio_Create_76BE90(v6, (int)this)); /*0x7b02ba*/
+  v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b02c9*/
   ComPtr::Set((ComPtr *)&DataGlobal_B77F78, v3->u32_4); /*0x7b02d7*/
-  *(unsigned int *)v5 = &vt_rc_ptr; /*0x7b02e0*/
+  *(unsigned int *)v5 = (unsigned int)(&vt_rc_ptr); /*0x7b02e0*/
   ComPtr::Release((ComPtr *)v5); /*0x7b02e8*/
-  *(unsigned int *)v6 = &vt_rc_ptr; /*0x7b02f1*/
-  return ComPtr::Release((ComPtr *)v6); /*0x7b02fe*/
+  *(unsigned int *)v6 = (unsigned int)(&vt_rc_ptr); /*0x7b02f1*/
+  return (unsigned int *)(ComPtr::Release((ComPtr *)v6)); /*0x7b02fe*/
 
 }
 } // namespace gamemd

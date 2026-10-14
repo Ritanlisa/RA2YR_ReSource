@@ -193,7 +193,7 @@ bool FootClass::MovementAI()
   int v48; // [esp+80h] [ebp-4h]
 
   MovementAI::Begin((TechnoClass *)this); /*0x4da539*/
-  result = this->isAliveFlag; /*0x4da53e*/
+  result = (char)(this->isAliveFlag); /*0x4da53e*/
   if ( !result ) /*0x4da548*/
     return result; /*0x4da548*/
   this->FootClass_field_bool_6B3 = 0; /*0x4da54e*/

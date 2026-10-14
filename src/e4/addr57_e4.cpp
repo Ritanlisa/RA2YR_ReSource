@@ -165,7 +165,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       v11 = (void **)*((unsigned int *)v10 + 15); /*0x575ff4*/
       if ( v11 ) /*0x575ff9*/
         TeamClass::Update_0(v11, 31, 0, dword_ABD480, 0, 0); /*0x576009*/
-      v12 = *CellStruct::Add(&a2, &v32, dword_89F688); /*0x576021*/
+      v12 = (int)(*CellStruct::Add(&a2, &v32, dword_89F688)); /*0x576021*/
       v13 = (int16_t)v12 + ((*((signed short *)(((unsigned char *)&(v12)) + 2))) << 9); /*0x576032*/
       if ( v13 < 0x40000 && (v14 = *(void **)(dword_87F924 + 4 * v13)) != 0 ) /*0x576048*/
       {
@@ -179,7 +179,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       v16 = (void **)*((unsigned int *)v15 + 15); /*0x576059*/
       if ( v16 ) /*0x57605e*/
         TeamClass::Update_0(v16, 31, 0, dword_ABD480, 0, 0); /*0x57606e*/
-      v17 = *CellStruct::Add((unsigned short *)v15 + 18, &v33, dword_89F688); /*0x576085*/
+      v17 = (int)(*CellStruct::Add((unsigned short *)v15 + 18, &v33, dword_89F688)); /*0x576085*/
       v18 = (int16_t)v17 + ((*((signed short *)(((unsigned char *)&(v17)) + 2))) << 9); /*0x576096*/
       if ( v18 >= 0x40000 || (v4 = *(void **)(dword_87F924 + 4 * v18)) == 0 ) /*0x5760ac*/
       {
@@ -193,7 +193,7 @@ Coord * * sub_575EE0(void * a1, int a2)
     }
     else
     {
-      v20 = *CellStruct::Add(&a2, &v34, &dword_89F690); /*0x5760f0*/
+      v20 = (int)(*CellStruct::Add(&a2, &v34, &dword_89F690)); /*0x5760f0*/
       v21 = (int16_t)v20 + ((*((signed short *)(((unsigned char *)&(v20)) + 2))) << 9); /*0x576101*/
       if ( v21 >= 0x40000 || (v22 = *(void **)(dword_87F924 + 4 * v21)) == 0 ) /*0x576117*/
       {
@@ -203,7 +203,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       v23 = (void **)*((unsigned int *)v22 + 15); /*0x576124*/
       if ( v23 ) /*0x576129*/
         TeamClass::Update_0(v23, 31, 0, dword_ABD480, 0, 0); /*0x576139*/
-      v24 = *CellStruct::Add(&a2, &v35, &dword_89F6A0); /*0x576151*/
+      v24 = (int)(*CellStruct::Add(&a2, &v35, &dword_89F6A0)); /*0x576151*/
       v25 = (int16_t)v24 + ((*((signed short *)(((unsigned char *)&(v24)) + 2))) << 9); /*0x576162*/
       if ( v25 < 0x40000 && (v26 = *(void **)(dword_87F924 + 4 * v25)) != 0 ) /*0x576178*/
       {
@@ -217,7 +217,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       v28 = (void **)*((unsigned int *)v27 + 15); /*0x576189*/
       if ( v28 ) /*0x57618e*/
         TeamClass::Update_0(v28, 31, 0, dword_ABD480, 0, 0); /*0x57619e*/
-      v31 = *CellStruct::Add((unsigned short *)v27 + 18, &v36, &dword_89F6A0); /*0x5761c1*/
+      v31 = (int)(*CellStruct::Add((unsigned short *)v27 + 18, &v36, &dword_89F6A0)); /*0x5761c1*/
       v4 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v31); /*0x5761c5*/
       v29 = (void **)v4->u32_3C; /*0x5761ca*/
       if ( v29 ) /*0x5761cf*/
@@ -225,7 +225,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       ++(*(((unsigned short *)&(a2)) + 1)); /*0x5761e5*/
     }
   }
-  return (char)v4; /*0x5761ef*/
+  return (gamemd::Coord **)((char)v4); /*0x5761ef*/
 }
 }
 // 0x578E60
@@ -247,7 +247,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   v12 = 0; /*0x578e74*/
   if ( !dword_ABED10 ) /*0x578e79*/
   {
-    v3 = (unsigned int *)(g_MapCellWidth * g_MapCellWidth);
+    v3 = (int)((unsigned int *)(g_MapCellWidth * g_MapCellWidth));
     v4 = (unsigned int *)(operator new(80 * g_MapCellWidth * g_MapCellWidth)); /*0x578e90*/
     if ( v4 ) /*0x578e97*/
     {
@@ -293,7 +293,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
     if ( !v2 ) /*0x578f93*/
       break; /*0x578f93*/
     if ( !*(unsigned char *)(k + 284) && Cell::IsEmpty((unsigned int *)k) ) /*0x578fa1*/
-      v2 = Terrain::SelectTileType(k, aP1); /*0x578fb5*/
+      v2 = (char)(Terrain::SelectTileType(k, aP1)); /*0x578fb5*/
   }
   dword_880990 = 0; /*0x578fcd*/
   if ( dword_88098C ) /*0x578fd5*/
@@ -440,7 +440,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v20 = (int16_t)v51 + ((int16_t)((*(((unsigned short *)&(v51)) + 1)) - 1) << 9); /*0x57a67f*/
       if ( v20 >= 0x40000 || (v21 = *(CellClass **)(dword_87F924 + 4 * v20)) == 0 ) /*0x57a695*/
       {
-        dword_ABDC74 = (gamemd::CellClass *)(v51 - 0x10000);
+        dword_ABDC74 = (unsigned int)((gamemd::CellClass *)(v51 - 0x10000));
         v21 = (gamemd::CellClass *)(&unk_ABDC50); /*0x57a6a0*/
       }
       v22 = Cell::GetTerrainMask(a1, &v21->mapCoords, 0); /*0x57a6b2*/
@@ -448,7 +448,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v23 = (int16_t)v51 + ((int16_t)((*(((unsigned short *)&(v51)) + 1)) - 2) << 9); /*0x57a6d2*/
       if ( v23 >= 0x40000 || (v24 = *(CellClass **)(dword_87F924 + 4 * v23)) == 0 ) /*0x57a6e8*/
       {
-        dword_ABDC74 = (gamemd::CellClass *)(v51 - 0x20000);
+        dword_ABDC74 = (unsigned int)((gamemd::CellClass *)(v51 - 0x20000));
         v24 = (gamemd::CellClass *)(&unk_ABDC50); /*0x57a6f3*/
       }
       v25 = Cell::GetTerrainMask(a1, &v24->mapCoords, 0); /*0x57a6fd*/
@@ -511,7 +511,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
           && (*((signed short *)(((unsigned char *)&(v51)) + 2))) - (int16_t)v51 < dword_ABED04
           && v40 <= dword_ABED08 )
         {
-          v51 = (char *)(v39);
+          v51 = (int)((char *)(v39));
           v41 = (char *)(Tactical::GetCellData((Tactical *)&v51)); /*0x57a8ba*/
           v42 = i.Tactical_field_0x8; /*0x57a8bf*/
           v43 = v52; /*0x57a8c3*/
@@ -566,7 +566,7 @@ MapClass * * GenerateMapClassCliffTransitions(void * a1, void * a2, void * a3, v
 
   v39[1] = (unsigned int)((int)(a1));
   v7 = Range_RandomInt(0, 5u); /*0x57ad04*/
-  v8 = (int)(a4); /*0x57ad09*/
+  v8 = (void *)((int)(a4)); /*0x57ad09*/
   v9 = v7; /*0x57ad0d*/
   if ( a4 == (void *)(2) ) /*0x57ad12*/
     TerrainMask = Cell::GetTerrainMask((int *)(a1), &a3->q000, 1); /*0x57ad1b*/

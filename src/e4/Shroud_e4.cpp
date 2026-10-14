@@ -40,7 +40,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   v4 = *&this->u32_100; /*0x6544a8*/
   *(unsigned int *)this->__pad_14A8 = 0; /*0x6544b3*/
   *(unsigned int *)this->__pad_14A0 = 10000; /*0x6544bd*/
-  this->q149C = (RadarClass *)10000; /*0x6544c3*/
+  this->q149C = (unsigned int)((RadarClass *)10000); /*0x6544c3*/
   v5 = v3 + v4 + 1; /*0x6544cf*/
   v6 = v4 + *&this->u32_F4 - v3; /*0x6544da*/
   v7 = *&this->u32_104; /*0x6544dc*/
@@ -62,13 +62,13 @@ LABEL_17:
       result = LayerClass::CellIteratorNext((LayerClass *)this); /*0x65462c*/
       v9 = result; /*0x654633*/
       if ( !result ) /*0x654637*/
-        return result; /*0x654637*/
+        return (gamemd::RadarClass **)(result); /*0x654637*/
     }
     if ( this->ptr_1498 == (MapClass *)-1 ) /*0x65457f*/
       this->ptr_1498 = (MapClass *)(v9->outBuffer + v9->u32_26); /*0x65458b*/
     RadarClass_field_0x1490 = this->ptr_1490; /*0x654594*/
     RadarClass_field_0x1498 = this->ptr_1498; /*0x65459a*/
-    aP1 = *(int **)(v9 + 36); /*0x6545a0*/
+    aP1 = (gamemd::MouseClass *)(*(int **)(v9 + 36)); /*0x6545a0*/
     v12 = (RadarClass *)((char *)RadarClass_field_0x1490 + (__int16)aP1 - SHIWORD(aP1)); /*0x6545b0*/
     v13 = (__int16)aP1 + SHIWORD(aP1) - (unsigned int)RadarClass_field_0x1498; /*0x6545b2*/
     v14 = 2; /*0x6545b7*/
@@ -79,15 +79,15 @@ LABEL_17:
     else if ( v12 != (RadarClass *)(2 * *&this->u32_104 - 1) ) /*0x6545ce*/
     {
 LABEL_9:
-      RadarClass_field_0x149C = this->q149C; /*0x6545d5*/
+      RadarClass_field_0x149C = (gamemd::RadarClass *)(this->q149C); /*0x6545d5*/
       if ( (int)v12 >= (int)RadarClass_field_0x149C ) /*0x6545dd*/
       {
         if ( (int)v12 + v14 > (int)((int)RadarClass_field_0x149C + (unsigned int)this->q14A4) ) /*0x6545f4*/
-          this->q14A4 = (CampaignClass *)((char *)v12 + v14 - (unsigned int)RadarClass_field_0x149C); /*0x6545fa*/
+          this->q14A4 = (unsigned int)((CampaignClass *)((char *)v12 + v14 - (unsigned int)RadarClass_field_0x149C)); /*0x6545fa*/
       }
       else
       {
-        this->q149C = v12; /*0x6545df*/
+        this->q149C = (unsigned int)(v12); /*0x6545df*/
       }
       v16 = *(unsigned int *)this->__pad_14A0; /*0x654600*/
       if ( v13 >= v16 ) /*0x654608*/
@@ -104,7 +104,7 @@ LABEL_9:
     v14 = 1; /*0x6545d0*/
     goto LABEL_9; /*0x6545d0*/
   }
-  return result; /*0x65463e*/
+  return (gamemd::RadarClass **)(result); /*0x65463e*/
 
 }
 } // namespace gamemd

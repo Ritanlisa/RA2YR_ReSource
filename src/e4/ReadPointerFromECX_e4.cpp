@@ -11,7 +11,7 @@ namespace gamemd {  // G42.18 ns repair
 ObjectClass * E4Recv_633A80::ReadPointerFromECX_2()
 {
 
-  return (int)this->AbstractClass; /*0x633a82*/
+  return (gamemd::ObjectClass *)((int)this->AbstractClass); /*0x633a82*/
 
 }
 } // namespace gamemd

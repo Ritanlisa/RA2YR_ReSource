@@ -27,7 +27,7 @@ struct INIEntry {
     int  Write2Integers(uint8_t * Block, char * a3, unsigned int * a4);  // 0x5297E0
     bool  Exists(uint8_t * a2, uint8_t * a3);  // 0x679F40
     int LookupByName(void *a1 = 0);  // 0x74FEF0
-    int  GetTechnoType(uint8_t * a2, uint8_t * a3);  // 0x476eb0
+    int GetTechnoType(uint8_t *aP1, uint8_t *a2);  // 0x476eb0
 };
 
 } // namespace gamemd

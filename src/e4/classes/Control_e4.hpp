@@ -11,7 +11,7 @@ struct Control {
 // --- flat members (END) ---
     static unsigned int * CreateControlDialog(void *aP1);
     int CheckControlTypeDialog();
-    int DispatchClick(int aP1, void *a1 = 0);
+    int DispatchClick(int aP1, void *a2 = 0);
     int RepositionControlsDialog();
     int RepositionControlsDialog(HWND hWnd);
     unsigned int u32_28;  // 0x28 (offset-truth)

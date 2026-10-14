@@ -128,7 +128,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   if ( aP4 ) /*0x540425*/
   {
     ((Network *)((Network *)a3))->CopyAddress(&v15, (int)v17); /*0x540431*/
-    v15 = *aP4; /*0x540442*/
+    v15 = (int)(*aP4); /*0x540442*/
     NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 && !(unsigned char)a6 && byte_A8DBA0 && (*((unsigned char *)&(v7[3].IPXGlobalConnClass_field_0x20))) ) /*0x540477*/
@@ -197,7 +197,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v13,
       v12);
   }
-  return 1; /*0x5405f5*/
+  return (gamemd::HashTable_flat **)(1); /*0x5405f5*/
 }
 } // namespace gamemd
 // 0x5400D0
@@ -351,7 +351,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
   ConnectionClass::dtor((ConnectionClass *)this); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/
-  return this->vtable1; /*0x5406d2*/
+  return (gamemd::IPXGlobalConnClass *)(this->vtable1); /*0x5406d2*/
 
 }
 } // namespace gamemd

@@ -22,7 +22,7 @@ struct ConnectionClass {
     int processTileUpdate(void *a2, signed int *a3);
     int receivePacket(int a2, int a3);
     int serviceSendQueue();
-    int initQueue(unsigned int a2, void *a1 = 0);
+    int initQueue(unsigned int a2, void *a2_1 = 0);
     void dtor();
      int queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);
     unsigned int *q000;  // 0x0 (offset-truth)

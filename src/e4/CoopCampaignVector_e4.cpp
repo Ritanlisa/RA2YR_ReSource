@@ -41,14 +41,14 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
 } // namespace gamemd
 // 0x5C5A80
 namespace gamemd {
-unsigned int * CoopCampaignVector::Construct(int aP1, int aP2)
+unsigned int * CoopCampaignVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   this->q004 = 0; /*0x5c5a8b*/
   this->q008 = aP1; /*0x5c5a8e*/
   LOBYTE(this->m_C) = 1; /*0x5c5a91*/
   BYTE1(this->m_C) = 0; /*0x5c5a95*/
-  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x5c5a98*/
+  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

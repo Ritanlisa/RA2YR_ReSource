@@ -44,7 +44,7 @@ int sub_6D1130()
 {
   void *v0; // esi
 
-  dword_B0CCD4 = (void *)(240);
+  dword_B0CCD4 = (unsigned int)((void *)(240));
   dword_B0CD00 = dword_87F6CC; /*0x6d1153*/
   byte_B0CCDD = 0; /*0x6d1158*/
   dword_B0CCE0 = 0; /*0x6d115e*/
@@ -87,7 +87,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
   v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
-    result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6bdf*/
+    result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6bdf*/
     v5 = result->u32_140; /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result->u32_44 && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
@@ -100,7 +100,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
       v7 = 0; /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
-        result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6c31*/
+        result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6c31*/
         v8 = result->u32_140; /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result->u32_44 && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
@@ -113,7 +113,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
           v10 = 0; /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
-            result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6c85*/
+            result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6c85*/
             v11 = result->u32_140; /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result->u32_44 && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
@@ -126,7 +126,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
               v13 = 0; /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
-                result = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x6d6cd3*/
+                result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6cd3*/
                 v14 = result->u32_140; /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result->u32_44 && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
@@ -467,7 +467,7 @@ void E4Recv_6D1E80::sub_6D1E80()
 {
 
   /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e80) */
-  *&this->M4 = &vt_Tactical; /*0x6d1e86*/
+  *&this->M4 = (unsigned int)(&vt_Tactical); /*0x6d1e86*/
   this->M8 = (int)&vt_Tactical; /*0x6d1e8d*/
   this->M12 = (int)&vt_Tactical; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/

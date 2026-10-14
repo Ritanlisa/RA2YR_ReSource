@@ -88,10 +88,10 @@ struct SuperWeaponTypeClass {
     int SD_vt16();
     int SD_vt27(int a2, int a3);
     int SaveLoad_Prefix(int a1, int a2);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a2, int a3);
     SuperWeaponTypeClass(void * aP1);
-    int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4, void *a1 = 0);
-    int Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    int loadSWProperties(uint8_t * a2, uint8_t * a3, int a4, void *a4_1 = 0);
+    int Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     void* SD_vt25(unsigned char *** aP1);
     unsigned int q024;  // 0x24 (offset-truth)
     unsigned int q100;  // 0x100 (ml)

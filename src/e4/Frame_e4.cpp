@@ -139,7 +139,7 @@ LABEL_18:
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = *a8; /*0x4f48f9*/
+          v20 = (int)(*a8); /*0x4f48f9*/
           v21 = a8[1]; /*0x4f48fb*/
           v22 = a8[2]; /*0x4f48fe*/
           Rect.right = a8[3]; /*0x4f4904*/
@@ -153,7 +153,7 @@ LABEL_18:
             v51 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4941*/
             v23 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4f4949*/
             v24 = (double)v51; /*0x4f494f*/
-            v25 = g_TacticalClass_Instance; /*0x4f4953*/
+            v25 = (LPPERSISTSTREAM)(g_TacticalClass_Instance); /*0x4f4953*/
             *(unsigned int *)v38 = v23; /*0x4f4959*/
             v42 = v24 / *(double *)&g_TacticalClass_Instance[48].__tail_0; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/
@@ -247,7 +247,7 @@ LABEL_51:
                   return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x4f4ba1*/
                 }
               }
-              return result; /*0x4f4ba1*/
+              return (gamemd::TechnoTypeClass *)(result); /*0x4f4ba1*/
             }
             v13 = dword_87F7F0; /*0x4f4a1e*/
           }
@@ -265,7 +265,7 @@ LABEL_51:
       goto LABEL_13; /*0x4f485a*/
     }
   }
-  return result; /*0x4f4ba4*/
+  return (gamemd::TechnoTypeClass *)(result); /*0x4f4ba4*/
 
 }
 } // namespace gamemd

@@ -35,7 +35,7 @@ AbstractClass * * RemoveAndResize(unsigned int * a2, unsigned char * a3);
 AbstractClass * * RemoveHashTableEntry(ObjectClass * aP1, void * a2);
 CampaignClass * * Clear(void *a1);
 CampaignClass * * RemoveEntry(const char * a2);
-ObjectClass * * Remove(int a2, void *a1 = 0);
+ObjectClass * * Remove(int a2, void *a2_1 = 0);
 int ComputeHash(int a2);
 int Find(const char * a1, ConvertClass * aP2);
 int FindChunk(char * Str1, void * a2, CCINIClass * aP3);

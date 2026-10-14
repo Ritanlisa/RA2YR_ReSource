@@ -411,7 +411,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(aP0 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (gamemd::CampaignScore **)(0);
+    *a2 = (int)((gamemd::CampaignScore **)(0));
     (*(void (**)(unsigned int))(*aP0->u32_24 + 80))(aP0->u32_24); /*0x5d498d*/
     return (gamemd::CampaignScore **)(v4); /*0x5d498d*/
   }
@@ -469,7 +469,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
           v4 = 0; /*0x5d4790*/
         }
       }
-      *a2 = (gamemd::CampaignScore **)(0);
+      *a2 = (int)((gamemd::CampaignScore **)(0));
       return (gamemd::CampaignScore **)(v4); /*0x5d479e*/
     }
     DisableIME(); /*0x5d47a1*/
@@ -482,7 +482,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     nullsub_48(); /*0x5d47c2*/
     if ( !aP0->q01A ) /*0x5d47c7*/
     {
-  LABEL_77: *a2 = (gamemd::CampaignScore **)(0);
+  LABEL_77: *a2 = (int)((gamemd::CampaignScore **)(0));
       return 2; /*0x5d48c1*/
     }
     if ( aP0->q019 ) /*0x5d47d2*/
@@ -1703,10 +1703,10 @@ int SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
           }
           else if ( a3 == 1693 ) /*0x5df39a*/
           {
-            IDA_LOBYTE(g_abs_A8B264) = 0; /*0x5df3af*/
+            (*((unsigned char *)&(g_abs_A8B264))) = 0; /*0x5df3af*/
             if ( SendDlgItemMessageA(aP0, 1693, 0xF0u, 0, 0) == 1 ) /*0x5df3c3*/
             {
-              IDA_LOBYTE(g_abs_A8B264) = 1; /*0x5df3c6*/
+              (*((unsigned char *)&(g_abs_A8B264))) = 1; /*0x5df3c6*/
               return 0; /*0x5df3cf*/
             }
           }
@@ -1724,10 +1724,10 @@ int SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
               }
               break;
             case 0x3E8u: /*0x5df268*/
-              IDA_LOBYTE(dword_A8B320) = 0; /*0x5df333*/
+              (*((unsigned char *)&(dword_A8B320))) = 0; /*0x5df333*/
               if ( SendDlgItemMessageA(aP0, 1000, 0xF0u, 0, 0) == 1 ) /*0x5df347*/
               {
-                IDA_LOBYTE(dword_A8B320) = 1; /*0x5df34e*/
+                (*((unsigned char *)&(dword_A8B320))) = 1; /*0x5df34e*/
                 return 0; /*0x5df357*/
               }
               break;
@@ -3326,7 +3326,7 @@ unsigned char sub_5DAF20()
               v17 = v15; /*0x77fdba*/
               if ( dword_B76600 ) /*0x77fdbc*/
               {
-                qmemcpy(v15, dword_B76600, 4 * dword_B765F8); /*0x77fdc6*/
+                memcpy(v15, dword_B76600, 4 * dword_B765F8); /*0x77fdc6*/
                 v16 = dword_B76600; /*0x77fdc8*/
               }
               __3_YAXPAX_Z(v16); /*0x77fdcf*/
@@ -3402,7 +3402,7 @@ unsigned char sub_5DAF20()
         do /*0x7800b2*/
         {
           if ( v22 >= 0 && v1 < v21 ) /*0x780023*/
-            qmemcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
+            memcpy(Buffer, (char *)dword_B77908 + v22, sizeof(Buffer)); /*0x780037*/
           String::Assign(&v29, (const char *)&Buffer[9]); /*0x780042*/
           v23 = String::ToLowerCopy(&v29, (char **)&v31.ptr_4); /*0x780050*/
           v30.tail_7 = String::Compare(&v30, (const char **)v23); /*0x780063*/

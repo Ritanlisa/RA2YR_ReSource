@@ -12,10 +12,10 @@ struct Waypoint {
     HashTable * ptr_4;  // 0x4
     HashTable * ptr_8;  // 0x8
 // --- flat members (END) ---
-    unsigned int * FindByCell(unsigned short *a2);  // G57w10-S raw 0x005023B0 IUnknown 占位清除
+    unsigned int * FindByCell(unsigned short *aP1);  // G57w10-S raw 0x005023B0 IUnknown 占位清除
     unsigned char * InitInvalid(void *a1 = 0);  // 0x53ECB0
     int  FindCell(unsigned int * a2);  // 0x763A50
-    static char * To_String(int a1);
+    CHAR * To_String(int aP0);
     unsigned int *q000;  // 0x0 (canon-mt)
 
     unsigned int u32_2C;  // X10 supply (member_lookup)

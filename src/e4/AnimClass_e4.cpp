@@ -97,7 +97,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       v13[0] = a2->Coord_9C; /*0x422985*/
       v13[1] = *(unsigned int *)a2->__pad_A0; /*0x422991*/
       v13[2] = a2->AnimClass_field_0xA4; /*0x422998*/
-      v6 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x4229a1*/
+      v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (unsigned __int8)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
@@ -165,7 +165,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
 }  // G42.18 ns repair
 // 0x422CA0
 namespace gamemd {
-void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
+void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5, void *a3, void *a4)
 {
 
   IUnknown *AnimClass_field_0xB4; // edi
@@ -301,7 +301,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v10 = *a2 + 2 * (v7 + 8); /*0x422d30*/
     *(unsigned int *)v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
     v106 = v10; /*0x422d40*/
-    v11 = a2[1]; /*0x422d47*/
+    v11 = (int)(a2[1]); /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = v11 - (v7 + 8); /*0x422d51*/
     v104 = (v8 - v7) << 8; /*0x422d5e*/
@@ -517,7 +517,7 @@ LABEL_78:
   if ( this->__pad_194 ) /*0x423358*/
   {
     v34 = ZCoordToScreenY(*(int *)v101); /*0x423373*/
-    v35 = *a2; /*0x423384*/
+    v35 = (int)(*a2); /*0x423384*/
     v36 = *&this->u32_CA.__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (**)(AnimClass *))this->vtable1; /*0x42339a*/
     v102 = v36; /*0x42339c*/
@@ -548,7 +548,7 @@ LABEL_78:
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
   v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->vtable1 + 18))(this, &v108); /*0x42340b*/
-  v43 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v42); /*0x423414*/
+  v43 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v42)); /*0x423414*/
   v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
   v93 = v44; /*0x423422*/
   if ( !v44 ) /*0x423426*/
@@ -651,8 +651,8 @@ LABEL_99:
   if ( v62[2].__pad_C[207] ) /*0x423636*/
   {
     FoundationSize = Building::GetFoundationSize(&v108, 0); /*0x42364f*/
-    v64 = *a2; /*0x423657*/
-    v65 = a2[1]; /*0x423659*/
+    v64 = (int)(*a2); /*0x423657*/
+    v65 = (int)(a2[1]); /*0x423659*/
     *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/
     v66 = (int (**)(AnimClass *))this->vtable1; /*0x423663*/
     v108 = v64; /*0x423667*/
@@ -698,8 +698,8 @@ LABEL_99:
   else if ( v62[2].__pad_C[221] ) /*0x423728*/
   {
     v109 = *(unsigned int *)&v62[2].__pad_C[184]; /*0x42373c*/
-    v71 = a2[1]; /*0x423742*/
-    *(unsigned int *)v101 = *a2; /*0x42374c*/
+    v71 = (int)(a2[1]); /*0x423742*/
+    *(unsigned int *)v101 = (unsigned int)(*a2); /*0x42374c*/
     v82 = v106; /*0x423756*/
     v72 = (int (**)(AnimClass *))this->vtable1; /*0x42375e*/
     v102 = v109 + v71; /*0x423766*/
@@ -729,7 +729,7 @@ LABEL_99:
   }
   else
   {
-    v74 = *a2; /*0x4237b9*/
+    v74 = (int)(*a2); /*0x4237b9*/
     v102 = *(unsigned int *)&v62[2].__pad_C[184] + a2[1]; /*0x4237bb*/
     *(unsigned int *)v101 = v74; /*0x4237cb*/
     v83 = v106; /*0x4237d2*/
@@ -780,14 +780,14 @@ LABEL_99:
   }
 
 }
-//L-fix     if ( IDA_LOBYTE(v21[72].Z) ) /*0x42306b*/
+//L-fix     if ( (*((unsigned char *)&(v21[72].Z))) ) /*0x42306b*/
 //L-fix       v22 |= 6u; /*0x423075*/
 //L-fix     else
 //L-fix       v22 |= 4u; /*0x42307a*/
 //L-fix   }
 //G42-DUP   if ( v21[60].Z <= *(int *)&HouseClass_Player.__pad_5568[22724] ) /*0x42308b*/
 //G42-DUP   {
-//G42-DUP     if ( !IDA_BYTE2(v21[72].Z) ) /*0x423095*/
+//G42-DUP     if ( !(((unsigned char *)&(v21[72].Z))[2]) ) /*0x423095*/
 //G42-DUP     {
 //G42-DUP       Y = v21[62].Y; /*0x423183*/
 //G42-DUP       if ( Y <= 0 ) /*0x42318b*/
@@ -852,10 +852,10 @@ LABEL_99:
 //G42-DUP   *(unsigned int *)v101 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 114))(this);;
   v25 = this->AnimClass_field_0xC8;
 //G42-DUP   aP10 = (ConvertClass *)1000; /*0x42311a*/
-//G42-DUP   if ( IDA_BYTE1(v25[71].X) ) /*0x423122*/
+//G42-DUP   if ( (((unsigned char *)&(v25[71].X))[1]) ) /*0x423122*/
 //G42-DUP   {
 //G42-DUP     v105[0] = *(unsigned int *)(*(unsigned int *)(stru_B05488.field_4C + 4 * *(unsigned int *)(HouseClass_Player.field_0 + 90196)) + 780); /*0x42314b*/
-//G42-DUP     if ( IDA_BYTE1(v25[71].Z) ) /*0x42314f*/
+//G42-DUP     if ( (((unsigned char *)&(v25[71].Z))[1]) ) /*0x42314f*/
 //G42-DUP       goto LABEL_78; /*0x423157*/
 //G42-DUP     v26 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108);;
 //G42-DUP     v27 = (ConvertClass *)*((int16_t *)((Coord *)(&stru_87C374.__pad_14B0[8132]))->To_Cell(v26) + 134); /*0x423177*/
@@ -864,33 +864,33 @@ LABEL_99:
   if ( this->__pad_194[2] )
 //G42-DUP   {
 //G42-DUP     v30 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108);;
-//G42-DUP     IDA_LOWORD(v91) = *v30 / 256; /*0x423220*/
-//G42-DUP     IDA_HIWORD(v91) = v30[1] / 256; /*0x423238*/
+//G42-DUP     (*((unsigned short *)&(v91))) = *v30 / 256; /*0x423220*/
+//G42-DUP     (*(((unsigned short *)&(v91)) + 1)) = v30[1] / 256; /*0x423238*/
 //G42-DUP     aP2 = v91; /*0x423241*/
 //G42-DUP     v31 = (int16_t *)((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP2); /*0x423250*/
 //G42-DUP     if ( !*((unsigned int *)v31 + 13) ) /*0x423252*/
 //G42-DUP       ((TacticalClass *)((int)v31))->SetView(0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = this->AnimClass_field_0xC8;
 //G42-DUP     v105[0] = *((unsigned int *)v31 + 13); /*0x423281*/
-//G42-DUP     if ( !IDA_BYTE1(v32[71].Z) ) /*0x423285*/
+//G42-DUP     if ( !(((unsigned char *)&(v32[71].Z))[1]) ) /*0x423285*/
 //G42-DUP       aP10 = (ConvertClass *)v31[134]; /*0x42329a*/
 //G42-DUP   }
   else if ( this->AnimClass_field_0xD4 )
 //G42-DUP   {
     v105[0] = (int)this->AnimClass_field_0xD4;
-//G42-DUP     if ( !IDA_BYTE1(v25[71].Z) ) /*0x4232b1*/
+//G42-DUP     if ( !(((unsigned char *)&(v25[71].Z))[1]) ) /*0x4232b1*/
       v106 = this->AnimClass_field_0xFC[0];
 //G42-DUP   }
 //G42-DUP   else
 //G42-DUP   {
 //G42-DUP     v105[0] = *(unsigned int *)&stru_87C374.__pad_14B0[7836]; /*0x4232d4*/
-//G42-DUP     if ( IDA_BYTE1(v25[72].X) ) /*0x4232d8*/
+//G42-DUP     if ( (((unsigned char *)&(v25[72].X))[1]) ) /*0x4232d8*/
 //G42-DUP       v105[0] = *(unsigned int *)(*(unsigned int *)stru_B05488.field_4C + 780); /*0x4232f0*/
-//G42-DUP     if ( !IDA_BYTE1(v25[71].Z) ) /*0x4232f4*/
+//G42-DUP     if ( !(((unsigned char *)&(v25[71].Z))[1]) ) /*0x4232f4*/
 //G42-DUP     {
 //G42-DUP       v33 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108);;
-//G42-DUP       IDA_LOWORD(v92) = *v33 / 256; /*0x42331d*/
-//G42-DUP       IDA_HIWORD(v92) = v33[1] / 256; /*0x423336*/
+//G42-DUP       (*((unsigned short *)&(v92))) = *v33 / 256; /*0x42331d*/
+//G42-DUP       (*(((unsigned short *)&(v92)) + 1)) = v33[1] / 256; /*0x423336*/
 //G42-DUP       aP2 = v92; /*0x423343*/
 //G42-DUP       v27 = (ConvertClass *)*((int16_t *)((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP2) + 133); /*0x42334d*/
 //G42-DUP LABEL_77:
@@ -951,30 +951,30 @@ LABEL_99:
 //G42-DUP       v50 = v47 - 1; /*0x423483*/
 //G42-DUP       if ( v50 ) /*0x423484*/
 //G42-DUP       {
-//G42-DUP         IDA_LOBYTE(v50) = v96; /*0x4234ce*/
+//G42-DUP         (*((unsigned char *)&(v50))) = v96; /*0x4234ce*/
 //G42-DUP         goto LABEL_89; /*0x4234ce*/
 //G42-DUP       }
-//G42-DUP       IDA_LOWORD(v41) = v98; /*0x423486*/
+//G42-DUP       (*((unsigned short *)&(v41))) = v98; /*0x423486*/
 //G42-DUP       v50 = v96; /*0x42348c*/
-//G42-DUP       IDA_LOWORD(v49) = v84; /*0x423493*/
-//G42-DUP       IDA_LOWORD(v48) = v96; /*0x42349c*/
+//G42-DUP       (*((unsigned short *)&(v49))) = v84; /*0x423493*/
+//G42-DUP       (*((unsigned short *)&(v48))) = v96; /*0x42349c*/
 //G42-DUP       v41 = v49 | (32 * (v48 | (v41 << 6))); /*0x4234a3*/
 //G42-DUP     }
 //G42-DUP     else
 //G42-DUP     {
 //G42-DUP       v50 = v96; /*0x4234a7*/
 //G42-DUP     }
-//G42-DUP     IDA_LOWORD(v49) = (uint8_t)v50 >> 1; /*0x4234b2*/
-//G42-DUP     IDA_LOWORD(v48) = v98; /*0x4234b4*/
+//G42-DUP     (*((unsigned short *)&(v49))) = (uint8_t)v50 >> 1; /*0x4234b2*/
+//G42-DUP     (*((unsigned short *)&(v48))) = v98; /*0x4234b4*/
 //G42-DUP     v48 *= 32; /*0x4234ba*/
 //G42-DUP     v51 = v48 | v49; /*0x4234bd*/
-//G42-DUP     IDA_LOWORD(v48) = v84; /*0x4234bf*/
+//G42-DUP     (*((unsigned short *)&(v48))) = v84; /*0x4234bf*/
 //G42-DUP     v49 = v48 | (v51 << 6); /*0x4234c8*/
 //G42-DUP     v41 |= v49; /*0x4234ca*/
 //G42-DUP LABEL_89:
-//G42-DUP     IDA_LOWORD(v49) = v98; /*0x4234d2*/
-//G42-DUP     IDA_LOWORD(v48) = v84; /*0x4234d8*/
-//G42-DUP     IDA_LOWORD(v50) = (uint8_t)v50 >> 1; /*0x4234e0*/
+//G42-DUP     (*((unsigned short *)&(v49))) = v98; /*0x4234d2*/
+//G42-DUP     (*((unsigned short *)&(v48))) = v84; /*0x4234d8*/
+//G42-DUP     (*((unsigned short *)&(v50))) = (uint8_t)v50 >> 1; /*0x4234e0*/
 //G42-DUP     v41 |= v48 | (32 * ((32 * v49) | v50)); /*0x4234ee*/
 //G42-DUP     aP2 = (CoordStruct *)v41; /*0x4234f0*/
 //G42-DUP   }
@@ -992,14 +992,14 @@ LABEL_99:
 //G42-DUP     v57 = v54 - 1; /*0x423560*/
 //G42-DUP     if ( v57 ) /*0x423561*/
 //G42-DUP     {
-//G42-DUP       IDA_LOBYTE(v57) = v85; /*0x4235ad*/
+//G42-DUP       (*((unsigned char *)&(v57))) = v85; /*0x4235ad*/
 //G42-DUP       goto LABEL_98; /*0x4235ad*/
 //G42-DUP     }
-//G42-DUP     IDA_LOWORD(v55) = v99; /*0x423563*/
+//G42-DUP     (*((unsigned short *)&(v55))) = v99; /*0x423563*/
 //G42-DUP     v57 = v85; /*0x423569*/
-//G42-DUP     IDA_LOWORD(v56) = v85; /*0x423573*/
+//G42-DUP     (*((unsigned short *)&(v56))) = v85; /*0x423573*/
 //G42-DUP     v58 = v56 | (v55 << 6); /*0x423575*/
-//G42-DUP     IDA_LOWORD(v56) = v97; /*0x423577*/
+//G42-DUP     (*((unsigned short *)&(v56))) = v97; /*0x423577*/
 //G42-DUP     v55 = v56 | (32 * v58); /*0x423580*/
 //G42-DUP     v41 |= v55; /*0x423582*/
 //G42-DUP   }
@@ -1007,27 +1007,27 @@ LABEL_99:
 //G42-DUP   {
 //G42-DUP     v57 = v85; /*0x423586*/
 //G42-DUP   }
-//G42-DUP   IDA_LOWORD(v56) = (uint8_t)v57 >> 1; /*0x423591*/
-//G42-DUP   IDA_LOWORD(v55) = v99; /*0x423593*/
+//G42-DUP   (*((unsigned short *)&(v56))) = (uint8_t)v57 >> 1; /*0x423591*/
+//G42-DUP   (*((unsigned short *)&(v55))) = v99; /*0x423593*/
 //G42-DUP   v55 *= 32; /*0x423599*/
 //G42-DUP   v59 = v55 | v56; /*0x42359c*/
-//G42-DUP   IDA_LOWORD(v55) = v97; /*0x42359e*/
+//G42-DUP   (*((unsigned short *)&(v55))) = v97; /*0x42359e*/
 //G42-DUP   v56 = v55 | (v59 << 6); /*0x4235a7*/
 //G42-DUP   v41 |= v56; /*0x4235a9*/
 //G42-DUP LABEL_98:
-//G42-DUP   IDA_LOWORD(v56) = v99; /*0x4235b1*/
-//G42-DUP   IDA_LOWORD(v55) = v97; /*0x4235b7*/
-//G42-DUP   IDA_LOWORD(v57) = (uint8_t)v57 >> 1; /*0x4235bf*/
+//G42-DUP   (*((unsigned short *)&(v56))) = v99; /*0x4235b1*/
+//G42-DUP   (*((unsigned short *)&(v55))) = v97; /*0x4235b7*/
+//G42-DUP   (*((unsigned short *)&(v57))) = (uint8_t)v57 >> 1; /*0x4235bf*/
 //G42-DUP   v41 |= v55 | (32 * ((32 * v56) | v57)); /*0x4235cd*/
 //G42-DUP   aP2 = (CoordStruct *)v41; /*0x4235cf*/
 //G42-DUP LABEL_99:
 //G42-DUP   LABEL_99: v60 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108);;
-//G42-DUP   IDA_LOWORD(v94) = *v60 / 256; /*0x4235ef*/
-//G42-DUP   IDA_HIWORD(v94) = v60[1] / 256; /*0x423608*/
+//G42-DUP   (*((unsigned short *)&(v94))) = *v60 / 256; /*0x4235ef*/
+//G42-DUP   (*(((unsigned short *)&(v94)) + 1)) = v60[1] / 256; /*0x423608*/
 //G42-DUP   aP0 = v94; /*0x423615*/
 //G42-DUP   v61 = ((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP0); /*0x42361a*/
   v62 = this->AnimClass_field_0xC8;
-//G42-DUP   if ( IDA_HIBYTE(v62[71].Y) ) /*0x423636*/
+//G42-DUP   if ( (*(((unsigned char *)&(v62[71].Y)) + (sizeof(v62[71].Y) - 1))) ) /*0x423636*/
 //G42-DUP   {
 //G42-DUP     FoundationSize = Building::GetFoundationSize(&v108, 0); /*0x42364f*/
 //G42-DUP     v64 = *(unsigned int *)a2->q000; /*0x423657*/
@@ -1071,7 +1071,7 @@ LABEL_99:
 //G42-DUP     }
 //G42-DUP     while ( !v86 ); /*0x423719*/
 //G42-DUP   }
-//G42-DUP   else if ( IDA_BYTE1(v62[72].Z) ) /*0x423728*/
+//G42-DUP   else if ( (((unsigned char *)&(v62[72].Z))[1]) ) /*0x423728*/
 //G42-DUP   {
 //G42-DUP     v109 = v62[69].Z; /*0x42373c*/
 //G42-DUP     v71 = *(unsigned int *)&a2->field_2[2]; /*0x423742*/

@@ -28,7 +28,7 @@ void MixFileClass::CleanupCache()
   int v8; // eax
   int v9; // eax
 
-  v0 = dword_B077B0; /*0x69e213*/
+  v0 = (unsigned int *)(dword_B077B0); /*0x69e213*/
   if ( dword_B077B0 ) /*0x69e21d*/
   {
     do /*0x69e289*/
@@ -64,16 +64,16 @@ void MixFileClass::CleanupCache()
     }
     while ( v0 ); /*0x69e289*/
   }
-  v4 = dword_B077B4; /*0x69e28b*/
+  v4 = (void *)(dword_B077B4); /*0x69e28b*/
   if ( dword_B077B4 ) /*0x69e293*/
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e299*/
     {
-      v5 = (char *)dword_B077B4 + 16; /*0x69e29f*/
+      v5 = (unsigned char *)((char *)dword_B077B4 + 16); /*0x69e29f*/
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e29b*/
       {
         v6 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e2a6*/
-        v7 = (char *)dword_B077B4 + 12; /*0x69e2a9*/
+        v7 = (unsigned int *)((char *)dword_B077B4 + 12); /*0x69e2a9*/
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
         *v7 = 0; /*0x69e2b7*/
@@ -111,7 +111,7 @@ void MixFileClass::DestroyCache()
   int v3; // eax
   int v4; // eax
 
-  v0 = dword_B077B0; /*0x69e182*/
+  v0 = (void *)(dword_B077B0); /*0x69e182*/
   if ( dword_B077B0 ) /*0x69e18c*/
   {
     do /*0x69e1f9*/

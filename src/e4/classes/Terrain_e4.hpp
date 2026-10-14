@@ -12,15 +12,15 @@ struct Terrain {
 // --- flat members (END) ---
     int GetTileIndex(int a2);  // 0x48B720
     int GetTileType(int aP1);  // 0x48B9E0
-    void PlaceCliffs(int a2, int a3, int *a4);  // G57w10-S raw 0x00568E40 IUnknown 占位清除
+    void PlaceCliffs(int a2, int a3, int *aP3);  // G57w10-S raw 0x00568E40 IUnknown 占位清除
     AbstractClass * * ConnectivityGraph(void *a1_1);  // 0x56C510
-    int  FloodFillConnectivity(uint8_t * a2, int a3, unsigned int * a4, void *a1 = 0);  // 0x56CB90
+    int FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3, void *a4 = 0);  // 0x56CB90
     void ProcessCellModification(int16_t *aP1);  // G57w10-S raw 0x00570050 IUnknown 占位清除
-    void RecursiveModify(int a2);  // G57w10-S raw 0x00573540 IUnknown 占位清除
+    AbstractClass * * RecursiveModify(IUnknown * aP1);  // G57w10-S raw 0x00573540 IUnknown 占位清除
     int  CreateCrater(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x576770
-    static bool SelectTileType(int a1, int a2);  // G57w10-S raw 0x00579620 IUnknown 占位清除
-    void  PlaceTiberiumTrees(int16_t * a1, int a2, int a3, char a4);  // 0x5A28C0
-    unsigned int *  ClimbCheck(unsigned int * a1, unsigned int * a2);  // 0x6D6410
+    VectorClass_flat * * SelectTileType(Random * aP0, IUnknown * aP1);  // G57w10-S raw 0x00579620 IUnknown 占位清除
+    void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
+    unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
     int LookupByName(void *a1 = 0);  // 0x71DD80
     unsigned int u32_80;  // 0x80 (offset-truth)
 

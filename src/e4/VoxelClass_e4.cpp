@@ -168,10 +168,10 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   if ( *(unsigned char *)(v18 + 3233) ) /*0x73c725*/
   {
     v23 = (int)(*((unsigned char *)a1 + 1060));
-    v66 = (int)(a2); /*0x73c740*/
-    v67 = (int)(a3); /*0x73c74d*/
+    v66 = (void *)((int)(a2)); /*0x73c740*/
+    v67 = (void *)((int)(a3)); /*0x73c74d*/
     if ( v23 ) /*0x73c751*/
-      v67 = (int)(a3 - 14); /*0x73c756*/
+      v67 = (void *)((int)(a3 - 14)); /*0x73c756*/
     v24 = *(int16_t *)(v15 + 6); /*0x73c762*/
     v25 = (*(int (**)(Class_7F5C70 *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
     DrawToSurfaceSHP( /*0x73c7a7*/
@@ -193,7 +193,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v51);
     v64 = (gamemd::AudioStream *)((int)(g_DSurface_Hidden_2));
     g_DSurface_Hidden_2 = (int)((AudioStream *)dword_B1D13C); /*0x73c7c3*/
-    v66 = 128; /*0x73c7c9*/
+    v66 = (void *)(128); /*0x73c7c9*/
     v65[1] = 128; /*0x73c7cd*/
     v26 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)dword_B1D13C + 120))(dword_B1D13C); /*0x73c7d8*/
     v68[0] = *v26; /*0x73c7dd*/
@@ -262,7 +262,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(Class_7F5C70 *, unsigned int))(v30 + 1016))(a1, 0) + 160) /*0x73cabe*/
                     + 670) )
       {
-        v31 = (uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(&v75, &v60) >> 7) + 1) >> 1); /*0x73cae1*/
+        v31 = (unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(&v75, &v60) >> 7) + 1) >> 1)); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
@@ -277,7 +277,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         v49 = -*((float *)a1 + 259); /*0x73cb52*/
         Matrix3x4::Translate(v74, v49); /*0x73cb55*/
       }
-      v59 = (((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(&v75, &v60) >> 10) + 1) >> 1) & 0x1F) - 8; /*0x73cb81*/
+      v59 = (unsigned int *)((((unsigned int)((*(unsigned int *)(ProgressTimer)::GetValue(&v75, &v60) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
       v50 = -((double)v59 * -0.1963495408493621); /*0x73cb91*/
       Matrix3D::RotateZ(v74, v50); /*0x73cb94*/
       Matrix3x3::Multiply(v70, v53); /*0x73cba5*/
@@ -290,7 +290,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       }
       v15 = (int)v64; /*0x73cbff*/
     }
-    v33 = (int)(a8);
+    v33 = (void *)((int)(a8));
     (*(void (**)(Class_7F5C70 *, int, int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cc36*/
       a1,
       v15,

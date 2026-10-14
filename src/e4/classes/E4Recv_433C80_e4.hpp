@@ -10,7 +10,7 @@ struct E4Recv_433C80 {
     unsigned int M36;  // 0x24
     unsigned int M38;  // 0x26
 // --- flat members (END) ---
-    short  sub_433C80(int16_t a2);  // 0x433C80
+    short sub_433C80(short a2);  // 0x433C80
     void* occupant;  // (W16G3 @0x433cxx)
 
     unsigned short u16_C;  // X10 supply (member_lookup)

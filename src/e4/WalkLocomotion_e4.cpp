@@ -32,7 +32,7 @@
 
 // 0x6A01A0
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
+AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3, void *a3)
 {
 
   unsigned int *v3; // edx
@@ -56,7 +56,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
   v3 = aP1; /*0x6a01a0*/
   if ( *aP1 != g_OverlayTypeConfig || aP1->vtable2 != (unsigned int)qword_B077FC || (v5 = aP1->vtable3, v5 != HIDWORD(qword_B077FC)) ) /*0x6a01ce*/
   {
-    LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
+    LOBYTE(v5) = (unsigned char)(this->ptr_60); /*0x6a01d4*/
     v6 = aP3; /*0x6a01d7*/
     if ( !(unsigned char)v5 ) /*0x6a01dd*/
     {
@@ -92,7 +92,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**&this->u32_C + 244))( /*0x6a028f*/
                                this->u32_C,
                                aP1);
-                return v5; /*0x6a029c*/
+                return (gamemd::AbstractClass **)(v5); /*0x6a029c*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
@@ -123,7 +123,7 @@ AbstractClass * * WalkLocomotion::MoveTo(unsigned int *aP1, int aP3)
                      v3);
     }
   }
-  return v5; /*0x6a0295*/
+  return (gamemd::AbstractClass **)(v5); /*0x6a0295*/
 
 }
 }  // G42.18 ns repair
@@ -585,7 +585,7 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
 
 // 0x6A3DB0
 namespace gamemd {
-unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3)
+unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3, void *a4)
 {
 
   int v4; // eax
@@ -618,7 +618,7 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
   *aP3 = v4; /*0x6a3e0f*/
   WalkLocomotion_field_0x40 = (char *)this->q040; /*0x6a3e12*/
   WalkLocomotion_field_0x44 = (char *)this->q044; /*0x6a3e15*/
-  *aP1 = &WalkLocomotion_field_0x40[v6]; /*0x6a3e22*/
+  *aP1 = (unsigned int)(&WalkLocomotion_field_0x40[v6]); /*0x6a3e22*/
   aP1->ptr_4 = &WalkLocomotion_field_0x44[v7]; /*0x6a3e25*/
   return aP1; /*0x6a3e20*/
 

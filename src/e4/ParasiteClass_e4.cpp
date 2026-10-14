@@ -104,13 +104,13 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   if ( dword_AC4920 < dword_AC4918 /*0x629360*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_AC4910 + 8))(
+    && (*(uint8_t ((int *)(**))(int *, int, unsigned int))(dword_AC4910 + 8))(
          &dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
     v4 = dword_AC4920++; /*0x62936d*/
-    *((unsigned int *)dword_AC4914 + v4) = this; /*0x62937c*/
+    *((unsigned int *)dword_AC4914 + v4) = (unsigned int)(this); /*0x62937c*/
   }
   return this; /*0x629381*/
 }
@@ -201,7 +201,7 @@ void ParasiteClass::DeploySquad()
   int savedregs; // [esp+68h] [ebp+0h] BYREF
 
   _ESI = this; /*0x6297fc*/
-  v3 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
+  v3 = (unsigned int *)(*(int ((int)(**))(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
   v4 = *(int **)_ESI->__pad_28; /*0x62980d*/
   v48[1] = *v3; /*0x629812*/
   v5 = *(unsigned int *)(v48[1] + 172); /*0x629816*/
@@ -231,7 +231,7 @@ void ParasiteClass::DeploySquad()
             v14 = (AnimClass *)operator new(0x1C8u); /*0x6298f5*/
             if ( v14 ) /*0x6298ff*/
             {
-              v15 = AnimClass::ctor(v14, v13, &v55, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
+              v15 = AnimClass::ctor(v14,(int *)(v13), &v55, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
               if ( v15 ) /*0x62991a*/
               {
                 _ESI[1].vfptr = v15; /*0x62991c*/
@@ -347,15 +347,7 @@ void ParasiteClass::DeploySquad()
           if ( v24 ) /*0x629b5c*/
           {
             v25 = Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, v20 - 1); /*0x629b6f*/
-            AnimClass::ctor( /*0x629b97*/
-              v24,
-              *(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3012) + 4 * v25),
-              &v58,
-              (void *)2,
-              1,
-              (void *)0x600,
-              (void *)0xFFFFFFF6,
-              0);
+                        AnimClass::ctor( /*0x629b97*/               v24,(int *)(*(void **)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3012) + 4 * v25)),               &v58,               (void *)2,               1,               (void *)0x600,               (void *)0xFFFFFFF6,               0);
           }
         }
         if ( *(unsigned char *)(v48[0] + 372) /*0x629be6*/
@@ -1073,11 +1065,11 @@ LABEL_47:
   v66 = (float)v67; /*0x62c1bd*/
 LABEL_39:
   Byte284 = CellClass::GetByte284(v70); /*0x62c09e*/
-  qmemcpy(v73, CopyAudioData((char *)v75, Byte284), sizeof(v73)); /*0x62c0cb*/
+  memcpy(v73, CopyAudioData((char *)v75, Byte284), sizeof(v73)); /*0x62c0cb*/
   v21 = InvertMatrix3x3Signs(v75, v73); /*0x62c0d4*/
   v22 = *((float *)a1 + 52); /*0x62c0d9*/
   v23 = *v8; /*0x62c0ea*/
-  qmemcpy(v74, v21, sizeof(v74)); /*0x62c0ec*/
+  memcpy(v74, v21, sizeof(v74)); /*0x62c0ec*/
   *(float *)&v48 = -v22; /*0x62c0f9*/
   Triple::Set(&v59, v23, v48, *((unsigned int *)a1 + 53)); /*0x62c0fd*/
   v24 = Matrix3x3::TransformPoint(v71, (float *)&v59, v53); /*0x62c113*/

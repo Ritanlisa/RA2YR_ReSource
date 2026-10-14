@@ -31,7 +31,7 @@
 
 // 0x41E350
 namespace gamemd {  // G42.18 ns repair
-unsigned int * AnimTypeClass::Construct2(char *Source)
+unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
 {
 
   int v3; // eax
@@ -43,8 +43,8 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   this->u32_C0 = 0; /*0x41e37a*/
   this->u32_C8 = 0; /*0x41e380*/
   this->ChargerTurrets = 1072693248; /*0x41e386*/
-  this->q0C4 = 1072693248; /*0x41e38c*/
-  this->q0CC = 1072693248; /*0x41e392*/
+  this->q0C4 = (IUnknown *)(1072693248); /*0x41e38c*/
+  this->q0CC = (IUnknown *)(1072693248); /*0x41e392*/
   BYTE2(this->?[5]) = 1; /*0x41e39a*/
   HIBYTE(this->?[5]) = 1; /*0x41e3a0*/
   LOBYTE(this->u32_D4) = 1; /*0x41e3a6*/
@@ -74,7 +74,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
          0) )
   {
     v3 = dword_A8B210++; /*0x41e45f*/
-    *((unsigned int *)dword_A8B204 + v3) = this; /*0x41e46e*/
+    *((unsigned int *)dword_A8B204 + v3) = (unsigned int)(this); /*0x41e46e*/
   }
   return &this->ObjectTypeClass; /*0x41e473*/
 
@@ -82,7 +82,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
 }  // G42.18 ns repair
 // 0x427530
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::Construct(char *aP1)
+AnimTypeClass * AnimTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // eax
@@ -253,7 +253,7 @@ void* AnimTypeClass::GetWarhead(int a2)
         this->ImageAllocated = 0; /*0x427b98*/
       }
       v4 = this->ImageFile; /*0x427b9f*/
-      ImageFile = this->ImageFile; /*0x427ba5*/
+      ImageFile = (const char *)(this->ImageFile); /*0x427ba5*/
       this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         ImageFile = (const char *)this->LoopStart; /*0x427bb9*/
@@ -269,7 +269,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
     }
   }
-  Image = this->Image; /*0x427c12*/
+  Image = (gamemd::SHPStruct *)(this->Image); /*0x427c12*/
   if ( Image ) /*0x427c1a*/
   {
     End = this->End; /*0x427c1c*/
@@ -289,7 +289,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     *(unsigned int *)this->__pad_2A0 = -1; /*0x427c7a*/
     LOBYTE(v3) = -1; /*0x427c71*/
   }
-  return (char)v3; /*0x427c80*/
+  return (void *)((char)v3); /*0x427c80*/
 
 }
 }
@@ -441,7 +441,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   Power::FlagProcess((Power *)a2, v3); /*0x4289f5*/
-  LOBYTE(v4) = this->Flat_flag; /*0x4289fa*/
+  LOBYTE(v4) = (unsigned char)(this->Flat_flag); /*0x4289fa*/
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x428a03*/
   LOBYTE(v5) = this->Translucent; /*0x428a08*/
   Power::FlagProcess((Power *)a2, v5); /*0x428a11*/
@@ -791,7 +791,7 @@ int AnimTypeClass::StubReturnFalse(int a1)
 
 // 0x477050
 namespace gamemd {
-int AnimTypeClass::ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2)
+int AnimTypeClass::ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2, void *a4)
 {
   char *v5; // eax
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF

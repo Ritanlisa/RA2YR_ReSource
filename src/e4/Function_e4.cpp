@@ -12,8 +12,8 @@ namespace gamemd {  // G42.18 ns repair
 int Function::Function_643E80(void * a2)
 {
 
-  this->q004 = a2; /*0x643e84*/
-  return a2; /*0x643e87*/
+  this->q004 = (int)(a2); /*0x643e84*/
+  return (int)(a2); /*0x643e87*/
 
 }
 }  // G42.18 ns repair

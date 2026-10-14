@@ -209,7 +209,7 @@ LABEL_11:
   if ( aP4 ) /*0x4816ce*/
     v8 = *(unsigned int **)this->q0E8; /*0x4816d0*/
   else
-    v8 = this->q0E4; /*0x4816d8*/
+    v8 = (unsigned int *)(this->q0E4); /*0x4816d8*/
   v9 = 0; /*0x4816de*/
   v10 = 0; /*0x4816e0*/
   v11 = 10; /*0x4816e2*/
@@ -238,7 +238,7 @@ LABEL_24:
     {
 LABEL_22:
       v12 = v20++; /*0x48173a*/
-      *((unsigned int *)Block + v12) = v8; /*0x481749*/
+      *((unsigned int *)Block + v12) = (unsigned int)(v8); /*0x481749*/
     }
     v10 = v17; /*0x48174c*/
     goto LABEL_24; /*0x48174c*/
@@ -277,7 +277,7 @@ LABEL_25:
 }
 // 0x481810
 namespace gamemd {  // G42.18c ns repair
-int Cell::GetNeighbourContent(unsigned int a2)
+int Cell::GetNeighbourContent(unsigned int a2, void *a2_1)
 {
 
   void *result; // eax
@@ -293,7 +293,7 @@ int Cell::GetNeighbourContent(unsigned int a2)
     HIWORD(a2) = v3; /*0x48184a*/
     return CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)&a2); /*0x48185d*/
   }
-  return result; /*0x481863*/
+  return (int)(result); /*0x481863*/
 
 }
 }
@@ -560,7 +560,7 @@ int Cell::SearchEnemies(int aP1)
   unsigned int v16[2]; // [esp+78h] [ebp-14h] BYREF
   unsigned int v17[3]; // [esp+80h] [ebp-Ch] BYREF
 
-  v3 = *(unsigned int *)this->q384 + 12); /*0x487a19*/
+  v3 = (unsigned int *)(*(unsigned int *)this->q384 + 12)); /*0x487a19*/
   if ( v3 ) /*0x487a21*/
   {
     aP1 = aP1; /*0x487a27*/
@@ -614,7 +614,7 @@ int Cell::SearchEnemies(int aP1)
       (*(((unsigned short *)&(v15)) + 1)) = v8 + this->u32_26; /*0x487b0c*/
       (*((unsigned short *)&(v15))) = v14 + this->u32_24; /*0x487b11*/
       aP1 = v15; /*0x487b1e*/
-      v9 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP1); /*0x487b28*/
+      v9 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP1)); /*0x487b28*/
       if ( v9 != (unsigned int *)this ) /*0x487b2f*/
       {
         v10 = v9->u32_E4; /*0x487b35*/
@@ -739,12 +739,12 @@ Coord * * Cell::IsValidDestination(short * a2)
   LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   Cell_field_0x0 = this->__pad_000; /*0x4dcf5b*/
   HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
-  *(unsigned int *)v14 = v17; /*0x4dcf69*/
+  *(unsigned int *)v14 = (unsigned int)(v17); /*0x4dcf69*/
   v10 = (*(int (**)(Cell *))(Cell_field_0x0 + 188))(this); /*0x4dcf6f*/
   v11 = (*(int (**)(Cell *, int))&this->__pad_000->q084)(this, v10); /*0x4dcf7a*/
   if ( !MapSeed::CheckTileMatch((MapSeed *)&DataGlobal_87F7E8, v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
-  v12 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2); /*0x4dcfa1*/
+  v12 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, a2)); /*0x4dcfa1*/
   return v12->u32_EC == 5 /*0x4dcfc7*/
       && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))&this->__pad_000->u32_1AC)(
             this,
@@ -763,7 +763,7 @@ int Cell::Exists(MouseClass * aP1)
 
   int result; // eax
 
-  result = *aP1; /*0x5657ee*/
+  result = (int)(*aP1); /*0x5657ee*/
   LOBYTE(result) = *((unsigned int *)this->q13C + 512 * aP1[1] + result) != 0; /*0x5657fa*/
   return result; /*0x5657fd*/
 
@@ -804,7 +804,7 @@ int Cell::SetRadar(int16_t *aP1)
   v2 = *aP1 + aP1[1] * ((int)this->q0F8 + (unsigned int)this->q0F4 + 1); /*0x56d484*/
   if ( v2 >= 0 ) /*0x56d486*/
   {
-    Cell_field_0x6C = this->q06C; /*0x56d48c*/
+    Cell_field_0x6C = (void *)(this->q06C); /*0x56d48c*/
     if ( v2 >= (int)Cell_field_0x6C ) /*0x56d491*/
       v2 = (signed int)Cell_field_0x6C - 1; /*0x56d493*/
   }
@@ -896,7 +896,7 @@ char Cell::UpdateTileType(int16_t *aP0, int aP1, int a3)
   }
   else
   {
-    v6 = &unk_ABDC50; /*0x56e9c7*/
+    v6 = (unsigned int *)(&unk_ABDC50); /*0x56e9c7*/
     dword_ABDC74 = *(unsigned int *)aP0; /*0x56e9cc*/
   }
   if ( !(unsigned char)a3 ) /*0x56e9d7*/
@@ -943,7 +943,7 @@ char Cell::UpdateTileType(int16_t *aP0, int aP1, int a3)
       if ( v17 || v18 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v18)) == 0 ) /*0x56eb39*/
       {
         dword_ABDC74 = a3; /*0x56eb3b*/
-        v7 = &unk_ABDC50; /*0x56eb41*/
+        v7 = (unsigned int *)(&unk_ABDC50); /*0x56eb41*/
       }
       if ( v7[14] == v23 ) /*0x56eb4f*/
         (*((unsigned char *)&(v7))) = Cell::UpdateTileType(&aP1, v9, 1); /*0x56eb5d*/
@@ -979,7 +979,7 @@ char Cell::SetTileType(int16_t *a1, int a2, int a3, int a4, int a5)
   int v22; // [esp+18h] [ebp-10h]
   unsigned int v23[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v5 = a1; /*0x56eb87*/
+  v5 = (unsigned short *)(a1); /*0x56eb87*/
   v6 = *a1 + (a1[1] << 9); /*0x56eb99*/
   if ( v6 < 0x40000 && (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) != 0 ) /*0x56ebaf*/
   {
@@ -987,7 +987,7 @@ char Cell::SetTileType(int16_t *a1, int a2, int a3, int a4, int a5)
   }
   else
   {
-    v8 = &unk_ABDC50; /*0x56ebb7*/
+    v8 = (unsigned int *)(&unk_ABDC50); /*0x56ebb7*/
     dword_ABDC74 = *(unsigned int *)a1; /*0x56ebbc*/
   }
   result = a5; /*0x56ebc1*/
@@ -1004,7 +1004,7 @@ char Cell::SetTileType(int16_t *a1, int a2, int a3, int a4, int a5)
     v23[2] = 0; /*0x56ec02*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen(v23, &v21); /*0x56ec0a*/
     v22 -= 15 * v8->u8_11B; /*0x56ec33*/
-    result = Cell::CreateCrater(v21 - 128, v22 - 128, 256, 256, 0); /*0x56ec53*/
+    result = (char)(Cell::CreateCrater(v21 - 128, v22 - 128, 256, 256, 0)); /*0x56ec53*/
     v12 = v8->u32_38; /*0x56ec58*/
     v10 = a2; /*0x56ec5b*/
     if ( a2 == v12 ) /*0x56ec61*/
@@ -1032,7 +1032,7 @@ char Cell::SetTileType(int16_t *a1, int a2, int a3, int a4, int a5)
       if ( v17 || v18 >= 0x40000 || (v19 = *(unsigned int **)(dword_87F924 + 4 * v18)) == 0 ) /*0x56eced*/
       {
         dword_ABDC74 = a5; /*0x56ecef*/
-        v19 = &unk_ABDC50; /*0x56ecf5*/
+        v19 = (unsigned int *)(&unk_ABDC50); /*0x56ecf5*/
       }
       if ( v19[14] == v12 ) /*0x56ecfd*/
         Cell::SetTileType(&a1, v10, v12, a4, 1); /*0x56ed11*/
@@ -1056,7 +1056,7 @@ char Cell::IsPassableAllied(int aP0, int16_t *aP1)
   if ( v2 >= 0x40000 || (v3 = *(unsigned int **)(dword_87F924 + 4 * v2)) == 0 ) /*0x578af4*/
   {
     dword_ABDC74 = *(unsigned int *)aP1; /*0x578af8*/
-    v3 = &unk_ABDC50; /*0x578afd*/
+    v3 = (unsigned int *)(&unk_ABDC50); /*0x578afd*/
   }
   v4 = v3[57]; /*0x578b03*/
   if ( !v4 ) /*0x578b0c*/
@@ -1129,7 +1129,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
 
   v35 = aP0->u32_11B; /*0x579b89*/
   aP0 = aP0->u32_24; /*0x579b8d*/
-  *(unsigned int *)v44 = aP0; /*0x579b91*/
+  *(unsigned int *)v44 = (unsigned int)(aP0); /*0x579b91*/
   if ( (*((signed short *)(((unsigned char *)&(aP0)) + 2))) + (int16_t)aP0 <= dword_87F8DC /*0x579bdf*/
     || (int16_t)aP0 - (*((signed short *)(((unsigned char *)&(aP0)) + 2))) >= dword_87F8DC
     || (*((signed short *)(((unsigned char *)&(aP0)) + 2))) - (int16_t)aP0 >= dword_87F8DC
@@ -1150,7 +1150,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v36 = (CellLand *)&unk_ABDC50; /*0x579c33*/
-    dword_ABDC74 = aP0; /*0x579c3b*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579c3b*/
   }
   (*((unsigned short *)&(aP0))) = v44[0] + 1; /*0x579c45*/
   v4 = v44[1] << 9; /*0x579c4d*/
@@ -1160,7 +1160,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v6 >= 0x40000 || (v7 = *(CellLand **)(dword_87F924 + 4 * v6)) == 0 ) /*0x579c65*/
   {
     v38 = (CellLand *)&unk_ABDC50; /*0x579c71*/
-    dword_ABDC74 = aP0; /*0x579c79*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579c79*/
   }
   else
   {
@@ -1177,7 +1177,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v41 = (CellLand *)&unk_ABDC50; /*0x579cb3*/
-    dword_ABDC74 = aP0; /*0x579cbb*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579cbb*/
   }
   aP0 = *&v44->u32_40000; /*0x579cc8*/
   v11 = v8 << 9; /*0x579cd3*/
@@ -1187,7 +1187,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v12 >= 0x40000 || (v13 = *(CellLand **)(dword_87F924 + 4 * v12)) == 0 ) /*0x579cea*/
   {
     v40 = (CellLand *)&unk_ABDC50; /*0x579cf6*/
-    dword_ABDC74 = aP0; /*0x579cfe*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579cfe*/
   }
   else
   {
@@ -1204,7 +1204,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v17 >= 0x40000 || (v18 = *(CellLand **)(dword_87F924 + 4 * v17)) == 0 ) /*0x579d2a*/
   {
     v39 = (CellLand *)&unk_ABDC50; /*0x579d36*/
-    dword_ABDC74 = aP0; /*0x579d3e*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579d3e*/
   }
   else
   {
@@ -1218,7 +1218,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   if ( v5 || v20 >= 0x40000 || !*(unsigned int *)(dword_87F924 + 4 * v20) ) /*0x579d63*/
   {
     v37 = (CellLand *)&unk_ABDC50; /*0x579d74*/
-    dword_ABDC74 = aP0; /*0x579d7c*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579d7c*/
   }
   else
   {
@@ -1234,7 +1234,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v23 = (CellLand *)&unk_ABDC50; /*0x579db5*/
-    dword_ABDC74 = aP0; /*0x579dba*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579dba*/
   }
   (*(((unsigned short *)&(aP0)) + 1)) = v42; /*0x579dc6*/
   (*((unsigned short *)&(aP0))) = v44[0]; /*0x579dcb*/
@@ -1246,7 +1246,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   else
   {
     v26 = (CellLand *)&unk_ABDC50; /*0x579df0*/
-    dword_ABDC74 = aP0; /*0x579df5*/
+    dword_ABDC74 = (unsigned int)(aP0); /*0x579df5*/
   }
   v27 = v14 + (int16_t)v42; /*0x579e07*/
   if ( v27 <= dword_87F8DC /*0x579e27*/
@@ -1265,14 +1265,14 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     else
       v29 = 64; /*0x579e46*/
   }
-  aP0 = *(unsigned int *)v44 - 0x10000; /*0x579e6a*/
+  aP0 = (gamemd::MouseClass *)(*(unsigned int *)v44 - 0x10000); /*0x579e6a*/
   if ( (uint8_t)((LayerClass *)((LayerClass *)&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x579e9a*/
     && v26[70].__tail_0[3] == v28 + 4
     && !(uint8_t)CellLand::IsBuildable(v26) )
   {
     v29 |= 0x80u; /*0x579ea3*/
   }
-  aP0 = -65535; /*0x579eba*/
+  aP0 = (gamemd::MouseClass *)(-65535); /*0x579eba*/
   *(unsigned int *)v43 = *CellStruct::Add((CellStruct *)v44, &v42, &aP0); /*0x579ed7*/
   if ( (uint8_t)((LayerClass *)((LayerClass *)&dword_87F7E8))->CoordinatesLegal(v43) /*0x579ef6*/
     && v36[70].__tail_0[3] == v28 + 4
@@ -2001,7 +2001,7 @@ bool Cell::IsPassable(IUnknown * aP0)
 
 // 0x68BD00
 namespace gamemd {
-unsigned int * Cell::GetWorldCoords(unsigned int *v5, int a3)
+unsigned int * Cell::GetWorldCoords(unsigned int *v5, int a3, void *a3_1)
 {
   unsigned int *v3; // esi
   int *v4; // eax

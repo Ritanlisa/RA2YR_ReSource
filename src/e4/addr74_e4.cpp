@@ -552,7 +552,7 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
                 }
                 while ( v19 ); /*0x74847a*/
               }
-              v20 = (unsigned int *)(*v17);
+              v20 = (int)((unsigned int *)(*v17));
               v15 = v17 + 1; /*0x74848c*/
               v21 = (unsigned int *)(v9 + 1); /*0x748491*/
               if ( v14 ) /*0x748494*/
@@ -750,15 +750,15 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  p_vtable3 = &this->M12; /*0x74bbff*/
+  p_vtable3 = (void **)(&this->M12); /*0x74bbff*/
   this->M4 = 0; /*0x74bc04*/
   this->M8 = 0; /*0x74bc07*/
   LOBYTE(this->M12) = 1; /*0x74bc0a*/
   BYTE1(this->?) = 0; /*0x74bc0e*/
   this->? = &vt_VectorClass; /*0x74bc11*/
-  this->M8 = (void *)-1; /*0x74bc17*/
+  this->M8 = (unsigned int)((void *)-1); /*0x74bc17*/
   LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
-  this->M8 = *(void **)(a2 + 8); /*0x74bc27*/
+  this->M8 = (unsigned int)(*(void **)(a2 + 8)); /*0x74bc27*/
   if ( &this->M8 == (void **)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
   (*((void (**)(void **))*p_vtable3 + 3))(p_vtable3); /*0x74bc30*/
@@ -772,7 +772,7 @@ LABEL_8:
     this->AbstractClass = *(void **)a2; /*0x74bc85*/
     return &this->AbstractClass; /*0x74bc8d*/
   }
-  v5 = __2_YAPAXI_Z(v4); /*0x74bc3e*/
+  v5 = (int)(__2_YAPAXI_Z(v4)); /*0x74bc3e*/
   p_vtable3[1] = (void *)v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -803,14 +803,14 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   int abstractFlags; // ecx
   int v7; // eax
 
-  vtable2 = this->M8; /*0x74bca6*/
+  vtable2 = (void *)(this->M8); /*0x74bca6*/
   if ( vtable2 != (void *)-1 ) /*0x74bcac*/
   {
     SetBitfieldBit(this->M16, (int)vtable2, LOBYTE(this->M16)); /*0x74bcb7*/
-    this->M8 = (void *)-1; /*0x74bcbc*/
+    this->M8 = (unsigned int)((void *)-1); /*0x74bcbc*/
   }
   LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
-  this->M8 = *(void **)(a2 + 8); /*0x74bcd8*/
+  this->M8 = (unsigned int)(*(void **)(a2 + 8)); /*0x74bcd8*/
   if ( &this->M8 == (void **)(a2 + 12) ) /*0x74bcdb*/
     goto LABEL_10; /*0x74bcdb*/
   (*((void (**)(void **))this->M12 + 3))(&this->M12); /*0x74bce1*/
@@ -824,7 +824,7 @@ LABEL_10:
     this->AbstractClass = *(void **)a2; /*0x74bd37*/
     return &this->AbstractClass; /*0x74bd39*/
   }
-  v5 = __2_YAPAXI_Z(v4); /*0x74bcef*/
+  v5 = (int)(__2_YAPAXI_Z(v4)); /*0x74bcef*/
   this->M4 = v5; /*0x74bcf7*/
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
@@ -858,11 +858,11 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   void (**vtable3)(void **); // edx
   unsigned int v12; // [esp+10h] [ebp+4h]
 
-  vtable2 = this->M8; /*0x74bdc8*/
+  vtable2 = (void *)(this->M8); /*0x74bdc8*/
   if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
   {
     SetBitfieldBit(this->M16, (int)vtable2, LOBYTE(this->M16)); /*0x74bdd8*/
-    this->M8 = (void *)-1; /*0x74bddd*/
+    this->M8 = (unsigned int)((void *)-1); /*0x74bddd*/
   }
   if ( a2 ) /*0x74bde6*/
   {
@@ -886,7 +886,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
               SetBitfieldBit(this->M16, (int)v7, LOBYTE(this->M16)); /*0x74be32*/
             if ( v8 != -1 ) /*0x74be3a*/
               LOBYTE(this->M4) = BitArray::TestBit(this->M4, v8); /*0x74be46*/
-            this->M8 = (void *)v8; /*0x74be49*/
+            this->M8 = (unsigned int)((void *)v8); /*0x74be49*/
           }
         }
         ++vtable0; /*0x74be4c*/
@@ -898,11 +898,11 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   else
   {
-    v10 = this->M8; /*0x74be60*/
+    v10 = (void *)(this->M8); /*0x74be60*/
     if ( v10 != (void *)-1 ) /*0x74be65*/
     {
       SetBitfieldBit(this->M16, (int)v10, LOBYTE(this->M16)); /*0x74be70*/
-      this->M8 = (void *)-1; /*0x74be75*/
+      this->M8 = (unsigned int)((void *)-1); /*0x74be75*/
     }
     vtable3 = (void (**)(void **))this->M12; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
@@ -966,12 +966,12 @@ int InitializeVeinholeSystem(char a1)
   if ( !a1 ) /*0x74dea6*/
   {
   LABEL_17:
-    v4 = dword_B1D2F0; /*0x74dffd*/
+    v4 = (void *)(dword_B1D2F0); /*0x74dffd*/
     goto LABEL_18; /*0x74dffd*/
   }
   for ( i = dword_B1D2A0 - 1; i >= 0; --i ) /*0x74deb8*/
     System_Init_74E8A0(*((unsigned int *)dword_B1D294 + i)); /*0x74dec3*/
-  v4 = dword_B1D2F0; /*0x74decb*/
+  v4 = (void *)(dword_B1D2F0); /*0x74decb*/
   if ( dword_B1D2F0 ) /*0x74ded2*/
   {
     operator delete((void *)(dword_B1D2F0)); /*0x74ded5*/
@@ -986,8 +986,8 @@ int InitializeVeinholeSystem(char a1)
       v6 = operator new(8 * dword_8871E0->AircraftFogReveal); /*0x74df08*/
       if ( !v6 ) /*0x74df12*/
         v6 = 0; /*0x74df1b*/
-      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 180) = v6; /*0x74df28*/
-      v7 = operator new(0x14u); /*0x74df33*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 180) = (unsigned int)(v6); /*0x74df28*/
+      v7 = (unsigned int *)(operator new(0x14u)); /*0x74df33*/
       if ( v7 ) /*0x74df3a*/
       {
         VeinholeShrinkRate = dword_8871E0->AircraftFogReveal; /*0x74df42*/
@@ -997,7 +997,7 @@ int InitializeVeinholeSystem(char a1)
         *v7 = 0; /*0x74df5c*/
         v9 = operator new(4 * VeinholeShrinkRate + 4); /*0x74df5f*/
         v10 = v7[1]; /*0x74df64*/
-        v7[2] = v9; /*0x74df67*/
+        v7[2] = (unsigned int)(v9); /*0x74df67*/
         v11 = 0; /*0x74df6d*/
         if ( v10 >= 0 ) /*0x74df71*/
         {
@@ -1013,8 +1013,8 @@ int InitializeVeinholeSystem(char a1)
       {
         v7 = 0; /*0x74df84*/
       }
-      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 176) = v7; /*0x74df90*/
-      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 196) = operator new(v2); /*0x74dfa9*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 176) = (unsigned int)(v7); /*0x74df90*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D294 + v5) + 196) = (unsigned int)(operator new(v2)); /*0x74dfa9*/
       memset(*(void **)(*((unsigned int *)dword_B1D294 + v5) + 196), 0, v2); /*0x74dfc5*/
       v12 = *(unsigned int **)(*((unsigned int *)dword_B1D294 + v5) + 176); /*0x74dfd6*/
       for ( j = 0; j <= *v12; *(unsigned int *)(v12[2] + 4 * j - 4) = 0 ) /*0x74dfe0*/
@@ -1028,7 +1028,7 @@ int InitializeVeinholeSystem(char a1)
   }
   LABEL_18:
   if ( !v4 ) /*0x74e004*/
-    dword_B1D2F0 = operator new(v2); /*0x74e00f*/
+    dword_B1D2F0 = (unsigned int)(operator new(v2)); /*0x74e00f*/
   LayerClass::CellIteratorReset(&dword_87F7E8); /*0x74e019*/
   for ( k = LayerClass::CellIteratorNext(&dword_87F7E8); k; k = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x74e02f*/
     *(unsigned int *)(k + 320) &= ~0x8000u; /*0x74e03e*/
@@ -1063,13 +1063,13 @@ char _e4::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->ptr_8; /*0x74f3c2*/
+  m_8 = (int)(this->ptr_8); /*0x74f3c2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x74f3cd*/
   {
     v3 = 0; /*0x74f3cf*/
     if ( m_8 <= 0 ) /*0x74f3d3*/
       return 1; /*0x74f3f3*/
-    v4 = *&this->u32_4; /*0x74f3d5*/
+    v4 = (unsigned int *)(*&this->u32_4); /*0x74f3d5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x74f3db*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x74f3e4*/
     {
@@ -1104,7 +1104,7 @@ char _e4::Release(int a2, unsigned int * a3)
     {
       if ( *&this->u32_4 ) /*0x74f445*/
       {
-        m_8 = this->ptr_8; /*0x74f44c*/
+        m_8 = (int)(this->ptr_8); /*0x74f44c*/
         if ( a2 < m_8 ) /*0x74f451*/
           m_8 = a2; /*0x74f453*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x74f459*/
@@ -1115,8 +1115,8 @@ char _e4::Release(int a2, unsigned int * a3)
           *&this->u32_4 = 0; /*0x74f47e*/
         }
       }
-      *&this->u32_4 = v4; /*0x74f487*/
-      this->ptr_8 = a2; /*0x74f48f*/
+      *&this->u32_4 = (unsigned int)(v4); /*0x74f487*/
+      this->ptr_8 = (gamemd::AbstractClass *)(a2); /*0x74f48f*/
       BYTE1(this->u32_C) = a3 == 0; /*0x74f492*/
       return 1; /*0x74f498*/
     }
@@ -1159,7 +1159,7 @@ int _e4::Read(unsigned int * a2)
 
   if ( !this->u32_C ) /*0x74f4e0*/
     return 0; /*0x74f4e8*/
-  v3 = this->ptr_8; /*0x74f4ee*/
+  v3 = (int)(this->ptr_8); /*0x74f4ee*/
   result = 0; /*0x74f4f1*/
   if ( v3 <= 0 ) /*0x74f4f5*/
     return -1; /*0x74f50c*/

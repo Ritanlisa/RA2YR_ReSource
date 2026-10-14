@@ -253,7 +253,7 @@ int COM_Property_ReadBool(int a1, int a2, char a3)
   int v6; // esi
   int v8; // [esp+30h] [ebp-4h] BYREF
 
-  v8 = (unsigned int *)(0);
+  v8 = (int)((unsigned int *)(0));
   v3 = 0; /*0x682a9e*/
   v4 = (unsigned int *)(&unk_83D658); /*0x682aa0*/
   while ( *v4 != a2 ) /*0x682aa7*/
@@ -420,7 +420,7 @@ int COM_WriteInt(int a1, int a2, int a3)
   int v6; // esi
   int v8; // [esp+30h] [ebp-4h] BYREF
 
-  v8 = (unsigned int *)(0);
+  v8 = (int)((unsigned int *)(0));
   v3 = 0; /*0x682e1e*/
   v4 = (unsigned int *)(&unk_83D658); /*0x682e20*/
   while ( *v4 != a2 ) /*0x682e27*/
@@ -562,7 +562,7 @@ void * * ScenarioClass_SetTimer(int a1)
 
   if ( a1 ) /*0x684068*/
   {
-    Ticks = (void **)(TimerGetTicks());
+    Ticks = (DWORD)((void **)(TimerGetTicks()));
     v3 = &dword_A8B230->u32_620; /*0x68407c*/
     dword_A8B230->u32_620 = Ticks; /*0x68408c*/
     v3->__pad_004 = v9; /*0x684092*/
@@ -813,7 +813,7 @@ int PostLoadInitScenario()
       v36 = 2688; /*0x68500f*/
       v37 = 2688; /*0x685013*/
       GroundHeight = 0; /*0x685017*/
-      v29 = WarheadTypeClass::applyDamage(aGascloudsys); /*0x68501b*/
+      v29 = (int)(WarheadTypeClass::applyDamage(aGascloudsys)); /*0x68501b*/
       dword_A8ED78 = (ObjectClass *)ParticleSystemClass::Constructor( /*0x685040*/
                                       v28,
                                       *((unsigned int *)dword_A83D6C + v29),
@@ -941,7 +941,7 @@ int ScenarioClass_Reset()
   v7 = 0; /*0x685354*/
   for ( j = 0; j < 2050; j += 41 ) /*0x685356*/
   {
-    v9 = dword_A8B230; /*0x685358*/
+    v9 = (gamemd::AbstractClass *)(dword_A8B230); /*0x685358*/
     if ( (unsigned int)j < 0x802 && *((unsigned char *)&dword_A8B230[204].vfptr + j) ) /*0x685365*/
     {
       *((unsigned char *)&dword_A8B230[204].vfptr + j) = 0; /*0x68536e*/
@@ -959,7 +959,7 @@ int ScenarioClass_Reset()
     v11 = (IPersistStream *)TacticalMap::Construct(v10); /*0x6853b4*/
   else
     v11 = 0; /*0x6853bb*/
-  g_TacticalClass_Instance = v11; /*0x6853bf*/
+  g_TacticalClass_Instance = (int)(v11); /*0x6853bf*/
   Map_Setup_6DA980(); /*0x6853c4*/
   byte_829AE4 = 0; /*0x6853ce*/
   while ( dword_A8E370 ) /*0x6853d6*/
@@ -1459,7 +1459,7 @@ void GenerateScenarioUnits(char a1)
   v64 = 0; /*0x6886f1*/
   if ( g_abs_A8B258 ) /*0x6886f9*/
     ppv = (char *)ppv - 1; /*0x6886fb*/
-  qmemcpy(v54, &dword_A8B230->u32_218, sizeof(v54)); /*0x68871d*/
+  memcpy(v54, &dword_A8B230->u32_218, sizeof(v54)); /*0x68871d*/
   Debug::Log(); /*0x688724*/
   Debug::Log(); /*0x68873a*/
   v1 = 0; /*0x68874a*/
@@ -1676,7 +1676,7 @@ void GenerateScenarioUnits(char a1)
           v86[2] = 0; /*0x688b8b*/
           v86[0] = ((int16_t)v58 << 8) + 128; /*0x688b92*/
           v54[251] = v86; /*0x688ba9*/
-          v86[1] = (IDA_SHIWORD(v58) << 8) + 128; /*0x688bac*/
+          v86[1] = ((*((signed short *)(((unsigned char *)&(v58)) + 2))) << 8) + 128; /*0x688bac*/
           if ( v42->COMStub_54(v86, 0) /*0x688bc5*/
             || FindInfantryDeployPosition(v42, (int16_t *)&v58, 1) )
           {

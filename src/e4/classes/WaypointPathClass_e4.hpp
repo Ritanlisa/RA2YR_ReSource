@@ -25,7 +25,7 @@ struct WaypointPathClass {
     unsigned char pad_36;  // 0x4A
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
-    unsigned int * Construct(unsigned int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    int Construct(unsigned int aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     int Init(void *a1 = 0, void *a2 = 0);
     int LoadState(unsigned int * a1, int a2);
     int PowerDrainUpdate(int a2);
@@ -33,7 +33,7 @@ struct WaypointPathClass {
     int StubReturn51();
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
-    unsigned int * computePath(int a2, unsigned int *a3, void *a1 = 0);
+    unsigned int * computePath(int a2, unsigned int *a3, void *a3_1 = 0);
     unsigned int q030;  // 0x30 (canon-mt)
     int waypoints[6];  // 0x28 (ml)
 

@@ -18,7 +18,7 @@ struct VectorClass_ptr_ScriptTypeClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_ScriptTypeClass___(char a2);  // 0x4F0520
     DynamicVector *  Constructor_VectorClass_OverlayTypeClass___(char a2);  // 0x4F05C0
-    int Get(void *a1_1, void *a1 = 0);  // 0x4E8C00
+    int Get(int a2, void *a2_2);  // 0x4E8C00
     void Destroy_0();  // 0x4E8C60
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8C90
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4ECEE0

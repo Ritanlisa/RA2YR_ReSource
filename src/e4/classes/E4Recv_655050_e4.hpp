@@ -11,6 +11,6 @@ struct E4Recv_655050 {
     unsigned int M5264;  // 0x1490
     unsigned int M5272;  // 0x1498
 // --- flat members (END) ---
-    unsigned int *  sub_655050(unsigned int * a2, int16_t * a3);  // 0x655050
+    unsigned int * sub_655050(unsigned int * v5, int16_t * a3);  // 0x655050
 };
 } // namespace gamemd

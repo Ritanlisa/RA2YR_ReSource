@@ -73,7 +73,7 @@ struct RadioClass {
     char lastCommands[12];  // 0xD4
     unsigned int radioLinks;  // 0xE0
 // --- flat members (END) ---
-    int ExecuteAction(int a2, char a3);  // G57w10-S raw 0x0065AAC0 IUnknown 占位清除
+    int ExecuteAction(int aP1, char aP2);  // G57w10-S raw 0x0065AAC0 IUnknown 占位清除
     int FindLinkIndex(int a2);
     int HasFreeLink();
     int LoadState(int aP1, int aP2);

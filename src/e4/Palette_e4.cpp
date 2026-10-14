@@ -27,7 +27,7 @@ unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
   this->m_Colors[0] = a2; /*0x4355ba*/
   this->m_Colors[1] = a3; /*0x4355c0*/
   this->m_Colors[2] = a4; /*0x4355c3*/
-  return this->m_Colors; /*0x4355c6*/
+  return (unsigned char *)(this->m_Colors); /*0x4355c6*/
 }
 }  // G42.18 ns repair
 // 0x642130
@@ -100,20 +100,20 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   DSurface::Construct((char *)&v61.Width, v9 / 2, 0, 0, v41); /*0x642170*/
   v59 = 0; /*0x642181*/
   v10 = *(unsigned int *)a1->m_Colors; /*0x642185*/
-  Height = v61.Height; /*0x642187*/
+  Height = (int)(v61.Height); /*0x642187*/
   v58 = 0; /*0x64218b*/
   *(unsigned int *)v61.vtable1 = v61.LockCount; /*0x64218f*/
   v11 = (*(int (**)(int))(*(unsigned int *)v10 + 120))(v10); /*0x64219c*/
   ((DSurface *)((DSurface *)&v61))->BlitPart((int)&v57, *(unsigned int *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
   v12 = (void *)operator new(0x4000u); /*0x6421bb*/
   memset(v12, 0, 0x4000u); /*0x6421c6*/
-  v49 = v12; /*0x6421cd*/
+  v49 = (unsigned int *)(v12); /*0x6421cd*/
   Block = 0; /*0x6421d1*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x6421db*/
   v42 = 0; /*0x6421e4*/
   if ( v61.Height > 0 ) /*0x6421ea*/
   {
-    Width = v61.Width; /*0x6421f0*/
+    Width = (int)(v61.Width); /*0x6421f0*/
     do /*0x6422f7*/
     {
       v14 = 0; /*0x6421f4*/
@@ -141,7 +141,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
             ++Block; /*0x6422cf*/
           ++v14; /*0x6422d4*/
           v49[v19] = v20 + 1; /*0x6422d5*/
-          Width = v61.Width; /*0x6422d8*/
+          Width = (int)(v61.Width); /*0x6422d8*/
         }
         while ( v14 < v61.Width ); /*0x6422de*/
         v12 = v49; /*0x6422e4*/
@@ -151,7 +151,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
     while ( v42 < v61.Height ); /*0x6422f7*/
   }
   DSurface::Unlock((DSurface *)&v61); /*0x642301*/
-  v21 = a2; /*0x642306*/
+  v21 = (int)(a2); /*0x642306*/
   v22 = operator new(2 * a2); /*0x642311*/
   Blocka = (unsigned short *)v22; /*0x642319*/
   v45 = 0; /*0x64231f*/
@@ -190,7 +190,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v44 = 0; /*0x64239f*/
   if ( v61.Height > 0 ) /*0x6423a9*/
   {
-    v27 = v61.Width; /*0x6423af*/
+    v27 = (int)(v61.Width); /*0x6423af*/
     while ( 1 ) /*0x6423b3*/
     {
       v28 = 0; /*0x6423b3*/
@@ -243,15 +243,15 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   LABEL_31:
         if ( v37 != -1 && v37 < 256 ) /*0x6424dc*/
         {
-          v21 = a2; /*0x6424f3*/
+          v21 = (int)(a2); /*0x6424f3*/
           goto LABEL_36; /*0x6424f3*/
         }
-        v21 = a2; /*0x6424de*/
+        v21 = (int)(a2); /*0x6424de*/
       }
       (*((unsigned char *)&(v37))) = 0; /*0x6424ed*/
   LABEL_36:
       *v51 = v37; /*0x6424fa*/
-      v27 = v61.Width; /*0x642500*/
+      v27 = (int)(v61.Width); /*0x642500*/
       ++v51; /*0x642505*/
       v28 = ++v52; /*0x64250d*/
       if ( v52 >= v61.Width ) /*0x642514*/
@@ -263,8 +263,8 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v38 = 2 * v21 + 12 + v61.Height * v61.Width; /*0x642545*/
   v54[0] = 2 * v21 + 12; /*0x642547*/
   v39 = (int *)operator new(v38); /*0x642551*/
-  *v39 = v61.Width; /*0x64255b*/
-  v39[1] = v61.Height; /*0x642562*/
+  *v39 = (int)(v61.Width); /*0x64255b*/
+  v39[1] = (int)(v61.Height); /*0x642562*/
   v39[2] = v21; /*0x64256a*/
   v40 = v54[0]; /*0x642570*/
   memcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
@@ -275,7 +275,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   *(unsigned int *)a3 = v38; /*0x6425c9*/
   Debug::Log(); /*0x6425cb*/
   DSurface::Destroy((DSurface *)&v61); /*0x6425d7*/
-  return (int)v39; /*0x64213f*/
+  return (gamemd::AbstractClass **)((int)v39); /*0x64213f*/
 }
 }
 // 0x661350
@@ -300,7 +300,7 @@ int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
 }  // G42.18c ns repair
 // 0x626200
 namespace gamemd {  // G42.18c ns repair
-int Palette::FindClosestColor(Palette *a2)
+int Palette::FindClosestColor(Palette *a2, void *a2_1)
 {
   int v2; // ebx
   int v3; // esi

@@ -128,7 +128,7 @@ int LoadGame::LoadTriggerEvents()
 } // namespace gamemd
 // 0x660F10
 namespace gamemd {
-void LoadGame::RemoveItem(int a2)
+void LoadGame::RemoveItem(int a2, void *a2_1)
 {
 
   int LoadGame_field_0x10; // edx
@@ -452,7 +452,7 @@ int LoadGame::LoadPointArray(int a2)
       v8 = p_LoadGame_field_0x0C[4]; /*0x54e857*/
       v9 = p_LoadGame_field_0x0C[1]; /*0x54e85a*/
       p_LoadGame_field_0x0C[4] = v8 + 1; /*0x54e860*/
-      *(unsigned int *)(v9 + 4 * v8) = v4; /*0x54e863*/
+      *(unsigned int *)(v9 + 4 * v8) = (unsigned int)(v4); /*0x54e863*/
       ++v13; /*0x54e871*/
     }
   }

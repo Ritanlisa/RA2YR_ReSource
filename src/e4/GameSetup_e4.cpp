@@ -43,7 +43,7 @@ int GameSetup::LookupDialogHash()
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }
-  v3 = v1 + 1; /*0x60d36e*/
+  v3 = (unsigned int *)(v1 + 1); /*0x60d36e*/
   if ( v3 ) /*0x60d373*/
     return v3[27]; /*0x60d375*/
   else
@@ -80,6 +80,6 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
     v5 += 3; /*0x699088*/
   }
   while ( v4 < 8 ); /*0x69908e*/
-  return result; /*0x699090*/
+  return (gamemd::AbstractClass **)(result); /*0x699090*/
 }
 } // namespace gamemd

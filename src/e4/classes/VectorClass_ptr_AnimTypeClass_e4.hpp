@@ -19,7 +19,7 @@ struct VectorClass_ptr_AnimTypeClass {
     DynamicVector *  Constructor_VectorClass_AnimTypeClass___(char a2);  // 0x4F0980
     DynamicVector *  Constructor_VectorClass_InfantryTypeClass___(char a2);  // 0x4F0A20
     DynamicVector *  Constructor_VectorClass_BulletTypeClass___(char a2);  // 0x4F0AC0
-    int Get(void *a1_1, void *a1 = 0);  // 0x4E8EA0
+    int Get(int a2, void *a2_2);  // 0x4E8EA0
     void Destroy_0();  // 0x4E8F00
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8F30
     void Destroy_1();  // 0x4E8F60

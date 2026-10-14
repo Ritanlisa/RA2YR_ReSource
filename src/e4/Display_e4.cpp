@@ -39,6 +39,6 @@ int Display::GetViewport()
   result[1] = 0; /*0x72ad72*/
   result[2] = v3; /*0x72ad76*/
   result[3] = v4; /*0x72ad79*/
-  return result; /*0x72ad75*/
+  return (int)(result); /*0x72ad75*/
 }
 } // namespace gamemd

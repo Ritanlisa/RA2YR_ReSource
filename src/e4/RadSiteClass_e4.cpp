@@ -55,7 +55,7 @@ RadSiteClass::RadSiteClass()
          0) )
   {
     v3 = dword_B04BE0++; /*0x65b284*/
-    *((unsigned int *)dword_B04BD4 + v3) = this; /*0x65b293*/
+    *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
   }
   return &this->AbstractClass; /*0x65b298*/
 

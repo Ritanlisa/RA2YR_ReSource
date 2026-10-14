@@ -11,7 +11,7 @@ struct E4Recv_4A2030 {
     unsigned int q054;  // 0x54
     unsigned int q084;  // 0x84
 // --- flat members (END) ---
-    int  sub_4A2030(uint8_t * a2, int a3);  // 0x4A2030
+    int sub_4A2030(Pipe * aP1, int aP2);  // 0x4A2030
 
     unsigned char u32_C[4];  /* Checksummer */  // X10 supply (member_lookup)
 };

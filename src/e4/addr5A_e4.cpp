@@ -293,12 +293,12 @@ int ProcessRandomMapCellAdjacency()
   result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
-    NeighbourContent = Cell::GetNeighbourContent((unsigned int *)i, 5u); /*0x5a1a12*/
-    v14 = Cell::GetNeighbourContent((unsigned int *)i, 1u); /*0x5a1a1f*/
-    v2 = Cell::GetNeighbourContent((unsigned int *)i, 3u); /*0x5a1a2c*/
+    NeighbourContent = (void *)(Cell::GetNeighbourContent((unsigned int *)i, 5u)); /*0x5a1a12*/
+    v14 = (void *)(Cell::GetNeighbourContent((unsigned int *)i, 1u)); /*0x5a1a1f*/
+    v2 = (void *)(Cell::GetNeighbourContent((unsigned int *)i, 3u)); /*0x5a1a2c*/
     v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/
     v4 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 6u); /*0x5a1a44*/
-    AdjacencyFlags = Cell::GetAdjacencyFlags(i); /*0x5a1a46*/
+    AdjacencyFlags = (int)(Cell::GetAdjacencyFlags(i)); /*0x5a1a46*/
     if ( AdjacencyFlags == 131 )
     {
       if ( Cell::GetAdjacencyFlags((int)v2) != 131 || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
@@ -312,7 +312,7 @@ int ProcessRandomMapCellAdjacency()
       if ( v6 ) /*0x5a1aa7*/
         goto LABEL_32; /*0x5a1aa7*/
       v3->u32_11B -= 4; /*0x5a1ab6*/
-      v7 = dword_ABED10; /*0x5a1abc*/
+      v7 = (unsigned int *)(dword_ABED10); /*0x5a1abc*/
       v8 = dword_ABED10
          ? *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14)
          : -1;
@@ -334,7 +334,7 @@ int ProcessRandomMapCellAdjacency()
       if ( v11 ) /*0x5a1b58*/
         goto LABEL_32; /*0x5a1b58*/
       v4->u32_11B -= 4; /*0x5a1b67*/
-      v7 = dword_ABED10; /*0x5a1b6d*/
+      v7 = (unsigned int *)(dword_ABED10); /*0x5a1b6d*/
       v8 = dword_ABED10
          ? *((unsigned int *)dword_ABED10 + 20 * *(int16_t *)(i + 36) + 20 * g_MapCellWidth * *(int16_t *)(i + 38) + 14)
          : -1;
@@ -353,7 +353,7 @@ int ProcessRandomMapCellAdjacency()
         goto LABEL_32; /*0x5a1bea*/
       }
       *(unsigned char *)(i + 283) += 4; /*0x5a1bfc*/
-      v7 = dword_ABED10; /*0x5a1c02*/
+      v7 = (unsigned int *)(dword_ABED10); /*0x5a1c02*/
       v8 = dword_ABED10 ? *((unsigned int *)dword_ABED10 + 20 * v4[18] + 20 * g_MapCellWidth * v4[19] + 14) : -1;
       if ( !dword_ABED10 ) /*0x5a1c30*/
         goto LABEL_32; /*0x5a1c30*/
@@ -391,7 +391,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   __int16 v16[2]; // [esp+8h] [ebp-8h] BYREF
   ObjectClass *v17; // [esp+Ch] [ebp-4h]
 
-  v17 = this; /*0x5a1c7c*/
+  v17 = (gamemd::ObjectClass *)(this); /*0x5a1c7c*/
   if ( g_MissionQueueFrame.localVariables[163] ) /*0x5a1c80*/
   {
     v1 = g_MapCellWidth * g_MapCellWidth; /*0x5a1c88*/
@@ -462,9 +462,7 @@ int E4Recv_5A1C70::sub_5A1C70()
       if ( *(unsigned int *)(v13 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1de2*/
         && (*(unsigned short *)result || result->u32_2) )
       {
-        v15 = (RandomMap *)CellCoord::To_CellObj( /*0x5a1def*/
-                             (CellCoord *)&DataGlobal_87F7E8,
-                             (__int16 *)(v13 + g_MissionQueueFrame.localVariables[163]));
+                v15 = (RandomMap *)CellCoord::To_CellObj((int16_t *)(/*0x5a1def*/                              (CellCoord *)&DataGlobal_87F7E8),                              (__int16 *)(v13 + g_MissionQueueFrame.localVariables[163]));
         result = (int)RandomMap::GenerateTerrain(v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           result->__pad_01A = 0; /*0x5a1dff*/
@@ -740,7 +738,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
           {
             v48 = v20[9]; /*0x5a488e*/
             v23 = Terrain::LookupByName(Buffer); /*0x5a4892*/
-            TerrainClass::Construct(v22, *((void **)dword_A8E31C + v23), (int16_t *)&v48); /*0x5a48aa*/
+            TerrainClass::Construct(v22,(int16_t *)(*((void **)dword_A8E31C + v23)), (int16_t *)&v48); /*0x5a48aa*/
           }
           ++v42; /*0x5a48af*/
         }
@@ -878,7 +876,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   if ( v6 ) /*0x5a4b86*/
   {
     v7 = v6; /*0x5a4b8b*/
-    IDA_LODWORD(v47) = v5 - 1; /*0x5a4b8d*/
+    (*((unsigned int *)&(v47))) = v5 - 1; /*0x5a4b8d*/
     v41 = v6; /*0x5a4b91*/
   }
   else
@@ -929,7 +927,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   *v7 = aP0->u32_24; /*0x5a4c23*/
   v7[1] = 0.0; /*0x5a4c25*/
   v44 = aP0->u32_24; /*0x5a4c2b*/
-  *((unsigned int *)dword_ABED10 + 20 * IDA_SLOWORD(v44) + 20 * g_MapCellWidth * IDA_SHIWORD(v44) + 15) = a4; /*0x5a4c4f*/
+  *((unsigned int *)dword_ABED10 + 20 * (*((signed short *)&(v44))) + 20 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v44)) + 2))) + 15) = a4; /*0x5a4c4f*/
   v15 = *v9 + 1; /*0x5a4c58*/
   v44 = v7[1]; /*0x5a4c5b*/
   v16 = v15 >> 1; /*0x5a4c62*/
@@ -986,30 +984,30 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       do /*0x5a4f42*/
       {
         v39 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(v40)), (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
-        v43 = IDA_SHIWORD(v39) + (int16_t)v39; /*0x5a4d55*/
+        v43 = (*((signed short *)(((unsigned char *)&(v39)) + 2))) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
-          && (int16_t)v39 - IDA_SHIWORD(v39) < dword_ABED04
-          && IDA_SHIWORD(v39) - (int16_t)v39 < dword_ABED04
+          && (int16_t)v39 - (*((signed short *)(((unsigned char *)&(v39)) + 2))) < dword_ABED04
+          && (*((signed short *)(((unsigned char *)&(v39)) + 2))) - (int16_t)v39 < dword_ABED04
           && v43 <= dword_ABED08 )
         {
           v27 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v39); /*0x5a4d96*/
           v43 = (int)v27; /*0x5a4d9a*/
           if ( ((Cell*)v27)->IsEmpty() || a5 && (CellClass::InBounds((gamemd::CellClass *)(v27)) || CellClass::InMapDataRange((gamemd::CellClass *)(v27))) ) /*0x5a4dbf*/
           {
-            v28 = IDA_SHIWORD(v39); /*0x5a4dcc*/
-            IDA_LODWORD(v46) = (int16_t)v39; /*0x5a4de4*/
-            if ( *((unsigned int *)dword_ABED10 + 20 * (int16_t)v39 + 20 * g_MapCellWidth * IDA_SHIWORD(v39) + 15) != a4 /*0x5a4e1a*/
+            v28 = (*((signed short *)(((unsigned char *)&(v39)) + 2))); /*0x5a4dcc*/
+            (*((unsigned int *)&(v46))) = (int16_t)v39; /*0x5a4de4*/
+            if ( *((unsigned int *)dword_ABED10 + 20 * (int16_t)v39 + 20 * g_MapCellWidth * (*((signed short *)(((unsigned char *)&(v39)) + 2))) + 15) != a4 /*0x5a4e1a*/
               && !v43->q11C
               && v43->q044 == -1
               && !v43->q0E4 )
             {
               *(unsigned int *)v26 = v39; /*0x5a4e2f*/
               v43 = aP0->u32_24; /*0x5a4e3b*/
-              IDA_LODWORD(v46) = ((int16_t)v43 - IDA_LODWORD(v46)) * ((int16_t)v43 - IDA_LODWORD(v46)) /*0x5a4e57*/
-                           + (IDA_SHIWORD(v43) - v28) * (IDA_SHIWORD(v43) - v28);
-              v46 = Math::Sqrt((double)IDA_SLODWORD(v46)); /*0x5a4e67*/
+              (*((unsigned int *)&(v46))) = ((int16_t)v43 - (*((unsigned int *)&(v46)))) * ((int16_t)v43 - (*((unsigned int *)&(v46)))) /*0x5a4e57*/
+                           + ((*((signed short *)(((unsigned char *)&(v43)) + 2))) - v28) * ((*((signed short *)(((unsigned char *)&(v43)) + 2))) - v28);
+              v46 = Math::Sqrt((double)(*((signed int *)&(v46)))); /*0x5a4e67*/
               v49 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a4e78*/
-              v29 = IDA_SHIWORD(v39); /*0x5a4e88*/
+              v29 = (*((signed short *)(((unsigned char *)&(v39)) + 2))); /*0x5a4e88*/
               v30 = (int16_t)v39; /*0x5a4e93*/
               v26[1] = (double)v49 * 5.0 * 2.328306437080797e-10 + v46; /*0x5a4ea2*/
               *((unsigned int *)dword_ABED10 + 20 * v30 + 20 * g_MapCellWidth * v29 + 15) = a4; /*0x5a4eba*/
@@ -1026,10 +1024,10 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
               {
                 for ( ; v33 > 1; v35 >>= 1 ) /*0x5a4ee8*/
                 {
-                  IDA_LODWORD(v46) = *(unsigned int *)(v9[2] + 4 * v35); /*0x5a4ef0*/
-                  if ( *(float *)(IDA_LODWORD(v46) + 4) <= (double)v47 ) /*0x5a4f00*/
+                  (*((unsigned int *)&(v46))) = *(unsigned int *)(v9[2] + 4 * v35); /*0x5a4ef0*/
+                  if ( *(float *)((*((unsigned int *)&(v46))) + 4) <= (double)v47 ) /*0x5a4f00*/
                     break; /*0x5a4f00*/
-                  *(unsigned int *)(v9[2] + 4 * v33) = IDA_LODWORD(v46); /*0x5a4f09*/
+                  *(unsigned int *)(v9[2] + 4 * v33) = (*((unsigned int *)&(v46))); /*0x5a4f09*/
                   v31 = v43; /*0x5a4f0c*/
                   v33 = v35; /*0x5a4f10*/
                 }
@@ -1044,10 +1042,10 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
             }
           }
         }
-        v25 = IDA_LOBYTE(v44) + 1; /*0x5a4f3a*/
-        ++IDA_LODWORD(v44); /*0x5a4f3e*/
+        v25 = (*((unsigned char *)&(v44))) + 1; /*0x5a4f3a*/
+        ++(*((unsigned int *)&(v44))); /*0x5a4f3e*/
       }
-      while ( IDA_SLODWORD(v44) < 8 ); /*0x5a4f42*/
+      while ( (*((signed int *)&(v44))) < 8 ); /*0x5a4f42*/
       v37 = ++v45; /*0x5a4f4e*/
       v38 = (int16_t *)PriorityQueue::Pop(v9); /*0x5a4f53*/
       v7 = v41; /*0x5a4f58*/
@@ -1150,7 +1148,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v40[2])(&v40, v8 + v7, 0) ) /*0x5a65f7*/
       {
   LABEL_10: v10 = (unsigned int)(v44++);
-        *((unsigned int *)Block + v10) = *v9; /*0x5a660f*/
+        *((unsigned int *)Block + v10) = (unsigned int)(*v9); /*0x5a660f*/
       }
       v7 = v42; /*0x5a6612*/
     }
@@ -1158,7 +1156,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       break; /*0x5a661f*/
     v8 = v45; /*0x5a65d1*/
   }
-  v11 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a6626*/
+  v11 = (void *)SuperWeaponTypeClass::FindByName((void *)(aNeutral)); /*0x5a6626*/
   Owner = HouseClass::FindOwner(v11); /*0x5a6634*/
   if ( v6 > 0 )
   {
@@ -1204,7 +1202,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
           if ( !CellClass::InBounds(v21) && !CellClass::InMapDataRange(v21) /*0x5a67da*/
             || v21->u32_E4
             || v21->u32_EC == 3
-            || !Type::CheckAmbiguity(&dword_87F7E8, (int)v21, 1) )
+            || !Type::CheckAmbiguity((int)(&dword_87F7E8), (int)v21, 1) )
           {
             v26 = 0; /*0x5a67e3*/
           }
@@ -1295,7 +1293,7 @@ int PlaceRandomNeutralUnits(int a1)
   double v27; // [esp+4Ch] [ebp-14h]
   unsigned int v28[3]; // [esp+54h] [ebp-Ch] BYREF
 
-  v1 = (void *)SuperWeaponTypeClass::FindByName(aNeutral); /*0x5a692c*/
+  v1 = (void *)SuperWeaponTypeClass::FindByName((void *)(aNeutral)); /*0x5a692c*/
   Owner = (IUnknown *)HouseClass::FindOwner(v1); /*0x5a6938*/
   v22 = Owner; /*0x5a693c*/
   do /*0x5a696e*/
@@ -1331,7 +1329,7 @@ int PlaceRandomNeutralUnits(int a1)
           goto LABEL_14; /*0x5a6a2f*/
         }
         Index = BuildingTypeClass::FindIndex(*(&off_82B180 + v5)); /*0x5a6a14*/
-        v8 = (unsigned int *)UnitClass::Construct((int)v9, *((unsigned int *)dword_A83CE4 + Index), Owner); /*0x5a6a2b*/
+        v8 = (unsigned int *)UnitClass::Construct((int)v9,(LPVOID)(*((unsigned int *)dword_A83CE4 + Index)), Owner); /*0x5a6a2b*/
       }
       else
       {
@@ -1467,7 +1465,7 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
   int v20; // [esp+18h] [ebp-4h]
 
   v19 = (unsigned short *)(aP1);
-  v4 = (unsigned short *)((unsigned int *)*((unsigned int *)dword_A8ED2C + aP0)); /*0x5a6c1e*/
+  v4 = (unsigned int *)((unsigned short *)((unsigned int *)*((unsigned int *)dword_A8ED2C + aP0))); /*0x5a6c1e*/
   result = (*(int (**)(unsigned int *))(*v4 + 156))(v4); /*0x5a6c26*/
   v20 = result; /*0x5a6c2e*/
   if ( result ) /*0x5a6c32*/
@@ -1497,7 +1495,7 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
             else
             {
               v12 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
-              v6 = (unsigned char *)(v17); /*0x5a6ccf*/
+              v6 = (int)((unsigned char *)(v17)); /*0x5a6ccf*/
               v13 = i + v17 * v4[185]; /*0x5a6cda*/
               v14 = *(unsigned int *)(v20 + 4 * v13 + 16); /*0x5a6cdc*/
               if ( v14 ) /*0x5a6ce2*/
@@ -1823,12 +1821,12 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
             (*((unsigned short *)&(v14))) = v11; /*0x5a73a3*/
             (*(((unsigned short *)&(v14)) + 1)) = v10; /*0x5a73a8*/
             v12 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v14); /*0x5a73b2*/
-            if ( sub_4866D0(v12) ) /*0x5a73b6*/
+            if ( sub_4866D0((int)(v12)) ) /*0x5a73b6*/
             {
               if ( !a2 ) /*0x5a73c5*/
                 goto LABEL_31; /*0x5a73c5*/
             }
-            else if ( sub_4866F0(v12) ) /*0x5a73cb*/
+            else if ( sub_4866F0((int)(v12)) ) /*0x5a73cb*/
             {
               if ( !a3 ) /*0x5a73da*/
                 goto LABEL_31; /*0x5a73da*/
@@ -2923,9 +2921,9 @@ unsigned int * InitializePathData()
   *(unsigned int *)v5 = (unsigned int)v118;
   v5->u32_4 = 0;
   *(unsigned int *)&dword_ABE380->vtable1[8] = 1;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE380->vtable1[12] = 2;
-  IDA_HIWORD(v120) = 1;
+  (*(((unsigned short *)&(v120)) + 1)) = 1;
   dword_ABE390 = 0;
   dword_ABE388 = 2;
   v6 = (rc_ptr_base *)new rc_ptr_base;
@@ -3342,9 +3340,9 @@ unsigned int * InitializePathData()
   v49->vfptr = v118;
   v49[1].vfptr = (void *)6;
   *(unsigned int *)&dword_ABE488->vtable1[8] = 65537;
-  IDA_LOWORD(aP2.vfptr) = 0;
+  (*((unsigned short *)&(aP2.vfptr))) = 0;
   *(unsigned int *)&dword_ABE488->vtable1[12] = 7;
-  IDA_HIWORD(aP2.vfptr) = 1;
+  (*(((unsigned short *)&(aP2.vfptr)) + 1)) = 1;
   v118 = (rc_ptr_base *)(0);
   dword_ABE498 = 0;
   dword_ABE490 = 3;
@@ -3365,9 +3363,9 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE494->vtable1[8] = 1;
   *(unsigned int *)&dword_ABE494->vtable1[12] = 2;
   dword_ABE494->uniqueId = (int)aP2.vfptr;
-  IDA_LOWORD(v118) = 0;
+  (*((unsigned short *)&(v118))) = 0;
   dword_ABE494->abstractFlags = 4;
-  IDA_HIWORD(v118) = 1;
+  (*(((unsigned short *)&(v118)) + 1)) = 1;
   v120 = (rc_ptr_base *)1;
   dword_ABE4A4 = 0;
   dword_ABE49C = 3;
@@ -3386,11 +3384,11 @@ unsigned int * InitializePathData()
   *(unsigned int *)vfptr->vtable1 = (unsigned int)v120;
   *(unsigned int *)&vfptr->vtable1[4] = 2;
   *(unsigned int *)&dword_ABE4A0->vtable1[8] = (unsigned int)v118;
-  IDA_LOWORD(v118) = 0;
+  (*((unsigned short *)&(v118))) = 0;
   *(unsigned int *)&dword_ABE4A0->vtable1[12] = 4;
   dword_ABE4A0->uniqueId = 0;
   dword_ABE4A0->abstractFlags = 6;
-  IDA_HIWORD(v118) = 1;
+  (*(((unsigned short *)&(v118)) + 1)) = 1;
   v120 = (rc_ptr_base *)(0);
   dword_ABE4B0 = 0;
   dword_ABE4A8 = 3;
@@ -3409,11 +3407,11 @@ unsigned int * InitializePathData()
   *(unsigned int *)v55->vtable1 = (unsigned int)v120;
   *&v55->uniqueId = 0;
   *(unsigned int *)&dword_ABE4AC->vtable1[8] = (unsigned int)v118;
-  IDA_LOWORD(v118) = 1;
+  (*((unsigned short *)&(v118))) = 1;
   *(unsigned int *)&dword_ABE4AC->vtable1[12] = 4;
   dword_ABE4AC->uniqueId = 0;
   dword_ABE4AC->abstractFlags = 6;
-  IDA_HIWORD(v118) = 0;
+  (*(((unsigned short *)&(v118)) + 1)) = 0;
   v120 = (rc_ptr_base *)(0);
   dword_ABE4BC = 0;
   dword_ABE4B4 = 3;
@@ -3432,9 +3430,9 @@ unsigned int * InitializePathData()
   *(unsigned int *)v57->vtable1 = (unsigned int)v120;
   *&v57->uniqueId = 0;
   *(unsigned int *)&dword_ABE4B8->vtable1[8] = (unsigned int)v118;
-  IDA_LOWORD(aP1.vfptr) = 0;
+  (*((unsigned short *)&(aP1.vfptr))) = 0;
   *(unsigned int *)&dword_ABE4B8->vtable1[12] = 2;
-  IDA_HIWORD(aP1.vfptr) = 0;
+  (*(((unsigned short *)&(aP1.vfptr)) + 1)) = 0;
   dword_ABE4B8->uniqueId = 0;
   dword_ABE4B8->abstractFlags = 6;
   v118 = (rc_ptr_base *)1;
@@ -3456,17 +3454,17 @@ unsigned int * InitializePathData()
   *(unsigned int *)v59->vtable1 = (unsigned int)v120;
   *&v59->uniqueId = 0;
   *(unsigned int *)&dword_ABE4C4->vtable1[8] = (unsigned int)v118;
-  IDA_LOWORD(v118) = 1;
+  (*((unsigned short *)&(v118))) = 1;
   *(unsigned int *)&dword_ABE4C4->vtable1[12] = 2;
-  IDA_HIWORD(v118) = 1;
+  (*(((unsigned short *)&(v118)) + 1)) = 1;
   dword_ABE4C4->uniqueId = 0x10000;
-  IDA_LOWORD(v120) = 2;
+  (*((unsigned short *)&(v120))) = 2;
   dword_ABE4C4->abstractFlags = 4;
-  IDA_HIWORD(v120) = 2;
+  (*(((unsigned short *)&(v120)) + 1)) = 2;
   dword_ABE4C4->nextArrayIndex = (int)aP1.vfptr;
-  IDA_LOWORD(aP2.vfptr) = 2;
+  (*((unsigned short *)&(aP2.vfptr))) = 2;
   dword_ABE4C4->referenceCount = 6;
-  IDA_HIWORD(aP2.vfptr) = 0;
+  (*(((unsigned short *)&(aP2.vfptr)) + 1)) = 0;
   dword_ABE4D4 = 0;
   dword_ABE4CC = 3;
   v60 = (void *)operator new(0x18u);
@@ -3484,14 +3482,14 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v61->vtable1 = aP2;
   *&v61->uniqueId = 1;
   *(unsigned int *)&dword_ABE4D0->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE4D0->vtable1[12] = 3;
   v62 = v118;
-  IDA_LOWORD(v118) = 2;
+  (*((unsigned short *)&(v118))) = 2;
   dword_ABE4D0->uniqueId = (int)v62;
-  IDA_HIWORD(v118) = 2;
+  (*(((unsigned short *)&(v118)) + 1)) = 2;
   dword_ABE4D0->abstractFlags = 5;
-  IDA_HIWORD(v120) = 1;
+  (*(((unsigned short *)&(v120)) + 1)) = 1;
   aP2.vfptr = (void *)65537;
   dword_ABE4E0 = 0;
   dword_ABE4D8 = 3;
@@ -3510,14 +3508,14 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v64->vtable1 = aP2;
   *&v64->uniqueId = 7;
   *(unsigned int *)&dword_ABE4DC->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE4DC->vtable1[12] = 5;
   v65 = v118;
-  IDA_LOWORD(v118) = 1;
+  (*((unsigned short *)&(v118))) = 1;
   dword_ABE4DC->uniqueId = (int)v65;
-  IDA_HIWORD(v118) = 1;
+  (*(((unsigned short *)&(v118)) + 1)) = 1;
   dword_ABE4DC->abstractFlags = 3;
-  IDA_HIWORD(v120) = 1;
+  (*(((unsigned short *)&(v120)) + 1)) = 1;
   aP2.vfptr = (void *)2;
   dword_ABE4EC = 0;
   dword_ABE4E4 = 3;
@@ -3536,14 +3534,14 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v67->vtable1 = aP2;
   *&v67->uniqueId = 1;
   *(unsigned int *)&dword_ABE4E8->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 2;
+  (*((unsigned short *)&(v120))) = 2;
   *(unsigned int *)&dword_ABE4E8->vtable1[12] = 7;
   v68 = v118;
-  IDA_LOWORD(v118) = 2;
+  (*((unsigned short *)&(v118))) = 2;
   dword_ABE4E8->uniqueId = (int)v68;
-  IDA_HIWORD(v118) = 2;
+  (*(((unsigned short *)&(v118)) + 1)) = 2;
   dword_ABE4E8->abstractFlags = 5;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = (void *)65537;
   dword_ABE4F8 = 0;
   dword_ABE4F0 = 3;
@@ -3564,9 +3562,9 @@ unsigned int * InitializePathData()
   *(unsigned int *)&dword_ABE4F4->vtable1[8] = (unsigned int)v120;
   *(unsigned int *)&dword_ABE4F4->vtable1[12] = 1;
   dword_ABE4F4->uniqueId = (int)v118;
-  IDA_LOWORD(v118) = 2;
+  (*((unsigned short *)&(v118))) = 2;
   dword_ABE4F4->abstractFlags = 3;
-  IDA_HIWORD(v118) = 0;
+  (*(((unsigned short *)&(v118)) + 1)) = 0;
   v120 = (rc_ptr_base *)65537;
   aP2.vfptr = (void *)65537;
   dword_ABE504 = 0;
@@ -3586,18 +3584,18 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v72->vtable1 = aP2;
   *&v72->uniqueId = 7;
   *(unsigned int *)&dword_ABE500->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 3;
+  (*((unsigned short *)&(v120))) = 3;
   *(unsigned int *)&dword_ABE500->vtable1[12] = 5;
   v73 = v118;
-  IDA_LOWORD(v118) = 0;
+  (*((unsigned short *)&(v118))) = 0;
   dword_ABE500->uniqueId = (int)v73;
-  IDA_HIWORD(v118) = 2;
+  (*(((unsigned short *)&(v118)) + 1)) = 2;
   dword_ABE500->abstractFlags = 1;
-  IDA_HIWORD(v120) = 2;
+  (*(((unsigned short *)&(v120)) + 1)) = 2;
   dword_ABE500->nextArrayIndex = 131074;
-  IDA_LOWORD(aP2.vfptr) = 3;
+  (*((unsigned short *)&(aP2.vfptr))) = 3;
   dword_ABE500->referenceCount = 3;
-  IDA_HIWORD(aP2.vfptr) = 0;
+  (*(((unsigned short *)&(aP2.vfptr)) + 1)) = 0;
   dword_ABE510 = 0;
   dword_ABE508 = 3;
   v74 = (void *)operator new(0x18u);
@@ -3615,13 +3613,13 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v75->vtable1 = aP2;
   *&v75->uniqueId = 1;
   *(unsigned int *)&dword_ABE50C->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE50C->vtable1[12] = 2;
-  IDA_HIWORD(v120) = 2;
+  (*(((unsigned short *)&(v120)) + 1)) = 2;
   dword_ABE50C->uniqueId = (int)v118;
-  IDA_LOWORD(aP2.vfptr) = 3;
+  (*((unsigned short *)&(aP2.vfptr))) = 3;
   dword_ABE50C->abstractFlags = 6;
-  IDA_HIWORD(aP2.vfptr) = 0;
+  (*(((unsigned short *)&(aP2.vfptr)) + 1)) = 0;
   dword_ABE51C = 0;
   dword_ABE514 = 2;
   v76 = (void *)operator new(0x10u);
@@ -3639,9 +3637,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v77->vtable1 = aP2;
   *&v77->uniqueId = 1;
   *(unsigned int *)&dword_ABE518->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE518->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 2;
+  (*(((unsigned short *)&(v120)) + 1)) = 2;
   aP2.vfptr = (void *)3;
   dword_ABE528 = 0;
   dword_ABE520 = 2;
@@ -3660,9 +3658,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v79->vtable1 = aP2;
   *&v79->uniqueId = 1;
   *(unsigned int *)&dword_ABE524->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE524->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 2;
+  (*(((unsigned short *)&(v120)) + 1)) = 2;
   aP2.vfptr = (void *)3;
   dword_ABE534 = 0;
   dword_ABE52C = 2;
@@ -3681,9 +3679,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v81->vtable1 = aP2;
   *&v81->uniqueId = 1;
   *(unsigned int *)&dword_ABE530->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE530->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 2;
+  (*(((unsigned short *)&(v120)) + 1)) = 2;
   aP2.vfptr = (void *)3;
   dword_ABE540 = 0;
   dword_ABE538 = 2;
@@ -3702,9 +3700,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v83->vtable1 = aP2;
   *&v83->uniqueId = 1;
   *(unsigned int *)&dword_ABE53C->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE53C->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 1;
+  (*(((unsigned short *)&(v120)) + 1)) = 1;
   aP2.vfptr = (void *)2;
   dword_ABE54C = 0;
   dword_ABE544 = 2;
@@ -3723,9 +3721,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v85->vtable1 = aP2;
   *&v85->uniqueId = 1;
   *(unsigned int *)&dword_ABE548->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE548->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = (void *)1;
   dword_ABE558 = 0;
   dword_ABE550 = 2;
@@ -3744,9 +3742,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v87->vtable1 = aP2;
   *&v87->uniqueId = 1;
   *(unsigned int *)&dword_ABE554->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE554->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = (void *)1;
   dword_ABE564 = 0;
   dword_ABE55C = 2;
@@ -3765,9 +3763,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v89->vtable1 = aP2;
   *&v89->uniqueId = 1;
   *(unsigned int *)&dword_ABE560->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(aP2.vfptr) = 1;
+  (*((unsigned short *)&(aP2.vfptr))) = 1;
   *(unsigned int *)&dword_ABE560->vtable1[12] = 5;
-  IDA_HIWORD(aP2.vfptr) = 2;
+  (*(((unsigned short *)&(aP2.vfptr)) + 1)) = 2;
   dword_ABE570 = 0;
   dword_ABE568 = (unsigned int)(IUnknown *)1;
   v90 = (void *)operator new(8u);
@@ -3888,9 +3886,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v103->vtable1 = aP2;
   *&v103->uniqueId = 1;
   *(unsigned int *)&dword_ABE5B4->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 1;
+  (*((unsigned short *)&(v120))) = 1;
   *(unsigned int *)&dword_ABE5B4->vtable1[12] = 5;
-  IDA_HIWORD(v120) = 3;
+  (*(((unsigned short *)&(v120)) + 1)) = 3;
   v119 = 5;
   aP2.vfptr = (void *)2;
   dword_ABE5C4 = 0;
@@ -3910,11 +3908,11 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v105->vtable1 = aP2;
   *&v105->uniqueId = 1;
   *(unsigned int *)&dword_ABE5C0->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 3;
+  (*((unsigned short *)&(v120))) = 3;
   *(unsigned int *)&dword_ABE5C0->vtable1[12] = v119;
   dword_ABE5C8 = 0;
   dword_ABE5CC = 0;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = 0;
   dword_ABE5DC = 0;
   dword_ABE5D4 = 2;
@@ -3933,9 +3931,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v107->vtable1 = aP2;
   *&v107->uniqueId = 6;
   *(unsigned int *)&dword_ABE5D8->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 3;
+  (*((unsigned short *)&(v120))) = 3;
   *(unsigned int *)&dword_ABE5D8->vtable1[12] = 2;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = 0;
   dword_ABE5E8 = 0;
   dword_ABE5E0 = 2;
@@ -3954,9 +3952,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v109->vtable1 = aP2;
   *&v109->uniqueId = 6;
   *(unsigned int *)&dword_ABE5E4->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 3;
+  (*((unsigned short *)&(v120))) = 3;
   *(unsigned int *)&dword_ABE5E4->vtable1[12] = 2;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = 0;
   dword_ABE5F4 = 0;
   dword_ABE5EC = 2;
@@ -3975,9 +3973,9 @@ unsigned int * InitializePathData()
   *(rc_ptr_base *)v111->vtable1 = aP2;
   *&v111->uniqueId = 6;
   *(unsigned int *)&dword_ABE5F0->vtable1[8] = (unsigned int)v120;
-  IDA_LOWORD(v120) = 3;
+  (*((unsigned short *)&(v120))) = 3;
   *(unsigned int *)&dword_ABE5F0->vtable1[12] = 2;
-  IDA_HIWORD(v120) = 0;
+  (*(((unsigned short *)&(v120)) + 1)) = 0;
   aP2.vfptr = 0;
   dword_ABE600 = 0;
   dword_ABE5F8 = 2;
@@ -3995,9 +3993,9 @@ unsigned int * InitializePathData()
   dword_ABE5FC = (int)v113;
   v113->vfptr = aP2.vfptr;
   v113[1].vfptr = (void *)6;
-  IDA_LOWORD(aP1.vfptr) = 2;
+  (*((unsigned short *)&(aP1.vfptr))) = 2;
   *(unsigned int *)(dword_ABE5FC + 8) = (unsigned int)v120;
-  IDA_HIWORD(aP1.vfptr) = 0;
+  (*(((unsigned short *)&(aP1.vfptr)) + 1)) = 0;
   *(unsigned int *)(dword_ABE5FC + 12) = 2;
   v114 = (rc_ptr_base *)aP1.vfptr;
   aP1.vfptr = 0;

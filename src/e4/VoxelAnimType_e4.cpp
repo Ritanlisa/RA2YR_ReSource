@@ -111,7 +111,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
       Vector::Clear((int)v18); /*0x5f7ce4*/
       *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7ced*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7cf1*/
-      return 1; /*0x5f7d02*/
+      return (gamemd::AbstractClass **)(1); /*0x5f7d02*/
     }
     v14 = (void *)*(&this->u32_8 * a3 + 50); /*0x5f7d05*/
     if ( v14 ) /*0x5f7d0e*/
@@ -185,7 +185,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       FileVXL = File::LoadFileVXL(v5, (int)&v14, 0); /*0x5f7e94*/
     else
       FileVXL = 0; /*0x5f7e9b*/
-    this->m_2 * a3 + 86) = FileVXL; /*0x5f7e9f*/
+    this->m_2 * a3 + 86) = (unsigned int)(FileVXL); /*0x5f7e9f*/
     if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f7ea8*/
       v13 = 1; /*0x5f7ead*/
     if ( a3 ) /*0x5f7eb4*/
@@ -200,7 +200,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       FileHVA = File::LoadFileHVA(v8, (int)&v17); /*0x5f7f32*/
     else
       FileHVA = 0; /*0x5f7f39*/
-    this->m_2 * a3 + 87) = FileHVA; /*0x5f7f3d*/
+    this->m_2 * a3 + 87) = (unsigned int)(FileHVA); /*0x5f7f3d*/
     if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x5f7f46*/
       v7 = 1; /*0x5f7f4b*/
     if ( v13 && v7 ) /*0x5f7f5b*/
@@ -217,7 +217,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
       Vector::Clear((int)v15); /*0x5f7fc2*/
       /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f7fcb) */
       ((BufferIOFileClass *)((BufferIOFileClass *)&v14))->Dtor(); /*0x5f7fcf*/
-      return 1; /*0x5f7fd7*/
+      return (gamemd::AbstractClass **)(1); /*0x5f7fd7*/
     }
     else
     {
@@ -253,7 +253,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char *a2, int a3)
     Vector::Clear((int)v15); /*0x5f7e54*/
     /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x5f7e5d) */
     ((BufferIOFileClass *)((BufferIOFileClass *)&v14))->Dtor(); /*0x5f7e65*/
-    return 1; /*0x5f7e6d*/
+    return (gamemd::AbstractClass **)(1); /*0x5f7e6d*/
   }
 }
 }

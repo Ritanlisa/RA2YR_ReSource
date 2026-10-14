@@ -49,7 +49,7 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
-  *(unsigned int *)this->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cca0c*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int *)(&vt_FlyLocomotionClass); /*0x4cca0c*/
   /* X11: vtable install elided (implicit via FlyLocomotionClass virtuals 0x4cca12) */
   this->XYZ2[2] = v2; /*0x4cca1b*/
   return (int)this->LocomotionClass; /*0x4cca1e*/
@@ -75,11 +75,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( a1->Owner->target ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ((ObjectVector *)(&v11))->Construct(0, 0); /*0x4cfea2*/
-  *(unsigned int *)v11.__pad_000 = &vt_DynamicVectorClass; /*0x4cfeb7*/
+  *(unsigned int *)v11.__pad_000 = (unsigned int)(&vt_DynamicVectorClass); /*0x4cfeb7*/
   v11.q014 = 10; /*0x4cfebb*/
   v11.q010 = 0; /*0x4cfebf*/
   ((ObjectVector *)(&v10))->Construct(0, 0); /*0x4cfec3*/
-  *(unsigned int *)v10.__pad_000 = &vt_DynamicVectorClass; /*0x4cfecd*/
+  *(unsigned int *)v10.__pad_000 = (unsigned int)(&vt_DynamicVectorClass); /*0x4cfecd*/
   v10.q014 = 10; /*0x4cfed3*/
   v10.q010 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
@@ -164,13 +164,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   vtable0[242](*(unsigned int *)(v8 + 4 * v7)); /*0x4d011b*/
   LABEL_45:
-  *(unsigned int *)v10.__pad_000 = &vt_VectorClass; /*0x4d0121*/
+  *(unsigned int *)v10.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d0121*/
   if ( v10.q004 && (((unsigned char *)&(v10.q00C))[1]) ) /*0x4d0136*/
   {
     operator delete((void *)((void *)v10.q004)); /*0x4d0139*/
     v10.q004 = 0; /*0x4d0141*/
   }
-  *(unsigned int *)v11.__pad_000 = &vt_VectorClass; /*0x4d0149*/
+  *(unsigned int *)v11.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d0149*/
   (((unsigned char *)&(v10.q00C))[1]) = 0; /*0x4d0150*/
   v10.q008 = 0; /*0x4d0154*/
   if ( v11.q004 ) /*0x4d0159*/

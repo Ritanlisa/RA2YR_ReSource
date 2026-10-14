@@ -35111,7 +35111,7 @@ int ScenarioClass::LoadNetworkConfig() {
                                   (uint8_t *)&stru_8263E0.Loop,
                                   aCheckheap,
                                   0);
-    IDA_LOBYTE(this->random[61]) = INIClass::ReadBool_Overwrite( /*0x698288*/
+    (*((unsigned char *)&(this->random[61]))) = INIClass::ReadBool_Overwrite( /*0x698288*/
                                  (int *)&CCINIClass_INI_RA2MD,
                                  (uint8_t *)&stru_8263E0.Loop,
                                  (uint8_t *)aWollimitresolu,

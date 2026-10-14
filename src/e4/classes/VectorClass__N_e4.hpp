@@ -20,7 +20,7 @@ struct VectorClass__N {
     char  SetCapacity(signed int Size, char * a3);  // 0x50FB20
     int  Destroy_0(unsigned char * a2);  // 0x50FBD0
     VectorClass_flat *  Constructor_VectorClass_bool_(char a2);  // 0x510360
-    int Clear(void *a1_1);  // 0x50E700
+    char Clear(int a2);  // 0x50E700
     char  AddRef(int a2);  // 0x50F9A0
     wchar_t * ddtor(void *a1_1);  // 0x50FA90
     int  GetSize(unsigned char * a2);  // 0x50FAC0

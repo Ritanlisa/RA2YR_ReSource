@@ -28,16 +28,16 @@ using ra2::game::AbstractClass;
 #include "core/ida_vtables.h"  // gC_vftable3
 #include "core/hash_table.hpp"
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
-extern int dword_ABD4C8;  // 词表 (canon 无条目, int 兜底) L1076
-extern int dword_ABD4CC;  // 词表 (canon 无条目, int 兜底) L1077
-extern int dword_ABD4D0;  // 词表 (canon 无条目, int 兜底) L1078
-extern int dword_ABD4D4;  // 词表 (canon 无条目, int 兜底) L1079
-extern int dword_ABD4D8;  // 词表 (canon 无条目, int 兜底) L1080
-extern int dword_ABD4B4;  // 词表 (canon 无条目, int 兜底) L1066
-extern int dword_ABD4B8;  // 词表 (canon 无条目, int 兜底) L1067
-extern int dword_ABD4BC;  // 词表 (canon 无条目, int 兜底) L1069
-extern int dword_ABD4C0;  // 词表 (canon 无条目, int 兜底) L1068
-extern int dword_ABD4C4;  // 词表 (canon 无条目, int 兜底) L1070
+extern unsigned int dword_ABD4C8; // 词表 (canon 无条目, int 兜底) L1076
+extern unsigned int dword_ABD4CC; // 词表 (canon 无条目, int 兜底) L1077
+extern unsigned int dword_ABD4D0; // 词表 (canon 无条目, int 兜底) L1078
+extern unsigned int dword_ABD4D4; // 词表 (canon 无条目, int 兜底) L1079
+extern unsigned int dword_ABD4D8; // 词表 (canon 无条目, int 兜底) L1080
+extern unsigned int dword_ABD4B4; // 词表 (canon 无条目, int 兜底) L1066
+extern unsigned int dword_ABD4B8; // 词表 (canon 无条目, int 兜底) L1067
+extern unsigned int dword_ABD4BC; // 词表 (canon 无条目, int 兜底) L1069
+extern unsigned int dword_ABD4C0; // 词表 (canon 无条目, int 兜底) L1068
+extern unsigned int dword_ABD4C4; // 词表 (canon 无条目, int 兜底) L1070
 extern int aCsf;  // 词表 (canon 无条目, int 兜底) L725
 extern int aE;  // 词表 (canon 无条目, int 兜底) L549
 extern int aN;  // 词表 (canon 无条目, int 兜底) L541
@@ -47,14 +47,14 @@ extern int aS_5;  // 词表 (canon 无条目, int 兜底) L557
 extern int aSe;  // 词表 (canon 无条目, int 兜底) L553
 extern int aSequence;  // 词表 (canon 无条目, int 兜底) L512
 extern int aSw;  // 词表 (canon 无条目, int 兜底) L561
-extern int dword_ABD494;  // 词表 (canon 无条目, int 兜底) L1039
-extern int dword_ABD498;  // 词表 (canon 无条目, int 兜底) L1040
-extern int dword_ABD49C;  // 词表 (canon 无条目, int 兜底) L1041
-extern int dword_ABD4A0;  // 词表 (canon 无条目, int 兜底) L1042
-extern int dword_ABD4A4;  // 词表 (canon 无条目, int 兜底) L1043
-extern int dword_ABD4A8;  // 词表 (canon 无条目, int 兜底) L1045
-extern int dword_ABD4AC;  // 词表 (canon 无条目, int 兜底) L1046
-extern int dword_ABD4B0;  // 词表 (canon 无条目, int 兜底) L1044
+extern unsigned int dword_ABD494; // 词表 (canon 无条目, int 兜底) L1039
+extern unsigned int dword_ABD498; // 词表 (canon 无条目, int 兜底) L1040
+extern unsigned int dword_ABD49C; // 词表 (canon 无条目, int 兜底) L1041
+extern unsigned int dword_ABD4A0; // 词表 (canon 无条目, int 兜底) L1042
+extern unsigned int dword_ABD4A4; // 词表 (canon 无条目, int 兜底) L1043
+extern unsigned int dword_ABD4A8; // 词表 (canon 无条目, int 兜底) L1045
+extern unsigned int dword_ABD4AC; // 词表 (canon 无条目, int 兜底) L1046
+extern unsigned int dword_ABD4B0; // 词表 (canon 无条目, int 兜底) L1044
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
@@ -145,357 +145,357 @@ extern void * GetStringCSF(int a1, int a2, int a3, int a4);
 extern void * GetStringCSF(void *a1, int a2, int a3, int a4);  // G42: ptr-key call sites
 extern void * GetStringCSF(wchar_t *a1, int a2, int a3, int a4);  // G42: wide-key call sites
 extern int TimerGetTicks();  // G42: decl source core/init_stubs.hpp:54 (0x6C8C40)
-extern int dword_ABD4DC;  // W13-C raw fn_56 词表 (data 0xABD4DC)
-extern int dword_ABD4E0;  // W13-C raw fn_56 词表 (data 0xABD4E0)
-extern int dword_ABD4E4;  // W13-C raw fn_56 词表 (data 0xABD4E4)
-extern int dword_ABD4E8;  // W13-C raw fn_56 词表 (data 0xABD4E8)
-extern int dword_ABD4EC;  // W13-C raw fn_56 词表 (data 0xABD4EC)
-extern int dword_ABD4F0;  // W13-C raw fn_56 词表 (data 0xABD4F0)
-extern int dword_ABD4F4;  // W13-C raw fn_56 词表 (data 0xABD4F4)
-extern int dword_ABD4F8;  // W13-C raw fn_56 词表 (data 0xABD4F8)
-extern int dword_ABD4FC;  // W13-C raw fn_56 词表 (data 0xABD4FC)
-extern int dword_ABD500;  // W13-C raw fn_56 词表 (data 0xABD500)
-extern int dword_ABD504;  // W13-C raw fn_56 词表 (data 0xABD504)
-extern int dword_ABD508;  // W13-C raw fn_56 词表 (data 0xABD508)
-extern int dword_ABD50C;  // W13-C raw fn_56 词表 (data 0xABD50C)
-extern int dword_ABD510;  // W13-C raw fn_56 词表 (data 0xABD510)
-extern int dword_ABD514;  // W13-C raw fn_56 词表 (data 0xABD514)
-extern int dword_ABD518;  // W13-C raw fn_56 词表 (data 0xABD518)
-extern int dword_ABD51C;  // W13-C raw fn_56 词表 (data 0xABD51C)
-extern int dword_ABD520;  // W13-C raw fn_56 词表 (data 0xABD520)
-extern int dword_ABD524;  // W13-C raw fn_56 词表 (data 0xABD524)
-extern int dword_ABD528;  // W13-C raw fn_56 词表 (data 0xABD528)
-extern int dword_ABD52C;  // W13-C raw fn_56 词表 (data 0xABD52C)
-extern int dword_ABD530;  // W13-C raw fn_56 词表 (data 0xABD530)
-extern int dword_ABD534;  // W13-C raw fn_56 词表 (data 0xABD534)
-extern int dword_ABD538;  // W13-C raw fn_56 词表 (data 0xABD538)
-extern int dword_ABD53C;  // W13-C raw fn_56 词表 (data 0xABD53C)
-extern int dword_ABD540;  // W13-C raw fn_56 词表 (data 0xABD540)
-extern int dword_ABD544;  // W13-C raw fn_56 词表 (data 0xABD544)
-extern int dword_ABD548;  // W13-C raw fn_56 词表 (data 0xABD548)
-extern int dword_ABD54C;  // W13-C raw fn_56 词表 (data 0xABD54C)
-extern int dword_ABD550;  // W13-C raw fn_56 词表 (data 0xABD550)
-extern int dword_ABD554;  // W13-C raw fn_56 词表 (data 0xABD554)
-extern int dword_ABD558;  // W13-C raw fn_56 词表 (data 0xABD558)
-extern int dword_ABD55C;  // W13-C raw fn_56 词表 (data 0xABD55C)
-extern int dword_ABD560;  // W13-C raw fn_56 词表 (data 0xABD560)
-extern int dword_ABD564;  // W13-C raw fn_56 词表 (data 0xABD564)
-extern int dword_ABD568;  // W13-C raw fn_56 词表 (data 0xABD568)
-extern int dword_ABD56C;  // W13-C raw fn_56 词表 (data 0xABD56C)
-extern int dword_ABD570;  // W13-C raw fn_56 词表 (data 0xABD570)
-extern int dword_ABD574;  // W13-C raw fn_56 词表 (data 0xABD574)
-extern int dword_ABD578;  // W13-C raw fn_56 词表 (data 0xABD578)
-extern int dword_ABD57C;  // W13-C raw fn_56 词表 (data 0xABD57C)
-extern int dword_ABD580;  // W13-C raw fn_56 词表 (data 0xABD580)
-extern int dword_ABD584;  // W13-C raw fn_56 词表 (data 0xABD584)
-extern int dword_ABD588;  // W13-C raw fn_56 词表 (data 0xABD588)
-extern int dword_ABD58C;  // W13-C raw fn_56 词表 (data 0xABD58C)
-extern int dword_ABD590;  // W13-C raw fn_56 词表 (data 0xABD590)
-extern int dword_ABD594;  // W13-C raw fn_56 词表 (data 0xABD594)
-extern int dword_ABD598;  // W13-C raw fn_56 词表 (data 0xABD598)
-extern int dword_ABD59C;  // W13-C raw fn_56 词表 (data 0xABD59C)
-extern int dword_ABD5A0;  // W13-C raw fn_56 词表 (data 0xABD5A0)
-extern int dword_ABD5A4;  // W13-C raw fn_56 词表 (data 0xABD5A4)
-extern int dword_ABD5A8;  // W13-C raw fn_56 词表 (data 0xABD5A8)
-extern int dword_ABD5AC;  // W13-C raw fn_56 词表 (data 0xABD5AC)
-extern int dword_ABD5B0;  // W13-C raw fn_56 词表 (data 0xABD5B0)
-extern int dword_ABD5B4;  // W13-C raw fn_56 词表 (data 0xABD5B4)
-extern int dword_ABD5B8;  // W13-C raw fn_56 词表 (data 0xABD5B8)
-extern int dword_ABD5BC;  // W13-C raw fn_56 词表 (data 0xABD5BC)
-extern int dword_ABD5C0;  // W13-C raw fn_56 词表 (data 0xABD5C0)
-extern int dword_ABD5C4;  // W13-C raw fn_56 词表 (data 0xABD5C4)
-extern int dword_ABD5C8;  // W13-C raw fn_56 词表 (data 0xABD5C8)
-extern int dword_ABD5CC;  // W13-C raw fn_56 词表 (data 0xABD5CC)
-extern int dword_ABD5D0;  // W13-C raw fn_56 词表 (data 0xABD5D0)
-extern int dword_ABD5D4;  // W13-C raw fn_56 词表 (data 0xABD5D4)
-extern int dword_ABD5D8;  // W13-C raw fn_56 词表 (data 0xABD5D8)
-extern int dword_ABD5DC;  // W13-C raw fn_56 词表 (data 0xABD5DC)
-extern int dword_ABD5E0;  // W13-C raw fn_56 词表 (data 0xABD5E0)
-extern int dword_ABD5E4;  // W13-C raw fn_56 词表 (data 0xABD5E4)
-extern int dword_ABD5E8;  // W13-C raw fn_56 词表 (data 0xABD5E8)
-extern int dword_ABD5EC;  // W13-C raw fn_56 词表 (data 0xABD5EC)
-extern int dword_ABD5F0;  // W13-C raw fn_56 词表 (data 0xABD5F0)
-extern int dword_ABD5F4;  // W13-C raw fn_56 词表 (data 0xABD5F4)
-extern int dword_ABD5F8;  // W13-C raw fn_56 词表 (data 0xABD5F8)
-extern int dword_ABD5FC;  // W13-C raw fn_56 词表 (data 0xABD5FC)
-extern int dword_ABD600;  // W13-C raw fn_56 词表 (data 0xABD600)
-extern int dword_ABD604;  // W13-C raw fn_56 词表 (data 0xABD604)
-extern int dword_ABD608;  // W13-C raw fn_56 词表 (data 0xABD608)
-extern int dword_ABD60C;  // W13-C raw fn_56 词表 (data 0xABD60C)
-extern int dword_ABD610;  // W13-C raw fn_56 词表 (data 0xABD610)
-extern int dword_ABD614;  // W13-C raw fn_56 词表 (data 0xABD614)
-extern int dword_ABD618;  // W13-C raw fn_56 词表 (data 0xABD618)
-extern int dword_ABD61C;  // W13-C raw fn_56 词表 (data 0xABD61C)
-extern int dword_ABD620;  // W13-C raw fn_56 词表 (data 0xABD620)
-extern int dword_ABD624;  // W13-C raw fn_56 词表 (data 0xABD624)
-extern int dword_ABD628;  // W13-C raw fn_56 词表 (data 0xABD628)
-extern int dword_ABD62C;  // W13-C raw fn_56 词表 (data 0xABD62C)
-extern int dword_ABD630;  // W13-C raw fn_56 词表 (data 0xABD630)
-extern int dword_ABD634;  // W13-C raw fn_56 词表 (data 0xABD634)
+extern unsigned int dword_ABD4DC; // W13-C raw fn_56 词表 (data 0xABD4DC)
+extern unsigned int dword_ABD4E0; // W13-C raw fn_56 词表 (data 0xABD4E0)
+extern unsigned int dword_ABD4E4; // W13-C raw fn_56 词表 (data 0xABD4E4)
+extern unsigned int dword_ABD4E8; // W13-C raw fn_56 词表 (data 0xABD4E8)
+extern unsigned int dword_ABD4EC; // W13-C raw fn_56 词表 (data 0xABD4EC)
+extern unsigned int dword_ABD4F0; // W13-C raw fn_56 词表 (data 0xABD4F0)
+extern unsigned int dword_ABD4F4; // W13-C raw fn_56 词表 (data 0xABD4F4)
+extern unsigned int dword_ABD4F8; // W13-C raw fn_56 词表 (data 0xABD4F8)
+extern unsigned int dword_ABD4FC; // W13-C raw fn_56 词表 (data 0xABD4FC)
+extern unsigned int dword_ABD500; // W13-C raw fn_56 词表 (data 0xABD500)
+extern unsigned int dword_ABD504; // W13-C raw fn_56 词表 (data 0xABD504)
+extern unsigned int dword_ABD508; // W13-C raw fn_56 词表 (data 0xABD508)
+extern unsigned int dword_ABD50C; // W13-C raw fn_56 词表 (data 0xABD50C)
+extern unsigned int dword_ABD510; // W13-C raw fn_56 词表 (data 0xABD510)
+extern unsigned int dword_ABD514; // W13-C raw fn_56 词表 (data 0xABD514)
+extern unsigned int dword_ABD518; // W13-C raw fn_56 词表 (data 0xABD518)
+extern unsigned int dword_ABD51C; // W13-C raw fn_56 词表 (data 0xABD51C)
+extern unsigned int dword_ABD520; // W13-C raw fn_56 词表 (data 0xABD520)
+extern unsigned int dword_ABD524; // W13-C raw fn_56 词表 (data 0xABD524)
+extern unsigned int dword_ABD528; // W13-C raw fn_56 词表 (data 0xABD528)
+extern unsigned int dword_ABD52C; // W13-C raw fn_56 词表 (data 0xABD52C)
+extern unsigned int dword_ABD530; // W13-C raw fn_56 词表 (data 0xABD530)
+extern unsigned int dword_ABD534; // W13-C raw fn_56 词表 (data 0xABD534)
+extern unsigned int dword_ABD538; // W13-C raw fn_56 词表 (data 0xABD538)
+extern unsigned int dword_ABD53C; // W13-C raw fn_56 词表 (data 0xABD53C)
+extern unsigned int dword_ABD540; // W13-C raw fn_56 词表 (data 0xABD540)
+extern unsigned int dword_ABD544; // W13-C raw fn_56 词表 (data 0xABD544)
+extern unsigned int dword_ABD548; // W13-C raw fn_56 词表 (data 0xABD548)
+extern unsigned int dword_ABD54C; // W13-C raw fn_56 词表 (data 0xABD54C)
+extern unsigned int dword_ABD550; // W13-C raw fn_56 词表 (data 0xABD550)
+extern unsigned int dword_ABD554; // W13-C raw fn_56 词表 (data 0xABD554)
+extern unsigned int dword_ABD558; // W13-C raw fn_56 词表 (data 0xABD558)
+extern unsigned int dword_ABD55C; // W13-C raw fn_56 词表 (data 0xABD55C)
+extern unsigned int dword_ABD560; // W13-C raw fn_56 词表 (data 0xABD560)
+extern unsigned int dword_ABD564; // W13-C raw fn_56 词表 (data 0xABD564)
+extern unsigned int dword_ABD568; // W13-C raw fn_56 词表 (data 0xABD568)
+extern unsigned int dword_ABD56C; // W13-C raw fn_56 词表 (data 0xABD56C)
+extern unsigned int dword_ABD570; // W13-C raw fn_56 词表 (data 0xABD570)
+extern unsigned int dword_ABD574; // W13-C raw fn_56 词表 (data 0xABD574)
+extern unsigned int dword_ABD578; // W13-C raw fn_56 词表 (data 0xABD578)
+extern unsigned int dword_ABD57C; // W13-C raw fn_56 词表 (data 0xABD57C)
+extern unsigned int dword_ABD580; // W13-C raw fn_56 词表 (data 0xABD580)
+extern unsigned int dword_ABD584; // W13-C raw fn_56 词表 (data 0xABD584)
+extern unsigned int dword_ABD588; // W13-C raw fn_56 词表 (data 0xABD588)
+extern unsigned int dword_ABD58C; // W13-C raw fn_56 词表 (data 0xABD58C)
+extern unsigned int dword_ABD590; // W13-C raw fn_56 词表 (data 0xABD590)
+extern unsigned int dword_ABD594; // W13-C raw fn_56 词表 (data 0xABD594)
+extern unsigned int dword_ABD598; // W13-C raw fn_56 词表 (data 0xABD598)
+extern unsigned int dword_ABD59C; // W13-C raw fn_56 词表 (data 0xABD59C)
+extern unsigned int dword_ABD5A0; // W13-C raw fn_56 词表 (data 0xABD5A0)
+extern unsigned int dword_ABD5A4; // W13-C raw fn_56 词表 (data 0xABD5A4)
+extern unsigned int dword_ABD5A8; // W13-C raw fn_56 词表 (data 0xABD5A8)
+extern unsigned int dword_ABD5AC; // W13-C raw fn_56 词表 (data 0xABD5AC)
+extern unsigned int dword_ABD5B0; // W13-C raw fn_56 词表 (data 0xABD5B0)
+extern unsigned int dword_ABD5B4; // W13-C raw fn_56 词表 (data 0xABD5B4)
+extern unsigned int dword_ABD5B8; // W13-C raw fn_56 词表 (data 0xABD5B8)
+extern unsigned int dword_ABD5BC; // W13-C raw fn_56 词表 (data 0xABD5BC)
+extern unsigned int dword_ABD5C0; // W13-C raw fn_56 词表 (data 0xABD5C0)
+extern unsigned int dword_ABD5C4; // W13-C raw fn_56 词表 (data 0xABD5C4)
+extern unsigned int dword_ABD5C8; // W13-C raw fn_56 词表 (data 0xABD5C8)
+extern unsigned int dword_ABD5CC; // W13-C raw fn_56 词表 (data 0xABD5CC)
+extern unsigned int dword_ABD5D0; // W13-C raw fn_56 词表 (data 0xABD5D0)
+extern unsigned int dword_ABD5D4; // W13-C raw fn_56 词表 (data 0xABD5D4)
+extern unsigned int dword_ABD5D8; // W13-C raw fn_56 词表 (data 0xABD5D8)
+extern unsigned int dword_ABD5DC; // W13-C raw fn_56 词表 (data 0xABD5DC)
+extern unsigned int dword_ABD5E0; // W13-C raw fn_56 词表 (data 0xABD5E0)
+extern unsigned int dword_ABD5E4; // W13-C raw fn_56 词表 (data 0xABD5E4)
+extern unsigned int dword_ABD5E8; // W13-C raw fn_56 词表 (data 0xABD5E8)
+extern unsigned int dword_ABD5EC; // W13-C raw fn_56 词表 (data 0xABD5EC)
+extern unsigned int dword_ABD5F0; // W13-C raw fn_56 词表 (data 0xABD5F0)
+extern unsigned int dword_ABD5F4; // W13-C raw fn_56 词表 (data 0xABD5F4)
+extern unsigned int dword_ABD5F8; // W13-C raw fn_56 词表 (data 0xABD5F8)
+extern unsigned int dword_ABD5FC; // W13-C raw fn_56 词表 (data 0xABD5FC)
+extern unsigned int dword_ABD600; // W13-C raw fn_56 词表 (data 0xABD600)
+extern unsigned int dword_ABD604; // W13-C raw fn_56 词表 (data 0xABD604)
+extern unsigned int dword_ABD608; // W13-C raw fn_56 词表 (data 0xABD608)
+extern unsigned int dword_ABD60C; // W13-C raw fn_56 词表 (data 0xABD60C)
+extern unsigned int dword_ABD610; // W13-C raw fn_56 词表 (data 0xABD610)
+extern unsigned int dword_ABD614; // W13-C raw fn_56 词表 (data 0xABD614)
+extern unsigned int dword_ABD618; // W13-C raw fn_56 词表 (data 0xABD618)
+extern unsigned int dword_ABD61C; // W13-C raw fn_56 词表 (data 0xABD61C)
+extern unsigned int dword_ABD620; // W13-C raw fn_56 词表 (data 0xABD620)
+extern unsigned int dword_ABD624; // W13-C raw fn_56 词表 (data 0xABD624)
+extern unsigned int dword_ABD628; // W13-C raw fn_56 词表 (data 0xABD628)
+extern unsigned int dword_ABD62C; // W13-C raw fn_56 词表 (data 0xABD62C)
+extern unsigned int dword_ABD630; // W13-C raw fn_56 词表 (data 0xABD630)
+extern unsigned int dword_ABD634; // W13-C raw fn_56 词表 (data 0xABD634)
 extern unsigned int dword_ABD490;  // W13-C raw fn_56 词表 (data 0xABD490; 类型对齐 ida_globals.h:6771, C2371)
-extern int dword_ABD638;  // W13-C raw fn_56 词表 (data 0xABD638)
-extern int dword_ABD63C;  // W13-C raw fn_56 词表 (data 0xABD63C)
-extern int dword_ABD640;  // W13-C raw fn_56 词表 (data 0xABD640)
-extern int dword_ABD644;  // W13-C raw fn_56 词表 (data 0xABD644)
-extern int dword_ABD648;  // W13-C raw fn_56 词表 (data 0xABD648)
-extern int dword_ABD64C;  // W13-C raw fn_56 词表 (data 0xABD64C)
-extern int dword_ABD650;  // W13-C raw fn_56 词表 (data 0xABD650)
-extern int dword_ABD654;  // W13-C raw fn_56 词表 (data 0xABD654)
-extern int dword_ABD658;  // W13-C raw fn_56 词表 (data 0xABD658)
-extern int dword_ABD65C;  // W13-C raw fn_56 词表 (data 0xABD65C)
-extern int dword_ABD660;  // W13-C raw fn_56 词表 (data 0xABD660)
-extern int dword_ABD664;  // W13-C raw fn_56 词表 (data 0xABD664)
-extern int dword_ABD668;  // W13-C raw fn_56 词表 (data 0xABD668)
-extern int dword_ABD66C;  // W13-C raw fn_56 词表 (data 0xABD66C)
-extern int dword_ABD670;  // W13-C raw fn_56 词表 (data 0xABD670)
-extern int dword_ABD674;  // W13-C raw fn_56 词表 (data 0xABD674)
-extern int dword_ABD678;  // W13-C raw fn_56 词表 (data 0xABD678)
-extern int dword_ABD67C;  // W13-C raw fn_56 词表 (data 0xABD67C)
-extern int dword_ABD680;  // W13-C raw fn_56 词表 (data 0xABD680)
-extern int dword_ABD684;  // W13-C raw fn_56 词表 (data 0xABD684)
-extern int dword_ABD688;  // W13-C raw fn_56 词表 (data 0xABD688)
-extern int dword_ABD68C;  // W13-C raw fn_56 词表 (data 0xABD68C)
-extern int dword_ABD690;  // W13-C raw fn_56 词表 (data 0xABD690)
-extern int dword_ABD694;  // W13-C raw fn_56 词表 (data 0xABD694)
-extern int dword_ABD698;  // W13-C raw fn_56 词表 (data 0xABD698)
-extern int dword_ABD69C;  // W13-C raw fn_56 词表 (data 0xABD69C)
-extern int dword_ABD6A0;  // W13-C raw fn_56 词表 (data 0xABD6A0)
-extern int dword_ABD6A4;  // W13-C raw fn_56 词表 (data 0xABD6A4)
-extern int dword_ABD6A8;  // W13-C raw fn_56 词表 (data 0xABD6A8)
-extern int dword_ABD6AC;  // W13-C raw fn_56 词表 (data 0xABD6AC)
-extern int dword_ABD6B0;  // W13-C raw fn_56 词表 (data 0xABD6B0)
-extern int dword_ABD6B4;  // W13-C raw fn_56 词表 (data 0xABD6B4)
-extern int dword_ABD6B8;  // W13-C raw fn_56 词表 (data 0xABD6B8)
-extern int dword_ABD6BC;  // W13-C raw fn_56 词表 (data 0xABD6BC)
-extern int dword_ABD6C0;  // W13-C raw fn_56 词表 (data 0xABD6C0)
-extern int dword_ABD6C4;  // W13-C raw fn_56 词表 (data 0xABD6C4)
-extern int dword_ABD6C8;  // W13-C raw fn_56 词表 (data 0xABD6C8)
-extern int dword_ABD6CC;  // W13-C raw fn_56 词表 (data 0xABD6CC)
-extern int dword_ABD6D0;  // W13-C raw fn_56 词表 (data 0xABD6D0)
-extern int dword_ABD6D4;  // W13-C raw fn_56 词表 (data 0xABD6D4)
-extern int dword_ABD6D8;  // W13-C raw fn_56 词表 (data 0xABD6D8)
-extern int dword_ABD6DC;  // W13-C raw fn_56 词表 (data 0xABD6DC)
-extern int dword_ABD6E0;  // W13-C raw fn_56 词表 (data 0xABD6E0)
-extern int dword_ABD6E4;  // W13-C raw fn_56 词表 (data 0xABD6E4)
-extern int dword_ABD6E8;  // W13-C raw fn_56 词表 (data 0xABD6E8)
-extern int dword_ABD6EC;  // W13-C raw fn_56 词表 (data 0xABD6EC)
-extern int dword_ABD6F0;  // W13-C raw fn_56 词表 (data 0xABD6F0)
-extern int dword_ABD6F4;  // W13-C raw fn_56 词表 (data 0xABD6F4)
-extern int dword_ABD6F8;  // W13-C raw fn_56 词表 (data 0xABD6F8)
-extern int dword_ABD6FC;  // W13-C raw fn_56 词表 (data 0xABD6FC)
-extern int dword_ABD700;  // W13-C raw fn_56 词表 (data 0xABD700)
-extern int dword_ABD704;  // W13-C raw fn_56 词表 (data 0xABD704)
-extern int dword_ABD708;  // W13-C raw fn_56 词表 (data 0xABD708)
-extern int dword_ABD70C;  // W13-C raw fn_56 词表 (data 0xABD70C)
-extern int dword_ABD710;  // W13-C raw fn_56 词表 (data 0xABD710)
-extern int dword_ABD714;  // W13-C raw fn_56 词表 (data 0xABD714)
-extern int dword_ABD718;  // W13-C raw fn_56 词表 (data 0xABD718)
-extern int dword_ABD71C;  // W13-C raw fn_56 词表 (data 0xABD71C)
-extern int dword_ABD720;  // W13-C raw fn_56 词表 (data 0xABD720)
-extern int dword_ABD724;  // W13-C raw fn_56 词表 (data 0xABD724)
-extern int dword_ABD728;  // W13-C raw fn_56 词表 (data 0xABD728)
-extern int dword_ABD72C;  // W13-C raw fn_56 词表 (data 0xABD72C)
-extern int dword_ABD730;  // W13-C raw fn_56 词表 (data 0xABD730)
-extern int dword_ABD734;  // W13-C raw fn_56 词表 (data 0xABD734)
-extern int dword_ABD738;  // W13-C raw fn_56 词表 (data 0xABD738)
-extern int dword_ABD73C;  // W13-C raw fn_56 词表 (data 0xABD73C)
-extern int dword_ABD740;  // W13-C raw fn_56 词表 (data 0xABD740)
-extern int dword_ABD744;  // W13-C raw fn_56 词表 (data 0xABD744)
-extern int dword_ABD748;  // W13-C raw fn_56 词表 (data 0xABD748)
-extern int dword_ABD74C;  // W13-C raw fn_56 词表 (data 0xABD74C)
-extern int dword_ABD750;  // W13-C raw fn_56 词表 (data 0xABD750)
-extern int dword_ABD754;  // W13-C raw fn_56 词表 (data 0xABD754)
-extern int dword_ABD758;  // W13-C raw fn_56 词表 (data 0xABD758)
-extern int dword_ABD75C;  // W13-C raw fn_56 词表 (data 0xABD75C)
-extern int dword_ABD760;  // W13-C raw fn_56 词表 (data 0xABD760)
-extern int dword_ABD764;  // W13-C raw fn_56 词表 (data 0xABD764)
-extern int dword_ABD768;  // W13-C raw fn_56 词表 (data 0xABD768)
-extern int dword_ABD76C;  // W13-C raw fn_56 词表 (data 0xABD76C)
-extern int dword_ABD770;  // W13-C raw fn_56 词表 (data 0xABD770)
-extern int dword_ABD774;  // W13-C raw fn_56 词表 (data 0xABD774)
-extern int dword_ABD778;  // W13-C raw fn_56 词表 (data 0xABD778)
-extern int dword_ABD77C;  // W13-C raw fn_56 词表 (data 0xABD77C)
-extern int dword_ABD780;  // W13-C raw fn_56 词表 (data 0xABD780)
-extern int dword_ABD784;  // W13-C raw fn_56 词表 (data 0xABD784)
-extern int dword_ABD788;  // W13-C raw fn_56 词表 (data 0xABD788)
-extern int dword_ABD78C;  // W13-C raw fn_56 词表 (data 0xABD78C)
-extern int dword_ABD790;  // W13-C raw fn_56 词表 (data 0xABD790)
-extern int dword_ABD794;  // W13-C raw fn_56 词表 (data 0xABD794)
-extern int dword_ABD798;  // W13-C raw fn_56 词表 (data 0xABD798)
-extern int dword_ABD79C;  // W13-C raw fn_56 词表 (data 0xABD79C)
-extern int dword_ABD7A0;  // W13-C raw fn_56 词表 (data 0xABD7A0)
-extern int dword_ABD7A4;  // W13-C raw fn_56 词表 (data 0xABD7A4)
-extern int dword_ABD7A8;  // W13-C raw fn_56 词表 (data 0xABD7A8)
-extern int dword_ABD7AC;  // W13-C raw fn_56 词表 (data 0xABD7AC)
-extern int dword_ABD7B0;  // W13-C raw fn_56 词表 (data 0xABD7B0)
-extern int dword_ABD7B4;  // W13-C raw fn_56 词表 (data 0xABD7B4)
-extern int dword_ABD7B8;  // W13-C raw fn_56 词表 (data 0xABD7B8)
-extern int dword_ABD7BC;  // W13-C raw fn_56 词表 (data 0xABD7BC)
-extern int dword_ABD7C0;  // W13-C raw fn_56 词表 (data 0xABD7C0)
-extern int dword_ABD7C4;  // W13-C raw fn_56 词表 (data 0xABD7C4)
-extern int dword_ABD7C8;  // W13-C raw fn_56 词表 (data 0xABD7C8)
-extern int dword_ABD7CC;  // W13-C raw fn_56 词表 (data 0xABD7CC)
-extern int dword_ABD7D0;  // W13-C raw fn_56 词表 (data 0xABD7D0)
-extern int dword_ABD7D4;  // W13-C raw fn_56 词表 (data 0xABD7D4)
-extern int dword_ABD7D8;  // W13-C raw fn_56 词表 (data 0xABD7D8)
-extern int dword_ABD7DC;  // W13-C raw fn_56 词表 (data 0xABD7DC)
-extern int dword_ABD7E0;  // W13-C raw fn_56 词表 (data 0xABD7E0)
-extern int dword_ABD7E4;  // W13-C raw fn_56 词表 (data 0xABD7E4)
-extern int dword_ABD7E8;  // W13-C raw fn_56 词表 (data 0xABD7E8)
-extern int dword_ABD7EC;  // W13-C raw fn_56 词表 (data 0xABD7EC)
-extern int dword_ABD7F0;  // W13-C raw fn_56 词表 (data 0xABD7F0)
-extern int dword_ABD7F4;  // W13-C raw fn_56 词表 (data 0xABD7F4)
-extern int dword_ABD7F8;  // W13-C raw fn_56 词表 (data 0xABD7F8)
-extern int dword_ABD7FC;  // W13-C raw fn_56 词表 (data 0xABD7FC)
-extern int dword_ABD800;  // W13-C raw fn_56 词表 (data 0xABD800)
-extern int dword_ABD804;  // W13-C raw fn_56 词表 (data 0xABD804)
-extern int dword_ABD808;  // W13-C raw fn_56 词表 (data 0xABD808)
-extern int dword_ABD80C;  // W13-C raw fn_56 词表 (data 0xABD80C)
-extern int dword_ABD810;  // W13-C raw fn_56 词表 (data 0xABD810)
-extern int dword_ABD814;  // W13-C raw fn_56 词表 (data 0xABD814)
-extern int dword_ABD818;  // W13-C raw fn_56 词表 (data 0xABD818)
-extern int dword_ABD81C;  // W13-C raw fn_56 词表 (data 0xABD81C)
-extern int dword_ABD820;  // W13-C raw fn_56 词表 (data 0xABD820)
-extern int dword_ABD824;  // W13-C raw fn_56 词表 (data 0xABD824)
-extern int dword_ABD828;  // W13-C raw fn_56 词表 (data 0xABD828)
-extern int dword_ABD82C;  // W13-C raw fn_56 词表 (data 0xABD82C)
-extern int dword_ABD830;  // W13-C raw fn_56 词表 (data 0xABD830)
-extern int dword_ABD834;  // W13-C raw fn_56 词表 (data 0xABD834)
-extern int dword_ABD838;  // W13-C raw fn_56 词表 (data 0xABD838)
-extern int dword_ABD83C;  // W13-C raw fn_56 词表 (data 0xABD83C)
-extern int dword_ABD840;  // W13-C raw fn_56 词表 (data 0xABD840)
-extern int dword_ABD844;  // W13-C raw fn_56 词表 (data 0xABD844)
-extern int dword_ABD848;  // W13-C raw fn_56 词表 (data 0xABD848)
-extern int dword_ABD84C;  // W13-C raw fn_56 词表 (data 0xABD84C)
-extern int dword_ABD850;  // W13-C raw fn_56 词表 (data 0xABD850)
-extern int dword_ABD854;  // W13-C raw fn_56 词表 (data 0xABD854)
-extern int dword_ABD858;  // W13-C raw fn_56 词表 (data 0xABD858)
-extern int dword_ABD85C;  // W13-C raw fn_56 词表 (data 0xABD85C)
-extern int dword_ABD860;  // W13-C raw fn_56 词表 (data 0xABD860)
-extern int dword_ABD864;  // W13-C raw fn_56 词表 (data 0xABD864)
-extern int dword_ABD868;  // W13-C raw fn_56 词表 (data 0xABD868)
-extern int dword_ABD86C;  // W13-C raw fn_56 词表 (data 0xABD86C)
-extern int dword_ABD870;  // W13-C raw fn_56 词表 (data 0xABD870)
-extern int dword_ABD874;  // W13-C raw fn_56 词表 (data 0xABD874)
-extern int dword_ABD878;  // W13-C raw fn_56 词表 (data 0xABD878)
-extern int dword_ABD87C;  // W13-C raw fn_56 词表 (data 0xABD87C)
-extern int dword_ABD880;  // W13-C raw fn_56 词表 (data 0xABD880)
-extern int dword_ABD884;  // W13-C raw fn_56 词表 (data 0xABD884)
-extern int dword_ABD888;  // W13-C raw fn_56 词表 (data 0xABD888)
-extern int dword_ABD88C;  // W13-C raw fn_56 词表 (data 0xABD88C)
-extern int dword_ABD890;  // W13-C raw fn_56 词表 (data 0xABD890)
-extern int dword_ABD894;  // W13-C raw fn_56 词表 (data 0xABD894)
-extern int dword_ABD898;  // W13-C raw fn_56 词表 (data 0xABD898)
-extern int dword_ABD89C;  // W13-C raw fn_56 词表 (data 0xABD89C)
-extern int dword_ABD8A0;  // W13-C raw fn_56 词表 (data 0xABD8A0)
-extern int dword_ABD8A4;  // W13-C raw fn_56 词表 (data 0xABD8A4)
-extern int dword_ABD8A8;  // W13-C raw fn_56 词表 (data 0xABD8A8)
-extern int dword_ABD8AC;  // W13-C raw fn_56 词表 (data 0xABD8AC)
-extern int dword_ABD8B0;  // W13-C raw fn_56 词表 (data 0xABD8B0)
-extern int dword_ABD8B4;  // W13-C raw fn_56 词表 (data 0xABD8B4)
-extern int dword_ABD8B8;  // W13-C raw fn_56 词表 (data 0xABD8B8)
-extern int dword_ABD8BC;  // W13-C raw fn_56 词表 (data 0xABD8BC)
-extern int dword_ABD8C0;  // W13-C raw fn_56 词表 (data 0xABD8C0)
-extern int dword_ABD8C4;  // W13-C raw fn_56 词表 (data 0xABD8C4)
-extern int dword_ABD8C8;  // W13-C raw fn_56 词表 (data 0xABD8C8)
-extern int dword_ABD8CC;  // W13-C raw fn_56 词表 (data 0xABD8CC)
-extern int dword_ABD8D0;  // W13-C raw fn_56 词表 (data 0xABD8D0)
-extern int dword_ABD8D4;  // W13-C raw fn_56 词表 (data 0xABD8D4)
-extern int dword_ABD8D8;  // W13-C raw fn_56 词表 (data 0xABD8D8)
-extern int dword_ABD8DC;  // W13-C raw fn_56 词表 (data 0xABD8DC)
-extern int dword_ABD8E0;  // W13-C raw fn_56 词表 (data 0xABD8E0)
-extern int dword_ABD8E4;  // W13-C raw fn_56 词表 (data 0xABD8E4)
-extern int dword_ABD8E8;  // W13-C raw fn_56 词表 (data 0xABD8E8)
-extern int dword_ABD8EC;  // W13-C raw fn_56 词表 (data 0xABD8EC)
-extern int dword_ABD8F0;  // W13-C raw fn_56 词表 (data 0xABD8F0)
-extern int dword_ABD8F4;  // W13-C raw fn_56 词表 (data 0xABD8F4)
-extern int dword_ABD8F8;  // W13-C raw fn_56 词表 (data 0xABD8F8)
-extern int dword_ABD8FC;  // W13-C raw fn_56 词表 (data 0xABD8FC)
-extern int dword_ABD900;  // W13-C raw fn_56 词表 (data 0xABD900)
-extern int dword_ABD904;  // W13-C raw fn_56 词表 (data 0xABD904)
-extern int dword_ABD908;  // W13-C raw fn_56 词表 (data 0xABD908)
-extern int dword_ABD90C;  // W13-C raw fn_56 词表 (data 0xABD90C)
-extern int dword_ABD910;  // W13-C raw fn_56 词表 (data 0xABD910)
-extern int dword_ABD914;  // W13-C raw fn_56 词表 (data 0xABD914)
-extern int dword_ABD918;  // W13-C raw fn_56 词表 (data 0xABD918)
-extern int dword_ABD91C;  // W13-C raw fn_56 词表 (data 0xABD91C)
-extern int dword_ABD920;  // W13-C raw fn_56 词表 (data 0xABD920)
-extern int dword_ABD924;  // W13-C raw fn_56 词表 (data 0xABD924)
-extern int dword_ABD928;  // W13-C raw fn_56 词表 (data 0xABD928)
-extern int dword_ABD92C;  // W13-C raw fn_56 词表 (data 0xABD92C)
-extern int dword_ABD930;  // W13-C raw fn_56 词表 (data 0xABD930)
-extern int dword_ABD934;  // W13-C raw fn_56 词表 (data 0xABD934)
-extern int dword_ABD938;  // W13-C raw fn_56 词表 (data 0xABD938)
-extern int dword_ABD93C;  // W13-C raw fn_56 词表 (data 0xABD93C)
-extern int dword_ABD940;  // W13-C raw fn_56 词表 (data 0xABD940)
-extern int dword_ABD944;  // W13-C raw fn_56 词表 (data 0xABD944)
-extern int dword_ABD948;  // W13-C raw fn_56 词表 (data 0xABD948)
-extern int dword_ABD94C;  // W13-C raw fn_56 词表 (data 0xABD94C)
-extern int dword_ABD950;  // W13-C raw fn_56 词表 (data 0xABD950)
-extern int dword_ABD954;  // W13-C raw fn_56 词表 (data 0xABD954)
-extern int dword_ABD958;  // W13-C raw fn_56 词表 (data 0xABD958)
-extern int dword_ABD95C;  // W13-C raw fn_56 词表 (data 0xABD95C)
-extern int dword_ABD960;  // W13-C raw fn_56 词表 (data 0xABD960)
-extern int dword_ABD964;  // W13-C raw fn_56 词表 (data 0xABD964)
-extern int dword_ABD968;  // W13-C raw fn_56 词表 (data 0xABD968)
-extern int dword_ABD96C;  // W13-C raw fn_56 词表 (data 0xABD96C)
-extern int dword_ABD970;  // W13-C raw fn_56 词表 (data 0xABD970)
-extern int dword_ABD974;  // W13-C raw fn_56 词表 (data 0xABD974)
-extern int dword_ABD978;  // W13-C raw fn_56 词表 (data 0xABD978)
-extern int dword_ABD97C;  // W13-C raw fn_56 词表 (data 0xABD97C)
-extern int dword_ABD980;  // W13-C raw fn_56 词表 (data 0xABD980)
-extern int dword_ABD984;  // W13-C raw fn_56 词表 (data 0xABD984)
-extern int dword_ABD988;  // W13-C raw fn_56 词表 (data 0xABD988)
-extern int dword_ABD98C;  // W13-C raw fn_56 词表 (data 0xABD98C)
-extern int dword_ABD990;  // W13-C raw fn_56 词表 (data 0xABD990)
-extern int dword_ABD994;  // W13-C raw fn_56 词表 (data 0xABD994)
-extern int dword_ABD998;  // W13-C raw fn_56 词表 (data 0xABD998)
-extern int dword_ABD99C;  // W13-C raw fn_56 词表 (data 0xABD99C)
-extern int dword_ABD9A0;  // W13-C raw fn_56 词表 (data 0xABD9A0)
-extern int dword_ABD9A4;  // W13-C raw fn_56 词表 (data 0xABD9A4)
-extern int dword_ABD9A8;  // W13-C raw fn_56 词表 (data 0xABD9A8)
-extern int dword_ABD9AC;  // W13-C raw fn_56 词表 (data 0xABD9AC)
-extern int dword_ABD9B0;  // W13-C raw fn_56 词表 (data 0xABD9B0)
-extern int dword_ABD9B4;  // W13-C raw fn_56 词表 (data 0xABD9B4)
-extern int dword_ABD9B8;  // W13-C raw fn_56 词表 (data 0xABD9B8)
-extern int dword_ABD9BC;  // W13-C raw fn_56 词表 (data 0xABD9BC)
-extern int dword_ABD9C0;  // W13-C raw fn_56 词表 (data 0xABD9C0)
-extern int dword_ABD9C4;  // W13-C raw fn_56 词表 (data 0xABD9C4)
-extern int dword_ABD9C8;  // W13-C raw fn_56 词表 (data 0xABD9C8)
-extern int dword_ABD9CC;  // W13-C raw fn_56 词表 (data 0xABD9CC)
-extern int dword_ABD9D0;  // W13-C raw fn_56 词表 (data 0xABD9D0)
-extern int dword_ABD9D4;  // W13-C raw fn_56 词表 (data 0xABD9D4)
-extern int dword_ABD9D8;  // W13-C raw fn_56 词表 (data 0xABD9D8)
-extern int dword_ABD9DC;  // W13-C raw fn_56 词表 (data 0xABD9DC)
-extern int dword_ABD9E0;  // W13-C raw fn_56 词表 (data 0xABD9E0)
-extern int dword_ABD9E4;  // W13-C raw fn_56 词表 (data 0xABD9E4)
-extern int dword_ABD9E8;  // W13-C raw fn_56 词表 (data 0xABD9E8)
-extern int dword_ABD9EC;  // W13-C raw fn_56 词表 (data 0xABD9EC)
-extern int dword_ABD9F0;  // W13-C raw fn_56 词表 (data 0xABD9F0)
-extern int dword_ABD9F4;  // W13-C raw fn_56 词表 (data 0xABD9F4)
-extern int dword_ABD9F8;  // W13-C raw fn_56 词表 (data 0xABD9F8)
-extern int dword_ABD9FC;  // W13-C raw fn_56 词表 (data 0xABD9FC)
-extern int dword_ABDA00;  // W13-C raw fn_56 词表 (data 0xABDA00)
-extern int dword_ABDA04;  // W13-C raw fn_56 词表 (data 0xABDA04)
+extern unsigned int dword_ABD638; // W13-C raw fn_56 词表 (data 0xABD638)
+extern unsigned int dword_ABD63C; // W13-C raw fn_56 词表 (data 0xABD63C)
+extern unsigned int dword_ABD640; // W13-C raw fn_56 词表 (data 0xABD640)
+extern unsigned int dword_ABD644; // W13-C raw fn_56 词表 (data 0xABD644)
+extern unsigned int dword_ABD648; // W13-C raw fn_56 词表 (data 0xABD648)
+extern unsigned int dword_ABD64C; // W13-C raw fn_56 词表 (data 0xABD64C)
+extern unsigned int dword_ABD650; // W13-C raw fn_56 词表 (data 0xABD650)
+extern unsigned int dword_ABD654; // W13-C raw fn_56 词表 (data 0xABD654)
+extern unsigned int dword_ABD658; // W13-C raw fn_56 词表 (data 0xABD658)
+extern unsigned int dword_ABD65C; // W13-C raw fn_56 词表 (data 0xABD65C)
+extern unsigned int dword_ABD660; // W13-C raw fn_56 词表 (data 0xABD660)
+extern unsigned int dword_ABD664; // W13-C raw fn_56 词表 (data 0xABD664)
+extern unsigned int dword_ABD668; // W13-C raw fn_56 词表 (data 0xABD668)
+extern unsigned int dword_ABD66C; // W13-C raw fn_56 词表 (data 0xABD66C)
+extern unsigned int dword_ABD670; // W13-C raw fn_56 词表 (data 0xABD670)
+extern unsigned int dword_ABD674; // W13-C raw fn_56 词表 (data 0xABD674)
+extern unsigned int dword_ABD678; // W13-C raw fn_56 词表 (data 0xABD678)
+extern unsigned int dword_ABD67C; // W13-C raw fn_56 词表 (data 0xABD67C)
+extern unsigned int dword_ABD680; // W13-C raw fn_56 词表 (data 0xABD680)
+extern unsigned int dword_ABD684; // W13-C raw fn_56 词表 (data 0xABD684)
+extern unsigned int dword_ABD688; // W13-C raw fn_56 词表 (data 0xABD688)
+extern unsigned int dword_ABD68C; // W13-C raw fn_56 词表 (data 0xABD68C)
+extern unsigned int dword_ABD690; // W13-C raw fn_56 词表 (data 0xABD690)
+extern unsigned int dword_ABD694; // W13-C raw fn_56 词表 (data 0xABD694)
+extern unsigned int dword_ABD698; // W13-C raw fn_56 词表 (data 0xABD698)
+extern unsigned int dword_ABD69C; // W13-C raw fn_56 词表 (data 0xABD69C)
+extern unsigned int dword_ABD6A0; // W13-C raw fn_56 词表 (data 0xABD6A0)
+extern unsigned int dword_ABD6A4; // W13-C raw fn_56 词表 (data 0xABD6A4)
+extern unsigned int dword_ABD6A8; // W13-C raw fn_56 词表 (data 0xABD6A8)
+extern unsigned int dword_ABD6AC; // W13-C raw fn_56 词表 (data 0xABD6AC)
+extern unsigned int dword_ABD6B0; // W13-C raw fn_56 词表 (data 0xABD6B0)
+extern unsigned int dword_ABD6B4; // W13-C raw fn_56 词表 (data 0xABD6B4)
+extern unsigned int dword_ABD6B8; // W13-C raw fn_56 词表 (data 0xABD6B8)
+extern unsigned int dword_ABD6BC; // W13-C raw fn_56 词表 (data 0xABD6BC)
+extern unsigned int dword_ABD6C0; // W13-C raw fn_56 词表 (data 0xABD6C0)
+extern unsigned int dword_ABD6C4; // W13-C raw fn_56 词表 (data 0xABD6C4)
+extern unsigned int dword_ABD6C8; // W13-C raw fn_56 词表 (data 0xABD6C8)
+extern unsigned int dword_ABD6CC; // W13-C raw fn_56 词表 (data 0xABD6CC)
+extern unsigned int dword_ABD6D0; // W13-C raw fn_56 词表 (data 0xABD6D0)
+extern unsigned int dword_ABD6D4; // W13-C raw fn_56 词表 (data 0xABD6D4)
+extern unsigned int dword_ABD6D8; // W13-C raw fn_56 词表 (data 0xABD6D8)
+extern unsigned int dword_ABD6DC; // W13-C raw fn_56 词表 (data 0xABD6DC)
+extern unsigned int dword_ABD6E0; // W13-C raw fn_56 词表 (data 0xABD6E0)
+extern unsigned int dword_ABD6E4; // W13-C raw fn_56 词表 (data 0xABD6E4)
+extern unsigned int dword_ABD6E8; // W13-C raw fn_56 词表 (data 0xABD6E8)
+extern unsigned int dword_ABD6EC; // W13-C raw fn_56 词表 (data 0xABD6EC)
+extern unsigned int dword_ABD6F0; // W13-C raw fn_56 词表 (data 0xABD6F0)
+extern unsigned int dword_ABD6F4; // W13-C raw fn_56 词表 (data 0xABD6F4)
+extern unsigned int dword_ABD6F8; // W13-C raw fn_56 词表 (data 0xABD6F8)
+extern unsigned int dword_ABD6FC; // W13-C raw fn_56 词表 (data 0xABD6FC)
+extern unsigned int dword_ABD700; // W13-C raw fn_56 词表 (data 0xABD700)
+extern unsigned int dword_ABD704; // W13-C raw fn_56 词表 (data 0xABD704)
+extern unsigned int dword_ABD708; // W13-C raw fn_56 词表 (data 0xABD708)
+extern unsigned int dword_ABD70C; // W13-C raw fn_56 词表 (data 0xABD70C)
+extern unsigned int dword_ABD710; // W13-C raw fn_56 词表 (data 0xABD710)
+extern unsigned int dword_ABD714; // W13-C raw fn_56 词表 (data 0xABD714)
+extern unsigned int dword_ABD718; // W13-C raw fn_56 词表 (data 0xABD718)
+extern unsigned int dword_ABD71C; // W13-C raw fn_56 词表 (data 0xABD71C)
+extern unsigned int dword_ABD720; // W13-C raw fn_56 词表 (data 0xABD720)
+extern unsigned int dword_ABD724; // W13-C raw fn_56 词表 (data 0xABD724)
+extern unsigned int dword_ABD728; // W13-C raw fn_56 词表 (data 0xABD728)
+extern unsigned int dword_ABD72C; // W13-C raw fn_56 词表 (data 0xABD72C)
+extern unsigned int dword_ABD730; // W13-C raw fn_56 词表 (data 0xABD730)
+extern unsigned int dword_ABD734; // W13-C raw fn_56 词表 (data 0xABD734)
+extern unsigned int dword_ABD738; // W13-C raw fn_56 词表 (data 0xABD738)
+extern unsigned int dword_ABD73C; // W13-C raw fn_56 词表 (data 0xABD73C)
+extern unsigned int dword_ABD740; // W13-C raw fn_56 词表 (data 0xABD740)
+extern unsigned int dword_ABD744; // W13-C raw fn_56 词表 (data 0xABD744)
+extern unsigned int dword_ABD748; // W13-C raw fn_56 词表 (data 0xABD748)
+extern unsigned int dword_ABD74C; // W13-C raw fn_56 词表 (data 0xABD74C)
+extern unsigned int dword_ABD750; // W13-C raw fn_56 词表 (data 0xABD750)
+extern unsigned int dword_ABD754; // W13-C raw fn_56 词表 (data 0xABD754)
+extern unsigned int dword_ABD758; // W13-C raw fn_56 词表 (data 0xABD758)
+extern unsigned int dword_ABD75C; // W13-C raw fn_56 词表 (data 0xABD75C)
+extern unsigned int dword_ABD760; // W13-C raw fn_56 词表 (data 0xABD760)
+extern unsigned int dword_ABD764; // W13-C raw fn_56 词表 (data 0xABD764)
+extern unsigned int dword_ABD768; // W13-C raw fn_56 词表 (data 0xABD768)
+extern unsigned int dword_ABD76C; // W13-C raw fn_56 词表 (data 0xABD76C)
+extern unsigned int dword_ABD770; // W13-C raw fn_56 词表 (data 0xABD770)
+extern unsigned int dword_ABD774; // W13-C raw fn_56 词表 (data 0xABD774)
+extern unsigned int dword_ABD778; // W13-C raw fn_56 词表 (data 0xABD778)
+extern unsigned int dword_ABD77C; // W13-C raw fn_56 词表 (data 0xABD77C)
+extern unsigned int dword_ABD780; // W13-C raw fn_56 词表 (data 0xABD780)
+extern unsigned int dword_ABD784; // W13-C raw fn_56 词表 (data 0xABD784)
+extern unsigned int dword_ABD788; // W13-C raw fn_56 词表 (data 0xABD788)
+extern unsigned int dword_ABD78C; // W13-C raw fn_56 词表 (data 0xABD78C)
+extern unsigned int dword_ABD790; // W13-C raw fn_56 词表 (data 0xABD790)
+extern unsigned int dword_ABD794; // W13-C raw fn_56 词表 (data 0xABD794)
+extern unsigned int dword_ABD798; // W13-C raw fn_56 词表 (data 0xABD798)
+extern unsigned int dword_ABD79C; // W13-C raw fn_56 词表 (data 0xABD79C)
+extern unsigned int dword_ABD7A0; // W13-C raw fn_56 词表 (data 0xABD7A0)
+extern unsigned int dword_ABD7A4; // W13-C raw fn_56 词表 (data 0xABD7A4)
+extern unsigned int dword_ABD7A8; // W13-C raw fn_56 词表 (data 0xABD7A8)
+extern unsigned int dword_ABD7AC; // W13-C raw fn_56 词表 (data 0xABD7AC)
+extern unsigned int dword_ABD7B0; // W13-C raw fn_56 词表 (data 0xABD7B0)
+extern unsigned int dword_ABD7B4; // W13-C raw fn_56 词表 (data 0xABD7B4)
+extern unsigned int dword_ABD7B8; // W13-C raw fn_56 词表 (data 0xABD7B8)
+extern unsigned int dword_ABD7BC; // W13-C raw fn_56 词表 (data 0xABD7BC)
+extern unsigned int dword_ABD7C0; // W13-C raw fn_56 词表 (data 0xABD7C0)
+extern unsigned int dword_ABD7C4; // W13-C raw fn_56 词表 (data 0xABD7C4)
+extern unsigned int dword_ABD7C8; // W13-C raw fn_56 词表 (data 0xABD7C8)
+extern unsigned int dword_ABD7CC; // W13-C raw fn_56 词表 (data 0xABD7CC)
+extern unsigned int dword_ABD7D0; // W13-C raw fn_56 词表 (data 0xABD7D0)
+extern unsigned int dword_ABD7D4; // W13-C raw fn_56 词表 (data 0xABD7D4)
+extern unsigned int dword_ABD7D8; // W13-C raw fn_56 词表 (data 0xABD7D8)
+extern unsigned int dword_ABD7DC; // W13-C raw fn_56 词表 (data 0xABD7DC)
+extern unsigned int dword_ABD7E0; // W13-C raw fn_56 词表 (data 0xABD7E0)
+extern unsigned int dword_ABD7E4; // W13-C raw fn_56 词表 (data 0xABD7E4)
+extern unsigned int dword_ABD7E8; // W13-C raw fn_56 词表 (data 0xABD7E8)
+extern unsigned int dword_ABD7EC; // W13-C raw fn_56 词表 (data 0xABD7EC)
+extern unsigned int dword_ABD7F0; // W13-C raw fn_56 词表 (data 0xABD7F0)
+extern unsigned int dword_ABD7F4; // W13-C raw fn_56 词表 (data 0xABD7F4)
+extern unsigned int dword_ABD7F8; // W13-C raw fn_56 词表 (data 0xABD7F8)
+extern unsigned int dword_ABD7FC; // W13-C raw fn_56 词表 (data 0xABD7FC)
+extern unsigned int dword_ABD800; // W13-C raw fn_56 词表 (data 0xABD800)
+extern unsigned int dword_ABD804; // W13-C raw fn_56 词表 (data 0xABD804)
+extern unsigned int dword_ABD808; // W13-C raw fn_56 词表 (data 0xABD808)
+extern unsigned int dword_ABD80C; // W13-C raw fn_56 词表 (data 0xABD80C)
+extern unsigned int dword_ABD810; // W13-C raw fn_56 词表 (data 0xABD810)
+extern unsigned int dword_ABD814; // W13-C raw fn_56 词表 (data 0xABD814)
+extern unsigned int dword_ABD818; // W13-C raw fn_56 词表 (data 0xABD818)
+extern unsigned int dword_ABD81C; // W13-C raw fn_56 词表 (data 0xABD81C)
+extern unsigned int dword_ABD820; // W13-C raw fn_56 词表 (data 0xABD820)
+extern unsigned int dword_ABD824; // W13-C raw fn_56 词表 (data 0xABD824)
+extern unsigned int dword_ABD828; // W13-C raw fn_56 词表 (data 0xABD828)
+extern unsigned int dword_ABD82C; // W13-C raw fn_56 词表 (data 0xABD82C)
+extern unsigned int dword_ABD830; // W13-C raw fn_56 词表 (data 0xABD830)
+extern unsigned int dword_ABD834; // W13-C raw fn_56 词表 (data 0xABD834)
+extern unsigned int dword_ABD838; // W13-C raw fn_56 词表 (data 0xABD838)
+extern unsigned int dword_ABD83C; // W13-C raw fn_56 词表 (data 0xABD83C)
+extern unsigned int dword_ABD840; // W13-C raw fn_56 词表 (data 0xABD840)
+extern unsigned int dword_ABD844; // W13-C raw fn_56 词表 (data 0xABD844)
+extern unsigned int dword_ABD848; // W13-C raw fn_56 词表 (data 0xABD848)
+extern unsigned int dword_ABD84C; // W13-C raw fn_56 词表 (data 0xABD84C)
+extern unsigned int dword_ABD850; // W13-C raw fn_56 词表 (data 0xABD850)
+extern unsigned int dword_ABD854; // W13-C raw fn_56 词表 (data 0xABD854)
+extern unsigned int dword_ABD858; // W13-C raw fn_56 词表 (data 0xABD858)
+extern unsigned int dword_ABD85C; // W13-C raw fn_56 词表 (data 0xABD85C)
+extern unsigned int dword_ABD860; // W13-C raw fn_56 词表 (data 0xABD860)
+extern unsigned int dword_ABD864; // W13-C raw fn_56 词表 (data 0xABD864)
+extern unsigned int dword_ABD868; // W13-C raw fn_56 词表 (data 0xABD868)
+extern unsigned int dword_ABD86C; // W13-C raw fn_56 词表 (data 0xABD86C)
+extern unsigned int dword_ABD870; // W13-C raw fn_56 词表 (data 0xABD870)
+extern unsigned int dword_ABD874; // W13-C raw fn_56 词表 (data 0xABD874)
+extern unsigned int dword_ABD878; // W13-C raw fn_56 词表 (data 0xABD878)
+extern unsigned int dword_ABD87C; // W13-C raw fn_56 词表 (data 0xABD87C)
+extern unsigned int dword_ABD880; // W13-C raw fn_56 词表 (data 0xABD880)
+extern unsigned int dword_ABD884; // W13-C raw fn_56 词表 (data 0xABD884)
+extern unsigned int dword_ABD888; // W13-C raw fn_56 词表 (data 0xABD888)
+extern unsigned int dword_ABD88C; // W13-C raw fn_56 词表 (data 0xABD88C)
+extern unsigned int dword_ABD890; // W13-C raw fn_56 词表 (data 0xABD890)
+extern unsigned int dword_ABD894; // W13-C raw fn_56 词表 (data 0xABD894)
+extern unsigned int dword_ABD898; // W13-C raw fn_56 词表 (data 0xABD898)
+extern unsigned int dword_ABD89C; // W13-C raw fn_56 词表 (data 0xABD89C)
+extern unsigned int dword_ABD8A0; // W13-C raw fn_56 词表 (data 0xABD8A0)
+extern unsigned int dword_ABD8A4; // W13-C raw fn_56 词表 (data 0xABD8A4)
+extern unsigned int dword_ABD8A8; // W13-C raw fn_56 词表 (data 0xABD8A8)
+extern unsigned int dword_ABD8AC; // W13-C raw fn_56 词表 (data 0xABD8AC)
+extern unsigned int dword_ABD8B0; // W13-C raw fn_56 词表 (data 0xABD8B0)
+extern unsigned int dword_ABD8B4; // W13-C raw fn_56 词表 (data 0xABD8B4)
+extern unsigned int dword_ABD8B8; // W13-C raw fn_56 词表 (data 0xABD8B8)
+extern unsigned int dword_ABD8BC; // W13-C raw fn_56 词表 (data 0xABD8BC)
+extern unsigned int dword_ABD8C0; // W13-C raw fn_56 词表 (data 0xABD8C0)
+extern unsigned int dword_ABD8C4; // W13-C raw fn_56 词表 (data 0xABD8C4)
+extern unsigned int dword_ABD8C8; // W13-C raw fn_56 词表 (data 0xABD8C8)
+extern unsigned int dword_ABD8CC; // W13-C raw fn_56 词表 (data 0xABD8CC)
+extern unsigned int dword_ABD8D0; // W13-C raw fn_56 词表 (data 0xABD8D0)
+extern unsigned int dword_ABD8D4; // W13-C raw fn_56 词表 (data 0xABD8D4)
+extern unsigned int dword_ABD8D8; // W13-C raw fn_56 词表 (data 0xABD8D8)
+extern unsigned int dword_ABD8DC; // W13-C raw fn_56 词表 (data 0xABD8DC)
+extern unsigned int dword_ABD8E0; // W13-C raw fn_56 词表 (data 0xABD8E0)
+extern unsigned int dword_ABD8E4; // W13-C raw fn_56 词表 (data 0xABD8E4)
+extern unsigned int dword_ABD8E8; // W13-C raw fn_56 词表 (data 0xABD8E8)
+extern unsigned int dword_ABD8EC; // W13-C raw fn_56 词表 (data 0xABD8EC)
+extern unsigned int dword_ABD8F0; // W13-C raw fn_56 词表 (data 0xABD8F0)
+extern unsigned int dword_ABD8F4; // W13-C raw fn_56 词表 (data 0xABD8F4)
+extern unsigned int dword_ABD8F8; // W13-C raw fn_56 词表 (data 0xABD8F8)
+extern unsigned int dword_ABD8FC; // W13-C raw fn_56 词表 (data 0xABD8FC)
+extern unsigned int dword_ABD900; // W13-C raw fn_56 词表 (data 0xABD900)
+extern unsigned int dword_ABD904; // W13-C raw fn_56 词表 (data 0xABD904)
+extern unsigned int dword_ABD908; // W13-C raw fn_56 词表 (data 0xABD908)
+extern unsigned int dword_ABD90C; // W13-C raw fn_56 词表 (data 0xABD90C)
+extern unsigned int dword_ABD910; // W13-C raw fn_56 词表 (data 0xABD910)
+extern unsigned int dword_ABD914; // W13-C raw fn_56 词表 (data 0xABD914)
+extern unsigned int dword_ABD918; // W13-C raw fn_56 词表 (data 0xABD918)
+extern unsigned int dword_ABD91C; // W13-C raw fn_56 词表 (data 0xABD91C)
+extern unsigned int dword_ABD920; // W13-C raw fn_56 词表 (data 0xABD920)
+extern unsigned int dword_ABD924; // W13-C raw fn_56 词表 (data 0xABD924)
+extern unsigned int dword_ABD928; // W13-C raw fn_56 词表 (data 0xABD928)
+extern unsigned int dword_ABD92C; // W13-C raw fn_56 词表 (data 0xABD92C)
+extern unsigned int dword_ABD930; // W13-C raw fn_56 词表 (data 0xABD930)
+extern unsigned int dword_ABD934; // W13-C raw fn_56 词表 (data 0xABD934)
+extern unsigned int dword_ABD938; // W13-C raw fn_56 词表 (data 0xABD938)
+extern unsigned int dword_ABD93C; // W13-C raw fn_56 词表 (data 0xABD93C)
+extern unsigned int dword_ABD940; // W13-C raw fn_56 词表 (data 0xABD940)
+extern unsigned int dword_ABD944; // W13-C raw fn_56 词表 (data 0xABD944)
+extern unsigned int dword_ABD948; // W13-C raw fn_56 词表 (data 0xABD948)
+extern unsigned int dword_ABD94C; // W13-C raw fn_56 词表 (data 0xABD94C)
+extern unsigned int dword_ABD950; // W13-C raw fn_56 词表 (data 0xABD950)
+extern unsigned int dword_ABD954; // W13-C raw fn_56 词表 (data 0xABD954)
+extern unsigned int dword_ABD958; // W13-C raw fn_56 词表 (data 0xABD958)
+extern unsigned int dword_ABD95C; // W13-C raw fn_56 词表 (data 0xABD95C)
+extern unsigned int dword_ABD960; // W13-C raw fn_56 词表 (data 0xABD960)
+extern unsigned int dword_ABD964; // W13-C raw fn_56 词表 (data 0xABD964)
+extern unsigned int dword_ABD968; // W13-C raw fn_56 词表 (data 0xABD968)
+extern unsigned int dword_ABD96C; // W13-C raw fn_56 词表 (data 0xABD96C)
+extern unsigned int dword_ABD970; // W13-C raw fn_56 词表 (data 0xABD970)
+extern unsigned int dword_ABD974; // W13-C raw fn_56 词表 (data 0xABD974)
+extern unsigned int dword_ABD978; // W13-C raw fn_56 词表 (data 0xABD978)
+extern unsigned int dword_ABD97C; // W13-C raw fn_56 词表 (data 0xABD97C)
+extern unsigned int dword_ABD980; // W13-C raw fn_56 词表 (data 0xABD980)
+extern unsigned int dword_ABD984; // W13-C raw fn_56 词表 (data 0xABD984)
+extern unsigned int dword_ABD988; // W13-C raw fn_56 词表 (data 0xABD988)
+extern unsigned int dword_ABD98C; // W13-C raw fn_56 词表 (data 0xABD98C)
+extern unsigned int dword_ABD990; // W13-C raw fn_56 词表 (data 0xABD990)
+extern unsigned int dword_ABD994; // W13-C raw fn_56 词表 (data 0xABD994)
+extern unsigned int dword_ABD998; // W13-C raw fn_56 词表 (data 0xABD998)
+extern unsigned int dword_ABD99C; // W13-C raw fn_56 词表 (data 0xABD99C)
+extern unsigned int dword_ABD9A0; // W13-C raw fn_56 词表 (data 0xABD9A0)
+extern unsigned int dword_ABD9A4; // W13-C raw fn_56 词表 (data 0xABD9A4)
+extern unsigned int dword_ABD9A8; // W13-C raw fn_56 词表 (data 0xABD9A8)
+extern unsigned int dword_ABD9AC; // W13-C raw fn_56 词表 (data 0xABD9AC)
+extern unsigned int dword_ABD9B0; // W13-C raw fn_56 词表 (data 0xABD9B0)
+extern unsigned int dword_ABD9B4; // W13-C raw fn_56 词表 (data 0xABD9B4)
+extern unsigned int dword_ABD9B8; // W13-C raw fn_56 词表 (data 0xABD9B8)
+extern unsigned int dword_ABD9BC; // W13-C raw fn_56 词表 (data 0xABD9BC)
+extern unsigned int dword_ABD9C0; // W13-C raw fn_56 词表 (data 0xABD9C0)
+extern unsigned int dword_ABD9C4; // W13-C raw fn_56 词表 (data 0xABD9C4)
+extern unsigned int dword_ABD9C8; // W13-C raw fn_56 词表 (data 0xABD9C8)
+extern unsigned int dword_ABD9CC; // W13-C raw fn_56 词表 (data 0xABD9CC)
+extern unsigned int dword_ABD9D0; // W13-C raw fn_56 词表 (data 0xABD9D0)
+extern unsigned int dword_ABD9D4; // W13-C raw fn_56 词表 (data 0xABD9D4)
+extern unsigned int dword_ABD9D8; // W13-C raw fn_56 词表 (data 0xABD9D8)
+extern unsigned int dword_ABD9DC; // W13-C raw fn_56 词表 (data 0xABD9DC)
+extern unsigned int dword_ABD9E0; // W13-C raw fn_56 词表 (data 0xABD9E0)
+extern unsigned int dword_ABD9E4; // W13-C raw fn_56 词表 (data 0xABD9E4)
+extern unsigned int dword_ABD9E8; // W13-C raw fn_56 词表 (data 0xABD9E8)
+extern unsigned int dword_ABD9EC; // W13-C raw fn_56 词表 (data 0xABD9EC)
+extern unsigned int dword_ABD9F0; // W13-C raw fn_56 词表 (data 0xABD9F0)
+extern unsigned int dword_ABD9F4; // W13-C raw fn_56 词表 (data 0xABD9F4)
+extern unsigned int dword_ABD9F8; // W13-C raw fn_56 词表 (data 0xABD9F8)
+extern unsigned int dword_ABD9FC; // W13-C raw fn_56 词表 (data 0xABD9FC)
+extern unsigned int dword_ABDA00; // W13-C raw fn_56 词表 (data 0xABDA00)
+extern unsigned int dword_ABDA04; // W13-C raw fn_56 词表 (data 0xABDA04)
 extern unsigned int dword_ABDA08;  // W13-C raw fn_56 词表 (data 0xABDA08; 类型对齐 ida_globals.h:6772, C2371)
-extern int dword_ABDA0C;  // W13-C raw fn_56 词表 (data 0xABDA0C)
-extern int dword_ABDA10;  // W13-C raw fn_56 词表 (data 0xABDA10)
-extern int dword_ABDA14;  // W13-C raw fn_56 词表 (data 0xABDA14)
-extern int dword_ABDA18;  // W13-C raw fn_56 词表 (data 0xABDA18)
-extern int dword_ABDA1C;  // W13-C raw fn_56 词表 (data 0xABDA1C)
-extern int dword_ABDA20;  // W13-C raw fn_56 词表 (data 0xABDA20)
-extern int dword_ABDA24;  // W13-C raw fn_56 词表 (data 0xABDA24)
-extern int dword_ABDA28;  // W13-C raw fn_56 词表 (data 0xABDA28)
-extern int dword_ABDA2C;  // W13-C raw fn_56 词表 (data 0xABDA2C)
-extern int dword_ABDA30;  // W13-C raw fn_56 词表 (data 0xABDA30)
-extern int dword_ABDA34;  // W13-C raw fn_56 词表 (data 0xABDA34)
-extern int dword_ABDA38;  // W13-C raw fn_56 词表 (data 0xABDA38)
-extern int dword_ABDA3C;  // W13-C raw fn_56 词表 (data 0xABDA3C)
-extern int dword_ABDA40;  // W13-C raw fn_56 词表 (data 0xABDA40)
-extern int dword_ABDA44;  // W13-C raw fn_56 词表 (data 0xABDA44)
-extern int dword_ABDA48;  // W13-C raw fn_56 词表 (data 0xABDA48)
-extern int dword_ABDA4C;  // W13-C raw fn_56 词表 (data 0xABDA4C)
-extern int dword_ABDA50;  // W13-C raw fn_56 词表 (data 0xABDA50)
+extern unsigned int dword_ABDA0C; // W13-C raw fn_56 词表 (data 0xABDA0C)
+extern unsigned int dword_ABDA10; // W13-C raw fn_56 词表 (data 0xABDA10)
+extern unsigned int dword_ABDA14; // W13-C raw fn_56 词表 (data 0xABDA14)
+extern unsigned int dword_ABDA18; // W13-C raw fn_56 词表 (data 0xABDA18)
+extern unsigned int dword_ABDA1C; // W13-C raw fn_56 词表 (data 0xABDA1C)
+extern unsigned int dword_ABDA20; // W13-C raw fn_56 词表 (data 0xABDA20)
+extern unsigned int dword_ABDA24; // W13-C raw fn_56 词表 (data 0xABDA24)
+extern unsigned int dword_ABDA28; // W13-C raw fn_56 词表 (data 0xABDA28)
+extern unsigned int dword_ABDA2C; // W13-C raw fn_56 词表 (data 0xABDA2C)
+extern unsigned int dword_ABDA30; // W13-C raw fn_56 词表 (data 0xABDA30)
+extern unsigned int dword_ABDA34; // W13-C raw fn_56 词表 (data 0xABDA34)
+extern unsigned int dword_ABDA38; // W13-C raw fn_56 词表 (data 0xABDA38)
+extern unsigned int dword_ABDA3C; // W13-C raw fn_56 词表 (data 0xABDA3C)
+extern unsigned int dword_ABDA40; // W13-C raw fn_56 词表 (data 0xABDA40)
+extern unsigned int dword_ABDA44; // W13-C raw fn_56 词表 (data 0xABDA44)
+extern unsigned int dword_ABDA48; // W13-C raw fn_56 词表 (data 0xABDA48)
+extern unsigned int dword_ABDA4C; // W13-C raw fn_56 词表 (data 0xABDA4C)
+extern unsigned int dword_ABDA50; // W13-C raw fn_56 词表 (data 0xABDA50)
 extern unsigned int dword_ABDC74;  // W13-C raw fn_56 词表 (data 0xABDC74; 类型对齐 ida_globals.h:6822, C2371)
 
 // 0x41e500
@@ -1343,7 +1343,7 @@ unsigned int* Coord3D::Set(int a2, int a3, int a4)  // G42 sig-sync: IDA unsigne
   *(unsigned int *)this->__pad_000 = a2; /*0x43709a*/
   this->Coord3D_field_0x04 = a3; /*0x4370a0*/
   this->q008 = a4; /*0x4370a3*/
-  return this->__pad_000; /*0x4370a6*/
+  return (unsigned int *)(this->__pad_000); /*0x4370a6*/
 }
 // 0x459f60
 int Coord3D::Equals(unsigned int *a2)  // G42 sig-sync: IDA int(this,unsigned int*)
@@ -10322,7 +10322,7 @@ void ScoreScreen::Display()
       do /*0x68e547*/
       {
         --v221; /*0x68e542*/
-        qmemcpy(v220, v220 - 29, 0x74u); /*0x68e543*/
+        memcpy(v220, v220 - 29, 0x74u); /*0x68e543*/
         v220 -= 29; /*0x68e545*/
       }
       while ( v221 ); /*0x68e547*/
@@ -15837,7 +15837,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
       }
       else
       {
-        qmemcpy(&stru_B76AC4.ambientSoundController[4], p2, 0x10Cu); /*0x7a5e1b*/
+        memcpy(&stru_B76AC4.ambientSoundController[4], p2, 0x10Cu); /*0x7a5e1b*/
         memset(&DataGlobal_B73BE8, 0, 0x10Cu); /*0x7a5e27*/
         v29 = (HWND)Dialog::FindByHandle((Dialog *)0xC4); /*0x7a5e2e*/
         if ( v29 ) /*0x7a5e35*/
@@ -15875,7 +15875,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
               v38 = SendMessageA(v36, 0x199u, v37, 0); /*0x7a5f56*/
               if ( v38 >= 0 && v38 < ((char *)&stru_B76AC4) ) /*0x7a5f68*/
               {
-                qmemcpy(v160, (const void *)(stru_B76AC4.occupant + 268 * v38), sizeof(v160)); /*0x7a5f9c*/
+                memcpy(v160, (const void *)(stru_B76AC4.occupant + 268 * v38), sizeof(v160)); /*0x7a5f9c*/
                 v153 = ((v153) & 0xFFFFFF00u) | ((unsigned int)(ValidateGameJoinWOL((int)v160, 0, 0)) & 0xFFu); /*0x7a5fb5*/
                 v35 = (void (__stdcall *)(HWND, BOOL))EnableWindow; /*0x7a5fbe*/
                 v153 = ((v153) & 0xFFFF00FFu) | (((unsigned int)(ValidateGameJoinWOL((int)v160, 0, 1)) & 0xFFu) << 8); /*0x7a5fc4*/
@@ -15928,7 +15928,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
           wcscpy((wchar_t *)v52, (const wchar_t *)v53); /*0x7a60fc*/
           v54 = *((unsigned int *)a4 + 6); /*0x7a6101*/
           *(unsigned int *)v152.q000 = 0; /*0x7a6109*/
-          IDA_WORD2(v154) = 0; /*0x7a6112*/
+          (((unsigned short *)&(v154))[2]) = 0; /*0x7a6112*/
           v55 = ntohl(v54); /*0x7a6117*/
           (((v154) >> 16) & 0xFF) = (((v55) >> 8) & 0xFF); /*0x7a612b*/
           *(unsigned short *)((char *)&v154 + 3) = (uint8_t)v55; /*0x7a612b*/
@@ -15991,7 +15991,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
         }
       }
       v80 = a4; /*0x7a668c*/
-      qmemcpy(v158, a4, sizeof(v158)); /*0x7a66a1*/
+      memcpy(v158, a4, sizeof(v158)); /*0x7a66a1*/
       v81 = a3; /*0x7a66a3*/
       v82 = 0; /*0x7a66aa*/
       v158[8] = 0; /*0x7a66ac*/
@@ -16109,7 +16109,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
                 while ( 1 ) /*0x7a6b5f*/
                 {
                   if ( v108 >= 0 && v109 < v107 ) /*0x7a6b65*/
-                    qmemcpy(v157, (char *)g_WOL_UserList.nextObject + v108, sizeof(v157)); /*0x7a6b79*/
+                    memcpy(v157, (char *)g_WOL_UserList.nextObject + v108, sizeof(v157)); /*0x7a6b79*/
                   v110 = String::GetOrEmpty_Alt(&v152); /*0x7a6b84*/
                   if ( !_strcmpi(v110, (char *)&v157[9]) ) /*0x7a6b8a*/
                     break; /*0x7a6b8a*/
@@ -16267,7 +16267,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
                   {
                     if ( v130 >= 0 && v132 < g_WOL_UserList.owningHouseIndex ) /*0x7a6efc*/
                     {
-                      qmemcpy(v157, (char *)g_WOL_UserList.nextObject + v130, sizeof(v157)); /*0x7a6f10*/
+                      memcpy(v157, (char *)g_WOL_UserList.nextObject + v130, sizeof(v157)); /*0x7a6f10*/
                       v131 = v154; /*0x7a6f12*/
                     }
                     v133 = (struct in_addr)v157[6]; /*0x7a6f1b*/
@@ -16353,7 +16353,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
         while ( 1 ) /*0x7a6776*/
         {
           if ( v84 >= 0 && v82 < v83 ) /*0x7a677c*/
-            qmemcpy(v157, (char *)g_WOL_UserList.nextObject + v84, sizeof(v157)); /*0x7a678f*/
+            memcpy(v157, (char *)g_WOL_UserList.nextObject + v84, sizeof(v157)); /*0x7a678f*/
           v85 = 0; /*0x7a6791*/
           v154 = 0; /*0x7a6798*/
           do /*0x7a67bd*/
@@ -16401,7 +16401,7 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
           v95 = (char *)g_WOL_UserList.nextObject + 108 * v88; /*0x7a691a*/
           if ( v95 ) /*0x7a691f*/
           {
-            qmemcpy(v95, v158, 0x6Cu); /*0x7a692d*/
+            memcpy(v95, v158, 0x6Cu); /*0x7a692d*/
             v87 = g_WOL_UserList.owningHouseIndex; /*0x7a692f*/
           }
           v80 = a4; /*0x7a6935*/
@@ -16420,8 +16420,8 @@ int __stdcall CChatEventSink::HandleChatEvent(int p0, int p1, uint8_t* p2, char*
           v92 = *(unsigned int *)&v151.ptr_4; /*0x7a687f*/
           v93 = 108 * (unsigned char)(g_WOL_UserList.owningHouseIndex); /*0x7a688c*/
           v94 = (unsigned int)(108 * g_WOL_UserList.owningHouseIndex) >> 2; /*0x7a688e*/
-          qmemcpy(*(void **)&v151.ptr_4, g_WOL_UserList.nextObject, 4 * v94); /*0x7a6891*/
-          qmemcpy((void *)(v92 + 4 * v94), &nextObject->AbstractClass + v94, v93 & 3); /*0x7a6898*/
+          memcpy(*(void **)&v151.ptr_4, g_WOL_UserList.nextObject, 4 * v94); /*0x7a6891*/
+          memcpy((void *)(v92 + 4 * v94), &nextObject->AbstractClass + v94, v93 & 3); /*0x7a6898*/
           nextObject = g_WOL_UserList.nextObject; /*0x7a689a*/
         }
         delete[] (nextObject); /*0x7a68a1*/
@@ -17049,7 +17049,7 @@ int __stdcall CChatEventSink::HandleLobbyPlayerUpdate(int p0, int p1, int p2, in
             for ( i = g_WOL_UserList.nextObject; ; i = &i->HouseClass_6C ) /*0x7a8c26*/
             {
               if ( v73 >= 0 && v73 < g_WOL_UserList.owningHouseIndex ) /*0x7a8c32*/
-                qmemcpy(&g_WebBrowserConfig.occupant, i, 0x6Cu); /*0x7a8c40*/
+                memcpy(&g_WebBrowserConfig.occupant, i, 0x6Cu); /*0x7a8c40*/
               if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7a8c49*/
                 break; /*0x7a8c49*/
               if ( ++v73 >= g_WOL_UserList.owningHouseIndex ) /*0x7a8c51*/
@@ -17095,7 +17095,7 @@ int __stdcall CChatEventSink::HandleLobbyPlayerUpdate(int p0, int p1, int p2, in
                 if ( v78 != -1 ) /*0x7a8d2f*/
                 {
                   if ( v78 >= 0 && v78 < g_WOL_UserList.owningHouseIndex ) /*0x7a8d3b*/
-                    qmemcpy(&v99[80], (char *)g_WOL_UserList.nextObject + 108 * v78, 0x6Cu); /*0x7a8d54*/
+                    memcpy(&v99[80], (char *)g_WOL_UserList.nextObject + 108 * v78, 0x6Cu); /*0x7a8d54*/
                   *(unsigned int *)&v99[112] = 0; /*0x7a8d5a*/
                   Network::SyncPlayerList(v87); /*0x7a8d65*/
                   q04C = DataGlobal_B77DCC; /*0x7a8d6a*/
@@ -17219,7 +17219,7 @@ int __stdcall CChatEventSink::HandleLobbyPlayerUpdate(int p0, int p1, int p2, in
         while ( 1 ) /*0x7a86b8*/
         {
           if ( v35 >= 0 && v35 < g_WOL_UserList.owningHouseIndex ) /*0x7a86be*/
-            qmemcpy(&g_WebBrowserConfig.occupant, nextObject, 0x6Cu); /*0x7a86ce*/
+            memcpy(&g_WebBrowserConfig.occupant, nextObject, 0x6Cu); /*0x7a86ce*/
           if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7a86d7*/
             break; /*0x7a86d7*/
           ++v35; /*0x7a86dd*/
@@ -17252,7 +17252,7 @@ int __stdcall CChatEventSink::HandleLobbyPlayerUpdate(int p0, int p1, int p2, in
           while ( 1 ) /*0x7a8765*/
           {
             if ( v37 >= 0 && v37 < v34 ) /*0x7a876b*/
-              qmemcpy(&g_WebBrowserConfig.occupant, v97, 0x6Cu); /*0x7a877b*/
+              memcpy(&g_WebBrowserConfig.occupant, v97, 0x6Cu); /*0x7a877b*/
             if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7a8784*/
               break; /*0x7a8784*/
             ++v37; /*0x7a878a*/
@@ -17313,7 +17313,7 @@ int __stdcall CChatEventSink::HandleLobbyPlayerUpdate(int p0, int p1, int p2, in
           while ( 1 ) /*0x7a88c8*/
           {
             if ( v47 >= 0 && v47 < v34 ) /*0x7a88ce*/
-              qmemcpy(&g_WebBrowserConfig.occupant, v98, 0x6Cu); /*0x7a88de*/
+              memcpy(&g_WebBrowserConfig.occupant, v98, 0x6Cu); /*0x7a88de*/
             if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7a88e7*/
               break; /*0x7a88e7*/
             ++v47; /*0x7a88ed*/
@@ -17737,7 +17737,7 @@ int __stdcall CChatEventSink::HandleUserSearch(int p0, int p1, const char* p2)
           while ( 1 ) /*0x7a9aa8*/
           {
             if ( v11 >= 0 && v9 < referenceCount ) /*0x7a9aae*/
-              qmemcpy(v91, (const void *)(v11 + stru_B76AC4.occupant), sizeof(v91)); /*0x7a9ac2*/
+              memcpy(v91, (const void *)(v11 + stru_B76AC4.occupant), sizeof(v91)); /*0x7a9ac2*/
             v12 = String::GetOrEmpty_Alt((String *)&v87.q004); /*0x7a9ac8*/
             if ( !_strcmpi((char *)&v91[26], v12) ) /*0x7a9ad6*/
               break; /*0x7a9ad6*/
@@ -17790,7 +17790,7 @@ int __stdcall CChatEventSink::HandleUserSearch(int p0, int p1, const char* p2)
         else
           v14 = 0; /*0x7a9b7e*/
         String::Reassign(v14, (const char **)&g_WOL_AuthObject); /*0x7a9b87*/
-        qmemcpy(&v14->ptr_4, v6, 0x10Cu); /*0x7a9b94*/
+        memcpy(&v14->ptr_4, v6, 0x10Cu); /*0x7a9b94*/
         *v14->ptr_88.q000 = 0; /*0x7a9b9b*/
         v15 = ((int (__thiscall *)(char *))stru_B765EC.attachedTag)(&g_WOL_AuthObject) /*0x7a9bbf*/
             & ((1 << ((signed char)(stru_B765EC.owningHouseIndex))) - 1);
@@ -18046,7 +18046,7 @@ int __stdcall CChatEventSink::HandleUserSearch(int p0, int p1, const char* p2)
             v57 = v57; /*0x7aa1c3*/
             if ( stru_B76900.parachute ) /*0x7aa1c5*/
             {
-              qmemcpy(v57, stru_B76900.parachute, 4 * *(unsigned int *)&stru_B76900.needsRedraw); /*0x7aa1cf*/
+              memcpy(v57, stru_B76900.parachute, 4 * *(unsigned int *)&stru_B76900.needsRedraw); /*0x7aa1cf*/
               parachute = stru_B76900.parachute; /*0x7aa1d1*/
             }
             delete[] (parachute); /*0x7aa1d8*/
@@ -18548,7 +18548,7 @@ void Chat::ProcessMessages()
       {
         if ( *(unsigned int *)&dword_A8B238 != 5 )
         {
-          IDA_LOBYTE(v2) = g_abs_A8BC79; /*0x55e48d*/
+          (*((unsigned char *)&(v2))) = g_abs_A8BC79; /*0x55e48d*/
           if ( !g_abs_A8BC79 )
           {
             if ( (v6 & 0x8000) != 0 ) /*0x55e49d*/
@@ -18752,7 +18752,7 @@ void Chat::ProcessMessages()
                   v29 = ((v29) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5312) * 900.0)) & 0xFFFFu); /*0x55e9b6*/
                   v29 = v29; /*0x55e9bb*/
                   v72 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e9de*/
-                  IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55e9e7*/
+                  (*((unsigned char *)&(v2))) = MessageListClass::AddMessage( /*0x55e9e7*/
                                  (MessageListClass *)&g_GameNetworkObject,
                                  v94,
                                  dword_A8B394,
@@ -18768,7 +18768,7 @@ void Chat::ProcessMessages()
                   v28 = v28; /*0x55e94b*/
                   v71 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e968*/
                   v67 = GetStringCSF(g_Str_TXT_CANT_SEND_BLANK_PAGE, 0, g_Str_File_MainLoop_CPP, 2072); /*0x55e978*/
-                  IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55e97d*/
+                  (*((unsigned char *)&(v2))) = MessageListClass::AddMessage( /*0x55e97d*/
                                  (MessageListClass *)&g_GameNetworkObject,
                                  0,
                                  -1,
@@ -18785,7 +18785,7 @@ void Chat::ProcessMessages()
                 v27 = v27; /*0x55e8f4*/
                 v70 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e90c*/
                 v66 = GetStringCSF(g_Str_TXT_NO_NAME_SPECIFIED, 0, g_Str_File_MainLoop_CPP, 2067); /*0x55e91c*/
-                IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55e921*/
+                (*((unsigned char *)&(v2))) = MessageListClass::AddMessage( /*0x55e921*/
                                (MessageListClass *)&g_GameNetworkObject,
                                0,
                                -1,
@@ -18860,7 +18860,7 @@ void Chat::ProcessMessages()
                   v41 = ((v41) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&g_RulesClass_Instance + 5312) * 900.0)) & 0xFFFFu); /*0x55ec54*/
                   v41 = v41; /*0x55ec59*/
                   v74 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ec7c*/
-                  IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55ec80*/
+                  (*((unsigned char *)&(v2))) = MessageListClass::AddMessage( /*0x55ec80*/
                                  (MessageListClass *)&g_GameNetworkObject,
                                  v98,
                                  dword_A8B394,
@@ -18876,7 +18876,7 @@ void Chat::ProcessMessages()
                   v42 = v42; /*0x55ec9e*/
                   v75 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ecb6*/
                   v69 = GetStringCSF(g_Str_TXT_CANT_SEND_BLANK_PAGE, 0, g_Str_File_MainLoop_CPP, 2149); /*0x55eccc*/
-                  IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55ecd5*/
+                  (*((unsigned char *)&(v2))) = MessageListClass::AddMessage( /*0x55ecd5*/
                                  (MessageListClass *)&g_GameNetworkObject,
                                  0,
                                  dword_A8B394,
@@ -18893,7 +18893,7 @@ void Chat::ProcessMessages()
                 v40 = v40; /*0x55ebf9*/
                 v73 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ec16*/
                 v68 = GetStringCSF(aTxtNameNotSpec, 0, g_Str_File_MainLoop_CPP, 2136); /*0x55ec2c*/
-                IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55ec2e*/
+                (*((unsigned char *)&(v2))) = MessageListClass::AddMessage( /*0x55ec2e*/
                                (MessageListClass *)&g_GameNetworkObject,
                                0,
                                dword_A8B394,
@@ -39618,10 +39618,10 @@ void TileSystem::BuildNodes()
           break; /*0x58d8f6*/
         v35 = v152; /*0x58d902*/
         if ( g_MissionQueueFrame.localVariables[163] ) /*0x58d908*/
-          *(unsigned int *)(80 * (IDA_SLOWORD(v152->field_0) + g_MapCellWidth * (short)((v152->field_0) >> 16)) /*0x58d920*/
+          *(unsigned int *)(80 * ((*((signed short *)&(v152->field_0))) + g_MapCellWidth * (short)((v152->field_0) >> 16)) /*0x58d920*/
                     + g_MissionQueueFrame.localVariables[163]
                     + 56) = -3;
-        *(unsigned int *)v157.__pad_000 = IDA_SLOWORD(v35->field_0) + g_MapCellWidth * (short)((v35->field_0) >> 16); /*0x58d93c*/
+        *(unsigned int *)v157.__pad_000 = (*((signed short *)&(v35->field_0))) + g_MapCellWidth * (short)((v35->field_0) >> 16); /*0x58d93c*/
         v146 = 0; /*0x58d944*/
         v156 = (int)dword_89A304; /*0x58d94c*/
         v36 = (float *)((char *)Block + 8 * v157.u32_C); /*0x58d954*/
@@ -39646,7 +39646,7 @@ void TileSystem::BuildNodes()
                   v40 = (unsigned int)((v153) >> 32); /*0x58da16*/
                   v41 = ((unsigned int)(v153)); /*0x58da1a*/
                   *v36 = *(float *)v162; /*0x58da1e*/
-                  v1 = Memory_Helper_58C6F0((int16_t *)&v160, v162, COERCE_DOUBLE(IDA___PAIR64__(v40, v41))); /*0x58da31*/
+                  v1 = Memory_Helper_58C6F0((int16_t *)&v160, v162, COERCE_DOUBLE((((unsigned long)(unsigned int)(v41)) | ((unsigned long)(unsigned int)(v40) << 32)))); /*0x58da31*/
                   v42 = (unsigned int *)v156; /*0x58da36*/
                   v43 = *(unsigned int *)v157.__pad_000; /*0x58da3a*/
                   __asm { fstp dword ptr [ebp+4] } /*0x58da3e*/
@@ -39749,7 +39749,7 @@ void TileSystem::BuildNodes()
     while ( v61 ) /*0x58dbc1*/
     {
       v158 = *v61; /*0x58dbca*/
-      *(unsigned int *)(80 * (IDA_SLOWORD(v158) + g_MapCellWidth * (short)((v158) >> 16)) + g_MissionQueueFrame.localVariables[163] + 56) = -3; /*0x58dbea*/
+      *(unsigned int *)(80 * ((*((signed short *)&(v158))) + g_MapCellWidth * (short)((v158) >> 16)) + g_MissionQueueFrame.localVariables[163] + 56) = -3; /*0x58dbea*/
       if ( !*(unsigned int *)v8 ) /*0x58dbee*/
         break; /*0x58dbf2*/
       v63 = v8[2]; /*0x58dbf4*/

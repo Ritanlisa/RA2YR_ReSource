@@ -206,7 +206,7 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
   int v6; // eax
   TriggerTypeClass *NextTrigger; // ecx
 
-  FirstEvent = this->FirstEvent; /*0x7271e5*/
+  FirstEvent = (gamemd::TEventClass *)(this->FirstEvent); /*0x7271e5*/
   for ( i = 0; FirstEvent; i |= ActionCategoryFlags ) /*0x7271ef*/
   {
     ActionCategoryFlags = TriggerTypeClass::GetActionCategoryFlags((TriggerTypeClass *)FirstEvent->TEventClass_field_2C); /*0x7271f4*/
@@ -217,7 +217,7 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
     v6 = TriggerTypeClass::Dispatch((TriggerTypeClass *)j->TActionClass_field_2C); /*0x72720f*/
     j = (TActionClass *)j->TActionClass_field_28; /*0x727214*/
   }
-  NextTrigger = this->NextTrigger; /*0x72721d*/
+  NextTrigger = (gamemd::TriggerTypeClass *)(this->NextTrigger); /*0x72721d*/
   if ( NextTrigger ) /*0x727225*/
     return i | TriggerTypeClass::GetFlags(NextTrigger); /*0x72722c*/
   else
@@ -257,7 +257,7 @@ bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
   bool result; // al
   int TEventClass_field_2C; // edx
 
-  FirstEvent = this->FirstEvent; /*0x727050*/
+  FirstEvent = (gamemd::TEventClass *)(this->FirstEvent); /*0x727050*/
   result = 0; /*0x727056*/
   if ( FirstEvent ) /*0x72705b*/
   {

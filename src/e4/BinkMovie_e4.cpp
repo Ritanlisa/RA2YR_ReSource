@@ -41,7 +41,7 @@ namespace gamemd {
 
 // 0x432690
 namespace gamemd {  // G42.18 ns repair
-unsigned int * BinkMovie::Close(char *FullPath)
+unsigned int * BinkMovie::Close(char *FullPath, void *a2)
 {
 
   this->MovieHandle = 0; /*0x432695*/
@@ -52,16 +52,16 @@ unsigned int * BinkMovie::Close(char *FullPath)
   this->u32_28 = -1; /*0x4326a8*/
   this->u32_2C = 1; /*0x4326af*/
   BinkMovie::InitFromFile((int)this, (LPCSTR *)FullPath); /*0x4326b3*/
-  return this->MovieHandle; /*0x4326ba*/
+  return (unsigned int *)(this->MovieHandle); /*0x4326ba*/
 
 }
 }  // G42.18 ns repair
 // 0x4326C0
 namespace gamemd {
-unsigned int * BinkMovie::Open(char *FullPath, int a3)
+unsigned int * BinkMovie::Open(char *FullPath, int a3, void *a3_1)
 {
 
-  this->u32_C = (void *)a3; /*0x4326ce*/
+  this->u32_C = (unsigned int)((void *)a3); /*0x4326ce*/
   this->MovieHandle = 0; /*0x4326d3*/
   this->u32_4 = 0; /*0x4326d5*/
   this->q_20 = 0; /*0x4326d8*/
@@ -69,7 +69,7 @@ unsigned int * BinkMovie::Open(char *FullPath, int a3)
   this->u32_2C = 1; /*0x4326e2*/
   this->u32_2D = 0; /*0x4326e6*/
   BinkMovie::InitFromFile((int)this, (LPCSTR *)FullPath); /*0x4326e9*/
-  return this->MovieHandle; /*0x4326f0*/
+  return (unsigned int *)(this->MovieHandle); /*0x4326f0*/
 
 }
 }
@@ -163,12 +163,12 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)a2_1; /*0x4327ba*/
-  v7 = RawFileClass::Construct(a2_1); /*0x4327c3*/
+  v7 = (int)(RawFileClass::Construct(a2_1)); /*0x4327c3*/
   v8 = (*(unsigned __int8 (**)(int, unsigned int))(*(unsigned int *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
   RawFileClass::Dtor(v32); /*0x4327d9*/
   if ( v8 ) /*0x4327e0*/
   {
-    v9 = BinkOpen(v6, 0); /*0x4327e4*/
+    v9 = (int)(BinkOpen(v6, 0)); /*0x4327e4*/
 LABEL_14:
     a2_1->u32_4 = v9; /*0x43284f*/
     goto LABEL_15; /*0x43284f*/
@@ -234,7 +234,7 @@ LABEL_15:
     lDistanceToMove[0] = (LONG)a2_1[3]; /*0x43298c*/
     if ( lDistanceToMove[0] <= 0 || v17 <= 0 || v30 <= 0 ) /*0x4329a0*/
       goto LABEL_40; /*0x4329a0*/
-    v24 = *a2_1; /*0x4329a2*/
+    v24 = (LPCSTR)(*a2_1); /*0x4329a2*/
     if ( v16 < (int)*a2_1 ) /*0x4329a7*/
     {
       Rect.left = (LONG)*a2_1; /*0x4329ab*/
@@ -245,7 +245,7 @@ LABEL_15:
     a2_1 = a2_1->u32_4; /*0x4329bb*/
     if ( v3 < (int)a2_1 ) /*0x4329bf*/
     {
-      v22 = a2_1; /*0x4329c9*/
+      v22 = (LPCSTR *)(a2_1); /*0x4329c9*/
       Rect.bottom += v3 - (unsigned int)a2_1; /*0x4329cb*/
     }
     if ( Rect.bottom < 1 ) /*0x4329d4*/
@@ -271,7 +271,7 @@ LABEL_40:
       v27 = v17; /*0x432a12*/
     }
     a2_1->u32_10 = left; /*0x432a29*/
-    *(unsigned int *)(a2_1 + 20) = v22; /*0x432a2c*/
+    *(unsigned int *)(a2_1 + 20) = (unsigned int)(v22); /*0x432a2c*/
     *(unsigned int *)(a2_1 + 24) = v27; /*0x432a2f*/
     *(unsigned int *)(a2_1 + 28) = bottom; /*0x432a32*/
     a2_1->u32_8 = BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)); /*0x432a44*/
@@ -526,7 +526,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
     BinkCopyToBuffer(this->u32_4, v6, v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
     (*(void (**)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x43325b*/
   }
-  return (int)BinkMovie::BlitToTarget(this, aP1); /*0x433267*/
+  return (unsigned int *)((int)BinkMovie::BlitToTarget(this, aP1)); /*0x433267*/
 
 }
 }
@@ -555,7 +555,7 @@ unsigned int * BinkMovie::BlitToTarget(int aP1)
   {
     if ( *result ) /*0x433282*/
     {
-      v4 = result + 5; /*0x43328e*/
+      v4 = (int *)(result + 5); /*0x43328e*/
       if ( (int)result[7] > 0 && (int)result[8] > 0 ) /*0x43329e*/
       {
         v5 = result[4]; /*0x4332a6*/
@@ -637,7 +637,7 @@ int BinkMovie::AdjustSurfaceFormat(int aP1)
 }
 // 0x5C01F0
 namespace gamemd {
-int BinkMovie::Cleanup(void *a1_1)
+int BinkMovie::Cleanup(void *a1_1, void *a2)
 {
   DSurface *v2; // ecx
   int result; // eax

@@ -348,7 +348,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
         }
         else
         {
-          v10 = unk_ABDC50; /*0x58818c*/
+          v10 = (unsigned int *)(unk_ABDC50); /*0x58818c*/
           dword_ABDC74 = v34; /*0x588191*/
         }
         v11 = Cell::IsBridge(v10); /*0x588196*/
@@ -391,7 +391,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* a1, const int* a2, const 
           }
           else
           {
-            v21 = unk_ABDC50; /*0x588279*/
+            v21 = (unsigned int *)(unk_ABDC50); /*0x588279*/
             dword_ABDC74 = v34; /*0x58827e*/
           }
           v22 = Cell::IsBridge(v21); /*0x588283*/

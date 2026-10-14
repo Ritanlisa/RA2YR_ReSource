@@ -13,6 +13,6 @@ struct E4Recv_578B70 {
     unsigned int M260;  // 0x104
     unsigned int M264;  // 0x108
 // --- flat members (END) ---
-    int  sub_578B70(int16_t * a2);  // 0x578B70
+    int sub_578B70(short * a2);  // 0x578B70
 };
 } // namespace gamemd

@@ -227,8 +227,8 @@ int Animation::GetProgress()
   {
     if ( this->q014 ) /*0x4a52fb*/
     {
-      v2 = this->q008; /*0x4a5311*/
-      result = this->q010; /*0x4a5314*/
+      v2 = (int)(this->q008); /*0x4a5311*/
+      result = (int)(this->q010); /*0x4a5314*/
       if ( v2 != -1 ) /*0x4a531a*/
       {
         if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v2 >= result ) /*0x4a5326*/
@@ -271,7 +271,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v3 = (char **)aP2; /*0x770554*/
   v4 = (INIClass *)a1; /*0x770559*/
   v22 = this; /*0x77055f*/
-  v5 = &this->q010; /*0x770563*/
+  v5 = (gamemd::INIClass *)(&this->q010); /*0x770563*/
   *(unsigned int *)&v23.headNode = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {

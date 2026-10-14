@@ -66,7 +66,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
       result = 0; /*0x48dd0d*/
       break; /*0x48dd0d*/
   }
-  return result; /*0x48dcef*/
+  return (gamemd::AbstractClass **)(result); /*0x48dcef*/
 }
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -102,7 +102,7 @@ double TechnoTypeClass::Dispatch(unsigned int * aP1)
 
 }
 // G42.35 static-form sync (G57e1): qualified-call sites pass explicit this
-double  TechnoTypeClass::Dispatch(unsigned int *a2)
+double  TechnoTypeClass::Dispatch(unsigned int *a2, void *a2_1)
 {
   return this->Dispatch(a2);
 } // namespace gamemd
@@ -138,7 +138,7 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 } // namespace gamemd
 // 0x6F06E0
 namespace gamemd {
-unsigned int * TechnoTypeClass::LoadBase(char *aP1)
+unsigned int * TechnoTypeClass::LoadBase(char *aP1, void *a2)
 {
 
   int v3; // ecx
@@ -232,7 +232,7 @@ LABEL_11:
 } // namespace gamemd
 // 0x710AF0
 namespace gamemd {
-void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hpp（raw 0x00710AF0 &this->vtable3 参）
+void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_1)  // G57w11: def 同步 hpp（raw 0x00710AF0 &this->vtable3 参）
 {
 
   unsigned int *v4; // eax
@@ -775,7 +775,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
 } // namespace gamemd
 // 0x711840
 namespace gamemd {
-void TechnoTypeClass::Construct(int aP1)
+void TechnoTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
   int v3; // eax
   int v4; // ecx
@@ -1426,7 +1426,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
 } // namespace gamemd
 // 0x716DC0
 namespace gamemd {
-int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5)
+int TechnoTypeClass::SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5, void *a5_1)
 {
 
   int v5; // ebx

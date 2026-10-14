@@ -40,7 +40,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f19*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)(&vt_RocketLocomotionClass); /*0x661f19*/
   /* X11: vtable install elided (implicit via RocketLocomotionClass virtuals 0x661f1f) */
   return (int)this->LocomotionClass; /*0x661f28*/
 
@@ -152,7 +152,7 @@ char RocketLocomotionClass_17::AddRef(int a2)
     v3 = 0; /*0x66481f*/
     if ( m_8 <= 0 ) /*0x664823*/
       return 1; /*0x664843*/
-    v4 = *&this->q004; /*0x664825*/
+    v4 = (unsigned int *)(*&this->q004); /*0x664825*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x66482b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x664834*/
     {
@@ -198,7 +198,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x6648ce*/
         }
       }
-      *&this->q004 = v4; /*0x6648d7*/
+      *&this->q004 = (int)(v4); /*0x6648d7*/
       this->m_8 = a2; /*0x6648df*/
       BYTE1(this->m_C) = a3 == 0; /*0x6648e2*/
       return 1; /*0x6648e8*/
@@ -298,7 +298,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x664a01*/
       }
     }
-    *&this->q004 = v4; /*0x664a0a*/
+    *&this->q004 = (int)(v4); /*0x664a0a*/
     this->m_8 = a2; /*0x664a12*/
     BYTE1(this->m_C) = a3 == 0; /*0x664a15*/
   }

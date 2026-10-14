@@ -39,7 +39,7 @@ struct VectorClass_K_8 {
     unsigned int * Constructor(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x4A2820
     int  QueryInterface(void * a2, unsigned int * a3);  // 0x6BEE50
     LONG AddRef(int a1);  // 0x6BEEC0
-    LONG Release(volatile LONG * Block);  // 0x6BEEE0
+    LONG  Release(void *a1 = 0);  // 0x6BEEE0
     int  ddtor(int a2, int a3, unsigned int * a4);  // 0x6BEF10
     int  GetSize(int a2);  // 0x6BEF90
 };

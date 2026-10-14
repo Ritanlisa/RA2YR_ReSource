@@ -16,7 +16,7 @@ struct VectorClass_N {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Clear(void *a1_1);  // 0x5AC5F0
+    double Clear(int a2);  // 0x5AC5F0
     char  Release(int a2, unsigned int * a3);  // 0x5AD130
     char  SetCapacity(int a2, unsigned int * a3);  // 0x5AD290
     int  FindItemIndex(double * a2);  // 0x5AD350

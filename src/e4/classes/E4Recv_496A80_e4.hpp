@@ -10,7 +10,7 @@ struct E4Recv_496A80 {
     unsigned int M2;  // 0x2
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
-    int  sub_496A80(unsigned short * a2, uint8_t * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11);  // 0x496A80
+    int sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10);  // 0x496A80
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_4[64];  // pad compile-supply (G41.47)
 };

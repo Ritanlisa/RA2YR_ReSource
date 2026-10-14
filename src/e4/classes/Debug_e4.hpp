@@ -8,7 +8,7 @@ struct Debug {
 // --- flat members (BEGIN) ---
 
 // --- flat members (END) ---
-    char  ScrollText(void * a2);  // 0x5BD0D0
+    char ScrollText(const char * aP1);  // 0x5BD0D0
     int AccumFlags(void *a1 = 0);  // 0x6E61F0
     char Printf();  // 0x5BD1F0
     static int Log();  // 0x4068E0 raw int 无参真身（cdecl stub；0 参调用形态 + Debug_e4.cpp:102 定义匹配）

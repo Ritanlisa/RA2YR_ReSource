@@ -16,7 +16,7 @@ struct VectorClass_ptr_SubTitle {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1, void *a1 = 0);  // 0x6CA7C0
+    int Get(int a2, void *a2_2);  // 0x6CA7C0
     char  Constructor_VectorClass_SubTitle___(int a2);  // 0x6CA820
     char  Release(int a2, unsigned int * a3);  // 0x6CAA10
     void Remove(void *a1_1, void *a1 = 0);  // 0x6CAAC0

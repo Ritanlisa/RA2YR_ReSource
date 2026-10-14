@@ -20,7 +20,7 @@ char Winsock::VerifyCRC(int a1)
   int v5; // edx
   int v6; // eax
 
-  v1 = a1; /*0x7b2051*/
+  v1 = (gamemd::WinsockInterfaceClass *)(a1); /*0x7b2051*/
   v2 = *((unsigned int *)a1 + 4); /*0x7b2055*/
   if ( v2 < 640 ) /*0x7b205d*/
   {

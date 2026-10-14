@@ -63,7 +63,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   RegCloseKey(phkResult); /*0x77375b*/
   if ( v4 ) /*0x773763*/
     return 0; /*0x773763*/
-  v5 = strrchr((const char *)v12, 92); /*0x773775*/
+  v5 = (char *)(strrchr((const char *)v12, 92)); /*0x773775*/
   if ( !v5 || strlen((const char *)v12) > v5 - &v12->u8_1 ) /*0x773795*/
     strcat((char *)v12, asc_815E74); /*0x7737bc*/
   mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
@@ -122,7 +122,7 @@ int WebBrowser::ShowDialog()
     v13 = v11 + 800; /*0x773f39*/
     v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
     v14 = v12 + 600; /*0x773f58*/
-    v5 = operator new(0x414u); /*0x773f5c*/
+    v5 = (unsigned int *)(operator new(0x414u)); /*0x773f5c*/
     v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
@@ -131,9 +131,9 @@ int WebBrowser::ShowDialog()
       v5[2] = 0; /*0x773f7d*/
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
-      *v5 = &vt_WebBrowser; /*0x773f95*/
+      *v5 = (unsigned int)(&vt_WebBrowser); /*0x773f95*/
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
-      *(unsigned int *)(v6 + 1040) = v3; /*0x773fa3*/
+      *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
       if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {

@@ -129,9 +129,9 @@ extern int CellClass_GetTileData(short *a1, int a2);  // 0x56BCD0 IDA 真值 __s
 // (misc_ext.hpp 0 参 virtual / coordinate.hpp 2 参全局 均为历史误模)
 struct CellCoord_shadow { void *To_CellObj(void *a2); };
 // FPU 常量真值 (IDA 实读 0x7E2810/18/20)
-extern const double dbl_7E2810;  // data: 0x7E2810 = -9.587672516830327e-05 (-2*pi/0x10000)
-extern const double dbl_7E2818;  // data: 0x7E2818 = -10430.060040584269 (-0x10000/(2*pi))
-extern const double dbl_7E2820;  // data: 0x7E2820 = 1.5707963267948966 (pi/2)
+extern double dbl_7E2810; // data: 0x7E2810 = -9.587672516830327e-05 (-2*pi/0x10000)
+extern double dbl_7E2818; // data: 0x7E2818 = -10430.060040584269 (-0x10000/(2*pi))
+extern double dbl_7E2820; // data: 0x7E2820 = 1.5707963267948966 (pi/2)
 // Random 本地影子: IDA 真值 0x65C7E0 = int __thiscall Range(this, int, int)
 // (树载体 0 参 virtual 为误模)
 struct Random_shadow { int Range(int a1, int a2); };

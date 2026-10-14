@@ -13,6 +13,6 @@ struct E4Recv_474540 {
     unsigned int M64;  // 0x40
 // --- flat members (END) ---
     unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
-    CCINIClass *  sub_474540(int a2, char a3);  // 0x474540
+    CCINIClass * sub_474540(CCINIClass * aP1, char a3);  // 0x474540
 };
 } // namespace gamemd

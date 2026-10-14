@@ -12,6 +12,6 @@ struct E4Recv_71FF20 {
     CampaignScore * ptr_38;  // 0x38
     unsigned int M60;  // 0x3C
 // --- flat members (END) ---
-    int  sub_71FF20(int a2, int a3, int a4, int a5, int a6, int a7, int a8, char a9, char a10);  // 0x71FF20
+    int sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9);  // 0x71FF20
 };
 } // namespace gamemd

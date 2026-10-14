@@ -10,6 +10,6 @@ struct E4Recv_7D2E9B {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    exception *  __0exception_QAE_ABQBD_Z(void * a2);  // 0x7D2E9B
+    exception * __0exception_QAE_ABQBD_Z(const char ** a2);  // 0x7D2E9B
 };
 } // namespace gamemd

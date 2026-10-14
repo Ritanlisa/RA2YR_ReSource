@@ -12,7 +12,7 @@ struct RAMFileClass {
 // --- flat members (END) ---
     int nullsub_0_1();  // 0x65C300
     int  nullsub_0_2(int a2);  // 0x65C350
-    AbstractClass * *  nullsub_0_3(void * a2, signed int Size);  // 0x65C3A0
+    AbstractClass * *  nullsub_0_3(void * a1, signed int Size);  // 0x65C3A0
     AbstractClass * *  nullsub_0_4(int a2, int a3);  // 0x65C420
     int  nullsub_0_6(int a2);  // 0x65C560
     void *  nullsub_0_10(char a2);  // 0x65C5A0

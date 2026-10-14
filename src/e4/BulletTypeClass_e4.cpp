@@ -66,16 +66,16 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
     {
       if ( dword_89DDC0 ) /*0x46548b*/
         (**(void (***)(int, int))dword_89DDC0)(dword_89DDC0, 1); /*0x465491*/
-      v3 = __2_YAPAXI_Z(0x20u); /*0x46549a*/
+      v3 = (unsigned int *)(__2_YAPAXI_Z(0x20u)); /*0x46549a*/
       if ( v3 ) /*0x4654a1*/
       {
         v3[3] = 0; /*0x4654a6*/
         v3[1] = v1 + 16; /*0x4654ab*/
         v3[2] = v1 + 16; /*0x4654b6*/
-        *v3 = &XSurface_Vtable; /*0x4654b9*/
+        *v3 = (unsigned int)(&XSurface_Vtable); /*0x4654b9*/
         v3[4] = 1; /*0x4654bf*/
         Buffer::Init(v3 + 5, 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
-        *v3 = &BSurface_Vtable; /*0x4654cb*/
+        *v3 = (unsigned int)(&BSurface_Vtable); /*0x4654cb*/
         dword_89DDC0 = (int)v3; /*0x4654d1*/
       }
       else
@@ -101,7 +101,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
       *(unsigned int *)(v6 + 3672) = *((unsigned int *)dword_A8ED2C + v7); /*0x465531*/
     result = dword_A83C78; /*0x465537*/
   }
-  return result; /*0x465541*/
+  return (gamemd::BuildingTypeClass **)(result); /*0x465541*/
 
 }
 } // namespace gamemd
@@ -132,12 +132,12 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
       v3->u32_E58 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * v4); /*0x465d18*/
     result = dword_A83C78; /*0x465d1e*/
   }
-  return result; /*0x465d29*/
+  return (gamemd::BuildingTypeClass **)(result); /*0x465d29*/
 }
 } // namespace gamemd
 // 0x46BBC0
 namespace gamemd {
-unsigned char * BulletTypeClass::Construct(char *aP1)
+unsigned char * BulletTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // eax
@@ -162,7 +162,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
   this->FlakScatter = 0; /*0x46bc31*/
   this->AA = 0; /*0x46bc37*/
   this->Degenerates_d = 1; /*0x46bc3d*/
-  this->Elasticity_d = 3; /*0x46bc44*/
+  this->Elasticity_d = (gamemd::ColorScheme *)(3); /*0x46bc44*/
   this->SpawnDelay_d = 3; /*0x46bc4a*/
   this->Degenerates_2 = 0; /*0x46bc50*/
   this->Bouncy_d = 0; /*0x46bc59*/
@@ -187,11 +187,11 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
   this->animHigh = 0; /*0x46bcd4*/
   this->animRate = 0; /*0x46bcda*/
   this->Flat_d = 0; /*0x46bce0*/
-  *(unsigned int *)this->ObjectTypeClass = &vt_BulletTypeClass; /*0x46bce6*/
+  *(unsigned int *)this->ObjectTypeClass = (unsigned int)(&vt_BulletTypeClass); /*0x46bce6*/
   *&this->Flat_d = &vt_BulletTypeClass; /*0x46bcec*/
   *&this->AbstractClass_E58 = &vt_BulletTypeClass; /*0x46bcf2*/
   /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
-  AbstractClass::GenerateUniqueID(&this->AbstractClass_E58); /*0x46bd00*/
+  AbstractClass::GenerateUniqueID((int)(&this->AbstractClass_E58)); /*0x46bd00*/
   this->IsLogic_d = 1; /*0x46bd05*/
   this->RadarInvisible_d = 1; /*0x46bd0c*/
   this->Selectable_d = 0; /*0x46bd13*/
@@ -208,7 +208,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
          0) )
   {
     v3 = dword_A83C90++; /*0x46bd72*/
-    *((unsigned int *)dword_A83C84 + v3) = this; /*0x46bd81*/
+    *((unsigned int *)dword_A83C84 + v3) = (unsigned int)(this); /*0x46bd81*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x46bdb8*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -221,7 +221,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x46bdc5*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x46bdd4*/
   }
-  return this->ObjectTypeClass; /*0x46bdd9*/
+  return (unsigned char *)(this->ObjectTypeClass); /*0x46bdd9*/
 
 }
 } // namespace gamemd
@@ -337,7 +337,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
                      v4->VeryHigh);
   v7 = *&v4->Shadow; /*0x46c046*/
   *&v4->VeryHigh = Bool_Overwrite; /*0x46c04c*/
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36), aShadow, v7); /*0x46c05b*/
+  v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)(v4 + 36),(uint8_t *)(aShadow), v7); /*0x46c05b*/
   v32 = v4->Dropping; /*0x46c068*/
   v4->Shadow = v8; /*0x46c06f*/
   v4->Dropping = INIClass::ReadBool_Overwrite( /*0x46c07a*/
@@ -462,11 +462,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
             v4->Rotates == 0);
     v36 = *&v4->Flat_d; /*0x46c27d*/
     v4->Rotates = v23 == 0; /*0x46c287*/
-    *&v4->Flat_d = INIClass::ReadBool_Overwrite( /*0x46c292*/
-                             (int *)&DataGlobal_887180,
-                             (unsigned __int8 *)(v4 + 504),
-                             g_INI_Key_Flat,
-                             v36);
+        *&v4->Flat_d = INIClass::ReadBool_Overwrite( /*0x46c292*/                              (int *)&DataGlobal_887180,                              (unsigned __int8 *)(v4 + 504),(uint8_t *)(g_INI_Key_Flat),                              v36);
   }
   v40 = v4->airburstWeapon; /*0x46c2ad*/
   if ( INIClass::GetString( /*0x46c2b9*/
@@ -477,7 +473,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
          Destination,
          128) )
   {
-    v24 = InfantryTypeClass::Find(Destination); /*0x46c2c6*/
+    v24 = (int)(InfantryTypeClass::Find(Destination)); /*0x46c2c6*/
   }
   else
   {
@@ -493,7 +489,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
          Destination,
          128) )
   {
-    v25 = InfantryTypeClass::Find(Destination); /*0x46c305*/
+    v25 = (int)(InfantryTypeClass::Find(Destination)); /*0x46c305*/
   }
   else
   {
@@ -629,7 +625,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
   *(unsigned int *)&a1->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/
   *(unsigned int *)&a1->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x46c8b1*/
-  v6 = a1; /*0x46c8c6*/
+  v6 = (gamemd::BulletTypeClass *)(a1); /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -644,7 +640,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
       ++v3; /*0x46c8ed*/
     }
   }
-  v6 = a1; /*0x46c90f*/
+  v6 = (gamemd::BulletTypeClass *)(a1); /*0x46c90f*/
   v4 = (*(int (**)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))(&dword_A83C80, &v6); /*0x46c913*/
   if ( v4 != -1 && v4 < dword_A83C90 && v4 < --dword_A83C90 ) /*0x46c92e*/
   {
@@ -655,9 +651,9 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
     }
     while ( v4 < dword_A83C90 ); /*0x46c946*/
   }
-  ObjectTypeClass::Destruct((int)a1); /*0x46c94a*/
+  ObjectTypeClass::Destruct((void *)((int)a1)); /*0x46c94a*/
   if ( (a1 & 1) != 0 ) /*0x46c954*/
-    __3_YAXPAX_Z(a1); /*0x46c957*/
+    __3_YAXPAX_Z((void *)(a1)); /*0x46c957*/
   return (void **)a1; /*0x46c961*/
 
 }
@@ -699,7 +695,7 @@ int BulletTypeClass::ProcessImpact(int a1)
   {
     v2->COMObject_20 = v4; /*0x69fc3a*/
     v2->u32_1C = v3; /*0x69fc43*/
-    Timer::Start((Timer *)&v23, 3); /*0x69fc46*/
+    Timer::Start((int)((Timer *)&v23), 3); /*0x69fc46*/
     v2->u32_24 = v23; /*0x69fc57*/
     *((unsigned int *)v2 + 10) = v24; /*0x69fc5d*/
     *((unsigned int *)v2 + 11) = v25; /*0x69fc64*/

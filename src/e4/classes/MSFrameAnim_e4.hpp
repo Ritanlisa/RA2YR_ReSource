@@ -24,8 +24,8 @@ struct MSFrameAnim {
     int  resetAnimation(unsigned int * a2);  // 0x76A360
     DynamicVector *  setPosition(char a2);  // 0x76A680
     DynamicVector *  setScale(char a2);  // 0x76A720
-    char  Load(int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x767ED0
-    void  Draw(int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x767EF0
+    char Load(int a1, int * a2, void *a3_1, void *a4_1);  // 0x767ED0
+    void Draw(int a1, int * a2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x767EF0
     unsigned int * UpdateFrame(unsigned int * a1);  // 0x767F80
     unsigned int  startAnimation(int a2);  // 0x769C80
     unsigned int  pauseAnimation(int a2);  // 0x769D00

@@ -122,7 +122,7 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   int v16[2]; // [esp+1Eh] [ebp-14h] BYREF
   unsigned int v17[3]; // [esp+26h] [ebp-Ch] BYREF
 
-  v4 = (int)(a3);
+  v4 = (void *)((int)(a3));
   v15 = 0; /*0x6e205b*/
   do /*0x6e20ec*/
   {
@@ -146,7 +146,7 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
               {
                 if ( LinkedList::Contains(v8, v4) ) /*0x6e20a3*/
                 {
-                  v9 = (void *)(*v7);
+                  v9 = (int)((void *)(*v7));
                   a3 = (void *)(v7[27]); /*0x6e20b8*/
                   (*(void (**)(int *, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(v9 + 364))( /*0x6e20d2*/
                     v7,
@@ -262,7 +262,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
-  v5 = __2_YAPAXI_Z(0x14u); /*0x6e33d9*/
+  v5 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
@@ -474,11 +474,11 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
       goto LABEL_19; /*0x6eec34*/
     if ( v8 == a1 ) /*0x6eec3c*/
     {
-      v9 = (int)(aP2);
+      v9 = (gamemd::FootClass *)((int)(aP2));
     }
     else
     {
-      v9 = (int)(aP2);
+      v9 = (gamemd::FootClass *)((int)(aP2));
       if ( (uint8_t)HouseClass::IsAlliedWith(aP2->owner, v8) /*0x6eec62*/
         && !*(unsigned char *)(*(unsigned int *)(v7[135] + 52) + 422) )
       {
@@ -493,7 +493,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
       case 0: /*0x6eec7c*/
         v11 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v7 + 72))(v7, v50); /*0x6eec8c*/
         (*((unsigned short *)&(v33))) = *v11 / 256; /*0x6eec9f*/
-        v12 = v9->owner; /*0x6eecb0*/
+        v12 = (int)(v9->owner); /*0x6eecb0*/
         (*(((unsigned short *)&(v33)) + 1)) = v11[1] / 256; /*0x6eecb9*/
         v33 = v33; /*0x6eecc6*/
         v10 = 0x7FFFFFFF - CellClass::GetTileData((int16_t *)&v33, v12); /*0x6eecdb*/
@@ -501,14 +501,14 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
       case 1: /*0x6eec7c*/
         v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v7 + 72))(v7, v51); /*0x6eeceb*/
         (*((unsigned short *)&(v34))) = *v13 / 256; /*0x6eecfe*/
-        v14 = v9->owner; /*0x6eed0f*/
+        v14 = (int)(v9->owner); /*0x6eed0f*/
         (*(((unsigned short *)&(v34)) + 1)) = v13[1] / 256; /*0x6eed18*/
         v34 = v34; /*0x6eed25*/
         TileData = CellClass::GetTileData((int16_t *)&v34, v14); /*0x6eed30*/
         goto LABEL_13; /*0x6eed35*/
       case 2: /*0x6eec7c*/
-        v16 = v9 + 156; /*0x6eed46*/
-        v17 = v9->location; /*0x6eed4b*/
+        v16 = (int)(v9 + 156); /*0x6eed46*/
+        v17 = (int)(v9->location); /*0x6eed4b*/
         v18 = *(unsigned int *)(v16 + 4); /*0x6eed4d*/
         v48 = *(unsigned int *)(v16 + 8); /*0x6eed53*/
         v19 = v7[40]; /*0x6eed5d*/
@@ -523,8 +523,8 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         v10 = 0x7FFFFFFF - Math::RoundToInt(v21); /*0x6eedae*/
         break; /*0x6eedb0*/
       case 3: /*0x6eec7c*/
-        v22 = v9 + 156; /*0x6eedbe*/
-        v23 = v9->location; /*0x6eedc3*/
+        v22 = (int)(v9 + 156); /*0x6eedbe*/
+        v23 = (int)(v9->location); /*0x6eedc3*/
         v24 = *(unsigned int *)(v22 + 4); /*0x6eedc5*/
         v25 = *(unsigned int *)(v22 + 8); /*0x6eedc8*/
         v26 = v7[39]; /*0x6eedcb*/
@@ -610,7 +610,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   }
   owner = i->owner; /*0x6efce3*/
   v8 = 0; /*0x6efce9*/
-  lastBuiltInfantryType = owner->lastBuiltInfantryType; /*0x6efcf0*/
+  lastBuiltInfantryType = (int)(owner->lastBuiltInfantryType); /*0x6efcf0*/
   if ( lastBuiltInfantryType <= 0 ) /*0x6efcf8*/
     goto LABEL_16; /*0x6efcf8*/
   for ( j = owner->supersCount; *(unsigned int *)(*(unsigned int *)(*(unsigned int *)j + 40) + 180) != 1; j += 4 ) /*0x6efd00*/
@@ -869,7 +869,7 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
     v7 = 0; /*0x6e2a62*/
     if ( g_GameObjectCleanup > 0 ) /*0x6e2a66*/
     {
-      v8 = g_TagClassCount; /*0x6e2a68*/
+      v8 = (unsigned int *)(g_TagClassCount); /*0x6e2a68*/
       do /*0x6e2a91*/
       {
         if ( *(unsigned int *)(v8[v7] + 36) == this->ambientSoundController[4] ) /*0x6e2a78*/
@@ -878,7 +878,7 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
           if ( v9 ) /*0x6e2a7f*/
           {
             (*(void (**)(int, int))(*(unsigned int *)v9 + 32))(v9, 1); /*0x6e2a85*/
-            v8 = g_TagClassCount; /*0x6e2a88*/
+            v8 = (unsigned int *)(g_TagClassCount); /*0x6e2a88*/
           }
           --v7; /*0x6e2a8d*/
         }
@@ -1528,7 +1528,7 @@ unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
 
   LOBYTE(this->M4) = 11; /*0x6e6b75*/
   this->AbstractClass = (void *)(*a2 / 256 + 1000 * (a2[1] / 256)); /*0x6e6ba4*/
-  return this; /*0x6e6ba3*/
+  return (unsigned char *)(this); /*0x6e6ba3*/
 
 }
 } // namespace gamemd
@@ -1682,21 +1682,21 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   int v6; // edx
 
   result = &this->AbstractClass; /*0x6e8004*/
-  this->M8 = &vt_INoticeSink; /*0x6e8008*/
-  this->M12 = &vt_INoticeSource; /*0x6e800f*/
+  this->M8 = (unsigned int)(&vt_INoticeSink); /*0x6e8008*/
+  this->M12 = (unsigned int)(&vt_INoticeSource); /*0x6e800f*/
   this->M16 = *(unsigned int *)(a2 + 16); /*0x6e801c*/
   LOBYTE(this->M20) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
   this->q018 = *(unsigned int *)(a2 + 24); /*0x6e8028*/
   this->M28 = *(unsigned int *)(a2 + 28); /*0x6e802e*/
   LOBYTE(this->q020) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
   this->AbstractClass = &vt_AbstractClass; /*0x6e803f*/
-  this->M4 = &vt_AbstractClass; /*0x6e8045*/
-  this->M8 = &vt_AbstractClass; /*0x6e804c*/
+  this->M4 = (unsigned int)(&vt_AbstractClass); /*0x6e8045*/
+  this->M8 = (unsigned int)(&vt_AbstractClass); /*0x6e804c*/
   this->M12 = &vt_AbstractClass; /*0x6e8053*/
-  qmemcpy(&this->occupant, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
-  qmemcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
+  memcpy(&this->occupant, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
+  memcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
-  qmemcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
+  memcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
   this->AbstractClass = &vt_TaskForceClass; /*0x6e807e*/
   this->M4 = &vt_TaskForceClass; /*0x6e8084*/
   this->M8 = &vt_TaskForceClass; /*0x6e808b*/

@@ -52,7 +52,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(3 * a2); /*0x478364*/
+      v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478364*/
       if ( v6 ) /*0x47836e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
@@ -89,7 +89,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
           v13 = 0; /*0x4783cd*/
           do /*0x4783e9*/
           {
-            v14 = *&this->Items + v13; /*0x4783d4*/
+            v14 = (int)(*&this->Items + v13); /*0x4783d4*/
             v15 = &v5[v13]; /*0x4783d6*/
             v13 += 3; /*0x4783d9*/
             --m_8; /*0x4783dc*/
@@ -108,7 +108,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       *&this->Items = v5; /*0x47840d*/
       this->__pad_008 = v3; /*0x478413*/
       BYTE1(this->m_C) = a3 == 0; /*0x478416*/
-      return 1; /*0x47841c*/
+      return (gamemd::AbstractClass **)(1); /*0x47841c*/
     }
     else
     {
@@ -118,7 +118,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   else
   {
     (*(void (**)(_VectorClass_VRGBClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x478426*/
-    return 1; /*0x47842c*/
+    return (gamemd::AbstractClass **)(1); /*0x47842c*/
   }
 
 }
@@ -219,7 +219,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
         *&this->u32_4 = 0; /*0x4781b1*/
       }
     }
-    *&this->u32_4 = v4; /*0x4781ba*/
+    *&this->u32_4 = (unsigned int)(v4); /*0x4781ba*/
     this->Capacity = a2; /*0x4781c2*/
     BYTE1(this->__pad_00C) = a3 == 0; /*0x4781c5*/
   }
@@ -237,7 +237,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
 
 // 0x4781F0
 namespace gamemd {
-int FilePipe_30::Read(unsigned int * a2, void *a2_2)
+int FilePipe_30::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int m_10; // edx
   int result; // eax
@@ -273,7 +273,7 @@ char FilePipe_38::AddRef(int a2)
     if ( m_8 <= 0 ) /*0x4782f6*/
       return 1; /*0x478332*/
     v4 = *(unsigned int *)(a2 + 4); /*0x4782f8*/
-    v5 = *&this->Items; /*0x4782fb*/
+    v5 = (unsigned char *)(*&this->Items); /*0x4782fb*/
     v6 = (unsigned char *)(v4 + 2); /*0x478300*/
     v7 = v4 - (unsigned int)v5; /*0x478303*/
     while ( *v5 == v5[v7] && v5[1] == *(v6 - 1) && v5[2] == *v6 ) /*0x47831f*/
@@ -305,7 +305,7 @@ void FilePipe_38::ddtor()
 
 // 0x478470
 namespace gamemd {
-int FilePipe_38::Read(unsigned char * a2, void *a2_2)
+int FilePipe_38::Read(unsigned char * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // esi
@@ -393,7 +393,7 @@ void FilePipe_30::Clear_0()
 {
   void *v2; // eax
 
-  v2 = *&this->u32_4; /*0x4b9c46*/
+  v2 = (void *)(*&this->u32_4); /*0x4b9c46*/
   this->m_10 = 0; /*0x4b9c49*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4b9c50*/
   {
@@ -449,7 +449,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
         *&this->u32_4 = 0; /*0x4b9e91*/
       }
     }
-    *&this->u32_4 = v4; /*0x4b9e9a*/
+    *&this->u32_4 = (unsigned int)(v4); /*0x4b9e9a*/
     this->Capacity = a2; /*0x4b9ea2*/
     BYTE1(this->__pad_00C) = a3 == 0; /*0x4b9ea5*/
   }
@@ -518,7 +518,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
         *&this->u32_4 = 0; /*0x4ba0f1*/
       }
     }
-    *&this->u32_4 = v4; /*0x4ba0fa*/
+    *&this->u32_4 = (unsigned int)(v4); /*0x4ba0fa*/
     this->Capacity = a2; /*0x4ba102*/
     BYTE1(this->__pad_00C) = a3 == 0; /*0x4ba105*/
   }

@@ -57,7 +57,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
          0) )
   {
     v3 = dword_A83D08++; /*0x46cbd9*/
-    *((unsigned int *)dword_A83CFC + v3) = this; /*0x46cbe8*/
+    *((unsigned int *)dword_A83CFC + v3) = (unsigned int)(this); /*0x46cbe8*/
   }
   LOBYTE(this->scenario[29]) = 0; /*0x46cbf7*/
   wcscpythis->u32_1F2C, &g_TypeClass_DefaultString); /*0x46cbfe*/
@@ -99,16 +99,16 @@ int CampaignClass::LoadFromINIList()
     if ( v5 == -1 ) /*0x46ce91*/
     {
 LABEL_7:
-      v6 = __2_YAPAXI_Z(0x3A0u); /*0x46ce97*/
+      v6 = (int)(__2_YAPAXI_Z(0x3A0u)); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
         AbstractTypeClass::Constructor((int *)v6, Source); /*0x46ceb5*/
         *(unsigned int *)(v6 + 152) = -1; /*0x46ceba*/
         *(unsigned int *)(v6 + 668) = -1; /*0x46cec0*/
-        *(unsigned int *)v6 = &vt_CampaignClass; /*0x46cec6*/
-        *(unsigned int *)(v6 + 4) = &vt_CampaignClass; /*0x46cecc*/
-        *(unsigned int *)(v6 + 8) = &vt_CampaignClass; /*0x46ced3*/
-        *(unsigned int *)(v6 + 12) = &vt_CampaignClass; /*0x46ceda*/
+        *(unsigned int *)v6 = (unsigned int)(&vt_CampaignClass); /*0x46cec6*/
+        *(unsigned int *)(v6 + 4) = (unsigned int)(&vt_CampaignClass); /*0x46cecc*/
+        *(unsigned int *)(v6 + 8) = (unsigned int)(&vt_CampaignClass); /*0x46ced3*/
+        *(unsigned int *)(v6 + 12) = (unsigned int)(&vt_CampaignClass); /*0x46ceda*/
         if ( dword_A83D08 < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
@@ -182,7 +182,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     return 0; /*0x49c5ac*/
   if ( !LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  p_referenceCount = &this->referenceCount; /*0x49c5c4*/
+  p_referenceCount = (int *)(&this->referenceCount); /*0x49c5c4*/
   if ( !LOBYTE(this->referenceCount) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = this->scenario[7]; /*0x49c5d4*/
@@ -297,7 +297,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &DataGlobal_A8B2A0; /*0x49c909*/
+    v24 = (char *)(&DataGlobal_A8B2A0); /*0x49c909*/
     while ( *(unsigned int *)v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/

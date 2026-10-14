@@ -92,7 +92,7 @@ void BlowPipe_23::Clear_0()
 {
   void *v2; // eax
 
-  v2 = *&this->q004; /*0x63dce6*/
+  v2 = (void *)(*&this->q004); /*0x63dce6*/
   this->m_10 = 0; /*0x63dce9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dcf0*/
   {
@@ -130,7 +130,7 @@ char BlowPipe_31::AddRef(int a2)
     v3 = 0; /*0x63e31f*/
     if ( m_8 <= 0 ) /*0x63e323*/
       return 1; /*0x63e343*/
-    v4 = *&this->q004; /*0x63e325*/
+    v4 = (unsigned int *)(*&this->q004); /*0x63e325*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x63e32b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x63e334*/
     {
@@ -176,7 +176,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x63e3ce*/
         }
       }
-      *&this->q004 = v4; /*0x63e3d7*/
+      *&this->q004 = (int)(v4); /*0x63e3d7*/
       this->m_8 = a2; /*0x63e3df*/
       BYTE1(this->m_C) = a3 == 0; /*0x63e3e2*/
       return 1; /*0x63e3e8*/
@@ -276,7 +276,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x63e501*/
       }
     }
-    *&this->q004 = v4; /*0x63e50a*/
+    *&this->q004 = (int)(v4); /*0x63e50a*/
     this->m_8 = a2; /*0x63e512*/
     BYTE1(this->m_C) = a3 == 0; /*0x63e515*/
   }
@@ -294,7 +294,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 
 // 0x63E620
 namespace gamemd {
-int BlowPipe_31::Read(unsigned int * a2, void *a2_2)
+int BlowPipe_31::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int m_10; // edx
   int result; // eax
@@ -327,7 +327,7 @@ char BlowPipe_23::AddRef(int a2)
     v3 = 0; /*0x63e65f*/
     if ( m_8 <= 0 ) /*0x63e663*/
       return 1; /*0x63e683*/
-    v4 = *&this->q004; /*0x63e665*/
+    v4 = (unsigned int *)(*&this->q004); /*0x63e665*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x63e66b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x63e674*/
     {
@@ -373,7 +373,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x63e70e*/
         }
       }
-      *&this->q004 = v4; /*0x63e717*/
+      *&this->q004 = (int)(v4); /*0x63e717*/
       this->m_8 = a2; /*0x63e71f*/
       BYTE1(this->m_C) = a3 == 0; /*0x63e722*/
       return 1; /*0x63e728*/
@@ -408,7 +408,7 @@ void BlowPipe_23::ddtor()
 
 // 0x63E770
 namespace gamemd {
-int BlowPipe_23::Read(unsigned int * a2, void *a2_2)
+int BlowPipe_23::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -473,7 +473,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x63e841*/
       }
     }
-    *&this->q004 = v4; /*0x63e84a*/
+    *&this->q004 = (int)(v4); /*0x63e84a*/
     this->m_8 = a2; /*0x63e852*/
     BYTE1(this->m_C) = a3 == 0; /*0x63e855*/
   }
@@ -542,7 +542,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x63eb41*/
       }
     }
-    *&this->q004 = v4; /*0x63eb4a*/
+    *&this->q004 = (int)(v4); /*0x63eb4a*/
     this->m_8 = a2; /*0x63eb52*/
     BYTE1(this->m_C) = a3 == 0; /*0x63eb55*/
   }

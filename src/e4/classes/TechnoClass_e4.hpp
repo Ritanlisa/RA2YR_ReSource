@@ -385,9 +385,9 @@ struct TechnoClass {
     int checkMovementRestrictions();
     int processPowerDrain();
     TechnoClass(AbstractClass * aP1);
-    unsigned int * Update(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
+    unsigned int * Update(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0);
     bool GetField(void *a1, void *a2);
-    void updateSightRange(uint8_t *a2, int a3);  // G57w10-S raw 0x004C2BD0 IUnknown 占位清除
+    void updateSightRange(IUnknown * aP1, int a3);  // G57w10-S raw 0x004C2BD0 IUnknown 占位清除
     static char GetTileAnimationData(TechnoClass * aP1, int a2, unsigned int *a3, unsigned int *a4);
     static int InvulnerabilityIntensity_SetContext(TechnoClass * aP1, int a2);
     static int MutateAll(TechnoClass * aP1, int a2, int a3);

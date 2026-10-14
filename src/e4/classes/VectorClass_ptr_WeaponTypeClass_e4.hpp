@@ -19,7 +19,7 @@ struct VectorClass_ptr_WeaponTypeClass {
     DynamicVector *  Constructor_VectorClass_WeaponTypeClass___(char a2);  // 0x40FEC0
     int Destroy(void *a1_1);  // 0x40FBB0
     unsigned int  GetItemIndex(int a2);  // 0x40FBE0
-    int  Get(int a2, void *a1 = 0);  // 0x40FC00
+    int Get(int a2, void *a2_2);  // 0x40FC00
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x40FC10
     char  Release(int a2, unsigned int * a3);  // 0x40FC50
     void Remove(void *a1_1, void *a1 = 0);  // 0x40FD00

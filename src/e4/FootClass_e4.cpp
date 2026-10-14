@@ -78,7 +78,7 @@ AbstractClass * FootClass::Destruct()
   }
   if ( this->currentJumpjetMapCoords[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
-    v6 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)this->currentJumpjetMapCoords); /*0x4d365b*/
+    v6 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)this->currentJumpjetMapCoords)); /*0x4d365b*/
     if ( v6->FootClass_E0 == this ) /*0x4d3666*/
       v6->FootClass_E0 = 0; /*0x4d3668*/
   }
@@ -137,7 +137,7 @@ int FootClass::updateThreat()
   int v1; // edx
   int v2; // eax
 
-  v1 = this->targetingTimer; /*0x70f7e0*/
+  v1 = (int)(this->targetingTimer); /*0x70f7e0*/
   v2 = this->targetingTimer_2; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
@@ -277,7 +277,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))(v28.m_Position); /*0x71028a*/
       if ( v28.m_Data )
       {
-        m_Size = v28.m_Size; /*0x710297*/
+        m_Size = (int)(v28.m_Size); /*0x710297*/
         if ( *(unsigned int *)(v28.m_Size + 684) ) /*0x71029b*/
           TechnoClass::EjectPassengers((TechnoClass *)v28.m_Size, 0); /*0x7102a6*/
         if ( v6->u32_2AC ) /*0x7102ab*/
@@ -288,7 +288,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         v22 = *v10; /*0x7102db*/
         if ( *v10 != a2 ) /*0x7102e3*/
         {
-          *v10 = a2; /*0x7102e7*/
+          *v10 = (int)(a2); /*0x7102e7*/
           SuperClass::SetFieldX(&v6->SuperClass_19D); /*0x7102e9*/
           if ( v22 ) /*0x7102f0*/
             (*(void (**)(int))(*(unsigned int *)v22 + 8))(v22); /*0x7102f6*/
@@ -343,7 +343,7 @@ unsigned int FootClass::checkTurning()
 
   unsigned int result; // eax
 
-  result = this->infantryBlinkTimer; /*0x50daa0*/
+  result = (unsigned int)(this->infantryBlinkTimer); /*0x50daa0*/
   if ( result >= 4 ) /*0x50daa8*/
     return 0; /*0x50daaf*/
   return result; /*0x50dab1*/

@@ -75,7 +75,7 @@ int DDraw::CapabilityCheck()
     v3 = 5; /*0x4a3eb3*/
     if ( XSurface::GetPixel(v7, &v2) == 1 ) /*0x4a3ebf*/
     {
-      v0 = g_INI_Key_OK; /*0x4a3ed0*/
+      v0 = (const char *)(g_INI_Key_OK); /*0x4a3ed0*/
       if ( byte_8205D4 ) /*0x4a3ed5*/
         goto LABEL_7; /*0x4a3ed5*/
     }
@@ -140,28 +140,28 @@ int DDraw::CleanupSurfaces()
   AudioStream *v4; // esi
   int result; // eax
 
-  v1 = dword_8A0E10; /*0x4c19b1*/
+  v1 = (gamemd::StructTable *)(dword_8A0E10); /*0x4c19b1*/
   if ( dword_8A0E10 ) /*0x4c19bc*/
   {
     DDraw::Init((DDraw *)dword_8A0E10); /*0x4c19c0*/
     __3_YAXPAX_Z(v1); /*0x4c19c6*/
     dword_8A0E10 = 0; /*0x4c19ce*/
   }
-  v2 = dword_8A0E0C; /*0x4c19d4*/
+  v2 = (gamemd::DDraw *)(dword_8A0E0C); /*0x4c19d4*/
   if ( dword_8A0E0C ) /*0x4c19dc*/
   {
     DDraw::ReleaseSurfaces(dword_8A0E0C); /*0x4c19e0*/
     __3_YAXPAX_Z(v2); /*0x4c19e6*/
     dword_8A0E0C = 0; /*0x4c19ee*/
   }
-  v3 = dword_8A0E08; /*0x4c19f4*/
+  v3 = (gamemd::DDraw *)(dword_8A0E08); /*0x4c19f4*/
   if ( dword_8A0E08 ) /*0x4c19fc*/
   {
     DDraw::ReleaseSurfaces(dword_8A0E08); /*0x4c1a00*/
     __3_YAXPAX_Z(v3); /*0x4c1a06*/
     dword_8A0E08 = 0; /*0x4c1a0e*/
   }
-  v4 = dword_8A0E04; /*0x4c1a14*/
+  v4 = (gamemd::AudioStream *)(dword_8A0E04); /*0x4c1a14*/
   if ( dword_8A0E04 ) /*0x4c1a1c*/
   {
     DDraw::ReleaseSurfaces((DDraw *)dword_8A0E04); /*0x4c1a20*/

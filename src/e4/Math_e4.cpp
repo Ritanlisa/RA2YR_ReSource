@@ -33,7 +33,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 }  // G42.18 ns repair
 // 0x41C350
 namespace gamemd {
-int Math::Hypotenuse2D()
+int Math::Hypotenuse2D(void *a1)
 {
   return Math::Sqrt(*(double *)this * *(double *)this + this->q008 * this->q008); /*0x41c36e*/
 }
@@ -384,7 +384,7 @@ unsigned int * Math::Sub16(unsigned int *aP1, unsigned short *aP2)
 {
 
   LOWORD(aP2) = *(unsigned short *)this->q000 - *aP2; /*0x5b295a*/
-  *aP1 = aP2; /*0x5b2967*/
+  *aP1 = (unsigned int)(aP2); /*0x5b2967*/
   return aP1; /*0x5b2969*/
 
 }

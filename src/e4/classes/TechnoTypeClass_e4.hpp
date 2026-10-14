@@ -396,8 +396,8 @@ struct TechnoTypeClass {
     void* Value;  // 0x0 (no offset truth)
     void* aP2;  // 0x0 (no offset truth)
     void* houseTypesCount;  // 0x0 (no offset truth)
-    static int SaveLoad_Prefix_0(TechnoTypeClass *pThis, void *a2, void *a3, int a4, int a5);
-    unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5, void *a5_1 = 0);
+    void Construct(int aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);
     DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);
@@ -410,18 +410,17 @@ struct TechnoTypeClass {
     int ComputeValueSimple(float * a2);
     int DTOR(void *a1 = 0);
     double Dispatch();
-    static double Dispatch(TechnoTypeClass *aP1, unsigned int *a2);
+    double  Dispatch(unsigned int *a2, void *a2_1 = 0);
     int GetThreatMultiplier(TechnoTypeClass * aP1);
     int  SaveLoadDataArray(TechnoTypeClass * aP1);
     int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5);
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * Constructor_0(int a2);
-    unsigned int * LoadBase(char *aP1, void *a1 = 0);
-    void * ReadINI(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    unsigned int * LoadBase(char *aP1, void *a2 = 0);
+    void * ReadINI(char * Source, int a3, void *a3_1 = 0);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
     static int HasVoiceResponse(TechnoTypeClass * aP1, int a2);
-    int DTOR(void *a1);
     int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
     TechnoTypeClass * ddtor(void * Block, char a2);
     unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);

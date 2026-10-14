@@ -106,9 +106,9 @@ void sub_40D1B0()
   int v1; // edi
   ObjectClass *v2; // [esp+0h] [ebp-8h]
 
-  *(unsigned int *)&DataGlobal_87F7E8 = &vt_MouseClass; /*0x40d1b2*/
+  *(unsigned int *)&DataGlobal_87F7E8 = (unsigned int)(&vt_MouseClass); /*0x40d1b2*/
   dword_884D00 = (int)&vt_MouseClass; /*0x40d1bc*/
-  v0 = &dword_884B84; /*0x40d1c6*/
+  v0 = (int *)(&dword_884B84); /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
   {
@@ -208,7 +208,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->IsMoving = 0; /*0x5aff2e*/
   *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff32*/
   this->HeadToCoord[2] = v2; /*0x5aff38*/
-  *&this->M4 = &vt_MechLocomotionClass; /*0x5aff3b*/
+  *&this->M4 = (unsigned int)(&vt_MechLocomotionClass); /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
 
 }
@@ -316,7 +316,7 @@ int E4Recv_728A00::sub_728A00()
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
   *(unsigned int *)this->LocomotionClass = &vt_TunnelLocomotionClass; /*0x728a3c*/
-  *&this->M4 = &vt_TunnelLocomotionClass; /*0x728a42*/
+  *&this->M4 = (unsigned int)(&vt_TunnelLocomotionClass); /*0x728a42*/
   return (int)this->LocomotionClass; /*0x728a4b*/
 
 }

@@ -140,7 +140,21 @@ lines = ['// GENERATED fwd declarations for the e4 universe (gen_e4_fwd.py).',
          '// typedef redeclaration is legal C++ if <winsock.h> defines them',
          'typedef unsigned short u_short;',
          'typedef unsigned long u_long;', '']
-lines += ['struct %s;' % n for n in sorted(names)]
+# X26: the four vector-family names are TEMPLATES in the tree universe
+# (core/vector.hpp VectorClass<T>/DynamicVectorClass<T>/TypeList<T>;
+# system/mix_file.hpp LinkedList<T>).  In TUs that pull the tree templates
+# (GAMEMD_E4_VECTOR_TREE_TRUTH bridge, or tree TUs that leak _fwd via
+# bridges), a non-template `struct X;` here poisons the template declaration
+# (C2989/C2990/C3856 -> vector.inl parse cascade).  Mirror the
+# _tree_full_e4.hpp guard exactly.
+TEMPLATE_NAMES = {'VectorClass', 'DynamicVectorClass', 'TypeList',
+                  'LinkedList'}
+guarded = sorted(n for n in names if n in TEMPLATE_NAMES)
+plain = sorted(n for n in names if n not in TEMPLATE_NAMES)
+lines += ['#if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)']
+lines += ['struct %s;' % n for n in guarded]
+lines += ['#endif  // X26: tree-template names yield to core/vector.hpp']
+lines += ['struct %s;' % n for n in plain]
 lines += ['', '} // namespace gamemd', '']
 
 lines_t = ['// INTENTIONALLY EMPTY (gen_e4_fwd.py): tree-owned enum/alias/',

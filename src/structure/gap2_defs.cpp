@@ -1730,7 +1730,7 @@ int BuildingClass::CreateUnits()
                   BuildingClass::ClearAnims(this, 9); /*0x4465cd*/
                   strcpy(v132, ((unsigned int *)this->Type)[0]); /*0x4465fa*/
                   v74 = strlen(asc_818D7C) + 1; /*0x44661b*/
-                  qmemcpy(&v132[strlen(v132)], asc_818D7C, v74); /*0x446628*/
+                  memcpy(&v132[strlen(v132)], asc_818D7C, v74); /*0x446628*/
                   v75 = strlen(v132); /*0x446642*/
                   v132[v75] = SuperWeaponToken + 66; /*0x446645*/
                   v132[v75 + 1] = 0; /*0x446649*/
@@ -2005,7 +2005,7 @@ int BuildingClass::CreateUnits()
           v127 = ((v127) & 0xFFFF0000u) | ((unsigned int)(v92 + 2) & 0xFFFFu); /*0x446a30*/
           v127 = ((v127) & 0xFFFFu) | (((unsigned int)((unsigned short)((v92) >> 16) + 2) & 0xFFFFu) << 16); /*0x446a35*/
           v129 = v127; /*0x446a3e*/
-          if ( IDA___PAIR32__(IDA_HIWORD(v92) + 2, v92 + 2) != g_TerrainTypeTable ) /*0x446a42*/
+          if ( (((unsigned int)(unsigned short)(v92 + 2)) | ((unsigned int)(unsigned short)((*(((unsigned short *)&(v92)) + 1)) + 2) << 16)) != g_TerrainTypeTable ) /*0x446a42*/
             BuildingClass::SetRallyPoint((int)this, (int16_t *)&v129, 0); /*0x446a56*/
         }
       }
@@ -2095,7 +2095,7 @@ int BuildingClass::CreateUnits()
               v129 = *location; /*0x446d44*/
               v130 = *&this->vtable3; /*0x446d52*/
               v131 = *&this->vtable3; /*0x446d5f*/
-              IDA_WORD2(v127) = v129 / 256; /*0x446d6f*/
+              (((unsigned short *)&(v127))[2]) = v129 / 256; /*0x446d6f*/
               v106 = *&this->vtable2; /*0x446d81*/
               v127 = ((v127) & 0xFFFFu) | (((unsigned int)(v130 / 256) & 0xFFFFu) << 16); /*0x446d87*/
               v130 = v106; /*0x446d90*/
@@ -2103,7 +2103,7 @@ int BuildingClass::CreateUnits()
               v128 = (unsigned int)((v127) >> 32); /*0x446d97*/
               v108 = *location; /*0x446d9b*/
               v131 = v107; /*0x446d9d*/
-              IDA_WORD2(v127) = v108 / 256; /*0x446dad*/
+              (((unsigned short *)&(v127))[2]) = v108 / 256; /*0x446dad*/
               v109 = v99[433]; /*0x446dbf*/
               v127 = ((v127) & 0xFFFFu) | (((unsigned int)(v130 / 256) & 0xFFFFu) << 16); /*0x446dc8*/
               v121 = *(unsigned int *)(v109 + 1460); /*0x446deb*/
@@ -3262,7 +3262,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
     result = FootClass::ProcessDeploy( /*0x518042*/
                (FootClass *)v9,
                (int)this,
-               COERCE_DOUBLE(IDA___PAIR64__(a4, (unsigned int)a3)),
+               COERCE_DOUBLE((((unsigned long)(unsigned int)((unsigned int)a3)) | ((unsigned long)(unsigned int)(a4) << 32))),
                (int *)a5,
                (int)a6,
                a7,

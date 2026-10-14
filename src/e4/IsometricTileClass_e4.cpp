@@ -39,7 +39,7 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
          0) )
   {
     v4 = (*(unsigned int *)&DataGlobal_87F760)++; /*0x543862*/
-    *(unsigned int *)(*(unsigned int *)&DataGlobal_87F754 + 4 * v4) = this; /*0x543871*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_87F754 + 4 * v4) = (unsigned int)(this); /*0x543871*/
   }
   return this; /*0x543876*/
 }

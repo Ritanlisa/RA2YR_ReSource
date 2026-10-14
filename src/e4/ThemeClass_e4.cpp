@@ -65,11 +65,7 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this,(uint8_t *)(aRepeat), this->u32_289); /*0x720535*/
   v6 = this->u32_28C; /*0x72053a*/
   this->u32_289 = Bool_Overwrite; /*0x720540*/
-  this->u32_28C = HouseTypeClass::loadCountryData( /*0x720554*/
-                              (HouseTypeClass *)a2,
-                              (uint8_t *)this,
-                              (uint8_t *)aSide,
-                              v6);
+    this->u32_28C = HouseTypeClass::loadCountryData((uint8_t *)(/*0x720554*/                               (HouseTypeClass *)a2),                               (uint8_t *)this,                               (uint8_t *)aSide,                               v6);
   if ( this->u32_288 ) /*0x72055a*/
     INIClass::GetStringEx( /*0x720577*/
       (int)a2,
@@ -133,7 +129,7 @@ void * ThemeClass::InitializeThemes(char * a2)
       if ( v7 == -1 ) /*0x720631*/
       {
 LABEL_10:
-        v8 = __2_YAPAXI_Z(0x290u); /*0x720637*/
+        v8 = (unsigned int *)(__2_YAPAXI_Z(0x290u)); /*0x720637*/
         v9 = 0; /*0x720641*/
         if ( v8 ) /*0x720648*/
         {
@@ -158,7 +154,7 @@ LABEL_10:
           v12 = this->u32_24; /*0x7206d8*/
           v13 = this->u32_18; /*0x7206db*/
           this->u32_24 = v12 + 1; /*0x7206e1*/
-          *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
+          *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7206e4*/
         }
       }
       else
@@ -180,9 +176,9 @@ LABEL_10:
     this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {
-      SetAudioFileName((int)result, aMusicStream); /*0x72073e*/
-      AudioQueue::IsEmpty(this->ThemeClass_field_2C, g_MixerChannel_Theme); /*0x72074c*/
-      return (void *)AudioQueue::IsNotEmpty(this->ThemeClass_field_2C, g_MixerChannel_Stream); /*0x72075a*/
+      SetAudioFileName((int)result,(const char *)(aMusicStream)); /*0x72073e*/
+      AudioQueue::IsEmpty((int)(this->ThemeClass_field_2C), g_MixerChannel_Theme); /*0x72074c*/
+      return (void *)AudioQueue::IsNotEmpty((int)(this->ThemeClass_field_2C), g_MixerChannel_Stream); /*0x72075a*/
     }
   }
   return result; /*0x72075f*/
@@ -211,13 +207,13 @@ int ThemeClass::ClearQueues()
     for ( i = ((AudioQueue *)(&stru_B1D3F0))->GetNext(); i; i = ((AudioQueue *)(&stru_B1D3F0))->GetNext() ) /*0x7523bb*/
     {
       LinkedList::Init((unsigned int **)i); /*0x7523bf*/
-      *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = (gamemd::Init)(2); /*0x7523c8*/
+      *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523c8*/
       operator delete((void *)((void *)i)); /*0x7523cb*/
     }
     for ( j = ((AudioQueue *)(&stru_B1D3C8))->GetNext(); j; j = ((AudioQueue *)(&stru_B1D3C8))->GetNext() ) /*0x7523f1*/
     {
       LinkedList::Init((unsigned int **)j); /*0x7523f5*/
-      *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = (gamemd::Init)(2); /*0x7523fe*/
+      *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = (unsigned int)((gamemd::Init)(2)); /*0x7523fe*/
       operator delete((void *)((void *)j)); /*0x752401*/
     }
     v3 = (int *)stru_B1D450; /*0x752419*/

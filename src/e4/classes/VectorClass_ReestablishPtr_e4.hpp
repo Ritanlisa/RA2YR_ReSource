@@ -13,6 +13,6 @@ struct VectorClass_ReestablishPtr {
     BuildingClass * ptr_8;  // 0x8
     unsigned int tail_10;  // 0x10
 // --- flat members (END) ---
-    unsigned int *  Construct(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x45AE50
+    unsigned int * Construct(BuildingClass * aP1, BuildingClass * aP2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x45AE50
 };
 } // namespace gamemd

@@ -27,7 +27,7 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
   int v9; // eax
   ULONG v10; // [esp+0h] [ebp-10h]
 
-  v4 = a1; /*0x4a2cd2*/
+  v4 = (gamemd::IStream *)(a1); /*0x4a2cd2*/
   v5 = a1; /*0x4a2cd8*/
   v6 = a1; /*0x4a2cde*/
   if ( !a1 ) /*0x4a2ce0*/
@@ -104,8 +104,8 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 
   v4 = v3; /*0x4a3112*/
   v5 = *(unsigned int *)(v3 + 8); /*0x4a3116*/
-  *(unsigned int *)v3 = &vt_CStreamClass; /*0x4a3119*/
-  *(unsigned int *)(v3 + 4) = &vt_CStreamClass; /*0x4a3121*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_CStreamClass); /*0x4a3119*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_CStreamClass); /*0x4a3121*/
   if ( v5 ) /*0x4a3128*/
   {
     if ( *(unsigned char *)(v3 + 17) /*0x4a314b*/
@@ -137,7 +137,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
     (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v8 + 8))(v4->__pad_008); /*0x4a31c9*/
   if ( ((uint8_t)a2 & 1) != 0 ) /*0x4a31d1*/
     operator delete((void *)((void *)v4)); /*0x4a31d4*/
-  return (void *)v4; /*0x4a31de*/
+  return (gamemd::CStreamClass *)((void *)v4); /*0x4a31de*/
 }
 } // namespace gamemd
 
@@ -303,7 +303,7 @@ char CStreamClass_16::AddRef(int a2)
     v3 = 0; /*0x4a4b3f*/
     if ( m_8 <= 0 ) /*0x4a4b43*/
       return 1; /*0x4a4b63*/
-    v4 = *&this->q004; /*0x4a4b45*/
+    v4 = (unsigned int *)(*&this->q004); /*0x4a4b45*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a4b4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a4b54*/
     {
@@ -349,7 +349,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x4a4bee*/
         }
       }
-      *&this->q004 = v4; /*0x4a4bf7*/
+      *&this->q004 = (int)(v4); /*0x4a4bf7*/
       this->m_8 = a2; /*0x4a4bff*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a4c02*/
       return 1; /*0x4a4c08*/
@@ -384,7 +384,7 @@ int CStreamClass_16::ddtor()
 
 // 0x4A4C50
 namespace gamemd {
-int CStreamClass_16::Read(unsigned int * a2, void *a2_2)
+int CStreamClass_16::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx

@@ -50,7 +50,7 @@ void Player::BuildListString(wchar_t * Destination)
     {
       WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
     }
-    v5 = WideString::GetOrEmpty((wchar_t **)&v6); /*0x5e8e5d*/
+    v5 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v6)); /*0x5e8e5d*/
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/
     wcscat((wchar_t *)Destination, asc_8304FC); /*0x5e8e6f*/
     DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
@@ -79,7 +79,7 @@ wchar_t * Player::FindByName(wchar_t * String2)
   if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, (const wchar_t *)String2) ) /*0x5e8c74*/
     return (wchar_t *)g_Lobby_PlayerColor; /*0x5e8c80*/
   if ( !wcscmp(g_Lobby_PlayerReady, (const wchar_t *)String2) ) /*0x5e8c92*/
-    return g_Lobby_PlayerReady; /*0x5e8c9e*/
+    return (wchar_t *)(g_Lobby_PlayerReady); /*0x5e8c9e*/
   if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, (const wchar_t *)String2) ) /*0x5e8caf*/
     return (wchar_t *)g_Lobby_MaxPlayers; /*0x5e8cbb*/
   v3 = dword_A8DA84; /*0x5e8cc5*/

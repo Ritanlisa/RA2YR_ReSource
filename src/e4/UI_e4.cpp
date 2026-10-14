@@ -692,7 +692,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   int v28; // [esp+38h] [ebp+8h]
 
   v4 = (unsigned int *)((int)(aP0));
-  v5 = (int)(aP1); /*0x6217ec*/
+  v5 = (gamemd::ObjectClass *)((int)(aP1)); /*0x6217ec*/
   v6 = (aP0[2] * a4) >> 16; /*0x6217fa*/
   v19 = 1; /*0x6217fd*/
   v20 = v6; /*0x621805*/
@@ -748,7 +748,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 (*((unsigned short *)&(v14))) = v15 | v14; /*0x621969*/
                 v7 = a3; /*0x62196b*/
                 *v21 = (v17 >> 8) | v14; /*0x621974*/
-                v5 = (int)(aP1); /*0x621977*/
+                v5 = (gamemd::ObjectClass *)((int)(aP1)); /*0x621977*/
               }
               else
               {
@@ -1064,15 +1064,15 @@ bool UI_Connect(HWND hWnd, LONG, LONG, void * a2, void * a3)
   Rect.right -= Rect.left; /*0x6231d8*/
   Rect.bottom -= Rect.top; /*0x6231e5*/
   if ( a2 == (void *)(-1) ) /*0x6231e9*/
-    v5 = Rect.left - Point.x; /*0x6231eb*/
+    v5 = (void *)(Rect.left - Point.x); /*0x6231eb*/
   else
-    v5 = (LONG)(a2); /*0x6231f1*/
-  Rect.left = v5; /*0x6231f7*/
+    v5 = (void *)((LONG)(a2)); /*0x6231f1*/
+  Rect.left = (LONG)(v5); /*0x6231f7*/
   if ( a3 == (void *)(-1) ) /*0x6231fe*/
-    v6 = Rect.top - Point.y; /*0x623200*/
+    v6 = (void *)(Rect.top - Point.y); /*0x623200*/
   else
-    v6 = (LONG)(a3); /*0x623206*/
-  Rect.top = v6; /*0x623217*/
+    v6 = (void *)((LONG)(a3)); /*0x623206*/
+  Rect.top = (LONG)(v6); /*0x623217*/
   return MoveWindow(hWnd, v5, v6, Rect.right, Rect.bottom, 0); /*0x623221*/
 }
 } // namespace gamemd
@@ -1102,7 +1102,7 @@ char sub_6379C0()
 {
   char result; // al
 
-  result = DataGlobal_AC4CF4; /*0x6379c0*/
+  result = (char)(DataGlobal_AC4CF4); /*0x6379c0*/
   if ( !DataGlobal_AC4CF4 ) /*0x6379c7*/
   {
     DataGlobal_AC4CF4 = 1; /*0x6379ce*/
@@ -1268,8 +1268,8 @@ int sub_642E80(int * a1, unsigned int * a2)
   unsigned char v8[30]; // [esp+14h] [ebp-20h] BYREF
   int16_t v9; // [esp+32h] [ebp-2h]
 
-  Instance = TextRenderer::GetInstance(); /*0x642e97*/
-  v4 = v8; /*0x642e99*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x642e97*/
+  v4 = (unsigned short *)(v8); /*0x642e99*/
   v5 = 15; /*0x642e9d*/
   do /*0x642eb6*/
   {
@@ -1299,8 +1299,8 @@ int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
   unsigned char v13[30]; // [esp+24h] [ebp-20h] BYREF
   int16_t v14; // [esp+42h] [ebp-2h]
 
-  Instance = TextRenderer::GetInstance(); /*0x643680*/
-  v6 = v13; /*0x643682*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x643680*/
+  v6 = (unsigned short *)(v13); /*0x643682*/
   v7 = 15; /*0x643686*/
   do /*0x64369f*/
   {
@@ -1390,7 +1390,7 @@ char sub_6BA120(int a1, int a2, char * Source)
 namespace gamemd {
 unsigned int * UI_Move(unsigned int * a0, MouseClass * aP1, int a3)
 {
-  *a0 = *aP1; /*0x6da36a*/
+  *a0 = (unsigned int)(*aP1); /*0x6da36a*/
   return a0; /*0x6da36c*/
 }
 } // namespace gamemd
@@ -1541,7 +1541,7 @@ char sub_72D120()
   if ( !byte_B0FCCE ) /*0x72d127*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72d133*/
-      dword_B0FAB8 = LoadFileSHP(off_844D64, (bool *)&byte_B0FCCD); /*0x72d145*/
+      dword_B0FAB8 = (unsigned int)(LoadFileSHP(off_844D64, (bool *)&byte_B0FCCD)); /*0x72d145*/
     result = LoadPaletteSimple(off_844D68, &dword_B0FCD0, &dword_B0FCD4); /*0x72d15a*/
     byte_B0FCCE = 1; /*0x72d15f*/
   }
@@ -1701,7 +1701,7 @@ char sub_72F430()
 namespace gamemd {
 CCINIClass * UI_Load_72F4A0()
 {
-  return dword_B0FBE4; /*0x72f4a5*/
+  return (gamemd::CCINIClass *)(dword_B0FBE4); /*0x72f4a5*/
 }
 } // namespace gamemd
 
@@ -1725,7 +1725,7 @@ int sub_72F4D0()
 namespace gamemd {
 CCINIClass * UI_Load_72F4E0()
 {
-  return dword_B0FBFC; /*0x72f4e5*/
+  return (gamemd::CCINIClass *)(dword_B0FBFC); /*0x72f4e5*/
 }
 } // namespace gamemd
 
@@ -1933,10 +1933,10 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
     ++v5; /*0x793a4a*/
     ++v4; /*0x793a4d*/
     if ( (int)v5 >= (int)&dword_A8DAB0 ) /*0x793a54*/
-      return result; /*0x793a54*/
+      return (gamemd::ObjectClass *)(result); /*0x793a54*/
   }
   *((unsigned short *)&dword_A8E050 + v4) = a2; /*0x793a5b*/
-  return result; /*0x793a56*/
+  return (gamemd::ObjectClass *)(result); /*0x793a56*/
 }
 } // namespace gamemd
 
@@ -1950,7 +1950,7 @@ void sub_7A2750()
   wchar_t *StringCSF; // eax
   void *v4; // [esp+8h] [ebp-4h] BYREF
 
-  Current = Dialog::GetCurrent(); /*0x7a2753*/
+  Current = (HWND)(Dialog::GetCurrent()); /*0x7a2753*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
   ((String *)((char **)&v4))->Assign(0); /*0x7a276c*/
   v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/

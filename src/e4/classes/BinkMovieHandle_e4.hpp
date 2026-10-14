@@ -29,7 +29,7 @@ struct BinkMovieHandle {
     BinkMovieHandle * QueryInterface(char a2);
     char AddRef(void *a1);
     int AdjustSurfaceFormat(int a2, void *a2_2);
-    int Check(int a2, void *a1 = 0, void *a3 = 0);
+    int Check(int a2, void *a2_1 = 0, void *a3 = 0);
     int InitFromFile(void *a1, void *a2);
     int Pause(int a2, int a3);
     int Release(void *a1);

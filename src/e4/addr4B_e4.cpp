@@ -96,7 +96,7 @@ char JumpjetLocomotionClass_Process(int a1)
   {
     v2->COMObject_20 = v4; /*0x4b052a*/
     v2->u32_1C = v3; /*0x4b0533*/
-    Timer::Start((Timer *)&v30, 3); /*0x4b0536*/
+    Timer::Start((int)((Timer *)&v30), 3); /*0x4b0536*/
     v2->u32_24 = v30; /*0x4b0547*/
     *((unsigned int *)v2 + 10) = v31; /*0x4b054d*/
     *((unsigned int *)v2 + 11) = v32; /*0x4b0554*/
@@ -127,7 +127,7 @@ char JumpjetLocomotionClass_Process(int a1)
         || Owner->location[1] != v1->Dest[0]
         || Owner->location[2] != v1->Dest[1] )
       {
-        if ( (uint8_t)TimerClass::Active((int)Owner->primaryFacing) ) /*0x4b077b*/
+        if ( (uint8_t)TimerClass::Active((void *)((int)Owner->primaryFacing)) ) /*0x4b077b*/
         {
           (((unsigned char *)&(v1->TrackIndex))[2]) = 1; /*0x4b0788*/
           goto LABEL_39; /*0x4b0788*/
@@ -290,15 +290,7 @@ char JumpjetLocomotionClass_Process(int a1)
             v30 = *location; /*0x4b07fd*/
             v31 = location[1]; /*0x4b0804*/
             v32 = location[2]; /*0x4b0810*/
-            AnimClass::ctor( /*0x4b0823*/
-              v19,
-              *(void **)(*(unsigned int *)&g_RulesClass_Instance + 148),
-              &v30,
-              0,
-              1,
-              (void *)0x600,
-              0,
-              0);
+                        AnimClass::ctor( /*0x4b0823*/               v19,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 148)),               &v30,               0,               1,               (void *)0x600,               0,               0);
           }
         }
       }

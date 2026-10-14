@@ -36,7 +36,7 @@ int Array::GetClamped(int aP1)
 }  // G42.18 ns repair
 // 0x634290
 namespace gamemd {
-int Array::FindValue(int aP1)
+int Array::FindValue(int aP1, void *a2)
 {
 
   void *Array_field_0x10; // esi
@@ -44,7 +44,7 @@ int Array::FindValue(int aP1)
   int v4; // edx
   unsigned int **i; // ecx
 
-  Array_field_0x10 = this->u32_10; /*0x634292*/
+  Array_field_0x10 = (void *)(this->u32_10); /*0x634292*/
   result = -1; /*0x634295*/
   v4 = 0; /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
@@ -70,7 +70,7 @@ int Array::RemoveAt(int a2, void *a2_2)
   char *v4; // edx
 
   Array_field_0x10 = (char *)a2_2->Array_field_0x10; /*0x63e590*/
-  result = a2_2; /*0x63e593*/
+  result = (int)(a2_2); /*0x63e593*/
   if ( a2_2 >= (int)Array_field_0x10 ) /*0x63e599*/
   {
     LOBYTE(result) = 0; /*0x63e5bc*/
@@ -96,7 +96,7 @@ int Array::RemoveAt(int a2, void *a2_2)
 }
 // 0x65AD40
 namespace gamemd {
-int Array::Get(int a2)
+int Array::Get(int a2, void *a2_1)
 {
 
   return *((unsigned int *)this->q0E4 + a2); /*0x65ad4d*/
@@ -105,7 +105,7 @@ int Array::Get(int a2)
 }
 // 0x65ADF0
 namespace gamemd {
-int Array::ContainsValue(int aP1)
+int Array::ContainsValue(int aP1, void *a2)
 {
 
   int result; // eax
@@ -113,7 +113,7 @@ int Array::ContainsValue(int aP1)
   int v4; // edx
   int *Array_field_0xE4; // ecx
 
-  Array_field_0xE8 = this->q0E8; /*0x65adf1*/
+  Array_field_0xE8 = (void *)(this->q0E8); /*0x65adf1*/
   v4 = 0; /*0x65adf7*/
   if ( (int)Array_field_0xE8 <= 0 ) /*0x65adfc*/
   {
@@ -150,7 +150,7 @@ int Array::Zero(void *a1_1)
   result = 0; /*0x7490d6*/
   if ( (int)a1_1->Array_field_0x800 > 0 ) /*0x7490da*/
   {
-    v2 = a1_1; /*0x7490dd*/
+    v2 = (gamemd::Array *)(a1_1); /*0x7490dd*/
     do /*0x7490f1*/
     {
       *(unsigned int *)v2->__pad_000 = 0; /*0x7490df*/
@@ -165,7 +165,7 @@ int Array::Zero(void *a1_1)
 }
 // 0x749150
 namespace gamemd {
-void Array::ByteSwap()
+void Array::ByteSwap(void *a1)
 {
 
   int v2; // ebx
@@ -222,7 +222,7 @@ int Array::CleanupArrayWOL()
 }
 // 0x7AD790
 namespace gamemd {
-AbstractClass * * Array::InsertElement(const void *a1, int aP2)
+AbstractClass * * Array::InsertElement(const void *a1, int aP2, void *a3)
 {
 
   int v4; // esi
@@ -246,7 +246,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     aP2 = v5; /*0x7ad7a0*/
     v4 = v5; /*0x7ad7a4*/
   }
-  Array_field_0x4 = this->q004; /*0x7ad7a6*/
+  Array_field_0x4 = (void *)(this->q004); /*0x7ad7a6*/
   if ( v4 >= (int)Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
     v7 = 2 * v5; /*0x7ad7b6*/
@@ -257,11 +257,11 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     v16 = v8; /*0x7ad7ec*/
     v9 = *(const void **)this->q008; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
-      qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_000); /*0x7ad80f*/
+      memcpy(v8, v9, 268 * *(unsigned int *)this->__pad_000); /*0x7ad80f*/
     __3_YAXPAX_Z(*(void **)this->q008); /*0x7ad81c*/
     v4 = aP2; /*0x7ad825*/
-    *(unsigned int *)this->q008 = v16; /*0x7ad82c*/
-    this->q004 = (void *)v7; /*0x7ad82f*/
+    *(unsigned int *)this->q008 = (unsigned int)(v16); /*0x7ad82c*/
+    this->q004 = (int)((void *)v7); /*0x7ad82f*/
   }
   v10 = *(unsigned int *)this->__pad_000; /*0x7ad832*/
   if ( *(unsigned int *)this->__pad_000 >= (int)this->q004 ) /*0x7ad839*/
@@ -274,11 +274,11 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     v17 = v12; /*0x7ad871*/
     v13 = *(const void **)this->q008; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
-      qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_000); /*0x7ad894*/
+      memcpy(v12, v13, 268 * *(unsigned int *)this->__pad_000); /*0x7ad894*/
     __3_YAXPAX_Z(*(void **)this->q008); /*0x7ad8a1*/
     v4 = aP2; /*0x7ad8aa*/
-    *(unsigned int *)this->q008 = v17; /*0x7ad8b1*/
-    this->q004 = (void *)v11; /*0x7ad8b4*/
+    *(unsigned int *)this->q008 = (unsigned int)(v17); /*0x7ad8b1*/
+    this->q004 = (int)((void *)v11); /*0x7ad8b4*/
   }
   if ( v4 < *(unsigned int *)this->__pad_000 ) /*0x7ad8bc*/
     memcpy( /*0x7ad8f2*/
@@ -287,9 +287,9 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
       268 * *(unsigned int *)this->__pad_000 - 268 * v4);
   v14 = (void *)(*(unsigned int *)this->q008 + 268 * v4); /*0x7ad907*/
   if ( v14 ) /*0x7ad90c*/
-    qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
+    memcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*(unsigned int *)this->__pad_000; /*0x7ad91e*/
-  return 1; /*0x7ad91b*/
+  return (gamemd::AbstractClass **)(1); /*0x7ad91b*/
 
 }
 // 0x4068F0
@@ -306,7 +306,7 @@ int Array::ForEach(Array *a1, int a2, int a3, int (* a4)(int))  // G57w11: def å
     do /*0x406911*/
     {
       result = a4((int)a1); /*0x40690c*/
-      a1 = (int *)((char *)a1 + a2); /*0x40690e*/
+      a1 = (gamemd::Array *)((int *)((char *)a1 + a2)); /*0x40690e*/
       --v6; /*0x406910*/
     }
     while ( v6 ); /*0x406911*/
@@ -406,7 +406,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
       v3 = 0; /*0x55b89b*/
       if ( dword_8B40D8 > 0 ) /*0x55b89f*/
       {
-        v4 = dword_8B40CC; /*0x55b8a2*/
+        v4 = (unsigned int *)(dword_8B40CC); /*0x55b8a2*/
         do /*0x55b8da*/
         {
           if ( aP0 == v4[v3] ) /*0x55b8ab*/
@@ -419,7 +419,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
               {
                 v4[v5] = v4[v5 + 1]; /*0x55b8c2*/
                 v2 = dword_8B40D8; /*0x55b8c5*/
-                v4 = dword_8B40CC; /*0x55b8cb*/
+                v4 = (unsigned int *)(dword_8B40CC); /*0x55b8cb*/
               }
             }
             --v3; /*0x55b8d6*/

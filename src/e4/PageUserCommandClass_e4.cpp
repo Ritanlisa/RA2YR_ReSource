@@ -26,11 +26,19 @@
 namespace gamemd {  // G42.18c ns repair
 // 0x537DD0 site-form Constructor supply (W20L4 T2; forwards to ctor def)
 namespace gamemd {
+void * PageUserCommandClass::Constructor(void *aP1) { return new (aP1) PageUserCommandClass(); }
+}
+PageUserCommandClass::PageUserCommandClass()
+{
+  *(unsigned int *)this->CommandClass = (unsigned int)(&vt_PageUserCommandClass); /*0x537dd2*/
+  return; /*0x537dd8*/
+}
+}  // G42.18c ns repair
 // 0x537DE0
 namespace gamemd {  // G42.18c ns repair
 char * PageUserCommandClass::AddRef(void *a1)
 {
-  return aPageuser; /*0x537de5*/
+  return (char *)(aPageuser); /*0x537de5*/
 }
 }  // G42.18c ns repair
 // 0x537DF0

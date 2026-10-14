@@ -15,14 +15,14 @@ struct Audio {
     int ReleaseChannelRefs();  // 0x404D80
     int UpdatePlaybackPosition();  // 0x4054A0
     void *  ProcessMixerOutput(char * Source);  // 0x4063B0
-    int  ApplyFormatFlags(int * a1, void * a2);  // 0x406870
+    int ApplyFormatFlags(int * a1, char * a2);  // 0x406870
     int WaitForCallback();  // 0x4070B0
     int Release(void *a1 = 0);  // 0x407F40
     int IsSoundPlaying(void *a1 = 0);  // 0x408070
     int  CalcRate(int a2, int a3);  // 0x408540
     int GetSampleSize(void *a1 = 0);  // 0x409320
-    ObjectClass * *  ParseVolume(void * a2, void * a3);  // 0x5D0470
-    char **  SetSoundFileName(char * Source, int a3, void *a1 = 0);  // 0x5D5820
+    ObjectClass * * ParseVolume(const char ** a1, ObjectClass * aP2);  // 0x5D0470
+    char ** SetSoundFileName(char *Source, int a3, void *a3_1 = 0);  // 0x5D5820
     int LoadWAVFiles(void *a1_1);  // 0x7207F0
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2);
     void * LoadSoundINI();  // 0x7513F0

@@ -67,7 +67,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
             v19 = (*((int (__stdcall **)(void **))v6->owner->vfptr1 + 4))(&v6->owner->vfptr1); /*0x50afe3*/
             if ( v19 == (*(int (__stdcall **)(SuperWeapon *))(*((unsigned int *)ownerHouse + 1) + 16))(ownerHouse + 4) ) /*0x50aff0*/
             {
-              Upgrades = v6->Upgrades; /*0x50aff2*/
+              Upgrades = (int *)(v6->Upgrades); /*0x50aff2*/
               v8 = 3; /*0x50aff8*/
               do /*0x50b02a*/
               {
@@ -99,8 +99,8 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       v10 = *(unsigned char **)(*(unsigned int *)(ownerHouse->supersCount + 4 * i) + 40); /*0x50b078*/
       if ( v10[231] && !SWAllowed ) /*0x50b099*/
         v15 = 0; /*0x50b09b*/
-      v11 = ownerHouse->powerOutput; /*0x50b0a0*/
-      v12 = ownerHouse->powerDrain; /*0x50b0a6*/
+      v11 = (int)(ownerHouse->powerOutput); /*0x50b0a0*/
+      v12 = (int)(ownerHouse->powerDrain); /*0x50b0a6*/
       if ( v11 < v12 && v12 && (!v11 || (double)*((int *)ownerHouse + 5353) / (double)*((int *)ownerHouse + 5354) < 1.0) ) /*0x50b0d3*/
         HasPower = 0; /*0x50b0d5*/
       (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/

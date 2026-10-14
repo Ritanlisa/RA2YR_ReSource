@@ -14,7 +14,7 @@ struct E4Recv_4F3460 {
     unsigned int M36;  // 0x36
     unsigned int M40;  // 0x40
 // --- flat members (END) ---
-    MSAnim * *  sub_4F3460(int a2, unsigned int * a3, unsigned int * a4, unsigned int * a5, void * a6, void * a7, void * a8, void * a9, void * a10);  // 0x4F3460
+    MSAnim * * sub_4F3460(int a2, ReferenceCounted * a3, unsigned int * a4, ReferenceCounted * a5, const char ** a6, ReferenceCounted * a7, const char ** a8, ReferenceCounted * a9, const char ** a10);  // 0x4F3460
 
     unsigned int q020;  // X10 supply (member_lookup)
     unsigned int q024;  // X10 supply (member_lookup)

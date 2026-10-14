@@ -18,7 +18,7 @@ struct DynamicVectorClass_SubzoneConn {
     AbstractClass * *  Release(int a2, char * a3);  // 0x589190
     DynamicVector *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x5890B0
     int  GetSize(unsigned int * a2);  // 0x5892D0
-    unsigned int  Remove(int a2, void *a1 = 0);  // 0x588CC0
+    unsigned int Remove(int a2, void *a2_1 = 0);  // 0x588CC0
     unsigned char __pad_5;  // 0x5 (offset-truth)
     unsigned char __tail_10;  // 0x10 (offset-truth)
     unsigned char *m_1;  // 0x1 (offset-truth)

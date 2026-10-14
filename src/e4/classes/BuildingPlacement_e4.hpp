@@ -13,7 +13,7 @@ struct BuildingPlacement {
 // --- flat members (END) ---
     static bool IsPlacementFlagSet(BuildingPlacement *pThis, unsigned int a2, char a3);
     VectorClass_flat * * ProcessBuildingPlacementAction();
-    unsigned int * FindPosition(HouseClass *aP1, unsigned int *a2, unsigned int *a3);  // G57w10-S raw 0x00500200 IUnknown 占位清除
+    unsigned int * FindPosition(int * a0, IUnknown * aP1, IUnknown);  // G57w10-S raw 0x00500200 IUnknown 占位清除
     unsigned int * SelectBuildingPlacementCells(int a2);
     void* Activate(int a2, unsigned int *a3);
     static int ValidateType(BuildingPlacement * aP1, int a2, int a3);

@@ -16,7 +16,7 @@ struct ParticleSystemClass_16 {
     void ddtor(void *a1 = 0);  // 0x4EB350
     int  Init(unsigned int * a2, void *a1 = 0);  // 0x4EB380
     VectorClass_flat *  QueryInterface(char a2);  // 0x4EFD50
-    unsigned int  Read(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EB3C0
+    unsigned int Read(int a2, void *a2_2, void *a3 = 0);  // 0x4EB3C0
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)

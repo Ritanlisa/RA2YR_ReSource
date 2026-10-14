@@ -17,7 +17,7 @@ struct Skirmish {
     TechnoTypeClass * ptr_70;  // 0x70
     TechnoTypeClass * ptr_74;  // 0x74
 // --- flat members (END) ---
-    AbstractClass * * SetupGame(int hWnd, void *a1 = 0);
+    AbstractClass * * SetupGame(int hWnd, void *a2 = 0);
     CampaignClass * * SetupAllSpawnLocations();
     ReferenceCounted * * Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4);
     TechnoTypeClass * * RandomizeSettings(int aP1);
@@ -26,7 +26,7 @@ struct Skirmish {
     int FillPlayerNames();
     int ReadSettings(HWND hDlg);
     int RenderPreview(HWND aP1);
-    static int RenderPreview(void *aP0, HWND aP1);
+    int RenderPreview(HWND aP1, void *a2 = 0);
     unsigned int u32_300;  // 0x300 (offset-truth)
 
     unsigned int u32_1E0;  // X10 supply (member_lookup)

@@ -17,7 +17,7 @@ struct VectorClass_ptr_CampaignClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_CampaignClass___(char a2);  // 0x4F0200
-    int Get(void *a1_1, void *a1 = 0);  // 0x4E8A20
+    int Get(int a2, void *a2_2);  // 0x4E8A20
     void Destroy_0();  // 0x4E8A80
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8AB0
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EC300

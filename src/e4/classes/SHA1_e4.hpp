@@ -13,7 +13,7 @@ struct SHA1 {
     static void  Transform(int *a1, unsigned int *a2);
     int Reset(int a2, void *a1 = 0);
     static int Compute(SHA1 *pThis, char *a2);
-    int ComputeThunk(char *aP1, void *a1 = 0);
+    int ComputeThunk(char *aP1, void *a2 = 0);
 
     unsigned char q00C[4];  /* SHA1 */  // X10 supply (member_lookup)
 

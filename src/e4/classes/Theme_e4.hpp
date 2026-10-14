@@ -11,8 +11,8 @@ struct Theme {
     void* audioSample;  // 0x2C
 // --- flat members (END) ---
     bool IsPlaying(void *a1 = 0);
-    int QueueSong(int aP1, void *a1 = 0);
-    int Stop(char aP1, void *a1 = 0);
+    int QueueSong(int aP1, void *a2 = 0);
+    int Stop(char aP1, void *a2 = 0);
     unsigned char ptr_41;  // 0x41 (offset-truth)
     void * ptr_44;  // 0x44 (offset-truth)
 

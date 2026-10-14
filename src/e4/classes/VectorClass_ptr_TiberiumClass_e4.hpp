@@ -17,6 +17,6 @@ struct VectorClass_ptr_TiberiumClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_TiberiumClass___(char a2);  // 0x723A40
-    int Get(void *a1_1, void *a1 = 0);  // 0x723730
+    int Get(int a2, void *a2_2);  // 0x723730
 };
 } // namespace gamemd

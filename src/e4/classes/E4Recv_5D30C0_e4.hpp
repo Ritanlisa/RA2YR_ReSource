@@ -10,6 +10,6 @@ struct E4Recv_5D30C0 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    unsigned int *  sub_5D30C0(void * String, unsigned int * a3);  // 0x5D30C0
+    unsigned int * sub_5D30C0(wchar_t * String, unsigned int * a3);  // 0x5D30C0
 };
 } // namespace gamemd

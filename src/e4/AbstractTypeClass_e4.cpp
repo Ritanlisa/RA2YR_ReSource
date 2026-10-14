@@ -17,7 +17,7 @@
 
 // 0x410800
 namespace gamemd {  // G42.18 ns repair
-int AbstractTypeClass::Constructor(char *aP1)
+int AbstractTypeClass::Constructor(char *aP1, void *a2, void *a3, void *a4)
 {
 
   char *v3; // ebx
@@ -56,7 +56,7 @@ int AbstractTypeClass::Constructor(char *aP1)
   if ( Destination != v3 ) /*0x410880*/
   {
 LABEL_8:
-    qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
+    memcpy(v3, Destination, 0x18u); /*0x4108b5*/
     this->zero_3C = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
@@ -71,7 +71,7 @@ LABEL_9:
   }
   if ( Destination != &this->q019 ) /*0x4108e0*/
   {
-    qmemcpy(&this->q019, Destination, 0x30u); /*0x4108eb*/
+    memcpy(&this->q019, Destination, 0x30u); /*0x4108eb*/
     this->u32_94 = v8; /*0x4108ed*/
   }
   this->nextArrayIndex = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
@@ -84,7 +84,7 @@ LABEL_9:
          0) )
   {
     v4 = dword_A8E978++; /*0x410936*/
-    *((unsigned int *)dword_A8E96C + v4) = this; /*0x410945*/
+    *((unsigned int *)dword_A8E96C + v4) = (unsigned int)(this); /*0x410945*/
   }
   return (int)this; /*0x410948*/
 
@@ -119,7 +119,7 @@ int AbstractTypeClass::Dtor()
 } // namespace gamemd
 // 0x410A60
 namespace gamemd {
-int AbstractTypeClass::LoadFromINI(uint8_t ***aP1)
+int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
 {
 
   int result; // eax
@@ -130,7 +130,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_024); /*0x410a7f*/
+  result = (int)(INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_024)); /*0x410a7f*/
   if ( result ) /*0x410a86*/
   {
     Name = this->Name; /*0x410a91*/
@@ -152,7 +152,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1)
     }
     if ( Destination != Name ) /*0x410ad2*/
     {
-      qmemcpy(Name, Destination, 0x30u); /*0x410add*/
+      memcpy(Name, Destination, 0x30u); /*0x410add*/
       this->Name[48] = v7; /*0x410adf*/
     }
     UINameLabel = this->UINameLabel; /*0x410aeb*/
@@ -174,15 +174,15 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1)
     }
     result = (int)Destination; /*0x410b27*/
     if ( Destination != UINameLabel ) /*0x410b2d*/
-      qmemcpy(UINameLabel, Destination, 0x20u); /*0x410b3a*/
+      memcpy(UINameLabel, Destination, 0x20u); /*0x410b3a*/
     if ( *UINameLabel ) /*0x410b3c*/
     {
       result = (int)GetStringCSF((wchar_t *)this->UINameLabel, 0, aDRa2mdpostAbst, 215); /*0x410b52*/
-      this->UIName = (void *)result; /*0x410b58*/
+      this->UIName = (unsigned int)((void *)result); /*0x410b58*/
     }
     else
     {
-      this->UIName = &g_TypeClass_DefaultString; /*0x410b69*/
+      this->UIName = (unsigned int)(&g_TypeClass_DefaultString); /*0x410b69*/
     }
     LOBYTE(result) = 1; /*0x410b5c*/
   }
@@ -206,7 +206,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
   aP1->? = &vt_AbstractTypeClass; /*0x410c43*/
   aP1->? = &vt_AbstractTypeClass; /*0x410c4a*/
   aP1->? = &vt_AbstractTypeClass; /*0x410c51*/
-  v5 = aP1; /*0x410c5f*/
+  v5 = (gamemd::AbstractTypeClass *)(aP1); /*0x410c5f*/
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/
   {
@@ -226,18 +226,18 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
 } // namespace gamemd
 // 0x410960
 namespace gamemd {
-int AbstractTypeClass::Init(int aP1)
+int AbstractTypeClass::Init(int aP1, void *a2)
 {
   char v3; // al
 
   AbstractClass::InitVtables(aP1); /*0x410968*/
-  v3 = this->UINameLabel; /*0x41096d*/
+  v3 = (char)(this->UINameLabel); /*0x41096d*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410975) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x41097b) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410982) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410989) */
   if ( v3 ) /*0x410990*/
-    this->UIName = GetStringCSF(&this->UIName, 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
+    this->UIName = (unsigned int)(GetStringCSF(&this->UIName, 0, aDRa2mdpostAbst, 127)); /*0x4109a0*/
   else
     this->UIName = (unsigned int)(&g_TypeClass_DefaultString); /*0x4109a9*/
   return (int)(this); /*0x4109a5*/
@@ -252,7 +252,7 @@ BOOL AbstractTypeClass::NameEquals(void *a2)
 } // namespace gamemd
 // 0x410B90
 namespace gamemd {
-char AbstractTypeClass::WriteINI(char *aP1)
+char AbstractTypeClass::WriteINI(char *aP1, void *a2)
 {
 
   unsigned __int8 *pad_24; // edi
@@ -268,7 +268,7 @@ char AbstractTypeClass::WriteINI(char *aP1)
 } // namespace gamemd
 // 0x410BE0
 namespace gamemd {
-int AbstractTypeClass::ProcessPower(int *aP1)
+int AbstractTypeClass::ProcessPower(int *aP1, void *a2)
 {
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x410be9*/

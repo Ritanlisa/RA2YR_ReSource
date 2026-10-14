@@ -16,11 +16,11 @@ struct VectorClass_ptr_MSSfx {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1, void *a1 = 0);  // 0x5D2720
+    int Get(int a2, void *a2_2);  // 0x5D2720
     char  FindItemIndex(int a2);  // 0x5D27E0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x5D2820
     void Destroy_0();  // 0x5D28D0
-    char  Constructor_VectorClass_MSAnim___(int a2, unsigned int * a3);  // 0x5D2960
+    DynamicVector * Constructor_VectorClass_MSAnim___(unsigned int * Block, char a2);  // 0x5D2960
     VectorClass_flat *  QueryInterface(char a2);  // 0x5D2D40
 };
 } // namespace gamemd

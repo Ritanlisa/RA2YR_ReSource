@@ -48,7 +48,7 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
     TiberiumClass_field_114  = 0;
     TiberiumClass_field_118  = 0;
 
-    abstractFlags = kTiberiumFlag;
+    abstractFlags = (void *)(kTiberiumFlag);
 }
 
 } // namespace gamemd

@@ -14,10 +14,10 @@ struct VectorClass_Wstring {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
 // --- flat members (END) ---
-    char **  Clear(char ** a2, int a3);  // 0x69C580
-    char  GetSize(int a2);  // 0x69C970
+    char **   Clear(int a3, void *a2 = 0);  // 0x69C580
+    int GetSize(const char ** a2);  // 0x69C970
     unsigned int  GetCapacity(int a2);  // 0x69CBA0
     VectorClass_flat *  QueryInterface(char a2);  // 0x69D4B0
-    bool  SetCapacity(void * a2);  // 0x7B4860
+    bool SetCapacity(const char ** a2);  // 0x7B4860
 };
 } // namespace gamemd

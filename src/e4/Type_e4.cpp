@@ -9,7 +9,7 @@
 
 // 0x578540
 namespace gamemd {  // G42.18 ns repair
-int Type::CheckAmbiguity(int a2, char a3)
+int Type::CheckAmbiguity(int a2, char a3, void *a3_1)
 {
   int v3; // edx
   int v4; // esi

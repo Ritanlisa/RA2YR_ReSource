@@ -39,7 +39,7 @@ void * RadBeam::Create()
 
 // 0x6593F0
 namespace gamemd {
-unsigned int * RadBeam::InitState(int aP1)
+unsigned int * RadBeam::InitState(int aP1, void *a2)
 {
 
   this->nextArrayIndex = 0; /*0x6593fe*/

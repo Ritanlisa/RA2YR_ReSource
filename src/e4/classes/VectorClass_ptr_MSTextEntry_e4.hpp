@@ -14,7 +14,7 @@ struct VectorClass_ptr_MSTextEntry {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Get(int a2, void *a1 = 0);  // 0x5D0660
+    int Get(int a2, void *a2_2);  // 0x5D0660
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x5D0AE0
     char  Release(int a2, unsigned int * a3);  // 0x5D0B20
     void Remove(void *a1_1, void *a1 = 0);  // 0x5D0BD0

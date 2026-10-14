@@ -20,7 +20,7 @@ int GaugeClass::Stub()
 } // namespace gamemd
 // 0x4E30B0
 namespace gamemd {
-int GaugeClass::Draw(int a2)
+int GaugeClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   this->u32_2D = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/

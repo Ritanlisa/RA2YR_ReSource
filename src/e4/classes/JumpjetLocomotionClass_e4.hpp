@@ -169,7 +169,7 @@ struct JumpjetLocomotionClass {
     float * ComputeAudio3DRotation_0(int a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_1(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeVoxelMatrix(int a1, float * a2, unsigned int * a3);
-    void* AdjustClimbFacing(unsigned int *a2, void *a1 = 0);
+    void* AdjustClimbFacing(unsigned int *a2, void *a2_1 = 0);
     int CheckAttachStatus();
     int CheckState(TunnelLocomotionClass * aP0);
     int CheckState2(int a1, int a2);
@@ -285,7 +285,7 @@ struct JumpjetLocomotionClass {
     int loc_6A4330(int a1, void *a2, void *a3);
     long long ComputeFloatExpression_1(int a1);
     unsigned int * CalculateBobOffset(int a1, unsigned int * a2);
-    unsigned int * ClampToCellBounds(unsigned int *a2, int16_t *a3, char a4);  // G57w10-S raw 0x00586AC0 IUnknown 占位清除
+    unsigned int * ClampToCellBounds(MouseClass * aP1, IUnknown * aP2, char a4);  // G57w10-S raw 0x00586AC0 IUnknown 占位清除
     unsigned int * ConvertCoordToCell(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3);
     unsigned int * ConvertCoordToCell_2(int arg0, unsigned int * a1, unsigned int aP1_4, IUnknown * aP3);
     unsigned int * GetConditionedCoordinate(unsigned int * a1, unsigned int * a2);

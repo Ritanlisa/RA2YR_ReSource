@@ -177,7 +177,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       dwUser[5].DebugInfo = (PRTL_CRITICAL_SECTION_DEBUG)60; /*0x41184a*/
       break; /*0x411852*/
     case 2: /*0x411835*/
-      result = sub_411B20((DWORD_PTR)dwUser, a3, a4); /*0x411862*/
+      result = (int)(sub_411B20((DWORD_PTR)dwUser, a3, a4)); /*0x411862*/
       break; /*0x41186e*/
     case 3: /*0x411835*/
       Debug::Log(); /*0x411874*/
@@ -345,7 +345,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
     *(unsigned int *)(dwUser + 196) = 0; /*0x411c48*/
   v5[10] = aP1->u32_2; /*0x411c5a*/
   v5[11] = aP1->u32_3; /*0x411c60*/
-  *((unsigned int *)v5 + 9) = aP1->vtable2; /*0x411c66*/
+  *((unsigned int *)v5 + 9) = (unsigned int)(aP1->vtable2); /*0x411c66*/
   dword_88776C = (unsigned int)((int (__cdecl *)(unsigned int))aP1->vtable3); /*0x411c6c*/
   dword_887770 = (int (__cdecl *)(unsigned int, unsigned int))aP1->vtable4; /*0x411c75*/
   Debug::Log(); /*0x411c7b*/
@@ -545,7 +545,7 @@ int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     LeaveCriticalSection(lpCriticalSection); /*0x4120c1*/
     return -13; /*0x4120d3*/
   }
-  v12 = (unsigned int)(a3);
+  v12 = (char *)((unsigned int)(a3));
   *(unsigned int *)(v5 + 4 * v10 + 80) = (unsigned int)(v4); /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = (unsigned int)(v12); /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
@@ -782,7 +782,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
       if ( v9 != -1 ) /*0x41b1a8*/
       {
         v10 = (int)((IUnknown *)*((unsigned int *)stru_A80220.vfptr3 + v7));
-        v11 = (int)(operator new(0x6D8u)); /*0x41b1bc*/
+        v11 = (void *)((int)(operator new(0x6D8u))); /*0x41b1bc*/
         if ( v11 ) /*0x41b1c6*/
         {
           v12 = AircraftClass::Construct(v11, v9, *((unsigned int *)dword_A8B21C + v9), v10); /*0x41b1de*/
@@ -1203,7 +1203,7 @@ int E4Recv_412610::sub_412610()
   char v3; // al
   int v4; // esi
 
-  v1 = this; /*0x412612*/
+  v1 = (char *)(this); /*0x412612*/
   v2 = 0; /*0x412614*/
   while ( v1 ) /*0x412618*/
   {
@@ -1420,7 +1420,7 @@ void sub_4128F0()
     operator delete((void *)(dword_889E0C)); /*0x412959*/
     dword_889E0C = 0; /*0x412961*/
   }
-  byte_889E15 = (void **)(0);
+  byte_889E15 = (unsigned char)((void **)(0));
   dword_889E10 = 0; /*0x41296d*/
   v4 = (void **)(&dword_889E0C); /*0x412973*/
   v5 = 400; /*0x412978*/

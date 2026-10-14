@@ -153,7 +153,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
     v14 = a2->__pad_004; /*0x49be0a*/
     v15 = a2->__pad_004; /*0x49be0d*/
     a2->__pad_004 = v14 + 1; /*0x49be13*/
-    *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
+    *(unsigned int *)(v15 + 4 * v14) = (unsigned int)(v11); /*0x49be16*/
   }
   *aP2 = this->__pad_01A; /*0x49be28*/
   return 1; /*0x49bced*/
@@ -189,7 +189,7 @@ int MPCooperative::WriteCoopSaveINI()
   v1 = (char *)this; /*0x49be49*/
   if ( !LOBYTE(this->vtable1) ) /*0x49be4d*/
     return 1; /*0x49be4d*/
-  v2 = &this->u32_1C; /*0x49be58*/
+  v2 = (char *)(&this->u32_1C); /*0x49be58*/
   if ( !this->u32_1C ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(&v19, g_Str_File_coopsave_ini); /*0x49be70*/
@@ -293,16 +293,16 @@ void MPCooperative::MPCooperative_validateMove( int a2, int a3, int a4, int a5, 
   if ( a2 < 0 || a2 >= (int)this->u32_40 ) /*0x49cc5f*/
     return 0; /*0x49ccde*/
   MPCooperative_field_0x48 = (char *)this->q048; /*0x49cc66*/
-  this->u32_38 = (void *)a2; /*0x49cc69*/
-  this->q048 = &MPCooperative_field_0x48[a20]; /*0x49cc75*/
-  this->u32_4C = (char *)this->u32_4C + a48; /*0x49cc81*/
+  this->u32_38 = (unsigned int)((void *)a2); /*0x49cc69*/
+  this->q048 = (int)(&MPCooperative_field_0x48[a20]); /*0x49cc75*/
+  this->u32_4C = (unsigned int)((char *)this->u32_4C + a48); /*0x49cc81*/
   this->ptr_50 = (MultiplayerGameMode *)((char *)this->ptr_50 + a24); /*0x49cc90*/
-  this->__pad_054 = (char *)this->__pad_054 + a52; /*0x49cc9c*/
+  this->__pad_054 = (unsigned char)((char *)this->__pad_054 + a52); /*0x49cc9c*/
   this->q058 = (char *)this->q058 + a16; /*0x49ccab*/
-  this->u32_5C = (char *)this->u32_5C + a44; /*0x49ccb7*/
-  this->u32_60 = (char *)this->u32_60 + a28; /*0x49ccc6*/
-  this->u32_64 = (char *)this->u32_64 + a56; /*0x49ccd2*/
-  this->q068 = (void *)a3; /*0x49ccd5*/
+  this->u32_5C = (unsigned int)((char *)this->u32_5C + a44); /*0x49ccb7*/
+  this->u32_60 = (unsigned int)((char *)this->u32_60 + a28); /*0x49ccc6*/
+  this->u32_64 = (unsigned int)((char *)this->u32_64 + a56); /*0x49ccd2*/
+  this->q068 = (int)((void *)a3); /*0x49ccd5*/
   return 1; /*0x49ccdb*/
 
 }
@@ -335,10 +335,10 @@ int MPCooperative::ReadCoopSaveINI()
   char v22; // [esp+B8h] [ebp-7Ch]
   char v23[100]; // [esp+D0h] [ebp-64h] BYREF
 
-  v1 = this; /*0x49d129*/
+  v1 = (char *)(this); /*0x49d129*/
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
-  v2 = &this->u32_1C; /*0x49d137*/
+  v2 = (char *)(&this->u32_1C); /*0x49d137*/
   if ( !this->u32_1C ) /*0x49d134*/
     return 0; /*0x49d13c*/
   CCFileClass::Construct(v16, g_Str_File_coopsave_ini); /*0x49d14b*/
@@ -353,10 +353,10 @@ int MPCooperative::ReadCoopSaveINI()
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
-    v16[0] = &vt_CCFileClass; /*0x49d1bc*/
+    v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
     Vector::Clear((int)v17); /*0x49d1c8*/
-    v16[0] = &off_7E1668; /*0x49d1d1*/
+    v16[0] = (unsigned int)(&off_7E1668); /*0x49d1d1*/
     BufferIOFileClass::Dtor(v16); /*0x49d1d9*/
     return 0; /*0x49d1e9*/
   }
@@ -423,16 +423,16 @@ int MPCooperative::ReadCoopSaveINI()
   strcat(v23, g_IsWindowed); /*0x49d331*/
   v15 = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
-  v16[0] = &vt_CCFileClass; /*0x49d360*/
+  v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/
   Vector::Clear((int)v17); /*0x49d36c*/
-  v16[0] = &off_7E1668; /*0x49d375*/
+  v16[0] = (unsigned int)(&off_7E1668); /*0x49d375*/
   BufferIOFileClass::Dtor(v16); /*0x49d37d*/
   return v15; /*0x49d1de*/
 
 }
 namespace gamemd {
-unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6)
+unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6, void *a7, void *a8)
 {
 
   IPXManagerClass **p_MPCooperative_field_0xC4; // esi
@@ -502,10 +502,10 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     this->q33C = 0;
     this->ptr_50 = 0;
   this->__pad_004)[0] = 0; /*0x5c1555*/
-  IDA_LOBYTE(this->q048) = 0; /*0x5c1559*/
-  IDA_BYTE1(this->q048) = 0; /*0x5c155d*/
+  (*((unsigned char *)&(this->q048))) = 0; /*0x5c1559*/
+  (((unsigned char *)&(this->q048))[1]) = 0; /*0x5c155d*/
   this->u32_4C = 0; /*0x5c1561*/
-    IDA_LOBYTE(this->q340) = 1;
+    (*((unsigned char *)&(this->q340))) = 1;
   for ( i = *&this->q334 - 1; i >= 0; --i ) /*0x5c1572*/
   {
     v16 = *(unsigned int *)this->q328; /*0x5c1574*/
@@ -664,7 +664,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 }
 // 0x5C18A0
 namespace gamemd {
-int MPCooperative::Read(void *a1_1, void *a2_1)
+int MPCooperative::Read(void *a1_1, void *a2_1, void *a3)
 {
 
   int i; // edi
@@ -1141,8 +1141,8 @@ int MPCooperative::EndGame(int a2, int a3, int a4)
   if ( !MPCooperative_field_0x40 ) /*0x5c210c*/
     return 0; /*0x5c210e*/
   Movie::GetState(MPCooperative_field_0x40, &v11); /*0x5c211d*/
-  qmemcpy(v10, (const void *)(a4 + 112), sizeof(v10)); /*0x5c2136*/
-  qmemcpy(v9, (const void *)a4, sizeof(v9)); /*0x5c2141*/
+  memcpy(v10, (const void *)(a4 + 112), sizeof(v10)); /*0x5c2136*/
+  memcpy(v9, (const void *)a4, sizeof(v9)); /*0x5c2141*/
   v7 = MPCooperative::validateMove( /*0x5c215b*/
          (MPCooperative *)this->u32_40,
          a2,
@@ -3089,7 +3089,7 @@ char MPCooperative::StubReturnFalse()
 
 // 0x5C3F30
 namespace gamemd {
-int MPCooperative::Cleanup(void *a1_1)
+int MPCooperative::Cleanup(void *a1_1, void *a2)
 {
   HWND GameUI; // eax
   SkirmishDialog *v3; // esi

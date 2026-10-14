@@ -528,7 +528,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
   HWND v10; // esi
   HWND v11; // esi
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x630c29*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, a4)); /*0x630c29*/
   if ( !result ) /*0x630c30*/
   {
     WindowLongA = GetWindowLongA(hWnd, 8); /*0x630c46*/
@@ -633,7 +633,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
     }
     return 0; /*0x630e8e*/
   }
-  return result; /*0x630caa*/
+  return (gamemd::ObjectClass **)(result); /*0x630caa*/
 }
 }
 // 0x631300
@@ -712,7 +712,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
   wchar_t lParam[64]; // [esp+14h] [ebp-3F4h] BYREF
   LONG dwNewLong[221]; // [esp+94h] [ebp-374h] BYREF
 
-  result = BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, (unsigned int)a4); /*0x63178c*/
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, (unsigned int)a4)); /*0x63178c*/
   if ( !result ) /*0x631793*/
   {
     WindowLongA = GetWindowLongA(hWnd, 8); /*0x6317a2*/
@@ -875,18 +875,18 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v21[4]; // [esp+44h] [ebp-20h] BYREF
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
-  Viewport = Display::GetViewport(v16); /*0x63556d*/
+  Viewport = (int *)(Display::GetViewport(v16)); /*0x63556d*/
   v21[0] = *Viewport; /*0x635574*/
   v21[1] = Viewport[1]; /*0x63557b*/
   v21[2] = Viewport[2]; /*0x635582*/
   v4 = Viewport[3]; /*0x635586*/
-  vtable1 = this->M4; /*0x635589*/
+  vtable1 = (void *)(this->M4); /*0x635589*/
   v21[3] = v4; /*0x63558c*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*&vtable1->uniqueId)); /*0x635599*/
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
   v15[1] = ScenarioClassActionCoords->vtable2; /*0x6355a7*/
   v15[2] = ScenarioClassActionCoords->vtable3; /*0x6355b2*/
-  v7 = ToCoordPixel(&v14, v15); /*0x6355ba*/
+  v7 = (int *)(ToCoordPixel(&v14, v15)); /*0x6355ba*/
   v8 = ComputeBounds(v22, 8, *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
   v10 = v8[1] - 4; /*0x6355e8*/
@@ -921,7 +921,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
     --v9; /*0x63566c*/
   }
   while ( v9 ); /*0x63566d*/
-  return result; /*0x63566f*/
+  return (gamemd::AbstractClass **)(result); /*0x63566f*/
 
 }
 }
@@ -950,7 +950,7 @@ int E4Recv_635680::sub_635680(int a2)
   unsigned int v20[4]; // [esp+50h] [ebp-20h] BYREF
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
-  Viewport = Display::GetViewport(&v16); /*0x63568d*/
+  Viewport = (int *)(Display::GetViewport(&v16)); /*0x63568d*/
   v20[0] = *Viewport; /*0x635694*/
   v20[1] = Viewport[1]; /*0x63569b*/
   v20[2] = Viewport[2]; /*0x6356a2*/
@@ -959,8 +959,8 @@ int E4Recv_635680::sub_635680(int a2)
   v10[0] = *Coords; /*0x6356bb*/
   v10[1] = Coords->u32_4; /*0x6356c6*/
   v10[2] = Owner; /*0x6356d1*/
-  v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
-  v6 = ComputeBounds(v21, 8, *v5, v5[1]); /*0x6356ea*/
+  v5 = (int *)(ToCoordPixel(&v9, v10)); /*0x6356d5*/
+  v6 = (int *)(ComputeBounds(v21, 8, *v5, v5[1])); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
   v17 = v6[1]; /*0x6356f8*/
   v18 = v6[2]; /*0x6356ff*/
@@ -1016,7 +1016,7 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   void **v10; // eax
   unsigned char *v11; // esi
 
-  vtable2 = this->M8; /*0x636f00*/
+  vtable2 = (unsigned int *)(this->M8); /*0x636f00*/
   vtable0 = this->AbstractClass; /*0x636f08*/
   v5 = vtable2[a3]; /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
@@ -1041,8 +1041,8 @@ LABEL_7:
   else
     v10 = v8[v6]; /*0x636f38*/
 LABEL_9:
-  v11 = v10[1]; /*0x636f3b*/
-  qmemcpy((void *)a2, v11, 0x6Cu); /*0x636f49*/
+  v11 = (unsigned char *)(v10[1]); /*0x636f3b*/
+  memcpy((void *)a2, v11, 0x6Cu); /*0x636f49*/
   v11 += 108; /*0x636f49*/
   a2->u16_6C = *(unsigned short *)v11; /*0x636f4b*/
   a2->u8_6E = v11[2]; /*0x636f4d*/
@@ -1277,7 +1277,7 @@ int E4Recv_6375B0::sub_6375B0()
     v3 = 0; /*0x6375c9*/
   }
   memcpy(v3, this, 0x6Cu); /*0x6375d3*/
-  p_health = &this->health; /*0x6375d3*/
+  p_health = (int *)(&this->health); /*0x6375d3*/
   *((unsigned short *)v3 + 54) = *(unsigned short *)p_health; /*0x6375d5*/
   v3[110] = *((unsigned char *)p_health + 2); /*0x6375d7*/
   if ( *v3 == 4 ) /*0x6375dd*/
@@ -1293,7 +1293,7 @@ int E4Recv_6375B0::sub_6375B0()
         (unsigned char)result) )
   {
     result = (*(unsigned int *)&DataGlobal_AC4B58)++; /*0x637626*/
-    *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4B4C + 4 * result) = v3; /*0x637635*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4B4C + 4 * result) = (unsigned int)(v3); /*0x637635*/
   }
   return result; /*0x637638*/
 }
@@ -1387,7 +1387,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
   int v41; // [esp+2Ch] [ebp-10h]
   unsigned int v42[3]; // [esp+30h] [ebp-Ch] BYREF
 
-  v2 = (int *)(a2);
+  v2 = (char *)((int *)(a2));
   v38 = (gamemd::BuildingClass *)(a1); /*0x638129*/
   v37 = a2; /*0x63812f*/
   if ( !a1 ) /*0x638133*/
@@ -1489,7 +1489,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
   Type = (ObjectClass *)BuildingClass::GetType(v38); /*0x63832c*/
   if ( !Type ) /*0x638330*/
   {
-    v21 = (unsigned int)((ScriptAction *)operator new(0x9Cu));
+    v21 = (gamemd::ScriptAction *)((unsigned int)((ScriptAction *)operator new(0x9Cu)));
     if ( v21 ) /*0x638341*/
       *(unsigned int *)v36 = (unsigned int)(ScriptAction::Constructor(v21, (int)v38)); /*0x63834b*/
     else
@@ -1527,11 +1527,11 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
       return 0; /*0x6383df*/
     *(unsigned int *)&v33[108] = 3233; /*0x6383e5*/
     g_PlanningModeActive = 1; /*0x6383ea*/
-    *(unsigned int *)&v33[104] = g_Str_File_PlanMgr_cpp; /*0x6383f1*/
+    *(unsigned int *)&v33[104] = (unsigned int)(g_Str_File_PlanMgr_cpp); /*0x6383f1*/
     v19 = (wchar_t *)aMsgPostloop; /*0x6383f8*/
     goto LABEL_67; /*0x6383fd*/
   }
-  abstractFlags = Type->abstractFlags; /*0x638402*/
+  abstractFlags = (int)(Type->abstractFlags); /*0x638402*/
   if ( abstractFlags ) /*0x638407*/
   {
     if ( abstractFlags == 16 ) /*0x6384df*/
@@ -1540,8 +1540,8 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
         return 0; /*0x6384ec*/
       *(unsigned int *)&v33[108] = 3233; /*0x6384ee*/
       g_PlanningModeActive = 1; /*0x6384f3*/
-      *(unsigned int *)&v33[104] = g_Str_File_PlanMgr_cpp; /*0x6384fa*/
-      v19 = g_Str_MSG_NodeMaximum; /*0x638501*/
+      *(unsigned int *)&v33[104] = (unsigned int)(g_Str_File_PlanMgr_cpp); /*0x6384fa*/
+      v19 = (wchar_t *)(g_Str_MSG_NodeMaximum); /*0x638501*/
       goto LABEL_67; /*0x638501*/
     }
   }
@@ -1556,7 +1556,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
            0) )
     {
       v26 = (*(unsigned int *)&DataGlobal_AC4C50)++; /*0x638451*/
-      *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4C44 + 4 * v26) = v14; /*0x638460*/
+      *(unsigned int *)(*(unsigned int *)&DataGlobal_AC4C44 + 4 * v26) = (unsigned int)(v14); /*0x638460*/
     }
     v27 = v2[2]; /*0x638463*/
     if ( v27 < 0x18 ) /*0x638469*/
@@ -1754,8 +1754,8 @@ AbstractClass * * sub_638E60()
       while ( 1 ) /*0x638ea7*/
       {
         v4 = *(unsigned int *)(*(unsigned int *)DataGlobal_AC4C1C + 4 * v3); /*0x638ea7*/
-        ScreenPos = ((ScriptAction *)((ScriptAction *)v4))->GetScreenPos(&v8); /*0x638eac*/
-        v6 = ComputeBounds(v13, 8, *ScreenPos, ScreenPos[1]); /*0x638ec1*/
+        ScreenPos = (int *)(((ScriptAction *)((ScriptAction *)v4))->GetScreenPos(&v8)); /*0x638eac*/
+        v6 = (int *)(ComputeBounds(v13, 8, *ScreenPos, ScreenPos[1])); /*0x638ec1*/
         v9 = *v6; /*0x638ec8*/
         v10 = v6->u32_4; /*0x638ecf*/
         v11 = v6->u32_8; /*0x638ed6*/
@@ -1958,7 +1958,7 @@ unsigned int ** sub_6392D0(int a1, int a2)
     v10[0] = *Coords; /*0x639304*/
     v10[1] = Coords[1]; /*0x63930b*/
     v10[2] = Coords[2]; /*0x639316*/
-    v5 = ToCoordPixel(&v9, v10); /*0x63931e*/
+    v5 = (unsigned int *)(ToCoordPixel(&v9, v10)); /*0x63931e*/
     ((Rect *)(v12))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63933a*/
     v12[4] = v12[0]; /*0x63934f*/
     v6 = v12[1] - 4; /*0x639356*/
@@ -1996,7 +1996,7 @@ unsigned int ** sub_6393A0(int a1, int a2)
     v10[0] = *Coords; /*0x6393d4*/
     v10[1] = Coords[1]; /*0x6393db*/
     v10[2] = Coords[2]; /*0x6393e6*/
-    v5 = ToCoordPixel(&v9, v10); /*0x6393ee*/
+    v5 = (unsigned int *)(ToCoordPixel(&v9, v10)); /*0x6393ee*/
     ((Rect *)(v12))->Set(*v5 - 4, v5[1] - 4, 8, 8); /*0x63940a*/
     v12[4] = v12[0]; /*0x63941f*/
     v6 = v12[1] - 4; /*0x639426*/
@@ -2079,7 +2079,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
 
   v2 = (ScriptAction *)edx0; /*0x63980a*/
   v36 = edx0; /*0x63980e*/
-  v37 = a1; /*0x639812*/
+  v37 = (gamemd::BuildingClass *)(a1); /*0x639812*/
   v4 = ***(BuildingClass ****)(edx0 + 4); /*0x63981b*/
   Type = BuildingClass::GetType(v4); /*0x63981f*/
   v6 = *(unsigned int *)(Type + 4); /*0x639824*/
@@ -4319,7 +4319,7 @@ int ObjectClass::sub_635210()
   if ( result ) /*0x63522e*/
   {
     result = (int)this->nextObject; /*0x635240*/
-    qmemcpy(v15, &this->attachedBomb, 0x6Eu); /*0x635243*/
+    memcpy(v15, &this->attachedBomb, 0x6Eu); /*0x635243*/
     v3 = 0; /*0x635247*/
     v11 = result; /*0x635249*/
     v15[110] = BYTE2(this->location[2]); /*0x63524f*/
@@ -4328,7 +4328,7 @@ int ObjectClass::sub_635210()
       while ( 1 ) /*0x635265*/
       {
         v4 = *(unsigned char **)(this->occupant + 4 * v3); /*0x635265*/
-        qmemcpy(v16, v4, sizeof(v16)); /*0x635268*/
+        memcpy(v16, v4, sizeof(v16)); /*0x635268*/
         v4 += 108; /*0x635268*/
         v17 = *(unsigned short *)v4; /*0x63526a*/
         v18 = v4[2]; /*0x635270*/

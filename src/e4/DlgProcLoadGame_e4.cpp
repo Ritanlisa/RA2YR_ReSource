@@ -46,7 +46,7 @@ HWND E4Recv_696AE0::sub_696AE0()
           result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = result; /*0x696bb3*/
           if ( result == -1 ) /*0x696bb8*/
-            return result; /*0x696bb8*/
+            return (HWND)(result); /*0x696bb8*/
           if ( dword_A8DB5C < dword_A8DB54 /*0x696bf1*/
             || (byte_A8DB59 || !dword_A8DB54)
             && dword_A8DB60 > 0
@@ -56,17 +56,17 @@ HWND E4Recv_696AE0::sub_696AE0()
                  0) )
           {
             v7 = dword_A8DB5C++; /*0x696c02*/
-            *(unsigned int *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
+            *(unsigned int *)(dword_A8DB50 + 4 * v7) = (unsigned int)(v8); /*0x696c11*/
           }
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
         SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
         *&this->M152 = v6; /*0x696c2e*/
-        return (int)this; /*0x696c2a*/
+        return (HWND)((int)this); /*0x696c2a*/
       }
     }
   }
-  return result; /*0x696c34*/
+  return (HWND)(result); /*0x696c34*/
 
 }
 } // namespace gamemd
@@ -114,7 +114,7 @@ HWND E4Recv_696C40::sub_696C40()
       }
     }
   }
-  return result; /*0x696cef*/
+  return (HWND)(result); /*0x696cef*/
 
 }
 } // namespace gamemd

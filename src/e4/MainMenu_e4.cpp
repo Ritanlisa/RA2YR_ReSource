@@ -77,7 +77,7 @@ long MainMenu_Screen(void * a1, void * a2)
       }
       if ( (uint16_t)EventQueue::Process(dword_87F770) ) /*0x531df1*/
       {
-        v6 = (void *)(EventQueue::Read(dword_87F770));
+        v6 = (uint16_t)((void *)(EventQueue::Read(dword_87F770)));
         a1 = (void *)(v6); /*0x531e0d*/
         if ( (v6 & 0x800) == 0 ) /*0x531e16*/
         {
@@ -190,7 +190,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
       case 1175: /*0x531fa1*/
         v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
         v7 = GetModuleInternalVersion(&dword_A8ECE0); /*0x531fce*/
-        v10 = CharToWideString(v7); /*0x531fda*/
+        v10 = (int)(CharToWideString(v7)); /*0x531fda*/
         v8 = (const wchar_t *)GetStringCSF(aGuiVersion, (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
         swprintf(lParam, (const size_t)&off_826960, v8, v10); /*0x531ffc*/
         SendMessageA(v6, 0x4B2u, 0, (LPARAM)lParam); /*0x532011*/

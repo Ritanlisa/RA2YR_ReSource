@@ -99,7 +99,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     else
       v11 = **(uint16_t **)(dword_87F6C4 + 372); /*0x704a69*/
     v36 = -2; /*0x704a77*/
-    v35 = (int *)(-2);
+    v35 = (int)((int *)(-2));
     v12 = Coord2D::Add(&v35, v37, v34); /*0x704a8d*/
     v13 = (int *)(Rect::Construct(v47, v12, 3, 3)); /*0x704a97*/
     v39 = *v13; /*0x704aa0*/
@@ -151,9 +151,9 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v20 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/
       | ((((unsigned char *)&(a7))[2]) >> g_BitMask_Red << g_BitShift_Blue)
       | ((((unsigned char *)&(a7))[1]) >> g_BitMask_Blue << g_BitMask_Green);
-  v35 = (int *)(-2);
+  v35 = (int)((int *)(-2));
   v36 = -2; /*0x704c96*/
-  v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
+  v21 = (unsigned int *)((int *)(Coord2D::Add(&v35, v37, &v31)));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3)); /*0x704cb1*/
   v43 = *v22; /*0x704cba*/
   v44 = v22->Y; /*0x704cc3*/
@@ -264,12 +264,12 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v7 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704f1e*/
      | ((((unsigned char *)&(a7))[1]) >> g_BitMask_Blue << g_BitMask_Green)
      | ((((unsigned char *)&(a7))[2]) >> g_BitMask_Red << g_BitShift_Blue);
-  v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
+  v8 = (int *)(Rect::Construct(v45, &v28, 3, 3)); /*0x704f25*/
   v34 = *v8; /*0x704f2e*/
   v35 = v8->Y; /*0x704f37*/
   v36 = v8->Width; /*0x704f3e*/
   v37 = v8->Height; /*0x704f50*/
-  v9 = ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0); /*0x704f5a*/
+  v9 = (int *)(ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0)); /*0x704f5a*/
   v30 = *v9; /*0x704f61*/
   v31 = v9->vtable2; /*0x704f68*/
   v32 = v9->vtable3; /*0x704f6f*/
@@ -277,29 +277,29 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
-  v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
+  v10 = (int *)(Rect::Construct(v46, &v28, 3, 3)); /*0x704fb1*/
   v30 = *v10; /*0x704fba*/
   v31 = v10->Y; /*0x704fc3*/
   v32 = v10->Width; /*0x704fca*/
   v33 = v10->Height; /*0x704fdc*/
-  v11 = ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0); /*0x704fe6*/
+  v11 = (int *)(ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0)); /*0x704fe6*/
   v34 = *v11; /*0x704fee*/
   v35 = v11->vtable2; /*0x704ff5*/
   v36 = v11->vtable3; /*0x704ffc*/
   v37 = v11->vtable4; /*0x705009*/
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
-  v44[0] = DSurface_ViewBounds; /*0x705028*/
+  v44[0] = (int)(DSurface_ViewBounds); /*0x705028*/
   v44[1] = dword_886FA4; /*0x705031*/
   v44[2] = dword_886FA8; /*0x705035*/
   v44[3] = dword_886FAC; /*0x705039*/
   Time = timeGetTime(); /*0x70503d*/
-  v13 = a1; /*0x70504a*/
-  v42 = a2; /*0x705054*/
+  v13 = (int)(a1); /*0x70504a*/
+  v42 = (int)(a2); /*0x705054*/
   v14 = 1; /*0x70505f*/
   v15 = 31; /*0x705064*/
   v23 = 1; /*0x70506c*/
-  v41 = a1; /*0x705070*/
-  v43 = a3; /*0x705074*/
+  v41 = (int)(a1); /*0x705070*/
+  v43 = (int)(a3); /*0x705074*/
   v16 = 8; /*0x705078*/
   v28 = 8 * (Time >> 4); /*0x70507d*/
   while ( 1 ) /*0x7050b0*/
@@ -316,7 +316,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     if ( ClipLine(&v24, &v21, v44) ) /*0x70516f*/
     {
       v20 = (((unsigned char *)&(a7))[2]); /*0x70518f*/
-      v19 = a7; /*0x705195*/
+      v19 = (int16_t)(a7); /*0x705195*/
       if ( (((unsigned short)v16 - (unsigned short)v28) & 0x1F8u) <= 0xF8 && (((unsigned short)v16 - (unsigned short)v28) & 0x1F8) != 0 ) /*0x7051aa*/
         Color::Lerp((uint8_t *)&v19, (v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/
       (*(void (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x705226*/
@@ -337,9 +337,9 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     v43 = v40; /*0x70524c*/
     if ( v16 > 256 ) /*0x705250*/
       break; /*0x705250*/
-    v13 = a1; /*0x705083*/
+    v13 = (int)(a1); /*0x705083*/
   }
-  return result; /*0x705256*/
+  return (void *)(result); /*0x705256*/
 }
 }
 // 0x706ED0
@@ -472,7 +472,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       v46 = v23->vtable4; /*0x70713a*/
     }
   }
-  v24 = (gamemd::BuildingClass *)(v19 & 0xFFFFFFEF);
+  v24 = (unsigned int)((gamemd::BuildingClass *)(v19 & 0xFFFFFFEF));
   if ( (*(int (**)(int *))(*a1 + 44))(a1) == 1 && *((unsigned char *)a1 + 1747) ) /*0x70717d*/
     v25 = (gamemd::BuildingClass *)(dword_B1D140); /*0x707187*/
   else
@@ -832,7 +832,7 @@ void UpdateTimedStateMachine(int * a1)
       case 6: /*0x70e97d*/
         if ( Timeout::GetRemaining(a1 + 106) <= 30 ) /*0x70eb96*/
         {
-          a1[112] = (unsigned int *)(7);
+          a1[112] = (int)((unsigned int *)(7));
           v14 = (unsigned int *)(a1 + 109); /*0x70ebab*/
           *v14 = dword_A8ED84; /*0x70ebb7*/
           v14[1] = v21; /*0x70ebbd*/
@@ -913,7 +913,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
 
   if ( a1 && a2 ) /*0x70f12c*/
   {
-    dword_B0EB3C = (gamemd::Object *)(a2);
+    dword_B0EB3C = (unsigned int)((gamemd::Object *)(a2));
     dword_B0EB38 = a1; /*0x70f13a*/
     v3 = *(unsigned int *)dword_8871E0->LocalRadarColor; /*0x70f140*/
     Ticks = TimerGetTicks(); /*0x70f14a*/
@@ -1000,7 +1000,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   ObjectClass *v2; // ecx
   int v4; // [esp+4h] [ebp-8h]
 
-  v2 = &this->u32_180; /*0x70f74c*/
+  v2 = (gamemd::ObjectClass *)(&this->u32_180); /*0x70f74c*/
   v2->vfptr = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x70f752*/
   v2->vfptr1 = (void *)v4; /*0x70f758*/
   v2->vfptr2 = (void *)a2; /*0x70f75b*/
@@ -1025,13 +1025,13 @@ int E4Recv_70FE50::sub_70FE50()
   int drainAnim; // ecx
   int result; // eax
 
-  drainAnim = this->drainAnim; /*0x70fe53*/
+  drainAnim = (int)(this->drainAnim); /*0x70fe53*/
   if ( drainAnim ) /*0x70fe5b*/
   {
     (*(void (**)(int))(*&drainAnim->isDiscoveredByComputer))(drainAnim); /*0x70fe5f*/
     this->drainAnim = 0; /*0x70fe65*/
   }
-  result = this->drainTarget; /*0x70fe6f*/
+  result = (int)(this->drainTarget); /*0x70fe6f*/
   if ( result ) /*0x70fe77*/
   {
     result->IQ = 0; /*0x70fe79*/

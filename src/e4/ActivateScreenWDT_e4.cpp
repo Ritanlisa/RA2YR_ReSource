@@ -20,8 +20,8 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
   unsigned int *v7; // edi
   int v8; // eax
 
-  v5 = (int)(operator new(0x14u));
-  v6 = v5; /*0x76f47e*/
+  v5 = (void *)((int)(operator new(0x14u)));
+  v6 = (int)(v5); /*0x76f47e*/
   if ( v5 ) /*0x76f485*/
   {
     v7 = (unsigned int *)(v5 + 8); /*0x76f488*/

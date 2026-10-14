@@ -85,8 +85,8 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   int v56[4]; // [esp+114h] [ebp-14h] BYREF
   char v57[4]; // [esp+124h] [ebp-4h] BYREF
 
-  v33[1] = this; /*0x5a5b6a*/
-  v2 = globalHelper_0A7640(v50, aP1); /*0x5a5b6e*/
+  v33[1] = (unsigned int)(this); /*0x5a5b6a*/
+  v2 = (int *)(globalHelper_0A7640(v50, aP1)); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
   v38 = *v2; /*0x5a5b75*/
   v4 = v2[1]; /*0x5a5b79*/
@@ -400,7 +400,7 @@ LABEL_73:
       }
     }
   }
-  return v5; /*0x5a64f5*/
+  return (gamemd::MapSeedClass **)(v5); /*0x5a64f5*/
 
 }
 } // namespace gamemd
@@ -488,7 +488,7 @@ char MapSeedClass::ValidateRectBounds(void *a1)
               v12[0] = v5; /*0x5a7814*/
               v12[1] = MapSeedClass_field_0x04; /*0x5a781f*/
               v6 = (Value *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v12); /*0x5a7824*/
-              Value_field_00 = v6[14].Value_field_00; /*0x5a7829*/
+              Value_field_00 = (int)(v6[14].Value_field_00); /*0x5a7829*/
               if ( (Value_field_00 < g_CellTileTypeCache || Value_field_00 > g_CellTileTypeCache + 1) /*0x5a783d*/
                 && !Value::InRange(v6) )
               {
@@ -589,7 +589,7 @@ char MapSeedClass_18::AddRef(int a2)
     v3 = 0; /*0x5aca6f*/
     if ( m_8 <= 0 ) /*0x5aca73*/
       return 1; /*0x5aca93*/
-    v4 = *&this->q004; /*0x5aca75*/
+    v4 = (unsigned int *)(*&this->q004); /*0x5aca75*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5aca7b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5aca84*/
     {
@@ -635,7 +635,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x5acb1e*/
         }
       }
-      *&this->q004 = v4; /*0x5acb27*/
+      *&this->q004 = (int)(v4); /*0x5acb27*/
       this->m_8 = a2; /*0x5acb2f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5acb32*/
       return 1; /*0x5acb38*/
@@ -692,7 +692,7 @@ int MapSeedClass::GenerateSeed(unsigned int * a2)
 }  // G42.18c ns repair
 // 0x5ACBC0
 namespace gamemd {
-unsigned int MapSeedClass_18::Generate(int a2)
+unsigned int MapSeedClass_18::Generate(int a2, void *a2_1, void *a3)
 {
   if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x5acbc0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x5acbd5*/
@@ -734,7 +734,7 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x5acc51*/
       }
     }
-    *&this->q004 = v4; /*0x5acc5a*/
+    *&this->q004 = (int)(v4); /*0x5acc5a*/
     this->m_8 = a2; /*0x5acc62*/
     BYTE1(this->m_C) = a3 == 0; /*0x5acc65*/
   }

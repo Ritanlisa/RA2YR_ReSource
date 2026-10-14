@@ -255,7 +255,7 @@ int sub_452000(unsigned int * a1)
   v11 = *((char *)a1 + 1773); /*0x452123*/
   if ( v11 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x45213d*/
     (*((unsigned char *)&(v11))) = 16; /*0x45213f*/
-  v12 = a1 + 343; /*0x452144*/
+  v12 = (int *)(a1 + 343); /*0x452144*/
   v13 = 21; /*0x452146*/
   do /*0x45215b*/
   {
@@ -917,7 +917,7 @@ int E4Recv_4517D0::sub_4517D0()
   v4 = v2[2]; /*0x4517f7*/
   result = (int)&this->u32_55C; /*0x4517fa*/
   v4 = v4; /*0x451800*/
-  v12 = &this->u32_55C; /*0x451804*/
+  v12 = (int **)(&this->u32_55C); /*0x451804*/
   do /*0x451879*/
   {
     v6 = *v12; /*0x45180c*/
@@ -954,7 +954,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
   unsigned int *v7; // ebx
   unsigned char *v8; // eax
 
-  v4 = (int)(aP4);
+  v4 = (IUnknown *)((int)(aP4));
   if ( *(unsigned char *)(a1 + 1766) != (unsigned char)aP4 ) /*0x451eed*/
   {
     v5 = (unsigned char)(0);
@@ -979,7 +979,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
           if ( *v8 ) /*0x451f2b*/
           {
             BuildingClass::PlayAnim((gamemd::BuildingClass *)((unsigned int *)a1), a2, v8, v5, v4, 0, 0); /*0x451f39*/
-            v4 = (int)(aP4); /*0x451f3e*/
+            v4 = (IUnknown *)((int)(aP4)); /*0x451f3e*/
           }
         }
       }

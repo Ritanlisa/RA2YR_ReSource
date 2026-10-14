@@ -33,14 +33,10 @@ struct Buffer {
     int Cleanup();  // 0x42f7c0
     int UpdateVolumeSettings(void *a1 = 0);  // 0x40A6D0 G42.33 b3 supplied-body sync
     char *  FillCircularBufferScroll(int a2, int a3, uint16_t a4);  // 0x410ED0
-    unsigned int * Init(int a2, int Size, int aP2, int aP3, int aP1);
+    unsigned int * Init(int a2, int Size, int aP2, int a3, int aP1);
     static unsigned int * Init(Buffer * aP1, int a2, int Size);
     static int Cleanup(void *aP0);  // G57a1 static-form mirror
-    static int AllocateCodecFrameBuffers(void *aP0);  // G57a1 static-form mirror
-    static int * RotateBufferCrypto(void *aP0, int aP1);  // G57a1 static-form mirror
-    static int AppendCellData(void *aP0, int aP1);  // G57a1 static-form mirror
-    static void * FillCircularBufferScroll2(void *aP0, int aP1, int aP2);  // G57a1 static-form mirror
-    static void * Constructor_VectorClass_ObjectClass___(void *aP0, int aP1, int aP2);  // G57a1 static-form mirror
+    int AllocateCodecFrameBuffers(void *a1 = 0);  // G57a1 static-form mirror
     unsigned int q008;  // 0x8 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)
     unsigned int u32_2C;  // 0x2C (offset-truth)

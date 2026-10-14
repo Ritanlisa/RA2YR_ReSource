@@ -258,12 +258,12 @@ int WinMain::Constructor_VectorClass_Wstring_()
     if ( *(unsigned int *)(this->u32_2900 + 4 * k) ) /*0x69a2c4*/
       operator delete((void *)(*(void **)(this->u32_2900 + 4 * k))); /*0x69a2cc*/
   }
-  return (*(int (**)(WinMain *))(this->u32_28FC + 12))this->q9779 + 3191); /*0x69a2ee*/
+  return (int)((*(int (**)(WinMain *))(this->u32_28FC + 12))this->q9779 + 3191)); /*0x69a2ee*/
 }
 }  // G42.18c ns repair
 // 0x734D30
 namespace gamemd {  // G42.18c ns repair
-unsigned int * WinMain::ShutdownCleanup()
+unsigned int * WinMain::ShutdownCleanup(void *a1)
 {
 
   void **i; // eax
@@ -276,7 +276,7 @@ unsigned int * WinMain::ShutdownCleanup()
 
   for ( i = (void **)dword_B1CF8C; dword_B1CF8C; i = (void **)dword_B1CF8C ) /*0x734d3b*/
   {
-    dword_B1CF8C = *i; /*0x734d40*/
+    dword_B1CF8C = (unsigned int)(*i); /*0x734d40*/
     __3_YAXPAX_Z(i); /*0x734d46*/
   }
   v2 = (void **)dword_B1CF78; /*0x734d57*/
@@ -313,7 +313,7 @@ unsigned int * WinMain::ShutdownCleanup()
     __3_YAXPAX_Z(dword_B1CF74); /*0x734def*/
     dword_B1CF74 = 0; /*0x734df7*/
   }
-  result = dword_B1CF88; /*0x734dfd*/
+  result = (unsigned int *)(dword_B1CF88); /*0x734dfd*/
   if ( dword_B1CF88 ) /*0x734e04*/
   {
     do /*0x734e15*/
@@ -347,7 +347,7 @@ char sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7e7b*/
       DataGlobal_ABFDA8 = 0; /*0x5d7e81*/
       (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7e87*/
-      *(unsigned int *)g_MultiplayerModeConfig = &vt_DynamicVectorClass; /*0x5d7e94*/
+      *(unsigned int *)g_MultiplayerModeConfig = (unsigned int)(&vt_DynamicVectorClass); /*0x5d7e94*/
       DataGlobal_ABFDB4 = 10; /*0x5d7e9a*/
       g_MultiplayerGameList = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -360,7 +360,7 @@ char sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7ecf*/
       DataGlobal_ABFDA8 = 0; /*0x5d7ed5*/
       (*((unsigned short *)&(DataGlobal_ABFDAC))) = 1; /*0x5d7edb*/
-      *(unsigned int *)g_MultiplayerModeConfig = &vt_DynamicVectorClass; /*0x5d7ee8*/
+      *(unsigned int *)g_MultiplayerModeConfig = (unsigned int)(&vt_DynamicVectorClass); /*0x5d7ee8*/
       DataGlobal_ABFDB4 = 10; /*0x5d7eee*/
       g_MultiplayerGameList = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/
@@ -383,7 +383,7 @@ void* sub_7B84F0()
   result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
-    result = (int)(CreateMutexA(0, 0, 0));
+    result = (HANDLE)((int)(CreateMutexA(0, 0, 0)));
     hMutex = (int)(result); /*0x7b850b*/
   }
   if ( !dword_B7816C ) /*0x7b8516*/

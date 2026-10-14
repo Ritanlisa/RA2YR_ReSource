@@ -72,7 +72,7 @@ struct MissionClass {
     char missionTimer[12];  // 0xC8
 // --- flat members (END) ---
     static int SetState(void *aP1);
-    AbstractClass * * LoadFromINI(unsigned int *a2, void *a1 = 0);
+    AbstractClass * * LoadFromINI(unsigned int *a2, void *a2_1 = 0);
     int HasValidTarget();
     int Return450A();
     int Return450B();

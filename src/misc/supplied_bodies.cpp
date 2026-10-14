@@ -54,7 +54,7 @@ extern stru_87F5F0_host stru_87F5F0;    // data: 0x87F5F0
 struct stru_87E790_host {
     unsigned char q000[0x280];
 };
-extern stru_87E790_host stru_87E790;    // data: 0x87E790
+extern unsigned char stru_87E790; // data: 0x87E790
 namespace gamemd {
 // LinkedList 自由函数族真形 (mix_file.hpp 的模板 LinkedList 是碰撞源, 不用)
 int * LinkedList_Next(void *list);      // 0x407520 (IDA: LinkedList::Next)

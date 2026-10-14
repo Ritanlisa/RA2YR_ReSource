@@ -17,11 +17,11 @@ struct DeleteCommandClass_28 {
     char  AddRef(int a2);  // 0x53C520
     char  Release(int a2, unsigned int * a3);  // 0x53C560
     void ddtor(void *a1 = 0);  // 0x53C610
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x53C640
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x53C640
     char  SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
     int  FindItem(unsigned int * a2);  // 0x53C750
     VectorClass_flat *  QueryInterface(char a2);  // 0x53C780
-    int  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x53C7D0
+    int Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x53C7D0
     unsigned int  PointerToIndex(int a2);  // 0x53C4F0
     unsigned int  Write(int a2);  // 0x53C680
     unsigned char *m_1;  // 0x1 (offset-truth)

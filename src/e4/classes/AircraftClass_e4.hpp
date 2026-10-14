@@ -450,12 +450,12 @@ struct AircraftClass {
     void* Destruct_slot;  // 0x0 (no offset truth)
     static int Destruct(AircraftClass *pThis);
     AircraftClass * CheckActionStatus(char a2);
-    int GetCursorOverObject(AircraftClass *aP1, int *a2, int *a3);  // G57w10-S raw 0x00417CC0 IUnknown 占位清除
+    int GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2);  // G57w10-S raw 0x00417CC0 IUnknown 占位清除
     HRESULT CheckPassengerCount(int a1, int pPStm, int a3);
     char * CheckLandingClearance(int a2, int a3, int a4);
     char CheckDockState();
     char ValidateMovement(int a2, int * a3, int a4);
-    int CanEnterCell(int16_t *a2, char a3, char a4);  // G57w10-S raw 0x00417F80 IUnknown 占位清除
+    int CanEnterCell(int16_t *a1, char aP2, char aP3);  // G57w10-S raw 0x00417F80 IUnknown 占位清除
     int CheckMissionAbort();
     int CheckMissionFail();
     int CheckMissionStatus();
@@ -473,7 +473,6 @@ struct AircraftClass {
     int RevealSight(int a2, int a3);
     int UpdateDocking(int a2);
     int ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6);
-    AircraftTypeClass * Update(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
     void* LoadFromStream(unsigned int * a0, FootClass * aP1);
      int Construct(int a2, int a3, IUnknown *ppv, void *a1 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);

@@ -43,9 +43,9 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, a4)); /*0x531a28*/
   if ( result ) /*0x531a2f*/
-    return result; /*0x531a2f*/
+    return (gamemd::INIClass **)(result); /*0x531a2f*/
   WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
   if ( a2 == 273 ) /*0x531a44*/
   {
@@ -58,7 +58,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   DlgItem = GetDlgItem(hWnd, 1461); /*0x531a73*/
   String = GetStringCSF(g_Str_TXT_SHORT_TITLE, 0, g_Str_File_Init_CPP, 5680); /*0x531a75*/
   SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x531a89*/
-  ModuleVersion = GetModuleVersion(); /*0x531a8b*/
+  ModuleVersion = (char *)(GetModuleVersion()); /*0x531a8b*/
   sprintf(Buffer, "Version %s", ModuleVersion); /*0x531a9b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531ab0*/
   ModuleInternalVersion = GetModuleInternalVersion((int)&dword_A8ECE0); /*0x531ab7*/
@@ -80,7 +80,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   GetVersionString(&v14, &v13, 0, 0); /*0x531ba8*/
   v11 = (const char *)&off_821F08; /*0x531bb3*/
   if ( !v13 ) /*0x531bb8*/
-    v11 = g_INI_Key_No; /*0x531bba*/
+    v11 = (const char *)(g_INI_Key_No); /*0x531bba*/
   sprintf(Buffer, "MMX %s, Vendor: %s", v11, Source);
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531be4*/
   CreditsScreen::Init(Buffer); /*0x531bea*/

@@ -95,7 +95,7 @@ int Waypoint::FindCell(unsigned int * a2)
   v6 = this->field_38; /*0x763a64*/
   if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = *&this->u32_2C; /*0x763a6e*/
+  for ( i = (unsigned int *)(*&this->u32_2C); /*0x763a6e*/
         (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
         i += 3 )
@@ -115,7 +115,7 @@ CHAR * Waypoint::To_String(int aP0)
   if ( aP0 == -1 ) /*0x763613*/
   {
     byte_B72654 = 0; /*0x763615*/
-    return &byte_B72654; /*0x76361c*/
+    return (gamemd::CHAR *)(&byte_B72654); /*0x76361c*/
   }
   else
   {
@@ -123,7 +123,7 @@ CHAR * Waypoint::To_String(int aP0)
       wsprintfA((char *)(&byte_B72654), "%c%c", aP0 / 26 + 64, aP0 % 26 + 65); /*0x763671*/
     else
       wsprintfA((char *)(&byte_B72654), "%c", aP0 + 65); /*0x763635*/
-    return &byte_B72654; /*0x76363e*/
+    return (gamemd::CHAR *)(&byte_B72654); /*0x76363e*/
   }
 }
 } // namespace gamemd

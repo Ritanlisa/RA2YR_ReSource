@@ -14,17 +14,17 @@ struct File {
     AbstractClass * ptr_28;  // 0x28
     unsigned char tail_2D;  // 0x2D
 // --- flat members (END) ---
-    char IsReady(int a2, void *a1 = 0);  // 0x431F10
+    char IsReady(int a2, void *a2_1 = 0);  // 0x431F10
     AbstractClass * LoadFont(char *Source);  // 0x433990
     char Dispatch(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x4CB920
-    unsigned int *  LoadFileHVA(int a2, void *a1 = 0);  // 0x5BD570
+    unsigned int * LoadFileHVA(int a2, void *a2_1 = 0);  // 0x5BD570
     AbstractClass * * ParseFileHVA(int a2);
-    File * *  LoadPaletteData(void * a2);  // 0x625AF0
-    int  FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
+    File * * LoadPaletteData(unsigned short *aP1);  // 0x625AF0
+    int FindByPrefix(char *Str1, unsigned char *a3);  // 0x625DB0
     AbstractClass * *  ParseCSFString(char * Source);  // 0x734990
-    unsigned int *  LoadFileVXL(int a2, int a3, void *a1 = 0);  // 0x755CD0
-    AbstractClass * *  LoadWDT(void * a2);  // 0x76AC90
-    AbstractClass * *  LoadWDTDecompress(int a2, int a3);  // 0x76B0A0
+    unsigned int * LoadFileVXL(int a2, int a3, void *a3_1 = 0);  // 0x755CD0
+    AbstractClass * * LoadWDT(ObjectClass * aP1);  // 0x76AC90
+    AbstractClass * * LoadWDTDecompress(int aP1, int a3);  // 0x76B0A0
     int ParseAudioFileRIFF();  // 0x7C12B0
     AbstractClass * * ParseFileHVA(int a2, int aP1, int a3);
     char __pad_6[35];  // 0x6 (ml)

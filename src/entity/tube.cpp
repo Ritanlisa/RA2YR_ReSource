@@ -20,7 +20,7 @@ TubeClass::TubeClass() noexcept
     TubeClass_field_C0 = 0;
     TubeClass_field_C4 = 0;
 
-    abstractFlags = kTubeFlag;
+    abstractFlags = (void *)(kTubeFlag);
 }
 
 } // namespace gamemd

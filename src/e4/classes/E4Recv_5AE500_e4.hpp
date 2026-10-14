@@ -9,6 +9,6 @@ struct E4Recv_5AE500 {
 // --- flat members (BEGIN) ---
     AudioController * ptr_50;  // 0x50
 // --- flat members (END) ---
-    char  sub_5AE500(char ** a2);  // 0x5AE500
+    char sub_5AE500(const char ** a2);  // 0x5AE500
 };
 } // namespace gamemd

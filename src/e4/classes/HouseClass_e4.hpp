@@ -214,7 +214,6 @@ struct HouseClass {
     char collectedPowerups[2056];  // 0x4B70
     char numAirpads[4];  // 0x5378
     char numBarracks[4];  // 0x537C
-    char numWarFactories[4];  // 0x5380
     char numConYards[4];  // 0x5384
     char numShipyards[4];  // 0x5388
     char numOrePurifiers[4];  // 0x538C
@@ -288,10 +287,8 @@ struct HouseClass {
     char attackDelayB[4];  // 0x55FC
     char enemyHouseIndex[4];  // 0x5600
     AngerStruct* angerNodes;  // 0x5604
-    char angerNodesCount[4];  // 0x5608
     char angerNodesCapacity[4];  // 0x560C
     ScoutStruct* scoutNodes;  // 0x5610
-    char scoutNodesCount[4];  // 0x5614
     char scoutNodesCapacity[4];  // 0x5618
     char unkTimer3[12];  // 0x561C
     char unkTimer4[12];  // 0x5628
@@ -381,7 +378,7 @@ struct HouseClass {
     char ReshroudMap();
     char Set(void *a1, void *a2, void *a3);
     char UpdateAllSilos(int a2, int a3);
-    int GiveTiberium_Storage(float a2, int a3);
+    double GiveTiberium_Storage(float aP1, int aP2);
     int COMStub_Ret1_1(int a1);
     static int NetworkConvert(void *aP0);  // 0x749100 G42.33 b5 static-form sync
     static int  IncrementStat(int a2);  // 0x749020
@@ -394,14 +391,14 @@ struct HouseClass {
     int DestroyAllNonBuildingsNaval();
     int DestroyAllNonBuildingsNonNaval();
     int FailedToPlaceNode(int a1);
-    int GetCameoTypeIndex(int a2, void *a1 = 0);
+    int GetCameoTypeIndex(int a2, void *a2_1 = 0);
     int GetInfSelfHealStep();
     int GetRepairStepAmount();
-    static int GetStatus(HouseClass * aP1, int a2);
+    int GetStatus(int aP1, void *a2 = 0);
     int GetUnitSelfHealStep();
     int InitAlliances();
     int IsAlliedWith(void *a1 = 0, void *a2 = 0);  // G57w4: raw fn_4F.c other@[ebp+4]
-    int IsCellOccupied(int a2, char a3);  // G57w10-S raw 0x004FBE40 IUnknown 占位清除
+    int IsCellOccupied(IUnknown * aP1, char a3);  // G57w10-S raw 0x004FBE40 IUnknown 占位清除
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
     static int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
@@ -424,7 +421,7 @@ struct HouseClass {
     void * CanTogglePower();
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
-    int Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    int Construct(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     void LostPoweredCenter(int a2, void *a2_2);
     int ResetObjectOrders(char a1, int a2);
     void vt_03_();

@@ -140,15 +140,15 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   unsigned int v106[24]; // [esp+194h] [ebp-60h] BYREF
 
   v17 = (MapClass *)aP0; /*0x56dc27*/
-  v18 = *aP3; /*0x56dc33*/
+  v18 = (int)(*aP3); /*0x56dc33*/
   v19 = aP3->u32_4; /*0x56dc36*/
-  v81 = aP0; /*0x56dc49*/
+  v81 = (gamemd::Type *)(aP0); /*0x56dc49*/
   v78 = 0; /*0x56dc4d*/
   v86 = v18; /*0x56dc51*/
   v82 = v19; /*0x56dc55*/
   v77 = 0; /*0x56dc59*/
   if ( aP5 == 0xFFFF ) /*0x56dc5e*/
-    aP5 = -1; /*0x56dc60*/
+    aP5 = (IUnknown *)(-1); /*0x56dc60*/
   v20 = v18 + ((unsigned int)v19 << 9); /*0x56dc6e*/
   if ( v20 >= 0x40000 || (v21 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x56dc84*/
   {
@@ -180,7 +180,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
     v26 = -v79; /*0x56dd0f*/
     if ( -v79 <= v79 ) /*0x56dd13*/
     {
-      v87 = &v104[v78]; /*0x56dd24*/
+      v87 = (int *)(&v104[v78]); /*0x56dd24*/
       do /*0x56dd28*/
       {
         if ( aP15 ) /*0x56dd31*/
@@ -206,8 +206,8 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   LABEL_23:
         v99[1] = v27; /*0x56dd91*/
         v99[0] = (int16_t)(v86 + v26); /*0x56dd9f*/
-        v99[2] = aP8; /*0x56ddad*/
-        v99[3] = aP9; /*0x56ddb9*/
+        v99[2] = (int)(aP8); /*0x56ddad*/
+        v99[3] = (int)(aP9); /*0x56ddb9*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v30, 1) ) /*0x56ddc0*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
@@ -264,9 +264,9 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         v39 = (Cell *)&g_MissionQueueFrame.briefing[130]; /*0x56dfa2*/
   LABEL_44:
         v98[1] = v36; /*0x56dfa7*/
-        v98[3] = aP9; /*0x56dfbe*/
+        v98[3] = (int)(aP9); /*0x56dfbe*/
         v98[0] = (int16_t)(v86 + v26); /*0x56dfc8*/
-        v98[2] = aP8; /*0x56dfcf*/
+        v98[2] = (int)(aP8); /*0x56dfcf*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v39, 1) ) /*0x56dfd6*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
@@ -308,7 +308,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
     v45 = 1 - v25; /*0x56e160*/
     if ( 1 - v25 <= v25 - 1 ) /*0x56e16c*/
     {
-      v46 = &v104[v78]; /*0x56e176*/
+      v46 = (int *)(&v104[v78]); /*0x56e176*/
       do /*0x56e17d*/
       {
         if ( aP15 ) /*0x56e186*/
@@ -333,8 +333,8 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   LABEL_67:
         v100[0] = (int16_t)(v86 - v79); /*0x56e1e8*/
         v100[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e1fd*/
-        v100[2] = aP8; /*0x56e209*/
-        v100[3] = aP9; /*0x56e210*/
+        v100[2] = (int)(aP8); /*0x56e209*/
+        v100[3] = (int)(aP9); /*0x56e210*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v49, 1) ) /*0x56e217*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
@@ -387,8 +387,8 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   LABEL_86:
         v97[0] = (int16_t)(v79 + v86); /*0x56e3ea*/
         v97[1] = (int16_t)(v45 + (unsigned short)v82); /*0x56e3ff*/
-        v97[2] = aP8; /*0x56e40b*/
-        v97[3] = aP9; /*0x56e412*/
+        v97[2] = (int)(aP8); /*0x56e40b*/
+        v97[3] = (int)(aP9); /*0x56e412*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v56, 1) ) /*0x56e419*/
         {
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
@@ -434,7 +434,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   {
   LABEL_125:
     *aP2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56e7aa*/
-    return aP2; /*0x56e79a*/
+    return (int)(aP2); /*0x56e79a*/
   }
   v81 = 0; /*0x56e5c5*/
   v82 = 0; /*0x56e5c9*/
@@ -476,7 +476,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
       *aP2 = v105[*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % (int)v81]; /*0x56e6c6*/
     else
       *aP2 = v106[*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] % (int)v82]; /*0x56e6e5*/
-    return aP2; /*0x56e6b4*/
+    return (int)(aP2); /*0x56e6b4*/
   }
   else
   {
@@ -512,7 +512,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
       }
     }
     *aP2 = i; /*0x56e78e*/
-    return aP2; /*0x56e780*/
+    return (int)(aP2); /*0x56e780*/
   }
 }
 }
@@ -548,7 +548,7 @@ LABEL_8:
   {
     v8 = 0; /*0x577dff*/
   }
-  result = dword_A83D4C; /*0x577e04*/
+  result = (void *)(dword_A83D4C); /*0x577e04*/
   if ( !dword_A83D4C->visionary ) /*0x577e09*/
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
@@ -667,7 +667,7 @@ int LayerClass::CellIteratorReset()
 }
 // 0x578460
 namespace gamemd {
-int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2)
+int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2, void *a3)
 {
   int v3; // esi
   int v4; // edx

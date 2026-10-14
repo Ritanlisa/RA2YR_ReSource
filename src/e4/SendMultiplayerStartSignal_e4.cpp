@@ -30,7 +30,7 @@ LRESULT sub_7A27D0()
   HWND Current; // eax
   HWND DlgItem; // eax
 
-  Current = Dialog::GetCurrent(); /*0x7a27d0*/
+  Current = (HWND)(Dialog::GetCurrent()); /*0x7a27d0*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a27db*/
   return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x7a27f1*/
 }

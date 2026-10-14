@@ -73,7 +73,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         || (v29 = *&this->Coord_9C,
             v30 = *&this->u32_A0,
             v31 = *&this->u32_A4,
-            !(unsigned __int8)Game::Stub3((int)&v29)) )
+            !(unsigned __int8)Game::Stub3((IUnknown *)((int)&v29))) )
       {
         v5 = *((unsigned int *)this->u32_AC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
@@ -89,10 +89,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v13 = a3[1]; /*0x62d08c*/
             if ( (int)v12 >= v13 && (int)v12 < v13 + a3[3] ) /*0x62d09e*/
             {
-              v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek( /*0x62d0b6*/
-                                           *(int **)&g_VisibleSurfaceDescriptor,
-                                           v29,
-                                           (int)&v12[-*(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4)]);
+                            v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek((int)(/*0x62d0b6*/                                            *(int **)&g_VisibleSurfaceDescriptor),                                            v29,                                            (int)&v12[-*(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4)]);
               if ( (unsigned short)v14 ) /*0x62d0bb*/
               {
                 v15 = v30 - g_ZBufferDescriptor->Stream_field_04; /*0x62d0d4*/
@@ -105,7 +102,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     - 50;
                 if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v28[0], v15) ) /*0x62d11e*/
                 {
-                  ParticleClass_field_0xB4 = this->u32_B4; /*0x62d124*/
+                  ParticleClass_field_0xB4 = (IUnknown *)(this->u32_B4); /*0x62d124*/
                   if ( ParticleClass_field_0xB4 ) /*0x62d12c*/
                     pad_B0 = (char *)(*((unsigned int *)this->u32_AC + 175) /*0x62d13f*/
                                     + 3 * (unsigned int)ParticleClass_field_0xB4);
@@ -199,7 +196,7 @@ int * ParticleClass::CheckDrawFlags(int a1)
     dword_AC49D0 = 2147450879; /*0x62d73f*/
     atexit(nullsub_214); /*0x62d744*/
   }
-  return &dword_AC49D0; /*0x62d752*/
+  return (int *)(&dword_AC49D0); /*0x62d752*/
 
 }
 } // namespace gamemd
@@ -229,7 +226,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
       aP1[2] = &vt_ParticleClass; /*0x62d7d1*/
       aP1[3] = &vt_ParticleClass; /*0x62d7d8*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x62d7eb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(aP1 + 43)); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/
     return 0; /*0x62d801*/
   }

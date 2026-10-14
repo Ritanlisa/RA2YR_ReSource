@@ -41,7 +41,7 @@ struct FactoryClass {
     AbstractClass * * Stat(int * a2);
     static char GetFlag();
     char RemoveOneFromQueue(char a2);
-    int CountType(int a2);  // G57w10-S raw 0x004CA670 IUnknown 占位清除
+    int CountType(int aP1);  // G57w10-S raw 0x004CA670 IUnknown 占位清除
     int DemandProduction(int a2, void *a3, char a4);
     int FinishProduction(int a2);
     int GetBuildTimeFrames();

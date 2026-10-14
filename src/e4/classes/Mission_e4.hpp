@@ -14,7 +14,7 @@ struct Mission_e4 {
     int ExecuteTechnoMissionAction();  // 0x520AE0
     char ProcessUnitMissionAI();  // 0x520F40
     int  SetAndCall(int a2, int a3);  // 0x5BDA80
-    char  AssignTeamMemberMissions(int a2, int a3);  // 0x6ED7E0
+    char AssignTeamMemberMissions(ScriptClass * aP1, int a3);  // 0x6ED7E0
     int GetMissionDelay(void *a1_1);  // 0x70F770
 
     unsigned int u32_10;  // X10 supply (member_lookup)

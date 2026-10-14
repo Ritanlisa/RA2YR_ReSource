@@ -57,9 +57,9 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   {
     if ( BuildingClass::FindByCellHash(j) == this->u32_98 && BuildingClass::IsTiberiumSiloEligible(j) ) /*0x722931*/
     {
-      p_occupant = &j->objectTypeFlags; /*0x72294a*/
-      v17 = &j->objectTypeFlags; /*0x72294d*/
-      *(unsigned int *)(this->u32_FC + 8 * this->u32_F0) = j->objectTypeFlags; /*0x722953*/
+      p_occupant = (gamemd::Cell *)(&j->objectTypeFlags); /*0x72294a*/
+      v17 = (gamemd::Cell *)(&j->objectTypeFlags); /*0x72294d*/
+      *(unsigned int *)(this->u32_FC + 8 * this->u32_F0) = (unsigned int)(j->objectTypeFlags); /*0x722953*/
       *(unsigned int *)(this->u32_FC + 8 * this->u32_F0 + 4) = 0; /*0x722962*/
       v8 = this->u32_F0; /*0x72296a*/
       v9 = (unsigned int *)this->u32_F4; /*0x722976*/
@@ -99,7 +99,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
     }
     result = LayerClass::CellIteratorNext((LayerClass *)&DataGlobal_87F7E8); /*0x722a00*/
   }
-  return result; /*0x722a11*/
+  return (gamemd::BuildingTypeClass **)(result); /*0x722a11*/
 
 }
 }  // G42.18 ns repair

@@ -36,7 +36,7 @@ char AsyncIO::Shutdown()
     if ( v3 ) /*0x5bf469*/
     {
       (**v3)(v3, 1); /*0x5bf473*/
-      i = AsyncIO_Instance; /*0x5bf475*/
+      i = (unsigned int *)(AsyncIO_Instance); /*0x5bf475*/
     }
   }
   g_AsyncIOState = 0; /*0x5bf487*/

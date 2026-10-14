@@ -9,7 +9,7 @@ struct E4Recv_626250 {
     unsigned int vfptr;  // 0x0
     unsigned int M256;  // 0x256
 // --- flat members (END) ---
-    int  sub_626250(void * a2, int a3);  // 0x626250
+    int sub_626250(const char * a2, int a3);  // 0x626250
 
     unsigned int u32_100;  // X10 supply (member_lookup)
 };

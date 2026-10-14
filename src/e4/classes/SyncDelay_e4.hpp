@@ -10,7 +10,7 @@ struct SyncDelay {
     void* q010;  // 0x10
     void* q034;  // 0x34
 // --- flat members (END) ---
-    bool Check(unsigned int *a2, void *a1 = 0, void *a3 = 0);
+    bool Check(unsigned int * a2, void *a2_1 = 0, void *a3 = 0);
     signed int Start(void *a1, void *a2);
 };
 

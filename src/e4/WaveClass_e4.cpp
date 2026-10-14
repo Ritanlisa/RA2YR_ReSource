@@ -128,7 +128,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   aP1->? = &vt_WaveClass; /*0x763213*/
   aP1->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)aP1, 1); /*0x763221*/
-  v6 = aP1; /*0x763236*/
+  v6 = (gamemd::WaveClass *)(aP1); /*0x763236*/
   v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.?[84] + 16))(&stru_A8EB00.?[84], &v6); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[100] ) /*0x76324a*/
   {
@@ -142,7 +142,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   }
   (*(void (**)(char *))(*((unsigned int *)aP1 + 124) + 12))((char *)aP1 + 496); /*0x76327e*/
   v4 = (void *)*((unsigned int *)aP1 + 125); /*0x763281*/
-  *((unsigned int *)aP1 + 124) = &vt_VectorClass; /*0x763284*/
+  *((unsigned int *)aP1 + 124) = (unsigned int)(&vt_VectorClass); /*0x763284*/
   if ( v4 && *((unsigned char *)aP1 + 509) ) /*0x76328e*/
   {
     __3_YAXPAX_Z(v4); /*0x763296*/
@@ -179,10 +179,10 @@ char WaveClass::DamageArea(ObjectClass * aP1)
   int v17; // [esp+14h] [ebp-8h]
   int v18; // [esp+18h] [ebp-4h] BYREF
 
-  Owner = this->Owner; /*0x75f338*/
+  Owner = (void *)(this->Owner); /*0x75f338*/
   if ( Owner ) /*0x75f340*/
   {
-    v5 = aP1; /*0x75f346*/
+    v5 = (unsigned int *)(aP1); /*0x75f346*/
     v16 = v2; /*0x75f34a*/
     LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     HIWORD(aP1) = v5->vtable2 / 256; /*0x75f372*/
@@ -197,7 +197,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       v9 = (unsigned int *)v6->firstObject; /*0x75f3df*/
     for ( ; v9; v9 = (unsigned int *)v9[12] ) /*0x75f3e7*/
     {
-      v10 = this->Owner; /*0x75f3e9*/
+      v10 = (unsigned int *)(this->Owner); /*0x75f3e9*/
       if ( v9 != v10 && *((unsigned char *)v9 + 144) && *((unsigned char *)v9 + 116) && !*((unsigned char *)v9 + 129) && (int)v9[27] > 0 ) /*0x75f413*/
         (*(void (**)(unsigned int *, int *, unsigned int, int, unsigned int *, unsigned int, unsigned int, unsigned int))(*v9 + 364))( /*0x75f42c*/
           v9,

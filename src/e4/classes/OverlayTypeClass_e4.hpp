@@ -119,7 +119,7 @@ struct OverlayTypeClass {
     OverlayClass * GetDamage(int a2);
 OverlayTypeClass * ddtor(void ** Block, char a2);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
-    bool GetType(int16_t *a2, int a3);  // G57w10-S raw 0x005FE530 IUnknown 占位清除
+    bool GetType(int16_t *aP2, int a3);  // G57w10-S raw 0x005FE530 IUnknown 占位清除
     int * GetTile(int a1);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
@@ -128,9 +128,9 @@ OverlayTypeClass * ddtor(void ** Block, char a2);
     int GetTypeIdentifier();
     int LookupByName(void *a1 = 0);
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4, void *a1 = 0);
+    int ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4, void *a4_1 = 0);
     int   SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    unsigned int *  Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
 OverlayTypeClass(ObjectClass * aP1);
     unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);

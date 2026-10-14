@@ -16,7 +16,7 @@ struct Team {
     unsigned int IsLeavingMap;  // 0x82
 // --- flat members (END) ---
     int ReleaseAll(int aP1);  // 0x5D26C0
-    int  GetMember(int a2, void *a1 = 0);  // 0x65AD30
+    int GetMember(int aP1, void *a2 = 0);  // 0x65AD30
     int AllMembersValid();
     unsigned int *q000;  // 0x0 (canon-mt)
 

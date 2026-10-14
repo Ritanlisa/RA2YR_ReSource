@@ -178,7 +178,7 @@ int TeamClass::DeployUnit(int a2, int a3)
   int v18[3]; // [esp+30h] [ebp-Ch] BYREF
 
   result = a2; /*0x62a263*/
-  creationFrame = this->creationFrame; /*0x62a26c*/
+  creationFrame = (int)(this->creationFrame); /*0x62a26c*/
   if ( a2 == creationFrame ) /*0x62a271*/
   {
     this->creationFrame = 0; /*0x62a273*/
@@ -192,14 +192,14 @@ int TeamClass::DeployUnit(int a2, int a3)
       *(unsigned int *)this->currentScript = 0; /*0x62a297*/
       return result; /*0x62a2a0*/
     }
-    v6 = *&this->owner; /*0x62a2a3*/
+    v6 = (int)(*&this->owner); /*0x62a2a3*/
     ParasiteClass_field_34 = this->ParasiteClass_field_34; /*0x62a2a6*/
     if ( v6 != -1 ) /*0x62a2ac*/
     {
       if ( *(unsigned int *)&TeamTypeClass_Array - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/
       {
 LABEL_12:
-        v9 = Object::CalculateObjectPlacementPosition((Object *)this, v18); /*0x62a2ec*/
+        v9 = (int *)(Object::CalculateObjectPlacementPosition((Object *)this, v18)); /*0x62a2ec*/
         v17[0] = *v9; /*0x62a303*/
         v10 = v9[1]; /*0x62a307*/
         v17[1] = v10; /*0x62a30a*/
@@ -221,13 +221,13 @@ LABEL_12:
         else
         {
           --dword_A8E7AC; /*0x62a379*/
-          v13 = this->creationFrame; /*0x62a37f*/
+          v13 = (int)(this->creationFrame); /*0x62a37f*/
           if ( *(unsigned char *)(v13 + 1074) && (unsigned __int8)House::IsHumanPlayer(*(House **)(v13 + 540)) ) /*0x62a390*/
           {
             *(unsigned char *)(this->creationFrame + 1074) = 0; /*0x62a39c*/
             (*(void (**)(int))(*(unsigned int *)this->creationFrame + 332))(this->creationFrame); /*0x62a3a7*/
           }
-          v14 = this->creationFrame; /*0x62a3ad*/
+          v14 = (int)(this->creationFrame); /*0x62a3ad*/
           v15 = v14->previousTeam; /*0x62a3b0*/
           if ( v15 ) /*0x62a3b8*/
             TeamClass::AddMember(v15, v14, 0); /*0x62a3bc*/
@@ -263,7 +263,7 @@ LABEL_12:
       && !(*(unsigned __int8 (**)(int))(*(unsigned int *)creationFrame + 352))(creationFrame) )
     {
       *(unsigned int *)(*(unsigned int *)this->currentScript + 1684) = 0; /*0x62a2cf*/
-      v8 = this->creationFrame; /*0x62a2d5*/
+      v8 = (int)(this->creationFrame); /*0x62a2d5*/
       *(unsigned int *)this->currentScript = 0; /*0x62a2d8*/
       return (*(char (**)(int))(*(unsigned int *)v8 + 248))(v8); /*0x62a2e9*/
     }
@@ -272,7 +272,7 @@ LABEL_12:
   if ( a2 == this->unknown44 ) /*0x62a487*/
   {
     this->unknown44 = 0; /*0x62a489*/
-    this->firstUnit = 1; /*0x62a490*/
+    this->firstUnit = (gamemd::FootClass *)(1); /*0x62a490*/
   }
   return result; /*0x62a27a*/
 
@@ -445,7 +445,7 @@ int TeamClass::FindByMemberType(int a2)
   TeamClass *v21; // [esp+14h] [ebp-Ch] BYREF
   Color v22[2]; // [esp+18h] [ebp-8h] BYREF
 
-  v20 = this->buildingType + a2); /*0x635a53*/
+  v20 = (int)(this->buildingType + a2)); /*0x635a53*/
   result = *(unsigned int *)(v20 + 116); /*0x635a57*/
   if ( result == -1 ) /*0x635a5d*/
   {
@@ -472,7 +472,7 @@ int TeamClass::FindByMemberType(int a2)
           v11 = *(unsigned int *)(Type + 140); /*0x635aa2*/
           if ( v11 == -1 || v10 < v11 ) /*0x635ab4*/
           {
-            owner = v5->owner; /*0x635acb*/
+            owner = (gamemd::HouseClass *)(v5->owner); /*0x635acb*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635acd*/
             if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635ae0*/
               relatedTagsCount = dword_A83D4C->relatedTagsCount; /*0x635ae2*/
@@ -482,17 +482,17 @@ int TeamClass::FindByMemberType(int a2)
             Color::Lerp(v22, 0x50u, &byte_A83CD9); /*0x635b0d*/
             v15 = (BYTE1(v22[0].Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635b45*/
                 | (BYTE2(v22[0].Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-            Color_field_00 = v22[0].Color_field_00; /*0x635b47*/
+            Color_field_00 = (unsigned char)(v22[0].Color_field_00); /*0x635b47*/
             goto LABEL_19; /*0x635b4b*/
           }
-          uniqueId = v22[0].Color_field_00; /*0x635ab6*/
+          uniqueId = (int)(v22[0].Color_field_00); /*0x635ab6*/
         }
         ++v6; /*0x635aba*/
       }
       while ( v6 < uniqueId ); /*0x635abd*/
       if ( !v5 ) /*0x635b52*/
         return -1; /*0x635b52*/
-      v17 = v5->owner; /*0x635b61*/
+      v17 = (gamemd::HouseClass *)(v5->owner); /*0x635b61*/
       Object_field_0x30 = (void *)v17->relatedTagsCount; /*0x635b67*/
       if ( (unsigned __int8)House::IsHumanPlayer((House *)v17) ) /*0x635b6a*/
       {
@@ -505,7 +505,7 @@ int TeamClass::FindByMemberType(int a2)
       Color::Lerp(v22, 0x64u, (unsigned __int8 *)&stru_A80220); /*0x635ba7*/
       v15 = (BYTE1(v22[0].Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635bdf*/
           | (BYTE2(v22[0].Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-      Color_field_00 = v22[0].Color_field_00; /*0x635be1*/
+      Color_field_00 = (unsigned char)(v22[0].Color_field_00); /*0x635be1*/
 LABEL_19:
       result = (Color_field_00 >> g_BitShift_Green_0 << g_BitShift_Red) | v15; /*0x635be5*/
       *(unsigned int *)(v20 + 116) = result; /*0x635c01*/
@@ -555,7 +555,7 @@ int TeamClass::GetMember(void *a1, void *a2)
           v4 = *(BuildingClass **)v6; /*0x635c40*/
           if ( !*(unsigned char *)(BuildingClass::GetType(*(BuildingClass **)v6) + 152) ) /*0x635c51*/
           {
-            owner = v4->owner; /*0x635c71*/
+            owner = (gamemd::HouseClass *)(v4->owner); /*0x635c71*/
             relatedTagsCount = (void *)owner->relatedTagsCount; /*0x635c73*/
             if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x635c86*/
               relatedTagsCount = dword_A83D4C->relatedTagsCount; /*0x635c88*/
@@ -565,7 +565,7 @@ int TeamClass::GetMember(void *a1, void *a2)
             Color::Lerp(&v15, 0x50u, &byte_A83CD9); /*0x635cb4*/
             v10 = (BYTE1(v15.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green) /*0x635cec*/
                 | (BYTE2(v15.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
-            Color_field_00 = v15.Color_field_00; /*0x635cee*/
+            Color_field_00 = (unsigned char)(v15.Color_field_00); /*0x635cee*/
             goto LABEL_16; /*0x635cf2*/
           }
         }
@@ -574,7 +574,7 @@ int TeamClass::GetMember(void *a1, void *a2)
       while ( v5 < uniqueId ); /*0x635c56*/
       if ( !v4 ) /*0x635c5a*/
         return -1; /*0x635c5a*/
-      v12 = v4->owner; /*0x635cf7*/
+      v12 = (gamemd::HouseClass *)(v4->owner); /*0x635cf7*/
       Object_field_0x30 = (void *)v12->relatedTagsCount; /*0x635cfd*/
       if ( (unsigned __int8)House::IsHumanPlayer((House *)v12) ) /*0x635d00*/
       {
@@ -599,7 +599,7 @@ LABEL_16:
 }
 // 0x635DB0
 namespace gamemd {
-int TeamClass::Reset(char aP1)
+int TeamClass::Reset(char aP1, void *a2)
 {
   int result; // eax
   HouseClass *target; // edx
@@ -923,7 +923,7 @@ LABEL_11:
           v10 = *(unsigned int *)(*(unsigned int *)(v6 + 4) + 4 * v7); /*0x6369fd*/
 LABEL_13:
         v11 = v10->vtable2; /*0x636a00*/
-        qmemcpy(v29, v11, sizeof(v29)); /*0x636a13*/
+        memcpy(v29, v11, sizeof(v29)); /*0x636a13*/
         v11 += 108; /*0x636a13*/
         v30 = *(unsigned short *)v11; /*0x636a15*/
         v31 = v11[2]; /*0x636a1c*/
@@ -946,7 +946,7 @@ LABEL_13:
           *v15 = 0; /*0x636a67*/
         else
           v15 = 0; /*0x636a6c*/
-        qmemcpy(v15, v29, 0x6Cu); /*0x636a79*/
+        memcpy(v15, v29, 0x6Cu); /*0x636a79*/
         *((unsigned short *)v15 + 54) = v30; /*0x636a7b*/
         v15[110] = v31; /*0x636a7d*/
         v14->vtable2 = v15; /*0x636a7e*/
@@ -989,7 +989,7 @@ LABEL_13:
 }
 // 0x636B50
 namespace gamemd {
-CampaignClass * * TeamClass::Cleanup(int aP1)
+CampaignClass * * TeamClass::Cleanup(int aP1, void *a2)
 {
 
   int v3; // ebx

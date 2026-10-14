@@ -665,7 +665,7 @@ int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, voi
   v10 = (int *)((int)(a3));
   v11 = a3[3]; /*0x6210a1*/
   v12 = a3[2] - *(unsigned int *)(a3); /*0x6210ab*/
-  v18 = (int)(*(unsigned int *)(a3)); /*0x6210ad*/
+  v18 = (void *)((int)(*(unsigned int *)(a3))); /*0x6210ad*/
   v13 = ((uint8_t)yTop >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6210b1*/
       | ((((unsigned char *)&(yTop))[2]) >> g_BitMask_Red << g_BitShift_Blue)
       | ((((unsigned char *)&(yTop))[1]) >> g_BitMask_Blue << g_BitMask_Green);
@@ -746,21 +746,21 @@ int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, 
   unsigned int v22[4]; // [esp+14h] [ebp-10h] BYREF
   int yTopa; // [esp+28h] [ebp+4h]
 
-  v9 = a1; /*0x6211dc*/
+  v9 = (gamemd::Text *)(a1); /*0x6211dc*/
   if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
     a7 = (int *)DSurface_Alternate; /*0x6211f9*/
-  v12 = *aP2; /*0x621234*/
-  v21 = aP2[3]; /*0x621255*/
+  v12 = (int)(*aP2); /*0x621234*/
+  v21 = (int)(aP2[3]); /*0x621255*/
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
       | ((((unsigned char *)&(ecx0))[1]) >> g_BitMask_Blue << g_BitMask_Green)
       | ((((unsigned char *)&(ecx0))[2]) >> g_BitMask_Red << g_BitShift_Blue);
-  yTopa = aP2[1]; /*0x62125e*/
-  v14 = aP2[2]; /*0x621262*/
+  yTopa = (int)(aP2[1]); /*0x62125e*/
+  v14 = (int)(aP2[2]); /*0x621262*/
   v20 = v14; /*0x621267*/
   if ( !a1 ) /*0x62126b*/
-    v9 = g_FogOfWarState; /*0x62126d*/
+    v9 = (gamemd::Text *)(g_FogOfWarState); /*0x62126d*/
   Text::Layout(v9, a3, &v18, &v19, v14); /*0x621285*/
   switch ( a6 ) /*0x621291*/
   {
@@ -791,8 +791,8 @@ int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, 
       v15 = -1 - v19; /*0x62131f*/
       goto LABEL_21; /*0x62131f*/
   }
-  v16 = *aP2; /*0x621325*/
-  v17 = aP2[1]; /*0x621327*/
+  v16 = (int)(*aP2); /*0x621325*/
+  v17 = (int)(aP2[1]); /*0x621327*/
   v22[0] = v16; /*0x621332*/
   v22[1] = v17; /*0x621336*/
   v22[2] = v20 + v16; /*0x621342*/
@@ -991,7 +991,7 @@ unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
   ObjectClass *v4; // [esp+4h] [ebp-4h] BYREF
 
   result = *(unsigned int **)&g_DialogHashMap_Count; /*0x6223c1*/
-  v4 = a1_1; /*0x6223c9*/
+  v4 = (gamemd::ObjectClass *)(a1_1); /*0x6223c9*/
   if ( *(unsigned int *)&g_DialogHashMap_Count ) /*0x6223cd*/
   {
     result = *(unsigned int **)(*(unsigned int *)&g_DialogHashMap_Base /*0x6223ee*/
@@ -1113,7 +1113,7 @@ int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LP
   result = FindResource(a1, 5); /*0x62266c*/
   if ( result ) /*0x622673*/
   {
-    v6 = (HINSTANCE)((HWND *)(8 * g_DialogTrackingList + 12004648));
+    v6 = (HWND *)((HINSTANCE)((HWND *)(8 * g_DialogTrackingList + 12004648)));
     v7 = (int *)(8 * g_DialogTrackingList + 12004652); /*0x622697*/
     (*((unsigned short *)&(dwInitParam[0]))) = a1; /*0x62269f*/
     ++g_DialogTrackingList; /*0x6226a4*/
@@ -2693,7 +2693,7 @@ void * E4Recv_626070::sub_626070(const void * a2)
     --v4; /*0x62608a*/
   }
   while ( v4 ); /*0x62608b*/
-  qmemcpy(result, a2, 0x300u); /*0x626098*/
+  memcpy(result, a2, 0x300u); /*0x626098*/
   return result; /*0x62609a*/
 
 }

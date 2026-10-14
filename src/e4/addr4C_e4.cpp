@@ -366,7 +366,7 @@ void InitializeRadialGradientTexture()
                   result = (*(int (__stdcall **)(unsigned int *, unsigned int *))(*v22 + 88))(v22, v25); /*0x4c1923*/
                   if ( !result ) /*0x4c1928*/
                   {
-                    v13 = (unsigned int)((ObjectClass *)operator new(0x78u));
+                    v13 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)operator new(0x78u)));
                     if ( v13 ) /*0x4c193a*/
                       dword_8A0E08 = (unsigned int)((DDraw *)sub_4A3270(v13, v25[3], v25[2], 1)); /*0x4c194f*/
                     else
@@ -609,7 +609,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
   int v17; // [esp+18h] [ebp-8h]
   int v18; // [esp+1Ch] [ebp-4h]
 
-  v16 = (unsigned char *)(a2);
+  v16 = (int)((unsigned char *)(a2));
   if ( !a3 || !a2 ) /*0x4c38fb*/
     return (char **)(a4); /*0x4c38fb*/
   v5 = a4; /*0x4c3901*/
@@ -668,10 +668,10 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 
   TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth((int)this->AbstractClass, 0); /*0x4c3de5*/
-  vtable2 = this->M8; /*0x4c3def*/
+  vtable2 = (void *)(this->M8); /*0x4c3def*/
   v5[2] = g_DisplayWidth; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
-  v5[1] = vtable2; /*0x4c3e12*/
+  v5[1] = (unsigned int)(vtable2); /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
   return (*(int (**)(AudioStream *, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x4c3e28*/
                                                                                     + 8))(
@@ -746,7 +746,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
   abstractFlags = this->M20; /*0x4c95d2*/
   if ( abstractFlags <= 0 ) /*0x4c95db*/
     goto LABEL_14; /*0x4c95db*/
-  vtable2 = this->M8; /*0x4c95dd*/
+  vtable2 = (void *)(this->M8); /*0x4c95dd*/
   uniqueId = this->M16; /*0x4c95e0*/
   if ( vtable2 != (void *)-1 ) /*0x4c95ec*/
   {
@@ -767,7 +767,7 @@ LABEL_14:
   if ( (__int16)v8 > 0 ) /*0x4c961c*/
   {
     v9 = this->M16; /*0x4c961e*/
-    v10 = this->M8; /*0x4c9621*/
+    v10 = (void *)(this->M8); /*0x4c9621*/
     if ( v10 != (void *)-1 ) /*0x4c9627*/
     {
       if ( *(unsigned int *)&TeamTypeClass_Array - (int)v10 >= v9 ) /*0x4c962f*/
@@ -784,7 +784,7 @@ LABEL_11:
   LOWORD(vtable0) = (unsigned short)v14; /*0x4c9645*/
 LABEL_15:
   LOWORD(a3) = *a3 - (unsigned short)vtable0; /*0x4c9651*/
-  *a2 = a3; /*0x4c966b*/
+  *a2 = (unsigned int)(a3); /*0x4c966b*/
   return a2; /*0x4c9655*/
 
 }
@@ -992,7 +992,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v12 = a5; /*0x4cf072*/
   (*((unsigned short *)&(v56))) = (*((signed int *)&(a4))) / 256; /*0x4cf08c*/
   (*(((unsigned short *)&(v56)) + 1)) = a5 / 256; /*0x4cf09f*/
-  v13 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v56); /*0x4cf0ac*/
+  v13 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v56)); /*0x4cf0ac*/
   v14 = ((Cell *)(v13))->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
   {
@@ -1382,7 +1382,7 @@ unsigned int * E4Recv_4C2B40::sub_4C2B40(unsigned int * a2)
   unsigned int *v3; // ecx
   unsigned char v5[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  NeedsSaveOrLink = this->M32; /*0x4c2b40*/
+  NeedsSaveOrLink = (void *)(this->M32); /*0x4c2b40*/
   if ( NeedsSaveOrLink ) /*0x4c2b4c*/
   {
     v3 = (unsigned int *)(*(int (**)(void *, unsigned char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)NeedsSaveOrLink + 176))( /*0x4c2b75*/
@@ -1412,7 +1412,7 @@ unsigned int * E4Recv_4C2B40::sub_4C2B40(unsigned int * a2)
 namespace gamemd {
 Iostream_init * E4Recv_4C2C30::__0Iostream_init_QAE_XZ_3()
 {
-  return this; /*0x4c2c32*/
+  return (gamemd::Iostream_init *)(this); /*0x4c2c32*/
 }
 } // namespace gamemd
 
@@ -1439,10 +1439,10 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   ControlClass::Construct(aP1, aP5, aP6, aP7, a9, 1, 0); /*0x4c2fe5*/
   aP4 = aP4; /*0x4c2ff6*/
   (((unsigned char *)&(aP4))[1]) = (((unsigned char *)&(aP4))[1]) & 0xFE; /*0x4c2ff8*/
-  this->M44 = aP4; /*0x4c2ffc*/
+  this->M44 = (unsigned int)(aP4); /*0x4c2ffc*/
   *this = (EditClass)&vt_EditClass; /*0x4c3004*/
   this->M48 = a10; /*0x4c300a*/
-  this->M52 = aP2; /*0x4c300d*/
+  this->M52 = (unsigned int)(aP2); /*0x4c300d*/
   this->M56 = a4 - 1; /*0x4c3010*/
   this->M60 = wcslen(aP2); /*0x4c3018*/
   (*(void (**)(EditClass *))(*(unsigned int *)this->q114 + 12)))(this); /*0x4c3022*/

@@ -18,7 +18,7 @@ struct VectorClass_ptr_EMPulseClass {
 // --- flat members (END) ---
     int Destroy(void *a1_1);  // 0x4C5B60
     unsigned int  GetItemIndex(int a2);  // 0x4C5B90
-    int  Get(int a2, void *a1 = 0);  // 0x4C5BB0
+    int Get(int a2, void *a2_2);  // 0x4C5BB0
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4C5BC0
     char  Release(int a2, unsigned int * a3);  // 0x4C5C00
     void Remove(void *a1_1, void *a1 = 0);  // 0x4C5CB0

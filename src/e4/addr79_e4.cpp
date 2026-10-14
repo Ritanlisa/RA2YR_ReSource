@@ -150,7 +150,7 @@ int sub_793280(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
     if ( a2 != 1175 ) /*0x793367*/
       return 0; /*0x793331*/
     v5 = 0; /*0x793374*/
-    v6 = dword_84A1F0; /*0x793376*/
+    v6 = (int *)(dword_84A1F0); /*0x793376*/
     do /*0x7933ab*/
     {
       DlgItem = GetDlgItem(hWnd, *v6); /*0x79337f*/
@@ -327,8 +327,8 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
       while ( v7 < dword_A8DA84 ); /*0x7936ba*/
       if ( !v6 ) /*0x7936c2*/
       {
-  LABEL_26: v10 = (gamemd::AbstractClass **)(GetStringCSF(aTxtFailedToTal, 0, g_Str_File_wonline_cpp, 18888));
-        return Dialog::ShowMessage(-1, (size_t)v10); /*0x7936e2*/
+  LABEL_26: v10 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF(aTxtFailedToTal, 0, g_Str_File_wonline_cpp, 18888)));
+        return (gamemd::AbstractClass **)(Dialog::ShowMessage(-1, (size_t)v10)); /*0x7936e2*/
       }
     }
   }
@@ -455,9 +455,9 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   char v100; // [esp+5B4h] [ebp-19Ah]
 
   v3 = (int)(aP0);
-  v70 = (int)(a2); /*0x793d2c*/
-  v72 = aP0; /*0x793d34*/
-  v4 = (int)(0); /*0x793d3d*/
+  v70 = (IUnknown *)((int)(a2)); /*0x793d2c*/
+  v72 = (int)(aP0); /*0x793d34*/
+  v4 = (IUnknown *)((int)(0)); /*0x793d3d*/
   TimerGetTicks(); /*0x793d38*/
   TimerGetTicks(); /*0x793d4b*/
   v56 = 1; /*0x793d5f*/
@@ -472,10 +472,10 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   do /*0x793dd5*/
   {
     v5 = (char *)dword_A8DA90[v3]; /*0x793da3*/
-    v6 = ToWideStringChar((char *)dword_A8DA78[v4]); /*0x793db4*/
+    v6 = (char *)(ToWideStringChar((char *)dword_A8DA78[v4])); /*0x793db4*/
     v7 = ToWideStringChar(v5); /*0x793db6*/
     if ( !_strcmpi(v6, v7) ) /*0x793dbd*/
-      v62 = v4; /*0x793dc9*/
+      v62 = (int)(v4); /*0x793dc9*/
     ++v4; /*0x793dd2*/
   }
   while ( v4 < dword_A8DA84 ); /*0x793dd5*/
@@ -518,7 +518,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     Network_Connect_793BB0(v55); /*0x793edf*/
     if ( v56 ) /*0x793eea*/
     {
-      v14 = (int *)(0);
+      v14 = (uint16_t)((int *)(0));
       v15 = dword_ABFEC8; /*0x793f1f*/
       Debug::Log(); /*0x793f2b*/
       if ( (v15 & 0x40) != 0 ) /*0x793f36*/
@@ -527,7 +527,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       v59 = 0; /*0x793f50*/
       if ( dword_A8E224 <= 0 ) /*0x793f54*/
         goto LABEL_110; /*0x793f54*/
-      v16 = dword_A8E1A4; /*0x793f5a*/
+      v16 = (int *)(dword_A8E1A4); /*0x793f5a*/
       do /*0x793fd4*/
       {
         v17 = *v16; /*0x793f5f*/
@@ -3385,7 +3385,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, HWND *, void ***))(*(unsigned int *)ppv + 144)
             ((String *)((const char **)&hWnd))->ToLower(); /*0x7996e5*/
             ReadAutoLoginWOL((char **)&v57); /*0x7996ee*/
             v29 = ((String *)((const char **)&v57))->ToLowerCopy((char **)&v62); /*0x7996fc*/
-            IDA_LOBYTE(lParam) = ((String *)((const char **)&hWnd))->Compare((const char **)v29); /*0x79970f*/
+            (*((unsigned char *)&(lParam))) = ((String *)((const char **)&hWnd))->Compare((const char **)v29); /*0x79970f*/
             j_DeleteAndZero( (void *)(&v62)); /*0x799713*/
             if ( (unsigned char)lParam ) /*0x79971e*/
             {
@@ -3395,7 +3395,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, HWND *, void ***))(*(unsigned int *)ppv + 144)
             }
             LoadConfigWOL((char **)&v56); /*0x799744*/
             v30 = ((String *)((const char **)&v56))->ToLowerCopy((char **)&v63); /*0x799752*/
-            IDA_LOBYTE(lParam) = ((String *)((const char **)&hWnd))->Compare((const char **)v30); /*0x799765*/
+            (*((unsigned char *)&(lParam))) = ((String *)((const char **)&hWnd))->Compare((const char **)v30); /*0x799765*/
             j_DeleteAndZero( (void *)(&v63)); /*0x799769*/
             if ( (unsigned char)lParam ) /*0x799774*/
             {
@@ -3493,7 +3493,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, HWND *, void ***))(*(unsigned int *)ppv + 144)
         switch ( (int16_t)v7 ) /*0x79915a*/
         {
           case 1576: /*0x79915a*/
-            if ( IDA_HIWORD(v7) != 1 ) /*0x7991cb*/
+            if ( (*(((unsigned short *)&(v7)) + 1)) != 1 ) /*0x7991cb*/
               return 0; /*0x7991cb*/
             v10 = GetDlgItem(v6, 1791); /*0x7991e5*/
             SendMessageA( (HWND)(v10), 0x49Du, 0, 1); /*0x7991ef*/
@@ -3537,7 +3537,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, LPARAM *, HWND *))(*(unsigned int *)ppv + 144)
             ((ComPtr *)(&v64))->Release(); /*0x799357*/
             return 0; /*0x799365*/
           case 1577: /*0x79915a*/
-            if ( IDA_HIWORD(v7) != 1 ) /*0x79936c*/
+            if ( (*(((unsigned short *)&(v7)) + 1)) != 1 ) /*0x79936c*/
               return 0; /*0x79936c*/
             unknown_libname_73( (void *)(&lParam)); /*0x799376*/
             GetDialogText( (HWND)(v5), (void **)&lParam); /*0x799381*/
@@ -3551,7 +3551,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, LPARAM *, HWND *))(*(unsigned int *)ppv + 144)
             j_DeleteAndZero( (void *)((void **)&lParam)); /*0x7993c9*/
             return 0; /*0x7993d7*/
           case 1578: /*0x79915a*/
-            if ( IDA_HIWORD(v7) != 1 ) /*0x7993de*/
+            if ( (*(((unsigned short *)&(v7)) + 1)) != 1 ) /*0x7993de*/
               return 0; /*0x7993de*/
             v18 = 0; /*0x7993ea*/
             v19 = SendMessageA( (HWND)(v5), 0x147u, 0, 0); /*0x7993f4*/
@@ -3577,7 +3577,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, LPARAM *, HWND *))(*(unsigned int *)ppv + 144)
             ((WebBrowser *)g_INI_Key_Battleclans)->ShowDialog(); /*0x799193*/
             return 0; /*0x7991a1*/
           case 1697: /*0x79915a*/
-            if ( IDA_HIWORD(v7) != 1 ) /*0x799454*/
+            if ( (*(((unsigned short *)&(v7)) + 1)) != 1 ) /*0x799454*/
               return 0; /*0x799454*/
             v20 = -2; /*0x79946a*/
             v21 = SendMessageA( (HWND)(v5), 0x147u, 0, 0); /*0x79946f*/
@@ -3594,7 +3594,7 @@ if ( !(*(int (**)(LPVOID, LPARAM, LPARAM *, HWND *))(*(unsigned int *)ppv + 144)
             return 0;
         }
       }
-      if ( IDA_HIWORD(v7) != 1 ) /*0x7994ce*/
+      if ( (*(((unsigned short *)&(v7)) + 1)) != 1 ) /*0x7994ce*/
         return 0; /*0x799b46*/
       v22 = -2; /*0x7994e4*/
       v23 = SendMessageA( (HWND)(v5), 0x147u, 0, 0); /*0x7994e9*/
@@ -3804,7 +3804,7 @@ if ( !(*(int (**)(LPVOID, int, const char **, const char **))(*(unsigned int *)p
     }
     ((String *)((void **)&g_WebBrowser))->Assign_Alt( (const char *)(lParam));
     ((String *)((void **)&g_WebBrowserConfig))->Assign_Alt( (const char *)(v88));
-    IDA_LOBYTE(dword_84A238) = 0;
+    (*((unsigned char *)&(dword_84A238))) = 0;
     (hCtl) = ((hCtl) & ~0xFF) | ((unsigned int)(1) & 0xFF);
 LABEL_106:
     char * v59 = ((String *)((char **)&g_WebBrowser))->GetOrEmpty_Alt();
@@ -3813,13 +3813,13 @@ LABEL_106:
     {
       char * v60 = ((String *)(&g_WebBrowserConfig))->GetOrEmpty_Alt();
       SendMessageA( (HWND)(v87), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)v60)));
-      IDA_LOBYTE(dword_84A238) = 0;
+      (*((unsigned char *)&(dword_84A238))) = 0;
     }
   unsigned int v61; // eax
     if ( !((String*)((const char **)&g_WebBrowser))->Length()
-      || (v61 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), IDA_LOBYTE(lParam) = 1, v61 != 8) )
+      || (v61 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), (*((unsigned char *)&(lParam))) = 1, v61 != 8) )
     {
-      IDA_LOBYTE(lParam) = 0;
+      (*((unsigned char *)&(lParam))) = 0;
     }
     v62 = GetDlgItem(v5, 1837);
     SendMessageA( (HWND)(v62), 0x49Du, 0, 1);
@@ -3919,7 +3919,7 @@ LABEL_123:
             ((String *)(&lParam))->ToLower();
             ReadAutoLoginWOL((char **)&v88);
             void * v89 = ((String *)(&v88))->ToLowerCopy((char **)&v89);
-            IDA_LOBYTE(hCtl) = ((String *)(&lParam))->Compare((const char **)v48);
+            (*((unsigned char *)&(hCtl))) = ((String *)(&lParam))->Compare((const char **)v48);
             j_DeleteAndZero( (void *)(&v89));
             if ( (unsigned char)hCtl )
             {
@@ -3929,7 +3929,7 @@ LABEL_123:
             }
             LoadConfigWOL((char **)&v87);
             void * v90 = ((String *)((const char **)&v87))->ToLowerCopy((char **)&v90);
-            IDA_LOBYTE(hCtl) = ((String *)(&lParam))->Compare((const char **)v49);
+            (*((unsigned char *)&(hCtl))) = ((String *)(&lParam))->Compare((const char **)v49);
             j_DeleteAndZero( (void *)(&v90));
             if ( (unsigned char)hCtl )
             {
@@ -3956,7 +3956,7 @@ LABEL_123:
           SendMessageA( (HWND)(v50), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)&g_INI_DefaultBuffer)));
           ((DeleteAndZero *)(void **)&g_WebBrowser)->Alt2();
           ((DeleteAndZero *)(void **)&g_WebBrowserConfig)->Alt2();
-          IDA_LOBYTE(dword_84A238) = 1;
+          (*((unsigned char *)&(dword_84A238))) = 1;
           v51 = GetDlgItem(v5, 1837);
           EnableWindow(v51, 0);
           InvalidateRect(v51, 0, 0);
@@ -3972,18 +3972,18 @@ LABEL_123:
           result = 0;
           break;
         case 1836:
-          if ( IDA_HIWORD(v7) != 768 || byte_B77EA0 )
+          if ( (*(((unsigned short *)&(v7)) + 1)) != 768 || byte_B77EA0 )
             return 0;
-          IDA_LOBYTE(dword_84A238) = 1;
+          (*((unsigned char *)&(dword_84A238))) = 1;
           GetDialogText( (HWND)(v4), (void **)&g_WebBrowserConfig);
           unknown_libname_73( (void *)(&hCtl));
           v40 = GetDlgItem(v5, 1576);
           GetDialogText( (HWND)(v40), (void **)&hCtl);
   unsigned int v41; // eax
           if ( !((String*)((const char **)&hCtl))->Length()
-            || (v41 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), IDA_LOBYTE(lParam) = 1, v41 != 8) )
+            || (v41 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), (*((unsigned char *)&(lParam))) = 1, v41 != 8) )
           {
-            IDA_LOBYTE(lParam) = 0;
+            (*((unsigned char *)&(lParam))) = 0;
           }
           v42 = GetDlgItem(v5, 1837);
           SendMessageA( (HWND)(v42), 0x49Du, 0, 1);
@@ -4042,18 +4042,18 @@ LABEL_123:
           return 0;
         case 0x628u:
           bool v11 = ((Dialog*)((void *)0x11D))->FindByHandle() != 0;
-          if ( IDA_HIWORD(v7) == 1 )
+          if ( (*(((unsigned short *)&(v7)) + 1)) == 1 )
           {
             if ( !v11 )
             {
               byte_B77EA0 = 1;
               ((DeleteAndZero *)(void **)&g_WebBrowser)->Alt2();
               ((DeleteAndZero *)(void **)&g_WebBrowserConfig)->Alt2();
-              IDA_LOBYTE(dword_84A238) = 1;
+              (*((unsigned char *)&(dword_84A238))) = 1;
               v21 = GetDlgItem(v5, 1836);
               char * v22 = ((String *)(&g_WebBrowserConfig))->GetOrEmpty_Alt();
               SendMessageA( (HWND)(v21), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)v22)));
-              IDA_LOBYTE(hWnd) = byte_B77E68;
+              (*((unsigned char *)&(hWnd))) = byte_B77E68;
               v23 = SendMessageA((HWND)hCtl, 0x147u, 0, 0);
               if ( v23 != -1 )
               {
@@ -4071,15 +4071,15 @@ LABEL_123:
                   v25 = GetDlgItem(v5, 1836);
                   char * v26 = ((String *)(&g_WebBrowserConfig))->GetOrEmpty_Alt();
                   SendMessageA( (HWND)(v25), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)v26)));
-                  IDA_LOBYTE(dword_84A238) = 0;
-                  IDA_LOBYTE(hWnd) = 1;
+                  (*((unsigned char *)&(dword_84A238))) = 0;
+                  (*((unsigned char *)&(hWnd))) = 1;
                 }
               }
   unsigned int v27; // eax
               if ( !((String*)((const char **)&g_WebBrowser))->Length()
-                || (v27 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), IDA_LOBYTE(hCtl) = 1, v27 != 8) )
+                || (v27 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), (*((unsigned char *)&(hCtl))) = 1, v27 != 8) )
               {
-                IDA_LOBYTE(hCtl) = 0;
+                (*((unsigned char *)&(hCtl))) = 0;
               }
               v28 = GetDlgItem(v5, 1837);
               SendMessageA( (HWND)(v28), 0xF1u, (uint8_t)hWnd, 0);
@@ -4095,9 +4095,9 @@ LABEL_123:
               return 0;
             }
           }
-          else if ( (IDA_HIWORD(v7) == 5 || IDA_HIWORD(v7) == 768)
-                 && (IDA_HIWORD(v7) != 768 || v11)
-                 && (IDA_HIWORD(v7) != 5 || !v11)
+          else if ( ((*(((unsigned short *)&(v7)) + 1)) == 5 || (*(((unsigned short *)&(v7)) + 1)) == 768)
+                 && ((*(((unsigned short *)&(v7)) + 1)) != 768 || v11)
+                 && ((*(((unsigned short *)&(v7)) + 1)) != 5 || !v11)
                  && !byte_B77EA0 )
           {
   char v14; // al
@@ -4122,7 +4122,7 @@ if ( !(*(int (**)(LPVOID, int, const char **, HWND *))(*(unsigned int *)ppv + 14
                     {
                       ((String *)((void **)&g_WebBrowser))->Assign_Alt( (const char *)(lParam));
                       ((String *)((void **)&g_WebBrowserConfig))->Assign_Alt((const char *)hWnd);
-                      IDA_LOBYTE(dword_84A238) = 0;
+                      (*((unsigned char *)&(dword_84A238))) = 0;
                       v14 = 1;
                       goto LABEL_42;
                     }
@@ -4134,11 +4134,11 @@ if ( !(*(int (**)(LPVOID, int, const char **, HWND *))(*(unsigned int *)ppv + 14
             v14 = 0;
             if ( !byte_B77E68 )
             {
-              IDA_LOBYTE(lParam) = 0;
+              (*((unsigned char *)&(lParam))) = 0;
               goto LABEL_43;
             }
 LABEL_42:
-            IDA_LOBYTE(lParam) = 1;
+            (*((unsigned char *)&(lParam))) = 1;
             if ( v14 )
               goto LABEL_44;
 LABEL_43:
@@ -4152,9 +4152,9 @@ LABEL_44:
             byte_B77EA0 = 0;
   unsigned int v17; // eax
             if ( !((String*)((const char **)&g_WebBrowser))->Length()
-              || (v17 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), IDA_LOBYTE(hWnd) = 1, v17 != 8) )
+              || (v17 = ((String*)((const char **)&g_WebBrowserConfig))->Length(), (*((unsigned char *)&(hWnd))) = 1, v17 != 8) )
             {
-              IDA_LOBYTE(hWnd) = 0;
+              (*((unsigned char *)&(hWnd))) = 0;
             }
             v18 = GetDlgItem(v5, 1837);
             ShowWindow(v18, 0);

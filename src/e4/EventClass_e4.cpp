@@ -78,11 +78,11 @@ namespace gamemd {
 int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
 
-  this->q044 = (void *)a2; /*0x48bad8*/
-  this->q048 = (void *)a3; /*0x48badf*/
+  this->q044 = (int)((void *)a2); /*0x48bad8*/
+  this->q048 = (int)((void *)a3); /*0x48badf*/
   this->u32_4C = a4; /*0x48bae6*/
-  this->q050 = (void *)a5; /*0x48baed*/
-  this->q054 = (void *)a6; /*0x48baf0*/
+  this->q050 = (int)((void *)a5); /*0x48baed*/
+  this->q054 = (int)((void *)a6); /*0x48baf0*/
   return a6; /*0x48baf3*/
 
 }
@@ -101,7 +101,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   }
   else
   {
-    this->u32_8 = aP1; /*0x4c6610*/
+    this->u32_8 = (unsigned int)(aP1); /*0x4c6610*/
     *this = a3; /*0x4c661a*/
     this->u32_7 = a4; /*0x4c661c*/
     this->u32_2C = a5; /*0x4c6620*/
@@ -112,7 +112,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 }
 // 0x4C66C0
 namespace gamemd {
-int EventClass::AddEvent(int a2, uint8_t a3)
+int EventClass::AddEvent(int a2, uint8_t a3, void *a3_1)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
@@ -121,21 +121,21 @@ int EventClass::AddEvent(int a2, uint8_t a3)
     this->u32_2 = -1; /*0x4c6701*/
     *this = 0; /*0x4c6705*/
     *&this->u32_3 = dword_A8ED84; /*0x4c670d*/
-    return this; /*0x4c6710*/
+    return (int)(this); /*0x4c6710*/
   }
   else
   {
     this->u32_2 = a2; /*0x4c66ec*/
     *this = a3; /*0x4c66ef*/
     *&this->u32_3 = dword_A8ED84; /*0x4c66f9*/
-    return this; /*0x4c66f7*/
+    return (int)(this); /*0x4c66f7*/
   }
 
 }
 }
 // 0x4C6720
 namespace gamemd {
-int EventClass::Add2(int a3, uint8_t aP1, int aP3)
+int EventClass::Add2(int a3, uint8_t aP1, int aP3, void *a4)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[aP1]); /*0x4c673c*/
@@ -144,7 +144,7 @@ int EventClass::Add2(int a3, uint8_t aP1, int aP3)
     this->u32_2 = -1; /*0x4c6767*/
     *this = 0; /*0x4c676b*/
     *&this->u32_3 = dword_A8ED84; /*0x4c6776*/
-    return this; /*0x4c6774*/
+    return (int)(this); /*0x4c6774*/
   }
   else
   {
@@ -152,7 +152,7 @@ int EventClass::Add2(int a3, uint8_t aP1, int aP3)
     *this = aP1; /*0x4c6753*/
     *&this->u32_7 = aP3; /*0x4c6755*/
     *&this->u32_3 = dword_A8ED84; /*0x4c675d*/
-    return this; /*0x4c6760*/
+    return (int)(this); /*0x4c6760*/
   }
 
 }
@@ -168,7 +168,7 @@ char * EventClass::AddEventEx(int a2, uint8_t a3, int a4, int a5, int a6)
     this->u32_2 = -1; /*0x4c69c6*/
     *this = 0; /*0x4c69ca*/
     *&this->u32_3 = dword_A8ED84; /*0x4c69d2*/
-    return this; /*0x4c69d5*/
+    return (char *)(this); /*0x4c69d5*/
   }
   else
   {
@@ -178,7 +178,7 @@ char * EventClass::AddEventEx(int a2, uint8_t a3, int a4, int a5, int a6)
     *&this->u32_B = a5; /*0x4c69b0*/
     *&this->u32_F = a6; /*0x4c69b3*/
     *&this->u32_3 = dword_A8ED84; /*0x4c69be*/
-    return this; /*0x4c69bc*/
+    return (char *)(this); /*0x4c69bc*/
   }
 
 }
@@ -454,13 +454,13 @@ AbstractClass * * EventClass::validateEventType()
     || v1 != dword_A83D4C->relatedTagsCount
     || dword_A8DA84 <= 2 )
   {
-    return v1; /*0x664526*/
+    return (gamemd::AbstractClass **)(v1); /*0x664526*/
   }
   v9 = 0; /*0x6644d4*/
   v10 = 0; /*0x6644d6*/
   if ( dword_A8DA84 > 0 ) /*0x6644db*/
   {
-    v11 = dword_A8DA78; /*0x6644dd*/
+    v11 = (unsigned int *)(dword_A8DA78); /*0x6644dd*/
     while ( *(unsigned int *)(*v11 + 111) != v1 ) /*0x6644e8*/
     {
       ++v10; /*0x6644ea*/
@@ -473,7 +473,7 @@ AbstractClass * * EventClass::validateEventType()
 LABEL_23:
   Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/
   LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
-  return v1; /*0x66451c*/
+  return (gamemd::AbstractClass **)(v1); /*0x66451c*/
 
 }
 }
@@ -484,7 +484,7 @@ void EventClass::initEvent()
 
   void *v2; // eax
 
-  v2 = *&this->q004; /*0x40b6a6*/
+  v2 = (void *)(*&this->q004); /*0x40b6a6*/
   this->Count = 0; /*0x40b6a9*/
   if ( v2 && BYTE1(this->q00C) ) /*0x40b6b0*/
   {
@@ -529,7 +529,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x40b7be*/
         }
       }
-      *&this->q004 = v4; /*0x40b7c7*/
+      *&this->q004 = (int)(v4); /*0x40b7c7*/
       this->u32_8 = a2; /*0x40b7cf*/
       BYTE1(this->q00C) = a3 == 0; /*0x40b7d2*/
       return 1; /*0x40b7d8*/
@@ -581,7 +581,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x40b8f1*/
       }
     }
-    *&this->q004 = v4; /*0x40b8fa*/
+    *&this->q004 = (int)(v4); /*0x40b8fa*/
     this->u32_8 = a2; /*0x40b902*/
     BYTE1(this->q00C) = a3 == 0; /*0x40b905*/
   }
@@ -629,7 +629,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x40ba1e*/
         }
       }
-      *&this->q004 = v4; /*0x40ba27*/
+      *&this->q004 = (int)(v4); /*0x40ba27*/
       this->u32_8 = a2; /*0x40ba2f*/
       BYTE1(this->q00C) = a3 == 0; /*0x40ba32*/
       return 1; /*0x40ba38*/
@@ -661,7 +661,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
   {
     (*((unsigned char *)&(a3_2->q00C))) = 0; /*0x40baf2*/
     if ( a3_2 ) /*0x40baf8*/
-      v4 = a3_2; /*0x40bb0e*/
+      v4 = (unsigned int *)(a3_2); /*0x40bb0e*/
     else
       v4 = (unsigned int *)operator new(4 * a3_2); /*0x40bb0a*/
     (*((unsigned char *)&(a3_2->q00C))) = 1; /*0x40bb12*/
@@ -718,7 +718,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 
 // 0x40BD00
 namespace gamemd {
-unsigned int * EventClass::resetEvent(int aP1, int aP2)
+unsigned int * EventClass::resetEvent(int aP1, int aP2, void *a3)
 {
 
   this->q004 = 0; /*0x40bd0b*/

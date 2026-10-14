@@ -107,13 +107,13 @@ int House::AnnounceUpgrade(int aP1)
 
   if ( (int *)this == &g_MissionQueueFrame.briefing[130] ) /*0x47d2bf*/
     return result; /*0x47d2bf*/
-  v4 = &this->u32_24; /*0x47d2c5*/
+  v4 = (short *)(&this->u32_24); /*0x47d2c5*/
   v5 = (unsigned char *)(*(unsigned int *)&DataGlobal_87F850 /*0x47d2da*/
                + 4 * CellToTileIndexMap((ObjectClass *)&DataGlobal_87F7E8, &this->u32_24));
   v57 = (int)v5; /*0x47d2e2*/
   v6 = *(unsigned int *)&DataGlobal_87F858 /*0x47d2f3*/
      + 10 * CellToTileIndexMap((ObjectClass *)&DataGlobal_87F7E8, &this->u32_24);
-  v7 = this->ptr_44; /*0x47d2f6*/
+  v7 = (int)(this->ptr_44); /*0x47d2f6*/
   v56 = v6; /*0x47d2fc*/
   if ( v7 != -1 ) /*0x47d300*/
   {
@@ -129,7 +129,7 @@ int House::AnnounceUpgrade(int aP1)
                                    *(unsigned __int8 *)(&this->u32_11A));
       if ( this->u32_11C && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
-        this->ptr_44 = -1; /*0x47d378*/
+        this->ptr_44 = (gamemd::TypeList *)(-1); /*0x47d378*/
         this->u32_11E = 0; /*0x47d37f*/
       }
       if ( *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 1636) ) /*0x47d38b*/
@@ -211,7 +211,7 @@ LABEL_19:
 LABEL_40:
         this->u32_11C = HouseClass::GetCameoTypeIndex((HouseClass *)v19, *(unsigned __int8 *)(&this->u32_11A)); /*0x47d7fb*/
         CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
-        v27 = this->ptr_44; /*0x47d818*/
+        v27 = (int)(this->ptr_44); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
           goto LABEL_47; /*0x47d81e*/
         if ( FindBuildingByTiberiumType(v27) != -1 ) /*0x47d828*/
@@ -224,7 +224,7 @@ LABEL_40:
           else
           {
             this->u32_EC = House::LookupObject((House *)v19, *(unsigned __int8 *)(&this->u32_11A)); /*0x47d843*/
-            this->ptr_44 = -1; /*0x47d849*/
+            this->ptr_44 = (gamemd::TypeList *)(-1); /*0x47d849*/
             this->u32_11E = 0; /*0x47d850*/
           }
           goto LABEL_48; /*0x47d857*/
@@ -302,7 +302,7 @@ LABEL_48:
               LOWORD(aP1) = *v4 + *inited; /*0x47dae6*/
               HIWORD(aP1) = inited[1] + this->u32_26; /*0x47daf3*/
               *(unsigned int *)v55 = aP1; /*0x47dafc*/
-              v44 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v55); /*0x47db05*/
+              v44 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v55)); /*0x47db05*/
               inited += 2; /*0x47db1b*/
               v44[80] |= 0x10000u; /*0x47db1e*/
             }
@@ -483,7 +483,7 @@ unsigned int * House::GetStartCoords(unsigned int *aP1)
   int v26; // [esp+1Ch] [ebp-14h]
   unsigned int v27[4]; // [esp+20h] [ebp-10h] BYREF
 
-  v3 = *&this->ptr_44; /*0x47fb99*/
+  v3 = (int)(*&this->ptr_44); /*0x47fb99*/
   if ( v3 == -1 ) /*0x47fb9f*/
     goto LABEL_13; /*0x47fb9f*/
   v24 = (unsigned __int8)this->u32_11E; /*0x47fbb5*/
@@ -520,7 +520,7 @@ LABEL_11:
     v23 = v9; /*0x47fcad*/
     goto LABEL_12; /*0x47fcad*/
   }
-  v10 = *&this->ptr_40; /*0x47fc86*/
+  v10 = (gamemd::BuildingClass *)(*&this->ptr_40); /*0x47fc86*/
   v23 = 0; /*0x47fc89*/
   if ( v10 ) /*0x47fc8f*/
     BuildingClass::GetPlacementCoords(v10, (int *)&v23, &v24); /*0x47fc9b*/
@@ -821,7 +821,7 @@ LABEL_73:
         return Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 7) + 105; /*0x4fd911*/
       }
     }
-    v30 = *&this->u32_6C; /*0x4fd88a*/
+    v30 = (int *)(*&this->u32_6C); /*0x4fd88a*/
     while ( 1 ) /*0x4fd88d*/
     {
       v31 = *v30; /*0x4fd88d*/
@@ -851,7 +851,7 @@ void sub_501A20()
   int v1; // edi
   int v2; // esi
 
-  v0 = dword_A8ECC8; /*0x501a21*/
+  v0 = (wchar_t *)(dword_A8ECC8); /*0x501a21*/
   if ( dword_A8ECC8 ) /*0x501a2a*/
   {
     v1 = 0; /*0x501a2c*/
@@ -1028,7 +1028,7 @@ LABEL_24:
       return 0; /*0x50dede*/
     }
   }
-  v15 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v40); /*0x50dcb9*/
+  v15 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v40)); /*0x50dcb9*/
   smudgeTypeIndex_low = SLOWORD(v15->smudgeTypeIndex); /*0x50dcbe*/
   smudgeTypeIndex_high = SHIWORD(v15->smudgeTypeIndex); /*0x50dcc2*/
   v37 = *(unsigned int *)&DataGlobal_87F8EC / 2; /*0x50dcd9*/
@@ -1159,7 +1159,7 @@ int House::LookupObject(int a2, void *a2_2)
 }
 // 0x544C20
 namespace gamemd {
-int House::LoadMapFileData(int a2, char a3)
+int House::LoadMapFileData(int a2, char a3, void *a3_1)
 {
 
   unsigned int *v4; // eax

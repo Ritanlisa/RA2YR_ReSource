@@ -82,19 +82,19 @@ unsigned int * Rect::Set(int aP1, int aP2, int aP3, int aP4)
   this->Y = aP2; /*0x42e420*/
   this->Width = aP3; /*0x42e427*/
   this->Height = aP4; /*0x42e42a*/
-  return &this->X; /*0x42e42d*/
+  return (unsigned int *)(&this->X); /*0x42e42d*/
 }
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
-unsigned int * Rect::Construct(unsigned int *aP1, int aP2, int aP3)
+unsigned int * Rect::Construct(unsigned int *aP1, int aP2, int aP3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   this->X = *aP1; /*0x45a138*/
   this->Y = aP1->Y; /*0x45a141*/
   this->Width = aP2; /*0x45a148*/
   this->Height = aP3; /*0x45a14b*/
-  return &this->X; /*0x45a14e*/
+  return (unsigned int *)(&this->X); /*0x45a14e*/
 
 }
 } // namespace gamemd

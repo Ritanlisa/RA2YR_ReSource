@@ -98,8 +98,8 @@ int Voxel::BuildIndexTable()
     __3_YAXPAX_Z(dword_B1D14C); /*0x748233*/
     dword_B1D14C = 0; /*0x74823b*/
   }
-  result = __2_YAPAXI_Z(0x1FFFCu); /*0x748246*/
-  dword_B1D14C = (void *)result; /*0x748250*/
+  result = (int)(__2_YAPAXI_Z(0x1FFFCu)); /*0x748246*/
+  dword_B1D14C = (unsigned int)((void *)result); /*0x748250*/
   if ( result ) /*0x748255*/
   {
     switch ( (unsigned int)this ) /*0x748264*/
@@ -209,12 +209,12 @@ AbstractClass * Voxel::RenderFrame()
   v3 = dword_B2D820; /*0x754587*/
   if ( dword_B2D820 > 0 ) /*0x75458f*/
   {
-    v4 = &unk_B2D824; /*0x754591*/
+    v4 = (unsigned int *)(&unk_B2D824); /*0x754591*/
     v5 = (char *)&unk_B2D958; /*0x754596*/
     v6 = dword_B2D820; /*0x75459b*/
     do /*0x7545a8*/
     {
-      *v4 = v5; /*0x75459d*/
+      *v4 = (unsigned int)(v5); /*0x75459d*/
       v5 += 136; /*0x75459f*/
       ++v4; /*0x7545a4*/
       --v6; /*0x7545a7*/
@@ -722,7 +722,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
   aP1->__pad_014 = 0; /*0x755de4*/
   if ( v6 ) /*0x755de9*/
     operator delete((void *)(v6)); /*0x755dec*/
-  v7 = a3_2; /*0x755df4*/
+  v7 = (int)(a3_2); /*0x755df4*/
   aP1->ptr_18 = 0; /*0x755dfb*/
   if ( !(*(int (**)(int, int))(a3_2->__pad_01C)(a3_2, 1) ) /*0x755e09*/
     return 0; /*0x755e09*/
@@ -2753,7 +2753,7 @@ int Voxel::SectionProject(int * a2, int a3)
   result = *&this->u32_14C; /*0x76201a*/
   result->u8_28 = *&this->u32_EC; /*0x762026*/
   result->u32_2C = *&this->u32_F0; /*0x762034*/
-  qmemcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762049*/
+  memcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762049*/
   return result; /*0x76204b*/
 
 }
@@ -3336,7 +3336,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   result = *&this->u32_14C; /*0x762a9b*/
   result->u32_18 = *&this->u32_EC; /*0x762aa7*/
   result->u32_1C = *&this->u32_F0; /*0x762ab5*/
-  qmemcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762aca*/
+  memcpy(&this->u32_1D8, (const void *)(*&this->u32_1D4 + 928), 0x18u); /*0x762aca*/
   return result; /*0x762acc*/
 
 }

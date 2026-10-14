@@ -172,7 +172,7 @@ int Dialog::InitializeGameSettings()
 }
 // 0x5D3490
 namespace gamemd {
-int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *aP3, unsigned short *a5, int a6)
+int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *aP3, unsigned short *a5, int a6, void *a6_1)
 {
   int v6; // ebp
   int v7; // ebx
@@ -337,7 +337,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   v8 = (LPARAM)StringCSF; /*0x5f29ba*/
   g_NetworkTestFlag = 0; /*0x5f29bc*/
   v9 = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415); /*0x5f29c3*/
-  MessageBox = CreateMessageBox(v8, (LPARAM)v9, (LONG)&g_NetworkTestFlag); /*0x5f29cc*/
+  MessageBox = (HWND)(CreateMessageBox(v8, (LPARAM)v9, (LONG)&g_NetworkTestFlag)); /*0x5f29cc*/
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
@@ -361,7 +361,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   {
     if ( (unsigned __int8)Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2a82*/
     {
-      v13 = g_ClipboardBuffer; /*0x5f2c72*/
+      v13 = (HWND)(g_ClipboardBuffer); /*0x5f2c72*/
       v6 = 6; /*0x5f2c78*/
       if ( g_ClipboardBuffer ) /*0x5f2c7f*/
       {
@@ -385,7 +385,7 @@ LABEL_35:
             15);
     if ( v11 == -1000 ) /*0x5f2ab9*/
     {
-      v13 = g_ClipboardBuffer; /*0x5f2be6*/
+      v13 = (HWND)(g_ClipboardBuffer); /*0x5f2be6*/
       v6 = 6; /*0x5f2bec*/
       if ( g_ClipboardBuffer ) /*0x5f2bf3*/
         goto LABEL_34; /*0x5f2bf3*/
@@ -742,7 +742,7 @@ LABEL_208:
 }
 // 0x607FD0
 namespace gamemd {
-int Dialog::StopBink()
+int Dialog::StopBink(void *a1)
 {
   int result; // eax
   int v3; // esi
@@ -785,7 +785,7 @@ int Dialog::StopBink()
 }
 // 0x608070
 namespace gamemd {
-AbstractClass * * Dialog::IdleProcess(ObjectClass *a2)
+AbstractClass * * Dialog::IdleProcess(ObjectClass *a2, void *a2_1)
 {
   HWND v2; // ecx
   HWND v3; // ebp
@@ -2120,7 +2120,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
 }
 // 0x6213A0
 namespace gamemd {
-AbstractClass * * Dialog::Resize()
+AbstractClass * * Dialog::Resize(void *a1)
 {
   LONG result; // eax
   int SystemMetrics; // esi
@@ -2657,7 +2657,7 @@ AbstractClass * * Dialog::GrowBuffer()
 }
 // 0x624CA0
 namespace gamemd {
-AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
+AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block, void *a3)
 {
 
   int v4; // eax
@@ -2722,7 +2722,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
     v37 = Block->__pad_3C; /*0x624d3c*/
     if ( !v11 ) /*0x624d40*/
     {
-      qmemcpy(Block, v10, 0x200u); /*0x624d4f*/
+      memcpy(Block, v10, 0x200u); /*0x624d4f*/
       Block->__pad_3C = v37; /*0x624d55*/
       Block->DiskLaserClass_field_0x28 = Blocka; /*0x624d5c*/
       Block->q034 = v40; /*0x624d5f*/
@@ -2828,7 +2828,7 @@ AbstractClass * * Dialog::BindGadgetData(int *a2, char *Block)
       v41 = Block->__pad_3C; /*0x624f28*/
       if ( !v11 ) /*0x624f2c*/
       {
-        qmemcpy(Block, v32 + 1, 0x200u); /*0x624f37*/
+        memcpy(Block, v32 + 1, 0x200u); /*0x624f37*/
         Block->q034 = v35; /*0x624f3d*/
         Block->DiskLaserClass_field_0x28 = Blockc; /*0x624f40*/
         Block->__pad_3C = v41; /*0x624f47*/
@@ -3027,7 +3027,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
 }
 // 0x775940
 namespace gamemd {
-int Dialog::FindByHandle()
+int Dialog::FindByHandle(void *a1)
 {
   int v1; // eax
   Dialog **i; // edx
@@ -3173,7 +3173,7 @@ HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectC
 
 // 0x5E2790
 namespace gamemd {
-HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2)
+HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2, void *a4)
 {
   int result; // eax
   HWND Current; // esi

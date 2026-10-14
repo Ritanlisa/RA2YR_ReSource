@@ -18,7 +18,7 @@ struct VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass {
 // --- flat members (END) ---
     VectorClass_flat *  QueryInterface(char a2);  // 0x54A7B0
     DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x54A800
-    int Get(void *a1_1, void *a1 = 0);  // 0x54A1F0
+    int Get(int a2, void *a2_2);  // 0x54A1F0
     char  LoadTypeData(int a2);  // 0x54A4B0
     char  Release(int a2, unsigned int * a3);  // 0x54A4F0
     int  GetSize(unsigned int * a2);  // 0x54A5D0

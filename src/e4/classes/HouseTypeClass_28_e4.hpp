@@ -16,7 +16,7 @@ struct HouseTypeClass_28 {
     TypeList_flat *  QueryInterface(char a2);  // 0x512A90
     char  AddRef(int a2);  // 0x5133E0
     char  Release(int a2, unsigned int * a3);  // 0x513610
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x513710
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x513710
     unsigned int  Write(int a2);  // 0x5129C0
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)

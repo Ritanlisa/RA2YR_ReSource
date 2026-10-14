@@ -454,7 +454,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v6 = (int16_t)v12 + ((*((signed short *)(((unsigned char *)&(v12)) + 2))) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {
-      dword_ABDC74 = (unsigned int *)(v12);
+      dword_ABDC74 = (unsigned int)((unsigned int *)(v12));
       NeighbourContent = (unsigned int *)(unk_ABDC50); /*0x5865b4*/
     }
   }

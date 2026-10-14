@@ -30,7 +30,7 @@ struct E4Recv_431BC0 {
     void* attachedBomb;  // 0x0 (no offset truth)
     void* owningHouseIndex;  // 0x0 (no offset truth)
     void* AbstractClass;  // 0x0 (no offset truth)
-    int  sub_431BC0(int a2, int a3);  // 0x431BC0
+    int sub_431BC0(int a2, size_t a3);  // 0x431BC0
 
     unsigned int u32_C;  // X10 supply (member_lookup)
 };

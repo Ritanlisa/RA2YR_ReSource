@@ -76,9 +76,9 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     v31 = 0; /*0x4cc1da*/
     v32 = 0; /*0x4cc1de*/
   }
-  v12 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v25); /*0x4cc216*/
+  v12 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v25)); /*0x4cc216*/
   v28 = v12; /*0x4cc21e*/
-  v27 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v26); /*0x4cc229*/
+  v27 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v26)); /*0x4cc229*/
   v13 = v12; /*0x4cc22f*/
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
@@ -156,7 +156,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   (*(((unsigned short *)&(v41)) + 1)) = a5 / 256; /*0x4cc3a0*/
   v44 = a1; /*0x4cc3a9*/
   v43 = v41; /*0x4cc3ad*/
-  v10 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43); /*0x4cc3b6*/
+  v10 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43)); /*0x4cc3b6*/
   v42 = v10; /*0x4cc3bc*/
   if ( *(unsigned char *)(a7 + 662) ) /*0x4cc3c0*/
   {
@@ -214,7 +214,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
         if ( v31 > v30 ) /*0x4cc562*/
         {
   LABEL_22:
-          v33 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43); /*0x4cc574*/
+          v33 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v43)); /*0x4cc574*/
           if ( *(unsigned char *)(a7 + 662) ) /*0x4cc589*/
           {
             v34 = Cell::GetSlopeIndex(a3); /*0x4cc59e*/

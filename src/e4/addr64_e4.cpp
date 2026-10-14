@@ -92,7 +92,7 @@ void * E4Recv_645B60::sub_645B60()
   char **v3; // esi
 
   v2 = 0; /*0x645b65*/
-  v3 = off_7F0248; /*0x645b67*/
+  v3 = (char **)(off_7F0248); /*0x645b67*/
   while ( _strcmpi((char *)this, *v3) ) /*0x645b7a*/
   {
     ++v3; /*0x645b7c*/
@@ -100,7 +100,7 @@ void * E4Recv_645B60::sub_645B60()
     if ( (int)v3 >= (int)&flt_7F0278 ) /*0x645b86*/
       return 0; /*0x645b8d*/
   }
-  return v2; /*0x645b88*/
+  return (void *)(v2); /*0x645b88*/
 }
 }
 // 0x645D60
@@ -138,9 +138,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
   vtable0 = this->AbstractClass; /*0x645d6f*/
-  vtable1 = this->M4; /*0x645d76*/
-  vtable2 = this->M8; /*0x645d7d*/
-  vtable3 = this->M12; /*0x645d88*/
+  vtable1 = (void *)(this->M4); /*0x645d76*/
+  vtable2 = (void *)(this->M8); /*0x645d7d*/
+  vtable3 = (void *)(this->M12); /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply(v30->__pad_000.__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
   v5 = *&this->M12; /*0x645da3*/
@@ -515,7 +515,7 @@ void RunNetworkGameLoop()
   }
   else
   {
-    v1 = (gamemd::IPXManagerClass *)(dword_A8DA40);
+    v1 = (int)((gamemd::IPXManagerClass *)(dword_A8DA40));
     v2 = &unk_A8D812; /*0x648378*/
     v13 = &unk_A8D812; /*0x64837d*/
     v3 = (gamemd::IPXManagerClass *)(&unk_A8E9C0); /*0x648381*/
@@ -834,10 +834,10 @@ LABEL_9:
     int v168 = 39;
     char * v16 = ToWideStringChar(**&HouseClass_Player->u32_274B0);
     strncpy( (char *)(Destination), (const char *)(v16), (size_t)((IUnknown *)0x14));
-    IDA_HIWORD(v17) = *&HouseClass_Player->u32_27968;
+    (*(((unsigned short *)&(v17)) + 1)) = *&HouseClass_Player->u32_27968;
     int v170 = *(unsigned int *)(HouseClass_Player.field_0 + 48);
     var69C = *&HouseClass_Player->u32_27960;
-    IDA_LOWORD(v17) = *&HouseClass_Player->u32_279C0;
+    (*((unsigned short *)&(v17))) = *&HouseClass_Player->u32_279C0;
     v127 = *&HouseClass_Player->u32_27980;
     v126 = *&HouseClass_Player->u32_27970;
     ((Network *)(&var69C))->SetPort((int16_t)(v17));
@@ -955,7 +955,7 @@ LABEL_38:
       char * v31 = v31;
       v31 += 24;
       --v30;
-      qmemcpy( (void *)(v31), (const void *)(v33), 0x18u);
+      memcpy( (void *)(v31), (const void *)(v33), 0x18u);
     }
     while ( v30 );
     v29 = v94 == 0;
@@ -2042,15 +2042,15 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     v30 = RA2_OPNEW(*(unsigned int *)(v29 + 11)); /*0x64a467*/
     v31 = *(unsigned int *)(v29 + 11); /*0x64a46c*/
     *(unsigned int *)(v29 + 7) = (unsigned int)v30; /*0x64a472*/
-    qmemcpy( (void *)(v30), (const void *)(v6 + 111), v31); /*0x64a47f*/
+    memcpy( (void *)(v30), (const void *)(v6 + 111), v31); /*0x64a47f*/
     v32 = *(unsigned int *)(v29 + 11); /*0x64a488*/
     v6 = a2; /*0x64a48f*/
     v26 += v32; /*0x64a493*/
     v35 -= v32; /*0x64a497*/
-    qmemcpy( (void *)(&((unsigned char *)&byte_8B4204)[111 * dword_8B4200]), (const void *)(v29), 0x6Fu); /*0x64a4c0*/
+    memcpy( (void *)(&((unsigned char *)&byte_8B4204)[111 * dword_8B4200]), (const void *)(v29), 0x6Fu); /*0x64a4c0*/
   if ( dword_8B41F8 < 0x4000 ) /*0x64a4a5*/
-    qmemcpy( (void *)(&((unsigned char *)&byte_8B4204)[111 * dword_8B4200]), (const void *)(v29), 0x6Fu); /*0x64a4c0*/
-    qmemcpy( (void *)(((unsigned char *)&byte_8B4204)[111 * dword_8B4200]), (const void *)(v29), 0x6Fu); /*0x64a4c0*/
+    memcpy( (void *)(&((unsigned char *)&byte_8B4204)[111 * dword_8B4200]), (const void *)(v29), 0x6Fu); /*0x64a4c0*/
+    memcpy( (void *)(((unsigned char *)&byte_8B4204)[111 * dword_8B4200]), (const void *)(v29), 0x6Fu); /*0x64a4c0*/
     (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64a4d5*/
     (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64a4d5*/
     dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64a4ee*/
@@ -2127,9 +2127,9 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   }
   if ( v3 == 120 ) /*0x64a737*/
   {
-    if ( (unsigned char)dword_A8D110 && (&dword_A8B238)[0] == 3 || IDA_BYTE1(dword_A8D110) && (&dword_A8B238)[0] == 4 ) /*0x64a759*/
+    if ( (unsigned char)dword_A8D110 && (&dword_A8B238)[0] == 3 || (((unsigned char *)&(dword_A8D110))[1]) && (&dword_A8B238)[0] == 4 ) /*0x64a759*/
     {
-      IDA_LOBYTE(a1) = a1->q064; /*0x64a75b*/
+      (*((unsigned char *)&(a1))) = a1->q064; /*0x64a75b*/
       PlayTauntClass(a1); /*0x64a75e*/
       return 4; /*0x64a76a*/
     }

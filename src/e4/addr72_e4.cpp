@@ -115,7 +115,7 @@ void * sub_722C40()
   unsigned int *v10; // ecx
   int v11; // [esp+8h] [ebp-8h]
 
-  result = dword_A8B230; /*0x722c40*/
+  result = (void *)(dword_A8B230); /*0x722c40*/
   if ( (((unsigned char *)&(dword_A8B230[374].vfptr3))[2]) ) /*0x722c48*/
   {
     result = (void *)g_BuildingLoadQueue_Array.BarrelAnimData[0]; /*0x722c57*/
@@ -201,7 +201,7 @@ AbstractClass * * sub_725C70()
       result = (*(int (__stdcall **)(unsigned int *))(*v8 + 8))(v8); /*0x725ce8*/
       if ( result ) /*0x725ced*/
       {
-        v4 = (int)(__RTtypeid(v8));
+        v4 = (void *)((int)(__RTtypeid(v8)));
         if ( __8type_info_QBEHABV0__Z((const char *)0, v4) /*0x725d61*/
           || (v5 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)0, v5))
           || (v6 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)0, v6))
@@ -237,7 +237,7 @@ void sub_728200()
   v1 = 0; /*0x728209*/
   for ( i = -1; v1 < v0; ++v1 ) /*0x728215*/
   {
-    v2 = (unsigned short *)((int16_t *)*((unsigned int *)dword_8B413C + v1));
+    v2 = (int16_t *)((unsigned short *)((int16_t *)*((unsigned int *)dword_8B413C + v1)));
     v3 = (unsigned short *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v2 + 18)); /*0x72822f*/
     if ( InfantryClass::IsInBounds((gamemd::InfantryClass *)((int)v3)) ) /*0x728233*/
     {
@@ -275,11 +275,11 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   int v19; // [esp+78h] [ebp-8h]
 
   v3 = (int *)(a2);
-  CCFileClass::Construct(&v17, Source); /*0x72adf0*/
+  CCFileClass::Construct((char *)(&v17), Source); /*0x72adf0*/
   v4 = (char *)CCFileClass::ReadEntireFile(&v17); /*0x72adfe*/
   if ( v4 ) /*0x72ae06*/
   {
-    v5 = (int)(operator new(0x300u));
+    v5 = (void *)((int)(operator new(0x300u)));
     if ( v5 ) /*0x72ae1b*/
     {
       v6 = (unsigned char *)(v5 + 2); /*0x72ae1d*/
@@ -298,7 +298,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     {
       v5 = 0; /*0x72ae38*/
     }
-    *v3 = (unsigned char *)(v5);
+    *v3 = (int)((unsigned char *)(v5));
     v8 = &v4->u8_1; /*0x72ae3e*/
     v9 = 0; /*0x72ae45*/
     while ( 1 ) /*0x72ae5d*/
@@ -325,7 +325,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   }
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x72aee1) */
   v19 = 0; /*0x72aee9*/
-  Vector::Clear((int)v18); /*0x72aef1*/
+  Vector::Clear((void *)((int)v18)); /*0x72aef1*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x72aefa) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x72af07*/
 }
@@ -411,48 +411,29 @@ int * * LoadingScreen_InitResources()
   {
   LABEL_3:
     AssetClass::ReleaseAndReload((AssetClass *)v1); /*0x72e071*/
-    *(unsigned int *)&DataGlobal_B0FAC4 = LoadFileSHP( /*0x72e091*/
-                                                             off_844CD4,
-                                                             (bool *)&DataGlobal_B0FC95);
+        *(unsigned int *)&DataGlobal_B0FAC4 = LoadFileSHP((char *)(/*0x72e091*/                                                              off_844CD4),                                                              (bool *)&DataGlobal_B0FC95);
     *(unsigned int *)&DataGlobal_B0F9DC = LoadFileSHP( /*0x72e0a6*/
                                                              off_844CD8,
                                                              (bool *)&DataGlobal_B0FC96);
-    *(unsigned int *)&DataGlobal_B0FAC0 = LoadFileSHP( /*0x72e0bb*/
-                                                             off_844CDC,
-                                                             (bool *)&DataGlobal_B0FC97);
+        *(unsigned int *)&DataGlobal_B0FAC0 = LoadFileSHP((char *)(/*0x72e0bb*/                                                              off_844CDC),                                                              (bool *)&DataGlobal_B0FC97);
     *(unsigned int *)&g_DialogControlPool = LoadFileSHP( /*0x72e0d0*/
                                                              off_844CE0,
                                                              (bool *)&DataGlobal_B0FC98);
-    *(unsigned int *)&DataGlobal_B0FA04 = LoadFileSHP( /*0x72e0e5*/
-                                                             off_844CE4,
-                                                             (bool *)&DataGlobal_B0FC99);
+        *(unsigned int *)&DataGlobal_B0FA04 = LoadFileSHP((char *)(/*0x72e0e5*/                                                              off_844CE4),                                                              (bool *)&DataGlobal_B0FC99);
     *(unsigned int *)&DataGlobal_B0FAF8 = LoadFileSHP( /*0x72e0fa*/
                                                              off_844CE8,
                                                              (bool *)&DataGlobal_B0FC9A);
-    *(unsigned int *)&DataGlobal_B0FA74 = LoadFileSHP( /*0x72e10f*/
-                                                             off_844CEC,
-                                                             (bool *)&DataGlobal_B0FC9B);
+        *(unsigned int *)&DataGlobal_B0FA74 = LoadFileSHP((char *)(/*0x72e10f*/                                                              off_844CEC),                                                              (bool *)&DataGlobal_B0FC9B);
     *(unsigned int *)&DataGlobal_B0FA38 = LoadFileSHP( /*0x72e124*/
                                                              off_844CF0,
                                                              (bool *)&DataGlobal_B0FC9C);
-    *(unsigned int *)&DataGlobal_B0FAE8 = LoadFileSHP( /*0x72e139*/
-                                                             off_844CF4,
-                                                             (bool *)&DataGlobal_B0FC9D);
+        *(unsigned int *)&DataGlobal_B0FAE8 = LoadFileSHP((char *)(/*0x72e139*/                                                              off_844CF4),                                                              (bool *)&DataGlobal_B0FC9D);
     *(unsigned int *)&DataGlobal_B0FA54 = LoadFileSHP( /*0x72e153*/
                                                              off_844CF8,
                                                              (bool *)&DataGlobal_B0FC9E);
-    LoadPaletteSimple( /*0x72e158*/
-      off_844BE4,
-      (int *)&DataGlobal_B0FBC8,
-      &DataGlobal_B0FBCC);
-    LoadPaletteSimple( /*0x72e16d*/
-      off_844BE8,
-      (int *)&DataGlobal_B0FBD0,
-      &DataGlobal_B0FBD4);
-    LoadPaletteSimple( /*0x72e182*/
-      off_844BEC,
-      (int *)&DataGlobal_B0FBD8,
-      &DataGlobal_B0FBDC);
+        LoadPaletteSimple((char *)(/*0x72e158*/       off_844BE4),       (int *)&DataGlobal_B0FBC8,       &DataGlobal_B0FBCC);
+        LoadPaletteSimple((char *)(/*0x72e16d*/       off_844BE8),       (int *)&DataGlobal_B0FBD0,       &DataGlobal_B0FBD4);
+        LoadPaletteSimple((char *)(/*0x72e182*/       off_844BEC),       (int *)&DataGlobal_B0FBD8,       &DataGlobal_B0FBDC);
     result = (uint8_t)SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e193*/
     DataGlobal_B0FBE0 = 1; /*0x72e198*/
   }
@@ -505,7 +486,7 @@ int DrawScoreScreenStats(ConvertClass * aP0, int a2)
     v19 = v5; /*0x72e377*/
     v20 = v6; /*0x72e37b*/
     aP0->vt_slot_16(&v17, a2, 0); /*0x72e37f*/
-    v10 = *aP0; /*0x72e382*/
+    v10 = (int)(*aP0); /*0x72e382*/
     v20 = 600; /*0x72e38d*/
     v17 = v15; /*0x72e397*/
     v18 = v6; /*0x72e39f*/
@@ -514,22 +495,22 @@ int DrawScoreScreenStats(ConvertClass * aP0, int a2)
     v19 = v5; /*0x72e3af*/
     v17 = v15; /*0x72e3bb*/
     v20 = 600; /*0x72e3c5*/
-    v11 = *aP0; /*0x72e3c9*/
+    v11 = (int)(*aP0); /*0x72e3c9*/
     v18 = v16; /*0x72e3cf*/
     aP0->vt_slot_16(&v17, a2, 0); /*0x72e3d3*/
     v19 = 800; /*0x72e3e5*/
-    v12 = *aP0; /*0x72e3e9*/
+    v12 = (int)(*aP0); /*0x72e3e9*/
     v17 = v5; /*0x72e3ef*/
     v18 = v16; /*0x72e3f3*/
     v20 = v6; /*0x72e3f7*/
     aP0->vt_slot_16(&v17, a2, 0); /*0x72e3fb*/
     v17 = 0; /*0x72e40a*/
-    v13 = *aP0; /*0x72e40e*/
+    v13 = (int)(*aP0); /*0x72e40e*/
     v18 = v16; /*0x72e414*/
     v19 = v5; /*0x72e418*/
     v20 = v6; /*0x72e41c*/
     aP0->vt_slot_16(&v17, a2, 0); /*0x72e420*/
-    v14 = *aP0; /*0x72e423*/
+    v14 = (int)(*aP0); /*0x72e423*/
     v17 = 0; /*0x72e42c*/
     v20 = 600; /*0x72e435*/
     v18 = v6; /*0x72e43d*/
@@ -559,18 +540,9 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
   {
     AssetClass::ReleaseAndReload(v11); /*0x72e462*/
     Render_Render_72EB50(); /*0x72e467*/
-    LoadPaletteSimple( /*0x72e47c*/
-      off_844BE4,
-      (int *)&DataGlobal_B0FBC8,
-      &DataGlobal_B0FBCC);
-    LoadPaletteSimple( /*0x72e491*/
-      off_844BE8,
-      (int *)&DataGlobal_B0FBD0,
-      &DataGlobal_B0FBD4);
-    LoadPaletteSimple( /*0x72e4a6*/
-      off_844BEC,
-      (int *)&DataGlobal_B0FBD8,
-      &DataGlobal_B0FBDC);
+        LoadPaletteSimple((char *)(/*0x72e47c*/       off_844BE4),       (int *)&DataGlobal_B0FBC8,       &DataGlobal_B0FBCC);
+        LoadPaletteSimple((char *)(/*0x72e491*/       off_844BE8),       (int *)&DataGlobal_B0FBD0,       &DataGlobal_B0FBD4);
+        LoadPaletteSimple((char *)(/*0x72e4a6*/       off_844BEC),       (int *)&DataGlobal_B0FBD8,       &DataGlobal_B0FBDC);
     SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e4b7*/
     DataGlobal_B0FBE0 = 1; /*0x72e4bc*/
   }
@@ -799,7 +771,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
     *v5 = v35; /*0x72ed2c*/
     v5[2] = v3; /*0x72ed2e*/
     v5[3] = v4; /*0x72ed31*/
-    dword_B0FC1C = v5; /*0x72ed34*/
+    dword_B0FC1C = (unsigned int)(v5); /*0x72ed34*/
   }
   else
   {
@@ -808,28 +780,28 @@ int * * MouseClass_SetupResources(int a1, int a2)
   v6 = *((int16_t *)dword_B0FAF8 + 1); /*0x72ed4c*/
   v7 = *((int16_t *)dword_B0FAF8 + 2); /*0x72ed50*/
   v8 = v34 - v6; /*0x72ed54*/
-  v9 = operator new(0x10u); /*0x72ed56*/
+  v9 = (unsigned int *)(operator new(0x10u)); /*0x72ed56*/
   if ( v9 ) /*0x72ed60*/
   {
     *v9 = v8; /*0x72ed62*/
     v9[1] = v2; /*0x72ed64*/
     v9[2] = v6; /*0x72ed67*/
     v9[3] = v7; /*0x72ed6a*/
-    dword_B0FC20 = v9; /*0x72ed6d*/
+    dword_B0FC20 = (unsigned int)(v9); /*0x72ed6d*/
   }
   else
   {
     dword_B0FC20 = 0; /*0x72ed74*/
   }
   v10 = *((int16_t *)dword_B0FAC0 + 2); /*0x72ed86*/
-  v11 = operator new(0x10u); /*0x72ed8a*/
+  v11 = (unsigned int *)(operator new(0x10u)); /*0x72ed8a*/
   if ( v11 ) /*0x72ed94*/
   {
     *v11 = v8; /*0x72ed96*/
     v11[1] = v2; /*0x72ed98*/
     v11[2] = v6; /*0x72ed9b*/
     v11[3] = v10; /*0x72ed9e*/
-    dword_B0FC18 = v11; /*0x72eda1*/
+    dword_B0FC18 = (unsigned int)(v11); /*0x72eda1*/
   }
   else
   {
@@ -837,7 +809,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   }
   v12 = v2 + *((unsigned int *)dword_B0FC20 + 3); /*0x72edc2*/
   v13 = *((int16_t *)dword_B0FA74 + 2); /*0x72edc4*/
-  v14 = operator new(0x10u); /*0x72edc8*/
+  v14 = (unsigned int *)(operator new(0x10u)); /*0x72edc8*/
   if ( v14 ) /*0x72edd2*/
   {
     *v14 = v8; /*0x72edd4*/
@@ -849,7 +821,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   {
     v14 = 0; /*0x72ede1*/
   }
-  dword_B0FC24 = v14; /*0x72ede9*/
+  dword_B0FC24 = (unsigned int)(v14); /*0x72ede9*/
   v15 = v14[1]; /*0x72edf1*/
   v16 = *((int16_t *)dword_B0FAC4 + 1); /*0x72edf4*/
   v17 = *((int16_t *)dword_B0FAC4 + 2); /*0x72edf8*/
@@ -861,7 +833,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
     v19->vtable2 = v15; /*0x72ee12*/
     v19->vtable3 = v16; /*0x72ee15*/
     v19->vtable4 = v17; /*0x72ee18*/
-    dword_B0FC10 = v19; /*0x72ee1b*/
+    dword_B0FC10 = (unsigned int)(v19); /*0x72ee1b*/
   }
   else
   {
@@ -870,14 +842,14 @@ int * * MouseClass_SetupResources(int a1, int a2)
   v20 = *((int16_t *)dword_B0F9DC + 1); /*0x72ee33*/
   v21 = *((int16_t *)dword_B0F9DC + 2); /*0x72ee37*/
   v22 = dword_B0FC24->vtable2 + dword_B0FC24->vtable4 - v21; /*0x72ee48*/
-  v23 = operator new(0x10u); /*0x72ee4a*/
+  v23 = (unsigned int *)(operator new(0x10u)); /*0x72ee4a*/
   if ( v23 ) /*0x72ee54*/
   {
     v23[1] = v22; /*0x72ee5a*/
     v23[2] = v20; /*0x72ee5f*/
     *v23 = v34 - v20; /*0x72ee62*/
     v23[3] = v21; /*0x72ee64*/
-    dword_B0FC14 = v23; /*0x72ee67*/
+    dword_B0FC14 = (unsigned int)(v23); /*0x72ee67*/
   }
   else
   {
@@ -888,14 +860,14 @@ int * * MouseClass_SetupResources(int a1, int a2)
   v25 = v24 + *((unsigned int *)dword_B0FC20 + 3); /*0x72eeab*/
   v26 = *((int16_t *)dword_B0FA38 + 1); /*0x72eead*/
   v27 = v24 + dword_B0FC24->vtable2; /*0x72eeb1*/
-  v28 = operator new(0x10u); /*0x72eeb3*/
+  v28 = (unsigned int *)(operator new(0x10u)); /*0x72eeb3*/
   if ( v28 ) /*0x72eebd*/
   {
     v28[1] = v27; /*0x72eec3*/
     *v28 = v34 - v26; /*0x72eeca*/
     v28[2] = v26; /*0x72eecc*/
     v28[3] = v36 - v25; /*0x72eecf*/
-    dword_B0FC28 = v28; /*0x72eed2*/
+    dword_B0FC28 = (unsigned int)(v28); /*0x72eed2*/
   }
   else
   {
@@ -916,13 +888,13 @@ int * * MouseClass_SetupResources(int a1, int a2)
     *result = v35; /*0x72ef27*/
     result[3] = v30; /*0x72ef2f*/
     result[1] = v37 - v30; /*0x72ef34*/
-    dword_B0FC2C = result; /*0x72ef38*/
+    dword_B0FC2C = (unsigned int)(result); /*0x72ef38*/
   }
   else
   {
     dword_B0FC2C = 0; /*0x72ef45*/
   }
-  return result; /*0x72ef32*/
+  return (int **)(result); /*0x72ef32*/
 }
 }
 // 0x72F540
@@ -990,10 +962,10 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
   v8 = *(unsigned int *)dword_B0FC50; /*0x72f7ec*/
   i = *((unsigned int *)dword_B0FC50 + 1); /*0x72f7f3*/
   DrawToSurfaceSHP(a1, dword_B0FBE8, (int)dword_B0FA48, 0, &v8, a2, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f820*/
-  v10[0] = *a2; /*0x72f829*/
-  v10[1] = a2[1]; /*0x72f830*/
-  v11 = a2[2]; /*0x72f837*/
-  v6 = a2[3]; /*0x72f841*/
+  v10[0] = (int)(*a2); /*0x72f829*/
+  v10[1] = (int)(a2[1]); /*0x72f830*/
+  v11 = (int)(a2[2]); /*0x72f837*/
+  v6 = (int)(a2[3]); /*0x72f841*/
   v13 = dword_886FB0; /*0x72f849*/
   v12 = v6; /*0x72f857*/
   v11 = dword_886FB8 - 168; /*0x72f861*/

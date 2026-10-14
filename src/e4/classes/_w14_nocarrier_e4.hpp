@@ -186,7 +186,6 @@ public:
 // === EditClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class EditClass {
 public:
-    void* vtable1;  // 0x0
     void  method_4B53E0(int a2);  // 0x4B53E0
     COM Stub();  // 0x4B55A0 vt+140 sig=csp
     void  method_4C2FC0(int a2, void * String, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x4C2FC0
@@ -344,7 +343,6 @@ public:
 // === MovieHandle  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
 class MovieHandle {
 public:
-    void* vtable1;  // 0x0
     void method_5C0630();  // 0x5C0630 sig=csp
 };
 

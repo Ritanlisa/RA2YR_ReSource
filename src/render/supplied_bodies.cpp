@@ -3563,7 +3563,7 @@ void Voxel_Section::Draw()
     v83 = aPsychedelic; /*0x75d8ea*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d8ef*/
     _ESI->Airstrike = ((_ESI->Airstrike) & 0xFFFFFF00u) | ((unsigned int)(v28) & 0xFFu); /*0x75d8f0*/
-    IDA_BYTE1(_ESI->Airstrike) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
+    (((unsigned char *)&(_ESI->Airstrike))[1]) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
                                (int *)a2,
                                p_WarheadTypeClass_field_0x24,
                                (uint8_t *)((unsigned int)(v83)),
@@ -3584,7 +3584,7 @@ void Voxel_Section::Draw()
     v83 = aCulling; /*0x75d938*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d93d*/
     _ESI->Paralyzes = v31; /*0x75d93e*/
-    IDA_LOBYTE(_ESI->Culling) = INIClass::ReadBool_Overwrite( /*0x75d949*/
+    (*((unsigned char *)&(_ESI->Culling))) = INIClass::ReadBool_Overwrite( /*0x75d949*/
                               (int *)a2,
                               p_WarheadTypeClass_field_0x24,
                               (uint8_t *)((unsigned int)(v83)),
@@ -3613,7 +3613,7 @@ void Voxel_Section::Draw()
     v83 = aPsychicdamage; /*0x75d9c1*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75d9c6*/
     _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v38) & 0xFFu) << 8); /*0x75d9c7*/
-    IDA_LOBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
+    (*((unsigned char *)&(_ESI->PsychicDamage))) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
                                     (int *)a2,
                                     p_WarheadTypeClass_field_0x24,
                                     (uint8_t *)((unsigned int)(v83)),
@@ -3630,7 +3630,7 @@ void Voxel_Section::Draw()
     v83 = aVeinhole; /*0x75da0f*/
     p_WarheadTypeClass_field_0x24 = &_ESI->q024; /*0x75da14*/
     _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFF00FFFFu) | (((unsigned int)(v41) & 0xFFu) << 16); /*0x75da15*/
-    IDA_HIBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75da20*/
+    (*(((unsigned char *)&(_ESI->PsychicDamage)) + (sizeof(_ESI->PsychicDamage) - 1))) = INIClass::ReadBool_Overwrite( /*0x75da20*/
                                     (int *)a2,
                                     p_WarheadTypeClass_field_0x24,
                                     (uint8_t *)((unsigned int)(v83)),

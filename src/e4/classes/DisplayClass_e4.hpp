@@ -42,11 +42,11 @@ struct DisplayClass {
     unsigned int Crates;  // 0x148
     unsigned int MapCoordBounds;  // 0x292
 // --- flat members (END) ---
-    DisplayClass * Read(char * Block, char a2, void *a1 = 0);
+    DisplayClass * Read(char * Block, char a2, void *a3 = 0);
     HWND Render(void *a1, void *a2, void *a3 = 0, void *a4 = 0);
-    char UpdateCellPassability(int16_t *a2, int a3);  // G57w10-S raw 0x004A9890 IUnknown 占位清除
-    char ProcessCellReveal(int16_t *a2, int a3);  // G57w10-S raw 0x004A9DD0 IUnknown 占位清除
-    int SetCoordVisible(DisplayClass *aP1, unsigned int *a2, char a3);  // G57w10-S raw 0x004A9840 IUnknown 占位清除
+    char UpdateCellPassability(int16_t *a1, int aP2);  // G57w10-S raw 0x004A9890 IUnknown 占位清除
+    char ProcessCellReveal(int16_t *aP1, int aP2);  // G57w10-S raw 0x004A9DD0 IUnknown 占位清除
+    int SetCoordVisible(DisplayClass *aP0, unsigned int *aP1, char a3);  // G57w10-S raw 0x004A9840 IUnknown 占位清除
     char ddtor(void *a1);
     int * processDisplayMode(char a2);
     int AdvanceFrameCounter(void *a1 = 0);
@@ -59,7 +59,7 @@ struct DisplayClass {
     int ProcessTacticalMouseInput(char a2, int a3, int a4);
     int ReadFromBuffer(void * a1, signed int Size);
     int RenderStatusText(IUnknown * aP1, char a3);
-    bool RevealFogCell(int16_t *a2, int a3);  // G57w10-S raw 0x004AA050 IUnknown 占位清除
+    bool RevealFogCell(int16_t *a1, int aP2);  // G57w10-S raw 0x004AA050 IUnknown 占位清除
     int ScrollTacticalView(int aP1, int aP2);  // G57w10-S raw 0x006D8530 IUnknown 占位清除
     int SetSize();
     int SetSurface(unsigned int * a1);
@@ -67,8 +67,7 @@ struct DisplayClass {
     int checkScreenBounds(int a2);
     unsigned int * loc_4AEB50(MouseClass * aP1);
     unsigned int * updateRenderState(char a2);
-    void * Draw(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
-    void Update(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
+    void * Draw(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     void Update(PowerClass * aP1, int a3, void *a3_2, void *a4);
     char __pad_10[32];  // 0x10 (ml)
     char __pad_11B4[28];  // 0x11B4 (ml)

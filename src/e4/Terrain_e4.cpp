@@ -587,7 +587,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
   int v103; // [esp+5Ch] [ebp-8h]
   int v104; // [esp+60h] [ebp-4h]
 
-  v1 = a1_1; /*0x56c515*/
+  v1 = (gamemd::Terrain *)(a1_1); /*0x56c515*/
   v81 = -1; /*0x56c51a*/
   v95 = -1; /*0x56c51e*/
   Terrain_field_0x14 = a1_1->Terrain_field_0x14; /*0x56c529*/
@@ -600,7 +600,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
   v103 = 0; /*0x56c54a*/
   v104 = 300; /*0x56c54e*/
   v5 = Terrain_field_0x14[2]; /*0x56c556*/
-  v98 = a1_1; /*0x56c55c*/
+  v98 = (gamemd::Terrain *)(a1_1); /*0x56c55c*/
   v87 = (unsigned __int8 *)v4; /*0x56c560*/
   if ( v5 > 0 ) /*0x56c564*/
   {
@@ -799,7 +799,7 @@ LABEL_48:
     v49 = v40; /*0x56c882*/
     do /*0x56c8aa*/
     {
-      *v48++ = __2_YAPAXI_Z(2 * *v49++); /*0x56c891*/
+      *v48++ = (int)(__2_YAPAXI_Z(2 * *v49++)); /*0x56c891*/
       ++v89; /*0x56c8a6*/
     }
     while ( (int)v89 < *(unsigned int *)&v1->__pad_44[8] ); /*0x56c8aa*/
@@ -856,8 +856,8 @@ LABEL_48:
     ++v60; /*0x56c978*/
   }
   v91 = (unsigned short *)__2_YAPAXI_Z(2 * *(unsigned int *)&v1->__pad_44[8]); /*0x56c993*/
-  v61 = dword_82A594; /*0x56c997*/
-  v86 = dword_82A594; /*0x56c9a2*/
+  v61 = (int *)(dword_82A594); /*0x56c997*/
+  v86 = (int *)(dword_82A594); /*0x56c9a2*/
   v83 = v1->__pad_18; /*0x56c9a6*/
   do /*0x56cb01*/
   {
@@ -953,13 +953,13 @@ LABEL_48:
   v99 = &vt_VectorClass; /*0x56cb5a*/
   if ( v100 && BYTE1(v102) ) /*0x56cb6b*/
     __3_YAXPAX_Z(v100); /*0x56cb6e*/
-  return v81; /*0x56cb57*/
+  return (gamemd::AbstractClass **)(v81); /*0x56cb57*/
 
 }
 }
 // 0x56CB90
 namespace gamemd {
-int Terrain::FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3)
+int Terrain::FloodFillConnectivity(uint8_t *a1, int aP2, unsigned int *aP3, void *a4)
 {
   uint8_t *v4; // ebx
   int v5; // edi
@@ -1417,7 +1417,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
       v6 = v2[1] + v5; /*0x570075*/
       LOWORD(aP1) = *v2 + v4; /*0x570079*/
       HIWORD(aP1) = v6; /*0x57007e*/
-      *(unsigned int *)v76 = aP1; /*0x570091*/
+      *(unsigned int *)v76 = (unsigned int)(aP1); /*0x570091*/
       v7 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v76) + 17); /*0x57009a*/
       if ( v7 >= 74 && v7 <= 101 ) /*0x5700a5*/
       {
@@ -1450,7 +1450,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
     do /*0x57024e*/
     {
       v13 = (__int16 *)*CellStruct::Add((CellStruct *)v2, &v78, (unsigned short *)(4 * (v12 & 7) + 9041544)); /*0x570147*/
-      *(unsigned int *)v77 = v13; /*0x570149*/
+      *(unsigned int *)v77 = (unsigned int)(v13); /*0x570149*/
       aP1 = v13; /*0x57014d*/
       v14 = (__int16)v13 + (SHIWORD(v13) << 9); /*0x57015c*/
       if ( v14 < 0x40000 && (v15 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v14)) != 0 ) /*0x570172*/
@@ -1465,7 +1465,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
       if ( (v11[80] & 0x500) != 0 ) /*0x57018c*/
         break; /*0x57018c*/
       v16 = (__int16 *)*CellStruct::Add((CellStruct *)&aP1, v79, (unsigned short *)(4 * (v12 & 7) + 9041544)); /*0x5701a1*/
-      *(unsigned int *)v77 = v16; /*0x5701a3*/
+      *(unsigned int *)v77 = (unsigned int)(v16); /*0x5701a3*/
       aP1 = v16; /*0x5701a7*/
       v17 = (__int16)v16 + (SHIWORD(v16) << 9); /*0x5701b6*/
       if ( v17 < 0x40000 && (v18 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v17)) != 0 ) /*0x5701cc*/
@@ -1480,7 +1480,7 @@ void Terrain::ProcessCellModification(int16_t *aP1)
       if ( (v11[80] & 0x500) != 0 ) /*0x5701e6*/
         break; /*0x5701e6*/
       v19 = (__int16 *)*CellStruct::Add((CellStruct *)&aP1, &v80, (unsigned short *)(4 * (v12 & 7) + 9041544)); /*0x5701f7*/
-      *(unsigned int *)v77 = v19; /*0x5701f9*/
+      *(unsigned int *)v77 = (unsigned int)(v19); /*0x5701f9*/
       aP1 = v19; /*0x5701fd*/
       v20 = (__int16)v19 + (SHIWORD(v19) << 9); /*0x57020c*/
       if ( v20 < 0x40000 && (v21 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v20)) != 0 ) /*0x570222*/
@@ -2562,9 +2562,9 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
     }
     v7 = Cell::GetAdjacencyFlags((int)v6); /*0x5796a7*/
     v37 = *&aP0->u32_24; /*0x5796ac*/
-    IDA_HIWORD(aP0) = (((unsigned int)(v37) >> 16) & 0xFFFF); /*0x5796b8*/
-    IDA_LOWORD(aP0) = v37 + 1; /*0x5796bd*/
-    v8 = (int16_t)(v37 + 1) + (IDA_SHIWORD(v37) << 9); /*0x5796cb*/
+    (*(((unsigned short *)&(aP0)) + 1)) = (((unsigned int)(v37) >> 16) & 0xFFFF); /*0x5796b8*/
+    (*((unsigned short *)&(aP0))) = v37 + 1; /*0x5796bd*/
+    v8 = (int16_t)(v37 + 1) + ((*((signed short *)(((unsigned char *)&(v37)) + 2))) << 9); /*0x5796cb*/
     if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x5796e1*/
     {
       dword_ABDC74 = aP0; /*0x5796e7*/
@@ -2622,9 +2622,9 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
     else if ( (AdjacencyFlags & 8) != 0 ) /*0x579903*/
     {
       v38 = *&aP0->u32_24; /*0x57990c*/
-      IDA_HIWORD(aP0) = (((unsigned int)(v38) >> 16) & 0xFFFF); /*0x579918*/
-      IDA_LOWORD(aP0) = v38 + 1; /*0x57991d*/
-      v22 = (int16_t)(v38 + 1) + (IDA_SHIWORD(v38) << 9); /*0x57992b*/
+      (*(((unsigned short *)&(aP0)) + 1)) = (((unsigned int)(v38) >> 16) & 0xFFFF); /*0x579918*/
+      (*((unsigned short *)&(aP0))) = v38 + 1; /*0x57991d*/
+      v22 = (int16_t)(v38 + 1) + ((*((signed short *)(((unsigned char *)&(v38)) + 2))) << 9); /*0x57992b*/
       if ( v22 >= 0x40000 || (v23 = *(unsigned int **)(dword_87F924 + 4 * v22)) == 0 ) /*0x579941*/
       {
         v23 = unk_ABDC50; /*0x579947*/
@@ -2632,8 +2632,8 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
       }
       v24 = Cell::GetAdjacencyFlags((int)v23); /*0x57995a*/
       v38 = *&aP0->u32_24; /*0x57995f*/
-      IDA_LOWORD(aP0) = v38 + 1; /*0x57996b*/
-      IDA_HIWORD(aP0) = (((unsigned int)(v38) >> 16) & 0xFFFF) + 1; /*0x579970*/
+      (*((unsigned short *)&(aP0))) = v38 + 1; /*0x57996b*/
+      (*(((unsigned short *)&(aP0)) + 1)) = (((unsigned int)(v38) >> 16) & 0xFFFF) + 1; /*0x579970*/
       v25 = (int16_t)(v38 + 1) + ((int16_t)((((unsigned int)(v38) >> 16) & 0xFFFF) + 1) << 9); /*0x57997e*/
       if ( v25 >= 0x40000 || (v26 = *(unsigned int **)(dword_87F924 + 4 * v25)) == 0 ) /*0x579994*/
       {
@@ -2683,9 +2683,9 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
         goto LABEL_82; /*0x579abf*/
       }
       v38 = *&aP0->u32_24; /*0x579a00*/
-      IDA_HIWORD(aP0) = (((unsigned int)(v38) >> 16) & 0xFFFF); /*0x579a0c*/
-      IDA_LOWORD(aP0) = v38 + 1; /*0x579a11*/
-      v28 = (int16_t)(v38 + 1) + (IDA_SHIWORD(v38) << 9); /*0x579a1f*/
+      (*(((unsigned short *)&(aP0)) + 1)) = (((unsigned int)(v38) >> 16) & 0xFFFF); /*0x579a0c*/
+      (*((unsigned short *)&(aP0))) = v38 + 1; /*0x579a11*/
+      v28 = (int16_t)(v38 + 1) + ((*((signed short *)(((unsigned char *)&(v38)) + 2))) << 9); /*0x579a1f*/
       if ( v28 >= 0x40000 || (v29 = *(unsigned int **)(dword_87F924 + 4 * v28)) == 0 ) /*0x579a35*/
       {
         v29 = unk_ABDC50; /*0x579a3b*/
@@ -2715,9 +2715,9 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
   }
   v14 = Cell::GetAdjacencyFlags((int)v13); /*0x57977e*/
   v38 = *&aP0->u32_24; /*0x579783*/
-  IDA_LOWORD(aP0) = v38 + 1; /*0x579791*/
-  IDA_HIWORD(aP0) = IDA_HIWORD(v38) + 1; /*0x579796*/
-  v15 = (int16_t)(v38 + 1) + ((int16_t)(IDA_HIWORD(v38) + 1) << 9); /*0x5797a4*/
+  (*((unsigned short *)&(aP0))) = v38 + 1; /*0x579791*/
+  (*(((unsigned short *)&(aP0)) + 1)) = (*(((unsigned short *)&(v38)) + 1)) + 1; /*0x579796*/
+  v15 = (int16_t)(v38 + 1) + ((int16_t)((*(((unsigned short *)&(v38)) + 1)) + 1) << 9); /*0x5797a4*/
   if ( v15 >= 0x40000 || (v16 = *(unsigned int **)(dword_87F924 + 4 * v15)) == 0 ) /*0x5797ba*/
   {
     dword_ABDC74 = aP0; /*0x5797c0*/
@@ -2739,12 +2739,12 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
   v31 = *&aP0->u32_24; /*0x579adb*/
   v32 = g_abs_ABDDA4[2 * v11]; /*0x579ade*/
   v33 = g_abs_ABDDA6[2 * v11]; /*0x579ae6*/
-  IDA_LOWORD(aP0) = v31 + v32; /*0x579afa*/
-  IDA_HIWORD(aP0) = IDA_HIWORD(v31) + v33; /*0x579aff*/
+  (*((unsigned short *)&(aP0))) = v31 + v32; /*0x579afa*/
+  (*(((unsigned short *)&(aP0)) + 1)) = (*(((unsigned short *)&(v31)) + 1)) + v33; /*0x579aff*/
   v38 = aP0; /*0x579b17*/
   Tactical::MouseMove((int)&dword_87F7E8, &v37, &v38); /*0x579b1b*/
   v35 = aP0->u32_11B; /*0x579b33*/
-  IDA_LOBYTE(aP0) = 1; /*0x579b3a*/
+  (*((unsigned char *)&(aP0))) = 1; /*0x579b3a*/
   return GenerateTerrainMap(0, 0, v35, aP1, &aP0, 0) || (unsigned char)aP0; /*0x579b4e*/
 }
 }

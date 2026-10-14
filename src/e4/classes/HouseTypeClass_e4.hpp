@@ -116,9 +116,9 @@ struct HouseTypeClass {
     unsigned char m_padding_1A9;  // 0x1A9
 // --- flat members (END) ---
     AbstractClass * Dtor(void *a1);
-    AbstractClass * * ProcessPower(int *aP1, void *a1 = 0);
+    AbstractClass * * ProcessPower(int * a2, void *a2_1 = 0);
     HouseTypeClass * Destructor(char a2);
-    char readPowerPlants(TypeList_flat * aP1);
+    char readPowerPlants(TypeList_flat * a2);
     int AddRef(int a1);
     int Find(void *a1 = 0, void *a2 = 0);
     int GetClassIdentifier(int a1, unsigned int * a2);
@@ -129,19 +129,19 @@ struct HouseTypeClass {
     int Release(int a1);
     int SaveLoad_Prefix(unsigned int * i, int a2);
     int StubReturnFalse(int a1);
-    int loadCountryData(uint8_t *a2, uint8_t *a3, int a4, void *a1 = 0);
+    int loadCountryData(uint8_t *a2, uint8_t *a3, int a4, void *a4_1 = 0);
     int readAiBuildLists(int a1);
     int readBaseDefenses(int a1, const void * a2, unsigned int * a3);
     int readLoadoutData(int a1);
-    unsigned int * loadVeteranWeapons(HouseTypeClass * aP1);
-    unsigned int * readAllowedUnits(InfantryTypeClass * aP1);
-    unsigned int * readBaseDefense(VectorClass_flat * aP1);
+    unsigned int * loadVeteranWeapons(HouseTypeClass * a2);
+    unsigned int * readAllowedUnits(InfantryTypeClass * a2);
+    unsigned int * readBaseDefense(VectorClass_flat * a2);
     unsigned int * readDefaultAlly(int a2, int a3);
-    unsigned int * readParaDropTypes(VectorClass_flat * aP1);
-    unsigned int * readStartInfantry(unsigned int *aP1, void *a1 = 0);
+    unsigned int * readParaDropTypes(VectorClass_flat * a2);
+    unsigned int * readStartInfantry(unsigned int * a2, void *a2_1 = 0);
     unsigned int * readStartUnit();
     unsigned int loadBuildLimits();
-    void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);
+    void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * a3, unsigned char * a4, unsigned int * a5);
     AbstractClass * LoadFromINI(uint8_t *** aP1, void *a2);
     char pad_16D[58];  // 0x16D (ml)
 

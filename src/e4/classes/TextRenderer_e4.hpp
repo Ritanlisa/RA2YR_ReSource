@@ -12,7 +12,7 @@ struct TextRenderer {
 
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);
-    int MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, void *a1 = 0);
+    int MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, void *a6_1 = 0);
     static unsigned int * Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8);
     static void * GetInstance();
     void * MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4, int aP0, int aP2, int aP3, int a6, int a7, int a8, int aP8);

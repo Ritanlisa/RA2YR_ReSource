@@ -23,7 +23,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   unsigned int *Font; // eax
 
   v3 = (struct tagRECT *)(a2 + 48); /*0x43388a*/
-  *(unsigned int *)a2 = &vt_BitFont; /*0x433895*/
+  *(unsigned int *)a2 = (unsigned int)(&vt_BitFont); /*0x433895*/
   *(unsigned int *)(a2 + 4) = 0; /*0x43389b*/
   *(unsigned short *)(a2 + 36) = 0x7FFF; /*0x43389e*/
   *(unsigned short *)(a2 + 38) = 13653; /*0x4338a4*/
@@ -37,8 +37,8 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   *(unsigned int *)(a2 + 8) = 0; /*0x4338c3*/
   SetRect((LPRECT)(a2 + 48), 0, 0, 0, 0); /*0x4338c6*/
   *(unsigned int *)(a2 + 44) = 1; /*0x4338d0*/
-  Font = File::LoadFont(a2); /*0x4338d3*/
-  *(unsigned int *)(a2 + 4) = Font; /*0x4338da*/
+  Font = (unsigned int *)(File::LoadFont(a2)); /*0x4338d3*/
+  *(unsigned int *)(a2 + 4) = (unsigned int)(Font); /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {
     *(unsigned int *)(a2 + 24) = Font->vtable2; /*0x4338e2*/
@@ -61,7 +61,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
     *(unsigned int *)(a2 + 44) = 1; /*0x433931*/
   }
-  return a2; /*0x4338f4*/
+  return (int)(a2); /*0x4338f4*/
 
 }
 } // namespace gamemd
@@ -71,17 +71,17 @@ unsigned int * BitTextClass::LoadFont()
 {
   int v2; // eax
 
-  this->m_FontBitmap = &vt_BitText; /*0x434ad5*/
-  v2 = operator new(0x44u); /*0x434adb*/
+  this->m_FontBitmap = (int)(&vt_BitText); /*0x434ad5*/
+  v2 = (int)(operator new(0x44u)); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {
-    g_FogOfWarState = (Text *)BitTextClass::ParseFontData(v2, aGameFnt); /*0x434af3*/
-    return &this->m_FontBitmap; /*0x434af8*/
+    g_FogOfWarState = (int)((Text *)BitTextClass::ParseFontData(v2, aGameFnt)); /*0x434af3*/
+    return (unsigned int *)(&this->m_FontBitmap); /*0x434af8*/
   }
   else
   {
     g_FogOfWarState = 0; /*0x434afe*/
-    return &this->m_FontBitmap; /*0x434afc*/
+    return (unsigned int *)(&this->m_FontBitmap); /*0x434afc*/
   }
 }
 } // namespace gamemd

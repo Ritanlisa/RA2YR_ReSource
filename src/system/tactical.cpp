@@ -244,7 +244,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
   int v41[4]; // [esp+88h] [ebp-20h] BYREF
   int v42[4]; // [esp+98h] [ebp-10h] BYREF
 
-  v3 = *viewRect; /*0x6d7575*/
+  v3 = (int)(*viewRect); /*0x6d7575*/
   v24 = 0; /*0x6d7581*/
   v5 = this->visibleArea + v3; /*0x6d7595*/
   v6 = viewRect[1] + this->u32_B4; /*0x6d759c*/
@@ -282,7 +282,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     (*((unsigned short *)&(v28))) = v25 + v16; /*0x6d76ae*/
     (*(((unsigned short *)&(v28)) + 1)) = v30 + (*(((unsigned short *)&(v25)) + 1)); /*0x6d76b9*/
     result = v32; /*0x6d76be*/
-    *(unsigned int *)v28 = v28; /*0x6d76c8*/
+    *(unsigned int *)v28 = (unsigned int)(v28); /*0x6d76c8*/
     if ( v32 > 0 ) /*0x6d76cc*/
     {
       v32 = v32; /*0x6d76d2*/
@@ -296,7 +296,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
           v34[1] = ScreenRect[1]; /*0x6d771a*/
           v35 = ScreenRect[2]; /*0x6d7721*/
           v36 = ScreenRect[3]; /*0x6d7733*/
-          v19 = ClipRectIntersection(v42, viewRect, v34, 0, 0); /*0x6d773a*/
+          v19 = (unsigned int *)(ClipRectIntersection(v42, viewRect, v34, 0, 0)); /*0x6d773a*/
           v38[3] = *v19; /*0x6d7743*/
           v20 = v19->vtable3; /*0x6d774f*/
           v38[4] = v19[1]; /*0x6d7752*/
@@ -367,7 +367,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   ++dword_A83ECC; /*0x480403*/
   v9 = this->level; /*0x480416*/
   v10 = screen_pos[1]; /*0x48041d*/
-  v15[0] = *screen_pos; /*0x480420*/
+  v15[0] = (int)(*screen_pos); /*0x480420*/
   v11 = v10 - 15 * v9; /*0x48042e*/
   result = v7->COMStub_Return0_39(); /*0x480430*/
   if ( result ) /*0x48043c*/

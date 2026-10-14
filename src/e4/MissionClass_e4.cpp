@@ -15,7 +15,7 @@
 
 // 0x5B3760
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
+AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
 {
 
   char *v3; // eax
@@ -121,7 +121,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     this->AARate = this->AARate; /*0x5b38f8*/
     this->referenceCount = abstractFlags; /*0x5b38fb*/
   }
-  return 1; /*0x5b38fe*/
+  return (gamemd::AbstractClass **)(1); /*0x5b38fe*/
 
 }
 } // namespace ra2

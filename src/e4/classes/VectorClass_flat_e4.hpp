@@ -38,9 +38,9 @@ VectorClass_flat *  vt00(unsigned int * Block, char a2);
 char AddRef(int a2);
 char Append(VectorClass_flat * aP1, void *a2);
 char AppendCopy(DynamicVector * aP1);
-char EraseAt(IUnknown * aP1, void *a1 = 0);
+char EraseAt(IUnknown * aP1, void *a2 = 0);
 char InsertAt(IUnknown * aP1, int a3);
-char PushBack(VectorClass_flat * aP1, void *a1 = 0);
+char PushBack(VectorClass_flat * aP1, void *a2 = 0);
 char PushBack2(unsigned int * a2);
 char PushBackCopy();
 char Release(int a2, char * a3);
@@ -61,14 +61,14 @@ int SaveLoad(TechnoTypeClass * aP1);
 int  vt04(unsigned int * a2);
 unsigned int * BuildingConstructor(int a2, int a3);
 unsigned int * BuildingTypeConstructor(TechnoTypeClass * aP2);
-unsigned int * CellConstructor(IUnknown * aP1, IUnknown * aP2, void *a1 = 0);
-unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6, void *a1 = 0, void *a7 = 0, void *a8 = 0);
+unsigned int * CellConstructor(IUnknown * aP1, IUnknown * aP2, void *a3 = 0);
+unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
 unsigned int * ConstructSubzone(int a2, int a3);
 unsigned int * ConstructorWithVtable(TechnoTypeClass * aP1, TechnoTypeClass * aP2);
 unsigned int * Copy(VectorClass_flat * aP1, void *a2);
-unsigned int * CopyBuilding(VectorClass * unsigned int * CopyBuilding();  // G57w8: bare VectorClass resolves to template in this TUyDefault();  // G57w8dge(CCINIClass * aP1);
+unsigned int *   CopyBuilding(void *a1 = 0);  // G57w8: bare VectorClass resolves to template in this TUyDefault();  // G57w8dge(CCINIClass * aP1);
 unsigned int * PointConstructor(MapClass * aP1, MapClass * aP2);
-unsigned int * WstringConstructor(int a2, unsigned int * a3, void *a1 = 0);
+unsigned int * WstringConstructor(int a2, unsigned int * a3, void *a3_1 = 0);
 unsigned int GetCapacity(int a2);
 unsigned int GetIndex(int a2);
 unsigned int vt05(int a2);
@@ -83,7 +83,6 @@ void ClearAndFree2();
 void ClearAndFree3();
 void ClearAndFree4();
 // fused-garbage: void Desvoidvoid Destroy();
-    AbstractClass * * Release(int a2, unsigned int * a3);
     int RemoveObjectById();
     unsigned int * Constructor(EnumConnectionPointsClass * aP1, void *a2_1, void *a3_1, void *a1 = 0);
     int SetCapacity(int a1, int a2);
@@ -119,7 +118,7 @@ void ClearAndFree4();
     DynamicVector * Constructor_VectorClass_Reestablish___(unsigned int * Block, char a2);
     unsigned int * loc_46B910(unsigned int * Block, char a2);
     DynamicVector * Constructor_VectorClass_CaptureManagerClass___(unsigned int * Block, char a2);
-    char Resize(int a2, unsigned int * a3, void *a1 = 0);
+    char Resize(int a2, unsigned int * a3, void *a3_1 = 0);
     DynamicVector * Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2);
     int FindItemIndex_0(unsigned int * a2);
     unsigned int * loc_4BA1B0(unsigned int * Block, char a2);
@@ -142,7 +141,7 @@ void ClearAndFree4();
     char SetCapacity(int a2, unsigned int * a3);
     void Clear_0();
     char Remove(int a2, unsigned int * a3);
-    VectorClass_flat * Destructor(unsigned int * Block, char a2);
+    void Destructor(void *a1 = 0, void *a2 = 0);
     DynamicVectorClass_uint * Add(unsigned int * Block, char a2, void *a3_1);
     int Seek(int a2, void *a2_2, void *a3_1);
     int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
@@ -222,11 +221,7 @@ void ClearAndFree4();
     VectorClass_flat * Get(unsigned int * Block, char a2);  // 0x???
     int Destructor(void *a1 = 0);  // 0x???
     void Dtor(void *a1 = 0);  // 0x???
-    char ** Clear(char ** a2, int a3);  // 0x???
-    int GetSize(const char ** a2);  // 0x???
-    int GetSize(int a2);  // 0x???
     int FindItemIndex(int a2);  // 0x???
-    unsigned int * Clear(unsigned int * a2, int a3);  // 0x???
     bool SetCapacity(const char ** a2);  // 0x???
     char Remove(int a2, int * a3);
     char Clear(int a2);

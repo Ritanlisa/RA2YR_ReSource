@@ -10,6 +10,6 @@ struct E4Recv_5D0190 {
     unsigned int M88;  // 0x58
     unsigned int M100;  // 0x64
 // --- flat members (END) ---
-    int  sub_5D0190(void * a2);  // 0x5D0190
+    int sub_5D0190(const char * a2);  // 0x5D0190
 };
 } // namespace gamemd

@@ -51,7 +51,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 764) /*0x53ae66*/
     && *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 768) )
   {
-    PsyDom_Owner = (House *)this; /*0x53ae79*/
+    PsyDom_Owner = (int)((House *)this); /*0x53ae79*/
     *(unsigned int *)&PsyDom_Coords = a2; /*0x53ae7f*/
     v3 = *(void **)(*(unsigned int *)&g_RulesClass_Instance + 764); /*0x53ae85*/
     v4 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, &PsyDom_Coords); /*0x53ae95*/
@@ -64,7 +64,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
       PsyDom_Anim = (int)AnimClass::ctor(v6, v3, v8, 0, 1, (void *)0x600, 0, 0); /*0x53aeea*/
     else
       PsyDom_Anim = 0; /*0x53aef1*/
-    v7 = dword_A8B230 + 130; /*0x53af06*/
+    v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
     dword_A8B230[130].vtable0 = *(void **)&stru_A8EB00.?[416]; /*0x53af1b*/
     v7->vtable1 = v9->vtable2; /*0x53af21*/
@@ -77,7 +77,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 }  // G42.18 ns repair
 // 0x6CAEC0
 namespace gamemd {
-int SuperClass::Constructor(void *a1, void *a2, void *a3)
+int SuperClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
   int v2; // eax
@@ -115,7 +115,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
          0) )
   {
     v2 = dword_A83CC8++; /*0x6caf71*/
-    *((unsigned int *)dword_A83CBC + v2) = a1; /*0x6caf80*/
+    *((unsigned int *)dword_A83CBC + v2) = (unsigned int)(a1); /*0x6caf80*/
   }
   return (int)a1; /*0x6caf85*/
 
@@ -123,7 +123,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
 }
 // 0x6CAF90
 namespace gamemd {
-int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6)
+int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v4; // edx
@@ -153,8 +153,8 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   aP2->u8_6F = 0; /*0x6cafea*/
   aP2->q070 = 0; /*0x6cafed*/
   aP2->q074 = -100; /*0x6caff0*/
-  *(unsigned int *)aP2 = &vt_SuperClass; /*0x6caff7*/
-  *(unsigned int *)(aP2 + 4) = &vt_SuperClass; /*0x6caffd*/
+  *(unsigned int *)aP2 = (unsigned int)(&vt_SuperClass); /*0x6caff7*/
+  *(unsigned int *)(aP2 + 4) = (unsigned int)(&vt_SuperClass); /*0x6caffd*/
   aP2->FileSize = &vt_SuperClass; /*0x6cb003*/
   aP2->u32_C = &vt_SuperClass; /*0x6cb00a*/
   AbstractClass::GenerateUniqueID(aP2 + 4); /*0x6cb011*/
@@ -167,7 +167,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
          0) )
   {
     v5 = dword_A83CC8++; /*0x6cb056*/
-    *((unsigned int *)dword_A83CBC + v5) = aP2; /*0x6cb065*/
+    *((unsigned int *)dword_A83CBC + v5) = (unsigned int)(aP2); /*0x6cb065*/
   }
   if ( dword_B0F680 < dword_B0F678 /*0x6cb09c*/
     || (byte_B0F67D || !dword_B0F678)
@@ -178,7 +178,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
          0) )
   {
     v6 = dword_B0F680++; /*0x6cb0a9*/
-    *((unsigned int *)dword_B0F674 + v6) = aP2; /*0x6cb0b8*/
+    *((unsigned int *)dword_B0F674 + v6) = (unsigned int)(aP2); /*0x6cb0b8*/
   }
   if ( dword_B0F6D8 < dword_B0F6D0 /*0x6cb0ef*/
     || (byte_B0F6D5 || !dword_B0F6D0)
@@ -189,9 +189,9 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
          0) )
   {
     v7 = dword_B0F6D8++; /*0x6cb0fc*/
-    *((unsigned int *)dword_B0F6CC + v7) = aP2; /*0x6cb10b*/
+    *((unsigned int *)dword_B0F6CC + v7) = (unsigned int)(aP2); /*0x6cb10b*/
   }
-  return aP2; /*0x6cb110*/
+  return (int)(aP2); /*0x6cb110*/
 
 }
 }
@@ -210,7 +210,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   int v9; // [esp+14h] [ebp-4h] BYREF
 
   v2 = a1->u32_68; /*0x6cb124*/
-  *(unsigned int *)a1 = &vt_SuperClass; /*0x6cb127*/
+  *(unsigned int *)a1 = (unsigned int)(&vt_SuperClass); /*0x6cb127*/
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb12f) */
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb136) */
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb13d) */
@@ -218,20 +218,20 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   {
     *(unsigned char *)(v2 + 405) = 0; /*0x6cb146*/
     a1->u32_68 = 0; /*0x6cb14d*/
-    v9 = a1; /*0x6cb164*/
+    v9 = (int)(a1); /*0x6cb164*/
     v3 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb168*/
     if ( v3 != -1 ) /*0x6cb16e*/
       DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v3); /*0x6cb176*/
   }
   if ( a1->HouseClass_6C ) /*0x6cb17b*/
   {
-    v9 = a1; /*0x6cb192*/
+    v9 = (int)(a1); /*0x6cb192*/
     v4 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v9); /*0x6cb196*/
     if ( v4 != -1 ) /*0x6cb19c*/
       DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v4); /*0x6cb1a4*/
     a1->HouseClass_6C = 0; /*0x6cb1a9*/
   }
-  v9 = a1; /*0x6cb1bd*/
+  v9 = (int)(a1); /*0x6cb1bd*/
   v5 = (*((int (**)(SuperClass *, int *))SuperClass_ShowTimers + 4))(&stru_A83D50, &v9); /*0x6cb1c1*/
   if ( v5 != -1 && v5 < (int)DataGlobal_A83D60 ) /*0x6cb1d1*/
   {
@@ -243,7 +243,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
       ++v5; /*0x6cb1e4*/
     }
   }
-  v9 = a1; /*0x6cb206*/
+  v9 = (int)(a1); /*0x6cb206*/
   v6 = (*(int (**)(unsigned int *, int *))(dword_A83CB8 + 16))(&dword_A83CB8, &v9); /*0x6cb20a*/
   if ( v6 != -1 && v6 < dword_A83CC8 && v6 < --dword_A83CC8 ) /*0x6cb225*/
   {
@@ -254,7 +254,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     }
     while ( v6 < dword_A83CC8 ); /*0x6cb23d*/
   }
-  v9 = a1; /*0x6cb24f*/
+  v9 = (int)(a1); /*0x6cb24f*/
   v7 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6cb253*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v9);
@@ -269,7 +269,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
       ++v7; /*0x6cb276*/
     }
   }
-  v9 = a1; /*0x6cb298*/
+  v9 = (int)(a1); /*0x6cb298*/
   v8 = (*(int (**)(char *, int *))(*(unsigned int *)DataGlobal_B0F6C8 + 16))( /*0x6cb29c*/
          DataGlobal_B0F6C8,
          &v9);
@@ -485,14 +485,14 @@ char SuperClass::StopPreclickAnim(int aP1)
   {
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
     this->u32_68 = 0; /*0x6cb846*/
-    v8[0] = this; /*0x6cb859*/
+    v8[0] = (unsigned int)(this); /*0x6cb859*/
     v4 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb85d*/
     if ( v4 != -1 ) /*0x6cb863*/
       DynamicVector::RemoveItem(&stru_B0F5B8, v4); /*0x6cb86b*/
   }
   if ( this->HouseClass_6C ) /*0x6cb870*/
   {
-    v8[0] = this; /*0x6cb885*/
+    v8[0] = (unsigned int)(this); /*0x6cb885*/
     v5 = (*(int (**)(int *, unsigned int *))(stru_B0F5B8 + 16))(&stru_B0F5B8, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       DynamicVector::RemoveItem(&stru_B0F5B8, v5); /*0x6cb897*/
@@ -554,16 +554,16 @@ int SuperClass::ClickFire(int a2, short * a3)
       v5 = this->u32_7C; /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
       {
-        v6 = *&this->vtable3; /*0x6cb951*/
+        v6 = (int16_t *)(*&this->vtable3); /*0x6cb951*/
         this->u32_7C = 1; /*0x6cb954*/
         if ( v6 == (int16_t *)-1 ) /*0x6cb95e*/
           a3 = *(int16_t **)(this->u32_28 + 176); /*0x6cb96f*/
         else
           a3 = v6; /*0x6cb960*/
-        v7 = this->vtable4; /*0x6cb973*/
+        v7 = (int)(this->vtable4); /*0x6cb973*/
         v8 = this->u32_38; /*0x6cb976*/
         dword_A8ED84 = dword_A8ED84; /*0x6cb979*/
-        v10 = &this->AnimationGotInvalid; /*0x6cb97f*/
+        v10 = (wchar_t **)(&this->AnimationGotInvalid); /*0x6cb97f*/
         if ( v7 != -1 ) /*0x6cb985*/
         {
           if ( (int)dword_A8ED84 - v7 >= v8 ) /*0x6cb98d*/
@@ -576,7 +576,7 @@ int SuperClass::ClickFire(int a2, short * a3)
         a2 = v8; /*0x6cb991*/
   LABEL_11:
         (*((unsigned short *)&(v11))) = Math::RoundToInt((double)(int)a3 - (double)a2 / *(double *)dword_8871E0->ChargeToDrainRatio); /*0x6cb995*/
-        *v10 = dword_A8ED84; /*0x6cb9b4*/
+        *v10 = (wchar_t *)(dword_A8ED84); /*0x6cb9b4*/
         v10[1] = v30; /*0x6cb9b6*/
         v10[2] = v11; /*0x6cb9b9*/
         return 0; /*0x6cb9c4*/
@@ -587,7 +587,7 @@ int SuperClass::ClickFire(int a2, short * a3)
         this->u32_7C = 2; /*0x6cb9d9*/
         if ( v13 == -1 ) /*0x6cb9e3*/
           v13 = *(unsigned int *)(this->u32_28 + 176); /*0x6cb9e8*/
-        v14 = this->vtable4; /*0x6cb9ee*/
+        v14 = (int)(this->vtable4); /*0x6cb9ee*/
         v15 = this->u32_38; /*0x6cb9f1*/
         dword_A8ED84 = dword_A8ED84; /*0x6cb9f5*/
         if ( v14 != -1 ) /*0x6cb9fe*/
@@ -599,8 +599,8 @@ int SuperClass::ClickFire(int a2, short * a3)
         }
         (*((unsigned short *)&(v17))) = Math::RoundToInt((double)(v13 - v15) * *(double *)dword_8871E0->ChargeToDrainRatio); /*0x6cba23*/
         a2 = a2; /*0x6cba2c*/
-        this->vtable4 = dword_A8ED84; /*0x6cba30*/
-        this->u32_34 = v30; /*0x6cba33*/
+        this->vtable4 = (void *)(dword_A8ED84); /*0x6cba30*/
+        this->u32_34 = (unsigned int)(v30); /*0x6cba33*/
         this->u32_38 = v17; /*0x6cba36*/
         SuperClass::Launch(a2, a3, a2); /*0x6cba41*/
         return 0; /*0x6cba4f*/
@@ -613,7 +613,7 @@ int SuperClass::ClickFire(int a2, short * a3)
     }
     return 0; /*0x6cbc96*/
   }
-  v19 = &this->AnimationGotInvalid; /*0x6cba80*/
+  v19 = (wchar_t **)(&this->AnimationGotInvalid); /*0x6cba80*/
   if ( (this->vtable4 == -1 || !this->Granted || !this->IsCharged) && !*(unsigned char *)(v4 + 238) ) /*0x6cba98*/
     return 0; /*0x6cba98*/
   if ( *(unsigned int *)(v4 + 180) == 2 && Weapon_Helper() ) /*0x6cbaa7*/
@@ -647,7 +647,7 @@ int SuperClass::ClickFire(int a2, short * a3)
         v23 = *(unsigned int *)(v20 + 176); /*0x6cbb73*/
       dword_A8ED84 = dword_A8ED84; /*0x6cbb79*/
       this->u32_78 = -1; /*0x6cbb80*/
-      *v19 = dword_A8ED84; /*0x6cbb87*/
+      *v19 = (wchar_t *)(dword_A8ED84); /*0x6cbb87*/
       this->u32_34 = v30; /*0x6cbb8d*/
       this->u32_38 = v23; /*0x6cbb90*/
       v25 = *v19; /*0x6cbb93*/

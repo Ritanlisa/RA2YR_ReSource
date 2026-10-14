@@ -67,7 +67,7 @@ UnitClass::UnitClass() noexcept
     , Undeploying(false)
     , NonPassengerCount(0)
 {
-    abstractFlags = kUnitFlag;
+    abstractFlags = (void *)(kUnitFlag);
 }
 
 // ============================================================
@@ -277,7 +277,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* a2)
         (*((unsigned short *)&(v9))) = i + *a2; /*0x6b60bd*/
         (*(((unsigned short *)&(v9)) + 1)) = v7 + a2[1]; /*0x6b60c6*/
         v9 = v9; /*0x6b60d5*/
-        v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v9); /*0x6b60d9*/
+        v6 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v9)); /*0x6b60d9*/
         v6->q048 = *(&this->q405); /*0x6b60ea*/
         v6->u8_11F = i + this->storedTiberium * v7; /*0x6b60f5*/
         BuildingClass::CreatePlacementCrater(v6); /*0x6b60fb*/
@@ -304,11 +304,11 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
   a2 = a2; /*0x54e3b6*/
   if ( !*(unsigned char *)(a2[433] + 3432) ) /*0x54e3c2*/
     return (*(int (__thiscall **)(unsigned int *, unsigned int))(*a2 + 988))(a2, 0); /*0x54e3d2*/
-  v6 = operator new(8u); /*0x54e3e3*/
+  v6 = (unsigned int *)(operator new(8u)); /*0x54e3e3*/
   a3 = a3; /*0x54e3e8*/
   v6 = v6; /*0x54e3ec*/
   v9 = a3 == 0; /*0x54e3f1*/
-  *v6 = a2; /*0x54e3f3*/
+  *v6 = (unsigned int)(a2); /*0x54e3f3*/
   if ( v9 ) /*0x54e3f5*/
   {
     v10 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a2 + 452, &a2) >> 12) + 1) >> 1) & 7; /*0x54e414*/
@@ -321,11 +321,11 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
     (*((unsigned short *)&(a2))) = *v12 / 256; /*0x54e445*/
     (*(((unsigned short *)&(a2)) + 1)) = v12[1] / 256; /*0x54e45e*/
     a3 = a2; /*0x54e46c*/
-    v6[1] = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a3); /*0x54e475*/
+    v6[1] = (unsigned int)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&a3)); /*0x54e475*/
   }
   *((unsigned char *)a2 + 1738) = 1; /*0x54e47d*/
   a2[191] = 1; /*0x54e483*/
-  result = this->abstractFlags; /*0x54e489*/
+  result = (int)(this->abstractFlags); /*0x54e489*/
   if ( this->referenceCount < result /*0x54e4b6*/
     || (this->customSound || !result)
     && (v13 = this->needsSave, v13 > 0)
@@ -335,7 +335,7 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
     result = this->referenceCount; /*0x54e4b8*/
     v14 = this->uniqueId; /*0x54e4bb*/
     this->referenceCount = result + 1; /*0x54e4c1*/
-    *(unsigned int *)(v14 + 4 * result) = v6; /*0x54e4c4*/
+    *(unsigned int *)(v14 + 4 * result) = (unsigned int)(v6); /*0x54e4c4*/
   }
   return result; /*0x54e3d8*/
 }
@@ -529,18 +529,18 @@ int UnitClass::Deploy()
   int v60; // [esp+3Ch] [ebp-Ch]
   int v61; // [esp+44h] [ebp-4h]
 
-  v2 = this; /*0x7192f6*/
+  v2 = (gamemd::TeleportLocomotionClass *)(this); /*0x7192f6*/
   Owner = this->Owner; /*0x7192fd*/
   v61 = 0; /*0x719300*/
   if ( Owner->isWarpingOut && !*&this->waveEffect && !Owner->owningHouseIndex0 ) /*0x719313*/
     goto LABEL_82; /*0x719319*/
-  v4 = *&this->attachedTag; /*0x719331*/
+  v4 = (int)(*&this->attachedTag); /*0x719331*/
   if ( !v4 ) /*0x719336*/
   {
     owningHouseIndex0 = Owner->owningHouseIndex0; /*0x719338*/
     if ( owningHouseIndex0 ) /*0x719340*/
     {
-      *&this->attachedTag = owningHouseIndex0; /*0x719342*/
+      *&this->attachedTag = (void *)(owningHouseIndex0); /*0x719342*/
       return 0; /*0x71934e*/
     }
   }
@@ -585,7 +585,7 @@ int UnitClass::Deploy()
         v11 = (AnimClass *)operator new(0x1C8u); /*0x7193fb*/
         if ( v11 ) /*0x719405*/
         {
-          location = v2->Owner->location; /*0x71940b*/
+          location = (int *)(v2->Owner->location); /*0x71940b*/
           v56 = *location; /*0x71941c*/
           v57 = location->Y; /*0x719423*/
           v58 = location->Z; /*0x71942f*/
@@ -610,7 +610,7 @@ int UnitClass::Deploy()
         Math::Sqrt((double)v15 * (double)v15 + (double)(v17 - v14) * (double)(v17 - v14) + (double)v57 * (double)v57); /*0x71949f*/
         (*((unsigned short *)&(v18))) = Math::RoundToInt(v1); /*0x7194a7*/
         p_State = &v2->State; /*0x7194ac*/
-        this = v18; /*0x7194ba*/
+        this = (gamemd::UnitClass *)(v18); /*0x7194ba*/
         v2->State = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x7194be*/
         v2->Timer[0] = v60; /*0x7194c4*/
         v2->Timer[1] = 0; /*0x7194c7*/
@@ -3024,9 +3024,9 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                 ? (v9 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v8 + 44))(this->FootClass_field_5A4) == 11 ? v8 : 0)
                 : (v9 = 0),
                   *(unsigned int *)(v9 + 228) == this->AbstractClass_2B4)
-              || (IDA_LOWORD(v135.ComPtr_field_0x08) = 0x4000,
+              || ((*((unsigned short *)&(v135.ComPtr_field_0x08))) = 0x4000,
                   Value = ProgressTimer::GetValue(&this->FootClass_field_5A4, &v135.q010),
-                  IDA_LOWORD(v135.q00C) = *(unsigned short *)ObjectClass::CalcTargetFacing(
+                  (*((unsigned short *)&(v135.q00C))) = *(unsigned short *)ObjectClass::CalcTargetFacing(
                                                                (ObjectClass *)this,
                                                                &v135.q004,
                                                                this->AbstractClass_2B4)
@@ -3498,8 +3498,8 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                     v79 = Coord::To_Cell((Coord *)&dword_87F7E8, v78); /*0x742962*/
                     if ( !(uint8_t)Cell::IsBuildableAdvanced((Cell *)v79) /*0x7429c7*/
                       || (v80 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(*(unsigned int *)((unsigned int)(a2)) + 72))(((unsigned int)(a2))),
-                          IDA_LOWORD(v134.m_Size) = *v80 / 256,
-                          IDA_HIWORD(v134.m_Size) = v80[1] / 256,
+                          (*((unsigned short *)&(v134.m_Size))) = *v80 / 256,
+                          (*(((unsigned short *)&(v134.m_Size)) + 1)) = v80[1] / 256,
                           v81 = *(unsigned int *)this,
                           v135.q00C = v134.m_Size,
                           v82 = (short *)v81->vt_slot_448(this, &v134, &v135.q00C),

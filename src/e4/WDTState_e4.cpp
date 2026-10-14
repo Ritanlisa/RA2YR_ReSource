@@ -90,7 +90,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       }
       m_8 = a2; /*0x76bb4b*/
     }
-    *&this->q004 = v6; /*0x76bb5a*/
+    *&this->q004 = (int)(v6); /*0x76bb5a*/
     this->Capacity = m_8; /*0x76bb5d*/
     BYTE1(this->m_C) = a3 == 0; /*0x76bb60*/
   }
@@ -101,7 +101,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->m_10 ) /*0x76bb74*/
     this->m_10 = v12; /*0x76bb76*/
-  return 1; /*0x76bb79*/
+  return (gamemd::AbstractClass **)(1); /*0x76bb79*/
 
 }
 }  // G42.18 ns repair
@@ -138,7 +138,7 @@ unsigned int WDTState_4::Write(int a2)
 
 // 0x76BB90
 namespace gamemd {
-int WDTState_4::Read(int a2, void *a2_2)
+int WDTState_4::Read(int a2, void *a2_2, void *a3)
 {
   int m_10; // edx
   int result; // eax

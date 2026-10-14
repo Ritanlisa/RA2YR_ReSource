@@ -77,7 +77,7 @@ int Render_Load(void * a1, void * a2, void * a3)
   result = ScoreScreen::DrawSHPBackground((char *)&Source, (int *)g_DSurface_Hidden, (int)(a2),(int)(a3), (int)&DataGlobal_886080, v7, v8); /*0x52ffb0*/
   if ( a2 ) /*0x52ffb9*/
   {
-    IDA_LOBYTE(v6) = 1; /*0x52ffc3*/
+    (*((unsigned char *)&(v6))) = 1; /*0x52ffc3*/
 // 0x4f4780
     return (unsigned int)((Frame *)(v6))->Present(0); /*0x52ffc5*/
     {
@@ -131,7 +131,7 @@ int Render_Load(void * a1, void * a2, void * a3)
         v39 = *v9; /*0x4f47a0*/
         v40 = v9[1]; /*0x4f47a7*/
         v41 = v9[2]; /*0x4f47b6*/
-        IDA_LODWORD(v42) = v9[3]; /*0x4f47bd*/
+        (*((unsigned int *)&(v42))) = v9[3]; /*0x4f47bd*/
       }
       result = GetClientRect((HWND)(g_hWnd), &Rect); /*0x4f47cc*/
       if ( result ) /*0x4f47d4*/
@@ -207,7 +207,7 @@ int Render_Load(void * a1, void * a2, void * a3)
                 && (((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0
                  || ((unsigned int *)(g_TacticalClass_Instance))[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
               {
-                v51 = (LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1));
+                v51 = (int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1)));
                 v23 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4f4949*/
                 v24 = (double)v51; /*0x4f494f*/
                 v25 = (LPPERSISTSTREAM)(g_TacticalClass_Instance); /*0x4f4953*/
@@ -255,13 +255,13 @@ int Render_Load(void * a1, void * a2, void * a3)
                   if ( dword_87F7EC ) /*0x4f4a5e*/
                   {
                     v31 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
-                    IDA_HIDWORD(v42) = v41; /*0x4f4a82*/
+                    (*(((unsigned int *)&(v42)) + 1)) = v41; /*0x4f4a82*/
                     v44 = v31; /*0x4f4a86*/
                     v43 = abs32(dword_87F7EC); /*0x4f4a91*/
                     if ( dword_87F7EC >= 0 ) /*0x4f4a95*/
-                      IDA_LODWORD(v42) = v45 - dword_87F7EC; /*0x4f4aad*/
+                      (*((unsigned int *)&(v42))) = v45 - dword_87F7EC; /*0x4f4aad*/
                     else
-                      IDA_LODWORD(v42) = v45 + v47; /*0x4f4aa1*/
+                      (*((unsigned int *)&(v42))) = v45 + v47; /*0x4f4aa1*/
                     v32 = *(unsigned int *)g_DSurface_Primary; /*0x4f4ac1*/
                     v33 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4ac5*/
                             g_DSurface_Primary,
@@ -275,12 +275,12 @@ int Render_Load(void * a1, void * a2, void * a3)
                   {
                     v34 = abs32(v13); /*0x4f4ae7*/
                     v43 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
-                    IDA_LODWORD(v42) = v40; /*0x4f4af9*/
+                    (*((unsigned int *)&(v42))) = v40; /*0x4f4af9*/
                     v44 = v34; /*0x4f4aff*/
                     if ( dword_87F7F0 >= 0 ) /*0x4f4b03*/
-                      IDA_HIDWORD(v42) = v46 - dword_87F7F0; /*0x4f4b1b*/
+                      (*(((unsigned int *)&(v42)) + 1)) = v46 - dword_87F7F0; /*0x4f4b1b*/
                     else
-                      IDA_HIDWORD(v42) = v46 + v48; /*0x4f4b0f*/
+                      (*(((unsigned int *)&(v42)) + 1)) = v46 + v48; /*0x4f4b0f*/
                     v35 = *(unsigned int *)g_DSurface_Primary; /*0x4f4b2f*/
                     v36 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4b33*/
                             g_DSurface_Primary,
@@ -464,7 +464,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
         ProcessGameResults(0); /*0x652380*/
       }
       MouseClass::LoadCursors(); /*0x652385*/
-      return ToggleDisplayMode(0); /*0x65238c*/
+      return (gamemd::AbstractClass **)(ToggleDisplayMode(0)); /*0x65238c*/
     }
   }
   else
@@ -476,9 +476,9 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
     v3 = v3; /*0x65227b*/
     memcpy(&byte_8B4204[111 * v3], (const void *)this, 0x6Fu); /*0x652290*/
     dword_A70204[v3] = timeGetTime(); /*0x6522a3*/
-    return ++dword_8B41F8; /*0x6522af*/
+    return (gamemd::AbstractClass **)(++dword_8B41F8); /*0x6522af*/
   }
-  return result; /*0x6522a2*/
+  return (gamemd::AbstractClass **)(result); /*0x6522a2*/
 }
 }
 // 0x705270
@@ -557,12 +557,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
     v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
-    v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
+    v12 = (int *)(Rect::Construct(v53, v11, 3, 3)); /*0x7053f3*/
     v39 = *v12; /*0x7053fc*/
     v40 = v12->Y; /*0x705405*/
     v41 = v12->Width; /*0x70540c*/
     v42 = v12->Height; /*0x70541e*/
-    v13 = ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0); /*0x705428*/
+    v13 = (int *)(ClipRectIntersection(v54, &DSurface_ViewBounds, &v39, 0, 0)); /*0x705428*/
     v35 = *v13; /*0x705430*/
     v36 = v13->vtable2; /*0x705437*/
     v37 = v13->vtable3; /*0x70543e*/
@@ -571,19 +571,19 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v27 = -2; /*0x705462*/
     v28 = -2; /*0x705466*/
     v14 = Coord2D::Add(&v27, v52, v44); /*0x70547d*/
-    v15 = Rect::Construct(v54, v14, 3, 3); /*0x70548a*/
+    v15 = (int *)(Rect::Construct(v54, v14, 3, 3)); /*0x70548a*/
     v35 = *v15; /*0x705493*/
     v36 = v15->Y; /*0x70549c*/
     v37 = v15->Width; /*0x7054a8*/
     v38 = v15->Height; /*0x7054bb*/
-    v16 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7054bf*/
+    v16 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x7054bf*/
     v39 = *v16; /*0x7054c6*/
     v40 = v16->vtable2; /*0x7054cd*/
     v41 = v16->vtable3; /*0x7054d4*/
     v42 = v16->vtable4; /*0x7054e1*/
     (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7054ed*/
   }
-  v51[0] = DSurface_ViewBounds; /*0x705501*/
+  v51[0] = (int)(DSurface_ViewBounds); /*0x705501*/
   v51[1] = dword_886FA4; /*0x70550b*/
   v51[2] = dword_886FA8; /*0x705511*/
   v51[3] = dword_886FAC; /*0x705518*/
@@ -601,12 +601,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   }
   v27 = v29 - 2; /*0x705583*/
   v28 = v30 - 2; /*0x70558b*/
-  v18 = Rect::Construct(v54, &v27, 3, 3); /*0x705597*/
+  v18 = (int *)(Rect::Construct(v54, &v27, 3, 3)); /*0x705597*/
   v35 = *v18; /*0x7055a0*/
   v36 = v18->Y; /*0x7055a9*/
   v37 = v18->Width; /*0x7055b0*/
   v38 = v18->Height; /*0x7055c2*/
-  v19 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x7055cc*/
+  v19 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x7055cc*/
   v39 = *v19; /*0x7055d4*/
   v40 = v19->vtable2; /*0x7055db*/
   v41 = v19->vtable3; /*0x7055e2*/
@@ -614,12 +614,12 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v9); /*0x7055fa*/
   v28 = v34 - 2; /*0x705611*/
   v27 = v33 - 2; /*0x70561f*/
-  v20 = Rect::Construct(v54, &v27, 3, 3); /*0x705623*/
+  v20 = (int *)(Rect::Construct(v54, &v27, 3, 3)); /*0x705623*/
   v35 = *v20; /*0x70562c*/
   v36 = v20->Y; /*0x705635*/
   v37 = v20->Width; /*0x70563c*/
   v38 = v20->Height; /*0x70564e*/
-  v21 = ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0); /*0x705658*/
+  v21 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, &v35, 0, 0)); /*0x705658*/
   v39 = *v21; /*0x705660*/
   v40 = v21->vtable2; /*0x705667*/
   v41 = v21->vtable3; /*0x70566e*/
@@ -665,7 +665,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     v47 = v50; /*0x70583d*/
   }
   while ( v22 <= 64 ); /*0x705841*/
-  return result; /*0x705847*/
+  return (gamemd::AbstractClass **)(result); /*0x705847*/
 
 }
 }  // G42.18c ns repair

@@ -84,9 +84,9 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
   char v64[128]; // [esp+130h] [ebp-280h] BYREF
   char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF
 
-  v61 = (int)(a2);
+  v61 = (uint8_t *)((int)(a2));
   v3 = dword_A83D4C->relatedTagsCount; /*0x651709*/
-  v56 = (int)(a1); /*0x65170c*/
+  v56 = (gamemd::CellStruct *)((int)(a1)); /*0x65170c*/
   v4 = 828 * a1 + 11298400; /*0x65171e*/
   v59 = (unsigned int *)v4; /*0x65172d*/
   sprintf(Buffer, "SYNC%01d_%03d.TXT", v3, a1); /*0x651731*/
@@ -102,10 +102,10 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     fprintf(v6, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     ((Time *)(v62))->FormatDate(); /*0x6517cb*/
-    v52 = ((String *)(Destination))->CopyConstant(); /*0x6517f2*/
-    v9 = ((String *)(v64))->FormatDword(); /*0x6517f3*/
+    v52 = (char *)(((String *)(Destination))->CopyConstant()); /*0x6517f2*/
+    v9 = (char *)(((String *)(v64))->FormatDword()); /*0x6517f3*/
     fprintf(v6, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
-    v60 = (char *)(5);
+    v60 = (int)((char *)(5));
     (*(((unsigned char *)&(v57)) + (sizeof(v57) - 1))) = 0; /*0x65181b*/
     GetVersionString((unsigned int *)(&v60), (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
     v10 = (char *)&off_821F08; /*0x65182b*/
@@ -163,7 +163,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       v15 += 104; /*0x651a25*/
     }
     while ( (int)v15 < (int)dword_A8B904 );
-    v16 = (int *)(0);
+    v16 = (int)((int *)(0));
     v17 = (int *)(dword_B04474); /*0x651a36*/
     do /*0x651a68*/
     {
@@ -183,7 +183,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       v20 = *(unsigned int *)v18; /*0x651a7a*/
       if ( *(unsigned int *)v18 != -1 )
       {
-        v56 = *(unsigned int *)v18; /*0x651a84*/
+        v56 = (gamemd::CellStruct *)(*(unsigned int *)v18); /*0x651a84*/
         fprintf(
           v6,
           "%s: IsHuman:%d  Color:%s  ID:%d  HouseType:%s\n",
@@ -364,7 +364,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       }
       while ( v23 ); /*0x651de2*/
     }
-    v33 = (int *)(0);
+    v33 = (int)((int *)(0));
     v56 = 0; /*0x651dee*/
     v34 = (int *)(v59 + 193); /*0x651df2*/
     do
@@ -399,11 +399,11 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
           v54 += 40; /*0x651ec1*/
         }
         while ( v23 );
-        v33 = v56; /*0x651ecb*/
+        v33 = (int)(v56); /*0x651ecb*/
       }
       ++v33; /*0x651ecf*/
       ++v34; /*0x651ed0*/
-      v56 = v33; /*0x651ed6*/
+      v56 = (gamemd::CellStruct *)(v33); /*0x651ed6*/
     }
     while ( v33 < 5 );
     fprintf(v6, ">>>> LOGIC LAYER <<<<\n"); /*0x651ee6*/

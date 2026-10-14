@@ -10,6 +10,6 @@ struct E4Recv_74F6F0 {
     unsigned int M4;  // 0x4
     unsigned int M16;  // 0x10
 // --- flat members (END) ---
-    char  DestroyVeinholeMonster_Destroy_74F6F0(int a2);  // 0x74F6F0
+    char DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1);  // 0x74F6F0
 };
 } // namespace gamemd

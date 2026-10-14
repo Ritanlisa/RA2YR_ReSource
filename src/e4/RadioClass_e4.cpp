@@ -109,7 +109,7 @@ int RadioClass::LoadState(int aP1, int aP2)
       *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
       *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
-      *(unsigned int *)v6 = &vt_VectorClass; /*0x65abba*/
+      *(unsigned int *)v6 = (unsigned int)(&vt_VectorClass); /*0x65abba*/
     }
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
@@ -259,7 +259,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   result = AbstractClass::SaveLoad_Prefix((int *)a0, aP1, aP2); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
-    v4 = *aP1; /*0x65ac61*/
+    v4 = (int)(*aP1); /*0x65ac61*/
     aP2 = a0->radioLinks[2]; /*0x65ac6d*/
     result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/

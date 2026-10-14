@@ -84,7 +84,7 @@ int MultiplayerSiege::Write(void ** a1)
     }
     else
     {
-      v5 = dword_A8DA78; /*0x5ca6f9*/
+      v5 = (unsigned int *)(dword_A8DA78); /*0x5ca6f9*/
       do /*0x5ca71e*/
       {
         v6 = *(unsigned int *)(*v5 + 107); /*0x5ca701*/
@@ -157,7 +157,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   memset(v13, 0, sizeof(v13)); /*0x5ca824*/
   if ( dword_A8DA84 > 0 ) /*0x5ca836*/
   {
-    v4 = dword_A8DA78; /*0x5ca838*/
+    v4 = (unsigned int *)(dword_A8DA78); /*0x5ca838*/
     do /*0x5ca848*/
     {
       if ( *(unsigned int *)(*v4 + 107) == 1 ) /*0x5ca840*/
@@ -170,7 +170,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v3 >= dword_A8DA84 ) /*0x5ca84c*/
   {
     v5 = Block; /*0x5ca84e*/
-    *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca852*/
+    *(unsigned int *)v14 = (unsigned int)(&vt_VectorClass); /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
@@ -179,7 +179,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v6 < 0 || v6 >= stru_A80220.? ) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
-    *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca984*/
+    *(unsigned int *)v14 = (unsigned int)(&vt_VectorClass); /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
 LABEL_26:
@@ -190,7 +190,7 @@ LABEL_26:
   if ( *(unsigned char *)(v7->relatedTagsCapacity + 422) ) /*0x5ca899*/
   {
     v5 = Block; /*0x5ca8a3*/
-    *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca8a7*/
+    *(unsigned int *)v14 = (unsigned int)(&vt_VectorClass); /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
@@ -268,7 +268,7 @@ char MultiplayerSiege::CheckStatus(int a1)
     MultiplayerSiege_field_10 = a1->MultiplayerSiege_field_10; /*0x5ca9fd*/
     MultiplayerSiege_field_04 = a1->MultiplayerSiege_field_04; /*0x5caa00*/
     a1->MultiplayerSiege_field_10 = MultiplayerSiege_field_10 + 1; /*0x5caa06*/
-    *(unsigned int *)(MultiplayerSiege_field_04 + 4 * MultiplayerSiege_field_10) = v2; /*0x5caa09*/
+    *(unsigned int *)(MultiplayerSiege_field_04 + 4 * MultiplayerSiege_field_10) = (unsigned int)(v2); /*0x5caa09*/
   }
   v7 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
   if ( v7 ) /*0x5caa18*/
@@ -287,7 +287,7 @@ char MultiplayerSiege::CheckStatus(int a1)
     v11 = a1->MultiplayerSiege_field_10; /*0x5caa53*/
     v12 = a1->MultiplayerSiege_field_04; /*0x5caa56*/
     a1->MultiplayerSiege_field_10 = v11 + 1; /*0x5caa5c*/
-    *(unsigned int *)(v12 + 4 * v11) = v8; /*0x5caa5f*/
+    *(unsigned int *)(v12 + 4 * v11) = (unsigned int)(v8); /*0x5caa5f*/
   }
   v13 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
   if ( v13 ) /*0x5caa6e*/
@@ -307,7 +307,7 @@ char MultiplayerSiege::CheckStatus(int a1)
     v16 = a1->MultiplayerSiege_field_10; /*0x5caaa9*/
     v17 = a1->MultiplayerSiege_field_04; /*0x5caaac*/
     a1->MultiplayerSiege_field_10 = v16 + 1; /*0x5caab2*/
-    *(unsigned int *)(v17 + 4 * v16) = v14; /*0x5caab5*/
+    *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v14); /*0x5caab5*/
   }
   return v16; /*0x5caab8*/
 
@@ -351,7 +351,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
                          *(unsigned int *)&g_RulesClass_Instance + 2220);
   if ( !BuildableFromArray ) /*0x5cab49*/
     return 0; /*0x5cab49*/
-  v6 = (int)(operator new(0x720u)); /*0x5cab50*/
+  v6 = (void *)((int)(operator new(0x720u))); /*0x5cab50*/
   if ( !v6 ) /*0x5cab5a*/
     return 0; /*0x5cab5a*/
   v7 = (int *)BuildingClass::Construct(v6, (int)BuildableFromArray, (int)ppv); /*0x5cab60*/
@@ -378,7 +378,7 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/
-  return &this->MultiplayerSiege_field_00; /*0x5cabf0*/
+  return (gamemd::MultiplayerSiege *)(&this->MultiplayerSiege_field_00); /*0x5cabf0*/
 
 }
 } // namespace gamemd

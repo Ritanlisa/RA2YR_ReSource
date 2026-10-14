@@ -10,14 +10,14 @@ struct Radar {
 
 // --- flat members (END) ---
     int  FindNearestRadarTarget(int a2, int a3, int a4);  // 0x431090
-    static int UpdateReveal(char a1, int a2);  // G57w10-S raw 0x004ADCD0 IUnknown 占位清除
+    void UpdateReveal(char a1, IUnknown * aP1);  // G57w10-S raw 0x004ADCD0 IUnknown 占位清除
     int IsRadarTargetEligible();  // 0x5090F0
     void* ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5);  // G57w10-S raw 0x005824A0 IUnknown 占位清除
-    AbstractClass * * Update(int16_t *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x584550
-    void *  CopyDataArray(int * a2, void *a1 = 0);  // 0x58ABD0
+    AbstractClass * * Update(int16_t *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x584550
+    void * CopyDataArray(int * a2, void *a2_1 = 0);  // 0x58ABD0
     int PixelIndex();  // 0x6558B0
     MapClass * * RenderMinimap();  // 0x656EC0
-    AbstractClass * *  ScanWaypoints(int a1, void * a2, int a3);  // 0x692610
+    AbstractClass * * ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4);  // 0x692610
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)
     unsigned char __pad_1248;  // X10 supply (member_lookup)

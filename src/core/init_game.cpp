@@ -521,7 +521,7 @@ int InitCommands()
       v1 = (unsigned int *)(0); /*0x53217c*/
     }
     if ( ((unsigned int *)(dword_87F5D8))[36] < ((unsigned int *)(dword_87F5D8))[34] /*0x5321b1*/
-      || (IDA_BYTE1((&dword_87F5D8)[35]) || !((unsigned int *)(dword_87F5D8))[34])
+      || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !((unsigned int *)(dword_87F5D8))[34])
       && ((unsigned int *)(dword_87F5D8))[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))(((unsigned int *)(dword_87F5D8))[32] + 8))( (unsigned int *)(&((unsigned int *)(dword_87F5D8))[32]), ((unsigned int *)(dword_87F5D8))[34] + (&dword_87F5D8)[37], 0) )
 
@@ -541,7 +541,7 @@ int InitCommands()
       v4 = (CreateTeamCommand *)(0); /*0x5321e8*/
     }
     if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x53221e*/
-      || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+      || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
       && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -562,7 +562,7 @@ int InitCommands()
     v7 = (CreateTeamCommand *)(0); /*0x532255*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x53228b*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -582,7 +582,7 @@ int InitCommands()
     v10 = (CreateTeamCommand *)(0); /*0x5322c2*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5322f8*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -602,7 +602,7 @@ int InitCommands()
     v13 = (CreateTeamCommand *)(0); /*0x53232f*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532365*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -622,7 +622,7 @@ int InitCommands()
     v16 = (CreateTeamCommand *)(0); /*0x53239c*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5323d2*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -642,7 +642,7 @@ int InitCommands()
     v19 = (CreateTeamCommand *)(0); /*0x532409*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x53243f*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -662,7 +662,7 @@ int InitCommands()
     v22 = (CreateTeamCommand *)(0); /*0x532476*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5324ac*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -682,7 +682,7 @@ int InitCommands()
     v25 = (CreateTeamCommand *)(0); /*0x5324e3*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532519*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -702,7 +702,7 @@ int InitCommands()
     v28 = (CreateTeamCommand *)(0); /*0x532550*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532586*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -722,7 +722,7 @@ int InitCommands()
     v31 = (CreateTeamCommand *)(0); /*0x5325bd*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5325f3*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -742,7 +742,7 @@ int InitCommands()
     v173 = (unsigned int *)(0); /*0x53262c*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532664*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -762,7 +762,7 @@ int InitCommands()
     v36 = (CreateTeamCommand *)(0); /*0x53269f*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5326d4*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -782,7 +782,7 @@ int InitCommands()
     v39 = (CreateTeamCommand *)(0); /*0x53270b*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532741*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -802,7 +802,7 @@ int InitCommands()
     v174 = (unsigned int *)(0); /*0x53277a*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5327b2*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -822,7 +822,7 @@ int InitCommands()
     v44 = (CreateTeamCommand *)(0); /*0x5327ed*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532822*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -842,7 +842,7 @@ int InitCommands()
     v47 = (CreateTeamCommand *)(0); /*0x532859*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x53288f*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -862,7 +862,7 @@ int InitCommands()
     v50 = (CreateTeamCommand *)(0); /*0x5328c6*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5328fc*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -882,7 +882,7 @@ int InitCommands()
     v53 = (CreateTeamCommand *)(0); /*0x532933*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532969*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -902,7 +902,7 @@ int InitCommands()
     v56 = (CreateTeamCommand *)(0); /*0x5329a0*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5329d6*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -922,7 +922,7 @@ int InitCommands()
     v59 = (CreateTeamCommand *)(0); /*0x532a0d*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532a43*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -942,7 +942,7 @@ int InitCommands()
     v62 = (CreateTeamCommand *)(0); /*0x532a7a*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532ab0*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -962,7 +962,7 @@ int InitCommands()
     v65 = (CreateTeamCommand *)(0); /*0x532ae7*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532b1d*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     && (&dword_87F5D8)[37 ]> 0
     && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))(
          &(&dword_87F5D8)[32],
@@ -982,7 +982,7 @@ int InitCommands()
     v68 = (CreateTeamCommand *)(0); /*0x532b54*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532b8a*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1002,7 +1002,7 @@ int InitCommands()
     v71 = (CreateTeamCommand *)(0); /*0x532bc1*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532bf7*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1022,7 +1022,7 @@ int InitCommands()
     v74 = (CreateTeamCommand *)(0); /*0x532c2e*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532c64*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1042,7 +1042,7 @@ int InitCommands()
     v77 = (CreateTeamCommand *)(0); /*0x532c9b*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532cd1*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1062,7 +1062,7 @@ int InitCommands()
     v80 = (CreateTeamCommand *)(0); /*0x532d08*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532d3e*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1082,7 +1082,7 @@ int InitCommands()
     v83 = (CreateTeamCommand *)(0); /*0x532d75*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532dab*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1102,7 +1102,7 @@ int InitCommands()
     v86 = (CreateTeamCommand *)(0); /*0x532de2*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532e18*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1122,7 +1122,7 @@ int InitCommands()
     v89 = (CreateTeamCommand *)(0); /*0x532e4f*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532e85*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1142,7 +1142,7 @@ int InitCommands()
     v92 = (CreateTeamCommand *)(0); /*0x532ebc*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532ef2*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1162,7 +1162,7 @@ int InitCommands()
     v95 = (CreateTeamCommand *)(0); /*0x532f29*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532f5f*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1182,7 +1182,7 @@ int InitCommands()
     v98 = (CreateTeamCommand *)(0); /*0x532f96*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x532fcc*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1202,7 +1202,7 @@ int InitCommands()
     v101 = (CreateTeamCommand *)(0); /*0x533003*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x533039*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1222,7 +1222,7 @@ int InitCommands()
     v104 = (CreateTeamCommand *)(0); /*0x533070*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5330a6*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1242,7 +1242,7 @@ int InitCommands()
     v107 = (CreateTeamCommand *)(0); /*0x5330dd*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x533113*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1263,7 +1263,7 @@ int InitCommands()
     v110 = (CreateTeamCommand *)(0); /*0x533151*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x533187*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1284,7 +1284,7 @@ int InitCommands()
     v113 = (CreateTeamCommand *)(0); /*0x5331c5*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5331fb*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1305,7 +1305,7 @@ int InitCommands()
     v116 = (CreateTeamCommand *)(0); /*0x533239*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x53326f*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1326,7 +1326,7 @@ int InitCommands()
     v119 = (CreateTeamCommand *)(0); /*0x5332ad*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x5332e3*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1347,7 +1347,7 @@ int InitCommands()
     v122 = (CreateTeamCommand *)(0); /*0x533321*/
   }
   if ( (&dword_87F5D8)[36] < (&dword_87F5D8)[34] /*0x533357*/
-    || (IDA_BYTE1((&dword_87F5D8)[35]) || !(&dword_87F5D8)[34])
+    || ((((unsigned char *)&((&dword_87F5D8)[35]))[1]) || !(&dword_87F5D8)[34])
     &&(&dword_87F5D8)[37] > 0
 && (*(uint8_t (**)(unsigned int *, int, unsigned int))((&dword_87F5D8)[32] + 8))( (unsigned int *)(&(&dword_87F5D8)[32]), (&dword_87F5D8)[34] + (&dword_87F5D8)[37], 0) )
 
@@ -1674,7 +1674,7 @@ const void* SearchMIXFile(const char* name) {
 // IDA 0x6260D0 -- Block::Copy: copies 768-byte palette block
 void BlockCopy(const void* src) {
     (void)src; // Destination is implicit (this pointer in IDA __thiscall)
-    // IDA: if (this != src) qmemcpy(this, src, 0x300)
+    // IDA: if (this != src) memcpy(this, src, 0x300)
     // For now, skip -- destination is a palette duplicate buffer not yet allocated
 }
 

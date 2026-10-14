@@ -14,7 +14,7 @@
 
 // 0x4D2DB0
 namespace gamemd {  // G42.18 ns repair
-int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
+int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
 {
 
   AbstractClass *v4; // ebx
@@ -29,12 +29,12 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   this->u32_8 = aP1; /*0x4d2dc0*/
   this->u32_C = 1; /*0x4d2dc3*/
   this->u32_D = 0; /*0x4d2dc7*/
-  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x4d2dca*/
+  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = __2_YAPAXI_Z(16 * aP1); /*0x4d2e07*/
+    v8 = (int)(__2_YAPAXI_Z(16 * aP1)); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( aP1 - 1 >= 0 ) /*0x4d2e18*/

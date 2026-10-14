@@ -14,6 +14,6 @@ struct E4Recv_5AF000 {
     unsigned int M40;  // 0x28
     unsigned int M36;  // 0x36
 // --- flat members (END) ---
-    void  sub_5AF000(float a2, float a3);  // 0x5AF000
+    void sub_5AF000(ObjectClass * aP1, ObjectClass * aP2);  // 0x5AF000
 };
 } // namespace gamemd

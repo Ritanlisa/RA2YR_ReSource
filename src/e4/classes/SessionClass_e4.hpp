@@ -46,7 +46,6 @@ struct SessionClass {
     unsigned int UniqueID;  // 0x34
     char Handle;  // 0x38
     CampaignClass * ptr_44;  // 0x44
-    char PlayerColor[4];  // 0x4C
     void* ptr_53;  // 0x53
     void* ptr_63;  // 0x63
     CampaignClass * ptr_67;  // 0x67
@@ -104,21 +103,21 @@ struct SessionClass {
     int CreateConnections();
     int Destruct(void *a1 = 0);
     int GetOption();
-    static int GetOption(int *aP1);  // G42.33 b3 static-form sync
+    int GetOption(void *a1 = 0);  // G42.33 b3 static-form sync
     int GetOption2();
     int GetPlayerColor();
-    static int GetPlayerColor(void *aP1);  // G42.33 b3 static-form sync
+    int GetPlayerColor(void *a1 = 0);  // G42.33 b3 static-form sync
     int GetPlayerSide();
-    static int GetPlayerSide(int *aP1);  // G42.33 b3 static-form sync
+    int GetPlayerSide(void *a1 = 0);  // G42.33 b3 static-form sync
     int  IsValidHouse(void * a2);
     MixFileClass * LoadGameSession(int aP1, const char **aP2);
     int Read(unsigned int * a2, void *a2_2, void *a1 = 0);
     int Seek(int a2, void *a2_2, void *a3);
     int SetField(void *a1 = 0, void *a2 = 0);
     int SetOption(int aP1);
-    static int SetOption(int *aP1, int aP2);  // G42.33 b3 static-form sync
+    int SetOption(int aP1, void *a2 = 0);  // G42.33 b3 static-form sync
     int SetOption2(int aP1);
-    int SetPlayerColor(int a2, void *a1 = 0);
+    int SetPlayerColor(int a2, void *a2_1 = 0);
     int SetPlayerOption(int aP1);
     int  findPlayer(unsigned int * a2);
     int initInternet();
@@ -126,7 +125,6 @@ struct SessionClass {
     unsigned int * GetEntry(unsigned int *aP1);
     MixFileClass * Load(void *a1, void *a2, void *a3, void *a4);
     unsigned int * saveSettings();
-    static int GetPlayerColorScheme(unsigned int a1);
     unsigned int Write(int a2);
     unsigned int initPlayers();
     unsigned int updatePlayer(int a2);

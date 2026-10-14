@@ -17,7 +17,7 @@ int Selection::SetCurrent()
 {
   int result; // eax
 
-  *(unsigned int *)&DataGlobal_B0FE54 = this; /*0x731d00*/
+  *(unsigned int *)&DataGlobal_B0FE54 = (unsigned int)(this); /*0x731d00*/
   (*((unsigned char *)&(g_BuildingLoadQueue_Array.QueueingCell[0]))) = 0; /*0x731d06*/
   return result; /*0x731d0d*/
 }  // G42.18 ns repair

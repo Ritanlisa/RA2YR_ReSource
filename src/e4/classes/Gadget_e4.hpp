@@ -6,8 +6,6 @@
 namespace gamemd {
 struct Gadget {
 // --- flat members (BEGIN) ---
-    unsigned int *m_1;  // 0x1
-    unsigned int m_5;  // 0x5
     unsigned int tail_9;  // 0x9
 // --- flat members (END) ---
     unsigned int * InitProperties(void *a1 = 0);  // 0x600630

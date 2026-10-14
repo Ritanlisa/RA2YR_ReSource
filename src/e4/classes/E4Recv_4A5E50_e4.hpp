@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_4A5E50 {
     void* vfptr;  // minimal E2 declaration
-    int  sub_4A5E50(int a2, int * a3, unsigned int * a4);  // 0x4A5E50
+    int sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3);  // 0x4A5E50
 };
 } // namespace gamemd

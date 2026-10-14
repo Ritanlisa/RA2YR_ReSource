@@ -32,7 +32,7 @@ ParticleSystemClass::ParticleSystemClass(ParticleSystemTypeClass* pType) noexcep
 
     // Particles DynamicVectorClass is default-constructed inline
 
-    abstractFlags = kParticleSystemFlag;
+    abstractFlags = (void *)(kParticleSystemFlag);
 }
 
 } // namespace gamemd

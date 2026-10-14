@@ -9,6 +9,6 @@ struct E4Recv_6274F0 {
     unsigned int vfptr;  // 0x0
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
-    int  sub_6274F0(void * a2);  // 0x6274F0
+    int sub_6274F0(ObjectClass * aP1);  // 0x6274F0
 };
 } // namespace gamemd

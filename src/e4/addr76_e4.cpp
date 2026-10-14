@@ -104,7 +104,7 @@ struct _VectorClass_V_TRect_H {
     unsigned char q000[4];   // 0x0 vfptr slot (raw: *(unsigned int*)v51.q000 = (void*)&VectorClass_TRect_int_vftable)
     unsigned char m_1[4];       // 0x4 (raw: *(unsigned int*)&v51.m_1[3] = ...)
     unsigned int m_8;           // 0x8 (raw: v51.m_8 = 30)
-    unsigned char m_C[4];       // 0xC (raw: IDA_LOWORD(v51.m_C) = 1)
+    unsigned char m_C[4];       // 0xC (raw: (*((unsigned short *)&(v51.m_C))) = 1)
     unsigned char __tail_10[8]; // 0x10 (raw: v51.__tail_10 member access)
 };
 } // namespace gamemd
@@ -132,7 +132,7 @@ unsigned int * unknown_libname_36(ObjectClass *self)
   self->vfptr = 0; /*0x7636f4*/
   self->vfptr1 = 0; /*0x7636f6*/
   self->vfptr2 = 0; /*0x7636f9*/
-  return &self->vfptr; /*0x7636fc*/
+  return (unsigned int *)(&self->vfptr); /*0x7636fc*/
 }
 }  // G42.18 ns repair
 // 0x764B90
@@ -174,11 +174,11 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   this->M4 = 0; /*0x764baa*/
   /* X11: vtable install elided (implicit via ReferenceCounted virtuals 0x764bad) */
   ComPtr::Constructor&this->u32_8; /*0x764bb3*/
-  *v4 = &vt_rc_ptr; /*0x764bbf*/
+  *v4 = (unsigned int)(&vt_rc_ptr); /*0x764bbf*/
   ComPtr::Set(v4, *(unsigned int *)(a3 + 4)); /*0x764bcb*/
   Team_Create_767B00(&this->M40, *(unsigned int *)(a3 + 4) + 8); /*0x764bdb*/
   Team_Create_765C90(4, 0); /*0x764be9*/
-  this->u32_18 = &vt_DynamicVectorClassrc_ptr; /*0x764bf7*/
+  this->u32_18 = (unsigned int)(&vt_DynamicVectorClassrc_ptr); /*0x764bf7*/
   this->M44 = 10; /*0x764bfd*/
   this->u32_28 = 0; /*0x764c04*/
   this->u32_44 = 0; /*0x764c0b*/
@@ -206,7 +206,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
           {
             ComPtr::Constructor(v26); /*0x764c97*/
             v35 = v35; /*0x764c9c*/
-            v26[0] = &vt_rc_ptr; /*0x764ca3*/
+            v26[0] = (unsigned int)(&vt_rc_ptr); /*0x764ca3*/
             (*((unsigned char *)&(v35))) = v35 | 1; /*0x764cab*/
             v9 = v26; /*0x764cad*/
             v35 = v35; /*0x764cb1*/
@@ -222,7 +222,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
           {
             v35 = v35; /*0x764ce0*/
             (*((unsigned char *)&(v35))) = v35 & 0xFE; /*0x764ceb*/
-            v26[0] = &vt_rc_ptr; /*0x764ced*/
+            v26[0] = (unsigned int)(&vt_rc_ptr); /*0x764ced*/
             v35 = v35; /*0x764cf5*/
             ComPtr::Release(v26); /*0x764cfc*/
           }
@@ -240,7 +240,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
               this->u32_28 = v14 + 1; /*0x764d4d*/
               ComPtr::Set((unsigned int *)(this->M28 + 8 * v14), v22); /*0x764d56*/
             }
-            v27[0] = &vt_rc_ptr; /*0x764d5f*/
+            v27[0] = (unsigned int)(&vt_rc_ptr); /*0x764d5f*/
             ComPtr::Release(v27); /*0x764d67*/
           }
           v25[0] = &vt_rc_ptr; /*0x764d70*/
@@ -252,7 +252,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       }
       while ( v15 ); /*0x764d8a*/
     }
-    v28[0] = &vt_rc_ptr; /*0x764d94*/
+    v28[0] = (unsigned int)(&vt_rc_ptr); /*0x764d94*/
     ComPtr::Release(v28); /*0x764d9c*/
   }
   BufferIOFile::Constructor(v34, aWdthistIni_0); /*0x764daa*/
@@ -262,7 +262,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
     GenericList::Constructor(v30); /*0x764dcf*/
-    v30[0] = &vt_List; /*0x764dde*/
+    v30[0] = (unsigned int)(&vt_List); /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
     (*((unsigned char *)&(v31))) = 0; /*0x764df2*/
     v32 = 0; /*0x764df7*/
@@ -279,7 +279,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       v18 = &this->M52; /*0x764e60*/
       do
       {
-        RegionString = GetRegionStringWOL((void *)v16); /*0x764e6a*/
+        RegionString = (char **)(GetRegionStringWOL((void *)v16)); /*0x764e6a*/
         v19 = ((String *)((char **)v25))->Assign(g_INI_Key_LastDay); /*0x764e79*/
         String::Concat((const char **)v19, (char **)&v24, RegionString); /*0x764e80*/
         DeleteAndZero(v25); /*0x764e89*/
@@ -305,7 +305,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   }
   v34[0] = (unsigned int)&off_7E1668; /*0x764f0e*/
   ((BufferIOFileClass *)(v34))->Dtor(); /*0x764f16*/
-  return this; /*0x764f1d*/
+  return (gamemd::HashTable_flat **)(this); /*0x764f1d*/
 }
 }
 // 0x765000
@@ -350,7 +350,7 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   CCFileClass::Close(v14); /*0x7650e0*/
   v14[0] = (unsigned int)&off_7E1668; /*0x7650e9*/
   ((BufferIOFileClass *)(v14))->Dtor(); /*0x7650f1*/
-  RegionStringWOL = GetRegionStringWOL(aP1); /*0x765101*/
+  RegionStringWOL = (char **)(GetRegionStringWOL(aP1)); /*0x765101*/
   v3 = ((String *)((char **)&v6))->Assign(g_INI_Key_LastDay); /*0x76510c*/
   String::Concat((const char **)v3, (char **)&v7, RegionStringWOL); /*0x765113*/
   DeleteAndZero(&v6); /*0x76511c*/

@@ -19,7 +19,7 @@ struct VectorClass_ptr_HouseTypeClass {
     DynamicVector *  Constructor_VectorClass_HouseTypeClass___(char a2);  // 0x4F0340
     DynamicVector *  Constructor_VectorClass_TaskForceClass___(char a2);  // 0x4F03E0
     DynamicVector *  Constructor_VectorClass_TeamTypeClass___(char a2);  // 0x4F0480
-    int Get(void *a1_1, void *a1 = 0);  // 0x4E8AE0
+    int Get(int a2, void *a2_2);  // 0x4E8AE0
     void Destroy_0();  // 0x4E8B40
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8B70
     void Destroy_1();  // 0x4E8BA0

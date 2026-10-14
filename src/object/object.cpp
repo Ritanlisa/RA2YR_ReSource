@@ -124,7 +124,7 @@ int ObjectClass::Destroy()
         (unsigned char)result) )
   {
     result = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x5f666e*/
-    *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = this; /*0x5f667d*/
+    *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = (unsigned int)(this); /*0x5f667d*/
   }
   return result; /*0x5f6680*/
 }
@@ -255,7 +255,7 @@ void AudioController::Stop()
   RefCount **v5; // edi
   Voice *v6; // [esp+0h] [ebp-Ch]
 
-  result = this->AudioController_field_00; /*0x405d41*/
+  result = (unsigned int *)(this->AudioController_field_00); /*0x405d41*/
   if ( g_AudioConfigState ) /*0x405d53*/
   {
     if ( this->AudioController_field_0C == &dword_87E294 ) /*0x405d60*/
@@ -280,7 +280,7 @@ void AudioController::Stop()
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 144) = 0; /*0x405df7*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 152) = 0; /*0x405e03*/
             *(unsigned int *)(*(unsigned int *)(v2 + 176) + 156) = 0; /*0x405e0f*/
-            result = this->AudioController_field_00; /*0x405e15*/
+            result = (unsigned int *)(this->AudioController_field_00); /*0x405e15*/
             *(unsigned int *)(v2 + 176) = 0; /*0x405e19*/
           }
           v4 = 0; /*0x405e26*/
@@ -295,7 +295,7 @@ void AudioController::Stop()
               ++v5; /*0x405e40*/
             }
             while ( v4 < *(unsigned int *)(v2 + 168) ); /*0x405e45*/
-            result = this->AudioController_field_00; /*0x405e47*/
+            result = (unsigned int *)(this->AudioController_field_00); /*0x405e47*/
           }
           *(unsigned int *)(v2 + 168) = 0; /*0x405e4c*/
           *(unsigned int *)(v2 + 28) = 4; /*0x405e52*/

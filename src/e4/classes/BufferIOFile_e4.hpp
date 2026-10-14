@@ -8,9 +8,8 @@ struct BufferIOFile {
 // --- flat members (BEGIN) ---
     int m_54;  // 0x54
 // --- flat members (END) ---
-    int  Constructor(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x47A9D0
+    int Constructor(char *Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x47A9D0
     int Init(void *a1 = 0, void *a2 = 0);  // 0x47AA30
-    int m_54;  // 0x54 (canon-mt)
     unsigned int *q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

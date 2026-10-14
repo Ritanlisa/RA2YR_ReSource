@@ -54,7 +54,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
     result = a3; /*0x539f3e*/
   }
   LightningStorm_Coords = result; /*0x539f46*/
-  LightningStorm_Owner = a4; /*0x539f4b*/
+  LightningStorm_Owner = (int)(a4); /*0x539f4b*/
   if ( !LightningStorm_Active ) /*0x539f59*/
   {
     if ( a2 ) /*0x539f61*/

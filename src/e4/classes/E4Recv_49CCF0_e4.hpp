@@ -23,7 +23,7 @@ struct E4Recv_49CCF0 {
     unsigned int M100;  // 0x100
     unsigned int M104;  // 0x104
 // --- flat members (END) ---
-    AbstractClass * *  sub_49CCF0(int a2, int a3, void * Block, int a5, int16_t a6, int a7, int a8, char * a9, char * a10);  // 0x49CCF0
+    AbstractClass * * sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10);  // 0x49CCF0
 
     unsigned int u32_50;  // X10 supply (member_lookup)
     unsigned int u32_54;  // X10 supply (member_lookup)

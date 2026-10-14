@@ -185,7 +185,7 @@ char Cell::CreateCrater(int a0, int a1, int a2, int a3, char a4)
                   v15 = (char *)g_CraterPool + v14 + 20; /*0x6d29a7*/
                   v16 = (char *)g_CraterPool + v14; /*0x6d29ab*/
                   v14 += 20; /*0x6d29b3*/
-                  qmemcpy(v16, v15, 0x14u); /*0x6d29b6*/
+                  memcpy(v16, v15, 0x14u); /*0x6d29b6*/
                 }
                 while ( v13 < g_CraterCreationState ); /*0x6d29be*/
               }
@@ -229,7 +229,7 @@ char Cell::CreateCrater(int a0, int a1, int a2, int a3, char a4)
       {
         v19 = g_CraterCreationState++; /*0x6d2a9e*/
         v12 = 5 * v19; /*0x6d2aad*/
-        qmemcpy((char *)g_CraterPool + 4 * v12, v40, 0x14u); /*0x6d2ab8*/
+        memcpy((char *)g_CraterPool + 4 * v12, v40, 0x14u); /*0x6d2ab8*/
       }
     }
     else
@@ -245,7 +245,7 @@ char Cell::CreateCrater(int a0, int a1, int a2, int a3, char a4)
       v39[2] = v22; /*0x6d2b1e*/
       v39[3] = v23; /*0x6d2b27*/
       LOBYTE(v39[4]) = v20; /*0x6d2b32*/
-      qmemcpy((char *)g_CraterPool + 20 * v29, v39, 0x14u); /*0x6d2b36*/
+      memcpy((char *)g_CraterPool + 20 * v29, v39, 0x14u); /*0x6d2b36*/
     }
     return v12; /*0x6d2aba*/
 }
@@ -336,7 +336,7 @@ void gamemd::AbstractTypeClass::AbstractTypeClass(gamemd::AbstractTypeClass::noi
     if ( Destination != v3 ) /*0x410880*/
     {
   LABEL_8:
-      qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
+      memcpy(v3, Destination, 0x18u); /*0x4108b5*/
       *((_BYTE *)this + 60) = Destination[24]; /*0x4108b7*/
     }
   LABEL_9:
@@ -351,7 +351,7 @@ void gamemd::AbstractTypeClass::AbstractTypeClass(gamemd::AbstractTypeClass::noi
     }
     if ( Destination != (char *)(this + 25) ) /*0x4108e0*/
     {
-      qmemcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
+      memcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
       *((_BYTE *)this + 148) = v8; /*0x4108ed*/
     }
     *(this + 24) = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
@@ -1793,7 +1793,7 @@ bool gamemd::AbstractTypeClass::LoadFromINI(gamemd::CCINIClass* a0)
     if ( Destination != v3 ) /*0x410880*/
     {
   LABEL_8:
-      qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
+      memcpy(v3, Destination, 0x18u); /*0x4108b5*/
       *((_BYTE *)this + 60) = Destination[24]; /*0x4108b7*/
     }
   LABEL_9:
@@ -1808,7 +1808,7 @@ bool gamemd::AbstractTypeClass::LoadFromINI(gamemd::CCINIClass* a0)
     }
     if ( Destination != (char *)(this + 25) ) /*0x4108e0*/
     {
-      qmemcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
+      memcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
       *((_BYTE *)this + 148) = v8; /*0x4108ed*/
     }
     *(this + 24) = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
@@ -1864,7 +1864,7 @@ bool gamemd::AbstractTypeClass::SaveToINI(gamemd::CCINIClass* a0)
     if ( Destination != v3 ) /*0x410880*/
     {
   LABEL_8:
-      qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
+      memcpy(v3, Destination, 0x18u); /*0x4108b5*/
       *((_BYTE *)this + 60) = Destination[24]; /*0x4108b7*/
     }
   LABEL_9:
@@ -1879,7 +1879,7 @@ bool gamemd::AbstractTypeClass::SaveToINI(gamemd::CCINIClass* a0)
     }
     if ( Destination != (char *)(this + 25) ) /*0x4108e0*/
     {
-      qmemcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
+      memcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
       *((_BYTE *)this + 148) = v8; /*0x4108ed*/
     }
     *(this + 24) = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
@@ -6861,7 +6861,7 @@ void * gamemd::XSurface::Lock(int a0, int a1)
       v11[0] = 108; /*0x4bae38*/
       if ( !(*(int (__stdcall **)(int, _DWORD, _DWORD *, int, _DWORD))(*(_DWORD *)v7 + 100))(v7, 0, v11, 1, 0) ) /*0x4bae46*/
       {
-        qmemcpy(this->q020, v11, 0x6Cu); /*0x4bae59*/
+        memcpy(this->q020, v11, 0x6Cu); /*0x4bae59*/
         q020 = this->q020; /*0x4bae5b*/
         this->q010 = (void *)((unsigned int)(*((_DWORD *)q020 + 21) + 7) >> 3); /*0x4bae67*/
         BYTE1(this->q018) = (*((_DWORD *)q020 + 26) & 0x4000) != 0; /*0x4bae73*/
@@ -6910,7 +6910,7 @@ void gamemd::AbstractTypeClass::LoadTheaterSpecificArt(gamemd::TheaterType)
     if ( Destination != v3 ) /*0x410880*/
     {
   LABEL_8:
-      qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
+      memcpy(v3, Destination, 0x18u); /*0x4108b5*/
       *((_BYTE *)this + 60) = Destination[24]; /*0x4108b7*/
     }
   LABEL_9:
@@ -6925,7 +6925,7 @@ void gamemd::AbstractTypeClass::LoadTheaterSpecificArt(gamemd::TheaterType)
     }
     if ( Destination != (char *)(this + 25) ) /*0x4108e0*/
     {
-      qmemcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
+      memcpy(this + 25, Destination, 0x30u); /*0x4108eb*/
       *((_BYTE *)this + 148) = v8; /*0x4108ed*/
     }
     *(this + 24) = (int)&g_TypeClass_DefaultString; /*0x4108ee*/
@@ -7210,7 +7210,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac1c1*/
                       {
   LABEL_116:
-                        qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v44, 0x6Fu); /*0x4ac1c3*/
+                        memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v44, 0x6Fu); /*0x4ac1c3*/
                         (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac1ea*/
                         dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4ac201*/
                         ++stru_A80220.lineTrailer; /*0x4ac207*/
@@ -7227,7 +7227,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                                 a3);
                         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac249*/
                         {
-                          qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v46, 0x6Fu); /*0x4ac265*/
+                          memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v46, 0x6Fu); /*0x4ac265*/
                           (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac272*/
                           dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4ac289*/
                           ++stru_A80220.lineTrailer; /*0x4ac28f*/
@@ -7308,7 +7308,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     v16 = EventClass::Init(v57, (int)dword_A83D4C->q030, 11, v15, v48, v50, &v55); /*0x4abb55*/
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4abb64*/
     {
-      qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x4abb80*/
+      memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x4abb80*/
       (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4abb91*/
       dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4abba8*/
       ++stru_A80220.lineTrailer; /*0x4abbae*/

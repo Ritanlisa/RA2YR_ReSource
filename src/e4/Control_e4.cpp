@@ -15,7 +15,7 @@
 
 // 0x48E620
 namespace gamemd {  // G42.18 ns repair
-int Control::DispatchClick(int aP1)
+int Control::DispatchClick(int aP1, void *a2)
 {
   int v3; // ecx
 

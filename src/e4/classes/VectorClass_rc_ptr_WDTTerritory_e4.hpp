@@ -15,7 +15,7 @@ struct VectorClass_rc_ptr_WDTTerritory {
     unsigned char IsAllocated;  // 0xD
 // --- flat members (END) ---
     int  Release(int a2, unsigned int * a3);  // 0x76B8C0
-    unsigned int *  loc_76B6C0(int a2, int a3);  // 0x76B6C0
+    unsigned int *  loc_76B6C0(int a3, void *a2 = 0);  // 0x76B6C0
     unsigned int *  Clear(unsigned int * a2, int a3);  // 0x76B760
     char  AddRef(int a2);  // 0x76B870
     int ddtor(void *a1_1);  // 0x76B9E0

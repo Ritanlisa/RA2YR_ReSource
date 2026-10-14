@@ -187,13 +187,13 @@ struct AnimTypeClass {
     int LoadFromINI(uint8_t *** a2, void *a2_2);
     int LookupByName(void *a1 = 0);
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(INIClass * aP1, unsigned char * a2, void * Layer, void *a1 = 0);
+    int ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2, void *a4 = 0);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     int Thunk_AnimTypeClass_sub_428E40();
     int Thunk_AnimTypeClass_sub_428E50();
-    AnimTypeClass * Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
-    unsigned int * Construct2(char *Source, void *a1 = 0);
+    AnimTypeClass * Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    unsigned int * Construct2(char *Source, void *a2 = 0);
     void* GetWarhead(int a2);
     AnimTypeClass * * FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3);
     int ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2);

@@ -47,7 +47,7 @@ int PlaySoundEffectAt(int* p0, int p1, int* p2, int p3, char p4, int p5);  // x4
 } }
 // ---- g57c5 W5 end ----
 extern int Coord;  // 词表 (canon 无条目, int 兜底) L1352
-extern int byte_A8EB7F;  // 词表 (canon 无条目, int 兜底) L1323
+extern unsigned char byte_A8EB7F; // 词表 (canon 无条目, int 兜底) L1323
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int dword_8871E0;  // 词表 (canon 无条目, int 兜底) L1321
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
@@ -1203,7 +1203,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3277) ) /*0x707d2b*/
     return 0; /*0x707d38*/
   owner = this->owner; /*0x707d39*/
-  sideIndex = owner->sideIndex; /*0x707d40*/
+  sideIndex = (int)(owner->sideIndex); /*0x707d40*/
   if ( sideIndex ) /*0x707d48*/
   {
     if ( sideIndex == 1 ) /*0x707d5a*/
@@ -1231,9 +1231,9 @@ InfantryTypeClass* TechnoClass::GetCrew() const
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vfptr + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
-    return *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948); /*0x707dc4*/
+    return (ra2::game::InfantryTypeClass *)(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 3948)); /*0x707dc4*/
   }
-  return v6; /*0x707d37*/
+  return (ra2::game::InfantryTypeClass *)(v6); /*0x707d37*/
 }
   else
   {

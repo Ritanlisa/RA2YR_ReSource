@@ -15,10 +15,10 @@ struct FileClass {
     char Stub(int a1);
     int Close(void *a1 = 0, void *a2 = 0);
     int GetState(void *a1 = 0);
-    int Open(int a2, void *a1 = 0, void *a3 = 0);
-    int Read(char *aP1, signed int aP2, void *a1 = 0);
+    int Open(int a2, void *a2_1 = 0, void *a3 = 0);
+    int Read(char *aP1, signed int aP2, void *a3 = 0);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
-    const char* SetFileName(char *aP1, void *a1 = 0);
+    const char* SetFileName(char *aP1, void *a2 = 0);
     int SetState(void *a1, void *a2 = 0);
     int StubReturnFalse();
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);

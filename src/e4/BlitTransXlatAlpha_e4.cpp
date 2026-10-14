@@ -23,7 +23,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   result = a4; /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
-    v11 = g_ZBufferDescriptor; /*0x493941*/
+    v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493941*/
     v14 = (unsigned short *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
@@ -31,7 +31,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
       {
         *a1 = 3 * (this->ptr_8 & (*a1 >> 2)) + (this->ptr_8 & (*(unsigned short *)(this->Data + 2 * (unsigned __int8)*a2) >> 2)); /*0x493996*/
         *a5 = argC; /*0x493999*/
-        v11 = g_ZBufferDescriptor; /*0x49399c*/
+        v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x49399c*/
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
@@ -62,7 +62,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
   if ( a4 > 0 ) /*0x493a6a*/
   {
     v12 = argC; /*0x493a76*/
-    v14 = g_ZBufferDescriptor; /*0x493a80*/
+    v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493a80*/
     v16 = (unsigned short *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
@@ -71,7 +71,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
         v12 = argC; /*0x493ac2*/
         *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(this->Data + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/
         *a5 = argC; /*0x493ac9*/
-        v14 = g_ZBufferDescriptor; /*0x493acc*/
+        v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493acc*/
       }
       v15 = a5 + 1; /*0x493ad2*/
       ++a2; /*0x493ad8*/
@@ -100,7 +100,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
   result = a4; /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
-    v11 = g_ZBufferDescriptor; /*0x493ba1*/
+    v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493ba1*/
     v14 = (unsigned short *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
@@ -108,7 +108,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
       {
         *a1 = (this->ptr_8 & (*a1 >> 2)) + 3 * (this->ptr_8 & (*(unsigned short *)(this->Data + 2 * (unsigned __int8)*a2) >> 2)); /*0x493bf6*/
         *a5 = argC; /*0x493bf9*/
-        v11 = g_ZBufferDescriptor; /*0x493bfc*/
+        v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493bfc*/
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/
@@ -138,7 +138,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
-  result = (int)(this->ptr_8 + (v11 << 9)); /*0x493e25*/
+  result = (gamemd::AbstractClass *)((int)(this->ptr_8 + (v11 << 9))); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
     v14 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x493e35*/
@@ -159,7 +159,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
     }
     while ( v17 ); /*0x493e8e*/
   }
-  return result; /*0x493e92*/
+  return (int)(result); /*0x493e92*/
 }
 }
 // 0x493EA0

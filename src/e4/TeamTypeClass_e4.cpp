@@ -159,7 +159,7 @@ void * TeamTypeClass::CreateScriptType(char *Source, int a2, int a3, int aP1)
             v6) )
       {
         dword_8B41D8 = v5 + 1; /*0x691cf6*/
-        *((unsigned int *)dword_8B41CC + v5) = v4; /*0x691d02*/
+        *((unsigned int *)dword_8B41CC + v5) = (unsigned int)(v4); /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }
       v7 = 0; /*0x691d0b*/
@@ -216,7 +216,7 @@ LABEL_6:
     if ( ++v2 >= dword_A8E8E0 ) /*0x6e8644*/
       goto LABEL_6; /*0x6e8644*/
   }
-  return (unsigned int *)*((unsigned int *)dword_A8E8D4 + v2); /*0x6e865f*/
+  return (gamemd::AbstractClass **)((unsigned int *)*((unsigned int *)dword_A8E8D4 + v2)); /*0x6e865f*/
 
 }
 }
@@ -351,7 +351,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
                        v4);
   if ( (unsigned __int8)BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
   {
-    *((unsigned int *)aP1 + 50) = v5; /*0x6f10ee*/
+    *((unsigned int *)aP1 + 50) = (unsigned int)(v5); /*0x6f10ee*/
     *((unsigned int *)aP1 + 49) = 0; /*0x6f10f4*/
   }
   else if ( v5 != (HouseClass *)-1 ) /*0x6f1103*/
@@ -495,14 +495,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
          Destination,
          128) )
   {
-    v27 = TagTypeClass::FindOrCreate(Destination); /*0x6f134e*/
+    v27 = (char *)(TagTypeClass::FindOrCreate(Destination)); /*0x6f134e*/
   }
   else
   {
     v27 = v26; /*0x6f1355*/
   }
   v28 = *((unsigned int *)aP1 + 39); /*0x6f1357*/
-  *((unsigned int *)aP1 + 52) = v27; /*0x6f135d*/
+  *((unsigned int *)aP1 + 52) = (unsigned int)(v27); /*0x6f135d*/
   v29 = INIClass::ReadInt_Overwrite( /*0x6f136c*/
           (bool *)a2,
           (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
@@ -556,7 +556,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
          v37,
          v53,
          64) > 0 )
-    *((unsigned int *)aP1 + 53) = String::To_Waypoint(v53); /*0x6f1440*/
+    *((unsigned int *)aP1 + 53) = (unsigned int)(String::To_Waypoint(v53)); /*0x6f1440*/
   v38 = Waypoint::To_String(*((unsigned int *)aP1 + 54)); /*0x6f1453*/
   if ( INIClass::GetString( /*0x6f1468*/
          (INIClass *)a2,
@@ -575,14 +575,14 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
          Destination,
          128) )
   {
-    ScriptType = TeamTypeClass::CreateScriptType(Destination); /*0x6f14a3*/
+    ScriptType = (int *)(TeamTypeClass::CreateScriptType(Destination)); /*0x6f14a3*/
   }
   else
   {
     ScriptType = v39; /*0x6f14aa*/
   }
   v41 = (unsigned int *)*((unsigned int *)aP1 + 57); /*0x6f14ac*/
-  *((unsigned int *)aP1 + 56) = ScriptType; /*0x6f14c9*/
+  *((unsigned int *)aP1 + 56) = (unsigned int)(ScriptType); /*0x6f14c9*/
   if ( INIClass::GetString( /*0x6f14cf*/
          (INIClass *)a2,
          (unsigned __int8 *)&aP1->TeamTypeClass_field_24,
@@ -597,7 +597,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   {
     TaskForce = v41; /*0x6f14e3*/
   }
-  *((unsigned int *)aP1 + 57) = TaskForce; /*0x6f14e6*/
+  *((unsigned int *)aP1 + 57) = (unsigned int)(TaskForce); /*0x6f14e6*/
   if ( !TaskForce ) /*0x6f14ef*/
   {
     if ( dword_A8E8E0 <= 0 ) /*0x6f14f8*/
@@ -1311,7 +1311,7 @@ void TeamTypeClass_28::ddtor(void *a1_1, void *a2_1)
 
 // 0x6F2440
 namespace gamemd {
-int TeamTypeClass_28::Read(unsigned int * a2, void *a2_2)
+int TeamTypeClass_28::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -1390,7 +1390,7 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
 
 // 0x6F2720
 namespace gamemd {
-DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
+DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   int v3; // eax

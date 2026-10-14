@@ -417,7 +417,7 @@ IUnknown * * Rules::ReadCombatINI()
 
 // 0x67A570
 namespace gamemd {
-unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
+unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1, void *a2)
 {
 
   int v3; // eax
@@ -428,18 +428,18 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
   if ( this == (Rules *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
   (*(void (**)(Rules *))(*(unsigned int *)this->q000 + 12))(this); /*0x67a57e*/
-  v3 = aP1[2]; /*0x67a581*/
+  v3 = (int)(aP1[2]); /*0x67a581*/
   *&this->u32_8 = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
     *&this->u32_4 = 0; /*0x67a5d6*/
     BYTE1(this->m_C) = 0; /*0x67a5dd*/
 LABEL_8:
-    *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
-    this->u32_14 = aP1[5]; /*0x67a5ea*/
+    *(unsigned int *)this->__tail_10 = (unsigned int)(aP1[4]); /*0x67a5e1*/
+    this->u32_14 = (unsigned int)(aP1[5]); /*0x67a5ea*/
     return this->q000; /*0x67a5ed*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
+  v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x67a593*/
   *&this->u32_4 = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
@@ -454,8 +454,8 @@ LABEL_8:
     ++v6; /*0x67a5be*/
   }
   while ( v6 < *&this->u32_8 ); /*0x67a5c1*/
-  *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
-  this->u32_14 = aP1[5]; /*0x67a5cc*/
+  *(unsigned int *)this->__tail_10 = (unsigned int)(aP1[4]); /*0x67a5c6*/
+  this->u32_14 = (unsigned int)(aP1[5]); /*0x67a5cc*/
   return this->q000; /*0x67a5d1*/
 
 }
@@ -475,7 +475,7 @@ char * Rules::GetProductionTimeMult(int aP1)
     if ( aP1 >= 5 ) /*0x5fb2ed*/
       return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/
     else
-      return (&(&off_832CEC)[8 * aP1])[v3]; /*0x5fb2f2*/
+      return (char *)((&(&off_832CEC)[8 * aP1])[v3]); /*0x5fb2f2*/
   }
   return result; /*0x5fb2f9*/
 

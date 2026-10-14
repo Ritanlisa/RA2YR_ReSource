@@ -22,7 +22,7 @@
 
 // 0x6E5B60
 namespace gamemd {  // G42.18 ns repair
-AbstractTypeClass * TagTypeClass::Construct(char *aP1)
+AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // eax
@@ -30,7 +30,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
-  AbstractTypeClass::Constructor((int)this, aP1); /*0x6e5b6c*/
+  AbstractTypeClass::Constructor((char *)((int)this), aP1); /*0x6e5b6c*/
   this->u32_98 = -1; /*0x6e5b78*/
   this->Coord_9C = 0; /*0x6e5b82*/
   this->q0A0 = 0; /*0x6e5b88*/
@@ -49,7 +49,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
   }
   if ( Destination != &this->Name ) /*0x6e5bd0*/
   {
-    qmemcpy(&this->Name, Destination, 0x30u); /*0x6e5bdc*/
+    memcpy(&this->Name, Destination, 0x30u); /*0x6e5bdc*/
     this->u32_94 = v7; /*0x6e5bde*/
   }
   this->u32_98 = g_MultiplayerCleanup; /*0x6e5be6*/
@@ -62,7 +62,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
          0) )
   {
     v3 = g_MultiplayerCleanup++; /*0x6e5c2b*/
-    *((unsigned int *)dword_B0E784 + v3) = this; /*0x6e5c3a*/
+    *((unsigned int *)dword_B0E784 + v3) = (unsigned int)(this); /*0x6e5c3a*/
   }
   if ( dword_B0F680 < dword_B0F678 /*0x6e5c71*/
     || (byte_B0F67D || !dword_B0F678)
@@ -73,9 +73,9 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1)
          0) )
   {
     v4 = dword_B0F680++; /*0x6e5c7e*/
-    *((unsigned int *)dword_B0F674 + v4) = this; /*0x6e5c8d*/
+    *((unsigned int *)dword_B0F674 + v4) = (unsigned int)(this); /*0x6e5c8d*/
   }
-  return this; /*0x6e5c92*/
+  return (gamemd::AbstractTypeClass *)(this); /*0x6e5c92*/
 
 }
 }  // G42.18 ns repair
@@ -114,7 +114,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
   v4 = 0; /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
-    v5 = g_TagClassCount; /*0x6e5d07*/
+    v5 = (unsigned int *)(g_TagClassCount); /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
       v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
@@ -123,7 +123,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
         if ( v6 ) /*0x6e5d16*/
         {
           (*(void (**)(unsigned int *, int))(*v6 + 32))(v6, 1); /*0x6e5d1c*/
-          v5 = g_TagClassCount; /*0x6e5d1f*/
+          v5 = (unsigned int *)(g_TagClassCount); /*0x6e5d1f*/
         }
         --v4; /*0x6e5d24*/
       }
@@ -131,7 +131,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
-  v10 = a1; /*0x6e5d40*/
+  v10 = (gamemd::AbstractTypeClass *)(a1); /*0x6e5d40*/
   v7 = (*(int (**)(int *, AbstractTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5d44*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v10);
@@ -146,7 +146,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
       ++v7; /*0x6e5d67*/
     }
   }
-  v10 = a1; /*0x6e5d89*/
+  v10 = (gamemd::AbstractTypeClass *)(a1); /*0x6e5d89*/
   v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))(&dword_B0E780, &v10); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
@@ -167,11 +167,11 @@ int TagTypeClass::GetEvent(int a2, int a3)
 
   int result; // eax
 
-  result = this->q0A0; /*0x6e5e50*/
+  result = (int)(this->q0A0); /*0x6e5e50*/
   if ( result == a2 ) /*0x6e5e5c*/
   {
     result = result->NextTrigger; /*0x6e5e5e*/
-    this->q0A0 = result; /*0x6e5e64*/
+    this->q0A0 = (void *)(result); /*0x6e5e64*/
   }
   return result; /*0x6e5e6a*/
 
@@ -211,12 +211,12 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   }
   if ( Destination != &this->Name ) /*0x6e6118*/
   {
-    qmemcpy(&this->Name, Destination, 0x30u); /*0x6e6123*/
+    memcpy(&this->Name, Destination, 0x30u); /*0x6e6123*/
     this->u32_94 = v7; /*0x6e6125*/
   }
   v4 = strtok(0, Str); /*0x6e612d*/
   this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
-  return 1; /*0x6e6143*/
+  return (void *)(1); /*0x6e6143*/
 
 }
 }
@@ -228,16 +228,12 @@ int TagTypeClass::GetParameter(char * a2)
   int v3; // eax
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
-  v3 = this->q0A0; /*0x6e6169*/
+  v3 = (int)(this->q0A0); /*0x6e6169*/
   if ( v3 ) /*0x6e6171*/
     wsprintfA(Source, "%d,%s,%s", this->Coord_9C, (const char *)&this->q0A0, (const char *)(v3 + 36)); /*0x6e61b4*/
   else
     wsprintfA(Source, "%s,<none>", (const char *)&this->q0A0); /*0x6e6181*/
-  INIClass::SetString( /*0x6e6199*/
-    a2,
-    (unsigned __int8 *)&DataGlobal_842C3C,
-    &this->arrayIndex,
-    Source);
+    INIClass::SetString((uint8_t *)(/*0x6e6199*/     a2),     (unsigned __int8 *)&DataGlobal_842C3C,     &this->arrayIndex,     Source);
   return 1; /*0x6e61db*/
 
 }
@@ -266,7 +262,7 @@ LABEL_6:
     if ( ++v2 >= g_MultiplayerCleanup ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
   }
-  return (char *)*((unsigned int *)dword_B0E784 + v2); /*0x6e637f*/
+  return (gamemd::AbstractTypeClass *)((char *)*((unsigned int *)dword_B0E784 + v2)); /*0x6e637f*/
 
 }
 }
@@ -300,7 +296,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
   LABEL_6:
     v3 = (TriggerTypeClass *)operator new(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
+      return TriggerTypeClass::Construct((char *)(v3), Source); /*0x727b11*/
     return 0; /*0x727b05*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.targetLaserTimer[0] + 4 * v2) + 36), Source) ) /*0x727aea*/
@@ -336,7 +332,7 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6e6426*/
     {
-      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e642f*/
+      AbstractTypeClass::Init((int)aP0,(void *)((int)&aP1)); /*0x6e642f*/
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6434) */
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e643a) */
       /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e6441) */

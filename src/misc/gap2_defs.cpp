@@ -382,7 +382,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         v10 = this->m_State; /*0x5150f0*/
         this->q028 = v9 + 128; /*0x5150f9*/
         this->u32_2C = 0; /*0x515107*/
-        qmemcpy((void *)(v10 + 1504), (const void *)(v10 + 1508), 0x5Cu); /*0x515110*/
+        memcpy((void *)(v10 + 1504), (const void *)(v10 + 1508), 0x5Cu); /*0x515110*/
         v96[0] = this->q024 / 256; /*0x515121*/
         v11 = this->m_State; /*0x515132*/
         v96[1] = this->q028 / 256; /*0x515138*/
@@ -509,7 +509,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
           return 7; /*0x515a49*/
         if ( v65[981] ) /*0x515a4f*/
           (*(void (__thiscall **)(unsigned char *, char *))(this->u32_FC)(v65, &this->MovementAI_field_10); /*0x515a5c*/
-        qmemcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu); /*0x515a76*/
+        memcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu); /*0x515a76*/
         *(unsigned int *)(this->m_State + 1596) = -1; /*0x515a7b*/
         *(unsigned short *)v97 = this->q024 / 256; /*0x515a94*/
         v66 = this->m_State; /*0x515aa5*/
@@ -2742,12 +2742,12 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aZoominfactor, *(double *)v331); /*0x66ead8*/
       __asm { fstp qword ptr [esi+550h] } /*0x66eadd*/
       *&_ESI->u32_550 = _RT1; /*0x66eadd*/
-      IDA_BYTE2(_ESI->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite( /*0x66eafd*/
+      (((unsigned char *)&(_ESI->ElevationBonusCap[0]))[2]) = INIClass::ReadBool_Overwrite( /*0x66eafd*/
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aRevealbyheight,
                                             (unsigned char)((_ESI->ElevationBonusCap[0]) >> 16));
-      IDA_HIBYTE(_ESI->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite( /*0x66eb1c*/
+      (*(((unsigned char *)&(_ESI->ElevationBonusCap[0])) + (sizeof(_ESI->ElevationBonusCap[0]) - 1))) = INIClass::ReadBool_Overwrite( /*0x66eb1c*/
                                              (int *)v338,
                                              g_INI_Key_General,
                                              aAllowshroudeds,
@@ -3012,7 +3012,7 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aIcebreakingwei, *(double *)v331); /*0x66f1c0*/
       __asm { fstp qword ptr [esi+640h] } /*0x66f1c5*/
       *(double *)_ESI->VeteranArmor = _RT1; /*0x66f1c5*/
-      IDA_LOBYTE(_ESI->IncomingMessage) = INIClass::ReadInt_Overwrite( /*0x66f1e6*/
+      (*((unsigned char *)&(_ESI->IncomingMessage))) = INIClass::ReadInt_Overwrite( /*0x66f1e6*/
                                         (bool *)v338,
                                         g_INI_Key_General,
                                         aCliffbackimpas,
@@ -3319,7 +3319,7 @@ int RulesClass::LoadFromINI() {
                              g_INI_Key_General,
                              aChronodistance,
                              _ESI->Difficult[2]);
-      IDA_LOBYTE(_ESI->Difficult[3]) = INIClass::ReadBool_Overwrite( /*0x66fb4f*/
+      (*((unsigned char *)&(_ESI->Difficult[3]))) = INIClass::ReadBool_Overwrite( /*0x66fb4f*/
                                      (int *)v338,
                                      g_INI_Key_General,
                                      aChronotrigger,
@@ -3399,12 +3399,12 @@ int RulesClass::LoadFromINI() {
                                            g_INI_Key_General,
                                            (uint8_t *)aThirdcrew,
                                            *&_ESI->u32_F80);
-      IDA_BYTE1(_ESI->ElevationIncrement) = INIClass::ReadBool_Overwrite( /*0x66fd4f*/
+      (((unsigned char *)&(_ESI->ElevationIncrement))[1]) = INIClass::ReadBool_Overwrite( /*0x66fd4f*/
                                           (int *)v338,
                                           g_INI_Key_General,
                                           aCurleyshuffle,
                                           (unsigned char)((_ESI->ElevationIncrement) >> 8));
-      IDA_LOBYTE(_ESI->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite( /*0x66fd79*/
+      (*((unsigned char *)&(_ESI->ElevationIncrementBonus[0]))) = INIClass::ReadBool_Overwrite( /*0x66fd79*/
                                                    (int *)v338,
                                                    g_INI_Key_General,
                                                    aFinediffcontro,
@@ -3450,12 +3450,12 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aAiuseturbineup, *(double *)v331); /*0x66fe21*/
       __asm { fstp qword ptr [esi+13E8h] } /*0x66fe26*/
       *&_ESI->u32_13E8 = _RT1; /*0x66fe26*/
-      IDA_BYTE1(_ESI->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite( /*0x66fe46*/
+      (((unsigned char *)&(_ESI->ElevationBonusCap[1]))[1]) = INIClass::ReadBool_Overwrite( /*0x66fe46*/
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aNodaibuildswal,
                                             (unsigned char)((_ESI->ElevationBonusCap[1]) >> 8));
-      IDA_BYTE2(_ESI->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite( /*0x66fe71*/
+      (((unsigned char *)&(_ESI->ElevationBonusCap[1]))[2]) = INIClass::ReadBool_Overwrite( /*0x66fe71*/
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aAibuildswalls,
@@ -3520,7 +3520,7 @@ int RulesClass::LoadFromINI() {
                       v331[1]);
       TypeList::CopyFull(&_ESI->DynamicVector_13C8, v206); /*0x66ff45*/
       VectorClass::Dtor((VectorClass *)&v332); /*0x66ff4e*/
-      IDA_HIBYTE(_ESI->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite( /*0x66ff6d*/
+      (*(((unsigned char *)&(_ESI->ElevationBonusCap[1])) + (sizeof(_ESI->ElevationBonusCap[1]) - 1))) = INIClass::ReadBool_Overwrite( /*0x66ff6d*/
                                              (int *)v338,
                                              g_INI_Key_General,
                                              aUsemindefenser,
@@ -3703,19 +3703,19 @@ int RulesClass::LoadFromINI() {
                              g_INI_Key_General,
                              (uint8_t *)aSlaveminershor,
                              _ESI->WeedCapacity);
-      IDA_LODWORD(_ESI->ExtraUnitLight) = INIClass::ReadCoord( /*0x670305*/
+      (*((unsigned int *)&(_ESI->ExtraUnitLight))) = INIClass::ReadCoord( /*0x670305*/
                                         (double *)v338,
                                         v1,
                                         g_INI_Key_General,
                                         (uint8_t *)aSlaveminerslav,
                                         ((unsigned int)(_ESI->ExtraUnitLight)));
-      IDA_LODWORD(_ESI->ExtraInfantryLight) = INIClass::ReadCoord( /*0x670324*/
+      (*((unsigned int *)&(_ESI->ExtraInfantryLight))) = INIClass::ReadCoord( /*0x670324*/
                                             (double *)v338,
                                             v1,
                                             g_INI_Key_General,
                                             (uint8_t *)aSlaveminerlong,
                                             ((unsigned int)(_ESI->ExtraInfantryLight)));
-      IDA_LODWORD(_ESI->ExtraAircraftLight) = INIClass::ReadCoord( /*0x670344*/
+      (*((unsigned int *)&(_ESI->ExtraAircraftLight))) = INIClass::ReadCoord( /*0x670344*/
                                             (double *)v338,
                                             v1,
                                             g_INI_Key_General,
@@ -4210,7 +4210,7 @@ int RulesClass::LoadFromINI() {
       INIClass::ReadDouble_Overwrite((double *)v338, g_INI_Key_General, aBasebias, *(double *)v331); /*0x670b55*/
       __asm { fstp qword ptr [esi+1420h] } /*0x670b5a*/
       *&_ESI->u32_1420 = _RT1; /*0x670b5a*/
-      IDA_LOBYTE(_ESI->ElevationIncrementBonus[1]) = INIClass::ReadBool_Overwrite( /*0x670b79*/
+      (*((unsigned char *)&(_ESI->ElevationIncrementBonus[1]))) = INIClass::ReadBool_Overwrite( /*0x670b79*/
                                                    (int *)v338,
                                                    g_INI_Key_General,
                                                    aSeparateaircra,
@@ -4358,7 +4358,7 @@ int RulesClass::LoadFromINI() {
                               g_INI_Key_General,
                               (uint8_t *)aCloseenough,
                               _ESI->BuildSpeed[1]);
-      IDA_BYTE2(_ESI->ElevationIncrement) = INIClass::ReadBool_Overwrite( /*0x670f16*/
+      (((unsigned char *)&(_ESI->ElevationIncrement))[2]) = INIClass::ReadBool_Overwrite( /*0x670f16*/
                                           (int *)v338,
                                           g_INI_Key_General,
                                           aBlendedfog,
@@ -4398,12 +4398,12 @@ int RulesClass::LoadFromINI() {
                                        g_INI_Key_General,
                                        aLightninghitde,
                                        *&_ESI->ShroudGrow);
-      IDA_LODWORD(_ESI->EngineerCaptureLevel) = INIClass::ReadInt_Overwrite( /*0x67100e*/
+      (*((unsigned int *)&(_ESI->EngineerCaptureLevel))) = INIClass::ReadInt_Overwrite( /*0x67100e*/
                                               (bool *)v338,
                                               g_INI_Key_General,
                                               aLightningscatt,
                                               ((unsigned int)(_ESI->EngineerCaptureLevel)));
-      IDA_LODWORD(_ESI->TalkBubbleTime) = INIClass::ReadInt_Overwrite( /*0x67102d*/
+      (*((unsigned int *)&(_ESI->TalkBubbleTime))) = INIClass::ReadInt_Overwrite( /*0x67102d*/
                                         (bool *)v338,
                                         g_INI_Key_General,
                                         aLightningcells,
@@ -4414,7 +4414,7 @@ int RulesClass::LoadFromINI() {
                                     aLightningsepar,
                                     _ESI->RadDurationMultiple);
       _ESI->RadLevelMax = SmallFunc_67B500(v338, g_INI_Key_General, (uint8_t *)aLightningwarhe, _ESI->RadLevelMax); /*0x67106c*/
-      IDA_LOBYTE(_ESI->RadApplicationDelay) = INIClass::ReadBool_Overwrite( /*0x67108c*/
+      (*((unsigned char *)&(_ESI->RadApplicationDelay))) = INIClass::ReadBool_Overwrite( /*0x67108c*/
                                             (int *)v338,
                                             g_INI_Key_General,
                                             aLightningprint,
@@ -4439,7 +4439,7 @@ int RulesClass::LoadFromINI() {
                                   g_INI_Key_General,
                                   aForceshieldpla,
                                   _ESI->RadLevelFactor[1]);
-      IDA_LOBYTE(_ESI->RadLightFactor[0]) = INIClass::ReadBool_Overwrite( /*0x67112a*/
+      (*((unsigned char *)&(_ESI->RadLightFactor[0]))) = INIClass::ReadBool_Overwrite( /*0x67112a*/
                                           (int *)v338,
                                           g_INI_Key_General,
                                           aMutateexplosio_0,
@@ -5821,7 +5821,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aAutocreatetime,
-        COERCE_DOUBLE(IDA___PAIR64__(v31, v32)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v32)) | ((unsigned long)(unsigned int)(v31) << 32))));
       v33 = *&this->q1138; /*0x673a4b*/
       __asm { fstp qword ptr [esi+1510h] } /*0x673a51*/
       *&this->q1510 = _RT1; /*0x673a51*/
@@ -5865,7 +5865,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aWarratio,
-        COERCE_DOUBLE(IDA___PAIR64__(v48, v49)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v49)) | ((unsigned long)(unsigned int)(v48) << 32))));
       v50 = *&this->q1110; /*0x673b7d*/
       __asm { fstp qword ptr [esi+1108h] } /*0x673b83*/
       *&this->u32_1108 = _RT1; /*0x673b83*/
@@ -5894,7 +5894,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aTeslaratio,
-        COERCE_DOUBLE(IDA___PAIR64__(v61, v62)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v62)) | ((unsigned long)(unsigned int)(v61) << 32))));
       v63 = *&this->RepairRate; /*0x673c50*/
       __asm { fstp qword ptr [esi+10D8h] } /*0x673c56*/
       *&this->u32_10D8 = _RT1; /*0x673c56*/
@@ -5918,7 +5918,7 @@ int RulesClass::ReadMultiplayerDefaults() {
       v73 = INIClass::ReadInt_Overwrite((bool *)v103, (uint8_t *)aAi, aAirstriplimit, v71); /*0x673cf8*/
       ElevationIncrement_high = (unsigned char)((this->ElevationIncrement) >> 8); /*0x673cfd*/
       *&this->RepairRate = v73; /*0x673d03*/
-      IDA_HIBYTE(this->ElevationIncrement) = INIClass::ReadBool_Overwrite( /*0x673d1d*/
+      (*(((unsigned char *)&(this->ElevationIncrement)) + (sizeof(this->ElevationIncrement) - 1))) = INIClass::ReadBool_Overwrite( /*0x673d1d*/
                                            (int *)v103,
                                            (uint8_t *)aAi,
                                            aCompeasybonus,
@@ -5943,7 +5943,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aGdiwalldefense,
-        COERCE_DOUBLE(IDA___PAIR64__(v80, v81)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v81)) | ((unsigned long)(unsigned int)(v80) << 32))));
       SuspendPriority = this->SuspendPriority; /*0x673da9*/
       v83 = this->BaseDefenseDelay[1]; /*0x673daf*/
       __asm { fstp qword ptr [esi+0AF8h] } /*0x673db5*/
@@ -5952,7 +5952,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aGdiwalldefense_0,
-        COERCE_DOUBLE(IDA___PAIR64__(SuspendPriority, v83)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v83)) | ((unsigned long)(unsigned int)(SuspendPriority) << 32))));
       v85 = this->SuspendDelay[1]; /*0x673dcf*/
       v86 = this->SuspendDelay[0]; /*0x673dd5*/
       __asm { fstp qword ptr [esi+0B00h] } /*0x673ddb*/
@@ -5961,7 +5961,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aNodbasedefense,
-        COERCE_DOUBLE(IDA___PAIR64__(v85, v86)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v86)) | ((unsigned long)(unsigned int)(v85) << 32))));
       v88 = this->SurvivorRate[1]; /*0x673df5*/
       v89 = this->SurvivorRate[0]; /*0x673dfb*/
       __asm { fstp qword ptr [esi+0B08h] } /*0x673e01*/
@@ -5970,7 +5970,7 @@ int RulesClass::ReadMultiplayerDefaults() {
         (double *)v103,
         (uint8_t *)aAi,
         aGdibasedefense,
-        COERCE_DOUBLE(IDA___PAIR64__(v88, v89)));
+        COERCE_DOUBLE((((unsigned long)(unsigned int)(v89)) | ((unsigned long)(unsigned int)(v88) << 32))));
       SovietSurvivorDivisor = this->SovietSurvivorDivisor; /*0x673e1b*/
       __asm { fstp qword ptr [esi+0B10h] } /*0x673e21*/
       *(double *)this->SurvivorRate = _RT1; /*0x673e21*/

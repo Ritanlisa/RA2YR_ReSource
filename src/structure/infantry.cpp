@@ -88,7 +88,7 @@ InfantryClass::InfantryClass() noexcept
     // InfantryClass_field_int_6E8(2) -- G42.38: absent from hpp
     , unused_6EC(0)
 {
-    abstractFlags = kInfantryFlag;
+    abstractFlags = (void *)(kInfantryFlag);
 }
 
 // ============================================================

@@ -17,7 +17,7 @@ struct AITriggerTypeClass_40 {
     char  AddRef(int a2);  // 0x4203D0
     char  Release(int a2, unsigned int * a3);  // 0x420410
     wchar_t * ddtor(void *a1 = 0);  // 0x4204C0
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x4204F0
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x4204F0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x420550
     int  FindItem(unsigned int * a2);  // 0x420600
     VectorClass_flat *  QueryInterface(char a2);  // 0x420630

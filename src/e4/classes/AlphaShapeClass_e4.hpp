@@ -14,7 +14,7 @@ struct AlphaShapeClass {
     bool IsAllocated;  // 0x13
 // --- flat members (END) ---
     AlphaShapeClass * SDDTOR(char a2, int aP0, int aP1);
-    int SD_vt05(AbstractClass * aP0, int aP1);
+    int  SD_vt05(int aP1, void *a2 = 0);
     int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);
     int SD_vt10(int a2, int a3);
     int SD_vt13(int a2);

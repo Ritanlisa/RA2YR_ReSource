@@ -26,12 +26,12 @@ struct TaskForceClass {
     unsigned int tail_95;  // 0x95
     AbstractClass * ptr_98;  // 0x98
 // --- flat members (END) ---
-    unsigned int *  ParseUnitCountAndType(char * Buffer);  // 0x4C4EF0
-    int  Construct(char * Source, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x6E7E80
-    AbstractClass * *  LoadFromINI(void * a1, int a2);  // 0x6E8220
+    unsigned int * ParseUnitCountAndType(char *Buffer);  // 0x4C4EF0
+    int Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x6E7E80
+    AbstractClass * * LoadFromINI(char * a1, int a2);  // 0x6E8220
     void *  ExecuteAction(char a2);  // 0x6E87F0
     int  LoadTaskForce(int a2);  // 0x6E86A0
-    char  GetUnitCount(uint8_t *** a2);  // 0x6E8420
+    char GetUnitCount(unsigned char *** aP1);  // 0x6E8420
     char  GetUnitType(char * a2);  // 0x6E8510
     int  LoadTask(int * a2);  // 0x6E8750
     int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x4C4F90

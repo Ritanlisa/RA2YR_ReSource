@@ -79,7 +79,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
       IsometricTileTypeClass::Constructor_0((IsometricTileTypeClass *)((char *)a1 + 676), 0, 0); /*0x549ce9*/
-      *((unsigned int *)a1 + 169) = &vt_DynamicVectorClass; /*0x549cee*/
+      *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
       *(unsigned int *)a1->__pad_0 = &vt_IsometricTileTypeClass; /*0x549d02*/
@@ -93,7 +93,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     TerrainClass::InitTheatre((TerrainClass *)a1); /*0x549d56*/
     return 0; /*0x549d5b*/
   }
-  return result; /*0x549d5d*/
+  return (gamemd::AbstractClass **)(result); /*0x549d5d*/
 }
 } // namespace gamemd
 // 0x549DD0
@@ -215,7 +215,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x54a47a*/
     if ( *&this->vtable2 ) /*0x54a408*/
     {
-      m_8 = this->vtable3; /*0x54a40f*/
+      m_8 = (int)(this->vtable3); /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
@@ -227,14 +227,14 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
       }
     }
     *&this->vtable2 = v4; /*0x54a44a*/
-    this->vtable3 = a2; /*0x54a452*/
+    this->vtable3 = (void *)(a2); /*0x54a452*/
     BYTE1(this->vtable4) = a3 == 0; /*0x54a455*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x54a45e*/
   }
-  v7 = this->vtable3; /*0x54a461*/
+  v7 = (int)(this->vtable3); /*0x54a461*/
   if ( v7 < this->uniqueId ) /*0x54a469*/
     this->uniqueId = v7; /*0x54a46b*/
   return 1; /*0x54a46e*/
@@ -289,7 +289,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
 {
 
   this->vtable2 = 0; /*0x54a85b*/
-  this->vtable3 = a2; /*0x54a85e*/
+  this->vtable3 = (void *)(a2); /*0x54a85e*/
   LOBYTE(this->vtable4) = 1; /*0x54a861*/
   BYTE1(this->vtable4) = 0; /*0x54a865*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x54a868) */

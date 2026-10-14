@@ -86,7 +86,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
              0) )
       {
         v6 = dword_89C678++; /*0x438f44*/
-        *((unsigned int *)dword_89C66C + v6) = v5; /*0x438f53*/
+        *((unsigned int *)dword_89C66C + v6) = (unsigned int)(v5); /*0x438f53*/
       }
     }
     else
@@ -94,7 +94,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       v5 = 0; /*0x438f58*/
     }
     v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)aP1 + 60))(aP1); /*0x438f62*/
-    v5[1].vtable0 = aP1; /*0x438f69*/
+    v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)&stru_A8EB00.?[416]; /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4048); /*0x438f87*/
@@ -111,18 +111,18 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
            0) )
     {
       uniqueId = this->uniqueId; /*0x438fbb*/
-      vtable1 = this->vtable1; /*0x438fbe*/
+      vtable1 = (unsigned int *)(this->vtable1); /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
-      vtable1[uniqueId] = v5; /*0x438fc7*/
+      vtable1[uniqueId] = (unsigned int)(v5); /*0x438fc7*/
     }
     this->ptr_30 = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 528) != -1 ) /*0x438fde*/
     {
       if ( (unsigned __int8)House::IsHumanPlayer(aP1->owner) ) /*0x438fe6*/
       {
-        v12[0] = aP2[39]; /*0x438ffc*/
-        v12[1] = aP2[40]; /*0x439007*/
-        v12[2] = aP2[41]; /*0x439013*/
+        v12[0] = (unsigned int)(aP2[39]); /*0x438ffc*/
+        v12[1] = (unsigned int)(aP2[40]); /*0x439007*/
+        v12[2] = (unsigned int)(aP2[41]); /*0x439013*/
         StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 528), v12, 0); /*0x43901d*/
       }
     }
@@ -380,7 +380,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     v7->primaryUnused3 = 0; /*0x4fbcdf*/
   if ( v7->primaryForDefenses == v6 ) /*0x4fbceb*/
     v7->primaryForDefenses = 0; /*0x4fbced*/
-  return result; /*0x4fbcf3*/
+  return (gamemd::VectorClass_flat **)(result); /*0x4fbcf3*/
 }
 }
 // 0x5C03D0
@@ -425,7 +425,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
                1);
     }
   }
-  return result; /*0x5c047d*/
+  return (gamemd::ObjectClass **)(result); /*0x5c047d*/
 }
 }
 // 0x5D7FD0
@@ -757,7 +757,7 @@ int AbstractClass::GenerateUniqueID(int a1)
 
 // 0x410320
 namespace gamemd {
-int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2)
+int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_2, ObjectTypeClass * aP2)
 {
   int result; // eax
   int v5; // eax
@@ -767,13 +767,13 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0,
   aP0 = aP0; /*0x410321*/
   if ( !aP0 ) /*0x410328*/
     return -2147467261; /*0x41032b*/
-  v5 = *aP0; /*0x410338*/
+  v5 = (int)(*aP0); /*0x410338*/
   aP0 = aP0; /*0x410343*/
   aP0 = aP0; /*0x410344*/
   result = aP0->IsClean(&aP0, 4, 0); /*0x410348*/
   if ( result >= 0 ) /*0x41034d*/
   {
-    v6 = *aP0; /*0x410352*/
+    v6 = (int)(*aP0); /*0x410352*/
     v7 = aP0->COMStub_Ret176_12(0); /*0x410358*/
     result = aP0->IsClean(aP0, v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
@@ -803,7 +803,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
   if ( result >= 0 ) /*0x4103a3*/
   {
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
-    v4 = aP0[7]; /*0x4103be*/
+    v4 = (int)(aP0[7]); /*0x4103be*/
     v5 = *v2; /*0x4103c1*/
     v6 = aP0->COMStub_Ret176_12(0); /*0x4103c7*/
     result = v2->vt_entry_68(aP0, v6); /*0x4103cd*/
@@ -923,7 +923,7 @@ Surface * AbstractClass::getObjectValue(char a2)
   /* X11: vtable install elided (implicit via Surface virtuals 0x4115d9) */
   if ( (a2 & 1) != 0 ) /*0x4115df*/
     operator delete((void *)(this)); /*0x4115e2*/
-  return (std::locale::facet *)this; /*0x4115ec*/
+  return (gamemd::Surface *)((std::locale::facet *)this); /*0x4115ec*/
 }
 } // namespace gamemd
 
@@ -1262,10 +1262,10 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  *(unsigned int *)this->BlitterCore = &vt_Blitter; /*0x499cc9*/
+  *(unsigned int *)this->BlitterCore = (unsigned int)(&vt_Blitter); /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     operator delete((void *)(this)); /*0x499cd2*/
-  return (std::locale::facet *)this; /*0x499cdc*/
+  return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
 }
 } // namespace gamemd
 
@@ -1276,7 +1276,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
   /* X11: vtable install elided (implicit via Blitter virtuals 0x499ce9) */
   if ( (a2 & 1) != 0 ) /*0x499cef*/
     operator delete((void *)(this)); /*0x499cf2*/
-  return this; /*0x499cfc*/
+  return (gamemd::BlitPlainXlat *)(this); /*0x499cfc*/
 }
 } // namespace gamemd
 

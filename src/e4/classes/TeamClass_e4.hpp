@@ -72,7 +72,7 @@ struct TeamClass {
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);
     AbstractClass * * UpdateMembers();
     BOOL Check(void *a1, void *a2, void *a3);
-    CampaignClass * * Cleanup(int aP1, void *a1 = 0);
+    CampaignClass * * Cleanup(int aP1, void *a2 = 0);
     TeamClass * * ProcessScriptActions(unsigned int * a2, int a3);
     TeamTypeClass * * RecruitMember(int a2);
     TechnoClass * * RemoveAllMembers();
@@ -93,7 +93,7 @@ struct TeamClass {
     int LiberateMember_Start(int aP1, unsigned int a3, char aP3);
     int PowerDrainUpdate(int * a2);
     int ProcessMemberPositions();
-    int Reset(char aP1, void *a1 = 0);
+    int Reset(char aP1, void *a2 = 0);
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn160();
@@ -107,13 +107,11 @@ struct TeamClass {
     void * FindOrCreate(void *a1 = 0);
     void Destructor(void * a2);
     void MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2);
-    void Update(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);
     void* AttackCoordinator();
     static int AddToBuildQueue(TeamClass * aP1);
     static int CreateOneOf(TeamClass * aP1, TeamClass *a2);
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
-    static int LiberateMember_Start(void * aP1, int aP2, int aP3);  // G42.39a static-call supply
     unsigned int u32_10C;  // 0x10C (offset-truth)
     unsigned char u32_68F;  // 0x68F (offset-truth)
     unsigned int u32_690;  // 0x690 (offset-truth)

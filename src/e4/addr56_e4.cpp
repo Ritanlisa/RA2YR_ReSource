@@ -89,7 +89,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   BitMask_Blue = GetBitMask_Blue(); /*0x560c30*/
   BitMask_Green = GetBitMask_Green(); /*0x560c39*/
   BitMask_Red = GetBitMask_Red(); /*0x560c42*/
-  BitShift_Blue = (int16_t)(GetBitShift_Blue()); /*0x560c51*/
+  BitShift_Blue = (gamemd::XSurface *)((int16_t)(GetBitShift_Blue())); /*0x560c51*/
   (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x560c57*/
   DDraw::WaitForIdle(v18); /*0x560c5a*/
   if ( g_DDraw_Initialized == 1 ) /*0x560c66*/
@@ -183,7 +183,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     }
     else
     {
-      v13 = (int)((MouseClass *)operator new(0x98u));
+      v13 = (gamemd::MouseClass *)((int)((MouseClass *)operator new(0x98u)));
       if ( v13 ) /*0x561068*/
         stru_887598.lineTrailer = MouseClass::Construct(v13, (int)g_DSurface_Primary, (int)g_hWnd); /*0x56107f*/
       else
@@ -290,7 +290,7 @@ int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsi
   int wParama; // [esp+58h] [ebp+Ch]
   int v21; // [esp+5Ch] [ebp+10h]
 
-  result = BaseDialogProc(aP0, a2, wParam, a4); /*0x56141c*/
+  result = (int)(BaseDialogProc(aP0, a2, wParam, a4)); /*0x56141c*/
   if ( result ) /*0x561423*/
     return result; /*0x561423*/
   WindowLongA = (unsigned int *)GetWindowLongA(aP0, 8); /*0x561439*/
@@ -348,8 +348,8 @@ int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsi
   else
     v7 = (unsigned int *)sub_4A4900(1024, 768, 16); /*0x561486*/
   v8 = 0; /*0x561491*/
-  dword_ABCF5C = v7; /*0x561495*/
-  v9 = v7; /*0x56149a*/
+  dword_ABCF5C = (unsigned int)(v7); /*0x561495*/
+  v9 = (int *)(v7); /*0x56149a*/
   wParama = -1; /*0x56149c*/
   v21 = 0; /*0x5614a4*/
   if ( v7 && *v7 ) /*0x5614ae*/
@@ -441,25 +441,25 @@ int sub_568140(int * a1, int a2)
           v14 = ((int16_t)(v9 + v20) << 9) + (int16_t)(v10 + v19); /*0x568223*/
           if ( v14 >= 0x40000 || (v15 = *(unsigned int **)(dword_87F924 + 4 * v14)) == 0 ) /*0x56823b*/
           {
-            dword_ABDC74 = (unsigned int *)(v21);
+            dword_ABDC74 = (unsigned int)((unsigned int *)(v21));
             v15 = (unsigned int *)(unk_ABDC50); /*0x568243*/
           }
           v15[76] = 0; /*0x56824a*/
           if ( v14 >= 0x40000 || (v16 = *(unsigned int **)(dword_87F924 + 4 * v14)) == 0 ) /*0x568264*/
           {
-            dword_ABDC74 = (unsigned int *)(v21);
+            dword_ABDC74 = (unsigned int)((unsigned int *)(v21));
             v16 = (unsigned int *)(unk_ABDC50); /*0x56826c*/
           }
           v16[77] = 0; /*0x568273*/
           if ( v14 >= 0x40000 || (v17 = *(unsigned int **)(dword_87F924 + 4 * v14)) == 0 ) /*0x56828d*/
           {
-            dword_ABDC74 = (unsigned int *)(v21);
+            dword_ABDC74 = (unsigned int)((unsigned int *)(v21));
             v17 = (unsigned int *)(unk_ABDC50); /*0x568295*/
           }
           v17[75] |= 0x10u; /*0x56829a*/
           if ( v14 >= 0x40000 || (v18 = *(unsigned int **)(dword_87F924 + 4 * v14)) == 0 ) /*0x5682b7*/
           {
-            dword_ABDC74 = (unsigned int *)(v21);
+            dword_ABDC74 = (unsigned int)((unsigned int *)(v21));
             v18 = (unsigned int *)(unk_ABDC50); /*0x5682bf*/
           }
           v12 = v10 * v10; /*0x5682ca*/
@@ -497,7 +497,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   Pipe v17; // [esp+14h] [ebp-28h] BYREF
   int v18; // [esp+40h] [ebp+4h]
 
-  v2 = this; /*0x56af45*/
+  v2 = (gamemd::ObjectClass *)(this); /*0x56af45*/
   v3 = 0; /*0x56af47*/
   LCWPipe::Constructor((LCWPipe *)&v17, 0, 0x2000); /*0x56af57*/
   Pipe::SetDelegate(&v17, a2); /*0x56af65*/
@@ -527,32 +527,32 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
               && (*(unsigned int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
             {
               Src = v6; /*0x56b035*/
-              v8 = &v3[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)&Src, 4)]; /*0x56b045*/
-              v9 = &v8[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 56), 4)]; /*0x56b059*/
-              v10 = &v9[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 282), 1)]; /*0x56b06d*/
-              v3 = &v10[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 283), 1)]; /*0x56b074*/
+              v8 = (gamemd::Compress)(&v3[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)&Src, 4)]); /*0x56b045*/
+              v9 = (gamemd::Compress)(&v8[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 56), 4)]); /*0x56b059*/
+              v10 = (gamemd::Compress)(&v9[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 282), 1)]); /*0x56b06d*/
+              v3 = (gamemd::Compress)(&v10[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 283), 1)]); /*0x56b074*/
             }
           }
         }
       }
-      v2 = this; /*0x56b076*/
+      v2 = (gamemd::ObjectClass *)(this); /*0x56b076*/
       v4 = v18 + 1; /*0x56b07e*/
       v18 = v4; /*0x56b085*/
     }
     while ( v4 < this->M320 ); /*0x56b08b*/
   }
   *(unsigned int *)v15 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b0a4*/
-  v11 = &v3[(unsigned int)LCW::Compress((LCWPipe *)&v17, v15, 4)]; /*0x56b0ad*/
+  v11 = (gamemd::Compress)(&v3[(unsigned int)LCW::Compress((LCWPipe *)&v17, v15, 4)]); /*0x56b0ad*/
   v12 = 100; /*0x56b0af*/
   do /*0x56b0c7*/
   {
-    v11 = &v11[(unsigned int)LCW::Compress((LCWPipe *)&v17, v15, 4)]; /*0x56b0c4*/
+    v11 = (gamemd::Compress)(&v11[(unsigned int)LCW::Compress((LCWPipe *)&v17, v15, 4)]); /*0x56b0c4*/
     --v12; /*0x56b0c6*/
   }
   while ( v12 ); /*0x56b0c7*/
   (*(void (**)(Pipe *))(*(unsigned int *)v17.vtable1 + 4))(&v17); /*0x56b0d1*/
   LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
-  return v11; /*0x56b0df*/
+  return (gamemd::BombClass **)(v11); /*0x56b0df*/
 
 }
 }
@@ -577,7 +577,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   Pipe v17; // [esp+14h] [ebp-28h] BYREF
   int v18; // [esp+40h] [ebp+4h]
 
-  v2 = this; /*0x56b255*/
+  v2 = (gamemd::ObjectClass *)(this); /*0x56b255*/
   LZOPipe::Constructor((LZOPipe *)&v17, 0, 0x2000); /*0x56b266*/
   Pipe::SetDelegate(&v17, a2); /*0x56b274*/
   v3 = 0; /*0x56b27f*/
@@ -615,7 +615,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
           }
         }
       }
-      v2 = this; /*0x56b387*/
+      v2 = (gamemd::ObjectClass *)(this); /*0x56b387*/
       v4 = v18 + 1; /*0x56b38f*/
       v18 = v4; /*0x56b396*/
     }
@@ -625,7 +625,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   v11 = Compression::Read((int *)v17.vtable1, (int)&v16, 4) + v3; /*0x56b3c6*/
   v12 = (*(int (**)(Pipe *))(*(unsigned int *)v17.vtable1 + 4))(&v17); /*0x56b3cf*/
   LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
-  return v12 + v11; /*0x56b3d9*/
+  return (gamemd::BombClass **)(v12 + v11); /*0x56b3d9*/
 
 }
 }
@@ -638,7 +638,7 @@ int sub_561350(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   wchar_t *StringCSF; // edi
   HWND DlgItem; // eax
 
-  result = BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4); /*0x561369*/
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4)); /*0x561369*/
   if ( !result ) /*0x561370*/
   {
     WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x561379*/
@@ -865,7 +865,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   v7 = *a3 + v4 - v3; /*0x565639*/
   LOWORD(v9) = v3 / 2 + (v6 >> 1); /*0x565645*/
   HIWORD(v9) = v7; /*0x56564a*/
-  *a2 = v9; /*0x565655*/
+  *a2 = (unsigned int)(v9); /*0x565655*/
   return a2; /*0x565653*/
 
 }
@@ -894,27 +894,27 @@ int E4Recv_56AE40::sub_56AE40(int v9)
   {
     v5 = *(unsigned int *)(this->M316 + 4 * i); /*0x56ae7b*/
     if ( v5 ) /*0x56ae80*/
-      v6 = LCW::Compress((LCWPipe *)v14, (char *)(v5 + 56), 2); /*0x56ae86*/
+      v6 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)(v5 + 56), 2)); /*0x56ae86*/
     else
-      v6 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[144], 2); /*0x56ae91*/
+      v6 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[144], 2)); /*0x56ae91*/
     v3 += (int)v6; /*0x56ae96*/
   }
   for ( j = 0; j < this->customSound_controller; ++j ) /*0x56aead*/
   {
     v8 = *(unsigned int *)(this->M316 + 4 * j); /*0x56aeb7*/
     if ( v8 ) /*0x56aebc*/
-      v9 = LCW::Compress((LCWPipe *)v14, (char *)(v8 + 282), 1); /*0x56aec4*/
+      v9 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)(v8 + 282), 1)); /*0x56aec4*/
     else
-      v9 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 2, 1); /*0x56aecf*/
+      v9 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 2, 1)); /*0x56aecf*/
     v3 += (int)v9; /*0x56aed4*/
   }
   for ( k = 0; k < this->customSound_controller; ++k ) /*0x56aeeb*/
   {
     v11 = *(unsigned int *)(this->M316 + 4 * k); /*0x56aef5*/
     if ( v11 ) /*0x56aefa*/
-      v12 = LCW::Compress((LCWPipe *)v14, (char *)(v11 + 283), 1); /*0x56af02*/
+      v12 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)(v11 + 283), 1)); /*0x56af02*/
     else
-      v12 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 3, 1); /*0x56af0d*/
+      v12 = (gamemd::Compress)(LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 3, 1)); /*0x56af0d*/
     v3 += (int)v12; /*0x56af12*/
   }
   LCWPipe::Dtor((LCWPipe *)v14); /*0x56af23*/
@@ -946,7 +946,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
   v2 = 0; /*0x56b0fa*/
   v3 = 0; /*0x56b0fc*/
   v4 = a2; /*0x56b0ff*/
-  v16 = this; /*0x56b105*/
+  v16 = (gamemd::ObjectClass *)(this); /*0x56b105*/
   for ( i = 0; v3 < v16[1].lastLayer; i = v3 ) /*0x56b10d*/
   {
     v5 = *(unsigned int *)(this->M316 + 4 * v3); /*0x56b11d*/
@@ -975,7 +975,7 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
         }
       }
     }
-    this = v16; /*0x56b203*/
+    this = (gamemd::E4Recv_56B0F0 *)(v16); /*0x56b203*/
     v3 = i + 1; /*0x56b20b*/
   }
   v13 = *v4; /*0x56b225*/
@@ -1021,7 +1021,7 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ed97*/
   {
     dword_ABDC74 = a2; /*0x56ed99*/
-    v5 = unk_ABDC50; /*0x56ed9f*/
+    v5 = (unsigned int *)(unk_ABDC50); /*0x56ed9f*/
   }
   if ( *((char *)v5 + 320) < 0 ) /*0x56edab*/
   {

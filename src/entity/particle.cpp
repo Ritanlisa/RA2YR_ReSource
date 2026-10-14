@@ -53,7 +53,7 @@ ParticleClass::ParticleClass(ParticleTypeClass* pType,
     unused_134      = 0;
 
     location      = coords;
-    abstractFlags = kParticleFlag;
+    abstractFlags = (void *)(kParticleFlag);
 }
 
 // ============================================================================
@@ -196,7 +196,7 @@ int ParticleClass::AdjustHeight()
           this->u32_131 = 1; /*0x62d6b1*/
         }
       }
-      return (&v10); /*0x62d6c0*/
+      return (int)((&v10)); /*0x62d6c0*/
     }
   }
   else

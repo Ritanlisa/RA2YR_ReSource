@@ -37,7 +37,7 @@
 
 // 0x512680
 namespace gamemd {  // G42.18 ns repair
-void * WeaponTypeClass::Create(AbstractClass * Source)
+void * WeaponTypeClass::Create(AbstractClass * Source, void *a2, void *a3, void *a4)
 {
   int v2; // esi
   SuperWeaponTypeClass *v3; // eax
@@ -50,7 +50,7 @@ void * WeaponTypeClass::Create(AbstractClass * Source)
   LABEL_6:
     v3 = (SuperWeaponTypeClass *)operator new(0x1B0u); /*0x5126d6*/
     if ( v3 ) /*0x5126e5*/
-      return ((SuperWeaponTypeClass *)(v3))->Construct((char *)(Source)); /*0x5126f1*/
+      return (void *)(((SuperWeaponTypeClass *)(v3))->Construct((char *)(Source))); /*0x5126f1*/
     return 0; /*0x5126e5*/
   }
   while ( _strcmpi((char *)(*((unsigned int *)dword_A83C9C + v2) + 36),(const char *)(Source)) ) /*0x5126ca*/
@@ -187,7 +187,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
          0) )
   {
     v3 = g_WeaponTypePool++; /*0x771ed7*/
-    *((unsigned int *)g_WeaponTypeConfig + v3) = aP1; /*0x771ee6*/
+    *((unsigned int *)g_WeaponTypeConfig + v3) = (unsigned int)(aP1); /*0x771ee6*/
   }
   return &aP1->AbstractTypeClass; /*0x771eeb*/
 
@@ -583,7 +583,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
 }  // G42.18c ns repair
 // 0x771F00
 namespace gamemd {  // G42.18c ns repair
-unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
+unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1, void *a2)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/

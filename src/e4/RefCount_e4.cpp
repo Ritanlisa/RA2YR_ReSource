@@ -34,7 +34,7 @@ int RefCount::Increment(int a2)
   {
 LABEL_5:
     ++*(unsigned int *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
-    RefCount_field_04 = this->RefCount_field_04; /*0x49fa4d*/
+    RefCount_field_04 = (int)(this->RefCount_field_04); /*0x49fa4d*/
     ++this->q010; /*0x49fa51*/
     return *(unsigned int *)(RefCount_field_04 + 4 * a2); /*0x49fa59*/
   }

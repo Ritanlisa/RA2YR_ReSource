@@ -54,7 +54,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x5d55c7*/
+      v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
         v7 = (unsigned int *)v6; /*0x5d55d6*/
@@ -104,7 +104,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x5d565b*/
       }
     }
-    *&this->q004 = v5; /*0x5d5666*/
+    *&this->q004 = (int)(v5); /*0x5d5666*/
     this->m_8 = v3; /*0x5d566c*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d566f*/
   }
@@ -115,7 +115,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   v15 = this->m_8; /*0x5d567b*/
   if ( v15 < this->m_10 ) /*0x5d5683*/
     this->m_10 = v15; /*0x5d5685*/
-  return 1; /*0x5d5688*/
+  return (gamemd::AbstractClass **)(1); /*0x5d5688*/
 
 }
 }  // G42.18 ns repair
@@ -126,7 +126,7 @@ MSFont * MSFont::QueryInterface(char a2, int a3)
   MSFont::Constructor_MSFont(a3); /*0x5d3453*/
   if ( (a3 & 1) != 0 ) /*0x5d345d*/
     operator delete((void *)(a3)); /*0x5d3460*/
-  return a3; /*0x5d346a*/
+  return (gamemd::MSFont *)(a3); /*0x5d346a*/
 }
 }  // G42.18c ns repair
 // 0x5D5080
@@ -210,7 +210,7 @@ char MSFont_18::AddRef(int a2)
     v3 = 0; /*0x5d515f*/
     if ( m_8 <= 0 ) /*0x5d5163*/
       return 1; /*0x5d5183*/
-    v4 = *&this->q004; /*0x5d5165*/
+    v4 = (unsigned int *)(*&this->q004); /*0x5d5165*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5d516b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5d5174*/
     {
@@ -256,7 +256,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x5d520e*/
         }
       }
-      *&this->q004 = v4; /*0x5d5217*/
+      *&this->q004 = (int)(v4); /*0x5d5217*/
       this->m_8 = a2; /*0x5d521f*/
       BYTE1(this->m_C) = a3 == 0; /*0x5d5222*/
       return 1; /*0x5d5228*/
@@ -291,7 +291,7 @@ void MSFont_18::ddtor()
 
 // 0x5D5270
 namespace gamemd {
-int MSFont_18::Create(unsigned int * a2)
+int MSFont_18::Create(unsigned int * a2, void *a2_1, void *a3, void *a4)
 {
   int result; // eax
   int m_8; // edx
@@ -314,7 +314,7 @@ int MSFont_18::Create(unsigned int * a2)
 
 // 0x5D52B0
 namespace gamemd {
-unsigned int MSFont_18::Draw(int a2)
+unsigned int MSFont_18::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   if ( (*((unsigned char *)&(*&this->m_C))) ) /*0x5d52b0*/
     return (unsigned int)(a2 - *&this->q004) >> 2; /*0x5d52c5*/
@@ -356,7 +356,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x5d5341*/
       }
     }
-    *&this->q004 = v4; /*0x5d534a*/
+    *&this->q004 = (int)(v4); /*0x5d534a*/
     this->m_8 = a2; /*0x5d5352*/
     BYTE1(this->m_C) = a3 == 0; /*0x5d5355*/
   }

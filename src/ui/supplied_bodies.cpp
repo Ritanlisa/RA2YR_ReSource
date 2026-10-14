@@ -151,7 +151,7 @@ extern int MapSkirmishDialogPlayerToControl(HWND a1, int a2);  // 本地原型 (
 extern int sub_46DCC0(HWND hDlg, unsigned char a2);  // 本地原型 (G42.35: 2-arg truth)
 extern int sub_46DE20(HWND hDlg, int nCmdShow);  // 本地原型 (G42.35: 2-arg truth)
 extern int BaseDialogProc(HWND a1, unsigned int a2, unsigned int a3, HWND a4);  // 本地原型 (G42.35: a4=HWND truth)
-extern unsigned int stru_A80220;      // data: 0xA80220 (Color Lerp 表基)
+extern unsigned char stru_A80220; // data: 0xA80220 (Color Lerp 表基)
 extern int g_GameModeOptionState;     // data: 全局
 extern int CompareFunc2Int(int a1, int a2);  // 0x725040 (_generated/global_funcs 真值)
 extern int SendCampaignOptions();     // 0x46D4A0 本地原型 (Game:: 静态形式)

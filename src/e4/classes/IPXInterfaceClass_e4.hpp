@@ -23,7 +23,7 @@ struct IPXInterfaceClass {
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
     AbstractClass * * getSocketState(int a2, unsigned int * a3);
-    int initSocket(int aP1, int aP2, void *a1 = 0);
+    int initSocket(int aP1, int aP2, void *a3 = 0);
     int AddRef(void *a1);
     int16_t Connect(const void * a1, unsigned int a3, char aP3);  // G42.40f-d truth 0x7B24E0
     DynamicVector * closeSession(char a2);

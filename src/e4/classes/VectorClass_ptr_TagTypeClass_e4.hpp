@@ -16,7 +16,7 @@ struct VectorClass_ptr_TagTypeClass {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1, void *a1 = 0);  // 0x6E64E0
+    int Get(int a2, void *a2_2);  // 0x6E64E0
     char  Constructor_VectorClass_TagTypeClass___(int a2);  // 0x6E6540
 };
 } // namespace gamemd

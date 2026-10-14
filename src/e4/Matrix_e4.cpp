@@ -30,7 +30,7 @@ int Matrix3x4::Identity()
 } // namespace gamemd
 // 0x5AE980
 namespace gamemd {
-int Matrix3x4::Translate(float aP1)
+int Matrix3x4::Translate(float aP1, void *a2)
 {
   int result; // eax
 
@@ -55,13 +55,13 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   float v12[3]; // [esp+14h] [ebp-Ch] BYREF
   int v13; // [esp+28h] [ebp+8h]
 
-  v13 = *a3; /*0x6d2372*/
+  v13 = (int)(*a3); /*0x6d2372*/
   if ( v13 >= dword_B0CE30 || (v8 = a3[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
     *aP2 = dword_B0CE08; /*0x6d2404*/
     aP2[1] = dword_B0CE0C; /*0x6d240c*/
     aP2[2] = dword_B0CE10; /*0x6d2415*/
-    return aP2; /*0x6d23f7*/
+    return (unsigned int *)(aP2); /*0x6d23f7*/
   }
   else
   {
@@ -77,7 +77,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     *aP2 = v5; /*0x6d23e5*/
     aP2[1] = v6; /*0x6d23e7*/
     aP2[2] = 0; /*0x6d23ec*/
-    return aP2; /*0x6d23ea*/
+    return (unsigned int *)(aP2); /*0x6d23ea*/
   }
 
 }

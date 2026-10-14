@@ -12,7 +12,7 @@ struct Diplomacy {
     char Diplomacy_field_04[4];  // 0x4
 // --- flat members (END) ---
     CampaignScore * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);
-char * GetField(int a2, void *a1 = 0);
+char * GetField(int a2, void *a2_1 = 0);
 
     unsigned char __pad_00C;  // X10 supply (member_lookup)
 };

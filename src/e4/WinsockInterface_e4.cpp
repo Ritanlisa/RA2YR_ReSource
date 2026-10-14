@@ -195,7 +195,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   int v7; // ebp
 
   v3 = 6; /*0x77027a*/
-  v4 = &this->ptr_4; /*0x77027f*/
+  v4 = (void **)(&this->ptr_4); /*0x77027f*/
   *(unsigned int *)this = a2; /*0x770282*/
   v5 = (int)(&this->u8_8); /*0x770284*/
   do /*0x7702b6*/
@@ -208,12 +208,12 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  v6 = &this->u8_37C; /*0x7702b8*/
+  v6 = (unsigned int *)(&this->u8_37C); /*0x7702b8*/
   v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
-    *v6 = &vt_DynamicVectorClass; /*0x7702ce*/
+    *v6 = (unsigned int)(&vt_DynamicVectorClass); /*0x7702ce*/
     v6->u32_14 = 10; /*0x7702d4*/
     v6->q010 = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
@@ -284,7 +284,7 @@ int WinsockInterface::Init()
       byte_B7809C = 1; /*0x7b1e41*/
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    v3 = __2_YAPAXI_Z(0x590u); /*0x7b1e53*/
+    v3 = (int)(__2_YAPAXI_Z(0x590u)); /*0x7b1e53*/
     v4 = *(unsigned int *)this->q000; /*0x7b1e58*/
     v5 = (struct WSAData *)v3; /*0x7b1e5a*/
     v11 = (struct WSAData *)v3; /*0x7b1e61*/

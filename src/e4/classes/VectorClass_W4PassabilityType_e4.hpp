@@ -16,7 +16,7 @@ struct VectorClass_W4PassabilityType {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Clear(void *a1_1);  // 0x588F00
+    int Clear(int a2);  // 0x588F00
     void Destroy_0();  // 0x588F60
     unsigned int  GetItemIndex_0(int a2);  // 0x588F90
     void Destroy_1();  // 0x588FD0

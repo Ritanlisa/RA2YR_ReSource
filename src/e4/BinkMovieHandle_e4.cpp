@@ -65,7 +65,7 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11, void *a3_2)
   if ( a3_2 < v11 ) /*0x432b42*/
   {
     v18 += a3_2 - v11; /*0x432b50*/
-    a3_2 = v11; /*0x432b54*/
+    a3_2 = (void *)(v11); /*0x432b54*/
   }
   if ( v18 < 1 ) /*0x432b5d*/
     goto LABEL_18; /*0x432b5d*/
@@ -85,7 +85,7 @@ LABEL_18:
   else
   {
     result = v16; /*0x432b9b*/
-    v9 = a3_2; /*0x432b9f*/
+    v9 = (int)(a3_2); /*0x432b9f*/
     v13 = v5; /*0x432ba1*/
     v14 = v12; /*0x432ba3*/
   }
@@ -154,7 +154,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x432BD0
 namespace gamemd {
-int BinkMovieHandle::Check(int a2)
+int BinkMovieHandle::Check(int a2, void *a2_1, void *a3)
 {
   int result; // eax
 

@@ -19,14 +19,14 @@ int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 } // namespace gamemd
 // 0x4114B0
 namespace gamemd {
-unsigned int StreamClass::ReadAndSeek(int aP1, int aP2)
+unsigned int StreamClass::ReadAndSeek(int aP1, int aP2, void *a3)
 {
   int v4; // edi
   int result; // eax
 
   v4 = (*(int (**)(unsigned int, int, int))(*(unsigned int *)this->u32_14 + 92))(this->u32_14, aP1, aP2); /*0x4114c9*/
   (*(void (**)(unsigned int))(*(unsigned int *)this->u32_14 + 96))(this->u32_14); /*0x4114cd*/
-  result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
+  result = (int)(v4 + this->StreamClass_field_0C); /*0x4114d6*/
   if ( result >= (unsigned int)this->u32_1C ) /*0x4114da*/
     result -= this->m_Size; /*0x4114dc*/
   return result; /*0x4114df*/
@@ -34,7 +34,7 @@ unsigned int StreamClass::ReadAndSeek(int aP1, int aP2)
 } // namespace gamemd
 // 0x45AEA0
 namespace gamemd {
-int StreamClass::Set2(unsigned int * a2)
+int StreamClass::Set2(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a5)
 {
 
   int v3; // edi
@@ -49,7 +49,7 @@ int StreamClass::Set2(unsigned int * a2)
       v5 = a2; /*0x45aedf*/
       if ( *(unsigned int *)this->m_Position ) /*0x45aedc*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45aeea*/
-      *(unsigned int *)this->m_Position = v5; /*0x45aeed*/
+      *(unsigned int *)this->m_Position = (unsigned int)(v5); /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
@@ -75,7 +75,7 @@ int StreamClass::Set2(unsigned int * a2)
 } // namespace gamemd
 // 0x45AF20
 namespace gamemd {
-int StreamClass::Set(unsigned int *aP1)
+int StreamClass::Set(unsigned int *aP1, void *a2, void *a3)
 {
 
   int v3; // edi
@@ -90,7 +90,7 @@ int StreamClass::Set(unsigned int *aP1)
       v5 = aP1; /*0x45af5f*/
       if ( *(unsigned int *)this->m_Position ) /*0x45af5c*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45af6a*/
-      *(unsigned int *)this->m_Position = v5; /*0x45af6d*/
+      *(unsigned int *)this->m_Position = (unsigned int)(v5); /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else
@@ -133,8 +133,8 @@ namespace gamemd {
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
 
-  aP0->Owner = (FootClass *)a2; /*0x55a718*/
-  *&aP0->vtable2 = a2; /*0x55a71b*/
+  aP0->Owner = (int)((FootClass *)a2); /*0x55a718*/
+  *&aP0->vtable2 = (void *)(a2); /*0x55a71b*/
   return 0; /*0x55a720*/
 
 }

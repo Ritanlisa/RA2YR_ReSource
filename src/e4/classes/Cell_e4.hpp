@@ -22,11 +22,11 @@ struct Cell {
 // --- flat members (BEGIN) ---
 
 // --- flat members (END) ---
-    TechnoClass * *  IsOccupied(int16_t * a2, char a3);  // 0x419B00
+    TechnoClass * * IsOccupied(short * a2, char a3);  // 0x419B00
     int PosToIndex(void *a1 = 0);  // 0x42B1C0
     int  CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
     int ApplyDamage(int aP1, int a3, int a4, char aP4);
-    int  GetNeighbourContent(unsigned int a2, void *a1 = 0);  // 0x481810
+    int GetNeighbourContent(unsigned int a2, void *a2_1 = 0);  // 0x481810
     int IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char aP7);  // 0x4834A0
     int IsValidHeight(void *a1 = 0);  // 0x485060
     int IsEmpty(void *a1 = 0);  // 0x486380
@@ -36,30 +36,30 @@ struct Cell {
     int IsShore();  // 0x4867B0
     int IsBuildableAdvanced();  // 0x486FF0
     int HasOccupierBit(char aP1);
-    int SearchEnemies(int a2);  // G57w10-S raw 0x00487A10 IUnknown 占位清除
+    int SearchEnemies(int aP1);  // G57w10-S raw 0x00487A10 IUnknown 占位清除
     long long GetTraversability();  // 0x487CB0
     int GetSlopeIndex();  // 0x487D50
     int IsBridge2();  // 0x487DF0
-    Coord * *  IsValidDestination(int16_t * a2);  // 0x4DCE80
-    int  Exists(int16_t * a2);  // 0x5657E0
+    Coord * * IsValidDestination(short * a2);  // 0x4DCE80
+    int Exists(MouseClass * aP1);  // 0x5657E0
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
-    static char UpdateTileType(int16_t *a1, int a2, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
+    char UpdateTileType(int16_t *aP0, int aP1, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
     static char SetTileType(int16_t *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
-    char IsPassableAllied(int a1, int16_t *a2);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
-    static HouseClass * *  GetAdjacencyFlags(int a1);  // 0x579B70
+    char IsPassableAllied(int aP0, int16_t *aP1);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
+    HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
-    static void * Clear(Cell * aP1);
+    void * Clear(Cell *aP1);
     int  IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     static void * CreateCrater(int a1, int a2, int a3, int a4, int a5);
-    static int GetAdjacentPassableMask(int16_t *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
-    unsigned short *  GetHeight(int * a2, int * a3);  // 0x4265B0
-    unsigned int *  GetWorldCoords(unsigned int * a2, int a3, void *a1 = 0);  // 0x68BD00
+    int GetAdjacentPassableMask(int16_t *aP0, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
+    unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
+    unsigned int * GetWorldCoords(unsigned int *v5, int a3, void *a3_1 = 0);  // 0x68BD00
     BOOL IsPassableOffset(int aP1);  // 0x4870D0
-    int PosToLinearIndex(int16_t *a1);  // G57w10-S raw 0x0056BC50 IUnknown 占位清除
+    int PosToLinearIndex(IUnknown * aP0);  // G57w10-S raw 0x0056BC50 IUnknown 占位清除
     int DecodeFlags();  // 0x56CB80
     int GetGroundHeight(unsigned int * a1);
-    static int IsPassable(unsigned int *a1);  // 0x586360
+    bool IsPassable(IUnknown * aP0);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
     unsigned int q_4C4;  // +0x4C4 flat supply (final pass)
     unsigned int q03C;  // 0x3C (offset-truth)

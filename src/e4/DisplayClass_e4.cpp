@@ -633,7 +633,7 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
 } // namespace gamemd
 // 0x4AE4F0
 namespace gamemd {
-void * DisplayClass::Draw(int a2)
+void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   int v3; // esi
   void *v4; // edi
@@ -1094,7 +1094,7 @@ unsigned int * DisplayClass::updateRenderState(char a2)
 } // namespace gamemd
 // 0x4AEBF0
 namespace gamemd {
-DisplayClass * DisplayClass::Read(char * Block, char a2)
+DisplayClass * DisplayClass::Read(char * Block, char a2, void *a3)
 {
   MapClass::Destruct((char *)Block); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/

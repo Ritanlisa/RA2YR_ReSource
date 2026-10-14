@@ -276,7 +276,7 @@ LABEL_8:
             {
               SuperWeaponClass::LoadFromSaveStream((SuperWeaponClass *)this); /*0x67f895*/
               v5 = *(unsigned int *)this->q000; /*0x67f8a0*/
-              unk1Particles = dword_8B40D8; /*0x67f8ac*/
+              unk1Particles = (gamemd::ParticleSystemClass *)(dword_8B40D8); /*0x67f8ac*/
               result = (*(int (**)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v5 + 16))( /*0x67f8b0*/
                          this,
                          &unk1Particles,

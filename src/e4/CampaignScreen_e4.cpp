@@ -126,11 +126,11 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
       }
       return 0; /*0x470d9e*/
     }
-    Buffer[0] = (const wchar_t *)(0);
+    Buffer[0] = (wchar_t)((const wchar_t *)(0));
     v8 = GetDlgItem((HWND)this, 1843); /*0x470dcc*/
     SendMessageA(v8, 0x4B2u, 0, (LPARAM)&word_89E0A4); /*0x470de1*/
     v46 = (const wchar_t *)(dword_89DFC0); /*0x470deb*/
-    StringCSF = GetStringCSF((wchar_t *)(aGuiCampaignlab), 0, g_Str_File_CampScor_cpp, 1792); /*0x470dfb*/
+    StringCSF = GetStringCSF((wchar_t *)(aGuiCampaignlab), 0,(const char *)(g_Str_File_CampScor_cpp), 1792); /*0x470dfb*/
     swprintf(Buffer, (const size_t)StringCSF, v46); /*0x470e06*/
     v10 = GetDlgItem((HWND)this, 1845); /*0x470e14*/
     SendMessageA(v10, 0x4B2u, 0, (LPARAM)Buffer); /*0x470e23*/
@@ -138,25 +138,25 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
     {
       if ( dword_89E008 == 1 ) /*0x470e71*/
       {
-        v48 = GetStringCSF((wchar_t *)(aTxtDifficultyM), 0, g_Str_File_CampScor_cpp, 1798); /*0x470e89*/
+        v48 = GetStringCSF((wchar_t *)(aTxtDifficultyM), 0,(const char *)(g_Str_File_CampScor_cpp), 1798); /*0x470e89*/
         v12 = GetStringCSF((wchar_t *)(g_Str_GUI_DifficultyString), 0, g_Str_File_CampScor_cpp, 1798); /*0x470e9b*/
         swprintf(Buffer, (const size_t)v12, v48); /*0x470ea6*/
       }
       else if ( dword_89E008 == 2 ) /*0x470eb3*/
       {
-        v49 = GetStringCSF((wchar_t *)(aTxtDifficultyB), 0, g_Str_File_CampScor_cpp, 1800); /*0x470ecb*/
+        v49 = GetStringCSF((wchar_t *)(aTxtDifficultyB), 0,(const char *)(g_Str_File_CampScor_cpp), 1800); /*0x470ecb*/
         v13 = GetStringCSF((wchar_t *)(g_Str_GUI_DifficultyString), 0, g_Str_File_CampScor_cpp, 1800); /*0x470edd*/
         swprintf(Buffer, (const size_t)v13, v49); /*0x470ee8*/
       }
       else
       {
-        v14 = GetStringCSF((wchar_t *)(aGuiBlank), 0, g_Str_File_CampScor_cpp, 1802); /*0x470f03*/
+        v14 = GetStringCSF((wchar_t *)(aGuiBlank), 0,(const char *)(g_Str_File_CampScor_cpp), 1802); /*0x470f03*/
         swprintf(Buffer, (const size_t)v14, v51); /*0x470f0e*/
       }
     }
     else
     {
-      v47 = GetStringCSF((wchar_t *)(aTxtDifficultyE), 0, g_Str_File_CampScor_cpp, 1796); /*0x470e44*/
+      v47 = GetStringCSF((wchar_t *)(aTxtDifficultyE), 0,(const char *)(g_Str_File_CampScor_cpp), 1796); /*0x470e44*/
       v11 = GetStringCSF((wchar_t *)(g_Str_GUI_DifficultyString), 0, g_Str_File_CampScor_cpp, 1796); /*0x470e56*/
       swprintf(Buffer, (const size_t)v11, v47); /*0x470e61*/
     }
@@ -181,9 +181,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
       return 0; /*0x4713e4*/
     while ( 1 ) /*0x47102c*/
     {
-      v21 = Color::ConvertToRGB( /*0x47102c*/
-              (Color *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776),
-              (int)v57);
+            v21 = Color::ConvertToRGB((int)(/*0x47102c*/               (Color *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776)),               (int)v57);
       (*((unsigned short *)&(v56))) = *(unsigned short *)v21; /*0x471034*/
       (((unsigned char *)&(v56))[2]) = *(unsigned char *)(v21 + 2); /*0x47103c*/
       v22 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471067*/

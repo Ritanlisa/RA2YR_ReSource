@@ -16,7 +16,7 @@ struct VectorClass_K {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Clear(void *a1_1);  // 0x6BED50
+    int Clear(int a2);  // 0x6BED50
     char  Release(int a2, unsigned int * a3);  // 0x6C6210
     wchar_t * ddtor(void *a1_1);  // 0x6C62C0
     int  GetSize(unsigned int * a2);  // 0x6C62F0

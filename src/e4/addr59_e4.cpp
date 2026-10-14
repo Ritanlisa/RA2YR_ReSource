@@ -81,7 +81,7 @@ char PlaceCabhutMap(FootClass * aP0)
   int v13; // edx
   unsigned int v14[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  aP0 = (int)(aP0);
+  aP0 = (gamemd::FootClass *)((int)(aP0));
   v2 = (int)(aP0[1]); /*0x5904bb*/
   if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
@@ -178,7 +178,7 @@ int sub_594190(int * a1, int a2)
               {
                 v9 = a2; /*0x594230*/
               }
-              v10 = ((CellCoord *)(&dword_87F7E8))->To_CellObj(v15); /*0x59423e*/
+              v10 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v15)); /*0x59423e*/
               v11 = 0; /*0x594249*/
               if ( dword_ABDFA0 <= 0 ) /*0x59424d*/
               {
@@ -829,7 +829,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x596149*/
   }
-  *(unsigned int *)&off_82AF14 = a2; /*0x596154*/
+  *(unsigned int *)&off_82AF14 = (unsigned int)(a2); /*0x596154*/
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
     g_MissionQueueFrame.briefing[385] = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, 0xFFFF); /*0x596175*/
@@ -839,7 +839,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x5961aa*/
   if ( g_MissionQueueFrame.briefing[450] ) /*0x5961b7*/
     (**(void (***)(int, int))g_MissionQueueFrame.briefing[450])(g_MissionQueueFrame.briefing[450], 1); /*0x5961bd*/
-  v10 = (int)(operator new(0x178u)); /*0x5961c4*/
+  v10 = (void *)((int)(operator new(0x178u))); /*0x5961c4*/
   if ( v10 ) /*0x5961ce*/
     v11 = (int *)MapSeedClass::Constructor(v10); /*0x5961d2*/
   else
@@ -1133,7 +1133,7 @@ int sub_59C630()
     {
       NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent((unsigned int *)i, 2u));
       v3 = (unsigned int *)(Cell::GetNeighbourContent((unsigned int *)i, 4u)); /*0x59c68c*/
-      v4 = Cell::GetNeighbourContent((unsigned int *)i, 3u); /*0x59c68e*/
+      v4 = (unsigned int *)(Cell::GetNeighbourContent((unsigned int *)i, 3u)); /*0x59c68e*/
       if ( NeighbourContent[14] != g_CellPassabilityLUT /*0x59c6ce*/
         || *((unsigned char *)NeighbourContent + 282)
         || v3[14] != g_CellPassabilityLUT

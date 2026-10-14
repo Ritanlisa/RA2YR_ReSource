@@ -38,7 +38,7 @@ namespace gamemd {  // G42.18c ns repair
 char * DeleteCommandClass::AddRef(void *a1)
 {
 
-  return aDelete; /*0x537f25*/
+  return (char *)(aDelete); /*0x537f25*/
 
 }
 }  // G42.18c ns repair
@@ -115,7 +115,7 @@ char DeleteCommandClass_28::AddRef(int a2)
     v3 = 0; /*0x53c52f*/
     if ( m_8 <= 0 ) /*0x53c533*/
       return 1; /*0x53c553*/
-    v4 = *&this->q004; /*0x53c535*/
+    v4 = (unsigned int *)(*&this->q004); /*0x53c535*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x53c53b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x53c544*/
     {
@@ -161,7 +161,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x53c5de*/
         }
       }
-      *&this->q004 = v4; /*0x53c5e7*/
+      *&this->q004 = (int)(v4); /*0x53c5e7*/
       this->m_8 = a2; /*0x53c5ef*/
       BYTE1(this->m_C) = a3 == 0; /*0x53c5f2*/
       return 1; /*0x53c5f8*/
@@ -196,7 +196,7 @@ void DeleteCommandClass_28::ddtor()
 
 // 0x53C640
 namespace gamemd {
-int DeleteCommandClass_28::Read(unsigned int * a2, void *a2_2)
+int DeleteCommandClass_28::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -261,7 +261,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x53c711*/
       }
     }
-    *&this->q004 = v4; /*0x53c71a*/
+    *&this->q004 = (int)(v4); /*0x53c71a*/
     this->m_8 = a2; /*0x53c722*/
     BYTE1(this->m_C) = a3 == 0; /*0x53c725*/
   }
@@ -320,7 +320,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 
 // 0x53C7D0
 namespace gamemd {
-int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1)
+int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   void *v3; // eax

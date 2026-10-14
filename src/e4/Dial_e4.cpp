@@ -61,7 +61,7 @@ char Dial8Class_48::AddRef(int a2)
     v3 = 0; /*0x4a7d8f*/
     if ( m_8 <= 0 ) /*0x4a7d93*/
       return 1; /*0x4a7db3*/
-    v4 = *&this->q004; /*0x4a7d95*/
+    v4 = (unsigned int *)(*&this->q004); /*0x4a7d95*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a7d9b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a7da4*/
     {
@@ -107,7 +107,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x4a7e3e*/
         }
       }
-      *&this->q004 = v4; /*0x4a7e47*/
+      *&this->q004 = (int)(v4); /*0x4a7e47*/
       this->m_8 = a2; /*0x4a7e4f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4a7e52*/
       return 1; /*0x4a7e58*/
@@ -142,7 +142,7 @@ void Dial8Class_48::ddtor()
 
 // 0x4A7EA0
 namespace gamemd {
-int Dial8Class_48::Read(unsigned int * a2, void *a2_2)
+int Dial8Class_48::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -207,7 +207,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
         *&this->q004 = 0; /*0x4a7f71*/
       }
     }
-    *&this->q004 = v4; /*0x4a7f7a*/
+    *&this->q004 = (int)(v4); /*0x4a7f7a*/
     this->m_8 = a2; /*0x4a7f82*/
     BYTE1(this->m_C) = a3 == 0; /*0x4a7f85*/
   }

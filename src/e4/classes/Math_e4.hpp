@@ -93,8 +93,8 @@ struct Math {
    static double ArcTan(double a1);
     void InitArcTan();  // 0x473650
     static double ArcTan2_Table(double a1);
-    unsigned int *  Sub16(unsigned int * a2, unsigned short * a3);  // 0x5B2950
-    bool  Abs16Cmp(unsigned short * a2, int16_t * a3);  // 0x5B2990
+    unsigned int * Sub16(unsigned int *aP1, unsigned short *aP2);  // 0x5B2950
+    bool Abs16Cmp(unsigned short *aP1, int16_t *aP2);  // 0x5B2990
     static double ArcTan2(double a1);
 static double CalcAngle(double a1, double a2);
     static int InitDegToRad();
@@ -102,7 +102,7 @@ static double CalcAngle(double a1, double a2);
     static int RoundToInt(double a1);
 static double Sqrt(double a1);
      // dup: double DistSq2D(...);  // interim stub
-    int Hypotenuse2D(void *a1_1);  // interim stub
+    int Hypotenuse2D(void *a1 = 0);  // interim stub
     char __pad_28[4];  // @0x629a40 (W16G3 raw-usage vocab)
     unsigned int field_140;  // @0x421xxx (W16G3 raw-usage vocab)
     char vtable3[4];  // @0x425xxx (W16G3 raw-usage vocab)

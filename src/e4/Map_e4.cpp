@@ -132,7 +132,7 @@ AbstractClass * * sub_539760()
   ChronoScreenEffect_Duration = 0; /*0x539875*/
   g_ChronoEffectState = 0; /*0x53987b*/
   ChronoScreenEffect_Status = 0; /*0x539881*/
-  return UpdateSurfaceAnimations(-1, -1, -1, 0); /*0x53988c*/
+  return (gamemd::AbstractClass **)(UpdateSurfaceAnimations(-1, -1, -1, 0)); /*0x53988c*/
 }
 }  // G42.18 ns repair
 // 0x5558E0
@@ -349,7 +349,7 @@ int sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
   v9 = 0; /*0x682167*/
   *lpMultiByteStr = 0; /*0x68216f*/
   v3 = 0; /*0x682172*/
-  v4 = &unk_83D658; /*0x682174*/
+  v4 = (unsigned int *)(&unk_83D658); /*0x682174*/
   while ( *v4 != a2 ) /*0x68217b*/
   {
     v4 += 2; /*0x68217d*/
@@ -360,7 +360,7 @@ int sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
       goto LABEL_5; /*0x682188*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x6821c5*/
+  v5 = (void **)((&off_83D65C)[2 * v3]); /*0x6821c5*/
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, int *))(*(unsigned int *)a1 + 16))(a1, v5, 0, 16, 0, &v9); /*0x68218a*/
   if ( v6 >= 0 ) /*0x6821a7*/
@@ -704,7 +704,7 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
         && dword_A8B23C
         && !a3 )
       {
-        return 1; /*0x5ec960*/
+        return (gamemd::SkirmishDialog **)(1); /*0x5ec960*/
       }
     }
     if ( v5 >= v12 ) /*0x5ec966*/
@@ -725,14 +725,14 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
   {
     v10 = 1; /*0x5ec98e*/
     if ( SessionClass::GetPlayerSide((int)v9) != -3 ) /*0x5ec998*/
-      return 1; /*0x5ec998*/
+      return (gamemd::SkirmishDialog **)(1); /*0x5ec998*/
   }
   if ( !dword_A8B23C || a4 || !v10 || SessionClass::GetPlayerSide((int)v9) != -3 ) /*0x5ec9b9*/
   {
     v4 = hDlg; /*0x5ec9bb*/
     goto LABEL_39; /*0x5ec9bb*/
   }
-  return 1; /*0x5ec9c9*/
+  return (gamemd::SkirmishDialog **)(1); /*0x5ec9c9*/
 }
 }
 // 0x6ACCA0
@@ -744,7 +744,7 @@ char sub_6ACCA0(int a1)
   int v3; // esi
   LRESULT v4; // eax
 
-  v1 = dword_B0B59C; /*0x6acca2*/
+  v1 = (HWND)(dword_B0B59C); /*0x6acca2*/
   if ( a1 >= 8 ) /*0x6accad*/
     return 0; /*0x6acd54*/
   v2 = a1 - 1; /*0x6accb9*/
@@ -798,8 +798,8 @@ char Map_Helper_584030(IUnknown * aP0)
   int v10; // [esp+10h] [ebp-4h]
   int v11; // [esp+18h] [ebp+4h]
 
-  v2 = aP0[3]; /*0x584038*/
-  v3 = aP0[2]; /*0x58403b*/
+  v2 = (int)(aP0[3]); /*0x584038*/
+  v3 = (int)(aP0[2]); /*0x58403b*/
   v4 = 0; /*0x58403f*/
   v10 = v2; /*0x584043*/
   if ( v2 <= 0 ) /*0x584047*/
@@ -821,7 +821,7 @@ char Map_Helper_584030(IUnknown * aP0)
     if ( v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x584081*/
     {
       dword_ABDC74 = v11; /*0x584087*/
-      v7 = unk_ABDC50; /*0x58408c*/
+      v7 = (unsigned int *)(unk_ABDC50); /*0x58408c*/
     }
     v8 = v7[19]; /*0x584091*/
     if ( v8 != 4 && v8 != 3 ) /*0x58409c*/
@@ -846,7 +846,7 @@ char Map_Helper_59BAB0(void * a1, void * a2, void * a3, void * a4, void * a5)
   int v11; // edx
   int v12; // eax
 
-  v5 = *a2; /*0x59babb*/
+  v5 = (int)(*a2); /*0x59babb*/
   if ( *a2 == dword_ABE2F0 && a2[1] == dword_ABE2F4 && a2[2] == dword_ABE2F8 && a2[3] == dword_ABE2FC ) /*0x59bae5*/
     return 1; /*0x59baeb*/
   if ( a3 ) /*0x59baf4*/
@@ -2466,7 +2466,7 @@ unsigned int * sub_769D70(unsigned int * a1, int a2)
 
 // 0x769DC0
 namespace gamemd {
-VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2, void *a3_1)
+VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   *(unsigned int *)Block->tail_0 = &vt_VectorCursorTRectVectorClassTRect; /*0x769dc9*/
@@ -2528,7 +2528,7 @@ int Map_WorldDominationTour_20::ddtor(void *a1_1)
 
 // 0x769F80
 namespace gamemd {
-int Map_WorldDominationTour_20::Read(int a2, void *a2_2)
+int Map_WorldDominationTour_20::Read(int a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -2575,7 +2575,7 @@ namespace gamemd {
 
 // 0x76A250
 namespace gamemd {
-int Map_WorldDominationTour_28::Read(unsigned int * a2, void *a2_2)
+int Map_WorldDominationTour_28::Read(unsigned int * a2, void *a2_2, void *a3)
 {
 
   int result; // eax
@@ -2673,12 +2673,12 @@ char sub_770C10(Map *aP0, int a1, int a2, void ** a3)
 
     v3 = *&aP0->Width;
     *(unsigned int *)aP0->__pad_000 = &vt_VectorClass;
-    if ( v3 && IDA_BYTE1(aP0->Name) )
+    if ( v3 && (((unsigned char *)&(aP0->Name))[1]) )
   {
     operator delete((void *)(v3)); /*0x76a6e8*/
         *&aP0->Width = 0;
   }
-    IDA_BYTE1(aP0->Name) = 0;
+    (((unsigned char *)&(aP0->Name))[1]) = 0;
     aP0->Height = 0;
   if ( (a2 & 1) != 0 ) /*0x76a708*/
     operator delete((void *)(aP0)); /*0x76a70b*/

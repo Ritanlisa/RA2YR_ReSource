@@ -14,7 +14,7 @@ struct unknown {
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
     void* RoundToInt;  // 0x0 (no offset truth)
-    int  Read(unsigned short * a2, void *a2_2, void *a1 = 0);
+    int  Read(unsigned short * a2, void *a2_2, void *a3 = 0);
     int Seek(int a2, int a3, void *a3_2);
     unsigned int Write(int a2);
     wchar_t * ddtor(void *a1);

@@ -39,7 +39,7 @@
 
 // 0x74AD80
 namespace gamemd {  // G42.18 ns repair
-VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
+VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source, void *a2, void *a3, void *a4)
 {
 
   int v3; // eax
@@ -257,7 +257,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v22 = globalHelper_04BB20((char *)&Destination, (int)&stru_A8EB00.vfptr[10]); /*0x74b219*/
+    v22 = (unsigned int *)(globalHelper_04BB20((char *)&Destination, (int)&stru_A8EB00.vfptr[10])); /*0x74b219*/
   }
   else
   {
@@ -381,7 +381,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          (char *)&Destination,
          128) )
   {
-    v36 = BuildingTypeClass::LoadOrGet((char *)&Destination); /*0x74b479*/
+    v36 = (unsigned int *)(BuildingTypeClass::LoadOrGet((char *)&Destination)); /*0x74b479*/
   }
   else
   {
@@ -397,25 +397,25 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     {
       v4->MainVoxel = 0; /*0x74b555*/
       v4->TurretVoxel_d = 0; /*0x74b55b*/
-      return 1; /*0x74b569*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b569*/
     }
     if ( v56 ) /*0x74b4d6*/
     {
       v4->MainVoxel = TechnoType[44]; /*0x74b4de*/
       v4->TurretVoxel_d = TechnoType[45]; /*0x74b4ea*/
-      return 1; /*0x74b4f8*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b4f8*/
     }
     if ( v55 ) /*0x74b501*/
     {
       v4->MainVoxel = TechnoType[46]; /*0x74b509*/
       v4->TurretVoxel_d = TechnoType[47]; /*0x74b515*/
-      return 1; /*0x74b523*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b523*/
     }
     if ( v54 ) /*0x74b52c*/
     {
       v4->MainVoxel = TechnoType[48]; /*0x74b538*/
       v4->TurretVoxel_d = TechnoType[49]; /*0x74b544*/
-      return 1; /*0x74b552*/
+      return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b552*/
     }
   }
   else
@@ -440,7 +440,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&Destination))->Dtor(); /*0x74b602*/
   }
-  return 1; /*0x74b4f2*/
+  return (gamemd::VoxelAnimTypeClass *)(1); /*0x74b4f2*/
 }
 }
 // 0x74B690

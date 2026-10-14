@@ -1,5 +1,4 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
-#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/HouseClass_24_e4.hpp"
@@ -190,7 +189,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 }
 // 0x4F54A0
 namespace gamemd {
-int HouseClass::Construct(int a2)
+int HouseClass::Construct(int a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // edx
@@ -260,7 +259,7 @@ int HouseClass::Construct(int a2)
   int v68; // [esp+A0h] [ebp+4h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4f54a9*/
-  this->vtable4 = -1; /*0x4f54b8*/
+  this->vtable4 = (void *)(-1); /*0x4f54b8*/
   this->IsAllocated = a2; /*0x4f54c2*/
   TagClassVector::Construct(&this->conYards, 0, 0); /*0x4f54c5*/
   this->u32_E = (int)&vt_DynamicVectorClass; /*0x4f54cf*/
@@ -275,7 +274,7 @@ int HouseClass::Construct(int a2)
   this->u8_1F = 10; /*0x4f5505*/
   this->u32_1E = 0; /*0x4f5508*/
   VectorClass::BuildingConstructor(&this->NeedsSaveOrLink, 0, 0); /*0x4f5515*/
-  this->NeedsSaveOrLink = (int)&vt_DynamicVectorClass; /*0x4f551a*/
+  this->NeedsSaveOrLink = (void *)((int)&vt_DynamicVectorClass); /*0x4f551a*/
   this->u32_25 = 10; /*0x4f5520*/
   this->vtable5 = 0; /*0x4f5523*/
   VectorClass::BuildingConstructor(&this->u32_26, 0, 0); /*0x4f5530*/
@@ -287,11 +286,11 @@ int HouseClass::Construct(int a2)
   this->u32_31 = 10; /*0x4f5556*/
   this->relatedTagsCount = 0; /*0x4f5559*/
   VectorClass::BuildingConstructor(&this->q032, 0, 0); /*0x4f5566*/
-  this->q032 = (int)&vt_DynamicVectorClass; /*0x4f556b*/
+  this->q032 = (void *)((int)&vt_DynamicVectorClass); /*0x4f556b*/
   this->q037 = 10; /*0x4f5571*/
   this->arrayIndex = 0; /*0x4f5574*/
   VectorClass::BuildingConstructor(&this->conYards, 0, 0); /*0x4f5581*/
-  this->conYards = (int)&vt_DynamicVectorClass; /*0x4f5586*/
+  this->conYards = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f5586*/
   this->u32_3D = 10; /*0x4f558c*/
   this->conYardsCount = 0; /*0x4f558f*/
   VectorClass::BuildingConstructor(&this->q03E, 0, 0); /*0x4f559c*/
@@ -299,7 +298,7 @@ int HouseClass::Construct(int a2)
   this->u32_43 = 10; /*0x4f55a7*/
   this->q042 = 0; /*0x4f55aa*/
   VectorClass::BuildingConstructor(&this->buildings, 0, 0); /*0x4f55b7*/
-  this->buildings = (int)&vt_DynamicVectorClass; /*0x4f55bc*/
+  this->buildings = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f55bc*/
   this->u32_49 = 10; /*0x4f55c2*/
   this->buildingsCount = 0; /*0x4f55c5*/
   VectorClass::BuildingConstructor(&this->u32_4A, 0, 0); /*0x4f55d2*/
@@ -307,7 +306,7 @@ int HouseClass::Construct(int a2)
   this->q04F = 10; /*0x4f55dd*/
   this->q04E = 0; /*0x4f55e0*/
   VectorClass::BuildingConstructor(&this->unitRepairStations, 0, 0); /*0x4f55ed*/
-  this->unitRepairStations = (int)&vt_DynamicVectorClass; /*0x4f55f2*/
+  this->unitRepairStations = (gamemd::BuildingClass **)((int)&vt_DynamicVectorClass); /*0x4f55f2*/
   this->u32_55 = 10; /*0x4f55f8*/
   this->repairStationsCount = 0; /*0x4f55fb*/
   this->u32_56 = 0; /*0x4f55fe*/
@@ -609,7 +608,7 @@ int HouseClass::Construct(int a2)
     Destination[0] = 0; /*0x4f5e06*/
   }
   if ( Destination != &this->u32_16009 ) /*0x4f5e30*/
-    qmemcpy(&this->u32_16009, Destination, 0x20u); /*0x4f5e41*/
+    memcpy(&this->u32_16009, Destination, 0x20u); /*0x4f5e41*/
   this->ObjectClass_1602A = 0; /*0x4f5e46*/
   AbstractClass::GenerateUniqueID(&this->AbstractClass_1); /*0x4f5e4e*/
   v11 = this->IsAllocated; /*0x4f5e53*/
@@ -796,7 +795,7 @@ int HouseClass::Construct(int a2)
     }
     if ( Destination != &this->u8_57FD ) /*0x4f62e7*/
     {
-      qmemcpy(&this->u8_57FD, Destination, 0x14u); /*0x4f62f8*/
+      memcpy(&this->u8_57FD, Destination, 0x14u); /*0x4f62f8*/
       this->u32_16008 = Destination[20]; /*0x4f62fa*/
     }
     v50 = a2; /*0x4f62fb*/
@@ -2805,7 +2804,7 @@ void HouseClass::LostPoweredCenter(int a2, void *a2_2)
 }
 // 0x5471B0
 namespace gamemd {
-int HouseClass::GetCameoTypeIndex(int a2)
+int HouseClass::GetCameoTypeIndex(int a2, void *a2_1)
 {
 
   unsigned int *v2; // eax
@@ -3421,7 +3420,7 @@ void HouseClass_24::ddtor()
 
 // 0x4F2A00
 namespace gamemd {
-int HouseClass_24::Read(unsigned int * a2, void *a2_2)
+int HouseClass_24::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -3831,7 +3830,7 @@ char HouseClass::Set(void *a1, void *a2, void *a3)
 
 // 0x6ABC60
 namespace gamemd {
-int HouseClass::GetStatus(int aP1)
+int HouseClass::GetStatus(int aP1, void *a2)
 {
   int v2; // edx
 

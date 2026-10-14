@@ -63,7 +63,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4)); /*0x657dbd*/
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
@@ -295,7 +295,7 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 }
 }
 // 0x656580
-char * Diplomacy::GetField(int a2)
+char * Diplomacy::GetField(int a2, void *a2_1)
 {
   return this->__pad_00C + 12) * a2->DeployingAnim_d + 4728; /*0x656595*/
 }

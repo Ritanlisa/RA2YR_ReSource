@@ -5522,7 +5522,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                     v12->u8_CCE);
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab039*/
             {
-              qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x6ab055*/
+              memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x6ab055*/
               (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab066*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab07d*/
               ++stru_A80220.lineTrailer; /*0x6ab083*/
@@ -5549,7 +5549,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                       v12->u8_CCE);
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab13a*/
               {
-                qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v19, 0x6Fu); /*0x6ab156*/
+                memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v19, 0x6Fu); /*0x6ab156*/
                 v12 = v75; /*0x6ab167*/
                 (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab16b*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab182*/
@@ -5587,7 +5587,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
               if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x6ab20e*/
                 goto LABEL_45; /*0x6ab20e*/
   LABEL_44:
-              qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v21, 0x6Fu); /*0x6ab242*/
+              memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v21, 0x6Fu); /*0x6ab242*/
               (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab26d*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab284*/
               ++stru_A80220.lineTrailer; /*0x6ab28a*/
@@ -5603,7 +5603,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             v41 = TechnoTypeClass::GetByTypeAndIndex( /*0x6ab632*/
                     *(unsigned int *)(v9 + v73[2].q00C + 92),
                     *(unsigned int *)(v9 + v73[2].q00C + 88));
-            if ( !v41 || (v42 = *&v41->u8_CCE, IDA_LOBYTE(v69) = 1, !v42) ) /*0x6ab648*/
+            if ( !v41 || (v42 = *&v41->u8_CCE, (*((unsigned char *)&(v69))) = 1, !v42) ) /*0x6ab648*/
               v69 = ((v69) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x6ab64a*/
             ShouldDisableCameo = HouseClass::ShouldDisableCameo((HouseClass *)dword_A83D4C, v41); /*0x6ab65d*/
             if ( v40 /*0x6ab67d*/
@@ -5653,7 +5653,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                       (uint8_t)v69);
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab77d*/
               {
-                qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v43, 0x6Fu); /*0x6ab799*/
+                memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v43, 0x6Fu); /*0x6ab799*/
                 (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab7aa*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab7c1*/
                 ++stru_A80220.lineTrailer; /*0x6ab7c7*/
@@ -5692,7 +5692,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                       v76 = v50; /*0x6ab8af*/
                       if ( (*(int (__thiscall **)(unsigned char *))(v51 + 44))(v45) == 7 && v45[5489] ) /*0x6ab8bb*/
                       {
-                        IDA_LOWORD(v52) = Math::RoundToInt((double)v76 * *(double *)(*(unsigned int *)&g_RulesClass_Instance /*0x6ab8d5*/
+                        (*((unsigned short *)&(v52))) = Math::RoundToInt((double)v76 * *(double *)(*(unsigned int *)&g_RulesClass_Instance /*0x6ab8d5*/
                                                                                + 1880));
                         v50 = v52; /*0x6ab8da*/
                       }
@@ -5749,7 +5749,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                     v68);
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab520*/
             {
-              qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v30, 0x6Fu); /*0x6ab53c*/
+              memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v30, 0x6Fu); /*0x6ab53c*/
               v28 = v73; /*0x6ab54d*/
               (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab551*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab568*/
@@ -5799,7 +5799,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             v25 = EventClass::AddEventEx(v78, v24, 0x10u, v10, v67, v63); /*0x6ab349*/
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab358*/
             {
-              qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v25, 0x6Fu); /*0x6ab374*/
+              memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v25, 0x6Fu); /*0x6ab374*/
               (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab385*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab39c*/
               ++stru_A80220.lineTrailer; /*0x6ab3a2*/
@@ -5817,7 +5817,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
   LABEL_60:
           if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab40b*/
           {
-            qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v15, 0x6Fu); /*0x6ab42b*/
+            memcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v15, 0x6Fu); /*0x6ab42b*/
             (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab43c*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab453*/
             ++stru_A80220.lineTrailer; /*0x6ab459*/

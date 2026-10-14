@@ -12,7 +12,7 @@ void MoveFeedback::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = *&this->m_Capacity; /*0x40b646*/
+  v2 = (void *)(*&this->m_Capacity); /*0x40b646*/
   this->m_10 = 0; /*0x40b649*/
   if ( v2 && (this->IsAllocated) ) /*0x40b650*/
   {

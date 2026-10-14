@@ -43,7 +43,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int v14; // [esp+10h] [ebp-8h]
   int i; // [esp+10h] [ebp-8h]
 
-  v2 = a2; /*0x41f2ec*/
+  v2 = (int)(a2); /*0x41f2ec*/
   result = INIClass::GetKeyCount(a1, (unsigned __int8 *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
@@ -86,7 +86,7 @@ LABEL_11:
       v7 = 0; /*0x41f32b*/
     }
 LABEL_13:
-    v2 = a2; /*0x41f3a9*/
+    v2 = (int)(a2); /*0x41f3a9*/
     if ( a2 == 1 ) /*0x41f3b0*/
       v7->q0A4 = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
@@ -133,7 +133,7 @@ int CCINIClass::GetDB()
 }
 // 0x4741F0
 namespace gamemd {
-MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
+MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4, void *a4_1)
 {
 
   int File; // ebp
@@ -190,7 +190,7 @@ LABEL_7:
     v7 = File; /*0x474304*/
 LABEL_8:
   FileStraw::Destructor((int)v10); /*0x474306*/
-  return v7; /*0x474311*/
+  return (gamemd::MultiplayerGameMode **)(v7); /*0x474311*/
 
 }
 }
@@ -239,7 +239,7 @@ CCINIClass::CCINIClass()
   p_sectionCount[1] = v6; /*0x535b8c*/
   v7 = sectionHead->Prev; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
-    *(unsigned int *)(v7 + 8) = p_sectionCount; /*0x535b96*/
+    *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
   sectionHead->Prev = (int)p_sectionCount; /*0x535b99*/
   result->u32_C = &vt_List; /*0x535b9c*/
   result->needsSave_flag = 0; /*0x535ba4*/
@@ -249,7 +249,7 @@ CCINIClass::CCINIClass()
   result->unknown38 = 0; /*0x535bb0*/
   result->INIClass_field_3C = 0; /*0x535bb4*/
   result->ownsFile = 0; /*0x535bb7*/
-  *result = &CCINIClass_Vtable; /*0x535bba*/
+  *result = (unsigned int)(&CCINIClass_Vtable); /*0x535bba*/
   return result; /*0x535ba3*/
 
 }
@@ -298,7 +298,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
       result = dword_A8B210; /*0x41f563*/
     }
   }
-  return result; /*0x41f56d*/
+  return (gamemd::AITriggerTypeClass *)(result); /*0x41f56d*/
 
 }
 } // namespace gamemd
@@ -334,7 +334,7 @@ IUnknown * CCINIClass::WriteHouses()
     }
     while ( v4 < dword_A80238 ); /*0x501200*/
   }
-  return result; /*0x501202*/
+  return (IUnknown *)(result); /*0x501202*/
 
 }
 } // namespace gamemd

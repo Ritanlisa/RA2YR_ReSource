@@ -18,7 +18,7 @@ bool WaypointClass::IsCoordinateUsed(const CellStruct&) const
   int v10; // eax
   signed int v12; // [esp+10h] [ebp-8h]
 
-  v2 = (int *)(0);
+  v2 = (int)((int *)(0));
   v12 = 0; /*0x502301*/
   for ( i = &this->padding_18[114]; ; ++i ) /*0x502305*/
   {

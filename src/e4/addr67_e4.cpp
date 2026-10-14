@@ -58,7 +58,7 @@ int sub_679CC0()
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
-    v1[1] = (unsigned int)(0);
+    v1[1] = (void *)((unsigned int)(0));
     v1[2] = 0; /*0x679cde*/
     ((GenericList *)(v2))->Constructor(); /*0x679ce2*/
     v2[0] = (unsigned int)(&vt_List); /*0x679ceb*/
@@ -138,7 +138,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     if ( !v11 && v17.IsAllocated ) /*0x67b671*/
     {
       operator delete((void *)(Items)); /*0x67b678*/
-      return aP0; /*0x67b68b*/
+      return (int)(aP0); /*0x67b68b*/
     }
   }
   else
@@ -155,7 +155,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
       {
-        v14 = operator new(4 * Capacity); /*0x67b6c8*/
+        v14 = (int)(operator new(4 * Capacity)); /*0x67b6c8*/
         aP0->Items = (void *)v14; /*0x67b6d2*/
         if ( v14 ) /*0x67b6d5*/
         {
@@ -183,7 +183,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     aP0[1].Items = a4[1].Items; /*0x67b709*/
     /* X11: vtable install elided (implicit via TypeList virtuals 0x67b70c) */
   }
-  return aP0; /*0x67b682*/
+  return (int)(aP0); /*0x67b682*/
 }
 }
 // 0x67BB10
@@ -213,7 +213,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     ((InfantryTypeVector *)(&v17))->Construct2(0, 0); /*0x67bb51*/
     v17.q014 = 10; /*0x67bb5a*/
     v17.q010 = 0; /*0x67bb68*/
-    *(unsigned int *)v17.__pad_000 = &vt_TypeList; /*0x67bb6c*/
+    *(unsigned int *)v17.__pad_000 = (unsigned int)(&vt_TypeList); /*0x67bb6c*/
     for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
@@ -239,7 +239,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(unsigned int *)aP0 = (unsigned int)(&vt_VectorClass); /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
     *(unsigned int *)aP0 = (unsigned int)(&vt_TypeList); /*0x67bc05*/
-    *(unsigned int *)v17.__pad_000 = &vt_VectorClass; /*0x67bc0b*/
+    *(unsigned int *)v17.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x67bc0b*/
     InfantryTypeVector_field_0x14 = v17.q014; /*0x67bc17*/
     aP0->u32_10 = v17.q010; /*0x67bc1b*/
     InfantryTypeVector_field_0x04 = (void *)v17.u32_4; /*0x67bc1e*/
@@ -265,7 +265,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
       aP0->u32_8 = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = (int)(operator new(4 * v13));
+        v14 = (void *)((int)(operator new(4 * v13)));
         aP0->u32_4 = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {

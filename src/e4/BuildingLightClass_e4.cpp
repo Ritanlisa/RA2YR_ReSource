@@ -57,8 +57,8 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
   int v29; // [esp+58h] [ebp-10h]
   char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
 
-  result = aP1; /*0x436be9*/
-  v4 = aP1; /*0x436bef*/
+  result = (unsigned int *)(aP1); /*0x436be9*/
+  v4 = (gamemd::BuildingLightClass *)(aP1); /*0x436bef*/
   aP1->Speed[1] = 0; /*0x436bfa*/
   aP1->BehaviourMode = (int)aP1; /*0x436c00*/
   *(unsigned int *)aP1->__pad_B4 = 0; /*0x436c06*/
@@ -92,8 +92,8 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
               && !(unsigned __int8)Object::IsAlliedWithObjectHouse(nextArrayIndex, (int)v8) )
             {
               v9 = *v8; /*0x436ccc*/
-              location = v4->FollowingObject; /*0x436cce*/
-              v11 = v4->FollowingObject; /*0x436cd0*/
+              location = (int *)(v4->FollowingObject); /*0x436cce*/
+              v11 = (int)(v4->FollowingObject); /*0x436cd0*/
               v12 = location->vtable2; /*0x436cd2*/
               v29 = location->vtable3; /*0x436cdf*/
               v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(v9 + 72))(v8, v30); /*0x436ce3*/
@@ -114,10 +114,10 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
             v8 = v8->ptr_30; /*0x436d47*/
             if ( !v8 ) /*0x436d4c*/
               break; /*0x436d4c*/
-            v4 = aP1; /*0x436c94*/
+            v4 = (gamemd::BuildingLightClass *)(aP1); /*0x436c94*/
           }
           v7 = v21; /*0x436d52*/
-          v4 = aP1; /*0x436d56*/
+          v4 = (gamemd::BuildingLightClass *)(aP1); /*0x436d56*/
         }
         v21 = ++v7; /*0x436d5e*/
       }
@@ -147,7 +147,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   /* X11: vtable install elided (implicit via BuildingLightClass virtuals 0x4370d8) */
   if ( (unsigned __int8)ObjectClass::Undeploy(a1) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)a1); /*0x4370ee*/
-  v5 = a1; /*0x437103*/
+  v5 = (gamemd::BuildingLightClass *)(a1); /*0x437103*/
   v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
@@ -161,7 +161,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   ObjectClass::Dtor(a1); /*0x43713e*/
   if ( (a1 & 1) != 0 ) /*0x437148*/
     __3_YAXPAX_Z(a1); /*0x43714b*/
-  return a1; /*0x437155*/
+  return (gamemd::BuildingLightClass *)(a1); /*0x437155*/
 
 }
 } // namespace gamemd
@@ -204,16 +204,16 @@ signed int BuildingLightClass::UpdateOscillation()
 
   v26 = (*(int (**)(void *))(*(unsigned int *)this->BuildingLightClass_field_E0 + 456))(this->BuildingLightClass_field_E0); /*0x513d3a*/
   v28 = v26; /*0x513d3e*/
-  vtable3 = this->vtable4; /*0x513d42*/
+  vtable3 = (unsigned int *)(this->vtable4); /*0x513d42*/
   if ( vtable3[376] != -1 ) /*0x513d4c*/
   {
-    v3 = vtable3 + 39; /*0x513d52*/
+    v3 = (int *)(vtable3 + 39); /*0x513d52*/
     v29 = *v3; /*0x513d59*/
     v30 = v3[1]; /*0x513d65*/
     v31 = v3[2]; /*0x513d71*/
     GroundHeight = Cell::GetGroundHeight(&v29); /*0x513d7a*/
-    v5 = this->vtable4; /*0x513d7c*/
-    v6 = v5 + 39; /*0x513d8b*/
+    v5 = (unsigned int *)(this->vtable4); /*0x513d7c*/
+    v6 = (int *)(v5 + 39); /*0x513d8b*/
     v7 = v5[376] & 7; /*0x513d8d*/
     v8 = *v6; /*0x513d90*/
     v9 = v6[1]; /*0x513d92*/
@@ -245,7 +245,7 @@ signed int BuildingLightClass::UpdateOscillation()
     this->customSound = 0; /*0x513e6b*/
     v20 = 0; /*0x513e6e*/
   }
-  v21 = this->vtable4; /*0x513e70*/
+  v21 = (unsigned char *)(this->vtable4); /*0x513e70*/
   v22 = v21[116]; /*0x513e74*/
   v21[116] = 0; /*0x513e77*/
   (*(void (**)(void *, int))(*(unsigned int *)this->BuildingLightClass_field_E0 + 460))(this->BuildingLightClass_field_E0, v20); /*0x513e7f*/

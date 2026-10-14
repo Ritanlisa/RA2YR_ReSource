@@ -169,7 +169,7 @@ unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
     if ( result[2] >= a1[2] ) /*0x5b4002*/
       a2 = result; /*0x5b4004*/
   }
-  *a2 = a1; /*0x5b400d*/
+  *a2 = (unsigned int)(a1); /*0x5b400d*/
   *a1 = 0; /*0x5b400f*/
   a1[1] = 0; /*0x5b4015*/
   return result; /*0x5b401c*/
@@ -197,7 +197,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   _strupr(Str); /*0x5b40ee*/
   memset(&v14, 0, 12); /*0x5b4110*/
   v3 = Checksummer::Add_Buffer(&v14, (uint8_t *)Str, strlen(Str)); /*0x5b4127*/
-  v4 = dword_ABF00C; /*0x5b4129*/
+  v4 = (unsigned int *)(dword_ABF00C); /*0x5b4129*/
   if ( !dword_ABF00C ) /*0x5b4130*/
     goto LABEL_9; /*0x5b4130*/
   while ( 1 ) /*0x5b4132*/
@@ -228,16 +228,16 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     v8 = (unsigned int *)operator new(0x10u); /*0x5b41af*/
     v9 = v8; /*0x5b41b4*/
     v8[2] = v3; /*0x5b41b9*/
-    v10 = dword_ABF00C; /*0x5b41bc*/
+    v10 = (unsigned int *)(dword_ABF00C); /*0x5b41bc*/
     if ( dword_ABF00C ) /*0x5b41c4*/
     {
       if ( *((unsigned int *)dword_ABF00C + 2) < v3 ) /*0x5b41d6*/
-        v10 = (char *)dword_ABF00C + 4; /*0x5b41d8*/
+        v10 = (unsigned int *)((char *)dword_ABF00C + 4); /*0x5b41d8*/
       InsertIntoHashTree(v8, v10); /*0x5b41dd*/
     }
     else
     {
-      dword_ABF00C = v8; /*0x5b41c6*/
+      dword_ABF00C = (unsigned int)(v8); /*0x5b41c6*/
       *v8 = 0; /*0x5b41cc*/
       v8[1] = 0; /*0x5b41ce*/
     }
@@ -245,7 +245,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     {
       v12 = (ObjectClass *)operator new(0x24u); /*0x5b4210*/
       if ( v12 ) /*0x5b421a*/
-        SHPFile = LoadSHPFile(v12, Source); /*0x5b4224*/
+        SHPFile = (void *)(LoadSHPFile(v12, Source)); /*0x5b4224*/
       else
         SHPFile = 0; /*0x5b4228*/
     }
@@ -253,13 +253,13 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     {
       SHPFile = CCFileClass::ReadEntireFile((CCFileClass *)&v14.buffer); /*0x5b420a*/
     }
-    v9[3] = SHPFile; /*0x5b422a*/
+    v9[3] = (unsigned int)(SHPFile); /*0x5b422a*/
     v14.buffer = (int)&vt_CCFileClass; /*0x5b4231*/
     v16 = 0; /*0x5b4239*/
     Vector::Clear((int)v15); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v14.buffer))->Dtor(); /*0x5b4251*/
-    return SHPFile; /*0x5b4256*/
+    return (gamemd::AbstractClass **)(SHPFile); /*0x5b4256*/
   }
   else
   {
@@ -331,7 +331,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
     break;
   }
   if ( a3 ) /*0x5b4516*/
-    *a3 = v6; /*0x5b4518*/
+    *a3 = (unsigned int)(v6); /*0x5b4518*/
   if ( a5 ) /*0x5b4523*/
     *a5 = *(unsigned int *)(v10 + 8); /*0x5b4528*/
   if ( a2 ) /*0x5b4530*/
@@ -349,7 +349,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
     if ( a4 ) /*0x5b4563*/
       *a4 += v6[7]; /*0x5b456c*/
   }
-  return 1; /*0x5b456e*/
+  return (gamemd::ObjectClass **)(1); /*0x5b456e*/
 }
 }
 // 0x5B4B10
@@ -374,14 +374,14 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
   int16_t v19; // [esp+130h] [ebp-204h]
   wchar_t lParam[256]; // [esp+134h] [ebp-200h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x5b4b38*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, a4)); /*0x5b4b38*/
   if ( result ) /*0x5b4b3f*/
     return result; /*0x5b4b3f*/
   WindowLongA = GetWindowLongA(hWnd, 8); /*0x5b4b4f*/
   switch ( a2 ) /*0x5b4b56*/
   {
     case 2u: /*0x5b4b56*/
-      v15 = g_UIControlState; /*0x5b4ead*/
+      v15 = (void *)(g_UIControlState); /*0x5b4ead*/
       if ( g_UIControlState ) /*0x5b4eb5*/
       {
         ComPtr::Dtor(g_UIControlState); /*0x5b4eb9*/
@@ -520,10 +520,10 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 
   if ( Bases == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
   {
-    v1 = aP0->wasFallingDown; /*0x5b680d*/
+    v1 = (int)(aP0->wasFallingDown); /*0x5b680d*/
     if ( dword_A8B320 == ((v1 & 4) != 0) && byte_A8B31D == ((v1 & 2) != 0) ) /*0x5b6836*/
     {
-      v2 = aP0->inOpenToppedTransport; /*0x5b683c*/
+      v2 = (int)(aP0->inOpenToppedTransport); /*0x5b683c*/
       if ( BridgeDestruction == ((v2 & 2) != 0) /*0x5b6920*/
         && Crates == ((v2 & 4) != 0)
         && byte_A8B31F == ((v1 & 8) != 0)
@@ -578,7 +578,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   dword_A8E960[0] = v6; /*0x5b6b1c*/
   MultiEngineer = v7 & 1; /*0x5b6b29*/
   vtable0 = dword_A8B230->vtable0; /*0x5b6b2f*/
-  IDA_BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5b6b31*/
+  (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5b6b31*/
   dword_A8B230->vtable0 = vtable0; /*0x5b6b34*/
   byte_A8B31C = 1; /*0x5b6b3b*/
   nullsub_37(v13); /*0x5b6b42*/

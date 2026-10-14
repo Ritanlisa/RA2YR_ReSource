@@ -70,7 +70,7 @@ LABEL_4:
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1156))(this, 0, 1); /*0x416d8f*/
         goto LABEL_5; /*0x416d97*/
       }
-      v6 = AbstractClass::IsTechnoType(v2); /*0x416dd8*/
+      v6 = (unsigned char *)(AbstractClass::IsTechnoType(v2)); /*0x416dd8*/
       if ( !v6 ) /*0x416ddc*/
         goto LABEL_18; /*0x416ddc*/
       if ( this->u32_118 ) /*0x416de2*/
@@ -98,7 +98,7 @@ LABEL_4:
       {
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 7); /*0x416ec3*/
 LABEL_18:
-        Carryall_field_00 = this->Carryall_field_00; /*0x416ec9*/
+        Carryall_field_00 = (int)(this->Carryall_field_00); /*0x416ec9*/
         NearbyCell = InfantryClass::FindNearbyCell((InfantryClass *)this, this->u32_5A4); /*0x416ed6*/
         (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = this->u32_5D4; /*0x416ee4*/
@@ -130,12 +130,12 @@ LABEL_5:
           v12[1],
           v12[2]);
         this->u32_BC = 2; /*0x416f8c*/
-        return 1; /*0x416f96*/
+        return (gamemd::FootClass **)(1); /*0x416f96*/
       }
       else
       {
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1156))(this, 0, 1); /*0x416f3a*/
-        return 1; /*0x416f40*/
+        return (gamemd::FootClass **)(1); /*0x416f40*/
       }
     case 2: /*0x416d64*/
       v13 = this->u32_5A4; /*0x416fa3*/
@@ -145,7 +145,7 @@ LABEL_5:
       {
         Debug::Log(); /*0x416fce*/
         this->u32_BC = 0; /*0x416fd6*/
-        return 1; /*0x416fe8*/
+        return (gamemd::FootClass **)(1); /*0x416fe8*/
       }
       v14 = this->u32_5A4; /*0x416fe9*/
       if ( v14 /*0x417008*/
@@ -155,7 +155,7 @@ LABEL_5:
               this->u32_5A4) )
       {
         this->u32_BC = 0; /*0x417012*/
-        return 1; /*0x417024*/
+        return (gamemd::FootClass **)(1); /*0x417024*/
       }
       if ( !this->u32_674 ) /*0x417025*/
         WinAPI::Wrapper(-2147467261); /*0x417032*/
@@ -184,13 +184,13 @@ LABEL_44:
           Debug::Log(); /*0x41713f*/
           this->u32_BC = 3; /*0x417147*/
         }
-        return 1; /*0x417151*/
+        return (gamemd::FootClass **)(1); /*0x417151*/
       }
       else
       {
         this->u32_BC = 0; /*0x4170f0*/
         Debug::Log(); /*0x4170fa*/
-        return 1; /*0x417102*/
+        return (gamemd::FootClass **)(1); /*0x417102*/
       }
     case 3: /*0x416d64*/
       Debug::Log(); /*0x417163*/
@@ -207,7 +207,7 @@ LABEL_44:
           (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 292))(this, 1); /*0x4171af*/
           this->u32_BC = 0; /*0x4171b5*/
         }
-        return 1; /*0x417186*/
+        return (gamemd::FootClass **)(1); /*0x417186*/
       }
       else
       {
@@ -222,8 +222,8 @@ LABEL_44:
         v28[1] = this->u32_A0; /*0x41720c*/
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v27)->flags[0]) & 1; /*0x41722f*/
-        v23 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v28); /*0x417236*/
-        Building = CellClass::FindBuilding(v23, v26); /*0x417242*/
+        v23 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v28)); /*0x417236*/
+        Building = (unsigned char *)(CellClass::FindBuilding(v23, v26)); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)Team::GetMember((Team *)this, 0)
           && (Debug::Log(), (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
@@ -240,10 +240,10 @@ LABEL_44:
         }
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x4172b1*/
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 292))(this, 1); /*0x4172bd*/
-        v25 = this->Carryall_field_00; /*0x4172c3*/
+        v25 = (int)(this->Carryall_field_00); /*0x4172c3*/
         this->u32_6D4 = 1; /*0x4172ca*/
         (*(void (**)(Carryall *, unsigned int, int))(v25 + 1156))(this, 0, 1); /*0x4172d1*/
-        return 1; /*0x4172da*/
+        return (gamemd::FootClass **)(1); /*0x4172da*/
       }
     default:
       goto LABEL_5;

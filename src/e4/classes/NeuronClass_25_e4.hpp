@@ -10,7 +10,7 @@ struct NeuronClass_25 {
 // --- flat members (BEGIN) ---
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Update(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x43AB20
+    int Update(int a2, void *a2_2, void *a3_1, void *a4_1);  // 0x43AB20
     char  AddRef(int a2);  // 0x43AB30
     char  Release(int a2, unsigned int * a3);  // 0x43AB70
     int ddtor(void *a1 = 0);  // 0x43AC20

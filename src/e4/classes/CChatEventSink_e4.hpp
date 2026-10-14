@@ -13,10 +13,10 @@ struct CChatEventSink {
     void* vtable1;  // 0x0
 // --- flat members (END) ---
     Coord * * HandleChatChannelList(int a1, int a2, const char * a3);
-    ObjectClass * DeleteAndZero(char a2, void *a1 = 0);
-    char EncodeString(char a2, void *a1 = 0);
+    ObjectClass * DeleteAndZero(char a2, void *a2_1 = 0);
+    char EncodeString(char a2, void *a2_1 = 0);
     char EnsureCapacity(int a2);
-    char Check(unsigned int *a2, int a3, void *a1 = 0);
+    char Check(unsigned int * a2, int a3, void *a3_1 = 0);
     int ComputeBucketMask(int a2);
     int GrowBuffer();
     int ProcessChatEvent();

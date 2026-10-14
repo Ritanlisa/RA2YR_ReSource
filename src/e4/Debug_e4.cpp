@@ -138,7 +138,7 @@ char Debug_Helper(ObjectClass * aP0)
 {
   ObjectClass * result;
 
-  result = (char)(aP0);
+  result = (gamemd::ObjectClass *)((char)(aP0));
   switch ( aP0 ) /*0x5bd366*/
   {
     case 10: /*0x5bd366*/
@@ -165,6 +165,6 @@ char Debug_Helper(ObjectClass * aP0)
     case -76: /*0x5bd366*/
       return 43; /*0x5bd3c0*/
   }
-  return result; /*0x5bd36a*/
+  return (char)(result); /*0x5bd36a*/
 }
 } // namespace gamemd

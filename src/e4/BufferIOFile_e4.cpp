@@ -13,14 +13,14 @@
 
 // 0x47A9D0
 namespace gamemd {  // G42.18 ns repair
-int BufferIOFile::Constructor(char *Source)
+int BufferIOFile::Constructor(char *Source, void *a2, void *a3, void *a4)
 {
 
   BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47a9d3*/
   LOBYTE(this->m_54) = 0; /*0x47a9df*/
-  *(unsigned int *)this->q000 = &off_7E1668; /*0x47a9e3*/
+  *(unsigned int *)this->q000 = (unsigned int)(&off_7E1668); /*0x47a9e3*/
   FileClass::OpenWithCDSearch((CDFileClass *)this, Source); /*0x47a9e9*/
-  return this->q000; /*0x47a9f0*/
+  return (int)(this->q000); /*0x47a9f0*/
 
 }
 }  // G42.18 ns repair

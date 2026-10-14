@@ -18,13 +18,13 @@ struct Options {
     int GrowBuffer();  // 0x6253B0
     int ReadOptionValue();  // 0x6254D0
     AbstractClass * *  DestroyComposite(char a2);  // 0x625560
-    void *  RebuildDropdownList(unsigned int * a2);  // 0x6255F0
+    void * RebuildDropdownList(ObjectClass * aP1);  // 0x6255F0
     int SaveOptionValue();  // 0x625A20
     int  SetScoreVolume(float a2, int a3);  // 0x5FA4A0
     int  SetSoundVolume(float a2, char a3);  // 0x5FA510
     int  SetVoiceVolume(float a2, char a3);  // 0x5FA590
     HWND InitDialogControls(HWND hDlg);  // 0x4F1720
-    int  DialogProc(HWND hWnd, UINT Msg, int a3, LONG String);  // 0x618D40
+    int DialogProc(CCINIClass hWnd, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x618D40
     void ClearComboBoxes();  // 0x624460
     unsigned int *q000;  // 0x0 (canon-mt)
     unsigned int q004;  // 0x4 (offset-truth)

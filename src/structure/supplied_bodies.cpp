@@ -2197,7 +2197,7 @@ namespace gamemd {
       }
       v31 = v30 + v29; /*0x429e52*/
       if ( (*(unsigned int *)(v28 + 320) & 0x100) == 0 /*0x429e78*/
-        || (v32 = *(char *)(v28 + 283), v33 = this->u32_30, IDA_LOBYTE(a2) = 0, (int)abs32(v33 - v32) <= 1) )
+        || (v32 = *(char *)(v28 + 283), v33 = this->u32_30, (*((unsigned char *)&(a2))) = 0, (int)abs32(v33 - v32) <= 1) )
       {
         a2 = ((a2) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x429e7a*/
       }
@@ -5317,7 +5317,7 @@ namespace gamemd {
           v73 = v28; /*0x442734*/
           v30 = (unsigned short *)(*(int (__thiscall **)(BuildingClass *, char *))(vfptr + 440))(bug, v80); /*0x442738*/
           v28 = ((v28) & 0xFFFF0000u) | ((unsigned int)(*v30 + v28) & 0xFFFFu); /*0x44273e*/
-          IDA_LOWORD(v30) = IDA_HIWORD(v73) + v30[1]; /*0x442745*/
+          (*((unsigned short *)&(v30))) = (*(((unsigned short *)&(v73)) + 1)) + v30[1]; /*0x442745*/
           GroundHeight = 0; /*0x44274a*/
           v75 = ((int16_t)v28 << 8) + 128; /*0x442768*/
           v76 = ((int16_t)v30 << 8) + 128; /*0x442778*/
@@ -7365,7 +7365,7 @@ void BuildingClass::ProcessSuperWeaponEffects()
             v29 = CellCoord::To_CellObj( /*0x44cf22*/
                     (CellCoord *)&DataGlobal_87F7E8,
                     &this->vtable1[1]);
-            IDA_LODWORD(v78) = CellCoord::To_CellObj( /*0x44cf2a*/
+            (*((unsigned int *)&(v78))) = CellCoord::To_CellObj( /*0x44cf2a*/
                              (CellCoord *)&DataGlobal_87F7E8,
                              &this->vtable1[1]);
             if ( *(unsigned int *)((char *)&stru_A8EB00 + 619) || this->vtable1->HouseClass_field_timer_C[1] == g_TerrainTypeTable ) /*0x44cf50*/
@@ -7597,7 +7597,7 @@ void BuildingClass::ProcessSuperWeaponEffects()
                 Math::ArcTan2(v78); /*0x44d3bd*/
                 __asm { fdivr [esp+0F0h+var_D0] } /*0x44d3c2*/
                 __asm { fstp [esp+0F8h+var_D0] }
-                Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v53, v54))); /*0x44d3cc*/
+                Math::ArcTan2(COERCE_DOUBLE((((unsigned long)(unsigned int)(v54)) | ((unsigned long)(unsigned int)(v53) << 32)))); /*0x44d3cc*/
                 __asm { fdivr [esp+0F8h+var_C8] } /*0x44d3d1*/
                 __asm { fstp [esp+0E8h+var_C8] }
               }
@@ -8263,7 +8263,7 @@ namespace gamemd {
   v84.StreamClass_field_0C = ((v84.StreamClass_field_0C) & 0xFFFF0000u) | ((unsigned int)(v5 + 0x7FFF) & 0xFFFFu); /*0x44d901*/
   v84.m_Size = 0; /*0x44d90e*/
   v7 = (((unsigned int)v84.StreamClass_field_0C >> 12) + 1) >> 1; /*0x44d912*/
-  for ( i = v7; ; IDA_LOBYTE(v7) = i ) /*0x44d914*/
+  for ( i = v7; ; (*((unsigned char *)&(v7))) = i ) /*0x44d914*/
   {
     v8 = ((unsigned char)v6 + (unsigned char)v7) & 7; /*0x44d92a*/
     v9 = (unsigned short *)(*((int (__thiscall **)(BuildingClass *, char *))bug->vfptr + 110))(bug, &v87); /*0x44d92d*/
@@ -12173,7 +12173,7 @@ namespace gamemd {
         1072693248);
       v20 = (int16_t *)(*((int (__thiscall **)(BuildingClass *, int *))bug->vfptr + 110))(bug, &v31); /*0x45977e*/
       v21 = *v20; /*0x459784*/
-      IDA_LOWORD(v20) = v20[1] + 1; /*0x45978d*/
+      (*((unsigned short *)&(v20))) = v20[1] + 1; /*0x45978d*/
       v29 = ((v29) & 0xFFFF0000u) | ((unsigned int)(v21 - 1) & 0xFFFFu); /*0x45978f*/
       v29 = ((v29) & 0xFFFFu) | (((unsigned int)((unsigned short)v20) & 0xFFFFu) << 16); /*0x459794*/
       v30 = v29; /*0x4597aa*/
@@ -13439,7 +13439,7 @@ namespace gamemd {
           v40 = v39[3]; /*0x486199*/
           NeighbourContent->ambientSoundController[2] = 126; /*0x48619c*/
           v69.Height = v40; /*0x4861a8*/
-          IDA_BYTE2(NeighbourContent->transporter) = 2 * IDA_LOBYTE(NeighbourContent->transporter) /*0x4861d7*/
+          (((unsigned char *)&(NeighbourContent->transporter))[2]) = 2 * (*((unsigned char *)&(NeighbourContent->transporter))) /*0x4861d7*/
                                                + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
                                                + 51;
           v56 = (const RECT *)CellStruct::Copy(&DSurface_ViewBounds, v83); /*0x4861e2*/
@@ -13579,7 +13579,7 @@ namespace gamemd {
       }
     }
   }
-  IDA_BYTE2(v1->transporter) = 2 * IDA_LOBYTE(v1->transporter) /*0x4862c0*/
+  (((unsigned char *)&(v1->transporter))[2]) = 2 * (*((unsigned char *)&(v1->transporter))) /*0x4862c0*/
                          + (abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) & 1)
                          + 51;
   LABEL_62:
@@ -14287,7 +14287,7 @@ namespace gamemd {
   v13 = *(double *)(*(unsigned int *)&g_RulesClass_Instance + 5752) * 450.0; /*0x4a188a*/
   v15 = (int16_t *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x4a189b*/
   v8 = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4a189f*/
-  IDA_LOWORD(v9) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
+  (*((unsigned short *)&(v9))) = Math::RoundToInt((v14 - v13) * ((double)(int)v15 * 4.656612877414201e-10) + v13); /*0x4a18b5*/
   v10 = (void *)(unsigned int)((v14) >> 32); /*0x4a18ba*/
   this->vfptr = v8; /*0x4a18c0*/
   this->vfptr1 = v10; /*0x4a18c2*/
@@ -15512,7 +15512,7 @@ namespace gamemd {
     v7 = vtable1[v4]; /*0x634340*/
   LABEL_9:
   v8 = (unsigned char *)v7[1]; /*0x634343*/
-  qmemcpy((void *)a2, v8, 0x6Cu); /*0x634351*/
+  memcpy((void *)a2, v8, 0x6Cu); /*0x634351*/
   v8 += 108; /*0x634351*/
   *(unsigned short *)(a2 + 108) = *(unsigned short *)v8; /*0x634353*/
   *(unsigned char *)(a2 + 110) = v8[2]; /*0x634355*/
@@ -15627,7 +15627,7 @@ namespace gamemd {
   {
     v6 = 0; /*0x638646*/
   }
-  qmemcpy(v6, v9, 0x6Cu); /*0x638653*/
+  memcpy(v6, v9, 0x6Cu); /*0x638653*/
   *((unsigned short *)v6 + 54) = v9[54]; /*0x638655*/
   v6[110] = v9[55]; /*0x638657*/
   if ( *v6 == 4 ) /*0x63865c*/

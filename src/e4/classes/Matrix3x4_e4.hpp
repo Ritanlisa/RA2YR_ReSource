@@ -11,7 +11,7 @@ struct Matrix3x4 {
 // --- flat members (END) ---
     int Identity(void *a1 = 0);
     unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2, void *a3);
-    int Translate(float aP1, void *a1 = 0);
+    int Translate(float aP1, void *a2 = 0);
 
     void* q004;  // X10 supply (member_lookup)
     unsigned int u32_10;  // X10 supply (member_lookup)

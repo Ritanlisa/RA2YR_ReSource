@@ -61,10 +61,10 @@ LABEL_9:
     v13 += Timer::GetTicks() - dword_887338; /*0x48b7f4*/
   *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
   *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 8) = aP1; /*0x48b806*/
-  qmemcpy(*(void **)(aP1->PhoneNumber[7] + v12 + 12), aP1, aP1); /*0x48b816*/
+  memcpy(*(void **)(aP1->PhoneNumber[7] + v12 + 12), aP1, aP1); /*0x48b816*/
   if ( aP1 && aP1 > 0 && aP1 <= aP1->PacketsSent ) /*0x48b832*/
   {
-    qmemcpy(*(void **)(aP1->PhoneNumber[7] + v12 + 20), aP1, aP1); /*0x48b842*/
+    memcpy(*(void **)(aP1->PhoneNumber[7] + v12 + 20), aP1, aP1); /*0x48b842*/
     *(unsigned int *)(aP1->PhoneNumber[7] + v12 + 16) = aP1; /*0x48b84e*/
   }
   else
@@ -81,7 +81,7 @@ LABEL_9:
 } // namespace gamemd
 // 0x48BA10
 namespace gamemd {
-int ConnectionClass::initQueue(unsigned int a2)
+int ConnectionClass::initQueue(unsigned int a2, void *a2_1)
 {
 
   int v2; // eax
@@ -107,9 +107,9 @@ int ConnectionClass::initQueue(unsigned int a2)
     v4 = v6 / v5; /*0x48ba5e*/
   }
   this->u32_1C = v4; /*0x48ba60*/
-  result = this->q020; /*0x48ba63*/
+  result = (unsigned int)(this->q020); /*0x48ba63*/
   if ( a2 > result ) /*0x48ba68*/
-    this->q020 = a2; /*0x48ba6a*/
+    this->q020 = (void *)(a2); /*0x48ba6a*/
   return result; /*0x48ba6d*/
 
 }
@@ -206,7 +206,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
   {
     if ( v5 == 1 ) /*0x48c0d5*/
     {
-      PlayerIndex = this->PlayerIndex; /*0x48c0db*/
+      PlayerIndex = (int)(this->PlayerIndex); /*0x48c0db*/
       if ( *(unsigned int *)(PlayerIndex + 8) - *(unsigned int *)(PlayerIndex + 56) > 1 ) /*0x48c0e9*/
       {
         if ( ConnectionClass::allocPacketSlot((ModemConnectionClass *)PlayerIndex, (const void *)a2, a3, 0, 0) ) /*0x48c115*/
@@ -277,7 +277,7 @@ LABEL_40:
         }
         while ( ++v15 < v14->q038 ); /*0x48c1ae*/
       }
-      v18 = this->PlayerIndex; /*0x48c1d8*/
+      v18 = (int)(this->PlayerIndex); /*0x48c1d8*/
       if ( (*(unsigned int *)(v18 + 8) - *(unsigned int *)(v18 + 56) > 1 || *(unsigned int *)(a2 + 4) == this->PhoneNumber[11] + 1) /*0x48c216*/
         && ConnectionClass::allocPacketSlot((ModemConnectionClass *)v18, (const void *)a2, a3, 0, 0) )
       {
@@ -316,7 +316,7 @@ LABEL_40:
     return 0; /*0x48c309*/
   }
   Debug::Log(); /*0x48c079*/
-  v6 = this->PlayerIndex; /*0x48c07e*/
+  v6 = (int)(this->PlayerIndex); /*0x48c07e*/
   v7 = 0; /*0x48c084*/
   if ( *(int *)(v6 + 40) > 0 ) /*0x48c08b*/
   {
@@ -329,7 +329,7 @@ LABEL_40:
         if ( *(unsigned int *)(a2 + 4) == *(unsigned int *)(v9 + 4) && !*(unsigned char *)(v9 + 2) ) /*0x48c0a2*/
           break; /*0x48c0a2*/
       }
-      v6 = this->PlayerIndex; /*0x48c0a9*/
+      v6 = (int)(this->PlayerIndex); /*0x48c0a9*/
       if ( ++v7 >= *(unsigned int *)(v6 + 40) ) /*0x48c0b0*/
         return 1; /*0x48c0be*/
     }
@@ -378,7 +378,7 @@ LABEL_10:
   v11 = *(unsigned int *)(TileType + 8) == 14; /*0x48c37e*/
   *(unsigned int *)TileType |= 2u; /*0x48c380*/
   if ( v10 >= 0 && !v11 ) /*0x48c382*/
-    qmemcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
+    memcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
 
@@ -412,7 +412,7 @@ int ConnectionClass::serviceSendQueue()
 
   v2 = 0; /*0x48c3e9*/
   v21 = 0; /*0x48c3eb*/
-  PlayerIndex = this->PlayerIndex; /*0x48c3f3*/
+  PlayerIndex = (int)(this->PlayerIndex); /*0x48c3f3*/
   if ( PlayerIndex->q028 > 0 ) /*0x48c3fb*/
   {
     do /*0x48c45f*/
@@ -430,7 +430,7 @@ int ConnectionClass::serviceSendQueue()
         }
         PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
       }
-      PlayerIndex = this->PlayerIndex; /*0x48c458*/
+      PlayerIndex = (int)(this->PlayerIndex); /*0x48c458*/
       ++v2; /*0x48c45b*/
     }
     while ( v2 < PlayerIndex->q028 ); /*0x48c45f*/

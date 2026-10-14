@@ -36,7 +36,7 @@ namespace gamemd {
 char * TauntCommandClass::AddRef()
 {
   sprintf(&((unsigned int *)&stru_A8EB00)[2512], "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
-  return &((unsigned int *)&stru_A8EB00)[2512]; /*0x5362cb*/
+  return (char *)(&((unsigned int *)&stru_A8EB00)[2512]); /*0x5362cb*/
 }
 } // namespace gamemd
 // 0x5362D0

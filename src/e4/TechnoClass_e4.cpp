@@ -391,7 +391,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
          0) )
   {
     v11 = (*(unsigned int *)&DataGlobal_B0F6D8)++; /*0x6f3216*/
-    *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v11) = this; /*0x6f3225*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v11) = (unsigned int)(this); /*0x6f3225*/
   }
   LOBYTE(this->abstractFlags) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
@@ -404,7 +404,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
 
 // 0x6F3F40
 namespace gamemd {
-unsigned int * TechnoClass::Update(int a2)
+unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
 {
 
   int v2; // ecx
@@ -452,7 +452,7 @@ unsigned int * TechnoClass::Update(int a2)
       TechnoClass::CreatePlanningNode(v3); /*0x6f3f83*/
     if ( *(unsigned int *)((*((int (**)(TechnoClass *, int))v3->RadioClass + 33))(v3, a2) + 3416) ) /*0x6f3f93*/
     {
-      v6 = __2_YAPAXI_Z(0x74u); /*0x6f3fa4*/
+      v6 = (int)(__2_YAPAXI_Z(0x74u)); /*0x6f3fa4*/
       if ( v6 ) /*0x6f3fab*/
       {
         v33 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3428); /*0x6f3fbf*/
@@ -1386,7 +1386,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
 
   Transform::Copy( (const void *)(v144), (void *)(v15));
   v16 = (ObjectClass *)aP3;
-  qmemcpy( (void *)(v142), (const void *)(v144), sizeof(v142));
+  memcpy( (void *)(v142), (const void *)(v144), sizeof(v142));
   int v17 = v11;
   if ( aP3 != (TechnoClass *)-1 )
   {
@@ -1401,7 +1401,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
   *(unsigned int *)aP6[0] = xmmword_B1CFA8;
   aP6.Width = DWORD1(xmmword_B1CFA8);
   aP6.Height = DWORD2(xmmword_B1CFA8);
-  aP6.LockCount = IDA_HIDWORD(xmmword_B1CFA8);
+  aP6.LockCount = (*(((unsigned int *)&(xmmword_B1CFA8)) + 1));
   if ( !*(unsigned char *)(ecx0->u32_6C4 + 488) || ((SpawnManagerClass *)(int *)ecx0->spawnManager)->CountDockedSpawns() )
   {
     int v20 = *ecx0;
@@ -1467,7 +1467,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
       float aP1 = -(v118 - v24);
       ((void (*)(float *, float))Matrix3D::RotateZ)(v142, aP1);
       aP1a = (double)*(int *)(ecx0->SelectVocOrSfx(0) + 12) * unk_B1D008;
-      aP1b = (double)*(int *)(ecx0->SelectVocOrSfx(0, 0, IDA_LODWORD(aP1a))
+      aP1b = (double)*(int *)(ecx0->SelectVocOrSfx(0, 0, (*((unsigned int *)&(aP1a))))
                             + 4)
            * unk_B1D008;
       ((Vector *)&v142[2])->MatrixMulVectorMath( aP1b, aP1_4, v104);
@@ -1481,7 +1481,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
         ecx0,
         v10 + 192,
         v127,
-        IDA_HIDWORD(v121),
+        (*(((unsigned int *)&(v121)) + 1)),
         v10 + 640,
         &v132,
         &v122,
@@ -1558,13 +1558,13 @@ LABEL_53:
 LABEL_56:
   if ( v105 && (!v110 || v32) )
   {
-    qmemcpy( (void *)(v144), (const void *)(v142), sizeof(v144));
+    memcpy( (void *)(v144), (const void *)(v142), sizeof(v144));
     v33 = (ParticleSystemClass *)v142;
   }
   else
   {
     aP1d = (double)*(int *)(v10 + 1824) * unk_B1D008;
-    ((Matrix3x4 *)(v142))->Translate((ParticleSystemClass *)IDA_LODWORD(aP1d));
+    ((Matrix3x4 *)(v142))->Translate((ParticleSystemClass *)(*((unsigned int *)&(aP1d))));
     v116 = (ObjectClass *)((((unsigned int)((*&ecx0->secondaryFacing->GetValue((IUnknown *)a1) >> 10) + 1) >> 1)
                           & 0x1F)
                          - 8);
@@ -1576,7 +1576,7 @@ LABEL_56:
     ((void (*)(float *, float))Matrix2D::Rotate)(v142, aP1e);
     *(float *)&v118 = -v142[3];
     v137 = v142[7];
-    qmemcpy( (void *)(v145), (const void *)(v142), sizeof(v145));
+    memcpy( (void *)(v145), (const void *)(v142), sizeof(v145));
     v138 = v142[11];
     *((float *)&v118 + 1) = -v142[7];
     v136 = v142[3];
@@ -1591,11 +1591,11 @@ LABEL_56:
     ((void (*)(float *, float))Matrix3D::RotateZ)(v145, aP1f);
     ((Matrix3x3 *)(v145))->Multiply( (float *)(&v136));
     float * v34 = (float *)((AudioConfig *)(v148))->InitDefault();
-    qmemcpy( (void *)(v144), MultiplyMatrix3x4( (ObjectClass *)v147, (float *)(v34), (float *)(v142)), sizeof(v144));
+    memcpy( (void *)(v144), MultiplyMatrix3x4( (ObjectClass *)v147, (float *)(v34), (float *)(v142)), sizeof(v144));
     float * v35 = (float *)((AudioConfig *)(v147))->InitDefault();
     v33 = (ParticleSystemClass *)MultiplyMatrix3x4( (ObjectClass *)v148, (float *)(v35), (float *)(v145));
   }
-  qmemcpy( (void *)(v146), (const void *)(v33), sizeof(v146));
+  memcpy( (void *)(v146), (const void *)(v33), sizeof(v146));
   if ( !TechnoClass::OwnerHasPower(ecx0) || *(unsigned char *)(ecx0[433] + 3285) )
   {
   char v107; // [esp+109h] [ebp-1B3h]
@@ -1645,10 +1645,10 @@ LABEL_81:
   if ( v40 <= 0 )
   {
     if ( ecx0->__pad_3CD )
-      ecx0->unknown_3CA = IDA_LOWORD(aP6.LockCount)
-                             + IDA_WORD2(a2)
+      ecx0->unknown_3CA = (*((unsigned short *)&(aP6.LockCount)))
+                             + (((unsigned short *)&(a2))[2])
                              + *(unsigned short *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44976] + 180)
-                             + IDA_LOWORD(aP6.Width)
+                             + (*((unsigned short *)&(aP6.Width)))
                              - 128;
   }
   else
@@ -1668,7 +1668,7 @@ LABEL_81:
   v44 = *ecx0;
   v43 = v43;
   started = v43;
-  if ( ecx0->HasRemaining(IDA_LODWORD(aP1_4), IDA_LODWORD(v104)) )
+  if ( ecx0->HasRemaining((*((unsigned int *)&(aP1_4))), (*((unsigned int *)&(v104)))) )
   {
   int v52; // esi
   int v51; // esi
@@ -1725,14 +1725,14 @@ LABEL_94:
     v59 = v56 - 1;
     if ( v59 )
     {
-      IDA_LOBYTE(v59) = v109;
+      (*((unsigned char *)&(v59))) = v109;
       goto LABEL_101;
     }
-    IDA_LOWORD(v57) = v114;
+    (*((unsigned short *)&(v57))) = v114;
     v59 = v109;
-    IDA_LOWORD(v58) = v109;
+    (*((unsigned short *)&(v58))) = v109;
     int v60 = v58 | (v57 << 6);
-    IDA_LOWORD(v58) = v112;
+    (*((unsigned short *)&(v58))) = v112;
     v57 = v58 | (32 * v60);
     v53 |= v57;
   }
@@ -1740,29 +1740,29 @@ LABEL_94:
   {
     v59 = v109;
   }
-  IDA_LOWORD(v58) = (uint8_t)v59 >> 1;
-  IDA_LOWORD(v57) = v114;
+  (*((unsigned short *)&(v58))) = (uint8_t)v59 >> 1;
+  (*((unsigned short *)&(v57))) = v114;
   v57 *= 32;
   v61 = v57 | v58;
-  IDA_LOWORD(v57) = v112;
+  (*((unsigned short *)&(v57))) = v112;
   v58 = v57 | (v61 << 6);
   v53 |= v58;
 LABEL_101:
-  IDA_LOWORD(v58) = v114;
-  IDA_LOWORD(v57) = v112;
-  IDA_LOWORD(v59) = (uint8_t)v59 >> 1;
+  (*((unsigned short *)&(v58))) = v114;
+  (*((unsigned short *)&(v57))) = v112;
+  (*((unsigned short *)&(v59))) = (uint8_t)v59 >> 1;
   v53 |= v57 | (32 * ((32 * v58) | v59));
 LABEL_102:
   if ( UnitClass::IsDeactivated(ecx0) )
     started = (BuildingTypeClass *)((int)started / 2);
   v53 = v53;
   v141 = v141;
-  ecx0->vt_slot_1372(v141, a2, IDA_HIDWORD(a2), v126, v127, v128, v129, started, v53);
+  ecx0->vt_slot_1372(v141, a2, (*(((unsigned int *)&(a2)) + 1)), v126, v127, v128, v129, started, v53);
   v143[1] = aP6.Width;
   v63 = *(ObjectClass **)&((unsigned char *)&stru_87C374)[44960];
   *(unsigned int *)&((unsigned char *)&stru_87C374)[44960] = (unsigned int)v141;
   v116 = v63;
-  IDA_LOBYTE(v63) = ecx0->__pad_3CD;
+  (*((unsigned char *)&(v63))) = ecx0->__pad_3CD;
   v143[0] = *(unsigned int *)aP6[0];
   v143[2] = aP6.Height;
   v143[3] = aP6.LockCount;
@@ -1792,7 +1792,7 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
 
 
     Transform::Copy( (const void *)(v144), (void *)(v67));
-    qmemcpy( (void *)(v142), (const void *)(v144), sizeof(v142));
+    memcpy( (void *)(v142), (const void *)(v144), sizeof(v142));
     if ( *(unsigned char *)(v10 + 3367) )
     {
       a1[0] = ecx0[39];
@@ -1805,11 +1805,11 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
       int * v68 = (int *)(*(int (**)(unsigned int, double *))(*ecx0->q674 + 48))( ecx0[413], (double *)(&v123));
       int v69 = *v68;
       int v70 = v68[1];
-      IDA_LODWORD(v118) += v69;
-      IDA_HIDWORD(v118) += v70;
+      (*((unsigned int *)&(v118))) += v69;
+      (*(((unsigned int *)&(v118)) + 1)) += v70;
     }
     if ( ecx0->isOnCarryall_d )
-      IDA_HIDWORD(v118) -= 14;
+      (*(((unsigned int *)&(v118)) + 1)) -= 14;
     int v71 = ecx0->GetZAboveGround();
     v136 = ecx0->location;
     v137 = ecx0->locationY;
@@ -1821,10 +1821,10 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*ecx0->q
       {
         void * v73 = v72[20].vtable0;
         if ( ((uint16_t)v73 & 0x100) != 0
-          && ((IDA_BYTE1(v73) & 8) != 0 && (*((unsigned int *)((Cell *)(v72))->GetNeighbourContent(0) + 80) & 0x100) != 0
+          && (((((unsigned char *)&(v73))[1]) & 8) != 0 && (*((unsigned int *)((Cell *)(v72))->GetNeighbourContent(0) + 80) & 0x100) != 0
            || ((int)v72[20].vtable0 & 0x800) == 0 && (*((unsigned int *)((Cell *)(v72))->GetNeighbourContent(6u) + 80) & 0x100) != 0) )
         {
-          IDA_HIDWORD(v118) -= 60;
+          (*(((unsigned int *)&(v118)) + 1)) -= 60;
         }
       }
     }

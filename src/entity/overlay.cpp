@@ -16,7 +16,7 @@ OverlayClass::OverlayClass(OverlayTypeClass* pType, const CellStruct& cell,
 {
     Type = pType;
 
-    abstractFlags = kOverlayFlag;
+    abstractFlags = (void *)(kOverlayFlag);
 }
 
 } // namespace gamemd

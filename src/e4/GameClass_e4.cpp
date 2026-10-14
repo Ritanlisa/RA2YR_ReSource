@@ -63,17 +63,17 @@ unsigned int * GameClass::processFrame(int a2, int a3)
   ObjectClass *v5; // eax
   GameClass *v6; // ecx
 
-  result = *&this->u32_C; /*0x4381d3*/
+  result = (unsigned int *)(*&this->u32_C); /*0x4381d3*/
   if ( !result ) /*0x4381d8*/
   {
     v5 = (ObjectClass *)operator new(4u); /*0x4381dc*/
     if ( v5 ) /*0x4381e6*/
-      result = sub_437F50(v5); /*0x4381ea*/
+      result = (unsigned int *)(sub_437F50((int)(v5))); /*0x4381ea*/
     else
       result = 0; /*0x4381f1*/
-    *&this->u32_C = result; /*0x4381f3*/
+    *&this->u32_C = (unsigned int)(result); /*0x4381f3*/
   }
-  v6 = *&this->u32_C; /*0x4381f6*/
+  v6 = (gamemd::GameClass *)(*&this->u32_C); /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
     return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
@@ -88,17 +88,17 @@ unsigned int * GameClass::updateUI(int a2, int a3_2)
   ObjectClass *v5; // eax
   GameClass *v6; // ecx
 
-  result = *&this->u32_C; /*0x438303*/
+  result = (unsigned int *)(*&this->u32_C); /*0x438303*/
   if ( !result ) /*0x438308*/
   {
     v5 = (ObjectClass *)__2_YAPAXI_Z(4u); /*0x43830c*/
     if ( v5 ) /*0x438316*/
-      result = sub_437F50(v5); /*0x43831a*/
+      result = (unsigned int *)(sub_437F50((int)(v5))); /*0x43831a*/
     else
       result = 0; /*0x438321*/
-    *&this->u32_C = result; /*0x438323*/
+    *&this->u32_C = (unsigned int)(result); /*0x438323*/
   }
-  v6 = *&this->u32_C; /*0x438326*/
+  v6 = (gamemd::GameClass *)(*&this->u32_C); /*0x438326*/
   if ( v6 ) /*0x43832c*/
     return (unsigned int *)GameClass::initGameMode(v6, a2, a3_2); /*0x438338*/
   return result; /*0x438329*/
@@ -252,7 +252,7 @@ int GameClass::FindOpenSlot()
   while ( 1 ) /*0x5d6387*/
   {
     v4 = *(GameClass **)(dword_A8B8CC + 4 * v2); /*0x5d6387*/
-    if ( (unsigned __int8)IsRandMap::Sed((int)v4) ) /*0x5d638c*/
+    if ( (unsigned __int8)IsRandMap::Sed((void *)((int)v4)) ) /*0x5d638c*/
     {
       inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)this->__pad_000 + 60))(this); /*0x5d6399*/
     }
@@ -298,7 +298,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   bool v10; // zf
   int v12[64]; // [esp+8h] [ebp-100h] BYREF
 
-  v3 = Src; /*0x632dc7*/
+  v3 = (char *)(Src); /*0x632dc7*/
   if ( Src && aP2 >= 1 && *&this->u32_38 ) /*0x632de7*/
   {
     v5 = 0; /*0x632df6*/
@@ -310,17 +310,13 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy(&this->__pad_24[this->u32_13C - this->u32_140 + 24], Src, v9); /*0x632e97*/
-        v3 = &Src[v9]; /*0x632eb0*/
+        v3 = (char *)(&Src[v9]); /*0x632eb0*/
         v10 = this->u32_140 == v9; /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
         this->u32_140 -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
-          return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632ec1*/
-        BigInt::RSAOperation( /*0x632ed6*/
-          *&this->u32_38,
-          (char *)&this->field_3C,
-          this->u32_13C,
-          (char *)v12);
+          return (void *)(v5 + Delegate::Dispatch((int)((Pipe *)this), (int)v3, aP2)); /*0x632ec1*/
+                BigInt::RSAOperation((char *)(/*0x632ed6*/           *&this->u32_38),           (char *)&this->field_3C,           this->u32_13C,           (char *)v12);
         GameClass::processFrame(&this->GameClass_30, (int)v12, 56); /*0x632ee5*/
       }
       else
@@ -335,13 +331,13 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
           v7 = (*(unsigned int *)(v6 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v6 + 512) - 1) / 8) + 1); /*0x632e4a*/
         else
           v7 = 0; /*0x632e2b*/
-        v8 = BigInt::DecryptBlock(v6, (char *)v12, v7, &this->GameClass_30); /*0x632e57*/
-        v5 = Delegate::Dispatch((Pipe *)this, (int)&this->field_3C, v8); /*0x632e65*/
+        v8 = BigInt::DecryptBlock((char *)(v6), (char *)v12, v7, &this->GameClass_30); /*0x632e57*/
+        v5 = Delegate::Dispatch((int)((Pipe *)this), (int)&this->field_3C, v8); /*0x632e65*/
         GameClass::processFrame(&this->GameClass_30, (int)v12, 56); /*0x632e6d*/
       }
       this->u32_C = 0; /*0x632eea*/
     }
-    return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632f0a*/
+    return (void *)(v5 + Delegate::Dispatch((int)((Pipe *)this), (int)v3, aP2)); /*0x632f0a*/
   }
   return Delegate::Dispatch((Pipe *)this, (int)Src, aP2); /*0x632f02*/
 
@@ -369,9 +365,9 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v3 = a2; /*0x633138*/
   v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x63314c*/
+    return Delegate::Invoke((int)((Straw *)this), (int)a2, Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x633155*/
+    return Delegate::Invoke((int)((Straw *)this), (int)a2, Size); /*0x633155*/
   m_38 = this->u32_38; /*0x63315b*/
   if ( !m_38 ) /*0x633160*/
     return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x6332e5*/
@@ -380,10 +376,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   {
     if ( this->u32_34 == 1 ) /*0x63317d*/
     {
-      v7 = Delegate::Invoke( /*0x6331a6*/
-             (Straw *)this,
-             (int)Src,
-             ((*(unsigned int *)(m_38 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(m_38 + 512) - 1) / 8) + 1));
+            v7 = Delegate::Invoke((int)(/*0x6331a6*/              (Straw *)this),              (int)Src,              ((*(unsigned int *)(m_38 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(m_38 + 512) - 1) / 8) + 1));
       v8 = this->u32_38; /*0x6331ab*/
       v9 = v7; /*0x6331ae*/
       if ( v8 ) /*0x6331b2*/
@@ -392,7 +385,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
         v10 = 0; /*0x6331b4*/
       if ( v9 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
-      BigInt::RSAOperation(v8, Src, v9, &this->u32_3C); /*0x6331f4*/
+      BigInt::RSAOperation((char *)(v8), Src, v9, &this->u32_3C); /*0x6331f4*/
       GameClass::updateUI(&this->ptr_14, (int)&this->u32_3C, 56); /*0x6331fc*/
     }
     else
@@ -404,7 +397,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
         v13 = (*(unsigned int *)(v12 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v12 + 512) - 1) / 8) + 1); /*0x633240*/
       else
         v13 = 0; /*0x633221*/
-      v14 = BigInt::DecryptBlock(v12, Src, v13, &this->u32_3C); /*0x63324d*/
+      v14 = BigInt::DecryptBlock((char *)(v12), Src, v13, &this->u32_3C); /*0x63324d*/
       this->u32_140 = v14; /*0x633258*/
       this->u32_13C = v14; /*0x63325e*/
       GameClass::updateUI(&this->ptr_14, (int)Src, 56); /*0x633268*/
@@ -423,7 +416,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
     this->u32_140 -= v4; /*0x6332b6*/
     v4 = Size - v4; /*0x6332c3*/
   }
-  return v16 + Delegate::Invoke((Straw *)this, (int)v3, v4); /*0x6331db*/
+  return v16 + Delegate::Invoke((int)((Straw *)this), (int)v3, v4); /*0x6331db*/
 
 }
 }
@@ -522,10 +515,10 @@ int GameClass::ReadVersionFile()
 
   if ( (this->u8_44 & 8) == 0 ) /*0x74f96a*/
   {
-    RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
-    if ( (unsigned __int8)FileClass::Open(&v5, 0) ) /*0x74f988*/
+    RawFileClass::Construct((int)(&v5), (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
+    if ( (unsigned __int8)FileClass::Open((int)(&v5), 0) ) /*0x74f988*/
     {
-      FileClass::Read(&v5, this->GameClass_field_0x2A, 16); /*0x74f99b*/
+      FileClass::Read((char *)(&v5), this->GameClass_field_0x2A, 16); /*0x74f99b*/
       for ( this->q039 = 0; /*0x74f9b5*/
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
@@ -563,10 +556,10 @@ int GameClass::ReadVersionFile2()
 
   if ( (this->u8_44 & 8) == 0 ) /*0x74fa2a*/
   {
-    RawFileClass::Construct(&v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
-    if ( (unsigned __int8)FileClass::Open(&v5, 0) ) /*0x74fa48*/
+    RawFileClass::Construct((int)(&v5), (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
+    if ( (unsigned __int8)FileClass::Open((int)(&v5), 0) ) /*0x74fa48*/
     {
-      FileClass::Read(&v5, this->GameClass_field_0x2A, 16); /*0x74fa5b*/
+      FileClass::Read((char *)(&v5), this->GameClass_field_0x2A, 16); /*0x74fa5b*/
       for ( this->q039 = 0; /*0x74fa75*/
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
             this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
@@ -600,10 +593,10 @@ void GameClass::ReadVersionString()
 
   RawFileClass v2; // [esp+10h] [ebp-24h] BYREF
 
-  RawFileClass::Construct(&v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
-  if ( (unsigned __int8)FileClass::Open(&v2, 0) ) /*0x74fc9e*/
+  RawFileClass::Construct((int)(&v2), (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
+  if ( (unsigned __int8)FileClass::Open((int)(&v2), 0) ) /*0x74fc9e*/
   {
-    FileClass::Read(&v2, this->GameClass_field_0x2A, 16); /*0x74fcb1*/
+    FileClass::Read((char *)(&v2), this->GameClass_field_0x2A, 16); /*0x74fcb1*/
     for ( this->q039 = 0; /*0x74fccb*/
           this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] == 13;
           this->__pad_8[strlen(this->GameClass_field_0x2A) + 33] = 0 )
@@ -655,7 +648,7 @@ namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
 
-  Vector::Clear((int)(&this->u32_4)); /*0x4aeca6*/
+  Vector::Clear((void *)((int)(&this->u32_4))); /*0x4aeca6*/
   Pipe::Dtor((Pipe *)this); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
     __3_YAXPAX_Z(this); /*0x4aecba*/
@@ -692,15 +685,15 @@ namespace gamemd {
 wchar_t * GameClass::GetDifficultyString(void * aSttPlayerclose, void * aSttPlayerhuman, void * aSttPlayeropen, void * aSttPlayeropeno)
 {
   if ( this == (GameClass *)g_HouseClass_ObserverFlags ) /*0x5e99c6*/
-    return GetStringCSF(aSttPlayeropen, 0, g_Str_File_netshare_cpp, 4948); /*0x5e99d9*/
+    return GetStringCSF((wchar_t *)(aSttPlayeropen), 0, g_Str_File_netshare_cpp, 4948); /*0x5e99d9*/
   if ( this == (GameClass *)g_Lobby_PlayerCount ) /*0x5e99e5*/
-    return GetStringCSF(aSttPlayerclose, 0, g_Str_File_netshare_cpp, 4950); /*0x5e99f8*/
+    return GetStringCSF((wchar_t *)(aSttPlayerclose), 0, g_Str_File_netshare_cpp, 4950); /*0x5e99f8*/
   if ( this == (GameClass *)g_Lobby_PlayerTeam ) /*0x5e9a04*/
-    return GetStringCSF(g_Str_STT_PlayerDumbAI, 0, g_Str_File_netshare_cpp, 4952); /*0x5e9a17*/
+    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerDumbAI), 0, g_Str_File_netshare_cpp, 4952); /*0x5e9a17*/
   if ( this == (GameClass *)g_Lobby_PlayerSide ) /*0x5e9a23*/
-    return GetStringCSF(g_Str_STT_PlayerSmartAI, 0, g_Str_File_netshare_cpp, 4954); /*0x5e9a36*/
+    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerSmartAI), 0, g_Str_File_netshare_cpp, 4954); /*0x5e9a36*/
   if ( this == (GameClass *)g_Lobby_PlayerColor ) /*0x5e9a42*/
-    return GetStringCSF(g_Str_STT_PlayerGeniusAI, 0, g_Str_File_netshare_cpp, 4956); /*0x5e9a55*/
+    return GetStringCSF((wchar_t *)(g_Str_STT_PlayerGeniusAI), 0, g_Str_File_netshare_cpp, 4956); /*0x5e9a55*/
   if ( this == (GameClass *)g_Lobby_MaxPlayers ) /*0x5e9a61*/
     return GetStringCSF(aSttPlayeropeno, 0, g_Str_File_netshare_cpp, 4958); /*0x5e9a74*/
   return GetStringCSF(aSttPlayerhuman, 0, g_Str_File_netshare_cpp, 4960); /*0x5e99de*/
@@ -711,10 +704,10 @@ wchar_t * GameClass::GetDifficultyString(void * aSttPlayerclose, void * aSttPlay
 namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
-  *(unsigned int *)this->__pad_000 = &vt_PixelFXClass; /*0x631f49*/
+  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_PixelFXClass); /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     operator delete((void *)(this)); /*0x631f52*/
-  return this; /*0x631f5c*/
+  return (unsigned int *)(this); /*0x631f5c*/
 }
 } // namespace gamemd
 
@@ -797,7 +790,7 @@ int GameClass::FindPlayerName(int a1)
   while ( 1 ) /*0x69bc74*/
   {
     v3 = *v2; /*0x69bc74*/
-    v4 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * a1)); /*0x69bc80*/
+    v4 = ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * a1))); /*0x69bc80*/
     v5 = ToWideStringChar(v3); /*0x69bc82*/
     if ( !_strcmpi(v4, v5) ) /*0x69bc89*/
       break; /*0x69bc89*/

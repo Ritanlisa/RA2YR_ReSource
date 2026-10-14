@@ -110,7 +110,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   __int64 v83; // [esp+50h] [ebp-10h]
 
   v2 = 10 * a2; /*0x5a536e*/
-  v3 = __2_YAPAXI_Z(80 * a2); /*0x5a5378*/
+  v3 = (unsigned int *)(__2_YAPAXI_Z(80 * a2)); /*0x5a5378*/
   if ( v3 ) /*0x5a5384*/
   {
     v4 = v3; /*0x5a5389*/
@@ -186,7 +186,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       *(unsigned int *)(v17 + 4 * v15) = v18; /*0x5a54af*/
       v15 = v16; /*0x5a54b2*/
     }
-    *(unsigned int *)(v6[2] + 4 * v15) = v4; /*0x5a54c0*/
+    *(unsigned int *)(v6[2] + 4 * v15) = (unsigned int)(v4); /*0x5a54c0*/
     v19 = v6->u32_C; /*0x5a54c5*/
     ++*v6; /*0x5a54cb*/
     if ( (unsigned int)v4 > v19 ) /*0x5a54cd*/
@@ -208,12 +208,12 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     v20 = 0; /*0x5a54e0*/
   }
   v74 = v20; /*0x5a550e*/
-  v23 = __2_YAPAXI_Z(0x18u); /*0x5a5512*/
+  v23 = (unsigned int *)(__2_YAPAXI_Z(0x18u)); /*0x5a5512*/
   v24 = v23; /*0x5a5517*/
   if ( v23 ) /*0x5a551e*/
   {
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
-    *v24 = &vt_DynamicVectorClass; /*0x5a552b*/
+    *v24 = (unsigned int)(&vt_DynamicVectorClass); /*0x5a552b*/
     v24->u32_14 = 10; /*0x5a5531*/
     v24->q010 = 0; /*0x5a5538*/
   }
@@ -221,7 +221,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     v24 = 0; /*0x5a5541*/
   }
-  LODWORD(v78) = v24; /*0x5a5547*/
+  LODWORD(v78) = (unsigned int)(v24); /*0x5a5547*/
   v25 = a2 <= 0; /*0x5a554b*/
   v24->u32_14 = a2 + 2; /*0x5a5550*/
   if ( !v25 ) /*0x5a5553*/
@@ -241,10 +241,10 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         *(unsigned int *)(v29 + 4 * v28) = *(unsigned int *)v20; /*0x5a55b8*/
       }
       LODWORD(v77) = 0; /*0x5a55bf*/
-      LODWORD(v30) = &v4[2 * v76]; /*0x5a55c7*/
+      LODWORD(v30) = (unsigned int)(&v4[2 * v76]); /*0x5a55c7*/
       do /*0x5a5789*/
       {
-        v80 = *CellStruct::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544)); /*0x5a55ef*/
+        v80 = (int)(*CellStruct::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544))); /*0x5a55ef*/
         v73 = v80; /*0x5a55f3*/
         v31 = SHIWORD(v80) + (__int16)v80; /*0x5a55ff*/
         if ( v31 > dword_ABED04 /*0x5a5626*/
@@ -252,7 +252,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
           && SHIWORD(v80) - (__int16)v80 < dword_ABED04
           && v31 <= dword_ABED08 )
         {
-          v32 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v73); /*0x5a563b*/
+          v32 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v73)); /*0x5a563b*/
           if ( Cell::IsEmpty(v32) && v32->u32_44 == -1 ) /*0x5a5650*/
           {
             v33 = SHIWORD(v73); /*0x5a5656*/
@@ -342,14 +342,14 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     __3_YAXPAX_Z(v6->u32_8); /*0x5a57f7*/
     __3_YAXPAX_Z(v6); /*0x5a57fd*/
   }
-  v51 = globalHelper_0A7640(v81, v24); /*0x5a580b*/
+  v51 = (int)(globalHelper_0A7640(v81, v24)); /*0x5a580b*/
   v83 = *(unsigned long long *)v51; /*0x5a5812*/
   v52 = *(unsigned int *)(v51 + 8); /*0x5a5821*/
   v53 = *(unsigned int *)(v51 + 12); /*0x5a5827*/
   if ( v75 <= 100 || (v54 = v24->q010, a2 = v52 * v53, a1 = (__int16 *)v54, (double)v54 * 1.6 <= (double)(v52 * v53)) ) /*0x5a5853*/
   {
     for ( j = v24[4] - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
-      v72 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)(v24[1] + 4 * j--)); /*0x5a5ab6*/
+      v72 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)(v24[1] + 4 * j--))); /*0x5a5ab6*/
     if ( v24 ) /*0x5a5ac3*/
       (*(void (**)(unsigned int *, int))*v24)(v24, 1); /*0x5a5acb*/
     return 0; /*0x5a5ad0*/
@@ -367,7 +367,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         a1 = *(__int16 **)(v57 + 4 * v55); /*0x5a5872*/
         do /*0x5a5910*/
         {
-          LODWORD(v81[0]) = *CellStruct::Add(&a1, &v82, (unsigned short *)(4 * (v56 & 7) + 9041544)); /*0x5a5897*/
+          LODWORD(v81[0]) = (unsigned int)(*CellStruct::Add(&a1, &v82, (unsigned short *)(4 * (v56 & 7) + 9041544))); /*0x5a5897*/
           v80 = SLODWORD(v81[0]); /*0x5a589b*/
           v58 = SWORD1(v81[0]) + SLOWORD(v81[0]); /*0x5a58a7*/
           if ( v58 > dword_ABED04 /*0x5a58dd*/
@@ -430,7 +430,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
           {
             LOWORD(a1) = m + v82; /*0x5a5a04*/
             HIWORD(a1) = WORD1(v82) + n; /*0x5a5a09*/
-            LODWORD(v81[0]) = a1; /*0x5a5a21*/
+            LODWORD(v81[0]) = (unsigned int)(a1); /*0x5a5a21*/
             if ( !*((unsigned char *)dword_ABED10 /*0x5a5a51*/
                   + 80 * (__int16)(m + v82)
                   + 80 * g_MapCellWidth * (__int16)(WORD1(v82) + n)

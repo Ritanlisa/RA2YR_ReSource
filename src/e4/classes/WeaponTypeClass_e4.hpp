@@ -130,13 +130,11 @@ struct WeaponTypeClass {
     int Process(ObjectClass * Source);
     int ProcessPower(int * a2, void *a2_2);
     unsigned int * Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5);
-    unsigned int * loadWeaponProperties(int aP1, void *a1 = 0);
-    void * Create(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
+    unsigned int *  loadWeaponProperties(int aP1, void *a2 = 0);
+    void * Create(AbstractClass * Source, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     void * Create(AbstractClass * Source);
     WeaponTypeClass * ddtor(void ** Block, char a2);
     int DownReport[7];  // 0xD8 (ml)
-    bool InfiniteMindControl;  // 0xF4 (canon-mt)
-    bool IsMagBeam;  // 0x110 (canon-mt)
 };
 
 } // namespace gamemd

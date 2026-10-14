@@ -9,7 +9,7 @@ struct Building {
 // --- flat members (BEGIN) ---
     unsigned int tail_2A8;  // 0x2A8
 // --- flat members (END) ---
-    AnimClass * *  ComputePosition(int * a2);  // 0x425D10
+    AnimClass * * ComputePosition(int *aP1);  // 0x425D10
     int GetNthOfType();  // 0x485020
     int GetRenderType();  // 0x772A90
     static unsigned int *  GetFoundationSize(unsigned int * a1, unsigned int a2);  // 0x69E7E0

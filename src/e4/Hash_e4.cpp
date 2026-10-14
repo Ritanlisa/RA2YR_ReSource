@@ -29,7 +29,7 @@ int sub_5E94D0()
   LPARAM *v1; // edx
   LPARAM v2; // ecx
 
-  result = (LPARAM *)(0);
+  result = (int)((LPARAM *)(0));
   v1 = (LPARAM *)(&dword_A8DA90); /*0x5e94e7*/
   do /*0x5e9508*/
   {
@@ -51,7 +51,7 @@ char sub_5E9580()
   LPARAM *v1; // ecx
   LPARAM v2; // eax
 
-  v0 = (LPARAM *)(0);
+  v0 = (int)((LPARAM *)(0));
   v1 = (LPARAM *)(&dword_A8DA90); /*0x5e9597*/
   while ( 1 ) /*0x5e959c*/
   {

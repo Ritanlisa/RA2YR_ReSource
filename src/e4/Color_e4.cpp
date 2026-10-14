@@ -11,7 +11,7 @@
 
 // 0x517440
 namespace gamemd {  // G42.18 ns repair
-int Color::ConvertToRGB(int a2)
+int Color::ConvertToRGB(int a2, void *a2_1)
 {
   int v2; // esi
   int v3; // ebx
@@ -62,12 +62,12 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
     if ( v6 > 255.0 ) /*0x661169*/
       v6 = 255.0; /*0x66116d*/
     BYTE2(this->Color_field_00) = Math::RoundToInt(v6); /*0x661178*/
-    return this; /*0x66117b*/
+    return (unsigned char *)(this); /*0x66117b*/
   }
   else
   {
     BYTE2(this->Color_field_00) = Math::RoundToInt(0.0); /*0x661151*/
-    return this; /*0x661154*/
+    return (unsigned char *)(this); /*0x661154*/
   }
 
 }
@@ -109,19 +109,19 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
     if ( v6 > 255.0 ) /*0x661299*/
       v6 = 255.0; /*0x66129d*/
     BYTE2(this->Color_field_00) = Math::RoundToInt(v6); /*0x6612a8*/
-    return this; /*0x6612ab*/
+    return (unsigned char *)(this); /*0x6612ab*/
   }
   else
   {
     BYTE2(this->Color_field_00) = Math::RoundToInt(0.0); /*0x661282*/
-    return this; /*0x661285*/
+    return (unsigned char *)(this); /*0x661285*/
   }
 
 }
 } // namespace gamemd
 // 0x6612C0
 namespace gamemd {
-unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2)
+unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2, void *a3)
 {
   uint8_t v3; // bl
   char v4; // al
@@ -141,7 +141,7 @@ unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2)
 } // namespace gamemd
 // 0x75F540
 namespace gamemd {
-unsigned int * Color::RGBFromFloat(int aP1, float a3)
+unsigned int * Color::RGBFromFloat(int aP1, float a3, void *a3_1)
 {
 
   double v3; // st7
@@ -160,7 +160,7 @@ unsigned int * Color::RGBFromFloat(int aP1, float a3)
   this->Color_field_00 = v6; /*0x75f59e*/
   this->u32_4 = v10; /*0x75f5a0*/
   this->u32_8 = v8; /*0x75f5a3*/
-  return &this->Color_field_00; /*0x75f5ac*/
+  return (unsigned int *)(&this->Color_field_00); /*0x75f5ac*/
 
 }
 } // namespace gamemd

@@ -236,7 +236,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       slaveOwner = a1->isPlayingDamageSound; /*0x517e0b*/
       if ( slaveOwner ) /*0x517e13*/
       {
-        slaveManager = slaveOwner->slaveManager; /*0x517e15*/
+        slaveManager = (gamemd::SlaveManagerClass *)(slaveOwner->slaveManager); /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
       }
@@ -278,7 +278,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         (size_t)g_BuildingLoadQueue_Array.?,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = dword_B0E844; /*0x517ef3*/
+      vtable1 = (void *)(dword_B0E844); /*0x517ef3*/
       dword_B0E850 = 0; /*0x517efc*/
       LOBYTE(byte_B0E84C) = 1; /*0x517f02*/
     }

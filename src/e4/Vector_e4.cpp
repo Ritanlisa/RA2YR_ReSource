@@ -147,7 +147,7 @@ int Vector::Clear()
 
 // 0x45AE10
 namespace gamemd {
-int Vector::RemoveAt(int aP1)
+int Vector::RemoveAt(int aP1, void *a2)
 {
 
   char *Vector_field_0x10; // edx
@@ -163,7 +163,7 @@ int Vector::RemoveAt(int aP1)
   else
   {
     v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
-    this->__pad_010 = v4; /*0x45ae1e*/
+    this->__pad_010 = (unsigned char)(v4); /*0x45ae1e*/
     if ( aP1 < (int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
@@ -182,7 +182,7 @@ int Vector::RemoveAt(int aP1)
 
 // 0x4D2E40
 namespace gamemd {
-void Vector::ReallocDynamic(int a2)
+void Vector::ReallocDynamic(int a2, void *a2_1)
 {
   char *v3; // edi
   int i; // ecx
@@ -212,7 +212,7 @@ void Vector::ReallocDynamic(int a2)
 
 // 0x4E0550
 namespace gamemd {
-int Vector::Find(unsigned int * a2)
+int Vector::Find(unsigned int * a2, void *a2_1)
 {
   int v2; // edx
   int result; // eax
@@ -264,12 +264,12 @@ char Vector::Grow()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->m_8 ) /*0x7aef13*/
   {
-    qmemcpy(v5, this->m_8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
+    memcpy(v5, this->m_8, 4 * *(unsigned int *)this->Cl_ph); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
   __3_YAXPAX_Z(this->m_8); /*0x7aef39*/
-  this->q004 = (void *)v4; /*0x7aef41*/
-  this->m_8 = v5; /*0x7aef44*/
+  this->q004 = (int)((void *)v4); /*0x7aef41*/
+  this->m_8 = (unsigned int)(v5); /*0x7aef44*/
   return 1; /*0x7aeecf*/
 
 }

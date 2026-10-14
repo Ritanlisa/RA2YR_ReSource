@@ -68,9 +68,9 @@ void PsyDom::Fire()
   v1 = (ActionQueue *)operator new(0x14u); /*0x53b08e*/
   if ( v1 ) /*0x53b097*/
   {
-    v2 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(&PsyDom_Coords); /*0x53b0a3*/
+    v2 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)(&PsyDom_Coords)); /*0x53b0a3*/
     v3 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v2 + 72))(v2, v34); /*0x53b0b1*/
-    v4 = ActionQueue::PushEntry(v1, *v3, v3[1], v3[2]); /*0x53b0cb*/
+    v4 = ActionQueue::PushEntry((int)(v1), *v3, v3[1], v3[2]); /*0x53b0cb*/
   }
   else
   {
@@ -78,14 +78,14 @@ void PsyDom::Fire()
   }
   v4->u32_10 = 1; /*0x53b0d4*/
   v5 = *(void **)(*(unsigned int *)&g_RulesClass_Instance + 768); /*0x53b0e6*/
-  v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(&PsyDom_Coords); /*0x53b0f1*/
+  v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)(&PsyDom_Coords)); /*0x53b0f1*/
   v7 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v6 + 72))(v6, v34); /*0x53b0ff*/
   v33[0] = *v7; /*0x53b104*/
   v33[1] = v7[1]; /*0x53b110*/
   v33[2] = v7[2]; /*0x53b117*/
   v8 = (AnimClass *)operator new(0x1C8u); /*0x53b11b*/
   if ( v8 ) /*0x53b125*/
-    PsyDom_Anim = (int)AnimClass::ctor(v8, v5, v33, 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
+    PsyDom_Anim = (int)AnimClass::ctor(v8,(int *)(v5), v33, 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
   else
     PsyDom_Anim = 0; /*0x53b145*/
   PlaySoundEffectAt( /*0x53b16b*/
@@ -99,7 +99,7 @@ void PsyDom::Fire()
   if ( v9 >= 10 ) /*0x53b17f*/
     v9 = 10; /*0x53b181*/
   v10 = ((unsigned int *)(dword_7ED3D0))[v9]; /*0x53b186*/
-  EventClass::resetEvent((EventClass *)&v36, 0, 0); /*0x53b193*/
+  EventClass::resetEvent((int)((EventClass *)&v36), 0, 0); /*0x53b193*/
   v36 = &vt_DynamicVectorClass; /*0x53b19a*/
   v41 = 10; /*0x53b1a2*/
   v40 = 0; /*0x53b1aa*/
@@ -126,7 +126,7 @@ void PsyDom::Fire()
           && !(*(uint8_t (**)(int))(*(unsigned int *)i + 84))(i) )
         {
           if ( *(unsigned int *)(i + 704) ) /*0x53b276*/
-            CaptureManagerClass::FreeUnit((int)((CaptureManagerClass *)i), 0, (int)v11, v26, v27, v28); /*0x53b287*/
+            CaptureManagerClass::FreeUnit((int)((CaptureManagerClass *)i), 0,(unsigned int *)((int)v11), v26, v27, v28); /*0x53b287*/
           (*(void (**)(int, House *, int))(*(unsigned int *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/
           v15 = *(unsigned int *)i; /*0x53b29e*/
           *(unsigned char *)(i + 708) = 1; /*0x53b2a2*/
@@ -140,15 +140,7 @@ void PsyDom::Fire()
           v34[2] = v16 + v20; /*0x53b2d8*/
           v21 = (AnimClass *)operator new(0x1C8u); /*0x53b2dc*/
           if ( v21 ) /*0x53b2e6*/
-            v22 = (BuildingClass *)AnimClass::ctor( /*0x53b306*/
-                                     v21,
-                                     *(void **)(*(unsigned int *)&g_RulesClass_Instance + 804),
-                                     v34,
-                                     0,
-                                     1,
-                                     (void *)0x600,
-                                     0,
-                                     0);
+                        v22 = (BuildingClass *)AnimClass::ctor( /*0x53b306*/                                      v21,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 804)),                                      v34,                                      0,                                      1,                                      (void *)0x600,                                      0,                                      0);
           else
             v22 = 0; /*0x53b30d*/
           *(unsigned int *)(i + 712) = (unsigned int)(v22); /*0x53b311*/

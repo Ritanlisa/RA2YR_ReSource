@@ -51,7 +51,7 @@ struct ColorScheme;
 // CSP: TacticalClass matched via T3
 class TacticalClass : public AbstractClass
 {
-public: static constexpr AbstractType kObjectDeriveId = (const int)(AbstractType::TacticalMap);
+public: static constexpr AbstractType kObjectDeriveId = (const gamemd::AbstractType)((const int)(AbstractType::TacticalMap));
 
     // design: inline accessor, inlined at all call sites
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;

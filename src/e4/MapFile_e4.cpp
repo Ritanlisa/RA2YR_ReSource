@@ -52,14 +52,14 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
 } // namespace gamemd
 // 0x69D770
 namespace gamemd {
-unsigned int * MapFile::Constructor(int a2, int a3)
+unsigned int * MapFile::Constructor(int a2, int a3, void *a3_1, void *a4)
 {
 
   this->q004 = 0; /*0x69d77b*/
   this->q008 = a2; /*0x69d77e*/
   LOBYTE(this->q00C) = 1; /*0x69d781*/
   BYTE1(this->q00C) = 0; /*0x69d785*/
-  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x69d788*/
+  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

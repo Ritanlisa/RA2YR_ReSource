@@ -12,7 +12,7 @@ struct ConvertClass {
     void* vtable1;  // 0x0
 // --- flat members (END) ---
     int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
-    unsigned int * Construct(int a2, int a3, int a4, int a5, char a6, void *a1 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
+    unsigned int * Construct(int a2, int a3, int a4, int a5, char a6, void *a6_1 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
      unsigned int * InitTables(void *a1 = 0, void *a2 = 0);
     ConvertClass * * sub_4880F0(int a2);
     char __pad_6[362];  // 0x6 (ml)

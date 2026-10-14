@@ -169,7 +169,7 @@ void sub_600920()
       v6 = v0; /*0x60099f*/
       dword_AC18C8 = v0 >> 1; /*0x6009a4*/
       --dword_AC18CC; /*0x6009b0*/
-      g_DialogPool = operator new(4 * (v0 >> 1)); /*0x6009c9*/
+      g_DialogPool = (int)(operator new(4 * (v0 >> 1))); /*0x6009c9*/
       memset(g_DialogPool, 0, 4 * dword_AC18C8); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
@@ -2055,7 +2055,7 @@ LABEL_87:
         goto LABEL_89;
       }
 LABEL_90:
-      if ( IDA_HIBYTE(v67) )
+      if ( (*(((unsigned char *)&(v67)) + (sizeof(v67) - 1))) )
       {
         int v51 = *((unsigned int *)DataGlobal_B0FC28 + 1);
   int v91[2]; // [esp+C8h] [ebp-FCh] BYREF

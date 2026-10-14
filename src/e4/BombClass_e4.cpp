@@ -51,7 +51,7 @@ int BombClass::AbstractClass()
          0) )
   {
     v2 = dword_89C678++; /*0x438657*/
-    *((unsigned int *)dword_89C66C + v2) = this; /*0x438666*/
+    *((unsigned int *)dword_89C66C + v2) = (unsigned int)(this); /*0x438666*/
   }
   return (int)this; /*0x43866b*/
 
@@ -103,7 +103,7 @@ int BombClass::Stat(int * a2)
   int v9; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x438a99*/
-  BombClass_field_28 = this->BombClass_field_28; /*0x438a9e*/
+  BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
     v5 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
@@ -115,7 +115,7 @@ int BombClass::Stat(int * a2)
     v7 = (*(int (**)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
     Power::TimerProcess(v7); /*0x438acb*/
   }
-  BombClass_field_2C = this->BombClass_field_2C; /*0x438ad0*/
+  BombClass_field_2C = (int)(this->BombClass_field_2C); /*0x438ad0*/
   if ( BombClass_field_2C ) /*0x438ad5*/
   {
     v9 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_2C + 4) + 16))(BombClass_field_2C + 4); /*0x438ade*/

@@ -327,7 +327,6 @@ struct RulesClass {
     double AARatio;  // 0x9E4
     char AALimit[4];  // 0x9EC
     double DefenseRatio;  // 0x9F0
-    char DefenseLimit[4];  // 0x9F8
     double WarRatio;  // 0x9FC
     char WarLimit[4];  // 0xA04
     double BarracksRatio;  // 0xA08
@@ -515,7 +514,6 @@ struct RulesClass {
     double RadTintFactor;  // 0x17D0
     char RadColor[3];  // 0x17D8
     WarheadTypeClass* RadSiteWarhead;  // 0x17DC
-    char ElevationIncrement[4];  // 0x17E0
     double ElevationIncrementBonus;  // 0x17E4
     double ElevationBonusCap;  // 0x17EC
     bool AlliedWallTransparency;  // 0x17F4
@@ -560,7 +558,7 @@ struct RulesClass {
     int readCrateRules();
     int readGeneralSection(TechnoTypeClass * aP1);
     int readOverlayTypes();
-    int  readParticleSystems(TechnoTypeClass * aP1);
+    int   readParticleSystems(void *a1 = 0);
     int readRadiation();
     int readSmudgeTypes();
     int readSpecialWeapons();

@@ -78,19 +78,19 @@ int nullsub_84(int p0);  // x4:signals@0x763720
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioConfig;  // 词表 (canon 无条目, int 兜底) L1062
 
 extern int Matrix3x4;  // 词表 (canon 无条目, int 兜底) L1059
-extern int dword_889FB8;  // 词表 (canon 无条目, int 兜底) L587
+extern unsigned int dword_889FB8; // 词表 (canon 无条目, int 兜底) L587
 extern int BufferIOFileClass;  // 词表 (canon 无条目, int 兜底) L717
 extern int BuildingTypeClass;  // 词表 (canon 无条目, int 兜底) L957
 extern int House;  // 词表 (canon 无条目, int 兜底) L614
 extern int RawFileClass;  // 词表 (canon 无条目, int 兜底) L707
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int Type;  // 词表 (canon 无条目, int 兜底) L953
-extern int byte_889FC5;  // 词表 (canon 无条目, int 兜底) L570
-extern int dword_889FBC;  // 词表 (canon 无条目, int 兜底) L578
-extern int dword_889FC0;  // 词表 (canon 无条目, int 兜底) L570
-extern int dword_889FC8;  // 词表 (canon 无条目, int 兜底) L577
-extern int dword_889FCC;  // 词表 (canon 无条目, int 兜底) L571
+extern unsigned char byte_889FC5; // 词表 (canon 无条目, int 兜底) L570
+extern unsigned int dword_889FBC; // 词表 (canon 无条目, int 兜底) L578
+extern unsigned int dword_889FC0; // 词表 (canon 无条目, int 兜底) L570
+extern unsigned int dword_889FC8; // 词表 (canon 无条目, int 兜底) L577
+extern unsigned int dword_889FCC; // 词表 (canon 无条目, int 兜底) L571
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int dword_A8B230;  // 词表 (canon 无条目, int 兜底) L361
-extern int stru_817BD0;  // 词表 (canon 无条目, int 兜底) L369
+extern unsigned char stru_817BD0; // 词表 (canon 无条目, int 兜底) L369
 extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
@@ -1273,7 +1273,7 @@ int FootClass::DrawPlacementPreview() {
       if ( (result == 18 || this->vtable1 == 18) && this->vtable1 < v36->BuildingAnimFrame[1] + v36->BuildingAnimFrame[0] - 1 ) /*0x43df9c*/
         v37 = 1; /*0x43df9e*/
       if ( (result != 19 || (result = this->vtable1, result <= 0)) && !v37 /*0x43dfbb*/
-        || (IDA_LOBYTE(result) = v36->Artillary, result) )
+        || ((*((unsigned char *)&(result))) = v36->Artillary, result) )
 
       {
         if ( byte_887418 ) /*0x43dfc8*/
@@ -1317,7 +1317,7 @@ int FootClass::DrawPlacementPreview() {
           v118 = v124.m_Data[3]; /*0x43e12b*/
           v120 = v124.m_Data[11]; /*0x43e133*/
           v116 = -*(float *)&v124.m_Data[7]; /*0x43e137*/
-          qmemcpy(v125, &v124, sizeof(v125)); /*0x43e13f*/
+          memcpy(v125, &v124, sizeof(v125)); /*0x43e13f*/
           v108 = v115; /*0x43e147*/
           v119 = v124.m_Data[7]; /*0x43e14b*/
           v117 = -*(float *)&v124.m_Data[11]; /*0x43e153*/
@@ -1479,7 +1479,7 @@ int FootClass::DrawPlacementPreview() {
         {
           if ( !v68 ) /*0x43e62e*/
           {
-            qmemcpy(v125, BuildingClass::BuildTurretTransform((int)this, (float *)&v127), sizeof(v125)); /*0x43e655*/
+            memcpy(v125, BuildingClass::BuildTurretTransform((int)this, (float *)&v127), sizeof(v125)); /*0x43e655*/
             v69 = (int)(dword_818CB0 /*0x43e681*/
                       + (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->vtable1, &v114) >> 10) + 1) >> 1)
                        & 0x1F))

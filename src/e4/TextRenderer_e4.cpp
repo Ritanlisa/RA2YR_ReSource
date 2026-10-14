@@ -33,7 +33,7 @@ namespace gamemd {  // G42.18 ns repair
 void * TextRenderer::GetInstance()
 {
 
-  return g_FogOfWarState; /*0x4a60d5*/
+  return (void *)(g_FogOfWarState); /*0x4a60d5*/
 
 }
 }  // G42.18 ns repair
@@ -119,7 +119,7 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
 }
 // 0x642C80
 namespace gamemd {
-int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
+int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6, void *a6_1)
 {
 
   int result; // eax
@@ -158,7 +158,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = TextRenderer::GetInstance(); /*0x642d10*/
+    Instance = (int)(TextRenderer::GetInstance()); /*0x642d10*/
     v11 = v21; /*0x642d14*/
     v23 = 15; /*0x642d18*/
     do /*0x642d3d*/
@@ -178,7 +178,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
     v14 = Default + 4; /*0x642d7c*/
     if ( v19 > 1 ) /*0x642d82*/
       v14 *= v19; /*0x642d87*/
-    Viewport = Display::GetViewport(v21); /*0x642d8d*/
+    Viewport = (int *)(Display::GetViewport(v21)); /*0x642d8d*/
     v16 = Viewport[2] - v13; /*0x642dac*/
     result = (Viewport[3] - v14) / 2; /*0x642db9*/
     this->u32_1A = v16 / 2; /*0x642dbb*/
@@ -234,8 +234,8 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
       v6 = (*(int (**)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
-  Instance = TextRenderer::GetInstance(); /*0x642f5c*/
-  v10 = v17; /*0x642f5e*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x642f5c*/
+  v10 = (unsigned short *)(v17); /*0x642f5e*/
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {

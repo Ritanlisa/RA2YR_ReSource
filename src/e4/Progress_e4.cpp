@@ -33,7 +33,7 @@ int Progress::GetAverage()
 } // namespace gamemd
 // 0x643E90
 namespace gamemd {
-int Progress::GetWeighted(int a2)
+int Progress::GetWeighted(int a2, void *a2_1)
 {
   return a2; /*0x643e9f*/
 }

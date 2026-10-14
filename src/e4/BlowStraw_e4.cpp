@@ -1,5 +1,4 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
-#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BlowStraw_29_e4.hpp"
@@ -162,7 +161,7 @@ LABEL_6:
       if ( v11 > 0x18 ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
-        v12 = &stru_B0C1C0 + 8 * v11; /*0x6d07a2*/
+        v12 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v11); /*0x6d07a2*/
       if ( BYTE1(v12[3].ShapeButtonClass_field_0x08) ) /*0x6d07ab*/
         UI_Create_731A50(1); /*0x6d07b4*/
       else
@@ -235,7 +234,7 @@ CellStruct * * sub_731AF0()
   {
   LABEL_5:
     (*((unsigned char *)&(g_BuildingLoadQueue_Array.QueueingCell[0]))) = 1; /*0x731b43*/
-    return result; /*0x731b4d*/
+    return (gamemd::CellStruct **)(result); /*0x731b4d*/
   }
   while ( 1 ) /*0x731b56*/
   {
@@ -253,7 +252,7 @@ CellStruct * * sub_731AF0()
     if ( ++v5 >= v4 ) /*0x731b7d*/
     {
       (*((unsigned char *)&(g_BuildingLoadQueue_Array.QueueingCell[0]))) = 1; /*0x731b80*/
-      return result; /*0x731b89*/
+      return (gamemd::CellStruct **)(result); /*0x731b89*/
     }
   }
   v7 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
@@ -273,7 +272,7 @@ CellStruct * * sub_731AF0()
 }
 // 0x5BE9E0
 namespace gamemd {
-TabClass * BlowStraw_29::Read(char * Block, char a2)
+TabClass * BlowStraw_29::Read(char * Block, char a2, void *a3)
 {
 
   int *v3; // esi
@@ -291,7 +290,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
   RadarClass::Destruct((RadarClass *)Block); /*0x5bea0a*/
   if ( (a2 & 1) != 0 ) /*0x5bea14*/
     __3_YAXPAX_Z(Block); /*0x5bea17*/
-  return (RadarClass *)Block; /*0x5bea1f*/
+  return (gamemd::TabClass *)((RadarClass *)Block); /*0x5bea1f*/
 
 }
 } // namespace gamemd

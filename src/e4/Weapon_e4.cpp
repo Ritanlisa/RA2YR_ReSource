@@ -81,7 +81,7 @@ bool Weapon_Update(void * a1, void * a2)
         (*((unsigned int *)&(updated))) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
         v6 = updated | (a2 << g_BitShift_Blue); /*0x659d40*/
         (*((unsigned short *)&(updated))) = (uint8_t)(v3->q0C0 >> g_BitShift_Green_0); /*0x659d45*/
-        a2 = ((unsigned int)updated << g_BitShift_Red) | v6; /*0x659d55*/
+        a2 = (void *)(((unsigned int)updated << g_BitShift_Red) | v6); /*0x659d55*/
         ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v3->location, v15); /*0x659d57*/
         ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(&v3->lineTrailer, v14); /*0x659d68*/
         v16[1] = (int)DSurface_ViewBounds.field_4; /*0x659d7e*/
@@ -225,7 +225,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     fstp [esp+0C8h+var_88]
   }
   ObjectVector::Construct(&v43, 0, 0); /*0x70c777*/
-  *(unsigned int *)v43.__pad_000 = &vt_DynamicVectorClass; /*0x70c77c*/
+  *(unsigned int *)v43.__pad_000 = (unsigned int)(&vt_DynamicVectorClass); /*0x70c77c*/
   v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
   v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/
   v42 = 0; /*0x70c790*/
@@ -237,7 +237,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
       fmul ds:flt_7F4E88
       fstp [esp+0C4h+var_C4]; float
     }
-    v12 = Color::RGBFromFloat(v74, (int)&v55, v39); /*0x70c7b0*/
+    v12 = (int *)(Color::RGBFromFloat(v74, (int)&v55, v39)); /*0x70c7b0*/
     v49 = *v12; /*0x70c7b9*/
     v50 = v12->u32_4; /*0x70c7c0*/
     v51 = v12->u32_8; /*0x70c7c7*/
@@ -246,7 +246,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
       LOWORD(v44) = v49 / 256; /*0x70c7f9*/
       HIWORD(v44) = v50 / 256; /*0x70c802*/
       *(unsigned int *)v48 = v44; /*0x70c811*/
-      v13 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v48); /*0x70c815*/
+      v13 = (unsigned int *)(CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v48)); /*0x70c815*/
       if ( (v13->u32_140 & 0x100) != 0 && v51 >= g_BuildingLoadQueue_Array.?[1] * (*(&v13->u32_11B) + 4) ) /*0x70c83c*/
         v14 = v13->q0E8; /*0x70c83e*/
       else
@@ -482,18 +482,18 @@ LABEL_55:
       return a1; /*0x70cc78*/
     }
   }
-  v26 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49); /*0x70cae2*/
+  v26 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49)); /*0x70cae2*/
   if ( (unsigned __int8)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
   {
     v27 = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/
     {
-      v28 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49); /*0x70cb20*/
+      v28 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v49)); /*0x70cb20*/
       LayerClass::DestroyCliff((int *)&DataGlobal_87F7E8, v29, (int)v28); /*0x70cb2b*/
     }
   }
   v30 = v50; /*0x70cb37*/
-  *(unsigned int *)v43.__pad_000 = &vt_VectorClass; /*0x70cb3d*/
+  *(unsigned int *)v43.__pad_000 = (unsigned int)(&vt_VectorClass); /*0x70cb3d*/
   *a1 = v49; /*0x70cb45*/
   v31 = v51; /*0x70cb47*/
   a1[1] = v30; /*0x70cb4b*/

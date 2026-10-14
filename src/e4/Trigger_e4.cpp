@@ -43,7 +43,7 @@
 
 // 0x554A60
 namespace gamemd {  // G42.18 ns repair
-int Trigger::EnableOnce(char aP1)
+int Trigger::EnableOnce(char aP1, void *a2)
 {
 
   int result; // eax
@@ -69,15 +69,15 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   *(unsigned int *)this->__pad_008 = a4; /*0x5cbd2c*/
   this->ptr_4 = (MSAnim *)aP2; /*0x5cbd32*/
   this->q00C = 1; /*0x5cbd35*/
-  this->q010 = (void *)Timer::GetTicks(); /*0x5cbd48*/
+  this->q010 = (int)((void *)Timer::GetTicks()); /*0x5cbd48*/
   *(unsigned int *)this->ptr_18 = 0; /*0x5cbd4f*/
   *&this->q020 = a5; /*0x5cbd52*/
   *&this->u32_38 = a7; /*0x5cbd58*/
-  *&this->q024 = a6; /*0x5cbd5f*/
+  *&this->q024 = (gamemd::MSShapeAnim *)(a6); /*0x5cbd5f*/
   *&this->u32_28 = 0; /*0x5cbd62*/
   this->__pad_30[4] = 0; /*0x5cbd65*/
   this->u32_3C = 0; /*0x5cbd68*/
-  *(unsigned int *)this->__pad_000 = &vt_MSShapeAnim; /*0x5cbd6a*/
+  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_MSShapeAnim); /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, &this->u32_3C); /*0x5cbd70*/
   *&this->__pad_01C = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
@@ -86,7 +86,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
   *&this->q040 = 0; /*0x5cbd8a*/
   *(unsigned int *)this->__pad_0 = &vt_MSFadeAnim; /*0x5cbd8d*/
-  return this; /*0x5cbd95*/
+  return (gamemd::MSShapeAnim **)(this); /*0x5cbd95*/
 
 }
 }
@@ -124,7 +124,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
 
   inited = 0; /*0x76d4da*/
   v7 = Count::Get(&this->__pad_458); /*0x76d4e3*/
-  VectorCursor::Construct(&v25, v7 + 44, 0); /*0x76d4f0*/
+  VectorCursor::Construct((int)(&v25), v7 + 44, 0); /*0x76d4f0*/
   while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 4))(&v25) ) /*0x76d4fd*/
   {
     v8 = (WDTObject *)FileClass::SetState((FileClass *)(*(unsigned int *)(v25.q004 + 4) /*0x76d512*/
@@ -134,8 +134,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       Session::RemoveTeam((Session *)this, v9); /*0x76d525*/
     (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 8))(&v25); /*0x76d532*/
   }
-  v24 = a2; /*0x76d545*/
-  Trigger::checkCondition((Trigger *)&v28.owningHouseIndex, 0, 0); /*0x76d54c*/
+  v24 = (gamemd::ObjectClass *)(a2); /*0x76d545*/
+  Trigger::checkCondition((int)((Trigger *)&v28.owningHouseIndex), 0, 0); /*0x76d54c*/
   v28.owningHouseIndex = (int)&vt_DynamicVectorClass; /*0x76d561*/
   v28.ambientSoundController[0] = 10; /*0x76d565*/
   v28.attachedBomb = 0; /*0x76d569*/
@@ -148,7 +148,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   while ( (*(unsigned __int8 (**)(int *))(v25.u32_C + 4))(&v25.u32_C) )
   {
     v11 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.VectorCursor_field_0x14 + 4) + 8); /*0x76d5bc*/
-    CellType = WDTClass::GetCellType(*&this->u32_84, v11); /*0x76d5cd*/
+    CellType = WDTClass::GetCellType(*&this->u32_84,(void *)(v11)); /*0x76d5cd*/
     v13 = WDTClass::GetCellType(a3->FilePointer, v11); /*0x76d5d7*/
     if ( v13 != CellType ) /*0x76d5db*/
     {
@@ -174,8 +174,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       v17 = *(unsigned int *)(this->u32_45C + 72) + *(unsigned int *)(v15 + 20); /*0x76d69a*/
       if ( this->u32_470 ) /*0x76d68f*/
       {
-        CCFileClass::Construct2((CCFileClass *)&v28.ambientSoundController[1], this->u32_470); /*0x76d6a9*/
-        if ( (unsigned __int8)CCFileClass::Open((CCFileClass *)&v28.ambientSoundController[1], 0) ) /*0x76d6b3*/
+        CCFileClass::Construct2((char **)((CCFileClass *)&v28.ambientSoundController[1]), this->u32_470); /*0x76d6a9*/
+        if ( (unsigned __int8)CCFileClass::Open((int)((CCFileClass *)&v28.ambientSoundController[1]), 0) ) /*0x76d6b3*/
         {
           v18 = (Trigger *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
           if ( v18 ) /*0x76d6c8*/
@@ -197,18 +197,18 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                  0) )
           {
             v19 = v28.attachedBomb++; /*0x76d726*/
-            *(unsigned int *)(v28.fallRate + 4 * (unsigned int)v19) = inited; /*0x76d731*/
+            *(unsigned int *)(v28.fallRate + 4 * (unsigned int)v19) = (unsigned int)(inited); /*0x76d731*/
           }
           inited = 0; /*0x76d734*/
         }
         v28.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x76d73d*/
         v28.location[2] = 0; /*0x76d745*/
-        Vector::Clear((int)&v28.isInLogic); /*0x76d74c*/
+        Vector::Clear((void *)((int)&v28.isInLogic)); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v28.ambientSoundController[1]); /*0x76d75d*/
       }
-      CCFileClass::Construct2(&v29, this->u8_474); /*0x76d770*/
-      if ( (unsigned __int8)CCFileClass::Open(&v29, 0) )
+      CCFileClass::Construct2((char **)(&v29), this->u8_474); /*0x76d770*/
+      if ( (unsigned __int8)CCFileClass::Open((int)(&v29), 0) )
       {
         v20 = (MSShapeAnim *)__2_YAPAXI_Z(0x40u); /*0x76d78c*/
         v21 = v20
@@ -234,17 +234,17 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           && (*(unsigned __int8 (**)(int *, int, unsigned int))(v28.? + 8))(&v28.?, v28.occupant + v28.?, 0) )
         {
           v22 = v28.vtable2++; /*0x76d82c*/
-          *(unsigned int *)(v28.vtable2 + 4 * (unsigned int)v22) = v21; /*0x76d837*/
+          *(unsigned int *)(v28.vtable2 + 4 * (unsigned int)v22) = (unsigned int)(v21); /*0x76d837*/
         }
       }
       *(unsigned int *)v29.CDFileClass = &vt_CCFileClass; /*0x76d841*/
       v31 = 0; /*0x76d84c*/
-      Vector::Clear((int)v30); /*0x76d853*/
+      Vector::Clear((void *)((int)v30)); /*0x76d853*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
     }
     (*(void (**)(int *))(v25.u32_C + 8))(&v25.u32_C); /*0x76d86c*/
   }
-  p_owningHouseIndex = &v28.owningHouseIndex; /*0x76d88b*/
+  p_owningHouseIndex = (int *)(&v28.owningHouseIndex); /*0x76d88b*/
   v27 = 0; /*0x76d897*/
   v25.q018 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d89b*/
   v28.? = &v28.?; /*0x76d89f*/
@@ -264,7 +264,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       {
         if ( this->u32_444 ) /*0x76d910*/
         {
-          v23 = *(void (****)(unsigned int, int))(p_owningHouseIndex[1] + 4 * v27); /*0x76d925*/
+          v23 = *(void ((unsigned int)(****))(unsigned int, int))(p_owningHouseIndex[1] + 4 * v27); /*0x76d925*/
           if ( v23 ) /*0x76d92a*/
             (**v23)(v23, 1); /*0x76d934*/
         }
@@ -273,13 +273,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           String::Assign((String *)&v28, aTargetzoom); /*0x76d944*/
           if ( (unsigned __int8)String::NotEquals((String *)&v28, 0) ) /*0x76d94e*/
           {
-            Trigger::processTrigger((Trigger *)&v25, &this->__pad_494, 0); /*0x76d963*/
+            Trigger::processTrigger((int)((Trigger *)&v25), &this->__pad_494, 0); /*0x76d963*/
             while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 4))(&v25) ) /*0x76d970*/
             {
-              if ( !(unsigned __int8)String::Compare( /*0x76d98a*/
-                                       (String *)&v28,
-                                       *(const char ***)(*(unsigned int *)(v25.q004 + 4)
-                                                       + 4 * v25.VectorCursor_field_0x08)) )
+                            if ( !(unsigned __int8)String::Compare((const char **)(/*0x76d98a*/                                        (String *)&v28),                                        *(const char ***)(*(unsigned int *)(v25.q004 + 4)                                                        + 4 * v25.VectorCursor_field_0x08)) )
                 break; /*0x76d991*/
               (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 8))(&v25); /*0x76d99b*/
             }
@@ -288,12 +285,12 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             *(unsigned int *)v25.__pad_000 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76d9cf*/
           }
           DeleteAndZero(&v28); /*0x76d9d7*/
-          PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
+          PriorityQueue::Add((int)((PriorityQueue *)this), *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
           MSEngine::ProcessEvents((MSEngine *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27), 300000); /*0x76da08*/
         }
         (*(void (**)(int *))(v25.VectorCursor_field_0x18 + 8))(&v25.VectorCursor_field_0x18); /*0x76da15*/
       }
-      PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(*((unsigned int *)v28.vtable2 + 1) + 4 * (int)v28.vtable2)); /*0x76da29*/
+      PriorityQueue::Add((int)((PriorityQueue *)this), *(unsigned int *)(*((unsigned int *)v28.vtable2 + 1) + 4 * (int)v28.vtable2)); /*0x76da29*/
       (*((void (**)(void **))v28.vtable2 + 2))(&v28.vtable2); /*0x76da36*/
     }
     while ( (*((unsigned __int8 (**)(void **))v28.vtable2 + 1))(&v28.vtable2) ); /*0x76da41*/
@@ -333,7 +330,7 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 }
 // 0x76F1C0
 namespace gamemd {
-unsigned int * Trigger::checkCondition(int aP1, int aP2)
+unsigned int * Trigger::checkCondition(int aP1, int aP2, void *a3)
 {
 
   this->ptr_4 = 0; /*0x76f1cb*/
@@ -357,7 +354,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
 }
 // 0x76FF20
 namespace gamemd {
-int Trigger::executeActions(int a2)
+int Trigger::executeActions(int a2, void *a2_1)
 {
 
   this->q02C = (void *)a2; /*0x76ff24*/

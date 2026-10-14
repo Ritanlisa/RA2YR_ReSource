@@ -71,13 +71,13 @@ char TypeList_Particle::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = *&this->Capacity; /*0x45a182*/
+  m_8 = (int)(*&this->Capacity); /*0x45a182*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x45a18d*/
   {
     v3 = 0; /*0x45a18f*/
     if ( m_8 <= 0 ) /*0x45a193*/
       return 1; /*0x45a1b3*/
-    v4 = *&this->Items; /*0x45a195*/
+    v4 = (unsigned int *)(*&this->Items); /*0x45a195*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x45a19b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x45a1a4*/
     {
@@ -112,7 +112,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x45a205*/
       {
-        m_8 = this->Capacity; /*0x45a20c*/
+        m_8 = (int)(this->Capacity); /*0x45a20c*/
         if ( a2 < m_8 ) /*0x45a211*/
           m_8 = a2; /*0x45a213*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x45a219*/
@@ -124,7 +124,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
         }
       }
       *&this->Items = v4; /*0x45a247*/
-      this->Capacity = a2; /*0x45a24f*/
+      this->Capacity = (void *)(a2); /*0x45a24f*/
       BYTE1(this->IsInitialized) = a3 == 0; /*0x45a252*/
       return 1; /*0x45a258*/
     }
@@ -152,7 +152,7 @@ int TypeList_Particle::GetSize(unsigned int * a2)
 
   if ( !(this->IsInitialized) ) /*0x45a2a0*/
     return 0; /*0x45a2a8*/
-  m_8 = *&this->Capacity; /*0x45a2ae*/
+  m_8 = (int)(*&this->Capacity); /*0x45a2ae*/
   result = 0; /*0x45a2b1*/
   if ( m_8 <= 0 ) /*0x45a2b5*/
     return -1; /*0x45a2cc*/
@@ -190,7 +190,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
   {
     LOBYTE(a3_2->m_C) = 0; /*0x45a312*/
     if ( a3_2 ) /*0x45a318*/
-      v4 = a3_2; /*0x45a32e*/
+      v4 = (unsigned int *)(a3_2); /*0x45a32e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a3_2); /*0x45a32a*/
     LOBYTE(a3_2->m_C) = 1; /*0x45a332*/
@@ -200,7 +200,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
     {
       m_8 = a3_2->m_8; /*0x45a33f*/
       if ( a3_2 < m_8 ) /*0x45a344*/
-        m_8 = a3_2; /*0x45a346*/
+        m_8 = (int)(a3_2); /*0x45a346*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&a3_2->m_1[3] + 4 * i - 4) ) /*0x45a34c*/
         ++i; /*0x45a351*/
       if ( BYTE1(a3_2->m_C) ) /*0x45a35e*/
@@ -227,13 +227,13 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
 
 // 0x45A3B0
 namespace gamemd {
-int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
+int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2, void *a2_1)
 {
   int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *&this->Count; /*0x45a3b0*/
+  m_10 = (int)(*&this->Count); /*0x45a3b0*/
   result = 0; /*0x45a3b3*/
   if ( m_10 <= 0 ) /*0x45a3b8*/
     return -1; /*0x45a3cf*/
@@ -311,7 +311,7 @@ TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477993*/
-  *(unsigned int *)Block = &vt_VectorClass; /*0x477996*/
+  *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x477996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4779a0*/
   {
     __3_YAXPAX_Z(v3); /*0x4779a8*/
@@ -321,7 +321,7 @@ TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
   *((unsigned int *)Block + 2) = 0; /*0x4779c1*/
   if ( (a2 & 1) != 0 ) /*0x4779c8*/
     __3_YAXPAX_Z(Block); /*0x4779cb*/
-  return Block; /*0x4779d5*/
+  return (gamemd::TypeList_flat *)(Block); /*0x4779d5*/
 
 }
 }  // G42.18c ns repair
@@ -354,13 +354,13 @@ char TypeList_TechnoType::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = *&this->Capacity; /*0x477fc2*/
+  m_8 = (int)(*&this->Capacity); /*0x477fc2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x477fcd*/
   {
     v3 = 0; /*0x477fcf*/
     if ( m_8 <= 0 ) /*0x477fd3*/
       return 1; /*0x477ff3*/
-    v4 = *&this->Items; /*0x477fd5*/
+    v4 = (unsigned int *)(*&this->Items); /*0x477fd5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x477fdb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x477fe4*/
     {
@@ -395,7 +395,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x478045*/
       {
-        m_8 = this->Capacity; /*0x47804c*/
+        m_8 = (int)(this->Capacity); /*0x47804c*/
         if ( a2 < m_8 ) /*0x478051*/
           m_8 = a2; /*0x478053*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x478059*/
@@ -407,7 +407,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
         }
       }
       *&this->Items = v4; /*0x478087*/
-      this->Capacity = a2; /*0x47808f*/
+      this->Capacity = (void *)(a2); /*0x47808f*/
       BYTE1(this->IsInitialized) = a3 == 0; /*0x478092*/
       return 1; /*0x478098*/
     }
@@ -449,7 +449,7 @@ int TypeList_TechnoType::GetSize(unsigned int * a2)
 
   if ( !(this->IsInitialized) ) /*0x4780e0*/
     return 0; /*0x4780e8*/
-  m_8 = *&this->Capacity; /*0x4780ee*/
+  m_8 = (int)(*&this->Capacity); /*0x4780ee*/
   result = 0; /*0x4780f1*/
   if ( m_8 <= 0 ) /*0x4780f5*/
     return -1; /*0x47810c*/
@@ -548,13 +548,13 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
   {
     if ( a3 ) /*0x4787b6*/
     {
-      this->u32_4 = (void *)a3; /*0x4787b8*/
-      return &this->DynamicVectorClass; /*0x4787be*/
+      this->u32_4 = (unsigned int)((void *)a3); /*0x4787b8*/
+      return (unsigned int *)(&this->DynamicVectorClass); /*0x4787be*/
     }
-    this->u32_4 = (void *)__2_YAPAXI_Z(4 * a2); /*0x4787cd*/
+    this->u32_4 = (unsigned int)((void *)__2_YAPAXI_Z(4 * a2)); /*0x4787cd*/
     this->u32_D = 1; /*0x4787d0*/
   }
-  return &this->DynamicVectorClass; /*0x4787bd*/
+  return (unsigned int *)(&this->DynamicVectorClass); /*0x4787bd*/
 
 }
 }  // G42.18c ns repair
@@ -616,7 +616,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1
   this->Capacity = 0; /*0x512a21*/
   if ( (a2 & 1) != 0 ) /*0x512a28*/
     operator delete((void *)(this)); /*0x512a2b*/
-  return this; /*0x512a35*/
+  return (gamemd::TypeList_flat *)(this); /*0x512a35*/
 }
 } // namespace gamemd
 
@@ -629,13 +629,13 @@ char TypeList_Infantry::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = *&this->Capacity; /*0x512c42*/
+  m_8 = (int)(*&this->Capacity); /*0x512c42*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x512c4d*/
   {
     v3 = 0; /*0x512c4f*/
     if ( m_8 <= 0 ) /*0x512c53*/
       return 1; /*0x512c73*/
-    v4 = *&this->Items; /*0x512c55*/
+    v4 = (unsigned int *)(*&this->Items); /*0x512c55*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x512c5b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x512c64*/
     {
@@ -651,7 +651,7 @@ char TypeList_Infantry::AddRef(int a2)
 
 // 0x512E20
 namespace gamemd {
-DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, void *a3_1)
+DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   void *v3; // eax
@@ -694,7 +694,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       return 0; /*0x512f1a*/
     if ( *&this->Items ) /*0x512ea8*/
     {
-      m_8 = this->Capacity; /*0x512eaf*/
+      m_8 = (int)(this->Capacity); /*0x512eaf*/
       if ( a2 < m_8 ) /*0x512eb4*/
         m_8 = a2; /*0x512eb6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x512ebc*/
@@ -706,16 +706,16 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       }
     }
     *&this->Items = v4; /*0x512eea*/
-    this->Capacity = a2; /*0x512ef2*/
+    this->Capacity = (void *)(a2); /*0x512ef2*/
     BYTE1(this->IsInitialized) = a3 == 0; /*0x512ef5*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x512efe*/
   }
-  v7 = this->Capacity; /*0x512f01*/
+  v7 = (int)(this->Capacity); /*0x512f01*/
   if ( v7 < this->Count ) /*0x512f09*/
-    this->Count = v7; /*0x512f0b*/
+    this->Count = (void *)(v7); /*0x512f0b*/
   return 1; /*0x512f0e*/
 
 }
@@ -729,7 +729,7 @@ int TypeList_Infantry::GetSize(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = *&this->Count; /*0x512f70*/
+  m_10 = (int)(*&this->Count); /*0x512f70*/
   result = 0; /*0x512f73*/
   if ( m_10 <= 0 ) /*0x512f78*/
     return -1; /*0x512f8f*/
@@ -804,12 +804,12 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
     Vector::Destructor((_VectorClass_PBVUnitTypeClass *)this); /*0x513762*/
-    v3 = aP1[2]; /*0x513768*/
+    v3 = (int)(aP1[2]); /*0x513768*/
     this->u32_8 = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/
     {
       v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x513776*/
-      this->u32_4 = v4; /*0x513780*/
+      this->u32_4 = (unsigned int)(v4); /*0x513780*/
       if ( v4 ) /*0x513783*/
       {
         Capacity = this->u32_8; /*0x513785*/
@@ -832,16 +832,16 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
       this->u32_D = 0; /*0x5137ab*/
     }
   }
-  this->u32_10 = aP1[4]; /*0x5137b1*/
-  this->u32_14 = aP1[5]; /*0x5137b7*/
+  this->u32_10 = (unsigned int)(aP1[4]); /*0x5137b1*/
+  this->u32_14 = (unsigned int)(aP1[5]); /*0x5137b7*/
   this->DynamicVectorClass = &vt_TypeList; /*0x5137ba*/
-  return &this->DynamicVectorClass; /*0x5137c2*/
+  return (unsigned int *)(&this->DynamicVectorClass); /*0x5137c2*/
 
 }
 }  // G42.18c ns repair
 // 0x5255F0
 namespace gamemd {  // G42.18c ns repair
-unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
+unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1, void *a2)
 {
   int v3; // eax
   void *v4; // eax
@@ -850,23 +850,23 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
 
   this->DynamicVectorClass = 0; /*0x5255fd*/
   this->DynamicVectorClass = 0; /*0x525600*/
-  this->DynamicVectorClass = 1; /*0x525603*/
+  this->DynamicVectorClass = (void *)(1); /*0x525603*/
   this->DynamicVectorClass = 0; /*0x525607*/
   this->DynamicVectorClass = &vt_VectorClass; /*0x52560a*/
   if ( this != (TypeList *)aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt(); /*0x525612*/
-    v3 = aP1[2]; /*0x525618*/
-    this->DynamicVectorClass = v3; /*0x52561d*/
+    v3 = (int)(aP1[2]); /*0x525618*/
+    this->DynamicVectorClass = (void *)(v3); /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
       v4 = (void *)operator new(4 * v3); /*0x525626*/
-      *&this->u32_4 = v4; /*0x525630*/
+      *&this->u32_4 = (unsigned int)(v4); /*0x525630*/
       if ( v4 ) /*0x525633*/
       {
         Capacity = this->u32_8; /*0x525635*/
         v6 = 0; /*0x525638*/
-        this->DynamicVectorClass = 1; /*0x52563c*/
+        this->DynamicVectorClass = (void *)(1); /*0x52563c*/
         if ( Capacity > 0 ) /*0x525640*/
         {
           do /*0x525654*/
@@ -884,10 +884,10 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
       this->DynamicVectorClass = 0; /*0x52565b*/
     }
   }
-  this->DynamicVectorClass = aP1[4]; /*0x525661*/
-  this->DynamicVectorClass = aP1[5]; /*0x525667*/
+  this->DynamicVectorClass = (void *)(aP1[4]); /*0x525661*/
+  this->DynamicVectorClass = (void *)(aP1[5]); /*0x525667*/
   this->DynamicVectorClass = &vt_TypeList; /*0x52566a*/
-  return &this->DynamicVectorClass; /*0x525672*/
+  return (unsigned int *)(&this->DynamicVectorClass); /*0x525672*/
 }
 }  // G42.18c ns repair
 // 0x5AC400
@@ -896,12 +896,12 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
 {
   this->u32_4 = 0; /*0x5ac404*/
   this->DynamicVectorClass = 0; /*0x5ac407*/
-  this->DynamicVectorClass = 1; /*0x5ac40a*/
+  this->DynamicVectorClass = (void *)(1); /*0x5ac40a*/
   this->DynamicVectorClass = 0; /*0x5ac40e*/
-  this->DynamicVectorClass = 10; /*0x5ac411*/
+  this->DynamicVectorClass = (void *)(10); /*0x5ac411*/
   this->DynamicVectorClass = 0; /*0x5ac418*/
   this->DynamicVectorClass = &vt_TypeList; /*0x5ac41b*/
-  return &this->DynamicVectorClass; /*0x5ac421*/
+  return (gamemd::CCINIClass *)(&this->DynamicVectorClass); /*0x5ac421*/
 }
 }  // G42.18c ns repair
 // 0x5AC650
@@ -1877,7 +1877,7 @@ int TypeList_cptr_TerrainTypeClass::GetSize(unsigned int * a2)
 
 // 0x67C010
 namespace gamemd {
-VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2, void *a3_1)
+VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   void *v3; // eax
@@ -1923,7 +1923,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2,
 
 // 0x67C150
 namespace gamemd {
-VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2, void *a3_1)
+VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   void *v3; // eax

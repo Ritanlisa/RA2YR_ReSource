@@ -16,7 +16,7 @@
 
 // 0x47B3A0
 namespace gamemd {  // G42.18 ns repair
-AbstractClass * Isometric::InitTables(unsigned int *aP1)
+AbstractClass * Isometric::InitTables(unsigned int *aP1, void *a2)
 {
 
   char v2; // al
@@ -211,9 +211,9 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1)
       v6 = 0.0; /*0x47bb2c*/
     if ( v6 > *(double *)&qword_81C918[5 * *(unsigned __int8 *)(&this->u8_11C) - 5] ) /*0x47bb3d*/
       v6 = *(double *)&qword_81C918[5 * *(unsigned __int8 *)(&this->u8_11C) - 5]; /*0x47bb41*/
-    return Math::RoundToInt(v6); /*0x47bb4d*/
+    return (gamemd::AbstractClass *)(Math::RoundToInt(v6)); /*0x47bb4d*/
   }
-  return result; /*0x47bb54*/
+  return (gamemd::AbstractClass *)(result); /*0x47bb54*/
 
 }
 } // namespace gamemd

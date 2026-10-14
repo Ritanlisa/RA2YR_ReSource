@@ -19,7 +19,7 @@ struct TypeList_Particle {
     char  Remove(int a2, unsigned int * a3);  // 0x45A1C0
     int  GetSize(unsigned int * a2);  // 0x45A2A0
     unsigned int  GetCapacity(int a2);  // 0x45A2E0
-    VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x45A9C0
+    VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x45A9C0
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)

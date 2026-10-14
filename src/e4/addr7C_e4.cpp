@@ -570,12 +570,12 @@ int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** 
     return -8; /*0x7c2b4c*/
   }
   v6 = AllocCallback::Dispatch(0, 2, 0, 0x7DCu); /*0x7c25f8*/
-  v7 = v6; /*0x7c25fd*/
+  v7 = (unsigned short *)(v6); /*0x7c25fd*/
   if ( !v6 ) /*0x7c2604*/
     return -8; /*0x7c2604*/
   AllocCallback::Dispatch((int)v6, 4, v6, 0x7DCu); /*0x7c2613*/
   LABEL_12:
-  v9 = v7 + 32; /*0x7c2635*/
+  v9 = (unsigned int *)(v7 + 32); /*0x7c2635*/
   memset(v7, 0, 0x7DCu); /*0x7c2641*/
   v7->ptr_30 = 2012; /*0x7c264a*/
   memcpy(v7 + 32, a1, 0x88u); /*0x7c2654*/
@@ -1578,7 +1578,7 @@ unsigned int DecodeSHPFrame16bpp(int a1, unsigned char * a2, int * a3, unsigned 
               while ( v51 ); /*0x7c466d*/
               v6 = v68; /*0x7c466f*/
             }
-            v52 = (unsigned int *)(*v49);
+            v52 = (int)((unsigned int *)(*v49));
             v47 = v49 + 1; /*0x7c4683*/
             v53 = (unsigned int *)(v8 + 1); /*0x7c4688*/
             if ( v32 ) /*0x7c468b*/

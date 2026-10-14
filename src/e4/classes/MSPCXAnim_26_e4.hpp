@@ -13,7 +13,7 @@ struct MSPCXAnim_26 {
     bool IsInitialized;  // 0x12
 // --- flat members (END) ---
     void ddtor(void *a1 = 0);  // 0x5D06D0
-    unsigned int  Draw(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x5D0700
+    unsigned int Draw(int a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);  // 0x5D0700
     int  GetFrame(int a2);  // 0x5D0720
     void FreeData();  // 0x5D0730
     unsigned int  GetCount(int a2);  // 0x5D0760
@@ -25,7 +25,7 @@ struct MSPCXAnim_26 {
     int  FindIndex(unsigned int * a2);  // 0x5D10C0
     unsigned int  GetCount_1(int a2);  // 0x5D1100
     char  Release(int a2, unsigned int * a3);  // 0x5D1120
-    int  Load(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x5D11D0
+    int Load(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1);  // 0x5D11D0
     char  AllocCopyData_4B_0(int a2, unsigned int * a3);  // 0x5D1380
     int  FindIndex_0(unsigned int * a2);  // 0x5D1430
     char  AllocCopyData_4B_1(int a2, unsigned int * a3);  // 0x5D15E0

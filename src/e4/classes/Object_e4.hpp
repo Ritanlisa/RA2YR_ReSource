@@ -16,21 +16,21 @@ struct Object {
     char* nextObject;  // g57w8: 同上  // 0x0 (no offset truth)
     void* parachute;  // 0x0 (no offset truth)
     int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);
-    int  FindObjectCell(unsigned int * a2, char a3);  // 0x47C5A0
-    int IsAlliedWithObjectHouse(int aP1, void *a1 = 0);
+    int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
+    int IsAlliedWithObjectHouse(int aP1, void *a2 = 0);
     int  IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int *  FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
-    int  SpawnAtCell(int a2, int16_t * a3, int a4, void *a1 = 0);  // 0x5FC380
+    int SpawnAtCell(int aP1, int16_t *aP2, int aP3, void *a4 = 0);  // 0x5FC380
     void*  HandleAction(int * a2, int * a3);  // 0x5FD970
     int ProcessEvent();  // 0x5FDDE0
     void *  DrawObject(char a2);  // 0x5FDF70
-    void* *  CalculateObjectPlacementPosition(int * a2);  // 0x62AC30
-    int  LoadObject(unsigned int * a2, int a3);  // 0x5FD8F0
-    SessionClass *  DtorWithDelete(char a2, void *a1 = 0);  // 0x7AD330
+    void* * CalculateObjectPlacementPosition(int *a2);  // 0x62AC30
+    int LoadObject(ObjectClass * aP1, int aP1a);  // 0x5FD8F0
+    SessionClass * DtorWithDelete(void ** Block, char a2);  // 0x7AD330
     int ComputeAllocationSize();  // 0x42B1F0
     void ** RemoveObjectArray(void *a1 = 0);  // 0x53E420
     int Unlink(void *a1 = 0);  // 0x5F5230
-    char  CheckState(unsigned int * a2, int a3);  // 0x5FD270
+    char CheckState(IUnknown * aP1, int a3);  // 0x5FD270
     int  SaveObject(int * a2, int a3);  // 0x5FD950
     int  ddtor(unsigned int * a2);  // 0x5FDF10
     int StubReturn176();  // 0x5FDF00

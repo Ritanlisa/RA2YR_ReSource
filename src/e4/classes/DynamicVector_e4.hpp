@@ -23,26 +23,25 @@ struct DynamicVector {
     unsigned int tail_E;  // 0xE
     int CapacityIncrement;  // 0x14
 // --- flat members (END) ---
-    unsigned int *  Copy(unsigned int * a2, void *a1 = 0);  // 0x5AC430
+    unsigned int * Copy(VectorClass_flat * aP1, void *a2_1);  // 0x5AC430
     char AddItem(unsigned int *aP1);  // 0x413A70
-    unsigned int *  Constructor_Cell(int a2, int a3, void *a1 = 0);  // 0x42F670
-    char  RemoveItem(int a2, void *a1 = 0);  // 0x45ADD0
-    char Add_Alt(unsigned int *aP1, void *a1 = 0);  // 0x477EC0
+    unsigned int * Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2, void *a3_1);  // 0x42F670
+    char RemoveItem(int aP1, void *a2 = 0);  // 0x45ADD0
+    char Add_Alt(unsigned int *aP1, void *a2 = 0);  // 0x477EC0
     int GetOrGrow(int aP1);
-    char  Add_Alt4(unsigned int * a2, void *a1 = 0);  // 0x5253B0
+    char Add_Alt4(unsigned int *aP1, void *a2 = 0);  // 0x5253B0
     char Add_Alt2(DynamicVector * aP1);  // 0x538780
-    char  Add_Alt3(unsigned int * a2);  // 0x5AD7D0
+    char Add_Alt3(VectorClass_flat * aP1);  // 0x5AD7D0
     char GrowCapacity();  // 0x624810
-    int  Read(int * a2, void *a1 = 0, void *a3 = 0);  // 0x67A520
-    int  Read_Alt(int * a2);  // 0x67A6E0
+    int Read(TechnoTypeClass * aP1, void *a2_1, void *a3 = 0);  // 0x67A520
+    int Read_Alt(TechnoTypeClass * aP1);  // 0x67A6E0
     unsigned int *  Constructor_VoxelAnim(int a2, int a3);  // 0x67AC70
-    char  Add2(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x67AD80
-    char  RemoveAt(int a2, void *a1 = 0);  // 0x67C360
+    char Add2(unsigned int *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x67AD80
+    char RemoveAt(int a2, void *a2_2);  // 0x67C360
     char  RemoveAt2(int a2);  // 0x67C3F0
-    char  Add(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x6C6400
-    unsigned int *  Constructor_Techno(int a2, int a3, void *a1 = 0);  // 0x7342D0
+    char Add(DynamicVector * aP1, void *a2_1, void *a3_1);  // 0x6C6400
+    unsigned int * Constructor_Techno(int a2, int a3, void *a3_1 = 0);  // 0x7342D0
     char EnsureCapacity(void *a1 = 0);  // 0x7AF000
-    char Add(int a2, void *a2_2, void *a3_1);
     AbstractClass * * Release(int a2, int * a3);
     AbstractClass * * SetCapacity(int a2, int * a3);
     void * Constructor_ConvertClass(void ** Block, char a2);
@@ -85,14 +84,13 @@ struct DynamicVector {
     int FindItem(unsigned int * a2);
     void ClearBuffer(void *a1_1);
     int Seek(int a2, void *a2_2, void *a3_1);
-    int Read(unsigned int * a2, void *a2_2);
+    int Read(TechnoTypeClass * aP1, void *a2_1);
     unsigned int Write(int a2);
     DynamicVector * Constructor_VectorClass_KamikazeControl___(unsigned int * Block, char a2);
     AbstractClass * * SetCapacity_0(int a2, char * a3);
     AbstractClass * * Remove(CCINIClass * aP1, unsigned char * a2);
     void Clear_49E9B0();
     unsigned int GetCount(int a2);
-    DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);
     unsigned int * Destructor_0(char a2);
     void Clear_627D20();
     void Clear_627D80();

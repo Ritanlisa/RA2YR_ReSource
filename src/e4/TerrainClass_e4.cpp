@@ -139,26 +139,26 @@ AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, vo
         goto LABEL_60;
 LABEL_162:
       HouseClass::CheckWinCondition((int)v22, 0);
-      return 1;
+      return (gamemd::AbstractClass **)(1);
     case 3:
       Owner = ObjectClass_FindOwner((unsigned int *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !Owner )
         return 0;
       *(unsigned char *)(Owner + 494) = 1;
-      return 1;
+      return (gamemd::AbstractClass **)(1);
     case 4:
       ++*(unsigned int *)&((unsigned int *)(HouseClass_Player))[43616];
       int v76 = *(unsigned int *)((unsigned int)(a1)+ 48);
       if ( v76 )
         ((TeamClass*)v76)->CreateOneOf(0);
       --*(unsigned int *)&((unsigned int *)(HouseClass_Player))[43616];
-      return 1;
+      return (gamemd::AbstractClass **)(1);
     case 5:
       void * v77 = *(void **)((unsigned int)(a1)+ 48);
       if ( !v77 )
-        return 1;
+        return (gamemd::AbstractClass **)(1);
       ((TeamTypeClass *)(v77))->DestroyAllInstances();
-      return 1;
+      return (gamemd::AbstractClass **)(1);
     case 6:
       int v81 = ObjectClass_FindOwner((unsigned int *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v81 )
@@ -339,10 +339,10 @@ LABEL_162:
     case 0x1E:
       if ( !*(unsigned char *)((unsigned int)(a1)+ 144) )
       {
-        IDA_HIBYTE(a5[13].referenceCount) = 0;
+        (*(((unsigned char *)&(a5[13].referenceCount)) + (sizeof(a5[13].referenceCount) - 1))) = 0;
         return 1;
       }
-      IDA_HIBYTE(a5[13].referenceCount) = 1;
+      (*(((unsigned char *)&(a5[13].referenceCount)) + (sizeof(a5[13].referenceCount) - 1))) = 1;
       if ( a5[2].nextArrayIndex > 0 )
       {
         v50 = *(IUnknown **)(**(unsigned int **)&a5[2].q000[12] + 156);
@@ -549,7 +549,7 @@ LABEL_157:
       CreateTriggerClassIfFarEnough( (int)(*(IUnknown **)((unsigned int)(a1)+ 144)), v98, *Waypoint_Location);
       return 1;
     case 0x38:
-      ScenarioClass::SetLocalToByID(*(unsigned char **)&((unsigned char *)&HouseClass_Player)[29924], a1->q090, 1);
+      ScenarioClass::SetLocalToByID((unsigned int)(*(unsigned char **)&((unsigned char *)&HouseClass_Player)[29924]), a1->q090, 1);
       return 1;
     case 0x39:
       ScenarioClass::SetLocalToByID(*(unsigned char **)&((unsigned char *)&HouseClass_Player)[29924], a1->q090, 0);
@@ -558,7 +558,7 @@ LABEL_157:
       return ((TActionClass *)(int *)a1)->SpawnMeteorShower( (gamemd::AbstractClass *)(a5), (int)v9, (int)a5,(gamemd::AbstractClass *)(a8));
     case 0x3B:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)((unsigned int)(a1)+ 144));
-      MapClass::TriggerEVA((short *)((IUnknown *)&v112));
+      MapClass::TriggerEVA((IUnknown *)((short *)((IUnknown *)&v112)));
       return 1;
     case 0x3C:
       char v31 = 0;
@@ -885,7 +885,7 @@ LABEL_60:
     case 0x5E:
   unsigned int *v11; // eax
       v11 = ((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)((unsigned int)(a1)+ 68));
-      ((Coord*)&v131)->Subtract( (int)((IUnknown *)(((int16_t)*v11 << 8) + 128)), (int)((IUnknown *)(((int16_t)IDA_HIWORD(*v11) << 8) + 128)), 0);
+      ((Coord*)&v131)->Subtract( (int)((IUnknown *)(((int16_t)*v11 << 8) + 128)), (int)((IUnknown *)(((int16_t)(*(((unsigned short *)&(*v11)) + 1)) << 8) + 128)), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
@@ -914,7 +914,7 @@ LABEL_60:
         {
           ++v65;
           *(unsigned int *)v67->vtable1 = *((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), v66);
-          v67 = &v67->vtable2;
+          v67 = (gamemd::AbstractClass *)(&v67->vtable2);
           if ( v65 == 400 )
             break;
         }
@@ -926,10 +926,7 @@ LABEL_60:
       PlayAudioAt2(a1->q090, v69, 0);
       return 1;
     case 0x63:
-      v70 = (CellStruct **)Cell::GetWorldCoords(
-                             *(int16_t **)&((unsigned char *)&HouseClass_Player)[29924],
-                             &v131,
-                             a1->u32_44);
+            v70 = (CellStruct **)Cell::GetWorldCoords((unsigned int *)(*(int16_t **)&((unsigned char *)&HouseClass_Player)[29924]),                              &v131,                              a1->u32_44);
       v113 = *v70;
       v128 = v70[1];
       GroundHeight = v70[2];
@@ -946,7 +943,7 @@ LABEL_60:
       return ((TActionClass *)(int *)a1)->executeScatterAction( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x66:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), a1->u32_44);
-      ((Coord *)(&v131))->Subtract( (int)((IUnknown *)(((int16_t)v112 << 8) + 128)), (int)((IUnknown *)((IDA_SHIWORD(v112) << 8) + 128)), 0);
+      ((Coord *)(&v131))->Subtract( (int)((IUnknown *)(((int16_t)v112 << 8) + 128)), (int)((IUnknown *)(((*((signed short *)(((unsigned char *)&(v112)) + 2))) << 8) + 128)), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
@@ -983,7 +980,7 @@ LABEL_60:
         *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 4596) = (unsigned int)&((unsigned char *)&stru_87C374)[46016];
         ((ScriptAction *)v137)->CopyStringField( (char *)(&((unsigned char *)&stru_87C374)[56304]));
   char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
-        ((ScriptAction *)((*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 4600)))->CopyStructField( (void *)(v139), (const void *)(v137));
+        ((ScriptAction *)((*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 4600)))->CopyStructField( (void *)(v139),(void *)((const void *)(v137)));
       }
       ((ObjectClass *)(&((unsigned char *)&stru_87C374)[13428]))->PreDraw();
       return 1;
@@ -1044,7 +1041,7 @@ LABEL_290:
       v114 = (IUnknown **)((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(v134), a1->u32_44);
       return BuildingClass::SearchPlacement(&((unsigned char *)&stru_87C374)[13428], *v114, a1->q090);
     case 0x6D:
-      return ((TActionClass *)(int *)a1)->executeParadropAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->executeParadropAction( (int)a5, (int)v9, (int)a5,(int)((IUnknown *)a8));
     case 0x6E:
       SetScenarioClassTimer(a1->q090);
       return 1;
@@ -1060,7 +1057,7 @@ LABEL_290:
       v113 = *v119;
       v128 = v119[1];
       GroundHeight = v119[2];
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight((unsigned int *)((IUnknown *)&v113));
       if ( (*((unsigned int *)((CellCoord *)(&((unsigned char *)&stru_87C374)[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0
         || (*((unsigned int *)((CellCoord *)(&((unsigned char *)&stru_87C374)[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x400) != 0 )
       {
@@ -1112,7 +1109,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   v7 = v4; /*0x71cdba*/
   if ( ((char *)&g_BuildingLoadQueue_Array) ) /*0x71cdbe*/
   {
-    if ( !IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) ) /*0x71cdcb*/
+    if ( !(*((unsigned char *)&(((char *)&g_BuildingLoadQueue_Array)))) ) /*0x71cdcb*/
     {
       qsort( /*0x71cddc*/
         g_BuildingLoadQueue_Array.TechnoTypeClass,
@@ -1121,7 +1118,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       vtable1 = (void *)(((char *)&g_BuildingLoadQueue_Array)); /*0x71cde1*/
       ((unsigned int *)&g_BuildingLoadQueue_Array)[0] = 0; /*0x71cdea*/
-      IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 1; /*0x71cdf4*/
+      (*((unsigned char *)&(((char *)&g_BuildingLoadQueue_Array)))) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
     v8 = BinaryArraySearch( (AbstractClass *)((int)g_BuildingLoadQueue_Array.TechnoTypeClass), (int)vtable1, (int *)(&v17)); /*0x71ce0a*/
@@ -1169,7 +1166,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 LABEL_16:
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array)) = v14; /*0x71ceee*/
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)((char *)&g_BuildingLoadQueue_Array) + 1) = v2; /*0x71cefc*/
-      IDA_LOBYTE(((char *)&g_BuildingLoadQueue_Array)) = 0; /*0x71cf06*/
+      (*((unsigned char *)&(((char *)&g_BuildingLoadQueue_Array)))) = 0; /*0x71cf06*/
       ++((char *)&g_BuildingLoadQueue_Array); /*0x71cf0d*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1]); /*0x71cf1e*/

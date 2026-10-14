@@ -26,7 +26,7 @@ int sub_682780(int a1, int a2, wchar_t * String)
   size_t v7; // eax
   int v9; // [esp+30h] [ebp-4h] BYREF
 
-  v9 = (unsigned int *)(0);
+  v9 = (int)((unsigned int *)(0));
   v3 = 0; /*0x68278e*/
   v4 = (unsigned int *)(&unk_83D658); /*0x682790*/
   while ( *v4 != a2 ) /*0x682797*/

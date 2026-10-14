@@ -14,7 +14,7 @@ struct VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Get(int a2, void *a1 = 0);  // 0x7B2890
+    int Get(int a2, void *a2_2);  // 0x7B2890
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x7B28A0
     char  Release(int a2, unsigned int * a3);  // 0x7B28E0
     void Remove(void *a1_1, void *a1 = 0);  // 0x7B2990

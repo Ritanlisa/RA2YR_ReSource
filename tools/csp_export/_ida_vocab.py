@@ -134,9 +134,14 @@ _PAIR = {
 }
 
 _NAME1_RE = re.compile(
-    r'\b(' + '|'.join(sorted(_BITFIELD1, key=len, reverse=True)) + r')\s*\(')
+    r'\b(?:IDA_)?(' + '|'.join(sorted(_BITFIELD1, key=len, reverse=True)) + r')\s*\(')
 _NAME2_RE = re.compile(
-    r'\b(' + '|'.join(sorted(_PAIR, key=len, reverse=True)) + r')\s*\(')
+    r'\b(?:IDA_)?(' + '|'.join(sorted(_PAIR, key=len, reverse=True)) + r')\s*\(')
+# X26: the IDA_-prefixed spellings (IDA_LODWORD / IDA___PAIR64__ ...) are the
+# SAME vocabulary the RC1 contract requires to be truth-ified -- the old
+# regexes skipped them (preceded by `_`), so landed bodies carrying them
+# stayed C3861 fail-loud forever.  The optional IDA_ prefix consumes the
+# prefix into the match so `\b` still anchors at the identifier start.
 
 
 def _split_top_args(s):

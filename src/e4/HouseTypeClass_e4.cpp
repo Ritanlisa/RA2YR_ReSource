@@ -41,9 +41,9 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
 
   AbstractTypeClass::Init((int)this, a2); /*0x511658*/
-  this->veteranInfantry[0] = (int)&vt_TypeList; /*0x51165d*/
-  *&this->prefix = &vt_TypeList; /*0x511667*/
-  *&this->u32_184 = &vt_TypeList; /*0x511671*/
+  this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)&vt_TypeList); /*0x51165d*/
+  *&this->prefix = (char)(&vt_TypeList); /*0x511667*/
+  *&this->u32_184 = (unsigned int)(&vt_TypeList); /*0x511671*/
   this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511681) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511688) */
@@ -67,7 +67,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116b4) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x5116bb) */
   AbstractClass::AnnounceExpiredPointer(&a1->vfptr, 1); /*0x5116c2*/
-  v7 = a1; /*0x5116d7*/
+  v7 = (gamemd::HouseTypeClass *)(a1); /*0x5116d7*/
   v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))(&dword_A83C98, &v7); /*0x5116db*/
   if ( v2 != -1 && v2 < dword_A83CA8 && v2 < --dword_A83CA8 ) /*0x5116f6*/
   {
@@ -187,7 +187,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   char Source[32]; // [esp+58h] [ebp-A0h] BYREF
   char String[128]; // [esp+78h] [ebp-80h] BYREF
 
-  v4 = aP1; /*0x51185e*/
+  v4 = (gamemd::HouseTypeClass *)(aP1); /*0x51185e*/
   _EBX = v3; /*0x511861*/
   INIClass::ResetSection((INIClass *)aP1); /*0x511866*/
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)_EBX, (unsigned __int8 ***)aP1) ) /*0x51186e*/
@@ -196,7 +196,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   if ( strlen(Source) ) /*0x51189b*/
   {
     strcpy(&_EBX->q1A0, Source); /*0x5118c3*/
-    v4 = aP1; /*0x5118cc*/
+    v4 = (gamemd::HouseTypeClass *)(aP1); /*0x5118cc*/
   }
   INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aParentcountry, &_EBX->id, Source, 25); /*0x5118e2*/
   if ( Source ) /*0x5118ed*/
@@ -210,9 +210,9 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
   }
   if ( &Destination != &_EBX->buildtimeBuildingsMult ) /*0x51191a*/
   {
-    qmemcpy(&_EBX->buildtimeBuildingsMult, &Destination, 0x18u); /*0x511925*/
+    memcpy(&_EBX->buildtimeBuildingsMult, &Destination, 0x18u); /*0x511925*/
     *(unsigned char *)(_EBX + 176) = Destination.nextArrayIndex; /*0x511927*/
-    v4 = aP1; /*0x511928*/
+    v4 = (gamemd::HouseTypeClass *)(aP1); /*0x511928*/
   }
   _EBX->wallOwner = BuildingTypeClass::FindAnimByName( /*0x511942*/
                               (BuildingTypeClass *)v4,
@@ -556,7 +556,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
 }
 // 0x512170
 namespace gamemd {
-AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
+AbstractClass * * HouseTypeClass::ProcessPower(int * a2, void *a2_1)
 {
 
   int v3; // edx
@@ -836,7 +836,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
 }
 // 0x4756F0
 namespace gamemd {
-int HouseTypeClass::loadCountryData(uint8_t *a2, uint8_t *a3, int a4)
+int HouseTypeClass::loadCountryData(uint8_t *a2, uint8_t *a3, int a4, void *a4_1)
 {
   int result; // eax
   SideClass *v5; // eax
@@ -1185,7 +1185,7 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
 
 // 0x512B80
 namespace gamemd {
-VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2, void *a3_1)
+VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
   void *v3; // eax
@@ -1208,7 +1208,7 @@ VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2,
 
 // 0x512BD0
 namespace gamemd {
-unsigned int * HouseTypeClass::readStartInfantry(unsigned int * a2)
+unsigned int * HouseTypeClass::readStartInfantry(unsigned int * a2, void *a2_1)
 {
 
   void *v3; // eax
@@ -1329,7 +1329,7 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
 
 // 0x513340
 namespace gamemd {
-int HouseTypeClass_36::Read(unsigned int * a2, void *a2_2)
+int HouseTypeClass_36::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int m_10; // edx
   int result; // eax
@@ -1582,7 +1582,7 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * a2)
 
 // 0x513710
 namespace gamemd {
-int HouseTypeClass_28::Read(unsigned int * a2, void *a2_2)
+int HouseTypeClass_28::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int m_10; // edx
   int result; // eax

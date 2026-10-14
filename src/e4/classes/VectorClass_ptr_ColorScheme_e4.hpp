@@ -14,10 +14,10 @@ struct VectorClass_ptr_ColorScheme {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
 // --- flat members (END) ---
-    AbstractClass * *  SetCapacity_0(int a2, unsigned char * a3);  // 0x6288F0
+    AbstractClass * * SetCapacity_0(CCINIClass * aP1, unsigned char * a2);  // 0x6288F0
     int  Get(int a2, void *a1 = 0);  // 0x627D70
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x627E10
-    char  Constructor_VectorClass_HSVClass_(int a2, unsigned int * a3);  // 0x627E50
+    VectorClass_flat * Constructor_VectorClass_HSVClass_(unsigned int * Block, char a2);  // 0x627E50
     void Destroy_0();  // 0x628A40
     int  SetCapacity_1(int a2);  // 0x628A70
     unsigned int  GetItemIndex_0(int a2);  // 0x628AD0

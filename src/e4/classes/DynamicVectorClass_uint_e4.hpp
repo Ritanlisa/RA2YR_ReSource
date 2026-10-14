@@ -30,7 +30,7 @@ struct DynamicVectorClass_uint {
     char  Remove(int a2, unsigned int * a3);  // 0x42D780
     int  GetSize(unsigned int * a2);  // 0x42D880
     VectorClass_flat *  Destructor(char a2);  // 0x42DB10
-    DynamicVectorClass_uint *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x42DB60
+    DynamicVectorClass_uint * Add(unsigned int * Block, char a2, void *a3_1);  // 0x42DB60
     unsigned int  GetCapacity(int a2);  // 0x42D760
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)

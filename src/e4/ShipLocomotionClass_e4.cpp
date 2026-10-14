@@ -68,7 +68,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int v12; // edx
 
   v3 = (IStream *)pPStm; /*0x69ef16*/
-  v4 = a1; /*0x69ef1b*/
+  v4 = (gamemd::ShipLocomotionClass *)(a1); /*0x69ef1b*/
   IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x69ef27*/
   if ( IPersistStream < 0 ) /*0x69ef2b*/
     return IPersistStream; /*0x69ef2b*/
@@ -82,7 +82,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   v6 = *(unsigned int *)v3->IStream_field_00; /*0x69ef3c*/
   (*((unsigned char *)&(a3))) = 1; /*0x69ef48*/
   (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
-  Piggybackee = v4->Piggybackee; /*0x69ef50*/
+  Piggybackee = (gamemd::ILocomotion *)(v4->Piggybackee); /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
   if ( Piggybackee ) /*0x69ef5d*/
   {

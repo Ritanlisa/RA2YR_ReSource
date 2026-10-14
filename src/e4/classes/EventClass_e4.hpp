@@ -16,14 +16,14 @@ struct EventClass {
 // --- flat members (END) ---
     int serializeEvent(void *a1_1);  // 0x48B390
     int SetData(int a2, int a3, int a4, int a5, int a6);  // 0x48BAD0
-    void *  Add(int a2, uint8_t a3, int a4, char a5);  // 0x4C65E0
-    int AddEvent(int a2, uint8_t a3, void *a1 = 0);
-    int Add2(int a3, uint8_t aP1, int aP3, void *a1 = 0);
+    void * Add(AbstractClass * aP1, unsigned char a3, int a4, char a5);  // 0x4C65E0
+    int AddEvent(int a2, uint8_t a3, void *a3_1 = 0);
+    int Add2(int a3, uint8_t aP1, int aP3, void *a4 = 0);
     char * AddEventEx(int a2, uint8_t a3, int a4, int a5, int a6);  // G57w10-S raw 0x004C6970 IUnknown 占位清除
     int  Init(int a2, char a3, int a4, int a5, int a6, unsigned short * a7);  // 0x4C6AE0
     AbstractClass * * ProcessEvent();  // 0x4C6CB0
-    int deserializeEvent(int a2, unsigned int *a3);  // G57w10-S raw 0x00542280 IUnknown 占位清除
-    int  Enqueue(uint16_t a2, char a3);  // 0x54F200
+    int deserializeEvent(int a2, unsigned int *aP2);  // G57w10-S raw 0x00542280 IUnknown 占位清除
+    int Enqueue(unsigned short a2, char a3);  // 0x54F200
     int CheckFlag(void *a1 = 0);  // 0x5F19C0
     AbstractClass * * validateEventType();  // 0x664440
     SHORT GetKeyStateSafe(unsigned char nVirtKey);  // 0x53EC70
@@ -31,9 +31,9 @@ struct EventClass {
     char  processEvent(int a2, unsigned int * a3);  // 0x40B740
     char  validateEvent(int a2, unsigned int * a3);  // 0x40B880
     char  dispatchEvent(int a2, unsigned int * a3);  // 0x40B9A0
-    char  checkCondition(int a2, unsigned int * a3, void *a1 = 0);  // 0x40BAE0
+    char checkCondition(int a2, unsigned int * a3, void *a3_2);  // 0x40BAE0
     DynamicVector *  executeAction(char a2);  // 0x40BC10
-    unsigned int *  resetEvent(int a2, int a3, void *a1 = 0);  // 0x40BD00
+    unsigned int * resetEvent(int aP1, int aP2, void *a3 = 0);  // 0x40BD00
     VectorClass_flat *  queueEvent(char a2);  // 0x40C110
     char  clearEvents(int a2, unsigned int * a3);  // 0x40C410
     void finalizeEvent();  // 0x40BE10

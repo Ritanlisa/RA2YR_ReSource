@@ -30,8 +30,8 @@ void E4Recv_7AE830::sub_7AE830()
     vtable0 = (int *)this->AbstractClass; /*0x7ae850*/
     vtable3 = (char *)this->M12; /*0x7ae853*/
     v13 = (int *)this->AbstractClass; /*0x7ae856*/
-    this->M8 = (void *)(vtable2 >> 1); /*0x7ae85c*/
-    this->M12 = vtable3 - 1; /*0x7ae864*/
+    this->M8 = (unsigned int)((void *)(vtable2 >> 1)); /*0x7ae85c*/
+    this->M12 = (unsigned int)(vtable3 - 1); /*0x7ae864*/
     v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/
     v6 = 4 * (int)this->M8; /*0x7ae874*/
     this->AbstractClass = v5; /*0x7ae87b*/

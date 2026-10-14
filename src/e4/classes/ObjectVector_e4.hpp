@@ -9,7 +9,7 @@ struct ObjectVector {
 // --- flat members (BEGIN) ---
     bool IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int Construct(int aP1, int aP2, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+    int Construct(int aP1, int aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
      void ddtor(ObjectVector * aP1);
 
     uint8_t ObjectVector_field_0x0C;  // X10 supply (member_types)

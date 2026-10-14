@@ -32,7 +32,7 @@
 
 // 0x4A8BF0
 namespace gamemd {  // G42.18 ns repair
-int Mouse::SetBounds(const void *aP1)
+int Mouse::SetBounds(const void *aP1, void *a2)
 {
   int result; // eax
   int16_t v4; // cx
@@ -71,7 +71,7 @@ int Mouse::SetBounds(const void *aP1)
     (*((unsigned short *)&(aP1))) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
     (*(((unsigned short *)&(aP1)) + 1)) = (int16_t)(1 - (*(((unsigned short *)&(v7)) + 1))) / 2; /*0x4a8cd1*/
     v8 = (int16_t)aP1; /*0x4a8cd6*/
-    this->u32_1178 = aP1; /*0x4a8cda*/
+    this->u32_1178 = (unsigned int)(aP1); /*0x4a8cda*/
     (*((unsigned short *)&(v7))) = this->u32_117A + this->u32_1176; /*0x4a8cee*/
     (*((unsigned short *)&(aP1))) = v8 + this->u32_1174; /*0x4a8cf8*/
     (*(((unsigned short *)&(aP1)) + 1)) = v7; /*0x4a8cfd*/
@@ -82,7 +82,7 @@ int Mouse::SetBounds(const void *aP1)
 }  // G42.18 ns repair
 // 0x5BDC80
 namespace gamemd {
-int Mouse::SetCursor(int aP1, char aP2)
+int Mouse::SetCursor(int aP1, char aP2, void *a3)
 {
   int result; // eax
   char v5; // bl
@@ -184,7 +184,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
   int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v13 = (int)this; /*0x7b93f5*/
-  v5 = *&this->u32_4; /*0x7b93f9*/
+  v5 = (gamemd::MixFileClass *)(*&this->u32_4); /*0x7b93f9*/
   if ( v5 && aP1 && *(unsigned int *)&DataGlobal_87F6C8 ) /*0x7b9418*/
   {
     v6 = this->u32_50; /*0x7b942e*/
@@ -256,7 +256,7 @@ HWND Mouse::HideWindow()
 
   HWND result; // eax
 
-  result = dword_ABF240; /*0x5bc400*/
+  result = (HWND)(dword_ABF240); /*0x5bc400*/
   byte_ABF239 = 0; /*0x5bc409*/
   if ( dword_ABF240 ) /*0x5bc40f*/
   {

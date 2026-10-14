@@ -13,7 +13,7 @@ struct WDTState_4 {
 // --- flat members (END) ---
     AbstractClass * *  Release(int a2, unsigned int * a3);  // 0x76BA70
     int ddtor(void *a1 = 0);  // 0x76B710
-    int  Read(int a2, void *a1 = 0, void *a3 = 0);  // 0x76BB90
+    int Read(int a2, void *a2_2, void *a3 = 0);  // 0x76BB90
     DynamicVector *  QueryInterface(char a2);  // 0x76BC10
     unsigned int  Write(int a2);  // 0x76B740
     int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x76BC60

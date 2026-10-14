@@ -58,34 +58,33 @@ struct MapClass {
     MapClass * * GrowLayer(int a2, int a3, int a4);
     MapClass * * RemoveTriggerRef(AbstractClass * aP1, int a3);
     MapClass * Destru_vt04(char a2);
-    static MapClass *  SetObstruction(int16_t * a0, MapClass * aP1);
-    char CheckCellsBuildable(unsigned short *a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8, char a9);  // G57w10-S raw 0x0056E7C0 IUnknown 占位清除
+    MapClass *   SetObstruction(MapClass * aP1, void *a2 = 0);
+    ObjectClass * * CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8);  // G57w10-S raw 0x0056E7C0 IUnknown 占位清除
     ObjectClass * * LoadFileData();
     TechnoTypeClass * * PostProcessReveal(char a2);
     VectorClass_flat * * Destru_vt05();
     VectorClass_flat * InitCellVe_vt00(char a2);
     char InitCellVe_vt01(int a2);
     char InitCellVe_vt02(int a2, unsigned int * a3);
-    char  RevealCell(MouseClass * aP1);
+    char   RevealCell(void *a1 = 0);
     char isCellAccessible(int a2);
     char loadTheaterINI(INIClass * aP1, char * a2, int a4);
     int AllocateCellDataBuffer(int a2, char * a3);
-    int BuildTileConnectivityGraph(int a2, int a3, int a4);  // G57w10-S raw 0x0057A320 IUnknown 占位清除
+    int BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknown * aP3);  // G57w10-S raw 0x0057A320 IUnknown 占位清除
     int CalcVisibleCellRange(int a1, int a2, VectorClass_flat * aP2, int * a3);
     int Cleanup(int a1, int a2);
     int ClearCellOverlayFlag();
-    char ClearRegions(int16_t *a2);  // G57w10-S raw 0x0056DAE0 IUnknown 占位清除
+    int ClearRegions(IUnknown * aP1);  // G57w10-S raw 0x0056DAE0 IUnknown 占位清除
     int FindPassableNeighbor();
-    int  FindSubzoneConnectionIndex(unsigned short * a2);
+    int   FindSubzoneConnectionIndex(void *a1 = 0);
     int FreeAllCells(void *a1 = 0);
-    static int GetScrollMode(MapClass * aP1);
-    static int GetTileDataField14(short *a1);
+    int GetScrollMode(void *a1 = 0);
     int GetTileIndex(int16_t *aP1, int aP2, char aP3);
-    int  InitCellVe_vt04(unsigned int * a2);
+    int   InitCellVe_vt04(void *a1 = 0);
     int InitCellVe_vt06(int a2);
     int InitCellVector();
     int InitializeTileData(MapClass * aP1);
-    int IsAreaFree(int *a2, int a3);
+    int   IsAreaFree(int a3, void *a2 = 0);
     int IsCellPassable(int a1, int a2);
     int LoadTerrainData(MapClass * aP1);
     static int MarkForRedraw(int p0);  // x4:signals@0x4f42f0
@@ -96,12 +95,12 @@ struct MapClass {
     int RemoveCellReference(int a2);
     int RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9, void *a1 = 0);
     int ScrollOnce(AbstractClass * aP1);
-    int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2, void *a1 = 0);
+    int SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2, void *a3 = 0);
     int SetCellOverlayFlag();
     int SetScrollMode(int a2, int aP1, int a1, int aP2, int a3);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
-    static int TriggerEVA(int16_t *a1);  // G57w10-S raw 0x0057B790 IUnknown 占位清除
+    int  TriggerEVA(IUnknown * aP0);  // G57w10-S raw 0x0057B790 IUnknown 占位清除
     static int UnselectAll_ClearLimboLaunchers();
     static int UpdateLightingPostProcess();
     int isCellShrouded(uint16_t a2);
@@ -110,7 +109,7 @@ struct MapClass {
     unsigned int * AllocArrays();
     unsigned int * BuildSubzones();
     unsigned int * FastCellLookup(short * a2, int a3, char a4);
-    static unsigned int * FindPlacementCellsAlt(char *aP1, unsigned int *a2, int a3);  // G57w10-S raw 0x00703590 IUnknown 占位清除
+    unsigned int *  FindPlacementCellsAlt(IUnknown * aP2, void *a3, void *a3_1 = 0);  // G57w10-S raw 0x00703590 IUnknown 占位清除
     unsigned int * InitAllCells();
     unsigned int * SpiralSearch(void *a1);
     unsigned int * allocateMapBuffers();
@@ -122,12 +121,12 @@ struct MapClass {
     void * ClearShroud(HouseClass * aP1);
     int ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2);
     void Destru_vt07();
-    int FillRevealBuffer(unsigned short *a2, uint8_t *a3);  // G57w10-S raw 0x005683C0 IUnknown 占位清除
+    void FillRevealBuffer(MouseClass * aP1, IUnknown * aP2);  // G57w10-S raw 0x005683C0 IUnknown 占位清除
     void IncrementRedrawCounter();
     void InitCellVe_vt03();
     void allocateCellArrays();
     void checkCellBounds();
-    void ApplyTerrainDamage(MapClass *aP1, int16_t *a2);  // G57w10-S raw 0x00574C20 IUnknown 占位清除
+    void* ApplyTerrainDamage(IUnknown *a1, IUnknown);  // G57w10-S raw 0x00574C20 IUnknown 占位清除
     void* Destruct(void *a1 = 0);
     void*  InitTileData(MouseClass * aP0, int aP3);
     static int RevealArea1(MapClass *aP1, int *a2, int a3, void *a4, char a5, int a6, char a7, char a8, char a9);

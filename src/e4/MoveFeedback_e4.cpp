@@ -48,13 +48,13 @@ int MoveFeedback::ProcessCommand()
   g_MoveFeedback = 0; /*0x7327ec*/
   if ( DataGlobal_B0FE64 ) /*0x7327f5*/
   {
-    result = __2_YAPAXI_Z(0x18u); /*0x7327fb*/
+    result = (int)(__2_YAPAXI_Z(0x18u)); /*0x7327fb*/
     v3 = result; /*0x732800*/
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x732814*/
+      *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x732814*/
       v3->CapacityIncrement = 10; /*0x73281a*/
       v3->Count = 0; /*0x732821*/
     }
@@ -98,7 +98,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x7328a8*/
+      *(unsigned int *)v3 = (unsigned int)(&vt_DynamicVectorClass); /*0x7328a8*/
       v3->CapacityIncrement = 10; /*0x7328ae*/
       v3->Count = 0; /*0x7328b5*/
     }
@@ -171,7 +171,7 @@ char MoveFeedback::AddRef(int a2)
 } // namespace gamemd
 // 0x40BB90
 namespace gamemd {
-int MoveFeedback::Draw(unsigned int * a2)
+int MoveFeedback::Draw(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
   int m_10; // edx
   int result; // eax

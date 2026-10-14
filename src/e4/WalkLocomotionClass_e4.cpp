@@ -72,7 +72,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = v5->q00C; /*0x6a03dd*/
-      v9 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12); /*0x6a03e4*/
+      v9 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v12)); /*0x6a03e4*/
       if ( !(uint8_t)CrateClass::ProcessPickup((CrateClass *)v9, v11) || *(unsigned char *)(v5->q00C + 129) ) /*0x6a03f7*/
       {
         (*((unsigned char *)&(v4))) = *(unsigned char *)(v5->q00C + 144); /*0x6a043d*/
@@ -124,7 +124,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   int v24; // [esp+24h] [ebp-8h]
   unsigned int v25; // [esp+28h] [ebp-4h]
 
-  v4 = a1; /*0x6a3f55*/
+  v4 = (gamemd::ShipLocomotionClass *)(a1); /*0x6a3f55*/
   v5 = (int *)(*(int (__stdcall **)(ShipLocomotionClass *, unsigned int *))(*(unsigned int *)a1->0 + 24))(a1, v21); /*0x6a3f62*/
   v6 = *v5; /*0x6a3f65*/
   v7 = v5[1]; /*0x6a3f67*/
@@ -147,13 +147,13 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
         if ( v12 > -1 ) /*0x6a3fd3*/
         {
           v13 = dword_7F2960[v11] + 12 * v12; /*0x6a3fdc*/
-          a1 = *(ShipLocomotionClass **)(v13 + 8); /*0x6a3fe2*/
+          a1 = (int)(*(ShipLocomotionClass **)(v13 + 8)); /*0x6a3fe2*/
           if ( v4->TrackNumber < v12 ) /*0x6a3feb*/
           {
             v14 = *(unsigned int *)(v13 + 4); /*0x6a3ff3*/
             v20[0] = *(unsigned int *)v13; /*0x6a3ff6*/
             v20[1] = v14; /*0x6a3fff*/
-            v15 = WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1); /*0x6a4011*/
+            v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1)); /*0x6a4011*/
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
             location = v4->Owner->location; /*0x6a401e*/
@@ -234,7 +234,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int v12; // edx
 
   v3 = (IStream *)pPStm; /*0x75c706*/
-  v4 = a1; /*0x75c70b*/
+  v4 = (gamemd::WalkLocomotionClass *)(a1); /*0x75c70b*/
   IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x75c717*/
   if ( IPersistStream < 0 ) /*0x75c71b*/
     return IPersistStream; /*0x75c71b*/
@@ -248,7 +248,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   v6 = *(unsigned int *)v3->IStream_field_00; /*0x75c72c*/
   LOBYTE(a3) = 1; /*0x75c738*/
   (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x75c73d*/
-  Piggybackee = v4->Piggybackee; /*0x75c740*/
+  Piggybackee = (gamemd::ILocomotion *)(v4->Piggybackee); /*0x75c740*/
   pPStm = 0; /*0x75c743*/
   if ( Piggybackee ) /*0x75c74d*/
   {
@@ -295,7 +295,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   *(unsigned int *)this->LocomotionClass = &vt_WalkLocomotionClass; /*0x75cbe3*/
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbe9) */
   /* X11: vtable install elided (implicit via WalkLocomotionClass virtuals 0x75cbf0) */
-  Piggybackee = this->Piggybackee; /*0x75cbf7*/
+  Piggybackee = (gamemd::ILocomotion *)(this->Piggybackee); /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x75cc06*/

@@ -84,7 +84,7 @@ DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, in
   int v61; // [esp+28h] [ebp-10h]
   unsigned char v62[12]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  TEventClass_field_2C = this->TEventClass_field_2C; /*0x71e94d*/
+  TEventClass_field_2C = (int)(this->TEventClass_field_2C); /*0x71e94d*/
   switch ( TEventClass_field_2C ) /*0x71e964*/
   {
     case 13: /*0x71e964*/
@@ -147,7 +147,7 @@ LABEL_39:
       a6 = -1; /*0x71e975*/
       if ( stru_A8EB00.ObjectTypeClass[4] - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      TEventClass_field_38 = this->TEventClass_field_38; /*0x71e982*/
+      TEventClass_field_38 = (int *)(this->TEventClass_field_38); /*0x71e982*/
       v13 = stru_A8EB00.ObjectTypeClass[1] + 4 * v11; /*0x71e985*/
       while ( strcmp((const char *)(*(unsigned int *)v13 + 36), (const char *)TEventClass_field_38) ) /*0x71e9bb*/
       {
@@ -167,7 +167,7 @@ LABEL_8:
         goto LABEL_139; /*0x71e9db*/
       v14 = 0; /*0x71e9eb*/
       v15 = *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v10); /*0x71e9ed*/
-      TEventClass_field_34 = this->TEventClass_field_34; /*0x71e9f5*/
+      TEventClass_field_34 = (int)(this->TEventClass_field_34); /*0x71e9f5*/
       v17 = *(unsigned int *)&stru_A8EB00.?[164] - 1; /*0x71e9f8*/
       if ( *(unsigned int *)&stru_A8EB00.?[164] - 1 < 0 ) /*0x71e9fd*/
         goto LABEL_139; /*0x71e9fd*/
@@ -190,7 +190,7 @@ LABEL_8:
       a6 = -1; /*0x71ea3a*/
       if ( stru_A8EB00.ObjectTypeClass[4] - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
-      v21 = this->TEventClass_field_38; /*0x71ea47*/
+      v21 = (int *)(this->TEventClass_field_38); /*0x71ea47*/
       v22 = stru_A8EB00.ObjectTypeClass[1] + 4 * v20; /*0x71ea4a*/
       while ( strcmp((const char *)(*(unsigned int *)v22 + 36), (const char *)v21) ) /*0x71ea80*/
       {
@@ -346,7 +346,7 @@ LABEL_139:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, &v59, this->TEventClass_field_34); /*0x71eddb*/
+            WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)dword_A8B230, &v59, this->TEventClass_field_34)); /*0x71eddb*/
             v33 = *WorldCoords; /*0x71ede0*/
             v34 = WorldCoords[1]; /*0x71ede6*/
             v35 = WorldCoords[2]; /*0x71edeb*/
@@ -590,7 +590,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v8; // [esp-8h] [ebp-10h]
   int TEventClass_field_34; // [esp-4h] [ebp-Ch]
 
-  TEventClass_field_2C = this->TEventClass_field_2C; /*0x71f390*/
+  TEventClass_field_2C = (int)(this->TEventClass_field_2C); /*0x71f390*/
   switch ( TEventClass_field_2C ) /*0x71f3a8*/
   {
     case 1: /*0x71f3a8*/
@@ -659,12 +659,12 @@ int TEventClass::PrepareSaveToINI(const char * a2)
       v3 = 0; /*0x71f3fc*/
       break; /*0x71f3fc*/
   }
-  TEventClass_field_30 = this->TEventClass_field_30; /*0x71f3fe*/
+  TEventClass_field_30 = (int)(this->TEventClass_field_30); /*0x71f3fe*/
   if ( TEventClass_field_30 ) /*0x71f403*/
   {
     TEventClass_field_34 = TEventClass_field_30 + 36; /*0x71f408*/
     v8 = 1; /*0x71f409*/
-    v7 = this->TEventClass_field_2C; /*0x71f40b*/
+    v7 = (int)(this->TEventClass_field_2C); /*0x71f40b*/
     v6 = aDDS; /*0x71f40c*/
   }
   else
@@ -677,10 +677,10 @@ int TEventClass::PrepareSaveToINI(const char * a2)
                2,
                this->TEventClass_field_34,
                this->TEventClass_field_38);
-    TEventClass_field_34 = this->TEventClass_field_34; /*0x71f446*/
+    TEventClass_field_34 = (int)(this->TEventClass_field_34); /*0x71f446*/
     v8 = 0; /*0x71f447*/
-    v7 = this->TEventClass_field_2C; /*0x71f449*/
-    v6 = g_Str_Trace__d__d; /*0x71f44a*/
+    v7 = (int)(this->TEventClass_field_2C); /*0x71f449*/
+    v6 = (const CHAR *)(g_Str_Trace__d__d); /*0x71f44a*/
   }
   return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, TEventClass_field_34); /*0x71f441*/
 }
@@ -692,7 +692,7 @@ int TEventClass::CheckConditions(int a2, int a3)
 
   int result; // eax
 
-  result = this->TEventClass_field_28; /*0x71f800*/
+  result = (int)(this->TEventClass_field_28); /*0x71f800*/
   if ( result == a2 ) /*0x71f809*/
   {
     result = result->TEventClass_field_28; /*0x71f80b*/
@@ -719,7 +719,7 @@ void * TEventClass::Fire(void ** Block, char a2)
   Block->u32_8 = &vt_TEventClass; /*0x71fa93*/
   Block->? = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
-  v7 = Block; /*0x71fab6*/
+  v7 = (gamemd::TEventClass *)(Block); /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
          &v7);
@@ -733,7 +733,7 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v3; /*0x71fadd*/
     }
   }
-  v7 = Block; /*0x71faff*/
+  v7 = (gamemd::TEventClass *)(Block); /*0x71faff*/
   v4 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x71fb03*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
@@ -748,7 +748,7 @@ void * TEventClass::Fire(void ** Block, char a2)
       ++v4; /*0x71fb26*/
     }
   }
-  v7 = Block; /*0x71fb48*/
+  v7 = (gamemd::TEventClass *)(Block); /*0x71fb48*/
   v5 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.?[50] + 16))( /*0x71fb4c*/
          &g_BuildingLoadQueue_Array.?[50],
          &v7);
@@ -781,14 +781,14 @@ int TEventClass::ProcessEvent(int a2)
   int v6; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x71f829*/
-  TEventClass_field_28 = this->TEventClass_field_28; /*0x71f82e*/
+  TEventClass_field_28 = (int)(this->TEventClass_field_28); /*0x71f82e*/
   if ( TEventClass_field_28 ) /*0x71f833*/
   {
     v4 = (*(int (**)(int))(*(unsigned int *)(TEventClass_field_28 + 4) + 16))(TEventClass_field_28 + 4); /*0x71f83c*/
     Power::TimerProcess(v4); /*0x71f842*/
   }
   Power::TimerProcess(this->TEventClass_field_2C); /*0x71f84d*/
-  TEventClass_field_30 = this->TEventClass_field_30; /*0x71f852*/
+  TEventClass_field_30 = (int)(this->TEventClass_field_30); /*0x71f852*/
   if ( TEventClass_field_30 ) /*0x71f857*/
   {
     v6 = (*(int (**)(int))(*(unsigned int *)(TEventClass_field_30 + 4) + 16))(TEventClass_field_30 + 4); /*0x71f860*/
@@ -872,6 +872,6 @@ int TEventClass::StubReturn48()
 namespace gamemd {
 int TEventClass::Stub()
 {
-  return this->eventType; /*0x71fa73*/
+  return (int)(this->eventType); /*0x71fa73*/
 }
 } // namespace gamemd

@@ -46,7 +46,7 @@ int Buffer::CreateDirectSound()
   int v23; // [esp+44h] [ebp-8h]
   unsigned short *v24; // [esp+48h] [ebp-4h]
 
-  v1 = (unsigned int *)((int *)this->u32_158);
+  v1 = (int *)((unsigned int *)((int *)this->u32_158));
   v2 = *(unsigned int **)(this->u32_168 + 20); /*0x40a352*/
   if ( !v2 ) /*0x40a35e*/
     v2 = (unsigned int *)(this->u32_AC + 68); /*0x40a366*/

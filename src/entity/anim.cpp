@@ -76,7 +76,7 @@ AnimClass::AnimClass(AnimTypeClass* pType, const CoordStruct& coords,
         location = coords;
     }
 
-    abstractFlags = kAnimFlag;
+    abstractFlags = (void *)(kAnimFlag);
 }
 
 // ============================================================================

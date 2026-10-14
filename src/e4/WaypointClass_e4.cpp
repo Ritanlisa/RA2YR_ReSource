@@ -44,7 +44,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   {
     if ( !*v2 ) /*0x50219f*/
     {
-      v5 = __2_YAPAXI_Z(0x40u); /*0x5021a7*/
+      v5 = (int)(__2_YAPAXI_Z(0x40u)); /*0x5021a7*/
       if ( v5 ) /*0x5021b1*/
         v6 = WaypointPathClass::Construct(v5, v4); /*0x5021b6*/
       else
@@ -64,7 +64,7 @@ LABEL_13:
       v13 = this->padding_18[113]; /*0x502233*/
       if ( !this->padding_18[v13 + 114] ) /*0x502239*/
       {
-        v14 = __2_YAPAXI_Z(0x40u); /*0x502246*/
+        v14 = (int)(__2_YAPAXI_Z(0x40u)); /*0x502246*/
         if ( v14 ) /*0x502250*/
           v15 = WaypointPathClass::Construct(v14, v13); /*0x502255*/
         else
@@ -83,7 +83,7 @@ LABEL_13:
     {
       result = v16; /*0x502205*/
       if ( v16 != this->padding_18[113] ) /*0x50220f*/
-        return result; /*0x50227c*/
+        return (gamemd::WaypointPathClass **)(result); /*0x50227c*/
     }
     v7 = (Array *)*v2; /*0x502211*/
     if ( ++v8 >= *(unsigned int *)(*v2 + 56) ) /*0x502218*/

@@ -9,6 +9,6 @@ struct VectorClass_ptr_InfantryClass {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
 // --- flat members (END) ---
-    void Remove(void *a1_1, void *a1 = 0);  // 0x45A4D0
+    void Remove(void *a1_1, void *a2 = 0);  // 0x45A4D0
 };
 } // namespace gamemd

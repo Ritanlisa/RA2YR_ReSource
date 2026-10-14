@@ -30,7 +30,7 @@ namespace gamemd {
 
 // 0x431F10
 namespace gamemd {  // G42.18 ns repair
-char File::IsReady(int a2)
+char File::IsReady(int a2, void *a2_1)
 {
 
   int result; // eax
@@ -94,11 +94,11 @@ AbstractClass * File::LoadFont(char *Source)
       {
   LABEL_35:
         (*(void (**)(unsigned int *, int))*v6)(v6, 1); /*0x433bee*/
-        return v3; /*0x433bf4*/
+        return (gamemd::AbstractClass *)(v3); /*0x433bf4*/
       }
       memset(v3, 0, 0x24u); /*0x433a04*/
       v7 = (void *)operator new(0x20000u); /*0x433a0b*/
-      v3[6] = v7; /*0x433a12*/
+      v3[6] = (unsigned int)(v7); /*0x433a12*/
       if ( v7 ) /*0x433a15*/
       {
         memset(v7, 0, 0x20000u); /*0x433a22*/
@@ -181,7 +181,7 @@ AbstractClass * File::LoadFont(char *Source)
                     --v21; /*0x433ba3*/
                   }
                   while ( v21 ); /*0x433ba4*/
-                  v22 = operator new(v20); /*0x433ba7*/
+                  v22 = (int)(operator new(v20)); /*0x433ba7*/
                   v3[7] = v22; /*0x433bb1*/
                   if ( v22 && v6->vt_slot_36(v22, v20) == v20 ) /*0x433bc1*/
                     goto LABEL_35; /*0x433bc1*/
@@ -200,7 +200,7 @@ AbstractClass * File::LoadFont(char *Source)
       goto LABEL_35; /*0x433bec*/
     }
   }
-  return v3; /*0x433bf8*/
+  return (gamemd::AbstractClass *)(v3); /*0x433bf8*/
 }
 }
 // 0x4CB920
@@ -240,7 +240,7 @@ char File::Dispatch()
 }
 // 0x5BD570
 namespace gamemd {
-unsigned int * File::LoadFileHVA(int a2)
+unsigned int * File::LoadFileHVA(int a2, void *a2_1)
 {
 
   this->__pad_000 = 0; /*0x5bd575*/
@@ -249,7 +249,7 @@ unsigned int * File::LoadFileHVA(int a2)
   *&this->__pad_00C = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA((int)this, a2) ) /*0x5bd585*/
     this->__pad_000 = 1; /*0x5bd58e*/
-  return this->__pad_000; /*0x5bd593*/
+  return (unsigned int *)(this->__pad_000); /*0x5bd593*/
 
 }
 }
@@ -310,7 +310,7 @@ LABEL_14:
           v9 = (const void *)Matrix::Copy12Float(v15); /*0x5bd6a8*/
           v10 = (void *)(aP1->__pad_00C + 48 * (v8 + v11 * *&aP1->q004)); /*0x5bd6c7*/
           ++v8; /*0x5bd6c9*/
-          qmemcpy(v10, v9, 0x30u); /*0x5bd6ca*/
+          memcpy(v10, v9, 0x30u); /*0x5bd6ca*/
           v3 = aP1; /*0x5bd6cf*/
           if ( v8 >= aP1->q004 ) /*0x5bd6d8*/
             goto LABEL_14; /*0x5bd6d8*/
@@ -325,7 +325,7 @@ LABEL_14:
       {
 LABEL_15:
         (*(void (**)(int))(*(unsigned int *)v3 + 52))(v3); /*0x5bd6ea*/
-        return 1; /*0x5bd6f4*/
+        return (gamemd::AbstractClass **)(1); /*0x5bd6f4*/
       }
     }
     else
@@ -335,7 +335,7 @@ LABEL_15:
       return 0; /*0x5bd65f*/
     }
   }
-  return result; /*0x5bd5f2*/
+  return (gamemd::AbstractClass **)(result); /*0x5bd5f2*/
 
 }
 }
@@ -370,19 +370,19 @@ File * * File::LoadPaletteData(unsigned short *aP1)
   *&this->q004 = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
   if ( v15 <= 0 ) /*0x625b40*/
-    return (u_short *)this; /*0x625bf4*/
+    return (gamemd::File **)((u_short *)this); /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
-    v7 = __2_YAPAXI_Z(0x10u); /*0x625b50*/
+    v7 = (int)(__2_YAPAXI_Z(0x10u)); /*0x625b50*/
     v8 = *(unsigned int *)v5; /*0x625b55*/
     v9 = v7; /*0x625b57*/
-    v10 = v5 + 4; /*0x625b5c*/
+    v10 = (unsigned int *)(v5 + 4); /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
     v11 = (unsigned __int16)ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
     v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
     v9->ptr_8 = v12; /*0x625b8a*/
-    qmemcpy(v12, v10, v11); /*0x625b90*/
+    memcpy(v12, v10, v11); /*0x625b90*/
     v13 = -(ntohs(v9->__pad_6) & 3) & 3; /*0x625baf*/
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
     v15 += -8 - v13 - v11; /*0x625bcc*/
@@ -394,7 +394,7 @@ File * * File::LoadPaletteData(unsigned short *aP1)
       break; /*0x625be4*/
     v5 = v17; /*0x625b4a*/
   }
-  return result; /*0x625bec*/
+  return (gamemd::File **)(result); /*0x625bec*/
 
 }
 }
@@ -471,7 +471,7 @@ LABEL_42:
       Vector::Clear((int)v24); /*0x734cc3*/
       *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734ccc*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734cd4*/
-      return 1; /*0x734ce8*/
+      return (gamemd::AbstractClass **)(1); /*0x734ce8*/
     }
     v1 = 0; /*0x734a04*/
     v21 = 0; /*0x734a06*/
@@ -512,7 +512,7 @@ LABEL_42:
           }
           dword_B17F24[v7] = 0; /*0x734b1e*/
           v8 = *(unsigned int *)dword_B17F24; /*0x734b26*/
-          v9 = dword_B17F24; /*0x734b2e*/
+          v9 = (wchar_t *)(dword_B17F24); /*0x734b2e*/
           if ( dword_B17F24[0] ) /*0x734b33*/
           {
             do /*0x734b44*/
@@ -527,8 +527,8 @@ LABEL_42:
           }
           v10 = 0; /*0x734b4b*/
           v11 = 1; /*0x734b50*/
-          v12 = dword_B17F24; /*0x734b55*/
-          v13 = dword_B17F24 + 2; /*0x734b5a*/
+          v12 = (wchar_t *)(dword_B17F24); /*0x734b55*/
+          v13 = (unsigned short *)(dword_B17F24 + 2); /*0x734b5a*/
           if ( (unsigned short)v8 ) /*0x734b5f*/
           {
             while ( 1 ) /*0x734b61*/
@@ -563,7 +563,7 @@ LABEL_31:
           }
           *v12 = 0; /*0x734bb4*/
           v14 = wcslen(dword_B17F24); /*0x734bbc*/
-          *(unsigned int *)((char *)dword_B1CF78 + v6) = __2_YAPAXI_Z(2 * v14 + 2); /*0x734bd6*/
+          *(unsigned int *)((char *)dword_B1CF78 + v6) = (unsigned int)(__2_YAPAXI_Z(2 * v14 + 2)); /*0x734bd6*/
           wcscpy(*(wchar_t **)((char *)dword_B1CF78 + v6), dword_B17F24); /*0x734be3*/
           if ( v18 == 1398035031 ) /*0x734bf4*/
           {
@@ -577,7 +577,7 @@ LABEL_31:
             byte_B1BF38[v15] = 0; /*0x734c23*/
             if ( v15 ) /*0x734c29*/
             {
-              *(unsigned int *)((char *)dword_B1CF7C + v6) = __2_YAPAXI_Z(v15 + 1); /*0x734c43*/
+              *(unsigned int *)((char *)dword_B1CF7C + v6) = (unsigned int)(__2_YAPAXI_Z(v15 + 1)); /*0x734c43*/
               strcpy(*(char **)((char *)dword_B1CF7C + v6), byte_B1BF38); /*0x734c5e*/
             }
           }
@@ -607,7 +607,7 @@ LABEL_43:
 }
 // 0x755CD0
 namespace gamemd {
-unsigned int * File::LoadFileVXL(int a2, int a3)
+unsigned int * File::LoadFileVXL(int a2, int a3, void *a3_1)
 {
 
   this->__pad_000 = 0; /*0x755cd9*/
@@ -619,7 +619,7 @@ unsigned int * File::LoadFileVXL(int a2, int a3)
   *&this->ptr_18 = 0; /*0x755cea*/
   if ( !Voxel::SortDepth((int)this, a2, a3) ) /*0x755cf5*/
     this->__pad_000 = 1; /*0x755cfe*/
-  return this->__pad_000; /*0x755d03*/
+  return (unsigned int *)(this->__pad_000); /*0x755d03*/
 
 }
 }
@@ -648,16 +648,16 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   this->u32_34 = 0; /*0x76aca1*/
   this->u32_E0 = 1; /*0x76aca4*/
   this->u32_E4 = 0; /*0x76aca8*/
-  this->__pad_02C = &vt_DynamicVectorClassrc_ptr; /*0x76acab*/
-  this->q040 = 10; /*0x76acb2*/
+  this->__pad_02C = (unsigned char)(&vt_DynamicVectorClassrc_ptr); /*0x76acab*/
+  this->q040 = (gamemd::AbstractClass *)(10); /*0x76acb2*/
   this->u32_3C = 0; /*0x76acb9*/
   /* X11: vtable install elided (implicit via WDTState virtuals 0x76acbe) */
   v3 = (File *)operator new(0xCu); /*0x76acc4*/
   if ( v3 ) /*0x76acce*/
-    PaletteData = File::LoadPaletteData(v3, aP1); /*0x76acdc*/
+    PaletteData = (gamemd::u_short *)(File::LoadPaletteData(v3, aP1)); /*0x76acdc*/
   else
     PaletteData = 0; /*0x76ace0*/
-  v5 = &this->__pad_01C; /*0x76ace6*/
+  v5 = (char *)(&this->__pad_01C); /*0x76ace6*/
   v13 = 0; /*0x76acf2*/
   v14 = 0; /*0x76acf6*/
   Size = 0; /*0x76acfa*/
@@ -690,7 +690,7 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
       v6 = *(unsigned int *)v5; /*0x76ad4e*/
       this->q048 = 1; /*0x76ad50*/
       *(unsigned int *)v5 = ++v6; /*0x76ad55*/
-      this->ptr_24 = v6; /*0x76ad59*/
+      this->ptr_24 = (gamemd::AbstractClass *)(v6); /*0x76ad59*/
     }
     else
     {
@@ -706,11 +706,11 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
     if ( !this->q048 ) /*0x76adbd*/
       HashTable::FindChunk((HashTable *)PaletteData, aMpvc, 0, &v13); /*0x76adcf*/
     HashTable::FindChunk((HashTable *)PaletteData, aHsvc, 0, &v14); /*0x76ade1*/
-    this->ptr_8 = operator new(Size); /*0x76adf0*/
-    v7 = operator new(v16); /*0x76adf8*/
+    this->ptr_8 = (gamemd::AbstractClass *)(operator new(Size)); /*0x76adf0*/
+    v7 = (int)(operator new(v16)); /*0x76adf8*/
     v17 = v17; /*0x76adfd*/
     this->__pad_00C = v7; /*0x76ae01*/
-    v9 = operator new(v17); /*0x76ae05*/
+    v9 = (int)(operator new(v17)); /*0x76ae05*/
     v14 = v14; /*0x76ae0a*/
     this->q004 = v9; /*0x76ae0e*/
     Block = (void *)operator new(v14); /*0x76ae17*/

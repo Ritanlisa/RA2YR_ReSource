@@ -23,9 +23,7 @@ struct AbstractTypeClass {
     bool NeedsSaveOrLink;  // 0x20
     bool needsSave;  // 0x32
     unsigned char zero_3C;  // 0x3C
-    char UINameLabel;  // 0x3D
     void *q60;  // 0x60
-    char Name;  // 0x64
     unsigned char tail_95;  // 0x95
 // --- flat members (END) ---
     char UINameLabel[32];  // 0x3D char[32] ml g7-til-merge (G57w4)
@@ -35,15 +33,15 @@ struct AbstractTypeClass {
     void* houseTypesCount;  // 0x0 (no offset truth)
     AbstractTypeClass * ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1);
     BOOL NameEquals(void *a2);
-    char WriteINI(char *aP1, void *a1 = 0);
+    char WriteINI(char *aP1, void *a2 = 0);
     int AddSampleVocClass();
-    int Constructor(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    int Constructor(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int Dtor(void *a1 = 0);
     int GetData(void *a1);
     int GetType(int a1);
-    int Init(int aP1, void *a1 = 0);
-    int LoadFromINI(uint8_t ***aP1, void *a1 = 0);
-    int ProcessPower(int *aP1, void *a1 = 0);
+    int Init(int aP1, void *a2 = 0);
+    int LoadFromINI(uint8_t ***aP1, void *a2 = 0);
+    int ProcessPower(int *aP1, void *a2 = 0);
     int SetType();
     int StubReturnFalse();
     int Validate();

@@ -18,7 +18,7 @@ struct MSEngine {
     CampaignClass * Destructor(void *a1 = 0);  // 0x5CEE60
     CampaignClass * Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);  // 0x5D1AA0
     CampaignClass * Destruct(void *a1 = 0);  // 0x5D1B30
-    int  ProcessEvents(char a2, int a3);  // 0x5D1DF0
+    int ProcessEvents(char aP1, int a3);  // 0x5D1DF0
     CampaignClass * ClearBuffer(void *a1_1);  // 0x5AC520
     unsigned int *  Shutdown(unsigned int * a2, int a3);  // 0x5AC570
     char  AddRef(int a2);  // 0x5ACCC0
@@ -26,7 +26,7 @@ struct MSEngine {
     CampaignClass *  Init(unsigned int * a2, void *a1 = 0);  // 0x5ACE50
     int  FindItem(unsigned int * a2);  // 0x5ACFC0
     VectorClass_flat *  QueryInterface(char a2);  // 0x5AD4D0
-    CampaignClass *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x5AD520
+    CampaignClass * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x5AD520
     unsigned int  PointerToIndex(int a2);  // 0x5AC550
     unsigned int  Run(int a2);  // 0x5ACEB0
     void DestroyData(void *a1_1);  // 0x5D5850

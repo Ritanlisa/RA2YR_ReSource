@@ -20,7 +20,7 @@
 
 // 0x52B620
 namespace gamemd {  // G42.18 ns repair
-int SortedArray::BinarySearch(int *aP1)
+int SortedArray::BinarySearch(int *aP1, void *a2)
 {
 
   int result; // eax
@@ -82,7 +82,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   if ( this->u32_10 + 1 <= v4 ) /*0x5387e0*/
   {
   LABEL_9:
-    *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10) = *aP1; /*0x53885b*/
+    *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10) = (unsigned int)(*aP1); /*0x53885b*/
     *(unsigned int *)(((unsigned int)(this->u32_20)) * this->u32_10 + 4) = *a2; /*0x538875*/
     v11 = this->u32_10 + 1; /*0x53887c*/
     *&this->u32_C = 0; /*0x53887d*/
@@ -110,7 +110,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
     }
     operator delete((void *)(*(void **)this)); /*0x538842*/
     v10 = this->u32_20; /*0x538847*/
-    *(unsigned int *)this = v6; /*0x53884f*/
+    *(unsigned int *)this = (unsigned int)(v6); /*0x53884f*/
     this->u32_20 = v5 + v10; /*0x538851*/
     *&this->q040 = 0; /*0x538854*/
     goto LABEL_9; /*0x538854*/
@@ -147,7 +147,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   }
   v4 = this->u32_4; /*0x5388d9*/
   v5 = *(unsigned int **)this; /*0x5388e0*/
-  v15 = *aP1; /*0x5388e4*/
+  v15 = (int)(*aP1); /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -163,7 +163,7 @@ LABEL_9:
   }
   if ( v6 != v15 ) /*0x538907*/
   {
-    v5 = v7 + 8; /*0x538909*/
+    v5 = (unsigned int *)(v7 + 8); /*0x538909*/
     v4 += -1 - v4 / 2; /*0x538911*/
     goto LABEL_9; /*0x538911*/
   }
@@ -184,7 +184,7 @@ LABEL_9:
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
   this->u32_10 = 0; /*0x538966*/
-  return 1; /*0x538917*/
+  return (gamemd::ObjectClass **)(1); /*0x538917*/
 
 }
 } // namespace gamemd
@@ -204,7 +204,7 @@ int SortedArray::FindPair(int * a2)
   v3 = this->u32_4; /*0x538985*/
   if ( !v3 ) /*0x53898b*/
     return 0; /*0x53898b*/
-  v4 = *&this->u32_10; /*0x53898d*/
+  v4 = (unsigned int *)(*&this->u32_10); /*0x53898d*/
   if ( v4 && *v4 == *a2 ) /*0x53899e*/
     return 1; /*0x5389a6*/
   if ( !this->u32_C ) /*0x5389a9*/
@@ -231,13 +231,13 @@ LABEL_12:
   }
   if ( v9 != v7 ) /*0x5389ee*/
   {
-    v8 = v10 + 8; /*0x5389f0*/
+    v8 = (unsigned int *)(v10 + 8); /*0x5389f0*/
     v6 += -1 - v6 / 2; /*0x5389f8*/
     goto LABEL_12; /*0x5389f8*/
   }
   if ( !v10 ) /*0x538a09*/
     return 0; /*0x538a04*/
-  this->u32_10 = v10; /*0x538a0d*/
+  this->u32_10 = (unsigned int)(v10); /*0x538a0d*/
   return 1; /*0x5389a0*/
 
 }

@@ -120,7 +120,7 @@ int SessionClass::initInternet()
   v3 = (IPXConnClass *)operator new(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = dword_A8DA78; /*0x540e93*/
+    v4 = (unsigned int *)(dword_A8DA78); /*0x540e93*/
     v5 = this->unknown_14[0]; /*0x540e9a*/
     v6 = CharToWideString(aMulticast); /*0x540ea4*/
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
@@ -142,7 +142,7 @@ int SessionClass::initInternet()
   if ( result ) /*0x540ed0*/
   {
     (*(void (**)(int))(*(unsigned int *)result + 4))(result); /*0x540ed8*/
-    *(unsigned int *)(*(unsigned int *)this->__pad_050 + 40) = *&this->q058; /*0x540ee1*/
+    *(unsigned int *)(*(unsigned int *)this->__pad_050 + 40) = (unsigned int)(*&this->q058); /*0x540ee1*/
     *(unsigned int *)(*(unsigned int *)this->__pad_050 + 44) = *&this->q05C; /*0x540eea*/
     *(unsigned int *)(*(unsigned int *)this->__pad_050 + 48) = *&this->q060; /*0x540ef8*/
     return 1; /*0x540ef3*/
@@ -190,7 +190,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
           {
             v7 = off_844BB4[0]; /*0x72b420*/
             if ( v6 != 1 ) /*0x72b433*/
-              v7 = off_844BB8; /*0x72b435*/
+              v7 = (char *)(off_844BB8); /*0x72b435*/
             LoadPaletteSimple(v7, &dword_B0FB84, &dword_B0FB88); /*0x72b43b*/
           }
           else
@@ -200,11 +200,11 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
         }
         result = (unsigned int *)dword_B0FB90; /*0x72b440*/
         if ( !dword_B0FB90 ) /*0x72b448*/
-          return (unsigned int *)LoadPaletteSimple(off_844BBC, &dword_B0FB8C, &dword_B0FB90); /*0x72b45a*/
+          return (gamemd::MixFileClass *)((unsigned int *)LoadPaletteSimple(off_844BBC, &dword_B0FB8C, &dword_B0FB90)); /*0x72b45a*/
       }
     }
   }
-  return result; /*0x552d5d*/
+  return (gamemd::MixFileClass *)(result); /*0x552d5d*/
 
 }
 } // namespace gamemd
@@ -233,7 +233,7 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
   }
   Debug::Log(); /*0x5adf84*/
   String::Assign((String *)&v13.ptr_4, (const char *)(v4 + 36)); /*0x5adf91*/
-  pad_50 = this->__pad_050; /*0x5adf96*/
+  pad_50 = (char *)(this->__pad_050); /*0x5adf96*/
   v7 = SessionClass::LoadMapSelection((SessionClass *)pad_50, (char **)&v13.ptr_4) == 0; /*0x5adfab*/
   DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x5adfae*/
   if ( v7 || (v8 = CampaignClass::Check((CampaignClass *)pad_50, aP1->u16_35A0)) == 0 ) /*0x5adfea*/
@@ -273,7 +273,7 @@ LABEL_14:
   DeleteAndZero((ObjectClass *)&v13.ptr_4); /*0x5ae0c8*/
 LABEL_17:
   SessionClass::Destruct((SessionClass *)pad_50); /*0x5ae0cd*/
-  return strlen((const char *)(aP1 + 4700)) != 0; /*0x5adf6f*/
+  return (gamemd::MixFileClass *)(strlen((const char *)(aP1 + 4700)) != 0); /*0x5adf6f*/
 
 }
 } // namespace gamemd
@@ -327,7 +327,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   int v45; // [esp+D4h] [ebp-8h]
 
   uniqueId = this; /*0x5ceef8*/
-  v43.nextObject = (int)this; /*0x5cef00*/
+  v43.nextObject = (gamemd::ObjectClass *)((int)this); /*0x5cef00*/
   CCFileClass::Construct3((int)&v43.customSound_controller[2]); /*0x5cef04*/
   v3 = 0; /*0x5cef09*/
   v43.nextObject = 0; /*0x5cef0f*/
@@ -373,9 +373,9 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
            0) )
     {
       v10 = uniqueId->unknown_10[0]; /*0x5cf03f*/
-      v11 = uniqueId->MPGameMode[0]; /*0x5cf042*/
+      v11 = (int)(uniqueId->MPGameMode[0]); /*0x5cf042*/
       uniqueId->unknown_10[0] = v10 + 1; /*0x5cf048*/
-      *(unsigned int *)(v11 + 4 * v10) = v7; /*0x5cf04b*/
+      *(unsigned int *)(v11 + 4 * v10) = (unsigned int)(v7); /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/
     {
@@ -870,7 +870,7 @@ int SessionClass::SetField()
 } // namespace gamemd
 // 0x696F10
 namespace gamemd {
-int SessionClass::GetPlayerSide()
+int SessionClass::GetPlayerSide(void *a1)
 {
   int result; // eax
 
@@ -882,7 +882,7 @@ int SessionClass::GetPlayerSide()
 } // namespace gamemd
 // 0x696F20
 namespace gamemd {
-int SessionClass::GetPlayerColor()
+int SessionClass::GetPlayerColor(void *a1)
 {
   int result; // eax
 
@@ -894,7 +894,7 @@ int SessionClass::GetPlayerColor()
 } // namespace gamemd
 // 0x696F50
 namespace gamemd {
-int SessionClass::GetOption()
+int SessionClass::GetOption(void *a1)
 {
   int result; // eax
 
@@ -937,7 +937,7 @@ int SessionClass::SetPlayerOption(int aP1)
 }
 } // namespace gamemd
 namespace gamemd {  // G42.40c ns re-open (def had fallen to global scope)
-int SessionClass::SetPlayerColor(int a2)
+int SessionClass::SetPlayerColor(int a2, void *a2_1)
 {
 
   int result; // eax
@@ -959,7 +959,7 @@ int SessionClass::SetPlayerColor(int a2)
 } // namespace gamemd
 // 0x696FF0
 namespace gamemd {
-int SessionClass::SetOption(int aP1)
+int SessionClass::SetOption(int aP1, void *a2)
 {
 
   int result; // eax
@@ -1004,320 +1004,6 @@ int SessionClass::SetOption2(int aP1)
 // 0x6970A0 site-form Constructor supply (W20L4 T2; forwards to ctor def below)
 namespace gamemd {
 void * SessionClass::Constructor(void *aP1) { return new (aP1) SessionClass(); }
-
-  unsigned int *v2; // eax
-  int v3; // ecx
-  unsigned int *v4; // eax
-  int v5; // ecx
-  unsigned int *v6; // eax
-  int v7; // ecx
-  unsigned char *v8; // edi
-  unsigned char *v9; // esi
-  int v10; // edi
-  DWORD *v11; // esi
-  int v12; // edi
-  int v13; // eax
-  int v14; // edx
-  unsigned int *v15; // eax
-  int v16; // ecx
-  int v18; // [esp+10h] [ebp-4h]
-
-  *((unsigned int *)aP1 + 1) = 0; /*0x6970b8*/
-  *((unsigned int *)aP1 + 99) = 0; /*0x6970bb*/
-  *((unsigned int *)aP1 + 100) = 0; /*0x6970c1*/
-  *((unsigned int *)aP1 + 101) = 1; /*0x6970c7*/
-  *((unsigned int *)aP1 + 102) = 10000; /*0x6970cd*/
-  *((unsigned int *)aP1 + 103) = 10; /*0x6970d3*/
-  *(aP1 + 416) = 1; /*0x6970d9*/
-  *(aP1 + 417) = 1; /*0x6970df*/
-  *(aP1 + 418) = 1; /*0x6970e5*/
-  *(aP1 + 419) = 1; /*0x6970eb*/
-  *(aP1 + 420) = 1; /*0x6970f1*/
-  v2 = aP1 + 428; /*0x6970f7*/
-  v3 = 8; /*0x6970fd*/
-  do /*0x69710e*/
-  {
-    *(v2 - 1) = 0; /*0x697102*/
-    *v2 = 0; /*0x697105*/
-    v2[1] = 0; /*0x697107*/
-    v2 += 3; /*0x69710a*/
-    --v3; /*0x69710d*/
-  }
-  while ( v3 ); /*0x69710e*/
-  *((unsigned int *)aP1 + 130) = 0; /*0x697110*/
-  *((unsigned int *)aP1 + 131) = 0; /*0x697116*/
-  *((unsigned int *)aP1 + 132) = 1; /*0x69711c*/
-  *((unsigned int *)aP1 + 133) = 10000; /*0x697122*/
-  *((unsigned int *)aP1 + 134) = 10; /*0x697128*/
-  *(aP1 + 540) = 1; /*0x69712e*/
-  *(aP1 + 541) = 1; /*0x697135*/
-  *(aP1 + 542) = 1; /*0x69713c*/
-  *(aP1 + 543) = 1; /*0x697143*/
-  *(aP1 + 544) = 1; /*0x69714a*/
-  v4 = aP1 + 552; /*0x697151*/
-  v5 = 8; /*0x697157*/
-  do /*0x697168*/
-  {
-    *(v4 - 1) = 0; /*0x69715c*/
-    *v4 = 0; /*0x69715f*/
-    v4[1] = 0; /*0x697161*/
-    v4 += 3; /*0x697164*/
-    --v5; /*0x697167*/
-  }
-  while ( v5 ); /*0x697168*/
-  *((unsigned int *)aP1 + 161) = 0; /*0x69716a*/
-  *((unsigned int *)aP1 + 162) = 0; /*0x697170*/
-  *((unsigned int *)aP1 + 163) = 1; /*0x697176*/
-  *((unsigned int *)aP1 + 164) = 10000; /*0x69717c*/
-  *((unsigned int *)aP1 + 165) = 10; /*0x697182*/
-  *(aP1 + 664) = 1; /*0x697188*/
-  *(aP1 + 665) = 1; /*0x69718f*/
-  *(aP1 + 666) = 1; /*0x697196*/
-  *(aP1 + 667) = 1; /*0x69719d*/
-  *(aP1 + 668) = 1; /*0x6971a4*/
-  v6 = aP1 + 676; /*0x6971ab*/
-  v7 = 8; /*0x6971b1*/
-  do /*0x6971c2*/
-  {
-    *(v6 - 1) = 0; /*0x6971b6*/
-    *v6 = 0; /*0x6971b9*/
-    v6[1] = 0; /*0x6971bb*/
-    v6 += 3; /*0x6971be*/
-    --v7; /*0x6971c1*/
-  }
-  while ( v7 ); /*0x6971c2*/
-  v8 = aP1 + 920; /*0x6971c4*/
-  v18 = 8; /*0x6971ca*/
-  do /*0x6971e5*/
-  {
-    Waypoint::InitInvalid(v8); /*0x6971d4*/
-    v8 += 104; /*0x6971dd*/
-    --v18; /*0x6971e1*/
-  }
-  while ( v18 ); /*0x6971e5*/
-  *((unsigned int *)aP1 + 421) = 0; /*0x6971ed*/
-  *((unsigned int *)aP1 + 422) = 0; /*0x6971f3*/
-  *(aP1 + 1692) = 1; /*0x6971f9*/
-  *(aP1 + 1693) = 0; /*0x697200*/
-  *((unsigned int *)aP1 + 420) = &vt_DynamicVectorClass; /*0x697206*/
-  *((unsigned int *)aP1 + 425) = 10; /*0x697210*/
-  *((unsigned int *)aP1 + 424) = 0; /*0x697216*/
-  Waypoint::InitInvalid(aP1 + 2276); /*0x69721c*/
-  *((unsigned int *)aP1 + 573) = 0; /*0x697227*/
-  *((unsigned int *)aP1 + 574) = 0; /*0x69722d*/
-  *(aP1 + 2300) = 1; /*0x697233*/
-  *(aP1 + 2301) = 0; /*0x69723a*/
-  *((unsigned int *)aP1 + 572) = &vt_DynamicVectorClass; /*0x697240*/
-  *((unsigned int *)aP1 + 577) = 10; /*0x69724a*/
-  *((unsigned int *)aP1 + 576) = 0; /*0x697250*/
-  SessionClass::saveSettings(aP1 + 2600); /*0x697256*/
-  Waypoint::InitInvalid(aP1 + 7876); /*0x697261*/
-  CCFileClass::Construct3((int)(aP1 + 9044)); /*0x69726c*/
-  Waypoint::InitInvalid(aP1 + 9160); /*0x697277*/
-  Waypoint::InitInvalid(aP1 + 9676); /*0x697282*/
-  *((unsigned int *)aP1 + 2564) = 0; /*0x69728c*/
-  *((unsigned int *)aP1 + 2565) = 0; /*0x697292*/
-  *(aP1 + 10264) = 1; /*0x697298*/
-  *(aP1 + 10265) = 0; /*0x69729f*/
-  *((unsigned int *)aP1 + 2563) = &vt_DynamicVectorClass; /*0x6972a5*/
-  *((unsigned int *)aP1 + 2568) = 10; /*0x6972ab*/
-  *((unsigned int *)aP1 + 2567) = 0; /*0x6972b1*/
-  *((unsigned int *)aP1 + 2570) = 0; /*0x6972b7*/
-  *((unsigned int *)aP1 + 2571) = 0; /*0x6972bd*/
-  *(aP1 + 10288) = 1; /*0x6972c3*/
-  *(aP1 + 10289) = 0; /*0x6972ca*/
-  *((unsigned int *)aP1 + 2569) = &vt_DynamicVectorClass; /*0x6972d0*/
-  *((unsigned int *)aP1 + 2574) = 10; /*0x6972d6*/
-  *((unsigned int *)aP1 + 2573) = 0; /*0x6972dc*/
-  *((unsigned int *)aP1 + 2576) = 0; /*0x6972e2*/
-  *((unsigned int *)aP1 + 2577) = 0; /*0x6972e8*/
-  *(aP1 + 10312) = 1; /*0x6972ee*/
-  *(aP1 + 10313) = 0; /*0x6972f5*/
-  *((unsigned int *)aP1 + 2575) = &vt_DynamicVectorClass; /*0x6972fb*/
-  *((unsigned int *)aP1 + 2580) = 10; /*0x697301*/
-  *((unsigned int *)aP1 + 2579) = 0; /*0x697307*/
-  *((unsigned int *)aP1 + 2624) = 0; /*0x69730d*/
-  *((unsigned int *)aP1 + 2625) = 0; /*0x697313*/
-  *(aP1 + 10504) = 1; /*0x697319*/
-  *(aP1 + 10505) = 0; /*0x697320*/
-  *((unsigned int *)aP1 + 2623) = &off_7F11B4; /*0x697326*/
-  *((unsigned int *)aP1 + 2628) = 10; /*0x697330*/
-  *((unsigned int *)aP1 + 2627) = 0; /*0x697336*/
-  *((unsigned int *)aP1 + 2630) = 0; /*0x69733c*/
-  *((unsigned int *)aP1 + 2631) = 0; /*0x697342*/
-  *(aP1 + 10528) = 1; /*0x697348*/
-  *(aP1 + 10529) = 0; /*0x69734f*/
-  *((unsigned int *)aP1 + 2629) = &vt_DynamicVectorClass; /*0x697355*/
-  *((unsigned int *)aP1 + 2634) = 10; /*0x69735f*/
-  *((unsigned int *)aP1 + 2633) = 0; /*0x697365*/
-  *((unsigned int *)aP1 + 2636) = 0; /*0x697371*/
-  *((unsigned int *)aP1 + 2637) = 0; /*0x697377*/
-  *(aP1 + 10552) = 1; /*0x69737d*/
-  *(aP1 + 10553) = 0; /*0x697384*/
-  *((unsigned int *)aP1 + 2635) = &vt_DynamicVectorClass; /*0x69738a*/
-  *((unsigned int *)aP1 + 2640) = 10; /*0x697394*/
-  *((unsigned int *)aP1 + 2639) = 0; /*0x69739a*/
-  Waypoint::InitInvalid(aP1 + 10604); /*0x6973a0*/
-  Waypoint::InitInvalid(aP1 + 10616); /*0x6973ab*/
-  Waypoint::InitInvalid(aP1 + 10632); /*0x6973b6*/
-  v9 = aP1 + 10644; /*0x6973bb*/
-  v10 = 8; /*0x6973c1*/
-  do /*0x6973d1*/
-  {
-    Waypoint::InitInvalid(v9); /*0x6973c8*/
-    v9 += 12; /*0x6973cd*/
-    --v10; /*0x6973d0*/
-  }
-  while ( v10 ); /*0x6973d1*/
-  v11 = (DWORD *)(aP1 + 12172); /*0x6973d3*/
-  v12 = 8; /*0x6973d9*/
-  do /*0x6973ef*/
-  {
-    *v11 = Timer::GetTicks(); /*0x6973e6*/
-    v11[2] = 0; /*0x6973e8*/
-    v11 += 3; /*0x6973eb*/
-    --v12; /*0x6973ee*/
-  }
-  while ( v12 ); /*0x6973ef*/
-  *(aP1 + 12488) = 0; /*0x6973f1*/
-  *(unsigned int *)aP1 = 0; /*0x6973fc*/
-  *((unsigned int *)aP1 + 5) = 2; /*0x6973ff*/
-  *((unsigned int *)aP1 + 7) = 0; /*0x697402*/
-  *(aP1 + 32) = 1; /*0x697405*/
-  *((unsigned int *)aP1 + 9) = 0; /*0x697409*/
-  *(aP1 + 40) = 0; /*0x69740c*/
-  *(aP1 + 41) = 0; /*0x69740f*/
-  *(aP1 + 53) = 0; /*0x697412*/
-  *((unsigned int *)aP1 + 14) = 0; /*0x697415*/
-  *(aP1 + 42) = 0; /*0x697418*/
-  *(aP1 + 43) = 0; /*0x69741b*/
-  *(aP1 + 44) = 0; /*0x69741e*/
-  *((unsigned int *)aP1 + 12) = 0; /*0x697421*/
-  *(aP1 + 52) = 0; /*0x697424*/
-  *(aP1 + 228) = 0; /*0x697427*/
-  *(aP1 + 229) = 0; /*0x69742d*/
-  *(aP1 + 230) = 0; /*0x697433*/
-  *(aP1 + 231) = 0; /*0x697439*/
-  *(aP1 + 232) = 0; /*0x69743f*/
-  *((unsigned int *)aP1 + 16) = 1; /*0x697445*/
-  *((unsigned int *)aP1 + 81) = 0; /*0x69744c*/
-  *(aP1 + 328) = 0; /*0x697452*/
-  *((unsigned int *)aP1 + 93) = 0; /*0x69745b*/
-  *((unsigned int *)aP1 + 94) = -1; /*0x697461*/
-  *((unsigned int *)aP1 + 87) = 2; /*0x697467*/
-  *((unsigned int *)aP1 + 88) = -1; /*0x69746d*/
-  *((unsigned int *)aP1 + 97) = *((unsigned int *)aP1 + 93); /*0x697479*/
-  *((unsigned int *)aP1 + 98) = *((unsigned int *)aP1 + 94); /*0x697485*/
-  *((unsigned int *)aP1 + 95) = *((unsigned int *)aP1 + 87); /*0x697491*/
-  *((unsigned int *)aP1 + 96) = *((unsigned int *)aP1 + 88); /*0x69749d*/
-  *(aP1 + 7897) = 1; /*0x6974a3*/
-  *(aP1 + 7896) = 1; /*0x6974aa*/
-  *(aP1 + 8129) = 1; /*0x6974b1*/
-  *(aP1 + 8128) = 1; /*0x6974ba*/
-  *(unsigned int *)(aP1 + 12410) = 0; /*0x6974c1*/
-  *(unsigned int *)(aP1 + 12414) = 0; /*0x6974c9*/
-  *(unsigned int *)(aP1 + 12418) = 0; /*0x6974d4*/
-  *(unsigned int *)(aP1 + 12422) = 0; /*0x6974da*/
-  *(aP1 + 12408) = 0; /*0x6974e0*/
-  *(aP1 + 12396) = 0; /*0x6974e6*/
-  *((unsigned short *)aP1 + 6199) = 0; /*0x6974ec*/
-  *((unsigned short *)aP1 + 6200) = 0; /*0x6974f3*/
-  *((unsigned int *)aP1 + 3068) = 1250; /*0x6974fa*/
-  *((unsigned int *)aP1 + 3069) = 0; /*0x697504*/
-  *(aP1 + 12312) = 1; /*0x69750a*/
-  *(aP1 + 12104) = 0; /*0x697511*/
-  *((unsigned int *)aP1 + 3079) = 0; /*0x69751c*/
-  memset(unk_B73E44, 0, 0x2000u); /*0x697522*/
-  memset(dword_B76338, 0, sizeof(dword_B76338)); /*0x69752e*/
-  *((unsigned int *)aP1 + 192) = 0; /*0x697530*/
-  *((unsigned int *)aP1 + 193) = 0; /*0x697536*/
-  *((unsigned int *)aP1 + 195) = -1; /*0x69753c*/
-  *(aP1 + 776) = 0; /*0x697542*/
-  *(aP1 + 10600) = 0; /*0x697548*/
-  *((unsigned int *)aP1 + 3101) = -1; /*0x697559*/
-  memset(aP1 + 12320, 0, 0x28u); /*0x69755f*/
-  *((unsigned short *)aP1 + 6180) = 0; /*0x697561*/
-  *((unsigned int *)aP1 + 3107) = 0; /*0x697563*/
-  *(aP1 + 12432) = 1; /*0x697569*/
-  *((unsigned int *)aP1 + 3109) = -1; /*0x697570*/
-  *(aP1 + 12440) = 0; /*0x697576*/
-  *((unsigned int *)aP1 + 3111) = 20; /*0x69757c*/
-  *((unsigned int *)aP1 + 3112) = 0; /*0x697586*/
-  *((unsigned int *)aP1 + 3113) = 0; /*0x69758c*/
-  *((unsigned int *)aP1 + 3114) = -1; /*0x697592*/
-  *((unsigned short *)aP1 + 5314) = 0; /*0x697598*/
-  *(aP1 + 1672) = 0; /*0x69759f*/
-  *(aP1 + 1673) = 0; /*0x6975a5*/
-  *(aP1 + 1674) = 0; /*0x6975b0*/
-  *((unsigned int *)aP1 + 196) = 8; /*0x6975b6*/
-  *((unsigned int *)aP1 + 198) = 15; /*0x6975c0*/
-  *((unsigned int *)aP1 + 204) = 15; /*0x6975c6*/
-  *((unsigned int *)aP1 + 197) = 0; /*0x6975cc*/
-  *((unsigned int *)aP1 + 199) = 5; /*0x6975df*/
-  memset(aP1 + 828, 0, 0x340u); /*0x6975e9*/
-  v13 = *((unsigned int *)aP1 + 2031); /*0x6975eb*/
-  v14 = *((unsigned int *)aP1 + 2261); /*0x6975f1*/
-  LOBYTE(v13) = v13 & 0xFE; /*0x6975fd*/
-  *((unsigned int *)aP1 + 205) = 0; /*0x697604*/
-  *((unsigned int *)aP1 + 206) = 0; /*0x69760a*/
-  *(aP1 + 1660) = 0; /*0x697610*/
-  *(aP1 + 1661) = 0; /*0x697616*/
-  *((unsigned int *)aP1 + 416) = 0; /*0x69761c*/
-  *((unsigned int *)aP1 + 417) = 0; /*0x697622*/
-  *((unsigned short *)aP1 + 3949) = 0; /*0x697628*/
-  *((unsigned int *)aP1 + 2031) = v13; /*0x69762f*/
-  (*(void (**)(char *, char *))(v14 + 8))(aP1 + 9044, aRecordBin); /*0x697635*/
-  *((unsigned int *)aP1 + 2288) &= 0xFFFFFFF8; /*0x697648*/
-  *((unsigned int *)aP1 + 2289) = 0; /*0x697659*/
-  *(aP1 + 9172) = 0; /*0x69765f*/
-  *(aP1 + 9173) = 1; /*0x697665*/
-  *(aP1 + 9174) = 0; /*0x69766c*/
-  *((unsigned short *)aP1 + 4588) = 0; /*0x697672*/
-  *((unsigned short *)aP1 + 4844) = 0; /*0x697679*/
-  *((unsigned int *)aP1 + 2591) = 0; /*0x697680*/
-  *((unsigned int *)aP1 + 2649) = 1; /*0x697686*/
-  *((unsigned int *)aP1 + 2562) = 558; /*0x69768c*/
-  memset(aP1 + 2312, 0, 0x20u); /*0x697696*/
-  memset(aP1 + 2344, 0xFFu, 0x100u); /*0x6976a5*/
-  *((unsigned int *)aP1 + 2592) |= 1u; /*0x6976b6*/
-  *((unsigned int *)aP1 + 2593) = 0; /*0x6976be*/
-  *((unsigned int *)aP1 + 2594) = 760; /*0x6976c4*/
-  *((unsigned int *)aP1 + 2595) = 3; /*0x6976ce*/
-  *((unsigned int *)aP1 + 2596) = 9600; /*0x6976d8*/
-  *((unsigned int *)aP1 + 2597) = 0; /*0x6976e2*/
-  *((unsigned int *)aP1 + 2598) = -1; /*0x6976e8*/
-  *((unsigned int *)aP1 + 2599) = 0; /*0x6976ee*/
-  strcpy(aP1 + 10408, &g_INI_DefaultBuffer); /*0x697709*/
-  *((unsigned int *)aP1 + 2622) = 0; /*0x697712*/
-  *((unsigned int *)aP1 + 3115) = 0x7FFFFFFF; /*0x697718*/
-  *((unsigned int *)aP1 + 3116) = 0; /*0x697722*/
-  *((unsigned int *)aP1 + 3117) = 0; /*0x697728*/
-  *((unsigned int *)aP1 + 3118) = dword_B07740; /*0x69773a*/
-  *((unsigned int *)aP1 + 3119) = dword_B07744; /*0x697745*/
-  v15 = aP1 + 132; /*0x69774e*/
-  *((unsigned int *)aP1 + 3120) = dword_B07748; /*0x697754*/
-  *(aP1 + 12488) = 0; /*0x697757*/
-  *((unsigned int *)aP1 + 3123) = 0; /*0x69775d*/
-  *((unsigned int *)aP1 + 3124) = 0; /*0x697763*/
-  *((unsigned int *)aP1 + 3125) = 0; /*0x697769*/
-  *(aP1 + 10360) = 0; /*0x69776f*/
-  *((unsigned int *)aP1 + 15) = 0; /*0x697775*/
-  v16 = 8; /*0x697778*/
-  do /*0x69778e*/
-  {
-    *(v15 - 8) = -1; /*0x69777d*/
-    *v15++ = -1; /*0x697784*/
-    --v16; /*0x69778d*/
-  }
-  while ( v16 ); /*0x69778e*/
-  *((unsigned int *)aP1 + 3) = 0; /*0x697790*/
-  *((unsigned int *)aP1 + 4) = 0; /*0x697793*/
-  *(aP1 + 1704) = 0; /*0x697796*/
-  *((unsigned int *)aP1 + 563) = 0; /*0x69779c*/
-  *(aP1 + 2256) = 0; /*0x6977a2*/
-  *((unsigned int *)aP1 + 565) = 0; /*0x6977a9*/
-  return aP1; /*0x6977a8*/
-
 }
 // 0x6970A0
 namespace gamemd {  // G42.18c ns repair
@@ -3102,7 +2788,7 @@ char TypeList_W4DiskID::Release(int a2, unsigned int * a3)
 }  // G42.18c ns repair
 // 0x69C940
 namespace gamemd {  // G42.18c ns repair
-int TypeList_W4DiskID::Read(unsigned int * a2, void *a2_2)
+int TypeList_W4DiskID::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int m_10; // edx
   int result; // eax

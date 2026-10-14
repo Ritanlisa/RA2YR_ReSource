@@ -23,7 +23,6 @@ struct ComPtr {
     static int Release(void *aP0);
     static int ReleaseAndSet(void *aP0, unsigned int *aP1);
     static void * Territory_Dtor(void *aP0);
-    static int DestroyWrapper(void *aP0, void *aP1);  // G57a1 static-form mirror
     static int Set(void *aP0, int aP2);  // G57a1 static-form mirror
     static int ReleaseSimple(void *aP0);  // G57a1 static-form mirror
     unsigned int ComPtr_field_0x08;  // 0x8 W16G3 alias (flat-carrier vocab, b4/b7/b8 precedent)

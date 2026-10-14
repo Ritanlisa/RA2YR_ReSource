@@ -106,7 +106,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v66; // [esp+58h] [ebp-8h]
   int v67; // [esp+5Ch] [ebp-4h]
 
-  v3 = (void **)(0);
+  v3 = (int)((void **)(0));
   v55 = (void ***)(aP0); /*0x6f0ab9*/
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
@@ -173,7 +173,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     }
     if ( v6 < *(unsigned int *)((*(dword_8871E0->DetailMinFrameRateNormal + 1)) + 4 * *(unsigned int *)(a2 + 388)) ) /*0x6f0bf4*/
     {
-      v17 = (void **)(0);
+      v17 = (int)((void **)(0));
       Team_Helper_6F27F0(0, 0); /*0x6f0c02*/
       v62 = (void **)(&vt_DynamicVectorClassDiscreteDistributionClassDistributionObject); /*0x6f0c0b*/
       v66 = 10; /*0x6f0c13*/
@@ -211,7 +211,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         v67 += v20; /*0x6f0cb2*/
         goto LABEL_34; /*0x6f0cb2*/
       }
-  LABEL_35: v21 = (unsigned int *)(0);
+  LABEL_35: v21 = (unsigned int)((unsigned int *)(0));
       if ( !v67 ) /*0x6f0ccd*/
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v65 ) /*0x6f0cd9*/
@@ -220,7 +220,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       v23 = 0; /*0x6f0cf3*/
       if ( v65 <= 0 ) /*0x6f0cfb*/
         goto LABEL_58; /*0x6f0cfb*/
-      v24 = (char *)v63 + 4; /*0x6f0d05*/
+      v24 = (unsigned int *)((char *)v63 + 4); /*0x6f0d05*/
       while ( 1 ) /*0x6f0d08*/
       {
         v21 += *v24; /*0x6f0d08*/
@@ -277,7 +277,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   LABEL_71:
     for ( i = 0; i < v60; v31 = Block ) /*0x6f0e4b*/
     {
-      v39 = (unsigned int *)(v31[i++]); /*0x6f0e4d*/
+      v39 = (int)((unsigned int *)(v31[i++])); /*0x6f0e4d*/
       *(unsigned char *)(v39 + 169) = 1; /*0x6f0e51*/
     }
     v40 = (unsigned int)((int)v55);
@@ -286,7 +286,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v40->vtable3 = 0; /*0x6f0e73*/
     v40->vtable4 = 1; /*0x6f0e76*/
     v40->attachedTag = 0; /*0x6f0e7a*/
-    *(unsigned int *)v40 = &vt_VectorClass; /*0x6f0e7e*/
+    *(unsigned int *)v40 = (unsigned int)(&vt_VectorClass); /*0x6f0e7e*/
     if ( !v41 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3(v40); /*0x6f0e8c*/
@@ -320,10 +320,10 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       }
       v31 = (unsigned int *)(Block);
     }
-    v61 = (unsigned int *)((unsigned int)(v61));
+    v61 = (int)((unsigned int *)((unsigned int)(v61)));
     v40->uniqueId = v60; /*0x6f0f85*/
     v40->abstractFlags = v61; /*0x6f0f88*/
-    *(unsigned int *)v40 = &vt_TypeList; /*0x6f0f8b*/
+    *(unsigned int *)v40 = (unsigned int)(&vt_TypeList); /*0x6f0f8b*/
     v56 = &vt_VectorClass; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
     {
@@ -350,7 +350,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         goto LABEL_71; /*0x6f0e41*/
     }
     v36 = *(unsigned int *)(v34 + 36); /*0x6f0e1d*/
-    v37 = Block; /*0x6f0e20*/
+    v37 = (unsigned int *)(Block); /*0x6f0e20*/
     while ( v36 != *v37 ) /*0x6f0e24*/
     {
       ++v35; /*0x6f0e2e*/
@@ -374,7 +374,7 @@ int AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v46->u32_D = 0; /*0x6f0f20*/
     *v46 = &vt_VectorClass; /*0x6f0f24*/
     Team_Helper_6F2780(&v56); /*0x6f0f2a*/
-    *(unsigned int *)v40 = &vt_TypeList; /*0x6f0f2f*/
+    *(unsigned int *)v40 = (unsigned int)(&vt_TypeList); /*0x6f0f2f*/
     v56 = &vt_VectorClass; /*0x6f0f35*/
     v47 = (unsigned int)(Block); /*0x6f0f3d*/
     v61 = v61; /*0x6f0f45*/
@@ -407,7 +407,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
 
   *a8 = 0; /*0x6f8972*/
   *a9 = 0; /*0x6f8979*/
-  v11 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(a6); /*0x6f898d*/
+  v11 = (unsigned int *)(((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(a6)); /*0x6f898d*/
   if ( a10 != -1 ) /*0x6f8992*/
   {
     v12 = (*((int (**)(TechnoClass *))a1->vfptr + 33))(a1); /*0x6f899a*/
@@ -495,7 +495,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   if ( !v15 ) /*0x6f8b4b*/
     return 0; /*0x6f8b4b*/
   v23 = 0; /*0x6f8b5b*/
-  *a8 = v15; /*0x6f8b5d*/
+  *a8 = (void *)(v15); /*0x6f8b5d*/
   if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v15)
     || TechnoClass::GetValue(a1, -1) < 0
     || !(uint8_t)((House *)((House *)a1->owner))->IsCurrentPlayer()
@@ -520,7 +520,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
              (int)&g_BuildingLoadQueue_Array.VoxelCaches[3],
              v24);
   }
-  return v23; /*0x6f89b6*/
+  return (gamemd::AbstractClass **)(v23); /*0x6f89b6*/
 }
 }
 // 0x6F03F0
@@ -890,7 +890,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 
   v5 = (int *)(((Coord *)(v26))->Subtract((3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
   v6 = a1->vtable2; /*0x6f5f47*/
-  v7 = (int *)(*v5); /*0x6f5f4a*/
+  v7 = (int)((int *)(*v5)); /*0x6f5f4a*/
   v8 = v5[1]; /*0x6f5f4c*/
   v9 = v5[2]; /*0x6f5f4f*/
   v21[1] = v8; /*0x6f5f52*/
@@ -898,19 +898,19 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v21[0] = v7; /*0x6f5f59*/
   v11 = *a2; /*0x6f5f5d*/
   v22 = v9; /*0x6f5f5f*/
-  v12 = ((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->vtable3) / 4); /*0x6f5fa0*/
+  v12 = (int *)(((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->vtable3) / 4)); /*0x6f5fa0*/
   v13 = v12->u32_4; /*0x6f5fa9*/
   v14 = (int *)(v12->u32_8); /*0x6f5fac*/
   v23 = *v12; /*0x6f5faf*/
   v24 = v13; /*0x6f5fb3*/
   v15 = a1->vtable3; /*0x6f5fb7*/
   v25 = v14; /*0x6f5fca*/
-  lpVtbl = g_TacticalClass_Instance; /*0x6f5fd1*/
+  lpVtbl = (gamemd::IPersistStreamVtbl *)(g_TacticalClass_Instance); /*0x6f5fd1*/
   if ( v15 <= v22 ) /*0x6f5fd3*/
     ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(v21, a1, a3, 0, v19, v20); /*0x6f5fe3*/
   else
     ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(a1, v21, a3, 0, v19, v20); /*0x6f5fdb*/
-  v17 = g_TacticalClass_Instance; /*0x6f5ff8*/
+  v17 = (gamemd::IPersistStreamVtbl *)(g_TacticalClass_Instance); /*0x6f5ff8*/
   if ( a2[2] <= v26[1] ) /*0x6f5ffa*/
     return ((int (__stdcall *)(int *, int *))v17[3].QueryInterface)(&v25, a2); /*0x6f6015*/
   else
@@ -938,7 +938,7 @@ int sub_6F6030(int * a1, unsigned int * a2, int a3)
   v11[0] = (3 * v4 + *a2) / 4; /*0x6f6089*/
   v11[1] = v7 / 4; /*0x6f608d*/
   v11[2] = v8 / 4; /*0x6f6091*/
-  lpVtbl = g_TacticalClass_Instance; /*0x6f6095*/
+  lpVtbl = (gamemd::IPersistStreamVtbl *)(g_TacticalClass_Instance); /*0x6f6095*/
   if ( v6 <= v8 / 4 ) /*0x6f6098*/
     return ((int (__stdcall *)(unsigned int *, int *, int, unsigned int))lpVtbl[3].QueryInterface)(v11, a1, a3, 0); /*0x6f60b3*/
   else

@@ -144,7 +144,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( v5 ) /*0x40128d*/
     *v5 = 0; /*0x40128f*/
   strcat(Str, aBag); /*0x4012bc*/
-  v6 = operator new(0x6Cu); /*0x4012c5*/
+  v6 = (unsigned int *)(operator new(0x6Cu)); /*0x4012c5*/
   v7 = v6 ? CCFileClass::Construct(v6, Str) : 0;
   v3->AbstractClass_10C = v7; /*0x4012e4*/
   if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
@@ -158,7 +158,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     goto LABEL_17; /*0x401338*/
   v8 = operator new(36 * v18); /*0x401346*/
   v9 = v3->vtable2; /*0x401348*/
-  *(unsigned int *)v3 = v8; /*0x40134b*/
+  *(unsigned int *)v3 = (unsigned int)(v8); /*0x40134b*/
   memset(v8, 0, 4 * ((unsigned int)(36 * v9) >> 2)); /*0x40135e*/
   if ( Buffer[1] != 1 ) /*0x40136c*/
   {
@@ -232,7 +232,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   Vector::Clear((int)v20); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
   ((BufferIOFileClass *)(v19))->Dtor(); /*0x4014cc*/
-  return v3; /*0x4014d3*/
+  return (gamemd::AbstractClass **)(v3); /*0x4014d3*/
 }
 }  // G42.18 ns repair
 // 0x401C00
@@ -255,9 +255,9 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
   int v17; // [esp+14h] [ebp-8h]
   int v19; // [esp+18h] [ebp-4h]
 
-  v2 = a1; /*0x401c05*/
+  v2 = (int *)(a1); /*0x401c05*/
   v3 = (LinkedList *)a1[3]; /*0x401c0d*/
-  v4 = a1 + 3; /*0x401c10*/
+  v4 = (int *)(a1 + 3); /*0x401c10*/
   if ( v3 != (LinkedList *)(a1 + 3) ) /*0x401c19*/
   {
     while ( v3[1].Tail[1] != a2 || !*v3->ptr_8.__pad_0 ) /*0x401c25*/
@@ -270,7 +270,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     {
       LinkedList::Init(v3); /*0x401c7b*/
       InsertBeforeLinkedList(v4, (int *)v3->__pad_000); /*0x401c84*/
-      return (int *)v3; /*0x401c92*/
+      return (gamemd::ObjectClass **)((int *)v3); /*0x401c92*/
     }
   }
   LABEL_5:
@@ -325,7 +325,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       InsertBeforeLinkedList(v2 + 3, v5); /*0x401e62*/
       v5[6] = 1; /*0x401e67*/
       AudioStream::ReleaseSubsystem((AudioStream *)*v2); /*0x401e70*/
-      return v5; /*0x401e7e*/
+      return (gamemd::ObjectClass **)(v5); /*0x401e7e*/
     }
     while ( 1 ) /*0x401d57*/
     {
@@ -367,7 +367,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       }
       nullsub_2(v15); /*0x401de6*/
       PushFrontLinkedListAlt(*(unsigned int **)(v11->u32_3C + 8), v11); /*0x401df3*/
-      v2 = a1; /*0x401e04*/
+      v2 = (int *)(a1); /*0x401e04*/
       v10 = LinkedList::Next((LinkedList *)a1[1]); /*0x401e08*/
       if ( v10 ) /*0x401e0c*/
         goto LABEL_35; /*0x401e0c*/

@@ -104,14 +104,14 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4a019a*/
     return -2147467261; /*0x4a019d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a01ad*/
+  v3 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4a01ad*/
   if ( !v3 ) /*0x4a01b4*/
     return -2147024882; /*0x4a029d*/
   *(unsigned int *)(v3 + 8) = 0; /*0x4a01c8*/
   *(unsigned int *)(v3 + 12) = 0; /*0x4a01cb*/
   *(unsigned char *)(v3 + 16) = 1; /*0x4a01ce*/
   *(unsigned char *)(v3 + 17) = 0; /*0x4a01d2*/
-  *(unsigned int *)(v3 + 4) = &vt_VectorClass; /*0x4a01d5*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_VectorClass); /*0x4a01d5*/
   if ( (int *)(v3 + 4) != &a1->EnumConnectionsClass_field_0x04 ) /*0x4a01db*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a01df*/
@@ -119,7 +119,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     *(unsigned int *)(v3 + 12) = EnumConnectionsClass_field_0x0C; /*0x4a01ea*/
     if ( EnumConnectionsClass_field_0x0C ) /*0x4a01ed*/
     {
-      v5 = __2_YAPAXI_Z(8 * EnumConnectionsClass_field_0x0C); /*0x4a01f7*/
+      v5 = (int)(__2_YAPAXI_Z(8 * EnumConnectionsClass_field_0x0C)); /*0x4a01f7*/
       *(unsigned int *)(v3 + 8) = v5; /*0x4a0201*/
       if ( v5 ) /*0x4a0204*/
       {
@@ -147,11 +147,11 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   *(unsigned int *)(v3 + 20) = a1->EnumConnectionsClass_field_0x14; /*0x4a0249*/
   *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 6); /*0x4a024f*/
-  *(unsigned int *)(v3 + 4) = &vt_DynamicVectorClass; /*0x4a0252*/
+  *(unsigned int *)(v3 + 4) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0252*/
   v10 = *((unsigned int *)a1 + 7); /*0x4a0258*/
   *(unsigned int *)(v3 + 32) = 0; /*0x4a025b*/
   *(unsigned int *)(v3 + 28) = v10; /*0x4a025e*/
-  *(unsigned int *)v3 = &vt_EnumConnectionsClass; /*0x4a0261*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_EnumConnectionsClass); /*0x4a0261*/
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a026e*/
   {
     v13 = *(unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * i); /*0x4a0276*/
@@ -180,7 +180,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   int i; // esi
   int v12; // [esp-4h] [ebp-14h]
 
-  p_EnumConnectionsClass_field_0x04 = &this->M4; /*0x4a02bc*/
+  p_EnumConnectionsClass_field_0x04 = (int *)(&this->M4); /*0x4a02bc*/
   this->M8 = 0; /*0x4a02c1*/
   this->M12 = 0; /*0x4a02c4*/
   LOBYTE(this->M16) = 1; /*0x4a02c7*/
@@ -193,7 +193,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
     p_EnumConnectionsClass_field_0x04[2] = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a02ec*/
+      v5 = (int)(__2_YAPAXI_Z(8 * v4)); /*0x4a02ec*/
       p_EnumConnectionsClass_field_0x04[1] = v5; /*0x4a02f6*/
       if ( v5 ) /*0x4a02f9*/
       {
@@ -251,7 +251,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   int i; // esi
   int v13; // [esp-4h] [ebp-14h]
 
-  p_EnumConnectionsClass_field_0x04 = &this->M4; /*0x4a038f*/
+  p_EnumConnectionsClass_field_0x04 = (int *)(&this->M4); /*0x4a038f*/
   this->M8 = 0; /*0x4a0394*/
   this->M12 = 0; /*0x4a0397*/
   LOBYTE(this->M16) = 1; /*0x4a039a*/
@@ -264,7 +264,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
     p_EnumConnectionsClass_field_0x04[2] = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a03c3*/
+      v5 = (int)(__2_YAPAXI_Z(8 * v4)); /*0x4a03c3*/
       p_EnumConnectionsClass_field_0x04[1] = v5; /*0x4a03cd*/
       if ( v5 ) /*0x4a03d0*/
       {
@@ -322,7 +322,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4a0b2a*/
     return -2147467261; /*0x4a0b2d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a0b3d*/
+  v3 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4a0b3d*/
   if ( !v3 ) /*0x4a0b44*/
     return -2147024882; /*0x4a0c13*/
   *(unsigned int *)(v3 + 4) = a1->EnumConnectionPointsClass_field_0x04; /*0x4a0b59*/
@@ -331,7 +331,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   *(unsigned int *)(v3 + 20) = 0; /*0x4a0b64*/
   *(unsigned char *)(v3 + 24) = 1; /*0x4a0b67*/
   *(unsigned char *)(v3 + 25) = 0; /*0x4a0b6b*/
-  *(unsigned int *)(v3 + 12) = &vt_VectorClass; /*0x4a0b6e*/
+  *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_VectorClass); /*0x4a0b6e*/
   if ( (int *)(v3 + 12) != &a1->EnumConnectionPointsClass_field_0x0C ) /*0x4a0b74*/
   {
     VectorClass::CleanupTyped(v3 + 12); /*0x4a0b78*/
@@ -339,7 +339,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
     *(unsigned int *)(v3 + 20) = EnumConnectionPointsClass_field_0x14; /*0x4a0b83*/
     if ( EnumConnectionPointsClass_field_0x14 ) /*0x4a0b86*/
     {
-      v5 = __2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x14); /*0x4a0b90*/
+      v5 = (int)(__2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x14)); /*0x4a0b90*/
       *(unsigned int *)(v3 + 16) = v5; /*0x4a0b9a*/
       if ( v5 ) /*0x4a0b9d*/
       {
@@ -365,8 +365,8 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   *(unsigned int *)(v3 + 28) = a1->EnumConnectionPointsClass_field_0x1C; /*0x4a0bcb*/
   *(unsigned int *)(v3 + 32) = a1->EnumConnectionPointsClass_field_0x20; /*0x4a0bd1*/
-  *(unsigned int *)(v3 + 12) = &vt_DynamicVectorClass; /*0x4a0bd4*/
-  *(unsigned int *)v3 = &vt_EnumConnectionPointsClass; /*0x4a0bda*/
+  *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_DynamicVectorClass); /*0x4a0bd4*/
+  *(unsigned int *)v3 = (unsigned int)(&vt_EnumConnectionPointsClass); /*0x4a0bda*/
   for ( i = 0; i < *(unsigned int *)(v3 + 28); ++i ) /*0x4a0be7*/
   {
     v9 = *(unsigned int *)(*(unsigned int *)(v3 + 16) + 4 * i); /*0x4a0bef*/
@@ -561,14 +561,14 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
   this->estimatedHealth = 0; /*0x4a3291*/
   *&this->M116 = 0; /*0x4a3297*/
   memset(&this->M116, 0, 0x6Cu); /*0x4a329e*/
-  this->M116 = (void *)108; /*0x4a32a4*/
-  this->M8 = (void *)7; /*0x4a32aa*/
+  this->M116 = (unsigned int)((void *)108); /*0x4a32a4*/
+  this->M8 = (unsigned int)((void *)7); /*0x4a32aa*/
   this->health = dword_81FC60[a4]; /*0x4a32b8*/
   this->M16 = a2; /*0x4a32bf*/
-  this->M12 = (void *)a3; /*0x4a32c2*/
+  this->M12 = (unsigned int)((void *)a3); /*0x4a32c2*/
   if ( a4 == 1 ) /*0x4a32c5*/
   {
-    this->M8 = (void *)71; /*0x4a32c7*/
+    this->M8 = (unsigned int)((void *)71); /*0x4a32c7*/
     this->M28 = 16; /*0x4a32ce*/
   }
   if ( !dword_8A0E00 /*0x4a32e5*/
@@ -627,7 +627,7 @@ void * LoadFileSHP(char * aP0, bool * aP1)
     if ( (*(uint8_t (**)(CCFileClass *, unsigned int))(*(unsigned int *)v8.vtable1 + 20))(&v8, 0) ) /*0x4a38fd*/
     {
       v6 = (*(int (**)(CCFileClass *))(*(unsigned int *)v8.vtable1 + 44))(&v8); /*0x4a390f*/
-      v5 = (int)(operator new(v6)); /*0x4a3917*/
+      v5 = (void *)((int)(operator new(v6))); /*0x4a3917*/
       v7 = v5 == 0; /*0x4a391c*/
       if ( !v5 ) /*0x4a391e*/
       {
@@ -659,9 +659,9 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
   unsigned int v8[22]; // [esp+Ch] [ebp-6Ch] BYREF
   unsigned int v9[5]; // [esp+64h] [ebp-14h] BYREF
 
-  v3 = (int)(((String *)(a1))->GetOrEmpty_Alt());
+  v3 = (char *)((int)(((String *)(a1))->GetOrEmpty_Alt()));
   *a2 = 0; /*0x4a3982*/
-  result = SearchMIXFile(v3, 0); /*0x4a3985*/
+  result = (int)(SearchMIXFile(v3, 0)); /*0x4a3985*/
   if ( !result ) /*0x4a398c*/
   {
     CCFileClass::Construct(v8, v3); /*0x4a3994*/
@@ -674,12 +674,12 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
       if ( !v5 ) /*0x4a39c5*/
       {
   LABEL_6: *a2 = (gamemd::AbstractClass **)(!v7);
-        v8[0] = &vt_CCFileClass; /*0x4a39df*/
+        v8[0] = (unsigned int)(&vt_CCFileClass); /*0x4a39df*/
         v9[3] = 0; /*0x4a39e7*/
         Vector::Clear((int)v9); /*0x4a39ef*/
         v8[0] = (unsigned int)&off_7E1668; /*0x4a39f8*/
         ((BufferIOFileClass *)(v8))->Dtor(); /*0x4a3a00*/
-        return (int)v5; /*0x4a3a05*/
+        return (gamemd::AbstractClass **)((int)v5); /*0x4a3a05*/
       }
       (*(void (**)(unsigned int *, void *, size_t))(v8[0] + 36))(v8, v5, v6); /*0x4a39d1*/
     }
@@ -1117,7 +1117,7 @@ int SHP_DrawBuildingTiles(int * a1, int a2, char a3)
   v90 = v9; /*0x4a5b34*/
   v93 = v9; /*0x4a5b3b*/
   v94 = v9; /*0x4a5b42*/
-  v10 = &v73[4 * a2]; /*0x4a5b49*/
+  v10 = (int *)(&v73[4 * a2]); /*0x4a5b49*/
   if ( a3 ) /*0x4a5b4d*/
   {
     v11 = v5[195]; /*0x4a5b4f*/
@@ -1303,27 +1303,27 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   {
     if ( (v13 & 4) != 0 ) /*0x4a5f64*/
     {
-      v24 = a5 + 2; /*0x4a5f6c*/
+      v24 = (int)(a5 + 2); /*0x4a5f6c*/
       v25 = &a4->u8_2; /*0x4a5f7a*/
       v23 = v11 - 1; /*0x4a5f82*/
-      v22 = v12 - 1; /*0x4a5f86*/
+      v22 = (int)(v12 - 1); /*0x4a5f86*/
       (*(void (**)(int *, int *, unsigned int))(*a3 + 20))(a3, &v22, 0); /*0x4a5f93*/
     }
   }
   else
   {
-    v24 = a5 + 2; /*0x4a5f21*/
+    v24 = (int)(a5 + 2); /*0x4a5f21*/
     v23 = v11 - 1; /*0x4a5f2c*/
     v25 = &a4->u8_2; /*0x4a5f30*/
-    v22 = v12 - 1; /*0x4a5f42*/
-    v14 = *a3; /*0x4a5f46*/
+    v22 = (int)(v12 - 1); /*0x4a5f42*/
+    v14 = (int)(*a3); /*0x4a5f46*/
     (*((unsigned short *)&(a8))) = 0; /*0x4a5f4c*/
     (((unsigned char *)&(a8))[2]) = 0; /*0x4a5f57*/
     a3->GetStringValue(&v22, &a8, 60); /*0x4a5f5c*/
   }
   v15 = a4[2]; /*0x4a5f98*/
   v16 = a4[1]; /*0x4a5f9b*/
-  v26[0] = *a4; /*0x4a5f9e*/
+  v26[0] = (unsigned int)(*a4); /*0x4a5f9e*/
   v17 = v15 + v26[0]; /*0x4a5fa2*/
   v18 = a4[3]; /*0x4a5fa4*/
   v26[1] = v16; /*0x4a5fa7*/
@@ -2775,9 +2775,9 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
   {
     v10 = CopyAudioData(v14, referenceCount); /*0x4afa67*/
 LABEL_17:
-    qmemcpy(&v13, v10, sizeof(v13)); /*0x4afa77*/
+    memcpy(&v13, v10, sizeof(v13)); /*0x4afa77*/
   }
-  qmemcpy(a2, &v13, 0x30u); /*0x4afa79*/
+  memcpy(a2, &v13, 0x30u); /*0x4afa79*/
   return a2; /*0x4afa8a*/
 
 }

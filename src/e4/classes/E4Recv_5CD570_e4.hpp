@@ -24,7 +24,7 @@ struct E4Recv_5CD570 {
     unsigned int M64;  // 0x64
     unsigned int M72;  // 0x72
 // --- flat members (END) ---
-    int  sub_5CD570(void * a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10);  // 0x5CD570
+    int sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10);  // 0x5CD570
     char __pad_0[4];  // 0x0 @0x5cd570 (W16G3 raw-usage vocab)
     unsigned int MSAnim_field_0x08;  // 0x8 @0x5cd581 (W16G3 raw-usage vocab)
     unsigned int MSAnim_field_0x04;  // 0x4 @0x5cd587 (W16G3 raw-usage vocab)

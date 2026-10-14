@@ -52,13 +52,13 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
 
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)this, a2, a3, -1); /*0x47481c*/
   if ( Int_Overwrite == -1 ) /*0x474824*/
-    return a4; /*0x474826*/
+    return (void *)(a4); /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/
     Int_Overwrite = 100; /*0x474832*/
   result = ((Int_Overwrite <= 0 ? 0 : Int_Overwrite) << 8) / 100;
   if ( result >= 255 ) /*0x47485c*/
-    return 255; /*0x47485e*/
-  return result; /*0x47482a*/
+    return (void *)(255); /*0x47485e*/
+  return (void *)(result); /*0x47482a*/
 
 }
 } // namespace gamemd
@@ -84,7 +84,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
       return 0; /*0x5253aa*/
     if ( *&this->vtable2 ) /*0x525338*/
     {
-      m_8 = this->vtable3; /*0x52533f*/
+      m_8 = (int)(this->vtable3); /*0x52533f*/
       if ( a2 < m_8 ) /*0x525344*/
         m_8 = a2; /*0x525346*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x52534c*/
@@ -96,17 +96,17 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
       }
     }
     *&this->vtable2 = v4; /*0x52537a*/
-    this->vtable3 = a2; /*0x525382*/
+    this->vtable3 = (void *)(a2); /*0x525382*/
     BYTE1(this->vtable4) = a3 == 0; /*0x525385*/
   }
   else
   {
     (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x52538e*/
   }
-  v7 = this->vtable3; /*0x525391*/
+  v7 = (int)(this->vtable3); /*0x525391*/
   if ( v7 < this->uniqueId ) /*0x525399*/
     this->uniqueId = v7; /*0x52539b*/
-  return 1; /*0x52539e*/
+  return (gamemd::AbstractClass **)(1); /*0x52539e*/
 
 }
 } // namespace gamemd
@@ -134,7 +134,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   this->vtable4 = 0; /*0x52ab98*/
   while ( 1 ) /*0x52ab9b*/
   {
-    v3 = this->InfDeath; /*0x52ab9b*/
+    v3 = (int)(this->InfDeath); /*0x52ab9b*/
     if ( !v3 || !v3->ptr_4 || !v3->u32_8 ) /*0x52aba7*/
       break; /*0x52aba7*/
     (**(void (***)(int, int))v3)(v3, 1); /*0x52abb4*/
@@ -165,7 +165,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   this->uniqueId = &vt_GenericList; /*0x52ac1a*/
   while ( 1 ) /*0x52ac21*/
   {
-    v5 = this->InfDeath; /*0x52ac21*/
+    v5 = (int)(this->InfDeath); /*0x52ac21*/
     if ( !v5 ) /*0x52ac26*/
       break; /*0x52ac26*/
     if ( !v5->ptr_4 ) /*0x52ac28*/
@@ -198,11 +198,11 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
   }
-  result = &this->AnimList; /*0x52ac84*/
-  this->AnimList = &vt_GenericNode; /*0x52ac89*/
+  result = (char *)(&this->AnimList); /*0x52ac84*/
+  this->AnimList = (unsigned int)(&vt_GenericNode); /*0x52ac89*/
   if ( this != (char *)-20 ) /*0x52ac8f*/
   {
-    v11 = this->InfDeath; /*0x52ac91*/
+    v11 = (int)(this->InfDeath); /*0x52ac91*/
     if ( v11 ) /*0x52ac96*/
     {
       v12 = this->CellSpread; /*0x52ac98*/
@@ -218,7 +218,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   /* X11: vtable install elided (implicit via GenericNode virtuals 0x52acb3) */
   if ( this ) /*0x52acb9*/
   {
-    v13 = this->vtable2; /*0x52acbb*/
+    v13 = (int)(this->vtable2); /*0x52acbb*/
     if ( v13 ) /*0x52acc0*/
     {
       result = (char *)this->vtable3; /*0x52acc2*/
@@ -226,13 +226,13 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       {
         *((unsigned int *)result + 1) = v13; /*0x52acc9*/
         result = (char *)this->vtable2; /*0x52accc*/
-        *((unsigned int *)result + 2) = this->vtable3; /*0x52acd2*/
+        *((unsigned int *)result + 2) = (unsigned int)(this->vtable3); /*0x52acd2*/
         this->vtable3 = 0; /*0x52acd5*/
         this->vtable2 = 0; /*0x52acd8*/
       }
     }
   }
-  return result; /*0x52acdb*/
+  return (gamemd::AbstractClass **)(result); /*0x52acdb*/
 
 }
 } // namespace gamemd
@@ -294,7 +294,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2, int aP1, int a3, int a4, i
       WarheadTypeClass_field_0xC = aP1->WarheadTypeClass_field_0xC; /*0x52b043*/
       if ( WarheadTypeClass_field_0xC ) /*0x52b048*/
       {
-        WarheadTypeClass_field_0xC[1] = v8; /*0x52b04a*/
+        WarheadTypeClass_field_0xC[1] = (unsigned int)(v8); /*0x52b04a*/
         *((unsigned int *)aP1->WarheadTypeClass_field_0x8 + 2) = aP1->WarheadTypeClass_field_0xC; /*0x52b053*/
         aP1->WarheadTypeClass_field_0xC = 0; /*0x52b056*/
         aP1->WarheadTypeClass_field_0x8 = 0; /*0x52b059*/
@@ -319,7 +319,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
   unsigned int *i; // edx
 
   if ( !_strcmpi(Source, g_Str__none_) || !strlen(Source) ) /*0x644649*/
-    return -1; /*0x644653*/
+    return (gamemd::ParticleSystemTypeClass **)(-1); /*0x644653*/
   v2 = 0; /*0x64465a*/
   if ( (int)g_InfantryTypeInitState <= 0 ) /*0x64465e*/
   {
@@ -335,24 +335,24 @@ LABEL_6:
       for ( i = *(unsigned int **)&DataGlobal_A83D6C; (unsigned int *)*i != v4; ++i ) /*0x6446b2*/
       {
         if ( ++v6 >= (int)g_InfantryTypeInitState ) /*0x6446c2*/
-          return -1; /*0x6446c2*/
+          return (gamemd::ParticleSystemTypeClass **)(-1); /*0x6446c2*/
       }
-      return v6; /*0x6446cd*/
+      return (gamemd::ParticleSystemTypeClass **)(v6); /*0x6446cd*/
     }
-    return -1; /*0x6446ca*/
+    return (gamemd::ParticleSystemTypeClass **)(-1); /*0x6446ca*/
   }
   while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * v2) + 36)) ) /*0x644677*/
   {
     if ( ++v2 >= (int)g_InfantryTypeInitState ) /*0x644681*/
       goto LABEL_6; /*0x644681*/
   }
-  return v2; /*0x6446a0*/
+  return (gamemd::ParticleSystemTypeClass **)(v2); /*0x6446a0*/
 
 }
 } // namespace gamemd
 // 0x75CEC0
 namespace gamemd {
-int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // eax
@@ -367,7 +367,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   AnimTypeVector::Constructor(&aP1->q104, 0, 0); /*0x75cefe*/
   *(unsigned int *)(aP1 + 276) = 0; /*0x75cf08*/
   *&aP1->q118 = 10; /*0x75cf0b*/
-  *(unsigned int *)(aP1 + 260) = &vt_TypeList; /*0x75cf0e*/
+  *(unsigned int *)(aP1 + 260) = (unsigned int)(&vt_TypeList); /*0x75cf0e*/
   aP1->q120 = 0; /*0x75cf14*/
   aP1->q124 = 0; /*0x75cf1a*/
   aP1->q128 = 0; /*0x75cf25*/
@@ -468,7 +468,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
   }
   aP1->q0A0 = 0; /*0x75d19b*/
   *&aP1->u32_A4 = 1072693248; /*0x75d1a0*/
-  qmemcpy((void *)(aP1 + 168), (const void *)(aP1 + 160), 0x50u); /*0x75d1a7*/
+  memcpy((void *)(aP1 + 168), (const void *)(aP1 + 160), 0x50u); /*0x75d1a7*/
   return aP1; /*0x75d1a9*/
 
 }
@@ -1089,7 +1089,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v3->AreaFire = v66; /*0x77253c*/
     v3->IsRadBeam = v67; /*0x772541*/
     v65.q01C = (int)(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x772544*/
-    if ( v16 && IDA_BYTE1(v65.q028) ) /*0x772554*/
+    if ( v16 && (((unsigned char *)&(v65.q028))[1]) ) /*0x772554*/
       RA2_OPDEL(v16); /*0x772557*/
     v17 = v3->AssaultAnim_d; /*0x77255f*/
     if ( INIClass::GetString( /*0x77257c*/
@@ -1135,7 +1135,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v23 = v3->Camera_d; /*0x772604*/
     v3->OpenToppedAnim_d = (unsigned int)v22; /*0x77260a*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aCamera, v23); /*0x772619*/
-    IDA_LOBYTE(v63) = v3->IsLaser_d; /*0x772626*/
+    (*((unsigned char *)&(v63))) = v3->IsLaser_d; /*0x772626*/
     v62 = aIslaser; /*0x772627*/
     v61 = (char *)(v3 + 36); /*0x77262c*/
     v3->Camera_d = Bool_Overwrite; /*0x77262d*/
@@ -1144,7 +1144,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v26 = *(unsigned char *)(v3 + 331); /*0x772652*/
     v3->__pad_14A = v25; /*0x772658*/
     v27 = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aIsline, v26); /*0x772667*/
-    IDA_LOBYTE(v63) = *(unsigned char *)(v3 + 333); /*0x772674*/
+    (*((unsigned char *)&(v63))) = *(unsigned char *)(v3 + 333); /*0x772674*/
     v62 = aIshousecolor; /*0x772675*/
     v61 = (char *)(v3 + 36); /*0x77267a*/
     *(unsigned char *)(v3 + 331) = v27; /*0x77267b*/
@@ -1153,7 +1153,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v29 = v3->__pad_145; /*0x7726a0*/
     v3->Charges_d = v28; /*0x7726a6*/
     v30 = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aTurboboost, v29); /*0x7726b5*/
-    IDA_LOBYTE(v63) = v3->UseFireParticles_d; /*0x7726c2*/
+    (*((unsigned char *)&(v63))) = v3->UseFireParticles_d; /*0x7726c2*/
     v62 = aUsefireparticl; /*0x7726c3*/
     v61 = (char *)(v3 + 36); /*0x7726c8*/
     v3->__pad_145 = v30; /*0x7726c9*/
@@ -1166,7 +1166,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v32 = v3->__pad_12B; /*0x7726ee*/
     *&v3->q12A = v31; /*0x7726f4*/
     v33 = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aOmnifire, v32); /*0x772703*/
-    IDA_LOBYTE(v63) = *(unsigned char *)(v3 + 300); /*0x772710*/
+    (*((unsigned char *)&(v63))) = *(unsigned char *)(v3 + 300); /*0x772710*/
     v62 = aDistributedwea; /*0x772711*/
     v61 = (char *)(v3 + 36); /*0x772716*/
     v3->__pad_12B = v33; /*0x772717*/
@@ -1212,7 +1212,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v42 = *(unsigned char *)(v3 + 332); /*0x7727e3*/
     *(unsigned char *)(v3 + 334) = Int_Overwrite; /*0x7727e9*/
     v43 = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aIsbiglaser, v42); /*0x7727f8*/
-    IDA_LOBYTE(v63) = *(unsigned char *)(v3 + 303); /*0x772805*/
+    (*((unsigned char *)&(v63))) = *(unsigned char *)(v3 + 303); /*0x772805*/
     v62 = aBright; /*0x772806*/
     v61 = (char *)(v3 + 36); /*0x77280b*/
     *(unsigned char *)(v3 + 332) = v43; /*0x77280c*/
@@ -1221,7 +1221,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v45 = v3->AreaFire_d; /*0x772831*/
     *(unsigned char *)(v3 + 335) = v44; /*0x772837*/
     v46 = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aAreafire, v45); /*0x772846*/
-    IDA_LOBYTE(v63) = v3->IsElectricBolt_d; /*0x772853*/
+    (*((unsigned char *)&(v63))) = v3->IsElectricBolt_d; /*0x772853*/
     v62 = aIselectricbolt; /*0x772854*/
     v61 = (char *)(v3 + 36); /*0x772859*/
     v3->AreaFire_d = v46; /*0x77285a*/
@@ -1234,7 +1234,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v48 = v3->IsAlternateColor_d; /*0x77287f*/
     v3->DrawBoltAsLaser_d = v47; /*0x772885*/
     v49 = INIClass::ReadBool_Overwrite(&a1->vtable0, (uint8_t *)(v3 + 36), aIsalternatecol, v48); /*0x772894*/
-    IDA_LOBYTE(v63) = v3->__pad_154; /*0x7728a1*/
+    (*((unsigned char *)&(v63))) = v3->__pad_154; /*0x7728a1*/
     v62 = aIsradbeam; /*0x7728a2*/
     v61 = (char *)(v3 + 36); /*0x7728a7*/
     v3->IsAlternateColor_d = v49; /*0x7728a8*/
@@ -1243,7 +1243,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     v51 = *(unsigned int *)(v3 + 344); /*0x7728cd*/
     *(unsigned char *)(v3 + 341) = v50; /*0x7728d3*/
     v52 = INIClass::ReadInt_Overwrite((bool *)a1, (uint8_t *)(v3 + 36), aRadlevel, v51); /*0x7728e2*/
-    IDA_LOBYTE(v63) = *(unsigned char *)(v3 + 348); /*0x7728ef*/
+    (*((unsigned char *)&(v63))) = *(unsigned char *)(v3 + 348); /*0x7728ef*/
     v62 = aIsmagbeam; /*0x7728f0*/
     v61 = (char *)(v3 + 36); /*0x7728f5*/
     *(unsigned int *)(v3 + 344) = v52; /*0x7728f6*/

@@ -489,7 +489,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, int16_
 } // namespace gamemd
 // 0x5B2930
 namespace gamemd {
-unsigned int * Movement::Check(unsigned int *a2, unsigned short *a3_2)
+unsigned int * Movement::Check(unsigned int *a2, unsigned short *a3_2, void *a3)
 {
   (*((unsigned short *)&(a3_2))) = (a3_2->u32_10) + *a3_2; /*0x5b293e*/
   *a3_2 = a3_2; /*0x5b2947*/

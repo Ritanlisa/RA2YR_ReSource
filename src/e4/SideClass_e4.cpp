@@ -113,12 +113,12 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
       *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8),
       aP0);
   v19 = 0; /*0x679c92*/
-  v20 = &stru_A8E3A8; /*0x679c94*/
+  v20 = (gamemd::MissionClass *)(&stru_A8E3A8); /*0x679c94*/
   do /*0x679cad*/
   {
     v20->ObjectClass = v19; /*0x679c9c*/
     MissionClass::LoadFromINI(v20, aP0); /*0x679c9e*/
-    v20 = &v20->NeedsSaveOrLink; /*0x679ca3*/
+    v20 = (gamemd::MissionClass *)(&v20->NeedsSaveOrLink); /*0x679ca3*/
     ++v19; /*0x679ca6*/
   }
   while ( (int)v20 < (int)&dword_A8E7A8 ); /*0x679cad*/
@@ -128,7 +128,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 }  // G42.18 ns repair
 // 0x6A4550
 namespace gamemd {
-int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // eax
@@ -184,8 +184,8 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   void *v9; // eax
   unsigned int *v10; // edx
 
-  v2 = a0; /*0x6a4782*/
-  v3 = aP1; /*0x6a4787*/
+  v2 = (gamemd::SideClass *)(a0); /*0x6a4782*/
+  v3 = (int)(aP1); /*0x6a4787*/
   result = AbstractClass::SaveLoad_Prefix_0(a0, aP1); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {
@@ -235,9 +235,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
         }
       }
       v9 = p_houseTypes[4]; /*0x6a486c*/
-      v10 = p_houseTypes[1]; /*0x6a486f*/
+      v10 = (unsigned int *)(p_houseTypes[1]); /*0x6a486f*/
       p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
-      v10[(unsigned int)v9] = a0; /*0x6a487c*/
+      v10[(unsigned int)v9] = (unsigned int)(a0); /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
   }
@@ -259,7 +259,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   Block->u32_8 = &vt_SideClass; /*0x6a4943*/
   Block->? = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
-  v6 = Block; /*0x6a4966*/
+  v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
   v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < FootClass_Array ) /*0x6a497a*/
   {

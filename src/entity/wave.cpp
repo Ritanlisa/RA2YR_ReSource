@@ -99,7 +99,7 @@ WaveClass::WaveClass(TechnoClass* pTarget, WaveType waveType,
     WaveClass_field_1C8 = 0;
     WaveClass_field_1CC = 0;
 
-    abstractFlags = kWaveFlag;
+    abstractFlags = (void *)(kWaveFlag);
 }
 
 } // namespace gamemd

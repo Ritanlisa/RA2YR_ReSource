@@ -27,7 +27,7 @@ unsigned int * FindPrev();
 void * MoveNode(void * a2);
 void RelinkNode(int a2);
 int Remove(unsigned int * a2);
-    int PushFront(int a2);
+    int PushFront(int aP1);
     int Prepend(int a2);
     unsigned int * Attach(int a2);
     int RemoveNode();

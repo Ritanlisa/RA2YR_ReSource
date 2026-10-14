@@ -47,12 +47,12 @@
 #include "classes/TerrainClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/Terrain_e4.hpp"  // G42.57w9 method-carrier supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
-extern unsigned int unk_7E95EC;  // data: 0x7e95ec truth(IDA G42.57w9)
+extern unsigned char unk_7E95EC; // data: 0x7e95ec truth(IDA G42.57w9)
 
 
 // 0x5447C0
 namespace gamemd {  // G42.18 ns repair
-unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2)
+unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2, void *a7, void *a8, void *a9)
 {
 
   int v7; // eax
@@ -95,7 +95,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->q0308 = 0; /*0x5448c2*/
   aP4->ObjectTypeClass = &vt_IsometricTileTypeClass; /*0x5448c8*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
-  aP4->q008 = &vt_IsometricTileTypeClass; /*0x5448d6*/
+  aP4->q008 = (int)(&vt_IsometricTileTypeClass); /*0x5448d6*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -118,7 +118,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
           0)) )
   {
     v8 = (*(unsigned int *)&g_ObjectClass_Capacity)++; /*0x54497d*/
-    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v8) = aP4; /*0x54498c*/
+    *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v8) = (unsigned int)(aP4); /*0x54498c*/
   }
   if ( a6_2 ) /*0x544991*/
   {
@@ -131,7 +131,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( Destination != aP4->? ) /*0x5449b6*/
   {
-    qmemcpy(aP4->?, Destination, 0x30u); /*0x5449c1*/
+    memcpy(aP4->?, Destination, 0x30u); /*0x5449c1*/
     aP4->?[48] = v11; /*0x5449c3*/
   }
   aP4->q2F5 = 0; /*0x5449c5*/
@@ -409,7 +409,7 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned 
   return 1; /*0x540021*/
 }
 // 0x71DDD0
-bool   TerrainTypeClass::GetHeight(int a3)
+bool   TerrainTypeClass::GetHeight(int a3, void *a2)
 {
   TerrainClass *v4; // eax
 
@@ -428,7 +428,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void
     return 0; /*0x71de35*/
 }
 // 0x71E0D0
-unsigned int *   TerrainTypeClass::GetWidth(int * a2)
+unsigned int *   TerrainTypeClass::GetWidth(int * a2, void *a2_1)
 {
   int GroundHeight; // eax
   void *v3; // ecx

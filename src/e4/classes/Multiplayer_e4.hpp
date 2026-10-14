@@ -21,7 +21,7 @@ struct Multiplayer {
     unsigned int q1028;  // 0x1028
     unsigned int u32_284C;  // 0x284C
 // --- flat members (END) ---
-    unsigned int * CopyDataArray(unsigned int *aP1, void *a1 = 0);
+    unsigned int * CopyDataArray(unsigned int *aP1, void *a2 = 0);
     void * FindStartPositions(void *a1 = 0);
     void ShowProgress(int a2);
     unsigned char u32_42;  // 0x42 (offset-truth)

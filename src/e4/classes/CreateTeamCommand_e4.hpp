@@ -163,7 +163,6 @@ struct DeployCommandClass {
 };  // G42.37 class-body supply (defs in CreateTeamCommand_e4.cpp)
 struct CreateTeamCommand {
 // --- flat members (BEGIN) ---
-    void* vtable1;  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8
     unsigned int qC;  // 0xC
@@ -290,7 +289,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_27();  // 0x5365B0
     wchar_t * performAction_28();  // 0x5365D0
     wchar_t * performAction_29();  // 0x5365F0
-    unsigned char *  performAction_30(void * retstr, int a3);  // 0x536610
+    unsigned char * performAction_30(void *a1 = 0, void *a2 = 0);  // 0x536610
     wchar_t * performAction_32();  // 0x5366B0
     wchar_t * performAction_33();  // 0x5366D0
     wchar_t * performAction_34();  // 0x5366F0
@@ -321,7 +320,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_66();  // 0x536A20
     wchar_t * performAction_67();  // 0x536A40
     wchar_t * performAction_68();  // 0x536A60
-    unsigned char *  performAction_69(void * retstr, int a3);  // 0x536A80
+    unsigned char * performAction_69(void *a1 = 0, void *a2 = 0);  // 0x536A80
     wchar_t * performAction_71();  // 0x536B20
     wchar_t * performAction_72();  // 0x536B40
     wchar_t * performAction_73();  // 0x536B60
@@ -340,7 +339,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_96();  // 0x536DA0
     wchar_t * performAction_97();  // 0x536DC0
     wchar_t * performAction_98();  // 0x536DE0
-    wchar_t *  performAction_99(int a1);  // 0x536E00
+    wchar_t * performAction_99(void *a1 = 0);  // 0x536E00
     wchar_t * performAction_101();  // 0x536E40
     wchar_t * performAction_102();  // 0x536E60
     wchar_t * performAction_103();  // 0x536E80

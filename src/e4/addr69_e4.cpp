@@ -124,12 +124,12 @@ AbstractClass * * E4Recv_690400::sub_690400()
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   vtable0 = (char *)this->AbstractClass; /*0x690429*/
   vtable1 = (char *)this->M4; /*0x69042f*/
-  v5[0] = vtable0; /*0x690432*/
-  v6[0] = &vtable0[Rect.left]; /*0x69043d*/
-  v5[1] = vtable1; /*0x690441*/
+  v5[0] = (unsigned int)(vtable0); /*0x690432*/
+  v6[0] = (unsigned int)(&vtable0[Rect.left]); /*0x69043d*/
+  v5[1] = (unsigned int)(vtable1); /*0x690441*/
   v6[3] = 400; /*0x69044d*/
   v5[3] = 400; /*0x690451*/
-  v6[1] = &vtable1[Rect.top]; /*0x69045b*/
+  v6[1] = (unsigned int)(&vtable1[Rect.top]); /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
@@ -150,7 +150,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
              stru_887598.lineTrailer,
              g_DSurface_Hidden,
              0);
-  return result; /*0x6904b7*/
+  return (gamemd::AbstractClass **)(result); /*0x6904b7*/
 
 }
 }  // G42.18 ns repair
@@ -425,11 +425,11 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   if ( !v28 ) /*0x69413f*/
     goto LABEL_78; /*0x69413f*/
   v30 = ReceiveNetworkFile(a1, v36, a2, a3); /*0x694173*/
-  v31 = g_Str_true; /*0x694175*/
+  v31 = (const char *)(g_Str_true); /*0x694175*/
   if ( !v30 ) /*0x69417c*/
-    v31 = g_Str_false; /*0x69417e*/
+    v31 = (const char *)(g_Str_false); /*0x69417e*/
   Debug::Log("Receive_Remote_File returned %s\n", v31); /*0x694189*/
-  return v30; /*0x693d6c*/
+  return (gamemd::CampaignClass **)(v30); /*0x693d6c*/
 }
 }
 // 0x6941A0

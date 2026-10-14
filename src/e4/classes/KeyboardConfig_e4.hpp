@@ -16,7 +16,7 @@ struct KeyboardConfig {
     unsigned int u32_10;  // 0x10
     unsigned int u32_20;  // 0x20
 // --- flat members (END) ---
-    AbstractClass * ReleaseBuffer(int a2, void *a2_2);
+    AbstractClass * ReleaseBuffer(int a2, void *v3);
     static int LoadINI();
 };
 

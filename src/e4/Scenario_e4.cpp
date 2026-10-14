@@ -165,7 +165,7 @@ int Scenario::ReadTeams()
   int v76; // [esp+60h] [ebp-84h] BYREF
   char String[128]; // [esp+64h] [ebp-80h] BYREF
 
-  v1 = this; /*0x44f827*/
+  v1 = (gamemd::INIClass *)(this); /*0x44f827*/
   INIClass::ResetSection(this); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
   result = INIClass::GetKeyCount(v1->__pad_000, (unsigned __int8 *)aStructures); /*0x44f84a*/
@@ -234,7 +234,7 @@ int Scenario::ReadTeams()
               v21 = strtok(0, Str); /*0x44fa69*/
               if ( v21 ) /*0x44fa73*/
                 v70 = atoi(v21); /*0x44fa7e*/
-              v22 = v73; /*0x44fa82*/
+              v22 = (int *)(v73); /*0x44fa82*/
               v23 = 3; /*0x44fa86*/
               do /*0x44faab*/
               {
@@ -253,7 +253,7 @@ int Scenario::ReadTeams()
               v27 = strtok(0, Str); /*0x44fade*/
               if ( v27 ) /*0x44fae8*/
                 v26 = atoi(v27) != 0; /*0x44faf5*/
-              v28 = __2_YAPAXI_Z(0x720u); /*0x44fafd*/
+              v28 = (int)(__2_YAPAXI_Z(0x720u)); /*0x44fafd*/
               if ( v28 ) /*0x44fb07*/
               {
                 v29 = BuildingClass::Construct(v28, *((unsigned int *)dword_A83C6C + IndexByName), v65); /*0x44fb27*/
@@ -346,7 +346,7 @@ int Scenario::ReadTeams()
                         if ( *v46 != -1 ) /*0x44fd66*/
                         {
                           v48 = *((unsigned int *)dword_A83C6C + *v46); /*0x44fd73*/
-                          v49 = __2_YAPAXI_Z(0x720u); /*0x44fd76*/
+                          v49 = (int)(__2_YAPAXI_Z(0x720u)); /*0x44fd76*/
                           if ( v49 ) /*0x44fd80*/
                             v50 = (int *)BuildingClass::Construct(v49, v48, v65); /*0x44fd8a*/
                           else
@@ -366,7 +366,7 @@ int Scenario::ReadTeams()
                       && (*(unsigned __int8 (**)(int))(*&v29->u32_FF0))(v29)
                       && v29->q580 )
                     {
-                      Value = ProgressTimer::GetValue((ProgressTimer *)(v29 + 904), &v76); /*0x44fdf6*/
+                      Value = (unsigned int *)(ProgressTimer::GetValue((ProgressTimer *)(v29 + 904), &v76)); /*0x44fdf6*/
                       v53 = *(unsigned int *)(v29 + 1408); /*0x44fdfd*/
                       v54 = ((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F; /*0x44fe09*/
                       if ( v53 ) /*0x44fe0e*/
@@ -390,7 +390,7 @@ int Scenario::ReadTeams()
       v3 = ++v68; /*0x44fe3a*/
       if ( v68 >= v71 ) /*0x44fe41*/
         break; /*0x44fe41*/
-      v1 = this; /*0x44f866*/
+      v1 = (gamemd::INIClass *)(this); /*0x44f866*/
     }
   }
   return result; /*0x44fe4a*/
@@ -424,7 +424,7 @@ int Scenario::CopyLocalScenarioData()
     else
       abstractFlags -= *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)vtable3; /*0x4c61d7*/
   }
-  this->q038 = abstractFlags; /*0x4c61dd*/
+  this->q038 = (int)(abstractFlags); /*0x4c61dd*/
   result = *&dword_A83D4C->u32_184; /*0x4c61e6*/
   *(unsigned int *)this->q03C = result; /*0x4c61ec*/
   *&this->q040 = dword_A8B230[381].vtable3; /*0x4c61fc*/
@@ -495,7 +495,7 @@ Game * * Scenario::ComputeDisplayPosition()
   int v9; // ebx
   int v10; // eax
 
-  v1 = g_DisplayWidth; /*0x552b12*/
+  v1 = (gamemd::LoadingScreen *)(g_DisplayWidth); /*0x552b12*/
   v2 = 640; /*0x552b20*/
   if ( g_DisplayWidth != 640 ) /*0x552b2b*/
     v2 = 800; /*0x552b2d*/
@@ -506,10 +506,10 @@ Game * * Scenario::ComputeDisplayPosition()
       v9 = 600; /*0x552ba4*/
     v10 = (int)*(&g_DisplayWidth + 1); /*0x552baa*/
     this->q024 = v2; /*0x552baf*/
-    this->q028 = (void *)v9; /*0x552bb4*/
-    this->q020 = (void *)((v10 - v9) / 2); /*0x552bc6*/
+    this->q028 = (int)((void *)v9); /*0x552bb4*/
+    this->q020 = (int)((void *)((v10 - v9) / 2)); /*0x552bc6*/
     result = (int)&v1->__pad_0[-v2] / 2; /*0x552bc9*/
-    this->q01C = (void *)result; /*0x552bcd*/
+    this->q01C = (int)((void *)result); /*0x552bcd*/
   }
   else
   {
@@ -518,24 +518,24 @@ Game * * Scenario::ComputeDisplayPosition()
       v3 = 600; /*0x552b46*/
     v4 = (void *)(v3 - 80); /*0x552b4b*/
     v5 = (char *)&(*(&g_DisplayWidth + 1))[1].LoadingScreen_field_0x10 - v3; /*0x552b5c*/
-    this->q014 = (void *)v2; /*0x552b5e*/
+    this->q014 = (int)((void *)v2); /*0x552b5e*/
     this->q024 = v2; /*0x552b64*/
     v6 = (int)(v5 - 80) / 2; /*0x552b6f*/
-    this->q010 = (void *)v6; /*0x552b71*/
+    this->q010 = (int)((void *)v6); /*0x552b71*/
     v6 += 40; /*0x552b74*/
     v7 = (int)&v1->__pad_0[-v2] / 2; /*0x552b76*/
-    this->q034 = (void *)v2; /*0x552b78*/
-    this->q00C = (void *)v7; /*0x552b7b*/
-    this->q01C = (void *)v7; /*0x552b7e*/
-    this->q020 = (void *)v6; /*0x552b81*/
-    this->q02C = (void *)v7; /*0x552b84*/
+    this->q034 = (int)((void *)v2); /*0x552b78*/
+    this->q00C = (int)((void *)v7); /*0x552b7b*/
+    this->q01C = (int)((void *)v7); /*0x552b7e*/
+    this->q020 = (int)((void *)v6); /*0x552b81*/
+    this->q02C = (int)((void *)v7); /*0x552b84*/
     result = (int)v4 + v6; /*0x552b88*/
-    this->q028 = v4; /*0x552b8b*/
-    this->q018 = (void *)40; /*0x552b8f*/
-    this->q030 = (void *)result; /*0x552b92*/
-    this->q038 = (void *)40; /*0x552b95*/
+    this->q028 = (int)(v4); /*0x552b8b*/
+    this->q018 = (int)((void *)40); /*0x552b8f*/
+    this->q030 = (int)((void *)result); /*0x552b92*/
+    this->q038 = (int)((void *)40); /*0x552b95*/
   }
-  return result; /*0x552b87*/
+  return (gamemd::Game **)(result); /*0x552b87*/
 
 }
 }
@@ -557,7 +557,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 
   if ( *(unsigned int *)&dword_A8B238 ) /*0x552beb*/
   {
-    v6 = Copy8Bytes(&v11, &this->q01C); /*0x552c3b*/
+    v6 = (int *)(Copy8Bytes(&v11, &this->q01C)); /*0x552c3b*/
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
     result = a2; /*0x552c54*/
@@ -583,7 +583,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
       v5 = Scenario_field_0x2C + 84; /*0x552c06*/
     else
       v5 = Scenario_field_0x2C + 164; /*0x552c1f*/
-    *a2 = v5; /*0x552c0c*/
+    *a2 = (unsigned int)(v5); /*0x552c0c*/
     a2->q004 = Scenario_field_0x30 + 7; /*0x552c0e*/
   }
   return result; /*0x552c11*/
@@ -668,7 +668,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
   int v72; // [esp+34h] [ebp-4h]
 
   v1 = 0; /*0x55afc7*/
-  v2 = dword_A8B230; /*0x55afcd*/
+  v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55afcd*/
   ++*(unsigned int *)&g_MissionQueueFrame.waypoints[278]; /*0x55afd3*/
   dword_A83CDC = 0; /*0x55afdb*/
   if ( (int)dword_8B40D8 > 0 ) /*0x55afe0*/
@@ -680,7 +680,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       {
         if ( (unsigned __int8)TeamClass::Update_0(v3, 50, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) ) /*0x55b00a*/
           goto LABEL_22; /*0x55b011*/
-        v2 = dword_A8B230; /*0x55b017*/
+        v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b017*/
       }
       if ( BYTE2(v2[374].uniqueId) ) /*0x55b01d*/
       {
@@ -691,7 +691,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
         {
           goto LABEL_22; /*0x55b097*/
         }
-        v2 = dword_A8B230; /*0x55b09d*/
+        v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b09d*/
       }
       if ( HIBYTE(v2[374].uniqueId) /*0x55b10f*/
         && ((unsigned __int8)TeamClass::Update_0(v3, 45, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
@@ -701,7 +701,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       {
         goto LABEL_22; /*0x55b116*/
       }
-      v2 = dword_A8B230; /*0x55b118*/
+      v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b118*/
       if ( dword_A8B230[127].vtable3 != (void *)-1 ) /*0x55b124*/
       {
         vtable3 = dword_A8B230[127].vtable3; /*0x55b126*/
@@ -722,7 +722,7 @@ LABEL_23:
     }
     TeamClass::Update_0(v3, 14, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0); /*0x55b148*/
 LABEL_22:
-    v2 = dword_A8B230; /*0x55b15e*/
+    v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b15e*/
     goto LABEL_23; /*0x55b15e*/
   }
 LABEL_24:
@@ -746,7 +746,7 @@ LABEL_24:
         *p_vtable3 = (void *)-1; /*0x55b1c4*/
       }
       MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x55b1cd*/
-      v2 = dword_A8B230; /*0x55b1d2*/
+      v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b1d2*/
     }
   }
   BYTE2(v2[374].uniqueId) = 0; /*0x55b1d8*/
@@ -1001,7 +1001,7 @@ int Scenario::PreGameInit()
   Debug::Log("Pregame setup for %d players.\n", dword_A8DA84); /*0x5e748b*/
   *(unsigned int *)dword_A8EB60 = g_abs_A8B268; /*0x5e74aa*/
   v0 = dword_A8E960; /*0x5e74b0*/
-  (((v0) >> 8) & 0xFF) = IDA_BYTE1(dword_A8E960) & 0x77; /*0x5e74bb*/
+  (((v0) >> 8) & 0xFF) = (((unsigned char *)&(dword_A8E960))[1]) & 0x77; /*0x5e74bb*/
   v1 = v0 | ((byte_A8B31D & 1 | (16 * (g_abs_A8B260 & 1))) << 11); /*0x5e74c1*/
   dword_A8B24C = 2; /*0x5e74c3*/
   (v1) = ((v1) & ~0xFF) | ((unsigned int)(dword_A8E960 | 0xC0) & 0xFF); /*0x5e74cd*/

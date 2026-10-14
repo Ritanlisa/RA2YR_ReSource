@@ -16,7 +16,7 @@ struct VectorClass_ptr_TeamClass {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1, void *a1 = 0);  // 0x4E84D0
+    int Get(int a2, void *a2_2);  // 0x4E84D0
     void Destroy_0();  // 0x4E8960
     unsigned int  GetItemIndex_0(int a2);  // 0x4E8990
     void Destroy_1();  // 0x4E89C0

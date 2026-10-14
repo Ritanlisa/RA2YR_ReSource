@@ -126,7 +126,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
     ++this->location[1]; /*0x541232*/
     Debug::Log(); /*0x541240*/
   }
-  return v13; /*0x5411af*/
+  return (gamemd::AbstractClass **)(v13); /*0x5411af*/
 
 }
 }
@@ -733,7 +733,7 @@ LABEL_26:
       v76 = v28;
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
       v28->field_0 =(void*)&v72->q000[(unsigned int)v27];
-      v28->__pad_004 = (void *)v29;
+      v28->__pad_004 = (unsigned char)((void *)v29);
       if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
         || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
         && *(int *)&(&g_NetworkPlayerBuffer)[80464] > 0
@@ -811,7 +811,7 @@ LABEL_26:
           if ( v65 )
             var9F4_2 = (uint8_t)((unsigned char)v65 + 96);
           else
-            IDA_LOBYTE(var9F4_2) = 0;
+            (*((unsigned char *)&(var9F4_2))) = 0;
           v35 = (INIClass *)((char *)&v69->field_0 + 1);
           sprintf(aP2[32], DataGlobal_008291B0, (char *)&v69->field_0 + 1);
           strcat(aP2[32], (const char *)&var9F4_2);
@@ -844,7 +844,7 @@ LABEL_26:
             }
             if ( Destination != (char *)(v3 + 25) )
             {
-              qmemcpy( v3 + 25, (const void *)(Destination), 0x30u);
+              memcpy( v3 + 25, (const void *)(Destination), 0x30u);
               *((unsigned char *)v3 + 148) = v154;
             }
             v38 = v86;
@@ -1011,7 +1011,7 @@ LABEL_190:
           }
           if ( v155 != (char *)(v3 + 25) )
           {
-            qmemcpy( v3 + 25, (const void *)(v155), 0x30u);
+            memcpy( v3 + 25, (const void *)(v155), 0x30u);
             *((unsigned char *)v3 + 148) = v156;
           }
           v46 = v75;

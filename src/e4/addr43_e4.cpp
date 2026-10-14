@@ -109,7 +109,7 @@ LABEL_14:
     v11 = 0; /*0x431c9b*/
     attachedTag = (TagClass *)v6; /*0x431c9f*/
     if ( v6 > (int)this->attachedTag ) /*0x431ca3*/
-      attachedTag = this->attachedTag; /*0x431ca5*/
+      attachedTag = (gamemd::TagClass *)(this->attachedTag); /*0x431ca5*/
     v8 = (*((unsigned __int8 (**)(ObjectClass *))this->AbstractClass + 6))(this) == 0; /*0x431cb0*/
     vtable0 = (int (**)(ObjectClass *, int))this->AbstractClass; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
@@ -222,40 +222,40 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   unsigned int v76[2]; // [esp+5Ch] [ebp-10h] BYREF
 
   aP5 = aP5; /*0x4373b3*/
-  v76[0] = *aP5; /*0x4373c1*/
+  v76[0] = (unsigned int)(*aP5); /*0x4373c1*/
   aP0 = aP0; /*0x4373c5*/
-  v14 = aP5[1]; /*0x4373c9*/
+  v14 = (int)(aP5[1]); /*0x4373c9*/
   (*((unsigned char *)&(aP5))) = 0; /*0x4373cc*/
   v76[1] = v14; /*0x4373d1*/
   v62 = 0; /*0x4373d5*/
-  v15 = aP5[2]; /*0x4373d9*/
+  v15 = (int)(aP5[2]); /*0x4373d9*/
   v63 = 0; /*0x4373dc*/
   v15 = v15; /*0x4373e0*/
   aP2 = aP2; /*0x4373e4*/
-  v17 = aP5[3]; /*0x4373e8*/
+  v17 = (int)(aP5[3]); /*0x4373e8*/
   aP2 = 0; /*0x4373eb*/
   v17 = v17; /*0x4373ef*/
-  v72 = *aP2; /*0x4373f5*/
+  v72 = (int)(*aP2); /*0x4373f5*/
   v61 = 0; /*0x4373f9*/
   v18 = 0; /*0x437400*/
-  v73 = aP2[1]; /*0x437402*/
+  v73 = (int)(aP2[1]); /*0x437402*/
   v65 = 0; /*0x437406*/
-  v19 = aP2[2]; /*0x43740a*/
+  v19 = (int)(aP2[2]); /*0x43740a*/
   v66 = 0; /*0x43740d*/
   v19 = v19; /*0x437411*/
-  v20 = aP2[3]; /*0x437419*/
+  v20 = (int)(aP2[3]); /*0x437419*/
   v64 = 0; /*0x43741c*/
   v20 = v20; /*0x437423*/
   v67 = 0; /*0x437427*/
   v68 = 0; /*0x43742b*/
   aP8 = 24 * aP8 + 8484624; /*0x43743a*/
   v21 = 0; /*0x43745f*/
-  result = CalcSurfaceBlitRects(&v72, aP3, a4, v76, &aP5, &v62, &aP2); /*0x437461*/
+  result = (char)(CalcSurfaceBlitRects(&v72, aP3, a4, v76, &aP5, &v62, &aP2)); /*0x437461*/
   if ( result ) /*0x437468*/
   {
     if ( dword_87E8A4 ) /*0x43747c*/
     {
-      v23 = *aP1; /*0x437485*/
+      v23 = (int)(*aP1); /*0x437485*/
       v24 = *((unsigned int *)dword_87E8A4 + 1); /*0x43748d*/
       v71 = v73 + aP1[1]; /*0x437490*/
       v25 = v71 - v24; /*0x437494*/
@@ -271,7 +271,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v63 = Audio::GetSamplePosition(v26, v71 - v27); /*0x4374ea*/
       v64 = 0; /*0x4374f2*/
       v28 = aP8->LockCount; /*0x4374fa*/
-      v67 = aP8->Height; /*0x437502*/
+      v67 = (int)(aP8->Height); /*0x437502*/
       v68 = v28; /*0x437509*/
       v29 = v28 / v67; /*0x43750d*/
       if ( aP8->q014 ) /*0x437513*/
@@ -304,7 +304,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         }
       }
     }
-    v30 = aP0; /*0x4375a7*/
+    v30 = (int *)(aP0); /*0x4375a7*/
     v31 = aP0->vt_slot_112(); /*0x4375af*/
     v32 = v19 * v31; /*0x4375b6*/
     if ( v32 == v30->vt_slot_116() /*0x4375d8*/
@@ -313,7 +313,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v34 = v17 * v15; /*0x4375e2*/
       if ( v17 * v15 >= v20 * v19 ) /*0x4375ee*/
         v34 = v20 * v19; /*0x4375f0*/
-      v35 = *aP6; /*0x4375fc*/
+      v35 = (int)(*aP6); /*0x4375fc*/
       if ( (unsigned char)aP5 ) /*0x4375fe*/
         aP6->Blit(v62, aP2, v34, 0, 0, 0, 1000); /*0x437616*/
       else
@@ -341,12 +341,12 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       {
         a4 = -v37; /*0x437690*/
         aP7 = -aP7; /*0x43769c*/
-        v38 = *aP3; /*0x4376a0*/
+        v38 = (int)(*aP3); /*0x4376a0*/
         v66 = -v66; /*0x4376a4*/
         v65 = -v65; /*0x4376aa*/
         v39 = aP3->vt_slot_116(); /*0x4376ae*/
         v40 = *v30; /*0x4376b5*/
-        aP2 = (int *)((char *)aP2 + (v17 - 1) * v39); /*0x4376c1*/
+        aP2 = (gamemd::XSurface *)((int *)((char *)aP2 + (v17 - 1) * v39)); /*0x4376c1*/
         v41 = v30->vt_slot_116(); /*0x4376c7*/
         v42 = v17; /*0x4376d3*/
         v43 = (v20 - 1) * v41 + v62; /*0x4376da*/
@@ -499,13 +499,13 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
           v54 = a10; /*0x437890*/
         }
       }
-      v30 = aP0; /*0x43797a*/
+      v30 = (int *)(aP0); /*0x43797a*/
     }
     v30->Unlock(); /*0x437982*/
     aP3->Unlock(); /*0x43798b*/
-    return 1; /*0x43798e*/
+    return (gamemd::MouseClass **)(1); /*0x43798e*/
   }
-  return result; /*0x43746a*/
+  return (gamemd::MouseClass **)(result); /*0x43746a*/
 }
 }
 // 0x437A10
@@ -592,7 +592,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v52 = v18; /*0x437aad*/
   result = IntersectSurfaceRects((IUnknown *)(&v58), (int)a1, &v62, (int)a4); /*0x437ab1*/
   if ( !result ) /*0x437ab8*/
-    return result; /*0x437ab8*/
+    return (gamemd::MouseClass **)(result); /*0x437ab8*/
   v71 = v62 - *a4; /*0x437ad6*/
   v48 = v63 - a4[1]; /*0x437ae7*/
   v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
@@ -677,7 +677,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       }
       while ( v34 ); /*0x437d64*/
     }
-    v35 = aP0; /*0x437d66*/
+    v35 = (int)(aP0); /*0x437d66*/
     v70 = (*(int (**)(int))(*&aP0->u32_1D0))(aP0); /*0x437d76*/
     v36 = v65; /*0x437d7d*/
     if ( v65 >= v61 ) /*0x437d83*/
@@ -687,7 +687,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       v67 = v36; /*0x437d96*/
       do /*0x437eda*/
       {
-        v37 = *aP6; /*0x437da4*/
+        v37 = (int)(*aP6); /*0x437da4*/
         if ( (unsigned short)a15 ) /*0x437daa*/
           (*(void (**)(int *, int, uint16_t *, int, int, int, int, int, int, int, char *, int))(v37 + 8))( /*0x437de4*/
             aP6,
@@ -746,11 +746,11 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
         --v67; /*0x437ed3*/
       }
       while ( v67 ); /*0x437eda*/
-      v35 = aP0; /*0x437ee0*/
+      v35 = (int)(aP0); /*0x437ee0*/
     }
     (*(void (**)(int))(*(unsigned int *)v35 + 96))(v35); /*0x437ee9*/
     (*(void (**)(int))(*(unsigned int *)aP3 + 96))(aP3); /*0x437ef5*/
-    return 1; /*0x437ef8*/
+    return (gamemd::MouseClass **)(1); /*0x437ef8*/
   }
   else
   {
@@ -780,7 +780,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
     if ( v2 != -2147467262 ) /*0x437fb0*/
       sub_7DC720(v2); /*0x437fb3*/
   }
-  return &this->vfptr; /*0x437fba*/
+  return (unsigned int *)(&this->vfptr); /*0x437fba*/
 }
 }
 // 0x43A600
@@ -809,7 +809,7 @@ void BrainClass::sub_43A600()
   }
   (*(void (**)(BrainClass *))(this->u32_4 + 12))&this->u32_4; /*0x43a63c*/
   v5 = (void *)this->u32_8; /*0x43a63f*/
-  this->u32_4 = &vt_VectorClass; /*0x43a642*/
+  this->u32_4 = (unsigned int)(&vt_VectorClass); /*0x43a642*/
   if ( v5 && this->u32_11 ) /*0x43a64c*/
   {
     operator delete((void *)(v5)); /*0x43a652*/

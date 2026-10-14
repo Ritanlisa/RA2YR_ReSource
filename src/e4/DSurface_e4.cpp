@@ -61,7 +61,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {
-AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
+AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a5_1, void *a6, void *a7, void *a8, void *a9)
 {
   unsigned int *v6; // ebp
   void *v7; // edi
@@ -106,7 +106,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
       this->u32_64 = (v8->SuperClass_field_0x68 & 0x4000) != 0; /*0x4ba695*/
     }
   }
-  return this; /*0x4ba69a*/
+  return (gamemd::AbstractClass *)(this); /*0x4ba69a*/
 }
 } // namespace gamemd
 // 0x4BA6B0
@@ -184,7 +184,7 @@ AbstractClass * * DSurface::CreatePrimary()
   if ( (v1 & 0x10) == 0 ) /*0x4ba7bf*/
     LOBYTE(stru_820320.Start) = 0; /*0x4ba7c1*/
   Debug::Log(); /*0x4ba7e3*/
-  v2 = __2_YAPAXI_Z(0x24u); /*0x4ba7ea*/
+  v2 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4ba7ea*/
   v3 = (unsigned int *)v2; /*0x4ba7ef*/
   if ( v2 ) /*0x4ba7f8*/
   {
@@ -196,9 +196,9 @@ AbstractClass * * DSurface::CreatePrimary()
     *(unsigned char *)(v2 + 24) = 0; /*0x4ba80b*/
     *(unsigned char *)(v2 + 25) = 0; /*0x4ba80e*/
     *(unsigned int *)(v2 + 28) = 0; /*0x4ba811*/
-    *(unsigned int *)v2 = &DSurface_Vtable; /*0x4ba814*/
+    *(unsigned int *)v2 = (unsigned int)(&DSurface_Vtable); /*0x4ba814*/
     v4 = (void *)__2_YAPAXI_Z(0x6Cu); /*0x4ba822*/
-    v3[8] = v4; /*0x4ba82b*/
+    v3[8] = (unsigned int)(v4); /*0x4ba82b*/
     v5 = v3; /*0x4ba82e*/
     memset(v4, 0, 0x6Cu); /*0x4ba830*/
     *(unsigned int *)v3[8] = 108; /*0x4ba835*/
@@ -216,7 +216,7 @@ AbstractClass * * DSurface::CreatePrimary()
     *(unsigned int *)(v5[8] + 20) = this != 0; /*0x4ba87f*/
   }
   Debug::Log(); /*0x4ba887*/
-  v6 = v5 + 7; /*0x4ba897*/
+  v6 = (int *)(v5 + 7); /*0x4ba897*/
   v7 = g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba8a1*/
          g_lpDirectDraw7,
          (LPDDSURFACEDESC)v5[8],
@@ -252,7 +252,7 @@ AbstractClass * * DSurface::CreatePrimary()
     v13 = v11[2]; /*0x4ba961*/
     v14 = *v6; /*0x4ba964*/
     v5[2] = v13; /*0x4ba966*/
-    g_DDraw_PrimarySurface = v14; /*0x4ba969*/
+    g_DDraw_PrimarySurface = (LPDIRECTDRAWSURFACE7)(v14); /*0x4ba969*/
     if ( !g_lpDirectDraw7->lpVtbl->CreateClipper(g_lpDirectDraw7, 0, (LPDIRECTDRAWCLIPPER *)&g_DDraw_Clipper, 0) ) /*0x4ba976*/
     {
       v15 = *(unsigned int *)g_DDraw_Clipper; /*0x4ba983*/
@@ -260,7 +260,7 @@ AbstractClass * * DSurface::CreatePrimary()
       if ( !(*(int (**)(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
         (*(void (**)(int, int))(*(unsigned int *)*v6 + 112))(*v6, g_DDraw_Clipper); /*0x4ba9a7*/
     }
-    qmemcpy(&g_DDraw_PixelFormatDesc, (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
+    memcpy(&g_DDraw_PixelFormatDesc, (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
     if ( (*(int (**)(unsigned int *))(*v5 + 112))(v5) != 2 ) /*0x4ba9c7*/
       goto LABEL_60; /*0x4ba9c7*/
     v17 = g_DDraw_RedMask; /*0x4ba9cd*/
@@ -390,7 +390,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x4BAC60
 namespace gamemd {
-unsigned int * DSurface::CreateBackBuffer(int a2)
+unsigned int * DSurface::CreateBackBuffer(int a2, void *a2_1)
 {
 
   void *v3; // edi
@@ -417,13 +417,13 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
             this->DSurface_field_0x20) )
     {
       DSurface_field_0x20 = this->DSurface_field_0x20; /*0x4bacc2*/
-      this->q010 = (void *)((unsigned int)(*((unsigned int *)DSurface_field_0x20 + 21) + 7) >> 3); /*0x4bacce*/
+      this->q010 = (int)((void *)((unsigned int)(*((unsigned int *)DSurface_field_0x20 + 21) + 7) >> 3)); /*0x4bacce*/
       BYTE1(this->DSurface_field_0x18) = (*((unsigned int *)DSurface_field_0x20 + 26) & 0x4000) != 0; /*0x4bacda*/
       this->Width = (void *)*((unsigned int *)DSurface_field_0x20 + 3); /*0x4bace0*/
       this->Height = (void *)*((unsigned int *)DSurface_field_0x20 + 2); /*0x4bace6*/
     }
   }
-  return &this->vtable1; /*0x4baceb*/
+  return (unsigned int *)(&this->vtable1); /*0x4baceb*/
 
 }
 } // namespace gamemd

@@ -5698,8 +5698,8 @@ int ParticleClass::Construct(int a1, void* a2, float a3, int a4) {
   _ESI->u32_131 = 0; /*0x62b761*/
   *(unsigned int *)_ESI = 0; /*0x62b767*/
   *(unsigned int *)(_ESI + 4) = 0; /*0x62b76d*/
-  _ESI->vtable3 = 0; /*0x62b773*/
-  _ESI->vtable4 = 0; /*0x62b77a*/
+  /* X11: vtable install elided (implicit via class virtuals 0x62b773) — binary-proven install, was 0 */
+  /* X11: vtable install elided (implicit via class virtuals 0x62b77a) — binary-proven install, was 0 */
   AbstractClass::GenerateUniqueID(&_ESI->vtable2); /*0x62b781*/
   if ( *(int *)&DataGlobal_A83DD8 < *(int *)DataGlobal_A83DD0 /*0x62b7b9*/
     || (DataGlobal_A83DD5 || !*(unsigned int *)DataGlobal_A83DD0)

@@ -74,7 +74,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
   if ( v1 ) /*0x7515a8*/
     return VocClass::GetSampleName(v1); /*0x7515aa*/
   else
-    return g_Str_Invalid_Voc; /*0x7515af*/
+    return (char *)(g_Str_Invalid_Voc); /*0x7515af*/
 }
 } // namespace gamemd
 // 0x753250

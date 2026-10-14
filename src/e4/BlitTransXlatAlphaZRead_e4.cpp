@@ -90,11 +90,11 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
-  result = this->ptr_8 + (v11 << 9); /*0x494b98*/
+  result = (int)(this->ptr_8 + (v11 << 9)); /*0x494b98*/
   v17 = (unsigned __int16 *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-    v13 = g_ZBufferDescriptor; /*0x494bab*/
+    v13 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494bab*/
     v16 = (unsigned __int16 *)a4; /*0x494bb1*/
     do /*0x494c31*/
     {
@@ -102,7 +102,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
         *a2 = *(unsigned short *)(*&this->Data + 2 * ((unsigned __int8)*a3 | v17[*a7])); /*0x494bf9*/
-        v13 = g_ZBufferDescriptor; /*0x494bfc*/
+        v13 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494bfc*/
       }
       ++a2; /*0x494c06*/
       ++a3; /*0x494c0a*/
@@ -134,11 +134,11 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
-  result = this->ptr_8 + (v12 << 9); /*0x494c78*/
+  result = (int)(this->ptr_8 + (v12 << 9)); /*0x494c78*/
   v18 = (unsigned __int16 *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-    v14 = g_ZBufferDescriptor; /*0x494c8b*/
+    v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494c8b*/
     v17 = (unsigned __int16 *)a4; /*0x494c91*/
     do /*0x494d16*/
     {
@@ -146,7 +146,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
         *a2 = a10 | *(unsigned short *)(*&this->Data + 2 * ((unsigned __int8)*a3 | v18[*a7])); /*0x494cde*/
-        v14 = g_ZBufferDescriptor; /*0x494ce1*/
+        v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494ce1*/
       }
       ++a2; /*0x494ceb*/
       ++a3; /*0x494cef*/

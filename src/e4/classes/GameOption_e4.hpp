@@ -41,7 +41,7 @@ struct GameOption {
     static char CheckDuplicate();  // x4:empty@0x5e9560
     int GetField(void *a1 = 0, void *a2 = 0);
     int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
-    void * SetDigest(char *aP1, void *a1 = 0);
+    void * SetDigest(char *aP1, void *a2 = 0);
     unsigned char u32_949;  // 0x949 (offset-truth)
 };
 

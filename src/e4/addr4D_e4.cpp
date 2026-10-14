@@ -139,7 +139,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   }
   aP0->u32_69 = 0; /*0x4d1873*/
   aP0->u32_64 = 0; /*0x4d1876*/
-  return ((AbstractClass *)((AbstractClass *)aP0))->DTOR(); /*0x4d187e*/
+  return (void *)(((AbstractClass *)((AbstractClass *)aP0))->DTOR()); /*0x4d187e*/
 }
 }  // G42.18 ns repair
 // 0x4D2370
@@ -181,7 +181,7 @@ int sub_4D2370()
         (*((unsigned short *)&(v9))) = v5 + *v4; /*0x4d2408*/
         (*(((unsigned short *)&(v9)) + 1)) = (*(((unsigned short *)&(v5)) + 1)) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        v6 = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
+        v6 = (unsigned int *)(((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj((int16_t *)&v11)); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6->u32_140 |= 0x400000u; /*0x4d2439*/
       }
@@ -193,7 +193,7 @@ int sub_4D2370()
       v13[0] = *v7; /*0x4d2442*/
       v13[1] = v7[1]; /*0x4d244e*/
       v13[2] = v7[2]; /*0x4d2455*/
-      v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13); /*0x4d245e*/
+      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4d245e*/
       v8->flags[0] |= 0x400000u; /*0x4d2474*/
     }
     result = g_FootClassConfig; /*0x4d247c*/
@@ -280,7 +280,7 @@ LABEL_13:
   result = (int)ppv; /*0x4db952*/
   if ( v5 != ppv ) /*0x4db958*/
   {
-    this->M1652 = ppv; /*0x4db95c*/
+    this->M1652 = (unsigned int)(ppv); /*0x4db95c*/
     if ( result ) /*0x4db962*/
     {
       (*(void (**)(int))(*&result->u32_10))(result); /*0x4db967*/

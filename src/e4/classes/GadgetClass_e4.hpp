@@ -26,9 +26,8 @@ struct GadgetClass {
     ControlClass Construct(int a2, int a3, int a4, int a5, int a6, char a7);
     static int Hide(GadgetClass * aP1);
     int ClearState(int a2, void *a1 = 0);
-    static int Construct(void * aP0, int aP1, ControlClass * aP2, int aP3, int aP4, int aP5, int aP6);
-    static int Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, char aP6);
-    static int Dtor(void *aP0);
+    ControlClass Construct(int a2, int a3, int a4, int a5, int a6, char a7, void *a7_1 = 0);
+    ControlClass Dtor(void *a1 = 0);
     static int TrackState(int p0, int p1);  // x4:signals@0x77a700
     unsigned int *q000;  // 0x0 (offset-truth)
     unsigned int q00C;  // 0xC (offset-truth)

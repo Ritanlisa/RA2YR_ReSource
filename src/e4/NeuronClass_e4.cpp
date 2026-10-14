@@ -42,7 +42,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   Block->__pad_004 = (int)&vt_NeuronClass; /*0x43a9d3*/
   Block->u32_8 = (int)&vt_NeuronClass; /*0x43a9da*/
   Block->u32_C = (int)&vt_NeuronClass; /*0x43a9e1*/
-  v6 = Block; /*0x43a9ef*/
+  v6 = (gamemd::NeuronClass *)(Block); /*0x43a9ef*/
   v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -57,7 +57,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
       ++v3; /*0x43aa16*/
     }
   }
-  v6 = Block; /*0x43aa38*/
+  v6 = (gamemd::NeuronClass *)(Block); /*0x43aa38*/
   v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&DataGlobal_B0F5D8 + 16))( /*0x43aa3c*/
          &DataGlobal_B0F5D8,
          &v6);
@@ -100,7 +100,7 @@ char NeuronClass_25::AddRef(int a2)
     v3 = 0; /*0x43ab3f*/
     if ( m_8 <= 0 ) /*0x43ab43*/
       return 1; /*0x43ab63*/
-    v4 = *&this->q004; /*0x43ab45*/
+    v4 = (unsigned int *)(*&this->q004); /*0x43ab45*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x43ab4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x43ab54*/
     {
@@ -146,7 +146,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x43abee*/
         }
       }
-      *&this->q004 = v4; /*0x43abf7*/
+      *&this->q004 = (int)(v4); /*0x43abf7*/
       this->m_8 = a2; /*0x43abff*/
       BYTE1(this->m_C) = a3 == 0; /*0x43ac02*/
       return 1; /*0x43ac08*/

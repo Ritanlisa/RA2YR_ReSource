@@ -9,15 +9,15 @@ struct Sidebar {
 // --- flat members (BEGIN) ---
 
 // --- flat members (END) ---
-    AbstractClass * *  StartSidebarProduction(void * a2, int a3, char a4, char a5);  // 0x4FA350
+    AbstractClass * * StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5);  // 0x4FA350
 int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);
     CreateTeamCommand * * ScrollSidebarSkipGame(void *a1 = 0);  // 0x533F50
     static TechnoClass * * CancelSidebarProductionQueue(int * Block);  // 0x636310
-    char  RemoveItem(int a2, void *a1 = 0);  // 0x63F040
-    ObjectClass * *  Render(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x63FB20
+    char RemoveItem(int a2, void *a2_2);  // 0x63F040
+    ObjectClass * * Render(char a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0);  // 0x63FB20
     int ActivateTab(int aP1);  // 0x6A60A0
-    AbstractClass * *  FlushSidebarTooltip(char a2, void *a1 = 0);  // 0x6A70E0
-    char  FindProductionType(int a2, int a3, int a4, void *a1 = 0);  // 0x6A6140
+    AbstractClass * * FlushSidebarTooltip(char a2, void *a2_1 = 0);  // 0x6A70E0
+    char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);  // 0x6A6140
     static char UpdateProductionDisplay(int a1, wchar_t a2, char a3);
     unsigned char __pad_1510;  // 0x1510 (offset-truth)
     unsigned char __pad_152C;  // 0x152C (offset-truth)

@@ -135,7 +135,7 @@ int System_Search(ObjectClass * aP0, int edx0, int * a2)
     v3 += -1 - v3 / 2; /*0x52b77e*/
     goto LABEL_7; /*0x52b77e*/
   }
-  return aP0 + 8 * (v3 / 2); /*0x52b784*/
+  return (int)(aP0 + 8 * (v3 / 2)); /*0x52b784*/
 }
 }
 // 0x6269A0
@@ -249,7 +249,7 @@ char sub_626AB0(const char * a1, int a2)
     v3 = v2; /*0x626ad2*/
     if ( v2 ) /*0x626ad9*/
     {
-      *v2 = (unsigned int *)(-1);
+      *v2 = (unsigned int)((unsigned int *)(-1));
       v4 = (unsigned int *)(operator new(0x18u)); /*0x626ae8*/
       v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/

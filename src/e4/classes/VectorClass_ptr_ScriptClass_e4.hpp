@@ -18,10 +18,10 @@ struct VectorClass_ptr_ScriptClass {
 // --- flat members (END) ---
     int Destroy(void *a1_1);  // 0x40E7F0
     unsigned int  GetItemIndex(int a2);  // 0x40E820
-    int  Get(int a2, void *a1 = 0);  // 0x40E840
-    char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x40E850
+    int Get(int a2, void *a2_2);  // 0x40E840
+    char Add(int a2, void *a2_2, void *a3_1);  // 0x40E850
     char  Release(int a2, unsigned int * a3);  // 0x40E890
-    void Remove(void *a1_1, void *a1 = 0);  // 0x40E940
+    void Remove(void *a1_1, void *a2 = 0);  // 0x40E940
     int  GetSize(unsigned int * a2);  // 0x40E970
     unsigned int  GetCapacity(int a2);  // 0x40E9B0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x40E9D0

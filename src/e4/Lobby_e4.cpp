@@ -117,7 +117,7 @@ void Lobby::UpdatePlayerLabels()
   int v37; // [esp+8h] [ebp-Ch]
   int64_t v38; // [esp+Ch] [ebp-8h] BYREF
 
-  (*(((unsigned int *)&(v38)) + 1)) = this; /*0x5eb063*/
+  (*(((unsigned int *)&(v38)) + 1)) = (unsigned int)(this); /*0x5eb063*/
   if ( dword_A8B23C && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vfptr + 16))(dword_A8B23C) /*0x5eb07a*/
     || (v33 = 1, Network::IsMultiplayerActive()) )
   {
@@ -410,7 +410,7 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
   int v19; // [esp+1Ch] [ebp-8h]
   HWND hWnd; // [esp+20h] [ebp-4h]
 
-  v1 = g_MPCooperativeState; /*0x5eba04*/
+  v1 = (gamemd::ObjectClass *)(g_MPCooperativeState); /*0x5eba04*/
   if ( (int)g_MPCooperativeState >= 0 ) /*0x5eba0f*/
   {
     if ( !g_MPCooperativeState ) /*0x5eba15*/

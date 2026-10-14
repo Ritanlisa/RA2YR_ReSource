@@ -43,7 +43,7 @@ int MovementAI::IsProgressAtEnd()
 
   if ( !LOBYTE(this->MovementAI_field_18) ) /*0x4a5150*/
     return 1; /*0x4a5150*/
-  MovementAI_field_14 = this->MovementAI_field_14; /*0x4a515b*/
+  MovementAI_field_14 = (int)(this->MovementAI_field_14); /*0x4a515b*/
   if ( !MovementAI_field_14 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
   v2 = this->m_Target[2]; /*0x4a5166*/

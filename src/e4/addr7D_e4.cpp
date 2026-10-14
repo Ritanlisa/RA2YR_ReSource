@@ -255,10 +255,10 @@ int _set_new_handler_shape(int (__cdecl *)(unsigned int), unsigned int a2)
   int (__cdecl *v1)(unsigned int); // esi
 
   _lock(9); /*0x7d06c1*/
-  v1 = dword_B782C8; /*0x7d06ca*/
+  v1 = (int (__cdecl *)(unsigned int))(dword_B782C8); /*0x7d06ca*/
   dword_B782C8 = a1; /*0x7d06d2*/
   _unlock(9); /*0x7d06d7*/
-  return v1; /*0x7d06e0*/
+  return (int)(v1); /*0x7d06e0*/
 }
 }
 // 0x7D0703
@@ -869,7 +869,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   if ( !CodePage ) /*0x7d1180*/
     CodePage = ::CodePage; /*0x7d1187*/
   v9 = MultiByteToWideChar(CodePage, a8 != 0 ? 9 : 1, aP2, cchSrc, 0, 0);
-  v10 = (void *)(v9);
+  v10 = (int)((void *)(v9));
   v22 = v9; /*0x7d11a9*/
   if ( !v9 ) /*0x7d11ae*/
     return 0; /*0x7d11ae*/
@@ -895,7 +895,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   }
   else
   {
-    v15 = (void *)(2 * v13 + 3);
+    v15 = (int)((void *)(2 * v13 + 3));
     (*((unsigned char *)&(v15))) = v15 & 0xFC; /*0x7d1271*/
     v16 = alloca(v15); /*0x7d1273*/
     ms_exc.old_esp = (void *)((DWORD)v18); /*0x7d1278*/
@@ -1726,9 +1726,9 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
         v3 = (char *)v78; /*0x7d20d5*/
         goto LABEL_251; /*0x7d20d5*/
       }
-  LABEL_257: result = (gamemd::ControlClass **)(v60);
+  LABEL_257: result = (int)((gamemd::ControlClass **)(v60));
       if ( !v60 && !v69 ) /*0x7d2123*/
-        return -1; /*0x7d2125*/
+        return (gamemd::ControlClass **)(-1); /*0x7d2125*/
       return (gamemd::ControlClass **)(result); /*0x7d2128*/
     }
   LABEL_251:
@@ -1743,7 +1743,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
   LABEL_256:
   if ( C == -1 ) /*0x7d2117*/
     goto LABEL_257; /*0x7d2117*/
-  return v60; /*0x7d212d*/
+  return (gamemd::ControlClass **)(v60); /*0x7d212d*/
 }
 }
 // 0x7D2132
@@ -1821,8 +1821,8 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
   wchar_t *v56; // [esp+468h] [ebp+Ch]
 
   v56 = &aP1->AbstractClass_1;
-  v4 = (wchar_t *)(0); /*0x7d21cf*/
-  v5 = *aP1; /*0x7d21d1*/
+  v4 = (int)((wchar_t *)(0)); /*0x7d21cf*/
+  v5 = (wchar_t)(*aP1); /*0x7d21d1*/
   v6 = *aP1 == 0; /*0x7d21d5*/
   j = 0; /*0x7d21d9*/
   v51 = 0; /*0x7d21dc*/
@@ -1988,7 +1988,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
                   v52 = 1; /*0x7d272a*/
                 if ( !v22 ) /*0x7d273b*/
                   v50 = 0; /*0x7d273d*/
-                v53 = v36; /*0x7d2747*/
+                v53 = (char *)(v36); /*0x7d2747*/
                 while ( 1 ) /*0x7d274a*/
                 {
                   v23 = v52--; /*0x7d274a*/
@@ -2003,7 +2003,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
                   v26 = v53--; /*0x7d278b*/
                   *v26 = v24; /*0x7d2791*/
                 }
-                v27 = v36 - v53++; /*0x7d279b*/
+                v27 = (unsigned char *)(v36 - v53++); /*0x7d279b*/
                 j = v27; /*0x7d27a5*/
                 if ( (v55 & 0x200) != 0 && (*v53 != 48 || !j) ) /*0x7d27b6*/
                 {
@@ -2064,7 +2064,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
               }
               else
               {
-                v53 = off_87C4C8; /*0x7d2519*/
+                v53 = (char *)(off_87C4C8); /*0x7d2519*/
                 v17 = strlen(off_87C4C8); /*0x7d251d*/
               }
               goto LABEL_81; /*0x7d2509*/
@@ -2153,7 +2153,7 @@ AbstractClass * * _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
               }
               if ( !v11 ) /*0x7d23eb*/
               {
-                v12 = off_87C4C8; /*0x7d23ed*/
+                v12 = (char *)(off_87C4C8); /*0x7d23ed*/
                 v53 = off_87C4C8; /*0x7d23f3*/
               }
               for ( j = 0; j < v10; ++j ) /*0x7d23fc*/

@@ -123,7 +123,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
     dword_884E34 = 0; /*0x479381*/
   }
   if ( !Map_Load_751C30() ) /*0x479387*/
-    return 1; /*0x47939b*/
+    return (gamemd::AbstractClass **)(1); /*0x47939b*/
   v8 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
     v9 = MixFileClass::FromFile(v8, aMainMix, (int)dword_886980); /*0x4793b8*/
@@ -225,7 +225,7 @@ LABEL_60:
   g_MixFile_MOVIES = (int)MixFileClass::FromFile(v21, Buffer, (int)dword_886980); /*0x47964a*/
   if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
-  return Map_Load_751C30(); /*0x479390*/
+  return (gamemd::AbstractClass **)(Map_Load_751C30()); /*0x479390*/
 
 }
 } // namespace gamemd
@@ -251,10 +251,10 @@ unsigned int * LinkedList_flat::FindPrev()
 
   p_m_Prev = &this->m_Prev; /*0x556643*/
   if ( !this->m_Prev ) /*0x556640*/
-    return this->__tail_0; /*0x55665d*/
+    return (unsigned int *)(this->__tail_0); /*0x55665d*/
   do /*0x556651*/
   {
-    result = *p_m_Prev; /*0x55664b*/
+    result = (unsigned int *)(*p_m_Prev); /*0x55664b*/
     if ( *p_m_Prev == this ) /*0x55664f*/
       break; /*0x55664f*/
     p_m_Prev = &result->u8_2; /*0x556654*/
@@ -273,11 +273,11 @@ LinkClass * * LinkedList_flat::InsertAfter(int a2)
 
   (*(void (**)(LinkClass *))(*(unsigned int *)this->__tail_0 + 36))(this); /*0x5566a5*/
   v3 = *(LinkClass **)(a2 + 4); /*0x5566ac*/
-  *(unsigned int *)(a2 + 4) = this; /*0x5566af*/
+  *(unsigned int *)(a2 + 4) = (unsigned int)(this); /*0x5566af*/
   this->m_Prev = (LinkClass *)a2; /*0x5566b4*/
   this->m_Next = v3; /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
-    v3->m_Prev = this; /*0x5566bc*/
+    v3->m_Prev = (gamemd::LinkClass *)(this); /*0x5566bc*/
   return (*(int (**)(LinkClass *))(*(unsigned int *)this->__tail_0 + 24))(this); /*0x5566c6*/
 
 }
@@ -291,10 +291,10 @@ unsigned int * LinkedList_flat::Attach(int a2)
 
   (*(void (**)(LinkClass *))(*(unsigned int *)this->__tail_0 + 36))(this); /*0x5566d5*/
   v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)a2 + 24))(a2); /*0x5566de*/
-  v3->m_Prev = this; /*0x5566e1*/
+  v3->m_Prev = (gamemd::LinkClass *)(this); /*0x5566e1*/
   this->m_Next = v3; /*0x5566e4*/
   this->m_Prev = 0; /*0x5566e7*/
-  return this->__tail_0; /*0x5566f0*/
+  return (unsigned int *)(this->__tail_0); /*0x5566f0*/
 
 }
 } // namespace gamemd
@@ -393,7 +393,7 @@ void LinkedList_flat::RelinkNode(int a2)
     this->u32_18 = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
       *(unsigned int *)(a2 + 8) = this->u32_4 + 1); /*0x632d4e*/
-    this->u32_1C = this; /*0x632d54*/
+    this->u32_1C = (unsigned int)(this); /*0x632d54*/
     this->u32_4 = this->u32_4 + 1); /*0x632d57*/
   }
 }
@@ -522,10 +522,10 @@ unsigned int * LinkedList_flat::FindNext()
 
   p_m_Next = &this->m_Next; /*0x556673*/
   if ( !this->m_Next ) /*0x556670*/
-    return this->__tail_0; /*0x55668d*/
+    return (unsigned int *)(this->__tail_0); /*0x55668d*/
   do /*0x556681*/
   {
-    result = *p_m_Next; /*0x55667b*/
+    result = (unsigned int *)(*p_m_Next); /*0x55667b*/
     if ( *p_m_Next == this ) /*0x55667f*/
       break; /*0x55667f*/
     p_m_Next = &result->u32_1; /*0x556684*/

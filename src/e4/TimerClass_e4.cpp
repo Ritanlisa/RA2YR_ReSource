@@ -46,7 +46,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   v18[1] = a3; /*0x54fe8f*/
   this->u32_1C = 1; /*0x54fe96*/
   this->u32_80 = 0; /*0x54fe99*/
-  v18[2] = aP3; /*0x54fe9c*/
+  v18[2] = (unsigned int)(aP3); /*0x54fe9c*/
   this->u32_84 = 0; /*0x54fea6*/
   this->u32_30 = a5; /*0x54fea9*/
   this->u32_34 = a6; /*0x54feaf*/
@@ -89,7 +89,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
          0) )
   {
     v20 = dword_ABC888++; /*0x54ff92*/
-    *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
+    *((unsigned int *)dword_ABC87C + v20) = (unsigned int)(this); /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/
 }

@@ -30,9 +30,9 @@ unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def åŒæ
 
   v3 = aP0->field_0; /*0x437f34*/
   v4 = aP0->field_4; /*0x437f36*/
-  *aP1 = v3; /*0x437f39*/
+  *aP1 = (void *)(v3); /*0x437f39*/
   aP1[1] = v4; /*0x437f3b*/
-  return aP1; /*0x437f3e*/
+  return (unsigned int *)(aP1); /*0x437f3e*/
 
 }
 }  // G42.18 ns repair
@@ -56,19 +56,19 @@ void* CellStruct::Sub(unsigned int *aP1, unsigned short *aP2)
   v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
   LOWORD(v6) = v3 - *aP2; /*0x588c76*/
   HIWORD(v6) = v4; /*0x588c7b*/
-  *aP1 = v6; /*0x588c84*/
+  *aP1 = (unsigned int)(v6); /*0x588c84*/
   return aP1; /*0x588c86*/
 
 }
 }
 // 0x42D470
 namespace gamemd {
-unsigned int * CellStruct::Set(int16_t a2, int16_t a3)
+unsigned int * CellStruct::Set(int16_t a2, int16_t a3, void *a3_1)
 {
 
   LOWORD(this->field_0) = a2; /*0x42d47c*/
   HIWORD(this->field_0) = a3; /*0x42d47f*/
-  return this; /*0x42d483*/
+  return (unsigned int *)(this); /*0x42d483*/
 
 }
 } // namespace gamemd

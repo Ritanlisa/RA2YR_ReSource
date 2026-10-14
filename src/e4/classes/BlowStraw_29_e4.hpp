@@ -11,7 +11,7 @@ struct BlowStraw_29 {
 
 // --- flat members (END) ---
     int Seek(int *aP1, unsigned int *a2);  // 0x6D0680
-    TabClass *  Read(char a2, void *a1 = 0, void *a3 = 0);  // 0x5BE9E0
+    TabClass * Read(char * Block, char a2, void *a3 = 0);  // 0x5BE9E0
     unsigned int u32_5538;  // 0x5538 (offset-truth)
     unsigned int u32_5540;  // 0x5540 (offset-truth)
     unsigned int u32_5544;  // 0x5544 (offset-truth)

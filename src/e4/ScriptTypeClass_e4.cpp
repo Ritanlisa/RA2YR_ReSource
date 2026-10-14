@@ -94,7 +94,7 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
   a1->? = &vt_ScriptTypeClass; /*0x691fb3*/
   a1->? = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x691fc1*/
-  v5 = a1; /*0x691fd6*/
+  v5 = (gamemd::ScriptTypeClass *)(a1); /*0x691fd6*/
   v3 = (*(int (**)(int *, ScriptTypeClass **))(FootClass_Array.?[4] + 16))(&FootClass_Array.?[4], &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&FootClass_Array.? ) /*0x691fea*/
   {
@@ -152,7 +152,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
     }
     result = dword_A8E8E0; /*0x6e8403*/
   }
-  return result; /*0x6e840d*/
+  return (gamemd::TaskForceClass *)(result); /*0x6e840d*/
 
 }
 } // namespace gamemd

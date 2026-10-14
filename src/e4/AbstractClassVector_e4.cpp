@@ -11,7 +11,7 @@
 
 // 0x4E0440
 namespace gamemd {  // G42.18 ns repair
-int AbstractClassVector::Read(unsigned int * a2, void *a2_2)
+int AbstractClassVector::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx
@@ -43,14 +43,14 @@ unsigned int AbstractClassVector::Write(int a2)
 } // namespace gamemd
 // 0x4E0E80
 namespace gamemd {
-int AbstractClassVector::Construct(int aP1, int aP2)
+int AbstractClassVector::Construct(int aP1, int aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   this->q004 = 0; /*0x4e0e8b*/
   this->q008 = aP1; /*0x4e0e8e*/
   LOBYTE(this->m_C) = 1; /*0x4e0e91*/
   BYTE1(this->m_C) = 0; /*0x4e0e95*/
-  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x4e0e98*/
+  *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_VectorClass); /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

@@ -12,7 +12,7 @@ struct E4Recv_528220 {
     unsigned int M44;  // 0x2C
     unsigned int M56;  // 0x38
 // --- flat members (END) ---
-    int  sub_528220(uint8_t * a2, uint8_t * a3, int a4);  // 0x528220
+    int sub_528220(unsigned char * a2, unsigned char * a3, int a4);  // 0x528220
 
     unsigned char SortedArray_5A4[4];  /* SortedArray */  // X10 supply (member_lookup)
 };

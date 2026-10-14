@@ -83,7 +83,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
     }
     this->u32_3C = 0; /*0x49cb9b*/
     this->u32_40 = 0; /*0x49cb9e*/
-    this->u32_3C = __2_YAPAXI_Z(4 * *(char *)(v5 + 8)); /*0x49cbae*/
+    this->u32_3C = (unsigned int)(__2_YAPAXI_Z(4 * *(char *)(v5 + 8))); /*0x49cbae*/
     v9 = 0; /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {
@@ -91,7 +91,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
       do /*0x49cc26*/
       {
         v10 = Random::Range(&dword_A8B230->u32_218, 0, 2); /*0x49cbde*/
-        *(unsigned int *)(this->u32_3C + 4 * v9) = __2_YAPAXI_Z(0x104u); /*0x49cbf1*/
+        *(unsigned int *)(this->u32_3C + 4 * v9) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(this->u32_3C + 4 * v9++),
           (const char *)(*(unsigned int *)(v5 + 12) + 260 * (v12 + v10)),
@@ -105,13 +105,13 @@ AbstractClass * * Movie::SetupScreen(int aP1)
     this->u32_38 = 0; /*0x49cc35*/
   }
   this->q0044 = v3; /*0x49cc39*/
-  return 1; /*0x49cc3d*/
+  return (gamemd::AbstractClass **)(1); /*0x49cc3d*/
 
 }
 }  // G42.18 ns repair
 // 0x49E3B0
 namespace gamemd {
-CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
+CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 {
   if ( !this->q060 ) /*0x49e3b3*/
     CampaignClass::LoadFromINI(); /*0x49e3ba*/
@@ -123,7 +123,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
   else
   {
     *aP2 = this->ptr_58 + 76 * aP1; /*0x49e3df*/
-    return 1; /*0x49e3dd*/
+    return (gamemd::CampaignClass **)(1); /*0x49e3dd*/
   }
 }
 }
@@ -244,7 +244,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       }
       BinkMovie::Close(&v23, Str); /*0x5bedec*/
       if ( a8 == 1 ) /*0x5bedf9*/
-        v23.MovieHandle = 1; /*0x5bedfb*/
+        v23.MovieHandle = (void *)(1); /*0x5bedfb*/
       if ( !(*((unsigned char *)&(g_MissionQueueFrame.localVariables[566]))) ) /*0x5bee06*/
       {
         AudioFrame::CounterInc(); /*0x5bee08*/
@@ -308,7 +308,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
   IsSoundEnabled = (void *)Audio::IsSoundEnabled(); /*0x7209d3*/
   if ( IsSoundEnabled ) /*0x7209da*/
   {
-    LOBYTE(IsSoundEnabled) = DataGlobal_A8EC80; /*0x7209e0*/
+    LOBYTE(IsSoundEnabled) = (unsigned char)(DataGlobal_A8EC80); /*0x7209e0*/
     if ( !DataGlobal_A8EC80 ) /*0x7209e7*/
     {
       LOBYTE(IsSoundEnabled) = yBottom; /*0x7209ed*/
@@ -405,15 +405,15 @@ char Movie::GetSectionID(unsigned int *result)
 
     if ( this->u32_6C )
   {
-        result = this->q0044;
-    *result = result; /*0x49bc93*/
+        result = (unsigned int *)(this->q0044);
+    *result = (unsigned int)(result); /*0x49bc93*/
     (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x49bc95*/
   }
   else
   {
     (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x49bc87*/
   }
-  return result; /*0x49bc89*/
+  return (char)(result); /*0x49bc89*/
 
 }
 } // namespace gamemd
@@ -426,14 +426,14 @@ char Movie::GetState(unsigned int *result)
 
   if ( this->u32_6C ) /*0x49bcc0*/
   {
-    result = this->u32_38; /*0x49bccc*/
-    *result = result; /*0x49bcd3*/
+    result = (unsigned int *)(this->u32_38); /*0x49bccc*/
+    *result = (unsigned int)(result); /*0x49bcd3*/
     (*((unsigned char *)&(result))) = 1; /*0x49bcd5*/
   }
   else
   {
     (*((unsigned char *)&(result))) = 0; /*0x49bcc7*/
   }
-  return result; /*0x49bcc9*/
+  return (char)(result); /*0x49bcc9*/
 }
 } // namespace gamemd

@@ -150,7 +150,7 @@ extern unsigned int dword_87F7E8;         // data: 0x87F7E8 (Map/Sidebar 域单�
 extern unsigned int dword_889EBC;         // data: 0x889EBC
 extern unsigned int g_AircraftStatusFlag;  // data: aircraft flag
 // G42.33 b4 W7: 缺席全局 + 静态族自由真形 (W6 同款)
-extern int dword_A8E370;                   // data: 0x8E370 (unit 数组计数)
+extern unsigned int dword_A8E370; // data: 0x8E370 (unit 数组计数)
 extern unsigned int dword_A8E364;          // data: 0x8E364 (unit 数组基址槽)
 extern unsigned int * Array_Get(void *arr, int idx);   // 0x65AD40 (IDA: Array::Get)
 extern int Cell_IsBuildable(int p0, char p1, char p2, int p3, int p4, int p5, char p6);  // x4:signals@0x4834a0
@@ -9089,7 +9089,7 @@ namespace gamemd {
   if ( Type && (*(unsigned int *)(*(unsigned int *)Type->vtable1 + 172) == 28 || *(unsigned int *)(*(unsigned int *)Type->vtable1 + 180) == 28) ) /*0x63c022*/
   {
     v13 = &Type->q01D; /*0x63c028*/
-    qmemcpy(v72, v13, 0x6Cu); /*0x63c03e*/
+    memcpy(v72, v13, 0x6Cu); /*0x63c03e*/
     v13 += 108; /*0x63c03e*/
     v72[54] = *(unsigned short *)v13; /*0x63c040*/
     v72[55] = ((v72[55]) & 0xFFFFFF00u) | ((unsigned int)(v13[2]) & 0xFFu); /*0x63c046*/
@@ -9271,7 +9271,7 @@ namespace gamemd {
   globalHelper_03D960(v67, (int)v45, v46, v64, v58, v59); /*0x63c60a*/
   if ( v42 ) /*0x63c611*/
     DrawActionLineSegment(v45, v58, v59); /*0x63c61f*/
-  qmemcpy(v72, (const void *)BuildingClass::CopyTypeDataForRender((BuildingClass *)v66, (int)v73, (int)hpp), 0x6Fu); /*0x63c644*/
+  memcpy(v72, (const void *)BuildingClass::CopyTypeDataForRender((BuildingClass *)v66, (int)v73, (int)hpp), 0x6Fu); /*0x63c644*/
   updated = BuildingClass::updateAnimationState((char *)v72); /*0x63c650*/
   if ( updated != -1 ) /*0x63c658*/
     DrawTacticalWaypoint((int)v45, v50, v63, v64, v58, v59, updated); /*0x63c675*/
@@ -12513,7 +12513,7 @@ int TechnoClass::SelectAutoTarget_Start_AU()
             && ((a3 & 0x4000) == 0 || (uint8_t)HouseClass::IsAlliedWith(
                                                          (void *)this->owner,
                                                          v88->q21C))
-            && TechnoClass::EvaluateTarget((TechnoClass *)a3, v5, v91, -1, v88, (int)&a4, TileIndex, a4, v89)
+            && TechnoClass::EvaluateTarget((TechnoClass *)a3, v5, v91, -1, v88, (int)&a4, TileIndex, a4_2, v89)
             && a4 > v93 )
           {
             v94 = (void *)v88; /*0x6f9d8b*/

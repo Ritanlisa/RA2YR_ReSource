@@ -192,7 +192,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
 
-  result = BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, a4); /*0x4f18c9*/
+  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hDlg), a2, a3, a4)); /*0x4f18c9*/
   if ( !result ) /*0x4f18d0*/
   {
     if ( a2 == 273 ) /*0x4f18dc*/
@@ -223,7 +223,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     else if ( a2 == 1175 ) /*0x4f18e8*/
     {
       DlgItem = GetDlgItem(hDlg, 1737); /*0x4f190e*/
-      StringCSF = GetStringCSF((wchar_t *)(aGuiLeave), 0, g_Str_File_GOptions_CPP, 547); /*0x4f1910*/
+      StringCSF = GetStringCSF((wchar_t *)(aGuiLeave), 0,(const char *)(g_Str_File_GOptions_CPP), 547); /*0x4f1910*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
@@ -243,7 +243,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         {
           if ( *(unsigned char *)(*(unsigned int *)v10->vfptr + 492) && !*(unsigned char *)(*(unsigned int *)v10->vfptr + 501) ) /*0x4f19af*/
             ++v8; /*0x4f19b8*/
-          v10 = &v10->vtable2; /*0x4f19b9*/
+          v10 = (gamemd::HouseClass *)(&v10->vtable2); /*0x4f19b9*/
           --v11; /*0x4f19bc*/
         }
         while ( v11 ); /*0x4f19bd*/
@@ -255,14 +255,14 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         else
         {
           dword_A8EE7C = 3; /*0x4f19e5*/
-          v12 = GetStringCSF((wchar_t *)(g_Str_GUI_Observe), 0, g_Str_File_GOptions_CPP, 586); /*0x4f19ef*/
+          v12 = GetStringCSF((wchar_t *)(g_Str_GUI_Observe), 0,(const char *)(g_Str_File_GOptions_CPP), 586); /*0x4f19ef*/
           SendMessageA(v7, 0x4B2u, 0, (LPARAM)v12); /*0x4f19fd*/
           dword_A8EE80 = 4; /*0x4f19ff*/
         }
       }
       else
       {
-        v9 = GetStringCSF((wchar_t *)(aGuiRestart), 0, g_Str_File_GOptions_CPP, 558); /*0x4f195c*/
+        v9 = GetStringCSF((wchar_t *)(aGuiRestart), 0,(const char *)(g_Str_File_GOptions_CPP), 558); /*0x4f195c*/
         SendMessageA(v7, 0x4B2u, 0, (LPARAM)v9); /*0x4f1969*/
         dword_A8EE80 = 5; /*0x4f196b*/
       }
@@ -324,19 +324,19 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   v5 = (uint8_t *)((String *)(v3))->GetOrEmpty_Alt(); /*0x4f1cbe*/
   if ( !INIClass::BinarySearchSection((gamemd::INIClass *)((int)a2), v5) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
-  v7 = (int)(operator new(0x70u)); /*0x4f1cdd*/
-  v8 = v7; /*0x4f1ce2*/
+  v7 = (void *)((int)(operator new(0x70u))); /*0x4f1cdd*/
+  v8 = (int)(v7); /*0x4f1ce2*/
   v38.vfptr.NeedsSaveOrLink = v7; /*0x4f1ce9*/
   if ( !v7 ) /*0x4f1ced*/
     return 0; /*0x4f1cda*/
-  p_nextObject = (int *)a3; /*0x4f1cef*/
+  p_nextObject = (unsigned int *)((int *)a3); /*0x4f1cef*/
   ((MSEngine *)((MSEngine *)(v7 + 4)))->Construct(); /*0x4f1cf3*/
   ((String *)((String *)(v8 + 76)))->Assign(aTitlePcx); /*0x4f1d02*/
   v38.vfptr.referenceCount = v8 + 80; /*0x4f1d0f*/
   ((String *)((String *)(v8 + 80)))->Assign((const char *)(g_INI_Key_Intro)); /*0x4f1d13*/
   v9 = v8 + 88; /*0x4f1d18*/
   *(unsigned int *)(v8 + 84) = 0; /*0x4f1d1b*/
-  sub_4F2C00((VectorClass *)(v8 + 88), 0, 0); /*0x4f1d22*/
+  sub_4F2C00((int)((VectorClass *)(v8 + 88)), 0, 0); /*0x4f1d22*/
   *(unsigned int *)(v8 + 88) = (unsigned int)(&vt_DynamicVectorClass); /*0x4f1d27*/
   *(unsigned int *)(v8 + 108) = 10; /*0x4f1d2d*/
   *(unsigned int *)(v8 + 104) = 0; /*0x4f1d34*/
@@ -385,7 +385,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
             UI_Load_5D1C90((ObjectClass *)(v8 + 4), v21, (int (***)(unsigned int, int))Config); /*0x4f1f77*/
           else
             ((PriorityQueue *)((PriorityQueue *)(v8 + 4)))->Add((int)Config); /*0x4f1f81*/
-          *(unsigned int *)(v8 + 84) = Config; /*0x4f1f86*/
+          *(unsigned int *)(v8 + 84) = (unsigned int)(Config); /*0x4f1f86*/
           p_nextObject = (unsigned int)(&v38.nextObject); /*0x4f1f91*/
           v22 = (int *)Config->GetFrameRect(); /*0x4f1f92*/
           v23 = *v22; /*0x4f1f95*/
@@ -677,7 +677,7 @@ int E4Recv_4F2640::sub_4F2640(int (***a2)(unsigned int, int))
   if ( v3 ) /*0x4f264e*/
     result = UI_Load_5D1C90this->ptr_4, v3, a2); /*0x4f2654*/
   else
-    result = PriorityQueue::Add(&this->ptr_4, (int)a2); /*0x4f2664*/
+    result = PriorityQueue::Add((int)(&this->ptr_4), (int)a2); /*0x4f2664*/
   this->customSound_controller[1] = (int)a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 
@@ -709,24 +709,24 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
   int v26; // [esp+3Ch] [ebp-8h]
   int v27; // [esp+40h] [ebp-4h]
 
-  ((String *)(&v20))->Assign(ValueName); /*0x4f2c83*/
+  ((String *)(&v20))->Assign((const char *)(ValueName)); /*0x4f2c83*/
   Int = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&v20, -1); /*0x4f2c97*/
   *(unsigned int *)&v21.headNode = Int; /*0x4f2c9d*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2ca1*/
   if ( Int == -1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/
   unknown_libname_73(&v19); /*0x4f2cba*/
-  ((String *)(&v21))->Assign(&g_INI_DefaultBuffer); /*0x4f2cc8*/
+  ((String *)(&v21))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2cc8*/
   ((String *)(&v20))->Assign(g_INI_Key_Image); /*0x4f2cd6*/
-  ((INIClass *)(a2))->ReadString(Source, (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
+  ((INIClass *)(a2))->ReadString((char **)(Source), (char **)&v20, (char **)&v21, (int)&v19); /*0x4f2ced*/
   DeleteAndZero((ObjectClass *)&v20); /*0x4f2cf6*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f2cff*/
   if ( String::Length(&v19) ) /*0x4f2d08*/
   {
     unknown_libname_73(&v19.ptr_4); /*0x4f2d29*/
-    ((String *)(&v20))->Assign(&g_INI_DefaultBuffer); /*0x4f2d37*/
+    ((String *)(&v20))->Assign((const char *)(&g_INI_DefaultBuffer)); /*0x4f2d37*/
     ((String *)(&v21))->Assign(g_INI_Key_Palette); /*0x4f2d45*/
-    ((INIClass *)(a2))->ReadString(Source, (char **)&v21, (char **)&v20, (int)&v19.ptr_4); /*0x4f2d5c*/
+    ((INIClass *)(a2))->ReadString((char **)(Source), (char **)&v21, (char **)&v20, (int)&v19.ptr_4); /*0x4f2d5c*/
     DeleteAndZero((ObjectClass *)&v21); /*0x4f2d65*/
     DeleteAndZero((ObjectClass *)&v20); /*0x4f2d6e*/
     if ( String::Length((String *)&v19.ptr_4) ) /*0x4f2d77*/
@@ -734,8 +734,8 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v8 = 0; /*0x4f2d9e*/
       v22 = 0; /*0x4f2da9*/
       v23 = 0; /*0x4f2dad*/
-      ((String *)(&v21))->Assign(aOrigin); /*0x4f2db1*/
-      CoordPair = INIClass::GetCoordPair(a2, &v20, (char *)Source, (char **)&v21, &v22); /*0x4f2dc8*/
+      ((String *)(&v21))->Assign((const char *)(aOrigin)); /*0x4f2db1*/
+      CoordPair = (int *)(INIClass::GetCoordPair(a2, &v20, (char *)Source, (char **)&v21, &v22)); /*0x4f2dc8*/
       v10 = *CoordPair; /*0x4f2dcd*/
       v11 = CoordPair->headNode; /*0x4f2dcf*/
       v22 = v10; /*0x4f2dd2*/
@@ -751,7 +751,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v26 = 0; /*0x4f2e11*/
       v27 = 0; /*0x4f2e15*/
       ((String *)((String *)&a4))->Assign(aActiverect); /*0x4f2e19*/
-      Rect = INIClass::GetRect(a2, &v20, Source, (char **)&a4, &v24); /*0x4f2e30*/
+      Rect = (int *)(INIClass::GetRect(a2, &v20, Source, (char **)&a4, &v24)); /*0x4f2e30*/
       v24 = *Rect; /*0x4f2e37*/
       v25 = Rect[1]; /*0x4f2e3e*/
       v26 = Rect[2]; /*0x4f2e45*/
@@ -761,21 +761,12 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin
       v25 += vtable0->vtable2; /*0x4f2e77*/
       v16 = (uint8_t *)((String *)((String *)Source))->GetOrEmpty_Alt(); /*0x4f2e7b*/
       v21.q000 = INIClass::ReadBool_Overwrite((int *)a2->__pad_0, v16, aLoop, 1); /*0x4f2e91*/
-      ((String *)((String *)&a4))->Assign(g_INI_Key_Rate); /*0x4f2e95*/
+      ((String *)((String *)&a4))->Assign((const char *)(g_INI_Key_Rate)); /*0x4f2e95*/
       v17 = INIClass::ReadInt((bool *)a2->__pad_0, Source, (char **)&a4, 5); /*0x4f2ead*/
       DeleteAndZero(&a4); /*0x4f2eaf*/
       v18 = (GraphicMenuAnimItem *)operator new(0x28u); /*0x4f2eb6*/
       if ( v18 ) /*0x4f2ec0*/
-        v8 = sub_4F2F10( /*0x4f2eed*/
-               v18,
-               *(int *)&v21.headNode,
-               a3,
-               &v22,
-               &v24,
-               (char **)&v19,
-               (char **)&v19.ptr_4,
-               v17,
-               v21.q000);
+                v8 = sub_4F2F10((int)(/*0x4f2eed*/                v18),                *(int *)&v21.headNode,                a3,                &v22,                &v24,                (char **)&v19,                (char **)&v19.ptr_4,                v17,                v21.q000);
       DeleteAndZero((ObjectClass *)&v19.ptr_4); /*0x4f2ef3*/
       DeleteAndZero((ObjectClass *)&v19); /*0x4f2efc*/
       return v8; /*0x4f2f01*/

@@ -40,7 +40,7 @@ struct SlaveManagerClass {
     int CheckIsOne();
     int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int IsMasterHarvester();
-    int LostSlave(int aP1, void *a1 = 0);
+    int LostSlave(int aP1, void *a2 = 0);
     int SaveManager(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetOwner(TechnoClass * aP1);
     int ShouldWakeUpNow();
@@ -48,10 +48,10 @@ struct SlaveManagerClass {
     int StubReturn72();
     char UpdateSlaves();
     int VtableDispatch();
-    int ddtor(int a1, unsigned int * a2);
+    int ddtor(int a1, unsigned int * result);
     long long Calc2DDistance();
     void Constructor_SlaveManagerClass();
-    void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6, void *a1 = 0, void *a2 = 0, void *a7 = 0);
+    void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6, void *a6_1 = 0, void *a7 = 0, void *a8 = 0);
     wchar_t * CreateSlave(wchar_t ** a2);
     static int ProcessSlaves(SlaveManagerClass *aP1, int *p_SlaveManagerClass_field_5C, int a3);
     SlaveManagerClass * ProcessOrders(void * Block, char a2);

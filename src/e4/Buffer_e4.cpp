@@ -168,7 +168,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     this->Buffer_field_24 -= aP2; /*0x7bcd16*/
     v26 = Buffer_field_10 + 2 * aP2 * v25; /*0x7bcd19*/
     this->Buffer_field_10 = v26; /*0x7bcd1c*/
-    v27 = aP2 + Buffer_field_10 / 2 / v25; /*0x7bcd1f*/
+    v27 = (int)(aP2 + Buffer_field_10 / 2 / v25); /*0x7bcd1f*/
     v28 = this->Buffer_field_18; /*0x7bcd21*/
     v29 = v28 + v26; /*0x7bcd24*/
     v58 = v27; /*0x7bcd26*/
@@ -296,7 +296,7 @@ LABEL_60:
 } // namespace gamemd
 // 0x7C1730
 namespace gamemd {
-int Buffer::AllocateCodecFrameBuffers()
+int Buffer::AllocateCodecFrameBuffers(void *a1)
 {
   unsigned int *v3; // ebx
   unsigned int v4; // eax
@@ -438,7 +438,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, 
   void *v3; // eax
 
   v3 = (void *)a3->u32_4; /*0x488033*/
-  *(unsigned int *)a3 = &vt_VectorClass; /*0x488036*/
+  *(unsigned int *)a3 = (unsigned int)(&vt_VectorClass); /*0x488036*/
   if ( v3 && *((unsigned char *)a3 + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/
@@ -448,7 +448,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, 
   *((unsigned int *)a3 + 2) = 0; /*0x488061*/
   if ( (a3 & 1) != 0 ) /*0x488068*/
     __3_YAXPAX_Z(a3); /*0x48806b*/
-  return a3; /*0x488075*/
+  return (gamemd::DynamicVector *)(a3); /*0x488075*/
 
 }
 } // namespace gamemd
@@ -494,7 +494,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned short *)(Buffer_field_08 + 6) = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
-  v8 = aP1; /*0x6c8a49*/
+  v8 = (int *)(aP1); /*0x6c8a49*/
   v16 = (unsigned char *)aP1->COMStub_Return0_23(*v7, v7->q004); /*0x6c8a61*/
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/
   v14 = 0; /*0x6c8a6a*/
@@ -510,16 +510,16 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         v8->GetDirty(); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
-      qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
-      v13 = *aP1; /*0x6c8ac2*/
+      memcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
+      v13 = (int)(*aP1); /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/
         break; /*0x6c8ada*/
-      v8 = aP1; /*0x6c8adc*/
+      v8 = (int *)(aP1); /*0x6c8adc*/
     }
     Buffer_field_08 = v15; /*0x6c8af5*/
-    v8 = aP1; /*0x6c8af9*/
+    v8 = (int *)(aP1); /*0x6c8af9*/
   }
   v8->GetDirty(); /*0x6c8b01*/
   return Buffer_field_08; /*0x6c8a08*/

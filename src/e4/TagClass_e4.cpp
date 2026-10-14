@@ -120,7 +120,7 @@ LABEL_22:
                   goto LABEL_22; /*0x6e5030*/
               }
             }
-            SuperClass_field_0x6C = dword_A83DBC; /*0x6e5035*/
+            SuperClass_field_0x6C = (void *)(dword_A83DBC); /*0x6e5035*/
             if ( (int)dword_A83DBC >= v7 ) /*0x6e503d*/
             {
               --dword_A83DBC; /*0x6e5042*/
@@ -174,7 +174,7 @@ LABEL_22:
       {
 LABEL_43:
         v17 = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x6e5116*/
-        *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * v17) = v15; /*0x6e5125*/
+        *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * v17) = (unsigned int)(v15); /*0x6e5125*/
       }
       v16 = *(unsigned int *)&DataGlobal_B0F6A0; /*0x6e5128*/
 LABEL_45:
@@ -182,7 +182,7 @@ LABEL_45:
     }
     while ( v15 ); /*0x6e50d9*/
   }
-  v22[0] = a1; /*0x6e5134*/
+  v22[0] = (unsigned int)(a1); /*0x6e5134*/
   v18 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5147*/
           &g_BuildingLoadQueue_Array.LightVisibility,
           v22);
@@ -197,7 +197,7 @@ LABEL_45:
       ++v18; /*0x6e516a*/
     }
   }
-  v22[0] = a1; /*0x6e518c*/
+  v22[0] = (unsigned int)(a1); /*0x6e518c*/
   v19 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.ExitCoord[0] + 16))( /*0x6e5190*/
           g_BuildingLoadQueue_Array.ExitCoord,
           v22);
@@ -212,7 +212,7 @@ LABEL_45:
       ++v19; /*0x6e51b3*/
     }
   }
-  v22[0] = a1; /*0x6e51d5*/
+  v22[0] = (unsigned int)(a1); /*0x6e51d5*/
   v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))(&TagClass_Array, v22); /*0x6e51d9*/
   if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup ) /*0x6e51f4*/
   {
@@ -308,7 +308,7 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
           (unsigned char)result) )
     {
       result = (*(unsigned int *)&DataGlobal_B0F6A8)++; /*0x6e567d*/
-      *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = this; /*0x6e568c*/
+      *(unsigned int *)(*(unsigned int *)DataGlobal_B0F69C + 4 * result) = (unsigned int)(this); /*0x6e568c*/
     }
   }
   return result; /*0x6e568f*/

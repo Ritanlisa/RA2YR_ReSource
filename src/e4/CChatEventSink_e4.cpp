@@ -92,7 +92,7 @@ LABEL_103:
           do /*0x7aa985*/
           {
             if ( v5 >= 0 && v4 < referenceCount ) /*0x7aa945*/
-              qmemcpy(&v33[32], (const void *)(stru_B76AC4.occupant + v5), 0x10Cu); /*0x7aa959*/
+              memcpy(&v33[32], (const void *)(stru_B76AC4.occupant + v5), 0x10Cu); /*0x7aa959*/
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
               Array::InsertElement((Array *)&v33[12], &v33[32], *(int *)&v33[12]); /*0x7aa972*/
@@ -160,7 +160,7 @@ LABEL_103:
               while ( 1 ) /*0x7aaa8b*/
               {
                 if ( v12 >= 0 && v12 < v13 ) /*0x7aaa91*/
-                  qmemcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
+                  memcpy(&v33[32], v14, 0x10Cu); /*0x7aaa9e*/
                 if ( !strcmp(&v33[84], v6 + 52) ) /*0x7aaaad*/
                   break; /*0x7aaaad*/
                 v13 = *(unsigned int *)&v33[12]; /*0x7aaad4*/
@@ -278,7 +278,7 @@ LABEL_72:
                   String::AssignFromPtr(v24, (const char **)v33); /*0x7aad27*/
                   vtable3 = (char *)dword_B765F8; /*0x7aad2c*/
                 }
-                dword_B765F8 = vtable3 + 1; /*0x7aad32*/
+                dword_B765F8 = (unsigned int)(vtable3 + 1); /*0x7aad32*/
               }
               else
               {
@@ -295,7 +295,7 @@ LABEL_72:
               }
               DeleteAndZero((ObjectClass *)&v33[28]); /*0x7aad3b*/
             }
-            v25 = g_WOL_HashTable; /*0x7aad40*/
+            v25 = (gamemd::HashTable *)(g_WOL_HashTable); /*0x7aad40*/
             v26 = *(unsigned int *)(*(unsigned int *)v25->__pad_0 /*0x7aad5c*/
                             + 4
                             * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v33)
@@ -429,7 +429,7 @@ int CChatEventSink::GrowBuffer()
   CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
   if ( CChatEventSink_field_0x08 ) /*0x7ad985*/
-    qmemcpy(v6, CChatEventSink_field_0x08, 268 * *(unsigned int *)this->vtable1); /*0x7ad99f*/
+    memcpy(v6, CChatEventSink_field_0x08, 268 * *(unsigned int *)this->vtable1); /*0x7ad99f*/
   __3_YAXPAX_Z((void *)this->u32_8); /*0x7ad9ad*/
   this->u32_8 = v8; /*0x7ad9b9*/
   this->__pad_004 = v5; /*0x7ad9bc*/
@@ -459,7 +459,7 @@ int CChatEventSink::ProcessChatEvent()
   v7 = (int)v5; /*0x7aed87*/
   CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7aed8d*/
   if ( CChatEventSink_field_0x08 ) /*0x7aed92*/
-    qmemcpy(v5, CChatEventSink_field_0x08, 248 * *(unsigned int *)this->vtable1); /*0x7aeda7*/
+    memcpy(v5, CChatEventSink_field_0x08, 248 * *(unsigned int *)this->vtable1); /*0x7aeda7*/
   __3_YAXPAX_Z((void *)this->u32_8); /*0x7aedb4*/
   this->__pad_004 = v4; /*0x7aedc0*/
   this->u32_8 = v7; /*0x7aedc3*/
@@ -469,7 +469,7 @@ int CChatEventSink::ProcessChatEvent()
 } // namespace gamemd
 // 0x7AEE90
 namespace gamemd {
-char CChatEventSink::Check(unsigned int * a2, int a3)
+char CChatEventSink::Check(unsigned int * a2, int a3, void *a3_1)
 {
 
   if ( a3 < 0 || a3 >= *(unsigned int *)this->vtable1 ) /*0x7aee9a*/
@@ -481,7 +481,7 @@ char CChatEventSink::Check(unsigned int * a2, int a3)
 } // namespace gamemd
 // 0x7AD350
 namespace gamemd {
-ObjectClass * CChatEventSink::DeleteAndZero(char a2)
+ObjectClass * CChatEventSink::DeleteAndZero(char a2, void *a2_1)
 {
   DeleteAndZero(); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
@@ -536,7 +536,7 @@ char CChatEventSink::EnsureCapacity(int a2)
       CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7aee4c*/
       v11 = (int)v9; /*0x7aee54*/
       if ( CChatEventSink_field_0x08 ) /*0x7aee58*/
-        qmemcpy(v9, CChatEventSink_field_0x08, 4 * *(unsigned int *)this->vtable1); /*0x7aee66*/
+        memcpy(v9, CChatEventSink_field_0x08, 4 * *(unsigned int *)this->vtable1); /*0x7aee66*/
       __3_YAXPAX_Z((void *)this->u32_8); /*0x7aee73*/
       this->u32_8 = v11; /*0x7aee7f*/
       this->__pad_004 = v8; /*0x7aee82*/
@@ -548,7 +548,7 @@ char CChatEventSink::EnsureCapacity(int a2)
 } // namespace gamemd
 // 0x7B5E30
 namespace gamemd {
-char CChatEventSink::EncodeString(char a2)
+char CChatEventSink::EncodeString(char a2, void *a2_1)
 {
 
   char *v4; // eax
@@ -563,7 +563,7 @@ char CChatEventSink::EncodeString(char a2)
 
   if ( !*(unsigned int *)this->vtable1 ) /*0x7b5e33*/
     return 0; /*0x7b5e39*/
-  v4 = strchr(*(const char **)this->vtable1, a2); /*0x7b5e46*/
+  v4 = (char *)(strchr(*(const char **)this->vtable1, a2)); /*0x7b5e46*/
   if ( !v4 ) /*0x7b5e50*/
     return 0; /*0x7b5e52*/
   v5 = &v4[-*(unsigned int *)this->vtable1]; /*0x7b5e5c*/
@@ -588,7 +588,7 @@ char CChatEventSink::EncodeString(char a2)
   else
     v11 = 1; /*0x7b5ec2*/
   v12 = (unsigned char *)__2_YAPAXI_Z(v11); /*0x7b5ec8*/
-  *(unsigned int *)this->vtable1 = v12; /*0x7b5ed0*/
+  *(unsigned int *)this->vtable1 = (unsigned int)(v12); /*0x7b5ed0*/
   *v12 = 0; /*0x7b5ed4*/
   if ( v10 ) /*0x7b5ed7*/
     strcpy(*(char **)this->vtable1, v10); /*0x7b5eef*/

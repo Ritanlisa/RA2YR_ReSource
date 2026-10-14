@@ -14,10 +14,10 @@ struct AudioQueue {
     int  FindBestChannel(int a1, int a2);  // 0x4035F0
     int FindByData();  // 0x752680
     int Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x771620
-    int Cleanup(void *a1_1, void *a1 = 0);  // 0x7B1D10
-    unsigned char *  AllocBuffer(char a2);  // 0x7B20E0
-    int  ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsigned short * a6);  // 0x7B22E0
-    AnimClass * *  WriteBuffer(void * a2, unsigned int a3, void * a4, unsigned int a5, char a6, char a7, int16_t a8);  // 0x7B23B0
+    int Cleanup(void *a1_1, void *a2 = 0);  // 0x7B1D10
+    unsigned char * AllocBuffer(char aP1);  // 0x7B20E0
+    int ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6);  // 0x7B22E0
+    AnimClass * * WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8);  // 0x7B23B0
     static int PreallocateChannels(unsigned int * a1, int a2);
     int * IteratorNext();  // 0x4035D0
     int  DeactivateAllMatching(int a1, int a2);  // 0x403770

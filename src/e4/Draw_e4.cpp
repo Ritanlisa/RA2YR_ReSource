@@ -9,7 +9,7 @@
 
 // 0x7BB920
 namespace gamemd {  // G42.18 ns repair
-int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, void *a9_1)
 {
 
   int v10; // ebp
@@ -53,7 +53,7 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
     a3 = v12 + v10; /*0x7bb970*/
     a2 = v11 + v27; /*0x7bb974*/
     v15 = v13 + v11; /*0x7bb978*/
-    Draw_field_00 = this->Draw_field_00; /*0x7bb97b*/
+    Draw_field_00 = (int)(this->Draw_field_00); /*0x7bb97b*/
     v29[1] = v12 + v10; /*0x7bb97d*/
     v29[0] = v15; /*0x7bb985*/
     (*(void (**)(Draw *, int *, unsigned int *, int *, int))(Draw_field_00 + 44))(this, &a5, v29, &a2, a9); /*0x7bb99b*/
@@ -62,16 +62,16 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
     v30[0] = v17; /*0x7bb9a7*/
     v30[1] = v25; /*0x7bb9b2*/
     v31[0] = v18 + v11; /*0x7bb9b6*/
-    v19 = this->Draw_field_00; /*0x7bb9bc*/
+    v19 = (int)(this->Draw_field_00); /*0x7bb9bc*/
     v31[1] = v25; /*0x7bb9be*/
     (*(void (**)(Draw *, int *, unsigned int *, unsigned int *, int))(v19 + 44))(this, &a5, v31, v30, a9); /*0x7bb9d4*/
     v32[1] = v18 + v10; /*0x7bb9de*/
-    v20 = this->Draw_field_00; /*0x7bb9e8*/
+    v20 = (int)(this->Draw_field_00); /*0x7bb9e8*/
     v32[0] = v11 + v27; /*0x7bb9ea*/
     v33[1] = v18 + v10; /*0x7bb9f4*/
     v33[0] = v11 + a4; /*0x7bb9f8*/
     (*(void (**)(Draw *, int *, unsigned int *, unsigned int *, int))(v20 + 44))(this, &a5, v33, v32, a9); /*0x7bba12*/
-    v21 = this->Draw_field_00; /*0x7bba24*/
+    v21 = (int)(this->Draw_field_00); /*0x7bba24*/
     v34[1] = a4 + v10; /*0x7bba26*/
     v35[1] = a4 + v10; /*0x7bba2a*/
     v34[0] = v11 + v28; /*0x7bba32*/

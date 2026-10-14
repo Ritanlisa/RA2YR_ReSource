@@ -199,14 +199,14 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &vt_VectorClass; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
-    return a1; /*0x4773fb*/
+    return (gamemd::VectorClass_flat **)(a1); /*0x4773fb*/
   }
   else
   {
     VectorClass::Copy(a1, &a5); /*0x477413*/
     a5 = &vt_VectorClass; /*0x47741f*/
     VectorClass::Destroy((int)&a5); /*0x47742a*/
-    return a1; /*0x47742f*/
+    return (gamemd::VectorClass_flat **)(a1); /*0x47742f*/
   }
 }
 }
@@ -344,7 +344,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   }
   LABEL_17:
   CloseHandle(FileA); /*0x479d49*/
-  return v7; /*0x479be9*/
+  return (gamemd::AbstractClass **)(v7); /*0x479be9*/
 }
 }
 // 0x479D60
@@ -406,7 +406,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     Sleep(0x1F4u); /*0x479ec6*/
   }
   CloseHandle(FileA); /*0x479ecf*/
-  return 1; /*0x479da5*/
+  return (gamemd::AbstractClass **)(1); /*0x479da5*/
 }
 }
 // 0x479EF0
@@ -468,7 +468,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     Sleep(0x1F4u); /*0x47a056*/
   }
   CloseHandle(FileA); /*0x47a05f*/
-  return 1; /*0x479f35*/
+  return (gamemd::AbstractClass **)(1); /*0x479f35*/
 }
 }
 // 0x47A080
@@ -721,7 +721,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     (*((unsigned short *)&(v43))) = v50[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]))); /*0x47e2fc*/
     (*(((unsigned short *)&(v43)) + 1)) = v50[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) + 1)); /*0x47e305*/
     *(unsigned int *)v50 = v43; /*0x47e314*/
-    mapCoords = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v50); /*0x47e318*/
+    mapCoords = (unsigned int *)(((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v50)); /*0x47e318*/
     v24 = a3; /*0x47e31d*/
   }
   else
@@ -932,7 +932,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     (*((unsigned short *)&(v43))) = v50[0] + (*((unsigned short *)&(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]))); /*0x47e72c*/
     (*(((unsigned short *)&(v43)) + 1)) = v50[1] + (*(((unsigned short *)&(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) + 1)); /*0x47e735*/
     *(unsigned int *)v50 = v43; /*0x47e744*/
-    mapCoords = ((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v50); /*0x47e748*/
+    mapCoords = (unsigned int *)(((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v50)); /*0x47e748*/
     v24 = a3; /*0x47e74d*/
   }
   else
@@ -1037,8 +1037,8 @@ unsigned int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
   if ( !byte_89E7C5 ) /*0x47efed*/
   {
     byte_89E7C5 = 1; /*0x47eff6*/
-    dword_89E794 = SearchMIXFile(aShroudShp, 0); /*0x47f009*/
-    dword_89E790 = SearchMIXFile(aFogShp, 0); /*0x47f013*/
+    dword_89E794 = (unsigned int)(SearchMIXFile(aShroudShp, 0)); /*0x47f009*/
+    dword_89E790 = (unsigned int)(SearchMIXFile(aFogShp, 0)); /*0x47f013*/
   }
   if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 ) /*0x47f022*/
     v33 = (char **)dword_89E790; /*0x47f02a*/

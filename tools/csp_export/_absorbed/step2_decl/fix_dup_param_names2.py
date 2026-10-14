@@ -30,6 +30,12 @@ def dedupe_params(seg):
     n = 0
     for p in parts:
         stripped = re.sub(r'\s*=\s*[^,]*$', '', p.strip())
+        if not re.search(r'\s', stripped):
+            # X26: single-token param = type-only (e.g. `T`, `int*`) — the
+            # trailing identifier is the TYPE, not a param name (math.hpp
+            # `T, T` was renamed to `T_2` by the pre-fix version).
+            out.append(p)
+            continue
         m = re.search(r'([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*$', stripped)
         if m and m.group(1) not in TYK:
             nm = m.group(1)
@@ -45,7 +51,8 @@ def dedupe_params(seg):
 
 
 n = 0
-for p in sorted(ROOT.glob('src/**/*.c*')):
+for p in sorted(list(ROOT.glob('src/**/*.c*')) + list(ROOT.glob('src/**/*.hpp'))
+                + list(ROOT.glob('src/**/*.h'))):
     if 'build' in p.parts or not p.is_file():
         continue
     try:
@@ -55,13 +62,18 @@ for p in sorted(ROOT.glob('src/**/*.c*')):
     changed = False
     for i, l in enumerate(lines):
         s = l.strip()
-        if not s or '(' not in s or ' operator' in s:
+        if not s or s.startswith('//') or '(' not in s or ' operator' in s:
             continue
-        if '::' not in s.split('(')[0]:
+        code = s.split('//')[0].rstrip()
+        head = code.split('(')[0]
+        is_def = '::' in head
+        # X26: header declaration lines (no Class:: qual) are eligible too
+        is_hdr_decl = p.suffix in ('.hpp', '.h') and code.endswith(';')
+        if not is_def and not is_hdr_decl:
             continue  # cpp: only def heads carry Class:: qual
-        if s.endswith(';') or '=' in s.split('(')[0]:
+        if is_def and (code.endswith(';') or '=' in head):
             continue  # statements/calls end in ; — only def heads pass
-        if not (s.endswith('{') or s.endswith(')')
+        if not (code.endswith(';') or code.endswith('{') or code.endswith(')')
                 or (i + 1 < len(lines) and lines[i + 1].strip().startswith('{'))):
             continue
         o = s.index('(')

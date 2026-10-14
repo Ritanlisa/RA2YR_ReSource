@@ -264,7 +264,7 @@ char WOL_RequestMatch(void * a1)
     if ( (v31[168] & 1) != 0 ) /*0x7a078a*/
       v4 = v5; /*0x7a078c*/
     ++v5; /*0x7a078e*/
-    nextObject = &nextObject->health; /*0x7a078f*/
+    nextObject = (gamemd::ObjectClass *)(&nextObject->health); /*0x7a078f*/
   }
   while ( v5 < g_WOL_UserList.owningHouseIndex ); /*0x7a0794*/
   if ( v4 == -1 ) /*0x7a0799*/
@@ -284,12 +284,12 @@ char WOL_RequestMatch(void * a1)
   v31[40] = 0; /*0x7a0810*/
   ReadRegistryOptionsWOL((ObjectClass *)&v31[36]); /*0x7a0815*/
   ComPtr::Constructor((ComPtr *)&v31[24]); /*0x7a081e*/
-  *(unsigned int *)&v31[24] = &vt_rc_ptr; /*0x7a082c*/
+  *(unsigned int *)&v31[24] = (unsigned int)(&vt_rc_ptr); /*0x7a082c*/
   if ( (uint8_t)Flag::IsNot2((Flag *)&v31[36]) ) /*0x7a0830*/
   {
     PlayerProfile = LoadPlayerProfile((ObjectClass *)&v31[16], (const char **)&g_WebBrowser); /*0x7a0842*/
     ComPtr::Set((ComPtr *)&v31[24], (int)PlayerProfile->vfptr1); /*0x7a084f*/
-    *(unsigned int *)&v31[16] = &vt_rc_ptr; /*0x7a0858*/
+    *(unsigned int *)&v31[16] = (unsigned int)(&vt_rc_ptr); /*0x7a0858*/
     ComPtr::Release((ComPtr *)&v31[16]); /*0x7a085c*/
   }
   else
@@ -302,9 +302,9 @@ char WOL_RequestMatch(void * a1)
   if ( dword_A8B244 != 3 ) /*0x7a0897*/
     goto LABEL_35; /*0x7a0897*/
   ((String *)((String *)&v31[32]))->Assign_Alt(aMatchwdt); /*0x7a08a6*/
-  matched = RequestMatchWOL_Helper(); /*0x7a08b4*/
+  matched = (int *)(RequestMatchWOL_Helper()); /*0x7a08b4*/
   ComPtr::Constructor((ComPtr *)&v31[16]); /*0x7a08b6*/
-  *(unsigned int *)&v31[16] = &vt_rc_ptr; /*0x7a08c4*/
+  *(unsigned int *)&v31[16] = (unsigned int)(&vt_rc_ptr); /*0x7a08c4*/
   ComPtr::Set((ComPtr *)&v31[16], matched[1]); /*0x7a08cc*/
   if ( *(unsigned int *)&v31[20] ) /*0x7a08d7*/
   {
@@ -322,11 +322,11 @@ char WOL_RequestMatch(void * a1)
         g_WOL_IdleHandler = 0; /*0x7a08fe*/
         g_WOL_GameProcessState = -1; /*0x7a0904*/
         g_WOL_GameListPool = time(0); /*0x7a091a*/
-        *(unsigned int *)&v31[16] = &vt_rc_ptr; /*0x7a091f*/
+        *(unsigned int *)&v31[16] = (unsigned int)(&vt_rc_ptr); /*0x7a091f*/
         ComPtr::Release((ComPtr *)&v31[16]); /*0x7a0923*/
         DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a092c*/
         DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0935*/
-        *(unsigned int *)&v31[24] = &vt_rc_ptr; /*0x7a093e*/
+        *(unsigned int *)&v31[24] = (unsigned int)(&vt_rc_ptr); /*0x7a093e*/
         ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0946*/
         return 0; /*0x7a0957*/
       }
@@ -343,7 +343,7 @@ char WOL_RequestMatch(void * a1)
   v11 = FromStringInt((char **)&v31[4], *(int *)dword_A8B240); /*0x7a099f*/
   String::Append2((String *)&v31[8], v11); /*0x7a09a9*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a09b2*/
-  *(unsigned int *)&v31[16] = &vt_rc_ptr; /*0x7a09bb*/
+  *(unsigned int *)&v31[16] = (unsigned int)(&vt_rc_ptr); /*0x7a09bb*/
   ComPtr::Release((ComPtr *)&v31[16]); /*0x7a09bf*/
   LABEL_35:
   StringCSF = GetStringCSF(aWolRequestingm, 0, g_Str_File_wonline_cpp, 28395); /*0x7a09c9*/
@@ -399,7 +399,7 @@ char WOL_RequestMatch(void * a1)
   }
   LABEL_50:
   String::Append((String *)v31, aRat); /*0x7a0b67*/
-  v19 = Performance::Profile(v29); /*0x7a0b75*/
+  v19 = (int)(Performance::Profile(v29)); /*0x7a0b75*/
   v20 = FromStringInt((char **)&v31[4], v19); /*0x7a0b80*/
   String::Append2((String *)v31, v20); /*0x7a0b8a*/
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0b93*/
@@ -434,7 +434,7 @@ char WOL_RequestMatch(void * a1)
   DeleteAndZero((ObjectClass *)v31); /*0x7a0cdf*/
   DeleteAndZero((ObjectClass *)&v31[8]); /*0x7a0ce8*/
   DeleteAndZero((ObjectClass *)&v31[32]); /*0x7a0cf1*/
-  *(unsigned int *)&v31[24] = &vt_rc_ptr; /*0x7a0cfa*/
+  *(unsigned int *)&v31[24] = (unsigned int)(&vt_rc_ptr); /*0x7a0cfa*/
   ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
 }
@@ -585,7 +585,7 @@ Coord * * WOL_ProcessPingRequests()
           Debug::Log(); /*0x7a130a*/
           goto LABEL_37; /*0x7a130a*/
         }
-        v12 = (gamemd::Coord **)(1);
+        v12 = (char)((gamemd::Coord **)(1));
   LABEL_37:
         DeleteAndZero((ObjectClass *)&v13); /*0x7a1312*/
         result = (char)stru_B76AC4.vfptr3; /*0x7a131b*/
@@ -745,7 +745,7 @@ Coord * * UpdateWOLLobbyPings()
         if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7a1642*/
           break; /*0x7a1642*/
         ++v13; /*0x7a1644*/
-        nextObject = &nextObject->health; /*0x7a1645*/
+        nextObject = (gamemd::ObjectClass *)(&nextObject->health); /*0x7a1645*/
         if ( v13 >= g_WOL_UserList.owningHouseIndex ) /*0x7a164a*/
           goto LABEL_40; /*0x7a164a*/
       }

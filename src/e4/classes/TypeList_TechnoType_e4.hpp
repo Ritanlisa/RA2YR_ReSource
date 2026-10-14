@@ -20,7 +20,7 @@ struct TypeList_TechnoType {
     void ddtor(void *a1 = 0);  // 0x4780B0
     int  GetSize(unsigned int * a2);  // 0x4780E0
     unsigned int  GetIndex(int a2);  // 0x478120
-    VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x478680
+    VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x478680
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)
     unsigned int m_C;  // 0xC (offset-truth)

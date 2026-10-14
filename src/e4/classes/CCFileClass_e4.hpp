@@ -37,7 +37,7 @@ struct CCFileClass {
     unsigned int FileID;  // 0x4C
     unsigned int MixFileIndex;  // 0x50
 // --- flat members (END) ---
-    char Close(void *a1 = 0, void *a2 = 0);
+    AudioController * * Close(void * a1, void *a2 = 0);
     int Destruct(void *a1 = 0);
     int GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);

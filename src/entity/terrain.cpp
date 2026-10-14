@@ -24,7 +24,7 @@ TerrainClass::TerrainClass(TerrainTypeClass* pType, const CellStruct& cell,
     std::memset(&TerrainClass_field_rect_D0, 0, sizeof(TerrainClass_field_rect_D0));
 
     height  = height;
-    abstractFlags = kTerrainFlag;
+    abstractFlags = (void *)(kTerrainFlag);
 }
 
 } // namespace gamemd

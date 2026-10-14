@@ -49,7 +49,7 @@ struct VocClass {
      int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     static int FindIndex(VocClass * aP1);
     char * GetSampleName(void *a1 = 0);
-    char LoadFromINI(CCINIClass * aP1, void *a1 = 0);  // G42.39 supply
+    char LoadFromINI(CCINIClass * aP1, void *a2 = 0);  // G42.39 supply
     unsigned int u32_278;  // 0x278 (offset-truth)
 };
 #endif  // GAMEMD_G2_VocClass_DEF

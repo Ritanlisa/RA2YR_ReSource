@@ -83,7 +83,7 @@ struct AnimClass {
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     int Destruct(AnimClass * a2, void *a2_2);
     void FreeRenderBuffer(void *a1);
-    void Render(ConvertClass * a2, ConvertClass * aP5, void *a1 = 0, void *a3 = 0);
+    void Render(ConvertClass * a2, ConvertClass * aP5, void *a3 = 0, void *a4 = 0);
     static int SetField95(BuildingClass * aP1, int a2);
     void **  ctor(void * a2, int * a3, void * a4, int a5, void * a6, void * a7, char a8, void *a1 = 0);  // 0x421ea0
     AnimClass * * ComputePosition(int *aP1);

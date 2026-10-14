@@ -37,7 +37,7 @@ struct LoadOptions {
     bool ddtor(LPCSTR lpFileName);
     char * GetData(void *a1);
     char AddRef(LPCCH lpMultiByteStr);
-    char Read(wchar_t * Destination, int a2, void *a1 = 0);
+    char Read(wchar_t * Destination, int a2, void *a3 = 0);
     char Release(LPCCH lpMultiByteStr, wchar_t * Source);
     char vt01(int a2);
     char vt02(int a2, unsigned int * a3);

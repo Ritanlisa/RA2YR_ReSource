@@ -93,7 +93,7 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
-        v9 = &this->u32_4; /*0x75a078*/
+        v9 = (int)(&this->u32_4); /*0x75a078*/
         result = (*(int (**)(int, int, unsigned int *))(this->u32_4 + 40))(&this->u32_4, a4, a3) == 0; /*0x75a086*/
         if ( !result ) /*0x75a087*/
         {
@@ -104,7 +104,7 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
       }
       else
       {
-        v8 = &this->u32_4; /*0x75a046*/
+        v8 = (int)(&this->u32_4); /*0x75a046*/
         result = (*(int (**)(int, int, unsigned int *))(this->u32_4 + 40))(&this->u32_4, a4 - 1, a3) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
           result = (*(int (**)(int, int *, int))(this->u32_28)(v8, &a4, 1) != 1; /*0x75a06c*/

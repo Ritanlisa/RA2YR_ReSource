@@ -31,7 +31,7 @@ struct RadBeam {
     unsigned int color2;  // 0xC0
     unsigned int pad_195;  // 0xC3
 // --- flat members (END) ---
-    unsigned int * InitState(int aP1, void *a1 = 0);
+    unsigned int * InitState(int aP1, void *a2 = 0);
     void * Create(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
 
     unsigned char __pad_004;  // X10 supply (csp_canon_members)

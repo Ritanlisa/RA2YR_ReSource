@@ -11,7 +11,7 @@ struct VectorClass_UAngerStruct___16 {
     AbstractClass * ptr_4;  // 0x4
 // --- flat members (END) ---
     int  Clear(int a2);  // 0x50E550
-    char  ddtor(int a2);  // 0x50EC20
+    void ddtor(void *a1_1);  // 0x50EC20
     int  GetSize(unsigned int * a2);  // 0x50ED40
     unsigned int  GetCapacity(int a2);  // 0x50ED80
     VectorClass_flat *  QueryInterface(char a2);  // 0x510090

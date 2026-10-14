@@ -145,6 +145,6 @@ bool LocomotionClass::Process()
   this->u32_68 = 0; /*0x69eccf*/
   *(unsigned int *)this->ILocomotion = 0; /*0x69ecd2*/
   *&this->u32_18 = 0; /*0x69ecd8*/
-  this->u32_18 = &off_7F2D68; /*0x69ecdf*/
+  this->u32_18 = (unsigned int)(&off_7F2D68); /*0x69ecdf*/
   return (int)this->ILocomotion; /*0x69ece8*/
 }

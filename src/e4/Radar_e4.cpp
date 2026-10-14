@@ -86,7 +86,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
         }
         p_Radar_field_0xC = (Radar *)((char *)p_Radar_field_0xC + 4); /*0x431121*/
       }
-      p_Radar_field_0xC = &v14->q00C; /*0x431132*/
+      p_Radar_field_0xC = (gamemd::Radar *)(&v14->q00C); /*0x431132*/
       v10 = __OFSUB__(v13 + 1, 8); /*0x431135*/
       v9 = v13 - 7 < 0; /*0x431135*/
       ++v13; /*0x431138*/
@@ -203,7 +203,7 @@ int Radar::IsRadarTargetEligible()
   void *Radar_field_0x20C; // eax
   int v2; // eax
 
-  Radar_field_0x20C = this->q20C; /*0x5090f0*/
+  Radar_field_0x20C = (void *)(this->q20C); /*0x5090f0*/
   if ( (unsigned int)Radar_field_0x20C >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
   v2 = *((unsigned int *)this + (unsigned int)Radar_field_0x20C + 132); /*0x5090ff*/
@@ -326,18 +326,18 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v114; // [esp+78h] [ebp+4h]
   __int16 *v115; // [esp+88h] [ebp+14h]
 
-  v6 = aP1; /*0x5824a5*/
+  v6 = (int)(aP1); /*0x5824a5*/
   v98 = aP1->u32_6; /*0x5824b3*/
-  v7 = aP1; /*0x5824be*/
-  v8 = aP1; /*0x5824c0*/
-  v9 = *aP5; /*0x5824c6*/
+  v7 = (int)(aP1); /*0x5824be*/
+  v8 = (int)(aP1); /*0x5824c0*/
+  v9 = (int)(*aP5); /*0x5824c6*/
   v115 = aP5->q004; /*0x5824cd*/
   v112 = 0; /*0x5824d4*/
   LOBYTE(v113) = 0; /*0x5824dc*/
-  v10 = *aP4; /*0x5824e4*/
-  v106 = aP4[1]; /*0x5824e6*/
-  v11 = aP4[2]; /*0x5824ea*/
-  v12 = aP4[3]; /*0x5824ed*/
+  v10 = (int)(*aP4); /*0x5824e4*/
+  v106 = (int)(aP4[1]); /*0x5824e6*/
+  v11 = (int)(aP4[2]); /*0x5824ea*/
+  v12 = (int)(aP4[3]); /*0x5824ed*/
   v97 = -1; /*0x5824f0*/
   v96 = v9; /*0x5824fc*/
   v100 = v11 + v10 - 1; /*0x582500*/
@@ -411,7 +411,7 @@ LABEL_14:
                 goto LABEL_14; /*0x582644*/
             }
           }
-          v6 = aP1; /*0x582693*/
+          v6 = (int)(aP1); /*0x582693*/
           v9 = v96; /*0x582697*/
           v97 = v89; /*0x58269b*/
         }
@@ -485,7 +485,7 @@ LABEL_33:
                 goto LABEL_33; /*0x5827d5*/
             }
           }
-          v6 = aP1; /*0x582824*/
+          v6 = (int)(aP1); /*0x582824*/
           v9 = v96; /*0x582828*/
           v97 = v90; /*0x58282c*/
         }
@@ -503,7 +503,7 @@ LABEL_33:
   v95[0] = 0; /*0x582878*/
   v95[1] = 0; /*0x58287d*/
   if ( v9 > v94 ) /*0x582886*/
-    return v110; /*0x582886*/
+    return (void *)(v110); /*0x582886*/
   do /*0x582aca*/
   {
     v50 = *(__int16 *)(v47 + 2 * aP2); /*0x582892*/
@@ -722,13 +722,13 @@ LABEL_102:
     }
     while ( v9 <= v94 ); /*0x582ae6*/
   }
-  return v110; /*0x582d1e*/
+  return (void *)(v110); /*0x582d1e*/
 
 }
 }
 // 0x584550
 namespace gamemd {
-AbstractClass * * Radar::Update(int16_t *aP1)
+AbstractClass * * Radar::Update(int16_t *aP1, void *a2, void *a3, void *a4)
 {
 
   Radar *v2; // ebx
@@ -916,7 +916,7 @@ AbstractClass * * Radar::Update(int16_t *aP1)
               v16 = v113 - 1; /*0x58467f*/
               if ( v113 - 1 >= 0 ) /*0x584684*/
               {
-                v17 = (char *)v110 + 2 * v16; /*0x58468a*/
+                v17 = (unsigned short *)((char *)v110 + 2 * v16); /*0x58468a*/
                 do /*0x584698*/
                 {
                   if ( *v17 == v14 ) /*0x584690*/
@@ -1316,7 +1316,7 @@ LABEL_72:
 }
 // 0x58ABD0
 namespace gamemd {
-void * Radar::CopyDataArray(int * a2)
+void * Radar::CopyDataArray(int * a2, void *a2_1)
 {
 
   int v3; // edi

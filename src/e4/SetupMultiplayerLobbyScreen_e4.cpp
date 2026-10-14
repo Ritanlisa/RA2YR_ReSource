@@ -26,9 +26,9 @@ char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   int v10; // [esp+Ch] [ebp-Ch]
   char * v11;
 
-  v3 = (int)(a2);
-  v4 = (int)(a2 + nIDDlgItem); /*0x5ebed0*/
-  v11 = (int)(a2 + nIDDlgItem); /*0x5ebedd*/
+  v3 = (char *)((int)(a2));
+  v4 = (char *)((int)(a2 + nIDDlgItem)); /*0x5ebed0*/
+  v11 = (char *)((int)(a2 + nIDDlgItem)); /*0x5ebedd*/
   if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x5ebee1*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ebeec*/
@@ -99,7 +99,7 @@ char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
       ++v3; /*0x5ebff6*/
     }
     while ( v3 < v11 );
-    v3 = (int)(a2);
+    v3 = (char *)((int)(a2));
   }
   UpdateMultiplayerLobbySlots((HWND)(hDlg), v3, nIDDlgItem); /*0x5ec00d*/
   RetVtableStubZero_eax_27(); /*0x5ec012*/

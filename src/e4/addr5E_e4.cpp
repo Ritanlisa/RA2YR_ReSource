@@ -122,7 +122,7 @@ int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd, void * aP0)
           v14 = 10; /*0x5e2902*/
           v5 -= 10; /*0x5e290a*/
         }
-        v10 = (wint_t *)(v5 - 1);
+        v10 = (int)((wint_t *)(v5 - 1));
         if ( v5 - 1 <= 0 ) /*0x5e291c*/
           goto LABEL_18; /*0x5e291c*/
         v11 = (wint_t *)(&v3[v10]); /*0x5e291e*/
@@ -163,7 +163,7 @@ void sub_5E2AC0()
 
   if ( Dialog::GetCurrent() ) /*0x5e2ac4*/
   {
-    Current = Dialog::GetCurrent(); /*0x5e2adc*/
+    Current = (HWND)(Dialog::GetCurrent()); /*0x5e2adc*/
     DlgItem = GetDlgItem(Current, 1343); /*0x5e2ae6*/
     if ( DlgItem ) /*0x5e2aea*/
     {
@@ -181,7 +181,7 @@ void sub_5E2AC0()
         SendMessageA(DlgItem, 0x182u, v3 - 1, 0); /*0x5e2b53*/
         WideString::Append2((wchar_t **)&v5, asc_831774); /*0x5e2b5e*/
       }
-      v4 = ((WideString *)((wchar_t **)&v5))->GetOrEmpty(); /*0x5e2b78*/
+      v4 = (wchar_t *)(((WideString *)((wchar_t **)&v5))->GetOrEmpty()); /*0x5e2b78*/
       DrawDialogText(-1, v4, DlgItem); /*0x5e2b82*/
       InvalidateRect(DlgItem, 0, 0); /*0x5e2b8c*/
       DeleteAndZero::Alt((void **)&v5); /*0x5e2b96*/
@@ -271,7 +271,7 @@ int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)()
         ShowWindow((HWND)DialogIndirect, 1); /*0x5e2e15*/
         return MessageDialogLoopAlt((HWND)DialogIndirect, a3, 0, 1, 1); /*0x5e2e31*/
     }
-    v16 = (wchar_t *)(v13);
+    v16 = (HWND)((wchar_t *)(v13));
     v17 = v10(v13, -16); /*0x5e2de6*/
     SetWindowLongA(v16, -16, v17 | 0x10000000); /*0x5e2df1*/
     v4 = (wchar_t *)(aP0); /*0x5e2df7*/
@@ -289,7 +289,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
 
   if ( a2 ) /*0x5e2ef5*/
   {
-    DlgItem = (wchar_t *)(GetDlgItem(hDlg, 1772));
+    DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, 1772)));
     v4 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(a2 + 32))); /*0x5e2f09*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v4); /*0x5e2f17*/
   }
@@ -323,7 +323,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
     wParam = (WPARAM)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3059*/
     if ( dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x5e3066*/
     {
-      v3 = (int)(FindWDTTerritoryClass(v17, *(unsigned int *)dword_A8B240));
+      v3 = (void *)((int)(FindWDTTerritoryClass(v17, *(unsigned int *)dword_A8B240)));
       ComPtr::Set(&wParam, v3->q010); /*0x5e307f*/
       v17[0] =(unsigned int)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3088*/
       ComPtr::Release(v17); /*0x5e308c*/
@@ -339,7 +339,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
         v6 = GetDlgItem(hDlg, 1026); /*0x5e30d8*/
         EnableWindow(v6, 0); /*0x5e30db*/
       }
-      if ( (IDA_BYTE1(*(unsigned int *)(v16 + 60)) & 0x80u) == 0 ) /*0x5e30e7*/
+      if ( ((((unsigned char *)&(*(unsigned int *)(v16 + 60)))[1]) & 0x80u) == 0 ) /*0x5e30e7*/
       {
         v7 = GetDlgItem(hDlg, 1359); /*0x5e30f1*/
         EnableWindow(v7, 0); /*0x5e30f4*/
@@ -502,7 +502,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
   {
     while ( 1 ) /*0x5e3a06*/
     {
-      v7 = (gamemd::ObjectClass **)(ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * v6))));
+      v7 = (char *)((gamemd::ObjectClass **)(ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * v6)))));
       result = (HWND)_strcmpi(v7, v2); /*0x5e3a0c*/
       if ( !result ) /*0x5e3a16*/
         break; /*0x5e3a16*/
@@ -813,7 +813,7 @@ bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
           strcpy((char *)v200, (const char *)(*(unsigned int *)&v198[40] + 3));
           UI_Setup_793930(a2, v200, *(char *)(*(unsigned int *)&v198[40] + 2) - 48);
         }
-        v12 = &v12->MPGameMode;
+        v12 = (gamemd::SessionClass *)(&v12->MPGameMode);
       }
       while ( (int)v12 < (int)&HouseClass_Player->u32_27590 );
     }

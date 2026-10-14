@@ -265,8 +265,8 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   a2->u32_1784 = &vt_VectorClassTPoint3D; /*0x45e2ab*/
   a2->u32_1788 = operator new(0xCu); /*0x45e2ba*/
   a2->u8_1791 = 1; /*0x45e2c6*/
-  *(unsigned int *)a2 = &vt_BuildingTypeClass; /*0x45e2cd*/
-  *(unsigned int *)(a2 + 4) = &vt_BuildingTypeClass; /*0x45e2d3*/
+  *(unsigned int *)a2 = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2cd*/
+  *(unsigned int *)(a2 + 4) = (unsigned int)(&vt_BuildingTypeClass); /*0x45e2d3*/
   a2->VtableStub_8 = &vt_BuildingTypeClass; /*0x45e2d9*/
   a2->u32_C = &vt_BuildingTypeClass; /*0x45e2e1*/
   AbstractClass::GenerateUniqueID(a2 + 4); /*0x45e2e8*/
@@ -282,7 +282,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
         !v5) )
   {
     dword_A83C78 = v4 + 1; /*0x45e330*/
-    *((unsigned int *)dword_A83C6C + v4) = a2; /*0x45e33a*/
+    *((unsigned int *)dword_A83C6C + v4) = (unsigned int)(a2); /*0x45e33a*/
     v4 = dword_A83C78; /*0x45e33d*/
   }
   v6 = 0; /*0x45e342*/
@@ -293,7 +293,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   }
   else
   {
-    v7 = dword_A83C6C; /*0x45e348*/
+    v7 = (unsigned int *)(dword_A83C6C); /*0x45e348*/
     while ( *v7 != a2 ) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
@@ -403,7 +403,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   a2->u8_D97 = 0; /*0x45e4f6*/
   a2->u8_D96 = 0; /*0x45e4fc*/
   a2->u8_D2E = 0; /*0x45e502*/
-  return a2; /*0x45e508*/
+  return (int)(a2); /*0x45e508*/
 }  // G42.18 ns repair
 } // namespace gamemd
 // 0x45E520
@@ -417,7 +417,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   *&this->ProductionCompletionThreshold = 0; /*0x45e53b*/
   this->CostRatePerFrame = 1; /*0x45e541*/
   this->u32_1791 = 0; /*0x45e548*/
-  *&this->DockingOffsets = &vt_VectorClassTPoint3D; /*0x45e54e*/
+  *&this->DockingOffsets = (unsigned int)(&vt_VectorClassTPoint3D); /*0x45e54e*/
   this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e565) */
@@ -436,7 +436,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   void *v4; // eax
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
-  BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
+  BuildupLoaded = (char)(a1->BuildupLoaded); /*0x45e587*/
   a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e595) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
@@ -484,7 +484,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     a1->UnderRoofDoorAnimLoaded = 0; /*0x45e6af*/
   }
   AbstractClass::AnnounceExpiredPointer(&a1->TechnoTypeClass, 1); /*0x45e6b9*/
-  v6 = a1; /*0x45e6ce*/
+  v6 = (gamemd::BuildingTypeClass *)(a1); /*0x45e6ce*/
   v3 = (*(int (**)(unsigned int *, BuildingTypeClass **))(dword_A83C68 + 16))(&dword_A83C68, &v6); /*0x45e6d2*/
   if ( v3 != -1 && v3 < dword_A83C78 && v3 < --dword_A83C78 ) /*0x45e6ed*/
   {
@@ -524,8 +524,8 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
 
   v1 = v1; /*0x45e97a*/
   ProcessDataCCFileClass(); /*0x45e97c*/
-  FileSystem_POWEROFF_SHP = SearchMIXFile(aPoweroffShp, 0); /*0x45e994*/
-  FileSystem_WRENCH_SHP = SearchMIXFile(aWrenchShp, 0); /*0x45e99e*/
+  FileSystem_POWEROFF_SHP = (int)(SearchMIXFile(aPoweroffShp, 0)); /*0x45e994*/
+  FileSystem_WRENCH_SHP = (int)(SearchMIXFile(aWrenchShp, 0)); /*0x45e99e*/
   v3 = 0; /*0x45e9aa*/
   v9 = 0; /*0x45e9ae*/
   if ( dword_A83C78 > 0 ) /*0x45e9b2*/
@@ -600,17 +600,17 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
     {
       if ( dword_89DDC0 ) /*0x45eb56*/
         (*(void (**)(Draw *, int))dword_89DDC0->Draw_field_00)(dword_89DDC0, 1); /*0x45eb5c*/
-      v8 = operator new(0x20u); /*0x45eb65*/
+      v8 = (int)(operator new(0x20u)); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
         v8->vtable4 = 0; /*0x45eb72*/
-        *(unsigned int *)v8 = &XSurface_Vtable; /*0x45eb78*/
+        *(unsigned int *)v8 = (unsigned int)(&XSurface_Vtable); /*0x45eb78*/
         v8->vtable2 = v9 + 16; /*0x45eb80*/
         v8->vtable3 = v9 + 16; /*0x45eb8b*/
         v8->uniqueId = 1; /*0x45eb8e*/
         Buffer::Init(&v8->abstractFlags, 0, (v9 + 16) * (v9 + 16)); /*0x45eb95*/
-        *(unsigned int *)v8 = &BSurface_Vtable; /*0x45eb9a*/
-        dword_89DDC0 = (Draw *)v8; /*0x45eba0*/
+        *(unsigned int *)v8 = (unsigned int)(&BSurface_Vtable); /*0x45eb9a*/
+        dword_89DDC0 = (unsigned int)((Draw *)v8); /*0x45eba0*/
       }
       else
       {
@@ -653,11 +653,11 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, (const char *)this->q3952 + 30), ::Ext); /*0x45f26f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f282*/
-    v3 = SearchMIXFile(Source, 0); /*0x45f28d*/
+    v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f28d*/
     if ( !v3 ) /*0x45f294*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f29a*/
-      v3 = SearchMIXFile(Source, 0); /*0x45f2a5*/
+      v3 = (int)(SearchMIXFile(Source, 0)); /*0x45f2a5*/
     }
     this->v3 = v3; /*0x45f2ac*/
     if ( v3 ) /*0x45f2b2*/
@@ -691,7 +691,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f357*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f36a*/
-    v7 = &this->DeployingAnimLoaded_d; /*0x45f375*/
+    v7 = (unsigned char *)(&this->DeployingAnimLoaded_d); /*0x45f375*/
     if ( this->DeployingAnimLoaded_d && this->DeployingAnim_2 ) /*0x45f37f*/
     {
       operator delete((void *)(this->DeployingAnim_2)); /*0x45f38a*/
@@ -699,7 +699,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *v7 = 0; /*0x45f398*/
     }
     FileSHP = LoadFileSHP(Source, (bool *)this->q5399 + 7)); /*0x45f3a0*/
-    this->DeployingAnim_2 = FileSHP; /*0x45f3a7*/
+    this->DeployingAnim_2 = (gamemd::SHPStruct *)(FileSHP); /*0x45f3a7*/
     if ( !FileSHP ) /*0x45f3ad*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f3b3*/
@@ -709,7 +709,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         this->DeployingAnim_2 = 0; /*0x45f3cf*/
         *v7 = 0; /*0x45f3d5*/
       }
-      this->DeployingAnim_2 = LoadFileSHP(Source, (bool *)this->q5399 + 7)); /*0x45f3e2*/
+      this->DeployingAnim_2 = (gamemd::SHPStruct *)(LoadFileSHP(Source, (bool *)this->q5399 + 7))); /*0x45f3e2*/
     }
   }
   INIClass::GetString( /*0x45f405*/
@@ -723,7 +723,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename, ::Ext); /*0x45f42f*/
     TheaterObjectTypeClassSpecificID(Source, aP1); /*0x45f442*/
-    v9 = &this->RoofDeployingAnimLoaded; /*0x45f44d*/
+    v9 = (unsigned char *)(&this->RoofDeployingAnimLoaded); /*0x45f44d*/
     if ( this->RoofDeployingAnimLoaded && this->RoofDeployingAnim ) /*0x45f457*/
     {
       operator delete((void *)(this->RoofDeployingAnim)); /*0x45f462*/
@@ -731,7 +731,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *v9 = 0; /*0x45f470*/
     }
     v10 = LoadFileSHP(Source, &this->q5400); /*0x45f478*/
-    this->RoofDeployingAnim = v10; /*0x45f47f*/
+    this->RoofDeployingAnim = (gamemd::SHPStruct *)(v10); /*0x45f47f*/
     if ( !v10 ) /*0x45f485*/
     {
       ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Source); /*0x45f48b*/
@@ -1694,7 +1694,7 @@ ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet(ObjectClass * Source)
 } // namespace gamemd
 // 0x644BE0
 namespace gamemd {
-unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6)
+unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   int v3; // eax
@@ -1812,7 +1812,7 @@ ParticleTypeClass * * BuildingTypeClass::FindOrCreateEx(char *Source)
 } // namespace gamemd
 // 0x7171A0
 namespace gamemd {
-void* BuildingTypeClass::ProcessPower(int *aP1)
+void* BuildingTypeClass::ProcessPower(int *aP1, void *a2)
 {
   int v3; // ecx
   int v4; // eax
@@ -2152,7 +2152,7 @@ char BuildingTypeClass::Enqueue(int a2, void *a2_2)
 } // namespace gamemd
 // 0x41C590
 namespace gamemd {
-size_t BuildingTypeClass::Dequeue(int *aP1)
+size_t BuildingTypeClass::Dequeue(int *aP1, void *a2)
 {
 
   int result; // eax
@@ -2287,7 +2287,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
 } // namespace gamemd
 // 0x465300
 namespace gamemd {
-int BuildingTypeClass::SaveLoad_Prefix_0()
+int BuildingTypeClass::SaveLoad_Prefix_0(void *a1, void *a2, void *a3, void *a4)
 {
   int result; // eax
   int v2; // edx

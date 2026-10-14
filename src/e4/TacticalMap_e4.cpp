@@ -97,7 +97,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
       v4 = (v7 + 4) * LOWORD(dword_A8B230[380].vtable1) - LOWORD(dword_A8B230[380].vtable0); /*0x48479e*/
     }
   }
-  v8 = this->u32_214; /*0x4847da*/
+  v8 = (int)(this->u32_214); /*0x4847da*/
   v9 = this->u32_104; /*0x4847e1*/
   this->u32_10E += v4; /*0x4847e7*/
   this->u32_10C = (unsigned int)(v9 * v8) >> 16; /*0x4847f4*/
@@ -133,7 +133,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   else
   {
     this->u32_10E = v14; /*0x484893*/
-    return v14; /*0x484890*/
+    return (gamemd::ScenarioClass **)(v14); /*0x484890*/
   }
 
 }
@@ -150,7 +150,7 @@ int TacticalMap::Redraw()
   int v6; // [esp+8h] [ebp-8h]
   bool v7; // [esp+Ch] [ebp-4h]
 
-  v1 = g_DSurface_Hidden_2; /*0x4f4489*/
+  v1 = (gamemd::AudioStream *)(g_DSurface_Hidden_2); /*0x4f4489*/
   g_DSurface_Hidden_2 = DSurface_Composite; /*0x4f4492*/
   (*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x4f44a2*/
     stru_887598.lineTrailer,
@@ -189,7 +189,7 @@ int TacticalMap::Redraw()
     DSurface_Composite,
     0);
   result = (*(int (**)(GScreenClass *))(this->vfptr[0] + 68))(this); /*0x4f459a*/
-  g_DSurface_Hidden_2 = v1; /*0x4f459d*/
+  g_DSurface_Hidden_2 = (int)(v1); /*0x4f459d*/
   return result; /*0x4f45a3*/
 
 }
@@ -333,7 +333,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *((unsigned int *)a1 + 898) = 0; /*0x6d1e08*/
   *((unsigned int *)a1 + 899) = 1065353216; /*0x6d1e0e*/
   *((unsigned int *)a1 + 900) = 0; /*0x6d1e18*/
-  g_TacticalClass_Instance = (LPPERSISTSTREAM)a1; /*0x6d1e1e*/
+  g_TacticalClass_Instance = (int)((LPPERSISTSTREAM)a1); /*0x6d1e1e*/
   return (int)a1->__pad_0; /*0x6d1e26*/
 
 }
@@ -389,18 +389,18 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v33 = *(unsigned int *)((char *)g_CraterPool + v7 + 12); /*0x6d2bbd*/
           v30 += aP2; /*0x6d2bc7*/
           v31 += a4; /*0x6d2bd0*/
-          v26 = DSurface_ViewBounds.field_4; /*0x6d2bda*/
+          v26 = (void *)(DSurface_ViewBounds.field_4); /*0x6d2bda*/
           v28 = *(Coord2D *)&DSurface_ViewBounds.field_0; /*0x6d2bde*/
           v25 = DSurface_ViewBounds.field_0; /*0x6d2be7*/
           v23 = *(unsigned int *)&g_DSurface_WindowOffset; /*0x6d2bf5*/
           v22 = *(unsigned int *)g_Map_VisibleRectOffset; /*0x6d2bfa*/
           v8 = Coord2D::Sub(&v28, v29, &v25); /*0x6d2c05*/
-          v9 = Rect::Construct(&v35, v8, v22, v23); /*0x6d2c0f*/
+          v9 = (int *)(Rect::Construct(&v35, v8, v22, v23)); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
           v34[1] = v9->Y; /*0x6d2c21*/
           v34[2] = v9->Width; /*0x6d2c28*/
           v34[3] = v9->Height; /*0x6d2c37*/
-          v10 = ClipRectIntersection(v36, v34, &v30, 0, 0); /*0x6d2c40*/
+          v10 = (int *)(ClipRectIntersection(v36, v34, &v30, 0, 0)); /*0x6d2c40*/
           v30 = *v10; /*0x6d2c49*/
           v31 = v10->vtable2; /*0x6d2c50*/
           v32 = v10->vtable3; /*0x6d2c57*/
@@ -463,7 +463,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
     }
     while ( v17 < result ); /*0x6d2dc2*/
   }
-  return result; /*0x6d2dc8*/
+  return (void *)(result); /*0x6d2dc8*/
 }
 } // namespace gamemd
 // 0x6D3D10
@@ -792,7 +792,7 @@ int TacticalMap::RenderAllObjects(int a2)
               v41 = (int *)(*(int (**)(int *, unsigned char *))(*v18 + 72))(v18, v104); /*0x6d9310*/
               g_TacticalClass_Instance = g_TacticalClass_Instance; /*0x6d9313*/
               v41 = v41; /*0x6d9319*/
-              v44 = IsoCoord::ToPixel(&v97, *v41, v41[1]); /*0x6d932b*/
+              v44 = (int *)(IsoCoord::ToPixel(&v97, *v41, v41[1])); /*0x6d932b*/
               v45 = *v44; /*0x6d932d*/
               v46 = v44->IsoCoord_field_0x04; /*0x6d932f*/
               v47 = v41[2]; /*0x6d9332*/
@@ -803,7 +803,7 @@ int TacticalMap::RenderAllObjects(int a2)
               v94.q004 = v46 / 256 - v49; /*0x6d936e*/
               v50 = g_TacticalClass_Instance[45]; /*0x6d9378*/
               v100[0] = g_TacticalClass_Instance[44]; /*0x6d9383*/
-              v100[1] = v50; /*0x6d938a*/
+              v100[1] = (unsigned int)(v50); /*0x6d938a*/
               Vector2::Subtract(&v94, v100); /*0x6d9391*/
               if ( *(int *)v94.__pad_000 >= -360 /*0x6d93ca*/
                 && *(int *)v94.__pad_000 <= dword_B0CE30 + 360

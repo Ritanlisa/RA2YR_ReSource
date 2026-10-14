@@ -70,7 +70,7 @@ bool sub_46D650()
       PostMessageA(DlgItem, 0x405u, 1u, dword_A8EB68); /*0x46d6b3*/
   }
   v3 = 0; /*0x46d6bc*/
-  v4 = &dword_A8DA90; /*0x46d6be*/
+  v4 = (LPARAM *)(&dword_A8DA90); /*0x46d6be*/
   do /*0x46d7fd*/
   {
     v5 = *v4; /*0x46d6c3*/
@@ -490,7 +490,7 @@ namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
 
-  return this; /*0x465d82*/
+  return (gamemd::Iostream_init *)(this); /*0x465d82*/
 
 }
 } // namespace gamemd

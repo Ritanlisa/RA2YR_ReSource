@@ -16,7 +16,7 @@ struct VectorClass_UDirtyAreaStruct {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    AbstractClass * *  SetCapacity(int a2, char * a3);  // 0x6DC850
+    AbstractClass * * SetCapacity(CCINIClass * aP1, char * a2);  // 0x6DC850
     DynamicVector *  Constructor_VectorClass_ShadowControlClass___(char a2);  // 0x6DCD20
     int Destroy(void *a1_1);  // 0x6DC4E0
     unsigned int  GetItemIndex(int a2);  // 0x6DC510
@@ -25,6 +25,6 @@ struct VectorClass_UDirtyAreaStruct {
     unsigned int  GetItemIndex_0(int a2);  // 0x6DC5B0
     char  GetSize(int a2);  // 0x6DC5E0
     unsigned int  FindItemIndex(int a2);  // 0x6DC820
-    char  loc_6DCC80(int a2, unsigned int * a3);  // 0x6DCB50
+    unsigned int * loc_6DCC80(unsigned int * Block, char a2);  // 0x6DCB50
 };
 } // namespace gamemd

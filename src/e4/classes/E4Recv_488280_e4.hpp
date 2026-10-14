@@ -11,6 +11,6 @@ struct E4Recv_488280 {
     unsigned int vfptr;  // 0x0
     unsigned int M372;  // 0x174
 // --- flat members (END) ---
-    CheckListClass *  sub_488280(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x488280
+    CheckListClass * sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);  // 0x488280
 };
 } // namespace gamemd

@@ -18,7 +18,7 @@ struct VectorClass_ptr_VoxelAnimTypeClass {
 // --- flat members (END) ---
     DynamicVector *  Constructor_VectorClass_VoxelAnimTypeClass___(char a2);  // 0x4F0B60
     DynamicVector *  Constructor_VectorClass_IsometricTileTypeClass___(char a2);  // 0x4F0C00
-    int Get(void *a1_1, void *a1 = 0);  // 0x4E8FC0
+    int Get(int a2, void *a2_2);  // 0x4E8FC0
     void Destroy_0();  // 0x4E9020
     unsigned int  GetItemIndex_0(int a2);  // 0x4E9050
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EE6A0

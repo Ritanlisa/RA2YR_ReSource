@@ -54,7 +54,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   {
     v5 = 3; /*0x42dde2*/
     pad_14 = (unsigned __int8 *)&this->field_18; /*0x42dde7*/
-    v6 = this->Delegate_field_14; /*0x42ddeb*/
+    v6 = (unsigned char *)(this->Delegate_field_14); /*0x42ddeb*/
     Srca = 4; /*0x42ddee*/
   }
   v7 = this->field_10; /*0x42de0f*/
@@ -98,12 +98,12 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 } // namespace gamemd
 // 0x631D10
 namespace gamemd {
-int Delegate::Dispatch(int aP1, int aP2)
+int Delegate::Dispatch(int aP1, int aP2, void *a3, void *a4)
 {
 
   int Pipe_field_0x04; // ecx
 
-  Pipe_field_0x04 = this->m_count; /*0x631d10*/
+  Pipe_field_0x04 = (int)(this->m_count); /*0x631d10*/
   if ( Pipe_field_0x04 ) /*0x631d15*/
     return (*(int (**)(int, int, int))(*(unsigned int *)Pipe_field_0x04 + 16))(Pipe_field_0x04, aP1, aP2); /*0x631d23*/
   else
@@ -126,7 +126,7 @@ unsigned int * Delegate::GetField()
 } // namespace gamemd
 // 0x6C9890
 namespace gamemd {
-int Delegate::Set(int aP1)
+int Delegate::Set(int aP1, void *a2, void *a3)
 {
 
   int result; // eax
@@ -143,12 +143,12 @@ int Delegate::Set(int aP1)
         *(unsigned int *)(aP1 + 8) = 0; /*0x6c98af*/
       }
     }
-    result = this->m_count; /*0x6c98b6*/
+    result = (int)(this->m_count); /*0x6c98b6*/
     if ( result ) /*0x6c98bb*/
       result->VtableStub_8 = 0; /*0x6c98bd*/
     this->m_count = aP1; /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
-      *(unsigned int *)(aP1 + 8) = this; /*0x6c98cb*/
+      *(unsigned int *)(aP1 + 8) = (unsigned int)(this); /*0x6c98cb*/
   }
   return result; /*0x6c98ce*/
 
@@ -156,12 +156,12 @@ int Delegate::Set(int aP1)
 } // namespace gamemd
 // 0x6C98E0
 namespace gamemd {
-int Delegate::Invoke(int a2, int aP2)
+int Delegate::Invoke(int a2, int aP2, void *a3)
 {
 
   int Straw_field_0x04; // ecx
 
-  Straw_field_0x04 = this->m_count; /*0x6c98e0*/
+  Straw_field_0x04 = (int)(this->m_count); /*0x6c98e0*/
   if ( Straw_field_0x04 ) /*0x6c98e5*/
     return (*(int (**)(int, int, int))(*(unsigned int *)Straw_field_0x04 + 8))(Straw_field_0x04, a2, aP2); /*0x6c98f3*/
   else
@@ -263,7 +263,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(unsigned int *)this->m_items = &vt_GenericNode; /*0x52ae27*/
+  *(unsigned int *)this->m_items = (unsigned int)(&vt_GenericNode); /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/
@@ -281,7 +281,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
     __3_YAXPAX_Z(this); /*0x52ae57*/
-  return this->m_items; /*0x52ae61*/
+  return (gamemd::GenericNode *)(this->m_items); /*0x52ae61*/
 
 }
 } // namespace gamemd

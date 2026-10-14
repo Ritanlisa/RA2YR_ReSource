@@ -124,7 +124,7 @@ int BuildingType::IsSpecialType()
 
 // 0x68C030
 namespace gamemd {
-int BuildingType::Init(unsigned int a2)
+int BuildingType::Init(unsigned int a2, void *a2_1)
 {
   if ( a2 >= 0x10 ) /*0x68c036*/
     return -1; /*0x68c047*/

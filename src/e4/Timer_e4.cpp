@@ -12,11 +12,11 @@
 
 // 0x46B640
 namespace gamemd {  // G42.18 ns repair
-void * Timer::Start(int aP1)
+void * Timer::Start(int aP1, void *a2)
 {
 
   *(unsigned int *)this->q000 = *(unsigned int *)&TeamTypeClass_Array; /*0x46b64c*/
-  *&this->ptr_8 = aP1; /*0x46b64e*/
+  *&this->ptr_8 = (gamemd::AbstractClass *)(aP1); /*0x46b64e*/
   return this->q000; /*0x46b651*/
 
 }
@@ -37,7 +37,7 @@ int Timer::StartDouble(double a2)
     LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
     v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4a5269*/
     BYTE1(this->m_18) = 0; /*0x4a5272*/
-    *&this->ptr_8 = v4; /*0x4a5276*/
+    *&this->ptr_8 = (gamemd::AbstractClass *)(v4); /*0x4a5276*/
     *&this->u32_C = v5; /*0x4a527c*/
     *&this->u32_10 = result; /*0x4a527f*/
     *&this->u32_14 = result; /*0x4a5282*/
@@ -48,11 +48,11 @@ int Timer::StartDouble(double a2)
 }
 // 0x4F1B00
 namespace gamemd {
-DWORD * Timer::Init(DWORD a2)
+DWORD * Timer::Init(DWORD a2, void *a2_1)
 {
 
   *(unsigned int *)this->q000 = Timer::GetTicks(); /*0x4f1b0b*/
-  *&this->ptr_8 = a2; /*0x4f1b11*/
+  *&this->ptr_8 = (gamemd::AbstractClass *)(a2); /*0x4f1b11*/
   return (DWORD *)this; /*0x4f1b16*/
 
 }
@@ -125,7 +125,7 @@ int Timer::GetElapsed()
 
   int v1; // edi
 
-  v1 = *&this->ptr_8; /*0x5f1396*/
+  v1 = (int)(*&this->ptr_8); /*0x5f1396*/
   if ( *(unsigned int *)this->q000 != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *(unsigned int *)this->q000; /*0x5f13a8*/
   return v1; /*0x5f13ac*/

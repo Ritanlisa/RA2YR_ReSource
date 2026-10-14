@@ -67,7 +67,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
   int v41; // [esp+40h] [ebp-8h]
   int v42; // [esp+44h] [ebp-4h]
 
-  v3 = &this->u32_9C; /*0x425d1d*/
+  v3 = (int *)(&this->u32_9C); /*0x425d1d*/
   v4 = v3[1]; /*0x425d29*/
   v5 = (unsigned __int8)(*v3 >> 31) + *v3; /*0x425d32*/
   v37 = 10000; /*0x425d34*/
@@ -190,7 +190,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
         *aP1 = (v21 << 8) + 128; /*0x425f99*/
         aP1->u32_4 = (v31 << 8) + 128; /*0x425fa2*/
         aP1->u32_8 = 0; /*0x425fa7*/
-        return aP1; /*0x425fb0*/
+        return (gamemd::AnimClass **)(aP1); /*0x425fb0*/
       }
       v38[1] = v22; /*0x425fb8*/
       v38[0] = v39; /*0x425fbd*/
@@ -199,7 +199,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
         *aP1 = (v8 << 8) + 128; /*0x425ff0*/
         aP1->u32_4 = (v22 << 8) + 128; /*0x425ffa*/
         aP1->u32_8 = 0; /*0x425ffd*/
-        return aP1; /*0x426006*/
+        return (gamemd::AnimClass **)(aP1); /*0x426006*/
       }
     }
   }
@@ -209,7 +209,7 @@ LABEL_39:
     *aP1 = Map_InvalidCoord_X; /*0x426090*/
     aP1->u32_4 = Map_InvalidCoord_Y; /*0x4260a3*/
     aP1->u32_8 = Map_InvalidCoord_Z; /*0x4260ac*/
-    return aP1; /*0x4260b5*/
+    return (gamemd::AnimClass **)(aP1); /*0x4260b5*/
   }
   v26 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
   v27 = 0; /*0x426034*/
@@ -232,7 +232,7 @@ LABEL_41:
   *aP1 = v23; /*0x4260cb*/
   aP1->u32_4 = (v24 << 8) + 128; /*0x4260dd*/
   aP1->u32_8 = 0; /*0x4260e0*/
-  return aP1; /*0x425faa*/
+  return (gamemd::AnimClass **)(aP1); /*0x425faa*/
 
 }
 }  // G42.18 ns repair
@@ -260,7 +260,7 @@ int Building::GetRenderType()
   unsigned char *Building_field_0xA0; // ecx
   int result; // eax
 
-  Building_field_0xA0 = this->q0A0; /*0x772a90*/
+  Building_field_0xA0 = (unsigned char *)(this->q0A0); /*0x772a90*/
   result = 0; /*0x772a96*/
   if ( Building_field_0xA0->q2A4 ) /*0x772a98*/
     result = 4; /*0x772aa2*/
@@ -282,7 +282,7 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
   int v6; // esi
   int v7; // edi
 
-  v2 = MixFileClass::LoadSubFile(); /*0x69e7e0*/
+  v2 = (int)(MixFileClass::LoadSubFile()); /*0x69e7e0*/
   if ( v2 && a2 < v2->u32_6 && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
     v4 = *v3; /*0x69e800*/

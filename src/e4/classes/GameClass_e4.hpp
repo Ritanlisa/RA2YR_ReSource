@@ -117,11 +117,11 @@ struct GameClass {
 // --- flat members (END) ---
     unsigned int *  processFrame(int a2, int a3);  // 0x4381D0
     unsigned int * updateUI(int a2, int a3_2);  // 0x438300
-    int  loadScenarioFiles(int a2);  // 0x5D2260
+    int loadScenarioFiles(int aP1);  // 0x5D2260
     int  FrameLoop(int a2);  // 0x5D2410
     int FindOpenSlot();  // 0x5D6370
     int GetRelatedObject();  // 0x631D30
-    void *  WriteEncryptedStream(char * Src, int a3);  // 0x632DC0
+    void * WriteEncryptedStream(BombClass * Src, signed int aP2);  // 0x632DC0
     int  ReadEncryptedStream(char * a2, signed int Size);  // 0x633130
     int  initPlayerData(void * a2);  // 0x69AE10
     static ObjectClass * * Shutdown(void *a1_1);  // 0x6BEC60

@@ -236,9 +236,9 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
         v34 = (int)((ConvertClass *)(v9))->Construct((int)v5, (int)&FileSystem_TEMPERAT_PAL, (int)g_DSurface_Primary, 1, 0); /*0x531363*/
         if ( v34 ) /*0x531367*/
         {
-          v10 = aGlssmdShp; /*0x53136e*/
+          v10 = (char *)(aGlssmdShp); /*0x53136e*/
           if ( g_DisplayWidth != 640 ) /*0x531378*/
-            v10 = aGlslmdShp; /*0x53137a*/
+            v10 = (char *)(aGlslmdShp); /*0x53137a*/
           Block = (void *)SearchMIXFile(v10, 0); /*0x531386*/
           v4 = (int16_t *)Block; /*0x53138a*/
         }
@@ -262,7 +262,7 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
     DrawToSurfaceSHP((int)g_DSurface_Hidden, v34, (int)v4, 0, v35, v38, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
   }
   StringCSF = GetStringCSF(aTxtCopyright, 0, g_Str_File_Init_CPP, 4930); /*0x53142e*/
-  Instance = TextRenderer::GetInstance(); /*0x531439*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x531439*/
   v32 = 0; /*0x53143e*/
   v33 = v40 - 40; /*0x531444*/
   if ( Instance ) /*0x53144d*/
@@ -744,12 +744,12 @@ void TheaterClass_LoadMIX(int a1)
         v13 = v11->AbstractClass_1; /*0x534c11*/
         v14 = 4 * *v11; /*0x534c14*/
         v15 = v11 + 1; /*0x534c17*/
-        IDA_LOBYTE(v29) = v14; /*0x534c18*/
+        (*((unsigned char *)&(v29))) = v14; /*0x534c18*/
         v16 = 4 * v15[1]; /*0x534c23*/
         v11 = v15 + 2; /*0x534c28*/
         v17 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (v12 % 256); /*0x534c42*/
         ++v12; /*0x534c49*/
-        IDA_HIBYTE(v29) = 4 * v13; /*0x534c2f*/
+        (*(((unsigned char *)&(v29)) + (sizeof(v29) - 1))) = 4 * v13; /*0x534c2f*/
         *(unsigned short *)v17 = v29; /*0x534c4a*/
         v17[2] = v16; /*0x534c53*/
       }
@@ -759,8 +759,8 @@ void TheaterClass_LoadMIX(int a1)
     {
       for ( i = 0; i < 256; ++i ) /*0x534c5a*/
       {
-        IDA_LOBYTE(v30) = i; /*0x534c63*/
-        IDA_HIBYTE(v30) = -1 - i; /*0x534c67*/
+        (*((unsigned char *)&(v30))) = i; /*0x534c63*/
+        (*(((unsigned char *)&(v30)) + (sizeof(v30) - 1))) = -1 - i; /*0x534c67*/
         v19 = 4 * i; /*0x534c6d*/
         v20 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (i % 256); /*0x534c85*/
         *(unsigned short *)v20 = v30; /*0x534c8d*/
@@ -776,9 +776,9 @@ void TheaterClass_LoadMIX(int a1)
     for ( j = 0; j < 256; ++j ) /*0x534cde*/
     {
       v23 = &stru_886380[3 * (j % 256)]; /*0x534cf7*/
-      IDA_LOBYTE(v31) = 4 * *v23; /*0x534d01*/
+      (*((unsigned char *)&(v31))) = 4 * *v23; /*0x534d01*/
       v24 = DataGlobal_886382[3 * (j % 256)]; /*0x534d0c*/
-      IDA_HIBYTE(v31) = 4 * DataGlobal_886381[3 * (j % 256)]; /*0x534d16*/
+      (*(((unsigned char *)&(v31)) + (sizeof(v31) - 1))) = 4 * DataGlobal_886381[3 * (j % 256)]; /*0x534d16*/
       *(unsigned short *)v23 = v31; /*0x534d23*/
       v23[2] = 4 * v24; /*0x534d2c*/
     }

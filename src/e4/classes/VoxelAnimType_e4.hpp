@@ -27,8 +27,8 @@ struct VoxelAnimType {
     SomeVoxelCache * ptr_290;  // 0x290
     INIClass * ptr_808;  // 0x808
 // --- flat members (END) ---
-    AbstractClass * *  LoadSection(void * a2, int a3);  // 0x5F7A90
-    AbstractClass * *  LoadBarrel(void * a2, int a3);  // 0x5F7DB0
+    AbstractClass * * LoadSection(const char *a2, int a3);  // 0x5F7A90
+    AbstractClass * * LoadBarrel(const char *a2, int a3);  // 0x5F7DB0
     int LoadAnim(void *a1 = 0);  // 0x5F8110
     unsigned int u32_104;  // 0x104 (offset-truth)
 

@@ -9,6 +9,6 @@ struct E4Recv_49D390 {
     unsigned int vfptr;  // 0x0
     unsigned int M28;  // 0x1C
 // --- flat members (END) ---
-    int  LoadCoopCampaignSave(char * Destination);  // 0x49D390
+    int LoadCoopCampaignSave(IUnknown * aP1);  // 0x49D390
 };
 } // namespace gamemd

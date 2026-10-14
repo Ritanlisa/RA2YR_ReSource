@@ -22,7 +22,7 @@
 
 // 0x720B20
 namespace gamemd {  // G42.18 ns repair
-int Theme::QueueSong(int aP1)
+int Theme::QueueSong(int aP1, void *a2)
 {
 
   int IsSoundEnabled; // eax
@@ -63,7 +63,7 @@ int Theme::QueueSong(int aP1)
 } // namespace gamemd
 // 0x720EA0
 namespace gamemd {
-int Theme::Stop(char aP1)
+int Theme::Stop(char aP1, void *a2)
 {
   int result; // eax
   AudioSample *v4; // ecx
@@ -103,7 +103,7 @@ int Theme::Stop(char aP1)
             result = Audio::Release(v6); /*0x720f46*/
         }
         *(unsigned int *)this = -1; /*0x720f4b*/
-        this->ptr_4 = -1; /*0x720f51*/
+        this->ptr_4 = (gamemd::AbstractClass *)(-1); /*0x720f51*/
         this->u32_8 = -1; /*0x720f58*/
       }
     }

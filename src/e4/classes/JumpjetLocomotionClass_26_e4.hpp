@@ -22,7 +22,7 @@ struct JumpjetLocomotionClass_26 {
     DynamicVector *  Constructor_VectorClass_KamikazeControl___(char a2);  // 0x54EBA0
     unsigned int  PointerToIndex(int a2);  // 0x54E8C0
     int  Seek(int a2);  // 0x54E8E0
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x54EA10
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x54EA10
     unsigned int  Write(int a2);  // 0x54EA50
 
     unsigned char __pad_000;  // X10 supply (csp_canon_members)

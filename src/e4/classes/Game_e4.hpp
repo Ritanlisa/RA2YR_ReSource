@@ -28,10 +28,9 @@ struct Game {
     int GetMultiplayerScoreScreenBar();  // 0x5CA110
     void  BuildGameSettingsPacket(char * Buffer);  // 0x5DBB60
     unsigned char ManageGameSpeed();  // 0x6579E0
-    unsigned int * LockMutex(int a2, int a3);  // G57w10-S raw 0x0067C3A0 IUnknown 占位清除
-    int LoadSaved(LPCCH a1_1);
+    unsigned int * LockMutex(int aP1, int aP2);  // G57w10-S raw 0x0067C3A0 IUnknown 占位清除
     CellStruct * * SerializeGameSaveState();  // 0x67F9C0
-    int  validateScenario(unsigned int * a2, void *a1 = 0);  // 0x680F70
+    int validateScenario(unsigned int *a2, void *a2_1 = 0);  // 0x680F70
     void  EncodeGameSetupState(char * Buffer);  // 0x77E430
     static Coord * * ProcessIdle();  // 0x77F900
     AbstractClass * * SetupWOLTournament();  // 0x7A2330
@@ -46,7 +45,7 @@ struct Game {
     static int ResetReadyStates();  // 0x5E9850
     int readIniSettings(void *a1 = 0);  // 0x67FDE0
     char InitializeToolTipColor();  // 0x72F440
-    static int Stub3(int a1);  // 0x5865E0
+    char Stub3(IUnknown * aP0);  // 0x5865E0
     int LoadSaved(void *a1_1);
     CellStruct * * Game_DumpMultiplayerGameInfo();
     int ReadTeams();

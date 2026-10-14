@@ -132,7 +132,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 
   v9 = 0; /*0x41ee9a*/
   if ( !a2 ) /*0x41ee9f*/
-    return v9; /*0x41efcb*/
+    return (gamemd::DynamicVector **)(v9); /*0x41efcb*/
   v4 = this->u32_D8; /*0x41eea6*/
   if ( v4 ) /*0x41eeae*/
   {
@@ -182,9 +182,9 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
     case 5: /*0x41ef4b*/
       return v7 != this->Tactical_E4; /*0x41efc6*/
     default:
-      return v9;
+      return (gamemd::DynamicVector **)(v9);
   }
-  return result; /*0x41ef58*/
+  return (gamemd::DynamicVector **)(result); /*0x41ef58*/
 }
 } // namespace gamemd
 // 0x41F0D0
@@ -368,7 +368,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   LOBYTE(v46[0].?) = 0; /*0x41f5fe*/
   if ( &v46[0].?[8] != (char *)a2_2 + 100 ) /*0x41f602*/
   {
-    qmemcpy((char *)a2_2 + 100, &v46[0].?[8], 0x30u); /*0x41f60d*/
+    memcpy((char *)a2_2 + 100, &v46[0].?[8], 0x30u); /*0x41f60d*/
     *((unsigned char *)a2_2 + 148) = v46[0].?; /*0x41f60f*/
   }
   v5 = strtok(0, Str); /*0x41f616*/
@@ -425,12 +425,12 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)v46); /*0x41f79c*/
   if ( Index != -1 ) /*0x41f7a4*/
   {
-    v13 = dword_A83CE4; /*0x41f7a6*/
+    v13 = (unsigned int *)(dword_A83CE4); /*0x41f7a6*/
 LABEL_25:
     v10 = v13[Index]; /*0x41f7db*/
     goto LABEL_26; /*0x41f7db*/
   }
-  v14 = TypeClass::FindByName((TypeClass *)v46); /*0x41f7b2*/
+  v14 = (int)(TypeClass::FindByName((TypeClass *)v46)); /*0x41f7b2*/
   if ( v14 != -1 ) /*0x41f7ba*/
   {
     v10 = *((unsigned int *)dword_A8B21C + v14); /*0x41f7c2*/
@@ -439,7 +439,7 @@ LABEL_25:
   Index = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)v46); /*0x41f7cb*/
   if ( Index != -1 ) /*0x41f7d3*/
   {
-    v13 = dword_A83C6C; /*0x41f7d5*/
+    v13 = (unsigned int *)(dword_A83C6C); /*0x41f7d5*/
     goto LABEL_25; /*0x41f7d5*/
   }
 LABEL_26:
@@ -750,7 +750,7 @@ char AITriggerTypeClass_40::AddRef(int a2)
     v3 = 0; /*0x4203df*/
     if ( m_8 <= 0 ) /*0x4203e3*/
       return 1; /*0x420403*/
-    v4 = *&this->q004; /*0x4203e5*/
+    v4 = (unsigned int *)(*&this->q004); /*0x4203e5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4203eb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4203f4*/
     {
@@ -796,7 +796,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
           *&this->q004 = 0; /*0x42048e*/
         }
       }
-      *&this->q004 = v4; /*0x420497*/
+      *&this->q004 = (int)(v4); /*0x420497*/
       this->q008 = a2; /*0x42049f*/
       BYTE1(this->q00C) = a3 == 0; /*0x4204a2*/
       return 1; /*0x4204a8*/
@@ -831,7 +831,7 @@ void AITriggerTypeClass_40::ddtor()
 
 // 0x4204F0
 namespace gamemd {
-int AITriggerTypeClass_40::Read(unsigned int * a2, void *a2_2)
+int AITriggerTypeClass_40::Read(unsigned int * a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx

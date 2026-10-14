@@ -10,6 +10,6 @@ struct E4Recv_56AE40 {
     unsigned int M316;  // 0x13C
     unsigned int M320;  // 0x140
 // --- flat members (END) ---
-    int  sub_56AE40(int a2);  // 0x56AE40
+    int sub_56AE40(int v9);  // 0x56AE40
 };
 } // namespace gamemd

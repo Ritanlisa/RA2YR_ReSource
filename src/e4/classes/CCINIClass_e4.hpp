@@ -32,12 +32,11 @@ struct CCINIClass {
     int InitFromINIEVA();
     int ReadTypeList(char * a1, CCINIClass * a2);
 CCINIClass();
-     MultiplayerGameMode * * Load(int a2, char a3, char a4, void *a1 = 0);  // load INI from file
+     MultiplayerGameMode * * Load(int a2, char a3, char a4, void *a4_1 = 0);  // load INI from file
     int  IterateNodes(int a2);  // 0x710550
     void* Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int BuildChecksum(char * Buffer);
     unsigned char __pad_41[4];  // 0x41 (ml)
-    void* headNode;  // 0x4 (canon-mt)
     unsigned int *q000;  // 0x0 (offset-truth)
     int sectionCount;  // 0x1C (ml)
     int sectionHead[3];  // 0x10 (ml)

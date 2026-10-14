@@ -9,7 +9,7 @@ struct E4Recv_689960 {
     unsigned int vfptr;  // 0x0
     unsigned int M13482;  // 0x34AA
 // --- flat members (END) ---
-    char  sub_689960(void * a2, char a3);  // 0x689960
+    char sub_689960(const char * a2, char a3);  // 0x689960
 
     unsigned int q2128;  // X10 supply (member_lookup)
 };

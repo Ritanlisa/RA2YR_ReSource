@@ -89,7 +89,7 @@ void AudioStream::DestroyAll(void * Block)
   for ( i = (AudioStream *)Next; Next; i = (AudioStream *)Next ) /*0x403407*/
   {
     Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x403412*/
-    AudioStream::Destructor(i); /*0x403414*/
+    AudioStream::Destructor((unsigned int *)(i)); /*0x403414*/
   }
   Block->u32_18->vt_slot_32(); /*0x403427*/
   *(unsigned int *)(Block->u32_18 + 4 * (int)Block->u32_1C + 28) = 0; /*0x403430*/
@@ -136,7 +136,7 @@ int AudioStream::ResetChannel(int a2, int a3)
 {
 
   this->q008 = (void *)a2; /*0x4038a4*/
-  this->q00C = (void *)a3; /*0x4038ab*/
+  this->q00C = (int)((void *)a3); /*0x4038ab*/
   return a2; /*0x4038ae*/
 
 }
@@ -166,7 +166,7 @@ int AudioStream::SetupPlayback()
   v1 = (char *)this->u32_A8; /*0x404700*/
   v2 = 0; /*0x404707*/
   v3 = 0; /*0x404709*/
-  this->u32_1E0 = v1; /*0x40470e*/
+  this->u32_1E0 = (unsigned int)(v1); /*0x40470e*/
   if ( !v1 || (this->u32_18 & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/
   AudioStream_field_0x24 = this->q024; /*0x40471c*/
@@ -175,12 +175,12 @@ int AudioStream::SetupPlayback()
   if ( (*(unsigned char *)(AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40472d*/
   {
     v3 = 1; /*0x404730*/
-    this->u32_1E0 = v1 - 1; /*0x404735*/
+    this->u32_1E0 = (unsigned int)(v1 - 1); /*0x404735*/
     this->u32_AC = 0; /*0x40473b*/
   }
   else
   {
-    this->u32_AC = (void *)-1; /*0x404743*/
+    this->u32_AC = (unsigned int)((void *)-1); /*0x404743*/
   }
   if ( (*(unsigned char *)(AudioStream_field_0x24 + 16) & 0x40) != 0 ) /*0x404751*/
     --this->u32_1E0; /*0x404753*/
@@ -189,7 +189,7 @@ int AudioStream::SetupPlayback()
     *(unsigned int *)(AudioStream_field_0x24 + 12) = 0; /*0x404763*/
     return 0; /*0x40476a*/
   }
-  v6 = &this->q160; /*0x40476b*/
+  v6 = (char *)(&this->q160); /*0x40476b*/
   do /*0x404780*/
   {
     *(unsigned int *)v6 = v3; /*0x404771*/
@@ -219,7 +219,7 @@ int AudioStream::SelectRandom()
   int v10; // ecx
   int v12; // eax
 
-  v2 = this->q090; /*0x4047b3*/
+  v2 = (unsigned int *)(this->q090); /*0x4047b3*/
   v3 = v2[4]; /*0x4047b9*/
   if ( v2[22] >= 0x21u && (this->u32_18 & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/
@@ -335,7 +335,7 @@ void AudioStream::CleanupChannels()
         LinkedList::Init((LinkedList *)v2); /*0x404f77*/
         v2->q138 = 0; /*0x404f7c*/
         if ( v2->nextArrayIndex >= 0 ) /*0x404f87*/
-          PushFrontLinkedListAlt(dword_87E2A8, v2); /*0x404f9c*/
+          PushFrontLinkedListAlt((unsigned int *)(dword_87E2A8), v2); /*0x404f9c*/
         else
           operator delete((void *)((void *)v2)); /*0x404f8a*/
         v2 = (int)v3; /*0x404fa7*/
@@ -466,7 +466,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
   unsigned int v16[27]; // [esp+30h] [ebp-D0h] BYREF
   unsigned int v17[25]; // [esp+9Ch] [ebp-64h] BYREF
 
-  v2 = a2_2; /*0x4a33a7*/
+  v2 = (gamemd::AudioStream *)(a2_2); /*0x4a33a7*/
   v3 = *(unsigned int *)&a2_2->__pad_5C[20]; /*0x4a33ac*/
   if ( !v3 ) /*0x4a33b7*/
     return -1; /*0x4a33b7*/
@@ -517,10 +517,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
                 do /*0x4a353c*/
                 {
                   SamplePosition = (unsigned short *)((Audio *)(v5))->GetSamplePosition(0, v7 - v5->Width); /*0x4a34d4*/
-                  v10 = (unsigned short *)StreamClass::ReadAndSeek( /*0x4a34df*/
-                                   *(int **)&g_VisibleSurfaceDescriptor,
-                                   0,
-                                   v7 - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4));
+                                    v10 = (unsigned short *)StreamClass::ReadAndSeek((int)(/*0x4a34df*/                                    *(int **)&g_VisibleSurfaceDescriptor),                                    0,                                    v7 - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4));
                   if ( !SamplePosition || !v10 ) /*0x4a34ee*/
                     break; /*0x4a34ee*/
                   if ( v8 ) /*0x4a34f2*/
@@ -552,7 +549,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
                 }
                 while ( v7 < Stream_field_04 ); /*0x4a353c*/
               }
-              v2 = a2_2; /*0x4a356f*/
+              v2 = (gamemd::AudioStream *)(a2_2); /*0x4a356f*/
             }
           }
         }
@@ -672,7 +669,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
   v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_000 + 120))(this, &v78); /*0x4beae2*/
-  v9 = ClipRectIntersection(&v76, a2, v8, 0, 0); /*0x4beaf5*/
+  v9 = (int *)(ClipRectIntersection((RectangleStruct *)(&v76), a2, v8, 0, 0)); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v84 = *v9; /*0x4beafe*/
   v11 = v9->vtable2; /*0x4beb02*/
@@ -707,7 +704,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
   v20 = v17; /*0x4beb94*/
   v21 = v81; /*0x4beb96*/
   v79 = v83; /*0x4beba2*/
-  if ( !(unsigned __int8)ClipLine(&v80, &v82, &v84) ) /*0x4beba6*/
+  if ( !(unsigned __int8)ClipLine((IUnknown *)(&v80), &v82, &v84) ) /*0x4beba6*/
     return 0; /*0x4beba6*/
   v92 = (char *)v15; /*0x4bebc1*/
   v89 = (char *)v19; /*0x4bebc8*/
@@ -752,7 +749,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, uint
   SamplePosition = (unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v80, v81 - Stream_field_04); /*0x4bed56*/
   v32 = *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4); /*0x4bed5c*/
   v79 = v81; /*0x4bed5f*/
-  v33 = StreamClass::ReadAndSeek(*(int **)&g_VisibleSurfaceDescriptor, v80, v81 - v32); /*0x4bed67*/
+  v33 = StreamClass::ReadAndSeek((int)(*(int **)&g_VisibleSurfaceDescriptor), v80, v81 - v32); /*0x4bed67*/
   v34 = (unsigned short *)v33; /*0x4bed7a*/
   LOWORD(v33) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4bed87*/
   v67 = -1; /*0x4bed8b*/
@@ -1085,8 +1082,8 @@ int AudioStream::CalcReadPos()
   if ( v17 > v8 ) /*0x7bd36a*/
   {
     v13 = (unsigned int)this->q098 - v4; /*0x7bd3cd*/
-    qmemcpy((void *)(this->u32_78C + v4), v6, v13); /*0x7bd3e4*/
-    qmemcpy(this->u32_183), &v6[v13], v7 - v13); /*0x7bd404*/
+    memcpy((void *)(this->u32_78C + v4), v6, v13); /*0x7bd3e4*/
+    memcpy(this->u32_183), &v6[v13], v7 - v13); /*0x7bd404*/
     v14 = v17; /*0x7bd40f*/
     v15 = this->u32_79C; /*0x7bd413*/
     this->u32_790 = v7 - v13; /*0x7bd41b*/
@@ -1105,7 +1102,7 @@ int AudioStream::CalcReadPos()
       ++i; /*0x7bd451*/
     return -1; /*0x7bd459*/
   }
-  qmemcpy((void *)(this->u32_78C + v4), v6, v7); /*0x7bd37b*/
+  memcpy((void *)(this->u32_78C + v4), v6, v7); /*0x7bd37b*/
   v11 = this->u32_790; /*0x7bd384*/
   this->u32_7B0 = 0; /*0x7bd38c*/
   this->u32_7AC = 0; /*0x7bd392*/
@@ -1180,7 +1177,7 @@ int AudioStream::ProcessStream()
     if ( (this->u32_84 & 2) != 0 ) /*0x7beb28*/
     {
       this->u32_6D0 = *(unsigned int *)(v2 + 28); /*0x7beb2d*/
-      CalcAudioStreamOffset(this, 60 * *(unsigned int *)(v2 + 28) / this->u32_74); /*0x7beb48*/
+      CalcAudioStreamOffset((int)(this), 60 * *(unsigned int *)(v2 + 28) / this->u32_74); /*0x7beb48*/
       return -1; /*0x7beb57*/
     }
     Position = AudioStream::GetPosition((AudioStream *)this); /*0x7beb5f*/
@@ -1242,7 +1239,7 @@ int AudioStream::ProcessStream()
               LOBYTE(v23) = v23 & 0xF7; /*0x7becd6*/
               *(unsigned int *)(v2 + 20) = v23; /*0x7becd8*/
             }
-            qmemcpy(v3 + 9, *(const void **)(v2 + 8), *(unsigned int *)(v2 + 40)); /*0x7bece9*/
+            memcpy(v3 + 9, *(const void **)(v2 + 8), *(unsigned int *)(v2 + 40)); /*0x7bece9*/
             v24 = v3[1]; /*0x7becf2*/
             v1 = this; /*0x7becf8*/
             LOBYTE(v24) = v24 | 1; /*0x7becfc*/
@@ -1511,7 +1508,7 @@ int AudioStream::UpdateCountdowners()
 
 // 0x407860
 namespace gamemd {
-char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream)
+char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream, void *a4)
 {
   int v3; // esi
   int v4; // ebx

@@ -45,7 +45,7 @@ BulletClass::BulletClass()
   this->SourceCoords = 0; /*0x4663f5*/
   this->q12D = 0; /*0x4663fb*/
   this->__pad_130 = 0; /*0x466401*/
-  *&this->NextAnim = -1; /*0x466407*/
+  *&this->NextAnim = (gamemd::CellStruct *)(-1); /*0x466407*/
   *&this->u16_14E = -1; /*0x46640e*/
   this->__pad_154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
@@ -90,7 +90,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x466581*/
   if ( a1->q158 ) /*0x466586*/
   {
-    v5 = a1; /*0x4665a0*/
+    v5 = (gamemd::BulletClass *)(a1); /*0x4665a0*/
     v2 = (*(int (**)(int *, BulletClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x4665a4*/
            g_BuildingLoadQueue_Array.ForbiddenHouses,
            &v5);
@@ -111,7 +111,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   a1->u32_AC = 0; /*0x4665e9*/
   a1->q_B0 = 0; /*0x4665f3*/
   a1->__pad_154 = 0; /*0x4665fd*/
-  v5 = a1; /*0x466617*/
+  v5 = (gamemd::BulletClass *)(a1); /*0x466617*/
   v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[348] + 16))(&((unsigned int *)&stru_A8EB00)[348], &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < *(int *)&((unsigned int *)&stru_A8EB00)[364] ) /*0x46662b*/
   {
@@ -137,7 +137,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
     dword_89DDF4 = 2147450879; /*0x46668f*/
     atexit(nullsub_108); /*0x466694*/
   }
-  return &dword_89DDF4; /*0x4666a2*/
+  return (int *)(&dword_89DDF4); /*0x4666a2*/
 
 }
 } // namespace gamemd

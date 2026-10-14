@@ -17,7 +17,7 @@
 
 // 0x48E740
 namespace gamemd {  // G42.18 ns repair
-unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
+unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, void *a6_1, void *a7, void *a8, void *a9)
 {
 
   int v7; // eax
@@ -228,7 +228,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
          0) )
   {
     v26 = dword_89ED08++; /*0x48ebc4*/
-    *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
+    *((unsigned int *)dword_89ECFC + v26) = (unsigned int)(this); /*0x48ebd3*/
   }
   return this->__pad_0; /*0x48ebd8*/
 

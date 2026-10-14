@@ -670,13 +670,13 @@ struct BuildingTypeClass {
     int GetObjectSize();
     int GetPowerOutput(int aP1);
     int GetTypeIdentifier();
-    bool IsPlacementValid(int16_t *a2, int16_t *a3);  // G57w10-S raw 0x00746000 IUnknown 占位清除
+    int IsPlacementValid(IUnknown * aP1, IUnknown * aP2);  // G57w10-S raw 0x00746000 IUnknown 占位清除
     int ProcessData(unsigned int * a2, short * a3);
-    int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5);
+    int SaveLoad_Prefix_0(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     int UpdatePower();
     int ddtor(void *a1);
-    size_t Dequeue(int *aP1, void *a1 = 0);
-    unsigned int * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a1 = 0, void *a7 = 0, void *a8 = 0);
+    size_t Dequeue(int *aP1, void *a2 = 0);
+    unsigned int * Construct(AbstractClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int * GetSizeInLeptons(unsigned int * a2);
     unsigned int * GetUpgradeOffset(unsigned int * a2);
     unsigned int * loadBuildingProperty_b_545E520(int aP1);
@@ -684,7 +684,7 @@ struct BuildingTypeClass {
     int IsPowered();
     void LoadVoxel();
     void* LoadAnimations(int aP1);
-    void* ProcessPower(int *aP1, void *a1 = 0);
+    void* ProcessPower(int *aP1, void *a2 = 0);
     int GetFoundationWidth();
     int  GetFoundationHeight(char a2);  // 0x45eca0
     OverlayTypeClass * * FindOrCreate2(ObjectClass * Source);

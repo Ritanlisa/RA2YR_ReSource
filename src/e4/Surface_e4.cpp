@@ -128,9 +128,9 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
       v35 = 0; /*0x5d2181*/
       if ( Width > 0 ) /*0x5d2185*/
       {
-        v23 = *a1; /*0x5d218b*/
-        v42 = *a1; /*0x5d2191*/
-        v43 = *a1 + v37; /*0x5d219b*/
+        v23 = (int)(*a1); /*0x5d218b*/
+        v42 = (int)(*a1); /*0x5d2191*/
+        v43 = (int)(*a1 + v37); /*0x5d219b*/
         v38 = a1[1]; /*0x5d21a3*/
         v40 = v39 + v38; /*0x5d21a9*/
         LockCount = (int *)aP1->LockCount; /*0x5d21b1*/
@@ -178,7 +178,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
     else
     {
       v11 = (int *)(result[3] + 16 * Width); /*0x5d208a*/
-      *v11 = *a1; /*0x5d208d*/
+      *v11 = (int)(*a1); /*0x5d208d*/
       v11[1] = a1[1]; /*0x5d2093*/
       v11[2] = a1[2]; /*0x5d2099*/
       v11[3] = a1[3]; /*0x5d20a0*/
@@ -186,7 +186,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
     }
     return result; /*0x5d20af*/
   }
-  v6 = *a1; /*0x5d2010*/
+  v6 = (int)(*a1); /*0x5d2010*/
   v7 = a1[1]; /*0x5d2012*/
   v8 = result->LockCount; /*0x5d2015*/
   while ( 1 ) /*0x5d2020*/
@@ -244,7 +244,7 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
   if ( (int)v49 <= v16 ) /*0x5d20fe*/
     v47 = (unsigned int *)(v16 - v13); /*0x5d210a*/
   else
-    v47 = (int *)((char *)v49 - v13); /*0x5d2102*/
+    v47 = (unsigned int *)((int *)((char *)v49 - v13)); /*0x5d2102*/
   v17 = v34; /*0x5d2116*/
   aP1->Width = v41 - 1; /*0x5d211d*/
   if ( v34 < v41 - 1 ) /*0x5d2120*/
@@ -291,7 +291,7 @@ int sub_626C60()
   v1 = v0; /*0x626c75*/
   if ( v0 ) /*0x626c7c*/
   {
-    *v0 = (unsigned int *)(-1);
+    *v0 = (unsigned int)((unsigned int *)(-1));
     v2 = (unsigned int *)(operator new(0x18u)); /*0x626c8c*/
     v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
@@ -398,13 +398,13 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     {
       v8 = (*(int (**)(unsigned int *))(*v3 + 128))(v3); /*0x641e45*/
       v5 = (*(int (**)(unsigned int *))(*v3 + 124))(v3); /*0x641e48*/
-      v6 = DSurface::Construct(v4, v5, v8, 1, 0); /*0x641e4e*/
+      v6 = (char *)(DSurface::Construct(v4, v5, v8, 1, 0)); /*0x641e4e*/
     }
     else
     {
       v6 = 0; /*0x641e55*/
     }
-    *(unsigned int *)this->vtable1 = v6; /*0x641e57*/
+    *(unsigned int *)this->vtable1 = (unsigned int)(v6); /*0x641e57*/
     (*(void (**)(char *, unsigned int))(*(unsigned int *)v6 + 24))(v6, 0); /*0x641e5f*/
     (*(void (**)(unsigned int, unsigned int *, unsigned int, int))(**(unsigned int **)this->vtable1 + 4))( /*0x641e6b*/
       *(unsigned int *)this->vtable1,
@@ -417,7 +417,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
     Vector::Clear((int)v10); /*0x641e8a*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641e93*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v9); /*0x641e9b*/
-    return 1; /*0x641ea2*/
+    return (gamemd::AbstractClass **)(1); /*0x641ea2*/
   }
   else
   {
@@ -519,7 +519,7 @@ LABEL_7:
       v47[2] = v7; /*0x65530a*/
       v47[3] = v8; /*0x65530e*/
       v39 = v5; /*0x65531e*/
-      v9 = ClipRectIntersection(v50, &v39, v47, 0, 0); /*0x655322*/
+      v9 = (int *)(ClipRectIntersection(v50, &v39, v47, 0, 0)); /*0x655322*/
       v39 = *v9; /*0x65532b*/
       v40 = v9->vtable2; /*0x655332*/
       v41 = v9->vtable3; /*0x655339*/
@@ -567,7 +567,7 @@ LABEL_16:
         v48[1] = 0; /*0x655434*/
         v48[2] = v17; /*0x655439*/
         v48[3] = v18; /*0x655441*/
-        v19 = GenerateImageThumbnail((float *)this->vtable1, v51, v48, &v39, 0); /*0x655455*/
+        v19 = (int *)(GenerateImageThumbnail((float *)this->vtable1, v51, v48, &v39, 0)); /*0x655455*/
         v20 = *v19; /*0x65545e*/
         v44 = v19->__pad_004; /*0x655463*/
         v21 = v19->q008; /*0x655467*/
@@ -666,7 +666,7 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
   unsigned int *v26; // [esp+64h] [ebp+4h]
   int v27; // [esp+74h] [ebp+14h]
 
-  v5 = aP1; /*0x6ba3e4*/
+  v5 = (int)(aP1); /*0x6ba3e4*/
   result = (*(int (**)(int, unsigned int, unsigned int))(*&aP1->q_170))(aP1, 0, 0); /*0x6ba3f3*/
   v20 = result; /*0x6ba3f8*/
   if ( result )
@@ -681,8 +681,8 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
       v22 = *(unsigned int *)(v8 + 8); /*0x6ba470*/
       v23 = *(unsigned int *)(v8 + 12); /*0x6ba480*/
       (*(void (**)(int, unsigned int *))(*&aP1->q1E0))(aP1, v25); /*0x6ba484*/
-      v10 = aP0[2]; /*0x6ba48f*/
-      v11 = aP0[3]; /*0x6ba492*/
+      v10 = (int)(aP0[2]); /*0x6ba48f*/
+      v11 = (int)(aP0[3]); /*0x6ba492*/
       v19 = (v22 - v10) / 2 <= 0 ? 0 : (v22 - v10) / 2;
       v12 = 0; /*0x6ba4bf*/
       v16 = 0; /*0x6ba4c3*/
@@ -701,14 +701,14 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
             {
               v15 += 2; /*0x6ba512*/
               *(unsigned short *)(v15 - 2) = *(unsigned short *)(v21 + 2 * (v18 * (v13 % v23) + v14 % v22)); /*0x6ba528*/
-              v10 = aP0[2]; /*0x6ba52c*/
+              v10 = (int)(aP0[2]); /*0x6ba52c*/
               ++v14; /*0x6ba530*/
               v26 = (unsigned int *)((char *)v26 + 1); /*0x6ba533*/
             }
             while ( (int)v26 < v10 ); /*0x6ba537*/
             v7 = a3; /*0x6ba539*/
             v12 = v16; /*0x6ba53d*/
-            v5 = aP1; /*0x6ba541*/
+            v5 = (int)(aP1); /*0x6ba541*/
           }
           ++v12; /*0x6ba54c*/
           v13 = v27 + 1; /*0x6ba54d*/
@@ -1071,7 +1071,7 @@ LABEL_21:
       else if ( v10 < v74 - v55 ) /*0x6ba9a8*/
       {
         v62 = v29; /*0x6ba9b4*/
-        v52 = v30; /*0x6ba9b8*/
+        v52 = (short *)(v30); /*0x6ba9b8*/
         v32 = (unsigned short *)(v70 + 2 * v31); /*0x6ba9bc*/
         v60 = v74 - v55 - v10; /*0x6ba9bf*/
         v58 = v32; /*0x6ba9c3*/
@@ -1249,7 +1249,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v33 = 0; /*0x7076a9*/
     v28 = 0; /*0x7076ad*/
     v29 = 0; /*0x7076b1*/
-    v23 = aP2[1]; /*0x7076bb*/
+    v23 = (int)(aP2[1]); /*0x7076bb*/
     v36[0] = *aP2 + v22; /*0x7076be*/
     v24 = a1->vtable2; /*0x7076c8*/
     v36[1] = v23 + a1[1]; /*0x7076ce*/
@@ -2189,7 +2189,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
 }  // G42.18c ns repair
 // 0x4AEC60
 namespace gamemd {  // G42.18c ns repair
-unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6)
+unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
   aP1->Width = aP2; /*0x4aec6a*/

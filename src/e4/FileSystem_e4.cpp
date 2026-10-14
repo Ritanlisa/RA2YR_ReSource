@@ -62,7 +62,7 @@ int FileSystem::ProcessNextFileExtension()
   unsigned int *v31; // [esp+18h] [ebp-10h]
   int v32; // [esp+1Ch] [ebp-Ch]
 
-  v1 = g_FileExtensionState; /*0x626da7*/
+  v1 = (gamemd::FileSystem *)(g_FileExtensionState); /*0x626da7*/
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
     v2 = (FileSystem *)__2_YAPAXI_Z(0x10u); /*0x626db9*/
@@ -83,16 +83,16 @@ int FileSystem::ProcessNextFileExtension()
       {
         v4 = 0; /*0x626df8*/
       }
-      *(unsigned int *)&v1[4] = v4; /*0x626dfc*/
+      *(unsigned int *)&v1[4] = (unsigned int)(v4); /*0x626dfc*/
       v5 = (FileExtension *)__2_YAPAXI_Z(0x18u); /*0x626dff*/
       if ( v5 ) /*0x626e09*/
         v6 = FileExtension::Constructor(v5, 0, 0); /*0x626e0f*/
       else
         v6 = 0; /*0x626e16*/
-      *(unsigned int *)&v1[8] = v6; /*0x626e1a*/
+      *(unsigned int *)&v1[8] = (unsigned int)(v6); /*0x626e1a*/
       v7 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
       if ( v7 ) /*0x626e27*/
-        *(unsigned int *)&v1[12] = DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31); /*0x626e39*/
+        *(unsigned int *)&v1[12] = (unsigned int)(DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31)); /*0x626e39*/
       else
         *(unsigned int *)&v1[12] = 0; /*0x626e40*/
     }
@@ -100,7 +100,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v1 = 0; /*0x626e45*/
     }
-    g_FileExtensionState = v1; /*0x626e47*/
+    g_FileExtensionState = (int)(v1); /*0x626e47*/
   }
   v8 = *(unsigned int **)&v1[12]; /*0x626e4d*/
   v9 = 0; /*0x626e50*/
@@ -206,7 +206,7 @@ void FileSystem::InitPipShapes()
     FileSystem_PIPBRD_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
     byte_AC1488 = FileSystem_PIPBRD_SHP != 0; /*0x5f76df*/
     if ( !FileSystem_PIPBRD_SHP ) /*0x5f76e5*/
-      FileSystem_PIPBRD_SHP = SearchMIXFile(aPipbrdShp, 0); /*0x5f76f3*/
+      FileSystem_PIPBRD_SHP = (int)(SearchMIXFile(aPipbrdShp, 0)); /*0x5f76f3*/
     ((RawFileClass *)(v0))->Dtor(); /*0x5f76fc*/
   }
   if ( !FileSystem_PIPS_SHP ) /*0x5f7708*/
@@ -215,7 +215,7 @@ void FileSystem::InitPipShapes()
     FileSystem_PIPS_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
     byte_AC1489 = FileSystem_PIPS_SHP != 0; /*0x5f772d*/
     if ( !FileSystem_PIPS_SHP ) /*0x5f7733*/
-      FileSystem_PIPS_SHP = SearchMIXFile(aPipsShp, 0); /*0x5f7741*/
+      FileSystem_PIPS_SHP = (int)(SearchMIXFile(aPipsShp, 0)); /*0x5f7741*/
     ((RawFileClass *)(v0))->Dtor(); /*0x5f774a*/
   }
   if ( !FileSystem_PIPS2_SHP ) /*0x5f7756*/
@@ -224,7 +224,7 @@ void FileSystem::InitPipShapes()
     FileSystem_PIPS2_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
     byte_AC148A = FileSystem_PIPS2_SHP != 0; /*0x5f777b*/
     if ( !FileSystem_PIPS2_SHP ) /*0x5f7781*/
-      FileSystem_PIPS2_SHP = SearchMIXFile(aPips2Shp, 0); /*0x5f778f*/
+      FileSystem_PIPS2_SHP = (int)(SearchMIXFile(aPips2Shp, 0)); /*0x5f778f*/
     ((RawFileClass *)(v0))->Dtor(); /*0x5f7798*/
   }
   if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77a4*/
@@ -233,7 +233,7 @@ void FileSystem::InitPipShapes()
     FileSystem_TALKBUBL_SHP = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
     byte_AC148B = FileSystem_TALKBUBL_SHP != 0; /*0x5f77c9*/
     if ( !FileSystem_TALKBUBL_SHP ) /*0x5f77cf*/
-      FileSystem_TALKBUBL_SHP = SearchMIXFile(aTalkbublShp, 0); /*0x5f77dd*/
+      FileSystem_TALKBUBL_SHP = (int)(SearchMIXFile(aTalkbublShp, 0)); /*0x5f77dd*/
     ((RawFileClass *)(v0))->Dtor(); /*0x5f77e6*/
   }
 }

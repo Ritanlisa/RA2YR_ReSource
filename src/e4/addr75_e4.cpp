@@ -141,7 +141,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
   }
   if ( a4 ) /*0x7509c5*/
     SetAudioSource((int)a4, v6, (int)v5); /*0x7509cc*/
-  return v6; /*0x750931*/
+  return (gamemd::AbstractClass **)(v6); /*0x750931*/
 }
 }  // G42.18 ns repair
 // 0x750AC0
@@ -383,7 +383,7 @@ int ThemeManager_Update(int a1, int a2, int a3)
             ThemeClass::ClearQueues(); /*0x75254b*/
             qword_B1D4D0 = 0; /*0x752552*/
           }
-          v7 = AudioQueue::FindByData(v5); /*0x75255e*/
+          v7 = (int *)(AudioQueue::FindByData(v5)); /*0x75255e*/
           if ( !v7 || v7[6] != v4 ) /*0x75256a*/
             Audio_Load((int)v5, v4, a3); /*0x752575*/
           UpdateThemes(); /*0x75257a*/
@@ -444,7 +444,7 @@ void ThemeClass_Update()
   v3 = (unsigned int *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
-    v3 = dword_B1D4B8; /*0x752866*/
+    v3 = (unsigned int *)(dword_B1D4B8); /*0x752866*/
     if ( dword_B1D4B8 ) /*0x75286e*/
     {
       dword_B1D4B8 = 0; /*0x752870*/
@@ -552,7 +552,7 @@ int TauntClass_Play(int a1)
   {
     case 0: /*0x752bb0*/
       v4 = v1; /*0x752bba*/
-      v3 = aTauntsTauam02i; /*0x752bbb*/
+      v3 = (const char *)(aTauntsTauam02i); /*0x752bbb*/
       goto LABEL_16; /*0x752bc0*/
     case 1: /*0x752bb0*/
       sprintf(Buffer, "taunts\\tauko%02i.wav", v1); /*0x752bd0*/
@@ -586,7 +586,7 @@ int TauntClass_Play(int a1)
   LABEL_16:
       sprintf(Buffer, v3, v4); /*0x752c41*/
   LABEL_17:
-      result = ThreadAudioMixerMain(dword_B1D4D8, Buffer, 0); /*0x752c4b*/
+      result = (int)(ThreadAudioMixerMain(dword_B1D4D8, Buffer, 0)); /*0x752c4b*/
       break; /*0x752c62*/
     default:
       return 0;
@@ -618,7 +618,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          0) )
   {
     v3 = g_InfantrySelectState++; /*0x752d3b*/
-    *((unsigned int *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
+    *((unsigned int *)g_InfantryRenderPool + v3) = (unsigned int)(this); /*0x752d4a*/
   }
   return (int)this; /*0x752d4d*/
 
@@ -643,7 +643,7 @@ int CCINIClass::InitFromINIEVA()
   int v14; // [esp+18h] [ebp-CCh]
   char Destination[200]; // [esp+1Ch] [ebp-C8h] BYREF
 
-  v1 = this; /*0x75300a*/
+  v1 = (gamemd::ObjectClass *)(this); /*0x75300a*/
   v13 = (int)this; /*0x753011*/
   (*((unsigned char *)&(KeyCount))) = INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/

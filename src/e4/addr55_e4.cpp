@@ -118,7 +118,7 @@ void ObjectClass::sub_550080(ObjectClass ** Block)
     (Block->u8_52) = (Block->u8_52) == 0; /*0x5500df*/
   if ( (int)Block->vfptr >= Block->ambientSoundController[4] && Block ) /*0x5500ed*/
   {
-    v8[0] = Block; /*0x5500fe*/
+    v8[0] = (unsigned int)(Block); /*0x5500fe*/
     v7 = g_MissionQueueFrame.vt_slot_16(/*0x550102*/
            &g_MissionQueueFrame.random[27], v8);
     if ( v7 != -1 && v7 < g_MissionQueueFrame.random[31] ) /*0x550112*/
@@ -187,7 +187,7 @@ void sub_550150()
         *((unsigned char *)v3 + 81) = *((unsigned char *)v3 + 81) == 0; /*0x5501c7*/
       if ( *v3 >= v3[19] && v3 ) /*0x5501d5*/
       {
-        v9[0] = v3; /*0x5501e6*/
+        v9[0] = (unsigned int)(v3); /*0x5501e6*/
         v8 = g_MissionQueueFrame.vt_slot_16(/*0x5501ea*/
                &g_MissionQueueFrame.random[27], v9);
         if ( v8 != -1 && v8 < g_MissionQueueFrame.random[31] ) /*0x5501fa*/
@@ -291,8 +291,8 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   unsigned int v77[24]; // [esp+D0h] [ebp-C0h] BYREF
   unsigned int v78[24]; // [esp+130h] [ebp-60h] BYREF
 
-  v1 = a1; /*0x5509fd*/
-  (*((unsigned int *)&(v72))) = a1; /*0x550a03*/
+  v1 = (int *)(a1); /*0x5509fd*/
+  (*((unsigned int *)&(v72))) = (unsigned int)(a1); /*0x550a03*/
   if ( (byte_ABC7C8 & 1) == 0 ) /*0x550a07*/
   {
     dword_ABC7F8[0] = -1; /*0x550a15*/

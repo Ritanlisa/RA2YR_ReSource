@@ -16,7 +16,7 @@ struct FilePipe_30 {
     void ddtor(void *a1 = 0);  // 0x4778A0
     TypeList_flat *  QueryInterface(char a2);  // 0x477A70
     char  Release(int a2, unsigned int * a3);  // 0x478140
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x4781F0
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x4781F0
     int Clear(void *a1_1);  // 0x4B9BE0
     void Clear_0();  // 0x4B9C40
     char  SetCapacity(int a2, unsigned int * a3);  // 0x4B9E20

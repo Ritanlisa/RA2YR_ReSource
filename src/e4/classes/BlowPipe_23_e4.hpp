@@ -21,7 +21,7 @@ struct BlowPipe_23 {
     char  AddRef(int a2);  // 0x63E650
     char  Release(int a2, unsigned int * a3);  // 0x63E690
     void ddtor(void *a1 = 0);  // 0x63E740
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x63E770
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x63E770
     char  SetCapacity_0(int a2, unsigned int * a3);  // 0x63E7D0
     int  FindItemIndex_0(unsigned int * a2);  // 0x63E8D0
     char  SetCapacity_1(int a2, unsigned int * a3);  // 0x63EAD0

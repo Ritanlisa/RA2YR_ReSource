@@ -128,7 +128,7 @@ int sub_5E95E0()
   uint8_t v5; // [esp+0h] [ebp-Ch]
   int v6; // [esp+4h] [ebp-8h]
 
-  v6 = (LPARAM *)(dword_A8B548);
+  v6 = (int)((LPARAM *)(dword_A8B548));
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v6 = dword_A8BB0C; /*0x5e95f6*/
   v1 = 0; /*0x5e9618*/
@@ -231,7 +231,7 @@ int sub_796960()
           if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x796ac3*/
             break; /*0x796ac3*/
           ++v5; /*0x796ac5*/
-          nextObject = &nextObject->health; /*0x796ac6*/
+          nextObject = (gamemd::ObjectClass *)(&nextObject->health); /*0x796ac6*/
           if ( v5 >= g_WOL_UserList.owningHouseIndex ) /*0x796acb*/
             goto LABEL_24; /*0x796acb*/
         }
@@ -368,8 +368,8 @@ int sub_7C5F3D()
       _EAX = (unsigned int)(0);
       __asm { cpuid } /*0x7c5f81*/
       *(unsigned int *)Source = (unsigned int)(_EBX); /*0x7c5f83*/
-      *(unsigned int *)&((unsigned int *)(Source))[4] = _EDX; /*0x7c5f89*/
-      *(unsigned int *)&((unsigned int *)(Source))[8] = _ECX; /*0x7c5f8f*/
+      *(unsigned int *)&((unsigned int *)(Source))[4] = (unsigned int)(_EDX); /*0x7c5f89*/
+      *(unsigned int *)&((unsigned int *)(Source))[8] = (unsigned int)(_ECX); /*0x7c5f8f*/
       *(unsigned int *)&((unsigned int *)(Source))[12] = 32; /*0x7c5f95*/
       if ( _EAX >= 1 ) /*0x7c5fa2*/
       {

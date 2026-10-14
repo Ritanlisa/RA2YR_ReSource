@@ -65,7 +65,7 @@ int GadgetGrid::InsertItem(int a2)
 } // namespace gamemd
 // 0x4135D0
 namespace gamemd {
-int GadgetGrid::RemoveItem(int a2)
+int GadgetGrid::RemoveItem(int a2, void *a2_1)
 {
 
   int v3; // esi

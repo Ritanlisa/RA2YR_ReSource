@@ -14,7 +14,7 @@ struct VectorClass_ptr_FactoryClass {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
 // --- flat members (END) ---
-    int  Get(int a2, void *a1 = 0);  // 0x4E8A10
+    int Get(int a2, void *a2_2);  // 0x4E8A10
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x4EC0A0
     char  Release(int a2, unsigned int * a3);  // 0x4EC0E0
     void Remove(void *a1_1, void *a1 = 0);  // 0x4EC190

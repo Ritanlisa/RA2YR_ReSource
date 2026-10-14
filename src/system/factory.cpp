@@ -40,7 +40,7 @@ bool * FactoryClass::AbandonProduction()
   int v9; // ecx
   int v11; // [esp+Ch] [ebp-8h]
 
-  v2 = (gamemd::TechnoTypeClass **)(this->q058);
+  v2 = (int)((gamemd::TechnoTypeClass **)(this->q058));
   if ( !v2 ) /*0x4c9ffe*/
     return 0; /*0x4ca116*/
   v3 = (*(int (__thiscall **)(int))(*(unsigned int *)v2 + 136))(v2); /*0x4ca007*/
@@ -73,7 +73,7 @@ bool * FactoryClass::AbandonProduction()
       this->owner->ratioTeamInfantry = -1; /*0x4ca0dd*/
   }
   ++dword_A8E7AC; /*0x4ca0eb*/
-  v9 = this->q058; /*0x4ca0f1*/
+  v9 = (int)(this->q058); /*0x4ca0f1*/
   if ( v9 ) /*0x4ca0f6*/
     (*(void (__thiscall **)(int, int))(*(unsigned int *)v9 + 32))(v9, 1); /*0x4ca0fc*/
   this->q058 = 0; /*0x4ca0ff*/

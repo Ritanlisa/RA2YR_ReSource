@@ -205,7 +205,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
 
-  v19 = (gamemd::AbstractClass **)((*(((unsigned char *)&(a1)) + (sizeof(a1) - 1))));
+  v19 = (char)((gamemd::AbstractClass **)((*(((unsigned char *)&(a1)) + (sizeof(a1) - 1)))));
   v3 = 3; /*0x5f2cfb*/
   if ( a3 == (void *)(1) ) /*0x5f2d00*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0,(const char *)(g_Str_File_NullMgr_CPP), 1580); /*0x5f2d13*/
@@ -217,7 +217,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   g_NetworkTestFlag = 0; /*0x5f2d52*/
   v7 = GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
   MessageBox = (HWND)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag)); /*0x5f2d62*/
-  v21 = MessageBox; /*0x5f2d69*/
+  v21 = (HWND)(MessageBox); /*0x5f2d69*/
   if ( !MessageBox ) /*0x5f2d6d*/
     return (gamemd::AbstractClass **)(3); /*0x5f3155*/
   ((Dialog *)(MessageBox))->Show(); /*0x5f2d76*/
@@ -231,7 +231,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   {
     if ( (uint8_t)Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2dab*/
     {
-      v3 = (HWND)(6);
+      v3 = (int)((HWND)(6));
       Debug::Log(); /*0x5f30fa*/
       v14 = (HWND)(g_ClipboardBuffer); /*0x5f30ff*/
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
@@ -250,7 +250,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     Debug::Log(); /*0x5f2ded*/
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
-      v3 = (HWND)(6);
+      v3 = (int)((HWND)(6));
       Debug::Log(); /*0x5f30c5*/
       v14 = (HWND)(g_ClipboardBuffer); /*0x5f30ca*/
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
@@ -357,7 +357,7 @@ void* sub_5F33B0()
   Timer::PumpMessages((HWND *)dword_87F770); /*0x5f33d7*/
   if ( v1 != 27 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
-  g_NetworkTestFlag = (void *)(1);
+  g_NetworkTestFlag = (int)((void *)(1));
   return (void *)(-1000); /*0x5f33ed*/
 }
 }
@@ -611,8 +611,8 @@ int BuildingTypeClass_LoadSHPs(int a1)
       if ( !v5 ) /*0x5fe65b*/
         break; /*0x5fe65b*/
       _makepath(Buffer, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * a1); /*0x5fe67e*/
-      v6 = (int)(SearchMIXFile(Buffer, 1)); /*0x5fe68c*/
-      *(unsigned int *)(v4 + 164) = v6; /*0x5fe693*/
+      v6 = (gamemd::AbstractClass **)((int)(SearchMIXFile(Buffer, 1))); /*0x5fe68c*/
+      *(unsigned int *)(v4 + 164) = (unsigned int)(v6); /*0x5fe693*/
       if ( !v6 ) /*0x5fe699*/
         goto LABEL_5; /*0x5fe699*/
   LABEL_14:
@@ -624,8 +624,8 @@ int BuildingTypeClass_LoadSHPs(int a1)
       goto LABEL_14; /*0x5fe6be*/
     _makepath(Buffer, 0, 0, (const char *)(v4 + 504),(const char *)(Ext)); /*0x5fe6dd*/
     TheaterObjectTypeClassSpecificID(Buffer, a1); /*0x5fe6eb*/
-    v7 = (int)(SearchMIXFile(Buffer, 1)); /*0x5fe6f6*/
-    *(unsigned int *)(v4 + 164) = v7; /*0x5fe6fd*/
+    v7 = (gamemd::AbstractClass **)((int)(SearchMIXFile(Buffer, 1))); /*0x5fe6f6*/
+    *(unsigned int *)(v4 + 164) = (unsigned int)(v7); /*0x5fe6fd*/
     if ( v7 ) /*0x5fe703*/
       goto LABEL_14; /*0x5fe703*/
   LABEL_5:
@@ -847,7 +847,7 @@ AbstractClass * * GenerateRangeRingTextures()
   result = GetVersionString(&v22, (unsigned char *)&v19 + 3, 0, 0); /*0x5ff74e*/
   if ( (*(((unsigned char *)&(v19)) + (sizeof(v19) - 1))) && !dword_AC1838 ) /*0x5ff763*/
   {
-    dword_AC1838 = (void *)operator new(0x40000u); /*0x5ff776*/
+    dword_AC1838 = (unsigned int)((void *)operator new(0x40000u)); /*0x5ff776*/
     do /*0x5ff7ed*/
     {
       (((unsigned char *)&(v21))[1]) = (uint8_t)((uint16_t)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
@@ -859,7 +859,7 @@ AbstractClass * * GenerateRangeRingTextures()
     }
     while ( v1 < 0x10000 ); /*0x5ff7ed*/
   }
-  return result; /*0x5ff7ef*/
+  return (gamemd::AbstractClass **)(result); /*0x5ff7ef*/
 }
 }
 // 0x5F1350

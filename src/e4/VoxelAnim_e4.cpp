@@ -109,7 +109,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 } // namespace gamemd
 // 0x75AEC0
 namespace gamemd {
-int VoxelAnim::Draw(unsigned int * a2)
+int VoxelAnim::Draw(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
   unsigned int *v3; // ebx

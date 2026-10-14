@@ -199,7 +199,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
 } // namespace gamemd
 // 0x55F6C0
 namespace gamemd {
-bool SyncDelay::Check(unsigned int * a2)
+bool SyncDelay::Check(unsigned int * a2, void *a2_1, void *a3)
 {
   unsigned int *v2; // eax
 

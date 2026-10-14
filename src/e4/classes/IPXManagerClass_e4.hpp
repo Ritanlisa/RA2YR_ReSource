@@ -16,7 +16,7 @@ struct IPXManagerClass {
     static unsigned int processPacket(char *p_this);  // x4:ida@0x5409f0
     unsigned int u32_54;  // G42.40f supply (truth 0x5415F0: *((unsigned int*)this+21), cursor index)
     IPXManagerClass * QueryInterface(char * Block, char a2);
-    int ddtor(int a2, int a3, unsigned int * a4);
+    int ddtor(int a2, int a3, unsigned int * v10);
     int receivePacket(int a2);
     int send(int a2);
     int sendPacket(int a2, int a3, int a4);

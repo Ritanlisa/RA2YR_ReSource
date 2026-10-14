@@ -24,7 +24,7 @@ struct VectorClass_ptr_ConvertClass {
     int MarkDirty();  // 0x4E1960
     int Destroy(void *a1_1);  // 0x491390
     unsigned int  GetItemIndex(int a2);  // 0x4913C0
-    int  Get(int a2, void *a1 = 0);  // 0x4913E0
+    int Get(int a2, void *a2_2);  // 0x4913E0
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x49AE80
     char  Release(int a2, unsigned int * a3);  // 0x49AEC0
     void Remove(void *a1_1, void *a1 = 0);  // 0x49AF70

@@ -9,6 +9,6 @@ struct E4Recv_69E9F0 {
     unsigned int vfptr;  // 0x0
     unsigned int M12;  // 0xC
 // --- flat members (END) ---
-    int  sub_69E9F0(int a2, int a3);  // 0x69E9F0
+    int sub_69E9F0(int a1, Straw * aP2);  // 0x69E9F0
 };
 } // namespace gamemd

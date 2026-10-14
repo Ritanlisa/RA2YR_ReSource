@@ -13,29 +13,28 @@ struct BinkMovie {
     void* currentFrame;  // 0x0 (no offset truth)
     void* height;  // 0x0 (no offset truth)
     void* width;  // 0x0 (no offset truth)
-    unsigned int *  Close(char * FullPath, void *a1 = 0);  // 0x432690
-    wchar_t *  Open(char * FullPath, int a3, void *a1 = 0);  // 0x4326C0
+    unsigned int * Close(char *FullPath, void *a2 = 0);  // 0x432690
+    unsigned int * Open(char *FullPath, int a3, void *a3_1 = 0);  // 0x4326C0
     int Stop(void *a1 = 0, void *a2 = 0);  // 0x432700
     AbstractClass * *  InitFromFile(void * FullPath);  // 0x432750
-    int  Pause(uint8_t a2);  // 0x432C30
+    int Pause(unsigned char a2);  // 0x432C30
 int Play(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0); // 0x432C70
     int RenderLoop(int aP1, int a3, int a4);  // 0x432E40
     int RenderFrameToSurface();  // 0x433040
-    unsigned int *  RenderSingleFrame(int a2, int a3, int a4, char a5);  // 0x4331F0
-    unsigned int *  BlitToTarget(int a2);  // 0x433270
-    int  AdjustSurfaceFormat(int a2);  // 0x433330
-    int Cleanup(void *a1_1, void *a1 = 0);  // 0x5C01F0
+    unsigned int * RenderSingleFrame(int aP1, int a3, int a4, char a5);  // 0x4331F0
+    unsigned int * BlitToTarget(int aP1);  // 0x433270
+    int AdjustSurfaceFormat(int aP1);  // 0x433330
+    int Cleanup(void *a1_1, void *a2 = 0);  // 0x5C01F0
     int  HandleKeyboard(int a1, HWND a2);  // 0x6033F0
-    AbstractClass * *  WndProc(HWND hWnd, UINT Msg, int wParam, int lParam);  // 0x6153E0
+    AbstractClass * * WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam);  // 0x6153E0
     int Destroy(void *a1_1);  // 0x6C9930
     int FreeSurfaceTracker(void *a1_1);  // 0x6C9AE0
     int  InitKeyframeTracking(char * Source);  // 0x6C9B40
-    int  CheckKeyframeTransition(unsigned int a2);  // 0x6C9C60
+    int CheckKeyframeTransition(unsigned int aP1);  // 0x6C9C60
     AbstractClass * * ProcessKeyframe(unsigned int *aP1);  // 0x6C9D40
     unsigned int *  VtableDispatch(int a2);  // 0x6C9EC0
     static int *  CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
 int IsAtEnd(void *a1_1); // def-aligned
-    int IsAtEnd(void *a1_1);
     int Play(void *a1_1);
     int RenderFrameToSurface(void *a1_1);
     int InitKeyframeTracking(char * Source, void * aSubtitlemdTxt);

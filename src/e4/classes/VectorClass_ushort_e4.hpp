@@ -25,7 +25,7 @@ struct VectorClass_ushort {
     unsigned int  Get(int a2, void *a1 = 0);  // 0x42DA10
     char  SetCapacity(int a2, unsigned short * a3);  // 0x42DA30
     int  FindItemIndex(unsigned short * a2);  // 0x42DAE0
-    VectorClass_ushort *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x42DBB0
-    DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x42DC00
+    VectorClass_ushort * Add(unsigned int * Block, char a2, void *a3_1);  // 0x42DBB0
+    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x42DC00
 };
 } // namespace gamemd

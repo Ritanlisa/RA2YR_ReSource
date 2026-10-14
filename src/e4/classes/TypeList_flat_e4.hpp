@@ -34,7 +34,7 @@ int * CopyAircraft(VectorClass_flat * aP1);
 int * CopyInfantry(CCINIClass * aP1);
 int Clear(int a2);
 int GetSize(unsigned int * a2);
-unsigned int * AnimTypeCopy(VectorClass_flat * aP1, void *a1 = 0);
+unsigned int * AnimTypeCopy(VectorClass_flat * aP1, void *a2 = 0);
 unsigned int * BuildingTypeCopy(VectorClass_flat * aP1);
 unsigned int * Copy(unsigned int * a2, void *a2_2);
 unsigned int * CopyConstructor(VectorClass_flat * aP1);

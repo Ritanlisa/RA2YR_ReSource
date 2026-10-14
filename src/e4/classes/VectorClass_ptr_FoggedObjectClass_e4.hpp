@@ -19,7 +19,7 @@ struct VectorClass_ptr_FoggedObjectClass {
     DynamicVector *  Constructor_VectorClass_FoggedObjectClass___(char a2);  // 0x45AB00
     int Destroy(void *a1_1);  // 0x45A070
     unsigned int  GetItemIndex(int a2);  // 0x45A0A0
-    int  Get(int a2, void *a1 = 0);  // 0x45A0C0
+    int Get(int a2, void *a2_2);  // 0x45A0C0
     char  Add(int a2, void *a1 = 0, void *a3 = 0);  // 0x45A640
     char  SetCapacity(int a2, unsigned int * a3);  // 0x45A680
     int  FindItemIndex(unsigned int * a2);  // 0x45A730

@@ -10,15 +10,15 @@ struct Coord {
     Coord * ptr_40;  // 0x40
     Coord * ptr_44;  // 0x44
 // --- flat members (END) ---
-    int  ToGridIndex(int a2, int a3, int a4);  // 0x4138C0
-    unsigned int * ToCell(unsigned int *a2);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
-    void * Subtract(int aP1, int aP2, int aP3, void *a1 = 0);  // 0x41C230
+    int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
+    unsigned int * ToCell(unsigned int *aP1);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
+    void * Subtract(int aP1, int aP2, int aP3, void *a4 = 0);  // 0x41C230
     int Length(void *a1 = 0);  // 0x41C380
     static unsigned int *  GetCoords(unsigned int * a2);  // 0x4399A0
-    void *  Scale(float a2, void *a1 = 0);  // 0x43A0D0
-    void *  To_Cell(unsigned int * a2);  // 0x565730
-    int  Compare2D(unsigned short * a2, void *a1 = 0);  // 0x5AC370
-    void *  WorldToScreen(int * a2, int * a3, char a4);  // 0x6557F0
+    void * Scale(float aP1, void *a2 = 0);  // 0x43A0D0
+    void * To_Cell(unsigned int *aP1);  // 0x565730
+    int Compare2D(unsigned short * a2, void *a2_2);  // 0x5AC370
+    void * WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4);  // 0x6557F0
     AbstractClass * * To_Screen(unsigned int *a2, int *a3);  // 0x6D2140
     void *  Divide(int * a2, int a3);  // 0x710700
     static int * To_ScreenRaw(int *aP0, unsigned int *aP1);
@@ -49,7 +49,7 @@ struct Coord {
     int CreateAIPlayer();
     int CreateAIPlayer_Potato();
     Coord * * sub_7A2830();
-    static unsigned int * To_Cell(void * aP1, void * aP2);  // G42.39a static-call supply
+    void * To_Cell(unsigned int *aP1, void *a2 = 0);  // G42.39a static-call supply
     unsigned int q_2C0;  // +0x2C0 flat supply (CSP-fed)
     unsigned int u32_1488;  // 0x1488 (offset-truth)
     unsigned int u32_1490;  // 0x1490 (offset-truth)

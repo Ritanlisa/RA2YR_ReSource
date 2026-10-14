@@ -87,7 +87,7 @@ AircraftTypeClass * AircraftClass::Update(void * a1, void * a2, void *a3, void *
 LABEL_9:
     BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 226), v3->Type->ROT); /*0x413fd2*/
     BuildingTypeClass::GetPowerOutput((BuildingTypeClass *)(v3 + 232), v3->Type->ROT); /*0x414001*/
-    Value = ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18); /*0x41400d*/
+    Value = (unsigned int *)(ProgressTimer::GetValue((ProgressTimer *)(v3 + 226), &v18)); /*0x41400d*/
     FacingClass::Set_SyncLog(&v3->secondaryFacing, Value); /*0x414015*/
     v12 = *v3; /*0x414020*/
     v13 = (*(int (**)(int))(*v3->Type + 188))(v3[433]); /*0x414024*/
@@ -103,8 +103,8 @@ LABEL_9:
   }
   v16 = v3->focus; /*0x41405d*/
   if ( v16 ) /*0x414065*/
-    return (unsigned int *)BuildingClass::PowerUpdate(v16, v3); /*0x414068*/
-  return result; /*0x41406d*/
+    return (gamemd::AircraftTypeClass *)((unsigned int *)BuildingClass::PowerUpdate(v16, v3)); /*0x414068*/
+  return (gamemd::AircraftTypeClass *)(result); /*0x41406d*/
 
 }
 }  // G42.18 ns repair
@@ -133,7 +133,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
 
   v18 = 0; /*0x415b1f*/
   v19 = 0; /*0x415b29*/
-  v5 = dword_817A58; /*0x415b2d*/
+  v5 = (int *)(dword_817A58); /*0x415b2d*/
   do /*0x415bab*/
   {
     v6 = *v5; /*0x415b34*/
@@ -153,9 +153,9 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   }
   while ( (int)v5 < (int)dword_817A78 ); /*0x415bab*/
   LOWORD(v22) = (unsigned __int16)dword_817A58[v19] << 13; /*0x415bc3*/
-  v13 = this->vtable2; /*0x415bc8*/
-  v21[0] = this->focus; /*0x415bcb*/
-  v14 = this->vtable3; /*0x415bd3*/
+  v13 = (int)(this->vtable2); /*0x415bc8*/
+  v21[0] = (unsigned int)(this->focus); /*0x415bcb*/
+  v14 = (int)(this->vtable3); /*0x415bd3*/
   v21[1] = v13; /*0x415bd6*/
   v21[2] = v14; /*0x415bda*/
   if ( !(*(unsigned __int8 (**)(int *, unsigned int *, unsigned int))(*a2 + 216))( /*0x415bf3*/
@@ -302,10 +302,10 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
       if ( *(unsigned char *)(v11 + 5801) ) /*0x417e1c*/
       {
         v12 = 0; /*0x417e2c*/
-        v13 = *&aP1->Type[1016]; /*0x417e33*/
+        v13 = (int)(*&aP1->Type[1016]); /*0x417e33*/
         if ( v13 <= 0 ) /*0x417e38*/
           goto LABEL_36; /*0x417e38*/
-        v14 = *&aP1->Type[1004]; /*0x417e3a*/
+        v14 = (unsigned int *)(*&aP1->Type[1004]); /*0x417e3a*/
         while ( *v14 != v11 ) /*0x417e3f*/
         {
           ++v12; /*0x417e41*/
@@ -366,7 +366,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   unsigned int *v10; // eax
   unsigned char v11[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  team = this->team; /*0x4196bc*/
+  team = (gamemd::TeamClass *)(this->team); /*0x4196bc*/
   if ( team /*0x4196d7*/
     && (unsigned __int8)TechnoClass::IsWaypointHidden((TechnoClass *)team)
     && !(unsigned __int8)Type::CheckAmbiguity((Type *)&DataGlobal_87F7E8, (int)a2, 1) )

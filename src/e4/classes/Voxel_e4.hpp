@@ -20,17 +20,17 @@ struct Voxel {
     AbstractClass * RenderFrame(void *a1 = 0);  // 0x754510
     static int Projection_Setup();  // 0x754CB0
     AbstractClass * *  SortDepth(int a2, int a3);  // 0x755DB0
-    int  ProcessColor(unsigned int * a2, float * a3);  // 0x756590
-    char DrawHelper(unsigned int *a2);  // G57w10-S raw 0x0075C240 IUnknown 占位清除
-    int  BlendShadowColor(int a2, int a3, int a4, unsigned short * a5);  // 0x75EDF0
+    int ProcessColor(unsigned int *a2, float *a3);  // 0x756590
+    void* DrawHelper(IUnknown * aP1);  // G57w10-S raw 0x0075C240 IUnknown 占位清除
+    int BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4);  // 0x75EDF0
     int loadSectionData();  // 0x75F140
-    CellStruct * *  renderSection(int16_t * a2);  // 0x75F4C0
-    void  ShadowCalc(unsigned int * a2, int * a3);  // 0x75FA90
+    CellStruct * * renderSection(ObjectClass * aP1);  // 0x75F4C0
+    void ShadowCalc(WaveClass * aP1, int * a2);  // 0x75FA90
     int BlendColor(int a2, int aP2, int arg8, unsigned short *a4);  // 0x760190
-    AbstractClass * *  FaceDraw(unsigned int * a2, int * a3);  // 0x7609E0
+    AbstractClass * * FaceDraw(unsigned int * a1, WaveClass * aP2);  // 0x7609E0
     void* FaceBlit();  // 0x7610F0
     int  SectionProject(int * a2, int a3);  // 0x761640
-    AbstractClass * *  LightRender(int * a2, int a3);  // 0x762070
+    AbstractClass * * LightRender(AbstractClass ** a2, int a3);  // 0x762070
     DynamicVectorClass_flat * * TransformMatrix();  // 0x762AF0
     int  freeSectionMemory(unsigned int * a2);  // 0x763330
     int  FacePixelBuffer(int * a1);  // 0x7DF9C0

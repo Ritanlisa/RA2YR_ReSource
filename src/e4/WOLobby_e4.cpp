@@ -50,7 +50,7 @@ int INIClass::WOLobby_Play(const char *a1, const char *a2, int a3)
   __int16 v9; // [esp+244h] [ebp-4h]
   char v10; // [esp+246h] [ebp-2h]
 
-  v2 = ppv; /*0x5e3857*/
+  v2 = (LPVOID)(ppv); /*0x5e3857*/
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/

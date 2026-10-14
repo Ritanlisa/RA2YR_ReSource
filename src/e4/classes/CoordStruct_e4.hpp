@@ -12,7 +12,7 @@ struct CoordStruct {
     int Z;  // 0x8
 // --- flat members (END) ---
     void* vfptr;  // 0x0 (no offset truth)
-    unsigned int *  Set2(int16_t * a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0);  // 0x642740
+    unsigned int * Set2(void* aP1, AbstractClass * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x642740
 };
 #endif  // GAMEMD_E4_MATH_ALIASES (CoordStruct)
 } // namespace gamemd

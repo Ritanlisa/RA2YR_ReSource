@@ -148,11 +148,10 @@ struct BulletTypeClass {
     int GetTypeIdentifier();
     int GetWarhead(int a2, int a3);
     int ProcessImpact(int a1);
-    int ProcessPower(int *aP1, void *a1 = 0);
-    int SaveLoad_Prefix(gamemd::ObjectTypeClass * aP0, int aP1);
+    int SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, gamemd::ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
-    unsigned char * Construct(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    unsigned char * Construct(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int * GetROF(unsigned int * a1, int * a2);
     int ProcessPower(int * a2, void *a2_2);
 

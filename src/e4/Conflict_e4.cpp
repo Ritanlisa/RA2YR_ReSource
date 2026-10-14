@@ -97,7 +97,7 @@ LABEL_14:
     }
     m_8 = a2; /*0x766cf7*/
   }
-  *&this->u32_4 = v8; /*0x766d06*/
+  *&this->u32_4 = (unsigned int)(v8); /*0x766d06*/
   this->m_8 = m_8; /*0x766d09*/
   BYTE1(this->m_C) = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
@@ -186,7 +186,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
       }
       m_8 = a2; /*0x766e9b*/
     }
-    *&this->u32_4 = v6; /*0x766eaa*/
+    *&this->u32_4 = (unsigned int)(v6); /*0x766eaa*/
     this->m_8 = m_8; /*0x766ead*/
     BYTE1(this->m_C) = a3 == 0; /*0x766eb0*/
   }
@@ -198,7 +198,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
   v12 = this->m_8; /*0x766ebc*/
   if ( v12 < this->m_10 ) /*0x766ec4*/
     this->m_10 = v12; /*0x766ec6*/
-  return 1; /*0x766ec9*/
+  return (gamemd::AbstractClass **)(1); /*0x766ec9*/
 
 }
 }
@@ -267,7 +267,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
   v3 = *&a3_2->u32_4 + 8 * a3_2; /*0x76685d*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x766862*/
-  *(unsigned int *)(a3_2) = &vt_rc_ptr; /*0x766867*/
+  *(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x766867*/
   ComPtr::Set((ComPtr *)a3_2, v3->u32_4); /*0x766873*/
   return a3_2; /*0x76687a*/
 }
@@ -275,14 +275,14 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, 
 
 // 0x766960
 namespace gamemd {
-unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2)
+unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2, void *a2_1, void *a3, void *a4)
 {
 
   *this = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
   ComPtr::Release((ComPtr *)this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/
-  return this; /*0x766980*/
+  return (unsigned int *)(this); /*0x766980*/
 
 }
 } // namespace gamemd
@@ -296,7 +296,7 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
   ComPtr::Release((ComPtr *)this); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(this); /*0x7669a6*/
-  return this; /*0x7669b0*/
+  return (unsigned int *)(this); /*0x7669b0*/
 
 }
 } // namespace gamemd
@@ -350,7 +350,7 @@ int Conflict_WorldDominationTour_12::ddtor()
 
 // 0x766D60
 namespace gamemd {
-int Conflict_WorldDominationTour_12::Read(int a2, void *a2_2)
+int Conflict_WorldDominationTour_12::Read(int a2, void *a2_2, void *a3)
 {
   int result; // eax
   int m_8; // edx

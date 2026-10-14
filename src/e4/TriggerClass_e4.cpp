@@ -135,7 +135,7 @@ int TriggerClass::RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP
     if ( (*(unsigned int *)(aP1 + 64) & (1 << v7)) != 0 /*0x726540*/
       || (v11 = aP1,
           Owner = HouseClass::FindOwner(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(aP1 + 36) + 164) + 180)),
-          TEventClass::Execute((TEventClass *)v8, aP1, Owner, aP1, (int *)(aP1 + 52), (int)&aP1, v11)) )
+          TEventClass::Execute((TEventClass *)v8, aP1, Owner, aP1_2, (int *)(aP1 + 52), (int)&aP1_3, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
         *(unsigned int *)(aP1 + 44) = TriggerClass::GetValue(v8); /*0x726561*/

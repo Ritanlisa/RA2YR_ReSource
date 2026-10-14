@@ -46,7 +46,7 @@ void LoadingScreen::DestroyFileTrees()
 
   if ( byte_B0FC95 ) /*0x72ef6b*/
   {
-    v0 = dword_B0FAC4; /*0x72ef6d*/
+    v0 = (void *)(dword_B0FAC4); /*0x72ef6d*/
     if ( dword_B0FAC4 ) /*0x72ef75*/
     {
       FileTreeNode::Destroy(dword_B0FAC4); /*0x72ef79*/
@@ -57,7 +57,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAC4 = 0; /*0x72ef92*/
   if ( byte_B0FC96 ) /*0x72ef9a*/
   {
-    v1 = dword_B0F9DC; /*0x72ef9c*/
+    v1 = (void *)(dword_B0F9DC); /*0x72ef9c*/
     if ( dword_B0F9DC ) /*0x72efa4*/
     {
       FileTreeNode::Destroy(dword_B0F9DC); /*0x72efa8*/
@@ -68,7 +68,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0F9DC = 0; /*0x72efc1*/
   if ( byte_B0FC97 ) /*0x72efc9*/
   {
-    v2 = dword_B0FAC0; /*0x72efcb*/
+    v2 = (void *)(dword_B0FAC0); /*0x72efcb*/
     if ( dword_B0FAC0 ) /*0x72efd3*/
     {
       FileTreeNode::Destroy(dword_B0FAC0); /*0x72efd7*/
@@ -79,7 +79,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAC0 = 0; /*0x72eff0*/
   if ( byte_B0FC98 ) /*0x72eff8*/
   {
-    v3 = dword_B0FB50; /*0x72effa*/
+    v3 = (void *)(dword_B0FB50); /*0x72effa*/
     if ( dword_B0FB50 ) /*0x72f002*/
     {
       FileTreeNode::Destroy(dword_B0FB50); /*0x72f006*/
@@ -90,7 +90,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FB50 = 0; /*0x72f01f*/
   if ( byte_B0FC99 ) /*0x72f027*/
   {
-    v4 = dword_B0FA04; /*0x72f029*/
+    v4 = (void *)(dword_B0FA04); /*0x72f029*/
     if ( dword_B0FA04 ) /*0x72f031*/
     {
       FileTreeNode::Destroy(dword_B0FA04); /*0x72f035*/
@@ -101,7 +101,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FA04 = 0; /*0x72f04e*/
   if ( byte_B0FC9A ) /*0x72f056*/
   {
-    v5 = dword_B0FAF8; /*0x72f058*/
+    v5 = (void *)(dword_B0FAF8); /*0x72f058*/
     if ( dword_B0FAF8 ) /*0x72f060*/
     {
       FileTreeNode::Destroy(dword_B0FAF8); /*0x72f064*/
@@ -112,7 +112,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAF8 = 0; /*0x72f07d*/
   if ( byte_B0FC9B ) /*0x72f085*/
   {
-    v6 = dword_B0FA74; /*0x72f087*/
+    v6 = (void *)(dword_B0FA74); /*0x72f087*/
     if ( dword_B0FA74 ) /*0x72f08f*/
     {
       FileTreeNode::Destroy(dword_B0FA74); /*0x72f093*/
@@ -123,7 +123,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FA74 = 0; /*0x72f0ac*/
   if ( byte_B0FC9C ) /*0x72f0b4*/
   {
-    v7 = dword_B0FA38; /*0x72f0b6*/
+    v7 = (void *)(dword_B0FA38); /*0x72f0b6*/
     if ( dword_B0FA38 ) /*0x72f0be*/
     {
       FileTreeNode::Destroy(dword_B0FA38); /*0x72f0c2*/
@@ -134,7 +134,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FA38 = 0; /*0x72f0db*/
   if ( byte_B0FC9D ) /*0x72f0e3*/
   {
-    v8 = dword_B0FAE8; /*0x72f0e5*/
+    v8 = (void *)(dword_B0FAE8); /*0x72f0e5*/
     if ( dword_B0FAE8 ) /*0x72f0ed*/
     {
       FileTreeNode::Destroy(dword_B0FAE8); /*0x72f0f1*/
@@ -145,7 +145,7 @@ void LoadingScreen::DestroyFileTrees()
   dword_B0FAE8 = 0; /*0x72f10a*/
   if ( byte_B0FC9E ) /*0x72f112*/
   {
-    v9 = dword_B0FA54; /*0x72f114*/
+    v9 = (void *)(dword_B0FA54); /*0x72f114*/
     if ( dword_B0FA54 ) /*0x72f11c*/
     {
       FileTreeNode::Destroy(dword_B0FA54); /*0x72f120*/
@@ -167,34 +167,34 @@ void * * LoadingScreen::LoadSHPs()
 
   if ( dword_A8B230->playerSideIndex == 2 ) /*0x72fa21*/
   {
-    dword_B0FA68 = LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5); /*0x72fa39*/
-    dword_B0FAC8 = LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1); /*0x72fa4e*/
+    dword_B0FA68 = (unsigned int)(LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5)); /*0x72fa39*/
+    dword_B0FAC8 = (unsigned int)(LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1)); /*0x72fa4e*/
     SHP = LoadFileSHP(off_844D40, (bool *)&byte_B0FCA0); /*0x72fa53*/
     v1 = off_844D44[0]; /*0x72fa58*/
   }
   else
   {
-    dword_B0FA68 = LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5); /*0x72fa80*/
-    dword_B0FAC8 = LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1); /*0x72fa95*/
+    dword_B0FA68 = (unsigned int)(LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5)); /*0x72fa80*/
+    dword_B0FAC8 = (unsigned int)(LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1)); /*0x72fa95*/
     SHP = LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0); /*0x72fa9a*/
-    v1 = off_844D08; /*0x72fa9f*/
+    v1 = (char *)(off_844D08); /*0x72fa9f*/
   }
-  dword_B0FAD4 = SHP; /*0x72fa5e*/
-  dword_B0FA50 = LoadFileSHP(v1, (bool *)&byte_B0FCA2); /*0x72fabf*/
-  dword_B0F9EC = LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F); /*0x72fad4*/
-  dword_B0FB08 = LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3); /*0x72fae9*/
-  dword_B0F9E0 = LoadFileSHP(off_844D10, (bool *)&byte_B0FCA4); /*0x72fafe*/
-  dword_B0FA70 = LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6); /*0x72fb13*/
-  dword_B0FAFC = LoadFileSHP(off_844D1C, (bool *)&byte_B0FCA7); /*0x72fb28*/
-  dword_B0FA00 = LoadFileSHP(off_844D20, (bool *)&byte_B0FCA8); /*0x72fb3d*/
-  dword_B0FA8C = LoadFileSHP(off_844D24, (bool *)&byte_B0FCA9); /*0x72fb52*/
-  dword_B0FA48 = LoadFileSHP(off_844D28, (bool *)&byte_B0FCAA); /*0x72fb67*/
-  dword_B0FA3C = LoadFileSHP(off_844D2C, (bool *)&byte_B0FCAB); /*0x72fb7c*/
-  dword_B0FA90 = LoadFileSHP(off_844D30, (bool *)&byte_B0FCAC); /*0x72fb91*/
-  dword_B0FAA8 = LoadFileSHP(off_844D34, (bool *)&byte_B0FCAD); /*0x72fba6*/
+  dword_B0FAD4 = (unsigned int)(SHP); /*0x72fa5e*/
+  dword_B0FA50 = (unsigned int)(LoadFileSHP(v1, (bool *)&byte_B0FCA2)); /*0x72fabf*/
+  dword_B0F9EC = (unsigned int)(LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F)); /*0x72fad4*/
+  dword_B0FB08 = (unsigned int)(LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3)); /*0x72fae9*/
+  dword_B0F9E0 = (unsigned int)(LoadFileSHP(off_844D10, (bool *)&byte_B0FCA4)); /*0x72fafe*/
+  dword_B0FA70 = (unsigned int)(LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6)); /*0x72fb13*/
+  dword_B0FAFC = (unsigned int)(LoadFileSHP(off_844D1C, (bool *)&byte_B0FCA7)); /*0x72fb28*/
+  dword_B0FA00 = (unsigned int)(LoadFileSHP(off_844D20, (bool *)&byte_B0FCA8)); /*0x72fb3d*/
+  dword_B0FA8C = (unsigned int)(LoadFileSHP(off_844D24, (bool *)&byte_B0FCA9)); /*0x72fb52*/
+  dword_B0FA48 = (unsigned int)(LoadFileSHP(off_844D28, (bool *)&byte_B0FCAA)); /*0x72fb67*/
+  dword_B0FA3C = (unsigned int)(LoadFileSHP(off_844D2C, (bool *)&byte_B0FCAB)); /*0x72fb7c*/
+  dword_B0FA90 = (unsigned int)(LoadFileSHP(off_844D30, (bool *)&byte_B0FCAC)); /*0x72fb91*/
+  dword_B0FAA8 = (unsigned int)(LoadFileSHP(off_844D34, (bool *)&byte_B0FCAD)); /*0x72fba6*/
   result = LoadFileSHP(off_844D38, (bool *)&byte_B0FCAE); /*0x72fbab*/
-  dword_B0FABC = result; /*0x72fbb0*/
-  return result; /*0x72fbb5*/
+  dword_B0FABC = (unsigned int)(result); /*0x72fbb0*/
+  return (void **)(result); /*0x72fbb5*/
 
 }
 } // namespace gamemd
@@ -268,7 +268,7 @@ char LoadingScreen::FreeResources3()
   LoadingScreen *v1; // [esp+0h] [ebp-4h]
   ObjectClass *v2; // [esp+0h] [ebp-4h]
 
-  result = DataGlobal_B0FBE0; /*0x72def0*/
+  result = (char)(DataGlobal_B0FBE0); /*0x72def0*/
   if ( DataGlobal_B0FBE0 ) /*0x72defa*/
   {
     DataGlobal_B0FBE0 = 0; /*0x72df00*/

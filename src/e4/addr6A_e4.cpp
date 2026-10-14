@@ -79,7 +79,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v3 = this->M21404; /*0x6a6b00*/
   v4 = &this->u8_F94 * v3 + 5444; /*0x6a6b19*/
   v5 = 26; /*0x6a6b20*/
-  v14 = v4; /*0x6a6b25*/
+  v14 = (unsigned int *)(v4); /*0x6a6b25*/
   NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x6a6b29*/
   if ( NeedsSaveOrLink ) /*0x6a6b31*/
     v5 = 18; /*0x6a6b33*/
@@ -228,7 +228,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a8aac*/
     {
       v7 = v6; /*0x6a8ab7*/
-      v8 = this; /*0x6a8ab9*/
+      v8 = (gamemd::ObjectClass *)(this); /*0x6a8ab9*/
       if ( this->ambientSoundController[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
@@ -236,7 +236,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     {
       if ( 2 * (v6 + this->ambientSoundController[2]) >= this->customSound_controller[1] ) /*0x6a8ae2*/
         return 0; /*0x6a8aed*/
-      v8 = this; /*0x6a8af0*/
+      v8 = (gamemd::ObjectClass *)(this); /*0x6a8af0*/
     }
     v8->ambientSoundController[3] += v3; /*0x6a8afb*/
     return 1; /*0x6a8aff*/
@@ -268,15 +268,13 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
     do /*0x6a9494*/
     {
       Hash::Reset((LinkClass *)(56 * (v3 + 60 * (int)this->attachedBomb) + 11566720)); /*0x6a9465*/
-      LOBYTE(v5) = Hash::InsertOrdered( /*0x6a948c*/
-                     (GScreenClass *)&DataGlobal_87F7E8,
-                     56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
+            LOBYTE(v5) = Hash::InsertOrdered((int)(/*0x6a948c*/                      (GScreenClass *)&DataGlobal_87F7E8),                      56 * (v3 + 60 * (int)this->attachedBomb) + 11566720);
       ++v3; /*0x6a9491*/
     }
     while ( v3 < v6 ); /*0x6a9494*/
   }
   g_CameoRenderFlag = 1; /*0x6a9498*/
-  return v5; /*0x6a9496*/
+  return (gamemd::BombClass **)(v5); /*0x6a9496*/
 
 }
 }
@@ -645,7 +643,7 @@ int TechnoClass::ProcessDeployAction()
         v30 = v3; /*0x6afe25*/
         *(unsigned int *)v29 = v3; /*0x6afe29*/
         if ( v3 == dword_B0B5B8 /*0x6afe57*/
-          || (v3 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v32, v3),
+          || (v3 = *BuildingClass::FindPlacementCells2((unsigned int *)((BuildingClass *)this), &v32, v3),
               *(unsigned int *)v29 = v3,
               v3 == dword_B0B5B8) )
         {
@@ -764,8 +762,8 @@ int TechnoClass::ProcessDeployAction()
                                         &v31,
                                         *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 6024) / 256,
                                         1);
-          v30 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v33, *(int *)v29); /*0x6b0100*/
-          v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
+          v30 = *BuildingClass::FindPlacementCells2((unsigned int *)((BuildingClass *)this), &v33, *(int *)v29); /*0x6b0100*/
+          v16 = (unsigned int *)(CellStruct::Sub((CellStruct *)&v30, &v34, v29)); /*0x6b0104*/
           v17 = v16->u32_4; /*0x6b0109*/
           v18 = *(__int16 *)v16; /*0x6b010d*/
           v31 = v17; /*0x6b0110*/
@@ -788,7 +786,7 @@ int TechnoClass::ProcessDeployAction()
           v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
                                 this->occupant,
                                 v35);
-          v21 = CellStruct::Sub(v20, &v34, v29); /*0x6b015f*/
+          v21 = (unsigned int *)(CellStruct::Sub(v20, &v34, v29)); /*0x6b015f*/
           v22 = *(__int16 *)v21; /*0x6b0168*/
           v31 = *((__int16 *)v21 + 1); /*0x6b016b*/
           __asm { fild [esp+38h+var_20] } /*0x6b0172*/

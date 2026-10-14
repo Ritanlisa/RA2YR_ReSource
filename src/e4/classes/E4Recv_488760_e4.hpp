@@ -19,6 +19,6 @@ struct E4Recv_488760 {
     unsigned int M396;  // 0x18C
     unsigned int M400;  // 0x190
 // --- flat members (END) ---
-    ColorListClass *  sub_488760(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x488760
+    ColorListClass * sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);  // 0x488760
 };
 } // namespace gamemd

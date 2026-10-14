@@ -108,8 +108,8 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
       {
         v10 = *(unsigned int *)this->__pad_000; /*0x5d425d*/
         *(unsigned int *)this->__pad_000 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_000 + 36))(*(unsigned int *)this->__pad_000); /*0x5d4266*/
-        v11 = &this->u32_1480; /*0x5d4268*/
-        v12 = &this->u32_2C8; /*0x5d426e*/
+        v11 = (unsigned short *)(&this->u32_1480); /*0x5d4268*/
+        v12 = (char *)(&this->u32_2C8); /*0x5d426e*/
         v13 = 14; /*0x5d4274*/
         do /*0x5d428d*/
         {
@@ -126,7 +126,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     }
     v14 = aP3; /*0x5d429b*/
     if ( !aP3 ) /*0x5d42a1*/
-      v14 = &g_TypeClass_DefaultString; /*0x5d42a3*/
+      v14 = (wchar_t *)(&g_TypeClass_DefaultString); /*0x5d42a3*/
     *&this->u16_2B8 = a5; /*0x5d42b1*/
     memset(&this->u32_28, 0, 0x144u); /*0x5d42c2*/
     wcscpythis->u32_28, v14); /*0x5d42c5*/
@@ -134,7 +134,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     v15 = wcslen(v14); /*0x5d42d4*/
     *&this->u32_2B4 = v15; /*0x5d42db*/
     *&this->u32_2B0 = v15; /*0x5d42e1*/
-    v16 = __2_YAPAXI_Z(0x4Cu); /*0x5d42e7*/
+    v16 = (int)(__2_YAPAXI_Z(0x4Cu)); /*0x5d42e7*/
     if ( v16 ) /*0x5d42f1*/
     {
       v17 = a3; /*0x5d42f3*/
@@ -210,7 +210,7 @@ int NetworkLobby_UpdatePlayerList()
   result = Dialog::GetCurrentType(); /*0x5db9b6*/
   if ( result == 187 ) /*0x5db9c0*/
   {
-    Current = Dialog::GetCurrent(); /*0x5db9cf*/
+    Current = (HWND)(Dialog::GetCurrent()); /*0x5db9cf*/
     DlgItem = GetDlgItem(Current, 1353); /*0x5db9e3*/
     if ( (int)g_NetworkSetupConfig >= dword_A8DA6C ) /*0x5db9ec*/
     {
@@ -472,7 +472,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           if ( dword_A8B23C /*0x5decef*/
             && !(*((unsigned __int8 (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C) )
           {
-            g_MPCooperativeState = (ObjectClass *)-1; /*0x5decfb*/
+            g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5decfb*/
             g_MenuStateFlags = 0; /*0x5ded05*/
             Dialog::RefreshDialogsGame(0); /*0x5ded0b*/
             *(unsigned int *)(dword_A8DA90[0] + 107) = 0; /*0x5ded15*/
@@ -584,13 +584,13 @@ LABEL_132:
         if ( !hWnd ) /*0x5de598*/
           return 0; /*0x5de598*/
         GetWindowRect(hDlg, (LPRECT)&v37.q004); /*0x5de5af*/
-        StringCSF = &g_TypeClass_DefaultString; /*0x5de5c3*/
+        StringCSF = (wchar_t *)(&g_TypeClass_DefaultString); /*0x5de5c3*/
         v30.y = HIWORD(lParam) - v37.u32_8; /*0x5de5c8*/
         v30.x = (unsigned __int16)lParam - v37.q004; /*0x5de5c9*/
         v5 = ChildWindowFromPointEx(hDlg, v30, 1u); /*0x5de5cb*/
         if ( v5 ) /*0x5de5d3*/
         {
-          v6 = DlgSkirmishMenuProc(hDlg, v5); /*0x5de5d9*/
+          v6 = (char *)(DlgSkirmishMenuProc(hDlg, v5)); /*0x5de5d9*/
           if ( v6 ) /*0x5de5e0*/
             StringCSF = GetStringCSF((wchar_t *)v6, 0, g_Str_File_netdlg2_cpp, 2857); /*0x5de5f5*/
         }
@@ -659,13 +659,13 @@ LABEL_48:
     }
     if ( byte_AC0268 ) /*0x5de8ff*/
       return 0; /*0x5de8ff*/
-    v11 = dword_A8B23C; /*0x5de905*/
+    v11 = (gamemd::ObjectClass *)(dword_A8B23C); /*0x5de905*/
     v12 = *(void **)&g_GameRulesOptions; /*0x5de90b*/
     if ( dword_A8B23C ) /*0x5de913*/
     {
       if ( !(*((unsigned __int8 (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C) ) /*0x5de917*/
       {
-        v11 = dword_A8B23C; /*0x5de91e*/
+        v11 = (gamemd::ObjectClass *)(dword_A8B23C); /*0x5de91e*/
         v35 = 0; /*0x5de924*/
 LABEL_58:
         if ( !v11 || (v34 = 0, (*((unsigned __int8 (**)(ObjectClass *))v11->AbstractClass + 47))(v11)) ) /*0x5de93b*/
@@ -1829,10 +1829,10 @@ char NetworkLobby::FillOptionCombo()
         {
           *v2 = -2; /*0x5ee47e*/
   LABEL_18:
-          IDA_LOBYTE(ResourceID4) = EnableWindow(v4, 0); /*0x5ee484*/
+          (*((unsigned char *)&(ResourceID4))) = EnableWindow(v4, 0); /*0x5ee484*/
           goto LABEL_19; /*0x5ee487*/
         }
-        IDA_LOBYTE(ResourceID4) = EnableWindow(v4, 1); /*0x5ee47c*/
+        (*((unsigned char *)&(ResourceID4))) = EnableWindow(v4, 1); /*0x5ee47c*/
       }
       else
       {
@@ -1847,12 +1847,12 @@ char NetworkLobby::FillOptionCombo()
             v6 = CharToWideString(unk_A8B380); /*0x5ee4db*/
             ResourceID4 = (HWND)wcscmp((const wchar_t *)v6, word_A8D610); /*0x5ee4eb*/
             if ( !ResourceID4 ) /*0x5ee4f5*/
-              IDA_LOBYTE(ResourceID4) = SessionClass::SetOption2(v3, -2); /*0x5ee4fb*/
+              (*((unsigned char *)&(ResourceID4))) = SessionClass::SetOption2(v3, -2); /*0x5ee4fb*/
             goto LABEL_19; /*0x5ee500*/
           }
           EnableWindow(v4, 1); /*0x5ee4d1*/
         }
-        IDA_LOBYTE(ResourceID4) = v8; /*0x5ee4d3*/
+        (*((unsigned char *)&(ResourceID4))) = v8; /*0x5ee4d3*/
         if ( !v8 ) /*0x5ee4d9*/
           goto LABEL_27; /*0x5ee4d9*/
       }

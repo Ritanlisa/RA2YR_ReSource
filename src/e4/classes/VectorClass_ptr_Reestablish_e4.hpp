@@ -26,8 +26,8 @@ struct VectorClass_ptr_Reestablish {
     unsigned int  Get(int a2, void *a1 = 0);  // 0x45A8C0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x45A8E0
     int  FindItemIndex(unsigned int * a2);  // 0x45A990
-    DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x45AA10
-    VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x45ACE0
+    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x45AA10
+    VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x45ACE0
     DynamicVector *  Constructor_VectorClass_Reestablish___(char a2);  // 0x45AD30
 };
 } // namespace gamemd

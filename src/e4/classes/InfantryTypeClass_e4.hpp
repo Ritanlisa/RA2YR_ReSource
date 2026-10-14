@@ -528,7 +528,7 @@ struct InfantryTypeClass {
     bool Deployer_d;  // 0xEC8
 // --- flat members (END) ---
     InfantryClass *  ConstructInfantry(AbstractClass * ppv);
-    InfantryTypeClass * Constructor(char *aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    InfantryTypeClass * Constructor(char *aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     InfantryTypeClass * ddtor(char a2);
     static WeaponTypeClass * * Find(char *Source);
     int * GetDimensions(int a1);
@@ -544,7 +544,7 @@ struct InfantryTypeClass {
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19();
     unsigned int * ClampToGroundHeight(unsigned int * a1, int * a2);
     unsigned int * Constructor_523980(int aP1);
-    unsigned int * CopyDataArray(unsigned int *aP1, void *a1 = 0);
+    unsigned int * CopyDataArray(unsigned int *aP1, void *a2 = 0);
     unsigned int * GetDefaultDimensions(unsigned int * a1);
     InfantryTypeClass * ddtor(int Block, char a2);
     int DTOR(void *a1 = 0);

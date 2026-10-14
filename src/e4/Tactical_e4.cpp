@@ -87,9 +87,9 @@ void * Tactical::ConstructTacticalSurface()
   *this = 0; /*0x42a6e0*/
   this->AbstractClass_1 = 0; /*0x42a6e2*/
   this->Tactical_field_0x2 = 0; /*0x42a6e5*/
-  this->ptr_3 = 1; /*0x42a6e8*/
-  this->vtable2 = 1065353216; /*0x42a6eb*/
-  this->vtable3 = 1; /*0x42a6f2*/
+  this->ptr_3 = (gamemd::CellClass *)(1); /*0x42a6e8*/
+  this->vtable2 = (void *)(1065353216); /*0x42a6eb*/
+  this->vtable3 = (void *)(1); /*0x42a6f2*/
   this->nextArrayIndex = 0; /*0x42a6f5*/
   this->referenceCount = 0; /*0x42a6f8*/
   this->needsSave = 0; /*0x42a6fb*/
@@ -101,19 +101,19 @@ void * Tactical::ConstructTacticalSurface()
   this->HouseClass_6C = -1; /*0x42a70d*/
   this->q070 = 0; /*0x42a710*/
   this->u32_72 = 0; /*0x42a714*/
-  v2 = &this->q074; /*0x42a718*/
+  v2 = (unsigned int *)(&this->q074); /*0x42a718*/
   v3 = 3; /*0x42a71b*/
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
-    *v2 = &vt_DynamicVectorClass; /*0x42a729*/
+    *v2 = (unsigned int)(&vt_DynamicVectorClass); /*0x42a729*/
     v2->u32_14 = 10; /*0x42a72f*/
     v2->q010 = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/
     --v3; /*0x42a73c*/
   }
   while ( v3 ); /*0x42a73d*/
-  v4 = __2_YAPAXI_Z(0x14u); /*0x42a741*/
+  v4 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x42a741*/
   v5 = v4; /*0x42a746*/
   if ( v4 ) /*0x42a74d*/
   {
@@ -123,7 +123,7 @@ void * Tactical::ConstructTacticalSurface()
     v4[1] = 0x10000; /*0x42a760*/
     v6 = __2_YAPAXI_Z(0x40004u); /*0x42a767*/
     v7 = v5[1]; /*0x42a76c*/
-    v5[2] = v6; /*0x42a76f*/
+    v5[2] = (unsigned int)(v6); /*0x42a76f*/
     v8 = 0; /*0x42a775*/
     if ( v7 >= 0 ) /*0x42a779*/
     {
@@ -140,7 +140,7 @@ void * Tactical::ConstructTacticalSurface()
     v5 = 0; /*0x42a78c*/
   }
   this->abstractFlags = v5; /*0x42a790*/
-  v9 = __2_YAPAXI_Z(0x14u); /*0x42a793*/
+  v9 = (unsigned int *)(__2_YAPAXI_Z(0x14u)); /*0x42a793*/
   v10 = v9; /*0x42a798*/
   if ( v9 ) /*0x42a79f*/
   {
@@ -150,7 +150,7 @@ void * Tactical::ConstructTacticalSurface()
     v9[1] = 10000; /*0x42a7b2*/
     v11 = __2_YAPAXI_Z(0x9C44u); /*0x42a7b9*/
     v12 = v10[1]; /*0x42a7be*/
-    v10[2] = v11; /*0x42a7c1*/
+    v10[2] = (unsigned int)(v11); /*0x42a7c1*/
     v13 = 0; /*0x42a7c7*/
     if ( v12 >= 0 ) /*0x42a7cb*/
     {
@@ -166,8 +166,8 @@ void * Tactical::ConstructTacticalSurface()
   {
     v10 = 0; /*0x42a7de*/
   }
-  this->u32_68 = v10; /*0x42a7e5*/
-  v14 = __2_YAPAXI_Z(0x100004u); /*0x42a7e8*/
+  this->u32_68 = (unsigned int)(v10); /*0x42a7e5*/
+  v14 = (unsigned int *)(__2_YAPAXI_Z(0x100004u)); /*0x42a7e8*/
   if ( v14 ) /*0x42a7f2*/
   {
     v15 = v14 + 2; /*0x42a7f4*/
@@ -188,7 +188,7 @@ void * Tactical::ConstructTacticalSurface()
     v14 = 0; /*0x42a812*/
   }
   this->uniqueId = v14; /*0x42a819*/
-  v17 = __2_YAPAXI_Z(0x180004u); /*0x42a81c*/
+  v17 = (unsigned int *)(__2_YAPAXI_Z(0x180004u)); /*0x42a81c*/
   if ( v17 ) /*0x42a826*/
     v17[393216] = 0; /*0x42a828*/
   else
@@ -212,9 +212,9 @@ void * Tactical::ConstructTacticalSurface()
   for ( i = 0; i <= *v20; *(unsigned int *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
-  v22 = &this->q074; /*0x42a87c*/
+  v22 = (char *)(&this->q074); /*0x42a87c*/
   v26 = &this->u32_BC; /*0x42a87f*/
-  v25 = &this->q074; /*0x42a883*/
+  v25 = (char *)(&this->q074); /*0x42a883*/
   v23 = &this->q04C; /*0x42a887*/
   v27 = 3; /*0x42a88a*/
   while ( 1 ) /*0x42a898*/
@@ -269,8 +269,8 @@ int Tactical::CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a
   }
   else
   {
-    (*(((unsigned int *)&(v15)) + 1)) = &a6; /*0x4840b2*/
-    (*((unsigned int *)&(v15))) = &a7; /*0x4840b7*/
+    (*(((unsigned int *)&(v15)) + 1)) = (unsigned int)(&a6); /*0x4840b2*/
+    (*((unsigned int *)&(v15))) = (unsigned int)(&a7); /*0x4840b7*/
     Tactical::CalculateTacticalLighting(aP1, v7, v11, v8, v12, v9, &v16, v15); /*0x4840c4*/
     if ( *(unsigned int *)aP1->q034 /*0x484125*/
       && (a3 = (unsigned int *)v16,
@@ -332,7 +332,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   int v40; // [esp+3Ch] [ebp-8h]
   int v41; // [esp+40h] [ebp-4h]
 
-  v9 = a1; /*0x484184*/
+  v9 = (gamemd::Tactical *)(a1); /*0x484184*/
   if ( !*&a1->q024 && !*&a1->u16_26 /*0x4841a9*/
     || *&a1->q024 == 0xFFFF && *&a1->u16_26 == 0xFFFF )
   {
@@ -341,10 +341,10 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     *a4 = 1000; /*0x484642*/
     *aP5 = 1000; /*0x48464c*/
     *a6 = 1000; /*0x484656*/
-    *a8_2 = 1000; /*0x484660*/
+    *a8_2 = (void *)(1000); /*0x484660*/
     *(unsigned int *)a8_2 = 1000; /*0x484666*/
     *(unsigned int *)HIDWORD(a8_2) = 1000; /*0x48466c*/
-    return HIDWORD(a8_2); /*0x48465c*/
+    return (gamemd::ScenarioClass **)(HIDWORD(a8_2)); /*0x48465c*/
   }
   v10 = a4; /*0x4841b5*/
   *a4 = 1000 * (int)dword_A8B230[378].vtable1 / 100; /*0x4841de*/
@@ -406,7 +406,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
           *(unsigned int *)HIDWORD(a8_2) += (int)(v20 * *(unsigned int *)(v12 + 48)) / 1000; /*0x48443e*/
         }
       }
-      v9 = a1; /*0x484440*/
+      v9 = (gamemd::Tactical *)(a1); /*0x484440*/
       v10 = a4; /*0x484444*/
     }
     v11 = v34 + 1; /*0x484452*/
@@ -458,13 +458,13 @@ LABEL_21:
   *aP5 = *aP5 <= 0 ? 0 : *aP5;
   result = *a6 <= 0 ? 0 : *a6;
   *a6 = result; /*0x484615*/
-  return result; /*0x48461a*/
+  return (gamemd::ScenarioClass **)(result); /*0x48461a*/
 
 }
 }
 // 0x4A91B0
 namespace gamemd {
-unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
+unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2, void *a3)
 {
   unsigned int *v3; // ebp
   bool v4; // zf
@@ -501,7 +501,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
                   stru_887598.lineTrailer,
                   &v29);
     v7 = DSurface_ViewBounds.field_0; /*0x4a91f2*/
-    v8 = DSurface_ViewBounds.field_4; /*0x4a91f8*/
+    v8 = (void *)(DSurface_ViewBounds.field_4); /*0x4a91f8*/
     v6 = v6; /*0x4a91fe*/
     v10 = *v6; /*0x4a9200*/
     v11 = v6[1]; /*0x4a9204*/
@@ -542,7 +542,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
       v19 = (*(((unsigned short *)&(aP2)) + 1)) + this->u32_117A; /*0x4a92f3*/
       (*((unsigned short *)&(v13))) = (unsigned short)v3 + this->u32_1178; /*0x4a92fb*/
       (*(((unsigned short *)&(v13)) + 1)) = v19; /*0x4a9301*/
-      v20 = UI_Move(&v29, &v13, v16); /*0x4a931e*/
+      v20 = (unsigned short *)(UI_Move(&v29, &v13, v16)); /*0x4a931e*/
       v21 = v20[1] - this->u32_117A; /*0x4a9331*/
       (*((unsigned short *)&(aP2))) = *v20 - this->u32_1178; /*0x4a9338*/
       (*(((unsigned short *)&(aP2)) + 1)) = v21; /*0x4a933d*/
@@ -552,7 +552,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
     aP2 = v3; /*0x4a934d*/
     if ( v4 && (*(((unsigned short *)&(v3)) + 1)) == this->u32_1176 ) /*0x4a935f*/
     {
-      *aP1 = v3; /*0x4a9367*/
+      *aP1 = (unsigned int)(v3); /*0x4a9367*/
       return aP1; /*0x4a9361*/
     }
     else
@@ -577,7 +577,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
           MapClass::SetCellFlagsAlongPath(&aP2, (unsigned short *)1); /*0x4a942f*/
         }
       }
-      this->u32_1174 = v3; /*0x4a9434*/
+      this->u32_1174 = (unsigned int)(v3); /*0x4a9434*/
       v25 = this->u32_1178 + (unsigned short)v3; /*0x4a944b*/
       (*(((unsigned short *)&(aP2)) + 1)) = this->u32_1176 + this->u32_117A; /*0x4a9452*/
       v26 = this->u32_117C; /*0x4a9457*/
@@ -602,7 +602,7 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
   else
   {
     v17 = this->u32_1174; /*0x4a92bf*/
-    this->u32_1174 = v3; /*0x4a92c9*/
+    this->u32_1174 = (unsigned int)(v3); /*0x4a92c9*/
     *aP1 = v17; /*0x4a92d2*/
     return aP1; /*0x4a92c5*/
   }
@@ -618,7 +618,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
   int result; // eax
   int v5; // edi
 
-  Tactical_field_0xF4 = this->q0F4; /*0x56836f*/
+  Tactical_field_0xF4 = (void *)(this->q0F4); /*0x56836f*/
   v3 = (__int16)(*aP1 / 256); /*0x56837b*/
   result = (__int16)(aP1[1] / 256); /*0x56837e*/
   v5 = result + v3; /*0x568381*/
@@ -1338,7 +1338,7 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
 }
 // 0x6D6070
 namespace gamemd {
-unsigned int Tactical::SetTacticalPosition(int *aP1)
+unsigned int Tactical::SetTacticalPosition(int *aP1, void *a2)
 {
 
   int v3; // esi
@@ -1560,7 +1560,7 @@ unsigned int * Tactical::PixelToCell(unsigned int *aP1, int *aP2)
 }
 // 0x6DA7D0
 namespace gamemd {
-int Tactical::AddCellToDrawList(int aP1)
+int Tactical::AddCellToDrawList(int aP1, void *a2)
 {
   int result; // eax
   int *Coords; // eax
@@ -1935,7 +1935,7 @@ int Tactical_42::FindItem(unsigned int * a2)
 }
 // 0x4A35F0
 namespace gamemd {
-char * Tactical::SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7)
+char * Tactical::SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7, void *a7_1)
 {
   char *result; // eax
 

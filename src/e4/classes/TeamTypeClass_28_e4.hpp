@@ -17,10 +17,10 @@ struct TeamTypeClass_28 {
     unsigned int *  Seek(unsigned int * a2, int a3);  // 0x6F2210
     char  AddRef(int a2);  // 0x6F2290
     wchar_t * ddtor(void *a1_1, void *a2_1);  // 0x6F2400
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x6F2440
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x6F2440
     int  FindItem(unsigned int * a2);  // 0x6F2640
     VectorClass_flat *  QueryInterface(char a2);  // 0x6F2680
-    DynamicVector *  Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0);  // 0x6F2720
+    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1, void *a4 = 0);  // 0x6F2720
     unsigned int  PointerToIndex(int a2);  // 0x6F21F0
     unsigned int  Write(int a2);  // 0x6F2490
 

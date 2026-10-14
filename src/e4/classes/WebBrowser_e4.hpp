@@ -8,7 +8,7 @@ struct WebBrowser {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
 // --- flat members (END) ---
-    int  LoadURLFromRegistry(void * a2);  // 0x773600
+    int LoadURLFromRegistry(const char * a2);  // 0x773600
     int ShowDialog(void *a1 = 0);  // 0x773E90
     int GoForward();  // 0x7740A0
     bool OpenURL(void *a1_1);  // 0x551630

@@ -35,7 +35,7 @@ char E4Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1)
   int v4; // edx
 
   uniqueId = this->M16; /*0x74f6f0*/
-  v3 = aP1; /*0x74f6f3*/
+  v3 = (int)(aP1); /*0x74f6f3*/
   if ( aP1 >= uniqueId ) /*0x74f6f9*/
     return 0; /*0x74f71c*/
   v4 = uniqueId - 1; /*0x74f6fb*/

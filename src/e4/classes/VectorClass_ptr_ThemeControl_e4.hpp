@@ -17,7 +17,7 @@ struct VectorClass_ptr_ThemeControl {
     void* Count;  // 0x10
 // --- flat members (END) ---
     int  Clear(int a2);  // 0x4E8530
-    char  ddtor(int a2);  // 0x4EA2A0
+    void ddtor(void *a1_1);  // 0x4EA2A0
     int  GetSize(unsigned int * a2);  // 0x4EA3C0
     unsigned int  Get(int a2, void *a1 = 0);  // 0x4EA400
     VectorClass_flat *  Add(char a2, void *a1 = 0, void *a3 = 0);  // 0x4EF940

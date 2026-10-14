@@ -9,7 +9,7 @@ struct E4Recv_492590 {
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
-    char  sub_492590(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x492590
+    char sub_492590(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x492590
     char m_4[4];  // 0x4 @0x492594 (W16G3 raw-usage vocab)
 };
 } // namespace gamemd

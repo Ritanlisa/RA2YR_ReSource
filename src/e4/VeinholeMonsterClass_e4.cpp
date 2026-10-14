@@ -54,7 +54,7 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
     (*((unsigned short *)&(v12))) = v8; /*0x5862fd*/
     if ( v9 >= 0x40000 || (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) == 0 ) /*0x586311*/
     {
-      dword_ABDC74 = (gamemd::CellClass *)(v12);
+      dword_ABDC74 = (unsigned int)((gamemd::CellClass *)(v12));
       v10 = (gamemd::CellClass *)(&unk_ABDC50); /*0x58631c*/
     }
     if ( v10->firstObject ) /*0x586321*/

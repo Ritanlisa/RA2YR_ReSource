@@ -42,7 +42,7 @@ int WinModemClass::ReadSerial()
   v16 = 0; /*0x77498e*/
   if ( v2 ) /*0x774994*/
   {
-    v3 = *(unsigned int *)this->__pad_158 + 24); /*0x774996*/
+    v3 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774996*/
     NumberOfBytesTransferred = 0; /*0x7749a4*/
     if ( GetOverlappedResult(v3, (LPOVERLAPPED)(&this->q040), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
@@ -94,7 +94,7 @@ int WinModemClass::ReadSerial()
   }
   while ( 1 ) /*0x774a86*/
   {
-    v11 = *(unsigned int *)this->__pad_158 + 24); /*0x774a86*/
+    v11 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
     v12 = ReadFile(v11, (LPVOID)this->__pad_158 + 88), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(&this->q040)); /*0x774a99*/
     v12 = v12; /*0x774aa1*/
@@ -211,9 +211,9 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   Timer::GetTicks(); /*0x774ce1*/
   Timer::GetTicks(); /*0x774cf4*/
   memset(Str, 0, a4); /*0x774d0e*/
-  v7 = aP4; /*0x774d24*/
+  v7 = (int)(aP4); /*0x774d24*/
   Ticks = Timer::GetTicks(); /*0x774d28*/
-  v21 = aP4; /*0x774d30*/
+  v21 = (int)(aP4); /*0x774d30*/
 LABEL_2:
   v19 = Timer::GetTicks(); /*0x774d38*/
   while ( 1 )
@@ -260,7 +260,7 @@ LABEL_2:
       {
 LABEL_20:
         Str[a4 - 1] = 0; /*0x774e31*/
-        v15 = strstr(Str, word_832678); /*0x774e45*/
+        v15 = (char *)(strstr(Str, word_832678)); /*0x774e45*/
         if ( v15 ) /*0x774e4c*/
         {
           if ( *Str == 65 && Str[1] == 84 && strchr(Str, 13) ) /*0x774e5d*/
@@ -283,7 +283,7 @@ LABEL_38:
             {
               memcpy(Str, v15, a4 - (v15 - Str)); /*0x774ed5*/
               v6 -= v15 - Str; /*0x774edd*/
-              v7 = aP4; /*0x774edf*/
+              v7 = (int)(aP4); /*0x774edf*/
             }
             if ( v15 ) /*0x774ee5*/
             {

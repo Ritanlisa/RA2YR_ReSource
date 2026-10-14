@@ -9,7 +9,7 @@ struct ScoreScreen {
 // --- flat members (BEGIN) ---
 
 // --- flat members (END) ---
-    unsigned int * Constructor(int aP1, int a3, int a4, void *a1 = 0);
+    unsigned int * Constructor(int aP1, int a3, int a4, void *a4_1 = 0);
     unsigned int * LoadCountryFlags(int a2);
     unsigned int * LoadScoreFont(int aP1);
     int RemoveItem(int a2, int a3, char aP3, char a5, int a6);

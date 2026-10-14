@@ -23,7 +23,7 @@ struct TacticalMap {
     int DrawOccupiedRegion();
     void Redraw();
     int RenderAllObjects(int a2);
-    unsigned int FillScanlinesOpaque(int a2, int a3, int aP3, int a5);
+    unsigned int FillScanlinesOpaque(int a2, int a3, int a4, int a5);
     void MultiplyByScalar(ObjectClass * aP1, void *a2);
     void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
      int Render(int a2, int a3, int a4, void *a1 = 0);

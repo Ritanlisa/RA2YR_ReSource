@@ -140,9 +140,9 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
   }
   operator delete((void *)(*(void **)v3)); /*0x538bdb*/
   v7 = v3 + v3->vtable3; /*0x538be6*/
-  *(unsigned int *)v3 = v3; /*0x538be8*/
+  *(unsigned int *)v3 = (unsigned int)(v3); /*0x538be8*/
   v3->vtable3 = v7; /*0x538bea*/
   v3->uniqueId = 0; /*0x538bed*/
-  return 1; /*0x538bf4*/
+  return (gamemd::AbstractClass *)(1); /*0x538bf4*/
 }
 } // namespace gamemd

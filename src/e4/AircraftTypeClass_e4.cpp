@@ -60,10 +60,10 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   aP1->u8_E0C = 0; /*0x41c8ee*/
   aP1->u8_E0D = 0; /*0x41c8f4*/
   aP1->u8_E0E = 0; /*0x41c8fa*/
-  *(unsigned int *)aP1 = &vt_AircraftTypeClass; /*0x41c900*/
-  *(unsigned int *)(aP1 + 4) = &vt_AircraftTypeClass; /*0x41c906*/
+  *(unsigned int *)aP1 = (unsigned int)(&vt_AircraftTypeClass); /*0x41c900*/
+  *(unsigned int *)(aP1 + 4) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c906*/
   aP1->VtableStub_8 = &vt_AircraftTypeClass; /*0x41c90c*/
-  *(unsigned int *)(aP1 + 12) = &vt_AircraftTypeClass; /*0x41c913*/
+  *(unsigned int *)(aP1 + 12) = (unsigned int)(&vt_AircraftTypeClass); /*0x41c913*/
   AbstractClass::GenerateUniqueID(aP1 + 4); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
@@ -88,7 +88,7 @@ LABEL_11:
   }
   else
   {
-    v6 = dword_A8B21C; /*0x41c97a*/
+    v6 = (unsigned int *)(dword_A8B21C); /*0x41c97a*/
     while ( *v6 != aP1 ) /*0x41c982*/
     {
       ++v5; /*0x41c984*/
@@ -191,7 +191,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   v12 = v4->FlyBack; /*0x41cd68*/
   v4->FlyBy_2 = v11; /*0x41cd6e*/
   v4->FlyBack = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aFlyback, v12); /*0x41cd83*/
-  return 1; /*0x41cd8a*/
+  return (gamemd::AnimTypeClass **)(1); /*0x41cd8a*/
 }
 }
 // 0x41CFE0
@@ -207,7 +207,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
   *(unsigned int *)&a1->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
   *(unsigned int *)&a1->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x41d001*/
-  v5 = a1; /*0x41d016*/
+  v5 = (gamemd::AircraftTypeClass *)(a1); /*0x41d016*/
   v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < dword_A8B228 && v3 < --dword_A8B228 ) /*0x41d035*/
   {
@@ -221,7 +221,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
   TechnoTypeClass::DTOR((int)a1); /*0x41d051*/
   if ( (a1 & 1) != 0 ) /*0x41d05b*/
     __3_YAXPAX_Z(a1); /*0x41d05e*/
-  return (void **)a1; /*0x41d068*/
+  return (gamemd::AircraftTypeClass *)((void **)a1); /*0x41d068*/
 
 }
 }  // G42.18c ns repair
@@ -233,7 +233,7 @@ AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
   int v2; // edi
   int v4; // eax
 
-  v4 = __2_YAPAXI_Z(0x6D8u); /*0x41cb28*/
+  v4 = (int)(__2_YAPAXI_Z(0x6D8u)); /*0x41cb28*/
   if ( v4 ) /*0x41cb32*/
     return (AircraftClass *)AircraftClass::Construct(v4, v2, (int)this, ppv); /*0x41cb3c*/
   else
@@ -260,7 +260,7 @@ int * AircraftTypeClass::CreateAircraft(int a1)
     dword_889F24 = 2147450879; /*0x41cbb4*/
     atexit(nullsub_85); /*0x41cbba*/
   }
-  return &dword_889F20; /*0x41cbc8*/
+  return (int *)(&dword_889F20); /*0x41cbc8*/
 
 }
 }  // G42.18c ns repair
@@ -282,7 +282,7 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
   int v6; // eax
   int v7; // ecx
 
-  v3 = BuildingTypeClass::ProcessPower((int)this, a2); /*0x41cdb9*/
+  v3 = (int)(BuildingTypeClass::ProcessPower((int)this, a2)); /*0x41cdb9*/
   LOBYTE(v3) = this->Rotors_d; /*0x41cdbe*/
   Power::FlagProcess((Power *)a2, v3); /*0x41cdc7*/
   LOBYTE(v4) = this->CustomRotor_2; /*0x41cdcc*/
@@ -304,13 +304,13 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)aP0, aP1); /*0x41ce2b*/
+  result = (int)(TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)aP0, aP1)); /*0x41ce2b*/
   if ( result >= 0 ) /*0x41ce32*/
   {
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
-      *(unsigned int *)aP0->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41ce44*/
+      *(unsigned int *)aP0->TechnoTypeClass = (unsigned int)(&vt_AircraftTypeClass); /*0x41ce44*/
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce4a) */
       *&aP0->u32_D2E = &vt_AircraftTypeClass; /*0x41ce51*/
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
@@ -371,7 +371,7 @@ namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetAuxField()
 {
 
-  return this->ArrayIndex; /*0x41cfd6*/
+  return (int)(this->ArrayIndex); /*0x41cfd6*/
 
 }
 }  // G42.18c ns repair

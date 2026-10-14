@@ -11,7 +11,7 @@ struct E4Recv_689A30 {
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
 // --- flat members (END) ---
-    char  sub_689A30(void * a2, unsigned char * a3);  // 0x689A30
+    char sub_689A30(const char * a2, unsigned char * a3);  // 0x689A30
 
     unsigned char u8_28;  // X10 supply (member_lookup)
 };

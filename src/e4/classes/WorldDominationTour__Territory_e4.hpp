@@ -20,7 +20,7 @@ struct WorldDominationTour__Territory {
     HashTable * ptr_24;  // 0x24
     ReferenceCounted * ptr_28;  // 0x28
 // --- flat members (END) ---
-    SessionClass * *  Constructor(int a2, unsigned int * a3, char * Source, void * a5, void * a6);  // 0x76F970
+    SessionClass * * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);  // 0x76F970
 
     HashTable * q080;  // X10 supply (member_lookup)
     unsigned int u32_1C;  // X10 supply (member_lookup)

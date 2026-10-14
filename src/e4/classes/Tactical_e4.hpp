@@ -31,20 +31,20 @@ struct Tactical {
     void * ConstructTacticalSurface();  // 0x42A6D0
     int CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a3, unsigned int *a4, int *a5, int a6, int a7);  // G57w10-S raw 0x00484050 IUnknown 占位清除
 ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8, void *a8_2);
-    unsigned int *  MouseMove(unsigned int * a2, unsigned int * a3, void *a1 = 0);  // 0x4A91B0
-    int IsCellVisible(unsigned int *a2);  // G57w10-S raw 0x00568350 IUnknown 占位清除
+    unsigned int * MouseMove(unsigned int *aP1, unsigned int *aP2, void *a3 = 0);  // 0x4A91B0
+    int IsCellVisible(IUnknown * aP1);  // G57w10-S raw 0x00568350 IUnknown 占位清除
     void * GetCellData(void *a1 = 0);  // 0x58C2A0
-    int  MouseOver(int * a1, int16_t * a2, int * a3, unsigned int * a4, bool * a5, bool * a6);  // 0x692300
-    MouseClass * *  HandleTacticalMouseInput(int a2, unsigned int * a3, int a4, HWND a5, void *a1 = 0);  // 0x6930A0
+    int MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5);  // 0x692300
+    MouseClass * * HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4, void *a5_1);  // 0x6930A0
     int UpdateUIVisibility();  // 0x6A6610
-    void  DisplayTacticalOverlayText(void * String);  // 0x6D4E20
-    unsigned int  SetTacticalPosition(int * a2, void *a1 = 0);  // 0x6D6070
-    unsigned int *  PixelToCell(unsigned int * a2, int * a3);  // 0x6D6590
-    int  AddCellToDrawList(int a2, void *a1 = 0);  // 0x6DA7D0
+    void DisplayTacticalOverlayText(wchar_t * String);  // 0x6D4E20
+    unsigned int SetTacticalPosition(int *aP1, void *a2 = 0);  // 0x6D6070
+    unsigned int * PixelToCell(unsigned int *aP1, int *aP2);  // 0x6D6590
+    int AddCellToDrawList(int aP1, void *a2 = 0);  // 0x6DA7D0
     void* DrawTacticalConnectorLines();  // 0x6DB210
-    int  DrawOverlay(int * a2, int * a3, int a4, int a5);  // 0x6DBB60
+    int DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5);  // 0x6DBB60
     Tactical *  UpdateView(char a2);  // 0x6DC470
-    char *  SetCellTransform(int a2, int a3, int a4, int a5, int a6, int a7, void *a1 = 0);  // 0x4A35F0
+    char * SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7, void *a7_1 = 0);  // 0x4A35F0
     int  Init(unsigned int * a2, void *a1 = 0);  // 0x6E4970
     char  SelectObject(int a2);  // 0x4F4450
     int *  ScrollMap(int a2);  // 0x6DA560

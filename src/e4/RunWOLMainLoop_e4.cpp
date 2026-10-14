@@ -124,7 +124,7 @@ int sub_785EA0()
   result = (int)ppv; /*0x785f48*/
   if ( ppv ) /*0x785f4f*/
   {
-    v6 = &Handles; /*0x785f5b*/
+    v6 = (HANDLE *)(&Handles); /*0x785f5b*/
     do /*0x785f6e*/
       ResetEvent(*v6++); /*0x785f63*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x785f6e*/

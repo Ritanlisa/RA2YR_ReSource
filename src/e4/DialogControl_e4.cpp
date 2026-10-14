@@ -25,7 +25,7 @@ namespace gamemd {
 int DialogControl::DialogControl::Show(void *a1, void *a2)
 {
   (this->u8_2) = 1; /*0x4e1462*/
-  (this->Image) = 1; /*0x4e1465*/
+  (this->Image) = (void *)(1); /*0x4e1465*/
   return ();
 }
 } // namespace gamemd
@@ -42,7 +42,7 @@ unsigned int * DialogControl::Constructor()
   this->u32_64 = g_FogOfWarState; /*0x62335d*/
   v2 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
-    v3 = unknown_libname_74(v2); /*0x623370*/
+    v3 = (unsigned int *)(unknown_libname_74(v2)); /*0x623370*/
   else
     v3 = 0; /*0x623377*/
   this->u32_3C = v3; /*0x623379*/

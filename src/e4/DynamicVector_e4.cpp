@@ -35,7 +35,7 @@ LABEL_8:
     *(unsigned int *)aP1->CapacityIncrement = a2_1[5]; /*0x5ac4aa*/
     return aP1->vtable1; /*0x5ac4ad*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
+  v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x5ac453*/
   *&aP1->Items = v4; /*0x5ac45b*/
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
@@ -77,7 +77,7 @@ char DynamicVector::AddItem(unsigned int *aP1)
         (unsigned char)result) )
   {
     result = (int)this->Count; /*0x413aa5*/
-    v5 = *&this->Items; /*0x413aa8*/
+    v5 = (int)(*&this->Items); /*0x413aa8*/
     this->Count = &result->AbstractClass_1; /*0x413aae*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x413ab8*/
     LOBYTE(result) = 1; /*0x413abb*/
@@ -99,7 +99,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 
   *&aP1->vtable2 = 0; /*0x42f67a*/
   aP1->vtable3 = aP2; /*0x42f681*/
-  aP1->vtable4 = 1; /*0x42f684*/
+  aP1->vtable4 = (void *)(1); /*0x42f684*/
   aP1->u32_D = 0; /*0x42f688*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x42f68c) */
   if ( aP2 ) /*0x42f692*/
@@ -113,20 +113,20 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       v4 = operator new(4 * aP2); /*0x42f6ae*/
       if ( !v4 ) /*0x42f6b8*/
         v4 = 0; /*0x42f6c1*/
-      *&aP1->vtable2 = v4; /*0x42f6c3*/
+      *&aP1->vtable2 = (void *)(v4); /*0x42f6c3*/
       aP1->u32_D = 1; /*0x42f6c6*/
     }
   }
   /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x42f6ca) */
   *(unsigned int *)aP1->abstractFlags = 10; /*0x42f6d0*/
   aP1->uniqueId = 0; /*0x42f6d7*/
-  return aP1->vtable1; /*0x42f6e0*/
+  return (unsigned int *)(aP1->vtable1); /*0x42f6e0*/
 }
 } // namespace gamemd
 
 // 0x45ADD0
 namespace gamemd {
-char DynamicVector::RemoveItem(int aP1)
+char DynamicVector::RemoveItem(int aP1, void *a2)
 {
 
   char *DynamicVector_field_0x10; // edx
@@ -162,7 +162,7 @@ char DynamicVector::RemoveItem(int aP1)
 
 // 0x477EC0
 namespace gamemd {
-char DynamicVector::Add_Alt(unsigned int *aP1)
+char DynamicVector::Add_Alt(unsigned int *aP1, void *a2)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -181,7 +181,7 @@ char DynamicVector::Add_Alt(unsigned int *aP1)
         (unsigned char)result) )
   {
     result = (int)this->Count; /*0x477ef5*/
-    v5 = *&this->Items; /*0x477ef8*/
+    v5 = (int)(*&this->Items); /*0x477ef8*/
     this->Count = &result->AbstractClass_1; /*0x477efe*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x477f08*/
     LOBYTE(result) = 1; /*0x477f0b*/
@@ -226,7 +226,7 @@ int DynamicVector::GetOrGrow(int aP1)
 
 // 0x5253B0
 namespace gamemd {
-char DynamicVector::Add_Alt4(unsigned int *aP1)
+char DynamicVector::Add_Alt4(unsigned int *aP1, void *a2)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -245,7 +245,7 @@ char DynamicVector::Add_Alt4(unsigned int *aP1)
         (unsigned char)result) )
   {
     result = (int)this->Count; /*0x5253e5*/
-    v5 = *&this->Items; /*0x5253e8*/
+    v5 = (int)(*&this->Items); /*0x5253e8*/
     this->Count = &result->AbstractClass_1; /*0x5253ee*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5253f8*/
     LOBYTE(result) = 1; /*0x5253fb*/
@@ -285,9 +285,9 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     }
   }
   DynamicVector_field_0x10 = this->Count; /*0x5387b5*/
-  v7 = *&this->Items; /*0x5387b8*/
+  v7 = (int)(*&this->Items); /*0x5387b8*/
   this->Count = &DynamicVector_field_0x10->AbstractClass_1; /*0x5387be*/
-  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *aP1; /*0x5387c8*/
+  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = (unsigned int)(*aP1); /*0x5387c8*/
   return 1; /*0x5387b1*/
 
 }
@@ -314,9 +314,9 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
         (unsigned char)result) )
   {
     result = (int)this->Count; /*0x5ad805*/
-    v5 = *&this->Items; /*0x5ad808*/
+    v5 = (int)(*&this->Items); /*0x5ad808*/
     this->Count = &result->AbstractClass_1; /*0x5ad80e*/
-    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5ad818*/
+    *(unsigned int *)(v5 + 4 * result) = (unsigned int)(*aP1); /*0x5ad818*/
     LOBYTE(result) = 1; /*0x5ad81b*/
   }
   else
@@ -350,9 +350,9 @@ char DynamicVector::GrowCapacity()
   v7 = (int)v5; /*0x624854*/
   DynamicVector_field_0x8 = (const void *)this->Capacity; /*0x62485a*/
   if ( DynamicVector_field_0x8 ) /*0x62485f*/
-    qmemcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->vtable1); /*0x624870*/
+    memcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->vtable1); /*0x624870*/
   __3_YAXPAX_Z((void *)this->Capacity); /*0x62487d*/
-  *&this->Items = v4; /*0x624889*/
+  *&this->Items = (void *)(v4); /*0x624889*/
   this->Capacity = v7; /*0x62488c*/
   return 1; /*0x62481f*/
 
@@ -361,14 +361,14 @@ char DynamicVector::GrowCapacity()
 
 // 0x67A520
 namespace gamemd {
-int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1)
+int DynamicVector::Read(TechnoTypeClass * aP1, void *a2_1, void *a3)
 {
   int v3; // ecx
   int result; // eax
   int i; // esi
   void *DynamicVector_field_0x10; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *a2_1; /*0x67a52c*/
+  v3 = (int)(*a2_1); /*0x67a52c*/
   DynamicVector_field_0x10 = aP1->uniqueId; /*0x67a539*/
   (*(void (__stdcall **)(int *, void **, int, unsigned int))(v3 + 16))(a2_1, &DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
   result = (int)DynamicVector_field_0x10; /*0x67a540*/
@@ -395,7 +395,7 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
   int i; // esi
   void *DynamicVector_field_0x10; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a6ec*/
+  v3 = (int)(*aP1); /*0x67a6ec*/
   DynamicVector_field_0x10 = this->Count; /*0x67a6f9*/
   (*(void (**)(int *, void **, int, unsigned int))(v3 + 16))(aP1, &DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
   result = (int)DynamicVector_field_0x10; /*0x67a700*/
@@ -424,7 +424,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   {
     if ( a3 ) /*0x67ac99*/
     {
-      *&this->Items = a3; /*0x67ac9b*/
+      *&this->Items = (void *)(a3); /*0x67ac9b*/
     }
     else
     {
@@ -435,14 +435,14 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   *(unsigned int *)this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
-  return this->vtable1; /*0x67acc9*/
+  return (unsigned int *)(this->vtable1); /*0x67acc9*/
 
 }
 } // namespace gamemd
 
 // 0x67AD80
 namespace gamemd {
-char DynamicVector::Add2(unsigned int *aP1)
+char DynamicVector::Add2(unsigned int *aP1, void *a2, void *a3, void *a4)
 {
 
   int DynamicVector_field_0x8; // ecx
@@ -461,7 +461,7 @@ char DynamicVector::Add2(unsigned int *aP1)
         (unsigned char)result) )
   {
     result = (int)this->Count; /*0x67adb5*/
-    v5 = *&this->Items; /*0x67adb8*/
+    v5 = (int)(*&this->Items); /*0x67adb8*/
     this->Count = &result->AbstractClass_1; /*0x67adbe*/
     *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x67adc8*/
     LOBYTE(result) = 1; /*0x67adcb*/
@@ -484,7 +484,7 @@ char DynamicVector::RemoveAt(int a2, void *a2_2)
   char *v4; // edx
 
   DynamicVector_field_0x10 = (char *)a2_2->DynamicVector_field_0x10; /*0x67c360*/
-  v3 = a2_2; /*0x67c363*/
+  v3 = (int)(a2_2); /*0x67c363*/
   if ( a2_2 >= (int)DynamicVector_field_0x10 ) /*0x67c369*/
     return 0; /*0x67c38c*/
   v4 = DynamicVector_field_0x10 - 1; /*0x67c36b*/
@@ -569,7 +569,7 @@ char DynamicVector::Add(DynamicVector * aP1, void *a2_1, void *a3_1)
 
 // 0x7342D0
 namespace gamemd {
-unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
+unsigned int * DynamicVector::Constructor_Techno(int a2, int a3, void *a3_1)
 {
 
   *&this->Items = 0; /*0x7342d9*/
@@ -621,7 +621,7 @@ char DynamicVector::EnsureCapacity()
     memset(v4, 0, 4 * ((unsigned int)(4 * v3) >> 2)); /*0x7af04a*/
     if ( this->Capacity ) /*0x7af053*/
     {
-      qmemcpy(v4, (const void *)this->Capacity, 4 * *(unsigned int *)this->vtable1); /*0x7af068*/
+      memcpy(v4, (const void *)this->Capacity, 4 * *(unsigned int *)this->vtable1); /*0x7af068*/
       v3 = v5; /*0x7af071*/
     }
     __3_YAXPAX_Z((void *)this->Capacity); /*0x7af079*/

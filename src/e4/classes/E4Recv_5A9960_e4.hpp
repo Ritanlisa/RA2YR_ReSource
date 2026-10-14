@@ -11,6 +11,6 @@ struct E4Recv_5A9960 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
-    ObjectClass *  sub_5A9960(unsigned int * a2);  // 0x5A9960
+    ObjectClass * sub_5A9960(unsigned int * a1);  // 0x5A9960
 };
 } // namespace gamemd

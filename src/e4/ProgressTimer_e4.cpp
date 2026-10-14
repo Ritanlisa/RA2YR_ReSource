@@ -9,7 +9,7 @@
 
 // 0x4C93D0
 namespace gamemd {  // G42.18 ns repair
-void* ProgressTimer::GetValue(void *aP1)
+void* ProgressTimer::GetValue(void *aP1, void *a2)
 {
 
   __int16 ProgressTimer_field_0x14; // bx
@@ -26,7 +26,7 @@ void* ProgressTimer::GetValue(void *aP1)
   ProgressTimer_field_0x14 = (__int16)this->q014; /*0x4c93d2*/
   if ( ProgressTimer_field_0x14 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
-  ProgressTimer_field_0x8 = this->q008; /*0x4c93dd*/
+  ProgressTimer_field_0x8 = (void *)(this->q008); /*0x4c93dd*/
   ProgressTimer_field_0x10 = (char *)this->q010; /*0x4c93e0*/
   if ( ProgressTimer_field_0x8 != (void *)-1 ) /*0x4c93ec*/
   {
@@ -43,11 +43,11 @@ void* ProgressTimer::GetValue(void *aP1)
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/
     {
 LABEL_12:
-      *aP1 = v12; /*0x4c9445*/
+      *aP1 = (void *)(v12); /*0x4c9445*/
       return aP1; /*0x4c9453*/
     }
-    v8 = this->q010; /*0x4c941e*/
-    v9 = this->q008; /*0x4c9421*/
+    v8 = (void *)(this->q010); /*0x4c941e*/
+    v9 = (void *)(this->q008); /*0x4c9421*/
     if ( v9 != (void *)-1 ) /*0x4c9427*/
     {
       if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)v9 >= (int)v8 ) /*0x4c942f*/
@@ -63,7 +63,7 @@ LABEL_11:
     goto LABEL_12; /*0x4c9440*/
   }
 LABEL_14:
-  *aP1 = *(unsigned int *)this->__pad_000; /*0x4c945a*/
+  *aP1 = (void *)(*(unsigned int *)this->__pad_000); /*0x4c945a*/
   return aP1; /*0x4c944d*/
 
 }

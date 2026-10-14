@@ -160,9 +160,9 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     if ( v4 > this->ptr_118 ) /*0x40304e*/
       ++this->M1392; /*0x403057*/
     if ( v4 > this->ptr_140 ) /*0x403071*/
-      this->ptr_140 = v4; /*0x403073*/
-    this->ptr_138 = v3; /*0x40307f*/
-    p_bombVisible = &this->u32_68; /*0x40308b*/
+      this->ptr_140 = (ra2::game::AbstractClass *)(v4); /*0x403073*/
+    this->ptr_138 = (LineTrail *)(v3); /*0x40307f*/
+    p_bombVisible = (char *)(&this->u32_68); /*0x40308b*/
     Audio::InitChannels(&this->bombVisible); /*0x403094*/
     v6 = (char *)this->u32_E8; /*0x403099*/
     if ( v6 ) /*0x4030a1*/
@@ -192,7 +192,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
         v8 = vtable0; /*0x403179*/
       }
       while ( vtable0 != &this->u32_F8 ); /*0x40317d*/
-      p_bombVisible = &this->bombVisible; /*0x403183*/
+      p_bombVisible = (char *)(&this->bombVisible); /*0x403183*/
     }
     v14 = (ObjectClass *)this->u32_E8; /*0x403187*/
     if ( v14 ) /*0x40318f*/
@@ -260,7 +260,7 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
       {
         v9 = aStd; /*0x403bd0*/
         if ( v8 != 1 ) /*0x403bd5*/
-          v9 = asc_815F24; /*0x403bd7*/
+          v9 = (const char *)(asc_815F24); /*0x403bd7*/
       }
       else
       {
@@ -877,20 +877,20 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     v23 = *(unsigned int *)v4; /*0x415c98*/
     v24 = *(unsigned int *)(v4 + 4); /*0x415c9f*/
     v5 = *(unsigned int *)(v4 + 8); /*0x415ca3*/
-      IDA_LOBYTE(v4) = this->u32_BF0;
+      (*((unsigned char *)&(v4))) = this->u32_BF0;
     v25 = v5; /*0x415cae*/
     if ( (v4 & 1) != 0 ) /*0x415cb2*/
       v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)ProgressTimer::GetValue(&this->u16_388, &v20) - 0x3FFF) & 0xFFFFu); /*0x415ccc*/
     else
       v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)ProgressTimer::GetValue(&this->u16_388, &v20) + 0x3FFF) & 0xFFFFu); /*0x415cee*/
     v25 = v25; /*0x415d00*/
-    v20 = IDA_SLOWORD(v20) - 0x3FFF; /*0x415d04*/
+    v20 = (*((signed short *)&(v20))) - 0x3FFF; /*0x415d04*/
     v21 = (double)((int)(v20)) * -0.00009587672516830327; /*0x415d13*/
     v7 = (unsigned int)((v21) >> 32); /*0x415d1b*/
     v20 = (double)v24; /*0x415d25*/
     v8 = Math::SinCos(v21); /*0x415d29*/
     v20 = Math::RoundToInt(v20 - v8 * 128.0); /*0x415d3d*/
-    v9 = Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v7, IDA_LODWORD(v21)))); /*0x415d47*/
+    v9 = Math::ArcTan2(COERCE_DOUBLE((((unsigned long)(unsigned int)((*((unsigned int *)&(v21))))) | ((unsigned long)(unsigned int)(v7) << 32)))); /*0x415d47*/
     v10 = Math::RoundToInt(v9 * 128.0 + (double)v23); /*0x415d59*/
     v24 = ((unsigned int)(v20)); /*0x415d66*/
     v23 = v10; /*0x415d70*/
@@ -1561,7 +1561,7 @@ char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3)
         v15 = *(unsigned int *)(v4 + 4 * v9) & 7; /*0x42b39b*/
         v16 = (unsigned short)((g_DDrawSurfaceManager.scenario[v15 + 82]) >> 16); /*0x42b39e*/
         (v25) = ((v25) & ~0xFFFF) | ((unsigned int)((unsigned short)(g_DDrawSurfaceManager.scenario[v15 + 82]) + (unsigned short)v20) & 0xFFFF); /*0x42b3ba*/
-        (v25) = ((v25) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)(IDA_HIWORD(v20) + v16) & 0xFFFF) << 16); /*0x42b3bf*/
+        (v25) = ((v25) & ~(0xFFFFULL << 16)) | (((uint64_t)(unsigned int)((*(((unsigned short *)&(v20)) + 1)) + v16) & 0xFFFF) << 16); /*0x42b3bf*/
         *(unsigned int *)v18 = v25; /*0x42b3c8*/
         v7 = *(unsigned int *)(v4 + 4 * v9); /*0x42b3cc*/
   LABEL_24:
@@ -1754,8 +1754,8 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
             {
               v58[0] = v60; /*0x42ba32*/
               sub_42BCA0((int)v36, v8, v42, &v43, v58); /*0x42ba39*/
-              IDA_LOWORD(v48) = v21 - ((unsigned int)(v58[0]) & 0xFFFF); /*0x42ba55*/
-              IDA_HIWORD(v48) = (((unsigned int)(v60) >> 16) & 0xFFFF) - (((unsigned int)(v58[0]) >> 16) & 0xFFFF); /*0x42ba5a*/
+              (*((unsigned short *)&(v48))) = v21 - ((unsigned int)(v58[0]) & 0xFFFF); /*0x42ba55*/
+              (*(((unsigned short *)&(v48)) + 1)) = (((unsigned int)(v60) >> 16) & 0xFFFF) - (((unsigned int)(v58[0]) >> 16) & 0xFFFF); /*0x42ba5a*/
               v56 = v48; /*0x42ba67*/
               WalkLineOfSight( /*0x42ba96*/
                 (char *)&v36[v43],
@@ -2059,7 +2059,7 @@ char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6)
       if ( v7 ) /*0x430309*/
       {
         v8 = v23->vtable4; /*0x43030f*/
-        qmemcpy(Str, (const void *)(v23 + 14), sizeof(Str)); /*0x43031e*/
+        memcpy(Str, (const void *)(v23 + 14), sizeof(Str)); /*0x43031e*/
         if ( (v8 & 2) == 0 ) /*0x430320*/
           goto LABEL_11; /*0x430320*/
         if ( g_abs_A8BC79 ) /*0x430329*/
@@ -3639,7 +3639,7 @@ int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3)
             v9 = *(uint16_t *)(v8->q174 + 2 * v7); /*0x47be4d*/
           if ( !v9 ) /*0x47be53*/
           {
-            qmemcpy(v19, &v4->Type->BarrelVoxel, 0x19u); /*0x47be6d*/
+            memcpy(v19, &v4->Type->BarrelVoxel, 0x19u); /*0x47be6d*/
             Debug::Log(); /*0x47be70*/
           }
           return v9 | (v9 << 16); /*0x47be86*/
@@ -4450,7 +4450,7 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2)
             && !(*(uint8_t (**)(int))(v5->infantryOwnerIndex)(v5)
             && v5->CellClass_field_6C > 0 )
           {
-            v6 = (IDA_SLOWORD(v23->occupant) << 8) + 128; /*0x4c556a*/
+            v6 = ((*((signed short *)&(v23->occupant))) << 8) + 128; /*0x4c556a*/
             v7 = ((short)((v23->occupant) >> 16) << 8) + 128; /*0x4c5570*/
             v8 = (unsigned int *)(*(int (**)(int, unsigned char *))(v5->q048)(v5, v38); /*0x4c5576*/
             v9 = Coord::Subtract((Coord *)v39, *v8 - v6, v8[1] - v7, v8[2]); /*0x4c558c*/
@@ -4482,7 +4482,7 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2)
               if ( (uint8_t)Cell::Exists((Cell *)&DataGlobal_87F7E8, v30) ) /*0x4c5654*/
               {
                 v13 = v30[1] - (short)((v23->occupant) >> 16); /*0x4c5677*/
-                v14 = v30[0] - IDA_SLOWORD(v23->occupant); /*0x4c567c*/
+                v14 = v30[0] - (*((signed short *)&(v23->occupant))); /*0x4c567c*/
                 if ( v14 * v14 + v13 * v13 <= v34 ) /*0x4c5689*/
                 {
                   v15 = (Cell *)CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, v30); /*0x4c569e*/
@@ -4582,9 +4582,9 @@ char* ObjectClass::TerrainInitMap(char * Destination, RandomStruct * aP1, ::IUnk
     v4 = (char *)new unsigned char[4u]; /*0x4cb780*/
     v5 = *((uint16_t *)Destination + 3); /*0x4cb791*/
     *((unsigned int *)Destination + 2) = v4; /*0x4cb793*/
-    qmemcpy(v4, &a3, 4 * (v5 >> 2)); /*0x4cb799*/
+    memcpy(v4, &a3, 4 * (v5 >> 2)); /*0x4cb799*/
     v6 = &v4[4 * (v5 >> 2)]; /*0x4cb799*/
-    qmemcpy(v6, &a3 + 4 * (v5 >> 2), v5 & 3); /*0x4cb7a5*/
+    memcpy(v6, &a3 + 4 * (v5 >> 2), v5 & 3); /*0x4cb7a5*/
     *((unsigned int *)Destination + 3) = 0; /*0x4cb7a8*/
     return Destination; /*0x4cb7a7*/
 }
@@ -4609,9 +4609,9 @@ char* ObjectClass::BuildResultPacket(char * Destination, char * Source, ::IUnkno
     *((unsigned int *)Destination + 2) = v5; /*0x4cb800*/
     v7 = v6; /*0x4cb803*/
     v8 = v6 >> 2; /*0x4cb808*/
-    qmemcpy(v5, a3, 4 * v8); /*0x4cb80b*/
+    memcpy(v5, a3, 4 * v8); /*0x4cb80b*/
     v9 = &v5[4 * v8]; /*0x4cb80b*/
-    qmemcpy(v9, &a3[4 * v8], v7 & 3); /*0x4cb814*/
+    memcpy(v9, &a3[4 * v8], v7 & 3); /*0x4cb814*/
     *((unsigned int *)Destination + 3) = 0; /*0x4cb817*/
     return Destination; /*0x4cb816*/
 }
@@ -17610,7 +17610,7 @@ int Gap2Recv_63C690::RenderScenarioActionLines() {
   if ( uniqueId > 0 ) /*0x63c6e0*/
   {
     v5 = *(unsigned char **)(*(unsigned int *)this->vtable1 + 4); /*0x63c6f3*/
-    qmemcpy(v51, v5, 0x6Cu); /*0x63c6f6*/
+    memcpy(v51, v5, 0x6Cu); /*0x63c6f6*/
     v5 += 108; /*0x63c6f6*/
     v51[54] = *(unsigned short *)v5; /*0x63c6f8*/
     LOBYTE(v51[55]) = v5[2]; /*0x63c6fa*/
@@ -17669,7 +17669,7 @@ LABEL_16:
         v9 = -1; /*0x63c823*/
         if ( v40 ) /*0x63c828*/
         {
-          qmemcpy(v51, v40, 0x6Fu); /*0x63c836*/
+          memcpy(v51, v40, 0x6Fu); /*0x63c836*/
           v14 = Render_Render_63CA80(v46, v51, v13); /*0x63c84a*/
           v39[0] = *v14; /*0x63c851*/
           v39[1] = v14[1]; /*0x63c858*/
@@ -17801,7 +17801,7 @@ int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
   if ( uniqueId > 0 ) /*0x63cb30*/
   {
     v6 = *(unsigned char **)(*(unsigned int *)this->vtable1 + 4); /*0x63cb40*/
-    qmemcpy(v48, v6, 0x6Cu); /*0x63cb43*/
+    memcpy(v48, v6, 0x6Cu); /*0x63cb43*/
     v6 += 108; /*0x63cb43*/
     v48[54] = *(unsigned short *)v6; /*0x63cb45*/
     LOBYTE(v48[55]) = v6[2]; /*0x63cb47*/
@@ -17864,7 +17864,7 @@ LABEL_17:
         v17 = -1; /*0x63cc6d*/
         if ( v13 ) /*0x63cc72*/
         {
-          qmemcpy(v48, v13, 0x6Fu); /*0x63cc80*/
+          memcpy(v48, v13, 0x6Fu); /*0x63cc80*/
           v18 = Render_Render_63CA80(v46, v48, v16); /*0x63cc8d*/
           v40 = *v18; /*0x63cc94*/
           v41 = v18[1]; /*0x63cc9f*/
@@ -27834,7 +27834,7 @@ int ObjectClass::QueueTechnoVoiceLine( TechnoClass * aP1, TechnoClass * aP2, Tec
   {
 LABEL_21:
     result = (int)RenderTechnoOverlaySHP(this, v39, (int)aP1, aP7, aP6, (unsigned int *)aP5, aP2, 8193, v14 != -1, aP9, aP10, aP11); /*0x706ced*/
-    qmemcpy(v38, (const void *)result, sizeof(v38)); /*0x706d3a*/
+    memcpy(v38, (const void *)result, sizeof(v38)); /*0x706d3a*/
     if ( v14 == -1 ) /*0x706d3c*/
       return result; /*0x706d3c*/
     v22 = Miles::DriverGet(); /*0x706d47*/
@@ -30945,7 +30945,7 @@ char Gap2Recv_750060::Team_Create_750060(char a2) {
 }
 // 0x750440
 namespace gamemd { 
-char VocClass::LoadFromINI(CCINIClass * aP1) {
+char VocClass::LoadFromINI(CCINIClass * aP1, void *a2) {
   double v2; // st7
   uint8_t *SampleName; // eax
   char *v5; // eax

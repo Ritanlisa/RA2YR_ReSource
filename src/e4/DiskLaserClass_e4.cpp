@@ -41,7 +41,7 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
   Block->__pad_004 = (int)&vt_DiskLaserClass; /*0x4a7ca3*/
   Block->u32_8 = (int)&vt_DiskLaserClass; /*0x4a7caa*/
   Block->u32_C = (int)&vt_DiskLaserClass; /*0x4a7cb1*/
-  v5 = Block; /*0x4a7cbf*/
+  v5 = (gamemd::DiskLaserClass *)(Block); /*0x4a7cbf*/
   v3 = (*(int (**)(int *, DiskLaserClass **))(dword_8A0208 + 16))(&dword_8A0208, &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < dword_8A0218 && v3 < --dword_8A0218 ) /*0x4a7cde*/
   {

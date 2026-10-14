@@ -588,7 +588,7 @@ int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
 
 // 0x4B4780
 namespace gamemd {
-unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3)
+unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3, void *a4)
 {
 
   int v4; // eax
@@ -621,7 +621,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
   *aP3 = v4; /*0x4b47df*/
   JumpjetLocomotion_field_0x40 = (char *)this->q040; /*0x4b47e2*/
   JumpjetLocomotion_field_0x44 = (char *)this->q044; /*0x4b47e5*/
-  *aP1 = &JumpjetLocomotion_field_0x40[v6]; /*0x4b47f2*/
+  *aP1 = (unsigned int)(&JumpjetLocomotion_field_0x40[v6]); /*0x4b47f2*/
   aP1->vtable2 = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/
   return aP1; /*0x4b47f0*/
 
@@ -833,7 +833,7 @@ void* JumpjetLocomotion::Land()
   v54 = *v23; /*0x54cdd3*/
   v55 = v23[1]; /*0x54cddf*/
   v56 = v23[2]; /*0x54cde6*/
-  v24 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v54); /*0x54cdf4*/
+  v24 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v54)); /*0x54cdf4*/
   landType = v24->landType; /*0x54cdf6*/
   if ( landType != 2 || (v48 = 1, v45) ) /*0x54ce0c*/
     v48 = 0; /*0x54ce0e*/
@@ -950,7 +950,7 @@ LABEL_74:
       *(unsigned int *)(v40 + 1068) = 0; /*0x54d0a7*/
     }
   }
-  return v40; /*0x54d0ad*/
+  return (void *)(v40); /*0x54d0ad*/
 
 }
 } // namespace gamemd
@@ -1249,10 +1249,10 @@ LABEL_50:
     }
   }
   if ( v55 ) /*0x54d69d*/
-    return (*(int (**)(unsigned int, int))(**(unsigned int **)this->u32_C + 292))(*(unsigned int *)this->u32_C, 1); /*0x54d6a6*/
+    return (void *)((*(int (**)(unsigned int, int))(**(unsigned int **)this->u32_C + 292))(*(unsigned int *)this->u32_C, 1)); /*0x54d6a6*/
   result = *(unsigned int *)this->u32_C; /*0x54d6b4*/
   *(unsigned char *)(result + 116) = v58; /*0x54d6bd*/
-  return result; /*0x54d6ac*/
+  return (void *)(result); /*0x54d6ac*/
 
 }
 }

@@ -9,7 +9,7 @@
 
 // 0x4A35A0
 namespace gamemd {  // G42.18 ns repair
-int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4)
+int ColorStruct::SetRGB(uint8_t a2, uint8_t a3, uint8_t a4, void *a4_1)
 {
 
   void *v4; // eax

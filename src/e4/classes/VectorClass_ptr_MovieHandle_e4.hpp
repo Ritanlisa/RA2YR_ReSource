@@ -16,7 +16,7 @@ struct VectorClass_ptr_MovieHandle {
     unsigned char IsAllocated;  // 0xD
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Get(void *a1_1, void *a1 = 0);  // 0x75A430
+    int Get(int a2, void *a2_2);  // 0x75A430
     char  Constructor_VectorClass_MovieHandle___(int a2);  // 0x75A490
 };
 } // namespace gamemd

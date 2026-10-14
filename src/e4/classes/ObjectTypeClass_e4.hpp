@@ -111,11 +111,11 @@ struct ObjectTypeClass {
     char ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4);
     char ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3);
     int ConstructFull(char *aP1);
-    int CreateInstance(int aP1, int aP2, void *a1 = 0);
+    int CreateInstance(int aP1, int aP2, void *a3 = 0);
     int DeserializeArrays();
     int FindByName(void *a1 = 0);
     int FreeLoaderBuffer();
-    static int LoadCleanup(ObjectTypeClass *aP1, int a2);  // G57w10-S raw 0x005F9720 IUnknown 占位清除
+    int LoadCleanup(ObjectTypeClass *aP0, int aP1);  // G57w10-S raw 0x005F9720 IUnknown 占位清除
     static int LoadExtras(CCINIClass * aP0, void * _38C, unsigned char *** a2);  // G57w11: double→void*（__userpurge st0 伪影；raw 调用侧 0x41cc3b/0x5240c4 传 ini 指针）
     int ReadBool3(INIClass * aP1, unsigned char * a2, void * a4);
     int ReadDestroyAnim();
@@ -141,7 +141,7 @@ struct ObjectTypeClass {
     int loadTypeMember_5717AD0();
     unsigned char ** ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5);
     unsigned int * CheckFlag(int aP1);
-    BulletTypeClass * Construct(int aP1, void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    BulletTypeClass * Construct(int aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0, void *a9 = 0);
     unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
@@ -150,7 +150,7 @@ struct ObjectTypeClass {
     void ReleaseWaveAndString(void *a1);
     int SetRTTI71(void *a1 = 0);
     void UnloadPipsSHP();
-    void* LoadFromINI(uint8_t ***aP1, void *a1 = 0);
+    void* LoadFromINI(uint8_t ***aP1, void *a2 = 0);
     ObjectTypeClass * Destru_vt08(void * Block, char a2);
     int VoxelCaches[20];  // 0x244 (ml)
     unsigned int q0400;  // 0x400 (offset-truth)

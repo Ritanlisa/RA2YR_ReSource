@@ -84,16 +84,16 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
     v4 = (unsigned int *)(v3); /*0x420178*/
     if ( v3 ) /*0x42017f*/
     {
-      v3[0x8000] = (unsigned short *)(aP0);
-      v5 = (unsigned int)(0); /*0x420187*/
+      v3[0x8000] = (unsigned int)((unsigned short *)(aP0));
+      v5 = (gamemd::CCINIClass *)((unsigned int)(0)); /*0x420187*/
       v3[32769] = 0; /*0x420189*/
-      v6 = aP0 - 1; /*0x420193*/
-      v7 = (int)(v3); /*0x420194*/
+      v6 = (int)(aP0 - 1); /*0x420193*/
+      v7 = (gamemd::CCINIClass *)((int)(v3)); /*0x420194*/
       do /*0x4201d3*/
       {
         v8 = (unsigned char)(v6 * (v5 >> 8) * (uint8_t)v5 / 32258);
         if ( v8 > v6 ) /*0x4201be*/
-          (*((unsigned char *)&(v8))) = aP0 - 1; /*0x4201c0*/
+          (*((unsigned char *)&(v8))) = (unsigned char)(aP0 - 1); /*0x4201c0*/
         (*((unsigned char *)&(v9))) = (unsigned char)(0); /*0x4201c2*/
         ++v5; /*0x4201c4*/
         (*(((unsigned char *)&(v9)) + (sizeof(v9) - 1))) = v8; /*0x4201c5*/
@@ -114,7 +114,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
            0) )
     {
       v11 = (unsigned int)(dword_88A090++);
-      *((unsigned int *)dword_88A084 + v11) = v4; /*0x42024c*/
+      *((unsigned int *)dword_88A084 + v11) = (unsigned int)(v4); /*0x42024c*/
     }
     ++v4[32769]; /*0x420258*/
     return v4; /*0x42025e*/
@@ -230,7 +230,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v6 = v51 - (unsigned int)g_TacticalClass_Instance[45].__tail_0; /*0x420fb6*/
         v50 = DSurface_ViewBounds + v50 - (unsigned int)g_TacticalClass_Instance[44].__tail_0; /*0x420fca*/
         v51 = dword_886FA4 + v6; /*0x420fd2*/
-        v7 = ClipRectIntersection(v70, (int *)&v50, v54, 0, 0); /*0x420fe2*/
+        v7 = (int *)(ClipRectIntersection(v70, (int *)&v50, v54, 0, 0)); /*0x420fe2*/
         v68[0] = *v7; /*0x420fe9*/
         v68[1] = v7->vtable2; /*0x420ff7*/
         v68[2] = v7->vtable3; /*0x421001*/
@@ -242,7 +242,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v62 = v10; /*0x42102e*/
         v64 = 60; /*0x421032*/
         v65 = 30; /*0x42103d*/
-        v11 = ClipRectIntersection(v71, v68, &v62, 0, 0); /*0x42104d*/
+        v11 = (int *)(ClipRectIntersection(v71, v68, &v62, 0, 0)); /*0x42104d*/
         v12 = *v11; /*0x42104f*/
         v55 = *v11; /*0x421051*/
         v13 = v11->vtable2; /*0x421055*/
@@ -258,7 +258,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v18 = *((unsigned int *)dword_88A0F4 + v4); /*0x421099*/
           v58 = v51; /*0x42109c*/
           v61 = *(char ***)(v18 + 56); /*0x4210ad*/
-          FoundationSize = Building::GetFoundationSize(v72, 0); /*0x4210b6*/
+          FoundationSize = (int *)(Building::GetFoundationSize(v72, 0)); /*0x4210b6*/
           v41 = v13; /*0x4210b8*/
           v20 = *FoundationSize; /*0x4210bc*/
           v66 = FoundationSize->vtable2; /*0x4210c1*/
@@ -290,7 +290,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
           v25 = (unsigned short *)StreamClass::ReadAndSeek((int)dword_87E8A4, v40, v41 - dword_886FA4); /*0x4211d3*/
-          v26 = dword_87E8A4; /*0x4211d8*/
+          v26 = (unsigned int *)(dword_87E8A4); /*0x4211d8*/
           v27 = (uint8_t *)(v22 + v60 * v21 + SubFile); /*0x4211ed*/
           if ( (unsigned int)&v25[(v37 - v41) * *((unsigned int *)dword_87E8A4 + 10) + 2 + v42 + 0x7FFFFFFF * v40] < *((unsigned int *)dword_87E8A4 + 7) ) /*0x421211*/
           {
@@ -341,7 +341,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
                   if ( v32 != 32 ) /*0x42124d*/
                   {
                     *v25 = (uint8_t)byte_88A118[256 * v45 + (uint16_t)*v25]; /*0x42126a*/
-                    v26 = dword_87E8A4; /*0x42126d*/
+                    v26 = (unsigned int *)(dword_87E8A4); /*0x42126d*/
                   }
                   if ( (unsigned int)++v25 >= v26->u32_1C ) /*0x42127b*/
                     v25 = (unsigned short *)((char *)v25 - v26->u32_20); /*0x42127d*/
@@ -369,7 +369,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
       v3 = v59; /*0x420f69*/
     }
   }
-  return result; /*0x42133e*/
+  return (gamemd::AbstractClass **)(result); /*0x42133e*/
 }
 }
 // 0x421B60
@@ -390,7 +390,7 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
   int v16; // [esp+20h] [ebp-8h]
   int v17; // [esp+24h] [ebp-4h]
 
-  result = (int)(aP0);
+  result = (unsigned int *)((int)(aP0));
   v6 = (unsigned int *)(*aP2); /*0x421b6f*/
   v7 = (int)(aP2[1]); /*0x421b71*/
   v16 = (int)(aP2[2]); /*0x421b77*/
@@ -398,19 +398,19 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
   v8 = (int)(aP1[2]); /*0x421b82*/
   if ( v8 <= 0 ) /*0x421b87*/
     goto LABEL_23; /*0x421b87*/
-  v15 = aP1[3]; /*0x421b92*/
+  v15 = (int)(aP1[3]); /*0x421b92*/
   if ( v15 <= 0 || aP2[2] <= 0 || aP2[3] <= 0 ) /*0x421bac*/
     goto LABEL_23; /*0x421bac*/
-  v9 = *aP1; /*0x421bb2*/
+  v9 = (int)(*aP1); /*0x421bb2*/
   if ( v6 < *aP1 ) /*0x421bb6*/
   {
     v10 = (int)(v6 - v9 + v16);
-    v6 = *aP1; /*0x421bc0*/
+    v6 = (int)(*aP1); /*0x421bc0*/
     v16 = (int)(v10); /*0x421bc2*/
   }
   if ( v16 < 1 ) /*0x421bcb*/
     goto LABEL_23; /*0x421bcb*/
-  v11 = aP1[1]; /*0x421bd1*/
+  v11 = (int)(aP1[1]); /*0x421bd1*/
   if ( v7 < v11 ) /*0x421bda*/
   {
     v12 = v7 - v11 + v17; /*0x421be2*/
@@ -493,7 +493,7 @@ void * ObjectClass::ProductionCompletionCallback(TechnoClass *self)
     if ( (unsigned char)v3 ) /*0x424d7b*/
     {
       v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))(this->vtable0 + 72))(this, v21); /*0x424d8a*/
-      v5 = Coord::To_Cell((Coord *)&dword_87F7E8, v4); /*0x424d98*/
+      v5 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&dword_87F7E8, v4)); /*0x424d98*/
       v3 = BuildingClass::FindByCellHash((BuildingClass *)v5); /*0x424d9c*/
       if ( v3 != -1 ) /*0x424da4*/
       {

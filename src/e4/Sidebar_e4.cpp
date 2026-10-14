@@ -120,7 +120,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     {
   LABEL_40:
       Debug::Log(); /*0x4fa533*/
-      return 3; /*0x4fa550*/
+      return (gamemd::AbstractClass **)(3); /*0x4fa550*/
     }
     v24 = 1; /*0x4fa465*/
   }
@@ -231,7 +231,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( v10->abstractFlags || v10->q058 ) /*0x4fa6d9*/
-    return 3; /*0x4fa807*/
+    return (gamemd::AbstractClass **)(3); /*0x4fa807*/
   Debug::Log(); /*0x4fa6ec*/
   Debug::Log(); /*0x4fa6fc*/
   Debug::Log(); /*0x4fa70a*/
@@ -258,7 +258,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     case 1u: /*0x4fa782*/
     case 2u: /*0x4fa782*/
       this->u32_53AC = 0; /*0x4fa801*/
-      return 3; /*0x4fa801*/
+      return (gamemd::AbstractClass **)(3); /*0x4fa801*/
     case 5u: /*0x4fa782*/
     case 6u: /*0x4fa782*/
       if ( v22 == 5 ) /*0x4fa7d5*/
@@ -273,9 +273,9 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
       result = 3; /*0x4fa7c4*/
       break; /*0x4fa7cd*/
     default:
-      return 3;
+      return (gamemd::AbstractClass **)(3);
   }
-  return result; /*0x4fa4a0*/
+  return (gamemd::AbstractClass **)(result); /*0x4fa4a0*/
 }
 }  // G42.18 ns repair
 // 0x5007A0
@@ -284,7 +284,7 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
 {
   char result; // al
 
-  result = a5_2 - 1; /*0x5007a5*/
+  result = (char)(a5_2 - 1); /*0x5007a5*/
   switch ( a5_2 ) /*0x5007b7*/
   {
     case 1: /*0x5007b7*/
@@ -303,14 +303,14 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2)
       else
       {
         aP1->u32_53D4 = a5_2; /*0x5007fa*/
-        result = a5_2; /*0x5007f5*/
+        result = (char)(a5_2); /*0x5007f5*/
       }
       break; /*0x5007f2*/
     case 15: /*0x5007b7*/
     case 16: /*0x5007b7*/
       aP1->u32_53D1 = a5_2; /*0x5007be*/
   LABEL_3:
-      result = a5_2; /*0x5007c4*/
+      result = (char)(a5_2); /*0x5007c4*/
       if ( a5_2 ) /*0x5007ca*/
         aP1->u32_53D3 = a5_2; /*0x5007cc*/
       else
@@ -381,7 +381,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
       v6 = 0; /*0x63633e*/
     else
       v6 = (void *)*((unsigned int *)v4->q004 + Value); /*0x636345*/
-    Block = v6; /*0x63634a*/
+    Block = (int *)(v6); /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
       FactoryClass::FinishProduction((int *)v4->__pad_000, (int)v6); /*0x636353*/
@@ -468,7 +468,7 @@ char Sidebar::RemoveItem(int a2, void *a2_2)
   char *v4; // edx
 
   Sidebar_field_0x10 = (char *)a2_2->Sidebar_field_0x10; /*0x63f040*/
-  v3 = a2_2; /*0x63f043*/
+  v3 = (int)(a2_2); /*0x63f043*/
   if ( a2_2 >= (int)Sidebar_field_0x10 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = Sidebar_field_0x10 - 1; /*0x63f04b*/
@@ -488,7 +488,7 @@ char Sidebar::RemoveItem(int a2, void *a2_2)
 }
 // 0x63FB20
 namespace gamemd {
-ObjectClass * * Sidebar::Render(char a2)
+ObjectClass * * Sidebar::Render(char a2, void *a2_1, void *a3, void *a4)
 {
 
   int v3; // ebx
@@ -680,7 +680,7 @@ ObjectClass * * Sidebar::Render(char a2)
     }
   }
   LOBYTE(result) = RadarClass::Destru_vt16((RadarClass *)this, a2); /*0x63fdac*/
-  return result; /*0x63fdb1*/
+  return (gamemd::ObjectClass **)(result); /*0x63fdb1*/
 
 }
 }
@@ -705,7 +705,7 @@ int Sidebar::ActivateTab(int aP1)
 }
 // 0x6A70E0
 namespace gamemd {
-AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
+AbstractClass * * Sidebar::FlushSidebarTooltip(char a2, void *a2_1)
 {
   int v4; // ebp
   int v5; // edi
@@ -911,7 +911,7 @@ int Sidebar_UpdateProductionDisplay(void * a1, void * a3)
   char v16;
 int v27; // ecx
 
-  int v84 = a1;
+  int v84 = (int)(a1);
   result = *(unsigned char *)((char *)a1 +8);
   if ( result )
   {
@@ -968,7 +968,7 @@ LABEL_13:
           {
             for ( i = 0; i < 2; ++i )
             {
-              char v78 = a3;
+              char v78 = (char)(a3);
               int v13 = *(unsigned int *)(v84 + 68);
               ProductionState = 0;
               aP2 = (ConvertClass *)(0);
@@ -994,12 +994,12 @@ LABEL_13:
               aP1 = (IUnknown *)(0);
               if ( v90 >= v20 )
               {
-                IDA_LOBYTE(v73) = 0;
+                (*((unsigned char *)&(v73))) = 0;
               }
               else
               {
-                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, HouseClass_Player->u32_2C140) )
-                  IDA_HIBYTE(v73) = 0;
+                if ( !*(unsigned char *)(v19 + 52) || ((*(((unsigned char *)&(v73)) + (sizeof(v73) - 1))) = 1, HouseClass_Player->u32_2C140) )
+                  (*(((unsigned char *)&(v73)) + (sizeof(v73) - 1))) = 0;
                 int v21 = *(unsigned int *)(v84 + 52 * v90 + 92);
                 int * v22 = (int *)(v84 + 52 * v90);
                 int * v87 = v22;
@@ -1012,7 +1012,7 @@ LABEL_13:
                     aP2 = (ConvertClass *)(0);
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
-                  IDA_LOBYTE(v73) = 1;
+                  (*((unsigned char *)&(v73))) = 1;
                   IsCliffWall = !SuperClass::ShouldDrawProgress(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600)
                                                                           + 4 * v31));
                   BufferCount = (size_t)SuperClass::NameReadiness(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600)
@@ -1052,7 +1052,7 @@ LABEL_13:
                     if ( !v86 )
                     {
                       v16 = v77;
-                      IDA_LOBYTE(v73) = 0;
+                      (*((unsigned char *)&(v73))) = 0;
                       unsigned int * v28 = (unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2));
                       switch ( *v28 )
                       {
@@ -1063,14 +1063,14 @@ LABEL_13:
                         case 1:
                           Member09 = 0;
                           v78 = 1;
-                          IDA_LOBYTE(v73) = 1;
+                          (*((unsigned char *)&(v73))) = 1;
                           if ( *v28 != 1 )
                             goto LABEL_45;
                           v27 = v87[27];
                           goto LABEL_43;
                         case 2:
                           int v29 = 0;
-                          IDA_LOBYTE(v73) = 1;
+                          (*((unsigned char *)&(v73))) = 1;
                           IsCliffWall = 0;
                           v16 = 1;
                           if ( *v28 == 1 )
@@ -1082,7 +1082,7 @@ LABEL_13:
                           ProductionState = v29;
                           goto LABEL_59;
                         case 3:
-                          IDA_LOBYTE(v73) = 1;
+                          (*((unsigned char *)&(v73))) = 1;
                           IsCliffWall = 1;
                           v16 = 0;
                           goto LABEL_59;
@@ -1090,7 +1090,7 @@ LABEL_13:
                           goto LABEL_59;
                       }
                     }
-                    IDA_LOBYTE(v73) = 1;
+                    (*((unsigned char *)&(v73))) = 1;
                     IsCliffWall = ObjectClass::IsCliffWall((unsigned int *)v86);
                     if ( IsCliffWall )
                       BufferCount = (size_t)GetStringCSF( (wchar_t *)(g_Str_TXT_READY), 0, (const char *)(&(&stru_830620)[62628]), 3411);
@@ -1142,7 +1142,7 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( IDA_HIBYTE(v73) )
+                if ( (*(((unsigned char *)&(v73)) + (sizeof(v73) - 1))) )
                 {
                   *(unsigned int *)&aP3[152] = v15;
                   *(unsigned int *)&aP3[156] = v17;
@@ -1150,7 +1150,7 @@ LABEL_59:
                   *(unsigned int *)&aP3[164] = 48;
                   (((v82) >> 16) & 0xFF) = (&stru_B05488)[42390];
                   int v33 = **(unsigned int **)&(&stru_87C374)[44940];
-                  IDA_LOWORD(v82) = *(unsigned short *)&(&stru_B05488)[42388];
+                  (*((unsigned short *)&(v82))) = *(unsigned short *)&(&stru_B05488)[42388];
 (*(void (**)(unsigned int, char *, char *, int))(v33 + 84))( *(unsigned int *)&(&stru_87C374)[44940], (char *)(&aP3[88]), (char *)(&aP3[152]), ((uint8_t)(&stru_B05488)[42388] >> (&stru_89E138)[11420] << (&stru_89E138)[11416]) | ((uint8_t)(&stru_B05488)[42389] >> (&stru_89E138)[11436] << (&stru_89E138)[11432]) | ((uint8_t)(&stru_B05488)[42390] >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));
 
 
@@ -1218,7 +1218,7 @@ LABEL_59:
                     | ((uint8_t)((unsigned char *)&stru_B05488)[42390] >> ((unsigned char *)&stru_89E138)[11428] << ((unsigned char *)&stru_89E138)[11424]);
                 if ( aP1 )
                 {
-                  IDA_LOBYTE(v34) = aP1->qBC0[270];
+                  (*((unsigned char *)&(v34))) = aP1->qBC0[270];
                   v69 = v34;
                   int v36 = (*(int (**)(IUnknown *))(aP1->field_0 + 44))( (IUnknown *)(aP1));
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);

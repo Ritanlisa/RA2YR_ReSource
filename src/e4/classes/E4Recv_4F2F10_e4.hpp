@@ -14,7 +14,7 @@ struct E4Recv_4F2F10 {
     unsigned int M32;  // 0x32
     unsigned int M36;  // 0x36
 // --- flat members (END) ---
-    int *  sub_4F2F10(int a2, unsigned int * a3, int * a4, int * a5, char ** a6, char ** a7, int a8, char a9);  // 0x4F2F10
+    int * sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, GraphicMenuAnimItem * a4, int * a5, GraphicMenuAnimItem * a6, char ** a7, GraphicMenuAnimItem * a8, GraphicMenuAnimItem * a9);  // 0x4F2F10
 
     unsigned int u32_20;  // X10 supply (member_lookup)
     unsigned int u32_24;  // X10 supply (member_lookup)

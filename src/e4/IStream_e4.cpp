@@ -12,7 +12,7 @@
 
 // 0x4A3020
 namespace gamemd {  // G42.18 ns repair
-int IStream::Read(void * pstm, ULONG cb)
+int IStream::Read(void * pstm, ULONG cb, void *a3)
 {
   int v3; // ecx
   unsigned int *v4; // esi

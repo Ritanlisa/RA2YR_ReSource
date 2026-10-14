@@ -264,14 +264,14 @@ int ProcessGameResults(char a1)
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v13);
   if ( g_GameMode_Current == 4 && g_GameOptionsFlags == 3 && a1 )
     dword_B779C4 = 0;
-  IDA_LOBYTE(v264.vfptr) = DataGlobal_00A8B8C2 == 1;
+  (*((unsigned char *)&(v264.vfptr))) = DataGlobal_00A8B8C2 == 1;
   char * v14 = (char *)operator new(0x10u);
   if ( v14 )
     v15 = (char *)(((String *)(v14))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72420], (IUnknown *)v264.vfptr));
   else
     v15 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v15);
-  IDA_LOBYTE(v264.vfptr) = DataGlobal_A8B8C1[0] == 1;
+  (*((unsigned char *)&(v264.vfptr))) = DataGlobal_A8B8C1[0] == 1;
   char * v16 = (char *)operator new(0x10u);
   if ( v16 )
     v17 = (char *)(((String *)(v16))->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72412], (IUnknown *)v264.vfptr));
@@ -320,7 +320,7 @@ int ProcessGameResults(char a1)
   else
     v35 = 0;
   ((LinkedList_flat *)v262)->PushFront((int)(IUnknown *)v35);
-  IDA_LOBYTE(v264.vfptr) = (unsigned char)Bases != 0;
+  (*((unsigned char *)&(v264.vfptr))) = (unsigned char)Bases != 0;
   char * v36 = (char *)operator new(0x10u);
   if ( v36 )
     v37 = ((String *)v36)->AllocAndCopy((RandomStruct *)&((unsigned int *)(stru_830620))[72356], (IUnknown *)v264.vfptr);
@@ -694,9 +694,9 @@ LABEL_158:
       ((LinkedList_flat*)v262)->PushFront((int)(IUnknown *)v122);
       stru_830620[72163] = v106;
       char v123 = *(unsigned char *)(v105 + 520);
-      IDA_LOBYTE(v270) = 0;
+      (*((unsigned char *)&(v270))) = 0;
       if ( v123 )
-        IDA_LOBYTE(v270) = *(unsigned char *)(v105 + 583) == 0;
+        (*((unsigned char *)&(v270))) = *(unsigned char *)(v105 + 583) == 0;
       v124 = (char *)operator new(0x10u);
       if ( v124 )
         v125 = ((String *)v124)->AllocAndCopy((RandomStruct *)&stru_830620[72160], (IUnknown *)v270);
@@ -1174,12 +1174,12 @@ LABEL_343:
     char v244 = *((char *)&g_OverlayTypeConfig + 17816);
     v290[0] = 0;
     int v245 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2;
-    qmemcpy( (void *)(&v290[2]), (const void *)(vfptr), 4 * (*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2));
+    memcpy( (void *)(&v290[2]), (const void *)(vfptr), 4 * (*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2));
     v247 = &vfptr[4 * v245];
     unsigned int * v246 = &v290[v245 + 2];
     (v245) = ((v245) & ~0xFF) | ((unsigned int)(v244) & 0xFF);
     int v248 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756);
-    qmemcpy( (void *)(v246), v247, v245 & 3);
+    memcpy( (void *)(v246), v247, v245 & 3);
     int v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
     v269 = *(IUnknown **)((char *)&g_OverlayTypeConfig + 17752);
     if ( *(int *)((char *)&g_OverlayTypeConfig + 17752) < v248 )
@@ -1198,8 +1198,8 @@ LABEL_343:
       {
         char v253 = 8 * *((char *)&g_OverlayTypeConfig + 17752);
         unsigned int v254 = (unsigned int)(32776 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752)) >> 2;
-        qmemcpy(v251, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v254);
-        qmemcpy( (void *)(&v251[4 * v254]), (char *)v252 + 4 * v254, v253 & 3);
+        memcpy(v251, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v254);
+        memcpy( (void *)(&v251[4 * v254]), (char *)v252 + 4 * v254, v253 & 3);
         v252 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
       }
       RA2_OPDEL(v252);
@@ -1219,8 +1219,8 @@ LABEL_343:
         {
           char v259 = 8 * *((char *)&g_OverlayTypeConfig + 17752);
           unsigned int v260 = (unsigned int)(32776 * *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752)) >> 2;
-          qmemcpy(v257, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v260);
-          qmemcpy( (void *)(&v257[4 * v260]), (char *)v258 + 4 * v260, v259 & 3);
+          memcpy(v257, *(const void **)((char *)&g_OverlayTypeConfig + 17760), 4 * v260);
+          memcpy( (void *)(&v257[4 * v260]), (char *)v258 + 4 * v260, v259 & 3);
           v258 = *(AbstractClass **)((char *)&g_OverlayTypeConfig + 17760);
         }
         RA2_OPDEL(v258);
@@ -1242,7 +1242,7 @@ memcpy( (void *)(&v255[32776 * ((unsigned int)&v269->u32_1)]), (const void *)(&v
     v261 = &v255[32776 * (unsigned int)v269];
     if ( v261 )
     {
-      qmemcpy( v261, (const void *)(v290), 0x8008u);
+      memcpy( v261, (const void *)(v290), 0x8008u);
       v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);
     }
     vfptr = (char *)v264.vfptr;
@@ -1958,7 +1958,7 @@ char E4Recv_6C8900::sub_6C8900()
   v7 = v5; /*0x6c8947*/
   vtable2 = this->M8; /*0x6c894d*/
   if ( vtable2 ) /*0x6c8952*/
-    qmemcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
+    memcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
   __3_YAXPAX_Z(this->M8); /*0x6c8974*/
   this->M4 = (void *)v4; /*0x6c8980*/
   this->M8 = v7; /*0x6c8983*/
@@ -2037,7 +2037,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
         (*(void (**)(int))(*(unsigned int *)v9 + 96))(v9); /*0x6c8c16*/
         return 0; /*0x6c8c22*/
       }
-      qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8be0*/
+      memcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8be0*/
       ++v15; /*0x6c8bf4*/
       v14 += (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x6c8c06*/
       if ( v15 >= *(unsigned int *)(a3 + 12) ) /*0x6c8c0a*/

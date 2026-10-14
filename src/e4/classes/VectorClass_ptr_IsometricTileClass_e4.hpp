@@ -33,7 +33,7 @@ struct VectorClass_ptr_IsometricTileClass {
     int GetItem();  // 0x40CC00
     void TryFreeAndClear();  // 0x40CC70
     unsigned int  GetPtrOffset(int a2);  // 0x40CCA0
-    int  FindValue(unsigned int * a2, void *a1 = 0);  // 0x40CF00
+    int FindValue(unsigned int * a2, void *a2_1 = 0);  // 0x40CF00
     char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
     unsigned int m_8;  // 0x8 vocab alias (Capacity)
     unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)

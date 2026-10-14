@@ -20,7 +20,7 @@ struct MoveFeedback {
     DynamicVector * QueryInterface(char a2, int a1, int a3, int a4, int a5);
     char AddRef(int a2);
     char SetCapacity(int a2, unsigned int * a3);
-    int Draw(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
+    int Draw(unsigned int * a2, void *a2_1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0, void *a8 = 0);
     int FindMoveItem(unsigned int * a2);
     int ProcessCommand();
     unsigned int GetIndex2(int a2);

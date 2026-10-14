@@ -33,7 +33,7 @@ int NetworkClass::ExecutePlanningModeCmd()
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
 
-  v1 = *this; /*0x639fd0*/
+  v1 = (char)(*this); /*0x639fd0*/
   if ( *this == 9 ) /*0x639fd4*/
   {
     if ( !byte_AC4C08 ) /*0x639fdd*/
@@ -100,7 +100,7 @@ AbstractClass * * NetworkClass::RecordEvent()
     }
     (*((unsigned char *)&(result))) = 1; /*0x6ffeae*/
   }
-  return result; /*0x6ffe4d*/
+  return (gamemd::AbstractClass **)(result); /*0x6ffe4d*/
 }
 }
 // 0x7B1C50
@@ -112,20 +112,20 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET v3; // eax
   SOCKET result; // eax
 
-  v2 = g_hWnd; /*0x7b1c53*/
+  v2 = (HWND)(g_hWnd); /*0x7b1c53*/
   v3 = this->u32_3F06C; /*0x7b1c59*/
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {
     WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/
-    v2 = g_hWnd; /*0x7b1c73*/
+    v2 = (HWND)(g_hWnd); /*0x7b1c73*/
   }
   result = this->u32_3F070; /*0x7b1c79*/
   if ( result != -1 ) /*0x7b1c83*/
   {
     if ( v2 ) /*0x7b1c87*/
-      return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
+      return (gamemd::AnimClass **)(WSAAsyncSelect(result, v2, 0, 0)); /*0x7b1c8f*/
   }
-  return result; /*0x7b1c7f*/
+  return (gamemd::AnimClass **)(result); /*0x7b1c7f*/
 
 }
 }

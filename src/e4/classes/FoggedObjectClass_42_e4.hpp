@@ -25,7 +25,7 @@ struct FoggedObjectClass_42 {
     char  AddRef(int a2);  // 0x4E0580
     char  Release(int a2, unsigned int * a3);  // 0x4E05C0
     void ddtor(void *a1 = 0);  // 0x4E0670
-    int  Read(unsigned int * a2, void *a1 = 0, void *a3 = 0);  // 0x4E06A0
+    int Read(unsigned int * a2, void *a2_2, void *a3 = 0);  // 0x4E06A0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x4E0700
     VectorClass_flat *  QueryInterface(char a2);  // 0x4E0CE0
     unsigned int  PointerToIndex(int a2);  // 0x4E0220
