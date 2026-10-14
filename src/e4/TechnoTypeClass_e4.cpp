@@ -178,7 +178,7 @@ unsigned int * TechnoTypeClass::LoadBase(char *aP1)
   this->u32_F5 = 1; /*0x6f07eb*/
   this->u32_F6 = 0; /*0x6f07f1*/
   this->q0F7 = 0; /*0x6f07f7*/
-  this->AbstractClass = &TeamTypeClass::`vftable'; /*0x6f07fd*/
+  this->AbstractClass = &vt_TeamTypeClass; /*0x6f07fd*/
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0803) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f080a) */
   /* X11: vtable install elided (implicit via TeamTypeClass virtuals 0x6f0811) */
@@ -285,11 +285,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
   this->q324 = 0; /*0x710bf8*/
   this->q328 = 10; /*0x710bfb*/
-  this->DebrisTypes = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x710bfe*/
+  this->DebrisTypes = &vt_TypeList; /*0x710bfe*/
   VectorClass::Construct(&this->DebrisMaximums, 0, 0); /*0x710c0f*/
   this->u32_344 = 10; /*0x710c14*/
   this->u32_340 = 0; /*0x710c17*/
-  this->DebrisMaximums = &TypeList<int>::`vftable'; /*0x710c1a*/
+  this->DebrisMaximums = &vt_TypeList; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
   this->u32_350 = 298948665; /*0x710c39*/
   this->q354 = -1610610249; /*0x710c42*/
@@ -329,7 +329,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   VectorClass::BuildingTypeConstructor(&this->Dock, 0, 0); /*0x710d46*/
   this->u32_3FC = 10; /*0x710d4b*/
   this->u32_3F8 = 0; /*0x710d51*/
-  this->Dock = &TypeList<BuildingTypeClass const *>::`vftable'; /*0x710d57*/
+  this->Dock = &vt_TypeList; /*0x710d57*/
   this->DeploysInto = 0; /*0x710d61*/
   this->UndeploysInto = 0; /*0x710d67*/
   this->PowersUnit = 0; /*0x710d6e*/
@@ -337,43 +337,43 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   VectorClass::Construct(&this->VoiceSelect, 0, 0); /*0x710d81*/
   this->u32_428 = 10; /*0x710d8e*/
   this->ptr_424 = 0; /*0x710d94*/
-  this->VoiceSelect = &TypeList<int>::`vftable'; /*0x710d9a*/
+  this->VoiceSelect = &vt_TypeList; /*0x710d9a*/
   VectorClass::Construct(&this->VoiceSelectEnslaved, 0, 0); /*0x710da4*/
   this->u32_444 = 10; /*0x710db1*/
   this->u32_440 = 0; /*0x710db7*/
-  this->VoiceSelectEnslaved = &TypeList<int>::`vftable'; /*0x710dbd*/
+  this->VoiceSelectEnslaved = &vt_TypeList; /*0x710dbd*/
   VectorClass::Construct(&this->VoiceSelectDeactivated, 0, 0); /*0x710dc7*/
   this->u32_460 = 10; /*0x710dd4*/
   this->u32_45C = 0; /*0x710dda*/
-  this->VoiceSelectDeactivated = &TypeList<int>::`vftable'; /*0x710de0*/
+  this->VoiceSelectDeactivated = &vt_TypeList; /*0x710de0*/
   VectorClass::Construct(&this->VoiceMove, 0, 0); /*0x710dea*/
   this->u32_47C = 10; /*0x710df7*/
   this->u32_478 = 0; /*0x710dfd*/
-  this->VoiceMove = &TypeList<int>::`vftable'; /*0x710e03*/
+  this->VoiceMove = &vt_TypeList; /*0x710e03*/
   VectorClass::Construct(&this->VoiceAttack, 0, 0); /*0x710e0d*/
   this->u32_498 = 10; /*0x710e1a*/
   this->ptr_494 = 0; /*0x710e20*/
-  this->VoiceAttack = &TypeList<int>::`vftable'; /*0x710e26*/
+  this->VoiceAttack = &vt_TypeList; /*0x710e26*/
   VectorClass::Construct(&this->VoiceSpecialAttack, 0, 0); /*0x710e30*/
   this->u32_4B4 = 10; /*0x710e3d*/
   this->u32_4B0 = 0; /*0x710e43*/
-  this->VoiceSpecialAttack = &TypeList<int>::`vftable'; /*0x710e49*/
+  this->VoiceSpecialAttack = &vt_TypeList; /*0x710e49*/
   VectorClass::Construct(&this->VoiceDie, 0, 0); /*0x710e53*/
   this->u32_4D0 = 10; /*0x710e58*/
   this->u32_4CC = 0; /*0x710e5e*/
-  this->VoiceDie = &TypeList<int>::`vftable'; /*0x710e6c*/
+  this->VoiceDie = &vt_TypeList; /*0x710e6c*/
   VectorClass::Construct(&this->VoiceFeedback, 0, 0); /*0x710e76*/
   this->u32_4EC = 10; /*0x710e83*/
   this->u32_4E8 = 0; /*0x710e89*/
-  this->VoiceFeedback = &TypeList<int>::`vftable'; /*0x710e8f*/
+  this->VoiceFeedback = &vt_TypeList; /*0x710e8f*/
   VectorClass::Construct(&this->MoveSound, 0, 0); /*0x710e99*/
   this->u32_508 = 10; /*0x710ea6*/
   this->u32_504 = 0; /*0x710eac*/
-  this->MoveSound = &TypeList<int>::`vftable'; /*0x710eb2*/
+  this->MoveSound = &vt_TypeList; /*0x710eb2*/
   VectorClass::Construct(&this->DieSound, 0, 0); /*0x710ebc*/
   this->u32_524 = 10; /*0x710ec1*/
   this->BuildingTypeClass_520 = 0; /*0x710ec7*/
-  this->DieSound = &TypeList<int>::`vftable'; /*0x710ecd*/
+  this->DieSound = &vt_TypeList; /*0x710ecd*/
   this->AuxSound1 = -1; /*0x710ed7*/
   this->AuxSound2 = -1; /*0x710edd*/
   this->CreateSound = -1; /*0x710ee3*/
@@ -415,7 +415,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   AnimTypeVector::Constructor(&this->DebrisAnims, 0, 0); /*0x710fc3*/
   this->u32_5D8 = 10; /*0x710fc8*/
   this->u32_5D4 = 0; /*0x710fce*/
-  this->DebrisAnims = &TypeList<AnimTypeClass const *>::`vftable'; /*0x710fd4*/
+  this->DebrisAnims = &vt_TypeList; /*0x710fd4*/
   this->Passengers = 0; /*0x710fde*/
   this->OpenTopped = 0; /*0x710fe4*/
   this->Sight = 0; /*0x710fea*/
@@ -444,11 +444,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   VectorClass::Construct(&this->Prerequisite, 0, 0); /*0x71108c*/
   this->u32_64C = 10; /*0x711099*/
   this->u32_648 = 0; /*0x71109f*/
-  this->Prerequisite = &TypeList<int>::`vftable'; /*0x7110a5*/
+  this->Prerequisite = &vt_TypeList; /*0x7110a5*/
   VectorClass::Construct(&this->PrerequisiteOverride, 0, 0); /*0x7110af*/
   this->VeteranAbilities = 10; /*0x7110b8*/
   this->IdleRate = 0; /*0x7110be*/
-  this->PrerequisiteOverride = &TypeList<int>::`vftable'; /*0x7110c4*/
+  this->PrerequisiteOverride = &vt_TypeList; /*0x7110c4*/
   this->ThreatPosed = 0; /*0x7110ce*/
   this->Points = 0; /*0x7110d4*/
   this->Speed = 0; /*0x7110da*/
@@ -515,11 +515,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   AnimTypeVector::Constructor(&this->Explosion, 0, 0); /*0x71123d*/
   this->u32_740 = 10; /*0x71124a*/
   this->u32_73C = 0; /*0x711250*/
-  this->Explosion = &TypeList<AnimTypeClass const *>::`vftable'; /*0x711256*/
+  this->Explosion = &vt_TypeList; /*0x711256*/
   AnimTypeVector::Constructor(&this->DestroyAnim, 0, 0); /*0x711260*/
   this->u32_75C = 10; /*0x711265*/
   this->ptr_758 = 0; /*0x71126b*/
-  this->DestroyAnim = &TypeList<AnimTypeClass const *>::`vftable'; /*0x711271*/
+  this->DestroyAnim = &vt_TypeList; /*0x711271*/
   this->NaturalParticleSystem = 0; /*0x71127b*/
   this->NaturalParticleSystemLocation = 0; /*0x711282*/
   this->u32_76C = 0; /*0x711288*/
@@ -528,11 +528,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hp
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112a1*/
   this->u32_78C = 10; /*0x7112ae*/
   this->VoxelAnimList_Embed = 0; /*0x7112b4*/
-  this->DamageParticleSystems = &TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x7112ba*/
+  this->DamageParticleSystems = &vt_TypeList; /*0x7112ba*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112c4*/
   this->u32_7A8 = 10; /*0x7112c9*/
   this->u32_7A4 = 0; /*0x7112cf*/
-  this->DestroyParticleSystems = &TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x7112d5*/
+  this->DestroyParticleSystems = &vt_TypeList; /*0x7112d5*/
   this->DamageSmokeOffset = 0; /*0x7112df*/
   this->u32_7B4 = 0; /*0x7112e5*/
   this->u32_7B8 = 0; /*0x7112eb*/
@@ -1568,7 +1568,7 @@ unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *
   BYTE1(a1->ObjectTypeClass[3]) = 0; /*0x717afe*/
   a1->ObjectTypeClass[5] = 10; /*0x717b01*/
   a1->ObjectTypeClass[4] = 0; /*0x717b08*/
-  a1->ObjectTypeClass[0] = (int)&TypeList<ParticleSystemTypeClass const *>::`vftable'; /*0x717b0b*/
+  a1->ObjectTypeClass[0] = (int)&vt_TypeList; /*0x717b0b*/
   return a1->ObjectTypeClass; /*0x717b11*/
 
 }
@@ -1601,7 +1601,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3)
 {
 
-  aP1->ObjectTypeClass[0] = (int)&DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x717bc2*/
+  aP1->ObjectTypeClass[0] = (int)&vt_DynamicVectorClass; /*0x717bc2*/
   return aP1->ObjectTypeClass; /*0x717bc8*/
 
 }
@@ -1611,7 +1611,7 @@ namespace gamemd {  // G42.18c ns repair
 VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
 
-  this->ObjectTypeClass[0] = (int)&DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x717be2*/
+  this->ObjectTypeClass[0] = (int)&vt_DynamicVectorClass; /*0x717be2*/
   return this->ObjectTypeClass; /*0x717be8*/
 
 }

@@ -106,7 +106,7 @@ void * Tactical::ConstructTacticalSurface()
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
-    *v2 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x42a729*/
+    *v2 = &vt_DynamicVectorClass; /*0x42a729*/
     v2->u32_14 = 10; /*0x42a72f*/
     v2->q010 = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/

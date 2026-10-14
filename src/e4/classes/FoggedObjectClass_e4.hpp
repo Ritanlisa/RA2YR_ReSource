@@ -47,7 +47,7 @@ struct FoggedObjectClass {
     unsigned int u32_3C;  // 0x3C (offset-truth)
     unsigned int u32_54;  // 0x54 (offset-truth)
     unsigned int u32_58;  // 0x58 (offset-truth)
-    void* ;  // 0x5C (offset-truth)
+    void *q5C;  // 0x5C (offset-truth)
     unsigned int u32_6C;  // 0x6C (offset-truth)
 
     HouseClass* q030;  // X10 supply (member_lookup)

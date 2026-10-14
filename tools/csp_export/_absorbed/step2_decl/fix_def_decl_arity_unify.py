@@ -137,6 +137,38 @@ def main():
             # the decl unconditionally, so every re-run was a diff.
             if norm_params(cparams) == norm_params(new_decl_ps):
                 continue
+            # X25 dedup: the rewrite can make this decl line IDENTICAL to
+            # another decl of the same class already in the file (Buffer
+            # Init / Hash Reset / XSurface WalkLine were produced exactly
+            # this way -- C2535/C2572 x6).  When the unify target signature
+            # already exists on another decl line of the same class, drop
+            # this line instead of writing the duplicate.
+            new_text = '%s%s%s(%s);' % (dm.group(1), ddm.group(1),
+                                        dm.group(3), ', '.join(new_decl_ps))
+            dup_elsewhere = False
+            other_cls = None
+            for j, l2 in enumerate(lines):
+                if j == i or l2 is None:
+                    continue
+                sm2 = re.match(r'\s*struct\s+(\w+)\s*\{', l2)
+                if sm2:
+                    other_cls = sm2.group(1)
+                    continue
+                if l2.strip() == '};':
+                    other_cls = None
+                    continue
+                dm2 = DECL_RE.match(l2.strip())
+                if dm2 and other_cls == cls \
+                        and dm2.group(3) == dm.group(3) \
+                        and norm_params(split_params(dm2.group(4))) \
+                        == norm_params(new_decl_ps):
+                    dup_elsewhere = True
+                    break
+            if dup_elsewhere:
+                lines[i] = None  # dropped below; signature already present
+                n_decl += 1
+                changed = True
+                continue
             # decl ret type := def ret type (C2556 return-mismatch family)
             lines[i] = '%s%s%s(%s);%s' % (dm.group(1), ddm.group(1), dm.group(3),
                                           ', '.join(new_decl_ps), dm.group(5) or '')
@@ -145,7 +177,8 @@ def main():
             # extend the def in its file (deferred write below)
             def_files[dp].append((di, fill_def, ddm))
         if changed and APPLY:
-            p.write_text('\n'.join(lines), encoding='utf-8')
+            p.write_text('\n'.join(l for l in lines if l is not None),
+                         encoding='utf-8')
 
     for p, items in def_files.items():
         if not items:

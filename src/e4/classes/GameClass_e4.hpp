@@ -52,7 +52,7 @@ struct GameClass {
     unsigned int u16_A;  // 0xA
     unsigned char q00B;  // 0xB
     unsigned int u32_C;  // 0xC
-    int ;  // 0x10
+    int q10;  // 0x10
     Pipe * ptr_14;  // 0x14
     unsigned int u32_18;  // 0x18
     CampaignClass * ptr_20;  // 0x20

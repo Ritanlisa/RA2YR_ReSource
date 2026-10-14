@@ -2315,7 +2315,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     CCFileClass::Reset(v17); /*0x49d418*/
 LABEL_5:
     HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
-    v17[0] = &CCFileClass::`vftable'; /*0x49d42a*/
+    v17[0] = &vt_CCFileClass; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
@@ -2395,7 +2395,7 @@ LABEL_5:
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
-  v17[0] = &CCFileClass::`vftable'; /*0x49d64d*/
+  v17[0] = &vt_CCFileClass; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
@@ -2603,7 +2603,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         DeleteAndZero((ObjectClass *)(v7 + 7)); /*0x49e7fc*/
         DeleteAndZero((ObjectClass *)(v7 + 6)); /*0x49e804*/
         v9 = (void *)*v7; /*0x49e809*/
-        *(v7 - 1) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e80b*/
+        *(v7 - 1) = (int)&vt_VectorClassDynamicVectorClass; /*0x49e80b*/
         if ( v9 && *((unsigned char *)v7 + 9) ) /*0x49e812*/
         {
           __3_YAXPAX_Z(v9); /*0x49e818*/
@@ -2612,7 +2612,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
         *((unsigned char *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
         v10 = (void *)*(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e82b*/
+        *(v7 - 7) = (int)&vt_VectorClassDynamicVectorClass; /*0x49e82b*/
         if ( v10 && *((unsigned char *)v7 - 15) ) /*0x49e832*/
         {
           __3_YAXPAX_Z(v10); /*0x49e838*/
@@ -2634,7 +2634,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     DeleteAndZeroBlock->ObjectClass_28); /*0x49e86d*/
     DeleteAndZeroBlock->ObjectClass_28); /*0x49e875*/
     fallRate = (void *)Block->fallRate; /*0x49e87a*/
-    Block->owningHouseIndex = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e886*/
+    Block->owningHouseIndex = (int)&vt_VectorClassDynamicVectorClass; /*0x49e886*/
     if ( fallRate && BYTE1(Block->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
@@ -2643,7 +2643,7 @@ AbstractClass * ObjectClass::sub_49E7C0(char * Block, char a2)
     BYTE1(Block->attachedTag) = 0; /*0x49e89c*/
     Block->nextObject = 0; /*0x49e89f*/
     abstractFlags = (void *)Block->?; /*0x49e8a2*/
-    Block->? = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e8a5*/
+    Block->? = (int)&vt_VectorClassDynamicVectorClass; /*0x49e8a5*/
     if ( abstractFlags && BYTE1(Block->?) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
@@ -6404,10 +6404,10 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result->vtable3 = 0; /*0x49da6f*/
   p_uniqueId->vtable2 = 0; /*0x49da72*/
   p_uniqueId->vtable3 = 0; /*0x49da75*/
-  *p_uniqueId = (int)&GenericNode::`vftable'; /*0x49da78*/
+  *p_uniqueId = (int)&vt_GenericNode; /*0x49da78*/
   p_referenceCount->vtable2 = 0; /*0x49da7e*/
   p_referenceCount->vtable3 = 0; /*0x49da81*/
-  *p_referenceCount = (int)&GenericNode::`vftable'; /*0x49da84*/
+  *p_referenceCount = (int)&vt_GenericNode; /*0x49da84*/
   /* X11: vtable install elided (implicit via GenericList virtuals 0x49da8d) */
   if ( p_referenceCount ) /*0x49da94*/
   {

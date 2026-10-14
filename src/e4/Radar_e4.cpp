@@ -876,7 +876,7 @@ AbstractClass * * Radar::Update(int16_t *aP1)
       v6 = 0; /*0x5845bd*/
       WordVector::Constructor(&v109, 0, 0); /*0x5845c1*/
       v7 = *(unsigned int **)&v2->__pad_64[4 * i + 28]; /*0x5845c6*/
-      v109 = (WordVector)&DynamicVectorClass<unsigned short>::`vftable'; /*0x5845cd*/
+      v109 = (WordVector)&vt_DynamicVectorClass; /*0x5845cd*/
       v114 = 10; /*0x5845d5*/
       v113 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/
@@ -1116,7 +1116,7 @@ LABEL_73:
         v87 = v50; /*0x584c81*/
       }
       while ( v50 < 6144 ); /*0x584c85*/
-      v109 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584c93*/
+      v109 = (WordVector)&vt_VectorClass; /*0x584c93*/
       if ( v110 && v112 ) /*0x584ca3*/
       {
         __3_YAXPAX_Z(v110); /*0x584ca6*/
@@ -1307,7 +1307,7 @@ LABEL_72:
     }
     while ( v76 >= 0 ); /*0x584d84*/
     MapClass::AllocArrays(&g_AudioInitFlag); /*0x584d8b*/
-    v109 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584d94*/
+    v109 = (WordVector)&vt_VectorClass; /*0x584d94*/
     if ( v110 && v112 ) /*0x584daa*/
       __3_YAXPAX_Z(v110); /*0x584db1*/
   }

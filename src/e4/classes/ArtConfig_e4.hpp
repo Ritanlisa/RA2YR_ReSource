@@ -13,7 +13,7 @@ struct ArtConfig {
     unsigned int * loadConfig(char **aP1, int aP2, int aP3, int *aP4, char aP5);  // 0x5cc760
     unsigned int u32_18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
-    void* ;  // 0x28 (offset-truth)
+    void *q28;  // 0x28 (offset-truth)
     unsigned char u32_C2;  // 0xC2 (offset-truth)
 
     unsigned char q020;  // X10 supply (member_lookup)

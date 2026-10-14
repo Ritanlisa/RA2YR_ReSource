@@ -970,7 +970,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->M12 = 0; /*0x6616e1*/
   this->M16 = 0; /*0x6616e4*/
-  *(unsigned int *)this->__pad_0 = &RandomStraw::`vftable'; /*0x6616f1*/
+  *(unsigned int *)this->__pad_0 = &vt_RandomStraw; /*0x6616f1*/
   memset(&this->ptr_14, 0, 0x100u); /*0x6616f7*/
   return this->vfptr; /*0x6616fb*/
 
@@ -1555,7 +1555,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   this->M8 = 0; /*0x6638e7*/
   LOBYTE(this->M12) = 1; /*0x6638ea*/
   BYTE1(this->M13) = 0; /*0x6638ee*/
-  this->AbstractClass = &DynamicVectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6638f1*/
+  this->AbstractClass = &vt_DynamicVectorClass; /*0x6638f1*/
   this->M20 = 10; /*0x6638f7*/
   this->M16 = 0; /*0x6638fe*/
   LOBYTE(this->q018) = 0; /*0x663901*/

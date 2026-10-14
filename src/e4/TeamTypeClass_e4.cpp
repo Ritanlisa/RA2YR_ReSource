@@ -69,7 +69,7 @@ int TeamTypeClass::Construct()
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->__pad_04C = 1; /*0x4c98e0*/
   this->__pad_4C[1] = 0; /*0x4c98e3*/
-  this->taskForce[0] = (int)&DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4c98e6*/
+  this->taskForce[0] = (int)&vt_DynamicVectorClass; /*0x4c98e6*/
   *&this->taskForceCapacity = 10; /*0x4c98ed*/
   *&this->taskForceCount = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -81,8 +81,8 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  this->AbstractClass = &FactoryClass::`vftable'; /*0x4c991a*/
-  this->TeamTypeClass_field_70 = &FactoryClass::`vftable'; /*0x4c9920*/
+  this->AbstractClass = &vt_FactoryClass; /*0x4c991a*/
+  this->TeamTypeClass_field_70 = &vt_FactoryClass; /*0x4c9920*/
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c9926) */
   /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4c992d) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
@@ -1396,7 +1396,7 @@ DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2, voi
   int v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6f2723*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2726*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x6f2726*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6f2730*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f2743*/

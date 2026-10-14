@@ -62,7 +62,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
 
   /* X11: vtable install elided (implicit via AnimClass virtuals 0x4228eb) */
-  a2->AnimClass_field_0x4 = &AnimClass::`vftable'; /*0x4228f1*/
+  a2->AnimClass_field_0x4 = &vt_AnimClass; /*0x4228f1*/
   /* X11: vtable install elided (implicit via AnimClass virtuals 0x4228f8) */
   *(unsigned int *)a2->__pad_C = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer(&a2->AnimClass_field_0x0, 1); /*0x422906*/

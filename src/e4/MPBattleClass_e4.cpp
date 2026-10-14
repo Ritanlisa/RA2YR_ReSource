@@ -37,7 +37,7 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
-  *(unsigned int *)this->MPGameModeClass = &MultiplayerBattle::`vftable'; /*0x5c0df8*/
+  *(unsigned int *)this->MPGameModeClass = &vt_MultiplayerBattle; /*0x5c0df8*/
   return this->MPGameModeClass; /*0x5c0e00*/
 
 }
@@ -48,7 +48,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
-  *(unsigned int *)this->MPGameModeClass = &FreeForAll::`vftable'; /*0x5c5d08*/
+  *(unsigned int *)this->MPGameModeClass = &vt_FreeForAll; /*0x5c5d08*/
   return this->MPGameModeClass; /*0x5c5d10*/
 
 }
@@ -68,7 +68,7 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
-  *(unsigned int *)this->MPGameModeClass = &Megawealth::`vftable'; /*0x5c9408*/
+  *(unsigned int *)this->MPGameModeClass = &vt_Megawealth; /*0x5c9408*/
   return this->MPGameModeClass; /*0x5c9410*/
 
 }
@@ -79,7 +79,7 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
-  *(unsigned int *)this->MPGameModeClass = &MultiplayerSiege::`vftable'; /*0x5ca658*/
+  *(unsigned int *)this->MPGameModeClass = &vt_MultiplayerSiege; /*0x5ca658*/
   return this->MPGameModeClass; /*0x5ca660*/
 
 }
@@ -233,7 +233,7 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyA
 {
 
   MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
-  *(unsigned int *)this->MPGameModeClass = &UnholyAlliance::`vftable'; /*0x5cb3c8*/
+  *(unsigned int *)this->MPGameModeClass = &vt_UnholyAlliance; /*0x5cb3c8*/
   return this->MPGameModeClass; /*0x5cb3d0*/
 
 }

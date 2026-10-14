@@ -61,7 +61,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(unsigned int *)v6->__pad_000 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7658bd*/
+        *(unsigned int *)v6->__pad_000 = &vt_rc_ptr; /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -86,7 +86,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x76588d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -210,7 +210,7 @@ namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 {
 
-  *this = (Campaign_WorldDominationTour)&rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x765713*/
+  *this = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765713*/
   ComPtr::Release((ComPtr *)this); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     __3_YAXPAX_Z(this); /*0x765726*/
@@ -224,7 +224,7 @@ namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
 
-  *this = (Campaign_WorldDominationTour)&rc_ptr<WorldDominationTour::History>::`vftable'; /*0x765743*/
+  *this = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765743*/
   ComPtr::Release((ComPtr *)this); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     __3_YAXPAX_Z(this); /*0x765756*/

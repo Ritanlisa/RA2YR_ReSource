@@ -17,7 +17,7 @@ unsigned int * CenterTeamCommand::Construct(int a2, void *a2_2, void *a3, void *
 {
 
   a2_2->CenterTeamCommand_field_00 = a2_2; /*0x5361a6*/
-  *(unsigned int *)a2_2->CommandClass = &CenterTeamCommandClass::`vftable'; /*0x5361a9*/
+  *(unsigned int *)a2_2->CommandClass = &vt_CenterTeamCommandClass; /*0x5361a9*/
   return a2_2->CommandClass; /*0x5361af*/
 
 }

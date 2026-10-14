@@ -63,7 +63,7 @@ struct AnimClass {
     LightSourceClass * ptr_614;  // 0x614
 // --- flat members (END) ---
     Coord *AnimClass_field_0xC8;  // G42.33: raw type Coord* ([2].__pad_C sites)
-    void* ;  // G42.33 supply (vtable id)
+    void *unnamed_66;  // G42.33 supply (vtable id)
     unsigned int AnimClass_field_0xA4;  // G42.33 supply (+0xA4)
     void *AnimClass_field_0x1A0;  // G42.33 supply (Mixer)
     void *AnimClass_field_0x1B4;  // G42.33 supply (Mixer)

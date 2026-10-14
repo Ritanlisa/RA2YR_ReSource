@@ -60,7 +60,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source)
   this->FootClass_E0 = 0; /*0x41e3ef*/
   this->ChargerBarrels = 0; /*0x41e3f5*/
   this->q108 = 0; /*0x41e3fb*/
-  this->ObjectTypeClass = &AITriggerTypeClass::`vftable'; /*0x41e401*/
+  this->ObjectTypeClass = &vt_AITriggerTypeClass; /*0x41e401*/
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e407) */
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e40e) */
   /* X11: vtable install elided (implicit via AITriggerTypeClass virtuals 0x41e415) */
@@ -168,8 +168,8 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  this->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x427731*/
-  this->ShouldFogRemove = &AnimTypeClass::`vftable'; /*0x427737*/
+  this->ObjectTypeClass = &vt_AnimTypeClass; /*0x427731*/
+  this->ShouldFogRemove = &vt_AnimTypeClass; /*0x427737*/
   /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x42773d) */
   /* X11: vtable install elided (implicit via AnimTypeClass virtuals 0x427744) */
   AbstractClass::GenerateUniqueID(&this->vtable4); /*0x42774b*/
@@ -388,10 +388,10 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
-      a1->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x428831*/
-      a1->? = &AnimTypeClass::`vftable'; /*0x428837*/
-      a1->? = &AnimTypeClass::`vftable'; /*0x42883e*/
-      a1->? = &AnimTypeClass::`vftable'; /*0x428845*/
+      a1->ObjectTypeClass = &vt_AnimTypeClass; /*0x428831*/
+      a1->? = &vt_AnimTypeClass; /*0x428837*/
+      a1->? = &vt_AnimTypeClass; /*0x42883e*/
+      a1->? = &vt_AnimTypeClass; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -558,7 +558,7 @@ int AnimTypeClass::GetDamage()
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->ImageAllocated = 1; /*0x428d55*/
-      *(unsigned int *)v10.CDFileClass = &CCFileClass::`vftable'; /*0x428d63*/
+      *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
@@ -566,7 +566,7 @@ int AnimTypeClass::GetDamage()
     }
     (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->Image; /*0x428da2*/
-    *(unsigned int *)v7.CDFileClass = &CCFileClass::`vftable'; /*0x428dac*/
+    *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
@@ -586,10 +586,10 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
   int v4; // eax
   AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  aP0->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x428ead*/
-  aP0->? = &AnimTypeClass::`vftable'; /*0x428eb3*/
-  aP0->? = &AnimTypeClass::`vftable'; /*0x428eba*/
-  aP0->? = &AnimTypeClass::`vftable'; /*0x428ec1*/
+  aP0->ObjectTypeClass = &vt_AnimTypeClass; /*0x428ead*/
+  aP0->? = &vt_AnimTypeClass; /*0x428eb3*/
+  aP0->? = &vt_AnimTypeClass; /*0x428eba*/
+  aP0->? = &vt_AnimTypeClass; /*0x428ec1*/
   v6 = aP0; /*0x428ecf*/
   v3 = (*(int (**)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
          &g_BuildingLoadQueue_Array.LightVisibility,

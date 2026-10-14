@@ -213,7 +213,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
-    *v6 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7702ce*/
+    *v6 = &vt_DynamicVectorClass; /*0x7702ce*/
     v6->u32_14 = 10; /*0x7702d4*/
     v6->q010 = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
@@ -225,7 +225,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   this->u32_3B8 = 1; /*0x770305*/
   this->u32_3BC = 0; /*0x77030c*/
   VectorClass::WstringConstructor(&this->u32_3C0, 0, 0); /*0x770312*/
-  this->u32_3C0 = &DynamicVectorClass<Wstring>::`vftable'; /*0x770317*/
+  this->u32_3C0 = &vt_DynamicVectorClass; /*0x770317*/
   this->u32_3D4 = 10; /*0x77031d*/
   this->u32_3D0 = 0; /*0x770324*/
   this->u32_3D8 = 0; /*0x770327*/

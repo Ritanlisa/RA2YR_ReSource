@@ -42,7 +42,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   int v3; // eax
 
   AbstractTypeClass::Constructor((int *)this, aP1); /*0x46cb68*/
-  this->AbstractClass = &CampaignClass::`vftable'; /*0x46cb70*/
+  this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46cb82) */
@@ -105,10 +105,10 @@ LABEL_7:
         AbstractTypeClass::Constructor((int *)v6, Source); /*0x46ceb5*/
         *(unsigned int *)(v6 + 152) = -1; /*0x46ceba*/
         *(unsigned int *)(v6 + 668) = -1; /*0x46cec0*/
-        *(unsigned int *)v6 = &CampaignClass::`vftable'; /*0x46cec6*/
-        *(unsigned int *)(v6 + 4) = &CampaignClass::`vftable'; /*0x46cecc*/
-        *(unsigned int *)(v6 + 8) = &CampaignClass::`vftable'; /*0x46ced3*/
-        *(unsigned int *)(v6 + 12) = &CampaignClass::`vftable'; /*0x46ceda*/
+        *(unsigned int *)v6 = &vt_CampaignClass; /*0x46cec6*/
+        *(unsigned int *)(v6 + 4) = &vt_CampaignClass; /*0x46cecc*/
+        *(unsigned int *)(v6 + 8) = &vt_CampaignClass; /*0x46ced3*/
+        *(unsigned int *)(v6 + 12) = &vt_CampaignClass; /*0x46ceda*/
         if ( dword_A83D08 < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
@@ -322,13 +322,13 @@ LABEL_47:
   INIClass::SetInt(v28.INIClass, (unsigned __int8 *)Block, aScore2, this->scenario[15], 0); /*0x49ca3e*/
   INIClass::WriteDigest((INIClass *)&v28, (int)&v30, 0); /*0x49ca51*/
   CCFileClass::Reset(&v30); /*0x49ca5d*/
-  *(unsigned int *)v30.CDFileClass = &CCFileClass::`vftable'; /*0x49ca67*/
+  *(unsigned int *)v30.CDFileClass = &vt_CCFileClass; /*0x49ca67*/
   v32 = 0; /*0x49ca77*/
   Vector::Clear((int)v31); /*0x49ca7e*/
   *(unsigned int *)v30.CDFileClass = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v30); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v28); /*0x49ca9f*/
-  *(unsigned int *)v33.CDFileClass = &CCFileClass::`vftable'; /*0x49caab*/
+  *(unsigned int *)v33.CDFileClass = &vt_CCFileClass; /*0x49caab*/
   v35 = 0; /*0x49cab2*/
   Vector::Clear((int)v34); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = &off_7E1668; /*0x49cac5*/
@@ -412,7 +412,7 @@ void ** CampaignClass::DTOR(char a2)
   int v3; // eax
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &CampaignClass::`vftable'; /*0x46d096*/
+  this->AbstractClass = &vt_CampaignClass; /*0x46d096*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d09c) */
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0a3) */
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0aa) */

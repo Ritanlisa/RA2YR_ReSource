@@ -2016,7 +2016,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v9 = -1732584194; /*0x4745a5*/
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
-  *(unsigned int *)v6.state = &SHAPipe::`vftable'; /*0x4745bd*/
+  *(unsigned int *)v6.state = &vt_SHAPipe; /*0x4745bd*/
   INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
@@ -2063,7 +2063,7 @@ int E4Recv_476E20::sub_476E20()
   v6 = -1732584194; /*0x476e54*/
   v7 = 271733878; /*0x476e5c*/
   v8 = -1009589776; /*0x476e64*/
-  *(unsigned int *)v3.state = &SHAPipe::`vftable'; /*0x476e6c*/
+  *(unsigned int *)v3.state = &vt_SHAPipe; /*0x476e6c*/
   INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
   SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/

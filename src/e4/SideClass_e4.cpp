@@ -140,11 +140,11 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
   aP1->u32_A5 = 0; /*0x6a4576*/
   aP1->u32_AC = 10; /*0x6a457c*/
   aP1->u32_A8 = 0; /*0x6a4586*/
-  aP1->houseTypes = &TypeList<int>::`vftable'; /*0x6a458c*/
-  aP1->AbstractClass = &SideClass::`vftable'; /*0x6a4597*/
-  aP1->u32_98 = &SideClass::`vftable'; /*0x6a459d*/
-  aP1->u32_8 = &SideClass::`vftable'; /*0x6a45a3*/
-  aP1->q00C = &SideClass::`vftable'; /*0x6a45aa*/
+  aP1->houseTypes = &vt_TypeList; /*0x6a458c*/
+  aP1->AbstractClass = &vt_SideClass; /*0x6a4597*/
+  aP1->u32_98 = &vt_SideClass; /*0x6a459d*/
+  aP1->u32_8 = &vt_SideClass; /*0x6a45a3*/
+  aP1->q00C = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x6a45b1*/
   if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
     || (BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
@@ -198,8 +198,8 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       BYTE1(v2[1].?) = 0; /*0x6a47c5*/
       v2[1].? = (void *)10; /*0x6a47cb*/
       v2[1].? = 0; /*0x6a47d1*/
-      v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
-      v2->AbstractClass = &SideClass::`vftable'; /*0x6a47e1*/
+      v2->houseTypes = &vt_TypeList; /*0x6a47d7*/
+      v2->AbstractClass = &vt_SideClass; /*0x6a47e1*/
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47e7) */
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47ee) */
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47f5) */
@@ -213,7 +213,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
       p_houseTypes[5] = (void *)10; /*0x6a4813*/
       p_houseTypes[4] = 0; /*0x6a4816*/
-      *p_houseTypes = &TypeList<int>::`vftable'; /*0x6a4819*/
+      *p_houseTypes = &vt_TypeList; /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*&v3->q030))(v3, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
@@ -254,10 +254,10 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   void *houseTypesCount; // eax
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &SideClass::`vftable'; /*0x6a4936*/
-  Block->? = &SideClass::`vftable'; /*0x6a493c*/
-  Block->u32_8 = &SideClass::`vftable'; /*0x6a4943*/
-  Block->? = &SideClass::`vftable'; /*0x6a494a*/
+  Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
+  Block->? = &vt_SideClass; /*0x6a493c*/
+  Block->u32_8 = &vt_SideClass; /*0x6a4943*/
+  Block->? = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/
   v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &v6); /*0x6a496a*/
@@ -272,7 +272,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
     }
   }
   houseTypesCount = (void *)Block->houseTypesCount; /*0x6a499f*/
-  Block->houseTypes = &VectorClass<int>::`vftable'; /*0x6a49a5*/
+  Block->houseTypes = &vt_VectorClass; /*0x6a49a5*/
   if ( houseTypesCount && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(houseTypesCount); /*0x6a49be*/

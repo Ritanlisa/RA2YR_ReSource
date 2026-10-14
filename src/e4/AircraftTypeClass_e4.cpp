@@ -60,10 +60,10 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   aP1->u8_E0C = 0; /*0x41c8ee*/
   aP1->u8_E0D = 0; /*0x41c8f4*/
   aP1->u8_E0E = 0; /*0x41c8fa*/
-  *(unsigned int *)aP1 = &AircraftTypeClass::`vftable'; /*0x41c900*/
-  *(unsigned int *)(aP1 + 4) = &AircraftTypeClass::`vftable'; /*0x41c906*/
-  aP1->VtableStub_8 = &AircraftTypeClass::`vftable'; /*0x41c90c*/
-  *(unsigned int *)(aP1 + 12) = &AircraftTypeClass::`vftable'; /*0x41c913*/
+  *(unsigned int *)aP1 = &vt_AircraftTypeClass; /*0x41c900*/
+  *(unsigned int *)(aP1 + 4) = &vt_AircraftTypeClass; /*0x41c906*/
+  aP1->VtableStub_8 = &vt_AircraftTypeClass; /*0x41c90c*/
+  *(unsigned int *)(aP1 + 12) = &vt_AircraftTypeClass; /*0x41c913*/
   AbstractClass::GenerateUniqueID(aP1 + 4); /*0x41c91a*/
   v3 = dword_A8B228; /*0x41c91f*/
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
@@ -202,10 +202,10 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
   int v3; // eax
   AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)a1->TechnoTypeClass = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
-  *(unsigned int *)&a1->TechnoTypeClass[4] = &AircraftTypeClass::`vftable'; /*0x41cfec*/
-  *(unsigned int *)&a1->TechnoTypeClass[8] = &AircraftTypeClass::`vftable'; /*0x41cff3*/
-  *(unsigned int *)&a1->TechnoTypeClass[12] = &AircraftTypeClass::`vftable'; /*0x41cffa*/
+  *(unsigned int *)a1->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41cfe6*/
+  *(unsigned int *)&a1->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41cfec*/
+  *(unsigned int *)&a1->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
+  *(unsigned int *)&a1->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x41d001*/
   v5 = a1; /*0x41d016*/
   v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
@@ -310,9 +310,9 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
-      *(unsigned int *)aP0->TechnoTypeClass = &AircraftTypeClass::`vftable'; /*0x41ce44*/
+      *(unsigned int *)aP0->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41ce44*/
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce4a) */
-      *&aP0->u32_D2E = &AircraftTypeClass::`vftable'; /*0x41ce51*/
+      *&aP0->u32_D2E = &vt_AircraftTypeClass; /*0x41ce51*/
       /* X11: vtable install elided (implicit via AircraftTypeClass virtuals 0x41ce58) */
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->u32_E00); /*0x41ce6b*/

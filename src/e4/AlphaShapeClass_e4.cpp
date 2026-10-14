@@ -65,10 +65,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   int v4; // eax
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)aP0->__pad_0 = &AlphaShapeClass::`vftable'; /*0x42173d*/
-  aP0->AlphaShapeClass_field_0x04 = (int)&AlphaShapeClass::`vftable'; /*0x421743*/
-  aP0->AlphaShapeClass_field_0x08 = (int)&AlphaShapeClass::`vftable'; /*0x42174a*/
-  aP0->AlphaShapeClass_field_0x0C = (int)&AlphaShapeClass::`vftable'; /*0x421751*/
+  *(unsigned int *)aP0->__pad_0 = &vt_AlphaShapeClass; /*0x42173d*/
+  aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
+  aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
+  aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
   v6 = aP0; /*0x42175f*/
   v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/

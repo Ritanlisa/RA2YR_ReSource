@@ -58,7 +58,7 @@ char Credits::Screen()
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
         GenericList::Constructor(v2 + 3); /*0x52cc16*/
-        *v4 = &List<INIClass::INISection *>::`vftable'; /*0x52cc1b*/
+        *v4 = &vt_List; /*0x52cc1b*/
         v3->needsSave_flag = 0; /*0x52cc21*/
         v3->INIClass_field_2C = 0; /*0x52cc24*/
         v3->unknown30 = 0; /*0x52cc27*/
@@ -78,7 +78,7 @@ char Credits::Screen()
       CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
         (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x52cc76*/
-      v11[0] = &CCFileClass::`vftable'; /*0x52cc7c*/
+      v11[0] = &vt_CCFileClass; /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
       Vector::Clear(v12); /*0x52cc88*/
       v11[0] = &off_7E1668; /*0x52cc91*/
@@ -101,7 +101,7 @@ LABEL_15:
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
       GenericList::Constructor(v6 + 3); /*0x52ccf6*/
-      *v8 = &List<INIClass::INISection *>::`vftable'; /*0x52ccff*/
+      *v8 = &vt_List; /*0x52ccff*/
       v7->needsSave_flag = 0; /*0x52cd08*/
       v7->INIClass_field_2C = 0; /*0x52cd0b*/
       v7->unknown30 = 0; /*0x52cd0e*/
@@ -114,7 +114,7 @@ LABEL_15:
       CampaignClass::LoadFromINIList(v7); /*0x52cd2c*/
       (*(void (**)(unsigned int *, int))*v7)(v7, 1); /*0x52cd37*/
     }
-    v11[0] = &CCFileClass::`vftable'; /*0x52cd3d*/
+    v11[0] = &vt_CCFileClass; /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
     Vector::Clear(v12); /*0x52cd49*/
     v11[0] = &off_7E1668; /*0x52cd52*/

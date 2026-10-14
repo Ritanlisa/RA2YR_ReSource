@@ -87,7 +87,7 @@ int TaskForceClass::Construct(char *aP1)
   this->Coord_9C = 0; /*0x6e7e99*/
   *(unsigned int *)this->q0A0 = 0; /*0x6e7ea3*/
   /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7ead) */
-  this->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e7eb3*/
+  this->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e7eb3*/
   /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7eba) */
   /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e7ec1) */
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/

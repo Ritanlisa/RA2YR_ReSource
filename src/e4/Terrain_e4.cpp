@@ -596,7 +596,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
   v100 = 0; /*0x56c531*/
   v101 = 0; /*0x56c535*/
   LOWORD(v102) = 1; /*0x56c539*/
-  v99 = &DynamicVectorClass<enum PassabilityType>::`vftable'; /*0x56c542*/
+  v99 = &vt_DynamicVectorClass; /*0x56c542*/
   v103 = 0; /*0x56c54a*/
   v104 = 300; /*0x56c54e*/
   v5 = Terrain_field_0x14[2]; /*0x56c556*/
@@ -950,7 +950,7 @@ LABEL_48:
   __3_YAXPAX_Z(v77); /*0x56cb39*/
   __3_YAXPAX_Z(v40); /*0x56cb3f*/
   __3_YAXPAX_Z(v91); /*0x56cb49*/
-  v99 = &VectorClass<enum PassabilityType>::`vftable'; /*0x56cb5a*/
+  v99 = &vt_VectorClass; /*0x56cb5a*/
   if ( v100 && BYTE1(v102) ) /*0x56cb6b*/
     __3_YAXPAX_Z(v100); /*0x56cb6e*/
   return v81; /*0x56cb57*/

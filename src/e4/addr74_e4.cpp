@@ -755,7 +755,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   this->M8 = 0; /*0x74bc07*/
   LOBYTE(this->M12) = 1; /*0x74bc0a*/
   BYTE1(this->?) = 0; /*0x74bc0e*/
-  this->? = &VectorClass<unsigned char>::`vftable'; /*0x74bc11*/
+  this->? = &vt_VectorClass; /*0x74bc11*/
   this->M8 = (void *)-1; /*0x74bc17*/
   LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
   this->M8 = *(void **)(a2 + 8); /*0x74bc27*/

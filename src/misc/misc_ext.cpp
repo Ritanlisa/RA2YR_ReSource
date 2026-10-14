@@ -42843,9 +42843,9 @@ DiskLaserClass::DiskLaserClass()
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
   /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a3a) */
-  this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass::`vftable'; /*0x4a7a40*/
+  this->DiskLaserClass_field_0x04 = (int)&vt_DiskLaserClass; /*0x4a7a40*/
   /* X11: vtable install elided (implicit via DiskLaserClass virtuals 0x4a7a47) */
-  this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass::`vftable'; /*0x4a7a4e*/
+  this->DiskLaserClass_field_0x0C = (int)&vt_DiskLaserClass; /*0x4a7a4e*/
   this->q024 = 0; /*0x4a7a55*/
   this->q028 = 0; /*0x4a7a58*/
   this->u32_2C = 0; /*0x4a7a5b*/
@@ -42880,9 +42880,9 @@ NeuronClass::NeuronClass()
   this->u32_2C = 0; /*0x43a366*/
   this->q030 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x43a372*/
   /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a375) */
-  this->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a37b*/
+  this->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a37b*/
   /* X11: vtable install elided (implicit via NeuronClass virtuals 0x43a382) */
-  this->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a389*/
+  this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a389*/
   if ( g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
     || (BYTE1(g_BuildingLoadQueue_Array) || !g_BuildingLoadQueue_Array.?)
     && g_BuildingLoadQueue_Array.?[2] > 0

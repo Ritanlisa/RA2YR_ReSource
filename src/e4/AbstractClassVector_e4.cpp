@@ -50,7 +50,7 @@ int AbstractClassVector::Construct(int aP1, int aP2)
   this->q008 = aP1; /*0x4e0e8e*/
   LOBYTE(this->m_C) = 1; /*0x4e0e91*/
   BYTE1(this->m_C) = 0; /*0x4e0e95*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<AbstractClass *>::`vftable'; /*0x4e0e98*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

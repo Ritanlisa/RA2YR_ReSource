@@ -38,7 +38,7 @@ struct MapClass {
     unsigned int CellIterator_NextCell;  // 0x118
     unsigned int ZoneIterator_X;  // 0x11C
     unsigned int ZoneIterator_Y;  // 0x120
-    void* ;  // 0x138
+    void *q138;  // 0x138
     unsigned int Crates;  // 0x148
     unsigned int CellStructs1;  // 0x212
     unsigned int MapRect;  // 0x236

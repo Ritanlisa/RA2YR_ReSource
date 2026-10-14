@@ -51,7 +51,7 @@ int ParasiteClass::Constructor()
   v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
-  this->AbstractClass = &ParasiteClass::`vftable'; /*0x629231*/
+  this->AbstractClass = &vt_ParasiteClass; /*0x629231*/
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629237) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62923e) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x629245) */

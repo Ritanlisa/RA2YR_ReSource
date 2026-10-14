@@ -9539,7 +9539,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
   v6 = 1 << (a3 + 1); /*0x5840d6*/
   v48 = v6; /*0x5840e3*/
   WordVector::Constructor(&v59, 0, 0); /*0x5840e7*/
-  v59 = (WordVector)&DynamicVectorClass<unsigned short>::`vftable'; /*0x5840f0*/
+  v59 = (WordVector)&vt_DynamicVectorClass; /*0x5840f0*/
   v64 = 10; /*0x5840fa*/
   v63 = 0; /*0x584102*/
   if ( Block && v62 ) /*0x58410e*/
@@ -9692,7 +9692,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
           }
           if ( v53 == *(unsigned short *)(this->estimatedHealth + 2 * (a3 + 4 * v29 + v29)) && !*((unsigned char *)v50 + j) ) /*0x58441c*/
           {
-            v59 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584522*/
+            v59 = (WordVector)&vt_VectorClass; /*0x584522*/
             if ( Block && v62 ) /*0x584534*/
               __3_YAXPAX_Z(Block); /*0x584537*/
             return 1; /*0x584542*/
@@ -9749,7 +9749,7 @@ char Gap2Recv_5840C0::CheckMapReachability(CCINIClass * aP1, int a3, int a4, int
     }
     while ( v37 ); /*0x5844ef*/
   }
-  v59 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x5844f5*/
+  v59 = (WordVector)&vt_VectorClass; /*0x5844f5*/
   if ( Block ) /*0x5844ff*/
   {
     if ( v62 ) /*0x584507*/
@@ -25085,7 +25085,7 @@ int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
   if ( !v8 ) /*0x6c9fe8*/
     return 0; /*0x6c9fe8*/
   Render_Parse_6CABA0(0, 0); /*0x6c9ff4*/
-  *v8 = &DynamicVectorClass<SubTitle *>::`vftable'; /*0x6c9ff9*/
+  *v8 = &vt_DynamicVectorClass; /*0x6c9ff9*/
   v8->u32_14 = 10; /*0x6c9fff*/
   v8->q010 = 0; /*0x6ca006*/
   while ( 1 ) /*0x6ca0e2*/
@@ -31926,14 +31926,14 @@ void* Gap2Recv_7665D0::TerritorySelectWDT_Create(void* a2) {
   unknown_libname_74(&v11); /*0x7665f4*/
   v17 = &stru_B72760; /*0x7665f9*/
   v18 = 0; /*0x766601*/
-  v16 = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x766605*/
+  v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x766605*/
   do /*0x7666b0*/
   {
     if ( !((unsigned __int8 (*)(void ***))v16[1])(&v16) ) /*0x76661a*/
       break; /*0x76661f*/
     v4 = v17[1] + 8 * v18; /*0x766634*/
     ComPtr::Constructor(&v14); /*0x766637*/
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76663c*/
+    v14 = &vt_rc_ptr; /*0x76663c*/
     ComPtr::Set(&v14, *(unsigned int *)(v4 + 4)); /*0x766648*/
     if ( (v2 & v15[2]) == 0 ) /*0x766654*/
     {
@@ -31951,7 +31951,7 @@ void* Gap2Recv_7665D0::TerritorySelectWDT_Create(void* a2) {
         v2 |= v15[2]; /*0x766693*/
       }
     }
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76669a*/
+    v14 = &vt_rc_ptr; /*0x76669a*/
     ComPtr::Release(&v14); /*0x76669e*/
     ((void (*)(void ***))v16[2])(&v16); /*0x7666ab*/
   }
@@ -31963,7 +31963,7 @@ void* Gap2Recv_7665D0::TerritorySelectWDT_Create(void* a2) {
       break; /*0x7666d3*/
     v7 = v17[1] + 8 * v18; /*0x7666e8*/
     ComPtr::Constructor(&v14); /*0x7666eb*/
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x7666f0*/
+    v14 = &vt_rc_ptr; /*0x7666f0*/
     ComPtr::Set(&v14, *(unsigned int *)(v7 + 4)); /*0x7666fc*/
     if ( (v2 & v15[2]) == 0 ) /*0x766708*/
     {
@@ -31981,12 +31981,12 @@ void* Gap2Recv_7665D0::TerritorySelectWDT_Create(void* a2) {
         v2 |= v15[2]; /*0x766748*/
       }
     }
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76674f*/
+    v14 = &vt_rc_ptr; /*0x76674f*/
     ComPtr::Release(&v14); /*0x766753*/
     ((void (*)(void ***))v16[2])(&v16); /*0x766760*/
   }
   WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
-  v16 = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x76677f*/
+  v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76677f*/
   DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
 

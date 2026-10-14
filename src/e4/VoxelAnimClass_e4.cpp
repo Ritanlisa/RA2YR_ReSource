@@ -947,9 +947,9 @@ int VoxelAnimClass::Reset(void *a1, void *a2)
   a1->__pad_20[21] = 0; /*0x75aad6*/
   a1->__pad_20[22] = 0; /*0x75aad9*/
   *(unsigned int *)&a1->__pad_20[24] = 0; /*0x75aadc*/
-  a1->VoxelAnimClass_field_0x0 = &WalkLocomotionClass::`vftable'; /*0x75aadf*/
-  a1->VoxelAnimClass_field_0x4[0] = (int)&WalkLocomotionClass::`vftable'; /*0x75aae5*/
-  *(unsigned int *)&a1->__pad_C[12] = &WalkLocomotionClass::`vftable'; /*0x75aaec*/
+  a1->VoxelAnimClass_field_0x0 = &vt_WalkLocomotionClass; /*0x75aadf*/
+  a1->VoxelAnimClass_field_0x4[0] = (int)&vt_WalkLocomotionClass; /*0x75aae5*/
+  *(unsigned int *)&a1->__pad_C[12] = &vt_WalkLocomotionClass; /*0x75aaec*/
   return (int)a1; /*0x75aaf5*/
 
 }
@@ -983,15 +983,15 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)&a1->__pad_144[180] = 5; /*0x75ec5d*/
   a1->__pad_144[184] = 1; /*0x75ec67*/
   a1->__pad_144[185] = 0; /*0x75ec6e*/
-  *(unsigned int *)&a1->__pad_144[172] = &VectorClass<CellClass *>::`vftable'; /*0x75ec74*/
+  *(unsigned int *)&a1->__pad_144[172] = &vt_VectorClass; /*0x75ec74*/
   *(unsigned int *)&a1->__pad_144[176] = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
   a1->__pad_144[185] = 1; /*0x75ec89*/
-  *(unsigned int *)&a1->__pad_144[172] = &DynamicVectorClass<CellClass *>::`vftable'; /*0x75ec90*/
+  *(unsigned int *)&a1->__pad_144[172] = &vt_DynamicVectorClass; /*0x75ec90*/
   *(unsigned int *)&a1->__pad_144[192] = 10; /*0x75ec9a*/
   *(unsigned int *)&a1->__pad_144[188] = 0; /*0x75eca4*/
-  a1->VoxelAnimClass_field_0x0 = &WaveClass::`vftable'; /*0x75ecaa*/
-  a1->VoxelAnimClass_field_0x4[0] = (int)&WaveClass::`vftable'; /*0x75ecb0*/
-  a1->VoxelAnimClass_field_0x8 = &WaveClass::`vftable'; /*0x75ecb7*/
+  a1->VoxelAnimClass_field_0x0 = &vt_WaveClass; /*0x75ecaa*/
+  a1->VoxelAnimClass_field_0x4[0] = (int)&vt_WaveClass; /*0x75ecb0*/
+  a1->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
   *(unsigned int *)a1->__pad_C = &off_7F6BC8; /*0x75ecbe*/
   if ( *(int *)&stru_A8EB00.?[100] < *(int *)&stru_A8EB00.?[92] /*0x75ecfb*/
     || (stru_A8EB00.?[97] || !*(unsigned int *)&stru_A8EB00.?[92])

@@ -2276,4 +2276,9 @@ public:
 #endif  // GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint
 
 } // namespace gamemd
-}  // fix_truncated_headers: restored closer // namespace gamemd
+// X25: `fix_truncated_headers` phantom closer removed -- the raw-text brace
+// counter double-counted BOTH branches of the GAMEMD_E4_UNIVERSE #if/#else
+// guard at the head of this file (each branch opens `namespace gamemd {`;
+// only one is ever active), so the "restored" `}` was never missing for
+// either preprocessing path.  Re-verified: MSVC active balance = 0 for both
+// e4 and tree/e4-disabled paths (cl /Zs probe, .omo/evidence/optimization/x25/).

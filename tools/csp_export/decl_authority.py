@@ -1173,6 +1173,99 @@ def valid_class_name(cls):
             and cls not in _CXX_KEYWORDS)
 
 
+# ---------------------------------------------------------------- X25: fwd hygiene
+_FWD_PRIM = {'void', 'int', 'char', 'short', 'long', 'float', 'double', 'bool',
+             'unsigned', 'signed', 'size_t', 'wchar_t'}
+_X10_MEMBER = re.compile(
+    r'^\s*(?P<ty>[A-Za-z_]\w*(?:::\w+)?)\s*\*\s*(?P<nm>\w+)\s*;'
+    r'\s*//\s*X10 supply')
+_CORPUS_KW = None
+
+
+def _corpus_class_keyword(ty):
+    """'class' | 'struct' for `ty`, decided by the corpus definitions."""
+    global _CORPUS_KW
+    if _CORPUS_KW is None:
+        cc, cs = set(), set()
+        for hp in SRC.rglob('*.hpp'):
+            try:
+                ht = hp.read_text(encoding='utf-8', errors='replace')
+            except OSError:
+                continue
+            for m in re.finditer(r'\b(class|struct)\s+(\w+)\b', ht):
+                (cc if m.group(1) == 'class' else cs).add(m.group(2))
+        _CORPUS_KW = (cc, cs)
+    cc, cs = _CORPUS_KW
+    if ty in cs and ty not in cc:
+        return 'struct'
+    return 'class'
+
+
+def ensure_fwd_decls(p, dry=False):
+    """X25: forward-declare class-pointer member types supplied into `p`.
+
+    The supply pass emits `Type * name;  // X10 supply` member lines.  When
+    `Type` is a class the target header does not know, every consumer TU
+    cascades C2143/C4430/C2238 (gap2_global_decls.hpp got CampaignClass /
+    LineTrail / AudioController / Coord / rc_ptr_base / VectorClass exactly
+    this way -- 36 error lines in the I212 HEAD build log).  This hygiene
+    pass adds `class Type;` / `struct Type;` (corpus keyword) after the
+    last `#include` for every such type not already declared in the file.
+    Idempotent (declared-check).  Returns the number of decls added."""
+    try:
+        text = p.read_text(encoding='utf-8', errors='replace')
+    except OSError:
+        return 0
+    need = []
+    seen = set()
+    for l in text.split('\n'):
+        m = _X10_MEMBER.match(l)
+        if not m:
+            continue
+        ty = m.group('ty')
+        if ty in _FWD_PRIM or ty in seen:
+            continue
+        seen.add(ty)
+        if re.search(r'\b(?:class|struct|union|enum)\s+%s\b'
+                     r'|\btypedef\b[^;]*\b%s\b|\busing\s+%s\b'
+                     % (ty, ty, ty), text):
+            continue
+        need.append('%s %s;' % (_corpus_class_keyword(ty), ty))
+    if not need:
+        return 0
+    lines = text.split('\n')
+    at = 0
+    for i, l in enumerate(lines):
+        if l.strip().startswith('#include'):
+            at = i + 1
+    if at == 0 and lines and lines[0].strip() == '#pragma once':
+        at = 1
+    block = ['',
+             '// X25: forward declarations for X10-supplied member pointer types']
+    block += need
+    new_lines = lines[:at] + block + lines[at:]
+    if not dry:
+        robust_write(p, '\n'.join(new_lines))
+    return len(need)
+
+
+def cmd_hygiene(args):
+    """X25: run the fwd-decl hygiene over explicitly named headers."""
+    tot = 0
+    for f in args.files:
+        p = Path(f)
+        if not p.is_absolute():
+            p = ROOT / f
+        if not p.exists():
+            print('SKIP (missing): %s' % f)
+            continue
+        n = ensure_fwd_decls(p, dry=args.dry)
+        print('%s: +%d fwd decl(s)%s' % (f, n, ' (DRY)' if args.dry else ''))
+        tot += n
+    print('total fwd decls: %d' % tot)
+    return 0
+
+
 def cmd_supply(args):
     """Supply missing `this->X` member names into per-universe authorities.
 
@@ -1314,6 +1407,13 @@ def cmd_supply(args):
             if not args.dry:
                 if not robust_write(p, new):
                     print('WRITE FAIL', f)
+        # X25: fwd-decl hygiene per touched header (also when add == [] --
+        # repairs standing supplies whose types were left undeclared).
+        n_fwd = ensure_fwd_decls(p, dry=args.dry)
+        if n_fwd:
+            details.append({'file': f, 'class': '*fwd-hygiene*',
+                            'added': n_fwd})
+            files_touched += 1
     skip_reasons = defaultdict(int)
     for _c, _n, r in skipped:
         skip_reasons[r] += 1
@@ -1349,6 +1449,10 @@ def main():
     p.add_argument('--missing', default=None)
     p.add_argument('--dry', action='store_true')
     p.set_defaults(fn=cmd_supply)
+    p = sub.add_parser('hygiene')
+    p.add_argument('files', nargs='+')
+    p.add_argument('--dry', action='store_true')
+    p.set_defaults(fn=cmd_hygiene)
     args = ap.parse_args()
     if not getattr(args, 'fn', None):
         ap.print_help()

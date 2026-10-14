@@ -181,7 +181,7 @@ struct InfantryTypeClass {
     double Size;  // 0x380
     double SizeLimit;  // 0x388
     bool HoverAttack;  // 0x390
-    void* ;  // 0x394
+    void *q394;  // 0x394
     int TechnoTypeClass_field_int_398;  // 0x398
     double RollAngle;  // 0x3A0
     double PitchSpeed;  // 0x3A8

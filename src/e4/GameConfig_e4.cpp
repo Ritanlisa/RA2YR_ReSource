@@ -171,12 +171,12 @@ void GameConfig::Constructor()
       *(unsigned int *)(v2 + 8) = 0; /*0x5d67e1*/
       *(unsigned int *)(v2 + 20) = 0; /*0x5d67e6*/
       *(unsigned int *)(v2 + 24) = 0; /*0x5d67e9*/
-      *(unsigned int *)(v2 + 16) = &GenericNode::`vftable'; /*0x5d67ec*/
+      *(unsigned int *)(v2 + 16) = &vt_GenericNode; /*0x5d67ec*/
       GenericNode::Constructor((GenericNode *)(v2 + 28)); /*0x5d67f2*/
-      v3->u32_C = &GenericList::`vftable'; /*0x5d67fa*/
+      v3->u32_C = &vt_GenericList; /*0x5d67fa*/
       LinkedList::Prepend(&v3->sectionHead, v3 + 28); /*0x5d6801*/
       v1 = this; /*0x5d6806*/
-      v3->u32_C = &List<INIClass::INISection *>::`vftable'; /*0x5d680a*/
+      v3->u32_C = &vt_List; /*0x5d680a*/
       v3->needsSave_flag = 0; /*0x5d6811*/
       v3->INIClass_field_2C = 0; /*0x5d6814*/
       v3->unknown30 = 0; /*0x5d6817*/
@@ -194,7 +194,7 @@ void GameConfig::Constructor()
     CCFileClass::Construct2(&v6, &v1->ObjectClass_2C); /*0x5d683c*/
     if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
       CCINIClass::Load(*&v1->q038, (int)&v6, 0, 0); /*0x5d685a*/
-    *(unsigned int *)v6.CDFileClass = &CCFileClass::`vftable'; /*0x5d6863*/
+    *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x5d6878*/

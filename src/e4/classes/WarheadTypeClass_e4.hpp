@@ -23,11 +23,11 @@ struct WarheadTypeClass {
     unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
     bool IsAllocated;  // 0x13
-    void* ;  // 0x14
+    void *q14;  // 0x14
     int DeformTreshold;  // 0x16
     char InfDeath[4];  // 0x18
     float CellSpread;  // 0x1C
-    void* ;  // 0x20
+    void *q20;  // 0x20
     bool CausesDelayKill;  // 0x28
     int DelayKillFrames;  // 0x2C
     float DelayKillAtMax;  // 0x30
@@ -110,7 +110,7 @@ struct WarheadTypeClass {
     bool AffectsAllies;  // 0x179
     bool Bullets;  // 0x17A
     bool Veinhole;  // 0x17B
-    void* ;  // 0x18C
+    void *q18C;  // 0x18C
     int MaxDebris;  // 0x194
     int MinDebris;  // 0x198
     unsigned int unused_1CC;  // 0x19C
@@ -141,7 +141,7 @@ struct WarheadTypeClass {
     void * parseModifiers(char a2);
     void GetClassIdentifier();
     void* ProcessPower(int * a2, void *a2_2);
-    void* ;  // 0x0 (ml)
+    void *q0;  // 0x0 (ml)
     unsigned char *m_1;  // 0x1 (offset-truth)
     unsigned int m_10;  // 0x10 (offset-truth)
     unsigned int m_8;  // 0x8 (offset-truth)

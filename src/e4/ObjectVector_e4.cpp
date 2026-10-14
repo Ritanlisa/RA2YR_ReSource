@@ -17,7 +17,7 @@ int ObjectVector::Construct(int aP1, int aP2)
   this->q008 = aP1; /*0x4d044e*/
   LOBYTE(this->q00C) = 1; /*0x4d0451*/
   BYTE1(this->q00C) = 0; /*0x4d0455*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0458*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/

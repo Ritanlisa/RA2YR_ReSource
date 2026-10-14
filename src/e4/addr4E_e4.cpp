@@ -2097,7 +2097,7 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4e0ce3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/
@@ -2440,7 +2440,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   this->M56 = 0; /*0x4e2ac0*/
   this->M60 = 0; /*0x4e2ac7*/
   this->u32_40 = 0; /*0x4e2ace*/
-  *(unsigned int *)this->__pad_0 = &TriColorGaugeClass::`vftable'; /*0x4e2ad5*/
+  *(unsigned int *)this->__pad_0 = &vt_TriColorGaugeClass; /*0x4e2ad5*/
   return (int)this->vfptr; /*0x4e2add*/
 
 }

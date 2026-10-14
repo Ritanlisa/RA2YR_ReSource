@@ -849,7 +849,7 @@ TActionClass::TActionClass()
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  this->AbstractClass = &TEventClass::`vftable'; /*0x71e6c1*/
+  this->AbstractClass = &vt_TEventClass; /*0x71e6c1*/
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6c7) */
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6ce) */
   /* X11: vtable install elided (implicit via TEventClass virtuals 0x71e6d5) */

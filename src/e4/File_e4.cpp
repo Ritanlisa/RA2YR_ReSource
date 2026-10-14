@@ -466,7 +466,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
     if ( CCFileClass::Read(&v23, &v18, 4) != 4 ) /*0x7349fe*/
     {
 LABEL_42:
-      *(unsigned int *)v23.CDFileClass = &CCFileClass::`vftable'; /*0x734cad*/
+      *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x734cad*/
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
       *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734ccc*/
@@ -596,7 +596,7 @@ LABEL_31:
     }
   }
 LABEL_43:
-  *(unsigned int *)v23.CDFileClass = &CCFileClass::`vftable'; /*0x734ce9*/
+  *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
   *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x734d08*/

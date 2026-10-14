@@ -57,7 +57,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     (*(void (**)(void *, unsigned int))(*(unsigned int *)v9 + 4))(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->u32_28); /*0x76fcd6*/
   }
-  v11[0] = &CCFileClass::`vftable'; /*0x76fcdf*/
+  v11[0] = &vt_CCFileClass; /*0x76fcdf*/
   v13 = 0; /*0x76fce7*/
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/

@@ -24,7 +24,7 @@ struct AbstractTypeClass {
     bool needsSave;  // 0x32
     unsigned char zero_3C;  // 0x3C
     char UINameLabel;  // 0x3D
-    void* ;  // 0x60
+    void *q60;  // 0x60
     char Name;  // 0x64
     unsigned char tail_95;  // 0x95
 // --- flat members (END) ---

@@ -333,11 +333,11 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   v43.nextObject = 0; /*0x5cef0f*/
   v43.nextObject = 0; /*0x5cef13*/
   GenericList::Constructor((GenericList *)&v43.occupant); /*0x5cef17*/
-  v43.occupant = (int)&List<INIClass::INISection *>::`vftable'; /*0x5cef20*/
+  v43.occupant = (int)&vt_List; /*0x5cef20*/
   memset(&v43.ambientSoundController[1], 0, 13); /*0x5cef28*/
   v43.customSound_controller[0] = 0; /*0x5cef39*/
   v43.customSound_controller[1] = 0; /*0x5cef3d*/
-  v43.? = (int)&INIClass::`vftable'; /*0x5cef41*/
+  v43.? = (int)&vt_INIClass; /*0x5cef41*/
   unknown_libname_73(&v43.nextObject); /*0x5cef49*/
   unknown_libname_73(&v43.nextObject); /*0x5cef52*/
   SessionClass::Destruct(uniqueId); /*0x5cef59*/
@@ -542,7 +542,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
     DeleteAndZero((ObjectClass *)&v43.nextObject); /*0x5cf59a*/
     DeleteAndZero((ObjectClass *)&v43.nextObject); /*0x5cf5a3*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v43.nextObject); /*0x5cf5ac*/
-    v43.customSound_controller[2] = (int)&CCFileClass::`vftable'; /*0x5cf5b8*/
+    v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf5b8*/
     v45 = 0; /*0x5cf5c0*/
     Vector::Clear((int)v44); /*0x5cf5c7*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf5d0*/
@@ -556,7 +556,7 @@ LABEL_17:
     DeleteAndZero((ObjectClass *)&v43.?); /*0x5cf089*/
     DeleteAndZero((ObjectClass *)&v43.?); /*0x5cf092*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v43.?); /*0x5cf09b*/
-    v43.customSound_controller[2] = (int)&CCFileClass::`vftable'; /*0x5cf0a7*/
+    v43.customSound_controller[2] = (int)&vt_CCFileClass; /*0x5cf0a7*/
     v45 = 0; /*0x5cf0af*/
     Vector::Clear((int)v44); /*0x5cf0b6*/
     v43.customSound_controller[2] = (int)&off_7E1668; /*0x5cf0bf*/
@@ -655,7 +655,7 @@ CampaignClass * * SessionClass::loadSettings()
     }
   }
   v7 = *&this->q058; /*0x5d00cf*/
-  *&this->u32_54 = &VectorClass<MapSelection *>::`vftable'; /*0x5d00d2*/
+  *&this->u32_54 = &vt_VectorClass; /*0x5d00d2*/
   if ( v7 && this->u8_61 ) /*0x5d00dd*/
   {
     __3_YAXPAX_Z(v7); /*0x5d00e3*/
@@ -664,7 +664,7 @@ CampaignClass * * SessionClass::loadSettings()
   this->u8_61 = 0; /*0x5d00ee*/
   *&this->q05C = 0; /*0x5d00f1*/
   v8 = (void *)this->Handle[2]; /*0x5d00f4*/
-  this->Handle[1] = (int)&VectorClass<MSTextEntry *>::`vftable'; /*0x5d00f7*/
+  this->Handle[1] = (int)&vt_VectorClass; /*0x5d00f7*/
   if ( v8 && BYTE1(this->Handle[4]) ) /*0x5d0102*/
   {
     __3_YAXPAX_Z(v8); /*0x5d0108*/
@@ -673,7 +673,7 @@ CampaignClass * * SessionClass::loadSettings()
   BYTE1(this->Handle[4]) = 0; /*0x5d0113*/
   this->Handle[3] = 0; /*0x5d0116*/
   v9 = (void *)this->Config[4]; /*0x5d0119*/
-  this->Config[3] = (int)&VectorClass<Point2D>::`vftable'; /*0x5d011c*/
+  this->Config[3] = (int)&vt_VectorClass; /*0x5d011c*/
   if ( v9 && BYTE1(this->Config[6]) ) /*0x5d0127*/
   {
     __3_YAXPAX_Z(v9); /*0x5d012d*/
@@ -1099,7 +1099,7 @@ void * SessionClass::Constructor(void *aP1) { return new (aP1) SessionClass(); }
   *((unsigned int *)aP1 + 422) = 0; /*0x6971f3*/
   *(aP1 + 1692) = 1; /*0x6971f9*/
   *(aP1 + 1693) = 0; /*0x697200*/
-  *((unsigned int *)aP1 + 420) = &DynamicVectorClass<MultiMission *>::`vftable'; /*0x697206*/
+  *((unsigned int *)aP1 + 420) = &vt_DynamicVectorClass; /*0x697206*/
   *((unsigned int *)aP1 + 425) = 10; /*0x697210*/
   *((unsigned int *)aP1 + 424) = 0; /*0x697216*/
   Waypoint::InitInvalid(aP1 + 2276); /*0x69721c*/
@@ -1107,7 +1107,7 @@ void * SessionClass::Constructor(void *aP1) { return new (aP1) SessionClass(); }
   *((unsigned int *)aP1 + 574) = 0; /*0x69722d*/
   *(aP1 + 2300) = 1; /*0x697233*/
   *(aP1 + 2301) = 0; /*0x69723a*/
-  *((unsigned int *)aP1 + 572) = &DynamicVectorClass<GlobalPacketType *>::`vftable'; /*0x697240*/
+  *((unsigned int *)aP1 + 572) = &vt_DynamicVectorClass; /*0x697240*/
   *((unsigned int *)aP1 + 577) = 10; /*0x69724a*/
   *((unsigned int *)aP1 + 576) = 0; /*0x697250*/
   SessionClass::saveSettings(aP1 + 2600); /*0x697256*/
@@ -1119,21 +1119,21 @@ void * SessionClass::Constructor(void *aP1) { return new (aP1) SessionClass(); }
   *((unsigned int *)aP1 + 2565) = 0; /*0x697292*/
   *(aP1 + 10264) = 1; /*0x697298*/
   *(aP1 + 10265) = 0; /*0x69729f*/
-  *((unsigned int *)aP1 + 2563) = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972a5*/
+  *((unsigned int *)aP1 + 2563) = &vt_DynamicVectorClass; /*0x6972a5*/
   *((unsigned int *)aP1 + 2568) = 10; /*0x6972ab*/
   *((unsigned int *)aP1 + 2567) = 0; /*0x6972b1*/
   *((unsigned int *)aP1 + 2570) = 0; /*0x6972b7*/
   *((unsigned int *)aP1 + 2571) = 0; /*0x6972bd*/
   *(aP1 + 10288) = 1; /*0x6972c3*/
   *(aP1 + 10289) = 0; /*0x6972ca*/
-  *((unsigned int *)aP1 + 2569) = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972d0*/
+  *((unsigned int *)aP1 + 2569) = &vt_DynamicVectorClass; /*0x6972d0*/
   *((unsigned int *)aP1 + 2574) = 10; /*0x6972d6*/
   *((unsigned int *)aP1 + 2573) = 0; /*0x6972dc*/
   *((unsigned int *)aP1 + 2576) = 0; /*0x6972e2*/
   *((unsigned int *)aP1 + 2577) = 0; /*0x6972e8*/
   *(aP1 + 10312) = 1; /*0x6972ee*/
   *(aP1 + 10313) = 0; /*0x6972f5*/
-  *((unsigned int *)aP1 + 2575) = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x6972fb*/
+  *((unsigned int *)aP1 + 2575) = &vt_DynamicVectorClass; /*0x6972fb*/
   *((unsigned int *)aP1 + 2580) = 10; /*0x697301*/
   *((unsigned int *)aP1 + 2579) = 0; /*0x697307*/
   *((unsigned int *)aP1 + 2624) = 0; /*0x69730d*/
@@ -1147,14 +1147,14 @@ void * SessionClass::Constructor(void *aP1) { return new (aP1) SessionClass(); }
   *((unsigned int *)aP1 + 2631) = 0; /*0x697342*/
   *(aP1 + 10528) = 1; /*0x697348*/
   *(aP1 + 10529) = 0; /*0x69734f*/
-  *((unsigned int *)aP1 + 2629) = &DynamicVectorClass<char *>::`vftable'; /*0x697355*/
+  *((unsigned int *)aP1 + 2629) = &vt_DynamicVectorClass; /*0x697355*/
   *((unsigned int *)aP1 + 2634) = 10; /*0x69735f*/
   *((unsigned int *)aP1 + 2633) = 0; /*0x697365*/
   *((unsigned int *)aP1 + 2636) = 0; /*0x697371*/
   *((unsigned int *)aP1 + 2637) = 0; /*0x697377*/
   *(aP1 + 10552) = 1; /*0x69737d*/
   *(aP1 + 10553) = 0; /*0x697384*/
-  *((unsigned int *)aP1 + 2635) = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x69738a*/
+  *((unsigned int *)aP1 + 2635) = &vt_DynamicVectorClass; /*0x69738a*/
   *((unsigned int *)aP1 + 2640) = 10; /*0x697394*/
   *((unsigned int *)aP1 + 2639) = 0; /*0x69739a*/
   Waypoint::InitInvalid(aP1 + 10604); /*0x6973a0*/
@@ -1864,11 +1864,11 @@ AbstractClass * * SessionClass::LoadMissionList()
   GenericList::Constructor((GenericList *)&v60.headNode[2]); /*0x69999a*/
   v3 = this->unknown_310[224]; /*0x69999f*/
   v4 = &this->unknown_310[224]; /*0x6999a5*/
-  v60.headNode[2] = (int)&List<INIClass::INISection *>::`vftable'; /*0x6999ad*/
+  v60.headNode[2] = (int)&vt_List; /*0x6999ad*/
   memset(&v60.needsSave_flag, 0, 13); /*0x6999b5*/
   v60.unknown38 = 0; /*0x6999c6*/
   v60.INIClass_field_3C = 0; /*0x6999ca*/
-  *(unsigned int *)v60.__pad_0 = &INIClass::`vftable'; /*0x6999ce*/
+  *(unsigned int *)v60.__pad_0 = &vt_INIClass; /*0x6999ce*/
   (*(void (**)(int *))(v3 + 12))(v4); /*0x6999d6*/
   CCFileClass::Construct(&v63, aMissionsmdPkt); /*0x6999e2*/
   if ( (unsigned __int8)CCFileClass::Open(&v63, 0) ) /*0x6999ec*/
@@ -2112,7 +2112,7 @@ AbstractClass * * SessionClass::LoadMissionList()
     while ( FindNextFileA(hFindFileb, &FindFileData) ); /*0x69a190*/
     FindClose(hFindFileb); /*0x69a1a3*/
   }
-  *(unsigned int *)v63.CDFileClass = &CCFileClass::`vftable'; /*0x69a1b2*/
+  *(unsigned int *)v63.CDFileClass = &vt_CCFileClass; /*0x69a1b2*/
   v65 = 0; /*0x69a1ba*/
   Vector::Clear((int)v64); /*0x69a1c1*/
   *(unsigned int *)v63.CDFileClass = &off_7E1668; /*0x69a1ca*/
@@ -2399,13 +2399,13 @@ void SessionClass::SetupNetwork()
   v1 = 0; /*0x69bd65*/
   v55 = 1; /*0x69bd6f*/
   AbstractClass::updateAnimationState((AbstractClass *)&v66, 0, 0); /*0x69bd77*/
-  v66 = &DynamicVectorClass<NodeNameType *>::`vftable'; /*0x69bd81*/
+  v66 = &vt_DynamicVectorClass; /*0x69bd81*/
   v71 = 10; /*0x69bd89*/
   v70 = 0; /*0x69bd91*/
   Debug::Log(); /*0x69bd95*/
   if ( this->StartSpots[4] < 2 ) /*0x69bda6*/
   {
-    v66 = &VectorClass<NodeNameType *>::`vftable'; /*0x69bdac*/
+    v66 = &vt_VectorClass; /*0x69bdac*/
     MPCooperative::updateScoreBoard((int)&v66); /*0x69bdb4*/
     return; /*0x69bdbe*/
   }
@@ -2681,7 +2681,7 @@ LABEL_58:
       v47);
     (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x69c462*/
   }
-  v66 = &VectorClass<NodeNameType *>::`vftable'; /*0x69c469*/
+  v66 = &vt_VectorClass; /*0x69c469*/
   if ( Block ) /*0x69c473*/
   {
     if ( v69 ) /*0x69c47b*/

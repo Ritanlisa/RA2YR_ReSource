@@ -213,7 +213,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   if ( v23 ) /*0x5a551e*/
   {
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
-    *v24 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a552b*/
+    *v24 = &vt_DynamicVectorClass; /*0x5a552b*/
     v24->u32_14 = 10; /*0x5a5531*/
     v24->q010 = 0; /*0x5a5538*/
   }

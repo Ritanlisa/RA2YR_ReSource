@@ -1543,7 +1543,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769eb7*/
       {
         ComPtr::Constructor(v6); /*0x769ea8*/
-        *(unsigned int *)v6->__pad_000 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769ead*/
+        *(unsigned int *)v6->__pad_000 = &vt_rc_ptr; /*0x769ead*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769eb3*/
         --v9; /*0x769eb6*/
       }
@@ -1568,7 +1568,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769e87*/
       {
         ComPtr::Constructor(v6); /*0x769e78*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769e7d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x769e7d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769e83*/
         --v7; /*0x769e86*/
       }
@@ -2469,7 +2469,7 @@ namespace gamemd {
 VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
-  *(unsigned int *)Block->tail_0 = &VectorCursor<TRect<int>,VectorClass<TRect<int>>>::`vftable'; /*0x769dc9*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorCursorTRectVectorClassTRect; /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     __3_YAXPAX_Z(Block); /*0x769dd2*/
   return Block->__pad_0; /*0x769ddc*/

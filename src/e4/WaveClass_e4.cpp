@@ -123,9 +123,9 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   void *v4; // eax
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  aP1->ObjectClass = &WaveClass::`vftable'; /*0x763206*/
-  aP1->? = &WaveClass::`vftable'; /*0x76320c*/
-  aP1->? = &WaveClass::`vftable'; /*0x763213*/
+  aP1->ObjectClass = &vt_WaveClass; /*0x763206*/
+  aP1->? = &vt_WaveClass; /*0x76320c*/
+  aP1->? = &vt_WaveClass; /*0x763213*/
   aP1->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)aP1, 1); /*0x763221*/
   v6 = aP1; /*0x763236*/
@@ -142,7 +142,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   }
   (*(void (**)(char *))(*((unsigned int *)aP1 + 124) + 12))((char *)aP1 + 496); /*0x76327e*/
   v4 = (void *)*((unsigned int *)aP1 + 125); /*0x763281*/
-  *((unsigned int *)aP1 + 124) = &VectorClass<CellClass *>::`vftable'; /*0x763284*/
+  *((unsigned int *)aP1 + 124) = &vt_VectorClass; /*0x763284*/
   if ( v4 && *((unsigned char *)aP1 + 509) ) /*0x76328e*/
   {
     __3_YAXPAX_Z(v4); /*0x763296*/

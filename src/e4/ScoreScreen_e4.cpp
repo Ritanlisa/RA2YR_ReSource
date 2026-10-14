@@ -42,10 +42,10 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   this->u32_8 = 0; /*0x690a1c*/
   this->u32_C = 0; /*0x690a1f*/
   this->q014 = 0; /*0x690a22*/
-  *(unsigned int *)this->__pad_000 = &ScoreFontClass::`vftable'; /*0x690a25*/
+  *(unsigned int *)this->__pad_000 = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
-  *(unsigned int *)this->__pad_0 = &ScoreFullFontClass::`vftable'; /*0x690a44*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreFullFontClass; /*0x690a44*/
   LOBYTE(this->u32_10) = 0; /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
   this->u32_C = (int)v3; /*0x690a54*/
@@ -56,7 +56,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     LOBYTE(this->u32_10) = 1; /*0x690a77*/
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
-    *(unsigned int *)v5.CDFileClass = &CCFileClass::`vftable'; /*0x690a91*/
+    *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690a91*/
     v7 = 0; /*0x690a99*/
     Vector::Clear((int)v6); /*0x690a9d*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690aa6*/
@@ -83,10 +83,10 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->u32_8 = 0; /*0x690aec*/
   this->u32_C = 0; /*0x690aef*/
   this->q014 = 0; /*0x690af2*/
-  *(unsigned int *)this->__pad_000 = &ScoreFontClass::`vftable'; /*0x690af5*/
+  *(unsigned int *)this->__pad_000 = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
-  *(unsigned int *)this->__pad_0 = &ScoreBigFontClass::`vftable'; /*0x690b14*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreBigFontClass; /*0x690b14*/
   LOBYTE(this->u32_10) = 0; /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
   this->u32_C = (int)v3; /*0x690b24*/
@@ -97,7 +97,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     LOBYTE(this->u32_10) = 1; /*0x690b47*/
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
-    *(unsigned int *)v5.CDFileClass = &CCFileClass::`vftable'; /*0x690b61*/
+    *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690b76*/
@@ -120,7 +120,7 @@ unsigned int * ScoreScreen::Constructor(int aP1, int a3, int a4)
   this->u32_C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/
   this->u32_18 = a4; /*0x690f57*/
-  *(unsigned int *)this->__pad_000 = &ScoreAnimClass::`vftable'; /*0x690f5a*/
+  *(unsigned int *)this->__pad_000 = &vt_ScoreAnimClass; /*0x690f5a*/
   return this->__pad_0; /*0x690f62*/
 
 }

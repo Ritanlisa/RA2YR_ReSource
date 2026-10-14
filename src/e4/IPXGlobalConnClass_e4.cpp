@@ -347,7 +347,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
     __3_YAXPAX_Z(this->u32_CC); /*0x5406a1*/
     this->u32_CC = 0; /*0x5406a9*/
   }
-  *(unsigned int *)this->__pad_0 = &IPXConnClass::`vftable'; /*0x5406b5*/
+  *(unsigned int *)this->__pad_0 = &vt_IPXConnClass; /*0x5406b5*/
   ConnectionClass::dtor((ConnectionClass *)this); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/

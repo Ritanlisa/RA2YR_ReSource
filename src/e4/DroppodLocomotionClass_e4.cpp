@@ -265,9 +265,9 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
   if ( a1 ) /*0x4b625a*/
   {
     a1->Piggybackee = 0; /*0x4b625c*/
-    *(unsigned int *)a1->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b6263*/
-    *&a1->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b6269*/
-    *(unsigned int *)a1->q018 = &DropPodLocomotionClass::`vftable'; /*0x4b6270*/
+    *(unsigned int *)a1->LocomotionClass = &vt_DropPodLocomotionClass; /*0x4b6263*/
+    *&a1->LocomotionClass = &vt_DropPodLocomotionClass; /*0x4b6269*/
+    *(unsigned int *)a1->q018 = &vt_DropPodLocomotionClass; /*0x4b6270*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(unsigned char)pStm ) /*0x4b628c*/

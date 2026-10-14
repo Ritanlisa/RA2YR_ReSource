@@ -104,14 +104,64 @@ struct SkirmishSetup;
 """
 
 
+def filter_block_against(existing, block):
+    """X25: drop from `block` every #define/function already present in
+    `existing` (declaration-aware append).
+
+    The G42.12 block historically re-declared IDA___OFSUB__ / ROL4 / ROR4 /
+    CFADD / FYL2X / memset32 / abs16 although ida_compat.h already defined
+    them at its true-math-intrinsics block -- 7x C2084 in every TU (5,600
+    error lines).  The whole-block presence check below still short-circuits
+    the common case; this filter makes the append safe even when the block
+    is re-appended alone (e.g. after a partial revert of ida_compat.h).
+    """
+    out = []
+    lines = block.split('\n')
+    i = 0
+    while i < len(lines):
+        l = lines[i]
+        m = re.match(r'#define\s+(\w+)', l)
+        if m:
+            # group backslash continuations
+            chunk = [l]
+            i += 1
+            while chunk[-1].rstrip().endswith('\\') and i < len(lines):
+                chunk.append(lines[i])
+                i += 1
+            nm = m.group(1)
+            if not re.search(r'^\s*#define\s+%s\b' % nm, existing, re.M):
+                out.extend(chunk)
+            continue
+        m = re.match(r'^\s*(?:inline\s+)?[\w\*\s]+?\b(\w+)\s*\([^;{}]*\)\s*\{',
+                     l)
+        if m:
+            chunk = [l]
+            depth = l.count('{') - l.count('}')
+            i += 1
+            while depth > 0 and i < len(lines):
+                chunk.append(lines[i])
+                depth += lines[i].count('{') - lines[i].count('}')
+                i += 1
+            nm = m.group(1)
+            if not re.search(r'\b%s\s*\(' % re.escape(nm), existing):
+                out.extend(chunk)
+            continue
+        out.append(l)
+        i += 1
+    return '\n'.join(out)
+
+
 def main():
     # 1. macro block into ida_compat.h (idempotent)
     cur = IDA_COMPAT.read_text(encoding="utf-8", errors="replace")
     if "G42.12 IDA decompiler macro shims" not in cur:
+        filtered = filter_block_against(cur, MACRO_BLOCK)
+        dropped = MACRO_BLOCK.count('inline') - filtered.count('inline')
         if APPLY:
             with open(IDA_COMPAT, "a", encoding="utf-8", errors='replace', newline="") as f:
-                f.write(MACRO_BLOCK)
-        print("ida_compat.h: +macro block", "(written)" if APPLY else "(DRY)")
+                f.write(filtered)
+        print("ida_compat.h: +macro block", "(written)" if APPLY else "(DRY)",
+              "| decl-aware filter dropped %d dup def(s)" % dropped)
     else:
         print("ida_compat.h: already present")
 

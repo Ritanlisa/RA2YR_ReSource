@@ -29,7 +29,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
   this->DetailLevel = 2; /*0x55478f*/
   this->Location[0] = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
-  this->AbstractClass = &LightSourceClass::`vftable'; /*0x5547a0*/
+  this->AbstractClass = &vt_LightSourceClass; /*0x5547a0*/
   this->Location[1] = a3; /*0x5547a6*/
   this->LightVisibility = a5; /*0x5547ad*/
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x5547b0) */
@@ -70,7 +70,7 @@ int LightSourceClass::Constructor()
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
   this->Location[2] = v2; /*0x554866*/
-  this->AbstractClass = &LightSourceClass::`vftable'; /*0x554869*/
+  this->AbstractClass = &vt_LightSourceClass; /*0x554869*/
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55486f) */
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x554876) */
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55487d) */
@@ -165,7 +165,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   int v3; // eax
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &LightSourceClass::`vftable'; /*0x555156*/
+  this->AbstractClass = &vt_LightSourceClass; /*0x555156*/
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55515c) */
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x555163) */
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55516a) */

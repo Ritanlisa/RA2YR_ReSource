@@ -44,7 +44,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c97*/
       {
         ComPtr::Constructor(v6); /*0x766c88*/
-        *(unsigned int *)v6->__pad_000 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766c8d*/
+        *(unsigned int *)v6->__pad_000 = &vt_rc_ptr; /*0x766c8d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c93*/
         --v9; /*0x766c96*/
       }
@@ -69,7 +69,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c67*/
       {
         ComPtr::Constructor(v6); /*0x766c58*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766c5d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x766c5d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c63*/
         --v7; /*0x766c66*/
       }
@@ -134,7 +134,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
-          *(unsigned int *)v8->__pad_000 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766e3b*/
+          *(unsigned int *)v8->__pad_000 = &vt_rc_ptr; /*0x766e3b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x766e41*/
           --v9; /*0x766e44*/
         }
@@ -278,7 +278,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor(char a2)
 {
 
-  *this = (Conflict_WorldDominationTour)&rc_ptr<WorldDominationTour::ValueGameOption<unsigned char>>::`vftable'; /*0x766963*/
+  *this = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
   ComPtr::Release((ComPtr *)this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(this); /*0x766976*/
@@ -292,7 +292,7 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
 
-  *this = (Conflict_WorldDominationTour)&rc_ptr<WorldDominationTour::FlagGameOption>::`vftable'; /*0x766993*/
+  *this = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
   ComPtr::Release((ComPtr *)this); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(this); /*0x7669a6*/

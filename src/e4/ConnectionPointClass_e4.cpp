@@ -38,7 +38,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   *(unsigned int *)(v3 + 12) = 0; /*0x4a079b*/
   *(unsigned char *)(v3 + 16) = 1; /*0x4a079e*/
   *(unsigned char *)(v3 + 17) = 0; /*0x4a07a2*/
-  *(unsigned int *)(v3 + 4) = &VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a07a5*/
+  *(unsigned int *)(v3 + 4) = &vt_VectorClass; /*0x4a07a5*/
   if ( (int *)(v3 + 4) != &a1->ConnectionPointClass_field_0x1C ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a07af*/
@@ -74,10 +74,10 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   }
   *(unsigned int *)(v3 + 20) = *((unsigned int *)a1 + 11); /*0x4a0815*/
   *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 12); /*0x4a081b*/
-  *(unsigned int *)(v3 + 4) = &DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a081e*/
+  *(unsigned int *)(v3 + 4) = &vt_DynamicVectorClass; /*0x4a081e*/
   *(unsigned int *)(v3 + 28) = 0; /*0x4a0824*/
   *(unsigned int *)(v3 + 32) = 0; /*0x4a0827*/
-  *(unsigned int *)v3 = &EnumConnectionsClass::`vftable'; /*0x4a082a*/
+  *(unsigned int *)v3 = &vt_EnumConnectionsClass; /*0x4a082a*/
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a0837*/
   {
     v11 = *(unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * i); /*0x4a083f*/
@@ -102,10 +102,10 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   *((unsigned int *)a1 + 9) = 0; /*0x4a089f*/
   *((unsigned char *)a1 + 40) = 1; /*0x4a08a2*/
   *((unsigned char *)a1 + 41) = 0; /*0x4a08a6*/
-  a1->ConnectionPointClass_field_0x1C = (int)&DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a08a9*/
+  a1->ConnectionPointClass_field_0x1C = (int)&vt_DynamicVectorClass; /*0x4a08a9*/
   *((unsigned int *)a1 + 12) = 10; /*0x4a08b0*/
   *((unsigned int *)a1 + 11) = 0; /*0x4a08b7*/
-  *(unsigned int *)a1->__pad_0 = &ConnectionPointClass::`vftable'; /*0x4a08ba*/
+  *(unsigned int *)a1->__pad_0 = &vt_ConnectionPointClass; /*0x4a08ba*/
   (*(void (**)(int))(*(unsigned int *)a3 + 4))(a3); /*0x4a08c3*/
   return a1->__pad_0; /*0x4a08c8*/
 
@@ -320,7 +320,7 @@ unsigned int * ConnectionPointClass_9::QueryInterface(char a2)  // G42.41d: trut
   void *v3; // eax
 
   v3 = *&this->q004; /*0x4a14f3*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a14f6*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x4a14f6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4a1500*/
   {
     __3_YAXPAX_Z(v3); /*0x4a1508*/

@@ -2945,7 +2945,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->M20 = 0; /*0x54e37b*/
   LOBYTE(this->q018) = 1; /*0x54e37e*/
   BYTE1(this->M25) = 0; /*0x54e382*/
-  this->M12 = &DynamicVectorClass<KamikazeControl *>::`vftable'; /*0x54e385*/
+  this->M12 = &vt_DynamicVectorClass; /*0x54e385*/
   this->q020 = (void *)10; /*0x54e38c*/
   this->M28 = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e39e*/
@@ -2977,7 +2977,7 @@ void E4Recv_54E690::sub_54E690()
   vtable3[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
-  *p_vtable3 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54e6c9*/
+  *p_vtable3 = &vt_VectorClass; /*0x54e6c9*/
   if ( v7 && *((unsigned char *)p_vtable3 + 13) ) /*0x54e6d3*/
   {
     __3_YAXPAX_Z(v7); /*0x54e6d9*/

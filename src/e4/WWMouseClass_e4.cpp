@@ -331,7 +331,7 @@ namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
 
-  *(unsigned int *)this->HandleClick_ph = &Mouse::`vftable'; /*0x7ba309*/
+  *(unsigned int *)this->HandleClick_ph = &vt_Mouse; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     __3_YAXPAX_Z(this); /*0x7ba312*/
   return this->HandleClick_ph; /*0x7ba31c*/

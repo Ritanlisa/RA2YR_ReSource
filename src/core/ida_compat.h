@@ -136,19 +136,15 @@ inline int abs32(int v) { return v < 0 ? -v : v; }
 inline int abs16(int v) { short s = (short)v; return s < 0 ? -s : s; }
 
 // ---- G42.12 IDA decompiler macro shims (compile-verified round-2) ----
+// X25: the five inline definitions that used to follow here were EXACT
+// duplicates of the true-math intrinsics block above (IDA___OFSUB__ /
+// ROL4 / ROR4 / CFADD / FYL2X) and produced C2084 x5 in every TU
+// (fix_shim_pack's appender was not declaration-aware; that append is now
+// filtered against existing symbols in fix_shim_pack.py).  Only the
+// genuinely-new shims remain in this block.
 // missing base forms (semantics per ida.hpp; OFSUB must compute in 32-bit)
 #define IDA___SPAIR64__(high, low) \
     ((long)(((unsigned long)(unsigned int)(high) << 32) | (unsigned int)(low)))
-inline bool IDA___OFSUB__(int a, int b) {
-    int r = (unsigned int)a - (unsigned int)b;
-    return ((a ^ b) & (a ^ r)) < 0;
-}
-inline unsigned int IDA___ROL4__(unsigned int v, unsigned int n) { n &= 31; return n ? (v << n) | (v >> (32 - n)) : v; }
-inline unsigned int IDA___ROR4__(unsigned int v, unsigned int n) { n &= 31; return n ? (v >> n) | (v << (32 - n)) : v; }
-inline bool IDA___CFADD__(unsigned int a, unsigned int b) {
-    return (unsigned long)a + (unsigned long)b > 0xFFFFFFFFull;
-}
-inline double IDA___FYL2X__(double y, double x) { return y * log2(x); }
 // bit-field extraction family (IDA_ prefix forms)
 #define IDA_SLOWORD(x)      (*((signed short*)&(x)))
 #define IDA_SBYTE1(x)       (*((signed char*)&(x) + 1))
@@ -180,10 +176,11 @@ inline double IDA___FYL2X__(double y, double x) { return y * log2(x); }
 #define __FYL2X__(y,x) IDA___FYL2X__(y,x)
 // absolute byte-addressing pseudo-array
 #define MEMORY ((unsigned char*)nullptr)
-// Hex-Rays inline惯用形: memset32 = rep stosd (@410eae disasm truth)
-inline void* memset32(void* dst, unsigned int value, unsigned int dword_count) {
-    unsigned int* p = (unsigned int*)dst;
-    for (unsigned int i = 0; i < dword_count; ++i) p[i] = value;
-    return dst;
-}
-inline int abs16(int v) { short s = (short)v; return s < 0 ? -s : s; }
+
+// X25: _crt_signal_t can arrive through generated prototypes
+// (_generated/global_funcs_decls.hpp `_signal`) before any CRT header that
+// defines it; provide the documented MSVC shape under its real guard.
+#ifndef _CRT_SIGNAL_T_DEFINED
+#define _CRT_SIGNAL_T_DEFINED
+typedef void (__cdecl *_crt_signal_t)(int);
+#endif

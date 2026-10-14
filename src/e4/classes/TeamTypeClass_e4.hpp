@@ -74,7 +74,7 @@ struct TeamTypeClass {
     unsigned char u32_A7;  // 0xA7 (offset-truth)
     unsigned char u32_A9;  // 0xA9 (offset-truth)
     unsigned char u32_AA;  // 0xAA (offset-truth)
-    void* ;  // 0xC8 (offset-truth)
+    void *qC8;  // 0xC8 (offset-truth)
     unsigned int u32_E4;  // 0xE4 (offset-truth)
 
     unsigned char __pad_04C;  // X10 supply (csp_canon_members)

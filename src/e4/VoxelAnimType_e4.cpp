@@ -101,12 +101,12 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
     {
       Info = VoxelSection::GetInfo(this->m_2 * a3 + 50), 0, 0); /*0x5f7c8c*/
       Matrix::Scale(this->m_2 * a3 + 51), *(float *)(Info + 12)); /*0x5f7c9c*/
-      *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f7cad*/
+      *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f7cad*/
       v22 = 0; /*0x5f7cb4*/
       Vector::Clear((int)v21); /*0x5f7cbb*/
       *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f7ccc*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7cd3*/
-      *(unsigned int *)v17.CDFileClass = &CCFileClass::`vftable'; /*0x5f7cdc*/
+      *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7cdc*/
       v19 = 0; /*0x5f7ce0*/
       Vector::Clear((int)v18); /*0x5f7ce4*/
       *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7ced*/
@@ -127,19 +127,19 @@ AbstractClass * * VoxelAnimType::LoadSection(const char *a2, int a3)
       __3_YAXPAX_Z(v15); /*0x5f7d3a*/
       *(&this->u32_8 * a3 + 51) = 0; /*0x5f7d42*/
     }
-    *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f7d55*/
+    *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f7d55*/
     v22 = 0; /*0x5f7d5c*/
     Vector::Clear((int)v21); /*0x5f7d63*/
     *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f7d74*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f7d7b*/
-    *(unsigned int *)v17.CDFileClass = &CCFileClass::`vftable'; /*0x5f7d84*/
+    *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7d84*/
     v19 = 0; /*0x5f7d88*/
     Vector::Clear((int)v18); /*0x5f7d8c*/
     *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7d91*/
   }
   else
   {
-    *(unsigned int *)v17.CDFileClass = &CCFileClass::`vftable'; /*0x5f7b28*/
+    *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5f7b28*/
     v19 = 0; /*0x5f7b30*/
     Vector::Clear((int)v18); /*0x5f7b34*/
     *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5f7b39*/

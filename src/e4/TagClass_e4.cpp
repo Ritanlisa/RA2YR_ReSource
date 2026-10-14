@@ -53,7 +53,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
   int v20; // eax
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  a1->AbstractClass = &TagClass::`vftable'; /*0x6e4f69*/
+  a1->AbstractClass = &vt_TagClass; /*0x6e4f69*/
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f6f) */
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f76) */
   /* X11: vtable install elided (implicit via TagClass virtuals 0x6e4f7d) */

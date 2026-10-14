@@ -199,11 +199,11 @@ LoadOptions * LoadOptions::QueryInterface(char a2, int a3, int a1)
   void *v4; // eax
 
   v3 = 0; /*0x55a0d4*/
-  for ( a3->m_0 = (int)&LoadOptionsClass::`vftable'; v3 < *((unsigned int *)a3 + 12); ++v3 ) /*0x55a0e1*/
+  for ( a3->m_0 = (int)&vt_LoadOptionsClass; v3 < *((unsigned int *)a3 + 12); ++v3 ) /*0x55a0e1*/
     __3_YAXPAX_Z(*(void **)(*((unsigned int *)a3 + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(LoadOptionsClass *))(*((unsigned int *)a3 + 8) + 12))(a3 + 2); /*0x55a102*/
   v4 = (void *)*((unsigned int *)a3 + 9); /*0x55a105*/
-  *((unsigned int *)a3 + 8) = &VectorClass<FileEntryClass *>::`vftable'; /*0x55a108*/
+  *((unsigned int *)a3 + 8) = &vt_VectorClass; /*0x55a108*/
   if ( v4 && *((unsigned char *)a3 + 45) ) /*0x55a112*/
   {
     __3_YAXPAX_Z(v4); /*0x55a11a*/

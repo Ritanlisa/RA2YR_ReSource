@@ -725,7 +725,7 @@ unsigned int * EventClass::resetEvent(int aP1, int aP2)
   this->u32_8 = (void *)aP1; /*0x40bd0e*/
   LOBYTE(this->q00C) = 1; /*0x40bd11*/
   BYTE1(this->q00C) = 0; /*0x40bd15*/
-  this->__pad_000 = (int)&VectorClass<TechnoClass *>::`vftable'; /*0x40bd18*/
+  this->__pad_000 = (int)&vt_VectorClass; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/

@@ -11,7 +11,7 @@ struct DynamicVector;  // fix_fwd_type_supply
 #define GAMEMD_G2_Buffer_DEF 1
 struct Buffer {
 // --- flat members (BEGIN) ---
-    void* ;  // 0x0
+    void *q0;  // 0x0
     unsigned int Buffer_field_04;  // 0x4
     unsigned int Buffer_field_08;  // 0x8
     unsigned int Buffer_field_0C;  // 0xC
@@ -29,7 +29,6 @@ struct Buffer {
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers();
     int AppendCellData(AbstractClass * aP1, int a3);
-    unsigned int * Init(int a2, int Size);
     void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
     int Cleanup();  // 0x42f7c0
     int UpdateVolumeSettings(void *a1 = 0);  // 0x40A6D0 G42.33 b3 supplied-body sync

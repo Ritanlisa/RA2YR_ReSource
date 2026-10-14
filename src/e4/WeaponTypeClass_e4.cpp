@@ -107,15 +107,15 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   VectorClass::Construct((VectorClass *)aP1->Report, 0, 0); /*0x771cc5*/
   aP1->Report[5] = 10; /*0x771cca*/
   aP1->Report[4] = 0; /*0x771cd1*/
-  aP1->Report[0] = (int)&TypeList<int>::`vftable'; /*0x771cd4*/
+  aP1->Report[0] = (int)&vt_TypeList; /*0x771cd4*/
   VectorClass::Construct((VectorClass *)aP1->DownReport, 0, 0); /*0x771ce4*/
   aP1->DownReport[5] = 10; /*0x771ce9*/
   aP1->DownReport[4] = 0; /*0x771cf0*/
-  aP1->DownReport[0] = (int)&TypeList<int>::`vftable'; /*0x771cf3*/
+  aP1->DownReport[0] = (int)&vt_TypeList; /*0x771cf3*/
   AnimTypeVector::Constructor((AnimTypeVector *)aP1->Anim, 0, 0); /*0x771d03*/
   aP1->Anim[5] = 10; /*0x771d08*/
   aP1->Anim[4] = 0; /*0x771d0f*/
-  aP1->Anim[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x771d12*/
+  aP1->Anim[0] = (int)&vt_TypeList; /*0x771d12*/
   aP1->OccupantAnim = 0; /*0x771d18*/
   aP1->AssaultAnim = 0; /*0x771d1e*/
   aP1->OpenToppedAnim = 0; /*0x771d24*/
@@ -173,8 +173,8 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   aP1->IsRadEruption = 0; /*0x771e65*/
   aP1->RadLevel = 0; /*0x771e6b*/
   aP1->IsMagBeam = 0; /*0x771e71*/
-  aP1->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771e77*/
-  aP1->q15C = &WeaponTypeClass::`vftable'; /*0x771e7d*/
+  aP1->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771e77*/
+  aP1->q15C = &vt_WeaponTypeClass; /*0x771e7d*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e83) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771e8a) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x771e91*/
@@ -204,10 +204,10 @@ int WeaponTypeClass::Destructor(void *a1)
   void *v5; // eax
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  a1->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771f57*/
-  a1->? = &WeaponTypeClass::`vftable'; /*0x771f5d*/
-  a1->? = &WeaponTypeClass::`vftable'; /*0x771f64*/
-  a1->? = &WeaponTypeClass::`vftable'; /*0x771f6b*/
+  a1->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f57*/
+  a1->? = &vt_WeaponTypeClass; /*0x771f5d*/
+  a1->? = &vt_WeaponTypeClass; /*0x771f64*/
+  a1->? = &vt_WeaponTypeClass; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, 1); /*0x771f72*/
   a1->Projectile = 0; /*0x771f7d*/
   a1->Warhead = 0; /*0x771f83*/
@@ -225,7 +225,7 @@ int WeaponTypeClass::Destructor(void *a1)
     while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
   v3 = (void *)a1->Anim[1]; /*0x771fce*/
-  a1->Anim[0] = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x771fd4*/
+  a1->Anim[0] = (int)&vt_VectorClass; /*0x771fd4*/
   if ( v3 && BYTE1(a1->Anim[3]) ) /*0x771fe2*/
   {
     __3_YAXPAX_Z(v3); /*0x771feb*/
@@ -234,7 +234,7 @@ int WeaponTypeClass::Destructor(void *a1)
   BYTE1(a1->Anim[3]) = 0; /*0x771ff9*/
   a1->Anim[2] = 0; /*0x771fff*/
   v4 = (void *)a1->DownReport[1]; /*0x772005*/
-  a1->DownReport[0] = (int)&VectorClass<int>::`vftable'; /*0x77200b*/
+  a1->DownReport[0] = (int)&vt_VectorClass; /*0x77200b*/
   if ( v4 && BYTE1(a1->DownReport[3]) ) /*0x772019*/
   {
     __3_YAXPAX_Z(v4); /*0x772022*/
@@ -243,7 +243,7 @@ int WeaponTypeClass::Destructor(void *a1)
   BYTE1(a1->DownReport[3]) = 0; /*0x772030*/
   a1->DownReport[2] = 0; /*0x772036*/
   v5 = (void *)a1->Report[1]; /*0x77203c*/
-  a1->Report[0] = (int)&VectorClass<int>::`vftable'; /*0x772042*/
+  a1->Report[0] = (int)&vt_VectorClass; /*0x772042*/
   if ( v5 && BYTE1(a1->Report[3]) ) /*0x772050*/
   {
     __3_YAXPAX_Z(v5); /*0x772059*/
@@ -587,10 +587,10 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
-  this->Report[0] = (int)&TypeList<int>::`vftable'; /*0x771f12*/
-  this->DownReport[0] = (int)&TypeList<int>::`vftable'; /*0x771f18*/
-  this->Anim[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x771f1e*/
-  this->AbstractTypeClass = &WeaponTypeClass::`vftable'; /*0x771f28*/
+  this->Report[0] = (int)&vt_TypeList; /*0x771f12*/
+  this->DownReport[0] = (int)&vt_TypeList; /*0x771f18*/
+  this->Anim[0] = (int)&vt_TypeList; /*0x771f1e*/
+  this->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f28*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f2e) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f35) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x771f3c) */

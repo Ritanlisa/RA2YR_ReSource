@@ -120,7 +120,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(unsigned int *)v3 = &DynamicVectorClass<ToolTip const *>::`vftable'; /*0x72403a*/
+  *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
   this->M588 = 0; /*0x72404a*/

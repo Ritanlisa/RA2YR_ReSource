@@ -383,11 +383,11 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   GenericNode::Constructor((GenericNode *)&v7.?); /*0x7651e9*/
   GenericNode::Constructor((GenericNode *)&v7.occupant); /*0x7651f2*/
   LinkedList::Prepend((LinkedList *)&v7.?, (int)&v7.occupant); /*0x765208*/
-  v7.? = (int)&List<INIClass::INISection *>::`vftable'; /*0x765211*/
+  v7.? = (int)&vt_List; /*0x765211*/
   memset(&v7.nextObject, 0, 13); /*0x765219*/
   v7.ambientSoundController[1] = 0; /*0x765229*/
   v7.ambientSoundController[2] = 0; /*0x76522d*/
-  v7.? = &INIClass::`vftable'; /*0x765231*/
+  v7.? = &vt_INIClass; /*0x765231*/
   BufferIOFile::Init((BufferIOFile *)&v7.ambientSoundController[3]); /*0x765239*/
   CCFileClass::Reopen((CDFileClass *)&v7.ambientSoundController[3], g_Str_File_WDTHist_ini, (CHAR *)1); /*0x765249*/
   if ( !(unsigned __int8)File::IsReady((BufferIOFileClass *)&v7.ambientSoundController[3], 0) ) /*0x765253*/
@@ -1023,7 +1023,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
       do /*0x76b80b*/
       {
         ComPtr::Constructor(v7); /*0x76b7fc*/
-        *(unsigned int *)v7->__pad_000 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76b801*/
+        *(unsigned int *)v7->__pad_000 = &vt_rc_ptr; /*0x76b801*/
         v7 = (ComPtr *)((char *)v7 + 8); /*0x76b807*/
         --v4; /*0x76b80a*/
       }
@@ -2480,9 +2480,9 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   this->M48 = 0; /*0x76ac09*/
   this->M52 = 0; /*0x76ac0c*/
   this->M57 = 0; /*0x76ac0f*/
-  this->M44 = &DynamicVectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76ac12*/
+  this->M44 = &vt_DynamicVectorClassrc_ptr; /*0x76ac12*/
   this->M60 = 0; /*0x76ac18*/
-  *(unsigned int *)this->__pad_0 = &WDTState::`vftable'; /*0x76ac1e*/
+  *(unsigned int *)this->__pad_0 = &vt_WDTState; /*0x76ac1e*/
   this->M20 = 0; /*0x76ac24*/
   this->M24 = 0; /*0x76ac27*/
   this->u32_20 = 0; /*0x76ac2a*/
@@ -2491,7 +2491,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   v8 = 0; /*0x76ac37*/
   v9 = 0; /*0x76ac3b*/
   v11 = 0; /*0x76ac3f*/
-  v7 = &DynamicVectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76ac43*/
+  v7 = &vt_DynamicVectorClassrc_ptr; /*0x76ac43*/
   v12 = 0; /*0x76ac4b*/
   sub_76B7B0(&this->M44, &v7); /*0x76ac4f*/
   v3 = v13; /*0x76ac58*/
@@ -2499,7 +2499,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   v4 = v8; /*0x76ac5f*/
   v5 = v8 == 0; /*0x76ac63*/
   v2->abstractFlags = v3; /*0x76ac65*/
-  v7 = &VectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76ac68*/
+  v7 = &vt_VectorClassrc_ptr; /*0x76ac68*/
   if ( !v5 && v11 ) /*0x76ac76*/
     (**v4)(v4, 3); /*0x76ac7c*/
   this->AbstractClass_44 = 0; /*0x76ac7e*/
@@ -2806,12 +2806,12 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
   }
   FindTerritoryWOL(v8, this->currentTargets[1] + 44, this->currentTargets[2]); /*0x76d403*/
   ComPtr::Constructor((ComPtr *)v7); /*0x76d40c*/
-  v7[0] = (int)&rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76d415*/
+  v7[0] = (int)&vt_rc_ptr; /*0x76d415*/
   ComPtr::Set((ComPtr *)v7, v9); /*0x76d422*/
-  *(unsigned int *)v8 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76d42b*/
+  *(unsigned int *)v8 = &vt_rc_ptr; /*0x76d42b*/
   ComPtr::Release((ComPtr *)v8); /*0x76d433*/
   v5 = TerritorySelectWDT(this, (int)v7); /*0x76d448*/
-  v7[0] = (int)&rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76d44a*/
+  v7[0] = (int)&vt_rc_ptr; /*0x76d44a*/
   ComPtr::Release((ComPtr *)v7); /*0x76d452*/
   return v5; /*0x76d459*/
 
@@ -2832,7 +2832,7 @@ unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
     this->currentTargets[2] = (int)result; /*0x76d48e*/
     FindTerritoryWOL(v4, this->currentTargets[1] + 44, (int)result); /*0x76d4a2*/
     TerritorySelectWDT(this, (int)v4); /*0x76d4ae*/
-    *(unsigned int *)v4 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76d4b7*/
+    *(unsigned int *)v4 = &vt_rc_ptr; /*0x76d4b7*/
     return ComPtr::Release((ComPtr *)v4); /*0x76d4bf*/
   }
   return result; /*0x76d4c4*/
@@ -2853,7 +2853,7 @@ int E4Recv_76DED0::sub_76DED0()
 
   v6 = 0; /*0x76deda*/
   v2 = this->currentTargets[1]; /*0x76dee2*/
-  *(unsigned int *)v5.__pad_0 = &VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76dee8*/
+  *(unsigned int *)v5.__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76dee8*/
   *(unsigned int *)&v5.m_1[3] = v2 + 44; /*0x76def3*/
   for ( result = VectorCursor::HasNext(&v5); /*0x76deff*/
         (unsigned char)result;
@@ -2885,7 +2885,7 @@ int E4Recv_76DF50::sub_76DF50()
 
   v6 = 0; /*0x76df5a*/
   v2 = this->currentTargets[1]; /*0x76df62*/
-  *(unsigned int *)v5.__pad_0 = &VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76df68*/
+  *(unsigned int *)v5.__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76df68*/
   *(unsigned int *)&v5.m_1[3] = v2 + 44; /*0x76df73*/
   for ( result = VectorCursor::HasNext(&v5); /*0x76df7f*/
         (unsigned char)result;
@@ -2951,7 +2951,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   {
     *(unsigned int *)&v5.m_1[3] = &this->turretRotateSoundController[3]; /*0x76e0c1*/
     v6 = 0; /*0x76e0c5*/
-    *(unsigned int *)v5.__pad_0 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'; /*0x76e0cd*/
+    *(unsigned int *)v5.__pad_0 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76e0cd*/
     if ( Vector::HasCapacity(&v5) ) /*0x76e0d5*/
     {
       do /*0x76e10e*/
@@ -2969,9 +2969,9 @@ unsigned int * E4Recv_76E090::sub_76E090()
   DeleteAndZero((ObjectClass *)&v4); /*0x76e13b*/
   this->currentTargets[2] = -1; /*0x76e144*/
   ComPtr::Constructor((ComPtr *)&v4.ptr_4); /*0x76e14e*/
-  *(unsigned int *)&v4.ptr_4 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76e15a*/
+  *(unsigned int *)&v4.ptr_4 = &vt_rc_ptr; /*0x76e15a*/
   TerritorySelectWDT(this, (int)&v4.ptr_4); /*0x76e162*/
-  *(unsigned int *)&v4.ptr_4 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76e16b*/
+  *(unsigned int *)&v4.ptr_4 = &vt_rc_ptr; /*0x76e16b*/
   return ComPtr::Release((ComPtr *)&v4.ptr_4); /*0x76e178*/
 
 }

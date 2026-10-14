@@ -194,9 +194,9 @@ LABEL_24:
   *(unsigned int *)&v2[8] = 0; /*0x688654*/
   v2[13] = 0; /*0x688657*/
   v2[12] = (Multiplayer)1; /*0x68865f*/
-  *(unsigned int *)v2 = &VectorClass<Cell>::`vftable'; /*0x688663*/
+  *(unsigned int *)v2 = &vt_VectorClass; /*0x688663*/
   Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
-  *(unsigned int *)v2 = &DynamicVectorClass<Cell>::`vftable'; /*0x68866e*/
+  *(unsigned int *)v2 = &vt_DynamicVectorClass; /*0x68866e*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x688674) */
   Items = v25.Items; /*0x68867c*/
   v17 = v27; /*0x688684*/

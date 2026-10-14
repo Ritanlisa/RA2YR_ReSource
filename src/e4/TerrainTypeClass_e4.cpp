@@ -69,7 +69,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->SnowOccupationBits = 0; /*0x5447fe*/
   aP4->WaterBound = 1; /*0x544804*/
   aP4->SpawnsTiberium = 0; /*0x54480b*/
-  LODWORD(aP4->AnimationProbability) = &DynamicVectorClass<unsigned short *>::`vftable'; /*0x544811*/
+  LODWORD(aP4->AnimationProbability) = &vt_DynamicVectorClass; /*0x544811*/
   aP4->FoundationData = (CellStruct *)10; /*0x54481b*/
   *&aP4->q2B4 = 0; /*0x544825*/
   aP4->u32_2CC = 0; /*0x544830*/
@@ -93,9 +93,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   aP4->q305 = 1; /*0x5448b5*/
   aP4->q306 = 0; /*0x5448bc*/
   aP4->q0308 = 0; /*0x5448c2*/
-  aP4->ObjectTypeClass = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
+  aP4->ObjectTypeClass = &vt_IsometricTileTypeClass; /*0x5448c8*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448cf) */
-  aP4->q008 = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
+  aP4->q008 = &vt_IsometricTileTypeClass; /*0x5448d6*/
   /* X11: vtable install elided (implicit via IsometricTileTypeClass virtuals 0x5448dd) */
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
@@ -171,10 +171,10 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
   aP1->IsAnimated = 0; /*0x71dae5*/
   aP1->IsVeinhole = 0; /*0x71daeb*/
   aP1->FoundationData = 0; /*0x71daf1*/
-  aP1->ObjectTypeClass = &TerrainTypeClass::`vftable'; /*0x71daf7*/
-  aP1->? = &TerrainTypeClass::`vftable'; /*0x71dafd*/
-  aP1->? = &TerrainTypeClass::`vftable'; /*0x71db03*/
-  aP1->? = &TerrainTypeClass::`vftable'; /*0x71db0a*/
+  aP1->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71daf7*/
+  aP1->? = &vt_TerrainTypeClass; /*0x71dafd*/
+  aP1->? = &vt_TerrainTypeClass; /*0x71db03*/
+  aP1->? = &vt_TerrainTypeClass; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&aP1->?); /*0x71db11*/
   aP1->? = 0; /*0x71db18*/
   aP1->? = 1; /*0x71db1e*/

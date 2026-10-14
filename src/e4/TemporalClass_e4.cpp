@@ -49,7 +49,7 @@ int TemporalClass::Constructor()
   v2 = *(unsigned int *)&TeamTypeClass_Array; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *&this->creationFrame = v2; /*0x71a464*/
-  this->AbstractClass = &TemporalClass::`vftable'; /*0x71a467*/
+  this->AbstractClass = &vt_TemporalClass; /*0x71a467*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a46d) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a474) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a47b) */
@@ -80,7 +80,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
   *&this->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
-  this->AbstractClass = &TemporalClass::`vftable'; /*0x71a501*/
+  this->AbstractClass = &vt_TemporalClass; /*0x71a501*/
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a507) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a50e) */
   /* X11: vtable install elided (implicit via TemporalClass virtuals 0x71a515) */
@@ -379,10 +379,10 @@ void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
   int v3; // eax
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  aP1->AbstractClass = &TemporalClass::`vftable'; /*0x71b1bd*/
-  aP1->? = &TemporalClass::`vftable'; /*0x71b1c3*/
-  aP1->? = &TemporalClass::`vftable'; /*0x71b1ca*/
-  aP1->? = &TemporalClass::`vftable'; /*0x71b1d1*/
+  aP1->AbstractClass = &vt_TemporalClass; /*0x71b1bd*/
+  aP1->? = &vt_TemporalClass; /*0x71b1c3*/
+  aP1->? = &vt_TemporalClass; /*0x71b1ca*/
+  aP1->? = &vt_TemporalClass; /*0x71b1d1*/
   v5 = aP1; /*0x71b1df*/
   v3 = (*(int (**)(int *, TemporalClass **))(g_BuildingLoadQueue_Array.?[3] + 16))( /*0x71b1e3*/
          &g_BuildingLoadQueue_Array.?[3],

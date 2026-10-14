@@ -31,10 +31,10 @@ int WaypointPathClass::Init()
   this->waypoints[2] = 0; /*0x763744*/
   LOBYTE(this->waypoints[3]) = 1; /*0x763747*/
   BYTE1(this->waypoints[3]) = 0; /*0x76374b*/
-  this->waypoints[0] = (int)&DynamicVectorClass<WaypointClass>::`vftable'; /*0x76374e*/
+  this->waypoints[0] = (int)&vt_DynamicVectorClass; /*0x76374e*/
   this->waypoints[5] = 10; /*0x763755*/
   this->waypoints[4] = 0; /*0x76375c*/
-  this->AbstractClass = &WaypointPathClass::`vftable'; /*0x76375f*/
+  this->AbstractClass = &vt_WaypointPathClass; /*0x76375f*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763765) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x76376c) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763773) */
@@ -193,7 +193,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int *a3)
   this->vtable3 = (void *)a2; /*0x764770*/
   LOBYTE(this->vtable4) = 1; /*0x764773*/
   BYTE1(this->u8_D) = 0; /*0x764777*/
-  this->AbstractClass = &VectorClass<WaypointClass>::`vftable'; /*0x76477a*/
+  this->AbstractClass = &vt_VectorClass; /*0x76477a*/
   if ( !a2 ) /*0x764780*/
     return &this->AbstractClass; /*0x764780*/
   if ( !a3 ) /*0x764788*/
@@ -341,7 +341,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   int v4; // eax
   WaypointPathClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &WaypointPathClass::`vftable'; /*0x763e26*/
+  this->AbstractClass = &vt_WaypointPathClass; /*0x763e26*/
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e2c) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e33) */
   /* X11: vtable install elided (implicit via WaypointPathClass virtuals 0x763e3a) */
@@ -358,7 +358,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
     while ( v3 < dword_B72618 ); /*0x763e8d*/
   }
   v4 = this->waypoints[1]; /*0x763e8f*/
-  this->waypoints[0] = (int)&VectorClass<WaypointClass>::`vftable'; /*0x763e92*/
+  this->waypoints[0] = (int)&vt_VectorClass; /*0x763e92*/
   if ( v4 && BYTE1(this->waypoints[3]) ) /*0x763e9d*/
   {
     __3_YAXPAX_Z((void *)(v4 - 4)); /*0x763eb0*/

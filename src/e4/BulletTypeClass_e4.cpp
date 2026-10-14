@@ -187,9 +187,9 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
   this->animHigh = 0; /*0x46bcd4*/
   this->animRate = 0; /*0x46bcda*/
   this->Flat_d = 0; /*0x46bce0*/
-  *(unsigned int *)this->ObjectTypeClass = &BulletTypeClass::`vftable'; /*0x46bce6*/
-  *&this->Flat_d = &BulletTypeClass::`vftable'; /*0x46bcec*/
-  *&this->AbstractClass_E58 = &BulletTypeClass::`vftable'; /*0x46bcf2*/
+  *(unsigned int *)this->ObjectTypeClass = &vt_BulletTypeClass; /*0x46bce6*/
+  *&this->Flat_d = &vt_BulletTypeClass; /*0x46bcec*/
+  *&this->AbstractClass_E58 = &vt_BulletTypeClass; /*0x46bcf2*/
   /* X11: vtable install elided (implicit via BulletTypeClass virtuals 0x46bcf9) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_E58); /*0x46bd00*/
   this->IsLogic_d = 1; /*0x46bd05*/
@@ -624,10 +624,10 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
   int v4; // eax
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)a1->ObjectTypeClass = &BulletTypeClass::`vftable'; /*0x46c896*/
-  *(unsigned int *)&a1->ObjectTypeClass[4] = &BulletTypeClass::`vftable'; /*0x46c89c*/
-  *(unsigned int *)&a1->ObjectTypeClass[8] = &BulletTypeClass::`vftable'; /*0x46c8a3*/
-  *(unsigned int *)&a1->ObjectTypeClass[12] = &BulletTypeClass::`vftable'; /*0x46c8aa*/
+  *(unsigned int *)a1->ObjectTypeClass = &vt_BulletTypeClass; /*0x46c896*/
+  *(unsigned int *)&a1->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c89c*/
+  *(unsigned int *)&a1->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/
+  *(unsigned int *)&a1->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x46c8b1*/
   v6 = a1; /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/

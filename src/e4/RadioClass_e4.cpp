@@ -109,7 +109,7 @@ int RadioClass::LoadState(int aP1, int aP2)
       *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
       *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
-      *(unsigned int *)v6 = &VectorClass<TechnoClass *>::`vftable'; /*0x65abba*/
+      *(unsigned int *)v6 = &vt_VectorClass; /*0x65abba*/
     }
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/

@@ -91,15 +91,15 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   AnimTypeVector::Constructor(&this->qE50, 0, 0); /*0x5236f9*/
   this->qE60 = 0; /*0x523703*/
   this->u32_E64 = 10; /*0x523706*/
-  this->qE50 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523709*/
+  this->qE50 = &vt_TypeList; /*0x523709*/
   AnimTypeVector::Constructor(&this->u32_E6C, 0, 0); /*0x523719*/
   this->u32_E80 = 10; /*0x52371e*/
   this->u32_E7C = 0; /*0x523721*/
-  this->u32_E6C = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523724*/
+  this->u32_E6C = &vt_TypeList; /*0x523724*/
   VectorClass::Construct(&this->u32_E88, 0, 0); /*0x523734*/
   this->u32_E9C = 10; /*0x523739*/
   this->u32_E98 = 0; /*0x52373c*/
-  this->u32_E88 = &TypeList<int>::`vftable'; /*0x52373f*/
+  this->u32_E88 = &vt_TypeList; /*0x52373f*/
   this->u32_EA4 = -1; /*0x523748*/
   this->u32_EA8 = -1; /*0x52374e*/
   this->Cyborg_2 = 0; /*0x523754*/
@@ -208,10 +208,10 @@ unsigned int * InfantryTypeClass::Constructor_523980(int aP1)
 {
 
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
-  this->DeadBodies[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x523992*/
-  this->DeathAnims[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x523998*/
-  this->VoiceComment[0] = (int)&TypeList<int>::`vftable'; /*0x52399e*/
-  this->TechnoTypeClass = &InfantryTypeClass::`vftable'; /*0x5239a8*/
+  this->DeadBodies[0] = (int)&vt_TypeList; /*0x523992*/
+  this->DeathAnims[0] = (int)&vt_TypeList; /*0x523998*/
+  this->VoiceComment[0] = (int)&vt_TypeList; /*0x52399e*/
+  this->TechnoTypeClass = &vt_InfantryTypeClass; /*0x5239a8*/
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239ae) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239b5) */
   /* X11: vtable install elided (implicit via InfantryTypeClass virtuals 0x5239bc) */
@@ -373,7 +373,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v4->EliteOccupyWeapon = v9; /*0x52417f*/
   INIClassIntList = &v44; /*0x524186*/
   DynamicVectorClass::Copy(&v44, &v4->u32_E88); /*0x52418a*/
-  *(unsigned int *)INIClassIntList->VectorClass = &TypeList<int>::`vftable'; /*0x524198*/
+  *(unsigned int *)INIClassIntList->VectorClass = &vt_TypeList; /*0x524198*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4(&v4->BarrelVoxel); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
@@ -392,7 +392,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = *v11->Items.VectorClass; /*0x5241d4*/
-  *(unsigned int *)v48.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x5241d7*/
+  *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass; /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)a2,
@@ -403,7 +403,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
-    *(unsigned int *)v48.WeaponType = &TypeList<AnimTypeClass const *>::`vftable'; /*0x52421f*/
+    *(unsigned int *)v48.WeaponType = &vt_TypeList; /*0x52421f*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
@@ -413,7 +413,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
-    *(unsigned int *)v48.ClearAndFree2_ph = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52427a*/
+    *(unsigned int *)v48.ClearAndFree2_ph = &vt_VectorClass; /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
@@ -426,7 +426,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3680) = v49; /*0x5242b7*/
   *(unsigned int *)(v4 + 3684) = v13; /*0x5242ba*/
   *(unsigned int *)(v4 + 3688) = v14; /*0x5242bd*/
-  v48.q01C = (AbstractClass *)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x5242c9*/
+  v48.q01C = (AbstractClass *)&vt_VectorClass; /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
   if ( INIClass::GetString( /*0x5242e9*/
          (INIClass *)a2,
@@ -437,7 +437,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
-    *(unsigned int *)v48.ClearAndFree2_ph = &TypeList<AnimTypeClass const *>::`vftable'; /*0x524309*/
+    *(unsigned int *)v48.ClearAndFree2_ph = &vt_TypeList; /*0x524309*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -447,7 +447,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v48); /*0x52435b*/
-    *(unsigned int *)v48.WeaponType = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524364*/
+    *(unsigned int *)v48.WeaponType = &vt_VectorClass; /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
   else
@@ -456,7 +456,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   InfantryTypeClass::CopyDataArray(&v4->u32_E6C, &v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
-  v48.DynamicVector_field_0x1C = (AbstractClass *)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x52439c*/
+  v48.DynamicVector_field_0x1C = (AbstractClass *)&vt_VectorClass; /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.q01C); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      (int *)a2,

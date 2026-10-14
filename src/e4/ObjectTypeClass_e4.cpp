@@ -230,10 +230,10 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_A2 = 0; /*0x5f723d*/
   this->u32_28C = 0; /*0x5f7243*/
   this->Image_d = 0; /*0x5f7249*/
-  *this = (int)&ObjectTypeClass::`vftable'; /*0x5f7251*/
-  this->zero_3C = (int)&ObjectTypeClass::`vftable'; /*0x5f7258*/
-  this->UINameLabel[0x20] = (int)&ObjectTypeClass::`vftable'; /*0x5f725f*/
-  this->u32_3 = (int)&ObjectTypeClass::`vftable'; /*0x5f7266*/
+  *this = (int)&vt_ObjectTypeClass; /*0x5f7251*/
+  this->zero_3C = (int)&vt_ObjectTypeClass; /*0x5f7258*/
+  this->UINameLabel[0x20] = (int)&vt_ObjectTypeClass; /*0x5f725f*/
+  this->u32_3 = (int)&vt_ObjectTypeClass; /*0x5f7266*/
   if ( &this->u8_9 != &this->u8_7E ) /*0x5f726d*/
     qmemcpy(&this->u8_7E, &this->u8_9, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
@@ -317,7 +317,7 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1)
   this->VoxelCaches[17] = 0; /*0x5f73c7*/
   LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
-  this->AbstractTypeClass = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
+  this->AbstractTypeClass = &vt_ObjectTypeClass; /*0x5f73d9*/
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73df) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73e6) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f73ed) */
@@ -2058,7 +2058,7 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(int aP1)
 {
 
-  this->AbstractTypeClass = &DynamicVectorClass<AnimTypeClass const *>::`vftable'; /*0x717bf2*/
+  this->AbstractTypeClass = &vt_DynamicVectorClass; /*0x717bf2*/
   return &this->AbstractTypeClass; /*0x717bf8*/
 
 }

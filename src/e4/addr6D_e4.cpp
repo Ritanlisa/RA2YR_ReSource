@@ -467,9 +467,9 @@ void E4Recv_6D1E80::sub_6D1E80()
 {
 
   /* X11: vtable install elided (implicit via Tactical virtuals 0x6d1e80) */
-  *&this->M4 = &Tactical::`vftable'; /*0x6d1e86*/
-  this->M8 = (int)&Tactical::`vftable'; /*0x6d1e8d*/
-  this->M12 = (int)&Tactical::`vftable'; /*0x6d1e94*/
+  *&this->M4 = &vt_Tactical; /*0x6d1e86*/
+  this->M8 = (int)&vt_Tactical; /*0x6d1e8d*/
+  this->M12 = (int)&vt_Tactical; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
   AbstractClass::DTOR((AbstractClass *)this); /*0x6d1ea5*/
 

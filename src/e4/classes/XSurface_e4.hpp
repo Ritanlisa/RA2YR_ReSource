@@ -35,7 +35,6 @@ struct XSurface {
     static int Fill(XSurface * aP1, int a2);
     static int GetPixel(XSurface * aP1, unsigned int *a2);
     static int SetPixel(XSurface * aP1, unsigned int *a2, int16_t a3);
-    void* WalkLine();
     static int BlitWhole(int* p0, int p1, int p2);  // x4:signals@0x7bbaf0
     unsigned int *q000;  // 0x0 (offset-truth)
 };

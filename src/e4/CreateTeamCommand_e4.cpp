@@ -383,7 +383,7 @@ namespace gamemd {
 CommandClass * CreateTeamCommand::performAction_1(char a2)
 {
 
-  *this = (CommandClass)&CommandClass::`vftable'; /*0x535d09*/
+  *this = (CommandClass)&vt_CommandClass; /*0x535d09*/
   if ( (a2 & 1) != 0 ) /*0x535d0f*/
     __3_YAXPAX_Z(this); /*0x535d12*/
   return (std::locale::facet *)this; /*0x535d1c*/
@@ -639,7 +639,7 @@ namespace gamemd {
 TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 {
 
-  *(unsigned int *)this->CommandClass = &CommandClass::`vftable'; /*0x536589*/
+  *(unsigned int *)this->CommandClass = &vt_CommandClass; /*0x536589*/
   if ( (a2 & 1) != 0 ) /*0x53658f*/
     __3_YAXPAX_Z(this); /*0x536592*/
   return (std::locale::facet *)this; /*0x53659c*/

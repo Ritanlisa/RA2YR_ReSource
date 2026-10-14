@@ -286,7 +286,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
-  v44[0] = &TypeList<RGBClass>::`vftable'; /*0x644f8a*/
+  v44[0] = &vt_TypeList; /*0x644f8a*/
   inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4this->BarrelVoxel); /*0x644f9a*/
   RGBColorList = INIClass::ReadRGBColorList( /*0x644fac*/
                    (INIClass *)aP1,
@@ -304,7 +304,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ColorList = *(VectorClass **)(RGBColorList + 16); /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = *(VectorClass **)(RGBColorList + 20); /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = *(unsigned int *)(RGBColorList + 24); /*0x644fd3*/
-  v52[0] = (int)&VectorClass<RGBClass>::`vftable'; /*0x644fd9*/
+  v52[0] = (int)&vt_VectorClass; /*0x644fd9*/
   FilePipe_38::ddtor((int)v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
@@ -737,10 +737,10 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  a3->ArrayIndex = &ParticleTypeClass::`vftable'; /*0x645956*/
-  a3->ParticleTypeClass_field_28C = &ParticleTypeClass::`vftable'; /*0x64595c*/
-  a3->BehavesLike = &ParticleTypeClass::`vftable'; /*0x645963*/
-  a3->ParticleTypeClass_field_0xC = &ParticleTypeClass::`vftable'; /*0x64596a*/
+  a3->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
+  a3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
+  a3->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
+  a3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&a3->ArrayIndex, 1); /*0x645971*/
   v7 = a3; /*0x645986*/
   v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
@@ -773,7 +773,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
     }
   }
   ParticleTypeClass_field_0x2BC = a3->ParticleTypeClass_field_0x2BC; /*0x645a08*/
-  a3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&VectorClass<RGBClass>::`vftable'; /*0x645a0e*/
+  a3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && a3->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/

@@ -42,7 +42,7 @@ int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a
 {
 
   IPXInterfaceClass::bindSocket((char *)a1); /*0x7b0d93*/
-  a1->Socket = (int)&IPXInterfaceClass::`vftable'; /*0x7b0da4*/
+  a1->Socket = (int)&vt_IPXInterfaceClass; /*0x7b0da4*/
   *((unsigned int *)a1 + 64703) = -1; /*0x7b0dad*/
   *((unsigned int *)a1 + 64704) = -1; /*0x7b0db3*/
   *((unsigned short *)a1 + 129410) = -1; /*0x7b0db8*/

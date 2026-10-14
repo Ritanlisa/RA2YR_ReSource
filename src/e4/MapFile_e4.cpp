@@ -59,7 +59,7 @@ unsigned int * MapFile::Constructor(int a2, int a3)
   this->q008 = a2; /*0x69d77e*/
   LOBYTE(this->q00C) = 1; /*0x69d781*/
   BYTE1(this->q00C) = 0; /*0x69d785*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<enum DiskID>::`vftable'; /*0x69d788*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

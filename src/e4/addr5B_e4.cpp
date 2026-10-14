@@ -3449,7 +3449,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
   this->M21856 = 0; /*0x5bda56*/
   this->M21860 = 0; /*0x5bda5c*/
   this->M21864 = 0; /*0x5bda62*/
-  this->M21784 = &MouseClass::`vftable'; /*0x5bda68*/
+  this->M21784 = &vt_MouseClass; /*0x5bda68*/
   return this; /*0x5bda74*/
 
 }

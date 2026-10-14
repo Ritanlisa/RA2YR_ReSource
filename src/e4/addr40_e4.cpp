@@ -1398,7 +1398,7 @@ LABEL_11:
     g_MixerChannel_SFX = &g_Audio_Enabled->q068; /*0x406c4c*/
     v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
     v4 = v3->vt_slot_20(0); /*0x406c65*/
-    *(unsigned int *)v14.CDFileClass = &CCFileClass::`vftable'; /*0x406c67*/
+    *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
     *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x406c7f*/

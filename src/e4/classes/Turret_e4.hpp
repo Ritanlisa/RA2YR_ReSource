@@ -12,10 +12,10 @@ struct Turret {
 // --- flat members (END) ---
     AbstractClass * * LoadVoxelTurretAndBarrel();
     float * GetTransform(signed int a1, float * a2, unsigned int * a3);
-    void* ;  // 0xB8 (offset-truth)
-    void* ;  // 0xBC (offset-truth)
-    void* ;  // 0xC0 (offset-truth)
-    void* ;  // 0xC4 (offset-truth)
+    void *qB8;  // 0xB8 (offset-truth)
+    void *qBC;  // 0xBC (offset-truth)
+    void *qC0;  // 0xC0 (offset-truth)
+    void *qC4;  // 0xC4 (offset-truth)
     unsigned char u32_CA1;  // 0xCA1 (offset-truth)
 
     unsigned char Matrix_B87[4];  /* Matrix */  // X10 supply (member_lookup)

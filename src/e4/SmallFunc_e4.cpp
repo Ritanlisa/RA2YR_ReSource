@@ -206,9 +206,9 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->HeadToCoord[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
-  *(unsigned int *)this->LocomotionClass = &MechLocomotionClass::`vftable'; /*0x5aff32*/
+  *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff32*/
   this->HeadToCoord[2] = v2; /*0x5aff38*/
-  *&this->M4 = &MechLocomotionClass::`vftable'; /*0x5aff3b*/
+  *&this->M4 = &vt_MechLocomotionClass; /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
 
 }
@@ -315,8 +315,8 @@ int E4Recv_728A00::sub_728A00()
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/
   LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
-  *(unsigned int *)this->LocomotionClass = &TunnelLocomotionClass::`vftable'; /*0x728a3c*/
-  *&this->M4 = &TunnelLocomotionClass::`vftable'; /*0x728a42*/
+  *(unsigned int *)this->LocomotionClass = &vt_TunnelLocomotionClass; /*0x728a3c*/
+  *&this->M4 = &vt_TunnelLocomotionClass; /*0x728a42*/
   return (int)this->LocomotionClass; /*0x728a4b*/
 
 }

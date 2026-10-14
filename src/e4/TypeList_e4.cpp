@@ -253,7 +253,7 @@ VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x45a9c3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x45a9c6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x45a9c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x45a9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x45a9d8*/
@@ -311,7 +311,7 @@ TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477993*/
-  *(unsigned int *)Block = &VectorClass<int>::`vftable'; /*0x477996*/
+  *(unsigned int *)Block = &vt_VectorClass; /*0x477996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4779a0*/
   {
     __3_YAXPAX_Z(v3); /*0x4779a8*/
@@ -481,7 +481,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x478683*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x478686*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x478686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x478690*/
   {
     __3_YAXPAX_Z(v3); /*0x478698*/
@@ -543,7 +543,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
   this->u32_8 = a2; /*0x47879e*/
   this->u32_C = 1; /*0x4787a1*/
   this->u32_D = 0; /*0x4787a5*/
-  this->DynamicVectorClass = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4787a8*/
+  this->DynamicVectorClass = &vt_VectorClass; /*0x4787a8*/
   if ( a2 ) /*0x4787ae*/
   {
     if ( a3 ) /*0x4787b6*/
@@ -657,7 +657,7 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, vo
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x512e23*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512e26*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x512e26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x512e30*/
   {
     __3_YAXPAX_Z(v3); /*0x512e38*/
@@ -750,7 +750,7 @@ DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, 
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5131f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x5131f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5131f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x513200*/
   {
     __3_YAXPAX_Z(v3); /*0x513208*/
@@ -800,7 +800,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x513750*/
   this->u32_C = 1; /*0x513753*/
   this->u32_D = 0; /*0x513757*/
-  this->DynamicVectorClass = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51375a*/
+  this->DynamicVectorClass = &vt_VectorClass; /*0x51375a*/
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
     Vector::Destructor((_VectorClass_PBVUnitTypeClass *)this); /*0x513762*/
@@ -834,7 +834,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x5137b1*/
   this->u32_14 = aP1[5]; /*0x5137b7*/
-  this->DynamicVectorClass = &TypeList<UnitTypeClass const *>::`vftable'; /*0x5137ba*/
+  this->DynamicVectorClass = &vt_TypeList; /*0x5137ba*/
   return &this->DynamicVectorClass; /*0x5137c2*/
 
 }
@@ -1883,7 +1883,7 @@ VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x67c013*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c016*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c016*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x67c020*/
   {
     __3_YAXPAX_Z(v3); /*0x67c028*/
@@ -1906,7 +1906,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2,
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x67c103*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c106*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c106*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x67c110*/
   {
     __3_YAXPAX_Z(v3); /*0x67c118*/
@@ -1929,7 +1929,7 @@ VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Bl
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x67c153*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c156*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c156*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x67c160*/
   {
     __3_YAXPAX_Z(v3); /*0x67c168*/
@@ -1979,7 +1979,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x67c200*/
   this->u32_C = 1; /*0x67c203*/
   this->u32_D = 0; /*0x67c207*/
-  this->DynamicVectorClass = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67c20a*/
+  this->DynamicVectorClass = &vt_VectorClass; /*0x67c20a*/
   if ( this != (TypeList *)aP1 ) /*0x67c210*/
   {
     Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)this); /*0x67c212*/
@@ -2013,7 +2013,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x67c261*/
   this->u32_14 = aP1[5]; /*0x67c267*/
-  this->DynamicVectorClass = &TypeList<VoxelAnimTypeClass const *>::`vftable'; /*0x67c26a*/
+  this->DynamicVectorClass = &vt_TypeList; /*0x67c26a*/
   return &this->DynamicVectorClass; /*0x67c272*/
 
 }

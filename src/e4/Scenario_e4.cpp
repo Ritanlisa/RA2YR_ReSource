@@ -895,7 +895,7 @@ LABEL_71:
   v40 = 0; /*0x55b4f5*/
   ScenarioClass::ProcessAmbientEffects((ScenarioClass *)&v67, 0, 0); /*0x55b4fd*/
   v41 = 10; /*0x55b507*/
-  v67 = &DynamicVectorClass<TeamClass *>::`vftable'; /*0x55b50e*/
+  v67 = &vt_DynamicVectorClass; /*0x55b50e*/
   v72 = 10; /*0x55b516*/
   v71 = 0; /*0x55b51a*/
   if ( (int)FootClass_Array.? > 0 ) /*0x55b51e*/
@@ -967,7 +967,7 @@ LABEL_82:
     v66 = v54[2]; /*0x55b6ef*/
     Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v64); /*0x55b6f3*/
   }
-  v67 = &VectorClass<TeamClass *>::`vftable'; /*0x55b6fc*/
+  v67 = &vt_VectorClass; /*0x55b6fc*/
   if ( Block ) /*0x55b706*/
   {
     if ( v70 ) /*0x55b70e*/

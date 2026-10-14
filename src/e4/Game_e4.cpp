@@ -901,7 +901,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&g_GameRulesOptions) + 380)
                                    & 1));
   Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5ba91d*/
-  *(unsigned int *)v13.CDFileClass = &CCFileClass::`vftable'; /*0x5ba929*/
+  *(unsigned int *)v13.CDFileClass = &vt_CCFileClass; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   *(unsigned int *)v13.CDFileClass = &off_7E1668; /*0x5ba94b*/
@@ -1266,7 +1266,7 @@ unsigned int * Game::LockMutex(int aP1, int aP2)
   *(unsigned int *)this->ptr_8 = aP1; /*0x67c3ae*/
   this->__pad_00C = 1; /*0x67c3b1*/
   this->__pad_8[5] = 0; /*0x67c3b5*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c3b8*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
     if ( aP2 ) /*0x67c3c6*/

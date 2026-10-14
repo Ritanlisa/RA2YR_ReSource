@@ -30,7 +30,7 @@ struct LayerClass {
     unsigned int u32_10C;  // 0x10C (offset-truth)
     unsigned int u32_110;  // 0x110 (offset-truth)
     unsigned int u32_114;  // 0x114 (offset-truth)
-    void* ;  // 0x118 (offset-truth)
+    void *q118;  // 0x118 (offset-truth)
     unsigned int u32_13C;  // 0x13C (offset-truth)
     unsigned int u32_F4;  // 0xF4 (offset-truth)
     unsigned int u32_F8;  // 0xF8 (offset-truth)

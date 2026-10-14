@@ -412,7 +412,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
       0,
       1);
     (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x641e74*/
-    *(unsigned int *)v9.CDFileClass = &CCFileClass::`vftable'; /*0x641e7a*/
+    *(unsigned int *)v9.CDFileClass = &vt_CCFileClass; /*0x641e7a*/
     v11 = 0; /*0x641e82*/
     Vector::Clear((int)v10); /*0x641e8a*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641e93*/
@@ -422,7 +422,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char *Source)
   else
   {
 LABEL_11:
-    *(unsigned int *)v9.CDFileClass = &CCFileClass::`vftable'; /*0x641eaf*/
+    *(unsigned int *)v9.CDFileClass = &vt_CCFileClass; /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
     Vector::Clear((int)v10); /*0x641ebf*/
     *(unsigned int *)v9.CDFileClass = &off_7E1668; /*0x641ec8*/

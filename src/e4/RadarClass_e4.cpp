@@ -49,7 +49,7 @@ CampaignClass * RadarClass::Destruct()
   {
     v4 = *(p_RadarClass_field_0x1488 - 5); /*0x652c2b*/
     p_RadarClass_field_0x1488 -= 6; /*0x652c2e*/
-    *p_RadarClass_field_0x1488 = (MapClass *)&VectorClass<Point2D>::`vftable'; /*0x652c33*/
+    *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x652c33*/
     if ( v4 && p_RadarClass_field_0x1488->IsAllocated ) /*0x652c3b*/
     {
       __3_YAXPAX_Z(v4); /*0x652c41*/
@@ -61,7 +61,7 @@ CampaignClass * RadarClass::Destruct()
   }
   while ( v3 ); /*0x652c53*/
   RadarClass_field_0x1260 = this->ptr_1260; /*0x652c55*/
-  this->RadarPoints = (VectorClass *)&VectorClass<Point2D>::`vftable'; /*0x652c5b*/
+  this->RadarPoints = (VectorClass *)&vt_VectorClass; /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
@@ -70,7 +70,7 @@ CampaignClass * RadarClass::Destruct()
   this->u8_1269 = 0; /*0x652c80*/
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
-  this->RadarCells = (VectorClass *)&VectorClass<Cell>::`vftable'; /*0x652c92*/
+  this->RadarCells = (VectorClass *)&vt_VectorClass; /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1228); /*0x652ca9*/

@@ -517,7 +517,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   void *v8; // eax
   void *v9; // eax
 
-  this->Socket = (int)&UDPInterfaceClass::`vftable'; /*0x7b2e56*/
+  this->Socket = (int)&vt_UDPInterfaceClass; /*0x7b2e56*/
   while ( this->M258888 ) /*0x7b2e5c*/
   {
     __3_YAXPAX_Z(*this->M258876); /*0x7b2e6f*/
@@ -552,7 +552,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   }
   UDPInterfaceClass::connect(this); /*0x7b2f04*/
   v8 = (void *)this->M259412; /*0x7b2f09*/
-  this->M259408 = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f0f*/
+  this->M259408 = &vt_VectorClass; /*0x7b2f0f*/
   if ( v8 && this->M259421 ) /*0x7b2f1d*/
   {
     __3_YAXPAX_Z(v8); /*0x7b2f26*/
@@ -561,7 +561,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   this->M259421 = 0; /*0x7b2f34*/
   this->M259416 = 0; /*0x7b2f3a*/
   v9 = (void *)this->M258876; /*0x7b2f40*/
-  this->M258872 = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f46*/
+  this->M258872 = &vt_VectorClass; /*0x7b2f46*/
   if ( v9 && this->M258885 ) /*0x7b2f54*/
   {
     __3_YAXPAX_Z(v9); /*0x7b2f5d*/

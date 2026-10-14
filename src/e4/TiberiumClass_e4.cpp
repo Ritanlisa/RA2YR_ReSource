@@ -68,7 +68,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a01a0*/
+      *v9 = &vt_DynamicVectorClass; /*0x5a01a0*/
       v9->u32_14 = 10; /*0x5a01a6*/
       v9->q010 = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -182,7 +182,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   AnimTypeVector::Constructor(&this->Power_d, 0, 0); /*0x721725*/
   this->Image = (OverlayTypeClass *)10; /*0x72172a*/
   this->Debris[0] = 0; /*0x721731*/
-  this->GrowthPercentage[1] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x721734*/
+  this->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721734*/
   this->NumImages = 0; /*0x72173a*/
   *(unsigned int *)this->Tactical_E4 = 0; /*0x721740*/
   *&this->q0E8 = 0; /*0x721746*/
@@ -200,7 +200,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x721794*/
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
-  this->ObjectClass = &TiberiumClass::`vftable'; /*0x7217a6*/
+  this->ObjectClass = &vt_TiberiumClass; /*0x7217a6*/
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ac) */
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217b3) */
   /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x7217ba) */
@@ -428,10 +428,10 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init((int)v2, (int)&a1); /*0x721f9b*/
       DynamicVectorClass::AnimTypeConstructor(&v2->u32_E8, 0, 0); /*0x721fa4*/
-      v2->GrowthPercentage[1] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x721fb0*/
+      v2->GrowthPercentage[1] = (int)&vt_TypeList; /*0x721fb0*/
       Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
-      v2->ObjectClass = &TiberiumClass::`vftable'; /*0x721fc7*/
+      v2->ObjectClass = &vt_TiberiumClass; /*0x721fc7*/
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fcd) */
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fd4) */
       /* X11: vtable install elided (implicit via TiberiumClass virtuals 0x721fdb) */

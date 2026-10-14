@@ -21,11 +21,16 @@ SITE = re.compile(r'([A-Za-z_][\w:<>,\s\*&]*)::`vftable\'')
 
 decls_h = 'src/e4/e4_globals_decls.hpp'
 
-# existing declarations
+# existing declarations.  X25: the old check only recognized the ARRAY form
+# (`vt_X[`), so names already declared as `extern void* vt_X;` (the
+# e4_globals.hpp carrier form) were re-appended as `unsigned char vt_X[4]`
+# -- 18 same-name/different-type pairs, C2372 in every includer
+# (e4_globals_decls.hpp 316 error lines in the HEAD build log).
 have = set()
 if os.path.exists(decls_h):
-    have = set(re.findall(r'\bvt_(\w+)\s*\[', open(decls_h, encoding='utf-8',
-                                                  errors='replace').read()))
+    have = set(re.findall(
+        r'extern\s+(?:unsigned char|void\s*\*)\s+vt_(\w+)',
+        open(decls_h, encoding='utf-8', errors='replace').read()))
 
 # vtable address truth (rtti_vtable_class: addr -> class rtti name)
 vt_addr = {}
@@ -38,11 +43,18 @@ try:
 except Exception:
     pass
 
-stats = {'sites': 0, 'externs': 0, 'with-addr': 0}
+stats = {'sites': 0, 'externs': 0, 'with-addr': 0, 'refs-in-use': 0}
 files_changed = 0
 needed = {}
-for p in (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
-          + glob.glob('src/system/gap2*.cpp')):
+refs_in_use = set()
+# X25: scope widened from e4/_gap2/system-gap2 to the whole compiled src
+# tree -- the residue survives in hybrid TUs outside that triangle
+# (src/network/winsock.cpp x3 nested-template installs, src/misc/misc_ext.cpp
+# x4 plain installs; each is a C2018 backtick parse error).  raw_decomp/*.c
+# is not compiled and not matched by the *.cpp glob.
+import glob as _glob
+_scan = sorted(set(_glob.glob('src/**/*.cpp', recursive=True)))
+for p in _scan:
     raw = open(p, encoding='utf-8', errors='replace').read()
     def _rep(m):
         stats['sites'] += 1
@@ -58,8 +70,13 @@ for p in (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
         files_changed += 1
         if APPLY:
             open(p, 'w', encoding='utf-8', errors='replace', newline='').write(new)
+    # X25: names referenced as `&vt_X` -- the post-rewrite carrier form.
+    # Collecting them keeps the append pass complete when re-run on a tree
+    # where every `::`vftable'` residue is already collapsed (0 sites).
+    refs_in_use |= set(re.findall(r'&\s*vt_(\w+)\b', raw))
 
-missing = sorted(c for c in needed if c not in have)
+stats['refs-in-use'] = len(refs_in_use)
+missing = sorted(c for c in (set(needed) | refs_in_use) if c not in have)
 if missing:
     txt = open(decls_h, encoding='utf-8', errors='replace').read() if \
         os.path.exists(decls_h) else \

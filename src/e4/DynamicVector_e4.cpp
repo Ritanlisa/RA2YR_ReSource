@@ -432,7 +432,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  *(unsigned int *)this->ClearAndFree2_ph = &DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67acb3*/
+  *(unsigned int *)this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x67acb3*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x67acb9*/
   this->Count = 0; /*0x67acc0*/
   return this->vtable1; /*0x67acc9*/
@@ -589,7 +589,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
       this->IsAllocated = 1; /*0x73430f*/
     }
   }
-  *(unsigned int *)this->ClearAndFree2_ph = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x734313*/
+  *(unsigned int *)this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x734313*/
   *(unsigned int *)this->CapacityIncrement = 10; /*0x734319*/
   this->Count = 0; /*0x734320*/
   return this->vtable1; /*0x734329*/

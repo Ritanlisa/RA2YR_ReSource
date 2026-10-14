@@ -16,7 +16,7 @@ struct Warhead {
     bool q01B;  // 0x1B
     unsigned char q01C;  // 0x1C
     unsigned int q020;  // 0x20
-    void* ;  // 0x24
+    void *q24;  // 0x24
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
     void* q034;  // 0x34

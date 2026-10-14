@@ -54,7 +54,7 @@ int LocomotionClass::Initialize()
   this->u32_64 = 0; /*0x4af5b8*/
   this->u32_65 = 1; /*0x4af5bb*/
   this->u32_68 = 0; /*0x4af5bf*/
-  *(unsigned int *)this->ILocomotion = &DriveLocomotionClass::`vftable'; /*0x4af5c2*/
+  *(unsigned int *)this->ILocomotion = &vt_DriveLocomotionClass; /*0x4af5c2*/
   /* X11: vtable install elided (implicit via DriveLocomotionClass virtuals 0x4af5c8) */
   this->u32_18 = &off_7E7E8C; /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
@@ -154,7 +154,7 @@ int LocomotionClass::ProcessData()
   this->u32_68 = 0; /*0x513c88*/
   this->u32_6C = 0; /*0x513c8b*/
   this->u32_70 = 0; /*0x513c8e*/
-  *(unsigned int *)this->ILocomotion = &HoverLocomotionClass::`vftable'; /*0x513c91*/
+  *(unsigned int *)this->ILocomotion = &vt_HoverLocomotionClass; /*0x513c91*/
   /* X11: vtable install elided (implicit via HoverLocomotionClass virtuals 0x513c97) */
   return (int)this->ILocomotion; /*0x513ca0*/
 
@@ -188,9 +188,9 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   a1->__pad_89[7] = 0; /*0x54aca5*/
   a1->unknown_91 = 0; /*0x54acab*/
   a1->Piggybackee = 0; /*0x54acb5*/
-  a1->LocomotionClass[0] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54acc3*/
-  a1->LocomotionClass[1] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54acc9*/
-  a1->TurnRate = (int)&JumpjetLocomotionClass::`vftable'; /*0x54acd0*/
+  a1->LocomotionClass[0] = (int)&vt_JumpjetLocomotionClass; /*0x54acc3*/
+  a1->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54acc9*/
+  a1->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54acd0*/
   LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update(&a1->__pad_50[4], &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
@@ -209,7 +209,7 @@ int LocomotionClass::Init()
   this->Powered = 1; /*0x55a6cc*/
   this->Dirty = 1; /*0x55a6cf*/
   this->RefCount = 0; /*0x55a6d2*/
-  *(unsigned int *)this->ILocomotion = &LocomotionClass::`vftable'; /*0x55a6d5*/
+  *(unsigned int *)this->ILocomotion = &vt_LocomotionClass; /*0x55a6d5*/
   /* X11: vtable install elided (implicit via LocomotionClass virtuals 0x55a6db) */
   return this->ILocomotion; /*0x55a6e2*/
 
@@ -220,7 +220,7 @@ namespace gamemd {
 void LocomotionClass::Construct()
 {
 
-  *(unsigned int *)this->ILocomotion = &LocomotionClass::`vftable'; /*0x55a6f0*/
+  *(unsigned int *)this->ILocomotion = &vt_LocomotionClass; /*0x55a6f0*/
   /* X11: vtable install elided (implicit via LocomotionClass virtuals 0x55a6f6) */
   this->LinkedTo = 0; /*0x55a6fd*/
 

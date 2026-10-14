@@ -558,7 +558,7 @@ ObjectClass * * MapClass::LoadFileData()
     while ( v5 < *&this->q2E8 * *&this->q2E4 ); /*0x5470cb*/
   }
   TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
-  *(unsigned int *)v12.CDFileClass = &CCFileClass::`vftable'; /*0x5470d8*/
+  *(unsigned int *)v12.CDFileClass = &vt_CCFileClass; /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
   Vector::Clear((int)v13); /*0x5470e8*/
   *(unsigned int *)v12.CDFileClass = &off_7E1668; /*0x5470f1*/
@@ -639,7 +639,7 @@ void* MapClass::Destruct()
   }
   while ( v12 ); /*0x565361*/
   v5 = (void *)this->u32_1160; /*0x565363*/
-  this->u32_115C = &VectorClass<Cell>::`vftable'; /*0x565370*/
+  this->u32_115C = &vt_VectorClass; /*0x565370*/
   if ( v5 && this->u32_1169 ) /*0x565378*/
   {
     __3_YAXPAX_Z(v5); /*0x565381*/
@@ -648,7 +648,7 @@ void* MapClass::Destruct()
   this->u32_1169 = 0; /*0x56538f*/
   this->u32_1164 = 0; /*0x565395*/
   v6 = (void *)this->__pad_13C; /*0x56539b*/
-  this->MaxLevel = &VectorClass<CellClass *>::`vftable'; /*0x5653a1*/
+  this->MaxLevel = &vt_VectorClass; /*0x5653a1*/
   if ( v6 && this->u32_145 ) /*0x5653af*/
   {
     __3_YAXPAX_Z(v6); /*0x5653b8*/
@@ -657,7 +657,7 @@ void* MapClass::Destruct()
   this->u32_145 = 0; /*0x5653c6*/
   this->q140 = 0; /*0x5653cc*/
   v7 = (void *)this->u32_D8; /*0x5653d2*/
-  this->u32_D4 = &VectorClass<Cell>::`vftable'; /*0x5653d8*/
+  this->u32_D4 = &vt_VectorClass; /*0x5653d8*/
   if ( v7 && this->u32_E1 ) /*0x5653e2*/
   {
     __3_YAXPAX_Z(v7); /*0x5653eb*/
@@ -671,7 +671,7 @@ void* MapClass::Destruct()
   {
     v10 = (void *)*((unsigned int *)v8 - 5); /*0x565410*/
     v8 -= 24; /*0x565413*/
-    *(unsigned int *)v8 = &VectorClass<SubzoneTrackingStruct>::`vftable'; /*0x565418*/
+    *(unsigned int *)v8 = &vt_VectorClass; /*0x565418*/
     if ( v10 && v8->u8_D ) /*0x565420*/
     {
       SubzoneConnectionVector::Destruct(v10, 3); /*0x56542b*/
@@ -683,7 +683,7 @@ void* MapClass::Destruct()
   }
   while ( v9 ); /*0x56543a*/
   v11 = (void *)this->__pad_054; /*0x56543c*/
-  this->ptr_50 = &VectorClass<ZoneConnectionClass>::`vftable'; /*0x565442*/
+  this->ptr_50 = &vt_VectorClass; /*0x565442*/
   if ( v11 && this->u32_5D ) /*0x56544c*/
   {
     __3_YAXPAX_Z(v11); /*0x565452*/
@@ -922,7 +922,7 @@ int MapClass::InitCellVector()
     *((unsigned int *)v2 + 2) = 0; /*0x565ab4*/
     v2[12] = 1; /*0x565abb*/
     v2[13] = 0; /*0x565abf*/
-    *(unsigned int *)v2 = &VectorClass<CellClass *>::`vftable'; /*0x565ac3*/
+    *(unsigned int *)v2 = &vt_VectorClass; /*0x565ac3*/
   }
   (*(void (**)(char *, unsigned int, unsigned int))(*(unsigned int *)v2 + 8))(v2, *&this->q154, 0); /*0x565ad4*/
   for ( result = 0; result < *&this->q154; *((unsigned int *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
@@ -3820,7 +3820,7 @@ int MapClass::ProcessTile()
         }
       }
       v4 = (void *)v2[11]; /*0x5995d2*/
-      v2[10] = &VectorClass<Cell>::`vftable'; /*0x5995d5*/
+      v2[10] = &vt_VectorClass; /*0x5995d5*/
       if ( v4 && *((unsigned char *)v2 + 53) ) /*0x5995e0*/
       {
         __3_YAXPAX_Z(v4); /*0x5995e6*/

@@ -33,7 +33,7 @@ int BombClass::AbstractClass()
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
-  this->AbstractClass = &BombClass::`vftable'; /*0x4385e1*/
+  this->AbstractClass = &vt_BombClass; /*0x4385e1*/
   /* X11: vtable install elided (implicit via BombClass virtuals 0x4385e7) */
   /* X11: vtable install elided (implicit via BombClass virtuals 0x4385ee) */
   /* X11: vtable install elided (implicit via BombClass virtuals 0x4385f5) */
@@ -177,10 +177,10 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
     if ( aP0 ) /*0x438b59*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP0); /*0x438b62*/
-      aP0->AbstractClass = &BombClass::`vftable'; /*0x438b67*/
-      aP0->? = &BombClass::`vftable'; /*0x438b6d*/
-      aP0->? = &BombClass::`vftable'; /*0x438b74*/
-      aP0->? = &BombClass::`vftable'; /*0x438b7b*/
+      aP0->AbstractClass = &vt_BombClass; /*0x438b67*/
+      aP0->? = &vt_BombClass; /*0x438b6d*/
+      aP0->? = &vt_BombClass; /*0x438b74*/
+      aP0->? = &vt_BombClass; /*0x438b7b*/
     }
     AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
     aP0->BombClass_field_54 = 0; /*0x438b8d*/
@@ -209,7 +209,7 @@ BombClass * BombClass::CopyTo(char a2)
   int v3; // eax
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &BombClass::`vftable'; /*0x4393f7*/
+  this->AbstractClass = &vt_BombClass; /*0x4393f7*/
   /* X11: vtable install elided (implicit via BombClass virtuals 0x4393fd) */
   /* X11: vtable install elided (implicit via BombClass virtuals 0x439404) */
   /* X11: vtable install elided (implicit via BombClass virtuals 0x43940b) */

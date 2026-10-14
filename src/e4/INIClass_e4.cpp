@@ -328,11 +328,11 @@ void * INIClass::Constructor(void *aP1) { return new (aP1) INIClass(); }
   result->q008 = 0; /*0x535aaf*/
   sectionHead->Prev = 0; /*0x535ab2*/
   sectionHead->Next = 0; /*0x535ab5*/
-  *sectionHead = (int)&GenericNode::`vftable'; /*0x535ab8*/
+  *sectionHead = (int)&vt_GenericNode; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
-  result[7] = &GenericNode::`vftable'; /*0x535ac4*/
-  result->q00C = &GenericList::`vftable'; /*0x535acd*/
+  result[7] = &vt_GenericNode; /*0x535ac4*/
+  result->q00C = &vt_GenericList; /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
     v4 = result[8]; /*0x535ad6*/
@@ -355,14 +355,14 @@ void * INIClass::Constructor(void *aP1) { return new (aP1) INIClass(); }
   if ( v7 ) /*0x535b04*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/
   sectionHead[1] = (int)v3; /*0x535b09*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x535b0c*/
+  result[3] = &vt_List; /*0x535b0c*/
   result[10] = 0; /*0x535b13*/
   result[11] = 0; /*0x535b16*/
   result[12] = 0; /*0x535b19*/
   *((unsigned char *)result + 52) = 0; /*0x535b1c*/
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
-  *result = &INIClass::`vftable'; /*0x535b27*/
+  *result = &vt_INIClass; /*0x535b27*/
   return result; /*0x535b22*/
 
 }
@@ -387,11 +387,11 @@ INIClass::INIClass()
   result->q008 = 0; /*0x535aaf*/
   sectionHead->Prev = 0; /*0x535ab2*/
   sectionHead->Next = 0; /*0x535ab5*/
-  *sectionHead = (int)&GenericNode::`vftable'; /*0x535ab8*/
+  *sectionHead = (int)&vt_GenericNode; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
-  result[7] = &GenericNode::`vftable'; /*0x535ac4*/
-  result->q00C = &GenericList::`vftable'; /*0x535acd*/
+  result[7] = &vt_GenericNode; /*0x535ac4*/
+  result->q00C = &vt_GenericList; /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
     v4 = result[8]; /*0x535ad6*/
@@ -414,14 +414,14 @@ INIClass::INIClass()
   if ( v7 ) /*0x535b04*/
     v7->Next = v3; /*0x535b06*/
   sectionHead->Prev = (int)v3; /*0x535b09*/
-  result->q00C = &List<INIClass::INISection *>::`vftable'; /*0x535b0c*/
+  result->q00C = &vt_List; /*0x535b0c*/
   result->needsSave_flag = 0; /*0x535b13*/
   result->INIClass_field_2C = 0; /*0x535b16*/
   result->unknown30 = 0; /*0x535b19*/
   result->needsSave_flag = 0; /*0x535b1c*/
   result->unknown38 = 0; /*0x535b1f*/
   result->INIClass_field_3C = 0; /*0x535b23*/
-  *result = &INIClass::`vftable'; /*0x535b27*/
+  *result = &vt_INIClass; /*0x535b27*/
   return result; /*0x535b22*/
 
 }

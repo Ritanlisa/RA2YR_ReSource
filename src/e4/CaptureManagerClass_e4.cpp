@@ -43,7 +43,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
   this->CaptureManagerClass_field_31 = 0; /*0x4717ec*/
-  this->controlNodes = &DynamicVectorClass<ControlNode *>::`vftable'; /*0x4717ef*/
+  this->controlNodes = &vt_DynamicVectorClass; /*0x4717ef*/
   this->CaptureManagerClass_field_30 = 10; /*0x4717f6*/
   this->originalOwner = 0; /*0x4717fd*/
   this->overloadCount = a2; /*0x471800*/
@@ -1336,7 +1336,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   this->vtable3 = (void *)a2; /*0x47314e*/
   LOBYTE(this->vtable4) = 1; /*0x473151*/
   BYTE1(this->IsAllocated) = 0; /*0x473155*/
-  this->AbstractClass = &VectorClass<ControlNode *>::`vftable'; /*0x473158*/
+  this->AbstractClass = &vt_VectorClass; /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/

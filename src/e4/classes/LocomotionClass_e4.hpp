@@ -29,7 +29,7 @@ struct LocomotionClass {
     unsigned char __pad_89;  // 0x89 (offset-truth)
     unsigned char q015;  // 0x15 (offset-truth)
     bool q074;  // 0x74 (ml)
-    void* ;  // 0x18 (offset-truth)
+    void *q18;  // 0x18 (offset-truth)
     unsigned int u32_1C;  // 0x1C (offset-truth)
     unsigned int u32_24;  // 0x24 (offset-truth)
     unsigned int u32_28;  // 0x28 (offset-truth)

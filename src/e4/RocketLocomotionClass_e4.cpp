@@ -40,7 +40,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(unsigned int *)this->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x661f19*/
+  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f19*/
   /* X11: vtable install elided (implicit via RocketLocomotionClass virtuals 0x661f1f) */
   return (int)this->LocomotionClass; /*0x661f28*/
 
@@ -342,7 +342,7 @@ unsigned int * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(u
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x664a73*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664a76*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x664a76*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/

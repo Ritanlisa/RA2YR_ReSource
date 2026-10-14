@@ -217,7 +217,7 @@ LABEL_11:
   v17 = 0; /*0x4816ed*/
   v18 = 1; /*0x4816f1*/
   v19 = 0; /*0x4816f5*/
-  v15 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4816f9*/
+  v15 = &vt_DynamicVectorClass; /*0x4816f9*/
   v21 = 10; /*0x481701*/
   v20 = 0; /*0x481705*/
   if ( v8 ) /*0x481709*/
@@ -266,7 +266,7 @@ LABEL_25:
     }
     while ( v9 < v20 ); /*0x4817e0*/
   }
-  v15 = &VectorClass<ObjectClass *>::`vftable'; /*0x4817e9*/
+  v15 = &vt_VectorClass; /*0x4817e9*/
   if ( Block ) /*0x4817f4*/
   {
     if ( v19 ) /*0x4817fc*/

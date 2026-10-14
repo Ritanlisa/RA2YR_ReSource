@@ -1558,7 +1558,7 @@ int ObjectClass::sub_4F2280(int a2, int a3)
 
   v5 = 0; /*0x4f2286*/
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f228e*/
-  *(unsigned int *)v4.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f2296*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2296*/
   for ( result = Map::CanScroll(&v4); /*0x4f22a6*/
         (unsigned char)result;
         result = (*(int (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) )
@@ -1583,7 +1583,7 @@ int ObjectClass::sub_4F26E0(int a2)
 
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f26e7*/
   v5 = 0; /*0x4f26ef*/
-  *(unsigned int *)v4.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f26f7*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f26f7*/
   if ( Map::CanScroll(&v4) ) /*0x4f26ff*/
   {
     do /*0x4f2738*/
@@ -1614,7 +1614,7 @@ int ObjectClass::sub_4F2770(int a2)
 
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f2777*/
   v5 = 0; /*0x4f277f*/
-  *(unsigned int *)v4.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f2787*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2787*/
   if ( Map::CanScroll(&v4) ) /*0x4f278f*/
   {
     do /*0x4f27c8*/
@@ -1715,7 +1715,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x4f3027) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.?); /*0x4f302b*/
-  v15.estimatedHealth = (int)&CCFileClass::`vftable'; /*0x4f3037*/
+  v15.estimatedHealth = (int)&vt_CCFileClass; /*0x4f3037*/
   v17 = 0; /*0x4f303e*/
   Vector::Clear((int)v16); /*0x4f3045*/
   v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/

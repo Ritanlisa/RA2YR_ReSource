@@ -23,7 +23,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   unsigned int *Font; // eax
 
   v3 = (struct tagRECT *)(a2 + 48); /*0x43388a*/
-  *(unsigned int *)a2 = &BitFont::`vftable'; /*0x433895*/
+  *(unsigned int *)a2 = &vt_BitFont; /*0x433895*/
   *(unsigned int *)(a2 + 4) = 0; /*0x43389b*/
   *(unsigned short *)(a2 + 36) = 0x7FFF; /*0x43389e*/
   *(unsigned short *)(a2 + 38) = 13653; /*0x4338a4*/

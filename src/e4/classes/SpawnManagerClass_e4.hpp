@@ -26,7 +26,7 @@ struct SpawnManagerClass {
     char spawnCount[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
     char SpawnManagerClass_field_34[4];  // 0x34
-    void* ;  // 0x38
+    void *q38;  // 0x38
     char spawnVectorCount[4];  // 0x3C
     char spawnVectorCapacity[4];  // 0x40
     char creationFrame[4];  // 0x44

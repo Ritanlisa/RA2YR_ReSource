@@ -714,10 +714,10 @@ void * TEventClass::Fire(void ** Block, char a2)
   int v5; // eax
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &TEventClass::`vftable'; /*0x71fa86*/
-  Block->? = &TEventClass::`vftable'; /*0x71fa8c*/
-  Block->u32_8 = &TEventClass::`vftable'; /*0x71fa93*/
-  Block->? = &TEventClass::`vftable'; /*0x71fa9a*/
+  Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
+  Block->? = &vt_TEventClass; /*0x71fa8c*/
+  Block->u32_8 = &vt_TEventClass; /*0x71fa93*/
+  Block->? = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/

@@ -38,7 +38,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
   v3 = *&this->u32_3C; /*0x7b1ade*/
-  this->u32_38 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
+  this->u32_38 = &vt_VectorClass; /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
@@ -47,7 +47,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   this->u32_45 = 0; /*0x7b1afd*/
   this->u32_40 = 0; /*0x7b1b00*/
   v4 = *&this->u32_24; /*0x7b1b03*/
-  this->u32_20 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
+  this->u32_20 = &vt_VectorClass; /*0x7b1b06*/
   if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
     __3_YAXPAX_Z(v4); /*0x7b1b17*/
@@ -56,7 +56,7 @@ WinsockInterfaceClass::WinsockInterfaceClass() noexcept
   this->u32_2D = 0; /*0x7b1b22*/
   this->u32_28 = 0; /*0x7b1b25*/
   v5 = *&this->u32_C; /*0x7b1b28*/
-  this->__pad_008 = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
+  this->__pad_008 = &vt_VectorClass; /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     __3_YAXPAX_Z(v5); /*0x7b1b3c*/

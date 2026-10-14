@@ -669,7 +669,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x42db63*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<unsigned int>::`vftable'; /*0x42db66*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42db66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42db70*/
   {
     __3_YAXPAX_Z(v3); /*0x42db78*/
@@ -698,7 +698,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   *&aP1->Capacity = 0; /*0x4779f0*/
   LOBYTE(aP1->IsInitialized) = 1; /*0x4779f3*/
   BYTE1(aP1->IsAllocated) = 0; /*0x4779f7*/
-  *(unsigned int *)aP1->VectorClass = &VectorClass<int>::`vftable'; /*0x4779fa*/
+  *(unsigned int *)aP1->VectorClass = &vt_VectorClass; /*0x4779fa*/
   if ( aP1 != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
     VectorClass::Destroy((int)aP1); /*0x477a02*/
@@ -732,7 +732,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   }
   aP1->Count = a2[4]; /*0x477a51*/
   aP1->CapacityIncrement = a2[5]; /*0x477a57*/
-  *(unsigned int *)aP1->VectorClass = &DynamicVectorClass<int>::`vftable'; /*0x477a5a*/
+  *(unsigned int *)aP1->VectorClass = &vt_DynamicVectorClass; /*0x477a5a*/
   return aP1->VectorClass; /*0x477a62*/
 
 }
@@ -1075,7 +1075,7 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x49ee13*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<char *>::`vftable'; /*0x49ee16*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x49ee16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x49ee20*/
   {
     __3_YAXPAX_Z(v3); /*0x49ee28*/
@@ -1250,7 +1250,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   *&this->Capacity = a2; /*0x5ac910*/
   LOBYTE(this->IsInitialized) = 1; /*0x5ac913*/
   BYTE1(this->IsAllocated) = 0; /*0x5ac917*/
-  *(unsigned int *)this->VectorClass = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac91b*/
+  *(unsigned int *)this->VectorClass = &vt_VectorClass; /*0x5ac91b*/
   if ( a2 ) /*0x5ac921*/
   {
     if ( a3 ) /*0x5ac929*/
@@ -1263,7 +1263,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
       BYTE1(this->IsAllocated) = 1; /*0x5ac93f*/
     }
   }
-  *(unsigned int *)this->VectorClass = &DynamicVectorClass<BuildingTypeClass const *>::`vftable'; /*0x5ac943*/
+  *(unsigned int *)this->VectorClass = &vt_DynamicVectorClass; /*0x5ac943*/
   this->CapacityIncrement = 10; /*0x5ac949*/
   this->Count = 0; /*0x5ac950*/
   return this->VectorClass; /*0x5ac959*/
@@ -1527,7 +1527,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6287b3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<HSVClass>::`vftable'; /*0x6287b6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6287b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6287c0*/
   {
     __3_YAXPAX_Z(v3); /*0x6287c8*/

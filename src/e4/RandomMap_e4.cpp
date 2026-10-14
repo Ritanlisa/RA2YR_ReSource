@@ -177,7 +177,7 @@ int RandomMap::GenerateTerrain(RandomMap *self)
   *(unsigned int *)v47 = g_MissionQueueFrame.localVariables[164]; /*0x58c81a*/
   VectorClass::CellConstructor((VectorClass *)&v54, 0, 0); /*0x58c81e*/
   v2 = self->u32_24; /*0x58c823*/
-  *(unsigned int *)v54.__pad_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x58c826*/
+  *(unsigned int *)v54.__pad_0 = &vt_DynamicVectorClass; /*0x58c826*/
   *(unsigned int *)v54.__tail_10 = 0; /*0x58c832*/
   v55 = 50000; /*0x58c838*/
   if ( v54.m_8 > 0 || (BYTE1(v54.m_C) || !v54.m_8) && VectorClass::ResizeEx(&v54, v54.m_8 + 50000, 0) ) /*0x58c859*/
@@ -373,7 +373,7 @@ LABEL_60:
               if ( v16 ) /*0x58cc7f*/
               {
 LABEL_63:
-                *(unsigned int *)v54.__pad_0 = &VectorClass<Cell>::`vftable'; /*0x58cc85*/
+                *(unsigned int *)v54.__pad_0 = &vt_VectorClass; /*0x58cc85*/
                 Buffer::Cleanup(&v54); /*0x58cc91*/
                 return 0; /*0x58cc9f*/
               }
@@ -414,7 +414,7 @@ LABEL_84:
     }
     while ( v44 ); /*0x58ce71*/
   }
-  *(unsigned int *)v54.__pad_0 = &VectorClass<Cell>::`vftable'; /*0x58ce77*/
+  *(unsigned int *)v54.__pad_0 = &vt_VectorClass; /*0x58ce77*/
   Buffer::Cleanup(&v54); /*0x58ce7f*/
   return v41; /*0x58cc98*/
 
@@ -2851,16 +2851,16 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
     __3_YAXPAX_Z(v7); /*0x595990*/
     *&this->__pad_17C = 0; /*0x595998*/
   }
-  this->u32_2E0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5959a4*/
+  this->u32_2E0 = &vt_VectorClass; /*0x5959a4*/
   DynamicVectorClass::Destroy(&this->u32_2E0); /*0x5959aa*/
-  this->u32_2C4 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x5959b5*/
+  this->u32_2C4 = &vt_VectorClass; /*0x5959b5*/
   DynamicVectorClass::Destroy(&this->u32_2C4); /*0x5959bb*/
-  this->u32_2A0 = &VectorClass<int>::`vftable'; /*0x5959cb*/
+  this->u32_2A0 = &vt_VectorClass; /*0x5959cb*/
   VectorClass::Destroy((int)&this->u32_A80); /*0x5959cd*/
-  this->u32_284 = &VectorClass<int>::`vftable'; /*0x5959d8*/
+  this->u32_284 = &vt_VectorClass; /*0x5959d8*/
   VectorClass::Destroy((int)&this->u32_A10); /*0x5959da*/
   v8 = (void *)this->u32_26C; /*0x5959df*/
-  this->u32_268 = &VectorClass<int>::`vftable'; /*0x5959e5*/
+  this->u32_268 = &vt_VectorClass; /*0x5959e5*/
   if ( v8 && this->u32_275 ) /*0x5959ef*/
   {
     __3_YAXPAX_Z(v8); /*0x5959f8*/
@@ -2869,7 +2869,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u32_275 = 0; /*0x595a06*/
   this->u32_270 = 0; /*0x595a0c*/
   v9 = (void *)this->u32_250; /*0x595a12*/
-  this->u32_24C = &VectorClass<int>::`vftable'; /*0x595a18*/
+  this->u32_24C = &vt_VectorClass; /*0x595a18*/
   if ( v9 && this->u32_259 ) /*0x595a22*/
   {
     __3_YAXPAX_Z(v9); /*0x595a2b*/
@@ -2878,7 +2878,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u32_259 = 0; /*0x595a39*/
   this->u32_254 = 0; /*0x595a3f*/
   v10 = (void *)this->u32_234; /*0x595a45*/
-  this->u32_230 = &VectorClass<int>::`vftable'; /*0x595a4b*/
+  this->u32_230 = &vt_VectorClass; /*0x595a4b*/
   if ( v10 && this->u32_23D ) /*0x595a55*/
   {
     __3_YAXPAX_Z(v10); /*0x595a5e*/
@@ -2887,7 +2887,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u32_23D = 0; /*0x595a6c*/
   this->u32_238 = 0; /*0x595a72*/
   v11 = (void *)this->u32_218; /*0x595a78*/
-  this->u32_214 = &VectorClass<int>::`vftable'; /*0x595a7e*/
+  this->u32_214 = &vt_VectorClass; /*0x595a7e*/
   if ( v11 && this->u32_221 ) /*0x595a88*/
   {
     __3_YAXPAX_Z(v11); /*0x595a91*/
@@ -2896,7 +2896,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u32_221 = 0; /*0x595a9f*/
   this->u32_21C = 0; /*0x595aa5*/
   v12 = *&this->q1FC; /*0x595aab*/
-  *&this->q1F8 = &VectorClass<int>::`vftable'; /*0x595ab1*/
+  *&this->q1F8 = &vt_VectorClass; /*0x595ab1*/
   if ( v12 && this->u8_205 ) /*0x595abb*/
   {
     __3_YAXPAX_Z(v12); /*0x595ac4*/
@@ -2905,7 +2905,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u8_205 = 0; /*0x595ad2*/
   *&this->q200 = 0; /*0x595ad8*/
   v13 = *&this->q1E0; /*0x595ade*/
-  *&this->q1DC = &VectorClass<int>::`vftable'; /*0x595ae4*/
+  *&this->q1DC = &vt_VectorClass; /*0x595ae4*/
   if ( v13 && this->u8_1E9 ) /*0x595aee*/
   {
     __3_YAXPAX_Z(v13); /*0x595af7*/
@@ -2914,7 +2914,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u8_1E9 = 0; /*0x595b05*/
   *&this->q1E4 = 0; /*0x595b0b*/
   v14 = *&this->q1C4; /*0x595b11*/
-  *&this->q1C0 = &VectorClass<int>::`vftable'; /*0x595b17*/
+  *&this->q1C0 = &vt_VectorClass; /*0x595b17*/
   if ( v14 && this->u8_1CD ) /*0x595b21*/
   {
     __3_YAXPAX_Z(v14); /*0x595b2a*/
@@ -2923,7 +2923,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u8_1CD = 0; /*0x595b38*/
   *&this->q1C8 = 0; /*0x595b3e*/
   v15 = *&this->q1A8; /*0x595b44*/
-  *&this->q1A4 = &VectorClass<int>::`vftable'; /*0x595b4a*/
+  *&this->q1A4 = &vt_VectorClass; /*0x595b4a*/
   if ( v15 && this->u8_1B1 ) /*0x595b54*/
   {
     __3_YAXPAX_Z(v15); /*0x595b5d*/
@@ -2932,7 +2932,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u8_1B1 = 0; /*0x595b6b*/
   *&this->q1AC = 0; /*0x595b71*/
   v16 = *&this->q18C; /*0x595b77*/
-  *&this->q188 = &VectorClass<int>::`vftable'; /*0x595b7d*/
+  *&this->q188 = &vt_VectorClass; /*0x595b7d*/
   if ( v16 && this->u8_195 ) /*0x595b87*/
   {
     __3_YAXPAX_Z(v16); /*0x595b90*/
@@ -3251,7 +3251,7 @@ WeaponStruct * * RandomMap::LoadConfig()
                               v7);
   IntList = &v24; /*0x598300*/
   DynamicVectorClass::Copy(&v24, &this->q188); /*0x598304*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x598316*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598316*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59832e*/
                                     v3,
                                     (int)&v27,
@@ -3269,11 +3269,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_198 = IntList->Count; /*0x59833e*/
   *&this->u32_19C = v8->CapacityIncrement; /*0x598344*/
   *&this->u32_1A0 = *v8->Items.VectorClass; /*0x59834a*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x598356*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x598356*/
   VectorClass::Destroy((int)&v27); /*0x59835a*/
   IntList = &v24; /*0x598364*/
   DynamicVectorClass::Copy(&v24, &this->u32_284); /*0x598369*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x59837b*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x59837b*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x598393*/
                                     v3,
                                     (int)&v27,
@@ -3291,11 +3291,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_294 = IntList->Count; /*0x5983a3*/
   this->u32_298 = v9->CapacityIncrement; /*0x5983a9*/
   this->u32_29C = *v9->Items.VectorClass; /*0x5983b3*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x5983b6*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x5983b6*/
   VectorClass::Destroy((int)&v27); /*0x5983ba*/
   IntList = &v24; /*0x5983cb*/
   DynamicVectorClass::Copy(&v24, &this->u32_2A0); /*0x5983cf*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x5983e1*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5983e1*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5983f9*/
                                     v3,
                                     (int)&v27,
@@ -3313,11 +3313,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_2B0 = IntList->Count; /*0x598409*/
   this->u32_2B4 = v10->CapacityIncrement; /*0x59840f*/
   this->u32_2B8 = *v10->Items.VectorClass; /*0x598419*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x59841c*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x59841c*/
   VectorClass::Destroy((int)&v27); /*0x598420*/
   IntList = &v24; /*0x598431*/
   DynamicVectorClass::Copy(&v24, &this->q1A4); /*0x598435*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x598447*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598447*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59845f*/
                                     v3,
                                     (int)&v27,
@@ -3335,11 +3335,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_1B4 = IntList->Count; /*0x59846f*/
   *&this->u32_1B8 = v11->CapacityIncrement; /*0x598475*/
   *&this->u32_1BC = *v11->Items.VectorClass; /*0x59847b*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x59847e*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x59847e*/
   VectorClass::Destroy((int)&v27); /*0x598486*/
   IntList = &v24; /*0x598497*/
   DynamicVectorClass::Copy(&v24, &this->q1C0); /*0x59849b*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x5984ad*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5984ad*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5984c5*/
                                     v3,
                                     (int)&v27,
@@ -3357,11 +3357,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_1D0 = IntList->Count; /*0x5984d5*/
   *&this->u32_1D4 = v12->CapacityIncrement; /*0x5984db*/
   *&this->u32_1D8 = *v12->Items.VectorClass; /*0x5984e5*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x5984e8*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x5984e8*/
   VectorClass::Destroy((int)&v27); /*0x5984ec*/
   IntList = &v24; /*0x5984fd*/
   DynamicVectorClass::Copy(&v24, &this->q1DC); /*0x598501*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x598513*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598513*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59852b*/
                                     v3,
                                     (int)&v27,
@@ -3379,11 +3379,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_1EC = IntList->Count; /*0x59853b*/
   *&this->q014 = v13->CapacityIncrement; /*0x598541*/
   *&this->u32_1F4 = *v13->Items.VectorClass; /*0x59854b*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x59854e*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x59854e*/
   VectorClass::Destroy((int)&v27); /*0x598552*/
   IntList = &v24; /*0x598563*/
   DynamicVectorClass::Copy(&v24, &this->q1F8); /*0x598567*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x598579*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598579*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x598591*/
                                     v3,
                                     (int)&v27,
@@ -3401,11 +3401,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   *&this->u32_208 = IntList->Count; /*0x5985a1*/
   this->RandomMap_field_0x20C = (void *)v14->CapacityIncrement; /*0x5985a7*/
   this->u32_210 = *v14->Items.VectorClass; /*0x5985b1*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x5985b4*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x5985b4*/
   VectorClass::Destroy((int)&v27); /*0x5985b8*/
   IntList = &v24; /*0x5985c9*/
   DynamicVectorClass::Copy(&v24, &this->u32_214); /*0x5985cd*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x5985df*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5985df*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5985f7*/
                                     v3,
                                     (int)&v27,
@@ -3423,11 +3423,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_224 = IntList->Count; /*0x598607*/
   this->u32_228 = v15->CapacityIncrement; /*0x59860d*/
   this->u32_22C = *v15->Items.VectorClass; /*0x598617*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x59861a*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x59861a*/
   VectorClass::Destroy((int)&v27); /*0x59861e*/
   IntList = &v24; /*0x59862f*/
   DynamicVectorClass::Copy(&v24, &this->u32_230); /*0x598633*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x598645*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598645*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x59865d*/
                                     v3,
                                     (int)&v27,
@@ -3445,11 +3445,11 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_240 = IntList->Count; /*0x59866d*/
   this->u32_244 = v16->CapacityIncrement; /*0x598673*/
   this->u32_248 = *v16->Items.VectorClass; /*0x59867d*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x598680*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x598680*/
   VectorClass::Destroy((int)&v27); /*0x598684*/
   IntList = &v24; /*0x598695*/
   DynamicVectorClass::Copy(&v24, &this->u32_24C); /*0x598699*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x5986ab*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x5986ab*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x5986c3*/
                                     v3,
                                     (int)&v27,
@@ -3467,12 +3467,12 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_25C = IntList->Count; /*0x5986d3*/
   this->u32_260 = v17->CapacityIncrement; /*0x5986d9*/
   this->u32_264 = *v17->Items.VectorClass; /*0x5986df*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x5986e8*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x5986e8*/
   if ( *(unsigned int *)&v27.vtable2 && v27.IsAllocated ) /*0x5986f4*/
     __3_YAXPAX_Z(*(void **)&v27.vtable2); /*0x5986f7*/
   IntList = &v24; /*0x59870b*/
   DynamicVectorClass::Copy(&v24, &this->u32_268); /*0x59870f*/
-  *(unsigned int *)IntList->VectorClass = &TypeList<int>::`vftable'; /*0x598721*/
+  *(unsigned int *)IntList->VectorClass = &vt_TypeList; /*0x598721*/
   IntList = (DynamicVectorClass *)INIClass::ReadIntList( /*0x598739*/
                                     v3,
                                     (int)&v27,
@@ -3490,7 +3490,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_278 = IntList->Count; /*0x598749*/
   this->u32_27C = v18->CapacityIncrement; /*0x59874f*/
   this->u32_280 = *v18->Items.VectorClass; /*0x598759*/
-  *(unsigned int *)v27.ClearAndFree2_ph = &VectorClass<int>::`vftable'; /*0x59875c*/
+  *(unsigned int *)v27.ClearAndFree2_ph = &vt_VectorClass; /*0x59875c*/
   VectorClass::Destroy((int)&v27); /*0x598760*/
   this->u32_2FC = INIClass::ReadInt_Overwrite( /*0x59877f*/
                               (bool *)v3->vtable1,
@@ -3520,7 +3520,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   }
   DynamicVector::Copy((DynamicVector *)v20, &v27.u32_24); /*0x598840*/
   *(unsigned int *)(v20 + 24) = v28; /*0x59884d*/
-  *(unsigned int *)&v27.u32_24 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x598850*/
+  *(unsigned int *)&v27.u32_24 = &vt_VectorClass; /*0x598850*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.__pad_024); /*0x598854*/
   if ( INIClass::GetString(v3, off_82B134, (unsigned __int8 *)&stru_82BA00.?[15], &g_INI_DefaultBuffer, String, 128) ) /*0x598879*/
   {
@@ -3544,7 +3544,7 @@ WeaponStruct * * RandomMap::LoadConfig()
     TypeList::BuildingTypeCopy((TypeList *)&v27.u32_24, &v27.DynamicVector_field_0x1C->vtable0); /*0x598903*/
   }
   DynamicVector::Copy((DynamicVector *)DynamicVector_field_0x1C, &v27.u32_24); /*0x59890f*/
-  *(unsigned int *)&v27.u32_24 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x598918*/
+  *(unsigned int *)&v27.u32_24 = &vt_VectorClass; /*0x598918*/
   DynamicVector_field_0x1C->nextArrayIndex = v28; /*0x59891c*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.__pad_024); /*0x598923*/
   if ( v3 ) /*0x59892a*/
@@ -3815,7 +3815,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
       if ( v20 != -1 ) /*0x598f7e*/
         Vector4::EraseAt((Vector4 *)&g_MissionQueueFrame.briefing[338], v20); /*0x598f86*/
       v21 = *(void **)&v19[2].m_1[3]; /*0x598f8b*/
-      *(unsigned int *)v19[2].__pad_0 = &VectorClass<Cell>::`vftable'; /*0x598f8e*/
+      *(unsigned int *)v19[2].__pad_0 = &vt_VectorClass; /*0x598f8e*/
       if ( v21 && BYTE1(v19[2].m_C) ) /*0x598f95*/
       {
         __3_YAXPAX_Z(v21); /*0x598f9b*/
@@ -3974,7 +3974,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
               &v39);
       if ( v31 != -1 ) /*0x599418*/
         Vector4::EraseAt((Vector4 *)&g_MissionQueueFrame.briefing[338], v31); /*0x599420*/
-      *(unsigned int *)v30[2].__pad_0 = &VectorClass<Cell>::`vftable'; /*0x599428*/
+      *(unsigned int *)v30[2].__pad_0 = &vt_VectorClass; /*0x599428*/
       Buffer::Cleanup(v30 + 2); /*0x59942e*/
       __3_YAXPAX_Z(v30); /*0x599434*/
     }
@@ -4557,7 +4557,7 @@ LABEL_153:
       if ( v59 != -1 ) /*0x59a470*/
         Vector4::EraseAt((Vector4 *)&g_MissionQueueFrame.briefing[338], v59); /*0x59a478*/
       v60 = v58->SuperClass_field_0x2C; /*0x59a47d*/
-      v58[10] = &VectorClass<Cell>::`vftable'; /*0x59a480*/
+      v58[10] = &vt_VectorClass; /*0x59a480*/
       if ( v60 && *((unsigned char *)v58 + 53) ) /*0x59a48b*/
       {
         __3_YAXPAX_Z(v60); /*0x59a491*/
@@ -4721,7 +4721,7 @@ int RandomMap::FinalizeMapData()
         }
       }
       v14 = v12->SuperClass_field_0x2C; /*0x59a841*/
-      v12[10] = &VectorClass<Cell>::`vftable'; /*0x59a844*/
+      v12[10] = &vt_VectorClass; /*0x59a844*/
       if ( v14 && *((unsigned char *)v12 + 53) ) /*0x59a84b*/
       {
         __3_YAXPAX_Z(v14); /*0x59a853*/
@@ -4792,7 +4792,7 @@ void RandomMap::ArrangeBuildingGrid()
   this->u32_308 = 1; /*0x59ad27*/
   RandomMap::Constructor_0((RandomMap *)&v28, 0, 0); /*0x59ad31*/
   v2 = *&this->q050; /*0x59ad36*/
-  v28 = &DynamicVectorClass<TRect<int>>::`vftable'; /*0x59ad39*/
+  v28 = &vt_DynamicVectorClassTRect; /*0x59ad39*/
   v32 = 10; /*0x59ad44*/
   v3 = v2 / 2; /*0x59ad4c*/
   v31 = 0; /*0x59ad51*/
@@ -4868,7 +4868,7 @@ void RandomMap::ArrangeBuildingGrid()
     }
     while ( v15 < v31 ); /*0x59af60*/
   }
-  v28 = &VectorClass<TRect<int>>::`vftable'; /*0x59af70*/
+  v28 = &vt_VectorClassTRect; /*0x59af70*/
   if ( Block ) /*0x59af7a*/
   {
     if ( v30 ) /*0x59af82*/
@@ -6964,7 +6964,7 @@ int RandomMap::PlaceRandomMapTiberium()
             while ( v24 < *(unsigned int *)(*_EDI + 16) ); /*0x5a2638*/
           }
           RandomMap::Constructor_1((RandomMap *)&v80, 0, 0); /*0x5a2643*/
-          v80 = &DynamicVectorClass<double>::`vftable'; /*0x5a2648*/
+          v80 = &vt_DynamicVectorClass; /*0x5a2648*/
           v85 = 10; /*0x5a2650*/
           v84 = 0; /*0x5a265b*/
           v62 = 0; /*0x5a2667*/
@@ -7078,7 +7078,7 @@ int RandomMap::PlaceRandomMapTiberium()
             while ( _ESI < _EDI[8] ); /*0x5a2837*/
           }
           v55 += _EDI[8]; /*0x5a2846*/
-          v80 = &VectorClass<double>::`vftable'; /*0x5a284a*/
+          v80 = &vt_VectorClass; /*0x5a284a*/
           if ( _EDX ) /*0x5a2852*/
           {
             if ( v83 ) /*0x5a285d*/
@@ -8119,7 +8119,7 @@ LABEL_9:
       strcpy((char *)&v11[130].abstractFlags, byte_A8B8E0); /*0x5b9e79*/
       v12 = CCFileClass::Construct(&v17, byte_A8B8E0); /*0x5b9e86*/
       v13 = v12->vt_slot_20(0); /*0x5b9e98*/
-      *(unsigned int *)v17.CDFileClass = &CCFileClass::`vftable'; /*0x5b9e9a*/
+      *(unsigned int *)v17.CDFileClass = &vt_CCFileClass; /*0x5b9e9a*/
       v19 = 0; /*0x5b9ea2*/
       Vector::Clear((int)v18); /*0x5b9eaa*/
       *(unsigned int *)v17.CDFileClass = &off_7E1668; /*0x5b9eb3*/
@@ -8715,7 +8715,7 @@ unsigned int * RandomMap::Constructor_1(int a2, int a3)
   this->__pad_008 = (void *)a2; /*0x5adabe*/
   LOBYTE(this->q00C) = 1; /*0x5adac1*/
   BYTE1(this->q00C) = 0; /*0x5adac5*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<double>::`vftable'; /*0x5adac8*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x5adac8*/
   if ( a2 ) /*0x5adace*/
   {
     if ( a3 ) /*0x5adad6*/

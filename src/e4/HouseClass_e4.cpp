@@ -263,23 +263,23 @@ int HouseClass::Construct(int a2)
   this->vtable4 = -1; /*0x4f54b8*/
   this->IsAllocated = a2; /*0x4f54c2*/
   TagClassVector::Construct(&this->conYards, 0, 0); /*0x4f54c5*/
-  this->u32_E = (int)&DynamicVectorClass<TagClass *>::`vftable'; /*0x4f54cf*/
+  this->u32_E = (int)&vt_DynamicVectorClass; /*0x4f54cf*/
   this->IsAllocated = 10; /*0x4f54d5*/
   this->q012 = 0; /*0x4f54d8*/
   VectorClass::BuildingConstructor(&this->abstractFlags, 0, 0); /*0x4f54e2*/
-  this->abstractFlags = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f54e7*/
+  this->abstractFlags = (int)&vt_DynamicVectorClass; /*0x4f54e7*/
   this->q019 = 10; /*0x4f54ed*/
   this->nextArrayIndex = 0; /*0x4f54f0*/
   VectorClass::BuildingConstructor(&this->q01A, 0, 0); /*0x4f54fa*/
-  this->q01A = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f54ff*/
+  this->q01A = (int)&vt_DynamicVectorClass; /*0x4f54ff*/
   this->u8_1F = 10; /*0x4f5505*/
   this->u32_1E = 0; /*0x4f5508*/
   VectorClass::BuildingConstructor(&this->NeedsSaveOrLink, 0, 0); /*0x4f5515*/
-  this->NeedsSaveOrLink = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f551a*/
+  this->NeedsSaveOrLink = (int)&vt_DynamicVectorClass; /*0x4f551a*/
   this->u32_25 = 10; /*0x4f5520*/
   this->vtable5 = 0; /*0x4f5523*/
   VectorClass::BuildingConstructor(&this->u32_26, 0, 0); /*0x4f5530*/
-  this->u32_26 = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f5535*/
+  this->u32_26 = (int)&vt_DynamicVectorClass; /*0x4f5535*/
   this->q02B = 10; /*0x4f553b*/
   this->u32_2A = 0; /*0x4f553e*/
   VectorClass::BuildingConstructor(&this->vtable7, 0, 0); /*0x4f554b*/
@@ -287,27 +287,27 @@ int HouseClass::Construct(int a2)
   this->u32_31 = 10; /*0x4f5556*/
   this->relatedTagsCount = 0; /*0x4f5559*/
   VectorClass::BuildingConstructor(&this->q032, 0, 0); /*0x4f5566*/
-  this->q032 = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f556b*/
+  this->q032 = (int)&vt_DynamicVectorClass; /*0x4f556b*/
   this->q037 = 10; /*0x4f5571*/
   this->arrayIndex = 0; /*0x4f5574*/
   VectorClass::BuildingConstructor(&this->conYards, 0, 0); /*0x4f5581*/
-  this->conYards = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f5586*/
+  this->conYards = (int)&vt_DynamicVectorClass; /*0x4f5586*/
   this->u32_3D = 10; /*0x4f558c*/
   this->conYardsCount = 0; /*0x4f558f*/
   VectorClass::BuildingConstructor(&this->q03E, 0, 0); /*0x4f559c*/
-  this->q03E = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55a1*/
+  this->q03E = (int)&vt_DynamicVectorClass; /*0x4f55a1*/
   this->u32_43 = 10; /*0x4f55a7*/
   this->q042 = 0; /*0x4f55aa*/
   VectorClass::BuildingConstructor(&this->buildings, 0, 0); /*0x4f55b7*/
-  this->buildings = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55bc*/
+  this->buildings = (int)&vt_DynamicVectorClass; /*0x4f55bc*/
   this->u32_49 = 10; /*0x4f55c2*/
   this->buildingsCount = 0; /*0x4f55c5*/
   VectorClass::BuildingConstructor(&this->u32_4A, 0, 0); /*0x4f55d2*/
-  this->u32_4A = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55d7*/
+  this->u32_4A = (int)&vt_DynamicVectorClass; /*0x4f55d7*/
   this->q04F = 10; /*0x4f55dd*/
   this->q04E = 0; /*0x4f55e0*/
   VectorClass::BuildingConstructor(&this->unitRepairStations, 0, 0); /*0x4f55ed*/
-  this->unitRepairStations = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4f55f2*/
+  this->unitRepairStations = (int)&vt_DynamicVectorClass; /*0x4f55f2*/
   this->u32_55 = 10; /*0x4f55f8*/
   this->repairStationsCount = 0; /*0x4f55fb*/
   this->u32_56 = 0; /*0x4f55fe*/
@@ -316,7 +316,7 @@ int HouseClass::Construct(int a2)
   this->q059 = 0; /*0x4f5617*/
   this->q05A = 0; /*0x4f5620*/
   StartingTechnoVector::Construct(&this->__pad_16C, 0, 0); /*0x4f5626*/
-  this->u32_5B = (int)&DynamicVectorClass<HouseClass::StartingTechnoStruct *>::`vftable'; /*0x4f562b*/
+  this->u32_5B = (int)&vt_DynamicVectorClass; /*0x4f562b*/
   this->grindersCount = 10; /*0x4f5631*/
   this->u32_5F = 0; /*0x4f5634*/
   this->u32_61 = (int)dword_A8B230[43].vtable1; /*0x4f5648*/
@@ -380,7 +380,7 @@ int HouseClass::Construct(int a2)
   this->q093 = this->bunkers; /*0x4f57bb*/
   this->cloningVatsCapacity = 0; /*0x4f57c4*/
   SuperClassVector::Construct(&this->supers, 0, 0); /*0x4f57ca*/
-  this->u8_95 = (int)&DynamicVectorClass<SuperClass *>::`vftable'; /*0x4f57cf*/
+  this->u8_95 = (int)&vt_DynamicVectorClass; /*0x4f57cf*/
   this->u32_9A = 10; /*0x4f57d5*/
   this->q099 = 0; /*0x4f57d8*/
   this->u8_9B = -1; /*0x4f57de*/
@@ -503,11 +503,11 @@ int HouseClass::Construct(int a2)
   this->u8_157F = 0; /*0x4f5b4c*/
   this->q1580 = -1; /*0x4f5b59*/
   AngerVector::Construct(&this->angerNodes, 0, 0); /*0x4f5b5f*/
-  this->u8_1581 = (int)&DynamicVectorClass<AngerStruct>::`vftable'; /*0x4f5b6c*/
+  this->u8_1581 = (int)&vt_DynamicVectorClass; /*0x4f5b6c*/
   this->q1586 = 10; /*0x4f5b76*/
   this->u8_1585 = 0; /*0x4f5b7c*/
   ScoutVector::Construct(&this->unkTimer3, 0, 0); /*0x4f5b82*/
-  this->q1587 = (int)&DynamicVectorClass<ScoutStruct>::`vftable'; /*0x4f5b87*/
+  this->q1587 = (int)&vt_DynamicVectorClass; /*0x4f5b87*/
   this->u32_158C = 10; /*0x4f5b91*/
   this->u32_158B = 0; /*0x4f5b97*/
   this->u8_158D = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4f5ba2*/
@@ -576,7 +576,7 @@ int HouseClass::Construct(int a2)
   this->u8_5815 = 0; /*0x4f5d54*/
   this->u8_5818 = 0; /*0x4f5d5d*/
   ConnectionPointVector::Construct(&this->waypointPathCount, 0, 0); /*0x4f5d63*/
-  this->u8_5819 = (int)&DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4f5d68*/
+  this->u8_5819 = (int)&vt_DynamicVectorClass; /*0x4f5d68*/
   this->u8_581E = 10; /*0x4f5d6e*/
   this->u8_581D = 0; /*0x4f5d71*/
   this->u32_581F = 0; /*0x4f5d74*/
@@ -592,13 +592,13 @@ int HouseClass::Construct(int a2)
   this->u32_582B = 0; /*0x4f5dba*/
   this->u32_582C = 0; /*0x4f5dc0*/
   this->u32_582D = 0; /*0x4f5dc6*/
-  *this = (int)&HouseClass::`vftable'; /*0x4f5dcc*/
-  this->AbstractClass_1 = (int)&HouseClass::`vftable'; /*0x4f5dd3*/
-  this->q002 = (int)&HouseClass::`vftable'; /*0x4f5dda*/
-  this->u32_3 = (int)&HouseClass::`vftable'; /*0x4f5de1*/
-  this->u32_9 = (int)&HouseClass::`vftable'; /*0x4f5de8*/
-  this->u32_A = (int)&HouseClass::`vftable'; /*0x4f5def*/
-  this->u32_B = (int)&HouseClass::`vftable'; /*0x4f5dfb*/
+  *this = (int)&vt_HouseClass; /*0x4f5dcc*/
+  this->AbstractClass_1 = (int)&vt_HouseClass; /*0x4f5dd3*/
+  this->q002 = (int)&vt_HouseClass; /*0x4f5dda*/
+  this->u32_3 = (int)&vt_HouseClass; /*0x4f5de1*/
+  this->u32_9 = (int)&vt_HouseClass; /*0x4f5de8*/
+  this->u32_A = (int)&vt_HouseClass; /*0x4f5def*/
+  this->u32_B = (int)&vt_HouseClass; /*0x4f5dfb*/
   if ( &g_INI_DefaultBuffer ) /*0x4f5e04*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x1Fu); /*0x4f5e18*/
@@ -1921,7 +1921,7 @@ LABEL_43:
   else
   {
     DistributionVector_BuildingType::Construct(&v129, 0, 0); /*0x507684*/
-    v129 = (DistributionVector_BuildingType)&DynamicVectorClass<DiscreteDistributionClass<BuildingTypeClass>::DistributionObject<BuildingTypeClass *>>::`vftable'; /*0x507690*/
+    v129 = (DistributionVector_BuildingType)&vt_DynamicVectorClassDiscreteDistributionClassDistributionObject; /*0x507690*/
     v134 = 10; /*0x50769b*/
     v133 = 0; /*0x5076a6*/
     v135 = 0; /*0x5076ad*/
@@ -1987,7 +1987,7 @@ LABEL_87:
       v69 = (char *)v130; /*0x50778c*/
       v55 = 0.0; /*0x507793*/
     }
-    v129 = (DistributionVector_BuildingType)&VectorClass<DiscreteDistributionClass<BuildingTypeClass>::DistributionObject<BuildingTypeClass *>>::`vftable'; /*0x507797*/
+    v129 = (DistributionVector_BuildingType)&vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x507797*/
     if ( v69 && BYTE1(v132) ) /*0x5077ad*/
     {
       HouseClass::updatePowerState(v69, 3); /*0x5077b5*/
@@ -2182,7 +2182,7 @@ LABEL_56:
   v56 = v138; /*0x50753e*/
   v57 = v138 == 0; /*0x50754d*/
   _EBP->waypointPath = 0; /*0x50754f*/
-  v137 = (int)&VectorClass<BuildingTypeClass *>::`vftable'; /*0x507555*/
+  v137 = (int)&vt_VectorClass; /*0x507555*/
   if ( !v57 && BYTE1(v140) ) /*0x507567*/
   {
     __3_YAXPAX_Z(v56); /*0x50756a*/
@@ -2190,7 +2190,7 @@ LABEL_56:
   }
   BYTE1(v140) = 0; /*0x507580*/
   v139 = 0; /*0x50758a*/
-  v147 = (int)&VectorClass<BuildingTypeClass *>::`vftable'; /*0x507591*/
+  v147 = (int)&vt_VectorClass; /*0x507591*/
   if ( v148 && BYTE1(v150) ) /*0x5075a3*/
   {
     __3_YAXPAX_Z(v148); /*0x5075a6*/
@@ -2198,7 +2198,7 @@ LABEL_56:
   }
   BYTE1(v150) = 0; /*0x5075bc*/
   v149 = 0; /*0x5075c6*/
-  v142 = (int)&VectorClass<BuildingTypeClass *>::`vftable'; /*0x5075cd*/
+  v142 = (int)&vt_VectorClass; /*0x5075cd*/
   if ( v143 && BYTE1(v145) ) /*0x5075df*/
   {
     __3_YAXPAX_Z(v143); /*0x5075e2*/
@@ -2220,7 +2220,7 @@ LABEL_56:
   {
     v60 = (void *)*(v58 - 6); /*0x507641*/
     v58 -= 6; /*0x507644*/
-    *(v58 - 1) = (int)&VectorClass<Cell>::`vftable'; /*0x507649*/
+    *(v58 - 1) = (int)&vt_VectorClass; /*0x507649*/
     if ( v60 && *((unsigned char *)v58 + 9) ) /*0x50764e*/
     {
       __3_YAXPAX_Z(v60); /*0x507656*/
@@ -3292,7 +3292,7 @@ namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
 {
 
-  this->AbstractClass = &VersionClass::`vftable'; /*0x4e8279*/
+  this->AbstractClass = &vt_VersionClass; /*0x4e8279*/
   if ( (a2 & 1) != 0 ) /*0x4e827f*/
     __3_YAXPAX_Z(this); /*0x4e8282*/
   return (std::locale::facet *)this; /*0x4e828c*/

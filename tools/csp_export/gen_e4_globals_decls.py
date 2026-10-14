@@ -37,11 +37,54 @@ out = [
     '#include "e4/classes/_fwd_tree_e4.hpp"',
     '',
 ]
-n_extern = n_struct = 0
+
+# X25: an extern whose type is `gamemd::X *` (e4_globals.hpp carries one:
+# g_RulesClass_Instance) does not resolve in the LEGACY TUs this header
+# exists for -- `RulesClass` is only declared where rules.hpp is in the
+# closure, and the legacy include set deliberately excludes it (C2039
+# "not a member of gamemd" + C2143 cascade).  A namespace-level forward
+# declaration is legal in every consumer (both universes) and makes the
+# qualified pointer type resolvable; a later full definition in the same
+# namespace makes it redundant-but-legal.
+QUALIFIED = re.compile(r'\bgamemd::(\w+)')
+_KW_CACHE = {}
+
+
+def _corpus_kw(ty):
+    """class|struct keyword for `ty`, decided from the corpus sources."""
+    if ty in _KW_CACHE:
+        return _KW_CACHE[ty]
+    cc = cs = 0
+    for hp in (ROOT / 'src').rglob('*.hpp'):
+        try:
+            ht = hp.read_text(encoding='utf-8', errors='replace')
+        except OSError:
+            continue
+        if re.search(r'\bclass\s+%s\b' % ty, ht):
+            cc = 1
+        elif re.search(r'\bstruct\s+%s\b' % ty, ht):
+            cs = 1
+        if cc and cs:
+            break
+    _KW_CACHE[ty] = 'struct' if (cs and not cc) else 'class'
+    return _KW_CACHE[ty]
+
+
+n_extern = n_struct = n_fwd = 0
+fwd_done = set()
 i = 0
 while i < len(lines):
     s = lines[i].rstrip()
     if s.startswith('extern '):
+        for ty in QUALIFIED.findall(s):
+            if ty not in fwd_done:
+                fwd_done.add(ty)
+                out.append('')
+                out.append('// X25: fwd decl for qualified extern type '
+                           '(%s) -- resolves in both universes' % ty)
+                out.append('namespace gamemd { %s %s; }'
+                           % (_corpus_kw(ty), ty))
+                n_fwd += 1
         out.append(s)
         n_extern += 1
         i += 1

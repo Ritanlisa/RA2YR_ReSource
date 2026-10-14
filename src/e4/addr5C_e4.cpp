@@ -4674,7 +4674,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->u32_48 = 0; /*0x5cd5da*/
   this->M73 = a10; /*0x5cd5dd*/
   this->M76 = 0; /*0x5cd5e0*/
-  *(unsigned int *)this->__pad_0 = &MSPrintAnim::`vftable'; /*0x5cd5e3*/
+  *(unsigned int *)this->__pad_0 = &vt_MSPrintAnim; /*0x5cd5e3*/
   this->M16 = Timer::GetTicks(); /*0x5cd5f6*/
   this->M20 = v15; /*0x5cd5f9*/
   this->u32_18 = a7; /*0x5cd5ff*/

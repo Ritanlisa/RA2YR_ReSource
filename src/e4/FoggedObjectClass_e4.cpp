@@ -64,11 +64,11 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->u32_54 = -1; /*0x4d09dd*/
   this->u32_58 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d09e7*/
-  this->u32_5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d09ec*/
+  this->u32_5C = &vt_DynamicVectorClass; /*0x4d09ec*/
   this->q070 = 10; /*0x4d09f2*/
   this->HouseClass_6C = 0; /*0x4d09f9*/
   this->u32_74 = 1; /*0x4d0a02*/
-  this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
+  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0a06*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a0c) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a13) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0a1a) */
@@ -200,11 +200,11 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   this->q050 = level; /*0x4d0c8c*/
   this->u32_58 = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d0c92*/
-  this->u32_5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0c97*/
+  this->u32_5C = &vt_DynamicVectorClass; /*0x4d0c97*/
   this->q070 = 10; /*0x4d0c9e*/
   this->HouseClass_6C = 0; /*0x4d0ca5*/
   this->u32_74 = 1; /*0x4d0cae*/
-  this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
+  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0cb2*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cb8) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cbf) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0cc6) */
@@ -363,11 +363,11 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   aP1->q054 = -1; /*0x4d0f73*/
   aP1->u32_58 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor(&aP1->q05C, 0, 0); /*0x4d0f81*/
-  *&aP1->q05C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0f8a*/
+  *&aP1->q05C = &vt_DynamicVectorClass; /*0x4d0f8a*/
   *(unsigned int *)(aP1 + 112) = 10; /*0x4d0f90*/
   *(unsigned int *)(aP1 + 108) = 0; /*0x4d0f97*/
   aP1->isOnMap = a3; /*0x4d0fa2*/
-  *(unsigned int *)aP1 = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
+  *(unsigned int *)aP1 = &vt_FoggedObjectClass; /*0x4d0fa5*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fab) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fb2) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d0fb9) */
@@ -575,11 +575,11 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   this->u32_54 = -1; /*0x4d13e7*/
   this->u32_58 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor(&this->u32_5C, 0, 0); /*0x4d13f1*/
-  this->u32_5C = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d13f6*/
+  this->u32_5C = &vt_DynamicVectorClass; /*0x4d13f6*/
   this->q070 = 10; /*0x4d13fc*/
   this->HouseClass_6C = 0; /*0x4d1403*/
   this->u32_74 = 1; /*0x4d140a*/
-  this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d140e*/
+  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d140e*/
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1414) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d141b) */
   /* X11: vtable install elided (implicit via FoggedObjectClass virtuals 0x4d1422) */

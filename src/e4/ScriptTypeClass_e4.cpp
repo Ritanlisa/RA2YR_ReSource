@@ -89,10 +89,10 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
   int v3; // eax
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  a1->AbstractClass = &ScriptTypeClass::`vftable'; /*0x691fa6*/
-  a1->? = &ScriptTypeClass::`vftable'; /*0x691fac*/
-  a1->? = &ScriptTypeClass::`vftable'; /*0x691fb3*/
-  a1->? = &ScriptTypeClass::`vftable'; /*0x691fba*/
+  a1->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
+  a1->? = &vt_ScriptTypeClass; /*0x691fac*/
+  a1->? = &vt_ScriptTypeClass; /*0x691fb3*/
+  a1->? = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x691fc1*/
   v5 = a1; /*0x691fd6*/
   v3 = (*(int (**)(int *, ScriptTypeClass **))(FootClass_Array.?[4] + 16))(&FootClass_Array.?[4], &v5); /*0x691fda*/

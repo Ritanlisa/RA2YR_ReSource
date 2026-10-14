@@ -19,12 +19,12 @@ struct SlaveManagerClass {
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     TechnoClass* master;  // 0x24
-    unsigned int ;  // 0x28
+    unsigned int q28;  // 0x28
     HouseClass* slaveOwner;  // 0x2C
     char slaveType[4];  // 0x30
     unsigned int alignmentPadding;  // 0x33
     char slaveCount[4];  // 0x34
-    void* ;  // 0x38
+    void *q38;  // 0x38
     char slaveVectorCount[4];  // 0x3C
     char slaveVectorCapacity[4];  // 0x40
     char creationFrame[4];  // 0x44

@@ -268,13 +268,13 @@ int MPCooperative::WriteCoopSaveINI()
   INIClass::ClearSection((int *)v15.INIClass, (int)v22, 0); /*0x49c035*/
   INIClass::WriteDigest((INIClass *)&v15, (int)&v16, 0); /*0x49c044*/
   CCFileClass::Reset(&v16); /*0x49c04d*/
-  *(unsigned int *)v16.CDFileClass = &CCFileClass::`vftable'; /*0x49c05e*/
+  *(unsigned int *)v16.CDFileClass = &vt_CCFileClass; /*0x49c05e*/
   v18 = 0; /*0x49c062*/
   Vector::Clear((int)v17); /*0x49c069*/
   *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x49c077*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x49c07b*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v15); /*0x49c084*/
-  *(unsigned int *)v19.CDFileClass = &CCFileClass::`vftable'; /*0x49c090*/
+  *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x49c090*/
   v21 = 0; /*0x49c097*/
   Vector::Clear((int)v20); /*0x49c09e*/
   *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x49c0aa*/
@@ -353,7 +353,7 @@ int MPCooperative::ReadCoopSaveINI()
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
-    v16[0] = &CCFileClass::`vftable'; /*0x49d1bc*/
+    v16[0] = &vt_CCFileClass; /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
     Vector::Clear((int)v17); /*0x49d1c8*/
     v16[0] = &off_7E1668; /*0x49d1d1*/
@@ -423,7 +423,7 @@ int MPCooperative::ReadCoopSaveINI()
   strcat(v23, g_IsWindowed); /*0x49d331*/
   v15 = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
-  v16[0] = &CCFileClass::`vftable'; /*0x49d360*/
+  v16[0] = &vt_CCFileClass; /*0x49d360*/
   v18 = 0; /*0x49d368*/
   Vector::Clear((int)v17); /*0x49d36c*/
   v16[0] = &off_7E1668; /*0x49d375*/
@@ -1107,14 +1107,14 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
       v16);
     v13 = Block; /*0x5c20c7*/
     this->q33C = (CampaignClass *)a2; /*0x5c20cb*/
-    a3 = &VectorClass<int>::`vftable'; /*0x5c20d3*/
+    a3 = &vt_VectorClass; /*0x5c20d3*/
     if ( v13 && HIBYTE(a6) ) /*0x5c20e3*/
       __3_YAXPAX_Z(v13); /*0x5c20e6*/
     return 1; /*0x5c20ef*/
   }
   else
   {
-    a3 = &VectorClass<int>::`vftable'; /*0x5c2063*/
+    a3 = &vt_VectorClass; /*0x5c2063*/
     if ( Block ) /*0x5c206d*/
     {
       if ( HIBYTE(a6) ) /*0x5c2075*/
@@ -2289,7 +2289,7 @@ LABEL_34:
   }
 LABEL_47:
   SendMessageA(hWnd, 0x186u, 0, 0); /*0x5c3e7b*/
-  *(unsigned int *)v27.__pad_0 = &VectorClass<unsigned short *>::`vftable'; /*0x5c3e9b*/
+  *(unsigned int *)v27.__pad_0 = &vt_VectorClass; /*0x5c3e9b*/
   if ( v27.vtable2 ) /*0x5c3ea4*/
   {
     if ( BYTE1(v27.vtable4) ) /*0x5c3eac*/
@@ -2517,7 +2517,7 @@ int MPCooperative::UpdateMovieScore()
   v23 = (wchar_t *)&v28; /*0x5c431e*/
   v22 = &v29; /*0x5c431f*/
   MPCooperative_field_0x40 = this->u32_40; /*0x5c4320*/
-  v29 = &DynamicVectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4323*/
+  v29 = &vt_DynamicVectorClass; /*0x5c4323*/
   v33 = 10; /*0x5c432b*/
   v32 = 0; /*0x5c4333*/
   MPCooperative::BuildScoreEntries((int)MPCooperative_field_0x40, (int)&v29, &v28); /*0x5c4337*/
@@ -2621,7 +2621,7 @@ int MPCooperative::UpdateMovieScore()
   }
   v18 = byte_89E04C; /*0x5c44a2*/
   byte_89E04C = 0; /*0x5c44aa*/
-  v29 = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c44b1*/
+  v29 = &vt_VectorClass; /*0x5c44b1*/
   if ( Block ) /*0x5c44b9*/
   {
     if ( v31 ) /*0x5c44c1*/
@@ -2679,7 +2679,7 @@ void MPCooperative::ShowScoreScreen(int a2)
             v16 = &v20; /*0x5c455d*/
             v15 = &v21; /*0x5c455e*/
             v6 = this->u32_40; /*0x5c455f*/
-            v21 = &DynamicVectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4562*/
+            v21 = &vt_DynamicVectorClass; /*0x5c4562*/
             v25 = 10; /*0x5c456a*/
             v24 = 0; /*0x5c4572*/
             MPCooperative::BuildScoreEntries((int)v6, (int)&v21, &v20); /*0x5c457a*/
@@ -2738,7 +2738,7 @@ void MPCooperative::ShowScoreScreen(int a2)
               }
               while ( !v10 ); /*0x5c463c*/
             }
-            v21 = &VectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4642*/
+            v21 = &vt_VectorClass; /*0x5c4642*/
             if ( Block ) /*0x5c464c*/
             {
               if ( v23 ) /*0x5c4654*/
@@ -2898,7 +2898,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   }
   this->MPCooperative_field_0x10 = a2->q010; /*0x5c4fa1*/
   this->MPCooperative_field_0x14 = a2->q014; /*0x5c4fa7*/
-  this->ClearAndFree2_ph = &DynamicVectorClass<MPlayerScoreType *>::`vftable'; /*0x5c4faa*/
+  this->ClearAndFree2_ph = &vt_DynamicVectorClass; /*0x5c4faa*/
   return &this->vtable1; /*0x5c4fb2*/
 
 }

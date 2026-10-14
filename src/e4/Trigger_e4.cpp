@@ -77,7 +77,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   *&this->u32_28 = 0; /*0x5cbd62*/
   this->__pad_30[4] = 0; /*0x5cbd65*/
   this->u32_3C = 0; /*0x5cbd68*/
-  *(unsigned int *)this->__pad_000 = &MSShapeAnim::`vftable'; /*0x5cbd6a*/
+  *(unsigned int *)this->__pad_000 = &vt_MSShapeAnim; /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, &this->u32_3C); /*0x5cbd70*/
   *&this->__pad_01C = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
@@ -85,7 +85,7 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   *&this->u32_44 = aP7; /*0x5cbd84*/
   *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
   *&this->q040 = 0; /*0x5cbd8a*/
-  *(unsigned int *)this->__pad_0 = &MSFadeAnim::`vftable'; /*0x5cbd8d*/
+  *(unsigned int *)this->__pad_0 = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 
 }
@@ -136,12 +136,12 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   }
   v24 = a2; /*0x76d545*/
   Trigger::checkCondition((Trigger *)&v28.owningHouseIndex, 0, 0); /*0x76d54c*/
-  v28.owningHouseIndex = (int)&DynamicVectorClass<MSAnim *>::`vftable'; /*0x76d561*/
+  v28.owningHouseIndex = (int)&vt_DynamicVectorClass; /*0x76d561*/
   v28.ambientSoundController[0] = 10; /*0x76d565*/
   v28.attachedBomb = 0; /*0x76d569*/
   Trigger::checkCondition((Trigger *)&v28.?, 0, 0); /*0x76d56d*/
   v10 = this->u32_45C; /*0x76d572*/
-  v28.q45C = (int)&DynamicVectorClass<MSAnim *>::`vftable'; /*0x76d57c*/
+  v28.q45C = (int)&vt_DynamicVectorClass; /*0x76d57c*/
   v28.occupant = 10; /*0x76d585*/
   v28.q45C = 0; /*0x76d589*/
   VectorCursor::Construct((VectorCursor *)&v25.u32_C, v10 + 44, 0); /*0x76d58d*/
@@ -201,7 +201,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           }
           inited = 0; /*0x76d734*/
         }
-        v28.ambientSoundController[1] = (int)&CCFileClass::`vftable'; /*0x76d73d*/
+        v28.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x76d73d*/
         v28.location[2] = 0; /*0x76d745*/
         Vector::Clear((int)&v28.isInLogic); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
@@ -237,7 +237,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           *(unsigned int *)(v28.vtable2 + 4 * (unsigned int)v22) = v21; /*0x76d837*/
         }
       }
-      *(unsigned int *)v29.CDFileClass = &CCFileClass::`vftable'; /*0x76d841*/
+      *(unsigned int *)v29.CDFileClass = &vt_CCFileClass; /*0x76d841*/
       v31 = 0; /*0x76d84c*/
       Vector::Clear((int)v30); /*0x76d853*/
       BufferIOFileClass::Destruct((BufferIOFileClass *)&v29); /*0x76d85f*/
@@ -246,10 +246,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   }
   p_owningHouseIndex = &v28.owningHouseIndex; /*0x76d88b*/
   v27 = 0; /*0x76d897*/
-  v25.q018 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76d89b*/
+  v25.q018 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d89b*/
   v28.? = &v28.?; /*0x76d89f*/
   v28.? = 0; /*0x76d8a3*/
-  v28.? = &VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76d8a7*/
+  v28.? = &vt_VectorCursorMSAnimDynamicVectorClass; /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&v28.?) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
@@ -285,7 +285,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             }
             if ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 4))(&v25) ) /*0x76d9b5*/
               nullsub_24(v24); /*0x76d9ca*/
-            *(unsigned int *)v25.__pad_000 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'; /*0x76d9cf*/
+            *(unsigned int *)v25.__pad_000 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76d9cf*/
           }
           DeleteAndZero(&v28); /*0x76d9d7*/
           PriorityQueue::Add((PriorityQueue *)this, *(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
@@ -300,15 +300,15 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   }
   ComPtr::Set(&this->ComPtr_488, a3->FilePointer); /*0x76da5d*/
   /* X11: vtable install elided (implicit via VectorCursor virtuals 0x76da66) */
-  v25.q018 = (int)&VectorCursor<MSAnim *,DynamicVectorClass<MSAnim *>>::`vftable'; /*0x76da6a*/
-  v25.VectorCursor_field_0x0C = (int)&VectorCursor<rc_ptr<WorldDominationTour::Territory>,DynamicVectorClass<rc_ptr<WorldDominationTour::Territory>>>::`vftable'; /*0x76da76*/
+  v25.q018 = (int)&vt_VectorCursorMSAnimDynamicVectorClass; /*0x76da6a*/
+  v25.VectorCursor_field_0x0C = (int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76da76*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x76da7e) */
   if ( v28.vtable2 && BYTE1(v28.vtable2) ) /*0x76da8b*/
   {
     __3_YAXPAX_Z((void *)v28.vtable2); /*0x76da8e*/
     v28.vtable2 = 0; /*0x76da96*/
   }
-  v28.owningHouseIndex = (int)&VectorClass<MSAnim *>::`vftable'; /*0x76da9e*/
+  v28.owningHouseIndex = (int)&vt_VectorClass; /*0x76da9e*/
   v28.vtable2 = 0; /*0x76daa2*/
   BYTE1(v28.vtable2) = 0; /*0x76daa9*/
   if ( v28.fallRate ) /*0x76daaf*/
@@ -326,7 +326,7 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 
   this->ptr_4 = (MSAnim *)a2; /*0x76f09a*/
   *(unsigned int *)this->__pad_008 = a3; /*0x76f09d*/
-  *(unsigned int *)this->__pad_000 = &VectorCursor<MSSfxEntry *,DynamicVectorClass<MSSfxEntry *>>::`vftable'; /*0x76f0a0*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76f0a0*/
   return this->__pad_0; /*0x76f0a6*/
 
 }
@@ -340,7 +340,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
   *(unsigned int *)this->__pad_008 = aP1; /*0x76f1ce*/
   this->q00C = 1; /*0x76f1d1*/
   this->__pad_8[5] = 0; /*0x76f1d5*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<MSAnim *>::`vftable'; /*0x76f1d8*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/

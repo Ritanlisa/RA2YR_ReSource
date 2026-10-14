@@ -26,7 +26,7 @@ unsigned int * TauntCommandClass::Construct(int a2, void *a2_2, void *a3, void *
 {
 
   a2_2->TauntCommandClass_field_00 = a2_2; /*0x536296*/
-  *(unsigned int *)a2_2->CommandClass = &TauntCommandClass::`vftable'; /*0x536299*/
+  *(unsigned int *)a2_2->CommandClass = &vt_TauntCommandClass; /*0x536299*/
   return a2_2->CommandClass; /*0x53629f*/
 
 }

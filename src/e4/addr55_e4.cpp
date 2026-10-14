@@ -3745,7 +3745,7 @@ namespace gamemd {
 int E4Recv_556510::sub_556510()
 {
 
-  *(unsigned int *)this->__pad_0 = &LightConvertClass::`vftable'; /*0x556510*/
+  *(unsigned int *)this->__pad_0 = &vt_LightConvertClass; /*0x556510*/
   return sub_490400((int)this);
 
 }
@@ -4300,7 +4300,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     FileClass::SetFileName(&v6, Buffer); /*0x559621*/
   }
   while ( (unsigned __int8)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/
-  *(unsigned int *)v6.CDFileClass = &CCFileClass::`vftable'; /*0x559639*/
+  *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x559639*/
   v8 = 0; /*0x559641*/
   Vector::Clear((int)v7); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/

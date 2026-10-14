@@ -369,10 +369,10 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     *(unsigned int *)(v13 + 8) = 20; /*0x627733*/
     *(unsigned char *)(v13 + 12) = 1; /*0x62773a*/
     *(unsigned char *)(v13 + 13) = 0; /*0x62773e*/
-    *(unsigned int *)v13 = &VectorClass<ColorScheme *>::`vftable'; /*0x627742*/
+    *(unsigned int *)v13 = &vt_VectorClass; /*0x627742*/
     *(unsigned int *)(v13 + 4) = __2_YAPAXI_Z(0x50u); /*0x627750*/
     *((unsigned char *)v14 + 13) = 1; /*0x627753*/
-    *v14 = &DynamicVectorClass<ColorScheme *>::`vftable'; /*0x627757*/
+    *v14 = &vt_DynamicVectorClass; /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }

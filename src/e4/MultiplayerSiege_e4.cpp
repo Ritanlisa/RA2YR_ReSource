@@ -170,7 +170,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v3 >= dword_A8DA84 ) /*0x5ca84c*/
   {
     v5 = Block; /*0x5ca84e*/
-    *(unsigned int *)v14 = &VectorClass<Cell>::`vftable'; /*0x5ca852*/
+    *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
@@ -179,7 +179,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v6 < 0 || v6 >= stru_A80220.? ) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
-    *(unsigned int *)v14 = &VectorClass<Cell>::`vftable'; /*0x5ca984*/
+    *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
 LABEL_26:
@@ -190,7 +190,7 @@ LABEL_26:
   if ( *(unsigned char *)(v7->relatedTagsCapacity + 422) ) /*0x5ca899*/
   {
     v5 = Block; /*0x5ca8a3*/
-    *(unsigned int *)v14 = &VectorClass<Cell>::`vftable'; /*0x5ca8a7*/
+    *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
@@ -214,7 +214,7 @@ LABEL_26:
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
     }
   }
-  *(unsigned int *)v14 = &VectorClass<Cell>::`vftable'; /*0x5ca957*/
+  *(unsigned int *)v14 = &vt_VectorClass; /*0x5ca957*/
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
@@ -374,7 +374,7 @@ namespace gamemd {
 MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 
-  this->MultiplayerSiege_field_00 = (int)&MultiplayerSiege::`vftable'; /*0x5cabd3*/
+  this->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5cabd3*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/

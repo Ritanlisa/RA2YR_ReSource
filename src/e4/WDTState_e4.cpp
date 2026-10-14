@@ -39,7 +39,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *(unsigned int *)v8->__pad_000 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
+          *(unsigned int *)v8->__pad_000 = &vt_rc_ptr; /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -183,7 +183,7 @@ int WDTState_4::Constructor()
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76bc63*/
-  *(unsigned int *)this->__pad_000 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76bc68*/
+  *(unsigned int *)this->__pad_000 = &vt_rc_ptr; /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

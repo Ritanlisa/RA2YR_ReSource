@@ -48,7 +48,7 @@ unsigned int * CoopCampaignVector::Construct(int aP1, int aP2)
   this->q008 = aP1; /*0x5c5a8e*/
   LOBYTE(this->m_C) = 1; /*0x5c5a91*/
   BYTE1(this->m_C) = 0; /*0x5c5a95*/
-  *(unsigned int *)this->__pad_000 = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5a98*/
+  *(unsigned int *)this->__pad_000 = &vt_VectorClass; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

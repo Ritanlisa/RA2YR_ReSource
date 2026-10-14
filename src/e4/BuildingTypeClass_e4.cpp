@@ -417,8 +417,8 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(int aP1)
   *&this->ProductionCompletionThreshold = 0; /*0x45e53b*/
   this->CostRatePerFrame = 1; /*0x45e541*/
   this->u32_1791 = 0; /*0x45e548*/
-  *&this->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e54e*/
-  this->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e558*/
+  *&this->DockingOffsets = &vt_VectorClassTPoint3D; /*0x45e54e*/
+  this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e55e) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e565) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e56c) */
@@ -437,7 +437,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
-  a1->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e58d*/
+  a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e595) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e59c) */
   /* X11: vtable install elided (implicit via BuildingTypeClass virtuals 0x45e5a3) */
@@ -496,7 +496,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     while ( v3 < dword_A83C78 ); /*0x45e705*/
   }
   v4 = *&a1->PreventsPlacementOverlap; /*0x45e707*/
-  *&a1->DockingOffsets = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e70d*/
+  *&a1->DockingOffsets = &vt_VectorClassTPoint3D; /*0x45e70d*/
   if ( v4 && a1->u32_1791 ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
@@ -1029,7 +1029,7 @@ void BuildingTypeClass::LoadVoxel()
           Info = VoxelSection::GetInfo((VoxelSection *)this->u32_D2E, 0, 0); /*0x45fc12*/
           Matrix::Scale((Matrix *)this->u32_D2E, *(float *)(Info + 12)); /*0x45fc21*/
         }
-        *(unsigned int *)v22.CDFileClass = &CCFileClass::`vftable'; /*0x45fc2a*/
+        *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
@@ -1047,7 +1047,7 @@ void BuildingTypeClass::LoadVoxel()
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      *(unsigned int *)v25.CDFileClass = &CCFileClass::`vftable'; /*0x45fc8c*/
+      *(unsigned int *)v25.CDFileClass = &vt_CCFileClass; /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       Vector::Clear((int)v26); /*0x45fc9b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x45fca4*/
@@ -1095,13 +1095,13 @@ void BuildingTypeClass::LoadVoxel()
           Matrix::Scale((Matrix *)this->u32_D2E, *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      *(unsigned int *)v22.CDFileClass = &CCFileClass::`vftable'; /*0x45fdf3*/
+      *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       Vector::Clear((int)v23); /*0x45fdff*/
       *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
     }
-    *(unsigned int *)v28.CDFileClass = &CCFileClass::`vftable'; /*0x45fe18*/
+    *(unsigned int *)v28.CDFileClass = &vt_CCFileClass; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     Vector::Clear((int)v29); /*0x45fe2a*/
     *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x45fe36*/
@@ -1713,7 +1713,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   BuildingTypeClass::loadBuildingProperty_b_5478850(&aP1->q2B8, 0, 0); /*0x644c37*/
   aP1->abstractFlags = 10; /*0x644c3c*/
   aP1->uniqueId = 0; /*0x644c43*/
-  *&aP1->uniqueId = &TypeList<RGBClass>::`vftable'; /*0x644c46*/
+  *&aP1->uniqueId = &vt_TypeList; /*0x644c46*/
   aP1->u32_2D4 = 0; /*0x644c4c*/
   LOBYTE(aP1->q2D8) = 0; /*0x644c66*/
   BYTE1(aP1->?[0]) = 0; /*0x644c6c*/
@@ -1738,7 +1738,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   HIBYTE(aP1->?[1]) = 0; /*0x644ce2*/
   aP1->q310 = -1; /*0x644ce8*/
   aP1->q314 = -1; /*0x644cee*/
-  aP1->TechnoTypeClass = &ParticleTypeClass::`vftable'; /*0x644cf4*/
+  aP1->TechnoTypeClass = &vt_ParticleTypeClass; /*0x644cf4*/
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644cfa) */
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d01) */
   /* X11: vtable install elided (implicit via ParticleTypeClass virtuals 0x644d08) */
@@ -2429,7 +2429,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   this->vtable3 = (void *)a2; /*0x478860*/
   LOBYTE(this->vtable4) = 1; /*0x478863*/
   BYTE1(this->u32_D) = 0; /*0x478867*/
-  this->TechnoTypeClass = &VectorClass<RGBClass>::`vftable'; /*0x47886a*/
+  this->TechnoTypeClass = &vt_VectorClass; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return &this->TechnoTypeClass; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/

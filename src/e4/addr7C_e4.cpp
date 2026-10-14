@@ -13301,7 +13301,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 
   __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  this->m_0 = (int)&bad_typeid::`vftable'; /*0x7ca9d8*/
+  this->m_0 = (int)&vt_bad_typeid; /*0x7ca9d8*/
   return (exception *)this; /*0x7ca9e0*/
 
 }

@@ -17,10 +17,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[4]
 APPLY = '--apply' in sys.argv
 
-# `TYPE ;  // 0xNNN` — type words then `;` then offset comment
+# `TYPE ;  [// comment]` — type words then `;` then any trailing comment.
+# X25: the old pattern required `// 0xNNN` (and end-of-line right after the
+# hex digits), so annotated comments (`// 0x14 (offset-truth)`) and comments
+# without an offset (`// G42.33 supply (vtable id)`) escaped -- 38 nameless
+# sites from the T5 "retype pass consumed the member name" defect cascaded
+# C2059 into every includer.  Offset extraction is done in the loop (any
+# `0x...` inside the comment), name falls back to the line number.
 EMPTY = re.compile(
     r'^(\s*)((?:unsigned|signed)\s+)?(void|int|char|short|long|float|double|bool)'
-    r'((?:\s*\*)*)\s*;\s*(//\s*0x([0-9A-Fa-f]+))?\s*$')
+    r'((?:\s*\*)*)\s*;\s*(//[^\n]*)?\s*$')
 
 tot_files = tot_fixed = 0
 for hp in sorted((ROOT / 'src').rglob('*_e4.hpp')):
@@ -31,14 +37,18 @@ for hp in sorted((ROOT / 'src').rglob('*_e4.hpp')):
     lines = txt.split('\n')
     changed = 0
     out = []
-    for ln in lines:
+    for ln_no, ln in enumerate(lines, 1):
         m = EMPTY.match(ln)
         if m:
-            indent, sg, ty, stars, cm, off = m.groups()
-            nm = ('q%X' % int(off, 16)) if off else None
-            if not nm:
-                out.append(ln)
-                continue
+            indent, sg, ty, stars, cm = m.groups()
+            off = None
+            if cm:
+                m2 = re.search(r'0x([0-9A-Fa-f]+)', cm)
+                off = m2.group(1) if m2 else None
+            # X25: no offset in the comment (e.g. '// G42.33 supply
+            # (vtable id)') -- synthesize a stable name from the line
+            # number instead of leaving the invalid `TYPE ;` in place.
+            nm = ('q%X' % int(off, 16)) if off else ('unnamed_%d' % ln_no)
             # avoid duplicate names within the file
             if re.search(r'\b%s\b' % nm, txt):
                 nm = nm + '_a'

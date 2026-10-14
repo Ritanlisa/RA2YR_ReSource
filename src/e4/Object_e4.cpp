@@ -440,11 +440,11 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)  // G42.41k: dup head + 
 
   ObjectClass::ctor((ObjectClass *)this); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
-  *(unsigned int *)this->attachedTag = &OverlayClass::`vftable'; /*0x5fc38f*/
+  *(unsigned int *)this->attachedTag = &vt_OverlayClass; /*0x5fc38f*/
   this->Object_field_0xAC = v5; /*0x5fc395*/
-  this->Object_field_0x8 = (int)&OverlayClass::`vftable'; /*0x5fc39f*/
-  *&this->q004 = &OverlayClass::`vftable'; /*0x5fc3a6*/
-  *(unsigned int *)this->__pad_C = &OverlayClass::`vftable'; /*0x5fc3ac*/
+  this->Object_field_0x8 = (int)&vt_OverlayClass; /*0x5fc39f*/
+  *&this->q004 = &vt_OverlayClass; /*0x5fc3a6*/
+  *(unsigned int *)this->__pad_C = &vt_OverlayClass; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID(&this->q004); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
@@ -689,10 +689,10 @@ void * Object::DrawObject(void ** Block, char a2)
   int v3; // eax
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectClass = &OverlayClass::`vftable'; /*0x5fdf76*/
-  Block->? = &OverlayClass::`vftable'; /*0x5fdf7c*/
-  Block->u32_8 = &OverlayClass::`vftable'; /*0x5fdf83*/
-  Block->? = &OverlayClass::`vftable'; /*0x5fdf8a*/
+  Block->ObjectClass = &vt_OverlayClass; /*0x5fdf76*/
+  Block->? = &vt_OverlayClass; /*0x5fdf7c*/
+  Block->u32_8 = &vt_OverlayClass; /*0x5fdf83*/
+  Block->? = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectClass, 1); /*0x5fdf91*/
   v5 = Block; /*0x5fdfa6*/
   v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&stru_A8EB00.?[108] + 16))(&stru_A8EB00.?[108], &v5); /*0x5fdfaa*/

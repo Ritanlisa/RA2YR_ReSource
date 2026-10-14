@@ -38,7 +38,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6c99*/
   SpawnControlVector::Constructor(0, 0); /*0x6b6ca7*/
-  this->spawns = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b6cb0*/
+  this->spawns = &vt_DynamicVectorClass; /*0x6b6cb0*/
   this->spawnVectorCapacity = 10; /*0x6b6cb6*/
   this->spawnVectorCount = 0; /*0x6b6cbd*/
   v7 = dword_A8ED84; /*0x6b6cc0*/
@@ -127,17 +127,17 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
 
   AbstractClass::Constructor((AbstractClass *)a1); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)a1->spawns, 0, 0); /*0x6b6eb6*/
-  a1->spawns[0] = (int)&DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b6ebb*/
+  a1->spawns[0] = (int)&vt_DynamicVectorClass; /*0x6b6ebb*/
   *(unsigned int *)&a1->__pad_48[4] = 10; /*0x6b6ec1*/
   *(unsigned int *)a1->__pad_48 = 0; /*0x6b6ec8*/
   *(unsigned int *)&a1->__pad_48[8] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
   a1->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
   a1->SpawnManagerClass_field_5C = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b6ee0*/
   a1->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
-  a1->AbstractClass = &SpawnManagerClass::`vftable'; /*0x6b6ee6*/
-  a1->? = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
-  a1->? = &SpawnManagerClass::`vftable'; /*0x6b6ef3*/
-  a1->? = &SpawnManagerClass::`vftable'; /*0x6b6efa*/
+  a1->AbstractClass = &vt_SpawnManagerClass; /*0x6b6ee6*/
+  a1->? = &vt_SpawnManagerClass; /*0x6b6eec*/
+  a1->? = &vt_SpawnManagerClass; /*0x6b6ef3*/
+  a1->? = &vt_SpawnManagerClass; /*0x6b6efa*/
   a1->owner = 0; /*0x6b6f01*/
   a1->spawnOwner = 0; /*0x6b6f04*/
   a1->spawnType = 0; /*0x6b6f07*/
@@ -177,7 +177,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   void *v5; // eax
   TaskManager *v6; // [esp+8h] [ebp-4h] BYREF
 
-  *this = (TaskManager)&SpawnManagerClass::`vftable'; /*0x6b7015*/
+  *this = (TaskManager)&vt_SpawnManagerClass; /*0x6b7015*/
   /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b701b) */
   /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7022) */
   /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7029) */
@@ -203,7 +203,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
     while ( v4 < dword_B0B890 ); /*0x6b70bb*/
   }
   v5 = (void *)this->spawnVectorCount; /*0x6b70bd*/
-  this->spawns = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b70c0*/
+  this->spawns = &vt_VectorClass; /*0x6b70c0*/
   if ( v5 && this->u32_45 ) /*0x6b70ca*/
   {
     __3_YAXPAX_Z(v5); /*0x6b70d2*/
@@ -391,7 +391,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       *&v2->creationFrame = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       Timer::Start(&v2->SpawnManagerClass_field_5C, 0); /*0x6b7f5a*/
-      v2->AbstractClass = &SpawnManagerClass::`vftable'; /*0x6b7f5f*/
+      v2->AbstractClass = &vt_SpawnManagerClass; /*0x6b7f5f*/
       /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f65) */
       /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f6c) */
       /* X11: vtable install elided (implicit via SpawnManagerClass virtuals 0x6b7f73) */
@@ -403,7 +403,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
         SpawnControlVector::Constructor((SpawnControlVector *)v2->spawns, 0, 0); /*0x6b7f9d*/
-        *spawns = (int)&DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b7fa2*/
+        *spawns = (int)&vt_DynamicVectorClass; /*0x6b7fa2*/
         *&v2->spawnVectorCapacity = 10; /*0x6b7fa8*/
         *(unsigned int *)v2->spawnVectorCount = 0; /*0x6b7faf*/
       }
@@ -622,7 +622,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
   this->vtable3 = (void *)aP1; /*0x6b83b0*/
   LOBYTE(this->vtable4) = 1; /*0x6b83b3*/
   BYTE1(this->IsAllocated) = 0; /*0x6b83b7*/
-  this->AbstractClass = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b83bb*/
+  this->AbstractClass = &vt_VectorClass; /*0x6b83bb*/
   if ( aP1 ) /*0x6b83c1*/
   {
     if ( aP2 ) /*0x6b83c9*/
@@ -635,7 +635,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(int aP1, int aP2)
       BYTE1(this->u8_D) = 1; /*0x6b83df*/
     }
   }
-  this->AbstractClass = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b83e3*/
+  this->AbstractClass = &vt_DynamicVectorClass; /*0x6b83e3*/
   this->abstractFlags = 10; /*0x6b83e9*/
   this->uniqueId = 0; /*0x6b83f0*/
   return &this->AbstractClass; /*0x6b83f9*/

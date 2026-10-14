@@ -278,19 +278,19 @@ int SuperWeaponTypeClass::Construct(char *aP1)
   InfantryTypeVector::Construct2(&this->q14C, 0, 0); /*0x5114fc*/
   this->q160 = 10; /*0x511501*/
   this->q15C = 0; /*0x511508*/
-  this->q14C = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x51150b*/
+  this->q14C = &vt_TypeList; /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass(&this->q168, 0, 0); /*0x51151b*/
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
-  this->q168 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x51152a*/
+  this->q168 = &vt_TypeList; /*0x51152a*/
   AircraftTypeVector::Constructor(&this->AbstractClass_184, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  this->AbstractClass_184 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x51154c*/
+  this->AbstractClass_184 = &vt_TypeList; /*0x51154c*/
   this->q1A4 = 16777281; /*0x511552*/
   this->WarheadTypeClass_1A8 = 0; /*0x51156c*/
-  this->AbstractTypeClass = &HouseTypeClass::`vftable'; /*0x511572*/
-  this->WarheadTypeClass_1A8 = &HouseTypeClass::`vftable'; /*0x511578*/
+  this->AbstractTypeClass = &vt_HouseTypeClass; /*0x511572*/
+  this->WarheadTypeClass_1A8 = &vt_HouseTypeClass; /*0x511578*/
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x51157f) */
   /* X11: vtable install elided (implicit via HouseTypeClass virtuals 0x511586) */
   AbstractClass::GenerateUniqueID(&this->AbstractClass_184); /*0x51158d*/
@@ -643,7 +643,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
   int v3; // eax
   SuperWeaponTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractTypeClass = &SuperWeaponTypeClass::`vftable'; /*0x6cefed*/
+  this->AbstractTypeClass = &vt_SuperWeaponTypeClass; /*0x6cefed*/
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceff3) */
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6ceffa) */
   /* X11: vtable install elided (implicit via SuperWeaponTypeClass virtuals 0x6cf001) */

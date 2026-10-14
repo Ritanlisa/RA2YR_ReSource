@@ -399,10 +399,10 @@ LABEL_9:
         *(unsigned int *)&g_ScriptState = 0; /*0x634234*/
       if ( *(unsigned int **)&g_ScriptActionPool == aP1 ) /*0x634240*/
         *(unsigned int *)&g_ScriptActionPool = 0; /*0x634242*/
-      aP1->? = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x63424b*/
+      aP1->? = &vt_VectorClass; /*0x63424b*/
       VectorClass::Cleanup2((int)&aP1->?); /*0x634251*/
       v16 = aP1->?; /*0x634256*/
-      aP1->AbstractClass = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x634259*/
+      aP1->AbstractClass = &vt_VectorClass; /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
         if ( BYTE1(aP1->?) ) /*0x634263*/
@@ -677,9 +677,9 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       {
         FactoryClass::ClearObjects((FactoryClass *)v4); /*0x6361f7*/
         Team_Remove((ObjectClass *)v4); /*0x6361fe*/
-        *(unsigned int *)(v4 + 32) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x636206*/
+        *(unsigned int *)(v4 + 32) = &vt_VectorClass; /*0x636206*/
         VectorClass::Cleanup2(v4 + 32); /*0x63620c*/
-        *(unsigned int *)v4 = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x636213*/
+        *(unsigned int *)v4 = &vt_VectorClass; /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v4); /*0x636219*/
         __3_YAXPAX_Z((void *)v4); /*0x63621f*/
       }
@@ -1071,9 +1071,9 @@ LABEL_4:
     {
       FactoryClass::ClearObjects((FactoryClass *)v8); /*0x636c75*/
       Team_Remove((ObjectClass *)v8); /*0x636c7c*/
-      *(unsigned int *)(v8 + 32) = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x636c84*/
+      *(unsigned int *)(v8 + 32) = &vt_VectorClass; /*0x636c84*/
       VectorClass::Cleanup2(v8 + 32); /*0x636c8a*/
-      *(unsigned int *)v8 = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x636c91*/
+      *(unsigned int *)v8 = &vt_VectorClass; /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((_VectorClass_PAVPlanningMemberClass *)v8); /*0x636c97*/
       __3_YAXPAX_Z((void *)v8); /*0x636c9d*/
     }

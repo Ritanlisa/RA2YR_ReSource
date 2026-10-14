@@ -442,7 +442,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     *&Block->u32_94 = -1; /*0x6364ca*/
     Block->__pad_70[41] = 0; /*0x6364d0*/
     Sidebar_field_0x8 = Block->u32_8; /*0x6364d7*/
-    *Sidebar_field_0x4 = (int)&VectorClass<PlanningNodeClass *>::`vftable'; /*0x6364de*/
+    *Sidebar_field_0x4 = (int)&vt_VectorClass; /*0x6364de*/
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
     {
       if ( BYTE1(Block->Sidebar_field_0x10) ) /*0x6364e6*/

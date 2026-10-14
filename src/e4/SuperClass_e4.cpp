@@ -101,10 +101,10 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
   HIBYTE(a1->SuperClass_field_0x6C) = 0; /*0x6caf07*/
   LOBYTE(a1->SuperClass_field_0x70) = 0; /*0x6caf0a*/
   a1->SuperClass_field_0x7C = (void *)-1; /*0x6caf0d*/
-  a1->SuperClass_field_0x0 = &SuperClass::`vftable'; /*0x6caf10*/
-  a1->SuperClass_field_0x4 = &SuperClass::`vftable'; /*0x6caf16*/
-  a1->SuperClass_field_0x8 = &SuperClass::`vftable'; /*0x6caf1d*/
-  *(unsigned int *)a1->__pad_C = &SuperClass::`vftable'; /*0x6caf24*/
+  a1->SuperClass_field_0x0 = &vt_SuperClass; /*0x6caf10*/
+  a1->SuperClass_field_0x4 = &vt_SuperClass; /*0x6caf16*/
+  a1->SuperClass_field_0x8 = &vt_SuperClass; /*0x6caf1d*/
+  *(unsigned int *)a1->__pad_C = &vt_SuperClass; /*0x6caf24*/
   *(unsigned int *)a1->__pad_3C = &g_TypeClass_DefaultString; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -153,10 +153,10 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
   aP2->u8_6F = 0; /*0x6cafea*/
   aP2->q070 = 0; /*0x6cafed*/
   aP2->q074 = -100; /*0x6caff0*/
-  *(unsigned int *)aP2 = &SuperClass::`vftable'; /*0x6caff7*/
-  *(unsigned int *)(aP2 + 4) = &SuperClass::`vftable'; /*0x6caffd*/
-  aP2->FileSize = &SuperClass::`vftable'; /*0x6cb003*/
-  aP2->u32_C = &SuperClass::`vftable'; /*0x6cb00a*/
+  *(unsigned int *)aP2 = &vt_SuperClass; /*0x6caff7*/
+  *(unsigned int *)(aP2 + 4) = &vt_SuperClass; /*0x6caffd*/
+  aP2->FileSize = &vt_SuperClass; /*0x6cb003*/
+  aP2->u32_C = &vt_SuperClass; /*0x6cb00a*/
   AbstractClass::GenerateUniqueID(aP2 + 4); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -210,7 +210,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
   int v9; // [esp+14h] [ebp-4h] BYREF
 
   v2 = a1->u32_68; /*0x6cb124*/
-  *(unsigned int *)a1 = &SuperClass::`vftable'; /*0x6cb127*/
+  *(unsigned int *)a1 = &vt_SuperClass; /*0x6cb127*/
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb12f) */
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb136) */
   /* X11: vtable install elided (implicit via SuperClass virtuals 0x6cb13d) */

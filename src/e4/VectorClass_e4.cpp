@@ -613,8 +613,8 @@ unsigned int * VectorClass_K_8::Constructor(void *a1_1, void *a2_1, void *a3_1, 
   a1_1->CStreamClass_field_0x18 = __2_YAPAXI_Z(0x10000u); /*0x4a2843*/
   a1_1->CStreamClass_field_0x1C = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
   a1_1->CStreamClass_field_0x20 = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
-  *(unsigned int *)a1_1->__pad_0 = &CStreamClass::`vftable'; /*0x4a285e*/
-  a1_1->CStreamClass_field_0x04 = (int)&CStreamClass::`vftable'; /*0x4a2864*/
+  *(unsigned int *)a1_1->__pad_0 = &vt_CStreamClass; /*0x4a285e*/
+  a1_1->CStreamClass_field_0x04 = (int)&vt_CStreamClass; /*0x4a2864*/
   a1_1->CStreamClass_field_0x24 = 0xFFFF; /*0x4a286b*/
   return a1_1->__pad_0; /*0x4a2874*/
 
@@ -688,7 +688,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   aP1->CapacityIncrement[0] = 0; /*0x4a0c3a*/
   aP1->q018 = 1; /*0x4a0c3d*/
   aP1->u32_19 = 0; /*0x4a0c41*/
-  *&aP1->IsInitialized = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a0c44*/
+  *&aP1->IsInitialized = &vt_VectorClass; /*0x4a0c44*/
   if ( &aP1->IsInitialized != (char *)a2_1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)&aP1->IsInitialized); /*0x4a0c4e*/
@@ -722,7 +722,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   }
   *((unsigned int *)p_IsInitialized + 4) = a2_1[4]; /*0x4a0c9d*/
   *((unsigned int *)p_IsInitialized + 5) = a2_1[5]; /*0x4a0ca3*/
-  *(unsigned int *)p_IsInitialized = &DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0ca6*/
+  *(unsigned int *)p_IsInitialized = &vt_DynamicVectorClass; /*0x4a0ca6*/
   /* X11: vtable install elided (implicit via EnumConnectionPointsClass virtuals 0x4a0cac) */
   for ( i = 0; i < *&aP1->q01C; ++i ) /*0x4a0cb9*/
   {
@@ -2106,7 +2106,7 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x40c543*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<LightConvertClass *>::`vftable'; /*0x40c546*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40c546*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c550*/
   {
     __3_YAXPAX_Z(v3); /*0x40c558*/
@@ -2182,7 +2182,7 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x40cb33*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<IsometricTileClass *>::`vftable'; /*0x40cb36*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40cb36*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40cb40*/
   {
     __3_YAXPAX_Z(v3); /*0x40cb48*/
@@ -2554,7 +2554,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x40f1d3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<VoxelAnimClass *>::`vftable'; /*0x40f1d6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40f1d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40f1e0*/
   {
     __3_YAXPAX_Z(v3); /*0x40f1e8*/
@@ -2636,7 +2636,7 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x40f8f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<WarheadTypeClass *>::`vftable'; /*0x40f8f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40f8f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40f900*/
   {
     __3_YAXPAX_Z(v3); /*0x40f908*/
@@ -2709,7 +2709,7 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x40fec3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<WeaponTypeClass *>::`vftable'; /*0x40fec6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40fec6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40fed0*/
   {
     __3_YAXPAX_Z(v3); /*0x40fed8*/
@@ -2782,7 +2782,7 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x41e0f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AirstrikeClass *>::`vftable'; /*0x41e0f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x41e0f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x41e100*/
   {
     __3_YAXPAX_Z(v3); /*0x41e108*/
@@ -2998,7 +2998,7 @@ VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2, void
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x42dbb3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<unsigned short>::`vftable'; /*0x42dbb6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42dbb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42dbc0*/
   {
     __3_YAXPAX_Z(v3); /*0x42dbc8*/
@@ -3021,7 +3021,7 @@ DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2, v
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x42dc03*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<unsigned short>::`vftable'; /*0x42dc06*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42dc06*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42dc10*/
   {
     __3_YAXPAX_Z(v3); /*0x42dc18*/
@@ -3296,7 +3296,7 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x45aa13*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x45aa16*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x45aa16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x45aa20*/
   {
     __3_YAXPAX_Z(v3); /*0x45aa28*/
@@ -3381,7 +3381,7 @@ VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x45ace3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<Reestablish *>::`vftable'; /*0x45ace6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x45ace6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x45acf0*/
   {
     __3_YAXPAX_Z(v3); /*0x45acf8*/
@@ -3653,7 +3653,7 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4730f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<CaptureManagerClass *>::`vftable'; /*0x4730f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4730f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x473100*/
   {
     __3_YAXPAX_Z(v3); /*0x473108*/
@@ -3993,7 +3993,7 @@ DynamicVector * VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x48b023*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<DamageGroup *>::`vftable'; /*0x48b026*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x48b026*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x48b030*/
   {
     __3_YAXPAX_Z(v3); /*0x48b038*/
@@ -4066,7 +4066,7 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x49b133*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ConvertClass *>::`vftable'; /*0x49b136*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x49b136*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x49b140*/
   {
     __3_YAXPAX_Z(v3); /*0x49b148*/
@@ -4381,7 +4381,7 @@ DynamicVector * VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___(unsigned
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4c2f53*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<EBolt *>::`vftable'; /*0x4c2f56*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4c2f56*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4c2f60*/
   {
     __3_YAXPAX_Z(v3); /*0x4c2f68*/
@@ -4454,7 +4454,7 @@ DynamicVector * VectorClass_ptr_EgoClass::Constructor_VectorClass_EgoClass___(un
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4c4cb3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<EgoClass *>::`vftable'; /*0x4c4cb6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4c4cb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4c4cc0*/
   {
     __3_YAXPAX_Z(v3); /*0x4c4cc8*/
@@ -4527,7 +4527,7 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4c5e73*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<EMPulseClass *>::`vftable'; /*0x4c5e76*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4c5e76*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4c5e80*/
   {
     __3_YAXPAX_Z(v3); /*0x4c5e88*/
@@ -5863,7 +5863,7 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass__
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4ef673*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SuperClass *>::`vftable'; /*0x4ef676*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef676*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef680*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef688*/
@@ -5885,7 +5885,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4ef713*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AITriggerTypeClass *>::`vftable'; /*0x4ef716*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef716*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef720*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef728*/
@@ -5907,7 +5907,7 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4ef7b3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<BuildingLightClass *>::`vftable'; /*0x4ef7b6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef7b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef7c0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef7c8*/
@@ -5929,7 +5929,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4ef8f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TeamClass *>::`vftable'; /*0x4ef8f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef8f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef900*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef908*/
@@ -5953,7 +5953,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4ef9e3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TriggerClass *>::`vftable'; /*0x4ef9e6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ef9e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef9f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef9f8*/
@@ -5975,7 +5975,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4efa83*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TriggerTypeClass *>::`vftable'; /*0x4efa86*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efa86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efa90*/
   {
     __3_YAXPAX_Z(v3); /*0x4efa98*/
@@ -5997,7 +5997,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4efb23*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TubeClass *>::`vftable'; /*0x4efb26*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efb26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efb30*/
   {
     __3_YAXPAX_Z(v3); /*0x4efb38*/
@@ -6019,7 +6019,7 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4efbc3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ParticleSystemClass *>::`vftable'; /*0x4efbc6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efbc6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efbd0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efbd8*/
@@ -6041,7 +6041,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4efc63*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<WaveClass *>::`vftable'; /*0x4efc66*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efc66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efc70*/
   {
     __3_YAXPAX_Z(v3); /*0x4efc78*/
@@ -6063,7 +6063,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass_
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4efd03*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<OverlayClass *>::`vftable'; /*0x4efd06*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4efd06*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4efd10*/
   {
     __3_YAXPAX_Z(v3); /*0x4efd18*/
@@ -6087,7 +6087,7 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4eff83*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<UnitClass *>::`vftable'; /*0x4eff86*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4eff86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4eff90*/
   {
     __3_YAXPAX_Z(v3); /*0x4eff98*/
@@ -6109,7 +6109,7 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0023*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<HouseClass *>::`vftable'; /*0x4f0026*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0026*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0030*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0038*/
@@ -6131,7 +6131,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f00c3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AnimClass *>::`vftable'; /*0x4f00c6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f00c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f00d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f00d8*/
@@ -6153,7 +6153,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass_
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0163*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<FactoryClass *>::`vftable'; /*0x4f0166*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0170*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0178*/
@@ -6175,7 +6175,7 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0203*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<CampaignClass *>::`vftable'; /*0x4f0206*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0206*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0210*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0218*/
@@ -6197,7 +6197,7 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f02a3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SideClass *>::`vftable'; /*0x4f02a6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f02a6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f02b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f02b8*/
@@ -6219,7 +6219,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0343*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<HouseTypeClass *>::`vftable'; /*0x4f0346*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0346*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0350*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0358*/
@@ -6241,7 +6241,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f03e3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TaskForceClass *>::`vftable'; /*0x4f03e6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f03e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f03f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f03f8*/
@@ -6263,7 +6263,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0483*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TeamTypeClass *>::`vftable'; /*0x4f0486*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0486*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0490*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0498*/
@@ -6285,7 +6285,7 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0523*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ScriptTypeClass *>::`vftable'; /*0x4f0526*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0526*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0530*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0538*/
@@ -6307,7 +6307,7 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f05c3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<OverlayTypeClass *>::`vftable'; /*0x4f05c6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f05c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f05d0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f05d8*/
@@ -6329,7 +6329,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0663*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SmudgeTypeClass *>::`vftable'; /*0x4f0666*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0666*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0670*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0678*/
@@ -6351,7 +6351,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0703*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TerrainTypeClass *>::`vftable'; /*0x4f0706*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0706*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0710*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0718*/
@@ -6373,7 +6373,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f07a3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<BuildingTypeClass *>::`vftable'; /*0x4f07a6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f07a6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f07b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f07b8*/
@@ -6395,7 +6395,7 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0843*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AircraftTypeClass *>::`vftable'; /*0x4f0846*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0846*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0850*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0858*/
@@ -6417,7 +6417,7 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f08e3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<UnitTypeClass *>::`vftable'; /*0x4f08e6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f08e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f08f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f08f8*/
@@ -6439,7 +6439,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0983*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AnimTypeClass *>::`vftable'; /*0x4f0986*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0986*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0990*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0998*/
@@ -6461,7 +6461,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0a23*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x4f0a26*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0a26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0a30*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0a38*/
@@ -6483,7 +6483,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0ac3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<BulletTypeClass *>::`vftable'; /*0x4f0ac6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0ac6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0ad8*/
@@ -6505,7 +6505,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0b63*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<VoxelAnimTypeClass *>::`vftable'; /*0x4f0b66*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0b66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0b70*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0b78*/
@@ -6527,7 +6527,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0c03*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<IsometricTileTypeClass *>::`vftable'; /*0x4f0c06*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0c06*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0c10*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0c18*/
@@ -6549,7 +6549,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0ca3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ParticleTypeClass *>::`vftable'; /*0x4f0ca6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0ca6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0cb8*/
@@ -6571,7 +6571,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0d43*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ParticleSystemTypeClass *>::`vftable'; /*0x4f0d46*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0d46*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0d50*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0d58*/
@@ -6593,7 +6593,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0de3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SuperWeaponTypeClass *>::`vftable'; /*0x4f0de6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0de6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0df0*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0df8*/
@@ -6615,7 +6615,7 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x4f0e83*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AbstractTypeClass *>::`vftable'; /*0x4f0e86*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4f0e86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4f0e90*/
   {
     __3_YAXPAX_Z(v3); /*0x4f0e98*/
@@ -7038,7 +7038,7 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *&Block->vtable2; /*0x50fff3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x50fff6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x50fff6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x510000*/
   {
     __3_YAXPAX_Z(v3); /*0x510008*/
@@ -7066,7 +7066,7 @@ DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(u
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x510183*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<AngerStruct>::`vftable'; /*0x510186*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x510186*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x510190*/
   {
     __3_YAXPAX_Z(v3); /*0x510198*/
@@ -7110,7 +7110,7 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x510313*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x510316*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x510316*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x510320*/
   {
     __3_YAXPAX_Z(v3); /*0x510328*/
@@ -7132,7 +7132,7 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5103b3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<bool>::`vftable'; /*0x5103b6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5103b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5103c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5103c8*/
@@ -7419,7 +7419,7 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x53dd53*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<IonBlastClass *>::`vftable'; /*0x53dd56*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x53dd56*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53dd60*/
   {
     __3_YAXPAX_Z(v3); /*0x53dd68*/
@@ -7522,7 +7522,7 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5515e3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<LaserDrawClass *>::`vftable'; /*0x5515e6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5515e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5515f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5515f8*/
@@ -7594,7 +7594,7 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5557d3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<LightSourceClass *>::`vftable'; /*0x5557d6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5557d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5557e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5557e8*/
@@ -7898,7 +7898,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
       {
         v9 = (void *)*((unsigned int *)v7 - 5); /*0x58a862*/
         v7 -= 24; /*0x58a865*/
-        *(unsigned int *)v7 = &VectorClass<HashObject<unsigned int,SubzoneConnectionStruct>>::`vftable'; /*0x58a86a*/
+        *(unsigned int *)v7 = &vt_VectorClassHashObject; /*0x58a86a*/
         if ( v9 && v7[13] ) /*0x58a872*/
         {
           __3_YAXPAX_Z(v9); /*0x58a878*/
@@ -7917,7 +7917,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
   else
   {
     v11 = *(void **)&Block->m_1[3]; /*0x58a8a5*/
-    *(unsigned int *)Block->__pad_0 = &VectorClass<HashObject<unsigned int,SubzoneConnectionStruct>>::`vftable'; /*0x58a8ac*/
+    *(unsigned int *)Block->__pad_0 = &vt_VectorClassHashObject; /*0x58a8ac*/
     if ( v11 && BYTE1(Block->u32_C) ) /*0x58a8b4*/
     {
       __3_YAXPAX_Z(v11); /*0x58a8ba*/
@@ -7948,7 +7948,7 @@ DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Bloc
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x58aae3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<enum PassabilityType>::`vftable'; /*0x58aae6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x58aae6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x58aaf0*/
   {
     __3_YAXPAX_Z(v3); /*0x58aaf8*/
@@ -8112,7 +8112,7 @@ DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Bl
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5ad613*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<double>::`vftable'; /*0x5ad616*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5ad616*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5ad620*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad628*/
@@ -8257,7 +8257,7 @@ DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigne
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5d2cf3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<MSAnim *>::`vftable'; /*0x5d2cf6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d2cf6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d2d00*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2d08*/
@@ -8279,7 +8279,7 @@ DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned i
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5d2d93*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<MSSfx *>::`vftable'; /*0x5d2d96*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d2d96*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d2da0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2da8*/
@@ -8413,7 +8413,7 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5eeec3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<MultiMission const *>::`vftable'; /*0x5eeec6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5eeec6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5eeed0*/
   {
     __3_YAXPAX_Z(v3); /*0x5eeed8*/
@@ -8513,7 +8513,7 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x5f9e33*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ObjectTypeClass *>::`vftable'; /*0x5f9e36*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5f9e36*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5f9e40*/
   {
     __3_YAXPAX_Z(v3); /*0x5f9e48*/
@@ -8568,7 +8568,7 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6002d3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SpotLightClass *>::`vftable'; /*0x6002d6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6002d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6002e0*/
   {
     __3_YAXPAX_Z(v3); /*0x6002e8*/
@@ -8610,7 +8610,7 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x628763*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<HSVClass>::`vftable'; /*0x628766*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x628766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x628770*/
   {
     __3_YAXPAX_Z(v3); /*0x628778*/
@@ -8722,7 +8722,7 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x62b383*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ParasiteClass *>::`vftable'; /*0x62b386*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x62b386*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x62b390*/
   {
     __3_YAXPAX_Z(v3); /*0x62b398*/
@@ -8900,7 +8900,7 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x63eca3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<PlanningMemberClass *>::`vftable'; /*0x63eca6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63eca6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ecb0*/
   {
     __3_YAXPAX_Z(v3); /*0x63ecb8*/
@@ -8922,7 +8922,7 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x63ed43*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<PlanningBranchClass *>::`vftable'; /*0x63ed46*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ed46*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ed50*/
   {
     __3_YAXPAX_Z(v3); /*0x63ed58*/
@@ -8997,7 +8997,7 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x65a4f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<RadBeam *>::`vftable'; /*0x65a4f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x65a4f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x65a500*/
   {
     __3_YAXPAX_Z(v3); /*0x65a508*/
@@ -9039,7 +9039,7 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x65c203*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<RadSiteClass *>::`vftable'; /*0x65c206*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x65c206*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x65c210*/
   {
     __3_YAXPAX_Z(v3); /*0x65c218*/
@@ -9415,7 +9415,7 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x69d5e3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<MultiMission *>::`vftable'; /*0x69d5e6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x69d5e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x69d5f0*/
   {
     __3_YAXPAX_Z(v3); /*0x69d5f8*/
@@ -9437,7 +9437,7 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x69d683*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<GlobalPacketType *>::`vftable'; /*0x69d686*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x69d686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x69d690*/
   {
     __3_YAXPAX_Z(v3); /*0x69d698*/
@@ -9574,7 +9574,7 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6b1a23*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SlaveManagerClass *>::`vftable'; /*0x6b1a26*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6b1a26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b1a30*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1a38*/
@@ -9612,7 +9612,7 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6b47f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<UndoInfoStruct>::`vftable'; /*0x6b47f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6b47f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b4800*/
   {
     __3_YAXPAX_Z(v3); /*0x6b4808*/
@@ -9659,7 +9659,7 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6b8833*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SpawnManagerClass *>::`vftable'; /*0x6b8836*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6b8836*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b8840*/
   {
     __3_YAXPAX_Z(v3); /*0x6b8848*/
@@ -9901,7 +9901,7 @@ DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(un
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6ca9c3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<SubTitle *>::`vftable'; /*0x6ca9c6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6ca9c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6ca9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x6ca9d8*/
@@ -10075,7 +10075,7 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6dcd23*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ShadowControlClass *>::`vftable'; /*0x6dcd26*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6dcd26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6dcd30*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcd38*/
@@ -10122,7 +10122,7 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x6e67f3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TagTypeClass *>::`vftable'; /*0x6e67f6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6e67f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6e6800*/
   {
     __3_YAXPAX_Z(v3); /*0x6e6808*/
@@ -10220,7 +10220,7 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x71b553*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TemporalClass *>::`vftable'; /*0x71b556*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x71b556*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x71b560*/
   {
     __3_YAXPAX_Z(v3); /*0x71b568*/
@@ -10267,7 +10267,7 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x71feb3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TEventClass *>::`vftable'; /*0x71feb6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x71feb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x71fec0*/
   {
     __3_YAXPAX_Z(v3); /*0x71fec8*/
@@ -10295,7 +10295,7 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x7213e3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<ThemeControl *>::`vftable'; /*0x7213e6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x7213e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x7213f0*/
   {
     __3_YAXPAX_Z(v3); /*0x7213f8*/
@@ -10342,7 +10342,7 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x723a43*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<TiberiumClass *>::`vftable'; /*0x723a46*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x723a46*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x723a50*/
   {
     __3_YAXPAX_Z(v3); /*0x723a58*/
@@ -10528,7 +10528,7 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x751be3*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<VocClass *>::`vftable'; /*0x751be6*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x751be6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x751bf0*/
   {
     __3_YAXPAX_Z(v3); /*0x751bf8*/
@@ -10592,7 +10592,7 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x75a743*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<MovieHandle *>::`vftable'; /*0x75a746*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x75a746*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x75a750*/
   {
     __3_YAXPAX_Z(v3); /*0x75a758*/
@@ -10639,7 +10639,7 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x764713*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<WaypointPathClass *>::`vftable'; /*0x764716*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x764716*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x764720*/
   {
     __3_YAXPAX_Z(v3); /*0x764728*/
@@ -10962,7 +10962,7 @@ unsigned int *  VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(int a3)
         ComPtr::Set((unsigned int *)(*(unsigned int *)(a3 + 48) + 8 * v76), v78); /*0x76b687*/
       }
       v77 = *(unsigned int *)(a3 + 32); /*0x76b68c*/
-      v79 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76b68f*/
+      v79 = &vt_rc_ptr; /*0x76b68f*/
       *(unsigned int *)(a3 + 32) = v77 + 1; /*0x76b698*/
       ComPtr::Release(&v79); /*0x76b69f*/
       if ( v5 >= a3 ) /*0x76b6a8*/
@@ -10982,7 +10982,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
 
   v3 = *&this->Items + 8 * a3; /*0x76b76d*/
   ComPtr::Constructor((ComPtr *)a2); /*0x76b772*/
-  *a2 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76b777*/
+  *a2 = &vt_rc_ptr; /*0x76b777*/
   ComPtr::Set((ComPtr *)a2, v3->u32_4); /*0x76b783*/
   return a2; /*0x76b78a*/
 

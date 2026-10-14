@@ -319,10 +319,10 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor(&v3->q060, 0, 0); /*0x4ca2b2*/
-      *&v3->q060 = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
+      *&v3->q060 = &vt_DynamicVectorClass; /*0x4ca2b7*/
       *&v3->u32_54 = 10; /*0x4ca2bd*/
       *&v3->q050 = 0; /*0x4ca2c4*/
-      v3->AbstractClass = &FactoryClass::`vftable'; /*0x4ca2c7*/
+      v3->AbstractClass = &vt_FactoryClass; /*0x4ca2c7*/
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2cd) */
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2d4) */
       /* X11: vtable install elided (implicit via FactoryClass virtuals 0x4ca2db) */

@@ -17,7 +17,7 @@ int RawFileClass::Dtor()
   DWORD LastError; // eax
   int v5; // [esp-8h] [ebp-Ch]
 
-  this->FileClass = (FileClass)&RawFileClass::`vftable'; /*0x65ca03*/
+  this->FileClass = (FileClass)&vt_RawFileClass; /*0x65ca03*/
   result = RawFileClass::Write(this); /*0x65ca09*/
   if ( (unsigned char)result ) /*0x65ca11*/
   {
@@ -46,7 +46,7 @@ int RawFileClass::Dtor()
       this->CacheReadAhead[0] = 0; /*0x65ca5b*/
     }
   }
-  this->FileClass = (FileClass)&FileClass::`vftable'; /*0x65ca5f*/
+  this->FileClass = (FileClass)&vt_FileClass; /*0x65ca5f*/
   return result; /*0x65ca65*/
 
 }

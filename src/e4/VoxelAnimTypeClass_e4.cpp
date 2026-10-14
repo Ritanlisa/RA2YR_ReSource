@@ -76,8 +76,8 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   this->Warhead = 0; /*0x74ae59*/
   this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
-  this->ObjectTypeClass = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
-  this->IsTiberium = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
+  this->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
+  this->IsTiberium = &vt_VoxelAnimTypeClass; /*0x74ae71*/
   /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae77) */
   /* X11: vtable install elided (implicit via VoxelAnimTypeClass virtuals 0x74ae7e) */
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
@@ -490,10 +490,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectTypeClass = &VoxelAnimTypeClass::`vftable'; /*0x74ba36*/
-  Block->? = &VoxelAnimTypeClass::`vftable'; /*0x74ba3c*/
-  Block->u32_8 = &VoxelAnimTypeClass::`vftable'; /*0x74ba43*/
-  Block->? = &VoxelAnimTypeClass::`vftable'; /*0x74ba4a*/
+  Block->ObjectTypeClass = &vt_VoxelAnimTypeClass; /*0x74ba36*/
+  Block->? = &vt_VoxelAnimTypeClass; /*0x74ba3c*/
+  Block->u32_8 = &vt_VoxelAnimTypeClass; /*0x74ba43*/
+  Block->? = &vt_VoxelAnimTypeClass; /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x74ba51*/
   v6 = Block; /*0x74ba66*/
   v3 = (*(int (**)(int *, VoxelAnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x74ba6a*/

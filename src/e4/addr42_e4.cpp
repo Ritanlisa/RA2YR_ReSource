@@ -3208,7 +3208,7 @@ void AnimFile::sub_4266D0()
     this->u32_E10 = 0; /*0x426726*/
   }
   this->u32_88 = 0; /*0x42672c*/
-  *(unsigned int *)this->__pad_0 = &Animate::`vftable'; /*0x426732*/
+  *(unsigned int *)this->__pad_0 = &vt_Animate; /*0x426732*/
 
 }
 } // namespace gamemd

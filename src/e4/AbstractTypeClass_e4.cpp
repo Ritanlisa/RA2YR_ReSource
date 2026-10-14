@@ -31,10 +31,10 @@ int AbstractTypeClass::Constructor(char *aP1)
   this->__pad_024 = 0; /*0x410817*/
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
-  *this = (int)&AbstractTypeClass::`vftable'; /*0x410822*/
-  this->zero_3C = (int)&AbstractTypeClass::`vftable'; /*0x410829*/
-  this->UINameLabel[0x20] = (int)&AbstractTypeClass::`vftable'; /*0x410830*/
-  this->u32_3 = (int)&AbstractTypeClass::`vftable'; /*0x410837*/
+  *this = (int)&vt_AbstractTypeClass; /*0x410822*/
+  this->zero_3C = (int)&vt_AbstractTypeClass; /*0x410829*/
+  this->UINameLabel[0x20] = (int)&vt_AbstractTypeClass; /*0x410830*/
+  this->u32_3 = (int)&vt_AbstractTypeClass; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -98,7 +98,7 @@ int AbstractTypeClass::Dtor()
   int v2; // eax
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &AbstractTypeClass::`vftable'; /*0x4109cd*/
+  this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109d3) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109e1) */
@@ -202,10 +202,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
   int v3; // eax
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  aP1->AbstractClass = &AbstractTypeClass::`vftable'; /*0x410c3d*/
-  aP1->? = &AbstractTypeClass::`vftable'; /*0x410c43*/
-  aP1->? = &AbstractTypeClass::`vftable'; /*0x410c4a*/
-  aP1->? = &AbstractTypeClass::`vftable'; /*0x410c51*/
+  aP1->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
+  aP1->? = &vt_AbstractTypeClass; /*0x410c43*/
+  aP1->? = &vt_AbstractTypeClass; /*0x410c4a*/
+  aP1->? = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = aP1; /*0x410c5f*/
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/

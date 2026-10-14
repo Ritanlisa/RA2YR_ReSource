@@ -8,6 +8,14 @@
 #include "core/utility_ext.hpp"  // G42.55 closure (Count)
 #include "core/utility_ext.hpp"  // G42.55 closure (ReferenceCounted)
 
+// X25: forward declarations for X10-supplied member pointer types
+class CampaignClass;
+class LineTrail;
+class AudioController;
+class Coord;
+class rc_ptr_base;
+class VectorClass;
+
 // ---- IDA atom typedefs (this TU standalone) ----
 #ifndef G22_GAP2_IDA_ATOMS
 #define G22_GAP2_IDA_ATOMS

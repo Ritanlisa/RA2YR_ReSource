@@ -249,10 +249,10 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
   int v3; // eax
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  aP1->AbstractClass = &AirstrikeClass::`vftable'; /*0x41dd5d*/
-  aP1->? = &AirstrikeClass::`vftable'; /*0x41dd63*/
-  aP1->? = &AirstrikeClass::`vftable'; /*0x41dd6a*/
-  aP1->? = &AirstrikeClass::`vftable'; /*0x41dd71*/
+  aP1->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/
+  aP1->? = &vt_AirstrikeClass; /*0x41dd63*/
+  aP1->? = &vt_AirstrikeClass; /*0x41dd6a*/
+  aP1->? = &vt_AirstrikeClass; /*0x41dd71*/
   v5 = aP1; /*0x41dd7f*/
   v3 = (*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/

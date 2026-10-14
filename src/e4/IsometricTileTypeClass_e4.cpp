@@ -269,7 +269,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *&Block->__pad_004; /*0x54a763*/
-  *(unsigned int *)Block->tail_0 = &VectorClass<unsigned short *>::`vftable'; /*0x54a766*/
+  *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x54a766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
