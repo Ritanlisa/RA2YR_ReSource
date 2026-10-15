@@ -35,7 +35,6 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
 {
 
-  int v3; // eax
 
   AbstractTypeClass::Constructor((int *)this, Source); /*0x41e359*/
   *(unsigned int *)this->ptr_98 = -1; /*0x41e363*/
@@ -74,6 +73,7 @@ unsigned int * AnimTypeClass::Construct2(char *Source, void *a2)
          dword_A8B208 + dword_A8B214,
          0) )
   {
+  int v3; // eax
     v3 = dword_A8B210++; /*0x41e45f*/
     *((unsigned int *)dword_A8B204 + v3) = (unsigned int)(this); /*0x41e46e*/
   }
@@ -230,15 +230,8 @@ namespace gamemd {
 void* AnimTypeClass::GetWarhead(int a2)
 {
 
-  SHPStruct *v3; // eax
-  char v4; // cl
-  const char *ImageFile; // eax
-  SHPStruct *Image; // ecx
-  int End; // eax
-  int unused_high; // eax
-  char Shadow; // dl
-  char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
+  SHPStruct *v3; // eax
   LOBYTE(v3) = this->DemandLoad; /*0x427b59*/
   if ( !(unsigned char)v3 ) /*0x427b61*/
   {
@@ -253,11 +246,14 @@ void* AnimTypeClass::GetWarhead(int a2)
         __3_YAXPAX_Z(this->vtable4); /*0x427b90*/
         this->ImageAllocated = 0; /*0x427b98*/
       }
+  char v4; // cl
       v4 = this->ImageFile; /*0x427b9f*/
+  const char *ImageFile; // eax
       ImageFile = (const char *)(this->ImageFile); /*0x427ba5*/
       this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         ImageFile = (const char *)this->LoopStart; /*0x427bb9*/
+  char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
       _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x427bcb*/
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
       v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427be9*/
@@ -270,14 +266,18 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
     }
   }
+  SHPStruct *Image; // ecx
   Image = (gamemd::SHPStruct *)(this->Image); /*0x427c12*/
   if ( Image ) /*0x427c1a*/
   {
+  int End; // eax
     End = this->End; /*0x427c1c*/
     this->AnimTypeClass_field_2A4 = 1; /*0x427c22*/
     if ( !End ) /*0x427c2b*/
     {
+  int unused_high; // eax
       unused_high = SHIWORD(Image[1].unused); /*0x427c2d*/
+  char Shadow; // dl
       Shadow = this->Shadow; /*0x427c31*/
       this->End = unused_high; /*0x427c37*/
       if ( Shadow ) /*0x427c3f*/
@@ -380,9 +380,9 @@ namespace gamemd {
 ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
-  int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
+  int result; // eax
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x428814*/
   if ( result >= 0 ) /*0x42881b*/
   {
@@ -425,43 +425,42 @@ namespace gamemd {
 int AnimTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-  int v12; // ecx
-  int v13; // edx
-  int v14; // ecx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x4289d9*/
   Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
+  int v3; // ecx
   LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   ((Power *)a2)->FlagProcess(v3); /*0x4289f5*/
+  int v4; // edx
   LOBYTE(v4) = (unsigned char)(this->Flat_flag); /*0x4289fa*/
+  int v5; // eax
   v5 = ((Power *)a2)->FlagProcess(v4); /*0x428a03*/
   LOBYTE(v5) = this->Translucent; /*0x428a08*/
   ((Power *)a2)->FlagProcess(v5); /*0x428a11*/
+  int v6; // ecx
   LOBYTE(v6) = this->Scorch; /*0x428a16*/
   ((Power *)a2)->FlagProcess(v6); /*0x428a1f*/
+  int v7; // edx
   LOBYTE(v7) = this->Flamer; /*0x428a24*/
+  int v8; // eax
   v8 = ((Power *)a2)->FlagProcess(v7); /*0x428a2d*/
   LOBYTE(v8) = this->Crater; /*0x428a32*/
   ((Power *)a2)->FlagProcess(v8); /*0x428a3b*/
+  int v9; // ecx
   LOBYTE(v9) = this->Sticky; /*0x428a40*/
   ((Power *)a2)->FlagProcess(v9); /*0x428a49*/
+  int v10; // edx
   LOBYTE(v10) = this->PingPong; /*0x428a4e*/
+  int v11; // eax
   v11 = ((Power *)a2)->FlagProcess(v10); /*0x428a57*/
   LOBYTE(v11) = this->Reverse; /*0x428a5c*/
   ((Power *)a2)->FlagProcess(v11); /*0x428a65*/
+  int v12; // ecx
   LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   ((Power *)a2)->FlagProcess(v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
   Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
+  int v13; // edx
   LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   ((Power *)a2)->FlagProcess(v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
@@ -477,6 +476,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->RandomLoopDelay[0]); /*0x428b3e*/
   Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
   Power::TimerProcess(this->Translucency); /*0x428b5a*/
+  int v14; // ecx
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return ((Power *)a2)->FlagProcess(v14); /*0x428b6d*/
 
@@ -515,26 +515,19 @@ namespace gamemd {
 int AnimTypeClass::GetDamage()
 {
 
-  int result; // eax
-  const char *ImageFile; // eax
-  SHPStruct *v4; // eax
-  SHPStruct *v5; // eax
-  SHPStruct *Image; // esi
   CCFileClass v7; // [esp+4h] [ebp-2D8h] BYREF
-  char v8[12]; // [esp+5Ch] [ebp-280h] BYREF
-  int v9; // [esp+68h] [ebp-274h]
   CCFileClass v10; // [esp+70h] [ebp-26Ch] BYREF
-  char v11[12]; // [esp+C8h] [ebp-214h] BYREF
-  int v12; // [esp+D4h] [ebp-208h]
-  char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
 
+  int result; // eax
   result = (int)this->Image; /*0x428c39*/
   if ( !result && this->DemandLoad ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
+  const char *ImageFile; // eax
     ImageFile = this->ImageFile; /*0x428c69*/
     if ( !this->ImageFile ) /*0x428c63*/
       ImageFile = (const char *)this->LoopStart; /*0x428c76*/
+  char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
     _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
     if ( this->Theater_d ) /*0x428c90*/
     {
@@ -545,6 +538,7 @@ int AnimTypeClass::GetDamage()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x428cf3*/
     }
     CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
+  SHPStruct *v4; // eax
     v4 = (SHPStruct *)(&v7)->ReadEntireFile(); /*0x428d0d*/
     this->Image = v4; /*0x428d14*/
     if ( v4 ) /*0x428d1a*/
@@ -555,20 +549,26 @@ int AnimTypeClass::GetDamage()
     {
       ((ObjectTypeClass *)Buffer)->SetRTTI71(); /*0x428d2c*/
       CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
+  SHPStruct *v5; // eax
       v5 = (SHPStruct *)(&v10)->ReadEntireFile(); /*0x428d46*/
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->ImageAllocated = 1; /*0x428d55*/
       *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x428d63*/
+  int v12; // [esp+D4h] [ebp-208h]
       v12 = 0; /*0x428d6b*/
+  char v11[12]; // [esp+C8h] [ebp-214h] BYREF
       Vector::Clear((int)v11); /*0x428d76*/
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
       ((BufferIOFileClass *)&v10)->Dtor(); /*0x428d87*/
     }
     (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
+  SHPStruct *Image; // esi
     Image = this->Image; /*0x428da2*/
     *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
+  int v9; // [esp+68h] [ebp-274h]
     v9 = 0; /*0x428db4*/
+  char v8[12]; // [esp+5Ch] [ebp-280h] BYREF
     Vector::Clear((int)v8); /*0x428dbc*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
     ((BufferIOFileClass *)&v7)->Dtor(); /*0x428dcd*/
@@ -583,15 +583,14 @@ namespace gamemd {
 AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1, int a3)
 {
 
-  int v3; // eax
-  int v4; // eax
-  AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   aP0->ObjectTypeClass = &vt_AnimTypeClass; /*0x428ead*/
   aP0->? = &vt_AnimTypeClass; /*0x428eb3*/
   aP0->? = &vt_AnimTypeClass; /*0x428eba*/
   aP0->? = &vt_AnimTypeClass; /*0x428ec1*/
+  AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = aP0; /*0x428ecf*/
+  int v3; // eax
   v3 = (*(int (**)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -607,6 +606,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
     }
   }
   v6 = aP0; /*0x428f18*/
+  int v4; // eax
   v4 = (*(int (**)(int *, AnimTypeClass **))(DataGlobal_8B3DC0[912] + 16))(&DataGlobal_8B3DC0[912], &v6); /*0x428f1c*/
   if ( v4 != -1 && v4 < FootClass_Array.?[0] ) /*0x428f2c*/
   {
@@ -630,12 +630,12 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
 namespace gamemd {
 int AnimTypeClass::LookupByName(void *a1)
 {
-  int v2; // edi
-  char **v3; // esi
 
   if ( !this ) /*0x48e057*/
     return -1; /*0x48e07c*/
+  int v2; // edi
   v2 = 0; /*0x48e059*/
+  char **v3; // esi
   v3 = off_81DA78; /*0x48e05b*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48e06e*/
   {
@@ -652,9 +652,8 @@ namespace gamemd {
 char AnimTypeClass::GetLoopCount(int a2)
 {
 
-  SHPStruct *v2; // eax
-  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
+  SHPStruct *v2; // eax
   LOBYTE(v2) = byte_A8ED6B; /*0x427a80*/
   if ( byte_A8ED6B || a2 != dword_822CF8 ) /*0x427aa0*/
   {
@@ -672,6 +671,7 @@ char AnimTypeClass::GetLoopCount(int a2)
         this->ImageAllocated = 0; /*0x427ad7*/
       }
       this->Image = 0; /*0x427af6*/
+  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
       _makepath(Buffer, 0, 0, (const char *)this->vtable4, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
       v2 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427b15*/
       this->Image = v2; /*0x427b1a*/
@@ -686,10 +686,10 @@ char AnimTypeClass::GetLoopCount(int a2)
 namespace gamemd {
 int AnimTypeClass::FindIndex(void *a1)
 {
-  int v2; // esi
 
   if ( !this ) /*0x427cb6*/
     return -1; /*0x427cb6*/
+  int v2; // esi
   v2 = 0; /*0x427cbd*/
   if ( FootClass_Array.secondaryFacing[0] <= 0 ) /*0x427cc1*/
     return -1; /*0x427ce6*/
@@ -706,8 +706,8 @@ int AnimTypeClass::FindIndex(void *a1)
 namespace gamemd {
 int AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x42897f*/
   if ( result >= 0 ) /*0x428986*/
     return 0; /*0x428988*/
@@ -733,8 +733,8 @@ int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int AnimTypeClass::GetAnimData(int a2, int a3)
 {
-  int result; // eax
 
+  int result; // eax
   result = (int)this->Next; /*0x428c10*/
   if ( result == a2 ) /*0x428c1c*/
     this->Next = 0; /*0x428c1e*/
@@ -794,10 +794,10 @@ int AnimTypeClass::StubReturnFalse(int a1)
 namespace gamemd {
 int AnimTypeClass::ReadINIString(uint8_t *a3, uint8_t *aP1, unsigned int a2, void *a4)
 {
-  char *v5; // eax
-  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
+  char *v5; // eax
   v5 = globalHelper_08E090(a2); /*0x47706d*/
+  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
   if ( INIClass::GetString((INIClass *)this, aP1, aP1, v5, Destination, 128) ) /*0x477085*/
     return ((AnimTypeClass *)((AnimTypeClass *)Destination))->LookupByName(); /*0x477092*/
   else

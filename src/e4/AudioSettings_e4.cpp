@@ -52,11 +52,6 @@ namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 
-  int result; // eax
-  BOOL IsSoundEnabled; // ebx
-  HWND DlgItem; // eax
-  HWND v7; // edi
-  LPARAM v8; // eax
   void (*v9)(HWND, BOOL); // ebp
   HWND v10; // eax
   HWND v11; // edi
@@ -97,6 +92,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
 
+  int result; // eax
   result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd)); /*0x6b632c*/
   if ( result ) /*0x6b6333*/
     return (gamemd::AbstractClass **)(result); /*0x6b6333*/
@@ -129,14 +125,18 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     else if ( a2 == 1175 ) /*0x6b6354*/
     {
       byte_B0B800 = 0; /*0x6b635a*/
+  BOOL IsSoundEnabled; // ebx
       IsSoundEnabled = Audio::IsSoundEnabled(); /*0x6b6364*/
       bEnable = IsSoundEnabled; /*0x6b636c*/
+  HWND DlgItem; // eax
       DlgItem = GetDlgItem(hDlg, 1327); /*0x6b6370*/
+  HWND v7; // edi
       v7 = DlgItem; /*0x6b637c*/
       if ( DlgItem ) /*0x6b6380*/
       {
         SendMessageA(DlgItem, 0x4AEu, 0, 0); /*0x6b638c*/
         SendMessageA(v7, 0x406u, 1u, 655360); /*0x6b639b*/
+  LPARAM v8; // eax
         v8 = Math::RoundToInt(flt_A8EBA0 * 10.0 + 0.5); /*0x6b63af*/
         SendMessageA(v7, 0x405u, 1u, v8); /*0x6b63bd*/
         v9 = (void (*)(HWND, BOOL))EnableWindow; /*0x6b63bf*/

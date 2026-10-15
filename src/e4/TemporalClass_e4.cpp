@@ -43,10 +43,9 @@ namespace gamemd {  // G42.18 ns repair
 int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
-  int v2; // eax
-  int v3; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x71a453*/
+  int v2; // eax
   v2 = *(unsigned int *)&TeamTypeClass_Array; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *&this->creationFrame = v2; /*0x71a464*/
@@ -62,6 +61,7 @@ int TemporalClass::Constructor(void *a1, void *a2, void *a3, void *a4)
          g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
+  int v3; // eax
     v3 = g_BuildingLoadQueue_Array.?[0]++; /*0x71a4c4*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.?[4] + 4 * v3) = this; /*0x71a4d3*/
   }
@@ -75,8 +75,6 @@ namespace gamemd {
 TemporalClass::TemporalClass(TechnoClass * aP1)
 {
 
-  int v3; // eax
-  int v5; // [esp+Ch] [ebp-8h]
 
   ((AbstractClass *)this)->Constructor(); /*0x71a4e7*/
   *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a4fb*/
@@ -88,6 +86,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_028 = 0; /*0x71a51f*/
   *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71a529*/
+  int v5; // [esp+Ch] [ebp-8h]
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
   this->q040 = 0; /*0x71a532*/
@@ -100,6 +99,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
          g_BuildingLoadQueue_Array.?[5] + g_BuildingLoadQueue_Array.?[1],
          0) )
   {
+  int v3; // eax
     v3 = g_BuildingLoadQueue_Array.?[0]++; /*0x71a576*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.?[4] + 4 * v3) = this; /*0x71a585*/
   }
@@ -343,20 +343,20 @@ namespace gamemd {
 int TemporalClass::GetWarpPerStep(int a2, void *a2_1)
 {
 
-  int WarpPerStep; // ebx
-  TemporalClass *v4; // ecx
-  int creationFrame; // ecx
-  int v6; // edi
-  int v7; // eax
-  int v8; // eax
 
+  int WarpPerStep; // ebx
   WarpPerStep = 0; /*0x71ab14*/
+  TemporalClass *v4; // ecx
   v4 = (TemporalClass *)this->u32_44; /*0x71ab17*/
   if ( v4 && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep((int)(v4), a2 + 1); /*0x71ab2e*/
+  int creationFrame; // ecx
   creationFrame = (int)(this->creationFrame); /*0x71ab30*/
+  int v6; // edi
   v6 = *(unsigned int *)creationFrame; /*0x71ab35*/
+  int v7; // eax
   v7 = (*(int (**)(int, unsigned int))(*(unsigned int *)creationFrame + 740))(creationFrame, 0); /*0x71ab37*/
+  int v8; // eax
   v8 = *(unsigned int *)(*(unsigned int *)(*(int (**)(int, int))(v6 + 1016))(this->creationFrame, v7) + 164); /*0x71ab4a*/
   this->q04C = v8; /*0x71ab50*/
   return WarpPerStep + v8; /*0x71ab49*/
@@ -369,14 +369,14 @@ namespace gamemd {
 void * TemporalClass::ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2)
 {
 
-  int v3; // eax
-  TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   aP1->AbstractClass = &vt_TemporalClass; /*0x71b1bd*/
   aP1->? = &vt_TemporalClass; /*0x71b1c3*/
   aP1->? = &vt_TemporalClass; /*0x71b1ca*/
   aP1->? = &vt_TemporalClass; /*0x71b1d1*/
+  TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TemporalClass *)(aP1); /*0x71b1df*/
+  int v3; // eax
   v3 = (*(int (**)(int *, TemporalClass **))(g_BuildingLoadQueue_Array.?[3] + 16))( /*0x71b1e3*/
          &DataGlobal_B0E840[1056],
          &v5);
@@ -410,8 +410,8 @@ int TemporalClass::SetTarget(AbstractClass * aP1)
 namespace gamemd {
 int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 {
-  int Prefix_0; // edi
 
+  int Prefix_0; // edi
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x71a671*/
   if ( Prefix_0 >= 0 ) /*0x71a675*/
   {
@@ -460,10 +460,6 @@ int TemporalClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 char TemporalClass::CanWarpTarget(unsigned int * a1)
 {
-  int Member; // eax
-  unsigned int *v3; // edi
-  unsigned int *v4; // eax
-  unsigned int v5[3]; // [esp+8h] [ebp-Ch] BYREF
 
   if ( !a1 ) /*0x71ae5b*/
     return 0; /*0x71ae5e*/
@@ -473,7 +469,9 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     return 0; /*0x71ae94*/
   if ( (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
   {
+  int Member; // eax
     Member = ((int)(a1))->GetMember(0); /*0x71aead*/
+  unsigned int *v3; // edi
     v3 = (unsigned int *)Member; /*0x71aeb2*/
     if ( Member ) /*0x71aeb6*/
     {
@@ -481,9 +479,11 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
       {
         if ( v3->q520->WeaponsFactory ) /*0x71aeca*/
         {
+  unsigned int v5[3]; // [esp+8h] [ebp-Ch] BYREF
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
+  unsigned int *v4; // eax
           v4 = (&dword_87F7E8)->To_Cell(v5); /*0x71aef8*/
           if ( ((Cell *)(v4))->IsBridge() == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/

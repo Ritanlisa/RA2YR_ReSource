@@ -34,8 +34,8 @@
 namespace gamemd {  // G42.18 ns repair
 void ParticleTypeClass::GetClassIdentifier()
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->vtable2; /*0x477906*/
   *&this->uniqueId = 0; /*0x477909*/
   if ( v2 && (this->IsAllocated) ) /*0x477910*/
@@ -52,29 +52,21 @@ namespace gamemd {
 AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 {
 
-  int v3; // ebp
-  char *v5; // edi
-  int v6; // eax
-  unsigned char *v7; // ecx
-  int v8; // edx
-  char *v9; // eax
-  int v10; // ecx
-  int m_8; // ecx
-  int v12; // eax
-  int v13; // edx
-  char *v14; // ebx
-  int v15; // eax
 
+  int v3; // ebp
   v3 = a2; /*0x4784f2*/
   if ( a2 ) /*0x4784fe*/
   {
+  char *v5; // edi
     v5 = a3; /*0x478504*/
     LOBYTE(this->vtable4) = 0; /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
       {
+  char *v9; // eax
         v9 = a3 + 2; /*0x478548*/
+  int v10; // ecx
         v10 = a2; /*0x47854b*/
         do /*0x478558*/
         {
@@ -89,12 +81,15 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     }
     else
     {
+  int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478514*/
       if ( v6 ) /*0x47851e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
+  unsigned char *v7; // ecx
           v7 = &v6->ptr_2; /*0x478527*/
+  int v8; // edx
           v8 = a2; /*0x47852a*/
           do /*0x478537*/
           {
@@ -118,15 +113,19 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       return 0; /*0x4785e2*/
     if ( *&this->vtable2 ) /*0x478562*/
     {
+  int m_8; // ecx
       m_8 = (int)(this->vtable3); /*0x478567*/
       if ( a2 < m_8 ) /*0x47856c*/
         m_8 = a2; /*0x47856e*/
       if ( m_8 > 0 ) /*0x478572*/
       {
+  int v12; // eax
         v12 = 0; /*0x478574*/
         do /*0x478590*/
         {
+  int v13; // edx
           v13 = (int)(*&this->vtable2 + v12); /*0x47857b*/
+  char *v14; // ebx
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --m_8; /*0x478583*/
@@ -150,6 +149,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (**)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x4785c6*/
   }
+  int v15; // eax
   v15 = (int)(this->vtable3); /*0x4785c9*/
   if ( v15 < this->uniqueId ) /*0x4785d1*/
     this->uniqueId = v15; /*0x4785d3*/
@@ -162,19 +162,11 @@ namespace gamemd {
 unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
 {
 
-  int v3; // edi
-  char *v4; // eax
-  unsigned char *v5; // ecx
-  int v6; // edx
-  void *BehavesLike; // eax
-  int v8; // ecx
-  int v9; // eax
-  int v10; // edx
-  char *v11; // edi
 
   if ( a2_2 == (ParticleTypeClass *)a2_2 ) /*0x4788ec*/
     return &a2_2->ArrayIndex; /*0x4788ec*/
   (*((void (**)(ParticleTypeClass *))a2_2->ArrayIndex + 3))(a2_2); /*0x4788f4*/
+  int v3; // edi
   v3 = a2_2[2]; /*0x4788f7*/
   a2_2->BehavesLike = (void *)v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
@@ -183,12 +175,15 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
     BYTE1(a2_2->ParticleTypeClass_field_0xC) = 0; /*0x478977*/
     return &a2_2->ArrayIndex; /*0x47897a*/
   }
+  char *v4; // eax
   v4 = (char *)__2_YAPAXI_Z(3 * v3); /*0x478907*/
   if ( v4 ) /*0x478911*/
   {
     if ( v3 - 1 >= 0 ) /*0x478918*/
     {
+  unsigned char *v5; // ecx
       v5 = (unsigned char *)(v4 + 2); /*0x47891a*/
+  int v6; // edx
       v6 = v3; /*0x47891d*/
       do /*0x47892a*/
       {
@@ -208,15 +203,20 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2, void *a2_2)
   a2_2->ParticleTypeClass_field_28C = v4; /*0x478932*/
   if ( !v4 ) /*0x478935*/
     return &a2_2->ArrayIndex; /*0x478935*/
+  void *BehavesLike; // eax
   BehavesLike = a2_2->BehavesLike; /*0x478937*/
+  int v8; // ecx
   v8 = 0; /*0x47893a*/
   BYTE1(a2_2->ParticleTypeClass_field_0xC) = 1; /*0x47893e*/
   if ( (int)BehavesLike <= 0 ) /*0x478942*/
     return &a2_2->ArrayIndex; /*0x478942*/
+  int v9; // eax
   v9 = 0; /*0x478944*/
   do /*0x478969*/
   {
+  int v10; // edx
     v10 = a2_2[1] + v9; /*0x47894e*/
+  char *v11; // edi
     v11 = (char *)a2_2->ParticleTypeClass_field_28C + v9; /*0x478952*/
     ++v8; /*0x478954*/
     v9 += 3; /*0x478958*/
@@ -706,8 +706,8 @@ namespace gamemd {
 int ParticleTypeClass::GetType(int a2, int a3)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)this->__pad_2E4; /*0x6458b0*/
   if ( result == a2 ) /*0x6458bc*/
     this->__pad_2E4 = 0; /*0x6458be*/
@@ -720,17 +720,15 @@ namespace gamemd {
 ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1)
 {
 
-  int v3; // eax
-  int v4; // eax
-  CampaignClass *ParticleTypeClass_field_0x2BC; // eax
-  ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
 
   a3->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
   a3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
   a3->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
   a3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&a3->ArrayIndex, 1); /*0x645971*/
+  ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
   v7 = a3; /*0x645986*/
+  int v3; // eax
   v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
@@ -746,6 +744,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
     }
   }
   v7 = a3; /*0x6459cf*/
+  int v4; // eax
   v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&DataGlobal_A83D98 + 16))( /*0x6459d3*/
          &DataGlobal_A83D98,
          &v7);
@@ -760,6 +759,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
       ++v4; /*0x6459f6*/
     }
   }
+  CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass_field_0x2BC = a3->ParticleTypeClass_field_0x2BC; /*0x645a08*/
   a3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && a3->__pad_2C0[5] ) /*0x645a1c*/
@@ -781,11 +781,6 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
 namespace gamemd {
 unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *a4)
 {
-  unsigned char *v4; // eax
-  int v5; // ecx
-  char *v6; // eax
-  unsigned char *v7; // ecx
-  int v8; // edx
 
   a3_2->ParticleTypeClass_field_28C = 0; /*0x645a7d*/
   a3_2->BehavesLike = (void *)a3_2; /*0x645a80*/
@@ -798,7 +793,9 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
     {
       if ( a3_2 - 1 >= 0 ) /*0x645a9f*/
       {
+  unsigned char *v4; // eax
         v4 = (unsigned char *)(a3_2 + 2); /*0x645aa1*/
+  int v5; // ecx
         v5 = a3_2; /*0x645aa4*/
         do /*0x645ab1*/
         {
@@ -814,12 +811,15 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3, void *a3_2, void *
     }
     else
     {
+  char *v6; // eax
       v6 = (char *)operator new(3 * a3_2); /*0x645abc*/
       if ( v6 ) /*0x645ac6*/
       {
         if ( a3_2 - 1 >= 0 ) /*0x645acd*/
         {
+  unsigned char *v7; // ecx
           v7 = v6 + 2; /*0x645acf*/
+  int v8; // edx
           v8 = a3_2; /*0x645ad2*/
           do /*0x645adf*/
           {
@@ -861,8 +861,8 @@ unsigned int ParticleTypeClass::LoadTypeData(int a2)
 namespace gamemd {
 TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a5, int a6, int a7, int a8, int aP0, int aP1, int aP2, int a1)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->vtable2; /*0x477ac3*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x477ac6) */
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
@@ -882,14 +882,14 @@ TypeList_flat * ParticleTypeClass::QueryInterface(char a2, int a3, int a4, int a
 namespace gamemd {
 int ParticleTypeClass::Init(unsigned char * a2, void *a2_1)
 {
-  int m_10; // esi
-  int result; // eax
-  unsigned char *i; // ecx
 
+  int m_10; // esi
   m_10 = *&this->uniqueId; /*0x4785f2*/
+  int result; // eax
   result = 0; /*0x4785f5*/
   if ( m_10 <= 0 ) /*0x4785fa*/
     return -1; /*0x478621*/
+  unsigned char *i; // ecx
   for ( i = *&this->vtable2; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
   {
     if ( ++result >= m_10 ) /*0x47861f*/
@@ -902,22 +902,22 @@ int ParticleTypeClass::Init(unsigned char * a2, void *a2_1)
 namespace gamemd {
 int ParticleTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int v5; // ebp
-  int v6; // edi
 
+  int result; // eax
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x6457b3*/
   if ( result >= 0 ) /*0x6457ba*/
   {
+  int v4; // edx
     v4 = *(unsigned int *)aP1; /*0x6457c2*/
     aP2 = (int)aP0->aP2; /*0x6457ce*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x6457d2*/
     if ( result >= 0 ) /*0x6457d7*/
     {
+  int v5; // ebp
       v5 = 0; /*0x6457dd*/
       if ( aP2 > 0 ) /*0x6457e1*/
       {
+  int v6; // edi
         v6 = 0; /*0x6457e3*/
         do /*0x645806*/
         {

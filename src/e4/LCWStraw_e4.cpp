@@ -12,12 +12,12 @@
 namespace gamemd {  // G42.18 ns repair
 int LCWStraw::Dtor(void *a1)
 {
-  void *v2; // eax
-  void *v3; // ecx
 
+  void *v2; // eax
   v2 = (void *)*((unsigned int *)a1 + 5); /*0x552453*/
   *(unsigned int *)a1->__pad_0 = &vt_LCWStraw; /*0x552456*/
   operator delete((void *)(v2)); /*0x55245d*/
+  void *v3; // ecx
   v3 = (void *)*((unsigned int *)a1 + 6); /*0x552462*/
   *((unsigned int *)a1 + 5) = 0; /*0x552465*/
   operator delete((void *)(v3)); /*0x55246d*/

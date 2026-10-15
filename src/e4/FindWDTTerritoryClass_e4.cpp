@@ -15,13 +15,12 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
 
-  int v4; // edx
-  void **v5; // [esp+4h] [ebp-Ch] BYREF
-  char *v6; // [esp+8h] [ebp-8h]
-  int v7; // [esp+Ch] [ebp-4h]
 
+  char *v6; // [esp+8h] [ebp-8h]
   v6 = (char *)(&this->u8_18); /*0x765387*/
+  int v7; // [esp+Ch] [ebp-4h]
   v7 = 0; /*0x76538f*/
+  void **v5; // [esp+4h] [ebp-Ch] BYREF
   v5 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
   {
@@ -33,6 +32,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((unsigned __int8 (*)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
+  int v4; // edx
   v4 = v7; /*0x7653ea*/
   a2[1] = (unsigned int)(v6); /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
@@ -47,8 +47,8 @@ namespace gamemd {
 int E4Recv_766060::sub_766060()
 {
 
-  unsigned int *vtable3; // eax
 
+  unsigned int *vtable3; // eax
   vtable3 = (unsigned int *)(this->M12); /*0x766060*/
   if ( vtable3 ) /*0x766065*/
     return vtable3->vtable3; /*0x766067*/

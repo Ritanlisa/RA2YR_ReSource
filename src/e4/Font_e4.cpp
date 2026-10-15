@@ -34,14 +34,14 @@
 namespace gamemd {  // G42.18 ns repair
 int Font::GetGlyphDataForChar(uint16_t aP1)
 {
-  unsigned int *Font_field_04; // ecx
-  int result; // eax
-  int v4; // edx
 
+  unsigned int *Font_field_04; // ecx
   Font_field_04 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
+  int result; // eax
   result = 0; /*0x4346c3*/
   if ( Font_field_04 ) /*0x4346c7*/
   {
+  int v4; // edx
     v4 = *(uint16_t *)(Font_field_04[6] + 2 * aP1); /*0x4346da*/
     if ( (unsigned short)v4 ) /*0x4346e2*/
       return Font_field_04[7] + (v4 - 1) * Font_field_04[5]; /*0x4346eb*/

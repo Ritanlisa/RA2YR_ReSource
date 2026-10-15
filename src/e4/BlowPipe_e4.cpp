@@ -16,8 +16,8 @@
 namespace gamemd {  // G42.18 ns repair
 void BlowPipe_31::ddtor(void *a1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->q004; /*0x63dc26*/
   this->m_10 = 0; /*0x63dc29*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dc30*/
@@ -53,8 +53,8 @@ int BlowPipe_31::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 void BlowPipe_23::Clear(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->q004; /*0x63dc86*/
   a1_1->q010 = 0; /*0x63dc89*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x63dc90*/
@@ -90,8 +90,8 @@ int BlowPipe_23::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 void BlowPipe_23::Clear_0()
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x63dce6*/
   this->m_10 = 0; /*0x63dce9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x63dcf0*/
@@ -119,18 +119,18 @@ unsigned int BlowPipe_23::GetCount_0(int a2)
 namespace gamemd {
 char BlowPipe_31::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x63e312*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x63e31d*/
   {
+  int v3; // edx
     v3 = 0; /*0x63e31f*/
     if ( m_8 <= 0 ) /*0x63e323*/
       return 1; /*0x63e343*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x63e325*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x63e32b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x63e334*/
     {
@@ -149,13 +149,11 @@ namespace gamemd {
 char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x63e35c*/
   {
     LOBYTE(this->m_C) = 0; /*0x63e366*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x63e36c*/
       v4 = a3; /*0x63e382*/
     else
@@ -165,9 +163,11 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x63e395*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x63e39c*/
         if ( a2 < m_8 ) /*0x63e3a1*/
           m_8 = a2; /*0x63e3a3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e3a9*/
           ++i; /*0x63e3ae*/
         if ( BYTE1(this->m_C) ) /*0x63e3bb*/
@@ -213,16 +213,16 @@ void BlowPipe_23::Clear_1()
 namespace gamemd {
 int BlowPipe_23::FindItemIndex(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x63e430*/
     return 0; /*0x63e438*/
+  int m_8; // edx
   m_8 = this->m_8; /*0x63e43e*/
+  int result; // eax
   result = 0; /*0x63e441*/
   if ( m_8 <= 0 ) /*0x63e445*/
     return -1; /*0x63e45c*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x63e44b*/
   {
     if ( ++result >= m_8 ) /*0x63e45a*/
@@ -248,14 +248,11 @@ namespace gamemd {
 char BlowPipe_31::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x63e49c*/
   {
     LOBYTE(this->m_C) = 0; /*0x63e4a2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x63e4a8*/
       v4 = a3; /*0x63e4be*/
     else
@@ -265,9 +262,11 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
       return 0; /*0x63e53a*/
     if ( *&this->q004 ) /*0x63e4c8*/
     {
+  int m_8; // ecx
       m_8 = this->m_8; /*0x63e4cf*/
       if ( a2 < m_8 ) /*0x63e4d4*/
         m_8 = a2; /*0x63e4d6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e4dc*/
         ++i; /*0x63e4e1*/
       if ( BYTE1(this->m_C) ) /*0x63e4ee*/
@@ -284,6 +283,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x63e51e*/
   }
+  int v7; // eax
   v7 = this->m_8; /*0x63e521*/
   if ( v7 < this->m_10 ) /*0x63e529*/
     this->m_10 = v7; /*0x63e52b*/
@@ -296,14 +296,14 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int BlowPipe_31::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = a2_2->q010; /*0x63e620*/
+  int result; // eax
   result = 0; /*0x63e623*/
   if ( m_10 <= 0 ) /*0x63e628*/
     return -1; /*0x63e63f*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x63e62e*/
   {
     if ( ++result >= m_10 ) /*0x63e63d*/
@@ -316,18 +316,18 @@ int BlowPipe_31::Read(unsigned int * a2, void *a2_2, void *a3)
 namespace gamemd {
 char BlowPipe_23::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x63e652*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x63e65d*/
   {
+  int v3; // edx
     v3 = 0; /*0x63e65f*/
     if ( m_8 <= 0 ) /*0x63e663*/
       return 1; /*0x63e683*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x63e665*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x63e66b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x63e674*/
     {
@@ -346,13 +346,11 @@ namespace gamemd {
 char BlowPipe_23::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x63e69c*/
   {
     LOBYTE(this->m_C) = 0; /*0x63e6a6*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x63e6ac*/
       v4 = a3; /*0x63e6c2*/
     else
@@ -362,9 +360,11 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x63e6d5*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x63e6dc*/
         if ( a2 < m_8 ) /*0x63e6e1*/
           m_8 = a2; /*0x63e6e3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e6e9*/
           ++i; /*0x63e6ee*/
         if ( BYTE1(this->m_C) ) /*0x63e6fb*/
@@ -410,16 +410,16 @@ void BlowPipe_23::ddtor(void *a1)
 namespace gamemd {
 int BlowPipe_23::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x63e770*/
     return 0; /*0x63e778*/
+  int m_8; // edx
   m_8 = a2_2->q008; /*0x63e77e*/
+  int result; // eax
   result = 0; /*0x63e781*/
   if ( m_8 <= 0 ) /*0x63e785*/
     return -1; /*0x63e79c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x63e78b*/
   {
     if ( ++result >= m_8 ) /*0x63e79a*/
@@ -445,14 +445,11 @@ namespace gamemd {
 char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x63e7dc*/
   {
     LOBYTE(this->m_C) = 0; /*0x63e7e2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x63e7e8*/
       v4 = a3; /*0x63e7fe*/
     else
@@ -462,9 +459,11 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
       return 0; /*0x63e87a*/
     if ( *&this->q004 ) /*0x63e808*/
     {
+  int m_8; // ecx
       m_8 = this->m_8; /*0x63e80f*/
       if ( a2 < m_8 ) /*0x63e814*/
         m_8 = a2; /*0x63e816*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63e81c*/
         ++i; /*0x63e821*/
       if ( BYTE1(this->m_C) ) /*0x63e82e*/
@@ -481,6 +480,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x63e85e*/
   }
+  int v7; // eax
   v7 = this->m_8; /*0x63e861*/
   if ( v7 < this->m_10 ) /*0x63e869*/
     this->m_10 = v7; /*0x63e86b*/
@@ -493,14 +493,14 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
 namespace gamemd {
 int BlowPipe_23::FindItemIndex_0(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x63e8d0*/
+  int result; // eax
   result = 0; /*0x63e8d3*/
   if ( m_10 <= 0 ) /*0x63e8d8*/
     return -1; /*0x63e8ef*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x63e8de*/
   {
     if ( ++result >= m_10 ) /*0x63e8ed*/
@@ -514,14 +514,11 @@ namespace gamemd {
 char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x63eadc*/
   {
     LOBYTE(this->m_C) = 0; /*0x63eae2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x63eae8*/
       v4 = a3; /*0x63eafe*/
     else
@@ -531,9 +528,11 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
       return 0; /*0x63eb7a*/
     if ( *&this->q004 ) /*0x63eb08*/
     {
+  int m_8; // ecx
       m_8 = this->m_8; /*0x63eb0f*/
       if ( a2 < m_8 ) /*0x63eb14*/
         m_8 = a2; /*0x63eb16*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x63eb1c*/
         ++i; /*0x63eb21*/
       if ( BYTE1(this->m_C) ) /*0x63eb2e*/
@@ -550,6 +549,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x63eb5e*/
   }
+  int v7; // eax
   v7 = this->m_8; /*0x63eb61*/
   if ( v7 < this->m_10 ) /*0x63eb69*/
     this->m_10 = v7; /*0x63eb6b*/
@@ -562,14 +562,14 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
 namespace gamemd {
 int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x63ec20*/
+  int result; // eax
   result = 0; /*0x63ec23*/
   if ( m_10 <= 0 ) /*0x63ec28*/
     return -1; /*0x63ec3f*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x63ec2e*/
   {
     if ( ++result >= m_10 ) /*0x63ec3d*/
@@ -583,8 +583,8 @@ int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x63ed93*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ed96*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63eda0*/
@@ -604,8 +604,8 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x63ede3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ede6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x63edf0*/
@@ -625,8 +625,8 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x63ee33*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ee36*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ee40*/
@@ -646,8 +646,8 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x63ee83*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ee86*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ee90*/
@@ -667,8 +667,8 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x63ef23*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x63ef26*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x63ef30*/

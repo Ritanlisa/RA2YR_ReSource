@@ -104,18 +104,15 @@ int SidebarClass::CalcBounds(char a1)
 {
   int v1; // ebx
   int v2; // eax
-  unsigned int *v3; // eax
-  int v4; // ecx
-  int v5; // esi
-  int v6; // esi
-  int v7; // ecx
-  int result; // eax
-  unsigned char v9[16]; // [esp+8h] [ebp-10h] BYREF
 
   if ( a1 ) /*0x6a513b*/
   {
+  unsigned int *v3; // eax
+  unsigned char v9[16]; // [esp+8h] [ebp-10h] BYREF
     v3 = (unsigned int *)SidebarClass::calcSidebarRect(v9); /*0x6a5199*/
+  int v4; // ecx
     v4 = v3[1]; /*0x6a51a2*/
+  int v5; // esi
     v5 = v3[3]; /*0x6a51a8*/
     v1 = v3[2] + *v3; /*0x6a51ab*/
     dword_886F98 = 168; /*0x6a51bb*/
@@ -138,11 +135,14 @@ int SidebarClass::CalcBounds(char a1)
     v2 = g_DSurface_ViewBounds; /*0x6a51de*/
     v1 = DSurface_SidebarBounds; /*0x6a51e3*/
   }
+  int v6; // esi
   v6 = dword_A8B230[374].NeedsSaveOrLink; /*0x6a51ef*/
   dword_B0B500 = 50; /*0x6a51f5*/
+  int v7; // ecx
   v7 = 26; /*0x6a5205*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a51ff*/
     v7 = 18; /*0x6a520e*/
+  int result; // eax
   result = 50 * ((v2 - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a523f*/
   dword_B0B504 = result; /*0x6a5243*/
   if ( v6 ) /*0x6a5248*/
@@ -187,49 +187,44 @@ int SidebarClass::CalcBounds(char a1)
 namespace gamemd {
 void * SidebarClass::LoadAssets()
 {
-  PowerClass *v1; // ecx
-  ConvertClass *v2; // eax
-  void *FileSHP; // eax
-  void *v4; // eax
-  int v5; // edi
-  ShapeButtonClass *v6; // esi
-  void *v7; // eax
-  void *v8; // eax
-  void *v9; // eax
-  ConvertClass *v10; // eax
-  void *result; // eax
-  char v12; // [esp+Ch] [ebp-704h] BYREF
-  char Buffer[256]; // [esp+10h] [ebp-700h] BYREF
-  int v14[192]; // [esp+110h] [ebp-600h] BYREF
-  int v15[192]; // [esp+410h] [ebp-300h] BYREF
 
+  PowerClass *v1; // ecx
   PowerClass::checkBlackout(v1); /*0x6a5849*/
+  int v14[192]; // [esp+110h] [ebp-600h] BYREF
   memcpy(v14, UI_Load_72F4A0(), sizeof(v14)); /*0x6a5863*/
   if ( *(unsigned int *)&g_SidebarConfig ) /*0x6a586d*/
   {
     (***(void (****)(unsigned int, int))&g_SidebarConfig)(*(unsigned int *)&g_SidebarConfig, 1); /*0x6a5873*/
     *(unsigned int *)&g_SidebarConfig = 0; /*0x6a5875*/
   }
+  ConvertClass *v2; // eax
   v2 = (ConvertClass *)operator new(0x188u); /*0x6a5880*/
   if ( v2 ) /*0x6a588a*/
         *(unsigned int *)&g_SidebarConfig = ((int)(/*0x6a58ad*/ v2))->Construct((int)v14, (int)v14, (int)g_DSurface_Primary, 1, 0);
   else
     *(unsigned int *)&g_SidebarConfig = 0; /*0x6a58b4*/
   dword_B0B484 = (unsigned int)(LoadFileSHP((char *)(aGclock2Shp), (bool *)&byte_B0B48F)); /*0x6a58d4*/
+  char v12; // [esp+Ch] [ebp-704h] BYREF
   v12 = 0; /*0x6a58d9*/
+  void *FileSHP; // eax
   FileSHP = LoadFileSHP((char *)(aSellShp), (bool *)&v12); /*0x6a58dd*/
   ((int)(&stru_B07DF8))->SetShape((int)FileSHP, 0, 0); /*0x6a58e8*/
   ButtonClass::SetState((char)((ButtonClass *)&stru_B07DF8), v12); /*0x6a58f7*/
   dword_B07E48 = *(unsigned int *)&g_SidebarConfig; /*0x6a590c*/
+  void *v4; // eax
   v4 = LoadFileSHP((char *)(aRepairShp), (bool *)&v12); /*0x6a5911*/
   ((int)(&stru_B0B3A0))->SetShape((int)v4, 0, 0); /*0x6a591c*/
   ButtonClass::SetState((char)((ButtonClass *)&stru_B0B3A0), v12); /*0x6a592b*/
+  int v5; // edi
   v5 = 0; /*0x6a5936*/
   dword_B0B3F0 = *(unsigned int *)&g_SidebarConfig; /*0x6a5938*/
+  ShapeButtonClass *v6; // esi
   v6 = (gamemd::ShapeButtonClass *)(&stru_B07C48); /*0x6a593e*/
   do /*0x6a598c*/
   {
+  char Buffer[256]; // [esp+10h] [ebp-700h] BYREF
     sprintf(Buffer, "TAB%02d.SHP", v5); /*0x6a594e*/
+  void *v7; // eax
     v7 = LoadFileSHP(Buffer, (bool *)&v12); /*0x6a5960*/
     ((int)(v6))->SetShape((int)v7, 0, 0); /*0x6a5968*/
     ButtonClass::SetState((char)((ButtonClass *)v6), v12); /*0x6a5974*/
@@ -238,10 +233,12 @@ void * SidebarClass::LoadAssets()
     v6 += 8; /*0x6a5983*/
   }
   while ( (int)v6 < (int)&dword_B07DC8 ); /*0x6a598c*/
+  void *v8; // eax
   v8 = LoadFileSHP((char *)(aRDnShp), (bool *)&v12); /*0x6a5999*/
   ((int)(&stru_B0B328))->SetShape((int)v8, 0, 0); /*0x6a59a4*/
   ButtonClass::SetState((char)((ButtonClass *)&stru_B0B328), v12); /*0x6a59b3*/
   dword_B0B378 = *(unsigned int *)&g_SidebarConfig; /*0x6a59bf*/
+  void *v9; // eax
   v9 = LoadFileSHP((char *)(aRUpShp), (bool *)&v12); /*0x6a59cf*/
   ((int)(&g_SidebarFlag))->SetShape((int)v9, 0, 0); /*0x6a59da*/
   ButtonClass::SetState((char)((ButtonClass *)&g_SidebarFlag), v12); /*0x6a59e9*/
@@ -250,12 +247,14 @@ void * SidebarClass::LoadAssets()
   dword_B0B46C = (unsigned int)(LoadFileSHP((char *)(aSide2Shp), (bool *)&byte_B0B489)); /*0x6a5a25*/
   dword_B0B470 = (unsigned int)(LoadFileSHP((char *)(aSide3Shp), (bool *)&byte_B0B48A)); /*0x6a5a39*/
   dword_B0B474 = (unsigned int)(LoadFileSHP((char *)(aAddonShp), (bool *)&byte_B0B48B)); /*0x6a5a43*/
+  int v15[192]; // [esp+410h] [ebp-300h] BYREF
   memcpy(v15, UI_Load_72F4E0(), sizeof(v15)); /*0x6a5a5b*/
   if ( *(unsigned int *)&DataGlobal_87F6D0 ) /*0x6a5a65*/
   {
     (***(void (****)(unsigned int, int))&DataGlobal_87F6D0)(*(unsigned int *)&DataGlobal_87F6D0, 1); /*0x6a5a6b*/
     *(unsigned int *)&DataGlobal_87F6D0 = 0; /*0x6a5a6d*/
   }
+  ConvertClass *v10; // eax
   v10 = (ConvertClass *)operator new(0x188u); /*0x6a5a78*/
   if ( v10 ) /*0x6a5a82*/
         *(unsigned int *)&DataGlobal_87F6D0 = ((int)(/*0x6a5aa5*/ v10))->Construct((int)v15, (int)v15, (int)g_DSurface_Primary, 1, 0);
@@ -275,6 +274,7 @@ void * SidebarClass::LoadAssets()
   dword_B0B4BC = (unsigned int)(LoadFileSHP((char *)(aArbiShp), (bool *)&byte_B0B4D7)); /*0x6a5ba7*/
   dword_B0B4C0 = (unsigned int)(LoadFileSHP((char *)(aLatiShp), (bool *)&byte_B0B4D8)); /*0x6a5bbb*/
   dword_B0B4C4 = (unsigned int)(LoadFileSHP((char *)(aRusiShp), (bool *)&byte_B0B4D9)); /*0x6a5bcf*/
+  void *result; // eax
   result = LoadFileSHP((char *)(aYriiShp), (bool *)&byte_B0B4DA); /*0x6a5bd4*/
   dword_B0B4C8 = (unsigned int)(result); /*0x6a5bdb*/
   return result; /*0x6a5bd9*/
@@ -285,40 +285,29 @@ namespace gamemd {
 int SidebarClass::Redraw(char a2)
 {
 
-  SidebarClass *v2; // edi
-  int v3; // esi
-  int v4; // esi
-  void *v5; // ebp
-  int i; // edi
-  int v7; // eax
-  ShapeButtonClass *v8; // esi
-  char v9; // al
   char v10; // dl
-  unsigned char *v11; // eax
-  char v12; // al
-  unsigned int v14; // [esp-34h] [ebp-64h]
-  unsigned int v15; // [esp-34h] [ebp-64h]
-  unsigned int v16; // [esp-34h] [ebp-64h]
-  unsigned __int8 v17; // [esp+Ch] [ebp-24h]
-  AudioStream *v19; // [esp+14h] [ebp-1Ch]
   int v20; // [esp+18h] [ebp-18h] BYREF
   int v21; // [esp+1Ch] [ebp-14h]
-  int v22[4]; // [esp+20h] [ebp-10h] BYREF
-  char v23; // [esp+34h] [ebp+4h]
 
+  SidebarClass *v2; // edi
   v2 = this; /*0x6a6c3b*/
   *(unsigned int *)&DataGlobal_8809F4 = dword_B07DC8; /*0x6a6c49*/
   *(unsigned int *)&DataGlobal_8809F8 = dword_B07DCC; /*0x6a6c53*/
   *(unsigned int *)&DataGlobal_8809FC = dword_B07DD0; /*0x6a6c5f*/
+  AudioStream *v19; // [esp+14h] [ebp-1Ch]
   v19 = (gamemd::AudioStream *)(g_DSurface_Hidden_2); /*0x6a6c65*/
   *(unsigned int *)&DataGlobal_880A00 = dword_B07DD4; /*0x6a6c6f*/
   g_DSurface_Hidden_2 = (int)((AudioStream *)DSurface_Sidebar); /*0x6a6c74*/
+  unsigned __int8 v17; // [esp+Ch] [ebp-24h]
   v17 = 0; /*0x6a6c82*/
+  int v3; // esi
   v3 = (*((int (**)(DSurface *))DSurface_Sidebar + 32))(DSurface_Sidebar); /*0x6a6c92*/
+  int v22[4]; // [esp+20h] [ebp-10h] BYREF
   v22[2] = (*((int (**)(DSurface *))DSurface_Sidebar + 31))(DSurface_Sidebar); /*0x6a6c99*/
   v22[0] = 0; /*0x6a6ca3*/
   v22[1] = 0; /*0x6a6ca7*/
   v22[3] = v3; /*0x6a6cab*/
+  char v23; // [esp+34h] [ebp+4h]
   if ( a2 || v2[3].__pad_CD2[1788] || (v23 = 0, v2[3].__pad_CD2[1789]) ) /*0x6a6cb9*/
     v23 = 1; /*0x6a6cc7*/
   if ( v2[3].__pad_CD2[1787] && v23 && !DataGlobal_A8EB00[619] ) /*0x6a6ce8*/
@@ -345,10 +334,14 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
+  int v4; // esi
       v4 = g_SidebarBounds; /*0x6a6d47*/
+  void *v5; // ebp
       v5 = (void *)(dword_B0B46C); /*0x6a6d4d*/
+  int i; // edi
       for ( i = 0; ; ++i ) /*0x6a6d53*/
       {
+  int v7; // eax
         v7 = 26; /*0x6a6d63*/
         if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a6d5b*/
           v7 = 18; /*0x6a6d6a*/
@@ -418,6 +411,7 @@ int SidebarClass::Redraw(char a2)
     }
     ShapeButton::Draw((int)(&stru_B07DF8), v17); /*0x6a6e88*/
     ShapeButton::Draw(&stru_B0B3A0, v17); /*0x6a6e93*/
+  ShapeButtonClass *v8; // esi
     v8 = (gamemd::ShapeButtonClass *)(&stru_B07C48); /*0x6a6e98*/
     do /*0x6a6eaf*/
     {
@@ -430,6 +424,7 @@ int SidebarClass::Redraw(char a2)
     if ( *(unsigned int *)&v2[3].__pad_CD2[1774] ) /*0x6a6ec7*/
     {
       v21 = g_SidebarBounds; /*0x6a6eef*/
+  unsigned int v14; // [esp-34h] [ebp-64h]
       v14 = *(unsigned int *)&v2[3].__pad_CD2[1770]; /*0x6a6f0a*/
       v20 = 0; /*0x6a6f18*/
       DrawToSurfaceSHP( /*0x6a6f1c*/
@@ -450,6 +445,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0);
       v21 = g_SidebarBounds; /*0x6a6f3a*/
+  unsigned int v15; // [esp-34h] [ebp-64h]
       v15 = *(unsigned int *)&v2[3].__pad_CD2[1770]; /*0x6a6f55*/
       v20 = 0; /*0x6a6f63*/
       DrawToSurfaceSHP( /*0x6a6f67*/
@@ -470,6 +466,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0);
       v21 = g_SidebarBounds; /*0x6a6f85*/
+  unsigned int v16; // [esp-34h] [ebp-64h]
       v16 = *(unsigned int *)&v2[3].__pad_CD2[1770]; /*0x6a6fa0*/
       v20 = 0; /*0x6a6fae*/
       DrawToSurfaceSHP( /*0x6a6fb2*/
@@ -496,6 +493,7 @@ int SidebarClass::Redraw(char a2)
     (int)&v2->__pad_CD2[3988 * *(unsigned int *)&v2[3].__pad_CD2[1778] + 2162],
     (wchar_t)v2,
     v2[3].__pad_CD2[1789]);
+  char v9; // al
   v9 = v23 || v17; /*0x6a6ff4*/
   Sidebar::Render((char)((PowerClass *)v2), v9); /*0x6a6ffc*/
   if ( byte_B07E4C ) /*0x6a7007*/
@@ -514,6 +512,7 @@ int SidebarClass::Redraw(char a2)
     byte_B0B3F4 = 0; /*0x6a7029*/
     g_TooltipActive = 1; /*0x6a702f*/
   }
+  unsigned char *v11; // eax
   v11 = &unk_B07C9C; /*0x6a7035*/
   do /*0x6a704a*/
   {
@@ -545,6 +544,7 @@ int SidebarClass::Redraw(char a2)
       1);
     v10 = g_TooltipActive; /*0x6a7090*/
   }
+  char v12; // al
   v12 = v10 || v2[3].__pad_CD2[1789]; /*0x6a70a6*/
   Sidebar::FlushSidebarTooltip((char)((Sidebar *)v2), v12); /*0x6a70ae*/
   v2[3].__pad_CD2[1788] = 0; /*0x6a70b7*/
@@ -558,19 +558,15 @@ int SidebarClass::Redraw(char a2)
 namespace gamemd {
 int SidebarClass::SwitchTab(int a2)
 {
-  int result; // eax
-  int v4; // esi
-  int v5; // edi
-  int v6; // edi
-  int v7; // eax
-  int v8; // esi
-  int v9; // ebx
 
+  int result; // eax
   result = this->u32_539C; /*0x6a7598*/
   if ( a2 != result ) /*0x6a75a0*/
   {
     GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * result)); /*0x6a75b4*/
+  int v4; // esi
     v4 = 0; /*0x6a75c6*/
+  int v5; // edi
     v5 = &this->u32_F94 * this->u32_539C + 5444; /*0x6a75ce*/
     *&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a75d5*/
     do /*0x6a7600*/
@@ -583,12 +579,16 @@ int SidebarClass::SwitchTab(int a2)
     while ( v4 < 60 ); /*0x6a7600*/
     this->u32_539C = a2; /*0x6a7605*/
     ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * a2)))->Show(); /*0x6a7614*/
+  int v6; // edi
     v6 = &this->u32_F94 * this->u32_539C + 5444; /*0x6a762c*/
     *&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a7633*/
+  int v7; // eax
     v7 = 26; /*0x6a7645*/
     if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a763d*/
       v7 = 18; /*0x6a764c*/
+  int v8; // esi
     v8 = 0; /*0x6a765f*/
+  int v9; // ebx
     v9 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a767f*/
     if ( v9 > 0 ) /*0x6a7683*/
     {
@@ -611,40 +611,14 @@ int SidebarClass::SwitchTab(int a2)
 namespace gamemd {
 GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * aSidegdi2Shp, void * aSidegdi3Shp)
 {
-  PowerClass *v1; // ecx
-  int v2; // esi
-  int v3; // eax
-  GadgetClass *v4; // esi
-  int v5; // edi
-  int v6; // eax
-  LinkClass *v7; // esi
-  int v8; // ebx
-  int v9; // ebp
-  int i; // edi
-  char result; // al
-  int v12; // edi
-  int *v13; // esi
-  int v14; // ecx
-  int v15; // edx
-  int v16; // eax
-  int j; // esi
-  int v18; // edi
-  int *v19; // esi
-  int v20; // edx
-  int v21; // ecx
-  int v22; // edx
-  int v23; // [esp-4h] [ebp-38h]
-  int v24; // [esp-4h] [ebp-38h]
-  LinkClass *v25; // [esp+10h] [ebp-24h]
-  int v26; // [esp+14h] [ebp-20h]
   int v27; // [esp+18h] [ebp-1Ch] BYREF
   int v28; // [esp+1Ch] [ebp-18h]
   int v29; // [esp+20h] [ebp-14h]
   int v30; // [esp+24h] [ebp-10h]
   int v31; // [esp+28h] [ebp-Ch]
   wchar_t *v32; // [esp+2Ch] [ebp-8h]
-  char v33; // [esp+30h] [ebp-4h]
 
+  PowerClass *v1; // ecx
   PowerClass::getDrain(v1); /*0x6abd39*/
   SidebarClass::CalcBounds(0); /*0x6abd42*/
   if ( !dword_B0B468 ) /*0x6abd4e*/
@@ -655,13 +629,17 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   }
   Rect_Point::Set((int)(&stru_B07E58), DSurface_SidebarBounds + 16, (int)DSurface_ViewBounds.field_4); /*0x6abd98*/
   (&stru_B07E58)->MarkDirty(); /*0x6abda2*/
+  int v2; // esi
   v2 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdb2*/
+  int v23; // [esp-4h] [ebp-38h]
   v23 = stru_B04A10.ID + stru_B04A10.Height; /*0x6abdbc*/
   if ( (*((unsigned char *)&(stru_A8EB00.vfptr[31]))) ) /*0x6abdbd*/
     Rect_Point::Set((int)(&stru_B07E58), DSurface_ViewBounds.field_0 + *(unsigned int *)g_Map_VisibleRectOffset, v23); /*0x6abdce*/
   else
     Rect_Point::Set(&stru_B07E58, 0, v23); /*0x6abdd7*/
+  int v24; // [esp-4h] [ebp-38h]
   v24 = (*((int (**)(DSurface *))DSurface_Sidebar + 32))(DSurface_Sidebar) - v2; /*0x6abdf2*/
+  int v3; // eax
   v3 = (*((int (**)(DSurface *))DSurface_Sidebar + 31))(DSurface_Sidebar); /*0x6abdf5*/
   (&stru_B07E58)->SetPositionXY(v3, v24); /*0x6abdfe*/
   Rect_Point::Set((int)((GadgetClass *)&stru_B0B3A0), dword_B0B4DC, dword_B0B4E0); /*0x6abe15*/
@@ -669,8 +647,10 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   dword_B0B3E4 = -DSurface_SidebarBounds; /*0x6abe37*/
   Rect_Point::Set((GadgetClass *)&stru_B07DF8, dword_B0B3AC + dword_B0B4E4, dword_B0B3B0); /*0x6abe4c*/
   ((GadgetClass *)&stru_B07DF8)->MarkDirty(); /*0x6abe56*/
+  GadgetClass *v4; // esi
   v4 = (GadgetClass *)&stru_B07C48; /*0x6abe60*/
   dword_B07E3C = -DSurface_SidebarBounds; /*0x6abe67*/
+  int v5; // edi
   v5 = 0; /*0x6abe6c*/
   do /*0x6abea8*/
   {
@@ -687,20 +667,27 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   Rect_Point::Set((GadgetClass *)&g_SidebarFlag, dword_B0B508 + dword_B0B510, dword_B0B50C); /*0x6abef2*/
   ((GadgetClass *)&g_SidebarFlag)->MarkDirty(); /*0x6abefc*/
   dword_B0B44C = -DSurface_SidebarBounds; /*0x6abf0f*/
+  int v6; // eax
   v6 = 26; /*0x6abf1d*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6abf15*/
     v6 = 18; /*0x6abf24*/
+  LinkClass *v7; // esi
   v7 = (gamemd::LinkClass *)(&stru_B07E80); /*0x6abf44*/
+  LinkClass *v25; // [esp+10h] [ebp-24h]
   v25 = (gamemd::LinkClass *)(&stru_B07E80); /*0x6abf4d*/
+  int v8; // ebx
   v8 = (g_DSurface_ViewBounds - v6 - g_SidebarBounds + g_DSurface_SidebarBounds - 7) / 50; /*0x6abf5d*/
+  int v26; // [esp+14h] [ebp-20h]
   v26 = 2 * v8; /*0x6abf62*/
   do /*0x6abfc2*/
   {
+  int v9; // ebp
     v9 = 0; /*0x6abf66*/
     if ( v8 > 0 ) /*0x6abf6a*/
     {
       do /*0x6abfac*/
       {
+  int i; // edi
         for ( i = 0; i < 2; ++i ) /*0x6abf6c*/
         {
           (*(void (**)(LinkClass *, int, int))(*(unsigned int *)v7->vtable1 + 100))( /*0x6abf96*/
@@ -719,17 +706,24 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     v25 = v7; /*0x6abfbe*/
   }
   while ( (int)v7 < (int)&dword_B0B300 ); /*0x6abfc2*/
+  char result; // al
   result = g_TacticalRender; /*0x6abfc4*/
   if ( *(unsigned int *)&g_TacticalRender ) /*0x6abfcd*/
   {
+  char v33; // [esp+30h] [ebp-4h]
     v33 = 0; /*0x6abfd3*/
+  int v12; // edi
     v12 = 203; /*0x6abfd7*/
+  int *v13; // esi
     v13 = (int *)&unk_B07C58; /*0x6abfdc*/
     do /*0x6ac02d*/
     {
+  int v14; // ecx
       v14 = *v13; /*0x6abfe4*/
+  int v15; // edx
       v15 = v13[1]; /*0x6abfe6*/
       v28 = *(v13 - 1); /*0x6abfe9*/
+  int v16; // eax
       v16 = v13[2]; /*0x6abfed*/
       v29 = v14; /*0x6abff0*/
       v27 = v12; /*0x6abffb*/
@@ -742,19 +736,25 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
       v13 += 24; /*0x6ac021*/
     }
     while ( v12 - 203 < 4 ); /*0x6ac02d*/
+  int j; // esi
     for ( j = 0; j < 60; ++j ) /*0x6ac02f*/
       HashTable::Remove(*(HashTable **)&g_TacticalRender, j + 1000); /*0x6ac03e*/
+  int v18; // edi
     v18 = 0; /*0x6ac04d*/
     if ( v26 > 0 ) /*0x6ac051*/
     {
+  int *v19; // esi
       v19 = (int *)&unk_B07E90; /*0x6ac053*/
       do /*0x6ac0a5*/
       {
+  int v20; // edx
         v20 = *(v19 - 1); /*0x6ac05c*/
         v29 = *v19; /*0x6ac065*/
         v27 = v18 + 1000; /*0x6ac069*/
+  int v21; // ecx
         v21 = v19[1]; /*0x6ac06d*/
         v28 = v20; /*0x6ac070*/
+  int v22; // edx
         v22 = v19[2]; /*0x6ac074*/
         v30 = v21; /*0x6ac07b*/
         v32 = 0; /*0x6ac086*/
@@ -814,8 +814,8 @@ int SidebarClass::initButtons2()
 namespace gamemd {  // G42.18c ns repair
 void SidebarClass::CreateScrollButtons()
 {
-  DisplayClass *v1; // ecx
 
+  DisplayClass *v1; // ecx
   (v1)->ddtor(); /*0x653011*/
   if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x65301f*/
   {
@@ -845,14 +845,14 @@ namespace gamemd {  // G42.18c ns repair
 int SidebarClass::select()
 {
 
-  int v2; // eax
-  int result; // eax
 
   SidebarClass::updateStripVisibility(*(SidebarClass **)&g_TacticalRender); /*0x6ab99a*/
   SidebarClass::initializeStrip(*(SidebarClass **)&g_TacticalRender, 0); /*0x6ab9a7*/
+  int v2; // eax
   v2 = *&this->u32_2C; /*0x6ab9ac*/
   LOBYTE(this->field_34) = 1; /*0x6ab9b1*/
   *(unsigned char *)(v2 + 60) = 1; /*0x6ab9bb*/
+  int result; // eax
   result = MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x6ab9be*/
   g_CameoRenderFlag = 1; /*0x6ab9c3*/
   g_TooltipActive = 1; /*0x6ab9c9*/
@@ -864,13 +864,13 @@ int SidebarClass::select()
 int SidebarClass::deselect()
 {
 
-  int v2; // eax
-  int result; // eax
 
   SidebarClass::updateStripPosition(*(SidebarClass **)&g_TacticalRender); /*0x6ab9e9*/
+  int v2; // eax
   v2 = *&this->u32_2C; /*0x6ab9ee*/
   LOBYTE(this->field_34) = 0; /*0x6ab9f1*/
   *(unsigned char *)(v2 + 60) = 1; /*0x6ab9fc*/
+  int result; // eax
   result = MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 0); /*0x6aba00*/
   g_CameoRenderFlag = 1; /*0x6aba05*/
   g_TooltipActive = 1; /*0x6aba0c*/

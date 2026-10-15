@@ -811,18 +811,18 @@ LABEL_71:
 namespace gamemd {
 void sub_501A20()
 {
-  wchar_t *v0; // ebx
-  int v1; // edi
-  int v2; // esi
 
+  wchar_t *v0; // ebx
   v0 = (wchar_t *)(dword_A8ECC8); /*0x501a21*/
   if ( dword_A8ECC8 ) /*0x501a2a*/
   {
+  int v1; // edi
     v1 = 0; /*0x501a2c*/
     if ( (int)dword_A8ECC8 > 0 ) /*0x501a30*/
     {
       do /*0x501a92*/
       {
+  int v2; // esi
         v2 = *((unsigned int *)dword_A8ECBC + v1); /*0x501a38*/
         if ( v2 /*0x501a81*/
           && (*(int (**)(unsigned int))(*(unsigned int *)v2 + 44))(*((unsigned int *)dword_A8ECBC + v1)) == 6
@@ -855,8 +855,8 @@ namespace gamemd {
 int House::IsCurrentPlayer(void *a1)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = *(unsigned int *)&dword_A8B238; /*0x50b730*/
   LOBYTE(result) = this->q1EC; /*0x50b737*/
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x50b73d*/
@@ -1111,10 +1111,10 @@ LABEL_24:
 namespace gamemd {
 int House::LookupObject(int a2, void *a2_2)
 {
-  unsigned int *v2; // eax
-  int v3; // ecx
 
+  unsigned int *v2; // eax
   v2 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)a2_2->__pad_0 + 156))(a2_2); /*0x544be2*/
+  int v3; // ecx
   if ( v2 && (v3 = v2[a2_2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x544c03*/
     return dword_8288E4[*(char *)(v3 + 41)]; /*0x544c09*/
   else
@@ -1126,10 +1126,10 @@ namespace gamemd {
 int House::LoadMapFileData(int a2, char a3, void *a3_1)
 {
 
-  unsigned int *v4; // eax
 
   if ( a3 && !*&this->u32_A4 && this->u8_2F4 ) /*0x544c35*/
     ((MapClass *)this)->LoadFileData(); /*0x544c3f*/
+  unsigned int *v4; // eax
   v4 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)this->__pad_000 + 156))(this); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
 
@@ -1140,14 +1140,12 @@ namespace gamemd {
 void House::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
-  void *v2; // eax
   CCFileClass v3; // [esp+4h] [ebp-6Ch] BYREF
-  char v4[12]; // [esp+5Ch] [ebp-14h] BYREF
-  int v5; // [esp+68h] [ebp-8h]
 
   if ( *(unsigned short *)this->__pad_000 == 0xFFFF && !this->q010 ) /*0x69e09c*/
   {
     CCFileClass::Construct(&v3, (char *)this->q008); /*0x69e0ab*/
+  void *v2; // eax
     v2 = (&v3)->ReadEntireFile(); /*0x69e0b4*/
     if ( v2 ) /*0x69e0bb*/
     {
@@ -1155,7 +1153,9 @@ void House::Constructor(void *a1, void *a2, void *a3, void *a4)
       this->q010 = 1; /*0x69e0c0*/
     }
     *(unsigned int *)v3.CDFileClass = &vt_CCFileClass; /*0x69e0c8*/
+  int v5; // [esp+68h] [ebp-8h]
     v5 = 0; /*0x69e0d0*/
+  char v4[12]; // [esp+5Ch] [ebp-14h] BYREF
     Vector::Clear((int)v4); /*0x69e0d8*/
     *(unsigned int *)v3.CDFileClass = &off_7E1668; /*0x69e0e1*/
     ((BufferIOFileClass *)&v3)->Dtor(); /*0x69e0e9*/
@@ -1168,45 +1168,14 @@ namespace gamemd {
 int House::PowerBeginUpdate(AbstractClass * aP1)
 {
 
-  int v3; // edx
-  int v4; // eax
-  int v5; // edx
-  int v6; // eax
-  int v7; // edx
-  int v8; // edx
-  int v9; // eax
-  int v10; // edx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  int v14; // ecx
-  int v15; // edx
-  int v16; // eax
-  int v17; // ecx
-  int v18; // edx
-  int v19; // eax
-  int v20; // ecx
-  int v21; // edx
-  int v22; // eax
-  int v23; // ecx
-  int v24; // edx
-  int v25; // ecx
-  int v26; // ebp
-  int i; // ebx
-  int v28; // eax
-  int v29; // ebp
-  int result; // eax
-  int j; // ebx
-  int v32; // eax
-  int v33; // [esp-4h] [ebp-14h]
-  int v34; // [esp-4h] [ebp-14h]
-  Checksummer *v35; // [esp+14h] [ebp+4h]
 
   ((RadioClass *)this)->PowerDrainUpdate(aP1); /*0x70c27b*/
   Power::TimerProcess(this->controlGroup); /*0x70c289*/
   Checksummer::Add_double((Checksummer *)aP1, this->armorMultiplier[0], this->armorMultiplier[1]); /*0x70c29e*/
   Checksummer::Add_double((Checksummer *)aP1, this->firepowerMultiplier[0], this->firepowerMultiplier[1]); /*0x70c2b3*/
+  int v3; // edx
   v3 = this->idleActionTimer[0]; /*0x70c2b8*/
+  int v4; // eax
   v4 = this->idleActionTimer[2]; /*0x70c2be*/
   if ( v3 != -1 ) /*0x70c2c7*/
   {
@@ -1218,7 +1187,9 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   Power::TimerProcess(v4); /*0x70c2de*/
   Power::TimerProcess(this->displayProductionTo[0]); /*0x70c2ec*/
   Power::TimerProcess(this->cloakState); /*0x70c2fa*/
+  int v5; // edx
   v5 = this->cloakDelayTimer[0]; /*0x70c2ff*/
+  int v6; // eax
   v6 = this->cloakDelayTimer[2]; /*0x70c305*/
   if ( v5 != -1 ) /*0x70c30e*/
   {
@@ -1229,11 +1200,14 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   }
   Power::TimerProcess(v6); /*0x70c325*/
   Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->warpFactor)); /*0x70c333*/
+  int v7; // edx
   LOBYTE(v7) = this->isChronosphereImmune; /*0x70c338*/
   ((Power *)aP1)->FlagProcess(v7); /*0x70c341*/
   Power::TimerProcess(this->lastSightRange); /*0x70c34f*/
   Checksummer::Add_float((Checksummer *)aP1, LODWORD(this->pitchAngle)); /*0x70c35d*/
+  int v8; // edx
   v8 = this->diskLaserTimer[0]; /*0x70c362*/
+  int v9; // eax
   v9 = this->diskLaserTimer[2]; /*0x70c368*/
   if ( v8 != -1 ) /*0x70c371*/
   {
@@ -1244,7 +1218,9 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   }
   Power::TimerProcess(v9); /*0x70c388*/
   Power::TimerProcess(this->ammo); /*0x70c396*/
+  int v10; // edx
   v10 = this->reloadTimer[0]; /*0x70c39b*/
+  int v11; // eax
   v11 = this->reloadTimer[2]; /*0x70c3a1*/
   if ( v10 != -1 ) /*0x70c3aa*/
   {
@@ -1259,33 +1235,46 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles1); /*0x70c3eb*/
   Checksummer::Add_float((Checksummer *)aP1, (int)this->auxParticles2); /*0x70c3f9*/
   Checksummer::Add_float((Checksummer *)aP1, (int)this->firingParticles); /*0x70c407*/
+  int v12; // edx
   LOBYTE(v12) = this->isSinking; /*0x70c40c*/
+  int v13; // eax
   v13 = ((Power *)aP1)->FlagProcess(v12); /*0x70c415*/
   LOBYTE(v13) = this->isReceivingDamageEffect; /*0x70c41a*/
   ((Power *)aP1)->FlagProcess(v13); /*0x70c423*/
+  int v14; // ecx
   LOBYTE(v14) = this->isUseless; /*0x70c428*/
   ((Power *)aP1)->FlagProcess(v14); /*0x70c431*/
+  int v15; // edx
   LOBYTE(v15) = this->hasBeenAttacked; /*0x70c436*/
+  int v16; // eax
   v16 = ((Power *)aP1)->FlagProcess(v15); /*0x70c43f*/
   LOBYTE(v16) = this->isCloakableFlag; /*0x70c444*/
   Power::FlagProcess((Power *)aP1, v16); /*0x70c44d*/
+  int v17; // ecx
   LOBYTE(v17) = this->isPrimaryFactory; /*0x70c452*/
   Power::FlagProcess((Power *)aP1, v17); /*0x70c45b*/
+  int v18; // edx
   LOBYTE(v18) = this->isALoaner; /*0x70c460*/
+  int v19; // eax
   v19 = Power::FlagProcess((Power *)aP1, v18); /*0x70c469*/
   LOBYTE(v19) = this->isInPlayfield; /*0x70c46e*/
   Power::FlagProcess((Power *)aP1, v19); /*0x70c477*/
+  int v20; // ecx
   LOBYTE(v20) = this->isTether; /*0x70c47c*/
   Power::FlagProcess((Power *)aP1, v20); /*0x70c485*/
+  int v21; // edx
   LOBYTE(v21) = this->isAlternativeTether; /*0x70c48a*/
   Power::FlagProcess((Power *)aP1, v21); /*0x70c493*/
+  int v22; // eax
   v22 = *(unsigned int *)&dword_A8B238; /*0x70c498*/
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x70c4a4*/
   {
     LOBYTE(v22) = this->isOwnedByCurrentPlayer; /*0x70c4a6*/
     Power::FlagProcess((Power *)aP1, v22); /*0x70c4af*/
+  int v23; // ecx
     LOBYTE(v23) = this->isDiscoveredByCurrentPlayer; /*0x70c4b4*/
     Power::FlagProcess((Power *)aP1, v23); /*0x70c4bd*/
+  int v24; // edx
     LOBYTE(v24) = this->isDiscoveredByComputer; /*0x70c4c2*/
     v22 = Power::FlagProcess((Power *)aP1, v24); /*0x70c4cb*/
   }
@@ -1294,23 +1283,34 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   Power::TimerProcess(this->empLockRemaining); /*0x70c4e7*/
   Power::TimerProcess((unsigned __int8)this->isUnderCursor); /*0x70c4f7*/
   Power::TimerProcess((unsigned __int8)this->isCommandLineTarget); /*0x70c507*/
+  int v25; // ecx
   LOBYTE(v25) = this->sightRangeBonus; /*0x70c50c*/
   Power::FinalizeDrain((Power *)aP1, v25); /*0x70c515*/
+  int v26; // ebp
   v26 = this->currentTargets[4]; /*0x70c51a*/
   Power::TimerProcess(v26); /*0x70c523*/
+  int i; // ebx
   for ( i = 0; i < v26; ++i ) /*0x70c52c*/
   {
+  Checksummer *v35; // [esp+14h] [ebp+4h]
     v35 = *(Checksummer **)(this->currentTargetThreatValues[1] + 4 * i); /*0x70c543*/
+  int v33; // [esp-4h] [ebp-14h]
     v33 = *(unsigned int *)(this->currentTargets[1] + 4 * i) + 4; /*0x70c547*/
+  int v28; // eax
     v28 = (*(int (**)(int))(*(unsigned int *)v33 + 16))(v33); /*0x70c54a*/
     Power::TimerProcess(v28); /*0x70c550*/
     Power::TimerProcess((int)v35); /*0x70c55c*/
   }
+  int v29; // ebp
   v29 = this->attackedTargets[4]; /*0x70c566*/
+  int result; // eax
   result = Power::TimerProcess(v29); /*0x70c56f*/
+  int j; // ebx
   for ( j = 0; j < v29; ++j ) /*0x70c578*/
   {
+  int v34; // [esp-4h] [ebp-14h]
     v34 = *(unsigned int *)(this->attackedTargets[1] + 4 * j) + 4; /*0x70c586*/
+  int v32; // eax
     v32 = (*(int (**)(int))(*(unsigned int *)v34 + 16))(v34); /*0x70c589*/
     result = Power::TimerProcess(v32); /*0x70c58f*/
   }
@@ -1322,7 +1322,6 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
 namespace gamemd {
 unsigned int * sub_72F350()
 {
-  unsigned int *result; // eax
 
   FileTree::CleanupAll(); /*0x72f350*/
   LoadingScreen::FreeResources(); /*0x72f355*/
@@ -1342,6 +1341,7 @@ unsigned int * sub_72F350()
   LoadPaletteSimple(off_844BF0, &dword_B0FBE4, &dword_B0FBE8); /*0x72f3da*/
   LoadPaletteSimple(off_844C04, &dword_B0FBFC, &dword_B0FC00); /*0x72f3ef*/
   LoadPaletteSimple(off_844C08, &dword_B0FC04, &dword_B0FC08); /*0x72f404*/
+  unsigned int *result; // eax
   result = SetupScreenBuffers(dword_A8EB84, dword_A8EB88); /*0x72f415*/
   byte_B0FC0C = 1; /*0x72f41a*/
   return result; /*0x72f421*/
@@ -1351,22 +1351,15 @@ unsigned int * sub_72F350()
 namespace gamemd {
 void House_Play_6D1660(int a2)
 {
+
   unsigned char *v2; // ecx
   unsigned char *v3; // edi
-  char result; // al
-  ShapeButtonClass *v5; // esi
-  int *v6; // esi
-  int v7; // eax
-  ShapeButtonClass *v8; // eax
-  int v9; // edx
-  int v10; // edx
-  int v12[6]; // [esp+Ch] [ebp-1Ch] BYREF
-  char v13; // [esp+24h] [ebp-4h]
-
   v3 = v2; /*0x6d1664*/
+  char result; // al
   result = v2[21828]; /*0x6d1666*/
   if ( result ) /*0x6d166e*/
   {
+  ShapeButtonClass *v5; // esi
     v5 = &stru_B0C1C0; /*0x6d1675*/
     do /*0x6d168b*/
     {
@@ -1375,12 +1368,15 @@ void House_Play_6D1660(int a2)
     }
     while ( (int)v5 < (int)&dword_B0CB20 ); /*0x6d168b*/
     (*(void (**)(unsigned char *, GadgetClass *, int))(*(unsigned int *)v3 + 52))(v3, &stru_B0CCB0, a2); /*0x6d1696*/
+  int *v6; // esi
     v6 = g_ObjectTrackingPool; /*0x6d1699*/
     do /*0x6d16d0*/
     {
+  int v7; // eax
       v7 = *v6; /*0x6d169e*/
       if ( *v6 >= 0 && v7 < 25 ) /*0x6d16a7*/
       {
+  ShapeButtonClass *v8; // eax
         v8 = &stru_B0C1C0 + 8 * v7; /*0x6d16af*/
         if ( v8 ) /*0x6d16b6*/
           HashTable::Remove(*(HashTable **)&g_TacticalRender, *(unsigned int *)v8[3].__pad_0); /*0x6d16c2*/
@@ -1389,14 +1385,17 @@ void House_Play_6D1660(int a2)
     }
     while ( (int)v6 < (int)byte_B0CBDC ); /*0x6d16d0*/
     HashTable::Remove(*(HashTable **)&g_TacticalRender, 240); /*0x6d16dd*/
+  int v9; // edx
     v9 = *(unsigned int *)v3; /*0x6d16e2*/
     v3->q5544 = 0; /*0x6d16eb*/
     (*(void (**)(unsigned char *, GadgetClass *))(v9 + 48))(v3, &stru_B0CC40); /*0x6d16f2*/
     if ( &stru_B0CC40 ) /*0x6d16fd*/
     {
+  int v12[6]; // [esp+Ch] [ebp-1Ch] BYREF
       v12[1] = stru_B0CC40.Width; /*0x6d1710*/
       v12[2] = stru_B0CC40.Height; /*0x6d171a*/
       v12[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d1724*/
+  char v13; // [esp+24h] [ebp-4h]
       v13 = 0; /*0x6d172f*/
       v12[0] = dword_B0CC64; /*0x6d1734*/
       v12[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d1738*/
@@ -1404,6 +1403,7 @@ void House_Play_6D1660(int a2)
       HashTable::Remove(*(HashTable **)&g_TacticalRender, dword_B0CC64); /*0x6d1744*/
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)v12); /*0x6d1754*/
     }
+  int v10; // edx
     v10 = *(unsigned int *)v3; /*0x6d1759*/
     v3->u32_5545 = 1; /*0x6d175f*/
     return (*(char (**)(unsigned char *, unsigned int))(v10 + 56))(v3, 0); /*0x6d1766*/
@@ -1415,19 +1415,19 @@ void House_Play_6D1660(int a2)
 namespace gamemd {
 char sub_637A10()
 {
-  char result; // al
-  unsigned char v1[108]; // [esp-70h] [ebp-ECh] BYREF
-  int v2; // [esp-4h] [ebp-80h]
-  char v3[108]; // [esp+Ch] [ebp-70h] BYREF
-  int16_t v4; // [esp+78h] [ebp-4h]
-  char v5; // [esp+7Ah] [ebp-2h]
 
+  char result; // al
   result = byte_AC4CF4; /*0x637a10*/
   if ( byte_AC4CF4 ) /*0x637a1f*/
   {
+  char v3[108]; // [esp+Ch] [ebp-70h] BYREF
     EventClass::AddEvent(v3, dword_A83D4C->relatedTagsCount, 0x2Bu); /*0x637a30*/
+  unsigned char v1[108]; // [esp-70h] [ebp-ECh] BYREF
     memcpy(v1, v3, sizeof(v1)); /*0x637a43*/
+  int v2; // [esp-4h] [ebp-80h]
+  int16_t v4; // [esp+78h] [ebp-4h]
     (*((unsigned short *)&(v2))) = v4; /*0x637a45*/
+  char v5; // [esp+7Ah] [ebp-2h]
     (((unsigned char *)&(v2))[2]) = v5; /*0x637a47*/
     Network::RecordEvent( /*0x637a48*/
       *(int64_t *)v1,

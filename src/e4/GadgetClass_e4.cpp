@@ -19,8 +19,8 @@ namespace gamemd {  // G42.18 ns repair
 ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char a7, void *a7_1)
 {
 
-  unsigned int *result; // eax
 
+  unsigned int *result; // eax
   result = (unsigned int *)(this->vtable1); /*0x4e12f4*/
   this->Height = a3; /*0x4e12fb*/
   this->Width = a2; /*0x4e1302*/
@@ -44,13 +44,13 @@ namespace gamemd {
 ControlClass GadgetClass::Dtor(void *a1)
 {
 
-  ShpButtonClass *v1; // eax
-  int v2; // eax
 
   /* X11: vtable install elided (implicit via GadgetClass virtuals 0x4e1390) */
+  ShpButtonClass *v1; // eax
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e139f*/
   {
+  int v2; // eax
     v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
     *(unsigned int *)this->Hovered = v2; /*0x4e13a7*/
@@ -72,12 +72,6 @@ namespace gamemd {
 ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
 
-  int ListClass_field_0x14; // ecx
-  int ListClass_field_0x10; // eax
-  int ListClass_field_0x18; // edx
-  int i; // edi
-  int v7; // eax
-  int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
   if ( !GadgetClass::ClearState((GadgetClass *)this, aP1) ) /*0x55792e*/
     return (gamemd::ControlClass)(0); /*0x557a0b*/
@@ -87,9 +81,13 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     this->Height,
     this->Visible,
     this->ID);
+  int ListClass_field_0x14; // ecx
   ListClass_field_0x14 = this->Visible; /*0x55796b*/
+  int ListClass_field_0x10; // eax
   ListClass_field_0x10 = this->Height; /*0x55796e*/
+  int v9[4]; // [esp+10h] [ebp-10h] BYREF
   v9[0] = this->Width; /*0x557971*/
+  int ListClass_field_0x18; // edx
   ListClass_field_0x18 = this->ID; /*0x557975*/
   v9[2] = ListClass_field_0x14; /*0x557978*/
   v9[3] = ListClass_field_0x18; /*0x55797c*/
@@ -97,8 +95,10 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
   if ( this->u32_44 ) /*0x557994*/
   {
+  int i; // edi
     for ( i = 0; i < this->q050; ++i ) /*0x5579a2*/
     {
+  int v7; // eax
       v7 = i + this->u32_170; /*0x5579ad*/
       if ( this->u32_44 > v7 ) /*0x5579b1*/
         (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->vtable1 + 200))( /*0x5579e0*/
@@ -287,8 +287,6 @@ namespace gamemd {
 AbstractClass * * GadgetClass::SetTooltip(void * String)
 {
 
-  int v3; // eax
-  wchar_t *v4; // eax
 
   if ( this->u32_28 ) /*0x623564*/
   {
@@ -299,7 +297,9 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
   {
     if ( *String ) /*0x623583*/
     {
+  int v3; // eax
       v3 = wcslen(String); /*0x62358a*/
+  wchar_t *v4; // eax
       v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
       this->u32_28 = (unsigned int)(v4); /*0x62359b*/
       wcscpy(v4, String); /*0x62359e*/
@@ -313,8 +313,8 @@ namespace gamemd {
 ControlClass GadgetClass::Show()
 {
 
-  int v1; // eax
 
+  int v1; // eax
   v1 = *(unsigned int *)this->vtable1; /*0x723ea0*/
   this->u32_2D = 1; /*0x723ea2*/
   return (gamemd::ControlClass)((*(int (**)(void))(v1 + 72))());

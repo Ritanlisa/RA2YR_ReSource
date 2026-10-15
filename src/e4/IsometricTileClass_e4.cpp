@@ -16,7 +16,6 @@ namespace gamemd {  // g57w12-r nsfix (orphan re-wrap)
 // 0x543780
 IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
 {
-  int v4; // eax
 
   this->ObjectClass::ctor(); /*0x543786*/
   this->u32_AC = (unsigned int)(*(IsometricTileClass *)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[328] + 4 * aP1)); /*0x54379c*/
@@ -38,6 +37,7 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
          *(unsigned int *)&DataGlobal_87F758 + *(unsigned int *)&DataGlobal_87F764,
          0) )
   {
+  int v4; // eax
     v4 = (*(unsigned int *)&DataGlobal_87F760)++; /*0x543862*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_87F754 + 4 * v4) = (unsigned int)(this); /*0x543871*/
   }

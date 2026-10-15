@@ -55,17 +55,14 @@
 namespace gamemd {  // G42.18 ns repair
 char SkirmishSetup_Setup(HWND hWnd, int a2)
 {
-  int v3; // esi
   char result; // al
-  LPARAM v5; // esi
-  wchar_t *v6; // eax
-  LRESULT v7; // edi
-  bool v8; // [esp+13h] [ebp-9h]
-  int i; // [esp+14h] [ebp-8h]
 
   SendMessageA(hWnd, 0x184u, 0, 0); /*0x5d614d*/
+  bool v8; // [esp+13h] [ebp-9h]
   v8 = ((unsigned int *)(dword_A8B238))[0] == 5; /*0x5d6156*/
+  int v3; // esi
   v3 = 0; /*0x5d615b*/
+  int i; // [esp+14h] [ebp-8h]
   for ( i = 0; ; v3 = i ) /*0x5d615d*/
   {
     result = g_MultiplayerMode; /*0x5d6161*/
@@ -89,6 +86,7 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
       dword_ABFDB0 = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
     }
+  LPARAM v5; // esi
     v5 = *((unsigned int *)dword_ABFDA4 + v3); /*0x5d6200*/
     if ( (*(unsigned char *)(v5 + 61) || ((unsigned int *)(dword_A8B238))[0] != 4 || !Network::IsMultiplayerActive()) /*0x5d6267*/
       && (*(unsigned char *)(v5 + 62) || ((unsigned int *)(dword_A8B238))[0] != 4 || !Network::IsLobbyFeature())
@@ -97,7 +95,9 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
        || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 188))(v5))
       && (!v8 || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 64))(v5)) )
     {
+  wchar_t *v6; // eax
       v6 = (wchar_t *)(((wchar_t **)(v5 + 32))->GetOrEmpty_Alt());
+  LRESULT v7; // edi
       v7 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v6); /*0x5d6280*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d628b*/
         SendMessageA(hWnd, 0x186u, v7, 0); /*0x5d6296*/
@@ -586,14 +586,14 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
 namespace gamemd {
 WPARAM SkirmishSetup_Setup_5E70D0(HWND hDlg, int a2)
 {
-  WPARAM v4; // ebp
-  signed int v5; // esi
-  LRESULT v7; // [esp+8h] [ebp-4h]
 
   if ( !a2 ) /*0x5e70dc*/
     return -1; /*0x5e70de*/
+  WPARAM v4; // ebp
   v4 = 0; /*0x5e70ee*/
+  signed int v5; // esi
   v5 = 0; /*0x5e7100*/
+  LRESULT v7; // [esp+8h] [ebp-4h]
   v7 = SendDlgItemMessageA(hDlg, 1363, 0x18Bu, 0, 0); /*0x5e7104*/
   if ( v7 > 0 ) /*0x5e7108*/
   {

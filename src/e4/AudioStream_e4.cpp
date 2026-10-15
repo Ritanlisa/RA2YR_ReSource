@@ -73,19 +73,17 @@ int AudioStream::ReleaseChannel(void *a1)
 namespace gamemd {
 void AudioStream::DestroyAll(void * Block)
 {
-  int v2; // eax
-  AudioQueue *Next; // edi
-  AudioStream *i; // ebx
-  int v5; // eax
-  int v6; // ecx
 
   ++*(unsigned int *)off_815E98[3].__pad_0; /*0x4033cc*/
   LinkedList::Init((LinkedList *)Block); /*0x4033d1*/
+  int v2; // eax
   v2 = *(unsigned int *)off_815E98[3].__pad_0 - 1; /*0x4033df*/
   *(unsigned int *)off_815E98[3].__pad_0 = v2; /*0x4033e2*/
   if ( v2 < 0 ) /*0x4033e5*/
     *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x4033ed*/
+  AudioQueue *Next; // edi
   Next = (AudioQueue *)((AudioQueue *)Block->AudioQueue_F8))->GetNext(); /*0x403401*/
+  AudioStream *i; // ebx
   for ( i = (AudioStream *)Next; Next; i = (AudioStream *)Next ) /*0x403407*/
   {
     Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x403412*/
@@ -93,7 +91,9 @@ void AudioStream::DestroyAll(void * Block)
   }
   Block->u32_18->vt_slot_32(); /*0x403427*/
   *(unsigned int *)(Block->u32_18 + 4 * (int)Block->u32_1C + 28) = 0; /*0x403430*/
+  int v5; // eax
   v5 = Block->u32_18; /*0x403438*/
+  int v6; // ecx
   v6 = *(unsigned int *)(v5 + 16) - 1; /*0x40343e*/
   *(unsigned int *)(v5 + 16) = v6; /*0x403440*/
   if ( v6 < 0 ) /*0x403446*/
@@ -157,18 +157,17 @@ namespace gamemd {
 int AudioStream::SetupPlayback()
 {
 
-  char *v1; // edx
-  int v2; // eax
-  int v3; // esi
-  int AudioStream_field_0x24; // edi
-  char *v6; // edx
 
+  char *v1; // edx
   v1 = (char *)this->u32_A8; /*0x404700*/
+  int v2; // eax
   v2 = 0; /*0x404707*/
+  int v3; // esi
   v3 = 0; /*0x404709*/
   this->u32_1E0 = (unsigned int)(v1); /*0x40470e*/
   if ( !v1 || (this->u32_18 & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/
+  int AudioStream_field_0x24; // edi
   AudioStream_field_0x24 = this->q024; /*0x40471c*/
   if ( *(unsigned int *)(AudioStream_field_0x24 + 88) >= 0x21u ) /*0x404727*/
     return (int)this->q028 + 28; /*0x404727*/
@@ -189,6 +188,7 @@ int AudioStream::SetupPlayback()
     *(unsigned int *)(AudioStream_field_0x24 + 12) = 0; /*0x404763*/
     return 0; /*0x40476a*/
   }
+  char *v6; // edx
   v6 = (char *)(&this->q160); /*0x40476b*/
   do /*0x404780*/
   {
@@ -209,31 +209,29 @@ int AudioStream::SetupPlayback()
 namespace gamemd {
 int AudioStream::SelectRandom()
 {
-  unsigned int *v2; // ecx
-  int v3; // edx
-  int v4; // eax
-  int v5; // eax
-  int v6; // edi
-  unsigned int *v8; // eax
   int v9; // ecx
-  int v10; // ecx
-  int v12; // eax
 
+  unsigned int *v2; // ecx
   v2 = (unsigned int *)(this->q090); /*0x4047b3*/
+  int v3; // edx
   v3 = v2[4]; /*0x4047b9*/
   if ( v2[22] >= 0x21u && (this->u32_18 & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/
+  int v4; // eax
   v4 = this->u32_1E0; /*0x4047cb*/
   if ( v4 && (this->u32_18 & 0x20) == 0 ) /*0x4047d9*/
   {
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
+  int v5; // eax
       v5 = Random::Range(&Randomizer_Global, 0, v4 - 1); /*0x4047ea*/
+  int v6; // edi
       v6 = this->u32_1E0 - 1; /*0x404803*/
       this->u32_AC = *&this->u8_4 * v5 + 352); /*0x404804*/
       v5 = v5; /*0x40480c*/
       if ( v5 < v6 ) /*0x40480f*/
       {
+  unsigned int *v8; // eax
         v8 = &this->u8_4 * v5 + 352); /*0x404811*/
         do /*0x404825*/
         {
@@ -254,6 +252,7 @@ int AudioStream::SelectRandom()
   }
   if ( (v3 & 1) != 0 && (this->u32_18 & 0x20) == 0 ) /*0x404855*/
   {
+  int v10; // ecx
     v10 = v2[19]; /*0x404857*/
     if ( !v10 || this->u32_1E4 < v10 - 1 ) /*0x404867*/
     {
@@ -265,6 +264,7 @@ int AudioStream::SelectRandom()
     return 0; /*0x404881*/
   if ( (this->u32_18 & 0x10) != 0 ) /*0x404887*/
     return 0; /*0x404887*/
+  int v12; // eax
   v12 = this->u32_A8; /*0x404889*/
   if ( v12 < 1 ) /*0x404892*/
     return 0; /*0x4048aa*/
@@ -277,26 +277,24 @@ int AudioStream::SelectRandom()
 namespace gamemd {
 void AudioStream::CleanupChannels()
 {
-  Voice *v1; // edi
-  int v2; // esi
   DListNode *v3; // edi
-  int v4; // ecx
-  int v5; // ebp
-  RefCount **v6; // edi
-  DListNode *v8; // [esp+8h] [ebp-4h]
 
   if ( g_AudioConfigState ) /*0x404e7c*/
   {
+  int v2; // esi
     v2 = *(unsigned int *)g_AudioStreamObject; /*0x404e82*/
     if ( *(DListNode **)g_AudioStreamObject != &g_AudioStreamObject ) /*0x404e8e*/
     {
+  Voice *v1; // edi
       v1 = v1; /*0x404e95*/
       do /*0x404fb6*/
       {
         v3 = *(DListNode **)v2; /*0x404e96*/
+  DListNode *v8; // [esp+8h] [ebp-4h]
         v8 = *(DListNode **)v2; /*0x404e98*/
         if ( (v2->nextArrayIndex & 1) == 0 ) /*0x404ea1*/
         {
+  int v4; // ecx
           v4 = v2->fallRate; /*0x404ea7*/
           if ( v4 && v2 == *(unsigned int *)(v4 + 192) ) /*0x404eb7*/
           {
@@ -312,9 +310,11 @@ void AudioStream::CleanupChannels()
             *(unsigned int *)(v2->fallRate + 156) = 0; /*0x404f1d*/
             v2->fallRate = 0; /*0x404f23*/
           }
+  int v5; // ebp
           v5 = 0; /*0x404f2f*/
           if ( v2->lineTrailer > 0 ) /*0x404f33*/
           {
+  RefCount **v6; // edi
             v6 = &v2->owningHouseIndex; /*0x404f35*/
             do /*0x404f4d*/
             {
@@ -351,20 +351,20 @@ namespace gamemd {
 int AudioStream::ReadStreamAndSyncPosition()
 {
 
-  int v2; // esi
-  int v3; // eax
-  int v4; // ecx
-  int v5; // eax
 
+  int v2; // esi
   v2 = this->u32_C0; /*0x4079c4*/
   ReadAudioStream(*(int **)(v2 + 56), *(unsigned int *)(v2 + 144)); /*0x4079d3*/
   AudioStream::ReadStreamAndReturn(*(AudioStream **)(v2 + 56)); /*0x4079db*/
+  int v3; // eax
   v3 = *(unsigned int *)(v2 + 160); /*0x4079e3*/
+  int v4; // ecx
   v4 = *(unsigned int *)(*(unsigned int *)(v2 + 56) + 8); /*0x4079e9*/
   if ( v3 <= v4 ) /*0x4079ee*/
     *(unsigned int *)(v2 + 144) = v3; /*0x4079f8*/
   else
     *(unsigned int *)(v2 + 144) = v4; /*0x4079f0*/
+  int v5; // eax
   v5 = *(unsigned int *)(v2 + 144); /*0x4079fe*/
   *&this->u32_174 = v5; /*0x407a04*/
   *&this->u32_178 = v5; /*0x407a0a*/
@@ -378,16 +378,16 @@ namespace gamemd {
 int AudioStream::SetPlaybackCallback()
 {
 
-  int v1; // esi
-  int v2; // edx
-  int v3; // eax
 
+  int v1; // esi
   v1 = this->u32_C0; /*0x407a31*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a3b*/
   {
     *(unsigned int *)(v1 + 32) = Audio::Callback(); /*0x407a42*/
+  int v2; // edx
     *(unsigned int *)(v1 + 36) = v2; /*0x407a45*/
   }
+  int v3; // eax
   v3 = *(unsigned int *)(v1 + 12); /*0x407a48*/
   LOBYTE(v3) = v3 & 0xF8; /*0x407a4b*/
   *(unsigned int *)(v1 + 12) = v3; /*0x407a4d*/
@@ -400,16 +400,16 @@ int AudioStream::SetPlaybackCallback()
 namespace gamemd {
 int AudioStream::ProcessCallback(void *a1_1)
 {
-  int v1; // esi
-  int v2; // edx
-  int v3; // eax
 
+  int v1; // esi
   v1 = a1_1->AudioStream_field_0xC0[0]; /*0x407a61*/
   if ( (*(unsigned char *)(v1 + 12) & 3) != 0 ) /*0x407a6b*/
   {
     *(unsigned int *)(v1 + 32) = Audio::Callback(); /*0x407a72*/
+  int v2; // edx
     *(unsigned int *)(v1 + 36) = v2; /*0x407a75*/
   }
+  int v3; // eax
   v3 = *(unsigned int *)(v1 + 12); /*0x407a78*/
   (*((unsigned char *)&(v3))) = v3 & 0xF8; /*0x407a7b*/
   *(unsigned int *)(v1 + 12) = v3; /*0x407a7d*/
@@ -451,22 +451,10 @@ int AudioStream::ReadStreamAndReturn(void *a1_1)
 namespace gamemd {
 int AudioStream::ReadSamples(const void * a2, void *a2_2)
 {
-  AudioStream *v2; // ebx
-  int v3; // edx
-  int *v5; // ecx
-  unsigned short *v6; // ebx
-  unsigned int v7; // edi
-  int v8; // ebp
-  unsigned short *SamplePosition; // esi
-  unsigned short *v10; // eax
-  unsigned short *v11; // edx
-  unsigned int Stream_field_04; // [esp+18h] [ebp-E8h]
-  int v14; // [esp+1Ch] [ebp-E4h]
-  unsigned int v15[4]; // [esp+20h] [ebp-E0h] BYREF
-  unsigned int v16[27]; // [esp+30h] [ebp-D0h] BYREF
-  unsigned int v17[25]; // [esp+9Ch] [ebp-64h] BYREF
 
+  AudioStream *v2; // ebx
   v2 = (gamemd::AudioStream *)(a2_2); /*0x4a33a7*/
+  int v3; // edx
   v3 = *(unsigned int *)&a2_2->__pad_5C[20]; /*0x4a33ac*/
   if ( !v3 ) /*0x4a33b7*/
     return -1; /*0x4a33b7*/
@@ -474,8 +462,10 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
   {
     if ( !dword_8A0E08 || !*(unsigned int *)&dword_8A0E08[112] ) /*0x4a33d8*/
       return -1; /*0x4a33c6*/
+  unsigned int v15[4]; // [esp+20h] [ebp-E0h] BYREF
     v15[2] = 256; /*0x4a33e7*/
     v15[3] = 256; /*0x4a33eb*/
+  unsigned int v17[25]; // [esp+9Ch] [ebp-64h] BYREF
     memset(v17, 0, sizeof(v17)); /*0x4a33f8*/
     v15[0] = 0; /*0x4a3401*/
     v15[1] = 0; /*0x4a340f*/
@@ -490,6 +480,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
   }
   else
   {
+  unsigned int v16[27]; // [esp+30h] [ebp-D0h] BYREF
     memset(v16, 0, sizeof(v16)); /*0x4a3443*/
     v16[0] = 108; /*0x4a344e*/
     if ( (*(int (__stdcall **)(int, unsigned int, unsigned int *, int, unsigned int))(*(unsigned int *)v3 + 100))(v3, 0, v16, 2081, 0) )
@@ -502,21 +493,29 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
       {
         if ( *(unsigned int *)v2->__pad_000 == 1 ) /*0x4a347f*/
         {
+  int *v5; // ecx
           v5 = (int *)g_ZBufferDescriptor; /*0x4a3485*/
           if ( g_ZBufferDescriptor ) /*0x4a348d*/
           {
             if ( *(unsigned int *)&g_VisibleSurfaceDescriptor ) /*0x4a3499*/
             {
+  unsigned short *v6; // ebx
               v6 = (unsigned short *)v16[9]; /*0x4a34a6*/
+  unsigned int v7; // edi
               v7 = 0; /*0x4a34aa*/
+  int v8; // ebp
               v8 = v16[4] >> 1; /*0x4a34ac*/
+  int v14; // [esp+1Ch] [ebp-E4h]
               v14 = v16[4] >> 1; /*0x4a34b0*/
+  unsigned int Stream_field_04; // [esp+18h] [ebp-E8h]
               Stream_field_04 = g_ZBufferDescriptor[2].Stream_field_04; /*0x4a34b4*/
               if ( Stream_field_04 ) /*0x4a34b8*/
               {
                 do /*0x4a353c*/
                 {
+  unsigned short *SamplePosition; // esi
                   SamplePosition = (unsigned short *)((Audio *)(v5))->GetSamplePosition(0, v7 - v5->Width); /*0x4a34d4*/
+  unsigned short *v10; // eax
                                     v10 = (unsigned short *)StreamClass::ReadAndSeek((int)(/*0x4a34df*/                                    *(int **)&g_VisibleSurfaceDescriptor),                                    0,                                    v7 - *(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4));
                   if ( !SamplePosition || !v10 ) /*0x4a34ee*/
                     break; /*0x4a34ee*/
@@ -529,6 +528,7 @@ int AudioStream::ReadSamples(const void * a2, void *a2_2)
                       else
                         *v6 = *SamplePosition; /*0x4a34fd*/
                       v5 = (int *)g_ZBufferDescriptor; /*0x4a3507*/
+  unsigned short *v11; // edx
                       v11 = SamplePosition + 1; /*0x4a350d*/
                       ++v6; /*0x4a3510*/
                       if ( (unsigned int)(SamplePosition + 1) >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4a3516*/
@@ -1026,9 +1026,9 @@ namespace gamemd {
 int AudioStream::SetFlag4C(void *a1)
 {
 
-  int result; // eax
 
   ((void (__cdecl *)(AudioStream *, int, unsigned int, unsigned int))this->q058)(this, 4, 0, 0); /*0x7bd27a*/
+  int result; // eax
   result = this->u32_7BC; /*0x7bd27d*/
   LOBYTE(result) = result | 0x40; /*0x7bd286*/
   this->u32_7BC = result; /*0x7bd288*/
@@ -1041,36 +1041,30 @@ namespace gamemd {
 int AudioStream::CalcReadPos()
 {
 
-  int v2; // ebp
-  int v3; // eax
-  int v4; // edi
-  unsigned int v5; // ecx
-  char *v6; // esi
-  unsigned int v7; // ebp
-  unsigned int v8; // eax
-  unsigned int v9; // ecx
-  int v11; // esi
-  unsigned int v12; // ecx
-  unsigned int v13; // edx
-  unsigned int v14; // ecx
-  unsigned int v15; // esi
-  unsigned int i; // ecx
-  unsigned int v17; // [esp+10h] [ebp-Ch]
 
   if ( (this->u32_84 & 1) == 0 ) /*0x7bd2e1*/
     return -1; /*0x7bd2e1*/
   if ( !this->u32_78C ) /*0x7bd2e7*/
     return -1; /*0x7bd2e7*/
+  int v2; // ebp
   v2 = this->u32_7B0; /*0x7bd2f5*/
   if ( !v2 ) /*0x7bd2fd*/
     return -1; /*0x7bd2fd*/
+  int v3; // eax
   v3 = this->u32_7AC; /*0x7bd303*/
+  int v4; // edi
   v4 = this->u32_790; /*0x7bd30f*/
+  unsigned int v5; // ecx
   v5 = *(unsigned int *)this->u32_9C; /*0x7bd315*/
+  char *v6; // esi
   v6 = (char *)(v3 + this->u32_7A8); /*0x7bd31b*/
+  unsigned int v7; // ebp
   v7 = v2 - v3; /*0x7bd31d*/
+  unsigned int v17; // [esp+10h] [ebp-Ch]
   v17 = this->u32_790 / v5; /*0x7bd32b*/
+  unsigned int v8; // eax
   v8 = (v4 + v7) / v5; /*0x7bd332*/
+  unsigned int v9; // ecx
   v9 = this->u32_79C; /*0x7bd334*/
   if ( v8 >= v9 ) /*0x7bd33c*/
     v8 -= v9; /*0x7bd33e*/
@@ -1081,10 +1075,13 @@ int AudioStream::CalcReadPos()
   }
   if ( v17 > v8 ) /*0x7bd36a*/
   {
+  unsigned int v13; // edx
     v13 = (unsigned int)this->q098 - v4; /*0x7bd3cd*/
     memcpy((void *)(this->u32_78C + v4), v6, v13); /*0x7bd3e4*/
     memcpy(this->u32_183), &v6[v13], v7 - v13); /*0x7bd404*/
+  unsigned int v14; // ecx
     v14 = v17; /*0x7bd40f*/
+  unsigned int v15; // esi
     v15 = this->u32_79C; /*0x7bd413*/
     this->u32_790 = v7 - v13; /*0x7bd41b*/
     this->u32_7B0 = 0; /*0x7bd421*/
@@ -1098,14 +1095,17 @@ int AudioStream::CalcReadPos()
       }
       while ( v14 < this->u32_79C ); /*0x7bd443*/
     }
+  unsigned int i; // ecx
     for ( i = 0; i < v8; *(unsigned char *)(this->u32_794 + i - 1) = 1 ) /*0x7bd449*/
       ++i; /*0x7bd451*/
     return -1; /*0x7bd459*/
   }
   memcpy((void *)(this->u32_78C + v4), v6, v7); /*0x7bd37b*/
+  int v11; // esi
   v11 = this->u32_790; /*0x7bd384*/
   this->u32_7B0 = 0; /*0x7bd38c*/
   this->u32_7AC = 0; /*0x7bd392*/
+  unsigned int v12; // ecx
   v12 = v17; /*0x7bd398*/
   this->u32_790 = v7 + v11; /*0x7bd3a0*/
   if ( v17 >= v8 ) /*0x7bd3a6*/
@@ -1125,29 +1125,7 @@ namespace gamemd {
 int AudioStream::ProcessStream()
 {
 
-  int v1; // esi
-  int v2; // ebp
-  int *v3; // ebx
-  int v4; // edi
-  char v5; // al
-  int v6; // eax
-  int v7; // eax
-  int v8; // eax
-  int v10; // eax
-  int Position; // ecx
-  int v12; // eax
-  int v13; // eax
-  int v14; // edx
-  signed int v15; // ecx
-  int v16; // ecx
-  int v17; // edi
-  int v18; // eax
   int v19; // edi
-  int v20; // ecx
-  int v21; // edi
-  int v22; // eax
-  int v23; // eax
-  int v24; // eax
   void (__cdecl *v25)(int, int, unsigned int, unsigned int); // eax
   int v26; // eax
   int v27; // eax
@@ -1159,9 +1137,13 @@ int AudioStream::ProcessStream()
   int v33; // [esp+10h] [ebp-Ch]
   signed int v35; // [esp+18h] [ebp-4h]
 
+  int v1; // esi
   v1 = this; /*0x7bea86*/
+  int v2; // ebp
   v2 = this->u32_1A0; /*0x7bea8d*/
+  int *v3; // ebx
   v3 = &this->u32_1A0; /*0x7bea93*/
+  int v4; // edi
   v4 = &this->q040; /*0x7bea99*/
   if ( (*(unsigned char *)(v2 + 20) & 1) != 0 )
   {
@@ -1169,6 +1151,7 @@ int AudioStream::ProcessStream()
     {
       this->u32_6D0 = *(unsigned int *)(this->u32_1A0 + 28); /*0x7beb04*/
       this->u32_1A4 |= 8u; /*0x7beb10*/
+  int v10; // eax
       v10 = *(unsigned int *)(v2 + 20); /*0x7beb13*/
       LOBYTE(v10) = v10 | 0x80; /*0x7beb16*/
       *(unsigned int *)(v2 + 20) = v10; /*0x7beb18*/
@@ -1180,14 +1163,18 @@ int AudioStream::ProcessStream()
       CalcAudioStreamOffset((int)(this), 60 * *(unsigned int *)(v2 + 28) / this->u32_74); /*0x7beb48*/
       return -1; /*0x7beb57*/
     }
+  int Position; // ecx
     Position = AudioStream::GetPosition((AudioStream *)this); /*0x7beb5f*/
+  int v12; // eax
     v12 = v3[332]; /*0x7beb66*/
+  int v13; // eax
     if ( (v3[1] & 2) != 0 ) /*0x7beb6c*/
       v13 = v12 + 2; /*0x7beb71*/
     else
       v13 = v12 + 1; /*0x7beb6e*/
     if ( Position >= 60 * v13 / v4->u32_34 )
     {
+  signed int v15; // ecx
       v15 = Audio_Process_7BEE20(v1, v4, (int)v3, v2, Position); /*0x7bebfd*/
       v35 = v15; /*0x7bec04*/
       if ( (*(unsigned char *)(v4 + 64) & 4) != 0 ) /*0x7bec08*/
@@ -1204,14 +1191,19 @@ int AudioStream::ProcessStream()
         {
           if ( (*(unsigned char *)(v2 + 20) & 2) != 0 ) /*0x7bec50*/
             break; /*0x7bec50*/
+  int v16; // ecx
           v16 = v1->u32_140; /*0x7bec58*/
+  int v17; // edi
           v17 = *(unsigned int *)(*v3 + 28); /*0x7bec5e*/
+  int v18; // eax
           v18 = v3[332]; /*0x7bec61*/
           if ( v17 < v18 || v17 > v16 )
           {
+  int v20; // ecx
             v20 = v16 - v3[332]; /*0x7bec8a*/
             if ( v20 >= 0 )
             {
+  int v21; // edi
               v21 = v17 - v1->u32_128; /*0x7bec92*/
               v19 = v21 >= 0 ? v21 + v20 + 1 : v1->u32_70 / 3;
             }
@@ -1226,6 +1218,7 @@ int AudioStream::ProcessStream()
           }
           if ( v19 > v33 ) /*0x7beca6*/
             break; /*0x7beca6*/
+  int v22; // eax
           v22 = *(unsigned int *)(v2 + 20); /*0x7becac*/
           if ( (v22 & 4) != 0 ) /*0x7becb1*/
           {
@@ -1235,11 +1228,13 @@ int AudioStream::ProcessStream()
                                        (unsigned __int8 *)(*(unsigned int *)(v2 + 8) + *(unsigned int *)(v2 + 36)),
                                        *(char **)(v2 + 8),
                                        v1->u32_770);
+  int v23; // eax
               v23 = *(unsigned int *)(v2 + 20); /*0x7becd0*/
               LOBYTE(v23) = v23 & 0xF7; /*0x7becd6*/
               *(unsigned int *)(v2 + 20) = v23; /*0x7becd8*/
             }
             memcpy(v3 + 9, *(const void **)(v2 + 8), *(unsigned int *)(v2 + 40)); /*0x7bece9*/
+  int v24; // eax
             v24 = v3[1]; /*0x7becf2*/
             v1 = this; /*0x7becf8*/
             LOBYTE(v24) = v24 | 1; /*0x7becfc*/
@@ -1312,6 +1307,7 @@ int AudioStream::ProcessStream()
       }
       else
       {
+  int v14; // edx
         v14 = v3[1] | 8; /*0x7bebc5*/
         v3[332] = *(unsigned int *)(v2 + 28); /*0x7bebc8*/
         v3[1] = v14; /*0x7bebce*/
@@ -1326,18 +1322,22 @@ int AudioStream::ProcessStream()
   }
   else
   {
+  char v5; // al
     v5 = this->u32_1A4; /*0x7beaa8*/
     ++this->u32_6D8; /*0x7beaae*/
     if ( (v5 & 4) != 0 && (this->u32_150 & 4) == 0 ) /*0x7beac1*/
     {
+  int v6; // eax
       v6 = *(unsigned int *)(v2 + 16); /*0x7beac9*/
       *v3 = v6; /*0x7beacc*/
       *(unsigned int *)(v6 + 20) = *(unsigned int *)(v6 + 24); /*0x7bead1*/
+  int v7; // eax
       v7 = this->u32_1A4; /*0x7bead4*/
       if ( (v7 & 0x10) != 0 ) /*0x7bead9*/
       {
         LOBYTE(v7) = v7 | 8; /*0x7beadf*/
         this->u32_1A4 = v7; /*0x7beae2*/
+  int v8; // eax
         v8 = *(unsigned int *)(v2 + 20); /*0x7beae5*/
         LOBYTE(v8) = v8 | 0x80; /*0x7beae8*/
         *(unsigned int *)(v2 + 20) = v8; /*0x7beaeb*/
@@ -1387,9 +1387,9 @@ void AudioStream::Destructor(unsigned int * Block)
 namespace gamemd {
 int AudioStream::CheckFormatChanged(int a1, const void * a2)
 {
-  void *v3; // ebx
   int result; // eax
 
+  void *v3; // ebx
   v3 = (void *)(a1 + 380); /*0x402805*/
   if ( !memcmp(a2, (const void *)(a1 + 380), 0x20u) ) /*0x402817*/
   {
@@ -1410,14 +1410,14 @@ int AudioStream::CheckFormatChanged(int a1, const void * a2)
 namespace gamemd {
 int AudioStream::InitListAndCounters(void *a1_1)
 {
-  unsigned int *AudioStream_field_0xAC; // esi
-  int result; // eax
 
+  unsigned int *AudioStream_field_0xAC; // esi
   AudioStream_field_0xAC = a1_1->AudioStream_field_0xAC; /*0x4028b4*/
   LinkedList::Init((LinkedList *)a1_1); /*0x4028ba*/
   --AudioStream_field_0xAC[60]; /*0x4028c6*/
   ++AudioStream_field_0xAC[65]; /*0x4028d3*/
   LinkedList::Init((LinkedList *)a1_1); /*0x4028db*/
+  int result; // eax
   result = AudioStream_field_0xAC[65] - 1; /*0x4028e6*/
   AudioStream_field_0xAC[65] = result; /*0x4028e9*/
   if ( result < 0 ) /*0x4028ef*/
@@ -1430,12 +1430,12 @@ int AudioStream::InitListAndCounters(void *a1_1)
 namespace gamemd {
 int AudioStream::UpdateTimers()
 {
-  int64_t v0; // rax
-  void **v1; // esi
 
+  int64_t v0; // rax
   (*((unsigned int *)&(v0))) = g_AudioConfigState; /*0x404fd0*/
   if ( g_AudioConfigState ) /*0x404fd8*/
   {
+  void **v1; // esi
     v1 = (void **)g_AudioStreamObject; /*0x404fda*/
     if ( g_AudioStreamObject != &g_AudioStreamObject ) /*0x404fe6*/
     {
@@ -1465,14 +1465,12 @@ int AudioStream::UpdateTimers()
 namespace gamemd {
 int AudioStream::UpdateCountdowners()
 {
-  int64_t v0; // rax
-  void **v1; // esi
-  int v2; // eax
-  int64_t v3; // rax
 
+  int64_t v0; // rax
   (*((unsigned int *)&(v0))) = g_AudioConfigState; /*0x405040*/
   if ( g_AudioConfigState ) /*0x405048*/
   {
+  void **v1; // esi
     v1 = (void **)g_AudioStreamObject; /*0x40504a*/
     if ( g_AudioStreamObject != &g_AudioStreamObject ) /*0x405056*/
     {
@@ -1481,6 +1479,7 @@ int AudioStream::UpdateCountdowners()
         (*((unsigned int *)&(v0))) = v1[86]; /*0x405059*/
         if ( (unsigned int)v0 ) /*0x405061*/
         {
+  int v2; // eax
           v2 = (int)v1[86] - 1; /*0x405069*/
           v1[86] = (void *)v2; /*0x40506c*/
           if ( v2 < 0 ) /*0x405072*/
@@ -1491,6 +1490,7 @@ int AudioStream::UpdateCountdowners()
             (*((unsigned int *)&(v0))) = v1[7]; /*0x405088*/
             if ( (unsigned int)v0 == 2 ) /*0x40508e*/
             {
+  int64_t v3; // rax
               (*((unsigned int *)&(v3))) = Audio::Callback(); /*0x405090*/
               v0 = *((unsigned long long *)v1 + 40) + v3; /*0x4050a3*/
               *((unsigned long long *)v1 + 40) = v0; /*0x4050a5*/
@@ -1510,24 +1510,22 @@ int AudioStream::UpdateCountdowners()
 namespace gamemd {
 char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream, void *a4)
 {
-  int v3; // esi
-  int v4; // ebx
-  int v5; // eax
-  int v6; // eax
-  unsigned int *v7; // eax
 
   if ( !this ) /*0x40786b*/
     return 0; /*0x40786e*/
+  int v3; // esi
   v3 = (*(((unsigned int *)&(a2)) + 1)); /*0x407876*/
   if ( a2 < 0x1B58 ) /*0x40788a*/
   {
     (*((unsigned int *)&(a2))) = 7000; /*0x407896*/
     v3 = 0; /*0x40789a*/
   }
+  int v4; // ebx
   v4 = operator new(0xF8u); /*0x4078a6*/
   memset((void *)v4, 0, 0xF8u); /*0x4078b1*/
   ((DListNode *)v4)->InitEmpty(); /*0x4078b8*/
   *(unsigned int *)(v4 + 16) = this; /*0x4078c6*/
+  int v5; // eax
   v5 = sub_4036C0((int)this, 4096); /*0x4078c9*/
   *(unsigned int *)(v4 + 20) = v5; /*0x4078ce*/
   *(unsigned int *)(v5 + 148) = 0; /*0x4078d1*/
@@ -1541,7 +1539,9 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream, void *
   *(unsigned int *)(v4 + 128) = 0; /*0x40790c*/
   *(unsigned int *)(v4 + 136) = 0; /*0x407912*/
   strcpy((char *)(v4 + 164), aAudioStream); /*0x407937*/
+  int v6; // eax
   v6 = *(unsigned int *)(v4 + 20); /*0x407940*/
+  unsigned int *v7; // eax
   if ( v6 /*0x407980*/
     && (*(unsigned int *)(v6 + 192) = v4,
         *(unsigned int *)(*(unsigned int *)(v4 + 20) + 176) = AudioStream::ReadStreamAndSyncPosition,

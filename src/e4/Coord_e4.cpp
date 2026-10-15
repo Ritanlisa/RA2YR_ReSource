@@ -14,70 +14,67 @@
 namespace gamemd {  // G42.18 ns repair
 int Coord::ToGridIndex(int aP1, int aP2, int aP3)
 {
-  int v4; // esi
-  int v5; // edi
-  int v6; // ebx
-  int v7; // ecx
-  int v8; // eax
-  int v9; // ebx
-  int v10; // eax
-  int v11; // edi
-  int v12; // eax
-  int v13; // esi
-  int v14; // eax
-  int result; // eax
-  int v16; // edi
-  char *v17; // esi
-  int v18; // eax
-  int v19; // ecx
-  int v20; // ecx
-  char *v21; // esi
-  int v22; // ecx
-  int v23; // edx
 
   (*(void (**)(int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
+  int v4; // esi
   if ( (aP2 & 0x8000u) == 0 ) /*0x4138e1*/
     v4 = (int16_t)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
+  int v5; // edi
   if ( aP2 >= 0 ) /*0x4138f2*/
     v5 = (*((signed short *)(((unsigned char *)&(aP2)) + 2))); /*0x4138f8*/
   else
     v5 = 0; /*0x4138f4*/
+  int v6; // ebx
   v6 = 19; /*0x41390d*/
   if ( v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20) <= 19 ) /*0x413921*/
     v6 = v4 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413923*/
+  int v7; // ecx
   v7 = *(unsigned int *)&g_AircraftTrackerState / 20; /*0x41393e*/
+  int v8; // eax
   v8 = v5 / (*(unsigned int *)&g_AircraftTrackerState / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
+  int v9; // ebx
   v9 = v6 + 20 * v8; /*0x413957*/
+  int v10; // eax
   if ( (aP3 & 0x8000u) == 0 ) /*0x41395a*/
     v10 = (int16_t)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
+  int v11; // edi
   if ( aP3 >= 0 ) /*0x41396b*/
     v11 = (*((signed short *)(((unsigned char *)&(aP3)) + 2))); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
+  int v12; // eax
   v12 = v10 / (*(unsigned int *)&g_AircraftTrackerPool / 20); /*0x413975*/
+  int v13; // esi
   v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
+  int v14; // eax
   v14 = v11 / v7; /*0x413986*/
   if ( v11 / v7 > 19 ) /*0x41398b*/
     v14 = 19; /*0x41398d*/
+  int result; // eax
   result = 5 * v14; /*0x413992*/
+  int v16; // edi
   v16 = v13 + 4 * result; /*0x413995*/
   if ( v9 != v16 ) /*0x41399a*/
   {
+  char *v17; // esi
     v17 = &this->q018 * v9; /*0x4139ae*/
+  int v18; // eax
     v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
+  int v19; // ecx
       v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/
       if ( v18 < v19 ) /*0x4139c1*/
       {
+  int v20; // ecx
         v20 = v19 - 1; /*0x4139c3*/
         for ( *((unsigned int *)v17 + 4) = v20; /*0x4139c9*/
               v18 < *((unsigned int *)v17 + 4);
@@ -87,8 +84,10 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
         }
       }
     }
+  char *v21; // esi
     v21 = &this->q018 * v16; /*0x4139e4*/
     result = *((unsigned int *)v21 + 2); /*0x4139e7*/
+  int v22; // ecx
     if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
       && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
@@ -96,6 +95,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
           (unsigned char)result) )
     {
       result = *((unsigned int *)v21 + 4); /*0x413a11*/
+  int v23; // edx
       v23 = *((unsigned int *)v21 + 1); /*0x413a14*/
       *((unsigned int *)v21 + 4) = result + 1; /*0x413a1a*/
       *(unsigned int *)(v23 + 4 * result) = aP1; /*0x413a21*/
@@ -109,8 +109,8 @@ namespace gamemd {
 unsigned int * Coord::ToCell(unsigned int *aP1)
 {
 
-  int v3; // [esp+0h] [ebp-4h]
 
+  int v3; // [esp+0h] [ebp-4h]
   LOWORD(v3) = *(unsigned int *)this->__pad_000 / 256; /*0x413a3f*/
   HIWORD(v3) = *&this->u32_4 / 256; /*0x413a53*/
   *aP1 = v3; /*0x413a60*/
@@ -135,16 +135,16 @@ namespace gamemd {
 int Coord::Length(void *a1)
 {
 
-  double Coord_field_0x8; // st7
-  __int64 result; // rax
-  int v3; // kr00_4
 
+  double Coord_field_0x8; // st7
   Coord_field_0x8 = (double)(int)this->u32_8; /*0x41c380*/
   Math::Sqrt( /*0x41c3a4*/
     (double)*(int *)this->__pad_000 * (double)*(int *)this->__pad_000
   + (double)*&this->u32_4 * (double)*&this->u32_4
   + Coord_field_0x8 * Coord_field_0x8);
+  int v3; // kr00_4
   v3 = Math::RoundToInt(Coord_field_0x8); /*0x41c3ac*/
+  __int64 result; // rax
   WORD2(result) = HIWORD(v3); /*0x41c3ac*/
   LOWORD(result) = v3; /*0x41c3ac*/
   return result; /*0x41c3a9*/
@@ -155,16 +155,16 @@ int Coord::Length(void *a1)
 namespace gamemd {
 unsigned int * Coord::GetCoords(int * outCoords, void *a2_1)
 {
-  int v2; // ecx
-  int v4; // eax
-  int v6; // eax
-  int v8; // eax
 
+  int v2; // ecx
   v2 = v2; /*0x4399a2*/
+  int v4; // eax
   (*((unsigned short *)&(v4))) = Math::RoundToInt(v2->nextArrayIndex); /*0x4399a8*/
   v4 = v4; /*0x4399b0*/
+  int v6; // eax
   (*((unsigned short *)&(v6))) = Math::RoundToInt(v2->referenceCount); /*0x4399b2*/
   v6 = v6; /*0x4399ba*/
+  int v8; // eax
   (*((unsigned short *)&(v8))) = Math::RoundToInt(v2->needsSave); /*0x4399bc*/
   *outCoords = v4; /*0x4399c7*/
   outCoords->vtable2 = v6; /*0x4399cb*/
@@ -177,8 +177,8 @@ namespace gamemd {
 void * Coord::Scale(float aP1, void *a2)
 {
 
-  float *v2; // ecx
 
+  float *v2; // ecx
   *v2 = *(float *)&aP1 * *v2; /*0x43a0d8*/
   v2[1] = *(float *)&aP1 * v2[1]; /*0x43a0e1*/
   v2[2] = *(float *)&aP1 * v2[2]; /*0x43a0eb*/
@@ -191,19 +191,19 @@ namespace gamemd {
 void * Coord::To_Cell(unsigned int *aP1, void *a2)
 {
 
-  int v2; // eax
-  int v3; // edx
-  CellClass *v4; // edx
-  unsigned int *v6; // [esp+Ch] [ebp+4h]
 
+  int v2; // eax
   v2 = aP1[1] / 256; /*0x56574f*/
+  int v3; // edx
   v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
   if ( v3 >= 0 && v3 < this->u32_140 ) /*0x565764*/
   {
+  CellClass *v4; // edx
     v4 = (CellClass *)*((unsigned int *)this->q13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
+  unsigned int *v6; // [esp+Ch] [ebp+4h]
   LOWORD(v6) = *aP1 / 256; /*0x56577a*/
   HIWORD(v6) = v2; /*0x56577f*/
   g_MissionQueueFrame.briefing[139] = (int)v6; /*0x565789*/
@@ -223,28 +223,28 @@ namespace gamemd {
 void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 {
 
-  int v4; // ebx
-  int v5; // esi
-  int v7; // eax
-  int v8; // ebp
-  int v9; // eax
-  int v10; // ecx
-  int v11; // edi
 
+  int v4; // ebx
   v4 = (int)(*aP2); /*0x6557f7*/
+  int v5; // esi
   v5 = (int)(aP2[1]); /*0x6557f9*/
+  int v7; // eax
   LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625); /*0x655820*/
+  int v8; // ebp
   v8 = v7; /*0x65582b*/
+  int v9; // eax
   LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625); /*0x655848*/
   if ( a4 ) /*0x655853*/
   {
     if ( v8 < 0 ) /*0x655857*/
       v8 = 0; /*0x655859*/
+  int v10; // ecx
     v10 = this->u32_14A4; /*0x65585b*/
     if ( v8 >= v10 ) /*0x655863*/
       v8 = v10 - 1; /*0x655865*/
     if ( v9 < 0 ) /*0x65586a*/
       v9 = 0; /*0x65586c*/
+  int v11; // edi
     v11 = this->u32_14A8; /*0x65586e*/
     if ( v9 >= v11 ) /*0x655876*/
       v9 = v11 - 1; /*0x655878*/
@@ -260,20 +260,20 @@ namespace gamemd {
 AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
 {
 
-  int v4; // edi
-  int v5; // esi
-  int v6; // eax
-  int v7; // edi
-  int v8; // esi
-  int v10; // [esp+14h] [ebp-4h]
 
+  int v10; // [esp+14h] [ebp-4h]
   v10 = a2[1]; /*0x6d214f*/
+  int v4; // edi
   v4 = (-60 * v10 / 2 + 60 * *a2 / 2) / 256; /*0x6d21c8*/
+  int v5; // esi
   v5 = (30 * v10 / 2 + 30 * *a2 / 2) / 256; /*0x6d21cb*/
+  int v6; // eax
   LOWORD(v6) = Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
   *a3 = v4; /*0x6d21fd*/
   a3[1] = v5 - v6; /*0x6d21ff*/
+  int v7; // edi
   v7 = *a3 - *&this->u32_B0; /*0x6d2213*/
+  int v8; // esi
   v8 = a3[1] - *&this->u32_B4; /*0x6d2215*/
   *a3 = v7; /*0x6d2217*/
   a3[1] = v8; /*0x6d221b*/
@@ -292,12 +292,12 @@ namespace gamemd {
 void * Coord::Divide(int * a2, int a3)
 {
 
-  int v4; // ebx
-  int v5; // eax
 
   if ( a3 ) /*0x710708*/
   {
+  int v4; // ebx
     v4 = *&this->u32_4 / a3; /*0x71072f*/
+  int v5; // eax
     v5 = (int)this->u32_8 / a3; /*0x710735*/
     *a2 = *(unsigned int *)this->__pad_000 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
@@ -317,14 +317,14 @@ void * Coord::Divide(int * a2, int a3)
 namespace gamemd {
 int * Coord::To_ScreenRaw(int *aP0, unsigned int *aP1)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // esi
-  int v6; // [esp+10h] [ebp-4h]
 
+  int v6; // [esp+10h] [ebp-4h]
   v6 = aP1[1]; /*0x6d1f1f*/
+  int v2; // edi
   v2 = (-60 * v6 / 2 + 60 * *aP1 / 2) / 256; /*0x6d1f95*/
+  int v3; // esi
   v3 = (30 * v6 / 2 + 30 * *aP1 / 2) / 256; /*0x6d1f98*/
+  int v4; // esi
   v4 = v3 - Math::RoundToInt((double)(int)aP1[2] * dbl_B0CD48 + (double)(aP1[2] >= 728) + 0.5); /*0x6d1fc4*/
   *aP0 = v2; /*0x6d1fca*/
   aP0[1] = v4; /*0x6d1fcc*/
@@ -336,10 +336,10 @@ int * Coord::To_ScreenRaw(int *aP0, unsigned int *aP1)
 namespace gamemd {
 long long Coord::ScaleToScreenY(void *a1)
 {
-  int64_t result; // rax
-  int v2; // kr00_4
 
+  int v2; // kr00_4
   v2 = Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor); /*0x6d2135*/
+  int64_t result; // rax
   (((unsigned short *)&(result))[2]) = (*(((unsigned short *)&(v2)) + 1)); /*0x6d2135*/
   (*((unsigned short *)&(result))) = v2; /*0x6d2135*/
   return result; /*0x6d213b*/

@@ -95,14 +95,14 @@ namespace gamemd {
 int AbstractTypeClass::Dtor(void *a1)
 {
 
-  int v2; // eax
-  AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_AbstractTypeClass; /*0x4109cd*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109d3) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109da) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x4109e1) */
+  AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
   v4 = this; /*0x4109ef*/
+  int v2; // eax
   v2 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/
   {
@@ -122,18 +122,17 @@ namespace gamemd {
 int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
 {
 
-  int result; // eax
-  char *Name; // edi
-  char *UINameLabel; // ebp
   char Destination[48]; // [esp+Ch] [ebp-434h] BYREF
   char v7; // [esp+3Ch] [ebp-404h]
-  char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
+  int result; // eax
   result = (int)(INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_024)); /*0x410a7f*/
   if ( result ) /*0x410a86*/
   {
+  char *Name; // edi
     Name = this->Name; /*0x410a91*/
+  char Source[1024]; // [esp+40h] [ebp-400h] BYREF
     (/*0x410aa0*/ (INIClass *)aP1)->GetString((unsigned __int8 *)this->__pad_024, (unsigned __int8 *)g_INI_Key_Name, this->Name, Source, 49);
     if ( Source ) /*0x410aab*/
     {
@@ -149,6 +148,7 @@ int AbstractTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
       memcpy(Name, Destination, 0x30u); /*0x410add*/
       this->Name[48] = v7; /*0x410adf*/
     }
+  char *UINameLabel; // ebp
     UINameLabel = this->UINameLabel; /*0x410aeb*/
     (/*0x410afb*/ (INIClass *)aP1)->GetString((unsigned __int8 *)this->__pad_024, (unsigned __int8 *)g_INI_Key_UIName, this->UINameLabel, Source, 32);
     if ( Source ) /*0x410b06*/
@@ -187,14 +187,14 @@ namespace gamemd {
 AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a1)
 {
 
-  int v3; // eax
-  AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   aP1->AbstractClass = &vt_AbstractTypeClass; /*0x410c3d*/
   aP1->? = &vt_AbstractTypeClass; /*0x410c43*/
   aP1->? = &vt_AbstractTypeClass; /*0x410c4a*/
   aP1->? = &vt_AbstractTypeClass; /*0x410c51*/
+  AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AbstractTypeClass *)(aP1); /*0x410c5f*/
+  int v3; // eax
   v3 = (*(int (**)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/
   {
@@ -216,9 +216,9 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
 namespace gamemd {
 int AbstractTypeClass::Init(int aP1, void *a2)
 {
-  char v3; // al
 
   AbstractClass::InitVtables(aP1); /*0x410968*/
+  char v3; // al
   v3 = (char)(this->UINameLabel); /*0x41096d*/
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x410975) */
   /* X11: vtable install elided (implicit via AbstractTypeClass virtuals 0x41097b) */
@@ -243,8 +243,8 @@ namespace gamemd {
 char AbstractTypeClass::WriteINI(char *aP1, void *a2)
 {
 
-  unsigned __int8 *pad_24; // edi
 
+  unsigned __int8 *pad_24; // edi
   pad_24 = (unsigned __int8 *)this->__pad_024; /*0x410b9b*/
   INIClass::ClearSection((int *)aP1, (int)this->__pad_024, 0); /*0x410ba1*/
   INIClass::SetString(aP1, pad_24, g_INI_Key_Name, this->Name); /*0x410bb2*/
@@ -270,8 +270,8 @@ int AbstractTypeClass::ProcessPower(int *aP1, void *a2)
 namespace gamemd {
 int AbstractTypeClass::StubReturnFalse()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x410c20*/
 }
 } // namespace gamemd

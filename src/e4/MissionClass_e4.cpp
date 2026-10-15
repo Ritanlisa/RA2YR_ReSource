@@ -18,25 +18,16 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
 {
 
-  char *v3; // eax
-  char *v4; // eax
-  char *v5; // eax
-  char *v6; // eax
-  char *v7; // eax
-  char *v8; // eax
-  char *v9; // eax
-  char *v10; // eax
-  void *vtable0; // eax
-  char *v13; // eax
-  int abstractFlags; // ecx
 
   INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
+  char *v3; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3774*/
     v3 = g_Str__none_; /*0x5b3776*/
   else
     v3 = off_816CAC[(int)this->ObjectClass]; /*0x5b377d*/
   if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
+  char *v4; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b379e*/
     v4 = g_Str__none_; /*0x5b37a0*/
   else
@@ -46,6 +37,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
                       (unsigned __int8 *)v4,
                       (unsigned __int8 *)&g_INI_Key_Neutral,
                       (char)this->?);
+  char *v5; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
   else
@@ -55,6 +47,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
                      (unsigned __int8 *)v5,
                      (unsigned __int8 *)&DataGlobal_82BA00[2206],
                      BYTE1(this->?));
+  char *v6; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
   else
@@ -64,6 +57,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
                      (unsigned __int8 *)v6,
                      (unsigned __int8 *)&DataGlobal_82BA00[2203],
                      BYTE2(this->?));
+  char *v7; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
   else
@@ -73,6 +67,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
                       (unsigned __int8 *)v7,
                       (unsigned __int8 *)DataGlobal_82BA00[2200],
                       HIBYTE(this->?));
+  char *v8; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3842*/
     v8 = g_Str__none_; /*0x5b3844*/
   else
@@ -82,6 +77,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
                       (unsigned __int8 *)v8,
                       (unsigned __int8 *)&DataGlobal_82BA00[2188],
                       (char)this->?);
+  char *v9; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
   else
@@ -91,6 +87,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
                      (unsigned __int8 *)v9,
                      (unsigned __int8 *)&DataGlobal_82BA00[2180],
                      BYTE1(this->?));
+  char *v10; // eax
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
   else
@@ -100,9 +97,11 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
     (unsigned __int8 *)v10,
     (unsigned __int8 *)g_INI_Key_Rate,
     *(double *)&this->?);
+  void *vtable0; // eax
   vtable0 = this->ObjectClass; /*0x5b38b9*/
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *&this->uniqueId = _RT1; /*0x5b38bb*/
+  char *v13; // eax
   if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
@@ -117,6 +116,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
   }
   if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
   {
+  int abstractFlags; // ecx
     abstractFlags = this->abstractFlags; /*0x5b38f5*/
     this->AARate = this->AARate; /*0x5b38f8*/
     this->referenceCount = abstractFlags; /*0x5b38fb*/
@@ -130,8 +130,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2, void *a2_1)
 namespace gamemd {
 int MissionClass::vt_entry_1FC()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x41bf30*/
   return result; /*0x41bf32*/
 }

@@ -14,13 +14,13 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_717840()
 {
-  int result; // eax
-  int i; // edi
-  int v2; // esi
 
+  int result; // eax
   result = dword_A8EB10; /*0x717840*/
+  int i; // edi
   for ( i = 0; i < dword_A8EB10; ++i ) /*0x71784a*/
   {
+  int v2; // esi
     v2 = *((unsigned int *)dword_A8EB04 + i); /*0x717852*/
     if ( *(unsigned char *)(v2 + 3536) ) /*0x717855*/
       *(unsigned int *)(v2 + 3568) = ((FileExtension*)(const char *)(v2 + 3536))->MapHandler(); /*0x71786a*/

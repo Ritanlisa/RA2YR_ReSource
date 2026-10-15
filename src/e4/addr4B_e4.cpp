@@ -414,12 +414,12 @@ LABEL_12:
 namespace gamemd {
 int E4Recv_4B6BF0::sub_4B6BF0()
 {
-  void *vtable1; // edx
-  int result; // eax
 
+  void *vtable1; // edx
   vtable1 = dword_A8B230[376].vfptr1; /*0x4b6bf9*/
   if ( !vtable1 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
+  int result; // eax
   result = 0; /*0x4b6c03*/
   if ( (int)vtable1 <= 0 ) /*0x4b6c07*/
     return -1; /*0x4b6c25*/
@@ -436,84 +436,58 @@ int E4Recv_4B6BF0::sub_4B6BF0()
 namespace gamemd {
 CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
 {
-  int v6; // eax
-  int v7; // edi
-  int v8; // edi
-  int v9; // ebx
-  int v10; // eax
-  unsigned int *v11; // eax
-  unsigned int *v12; // eax
-  int *SHPFrame; // eax
-  int *result; // eax
-  const wchar_t *v15; // eax
-  int AudioEntry; // eax
-  char *v17; // ecx
-  int BuildingAnimByName; // esi
-  unsigned int *v19; // eax
-  unsigned int *v20; // eax
-  unsigned int *v21; // eax
-  unsigned int *v22; // eax
-  int v23; // [esp-10h] [ebp-174h]
-  int v24; // [esp-Ch] [ebp-170h]
-  int v25; // [esp-Ch] [ebp-170h]
-  int v26; // [esp-8h] [ebp-16Ch]
-  int v27; // [esp-8h] [ebp-16Ch]
-  int v28; // [esp-8h] [ebp-16Ch]
-  int v29; // [esp-4h] [ebp-168h]
-  int v30; // [esp-4h] [ebp-168h]
-  int v31; // [esp-4h] [ebp-168h]
   const wchar_t *v32; // [esp+0h] [ebp-164h]
-  int v33; // [esp+0h] [ebp-164h]
-  int v34; // [esp+0h] [ebp-164h]
-  int v35; // [esp+4h] [ebp-160h]
-  int v36; // [esp+4h] [ebp-160h]
-  int v37; // [esp+8h] [ebp-15Ch]
-  int v38; // [esp+10h] [ebp-154h] BYREF
-  int v39; // [esp+14h] [ebp-150h] BYREF
-  int v40; // [esp+18h] [ebp-14Ch] BYREF
-  int v41; // [esp+1Ch] [ebp-148h] BYREF
-  int v42; // [esp+20h] [ebp-144h] BYREF
-  int v43; // [esp+24h] [ebp-140h] BYREF
   Coord2D v44; // [esp+28h] [ebp-13Ch] BYREF
-  unsigned int v45[4]; // [esp+30h] [ebp-134h] BYREF
-  unsigned int v46[4]; // [esp+40h] [ebp-124h] BYREF
   Rect v47; // [esp+50h] [ebp-114h] BYREF
   wchar_t v48[20]; // [esp+60h] [ebp-104h] BYREF
   wchar_t v49[4]; // [esp+88h] [ebp-DCh] BYREF
-  char v50[72]; // [esp+90h] [ebp-D4h] BYREF
-  wchar_t v51; // [esp+D8h] [ebp-8Ch] BYREF
-  char v52[56]; // [esp+DCh] [ebp-88h] BYREF
-  wchar_t Buffer[6]; // [esp+114h] [ebp-50h] BYREF
-  char v54[68]; // [esp+120h] [ebp-44h] BYREF
 
+  unsigned int v45[4]; // [esp+30h] [ebp-134h] BYREF
   v45[0] = 450; /*0x4b98a8*/
+  int v6; // eax
   v6 = *a1; /*0x4b98ac*/
   v45[1] = 300; /*0x4b98b8*/
   v45[2] = 190; /*0x4b98be*/
   v45[3] = 80; /*0x4b98c2*/
+  int v7; // edi
   v7 = (*(int (**)(int *))(v6 + 128))(a1); /*0x4b98d2*/
+  int v8; // edi
   v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
+  int v9; // ebx
   v9 = (*(int (**)(int *))(*a1 + 124))(a1); /*0x4b98f2*/
+  int v10; // eax
   v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden); /*0x4b98f6*/
   v44.q004 = 300; /*0x4b9903*/
+  int v40; // [esp+18h] [ebp-14Ch] BYREF
   v40 = (v10 - v9) / 2; /*0x4b9909*/
   *(unsigned int *)v44.__pad_000 = 450; /*0x4b9912*/
+  int v41; // [esp+1Ch] [ebp-148h] BYREF
   v41 = v8; /*0x4b992b*/
+  unsigned int *v11; // eax
+  int v42; // [esp+20h] [ebp-144h] BYREF
   v11 = Coord2D::Add(&v44, &v42, &v40); /*0x4b992f*/
+  unsigned int *v12; // eax
   v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
+  unsigned int v46[4]; // [esp+40h] [ebp-124h] BYREF
   v46[0] = *v12; /*0x4b9942*/
   v46[1] = v12->Y; /*0x4b994b*/
   v46[2] = v12->Width; /*0x4b9958*/
   v46[3] = v12->Height; /*0x4b9963*/
+  int v38; // [esp+10h] [ebp-154h] BYREF
   v38 = 0; /*0x4b9967*/
+  int v39; // [esp+14h] [ebp-150h] BYREF
   v39 = 0; /*0x4b996b*/
+  int *SHPFrame; // eax
   SHPFrame = (int *)BuildingClass::GetSHPFrame(a2, 0); /*0x4b996f*/
+  int *result; // eax
   result = (int *)BlitterDrawSHP((int *)g_DSurface_Hidden, (int)a2, a1, v45, &v38, v46, 0, SHPFrame, 0, 0, 1000, 0, 0); /*0x4b998e*/
   if ( a3 ) /*0x4b999c*/
   {
+  wchar_t Buffer[6]; // [esp+114h] [ebp-50h] BYREF
     swprintf(Buffer, (const size_t)&stru_820320.MiddleFrameHeight, (const wchar_t *const)&a3->customSound); /*0x4b99b3*/
     if ( a4 ) /*0x4b99c4*/
     {
+  const wchar_t *v15; // eax
       v15 = (const wchar_t *)(*((int (**)(TechnoClass *))a3->vfptr + 43))(a3); /*0x4b99ca*/
       swprintf(v48, (const size_t)&stru_820320.VoxelCaches[17], v15); /*0x4b99db*/
     }
@@ -523,6 +497,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     }
     if ( *(unsigned int *)TechnoClass::GetAudioEntry(a3, 0) ) /*0x4b99ff*/
     {
+  int AudioEntry; // eax
       AudioEntry = TechnoClass::GetAudioEntry(a3, 0); /*0x4b9a06*/
       swprintf(v49, (const size_t)&stru_820320.VoxelCaches[5], (const wchar_t *const)(*(unsigned int *)AudioEntry + 100)); /*0x4b9a1e*/
     }
@@ -530,22 +505,31 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     {
       swprintf(v49, (const size_t)&stru_820320.HasRadialIndicator, v32); /*0x4b9a35*/
     }
+  wchar_t v51; // [esp+D8h] [ebp-8Ch] BYREF
     swprintf(&v51, (const size_t)&stru_820320.AlphaImageFile[17], (&off_7E5210)[a3->location[0]]); /*0x4b9a58*/
+  char *v17; // ecx
     v17 = &stru_820320.AlphaImageFile[9]; /*0x4b9a6e*/
     if ( !a4 ) /*0x4b9a73*/
       v17 = &stru_820320.AlphaImageFile[5]; /*0x4b9a75*/
+  int BuildingAnimByName; // esi
     BuildingAnimByName = FindBuildingAnimByName(v17, 1); /*0x4b9a87*/
     v39 = v41 + 300; /*0x4b9a97*/
     v38 = v40 + 450; /*0x4b9aa8*/
+  unsigned int *v19; // eax
     v19 = (unsigned int *)(*((int (**)(ObjectClass *, Rect *, int *, int, unsigned int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9ab3*/
                       g_DSurface_Hidden,
                       &v47,
                       &v38,
                       BuildingAnimByName,
                       0);
+  int v35; // [esp+4h] [ebp-160h]
+  int v37; // [esp+8h] [ebp-15Ch]
+  char v54[68]; // [esp+120h] [ebp-44h] BYREF
     TextRenderer::DrawText(&v44.q004, (size_t)v54, (int)g_DSurface_Hidden, v19, 70, (int)v32, v35, v37); /*0x4b9aca*/
     v42 = *(unsigned int *)v44.__pad_000 + 315; /*0x4b9ae0*/
+  int v43; // [esp+24h] [ebp-140h] BYREF
     v41 = v43 + 450; /*0x4b9af8*/
+  unsigned int *v20; // eax
     v20 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9b03*/
                       g_DSurface_Hidden,
                       &v47.Height,
@@ -553,9 +537,15 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       BuildingAnimByName,
                       0,
                       70);
+  int v26; // [esp-8h] [ebp-16Ch]
+  int v29; // [esp-4h] [ebp-168h]
+  int v33; // [esp+0h] [ebp-164h]
+  int v36; // [esp+4h] [ebp-160h]
+  char v50[72]; // [esp+90h] [ebp-D4h] BYREF
     TextRenderer::DrawText((int *)v44.__pad_000, (size_t)v50, (int)g_DSurface_Hidden, v20, v26, v29, v33, v36); /*0x4b9b1a*/
     v41 = v43 + 330; /*0x4b9b30*/
     v40 = v42 + 450; /*0x4b9b48*/
+  unsigned int *v21; // eax
     v21 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9b53*/
                       g_DSurface_Hidden,
                       &v47.Width,
@@ -563,9 +553,15 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       BuildingAnimByName,
                       0,
                       70);
+  int v24; // [esp-Ch] [ebp-170h]
+  int v27; // [esp-8h] [ebp-16Ch]
+  int v30; // [esp-4h] [ebp-168h]
+  int v34; // [esp+0h] [ebp-164h]
+  char v52[56]; // [esp+DCh] [ebp-88h] BYREF
     TextRenderer::DrawText(&v43, (size_t)v52, (int)g_DSurface_Hidden, v21, v24, v27, v30, v34); /*0x4b9b6a*/
     v40 = v42 + 345; /*0x4b9b87*/
     v39 = v41 + 450; /*0x4b9b98*/
+  unsigned int *v22; // eax
     v22 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9ba3*/
                       g_DSurface_Hidden,
                       &v47.Y,
@@ -573,6 +569,10 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       BuildingAnimByName,
                       0,
                       70);
+  int v23; // [esp-10h] [ebp-174h]
+  int v25; // [esp-Ch] [ebp-170h]
+  int v28; // [esp-8h] [ebp-16Ch]
+  int v31; // [esp-4h] [ebp-168h]
     return TextRenderer::DrawText(&v42, (size_t)v48, (int)g_DSurface_Hidden, v22, v23, v25, v28, v31); /*0x4b9bb7*/
   }
   return result; /*0x4b9bbf*/
@@ -640,20 +640,17 @@ namespace gamemd {
 char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11)
 {
 
-  int v2; // eax
-  int *v4; // edi
-  int v5; // eax
-  int v6; // eax
-  CellClass *v7; // eax
-  void *vtable3; // [esp-4h] [ebp-10h]
 
+  int v2; // eax
   v2 = g_DDraw_ClipRect; /*0x4b0df1*/
+  int *v4; // edi
   v4 = &aP1->ambientSoundController[1]; /*0x4b0dfd*/
   if ( aP1->ambientSoundController[1] != g_DDraw_ClipRect /*0x4b0e0f*/
     || *(unsigned long long *)&aP1->ambientSoundController[2] != qword_8A0794 )
   {
     *v4 = g_DDraw_ClipRect; /*0x4b0e20*/
     aP1->ambientSoundController[2] = qword_8A0794; /*0x4b0e28*/
+  int v5; // eax
     v5 = HIDWORD(qword_8A0794); /*0x4b0e2b*/
     HIBYTE(aP1->customSound_controller[4]) = 0; /*0x4b0e30*/
     aP1->ambientSoundController[3] = v5; /*0x4b0e34*/
@@ -663,10 +660,13 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int 
   {
     *v4 = *aP1; /*0x4b0e65*/
     aP1->ambientSoundController[2] = aP1[1]; /*0x4b0e6a*/
+  int v6; // eax
     v6 = aP1[2]; /*0x4b0e6d*/
     HIBYTE(aP1->customSound_controller[4]) = 1; /*0x4b0e70*/
     aP1->ambientSoundController[3] = v6; /*0x4b0e74*/
+  void *vtable3; // [esp-4h] [ebp-10h]
     vtable3 = aP1->?; /*0x4b0e7a*/
+  CellClass *v7; // eax
     v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x4b0e81*/
     if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)aP1->? + 129) ) /*0x4b0e94*/
     {
@@ -710,8 +710,6 @@ namespace gamemd {
 DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11)
 {
 
-  int Instance; // eax
-  int v13; // edx
 
   sub_4C2FC0((EditClass *)this, aP1, String, a4, aP4, aP5, aP6, aP7, 18, 7); /*0x4b4e3f*/
   LOBYTE(this->M72) = 0; /*0x4b4e62*/
@@ -719,7 +717,9 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   ShapeButtonClass::Constructor(&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct((int)&this->u32_2C0, 0, aP5, aP6 + *(__int16 *)(a11 + 4), aP7 + *(__int16 *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
   /* X11: vtable install elided (implicit via DropListClass virtuals 0x4b4eac) */
+  int Instance; // eax
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
+  int v13; // edx
   v13 = this->M176; /*0x4b4eba*/
   this->M24 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
   (*(void (**)(char *, DropListClass *))(v13 + 132))(&this->M176, this); /*0x4b4ec4*/
@@ -735,7 +735,6 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
 namespace gamemd {
 int E4Recv_4B53E0::sub_4B53E0(int a2)
 {
-  int v3; // eax
 
   ControlClass::CtorFromData(a2); /*0x4b53eb*/
   this->M44 = *(EditClass *)(a2 + 44); /*0x4b53f6*/
@@ -767,6 +766,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M172 = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
   this->u32_50 = &vt_ShapeButtonClass; /*0x4b54a9*/
   sub_557380((int)&this->M176, a2 + 176); /*0x4b54af*/
+  int v3; // eax
   v3 = this->M176; /*0x4b54b4*/
   *this = (EditClass)&vt_DropListClass; /*0x4b54b9*/
   (*(void (**)(EditClass *, EditClass *))(v3 + 132))(&this->M176, this); /*0x4b54bf*/
@@ -828,14 +828,11 @@ namespace gamemd {
 unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
 {
 
-  void *v3; // eax
-  void *v4; // eax
-  void *vtable2; // ecx
-  int v6; // eax
 
   if ( this == (ObjectClass *)a2 ) /*0x4b583a*/
     return &this->AbstractClass; /*0x4b583a*/
   (*((void (**)(ObjectClass *))this->AbstractClass + 3))(this); /*0x4b583e*/
+  void *v3; // eax
   v3 = (void *)a2[2]; /*0x4b5841*/
   this->M8 = v3; /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
@@ -844,11 +841,14 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
     BYTE1(this->M13) = 0; /*0x4b5891*/
     return &this->AbstractClass; /*0x4b5895*/
   }
+  void *v4; // eax
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x4b5853*/
   this->M4 = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return &this->AbstractClass; /*0x4b5860*/
+  void *vtable2; // ecx
   vtable2 = this->M8; /*0x4b5862*/
+  int v6; // eax
   v6 = 0; /*0x4b5865*/
   BYTE1(this->M13) = 1; /*0x4b5869*/
   if ( (int)vtable2 <= 0 ) /*0x4b586d*/
@@ -868,8 +868,8 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
 namespace gamemd {
 void sub_4B58A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4b58ac*/
   dbl_8A0808 = Math::Sqrt(v0 + v0); /*0x4b58be*/
 }
@@ -919,10 +919,10 @@ void sub_4B5950()
 namespace gamemd {
 long long sub_4B5970()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_8A07E8 - dbl_8A0810); /*0x4b5982*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_8A0808 * 0.5); /*0x4b5996*/
   dword_8A0860 = result; /*0x4b599b*/
   return result; /*0x4b59a0*/
@@ -949,8 +949,8 @@ void sub_4B59E0()
 namespace gamemd {
 long long sub_4B5A10()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8A0860) + 0.5); /*0x4b5a2b*/
   dword_8A0854 = result; /*0x4b5a30*/
   return result; /*0x4b5a36*/
@@ -1005,8 +1005,8 @@ int sub_4B5A90()
 namespace gamemd {
 void sub_4B67A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4b67ac*/
   dbl_8A08A8 = Math::Sqrt(v0 + v0); /*0x4b67be*/
 }
@@ -1056,10 +1056,10 @@ void sub_4B6850()
 namespace gamemd {
 long long sub_4B6870()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_8A0868 - dbl_8A08B0); /*0x4b6882*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_8A08A8 * 0.5); /*0x4b6896*/
   dword_8A0920 = result; /*0x4b689b*/
   return result; /*0x4b68a0*/
@@ -1086,8 +1086,8 @@ void sub_4B68E0()
 namespace gamemd {
 long long sub_4B6910()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8A0920) + 0.5); /*0x4b692b*/
   dword_8A0914 = result; /*0x4b6930*/
   return result; /*0x4b6936*/
@@ -1151,9 +1151,9 @@ namespace gamemd {
 char E4Recv_4B6B80::sub_4B6B80()
 {
 
-  int uniqueId; // edi
   char result; // al
 
+  int uniqueId; // edi
   uniqueId = this->M16; /*0x4b6b87*/
   LOBYTE(this->M12) = 0; /*0x4b6b8a*/
   if ( uniqueId > 0 ) /*0x4b6b8f*/
@@ -1198,8 +1198,8 @@ int sub_4BA390()
 namespace gamemd {
 void sub_4BA3B0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4ba3bc*/
   dbl_8A0968 = Math::Sqrt(v0 + v0); /*0x4ba3ce*/
 }
@@ -1265,8 +1265,8 @@ void sub_4BA4F0()
 namespace gamemd {
 long long sub_4BA520()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8A0DC8) + 0.5); /*0x4ba53b*/
   dword_8A0DBC = result; /*0x4ba540*/
   return result; /*0x4ba546*/
@@ -1310,8 +1310,8 @@ namespace gamemd {
 BOOL E4Recv_4BAFE0::sub_4BAFE0()
 {
 
-  int referenceCount; // eax
 
+  int referenceCount; // eax
   referenceCount = this->M28; /*0x4bafe0*/
   return referenceCount && (*(int (**)(int))(*(unsigned int *)referenceCount + 96))(referenceCount) == -2005532222; /*0x4baff9*/
 
@@ -1322,8 +1322,8 @@ BOOL E4Recv_4BAFE0::sub_4BAFE0()
 namespace gamemd {
 short BlendMinimapPixel(unsigned short a1, unsigned short a2, int a3)
 {
-  int v3; // eax
 
+  int v3; // eax
   (*((unsigned short *)&(v3))) = a1; /*0x4bf658*/
   switch ( a3 ) /*0x4bf664*/
   {

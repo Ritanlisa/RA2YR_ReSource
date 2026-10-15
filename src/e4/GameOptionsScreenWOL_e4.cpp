@@ -20,10 +20,10 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_798340()
 {
-  HANDLE *v0; // esi
-  BOOL result; // eax
 
+  HANDLE *v0; // esi
   v0 = (HANDLE *)(&Handles);
+  BOOL result; // eax
   do /*0x79835b*/
     result = ResetEvent(*v0++); /*0x798350*/
   while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
@@ -34,8 +34,8 @@ int sub_798340()
 namespace gamemd {
 char sub_72C060()
 {
-  char result; // al
 
+  char result; // al
   result = byte_B0FD2D; /*0x72c060*/
   if ( !byte_B0FD2D ) /*0x72c067*/
   {
@@ -52,12 +52,12 @@ char sub_72C060()
 namespace gamemd {
 void sub_72C0B0()
 {
-  void *v1; // esi
 
   if ( DataGlobal_B0FD2D ) /*0x72c0ba*/
   {
     if ( DataGlobal_B0FD2C ) /*0x72c0c2*/
     {
+  void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FA4C; /*0x72c0c5*/
       if ( *(unsigned int *)&DataGlobal_B0FA4C ) /*0x72c0cd*/
       {

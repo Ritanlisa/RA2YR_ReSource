@@ -45,12 +45,11 @@ namespace gamemd {  // G42.18 ns repair
 int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
-  int v2; // ecx
-  int v3; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x629213*/
   *&this->creationFrame = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
+  int v2; // ecx
   v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
@@ -66,6 +65,7 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
          dword_AC4918 + dword_AC4924,
          0) )
   {
+  int v3; // eax
     v3 = dword_AC4920++; /*0x62928b*/
     *((unsigned int *)dword_AC4914 + v3) = this; /*0x62929a*/
   }
@@ -78,8 +78,6 @@ int ParasiteClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 namespace gamemd {
 ParasiteClass::ParasiteClass(TechnoClass * aP1)
 {
-  int v4; // eax
-  int v6; // [esp+8h] [ebp-8h]
 
   AbstractClass::Constructor(); /*0x6292b6*/
   this->creationFrame = dword_A8ED84; /*0x6292c4*/
@@ -93,6 +91,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   this->creationFrame = aP1; /*0x6292f3*/
   this->__pad_028 = 0; /*0x6292f6*/
   this->ParasiteClass_field_38 = dword_A8ED84; /*0x629303*/
+  int v6; // [esp+8h] [ebp-8h]
   this->ParasiteClass_field_3C = v6; /*0x62930a*/
   this->ParasiteClass_field_40 = 0; /*0x62930d*/
   dword_A8ED84 = dword_A8ED84; /*0x629310*/
@@ -112,6 +111,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
          dword_AC4918 + dword_AC4924,
          0) )
   {
+  int v4; // eax
     v4 = dword_AC4920++; /*0x62936d*/
     *((unsigned int *)dword_AC4914 + v4) = (unsigned int)(this); /*0x62937c*/
   }
@@ -123,20 +123,20 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
 namespace gamemd {
 int ParasiteClass::Attach(int * a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // edx
 
   this->AbstractClass::ProcessPower(); /*0x6294d9*/
+  int v3; // eax
   v3 = this->u32_44; /*0x6294de*/
   if ( v3 ) /*0x6294e3*/
   {
+  int v4; // eax
     v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x6294ec*/
     Power::TimerProcess(v4); /*0x6294f2*/
   }
   Power::TimerProcess(this->u32_48); /*0x6294fd*/
   Power::TimerProcess(this->IsAllocated); /*0x629508*/
   Power::TimerProcess(this->abstractFlags); /*0x629513*/
+  int v5; // edx
   (*((unsigned char *)&(v5))) = this->u32_54; /*0x629518*/
   return ((Power *)a2)->FlagProcess(v5); /*0x629523*/
 }
@@ -660,22 +660,10 @@ namespace gamemd {
 AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 {
 
-  int v3; // ecx
-  int v4; // eax
-  void *v5; // eax
-  int v6; // ebx
-  int v7; // eax
-  char v8; // al
-  int v9; // ecx
   int result; // eax
-  int *v11; // eax
-  unsigned int *v12; // edi
-  int v13; // ebx
-  int v14; // [esp+1Ch] [ebp-10h] BYREF
-  int v15; // [esp+20h] [ebp-Ch] BYREF
-  int v16; // [esp+24h] [ebp-8h]
   int v17; // [esp+28h] [ebp-4h]
 
+  int v3; // ecx
   v3 = this->u32_44; /*0x62a98b*/
   this->q04C = 0; /*0x62a98e*/
   this->u32_50 = 0; /*0x62a993*/
@@ -687,18 +675,23 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   }
   if ( this->u32_54 ) /*0x62a9a6*/
   {
+  int v14; // [esp+1Ch] [ebp-10h] BYREF
     v14 = this; /*0x62a9bd*/
+  int v4; // eax
     v4 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.?[0] + 16))(g_BuildingLoadQueue_Array.?, &v14); /*0x62a9c1*/
     if ( v4 != -1 ) /*0x62a9c7*/
       DynamicVector::RemoveItem((DynamicVector *)stru_B0F5B8, v4); /*0x62a9cf*/
     this->u32_54 = 0; /*0x62a9d4*/
   }
   this->ParasiteClass_field_38 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x62a9e6*/
+  int v16; // [esp+24h] [ebp-8h]
   this->ParasiteClass_field_3C = v16; /*0x62a9ed*/
   this->ParasiteClass_field_40 = 0; /*0x62a9f0*/
   if ( ParasiteClass::CanInfect((ParasiteClass *)this, a2) ) /*0x62a9f5*/
   {
+  unsigned int *v12; // edi
     v12 = (unsigned int *)(this->creationFrame + 1652); /*0x62aae2*/
+  int v13; // ebx
     v13 = a2[39]; /*0x62aae8*/
     v16 = a2[40]; /*0x62aaed*/
     v17 = a2[41]; /*0x62aaf4*/
@@ -710,14 +703,21 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   }
   else
   {
+  void *v5; // eax
     v5 = CellCoord::To_CellObj((CellCoord *)&DataGlobal_87F7E8, (__int16 *)(this->creationFrame + 1372)); /*0x62aa11*/
+  int v6; // ebx
     v6 = **&this->creationFrame; /*0x62aa1f*/
+  int v7; // eax
+  int v15; // [esp+20h] [ebp-Ch] BYREF
     v7 = (*(int (**)(void *, int *, unsigned int))(*(unsigned int *)v5 + 72))(v5, &v15, 0); /*0x62aa25*/
+  char v8; // al
     v8 = (*(int (**)(unsigned int, int))(v6 + 216))(this->creationFrame, v7); /*0x62aa2c*/
+  int v9; // ecx
     v9 = this->creationFrame; /*0x62aa32*/
     if ( v8 ) /*0x62aa37*/
     {
       (*(void (**)(int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v9 + 1164))(v9, 0, 0, 0, 0); /*0x62aa51*/
+  int *v11; // eax
       v11 = *&this->creationFrame; /*0x62aa57*/
       v15 = v11[39]; /*0x62aa67*/
       v16 = v11[40]; /*0x62aa6e*/
@@ -796,11 +796,9 @@ LABEL_20:
 namespace gamemd {
 void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v5; // eax
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
 
+  int v3; // ecx
   v3 = Block->u32_44; /*0x62af77*/
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af7a) */
   /* X11: vtable install elided (implicit via ParasiteClass virtuals 0x62af82) */
@@ -817,6 +815,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   if ( Block->u32_54 ) /*0x62afad*/
   {
     v7 = Block; /*0x62afc2*/
+  int v4; // eax
     v4 = (*(int (**)(int *, ParasiteClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x62afc6*/
            g_BuildingLoadQueue_Array.ForbiddenHouses,
            &v7);
@@ -834,6 +833,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
     Block->u32_54 = 0; /*0x62affb*/
   }
   v7 = Block; /*0x62b00e*/
+  int v5; // eax
   v5 = (*(int (**)(int *, ParasiteClass **))(dword_AC4910 + 16))(&dword_AC4910, &v7); /*0x62b012*/
   if ( v5 != -1 && v5 < dword_AC4920 && v5 < --dword_AC4920 ) /*0x62b02d*/
   {
@@ -1180,18 +1180,17 @@ LABEL_50:
 namespace gamemd {
 int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
 {
-  int result; // eax
-  int v3; // ebp
-  int v4; // edx
-  int v5; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(a0, aP1); /*0x6295bc*/
+  int v3; // ebp
   v3 = result; /*0x6295c1*/
   if ( result >= 0 ) /*0x6295c5*/
   {
     if ( a0 ) /*0x6295cd*/
     {
       AbstractClass::InitVtables((AbstractClass *)a0, (int)&aP1); /*0x6295d6*/
+  int v4; // edx
       v4 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6295db*/
       a0->ParasiteClass_field_34 = 0; /*0x6295e1*/
       *(unsigned int *)&a0->__pad_28[4] = v4; /*0x6295e8*/
@@ -1211,6 +1210,7 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
             DataGlobal_B0F5C0 + g_BuildingLoadQueue_Array.SecondSpawnOffset[2],
             0)) )
     {
+  int v5; // eax
       v5 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x629664*/
       *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v5) = a0; /*0x629673*/
     }
@@ -1249,10 +1249,8 @@ int ParasiteClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 bool ParasiteClass::CanInfect(unsigned int *a2)
 {
-  int creationFrame; // ecx
-  Cell *v4; // eax
-  bool result; // al
 
+  bool result; // al
   result = 0; /*0x62a977*/
   if ( a2 ) /*0x62a8ea*/
   {
@@ -1268,6 +1266,7 @@ bool ParasiteClass::CanInfect(unsigned int *a2)
             {
               if ( !a2[185] ) /*0x62a929*/
               {
+  int creationFrame; // ecx
                 creationFrame = this->creationFrame; /*0x62a933*/
                 if ( !creationFrame ) /*0x62a938*/
                   return 1; /*0x62a938*/
@@ -1275,6 +1274,7 @@ bool ParasiteClass::CanInfect(unsigned int *a2)
                   return 1; /*0x62a942*/
                 if ( !(*(int (**)(unsigned int *))(*a2 + 444))(a2) ) /*0x62a950*/
                   return 1; /*0x62a950*/
+  Cell *v4; // eax
                 v4 = (Cell *)(*(int (**)(unsigned int *))(*a2 + 444))(a2); /*0x62a95e*/
                 if ( (uint8_t)Cell::IsValidHeight(v4) ) /*0x62a966*/
                   return 1; /*0x62a8ea*/

@@ -17,13 +17,8 @@ namespace gamemd {  // G42.18 ns repair
 int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
 {
 
-  AbstractClass *v4; // ebx
-  int v5; // eax
-  int v6; // ecx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
 
+  AbstractClass *v4; // ebx
   v4 = 0; /*0x4d2db9*/
   this->ptr_4 = 0; /*0x4d2dbd*/
   this->u32_8 = aP1; /*0x4d2dc0*/
@@ -34,12 +29,15 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
     return this->__pad_0; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
+  int v8; // eax
     v8 = (int)(__2_YAPAXI_Z(16 * aP1)); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( aP1 - 1 >= 0 ) /*0x4d2e18*/
       {
+  int v9; // ecx
         v9 = v8 + 8; /*0x4d2e1a*/
+  int v10; // edx
         v10 = aP1; /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
@@ -60,7 +58,9 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
   {
+  int v5; // eax
     v5 = aP2 + 8; /*0x4d2de1*/
+  int v6; // ecx
     v6 = aP1; /*0x4d2de4*/
     do /*0x4d2df4*/
     {
@@ -81,8 +81,8 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2, void *a3)
 // 0x4D2D10
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x4d2d13*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4d2d16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x4d2d20*/

@@ -15,11 +15,11 @@
 namespace gamemd {  // G42.18 ns repair
 bool CopyProtection::CheckLauncher()
 {
-  HANDLE MutexA; // esi
-  bool v1; // bl
 
   Debug::Log(aCopyprotection_0); /*0x49f5c8*/
+  HANDLE MutexA; // esi
   MutexA = CreateMutexA(0, 0,(LPCSTR)(Name)); /*0x49f5df*/
+  bool v1; // bl
   v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
     CloseHandle(MutexA); /*0x49f5f8*/

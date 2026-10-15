@@ -26,10 +26,10 @@ namespace gamemd {
 namespace gamemd {  // G42.18 ns repair
 rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, ReferenceCounted * aP3)
 {
-  ReferenceCounted *v6; // eax
-  void *v7; // edi
 
+  ReferenceCounted *v6; // eax
   v6 = (ReferenceCounted *)operator new(0xD4u); /*0x767fbb*/
+  void *v7; // edi
   if ( v6 ) /*0x767fc5*/
     v7 = ConstructWDTSelection_Create_767FB0_Create(v6, a2, a3, aP3); /*0x767fd9*/
   else

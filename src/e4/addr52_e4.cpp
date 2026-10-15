@@ -755,12 +755,12 @@ LABEL_19:
 namespace gamemd {
 ObjectClass * * E4Recv_52A610::sub_52A610(void * a2, void * aPrivatekey, void * aPublickey)
 {
-  signed int v3; // eax
-  signed int v4; // eax
-  unsigned char v6[512]; // [esp+8h] [ebp-200h] BYREF
 
+  signed int v3; // eax
+  unsigned char v6[512]; // [esp+8h] [ebp-200h] BYREF
   v3 = sub_631FC0((ObjectClass *)a2, v6); /*0x52a628*/
   ((uint8_t *)aPublickey)->ReadBase64Data((int)v6, v3); /*0x52a63a*/
+  signed int v4; // eax
   v4 = sub_631FE0((ObjectClass *)a2, v6); /*0x52a646*/
   ((uint8_t *)aPrivatekey)->ReadBase64Data((int)v6, v4); /*0x52a658*/
   return (gamemd::ObjectClass **)(1); /*0x52a65d*/

@@ -20,16 +20,16 @@ int CampaignProperties_WorldDominationTour_22::Seek(int a2, void *a2_2, void *a3
 namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(a2_2->q00C))) ) /*0x5d2900*/
     return 0; /*0x5d2908*/
+  int m_8; // edx
   m_8 = a2_2->q008; /*0x5d290e*/
+  int result; // eax
   result = 0; /*0x5d2911*/
   if ( m_8 <= 0 ) /*0x5d2915*/
     return -1; /*0x5d292c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *i != *a2_2; ++i ) /*0x5d291b*/
   {
     if ( ++result >= m_8 ) /*0x5d292a*/
@@ -54,8 +54,8 @@ unsigned int CampaignProperties_WorldDominationTour_22::Write(int a2)
 namespace gamemd {
 VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x5d2ca3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5d2ca6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5d2cb0*/

@@ -156,8 +156,8 @@ LABEL_6:
 namespace gamemd {
 int BinkMovieHandle::Check(int a2, void *a2_1, void *a3)
 {
-  int result; // eax
 
+  int result; // eax
   result = BinkGoto(this->tempPath, a2, 1); /*0x432bde*/
   this->memoryBuffer = 0; /*0x432be4*/
   return result; /*0x432beb*/
@@ -167,9 +167,9 @@ int BinkMovieHandle::Check(int a2, void *a2_1, void *a3)
 namespace gamemd {
 int BinkMovieHandle::InitFromFile(void *a1, void *a2)
 {
-  int result; // eax
 
   g_MissionQueueFrame.localVariables[605] = (int)this; /*0x5c0550*/
+  int result; // eax
   result = ((BinkMovie *)((BinkMovie *)this->height))->Play(); /*0x5c0559*/
   g_MissionQueueFrame.localVariables[605] = 0; /*0x5c055e*/
   return result; /*0x5c0568*/
@@ -193,10 +193,10 @@ char BinkMovieHandle::AddRef(void *a1)
 namespace gamemd {
 int BinkMovieHandle::Release(void *a1)
 {
-  int height; // esi
-  int result; // eax
 
+  int height; // esi
   height = a1->height; /*0x433021*/
+  int result; // eax
   result = BinkWait((void *)(*(unsigned int *)(height + 4))); /*0x433027*/
   if ( !result ) /*0x43302f*/
     *(unsigned char *)(height + 45) = 1; /*0x433031*/
@@ -244,8 +244,8 @@ namespace gamemd {
 BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
 
-  BinkMovie *height; // edi
 
+  BinkMovie *height; // edi
   height = (BinkMovie *)this->height; /*0x5c0a34*/
   *(unsigned int *)this->MovieHandle = &vt_BinkMovieHandle; /*0x5c0a37*/
   if ( height ) /*0x5c0a3f*/

@@ -72,169 +72,160 @@ extern char aViscSmlShp[];  // data: 0x8459ac truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
 {
-  INIClass *v2; // esi
-  int KeyCount; // eax
-  int v4; // ecx
-  uint8_t *StringByIndex; // eax
-  char *v6; // eax
-  int v7; // esi
-  char *v8; // eax
-  int Index; // edi
-  void *v10; // esi
-  int *v11; // eax
-  int v12; // esi
-  char *v13; // eax
-  char *v14; // eax
-  char *v15; // eax
   int v16; // eax
-  char *v17; // eax
-  int v18; // eax
-  char *v19; // eax
-  int v20; // ebp
-  char *v21; // eax
-  int v22; // ebx
-  char *v23; // eax
-  TeamClass *v24; // eax
-  int v25; // eax
-  char *v26; // eax
-  int v27; // eax
-  char *v28; // eax
-  char *v29; // eax
-  bool v30; // al
-  char *v31; // eax
-  int v32; // edi
-  int v33; // eax
-  char *v34; // eax
-  char *v35; // eax
-  int v36; // edi
-  int v37; // eax
-  int v38; // edi
-  int v39; // eax
-  unsigned int v40; // edi
-  int i; // ecx
-  unsigned int v42; // eax
-  int v43; // edx
-  int v44; // eax
-  void **v46; // [esp+14h] [ebp-C0h] BYREF
-  void *Block; // [esp+18h] [ebp-BCh]
-  int v48; // [esp+1Ch] [ebp-B8h]
-  char v49; // [esp+20h] [ebp-B4h]
-  char v50; // [esp+21h] [ebp-B3h]
-  int v51; // [esp+24h] [ebp-B0h]
-  int v52; // [esp+28h] [ebp-ACh]
-  int v53; // [esp+2Ch] [ebp-A8h]
-  int v54; // [esp+30h] [ebp-A4h]
-  int v55; // [esp+34h] [ebp-A0h]
-  int v56; // [esp+38h] [ebp-9Ch]
-  INIClass *v57; // [esp+3Ch] [ebp-98h]
-  unsigned int v58[2]; // [esp+40h] [ebp-94h] BYREF
-  int v59; // [esp+48h] [ebp-8Ch]
-  int v60; // [esp+4Ch] [ebp-88h]
-  int v61; // [esp+50h] [ebp-84h]
-  char String[128]; // [esp+54h] [ebp-80h] BYREF
 
+  INIClass *v2; // esi
   v2 = (gamemd::INIClass *)(a1);
+  INIClass *v57; // [esp+3Ch] [ebp-98h]
   v57 = (gamemd::INIClass *)(a1); /*0x74327b*/
   INIClass::ResetSection((gamemd::INIClass *)(a1)); /*0x74327f*/
+  void *Block; // [esp+18h] [ebp-BCh]
   Block = 0; /*0x74328e*/
+  char v49; // [esp+20h] [ebp-B4h]
   v49 = 1; /*0x743292*/
+  void **v46; // [esp+14h] [ebp-C0h] BYREF
   v46 = &vt_DynamicVectorClass; /*0x743297*/
+  int v52; // [esp+28h] [ebp-ACh]
   v52 = 10; /*0x74329f*/
+  int v51; // [esp+24h] [ebp-B0h]
   v51 = 0; /*0x7432a7*/
+  char v50; // [esp+21h] [ebp-B3h]
   v50 = 0; /*0x7432ab*/
+  int v48; // [esp+1Ch] [ebp-B8h]
   v48 = 0; /*0x7432af*/
+  int KeyCount; // eax
   KeyCount = INIClass::GetKeyCount(v2->vtable1, (uint8_t *)aUnits); /*0x7432b3*/
+  int v4; // ecx
   v4 = 0; /*0x7432b8*/
+  int v61; // [esp+50h] [ebp-84h]
   v61 = KeyCount; /*0x7432bc*/
+  int v54; // [esp+30h] [ebp-A4h]
   v54 = 0; /*0x7432c0*/
   if ( KeyCount > 0 ) /*0x7432c4*/
   {
     while ( 1 ) /*0x7432dd*/
     {
+  uint8_t *StringByIndex; // eax
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2->vtable1, (uint8_t *)aUnits, v4); /*0x7432dd*/
+  char String[128]; // [esp+54h] [ebp-80h] BYREF
       (v2)->GetString((uint8_t *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
+  char *v6; // eax
       v6 = strtok(String, Str); /*0x743305*/
+  int v7; // esi
       v7 = (v6)->FindByName(); /*0x743314*/
       if ( v7 != -1 ) /*0x743319*/
       {
+  char *v8; // eax
         v8 = strtok(0, Str); /*0x743325*/
+  int Index; // edi
         Index = ((BuildingTypeClass *)v8)->FindIndex(); /*0x74333a*/
+  void *v10; // esi
         v10 = (void *)*((unsigned int *)stru_A80220.vfptr3 + v7); /*0x74333f*/
         if ( Index != -1 ) /*0x743342*/
         {
+  int *v11; // eax
           v11 = (int *)operator new(0x8E8u); /*0x74334d*/
           if ( v11 ) /*0x743357*/
           {
+  int v12; // esi
             v12 = UnitClass::Construct(v11, *((unsigned int *)dword_A83CE4 + Index), v10); /*0x74336f*/
             if ( v12 ) /*0x743373*/
             {
+  char *v13; // eax
               v13 = strtok(0, Str); /*0x74337f*/
+  int v60; // [esp+4Ch] [ebp-88h]
               v60 = atoi(v13); /*0x74338d*/
               if ( *(int *)&((unsigned int *)&stru_A8EB00)[408] < 4 ) /*0x74339f*/
               {
+  char *v17; // eax
                 v17 = strtok(0, Str); /*0x7433d0*/
+  int v18; // eax
                 v18 = atoi(v17); /*0x7433d6*/
+  int v55; // [esp+34h] [ebp-A0h]
                 (*((unsigned short *)&(v55))) = v18 % 128; /*0x7433f1*/
                 (*(((unsigned short *)&(v55)) + 1)) = v18 / 128; /*0x7433fb*/
                 v16 = v55; /*0x743400*/
               }
               else
               {
+  char *v14; // eax
                 v14 = strtok(0, Str); /*0x7433a1*/
+  int v56; // [esp+38h] [ebp-9Ch]
                 (*((unsigned short *)&(v56))) = atoi(v14); /*0x7433b2*/
+  char *v15; // eax
                 v15 = strtok(0, Str); /*0x7433b7*/
                 (*(((unsigned short *)&(v56)) + 1)) = atoi(v15); /*0x7433c2*/
                 v16 = v56; /*0x7433c7*/
               }
+  int v53; // [esp+2Ch] [ebp-A8h]
               v53 = v16; /*0x743404*/
+  unsigned int v58[2]; // [esp+40h] [ebp-94h] BYREF
               v58[0] = ((int16_t)v16 << 8) + 128; /*0x743429*/
               v58[1] = ((*((signed short *)(((unsigned char *)&(v16)) + 2))) << 8) + 128; /*0x74342d*/
+  int v59; // [esp+48h] [ebp-8Ch]
               v59 = 0; /*0x743431*/
+  char *v19; // eax
               v19 = strtok(0, Str); /*0x743435*/
+  int v20; // ebp
               v20 = atoi(v19); /*0x743446*/
+  char *v21; // eax
               v21 = strtok(0, Str); /*0x743448*/
+  int v22; // ebx
               v22 = LookupWaypointName((ObjectClass *)v21); /*0x743457*/
+  char *v23; // eax
               v23 = strtok(0, Str); /*0x743460*/
+  TeamClass *v24; // eax
               v24 = (TeamClass *)((ObjectTypeClass *)v23)->FindByName(); /*0x74346a*/
               if ( v24 ) /*0x743471*/
               {
+  int v25; // eax
                 v25 = (int)((v24)->FindOrCreate());
                 if ( v25 ) /*0x74347c*/
                   ((ObjectClass *)v12)->SetReference(v25); /*0x743481*/
               }
+  char *v26; // eax
               v26 = strtok(0, Str); /*0x74348d*/
               if ( v26 ) /*0x743497*/
               {
+  int v27; // eax
                 v27 = atoi(v26); /*0x74349a*/
                 FootClass::SetField(&v12->veterancy, v27); /*0x7434a9*/
               }
+  char *v28; // eax
               v28 = strtok(0, Str); /*0x7434b5*/
               if ( v28 ) /*0x7434bf*/
                 v12->displayProductionTo = atoi(v28); /*0x7434ca*/
+  char *v29; // eax
               v29 = strtok(0, Str); /*0x7434d7*/
               if ( v29 ) /*0x7434e1*/
               {
+  bool v30; // al
                 v30 = atoi(v29) != 0; /*0x7434ee*/
                 v12->onBridge = v30; /*0x7434f3*/
                 if ( v30 ) /*0x7434f9*/
                   v59 = dword_B1D0AC + Cell::GetGroundHeight(v58); /*0x743510*/
               }
+  char *v31; // eax
               v31 = strtok(0, Str); /*0x74351b*/
               if ( v31 ) /*0x743525*/
               {
+  int v32; // edi
                 v32 = atoi(v31); /*0x743531*/
                 if ( v51 < v48 /*0x74355f*/
                   || (v50 || !v48)
                   && v52 > 0
                   && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v46[2])(&v46, v52 + v48, 0) )
                 {
+  int v33; // eax
                   v33 = v51++; /*0x74356a*/
                   *((unsigned int *)Block + v33) = v32; /*0x743575*/
                 }
               }
+  char *v34; // eax
               v34 = strtok(0, Str); /*0x74357f*/
               if ( v34 ) /*0x743589*/
                 v12->isRecruitableByAlly_d = atoi(v34) != 0; /*0x743599*/
+  char *v35; // eax
               v35 = strtok(0, Str); /*0x7435a6*/
               if ( v35 ) /*0x7435b0*/
                 v12->isRecruitableByEnemy_d = atoi(v35) != 0; /*0x7435c0*/
@@ -244,14 +235,18 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
                      v20,
                      a2) )
               {
+  int v36; // edi
                 v36 = v12->Type; /*0x7435de*/
+  int v37; // eax
                 (*((unsigned short *)&(v37))) = Math::RoundToInt((double)v61 * (double)v36->Strength * 0.00390625); /*0x7435f0*/
                 v12->health = v37; /*0x7435f5*/
+  int v38; // edi
                 v38 = v36->Strength; /*0x7435f8*/
                 if ( v37 > v38 - 3 ) /*0x743603*/
                   v12->health = v38; /*0x743605*/
                 if ( !v12->health ) /*0x743608*/
                   v12->health = 1; /*0x74360f*/
+  int v39; // eax
                 v39 = *(unsigned int *)v12; /*0x743619*/
                 a2 = 0; /*0x74361b*/
                 v12->estimatedHealth = *&v12->health; /*0x743620*/
@@ -274,10 +269,14 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
       v2 = v57; /*0x7432cd*/
     }
   }
+  unsigned int v40; // edi
   v40 = FootClass_Array.storedTiberium[2]; /*0x743664*/
+  int i; // ecx
   for ( i = 0; i < FootClass_Array.storedTiberium[2]; ++i ) /*0x74366e*/
   {
+  unsigned int v42; // eax
     v42 = *((unsigned int *)Block + i); /*0x74367a*/
+  int v43; // edx
     v43 = *(unsigned int *)(FootClass_Array.hijackerInfantryType + 4 * i); /*0x74367d*/
     if ( v42 == -1 || v42 >= v40 ) /*0x743687*/
     {
@@ -285,6 +284,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
     }
     else
     {
+  int v44; // eax
       v44 = *(unsigned int *)(FootClass_Array.hijackerInfantryType + 4 * v42); /*0x743689*/
       *(unsigned int *)(v43 + 1736) = v44; /*0x74368c*/
       *(unsigned char *)(v44 + 1744) = 1; /*0x743692*/
@@ -849,15 +849,10 @@ namespace gamemd {
 int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 {
 
-  void *vtable2; // edx
-  char *vtable0; // edi
-  unsigned __int8 v6; // al
-  char *v7; // edx
-  int v8; // ebp
-  void *v10; // edx
   void (**vtable3)(void **); // edx
   unsigned int v12; // [esp+10h] [ebp+4h]
 
+  void *vtable2; // edx
   vtable2 = (void *)(this->M8); /*0x74bdc8*/
   if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
   {
@@ -866,7 +861,9 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   if ( a2 ) /*0x74bde6*/
   {
+  char *vtable0; // edi
     vtable0 = (char *)this->AbstractClass; /*0x74bdeb*/
+  unsigned __int8 v6; // al
     v6 = (*((int (**)(void **, unsigned int, unsigned int))this->M8 + 2))(&this->M8, (a2 + 7) >> 3, 0); /*0x74bdf9*/
     this->AbstractClass = (void *)a2; /*0x74be01*/
     v12 = v6; /*0x74be03*/
@@ -874,9 +871,11 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
     {
       do /*0x74be53*/
       {
+  char *v7; // edx
         v7 = (char *)this->M8; /*0x74be0e*/
         if ( v7 != vtable0 ) /*0x74be13*/
         {
+  int v8; // ebp
           v8 = (int)vtable0; /*0x74be17*/
           if ( vtable0 >= this->AbstractClass ) /*0x74be1b*/
             v8 = -1; /*0x74be1d*/
@@ -898,6 +897,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   else
   {
+  void *v10; // edx
     v10 = (void *)(this->M8); /*0x74be60*/
     if ( v10 != (void *)-1 ) /*0x74be65*/
     {
@@ -916,16 +916,16 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 namespace gamemd {
 int CleanupVeinholeSystem()
 {
-  int i; // esi
-  int v1; // ecx
-  int result; // eax
 
+  int i; // esi
   for ( i = dword_B1D2A0 - 1; i >= 0; --i ) /*0x74d76e*/
   {
+  int v1; // ecx
     v1 = *((unsigned int *)dword_B1D294 + i); /*0x74d776*/
     if ( v1 ) /*0x74d77b*/
       (*(void (**)(int, int))(*(unsigned int *)v1 + 32))(v1, 1); /*0x74d781*/
   }
+  int result; // eax
   result = (int)dword_B1D294; /*0x74d787*/
   dword_B1D2A0 = 0; /*0x74d78c*/
   if ( dword_B1D294 && byte_B1D29D ) /*0x74d79c*/
@@ -1058,18 +1058,18 @@ namespace gamemd {
 char _e4::AddRef(int a2)
 {
 
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = (int)(this->ptr_8); /*0x74f3c2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x74f3cd*/
   {
+  int v3; // edx
     v3 = 0; /*0x74f3cf*/
     if ( m_8 <= 0 ) /*0x74f3d3*/
       return 1; /*0x74f3f3*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->u32_4); /*0x74f3d5*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x74f3db*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x74f3e4*/
     {
@@ -1088,13 +1088,11 @@ namespace gamemd {
 char _e4::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x74f40c*/
   {
     LOBYTE(this->u32_C) = 0; /*0x74f416*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x74f41c*/
       v4 = a3; /*0x74f432*/
     else
@@ -1104,9 +1102,11 @@ char _e4::Release(int a2, unsigned int * a3)
     {
       if ( *&this->u32_4 ) /*0x74f445*/
       {
+  int m_8; // ecx
         m_8 = (int)(this->ptr_8); /*0x74f44c*/
         if ( a2 < m_8 ) /*0x74f451*/
           m_8 = a2; /*0x74f453*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x74f459*/
           ++i; /*0x74f45e*/
         if ( BYTE1(this->u32_C) ) /*0x74f46b*/
@@ -1153,16 +1153,16 @@ wchar_t * _e4::ddtor()
 namespace gamemd {
 int _e4::Read(unsigned int * a2)
 {
-  int result; // eax
-  int v3; // edx
-  unsigned int *i; // ecx
 
   if ( !this->u32_C ) /*0x74f4e0*/
     return 0; /*0x74f4e8*/
+  int v3; // edx
   v3 = (int)(this->ptr_8); /*0x74f4ee*/
+  int result; // eax
   result = 0; /*0x74f4f1*/
   if ( v3 <= 0 ) /*0x74f4f5*/
     return -1; /*0x74f50c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int *)this->u32_C + 4); *i != *a2; ++i ) /*0x74f4fb*/
   {
     if ( ++result >= v3 ) /*0x74f50a*/
@@ -1186,12 +1186,8 @@ namespace gamemd {
 AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 {
 
-  int v2; // eax
-  int v3; // eax
   unsigned __int16 vtable2_high; // bp
-  int v5; // eax
   unsigned __int16 v6; // ax
-  char *p_vtable3; // esi
   RawFileClass v9; // [esp+10h] [ebp-24h] BYREF
 
   if ( (this->ambientSoundController[2] & 8) == 0 ) /*0x74faef*/
@@ -1212,10 +1208,12 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
       BYTE2(this->owningHouseIndex) = 0; /*0x74fb55*/
     }
     (&v9)->Dtor(); /*0x74fb5c*/
+  int v2; // eax
     v2 = this->ambientSoundController[2]; /*0x74fb61*/
     LOBYTE(v2) = v2 | 8; /*0x74fb64*/
     this->ambientSoundController[2] = v2; /*0x74fb66*/
   }
+  int v3; // eax
   v3 = this->ambientSoundController[2]; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
@@ -1246,6 +1244,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
       DataGlobal_A8EB00[522] = 0; /*0x74fc07*/
     }
     (&v9)->Dtor(); /*0x74fc11*/
+  int v5; // eax
     v5 = *(unsigned int *)&DataGlobal_A8EC40; /*0x74fc16*/
     LOBYTE(v5) = DataGlobal_A8EC40 | 8; /*0x74fc1b*/
     *(unsigned int *)&DataGlobal_A8EC40 = v5; /*0x74fc1d*/
@@ -1260,6 +1259,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
     v6 = 1; /*0x74fc49*/
     *(unsigned int *)&DataGlobal_A8EC40 |= 2u; /*0x74fc4e*/
   }
+  char *p_vtable3; // esi
   p_vtable3 = (char *)&this->?; /*0x74fc60*/
   sprintf(p_vtable3, "%d.%3.3d", v6, vtable2_high); /*0x74fc6a*/
   return p_vtable3; /*0x74fc74*/
@@ -1280,8 +1280,8 @@ unsigned int * ObjectClass::ObjectClass::unknown_libname_35()
 namespace gamemd {
 void sub_746EE0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x746eec*/
   dbl_B1D0E0 = Math::Sqrt(v0 + v0); /*0x746efe*/
 }
@@ -1331,10 +1331,10 @@ void sub_746F90()
 namespace gamemd {
 long long sub_746FB0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B1D0C0 - dbl_B1D0E8); /*0x746fc2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B1D0E0 * 0.5); /*0x746fd6*/
   dword_B1D138 = result; /*0x746fdb*/
   return result; /*0x746fe0*/
@@ -1361,8 +1361,8 @@ void sub_747020()
 namespace gamemd {
 long long sub_747050()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B1D138) + 0.5); /*0x74706b*/
   dword_B1D12C = result; /*0x747070*/
   return result; /*0x747076*/
@@ -1413,13 +1413,11 @@ int UnitTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0()
 namespace gamemd {
 int sub_7473E0()
 {
-  int v1; // esi
   int v2; // ecx
-  ConvertClass *v3; // eax
-  int result; // eax
 
   if ( !dword_B1D13C ) /*0x7473e7*/
   {
+  int v1; // esi
     v1 = operator new(0x20u); /*0x7473f1*/
     if ( v1 ) /*0x7473f8*/
     {
@@ -1441,6 +1439,7 @@ int sub_7473E0()
   }
   if ( !dword_B1D140 ) /*0x747449*/
   {
+  ConvertClass *v3; // eax
     v3 = (ConvertClass *)operator new(0x188u); /*0x747450*/
     if ( v3 ) /*0x74745a*/
       dword_B1D140 = (BuildingClass *)ConvertClass::Construct( /*0x747478*/
@@ -1454,6 +1453,7 @@ int sub_7473E0()
       dword_B1D140 = 0; /*0x74747f*/
   }
   dword_B1D144 = (int)SearchMIXFile(aViscSmlShp, 0); /*0x74749c*/
+  int result; // eax
   result = (int)SearchMIXFile(aViscLrgShp, 0); /*0x7474a1*/
   dword_B1D148 = result; /*0x7474a6*/
   return result; /*0x7474ab*/
@@ -1474,14 +1474,14 @@ unsigned int * sub_747600(unsigned int * a1, int a2, unsigned int * a3)
 namespace gamemd {
 int sub_748380(unsigned short * a1, int a2)
 {
-  int result; // eax
-  uint16_t v3; // dx
 
+  int result; // eax
   result = a2; /*0x748380*/
   if ( a2 > 0 ) /*0x748384*/
   {
     do /*0x74839e*/
     {
+  uint16_t v3; // dx
       v3 = *a1++; /*0x74838f*/
       --result; /*0x748395*/
       *(a1 - 1) = *((unsigned short *)dword_B1D14C + v3); /*0x74839a*/
@@ -1504,16 +1504,16 @@ void ObjectClass::nullsub_143()
 namespace gamemd {
 int Array_Sum(int * a1)
 {
-  int v1; // edx
-  int result; // eax
-  int v3; // esi
 
+  int v1; // edx
   v1 = a1[512]; /*0x7490a0*/
+  int result; // eax
   result = 0; /*0x7490a6*/
   if ( v1 > 0 ) /*0x7490aa*/
   {
     do /*0x7490b5*/
     {
+  int v3; // esi
       v3 = *a1++; /*0x7490ad*/
       result += v3; /*0x7490b2*/
       --v1; /*0x7490b4*/
@@ -1536,8 +1536,8 @@ Iostream_init * E4Recv_7490C0::__0Iostream_init_QAE_XZ_7()
 namespace gamemd {
 void sub_7491A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x7491ac*/
   dbl_B1D170 = Math::Sqrt(v0 + v0); /*0x7491be*/
 }
@@ -1587,10 +1587,10 @@ void sub_749250()
 namespace gamemd {
 long long sub_749270()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B1D150 - dbl_B1D178); /*0x749282*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B1D170 * 0.5); /*0x749296*/
   dword_B1D1C8 = result; /*0x74929b*/
   return result; /*0x7492a0*/
@@ -1609,8 +1609,8 @@ void sub_7492E0()
 namespace gamemd {
 long long sub_749310()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B1D1C8) + 0.5); /*0x74932b*/
   dword_B1D1BC = result; /*0x749330*/
   return result; /*0x749336*/
@@ -1665,8 +1665,8 @@ int sub_749390()
 namespace gamemd {
 void sub_74AB70()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x74ab7c*/
   dbl_B1D1F0 = Math::Sqrt(v0 + v0); /*0x74ab8e*/
 }
@@ -1716,10 +1716,10 @@ void sub_74AC20()
 namespace gamemd {
 long long sub_74AC40()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B1D1D0 - dbl_B1D1F8); /*0x74ac52*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B1D1F0 * 0.5); /*0x74ac66*/
   dword_B1D248 = result; /*0x74ac6b*/
   return result; /*0x74ac70*/
@@ -1746,8 +1746,8 @@ void sub_74ACB0()
 namespace gamemd {
 long long sub_74ACE0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B1D248) + 0.5); /*0x74acfb*/
   dword_B1D23C = result; /*0x74ad00*/
   return result; /*0x74ad06*/
@@ -1802,9 +1802,9 @@ int sub_74AD60()
 namespace gamemd {
 char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
 {
-  char *v4; // ecx
 
   *(unsigned int *)this = a2; /*0x74bbae*/
+  char *v4; // ecx
   v4 = this->M8 + 4); /*0x74bbb0*/
   this->u32_10 = 0; /*0x74bbb6*/
   *&this->M8 = -1; /*0x74bbb9*/
@@ -1823,12 +1823,12 @@ namespace gamemd {
 void E4Recv_74BF40::sub_74BF40(unsigned int a2)
 {
 
-  unsigned int v3; // edi
-  void *vtable2; // edx
 
+  unsigned int v3; // edi
   v3 = a2; /*0x74bf44*/
   if ( (void *)a2 >= this->AbstractClass ) /*0x74bf4a*/
     v3 = -1; /*0x74bf4c*/
+  void *vtable2; // edx
   vtable2 = this->M8; /*0x74bf4f*/
   if ( (void *)v3 != vtable2 ) /*0x74bf54*/
   {
@@ -1858,8 +1858,8 @@ int sub_74C170()
 namespace gamemd {
 void sub_74C190()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x74c19c*/
   dbl_B1D278 = Math::Sqrt(v0 + v0); /*0x74c1ae*/
 }
@@ -1909,10 +1909,10 @@ void sub_74C240()
 namespace gamemd {
 long long sub_74C260()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B1D258 - dbl_B1D280); /*0x74c272*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B1D278 * 0.5); /*0x74c286*/
   dword_B1D2E8 = result; /*0x74c28b*/
   return result; /*0x74c290*/
@@ -1939,8 +1939,8 @@ void sub_74C2D0()
 namespace gamemd {
 long long sub_74C300()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B1D2E8) + 0.5); /*0x74c31b*/
   dword_B1D2DC = result; /*0x74c320*/
   return result; /*0x74c326*/
@@ -2035,8 +2035,8 @@ void E4Recv_74F63A::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_0()
 namespace gamemd {
 VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*(Block + 1); /*0x74f653*/
   *Block = &vt_VectorClass; /*0x74f656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
@@ -2056,8 +2056,8 @@ VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 unsigned int ObjectClass::sub_74F730()
 {
-  int v2; // edx
 
+  int v2; // edx
   v2 = this->ambientSoundController[2]; /*0x74f734*/
   this->vfptr1 = 0; /*0x74f737*/
   (this->vtable3) = 0; /*0x74f73d*/
@@ -2076,31 +2076,31 @@ unsigned int ObjectClass::sub_74F730()
 namespace gamemd {
 char * sub_74FDC0()
 {
-  signed int FileVersionInfoSizeA; // eax
-  DWORD v1; // esi
-  void *v2; // ebx
-  unsigned int puLen; // [esp+4h] [ebp-190h] BYREF
-  LPVOID lpBuffer; // [esp+8h] [ebp-18Ch] BYREF
-  DWORD dwHandle; // [esp+Ch] [ebp-188h] BYREF
-  CHAR SubBlock[128]; // [esp+10h] [ebp-184h] BYREF
-  CHAR Filename[260]; // [esp+90h] [ebp-104h] BYREF
 
   if ( !byte_846358 ) /*0x74fdce*/
     return off_846158; /*0x74fdce*/
   byte_846358 = 0; /*0x74fde8*/
+  CHAR Filename[260]; // [esp+90h] [ebp-104h] BYREF
   if ( !GetModuleFileNameA(g_hInstance, Filename, 0x104u) ) /*0x74fdef*/
     return off_846158; /*0x74fdef*/
+  DWORD dwHandle; // [esp+Ch] [ebp-188h] BYREF
   dwHandle = 1; /*0x74fe0a*/
+  signed int FileVersionInfoSizeA; // eax
   FileVersionInfoSizeA = GetFileVersionInfoSizeA(Filename, &dwHandle); /*0x74fe12*/
+  DWORD v1; // esi
   v1 = FileVersionInfoSizeA; /*0x74fe17*/
   if ( FileVersionInfoSizeA <= 0 ) /*0x74fe1b*/
     return off_846158; /*0x74fee3*/
+  void *v2; // ebx
   v2 = operator new(FileVersionInfoSizeA); /*0x74fe2f*/
   if ( GetFileVersionInfoA(Filename, dwHandle, v1, v2) ) /*0x74fe3c*/
   {
+  unsigned int puLen; // [esp+4h] [ebp-190h] BYREF
+  LPVOID lpBuffer; // [esp+8h] [ebp-18Ch] BYREF
     VerQueryValueA(v2, ::SubBlock, &lpBuffer, &puLen); /*0x74fe59*/
     if ( puLen ) /*0x74fe64*/
     {
+  CHAR SubBlock[128]; // [esp+10h] [ebp-184h] BYREF
       sprintf( /*0x74fe81*/
         SubBlock,
         "\\StringFileInfo\\%04d%04d\\ProductVersion",

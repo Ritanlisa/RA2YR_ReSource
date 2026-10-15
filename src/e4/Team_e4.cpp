@@ -180,16 +180,16 @@ namespace gamemd {
 int Team::ReleaseAll(int aP1)
 {
 
-  int v3; // esi
-  int result; // eax
-  int v5; // ecx
 
+  int v3; // esi
   v3 = 0; /*0x5d26c4*/
+  int result; // eax
   result = *&this->u32_28; /*0x5d26c6*/
   if ( result > 0 ) /*0x5d26cb*/
   {
     do /*0x5d26e4*/
     {
+  int v5; // ecx
       v5 = *(unsigned int *)(*&this->u32_1C + 4 * v3); /*0x5d26d6*/
       (*(void (**)(int, int))(*(unsigned int *)v5 + 32))(v5, aP1); /*0x5d26db*/
       result = *&this->u32_28; /*0x5d26de*/
@@ -205,52 +205,42 @@ int Team::ReleaseAll(int aP1)
 namespace gamemd {
 int sub_6219D0(int * a1, int a2, int a3, int a4)
 {
-  int v5; // edi
-  int result; // eax
-  int v7; // eax
-  int v8; // edx
-  int v9; // kr00_4
-  int v11; // ebp
-  int v12; // ecx
-  int v13; // edi
-  int v14; // ebx
-  int v15; // edx
-  unsigned short *v16; // ecx
-  int v17; // ebp
-  int v18; // ebx
-  int v19; // ebx
-  int v20; // ebp
-  int v21; // edi
-  int v22; // edx
-  unsigned short *v23; // ecx
-  int v24; // ebp
-  int v25; // [esp+8h] [ebp-14h]
-  int v26; // [esp+8h] [ebp-14h]
-  int v27; // [esp+Ch] [ebp-10h]
-  int v29; // [esp+20h] [ebp+4h]
-  int v30; // [esp+20h] [ebp+4h]
 
+  int v5; // edi
   v5 = a2; /*0x6219d7*/
+  int result; // eax
   result = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 92))(a2, 0, 0); /*0x6219e7*/
+  int v27; // [esp+Ch] [ebp-10h]
   v27 = result; /*0x6219ec*/
   if ( result ) /*0x6219f0*/
   {
+  int v7; // eax
     v7 = (*(int (**)(int))(*(unsigned int *)v5 + 116))(v5); /*0x6219fc*/
+  int v8; // edx
     v8 = a1[1]; /*0x621a05*/
+  int v9; // kr00_4
     v9 = v7; /*0x621a0a*/
+  int v11; // ebp
     v11 = v9 / 2; /*0x621a12*/
+  int v25; // [esp+8h] [ebp-14h]
     v25 = v8; /*0x621a1a*/
     if ( v8 < a1[3] + v8 ) /*0x621a1e*/
     {
+  int v12; // ecx
       v12 = v11 * v8; /*0x621a26*/
+  int v29; // [esp+20h] [ebp+4h]
       v29 = v11 * v8; /*0x621a29*/
       do /*0x621aaf*/
       {
+  int v13; // edi
         v13 = *a1; /*0x621a2d*/
+  int v14; // ebx
         v14 = *a1 + a3; /*0x621a36*/
         if ( v13 < v13 + a3 ) /*0x621a3b*/
         {
+  int v15; // edx
           (*(((unsigned short *)&(v15)) + 1)) = (*(((unsigned short *)&(v27)) + 1)); /*0x621a3d*/
+  unsigned short *v16; // ecx
           v16 = (unsigned short *)(v27 + 2 * (v12 + *a1)); /*0x621a45*/
           do /*0x621a8c*/
           {
@@ -259,6 +249,7 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
             (*((unsigned short *)&(v14))) = (uint16_t)g_ScreenSaverState >> 1; /*0x621a65*/
             v14 &= g_ScreenSaverState; /*0x621a68*/
             (*((unsigned short *)&(v15))) = (uint16_t)v15 >> 1; /*0x621a6e*/
+  int v17; // ebp
             v17 = v14 | v11; /*0x621a71*/
             (*((unsigned short *)&(v14))) = (uint16_t)g_CreditsScreenState >> 1; /*0x621a7a*/
             v11 = v15 & (v14 | v17); /*0x621a7f*/
@@ -279,19 +270,27 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
       while ( v8 < a1[3] + a1[1] ); /*0x621aaf*/
       v5 = a2; /*0x621ab5*/
     }
+  int v18; // ebx
     v18 = a1[1]; /*0x621ab9*/
+  int v26; // [esp+8h] [ebp-14h]
     v26 = v18; /*0x621ac0*/
     if ( v18 < v18 + a4 ) /*0x621ac9*/
     {
+  int v19; // ebx
       v19 = v11 * v18; /*0x621acf*/
+  int v30; // [esp+20h] [ebp+4h]
       v30 = v19; /*0x621ad2*/
       do /*0x621b59*/
       {
+  int v20; // ebp
         v20 = *a1 + a1[2]; /*0x621adb*/
+  int v21; // edi
         v21 = *a1 + a3; /*0x621ae0*/
+  int v22; // edx
         v22 = a3 + v19 + *a1; /*0x621ae3*/
         if ( v21 < v20 ) /*0x621ae7*/
         {
+  unsigned short *v23; // ecx
           v23 = (unsigned short *)(v27 + 2 * v22); /*0x621aed*/
           do /*0x621b35*/
           {
@@ -300,6 +299,7 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
             (*((unsigned short *)&(v19))) = (uint16_t)g_ScreenSaverState >> 1; /*0x621b0d*/
             v19 &= g_ScreenSaverState; /*0x621b10*/
             (*((unsigned short *)&(v22))) = (uint16_t)v22 >> 1; /*0x621b16*/
+  int v24; // ebp
             v24 = v19 | v20; /*0x621b19*/
             (*((unsigned short *)&(v19))) = (uint16_t)g_CreditsScreenState >> 1; /*0x621b22*/
             v20 = v22 & (v19 | v24); /*0x621b27*/
@@ -327,30 +327,19 @@ namespace gamemd {
 Game * * E4Recv_634B20::sub_634B20()
 {
 
-  int v2; // ebp
-  unsigned char *v3; // esi
-  int uniqueId; // edx
-  int v5; // ecx
-  unsigned int *v6; // eax
-  int v7; // esi
-  int v8; // ecx
-  int v9; // ebp
-  unsigned char *v10; // eax
-  int v11; // esi
-  int i; // [esp+10h] [ebp-90h]
-  ObjectClass *nextObject; // [esp+14h] [ebp-8Ch]
-  int v14; // [esp+18h] [ebp-88h]
-  int j; // [esp+18h] [ebp-88h]
   unsigned int v16[2]; // [esp+1Ch] [ebp-84h] BYREF
   unsigned int v17[3]; // [esp+24h] [ebp-7Ch] BYREF
   unsigned short v18[56]; // [esp+30h] [ebp-70h] BYREF
 
+  int v2; // ebp
   v2 = 0; /*0x634b2a*/
+  ObjectClass *nextObject; // [esp+14h] [ebp-8Ch]
   nextObject = this->nextObject; /*0x634b33*/
   if ( (int)nextObject > 0 ) /*0x634b37*/
   {
     do /*0x634bf7*/
     {
+  unsigned char *v3; // esi
       v3 = *(unsigned char **)(this->occupant + 4 * v2); /*0x634b48*/
       memcpy(v18, v3, 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
@@ -358,14 +347,20 @@ Game * * E4Recv_634B20::sub_634B20()
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
       Debug::Log(); /*0x634b7d*/
+  int uniqueId; // edx
       uniqueId = this->M16; /*0x634b82*/
+  int v5; // ecx
       v5 = 0; /*0x634b88*/
+  int v14; // [esp+18h] [ebp-88h]
       v14 = uniqueId; /*0x634b8a*/
+  int i; // [esp+10h] [ebp-90h]
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
       {
+  unsigned int *v6; // eax
         v6 = (unsigned int *)*((unsigned int *)this->M4 + v5); /*0x634b99*/
         if ( v6[2] == v2 ) /*0x634b9f*/
         {
+  int v7; // esi
           v7 = *v6; /*0x634ba1*/
           (*(int (**)(unsigned int))(*(unsigned int *)*v6 + 136))(*v6); /*0x634ba7*/
           v16[1] = *(unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v7 + 440))(v7, v16); /*0x634bc3*/
@@ -384,13 +379,18 @@ Game * * E4Recv_634B20::sub_634B20()
     memcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
+  int v8; // ecx
     v8 = this->M16; /*0x634c48*/
+  int v9; // ebp
     v9 = 0; /*0x634c4e*/
+  int j; // [esp+18h] [ebp-88h]
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
+  unsigned char *v10; // eax
       v10 = (unsigned char *)*((unsigned int *)this->M4 + v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
+  int v11; // esi
         v11 = *(unsigned int *)v10; /*0x634c65*/
         (*(int (**)(unsigned int))(**(unsigned int **)v10 + 136))(*(unsigned int *)v10); /*0x634c6b*/
         (*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 440))(v11, v16); /*0x634c7f*/
@@ -407,14 +407,10 @@ namespace gamemd {
 void ** E4Recv_637640::sub_637640()
 {
 
-  int v1; // eax
-  int v2; // eax
-  int v3; // eax
-  _UNKNOWN **result; // eax
-  ObjectClass *v5; // [esp+Ch] [ebp-4h] BYREF
-  _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
 
+  ObjectClass *v5; // [esp+Ch] [ebp-4h] BYREF
   v5 = (gamemd::ObjectClass *)(this); /*0x637647*/
+  int v1; // eax
   v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&g_ScriptConfig + 16))( /*0x637655*/
          &g_ScriptConfig,
          &v5);
@@ -429,6 +425,8 @@ void ** E4Recv_637640::sub_637640()
       ++v1; /*0x637678*/
     }
   }
+  int v2; // eax
+  _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
   v2 = (*(int (**)(Array *, _UNKNOWN **))(*(unsigned int *)DataGlobal_AC4B30 + 16))(&stru_AC4B30, &retaddr); /*0x63769a*/
   if ( v2 != -1 && v2 < (int)DataGlobal_AC4B40 ) /*0x6376aa*/
   {
@@ -441,6 +439,7 @@ void ** E4Recv_637640::sub_637640()
     }
   }
   v5 = (ObjectClass *)&retaddr; /*0x6376d9*/
+  int v3; // eax
   v3 = (*((int (**)(void **))DataGlobal_AC4C18 + 4))(&DataGlobal_AC4C18); /*0x6376df*/
   if ( v3 != -1 && v3 < *(int *)&DataGlobal_AC4C28 ) /*0x6376ef*/
   {
@@ -453,6 +452,7 @@ void ** E4Recv_637640::sub_637640()
       ++v3; /*0x637702*/
     }
   }
+  _UNKNOWN **result; // eax
   result = (_UNKNOWN **)v5; /*0x637714*/
   if ( *(ObjectClass **)&g_ScriptPool == v5 ) /*0x637722*/
     *(unsigned int *)&g_ScriptPool = 0; /*0x637724*/
@@ -576,38 +576,37 @@ void sub_63A1B0(int a1)
 namespace gamemd {
 bool Team_Start_76ED10(void * a1, void * a2)
 {
-  int State; // eax
-  wchar_t *StringCSF; // eax
-  bool v6; // bl
-  int v7; // edx
-  bool v8; // al
-  void **v9; // [esp+4h] [ebp-4C0h] BYREF
-  int v10; // [esp+8h] [ebp-4BCh]
-  void **v11; // [esp+Ch] [ebp-4B8h] BYREF
-  int v12; // [esp+10h] [ebp-4B4h]
-  int v13[300]; // [esp+14h] [ebp-4B0h] BYREF
 
   if ( !*(unsigned int *)((unsigned int)(a1)+ 4) ) /*0x76ed10*/
     return 0; /*0x76ed20*/
+  int v13[300]; // [esp+14h] [ebp-4B0h] BYREF
   ConstructWDTSelection((int)v13, a1, a2); /*0x76ed31*/
+  int State; // eax
   State = ((unsigned int *)(v13[19] + 8))->GetState(); /*0x76ed3f*/
   ScoreText::ShowAlt(v13, (const wchar_t **)(State + 20), 0); /*0x76ed4c*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0, g_Str_File_WDTSel_cpp, 1230); /*0x76ed62*/
+  void **v9; // [esp+4h] [ebp-4C0h] BYREF
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
   ((ScoreText *)(v13))->Show((const wchar_t **)&v9); /*0x76ed7a*/
   ((void **)&v9)->Alt(); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/
+  void **v11; // [esp+Ch] [ebp-4B8h] BYREF
   ShowWDTTerritorySelection(v13, (int)&v11); /*0x76ed9b*/
+  bool v6; // bl
+  int v12; // [esp+10h] [ebp-4B4h]
   v6 = v12 != 0; /*0x76eda6*/
   if ( v12 ) /*0x76edab*/
   {
     *(unsigned int *)dword_A8B240 = v12->vtable3; /*0x76edba*/
     FindWDTTerritoryClass(&v9, *(int *)dword_A8B240); /*0x76edbf*/
+  int v10; // [esp+8h] [ebp-4BCh]
     if ( v10 ) /*0x76edca*/
     {
       g_abs_A8B270 = *(uint8_t *)(v10 + 14); /*0x76edd7*/
       g_RulesInitConfig = *(uint8_t *)(v10 + 15); /*0x76ede2*/
       g_abs_A8B25C = *(uint16_t *)(v10 + 16); /*0x76edec*/
+  int v7; // edx
       v7 = *(unsigned int *)(v10 + 56) >> 2; /*0x76edf5*/
       byte_A8B31D = 0; /*0x76edfd*/
       byte_A8B31C = v7 & 1; /*0x76ee06*/
@@ -618,6 +617,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
       g_abs_A8B260 = 1; /*0x76ee2f*/
       g_abs_A8B261 = (((unsigned char *)&(*(unsigned int *)(v10 + 56)))[1]) & 1; /*0x76ee3d*/
       g_abs_A8B262 = (*(unsigned int *)(v10 + 56) & 0x400) != 0; /*0x76ee4b*/
+  bool v8; // al
       v8 = (*(unsigned int *)(v10 + 56) & 0x200) != 0; /*0x76ee57*/
       (*((unsigned char *)&(g_abs_A8B264))) = 0; /*0x76ee59*/
       g_abs_A8B263 = v8; /*0x76ee60*/
@@ -641,22 +641,22 @@ bool Team_Start_76ED10(void * a1, void * a2)
 namespace gamemd {
 int Team_Start_7AFAD0(void * a1, void * a2)
 {
-  char **v2; // eax
-  char **v3; // esi
-  int v5; // edi
-  void *v6; // [esp+4h] [ebp-88h] BYREF
-  void *v7; // [esp+8h] [ebp-84h] BYREF
-  char Buffer[128]; // [esp+Ch] [ebp-80h] BYREF
 
+  char **v2; // eax
   v2 = (char **)((a1)->Factory());
+  char Buffer[128]; // [esp+Ch] [ebp-80h] BYREF
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
+  void *v6; // [esp+4h] [ebp-88h] BYREF
   ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
+  void *v7; // [esp+8h] [ebp-84h] BYREF
   ((String *)((char **)&v7))->Assign((const char *)(aWdtchoicemdIni)); /*0x7afb08*/
+  char **v3; // esi
   v3 = (char **)(sub_4F1B80((char **)&v6, (char **)&v7, a2)); /*0x7afb1e*/
   DeleteAndZero(&v7); /*0x7afb20*/
   DeleteAndZero(&v6); /*0x7afb29*/
   if ( !v3 ) /*0x7afb30*/
     return 0; /*0x7afb32*/
+  int v5; // edi
   v5 = ProcessGraphicMenu((int)v3); /*0x7afb44*/
   (*(void (**)(char **, int))*v3)(v3, 1); /*0x7afb4c*/
   switch ( v5 ) /*0x7afb52*/
@@ -748,9 +748,9 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
 namespace gamemd {
 void Team_Start_76ECD0(int a1, ScoreScreen * a2)
 {
-  unsigned char v4[1200]; // [esp+8h] [ebp-4B0h] BYREF
 
   ((HWND *)dword_87F770)->PumpMessages(); /*0x76ece2*/
+  unsigned char v4[1200]; // [esp+8h] [ebp-4B0h] BYREF
   ConstructWDTSelection((int)v4, a1, a2); /*0x76eced*/
   Team_Start_76E750((int)v4, a2); /*0x76ecf7*/
   SelectionInitializeWOL((int)v4); /*0x76ed00*/

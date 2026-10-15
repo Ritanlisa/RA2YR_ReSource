@@ -15,15 +15,14 @@ namespace gamemd {  // G42.18 ns repair
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  int result; // eax
-  Stream *v11; // edx
-  unsigned short *v13; // eax
-  unsigned short *v14; // [esp+18h] [ebp+14h]
 
+  int result; // eax
   result = a4; /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
+  Stream *v11; // edx
     v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493941*/
+  unsigned short *v14; // [esp+18h] [ebp+14h]
     v14 = (unsigned short *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
@@ -35,6 +34,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
+  unsigned short *v13; // eax
       v13 = a5 + 1; /*0x4939ae*/
       if ( (unsigned int)(a5 + 1) >= v11[1].Stream_field_08 ) /*0x4939b4*/
         v13 = (unsigned short *)((char *)v13 - v11[1].Stream_field_0C); /*0x4939b6*/
@@ -52,17 +52,16 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  int result; // eax
-  int v12; // ebp
-  Stream *v14; // edi
-  unsigned short *v15; // eax
-  unsigned short *v16; // [esp+14h] [ebp+14h]
 
+  int result; // eax
   result = a4; /*0x493a60*/
   if ( a4 > 0 ) /*0x493a6a*/
   {
+  int v12; // ebp
     v12 = argC; /*0x493a76*/
+  Stream *v14; // edi
     v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493a80*/
+  unsigned short *v16; // [esp+14h] [ebp+14h]
     v16 = (unsigned short *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
@@ -73,6 +72,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
         *a5 = argC; /*0x493ac9*/
         v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493acc*/
       }
+  unsigned short *v15; // eax
       v15 = a5 + 1; /*0x493ad2*/
       ++a2; /*0x493ad8*/
       ++a1; /*0x493ad9*/
@@ -92,15 +92,14 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  int result; // eax
-  Stream *v11; // edx
-  unsigned short *v13; // eax
-  unsigned short *v14; // [esp+18h] [ebp+14h]
 
+  int result; // eax
   result = a4; /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
+  Stream *v11; // edx
     v11 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x493ba1*/
+  unsigned short *v14; // [esp+18h] [ebp+14h]
     v14 = (unsigned short *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
@@ -112,6 +111,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/
+  unsigned short *v13; // eax
       v13 = a5 + 1; /*0x493c0e*/
       if ( (unsigned int)(a5 + 1) >= v11[1].Stream_field_08 ) /*0x493c14*/
         v13 = (unsigned short *)((char *)v13 - v11[1].Stream_field_0C); /*0x493c16*/
@@ -129,12 +129,12 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
-  int v11; // eax
   AbstractClass * result;
   int v14; // edi
   uint8_t v16; // bl
   uint16_t *v17; // [esp+20h] [ebp+18h]
 
+  int v11; // eax
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
@@ -431,8 +431,8 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 namespace gamemd {
 BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 2); /*0x49a248*/
   *(unsigned int *)Block->tail_0 = &vt_BlitTransXlatAlpha; /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/

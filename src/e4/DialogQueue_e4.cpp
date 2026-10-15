@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int DialogQueue::PushEntry(void *a1, void *a2, void *a3, void *a4)
 {
-  int result; // eax
 
+  int result; // eax
   result = g_MissionQueueFrame.ls640BkgdName[9]; /*0x5d4e70*/
   if ( g_MissionQueueFrame.ls640BkgdName[11] < g_MissionQueueFrame.ls640BkgdName[9] /*0x5d4eac*/
     || ((((unsigned char *)&(g_MissionQueueFrame.ls640BkgdName[10]))[1]) || !g_MissionQueueFrame.ls640BkgdName[9])
@@ -34,10 +34,10 @@ int DialogQueue::PushEntry(void *a1, void *a2, void *a3, void *a4)
 namespace gamemd {
 int DialogQueue::RemoveEntry(void *a1)
 {
-  int result; // eax
-  DialogQueue *v2; // [esp+0h] [ebp-4h] BYREF
 
+  DialogQueue *v2; // [esp+0h] [ebp-4h] BYREF
   v2 = this; /*0x5d4ed7*/
+  int result; // eax
   result = (*(int (**)(int *, DialogQueue **))(g_MissionQueueFrame.ls640BkgdName[7] + 16))( /*0x5d4ee5*/
              &g_MissionQueueFrame.ls640BkgdName[7],
              &v2);

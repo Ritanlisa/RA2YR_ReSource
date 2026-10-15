@@ -110,29 +110,29 @@ namespace gamemd {  // G42.18c ns repair
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
 
-  int v7; // ebx
-  int v8; // edx
-  int Width; // ecx
-  unsigned int *v10; // esi
-  int v11; // eax
-  int v12; // [esp-1Ch] [ebp-2Ch]
-  int v13; // [esp+8h] [ebp-8h] BYREF
-  int v14; // [esp+Ch] [ebp-4h]
 
+  int v7; // ebx
   v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
+  int v8; // edx
     v8 = a2[1]; /*0x6b5614*/
+  int v13; // [esp+8h] [ebp-8h] BYREF
     v13 = *a2; /*0x6b5619*/
+  int v14; // [esp+Ch] [ebp-4h]
     v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
+  int Width; // ecx
       Width = this->Width; /*0x6b5623*/
       v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
+  unsigned int *v10; // esi
     v10 = (unsigned int *)(((CellCoord *)&DataGlobal_87F7E8)->To_CellObj(a6)); /*0x6b5674*/
+  int v12; // [esp-1Ch] [ebp-2Ch]
     v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
+  int v11; // eax
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10->ptr_34, v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
@@ -145,19 +145,18 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 {
 
   int result; // eax
-  char Bool_Overwrite; // al
-  char Burn; // cl
-  char v6; // al
-  int Width; // [esp-8h] [ebp-210h]
-  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x6b56eb*/
   {
+  char Bool_Overwrite; // al
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aCrater, this->Crater); /*0x6b570b*/
+  char Burn; // cl
     Burn = this->Burn; /*0x6b5710*/
     this->Crater = Bool_Overwrite; /*0x6b5716*/
+  char v6; // al
     v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->ArrayIndex, aBurn, Burn); /*0x6b5725*/
+  int Width; // [esp-8h] [ebp-210h]
     Width = this->Width; /*0x6b5732*/
     this->Burn = v6; /*0x6b5739*/
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
@@ -170,6 +169,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
                      (unsigned __int8 *)this->?,
                      (unsigned __int8 *)g_INI_Key_Height,
                      this->Height);
+  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
     if ( this->Theater_d ) /*0x6b5764*/
       _makepath(Buffer, 0, 0, this->ArrayIndex, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
     else
@@ -190,10 +190,8 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
 namespace gamemd {  // G42.18c ns repair
 SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
 {
-  SHPStruct *Image; // eax
-  int v4; // eax
-  SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
+  SHPStruct *Image; // eax
   Image = a3->Image; /*0x6b6164*/
   /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b616a) */
   /* X11: vtable install elided (implicit via SmudgeTypeClass virtuals 0x6b6172) */
@@ -205,7 +203,9 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
     a3->Image = 0; /*0x6b6192*/
   }
   AbstractClass::AnnounceExpiredPointer(&a3->vfptr, 1); /*0x6b61a0*/
+  SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::SmudgeTypeClass *)(a3); /*0x6b61b5*/
+  int v4; // eax
   v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[52] + 16))( /*0x6b61b9*/
          &((unsigned int *)&stru_A8EB00)[52],
          &v6);
@@ -229,16 +229,16 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
 namespace gamemd {  // G42.18c ns repair
 bool SmudgeTypeClass::GetType(short * a2, int a3)
 {
-  UnitClass *v4; // eax
-  int v5; // edx
-  bool result; // al
-  unsigned int v7[3]; // [esp+4h] [ebp-Ch] BYREF
 
+  UnitClass *v4; // eax
   v4 = (UnitClass *)operator new(0xB0u); /*0x6b555b*/
+  bool result; // al
   result = 0; /*0x6b55a7*/
   if ( v4 ) /*0x6b5565*/
   {
+  unsigned int v7[3]; // [esp+4h] [ebp-Ch] BYREF
     v7[2] = 0; /*0x6b556d*/
+  int v5; // edx
     v5 = a2[1]; /*0x6b5578*/
     v7[0] = (*a2 << 8) + 128; /*0x6b5585*/
     v7[1] = (v5 << 8) + 128; /*0x6b559a*/
@@ -252,8 +252,8 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
 namespace gamemd {  // G42.18c ns repair
 SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 {
-  UnitClass *v3; // eax
 
+  UnitClass *v3; // eax
   v3 = (UnitClass *)operator new(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
     return UnitClass::Create(v3, this, &dword_B0B7A8, -1); /*0x6b55de*/
@@ -266,13 +266,13 @@ namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  int v3; // ecx
-  int v4; // edx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
+  int v3; // ecx
   LOBYTE(v3) = (unsigned char)(this->Crater); /*0x6b580c*/
   ((Power *)a2)->FlagProcess(v3); /*0x6b5815*/
+  int v4; // edx
   LOBYTE(v4) = this->Burn; /*0x6b581a*/
   ((Power *)a2)->FlagProcess(v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
@@ -284,8 +284,8 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
 namespace gamemd {  // G42.18c ns repair
 int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
@@ -308,8 +308,8 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 namespace gamemd {  // G42.18c ns repair
 int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x6b58bf*/
   if ( result >= 0 ) /*0x6b58c6*/
     return 0; /*0x6b58c8*/

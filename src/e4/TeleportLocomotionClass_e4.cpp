@@ -20,7 +20,6 @@ namespace gamemd {  // g57w12-r nsfix (orphan re-wrap)
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
 
-  int v2; // ecx
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
   this->MovingDestination[0] = g_BuildingLoadQueue_Array.?; /*0x718011*/
@@ -33,6 +32,7 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
   this->State = 0; /*0x71804c*/
+  int v2; // ecx
   v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x71804f*/
   this->Timer[2] = 0; /*0x718055*/
   this->Timer[0] = v2; /*0x718058*/

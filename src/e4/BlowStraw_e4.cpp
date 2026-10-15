@@ -275,10 +275,10 @@ namespace gamemd {
 TabClass * BlowStraw_29::Read(char * Block, char a2, void *a3)
 {
 
-  int *v3; // esi
-  int v4; // edi
 
+  int *v3; // esi
   v3 = (int *)((char *)Block + 21484); /*0x5be9e5*/
+  int v4; // edi
   v4 = 4; /*0x5be9eb*/
   do /*0x5bea06*/
   {

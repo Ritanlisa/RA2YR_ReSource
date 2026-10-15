@@ -135,21 +135,16 @@ long MainMenu_Screen(void * a1, void * a2)
 // 0x531F60
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
-  int result; // eax
-  unsigned int *WindowLongA; // eax
-  HWND v6; // esi
-  int v7; // eax
-  const wchar_t *v8; // eax
-  HWND DlgItem; // eax
-  int v10; // [esp-4h] [ebp-110h]
-  wchar_t lParam[128]; // [esp+Ch] [ebp-100h] BYREF
 
+  int result; // eax
   result = BaseDialogProc(hWnd, a3, a4); /*0x531f88*/
   if ( !result ) /*0x531f8f*/
   {
+  unsigned int *WindowLongA; // eax
     WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531f98*/
     switch ( a2 ) /*0x531fa1*/
     {
+  HWND DlgItem; // eax
       case 15: /*0x531fa1*/
         DlgItem = GetDlgItem(hWnd, 1818); /*0x5320db*/
         SendMessageA(DlgItem, 0x4F0u, 0, 0); /*0x5320eb*/
@@ -187,11 +182,16 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
           }
         }
         break;
+  HWND v6; // esi
       case 1175: /*0x531fa1*/
         v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
+  int v7; // eax
         v7 = GetModuleInternalVersion(&dword_A8ECE0); /*0x531fce*/
+  int v10; // [esp-4h] [ebp-110h]
         v10 = (int)(CharToWideString(v7)); /*0x531fda*/
+  const wchar_t *v8; // eax
         v8 = (const wchar_t *)GetStringCSF(aGuiVersion, (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
+  wchar_t lParam[128]; // [esp+Ch] [ebp-100h] BYREF
         swprintf(lParam, (const size_t)&off_826960, v8, v10); /*0x531ffc*/
         SendMessageA(v6, 0x4B2u, 0, (LPARAM)lParam); /*0x532011*/
         return 0; /*0x532022*/

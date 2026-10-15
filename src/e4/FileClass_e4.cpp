@@ -22,12 +22,12 @@
 namespace gamemd {  // G42.18 ns repair
 int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
-  int v4; // edi
-  int v5; // eax
 
   if ( this->u32_58 ) /*0x473ae3*/
   {
+  int v4; // edi
     v4 = *(unsigned int *)this->vtable1; /*0x473aeb*/
+  int v5; // eax
     v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)this->vtable1 + 4))(this); /*0x473aed*/
     (*(void (**)(CCFileClass *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
@@ -106,23 +106,17 @@ namespace gamemd {
 int FileClass::Read(char *aP1, signed int aP2, void *a3)
 {
 
-  DWORD v4; // ebx
-  int result; // eax
-  int v6; // eax
   char *v7; // edi
-  int v9; // ebx
-  DWORD LastError; // eax
-  void *v11; // [esp-1Ch] [ebp-2Ch]
-  int v12; // [esp-Ch] [ebp-1Ch]
-  DWORD NumberOfBytesRead; // [esp+8h] [ebp-8h] BYREF
-  int v14; // [esp+Ch] [ebp-4h]
-  DWORD nNumberOfBytesToReada; // [esp+18h] [ebp+8h]
 
+  DWORD v4; // ebx
   v4 = 0; /*0x65cce7*/
+  DWORD NumberOfBytesRead; // [esp+8h] [ebp-8h] BYREF
   NumberOfBytesRead = 0; /*0x65cce9*/
+  int v14; // [esp+Ch] [ebp-4h]
   v14 = 0; /*0x65cced*/
   if ( !(*(unsigned __int8 (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65ccf3*/
   {
+  int result; // eax
     result = (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1); /*0x65cd00*/
     if ( !result ) /*0x65cd05*/
       return result; /*0x65cd05*/
@@ -134,6 +128,7 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
   }
   else
   {
+  int v6; // eax
     v6 = (*(int (**)(RawFileClass *, unsigned int, int))(*(unsigned int *)this->FileClass + 40))(this, 0, 1); /*0x65cd27*/
     v7 = (char *)aP2; /*0x65cd2d*/
     if ( aP2 >= (int)this->FileName - v6 ) /*0x65cd35*/
@@ -141,6 +136,7 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
   }
   while ( (int)v7 > 0 ) /*0x65cd41*/
   {
+  void *v11; // [esp-1Ch] [ebp-2Ch]
     v11 = *(void **)this->FileTimeDateLo; /*0x65cd54*/
     NumberOfBytesRead = 0; /*0x65cd55*/
     if ( ReadFile(v11, aP1, (DWORD)v7, &NumberOfBytesRead, 0) ) /*0x65cd5d*/
@@ -156,11 +152,15 @@ int FileClass::Read(char *aP1, signed int aP2, void *a3)
       aP1 += NumberOfBytesRead; /*0x65cd6b*/
       v7 -= NumberOfBytesRead; /*0x65cd6d*/
       v4 += NumberOfBytesRead; /*0x65cd6f*/
+  DWORD nNumberOfBytesToReada; // [esp+18h] [ebp+8h]
       nNumberOfBytesToReada = v4; /*0x65cd78*/
       if ( byte_B04BEC ) /*0x65cd7c*/
         break; /*0x65cd7c*/
+  int v9; // ebx
       v9 = *(unsigned int *)this->FileClass; /*0x65cd81*/
+  int v12; // [esp-Ch] [ebp-1Ch]
       v12 = *&this->u32_14; /*0x65cd83*/
+  DWORD LastError; // eax
       LastError = GetLastError(); /*0x65cd86*/
       (*(void (**)(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToReada; /*0x65cd92*/

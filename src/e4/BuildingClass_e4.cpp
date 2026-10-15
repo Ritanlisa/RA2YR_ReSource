@@ -258,9 +258,7 @@ namespace gamemd {
 int BuildingClass::AssignDestination_SyncLog()
 {
 
-  int result; // eax
   TechnoClass *v3; // [esp+8h] [ebp+4h]
-  int v4; // [esp+Ch] [ebp+8h]
 
   if ( this->LightSource != 19 ) /*0x455d5a*/
   {
@@ -269,8 +267,10 @@ int BuildingClass::AssignDestination_SyncLog()
     {
       TechnoClass::SetFocus((TechnoClass *)this, (int)v3); /*0x455d80*/
     }
+  int v4; // [esp+Ch] [ebp+8h]
     IPersistStream::Stub(v3, v4); /*0x455d8d*/
   }
+  int result; // eax
   return result; /*0x455d93*/
 
 }
@@ -473,16 +473,16 @@ namespace gamemd {
 int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
 
-  int result; // eax
-  int v3; // edi
-  int v4; // ebp
 
+  int result; // eax
   result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
     aP0->planningToken = 0; /*0x70bf79*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 540); /*0x70bf7f*/
+  int v3; // edi
     v3 = (int)(aP0 + 772); /*0x70bf84*/
+  int v4; // ebp
     v4 = 8; /*0x70bf8a*/
     do /*0x70bf9e*/
     {
@@ -547,14 +547,14 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 namespace gamemd {
 int BuildingClass::processCapture()
 {
-  int v1; // edx
-  int v2; // ecx
-  char result; // al
 
+  int v1; // edx
   v1 = this->u32_898; /*0x712130*/
   if ( !v1 ) /*0x712138*/
     return 0; /*0x712138*/
+  int v2; // ecx
   v2 = this->u32_8B4; /*0x71213a*/
+  char result; // al
   result = 1; /*0x712140*/
   if ( v1 != v2 && v1->location <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
     return 0; /*0x712161*/

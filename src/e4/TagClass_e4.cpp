@@ -232,8 +232,8 @@ LABEL_45:
 namespace gamemd {
 char TagClass::HasValidHouse(void *a1)
 {
-  HouseClass *v1; // esi
 
+  HouseClass *v1; // esi
   v1 = (HouseClass *)this->firstTrigger; /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
@@ -250,12 +250,10 @@ char TagClass::HasValidHouse(void *a1)
 namespace gamemd {
 int TagClass::Unlink(void *a1)
 {
-  int v2; // eax
-  int result; // eax
-  TagTypeClass *buildingType; // ecx
 
   this->firstTrigger[8].destroyed = 0; /*0x71ade9*/
   this->firstTrigger[8].timer[1] = 0; /*0x71adf2*/
+  int v2; // eax
   v2 = this->u32_44; /*0x71adf8*/
   this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
@@ -264,6 +262,7 @@ int TagClass::Unlink(void *a1)
       v2->occuredEvents = 0; /*0x71ae07*/
     TagClass::Unlink(this->u32_44)); /*0x71ae0d*/
   }
+  int result; // eax
   result = this->uniqueId; /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
@@ -271,6 +270,7 @@ int TagClass::Unlink(void *a1)
       result->enabled = 0; /*0x71ae1e*/
     result = TagClass::Unlink(this->q040)); /*0x71ae24*/
   }
+  TagTypeClass *buildingType; // ecx
   buildingType = this->buildingType; /*0x71ae29*/
   this->u32_44 = 0; /*0x71ae2c*/
   this->uniqueId = 0; /*0x71ae31*/
@@ -285,14 +285,14 @@ int TagClass::Unlink(void *a1)
 namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
-  TriggerClass *firstTrigger; // eax
-  int result; // eax
 
   if ( this->buildingType == (TagTypeClass *)a2 ) /*0x6e561a*/
     this->buildingType = 0; /*0x6e561c*/
+  TriggerClass *firstTrigger; // eax
   firstTrigger = this->firstTrigger; /*0x6e5623*/
   if ( firstTrigger == (TriggerClass *)a2 ) /*0x6e5628*/
     this->firstTrigger = firstTrigger->nextTrigger; /*0x6e562d*/
+  int result; // eax
   result = (int)this->buildingType; /*0x6e5630*/
   if ( !result ) /*0x6e5635*/
   {
@@ -334,16 +334,16 @@ namespace gamemd {
 int TagClass::ProcessTag(int * a2)
 {
 
-  int v3; // eax
-  TriggerClass *firstTrigger; // eax
-  int v5; // eax
 
   ((AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
+  int v3; // eax
   v3 = (*((int (**)(void **))this->buildingType->? + 4))(&this->buildingType->?); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
+  TriggerClass *firstTrigger; // eax
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
+  int v5; // eax
     v5 = (*((int (**)(void **))firstTrigger->uniqueId + 4))(&firstTrigger->uniqueId); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
@@ -357,8 +357,8 @@ int TagClass::ProcessTag(int * a2)
 namespace gamemd {
 int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x6e573b*/
   if ( result >= 0 ) /*0x6e5742*/
   {
@@ -382,8 +382,8 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6e57af*/
   if ( result >= 0 ) /*0x6e57b6*/
     return 0; /*0x6e57b8*/

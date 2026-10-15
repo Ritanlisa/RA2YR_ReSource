@@ -66,10 +66,10 @@ wchar_t * PageUserCommandClass::Read(void *a1, void *a2, void *a3)
 char PageUserCommandClass::Do(int a1)
 {
 
-  char result; // al
 
   if ( ((unsigned int *)(g_GameMode_Current))[0] == 4 ) /*0x537e57*/
     return UI_Add(); /*0x537e59*/
+  char result; // al
   return result; /*0x537e5e*/
 
 }  // G42.18c ns repair

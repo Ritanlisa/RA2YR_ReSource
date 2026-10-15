@@ -36,8 +36,8 @@ int AlphaShapeClass::SD_vt13(int a2)
 namespace gamemd {
 int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int Prefix; // eax
 
+  int Prefix; // eax
   Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x420e4f*/
   return Prefix >= 0 ? 0 : Prefix;
 }
@@ -47,8 +47,8 @@ namespace gamemd {
 int AlphaShapeClass::SD_vt10(int a2, int a3)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = a2; /*0x420e70*/
   if ( a2 == this->q024 ) /*0x420e79*/
     this->u32_3C = 1; /*0x420e7b*/
@@ -61,15 +61,14 @@ namespace gamemd {
 AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
 {
 
-  int v3; // eax
-  int v4; // eax
-  AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)aP0->__pad_0 = &vt_AlphaShapeClass; /*0x42173d*/
   aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
   aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
   aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/
+  AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::AlphaShapeClass *)(aP0); /*0x42175f*/
+  int v3; // eax
   v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
@@ -81,6 +80,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
   v6 = (gamemd::AlphaShapeClass *)(aP0); /*0x4217a8*/
+  int v4; // eax
   v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
          &g_BuildingLoadQueue_Array.PowerBonus,
          &v6);
@@ -106,8 +106,8 @@ namespace gamemd {
 int  AlphaShapeClass::SD_vt05(int aP1, void *a2)
 {
 
-  int Prefix_0; // edi
 
+  int Prefix_0; // edi
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0(this,(gamemd::AbstractClass *)(aP1)); 
   if ( Prefix_0 >= 0 ) /*0x420df5*/
   {

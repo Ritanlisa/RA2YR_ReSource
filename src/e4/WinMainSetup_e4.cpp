@@ -24,10 +24,10 @@
 namespace gamemd {  // G42.18 ns repair
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
-  uint8_t result; // al
-  DDraw *v2; // [esp+0h] [ebp-4h]
 
+  uint8_t result; // al
   result = g_DDraw_Force3D; /*0x6bb8e0*/
+  DDraw *v2; // [esp+0h] [ebp-4h]
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
     result = DDraw::CleanupSurfaces(v2); /*0x6bb8ec*/
   if ( !byte_B0BCF5 ) /*0x6bb8f7*/
@@ -72,14 +72,10 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 namespace gamemd {
 void sub_72B130()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
-  void *v4; // esi
 
   if ( byte_B0FC90 ) /*0x72b13b*/
   {
+  void *v0; // esi
     v0 = (void *)(dword_B0FC80); /*0x72b13d*/
     if ( dword_B0FC80 ) /*0x72b145*/
     {
@@ -91,6 +87,7 @@ void sub_72B130()
   dword_B0FC80 = 0; /*0x72b162*/
   if ( byte_B0FC91 ) /*0x72b16a*/
   {
+  void *v1; // esi
     v1 = (void *)(dword_B0FC84); /*0x72b16c*/
     if ( dword_B0FC84 ) /*0x72b174*/
     {
@@ -102,6 +99,7 @@ void sub_72B130()
   dword_B0FC84 = 0; /*0x72b191*/
   if ( byte_B0FC92 ) /*0x72b199*/
   {
+  void *v2; // esi
     v2 = (void *)(dword_B0FC88); /*0x72b19b*/
     if ( dword_B0FC88 ) /*0x72b1a3*/
     {
@@ -113,6 +111,7 @@ void sub_72B130()
   dword_B0FC88 = 0; /*0x72b1c0*/
   if ( byte_B0FC93 ) /*0x72b1c8*/
   {
+  void *v3; // esi
     v3 = (void *)(dword_B0FC8C); /*0x72b1ca*/
     if ( dword_B0FC8C ) /*0x72b1d2*/
     {
@@ -124,6 +123,7 @@ void sub_72B130()
   dword_B0FC8C = 0; /*0x72b1ef*/
   if ( byte_B0FC94 ) /*0x72b1f7*/
   {
+  void *v4; // esi
     v4 = (void *)(dword_B0FACC); /*0x72b1f9*/
     if ( dword_B0FACC ) /*0x72b201*/
     {
@@ -139,9 +139,9 @@ void sub_72B130()
 namespace gamemd {
 int sub_53D550()
 {
-  int *v1; // esi
   int result; // eax
 
+  int *v1; // esi
   v1 = (int *)(dword_A9FFC8);
   do /*0x53d571*/
   {
@@ -158,14 +158,14 @@ int sub_53D550()
 namespace gamemd {
 void sub_5B4310()
 {
-  unsigned int *v0; // esi
-  unsigned int *v1; // ecx
 
+  unsigned int *v0; // esi
   v0 = (unsigned int *)(dword_ABF00C);
   if ( dword_ABF00C ) /*0x5b431a*/
   {
     if ( *(unsigned int *)dword_ABF00C ) /*0x5b431c*/
       (*(unsigned int **)dword_ABF00C)->Destructor(); /*0x5b4324*/
+  unsigned int *v1; // ecx
     v1 = (unsigned int *)v0[1]; /*0x5b4329*/
     if ( v1 ) /*0x5b432e*/
       (v1)->Destructor(); /*0x5b4330*/
@@ -179,8 +179,8 @@ void sub_5B4310()
 namespace gamemd {
 void sub_5BE940()
 {
-  void *v0; // esi
 
+  void *v0; // esi
   v0 = (void *)(dword_ABF294);
   if ( dword_ABF294 ) /*0x5be949*/
   {
@@ -196,8 +196,8 @@ void sub_5BE940()
 namespace gamemd {
 int sub_5DB6F0()
 {
-  int result; // eax
 
+  int result; // eax
   result = WinMainSetup_Setup_5DB6F0_Setup(); /*0x5db6f1*/
   (*((unsigned short *)&(g_CurrentPlayerName))) = 0; /*0x5db700*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5db707*/
@@ -253,13 +253,13 @@ int sub_5E8A20()
 namespace gamemd {
 void sub_5FF800()
 {
-  int *v1; // esi
 
   if ( dword_AC1838 ) /*0x5ff807*/
   {
     operator delete((void *)(dword_AC1838)); /*0x5ff80a*/
     dword_AC1838 = 0; /*0x5ff812*/
   }
+  int *v1; // esi
   v1 = (int *)(dword_AC1698);
   do /*0x5ff83d*/
   {
@@ -275,8 +275,8 @@ void sub_5FF800()
 namespace gamemd {
 void sub_626FF0()
 {
-  void *v0; // esi
 
+  void *v0; // esi
   v0 = (void *)(g_FileExtensionState);
   if ( g_FileExtensionState ) /*0x626ff9*/
   {
@@ -291,17 +291,17 @@ void sub_626FF0()
 namespace gamemd {
 void sub_65FD50()
 {
-  int i; // edi
-  void *v2; // esi
-  int v3; // eax
-  int v4; // [esp+4h] [ebp-4h] BYREF
 
+  int i; // edi
   for ( i = g_TriggerEventState - 1; i >= 0; --i ) /*0x65fd5c*/
   {
+  void *v2; // esi
     v2 = *(void **)(g_TriggerPool + 4 * i); /*0x65fd65*/
     if ( v2 ) /*0x65fd6a*/
     {
+  int v4; // [esp+4h] [ebp-4h] BYREF
       v4 = *(unsigned int *)(g_TriggerPool + 4 * i); /*0x65fd7b*/
+  int v3; // eax
       v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)DataGlobal_B04DA8 + 16))(&stru_B04DA8, &v4); /*0x65fd7f*/
       if ( v3 != -1 && v3 < g_TriggerEventState ) /*0x65fd8f*/
       {
@@ -324,11 +324,10 @@ void sub_65FD50()
 namespace gamemd {
 void sub_72AC40()
 {
-  ObjectClass *v0; // [esp+0h] [ebp-4h]
   LoadingScreen *v1; // [esp+0h] [ebp-4h]
-  ObjectClass *v2; // [esp+0h] [ebp-4h]
 
   WinMainSetup_Setup_72AC40_Setup(); /*0x72ac41*/
+  ObjectClass *v0; // [esp+0h] [ebp-4h]
   WinMainSetup_Setup_72AC40_Setup_72B230(v0); /*0x72ac46*/
   if ( DataGlobal_B0FBE0 ) /*0x72ac54*/
   {
@@ -351,6 +350,7 @@ void sub_72AC40()
     *(unsigned int *)&DataGlobal_B0FC28 = 0; /*0x72ace5*/
     operator delete((void *)(*(void **)&DataGlobal_B0FC2C)); /*0x72acec*/
     *(unsigned int *)&DataGlobal_B0FC2C = 0; /*0x72acf4*/
+  ObjectClass *v2; // [esp+0h] [ebp-4h]
     ReleaseLoadingResources(v2); /*0x72acfa*/
   }
   FileTree::CleanupAll(); /*0x72acff*/

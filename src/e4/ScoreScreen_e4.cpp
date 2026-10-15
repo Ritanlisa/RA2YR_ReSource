@@ -33,10 +33,7 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * ScoreScreen::LoadScoreFont(int aP1)
 {
 
-  void *v3; // eax
   CCFileClass v5; // [esp+8h] [ebp-6Ch] BYREF
-  int v6[3]; // [esp+60h] [ebp-14h] BYREF
-  int v7; // [esp+6Ch] [ebp-8h]
 
   this->u32_4 = 0; /*0x690a19*/
   this->u32_8 = 0; /*0x690a1c*/
@@ -47,6 +44,7 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
   ++dword_B0558C; /*0x690a3c*/
   *(unsigned int *)this->__pad_0 = &vt_ScoreFullFontClass; /*0x690a44*/
   LOBYTE(this->u32_10) = 0; /*0x690a4a*/
+  void *v3; // eax
   v3 = SearchMIXFile((char *)(g_Str_File_FULLFNT3_SHP), 0); /*0x690a4d*/
   this->u32_C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
@@ -57,7 +55,9 @@ unsigned int * ScoreScreen::LoadScoreFont(int aP1)
     CCFileClass::Reset(&v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
     *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690a91*/
+  int v7; // [esp+6Ch] [ebp-8h]
     v7 = 0; /*0x690a99*/
+  int v6[3]; // [esp+60h] [ebp-14h] BYREF
     ((void *)((int)v6))->Clear(); /*0x690a9d*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690aa6*/
     ((BufferIOFileClass *)&v5)->Dtor(); /*0x690aae*/
@@ -74,10 +74,7 @@ namespace gamemd {
 unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 {
 
-  void *v3; // eax
   CCFileClass v5; // [esp+8h] [ebp-6Ch] BYREF
-  int v6[3]; // [esp+60h] [ebp-14h] BYREF
-  int v7; // [esp+6Ch] [ebp-8h]
 
   this->u32_4 = 0; /*0x690ae9*/
   this->u32_8 = 0; /*0x690aec*/
@@ -88,6 +85,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   ++dword_B0558C; /*0x690b0c*/
   *(unsigned int *)this->__pad_0 = &vt_ScoreBigFontClass; /*0x690b14*/
   LOBYTE(this->u32_10) = 0; /*0x690b1a*/
+  void *v3; // eax
   v3 = SearchMIXFile((char *)(aBigfontShp), 0); /*0x690b1d*/
   this->u32_C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
@@ -98,7 +96,9 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     CCFileClass::Reset(&v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
     *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x690b61*/
+  int v7; // [esp+6Ch] [ebp-8h]
     v7 = 0; /*0x690b69*/
+  int v6[3]; // [esp+60h] [ebp-14h] BYREF
     ((void *)((int)v6))->Clear(); /*0x690b6d*/
     *(unsigned int *)v5.CDFileClass = &off_7E1668; /*0x690b76*/
     ((BufferIOFileClass *)&v5)->Dtor(); /*0x690b7e*/
@@ -130,35 +130,24 @@ namespace gamemd {
 int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
 {
 
-  int v7; // eax
-  int v8; // ebx
-  int v9; // eax
-  int v10; // eax
-  int v11; // esi
   int v12; // edx
-  char *v13; // ebx
-  int v14; // ecx
-  ScoreScreen *v15; // esi
-  int v16; // eax
-  int v17; // eax
-  int v18; // ebp
-  int v19; // eax
-  int v20; // eax
-  int v21; // ecx
-  int v22; // eax
-  int v23; // eax
   DeleteAndZero v25; // [esp+10h] [ebp-10h] BYREF
 
+  int v7; // eax
   v7 = this->u32_3D0; /*0x7712d5*/
+  int v8; // ebx
   v8 = v7 - 1; /*0x7712d7*/
   if ( v7 > this->u32_3BC ) /*0x7712da*/
   {
     do /*0x77131c*/
     {
+  int v9; // eax
       v9 = this->u32_3D0; /*0x7712dc*/
       if ( v8 < v9 ) /*0x7712e4*/
       {
+  int v10; // eax
         v10 = v9 - 1; /*0x7712e6*/
+  int v11; // esi
         v11 = v8; /*0x7712e7*/
         for ( this->u32_3D0 = v10; v11 < this->u32_3D0; ++v11 ) /*0x7712f1*/
                     ((const char **)(/*0x771301*/ (String *)(this->u32_3C4 + 4 * v11)))->Reassign((const char **)(this->u32_3C4 + 4 * v11 + 4));
@@ -170,6 +159,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
   if ( !this->u32_3BC ) /*0x77131e*/
     this->u32_3B8 = 1; /*0x771328*/
   unknown_libname_73(&v25); /*0x771333*/
+  char *v13; // ebx
   v13 = &this->__pad_0[148 * a2 + 48 * a3]; /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this->__pad_000, (int)(v13 + 8), (void **)&v25) )
   {
@@ -179,8 +169,11 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
       this->u32_3B0 = v25.vtable3; /*0x771390*/
       this->u32_3B4 = a6; /*0x771393*/
     }
+  int v14; // ecx
     v14 = this->u32_3C8; /*0x771396*/
+  ScoreScreen *v15; // esi
     v15 = (gamemd::ScoreScreen *)(&this->u32_60); /*0x7713a2*/
+  int v16; // eax
     if ( this->u32_3D0 < v14 /*0x7713c7*/
       || (this->u32_3CD || !v14)
       && (v16 = this->u32_3D4, v16 > 0)
@@ -189,6 +182,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
            v14 + v16,
            0) )
     {
+  int v17; // eax
       v17 = this->u32_3D0; /*0x7713ce*/
       this->u32_3D0 = v17 + 1; /*0x7713d9*/
       ((const char **)((String *)(this->u32_3C4 + 4 * v17)))->Reassign((const char **)&v25); /*0x7713e2*/
@@ -197,15 +191,20 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
       ++this->u32_3BC; /*0x7713ef*/
     if ( aP3 )
     {
+  int v18; // ebp
       v18 = *(unsigned int *)this->__pad_000; /*0x771401*/
       (&v25)->Alt2(); /*0x771407*/
+  int v19; // eax
       v19 = *((unsigned int *)v13 + 12); /*0x77140c*/
       if ( v19 > 0 )
       {
+  int v20; // eax
         v20 = v19 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v19 - 1);
         if ( Map_Remove_770CE0(v18, *(unsigned int *)(*((unsigned int *)v13 + 9) + 4 * v20), (char **)&v25) ) /*0x77143b*/
         {
+  int v21; // ecx
           v21 = this->u32_3C8; /*0x771444*/
+  int v22; // eax
           if ( this->u32_3D0 < v21 /*0x771469*/
             || (this->u32_3CD || !v21)
             && (v22 = this->u32_3D4, v22 > 0)
@@ -214,6 +213,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
                  v21 + v22,
                  0) )
           {
+  int v23; // eax
             v23 = this->u32_3D0; /*0x771470*/
             this->u32_3D0 = v23 + 1; /*0x77147b*/
             ((const char **)((String *)(this->u32_3C4 + 4 * v23)))->Reassign((const char **)&v25); /*0x771484*/
@@ -232,8 +232,6 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
 namespace gamemd {
 AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
-  int *v8; // esi
-  int v9; // ebp
   void * v10;
   int v11; // ebx
   int v12; // ebp
@@ -268,10 +266,12 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   void *retaddr; // [esp+E0h] [ebp+0h] BYREF
 
   CCFileClass::Construct((char *)(&v38), Source); /*0x77821f*/
+  int *v8; // esi
   v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
     v28 = (*(int (**)(int *, int, int))(*(unsigned int *)(a2) + 124))(a2, a4, a3); /*0x778251*/
+  int v9; // ebp
     v9 = (*(int (**)(int *))(*(unsigned int *)(a2) + 128))(a2); /*0x77825b*/
     v33 = 0; /*0x778261*/
     v34 = 0; /*0x778265*/

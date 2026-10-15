@@ -11,8 +11,8 @@ namespace gamemd {
 // R-fix: removed stray public:
     int ChronoScreenEffect::DecrementCounter(void *a1, void *a2)
     {
-      int result; // eax
 
+      int result; // eax
       result = dword_B1D3D8; /*0x753580*/
       if ( dword_B1D3D8 ) /*0x753587*/
       {

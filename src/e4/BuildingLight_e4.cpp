@@ -311,8 +311,8 @@ LABEL_23:
 namespace gamemd {  // G42.18 ns repair
 double BuildingLight::CalcIntensity(double a1)
 {
-  int v1; // eax
 
+  int v1; // eax
   (*((unsigned short *)&(v1))) = Math::RoundToInt((a1 + 1.0) * -2048.0); /*0x4cad90*/
   return 4 * v1; /*0x4cada1*/
 }  // G42.18 ns repair

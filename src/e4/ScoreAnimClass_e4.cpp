@@ -37,9 +37,8 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
 {
 
-  void *v3; // eax
-  char *v4; // eax
 
+  void *v3; // eax
   v3 = (void *)this->field_C; /*0x6910a6*/
   /* X11: vtable install elided (implicit via ScoreFontClass virtuals 0x6910a9) */
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
@@ -50,6 +49,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   }
   if ( !--dword_B0558C ) /*0x6910d3*/
   {
+  char *v4; // eax
     v4 = (char *)&byte_B05594; /*0x6910d5*/
     do /*0x6910e7*/
     {

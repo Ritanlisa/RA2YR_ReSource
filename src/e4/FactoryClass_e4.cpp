@@ -38,16 +38,9 @@ namespace gamemd {  // G42.18 ns repair
 int FactoryClass::UpdateProduction()
 {
 
-  int Speed; // eax
-  int *v3; // edi
-  int v4; // eax
-  int v5; // eax
   int balance; // edi
-  int v7; // eax
-  int v8; // eax
-  int v9; // eax
-  int v11; // [esp+10h] [ebp-8h]
 
+  int Speed; // eax
   LOBYTE(Speed) = this->isSuspended; /*0x4c9b28*/
   if ( !(unsigned char)Speed ) /*0x4c9b2d*/
   {
@@ -63,6 +56,7 @@ int FactoryClass::UpdateProduction()
     }
     if ( this->specialItem == -1 || this->production[0] != 54 ) /*0x4c9b5d*/
     {
+  int *v3; // edi
       v3 = &this->production[2]; /*0x4c9b63*/
       Speed = Locomotor::GetSpeed(&this->object); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
@@ -74,12 +68,15 @@ int FactoryClass::UpdateProduction()
         this->production[0] += (int)this->object; /*0x4c9b82*/
         LOBYTE(this->production[1]) = 1; /*0x4c9b89*/
         *v3 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c9b92*/
+  int v11; // [esp+10h] [ebp-8h]
         this->queuedObjects[0] = (gamemd::TechnoTypeClass *)(v11); /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
+  int v4; // eax
         v4 = *&this->q058; /*0x4c9b9a*/
         this->u8_5D = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
+  int v5; // eax
           v5 = this->production[0]; /*0x4c9ba4*/
           if ( v5 == 54 ) /*0x4c9bae*/
             balance = (int)(this->balance); /*0x4c9bc5*/
@@ -95,6 +92,7 @@ int FactoryClass::UpdateProduction()
         if ( balance <= (*(int (**)(int *))(this->owner->arrayIndex + 24))(&this->owner->arrayIndex) ) /*0x4c9be3*/
         {
           HouseClass::ProcessPowerDrain((int *)this->owner, balance); /*0x4c9bf5*/
+  int v8; // eax
           v8 = (int)(this->balance); /*0x4c9bfa*/
           this->q05C = 0; /*0x4c9bfd*/
           Speed = v8 - balance; /*0x4c9c01*/
@@ -102,6 +100,7 @@ int FactoryClass::UpdateProduction()
         }
         else
         {
+  int v7; // eax
           v7 = this->production[0]; /*0x4c9be5*/
           this->q05C = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
@@ -110,6 +109,7 @@ int FactoryClass::UpdateProduction()
         if ( this->production[0] == 54 ) /*0x4c9c0a*/
         {
           this->isSuspended = 1; /*0x4c9c0c*/
+  int v9; // eax
           v9 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4c9c0f*/
           this->queuedCapacity = 0; /*0x4c9c19*/
           this->production[2] = v9; /*0x4c9c1c*/
@@ -129,8 +129,8 @@ int FactoryClass::UpdateProduction()
 namespace gamemd {
 int FactoryClass::HasProgressChanged()
 {
-  char result; // al
 
+  char result; // al
   result = this->u8_5D; /*0x4c9c60*/
   this->u8_5D = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
@@ -140,18 +140,6 @@ int FactoryClass::HasProgressChanged()
 namespace gamemd {
 int FactoryClass::DemandProduction(int a2, void *a3, char a4)
 {
-  int v5; // ecx
-  int v6; // eax
-  int v7; // esi
-  int v8; // eax
-  int v9; // eax
-  int v10; // edx
-  int v12; // ecx
-  int v13; // eax
-  int v14; // eax
-  int v15; // eax
-  int v16; // ecx
-  int v17; // [esp+Ch] [ebp-8h]
 
   if ( (*(int (**)(int))(*&a2->u32_B0))(a2) == 7 ) /*0x4c9c85*/
     BuildingClass::AbandonProduction(); /*0x4c9c89*/
@@ -165,12 +153,14 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
     this->isSuspended = 1; /*0x4c9d72*/
     this->q02C = dword_A8ED84; /*0x4c9d85*/
     this->queuedCapacity = 0; /*0x4c9d8b*/
+  int v17; // [esp+Ch] [ebp-8h]
     this->queuedObjects = (gamemd::TechnoTypeClass **)(v17); /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
     this->production = 0; /*0x4c9d95*/
     this->q058 = (*(int (**)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(uint8_t)((House *)(a3))->IsCurrentPlayer() ) /*0x4c9da7*/
     {
+  int v12; // ecx
       v12 = this->q058; /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
       {
@@ -178,12 +168,16 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
           *(unsigned char *)(this->q058 + 1738) = 1; /*0x4c9dc5*/
       }
     }
+  int v13; // eax
     v13 = this->q058; /*0x4c9dcc*/
     if ( v13 ) /*0x4c9dd1*/
     {
+  int v14; // eax
       v14 = *(unsigned int *)(v13 + 540); /*0x4c9dd3*/
       this->owner = (gamemd::HouseClass *)(v14); /*0x4c9ddb*/
+  int v15; // eax
       v15 = (*(int (**)(int, int))(*(unsigned int *)a2 + 132))(a2, v14); /*0x4c9de1*/
+  int v16; // ecx
       v16 = this->q058; /*0x4c9de7*/
       this->balance = v15; /*0x4c9dea*/
       *(unsigned int *)(v16 + 768) = v15; /*0x4c9ded*/
@@ -199,9 +193,15 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   }
   else
   {
+  int v5; // ecx
     v5 = this->u32_48; /*0x4c9cf3*/
+  int v6; // eax
     v6 = (int)(this->abstractFlags); /*0x4c9cf6*/
+  int v7; // esi
     v7 = (int)(&this->onHold); /*0x4c9cf9*/
+  int v8; // eax
+  int v9; // eax
+  int v10; // edx
     if ( v6 < v5 /*0x4c9d1b*/
       || (this->u32_4D || !v5)
       && (v8 = this->production, v8 > 0)

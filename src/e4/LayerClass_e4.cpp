@@ -30,14 +30,14 @@
 namespace gamemd {  // G42.18 ns repair
 int LayerClass::CoordinatesLegal(int16_t *aP1)
 {
-  int v2; // edx
-  int v3; // esi
-  int result; // eax
-  int v5; // edi
 
+  int v2; // edx
   v2 = this->u32_F4; /*0x568304*/
+  int v3; // esi
   v3 = *aP1; /*0x56830c*/
+  int result; // eax
   result = aP1[1]; /*0x56830f*/
+  int v5; // edi
   v5 = result + v3; /*0x568313*/
   (*((unsigned char *)&(result))) = result + v3 > v2 /*0x56833f*/
                 && v3 - result < v2
@@ -602,20 +602,15 @@ namespace gamemd {
 int LayerClass::CellIteratorNext(void *a1)
 {
 
-  int v1; // eax
-  int *v2; // ebp
-  int v3; // edx
-  int v5; // edx
-  int v6; // eax
-  int v7; // esi
   int v8; // esi
-  int v9; // edx
-  int v10; // eax
 
+  int v1; // eax
   v1 = this->u32_114; /*0x578290*/
+  int *v2; // ebp
   v2 = (int *)this->u32_118; /*0x578297*/
   if ( v1 ) /*0x5782a0*/
   {
+  int v3; // edx
     v3 = this->u32_110 - 1; /*0x5782af*/
     ++this->u32_10C; /*0x5782b1*/
     this->u32_114 = v1 - 1; /*0x5782b7*/
@@ -625,8 +620,11 @@ int LayerClass::CellIteratorNext(void *a1)
   }
   else
   {
+  int v5; // edx
     v5 = this->u32_110; /*0x5782d5*/
+  int v6; // eax
     v6 = this->u32_10C; /*0x5782db*/
+  int v7; // esi
     v7 = this->u32_F4; /*0x5782e1*/
     this->u32_10C = v5; /*0x5782e8*/
     this->u32_110 = v6; /*0x5782f2*/
@@ -640,7 +638,9 @@ int LayerClass::CellIteratorNext(void *a1)
       v8 = v7 - 2; /*0x57830c*/
       this->u32_10C = v5 + 1; /*0x57830f*/
     }
+  int v9; // edx
     v9 = this->u32_10C; /*0x57831b*/
+  int v10; // eax
     v10 = this->u32_110 << 9; /*0x578321*/
     this->u32_114 = v8; /*0x578324*/
     this->u32_118 = this->u32_13C + 4 * (v9 + v10); /*0x578337*/
@@ -653,13 +653,13 @@ int LayerClass::CellIteratorNext(void *a1)
 namespace gamemd {
 int LayerClass::CellIteratorReset(void *a1)
 {
-  int v1; // eax
-  int result; // eax
 
+  int v1; // eax
   v1 = this->u32_F4; /*0x578350*/
   this->u32_10C = 1; /*0x578356*/
   this->u32_110 = v1; /*0x578360*/
   this->u32_114 = v1 - 1; /*0x578369*/
+  int result; // eax
   result = (v1 << 11) + this->u32_13C + 4; /*0x578378*/
   this->u32_118 = result; /*0x57837c*/
   return result; /*0x578382*/
@@ -669,20 +669,18 @@ int LayerClass::CellIteratorReset(void *a1)
 namespace gamemd {
 int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2, void *a3)
 {
-  int v3; // esi
-  int v4; // edx
-  int v5; // edi
-  unsigned int v6; // eax
-  int *v7; // eax
-  int result; // eax
-  int v9; // esi
 
+  int v3; // esi
   v3 = 0; /*0x57846b*/
+  int v4; // edx
   v4 = aP1[1]; /*0x57846d*/
+  int v5; // edi
   v5 = *aP1; /*0x578472*/
   if ( aP2 ) /*0x578477*/
   {
+  unsigned int v6; // eax
     v6 = v5 + (v4 << 9); /*0x57847e*/
+  int *v7; // eax
     if ( v6 >= 0x40000 || (v7 = *(int **)(*(unsigned int *)&g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x578494*/
     {
       g_MissionQueueFrame.briefing[139] = *(unsigned int *)aP1; /*0x578498*/
@@ -692,7 +690,9 @@ int LayerClass::IsWithinUsableArea(int16_t *aP1, char aP2, void *a3)
     if ( *((unsigned char *)v7 + 284) && v4 + v5 < v3 + this->u32_F4 + 2 * this->u32_100 + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
+  int result; // eax
   result = this->u32_F4; /*0x5784d3*/
+  int v9; // esi
   (*((unsigned char *)&(result))) = v4 + v5 > v3 + result + 2 * this->u32_100 /*0x578531*/
                 && v4 + v5 <= v3 + result + 2 * (this->u32_100 + this->u32_108) + 2
                 && (v9 = this->u32_FC, v5 - v4 < 2 * (v9 + this->u32_104) - result)

@@ -22,34 +22,27 @@
 namespace gamemd {  // G42.18 ns repair
 int WinModemClass::ReadSerial()
 {
-  char v2; // al
-  void *v3; // edx
-  DWORD v4; // ecx
-  DWORD v5; // eax
-  int cbInQue; // edi
-  DWORD v8; // ecx
-  DWORD cbOutQue; // eax
   bool v10; // zf
-  void *v11; // ecx
-  BOOL v12; // eax
-  DWORD i; // eax
   DWORD NumberOfBytesTransferred; // [esp+10h] [ebp-18h] BYREF
-  DWORD v16; // [esp+14h] [ebp-14h]
-  DWORD Errors; // [esp+18h] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+1Ch] [ebp-Ch] BYREF
 
+  char v2; // al
   v2 = this->u32_50; /*0x77498b*/
+  DWORD v16; // [esp+14h] [ebp-14h]
   v16 = 0; /*0x77498e*/
   if ( v2 ) /*0x774994*/
   {
+  void *v3; // edx
     v3 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774996*/
     NumberOfBytesTransferred = 0; /*0x7749a4*/
     if ( GetOverlappedResult(v3, (LPOVERLAPPED)(&this->q040), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
+  DWORD v4; // ecx
       v4 = NumberOfBytesTransferred; /*0x7749b2*/
       this->u32_50 = 0; /*0x7749b6*/
       if ( v4 ) /*0x7749bb*/
       {
+  DWORD v5; // eax
         v5 = 0; /*0x7749bd*/
         do /*0x7749e4*/
         {
@@ -68,11 +61,15 @@ int WinModemClass::ReadSerial()
     }
   }
   ResetEvent(*(unsigned int *)this->u32_CC + 20)); /*0x774a15*/
+  int cbInQue; // edi
   cbInQue = 1; /*0x774a29*/
+  DWORD Errors; // [esp+18h] [ebp-10h] BYREF
   if ( ClearCommError(*(unsigned int *)this->__pad_158 + 24), &Errors, &Stat) ) /*0x774a2e*/
   {
+  DWORD v8; // ecx
     v8 = Errors; /*0x774a38*/
     cbInQue = Stat.cbInQue; /*0x774a3c*/
+  DWORD cbOutQue; // eax
     cbOutQue = Stat.cbOutQue; /*0x774a40*/
     v10 = Errors == 0; /*0x774a44*/
     this->u32_1C = Stat.cbInQue; /*0x774a46*/
@@ -94,14 +91,17 @@ int WinModemClass::ReadSerial()
   }
   while ( 1 ) /*0x774a86*/
   {
+  void *v11; // ecx
     v11 = (void *)(*(unsigned int *)this->__pad_158 + 24)); /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
+  BOOL v12; // eax
     v12 = ReadFile(v11, (LPVOID)this->__pad_158 + 88), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(&this->q040)); /*0x774a99*/
     v12 = v12; /*0x774aa1*/
     if ( !v12 ) /*0x774aa6*/
       break; /*0x774aa6*/
     if ( NumberOfBytesTransferred ) /*0x774aae*/
     {
+  DWORD i; // eax
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
         *(unsigned char *)(this->u32_24 + this->u32_58) = *(unsigned char *)(i + &this->q06C); /*0x774abf*/
@@ -128,19 +128,19 @@ namespace gamemd {
 int WinModemClass::ReadBytes(unsigned char *a2, int a3)
 {
 
-  int v4; // ebx
-  int v5; // ebx
-  int v7; // ebp
   void (*v8)(void); // eax
 
   if ( !((int)this)->ReadSerial() ) /*0x774b37*/
     return 0; /*0x774ba9*/
+  int v4; // ebx
   v4 = this->u32_58 - this->u32_54; /*0x774b46*/
+  int v5; // ebx
   v5 = v4 + (v4 < 0 ? 0x2000 : 0);
   if ( v5 > a3 ) /*0x774b56*/
     v5 = a3; /*0x774b58*/
   if ( v5 <= 0 ) /*0x774b5c*/
     return v5; /*0x774ba2*/
+  int v7; // ebp
   v7 = v5; /*0x774b63*/
   do /*0x774b96*/
   {
@@ -163,10 +163,10 @@ int WinModemClass::ReadBytes(unsigned char *a2, int a3)
 namespace gamemd {
 int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
 {
-  int result; // eax
-  DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
 
   this->AsyncIO::WaitCompletion(); /*0x774c74*/
+  int result; // eax
+  DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
   result = WriteFile( /*0x774c90*/
              (HANDLE)this->u32_5C,
              lpBuffer,
@@ -314,10 +314,9 @@ LABEL_38:
 namespace gamemd {
 int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
 {
-  unsigned int v3; // kr18_4
-  char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
   Debug::Log(); /*0x774f5e*/
+  char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
   strcpy(Buffer, aAtd); /*0x774f83*/
   if ( *((unsigned int *)aP + 24) ) /*0x774f87*/
   {
@@ -334,6 +333,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
   Debug::Log(); /*0x775047*/
   strcat(Buffer, (const char *)&word_8327A0); /*0x775071*/
   Debug::Log(); /*0x775084*/
+  unsigned int v3; // kr18_4
   v3 = strlen(Buffer) + 1; /*0x775095*/
   AsyncIO::WaitCompletion((int)aP); /*0x77509e*/
   if ( !WriteFile(*((HANDLE *)aP + 23), Buffer, v3 - 1, (LPDWORD)&aP, (LPOVERLAPPED)aP + 3) ) /*0x7750b6*/
@@ -581,8 +581,8 @@ namespace gamemd {
 WinModemClass * WinModemClass::QueryInterface(char a2)
 {
 
-  int v3; // eax
 
+  int v3; // eax
   v3 = this->u32_5C; /*0x775613*/
   /* X11: vtable install elided (implicit via WinModemClass virtuals 0x775616) */
   if ( v3 != -1 ) /*0x77561f*/

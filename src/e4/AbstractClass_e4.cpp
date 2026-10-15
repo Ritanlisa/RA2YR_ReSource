@@ -51,19 +51,12 @@ namespace gamemd {  // G42.18 ns repair
 void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 {
 
-  AbstractClass *v4; // eax
-  AbstractClass *v5; // esi
-  int v6; // eax
-  int v7; // ecx
-  void *vtable2; // eax
-  int abstractFlags; // ecx
-  int uniqueId; // eax
-  unsigned int *vtable1; // edx
-  unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   if ( aP1 && (*(int (**)(void *))(*(unsigned int *)aP1 + 44))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
   {
+  AbstractClass *v4; // eax
     v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
+  AbstractClass *v5; // esi
     v5 = v4; /*0x438eb4*/
     if ( v4 ) /*0x438ebb*/
     {
@@ -86,6 +79,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
              dword_89C670 + dword_89C67C,
              0) )
       {
+  int v6; // eax
         v6 = dword_89C678++; /*0x438f44*/
         *((unsigned int *)dword_89C66C + v6) = (unsigned int)(v5); /*0x438f53*/
       }
@@ -98,11 +92,14 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x438f75*/
+  int v7; // ecx
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4048); /*0x438f87*/
     v5[1].vtable3 = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2[14] = v5; /*0x438f8f*/
+  void *vtable2; // eax
     vtable2 = this->vtable2; /*0x438f92*/
+  int abstractFlags; // ecx
     if ( this->uniqueId < (int)vtable2 /*0x438fb4*/
       || (BYTE1(this->vtable3) || !vtable2)
       && (abstractFlags = this->abstractFlags, abstractFlags > 0)
@@ -111,7 +108,9 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
            (int)vtable2 + abstractFlags,
            0) )
     {
+  int uniqueId; // eax
       uniqueId = this->uniqueId; /*0x438fbb*/
+  unsigned int *vtable1; // edx
       vtable1 = (unsigned int *)(this->vtable1); /*0x438fbe*/
       this->uniqueId = uniqueId + 1; /*0x438fc4*/
       vtable1[uniqueId] = (unsigned int)(v5); /*0x438fc7*/
@@ -121,6 +120,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       if ( (unsigned __int8)(aP1->owner)->IsHumanPlayer() ) /*0x438fe6*/
       {
+  unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
         v12[0] = (unsigned int)(aP2[39]); /*0x438ffc*/
         v12[1] = (unsigned int)(aP2[40]); /*0x439007*/
         v12[2] = (unsigned int)(aP2[41]); /*0x439013*/
@@ -135,8 +135,8 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 namespace gamemd {
 int AbstractClass::AbstractClass_COMStub_133()
 {
-  MissionClass *v2; // [esp+4h] [ebp+4h]
 
+  MissionClass *v2; // [esp+4h] [ebp+4h]
   return (v2)->StubReturn450();
 }
 } // namespace gamemd
@@ -145,8 +145,8 @@ int AbstractClass::AbstractClass_COMStub_133()
 namespace gamemd {
 int AbstractClass::AbstractClass_COMStub_137()
 {
-  MissionClass *v2; // [esp+4h] [ebp+4h]
 
+  MissionClass *v2; // [esp+4h] [ebp+4h]
   return (v2)->CheckMissionStatus();
 }
 } // namespace gamemd
@@ -166,48 +166,11 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 namespace gamemd {
 VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void * a2, void * p_vtable0, void * a4, void * a5)
 {
-  int v5; // ecx
-  AbstractClass *v6; // ebp
-  int v7; // esi
-  int v8; // eax
-  int v9; // ecx
-  int v10; // ecx
-  int v11; // edx
-  int v12; // eax
-  int v13; // edx
-  int v14; // eax
-  int v15; // ecx
-  int v16; // ecx
-  int v17; // eax
-  int v18; // eax
-  int v19; // edx
-  int v20; // eax
-  int v21; // ecx
-  int v22; // ecx
-  int v23; // eax
-  int v24; // eax
-  int v25; // edx
-  int v26; // eax
-  int v27; // ecx
-  int v28; // ecx
-  int v29; // eax
-  int v30; // eax
-  int v31; // edx
-  int v32; // eax
-  int v33; // edx
-  int v34; // eax
-  int v35; // ecx
-  int v36; // ecx
-  int v37; // eax
-  int v38; // eax
-  int v39; // edx
-  int v40; // eax
-  int v41; // ecx
-  int v42; // ecx
-  void ***result; // eax
-  int v44; // ecx
 
+  AbstractClass *v6; // ebp
   v6 = this; /*0x4fb9b2*/
+  int v5; // ecx
+  int v7; // esi
   v7 = v5; /*0x4fb9b7*/
   if ( *(AbstractClass **)(v5 + 21728) == this ) /*0x4fb9c1*/
     *(unsigned int *)(v5 + 21728) = 0; /*0x4fb9c3*/
@@ -218,12 +181,15 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
                             0);
   if ( this ) /*0x4fb9e5*/
   {
+  int v8; // eax
     v8 = (*(int (**)(int, AbstractClass **))(v7->conYards + 16))(v7 + 56, &this); /*0x4fb9f4*/
     if ( v8 != -1 ) /*0x4fb9fa*/
     {
+  int v9; // ecx
       v9 = *&v7->buildingsCount; /*0x4fb9fc*/
       if ( v8 < v9 ) /*0x4fba01*/
       {
+  int v10; // ecx
         v10 = v9 - 1; /*0x4fba03*/
         for ( *(unsigned int *)(v7 + 72) = v10; /*0x4fba09*/
               v8 < v7->buildingsCount;
@@ -236,19 +202,25 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
   }
   if ( (*((int (**)(AbstractClass *))v6->vfptr + 11))(v6) == 6 && (unsigned char)p_vtable0 ) /*0x4fba32*/
   {
+  int v11; // edx
     v11 = v7->unitRepairStations; /*0x4fba38*/
     p_vtable0 = &v6->vfptr; /*0x4fba45*/
+  int v12; // eax
     v12 = (*(int (**)(int, void ***, int))(v11 + 16))(v7 + 80, &p_vtable0, a2); /*0x4fba49*/
     if ( v12 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt(&v7->unitRepairStations, v12); /*0x4fba54*/
+  int v13; // edx
     v13 = v7->occupiables; /*0x4fba59*/
     a4 = &v6->vfptr; /*0x4fba6c*/
+  int v14; // eax
     v14 = (*(int (**)(int, void ***))(v13 + 16))(v7 + 128, &a4); /*0x4fba70*/
     if ( v14 != -1 ) /*0x4fba76*/
     {
+  int v15; // ecx
       v15 = *&v7->cloningVatsCount; /*0x4fba78*/
       if ( v14 < v15 ) /*0x4fba7d*/
       {
+  int v16; // ecx
         v16 = v15 - 1; /*0x4fba7f*/
         for ( *(unsigned int *)(v7 + 144) = v16; /*0x4fba85*/
               v14 < v7->cloningVatsCount;
@@ -258,19 +230,25 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
         }
       }
     }
+  int v17; // eax
     v17 = v7->secretLabs; /*0x4fba99*/
     a4 = &v6->vfptr; /*0x4fbaa9*/
+  int v18; // eax
     v18 = (*(int (**)(int, void ***))(v17 + 16))(v7 + 152, &a4); /*0x4fbab0*/
     if ( v18 != -1 ) /*0x4fbab6*/
       Vector::RemoveAt(&v7->secretLabs, v18); /*0x4fbabb*/
+  int v19; // edx
     v19 = v7->productionFactory_plants; /*0x4fbac0*/
     a4 = &v6->vfptr; /*0x4fbad3*/
+  int v20; // eax
     v20 = (*(int (**)(int, void ***))(v19 + 16))(v7 + 176, &a4); /*0x4fbad7*/
     if ( v20 != -1 ) /*0x4fbadd*/
     {
+  int v21; // ecx
       v21 = *&v7->countResourceDestinations; /*0x4fbadf*/
       if ( v20 < v21 ) /*0x4fbae4*/
       {
+  int v22; // ecx
         v22 = v21 - 1; /*0x4fbae6*/
         for ( *(unsigned int *)(v7 + 192) = v22; /*0x4fbaec*/
               v20 < v7->countResourceDestinations;
@@ -280,19 +258,25 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
         }
       }
     }
+  int v23; // eax
     v23 = *&v7->infantrySelfHeal; /*0x4fbb00*/
     a4 = &v6->vfptr; /*0x4fbb10*/
+  int v24; // eax
     v24 = (*(int (**)(int, void ***))(v23 + 16))(v7 + 200, &a4); /*0x4fbb17*/
     if ( v24 != -1 ) /*0x4fbb1d*/
       Vector::RemoveAt(&v7->infantrySelfHeal, v24); /*0x4fbb22*/
+  int v25; // edx
     v25 = v7->firepowerMultiplier; /*0x4fbb27*/
     a4 = &v6->vfptr; /*0x4fbb3a*/
+  int v26; // eax
     v26 = (*(int (**)(int, void ***))(v25 + 16))(v7 + 224, &a4); /*0x4fbb3e*/
     if ( v26 != -1 ) /*0x4fbb44*/
     {
+  int v27; // ecx
       v27 = *&v7->airspeedMultiplier; /*0x4fbb46*/
       if ( v26 < v27 ) /*0x4fbb4b*/
       {
+  int v28; // ecx
         v28 = v27 - 1; /*0x4fbb4d*/
         for ( *(unsigned int *)(v7 + 240) = v28; /*0x4fbb53*/
               v26 < v7->airspeedMultiplier;
@@ -302,24 +286,32 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
         }
       }
     }
+  int v29; // eax
     v29 = v7->armorMultiplier; /*0x4fbb67*/
     a4 = &v6->vfptr; /*0x4fbb77*/
+  int v30; // eax
     v30 = (*(int (**)(int, void ***))(v29 + 16))(v7 + 248, &a4); /*0x4fbb7e*/
     if ( v30 != -1 ) /*0x4fbb84*/
       Vector::RemoveAt(&v7->armorMultiplier, v30); /*0x4fbb89*/
+  int v31; // edx
     v31 = v7->buildTimeMultiplier; /*0x4fbb8e*/
     a4 = &v6->vfptr; /*0x4fbba1*/
+  int v32; // eax
     v32 = (*(int (**)(int, void ***))(v31 + 16))(v7 + 272, &a4); /*0x4fbba5*/
     if ( v32 != -1 ) /*0x4fbbab*/
       Vector::RemoveAt(&v7->buildTimeMultiplier, v32); /*0x4fbbb0*/
+  int v33; // edx
     v33 = v7->iqLevel; /*0x4fbbb5*/
     a4 = &v6->vfptr; /*0x4fbbc8*/
+  int v34; // eax
     v34 = (*(int (**)(int, void ***))(v33 + 16))(v7 + 296, &a4); /*0x4fbbcc*/
     if ( v34 != -1 ) /*0x4fbbd2*/
     {
+  int v35; // ecx
       v35 = *&v7->startingEdge; /*0x4fbbd4*/
       if ( v34 < v35 ) /*0x4fbbd9*/
       {
+  int v36; // ecx
         v36 = v35 - 1; /*0x4fbbdb*/
         for ( *(unsigned int *)(v7 + 312) = v36; /*0x4fbbe1*/
               v34 < v7->startingEdge;
@@ -329,19 +321,25 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
         }
       }
     }
+  int v37; // eax
     v37 = *&v7->q140; /*0x4fbbf5*/
     a4 = &v6->vfptr; /*0x4fbc05*/
+  int v38; // eax
     v38 = (*(int (**)(int, void ***))(v37 + 16))(v7 + 320, &a4); /*0x4fbc0c*/
     if ( v38 != -1 ) /*0x4fbc12*/
       Vector::RemoveAt(&v7->q140, v38); /*0x4fbc17*/
+  int v39; // edx
     v39 = v7->absorbers; /*0x4fbc1c*/
     a4 = &v6->vfptr; /*0x4fbc29*/
+  int v40; // eax
     v40 = (*(int (**)(int, void ***))(v39 + 16))(v7 + 104, &a4); /*0x4fbc2d*/
     if ( v40 != -1 ) /*0x4fbc33*/
     {
+  int v41; // ecx
       v41 = *&v7->bunkersCount; /*0x4fbc35*/
       if ( v40 < v41 ) /*0x4fbc3a*/
       {
+  int v42; // ecx
         v42 = v41 - 1; /*0x4fbc3c*/
         for ( *(unsigned int *)(v7 + 120) = v42; /*0x4fbc42*/
               v40 < v7->bunkersCount;
@@ -353,7 +351,9 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
     }
     ((float *)v7)->CalculateCostMultipliers(); /*0x4fbc58*/
   }
+  void ***result; // eax
   result = &v7->planningPaths; /*0x4fbc5d*/
+  int v44; // ecx
   v44 = 12; /*0x4fbc63*/
   do /*0x4fbc73*/
   {
@@ -388,33 +388,33 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void
 namespace gamemd {
 ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
 {
-  int v3; // ebx
-  char result; // al
-  int v5; // edx
-  int v6; // ecx
-  int v7; // edi
-  int v8; // [esp+4h] [ebp-20h] BYREF
-  int v9; // [esp+8h] [ebp-1Ch]
-  int *v10; // [esp+Ch] [ebp-18h]
-  int v11; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
+  char result; // al
   result = g_MissionQueueFrame.localVariables[604]; /*0x5c03d0*/
   if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))(DSurface_Alternate, 0); /*0x5c03ea*/
+  int v3; // ebx
+  int v8; // [esp+4h] [ebp-20h] BYREF
+  int v9; // [esp+8h] [ebp-1Ch]
+  int *v10; // [esp+Ch] [ebp-18h]
     Frame::Present((int)DSurface_Alternate, v3, a2, a3, 0, v8, v9, v10); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
       GetClientRect(g_hWnd, &Rect); /*0x5c0419*/
       ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c042b*/
+  int v5; // edx
       v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0446*/
+  int v6; // ecx
       v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0449*/
+  int v7; // edi
       v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c044b*/
       v10 = *(int **)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5c044e*/
       v9 = v6; /*0x5c0454*/
       v8 = Rect.left + v7; /*0x5c045e*/
+  int v11; // [esp+10h] [ebp-14h]
       v11 = v5; /*0x5c0462*/
       return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary /*0x5c0477*/
               + 2))(
@@ -483,24 +483,22 @@ unsigned int * AbstractClass::updateShroudMap(char a2)
 namespace gamemd {
 void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 {
-  int v2; // edi
-  int i; // ebx
-  bool v4; // cl
-  unsigned int *v5; // esi
-  int v6; // eax
-  int j; // ecx
-  int v8; // eax
 
+  int v2; // edi
   if ( a1 )
     v2 = (*(unsigned char *)(a1 + 20) & 1) != 0 ? a1 : 0;
   else
     v2 = 0; /*0x70d4a9*/
+  int i; // ebx
   for ( i = dword_A8EC88 - 1; i >= 0; --i ) /*0x70d4c6*/
   {
+  bool v4; // cl
     v4 = 1; /*0x70d4d2*/
+  unsigned int *v5; // esi
     v5 = (unsigned int *)*((unsigned int *)dword_A8EC7C + i); /*0x70d4d6*/
     if ( v2 ) /*0x70d4d9*/
     {
+  int v6; // eax
       v6 = v5[165]; /*0x70d4db*/
       if ( v6 ) /*0x70d4e3*/
       {
@@ -520,8 +518,10 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
         (*(void (**)(unsigned int *, unsigned int))(*v5 + 968))(v5, 0); /*0x70d547*/
     }
   }
+  int j; // ecx
   for ( j = dword_8B40F8 - 1; j >= 0; --j ) /*0x70d560*/
   {
+  int v8; // eax
     v8 = *((unsigned int *)dword_8B40EC + j); /*0x70d567*/
     if ( *(unsigned int *)(v8 + 60) == a1 ) /*0x70d56d*/
       *(unsigned int *)(v8 + 60) = 0; /*0x70d56f*/
@@ -718,12 +718,12 @@ int AbstractClass::initVtableBase()
 namespace gamemd {
 int AbstractClass::AbstractClass::DTOR(void *a1_1)
 {
-  int result; // eax
 
   /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f0) */
   /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101f6) */
   /* X11: vtable install elided (implicit via AbstractClass virtuals 0x4101fd) */
   /* X11: vtable install elided (implicit via AbstractClass virtuals 0x410204) */
+  int result; // eax
   return result; /*0x41020b*/
 }
 } // namespace gamemd
@@ -760,21 +760,21 @@ int AbstractClass::GenerateUniqueID(int a1)
 namespace gamemd {
 int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_2, ObjectTypeClass * aP2)
 {
-  int result; // eax
-  int v5; // eax
-  int v6; // ebx
-  int v7; // eax
 
   aP0 = aP0; /*0x410321*/
   if ( !aP0 ) /*0x410328*/
     return -2147467261; /*0x41032b*/
+  int v5; // eax
   v5 = (int)(*aP0); /*0x410338*/
   aP0 = aP0; /*0x410343*/
   aP0 = aP0; /*0x410344*/
+  int result; // eax
   result = aP0->IsClean(&aP0, 4, 0); /*0x410348*/
   if ( result >= 0 ) /*0x41034d*/
   {
+  int v6; // ebx
     v6 = (int)(*aP0); /*0x410352*/
+  int v7; // eax
     v7 = aP0->COMStub_Ret176_12(0); /*0x410358*/
     result = aP0->IsClean(aP0, v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
@@ -791,15 +791,15 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_
 namespace gamemd {
 int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
 {
+
   int *v2; // edi
+  v2 = (int *)aP1; /*0x410381*/
+  if ( !aP1 ) /*0x410387*/
+    return -2147467261; /*0x410389*/
   int result; // eax
   int v4; // ebx
   int v5; // ebp
   int v6; // eax
-
-  v2 = (int *)aP1; /*0x410381*/
-  if ( !aP1 ) /*0x410387*/
-    return -2147467261; /*0x410389*/
   result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x41039e*/
   if ( result >= 0 ) /*0x4103a3*/
   {
@@ -1189,8 +1189,8 @@ std::locale::facet * AbstractClass::setMapCoords(char a2)
 namespace gamemd {
 int AbstractClass::COMStub_Return0_190()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x459dc0*/
 }
 } // namespace gamemd
@@ -1199,8 +1199,8 @@ int AbstractClass::COMStub_Return0_190()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_205()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x459de0*/
 }
 } // namespace gamemd
@@ -1209,8 +1209,8 @@ int AbstractClass::COMStub_Return0_205()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_270()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x459e60*/
 }
 } // namespace gamemd
@@ -1219,16 +1219,16 @@ int AbstractClass::COMStub_Return0_270()
 namespace gamemd {
 int AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3)
 {
-  void *v3; // esi
-  void *GroundHeight; // eax
-  int v6; // [esp+4h] [ebp-Ch] BYREF
-  void *v7; // [esp+8h] [ebp-8h]
-  int v8; // [esp+Ch] [ebp-4h]
 
+  int v6; // [esp+4h] [ebp-Ch] BYREF
   v6 = *a2; /*0x464a7a*/
+  void *v7; // [esp+8h] [ebp-8h]
   v7 = (void *)a2[1]; /*0x464a8b*/
+  int v8; // [esp+Ch] [ebp-4h]
   v8 = a2[2]; /*0x464a92*/
+  void *GroundHeight; // eax
   GroundHeight = (void *)Cell::GetGroundHeight(&v6); /*0x464a96*/
+  void *v3; // esi
   aP0->vfptr = v3; /*0x464aa5*/
   aP0->vfptr1 = v7; /*0x464aab*/
   aP0->vfptr2 = GroundHeight; /*0x464aaf*/
@@ -1419,8 +1419,8 @@ int AbstractClass::computeSize(int a1)
 namespace gamemd {
 int AbstractClass::COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x5439ff*/
   if ( result >= 0 ) /*0x543a06*/
     return 0; /*0x543a08*/
@@ -1545,8 +1545,8 @@ char AbstractClass::COMStub_Return0_7()
 namespace gamemd {
 unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  unsigned int *v6; // eax
 
+  unsigned int *v6; // eax
   v6 = operator new(0x40u); /*0x5d81f2*/
   if ( v6 ) /*0x5d81fc*/
     return (v6)->MPSiegeClass(a1, a2, a3, a4, a5, a6); /*0x5d821e*/
@@ -1559,8 +1559,8 @@ unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar
 namespace gamemd {
 unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  unsigned int *v6; // eax
 
+  unsigned int *v6; // eax
   v6 = operator new(0x40u); /*0x5d8232*/
   if ( v6 ) /*0x5d823c*/
     return (v6)->MPUnholyAllianceClass(a1, a2, a3, a4, a5, a6); /*0x5d825e*/
@@ -1573,8 +1573,8 @@ unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wch
 namespace gamemd {
 unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  unsigned int *v6; // eax
 
+  unsigned int *v6; // eax
   v6 = operator new(0x40u); /*0x5d8272*/
   if ( v6 ) /*0x5d827c*/
     return (v6)->MPFreeForAllClass(a1, a2, a3, a4, a5, a6); /*0x5d829e*/
@@ -1587,8 +1587,8 @@ unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar
 namespace gamemd {
 unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6)
 {
-  unsigned int *v6; // eax
 
+  unsigned int *v6; // eax
   v6 = operator new(0x344u); /*0x5d82b5*/
   if ( v6 ) /*0x5d82bf*/
     return MPCooperative::ctor(v6, a1, a2, a3, a4, a5, a6); /*0x5d82e1*/
@@ -1625,8 +1625,8 @@ int AbstractClass::COMStub_Ret2147483647_35()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_37()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f42b0*/
   return result; /*0x5f42b2*/
 }
@@ -1636,8 +1636,8 @@ int AbstractClass::COMStub_Return0_37()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_38(void *a1_1)
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f42c0*/
   return result; /*0x5f42c2*/
 }
@@ -1647,8 +1647,8 @@ int AbstractClass::COMStub_Return0_38(void *a1_1)
 namespace gamemd {
 int AbstractClass::COMStub_Return0_39()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f42d0*/
   return result; /*0x5f42d2*/
 }
@@ -1658,8 +1658,8 @@ int AbstractClass::COMStub_Return0_39()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_40()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f42e0*/
   return result; /*0x5f42e2*/
 }
@@ -1669,8 +1669,8 @@ int AbstractClass::COMStub_Return0_40()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_56()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f42f0*/
 }
 } // namespace gamemd
@@ -1679,8 +1679,8 @@ int AbstractClass::COMStub_Return0_56()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_57()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f4300*/
 }
 } // namespace gamemd
@@ -1689,8 +1689,8 @@ int AbstractClass::COMStub_Return0_57()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_63()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f4310*/
 }
 } // namespace gamemd
@@ -1707,8 +1707,8 @@ int AbstractClass::COMStub_64()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_71()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f4330*/
 }
 } // namespace gamemd
@@ -1717,8 +1717,8 @@ int AbstractClass::COMStub_Return0_71()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_72()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f4340*/
 }
 } // namespace gamemd
@@ -1727,8 +1727,8 @@ int AbstractClass::COMStub_Return0_72()
 namespace gamemd {
 int AbstractClass::COMStub_81()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f4350*/
   return result; /*0x5f4352*/
 }
@@ -1738,8 +1738,8 @@ int AbstractClass::COMStub_81()
 namespace gamemd {
 int AbstractClass::COMStub_80()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f4360*/
   return result; /*0x5f4362*/
 }
@@ -1749,8 +1749,8 @@ int AbstractClass::COMStub_80()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_82()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f4370*/
 }
 } // namespace gamemd
@@ -1759,8 +1759,8 @@ int AbstractClass::COMStub_Return0_82()
 namespace gamemd {
 int AbstractClass::COMStub_89()
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 0; /*0x5f4380*/
   return result; /*0x5f4382*/
 }
@@ -1778,8 +1778,8 @@ int AbstractClass::COMStub_90()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_93()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f43a0*/
 }
 } // namespace gamemd
@@ -1804,8 +1804,8 @@ int AbstractClass::processStateUpdate()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_104()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f4400*/
 }
 } // namespace gamemd
@@ -1814,8 +1814,8 @@ int AbstractClass::COMStub_Return0_104()
 namespace gamemd {
 int AbstractClass::COMStub_Return0_105()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x5f6b50*/
 }
 } // namespace gamemd
@@ -1832,8 +1832,8 @@ int AbstractClass::COMStub_Return0_33()
 namespace gamemd {
 int AbstractClass::SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, (int *)aP1, aP2); /*0x5f995f*/
   if ( result >= 0 ) /*0x5f9966*/
     return 0; /*0x5f9968*/

@@ -25,8 +25,8 @@ namespace gamemd {  // G42.18 ns repair
 int Theme::QueueSong(int aP1, void *a2)
 {
 
-  int IsSoundEnabled; // eax
 
+  int IsSoundEnabled; // eax
   LOBYTE(IsSoundEnabled) = byte_A8EC74; /*0x720b20*/
   if ( byte_A8EC74 ) /*0x720b2a*/
   {
@@ -115,8 +115,8 @@ int Theme::Stop(char aP1, void *a2)
 namespace gamemd {
 bool Theme::IsPlaying(void *a1)
 {
-  AudioSample *v2; // ecx
 
+  AudioSample *v2; // ecx
   v2 = (AudioSample *)this->audioSample; /*0x720fd3*/
   if ( !v2 ) /*0x720fd8*/
     return 0; /*0x721002*/

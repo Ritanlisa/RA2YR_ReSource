@@ -11,10 +11,10 @@
 namespace gamemd {  // G42.18 ns repair
 int TriggerActionQueue::ProcessAll()
 {
-  int result; // eax
-  int i; // esi
 
+  int result; // eax
   result = g_GameObjectCleanup; /*0x6e5820*/
+  int i; // esi
   for ( i = 0; i < g_GameObjectCleanup; ++i ) /*0x6e582d*/
   {
     TriggerClass::NotifyLocalChanged(*(TriggerClass **)(*((unsigned int *)g_TagClassCount + i) + 40), (int)this); /*0x6e583b*/

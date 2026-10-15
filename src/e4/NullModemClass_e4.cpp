@@ -33,8 +33,8 @@ int NullModemClass::COMStub()
 namespace gamemd {
 int NullModemClass::Flush(int a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = this->u32_38; /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
     return ((Rect *)(result->PlayerIndex))->SetRedraw(1); /*0x5f1f0c*/
@@ -46,10 +46,10 @@ int NullModemClass::Flush(int a2)
 namespace gamemd {
 int NullModemClass::Release(int a2, int a3, int a4, int a5)
 {
-  int result; // eax
 
   if ( !this->u32_3C ) /*0x5f3563*/
     return 0; /*0x5f356a*/
+  int result; // eax
   result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*this->Active) + 8))( /*0x5f3586*/
              this->u32_38,
              a2,
@@ -75,8 +75,8 @@ int NullModemClass::ddtor(int a2, int a3, int a4)
 namespace gamemd {
 int NullModemClass::Receive()
 {
-  int v1; // eax
 
+  int v1; // eax
   v1 = this->u32_38; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
     return *(unsigned int *)(v1->PlayerIndex + 40); /*0x5f35da*/
@@ -88,8 +88,8 @@ int NullModemClass::Receive()
 namespace gamemd {
 int NullModemClass::CheckStatus()
 {
-  int v1; // eax
 
+  int v1; // eax
   v1 = this->u32_38; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
     return *(unsigned int *)(v1->PlayerIndex + 56); /*0x5f35fa*/
@@ -101,8 +101,8 @@ int NullModemClass::CheckStatus()
 namespace gamemd {
 int NullModemClass::GetAddress(int a2)
 {
-  int v2; // eax
 
+  int v2; // eax
   v2 = this->u32_38; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
     return *(unsigned int *)(v2->PlayerIndex + 40); /*0x5f361a*/
@@ -114,8 +114,8 @@ int NullModemClass::GetAddress(int a2)
 namespace gamemd {
 int NullModemClass::SetAddress(int a2)
 {
-  int v2; // eax
 
+  int v2; // eax
   v2 = this->u32_38; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
     return *(unsigned int *)(v2->PlayerIndex + 56); /*0x5f363a*/
@@ -167,14 +167,6 @@ namespace gamemd {
 int NullModemClass::sendData()
 {
 
-  void *v2; // ecx
-  DWORD v4; // edx
-  DWORD cbInQue; // eax
-  DWORD cbOutQue; // ecx
-  bool v7; // zf
-  void *v8; // [esp-8h] [ebp-44h]
-  DWORD Errors; // [esp+Ch] [ebp-30h] BYREF
-  DWORD EvtMask; // [esp+10h] [ebp-2Ch] BYREF
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
@@ -182,11 +174,13 @@ int NullModemClass::sendData()
   PurgeComm(this->u32_5C, 0xFu); /*0x77468b*/
   ResetEvent(this->u32_38); /*0x77469b*/
   ResetEvent(this->u32_4C); /*0x7746a1*/
+  void *v8; // [esp-8h] [ebp-44h]
   v8 = (void *)this->u32_5C; /*0x7746ad*/
   this->q050 = 0; /*0x7746ae*/
   this->u32_51 = 0; /*0x7746b1*/
   if ( GetCommState(v8, &DCB) ) /*0x7746b4*/
   {
+  void *v2; // ecx
     v2 = (void *)this->u32_5C; /*0x7746c2*/
     DCB.BaudRate = 9600; /*0x7746d7*/
     DCB.Parity = 0; /*0x7746df*/
@@ -203,6 +197,7 @@ int NullModemClass::sendData()
   {
     Debug::Log(); /*0x774717*/
   }
+  DWORD EvtMask; // [esp+10h] [ebp-2Ch] BYREF
   GetCommMask(this->u32_5C, &EvtMask); /*0x774728*/
   (*(void (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774734*/
   (*(void (**)(NullModemClass *))(*(unsigned int *)this->ConnectionClass + 12))(this); /*0x77473b*/
@@ -211,11 +206,16 @@ int NullModemClass::sendData()
     GetLastError(); /*0x77474f*/
     Debug::Log(); /*0x77475b*/
   }
+  DWORD Errors; // [esp+Ch] [ebp-30h] BYREF
   if ( ClearCommError(this->u32_5C, &Errors, &Stat) ) /*0x774771*/
   {
+  DWORD v4; // edx
     v4 = Errors; /*0x77477b*/
+  DWORD cbInQue; // eax
     cbInQue = Stat.cbInQue; /*0x77477f*/
+  DWORD cbOutQue; // ecx
     cbOutQue = Stat.cbOutQue; /*0x774783*/
+  bool v7; // zf
     v7 = Errors == 0; /*0x774787*/
     this->u32_1C = Stat.cbInQue; /*0x774789*/
     this->u32_20 = cbOutQue; /*0x77478c*/
@@ -231,18 +231,13 @@ namespace gamemd {
 int NullModemClass::receiveData()
 {
 
-  DWORD v2; // edx
-  DWORD cbInQue; // eax
-  DWORD cbOutQue; // ecx
-  bool v5; // zf
-  void *v7; // [esp-8h] [ebp-24h]
-  DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
   Debug::Log(); /*0x7747cd*/
   PurgeComm(this->u32_5C, 0xFu); /*0x7747db*/
   ResetEvent(this->u32_38); /*0x7747eb*/
   ResetEvent(this->u32_4C); /*0x7747f1*/
+  void *v7; // [esp-8h] [ebp-24h]
   v7 = (void *)this->u32_5C; /*0x7747ff*/
   this->q050 = 0; /*0x774800*/
   this->u32_51 = 0; /*0x774803*/
@@ -253,11 +248,16 @@ int NullModemClass::receiveData()
     GetLastError(); /*0x77482f*/
     Debug::Log(); /*0x77483b*/
   }
+  DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   if ( ClearCommError(this->u32_5C, &Errors, &Stat) ) /*0x774851*/
   {
+  DWORD v2; // edx
     v2 = Errors; /*0x77485b*/
+  DWORD cbInQue; // eax
     cbInQue = Stat.cbInQue; /*0x77485f*/
+  DWORD cbOutQue; // ecx
     cbOutQue = Stat.cbOutQue; /*0x774863*/
+  bool v5; // zf
     v5 = Errors == 0; /*0x774867*/
     this->u32_1C = Stat.cbInQue; /*0x774869*/
     this->u32_20 = cbOutQue; /*0x77486c*/

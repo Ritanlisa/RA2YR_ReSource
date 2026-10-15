@@ -90,79 +90,79 @@ namespace gamemd {
 int Dialog::InitializeGameSettings()
 {
 
-  HWND DlgItem; // eax
-  HWND v3; // eax
-  HWND v4; // eax
-  HWND v5; // eax
-  HWND v6; // eax
-  HWND v7; // eax
-  HWND v8; // eax
-  HWND v9; // eax
-  HWND v10; // eax
-  HWND v11; // eax
-  HWND v12; // eax
-  HWND v13; // eax
-  HWND v14; // eax
-  HWND v15; // eax
-  HWND v16; // eax
-  HWND v17; // eax
-  HWND v18; // eax
-  HWND v19; // eax
 
   Debug::Log(); /*0x5b5bcb*/
+  HWND DlgItem; // eax
   DlgItem = GetDlgItem(*(HWND *)this->__pad_000, 1641); /*0x5b5be1*/
   if ( DlgItem ) /*0x5b5bf0*/
     SendMessageA(DlgItem, 0x405u, 1u, *(LPARAM *)&g_Rules_MultiEngineer); /*0x5b5c00*/
+  HWND v3; // eax
   v3 = GetDlgItem(*(HWND *)this->__pad_000, 1360); /*0x5b5c0a*/
   if ( v3 ) /*0x5b5c0e*/
     SendMessageA(v3, 0x405u, 1u, g_RulesInitConfig); /*0x5b5c1e*/
+  HWND v4; // eax
   v4 = GetDlgItem(*(HWND *)this->__pad_000, 1026); /*0x5b5c28*/
   if ( v4 ) /*0x5b5c2c*/
     SendMessageA(v4, 0x405u, 1u, *(LPARAM *)&g_Rules_Bases); /*0x5b5c3c*/
+  HWND v5; // eax
   v5 = GetDlgItem(*(HWND *)this->__pad_000, 1362); /*0x5b5c46*/
   if ( v5 ) /*0x5b5c4a*/
     SendMessageA(v5, 0x405u, 1u, *(LPARAM *)&g_Rules_AlliesAllowed); /*0x5b5c5a*/
+  HWND v6; // eax
   v6 = GetDlgItem(*(HWND *)this->__pad_000, 1321); /*0x5b5c64*/
   if ( v6 ) /*0x5b5c68*/
     SendMessageA(v6, 0x405u, 1u, 6 - *(unsigned int *)&g_Rules_EngineerCount); /*0x5b5c7f*/
+  HWND v7; // eax
   v7 = GetDlgItem(*(HWND *)this->__pad_000, 1363); /*0x5b5c89*/
   if ( v7 ) /*0x5b5c8d*/
     SendMessageA(v7, 0x405u, 1u, *(LPARAM *)&DataGlobal_A8B278); /*0x5b5c9d*/
+  HWND v8; // eax
   v8 = GetDlgItem(*(HWND *)this->__pad_000, 1643); /*0x5b5ca7*/
   if ( v8 ) /*0x5b5cab*/
     SendMessageA(v8, 0xF1u, dword_A8B320 == 1, 0); /*0x5b5cc3*/
+  HWND v9; // eax
   v9 = GetDlgItem(*(HWND *)this->__pad_000, 1642); /*0x5b5ccd*/
   if ( v9 ) /*0x5b5cd1*/
     SendMessageA(v9, 0xF1u, Bases == 1, 0); /*0x5b5ce9*/
+  HWND v10; // eax
   v10 = GetDlgItem(*(HWND *)this->__pad_000, 1361); /*0x5b5cf3*/
   if ( v10 ) /*0x5b5cf7*/
     SendMessageA(v10, 0xF1u, MultiEngineer == 1, 0); /*0x5b5d0f*/
+  HWND v11; // eax
   v11 = GetDlgItem(*(HWND *)this->__pad_000, 1358); /*0x5b5d19*/
   if ( v11 ) /*0x5b5d1d*/
     SendMessageA(v11, 0xF1u, ShortGame == 1, 0); /*0x5b5d35*/
+  HWND v12; // eax
   v12 = GetDlgItem(*(HWND *)this->__pad_000, 1690); /*0x5b5d3f*/
   if ( v12 ) /*0x5b5d43*/
     SendMessageA(v12, 0xF1u, SWAllowed == 1, 0); /*0x5b5d5b*/
+  HWND v13; // eax
   v13 = GetDlgItem(*(HWND *)this->__pad_000, 1693); /*0x5b5d65*/
   if ( v13 ) /*0x5b5d69*/
     SendMessageA(v13, 0xF1u, g_Rules_ShortGame == 1, 0); /*0x5b5d81*/
+  HWND v14; // eax
   v14 = GetDlgItem(*(HWND *)this->__pad_000, 1356); /*0x5b5d8b*/
   if ( v14 ) /*0x5b5d8f*/
     SendMessageA(v14, 0xF1u, Crates == 1, 0); /*0x5b5da7*/
+  HWND v15; // eax
   v15 = GetDlgItem(*(HWND *)this->__pad_000, 1357); /*0x5b5db1*/
   if ( v15 ) /*0x5b5db5*/
     SendMessageA(v15, 0xF1u, byte_A8B31F == 1, 0); /*0x5b5dcd*/
+  HWND v16; // eax
   v16 = GetDlgItem(*(HWND *)this->__pad_000, 1572); /*0x5b5dd7*/
   if ( v16 ) /*0x5b5ddb*/
     SendMessageA(v16, 0xF1u, BridgeDestruction == 1, 0); /*0x5b5df3*/
+  HWND v17; // eax
   v17 = GetDlgItem(*(HWND *)this->__pad_000, 1430); /*0x5b5dfd*/
   if ( v17 ) /*0x5b5e01*/
     SendMessageA(v17, 0xF1u, byte_A8B31D == 1, 0); /*0x5b5e19*/
+  HWND v18; // eax
   v18 = GetDlgItem(*(HWND *)this->__pad_000, 1448); /*0x5b5e23*/
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MEMORY[0xA8B322]); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
     Session::PrepareGame(*(Session **)this->__pad_000); /*0x5b5e48*/
+  HWND v19; // eax
   v19 = GetDlgItem(*(HWND *)this->__pad_000, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
@@ -174,38 +174,30 @@ int Dialog::InitializeGameSettings()
 namespace gamemd {
 int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *aP3, unsigned short *a5, int a6, void *a6_1)
 {
-  int v6; // ebp
-  int v7; // ebx
-  int v8; // edi
-  uint16_t v9; // cx
-  HWND Dialog; // eax
-  HWND v11; // esi
-  HWND DlgItem; // eax
-  HWND v13; // eax
-  HWND v14; // eax
-  HWND v15; // eax
-  TechnoTypeClass *v16; // ecx
-  int v18; // [esp+0h] [ebp-18h]
-  char v19; // [esp+Ch] [ebp-Ch]
-  char v20; // [esp+Dh] [ebp-Bh]
-  char v21; // [esp+Eh] [ebp-Ah]
-  char v22; // [esp+Fh] [ebp-9h]
-  LONG dwNewLong; // [esp+10h] [ebp-8h] BYREF
-  int v24; // [esp+14h] [ebp-4h]
 
+  LONG dwNewLong; // [esp+10h] [ebp-8h] BYREF
   dwNewLong = -1; /*0x5d349a*/
+  int v7; // ebx
   v7 = 0; /*0x5d34a6*/
+  int v8; // edi
   v8 = (*(int (**)(int))(*&dword_887640->q_A0))(dword_887640); /*0x5d34ab*/
+  int v24; // [esp+14h] [ebp-4h]
   v24 = v8; /*0x5d34b3*/
+  char v21; // [esp+Eh] [ebp-Ah]
   if ( !this || (v21 = 1, !*(unsigned short *)this) ) /*0x5d34b9*/
     v21 = 0; /*0x5d34c3*/
+  char v22; // [esp+Fh] [ebp-9h]
   if ( !a2 || (v22 = 1, !*a2) ) /*0x5d34d0*/
     v22 = 0; /*0x5d34db*/
+  char v19; // [esp+Ch] [ebp-Ch]
   if ( !aP2 || (v19 = 1, !*aP2) ) /*0x5d34e8*/
     v19 = 0; /*0x5d34f3*/
+  char v20; // [esp+Dh] [ebp-Bh]
   if ( !aP3 || (v20 = 1, !*aP3) ) /*0x5d3500*/
     v20 = 0; /*0x5d350b*/
+  int v6; // ebp
   Screen::Capture(1, 0, 0, v6); /*0x5d3514*/
+  uint16_t v9; // cx
   v9 = 206; /*0x5d351d*/
   if ( v20 ) /*0x5d3524*/
   {
@@ -215,30 +207,36 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
   {
     v9 = 288; /*0x5d3535*/
   }
+  HWND Dialog; // eax
   Dialog = (HWND)CreateDialog(v9, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_5D36A0, 0); /*0x5d3541*/
+  HWND v11; // esi
   v11 = Dialog; /*0x5d3546*/
   if ( Dialog ) /*0x5d354a*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5d3559*/
     if ( v21 ) /*0x5d3571*/
     {
+  HWND DlgItem; // eax
       DlgItem = GetDlgItem(v11, 1456); /*0x5d3579*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)this); /*0x5d3588*/
     }
     if ( v22 ) /*0x5d3590*/
     {
+  HWND v13; // eax
       v13 = GetDlgItem(v11, 1454); /*0x5d3598*/
       SendMessageA(v13, 0x4B2u, 0, (LPARAM)a2); /*0x5d35a7*/
       v7 = 1; /*0x5d35a9*/
     }
     if ( v19 ) /*0x5d35b4*/
     {
+  HWND v14; // eax
       v14 = GetDlgItem(v11, 2); /*0x5d35b9*/
       SendMessageA(v14, 0x4B2u, 0, (LPARAM)aP2); /*0x5d35c8*/
       v7 = 2; /*0x5d35ca*/
     }
     if ( v20 ) /*0x5d35d5*/
     {
+  HWND v15; // eax
       v15 = GetDlgItem(v11, 1455); /*0x5d35dd*/
       SendMessageA(v15, 0x4B2u, 0, (LPARAM)aP3); /*0x5d35ec*/
       v7 = 3; /*0x5d35ee*/
@@ -258,7 +256,9 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
           break; /*0x5d3637*/
         if ( !byte_A8E9A0 ) /*0x5d3640*/
         {
+  TechnoTypeClass *v16; // ecx
           (*((unsigned char *)&(v16))) = 0; /*0x5d3642*/
+  int v18; // [esp+0h] [ebp-18h]
           ScreenSaver::Process(v16, v18); /*0x5d3644*/
         }
       }
@@ -289,18 +289,18 @@ int Dialog::GetMode3()
 namespace gamemd {
 int Dialog::RefreshDialogsGame(void *a1)
 {
-  ObjectClass *v1; // eax
-  ObjectClass *v2; // eax
-  int result; // eax
 
   if ( this ) /*0x5ee352*/
     UpdateObserveButtonWOL(); /*0x5ee354*/
+  ObjectClass *v1; // eax
   v1 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x5ee35e*/
   if ( v1 ) /*0x5ee365*/
     UpdateObserveButtonWOL(v1); /*0x5ee369*/
+  ObjectClass *v2; // eax
   v2 = (ObjectClass *)Dialog::FindByHandle((gamemd::Dialog *)0x113); /*0x5ee373*/
   if ( v2 ) /*0x5ee37a*/
     UpdateObserveButtonWOL(v2); /*0x5ee37e*/
+  int result; // eax
   result = Dialog::FindByHandle((Dialog *)0xBB); /*0x5ee388*/
   if ( result ) /*0x5ee38f*/
     UpdateObserveButtonWOL((ObjectClass *)result); /*0x5ee393*/
@@ -744,12 +744,10 @@ LABEL_208:
 namespace gamemd {
 int Dialog::StopBink(void *a1)
 {
-  int result; // eax
-  int v3; // esi
-  HWND DlgItem; // eax
-  Dialog *v5; // [esp+8h] [ebp-4h] BYREF
 
+  int result; // eax
   result = *(unsigned int *)&g_DialogHashMap_Count; /*0x607fd1*/
+  Dialog *v5; // [esp+8h] [ebp-4h] BYREF
   v5 = this; /*0x607fdc*/
   if ( *(unsigned int *)&g_DialogHashMap_Count ) /*0x607fe0*/
   {
@@ -765,12 +763,14 @@ int Dialog::StopBink(void *a1)
         if ( !result ) /*0x60801c*/
           return result; /*0x60801c*/
       }
+  int v3; // esi
       v3 = result + 4; /*0x608026*/
       if ( result != -4 ) /*0x60802b*/
       {
         (*((unsigned char *)&(result))) = result->u8_C2; /*0x60802d*/
         if ( (unsigned char)result ) /*0x608035*/
         {
+  HWND DlgItem; // eax
           DlgItem = GetDlgItem((HWND)this, 1818); /*0x60803d*/
           if ( DlgItem ) /*0x608045*/
             SendMessageA(DlgItem, 0x4E2u, 0, 0); /*0x608051*/
@@ -2122,12 +2122,10 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
 namespace gamemd {
 AbstractClass * * Dialog::Resize(void *a1)
 {
-  LONG result; // eax
-  int SystemMetrics; // esi
-  HWND v4; // esi
   struct tagRECT v6; // [esp+Ch] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+1Ch] [ebp-10h] BYREF
 
+  LONG result; // eax
   result = g_DSurface_Primary; /*0x6213a0*/
   if ( g_DSurface_Primary ) /*0x6213ae*/
   {
@@ -2139,6 +2137,7 @@ AbstractClass * * Dialog::Resize(void *a1)
       result = GetWindowLongA(this->u32_14, -16); /*0x6213e2*/
       if ( ((unsigned int)0 & result) != 0 ) /*0x6213ed*/
       {
+  int SystemMetrics; // esi
         SystemMetrics = GetSystemMetrics(5); /*0x6213fa*/
         result = GetSystemMetrics(6); /*0x6213fe*/
         v6.left += SystemMetrics; /*0x62140e*/
@@ -2149,6 +2148,7 @@ AbstractClass * * Dialog::Resize(void *a1)
       if ( *(unsigned int *)this == 4 ) /*0x62142c*/
       {
         result = dword_AC1B04; /*0x62142e*/
+  HWND v4; // esi
         v4 = (HWND)this->u32_14; /*0x621433*/
         v4 = v4; /*0x621438*/
         if ( dword_AC1B04 ) /*0x62143c*/
@@ -2602,15 +2602,7 @@ AbstractClass * * Dialog::GrowBuffer()
   int v2; // esi
   unsigned int *v3; // ebp
   AnimClass *v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
   int v12; // eax
-  unsigned int *v13; // [esp+4h] [ebp-4h]
 
   if ( this->u32_14 != 1 ) /*0x624be8*/
   {
@@ -2618,24 +2610,32 @@ AbstractClass * * Dialog::GrowBuffer()
     v3 = *(unsigned int **)this->__pad_000; /*0x624bf3*/
     v4 = (AnimClass *)this->q00C + 1); /*0x624bfc*/
     this->u32_8 = 2 * v2; /*0x624bfd*/
+  unsigned int *v13; // [esp+4h] [ebp-4h]
     v13 = v3; /*0x624c00*/
     this->q00C = v4; /*0x624c08*/
+  void *v5; // edi
     v5 = (void *)__2_YAPAXI_Z(8 * v2); /*0x624c13*/
+  unsigned int v6; // edx
     v6 = 4 * this->u32_8; /*0x624c18*/
     *(unsigned int *)this->__pad_000 = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
     if ( v2 > 0 ) /*0x624c2f*/
     {
+  int *v7; // edi
       v7 = v3; /*0x624c31*/
+  int v8; // ebp
       v8 = v2; /*0x624c33*/
       do /*0x624c67*/
       {
+  int v9; // esi
         v9 = *v7; /*0x624c35*/
         if ( *v7 ) /*0x624c35*/
         {
           do /*0x624c61*/
           {
+  int v10; // edx
             v10 = (*(int (**)(int))&this->u32_18)(v9) & ((1 << (int)this->q00C) - 1); /*0x624c4b*/
+  int v11; // ecx
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x624c4f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x624c55*/
             v12 = *(unsigned int *)(v9 + 8); /*0x624c57*/
@@ -2858,43 +2858,9 @@ LABEL_41:
 namespace gamemd {
 INIClass * * Dialog::ReadMultiplayerDialogSettings()
 {
-  int result; // eax
-  int Int_Overwrite; // eax
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
-  int v8; // edx
-  int v9; // eax
-  int v10; // ecx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  char v16; // dl
-  char Bool_Overwrite; // al
-  char v18; // cl
-  char v19; // al
-  char v20; // dl
-  char v21; // al
-  char v22; // cl
-  char v23; // al
-  char v24; // dl
-  char v25; // al
-  char v26; // cl
-  char v27; // al
-  char v28; // dl
-  char v29; // al
-  char v30; // cl
-  char v31; // al
-  char v32; // dl
-  char v33; // al
-  char v34; // cl
-  char v35; // al
-  char v36; // dl
-  bool *v37; // [esp+Ch] [ebp+4h]
 
+  int result; // eax
+  bool *v37; // [esp+Ch] [ebp+4h]
   result = INIClass::BinarySearchSection((int)v37, (uint8_t *)aMultiplayerdia); /*0x671eb0*/
   if ( result ) /*0x671ebc*/
   {
@@ -2903,47 +2869,63 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                                  (uint8_t *)aMultiplayerdia,
                                  aMinmoney,
                                  this->u32_1480);
+  int Int_Overwrite; // eax
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x671ef7*/
                       v37,
                       (uint8_t *)aMultiplayerdia,
                       aMoney,
                       this->u32_1484);
+  int v4; // edx
     v4 = this->u32_1488; /*0x671efc*/
     this->u32_1484 = Int_Overwrite; /*0x671f02*/
+  int v5; // eax
     v5 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMaxmoney, v4); /*0x671f16*/
+  int v6; // ecx
     v6 = this->u32_148C; /*0x671f1b*/
     this->u32_1488 = v5; /*0x671f21*/
     this->u32_148C = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMoneyincrement, v6); /*0x671f3b*/
+  int v7; // eax
     v7 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMinunitcount, this->u32_1490); /*0x671f56*/
+  int v8; // edx
     v8 = this->u32_1494; /*0x671f5b*/
     this->u32_1490 = v7; /*0x671f61*/
+  int v9; // eax
     v9 = INIClass::ReadInt_Overwrite( /*0x671f75*/
            v37,
            (uint8_t *)aMultiplayerdia,
            (uint8_t *)g_INI_Key_UnitCount,
            v8);
+  int v10; // ecx
     v10 = this->u32_1498; /*0x671f7a*/
     this->u32_1494 = v9; /*0x671f80*/
     this->u32_1498 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aMaxunitcount, v10); /*0x671f9a*/
+  int v11; // eax
     v11 = INIClass::ReadInt_Overwrite( /*0x671fb5*/
             v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_TechLevel,
             this->u32_149C);
+  int v12; // edx
     v12 = this->u32_14A0; /*0x671fba*/
     this->u32_149C = v11; /*0x671fc0*/
+  int v13; // eax
     v13 = INIClass::ReadInt_Overwrite( /*0x671fd4*/
             v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_GameSpeed,
             v12);
+  int v14; // ecx
     v14 = this->u32_14A4; /*0x671fd9*/
     this->u32_14A0 = v13; /*0x671fdf*/
     this->u32_14A4 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAidifficulty, v14); /*0x671ff9*/
+  int v15; // eax
     v15 = INIClass::ReadInt_Overwrite(v37, (uint8_t *)aMultiplayerdia, aAiplayers, this->u32_14A8); /*0x672014*/
+  char v16; // dl
     v16 = this->u32_14AC; /*0x672019*/
     this->u32_14A8 = v15; /*0x67201f*/
+  char Bool_Overwrite; // al
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBridgedestruct, v16); /*0x672033*/
+  char v18; // cl
     v18 = this->u32_14AD; /*0x672038*/
     this->u32_14AC = Bool_Overwrite; /*0x67203e*/
     this->u32_14AD = INIClass::ReadBool_Overwrite( /*0x672058*/
@@ -2951,10 +2933,14 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                                 (uint8_t *)aMultiplayerdia,
                                 aShadowgrow,
                                 v18);
+  char v19; // al
     v19 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aShroud, this->u32_14AE); /*0x672073*/
+  char v20; // dl
     v20 = this->u32_14AF; /*0x672078*/
     this->u32_14AE = v19; /*0x67207e*/
+  char v21; // al
     v21 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aBases, v20); /*0x672092*/
+  char v22; // cl
     v22 = this->u32_14B0; /*0x672097*/
     this->u32_14AF = v21; /*0x67209d*/
     this->u32_14B0 = INIClass::ReadBool_Overwrite( /*0x6720b7*/
@@ -2962,10 +2948,14 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                                 (uint8_t *)aMultiplayerdia,
                                 (uint8_t *)g_INI_Key_TiberiumGrows,
                                 v22);
+  char v23; // al
     v23 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCrates, this->u32_14B1); /*0x6720d2*/
+  char v24; // dl
     v24 = this->u32_14B2; /*0x6720d7*/
     this->u32_14B1 = v23; /*0x6720dd*/
+  char v25; // al
     v25 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aCapturetheflag, v24); /*0x6720f1*/
+  char v26; // cl
     v26 = this->u32_14B3; /*0x6720f6*/
     this->u32_14B2 = v25; /*0x6720fc*/
     this->u32_14B3 = INIClass::ReadBool_Overwrite( /*0x672116*/
@@ -2973,14 +2963,18 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                                 (uint8_t *)aMultiplayerdia,
                                 aHarvestertruce,
                                 v26);
+  char v27; // al
     v27 = INIClass::ReadBool_Overwrite( /*0x672131*/
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             aMultiengineer,
             this->u32_14B4);
+  char v28; // dl
     v28 = this->u32_14B5; /*0x672136*/
     this->u32_14B4 = v27; /*0x67213c*/
+  char v29; // al
     v29 = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aAlliesallowed, v28); /*0x672150*/
+  char v30; // cl
     v30 = this->u32_14BB; /*0x672155*/
     this->u32_14B5 = v29; /*0x67215b*/
     this->u32_14BB = INIClass::ReadBool_Overwrite( /*0x672175*/
@@ -2988,18 +2982,22 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                                 (uint8_t *)aMultiplayerdia,
                                 aAllychangeallo,
                                 v30);
+  char v31; // al
     v31 = INIClass::ReadBool_Overwrite( /*0x672190*/
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_ShortGame,
             this->u32_14B6);
+  char v32; // dl
     v32 = this->u32_14B9; /*0x672195*/
     this->u32_14B6 = v31; /*0x67219b*/
+  char v33; // al
     v33 = INIClass::ReadBool_Overwrite( /*0x6721af*/
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_SuperWeaponsAllowed,
             v32);
+  char v34; // cl
     v34 = this->u32_14BA; /*0x6721b4*/
     this->u32_14B9 = v33; /*0x6721ba*/
     this->u32_14BA = INIClass::ReadBool_Overwrite( /*0x6721d4*/
@@ -3007,11 +3005,13 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
                                 (uint8_t *)aMultiplayerdia,
                                 (uint8_t *)g_INI_Key_BuildOffAlly,
                                 v34);
+  char v35; // al
     v35 = INIClass::ReadBool_Overwrite( /*0x6721ef*/
             (int *)v37,
             (uint8_t *)aMultiplayerdia,
             (uint8_t *)g_INI_Key_FogOfWar,
             this->u32_14B7);
+  char v36; // dl
     v36 = this->u32_14B8; /*0x6721f4*/
     this->u32_14B7 = v35; /*0x6721fa*/
     result = INIClass::ReadBool_Overwrite((int *)v37, (uint8_t *)aMultiplayerdia, aMcvredeploys, v36); /*0x67220e*/
@@ -3029,12 +3029,12 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
 namespace gamemd {
 int Dialog::FindByHandle(void *a1)
 {
-  int v1; // eax
-  Dialog **i; // edx
 
+  int v1; // eax
   v1 = g_DialogTrackingList - 1; /*0x775945*/
   if ( g_DialogTrackingList - 1 < 0 ) /*0x775948*/
     return 0; /*0x77595d*/
+  Dialog **i; // edx
   for ( i = (Dialog **)(8 * v1 + 12004652); this != *i; i -= 2 ) /*0x77594a*/
   {
     if ( --v1 < 0 ) /*0x77595b*/
@@ -3061,7 +3061,6 @@ int Dialog::GetCurrentType()
 namespace gamemd {
 int Dialog::SideIDToIndex(void *a1)
 {
-  int v2; // eax
 
   if ( this == 1699 ) /*0x4e4ec7*/
     return 0; /*0x4e4ec9*/
@@ -3077,6 +3076,7 @@ int Dialog::SideIDToIndex(void *a1)
     return 5; /*0x4e4f07*/
   if ( this == 1706 ) /*0x4e4f12*/
     return 6; /*0x4e4f14*/
+  int v2; // eax
   v2 = -(this != 1707); /*0x4e4f21*/
   (*((unsigned char *)&(v2))) = v2 & 0xF8; /*0x4e4f23*/
   return v2 + 7; /*0x4e4ecb*/
@@ -3087,7 +3087,6 @@ int Dialog::SideIDToIndex(void *a1)
 namespace gamemd {
 int Dialog::OptionIDToIndex()
 {
-  int v2; // eax
 
   if ( this == 1901 ) /*0x4e59a7*/
     return 0; /*0x4e59a9*/
@@ -3103,6 +3102,7 @@ int Dialog::OptionIDToIndex()
     return 5; /*0x4e59e7*/
   if ( this == 1907 ) /*0x4e59f2*/
     return 6; /*0x4e59f4*/
+  int v2; // eax
   v2 = -(this != 1908); /*0x4e5a01*/
   (*((unsigned char *)&(v2))) = v2 & 0xF8; /*0x4e5a03*/
   return v2 + 7; /*0x4e59ab*/
@@ -3113,8 +3113,8 @@ int Dialog::OptionIDToIndex()
 namespace gamemd {
 int Dialog::FindGameUI()
 {
-  int result; // eax
 
+  int result; // eax
   result = Dialog::FindByHandle((void *)0xC2); /*0x5e26c5*/
   if ( !result ) /*0x5e26cc*/
   {
@@ -3134,20 +3134,20 @@ int Dialog::FindGameUI()
 namespace gamemd {
 HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...)
 {
-  int result; // eax
-  HWND Current; // esi
-  HWND DlgItem; // eax
   va_list v5; // [esp+0h] [ebp-808h]
-  wchar_t Buffer[1024]; // [esp+8h] [ebp-800h] BYREF
   va_list Format; // [esp+814h] [ebp+Ch] BYREF
 
   va_start(Format, BufferCount);
+  wchar_t Buffer[1024]; // [esp+8h] [ebp-800h] BYREF
   memset(Buffer, 0, sizeof(Buffer)); /*0x5e2717*/
   vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v5); /*0x5e272a*/
+  int result; // eax
   result = Dialog::GetCurrent(); /*0x5e2732*/
   if ( result ) /*0x5e2739*/
   {
+  HWND Current; // esi
     Current = (HWND)Dialog::GetCurrent(); /*0x5e2746*/
+  HWND DlgItem; // eax
     DlgItem = GetDlgItem(Current, 1343); /*0x5e274e*/
     if ( DlgItem ) /*0x5e2752*/
     {
@@ -3175,20 +3175,20 @@ HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectC
 namespace gamemd {
 HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignScore * aP2, void *a4)
 {
-  int result; // eax
-  HWND Current; // esi
-  HWND DlgItem; // eax
   va_list v5; // [esp+0h] [ebp-808h]
-  wchar_t Buffer[1024]; // [esp+8h] [ebp-800h] BYREF
   va_list Format; // [esp+814h] [ebp+Ch] BYREF
 
   va_start(Format, BufferCount);
+  wchar_t Buffer[1024]; // [esp+8h] [ebp-800h] BYREF
   memset(Buffer, 0, sizeof(Buffer)); /*0x5e27a7*/
   vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v5); /*0x5e27ba*/
+  int result; // eax
   result = Dialog::GetCurrent(); /*0x5e27c2*/
   if ( result ) /*0x5e27c9*/
   {
+  HWND Current; // esi
     Current = (HWND)Dialog::GetCurrent(); /*0x5e27d6*/
+  HWND DlgItem; // eax
     DlgItem = GetDlgItem(Current, 1461); /*0x5e27de*/
     if ( DlgItem ) /*0x5e27e2*/
     {
@@ -3216,8 +3216,8 @@ HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignSco
 namespace gamemd {
 LRESULT Dialog::ShowPlayerName()
 {
-  HWND DlgItem; // eax
 
+  HWND DlgItem; // eax
   DlgItem = GetDlgItem((HWND)this, 1448); /*0x5e2f66*/
   return SendMessageA(DlgItem, 0x4B2u, 0, 11055906); /*0x5e2f7f*/
 }
@@ -3227,7 +3227,6 @@ LRESULT Dialog::ShowPlayerName()
 namespace gamemd {
 int Dialog::MapPlayerIDToIndex(void *a1)
 {
-  int v2; // eax
 
   if ( this == 1041 ) /*0x5e9957*/
     return 0; /*0x5e9959*/
@@ -3243,6 +3242,7 @@ int Dialog::MapPlayerIDToIndex(void *a1)
     return 5; /*0x5e9997*/
   if ( this == 1047 ) /*0x5e99a2*/
     return 6; /*0x5e99a4*/
+  int v2; // eax
   v2 = -(this != 1048); /*0x5e99b1*/
   (*((unsigned char *)&(v2))) = v2 & 0xF8; /*0x5e99b3*/
   return v2 + 7; /*0x5e995b*/
@@ -3253,10 +3253,10 @@ int Dialog::MapPlayerIDToIndex(void *a1)
 namespace gamemd {
 unsigned int Dialog::CheckButtonState()
 {
-  int v1; // esi
-  unsigned char v3[84]; // [esp+4h] [ebp-54h] BYREF
 
+  int v1; // esi
   v1 = (*(int (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer); /*0x5f3467*/
+  unsigned char v3[84]; // [esp+4h] [ebp-54h] BYREF
   if ( (*(int (**)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f3483*/
          g_ClipboardBuffer,
          word_832678,
@@ -3308,30 +3308,27 @@ BOOL Dialog::EnumAndCleanup(void *a1)
 namespace gamemd {
 BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM)
 {
-  LONG WindowLongA; // ebx
-  HWND Parent; // esi
-  DWORD v4; // edx
-  HWND Window; // esi
-  unsigned int *v6; // ebx
-  LONG v7; // eax
-  LONG dwNewLong; // [esp+10h] [ebp-A4h]
   struct tagRECT Rect; // [esp+14h] [ebp-A0h] BYREF
   struct tagRECT v11; // [esp+24h] [ebp-90h] BYREF
-  CHAR ClassName[128]; // [esp+34h] [ebp-80h] BYREF
 
+  LONG WindowLongA; // ebx
   WindowLongA = GetWindowLongA(hWnd, -16); /*0x60f341*/
   SetWindowLongA(hWnd, -21, 0); /*0x60f343*/
   if ( (WindowLongA & 0x10000000) != 0 && (WindowLongA & 0x8000000) == 0 ) /*0x60f35b*/
   {
+  CHAR ClassName[128]; // [esp+34h] [ebp-80h] BYREF
     GetClassNameA(hWnd, ClassName, 128); /*0x60f36c*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) ) /*0x60f381*/
     {
+  HWND Parent; // esi
       Parent = GetParent(hWnd); /*0x60f3b9*/
       ScreenDialogToClient(hWnd, &Rect); /*0x60f3bb*/
       ScreenDialogToClient(Parent, &v11); /*0x60f3c6*/
+  DWORD v4; // edx
       v4 = 1073742096; /*0x60f3df*/
       if ( (WindowLongA & 0x10000) != 0 ) /*0x60f3ea*/
         v4 = 1073807632; /*0x60f3ec*/
+  HWND Window; // esi
       Window = CreateWindowExA( /*0x60f427*/
                  0,
                  g_INI_Key_ListBox,
@@ -3345,6 +3342,7 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM)
                  0,
                  g_hInstance,
                  0);
+  unsigned int *v6; // ebx
       v6 = operator new(8u); /*0x60f431*/
       *v6 = g_INI_Key_NewEdit; /*0x60f436*/
       v6[1] = GetWindowLongA(hWnd, -16); /*0x60f43f*/
@@ -3353,7 +3351,9 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM)
       ShowWindow(hWnd, 0); /*0x60f459*/
       EnableWindow(Window, 1); /*0x60f462*/
       ShowWindow(Window, 1); /*0x60f46b*/
+  LONG dwNewLong; // [esp+10h] [ebp-A4h]
       dwNewLong = GetWindowLongA(hWnd, -12); /*0x60f479*/
+  LONG v7; // eax
       v7 = GetWindowLongA(Window, -12); /*0x60f47d*/
       SetWindowLongA(hWnd, -12, v7); /*0x60f483*/
       SetWindowLongA(Window, -12, dwNewLong); /*0x60f48d*/
@@ -3402,12 +3402,12 @@ char Dialog::PumpMessages()
 namespace gamemd {
 int Dialog::FindByPtr(void *a1)
 {
-  int v1; // eax
-  Dialog **i; // edx
 
+  int v1; // eax
   v1 = g_DialogTrackingList - 1; /*0x7759b5*/
   if ( g_DialogTrackingList - 1 < 0 ) /*0x7759b8*/
     return 0; /*0x7759d1*/
+  Dialog **i; // edx
   for ( i = (Dialog **)(8 * v1 + 12004648); this != *i || v1 <= 0; i -= 2 ) /*0x7759ba*/
   {
     if ( --v1 < 0 ) /*0x7759cf*/
@@ -3430,8 +3430,8 @@ BOOL Dialog::GetField(void *a1, void *a2)
 namespace gamemd {
 HWND Dialog::RestoreParent()
 {
-  int result; // eax
 
+  int result; // eax
   result = GetWindowLongA((HWND)this, -8); /*0x777066*/
   if ( result ) /*0x77706e*/
     return SetDialogParent((HWND)result); /*0x777074*/
@@ -3443,9 +3443,9 @@ HWND Dialog::RestoreParent()
 namespace gamemd {
 char Dialog::UpdateGameUI()
 {
-  HWND GameUI; // eax
 
   Dialog::PumpMessages(); /*0x77d820*/
+  HWND GameUI; // eax
   GameUI = (HWND)Dialog::FindGameUI(); /*0x77d825*/
   if ( GameUI ) /*0x77d82c*/
     InvalidateRect(GameUI, 0, 1); /*0x77d833*/
@@ -3457,8 +3457,8 @@ char Dialog::UpdateGameUI()
 namespace gamemd {
 HWND Dialog::CloseAll()
 {
-  HWND result; // eax
 
+  HWND result; // eax
   for ( result = Dialog::GetCurrent(); result; result = Dialog::GetCurrent() ) /*0x799d17*/
     CloseDialog(result, 0); /*0x799d1d*/
   return result; /*0x799d2b*/

@@ -11,10 +11,8 @@
 namespace gamemd {  // G42.18 ns repair
 HWND sub_792EC0(int a1)
 {
-  HWND v2; // eax
-  HWND Current; // eax
-  HWND result; // eax
 
+  HWND v2; // eax
   v2 = (HWND)((Dialog*)(void *)0xC4)->FindByHandle(); /*0x792ec8*/
   if ( v2 ) /*0x792ecf*/
   {
@@ -22,7 +20,9 @@ HWND sub_792EC0(int a1)
     if ( !dword_B77DC8 ) /*0x792ee1*/
       CloseDialog(v2, 0); /*0x792ee7*/
   }
+  HWND Current; // eax
   Current = (HWND)(Dialog::GetCurrent());
+  HWND result; // eax
   result = GetDlgItem(Current, 1344); /*0x792ef7*/
   if ( result ) /*0x792f00*/
     return SetFocus(result); /*0x792f03*/

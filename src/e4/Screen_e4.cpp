@@ -25,29 +25,26 @@
 namespace gamemd {  // G42.18 ns repair
 int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
 {
-  int *v4; // edi
-  int v5; // ebx
-  int v6; // ebp
-  unsigned int *v7; // eax
-  unsigned int *v8; // esi
-  int result; // eax
-  int v10; // [esp+Ah] [ebp-1Ch]
-  int v11; // [esp+Eh] [ebp-18h]
-  int *v12; // [esp+12h] [ebp-14h]
-  int v13[2]; // [esp+1Eh] [ebp-8h] BYREF
-  int retaddr; // [esp+26h] [ebp+0h]
 
+  int *v4; // edi
   v4 = (int *)((unsigned int *)((int *)a2));
+  int *v12; // [esp+12h] [ebp-14h]
   (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))) = (unsigned char)(a1); /*0x52fecb*/
   if ( !a2 ) /*0x52fecf*/
     v4 = (int *)(g_DSurface_Hidden); /*0x52fed1*/
   v4->COMStub_6(0, a4, a3); /*0x52fede*/
+  int v5; // ebx
   v5 = v4->IsAboveScreenMargin(); /*0x52fee8*/
+  int v6; // ebp
   v6 = v4->vt_slot_128(); /*0x52fef4*/
+  int v13[2]; // [esp+1Eh] [ebp-8h] BYREF
   v13[0] = 0; /*0x52fef6*/
   v13[1] = 0; /*0x52fefc*/
+  int retaddr; // [esp+26h] [ebp+0h]
   retaddr = v5; /*0x52ff00*/
+  unsigned int *v7; // eax
   v7 = (unsigned int *)(operator new(0x20u)); /*0x52ff08*/
+  unsigned int *v8; // esi
   v8 = v7; /*0x52ff0d*/
   if ( v7 ) /*0x52ff14*/
   {
@@ -64,10 +61,13 @@ int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
     v8 = 0; /*0x52ff48*/
   }
   Render_Draw((int)v8, v13, 0); /*0x52ff52*/
+  int result; // eax
   result = v4->COMStub_AddRef(v8); /*0x52ff60*/
   if ( v8 ) /*0x52ff67*/
     result = (*(int (**)(unsigned int *, int))*v8)(v8, 1); /*0x52ff6f*/
   (*((unsigned char *)&(result))) = (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))); /*0x52ff71*/
+  int v10; // [esp+Ah] [ebp-1Ch]
+  int v11; // [esp+Eh] [ebp-18h]
   if ( (*(((unsigned char *)&(v12)) + (sizeof(v12) - 1))) ) /*0x52ff77*/
     return Frame::Present((void *)((int)v4), 1, 0, (int)v4, 0, v10, v11, v12); /*0x52ff7f*/
   return result; /*0x52ff84*/
@@ -489,33 +489,26 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 namespace gamemd {  // G42.18c ns repair
 int Screen::TransitionLoop(int a2)
 {
-  int v3; // eax
-  int v4; // ecx
-  int v5; // eax
-  int v6; // esi
-  int i; // esi
-  int v8; // ecx
-  int j; // esi
-  int v10; // ecx
   int v11; // esi
-  int v12; // eax
   int result; // eax
   bool v14; // cc
-  int Ticks; // [esp+24h] [ebp-48h]
-  int v16; // [esp+2Ch] [ebp-40h]
-  unsigned int v17[4]; // [esp+3Ch] [ebp-30h] BYREF
   struct tagRECT Rect; // [esp+4Ch] [ebp-20h] BYREF
   Rect v19; // [esp+5Ch] [ebp-10h] BYREF
 
+  int Ticks; // [esp+24h] [ebp-48h]
   Ticks = TimerGetTicks(); /*0x690178*/
+  int v16; // [esp+2Ch] [ebp-40h]
   v16 = 1; /*0x69017c*/
   do
   {
     Screen::CleanupTransitionObjects(); /*0x690189*/
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x69019a*/
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x6901ab*/
+  int v3; // eax
     v3 = *(unsigned int *)this; /*0x6901b1*/
+  int v4; // ecx
     v4 = this->u32_4; /*0x6901c4*/
+  unsigned int v17[4]; // [esp+3Ch] [ebp-30h] BYREF
     v17[0] = *(unsigned int *)this + Rect.left; /*0x6901c7*/
     v17[1] = v4 + Rect.top; /*0x6901d7*/
     v17[2] = 640; /*0x6901db*/
@@ -545,12 +538,16 @@ int Screen::TransitionLoop(int a2)
       MessageLoop(); /*0x690245*/
       if ( !((unsigned int *)&stru_A8EB00)[412] )
       {
+  int v5; // eax
+  int v6; // esi
         if ( Ticks == -1
           || ((v5 = TimerGetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5), v16 = v6,
                                                                                         ((unsigned int *)&stru_A8EB00)[412] != 1) )
         {
+  int i; // esi
           for ( i = 0; i < this->u32_2C; ++i ) /*0x690292*/
           {
+  int v8; // ecx
             v8 = *(unsigned int *)(this->q020 + 4 * i); /*0x690297*/
             (*(void (**)(int))(*(unsigned int *)v8 + 4))(v8); /*0x69029c*/
           }
@@ -559,8 +556,10 @@ int Screen::TransitionLoop(int a2)
             Sleep(0x1F4u); /*0x6902b5*/
             MessageLoop(); /*0x6902b7*/
           }
+  int j; // esi
           for ( j = 0; j < this->u32_2C; ++j ) /*0x6902cc*/
           {
+  int v10; // ecx
             v10 = *(unsigned int *)(this->q020 + 4 * j); /*0x6902d1*/
             (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x6902d6*/
           }
@@ -571,6 +570,7 @@ int Screen::TransitionLoop(int a2)
       v11 = v16; /*0x6902fc*/
       if ( Ticks != -1 ) /*0x690302*/
       {
+  int v12; // eax
         v12 = TimerGetTicks() - Ticks; /*0x69030d*/
         if ( v12 >= v16 ) /*0x690313*/
           break; /*0x690313*/
@@ -591,9 +591,6 @@ int Screen::TransitionLoop(int a2)
 // 0x690360
 int Screen::CleanupTransitionObjects()
 {
-  int result; // eax
-  int i; // edi
-  int v4; // ecx
   void (***v5)(unsigned int, int); // ecx
   int v6; // eax
   int v7; // ecx
@@ -609,9 +606,12 @@ int Screen::CleanupTransitionObjects()
       0,
       1);
   }
+  int result; // eax
   result = this->u32_2C; /*0x69039d*/
+  int i; // edi
   for ( i = 0; i < result; ++i ) /*0x6903a4*/
   {
+  int v4; // ecx
     v4 = *(unsigned int *)(this->q020 + 4 * i); /*0x6903ad*/
     if ( (*(uint8_t (**)(int, unsigned int))(*(unsigned int *)v4 + 12))(v4, this->q008) == 1 ) /*0x6903b7*/
     {

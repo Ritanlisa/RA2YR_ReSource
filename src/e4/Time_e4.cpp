@@ -10,10 +10,10 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int Time::GetElapsedMS()
 {
-  DWORD Time; // eax
-  unsigned int v1; // ecx
 
+  DWORD Time; // eax
   Time = timeGetTime(); /*0x4e24a0*/
+  unsigned int v1; // ecx
   if ( Time > dword_8B3F14 ) /*0x4e24ae*/
     v1 = 3 * (Time - dword_8B3F14); /*0x4e24c5*/
   else
@@ -25,9 +25,9 @@ unsigned int Time::GetElapsedMS()
 namespace gamemd {
 int Time::FormatDate(char * Buffer)
 {
-  int result; // eax
   struct _SYSTEMTIME SystemTime; // [esp+4h] [ebp-10h] BYREF
 
+  int result; // eax
   result = FileTimeToSystemTime(&FileTime, &SystemTime); /*0x777ad0*/
   if ( result ) /*0x777ad8*/
     return sprintf( /*0x777b20*/

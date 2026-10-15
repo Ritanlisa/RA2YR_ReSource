@@ -284,12 +284,12 @@ int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)()
 namespace gamemd {
 void SetDialogPlayerName(HWND hDlg, int a2)
 {
-  HWND DlgItem; // edi
-  wchar_t *v4; // eax
 
   if ( a2 ) /*0x5e2ef5*/
   {
+  HWND DlgItem; // edi
     DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, 1772)));
+  wchar_t *v4; // eax
     v4 = (wchar_t *)(((wchar_t **)(a2 + 32))->GetOrEmpty_Alt()); /*0x5e2f09*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v4); /*0x5e2f17*/
   }
@@ -480,28 +480,24 @@ char Game_CheckSettingsChanged(char a1, char a2)
 namespace gamemd {
 ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
 {
-  char *v2; // edi
-  char *v4; // eax
-  HWND result; // eax
-  int v6; // esi
-  char *v7; // eax
-  wchar_t *v8; // eax
-  wchar_t *String; // eax
-  int v10; // [esp-8h] [ebp-14h]
-  int v11; // [esp-8h] [ebp-14h]
 
+  char *v2; // edi
   v2 = (char *)((void *)(a1));
   if ( !a1 ) /*0x5e39c9*/
     v2 = (char *)(unk_A8B380); /*0x5e39cb*/
+  char *v4; // eax
   v4 = CharToWideString((unsigned char *)(v2)); /*0x5e39d7*/
   if ( !wcscmp((const wchar_t *)v4,(const wchar_t *)(word_A8D610)) ) /*0x5e39dd*/
     a2 = (void *)(1); /*0x5e39e9*/
+  HWND result; // eax
   result = (HWND)dword_A8DA84; /*0x5e39ee*/
+  int v6; // esi
   v6 = 0; /*0x5e39f3*/
   if ( dword_A8DA84 > 0 ) /*0x5e39f7*/
   {
     while ( 1 ) /*0x5e3a06*/
     {
+  char *v7; // eax
       v7 = (char *)((gamemd::ObjectClass **)(ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * v6)))));
       result = (HWND)_strcmpi(v7, v2); /*0x5e3a0c*/
       if ( !result ) /*0x5e3a16*/
@@ -517,14 +513,18 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
       {
         if ( a2 == (void *)(2) ) /*0x5e3a71*/
         {
+  int v11; // [esp-8h] [ebp-14h]
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
+  wchar_t *String; // eax
           String = GetStringCSF((wchar_t *)(aGuiHostmaptran), 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
           return Dialog::ShowMessage(-1, (size_t)String, v11, 11055906); /*0x5e3a9b*/
         }
       }
       else
       {
+  int v10; // [esp-8h] [ebp-14h]
         v10 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a4a*/
+  wchar_t *v8; // eax
         v8 = GetStringCSF((wchar_t *)(g_Str_GUI_HostNoMap), 0, g_Str_File_netshare_cpp, 1169); /*0x5e3a5a*/
         return Dialog::ShowMessage(-1, (size_t)v8, v10, 11055906); /*0x5e3a62*/
       }
@@ -2165,44 +2165,23 @@ LABEL_13:
 namespace gamemd {
 AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
 {
-  LRESULT v4; // edi
-  int16_t WindowLongA; // ax
-  int DeleteAndZero_field_0x04; // edi
-  void **v7; // eax
-  void **v8; // edi
-  void ***v9; // eax
-  void **v10; // ecx
-  int v11; // eax
-  LRESULT v12; // eax
-  WPARAM v13; // edi
-  void **v14; // eax
-  void **v15; // edi
-  void ***v16; // edx
-  void **v17; // eax
-  int v18; // ebx
-  int v19; // eax
-  double v20; // st7
-  int v21; // ecx
-  void *v22; // edi
-  unsigned int v23; // edx
-  int v24; // edi
-  int v25; // edx
-  int v26; // ecx
   int v27; // eax
   DeleteAndZero v28; // [esp+10h] [ebp-C1Ch] BYREF
   int64_t v29; // [esp+1Ch] [ebp-C10h]
-  int64_t v30; // [esp+24h] [ebp-C08h]
   uint8_t v31[1024]; // [esp+2Ch] [ebp-C00h] BYREF
   wchar_t lParam[1024]; // [esp+42Ch] [ebp-800h] BYREF
 
+  LRESULT v4; // edi
   v4 = SendMessageA(hWnd, 0x18Bu, 0, 0); /*0x5e5f30*/
   v28.u32_8 = v4; /*0x5e5f36*/
   unknown_libname_74(&v28); /*0x5e5f3a*/
   if ( v4 ) /*0x5e5f41*/
   {
+  int16_t WindowLongA; // ax
     WindowLongA = GetWindowLongA(hWnd, -16); /*0x5e5f4a*/
     if ( (WindowLongA & 8) != 0 ) /*0x5e5f52*/
     {
+  int DeleteAndZero_field_0x04; // edi
       DeleteAndZero_field_0x04 = 0; /*0x5e5f5c*/
       for ( v28.q004 = 0; /*0x5e5f64*/
             DeleteAndZero_field_0x04 < v28.u32_8;
@@ -2220,7 +2199,9 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
             BulkCharToWide(lParam, v31, -1); /*0x5e5fba*/
           }
           WideString::Assign_Alt((void **)&v28, lParam); /*0x5e5fcb*/
+  void **v7; // eax
           v7 = (void **)operator new(0xCu); /*0x5e5fd2*/
+  void **v8; // edi
           v8 = v7; /*0x5e5fd7*/
           if ( v7 ) /*0x5e5fde*/
             unknown_libname_74(v7); /*0x5e5fe2*/
@@ -2229,14 +2210,18 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
           WideString::Reassign_Alt(v8, (const wchar_t **)&v28); /*0x5e5ff2*/
           v8->u32_4 = 1; /*0x5e5ffb*/
           v8[2] = 0; /*0x5e5fff*/
+  void ***v9; // eax
           v9 = (void ***)(*(unsigned int *)a2 /*0x5e6018*/
                         + 4
                         * ((*(int (**)(DeleteAndZero *))(a2 + 24))(&v28) & ((1 << *(unsigned int *)(a2 + 12)) - 1)));
+  void **v10; // ecx
           v10 = *v9; /*0x5e601d*/
           *v9 = v8; /*0x5e601f*/
           if ( v10 ) /*0x5e6023*/
             v8[2] = v10; /*0x5e6025*/
+  int v11; // eax
           v11 = *(unsigned int *)(a2 + 4); /*0x5e6028*/
+  int64_t v30; // [esp+24h] [ebp-C08h]
           (*(((unsigned int *)&(v30)) + 1)) = 0; /*0x5e602b*/
           ++v11; /*0x5e602f*/
           (*(((unsigned int *)&(v29)) + 1)) = 0; /*0x5e6030*/
@@ -2252,7 +2237,9 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
     }
     else if ( (WindowLongA & 0x4000) == 0 ) /*0x5e6078*/
     {
+  LRESULT v12; // eax
       v12 = SendMessageA(hWnd, 0x188u, 0, 0); /*0x5e6088*/
+  WPARAM v13; // edi
       v13 = v12; /*0x5e608a*/
       if ( v12 >= 0 ) /*0x5e608e*/
       {
@@ -2267,7 +2254,9 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
           BulkCharToWide(lParam, v31, -1); /*0x5e60db*/
         }
         WideString::Assign_Alt((void **)&v28, lParam); /*0x5e60ec*/
+  void **v14; // eax
         v14 = (void **)operator new(0xCu); /*0x5e60f3*/
+  void **v15; // edi
         v15 = v14; /*0x5e60f8*/
         if ( v14 ) /*0x5e60ff*/
           unknown_libname_74(v14); /*0x5e6103*/
@@ -2276,26 +2265,34 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
         WideString::Reassign_Alt(v15, (const wchar_t **)&v28); /*0x5e6113*/
         v15->__pad_004 = 1; /*0x5e611e*/
         v15[2] = 0; /*0x5e6122*/
+  void ***v16; // edx
         v16 = (void ***)(*(unsigned int *)a2 /*0x5e6137*/
                        + 4
                        * ((*(int (**)(DeleteAndZero *))(a2 + 24))(&v28) & ((1 << *(unsigned int *)(a2 + 12)) - 1)));
+  void **v17; // eax
         v17 = *v16; /*0x5e613a*/
         *v16 = v15; /*0x5e613c*/
         if ( v17 ) /*0x5e6140*/
           v15[2] = v17; /*0x5e6142*/
+  int v18; // ebx
         v18 = *(unsigned int *)(a2 + 8); /*0x5e6148*/
+  int v19; // eax
         v19 = *(unsigned int *)(a2 + 4) + 1; /*0x5e614b*/
         v29 = (unsigned int)v19; /*0x5e6150*/
         *(unsigned int *)(a2 + 4) = v19; /*0x5e6154*/
+  double v20; // st7
         v20 = (double)v29; /*0x5e6157*/
         v29 = (unsigned int)v18; /*0x5e615b*/
         if ( v20 / (double)v18 >= *(double *)(a2 + 40) && *(unsigned char *)(a2 + 20) != 1 ) /*0x5e6179*/
         {
           v28.u32_8 = *(unsigned int *)a2; /*0x5e6184*/
+  int v21; // ecx
           v21 = *(unsigned int *)(a2 + 12) + 1; /*0x5e6192*/
           *(unsigned int *)(a2 + 8) = 2 * v18; /*0x5e6194*/
           *(unsigned int *)(a2 + 12) = v21; /*0x5e6197*/
+  void *v22; // edi
           v22 = (void *)operator new(8 * v18); /*0x5e61a2*/
+  unsigned int v23; // edx
           v23 = 4 * *(unsigned int *)(a2 + 8); /*0x5e61a7*/
           *(unsigned int *)a2 = v22; /*0x5e61ae*/
           memset(v22, 0, v23); /*0x5e61b3*/
@@ -2304,12 +2301,15 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
             v28.q004 = v28.u32_8; /*0x5e61c4*/
             do /*0x5e6206*/
             {
+  int v24; // edi
               v24 = *(unsigned int *)v28.q004; /*0x5e61cc*/
               if ( *(unsigned int *)v28.q004 ) /*0x5e61cc*/
               {
                 do /*0x5e61f8*/
                 {
+  int v25; // edx
                   v25 = (*(int (**)(int))(a2 + 24))(v24) & ((1 << *(unsigned int *)(a2 + 12)) - 1); /*0x5e61e2*/
+  int v26; // ecx
                   v26 = *(unsigned int *)(*(unsigned int *)a2 + 4 * v25); /*0x5e61e6*/
                   *(unsigned int *)(*(unsigned int *)a2 + 4 * v25) = v24; /*0x5e61ec*/
                   v27 = *(unsigned int *)(v24 + 8); /*0x5e61ee*/
@@ -2454,33 +2454,30 @@ void ProcessComboBoxAddString(HWND hWnd, int a2)
 namespace gamemd {
 AbstractClass * * Map_ReadPlayerCount(int a1)
 {
-  int Int_Overwrite; // edi
-  int i; // esi
-  void *v4[4]; // [esp+Ch] [ebp-150h] BYREF
-  unsigned int v5[3]; // [esp+1Ch] [ebp-140h] BYREF
-  unsigned int v6[6]; // [esp+28h] [ebp-134h] BYREF
-  char v7; // [esp+40h] [ebp-11Ch]
-  int v8; // [esp+44h] [ebp-118h]
-  int v9; // [esp+48h] [ebp-114h]
-  unsigned int v10[22]; // [esp+4Ch] [ebp-110h] BYREF
   unsigned char v11[12]; // [esp+A4h] [ebp-B8h] BYREF
   int v12; // [esp+B0h] [ebp-ACh]
-  char Buffer[32]; // [esp+B8h] [ebp-A4h] BYREF
-  char Source[132]; // [esp+D8h] [ebp-84h] BYREF
 
   if ( a1 < 0 || a1 >= dword_A8B8D8 ) /*0x5e6539*/
     return 0; /*0x5e6539*/
+  char Source[132]; // [esp+D8h] [ebp-84h] BYREF
   strcpy(Source, (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * a1) + 88)); /*0x5e6565*/
+  unsigned int v10[22]; // [esp+4Ch] [ebp-110h] BYREF
   CCFileClass::Construct(v10, Source); /*0x5e657a*/
+  void *v4[4]; // [esp+Ch] [ebp-150h] BYREF
   v4[1] = 0; /*0x5e6583*/
   v4[2] = 0; /*0x5e6587*/
+  unsigned int v5[3]; // [esp+1Ch] [ebp-140h] BYREF
   GenericNode::Constructor(v5); /*0x5e658b*/
+  unsigned int v6[6]; // [esp+28h] [ebp-134h] BYREF
   GenericNode::Constructor(v6); /*0x5e6594*/
   LinkedList::Prepend(v5, (int)v6); /*0x5e65aa*/
   v4[3] = &vt_List; /*0x5e65b9*/
   memset(&v6[3], 0, 12); /*0x5e65c1*/
+  char v7; // [esp+40h] [ebp-11Ch]
   v7 = 0; /*0x5e65cd*/
+  int v8; // [esp+44h] [ebp-118h]
   v8 = 0; /*0x5e65d1*/
+  int v9; // [esp+48h] [ebp-114h]
   v9 = 0; /*0x5e65d5*/
   v4[0] = &vt_INIClass; /*0x5e65d9*/
   if ( !FileStraw::Open(v4, (int)v10, 0) ) /*0x5e65e1*/
@@ -2493,9 +2490,12 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
     ((BufferIOFileClass *)(v10))->Dtor(); /*0x5e661a*/
     return 0; /*0x5e662a*/
   }
+  int Int_Overwrite; // edi
   Int_Overwrite = 0; /*0x5e662b*/
+  int i; // esi
   for ( i = 0; i < 8; ++i ) /*0x5e662d*/
   {
+  char Buffer[32]; // [esp+B8h] [ebp-A4h] BYREF
     sprintf(Buffer, "%d", i); /*0x5e663d*/
     if ( INIClass::ReadInt_Overwrite(g_INI_Key_Waypoints, Buffer, -1) != -1 ) /*0x5e6660*/
       ++Int_Overwrite; /*0x5e6662*/

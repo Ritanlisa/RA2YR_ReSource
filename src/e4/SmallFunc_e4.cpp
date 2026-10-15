@@ -102,18 +102,18 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
 namespace gamemd {
 void sub_40D1B0()
 {
-  int *v0; // esi
-  int v1; // edi
-  ObjectClass *v2; // [esp+0h] [ebp-8h]
 
   *(unsigned int *)&DataGlobal_87F7E8 = (unsigned int)(&vt_MouseClass); /*0x40d1b2*/
   dword_884D00 = (int)&vt_MouseClass; /*0x40d1bc*/
+  int *v0; // esi
   v0 = (int *)(&dword_884B84); /*0x40d1c6*/
+  int v1; // edi
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
   {
     v0 -= 997; /*0x40d1d0*/
     Array::ForEachReverse(v0 + 20, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d1e3*/
+  ObjectClass *v2; // [esp+0h] [ebp-8h]
     nullsub_57(v2); /*0x40d1ea*/
     --v1; /*0x40d1ef*/
   }
@@ -126,19 +126,19 @@ void sub_40D1B0()
 namespace gamemd {
 int sub_59B6D0()
 {
-  int result; // eax
-  int *i; // ebx
-  signed int j; // esi
-  unsigned int *NeighbourContent; // edi
 
   (&dword_87F7E8)->CellIteratorReset(); /*0x59b6d6*/
+  int result; // eax
   result = (&dword_87F7E8)->CellIteratorNext(); /*0x59b6e0*/
+  int *i; // ebx
   for ( i = (int *)result; result; i = (int *)result ) /*0x59b6e9*/
   {
     if ( CellClass::IsTerrainType((gamemd::CellClass *)(i)) ) /*0x59b6ef*/
     {
+  signed int j; // esi
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
+  unsigned int *NeighbourContent; // edi
         NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent(i, j));
         if ( (NeighbourContent)->IsEmpty() ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
@@ -154,12 +154,12 @@ int sub_59B6D0()
 namespace gamemd {
 int sub_59C530()
 {
-  int result; // eax
-  int v1; // ecx
 
   (&dword_87F7E8)->CellIteratorReset(); /*0x59c536*/
+  int result; // eax
   for ( result = (&dword_87F7E8)->CellIteratorNext(); result; result = (&dword_87F7E8)->CellIteratorNext() ) /*0x59c549*/
   {
+  int v1; // ecx
     v1 = result->u32_38; /*0x59c54b*/
     if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
     {
@@ -175,12 +175,12 @@ int sub_59C530()
 namespace gamemd {
 char sub_5A1F60()
 {
-  char v0; // bl
-  int i; // eax
 
+  char v0; // bl
   v0 = 1; /*0x5a1f68*/
   Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x5a1f6a*/
   (&dword_87F7E8)->CellIteratorReset(); /*0x5a1f74*/
+  int i; // eax
   for ( i = (&dword_87F7E8)->CellIteratorNext(); i; i = (&dword_87F7E8)->CellIteratorNext() ) /*0x5a1f85*/
   {
     if ( !v0 ) /*0x5a1f89*/
@@ -196,7 +196,6 @@ namespace gamemd {
 int E4Recv_5AFEF0::sub_5AFEF0()
 {
 
-  int v2; // eax
 
   ((LocomotionClass *)this)->Init(); /*0x5afef3*/
   this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
@@ -204,6 +203,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
   this->HeadToCoord[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
   this->HeadToCoord[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
+  int v2; // eax
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
   *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff32*/
@@ -218,8 +218,8 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 namespace gamemd {
 int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
+  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
   if ( ((INIClass *)a1)->GetString(edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67b51e*/
     return ((gamemd::ObjectClass *)(Destination))->FindOrCreate(); /*0x67b52b*/
   else
@@ -230,8 +230,8 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 namespace gamemd {
 BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsigned char * a2, int a4)
 {
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
+  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
   if ( ((INIClass *)a0)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
     return ((BuildingTypeClass *)(Destination))->FindOrCreate(); /*0x67bd0b*/
   else
@@ -242,8 +242,8 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 namespace gamemd {
 TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsigned char * a2, int a4)
 {
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
+  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
   if ( ((INIClass *)a1)->GetString(edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd9e*/
     return ((TerrainTypeClass *)(Destination))->FindOrCreate(); /*0x67bdab*/
   else
@@ -254,7 +254,6 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 namespace gamemd {
 char sub_6E2660(int a1, int a2, int a3, int a4)
 {
-  Scenario *v5; // [esp+0h] [ebp-4h]
 
   *(unsigned int *)&g_RadarBlipPool = 0; /*0x6e2669*/
   *(unsigned int *)&g_RadarBlipManager = 0; /*0x6e266f*/
@@ -265,6 +264,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   DataGlobal_88099A = 0; /*0x6e269a*/
   DataGlobal_88099B = 0; /*0x6e26a0*/
   DataGlobal_88099C = 0; /*0x6e26a6*/
+  Scenario *v5; // [esp+0h] [ebp-4h]
   Scenario::ClearScreen(v5); /*0x6e26ac*/
   return 1; /*0x6e26b3*/
 }
@@ -274,10 +274,9 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 namespace gamemd {
 char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7, void * a3, void * a4, void * a6)
 {
-  HouseClass *v7; // esi
   int Field11; // eax
-  HouseClass *v10; // [esp+0h] [ebp-4h]
 
+  HouseClass *v7; // esi
   v7 = *(HouseClass **)(a1 + 144); /*0x6e3121*/
   if ( !a6 ) /*0x6e312d*/
     return 0; /*0x6e312d*/
@@ -296,6 +295,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
   }
   if ( !Field11 ) /*0x6e315e*/
     return 0; /*0x6e315e*/
+  HouseClass *v10; // [esp+0h] [ebp-4h]
   HouseClass::RespawnStartingBuildings(v10, a2, a3, (int)v7); /*0x6e3168*/
   return 1; /*0x6e3162*/
 }

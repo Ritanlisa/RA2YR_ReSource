@@ -27,8 +27,8 @@
 namespace gamemd {  // G42.18 ns repair
 int BuildingType::FindDefault(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   result = 0; /*0x4e3560*/
   if ( this == (BuildingType *)-2 ) /*0x4e3565*/
     return HashTable::Find(&g_DialogHashTable,(const char *)(off_844AE8), 0); /*0x4e3573*/
@@ -108,8 +108,8 @@ int BuildingType::FindOwnerHouse()
 namespace gamemd {
 int BuildingType::IsSpecialType(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = this == 4475 /*0x510fa3*/
                 || this == 4476
                 || this == 4477

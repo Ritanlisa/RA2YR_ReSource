@@ -12,10 +12,10 @@ namespace gamemd {  // G42.18 ns repair
 int Progress::GetAverage(void *a1)
 {
   int result; // eax
-  int v2; // edx
-  double v3; // st7
 
+  int v2; // edx
   v2 = this->u32_61; /*0x6433d1*/
+  double v3; // st7
   v3 = 0.0; /*0x6433d5*/
   if ( v2 > 0 ) /*0x6433e1*/
   {

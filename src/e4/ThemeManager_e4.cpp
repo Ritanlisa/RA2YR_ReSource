@@ -19,12 +19,12 @@
 namespace gamemd {  // G42.18 ns repair
 char ThemeManager::ProcessCallback(void *a1)
 {
-  int v2; // ebp
-  uint64_t v3; // rax
-  uint64_t v4; // kr00_8
 
+  int v2; // ebp
   v2 = Audio::Callback(); /*0x4080fa*/
+  uint64_t v3; // rax
   (*((unsigned int *)&(v3))) = *((unsigned int *)a1 + 5); /*0x4080fc*/
+  uint64_t v4; // kr00_8
   v4 = *(unsigned long long *)(v3 + 32) + (((unsigned long)(unsigned int)(v2)) | ((unsigned long)(unsigned int)((*(((unsigned int *)&(v3)) + 1))) << 32)); /*0x408104*/
   while ( (*(unsigned char *)((unsigned int)(a1)+ 12) & 1) != 0 ) /*0x408107*/
   {
@@ -43,18 +43,17 @@ char ThemeManager::ProcessCallback(void *a1)
 namespace gamemd {
 void ThemeManager::Cleanup(void *a1, void *a2)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v4; // eax
-  ThemeClass *v5; // ecx
 
   while ( this->q024 > 0 ) /*0x720778*/
   {
     operator delete((void *)(**&this->u32_18)); /*0x720780*/
+  int v2; // eax
     v2 = this->q024; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
+  int v3; // ecx
       v3 = v2 - 1; /*0x72078f*/
+  int v4; // eax
       v4 = 0; /*0x720792*/
       for ( this->q024 = v3; /*0x720799*/
             v4 < this->q024;
@@ -64,6 +63,7 @@ void ThemeManager::Cleanup(void *a1, void *a2)
       }
     }
   }
+  ThemeClass *v5; // ecx
   v5 = (ThemeClass *)this->u32_2C; /*0x7207b4*/
   if ( v5 ) /*0x7207b9*/
   {

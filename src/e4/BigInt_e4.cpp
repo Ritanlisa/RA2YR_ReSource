@@ -9,8 +9,8 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_5C65B0(int * a1, int a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = *a1 + 1; /*0x5c65b2*/
   for ( *a1 = result; !result; *a1 = result ) /*0x5c65b5*/
   {

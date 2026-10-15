@@ -11,14 +11,12 @@
 namespace gamemd {  // G42.18 ns repair
 int Type::CheckAmbiguity(int a2, char a3, void *a3_1)
 {
-  int v3; // edx
-  int v4; // esi
-  int v5; // edi
-  int result; // eax
-  int v7; // esi
 
+  int v3; // edx
   v3 = a2->u32_26; /*0x57854a*/
+  int v4; // esi
   v4 = 0; /*0x57854f*/
+  int v5; // edi
   v5 = a2->ptr_24; /*0x578552*/
   if ( a3 ) /*0x578558*/
   {
@@ -29,7 +27,9 @@ int Type::CheckAmbiguity(int a2, char a3, void *a3_1)
         ++v4; /*0x578584*/
     }
   }
+  int result; // eax
   result = this->u32_F4; /*0x57858b*/
+  int v7; // esi
   (*((unsigned char *)&(result))) = v3 + v5 > v4 + result + 2 * this->u32_100 /*0x5785e9*/
                 && v3 + v5 <= v4 + result + 2 * (this->u32_100 + this->u32_108) + 2
                 && (v7 = this->u32_FC, v5 - v3 < 2 * (v7 + this->u32_104) - result)

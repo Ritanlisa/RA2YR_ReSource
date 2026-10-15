@@ -16,14 +16,13 @@
 namespace gamemd {  // G42.18 ns repair
 int VoxClass::FindAndPlay(int a3)
 {
+
   int v2; // edx
   int v4; // ebx
-  int v5; // esi
-  int result; // eax
-
   v4 = v2; /*0x752704*/
   if ( this ) /*0x752708*/
   {
+  int v5; // esi
     v5 = 0; /*0x752710*/
     if ( g_InfantrySelectState <= 0 ) /*0x752714*/
     {
@@ -39,6 +38,7 @@ int VoxClass::FindAndPlay(int a3)
       return UpdateThemeManager(v5, v4, a3); /*0x752754*/
     }
   }
+  int result; // eax
   return result; /*0x752746*/
 }  // G42.18 ns repair
 } // namespace gamemd

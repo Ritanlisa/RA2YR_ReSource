@@ -28,10 +28,10 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 namespace gamemd {
 char * ScrollClass::Read(char * Block, char a2, void *a3)
 {
-  int *v3; // esi
-  int v4; // edi
 
+  int *v3; // esi
   v3 = (int *)Block + 5371; /*0x6938f5*/
+  int v4; // edi
   v4 = 4; /*0x6938fb*/
   do /*0x693916*/
   {

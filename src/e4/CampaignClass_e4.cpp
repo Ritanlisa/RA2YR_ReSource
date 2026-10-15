@@ -39,7 +39,6 @@ namespace gamemd {  // G42.18 ns repair
 CampaignClass::CampaignClass(ObjectClass * aP1)
 {
 
-  int v3; // eax
 
   AbstractTypeClass::Constructor((int *)this, aP1); /*0x46cb68*/
   this->AbstractClass = &vt_CampaignClass; /*0x46cb70*/
@@ -56,6 +55,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
          dword_A83D00 + dword_A83D0C,
          0) )
   {
+  int v3; // eax
     v3 = dword_A83D08++; /*0x46cbd9*/
     *((unsigned int *)dword_A83CFC + v3) = (unsigned int)(this); /*0x46cbe8*/
   }
@@ -356,8 +356,8 @@ int CampaignClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x46d00b*/
   if ( result >= 0 ) /*0x46d012*/
   {
@@ -379,8 +379,8 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
 namespace gamemd {
 int CampaignClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x46d05f*/
   if ( result >= 0 ) /*0x46d066*/
     return 0; /*0x46d068*/
@@ -409,15 +409,15 @@ namespace gamemd {
 void ** CampaignClass::DTOR(char a2)
 {
 
-  int v3; // eax
-  CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_CampaignClass; /*0x46d096*/
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d09c) */
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0a3) */
   /* X11: vtable install elided (implicit via CampaignClass virtuals 0x46d0aa) */
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x46d0b1*/
+  CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x46d0c6*/
+  int v3; // eax
   v3 = (*(int (**)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/
   if ( v3 != -1 && v3 < dword_A83D08 && v3 < --dword_A83D08 ) /*0x46d0e5*/
   {

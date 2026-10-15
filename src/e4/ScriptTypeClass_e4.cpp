@@ -33,8 +33,8 @@ int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x691d9b*/
   if ( result >= 0 ) /*0x691da2*/
   {
@@ -56,8 +56,8 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 namespace gamemd {
 int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x691def*/
   if ( result >= 0 ) /*0x691df6*/
     return 0; /*0x691df8*/
@@ -86,15 +86,15 @@ namespace gamemd {
 ScriptTypeClass * ScriptTypeClass::ddtor(char a2, int a1, int a3)
 {
 
-  int v3; // eax
-  ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   a1->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
   a1->? = &vt_ScriptTypeClass; /*0x691fac*/
   a1->? = &vt_ScriptTypeClass; /*0x691fb3*/
   a1->? = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&a1->AbstractClass, 1); /*0x691fc1*/
+  ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::ScriptTypeClass *)(a1); /*0x691fd6*/
+  int v3; // eax
   v3 = (*(int (**)(int *, ScriptTypeClass **))(DataGlobal_8B3DC0[1032] + 16))(&DataGlobal_8B3DC0[1032], &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&DataGlobal_8B3DC0[1048] ) /*0x691fea*/
   {
@@ -119,31 +119,31 @@ namespace gamemd {
 TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2, void *a3)
 {
 
-  int KeyCount; // ebx
-  int i; // edi
-  unsigned __int8 *StringByIndex; // eax
-  int result; // eax
-  int v7; // ebx
-  int j; // ebp
-  int v9; // edi
-  int v10; // [esp-4h] [ebp-38h]
   char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
 
+  int KeyCount; // ebx
   KeyCount = INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces); /*0x6e8357*/
+  int i; // edi
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
+  unsigned __int8 *StringByIndex; // eax
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
     (a1)->GetString(g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/
+  int result; // eax
   result = dword_A8E8E0; /*0x6e83a6*/
+  int v7; // ebx
   v7 = 0; /*0x6e83ab*/
+  int j; // ebp
   for ( j = 0; j < dword_A8E8E0; ++j ) /*0x6e83b1*/
   {
+  int v9; // edi
     v9 = *((unsigned int *)dword_A8E8D4 + j); /*0x6e83bc*/
     if ( *(unsigned int *)(v9 + 160) == a2 ) /*0x6e83c5*/
     {
+  int v10; // [esp-4h] [ebp-38h]
       v10 = v7++; /*0x6e83cd*/
       sprintf(Buffer, "%d", v10); /*0x6e83d5*/
       (Buffer)->Trim(); /*0x6e83e1*/

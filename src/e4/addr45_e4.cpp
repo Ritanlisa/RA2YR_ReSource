@@ -51,41 +51,26 @@
 namespace gamemd {  // G42.18 ns repair
 char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
 {
-  int Strength; // eax
-  int v4; // edi
-  int v5; // esi
-  int *Anims; // ebx
-  BuildingTypeClass *Type; // ecx
-  ParticleSystemClass *damageParticles; // ecx
-  int v11; // edi
-  int v12; // esi
-  int *v13; // ebx
-  BuildingTypeClass *v14; // ecx
-  BuildingTypeClass *v15; // ecx
-  int SuperWeaponToken; // eax
-  int v17; // ebx
-  unsigned int v18; // edx
-  unsigned int v19; // ecx
-  char UpgradeLevel; // al
-  BOOL v23; // edx
-  int v24; // eax
-  int *v25; // ecx
-  char v26[64]; // [esp+10h] [ebp-40h] BYREF
 
+  int Strength; // eax
   Strength = a1->Type->Strength; /*0x451412*/
   if ( a1->health != Strength ) /*0x45141a*/
   {
     a1->health = Strength; /*0x451420*/
     if ( a1->IsDamaged ) /*0x451423*/
     {
+  int v4; // edi
       v4 = 0; /*0x45142d*/
       a1->IsDamaged = 0; /*0x45142f*/
+  int v5; // esi
       v5 = 0; /*0x451436*/
+  int *Anims; // ebx
       Anims = a1->Anims; /*0x451438*/
       do /*0x451475*/
       {
         if ( *Anims ) /*0x45143e*/
         {
+  BuildingTypeClass *Type; // ecx
           Type = a1->Type; /*0x451443*/
           if ( (BuildingTypeClass *)((char *)Type + v5 * 4) != (BuildingTypeClass *)-3916 ) /*0x451452*/
           {
@@ -108,17 +93,22 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     }
     if ( (_AX & 0x4100) == 0 ) /*0x45148f*/
     {
+  ParticleSystemClass *damageParticles; // ecx
       damageParticles = a1->damageParticles; /*0x451491*/
       if ( damageParticles ) /*0x451499*/
         (*((void (**)(ParticleSystemClass *))damageParticles->vfptr + 62))(damageParticles); /*0x45149d*/
     }
+  int v11; // edi
     v11 = 3; /*0x4514a3*/
+  int v12; // esi
     v12 = 51; /*0x4514a8*/
+  int *v13; // ebx
     v13 = &a1->Anims[3]; /*0x4514ad*/
     do /*0x4514ea*/
     {
       if ( !*v13 ) /*0x4514b3*/
       {
+  BuildingTypeClass *v14; // ecx
         v14 = a1->Type; /*0x4514b8*/
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
@@ -133,10 +123,13 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     while ( v12 <= 102 ); /*0x4514ea*/
     a1->needsRedraw = 1; /*0x4514ec*/
   }
+  BuildingTypeClass *v15; // ecx
   v15 = a1->Type; /*0x4514f9*/
   if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&g_RulesClass_Instance + 2172) ) /*0x451505*/
   {
+  int SuperWeaponToken; // eax
     SuperWeaponToken = a1->SuperWeaponToken; /*0x45150b*/
+  int v17; // ebx
     v17 = SuperWeaponToken + 1; /*0x451511*/
     if ( SuperWeaponToken + 1 > 2 ) /*0x451517*/
       v17 = 0; /*0x451519*/
@@ -145,9 +138,12 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       BuildingClass::ClearAnims((gamemd::BuildingClass *)(a1), 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
+  char v26[64]; // [esp+10h] [ebp-40h] BYREF
         strcpy(v26, a1->Type->ImageFile); /*0x45156b*/
+  unsigned int v18; // edx
         v18 = strlen((const char *)(asc_818D7C)) + 1; /*0x45158c*/
         memcpy(&v26[strlen(v26)],(const void *)(asc_818D7C), v18); /*0x451599*/
+  unsigned int v19; // ecx
         v19 = strlen(v26); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
         v26[v19 + 1] = 0; /*0x4515ba*/
@@ -160,6 +156,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   }
   else
   {
+  char UpgradeLevel; // al
     UpgradeLevel = a1->UpgradeLevel; /*0x4515e9*/
     if ( UpgradeLevel == *(unsigned int *)&v15->__pad_F70[1392] ) /*0x4515fa*/
     {
@@ -175,8 +172,11 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         fcomp qword ptr [eax+1700h]
         fnstsw ax
       }
+  BOOL v23; // edx
       v23 = (_EAX & 0x4100) != 0; /*0x451625*/
+  int v24; // eax
       v24 = a1->UpgradeLevel - 1; /*0x451637*/
+  int *v25; // ecx
       if ( v23 ) /*0x45163c*/
         v25 = &a1->Type->BuildingAnim[17 * v24 + 16]; /*0x451649*/
       else
@@ -192,26 +192,16 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
 namespace gamemd {
 int sub_452000(unsigned int * a1)
 {
-  int v2; // eax
-  int v3; // edi
-  unsigned int *v4; // eax
-  unsigned int *v5; // eax
-  int v6; // ecx
-  int v7; // ebx
-  unsigned int *v8; // ecx
-  int v9; // ebp
   bool v10; // zf
-  int v11; // ebx
-  int *v12; // ecx
-  int v13; // esi
   int result; // eax
-  unsigned int *v15; // [esp+10h] [ebp-10h]
-  int v16; // [esp+14h] [ebp-Ch]
-  int v17; // [esp+18h] [ebp-8h]
 
+  int v17; // [esp+18h] [ebp-8h]
   v17 = (*(int (**)(unsigned int *))(*a1 + 484))(a1); /*0x452015*/
+  int v2; // eax
   v2 = (*(int (**)(unsigned int *))(*a1 + 444))(a1); /*0x452019*/
+  int v3; // edi
   v3 = (*(int (**)(unsigned int *, unsigned int))(*a1 + 1124))(a1, *(int16_t *)(v2 + 266)); /*0x452031*/
+  unsigned int *v4; // eax
   if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1)
     || a1[165]
     && (a1 ? (v4 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v4 = 0),
@@ -220,23 +210,30 @@ int sub_452000(unsigned int * a1)
     (*((unsigned short *)&(v3))) = Techno::StartInvulnerability(v3); /*0x452078*/
   }
   *((unsigned short *)a1 + 896) = v3; /*0x45207a*/
+  unsigned int *v15; // [esp+10h] [ebp-10h]
   v15 = a1 + 343; /*0x452091*/
+  int v16; // [esp+14h] [ebp-Ch]
   v16 = 21; /*0x452095*/
   do /*0x45211d*/
   {
+  unsigned int *v5; // eax
     v5 = (unsigned int *)*v15; /*0x4520a1*/
     if ( *v15 ) /*0x4520a1*/
     {
+  int v6; // ecx
       v6 = v5[50]; /*0x4520a7*/
       if ( v6 && *(unsigned char *)(v6 + 860) ) /*0x4520b1*/
       {
         v5[53] = v17; /*0x4520c3*/
         v5[63] = (uint16_t)v3; /*0x4520c9*/
       }
+  int v7; // ebx
       v7 = *((char *)a1 + 1773); /*0x4520cf*/
       if ( v7 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x4520e9*/
         (*((unsigned char *)&(v7))) = 16; /*0x4520eb*/
+  unsigned int *v8; // ecx
       v8 = a1 + 343; /*0x4520f0*/
+  int v9; // ebp
       v9 = 21; /*0x4520f2*/
       do /*0x452107*/
       {
@@ -252,10 +249,13 @@ int sub_452000(unsigned int * a1)
     --v16; /*0x452119*/
   }
   while ( !v10 ); /*0x45211d*/
+  int v11; // ebx
   v11 = *((char *)a1 + 1773); /*0x452123*/
   if ( v11 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x45213d*/
     (*((unsigned char *)&(v11))) = 16; /*0x45213f*/
+  int *v12; // ecx
   v12 = (int *)(a1 + 343); /*0x452144*/
+  int v13; // esi
   v13 = 21; /*0x452146*/
   do /*0x45215b*/
   {
@@ -273,13 +273,13 @@ int sub_452000(unsigned int * a1)
 namespace gamemd {
 int sub_452D40()
 {
-  int result; // eax
-  int i; // edi
-  BuildingClass *v3; // esi
 
+  int result; // eax
   result = stru_A8EB00.vfptr[20]; /*0x452d40*/
+  int i; // edi
   for ( i = 0; i < stru_A8EB00.vfptr[20]; ++i ) /*0x452d4a*/
   {
+  BuildingClass *v3; // esi
     v3 = *(BuildingClass **)(stru_A8EB00.vfptr[17] + 4 * i); /*0x452d52*/
     if ( v3 && v3->Type->LaserFencePost && !dword_A8E7AC && v3->isAliveFlag && !v3->inLimbo ) /*0x452d7c*/
     {
@@ -474,12 +474,12 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
 namespace gamemd {
 BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
 {
-  int v4; // edi
-  unsigned int *v5; // eax
 
+  int v4; // edi
   v4 = a1->vt_slot_1124(a3); /*0x456fc7*/
   if ( a1->vt_slot_352() ) /*0x456fc9*/
     return ((Techno *)(v4))->StartInvulnerability(); /*0x456fc9*/
+  unsigned int *v5; // eax
   if ( a1->armed
     && (a1 ? (v5 = a1->GetTypeIdentifier() == 6 ? a1 : 0) : (v5 = 0),
         *(unsigned int **)(a1[165] + 80) == v5) )
@@ -848,10 +848,10 @@ int Map_InitCellOffsets()
 namespace gamemd {
 void * E4Recv_45DD20::sub_45DD20()
 {
-  int v1; // edx
-  ObjectClass **v2; // eax
 
+  int v1; // edx
   v1 = 0; /*0x45dd20*/
+  ObjectClass **v2; // eax
   v2 = (ObjectClass **)&stru_81926C.Name[8]; /*0x45dd22*/
   while ( *(gamemd::ObjectClass *)(v2) != this ) /*0x45dd29*/
   {
@@ -867,10 +867,10 @@ void * E4Recv_45DD20::sub_45DD20()
 namespace gamemd {
 int E4Recv_45DD50::sub_45DD50()
 {
-  int v2; // edi
-  char **v3; // esi
 
+  int v2; // edi
   v2 = 0; /*0x45dd55*/
+  char **v3; // esi
   v3 = (char **)&stru_81926C.Name[7]; /*0x45dd57*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x45dd6a*/
   {
@@ -894,43 +894,43 @@ void nullsub_101()
 namespace gamemd {
 int E4Recv_4517D0::sub_4517D0()
 {
-  int *v2; // eax
-  int v3; // edi
-  int v4; // edx
-  int result; // eax
-  int *v6; // esi
-  unsigned int *v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
-  int v11; // edx
-  int **v12; // [esp+10h] [ebp-28h]
-  int v13; // [esp+14h] [ebp-24h]
-  int v14; // [esp+18h] [ebp-20h]
-  unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
-  unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
+  int *v2; // eax
+  unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
   v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))(this->vfptr + 172))(this, v16); /*0x4517e2*/
+  int v3; // edi
   v3 = 0; /*0x4517ea*/
+  int v13; // [esp+14h] [ebp-24h]
   v13 = *v2; /*0x4517ec*/
+  int v14; // [esp+18h] [ebp-20h]
   v14 = v2[1]; /*0x4517f3*/
+  int v4; // edx
   v4 = v2[2]; /*0x4517f7*/
+  int result; // eax
   result = (int)&this->u32_55C; /*0x4517fa*/
   v4 = v4; /*0x451800*/
+  int **v12; // [esp+10h] [ebp-28h]
   v12 = (int **)(&this->u32_55C); /*0x451804*/
   do /*0x451879*/
   {
+  int *v6; // esi
     v6 = *v12; /*0x45180c*/
     if ( *v12 ) /*0x45180c*/
     {
+  unsigned int *v7; // eax
+  unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
       v7 = Matrix3x4::TransformCell( /*0x45182b*/
              (float *)g_TacticalClass_Instance,
              v17,
              (int *)(this->M1312 + v3 + 3964));
+  int v8; // ecx
       v8 = v13 + *v7; /*0x45183a*/
+  int v9; // edx
       v9 = v7->vtable2; /*0x45183c*/
+  int v10; // eax
       v10 = v7->vtable3; /*0x45183f*/
       v16[1] = v14 + v9; /*0x45184a*/
+  int v11; // edx
       v11 = *v6; /*0x45184e*/
       v16[2] = v4 + v10; /*0x451850*/
       v16[0] = v8; /*0x451858*/
@@ -996,29 +996,29 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
 namespace gamemd {
 bool E4Recv_4528A0::sub_4528A0(int a2)
 {
-  double v2; // st7
-  int *v4; // eax
-  int v5; // edi
-  int v6; // ebx
-  int v7; // ebp
-  unsigned int *v8; // eax
-  int v9; // edi
-  int v10; // edx
-  int v11; // eax
-  int v14; // [esp+24h] [ebp-8h]
-  int v15; // [esp+28h] [ebp-4h]
 
+  int *v4; // eax
+  int v9; // edi
   v4 = (int *)(*(int (**)(TechnoClass *, int *))(this->vfptr + 72))(this, &v9); /*0x4528b2*/
+  int v5; // edi
   v5 = *v4; /*0x4528b5*/
+  int v6; // ebx
   v6 = v4[1]; /*0x4528bb*/
+  int v7; // ebp
   v7 = v4[2]; /*0x4528c0*/
+  unsigned int *v8; // eax
   v8 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)a2 + 72))(a2, &v9); /*0x4528c8*/
   v9 = v5 - *v8; /*0x4528d2*/
+  int v10; // edx
   v10 = v8[2]; /*0x4528d9*/
+  int v14; // [esp+24h] [ebp-8h]
   v14 = v6 - v8[1]; /*0x4528dc*/
   v9 = v9; /*0x4528e6*/
+  int v15; // [esp+28h] [ebp-4h]
   v15 = v7 - v10; /*0x4528ea*/
   Math::Sqrt((double)v9 * (double)v9 + (double)(v7 - v10) * (double)(v7 - v10) + (double)v14 * (double)v14); /*0x45290f*/
+  double v2; // st7
+  int v11; // eax
   (*((unsigned short *)&(v11))) = Math::RoundToInt(v2); /*0x452917*/
   return v11 <= *(unsigned int *)(this->gattlingValue + 5900) << 8; /*0x452922*/
 }
@@ -1036,43 +1036,43 @@ void ObjectClass::nullsub_5()
 namespace gamemd {
 unsigned int * sub_455DD0(int a1, unsigned int * a2)
 {
-  int v2; // esi
-  unsigned int *v3; // edi
-  int v4; // eax
-  unsigned int *v5; // esi
-  double v6; // st7
-  int v7; // eax
-  int v9; // [esp+24h] [ebp-24h]
-  int v11; // [esp+2Ch] [ebp-1Ch]
-  unsigned int *v12; // [esp+30h] [ebp-18h]
-  int v14; // [esp+38h] [ebp-10h]
-  int v15; // [esp+3Ch] [ebp-Ch]
-  int v16; // [esp+40h] [ebp-8h]
-  int v17; // [esp+44h] [ebp-4h]
 
+  int v2; // esi
   v2 = a1; /*0x455ddc*/
+  unsigned int *v3; // edi
   v3 = a2; /*0x455de7*/
+  unsigned int *v12; // [esp+30h] [ebp-18h]
   v12 = 0; /*0x455df5*/
+  int v9; // [esp+24h] [ebp-24h]
   v9 = 0x7FFFFFFF; /*0x455df9*/
   if ( (byte_89C828 & 1) == 0 ) /*0x455e01*/
   {
     byte_89C828 |= 1u; /*0x455e11*/
     dword_89C7F0 = Math::RoundToInt(dbl_89C820 * 20.0); /*0x455e1c*/
   }
+  int v4; // eax
   v4 = 0; /*0x455e27*/
+  int v14; // [esp+38h] [ebp-10h]
   v14 = *(unsigned int *)(v2 + 144); /*0x455e2b*/
+  int v11; // [esp+2Ch] [ebp-1Ch]
   v11 = 0; /*0x455e2f*/
   if ( v14 <= 0 ) /*0x455e33*/
     return 0; /*0x455f00*/
   while ( 1 ) /*0x455e47*/
   {
+  unsigned int *v5; // esi
     v5 = *(unsigned int **)(*(unsigned int *)(v2 + 132) + 4 * v4); /*0x455e47*/
     if ( (*(int (**)(unsigned int *, int, unsigned int *))(*v3 + 632))(v3, 15, v5) ) /*0x455e4f*/
     {
+  int v15; // [esp+3Ch] [ebp-Ch]
       v15 = v5[39] - v3[39]; /*0x455e7f*/
+  int v16; // [esp+40h] [ebp-8h]
       v16 = v5[40] - v3[40]; /*0x455e88*/
+  int v17; // [esp+44h] [ebp-4h]
       v17 = v5[41] - v3[41]; /*0x455e92*/
+  double v6; // st7
       v6 = Math::Sqrt((double)v15 * (double)v15 + (double)v17 * (double)v17 + (double)v16 * (double)v16); /*0x455eb7*/
+  int v7; // eax
       v7 = Math::RoundToInt(v6); /*0x455ebf*/
       if ( v7 < v9 && v7 < dword_89C7F0 ) /*0x455ed0*/
       {
@@ -1102,12 +1102,12 @@ void nullsub_103()
 namespace gamemd {
 char E4Recv_457A10::sub_457A10()
 {
-  int v2; // edi
-  unsigned short *i; // esi
   int v5; // [esp+Ch] [ebp-8h]
   int16_t v5[2]; // [esp+10h] [ebp-4h] BYREF
 
+  int v2; // edi
   v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))(this->vfptr + 440))(this, v5); /*0x457a2d*/
+  unsigned short *i; // esi
   for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(*this->u32_524) + 144))( /*0x457a42*/
                        this->gattlingValue,
                        0); *i != 0x7FFF || i[1] != 0x7FFF; i += 2 )
@@ -1126,8 +1126,8 @@ char E4Recv_457A10::sub_457A10()
 namespace gamemd {
 void sub_45AFA0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x45afac*/
   dbl_89C8B8 = Math::Sqrt(v0 + v0); /*0x45afbe*/
 }
@@ -1177,10 +1177,10 @@ void sub_45B050()
 namespace gamemd {
 long long sub_45B070()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_89C898 - dbl_89C8C0); /*0x45b082*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_89C8B8 * 0.5); /*0x45b096*/
   dword_89DDB8 = result; /*0x45b09b*/
   return result; /*0x45b0a0*/
@@ -1207,8 +1207,8 @@ void sub_45B0E0()
 namespace gamemd {
 long long sub_45B110()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_89DDB8) + 0.5); /*0x45b12b*/
   dword_89D35C = result; /*0x45b130*/
   return result; /*0x45b136*/
@@ -1288,10 +1288,10 @@ namespace gamemd {
 int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
 {
 
-  int result; // eax
-  char *v6; // edx
 
+  int result; // eax
   result = 3 * a2 + 963; /*0x45e8bc*/
+  char *v6; // edx
   v6 = &this->u32_C * a2; /*0x45e8c3*/
   *((unsigned int *)v6 + 961) = a3; /*0x45e8c6*/
   *((unsigned int *)v6 + 962) = a4; /*0x45e8d0*/
@@ -1305,26 +1305,26 @@ int E4Recv_45E8B0::sub_45E8B0(int a2, int a3, int a4, int a5)
 namespace gamemd {
 char sub_45E8F0()
 {
-  int SubFile; // eax
-  int v1; // esi
-  int v2; // edx
-  int v3; // edi
-  int i; // ecx
-  unsigned int v6[4]; // [esp+4h] [ebp-10h] BYREF
 
+  int SubFile; // eax
   (*((unsigned char *)&(SubFile))) = (unsigned char)dword_89DDBC; /*0x45e8f0*/
   if ( !dword_89DDBC ) /*0x45e8fb*/
   {
     dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0));
+  unsigned int v6[4]; // [esp+4h] [ebp-10h] BYREF
     Building::GetFoundationSize(v6, 0); /*0x45e917*/
     SubFile = MixFileClass::GetSubFile((gamemd::MixFileClass *)((char **)dword_89DDBC), 0); /*0x45e924*/
+  int v1; // esi
     v1 = *((int16_t *)dword_89DDBC + 1); /*0x45e92f*/
     if ( *((int16_t *)dword_89DDBC + 2) > 0 ) /*0x45e939*/
     {
+  int v2; // edx
       v2 = SubFile; /*0x45e93c*/
+  int v3; // edi
       v3 = *((int16_t *)dword_89DDBC + 2); /*0x45e93e*/
       do /*0x45e95a*/
       {
+  int i; // ecx
         for ( i = 0; i < v1; ++i ) /*0x45e944*/
         {
           (*((unsigned char *)&(SubFile))) = *(unsigned char *)(v2 + i); /*0x45e946*/

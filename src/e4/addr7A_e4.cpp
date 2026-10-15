@@ -86,37 +86,27 @@ extern wchar_t aWolMatchunknow[];  // data: 0x84d3b4 truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 int CollectWOLConnectionTokens(void *a1)
 {
-  signed int result; // eax
-  int v2; // ebx
-  int v3; // ebp
-  char *v4; // eax
-  int vtable3; // eax
-  int v6; // esi
-  int uniqueId; // ebx
-  void *v8; // ebp
-  void *abstractFlags; // eax
-  int v10; // ebx
-  void *v11; // ebp
-  void *v12; // eax
-  String *v13; // ecx
-  void *v14; // [esp+8h] [ebp-7Ch]
   String v15; // [esp+Ch] [ebp-78h] BYREF
-  int v16; // [esp+14h] [ebp-70h]
-  unsigned char v17[108]; // [esp+18h] [ebp-6Ch] BYREF
 
+  unsigned char v17[108]; // [esp+18h] [ebp-6Ch] BYREF
   memset(v17, 0, sizeof(v17)); /*0x7a0440*/
   Debug::Log(); /*0x7a044d*/
+  signed int result; // eax
   result = g_WOL_UserList.owningHouseIndex; /*0x7a0452*/
+  int v2; // ebx
   v2 = 0; /*0x7a045a*/
   *(unsigned int *)&v15.ptr_4 = 0; /*0x7a045e*/
   if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a0462*/
   {
+  int v3; // ebp
     v3 = 0; /*0x7a0469*/
+  int v16; // [esp+14h] [ebp-70h]
     v16 = 0; /*0x7a046c*/
     do /*0x7a0673*/
     {
       if ( v3 >= 0 && v2 < result ) /*0x7a0476*/
         memcpy(v17, (char *)g_WOL_UserList.nextObject + v3, sizeof(v17)); /*0x7a048a*/
+  char *v4; // eax
       if ( (v17[0] & 1) != 0 /*0x7a04ba*/
         || (v4 = ((String *)((String *)&g_WebBrowser))->GetOrEmpty(), !_strcmpi((const char *)(&v17[36]), v4)) )
       {
@@ -127,17 +117,23 @@ int CollectWOLConnectionTokens(void *a1)
         ((String *)(&v15))->Assign((const char *)(&v17[36])); /*0x7a04e6*/
         ((String *)(&v15))->GetOrEmpty(); /*0x7a04ef*/
         Debug::Log(); /*0x7a04fa*/
+  int vtable3; // eax
         vtable3 = (int)stru_B76AC4.vfptr3; /*0x7a04ff*/
+  int v6; // esi
         v6 = (int)stru_B76AC4.vfptr3; /*0x7a0507*/
+  void *v14; // [esp+8h] [ebp-7Ch]
         v14 = stru_B76AC4.vfptr3; /*0x7a050b*/
+  int uniqueId; // ebx
         uniqueId = stru_B76AC4.uniqueId; /*0x7a0515*/
         if ( (int)stru_B76AC4.vfptr3 >= stru_B76AC4.uniqueId ) /*0x7a051d*/
         {
           uniqueId = 2 * (int)stru_B76AC4.vfptr3; /*0x7a0527*/
           if ( 2 * (int)stru_B76AC4.vfptr3 < 10 ) /*0x7a052d*/
             uniqueId = 10; /*0x7a052f*/
+  void *v8; // ebp
           v8 = (void *)operator new(4 * uniqueId); /*0x7a0543*/
           memset(v8, 0, 4 * ((unsigned int)(4 * uniqueId) >> 2)); /*0x7a0551*/
+  void *abstractFlags; // eax
           abstractFlags = (void *)stru_B76AC4.abstractFlags; /*0x7a055a*/
           if ( stru_B76AC4.abstractFlags ) /*0x7a0561*/
           {
@@ -152,11 +148,14 @@ int CollectWOLConnectionTokens(void *a1)
         }
         if ( vtable3 >= uniqueId ) /*0x7a0594*/
         {
+  int v10; // ebx
           v10 = 2 * vtable3; /*0x7a0596*/
           if ( 2 * vtable3 < 10 ) /*0x7a059c*/
             v10 = 10; /*0x7a059e*/
+  void *v11; // ebp
           v11 = (void *)operator new(4 * v10); /*0x7a05b2*/
           memset(v11, 0, 4 * ((unsigned int)(4 * v10) >> 2)); /*0x7a05c0*/
+  void *v12; // eax
           v12 = (void *)stru_B76AC4.abstractFlags; /*0x7a05c9*/
           if ( stru_B76AC4.abstractFlags ) /*0x7a05d0*/
           {
@@ -177,6 +176,7 @@ int CollectWOLConnectionTokens(void *a1)
             4 * (vtable3 + 0x3FFFFFFF * v6));
           vtable3 = (int)stru_B76AC4.vfptr3; /*0x7a0625*/
         }
+  String *v13; // ecx
         v13 = (String *)(stru_B76AC4.abstractFlags + 4 * v6); /*0x7a0633*/
         if ( v13 ) /*0x7a0638*/
         {
@@ -444,13 +444,12 @@ namespace gamemd {
 void E4Recv_7A0DD0::sub_7A0DD0()
 {
 
-  int v2; // ebp
-  char **v3; // edi
-  HWND GameUI; // eax
 
   if ( this ) /*0x7a0dd8*/
   {
+  int v2; // ebp
     v2 = 0; /*0x7a0dda*/
+  char **v3; // edi
     v3 = (char **)dword_A8DA90; /*0x7a0ddc*/
     while ( !*v3 || strcmp(ToWideStringChar(*v3), (const char *)&this->occupant) ) /*0x7a0e1a*/
     {
@@ -459,6 +458,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
       if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x7a0e26*/
         return; /*0x7a0e26*/
     }
+  HWND GameUI; // eax
     GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0e2d*/
     if ( GameUI ) /*0x7a0e34*/
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
@@ -1058,15 +1058,14 @@ AbstractClass * * WOL_MatchGame()
 namespace gamemd {
 Coord * * E4Recv_7A2830::sub_7A2830()
 {
-  int result; // eax
-  int v2; // ebp
-  int v3; // ebx
-  char *v4; // eax
-  unsigned int v6[27]; // [esp+14h] [ebp-6Ch] BYREF
 
+  int result; // eax
   result = g_WOL_UserList.owningHouseIndex; /*0x7a2833*/
+  int v2; // ebp
   v2 = 0; /*0x7a283a*/
+  int v3; // ebx
   v3 = 0; /*0x7a283c*/
+  unsigned int v6[27]; // [esp+14h] [ebp-6Ch] BYREF
   v6[0] = 0; /*0x7a2846*/
   if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a284a*/
   {
@@ -1074,6 +1073,7 @@ Coord * * E4Recv_7A2830::sub_7A2830()
     {
       if ( v2 >= 0 && v3 < result ) /*0x7a2852*/
         memcpy(v6, (char *)g_WOL_UserList.nextObject + v2, sizeof(v6)); /*0x7a2865*/
+  char *v4; // eax
       v4 = ((String *)((String *)this))->GetOrEmpty_Alt(); /*0x7a2870*/
       if ( !_strcmpi(v4, (char *)&v6[9]) ) /*0x7a2876*/
         break; /*0x7a2876*/
@@ -1403,19 +1403,19 @@ namespace gamemd {
 AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
 {
 
-  int result; // eax
-  int referenceCount; // ecx
-  unsigned int *v5; // eax
-  unsigned int v6[4]; // [esp+Ch] [ebp-20h] BYREF
-  unsigned char v7[16]; // [esp+1Ch] [ebp-10h] BYREF
 
+  int result; // eax
   result = (int)DSurface_Alternate; /*0x7af640*/
   if ( DSurface_Alternate ) /*0x7af64d*/
   {
+  int referenceCount; // ecx
     referenceCount = this->M28; /*0x7af64f*/
     if ( referenceCount ) /*0x7af654*/
     {
+  unsigned int *v5; // eax
+  unsigned char v7[16]; // [esp+1Ch] [ebp-10h] BYREF
       v5 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)referenceCount + 120))(referenceCount, v7); /*0x7af65d*/
+  unsigned int v6[4]; // [esp+Ch] [ebp-20h] BYREF
       v6[0] = *v5; /*0x7af664*/
       v6[1] = v5[1]; /*0x7af66b*/
       v6[2] = v5[2]; /*0x7af672*/
@@ -1558,12 +1558,7 @@ int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
 namespace gamemd {
 AbstractClass * * sub_7AF970(int a2)
 {
-  int v2; // ebx
-  unsigned int *v3; // eax
-  int v4; // edi
   OwnerDrawControl v6; // [esp+Ch] [ebp-8Ch] BYREF
-  int v7; // [esp+18h] [ebp-80h]
-  unsigned int *v8; // [esp+1Ch] [ebp-7Ch]
   void (***v9)(unsigned int, int); // [esp+20h] [ebp-78h]
   unsigned int *v10; // [esp+24h] [ebp-74h]
   unsigned int *v11; // [esp+28h] [ebp-70h]
@@ -1571,9 +1566,12 @@ AbstractClass * * sub_7AF970(int a2)
   int v13[3]; // [esp+84h] [ebp-14h] BYREF
   int v14; // [esp+90h] [ebp-8h]
 
+  int v2; // ebx
   Screen::Capture(1, 0, v2, a2); /*0x7af97c*/
   SimpleDialogControl::Constructor((SimpleDialogControl *)&v6); /*0x7af985*/
+  int v7; // [esp+18h] [ebp-80h]
   v7 = 0; /*0x7af995*/
+  unsigned int *v8; // [esp+1Ch] [ebp-7Ch]
   v8 = 0; /*0x7af999*/
   v9 = 0; /*0x7af99d*/
   v10 = 0; /*0x7af9a1*/
@@ -1588,6 +1586,7 @@ AbstractClass * * sub_7AF970(int a2)
   if ( !v9 ) /*0x7af9f4*/
   {
     CCFileClass::Construct(&v12, aWdtfsasmPcx); /*0x7af9ff*/
+  unsigned int *v3; // eax
     v3 = DecodeFrameSHP((int)&v12, 0, 0, 0); /*0x7afa0c*/
     /* X11: vtable install elided (implicit via CCFileClass virtuals 0x7afa18) */
     v9 = (void (***)(unsigned int, int))v3; /*0x7afa1c*/
@@ -1603,6 +1602,7 @@ AbstractClass * * sub_7AF970(int a2)
   }
   v11 = v8; /*0x7afa76*/
   RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)&v6); /*0x7afa7a*/
+  int v4; // edi
   v4 = v7; /*0x7afa7f*/
   v6 = (OwnerDrawControl)&vt_WorldDominationTourFactionSelectDialogControl; /*0x7afa83*/
   if ( v8 ) /*0x7afa91*/
@@ -1801,26 +1801,23 @@ int StartWDTCampaign(char a1, char a2, int a3)
 namespace gamemd {
 int sub_7A0D10()
 {
-  int result; // eax
-  int v1; // ebp
-  signed int v2; // ebx
-  signed int v3; // edi
-  ULONG S_addr; // esi
-  char *v5; // eax
-  size_t v6; // [esp+Ch] [ebp-78h]
-  int v7; // [esp+10h] [ebp-74h] BYREF
-  int v8; // [esp+14h] [ebp-70h]
   struct in_addr v9[27]; // [esp+18h] [ebp-6Ch] BYREF
 
+  int result; // eax
   result = g_NetworkLobbyState; /*0x7a0d10*/
+  int v1; // ebp
   v1 = 0; /*0x7a0d1a*/
   if ( !g_NetworkLobbyState ) /*0x7a0d1f*/
   {
     result = 0; /*0x7a0d2a*/
+  signed int v2; // ebx
     v2 = 0; /*0x7a0d30*/
     memset(v9, 0, sizeof(v9)); /*0x7a0d32*/
+  signed int v3; // edi
     v3 = dword_B77900; /*0x7a0d34*/
+  int v7; // [esp+10h] [ebp-74h] BYREF
     v7 = 0; /*0x7a0d3a*/
+  size_t v6; // [esp+Ch] [ebp-78h]
     v6 = dword_B77900; /*0x7a0d40*/
     if ( (int)dword_B77900 > 0 ) /*0x7a0d44*/
     {
@@ -1831,10 +1828,13 @@ int sub_7A0D10()
           memcpy(v9, (char *)dword_B77908 + v1, sizeof(v9)); /*0x7a0d64*/
           v3 = v6; /*0x7a0d66*/
         }
+  ULONG S_addr; // esi
         S_addr = v9[6].S_un.S_addr; /*0x7a0d6f*/
         ntoainet(v9[6]); /*0x7a0d71*/
         Debug::Log(); /*0x7a0d81*/
+  int v8; // [esp+14h] [ebp-70h]
         v8 = *(unsigned int *)g_UIPointerTable; /*0x7a0d9c*/
+  char *v5; // eax
         v5 = ntoainet((struct in_addr)S_addr); /*0x7a0da0*/
         result = (*(int (__stdcall **)(LPVOID, char *, int, int *))(v8 + 24))(g_UIPointerTable, v5, 1000, &v7); /*0x7a0db1*/
         ++v2; /*0x7a0db4*/
@@ -1851,19 +1851,19 @@ int sub_7A0D10()
 namespace gamemd {
 void INIClass::SetGameOptionsPing(const char * a1, int a2)
 {
-  int i; // edi
-  char *v5; // ecx
-  HWND GameUI; // ecx
 
   Debug::Log(); /*0x7a0eaf*/
+  int i; // edi
   for ( i = 0; i < 8; ++i ) /*0x7a0eb7*/
   {
+  char *v5; // ecx
     v5 = (char *)*(&dword_A8DA90 + i); /*0x7a0eb9*/
     if ( v5 ) /*0x7a0ec2*/
     {
       if ( !strcmp(ToWideStringChar(v5), a1) ) /*0x7a0ed1*/
       {
         dword_B76440[i] = a2; /*0x7a0ef8*/
+  HWND GameUI; // ecx
         GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0f04*/
         if ( GameUI ) /*0x7a0f08*/
         {
@@ -1958,10 +1958,8 @@ INT_PTR sub_7A2110(HWND hWnd, UINT, WPARAM, char * a4)
 namespace gamemd {
 int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
 {
-  int result; // eax
-  unsigned int *v5; // ecx
-  void *v6; // esi
 
+  int result; // eax
   result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x7a261a*/
   if ( !result ) /*0x7a2621*/
   {
@@ -1981,6 +1979,7 @@ int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
     }
     if ( a2 == 2 ) /*0x7a2639*/
     {
+  void *v6; // esi
       v6 = g_UIControlState; /*0x7a26bf*/
       if ( g_UIControlState ) /*0x7a26c7*/
       {
@@ -1995,6 +1994,7 @@ int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
       return a2 == 20; /*0x7a2647*/
     Dialog::DrawBackground(hWnd); /*0x7a265b*/
     Dialog::StopBink(hWnd); /*0x7a2662*/
+  unsigned int *v5; // ecx
     v5 = g_UIControlState; /*0x7a2667*/
     if ( g_UIControlState || g_abs_A8B254 == -1 && (v5 = dword_ABE154) != 0 ) /*0x7a2682*/
       Skirmish::RenderPreview(v5, hWnd); /*0x7a2685*/
@@ -2039,8 +2039,8 @@ int sub_7AF090()
 namespace gamemd {
 void sub_7AF0B0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x7af0bc*/
   dbl_B77EE8 = Math::Sqrt(v0 + v0); /*0x7af0ce*/
 }
@@ -2090,10 +2090,10 @@ void sub_7AF160()
 namespace gamemd {
 long long sub_7AF180()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B77EB8 - dbl_B77EF8); /*0x7af192*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B77EE8 * 0.5); /*0x7af1a6*/
   dword_B77F90 = result; /*0x7af1ab*/
   return result; /*0x7af1b0*/
@@ -2120,8 +2120,8 @@ void sub_7AF1F0()
 namespace gamemd {
 long long sub_7AF220()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B77F90) + 0.5); /*0x7af23b*/
   dword_B77F80 = result; /*0x7af240*/
   return result; /*0x7af246*/

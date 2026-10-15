@@ -15,15 +15,15 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
 
-  int v1; // eax
-  int result; // eax
-  int v3; // edx
 
+  int v1; // eax
   v1 = this->u32_1C - 1; /*0x408e73*/
   this->u32_1C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     this->u32_1C = 0; /*0x408e7b*/
+  int result; // eax
   result = this->m_RefCount; /*0x408e82*/
+  int v3; // edx
   v3 = *(unsigned int *)(this->m_RefCount + 152) - 1; /*0x408e8a*/
   *(unsigned int *)(this->m_RefCount + 152) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
@@ -39,29 +39,29 @@ AbstractClass * * Count::DecrementRefCountsAudio()
 namespace gamemd {
 int Count::SetupAllCountriesLobby()
 {
-  ObjectClass *v1; // ecx
-  int **v2; // esi
-  int ResourceID2CSF; // ebp
   BOOL result; // eax
-  int *v5; // ebx
-  int v6; // edi
   int PlayerSide; // esi
-  int **v8; // [esp+10h] [ebp-10h]
-  int v10; // [esp+18h] [ebp-8h]
-  HWND hWnd; // [esp+1Ch] [ebp-4h]
 
+  ObjectClass *v1; // ecx
   v1 = 0; /*0x46f6da*/
+  int **v2; // esi
   v2 = (int **)dword_A8DA90; /*0x46f6dc*/
+  int v10; // [esp+18h] [ebp-8h]
   v10 = 0; /*0x46f6e2*/
+  int **v8; // [esp+10h] [ebp-10h]
   v8 = (int **)dword_A8DA90; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
+  int ResourceID2CSF; // ebp
     ResourceID2CSF = GetResourceID2CSF(v1); /*0x46f6ef*/
+  HWND hWnd; // [esp+1Ch] [ebp-4h]
     hWnd = GetDlgItem((HWND)this, ResourceID2CSF); /*0x46f700*/
     result = ShowWindow(hWnd, 0); /*0x46f704*/
     if ( result ) /*0x46f70c*/
     {
+  int *v5; // ebx
       v5 = *v2; /*0x46f718*/
+  int v6; // edi
       v6 = -2; /*0x46f71c*/
       if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x46f730*/
         v6 = (*((int (**)(ObjectClass *))dword_A8B23C->vfptr + 10))(dword_A8B23C); /*0x46f737*/
@@ -118,8 +118,8 @@ int Count::SetupAllCountriesLobby()
 namespace gamemd {
 int32_t Count::GetCountQueue()
 {
-  int v1; // eax
 
+  int v1; // eax
   v1 = this->u32_38; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(unsigned int *)(v1->u32_4 + 40); /*0x5f1eaa*/

@@ -273,13 +273,13 @@ int AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 namespace gamemd {
 int AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
-  bool v3; // bl
-  int v5; // eax
   bool result; // al
 
+  bool v3; // bl
   v3 = 0; /*0x41f235*/
   if ( !a3 ) /*0x41f23c*/
     return v3; /*0x41f2bd*/
+  int v5; // eax
   v5 = (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36); /*0x41f245*/
   switch ( this->q0E8 ) /*0x41f253*/
   {
@@ -578,12 +578,10 @@ LABEL_26:
 namespace gamemd {
 int AITriggerTypeClass::RegisterSuccess()
 {
-  int v1; // edx
-  double v2; // st7
-  double v3; // st7
-  int result; // eax
 
+  int v1; // edx
   v1 = this->u32_108; /*0x41fd61*/
+  double v2; // st7
   v2 = 0.0; /*0x41fd67*/
   if ( v1 > 0 ) /*0x41fd73*/
   {
@@ -591,6 +589,7 @@ int AITriggerTypeClass::RegisterSuccess()
     if ( v2 < 0.0 ) /*0x41fd96*/
       v2 = 0.0; /*0x41fd9a*/
   }
+  double v3; // st7
   v3 = v2 + *(double *)(*(unsigned int *)&g_RulesClass_Instance + 192) + this->u32_B8; /*0x41fdb1*/
   this->u32_B8 = v3; /*0x41fdb3*/
   if ( v3 < this->q0C0 ) /*0x41fdc4*/
@@ -603,6 +602,7 @@ int AITriggerTypeClass::RegisterSuccess()
     this->u32_B8 = this->q0C8; /*0x41fdf7*/
     this->u32_BC = this->alignmentPadding; /*0x41fe03*/
   }
+  int result; // eax
   result = this->u32_104 + 1; /*0x41fe0f*/
   this->u32_104 = result; /*0x41fe11*/
   this->u32_108 = v1 + 1; /*0x41fe17*/
@@ -613,17 +613,11 @@ int AITriggerTypeClass::RegisterSuccess()
 namespace gamemd {
 int AITriggerTypeClass::RegisterFailure()
 {
-  int v1; // edx
-  double v2; // st7
-  double v3; // st7
   int result; // eax
-  int16_t v5; // fps
-  double v6; // st7
-  bool v7; // c0
-  char v8; // c2
-  bool v9; // c3
 
+  int v1; // edx
   v1 = this->u32_108; /*0x41fe21*/
+  double v2; // st7
   v2 = 0.0; /*0x41fe28*/
   if ( v1 > 0 ) /*0x41fe3a*/
   {
@@ -633,6 +627,7 @@ int AITriggerTypeClass::RegisterFailure()
     if ( v2 > 0.0 ) /*0x41fe63*/
       v2 = 0.0; /*0x41fe67*/
   }
+  double v3; // st7
   v3 = v2 + *(double *)(*(unsigned int *)&g_RulesClass_Instance + 200) + this->u32_B8; /*0x41fe7a*/
   this->u32_B8 = v3; /*0x41fe7c*/
   if ( v3 < this->q0C0 ) /*0x41fe8d*/
@@ -641,10 +636,15 @@ int AITriggerTypeClass::RegisterFailure()
     result = this->q0C4; /*0x41fe9b*/
     this->u32_BC = result; /*0x41fea1*/
   }
+  double v6; // st7
   v6 = this->u32_B8; /*0x41fea7*/
+  bool v7; // c0
   v7 = v6 < this->q0C8; /*0x41fead*/
+  char v8; // c2
   v8 = 0; /*0x41fead*/
+  bool v9; // c3
   v9 = v6 == this->q0C8; /*0x41fead*/
+  int16_t v5; // fps
   (*((unsigned short *)&(result))) = v5; /*0x41feb3*/
   if ( v6 > this->q0C8 ) /*0x41feb8*/
   {
@@ -660,14 +660,14 @@ int AITriggerTypeClass::RegisterFailure()
 namespace gamemd {
 AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
 {
-  int v3; // eax
-  AITriggerTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)Block->tail_0 = &vt_AITriggerTypeClass; /*0x41fffd*/
   Block->__pad_004 = (int)&vt_AITriggerTypeClass; /*0x420003*/
   Block->u32_8 = (int)&vt_AITriggerTypeClass; /*0x42000a*/
   Block->u32_C = (int)&vt_AITriggerTypeClass; /*0x420011*/
+  AITriggerTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AITriggerTypeClass *)(Block); /*0x42001f*/
+  int v3; // eax
   v3 = (*(int (**)(unsigned int *, AITriggerTypeClass **))(dword_A8B200 + 16))(&dword_A8B200, &v5); /*0x420023*/
   if ( v3 != -1 && v3 < dword_A8B210 && v3 < --dword_A8B210 ) /*0x42003e*/
   {
@@ -702,8 +702,8 @@ int AITriggerTypeClass::GetObjectSize()
 namespace gamemd {
 void AITriggerTypeClass_40::ClearBuffer(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->q004; /*0x420376*/
   a1_1->q010 = 0; /*0x420379*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x420380*/
@@ -739,18 +739,18 @@ void AITriggerTypeClass_40::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 char AITriggerTypeClass_40::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->q008; /*0x4203d2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4203dd*/
   {
+  int v3; // edx
     v3 = 0; /*0x4203df*/
     if ( m_8 <= 0 ) /*0x4203e3*/
       return 1; /*0x420403*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x4203e5*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4203eb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4203f4*/
     {
@@ -769,13 +769,11 @@ namespace gamemd {
 char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x42041c*/
   {
     LOBYTE(this->q00C) = 0; /*0x420426*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x42042c*/
       v4 = a3; /*0x420442*/
     else
@@ -785,9 +783,11 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x420455*/
       {
+  int m_8; // ecx
         m_8 = this->q008; /*0x42045c*/
         if ( a2 < m_8 ) /*0x420461*/
           m_8 = a2; /*0x420463*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x420469*/
           ++i; /*0x42046e*/
         if ( BYTE1(this->q00C) ) /*0x42047b*/
@@ -833,16 +833,16 @@ void AITriggerTypeClass_40::ddtor(void *a1)
 namespace gamemd {
 int AITriggerTypeClass_40::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x4204f0*/
     return 0; /*0x4204f8*/
+  int m_8; // edx
   m_8 = a2_2->q008; /*0x4204fe*/
+  int result; // eax
   result = 0; /*0x420501*/
   if ( m_8 <= 0 ) /*0x420505*/
     return -1; /*0x42051c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *i != *a2_2; ++i ) /*0x42050b*/
   {
     if ( ++result >= m_8 ) /*0x42051a*/
@@ -868,14 +868,11 @@ namespace gamemd {
 char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x42055c*/
   {
     LOBYTE(this->q00C) = 0; /*0x420562*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x420568*/
       v4 = a3; /*0x42057e*/
     else
@@ -885,9 +882,11 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4205fa*/
     if ( *&this->q004 ) /*0x420588*/
     {
+  int m_8; // ecx
       m_8 = this->q008; /*0x42058f*/
       if ( a2 < m_8 ) /*0x420594*/
         m_8 = a2; /*0x420596*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x42059c*/
         ++i; /*0x4205a1*/
       if ( BYTE1(this->q00C) ) /*0x4205ae*/
@@ -904,6 +903,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVAlphaLightingRemapClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4205de*/
   }
+  int v7; // eax
   v7 = this->q008; /*0x4205e1*/
   if ( v7 < this->q010 ) /*0x4205e9*/
     this->q010 = v7; /*0x4205eb*/
@@ -916,14 +916,14 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int AITriggerTypeClass_40::FindItem(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->q010; /*0x420600*/
+  int result; // eax
   result = 0; /*0x420603*/
   if ( m_10 <= 0 ) /*0x420608*/
     return -1; /*0x42061f*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x42060e*/
   {
     if ( ++result >= m_10 ) /*0x42061d*/
@@ -936,8 +936,8 @@ int AITriggerTypeClass_40::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x420633*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x420636*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x420640*/
@@ -957,8 +957,8 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
 namespace gamemd {
 DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRemapClass___(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x420683*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x420686*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x420690*/

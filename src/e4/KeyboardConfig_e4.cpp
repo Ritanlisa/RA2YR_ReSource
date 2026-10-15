@@ -121,17 +121,16 @@ int KeyboardConfig::LoadINI()
 namespace gamemd {
 AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
 {
-  char *v3; // edi
-  int i; // ecx
-  int v5; // eax
-  unsigned int *v6; // edx
-  int v7; // eax
 
+  char *v3; // edi
   if ( v3 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
   v3 = (char *)operator new(8 * (v3 + v3->vtable3)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
+  int i; // ecx
+  int v5; // eax
+  unsigned int *v6; // edx
   for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
@@ -139,6 +138,7 @@ AbstractClass * KeyboardConfig::ReleaseBuffer(int a2, void *v3)
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   operator delete((void *)(*(void **)v3)); /*0x538bdb*/
+  int v7; // eax
   v7 = v3 + v3->vtable3; /*0x538be6*/
   *(unsigned int *)v3 = (unsigned int)(v3); /*0x538be8*/
   v3->vtable3 = v7; /*0x538bea*/

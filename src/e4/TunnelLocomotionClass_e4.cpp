@@ -185,9 +185,8 @@ int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
-  int result; // eax
-  int v3; // edx
 
+  int result; // eax
   result = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x72a15b*/
   if ( result >= 0 ) /*0x72a164*/
   {
@@ -195,6 +194,7 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->0 = &vt_LocomotionClass; /*0x72a16a*/
       *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x72a170*/
+  int v3; // edx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x72a177*/
       a1->CurrentState[6] = 0; /*0x72a17d*/
       a1->CurrentState[4] = v3; /*0x72a180*/

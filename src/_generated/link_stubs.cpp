@@ -252,10 +252,8 @@ char Cell::CreateCrater(int a0, int a1, int a2, int a3, char a4)
 // truth-filled 0x4BA5A0 (G42.52 truth-emitting generator)
 char gamemd::DSurface::BlitCore(int* a0, int* a1, int* a2, void* a3, int* a4, int* a5, int a6, char a7)
 {
-    _DWORD *v6; // ebp
-    void *v7; // edi
-    int v8; // eax
 
+    _DWORD *v6; // ebp
     v6 = this + 28; /*0x4ba5b0*/
     *((_DWORD *)this + 1) = a2; /*0x4ba5b5*/
     *((_DWORD *)this + 2) = a3; /*0x4ba5b8*/
@@ -267,6 +265,7 @@ char gamemd::DSurface::BlitCore(int* a0, int* a1, int* a2, void* a3, int* a4, in
     *((_DWORD *)this + 7) = 0; /*0x4ba5ca*/
     *((_DWORD *)this + 8) = 0; /*0x4ba5cd*/
     /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
+    void *v7; // edi
     v7 = __2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
     *((_DWORD *)this + 8) = v7; /*0x4ba5e2*/
     if ( v7 ) /*0x4ba5e5*/
@@ -290,6 +289,7 @@ char gamemd::DSurface::BlitCore(int* a0, int* a1, int* a2, void* a3, int* a4, in
         memset(*((void **)this + 8), 0, 0x6Cu); /*0x4ba665*/
         **((_DWORD **)this + 8) = 108; /*0x4ba66a*/
         (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*v6 + 88))(*v6, *((_DWORD *)this + 8)); /*0x4ba67a*/
+    int v8; // eax
         v8 = *((_DWORD *)this + 8); /*0x4ba67d*/
         *((_DWORD *)this + 4) = (unsigned int)(*(_DWORD *)(v8 + 84) + 7) >> 3; /*0x4ba689*/
         *(this + 25) = (*(_DWORD *)(v8 + 104) & 0x4000) != 0; /*0x4ba695*/
@@ -401,7 +401,6 @@ gamemd::CDFileClass::CDFileClass(gamemd::noinit_t const& a0) {}
 // truth-filled 0x554760 (G42.52 truth-emitting generator)
 void gamemd::LightSourceClass::LightSourceClass(gamemd::Vector3D<int> const& a0, int a1, int a2, gamemd::TintStruct const& a3, int a4)
 {
-    int v10; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x554763*/
     this->LightTint[0] = a7; /*0x554774*/
@@ -426,6 +425,7 @@ void gamemd::LightSourceClass::LightSourceClass(gamemd::Vector3D<int> const& a0,
            g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
            0) )
     {
+    int v10; // eax
       v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
       *(_DWORD *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
     }
@@ -434,14 +434,12 @@ void gamemd::LightSourceClass::LightSourceClass(gamemd::Vector3D<int> const& a0,
 // truth-filled 0x5F7320 (G42.52 truth-emitting generator)
 void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t)
 {
-    int *v3; // eax
-    int v4; // edx
-    char *v5; // eax
-    int v6; // edx
 
     AbstractTypeClass::Init((int)this, a2); /*0x5f7328*/
+    int *v3; // eax
     v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
     this->Image = 0; /*0x5f7335*/
+    int v4; // edx
     v4 = 18; /*0x5f733b*/
     do /*0x5f7349*/
     {
@@ -451,7 +449,9 @@ void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t)
       --v4; /*0x5f7348*/
     }
     while ( v4 ); /*0x5f7349*/
+    char *v5; // eax
     v5 = &this->q14D[11]; /*0x5f734b*/
+    int v6; // edx
     v6 = 18; /*0x5f7351*/
     do /*0x5f735f*/
     {
@@ -801,10 +801,8 @@ void gamemd::UnitClass::UnitClass()
 // truth-filled 0x4BA5A0 (G42.52 truth-emitting generator)
 void gamemd::DSurface::DSurface(int a0, int a1, bool a2, bool a3)
 {
-    _DWORD *v6; // ebp
-    void *v7; // edi
-    int v8; // eax
 
+    _DWORD *v6; // ebp
     v6 = this + 28; /*0x4ba5b0*/
     *((_DWORD *)this + 1) = a2; /*0x4ba5b5*/
     *((_DWORD *)this + 2) = a3; /*0x4ba5b8*/
@@ -816,6 +814,7 @@ void gamemd::DSurface::DSurface(int a0, int a1, bool a2, bool a3)
     *((_DWORD *)this + 7) = 0; /*0x4ba5ca*/
     *((_DWORD *)this + 8) = 0; /*0x4ba5cd*/
     /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
+    void *v7; // edi
     v7 = __2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
     *((_DWORD *)this + 8) = v7; /*0x4ba5e2*/
     if ( v7 ) /*0x4ba5e5*/
@@ -839,6 +838,7 @@ void gamemd::DSurface::DSurface(int a0, int a1, bool a2, bool a3)
         memset(*((void **)this + 8), 0, 0x6Cu); /*0x4ba665*/
         **((_DWORD **)this + 8) = 108; /*0x4ba66a*/
         (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*v6 + 88))(*v6, *((_DWORD *)this + 8)); /*0x4ba67a*/
+    int v8; // eax
         v8 = *((_DWORD *)this + 8); /*0x4ba67d*/
         *((_DWORD *)this + 4) = (unsigned int)(*(_DWORD *)(v8 + 84) + 7) >> 3; /*0x4ba689*/
         *(this + 25) = (*(_DWORD *)(v8 + 104) & 0x4000) != 0; /*0x4ba695*/
@@ -853,15 +853,6 @@ gamemd::TintStruct::TintStruct() {}
 // truth-filled 0x75E950 (G42.52 truth-emitting generator)
 void gamemd::WaveClass::WaveClass(ra2::game::TechnoClass* a0, gamemd::WaveType, gamemd::Vector2D<int> const& a2, unsigned int a3)
 {
-    double v6; // st7
-    int v8; // edx
-    int v10; // eax
-    int v11; // eax
-    int *WaveClass_field_14C; // edx
-    int WaveClass_field_DC; // eax
-    int v14; // edx
-    int v15; // edx
-    Voxel *v16; // [esp+8h] [ebp-10h]
 
     ObjectClass::ctor((ObjectClass *)this); /*0x75e956*/
     this->WaveClass_field_138 = 0; /*0x75e969*/
@@ -896,8 +887,10 @@ void gamemd::WaveClass::WaveClass(ra2::game::TechnoClass* a0, gamemd::WaveType, 
     ((unsigned int *)this)[0] = (void *)&vt_WaveClass; /*0x75ea45*/
     ((unsigned int *)this)[0] = (void *)&vt_WaveClass; /*0x75ea4b*/
     ((unsigned int *)this)[0] = &off_7F6BC8; /*0x75ea52*/
+    int v8; // edx
     v8 = a2[1] - a3[1]; /*0x75ea66*/
     Math::Sqrt((double)((*a2 - *a3) * (*a2 - *a3) + v8 * v8)); /*0x75ea7e*/
+    double v6; // st7
     if ( v6 >= 240.0 ) /*0x75ea91*/
     {
       AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x75eaa4*/
@@ -909,9 +902,11 @@ void gamemd::WaveClass::WaveClass(ra2::game::TechnoClass* a0, gamemd::WaveType, 
              *(_DWORD *)&((unsigned int *)&stru_A8EB00)[92] + *(_DWORD *)&((unsigned int *)&stru_A8EB00)[104],
              0) )
       {
+    int v10; // eax
         v10 = (*(_DWORD *)&((unsigned int *)&stru_A8EB00)[100])++; /*0x75eaea*/
         *(_DWORD *)(*(_DWORD *)&((unsigned int *)&stru_A8EB00)[88] + 4 * v10) = this; /*0x75eaf9*/
       }
+    Voxel *v16; // [esp+8h] [ebp-10h]
       if ( !byte_B725CC ) /*0x75eb02*/
         Voxel::InitDistanceTable(v16); /*0x75eb04*/
       if ( this->Type[0] == 3 ) /*0x75eb10*/
@@ -921,19 +916,24 @@ void gamemd::WaveClass::WaveClass(ra2::game::TechnoClass* a0, gamemd::WaveType, 
       this->WaveClass_field_1A8 = 0; /*0x75eb3c*/
       this->WaveClass_field_1CC = CalcMathFacing8(&this->WaveClass_field_CC, &this->WaveClass_field_E4); /*0x75eb51*/
       WaveClass::DrawWave(this, this->someCoords, 0); /*0x75eb57*/
+    int v11; // eax
       v11 = this->Type[0]; /*0x75eb5c*/
       if ( v11 > 0 && v11 <= 2 ) /*0x75eb69*/
       {
+    int *WaveClass_field_14C; // edx
         WaveClass_field_14C = (int *)this->WaveClass_field_14C; /*0x75eb6b*/
+    int WaveClass_field_DC; // eax
         WaveClass_field_DC = this->WaveClass_field_DC; /*0x75eb71*/
         this->WaveClass_field_138 = 0; /*0x75eb77*/
         this->WaveClass_field_13C = 1072693248; /*0x75eb7d*/
         this->LaserIntensity = 160; /*0x75eb87*/
         *WaveClass_field_14C = WaveClass_field_DC; /*0x75eb91*/
         WaveClass_field_14C[1] = this->WaveClass_field_E0; /*0x75eb99*/
+    int v14; // edx
         v14 = this->WaveClass_field_14C; /*0x75eb9c*/
         *(_DWORD *)(v14 + 8) = this->WaveClass_field_D4; /*0x75eba8*/
         *(_DWORD *)(v14 + 12) = this->WaveClass_field_D8; /*0x75ebb1*/
+    int v15; // edx
         v15 = this->WaveClass_field_14C; /*0x75ebb4*/
         *(_DWORD *)(v15 + 16) = this->WaveClass_field_E4; /*0x75ebbc*/
         *(_DWORD *)(v15 + 20) = this->WaveClass_field_E8; /*0x75ebc2*/
@@ -1501,18 +1501,13 @@ bool gamemd::TEventClass::Execute(int a0, int a1, ra2::game::ObjectClass* a2, in
 // truth-filled 0x725FA0 (G42.52 truth-emitting generator)
 bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vector2D<short> a1)
 {
-    int v3; // ecx
-    int v4; // eax
-    int v5; // eax
-    int v6; // eax
-    _BYTE *v7; // eax
-    void *vtable0; // ecx
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x725fa4*/
     *(_DWORD *)(this + 36) = a2; /*0x725faf*/
     *(_DWORD *)(this + 40) = 0; /*0x725fb2*/
     *(_DWORD *)(this + 44) = 0; /*0x725fb5*/
     *(_BYTE *)(this + 48) = 0; /*0x725fb8*/
+    int v3; // ecx
     v3 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x725fbb*/
     *(_DWORD *)(this + 60) = 0; /*0x725fc1*/
     *(_DWORD *)(this + 52) = v3; /*0x725fc4*/
@@ -1530,6 +1525,7 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
            g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
            0) )
     {
+    int v4; // eax
       v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x726028*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x726037*/
     }
@@ -1541,6 +1537,7 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
            g_BuildingLoadQueue_Array.ExitCoord[2] + g_BuildingLoadQueue_Array.DeployFacing,
            0) )
     {
+    int v5; // eax
       v5 = g_BuildingLoadQueue_Array.unknown___2++; /*0x72607b*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * v5) = this; /*0x72608a*/
     }
@@ -1552,11 +1549,14 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
            dword_A8EAF0 + dword_A8EAFC,
            0) )
     {
+    int v6; // eax
       v6 = dword_A8EAF8++; /*0x7260ce*/
       *((_DWORD *)dword_A8EAEC + v6) = this; /*0x7260dd*/
     }
     if ( *(_DWORD *)(this + 36) ) /*0x7260e0*/
     {
+    _BYTE *v7; // eax
+    void *vtable0; // ecx
       if ( (BuildingClass::ProcessUpgradeEffects((BuildingClass *)this), v7 = *(_BYTE **)(this + 36), !v7[159]) /*0x726121*/
         || (vtable0 = dword_A8B230[43].vtable0) == 0 && !v7[156]
         || vtable0 == (void *)1 && !v7[157]
@@ -1570,18 +1570,13 @@ bool gamemd::TriggerClass::FireActions(ra2::game::ObjectClass* a0, gamemd::Vecto
 // truth-filled 0x725FA0 (G42.52 truth-emitting generator)
 bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, bool a2, bool a3, ra2::game::TechnoClass* a4)
 {
-    int v3; // ecx
-    int v4; // eax
-    int v5; // eax
-    int v6; // eax
-    _BYTE *v7; // eax
-    void *vtable0; // ecx
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x725fa4*/
     *(_DWORD *)(this + 36) = a2; /*0x725faf*/
     *(_DWORD *)(this + 40) = 0; /*0x725fb2*/
     *(_DWORD *)(this + 44) = 0; /*0x725fb5*/
     *(_BYTE *)(this + 48) = 0; /*0x725fb8*/
+    int v3; // ecx
     v3 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x725fbb*/
     *(_DWORD *)(this + 60) = 0; /*0x725fc1*/
     *(_DWORD *)(this + 52) = v3; /*0x725fc4*/
@@ -1599,6 +1594,7 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
            g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
            0) )
     {
+    int v4; // eax
       v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x726028*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x726037*/
     }
@@ -1610,6 +1606,7 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
            g_BuildingLoadQueue_Array.ExitCoord[2] + g_BuildingLoadQueue_Array.DeployFacing,
            0) )
     {
+    int v5; // eax
       v5 = g_BuildingLoadQueue_Array.unknown___2++; /*0x72607b*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * v5) = this; /*0x72608a*/
     }
@@ -1621,11 +1618,14 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
            dword_A8EAF0 + dword_A8EAFC,
            0) )
     {
+    int v6; // eax
       v6 = dword_A8EAF8++; /*0x7260ce*/
       *((_DWORD *)dword_A8EAEC + v6) = this; /*0x7260dd*/
     }
     if ( *(_DWORD *)(this + 36) ) /*0x7260e0*/
     {
+    _BYTE *v7; // eax
+    void *vtable0; // ecx
       if ( (BuildingClass::ProcessUpgradeEffects((BuildingClass *)this), v7 = *(_BYTE **)(this + 36), !v7[159]) /*0x726121*/
         || (vtable0 = dword_A8B230[43].vtable0) == 0 && !v7[156]
         || vtable0 == (void *)1 && !v7[157]
@@ -1639,9 +1639,6 @@ bool gamemd::TriggerClass::RegisterEvent(int a0, ra2::game::ObjectClass* a1, boo
 // truth-filled 0x726C80 (G42.52 truth-emitting generator)
 bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
 {
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
 
     AbstractTypeClass::Constructor((int *)this, Source); /*0x726c89*/
     this->ArrayIndex = -1; /*0x726c92*/
@@ -1666,6 +1663,7 @@ bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] + g_BuildingLoadQueue_Array.GateCloseDelay[1],
            0) )
     {
+    int v3; // eax
       v3 = g_BuildingLoadQueue_Array.GateCloseDelay[0]++; /*0x726d2e*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) = this; /*0x726d3d*/
     }
@@ -1677,6 +1675,7 @@ bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
            g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
            0) )
     {
+    int v4; // eax
       v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x726d81*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x726d90*/
     }
@@ -1689,6 +1688,7 @@ bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
            ((unsigned int *)&FootClass_Array)[1] + *(_DWORD *)&((char *)&FootClass_Array),
            0) )
     {
+    int v5; // eax
       v5 = (*(_DWORD *)((char *)&FootClass_Array))++; /*0x726ddd*/
       *(_DWORD *)(((unsigned int *)&FootClass_Array)[0] + 4 * v5) = this; /*0x726dec*/
     }
@@ -1697,9 +1697,6 @@ bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
 // truth-filled 0x726C80 (G42.52 truth-emitting generator)
 bool gamemd::TriggerTypeClass::RemoveEvent(gamemd::TEventClass* a0)
 {
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
 
     AbstractTypeClass::Constructor((int *)this, Source); /*0x726c89*/
     this->ArrayIndex = -1; /*0x726c92*/
@@ -1724,6 +1721,7 @@ bool gamemd::TriggerTypeClass::RemoveEvent(gamemd::TEventClass* a0)
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] + g_BuildingLoadQueue_Array.GateCloseDelay[1],
            0) )
     {
+    int v3; // eax
       v3 = g_BuildingLoadQueue_Array.GateCloseDelay[0]++; /*0x726d2e*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) = this; /*0x726d3d*/
     }
@@ -1735,6 +1733,7 @@ bool gamemd::TriggerTypeClass::RemoveEvent(gamemd::TEventClass* a0)
            g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
            0) )
     {
+    int v4; // eax
       v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x726d81*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x726d90*/
     }
@@ -1747,6 +1746,7 @@ bool gamemd::TriggerTypeClass::RemoveEvent(gamemd::TEventClass* a0)
            ((unsigned int *)&FootClass_Array)[1] + *(_DWORD *)&((char *)&FootClass_Array),
            0) )
     {
+    int v5; // eax
       v5 = (*(_DWORD *)((char *)&FootClass_Array))++; /*0x726ddd*/
       *(_DWORD *)(((unsigned int *)&FootClass_Array)[0] + 4 * v5) = this; /*0x726dec*/
     }
@@ -1899,10 +1899,8 @@ bool gamemd::AbstractTypeClass::SaveToINI(gamemd::CCINIClass* a0)
 // truth-filled 0x4BA5A0 (G42.52 truth-emitting generator)
 bool gamemd::DSurface::FillRectEx(gamemd::RectangleStruct const& a0, gamemd::RectangleStruct const& a1, unsigned int a2)
 {
-    _DWORD *v6; // ebp
-    void *v7; // edi
-    int v8; // eax
 
+    _DWORD *v6; // ebp
     v6 = this + 28; /*0x4ba5b0*/
     *((_DWORD *)this + 1) = a2; /*0x4ba5b5*/
     *((_DWORD *)this + 2) = a3; /*0x4ba5b8*/
@@ -1914,6 +1912,7 @@ bool gamemd::DSurface::FillRectEx(gamemd::RectangleStruct const& a0, gamemd::Rec
     *((_DWORD *)this + 7) = 0; /*0x4ba5ca*/
     *((_DWORD *)this + 8) = 0; /*0x4ba5cd*/
     /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
+    void *v7; // edi
     v7 = __2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
     *((_DWORD *)this + 8) = v7; /*0x4ba5e2*/
     if ( v7 ) /*0x4ba5e5*/
@@ -1937,6 +1936,7 @@ bool gamemd::DSurface::FillRectEx(gamemd::RectangleStruct const& a0, gamemd::Rec
         memset(*((void **)this + 8), 0, 0x6Cu); /*0x4ba665*/
         **((_DWORD **)this + 8) = 108; /*0x4ba66a*/
         (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*v6 + 88))(*v6, *((_DWORD *)this + 8)); /*0x4ba67a*/
+    int v8; // eax
         v8 = *((_DWORD *)this + 8); /*0x4ba67d*/
         *((_DWORD *)this + 4) = (unsigned int)(*(_DWORD *)(v8 + 84) + 7) >> 3; /*0x4ba689*/
         *(this + 25) = (*(_DWORD *)(v8 + 104) & 0x4000) != 0; /*0x4ba695*/
@@ -2539,14 +2539,14 @@ bool gamemd::RawFileClass::OpenEx(const char* a0, gamemd::FileAccessMode)
 // truth-filled 0x4BAEC0 (G42.52 truth-emitting generator)
 bool gamemd::XSurface::CanLock(unsigned int a0, unsigned int a1)
 {
-    int result; // eax
-    int v5; // eax
-    _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
 
+    int result; // eax
     result = (int)this->q00C; /*0x4baec6*/
     if ( !result ) /*0x4baecb*/
     {
+    _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
       memset(v6, 0, sizeof(v6)); /*0x4baed9*/
+    int v5; // eax
       v5 = this->u32_1C[0]; /*0x4baedb*/
       v6[0] = 108; /*0x4baee6*/
       result = (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v5 + 100))(v5, 0, v6, 0, 0); /*0x4baef4*/
@@ -4419,159 +4419,89 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
 // truth-filled 0x4BDF00 (G42.52 truth-emitting generator)
 bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, gamemd::Vector2D<int> const& a1, unsigned const char*const a2, float a3, int a4, int a5)
 {
-    double v8; // st7
-    int v11; // eax
-    int v12; // ebx
-    int v13; // eax
-    int v14; // ebp
-    int v15; // eax
-    int *v16; // eax
-    int *v17; // eax
-    int v18; // esi
-    int v19; // edi
-    int v20; // ecx
-    int v21; // eax
-    int v22; // ecx
-    int v23; // ebp
-    int v24; // edx
-    int v25; // ebx
-    int v26; // esi
-    int v27; // edi
-    int v28; // esi
-    int v29; // ebx
-    int v30; // eax
-    int v31; // eax
-    int v32; // eax
-    unsigned int v33; // eax
-    int v34; // eax
-    int v35; // eax
-    int v36; // eax
-    unsigned int v37; // eax
-    int v38; // ebx
-    int Stream_field_04; // edi
-    _WORD *SamplePosition; // esi
-    int v41; // edi
-    unsigned __int16 *v42; // ebp
-    int v43; // edi
-    int v44; // ebx
-    int v45; // eax
-    int v46; // ecx
-    int v47; // eax
-    int v48; // edi
-    int v49; // ecx
-    Stream *v50; // ebx
-    int v51; // edx
-    unsigned __int16 v52; // di
-    __int16 v53; // ax
-    _WORD *v54; // eax
-    unsigned __int16 *v55; // eax
     bool v56; // zf
-    int v58; // edi
-    Stream *v59; // ebx
-    int v60; // edx
-    unsigned __int16 v61; // di
-    __int16 v62; // ax
-    _WORD *v63; // eax
-    unsigned __int16 *v64; // eax
-    int v65; // eax
-    unsigned int Stream_field_08; // eax
-    int v67; // edi
-    int v68; // ebx
-    Stream *v69; // ecx
-    int v70; // edx
-    unsigned __int16 v71; // di
-    __int16 v72; // ax
-    _WORD *v73; // eax
-    unsigned __int16 *v74; // eax
-    double v75; // [esp+4h] [ebp-84h]
-    double v76; // [esp+4h] [ebp-84h]
-    double v77; // [esp+4h] [ebp-84h]
-    double v78; // [esp+4h] [ebp-84h]
-    int v79; // [esp+1Ch] [ebp-6Ch]
-    int v80; // [esp+20h] [ebp-68h]
-    int v81; // [esp+24h] [ebp-64h]
-    int v82; // [esp+24h] [ebp-64h]
-    int v83; // [esp+24h] [ebp-64h]
-    int v84; // [esp+28h] [ebp-60h]
-    int v85; // [esp+2Ch] [ebp-5Ch]
-    int v86; // [esp+30h] [ebp-58h]
-    int v87; // [esp+30h] [ebp-58h]
-    int v88; // [esp+30h] [ebp-58h]
-    int v89; // [esp+34h] [ebp-54h]
-    int v90; // [esp+38h] [ebp-50h]
-    int v91; // [esp+3Ch] [ebp-4Ch]
-    _BYTE v93[12]; // [esp+44h] [ebp-44h] BYREF
-    _DWORD v94[5]; // [esp+54h] [ebp-34h] BYREF
-    int v95; // [esp+68h] [ebp-20h] BYREF
-    int v96; // [esp+6Ch] [ebp-1Ch]
-    int v97[2]; // [esp+70h] [ebp-18h] BYREF
-    int v98; // [esp+78h] [ebp-10h] BYREF
-    int v99; // [esp+7Ch] [ebp-Ch]
-    int v100; // [esp+80h] [ebp-8h]
-    int v101; // [esp+84h] [ebp-4h]
-    int pad_0; // [esp+8Ch] [ebp+4h]
-    int v103; // [esp+90h] [ebp+8h]
-    int v104; // [esp+94h] [ebp+Ch]
-    unsigned __int8 *v105; // [esp+98h] [ebp+10h]
-    unsigned __int8 *v106; // [esp+98h] [ebp+10h]
-    unsigned __int8 *v107; // [esp+98h] [ebp+10h]
-    unsigned __int8 *v108; // [esp+98h] [ebp+10h]
-    int v109; // [esp+9Ch] [ebp+14h]
-    int v110; // [esp+9Ch] [ebp+14h]
-    int v111; // [esp+9Ch] [ebp+14h]
-    int v112; // [esp+9Ch] [ebp+14h]
-    __int16 v113; // [esp+9Ch] [ebp+14h]
-    __int16 v114; // [esp+9Ch] [ebp+14h]
-    __int16 v115; // [esp+9Ch] [ebp+14h]
 
+    unsigned __int8 *v105; // [esp+98h] [ebp+10h]
     v105 = (unsigned __int8 *)*a5; /*0x4bdf18*/
     __asm /*0x4bdf1f*/
     {
       fild [esp+7Ch+arg_C]
       fmul [esp+7Ch+arg_10]
     }
+    double v8; // st7
+    int v11; // eax
     LOWORD(v11) = Math::RoundToInt(v8); /*0x4bdf2d*/
+    int v12; // ebx
     v12 = v11; /*0x4bdf34*/
+    int v91; // [esp+3Ch] [ebp-4Ch]
     v91 = v11; /*0x4bdf39*/
+    unsigned __int8 *v106; // [esp+98h] [ebp+10h]
     v106 = (unsigned __int8 *)a5[1]; /*0x4bdf3d*/
     __asm /*0x4bdf44*/
     {
       fild [esp+7Ch+arg_C]
       fmul [esp+7Ch+arg_10]
     }
+    int v13; // eax
     LOWORD(v13) = Math::RoundToInt(v8); /*0x4bdf52*/
+    int v14; // ebp
     v14 = v13; /*0x4bdf59*/
+    int v90; // [esp+38h] [ebp-50h]
     v90 = v13; /*0x4bdf5e*/
+    unsigned __int8 *v107; // [esp+98h] [ebp+10h]
     v107 = (unsigned __int8 *)a5[2]; /*0x4bdf62*/
     __asm /*0x4bdf69*/
     {
       fild [esp+7Ch+arg_C]
       fmul [esp+7Ch+arg_10]
     }
+    int v15; // eax
     LOWORD(v15) = Math::RoundToInt(v8); /*0x4bdf77*/
+    int v89; // [esp+34h] [ebp-54h]
     v89 = v15; /*0x4bdf7f*/
     if ( v12 < 8 && v14 < 8 && v15 < 8 ) /*0x4bdf8d*/
       return 0; /*0x4bdf8d*/
+    int *v16; // eax
+    _DWORD v94[5]; // [esp+54h] [ebp-34h] BYREF
     v16 = (int *)(*((int (__thiscall **)(DSurface *, _DWORD *))this->DSurface_field_0x0 + 30))(this, &v94[1]); /*0x4bdf9c*/
+    int *v17; // eax
+    _BYTE v93[12]; // [esp+44h] [ebp-44h] BYREF
     v17 = ClipRectIntersection(&v93[4], (int *)a2, v16, 0, 0); /*0x4bdfaf*/
+    int v18; // esi
     v18 = *v17; /*0x4bdfb6*/
+    int v98; // [esp+78h] [ebp-10h] BYREF
     v98 = *v17; /*0x4bdfb8*/
+    int v19; // edi
     v19 = v17[1]; /*0x4bdfbc*/
+    int v99; // [esp+7Ch] [ebp-Ch]
     v99 = v19; /*0x4bdfbf*/
+    int v100; // [esp+80h] [ebp-8h]
     v100 = v17[2]; /*0x4bdfc6*/
+    int v20; // ecx
     v20 = v17[3]; /*0x4bdfca*/
+    int v101; // [esp+84h] [ebp-4h]
     v101 = v20; /*0x4bdfcf*/
     if ( !v100 && !v20 ) /*0x4bdfd7*/
       return 0; /*0x4bdfd7*/
+    int v21; // eax
     v21 = v18 + *a3; /*0x4bdff3*/
+    int v22; // ecx
     v22 = v18 + *a4; /*0x4bdff5*/
+    int v23; // ebp
     v23 = a7; /*0x4bdffa*/
+    int v24; // edx
     v24 = v19 + a3[1]; /*0x4be001*/
+    int v25; // ebx
     v25 = v21; /*0x4be003*/
+    int v26; // esi
     v26 = v19 + a4[1]; /*0x4be005*/
+    int v27; // edi
     v27 = a8; /*0x4be007*/
+    int v95; // [esp+68h] [ebp-20h] BYREF
     v95 = v21; /*0x4be010*/
+    int v96; // [esp+6Ch] [ebp-1Ch]
     v96 = v24; /*0x4be014*/
+    int v97[2]; // [esp+70h] [ebp-18h] BYREF
     v97[0] = v22; /*0x4be018*/
     v97[1] = v26; /*0x4be01c*/
     if ( v21 > v22 ) /*0x4be020*/
@@ -4585,12 +4515,15 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
       v97[1] = v24; /*0x4be039*/
     }
     v94[2] = v97[1]; /*0x4be049*/
+    int v28; // esi
     v28 = v25; /*0x4be04e*/
+    int v29; // ebx
     v29 = v96; /*0x4be050*/
     v94[1] = v97[0]; /*0x4be05c*/
     if ( !(unsigned __int8)ClipLine(&v95, v97, &v98) ) /*0x4be060*/
       return 0; /*0x4be060*/
     a7 = v27; /*0x4be07b*/
+    int v109; // [esp+9Ch] [ebp+14h]
     v109 = v23; /*0x4be082*/
     if ( v97[0] != v94[1] || v97[1] != v94[2] ) /*0x4be08f*/
     {
@@ -4609,7 +4542,9 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         fstp st
         fstp st
       }
+    double v75; // [esp+4h] [ebp-84h]
       Math::Sqrt(v75); /*0x4be0c1*/
+    int v30; // eax
       LOWORD(v30) = Math::RoundToInt(v8); /*0x4be0c6*/
       a8 = v30; /*0x4be0d1*/
       *(_DWORD *)&v93[4] = v28 - v94[1]; /*0x4be0e0*/
@@ -4629,7 +4564,9 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         fstp st
         fstp st
       }
+    double v76; // [esp+4h] [ebp-84h]
       Math::Sqrt(v76); /*0x4be10e*/
+    int v31; // eax
       LOWORD(v31) = Math::RoundToInt(v8); /*0x4be116*/
       a8 = v31; /*0x4be11b*/
       __asm { fild [esp+7Ch+arg_18] } /*0x4be124*/
@@ -4640,7 +4577,9 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         fild [esp+7Ch+arg_18]
         fmulp st(1), st
       }
+    int v32; // eax
       LOWORD(v32) = Math::RoundToInt(v8); /*0x4be141*/
+    unsigned int v33; // eax
       v33 = abs32(v32); /*0x4be149*/
       if ( v23 >= v27 ) /*0x4be14d*/
         a7 = v23 - v33; /*0x4be15e*/
@@ -4664,8 +4603,11 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         fstp st
         fstp st
       }
+    double v77; // [esp+4h] [ebp-84h]
       Math::Sqrt(v77); /*0x4be1a9*/
+    int v34; // eax
       LOWORD(v34) = Math::RoundToInt(v8); /*0x4be1ae*/
+    int v110; // [esp+9Ch] [ebp+14h]
       v110 = v34; /*0x4be1b3*/
       *(_DWORD *)&v93[4] = v28 - v94[1]; /*0x4be1c0*/
       __asm { fild dword ptr [esp+84h+var_44+4] } /*0x4be1c8*/
@@ -4684,10 +4626,14 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         fstp st
         fstp st
       }
+    double v78; // [esp+4h] [ebp-84h]
       Math::Sqrt(v78); /*0x4be1f2*/
+    int v35; // eax
       LOWORD(v35) = Math::RoundToInt(v8); /*0x4be1fa*/
+    int v111; // [esp+9Ch] [ebp+14h]
       v111 = v35; /*0x4be1ff*/
       __asm { fild [esp+7Ch+arg_10] } /*0x4be208*/
+    int v112; // [esp+9Ch] [ebp+14h]
       v112 = v23 - v27; /*0x4be211*/
       __asm /*0x4be218*/
       {
@@ -4695,7 +4641,9 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         fild [esp+7Ch+arg_10]
         fmulp st(1), st
       }
+    int v36; // eax
       LOWORD(v36) = Math::RoundToInt(v8); /*0x4be225*/
+    unsigned int v37; // eax
       v37 = abs32(v36); /*0x4be22d*/
       if ( v27 <= v23 ) /*0x4be231*/
         v109 = v27 + v37; /*0x4be240*/
@@ -4703,26 +4651,39 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
         v109 = v27 - v37; /*0x4be235*/
     }
     (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this); /*0x4be24f*/
+    int v38; // ebx
     v38 = (*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v95, v96); /*0x4be269*/
+    unsigned __int8 *v108; // [esp+98h] [ebp+10h]
     v108 = (unsigned __int8 *)v38; /*0x4be26d*/
     if ( !g_ZBufferDescriptor ) /*0x4be274*/
       return 0; /*0x4be274*/
+    int Stream_field_04; // edi
     Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4be27e*/
     v94[2] = v96; /*0x4be285*/
+    _WORD *SamplePosition; // esi
     SamplePosition = (_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v95, v96 - Stream_field_04); /*0x4be29c*/
+    int v41; // edi
     v41 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4); /*0x4be2a2*/
     v94[2] = v96; /*0x4be2a5*/
+    unsigned __int16 *v42; // ebp
     v42 = (unsigned __int16 *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.q0D8[60], v95, v96 - v41); /*0x4be2b6*/
+    int v85; // [esp+2Ch] [ebp-5Ch]
     v85 = -1; /*0x4be2c1*/
     LOWORD(v41) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4be2cd*/
+    int pad_0; // [esp+8Ch] [ebp+4h]
     pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->q000; /*0x4be2d4*/
     a8 = v109 + v41 - v96 - v99; /*0x4be2ea*/
     if ( !v38 ) /*0x4be2f1*/
       return 0; /*0x4be9b9*/
+    int v86; // [esp+30h] [ebp-58h]
     v86 = v97[0] - v95; /*0x4be305*/
+    int v43; // edi
     v43 = v97[1] - v96; /*0x4be310*/
+    int v44; // ebx
     v44 = a7 - v109; /*0x4be31a*/
+    int v45; // eax
     v45 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4be31c*/
+    int v80; // [esp+20h] [ebp-68h]
     v80 = v45; /*0x4be321*/
     if ( v43 < 0 ) /*0x4be325*/
     {
@@ -4730,40 +4691,55 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
       v80 = -v45; /*0x4be33a*/
       pad_0 = -pad_0; /*0x4be33e*/
     }
+    int v84; // [esp+28h] [ebp-60h]
     v84 = 1; /*0x4be347*/
+    int v46; // ecx
     v46 = abs32(v43); /*0x4be354*/
     if ( v44 < 0 ) /*0x4be358*/
       v84 = -1; /*0x4be35a*/
     LOWORD(a7) = 0; /*0x4be364*/
+    int v47; // eax
     v47 = abs32(v44); /*0x4be377*/
     BYTE2(a7) = 0; /*0x4be37f*/
+    int v104; // [esp+94h] [ebp+Ch]
     v104 = 2 * v86; /*0x4be38a*/
+    int v103; // [esp+90h] [ebp+8h]
     v103 = 2 * v46; /*0x4be394*/
+    int v79; // [esp+1Ch] [ebp-6Ch]
     v79 = 2 * v47; /*0x4be39e*/
     if ( v47 <= v86 || v47 <= v46 ) /*0x4be3aa*/
     {
       if ( v86 <= v46 ) /*0x4be5aa*/
       {
+    int v67; // edi
         v67 = v104 - v46; /*0x4be7b5*/
+    int v68; // ebx
         v68 = v79 - v46; /*0x4be7b7*/
         *(_DWORD *)&v93[4] = v104 - v46; /*0x4be7bb*/
         *(_DWORD *)v93 = v79 - v46; /*0x4be7bf*/
         if ( v46 > 0 ) /*0x4be7c3*/
         {
           v94[1] = v46; /*0x4be7d0*/
+    Stream *v69; // ecx
           v69 = g_ZBufferDescriptor; /*0x4be7d4*/
+    int v83; // [esp+24h] [ebp-64h]
           v83 = 0; /*0x4be7da*/
+    int v88; // [esp+30h] [ebp-58h]
           v88 = 2 * pad_0; /*0x4be7e5*/
           do /*0x4be99b*/
           {
+    int v70; // edx
             v70 = *v42; /*0x4be7f6*/
             if ( (unsigned __int16)a8 < *SamplePosition ) /*0x4be7fa*/
             {
+    unsigned __int16 v71; // di
               v71 = *(_WORD *)&v108[v83]; /*0x4be80b*/
+    __int16 v115; // [esp+9Ch] [ebp+14h]
               LOBYTE(v115) = (unsigned __int8)(v71 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be82a*/
               HIBYTE(v115) = (unsigned __int8)(v71 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be845*/
               LOWORD(a7) = v115; /*0x4be861*/
               BYTE2(a7) = (unsigned __int8)(v71 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be870*/
+    __int16 v72; // ax
               v72 = BlendColorPack((unsigned __int8 *)&a7, (v91 * v70) >> 7, (v90 * v70) >> 7, (v89 * v70) >> 7); /*0x4be895*/
               v67 = *(_DWORD *)&v93[4]; /*0x4be89e*/
               *(_WORD *)&v108[v83] = v72; /*0x4be8a2*/
@@ -4791,6 +4767,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             *(_DWORD *)v93 = v68; /*0x4be92a*/
             if ( pad_0 <= 0 ) /*0x4be92e*/
             {
+    _WORD *v73; // eax
               v73 = SamplePosition; /*0x4be93d*/
               if ( (unsigned int)SamplePosition < v69[1].Stream_field_04 ) /*0x4be941*/
                 v73 = (_WORD *)((char *)SamplePosition + v69[1].Stream_field_0C); /*0x4be946*/
@@ -4803,6 +4780,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             v42 = (unsigned __int16 *)((char *)v42 + v88); /*0x4be955*/
             if ( pad_0 <= 0 ) /*0x4be959*/
             {
+    unsigned __int16 *v74; // eax
               v74 = v42; /*0x4be970*/
               if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 24) ) /*0x4be975*/
                 v74 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be97a*/
@@ -4821,23 +4799,30 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
       }
       else
       {
+    int v58; // edi
         v58 = v103 - v86; /*0x4be5bf*/
         *(_DWORD *)&v93[4] = v103 - v86; /*0x4be5c3*/
         *(_DWORD *)v93 = v79 - v86; /*0x4be5c9*/
+    int v82; // [esp+24h] [ebp-64h]
         v82 = 0; /*0x4be5cd*/
         if ( v86 > 0 ) /*0x4be5d5*/
         {
+    Stream *v59; // ebx
           v59 = g_ZBufferDescriptor; /*0x4be5db*/
           do /*0x4be78f*/
           {
+    int v60; // edx
             v60 = *v42; /*0x4be5ee*/
             if ( (unsigned __int16)a8 < *SamplePosition ) /*0x4be5f2*/
             {
+    unsigned __int16 v61; // di
               v61 = *(_WORD *)&v108[2 * v82]; /*0x4be603*/
+    __int16 v114; // [esp+9Ch] [ebp+14h]
               LOBYTE(v114) = (unsigned __int8)(v61 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be622*/
               HIBYTE(v114) = (unsigned __int8)(v61 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be63d*/
               LOWORD(a7) = v114; /*0x4be659*/
               BYTE2(a7) = (unsigned __int8)(v61 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be668*/
+    __int16 v62; // ax
               v62 = BlendColorPack((unsigned __int8 *)&a7, (v91 * v60) >> 7, (v90 * v60) >> 7, (v89 * v60) >> 7); /*0x4be68d*/
               v58 = *(_DWORD *)&v93[4]; /*0x4be696*/
               *(_WORD *)&v108[2 * v82] = v62; /*0x4be69a*/
@@ -4850,6 +4835,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
               SamplePosition += pad_0; /*0x4be6d3*/
               if ( pad_0 <= 0 ) /*0x4be6d7*/
               {
+    _WORD *v63; // eax
                 v63 = SamplePosition; /*0x4be6e6*/
                 if ( (unsigned int)SamplePosition < v59[1].Stream_field_04 ) /*0x4be6ea*/
                   v63 = (_WORD *)((char *)SamplePosition + v59[1].Stream_field_0C); /*0x4be6ef*/
@@ -4862,6 +4848,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
               v42 += pad_0; /*0x4be6fa*/
               if ( pad_0 <= 0 ) /*0x4be6fe*/
               {
+    unsigned __int16 *v64; // eax
                 v64 = v42; /*0x4be715*/
                 if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 24) ) /*0x4be71a*/
                   v64 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be71f*/
@@ -4873,6 +4860,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
               }
               a8 += v85; /*0x4be730*/
             }
+    int v65; // eax
             v65 = *(_DWORD *)v93; /*0x4be737*/
             if ( *(int *)v93 > 0 ) /*0x4be73d*/
             {
@@ -4881,6 +4869,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             }
             ++SamplePosition; /*0x4be769*/
             *(_DWORD *)v93 = v79 + v65; /*0x4be76c*/
+    unsigned int Stream_field_08; // eax
             Stream_field_08 = v59[1].Stream_field_08; /*0x4be770*/
             v58 += v103; /*0x4be773*/
             *(_DWORD *)&v93[4] = v58; /*0x4be777*/
@@ -4894,25 +4883,34 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     }
     else
     {
+    int v48; // edi
       v48 = v103 - v47; /*0x4be3be*/
+    int v49; // ecx
       v49 = v104 - v47; /*0x4be3c0*/
       *(_DWORD *)v93 = v103 - v47; /*0x4be3c4*/
+    int v87; // [esp+30h] [ebp-58h]
       v87 = v104 - v47; /*0x4be3c8*/
       if ( v47 > 0 ) /*0x4be3cc*/
       {
+    Stream *v50; // ebx
         v50 = g_ZBufferDescriptor; /*0x4be3d2*/
+    int v81; // [esp+24h] [ebp-64h]
         v81 = 0; /*0x4be3d8*/
         *(_DWORD *)&v93[4] = v47; /*0x4be3e0*/
         do /*0x4be58d*/
         {
+    int v51; // edx
           v51 = *v42; /*0x4be3f1*/
           if ( (unsigned __int16)a8 < *SamplePosition ) /*0x4be3f5*/
           {
+    unsigned __int16 v52; // di
             v52 = *(_WORD *)&v108[v81]; /*0x4be406*/
+    __int16 v113; // [esp+9Ch] [ebp+14h]
             LOBYTE(v113) = (unsigned __int8)(v52 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4be425*/
             HIBYTE(v113) = (unsigned __int8)(v52 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4be440*/
             LOWORD(a7) = v113; /*0x4be45c*/
             BYTE2(a7) = (unsigned __int8)(v52 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4be46b*/
+    __int16 v53; // ax
             v53 = BlendColorPack((unsigned __int8 *)&a7, (v91 * v51) >> 7, (v90 * v51) >> 7, (v89 * v51) >> 7); /*0x4be490*/
             v48 = *(_DWORD *)v93; /*0x4be499*/
             v49 = v87; /*0x4be49d*/
@@ -4926,6 +4924,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             SamplePosition += pad_0; /*0x4be4d7*/
             if ( pad_0 <= 0 ) /*0x4be4db*/
             {
+    _WORD *v54; // eax
               v54 = SamplePosition; /*0x4be4ea*/
               if ( (unsigned int)SamplePosition < v50[1].Stream_field_04 ) /*0x4be4ec*/
                 v54 = (_WORD *)((char *)SamplePosition + v50[1].Stream_field_0C); /*0x4be4f1*/
@@ -4938,6 +4937,7 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             v42 += pad_0; /*0x4be4f5*/
             if ( pad_0 <= 0 ) /*0x4be4f9*/
             {
+    unsigned __int16 *v55; // eax
               v55 = v42; /*0x4be510*/
               if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 24) ) /*0x4be515*/
                 v55 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be51a*/
@@ -4974,89 +4974,36 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
 // truth-filled 0x4C0E30 (G42.52 truth-emitting generator)
 bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd::Vector2D<int> const& a1, unsigned short a2, bool a3)
 {
-    int *v6; // eax
-    int v7; // ecx
-    int v8; // eax
-    int v9; // ecx
-    int v10; // esi
-    int v11; // edx
     int v12; // eax
-    _WORD *v13; // esi
-    int v14; // edx
-    __int16 *v15; // ecx
-    _DWORD *v16; // eax
-    int v17; // ecx
-    int v18; // eax
-    __int16 *v19; // ebp
-    int v20; // edx
-    _DWORD *v21; // eax
-    int v22; // ebx
-    int v23; // edi
-    int v24; // eax
-    int v25; // eax
-    int v26; // ebp
-    int v27; // edx
-    int v28; // ecx
-    _DWORD *v29; // eax
-    __int16 *v30; // edi
-    int v31; // edx
-    _DWORD *v32; // ecx
-    __int16 *v33; // eax
-    int v34; // edi
-    int v35; // edx
-    __int16 *v36; // ecx
-    _DWORD *v37; // eax
-    int v38; // ecx
-    int v39; // eax
-    __int16 *v40; // ebp
-    int v41; // edx
-    _DWORD *v42; // eax
-    int v43; // ebx
-    int v44; // edi
-    int v45; // eax
-    int v46; // ebp
-    int v47; // eax
-    int v48; // ecx
-    int v49; // edx
-    _DWORD *v50; // eax
-    __int16 *v51; // edi
-    int v53; // edx
-    _DWORD *v54; // ecx
-    int v55; // edi
-    int v56; // [esp+Ch] [ebp-3Ch]
-    int v57; // [esp+Ch] [ebp-3Ch]
-    int v58; // [esp+10h] [ebp-38h]
-    int v59; // [esp+10h] [ebp-38h]
-    int v60; // [esp+10h] [ebp-38h]
-    _DWORD v62[4]; // [esp+18h] [ebp-30h] BYREF
-    int v63; // [esp+28h] [ebp-20h] BYREF
-    int v64; // [esp+2Ch] [ebp-1Ch]
-    int v65; // [esp+30h] [ebp-18h] BYREF
-    int v66; // [esp+34h] [ebp-14h]
-    int v67; // [esp+38h] [ebp-10h] BYREF
-    int v68; // [esp+3Ch] [ebp-Ch]
-    int v69; // [esp+40h] [ebp-8h]
-    int v70; // [esp+44h] [ebp-4h]
-    int v71; // [esp+4Ch] [ebp+4h]
-    __int16 *v72; // [esp+50h] [ebp+8h]
-    int v73; // [esp+58h] [ebp+10h]
-    int v74; // [esp+58h] [ebp+10h]
 
     if ( (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c0e45*/
       return 0; /*0x4c0e45*/
+    int *v6; // eax
+    _DWORD v62[4]; // [esp+18h] [ebp-30h] BYREF
     v6 = (int *)(*((int (__thiscall **)(DSurface *, _DWORD *))this->DSurface_field_0x0 + 30))(this, v62); /*0x4c0e55*/
+    int v67; // [esp+38h] [ebp-10h] BYREF
     v67 = *v6; /*0x4c0e5a*/
+    int v68; // [esp+3Ch] [ebp-Ch]
     v68 = v6[1]; /*0x4c0e61*/
+    int v69; // [esp+40h] [ebp-8h]
     v69 = v6[2]; /*0x4c0e68*/
+    int v70; // [esp+44h] [ebp-4h]
     v70 = v6[3]; /*0x4c0e73*/
+    int v7; // ecx
     v7 = v68 + a2[1]; /*0x4c0e7e*/
+    int v63; // [esp+28h] [ebp-20h] BYREF
     v63 = v67 + *a2; /*0x4c0e80*/
+    int v64; // [esp+2Ch] [ebp-1Ch]
     v64 = v7; /*0x4c0e84*/
+    int v8; // eax
     v8 = v67 + *a3; /*0x4c0e93*/
+    int v66; // [esp+34h] [ebp-14h]
     v66 = v68 + a3[1]; /*0x4c0e95*/
+    int v65; // [esp+30h] [ebp-18h] BYREF
     v65 = v8; /*0x4c0ea6*/
     if ( !(unsigned __int8)ClipLine(&v63, &v65, &v67) ) /*0x4c0eaa*/
       return 0; /*0x4c0eaa*/
+    int v9; // ecx
     v9 = v63; /*0x4c0eb7*/
     if ( v63 <= v65 ) /*0x4c0ec1*/
     {
@@ -5064,7 +5011,9 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
     }
     else
     {
+    int v10; // esi
       v10 = v64; /*0x4c0ec3*/
+    int v11; // edx
       v11 = v63; /*0x4c0ec7*/
       v9 = v65; /*0x4c0ec9*/
       v12 = v66; /*0x4c0ecb*/
@@ -5074,13 +5023,16 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
       v66 = v10; /*0x4c0edb*/
     }
     v62[1] = v12; /*0x4c0eeb*/
+    _WORD *v13; // esi
     v13 = (_WORD *)StreamClass::ReadAndSeek( /*0x4c0f01*/
                      *(int **)&stru_87E790.q0D8[60],
                      v9,
                      v12 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4));
+    int v71; // [esp+4Ch] [ebp+4h]
     v71 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x4c0f10*/
     if ( v64 > v66 ) /*0x4c0f14*/
       v71 = -*(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x4c0f18*/
+    __int16 *v72; // [esp+50h] [ebp+8h]
     v72 = (__int16 *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v63, v64); /*0x4c0f2c*/
     if ( !v72 ) /*0x4c0f30*/
       return 0; /*0x4c1428*/
@@ -5088,10 +5040,13 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
     {
       if ( v64 == v66 ) /*0x4c0f4d*/
       {
+    int v14; // edx
         v14 = 0; /*0x4c0f57*/
         if ( v65 - v63 >= 0 ) /*0x4c0f5b*/
         {
+    __int16 *v15; // ecx
           v15 = v72; /*0x4c0f61*/
+    _DWORD *v16; // eax
           v16 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0f69*/
           do /*0x4c0fae*/
           {
@@ -5117,15 +5072,20 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
       }
       else if ( v63 == v65 ) /*0x4c0fcf*/
       {
+    int v17; // ecx
         if ( v64 <= v66 ) /*0x4c0fd7*/
           v17 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fef*/
         else
           v17 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fe3*/
+    int v18; // eax
         v18 = abs32(v66 - v64); /*0x4c0ffe*/
         if ( v18 >= 0 ) /*0x4c1000*/
         {
+    __int16 *v19; // ebp
           v19 = v72; /*0x4c100e*/
+    int v20; // edx
           v20 = v18 + 1; /*0x4c1012*/
+    _DWORD *v21; // eax
           v21 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1015*/
           do /*0x4c1045*/
           {
@@ -5152,24 +5112,36 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
       }
       else
       {
+    int v22; // ebx
         v22 = v65 - v63; /*0x4c1063*/
+    int v23; // edi
         v23 = v66 - v64; /*0x4c1067*/
+    int v24; // eax
         v24 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1069*/
+    int v73; // [esp+58h] [ebp+10h]
         v73 = v24; /*0x4c106e*/
         if ( v23 < 0 ) /*0x4c1072*/
           v73 = -v24; /*0x4c1076*/
+    int v25; // eax
         v25 = abs32(v23); /*0x4c107f*/
         v62[0] = 2 * v22; /*0x4c1086*/
+    int v26; // ebp
         v26 = 2 * v25; /*0x4c108a*/
+    int v56; // [esp+Ch] [ebp-3Ch]
         v56 = 2 * v25; /*0x4c108d*/
         if ( v22 <= v25 ) /*0x4c1091*/
         {
+    int v31; // edx
           v31 = 2 * v22 - v25; /*0x4c1126*/
           if ( v25 > 0 ) /*0x4c112a*/
           {
+    _DWORD *v32; // ecx
             v32 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1130*/
+    int v58; // [esp+10h] [ebp-38h]
             v58 = v25; /*0x4c113a*/
+    __int16 *v33; // eax
             v33 = v72; /*0x4c113e*/
+    int v34; // edi
             v34 = 0; /*0x4c1142*/
             while ( 1 ) /*0x4c114a*/
             {
@@ -5206,11 +5178,15 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
         }
         else
         {
+    int v27; // edx
           v27 = 0; /*0x4c1099*/
+    int v28; // ecx
           v28 = v26 - v22; /*0x4c109b*/
           if ( v22 > 0 ) /*0x4c109f*/
           {
+    _DWORD *v29; // eax
             v29 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c10a5*/
+    __int16 *v30; // edi
             v30 = v72; /*0x4c10aa*/
             do /*0x4c110f*/
             {
@@ -5246,10 +5222,13 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
     }
     else if ( v64 == v66 ) /*0x4c11bc*/
     {
+    int v35; // edx
       v35 = 0; /*0x4c11c6*/
       if ( v65 - v63 >= 0 ) /*0x4c11ca*/
       {
+    __int16 *v36; // ecx
         v36 = v72; /*0x4c11d0*/
+    _DWORD *v37; // eax
         v37 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c11d8*/
         do /*0x4c121d*/
         {
@@ -5275,15 +5254,20 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
     }
     else if ( v63 == v65 ) /*0x4c123e*/
     {
+    int v38; // ecx
       if ( v64 <= v66 ) /*0x4c1246*/
         v38 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c125e*/
       else
         v38 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1252*/
+    int v39; // eax
       v39 = abs32(v66 - v64); /*0x4c126d*/
       if ( v39 >= 0 ) /*0x4c126f*/
       {
+    __int16 *v40; // ebp
         v40 = v72; /*0x4c127d*/
+    int v41; // edx
         v41 = v39 + 1; /*0x4c1281*/
+    _DWORD *v42; // eax
         v42 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1284*/
         do /*0x4c12b4*/
         {
@@ -5310,26 +5294,38 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
     }
     else
     {
+    int v43; // ebx
       v43 = v65 - v63; /*0x4c12cf*/
+    int v44; // edi
       v44 = v66 - v64; /*0x4c12d5*/
+    int v45; // eax
       v45 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c12d9*/
+    int v46; // ebp
       v46 = v45; /*0x4c12dc*/
+    int v59; // [esp+10h] [ebp-38h]
       v59 = v45; /*0x4c12e0*/
       if ( v44 < 0 ) /*0x4c12e4*/
       {
         v46 = -v45; /*0x4c12e6*/
         v59 = -v45; /*0x4c12e8*/
       }
+    int v47; // eax
       v47 = abs32(v44); /*0x4c12f1*/
+    int v57; // [esp+Ch] [ebp-3Ch]
       v57 = 2 * v43; /*0x4c12f8*/
+    int v74; // [esp+58h] [ebp+10h]
       v74 = 2 * v47; /*0x4c12ff*/
       if ( v43 <= v47 ) /*0x4c1303*/
       {
+    int v53; // edx
         v53 = 2 * v43 - v47; /*0x4c1395*/
         if ( v47 > 0 ) /*0x4c1399*/
         {
+    _DWORD *v54; // ecx
           v54 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c139b*/
+    int v60; // [esp+10h] [ebp-38h]
           v60 = v47; /*0x4c13a1*/
+    int v55; // edi
           v55 = 0; /*0x4c13a9*/
           do /*0x4c140f*/
           {
@@ -5365,11 +5361,15 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
       }
       else
       {
+    int v48; // ecx
         v48 = 2 * v47 - v43; /*0x4c1309*/
+    int v49; // edx
         v49 = 0; /*0x4c130b*/
         if ( v43 > 0 ) /*0x4c130f*/
         {
+    _DWORD *v50; // eax
           v50 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1315*/
+    __int16 *v51; // edi
           v51 = v72; /*0x4c131a*/
           do /*0x4c137e*/
           {
@@ -5408,103 +5408,103 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
 // truth-filled 0x4BB830 (G42.52 truth-emitting generator)
 bool gamemd::XSurface::FillRectWithFlags(gamemd::RectangleStruct const& a0, gamemd::ColorStruct const& a1, int a2)
 {
+
     int v5; // ecx
     int v6; // edi
-    int *v8; // eax
-    _DWORD *v9; // eax
-    int v10; // ecx
-    unsigned int v11; // ebp
-    unsigned int v12; // esi
-    _DWORD *v13; // eax
-    int v14; // eax
-    int v15; // edx
-    unsigned int v16; // edi
-    int v17; // edx
-    int v18; // ebx
-    int v19; // ebx
-    int v20; // eax
-    unsigned int v21; // ecx
-    int v22; // edx
-    int v23; // esi
-    int v24; // edi
-    unsigned __int16 *v25; // eax
-    int v26; // eax
-    __int16 v27; // bp
-    int v28; // ebx
-    int v29; // [esp+10h] [ebp-5Ch]
-    __int16 v30; // [esp+14h] [ebp-58h]
-    __int16 v31; // [esp+18h] [ebp-54h]
-    int v32; // [esp+1Ch] [ebp-50h]
-    unsigned __int16 v33; // [esp+20h] [ebp-4Ch]
-    unsigned int v34; // [esp+24h] [ebp-48h]
-    int v35; // [esp+28h] [ebp-44h]
-    unsigned int v36; // [esp+2Ch] [ebp-40h]
-    __int16 i; // [esp+38h] [ebp-34h]
-    _DWORD v38[4]; // [esp+3Ch] [ebp-30h] BYREF
-    _DWORD v39[2]; // [esp+4Ch] [ebp-20h] BYREF
-    int v40; // [esp+54h] [ebp-18h]
-    int v41; // [esp+58h] [ebp-14h]
-    _DWORD v42[4]; // [esp+5Ch] [ebp-10h] BYREF
-    DSurface *thisa; // [esp+70h] [ebp+4h]
-    _WORD *v44; // [esp+74h] [ebp+8h]
-    unsigned int v45; // [esp+78h] [ebp+Ch]
-
     v6 = v5; /*0x4bb837*/
+    int v32; // [esp+1Ch] [ebp-50h]
     v32 = v5; /*0x4bb839*/
     if ( (*(int (**)(void))(*(_DWORD *)v5 + 112))() < 2 ) /*0x4bb845*/
       return 0; /*0x4bb847*/
     if ( (int)this->q008 <= 0 || (int)this->q00C <= 0 ) /*0x4bb863*/
       return 0; /*0x4bb865*/
+    int *v8; // eax
+    _DWORD v38[4]; // [esp+3Ch] [ebp-30h] BYREF
     v8 = (int *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v6 + 120))(v6, v38); /*0x4bb87a*/
+    _DWORD *v9; // eax
+    _DWORD v42[4]; // [esp+5Ch] [ebp-10h] BYREF
     v9 = ClipRectIntersection(v42, v8, (int *)this, 0, 0); /*0x4bb888*/
+    _DWORD v39[2]; // [esp+4Ch] [ebp-20h] BYREF
     v39[0] = *v9; /*0x4bb891*/
     v39[1] = v9[1]; /*0x4bb898*/
+    int v40; // [esp+54h] [ebp-18h]
     v40 = v9[2]; /*0x4bb89f*/
+    int v10; // ecx
     v10 = v9[3]; /*0x4bb8a3*/
+    int v41; // [esp+58h] [ebp-14h]
     v41 = v10; /*0x4bb8a8*/
     if ( v40 <= 0 || v10 <= 0 ) /*0x4bb8b0*/
       return 0; /*0x4bb8b2*/
+    unsigned int v11; // ebp
     v11 = 0xFFu >> g_BitShift_Green_0 << g_BitShift_Red; /*0x4bb8de*/
+    __int16 v31; // [esp+18h] [ebp-54h]
     v31 = v11; /*0x4bb8f1*/
+    unsigned int v12; // esi
     v12 = 0xFFu >> g_BitMask_Blue << g_BitMask_Green; /*0x4bb8f5*/
+    __int16 v30; // [esp+14h] [ebp-58h]
     v30 = v12; /*0x4bb908*/
+    unsigned int v34; // [esp+24h] [ebp-48h]
     v34 = 0xFFu >> g_BitMask_Red << g_BitShift_Blue; /*0x4bb917*/
+    _DWORD *v13; // eax
     v13 = CellStruct::Copy((CellStruct *)v39, v38); /*0x4bb91b*/
+    int v35; // [esp+28h] [ebp-44h]
     v35 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v6 + 92))(v6, *v13, v13[1]); /*0x4bb938*/
     if ( !v35 ) /*0x4bb93c*/
       return 0; /*0x4bb93e*/
+    int v14; // eax
     v14 = (int)a4; /*0x4bb94a*/
     if ( (unsigned int)a4 > 0x64 ) /*0x4bb951*/
       v14 = 100; /*0x4bb953*/
+    int v15; // edx
     v15 = (1374389535 * (unsigned __int64)(unsigned int)(255 * v14)) >> 32; /*0x4bb967*/
+    unsigned int v16; // edi
     v16 = 255 * v14 / 0x64u; /*0x4bb970*/
+    unsigned __int16 v33; // [esp+20h] [ebp-4Ch]
     v33 = 255 - v16; /*0x4bb97b*/
+    unsigned int v45; // [esp+78h] [ebp+Ch]
     v45 = v16; /*0x4bb983*/
+    DSurface *thisa; // [esp+70h] [ebp+4h]
     thisa = 0; /*0x4bb987*/
     LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a3 + 2) >> g_BitMask_Red); /*0x4bb99a*/
     LOWORD(v15) = (unsigned __int8)(*(_BYTE *)(a3 + 1) >> g_BitMask_Blue); /*0x4bb9b1*/
+    int v17; // edx
     v17 = v15 << g_BitMask_Green; /*0x4bb9b5*/
+    int v18; // ebx
     v18 = v17 | (a2 << g_BitShift_Blue); /*0x4bb9c5*/
     LOWORD(v17) = (unsigned __int8)(*(_BYTE *)a3 >> g_BitShift_Green_0); /*0x4bb9ca*/
+    int v19; // ebx
     v19 = (v17 << g_BitShift_Red) | v18; /*0x4bb9d2*/
+    __int16 i; // [esp+38h] [ebp-34h]
     for ( i = v19; (int)thisa < v41; thisa = (DSurface *)((char *)thisa + 1) ) /*0x4bb9da*/
     {
+    int v29; // [esp+10h] [ebp-5Ch]
       v29 = 0; /*0x4bb9ed*/
+    int v20; // eax
       v20 = (_DWORD)thisa * ((*(int (__thiscall **)(int))(*(_DWORD *)v32 + 116))(v32) / 2); /*0x4bb9fa*/
       if ( v40 > 0 ) /*0x4bba01*/
       {
         v11 = (unsigned __int16)v11; /*0x4bba0f*/
+    unsigned int v21; // ecx
         v21 = (unsigned __int16)v12; /*0x4bba15*/
+    int v22; // edx
         v22 = v16 * (v12 & (unsigned __int16)v19); /*0x4bba23*/
+    int v23; // esi
         v23 = v16 * (unsigned __int16)(v19 & v11); /*0x4bba26*/
+    int v24; // edi
         v24 = v45 * (unsigned __int16)(v19 & v34); /*0x4bba4b*/
+    unsigned __int16 *v25; // eax
         v25 = (unsigned __int16 *)(v35 + 2 * v20); /*0x4bba50*/
+    unsigned int v36; // [esp+2Ch] [ebp-40h]
         v36 = (unsigned __int16)v11; /*0x4bba53*/
+    _WORD *v44; // [esp+74h] [ebp+8h]
         v44 = v25; /*0x4bba57*/
         while ( 1 ) /*0x4bba68*/
         {
+    int v26; // eax
           v26 = *v25; /*0x4bba68*/
+    __int16 v27; // bp
           v27 = v30 & ((v22 + v33 * (v26 & v21)) >> 8) | v31 & ((v23 + v33 * (v26 & v11)) >> 8); /*0x4bba8b*/
+    int v28; // ebx
           v28 = (unsigned __int16)(v26 & v34); /*0x4bba91*/
           v25 = v44 + 1; /*0x4bba9c*/
           *v44++ = ((v24 + (unsigned int)v33 * v28) >> 8) | v27; /*0x4bbaa8*/
@@ -5524,13 +5524,10 @@ bool gamemd::XSurface::FillRectWithFlags(gamemd::RectangleStruct const& a0, game
 // truth-filled 0x4BAF40 (G42.52 truth-emitting generator)
 bool gamemd::XSurface::Unlock()
 {
-    int v2; // eax
-    void *q00C; // edi
-    void *DSurface_field_0x0; // edx
-    int result; // eax
 
     if ( g_DDraw_Initialized || ((unsigned int *)&stru_A8EB00)[412] ) /*0x4baf54*/
     {
+    int v2; // eax
       v2 = this->u32_1C[0]; /*0x4baf56*/
       if ( v2 ) /*0x4baf5b*/
       {
@@ -5538,9 +5535,11 @@ bool gamemd::XSurface::Unlock()
           && !(*(int (__stdcall **)(int))(*(_DWORD *)this->u32_1C[0] + 108))(this->u32_1C[0])
           && !(*(int (__stdcall **)(int))(*(_DWORD *)this->u32_1C[0] + 96))(this->u32_1C[0]) )
         {
+    void *q00C; // edi
           q00C = this->q00C; /*0x4baf84*/
           if ( (int)q00C > 0 ) /*0x4baf89*/
           {
+    void *DSurface_field_0x0; // edx
             DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4baf8b*/
             this->q00C = 0; /*0x4baf93*/
             (*((void (__thiscall **)(DSurface *, _DWORD, _DWORD))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4baf96*/
@@ -5551,6 +5550,7 @@ bool gamemd::XSurface::Unlock()
         }
       }
     }
+    int result; // eax
     result = (int)this->q00C; /*0x4bafaa*/
     if ( result <= 0 ) /*0x4bafaf*/
     {
@@ -5573,10 +5573,10 @@ bool gamemd::XSurface::Unlock()
 // truth-filled 0x5656D0 (G42.52 truth-emitting generator)
 int gamemd::MapClass::IsVisible(gamemd::Vector2D<short> a0)
 {
-    unsigned int v2; // eax
-    int *v3; // eax
 
+    unsigned int v2; // eax
     v2 = (__int16)a2 + (SHIWORD(a2) << 9); /*0x5656ed*/
+    int *v3; // eax
     if ( v2 >= 0x40000 || (v3 = (int *)*((_DWORD *)this->q13C + v2)) == 0 ) /*0x565707*/
     {
       v3 = &g_MissionQueueFrame.briefing[130]; /*0x56570d*/
@@ -5885,8 +5885,8 @@ long gamemd::TEventClass::GetClassID(GUID* a0)
 // truth-filled 0x71F8C0 (G42.52 truth-emitting generator)
 long gamemd::TEventClass::Load(struct IStream* a0)
 {
-    int result; // eax
 
+    int result; // eax
     result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x71f8cb*/
     if ( result >= 0 ) /*0x71f8d2*/
     {
@@ -5908,8 +5908,8 @@ long gamemd::TEventClass::Load(struct IStream* a0)
 // truth-filled 0x71F930 (G42.52 truth-emitting generator)
 long gamemd::TEventClass::Save(struct IStream* a0, int a1)
 {
-    int result; // eax
 
+    int result; // eax
     result = AbstractClass::SaveLoad_Prefix((int *)this, a2, a3); /*0x71f93f*/
     if ( result >= 0 ) /*0x71f946*/
       return 0; /*0x71f948*/
@@ -5929,26 +5929,23 @@ long gamemd::TacticalClass::GetClassID(GUID* a0)
 // truth-filled 0x6DBD20 (G42.52 truth-emitting generator)
 long gamemd::TacticalClass::Load(struct IStream* a0)
 {
-    int result; // eax
-    int v3; // eax
-    int v4; // edi
-    int *v5; // ebx
-    int v6; // eax
     int v7; // eax
     int v8; // ecx
-    int v9; // [esp+4h] [ebp-8h] BYREF
-    int v10; // [esp+8h] [ebp-4h]
 
+    int result; // eax
     result = AbstractClass::SaveLoad_Prefix_0(this, a2); /*0x6dbd2e*/
     if ( result >= 0 ) /*0x6dbd35*/
     {
       if ( this ) /*0x6dbd3d*/
         SmallFunc_6D1E30(this, (int)&a2); /*0x6dbd46*/
+    int v3; // eax
       v3 = *(_DWORD *)&this->q0AC[52]; /*0x6dbd4b*/
+    int v4; // edi
       v4 = 0; /*0x6dbd52*/
       *(_DWORD *)&this->qDA8[8] = 0; /*0x6dbd54*/
       if ( v3 > 0 ) /*0x6dbd60*/
       {
+    int *v5; // ebx
         v5 = (int *)&this->q0AC[56]; /*0x6dbd63*/
         do /*0x6dbd80*/
         {
@@ -5958,8 +5955,11 @@ long gamemd::TacticalClass::Load(struct IStream* a0)
         }
         while ( v4 < *(_DWORD *)&this->q0AC[52] ); /*0x6dbd80*/
       }
+    int v6; // eax
       v6 = *(_DWORD *)&this->__pad_11F[3145]; /*0x6dbd89*/
+    int v9; // [esp+4h] [ebp-8h] BYREF
       v9 = *(_DWORD *)&this->__pad_11F[3141]; /*0x6dbd93*/
+    int v10; // [esp+8h] [ebp-4h]
       v10 = v6; /*0x6dbd9a*/
       if ( !ClampCoordMap(&v9) || ((unsigned int *)&stru_A8EB00)[391] ) /*0x6dbdaf*/
       {
@@ -5984,8 +5984,8 @@ long gamemd::TacticalClass::Load(struct IStream* a0)
 // truth-filled 0x6DBE00 (G42.52 truth-emitting generator)
 long gamemd::TacticalClass::Save(struct IStream* a0, int a1)
 {
-    int result; // eax
 
+    int result; // eax
     result = AbstractClass::SaveLoad_Prefix((int *)this->q000, a2, a3); /*0x6dbe0f*/
     if ( result >= 0 ) /*0x6dbe16*/
       return 0; /*0x6dbe18*/
@@ -5994,15 +5994,11 @@ long gamemd::TacticalClass::Save(struct IStream* a0, int a1)
 // truth-filled 0x4C98B0 (G42.52 truth-emitting generator)
 long gamemd::TeamTypeClass::GetClassID(GUID* a0)
 {
-    int v2; // eax
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
-    int v7; // [esp+Ch] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4c98b7*/
     this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
     this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
+    int v2; // eax
     v2 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c98c4*/
     this->TeamTypeClass_field_34 = 0; /*0x4c98c9*/
     this->TeamTypeClass_field_2C = v2; /*0x4c98cc*/
@@ -6037,12 +6033,15 @@ long gamemd::TeamTypeClass::GetClassID(GUID* a0)
            *(_DWORD *)&stru_A83D50.__pad_C8[32] + *(_DWORD *)&stru_A83D50.__pad_C8[44],
            0) )
     {
+    int v3; // eax
       v3 = (*(_DWORD *)&stru_A83D50.__pad_C8[40])++; /*0x4c997a*/
       *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v3) = this; /*0x4c9989*/
     }
+    int v4; // eax
     v4 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c998c*/
     this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
     this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
+    int v7; // [esp+Ch] [ebp-8h]
     this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
     this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
     this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
@@ -6054,6 +6053,7 @@ long gamemd::TeamTypeClass::GetClassID(GUID* a0)
            g_BuildingLoadQueue_Array.ExtraPowerBonus + g_BuildingLoadQueue_Array.Height,
            0) )
     {
+    int v5; // eax
       v5 = g_BuildingLoadQueue_Array.Foundation[0]++; /*0x4c99e9*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5) = this; /*0x4c99f8*/
     }
@@ -6062,15 +6062,11 @@ long gamemd::TeamTypeClass::GetClassID(GUID* a0)
 // truth-filled 0x4C98B0 (G42.52 truth-emitting generator)
 long gamemd::TeamTypeClass::Load(struct IStream* a0)
 {
-    int v2; // eax
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
-    int v7; // [esp+Ch] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4c98b7*/
     this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
     this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
+    int v2; // eax
     v2 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c98c4*/
     this->TeamTypeClass_field_34 = 0; /*0x4c98c9*/
     this->TeamTypeClass_field_2C = v2; /*0x4c98cc*/
@@ -6105,12 +6101,15 @@ long gamemd::TeamTypeClass::Load(struct IStream* a0)
            *(_DWORD *)&stru_A83D50.__pad_C8[32] + *(_DWORD *)&stru_A83D50.__pad_C8[44],
            0) )
     {
+    int v3; // eax
       v3 = (*(_DWORD *)&stru_A83D50.__pad_C8[40])++; /*0x4c997a*/
       *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v3) = this; /*0x4c9989*/
     }
+    int v4; // eax
     v4 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c998c*/
     this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
     this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
+    int v7; // [esp+Ch] [ebp-8h]
     this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
     this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
     this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
@@ -6122,6 +6121,7 @@ long gamemd::TeamTypeClass::Load(struct IStream* a0)
            g_BuildingLoadQueue_Array.ExtraPowerBonus + g_BuildingLoadQueue_Array.Height,
            0) )
     {
+    int v5; // eax
       v5 = g_BuildingLoadQueue_Array.Foundation[0]++; /*0x4c99e9*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5) = this; /*0x4c99f8*/
     }
@@ -6130,15 +6130,11 @@ long gamemd::TeamTypeClass::Load(struct IStream* a0)
 // truth-filled 0x4C98B0 (G42.52 truth-emitting generator)
 long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
 {
-    int v2; // eax
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
-    int v7; // [esp+Ch] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4c98b7*/
     this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
     this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
+    int v2; // eax
     v2 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c98c4*/
     this->TeamTypeClass_field_34 = 0; /*0x4c98c9*/
     this->TeamTypeClass_field_2C = v2; /*0x4c98cc*/
@@ -6173,12 +6169,15 @@ long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
            *(_DWORD *)&stru_A83D50.__pad_C8[32] + *(_DWORD *)&stru_A83D50.__pad_C8[44],
            0) )
     {
+    int v3; // eax
       v3 = (*(_DWORD *)&stru_A83D50.__pad_C8[40])++; /*0x4c997a*/
       *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v3) = this; /*0x4c9989*/
     }
+    int v4; // eax
     v4 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c998c*/
     this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
     this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
+    int v7; // [esp+Ch] [ebp-8h]
     this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
     this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
     this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
@@ -6190,6 +6189,7 @@ long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
            g_BuildingLoadQueue_Array.ExtraPowerBonus + g_BuildingLoadQueue_Array.Height,
            0) )
     {
+    int v5; // eax
       v5 = g_BuildingLoadQueue_Array.Foundation[0]++; /*0x4c99e9*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5) = this; /*0x4c99f8*/
     }
@@ -6198,7 +6198,6 @@ long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
 // truth-filled 0x763810 (G42.52 truth-emitting generator)
 long gamemd::WaypointPathClass::GetClassID(GUID* a0)
 {
-    int v3; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
     *(_DWORD *)(this + 36) = -1; /*0x76381e*/
@@ -6222,6 +6221,7 @@ long gamemd::WaypointPathClass::GetClassID(GUID* a0)
             dword_B72610 + dword_B7261C,
             0)) )
     {
+    int v3; // eax
       v3 = dword_B72618++; /*0x7638a7*/
       *((_DWORD *)dword_B7260C + v3) = this; /*0x7638b6*/
     }
@@ -6230,7 +6230,6 @@ long gamemd::WaypointPathClass::GetClassID(GUID* a0)
 // truth-filled 0x763810 (G42.52 truth-emitting generator)
 long gamemd::WaypointPathClass::Load(struct IStream* a0)
 {
-    int v3; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
     *(_DWORD *)(this + 36) = -1; /*0x76381e*/
@@ -6254,6 +6253,7 @@ long gamemd::WaypointPathClass::Load(struct IStream* a0)
             dword_B72610 + dword_B7261C,
             0)) )
     {
+    int v3; // eax
       v3 = dword_B72618++; /*0x7638a7*/
       *((_DWORD *)dword_B7260C + v3) = this; /*0x7638b6*/
     }
@@ -6262,7 +6262,6 @@ long gamemd::WaypointPathClass::Load(struct IStream* a0)
 // truth-filled 0x763810 (G42.52 truth-emitting generator)
 long gamemd::WaypointPathClass::Save(struct IStream* a0, int a1)
 {
-    int v3; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
     *(_DWORD *)(this + 36) = -1; /*0x76381e*/
@@ -6286,6 +6285,7 @@ long gamemd::WaypointPathClass::Save(struct IStream* a0, int a1)
             dword_B72610 + dword_B7261C,
             0)) )
     {
+    int v3; // eax
       v3 = dword_B72618++; /*0x7638a7*/
       *((_DWORD *)dword_B7260C + v3) = this; /*0x7638b6*/
     }
@@ -6294,7 +6294,6 @@ long gamemd::WaypointPathClass::Save(struct IStream* a0, int a1)
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 long ra2::game::CaptureManagerClass::GetClassID(GUID* a0)
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -6322,6 +6321,7 @@ long ra2::game::CaptureManagerClass::GetClassID(GUID* a0)
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -6330,7 +6330,6 @@ long ra2::game::CaptureManagerClass::GetClassID(GUID* a0)
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 long ra2::game::CaptureManagerClass::Load(struct IStream* a0)
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -6358,6 +6357,7 @@ long ra2::game::CaptureManagerClass::Load(struct IStream* a0)
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -6366,7 +6366,6 @@ long ra2::game::CaptureManagerClass::Load(struct IStream* a0)
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 long ra2::game::CaptureManagerClass::QueryInterface(const GUID& a0, void** a1)
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -6394,6 +6393,7 @@ long ra2::game::CaptureManagerClass::QueryInterface(const GUID& a0, void** a1)
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -6402,7 +6402,6 @@ long ra2::game::CaptureManagerClass::QueryInterface(const GUID& a0, void** a1)
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 long ra2::game::CaptureManagerClass::Save(struct IStream* a0, int a1)
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -6430,6 +6429,7 @@ long ra2::game::CaptureManagerClass::Save(struct IStream* a0, int a1)
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -6438,8 +6438,6 @@ long ra2::game::CaptureManagerClass::Save(struct IStream* a0, int a1)
 // truth-filled 0x6AF360 (G42.52 truth-emitting generator)
 long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
 {
-    int v2; // eax
-    int v4; // [esp+8h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
     this->slaveVectorCount = 0; /*0x6af371*/
@@ -6461,6 +6459,7 @@ long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af3cb*/
+    int v4; // [esp+8h] [ebp-8h]
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -6473,6 +6472,7 @@ long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
            dword_B0B5F8 + dword_B0B604,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B600++; /*0x6af419*/
       *((_DWORD *)dword_B0B5F4 + v2) = this; /*0x6af428*/
     }
@@ -6481,8 +6481,6 @@ long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
 // truth-filled 0x6AF360 (G42.52 truth-emitting generator)
 long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
 {
-    int v2; // eax
-    int v4; // [esp+8h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
     this->slaveVectorCount = 0; /*0x6af371*/
@@ -6504,6 +6502,7 @@ long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af3cb*/
+    int v4; // [esp+8h] [ebp-8h]
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -6516,6 +6515,7 @@ long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
            dword_B0B5F8 + dword_B0B604,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B600++; /*0x6af419*/
       *((_DWORD *)dword_B0B5F4 + v2) = this; /*0x6af428*/
     }
@@ -6524,8 +6524,6 @@ long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
 // truth-filled 0x6AF360 (G42.52 truth-emitting generator)
 long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
 {
-    int v2; // eax
-    int v4; // [esp+8h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
     this->slaveVectorCount = 0; /*0x6af371*/
@@ -6547,6 +6545,7 @@ long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af3cb*/
+    int v4; // [esp+8h] [ebp-8h]
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -6559,6 +6558,7 @@ long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
            dword_B0B5F8 + dword_B0B604,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B600++; /*0x6af419*/
       *((_DWORD *)dword_B0B5F4 + v2) = this; /*0x6af428*/
     }
@@ -6567,8 +6567,6 @@ long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
 // truth-filled 0x6B6EA0 (G42.52 truth-emitting generator)
 long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
 {
-    int v2; // eax
-    int v4; // [esp+10h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
@@ -6587,6 +6585,7 @@ long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6f11*/
+    int v4; // [esp+10h] [ebp-8h]
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -6603,6 +6602,7 @@ long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
            dword_B0B888 + dword_B0B894,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B890++; /*0x6b6f76*/
       *((_DWORD *)dword_B0B884 + v2) = this; /*0x6b6f85*/
     }
@@ -6611,8 +6611,6 @@ long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
 // truth-filled 0x6B6EA0 (G42.52 truth-emitting generator)
 long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
 {
-    int v2; // eax
-    int v4; // [esp+10h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
@@ -6631,6 +6629,7 @@ long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6f11*/
+    int v4; // [esp+10h] [ebp-8h]
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -6647,6 +6646,7 @@ long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
            dword_B0B888 + dword_B0B894,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B890++; /*0x6b6f76*/
       *((_DWORD *)dword_B0B884 + v2) = this; /*0x6b6f85*/
     }
@@ -6655,8 +6655,6 @@ long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
 // truth-filled 0x6B6EA0 (G42.52 truth-emitting generator)
 long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
 {
-    int v2; // eax
-    int v4; // [esp+10h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
@@ -6675,6 +6673,7 @@ long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6f11*/
+    int v4; // [esp+10h] [ebp-8h]
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -6691,6 +6690,7 @@ long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
            dword_B0B888 + dword_B0B894,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B890++; /*0x6b6f76*/
       *((_DWORD *)dword_B0B884 + v2) = this; /*0x6b6f85*/
     }
@@ -6699,8 +6699,8 @@ long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
 // truth-filled 0x5D8170 (G42.52 truth-emitting generator)
 gamemd::Vector2D<short> * gamemd::MPBattleClass::AssignStartingPositionsToHouse(gamemd::Vector2D<short>* a0, int a1, gamemd::DynamicVectorClass<gamemd::Vector2D<short> >* a2, unsigned char* a3)
 {
-    _DWORD *v6; // eax
 
+    _DWORD *v6; // eax
     v6 = __2_YAPAXI_Z(0x40u); /*0x5d8172*/
     if ( v6 ) /*0x5d817c*/
       return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/
@@ -6710,19 +6710,18 @@ gamemd::Vector2D<short> * gamemd::MPBattleClass::AssignStartingPositionsToHouse(
 // truth-filled 0x5D6BE0 (G42.52 truth-emitting generator)
 gamemd::Vector2D<short> * gamemd::MPGameModeClass::AssignStartingPositionsToHouse(gamemd::Vector2D<short>* a0, int a1, gamemd::DynamicVectorClass<gamemd::Vector2D<short> >* a2, unsigned char* a3)
 {
-    int i; // edi
-    HouseClass *v2; // ecx
-    int startingAllies; // esi
     Multiplayer v5[4]; // [esp+4h] [ebp-18h] BYREF
     void *Block; // [esp+8h] [ebp-14h]
-    char v7; // [esp+11h] [ebp-Bh]
 
     Multiplayer::FindStartPositions(v5); /*0x5d6bec*/
+    int i; // edi
     for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5d6bfa*/
     {
+    HouseClass *v2; // ecx
       v2 = (HouseClass *)*((_DWORD *)((char *)&stru_A80220) + i); /*0x5d6c02*/
       if ( !*(_BYTE *)(v2->relatedTagsCapacity + 422) ) /*0x5d6c08*/
       {
+    int startingAllies; // esi
         startingAllies = v2->startingAllies; /*0x5d6c12*/
         if ( startingAllies != -2 ) /*0x5d6c1b*/
         {
@@ -6732,6 +6731,7 @@ gamemd::Vector2D<short> * gamemd::MPGameModeClass::AssignStartingPositionsToHous
       }
     }
     *(_DWORD *)v5 = (void *)&vt_VectorClass_Cell; /*0x5d6c45*/
+    char v7; // [esp+11h] [ebp-Bh]
     if ( Block && v7 ) /*0x5d6c58*/
       __3_YAXPAX_Z(Block); /*0x5d6c5b*/
     return 1; /*0x5d6c4f*/
@@ -6744,7 +6744,6 @@ unsigned int gamemd::FileClass::GetFileTime()
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 unsigned long ra2::game::CaptureManagerClass::AddRef()
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -6772,6 +6771,7 @@ unsigned long ra2::game::CaptureManagerClass::AddRef()
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -6780,7 +6780,6 @@ unsigned long ra2::game::CaptureManagerClass::AddRef()
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 unsigned long ra2::game::CaptureManagerClass::Release()
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -6808,6 +6807,7 @@ unsigned long ra2::game::CaptureManagerClass::Release()
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -7349,9 +7349,8 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
 // truth-filled 0x565AA0 (G42.52 truth-emitting generator)
 void gamemd::MapClass::AllocateCells()
 {
-    char *v2; // ecx
-    int result; // eax
 
+    char *v2; // ecx
     v2 = &this->q134[4]; /*0x565aa3*/
     if ( v2 ) /*0x565aab*/
     {
@@ -7362,6 +7361,7 @@ void gamemd::MapClass::AllocateCells()
       *(_DWORD *)v2 = (void *)&vt_VectorClass_CellClass; /*0x565ac3*/
     }
     (*(void (__thiscall **)(char *, _DWORD, _DWORD))(*(_DWORD *)v2 + 8))(v2, *(_DWORD *)&this->q144[16], 0); /*0x565ad4*/
+    int result; // eax
     for ( result = 0; result < *(_DWORD *)&this->q144[16]; *((_DWORD *)this->q13C + result - 1) = 0 ) /*0x565ae1*/
       ++result; /*0x565ae9*/
     return result; /*0x565afc*/
@@ -7369,23 +7369,23 @@ void gamemd::MapClass::AllocateCells()
 // truth-filled 0x565BC0 (G42.52 truth-emitting generator)
 void gamemd::MapClass::ConstructCells()
 {
-    int v2; // edi
-    int v3; // esi
-    int v4; // ebx
     _DWORD *result; // eax
-    CellClass *v6; // ecx
 
+    int v2; // edi
     v2 = 0; /*0x565bc6*/
+    int v3; // esi
     v3 = 0; /*0x565bc8*/
     *(_DWORD *)this->q134 = 0; /*0x565bca*/
     do /*0x565bfc*/
     {
+    int v4; // ebx
       v4 = 512; /*0x565bd0*/
       do /*0x565bf4*/
       {
         if ( v2 < this->q140 ) /*0x565bdb*/
         {
           result = this->q13C; /*0x565bdd*/
+    CellClass *v6; // ecx
           v6 = (CellClass *)result[v3]; /*0x565be3*/
           if ( v6 ) /*0x565be8*/
             result = CellClass::Construct(v6); /*0x565bea*/
@@ -8209,14 +8209,11 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
 // truth-filled 0x565B00 (G42.52 truth-emitting generator)
 void gamemd::MapClass::DestructCells()
 {
-    int i; // ecx
-    int v3; // eax
-    int j; // edi
-    int v5; // ecx
-    int result; // eax
 
+    int i; // ecx
     for ( i = 0; i < this->q140; ++i ) /*0x565b0e*/
     {
+    int v3; // eax
       v3 = *((_DWORD *)this->q13C + i); /*0x565b16*/
       if ( v3 ) /*0x565b1b*/
       {
@@ -8224,8 +8221,10 @@ void gamemd::MapClass::DestructCells()
         *(_DWORD *)(v3 + 48) = 0; /*0x565b20*/
       }
     }
+    int j; // edi
     for ( j = 0; j < this->q140; ++j ) /*0x565b39*/
     {
+    int v5; // ecx
       v5 = *((_DWORD *)this->q13C + j); /*0x565b41*/
       if ( v5 ) /*0x565b46*/
       {
@@ -8234,6 +8233,7 @@ void gamemd::MapClass::DestructCells()
       }
     }
     ReturnFalse2(); /*0x565b67*/
+    int result; // eax
     result = this->q140; /*0x565b6c*/
     if ( result < 0x40000 ) /*0x565b78*/
     {
@@ -8246,30 +8246,26 @@ void gamemd::MapClass::DestructCells()
 // truth-filled 0x577920 (G42.52 truth-emitting generator)
 void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, bool a1)
 {
-    int v3; // esi
-    int i; // ebp
-    int q1160; // ecx
-    int v7; // eax
-    int v8; // edx
-    int *v9; // ecx
-    unsigned int v10; // eax
-    ObjectClass *v11; // eax
     ObjectClass *v12; // edi
-    int v13; // eax
-    MapClass *MapClass_field_0x116C; // ecx
-    MapClass *v15; // ecx
-    int result; // eax
 
+    int v3; // esi
     v3 = a2; /*0x577922*/
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 44 ) /*0x577932*/
     {
+    int i; // ebp
       for ( i = 0; i < (int)this->MapClass_field_0x116C; ++i ) /*0x577943*/
       {
+    int q1160; // ecx
         q1160 = this->q1160; /*0x57794a*/
+    int v7; // eax
         v7 = *(__int16 *)(q1160 + 4 * i + 2); /*0x577950*/
+    int v8; // edx
         v8 = *(__int16 *)(q1160 + 4 * i); /*0x577955*/
+    int *v9; // ecx
         v9 = (int *)(q1160 + 4 * i); /*0x577959*/
+    unsigned int v10; // eax
         v10 = v8 + (v7 << 9); /*0x57795f*/
+    ObjectClass *v11; // eax
         if ( v10 < 0x40000 && (v11 = (ObjectClass *)*((_DWORD *)this->q13C + v10)) != 0 ) /*0x577975*/
         {
           v12 = v11; /*0x577977*/
@@ -8282,14 +8278,17 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
         if ( v12 && v12->ambientSoundController[0] == v3 ) /*0x57798e*/
         {
           ObjectClass::SetTriggerTarget(v12, 0); /*0x577994*/
+    int v13; // eax
           v13 = ((int (__thiscall *)(ObjectClass **, int *))this->((unsigned int *)q115C)[0])( /*0x5779ab*/
                   &this->q115C,
                   &v12->occupant);
           if ( v13 != -1 ) /*0x5779b1*/
           {
+    MapClass *MapClass_field_0x116C; // ecx
             MapClass_field_0x116C = this->MapClass_field_0x116C; /*0x5779b3*/
             if ( v13 < (int)MapClass_field_0x116C ) /*0x5779b8*/
             {
+    MapClass *v15; // ecx
               v15 = (MapClass *)((char *)MapClass_field_0x116C - 1); /*0x5779ba*/
               for ( this->MapClass_field_0x116C = v15; /*0x5779c0*/
                     v13 < (int)this->MapClass_field_0x116C;
@@ -8306,6 +8305,7 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
       }
       MapClass::RemoveCellReference((MapClass *)&g_MissionQueueFrame.briefing[130], v3); /*0x5779ef*/
     }
+    int result; // eax
     result = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3); /*0x5779f9*/
     if ( result == 44 ) /*0x5779ff*/
     {
@@ -8327,53 +8327,53 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
 // truth-filled 0x567230 (G42.52 truth-emitting generator)
 void gamemd::MapClass::SetVisibleRect(gamemd::RectangleStruct const& a0)
 {
-    void **p_MapClass_field_0xFC; // esi
-    void **v4; // eax
-    int v5; // eax
-    int q100; // edx
-    void *q0F4; // ecx
-    int v8; // eax
-    void *q108; // ecx
-    void *v10; // eax
-    int result; // eax
-    int i; // ebp
-    House **v13; // esi
-    char v14; // bl
-    __int16 *v15; // eax
-    char IsWithinUsableArea; // al
-    int v17[4]; // [esp+Ch] [ebp-10h] BYREF
 
+    void **p_MapClass_field_0xFC; // esi
     p_MapClass_field_0xFC = &this->q0FC; /*0x56724b*/
+    void **v4; // eax
+    int v17[4]; // [esp+Ch] [ebp-10h] BYREF
     v4 = (void **)ClipRectIntersection(v17, a2, (int *)&this->q0EC, 0, 0); /*0x567251*/
     *p_MapClass_field_0xFC = *v4; /*0x56725a*/
     this->q100 = v4[1]; /*0x56725f*/
     *(_DWORD *)this->q104 = v4[2]; /*0x567265*/
     this->q108 = v4[3]; /*0x56726b*/
+    int v5; // eax
     v5 = (int)*p_MapClass_field_0xFC; /*0x56726e*/
     if ( (int)*p_MapClass_field_0xFC <= 2 ) /*0x567273*/
       v5 = 2; /*0x567275*/
+    int q100; // edx
     q100 = (int)this->q100; /*0x56727a*/
     *p_MapClass_field_0xFC = (void *)v5; /*0x567280*/
     if ( q100 <= 2 ) /*0x567285*/
       q100 = 2; /*0x567287*/
+    void *q0F4; // ecx
     q0F4 = this->q0F4; /*0x56728c*/
     this->q100 = (void *)q100; /*0x567292*/
+    int v8; // eax
     v8 = (int)q0F4 - v5 - 2; /*0x56729a*/
     if ( *(_DWORD *)this->q104 < v8 ) /*0x5672a5*/
       v8 = *(_DWORD *)this->q104; /*0x5672a7*/
+    void *q108; // ecx
     q108 = this->q108; /*0x5672a9*/
     *(_DWORD *)this->q104 = v8; /*0x5672af*/
+    void *v10; // eax
     v10 = (void *)(*(_DWORD *)this->__pad_F8 - q100 - 6); /*0x5672bd*/
     if ( (int)q108 < (int)v10 ) /*0x5672c2*/
       v10 = q108; /*0x5672c4*/
     this->q108 = v10; /*0x5672cd*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5672d3*/
+    int result; // eax
     result = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[164]; /*0x5672d8*/
+    int i; // ebp
     for ( i = 0; i < *(int *)&((unsigned int *)&stru_A8EB00)[164]; ++i ) /*0x5672e1*/
     {
+    House **v13; // esi
       v13 = *(House ***)(*(_DWORD *)&((unsigned int *)&stru_A8EB00)[152] + 4 * i); /*0x5672f1*/
+    char v14; // bl
       v14 = *((_BYTE *)v13 + 981); /*0x5672f8*/
+    __int16 *v15; // eax
       v15 = (__int16 *)(*(int (__thiscall **)(House **, int **))&(*v13)->__pad_7C[316])(v13, &a2); /*0x5672fe*/
+    char IsWithinUsableArea; // al
       IsWithinUsableArea = LayerClass::IsWithinUsableArea((LayerClass *)this, v15, 1); /*0x567307*/
       *((_BYTE *)v13 + 981) = IsWithinUsableArea; /*0x56730e*/
       if ( !v14 /*0x56733f*/
@@ -8549,15 +8549,11 @@ gamemd::TEventClass::pointerExpired(class ra2::game::AbstractClass* a0, bool a1)
 // truth-filled 0x4C98B0 (G42.52 truth-emitting generator)
 void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, bool a1)
 {
-    int v2; // eax
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
-    int v7; // [esp+Ch] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4c98b7*/
     this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
     this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
+    int v2; // eax
     v2 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c98c4*/
     this->TeamTypeClass_field_34 = 0; /*0x4c98c9*/
     this->TeamTypeClass_field_2C = v2; /*0x4c98cc*/
@@ -8592,12 +8588,15 @@ void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, b
            *(_DWORD *)&stru_A83D50.__pad_C8[32] + *(_DWORD *)&stru_A83D50.__pad_C8[44],
            0) )
     {
+    int v3; // eax
       v3 = (*(_DWORD *)&stru_A83D50.__pad_C8[40])++; /*0x4c997a*/
       *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_C8[28] + 4 * v3) = this; /*0x4c9989*/
     }
+    int v4; // eax
     v4 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c998c*/
     this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
     this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
+    int v7; // [esp+Ch] [ebp-8h]
     this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
     this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
     this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
@@ -8609,6 +8608,7 @@ void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, b
            g_BuildingLoadQueue_Array.ExtraPowerBonus + g_BuildingLoadQueue_Array.Height,
            0) )
     {
+    int v5; // eax
       v5 = g_BuildingLoadQueue_Array.Foundation[0]++; /*0x4c99e9*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5) = this; /*0x4c99f8*/
     }
@@ -8617,7 +8617,6 @@ void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, b
 // truth-filled 0x763810 (G42.52 truth-emitting generator)
 void gamemd::WaypointPathClass::pointerExpired(class ra2::game::AbstractClass* a0, bool a1)
 {
-    int v3; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
     *(_DWORD *)(this + 36) = -1; /*0x76381e*/
@@ -8641,6 +8640,7 @@ void gamemd::WaypointPathClass::pointerExpired(class ra2::game::AbstractClass* a
             dword_B72610 + dword_B7261C,
             0)) )
     {
+    int v3; // eax
       v3 = dword_B72618++; /*0x7638a7*/
       *((_DWORD *)dword_B7260C + v3) = this; /*0x7638b6*/
     }
@@ -8649,7 +8649,6 @@ void gamemd::WaypointPathClass::pointerExpired(class ra2::game::AbstractClass* a
 // truth-filled 0x4717D0 (G42.52 truth-emitting generator)
 void ra2::game::CaptureManagerClass::pointerExpired(class ra2::game::AbstractClass* a0, bool a1)
 {
-    int v5; // eax
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
     *(_BYTE *)(this + 48) = 1; /*0x4717e2*/
@@ -8677,6 +8676,7 @@ void ra2::game::CaptureManagerClass::pointerExpired(class ra2::game::AbstractCla
            dword_89E0F8 + dword_89E104,
            0) )
     {
+    int v5; // eax
       v5 = dword_89E100++; /*0x471875*/
       *((_DWORD *)dword_89E0F4 + v5) = this; /*0x471884*/
     }
@@ -8685,9 +8685,6 @@ void ra2::game::CaptureManagerClass::pointerExpired(class ra2::game::AbstractCla
 // truth-filled 0x4D31E0 (G42.52 truth-emitting generator)
 void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, gamemd::Vector2D<int>* a2, gamemd::RectangleStruct* a3, unsigned int a4, unsigned int a5, unsigned int a6, enum ra2::game::ZGradient, unsigned int a8, int a9, unsigned int a10, unsigned int a11, unsigned int a12, unsigned int a13, unsigned int a14, unsigned int a15)
 {
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
 
     TechnoClass::TechnoClass((TechnoClass *)this, a2); /*0x4d31ea*/
     this->planningPathIdx = -1; /*0x4d31f1*/
@@ -8738,6 +8735,7 @@ void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, g
     this->FootClass_field_int_64C = 10; /*0x4d332c*/
     this->FootClass_field_timer_650[0] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4d3338*/
     this->FootClass_field_timer_650[2] = 0; /*0x4d333e*/
+    int v3; // eax
     v3 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4d3344*/
     this->sightTimer[2] = 0; /*0x4d3349*/
     this->sightTimer[0] = v3; /*0x4d334f*/
@@ -8793,6 +8791,7 @@ void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, g
            (char *)((char *)&FootClass_Array) + ((char *)&FootClass_Array),
            0) )
     {
+    int v4; // eax
       v4 = ((char *)&FootClass_Array)++; /*0x4d34c8*/
       *((_DWORD *)((char *)&FootClass_Array) + v4) = this; /*0x4d34d7*/
     }
@@ -8805,6 +8804,7 @@ void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, g
            ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
            0) )
     {
+    int v5; // eax
       v5 = ((unsigned int *)&g_BuildingLoadQueue_Array)[1]++; /*0x4d3522*/
       *(_DWORD *)(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 4 * v5) = this; /*0x4d3531*/
     }
@@ -8813,9 +8813,6 @@ void ra2::game::FootClass::Draw_A_SHP(struct ra2::game::SHPStruct* a0, int a1, g
 // truth-filled 0x4D31E0 (G42.52 truth-emitting generator)
 void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1, int a2, struct ra2::game::SomeVoxelCache* a3, gamemd::RectangleStruct* a4, gamemd::Vector2D<int>* a5, struct ra2::game::Matrix3DStruct* a6, unsigned int a7, unsigned int a8, unsigned int a9)
 {
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
 
     TechnoClass::TechnoClass((TechnoClass *)this, a2); /*0x4d31ea*/
     this->planningPathIdx = -1; /*0x4d31f1*/
@@ -8866,6 +8863,7 @@ void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1,
     this->FootClass_field_int_64C = 10; /*0x4d332c*/
     this->FootClass_field_timer_650[0] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4d3338*/
     this->FootClass_field_timer_650[2] = 0; /*0x4d333e*/
+    int v3; // eax
     v3 = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x4d3344*/
     this->sightTimer[2] = 0; /*0x4d3349*/
     this->sightTimer[0] = v3; /*0x4d334f*/
@@ -8921,6 +8919,7 @@ void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1,
            (char *)((char *)&FootClass_Array) + ((char *)&FootClass_Array),
            0) )
     {
+    int v4; // eax
       v4 = ((char *)&FootClass_Array)++; /*0x4d34c8*/
       *((_DWORD *)((char *)&FootClass_Array) + v4) = this; /*0x4d34d7*/
     }
@@ -8933,6 +8932,7 @@ void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1,
            ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
            0) )
     {
+    int v5; // eax
       v5 = ((unsigned int *)&g_BuildingLoadQueue_Array)[1]++; /*0x4d3522*/
       *(_DWORD *)(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 4 * v5) = this; /*0x4d3531*/
     }
@@ -8941,8 +8941,6 @@ void ra2::game::FootClass::Draw_A_VXL(struct ra2::game::VoxelStruct* a0, int a1,
 // truth-filled 0x6AF360 (G42.52 truth-emitting generator)
 void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass* a0, bool a1)
 {
-    int v2; // eax
-    int v4; // [esp+8h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
     this->slaveVectorCount = 0; /*0x6af371*/
@@ -8964,6 +8962,7 @@ void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6af3cb*/
+    int v4; // [esp+8h] [ebp-8h]
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -8976,6 +8975,7 @@ void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass
            dword_B0B5F8 + dword_B0B604,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B600++; /*0x6af419*/
       *((_DWORD *)dword_B0B5F4 + v2) = this; /*0x6af428*/
     }
@@ -8984,8 +8984,6 @@ void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass
 // truth-filled 0x6B6EA0 (G42.52 truth-emitting generator)
 void ra2::game::SpawnManagerClass::pointerExpired(class ra2::game::AbstractClass* a0, bool a1)
 {
-    int v2; // eax
-    int v4; // [esp+10h] [ebp-8h]
 
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
@@ -9004,6 +9002,7 @@ void ra2::game::SpawnManagerClass::pointerExpired(class ra2::game::AbstractClass
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
     *(_DWORD *)&this->q048[8] = *(_DWORD *)&((unsigned int *)&stru_A8EB00)[416]; /*0x6b6f11*/
+    int v4; // [esp+10h] [ebp-8h]
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -9020,6 +9019,7 @@ void ra2::game::SpawnManagerClass::pointerExpired(class ra2::game::AbstractClass
            dword_B0B888 + dword_B0B894,
            0) )
     {
+    int v2; // eax
       v2 = dword_B0B890++; /*0x6b6f76*/
       *((_DWORD *)dword_B0B884 + v2) = this; /*0x6b6f85*/
     }
@@ -9424,17 +9424,15 @@ void gamemd::TActionClass::ddtor()
 // truth-filled 0x71FA80 (G42.52 truth-emitting generator)
 void gamemd::TEventClass::ddtor()
 {
-    int v3; // eax
-    int v4; // eax
-    int v5; // eax
-    TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
     this->AbstractClass = (void *)&vt_TEventClass; /*0x71fa86*/
     ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa8c*/
     ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa93*/
     ((unsigned int *)this)[0] = (void *)&vt_TEventClass; /*0x71fa9a*/
     AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x71faa1*/
+    TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
     v7 = this; /*0x71fab6*/
+    int v3; // eax
     v3 = (*(int (__thiscall **)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
            &v7);
@@ -9449,6 +9447,7 @@ void gamemd::TEventClass::ddtor()
       }
     }
     v7 = this; /*0x71faff*/
+    int v4; // eax
     v4 = (*(int (__thiscall **)(int *, TEventClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x71fb03*/
            &g_BuildingLoadQueue_Array.LightVisibility,
            &v7);
@@ -9464,6 +9463,7 @@ void gamemd::TEventClass::ddtor()
       }
     }
     v7 = this; /*0x71fb48*/
+    int v5; // eax
     v5 = (*(int (__thiscall **)(int *, TEventClass **))(((unsigned int *)&g_BuildingLoadQueue_Array)[50] + 16))( /*0x71fb4c*/
            &((unsigned int *)&g_BuildingLoadQueue_Array)[50],
            &v7);

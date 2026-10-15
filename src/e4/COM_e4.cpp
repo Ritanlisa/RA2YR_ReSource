@@ -33,9 +33,9 @@ LONG COM::AddRef(int a1)
 namespace gamemd {
 LONG COM::ReleaseRef(volatile LONG * a1)
 {
-  LONG v1; // esi
 
   --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x55a980*/
+  LONG v1; // esi
   v1 = InterlockedDecrement(&a1->RefCount); /*0x55a98d*/
   if ( !v1 && a1 ) /*0x55a995*/
     (*(void (**)(LocomotionClass *, int))(*(unsigned int *)a1->ILocomotion + 32))(a1, 1); /*0x55a99d*/

@@ -219,14 +219,14 @@ BuildingClass * * Animation::UpdateBuildingAnimations(void *a1)
 namespace gamemd {
 int Animation::GetProgress()
 {
-  int result; // eax
-  int v2; // edx
 
+  int result; // eax
   (*((unsigned char *)&(result))) = this->u32_60; /*0x4a52f0*/
   if ( (unsigned char)result ) /*0x4a52f8*/
   {
     if ( this->q014 ) /*0x4a52fb*/
     {
+  int v2; // edx
       v2 = (int)(this->q008); /*0x4a5311*/
       result = (int)(this->q010); /*0x4a5314*/
       if ( v2 != -1 ) /*0x4a531a*/
@@ -245,36 +245,20 @@ int Animation::GetProgress()
 namespace gamemd {
 ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
-  char **v3; // ebx
-  INIClass *v4; // ebp
-  INIClass *v5; // edi
-  void *v6; // esi
-  char **v7; // eax
-  int i; // edi
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // edx
-  char **v14; // eax
-  int j; // edi
-  int v16; // ecx
-  int v17; // eax
-  int v18; // ebx
-  int v19; // eax
-  int v20; // eax
-  int v21; // edx
-  Animation *v22; // [esp+10h] [ebp-10h]
   String v23; // [esp+14h] [ebp-Ch] BYREF
-  int v24; // [esp+1Ch] [ebp-4h]
 
+  char **v3; // ebx
   v3 = (char **)aP2; /*0x770554*/
+  INIClass *v4; // ebp
   v4 = (INIClass *)a1; /*0x770559*/
+  Animation *v22; // [esp+10h] [ebp-10h]
   v22 = this; /*0x77055f*/
+  INIClass *v5; // edi
   v5 = (gamemd::INIClass *)(&this->q010); /*0x770563*/
   *(unsigned int *)&v23.headNode = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
+  void *v6; // esi
     v6 = *(void **)this; /*0x770574*/
     ((String *)((String *)&aP2))->Assign((const char *)(off_83E188)); /*0x77057f*/
     INIClass::ReadTokenizedPair(v5,(unsigned int *)(v4), v3, v6, 0, (char **)&aP2); /*0x770590*/
@@ -291,6 +275,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     this = v22; /*0x770570*/
   }
   ((String *)(&v23))->Assign((const char *)(aStartup)); /*0x77060c*/
+  char **v7; // eax
   v7 = (*(StaticString **)v22)->Factory(); /*0x77061c*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.headNode), (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
@@ -299,17 +284,22 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
+  int i; // edi
   for ( i = String::Tokenize((String *)&a1, 0, Str, (void **)&aP2); /*0x770697*/
         i != -1;
         i = String::Tokenize((String *)&a1, i, Str, (void **)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x77069d*/
+  int v9; // ecx
     v9 = *(unsigned int *)&v22[900]; /*0x7706a2*/
+  int v10; // eax
+  int v24; // [esp+1Ch] [ebp-4h]
     v24 = v10; /*0x7706a5*/
     if ( *(unsigned int *)&v22[908] >= v9 ) /*0x7706ac*/
     {
       if ( !*(unsigned char *)&v22[905] && v9 ) /*0x7706b7*/
         continue; /*0x7706b7*/
+  int v11; // eax
       v11 = *(unsigned int *)&v22[912]; /*0x7706b9*/
       if ( v11 <= 0 /*0x7706c9*/
         || !(*(uint8_t (**)(Animation *, int, unsigned int))(*(unsigned int *)&v22[892] + 8))(
@@ -320,7 +310,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7706c9*/
       }
     }
+  int v12; // eax
     v12 = *(unsigned int *)&v22[908]; /*0x7706d0*/
+  int v13; // edx
     v13 = *(unsigned int *)&v22[896]; /*0x7706d3*/
     *(unsigned int *)&v22[908] = v12 + 1; /*0x7706d9*/
     *(unsigned int *)(v13 + 4 * v12) = v24; /*0x7706e0*/
@@ -330,6 +322,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&v23.headNode); /*0x770714*/
   DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
   ((String *)(&v23))->Assign((const char *)(aTerritoryselec)); /*0x77072b*/
+  char **v14; // eax
   v14 = (*(StaticString **)v22)->Factory(); /*0x77073b*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&v23.headNode), (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
@@ -338,17 +331,22 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
+  int j; // edi
   for ( j = String::Tokenize((String *)&a1, 0, Str, (void **)&aP2); /*0x7707b6*/
         j != -1;
         j = String::Tokenize((String *)&a1, j, Str, (void **)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x7707bc*/
+  int v16; // ecx
     v16 = *(unsigned int *)&v22[924]; /*0x7707c1*/
+  int v17; // eax
+  int v18; // ebx
     v18 = v17; /*0x7707c4*/
     if ( *(unsigned int *)&v22[932] >= v16 ) /*0x7707c9*/
     {
       if ( !*(unsigned char *)&v22[929] && v16 ) /*0x7707d4*/
         continue; /*0x7707d4*/
+  int v19; // eax
       v19 = *(unsigned int *)&v22[936]; /*0x7707d6*/
       if ( v19 <= 0 /*0x7707e6*/
         || !(*(uint8_t (**)(Animation *, int, unsigned int))(*(unsigned int *)&v22[916] + 8))(
@@ -359,7 +357,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7707e6*/
       }
     }
+  int v20; // eax
     v20 = *(unsigned int *)&v22[932]; /*0x7707ed*/
+  int v21; // edx
     v21 = *(unsigned int *)&v22[920]; /*0x7707f0*/
     *(unsigned int *)&v22[932] = v20 + 1; /*0x7707f6*/
     *(unsigned int *)(v21 + 4 * v20) = v18; /*0x7707f9*/
@@ -374,10 +374,10 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
 namespace gamemd {
 long long Animation::UpdateBobOffset()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B04E00 - dbl_B04E28); /*0x661d92*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B04E20 * 0.5); /*0x661da6*/
   dword_B04E78 = result; /*0x661dab*/
   return result; /*0x661db0*/

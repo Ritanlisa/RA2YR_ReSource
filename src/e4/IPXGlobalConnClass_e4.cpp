@@ -205,10 +205,10 @@ namespace gamemd {
 int IPXGlobalConnClass::CheckStatus()
 {
 
-  int v2; // esi
-  Terrain *IPXGlobalConnClass_field_0x04; // ecx
 
+  int v2; // esi
   v2 = 0; /*0x5400d4*/
+  Terrain *IPXGlobalConnClass_field_0x04; // ecx
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->PlayerIndex; /*0x5400d6*/
   if ( (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38 > 0 ) /*0x5400de*/
   {
@@ -230,28 +230,28 @@ namespace gamemd {
 int IPXGlobalConnClass::Send()
 {
 
-  int v2; // ebx
-  int v3; // esi
-  int IPXGlobalConnClass_field_0x04; // ecx
-  int v5; // eax
-  PacketQueue *v6; // ecx
-  int v8; // [esp+Ch] [ebp-414h] BYREF
-  int v9; // [esp+10h] [ebp-410h] BYREF
   Waypoint v10; // [esp+14h] [ebp-40Ch] BYREF
 
+  int v2; // ebx
   v2 = 0; /*0x5402db*/
+  int v3; // esi
   v3 = 0; /*0x5402dd*/
+  int IPXGlobalConnClass_field_0x04; // ecx
   IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x5402df*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) > 0 ) /*0x5402e7*/
   {
     do /*0x540332*/
     {
+  int v5; // eax
       v5 = *(unsigned int *)((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v3); /*0x5402ef*/
       if ( (v5 & 4) != 0 && (v5 & 2) == 0 ) /*0x5402f7*/
       {
         (&v10)->InitInvalid(); /*0x5402fd*/
+  PacketQueue *v6; // ecx
         v6 = (PacketQueue *)this->PlayerIndex; /*0x54030e*/
+  int v8; // [esp+Ch] [ebp-414h] BYREF
         v8 = 12; /*0x54031c*/
+  int v9; // [esp+10h] [ebp-410h] BYREF
         PacketQueue::ExtractEntry(v6, &v10.u32_C, &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
@@ -269,24 +269,21 @@ namespace gamemd {
 int IPXGlobalConnClass::SendPacket(int a2, short a3)
 {
 
-  int IPXGlobalConnClass_field_0x04; // ecx
-  int v5; // ebp
-  int v6; // esi
-  int TileIndex; // eax
-  int v8; // edi
-  PacketQueue *v9; // ecx
-  int v11; // [esp+Ch] [ebp-414h] BYREF
-  int v12; // [esp+10h] [ebp-410h] BYREF
   Waypoint v13; // [esp+14h] [ebp-40Ch] BYREF
 
+  int IPXGlobalConnClass_field_0x04; // ecx
   IPXGlobalConnClass_field_0x04 = this->PlayerIndex; /*0x54034b*/
+  int v5; // ebp
   v5 = 0; /*0x54034e*/
+  int v6; // esi
   v6 = 0; /*0x540350*/
   if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x540357*/
     return 0; /*0x5403de*/
   do /*0x5403cd*/
   {
+  int TileIndex; // eax
     TileIndex = ((Terrain *)IPXGlobalConnClass_field_0x04)->GetTileIndex(v6); /*0x54035f*/
+  int v8; // edi
     v8 = TileIndex; /*0x540364*/
     if ( (*(unsigned char *)TileIndex & 2) == 0 /*0x540392*/
       && *(unsigned int *)(TileIndex + 24)
@@ -294,8 +291,11 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
       && *(unsigned short *)(v8 + 32) == a3 )
     {
       (&v13)->InitInvalid(); /*0x540398*/
+  PacketQueue *v9; // ecx
       v9 = (PacketQueue *)this->PlayerIndex; /*0x5403b3*/
+  int v11; // [esp+Ch] [ebp-414h] BYREF
       v11 = 12; /*0x5403b7*/
+  int v12; // [esp+10h] [ebp-410h] BYREF
       PacketQueue::ExtractEntry(v9, &v13.u32_C, &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }
@@ -333,8 +333,8 @@ namespace gamemd {
 IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->u32_D0; /*0x540673*/
   /* X11: vtable install elided (implicit via IPXGlobalConnClass virtuals 0x540679) */
   if ( v3 ) /*0x540681*/

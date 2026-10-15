@@ -13,16 +13,16 @@
 namespace gamemd {  // G42.18 ns repair
 int AbstractClassVector::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x4e0440*/
     return 0; /*0x4e0448*/
+  int m_8; // edx
   m_8 = *(unsigned int *)&a2_2->q008; /*0x4e044e*/
+  int result; // eax
   result = 0; /*0x4e0451*/
   if ( m_8 <= 0 ) /*0x4e0455*/
     return -1; /*0x4e046c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x4e045b*/
   {
     if ( ++result >= m_8 ) /*0x4e046a*/

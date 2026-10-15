@@ -13,18 +13,18 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
-  unsigned short *result; // eax
-  int v12; // edi
-  uint8_t v13; // dl
-  unsigned short *v14; // [esp+18h] [ebp+18h]
 
+  unsigned short *result; // eax
   result = a6; /*0x494924*/
   if ( a4 > 0 ) /*0x49492a*/
   {
+  int v12; // edi
     v12 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x494938*/
+  unsigned short *v14; // [esp+18h] [ebp+18h]
     v14 = (unsigned short *)a4; /*0x49493e*/
     do /*0x49499a*/
     {
+  uint8_t v13; // dl
       v13 = *a2++; /*0x494942*/
       if ( v13 && *result ) /*0x49494d*/
       {
@@ -46,18 +46,18 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned sh
 namespace gamemd {
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
-  unsigned short *result; // eax
-  int v12; // edi
-  uint8_t v13; // dl
-  unsigned short *v14; // [esp+18h] [ebp+18h]
 
+  unsigned short *result; // eax
   result = a6; /*0x494a44*/
   if ( a4 > 0 ) /*0x494a4a*/
   {
+  int v12; // edi
     v12 = *(unsigned int *)&g_VisibleSurfaceDescriptor; /*0x494a58*/
+  unsigned short *v14; // [esp+18h] [ebp+18h]
     v14 = (unsigned short *)a4; /*0x494a5e*/
     do /*0x494aba*/
     {
+  uint8_t v13; // dl
       v13 = *a2++; /*0x494a62*/
       if ( v13 && !*result ) /*0x494a6d*/
       {
@@ -80,24 +80,24 @@ namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
 {
 
-  int v11; // eax
-  int result; // eax
-  Stream *v13; // ebp
-  unsigned __int16 v15; // ax
-  unsigned __int16 *v16; // [esp+20h] [ebp+14h]
-  unsigned __int16 *v17; // [esp+24h] [ebp+18h]
 
+  int v11; // eax
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
+  int result; // eax
   result = (int)(this->ptr_8 + (v11 << 9)); /*0x494b98*/
+  unsigned __int16 *v17; // [esp+24h] [ebp+18h]
   v17 = (unsigned __int16 *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
+  Stream *v13; // ebp
     v13 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494bab*/
+  unsigned __int16 *v16; // [esp+20h] [ebp+14h]
     v16 = (unsigned __int16 *)a4; /*0x494bb1*/
     do /*0x494c31*/
     {
+  unsigned __int16 v15; // ax
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
@@ -124,24 +124,24 @@ namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
 {
 
-  int v12; // eax
-  int result; // eax
-  Stream *v14; // ebp
-  unsigned __int16 v16; // ax
-  unsigned __int16 *v17; // [esp+20h] [ebp+14h]
-  unsigned __int16 *v18; // [esp+24h] [ebp+18h]
 
+  int v12; // eax
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
+  int result; // eax
   result = (int)(this->ptr_8 + (v12 << 9)); /*0x494c78*/
+  unsigned __int16 *v18; // [esp+24h] [ebp+18h]
   v18 = (unsigned __int16 *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
+  Stream *v14; // ebp
     v14 = (gamemd::Stream *)(g_ZBufferDescriptor); /*0x494c8b*/
+  unsigned __int16 *v17; // [esp+20h] [ebp+14h]
     v17 = (unsigned __int16 *)a4; /*0x494c91*/
     do /*0x494d16*/
     {
+  unsigned __int16 v16; // ax
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
@@ -414,8 +414,8 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char 
 namespace gamemd {
 BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned int * Block, char a2)
 {
-  void *m_8; // eax
 
+  void *m_8; // eax
   m_8 = (void *)Block->u32_8; /*0x49a428*/
   *(unsigned int *)Block->tail_0 = &vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
   FractalNoise::Dtor(m_8); /*0x49a432*/

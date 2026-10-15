@@ -109,17 +109,12 @@ namespace gamemd {
 AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
 
-  int m_8; // ebp
-  int *v5; // eax
   ComPtr *v6; // ebx
-  Conflict_WorldDominationTour *v7; // esi
-  ComPtr *v8; // esi
-  int v9; // ebx
-  int i; // esi
   void (***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
+  int m_8; // ebp
   m_8 = a2; /*0x766dc3*/
   if ( a2 ) /*0x766dcd*/
   {
@@ -127,9 +122,11 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     if ( a3 ) /*0x766ddd*/
     {
       *a3 = a2; /*0x766e21*/
+  ComPtr *v8; // esi
       v8 = (ComPtr *)(a3 + 1); /*0x766e23*/
       if ( a2 - 1 >= 0 ) /*0x766e2f*/
       {
+  int v9; // ebx
         v9 = a2; /*0x766e31*/
         do /*0x766e45*/
         {
@@ -145,11 +142,13 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     }
     else
     {
+  int *v5; // eax
       v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x766de7*/
       if ( v5 ) /*0x766df1*/
       {
         *v5 = a2; /*0x766df3*/
         v6 = (ComPtr *)(v5 + 1); /*0x766df5*/
+  Conflict_WorldDominationTour *v7; // esi
         v7 = (Conflict_WorldDominationTour *)(v5 + 1); /*0x766dfb*/
         if ( a2 - 1 >= 0 ) /*0x766dff*/
         {
@@ -175,6 +174,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     {
       if ( a2 >= this->m_8 ) /*0x766e61*/
         m_8 = this->m_8; /*0x766e63*/
+  int i; // esi
       for ( i = 0; i < m_8; ++i ) /*0x766e69*/
         ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*&this->u32_4 + 8 * i + 4)); /*0x766e76*/
       if ( BYTE1(this->m_C) ) /*0x766e80*/
@@ -263,8 +263,8 @@ unsigned int Conflict_WorldDominationTour_12::PointerToIndex(int a2)
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3, void *a3_2)
 {
-  int v3; // edi
 
+  int v3; // edi
   v3 = *&a3_2->u32_4 + 8 * a3_2; /*0x76685d*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x766862*/
   *(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x766867*/
@@ -305,18 +305,18 @@ unsigned int * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 namespace gamemd {
 char Conflict_WorldDominationTour_12::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // ecx
-  unsigned int *i; // eax
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x766bc6*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x766bcf*/
   {
+  int v3; // edx
     v3 = 0; /*0x766bd1*/
     if ( m_8 <= 0 ) /*0x766bd5*/
       return 1; /*0x766bfb*/
+  unsigned int *v4; // ecx
     v4 = (unsigned int *)(*&this->u32_4 + 4); /*0x766bdd*/
+  unsigned int *i; // eax
     for ( i = (unsigned int *)(*(unsigned int *)(a2 + 4) + 4); *v4 == *i; i += 2 ) /*0x766be0*/
     {
       ++v3; /*0x766beb*/
@@ -352,16 +352,16 @@ int Conflict_WorldDominationTour_12::ddtor(void *a1)
 namespace gamemd {
 int Conflict_WorldDominationTour_12::Read(int a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(a2_2->q00C))) ) /*0x766d60*/
     return 0; /*0x766d68*/
+  int m_8; // edx
   m_8 = a2_2->q008; /*0x766d6e*/
+  int result; // eax
   result = 0; /*0x766d71*/
   if ( m_8 <= 0 ) /*0x766d75*/
     return -1; /*0x766d90*/
+  unsigned int *i; // ecx
   for ( i = (unsigned int *)(*(unsigned int *)&a2_2->q004 + 4); *i != *(unsigned int *)((unsigned int)(a2_2)+ 4); i += 2 ) /*0x766d7e*/
   {
     if ( ++result >= m_8 ) /*0x766d8e*/
@@ -385,14 +385,14 @@ unsigned int Conflict_WorldDominationTour_12::Write(int a2)
 namespace gamemd {
 int Conflict_WorldDominationTour_12::IndexOf(int a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x766f40*/
+  int result; // eax
   result = 0; /*0x766f43*/
   if ( m_10 <= 0 ) /*0x766f48*/
     return -1; /*0x766f63*/
+  unsigned int *i; // ecx
   for ( i = (unsigned int *)(*&this->u32_4 + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x766f51*/
   {
     if ( ++result >= m_10 ) /*0x766f61*/

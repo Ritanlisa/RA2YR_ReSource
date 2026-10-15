@@ -16,16 +16,14 @@ namespace gamemd {  // G42.18 ns repair
 int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
 {
 
-  int InfantryTypeVector_field_0x08; // ecx
-  int InfantryTypeVector_field_0x14; // eax
-  int InfantryTypeVector_field_0x10; // eax
-  int InfantryTypeVector_field_0x04; // edx
 
+  int InfantryTypeVector_field_0x08; // ecx
   InfantryTypeVector_field_0x08 = (int)(aP1->vtable3); /*0x512f23*/
   if ( aP1->uniqueId >= InfantryTypeVector_field_0x08 ) /*0x512f2b*/
   {
     if ( !BYTE1(aP1->vtable4) && InfantryTypeVector_field_0x08 ) /*0x512f36*/
       return 0; /*0x512f36*/
+  int InfantryTypeVector_field_0x14; // eax
     InfantryTypeVector_field_0x14 = aP1->abstractFlags; /*0x512f38*/
     if ( InfantryTypeVector_field_0x14 <= 0 /*0x512f48*/
       || !(*(unsigned __int8 (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)aP1->vtable1 + 8))(
@@ -36,7 +34,9 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1, void *a2, void *a3)
       return 0; /*0x512f4f*/
     }
   }
+  int InfantryTypeVector_field_0x10; // eax
   InfantryTypeVector_field_0x10 = aP1->uniqueId; /*0x512f55*/
+  int InfantryTypeVector_field_0x04; // edx
   InfantryTypeVector_field_0x04 = (int)(aP1->vtable2); /*0x512f58*/
   aP1->uniqueId = InfantryTypeVector_field_0x10 + 1; /*0x512f5e*/
   *(unsigned int *)(InfantryTypeVector_field_0x04 + 4 * InfantryTypeVector_field_0x10) = (unsigned int)(*a2); /*0x512f68*/

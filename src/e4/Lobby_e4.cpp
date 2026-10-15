@@ -23,11 +23,10 @@
 namespace gamemd {  // G42.18 ns repair
 int Lobby::InvalidatePlayerSlots(HWND hDlg)
 {
-  int i; // esi
   int v3; // edx
-  LPARAM v4; // eax
   int result; // eax
 
+  int i; // esi
   for ( i = 0; i < 8; ++i )
   {
     if ( i )
@@ -61,6 +60,7 @@ int Lobby::InvalidatePlayerSlots(HWND hDlg)
     {
       v3 = 1901; /*0x4e5d6a*/
     }
+  LPARAM v4; // eax
     if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x4e5df2*/
       && ((v4 = ((unsigned int *)(dword_A8DA90))[i], v4 == g_Lobby_MaxPlayers) || *(unsigned int *)(v4 + 107) == -1) )
     {
@@ -390,26 +390,10 @@ namespace gamemd {
 int Lobby::SetupPlayerWidgets(HWND hDlg)
 {
 
-  ObjectClass *v1; // esi
   int v3; // ebp
   int v4; // ebx
-  int ResourceID4CSF; // eax
-  LPARAM v6; // esi
-  HWND DlgItem; // ebp
-  HWND v8; // ebx
-  HWND v9; // edi
-  int result; // eax
-  bool v11; // [esp+Bh] [ebp-19h]
-  HWND ResourceIDCSF; // [esp+Ch] [ebp-18h]
-  HWND v13; // [esp+Ch] [ebp-18h]
-  int nIDDlgItem; // [esp+10h] [ebp-14h]
-  HWND nIDDlgItema; // [esp+10h] [ebp-14h]
-  HWND ResourceID2CSF; // [esp+14h] [ebp-10h]
-  HWND v17; // [esp+14h] [ebp-10h]
-  int ResourceID3CSF; // [esp+18h] [ebp-Ch]
-  int v19; // [esp+1Ch] [ebp-8h]
-  HWND hWnd; // [esp+20h] [ebp-4h]
 
+  ObjectClass *v1; // esi
   v1 = (gamemd::ObjectClass *)(g_MPCooperativeState); /*0x5eba04*/
   if ( (int)g_MPCooperativeState >= 0 ) /*0x5eba0f*/
   {
@@ -465,25 +449,40 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
         v3 = 1746; /*0x5eba2c*/
         v4 = 1041; /*0x5eba31*/
       }
+  int nIDDlgItem; // [esp+10h] [ebp-14h]
       nIDDlgItem = GetResourceIDHardcodedCSF(v1); /*0x5ebabe*/
+  HWND ResourceIDCSF; // [esp+Ch] [ebp-18h]
       ResourceIDCSF = (HWND)GetResourceIDCSF(v1); /*0x5ebac9*/
+  HWND ResourceID2CSF; // [esp+14h] [ebp-10h]
       ResourceID2CSF = (HWND)GetResourceID2CSF(v1); /*0x5ebad4*/
+  int ResourceID3CSF; // [esp+18h] [ebp-Ch]
       ResourceID3CSF = GetResourceID3CSF(v1); /*0x5ebadf*/
+  int ResourceID4CSF; // eax
       ResourceID4CSF = GetResourceID4CSF(v1); /*0x5ebae3*/
+  LPARAM v6; // esi
       v6 = dword_A8DA90[(unsigned int)v1]; /*0x5ebae8*/
+  int v19; // [esp+1Ch] [ebp-8h]
       v19 = ResourceID4CSF; /*0x5ebaef*/
+  bool v11; // [esp+Bh] [ebp-19h]
       v11 = v6 == g_Lobby_MaxPlayers /*0x5ebb24*/
          || v6
          && v6 != g_HouseClass_ObserverFlags
          && v6 != g_Lobby_PlayerCount
          && (wchar_t *)v6 != g_Lobby_PlayerReady
          && *(unsigned int *)(v6 + 107) == -1;
+  HWND DlgItem; // ebp
       DlgItem = GetDlgItem((HWND)hDlg, v3); /*0x5ebb33*/
+  HWND v8; // ebx
       v8 = GetDlgItem((HWND)hDlg, v4); /*0x5ebb39*/
+  HWND hWnd; // [esp+20h] [ebp-4h]
       hWnd = GetDlgItem((HWND)hDlg, nIDDlgItem); /*0x5ebb47*/
+  HWND v13; // [esp+Ch] [ebp-18h]
       v13 = GetDlgItem((HWND)hDlg, (int)ResourceIDCSF); /*0x5ebb53*/
+  HWND v17; // [esp+14h] [ebp-10h]
       v17 = GetDlgItem((HWND)hDlg, (int)ResourceID2CSF); /*0x5ebb5b*/
+  HWND nIDDlgItema; // [esp+10h] [ebp-14h]
       nIDDlgItema = GetDlgItem((HWND)hDlg, ResourceID3CSF); /*0x5ebb6b*/
+  HWND v9; // edi
       v9 = GetDlgItem((HWND)hDlg, v19); /*0x5ebb79*/
       ShowWindow(DlgItem, 5); /*0x5ebb7e*/
       ShowWindow(v8, 5); /*0x5ebb83*/
@@ -507,6 +506,7 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
       return ShowWindow(v17, 5); /*0x5ebbee*/
     }
   }
+  int result; // eax
   return result; /*0x5ebbca*/
 
 }
@@ -515,22 +515,20 @@ int Lobby::SetupPlayerWidgets(HWND hDlg)
 namespace gamemd {
 int Lobby::BuildPlayerList()
 {
-  wchar_t **v1; // esi
-  wchar_t *v2; // edi
-  char **v3; // eax
-  const char **PlayerTypeString; // eax
-  char *v5; // eax
   ObjectClass v7; // [esp+8h] [ebp-110h] BYREF
 
   strcpy((char *)&v7.uniqueId,(const char *)(asc_84A480)); /*0x77dbb5*/
+  wchar_t **v1; // esi
   v1 = (wchar_t **)dword_A8DA90; /*0x77dbbe*/
   do /*0x77dc6e*/
   {
+  wchar_t *v2; // edi
     v2 = *v1; /*0x77dbc3*/
     unknown_libname_73(&v7); /*0x77dbc9*/
     if ( (uint8_t)IsKnownPointer((ObjectClass *)v2) ) /*0x77dbd0*/
     {
       ((WideString *)((wchar_t **)&v7.vfptr1))->Assign(v2); /*0x77dbde*/
+  char **v3; // eax
       v3 = ToWideStringCharAlt((char **)&v7.vfptr2, (const wchar_t **)&v7.vfptr1); /*0x77dbeb*/
       ((String *)((String *)&v7))->Reassign((const char **)v3); /*0x77dbf5*/
       DeleteAndZero((ObjectClass *)&v7.vfptr2); /*0x77dbfe*/
@@ -538,10 +536,12 @@ int Lobby::BuildPlayerList()
     }
     else
     {
+  const char **PlayerTypeString; // eax
       PlayerTypeString = (const char **)GetPlayerTypeString((String *)&v7.vfptr3, v2); /*0x77dc14*/
       ((String *)((String *)&v7))->Reassign(PlayerTypeString); /*0x77dc1e*/
       DeleteAndZero((ObjectClass *)&v7.vfptr3); /*0x77dc27*/
     }
+  char *v5; // eax
     v5 = ((String *)((String *)&v7))->GetOrEmpty(); /*0x77dc35*/
     strncat((char *)&v7.uniqueId, v5, 0x100u); /*0x77dc40*/
     strncat((char *)&v7.uniqueId, Str, 0x100u); /*0x77dc54*/

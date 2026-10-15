@@ -95,10 +95,10 @@ int MPBattleClass::vt_entry_18()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isValidMap()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABFA80 - dbl_ABFAA8); /*0x5cad02*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABFAA0 * 0.5); /*0x5cad16*/
   dword_ABFAF8 = result; /*0x5cad1b*/
   return result; /*0x5cad20*/
@@ -122,8 +122,8 @@ void MPBattleClass::validatePlayer()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::startGame()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABFAF8) + 0.5); /*0x5cadab*/
   dword_ABFAEC = result; /*0x5cadb0*/
   return result; /*0x5cadb6*/
@@ -162,8 +162,8 @@ int MPBattleClass::isHouseAllyChangeAllowed()
 namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onPlayerConnect()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x5cb19c*/
   dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
 }
@@ -200,10 +200,10 @@ void MPBattleClass::getAlliesLimit()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::canAllyWith()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABFB08 - dbl_ABFB30); /*0x5cb272*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABFB28 * 0.5); /*0x5cb286*/
   dword_ABFB80 = result; /*0x5cb28b*/
   return result; /*0x5cb290*/
@@ -325,8 +325,8 @@ void MPBattleClass::validateStartPosition()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isDefaultFix()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABFC88) + 0.5); /*0x5d396b*/
   dword_ABFC7C = result; /*0x5d3970*/
   return result; /*0x5d3976*/
@@ -404,8 +404,8 @@ int MPBattleClass::unfixAlliances()
 namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::startingPositionsToHouseBaseCells()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x5d58bc*/
   dbl_ABFD58 = Math::Sqrt(v0 + v0); /*0x5d58ce*/
 }
@@ -435,8 +435,8 @@ void MPBattleClass::onAIJoined()
 MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
 
-  unsigned int *v6; // eax
 
+  unsigned int *v6; // eax
   v6 = __2_YAPAXI_Z(0x40u); /*0x5d8172*/
   if ( v6 ) /*0x5d817c*/
     return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/

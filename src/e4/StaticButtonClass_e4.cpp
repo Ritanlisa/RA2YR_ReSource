@@ -18,8 +18,8 @@ namespace gamemd {  // G42.18 ns repair
 StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->u32_30; /*0x6c6883*/
   /* X11: vtable install elided (implicit via StaticButtonClass virtuals 0x6c6886) */
   if ( v3 ) /*0x6c688e*/

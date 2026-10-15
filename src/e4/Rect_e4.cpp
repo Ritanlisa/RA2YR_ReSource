@@ -12,21 +12,14 @@
 namespace gamemd {  // G42.18 ns repair
 int Rect::Union(LPRECT, const RECT *lprcSrc1, const RECT *lprcSrc2)
 {
-  LONG *v3; // edx
-  struct tagRECT *v4; // ecx
-  struct tagRECT *v5; // edi
-  LONG v7; // edi
-  LONG left; // esi
-  LONG v9; // ebx
-  int v10; // ebp
-  int v11; // edx
-  LONG top; // ecx
-  LONG bottom; // [esp+Ch] [ebp-8h]
-  struct tagRECT *v15; // [esp+10h] [ebp-4h]
   LPRECT lprcDsta; // [esp+18h] [ebp+4h]
 
+  struct tagRECT *v4; // ecx
+  struct tagRECT *v5; // edi
   v5 = v4; /*0x487f48*/
+  struct tagRECT *v15; // [esp+10h] [ebp-4h]
   v15 = v4; /*0x487f4c*/
+  LONG *v3; // edx
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
     *v4 = *aP0; /*0x488012*/
@@ -35,6 +28,7 @@ int Rect::Union(LPRECT, const RECT *lprcSrc1, const RECT *lprcSrc2)
   else
   {
     lprcDsta = (LPRECT)aP0->right; /*0x487f6a*/
+  LONG bottom; // [esp+Ch] [ebp-8h]
     if ( (int)lprcDsta <= 0 || (bottom = aP0->bottom, bottom <= 0) ) /*0x487f79*/
     {
       v5->left = *v3; /*0x487ff0*/
@@ -45,16 +39,22 @@ int Rect::Union(LPRECT, const RECT *lprcSrc1, const RECT *lprcSrc2)
     }
     else
     {
+  LONG v7; // edi
       v7 = *v3; /*0x487f7b*/
+  LONG left; // esi
       left = aP0->left; /*0x487f7d*/
+  LONG v9; // ebx
       v9 = v3[1]; /*0x487f80*/
+  int v10; // ebp
       v10 = v3[2]; /*0x487f84*/
+  int v11; // edx
       v11 = v3[3]; /*0x487f87*/
       if ( v7 > aP0->left ) /*0x487f8c*/
       {
         v10 += v7 - left; /*0x487f90*/
         v7 = aP0->left; /*0x487f92*/
       }
+  LONG top; // ecx
       top = aP0->top; /*0x487f94*/
       if ( v9 > top ) /*0x487f9d*/
       {
@@ -102,9 +102,9 @@ unsigned int * Rect::Construct(unsigned int *aP1, int aP2, int aP3, void *a4, vo
 namespace gamemd {
 BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
+
   int v3; // edx
   unsigned int *v4; // ecx
-
   *v4 += v3; /*0x72a9e4*/
   v4[1] += v3; /*0x72a9eb*/
   v4[2] -= 2 * v3; /*0x72a9f6*/

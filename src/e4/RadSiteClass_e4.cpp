@@ -21,13 +21,12 @@ namespace gamemd {  // G42.18 ns repair
 RadSiteClass::RadSiteClass()
 {
 
-  int v2; // edx
-  int v3; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
   this->RadLevelTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x65b1f3*/
   this->RadLevelTimer[2] = 0; /*0x65b1f6*/
+  int v2; // edx
   v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x65b1f9*/
   this->RadLightTimer[2] = 0; /*0x65b1ff*/
   this->RadLightTimer[0] = v2; /*0x65b202*/
@@ -54,6 +53,7 @@ RadSiteClass::RadSiteClass()
          dword_B04BD8 + dword_B04BE4,
          0) )
   {
+  int v3; // eax
     v3 = dword_B04BE0++; /*0x65b284*/
     *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
   }
@@ -81,15 +81,15 @@ int RadSiteClass::StubReturn69()
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
-  int Prefix_0; // edi
-  int v3; // edx
 
+  int Prefix_0; // edi
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x65b3e1*/
   if ( Prefix_0 >= 0 ) /*0x65b3e5*/
   {
     if ( aP0 ) /*0x65b3e9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
+  int v3; // edx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x65b3f7*/
       aP0-((unsigned int *)(>RadLevelTimer))[2] = 0; /*0x65b3fd*/
       aP0-((unsigned int *)(>RadLevelTimer))[0] = v3; /*0x65b404*/

@@ -830,29 +830,21 @@ namespace gamemd {
 AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
 
-  int v3; // ebp
-  char *v5; // edi
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edx
-  char *v9; // eax
-  int v10; // ecx
-  int v11; // ecx
-  int v12; // eax
-  unsigned int *v13; // edx
-  char *v14; // ebx
-  int v15; // eax
 
+  int v3; // ebp
   v3 = a2; /*0x4d2bc2*/
   if ( a2 ) /*0x4d2bce*/
   {
+  char *v5; // edi
     v5 = a3; /*0x4d2bd4*/
     LOBYTE(this->vtable4) = 0; /*0x4d2bd8*/
     if ( a3 ) /*0x4d2bdd*/
     {
       if ( a2 - 1 >= 0 ) /*0x4d2c1a*/
       {
+  char *v9; // eax
         v9 = a3 + 8; /*0x4d2c1c*/
+  int v10; // ecx
         v10 = a2; /*0x4d2c1f*/
         do /*0x4d2c2f*/
         {
@@ -868,12 +860,15 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
     }
     else
     {
+  int v6; // eax
       v6 = __2_YAPAXI_Z(16 * a2); /*0x4d2be5*/
       if ( v6 ) /*0x4d2bef*/
       {
         if ( a2 - 1 >= 0 ) /*0x4d2bf6*/
         {
+  int v7; // ecx
           v7 = v6 + 8; /*0x4d2bf8*/
+  int v8; // edx
           v8 = a2; /*0x4d2bfb*/
           do /*0x4d2c0b*/
           {
@@ -898,15 +893,19 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
       return 0; /*0x4d2cc7*/
     if ( *&this->vtable2 ) /*0x4d2c3d*/
     {
+  int v11; // ecx
       v11 = *&this->vtable3; /*0x4d2c42*/
       if ( a2 < v11 ) /*0x4d2c47*/
         v11 = a2; /*0x4d2c49*/
       if ( v11 > 0 ) /*0x4d2c4d*/
       {
+  int v12; // eax
         v12 = 0; /*0x4d2c4f*/
         do /*0x4d2c75*/
         {
+  unsigned int *v13; // edx
           v13 = (unsigned int *)(*&this->vtable2 + v12); /*0x4d2c56*/
+  char *v14; // ebx
           v14 = &v5[v12]; /*0x4d2c58*/
           v12 += 16; /*0x4d2c5b*/
           --v11; /*0x4d2c5e*/
@@ -932,6 +931,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   {
     (*(void (**)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x4d2cab*/
   }
+  int v15; // eax
   v15 = *&this->vtable3; /*0x4d2cae*/
   if ( v15 < *(unsigned int *)this->Count ) /*0x4d2cb6*/
     *(unsigned int *)this->Count = v15; /*0x4d2cb8*/
@@ -943,14 +943,14 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 namespace gamemd {
 int FoggedObjectClass::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int v2; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int v2; // edx
   v2 = *(unsigned int *)a2_2->__tail_10; /*0x4d2cd0*/
+  int result; // eax
   result = 0; /*0x4d2cd5*/
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->vtable2; *i != *a2_2 || i->vtable2 != a2_2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
@@ -964,14 +964,14 @@ namespace gamemd {
 int FoggedObjectClass_42::FindItem(unsigned int * a2)
 {
 
-  int uniqueId; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int uniqueId; // edx
   uniqueId = this->uniqueId; /*0x4e07b0*/
+  int result; // eax
   result = 0; /*0x4e07b3*/
   if ( uniqueId <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
+  unsigned int *i; // ecx
   for ( i = (unsigned int *)this->vtable1; *i != *a2; ++i ) /*0x4e07be*/
   {
     if ( ++result >= uniqueId ) /*0x4e07cd*/
@@ -985,22 +985,22 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 int   FoggedObjectClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int v5; // ebp
-  int v6; // edi
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4d24b3*/
   if ( result >= 0 ) /*0x4d24ba*/
   {
+  int v4; // edx
     v4 = *a1; /*0x4d24bf*/
     aP2 = aP0->HouseClass_6C; /*0x4d24cb*/
     result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x4d24cf*/
     if ( result >= 0 ) /*0x4d24d4*/
     {
+  int v5; // ebp
       v5 = 0; /*0x4d24da*/
       if ( aP2 > 0 ) /*0x4d24de*/
       {
+  int v6; // edi
         v6 = 0; /*0x4d24e0*/
         do /*0x4d2500*/
         {
@@ -1059,22 +1059,22 @@ namespace gamemd {  // G42.18c ns repair
 char FoggedObjectClass::AddRef(int a2)
 {
 
-  int m_8; // edi
-  int v3; // esi
-  int v4; // edx
-  unsigned int *v5; // eax
-  unsigned int *v6; // ecx
-  int v7; // edx
 
+  int m_8; // edi
   m_8 = this->vtable3; /*0x4d29bb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4d29c0*/
   {
+  int v3; // esi
     v3 = 0; /*0x4d29c2*/
     if ( m_8 <= 0 ) /*0x4d29c6*/
       return 1; /*0x4d29f6*/
+  int v4; // edx
     v4 = *(unsigned int *)(a2 + 4); /*0x4d29c8*/
+  unsigned int *v5; // eax
     v5 = *&this->vtable2; /*0x4d29cb*/
+  unsigned int *v6; // ecx
     v6 = (unsigned int *)(v4 + 4); /*0x4d29ce*/
+  int v7; // edx
     v7 = v4 - (unsigned int)v5; /*0x4d29d1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x4d29e3*/
     {
@@ -1093,8 +1093,8 @@ char FoggedObjectClass::AddRef(int a2)
 namespace gamemd {  // G42.18c ns repair
 DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *(void **)&a3->m_1[3]; /*0x4d2d63*/
   *(unsigned int *)a3->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
   if ( v3 && (((unsigned char *)&(a3->m_C))[1]) ) /*0x4d2d70*/
@@ -1113,8 +1113,8 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
 namespace gamemd {
 void FoggedObjectClass_42::ClearBuffer(void *a1_1)
 {
-  void *vtable1; // eax
 
+  void *vtable1; // eax
   vtable1 = (void *)a1_1->vfptr.vfptr1; /*0x4e01f6*/
   a1_1->vfptr.uniqueId = 0; /*0x4e01f9*/
   if ( vtable1 && (((unsigned char *)&(a1_1->vfptr.vfptr3))[1]) ) /*0x4e0200*/
@@ -1155,18 +1155,18 @@ namespace gamemd {
 char FoggedObjectClass_42::AddRef(int a2)
 {
 
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->Capacity; /*0x4e0582*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4e058d*/
   {
+  int v3; // edx
     v3 = 0; /*0x4e058f*/
     if ( m_8 <= 0 ) /*0x4e0593*/
       return 1; /*0x4e05b3*/
+  unsigned int *v4; // eax
     v4 = *&this->Items; /*0x4e0595*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4e059b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4e05a4*/
     {
@@ -1186,13 +1186,11 @@ namespace gamemd {
 char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x4e05cc*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x4e05d6*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x4e05dc*/
       v4 = a3; /*0x4e05f2*/
     else
@@ -1202,9 +1200,11 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x4e0605*/
       {
+  int m_8; // ecx
         m_8 = this->Capacity; /*0x4e060c*/
         if ( a2 < m_8 ) /*0x4e0611*/
           m_8 = a2; /*0x4e0613*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x4e0619*/
           ++i; /*0x4e061e*/
         if ( BYTE1(this->IsInitialized) ) /*0x4e062b*/
@@ -1252,16 +1252,16 @@ void FoggedObjectClass_42::ddtor(void *a1)
 namespace gamemd {
 int FoggedObjectClass_42::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->IsInitialized))) ) /*0x4e06a0*/
     return 0; /*0x4e06a8*/
+  int m_8; // edx
   m_8 = a2_2->Capacity; /*0x4e06ae*/
+  int result; // eax
   result = 0; /*0x4e06b1*/
   if ( m_8 <= 0 ) /*0x4e06b5*/
     return -1; /*0x4e06cc*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->Items; *i != *a2_2; ++i ) /*0x4e06bb*/
   {
     if ( ++result >= m_8 ) /*0x4e06ca*/
@@ -1289,14 +1289,11 @@ namespace gamemd {
 char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int vtable2; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x4e070c*/
   {
     LOBYTE(this->vtable3) = 0; /*0x4e0712*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x4e0718*/
       v4 = a3; /*0x4e072e*/
     else
@@ -1306,9 +1303,11 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4e07aa*/
     if ( this->vtable1 ) /*0x4e0738*/
     {
+  int vtable2; // ecx
       vtable2 = this->vtable2; /*0x4e073f*/
       if ( a2 < vtable2 ) /*0x4e0744*/
         vtable2 = a2; /*0x4e0746*/
+  int i; // eax
       for ( i = 0; i < vtable2; v4[i - 1] = *(unsigned int *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
       if ( BYTE1(this->vtable3) ) /*0x4e075e*/
@@ -1325,6 +1324,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(FoggedObjectClass *))(this->vtable0 + 12))(this); /*0x4e078e*/
   }
+  int v7; // eax
   v7 = this->vtable2; /*0x4e0791*/
   if ( v7 < this->uniqueId ) /*0x4e0799*/
     this->uniqueId = v7; /*0x4e079b*/
@@ -1337,8 +1337,8 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x4e0ce3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && (((unsigned char *)&(*&Block->__pad_004))[1]) ) /*0x4e0cf0*/

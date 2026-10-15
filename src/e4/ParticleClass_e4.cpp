@@ -33,40 +33,16 @@ namespace gamemd {  // G42.18 ns repair
 void ParticleClass::DrawParticle(int * a2, int * a3)
 {
 
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // ebx
-  int v8; // ebp
-  int v9; // esi
-  unsigned int v10; // eax
-  char v11; // cl
-  char *v12; // eax
-  int v13; // edx
-  int v14; // ebx
-  int v15; // ebp
-  int v16; // eax
-  int v17; // esi
-  IUnknown *ParticleClass_field_0xB4; // ecx
-  char *pad_B0; // eax
-  __int16 v20; // dx
-  char v21; // al
-  double v22; // st7
-  int v23; // eax
-  int v24; // esi
-  int v25; // eax
-  int v26; // ebp
-  int v27; // eax
-  int v28[3]; // [esp+1Ch] [ebp-18h] BYREF
-  int v29; // [esp+28h] [ebp-Ch] BYREF
-  int v30; // [esp+2Ch] [ebp-8h]
-  int v31; // [esp+30h] [ebp-4h]
 
   if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= (unsigned int)PingPongBuffer::GetWriteOffset() /*0x62cedc*/
     || *((unsigned int *)this->u32_AC + 186) )
   {
+  int v4; // eax
     if ( stru_A8EB00.ObjectTypeClass[30] || (v4 = *((unsigned int *)this->u32_AC + 197), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
+  int v29; // [esp+28h] [ebp-Ch] BYREF
+  int v30; // [esp+2Ch] [ebp-8h]
+  int v31; // [esp+30h] [ebp-4h]
       if ( byte_A8ED6B /*0x62cf58*/
         || !g_hWnd
         || ((int)dword_A8B230[0].vtable0 & 0x1000) == 0
@@ -75,26 +51,34 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v31 = *&this->u32_A4,
             !(unsigned __int8)Game::Stub3((IUnknown *)((int)&v29))) )
       {
+  int v5; // eax
         v5 = *((unsigned int *)this->u32_AC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
+  int v28[3]; // [esp+1Ch] [ebp-18h] BYREF
           v28[0] = *&this->Coord_9C; /*0x62d036*/
           v28[1] = *&this->u32_A0; /*0x62d048*/
           v28[2] = *&this->u32_A4; /*0x62d054*/
           ((Coord *)g_TacticalClass_Instance)->To_Screen(v28, &v29); /*0x62d058*/
+  char *v12; // eax
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
           if ( v29 >= *a3 && v29 < *a3 + a3[2] ) /*0x62d086*/
           {
+  int v13; // edx
             v13 = a3[1]; /*0x62d08c*/
             if ( (int)v12 >= v13 && (int)v12 < v13 + a3[3] ) /*0x62d09e*/
             {
+  int v14; // ebx
                             v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek((int)(/*0x62d0b6*/                                            *(int **)&g_VisibleSurfaceDescriptor),                                            v29,                                            (int)&v12[-*(unsigned int *)(*(unsigned int *)&g_VisibleSurfaceDescriptor + 4)]);
               if ( (unsigned short)v14 ) /*0x62d0bb*/
               {
+  int v15; // ebp
                 v15 = v30 - g_ZBufferDescriptor->Stream_field_04; /*0x62d0d4*/
                 v28[0] = v29; /*0x62d0d9*/
+  int v16; // eax
                 v16 = ZCoordToScreenY(*&this->u32_A4); /*0x62d0e8*/
+  int v17; // esi
                 v17 = (unsigned __int16)(LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x62d10f*/
                                        + LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
                                        - v30)
@@ -102,21 +86,31 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     - 50;
                 if ( v17 < *(unsigned __int16 *)((int *)g_ZBufferDescriptor)->GetSamplePosition(v28[0], v15) ) /*0x62d11e*/
                 {
+  IUnknown *ParticleClass_field_0xB4; // ecx
                   ParticleClass_field_0xB4 = (IUnknown *)(this->u32_B4); /*0x62d124*/
+  char *pad_B0; // eax
                   if ( ParticleClass_field_0xB4 ) /*0x62d12c*/
                     pad_B0 = (char *)(*((unsigned int *)this->u32_AC + 175) /*0x62d13f*/
                                     + 3 * (unsigned int)ParticleClass_field_0xB4);
                   else
                     pad_B0 = this->q_B0; /*0x62d12e*/
+  __int16 v20; // dx
                   v20 = *(unsigned short *)pad_B0; /*0x62d145*/
+  char v21; // al
                   v21 = pad_B0[2]; /*0x62d148*/
                   LOWORD(v28[0]) = v20; /*0x62d14b*/
                   BYTE2(v28[0]) = v21; /*0x62d15a*/
+  double v22; // st7
                   v22 = 1.0 - *&this->q0B8; /*0x62d16d*/
+  int v23; // eax
                   LOWORD(v23) = Math::RoundToInt(v22); /*0x62d1ac*/
+  int v24; // esi
                   v24 = v23; /*0x62d1c9*/
+  int v25; // eax
                   LOWORD(v25) = Math::RoundToInt(v22); /*0x62d1e1*/
+  int v26; // ebp
                   v26 = v25; /*0x62d1ea*/
+  int v27; // eax
                   LOWORD(v27) = Math::RoundToInt(v22); /*0x62d215*/
                   if ( v14 < 127 ) /*0x62d21f*/
                   {
@@ -137,15 +131,21 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         }
         else
         {
+  int v6; // eax
           v6 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->vtable1 + 464))(this); /*0x62cf87*/
+  int v7; // ebx
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
+  int v8; // ebp
           v8 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->vtable1 + 108))(this); /*0x62cfa2*/
           if ( v8 ) /*0x62cfa6*/
           {
+  int v9; // esi
             v9 = 10240; /*0x62cfb0*/
+  unsigned int v10; // eax
             v10 = (*(int (**)(ParticleClass *))(*(unsigned int *)this->vtable1 + 488))(this); /*0x62cfb5*/
             if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x62cfc2*/
             {
+  char v11; // cl
               v11 = this->Translucency; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
               {
@@ -213,8 +213,8 @@ int ParticleClass::CheckStateFlag()
 namespace gamemd {
 int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 {
-  int result; // eax
 
+  int result; // eax
   result = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x62d7ab*/
   if ( result >= 0 ) /*0x62d7b2*/
   {
@@ -238,8 +238,8 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 namespace gamemd {
 int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x62d820*/
   aP0->q130 = 1; /*0x62d825*/
   return result; /*0x62d82c*/

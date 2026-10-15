@@ -92,12 +92,6 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // eax
-  int v5; // ecx
-  int *v6; // eax
-  unsigned int *v7; // edx
-  unsigned int *v8; // eax
-  int v9; // ecx
   void *v10; // eax
 
   this->Items = 0; /*0x4e0a0a*/
@@ -112,7 +106,9 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
       *a3 = a2; /*0x4e0a2f*/
       if ( a2 - 1 >= 0 ) /*0x4e0a36*/
       {
+  unsigned int *v4; // eax
         v4 = a3 + 2; /*0x4e0a38*/
+  int v5; // ecx
         v5 = a2; /*0x4e0a3b*/
         do /*0x4e0a46*/
         {
@@ -126,14 +122,18 @@ unsigned int VectorClass::sub_4E0A00(int a2, unsigned int * a3)
     }
     else
     {
+  int *v6; // eax
       v6 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = a2; /*0x4e0a64*/
+  unsigned int *v7; // edx
         v7 = (unsigned int *)(v6 + 1); /*0x4e0a68*/
         if ( a2 - 1 >= 0 ) /*0x4e0a6b*/
         {
+  unsigned int *v8; // eax
           v8 = (unsigned int *)(v6 + 2); /*0x4e0a6d*/
+  int v9; // ecx
           v9 = a2; /*0x4e0a70*/
           do /*0x4e0a7b*/
           {
@@ -360,8 +360,6 @@ namespace gamemd {
 void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 {
   int v3; // edx
-  HWND DlgItem; // esi
-  HWND *result; // eax
 
   if ( a2 )
   {
@@ -394,7 +392,9 @@ void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
   {
     v3 = 1876; /*0x4e34a4*/
   }
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, v3); /*0x4e350f*/
+  HWND *result; // eax
   result = 0; /*0x4e3511*/
   if ( a3 ) /*0x4e3519*/
   {
@@ -421,11 +421,7 @@ namespace gamemd {
 void * sub_4E3690(HWND hDlg, int a2)
 {
   int v4; // eax
-  HWND DlgItem; // ebp
   int v6; // esi
-  LRESULT v7; // eax
-  LRESULT v8; // eax
-  HWND Default; // eax
 
   if ( a2 )
   {
@@ -458,6 +454,7 @@ void * sub_4E3690(HWND hDlg, int a2)
   {
     v4 = 1754; /*0x4e369c*/
   }
+  HWND DlgItem; // ebp
   DlgItem = GetDlgItem(hDlg, v4); /*0x4e3708*/
   if ( a2 )
   {
@@ -490,7 +487,9 @@ void * sub_4E3690(HWND hDlg, int a2)
   {
     v6 = 1697; /*0x4e370c*/
   }
+  LRESULT v7; // eax
   v7 = SendDlgItemMessageA(hDlg, v6, 0x147u, 0, 0); /*0x4e377f*/
+  LRESULT v8; // eax
   v8 = SendDlgItemMessageA(hDlg, v6, 0x150u, v7, 0); /*0x4e378b*/
   if ( v8 < -3 || v8 > 9 ) /*0x4e3795*/
   {
@@ -499,6 +498,7 @@ void * sub_4E3690(HWND hDlg, int a2)
     else
       v8 = -2; /*0x4e37a8*/
   }
+  HWND Default; // eax
   Default = (HWND)((void *)v8)->FindDefault(); /*0x4e37af*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
 }
@@ -787,24 +787,18 @@ HWND * SetupLobbyCountryCombo(HWND aP0, int nIDDlgItem, int a3)
 namespace gamemd {
 bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebx
-  int *v6; // ebx
-  LRESULT v7; // ebp
-  int result; // eax
-  bool v9; // [esp+12h] [ebp-Eh]
-  bool v10; // [esp+13h] [ebp-Dh]
   int v11; // [esp+14h] [ebp-Ch]
-  LPARAM lParam; // [esp+18h] [ebp-8h]
-  WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e45b1*/
+  bool v10; // [esp+13h] [ebp-Dh]
   v10 = !ShowWindow(DlgItem, 0); /*0x4e45ce*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 522); /*0x4e45fe*/
+  LRESULT v5; // ebx
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e460e*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e4619*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e4624*/
@@ -835,14 +829,19 @@ bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
       v11 = nIDDlgItem != 1320 ? -1 : 7;
       break;
   }
+  int *v6; // ebx
   v6 = (int *)(dword_8B4040);
+  WPARAM wParam; // [esp+1Ch] [ebp-4h]
   wParam = 0; /*0x4e46c2*/
+  LPARAM lParam; // [esp+18h] [ebp-8h]
   lParam = 0; /*0x4e46c6*/
   do /*0x4e472c*/
   {
+  bool v9; // [esp+12h] [ebp-Eh]
     v9 = *v6 == v11; /*0x4e46d7*/
     if ( *v6 == v11 || *v6 == -1 ) /*0x4e46e0*/
     {
+  LRESULT v7; // ebp
       v7 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)aAb); /*0x4e46f1*/
       SendMessageA(DlgItem, 0x498u, v7, *(v6 - 1)); /*0x4e46fe*/
       SendMessageA(DlgItem, 0x151u, v7, lParam); /*0x4e470c*/
@@ -854,6 +853,7 @@ bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   }
   while ( (int)v6 < (int)&dbl_8B40A0 ); /*0x4e472c*/
   SendMessageA(DlgItem, 0x14Eu, wParam, 0); /*0x4e473b*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e4747*/
   (*((unsigned char *)&(result))) = v10; /*0x4e4749*/
   if ( !v10 ) /*0x4e474f*/
@@ -865,10 +865,9 @@ bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
-  int v2; // edi
   int v3; // eax
-  int v4; // edx
 
+  int v2; // edi
   v2 = dword_A8B3B4; /*0x4e48e7*/
   if ( dword_A8B3B8 == -2 ) /*0x4e48f0*/
     v2 = -2; /*0x4e48f2*/
@@ -905,6 +904,7 @@ int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
   }
   if ( dword_A8B238 == 3 || dword_A8B238 == 4 ) /*0x4e496b*/
   {
+  int v4; // edx
     v4 = *(&dword_A8DA90 + a2); /*0x4e496d*/
     if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e4982*/
       v2 = 8; /*0x4e4984*/
@@ -1210,24 +1210,18 @@ char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // eax
-  int *v6; // ebp
-  LRESULT v7; // ebx
-  int result; // eax
-  bool v9; // [esp+12h] [ebp-Eh]
-  bool v10; // [esp+13h] [ebp-Dh]
   int v11; // [esp+14h] [ebp-Ch]
-  LPARAM lParam; // [esp+18h] [ebp-8h]
-  WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e50d3*/
+  bool v10; // [esp+13h] [ebp-Dh]
   v10 = !ShowWindow(DlgItem, 0); /*0x4e50ed*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF((wchar_t *)(g_Str_GUI_RandomAsSymbols), 0, g_Str_File_GDlgSupp_cpp, 833); /*0x4e511b*/
+  LRESULT v5; // eax
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5128*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5133*/
   switch ( nIDDlgItem )
@@ -1257,14 +1251,19 @@ bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
       v11 = nIDDlgItem != 1707 ? -1 : 7;
       break;
   }
+  WPARAM wParam; // [esp+1Ch] [ebp-4h]
   wParam = (WPARAM)((int *)(0));
+  LPARAM lParam; // [esp+18h] [ebp-8h]
   lParam = 0; /*0x4e51ca*/
+  int *v6; // ebp
   v6 = (int *)(dword_8B3F38); /*0x4e51ce*/
   do /*0x4e5228*/
   {
+  bool v9; // [esp+12h] [ebp-Eh]
     v9 = *v6 == v11; /*0x4e51e1*/
     if ( *v6 == v11 || *v6 == -1 ) /*0x4e51ea*/
     {
+  LRESULT v7; // ebx
       v7 = SendMessageA(DlgItem, 0x4C2u, 0, *(v6 - 2)); /*0x4e51fa*/
       SendMessageA(DlgItem, 0x151u, v7, lParam); /*0x4e5208*/
       if ( v9 ) /*0x4e5210*/
@@ -1275,6 +1274,7 @@ bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   }
   while ( (int)v6 < (int)&dword_8B3F98 ); /*0x4e5228*/
   SendMessageA(DlgItem, 0x14Eu, wParam, 0); /*0x4e5237*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e5243*/
   (*((unsigned char *)&(result))) = v10; /*0x4e5245*/
   if ( !v10 ) /*0x4e524b*/
@@ -1286,10 +1286,9 @@ bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int Lobby_FillFactionComboBox(HWND a1, int a2)
 {
-  int v2; // edi
   int v3; // eax
-  int v4; // edx
 
+  int v2; // edi
   v2 = -2; /*0x4e53d4*/
   if ( a2 )
   {
@@ -1324,6 +1323,7 @@ int Lobby_FillFactionComboBox(HWND a1, int a2)
   }
   if ( dword_A8B238 == 3 || dword_A8B238 == 4 ) /*0x4e544b*/
   {
+  int v4; // edx
     v4 = *(&dword_A8DA90 + a2); /*0x4e544d*/
     if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e5462*/
       v2 = 8; /*0x4e5464*/
@@ -1696,10 +1696,9 @@ bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
-  int v2; // edi
   int v3; // eax
-  int v4; // edx
 
+  int v2; // edi
   v2 = -1; /*0x4e5e22*/
   if ( a2 )
   {
@@ -1734,6 +1733,7 @@ int Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
   }
   if ( ((unsigned int *)(dword_A8B238))[0] == 3 || dword_A8B238[0] == 4 ) /*0x4e5e99*/
   {
+  int v4; // edx
     v4 = *(&dword_A8DA90 + a2); /*0x4e5e9b*/
     if ( v4 == g_Lobby_MaxPlayers && *(unsigned int *)(v4 + 107) == -1 ) /*0x4e5eaf*/
       v2 = 4; /*0x4e5eb1*/
@@ -1922,10 +1922,10 @@ void sub_4E7620()
 namespace gamemd {
 char * * sub_4E7EA0()
 {
-  char *result; // eax
-  int v1; // ecx
 
+  char *result; // eax
   result = (char *)(byte_A802D4);
+  int v1; // ecx
   v1 = 128; /*0x4e7ea5*/
   do /*0x4e7eb2*/
   {
@@ -1977,13 +1977,11 @@ void unknown_libname_18()
 namespace gamemd {
 AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
 {
-  unsigned int *v4; // edi
-  int v6; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x4e924c*/
   {
     this->IsInitialized = 0; /*0x4e9256*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
@@ -1993,9 +1991,11 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
     {
       if ( this->Items ) /*0x4e9285*/
       {
+  int v6; // ecx
         v6 = this->Capacity; /*0x4e928c*/
         if ( a2 < v6 ) /*0x4e9291*/
           v6 = a2; /*0x4e9293*/
+  int i; // eax
         for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x4e9299*/
           ++i; /*0x4e929e*/
         if ( this->IsAllocated ) /*0x4e92ab*/
@@ -2025,13 +2025,11 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
 namespace gamemd {
 AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x4e9e2c*/
   {
     (this->u8_C) = 0; /*0x4e9e36*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
@@ -2041,9 +2039,11 @@ AbstractClass * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a
     {
       if ( *&this->u32_4 ) /*0x4e9e65*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x4e9e6c*/
         if ( a2 < m_8 ) /*0x4e9e71*/
           m_8 = a2; /*0x4e9e73*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
         if ( (this->u8_D) ) /*0x4e9e8b*/
@@ -2095,8 +2095,8 @@ namespace gamemd {
 unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x4e0ce3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
@@ -2117,8 +2117,8 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 namespace gamemd {
 void sub_4E0F10()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4e0f1c*/
   dbl_8B3E18 = Math::Sqrt(v0 + v0); /*0x4e0f2e*/
 }
@@ -2168,10 +2168,10 @@ void sub_4E0FC0()
 namespace gamemd {
 long long sub_4E0FE0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_8B3E08 - dbl_8B3E20); /*0x4e0ff2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_8B3E18 * 0.5); /*0x4e1006*/
   dword_8B3E70 = result; /*0x4e100b*/
   return result; /*0x4e1010*/
@@ -2198,8 +2198,8 @@ void sub_4E1050()
 namespace gamemd {
 long long sub_4E1080()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8B3E70) + 0.5); /*0x4e109b*/
   dword_8B3E64 = result; /*0x4e10a0*/
   return result; /*0x4e10a6*/
@@ -2266,8 +2266,8 @@ int sub_4E1AF0()
 namespace gamemd {
 void sub_4E1B10()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4e1b1c*/
   dbl_8B3EB8 = Math::Sqrt(v0 + v0); /*0x4e1b2e*/
 }
@@ -2317,10 +2317,10 @@ void sub_4E1BC0()
 namespace gamemd {
 long long sub_4E1BE0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_8B3E98 - dbl_8B3EC0); /*0x4e1bf2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_8B3EB8 * 0.5); /*0x4e1c06*/
   dword_8B3F10 = result; /*0x4e1c0b*/
   return result; /*0x4e1c10*/
@@ -2347,8 +2347,8 @@ void sub_4E1C50()
 namespace gamemd {
 long long sub_4E1C80()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8B3F10) + 0.5); /*0x4e1c9b*/
   dword_8B3F04 = result; /*0x4e1ca0*/
   return result; /*0x4e1ca6*/
@@ -2391,8 +2391,8 @@ int sub_4E1CE0()
 namespace gamemd {
 DWORD sub_4E2440()
 {
-  DWORD result; // eax
 
+  DWORD result; // eax
   result = timeGetTime(); /*0x4e2440*/
   dword_8B3F14 = result; /*0x4e2446*/
   return result; /*0x4e244b*/
@@ -2416,10 +2416,9 @@ namespace gamemd {
 int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
 {
 
-  int v7; // ecx
-  int v8; // eax
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
+  int v7; // ecx
   v7 = this->M48; /*0x4e2a79*/
   /* X11: vtable install elided (implicit via GaugeClass virtuals 0x4e2a83) */
   if ( v7 != 255 ) /*0x4e2a89*/
@@ -2427,6 +2426,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
     this->M48 = 255; /*0x4e2a8d*/
     ((GadgetClass *)this)->MarkDirty(); /*0x4e2a90*/
   }
+  int v8; // eax
   v8 = 0; /*0x4e2a99*/
   if ( this->M48 < 0 ) /*0x4e2a9d*/
     v8 = this->M48; /*0x4e2a9f*/
@@ -2463,8 +2463,8 @@ int sub_4E3110()
 namespace gamemd {
 void sub_4E3130()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4e313c*/
   dbl_8B3FA8 = Math::Sqrt(v0 + v0); /*0x4e314e*/
 }
@@ -2514,10 +2514,10 @@ void sub_4E31E0()
 namespace gamemd {
 long long sub_4E3200()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_8B3F28 - dbl_8B3FB0); /*0x4e3212*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_8B3FA8 * 0.5); /*0x4e3226*/
   dword_8B40C0 = result; /*0x4e322b*/
   return result; /*0x4e3230*/
@@ -2544,8 +2544,8 @@ void sub_4E3270()
 namespace gamemd {
 long long sub_4E32A0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8B40C0) + 0.5); /*0x4e32bb*/
   dword_8B40B4 = result; /*0x4e32c0*/
   return result; /*0x4e32c6*/
@@ -2588,37 +2588,36 @@ int sub_4E3300()
 namespace gamemd {
 bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  wchar_t *StringCSF; // eax
-  LRESULT v4; // eax
-  int v5; // ecx
-  int v6; // ebx
-  int v7; // ebp
-  int v8; // eax
-  LRESULT v9; // eax
-  int result; // eax
-  bool v11; // [esp+Fh] [ebp-5h]
-  int i; // [esp+10h] [ebp-4h]
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e3a0e*/
+  bool v11; // [esp+Fh] [ebp-5h]
   v11 = !ShowWindow(DlgItem, 0); /*0x4e3a2b*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3a30*/
   SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3a3c*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF(aGuiRandomex, 0, g_Str_File_GDlgSupp_cpp, 276); /*0x4e3a4f*/
+  LRESULT v4; // eax
   v4 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3a5d*/
   SendMessageA(DlgItem, 0x151u, v4, -2); /*0x4e3a68*/
+  int v5; // ecx
   v5 = dword_A83CA8; /*0x4e3a6a*/
+  int v6; // ebx
   v6 = 0; /*0x4e3a70*/
+  int i; // [esp+10h] [ebp-4h]
   for ( i = dword_A83CA8; v6 < v5; ++v6 ) /*0x4e3a78*/
   {
+  int v7; // ebp
     v7 = *((unsigned int *)dword_A83C9C + v6); /*0x4e3a80*/
     if ( v7 ) /*0x4e3a85*/
     {
       if ( *(unsigned char *)(v7 + 421) ) /*0x4e3a87*/
       {
+  int v8; // eax
         v8 = *(unsigned int *)(v7 + 184); /*0x4e3a91*/
         if ( v8 > -3 && v8 <= 9 && **(unsigned short **)(v7 + 96) ) /*0x4e3aa4*/
         {
+  LRESULT v9; // eax
           v9 = SendMessageA(DlgItem, 0x4C2u, 0, *(unsigned int *)(v7 + 96)); /*0x4e3ab3*/
           SendMessageA(DlgItem, 0x151u, v9, *(unsigned int *)(v7 + 184)); /*0x4e3ac3*/
           v5 = i; /*0x4e3ac5*/
@@ -2627,6 +2626,7 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
     }
   }
   SendMessageA(DlgItem, 0x4F1u, 0, 0); /*0x4e3ad9*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3ae5*/
   (*((unsigned char *)&(result))) = v11; /*0x4e3ae7*/
   if ( !v11 ) /*0x4e3aed*/
@@ -2639,20 +2639,20 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // eax
-  int result; // eax
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e3b12*/
+  bool v3; // bl
   v3 = !ShowWindow(DlgItem, 0); /*0x4e3b2b*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e3b2e*/
   SendMessageA(DlgItem, 0x4DEu, 0, 7); /*0x4e3b3a*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF(aGuiObserver, 0, g_Str_File_GDlgSupp_cpp, 309); /*0x4e3b4d*/
+  LRESULT v5; // eax
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e3b5b*/
   SendMessageA(DlgItem, 0x151u, v5, -3); /*0x4e3b66*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e3b72*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e3b7e*/
   if ( !v3 ) /*0x4e3b82*/
     return ShowWindow(DlgItem, 5); /*0x4e3b87*/
@@ -2664,12 +2664,12 @@ LRESULT SetupComboBoxObserver(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
-  LRESULT v3; // eax
-  int result; // eax
 
+  LRESULT v3; // eax
   v3 = wParam; /*0x4e4170*/
   if ( wParam == -1 ) /*0x4e4184*/
     v3 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4191*/
+  int result; // eax
   result = SendDlgItemMessageA(aP0, nIDDlgItem, 0x150u, v3, 0); /*0x4e419d*/
   if ( result < -3 || result > 9 ) /*0x4e41aa*/
   {
@@ -2686,9 +2686,6 @@ int GetComboBoxSelected(HWND aP0, int nIDDlgItem, LRESULT wParam)
 namespace gamemd {
 LPARAM * InitGameDropdownColors()
 {
-  int *p_owningHouseIndex0; // ecx
-  LPARAM *result; // eax
-  int v3; // edx
 
   FootClass_Array.temporalTargetingMe = (TemporalClass *)GetStringCSF(aGuiGoldabbrev, 0, g_Str_File_GDlgSupp_cpp, 475); /*0x4e43e7*/
   FootClass_Array.chronoLockRemaining = (int)GetStringCSF(aGuiRedabbrev, 0, g_Str_File_GDlgSupp_cpp, 476); /*0x4e4402*/
@@ -2699,10 +2696,13 @@ LPARAM * InitGameDropdownColors()
   FootClass_Array.mindControlledBy = (TechnoClass *)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
   FootClass_Array.mindControlledBy_house = (HouseClass *)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
   FootClass_Array.slaveManager = (SlaveManagerClass *)GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  int *p_owningHouseIndex0; // ecx
   p_owningHouseIndex0 = &FootClass_Array.owningHouseIndex0; /*0x4e44b3*/
+  LPARAM *result; // eax
   result = dword_8316A8; /*0x4e44b8*/
   do /*0x4e44d3*/
   {
+  int v3; // edx
     v3 = *result++; /*0x4e44bd*/
     *(p_owningHouseIndex0 - 1) = v3; /*0x4e44c2*/
     *p_owningHouseIndex0 = -1; /*0x4e44c5*/
@@ -2725,22 +2725,22 @@ bool IsAvailableColorhWnd(int a1)
 namespace gamemd {
 LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebp
-  int result; // eax
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e477c*/
+  bool v3; // bl
   v3 = !ShowWindow(DlgItem, 0); /*0x4e4799*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e479c*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e47a8*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e47b4*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 567); /*0x4e47c7*/
+  LRESULT v5; // ebp
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e47d7*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e47e2*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e47ed*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e47f9*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e4805*/
   if ( !v3 ) /*0x4e4809*/
     return ShowWindow(DlgItem, 5); /*0x4e480e*/
@@ -2752,8 +2752,8 @@ LRESULT FillListBox(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 int GetComboBoxSelectedRaw(HWND aP0, int nIDDlgItem, LRESULT wParam)
 {
-  LRESULT v3; // eax
 
+  LRESULT v3; // eax
   v3 = wParam; /*0x4e4e20*/
   if ( wParam == -1 ) /*0x4e4e34*/
     v3 = SendDlgItemMessageA(aP0, nIDDlgItem, 0x147u, 0, 0); /*0x4e4e41*/
@@ -2773,7 +2773,6 @@ wchar_t * sub_4E4F30()
 namespace gamemd {
 int * _cfltcvt_init()
 {
-  int *result; // eax
 
   dword_8B3F30 = (int)a1_2; /*0x4e4f50*/
   dword_8B3F3C = (int)a2; /*0x4e4f5a*/
@@ -2784,6 +2783,7 @@ int * _cfltcvt_init()
   dword_8B3F78 = (int)a7; /*0x4e4f8c*/
   dword_8B3F84 = (int)a8; /*0x4e4f96*/
   dword_8B3F90 = (int)a0_0; /*0x4e4fa0*/
+  int *result; // eax
   result = dword_8B3F38; /*0x4e4faa*/
   do /*0x4e4fbd*/
   {
@@ -2798,13 +2798,12 @@ int * _cfltcvt_init()
 namespace gamemd {
 void Lobby_ResetFactionTable(int a1)
 {
-  int *v1; // eax
-  int v2; // edx
-  int *v3; // eax
 
   if ( a1 > 0 ) /*0x4e4fc2*/
   {
+  int *v1; // eax
     v1 = dword_8B3F38; /*0x4e4fc4*/
+  int v2; // edx
     v2 = a1; /*0x4e4fc9*/
     do /*0x4e4fd5*/
     {
@@ -2816,6 +2815,7 @@ void Lobby_ResetFactionTable(int a1)
   }
   if ( a1 < 9 ) /*0x4e4fda*/
   {
+  int *v3; // eax
     v3 = (int *)(12 * a1 + 9125688); /*0x4e4fdf*/
     do /*0x4e4ff4*/
     {
@@ -2839,22 +2839,22 @@ bool sub_4E50A0(int a1)
 namespace gamemd {
 int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebp
-  int result; // eax
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e526c*/
+  bool v3; // bl
   v3 = !ShowWindow(DlgItem, 0); /*0x4e5289*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e528c*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5298*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e52a4*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF(g_Str_GUI_RandomAsSymbols, 0, g_Str_File_GDlgSupp_cpp, 876); /*0x4e52b7*/
+  LRESULT v5; // ebp
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e52c7*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e52d2*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e52dd*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e52e9*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e52f5*/
   if ( !v3 ) /*0x4e52f9*/
     return ShowWindow(DlgItem, 5); /*0x4e52fe*/
@@ -2866,8 +2866,8 @@ int SetupComboBoxRandomAlliance(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
-  LRESULT v3; // eax
 
+  LRESULT v3; // eax
   v3 = wParam; /*0x4e5900*/
   if ( wParam == -1 ) /*0x4e5914*/
     v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e5921*/
@@ -2879,22 +2879,22 @@ LRESULT SetComboBoxSelection(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 namespace gamemd {
 LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
-  bool v3; // bl
-  wchar_t *StringCSF; // eax
-  LRESULT v5; // ebp
-  int result; // eax
 
+  HWND DlgItem; // esi
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e5cbc*/
+  bool v3; // bl
   v3 = !ShowWindow(DlgItem, 0); /*0x4e5cd9*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5cdc*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5ce8*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5cf4*/
+  wchar_t *StringCSF; // eax
   StringCSF = GetStringCSF(aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1165); /*0x4e5d07*/
+  LRESULT v5; // ebp
   v5 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)StringCSF); /*0x4e5d17*/
   SendMessageA(DlgItem, 0x151u, v5, -2); /*0x4e5d22*/
   SendMessageA(DlgItem, 0x498u, v5, -1); /*0x4e5d2d*/
   SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x4e5d39*/
+  int result; // eax
   result = SendMessageA(DlgItem, 0x4F1u, 0, 1); /*0x4e5d45*/
   if ( !v3 ) /*0x4e5d49*/
     return ShowWindow(DlgItem, 5); /*0x4e5d4e*/
@@ -2906,8 +2906,8 @@ LRESULT InitComboBoxNone(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 LRESULT GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 {
-  LRESULT v3; // eax
 
+  LRESULT v3; // eax
   v3 = wParam; /*0x4e6030*/
   if ( wParam == -1 ) /*0x4e6044*/
     v3 = SendDlgItemMessageA(hDlg, nIDDlgItem, 0x147u, 0, 0); /*0x4e6051*/
@@ -2944,11 +2944,11 @@ void nullsub_54()
 namespace gamemd {
 char * Version_GetString(unsigned int * a1, unsigned char * a2, char * Destination, size_t Count)
 {
-  char *result; // eax
 
   *a2 = Event_Process_7C5F3D(); /*0x4e615b*/
   Event_Process_7C5FFF(); /*0x4e615d*/
   *a1 = byte_84E863; /*0x4e6169*/
+  char *result; // eax
   result = Destination; /*0x4e616b*/
   if ( Destination ) /*0x4e6173*/
     return strncpy(Destination, Source, Count); /*0x4e6180*/
@@ -2960,14 +2960,14 @@ char * Version_GetString(unsigned int * a1, unsigned char * a2, char * Destinati
 namespace gamemd {
 int sub_4E6190()
 {
-  int v0; // esi
   int result; // eax
-  int v2; // [esp+0h] [ebp-44h] BYREF
-  char Destination[64]; // [esp+4h] [ebp-40h] BYREF
 
   Event_Process_7C5F3D(); /*0x4e6194*/
   Event_Process_7C5FFF(); /*0x4e6199*/
+  int v0; // esi
   v0 = byte_84E863; /*0x4e619e*/
+  int v2; // [esp+0h] [ebp-44h] BYREF
+  char Destination[64]; // [esp+4h] [ebp-40h] BYREF
   if ( &v2 != (int *)-4 ) /*0x4e61ab*/
     strncpy(Destination, Source, 0x40u); /*0x4e61b9*/
   if ( !v0 || !byte_84E864 ) /*0x4e61d0*/
@@ -3008,8 +3008,8 @@ int sub_4E6190()
 namespace gamemd {
 void sub_4E62D0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x4e62dc*/
   dbl_A83D40 = Math::Sqrt(v0 + v0); /*0x4e62ee*/
 }
@@ -3059,10 +3059,10 @@ void sub_4E6380()
 namespace gamemd {
 long long sub_4E63A0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_8B4168 - dbl_A83DB0); /*0x4e63b2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_A83D40 * 0.5); /*0x4e63c6*/
   dword_A8ED58 = result; /*0x4e63cb*/
   return result; /*0x4e63d0*/
@@ -3089,8 +3089,8 @@ void sub_4E6410()
 namespace gamemd {
 long long sub_4E6440()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_A8ED58) + 0.5); /*0x4e645b*/
   dword_A8EC94 = result; /*0x4e6460*/
   return result; /*0x4e6466*/
@@ -4651,10 +4651,10 @@ int unknown_libname_16()
 namespace gamemd {
 char * sub_4E7ED0()
 {
-  char *result; // eax
-  int v1; // ecx
 
+  char *result; // eax
   result = byte_8B4204; /*0x4e7ed0*/
+  int v1; // ecx
   v1 = 0x4000; /*0x4e7ed5*/
   do /*0x4e7ee2*/
   {
@@ -4674,10 +4674,10 @@ char * sub_4E7ED0()
 namespace gamemd {
 unsigned char * sub_4E7F00()
 {
-  unsigned char *result; // eax
-  int v1; // ecx
 
+  unsigned char *result; // eax
   result = &unk_A83EDC; /*0x4e7f00*/
+  int v1; // ecx
   v1 = 256; /*0x4e7f05*/
   do /*0x4e7f12*/
   {
@@ -4896,16 +4896,16 @@ void VectorClass::HouseClass_vt_03_free_(gamemd::VectorClass_TagClass *a1)  // G
 // 0x4E9320
 int VectorClass::HouseClass_vt_04_free_(gamemd::VectorClass_TagClass *a1, int * a2)  // G57w17h4 receiver-first (raw this=VectorClass)
 {
-  int result; // eax
-  int v3; // edx
-  unsigned int *i; // ecx
 
   if ( !*(unsigned char *)(a1 + 12) ) /*0x4e9320*/
     return 0; /*0x4e9328*/
+  int v3; // edx
   v3 = *(unsigned int *)(a1 + 8); /*0x4e932e*/
+  int result; // eax
   result = 0; /*0x4e9331*/
   if ( v3 <= 0 ) /*0x4e9335*/
     return -1; /*0x4e934c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)(a1 + 4); *i != *a2; ++i ) /*0x4e933b*/
   {
     if ( ++result >= v3 ) /*0x4e934a*/
@@ -4924,16 +4924,16 @@ unsigned int VectorClass::HouseClass_vt_05_free_(gamemd::VectorClass_TagClass *a
 // 0x4E9F00
 int _VectorClass_PAVParticleClass::ParticleSystemClass_vt_04_free_(gamemd::_VectorClass_PAVParticleClass *a1, int * a2)  // G57w17h4 receiver-first (raw this=_VectorClass_PAVParticleClass)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(a1->m_C))) ) /*0x4e9f00*/
     return 0; /*0x4e9f08*/
+  int m_8; // edx
   m_8 = a1->m_8; /*0x4e9f0e*/
+  int result; // eax
   result = 0; /*0x4e9f11*/
   if ( m_8 <= 0 ) /*0x4e9f15*/
     return -1; /*0x4e9f2c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a1->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
   {
     if ( ++result >= m_8 ) /*0x4e9f2a*/
@@ -4953,8 +4953,8 @@ unsigned int _VectorClass_PAVParticleClass::ParticleSystemClass_vt_05_free_(game
 namespace gamemd {
 unsigned int *  VectorClass::HouseClass_vt_00(char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->Items; /*0x4ef4e3*/
   *this = &vt_VectorClass; /*0x4ef4e6*/
   if ( v3 && this->IsAllocated ) /*0x4ef4f0*/
@@ -4974,8 +4974,8 @@ unsigned int *  VectorClass::HouseClass_vt_00(char a2)
 namespace gamemd {
 unsigned int * _VectorClass_PAVParticleClass::ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->u32_4; /*0x4ef803*/
   *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef806*/
   if ( v3 && (Block->u8_D) ) /*0x4ef810*/

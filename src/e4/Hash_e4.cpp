@@ -25,14 +25,14 @@ int sub_5C61E0()
 namespace gamemd {
 int sub_5E94D0()
 {
-  int result; // eax
-  LPARAM *v1; // edx
-  LPARAM v2; // ecx
 
+  int result; // eax
   result = (int)((LPARAM *)(0));
+  LPARAM *v1; // edx
   v1 = (LPARAM *)(&dword_A8DA90); /*0x5e94e7*/
   do /*0x5e9508*/
   {
+  LPARAM v2; // ecx
     v2 = *v1; /*0x5e94ec*/
     if ( *v1 && (v2 == g_Lobby_PlayerTeam || v2 == g_Lobby_PlayerSide || v2 == g_Lobby_PlayerColor) ) /*0x5e94fc*/
       ++result; /*0x5e94fe*/
@@ -47,14 +47,14 @@ int sub_5E94D0()
 namespace gamemd {
 char sub_5E9580()
 {
-  int v0; // edx
-  LPARAM *v1; // ecx
-  LPARAM v2; // eax
 
+  int v0; // edx
   v0 = (int)((LPARAM *)(0));
+  LPARAM *v1; // ecx
   v1 = (LPARAM *)(&dword_A8DA90); /*0x5e9597*/
   while ( 1 ) /*0x5e959c*/
   {
+  LPARAM v2; // eax
     v2 = *v1; /*0x5e959c*/
     if ( *v1 ) /*0x5e959c*/
     {

@@ -241,8 +241,8 @@ namespace gamemd {
 int Building::GetNthOfType()
 {
 
-  int BuildingByTiberiumType; // eax
 
+  int BuildingByTiberiumType; // eax
   BuildingByTiberiumType = FindBuildingByTiberiumType(*&this->u32_44); /*0x485026*/
   if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
@@ -257,10 +257,10 @@ namespace gamemd {
 int Building::GetRenderType()
 {
 
-  unsigned char *Building_field_0xA0; // ecx
-  int result; // eax
 
+  unsigned char *Building_field_0xA0; // ecx
   Building_field_0xA0 = (unsigned char *)(this->q0A0); /*0x772a90*/
+  int result; // eax
   result = 0; /*0x772a96*/
   if ( Building_field_0xA0->q2A4 ) /*0x772a98*/
     result = 4; /*0x772aa2*/
@@ -275,19 +275,19 @@ namespace gamemd {
 unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
 {
 
-  int v2; // eax
-  __int16 *v3; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // esi
-  int v7; // edi
 
+  int v2; // eax
   v2 = (int)(MixFileClass::LoadSubFile()); /*0x69e7e0*/
+  __int16 *v3; // eax
   if ( v2 && a2 < v2->u32_6 && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
+  int v4; // ecx
     v4 = *v3; /*0x69e800*/
+  int v5; // edx
     v5 = v3[1]; /*0x69e803*/
+  int v6; // esi
     v6 = v3[2]; /*0x69e809*/
+  int v7; // edi
     v7 = v3[3]; /*0x69e80e*/
     *a1 = v4; /*0x69e818*/
     a1->vtable2 = v5; /*0x69e81a*/

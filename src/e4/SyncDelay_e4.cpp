@@ -201,8 +201,8 @@ signed int SyncDelay::Start(void *a1, void *a2)
 namespace gamemd {
 bool SyncDelay::Check(unsigned int * a2, void *a2_1, void *a3)
 {
-  unsigned int *v2; // eax
 
+  unsigned int *v2; // eax
   v2 = (unsigned int *)this->q010; /*0x55f6c0*/
   return v2 && *v2 == *a2; /*0x55f6d3*/
 }

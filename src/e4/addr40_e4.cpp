@@ -3996,7 +3996,6 @@ int E4Recv_406310::sub_406310()
 namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::AddSampleVocClass(int a1, unsigned char * a2)
 {
-  int v5; // eax
 
   if ( *(unsigned int *)(a1 + 308) == 32 ) /*0x4064ad*/
     return 0; /*0x4064b3*/
@@ -4004,6 +4003,7 @@ int AbstractTypeClass::AddSampleVocClass(int a1, unsigned char * a2)
   {
     while ( *a2 == 36 || *a2 == 35 ) /*0x4064cf*/
       ++a2; /*0x4064d1*/
+  int v5; // eax
     v5 = sub_4015C0(); /*0x4064d6*/
     if ( v5 != -1 ) /*0x4064de*/
     {
@@ -4041,8 +4041,8 @@ void AbstractTypeClass::sub_406540(int a1, int a2)
 namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406550(int a1, int a2)
 {
-  unsigned int *v2; // esi
 
+  unsigned int *v2; // esi
   v2 = (unsigned int *)(a1 + 24); /*0x406551*/
   EndBufferMixer((int *)(a1 + 24), a2); /*0x406556*/
   return AudioMixer::PlaySample(v2); /*0x40655d*/
@@ -4052,9 +4052,9 @@ int AbstractTypeClass::sub_406550(int a1, int a2)
 namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406570(unsigned int * a1, int a2)
 {
-  int result; // eax
 
   a1[4] = a2; /*0x406573*/
+  int result; // eax
   result = 1; /*0x406576*/
   if ( (a2 & 0x20) != 0 ) /*0x40657b*/
   {
@@ -4130,7 +4130,6 @@ int AbstractTypeClass::sub_406610(int a1, int a2, int a3)
 namespace gamemd {  // G42.18c ns repair
 int AbstractTypeClass::sub_406620(int a1, int a2)
 {
-  int result; // eax
 
   if ( a2 <= 100 ) /*0x406623*/
   {
@@ -4149,6 +4148,7 @@ int AbstractTypeClass::sub_406620(int a1, int a2)
     *(unsigned int *)(a1 + 104) = 100; /*0x40662a*/
     return 100; /*0x406625*/
   }
+  int result; // eax
   return result; /*0x40662d*/
 }
 }  // G42.18c ns repair
@@ -4163,15 +4163,13 @@ void AbstractTypeClass::sub_406640(int a1, int a2)
 namespace gamemd {
 int * sub_406670(void * a1, int a2)
 {
-  int *result; // eax
-  int *v5; // esi
-  int v6; // edi
-  int64_t v7; // rax
 
+  int *result; // eax
   result = (int *)g_AudioConfigState; /*0x406670*/
   if ( g_AudioConfigState ) /*0x40667e*/
   {
     result = (int *)((AudioQueue *)(stru_87E250))->GetNext(); /*0x406689*/
+  int *v5; // esi
     v5 = result; /*0x40668e*/
     if ( result ) /*0x406692*/
     {
@@ -4188,9 +4186,11 @@ int * sub_406670(void * a1, int a2)
       if ( v5 ) /*0x4066bc*/
       {
         result = AudioPool::ProcessQueue(v5); /*0x4066c0*/
+  int v6; // edi
         v6 = (int)result; /*0x4066c5*/
         if ( result ) /*0x4066c9*/
         {
+  int64_t v7; // rax
           v7 = ((int64_t)a2 << 14) / 256; /*0x4066e5*/
           if ( (unsigned int)v7 > 0x4000 ) /*0x4066ef*/
             (*((unsigned int *)&(v7))) = 0x4000; /*0x4066f1*/
@@ -4224,9 +4224,9 @@ void __setargv()
 namespace gamemd {
 bool sub_4067D0(char * a1, unsigned int * a2)
 {
-  char **v4; // esi
   char *v5; // eax
 
+  char **v4; // esi
   v4 = &off_816018; /*0x4067de*/
   if ( off_816018 ) /*0x4067e3*/
   {
@@ -4249,9 +4249,9 @@ bool sub_4067D0(char * a1, unsigned int * a2)
 namespace gamemd {
 bool sub_406820(unsigned int * a1, char * a2)
 {
-  const void **v4; // esi
   void **v5; // eax
 
+  const void **v4; // esi
   v4 = (const void **)&off_8160C0; /*0x40682e*/
   if ( off_8160C0 ) /*0x406833*/
   {
@@ -4274,8 +4274,8 @@ bool sub_406820(unsigned int * a1, char * a2)
 namespace gamemd {
 void sub_406920()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40692c*/
   dbl_87E448 = Math::Sqrt(v0 + v0); /*0x40693e*/
 }
@@ -4325,10 +4325,10 @@ void sub_4069D0()
 namespace gamemd {
 long long sub_4069F0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_87E2B8 - dbl_87E4D0); /*0x406a02*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_87E448 * 0.5); /*0x406a16*/
   dword_87E720 = result; /*0x406a1b*/
   return result; /*0x406a20*/
@@ -4355,8 +4355,8 @@ void sub_406A60()
 namespace gamemd {
 long long sub_406A90()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_87E720) + 0.5); /*0x406aab*/
   dword_87E694 = result; /*0x406ab0*/
   return result; /*0x406ab6*/
@@ -4399,10 +4399,9 @@ int sub_406AF0()
 namespace gamemd {
 bool sub_406DE0()
 {
-  int *AudioChannel; // eax
-  unsigned int v2[8]; // [esp+0h] [ebp-20h] BYREF
 
   AudioQueue::CreateNode((int)off_816514); /*0x406de9*/
+  unsigned int v2[8]; // [esp+0h] [ebp-20h] BYREF
   Struct::ZeroInit32(v2); /*0x406df2*/
   v2[2] = 22050; /*0x406e00*/
   v2[1] = 0; /*0x406e08*/
@@ -4410,6 +4409,7 @@ bool sub_406DE0()
   v2[4] = 2; /*0x406e14*/
   v2[0] = 4; /*0x406e18*/
   sub_4085B0(v2); /*0x406e20*/
+  int *AudioChannel; // eax
   AudioChannel = CreateAudioChannel(-1, v2); /*0x406e2c*/
   g_Audio_Enabled = AudioChannel; /*0x406e33*/
   return AudioChannel && AudioQueue::PreallocateChannels(AudioChannel, 16) == 16; /*0x406e50*/
@@ -4441,7 +4441,6 @@ int sub_406EE0()
 namespace gamemd {
 int sub_406F00()
 {
-  int result; // eax
 
   if ( !ChronoScreen::IsActive() ) /*0x406f00*/
   {
@@ -4450,6 +4449,7 @@ int sub_406F00()
     AudioStream::UpdateTimers(); /*0x406f1d*/
     sub_751040(); /*0x406f22*/
   }
+  int result; // eax
   result = AudioFrame::CounterInc(); /*0x406f27*/
   if ( dword_B1D4D8 ) /*0x753508*/
     return AudioFrame::ProcessAudioFrame((int)dword_B1D4D8); /*0x75350a*/
@@ -4460,8 +4460,8 @@ int sub_406F00()
 namespace gamemd {
 int sub_407020()
 {
-  int result; // eax
 
+  int result; // eax
   result = dword_87E730; /*0x407020*/
   if ( !dword_87E730 ) /*0x407027*/
     result = sub_40A940(); /*0x407029*/
@@ -4490,17 +4490,17 @@ int j_Mixer_RequestBuffer(VolumeStruct* volume, int rate)
 namespace gamemd {
 int SetupSampleAudioMixer(int * a0, ObjectClass * aP1)
 {
-  int v4; // eax
-  int AudioMixer_field_00; // ecx
-  int v6; // edx
 
   a0->AudioMixer_field_00 = 0; /*0x407106*/
+  int v4; // eax
   v4 = Audio::Callback(); /*0x40710c*/
+  int AudioMixer_field_00; // ecx
   AudioMixer_field_00 = a0->AudioMixer_field_00; /*0x407111*/
   a0[1].AudioMixer_field_00 = v4; /*0x407113*/
   a0->AudioMixer_field_10 = 1000; /*0x407119*/
   a0->AudioMixer_field_00 = AudioMixer_field_00 | 1; /*0x407123*/
   a0->AudioMixer_field_08 = aP1 << 16; /*0x407125*/
+  int v6; // edx
   a0[1].AudioMixer_field_04 = v6; /*0x407128*/
   a0->AudioMixer_field_0C = 1073741; /*0x40712b*/
   a0->AudioMixer_field_14 = 0; /*0x407132*/
@@ -4511,8 +4511,8 @@ int SetupSampleAudioMixer(int * a0, ObjectClass * aP1)
 namespace gamemd {
 int EndBufferMixer(VolumeStruct* volume, int scaledVolume)
 {
-  int result; // eax
 
+  int result; // eax
   result = *volume; /*0x407150*/
   (*((unsigned char *)&(result))) = *volume | 1; /*0x407152*/
   *volume = result; /*0x407157*/
@@ -4526,8 +4526,8 @@ namespace gamemd {
 int ObjectClass::sub_407160()
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)this->AbstractClass; /*0x407160*/
   LOBYTE(result) = (int)this->AbstractClass | 1; /*0x407162*/
   this->AbstractClass = (void *)result; /*0x407164*/
@@ -4540,19 +4540,19 @@ int ObjectClass::sub_407160()
 namespace gamemd {
 int RequestBufferMixer(VolumeStruct* volume, int rate)
 {
-  unsigned int v4; // edx
-  int result; // eax
-  unsigned int v6; // ecx
-  unsigned int v7; // edx
 
+  unsigned int v4; // edx
   v4 = *volume; /*0x407176*/
+  int result; // eax
   result = volume[2]; /*0x407178*/
+  unsigned int v6; // ecx
   v6 = volume[1]; /*0x40717b*/
   *volume = v4 & 0xFFFFFFFE; /*0x407183*/
   if ( result == v6 ) /*0x407185*/
   {
     result = Audio::Callback(); /*0x407187*/
     volume[6] = result; /*0x40718c*/
+  unsigned int v7; // edx
     volume[7] = v7; /*0x40718f*/
   }
   volume[2] = rate << 16; /*0x407195*/
@@ -4585,24 +4585,23 @@ int E4Recv_4072B0::sub_4072B0()
 namespace gamemd {
 int sub_4072E0(unsigned int * a1, unsigned int * a2)
 {
-  int result; // eax
-  unsigned int *v3; // esi
-  unsigned int *v4; // ebx
-  int v5; // ecx
-  int v6; // esi
 
+  int result; // eax
   result = 0; /*0x4072e6*/
+  unsigned int *v3; // esi
   v3 = a1; /*0x4072e8*/
   while ( 1 ) /*0x4072ea*/
   {
     v3 = (unsigned int *)*v3; /*0x4072ea*/
     if ( !v3 ) /*0x4072ee*/
       break; /*0x4072ee*/
+  unsigned int *v4; // ebx
     v4 = (unsigned int *)v3[2]; /*0x4072f0*/
     if ( v3 == v4 ) /*0x4072f5*/
       break; /*0x4072f5*/
     if ( a2[2] <= (int)v4 ) /*0x4072fd*/
     {
+  int v5; // ecx
       v5 = v3[1]; /*0x407302*/
       *a2 = v3; /*0x407305*/
       a2[1] = v5; /*0x407307*/
@@ -4612,6 +4611,7 @@ int sub_4072E0(unsigned int * a1, unsigned int * a2)
     }
     ++result; /*0x4072ff*/
   }
+  int v6; // esi
   v6 = a1[1]; /*0x407316*/
   *a2 = a1; /*0x407319*/
   a2[1] = v6; /*0x40731b*/
@@ -4625,8 +4625,8 @@ int sub_4072E0(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 int DListNode_InsertAfter(int a1, unsigned int * a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = *(unsigned int *)(a1 + 4); /*0x407420*/
   *a2 = a1; /*0x407423*/
   a2[1] = result; /*0x407425*/
@@ -4640,9 +4640,9 @@ int DListNode_InsertAfter(int a1, unsigned int * a2)
 namespace gamemd {
 int LinkedList_InsertBefore(int * a1, int * a2)
 {
-  int result; // eax
 
   a2[1] = (int)a1; /*0x407440*/
+  int result; // eax
   result = *a1; /*0x407443*/
   *a2 = *a1; /*0x407445*/
   *a1 = (int)a2; /*0x407447*/
@@ -4655,19 +4655,19 @@ int LinkedList_InsertBefore(int * a1, int * a2)
 namespace gamemd {
 unsigned int * Memory_AllocLinkedList(int a1, int a2)
 {
-  int v2; // edi
-  unsigned int *result; // eax
-  unsigned int *v5; // ecx
-  int v6; // esi
 
+  int v2; // edi
   v2 = a2 + 8; /*0x4074d2*/
+  unsigned int *result; // eax
   result = operator new(a1 * (a2 + 8) + 8); /*0x4074e0*/
   if ( result ) /*0x4074ea*/
   {
+  unsigned int *v5; // ecx
     v5 = result + 2; /*0x4074ef*/
     *result = result + 2; /*0x4074f4*/
     if ( a1 != 1 ) /*0x4074f6*/
     {
+  int v6; // esi
       v6 = a1 - 1; /*0x4074f8*/
       do /*0x407502*/
       {
@@ -4697,9 +4697,6 @@ int LinkedList_PushFront_Alt(unsigned int * a1, int a2)
 namespace gamemd {
 int sub_407550()
 {
-  HANDLE Thread; // eax
-  DWORD LastError; // eax
-  CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
 
   DListNode::Init(unk_87E810); /*0x40755c*/
   InitializeCriticalSection(&unk_87E7F8); /*0x407566*/
@@ -4712,13 +4709,16 @@ int sub_407550()
   CoordBounds::Constructor(stru_87E790, qword_87E780, (*((signed int *)(((unsigned char *)&(qword_87E780)) + 4)))); /*0x4075b2*/
   AudioStream::ResetChannel(stru_87E790, 4 * qword_87E780, (uint64_t)qword_87E780 >> 30); /*0x4075d3*/
   AudioStream::ResetChannel2(stru_87E790, 4 * qword_87E780, (uint64_t)qword_87E780 >> 30); /*0x4075f5*/
+  HANDLE Thread; // eax
   Thread = CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)StartAddress, &dword_87E770, 0, &unk_87E7F4); /*0x407610*/
   dword_87E7F0 = Thread; /*0x407618*/
   if ( !Thread ) /*0x40761d*/
     return 0; /*0x40761f*/
   if ( !SetThreadPriority(Thread, 2) ) /*0x40762c*/
   {
+  DWORD LastError; // eax
     LastError = GetLastError(); /*0x407642*/
+  CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
     FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x40764f*/
     Debug::Log(); /*0x40765f*/
   }
@@ -4732,14 +4732,8 @@ int sub_407550()
 namespace gamemd {
 DWORD StartAddress(unsigned int * lpThreadParameter)
 {
-  unsigned int *v1; // edi
-  int64_t v2; // rax
-  int i; // esi
-  int v4; // eax
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
 
+  unsigned int *v1; // edi
   v1 = lpThreadParameter; /*0x407682*/
   lpThreadParameter[6] = 1; /*0x40768b*/
   v1[2] = 0; /*0x407690*/
@@ -4752,22 +4746,28 @@ DWORD StartAddress(unsigned int * lpThreadParameter)
   {
     do /*0x40775e*/
     {
+  int64_t v2; // rax
       (*((unsigned int *)&(v2))) = Audio::Callback(); /*0x4076a5*/
       AudioThread::UpdateStats(v1 + 8, v2); /*0x4076af*/
       EnterCriticalSection(&unk_87E7F8); /*0x4076b9*/
+  int i; // esi
       for ( i = ((AudioQueue *)((AudioQueue *)&unk_87E810))->GetNext(); i; i = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt() ) /*0x4076c9*/
       {
         if ( (*(unsigned char *)(i + 12) & 4) != 0 ) /*0x4076cf*/
         {
           EnterCriticalSection(&unk_87E7F8); /*0x4076d6*/
+  int v4; // eax
           v4 = *(unsigned int *)(i + 156); /*0x4076d8*/
           byte_B04BEC = 1; /*0x4076e2*/
+  int v5; // eax
           v5 = sub_408F80(*(int **)(i + 52), *(int **)(i + 124), v4, (char *)&lpThreadParameter); /*0x4076f1*/
           byte_B04BEC = 0; /*0x4076f6*/
+  int v6; // ecx
           v6 = *(unsigned int *)(i + 156) - (unsigned int)lpThreadParameter; /*0x407706*/
           *(unsigned int *)(i + 156) = v6; /*0x40770a*/
           if ( v6 <= 0 || v5 == 2 || !v5 ) /*0x407719*/
           {
+  int v7; // eax
             v7 = *(unsigned int *)(i + 12); /*0x40771b*/
             (*((unsigned char *)&(v7))) = v7 & 0xFB; /*0x40771e*/
             *(unsigned int *)(i + 12) = v7; /*0x407720*/
@@ -4790,8 +4790,6 @@ DWORD StartAddress(unsigned int * lpThreadParameter)
 namespace gamemd {
 void sub_407780(Voice * a1)
 {
-  AudioSample *Next; // esi
-  Voice *v2; // [esp-Ch] [ebp-Ch]
 
   if ( *(unsigned int *)&DataGlobal_87E81C ) /*0x407787*/
   {
@@ -4804,9 +4802,11 @@ void sub_407780(Voice * a1)
       CloseHandle(*(HANDLE *)&hObject); /*0x4077d5*/
       DataGlobal_87E820 = 0; /*0x4077db*/
     }
+  AudioSample *Next; // esi
     Next = (AudioSample *)((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x4077ef*/
     if ( Next ) /*0x4077f3*/
     {
+  Voice *v2; // [esp-Ch] [ebp-Ch]
       v2 = a1; /*0x4077fc*/
       do /*0x40783f*/
       {
@@ -4835,8 +4835,8 @@ namespace gamemd {
 int E4Recv_407F80::sub_407F80()
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)&this->parachute->AnimClass_field_0x0 + 1; /*0x407f86*/
   this->parachute = (AnimClass *)result; /*0x407f87*/
   return result; /*0x407f8d*/
@@ -4848,8 +4848,8 @@ int E4Recv_407F80::sub_407F80()
 namespace gamemd {
 char * SetAudioFileName(int a1, const char * a2)
 {
-  char *result; // eax
 
+  char *result; // eax
   result = strncpy((char *)(a1 + 164), a2, 0x50u); /*0x40808d*/
   *(unsigned char *)(a1 + 243) = 0; /*0x408095*/
   return result; /*0x40809c*/
@@ -4878,19 +4878,18 @@ int E4Recv_4080B0::sub_4080B0()
 namespace gamemd {
 int AudioTimer_Process()
 {
-  int result; // eax
-  int i; // esi
-  int v2; // eax
-  int v3; // eax
 
+  int result; // eax
   result = *(unsigned int *)&DataGlobal_87E81C; /*0x4082f0*/
   if ( *(unsigned int *)&DataGlobal_87E81C ) /*0x4082f8*/
   {
     result = ((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x408303*/
+  int i; // esi
     for ( i = result; result; i = result ) /*0x40830c*/
     {
       if ( i->q080 ) /*0x40831c*/
       {
+  int v2; // eax
         v2 = i->q080 - 1; /*0x40832c*/
         i->q080 = v2; /*0x40832f*/
         if ( v2 < 0 ) /*0x408335*/
@@ -4898,6 +4897,7 @@ int AudioTimer_Process()
         if ( !*&i->q080 && i->u32_14 ) /*0x40834b*/
         {
           EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x408357*/
+  int v3; // eax
           v3 = i->u32_C; /*0x408359*/
           if ( (v3 & 2) != 0 ) /*0x40835e*/
           {
@@ -4919,13 +4919,13 @@ int AudioTimer_Process()
 namespace gamemd {
 int sub_408390()
 {
-  int result; // eax
-  int *i; // esi
 
+  int result; // eax
   result = dword_87E81C; /*0x408390*/
   if ( dword_87E81C ) /*0x408398*/
   {
     result = ((AudioQueue *)(unk_87E810))->GetNext(); /*0x40839f*/
+  int *i; // esi
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083a8*/
     {
       RequestBufferMixer((unsigned int *)(i[5] + 16), 0); /*0x4083b2*/
@@ -4940,10 +4940,10 @@ int sub_408390()
 namespace gamemd {
 int sub_408410()
 {
-  AudioQueue *Next; // eax
 
   if ( !*(unsigned int *)&DataGlobal_87E81C ) /*0x408418*/
     return 1; /*0x408418*/
+  AudioQueue *Next; // eax
   Next = (AudioQueue *)((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x40841f*/
   if ( !Next ) /*0x408426*/
     return 1; /*0x40844c*/
@@ -4962,9 +4962,8 @@ int sub_408410()
 namespace gamemd {
 unsigned int * ObjectClass::sub_408460(size_t Size)
 {
-  DListNode *v2; // esi
-  int v3; // eax
 
+  DListNode *v2; // esi
   v2 = (DListNode *)operator new(0x20u); /*0x40846c*/
   memset(v2, 0, 0x20u); /*0x408477*/
   *(unsigned int *)v2->__pad_000 = 0; /*0x408481*/
@@ -4973,6 +4972,7 @@ unsigned int * ObjectClass::sub_408460(size_t Size)
   *v2->u32_C.__pad_0 = 0; /*0x408489*/
   DListNode::Init(v2 + 1); /*0x40848c*/
   v2->q004 = (int)Size; /*0x408491*/
+  int v3; // eax
   v3 = operator new((size_t)Size); /*0x408495*/
   *(unsigned int *)v2->__pad_000 = v3; /*0x40849f*/
   if ( v3 ) /*0x4084a1*/
@@ -4987,9 +4987,9 @@ unsigned int * ObjectClass::sub_408460(size_t Size)
 namespace gamemd {
 int sub_408500(int a1, unsigned int * a2)
 {
-  int result; // eax
 
   InsertAfterDListNode(a1 + 8, a2); /*0x408509*/
+  int result; // eax
   result = a2[4]; /*0x40850e*/
   *(unsigned int *)(a1 + 4) += result; /*0x408516*/
   a2[5] = a1; /*0x408519*/
@@ -5001,8 +5001,8 @@ int sub_408500(int a1, unsigned int * a2)
 namespace gamemd {
 void nullsub_2()
 {
-  int result; // eax
 
+  int result; // eax
   return result; /*0x408530*/
 }
 } // namespace gamemd
@@ -5011,8 +5011,8 @@ void nullsub_2()
 namespace gamemd {
 unsigned long long sub_408560(int a1, int a2)
 {
-  int v2; // esi
 
+  int v2; // esi
   v2 = *(unsigned int *)(a1 + 20); /*0x408561*/
   if ( v2 ) /*0x408568*/
     return 1000LL * a2 / (uint64_t)v2; /*0x408585*/
@@ -5026,10 +5026,10 @@ namespace gamemd {
 int E4Recv_4085B0::sub_4085B0()
 {
 
-  void *vtable1; // edx
-  int result; // eax
 
+  void *vtable1; // edx
   vtable1 = this->M4; /*0x4085b3*/
+  int result; // eax
   result = (int)this->q018 * (int)this->q018 * this->q018; /*0x4085ba*/
   this->M20 = result; /*0x4085c1*/
   if ( vtable1 == 1 || vtable1 == 2 ) /*0x4085c9*/
@@ -5057,15 +5057,15 @@ void sub_4085E0(unsigned int * a1, int a2, int a3)
 namespace gamemd {
 unsigned int * sub_4087F0()
 {
-  unsigned int *v0; // esi
-  int v1; // ecx
-  unsigned int *v2; // eax
 
+  unsigned int *v0; // esi
   v0 = operator new(0xA4u); /*0x4087fc*/
   memset(v0, 0, 0xA4u); /*0x408807*/
   DListNode::Init(v0 + 1); /*0x40880f*/
   v0[38] = 0; /*0x408816*/
+  int v1; // ecx
   v1 = 0; /*0x40881c*/
+  unsigned int *v2; // eax
   v2 = v0 + 15; /*0x40881e*/
   do /*0x408836*/
   {
@@ -5086,14 +5086,14 @@ unsigned int * sub_4087F0()
 namespace gamemd {
 char sub_408B10(unsigned int * a1, int * a2)
 {
-  int v4; // ecx
-  int v5; // eax
 
   InsertBeforeLinkedList(a1 + 1, a2); /*0x408b19*/
+  int v4; // ecx
   v4 = a1[5]; /*0x408b20*/
   ++*a1; /*0x408b24*/
   a1[5] = a2[7] + v4; /*0x408b2b*/
   a2[12] = (int)a1; /*0x408b2e*/
+  int v5; // eax
   v5 = a1[4]; /*0x408b31*/
   (*((unsigned char *)&(v5))) = v5 & 0xFD; /*0x408b35*/
   a1[4] = v5; /*0x408b37*/
@@ -5105,28 +5105,26 @@ char sub_408B10(unsigned int * a1, int * a2)
 namespace gamemd {
 int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
 {
-  int result; // eax
   unsigned int *v7; // esi
-  void *v8; // eax
-  int v9; // eax
-  int v10; // eax
-  int v11; // [esp+10h] [ebp-Ch]
-  int v12; // [esp+14h] [ebp-8h]
-  int v13; // [esp+18h] [ebp-4h]
-  size_t Sizea; // [esp+24h] [ebp+8h]
 
+  int result; // eax
   result = 0; /*0x408b46*/
+  int v11; // [esp+10h] [ebp-Ch]
   v11 = 0; /*0x408b50*/
+  int v12; // [esp+14h] [ebp-8h]
   v12 = a2 - 1; /*0x408b54*/
   if ( a2 ) /*0x408b58*/
   {
+  int v13; // [esp+18h] [ebp-4h]
     v13 = 1 << Size; /*0x408b6f*/
+  size_t Sizea; // [esp+24h] [ebp+8h]
     Sizea = a3 + (1 << Size); /*0x408b75*/
     while ( 1 ) /*0x408b80*/
     {
       v7 = operator new(0x3Cu); /*0x408b80*/
       memset(v7, 0, 0x3Cu); /*0x408b8b*/
       DListNode::InitEmpty(v7); /*0x408b92*/
+  void *v8; // eax
       v8 = operator new(Sizea); /*0x408b9c*/
       v7->u32_10 = v8; /*0x408ba4*/
       if ( !v8 ) /*0x408ba9*/
@@ -5137,9 +5135,11 @@ int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
       if ( v7 ) /*0x408bcb*/
       {
         InsertBeforeLinkedList(a1 + 1, v7); /*0x408bd2*/
+  int v9; // eax
         v9 = a1[5]; /*0x408bd9*/
         ++*a1; /*0x408bdd*/
         a1[5] = v7[7] + v9; /*0x408be4*/
+  int v10; // eax
         v10 = v12; /*0x408be7*/
         v7->u32_30 = a1; /*0x408beb*/
         a1[4] &= ~2u; /*0x408bfc*/
@@ -5182,12 +5182,12 @@ int E4Recv_408D40::sub_408D40()
 namespace gamemd {
 unsigned int * sub_408D80(int a1, int a2)
 {
-  unsigned int *v4; // esi
-  void *v5; // eax
 
+  unsigned int *v4; // esi
   v4 = operator new(0x3Cu); /*0x408d8f*/
   memset(v4, 0, 0x3Cu); /*0x408d9a*/
   DListNode::InitEmpty(v4); /*0x408da1*/
+  void *v5; // eax
   v5 = operator new((1 << a2) + a1); /*0x408db3*/
   v4->u32_10 = v5; /*0x408dbb*/
   if ( v5 ) /*0x408dc0*/
@@ -5239,19 +5239,18 @@ int E4Recv_408ED0::sub_408ED0()
 namespace gamemd {
 int BufferedAudioStreamRead(AudioStream * a1, AudioStream * a2, signed int a3)
 {
-  void *v3; // edi
-  signed int v5; // ebx
   const void *v6; // esi
-  bool v7; // zf
-  int v9; // [esp+10h] [ebp-8h]
-  char *v10; // [esp+14h] [ebp-4h]
 
+  void *v3; // edi
   v3 = a2; /*0x408ee7*/
+  int v9; // [esp+10h] [ebp-8h]
   v9 = 0; /*0x408eed*/
+  char *v10; // [esp+14h] [ebp-4h]
   v10 = a2; /*0x408ef5*/
   ReadAudioStream(a1, 0); /*0x408ef9*/
   while ( 1 ) /*0x408f04*/
   {
+  signed int v5; // ebx
     v5 = a1[2]; /*0x408f04*/
     if ( v5 > a3 ) /*0x408f0d*/
       v5 = a3; /*0x408f0f*/
@@ -5268,6 +5267,7 @@ int BufferedAudioStreamRead(AudioStream * a1, AudioStream * a2, signed int a3)
     }
     memcpy(v3, v6, v5); /*0x408f26*/
     ReadAudioStream(a1, v5); /*0x408f43*/
+  bool v7; // zf
     v7 = a3 == v5; /*0x408f5a*/
     v10 += v5; /*0x408f5c*/
     a3 -= v5; /*0x408f60*/
@@ -5338,9 +5338,6 @@ namespace gamemd {
 int E4Recv_409470::sub_409470()
 {
 
-  HANDLE Thread; // eax
-  DWORD LastError; // eax
-  CHAR Buffer[1024]; // [esp+Ch] [ebp-400h] BYREF
 
   InitializeCriticalSection((LPCRITICAL_SECTION)&DataGlobal_87E880); /*0x40947f*/
   if ( DirectSoundCreate(0, (LPDIRECTSOUND *)&DataGlobal_87E89C, 0) ) /*0x40948e*/
@@ -5363,6 +5360,7 @@ int E4Recv_409470::sub_409470()
     *(unsigned int *)&DataGlobal_87E860 = 33; /*0x4094e5*/
     DataGlobal_87E864 = 0; /*0x4094ef*/
     *(unsigned int *)DataGlobal_87E854 = 0; /*0x4094f5*/
+  HANDLE Thread; // eax
     Thread = CreateThread( /*0x409511*/
                0,
                0x1000u,
@@ -5377,7 +5375,9 @@ int E4Recv_409470::sub_409470()
     *(unsigned int *)&DataGlobal_87E898 = 1; /*0x40953e*/
     if ( !SetThreadPriority(Thread, 15) ) /*0x409548*/
     {
+  DWORD LastError; // eax
       LastError = GetLastError(); /*0x40955e*/
+  CHAR Buffer[1024]; // [esp+Ch] [ebp-400h] BYREF
       FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x40956b*/
       Debug::Log(); /*0x40957b*/
       return 0; /*0x40958d*/
@@ -5392,8 +5392,8 @@ int E4Recv_409470::sub_409470()
 namespace gamemd {
 int sub_409D90(int a1, void * a2, unsigned int * a3, const void * a4, unsigned int * a5)
 {
-  unsigned int v5; // eax
 
+  unsigned int v5; // eax
   v5 = *a3; /*0x409d9a*/
   if ( (int)*a3 > (int)*a5 ) /*0x409da1*/
     v5 = *a5; /*0x409da3*/
@@ -5411,9 +5411,8 @@ int sub_409D90(int a1, void * a2, unsigned int * a3, const void * a4, unsigned i
 namespace gamemd {
 int E4Recv_40A2D0::sub_40A2D0()
 {
-  int v2; // esi
-  int v3; // eax
 
+  int v2; // esi
   v2 = this->M344; /*0x40a2d5*/
   if ( v2 ) /*0x40a2df*/
   {
@@ -5429,6 +5428,7 @@ int E4Recv_40A2D0::sub_40A2D0()
       v2->q090 = 0; /*0x40a30d*/
       v2->Coord_9C = 0; /*0x40a313*/
     }
+  int v3; // eax
     v3 = v2->q064; /*0x40a319*/
     if ( v3 ) /*0x40a31e*/
     {
@@ -5462,15 +5462,10 @@ int sub_40A7B0()
 namespace gamemd {
 short Coord_MoveByDirection(unsigned char a1, int * a2)
 {
-  int v2; // esi
-  int v3; // eax
-  int v4; // edi
-  int v5; // eax
-  int v6; // ecx
-  bool v7; // sf
-  int v8; // eax
 
+  int v2; // esi
   v2 = dword_816558[a2[1]]; /*0x40acd5*/
+  int v3; // eax
   v3 = v2 >> 3; /*0x40acde*/
   if ( (a1 & 1) != 0 ) /*0x40ace4*/
     v3 += v2 >> 2; /*0x40aceb*/
@@ -5480,6 +5475,7 @@ short Coord_MoveByDirection(unsigned char a1, int * a2)
     v3 += v2; /*0x40acfd*/
   if ( (a1 & 8) != 0 ) /*0x40ad02*/
     v3 = -v3; /*0x40ad04*/
+  int v4; // edi
   v4 = v3 + *a2; /*0x40ad08*/
   *a2 = v4; /*0x40ad0c*/
   if ( v4 <= 0x7FFF ) /*0x40ad15*/
@@ -5491,9 +5487,13 @@ short Coord_MoveByDirection(unsigned char a1, int * a2)
   {
     *a2 = 0x7FFF; /*0x40ad17*/
   }
+  int v5; // eax
   v5 = a2[1]; /*0x40ad2c*/
+  int v6; // ecx
   v6 = dword_816518[a1]; /*0x40ad35*/
+  bool v7; // sf
   v7 = v6 + v5 < 0; /*0x40ad3c*/
+  int v8; // eax
   v8 = v6 + v5; /*0x40ad3c*/
   a2[1] = v8; /*0x40ad3e*/
   if ( v7 ) /*0x40ad41*/
@@ -5531,8 +5531,8 @@ int unknown_libname_1()
 namespace gamemd {
 void sub_40AD90()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40ad9c*/
   dbl_87F550 = Math::Sqrt(v0 + v0); /*0x40adae*/
 }
@@ -5582,10 +5582,10 @@ void sub_40AE40()
 namespace gamemd {
 long long sub_40AE60()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_87E8B0 - dbl_87F558); /*0x40ae72*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_87F550 * 0.5); /*0x40ae86*/
   dword_87F5A8 = result; /*0x40ae8b*/
   return result; /*0x40ae90*/
@@ -5612,8 +5612,8 @@ void sub_40AED0()
 namespace gamemd {
 long long sub_40AF00()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_87F5A8) + 0.5); /*0x40af1b*/
   dword_87F59C = result; /*0x40af20*/
   return result; /*0x40af26*/
@@ -5685,20 +5685,20 @@ int unknown_libname_2()
 namespace gamemd {
 void ** ObjectClass::sub_40B010(void ** Block, char a2)
 {
-  int v3; // eax
-  char *v4; // ebp
-  ObjectClass *v5; // esi
-  int v6; // eax
-  int v7; // edi
 
   if ( (a2 & 2) != 0 ) /*0x40b01b*/
   {
+  int v3; // eax
     v3 = *((unsigned int *)Block - 1); /*0x40b01d*/
+  char *v4; // ebp
     v4 = (char *)Block - 4; /*0x40b021*/
+  ObjectClass *v5; // esi
     v5 = (ObjectClass *)((char *)Block + 4 * v3); /*0x40b024*/
+  int v6; // eax
     v6 = v3 - 1; /*0x40b027*/
     if ( v6 >= 0 ) /*0x40b028*/
     {
+  int v7; // edi
       v7 = v6 + 1; /*0x40b02b*/
       do /*0x40b039*/
       {
@@ -5726,8 +5726,8 @@ void ** ObjectClass::sub_40B010(void ** Block, char a2)
 namespace gamemd {
 void sub_40B350()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40b35c*/
   dbl_87F5C0 = Math::Sqrt(v0 + v0); /*0x40b36e*/
 }
@@ -5777,10 +5777,10 @@ void sub_40B400()
 namespace gamemd {
 long long sub_40B420()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_87F5B0 - dbl_87F5C8); /*0x40b432*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_87F5C0 * 0.5); /*0x40b446*/
   dword_87F650 = result; /*0x40b44b*/
   return result; /*0x40b450*/
@@ -5807,8 +5807,8 @@ void sub_40B490()
 namespace gamemd {
 long long sub_40B4C0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_87F650) + 0.5); /*0x40b4db*/
   dword_87F644 = result; /*0x40b4e0*/
   return result; /*0x40b4e6*/
@@ -6018,10 +6018,10 @@ void sub_40C640()
 namespace gamemd {
 long long sub_40C660()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_87F6D8 - dbl_87F700); /*0x40c672*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_87F6F8 * 0.5); /*0x40c686*/
   dword_87F768 = result; /*0x40c68b*/
   return result; /*0x40c690*/
@@ -6048,8 +6048,8 @@ void sub_40C6D0()
 namespace gamemd {
 long long sub_40C700()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_87F768) + 0.5); /*0x40c71b*/
   dword_87F744 = result; /*0x40c720*/
   return result; /*0x40c726*/
@@ -6176,8 +6176,8 @@ int sub_40CF80()
 namespace gamemd {
 void sub_40CFA0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40cfac*/
   dbl_87F7B0 = Math::Sqrt(v0 + v0); /*0x40cfbe*/
 }
@@ -6227,10 +6227,10 @@ void sub_40D050()
 namespace gamemd {
 long long sub_40D070()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_87F790 - dbl_87F7C0); /*0x40d082*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_87F7B0 * 0.5); /*0x40d096*/
   dword_884D80 = result; /*0x40d09b*/
   return result; /*0x40d0a0*/
@@ -6257,8 +6257,8 @@ void sub_40D0E0()
 namespace gamemd {
 long long sub_40D110()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_884D80) + 0.5); /*0x40d12b*/
   dword_884D74 = result; /*0x40d130*/
   return result; /*0x40d136*/
@@ -6464,10 +6464,10 @@ void sub_40D500()
 namespace gamemd {
 unsigned char * sub_40D8A0()
 {
-  unsigned char *result; // eax
-  int v1; // ecx
 
+  unsigned char *result; // eax
   result = &DataGlobal_886082; /*0x40d8a0*/
+  int v1; // ecx
   v1 = 256; /*0x40d8a5*/
   do /*0x40d8b8*/
   {
@@ -6486,10 +6486,10 @@ unsigned char * sub_40D8A0()
 namespace gamemd {
 char * sub_40D8C0()
 {
-  char *result; // eax
-  int v1; // ecx
 
+  char *result; // eax
   result = byte_885782; /*0x40d8c0*/
+  int v1; // ecx
   v1 = 256; /*0x40d8c5*/
   do /*0x40d8d8*/
   {
@@ -6508,10 +6508,10 @@ char * sub_40D8C0()
 namespace gamemd {
 char * sub_40D8E0()
 {
-  char *result; // eax
-  int v1; // ecx
 
+  char *result; // eax
   result = DataGlobal_886382; /*0x40d8e0*/
+  int v1; // ecx
   v1 = 256; /*0x40d8e5*/
   do /*0x40d8f8*/
   {
@@ -6530,8 +6530,8 @@ char * sub_40D8E0()
 namespace gamemd {
 char * sub_40D900(int a1)
 {
-  unsigned char v2[4]; // [esp+0h] [ebp-4h] BYREF
 
+  unsigned char v2[4]; // [esp+0h] [ebp-4h] BYREF
   v2[3] = (*(((unsigned char *)&(a1)) + (sizeof(a1) - 1))); /*0x40d900*/
   v2[0] = 0; /*0x40d908*/
   v2[1] = 0; /*0x40d90c*/
@@ -6544,8 +6544,8 @@ char * sub_40D900(int a1)
 namespace gamemd {
 char * sub_40D920(int a1)
 {
-  unsigned char v2[4]; // [esp+0h] [ebp-4h] BYREF
 
+  unsigned char v2[4]; // [esp+0h] [ebp-4h] BYREF
   v2[3] = (*(((unsigned char *)&(a1)) + (sizeof(a1) - 1))); /*0x40d920*/
   v2[0] = -1; /*0x40d928*/
   v2[1] = -1; /*0x40d92c*/
@@ -6558,10 +6558,10 @@ char * sub_40D920(int a1)
 namespace gamemd {
 unsigned char * sub_40D940()
 {
-  unsigned char *result; // eax
-  int v1; // ecx
 
+  unsigned char *result; // eax
   result = &DataGlobal_885A82; /*0x40d940*/
+  int v1; // ecx
   v1 = 256; /*0x40d945*/
   do /*0x40d958*/
   {
@@ -6580,10 +6580,10 @@ unsigned char * sub_40D940()
 namespace gamemd {
 unsigned char * sub_40D960()
 {
-  unsigned char *result; // eax
-  int v1; // ecx
 
+  unsigned char *result; // eax
   result = &unk_885482; /*0x40d960*/
+  int v1; // ecx
   v1 = 256; /*0x40d965*/
   do /*0x40d978*/
   {
@@ -6602,10 +6602,10 @@ unsigned char * sub_40D960()
 namespace gamemd {
 unsigned char * sub_40D980()
 {
-  unsigned char *result; // eax
-  int v1; // ecx
 
+  unsigned char *result; // eax
   result = &unk_886682; /*0x40d980*/
+  int v1; // ecx
   v1 = 256; /*0x40d985*/
   do /*0x40d998*/
   {
@@ -6624,10 +6624,10 @@ unsigned char * sub_40D980()
 namespace gamemd {
 char * sub_40D9A0()
 {
-  char *result; // eax
-  int v1; // ecx
 
+  char *result; // eax
   result = byte_885182; /*0x40d9a0*/
+  int v1; // ecx
   v1 = 256; /*0x40d9a5*/
   do /*0x40d9b8*/
   {
@@ -6646,9 +6646,9 @@ char * sub_40D9A0()
 namespace gamemd {
 int sub_40D9C0()
 {
-  int result; // eax
 
   InitArrayWithValue(dword_886980, 0, 64); /*0x40d9c9*/
+  int result; // eax
   result = InitArrayWithValue(dword_886A80, 0, 64); /*0x40d9d7*/
   dword_886B80 = 0; /*0x40d9dc*/
   return result; /*0x40d9e6*/
@@ -6715,8 +6715,8 @@ int sub_40DA80()
 namespace gamemd {
 void sub_40DAA0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40daac*/
   dbl_886FE0 = Math::Sqrt(v0 + v0); /*0x40dabe*/
 }
@@ -6766,10 +6766,10 @@ void sub_40DB50()
 namespace gamemd {
 long long sub_40DB70()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_886FC0 - dbl_886FE8); /*0x40db82*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_886FE0 * 0.5); /*0x40db96*/
   dword_887038 = result; /*0x40db9b*/
   return result; /*0x40dba0*/
@@ -6796,8 +6796,8 @@ void sub_40DBE0()
 namespace gamemd {
 long long sub_40DC10()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_887038) + 0.5); /*0x40dc2b*/
   dword_88702C = result; /*0x40dc30*/
   return result; /*0x40dc36*/
@@ -6852,8 +6852,8 @@ int sub_40DC90()
 namespace gamemd {
 void sub_40DDC0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40ddcc*/
   dbl_887050 = Math::Sqrt(v0 + v0); /*0x40ddde*/
 }
@@ -6903,10 +6903,10 @@ void sub_40DE70()
 namespace gamemd {
 long long sub_40DE90()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_887040 - dbl_8870B0); /*0x40dea2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_887050 * 0.5); /*0x40deb6*/
   dword_887270 = result; /*0x40debb*/
   return result; /*0x40dec0*/
@@ -6933,8 +6933,8 @@ void sub_40DF00()
 namespace gamemd {
 long long sub_40DF30()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_887270) + 0.5); /*0x40df4b*/
   dword_887260 = result; /*0x40df50*/
   return result; /*0x40df56*/
@@ -7142,15 +7142,15 @@ int unknown_libname_9()
 namespace gamemd {  // G42.18c ns repair
 GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
 {
-  int Previous; // ecx
-  int v4; // eax
 
   *(unsigned int *)Block->tail_0 = &vt_GenericNode; /*0x40e397*/
   if ( Block ) /*0x40e39d*/
   {
+  int Previous; // ecx
     Previous = *&Block->u32_E8; /*0x40e39f*/
     if ( Previous ) /*0x40e3a4*/
     {
+  int v4; // eax
       v4 = *(unsigned int *)Block->Blowfish; /*0x40e3a6*/
       if ( v4 ) /*0x40e3ab*/
       {
@@ -7181,8 +7181,8 @@ ObjectClass *  ObjectClass::sub_40E4A0(void ** Block, char a2)
 namespace gamemd {
 void sub_40E580()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40e58c*/
   dbl_887288 = Math::Sqrt(v0 + v0); /*0x40e59e*/
 }
@@ -7232,10 +7232,10 @@ void sub_40E630()
 namespace gamemd {
 long long sub_40E650()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_887278 - dbl_887290); /*0x40e662*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_887288 * 0.5); /*0x40e676*/
   dword_8872F8 = result; /*0x40e67b*/
   return result; /*0x40e680*/
@@ -7262,8 +7262,8 @@ void sub_40E6C0()
 namespace gamemd {
 long long sub_40E6F0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_8872F8) + 0.5); /*0x40e70b*/
   dword_8872EC = result; /*0x40e710*/
   return result; /*0x40e716*/
@@ -7403,8 +7403,8 @@ int sub_40EC10()
 namespace gamemd {
 void sub_40EC30()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40ec3c*/
   dbl_8873A8 = Math::Sqrt(v0 + v0); /*0x40ec4e*/
 }
@@ -7454,10 +7454,10 @@ void sub_40ECE0()
 namespace gamemd {
 long long sub_40ED00()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_887370 - dbl_8873B0); /*0x40ed12*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_8873A8 * 0.5); /*0x40ed26*/
   dword_887400 = result; /*0x40ed2b*/
   return result; /*0x40ed30*/
@@ -7484,8 +7484,8 @@ void sub_40ED70()
 namespace gamemd {
 long long sub_40EDA0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_887400) + 0.5); /*0x40edbb*/
   dword_8873F4 = result; /*0x40edc0*/
   return result; /*0x40edc6*/
@@ -7615,8 +7615,8 @@ int sub_40F270()
 namespace gamemd {
 void sub_40F2A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40f2ac*/
   dbl_887490 = Math::Sqrt(v0 + v0); /*0x40f2be*/
 }
@@ -7666,10 +7666,10 @@ void sub_40F350()
 namespace gamemd {
 long long sub_40F370()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_887480 - dbl_887498); /*0x40f382*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_887490 * 0.5); /*0x40f396*/
   dword_887500 = result; /*0x40f39b*/
   return result; /*0x40f3a0*/
@@ -7696,8 +7696,8 @@ void sub_40F3E0()
 namespace gamemd {
 long long sub_40F410()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_887500) + 0.5); /*0x40f42b*/
   dword_8874F4 = result; /*0x40f430*/
   return result; /*0x40f436*/
@@ -7770,8 +7770,8 @@ void sub_40F4D0()
 namespace gamemd {
 void sub_40F940()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40f94c*/
   dbl_887518 = Math::Sqrt(v0 + v0); /*0x40f95e*/
 }
@@ -7821,10 +7821,10 @@ void sub_40F9F0()
 namespace gamemd {
 long long sub_40FA10()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_887508 - dbl_887520); /*0x40fa22*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_887518 * 0.5); /*0x40fa36*/
   dword_887590 = result; /*0x40fa3b*/
   return result; /*0x40fa40*/
@@ -7851,8 +7851,8 @@ void sub_40FA80()
 namespace gamemd {
 long long sub_40FAB0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_887590) + 0.5); /*0x40facb*/
   dword_887580 = result; /*0x40fad0*/
   return result; /*0x40fad6*/
@@ -7954,8 +7954,8 @@ int sub_40FF40()
 namespace gamemd {
 void sub_40FF60()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40ff6c*/
   dbl_887668 = Math::Sqrt(v0 + v0); /*0x40ff7e*/
 }

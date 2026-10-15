@@ -34,25 +34,23 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
 {
 
-  int ExitCellByName; // eax
-  int v4; // edx
-  int Index; // eax
-  int v7; // edx
-  int v8; // eax
-  char *v9; // [esp-10h] [ebp-54h]
   TypeClass v10; // [esp+4h] [ebp-40h] BYREF
 
+  char *v9; // [esp-10h] [ebp-54h]
   v9 = Buffer; /*0x4c4f09*/
   *(unsigned int *)this->vtable1 = 0; /*0x4c4f0a*/
   this->vtable2 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
   *(unsigned int *)this->vtable1 = (unsigned int)(Buffer); /*0x4c4f27*/
+  int ExitCellByName; // eax
   ExitCellByName = ((Factory *)&v10)->FindExitCellByName(); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
+  int Index; // eax
     Index = ((BuildingTypeClass *)&v10)->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
+  int v8; // eax
       v8 = (int)((&v10)->FindByName()); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
         this->vtable2 = (void *)(*((unsigned int *)dword_A8B21C + v8)); /*0x4c4f82*/
@@ -60,6 +58,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
     }
     else
     {
+  int v7; // edx
       v7 = *((unsigned int *)dword_A83CE4 + Index); /*0x4c4f5c*/
       this->vtable2 = (void *)(v7); /*0x4c4f61*/
       return (unsigned int *)(this->vtable1); /*0x4c4f5f*/
@@ -67,6 +66,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char *Buffer)
   }
   else
   {
+  int v4; // edx
     v4 = *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x4c4f39*/
     this->vtable2 = (void *)(v4); /*0x4c4f3e*/
     return (unsigned int *)(this->vtable1); /*0x4c4f3c*/
@@ -79,9 +79,6 @@ namespace gamemd {
 int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
-  int v3; // eax
-  ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
-  int v5; // ecx
 
   AbstractTypeClass::Constructor((int *)this->vtable1, aP1); /*0x6e7e8a*/
   this->ptr_98 = (AbstractClass *)-1; /*0x6e7e8f*/
@@ -99,10 +96,13 @@ int TaskForceClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5,
          dword_A8E8D8 + dword_A8E8E4,
          0) )
   {
+  int v3; // eax
     v3 = dword_A8E8E0++; /*0x6e7f12*/
     *((unsigned int *)dword_A8E8D4 + v3) = (unsigned int)(this); /*0x6e7f21*/
   }
+  ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->q0A4); /*0x6e7f28*/
+  int v5; // ecx
   v5 = 6; /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
@@ -184,15 +184,15 @@ LABEL_12:
 namespace gamemd {
 void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 {
-  int v3; // eax
-  TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)Block->tail_0 = &vt_TaskForceClass; /*0x6e87f6*/
   Block->__pad_004 = (int)&vt_TaskForceClass; /*0x6e87fc*/
   *(unsigned int *)Block->u32_8 = &vt_TaskForceClass; /*0x6e8803*/
   *&Block->u32_C = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x6e8811*/
+  TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::TaskForceClass *)(Block); /*0x6e8826*/
+  int v3; // eax
   v3 = (int)((gamemd::TaskForceClass *)((*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5))); /*0x6e882a*/
   if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
   {
@@ -225,15 +225,12 @@ namespace gamemd {
 char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 {
 
-  int v3; // edi
-  unsigned int *v4; // eax
-  int v5; // ecx
-  int v6; // eax
   TaskForceClass v8; // [esp+8h] [ebp-A8h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x6e8433*/
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
+  int v3; // edi
   v3 = 0; /*0x6e844a*/
   this->Coord_9C = 0; /*0x6e844f*/
   do /*0x6e84cb*/
@@ -241,10 +238,13 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     sprintf(v8.vtable3, "%d", v3); /*0x6e8460*/
     if ( (/*0x6e8486*/ (INIClass *)aP1)->GetString((unsigned __int8 *)&this->q024, (unsigned __int8 *)v8.vtable3, &g_INI_DefaultBuffer, v8.q028, 128) > 0 )
     {
+  unsigned int *v4; // eax
       v4 = (&v8)->ParseUnitCountAndType(v8.q028); /*0x6e8491*/
+  int v5; // ecx
       v5 = this->Coord_9C; /*0x6e8496*/
       *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
       *(&this->vtable3 * v5 + 42) = v4->vtable2; /*0x6e84a8*/
+  int v6; // eax
       v6 = this->Coord_9C; /*0x6e84af*/
       if ( *(&this->vtable3 * v6 + 42) ) /*0x6e84b5*/
         this->Coord_9C = v6 + 1; /*0x6e84c1*/
@@ -267,17 +267,16 @@ namespace gamemd {
 char TaskForceClass::GetUnitType(char * a2)
 {
 
-  int v3; // esi
-  ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
-  char *v5; // eax
-  char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
 
   if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
+  int v3; // esi
   v3 = 0; /*0x6e8527*/
+  ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->q0A4); /*0x6e8529*/
   do /*0x6e857d*/
   {
+  char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
     if ( v3 >= this->Coord_9C ) /*0x6e854a*/
     {
@@ -285,6 +284,7 @@ char TaskForceClass::GetUnitType(char * a2)
     }
     else
     {
+  char *v5; // eax
       v5 = (char *)(TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4)); /*0x6e854e*/
       INIClass::SetString(a2, (unsigned __int8 *)&this->q024, Buffer, v5); /*0x6e855f*/
     }
@@ -307,8 +307,8 @@ char TaskForceClass::GetUnitType(char * a2)
 namespace gamemd {
 int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0->vtable1, a1, aP2); /*0x6e868f*/
   if ( result >= 0 ) /*0x6e8696*/
     return 0; /*0x6e8698*/
@@ -320,10 +320,8 @@ int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
 {
-  int result; // eax
-  int *v3; // esi
-  int v4; // edi
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x6e86ab*/
   if ( result >= 0 ) /*0x6e86b2*/
   {
@@ -335,7 +333,9 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
       /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86d1) */
       /* X11: vtable install elided (implicit via TaskForceClass virtuals 0x6e86d8) */
     }
+  int *v3; // esi
     v3 = (int *)(aP0 + 1); /*0x6e86e0*/
+  int v4; // edi
     v4 = 6; /*0x6e86e6*/
     do /*0x6e86fa*/
     {

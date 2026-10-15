@@ -27,19 +27,19 @@ namespace gamemd {  // G42.18 ns repair
 int Stream::FlushAndReset()
 {
 
-  Stream *v1; // esi
-  StreamClass *m_Stream; // eax
-  int Stream_field_08; // edi
-  int Stream_field_04; // eax
-  int Stream_field_0C; // edi
 
+  Stream *v1; // esi
   v1 = this; /*0x439111*/
+  StreamClass *m_Stream; // eax
   m_Stream = this->m_Stream; /*0x439114*/
+  int Stream_field_08; // edi
   Stream_field_08 = this->Stream_field_08; /*0x439116*/
   this->u32_30 = 45; /*0x439119*/
   ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
   ((void (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
+  int Stream_field_04; // eax
   Stream_field_04 = (int)(v1[1].Stream_field_04); /*0x43912d*/
+  int Stream_field_0C; // edi
   Stream_field_0C = (int)(v1[1].Stream_field_0C); /*0x439130*/
   v1 = &v1->u32_18; /*0x439133*/
   (*(void (**)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
@@ -51,12 +51,10 @@ int Stream::FlushAndReset()
 namespace gamemd {
 int Stream::ReadIntArray(int a2)
 {
-  int v2; // esi
-  int result; // eax
-  int v5; // eax
-  int v6; // ebx
 
+  int v2; // esi
   v2 = a2; /*0x49fb72*/
+  int result; // eax
   result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
              a2,
              &this->Stream_field_10,
@@ -64,11 +62,13 @@ int Stream::ReadIntArray(int a2)
              0);
   if ( result >= 0 ) /*0x49fb89*/
   {
+  int v5; // eax
     v5 = *(unsigned int *)v2; /*0x49fb8e*/
     a2 = (int)(this->a2); /*0x49fb9a*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
+  int v6; // ebx
       v6 = 0; /*0x49fba9*/
       if ( a2 <= 0 ) /*0x49fbad*/
       {
@@ -99,15 +99,15 @@ namespace gamemd {
 int Stream::WriteIntArray(TechnoTypeClass * aP1)
 {
 
-  int v3; // ecx
-  int result; // eax
-  int i; // esi
-  int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
 
+  int v3; // ecx
   v3 = (int)(*aP1); /*0x67a4ac*/
+  int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
   (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
+  int result; // eax
   result = Stream_field_10; /*0x67a4c0*/
+  int i; // esi
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
     aP1->IsClean(this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/

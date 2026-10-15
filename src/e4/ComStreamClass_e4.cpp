@@ -156,9 +156,9 @@ int ComStreamClass::Write(int a2, uint8_t *a3, const char *lParam, const char *l
 namespace gamemd {
 int ComStreamClass::Release(void *a1)
 {
+
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
-
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac834*/
   if ( !v1 && Block ) /*0x7ac83c*/
   {
@@ -227,44 +227,44 @@ namespace gamemd {
 AbstractClass * * ComStreamClass::readData()
 {
 
-  int ComStreamClass_field_0x08; // esi
-  unsigned int *v3; // ebp
-  int v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
   int v12; // eax
-  unsigned int *v13; // [esp+4h] [ebp-4h]
 
   if ( LOBYTE(this->q014) != 1 ) /*0x7ae0e8*/
   {
+  int ComStreamClass_field_0x08; // esi
     ComStreamClass_field_0x08 = this->q008; /*0x7ae0f0*/
+  unsigned int *v3; // ebp
     v3 = *(unsigned int **)this->__pad_000; /*0x7ae0f3*/
+  int v4; // edi
     v4 = this->q00C + 1; /*0x7ae0fc*/
     this->q008 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
+  unsigned int *v13; // [esp+4h] [ebp-4h]
     v13 = v3; /*0x7ae100*/
     this->q00C = v4; /*0x7ae108*/
+  void *v5; // edi
     v5 = (void *)__2_YAPAXI_Z(8 * ComStreamClass_field_0x08); /*0x7ae113*/
+  unsigned int v6; // edx
     v6 = 4 * this->q008; /*0x7ae118*/
     *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
     {
+  int *v7; // edi
       v7 = (int *)(v3); /*0x7ae131*/
+  int v8; // ebp
       v8 = ComStreamClass_field_0x08; /*0x7ae133*/
       do /*0x7ae167*/
       {
+  int v9; // esi
         v9 = *v7; /*0x7ae135*/
         if ( *v7 ) /*0x7ae135*/
         {
           do /*0x7ae161*/
           {
+  int v10; // edx
             v10 = ((int (*)(int))this->q018)(v9) /*0x7ae14b*/
                 & ((1 << this->q00C) - 1);
+  int v11; // ecx
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x7ae14f*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(unsigned int *)(v9 + 72); /*0x7ae157*/
@@ -289,44 +289,44 @@ namespace gamemd {
 void ComStreamClass::flushStream()
 {
 
-  unsigned int ComStreamClass_field_0x08; // esi
-  int *v3; // ebp
-  int ComStreamClass_field_0x0C; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  unsigned int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
   int v12; // eax
-  int *v13; // [esp+8h] [ebp-4h]
 
+  unsigned int ComStreamClass_field_0x08; // esi
   ComStreamClass_field_0x08 = this->q008; /*0x7aef55*/
   if ( ComStreamClass_field_0x08 > this->q030 && LOBYTE(this->q014) != 1 ) /*0x7aef67*/
   {
+  int *v3; // ebp
     v3 = *(int **)this->__pad_000; /*0x7aef70*/
+  int ComStreamClass_field_0x0C; // edi
     ComStreamClass_field_0x0C = this->q00C; /*0x7aef73*/
+  int *v13; // [esp+8h] [ebp-4h]
     v13 = *(int **)this->__pad_000; /*0x7aef76*/
     this->q008 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
     this->q00C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
+  void *v5; // edi
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
+  unsigned int v6; // edx
     v6 = 4 * this->q008; /*0x7aef94*/
     *(unsigned int *)this->__pad_000 = (unsigned int)(v5); /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
     {
+  int *v7; // edi
       v7 = v3; /*0x7aefad*/
+  unsigned int v8; // ebp
       v8 = ComStreamClass_field_0x08; /*0x7aefaf*/
       do /*0x7aefe3*/
       {
+  int v9; // esi
         v9 = *v7; /*0x7aefb1*/
         if ( *v7 ) /*0x7aefb1*/
         {
           do /*0x7aefdd*/
           {
+  int v10; // edx
             v10 = ((int (*)(int))this->q018)(v9) /*0x7aefc7*/
                 & ((1 << this->q00C) - 1);
+  int v11; // ecx
             v11 = *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10); /*0x7aefcb*/
             *(unsigned int *)(*(unsigned int *)this->__pad_000 + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(unsigned int *)(v9 + 72); /*0x7aefd3*/
@@ -351,13 +351,13 @@ namespace gamemd {
 unsigned int * ComStreamClass::seekToPosition()
 {
 
-  unsigned int *_76BE90; // eax
-  unsigned int *v3; // eax
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
   ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->q004); /*0x7b022f*/
+  unsigned int *_76BE90; // eax
   _76BE90 = (unsigned int *)(Audio_Create_76BE90(v6, (int)this)); /*0x7b023a*/
+  unsigned int *v3; // eax
   v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3->u32_4); /*0x7b0257*/
   *(unsigned int *)v5 = (unsigned int)(&vt_rc_ptr); /*0x7b0260*/
@@ -372,13 +372,13 @@ namespace gamemd {
 unsigned int * ComStreamClass::getStreamSize()
 {
 
-  unsigned int *_76BE90; // eax
-  unsigned int *v3; // eax
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
   ComPtr::Set((ComPtr *)&DataGlobal_B77F70, this->q004); /*0x7b02af*/
+  unsigned int *_76BE90; // eax
   _76BE90 = (unsigned int *)(Audio_Create_76BE90(v6, (int)this)); /*0x7b02ba*/
+  unsigned int *v3; // eax
   v3 = (unsigned int *)(Audio_Create(v5, (const char **)&g_WebBrowser, (int)_76BE90)); /*0x7b02c9*/
   ComPtr::Set((ComPtr *)&DataGlobal_B77F78, v3->u32_4); /*0x7b02d7*/
   *(unsigned int *)v5 = (unsigned int)(&vt_rc_ptr); /*0x7b02e0*/
@@ -392,18 +392,16 @@ unsigned int * ComStreamClass::getStreamSize()
 namespace gamemd {
 int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
 {
-  HWND v4; // eax
-  HWND Current; // eax
-  HWND DlgItem; // eax
-  int v8; // [esp+10h] [ebp+10h]
 
   Debug::Log(); /*0x7a4075*/
   dword_B77DF4 = a3; /*0x7a4083*/
   if ( !a3 ) /*0x7a4088*/
   {
     dword_B77E60 = a4; /*0x7a4092*/
+  int v8; // [esp+10h] [ebp+10h]
     dword_B77E64 = v8; /*0x7a4097*/
   }
+  HWND v4; // eax
   v4 = (HWND)((Dialog *)0xC4)->FindByHandle(); /*0x7a40a2*/
   if ( v4 ) /*0x7a40a9*/
   {
@@ -411,7 +409,9 @@ int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
     if ( !dword_B77DC8 ) /*0x7a40bd*/
       CloseDialog(v4, 0); /*0x7a40c3*/
   }
+  HWND Current; // eax
   Current = (HWND)Dialog::GetCurrent(); /*0x7a40c8*/
+  HWND DlgItem; // eax
   DlgItem = GetDlgItem(Current, 1344); /*0x7a40d3*/
   if ( DlgItem ) /*0x7a40db*/
     SetFocus(DlgItem); /*0x7a40de*/
@@ -452,8 +452,8 @@ int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4, int a5)
 namespace gamemd {
 LONG ComStreamClass::AddRef(void *a1)
 {
-  int v2; // [esp+4h] [ebp+4h]
 
+  int v2; // [esp+4h] [ebp+4h]
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x7ac80e*/
 }
 } // namespace gamemd

@@ -11,43 +11,43 @@ namespace gamemd {  // G42.18 ns repair
 void E4Recv_7AE830::sub_7AE830()
 {
 
-  unsigned int vtable2; // esi
-  int *vtable0; // ebp
-  char *vtable3; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  unsigned int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
   int v12; // eax
-  int *v13; // [esp+8h] [ebp-4h]
 
+  unsigned int vtable2; // esi
   vtable2 = (unsigned int)this->M8; /*0x7ae835*/
   if ( (ObjectClass *)vtable2 > this->nextObject && LOBYTE(this->M20) != 1 ) /*0x7ae847*/
   {
+  int *vtable0; // ebp
     vtable0 = (int *)this->AbstractClass; /*0x7ae850*/
+  char *vtable3; // edi
     vtable3 = (char *)this->M12; /*0x7ae853*/
+  int *v13; // [esp+8h] [ebp-4h]
     v13 = (int *)this->AbstractClass; /*0x7ae856*/
     this->M8 = (unsigned int)((void *)(vtable2 >> 1)); /*0x7ae85c*/
     this->M12 = (unsigned int)(vtable3 - 1); /*0x7ae864*/
+  void *v5; // edi
     v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/
+  unsigned int v6; // edx
     v6 = 4 * (int)this->M8; /*0x7ae874*/
     this->AbstractClass = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)vtable2 > 0 ) /*0x7ae88b*/
     {
+  int *v7; // edi
       v7 = vtable0; /*0x7ae88d*/
+  unsigned int v8; // ebp
       v8 = vtable2; /*0x7ae88f*/
       do /*0x7ae8c3*/
       {
+  int v9; // esi
         v9 = *v7; /*0x7ae891*/
         if ( *v7 ) /*0x7ae891*/
         {
           do /*0x7ae8bd*/
           {
+  int v10; // edx
             v10 = ((int (*)(int))this->M12)(v9) & ((1 << (int)this->M12) - 1); /*0x7ae8a7*/
+  int v11; // ecx
             v11 = *((unsigned int *)this->AbstractClass + v10); /*0x7ae8ab*/
             *((unsigned int *)this->AbstractClass + v10) = v9; /*0x7ae8b1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/

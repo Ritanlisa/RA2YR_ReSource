@@ -20,36 +20,32 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5, void *a5_2, void *a6_1, void *a7, void *a8, void *a9)
 {
 
-  int v6; // edi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edi
-  int v10; // edi
-  int v11; // eax
-  int v12; // ecx
   void *v13; // ecx
-  int v14; // eax
-  int v15; // eax
-  int v16; // ecx
-  int v17; // ecx
-  int v18; // edx
   void *Buffer; // ecx
 
+  int v6; // edi
+  int v14; // eax
   v6 = v14; /*0x410ce5*/
+  int v7; // ecx
   v7 = (int)(a5_2); /*0x410ce9*/
+  int v8; // eax
   v8 = (int)(a5_2); /*0x410cef*/
   *((unsigned int *)v14 + 11) = (unsigned int)(a5_2); /*0x410cf3*/
   *(unsigned int *)v14->XSurface = v6; /*0x410cf8*/
+  int v9; // edi
   v9 = v14; /*0x410cfa*/
   *((unsigned int *)v14 + 10) = v7; /*0x410cfe*/
   v14->? = v9; /*0x410d01*/
   v14->? = v7; /*0x410d04*/
   v14->? = v8; /*0x410d07*/
   *((unsigned int *)v14 + 8) = 2 * v7 * v8; /*0x410d0f*/
+  int v10; // edi
   v10 = (int)(__2_YAPAXI_Z(0x20u)); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
   {
+  int v11; // eax
     v11 = *((unsigned int *)v14 + 10); /*0x410d22*/
+  int v12; // ecx
     v12 = *((unsigned int *)v14 + 11); /*0x410d25*/
     *(unsigned int *)(v10 + 4) = v11; /*0x410d28*/
     *(unsigned int *)(v10 + 8) = v12; /*0x410d30*/
@@ -71,12 +67,16 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5, void *a5_2, 
   v14 = 0; /*0x410d6a*/
   a5_2 = (void *)(v14); /*0x410d6e*/
   (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))(v13, &v14, 127); /*0x410d7b*/
+  int v15; // eax
   v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)v14->Buffer + 92))(v14->Buffer, 0, 0); /*0x410d89*/
+  int v16; // ecx
   v16 = *((unsigned int *)v14 + 11); /*0x410d8c*/
   *((unsigned int *)v14 + 6) = v15; /*0x410d8f*/
+  int v17; // ecx
   v17 = *((unsigned int *)v14 + 10) * v16; /*0x410d92*/
   v14->BytesPerPixel = 0; /*0x410d96*/
   *((unsigned int *)v14 + 9) = 0x8000; /*0x410d99*/
+  int v18; // edx
   v18 = v15 + 2 * v17; /*0x410da0*/
   Buffer = v14->Buffer; /*0x410da3*/
   *((unsigned int *)v14 + 7) = v18; /*0x410da6*/
@@ -89,7 +89,6 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5, void *a5_2, 
 namespace gamemd {
 bool BSurface::CreateTripleBuffer(void *a1)
 {
-  int v2; // ecx
   void (***v3)(unsigned int, int); // ecx
   int v4; // ecx
   void (***v5)(unsigned int, int); // ecx
@@ -114,6 +113,7 @@ bool BSurface::CreateTripleBuffer(void *a1)
 
   if ( this->Width ) /*0x7b8c66*/
   {
+  int v2; // ecx
     v2 = this->q044; /*0x7b8c6f*/
     if ( v2 /*0x7b8c9a*/
       && (*(int16_t *)(this->Width + 2) > (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2)
@@ -230,36 +230,31 @@ namespace gamemd {
 unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 {
 
-  int v6; // edi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edi
-  int v10; // edi
-  int v11; // eax
-  int v12; // ecx
   void *v13; // ecx
-  int v14; // eax
-  int v15; // eax
-  int v16; // ecx
-  int v17; // ecx
-  int v18; // edx
   void *Buffer; // ecx
 
+  int v6; // edi
   v6 = a2; /*0x7bc975*/
+  int v7; // ecx
   v7 = a4; /*0x7bc979*/
+  int v8; // eax
   v8 = a5; /*0x7bc97f*/
   this->u32_2C = a5; /*0x7bc983*/
   *(unsigned int *)this->XSurface = v6; /*0x7bc988*/
+  int v9; // edi
   v9 = a3; /*0x7bc98a*/
   this->u32_28 = v7; /*0x7bc98e*/
   this->Width = (void *)(v9); /*0x7bc991*/
   this->Height = v7; /*0x7bc994*/
   this->LockCount = v8; /*0x7bc997*/
   this->u32_20 = 2 * v7 * v8; /*0x7bc99f*/
+  int v10; // edi
   v10 = (int)(__2_YAPAXI_Z(0x20u)); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
+  int v11; // eax
     v11 = this->u32_28; /*0x7bc9b2*/
+  int v12; // ecx
     v12 = this->u32_2C; /*0x7bc9b5*/
     *(unsigned int *)(v10 + 4) = v11; /*0x7bc9b8*/
     *(unsigned int *)(v10 + 8) = v12; /*0x7bc9c0*/
@@ -274,6 +269,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   {
     v13 = 0; /*0x7bc9e7*/
   }
+  int v14; // eax
   v14 = this->u32_28; /*0x7bc9ec*/
   a5 = this->u32_2C; /*0x7bc9ef*/
   this->Buffer = (unsigned char *)(v13); /*0x7bc9f3*/
@@ -281,12 +277,16 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   a3 = 0; /*0x7bc9fa*/
   a4 = v14; /*0x7bc9fe*/
   (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))(v13, &a2, 0xFFFF); /*0x7bca0e*/
+  int v15; // eax
   v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x7bca1c*/
+  int v16; // ecx
   v16 = this->u32_2C; /*0x7bca1f*/
   this->u32_18 = v15; /*0x7bca22*/
+  int v17; // ecx
   v17 = this->u32_28 * v16; /*0x7bca25*/
   this->BytesPerPixel = 0; /*0x7bca29*/
   this->ptr_24 = (void *)(0x8000); /*0x7bca2c*/
+  int v18; // edx
   v18 = v15 + 2 * v17; /*0x7bca33*/
   Buffer = this->Buffer; /*0x7bca36*/
   this->u32_1C = v18; /*0x7bca39*/

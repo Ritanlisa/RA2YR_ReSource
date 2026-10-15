@@ -319,16 +319,12 @@ namespace gamemd {
 INIClass::INIClass()
 {
 
-  unsigned int *result; // eax
-  int *sectionHead; // ecx
-  unsigned int *v3; // edx
-  int v4; // edi
-  int v5; // esi
-  int v6; // esi
-  int v7; // esi
 
+  unsigned int *result; // eax
   result = (unsigned int *)(this->vtable1); /*0x535aa0*/
+  int *sectionHead; // ecx
   sectionHead = (int *)(this->sectionHead); /*0x535aa6*/
+  unsigned int *v3; // edx
   v3 = result + 7; /*0x535aa9*/
   result->headNode = 0; /*0x535aac*/
   result->q008 = 0; /*0x535aaf*/
@@ -341,9 +337,11 @@ INIClass::INIClass()
   result->q00C = &vt_GenericList; /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
+  int v4; // edi
     v4 = result[8]; /*0x535ad6*/
     if ( v4 ) /*0x535adb*/
     {
+  int v5; // esi
       v5 = result[9]; /*0x535add*/
       if ( v5 ) /*0x535ae2*/
       {
@@ -354,9 +352,11 @@ INIClass::INIClass()
       }
     }
   }
+  int v6; // esi
   v6 = sectionHead->Prev; /*0x535af6*/
   result[9] = (unsigned int)(sectionHead); /*0x535af9*/
   result[8] = v6; /*0x535afc*/
+  int v7; // esi
   v7 = sectionHead->Prev; /*0x535aff*/
   if ( v7 ) /*0x535b04*/
     v7->Next = v3; /*0x535b06*/
@@ -377,11 +377,11 @@ INIClass::INIClass()
 namespace gamemd {
 int INIClass::ReadCoord(double *a1, double a2, uint8_t *a3, uint8_t *a4, int a5, int aP2, int aP1, int aP3)
 {
-  int result; // eax
 
   INIClass::ReadDouble_Overwrite(a1, a3, a4, -1.0); /*0x474631*/
   if ( a2 == -1.0 ) /*0x474641*/
     return a5; /*0x474645*/
+  int result; // eax
   (*((unsigned short *)&(result))) = Math::RoundToInt(a2 * 256.0); /*0x474652*/
   return result; /*0x474649*/
 }
@@ -391,11 +391,11 @@ int INIClass::ReadCoord(double *a1, double a2, uint8_t *a3, uint8_t *a4, int a5,
 namespace gamemd {
 int INIClass::GetBool(uint8_t *aP1, uint8_t *a2, int a4)
 {
-  int result; // eax
-  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
+  char Destination[128]; // [esp+0h] [ebp-80h] BYREF
   if ( !(this)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4757f2*/
     return a4; /*0x4757f2*/
+  int result; // eax
   result = LookupNameIndex((ObjectClass *)Destination); /*0x4757ff*/
   if ( result == -1 ) /*0x475807*/
     return a4; /*0x475809*/
@@ -408,36 +408,36 @@ namespace gamemd {
 int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 {
 
-  char *v3; // esi
-  int v4; // edi
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  unsigned int *v8; // eax
-  unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
 
   if ( !aP2 ) /*0x526ccd*/
     return 0; /*0x526ccd*/
+  unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
   memset(v10, 0, sizeof(v10)); /*0x526cda*/
+  char *v3; // esi
   v3 = (char *)(aP1 + 40); /*0x526d02*/
+  int v4; // edi
   v4 = Checksummer::Add_Buffer(v10, aP2, strlen((const char *)aP2)); /*0x526d05*/
   aP2 = (gamemd::CCINIClass *)((unsigned __int8 *)v4); /*0x526d07*/
   if ( !v3->u32_4 ) /*0x526d0b*/
     return 0; /*0x526d10*/
   if ( !(unsigned __int8)SortedArray::CheckCache(&aP2) ) /*0x526d19*/
   {
+  int v5; // eax
     v5 = SortedArray::BinarySearch(&aP2); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
     v3->u32_10 = v5; /*0x526d32*/
   }
   aP2 = (gamemd::CCINIClass *)((unsigned __int8 *)v4); /*0x526d3c*/
+  int v6; // eax
   v6 = *(unsigned int *)SortedArray::FindValue(&aP2); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
+  int v7; // edx
     v7 = (int)(a3); /*0x526d4b*/
     if ( a3 < *(unsigned int *)(v6 + 48) ) /*0x526d54*/
     {
+  unsigned int *v8; // eax
       v8 = *(unsigned int **)(v6 + 24); /*0x526d56*/
       if ( v8 ) /*0x526d5b*/
       {
@@ -460,10 +460,10 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
 namespace gamemd {
 int INIClass::ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3)
 {
-  uint8_t *v5; // eax
-  uint8_t *v7; // [esp-8h] [ebp-Ch]
 
+  uint8_t *v7; // [esp-8h] [ebp-Ch]
   v7 = (uint8_t *)((String *)(a3))->GetOrEmpty_Alt(); /*0x527905*/
+  uint8_t *v5; // eax
   v5 = (uint8_t *)((String *)(a2))->GetOrEmpty_Alt(); /*0x527906*/
   return INIClass::ReadInt_Overwrite(v5, v7, a4); /*0x527913*/
 }
@@ -473,12 +473,12 @@ int INIClass::ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, 
 namespace gamemd {
 char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
 {
-  char *v5; // edi
-  uint8_t *v6; // ebx
-  char Buffer[56]; // [esp+Ch] [ebp-38h] BYREF
 
+  char *v5; // edi
   v5 = ((String *)(a3))->GetOrEmpty_Alt(); /*0x529835*/
+  uint8_t *v6; // ebx
   v6 = (uint8_t *)((String *)(a2))->GetOrEmpty_Alt(); /*0x52983c*/
+  char Buffer[56]; // [esp+Ch] [ebp-38h] BYREF
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x529853*/
   return INIClass::SetString(v6, v5, Buffer); /*0x529869*/
 }

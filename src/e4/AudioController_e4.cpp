@@ -119,12 +119,12 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
 namespace gamemd {
 void AudioController::GetVolume()
 {
-  void *v1; // esi
 
   if ( DataGlobal_B0FCCE ) /*0x72d17a*/
   {
     if ( DataGlobal_B0FCCD ) /*0x72d182*/
     {
+  void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FAB8; /*0x72d185*/
       if ( *(unsigned int *)&DataGlobal_B0FAB8 ) /*0x72d18d*/
       {

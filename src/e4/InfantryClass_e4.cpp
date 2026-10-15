@@ -199,22 +199,8 @@ namespace gamemd {
 void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
 
-  AbstractClass *p_vtable1; // edi
-  InfantryTypeClass *Type; // eax
-  int *team; // ecx
-  TechnoClass *slaveOwner; // eax
-  SlaveManagerClass *slaveManager; // eax
-  int v7; // eax
-  int Vtable3; // eax
-  void *vtable1; // edx
-  int v10; // edi
-  int v11; // eax
-  signed int v12; // eax
-  int v13; // ecx
-  char *i; // eax
-  unsigned int *v15; // eax
-  int v17[2]; // [esp+Ch] [ebp-8h] BYREF
 
+  AbstractClass *p_vtable1; // edi
   p_vtable1 = &a1->vtable2; /*0x517d9a*/
   a1->FootClass = &vt_InfantryClass; /*0x517d9d*/
   /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517da3) */
@@ -222,20 +208,24 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   /* X11: vtable install elided (implicit via InfantryClass virtuals 0x517db1) */
   if ( byte_A8E9A0 ) /*0x517dbe*/
   {
+  InfantryTypeClass *Type; // eax
     Type = a1->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
       if ( HouseClass::CanBuild(a1->owner, (int)Type, 0, 0) == -1 ) /*0x517de3*/
         a1->reloadTimer->recheckTechTree = 1; /*0x517deb*/
+  int *team; // ecx
       team = (int *)a1->FootClass_field_5D4; /*0x517df2*/
       if ( team ) /*0x517dfa*/
       {
         (team)->LiberateMember_Start((int)a1, 0xFFFFFFFF, 0); /*0x517e00*/
         a1->FootClass_field_5D4 = 0; /*0x517e05*/
       }
+  TechnoClass *slaveOwner; // eax
       slaveOwner = a1->isPlayingDamageSound; /*0x517e0b*/
       if ( slaveOwner ) /*0x517e13*/
       {
+  SlaveManagerClass *slaveManager; // eax
         slaveManager = (gamemd::SlaveManagerClass *)(slaveOwner->slaveManager); /*0x517e15*/
         if ( slaveManager ) /*0x517e1d*/
           SlaveManagerClass::LostSlave(slaveManager, (int)a1); /*0x517e22*/
@@ -251,7 +241,9 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   AbstractClass::AnnounceExpiredPointer(&a1->FootClass, 1); /*0x517e75*/
+  int v17[2]; // [esp+Ch] [ebp-8h] BYREF
   v17[0] = (int)a1; /*0x517e89*/
+  int v7; // eax
   v7 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_A83D50.__pad_80[24] + 16))( /*0x517e8d*/
          &stru_A83D50.__pad_80[24],
          v17);
@@ -266,8 +258,11 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       ++v7; /*0x517eb0*/
     }
   }
+  int Vtable3; // eax
   Vtable3 = AbstractClass::GetVtable3(p_vtable1); /*0x517ec3*/
+  void *vtable1; // edx
   vtable1 = g_BuildingLoadQueue_Array.?; /*0x517ec8*/
+  int v10; // edi
   v10 = Vtable3; /*0x517ece*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x517ed2*/
   {
@@ -283,17 +278,22 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       LOBYTE(byte_B0E84C) = 1; /*0x517f02*/
     }
     v17[0] = v10; /*0x517f0d*/
+  int v11; // eax
     v11 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, v17); /*0x517f18*/
     if ( v11 ) /*0x517f1f*/
     {
+  signed int v12; // eax
       v12 = (signed int)(v11 - (unsigned int)g_BuildingLoadQueue_Array.TechnoTypeClass) >> 3; /*0x517f27*/
       if ( v12 != -1 ) /*0x517f2d*/
       {
+  int v13; // ecx
         v13 = v12 + 1; /*0x517f2f*/
+  char *i; // eax
         for ( i = (char *)g_BuildingLoadQueue_Array.?; /*0x517f39*/
               v13 < (int)g_BuildingLoadQueue_Array.?;
               i = (char *)g_BuildingLoadQueue_Array.? )
         {
+  unsigned int *v15; // eax
           v15 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v13++; /*0x517f41*/
           *(v15 - 2) = *v15; /*0x517f47*/
           *(v15 - 1) = v15[1]; /*0x517f4d*/

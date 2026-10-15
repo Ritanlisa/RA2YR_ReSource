@@ -11,8 +11,8 @@
 namespace gamemd {  // G42.18 ns repair
 int Particle::Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7)
 {
-  int result; // eax
 
+  int result; // eax
   result = aP1; /*0x4664c4*/
   this->u32_10C = aP2; /*0x4664c8*/
   this->u32_110 = a7; /*0x4664d2*/

@@ -56,24 +56,24 @@ namespace gamemd {
 int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
 
-  int result; // eax
-  int i; // edi
-  int v5; // eax
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
 
   ((int)this)->COMStub_13(aP1); /*0x65ab1a*/
   Power::TimerProcess(this->radioLinks[2]); /*0x65ab28*/
+  int result; // eax
   result = this->radioLinks[2]; /*0x65ab2d*/
+  int i; // edi
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
   {
+  int v5; // eax
     v5 = *(unsigned int *)(this->radioLinks[1] + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
+  int v6; // eax
       v6 = (*(int (**)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(v6); /*0x65ab53*/
+  int v7; // ecx
       v7 = *(unsigned int *)(this->radioLinks[1] + 4 * i); /*0x65ab5e*/
+  int v8; // eax
       v8 = (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7); /*0x65ab63*/
       Power::TimerProcess(v8); /*0x65ab69*/
     }
@@ -155,16 +155,16 @@ LABEL_8:
 namespace gamemd {
 int RadioClass::FindLinkIndex(int a2)
 {
-  int v2; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
+  int v2; // edx
   v2 = this->u32_E8; /*0x65ad99*/
+  int result; // eax
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
+  unsigned int *i; // ecx
   for ( i = (unsigned int *)this->Tactical_E4; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
@@ -178,14 +178,14 @@ int RadioClass::FindLinkIndex(int a2)
 namespace gamemd {
 int RadioClass::HasFreeLink()
 {
-  int v1; // edx
-  int v2; // eax
-  unsigned int *i; // ecx
 
+  int v1; // edx
   v1 = this->u32_E8; /*0x65adc0*/
+  int v2; // eax
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
+  unsigned int *i; // ecx
   for ( i = (unsigned int *)this->Tactical_E4; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
@@ -199,13 +199,13 @@ int RadioClass::HasFreeLink()
 namespace gamemd {
 void RadioClass::SetLinkCount(int a2)
 {
-  int v3; // ebx
-  int v4; // eax
 
+  int v3; // ebx
   v3 = this-((unsigned int *)(>radioLinks))[2]; /*0x65ae69*/
   if ( a2 > v3 ) /*0x65ae71*/
   {
     (*(void (**)(int *, int, unsigned int))(this-((unsigned int *)(>radioLinks))[0] + 8))(this->radioLinks, a2, 0); /*0x65ae82*/
+  int v4; // eax
     v4 = v3; /*0x65ae87*/
     do /*0x65ae9c*/
     {
@@ -222,18 +222,18 @@ namespace gamemd {
 int RadioClass::ExecuteAction(int aP1, char aP2)
 {
 
-  int result; // eax
-  int i; // ecx
-  int v6; // eax
-  int v7; // edx
-  unsigned int *v8; // eax
 
   ((ObjectClass *)this)->Unlink(); /*0x65aacf*/
+  int result; // eax
   result = this->radioLinks[2]; /*0x65aad4*/
+  int i; // ecx
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {
+  int v6; // eax
     v6 = this->radioLinks[1]; /*0x65aae0*/
+  int v7; // edx
     v7 = *(unsigned int *)(v6 + 4 * i); /*0x65aae6*/
+  unsigned int *v8; // eax
     v8 = (unsigned int *)(v6 + 4 * i); /*0x65aae9*/
     if ( v7 == aP1 ) /*0x65aaee*/
     {
@@ -252,18 +252,18 @@ namespace gamemd {
 int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
 {
 
-  int result; // eax
-  int v4; // edx
-  int v5; // ebx
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)a0, aP1, aP2); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
+  int v4; // edx
     v4 = (int)(*aP1); /*0x65ac61*/
     aP2 = a0->radioLinks[2]; /*0x65ac6d*/
     result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/
     {
+  int v5; // ebx
       v5 = 0; /*0x65ac7c*/
       if ( aP2 <= 0 ) /*0x65ac80*/
       {

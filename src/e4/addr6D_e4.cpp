@@ -42,13 +42,13 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_6D1130()
 {
-  void *v0; // esi
 
   dword_B0CCD4 = (unsigned int)((void *)(240));
   dword_B0CD00 = dword_87F6CC; /*0x6d1153*/
   byte_B0CCDD = 0; /*0x6d1158*/
   dword_B0CCE0 = 0; /*0x6d115e*/
   dword_B0CCD0 = 5; /*0x6d1164*/
+  void *v0; // esi
   v0 = (void *)(dword_B0FA90); /*0x6d116c*/
   (stru_B0CCB0)->Set(*(unsigned int *)dword_B0FC60, (void *)(*((unsigned int *)dword_B0FC60 + 1))); /*0x6d118a*/
   ((int)stru_B0CCB0)->SetShape((int)v0, 0, 0); /*0x6d1197*/
@@ -65,68 +65,68 @@ int sub_6D1130()
 namespace gamemd {
 unsigned int * sub_6D6BB0(unsigned short * a1)
 {
-  unsigned short *v1; // edi
-  int16_t v2; // ax
-  int v3; // esi
   unsigned int *result; // eax
-  int v5; // ecx
-  int16_t v6; // cx
-  int v7; // esi
-  int v8; // ecx
-  int16_t v9; // ax
-  int v10; // esi
-  int v11; // ecx
-  int16_t v12; // cx
-  int v13; // esi
-  int v14; // ecx
 
+  unsigned short *v1; // edi
   v1 = a1; /*0x6d6bb2*/
+  int16_t v2; // ax
   v2 = *a1 + 2; /*0x6d6bbd*/
   (*(((unsigned short *)&(a1)) + 1)) = a1[1]; /*0x6d6bc1*/
   (*((unsigned short *)&(a1))) = v2; /*0x6d6bc6*/
+  int v3; // esi
   v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
     result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6bdf*/
+  int v5; // ecx
     v5 = result->u32_140; /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result->u32_44 && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
     ++(*(((unsigned short *)&(a1)) + 1)); /*0x6d6bff*/
     if ( ++v3 >= 5 ) /*0x6d6c08*/
     {
+  int16_t v6; // cx
       v6 = *v1 + 1; /*0x6d6c11*/
       (*(((unsigned short *)&(a1)) + 1)) = v1[1]; /*0x6d6c13*/
       (*((unsigned short *)&(a1))) = v6; /*0x6d6c18*/
+  int v7; // esi
       v7 = 0; /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
         result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6c31*/
+  int v8; // ecx
         v8 = result->u32_140; /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result->u32_44 && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
         ++(*(((unsigned short *)&(a1)) + 1)); /*0x6d6c51*/
         if ( ++v7 >= 5 ) /*0x6d6c5a*/
         {
+  int16_t v9; // ax
           v9 = v1[1] + 2; /*0x6d6c63*/
           (*((unsigned short *)&(a1))) = *v1; /*0x6d6c67*/
           (*(((unsigned short *)&(a1)) + 1)) = v9; /*0x6d6c6c*/
+  int v10; // esi
           v10 = 0; /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
             result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6c85*/
+  int v11; // ecx
             v11 = result->u32_140; /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result->u32_44 && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
             (*((unsigned short *)&(a1))) = (unsigned short)a1 + 1; /*0x6d6ca1*/
             if ( ++v10 >= 5 ) /*0x6d6caa*/
             {
+  int16_t v12; // cx
               v12 = v1[1] + 1; /*0x6d6cb3*/
               (*((unsigned short *)&(a1))) = *v1; /*0x6d6cb5*/
               (*(((unsigned short *)&(a1)) + 1)) = v12; /*0x6d6cba*/
+  int v13; // esi
               v13 = 0; /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
                 result = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1)); /*0x6d6cd3*/
+  int v14; // ecx
                 v14 = result->u32_140; /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result->u32_44 && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
@@ -158,20 +158,20 @@ void nullsub_236()
 namespace gamemd {
 void * sub_6D0F10()
 {
-  int v0; // esi
-  int *v1; // edi
   void *result; // eax
-  bool v3; // cl
-  bool v4; // [esp+Bh] [ebp-101h] BYREF
-  char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
 
+  bool v4; // [esp+Bh] [ebp-101h] BYREF
   v4 = (int *)(0);
+  int v0; // esi
   v0 = 0; /*0x6d0f1d*/
+  int *v1; // edi
   v1 = (int *)(dword_B0C148); /*0x6d0f1f*/
   do /*0x6d0f5a*/
   {
+  char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
     sprintf(Buffer, "Button%02d.SHP", v0); /*0x6d0f2f*/
     result = LoadFileSHP(Buffer, &v4); /*0x6d0f3f*/
+  bool v3; // cl
     v3 = v4; /*0x6d0f44*/
     *v1 = (int)result; /*0x6d0f48*/
     ((unsigned int *)(byte_B0CBDC))[v0] = v3; /*0x6d0f4a*/
@@ -200,16 +200,16 @@ int sub_6D0FB0(int a1, int a2, int a3)
 namespace gamemd {
 char E4Recv_6D1570::sub_6D1570()
 {
-  char result; // al
-  int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
-  char v3; // [esp+1Ch] [ebp-4h]
 
+  char result; // al
   result = (*(int (**)(ObjectClass *, GadgetClass *))(this->vfptr + 48))(this, &stru_B0CC40); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
+  int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
     v2[2] = dword_B0CC50; /*0x6d1597*/
     v2[1] = dword_B0CC4C; /*0x6d15a1*/
     v2[4] = dword_B0CC58; /*0x6d15ab*/
+  char v3; // [esp+1Ch] [ebp-4h]
     v3 = 0; /*0x6d15b6*/
     v2[0] = dword_B0CC64; /*0x6d15bb*/
     v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
@@ -225,8 +225,8 @@ char E4Recv_6D1570::sub_6D1570()
 namespace gamemd {
 void sub_6D1830()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6d183c*/
   dbl_B0CD78 = Math::Sqrt(v0 + v0); /*0x6d184e*/
 }
@@ -276,10 +276,10 @@ void sub_6D18E0()
 namespace gamemd {
 long long sub_6D1900()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0CD50 - dbl_B0CD88); /*0x6d1912*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0CD78 * 0.5); /*0x6d1926*/
   dword_B0CEC0 = result; /*0x6d192b*/
   return result; /*0x6d1930*/
@@ -306,8 +306,8 @@ void sub_6D1970()
 namespace gamemd {
 long long sub_6D19A0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0CEC0) + 0.5); /*0x6d19bb*/
   dword_B0CEB4 = result; /*0x6d19c0*/
   return result; /*0x6d19c6*/
@@ -480,8 +480,8 @@ void E4Recv_6D1E80::sub_6D1E80()
 namespace gamemd {
 int ZCoordToScreenY(int aP0)
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned short *)&(result))) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0 >= 728) + 0.5); /*0x6d2113*/
   return result; /*0x6d2118*/
 }
@@ -510,11 +510,11 @@ void E4Recv_6D4E00::sub_6D4E00()
 namespace gamemd {
 int sub_6D61C0(int a1, int a2, int * a3, int * a4)
 {
-  int result; // eax
 
   *a3 = 60 * a1 / 2; /*0x6d61d6*/
   *a4 = 30 * a1 / 2; /*0x6d61e9*/
   *a3 += -60 * a2 / 2; /*0x6d6203*/
+  int result; // eax
   result = 30 * a2 / 2; /*0x6d6211*/
   *a4 += result; /*0x6d6215*/
   return result; /*0x6d6205*/
@@ -525,12 +525,12 @@ int sub_6D61C0(int a1, int a2, int * a3, int * a4)
 namespace gamemd {
 long long sub_6D6A90(unsigned int * a1)
 {
-  void *v1; // eax
-  int v2; // edx
-  unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
 
+  void *v1; // eax
   v1 = (&dword_87F7E8)->To_Cell(a1); /*0x6d6a9e*/
+  int v2; // edx
   v2 = a1[1]; /*0x6d6aa5*/
+  unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
   return Isometric::InitTables((int)v1, v4); /*0x6d6abc*/
@@ -540,13 +540,12 @@ long long sub_6D6A90(unsigned int * a1)
 namespace gamemd {
 int * sub_6D84D0(int * a1, int * a2)
 {
-  int v2; // edx
-  int v4; // edx
-  int v5; // [esp+4h] [ebp-8h] BYREF
-  int v6; // [esp+8h] [ebp-4h]
 
+  int v2; // edx
   v2 = a2[1]; /*0x6d84da*/
+  int v5; // [esp+4h] [ebp-8h] BYREF
   v5 = *a2; /*0x6d84dd*/
+  int v6; // [esp+8h] [ebp-4h]
   v6 = v2; /*0x6d84e6*/
   if ( !ClampCoordMap((gamemd::AbstractClass *)(&v5)) || byte_A8ED6B ) /*0x6d84fa*/
   {
@@ -556,6 +555,7 @@ int * sub_6D84D0(int * a1, int * a2)
   }
   else
   {
+  int v4; // edx
     v4 = v6; /*0x6d8504*/
     *a1 = v5; /*0x6d8509*/
     a1[1] = v4; /*0x6d850b*/
@@ -576,18 +576,18 @@ void nullsub_41()
 namespace gamemd {
 char ClampCoordMap(AbstractClass * aP0)
 {
-  int v1; // edi
-  int v2; // esi
-  int v3; // ecx
-  int v4; // edx
-  char v5; // bl
-  int v6; // eax
 
+  int v1; // edi
   v1 = (int)(dword_886FA8 / 2 + 30 * (2 * dword_87F8E4 - dword_87F8DC));
+  int v2; // esi
   v2 = v1 + 60 * dword_87F8EC - dword_886FA8; /*0x6d8690*/
+  int v3; // ecx
   v3 = dword_886FAC / 2 + 15 * (dword_87F8DC + 2 * dword_87F8E8 - 5); /*0x6d869c*/
+  int v4; // edx
   v4 = (int)(aP0[1]); /*0x6d86b3*/
+  char v5; // bl
   v5 = 0; /*0x6d86ba*/
+  int v6; // eax
   v6 = v3 + (60 * dword_87F8F0 + 270) / 2 - dword_886FAC; /*0x6d86bc*/
   if ( v4 >= v3 ) /*0x6d86c0*/
   {
@@ -626,27 +626,27 @@ char ClampCoordMap(AbstractClass * aP0)
 namespace gamemd {
 int sub_6D8C60(int a1, int a2)
 {
-  unsigned int *v3; // eax
-  int v4; // edi
-  int v5; // esi
-  int v6; // eax
-  int result; // eax
-  int v8; // edi
-  int v9; // esi
-  int v10; // [esp+18h] [ebp-1Ch]
-  int v12; // [esp+20h] [ebp-14h] BYREF
-  int v13; // [esp+24h] [ebp-10h]
-  unsigned char v14[12]; // [esp+28h] [ebp-Ch] BYREF
 
+  unsigned int *v3; // eax
+  unsigned char v14[12]; // [esp+28h] [ebp-Ch] BYREF
   v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))(a1, v14); /*0x6d8c77*/
+  int v10; // [esp+18h] [ebp-1Ch]
   v10 = v3[1]; /*0x6d8c89*/
+  int v4; // edi
   v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256; /*0x6d8cf7*/
+  int v5; // esi
   v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256; /*0x6d8cfa*/
+  int v6; // eax
   v6 = Math::RoundToInt((double)(int)v3[2] * dbl_B0CD48 + (double)(v3[2] >= 728) + 0.5); /*0x6d8d21*/
+  int v12; // [esp+20h] [ebp-14h] BYREF
   v12 = v4; /*0x6d8d2d*/
+  int v13; // [esp+24h] [ebp-10h]
   v13 = v5 - v6; /*0x6d8d31*/
+  int result; // eax
   result = (int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0; /*0x6d8d3b*/
+  int v8; // edi
   v8 = v4 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0; /*0x6d8d41*/
+  int v9; // esi
   v9 = v13 - result; /*0x6d8d43*/
   v12 = v8; /*0x6d8d4b*/
   v13 -= result; /*0x6d8d4f*/
@@ -707,8 +707,8 @@ int Map_GetCoordData(int a1)
 namespace gamemd {
 void sub_6DCD70()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6dcd7c*/
   dbl_B0E688 = Math::Sqrt(v0 + v0); /*0x6dcd8e*/
 }
@@ -758,10 +758,10 @@ void sub_6DCE20()
 namespace gamemd {
 long long sub_6DCE40()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0E650 - dbl_B0E690); /*0x6dce52*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0E688 * 0.5); /*0x6dce66*/
   dword_B0E6E0 = result; /*0x6dce6b*/
   return result; /*0x6dce70*/
@@ -788,8 +788,8 @@ void sub_6DCEB0()
 namespace gamemd {
 long long sub_6DCEE0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0E6E0) + 0.5); /*0x6dcefb*/
   dword_B0E6D4 = result; /*0x6dcf00*/
   return result; /*0x6dcf06*/

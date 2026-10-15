@@ -14,10 +14,10 @@
 namespace gamemd {  // G42.18 ns repair
 LRESULT sub_5E23A0()
 {
-  HWND Current; // eax
-  HWND DlgItem; // eax
 
+  HWND Current; // eax
   Current = (HWND)(Dialog::GetCurrent());
+  HWND DlgItem; // eax
   DlgItem = GetDlgItem(Current, 1439); /*0x5e23ab*/
   return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x5e23c1*/
 }  // G42.18 ns repair
@@ -27,10 +27,10 @@ LRESULT sub_5E23A0()
 namespace gamemd {
 LRESULT sub_7A27D0()
 {
-  HWND Current; // eax
-  HWND DlgItem; // eax
 
+  HWND Current; // eax
   Current = (HWND)(Dialog::GetCurrent()); /*0x7a27d0*/
+  HWND DlgItem; // eax
   DlgItem = GetDlgItem(Current, 1439); /*0x7a27db*/
   return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x7a27f1*/
 }

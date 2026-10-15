@@ -18,51 +18,38 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
 {
 
-  int v5; // esi
-  int v6; // edi
-  int v7; // ebp
-  signed int v8; // eax
-  int v9; // edi
-  int v10; // esi
-  int v11; // ecx
-  unsigned char *v12; // esi
-  void *v13; // eax
-  int v14; // esi
-  int v15; // edi
   unsigned int *result; // eax
-  bool v17; // cc
-  int v18; // [esp+10h] [ebp-34h]
-  int v19; // [esp+10h] [ebp-34h]
-  int v20; // [esp+14h] [ebp-30h]
-  int v21; // [esp+18h] [ebp-2Ch]
-  int v22; // [esp+18h] [ebp-2Ch]
-  int v23; // [esp+1Ch] [ebp-28h]
-  int v24; // [esp+20h] [ebp-24h]
-  int v25; // [esp+24h] [ebp-20h] BYREF
-  int v26; // [esp+28h] [ebp-1Ch] BYREF
-  unsigned char *v27; // [esp+2Ch] [ebp-18h]
-  unsigned char *v28; // [esp+30h] [ebp-14h]
-  int v29; // [esp+34h] [ebp-10h] BYREF
   int v30; // [esp+38h] [ebp-Ch]
   int v31; // [esp+3Ch] [ebp-8h]
   int v32; // [esp+40h] [ebp-4h]
 
   if ( !*(unsigned char *)(arg0 + 662) && !*(unsigned char *)(arg0 + 664) ) /*0x4cc11d*/
     return 0; /*0x4cc11d*/
+  int v5; // esi
   v5 = *a1; /*0x4cc12d*/
+  int v6; // edi
   v6 = a1[1]; /*0x4cc136*/
+  int v21; // [esp+18h] [ebp-2Ch]
   LOWORD(v21) = *aP0 / 256; /*0x4cc151*/
   HIWORD(v21) = aP0[1] / 256; /*0x4cc156*/
+  int v25; // [esp+24h] [ebp-20h] BYREF
   v25 = v21; /*0x4cc15f*/
+  int v18; // [esp+10h] [ebp-34h]
   LOWORD(v18) = v5 / 256; /*0x4cc171*/
   HIWORD(v18) = v6 / 256; /*0x4cc184*/
+  int v26; // [esp+28h] [ebp-1Ch] BYREF
   v26 = v18; /*0x4cc18d*/
+  int v7; // ebp
   v7 = abs32((__int16)v21 - (__int16)v18); /*0x4cc1aa*/
+  signed int v8; // eax
   v8 = abs32(SHIWORD(v21) - SHIWORD(v18)); /*0x4cc1af*/
   if ( v7 <= v8 ) /*0x4cc1b3*/
     v7 = v8; /*0x4cc1b5*/
+  int v9; // edi
   v9 = v6 - aP0[1]; /*0x4cc1bf*/
+  int v10; // esi
   v10 = v5 - *aP0; /*0x4cc1c5*/
+  int v11; // ecx
   v11 = a1[2] - aP0[2]; /*0x4cc1ca*/
   if ( v7 ) /*0x4cc1ce*/
   {
@@ -76,28 +63,41 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     v31 = 0; /*0x4cc1da*/
     v32 = 0; /*0x4cc1de*/
   }
+  unsigned char *v12; // esi
   v12 = (unsigned char *)((&dword_87F7E8)->To_CellObj((__int16 *)&v25)); /*0x4cc216*/
+  unsigned char *v28; // [esp+30h] [ebp-14h]
   v28 = v12; /*0x4cc21e*/
+  unsigned char *v27; // [esp+2Ch] [ebp-18h]
   v27 = (unsigned char *)((&dword_87F7E8)->To_CellObj((__int16 *)&v26)); /*0x4cc229*/
+  void *v13; // eax
   v13 = v12; /*0x4cc22f*/
+  int v24; // [esp+20h] [ebp-24h]
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
     return 0; /*0x4cc302*/
+  int v22; // [esp+18h] [ebp-2Ch]
   v22 = 0; /*0x4cc23b*/
+  int v20; // [esp+14h] [ebp-30h]
   v20 = 0; /*0x4cc23f*/
+  int v19; // [esp+10h] [ebp-34h]
   v19 = 0; /*0x4cc243*/
   while ( 1 ) /*0x4cc254*/
   {
+  int v14; // esi
     v14 = *aP0 + v19; /*0x4cc254*/
+  int v15; // edi
     v15 = v20 + aP0[1]; /*0x4cc259*/
     result = TrajectoryHelper::GetObstacle(v28, v27, (int)v13, v14, v15, aP0[2] + v22, arg0, a3); /*0x4cc281*/
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
+  int v23; // [esp+1Ch] [ebp-28h]
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
     HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
+  int v29; // [esp+34h] [ebp-10h] BYREF
     v29 = v23; /*0x4cc2be*/
     v13 = (&dword_87F7E8)->To_CellObj((__int16 *)&v29); /*0x4cc2c2*/
     v19 += v30; /*0x4cc2dd*/
+  bool v17; // cc
     v17 = ++v24 < v7; /*0x4cc2ee*/
     v20 += v31; /*0x4cc2f4*/
     v22 += v32; /*0x4cc2f8*/
@@ -254,10 +254,10 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
 namespace gamemd {
 unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(unsigned int *aP0, int *a1, int arg0, void *a3)
 {
-  unsigned int *FirstObstacle; // eax
-  unsigned int *v5; // esi
 
+  unsigned int *FirstObstacle; // eax
   FirstObstacle = TrajectoryHelper::FindFirstObstacle(aP0, a1, *(unsigned int *)(arg0 + 160), a3); /*0x4cc322*/
+  unsigned int *v5; // esi
   v5 = FirstObstacle; /*0x4cc327*/
   if ( FirstObstacle /*0x4cc342*/
     && BuildingPlacement::ValidateType((gamemd::BuildingPlacement *)(FirstObstacle), -1, -1)

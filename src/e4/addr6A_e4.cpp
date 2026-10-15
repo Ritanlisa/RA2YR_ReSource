@@ -126,19 +126,19 @@ LABEL_18:
 namespace gamemd {
 int E4Recv_6A74A0::sub_6A74A0(int a2)
 {
-  unsigned int *v3; // edi
-  int v4; // eax
-  int v5; // esi
-  int v6; // ebp
 
   this->M21404 = a2; /*0x6a74b6*/
   ((GadgetClass *)((GadgetClass *)(&stru_B07C48 + 8 * a2)))->Show(); /*0x6a74bc*/
+  unsigned int *v3; // edi
   v3 = (unsigned int *)this->u8_F94 * this->M21404 + 5444); /*0x6a74d4*/
   this->u8_F94 * this->M21404 + 5472) = 1; /*0x6a74db*/
+  int v4; // eax
   v4 = 26; /*0x6a74ed*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a74e5*/
     v4 = 18; /*0x6a74f4*/
+  int v5; // esi
   v5 = 0; /*0x6a7507*/
+  int v6; // ebp
   v6 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v4 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a7527*/
   if ( v6 > 0 ) /*0x6a752b*/
   {
@@ -194,18 +194,15 @@ namespace gamemd {
 int E4Recv_6A89E0::sub_6A89E0(char a2)
 {
 
-  int v2; // eax
-  int v3; // ecx
-  int v5; // eax
-  int v6; // eax
-  int v7; // kr04_4
   ObjectClass *v8; // eax
-  void *NeedsSaveOrLink; // [esp+4h] [ebp-4h]
 
+  void *NeedsSaveOrLink; // [esp+4h] [ebp-4h]
   NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x6a89f2*/
+  int v2; // eax
   v2 = 26; /*0x6a89f8*/
   if ( NeedsSaveOrLink ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
+  int v3; // ecx
   v3 = (g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8a43*/
   if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
@@ -223,12 +220,15 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   }
   else
   {
+  int v5; // eax
     v5 = 26; /*0x6a8a85*/
     if ( NeedsSaveOrLink ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
+  int v6; // eax
     v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
     if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a8aac*/
     {
+  int v7; // kr04_4
       v7 = v6; /*0x6a8ab7*/
       v8 = (gamemd::ObjectClass *)(this); /*0x6a8ab9*/
       if ( this->ambientSoundController[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
@@ -251,19 +251,19 @@ namespace gamemd {
 BombClass * * E4Recv_6A93F0::sub_6A93F0()
 {
 
-  int v2; // eax
-  int v3; // esi
-  int v4; // ecx
-  unsigned int v5; // eax
-  int v6; // ebp
 
   LOBYTE(this->M28) = 1; /*0x6a93f8*/
+  int v2; // eax
   v2 = 26; /*0x6a9408*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
+  int v3; // esi
   v3 = 0; /*0x6a942f*/
+  int v4; // ecx
   v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; /*0x6a9431*/
+  unsigned int v5; // eax
   v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31; /*0x6a943c*/
+  int v6; // ebp
   v6 = 2 * (v4 / 50); /*0x6a9443*/
   if ( v6 > 0 ) /*0x6a9447*/
   {
@@ -292,23 +292,7 @@ namespace gamemd {
 int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
 {
   int v4; // eax
-  int v5; // eax
-  int v6; // edi
-  int ResourceIDCSF; // ebx
-  int v8; // eax
-  int v9; // ebx
-  char *i; // edi
-  int v11; // eax
-  LRESULT v12; // eax
-  HWND DlgItem; // ebx
-  HWND v14; // ebp
-  int nIDDlgItema; // [esp+10h] [ebp-10h]
-  HWND hWnd; // [esp+14h] [ebp-Ch]
-  HWND hWnda; // [esp+14h] [ebp-Ch]
-  int v19; // [esp+18h] [ebp-8h]
   uint8_t v20; // [esp+18h] [ebp-8h]
-  HWND ResourceID4CSF; // [esp+1Ch] [ebp-4h]
-  HWND v22; // [esp+1Ch] [ebp-4h]
 
   switch ( nIDDlgItem ) /*0x6adc31*/
   {
@@ -330,29 +314,40 @@ int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     case 1308: /*0x6adc31*/
       v4 = 5; /*0x6adc7b*/
       break;
+  int v5; // eax
     default:
       v5 = -(nIDDlgItem != 1309); /*0x6adc8b*/
       (*((unsigned char *)&(v5))) = v5 & 0xF9; /*0x6adc8d*/
       v4 = v5 + 6; /*0x6adc8f*/
       break;
   }
+  int v6; // edi
   v6 = v4 + 1; /*0x6adc92*/
+  int ResourceIDCSF; // ebx
   ResourceIDCSF = GetResourceIDCSF((int)((void *)(v4 + 1))); /*0x6adc9c*/
+  int v19; // [esp+18h] [ebp-8h]
   v19 = ResourceIDCSF; /*0x6adca0*/
+  int nIDDlgItema; // [esp+10h] [ebp-10h]
   nIDDlgItema = GetResourceID2CSF((int)((void *)v6)); /*0x6adcab*/
+  HWND hWnd; // [esp+14h] [ebp-Ch]
   hWnd = (HWND)GetResourceID3CSF((int)((void *)v6)); /*0x6adcb6*/
+  HWND ResourceID4CSF; // [esp+1Ch] [ebp-4h]
   ResourceID4CSF = (HWND)GetResourceID4CSF((int)((void *)v6)); /*0x6adcc1*/
   if ( hDlg && dword_A8B23C ) /*0x6adcce*/
   {
+  int v8; // eax
     v8 = 1; /*0x6adcd2*/
+  int v9; // ebx
     v9 = 8; /*0x6adcd7*/
     if ( v6 > 0 && v6 < 8 ) /*0x6adce0*/
     {
       v8 = v6; /*0x6adce2*/
       v9 = v6 + 1; /*0x6adce4*/
     }
+  char *i; // edi
     for ( i = (char *)v8; (int)i < v9; ++i ) /*0x6adceb*/
     {
+  int v11; // eax
       v11 = GetResourceID4CSF((int)(i)); /*0x6adcef*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6adcfe*/
         SetupLobbyPlayerSlots(hDlg, v11, 3); /*0x6add07*/
@@ -361,6 +356,7 @@ int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     }
     ResourceIDCSF = v19; /*0x6add19*/
   }
+  LRESULT v12; // eax
   v12 = SendDlgItemMessageA((HWND)(hDlg), nIDDlgItem, 0x147u, 0, 0); /*0x6add2e*/
   if ( (unsigned int)SendDlgItemMessageA((HWND)(hDlg), nIDDlgItem, 0x150u, v12, 0) <= 2 ) /*0x6add3e*/
   {
@@ -373,9 +369,13 @@ int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
     SetupLobbyCountryCombo((HWND)(hDlg), nIDDlgItema, -2); /*0x6add6e*/
     SetupLobbyFactionSlots((HWND)(hDlg), (int)hWnd, -2); /*0x6add7b*/
   }
+  HWND DlgItem; // ebx
   DlgItem = GetDlgItem((HWND)(hDlg), ResourceIDCSF); /*0x6add8a*/
+  HWND v14; // ebp
   v14 = GetDlgItem((HWND)(hDlg), nIDDlgItema); /*0x6add94*/
+  HWND hWnda; // [esp+14h] [ebp-Ch]
   hWnda = GetDlgItem((HWND)(hDlg), (int)hWnd); /*0x6adda2*/
+  HWND v22; // [esp+1Ch] [ebp-4h]
   v22 = GetDlgItem((HWND)(hDlg), (int)ResourceID4CSF); /*0x6addb4*/
   EnableWindow(DlgItem, v20); /*0x6addc0*/
   EnableWindow(v14, v20); /*0x6addc4*/
@@ -518,43 +518,42 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 namespace gamemd {
 bool ShowSkirmishSetupScreen(void * a1, void * a2)
 {
-  int v2; // ebx
-  ObjectClass *v3; // esi
-  int i; // esi
-  HWND Dialog; // esi
-  LONG j; // eax
-  TechnoTypeClass *v7; // ecx
-  Skirmish *v8; // esi
-  ObjectClass *v10; // [esp+0h] [ebp-8h]
-  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
+  ObjectClass *v3; // esi
+  ObjectClass *v10; // [esp+0h] [ebp-8h]
   v10 = v3; /*0x6ae2cc*/
+  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
   dwNewLong = -1; /*0x6ae2ce*/
   (*(RulesClass **)&g_RulesClass_Instance)->LoadCountries(); /*0x6ae2d6*/
   RulesClass::ReadDataList(*(RulesClass **)&g_RulesClass_Instance); /*0x6ae2e8*/
+  int i; // esi
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
     (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
       *((unsigned int *)dword_A83C9C + i),
       *(unsigned int *)&DataGlobal_887048);
   LoadingScreen::Init(); /*0x6ae317*/
+  HWND Dialog; // esi
   Dialog = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
   if ( Dialog ) /*0x6ae331*/
   {
     dword_B0B59C = (unsigned int)(Dialog);
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6ae341*/
     ((Dialog *)((Dialog *)Dialog))->Show(); /*0x6ae349*/
+  LONG j; // eax
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/
     {
       if ( j == 1472 ) /*0x6ae35e*/
         break; /*0x6ae35e*/
       if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x6ae367*/
         break; /*0x6ae367*/
+  TechnoTypeClass *v7; // ecx
       (*((unsigned char *)&(v7))) = 0; /*0x6ae369*/
       ScreenSaver::Process(v7, v10); /*0x6ae36b*/
     }
     ((Dialog *)((Dialog *)Dialog))->Destroy(); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/
   }
+  Skirmish *v8; // esi
   v8 = (gamemd::Skirmish *)(g_UIControlState);
   if ( g_UIControlState ) /*0x6ae394*/
   {
@@ -564,6 +563,7 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
   }
   CleanupFileTree(v10); /*0x6ae3b0*/
   SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x6ae3ba*/
+  int v2; // ebx
   if ( dwNewLong == 1472 ) /*0x6ae3c9*/
     Screen::Capture(1, 0, v2,(int)(a2)); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
@@ -848,20 +848,17 @@ namespace gamemd {
 char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
 {
 
-  int v2; // eax
-  int *v4; // edi
-  int v5; // eax
-  int v6; // eax
-  CellClass *v7; // eax
-  void *vtable3; // [esp-4h] [ebp-10h]
 
+  int v2; // eax
   v2 = g_OverlayTypeConfig; /*0x6a04c1*/
+  int *v4; // edi
   v4 = &this->ambientSoundController[1]; /*0x6a04cd*/
   if ( this->ambientSoundController[1] != g_OverlayTypeConfig /*0x6a04df*/
     || *(unsigned long long *)&this->ambientSoundController[2] != qword_B077FC )
   {
     *v4 = g_OverlayTypeConfig; /*0x6a04f0*/
     this->ambientSoundController[2] = qword_B077FC; /*0x6a04f8*/
+  int v5; // eax
     v5 = HIDWORD(qword_B077FC); /*0x6a04fb*/
     HIBYTE(this->customSound_controller[4]) = 0; /*0x6a0500*/
     this->ambientSoundController[3] = v5; /*0x6a0504*/
@@ -871,10 +868,13 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
   {
     *v4 = *aP1; /*0x6a0535*/
     this->ambientSoundController[2] = aP1[1]; /*0x6a053a*/
+  int v6; // eax
     v6 = aP1[2]; /*0x6a053d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
+  void *vtable3; // [esp-4h] [ebp-10h]
     vtable3 = this->M12; /*0x6a054a*/
+  CellClass *v7; // eax
     v7 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, aP1); /*0x6a0551*/
     if ( (unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)this->? + 129) ) /*0x6a0564*/
     {
@@ -905,8 +905,8 @@ void nullsub_230()
 namespace gamemd {
 void sub_6A4360()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6a436c*/
   dbl_B07850 = Math::Sqrt(v0 + v0); /*0x6a437e*/
 }
@@ -956,10 +956,10 @@ void sub_6A4410()
 namespace gamemd {
 long long sub_6A4430()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B07840 - dbl_B07858); /*0x6a4442*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B07850 * 0.5); /*0x6a4456*/
   dword_B078A8 = result; /*0x6a445b*/
   return result; /*0x6a4460*/
@@ -986,8 +986,8 @@ void sub_6A44A0()
 namespace gamemd {
 long long sub_6A44D0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B078A8) + 0.5); /*0x6a44eb*/
   dword_B0789C = result; /*0x6a44f0*/
   return result; /*0x6a44f6*/
@@ -1042,8 +1042,8 @@ int sub_6A4A00()
 namespace gamemd {
 void sub_6A4A20()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6a4a2c*/
   dbl_B07DE0 = Math::Sqrt(v0 + v0); /*0x6a4a3e*/
 }
@@ -1093,10 +1093,10 @@ void sub_6A4AD0()
 namespace gamemd {
 long long sub_6A4AF0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B07BB8 - dbl_B07DE8); /*0x6a4b02*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B07DE0 * 0.5); /*0x6a4b16*/
   dword_B0B400 = result; /*0x6a4b1b*/
   return result; /*0x6a4b20*/
@@ -1123,8 +1123,8 @@ void sub_6A4B60()
 namespace gamemd {
 long long sub_6A4B90()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0B400) + 0.5); /*0x6a4bab*/
   dword_B0B394 = result; /*0x6a4bb0*/
   return result; /*0x6a4bb6*/
@@ -1231,10 +1231,10 @@ void sub_6A4CC0()
 namespace gamemd {
 int sub_6A4CE0()
 {
-  unsigned char *v0; // esi
-  int v1; // edi
 
+  unsigned char *v0; // esi
   v0 = &stru_B07C48; /*0x6a4ce2*/
+  int v1; // edi
   v1 = 4; /*0x6a4ce7*/
   do /*0x6a4cf7*/
   {
@@ -1251,13 +1251,13 @@ int sub_6A4CE0()
 namespace gamemd {
 void sub_6A4D10()
 {
-  int *v0; // esi
-  int v1; // edi
 
   if ( (byte_B07BB1 & 4) == 0 ) /*0x6a4d1d*/
   {
     byte_B07BB1 |= 4u; /*0x6a4d23*/
+  int *v0; // esi
     v0 = &dword_B07DC8; /*0x6a4d29*/
+  int v1; // edi
     v1 = 4; /*0x6a4d2e*/
     do /*0x6a4d3b*/
     {
@@ -1316,10 +1316,10 @@ void sub_6A4DA0()
 namespace gamemd {
 int sub_6A4DC0()
 {
-  unsigned int *v0; // esi
-  int v1; // ebx
 
+  unsigned int *v0; // esi
   v0 = &stru_B07E80; /*0x6a4dc3*/
+  int v1; // ebx
   v1 = 240; /*0x6a4dc8*/
   do /*0x6a4df0*/
   {
@@ -1339,13 +1339,13 @@ int sub_6A4DC0()
 namespace gamemd {
 void sub_6A4E10()
 {
-  int *v0; // esi
-  int v1; // edi
 
   if ( (byte_B07BB1 & 0x20) == 0 ) /*0x6a4e1a*/
   {
     byte_B07BB1 |= 0x20u; /*0x6a4e20*/
+  int *v0; // esi
     v0 = &dword_B0B300; /*0x6a4e26*/
+  int v1; // edi
     v1 = 240; /*0x6a4e2b*/
     do /*0x6a4e3b*/
     {
@@ -1381,14 +1381,14 @@ namespace gamemd {
 char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
 {
 
-  int v4; // esi
-  int v5; // eax
-  int *i; // edx
 
+  int v4; // esi
   v4 = this->customSound_controller[1]; /*0x6aba62*/
+  int v5; // eax
   v5 = 0; /*0x6aba65*/
   if ( v4 <= 0 ) /*0x6aba6a*/
     return 0; /*0x6aba88*/
+  int *i; // edx
   for ( i = &this->customSound_controller[2]; i[1] != a3 || *i != a4; i += 13 ) /*0x6aba74*/
   {
     if ( ++v5 >= v4 ) /*0x6aba86*/
@@ -1437,8 +1437,8 @@ int sub_6AC950()
 namespace gamemd {
 void sub_6AC970()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6ac97c*/
   dbl_B0B540 = Math::Sqrt(v0 + v0); /*0x6ac98e*/
 }
@@ -1488,10 +1488,10 @@ void sub_6ACA20()
 namespace gamemd {
 long long sub_6ACA40()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0B520 - dbl_B0B548); /*0x6aca52*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0B540 * 0.5); /*0x6aca66*/
   dword_B0B598 = result; /*0x6aca6b*/
   return result; /*0x6aca70*/
@@ -1518,8 +1518,8 @@ void sub_6ACAB0()
 namespace gamemd {
 long long sub_6ACAE0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0B598) + 0.5); /*0x6acafb*/
   dword_B0B58C = result; /*0x6acb00*/
   return result; /*0x6acb06*/
@@ -1562,22 +1562,22 @@ int sub_6ACB40()
 namespace gamemd {
 void sub_6ACE80(SessionClass * hDlg, int a2)
 {
-  int v3; // eax
-  int v4; // ebx
-  char *i; // esi
-  int ResourceID4CSF; // edx
 
   if ( hDlg && dword_A8B23C ) /*0x6ace90*/
   {
+  int v3; // eax
     v3 = 1; /*0x6ace94*/
+  int v4; // ebx
     v4 = 8; /*0x6ace99*/
     if ( a2 > 0 && a2 < 8 ) /*0x6acea2*/
     {
       v3 = a2; /*0x6acea4*/
       v4 = a2 + 1; /*0x6acea6*/
     }
+  char *i; // esi
     for ( i = (char *)v3; (int)i < v4; ++i ) /*0x6acead*/
     {
+  int ResourceID4CSF; // edx
       ResourceID4CSF = GetResourceID4CSF(i); /*0x6aceb6*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6acec1*/
         SetupLobbyPlayerSlots(hDlg, ResourceID4CSF, 3); /*0x6aceca*/
@@ -1592,8 +1592,8 @@ void sub_6ACE80(SessionClass * hDlg, int a2)
 namespace gamemd {
 void sub_6AEF10()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6aef1c*/
   dbl_B0B5C0 = Math::Sqrt(v0 + v0); /*0x6aef2e*/
 }
@@ -1643,10 +1643,10 @@ void sub_6AEFC0()
 namespace gamemd {
 long long sub_6AEFE0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0B5A0 - dbl_B0B5C8); /*0x6aeff2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0B5C0 * 0.5); /*0x6af006*/
   dword_B0B630 = result; /*0x6af00b*/
   return result; /*0x6af010*/
@@ -1673,8 +1673,8 @@ void sub_6AF050()
 namespace gamemd {
 long long sub_6AF080()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0B630) + 0.5); /*0x6af09b*/
   dword_B0B624 = result; /*0x6af0a0*/
   return result; /*0x6af0a6*/

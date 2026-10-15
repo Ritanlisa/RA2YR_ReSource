@@ -63,10 +63,8 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
 namespace gamemd {
 AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a5_1, void *a6, void *a7, void *a8, void *a9)
 {
-  unsigned int *v6; // ebp
-  void *v7; // edi
-  int v8; // eax
 
+  unsigned int *v6; // ebp
   v6 = &this->DSurface_field_0x1C; /*0x4ba5b0*/
   this->Width = aP1; /*0x4ba5b5*/
   this->Height = aP2; /*0x4ba5b8*/
@@ -78,6 +76,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
   this->DSurface_field_0x1C = 0; /*0x4ba5ca*/
   this->DSurface_field_0x20 = 0; /*0x4ba5cd*/
   /* X11: vtable install elided (implicit via DSurface virtuals 0x4ba5d0) */
+  void *v7; // edi
   v7 = operator new(0x6Cu); /*0x4ba5db*/
   this->DSurface_field_0x20 = v7; /*0x4ba5e2*/
   if ( v7 ) /*0x4ba5e5*/
@@ -100,6 +99,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5, void *a
     {
       memset(this->DSurface_field_0x20, 0, 0x6Cu); /*0x4ba665*/
       *this->DSurface_field_0x20 = 108; /*0x4ba66a*/
+  int v8; // eax
       (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->u32_74)(*v6, this->DSurface_field_0x20); /*0x4ba67a*/
       v8 = this->DSurface_field_0x20; /*0x4ba67d*/
       this->Width = (unsigned int)(v8->u32_54 + 7) >> 3; /*0x4ba689*/

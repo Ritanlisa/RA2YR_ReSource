@@ -21,7 +21,6 @@ namespace gamemd {  // G42.18 ns repair
 RocketLocomotionClass::RocketLocomotionClass()
 {
 
-  int v2; // ecx
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x661ec3*/
   this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
@@ -30,6 +29,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->MissionTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x661eee*/
   this->MissionTimer[2] = 0; /*0x661ef1*/
   this->MissionTimer[3] = 0; /*0x661ef4*/
+  int v2; // ecx
   v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x661ef7*/
   this->TrailerTimer[2] = 0; /*0x661efd*/
   this->TrailerTimer[0] = v2; /*0x661f00*/
@@ -61,9 +61,8 @@ int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
-  int result; // eax
-  int v3; // ecx
 
+  int result; // eax
   result = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x66341b*/
   if ( result >= 0 ) /*0x663422*/
   {
@@ -71,6 +70,7 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->0 = &vt_LocomotionClass; /*0x663428*/
       *(unsigned int *)&a1->0[4] = &vt_LocomotionClass; /*0x66342e*/
+  int v3; // ecx
       v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x663435*/
       a1->TrailerTimer[2] = 0; /*0x66343b*/
       a1->TrailerTimer[0] = v3; /*0x663442*/
@@ -104,8 +104,8 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 namespace gamemd {
 void RocketLocomotionClass_17::ddtor(void *a1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->q004; /*0x6647b6*/
   this->m_10 = 0; /*0x6647b9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x6647c0*/
@@ -141,18 +141,18 @@ int RocketLocomotionClass_17::UpdateMovement(int a2)
 namespace gamemd {
 char RocketLocomotionClass_17::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x664812*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x66481d*/
   {
+  int v3; // edx
     v3 = 0; /*0x66481f*/
     if ( m_8 <= 0 ) /*0x664823*/
       return 1; /*0x664843*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x664825*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x66482b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x664834*/
     {
@@ -171,13 +171,11 @@ namespace gamemd {
 char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x66485c*/
   {
     LOBYTE(this->m_C) = 0; /*0x664866*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
@@ -187,9 +185,11 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x664895*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x66489c*/
         if ( a2 < m_8 ) /*0x6648a1*/
           m_8 = a2; /*0x6648a3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6648a9*/
           ++i; /*0x6648ae*/
         if ( BYTE1(this->m_C) ) /*0x6648bb*/
@@ -235,16 +235,16 @@ void RocketLocomotionClass_17::Destroy(void *a1_1)
 namespace gamemd {
 int RocketLocomotionClass_17::IndexOf(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x664930*/
     return 0; /*0x664938*/
+  int m_8; // edx
   m_8 = this->m_8; /*0x66493e*/
+  int result; // eax
   result = 0; /*0x664941*/
   if ( m_8 <= 0 ) /*0x664945*/
     return -1; /*0x66495c*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x66494b*/
   {
     if ( ++result >= m_8 ) /*0x66495a*/
@@ -270,14 +270,11 @@ namespace gamemd {
 char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x66499c*/
   {
     LOBYTE(this->m_C) = 0; /*0x6649a2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
@@ -287,9 +284,11 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
       return 0; /*0x664a3a*/
     if ( *&this->q004 ) /*0x6649c8*/
     {
+  int m_8; // ecx
       m_8 = this->m_8; /*0x6649cf*/
       if ( a2 < m_8 ) /*0x6649d4*/
         m_8 = a2; /*0x6649d6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x6649dc*/
         ++i; /*0x6649e1*/
       if ( BYTE1(this->m_C) ) /*0x6649ee*/
@@ -306,6 +305,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x664a1e*/
   }
+  int v7; // eax
   v7 = this->m_8; /*0x664a21*/
   if ( v7 < this->m_10 ) /*0x664a29*/
     this->m_10 = v7; /*0x664a2b*/
@@ -318,14 +318,14 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int RocketLocomotionClass_17::Launch(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x664a40*/
+  int result; // eax
   result = 0; /*0x664a43*/
   if ( m_10 <= 0 ) /*0x664a48*/
     return -1; /*0x664a5f*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x664a4e*/
   {
     if ( ++result >= m_10 ) /*0x664a5d*/
@@ -339,8 +339,8 @@ namespace gamemd {
 unsigned int * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x664a73*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x664a76*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x664a80*/
@@ -361,8 +361,8 @@ unsigned int * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(u
 namespace gamemd {
 DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x664ac3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x664ac6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x664ad0*/

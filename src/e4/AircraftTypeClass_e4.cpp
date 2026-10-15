@@ -117,47 +117,42 @@ LABEL_11:
 namespace gamemd {
 AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3)
 {
+  int v10; // eax
+
   int v3; // ecx
   int v4; // esi
-  char Bool_Overwrite; // al
-  char v6; // cl
-  char v7; // al
-  char v8; // al
-  char v9; // al
-  int v10; // eax
-  char v11; // al
-  char v12; // cl
-  char v14; // [esp-Ch] [ebp-98h]
-  char v15; // [esp-Ch] [ebp-98h]
-  char v16; // [esp-Ch] [ebp-98h]
-  int v17; // [esp-Ch] [ebp-98h]
-  uint8_t ***v18; // [esp+0h] [ebp-8Ch]
-  int v19; // [esp+8h] [ebp-84h]
-  char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
-
   v4 = v3; /*0x41cc2f*/
   INIClass::ResetSection(); /*0x41cc33*/
+  uint8_t ***v18; // [esp+0h] [ebp-8Ch]
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v18) ) /*0x41cc3b*/
     return 0; /*0x41cd98*/
+  char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x41cc5c*/
                      (int *)this,
                      &v4->BarrelVoxel,
                      aLandable,
                      v4->Landable_2);
+  char v6; // cl
   v6 = *&v4->AirportBound_2; /*0x41cc61*/
   v4->Landable_2 = Bool_Overwrite; /*0x41cc67*/
+  char v7; // al
   v7 = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aAirportbound, v6); /*0x41cc76*/
+  char v14; // [esp-Ch] [ebp-98h]
   v14 = v4->Fighter_2; /*0x41cc83*/
   v4->AirportBound_2 = v7; /*0x41cc8a*/
   v4->Fighter_2 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aFighter, v14); /*0x41cc95*/
+  char v8; // al
   v8 = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aCarryall, v4->Carryall_d); /*0x41ccaa*/
+  char v15; // [esp-Ch] [ebp-98h]
   v15 = *&v4->Rotors_d; /*0x41ccbb*/
   v4->Carryall_d = v8; /*0x41ccc7*/
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x41cccd*/
          (int *)&DataGlobal_887180,
          &v4->ImageFile,
          aRotors,
          v15);
+  char v16; // [esp-Ch] [ebp-98h]
   v16 = *&v4->CustomRotor_2; /*0x41ccdd*/
   v4->Rotors_d = v9; /*0x41cce4*/
   v4->CustomRotor_2 = INIClass::ReadBool_Overwrite( /*0x41ccf9*/
@@ -165,7 +160,9 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                             &v4->ImageFile,
                             aCustomrotor,
                             v16);
+  int v19; // [esp+8h] [ebp-84h]
   v19 = *&v4->qE00; /*0x41cd15*/
+  char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
   if ( INIClass::GetString( /*0x41cd19*/
          (INIClass *)&DataGlobal_887180,
          &v4->ImageFile,
@@ -180,6 +177,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   {
     v10 = v19; /*0x41cd2d*/
   }
+  int v17; // [esp-Ch] [ebp-98h]
   v17 = v4->SpawnDelay_d; /*0x41cd3c*/
   v4->qE00 = v10; /*0x41cd43*/
   v4->SpawnDelay_d = INIClass::ReadInt_Overwrite( /*0x41cd4e*/
@@ -187,7 +185,9 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                              &v4->ImageFile,
                              aSpawndelay,
                              v17);
+  char v11; // al
   v11 = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aFlyby, v4->FlyBy_2); /*0x41cd63*/
+  char v12; // cl
   v12 = v4->FlyBack; /*0x41cd68*/
   v4->FlyBy_2 = v11; /*0x41cd6e*/
   v4->FlyBack = INIClass::ReadBool_Overwrite((int *)this, &v4->BarrelVoxel, aFlyback, v12); /*0x41cd83*/
@@ -199,15 +199,15 @@ namespace gamemd {  // G42.18c ns repair
 AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int a0, int a3)
 {
 
-  int v3; // eax
-  AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)a1->TechnoTypeClass = &vt_AircraftTypeClass; /*0x41cfe6*/
   *(unsigned int *)&a1->TechnoTypeClass[4] = &vt_AircraftTypeClass; /*0x41cfec*/
   *(unsigned int *)&a1->TechnoTypeClass[8] = &vt_AircraftTypeClass; /*0x41cff3*/
   *(unsigned int *)&a1->TechnoTypeClass[12] = &vt_AircraftTypeClass; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer((void **)a1, 1); /*0x41d001*/
+  AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::AircraftTypeClass *)(a1); /*0x41d016*/
+  int v3; // eax
   v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < dword_A8B228 && v3 < --dword_A8B228 ) /*0x41d035*/
   {
@@ -230,10 +230,10 @@ namespace gamemd {  // G42.18c ns repair
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
 
-  int v2; // edi
-  int v4; // eax
 
+  int v4; // eax
   v4 = (int)(__2_YAPAXI_Z(0x6D8u)); /*0x41cb28*/
+  int v2; // edi
   if ( v4 ) /*0x41cb32*/
     return (AircraftClass *)AircraftClass::Construct(v4, v2, (int)this, ppv); /*0x41cb3c*/
   else
@@ -276,21 +276,21 @@ namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  int v3; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
 
+  int v3; // eax
   v3 = (int)(BuildingTypeClass::ProcessPower((int)this, a2)); /*0x41cdb9*/
   LOBYTE(v3) = this->Rotors_d; /*0x41cdbe*/
   ((Power *)a2)->FlagProcess(v3); /*0x41cdc7*/
+  int v4; // ecx
   LOBYTE(v4) = this->CustomRotor_2; /*0x41cdcc*/
   ((Power *)a2)->FlagProcess(v4); /*0x41cdd5*/
+  int v5; // edx
   LOBYTE(v5) = this->Landable_2; /*0x41cdda*/
+  int v6; // eax
   v6 = ((Power *)a2)->FlagProcess(v5); /*0x41cde3*/
   LOBYTE(v6) = this->AirportBound_2; /*0x41cde8*/
   ((Power *)a2)->FlagProcess(v6); /*0x41cdf1*/
+  int v7; // ecx
   LOBYTE(v7) = this->Fighter_2; /*0x41cdf6*/
   ((Power *)a2)->FlagProcess(v7); /*0x41cdff*/
   return Power::TimerProcess(this->ArrayIndex); /*0x41ce12*/
@@ -302,8 +302,8 @@ namespace gamemd {  // G42.18c ns repair
 int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)(TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)aP0, aP1)); /*0x41ce2b*/
   if ( result >= 0 ) /*0x41ce32*/
   {
@@ -329,8 +329,8 @@ namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::SaveToINI(void * a0, TechnoTypeClass * aP1, int a3)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = ((TechnoTypeClass *)aP1)->SaveLoad_Prefix_0( (void *)(a0), (TechnoTypeClass *)(aP1), (TechnoTypeClass *)a3); /*0x41ce9f*/
   if ( result >= 0 ) /*0x41cea6*/
     return 0; /*0x41cea8*/

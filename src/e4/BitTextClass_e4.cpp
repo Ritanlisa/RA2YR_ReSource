@@ -19,9 +19,8 @@ namespace gamemd {  // G42.18 ns repair
 int BitTextClass::ParseFontData(char * Source, void *a2)
 {
 
-  struct tagRECT *v3; // ebp
-  unsigned int *Font; // eax
 
+  struct tagRECT *v3; // ebp
   v3 = (struct tagRECT *)(a2 + 48); /*0x43388a*/
   *(unsigned int *)a2 = (unsigned int)(&vt_BitFont); /*0x433895*/
   *(unsigned int *)(a2 + 4) = 0; /*0x43389b*/
@@ -37,6 +36,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   *(unsigned int *)(a2 + 8) = 0; /*0x4338c3*/
   SetRect((LPRECT)(a2 + 48), 0, 0, 0, 0); /*0x4338c6*/
   *(unsigned int *)(a2 + 44) = 1; /*0x4338d0*/
+  unsigned int *Font; // eax
   Font = (unsigned int *)(File::LoadFont(a2)); /*0x4338d3*/
   *(unsigned int *)(a2 + 4) = (unsigned int)(Font); /*0x4338da*/
   if ( Font ) /*0x4338dd*/
@@ -69,9 +69,9 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
 namespace gamemd {
 unsigned int * BitTextClass::LoadFont()
 {
-  int v2; // eax
 
   this->m_FontBitmap = (int)(&vt_BitText); /*0x434ad5*/
+  int v2; // eax
   v2 = (int)(operator new(0x44u)); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {

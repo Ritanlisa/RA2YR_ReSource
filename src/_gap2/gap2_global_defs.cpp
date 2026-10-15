@@ -128,25 +128,15 @@ int IsNonNullPtr(int* ptr) {
 // 0x402F60
 namespace gamemd { 
 int Gap2Recv_402F60::ProcessAudioMixerFrame() {
-  int64_t v3; // rax
-  uint64_t v4; // kr00_8
-  char *p_bombVisible; // ebx
-  char *v6; // ecx
-  AudioChannel *v7; // ecx
-  ObjectClass *v8; // edi
   ObjectClass *vtable0; // ebx
-  AudioChannel *lastLayer; // ecx
-  AudioChannel *v11; // ecx
-  AudioChannel *v12; // ecx
-  AudioChannel *v13; // ecx
-  ObjectClass *v14; // esi
-  int IsActive; // [esp+10h] [ebp-Ch]
 
   if ( this->M1040 ) /*0x402f69*/
     return -2146304000; /*0x402f76*/
+  int64_t v3; // rax
   (*((unsigned int *)&(v3))) = Audio::Callback(); /*0x402f80*/
   if ( (uint64_t)(v3 - this->ptr_138) >= this->ptr_110 ) /*0x402fb1*/
   {
+  uint64_t v4; // kr00_8
     v4 = v3 - this->ptr_138; /*0x402fc5*/
     this->q120 = v4; /*0x402fcb*/
     ++this->ptr_158; /*0x402fde*/
@@ -162,14 +152,19 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     if ( v4 > this->ptr_140 ) /*0x403071*/
       this->ptr_140 = (ra2::game::AbstractClass *)(v4); /*0x403073*/
     this->ptr_138 = (LineTrail *)(v3); /*0x40307f*/
+  char *p_bombVisible; // ebx
     p_bombVisible = (char *)(&this->u32_68); /*0x40308b*/
     (&this->bombVisible)->InitChannels(); /*0x403094*/
+  char *v6; // ecx
     v6 = (char *)this->u32_E8; /*0x403099*/
     if ( v6 ) /*0x4030a1*/
       (v6)->InitChannels(); /*0x4030a3*/
+  AudioChannel *v7; // ecx
     v7 = (AudioChannel *)this->u32_E8; /*0x4030a8*/
+  int IsActive; // [esp+10h] [ebp-Ch]
     if ( !v7 || (IsActive = (v7)->IsActive()) == 0 ) /*0x4030bd*/
       IsActive = (&this->u32_E8)->IsActive(); /*0x4030c6*/
+  ObjectClass *v8; // edi
     v8 = (ObjectClass *)this->M992; /*0x4030ca*/
     if ( v8 != &this->u32_F8 ) /*0x4030d8*/
     {
@@ -178,6 +173,10 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
         vtable0 = (ObjectClass *)v8->vfptr; /*0x4030de*/
         if ( (v8->location[2] & 1) != 0 && v8[2].uniqueId ) /*0x4030ee*/
         {
+  AudioChannel *lastLayer; // ecx
+  AudioChannel *v11; // ecx
+  AudioChannel *v12; // ecx
+  AudioChannel *v13; // ecx
           if ( ((&v8->uniqueId)->InitChannels(), IsActive) /*0x403158*/
             || (&v8->uniqueId)->IsActive()
             || (lastLayer = (AudioChannel *)v8->lastLayer) != 0 && (lastLayer)->IsActive()
@@ -194,6 +193,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
       while ( vtable0 != &this->u32_F8 ); /*0x40317d*/
       p_bombVisible = (char *)(&this->bombVisible); /*0x403183*/
     }
+  ObjectClass *v14; // esi
     v14 = (ObjectClass *)this->u32_E8; /*0x403187*/
     if ( v14 ) /*0x40318f*/
       (v14)->ClearFlags2(); /*0x403193*/
@@ -845,40 +845,27 @@ bool Gap2Recv_40AA70::ProcessAudioChannelMovement() {
 namespace gamemd {
 int Gap2Recv_415C60::ProcessTechnoMovementAction()
 {
-    unsigned int *v2; // esi
-    int v3; // eax
-    int v4; // eax
-    int v5; // edx
-    unsigned int v7; // ebp
-    double v8; // st7
-    double v9; // st7
-    int v10; // eax
-    unsigned int *v11; // ebx
-    int *v12; // edx
-    int v13; // eax
-    int v14; // ecx
-    int v15; // edx
-    void *v16; // eax
-    unsigned int *v17; // eax
-    uint8_t v18; // eax
-    double v20; // [esp+20h] [ebp-20h] BYREF
-    double v21; // [esp+28h] [ebp-18h] BYREF
-    int v22; // [esp+30h] [ebp-10h]
-    int v23; // [esp+34h] [ebp-Ch] BYREF
-    int v24; // [esp+38h] [ebp-8h]
-    int v25; // [esp+3Ch] [ebp-4h]
 
+    unsigned int *v2; // esi
     v2 = (unsigned int *)LinkedList::Pop(&this->LinkedList_189); /*0x415c73*/
     if ( !v2 ) /*0x415c77*/
       return 0; /*0x415c77*/
+    int v3; // eax
     v3 = *(unsigned int *)this; /*0x415c83*/
       --this->M764;
+    int v4; // eax
+    double v21; // [esp+28h] [ebp-18h] BYREF
     v4 = (*(int (**)(char *, double *))(v3 + 72))( (char *)(this), &v21 ); /*0x415c93*/
+    int v23; // [esp+34h] [ebp-Ch] BYREF
     v23 = *(unsigned int *)v4; /*0x415c98*/
+    int v24; // [esp+38h] [ebp-8h]
     v24 = *(unsigned int *)(v4 + 4); /*0x415c9f*/
+    int v5; // edx
     v5 = *(unsigned int *)(v4 + 8); /*0x415ca3*/
       (*((unsigned char *)&(v4))) = this->u32_BF0;
+    int v25; // [esp+3Ch] [ebp-4h]
     v25 = v5; /*0x415cae*/
+    double v20; // [esp+20h] [ebp-20h] BYREF
     if ( (v4 & 1) != 0 ) /*0x415cb2*/
       v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)ProgressTimer::GetValue(&this->u16_388, &v20) - 0x3FFF) & 0xFFFFu); /*0x415ccc*/
     else
@@ -886,16 +873,25 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     v25 = v25; /*0x415d00*/
     v20 = (*((signed short *)&(v20))) - 0x3FFF; /*0x415d04*/
     v21 = (double)((int)(v20)) * -0.00009587672516830327; /*0x415d13*/
+    unsigned int v7; // ebp
     v7 = (unsigned int)((v21) >> 32); /*0x415d1b*/
     v20 = (double)v24; /*0x415d25*/
+    double v8; // st7
     v8 = Math::SinCos(v21); /*0x415d29*/
     v20 = Math::RoundToInt(v20 - v8 * 128.0); /*0x415d3d*/
+    double v9; // st7
     v9 = Math::ArcTan2(COERCE_DOUBLE((((unsigned long)(unsigned int)((*((unsigned int *)&(v21))))) | ((unsigned long)(unsigned int)(v7) << 32)))); /*0x415d47*/
+    int v10; // eax
     v10 = Math::RoundToInt(v9 * 128.0 + (double)v23); /*0x415d59*/
     v24 = ((unsigned int)(v20)); /*0x415d66*/
     v23 = v10; /*0x415d70*/
     v25 = v25; /*0x415d74*/
+    unsigned int *v11; // ebx
     v11 = (&dword_87F7E8)->To_Cell(&v23); /*0x415d81*/
+    int *v12; // edx
+    int v13; // eax
+    int v14; // ecx
+    int v15; // edx
     if ( v2->vt_slot_428(v11, -1, -1, 0, 1) /*0x415de8*/
       || (v12 = ObjectPlacement::CalcPosition(v11, (int *)&v21, &v23, 0, 0, 0),
           v13 = *v12,
@@ -912,15 +908,19 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
       return 0; /*0x415ecf*/
     }
     v21 = this->u64_9C; /*0x415e00*/
+    int v22; // [esp+30h] [ebp-10h]
       v22 = this->M164;
     StartAudioControllerAt(dword_8871E0->DetailBufferZoneWidth, (int)&v21, 0); /*0x415e21*/
+    void *v16; // eax
     v16 = (&dword_87F7E8)->To_Cell(&v23); /*0x415e30*/
+    unsigned int *v17; // eax
     v17 = (unsigned int *)(*(int (**)(void *, double *))(*(unsigned int *)v16 + 72))(v16, &v21); /*0x415e3e*/
     v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*v17 / 256) & 0xFFFFu); /*0x415e51*/
     v20 = ((v20) & 0xFFFFu) | (((unsigned int)(v17[1] / 256) & 0xFFFFu) << 16); /*0x415e65*/
     v2[343] = ((unsigned int)(v20)); /*0x415e6e*/
       if ( this->M1492 )
       TeamClass::LiberateMember_Start(v2, -1, 0); /*0x415e83*/
+    uint8_t v18; // eax
     v18 = dword_A8ED84; /*0x415e88*/
       this->u32_1B4C = 5;
       this->M748 = v18;
@@ -1126,16 +1126,16 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
 namespace ra2 { namespace game {
 int ObjectClass::CreateInstanceCOM(IID * rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext)  /* G57w10: raw truth int thiscall(IID*, LPUNKNOWN, DWORD) — G42.39 supply sig was distorted */
 {
-    int result; // eax
-    HRESULT v6; // esi
 
     if ( v23->AbstractClass ) /*0x41c254*/
       (*(void (__stdcall **)(void *))(*(unsigned int *)v23->AbstractClass + 8))(v23->AbstractClass); /*0x41c25d*/
     if ( (dwClsContext & 0x14) == 0 ) /*0x41c266*/
       return CoCreateInstance(rclsid, pUnkOuter, dwClsContext, &gamemd::stru_817BB0, &v23->AbstractClass); /*0x41c2cb*/
+    int result; // eax
     result = CoCreateInstance(*(rclsid), pUnkOuter, dwClsContext,(const IID &)(riid), (LPVOID *)&pUnkOuter); /*0x41c27d*/
     if ( result >= 0 ) /*0x41c285*/
     {
+    HRESULT v6; // esi
       v6 = OleRun(pUnkOuter); /*0x41c292*/
       if ( v6 >= 0 ) /*0x41c296*/
         v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, ObjectClass *))(*(void **)pUnkOuter))(pUnkOuter, &gamemd::stru_817BB0, v23); /*0x41c2a7*/
@@ -1149,15 +1149,7 @@ int ObjectClass::CreateInstanceCOM(IID * rclsid, LPUNKNOWN pUnkOuter, DWORD dwCl
 namespace gamemd {
 int Gap2Recv_421350::RenderAlphaShapes()
 {
-    int result; // eax
-    int v2; // ebx
-    int *v3; // edx
-    char *v4; // ecx
-    int *v5; // eax
     int v6; // esi
-    int v7; // eax
-    char *v8; // ebp
-    MixFileClass *v9; // edi
     int *FoundationSize; // edx
     int v11; // eax
     int v12; // ecx
@@ -1185,53 +1177,61 @@ int Gap2Recv_421350::RenderAlphaShapes()
     int v34; // [esp+14h] [ebp-80h]
     uint8_t v35; // [esp+18h] [ebp-7Ch]
     uint8_t v36; // [esp+18h] [ebp-7Ch]
-    int i; // [esp+1Ch] [ebp-78h]
     int v38; // [esp+20h] [ebp-74h]
-    int v39; // [esp+24h] [ebp-70h] BYREF
-    int v40; // [esp+28h] [ebp-6Ch]
-    int v41; // [esp+2Ch] [ebp-68h]
-    int v42; // [esp+30h] [ebp-64h]
-    int v43; // [esp+34h] [ebp-60h] BYREF
-    char *v44; // [esp+38h] [ebp-5Ch]
-    int v45; // [esp+3Ch] [ebp-58h]
-    int v46; // [esp+40h] [ebp-54h]
-    int *v47; // [esp+44h] [ebp-50h]
     int v48; // [esp+48h] [ebp-4Ch]
-    char *v49; // [esp+50h] [ebp-44h]
-    int v50; // [esp+54h] [ebp-40h]
-    char *v51; // [esp+58h] [ebp-3Ch]
     int v52; // [esp+70h] [ebp-24h]
     int v23[4]; // [esp+74h] [ebp-20h] BYREF
     int v6[4]; // [esp+84h] [ebp-10h] BYREF
 
+    int result; // eax
     result = g_AlphaShapeLimit; /*0x421356*/
+    int v2; // ebx
     v2 = 0; /*0x42135c*/
+    int *v47; // [esp+44h] [ebp-50h]
     v47 = (int *)v23; /*0x42135e*/
+    int i; // [esp+1Ch] [ebp-78h]
     for ( i = 0; v2 < g_AlphaShapeLimit; i = v2 ) /*0x421368*/
     {
+    int *v3; // edx
       v3 = (int *)(*((unsigned int *)dword_88A0F4 + v2) + 40); /*0x421380*/
+    int v43; // [esp+34h] [ebp-60h] BYREF
       v43 = *v3; /*0x421384*/
+    char *v44; // [esp+38h] [ebp-5Ch]
       v44 = (char *)v3[1]; /*0x42138b*/
+    int v45; // [esp+3Ch] [ebp-58h]
       v45 = v3[2]; /*0x421392*/
+    int v46; // [esp+40h] [ebp-54h]
       v46 = v3[3]; /*0x421399*/
+    char *v4; // ecx
       v4 = &v44[-*(unsigned int *)&(&g_TacticalClass_Instance)[45]]; /*0x4213af*/
       v43 = DSurface_ViewBounds.field_0 + v43 - *(unsigned int *)&(&g_TacticalClass_Instance)[44]; /*0x4213c3*/
       v44 = (char *)g_Map_VisibleRect + (unsigned int)v4; /*0x4213cb*/
+    int v39; // [esp+24h] [ebp-70h] BYREF
       v39 = *v47; /*0x4213d1*/
+    int v40; // [esp+28h] [ebp-6Ch]
       v40 = v47->vtable2; /*0x4213d8*/
+    int v41; // [esp+2Ch] [ebp-68h]
       v41 = v47->vtable3; /*0x4213df*/
+    int v42; // [esp+30h] [ebp-64h]
       v42 = v47->vtable4; /*0x4213f1*/
+    int *v5; // eax
       v5 = ClipRectIntersection(v23, &v43, &v39, 0, 0); /*0x4213fa*/
+    int v50; // [esp+54h] [ebp-40h]
       v50 = *v5; /*0x421403*/
+    char *v51; // [esp+58h] [ebp-3Ch]
       v51 = v5->AbstractClass_1; /*0x42140a*/
       if ( v5->vtable3 > 0 && v5->vtable4 > 0 ) /*0x42141e*/
       {
         v6 = v43; /*0x42142e*/
+    char *v49; // [esp+50h] [ebp-44h]
         v49 = v44; /*0x421432*/
+    int v7; // eax
         v7 = *((unsigned int *)dword_88A0F4 + v2); /*0x421436*/
+    MixFileClass *v9; // edi
         v9 = v7->attachedBomb; /*0x42143c*/
         if ( !v9 ) /*0x421441*/
         {
+    char *v8; // ebp
           v8 = (char *)dword_88A0F4 + 4 * v2; /*0x421439*/
           *(unsigned int *)(v8->u32_38 = *(unsigned int *)((*(int (**)(unsigned int))(*v7->objectTypeFlags + 136))(v7->objectTypeFlags) /*0x421459*/
                                                       + 172);
@@ -23553,12 +23553,10 @@ int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
 // 0x696C40
 namespace gamemd { 
 int Gap2Recv_696C40::DlgProcLoadGame_Load_696C40() {
-  int result; // eax
-  HWND v3; // edi
-  LRESULT v4; // esi
-  int v5; // eax
 
+  int result; // eax
   result = (int)GetDlgItem((HWND)this->vfptr, 1630); /*0x696c4f*/
+  HWND v3; // edi
   v3 = (HWND)result; /*0x696c55*/
   if ( result ) /*0x696c59*/
   {
@@ -23566,12 +23564,14 @@ int Gap2Recv_696C40::DlgProcLoadGame_Load_696C40() {
     if ( result > 0 ) /*0x696c73*/
     {
       result = SendMessageA(v3, 0x188u, 0, 0); /*0x696c7f*/
+  LRESULT v4; // esi
       v4 = result; /*0x696c81*/
       if ( result != -1 ) /*0x696c86*/
       {
         SendMessageA(v3, 0x182u, result, 0); /*0x696c91*/
         if ( v4 < dword_A8DB5C ) /*0x696c9b*/
         {
+  int v5; // eax
           v5 = v4; /*0x696c9e*/
           if ( v4 < --dword_A8DB5C ) /*0x696ca8*/
           {
@@ -23597,20 +23597,16 @@ int Gap2Recv_696C40::DlgProcLoadGame_Load_696C40() {
 // 0x697F10
 namespace gamemd { 
 int Gap2Recv_697F10::ReadGameSettingsINI(CCINIClass * aP1, int a1, unsigned int * a3, unsigned int * a4) {
-  GameSetup *v5; // ebx
-  int First; // eax
-  uint8_t *v8; // ebp
-  int i; // esi
-  char *v10; // eax
   int v11; // edx
   char *v12; // ecx
   int result; // eax
-  char *v14; // [esp+10h] [ebp-14h] BYREF
-  char Buffer[16]; // [esp+14h] [ebp-10h] BYREF
 
+  GameSetup *v5; // ebx
   v5 = (GameSetup *)aP1; /*0x697f14*/
   INIClass::ResetSection((INIClass *)aP1); /*0x697f1f*/
+  int First; // eax
   First = MultiplayerGameMode::GetFirst(); /*0x697f24*/
+  uint8_t *v8; // ebp
   v8 = (uint8_t *)a1; /*0x697f2c*/
   this->vfptr = (void *)INIClass::ReadInt_Overwrite( /*0x697f48*/
                           (bool *)v5->__pad_000,
@@ -23658,16 +23654,20 @@ int Gap2Recv_697F10::ReadGameSettingsINI(CCINIClass * aP1, int a1, unsigned int 
                                    v8,
                                    (uint8_t *)aCratesappear,
                                    *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5297));
+  int i; // esi
   for ( i = 1; i < 8; ++i ) /*0x698037*/
   {
+  char Buffer[16]; // [esp+14h] [ebp-10h] BYREF
     sprintf(Buffer, "Slot%02d", i); /*0x698047*/
     if ( i == 1 ) /*0x698052*/
       aP1 = a4; /*0x698058*/
     else
       aP1 = a3; /*0x698062*/
     a1 = -2; /*0x69806f*/
+  char *v14; // [esp+10h] [ebp-14h] BYREF
     v14 = (char *)-2; /*0x698073*/
     GameSetup::ParseCoordTriple(v5, v8, (uint8_t *)Buffer, (int *)&aP1, &a1, (const char **)&v14); /*0x69808a*/
+  char *v10; // eax
     v10 = &this->nextObject * i; /*0x698096*/
     a1 = a1; /*0x698099*/
     v10->u32_1C = aP1; /*0x69809d*/
@@ -23682,11 +23682,6 @@ int Gap2Recv_697F10::ReadGameSettingsINI(CCINIClass * aP1, int a1, unsigned int 
 // 0x6990A0
 namespace gamemd { 
 void Gap2Recv_6990A0::SaveConfigWOL() {
-  char *v2; // eax
-  int vfptr1; // eax
-  int i; // edi
-  int j; // edi
-  int v6; // eax
   CHAR v7[12]; // [esp+Ch] [ebp-B0h] BYREF
   BufferIOFileClass v8[2]; // [esp+18h] [ebp-A4h] BYREF
 
@@ -23694,12 +23689,14 @@ void Gap2Recv_6990A0::SaveConfigWOL() {
   INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, aPhoneindex, this->M10372, 0); /*0x6990d1*/
   INIClass::SetBool(CCINIClass_INI_RA2MD, aMultiplayer, aWollimitresolu, this->sparkParticles); /*0x6990ec*/
   INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, aLastnickslot, this->ambientParticles, 0); /*0x699109*/
+  char *v2; // eax
   v2 = CharToWideString(&this->ammoReloadTimer); /*0x699114*/
   INIClass::SetWideAsHex(CCINIClass_INI_RA2MD, aMultiplayer, aHandle, (wchar_t *)v2); /*0x699129*/
   INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, aColor, this->radarFlashTimer[2], 0); /*0x699146*/
   INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, aColorex, this->targetingTimer[0], 0); /*0x699163*/
   INIClass::SetHouseName(CCINIClass_INI_RA2MD, aMultiplayer, aSide, (void *)this->targetingTimer[1]); /*0x69917e*/
   INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, aSideex, this->targetingTimer[2], 0); /*0x69919b*/
+  int vfptr1; // eax
   vfptr1 = this->vfptr1; /*0x6991a0*/
   if ( vfptr1 ) /*0x6991a7*/
     INIClass::SetInt(CCINIClass_INI_RA2MD, aMultiplayer, g_INI_Key_GameMode, vfptr1->DiskLaserClass_field_0x28, 0); /*0x6991ad*/
@@ -23724,14 +23721,17 @@ void Gap2Recv_6990A0::SaveConfigWOL() {
   INIClass::SetInt(CCINIClass_INI_RA2MD, g_INI_Key_SerialDefaults, aErrorcorrectio, this->M10404, 0); /*0x699318*/
   INIClass::SetString(CCINIClass_INI_RA2MD, g_INI_Key_SerialDefaults, aModemname, &this->u8_28B8); /*0x699333*/
   INIClass::ClearSection((int *)CCINIClass_INI_RA2MD, (int)g_INI_Key_InitStrings, 0); /*0x699344*/
+  int i; // edi
   for ( i = 0; i < this->M10532; ++i ) /*0x699359*/
   {
     wsprintfA(v7, "%03d", i); /*0x699366*/
     INIClass::SetString(CCINIClass_INI_RA2MD, g_INI_Key_InitStrings, v7, *(char **)(this->M10520 + 4 * i)); /*0x699384*/
   }
   INIClass::ClearSection((int *)CCINIClass_INI_RA2MD, (int)g_INI_Key_PhoneBook, 0); /*0x6993a0*/
+  int j; // edi
   for ( j = this->M10508 - 1; j >= 0; --j ) /*0x6993ac*/
   {
+  int v6; // eax
     v6 = *(unsigned int *)(this->M10496 + 4 * j); /*0x6993b4*/
     wsprintfA( /*0x6993f6*/
       (LPSTR)&v8[0].BufferOffset,
@@ -23757,45 +23757,16 @@ void Gap2Recv_6990A0::SaveConfigWOL() {
 // 0x69B170
 namespace gamemd { 
 void Gap2Recv_69B170::ParseAndApplyAlliances() {
-  bool v1; // zf
-  void *vtable0; // edx
-  const char *v3; // edi
-  char *v4; // ebx
-  char *i; // ebp
-  int j; // edi
-  int v7; // esi
-  int v8; // eax
-  char *k; // ebp
-  int m; // edi
-  int v11; // esi
-  int v12; // eax
-  int v13; // edx
-  int v14; // eax
-  int v15; // ebp
-  unsigned int *Items; // ecx
-  int v17; // esi
-  int v18; // edi
-  int v19; // eax
-  int v20; // edx
-  int v21; // eax
-  int v22; // ebp
-  unsigned int *v23; // ecx
-  int v24; // esi
-  int v25; // edi
-  int v26; // eax
-  void *v27; // edx
   char *v28; // [esp+10h] [ebp-38h]
   VectorClass v30; // [esp+18h] [ebp-30h] BYREF
-  int v31; // [esp+28h] [ebp-20h]
-  int v32; // [esp+2Ch] [ebp-1Ch]
   VectorClass v33; // [esp+30h] [ebp-18h] BYREF
-  int v34; // [esp+40h] [ebp-8h]
-  int v35; // [esp+44h] [ebp-4h]
 
+  bool v1; // zf
   v1 = this->vfptr == 4; /*0x69b176*/
   this->M1672 = 0; /*0x69b17d*/
   if ( v1 ) /*0x69b184*/
   {
+  void *vtable0; // edx
     vtable0 = dword_A8B230[0].vfptr; /*0x69b199*/
     (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) & 0xFB; /*0x69b19b*/
     dword_A8B230[0].vfptr = vtable0; /*0x69b19e*/
@@ -23807,24 +23778,33 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
       {
         ParseAndApplyAlliances_Parse(&v33, 0, 0); /*0x69b1ea*/
         /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b1ff) */
+  int v35; // [esp+44h] [ebp-4h]
         v35 = 10; /*0x69b203*/
+  int v34; // [esp+40h] [ebp-8h]
         v34 = 0; /*0x69b207*/
         ParseAndApplyAlliances_Parse(&v30, 0, 0); /*0x69b20b*/
         /* X11: vtable install elided (implicit via DynamicVectorClass virtuals 0x69b210) */
+  int v32; // [esp+2Ch] [ebp-1Ch]
         v32 = 10; /*0x69b232*/
+  int v31; // [esp+28h] [ebp-20h]
         v31 = 0; /*0x69b238*/
+  const char *v3; // edi
         v3 = &byte_B77A04; /*0x69b23c*/
         if ( strlen(&byte_B77A04) <= strlen(byte_B76568) ) /*0x69b241*/
           v3 = byte_B76568; /*0x69b243*/
+  char *v4; // ebx
         v4 = (char *)operator new(strlen(v3) + 32); /*0x69b25b*/
         strcpy(v4, &byte_B77A04); /*0x69b27c*/
         v4 = v4; /*0x69b280*/
+  char *i; // ebp
         for ( i = strtok(v4, Str); i; i = strtok(0, Str) ) /*0x69b295*/
         {
           if ( !*i ) /*0x69b29b*/
             break; /*0x69b29f*/
+  int j; // edi
           for ( j = 0; j < stru_A80220.nextArrayIndex; ++j ) /*0x69b2ae*/
           {
+  int v7; // esi
             v7 = *((unsigned int *)stru_A80220.vfptr3 + j); /*0x69b2b6*/
             if ( *(unsigned char *)(v7 + 492) /*0x69b304*/
               && !_strcmpi((char *)(v7 + 90100), i)
@@ -23836,18 +23816,22 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
                     v35 + v33.Capacity,
                     0)) )
             {
+  int v8; // eax
               v8 = v34++; /*0x69b30f*/
               *((unsigned int *)v33.Items + v8) = v7; /*0x69b31a*/
             }
           }
         }
         strcpy(v4, byte_B76568); /*0x69b35f*/
+  char *k; // ebp
         for ( k = strtok(v4, Str); k; k = strtok(0, Str) ) /*0x69b374*/
         {
           if ( !*k ) /*0x69b37a*/
             break; /*0x69b37e*/
+  int m; // edi
           for ( m = 0; m < stru_A80220.nextArrayIndex; ++m ) /*0x69b38d*/
           {
+  int v11; // esi
             v11 = *((unsigned int *)stru_A80220.vfptr3 + m); /*0x69b394*/
             if ( *(unsigned char *)(v11 + 492) /*0x69b3e2*/
               && !_strcmpi((char *)(v11 + 90100), k)
@@ -23859,25 +23843,33 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
                     v32 + v30.Capacity,
                     0)) )
             {
+  int v12; // eax
               v12 = v31++; /*0x69b3ed*/
               *((unsigned int *)v30.Items + v12) = v11; /*0x69b3f8*/
             }
           }
         }
+  int v13; // edx
         v13 = v34; /*0x69b41e*/
+  int v14; // eax
         v14 = v34; /*0x69b422*/
         if ( v34 > 1 ) /*0x69b427*/
         {
+  int v15; // ebp
           v15 = 0; /*0x69b429*/
+  unsigned int *Items; // ecx
           Items = v33.Items; /*0x69b42f*/
+  int v17; // esi
           v17 = 0; /*0x69b433*/
           do /*0x69b46d*/
           {
+  int v18; // edi
             v18 = 0; /*0x69b435*/
             if ( v14 > 0 ) /*0x69b439*/
             {
               do /*0x69b45f*/
               {
+  int v19; // eax
                 v19 = Items[v18]; /*0x69b43e*/
                 if ( *(unsigned int *)(Items[v17] + 48) != *(unsigned int *)(v19 + 48) ) /*0x69b447*/
                 {
@@ -23896,20 +23888,27 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
           }
           while ( v15 < v13 ); /*0x69b46d*/
         }
+  int v20; // edx
         v20 = v31; /*0x69b46f*/
+  int v21; // eax
         v21 = v31; /*0x69b473*/
         if ( v31 > 1 ) /*0x69b478*/
         {
+  int v22; // ebp
           v22 = 0; /*0x69b47a*/
+  unsigned int *v23; // ecx
           v23 = v30.Items; /*0x69b480*/
+  int v24; // esi
           v24 = 0; /*0x69b484*/
           do /*0x69b4be*/
           {
+  int v25; // edi
             v25 = 0; /*0x69b486*/
             if ( v21 > 0 ) /*0x69b48a*/
             {
               do /*0x69b4b0*/
               {
+  int v26; // eax
                 v26 = v23[v25]; /*0x69b48f*/
                 if ( *(unsigned int *)(v23[v24] + 48) != *(unsigned int *)(v26 + 48) ) /*0x69b498*/
                 {
@@ -23930,6 +23929,7 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
         }
         operator delete((void *)(v4)); /*0x69b4c1*/
         this->M1672 = 1; /*0x69b4d4*/
+  void *v27; // edx
         v27 = dword_A8B230[0].vfptr; /*0x69b4e0*/
         (((unsigned char *)&(v27))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) | 4; /*0x69b4e2*/
         dword_A8B230[0].vfptr = v27; /*0x69b4e5*/
@@ -23955,12 +23955,12 @@ void Gap2Recv_69B170::ParseAndApplyAlliances() {
 // 0x69BBF0
 namespace gamemd { 
 void Gap2Recv_69BBF0::Network_Disconnect_69BBF0(int a2) {
-  char *v2; // eax
-  int v3; // ecx
 
   if ( a2 < 7 ) /*0x69bbf7*/
   {
+  char *v2; // eax
     v2 = &this->vtable3 * a2 + 12410; /*0x69bbf9*/
+  int v3; // ecx
     v3 = 7 - a2; /*0x69bc05*/
     do /*0x69bc12*/
     {
@@ -23996,12 +23996,10 @@ void* Gap2Recv_69D870::ParseAndApplyAlliances_Parse(int a2, int a3) {
 // 0x69E430
 namespace gamemd { 
 int ObjectClass::LoadSHPFile(int lpBuffer, char* Source) {
-  char *v3; // eax
   CCFileClass v5; // [esp+8h] [ebp-6Ch] BYREF
-  int v6[3]; // [esp+60h] [ebp-14h] BYREF
-  int v7; // [esp+6Ch] [ebp-8h]
 
   lpBuffer->abstractFlags = dword_83F870++; /*0x69e440*/
+  char *v3; // eax
   v3 = _strdup(Source); /*0x69e44f*/
   lpBuffer->v3 = v3; /*0x69e45d*/
   (lpBuffer->u32_10) = 0; /*0x69e461*/
@@ -24021,7 +24019,9 @@ int ObjectClass::LoadSHPFile(int lpBuffer, char* Source) {
   dword_B077B0 = lpBuffer; /*0x69e4bf*/
   lpBuffer->NeedsSaveOrLink = 0; /*0x69e4c9*/
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x69e4cc) */
+  int v7; // [esp+6Ch] [ebp-8h]
   v7 = 0; /*0x69e4d4*/
+  int v6[3]; // [esp+60h] [ebp-14h] BYREF
   Vector::Clear((int)v6); /*0x69e4d8*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x69e4e1) */
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x69e4e9*/
@@ -24031,13 +24031,13 @@ int ObjectClass::LoadSHPFile(int lpBuffer, char* Source) {
 // 0x69E900
 namespace gamemd { 
 char Gap2Recv_69E900::Helper_69E900(unsigned int a2) {
-  char **SubFile; // eax
-  unsigned int v3; // eax
-  int v4; // eax
 
+  char **SubFile; // eax
   SubFile = MixFileClass::LoadSubFile((MixFileClass *)this); /*0x69e900*/
+  unsigned int v3; // eax
   if ( SubFile && a2 < *((int16_t *)SubFile + 3) && (v3 = (unsigned int)&SubFile[6 * a2 + 2]) != 0 ) /*0x69e91e*/
     return (uint8_t)(*(unsigned char *)(v3 + 8) & 2) >> 1; /*0x69e926*/
+  int v4; // eax
   else
     (*((unsigned char *)&(v4))) = 0; /*0x69e92b*/
   return v4; /*0x69e928*/
@@ -24046,15 +24046,13 @@ char Gap2Recv_69E900::Helper_69E900(unsigned int a2) {
 // 0x6A4F20
 namespace gamemd { 
 int Gap2Recv_6A4F20::UI_Init(int a2) {
-  unsigned int *v3; // esi
-  int v4; // ebp
-  int v5; // esi
-  int v6; // ebp
 
   System_Init_6AC840((char *)this, a2); /*0x6a4f2b*/
   DynamicVector::Constructor_Cell(&this->RadarCells, 0, 0); /*0x6a4f3a*/
   System_Init_6AC8D0(&this->RadarPoints, 0, 0); /*0x6a4f47*/
+  unsigned int *v3; // esi
   v3 = &this->foundationTypePixels; /*0x6a4f4c*/
+  int v4; // ebp
   v4 = 22; /*0x6a4f52*/
   do /*0x6a4f64*/
   {
@@ -24069,7 +24067,9 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
   this->M5408 = TimerGetTicks(); /*0x6a4f8e*/
   this->M5416 = 0; /*0x6a4f94*/
   /* X11: vtable install elided (implicit via PowerClass virtuals 0x6a4f9a) */
+  int v5; // esi
   v5 = &this->q304; /*0x6a4fa0*/
+  int v6; // ebp
   v6 = 4; /*0x6a4fa6*/
   do /*0x6a4fdf*/
   {
@@ -24091,16 +24091,16 @@ int Gap2Recv_6A4F20::UI_Init(int a2) {
 // 0x6A94F0
 namespace gamemd { 
 int Gap2Recv_6A94F0::SmallFunc_6A94F0(int a2) {
-  int result; // eax
-  ObjectClass *v4; // ecx
-  int v5; // ebx
 
+  int result; // eax
   result = 0; /*0x6a94f9*/
+  ObjectClass *v4; // ecx
   v4 = (ObjectClass *)this->customSound_controller[13 * a2 + 5]; /*0x6a9501*/
   if ( v4 ) /*0x6a950a*/
     result = ObjectClass::GetMember09(v4); /*0x6a950c*/
   if ( this->bombVisible + 12 * a2 + a2) == 1 ) /*0x6a951d*/
   {
+  int v5; // ebx
     v5 = *&this->alignmentPadding69; /*0x6a951f*/
     if ( v5 > result ) /*0x6a9524*/
       return (v5 + result) / 2; /*0x6a952b*/
@@ -24122,7 +24122,6 @@ char* Gap2Recv_6AC840::System_Init_6AC840(int a2) {
 // 0x6AC8D0
 namespace gamemd { 
 void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
-  void *v4; // eax
 
   this->Items = 0; /*0x6ac8da*/
   this->Capacity = a2; /*0x6ac8e1*/
@@ -24137,6 +24136,7 @@ void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
     }
     else
     {
+  void *v4; // eax
       v4 = (void *)operator new(8 * a2); /*0x6ac90e*/
       if ( !v4 ) /*0x6ac918*/
         v4 = 0; /*0x6ac921*/
@@ -24153,13 +24153,13 @@ void* Gap2Recv_6AC8D0::System_Init_6AC8D0(int a2, int a3) {
 // 0x6B0490
 namespace gamemd { 
 void* Gap2Recv_6B0490::Event_Process_6B0490() {
-  int i; // esi
   int *result; // eax
-  int v4; // ecx
 
+  int i; // esi
   for ( i = this->ambientSoundController[3] - 1; i >= 0; --i ) /*0x6b0498*/
   {
     result = *(int **)(this->ambientSoundController[0] + 4 * i); /*0x6b049d*/
+  int v4; // ecx
     v4 = *result; /*0x6b04a3*/
     if ( result[1] != 6 ) /*0x6b04a8*/
     {
@@ -24173,13 +24173,12 @@ void* Gap2Recv_6B0490::Event_Process_6B0490() {
 // 0x6B2520
 namespace gamemd { 
 char Gap2Recv_6B2520::System_Init_6B2520() {
-  int occupant; // ebx
-  int v3; // edi
-  int attachedBomb; // esi
-  int v6; // [esp+Ch] [ebp-4h] BYREF
 
+  int occupant; // ebx
   occupant = this->occupant; /*0x6b252c*/
+  int v6; // [esp+Ch] [ebp-4h] BYREF
   v6 = occupant; /*0x6b2531*/
+  int v3; // edi
   v3 = (*((signed short *)(((unsigned char *)&(occupant)) + 2))) + (int16_t)occupant; /*0x6b253d*/
   if ( v3 <= dword_ABED04 ) /*0x6b2542*/
     return 0; /*0x6b2542*/
@@ -24196,6 +24195,7 @@ char Gap2Recv_6B2520::System_Init_6B2520() {
   v6 = occupant; /*0x6b2570*/
   if ( Tactical::GetCellData((Tactical *)&v6)[69] ) /*0x6b2579*/
     return 0; /*0x6b25b0*/
+  int attachedBomb; // esi
   attachedBomb = this->attachedBomb; /*0x6b2580*/
   if ( attachedBomb >= dword_A8ED38 || attachedBomb == 0xFFFF ) /*0x6b2592*/
     return 1; /*0x6b25a9*/
@@ -24207,38 +24207,36 @@ char Gap2Recv_6B2520::System_Init_6B2520() {
 namespace gamemd { 
 int Gap2Recv_6B4100::Map_Get_6B4100() {
 
-  int occupant; // edi
-  int v2; // ecx
-  int v3; // eax
-  int v4; // esi
-  int v5; // eax
-  int v6; // ebp
-  int v7; // ecx
-  int v8; // edx
-  int v9; // esi
-  int *v10; // eax
-  int v11; // edx
-  int v12; // ebx
   ObjectClass *v13; // ebx
-  BombClass *attachedBomb; // eax
-  int v17; // [esp+14h] [ebp-14h] BYREF
-  unsigned int v18[4]; // [esp+18h] [ebp-10h] BYREF
 
+  int occupant; // edi
   occupant = this->occupant; /*0x6b4113*/
+  int v17; // [esp+14h] [ebp-14h] BYREF
   v17 = occupant; /*0x6b4120*/
+  int v2; // ecx
   v2 = SHIWORD(occupant) - dword_8759AC; /*0x6b412c*/
+  int v3; // eax
   v3 = (__int16)occupant - dword_8759A8; /*0x6b4130*/
+  int v4; // esi
   v4 = v2 * dword_8759A4 + v3; /*0x6b4136*/
+  int v5; // eax
   v5 = dword_8759A4 * (v2 + 1) + v3; /*0x6b4142*/
+  int v6; // ebp
   v6 = *((unsigned int *)g_SlaveManagerPool + 2 * v4); /*0x6b4144*/
+  int v7; // ecx
   v7 = *((unsigned int *)g_SlaveManagerPool + 2 * v5 + 2); /*0x6b414b*/
+  int v8; // edx
   v8 = *((unsigned int *)g_SlaveManagerPool + 2 * v5); /*0x6b414f*/
+  unsigned int v18[4]; // [esp+18h] [ebp-10h] BYREF
   v18[1] = *((unsigned int *)g_SlaveManagerPool + 2 * v4 + 2); /*0x6b4152*/
   v18[3] = v8; /*0x6b4156*/
   v18[0] = v6; /*0x6b415a*/
   v18[2] = v7; /*0x6b415e*/
+  int v9; // esi
   v9 = 1000; /*0x6b4162*/
+  int *v10; // eax
   v10 = v18; /*0x6b4167*/
+  int v11; // edx
   v11 = 4; /*0x6b416b*/
   do /*0x6b417c*/
   {
@@ -24249,6 +24247,7 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
   }
   while ( v11 ); /*0x6b417c*/
   v17 = occupant; /*0x6b4186*/
+  int v12; // ebx
   v12 = SHIWORD(occupant) + (__int16)occupant; /*0x6b4192*/
   if ( v12 <= g_MissionQueueFrame.localVariables[160] /*0x6b41b1*/
     || (__int16)occupant - SHIWORD(occupant) >= g_MissionQueueFrame.localVariables[160]
@@ -24265,6 +24264,7 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
       v17 = occupant; /*0x6b41cb*/
       if ( !Tactical::GetCellData((Tactical *)&v17)[69] ) /*0x6b41d4*/
       {
+  BombClass *attachedBomb; // eax
         attachedBomb = this->attachedBomb; /*0x6b41db*/
         if ( (int)attachedBomb >= *(int *)&stru_A8EB00.?[340] /*0x6b41f8*/
           || attachedBomb == 0xFFFF
@@ -24282,10 +24282,10 @@ int Gap2Recv_6B4100::Map_Get_6B4100() {
 // 0x6B5440
 namespace gamemd { 
 int Gap2Recv_6B5440::Object_Read_6B5440() {
-  int v2; // esi
 
   if ( !this ) /*0x6b5446*/
     return -1; /*0x6b5446*/
+  int v2; // esi
   v2 = 0; /*0x6b544d*/
   if ( *(int *)&((unsigned int *)&stru_A8EB00)[68] <= 0 ) /*0x6b5451*/
     return -1; /*0x6b5476*/
@@ -24300,8 +24300,8 @@ int Gap2Recv_6B5440::Object_Read_6B5440() {
 // 0x6B8AF0
 namespace gamemd { 
 bool Gap2Recv_6B8AF0::ApplyGameOptions_Helper(void* a2) {
-  int v2; // eax
 
+  int v2; // eax
   v2 = (int)this->v5 ^ *a2; /*0x6b8af8*/
   return !(unsigned char)v2 && (v2 & 0x7FF00) == 0; /*0x6b8b07*/
 }
@@ -24309,42 +24309,42 @@ bool Gap2Recv_6B8AF0::ApplyGameOptions_Helper(void* a2) {
 // 0x6BAFA0
 namespace gamemd { 
 void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
-  int vtable2; // esi
-  unsigned int *vtable0; // ebp
-  char *v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
   int v12; // eax
 
   if ( (this->abstractFlags) != 1 ) /*0x6bafa8*/
   {
+  int vtable2; // esi
     vtable2 = (int)this->vfptr2; /*0x6bafb0*/
+  unsigned int *vtable0; // ebp
     vtable0 = this->v5; /*0x6bafb3*/
+  char *v4; // edi
     v4 = (char *)this->v4 + 1; /*0x6bafbc*/
     this->vfptr2 = (void *)(2 * vtable2); /*0x6bafbd*/
     vtable0 = vtable0; /*0x6bafc0*/
     this->v4 = v4; /*0x6bafc8*/
+  void *v5; // edi
     v5 = (void *)operator new(8 * vtable2); /*0x6bafd3*/
+  unsigned int v6; // edx
     v6 = 4 * (int)this->vfptr2; /*0x6bafd8*/
     this->v5 = v5; /*0x6bafdf*/
     memset(v5, 0, v6); /*0x6bafe4*/
     if ( vtable2 > 0 ) /*0x6bafef*/
     {
+  int *v7; // edi
       v7 = vtable0; /*0x6baff1*/
+  int v8; // ebp
       v8 = vtable2; /*0x6baff3*/
       do /*0x6bb02d*/
       {
+  int v9; // esi
         v9 = *v7; /*0x6baff5*/
         if ( *v7 ) /*0x6baff5*/
         {
           do /*0x6bb027*/
           {
+  int v10; // edx
             v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << (int)this->vfptr3) - 1); /*0x6bb00b*/
+  int v11; // ecx
             v11 = *((unsigned int *)this->vfptr + v10); /*0x6bb00f*/
             *((unsigned int *)this->vfptr + v10) = v9; /*0x6bb015*/
             v12 = *(unsigned int *)(v9 + 776); /*0x6bb017*/
@@ -24366,19 +24366,19 @@ void Gap2Recv_6BAFA0::Render_Load_6BAFA0() {
 // 0x6BB990
 namespace gamemd { 
 int Gap2Recv_6BB990::TopLevelExceptionFilter(void* ExceptionInfo, int a3, int a4, int a5) {
-  HANDLE FileA; // esi
-  DWORD v7; // eax
-  DWORD v9; // [esp-E40h] [ebp-E40h] BYREF
 
+  DWORD v9; // [esp-E40h] [ebp-E40h] BYREF
   v9 = *(unsigned int *)this->vfptr; /*0x4c8fe0*/
   Debug::Log(); /*0x4c8fe9*/
   WinMain_Write_53E6B0(); /*0x4c8ff1*/
   if ( !++dword_820E5C ) /*0x4c9001*/
   {
     ExceptionHandler::GenerateReport((ExceptionHandler *)this); /*0x4c9005*/
+  HANDLE FileA; // esi
     FileA = CreateFileA(FileName, 0x40000000u, 0, 0, 2u, 0x80u, 0); /*0x4c9027*/
     if ( FileA != (HANDLE)-1 ) /*0x4c902c*/
     {
+  DWORD v7; // eax
       v7 = lstrlenA(Buffer); /*0x4c903a*/
       WriteFile(FileA, Buffer, v7, &v9, 0); /*0x4c9047*/
       CloseHandle(FileA); /*0x4c904e*/
@@ -24953,8 +24953,8 @@ void* Gap2Recv_6C6040::WinMain_Helper_6C6040() {
 // 0x6C61C0
 namespace gamemd { 
 int Gap2Recv_6C61C0::COM_SafeRelease() {
-  int result; // eax
 
+  int result; // eax
   result = (int)this->vfptr; /*0x6c61c0*/
   if ( this->vfptr ) /*0x6c61c0*/
     return (*(int (__stdcall **)(int))(result->vtable3)(result); /*0x6c61c9*/

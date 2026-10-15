@@ -162,24 +162,24 @@ namespace gamemd {  // G42.18c ns repair
 void* RulesClass::readAudioVisual()
 {
 
-  int result; // eax
-  int Int_Overwrite; // eax
-  int v4; // ecx
-  int BerserkColor; // eax
-  int IronCurtainColor; // ecx
-  double v9; // [esp-8h] [ebp-10h]
-  bool *v10; // [esp+Ch] [ebp+4h]
 
+  int result; // eax
+  bool *v10; // [esp+Ch] [ebp+4h]
   result = (int)(INIClass::BinarySearchSection((int)v10, (unsigned __int8 *)aElevationmodel)); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
+  int Int_Overwrite; // eax
         Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/                       v10,                       (unsigned __int8 *)aElevationmodel,(uint8_t *)(aElevationincre),                       this->ColorAdd[9]);
+  int v4; // ecx
     v4 = this->ColorAdd[11]; /*0x66d188*/
     this->ColorAdd[9] = Int_Overwrite; /*0x66d18e*/
+  double v9; // [esp-8h] [ebp-10h]
     HIDWORD(v9) = (unsigned int)(this->LaserTargetColor); /*0x66d1a0*/
     LODWORD(v9) = v4; /*0x66d1a1*/
     INIClass::ReadDouble_Overwrite((double *)v10, (unsigned __int8 *)aElevationmodel, aElevationincre_0, v9); /*0x66d1aa*/
+  int BerserkColor; // eax
     BerserkColor = (int)(this->BerserkColor); /*0x66d1af*/
+  int IronCurtainColor; // ecx
     IronCurtainColor = (int)(this->IronCurtainColor); /*0x66d1b5*/
     __asm { fstp qword ptr [esi+1840h] } /*0x66d1bb*/
     *&this->RepairRate = _RT1; /*0x66d1bb*/
@@ -205,44 +205,43 @@ namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
 {
 
-  int result; // eax
-  int v2; // edi
-  double *v3; // ebp
-  char *v4; // eax
-  const char *v5; // esi
-  char *v6; // eax
-  GlobalArray *v7; // esi
-  char *v8; // eax
-  char *v9; // esi
-  char *v10; // esi
-  char String[128]; // [esp+0h] [ebp-80h] BYREF
-  unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
 
+  int result; // eax
+  unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
   result = (int)(INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aPowerups)); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
+  int v2; // edi
     v2 = 0; /*0x673ea5*/
+  double *v3; // ebp
     v3 = dbl_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
+  char String[128]; // [esp+0h] [ebp-80h] BYREF
       result = (/*0x673ed0*/ (INIClass *)v13)->GetString((unsigned __int8 *)aPowerups, (&off_7E523C)[v2], a0None, String, 128);
       if ( result ) /*0x673ed7*/
       {
+  char *v4; // eax
         v4 = strtok(String, Str); /*0x673ee7*/
+  const char *v5; // esi
         v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
           (v4)->Trim(); /*0x673ef7*/
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
+  char *v6; // eax
         v6 = strtok(0, Str); /*0x673f13*/
+  GlobalArray *v7; // esi
         v7 = (GlobalArray *)v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
           (v6)->Trim(); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
+  char *v8; // eax
         v8 = strtok(0, Str); /*0x673f3d*/
+  char *v9; // esi
         v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
@@ -258,6 +257,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
           }
         }
         result = (int)strtok(0, Str); /*0x673f8c*/
+  char *v10; // esi
         v10 = (char *)result; /*0x673f91*/
         if ( result ) /*0x673f98*/
         {
@@ -294,19 +294,9 @@ namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, void * aJumpjetcontrol, void * aTurnrate, void * aWobbledeviatio, void * aWobblesperseco)
 {
 
-  int result; // eax
-  int Int_Overwrite; // eax
-  int v4; // edx
-  int v5; // edx
-  int v7; // eax
-  unsigned int v8; // ecx
-  unsigned int v9; // edx
-  unsigned int v10; // ecx
-  unsigned int v11; // edx
-  int v13; // ecx
-  double v15; // [esp-8h] [ebp-10h]
-  bool *v16; // [esp+Ch] [ebp+4h]
 
+  int result; // eax
+  bool *v16; // [esp+Ch] [ebp+4h]
   result = (int)(INIClass::BinarySearchSection((int)v16, (unsigned __int8 *)aJumpjetcontrol)); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
@@ -315,21 +305,28 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
                                          (unsigned __int8 *)aJumpjetcontrol,
                                          aTurnrate,
                                          *(unsigned int *)&aClimb->__pad_240[460]);
+  int Int_Overwrite; // eax
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674427*/
                       v16,
                       (unsigned __int8 *)aJumpjetcontrol,
                       g_INI_Key_Speed,
                       *(unsigned int *)&aClimb->__pad_240[464]);
+  int v4; // edx
     v4 = *(unsigned int *)&aClimb->__pad_240[476]; /*0x67442c*/
     *(unsigned int *)&aClimb->__pad_240[464] = Int_Overwrite; /*0x674432*/
+  double v15; // [esp-8h] [ebp-10h]
     HIDWORD(v15) = v4; /*0x674444*/
     LODWORD(v15) = *(unsigned int *)&aClimb->__pad_240[472]; /*0x674445*/
     INIClass::ReadDouble_Overwrite((double *)v16, (unsigned __int8 *)aJumpjetcontrol, aClimb, v15); /*0x67444e*/
+  int v5; // edx
     v5 = *(unsigned int *)&aClimb->__pad_240[480]; /*0x674453*/
     __asm { fstp qword ptr [esi+418h] } /*0x67445b*/
     *(double *)&aClimb->__pad_240[472] = _RT1; /*0x67445b*/
+  int v7; // eax
     v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol,(uint8_t *)(aCruiseheight), v5); /*0x67446d*/
+  unsigned int v8; // ecx
     v8 = *(unsigned int *)&aClimb->__pad_240[492]; /*0x674472*/
+  unsigned int v9; // edx
     v9 = *(unsigned int *)&aClimb->__pad_240[488]; /*0x674478*/
     *(unsigned int *)&aClimb->__pad_240[480] = v7; /*0x67447e*/
     INIClass::ReadDouble_Overwrite( /*0x674493*/
@@ -337,7 +334,9 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
       (unsigned __int8 *)aJumpjetcontrol,
       (unsigned __int8 *)&DataGlobal_81AF8C[436],
       COERCE_DOUBLE(__PAIR64__(v8, v9)));
+  unsigned int v10; // ecx
     v10 = *(unsigned int *)&aClimb->__pad_240[500]; /*0x674498*/
+  unsigned int v11; // edx
     v11 = *(unsigned int *)&aClimb->__pad_240[496]; /*0x67449e*/
     __asm { fstp qword ptr [esi+428h] } /*0x6744a4*/
     *(double *)&aClimb->__pad_240[488] = _RT1; /*0x6744a4*/
@@ -346,6 +345,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
       (unsigned __int8 *)aJumpjetcontrol,
       aWobblesperseco,
       COERCE_DOUBLE(__PAIR64__(v10, v11)));
+  int v13; // ecx
     v13 = *(unsigned int *)&aClimb->__pad_240[504]; /*0x6744be*/
     __asm { fstp qword ptr [esi+430h] } /*0x6744c4*/
     *(double *)&aClimb->__pad_240[496] = _RT1; /*0x6744c4*/
@@ -365,28 +365,28 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
 namespace gamemd {  // G42.18c ns repair
 INIClass * * RulesClass::ReadMovies(void * aMovies)
 {
-  int result; // eax
-  int v2; // ebp
-  int i; // ebx
-  uint8_t *StringByIndex; // eax
-  char *v5; // esi
-  char Source[32]; // [esp+4h] [ebp-20h] BYREF
-  INIClass *v7; // [esp+28h] [ebp+4h]
 
+  int result; // eax
+  INIClass *v7; // [esp+28h] [ebp+4h]
   result = (int)(INIClass::BinarySearchSection((int)v7, (uint8_t *)aMovies)); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
     result = INIClass::GetKeyCount(v7->__pad_0, (uint8_t *)aMovies); /*0x67457d*/
+  int v2; // ebp
     v2 = result; /*0x674582*/
+  int i; // ebx
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
+  uint8_t *StringByIndex; // eax
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v7->__pad_0, (uint8_t *)aMovies, i); /*0x6745a4*/
+  char Source[32]; // [esp+4h] [ebp-20h] BYREF
       result = (v7)->GetString((uint8_t *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
       if ( result ) /*0x6745ba*/
       {
         result = LookupNameIndex((ObjectClass *)Source); /*0x6745c0*/
         if ( result == -1 ) /*0x6745c8*/
         {
+  char *v5; // esi
           v5 = _strdup(Source); /*0x6745da*/
           result = g_MissionQueueFrame.localVariables[581]; /*0x6745dc*/
           if ( g_MissionQueueFrame.localVariables[583] < g_MissionQueueFrame.localVariables[581] /*0x674614*/
@@ -417,8 +417,8 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
 namespace gamemd {  // G42.18c ns repair
 void RulesClass::readMaximums()
 {
-  void *DetailMinFrameRateMovie; // eax
 
+  void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fa9*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fb3*/
@@ -434,8 +434,8 @@ void RulesClass::readMaximums()
 namespace gamemd {  // G42.18c ns repair
 void RulesClass::readInfantryTypes()
 {
-  void *DetailMinFrameRateMovie; // eax
 
+  void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fd9*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x679fe3*/
@@ -451,8 +451,8 @@ void RulesClass::readInfantryTypes()
 namespace gamemd {  // G42.18c ns repair
 void RulesClass::readCountries()
 {
-  void *DetailMinFrameRateMovie; // eax
 
+  void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a009*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a013*/
@@ -468,8 +468,8 @@ void RulesClass::readCountries()
 namespace gamemd {  // G42.18c ns repair
 void RulesClass::readVehicleTypes()
 {
-  void *DetailMinFrameRateMovie; // eax
 
+  void *DetailMinFrameRateMovie; // eax
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
   this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a069*/
   if ( DetailMinFrameRateMovie && (this->u8_D) ) /*0x67a073*/
@@ -485,23 +485,23 @@ void RulesClass::readVehicleTypes()
 namespace gamemd {  // G42.18c ns repair
 void *  RulesClass::readAircraftTypes(int * a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int DetailBufferZoneWidth; // ecx
-  int v6; // eax
 
   if ( this != (RulesClass *)a2 ) /*0x67a19a*/
   {
     (*(void (**)(RulesClass *))&this->DetailMinFrameRateNormal->IsInitialized)(this); /*0x67a19e*/
+  int v3; // eax
     v3 = a2->DetailBufferZoneWidth; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
+  int v4; // eax
       v4 = (int)(operator new(4 * v3)); /*0x67a1b3*/
       this->DetailMinFrameRateMovie = v4; /*0x67a1bb*/
       if ( v4 ) /*0x67a1c0*/
       {
+  int DetailBufferZoneWidth; // ecx
         DetailBufferZoneWidth = (int)(this->DetailBufferZoneWidth); /*0x67a1c2*/
+  int v6; // eax
         v6 = 0; /*0x67a1c5*/
         (this->u8_D) = 1; /*0x67a1c9*/
         if ( DetailBufferZoneWidth > 0 ) /*0x67a1cd*/
@@ -531,23 +531,23 @@ void *  RulesClass::readAircraftTypes(int * a2)
 namespace gamemd {  // G42.18c ns repair
 void * RulesClass::readSuperWeaponTypes(int * a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int DetailBufferZoneWidth; // ecx
-  int v6; // eax
 
   if ( this != (RulesClass *)a2 ) /*0x67a21a*/
   {
     (*(void (**)(RulesClass *))&this->DetailMinFrameRateNormal->IsInitialized)(this); /*0x67a21e*/
+  int v3; // eax
     v3 = a2->DetailBufferZoneWidth; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
+  int v4; // eax
       v4 = (int)(operator new(4 * v3)); /*0x67a233*/
       this->DetailMinFrameRateMovie = v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
+  int DetailBufferZoneWidth; // ecx
         DetailBufferZoneWidth = (int)(this->DetailBufferZoneWidth); /*0x67a242*/
+  int v6; // eax
         v6 = 0; /*0x67a245*/
         (this->u8_D) = 1; /*0x67a249*/
         if ( DetailBufferZoneWidth > 0 ) /*0x67a24d*/
@@ -577,23 +577,23 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
 namespace gamemd {  // G42.18c ns repair
 void * RulesClass::readBuildingTypes(int * a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int DetailBufferZoneWidth; // ecx
-  int v6; // eax
 
   if ( this != (RulesClass *)a2 ) /*0x67a31a*/
   {
     (*(void (**)(RulesClass *))&this->DetailMinFrameRateNormal->IsInitialized)(this); /*0x67a31e*/
+  int v3; // eax
     v3 = a2->DetailBufferZoneWidth; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
+  int v4; // eax
       v4 = (int)(operator new(4 * v3)); /*0x67a333*/
       this->DetailMinFrameRateMovie = v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {
+  int DetailBufferZoneWidth; // ecx
         DetailBufferZoneWidth = (int)(this->DetailBufferZoneWidth); /*0x67a342*/
+  int v6; // eax
         v6 = 0; /*0x67a345*/
         (this->u8_D) = 1; /*0x67a349*/
         if ( DetailBufferZoneWidth > 0 ) /*0x67a34d*/
@@ -637,11 +637,10 @@ unsigned int * RulesClass::readParticles()
 namespace gamemd {  // G42.18c ns repair
 int  RulesClass::readAI(unsigned int * a2)
 {
-  int DetailBufferZoneWidth; // ecx
-  int result; // eax
-  int DetailMinFrameRateMovie; // edx
 
+  int DetailBufferZoneWidth; // ecx
   DetailBufferZoneWidth = this->DetailBufferZoneWidth; /*0x67b483*/
+  int result; // eax
   result = (int)this->LargeVisceroid; /*0x67b486*/
   if ( result < DetailBufferZoneWidth /*0x67b4ad*/
     || ((this->u8_D) || !DetailBufferZoneWidth)
@@ -653,6 +652,7 @@ int  RulesClass::readAI(unsigned int * a2)
         (unsigned char)result) )
   {
     result = (int)this->LargeVisceroid; /*0x67b4b5*/
+  int DetailMinFrameRateMovie; // edx
     DetailMinFrameRateMovie = this->DetailMinFrameRateMovie; /*0x67b4b8*/
     this->LargeVisceroid = &result->AbstractClass_1; /*0x67b4be*/
     *(unsigned int *)(DetailMinFrameRateMovie + 4 * result) = *a2; /*0x67b4c8*/
@@ -669,41 +669,34 @@ int  RulesClass::readAI(unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
-  char *i; // eax
-  int v7; // edi
-  int v8; // eax
-  int v9; // ecx
-  void *v10; // eax
-  bool v11; // zf
-  int v13; // eax
-  int v14; // eax
-  int v15; // ecx
-  int v16; // eax
-  void **v17; // [esp+Ch] [ebp-9Ch] BYREF
   void *Block; // [esp+10h] [ebp-98h]
-  int v19; // [esp+14h] [ebp-94h]
   char v20; // [esp+19h] [ebp-8Fh]
-  int v21; // [esp+1Ch] [ebp-8Ch]
-  int v22; // [esp+20h] [ebp-88h]
-  char String[128]; // [esp+28h] [ebp-80h] BYREF
 
+  char String[128]; // [esp+28h] [ebp-80h] BYREF
   if ( ((INIClass *)edx0)->GetString(aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
   {
+  void **v17; // [esp+Ch] [ebp-9Ch] BYREF
     ((RulesClass *)&v17)->readIQ(0, 0); /*0x67be11*/
+  int v22; // [esp+20h] [ebp-88h]
     v22 = 10; /*0x67be1a*/
+  int v21; // [esp+1Ch] [ebp-8Ch]
     v21 = 0; /*0x67be28*/
     v17 = &vt_TypeList; /*0x67be2c*/
+  char *i; // eax
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/
+  int v7; // edi
       v7 = (i)->FindOrCreate(); /*0x67be4b*/
+  int v19; // [esp+14h] [ebp-94h]
       if ( v7 /*0x67be7b*/
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
          && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v17[2])(&v17, v22 + v19, 0)) )
       {
+  int v8; // eax
         v8 = v21++; /*0x67be86*/
         *((unsigned int *)Block + v8) = v7; /*0x67be91*/
       }
@@ -716,9 +709,12 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     System_Load_67BFA0((ObjectClass *)a1, &v17); /*0x67bec0*/
     *(unsigned int *)a1 = &vt_TypeList; /*0x67bec5*/
     v17 = &vt_VectorClass; /*0x67becb*/
+  int v9; // ecx
     v9 = v22; /*0x67bed7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67bedb*/
+  void *v10; // eax
     v10 = Block; /*0x67bede*/
+  bool v11; // zf
     v11 = Block == 0; /*0x67bee2*/
     *(unsigned int *)(a1 + 20) = v9; /*0x67bee4*/
     if ( !v11 && v20 ) /*0x67bef1*/
@@ -737,15 +733,19 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
       ((_VectorClass_PBVTerrainTypeClass *)a1)->TryFreeAndClear(); /*0x67bf30*/
+  int v13; // eax
       v13 = a5[2]; /*0x67bf36*/
       *(unsigned int *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/
       {
+  int v14; // eax
         v14 = operator new(4 * v13); /*0x67bf48*/
         *(unsigned int *)(a1 + 4) = v14; /*0x67bf52*/
         if ( v14 ) /*0x67bf55*/
         {
+  int v15; // ecx
           v15 = *(unsigned int *)(a1 + 8); /*0x67bf57*/
+  int v16; // eax
           v16 = 0; /*0x67bf5a*/
           *(unsigned char *)(a1 + 13) = 1; /*0x67bf5e*/
           if ( v15 > 0 ) /*0x67bf62*/

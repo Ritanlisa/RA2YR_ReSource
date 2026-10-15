@@ -22,7 +22,6 @@ namespace gamemd {  // G42.18 ns repair
 int Socket::ConfigureBuffers(SOCKET)
 {
   SOCKET v2; // esi
-  int result; // eax
 
   v2 = aP1; /*0x7b2631*/
   if ( aP1 == -1 ) /*0x7b2638*/
@@ -32,6 +31,7 @@ int Socket::ConfigureBuffers(SOCKET)
   Debug::Log(); /*0x7b2667*/
   if ( setsockopt(v2, 0xFFFF, 4097, byte_84DD9C, 4) == -1 ) /*0x7b2699*/
     WSAGetLastError(); /*0x7b269b*/
+  int result; // eax
   result = Debug::Log(); /*0x7b26a6*/
   (*((unsigned char *)&(result))) = 1; /*0x7b26ae*/
   return result; /*0x7b26b0*/

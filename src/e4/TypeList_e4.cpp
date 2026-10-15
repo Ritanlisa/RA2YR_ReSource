@@ -29,8 +29,8 @@
 namespace gamemd {  // G42.18 ns repair
 void TypeList_cptr_ParticleSystemTypeClass::GetClassIdentifier()
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x459f96*/
   *&this->Count = 0; /*0x459f99*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x459fa0*/
@@ -66,18 +66,18 @@ int TypeList_Particle::GetIndex(int a2)
 namespace gamemd {
 char TypeList_Particle::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = (int)(*&this->Capacity); /*0x45a182*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x45a18d*/
   {
+  int v3; // edx
     v3 = 0; /*0x45a18f*/
     if ( m_8 <= 0 ) /*0x45a193*/
       return 1; /*0x45a1b3*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->Items); /*0x45a195*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x45a19b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x45a1a4*/
     {
@@ -96,13 +96,11 @@ namespace gamemd {
 char TypeList_Particle::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x45a1cc*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x45a1d6*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x45a1dc*/
       v4 = a3; /*0x45a1f2*/
     else
@@ -112,9 +110,11 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x45a205*/
       {
+  int m_8; // ecx
         m_8 = (int)(this->Capacity); /*0x45a20c*/
         if ( a2 < m_8 ) /*0x45a211*/
           m_8 = a2; /*0x45a213*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x45a219*/
           ++i; /*0x45a21e*/
         if ( BYTE1(this->IsInitialized) ) /*0x45a22b*/
@@ -146,16 +146,16 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
 namespace gamemd {
 int TypeList_Particle::GetSize(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(this->IsInitialized) ) /*0x45a2a0*/
     return 0; /*0x45a2a8*/
+  int m_8; // edx
   m_8 = (int)(*&this->Capacity); /*0x45a2ae*/
+  int result; // eax
   result = 0; /*0x45a2b1*/
   if ( m_8 <= 0 ) /*0x45a2b5*/
     return -1; /*0x45a2cc*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x45a2bb*/
   {
     if ( ++result >= m_8 ) /*0x45a2ca*/
@@ -181,14 +181,11 @@ namespace gamemd {
 char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void *a3_2)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a3_2 ) /*0x45a30c*/
   {
     LOBYTE(a3_2->m_C) = 0; /*0x45a312*/
+  unsigned int *v4; // edi
     if ( a3_2 ) /*0x45a318*/
       v4 = (unsigned int *)(a3_2); /*0x45a32e*/
     else
@@ -198,9 +195,11 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
       return 0; /*0x45a3aa*/
     if ( *(unsigned int *)&a3_2->m_1[3] ) /*0x45a338*/
     {
+  int m_8; // ecx
       m_8 = a3_2->m_8; /*0x45a33f*/
       if ( a3_2 < m_8 ) /*0x45a344*/
         m_8 = (int)(a3_2); /*0x45a346*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&a3_2->m_1[3] + 4 * i - 4) ) /*0x45a34c*/
         ++i; /*0x45a351*/
       if ( BYTE1(a3_2->m_C) ) /*0x45a35e*/
@@ -217,6 +216,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
   {
     (*(void (**)(_DynamicVectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)a3_2->__pad_0 + 12))(a3_2); /*0x45a38e*/
   }
+  int v7; // eax
   v7 = a3_2->m_8; /*0x45a391*/
   if ( v7 < a3_2->m_10 ) /*0x45a399*/
     a3_2->m_10 = v7; /*0x45a39b*/
@@ -229,14 +229,14 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3, void 
 namespace gamemd {
 int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2, void *a2_1)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = (int)(*&this->Count); /*0x45a3b0*/
+  int result; // eax
   result = 0; /*0x45a3b3*/
   if ( m_10 <= 0 ) /*0x45a3b8*/
     return -1; /*0x45a3cf*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x45a3be*/
   {
     if ( ++result >= m_10 ) /*0x45a3cd*/
@@ -250,8 +250,8 @@ namespace gamemd {
 VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x45a9c3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x45a9c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x45a9d0*/
@@ -272,8 +272,8 @@ VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a
 namespace gamemd {  // G42.18c ns repair
 void TypeList_flat::ddtor(void *a1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->u32_4; /*0x477846*/
   this->u32_10 = 0; /*0x477849*/
   if ( v2 && (this->u8_E) ) /*0x477850*/
@@ -308,8 +308,8 @@ namespace gamemd {  // G42.18c ns repair
 TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477993*/
   *(unsigned int *)Block = (unsigned int)(&vt_VectorClass); /*0x477996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4779a0*/
@@ -329,14 +329,14 @@ TypeList_flat * TypeList_flat::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {  // G42.18c ns repair
 int TypeList_flat::GetSize(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->u32_10; /*0x477f10*/
+  int result; // eax
   result = 0; /*0x477f13*/
   if ( m_10 <= 0 ) /*0x477f18*/
     return -1; /*0x477f2f*/
+  unsigned int *i; // ecx
   for ( i = *&this->u32_4; *i != *a2; ++i ) /*0x477f1e*/
   {
     if ( ++result >= m_10 ) /*0x477f2d*/
@@ -349,18 +349,18 @@ int TypeList_flat::GetSize(unsigned int * a2)
 namespace gamemd {
 char TypeList_TechnoType::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = (int)(*&this->Capacity); /*0x477fc2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x477fcd*/
   {
+  int v3; // edx
     v3 = 0; /*0x477fcf*/
     if ( m_8 <= 0 ) /*0x477fd3*/
       return 1; /*0x477ff3*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->Items); /*0x477fd5*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x477fdb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x477fe4*/
     {
@@ -379,13 +379,11 @@ namespace gamemd {
 char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x47800c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x478016*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x47801c*/
       v4 = a3; /*0x478032*/
     else
@@ -395,9 +393,11 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x478045*/
       {
+  int m_8; // ecx
         m_8 = (int)(this->Capacity); /*0x47804c*/
         if ( a2 < m_8 ) /*0x478051*/
           m_8 = a2; /*0x478053*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x478059*/
           ++i; /*0x47805e*/
         if ( BYTE1(this->IsInitialized) ) /*0x47806b*/
@@ -443,16 +443,16 @@ void TypeList_TechnoType::ddtor(void *a1)
 namespace gamemd {
 int TypeList_TechnoType::GetSize(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(this->IsInitialized) ) /*0x4780e0*/
     return 0; /*0x4780e8*/
+  int m_8; // edx
   m_8 = (int)(*&this->Capacity); /*0x4780ee*/
+  int result; // eax
   result = 0; /*0x4780f1*/
   if ( m_8 <= 0 ) /*0x4780f5*/
     return -1; /*0x47810c*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x4780fb*/
   {
     if ( ++result >= m_8 ) /*0x47810a*/
@@ -478,8 +478,8 @@ namespace gamemd {
 VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x478683*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x478686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x478690*/
@@ -500,14 +500,11 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
 {
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   if ( a2_2 == (TypeList *)a2_2 ) /*0x47872a*/
     return &a2_2->DynamicVectorClass; /*0x47872a*/
   (*((void (**)(TypeList *))a2_2->DynamicVectorClass + 3))(a2_2); /*0x47872e*/
+  int v3; // eax
   v3 = a2_2[2]; /*0x478731*/
   ((unsigned int *)a2_2)[0] = v3; /*0x478736*/
   if ( !v3 ) /*0x478739*/
@@ -516,11 +513,14 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2, void *a2_2)
     ((unsigned int *)a2_2)[0] = 0; /*0x478781*/
     return &a2_2->DynamicVectorClass; /*0x478785*/
   }
+  void *v4; // eax
   v4 = (void *)operator new(4 * v3); /*0x478743*/
   *(void **)&a2_2->u32_4 = v4; /*0x47874b*/
   if ( !v4 ) /*0x478750*/
     return &a2_2->DynamicVectorClass; /*0x478750*/
+  int Capacity; // ecx
   Capacity = a2_2->u32_8; /*0x478752*/
+  int v6; // eax
   v6 = 0; /*0x478755*/
   ((unsigned int *)a2_2)[0] = 1; /*0x478759*/
   if ( Capacity <= 0 ) /*0x47875d*/
@@ -563,8 +563,8 @@ namespace gamemd {
 void TypeList_Infantry::ddtor(void *a1)
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x5128a6*/
   this->Count = 0; /*0x5128a9*/
   if ( v2 && BYTE1(this->IsInitialized) ) /*0x5128b0*/
@@ -603,8 +603,8 @@ int TypeList_Infantry::Clear(int a2)
 namespace gamemd {
 TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->Items; /*0x5129f3*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5129f6) */
   if ( v3 && this->IsAllocated ) /*0x512a00*/
@@ -624,18 +624,18 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2, void *a3_1
 namespace gamemd {
 char TypeList_Infantry::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = (int)(*&this->Capacity); /*0x512c42*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x512c4d*/
   {
+  int v3; // edx
     v3 = 0; /*0x512c4f*/
     if ( m_8 <= 0 ) /*0x512c53*/
       return 1; /*0x512c73*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->Items); /*0x512c55*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x512c5b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x512c64*/
     {
@@ -654,8 +654,8 @@ namespace gamemd {
 DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x512e23*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x512e26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x512e30*/
@@ -677,14 +677,11 @@ namespace gamemd {
 char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x512e7c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x512e82*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else
@@ -694,9 +691,11 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       return 0; /*0x512f1a*/
     if ( *&this->Items ) /*0x512ea8*/
     {
+  int m_8; // ecx
       m_8 = (int)(this->Capacity); /*0x512eaf*/
       if ( a2 < m_8 ) /*0x512eb4*/
         m_8 = a2; /*0x512eb6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x512ebc*/
         ++i; /*0x512ec1*/
       if ( BYTE1(this->IsInitialized) ) /*0x512ece*/
@@ -713,6 +712,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x512efe*/
   }
+  int v7; // eax
   v7 = (int)(this->Capacity); /*0x512f01*/
   if ( v7 < this->Count ) /*0x512f09*/
     this->Count = (void *)(v7); /*0x512f0b*/
@@ -725,14 +725,14 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 namespace gamemd {
 int TypeList_Infantry::GetSize(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = (int)(*&this->Count); /*0x512f70*/
+  int result; // eax
   result = 0; /*0x512f73*/
   if ( m_10 <= 0 ) /*0x512f78*/
     return -1; /*0x512f8f*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x512f7e*/
   {
     if ( ++result >= m_10 ) /*0x512f8d*/
@@ -747,8 +747,8 @@ namespace gamemd {
 DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x5131f3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5131f6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x513200*/
@@ -769,8 +769,8 @@ DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, 
 namespace gamemd {
 DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x5135c3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5135c6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x5135d0*/
@@ -791,10 +791,6 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
 {
 
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   this->u32_4 = 0; /*0x51374d*/
   this->u32_8 = 0; /*0x513750*/
@@ -804,15 +800,19 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x513760*/
   {
     ((_VectorClass_PBVUnitTypeClass *)this)->Destructor(); /*0x513762*/
+  int v3; // eax
     v3 = (int)(aP1[2]); /*0x513768*/
     this->u32_8 = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/
     {
+  void *v4; // eax
       v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x513776*/
       this->u32_4 = (unsigned int)(v4); /*0x513780*/
       if ( v4 ) /*0x513783*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x513785*/
+  int v6; // eax
         v6 = 0; /*0x513788*/
         this->u32_D = 1; /*0x51378c*/
         if ( Capacity > 0 ) /*0x513790*/
@@ -843,10 +843,6 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1, void *a2)
 {
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   this->DynamicVectorClass = 0; /*0x5255fd*/
   this->DynamicVectorClass = 0; /*0x525600*/
@@ -856,15 +852,19 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1, void *a2)
   if ( this != (TypeList *)aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt(); /*0x525612*/
+  int v3; // eax
     v3 = (int)(aP1[2]); /*0x525618*/
     this->DynamicVectorClass = (void *)(v3); /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
+  void *v4; // eax
       v4 = (void *)operator new(4 * v3); /*0x525626*/
       *&this->u32_4 = (unsigned int)(v4); /*0x525630*/
       if ( v4 ) /*0x525633*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x525635*/
+  int v6; // eax
         v6 = 0; /*0x525638*/
         this->DynamicVectorClass = (void *)(1); /*0x52563c*/
         if ( Capacity > 0 ) /*0x525640*/
@@ -908,8 +908,8 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
 namespace gamemd {
 TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *a3_1)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->Items; /*0x5ac653*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x5ac656) */
   if ( v3 && this->IsAllocated ) /*0x5ac660*/
@@ -929,10 +929,6 @@ TypeList_flat * TypeList_BuildingType::Add(unsigned int * Block, char a2, void *
 namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
 {
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   this->DynamicVectorClass = 0; /*0x5ad66d*/
   this->DynamicVectorClass = 0; /*0x5ad670*/
@@ -942,15 +938,19 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x5ad680*/
   {
     DynamicVectorClass::Destroy(); /*0x5ad682*/
+  int v3; // eax
     v3 = aP1[2]; /*0x5ad688*/
     this->DynamicVectorClass = v3; /*0x5ad68d*/
     if ( v3 ) /*0x5ad690*/
     {
+  void *v4; // eax
       v4 = (void *)operator new(4 * v3); /*0x5ad696*/
       *&this->u32_4 = v4; /*0x5ad6a0*/
       if ( v4 ) /*0x5ad6a3*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x5ad6a5*/
+  int v6; // eax
         v6 = 0; /*0x5ad6a8*/
         this->DynamicVectorClass = 1; /*0x5ad6ac*/
         if ( Capacity > 0 ) /*0x5ad6b0*/
@@ -980,8 +980,8 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
 namespace gamemd {  // G42.18c ns repair
 void TypeList_flat::InfantryCleanup()
 {
-  void *Items; // eax
 
+  void *Items; // eax
   Items = this->u32_4; /*0x67a036*/
   this->DynamicVectorClass = &vt_VectorClass; /*0x67a039*/
   if ( Items && this->u32_D ) /*0x67a043*/
@@ -997,23 +997,23 @@ void TypeList_flat::InfantryCleanup()
 namespace gamemd {  // G42.18c ns repair
 int *  TypeList_flat::CopyFull( VectorClass * aP1)
 {
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   if ( this != (TypeList *)aP1 ) /*0x67a09a*/
   {
     (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a09e*/
+  int v3; // eax
     v3 = aP1[2]; /*0x67a0a1*/
     this->DynamicVectorClass = v3; /*0x67a0a6*/
     if ( v3 ) /*0x67a0a9*/
     {
+  void *v4; // eax
       v4 = (void *)operator new(4 * v3); /*0x67a0b3*/
       *&this->u32_4 = v4; /*0x67a0bb*/
       if ( v4 ) /*0x67a0c0*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x67a0c2*/
+  int v6; // eax
         v6 = 0; /*0x67a0c5*/
         this->DynamicVectorClass = 1; /*0x67a0c9*/
         if ( Capacity > 0 ) /*0x67a0cd*/
@@ -1043,23 +1043,23 @@ int *  TypeList_flat::CopyFull( VectorClass * aP1)
 namespace gamemd {  // G42.18c ns repair
 int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 {
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   if ( this != (TypeList *)aP1 ) /*0x67a11a*/
   {
     (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a11e*/
+  int v3; // eax
     v3 = aP1[2]; /*0x67a121*/
     this->DynamicVectorClass = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
     {
+  void *v4; // eax
       v4 = (void *)operator new(4 * v3); /*0x67a133*/
       *&this->u32_4 = v4; /*0x67a13b*/
       if ( v4 ) /*0x67a140*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x67a142*/
+  int v6; // eax
         v6 = 0; /*0x67a145*/
         this->DynamicVectorClass = 1; /*0x67a149*/
         if ( Capacity > 0 ) /*0x67a14d*/
@@ -1089,23 +1089,23 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 namespace gamemd {  // G42.18c ns repair
 int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 {
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   if ( this != (TypeList *)aP1 ) /*0x67a29a*/
   {
     (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a29e*/
+  int v3; // eax
     v3 = aP1[2]; /*0x67a2a1*/
     this->DynamicVectorClass = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
     {
+  void *v4; // eax
       v4 = (void *)operator new(4 * v3); /*0x67a2b3*/
       *&this->u32_4 = v4; /*0x67a2bb*/
       if ( v4 ) /*0x67a2c0*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x67a2c2*/
+  int v6; // eax
         v6 = 0; /*0x67a2c5*/
         this->DynamicVectorClass = 1; /*0x67a2c9*/
         if ( Capacity > 0 ) /*0x67a2cd*/
@@ -1150,8 +1150,8 @@ namespace gamemd {
 void TypeList_VoxelAnim::ddtor(void *a1)
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x67a416*/
   this->Count = 0; /*0x67a419*/
   if ( v2 && BYTE1(this->IsInitialized) ) /*0x67a420*/
@@ -1221,8 +1221,8 @@ namespace gamemd {
 void TypeList_VoxelAnim::TypeList_vt03()
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x67a686*/
   this->Count = 0; /*0x67a689*/
   if ( v2 && BYTE1(this->IsInitialized) ) /*0x67a690*/
@@ -1275,8 +1275,8 @@ namespace gamemd {
 void TypeList_cptr_TerrainTypeClass::GetClassIdentifier()
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x67a936*/
   this->Count = 0; /*0x67a939*/
   if ( v2 && BYTE1(this->IsInitialized) ) /*0x67a940*/
@@ -1317,8 +1317,8 @@ int TypeList_cptr_TerrainTypeClass::SaveToINI(int a2)
 namespace gamemd {
 TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2, void *a3_1)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->Items; /*0x67a993*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x67a996) */
   if ( v3 && this->IsAllocated ) /*0x67a9a0*/
@@ -1338,8 +1338,8 @@ TypeList_flat * TypeList_VoxelAnim::Add(unsigned int * Block, char a2, void *a3_
 namespace gamemd {
 TypeList_flat * TypeList_VoxelAnim::TypeList_vt00(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 1); /*0x67a9e3*/
   *(unsigned int *)Block = &vt_VectorClass; /*0x67a9e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x67a9f0*/
@@ -1359,8 +1359,8 @@ TypeList_flat * TypeList_VoxelAnim::TypeList_vt00(unsigned int * Block, char a2)
 namespace gamemd {
 TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(unsigned int * Block, char a2, void *a3_1)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)this->Items; /*0x67aa33*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x67aa36) */
   if ( v3 && this->IsAllocated ) /*0x67aa40*/
@@ -1381,18 +1381,18 @@ namespace gamemd {
 char TypeList_VoxelAnim::AddRef(int a2)
 {
 
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->Capacity; /*0x67aaf2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x67aafd*/
   {
+  int v3; // edx
     v3 = 0; /*0x67aaff*/
     if ( m_8 <= 0 ) /*0x67ab03*/
       return 1; /*0x67ab23*/
+  unsigned int *v4; // eax
     v4 = *&this->Items; /*0x67ab05*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x67ab0b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x67ab14*/
     {
@@ -1412,13 +1412,11 @@ namespace gamemd {
 char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x67ab3c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x67ab46*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x67ab4c*/
       v4 = a3; /*0x67ab62*/
     else
@@ -1428,9 +1426,11 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x67ab75*/
       {
+  int m_8; // ecx
         m_8 = this->Capacity; /*0x67ab7c*/
         if ( a2 < m_8 ) /*0x67ab81*/
           m_8 = a2; /*0x67ab83*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67ab89*/
           ++i; /*0x67ab8e*/
         if ( BYTE1(this->IsInitialized) ) /*0x67ab9b*/
@@ -1463,16 +1463,16 @@ namespace gamemd {
 int TypeList_VoxelAnim::IndexOf(unsigned int * a2)
 {
 
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !LOBYTE(this->IsInitialized) ) /*0x67ac10*/
     return 0; /*0x67ac18*/
+  int m_8; // edx
   m_8 = this->Capacity; /*0x67ac1e*/
+  int result; // eax
   result = 0; /*0x67ac21*/
   if ( m_8 <= 0 ) /*0x67ac25*/
     return -1; /*0x67ac3c*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x67ac2b*/
   {
     if ( ++result >= m_8 ) /*0x67ac3a*/
@@ -1501,14 +1501,11 @@ namespace gamemd {
 char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x67acdc*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x67ace2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x67ace8*/
       v4 = a3; /*0x67acfe*/
     else
@@ -1518,9 +1515,11 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
       return 0; /*0x67ad7a*/
     if ( *&this->Items ) /*0x67ad08*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x67ad0f*/
       if ( a2 < m_8 ) /*0x67ad14*/
         m_8 = a2; /*0x67ad16*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67ad1c*/
         ++i; /*0x67ad21*/
       if ( BYTE1(this->IsInitialized) ) /*0x67ad2e*/
@@ -1537,6 +1536,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x67ad5e*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x67ad61*/
   if ( v7 < this->Count ) /*0x67ad69*/
     this->Count = v7; /*0x67ad6b*/
@@ -1550,14 +1550,14 @@ namespace gamemd {
 int TypeList_VoxelAnim::GetSize(unsigned int * a2)
 {
 
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->Count; /*0x67add0*/
+  int result; // eax
   result = 0; /*0x67add3*/
   if ( m_10 <= 0 ) /*0x67add8*/
     return -1; /*0x67adef*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x67adde*/
   {
     if ( ++result >= m_10 ) /*0x67aded*/
@@ -1572,18 +1572,18 @@ int TypeList_VoxelAnim::GetSize(unsigned int * a2)
 namespace gamemd {  // G42.18c ns repair
 char TypeList_flat::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->u32_8; /*0x67ae72*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x67ae7d*/
   {
+  int v3; // edx
     v3 = 0; /*0x67ae7f*/
     if ( m_8 <= 0 ) /*0x67ae83*/
       return 1; /*0x67aea3*/
+  unsigned int *v4; // eax
     v4 = *&this->u32_4; /*0x67ae85*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x67ae8b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x67ae94*/
     {
@@ -1601,14 +1601,11 @@ namespace gamemd {  // G42.18c ns repair
 char TypeList_flat::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x67b05c*/
   {
     LOBYTE(this->u32_C) = 0; /*0x67b062*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x67b068*/
       v4 = a3; /*0x67b07e*/
     else
@@ -1618,9 +1615,11 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
       return 0; /*0x67b0fa*/
     if ( *&this->u32_4 ) /*0x67b088*/
     {
+  int m_8; // ecx
       m_8 = this->u32_8; /*0x67b08f*/
       if ( a2 < m_8 ) /*0x67b094*/
         m_8 = a2; /*0x67b096*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x67b09c*/
         ++i; /*0x67b0a1*/
       if ( BYTE1(this->u32_C) ) /*0x67b0ae*/
@@ -1637,6 +1636,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVSmudgeTypeClass *))(*(unsigned int *)this->DynamicVectorClass + 12))(this); /*0x67b0de*/
   }
+  int v7; // eax
   v7 = this->u32_8; /*0x67b0e1*/
   if ( v7 < this->u32_10 ) /*0x67b0e9*/
     this->u32_10 = v7; /*0x67b0eb*/
@@ -1649,14 +1649,14 @@ namespace gamemd {
 int TypeList_VoxelAnim::TypeList_vt04(unsigned int * a2)
 {
 
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->Count; /*0x67b150*/
+  int result; // eax
   result = 0; /*0x67b153*/
   if ( m_10 <= 0 ) /*0x67b158*/
     return -1; /*0x67b16f*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x67b15e*/
   {
     if ( ++result >= m_10 ) /*0x67b16d*/
@@ -1672,18 +1672,18 @@ namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::AddRef(int a2)
 {
 
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->Capacity; /*0x67b1f2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x67b1fd*/
   {
+  int v3; // edx
     v3 = 0; /*0x67b1ff*/
     if ( m_8 <= 0 ) /*0x67b203*/
       return 1; /*0x67b223*/
+  unsigned int *v4; // eax
     v4 = *&this->Items; /*0x67b205*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x67b20b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x67b214*/
     {
@@ -1703,13 +1703,11 @@ namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x67b23c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x67b246*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x67b24c*/
       v4 = a3; /*0x67b262*/
     else
@@ -1719,9 +1717,11 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x67b275*/
       {
+  int m_8; // ecx
         m_8 = this->Capacity; /*0x67b27c*/
         if ( a2 < m_8 ) /*0x67b281*/
           m_8 = a2; /*0x67b283*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67b289*/
           ++i; /*0x67b28e*/
         if ( BYTE1(this->IsInitialized) ) /*0x67b29b*/
@@ -1770,16 +1770,16 @@ namespace gamemd {
 int TypeList_cptr_TerrainTypeClass::IndexOf(unsigned int * a2)
 {
 
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !LOBYTE(this->IsInitialized) ) /*0x67b310*/
     return 0; /*0x67b318*/
+  int m_8; // edx
   m_8 = this->Capacity; /*0x67b31e*/
+  int result; // eax
   result = 0; /*0x67b321*/
   if ( m_8 <= 0 ) /*0x67b325*/
     return -1; /*0x67b33c*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x67b32b*/
   {
     if ( ++result >= m_8 ) /*0x67b33a*/
@@ -1808,14 +1808,11 @@ namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x67b3dc*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x67b3e2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x67b3e8*/
       v4 = a3; /*0x67b3fe*/
     else
@@ -1825,9 +1822,11 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
       return 0; /*0x67b47a*/
     if ( *&this->Items ) /*0x67b408*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x67b40f*/
       if ( a2 < m_8 ) /*0x67b414*/
         m_8 = a2; /*0x67b416*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x67b41c*/
         ++i; /*0x67b421*/
       if ( BYTE1(this->IsInitialized) ) /*0x67b42e*/
@@ -1844,6 +1843,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x67b45e*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x67b461*/
   if ( v7 < this->Count ) /*0x67b469*/
     this->Count = v7; /*0x67b46b*/
@@ -1857,14 +1857,14 @@ namespace gamemd {
 int TypeList_cptr_TerrainTypeClass::GetSize(unsigned int * a2)
 {
 
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->Count; /*0x67b4d0*/
+  int result; // eax
   result = 0; /*0x67b4d3*/
   if ( m_10 <= 0 ) /*0x67b4d8*/
     return -1; /*0x67b4ef*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x67b4de*/
   {
     if ( ++result >= m_10 ) /*0x67b4ed*/
@@ -1880,8 +1880,8 @@ namespace gamemd {
 VectorClass_flat * TypeList_VoxelAnim::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x67c013*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c016*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x67c020*/
@@ -1903,8 +1903,8 @@ namespace gamemd {
 DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x67c103*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c106*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x67c110*/
@@ -1926,8 +1926,8 @@ namespace gamemd {
 VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x67c153*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c156*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x67c160*/
@@ -1948,8 +1948,8 @@ VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Bl
 namespace gamemd {
 DynamicVector * TypeList_VoxelAnim::Constructor_1(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x67c1a3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c1a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x67c1b0*/
@@ -1970,10 +1970,6 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
 {
 
-  int v3; // eax
-  void *v4; // eax
-  int Capacity; // ecx
-  int v6; // eax
 
   this->u32_4 = 0; /*0x67c1fd*/
   this->u32_8 = 0; /*0x67c200*/
@@ -1983,15 +1979,19 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   if ( this != (TypeList *)aP1 ) /*0x67c210*/
   {
     Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)this); /*0x67c212*/
+  int v3; // eax
     v3 = aP1[2]; /*0x67c218*/
     this->u32_8 = v3; /*0x67c21d*/
     if ( v3 ) /*0x67c220*/
     {
+  void *v4; // eax
       v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67c226*/
       this->u32_4 = v4; /*0x67c230*/
       if ( v4 ) /*0x67c233*/
       {
+  int Capacity; // ecx
         Capacity = this->u32_8; /*0x67c235*/
+  int v6; // eax
         v6 = 0; /*0x67c238*/
         this->u32_D = 1; /*0x67c23c*/
         if ( Capacity > 0 ) /*0x67c240*/
@@ -2022,8 +2022,8 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
 namespace gamemd {
 TypeList_flat * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 1); /*0x717b73*/
   *(unsigned int *)Block = &vt_VectorClass; /*0x717b76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x717b80*/
@@ -2070,16 +2070,14 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
 namespace gamemd {
 char TypeList::TypeList_PushBack_free(unsigned int * a2)
 {
-  int Capacity; // ecx
-  int CapacityIncrement; // eax
-  int Count; // eax
-  unsigned int *Items; // edx
 
+  int Capacity; // ecx
   Capacity = this->vtable1; /*0x717cd3*/
   if ( this->vtable1 >= Capacity ) /*0x717cdb*/
   {
     if ( !this->vtable1 && Capacity ) /*0x717ce6*/
       return 0; /*0x717ce6*/
+  int CapacityIncrement; // eax
     CapacityIncrement = this->vtable1; /*0x717ce8*/
     if ( CapacityIncrement <= 0 /*0x717cf8*/
       || !(*((uint8_t (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
@@ -2090,7 +2088,9 @@ char TypeList::TypeList_PushBack_free(unsigned int * a2)
       return 0; /*0x717cff*/
     }
   }
+  int Count; // eax
   Count = this->vtable1; /*0x717d05*/
+  unsigned int *Items; // edx
   Items = this->vtable1; /*0x717d08*/
   this->vtable1 = Count + 1; /*0x717d0e*/
   Items[Count] = *a2; /*0x717d18*/

@@ -583,14 +583,13 @@ LABEL_138:
 namespace gamemd {
 int TEventClass::PrepareSaveToINI(const char * a2)
 {
-  int TEventClass_field_2C; // edx
   int v3; // eax
-  int TEventClass_field_30; // esi
   const CHAR *v6; // [esp-10h] [ebp-18h]
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
   int TEventClass_field_34; // [esp-4h] [ebp-Ch]
 
+  int TEventClass_field_2C; // edx
   TEventClass_field_2C = (int)(this->TEventClass_field_2C); /*0x71f390*/
   switch ( TEventClass_field_2C ) /*0x71f3a8*/
   {
@@ -660,6 +659,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
       v3 = 0; /*0x71f3fc*/
       break; /*0x71f3fc*/
   }
+  int TEventClass_field_30; // esi
   TEventClass_field_30 = (int)(this->TEventClass_field_30); /*0x71f3fe*/
   if ( TEventClass_field_30 ) /*0x71f403*/
   {
@@ -691,8 +691,8 @@ namespace gamemd {
 int TEventClass::CheckConditions(int a2, int a3)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)(this->TEventClass_field_28); /*0x71f800*/
   if ( result == a2 ) /*0x71f809*/
   {
@@ -710,17 +710,15 @@ namespace gamemd {
 void * TEventClass::Fire(void ** Block, char a2)
 {
 
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
   Block->? = &vt_TEventClass; /*0x71fa8c*/
   Block->u32_8 = &vt_TEventClass; /*0x71fa93*/
   Block->? = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
+  TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = (gamemd::TEventClass *)(Block); /*0x71fab6*/
+  int v3; // eax
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
          &v7);
@@ -735,6 +733,7 @@ void * TEventClass::Fire(void ** Block, char a2)
     }
   }
   v7 = (gamemd::TEventClass *)(Block); /*0x71faff*/
+  int v4; // eax
   v4 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x71fb03*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
@@ -750,6 +749,7 @@ void * TEventClass::Fire(void ** Block, char a2)
     }
   }
   v7 = (gamemd::TEventClass *)(Block); /*0x71fb48*/
+  int v5; // eax
   v5 = (*(int (**)(int *, TEventClass **))(DataGlobal_B0E840[2250] + 16))( /*0x71fb4c*/
          &DataGlobal_B0E840[2250],
          &v7);
@@ -776,22 +776,22 @@ namespace gamemd {
 int TEventClass::ProcessEvent(int a2)
 {
 
-  int TEventClass_field_28; // eax
-  int v4; // eax
-  int TEventClass_field_30; // eax
-  int v6; // eax
 
   ((AbstractClass *)this)->ProcessPower(); /*0x71f829*/
+  int TEventClass_field_28; // eax
   TEventClass_field_28 = (int)(this->TEventClass_field_28); /*0x71f82e*/
   if ( TEventClass_field_28 ) /*0x71f833*/
   {
+  int v4; // eax
     v4 = (*(int (**)(int))(*(unsigned int *)(TEventClass_field_28 + 4) + 16))(TEventClass_field_28 + 4); /*0x71f83c*/
     Power::TimerProcess(v4); /*0x71f842*/
   }
   Power::TimerProcess(this->TEventClass_field_2C); /*0x71f84d*/
+  int TEventClass_field_30; // eax
   TEventClass_field_30 = (int)(this->TEventClass_field_30); /*0x71f852*/
   if ( TEventClass_field_30 ) /*0x71f857*/
   {
+  int v6; // eax
     v6 = (*(int (**)(int))(*(unsigned int *)(TEventClass_field_30 + 4) + 16))(TEventClass_field_30 + 4); /*0x71f860*/
     Power::TimerProcess(v6); /*0x71f866*/
   }
@@ -818,8 +818,8 @@ int TEventClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x71f8cb*/
   if ( result >= 0 ) /*0x71f8d2*/
   {
@@ -844,8 +844,8 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int TEventClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71f93f*/
   if ( result >= 0 ) /*0x71f946*/
     return 0; /*0x71f948*/

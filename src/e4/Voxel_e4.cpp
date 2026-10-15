@@ -167,37 +167,16 @@ LABEL_17:
 namespace gamemd {
 AbstractClass * Voxel::RenderFrame(void *a1)
 {
-  int v1; // edi
-  char *v2; // esi
-  int v3; // ebx
-  unsigned int *v4; // ecx
-  char *v5; // eax
-  int v6; // edx
-  int v7; // eax
-  int v8; // ebp
-  char *v9; // edi
-  char *v10; // ecx
-  int v11; // ebx
-  int v12; // edx
-  unsigned int ***v13; // esi
-  int v14; // edi
-  int v15; // esi
-  unsigned int ***v16; // edi
-  float v17; // esi
-  int v18; // eax
-  int v19; // ebx
-  float v20; // edi
-  int v21; // eax
-  float v24; // [esp+14h] [ebp-30h]
-  float v25[7]; // [esp+1Ch] [ebp-28h] BYREF
-  int v26; // [esp+38h] [ebp-Ch]
 
+  int v1; // edi
   v1 = 0; /*0x75452e*/
+  float v25[7]; // [esp+1Ch] [ebp-28h] BYREF
   v25[0] = (*(float *)&dword_B2D5E0 + *(float *)&dword_B2D948) * 0.5; /*0x754536*/
   v25[1] = (*(float *)&dword_B2D5E4 + *(float *)&dword_B2D94C) * 0.5; /*0x75454c*/
   v25[2] = (*(float *)&dword_B2D5E8 + *(float *)&dword_B2D950) * 0.5; /*0x754562*/
   if ( dword_B2FB70 > 0 ) /*0x754566*/
   {
+  char *v2; // esi
     v2 = (char *)&unk_B3FF78; /*0x754568*/
     do /*0x754585*/
     {
@@ -207,11 +186,15 @@ AbstractClass * Voxel::RenderFrame(void *a1)
     }
     while ( v1 < dword_B2FB70 ); /*0x754585*/
   }
+  int v3; // ebx
   v3 = dword_B2D820; /*0x754587*/
   if ( dword_B2D820 > 0 ) /*0x75458f*/
   {
+  unsigned int *v4; // ecx
     v4 = (unsigned int *)(&unk_B2D824); /*0x754591*/
+  char *v5; // eax
     v5 = (char *)&unk_B2D958; /*0x754596*/
+  int v6; // edx
     v6 = dword_B2D820; /*0x75459b*/
     do /*0x7545a8*/
     {
@@ -222,19 +205,25 @@ AbstractClass * Voxel::RenderFrame(void *a1)
     }
     while ( v6 ); /*0x7545a8*/
   }
+  int v7; // eax
   v7 = v3 - 1; /*0x7545aa*/
   if ( v3 - 1 > 0 ) /*0x7545af*/
   {
+  int v8; // ebp
     v8 = 1; /*0x7545b1*/
+  char *v9; // edi
     v9 = (char *)&unk_B2D824; /*0x7545b6*/
     do /*0x7545f1*/
     {
       if ( v8 < v3 ) /*0x7545bd*/
       {
+  char *v10; // ecx
         v10 = v9 + 4; /*0x7545bf*/
+  int v11; // ebx
         v11 = v3 - v8; /*0x7545c2*/
         do /*0x7545dd*/
         {
+  int v12; // edx
           v12 = *(unsigned int *)v9; /*0x7545c4*/
           if ( *(float *)(*(unsigned int *)v9 + 36) > (double)*(float *)(*(unsigned int *)v10 + 36) ) /*0x7545d3*/
           {
@@ -257,7 +246,9 @@ AbstractClass * Voxel::RenderFrame(void *a1)
   {
     if ( v7 >= 0 ) /*0x7545ff*/
     {
+  unsigned int ***v13; // esi
       v13 = (unsigned int ***)(4 * v7 + 11720740); /*0x754601*/
+  int v14; // edi
       v14 = v7 + 1; /*0x754608*/
       do /*0x75461e*/
       {
@@ -270,9 +261,11 @@ AbstractClass * Voxel::RenderFrame(void *a1)
   }
   else
   {
+  int v15; // esi
     v15 = 0; /*0x754622*/
     if ( v3 > 0 ) /*0x754626*/
     {
+  unsigned int ***v16; // edi
       v16 = (unsigned int ***)&unk_B2D824; /*0x754628*/
       do /*0x754647*/
       {
@@ -283,18 +276,25 @@ AbstractClass * Voxel::RenderFrame(void *a1)
       while ( v15 < dword_B2D820 ); /*0x754647*/
     }
   }
+  float v17; // esi
   (*((unsigned int *)&(v17))) = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754666*/
+  int v18; // eax
   v18 = Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4); /*0x754668*/
+  int v19; // ebx
   v19 = 128 - (*((signed int *)&(v17))) / 2; /*0x75467f*/
   (*((unsigned int *)&(v17))) += 8; /*0x754686*/
+  float v20; // edi
   (*((unsigned int *)&(v20))) = v18 + 8; /*0x754694*/
   v19 -= 4; /*0x75469a*/
+  int v26; // [esp+38h] [ebp-Ch]
   v26 = 128 - v18 / 2 - 4; /*0x75469d*/
   dword_B2FB64 = v26; /*0x7546a1*/
   dword_B2FB60 = v19; /*0x7546a8*/
   dword_B2FB68 = (*((unsigned int *)&(v17))); /*0x7546b1*/
   dword_B2FB6C = v18 + 8; /*0x7546b9*/
+  float v24; // [esp+14h] [ebp-30h]
   (*((unsigned int *)&(v24))) = Math::RoundToInt(v25[0]) - (*((signed int *)&(v17))) / 2; /*0x7546c8*/
+  int v21; // eax
   v21 = Math::RoundToInt(v25[1]); /*0x7546d9*/
   v25[0] = v24; /*0x7546e8*/
   (*((unsigned int *)&(v25[1]))) = v21 - (*((signed int *)&(v20))) / 2; /*0x7546ec*/
@@ -310,93 +310,31 @@ AbstractClass * Voxel::RenderFrame(void *a1)
 namespace gamemd {
 int Voxel::Projection_Setup()
 {
-  float *v1; // eax
-  float *v2; // eax
-  float *v3; // eax
-  float *v4; // eax
-  float *v5; // eax
-  float *v6; // eax
-  float v7; // edx
-  float *v8; // eax
-  float *v9; // eax
-  float v10; // edx
-  float v11; // ebx
-  float *v12; // eax
-  float *v13; // eax
-  float *v14; // eax
-  float *v15; // eax
-  float v16; // ebp
-  float *v17; // eax
-  float *v18; // eax
-  float *v19; // eax
-  float *v20; // eax
-  float *v21; // eax
-  float *v22; // eax
-  float *v23; // eax
-  float *v24; // eax
-  float *v25; // eax
-  float *v26; // eax
-  float *v27; // eax
-  float *v28; // eax
-  int v29; // edi
-  float *v30; // esi
-  float *v31; // eax
-  int v32; // ecx
-  float *v33; // ecx
-  double v34; // st7
-  float *v35; // eax
-  float *v36; // eax
-  float *v37; // eax
-  float *v38; // eax
-  float *v39; // eax
-  float *v40; // eax
-  float *v41; // eax
-  float *v42; // eax
-  float *v43; // eax
-  float *v44; // eax
-  float *v45; // eax
-  float *v46; // eax
-  float *v47; // eax
-  float *v48; // eax
-  float *v49; // eax
-  float *v50; // eax
-  float *v51; // eax
-  Matrix3x4 *v52; // esi
-  int result; // eax
-  float v54; // [esp+0h] [ebp-114h]
-  float v55; // [esp+0h] [ebp-114h]
-  float v56; // [esp+0h] [ebp-114h]
-  float v57[4]; // [esp+14h] [ebp-100h] BYREF
-  float v58[4]; // [esp+24h] [ebp-F0h] BYREF
-  int v59; // [esp+34h] [ebp-E0h] BYREF
-  float v60; // [esp+38h] [ebp-DCh]
-  int v61; // [esp+3Ch] [ebp-D8h]
-  int v62; // [esp+40h] [ebp-D4h] BYREF
-  int v63; // [esp+44h] [ebp-D0h]
-  int v64; // [esp+48h] [ebp-CCh]
-  float v65; // [esp+4Ch] [ebp-C8h]
   Matrix3D v66; // [esp+50h] [ebp-C4h] BYREF
-  float v67[3]; // [esp+80h] [ebp-94h] BYREF
-  float v68[3]; // [esp+8Ch] [ebp-88h] BYREF
-  float v69[3]; // [esp+98h] [ebp-7Ch] BYREF
-  float v70[3]; // [esp+A4h] [ebp-70h] BYREF
-  float v71[3]; // [esp+B0h] [ebp-64h] BYREF
-  float v72[3]; // [esp+BCh] [ebp-58h] BYREF
-  float v73[3]; // [esp+C8h] [ebp-4Ch] BYREF
-  float v74[3]; // [esp+D4h] [ebp-40h] BYREF
-  float v75; // [esp+E0h] [ebp-34h]
   Matrix3x4 v76; // [esp+E4h] [ebp-30h] BYREF
 
+  float v75; // [esp+E0h] [ebp-34h]
   v75 = dbl_B43F08; /*0x754cbe*/
+  float v65; // [esp+4Ch] [ebp-C8h]
   v65 = dbl_B44310; /*0x754cd0*/
+  int v59; // [esp+34h] [ebp-E0h] BYREF
   *(float *)&v59 = 1.0; /*0x754ce4*/
+  float v60; // [esp+38h] [ebp-DCh]
   v60 = 0.0; /*0x754cec*/
+  int v61; // [esp+3Ch] [ebp-D8h]
   v61 = 0; /*0x754cf4*/
+  int v62; // [esp+40h] [ebp-D4h] BYREF
   v62 = 0; /*0x754cfc*/
+  int v63; // [esp+44h] [ebp-D0h]
   v63 = 0; /*0x754d04*/
+  int v64; // [esp+48h] [ebp-CCh]
   v64 = 1065353216; /*0x754d0c*/
+  float *v1; // eax
   v1 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v62, 0.785375); /*0x754d14*/
+  float *v2; // eax
+  float v57[4]; // [esp+14h] [ebp-100h] BYREF
   v2 = TransformMatrix3x4Point(v57, v1, (float *)&v59); /*0x754d1f*/
+  float v70[3]; // [esp+A4h] [ebp-70h] BYREF
   v70[0] = *v2; /*0x754d26*/
   v70[1] = v2[1]; /*0x754d30*/
   v70[2] = v2[2]; /*0x754d4d*/
@@ -406,8 +344,11 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754d6c*/
   v60 = 0.0; /*0x754d74*/
   v61 = 1065353216; /*0x754d7c*/
+  float *v3; // eax
   v3 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 2.3561251); /*0x754d84*/
+  float *v4; // eax
   v4 = TransformMatrix3x4Point(v57, v3, (float *)&v62); /*0x754d8f*/
+  float v67[3]; // [esp+80h] [ebp-94h] BYREF
   v67[0] = *v4; /*0x754d96*/
   v67[1] = v4[1]; /*0x754d9d*/
   v67[2] = v4[2]; /*0x754dba*/
@@ -417,10 +358,14 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754dd9*/
   v60 = 0.0; /*0x754de1*/
   v61 = 1065353216; /*0x754de9*/
+  float *v5; // eax
   v5 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 3.9268751); /*0x754df1*/
+  float *v6; // eax
   v6 = TransformMatrix3x4Point(v57, v5, (float *)&v62); /*0x754dfc*/
+  float v73[3]; // [esp+C8h] [ebp-4Ch] BYREF
   v73[0] = *v6; /*0x754e03*/
   v73[1] = v6[1]; /*0x754e0d*/
+  float v7; // edx
   v7 = v6[2]; /*0x754e14*/
   v62 = 1065353216; /*0x754e17*/
   v73[2] = v7; /*0x754e1f*/
@@ -429,79 +374,107 @@ int Voxel::Projection_Setup()
   *(float *)&v59 = 0.0; /*0x754e36*/
   v60 = 0.0; /*0x754e3e*/
   v61 = 1065353216; /*0x754e46*/
+  float *v8; // eax
   v8 = Math::BuildRotationMatrix((float *)v66.__pad_0, (float *)&v59, 5.4976249); /*0x754e61*/
+  float *v9; // eax
   v9 = TransformMatrix3x4Point(v57, v8, (float *)&v62); /*0x754e6c*/
+  float v71[3]; // [esp+B0h] [ebp-64h] BYREF
   v71[0] = *v9; /*0x754e73*/
   v71[1] = v9[1]; /*0x754e7d*/
+  float v10; // edx
   v10 = v9[2]; /*0x754e89*/
+  float v74[3]; // [esp+D4h] [ebp-40h] BYREF
   v74[0] = 1.0; /*0x754e8c*/
   v71[2] = v10; /*0x754e97*/
   v74[1] = 0.0; /*0x754e9e*/
   v74[2] = 0.0; /*0x754ea9*/
+  float v72[3]; // [esp+BCh] [ebp-58h] BYREF
   v72[0] = 0.0; /*0x754eb4*/
   v72[1] = 1.0; /*0x754ebf*/
   v72[2] = 0.0; /*0x754eca*/
+  float v68[3]; // [esp+8Ch] [ebp-88h] BYREF
   v68[0] = -1.0; /*0x754ed5*/
   v68[1] = 0.0; /*0x754ee0*/
   v68[2] = 0.0; /*0x754eeb*/
+  float v69[3]; // [esp+98h] [ebp-7Ch] BYREF
   v69[0] = 0.0; /*0x754ef6*/
   v69[1] = -1.0; /*0x754f01*/
   v69[2] = 0.0; /*0x754f0c*/
   (&stru_B43F10)->Identity(); /*0x754f17*/
+  float v11; // ebx
   v11 = v65; /*0x754f1c*/
   memcpy(&unk_B43F40, Matrix3D::Constructor(&v66, 3.9268751, v65), 0x30u); /*0x754f3c*/
   memcpy(&unk_B43F70, Matrix3D::Constructor(&v66, 2.3561251, v11), 0x30u); /*0x754f59*/
   memcpy(&unk_B43FA0, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x754f76*/
   memcpy(&unk_B43FD0, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x754f93*/
+  float *v12; // eax
+  float v58[4]; // [esp+24h] [ebp-F0h] BYREF
   v12 = FromQuaternionAxisAngle(v58, v73, v11); /*0x754fa0*/
   Float4::Copy(flt_B44358, v57, v12); /*0x754fb0*/
+  float *v13; // eax
   v13 = FromQuaternionAxisAngle(v58, v67, v11); /*0x754fbe*/
   Float4::Copy(flt_B44368, v57, v13); /*0x754fce*/
+  float *v14; // eax
   v14 = FromQuaternionAxisAngle(v58, v70, v11); /*0x754fdf*/
   Float4::Copy(flt_B44378, v57, v14); /*0x754fef*/
+  float *v15; // eax
   v15 = FromQuaternionAxisAngle(v58, v71, v11); /*0x755000*/
   Float4::Copy(flt_B44388, v57, v15); /*0x755010*/
+  float v16; // ebp
   v16 = v75; /*0x755019*/
   memcpy(&unk_B44000, Matrix3D::Constructor(&v66, 3.1415, v75), 0x30u); /*0x755038*/
   memcpy(&unk_B44030, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x755055*/
   memcpy(&unk_B44060, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x75506f*/
   memcpy(&unk_B44090, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x75508c*/
+  float *v17; // eax
   v17 = FromQuaternionAxisAngle(v58, v68, v16); /*0x755099*/
   Float4::Copy(flt_B44398, v57, v17); /*0x7550a9*/
+  float *v18; // eax
   v18 = FromQuaternionAxisAngle(v58, v72, v16); /*0x7550ba*/
   Float4::Copy(flt_B443A8, v57, v18); /*0x7550ca*/
+  float *v19; // eax
   v19 = FromQuaternionAxisAngle(v58, v74, v16); /*0x7550db*/
   Float4::Copy(flt_B443B8, v57, v19); /*0x7550eb*/
+  float *v20; // eax
   v20 = FromQuaternionAxisAngle(v58, v69, v16); /*0x7550fc*/
   Float4::Copy(flt_B443C8, v57, v20); /*0x75510c*/
   memcpy(&unk_B440C0, Matrix3D::Constructor(&v66, 3.1415, v16), 0x30u); /*0x75512d*/
   memcpy(&unk_B440F0, Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x75514a*/
   memcpy(&unk_B44120, Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x755164*/
   memcpy(&unk_B44150, Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x755181*/
+  float *v21; // eax
   v21 = FromQuaternionAxisAngle(v58, v68, v16); /*0x75518e*/
   Float4::Copy(flt_B443D8, v57, v21); /*0x75519e*/
+  float *v22; // eax
   v22 = FromQuaternionAxisAngle(v58, v72, v16); /*0x7551af*/
   Float4::Copy(flt_B443E8, v57, v22); /*0x7551bf*/
+  float *v23; // eax
   v23 = FromQuaternionAxisAngle(v58, v74, v16); /*0x7551d0*/
   Float4::Copy(flt_B443F8, v57, v23); /*0x7551e0*/
+  float *v24; // eax
   v24 = FromQuaternionAxisAngle(v58, v69, v16); /*0x7551f1*/
   Float4::Copy(flt_B44408, v57, v24); /*0x755201*/
   memcpy(&unk_B44180, Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x755221*/
   memcpy(&unk_B441B0, Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x75523f*/
   memcpy(&unk_B441E0, Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x755259*/
   memcpy(&unk_B44210, Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755276*/
+  float *v25; // eax
   v25 = FromQuaternionAxisAngle(v58, v68, v11); /*0x755283*/
   Float4::Copy(flt_B44418, v57, v25); /*0x755293*/
+  float *v26; // eax
   v26 = FromQuaternionAxisAngle(v58, v72, v11); /*0x7552a4*/
   Float4::Copy(flt_B44428, v57, v26); /*0x7552b4*/
+  float *v27; // eax
   v27 = FromQuaternionAxisAngle(v58, v74, v11); /*0x7552c5*/
   Float4::Copy(flt_B44438, v57, v27); /*0x7552d5*/
+  float *v28; // eax
   v28 = FromQuaternionAxisAngle(v58, v69, v11); /*0x7552e6*/
   Float4::Copy(flt_B44448, v57, v28); /*0x7552f6*/
   (&stru_B44240)->Identity(); /*0x755300*/
   (&stru_B44270)->Identity(); /*0x75530a*/
   (&stru_B442A0)->Identity(); /*0x755314*/
   (&stru_B442D0)->Identity(); /*0x75531e*/
+  int v29; // edi
   v29 = 0; /*0x755323*/
   Int4::Set2(&stru_B44458, 0, 0, 0, 1065353216); /*0x755332*/
   Int4::Set2(&stru_B44468, 0, 0, 0, 1065353216); /*0x755344*/
@@ -511,26 +484,33 @@ int Voxel::Projection_Setup()
   do /*0x755459*/
   {
     (&v76)->Identity(); /*0x755378*/
+  float v54; // [esp+0h] [ebp-114h]
     v54 = (double)(*((signed int *)&(v65))) * 0.024542969; /*0x75538f*/
     Matrix2D::Rotate(v76.m_Data, v54); /*0x755392*/
     v62 = 1065353216; /*0x7553a7*/
     v63 = 0; /*0x7553af*/
     v64 = 0; /*0x7553b7*/
+  float *v30; // esi
     v30 = &((unsigned int *)(flt_B432D8))[v29]; /*0x7553bf*/
+  float *v31; // eax
     v31 = TransformMatrix3x4Point(v57, (float *)v76.m_Data, (float *)&v62); /*0x7553c5*/
     *v30 = *v31; /*0x7553d4*/
+  int v32; // ecx
     v32 = *((unsigned int *)v31 + 1); /*0x7553d6*/
     v61 = 0; /*0x7553d9*/
     v30->vtable2 = v32; /*0x7553e1*/
     v30[2] = v31[2]; /*0x7553e7*/
+  float *v33; // ecx
     v33 = &((unsigned int *)(flt_B444A0))[v29]; /*0x7553f8*/
     *(float *)&v59 = *(float *)(v29 * 4 + 11809500) - 0.0; /*0x7553fa*/
+  double v34; // st7
     v34 = 0.0 - ((unsigned int *)(flt_B432D8))[v29]; /*0x755402*/
     *v33 = *(float *)&v59; /*0x755404*/
     v60 = v34; /*0x755406*/
     v33[1] = v60; /*0x75540e*/
     *((unsigned int *)v33 + 2) = v61; /*0x755415*/
     Math::BuildRotationMatrix((float *)v66.__pad_0, &flt_B444A0[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
+  float *v35; // eax
     v35 = TransformMatrix3x4Point(v58, (float *)v66.__pad_0, &flt_B432D8[v29]); /*0x755432*/
     v29 += 3; /*0x755439*/
     *v30 = *v35; /*0x75543c*/
@@ -557,36 +537,52 @@ int Voxel::Projection_Setup()
   memcpy(&unk_B45458, Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x755618*/
   memcpy(&unk_B45488, Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x755639*/
   Int4::Set2(&stru_B43188, 0, 0, 0, 1065353216); /*0x755646*/
+  float *v36; // eax
   v36 = FromQuaternionAxisAngle(v58, v69, v11); /*0x755657*/
   Float4::Copy(flt_B43198, v57, v36); /*0x755667*/
+  float *v37; // eax
   v37 = FromQuaternionAxisAngle(v58, v68, v11); /*0x755678*/
   Float4::Copy(flt_B431A8, v57, v37); /*0x755688*/
+  float *v38; // eax
   v38 = FromQuaternionAxisAngle(v58, v72, v11); /*0x755699*/
   Float4::Copy(flt_B431B8, v57, v38); /*0x7556a9*/
+  float *v39; // eax
   v39 = FromQuaternionAxisAngle(v58, v74, v11); /*0x7556ba*/
   Float4::Copy(flt_B431C8, v57, v39); /*0x7556ca*/
+  float *v40; // eax
   v40 = FromQuaternionAxisAngle(v58, v73, v16); /*0x7556db*/
   Float4::Copy(flt_B431D8, v57, v40); /*0x7556eb*/
+  float *v41; // eax
   v41 = FromQuaternionAxisAngle(v58, v67, v16); /*0x7556f9*/
   Float4::Copy(flt_B431E8, v57, v41); /*0x755709*/
+  float *v42; // eax
   v42 = FromQuaternionAxisAngle(v58, v70, v16); /*0x75571a*/
   Float4::Copy(flt_B431F8, v57, v42); /*0x75572a*/
+  float *v43; // eax
   v43 = FromQuaternionAxisAngle(v58, v71, v16); /*0x75573b*/
   Float4::Copy(flt_B43208, v57, v43); /*0x75574b*/
+  float *v44; // eax
   v44 = FromQuaternionAxisAngle(v58, v73, v16); /*0x75575c*/
   Float4::Copy(flt_B43218, v57, v44); /*0x75576c*/
+  float *v45; // eax
   v45 = FromQuaternionAxisAngle(v58, v67, v16); /*0x75577a*/
   Float4::Copy(flt_B43228, v57, v45); /*0x75578a*/
+  float *v46; // eax
   v46 = FromQuaternionAxisAngle(v58, v70, v16); /*0x75579b*/
   Float4::Copy(flt_B43238, v57, v46); /*0x7557ab*/
+  float *v47; // eax
   v47 = FromQuaternionAxisAngle(v58, v71, v16); /*0x7557bc*/
   Float4::Copy(flt_B43248, v57, v47); /*0x7557cc*/
+  float *v48; // eax
   v48 = FromQuaternionAxisAngle(v58, v73, v11); /*0x7557dd*/
   Float4::Copy(flt_B43258, v57, v48); /*0x7557ed*/
+  float *v49; // eax
   v49 = FromQuaternionAxisAngle(v58, v67, v11); /*0x7557fb*/
   Float4::Copy(flt_B43268, v57, v49); /*0x75580b*/
+  float *v50; // eax
   v50 = FromQuaternionAxisAngle(v58, v70, v11); /*0x75581c*/
   Float4::Copy(flt_B43278, v57, v50); /*0x75582c*/
+  float *v51; // eax
   v51 = FromQuaternionAxisAngle(v58, v71, v11); /*0x75583d*/
   Float4::Copy(flt_B43288, v57, v51); /*0x75584d*/
   (&stru_B454B8)->Identity(); /*0x755857*/
@@ -598,11 +594,15 @@ int Voxel::Projection_Setup()
   Int4::Set2(&stru_B432B8, 0, 0, 0, 1065353216); /*0x7558b4*/
   Int4::Set2(&stru_B432C8, 0, 0, 0, 1065353216); /*0x7558c9*/
   (&stru_B44318)->Identity(); /*0x7558d3*/
+  float v55; // [esp+0h] [ebp-114h]
   v55 = -dbl_B43F00; /*0x7558e6*/
   (stru_B44318.m_Data)->RotateX(v55); /*0x7558e9*/
+  float v56; // [esp+0h] [ebp-114h]
   v56 = -dbl_B44498; /*0x7558f7*/
   Matrix2D::Rotate(stru_B44318.m_Data, v56); /*0x7558ff*/
+  Matrix3x4 *v52; // esi
   v52 = (gamemd::Matrix3x4 *)(&stru_B450B8); /*0x755904*/
+  int result; // eax
   do /*0x755919*/
     result = (v52++)->Identity(); /*0x75590b*/
   while ( (int)v52 < (int)&dword_B45178 ); /*0x755919*/

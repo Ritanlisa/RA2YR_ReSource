@@ -28,22 +28,18 @@ int DialogClass::GetFlag(void *a1)
 namespace gamemd {
 int DialogClass::Reposition(int hWnd, int a2)
 {
-  HWND WindowLongA; // eax
-  LONG right; // edi
-  HWND DialogParamA; // esi
   LONG bottom; // ebx
-  int v7; // [esp-Ch] [ebp-BCh]
-  int v8; // [esp-8h] [ebp-B8h]
   struct tagRECT Rect; // [esp+10h] [ebp-A0h] BYREF
   struct tagRECT v10; // [esp+20h] [ebp-90h] BYREF
-  CHAR ClassName[128]; // [esp+30h] [ebp-80h] BYREF
 
   GetWindowRect(hWnd, &Rect); /*0x775bdd*/
+  CHAR ClassName[128]; // [esp+30h] [ebp-80h] BYREF
   GetClassNameA(hWnd, ClassName, 128); /*0x775bea*/
   if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x775c01*/
     SendMessageA(hWnd, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {
+  HWND WindowLongA; // eax
     WindowLongA = (HWND)GetWindowLongA(hWnd, -8); /*0x775c4b*/
     GetWindowRect(WindowLongA, &v10); /*0x775c57*/
     Rect.left -= v10.left; /*0x775c79*/
@@ -51,6 +47,7 @@ int DialogClass::Reposition(int hWnd, int a2)
     Rect.top -= v10.top; /*0x775c81*/
     Rect.bottom -= v10.top; /*0x775c85*/
   }
+  LONG right; // edi
   right = (LONG)dwInitParam; /*0x775c89*/
   if ( dwInitParam ) /*0x775c91*/
   {
@@ -58,6 +55,7 @@ int DialogClass::Reposition(int hWnd, int a2)
   }
   else
   {
+  HWND DialogParamA; // esi
     DialogParamA = CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0); /*0x775cac*/
     GetClientRect(DialogParamA, &v10); /*0x775cb4*/
     DestroyWindow(DialogParamA); /*0x775cbb*/
@@ -66,7 +64,9 @@ int DialogClass::Reposition(int hWnd, int a2)
     dwInitParam = (int)((HWND)v10.right); /*0x775cc9*/
     dword_B72F58 = v10.bottom; /*0x775ccf*/
   }
+  int v8; // [esp-8h] [ebp-B8h]
   v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/
+  int v7; // [esp-Ch] [ebp-BCh]
   v7 = dword_849DE0 * (Rect.right - Rect.left + 1) / right; /*0x775d1a*/
   Rect.left = Rect.left * dword_849DE0 / right; /*0x775d2e*/
   Rect.right = v7 + Rect.left - 1; /*0x775d32*/
@@ -81,9 +81,9 @@ namespace gamemd {
 ATOM DialogClass::RegisterWinClasses()
 {
 
-  int result; // eax
   WNDCLASSA WndClass; // [esp+0h] [ebp-28h] BYREF
 
+  int result; // eax
   result = 1; /*0x60d456*/
   if ( dword_AC48CC != 1 ) /*0x60d460*/
   {

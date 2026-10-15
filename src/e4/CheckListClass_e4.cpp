@@ -15,41 +15,35 @@
 namespace gamemd {  // G42.18 ns repair
 size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
+  unsigned int v19[4]; // [esp+4h] [ebp-F0h] BYREF
+
   ListClass *v7; // ecx
   ListClass *v8; // esi
-  size_t *result; // eax
-  int ListClass_field_0x0C; // edi
-  int Type; // ebx
-  int v12; // ecx
-  int v13; // eax
-  int ListClass_field_0x10; // eax
-  int v15; // eax
-  int v16; // [esp-20h] [ebp-114h]
-  size_t v17; // [esp-10h] [ebp-104h]
-  int v18; // [esp-10h] [ebp-104h]
-  unsigned int v19[4]; // [esp+4h] [ebp-F0h] BYREF
-  unsigned int v20[2]; // [esp+14h] [ebp-E0h] BYREF
-  unsigned char v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
-  unsigned short v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
-
   v8 = v7; /*0x488527*/
+  size_t *result; // eax
   result = (size_t *)(*(int (**)(void))(*(unsigned int *)v7->__pad_0 + 148))(); /*0x48852b*/
   if ( (int)this < (int)result )
   {
     result = (size_t *)Array::GetClamped((int)(v8), (int)this); /*0x488543*/
     if ( result )
     {
+  unsigned short v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
       memset(&v22[1], 0, 198); /*0x488560*/
+  size_t v17; // [esp-10h] [ebp-104h]
       v17 = *result; /*0x48856b*/
       v22[0] = result->X != 0 ? 3 : 32;
       v22[1] = 32; /*0x48857e*/
       swprintf(&v22[2], v17, a2); /*0x488585*/
+  int ListClass_field_0x0C; // edi
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
+  int Type; // ebx
       Type = BuildingAnim::GetType(); /*0x48859c*/
       if ( a6 ) /*0x4885a7*/
       {
         ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
+  int v12; // ecx
         v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * Type) + 796); /*0x4885bd*/
+  int v13; // eax
         if ( *(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4885c9*/
           v13 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&g_FileSystem_THEATER_PAL + 372) + v12); /*0x4885d6*/
         else
@@ -67,11 +61,17 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
       {
         ListClass_field_0x0C |= 0x1000u; /*0x488622*/
       }
+  int ListClass_field_0x10; // eax
       ListClass_field_0x10 = (unsigned int)(v8[1].ListClass_field_0x10);
+  unsigned int v20[2]; // [esp+14h] [ebp-E0h] BYREF
       v20[0] = (unsigned int)(a3); /*0x488639*/
+  int v18; // [esp-10h] [ebp-104h]
       v18 = ListClass_field_0x10; /*0x488643*/
       v20[1] = (unsigned int)(a4); /*0x488644*/
+  int v16; // [esp-20h] [ebp-114h]
       v16 = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * Type); /*0x488659*/
+  int v15; // eax
+  unsigned char v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
       v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))( /*0x488662*/
               g_DSurface_Hidden_2,
               v21);

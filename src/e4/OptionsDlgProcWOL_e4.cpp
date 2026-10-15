@@ -19,14 +19,14 @@
 namespace gamemd {  // G42.18 ns repair
 LRESULT OptionsDlgProcWOL_Assign(ObjectClass * aP0, WPARAM wParam, void ** a2)
 {
-  LRESULT v5; // esi
-  char *v6; // esi
-  LRESULT v7; // edi
 
+  LRESULT v5; // esi
   v5 = SendMessageA((HWND)(aP0), 0x149u, wParam, 0); /*0x623fd9*/
   if ( v5 <= 0 ) /*0x623fdd*/
     ((DeleteAndZero*)a2)->Alt2(); /*0x623fe3*/
+  char *v6; // esi
   v6 = (char *)operator new(v5 + 2); /*0x623ff4*/
+  LRESULT v7; // edi
   v7 = SendMessageA((HWND)(aP0), 0x4BDu, wParam, (LPARAM)v6); /*0x624000*/
   ((String *)(a2))->Assign_Alt(v6); /*0x624007*/
   operator delete((void *)(v6)); /*0x62400d*/

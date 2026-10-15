@@ -435,8 +435,8 @@ namespace gamemd {
 DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, int aP1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)a3->u32_4; /*0x488033*/
   *(unsigned int *)a3 = (unsigned int)(&vt_VectorClass); /*0x488036*/
   if ( v3 && *((unsigned char *)a3 + 13) ) /*0x488040*/
@@ -456,8 +456,8 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, 
 namespace gamemd {
 int * Buffer::RotateBufferCrypto(int * a2, int a3)
 {
-  int v4[64]; // [esp+8h] [ebp-100h] BYREF
 
+  int v4[64]; // [esp+8h] [ebp-100h] BYREF
   memcpy(v4, this, sizeof(v4)); /*0x632b8c*/
   RotateBitBufferLeft(v4, a3, 64); /*0x632b92*/
   memcpy(a2, v4, 0x100u); /*0x632ba9*/
@@ -469,21 +469,12 @@ namespace gamemd {
 int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 {
 
-  int Buffer_field_08; // edi
-  unsigned int *v7; // eax
-  int *v8; // esi
-  int v9; // eax
-  unsigned int v10; // eax
-  char *v11; // edi
-  int v12; // esi
-  int v13; // edx
-  int v14; // [esp+10h] [ebp-10h] BYREF
-  int v15; // [esp+18h] [ebp-8h]
-  unsigned char *v16; // [esp+28h] [ebp+8h]
 
+  int Buffer_field_08; // edi
   Buffer_field_08 = this->Buffer_field_08; /*0x6c89e9*/
   if ( Buffer_field_08 + 12 > (unsigned int)(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
+  int v15; // [esp+18h] [ebp-8h]
   v15 = this->Buffer_field_08; /*0x6c89fd*/
   this->Buffer_field_08 = Buffer_field_08 + 12; /*0x6c8a01*/
   if ( !Buffer_field_08 ) /*0x6c8a04*/
@@ -493,16 +484,23 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned short *)(Buffer_field_08 + 4) = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
   *(unsigned short *)(Buffer_field_08 + 6) = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
+  unsigned int *v7; // eax
+  int v14; // [esp+10h] [ebp-10h] BYREF
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
+  int *v8; // esi
   v8 = (int *)(aP1); /*0x6c8a49*/
+  unsigned char *v16; // [esp+28h] [ebp+8h]
   v16 = (unsigned char *)aP1->COMStub_Return0_23(*v7, v7->q004); /*0x6c8a61*/
+  int v9; // eax
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/
   v14 = 0; /*0x6c8a6a*/
   if ( v9 > 0 ) /*0x6c8a72*/
   {
     while ( 1 ) /*0x6c8a8a*/
     {
+  unsigned int v10; // eax
       v10 = Map_Append(v16, (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
+  char *v11; // edi
       v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
@@ -511,7 +509,9 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         return 0; /*0x6c8af2*/
       }
       memcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
+  int v13; // edx
       v13 = (int)(*aP1); /*0x6c8ac2*/
+  int v12; // esi
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/

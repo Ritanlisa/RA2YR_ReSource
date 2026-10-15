@@ -199,16 +199,12 @@ namespace gamemd {
 CCINIClass::CCINIClass()
 {
 
-  unsigned int *result; // eax
-  int *sectionHead; // esi
-  int *p_sectionCount; // ecx
-  int v4; // ebx
-  int v5; // edi
-  int v6; // edi
-  int v7; // edi
 
+  unsigned int *result; // eax
   result = this->INIClass; /*0x535b30*/
+  int *sectionHead; // esi
   sectionHead = this->sectionHead; /*0x535b36*/
+  int *p_sectionCount; // ecx
   p_sectionCount = &this->sectionCount; /*0x535b39*/
   result->headNode = 0; /*0x535b3c*/
   result->__pad_008 = 0; /*0x535b3f*/
@@ -221,9 +217,11 @@ CCINIClass::CCINIClass()
   result->u32_C = &vt_GenericList; /*0x535b5d*/
   if ( p_sectionCount ) /*0x535b64*/
   {
+  int v4; // ebx
     v4 = p_sectionCount[1]; /*0x535b66*/
     if ( v4 ) /*0x535b6b*/
     {
+  int v5; // edi
       v5 = p_sectionCount[2]; /*0x535b6d*/
       if ( v5 ) /*0x535b72*/
       {
@@ -234,9 +232,11 @@ CCINIClass::CCINIClass()
       }
     }
   }
+  int v6; // edi
   v6 = sectionHead->Prev; /*0x535b86*/
   p_sectionCount[2] = (int)sectionHead; /*0x535b89*/
   p_sectionCount[1] = v6; /*0x535b8c*/
+  int v7; // edi
   v7 = sectionHead->Prev; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = (unsigned int)(p_sectionCount); /*0x535b96*/
@@ -259,26 +259,25 @@ namespace gamemd {
 AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 {
 
-  int KeyCount; // ebx
-  int i; // edi
-  unsigned __int8 *StringByIndex; // eax
-  int result; // eax
-  int j; // edi
-  unsigned int *v9; // ecx
-  int k; // edi
-  char Destination[32]; // [esp+10h] [ebp-20h] BYREF
 
+  int KeyCount; // ebx
   KeyCount = INIClass::GetKeyCount(a1->__pad_0, (unsigned __int8 *)aAitriggertypes); /*0x41f4a6*/
+  int i; // edi
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
+  unsigned __int8 *StringByIndex; // eax
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, (unsigned __int8 *)aAitriggertypes, i); /*0x41f4b8*/
+  char Destination[32]; // [esp+10h] [ebp-20h] BYREF
     (a1)->GetString((unsigned __int8 *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/
+  int result; // eax
   result = dword_A8B210; /*0x41f4fa*/
+  int j; // edi
   for ( j = 0; j < dword_A8B210; ++j ) /*0x41f503*/
   {
+  unsigned int *v9; // ecx
     v9 = (unsigned int *)*((unsigned int *)dword_A8B204 + j); /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
       (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
@@ -288,6 +287,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   {
     INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes_0, 0); /*0x41f532*/
     result = dword_A8B210; /*0x41f537*/
+  int k; // edi
     for ( k = 0; k < dword_A8B210; ++k ) /*0x41f540*/
     {
       INIClass::SetBool( /*0x41f55e*/
@@ -308,21 +308,21 @@ namespace gamemd {
 IUnknown * CCINIClass::WriteHouses()
 {
 
-  int result; // eax
-  int i; // ebx
-  int v4; // esi
-  char Source[32]; // [esp+Ch] [ebp-40h] BYREF
-  char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
 
   INIClass::ClearSection((int)this, (int)g_INI_Key_Houses, 0); /*0x50116f*/
+  int result; // eax
   result = dword_A80238; /*0x501174*/
+  int i; // ebx
   for ( i = 0; i < dword_A80238; ++i ) /*0x50117d*/
   {
+  char Source[32]; // [esp+Ch] [ebp-40h] BYREF
     strcpy(Source, (const char *)(*&dword_A8022C->psychicDetectionBuildings + 90100)); /*0x5011ac*/
+  char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
     sprintf(Buffer, g_Str_Trace, i); /*0x5011ba*/
     INIClass::SetString(this, (unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = dword_A80238; /*0x5011d8*/
   }
+  int v4; // esi
   v4 = 0; /*0x5011e3*/
   if ( result > 0 ) /*0x5011e7*/
   {

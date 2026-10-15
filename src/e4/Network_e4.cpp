@@ -738,7 +738,6 @@ int Network::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1
 namespace gamemd {
 void * Network::initConnection(int a2, unsigned int * a3, char a4)
 {
-  int v8; // [esp+4h] [ebp-8h] BYREF
 
   if ( a2 < 0 ) /*0x4c6c5c*/
   {
@@ -752,6 +751,7 @@ void * Network::initConnection(int a2, unsigned int * a3, char a4)
     this->q008 = a2; /*0x4c6c5e*/
     a3 = a3; /*0x4c6c6b*/
     *this = 41; /*0x4c6c6f*/
+  int v8; // [esp+4h] [ebp-8h] BYREF
     ((Network *)(a3))->CopyAddress(&a2, (int)&v8); /*0x4c6c72*/
     a4 = a4; /*0x4c6c7b*/
     this->q008 = v8; /*0x4c6c7f*/
@@ -766,9 +766,8 @@ namespace gamemd {
 int Network::SendOffer()
 {
 
-  int result; // eax
-  int v2; // [esp+4h] [ebp-8h]
 
+  int result; // eax
   LOBYTE(result) = this->u8_1F6; /*0x4fc98b*/
   if ( !this->u32_1F7 ) /*0x4fc980*/
   {
@@ -780,6 +779,7 @@ int Network::SendOffer()
     {
       this->u8_1F6 = 1; /*0x4fc9a2*/
       this->u32_298 = *(unsigned int *)&TeamTypeClass_Array; /*0x4fc9b6*/
+  int v2; // [esp+4h] [ebp-8h]
       result = v2; /*0x4fc9b8*/
       this->u32_29C = v2; /*0x4fc9bc*/
       LOBYTE(result) = this->u8_1F6; /*0x4fc9bf*/
@@ -794,12 +794,8 @@ int Network::SendOffer()
 namespace gamemd {
 AbstractClass * * Network::Init()
 {
-  int v0; // ecx
-  int v1; // esi
-  void *v2; // eax
-  char v4; // [esp+Dh] [ebp-25h]
-  unsigned char v5[36]; // [esp+Eh] [ebp-24h] BYREF
 
+  int v0; // ecx
   v0 = dword_887628; /*0x52f3f0*/
   if ( dword_887628 ) /*0x52f3fe*/
   {
@@ -807,6 +803,7 @@ AbstractClass * * Network::Init()
     v0 = 0; /*0x52f406*/
     dword_887628 = 0; /*0x52f408*/
   }
+  int v1; // esi
   v1 = 0; /*0x52f414*/
   if ( dword_A83CA8 > 0 ) /*0x52f419*/
   {
@@ -822,6 +819,7 @@ AbstractClass * * Network::Init()
   }
   if ( !v0 ) /*0x52f441*/
   {
+  void *v2; // eax
     v2 = operator new(0x3F5CCu); /*0x52f448*/
     if ( v2 ) /*0x52f452*/
       v0 = ((Network *)(v2))->finalizeSession(); /*0x52f45b*/
@@ -833,6 +831,7 @@ AbstractClass * * Network::Init()
   v0->Bind_0(0); /*0x52f474*/
   Network::SetConnectionParams(30, -1, 600, 1); /*0x52f489*/
   Debug::Log(aAboutToInitial); /*0x52f493*/
+  char v4; // [esp+Dh] [ebp-25h]
   v4 = Network_Init_5DA6C0(); /*0x52f4a6*/
   dword_887628->Receive(); /*0x52f4ac*/
   dword_A8E2B2 = 0; /*0x52f4b3*/
@@ -871,6 +870,7 @@ AbstractClass * * Network::Init()
   RawFileClass::Construct(aRa2mdIni); /*0x52f59c*/
   INIClass::SetInt(aMultiplayer, aPortbase, dword_A8E228, 0); /*0x52f5b7*/
   INIClass::SetInt(aMultiplayer, aPortpool, dword_ABFED8, 0); /*0x52f5d3*/
+  unsigned char v5[36]; // [esp+Eh] [ebp-24h] BYREF
   INIClass::WriteDigest(v5, 0); /*0x52f5e3*/
   ((Network *)(&unk_B052D0))->validatePacket(); /*0x52f5ed*/
   byte_A8D60E = 1; /*0x52f5f6*/
@@ -883,10 +883,10 @@ namespace gamemd {
 int Network::GetAddress(unsigned int *a1, int aP2, unsigned short *a3)
 {
 
-  __int16 result; // ax
 
   *(unsigned int *)aP2 = this->q004; /*0x53ed6a*/
   aP2->q004 = this->q008; /*0x53ed71*/
+  __int16 result; // ax
   result = dword_828140; /*0x53ed75*/
   if ( dword_828140 == 1 ) /*0x53ed7d*/
   {
@@ -906,8 +906,8 @@ namespace gamemd {
 void * Network::CopyAddress(unsigned int *a2, int a3)
 {
 
-  char *result; // eax
 
+  char *result; // eax
   result = &this->q004; /*0x53eda4*/
   *(unsigned int *)a3 = this->q004; /*0x53edaa*/
   LOWORD(result) = this->q008; /*0x53edad*/
@@ -955,23 +955,19 @@ int Network::IsBroadcastAddr()
 namespace gamemd {
 int Network::processPacket(TechnoTypeClass * aP1)
 {
-  unsigned short *v4; // edi
-  int v5; // ecx
-  unsigned short *v6; // esi
-  bool v7; // zf
-  int v8; // ecx
-  unsigned short *v9; // edi
-  unsigned short *v10; // esi
-  bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ef6d*/
     return this->q004 != aP1->u32_4 || *(unsigned short *)this != *(unsigned short *)aP1; /*0x53ef8d*/
   if ( (*this || this->q004 || this->q008 || this->q00C) /*0x53efc8*/
     && (*(unsigned char *)aP1 || aP1->u32_1 || aP1->u32_2 || aP1->u32_3) )
   {
+  int v8; // ecx
     v8 = 3; /*0x53efe8*/
+  unsigned short *v9; // edi
     v9 = &aP1->u32_4; /*0x53efed*/
+  unsigned short *v10; // esi
     v10 = &this->q004; /*0x53eff0*/
+  bool v11; // zf
     v11 = 1; /*0x53eff3*/
     do /*0x53eff5*/
     {
@@ -983,9 +979,13 @@ int Network::processPacket(TechnoTypeClass * aP1)
     while ( v11 ); /*0x53eff5*/
     return !v11 || *(unsigned int *)this != *(unsigned int *)aP1; /*0x53f001*/
   }
+  unsigned short *v4; // edi
   v4 = &aP1->u32_4; /*0x53efcf*/
+  int v5; // ecx
   v5 = 3; /*0x53efd2*/
+  unsigned short *v6; // esi
   v6 = &this->q004; /*0x53efd7*/
+  bool v7; // zf
   v7 = 1; /*0x53efda*/
   do /*0x53efdc*/
   {
@@ -1021,10 +1021,6 @@ namespace gamemd {
 AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4, void *a5)
 {
 
-  int v6; // ecx
-  IPXManagerClass *v7; // eax
-  int Socket; // edx
-  int result; // eax
 
   this->q058 = aP1; /*0x540c75*/
   this->q05C = a3; /*0x540c78*/
@@ -1037,12 +1033,15 @@ AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4
       this->q058,
       this->q05C,
       this->u32_60);
+  int v6; // ecx
   v6 = 0; /*0x540cb4*/
   if ( this->u32_44 > 0 ) /*0x540cb8*/
   {
+  IPXManagerClass *v7; // eax
     v7 = &this->__pad_14; /*0x540cbb*/
     do /*0x540ce1*/
     {
+  int Socket; // edx
       Socket = v7->Socket; /*0x540cbe*/
       ++v6; /*0x540cc3*/
       v7 = (IPXManagerClass *)((char *)v7 + 4); /*0x540cc4*/
@@ -1052,6 +1051,7 @@ AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4
     }
     while ( v6 < this->u32_44 ); /*0x540ce1*/
   }
+  int result; // eax
   result = this->q050; /*0x540ce4*/
   if ( result ) /*0x540ce9*/
   {
@@ -1068,9 +1068,6 @@ AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4
 namespace gamemd {
 int Network::sendData(AnimClass * aP1)
 {
-  int v3; // ecx
-  int v4; // esi
-  int i; // eax
   void (__thiscall ***v7)(unsigned int, int); // ecx
   unsigned int *v9; // eax
   int v10; // ecx
@@ -1078,12 +1075,15 @@ int Network::sendData(AnimClass * aP1)
 
   if ( !this->q004 ) /*0x540f05*/
     return 0; /*0x540f05*/
+  int v3; // ecx
   v3 = this->u32_44; /*0x540f0c*/
   if ( !v3 ) /*0x540f11*/
     return 0; /*0x540f11*/
+  int v4; // esi
   v4 = 0; /*0x540f13*/
   if ( v3 <= 0 ) /*0x540f17*/
     return 0; /*0x540f2f*/
+  int i; // eax
   for ( i = &this->u32_28; *(unsigned int *)(this->u32_8C != aP1; i += 4 ) /*0x540f1d*/
   {
     if ( ++v4 >= v3 ) /*0x540f2d*/
@@ -1134,14 +1134,14 @@ namespace gamemd {
 int Network::GetClass(int a2)
 {
 
-  void *Network_field_0x44; // esi
-  int v3; // eax
-  int *i; // edx
 
+  void *Network_field_0x44; // esi
   Network_field_0x44 = this->u32_44; /*0x540fc2*/
+  int v3; // eax
   v3 = 0; /*0x540fc5*/
   if ( (int)Network_field_0x44 <= 0 ) /*0x540fca*/
     return 0; /*0x540fe2*/
+  int *i; // edx
   for ( i = this->u32_28; *(unsigned int *)(*i + 100) != a2; ++i ) /*0x540fd0*/
   {
     if ( ++v3 >= (int)Network_field_0x44 ) /*0x540fe0*/
@@ -1156,14 +1156,14 @@ namespace gamemd {
 int Network::FindPlayerByID(int aP1)
 {
 
-  void *Network_field_0x44; // esi
-  int v3; // eax
-  int *i; // edx
 
+  void *Network_field_0x44; // esi
   Network_field_0x44 = this->u32_44; /*0x541002*/
+  int v3; // eax
   v3 = 0; /*0x541005*/
   if ( (int)Network_field_0x44 <= 0 ) /*0x54100a*/
     return 0; /*0x541022*/
+  int *i; // edx
   for ( i = this->u32_28; *(unsigned int *)(*i + 100) != aP1; ++i ) /*0x541010*/
   {
     if ( ++v3 >= (int)Network_field_0x44 ) /*0x541020*/
@@ -1177,14 +1177,14 @@ int Network::FindPlayerByID(int aP1)
 namespace gamemd {
 int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
 {
-  int v8; // edi
-  int v9; // edi
 
   if ( !this->q004 || !this->u32_5 ) /*0x5410fa*/
     return 0; /*0x541169*/
+  int v8; // edi
   v8 = a4; /*0x541107*/
   if ( a4 && (!a5 || Network::IsBroadcastAddr((unsigned char *)a5)) ) /*0x541115*/
     v8 = 0; /*0x54111e*/
+  int v9; // edi
   v9 = this->u32_48->vt_slot_44(/*0x54113e*/
          this->u32_48, a2, a3, a5, v8, a6, a7);
   if ( !v9 ) /*0x541142*/
@@ -1199,17 +1199,10 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
 namespace gamemd {
 AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2, void *a5_1)
 {
-  int v6; // esi
-  int v8; // ebx
-  unsigned int *v9; // edx
-  char v10; // al
-  int v11; // esi
-  int v12; // ebx
-  int v13; // [esp+0h] [ebp-18h] BYREF
-  unsigned int v14[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   if ( dword_A8DA84 && !_wcsicmp(*(const wchar_t **)dword_A8DA78, a5_1) ) /*0x54127e*/
     return 0; /*0x54127e*/
+  int v6; // esi
   v6 = 1; /*0x54128f*/
   if ( dword_A8DA84 <= 1 ) /*0x541296*/
     return 0; /*0x541296*/
@@ -1218,18 +1211,24 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
     if ( ++v6 >= dword_A8DA84 ) /*0x5412b7*/
       return 0; /*0x5412b7*/
   }
+  int v8; // ebx
   v8 = a5_1; /*0x5412ca*/
+  unsigned int *v9; // edx
   v9 = *(unsigned int **)(dword_A8DA78 + 4 * v6); /*0x5412ce*/
   (*((unsigned short *)&(v6))) = *((unsigned short *)&dword_A8E2B2 + v6); /*0x5412d1*/
   v9 += 10; /*0x5412d9*/
+  unsigned int v14[3]; // [esp+Ch] [ebp-Ch] BYREF
   v14[0] = *v9; /*0x5412de*/
+  char v10; // al
   v10 = *(unsigned char *)(a5_1 + 4); /*0x5412e2*/
   v14[1] = v9[1]; /*0x5412e8*/
   v14[2] = v9[2]; /*0x5412f1*/
   if ( !v10 || !*(unsigned char *)(a5_1 + 5) ) /*0x5412f7*/
     return 0; /*0x5412b9*/
+  int v13; // [esp+0h] [ebp-18h] BYREF
   if ( a5_1 && (&v13 == (int *)-12 || Network::IsBroadcastAddr(v14)) ) /*0x54130e*/
     v8 = 0; /*0x541317*/
+  int v11; // esi
   v11 = (*(int (__thiscall **)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int **)(a5_1 + 72) + 44))( /*0x541334*/
           *(unsigned int *)(a5_1 + 72),
           a5_1,
@@ -1240,6 +1239,7 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
           0);
   if ( !v11 ) /*0x541338*/
   {
+  int v12; // ebx
     v12 = *(unsigned int *)(a5_1 + 160) + 1; /*0x541340*/
     *(unsigned int *)(a5_1 + 160) = v12; /*0x541341*/
     Debug::Log("Send overflow %d\n", v12); /*0x54134f*/
@@ -1279,8 +1279,8 @@ int Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
 namespace gamemd {
 int Network::receiveData(int a2)
 {
-  char result; // al
 
+  char result; // al
   result = this->q004; /*0x5413f0*/
   if ( result ) /*0x5413f5*/
   {
@@ -1295,16 +1295,16 @@ int Network::receiveData(int a2)
 namespace gamemd {
 int Network::SendPacket(int a2, int a3, unsigned char a4)
 {
-  int v5; // ecx
-  int v6; // edi
 
   if ( !this->q004 ) /*0x541413*/
     return 0; /*0x541413*/
   if ( !this->u32_5 ) /*0x54141a*/
     return 0; /*0x54141a*/
+  int v5; // ecx
   v5 = this->u32_4C; /*0x541421*/
   if ( !v5 ) /*0x541426*/
     return 0; /*0x541475*/
+  int v6; // edi
   v6 = (*(int (__stdcall **)(int, int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v5 + 44))(a2, a3, v5 + 76, a4, 0, 0); /*0x54144b*/
   if ( !v6 ) /*0x54144f*/
   {
@@ -1827,8 +1827,8 @@ namespace gamemd {
 int Network::GetLobbyStatus()
 {
 
-  int Network_field_0x48; // eax
 
+  int Network_field_0x48; // eax
   Network_field_0x48 = this->u32_48; /*0x5424c0*/
   if ( Network_field_0x48 ) /*0x5424c5*/
     return CellClass::GetBridgeIndex(Network_field_0x48->q004); /*0x5424ca*/
@@ -1842,8 +1842,8 @@ namespace gamemd {
 int Network::updateLatency()
 {
 
-  CellClass **Network_field_0x50; // eax
 
+  CellClass **Network_field_0x50; // eax
   Network_field_0x50 = (CellClass **)this->q050; /*0x542500*/
   if ( Network_field_0x50 ) /*0x542505*/
     return CellClass::GetBridgeIndex(Network_field_0x50[1]); /*0x54250a*/
@@ -1857,8 +1857,8 @@ namespace gamemd {
 unsigned int * Network::SetPlayerCoords(IPXManagerClass * aP1)
 {
 
-  unsigned int *result; // eax
 
+  unsigned int *result; // eax
   result = this->u32_4C; /*0x543050*/
   if ( result ) /*0x543055*/
   {
@@ -1876,8 +1876,8 @@ namespace gamemd {
 int Network::Disconnect()
 {
 
-  int result; // eax
 
+  int result; // eax
   result = this->u32_48; /*0x543080*/
   if ( result ) /*0x543085*/
     result->u32_C8 = 0; /*0x543087*/
@@ -2110,13 +2110,13 @@ namespace gamemd {
 int Network::dispatchEvent()
 {
 
-  int result; // eax
 
   this->q004 = (void *)INIClass::ReadInt_Overwrite( /*0x5d93fa*/
                                       (bool *)&CCINIClass_INI_RA2MD,
                                       (unsigned __int8 *)&stru_8263E0.Loop,
                                       (unsigned __int8 *)g_INI_Key_FirewallSettings,
                                       0);
+  int result; // eax
   result = INIClass::ReadInt_Overwrite( /*0x5d93fd*/
              (bool *)&CCINIClass_INI_RA2MD,
              (unsigned __int8 *)&stru_8263E0.Loop,
@@ -2874,18 +2874,18 @@ LABEL_19:
 namespace gamemd {
 int Network::processQueue()
 {
-  int result; // eax
-  Network **vtable3; // esi
-  int nextArrayIndex; // edi
-  Network *v4; // edx
 
+  int result; // eax
   result = 0; /*0x5e2ba6*/
   if ( stru_A80220.nextArrayIndex > 0 ) /*0x5e2baa*/
   {
+  Network **vtable3; // esi
     vtable3 = (Network **)stru_A80220.vfptr3; /*0x5e2bae*/
+  int nextArrayIndex; // edi
     nextArrayIndex = stru_A80220.nextArrayIndex; /*0x5e2bb5*/
     do /*0x5e2bda*/
     {
+  Network *v4; // edx
       v4 = *vtable3; /*0x5e2bb7*/
       if ( *vtable3 && v4->__pad_1AA[66] && !v4->Network_field_0x1F5[0] && v4 != this ) /*0x5e2bd3*/
         ++result; /*0x5e2bd5*/
@@ -3435,10 +3435,8 @@ namespace gamemd {
 void Network::Network_resetConnectionState()
 {
 
-  HWND Dialog; // eax
-  TechnoTypeClass *v3; // ecx
-  int v5; // [esp+0h] [ebp-4h]
 
+  HWND Dialog; // eax
   Dialog = (HWND)CreateDialog(0xEEu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))PhoneEditorDialogProc, 0); /*0x630b9f*/
   this->__pad_000 = (int)Dialog; /*0x630ba6*/
   if ( Dialog ) /*0x630ba8*/
@@ -3452,7 +3450,9 @@ void Network::Network_resetConnectionState()
     {
       if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x630bdb*/
         break; /*0x630bdb*/
+  TechnoTypeClass *v3; // ecx
       LOBYTE(v3) = 0; /*0x630bdd*/
+  int v5; // [esp+0h] [ebp-4h]
       ScreenSaver::Process(v3, v5); /*0x630bdf*/
     }
     Dialog::Destroy((Dialog *)this->__pad_000); /*0x630bed*/
@@ -3467,30 +3467,18 @@ void Network::Network_resetConnectionState()
 namespace gamemd {
 void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressScreenClass * aP2, ProgressScreenClass * aP3)
 {
-  int v4; // ebx
-  double v6; // st7
-  int v7; // ecx
-  double *v8; // eax
-  int result; // eax
-  double v11; // st7
-  double v12; // st6
-  int16_t v13; // fps
-  bool v14; // c0
-  char v15; // c2
-  bool v16; // c3
-  int v17; // ecx
-  double v18; // st7
-  double *v19; // eax
-  int v20; // eax
   void (__thiscall ***v21)(unsigned int, int, unsigned int *); // ecx
   HWND v22; // eax
   unsigned int v23[2]; // [esp+8h] [ebp-8h] BYREF
   int savedregs; // [esp+10h] [ebp+0h] BYREF
 
+  double v6; // st7
   v6 = 0.0; /*0x643c5c*/
+  int v7; // ecx
   v7 = this->u32_61; /*0x643c62*/
   if ( v7 > 0 ) /*0x643c6c*/
   {
+  double *v8; // eax
     v8 = &this->q020; /*0x643c6e*/
     do /*0x643c77*/
     {
@@ -3499,9 +3487,12 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
     }
     while ( v7 ); /*0x643c77*/
   }
+  int result; // eax
   (*((unsigned short *)&(result))) = Math::RoundToInt(v6); /*0x643c88*/
   result = result; /*0x643c90*/
+  double v11; // st7
   v11 = *&this->q008 * aP1 + 8); /*0x643c94*/
+  double v12; // st6
   v12 = this->u32_48 * 0.01 * aP2; /*0x643ca1*/
   *&this->q008 * aP1 + 8) = v12; /*0x643ca4*/
   if ( v12 > this->u32_48 ) /*0x643cb0*/
@@ -3510,16 +3501,23 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
     result = this->u32_4C; /*0x643cb9*/
     *&this->q008 * aP1 + 12) = result; /*0x643cbc*/
   }
+  bool v14; // c0
   v14 = v11 < *&this->q008 * aP1 + 8); /*0x643cc0*/
+  char v15; // c2
   v15 = 0; /*0x643cc0*/
+  bool v16; // c3
   v16 = v11 == *&this->q008 * aP1 + 8); /*0x643cc0*/
+  int16_t v13; // fps
   (*((unsigned short *)&(result))) = v13; /*0x643cc4*/
   if ( v11 != *&this->q008 * aP1 + 8) ) /*0x643cc9*/
   {
+  int v17; // ecx
     v17 = this->u32_61; /*0x643ccf*/
+  double v18; // st7
     v18 = 0.0; /*0x643cd3*/
     if ( v17 > 0 ) /*0x643cdf*/
     {
+  double *v19; // eax
       v19 = &this->q020; /*0x643ce1*/
       do /*0x643cea*/
       {
@@ -3529,6 +3527,7 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
       while ( v17 ); /*0x643cea*/
     }
     v23[0] = result; /*0x643cf0*/
+  int v20; // eax
     (*((unsigned short *)&(v20))) = Math::RoundToInt(v18); /*0x643cff*/
     v21 = *(void (__thiscall ****)(unsigned int, int, unsigned int *))&this->q010; /*0x643d04*/
     v23[1] = v20; /*0x643d07*/
@@ -3537,6 +3536,7 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
     v22 = this->q190; /*0x643d26*/
     if ( v22 ) /*0x643d2b*/
       return SendMessageA(v22, 0xFu, 0, 0); /*0x643d34*/
+  int v4; // ebx
     else
       return LoadScreen::Render(v4, (int)&savedregs, aP3); /*0x643d4b*/
   }
@@ -3547,10 +3547,10 @@ void Network::Network_UpdateLatencyDisplay( ProgressScreenClass * aP1, ProgressS
 namespace gamemd {
 int sub_646D70()
 {
-  int result; // eax
 
   if ( dword_A8B238[0] == 4 ) /*0x646d77*/
     return Network::Disconnect(unk_A8E9C0); /*0x646d7e*/
+  int result; // eax
   return result; /*0x646d83*/
 }
 }
@@ -3558,10 +3558,8 @@ int sub_646D70()
 namespace gamemd {
 int Network::AddFrameEvent()
 {
-  char *v1; // eax
-  uint8_t v3; // [esp+0h] [ebp-74h]
-  char v4[112]; // [esp+4h] [ebp-70h] BYREF
 
+  uint8_t v3; // [esp+0h] [ebp-74h]
   v3 = 19; /*0x6471a8*/
   if ( *(unsigned int *)&dword_A8B238 == 4 /*0x6471cb*/
     && byte_A8DBA0
@@ -3570,6 +3568,8 @@ int Network::AddFrameEvent()
   {
     v3 = 39; /*0x6471d4*/
   }
+  char *v1; // eax
+  char v4[112]; // [esp+4h] [ebp-70h] BYREF
   v1 = EventClass::AddEvent(v4, (int)dword_A83D4C->relatedTagsCount, v3); /*0x6471ec*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x6471fb*/
     return 0; /*0x647254*/
@@ -3669,14 +3669,14 @@ AbstractClass * * Network::QueueProcessingLoop(void *a1)
 namespace gamemd {
 int Network::syncGameState(void *a1_1)
 {
-  int v2; // ebx
-  int result; // eax
 
+  int v2; // ebx
   v2 = operator new(0x1C7u); /*0x64ac9f*/
   memcpy((void *)v2, a1_1, 0x1C4u); /*0x64acab*/
   a1_1 = &a1_1->Network_1C4; /*0x64acab*/
   *(unsigned short *)(v2 + 452) = a1_1->__pad_000; /*0x64acad*/
   *(unsigned char *)(v2 + 454) = (a1_1->u32_2); /*0x64acaf*/
+  int result; // eax
   result = *(unsigned int *)DataGlobal_A8BB30; /*0x64acb0*/
   if ( *(int *)&DataGlobal_A8BB38 < *(int *)DataGlobal_A8BB30 /*0x64aceb*/
     || (DataGlobal_A8BB35 || !*(unsigned int *)DataGlobal_A8BB30)

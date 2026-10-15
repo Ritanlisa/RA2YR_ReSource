@@ -13,12 +13,10 @@ namespace gamemd {  // G42.18 ns repair
 int RawFileClass::Dtor(void *a1)
 {
 
-  int result; // eax
   FileClass v3; // edi
-  DWORD LastError; // eax
-  int v5; // [esp-8h] [ebp-Ch]
 
   this->FileClass = (FileClass)&vt_RawFileClass; /*0x65ca03*/
+  int result; // eax
   result = RawFileClass::Write(this); /*0x65ca09*/
   if ( (unsigned char)result ) /*0x65ca11*/
   {
@@ -26,7 +24,9 @@ int RawFileClass::Dtor(void *a1)
     if ( !result ) /*0x65ca1f*/
     {
       v3 = this->FileClass; /*0x65ca25*/
+  int v5; // [esp-8h] [ebp-Ch]
       v5 = *(unsigned int *)this->FileNameAllocated; /*0x65ca27*/
+  DWORD LastError; // eax
       LastError = GetLastError(); /*0x65ca29*/
       result = (*(int (**)(BufferIOFileClass *, DWORD, unsigned int, int))(*(unsigned int *)&v3 + 64))( /*0x65ca32*/
                  this,

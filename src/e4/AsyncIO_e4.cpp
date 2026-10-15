@@ -24,12 +24,12 @@ namespace gamemd {  // G42.18 ns repair
 char AsyncIO::Shutdown(void *a1)
 {
 
-  int v1; // esi
-  unsigned int *i; // eax
   void (***v3)(unsigned int, int); // ecx
   char result; // al
 
+  int v1; // esi
   v1 = 0; /*0x5bf459*/
+  unsigned int *i; // eax
   for ( i = AsyncIO_Instance; v1 < g_AsyncIOState; ++v1 ) /*0x5bf462*/
   {
     v3 = (void (***)(unsigned int, int))i[v1]; /*0x5bf464*/
@@ -66,23 +66,22 @@ char AsyncIO::Shutdown(void *a1)
 namespace gamemd {
 int AsyncIO::WaitCompletion(void *a1)
 {
-  char v2; // al
-  int v4; // eax
-  DWORD NumberOfBytesTransferred; // [esp+4h] [ebp-1Ch] BYREF
-  int Ticks; // [esp+8h] [ebp-18h]
-  int v9; // [esp+10h] [ebp-10h]
-  int v10; // [esp+18h] [ebp-8h]
 
+  int Ticks; // [esp+8h] [ebp-18h]
   Ticks = TimerGetTicks(); /*0x774bcf*/
+  char v2; // al
   v2 = this->u8_51; /*0x774bd3*/
+  int v9; // [esp+10h] [ebp-10h]
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
     Ticks = TimerGetTicks(); /*0x774bf4*/
+  int v10; // [esp+18h] [ebp-8h]
     v10 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
     {
+  DWORD NumberOfBytesTransferred; // [esp+4h] [ebp-1Ch] BYREF
       if ( GetOverlappedResult(*(unsigned int *)this->q146 + 42), (LPOVERLAPPED)this->q092 + 94), &NumberOfBytesTransferred, 0) /*0x774c29*/
         || GetLastError() != 996 )
       {
@@ -91,6 +90,7 @@ int AsyncIO::WaitCompletion(void *a1)
       v9 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
+  int v4; // eax
         v4 = TimerGetTicks() - Ticks; /*0x774c41*/
         if ( v4 >= v9 ) /*0x774c47*/
           break; /*0x774c47*/
@@ -107,8 +107,8 @@ int AsyncIO::WaitCompletion(void *a1)
 namespace gamemd {
 int AsyncIO::Read(void *a1, void *a2, void *a3)
 {
-  int result; // eax
 
+  int result; // eax
   result = g_AsyncIOState; /*0x5bf500*/
   if ( g_AsyncIOState > 0 ) /*0x5bf507*/
     return (*(int (**)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/

@@ -67,8 +67,8 @@ wchar_t * DeleteCommandClass::Read(void *a1, void *a2, void *a3)
 namespace gamemd {
 void DeleteCommandClass_28::ClearBuffer(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->q004; /*0x53c4c6*/
   a1_1->q010 = 0; /*0x53c4c9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x53c4d0*/
@@ -104,18 +104,18 @@ int DeleteCommandClass_28::Seek(int a2, void *a2_2, void *a3_1)
 namespace gamemd {
 char DeleteCommandClass_28::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x53c522*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x53c52d*/
   {
+  int v3; // edx
     v3 = 0; /*0x53c52f*/
     if ( m_8 <= 0 ) /*0x53c533*/
       return 1; /*0x53c553*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x53c535*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x53c53b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x53c544*/
     {
@@ -134,13 +134,11 @@ namespace gamemd {
 char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x53c56c*/
   {
     LOBYTE(this->m_C) = 0; /*0x53c576*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
@@ -150,9 +148,11 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x53c5a5*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x53c5ac*/
         if ( a2 < m_8 ) /*0x53c5b1*/
           m_8 = a2; /*0x53c5b3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x53c5b9*/
           ++i; /*0x53c5be*/
         if ( BYTE1(this->m_C) ) /*0x53c5cb*/
@@ -198,16 +198,16 @@ void DeleteCommandClass_28::ddtor(void *a1)
 namespace gamemd {
 int DeleteCommandClass_28::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*(unsigned int *)&a2_2->q00C))) ) /*0x53c640*/
     return 0; /*0x53c648*/
+  int m_8; // edx
   m_8 = a2_2->q008; /*0x53c64e*/
+  int result; // eax
   result = 0; /*0x53c651*/
   if ( m_8 <= 0 ) /*0x53c655*/
     return -1; /*0x53c66c*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x53c65b*/
   {
     if ( ++result >= m_8 ) /*0x53c66a*/
@@ -233,14 +233,11 @@ namespace gamemd {
 char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x53c6ac*/
   {
     LOBYTE(this->m_C) = 0; /*0x53c6b2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
@@ -250,9 +247,11 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x53c74a*/
     if ( *&this->q004 ) /*0x53c6d8*/
     {
+  int m_8; // ecx
       m_8 = this->m_8; /*0x53c6df*/
       if ( a2 < m_8 ) /*0x53c6e4*/
         m_8 = a2; /*0x53c6e6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x53c6ec*/
         ++i; /*0x53c6f1*/
       if ( BYTE1(this->m_C) ) /*0x53c6fe*/
@@ -269,6 +268,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x53c72e*/
   }
+  int v7; // eax
   v7 = this->m_8; /*0x53c731*/
   if ( v7 < this->m_10 ) /*0x53c739*/
     this->m_10 = v7; /*0x53c73b*/
@@ -281,14 +281,14 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int DeleteCommandClass_28::FindItem(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x53c750*/
+  int result; // eax
   result = 0; /*0x53c753*/
   if ( m_10 <= 0 ) /*0x53c758*/
     return -1; /*0x53c76f*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x53c75e*/
   {
     if ( ++result >= m_10 ) /*0x53c76d*/
@@ -301,8 +301,8 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x53c783*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x53c786*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x53c790*/
@@ -323,8 +323,8 @@ namespace gamemd {
 int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1, void *a4)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x53c7d3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x53c7d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53c7e0*/

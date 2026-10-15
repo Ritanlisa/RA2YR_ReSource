@@ -16,8 +16,8 @@
 namespace gamemd {  // G42.18 ns repair
 char sub_72CBA0()
 {
-  char result; // al
 
+  char result; // al
   result = byte_B0FC7C; /*0x72cba0*/
   if ( !byte_B0FC7C ) /*0x72cba7*/
   {

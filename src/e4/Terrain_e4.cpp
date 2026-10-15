@@ -3098,41 +3098,41 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
 namespace gamemd {
 unsigned int * Terrain::ClimbCheck(AbstractClass * aP0, AbstractClass * aP1)
 {
-  int v2; // ecx
-  int v3; // esi
-  int v4; // edi
-  bool v5; // bl
-  int v6; // ebp
-  int v7; // edi
-  unsigned int *v8; // eax
-  int v9; // ecx
-  int v10; // ecx
   unsigned int *v12; // [esp+10h] [ebp-18h] BYREF
-  unsigned int *v13; // [esp+14h] [ebp-14h]
-  int v14; // [esp+18h] [ebp-10h]
-  int v15; // [esp+24h] [ebp-4h]
 
+  int v2; // ecx
   v2 = *aP1 / 256; /*0x6d6434*/
   (*(((unsigned short *)&(aP1)) + 1)) = aP1[1] / 256; /*0x6d6440*/
   (*((unsigned short *)&(aP1))) = v2; /*0x6d6445*/
+  int v3; // esi
   v3 = ((int16_t)v2 << 8) + 128; /*0x6d6462*/
+  int v4; // edi
   v4 = ((*((signed short *)(((unsigned char *)&(aP1)) + 2))) << 8) + 128; /*0x6d6468*/
+  bool v5; // bl
   v5 = (*((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP1) + 80) & 0x1000) != 0; /*0x6d6486*/
+  int v6; // ebp
   v6 = v4 + 1536; /*0x6d649d*/
+  int v14; // [esp+18h] [ebp-10h]
   v14 = *((char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&aP1) + 283); /*0x6d64a3*/
+  int v7; // edi
   v7 = v3 + 1536; /*0x6d64a7*/
+  int v15; // [esp+24h] [ebp-4h]
   v15 = 0; /*0x6d64a9*/
   while ( 1 ) /*0x6d64b1*/
   {
     v7 -= 8; /*0x6d64b1*/
     v6 -= 8; /*0x6d64c1*/
+  unsigned int *v13; // [esp+14h] [ebp-14h]
     (*((unsigned short *)&(v13))) = v7 / 256; /*0x6d64c9*/
     (*(((unsigned short *)&(v13)) + 1)) = v6 / 256; /*0x6d64e0*/
     v12 = v13; /*0x6d64e9*/
+  unsigned int *v8; // eax
     v8 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v12); /*0x6d64f3*/
+  int v9; // ecx
     v9 = *(&v8->u32_11B) - v14; /*0x6d64ff*/
     if ( v5 ) /*0x6d6505*/
       v9 += 4 * ((v8->u32_140 >> 8) & 1); /*0x6d6513*/
+  int v10; // ecx
     v10 = v9 << 7; /*0x6d6516*/
     if ( (int16_t)((v7 - v10) / 256) <= (int16_t)aP1 && (int16_t)((v6 - v10) / 256) <= (*((signed short *)(((unsigned char *)&(aP1)) + 2))) ) /*0x6d654e*/
       break; /*0x6d654e*/
@@ -3152,10 +3152,10 @@ namespace gamemd {
 int Terrain::LookupByName(void *a1)
 {
 
-  int v2; // esi
 
   if ( !this ) /*0x71dd86*/
     return -1; /*0x71dd86*/
+  int v2; // esi
   v2 = 0; /*0x71dd8d*/
   if ( dword_A8E328 <= 0 ) /*0x71dd91*/
     return -1; /*0x71ddb6*/

@@ -460,8 +460,8 @@ int TriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x727bfb*/
   if ( result >= 0 ) /*0x727c02*/
   {
@@ -487,8 +487,8 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 namespace gamemd {
 int TriggerTypeClass::Write(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x727c8f*/
   if ( result >= 0 ) /*0x727c96*/
     return 0; /*0x727c98*/

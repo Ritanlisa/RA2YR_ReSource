@@ -103,34 +103,21 @@
 namespace gamemd {  // G42.18 ns repair
 uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-  int *v3; // edi
-  unsigned int *v4; // eax
-  unsigned char *v5; // esi
-  int v6; // edi
-  unsigned int *v7; // ebp
-  unsigned char *v8; // ecx
-  unsigned int *v9; // eax
-  int v10; // edx
-  int *v11; // ebx
-  unsigned char *v12; // ecx
-  int v13; // edi
-  int v14; // ebp
-  unsigned char *v15; // edx
-  unsigned int *v16; // eax
-  int v17; // esi
-  uint8_t result; // al
-  int *v19; // [esp+10h] [ebp-4h]
-  int v20; // [esp+18h] [ebp+4h]
 
+  int *v3; // edi
   v3 = (int *)(dword_ABF168);
   dword_ABF230 = (unsigned int)(aP0); /*0x5bc190*/
   dword_ABF234 = (unsigned int)(a2); /*0x5bc196*/
   byte_ABF238 = a3; /*0x5bc19c*/
+  int v20; // [esp+18h] [ebp+4h]
   v20 = 0; /*0x5bc1a1*/
+  int *v19; // [esp+10h] [ebp-4h]
   v19 = (int *)(dword_ABF168); /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
+  unsigned int *v4; // eax
     v4 = (unsigned int *)((unsigned char *)(operator new(0x2738u)));
+  unsigned char *v5; // esi
     v5 = (unsigned char *)(v4); /*0x5bc1b3*/
     if ( v4 ) /*0x5bc1ba*/
     {
@@ -141,12 +128,17 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
       v4[2506] = 0; /*0x5bc1d8*/
       v4[2507] = 80; /*0x5bc1de*/
       v4[2508] = 25; /*0x5bc1e8*/
+  int v6; // edi
       v6 = 0; /*0x5bc1f2*/
+  unsigned int *v7; // ebp
       v7 = v4 + 500; /*0x5bc1f4*/
       do /*0x5bc219*/
       {
+  unsigned char *v8; // ecx
         v8 = &v5[v6]; /*0x5bc1fa*/
+  unsigned int *v9; // eax
         v9 = v7; /*0x5bc1fd*/
+  int v10; // edx
         v10 = 80; /*0x5bc1ff*/
         do /*0x5bc210*/
         {
@@ -174,17 +166,24 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     v19 = v3; /*0x5bc24b*/
   }
   while ( (int)v3 < (int)&dword_ABF188 ); /*0x5bc24f*/
+  int *v11; // ebx
   v11 = (int *)(dword_ABF168); /*0x5bc25b*/
   dword_ABF23C = ((unsigned int *)(dword_ABF168))[0]; /*0x5bc260*/
   do /*0x5bc2b2*/
   {
+  unsigned char *v12; // ecx
     v12 = (unsigned char *)*v11; /*0x5bc266*/
+  int v13; // edi
     v13 = 0; /*0x5bc268*/
+  int v14; // ebp
     v14 = *v11 + 2000; /*0x5bc26a*/
     do /*0x5bc293*/
     {
+  unsigned char *v15; // edx
       v15 = &v12[v13]; /*0x5bc270*/
+  unsigned int *v16; // eax
       v16 = (unsigned int *)v14; /*0x5bc273*/
+  int v17; // esi
       v17 = 80; /*0x5bc275*/
       do /*0x5bc28a*/
       {
@@ -204,6 +203,7 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     ++v11; /*0x5bc2a9*/
   }
   while ( (int)v11 < (int)&dword_ABF188 ); /*0x5bc2b2*/
+  uint8_t result; // al
   result = byte_ABF239; /*0x5bc2b4*/
   if ( byte_ABF239 ) /*0x5bc2bf*/
   {
@@ -224,19 +224,17 @@ uint8_t WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 namespace gamemd {  // G42.18c ns repair
 int WinMain::Constructor_VectorClass_Wstring_()
 {
-  int i; // ebp
-  int v3; // esi
-  void *v4; // eax
-  int j; // esi
-  int k; // esi
 
+  int i; // ebp
   for ( i = 0; i < this->u32_6A0; ++i ) /*0x69a200*/
   {
+  int v3; // esi
     v3 = *(unsigned int *)(this->u32_694 + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
       v3->u32_1A4 = &vt_VectorClass; /*0x69a215*/
       VectorClass_Wstring::ddtor(&v3->u32_1A4); /*0x69a21b*/
+  void *v4; // eax
       v4 = v3->u32_18C; /*0x69a220*/
       v3->u32_188 = &vt_VectorClass; /*0x69a226*/
       if ( v4 && v3->q195 ) /*0x69a234*/
@@ -250,9 +248,11 @@ int WinMain::Constructor_VectorClass_Wstring_()
     }
   }
   (*(void (**)(WinMain *))(this->u32_690 + 12))this->q1696 + 938); /*0x69a277*/
+  int j; // esi
   for ( j = 0; j < this->u32_2924; ++j ) /*0x69a284*/
     operator delete((void *)(*(void **)(this->u32_2918 + 4 * j))); /*0x69a290*/
   (*(void (**)(WinMain *))(this->u32_2914 + 12))this->q9779 + 3287); /*0x69a2af*/
+  int k; // esi
   for ( k = 0; k < this->u32_290C; ++k ) /*0x69a2bc*/
   {
     if ( *(unsigned int *)(this->u32_2900 + 4 * k) ) /*0x69a2c4*/
@@ -266,23 +266,20 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * WinMain::ShutdownCleanup(void *a1)
 {
 
-  void **i; // eax
-  void **v2; // ecx
-  int j; // esi
-  void **v4; // ecx
-  int k; // esi
-  unsigned int *result; // eax
   unsigned int *v7; // esi
 
+  void **i; // eax
   for ( i = (void **)dword_B1CF8C; dword_B1CF8C; i = (void **)dword_B1CF8C ) /*0x734d3b*/
   {
     dword_B1CF8C = (unsigned int)(*i); /*0x734d40*/
     __3_YAXPAX_Z(i); /*0x734d46*/
   }
+  void **v2; // ecx
   v2 = (void **)dword_B1CF78; /*0x734d57*/
   dword_B1CF8C = 0; /*0x734d5d*/
   if ( dword_B1CF78 ) /*0x734d65*/
   {
+  int j; // esi
     for ( j = 0; j < dword_B1CF70; ++j ) /*0x734d70*/
     {
       if ( v2[j] ) /*0x734d72*/
@@ -294,9 +291,11 @@ unsigned int * WinMain::ShutdownCleanup(void *a1)
     __3_YAXPAX_Z(v2); /*0x734d93*/
     dword_B1CF78 = 0; /*0x734d9b*/
   }
+  void **v4; // ecx
   v4 = (void **)dword_B1CF7C; /*0x734da1*/
   if ( dword_B1CF7C ) /*0x734da9*/
   {
+  int k; // esi
     for ( k = 0; k < dword_B1CF70; ++k ) /*0x734db4*/
     {
       if ( v4[k] ) /*0x734db6*/
@@ -313,6 +312,7 @@ unsigned int * WinMain::ShutdownCleanup(void *a1)
     __3_YAXPAX_Z(dword_B1CF74); /*0x734def*/
     dword_B1CF74 = 0; /*0x734df7*/
   }
+  unsigned int *result; // eax
   result = (unsigned int *)(dword_B1CF88); /*0x734dfd*/
   if ( dword_B1CF88 ) /*0x734e04*/
   {
@@ -334,10 +334,10 @@ unsigned int * WinMain::ShutdownCleanup(void *a1)
 namespace gamemd {
 char sub_5D7E50()
 {
-  int i; // ebp
   char result; // al
   void (***v3)(unsigned int, int); // ecx
 
+  int i; // ebp
   for ( i = 0; ; ++i ) /*0x5d7e56*/
   {
     result = g_MultiplayerMode; /*0x5d7e62*/
@@ -376,10 +376,8 @@ char sub_5D7E50()
 namespace gamemd {
 void* sub_7B84F0()
 {
-  HANDLE result; // eax
-  DWORD LastError; // eax
-  CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
 
+  HANDLE result; // eax
   result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
@@ -404,7 +402,9 @@ void* sub_7B84F0()
         result = (HANDLE)SetThreadPriority(result, 15); /*0x7b8582*/
         if ( !result ) /*0x7b858a*/
         {
+  DWORD LastError; // eax
           LastError = GetLastError(); /*0x7b8598*/
+  CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
           FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x7b85a5*/
           Debug::Log(); /*0x7b85b5*/
           while ( !dword_B78140 ) /*0x7b85c4*/
@@ -423,9 +423,8 @@ void* sub_7B84F0()
 namespace gamemd {  // G42.18c ns repair
 LSTATUS WinMain::CleanupResource()
 {
-  int result; // eax
-  HKEY phkResult; // [esp+0h] [ebp-4h] BYREF
 
+  HKEY phkResult; // [esp+0h] [ebp-4h] BYREF
   phkResult = (HKEY)this; /*0x49f8b0*/
   Debug::Log(); /*0x49f8b6*/
   if ( g_DDrawSurfaceManager.description[6] ) /*0x49f8c5*/
@@ -433,6 +432,7 @@ LSTATUS WinMain::CleanupResource()
     UnmapViewOfFile((LPCVOID)g_DDrawSurfaceManager.description[6]); /*0x49f8c8*/
     g_DDrawSurfaceManager.description[6] = 0; /*0x49f8ce*/
   }
+  int result; // eax
   result = RegOpenKeyExA(HKEY_CLASSES_ROOT,(LPCSTR)(SubKey), 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
   if ( !result ) /*0x49f8f6*/
   {
@@ -446,7 +446,6 @@ LSTATUS WinMain::CleanupResource()
 namespace gamemd {
 void sub_53E6B0()
 {
-  signed int SampleSize; // eax
 
   if ( dword_AA0448 ) /*0x53e6b7*/
   {
@@ -455,6 +454,7 @@ void sub_53E6B0()
     {
       if ( dword_AA0464 ) /*0x53e6e7*/
       {
+  signed int SampleSize; // eax
         SampleSize = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e6eb*/
         WriteAudioStreamToFile(dword_AA0464,(FILE *)(dword_AA0468), SampleSize, 0); /*0x53e6fd*/
         fflush((FILE *)(dword_AA0468)); /*0x53e708*/

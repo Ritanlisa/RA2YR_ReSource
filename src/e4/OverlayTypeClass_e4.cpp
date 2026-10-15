@@ -134,45 +134,23 @@ LABEL_11:
 namespace gamemd {  // G42.18c ns repair
 AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
 {
-  AnimTypeClass *INIString; // eax
-  int v4; // ecx
-  int Int_Overwrite; // eax
-  char Bool_Overwrite; // al
-  char IsVeins; // cl
-  char v8; // al
-  char v9; // al
-  char v10; // cl
-  char v11; // al
-  int DamageLevels; // ebp
   unsigned int *v13; // eax
-  AnimTypeClass *CellAnim; // eax
-  int Coord; // eax
-  char v16; // al
-  char ChainReaction; // cl
-  char v18; // al
-  char v19; // al
-  char v20; // cl
-  char v21; // al
-  char NoUseTileLandType; // [esp-Ch] [ebp-298h]
-  char ImageLoaded; // [esp-Ch] [ebp-298h]
-  char Explodes; // [esp-Ch] [ebp-298h]
-  char Overrides; // [esp-Ch] [ebp-298h]
-  char v27; // [esp-Ch] [ebp-298h]
-  int v28; // [esp+8h] [ebp-284h] BYREF
-  char Destination[128]; // [esp+Ch] [ebp-280h] BYREF
-  char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)a2); /*0x5fe783*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)aP1))->LoadFromINI(a2) ) /*0x5fe78b*/
     return 0; /*0x5fea1f*/
+  AnimTypeClass *INIString; // eax
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                                  (OverlayTypeClass *)a2,
                                  (uint8_t *)aP1->__pad_24,
                                  aLand,
                                  (unsigned int)aP1->CellAnim);
+  int v4; // ecx
   v4 = *(unsigned int *)&aP1->Wall; /*0x5fe7b1*/
   aP1->CellAnim = INIString; /*0x5fe7b7*/
+  int Int_Overwrite; // eax
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (uint8_t *)aP1->__pad_24, aStrength, v4); /*0x5fe7c6*/
+  char NoUseTileLandType; // [esp-Ch] [ebp-298h]
   NoUseTileLandType = aP1->NoUseTileLandType; /*0x5fe7d3*/
   *(unsigned int *)&aP1->Wall = Int_Overwrite; /*0x5fe7da*/
   aP1->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
@@ -180,14 +158,18 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                               (uint8_t *)aP1->__pad_24,
                               g_INI_Key_Wall,
                               NoUseTileLandType);
+  char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5fe7fa*/
                      (int *)a2,
                      (uint8_t *)aP1->__pad_24,
                      (uint8_t *)g_INI_Key_Tiberium,
                      aP1->IsVeinholeMonster);
+  char IsVeins; // cl
   IsVeins = aP1->IsVeins; /*0x5fe7ff*/
   aP1->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
+  char v8; // al
   v8 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aCrate, IsVeins); /*0x5fe814*/
+  char ImageLoaded; // [esp-Ch] [ebp-298h]
   ImageLoaded = aP1->ImageLoaded; /*0x5fe821*/
   aP1->IsVeins = v8; /*0x5fe828*/
   aP1->ImageLoaded = INIClass::ReadBool_Overwrite( /*0x5fe833*/
@@ -195,12 +177,17 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                         (uint8_t *)aP1->__pad_24,
                         aCratetrigger,
                         ImageLoaded);
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aExplodes, aP1->IsRubble); /*0x5fe848*/
+  char v10; // cl
   v10 = aP1->RadarColor[0]; /*0x5fe84d*/
   aP1->IsRubble = v9; /*0x5fe853*/
+  char v11; // al
   v11 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aOverrides, v10); /*0x5fe862*/
+  int DamageLevels; // ebp
   DamageLevels = aP1->DamageLevels; /*0x5fe867*/
   aP1->RadarColor[0] = v11; /*0x5fe884*/
+  char Destination[128]; // [esp+Ch] [ebp-280h] BYREF
   if ( INIClass::GetString( /*0x5fe88a*/
          (INIClass *)a2,
          (uint8_t *)aP1->__pad_24,
@@ -223,6 +210,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                        aP1->Strength_2);
   if ( aP1->IsVeinholeMonster ) /*0x5fe8c9*/
   {
+  AnimTypeClass *CellAnim; // eax
     CellAnim = aP1->CellAnim; /*0x5fe8d3*/
     aP1->Armor[0] = 6; /*0x5fe8d9*/
     if ( !CellAnim ) /*0x5fe8e5*/
@@ -230,9 +218,12 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   if ( !aP1->Theater && !aP1->DrawFlat ) /*0x5fe8fb*/
   {
+  char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
     _makepath(Buffer, 0, 0, aP1->ImageFile, Ext); /*0x5fe917*/
     aP1->Image = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x5fe92d*/
   }
+  int Coord; // eax
+  int v28; // [esp+8h] [ebp-284h] BYREF
   Coord = INIClass::GetCoord( /*0x5fe947*/
             (INIClass *)a2,
             (int)&v28,
@@ -240,19 +231,28 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
             aRadarcolor,
             (uint8_t *)&aP1->__tail_2B5[1]);
   *(unsigned short *)&aP1->__tail_2B5[1] = *(unsigned short *)Coord; /*0x5fe94f*/
+  char Explodes; // [esp-Ch] [ebp-298h]
   Explodes = aP1->Explodes; /*0x5fe95e*/
   *((unsigned char *)aP1 + 696) = *(unsigned char *)(Coord + 2); /*0x5fe965*/
+  char v16; // al
   v16 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aNousetilelandt, Explodes); /*0x5fe968*/
+  char ChainReaction; // cl
   ChainReaction = aP1->ChainReaction; /*0x5fe96d*/
   aP1->Explodes = v16; /*0x5fe973*/
+  char v18; // al
   v18 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsveinholemons, ChainReaction); /*0x5fe982*/
+  char Overrides; // [esp-Ch] [ebp-298h]
   Overrides = aP1->Overrides; /*0x5fe98f*/
   aP1->ChainReaction = v18; /*0x5fe996*/
   aP1->Overrides = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsveins, Overrides); /*0x5fe9a1*/
+  char v19; // al
   v19 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aChainreaction, aP1->IsARock); /*0x5fe9b6*/
+  char v20; // cl
   v20 = aP1->RadarColor[1]; /*0x5fe9bb*/
   aP1->IsARock = v19; /*0x5fe9c1*/
+  char v21; // al
   v21 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aDrawflat, v20); /*0x5fe9d0*/
+  char v27; // [esp-Ch] [ebp-298h]
   v27 = aP1->__tail_2B5[0]; /*0x5fe9dd*/
   aP1->RadarColor[1] = v21; /*0x5fe9e4*/
   aP1->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)aP1->__pad_24, aIsarock, v27); /*0x5fe9ef*/
@@ -269,9 +269,9 @@ namespace gamemd {  // G42.18c ns repair
 ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
-  int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
+  int result; // eax
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x5feb04*/
   if ( result >= 0 ) /*0x5feb0b*/
   {
@@ -311,13 +311,10 @@ namespace gamemd {  // G42.18c ns repair
 AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
 
-  void *result; // eax
-  SHPStruct *v3; // edi
   CCFileClass v4; // [esp+4h] [ebp-26Ch] BYREF
-  int v5[3]; // [esp+5Ch] [ebp-214h] BYREF
-  int v6; // [esp+68h] [ebp-208h]
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
+  void *result; // eax
   result = this->Image; /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
@@ -332,12 +329,15 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
       TheaterObjectTypeClassSpecificID(Buffer, dword_A8B230[130].uniqueId); /*0x5fee90*/
     }
     CCFileClass::Construct(&v4, Buffer); /*0x5fee9f*/
+  SHPStruct *v3; // edi
     v3 = (SHPStruct *)(&v4)->ReadEntireFile(); /*0x5feead*/
     this->Image = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
     *(unsigned int *)v4.CDFileClass = &vt_CCFileClass; /*0x5feec4*/
+  int v6; // [esp+68h] [ebp-208h]
     v6 = 0; /*0x5feecc*/
+  int v5[3]; // [esp+5Ch] [ebp-214h] BYREF
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
     ((BufferIOFileClass *)&v4)->Dtor(); /*0x5feee5*/
@@ -352,7 +352,6 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
-  void *v3; // eax
 
   ((int *)this)->ConstructFull(aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
@@ -402,6 +401,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
          (char *)DataGlobal_A83D7C + *(unsigned int *)&DataGlobal_A83D70,
          0) )
   {
+  void *v3; // eax
     v3 = (void *)(g_InfantryTypeInitState++); /*0x6441fc*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * (unsigned int)v3) = (unsigned int)(this); /*0x64420b*/
   }
@@ -414,10 +414,10 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1, void *a2, void *a3, void 
 namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4, void *a4_1)
 {
-  char *v5; // eax
-  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
+  char *v5; // eax
   v5 = sub_48DFD0(a4); /*0x4754cd*/
+  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
   if ( ((INIClass *)this)->GetString(a2, a3, v5, Destination, 128) ) /*0x4754e5*/
     return ((OverlayTypeClass *)((OverlayTypeClass *)Destination))->LookupByName(); /*0x4754f2*/
   else
@@ -428,12 +428,12 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4,
 namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::LookupByName(void *a1)
 {
-  int v2; // edi
-  char **v3; // esi
 
   if ( !_strcmpi(g_Str__none_, (char *)this) || !this ) /*0x48df99*/
     return -1; /*0x48dfbe*/
+  int v2; // edi
   v2 = 0; /*0x48df9b*/
+  char **v3; // esi
   v3 = (char **)(off_81DA28); /*0x48df9d*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48dfb0*/
   {
@@ -465,8 +465,8 @@ int * OverlayTypeClass::GetTile(int a1)
 namespace gamemd {  // G42.18c ns repair
 bool OverlayTypeClass::GetType(int16_t *aP2, int a3)
 {
-  Object *v4; // eax
 
+  Object *v4; // eax
   v4 = (Object *)operator new(0xB0u); /*0x5fe538*/
   return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
 }
@@ -475,8 +475,8 @@ bool OverlayTypeClass::GetType(int16_t *aP2, int a3)
 namespace gamemd {  // G42.18c ns repair
 OverlayClass * OverlayTypeClass::GetDamage(int a2)
 {
-  Object *v3; // eax
 
+  Object *v3; // eax
   v3 = (Object *)operator new(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
     return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
@@ -489,13 +489,13 @@ namespace gamemd {  // G42.18c ns repair
 void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
 {
 
-  char *v4; // edx
-  int v5; // eax
-  int v6[2]; // [esp+8h] [ebp-8h] BYREF
 
+  char *v4; // edx
   v4 = (char *)DSurface_ViewBounds.field_4 + a2[1] + 15; /*0x5fe5c1*/
+  int v6[2]; // [esp+8h] [ebp-8h] BYREF
   v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
+  int v5; // eax
   v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
     (int)g_DSurface_Hidden_2,
@@ -532,25 +532,25 @@ namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
   Power::TimerProcess(this->Strength); /*0x5fea83*/
   Power::TimerProcess(*&this->Wall); /*0x5fea91*/
+  int v3; // ecx
   LOBYTE(v3) = this->NoUseTileLandType; /*0x5fea96*/
   ((Power *)a2)->FlagProcess(v3); /*0x5fea9f*/
+  int v4; // edx
   LOBYTE(v4) = this->IsVeinholeMonster; /*0x5feaa4*/
+  int v5; // eax
   v5 = ((Power *)a2)->FlagProcess(v4); /*0x5feaad*/
   LOBYTE(v5) = this->IsVeins; /*0x5feab2*/
   ((Power *)a2)->FlagProcess(v5); /*0x5feabb*/
+  int v6; // ecx
   LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
   ((Power *)a2)->FlagProcess(v6); /*0x5feac9*/
+  int v7; // edx
   LOBYTE(v7) = this->IsRubble; /*0x5feace*/
   return ((Power *)a2)->FlagProcess(v7); /*0x5feadc*/
 
@@ -560,8 +560,8 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
 namespace gamemd {  // G42.18c ns repair
 int   OverlayTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x5fec1f*/
   if ( result >= 0 ) /*0x5fec26*/
     return 0; /*0x5fec28*/
@@ -586,22 +586,19 @@ namespace gamemd {  // G42.18c ns repair
 int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
 {
 
-  MixFileClass *v4; // eax
-  int DamageLevels; // ecx
-  int v6; // esi
-  int v7; // eax
-  char v8; // cl
-  int PixelData; // ecx
-  __int16 v11; // [esp+4h] [ebp-4h]
 
+  MixFileClass *v4; // eax
   v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fed06*/
+  int DamageLevels; // ecx
   if ( v4 /*0x5fed28*/
     || (DamageLevels = this->DamageLevels) != 0
     && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
   {
+  int v6; // esi
     v6 = this->LandType[0]; /*0x5fed2e*/
     if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
     {
+  int PixelData; // ecx
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
       *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
       a2->UINameLabel[0x20] = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
@@ -609,8 +606,11 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
     }
     else
     {
+  int v7; // eax
       v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
+  __int16 v11; // [esp+4h] [ebp-4h]
       v11 = *(unsigned short *)v7; /*0x5fed67*/
+  char v8; // cl
       v8 = HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
       BYTE1(a3) = v7->u32_2; /*0x5fed73*/
       LOBYTE(a3) = v11; /*0x5fed7b*/

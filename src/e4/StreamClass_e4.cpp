@@ -21,11 +21,11 @@ int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 namespace gamemd {
 unsigned int StreamClass::ReadAndSeek(int aP1, int aP2, void *a3)
 {
-  int v4; // edi
-  int result; // eax
 
+  int v4; // edi
   v4 = (*(int (**)(unsigned int, int, int))(*(unsigned int *)this->u32_14 + 92))(this->u32_14, aP1, aP2); /*0x4114c9*/
   (*(void (**)(unsigned int))(*(unsigned int *)this->u32_14 + 96))(this->u32_14); /*0x4114cd*/
+  int result; // eax
   result = (int)(v4 + this->StreamClass_field_0C); /*0x4114d6*/
   if ( result >= (unsigned int)this->u32_1C ) /*0x4114da*/
     result -= this->m_Size; /*0x4114dc*/
@@ -37,15 +37,14 @@ namespace gamemd {
 int StreamClass::Set2(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a5)
 {
 
-  int v3; // edi
-  unsigned int *v5; // ebx
-  int v6; // eax
 
   if ( *a2 ) /*0x45aea8*/
   {
+  int v3; // edi
     v3 = (**(int (***)(unsigned int, void *, unsigned int **))*a2)(*a2, &unk_818858, &a2); /*0x45aebd*/
     if ( v3 >= 0 ) /*0x45aec1*/
     {
+  unsigned int *v5; // ebx
       v5 = a2; /*0x45aedf*/
       if ( *(unsigned int *)this->m_Position ) /*0x45aedc*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45aeea*/
@@ -62,6 +61,7 @@ int StreamClass::Set2(unsigned int * a2, void *a2_1, void *a3, void *a4, void *a
   }
   else
   {
+  int v6; // eax
     v6 = *(unsigned int *)this->m_Position; /*0x45aef7*/
     if ( *(unsigned int *)this->m_Position ) /*0x45aef7*/
     {
@@ -78,15 +78,14 @@ namespace gamemd {
 int StreamClass::Set(unsigned int *aP1, void *a2, void *a3)
 {
 
-  int v3; // edi
-  unsigned int *v5; // ebx
-  int v6; // eax
 
   if ( *aP1 ) /*0x45af28*/
   {
+  int v3; // edi
     v3 = (**(int (***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &DataGlobal_818E00[648], &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
+  unsigned int *v5; // ebx
       v5 = aP1; /*0x45af5f*/
       if ( *(unsigned int *)this->m_Position ) /*0x45af5c*/
         (*(void (**)(unsigned int))(**(unsigned int **)this->m_Position + 8))(*(unsigned int *)this->m_Position); /*0x45af6a*/
@@ -103,6 +102,7 @@ int StreamClass::Set(unsigned int *aP1, void *a2, void *a3)
   }
   else
   {
+  int v6; // eax
     v6 = *(unsigned int *)this->m_Position; /*0x45af77*/
     if ( *(unsigned int *)this->m_Position ) /*0x45af77*/
     {
@@ -159,8 +159,8 @@ int StreamClass::ClearDirty(unsigned char * a1)
 namespace gamemd {
 char StreamClass::GetDirty(int a1)
 {
-  int result; // eax
 
+  int result; // eax
   result = (int)a1; /*0x55a930*/
   (*((unsigned char *)&(result))) = a1->field_C; /*0x55a934*/
   return result; /*0x55a937*/

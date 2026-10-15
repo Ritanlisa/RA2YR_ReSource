@@ -32,28 +32,16 @@
 namespace gamemd {  // G42.18 ns repair
 char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
 {
-  unsigned int *v3; // edx
-  int v5; // eax
-  int v6; // ebp
-  int v7; // eax
-  int v8; // ecx
-  int *v9; // ecx
-  int v10; // eax
-  int v11; // edi
-  int v12; // ebx
-  int v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  int v16; // ecx
-  int v18[2]; // [esp+10h] [ebp-14h] BYREF
-  int v19; // [esp+18h] [ebp-Ch] BYREF
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
+  unsigned int *v3; // edx
   v3 = aP3; /*0x4b0ad0*/
+  int v5; // eax
   if ( *aP3 != g_DDraw_ClipRect || aP3[1] != (unsigned int)qword_8A0794 || (v5 = aP3[2], v5 != (*(((unsigned int *)&(qword_8A0794)) + 1))) ) /*0x4b0afe*/
   {
     (*((unsigned char *)&(v5))) = aP1->q060; /*0x4b0b04*/
+  int v6; // ebp
     v6 = a3_1; /*0x4b0b07*/
     if ( !(unsigned char)v5 ) /*0x4b0b0d*/
     {
@@ -63,24 +51,34 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
         v5 = byte_7E7B28[12 * v5]; /*0x4b0b22*/
         if ( v5 ) /*0x4b0b2c*/
         {
+  int v7; // eax
           v7 = 4 * v5; /*0x4b0b32*/
+  int v8; // ecx
           v8 = ((unsigned int *)(dword_7E7A28))[v7]; /*0x4b0b35*/
           v5 = ((unsigned int *)(dword_7E7A34))[v7]; /*0x4b0b3b*/
           if ( v5 > -1 ) /*0x4b0b44*/
           {
+  int *v9; // ecx
             v9 = (int *)(v8 + 12 * v5); /*0x4b0b4d*/
             a3_1 = v9[2]; /*0x4b0b53*/
             if ( aP1->u32_5C < v5 ) /*0x4b0b5c*/
             {
+  int v10; // eax
               v10 = v9[1]; /*0x4b0b64*/
+  int v18[2]; // [esp+10h] [ebp-14h] BYREF
               v18[0] = *v9; /*0x4b0b67*/
               v18[1] = v10; /*0x4b0b6f*/
+  int v19; // [esp+18h] [ebp-Ch] BYREF
               v5 = (int)JumpjetLocomotion::TransformCoords((JumpjetLocomotion *)aP1, &v19, v18, &a3_1); /*0x4b0b80*/
+  int v11; // edi
               v11 = *(unsigned int *)v5; /*0x4b0b85*/
+  int v12; // ebx
               v12 = v5->u32_4; /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
               {
+  int v13; // eax
                 v13 = (*(int (**)(unsigned int))(*aP1->ptr_30 + 464))(aP1->ptr_30); /*0x4b0b93*/
+  int v14; // ecx
                 v14 = aP1->ptr_30; /*0x4b0b99*/
                 v19 = v11; /*0x4b0b9c*/
                 v20 = v12; /*0x4b0ba0*/
@@ -93,7 +91,9 @@ char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
+  int v15; // eax
                 v15 = (*(int (**)(unsigned int))(*aP1->ptr_30 + 464))(aP1->ptr_30); /*0x4b0bde*/
+  int v16; // ecx
                 v16 = aP1->ptr_30; /*0x4b0be4*/
                 v21 = v15; /*0x4b0be7*/
                 v19 = v11; /*0x4b0beb*/
@@ -591,16 +591,14 @@ namespace gamemd {
 unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int *aP3, void *a4)
 {
 
-  int v4; // eax
-  int v5; // ebx
-  int v6; // edi
-  int v7; // esi
-  char *JumpjetLocomotion_field_0x40; // edx
-  char *JumpjetLocomotion_field_0x44; // ecx
 
+  int v4; // eax
   v4 = *aP3; /*0x4b478d*/
+  int v5; // ebx
   v5 = dword_7E7B30[3 * (int)this->u32_58]; /*0x4b4791*/
+  int v6; // edi
   v6 = *aP2; /*0x4b479f*/
+  int v7; // esi
   v7 = aP2[1]; /*0x4b47a1*/
   if ( (v5 & 1) != 0 ) /*0x4b47a4*/
   {
@@ -619,7 +617,9 @@ unsigned int * JumpjetLocomotion::TransformCoords(unsigned int *aP1, int *aP2, i
     v4 = (unsigned __int8)(0x80 - v4); /*0x4b47dd*/
   }
   *aP3 = v4; /*0x4b47df*/
+  char *JumpjetLocomotion_field_0x40; // edx
   JumpjetLocomotion_field_0x40 = (char *)this->q040; /*0x4b47e2*/
+  char *JumpjetLocomotion_field_0x44; // ecx
   JumpjetLocomotion_field_0x44 = (char *)this->q044; /*0x4b47e5*/
   *aP1 = (unsigned int)(&JumpjetLocomotion_field_0x40[v6]); /*0x4b47f2*/
   aP1->vtable2 = &JumpjetLocomotion_field_0x44[v7]; /*0x4b47f5*/

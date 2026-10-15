@@ -79,9 +79,8 @@ namespace gamemd {
 int BinkMovie::Stop(void *a1, void *a2)
 {
 
-  void *BinkMovie_field_0x20; // edi
-  int result; // eax
 
+  void *BinkMovie_field_0x20; // edi
   BinkMovie_field_0x20 = (void *)this->q_20; /*0x432704*/
   if ( BinkMovie_field_0x20 ) /*0x432709*/
   {
@@ -94,6 +93,7 @@ int BinkMovie::Stop(void *a1, void *a2)
     BinkClose(this->u32_4); /*0x43272a*/
     this->u32_4 = 0; /*0x432730*/
   }
+  int result; // eax
   result = this->u32_28; /*0x432737*/
   if ( result != -1 ) /*0x43273d*/
   {

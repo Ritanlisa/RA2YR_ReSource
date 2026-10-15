@@ -63,13 +63,13 @@ LABEL_14:
 namespace gamemd {
 int Mixer::RequestAllBuffers()
 {
-  int result; // eax
-  int *i; // esi
 
+  int result; // eax
   result = dword_87E81C; /*0x4083d0*/
   if ( dword_87E81C ) /*0x4083d8*/
   {
     result = ((AudioQueue *)(unk_87E810))->GetNext(); /*0x4083df*/
+  int *i; // esi
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083e8*/
     {
       RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000); /*0x4083f5*/

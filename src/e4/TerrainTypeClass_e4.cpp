@@ -55,8 +55,6 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6, void *a6_2, void *a7, void *a8, void *a9)
 {
 
-  int v7; // eax
-  int v8; // eax
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
@@ -105,6 +103,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
   {
+  int v7; // eax
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x544924*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = aP4; /*0x544933*/
   }
@@ -117,6 +116,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
           *(unsigned int *)&DataGlobal_A8EC4C + *(unsigned int *)&DataGlobal_A8EC58,
           0)) )
   {
+  int v8; // eax
     v8 = (*(unsigned int *)&g_ObjectClass_Capacity)++; /*0x54497d*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EC48 + 4 * v8) = (unsigned int)(aP4); /*0x54498c*/
   }
@@ -225,34 +225,15 @@ namespace gamemd {  // G42.18c ns repair
 int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a4, int a5, int a6, int a7, int aP2, int a1, int aP0, void * aAnimationproba, void * aAnimationrate, void * aIsanimated, void * aIsflammable, void * aRadarcolor, void * aSnowoccupation, void * aSpawnstiberium, void * aTemperateoccup, void * aWaterbound)
 {
 
-  double v2; // st7
   int result; // eax
-  char Bool_Overwrite; // al
-  char v6; // al
-  char SpawnsTiberium; // cl
-  char v8; // al
-  int v9; // eax
-  int v10; // ecx
-  MixFileClass *v11; // eax
-  int PixelData; // eax
-  int Coord; // eax
-  char IsAnimated; // cl
-  char v15; // al
-  int Int_Overwrite; // eax
-  double AnimationProbability; // st6
-  int TemperateOccupationBits; // eax
-  int v19; // eax
-  int SnowOccupationBits; // ecx
-  char IsFlammable; // [esp+4h] [ebp-218h]
-  int AnimationRate; // [esp+4h] [ebp-218h]
   int v23; // [esp+18h] [ebp-204h] BYREF
-  char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x71deb3*/
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)aP1, aP1) ) /*0x71debb*/
   {
     if ( aP1->? == -1 ) /*0x71decf*/
       aP1->? = *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 4420); /*0x71dedc*/
+  char Bool_Overwrite; // al
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsveinhole, aP1->IsVeinhole); /*0x71def6*/
     aP1->IsVeinhole = Bool_Overwrite; /*0x71defd*/
     if ( Bool_Overwrite ) /*0x71df03*/
@@ -260,53 +241,72 @@ int TerrainTypeClass::LoadFromINI(uint8_t ***a2, int aP1, int aP3, int a3, int a
       aP1->? = 0; /*0x71df05*/
       aP1->? = 1; /*0x71df0c*/
     }
+  char v6; // al
     v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aWaterbound, aP1->WaterBound); /*0x71df22*/
+  char SpawnsTiberium; // cl
     SpawnsTiberium = aP1->SpawnsTiberium; /*0x71df27*/
     aP1->WaterBound = v6; /*0x71df2d*/
+  char v8; // al
     v8 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
+  char IsFlammable; // [esp+4h] [ebp-218h]
     IsFlammable = aP1->IsFlammable; /*0x71df49*/
     aP1->SpawnsTiberium = v8; /*0x71df50*/
     aP1->IsFlammable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsflammable, IsFlammable); /*0x71df5b*/
+  int v9; // eax
     v9 = INIClass::LookupEnum( /*0x71df79*/
            (INIClass *)&DataGlobal_887180,
            (unsigned __int8 *)aP1->?,
            g_INI_Key_Foundation,
            aP1->Foundation);
+  int v10; // ecx
     v10 = 5 * v9; /*0x71df7e*/
     aP1->Foundation = v9; /*0x71df81*/
     LOBYTE(v9) = aP1->?; /*0x71df87*/
     aP1->FoundationData = (CellStruct *)(8 * v10 + 11595200); /*0x71df96*/
     if ( !(unsigned char)v9 ) /*0x71df9c*/
     {
+  char Buffer[512]; // [esp+1Ch] [ebp-200h] BYREF
       _makepath(Buffer, 0, 0, aP1->?, Ext); /*0x71dfad*/
       aP1->? = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x71dfc0*/
     }
+  MixFileClass *v11; // eax
     v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))aP1->ObjectTypeClass + 39))(aP1); /*0x71dfca*/
     if ( v11 ) /*0x71dfd2*/
     {
+  int PixelData; // eax
       PixelData = MixFileClass::GetPixelData(v11, (int)&v23, 0); /*0x71dfdd*/
       *(unsigned short *)aP1->RadarColor = *(unsigned short *)PixelData; /*0x71dfeb*/
       aP1->RadarColor[2] = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
     }
+  int Coord; // eax
     Coord = INIClass::GetCoord( /*0x71e00c*/
               (INIClass *)aP1,
               (int)&v23,
               (unsigned __int8 *)aP1->?,
               aRadarcolor,
               (unsigned __int8 *)aP1->RadarColor);
+  char IsAnimated; // cl
     IsAnimated = aP1->IsAnimated; /*0x71e014*/
     *(unsigned short *)aP1->RadarColor = *(unsigned short *)Coord; /*0x71e01a*/
     aP1->RadarColor[2] = *(unsigned char *)(Coord + 2); /*0x71e02a*/
+  char v15; // al
     v15 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)aP1->?, aIsanimated, IsAnimated); /*0x71e02d*/
+  int AnimationRate; // [esp+4h] [ebp-218h]
     AnimationRate = aP1->AnimationRate; /*0x71e03a*/
     aP1->IsAnimated = v15; /*0x71e041*/
+  int Int_Overwrite; // eax
     Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aAnimationrate, AnimationRate); /*0x71e047*/
+  double AnimationProbability; // st6
     AnimationProbability = aP1->AnimationProbability; /*0x71e04c*/
     aP1->AnimationRate = Int_Overwrite; /*0x71e057*/
     INIClass::ReadDouble_Overwrite((double *)aP1, (unsigned __int8 *)aP1->?, aAnimationproba, AnimationProbability); /*0x71e066*/
+  int TemperateOccupationBits; // eax
     TemperateOccupationBits = aP1->TemperateOccupationBits; /*0x71e06b*/
+  double v2; // st7
     aP1->AnimationProbability = v2; /*0x71e073*/
+  int v19; // eax
     v19 = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aTemperateoccup, TemperateOccupationBits); /*0x71e080*/
+  int SnowOccupationBits; // ecx
     SnowOccupationBits = aP1->SnowOccupationBits; /*0x71e085*/
     aP1->TemperateOccupationBits = v19; /*0x71e08b*/
     result = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)aP1->?, aSnowoccupation, SnowOccupationBits); /*0x71e09a*/
@@ -348,10 +348,8 @@ TerrainTypeClass * * TerrainTypeClass::FindOrCreate(char *Source)
 // 0x71E360
 TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
 {
-  SHPStruct *Image; // eax
-  int v4; // eax
-  TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
+  SHPStruct *Image; // eax
   Image = a3->Image; /*0x71e364*/
   /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e36a) */
   /* X11: vtable install elided (implicit via TerrainTypeClass virtuals 0x71e372) */
@@ -363,7 +361,9 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
     a3->Image = 0; /*0x71e392*/
   }
   AbstractClass::AnnounceExpiredPointer(&a3->vfptr, 1); /*0x71e3a0*/
+  TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = a3; /*0x71e3b5*/
+  int v4; // eax
   v4 = (*(int (**)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
   if ( v4 != -1 && v4 < dword_A8E328 && v4 < --dword_A8E328 ) /*0x71e3d4*/
   {
@@ -382,24 +382,24 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
 // 0x53FFA0
 int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned int * a5, unsigned short * a6, unsigned int * a7)
 {
-  unsigned int *v7; // ecx
-  int TileType; // eax
-  int v9; // ebx
-  int v10; // edx
-  unsigned int *v11; // edx
 
+  unsigned int *v7; // ecx
   v7 = (unsigned int *)this->vtable2; /*0x53ffa0*/
   if ( v7->q038 < a2 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
+  int TileType; // eax
   TileType = ((Terrain *)(v7))->GetTileType(a2); /*0x53ffad*/
   if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x53ffb9*/
     return 0; /*0x540024*/
+  int v9; // ebx
   v9 = *(unsigned int *)(TileType + 12); /*0x53ffbf*/
+  int v10; // edx
   v10 = *(unsigned int *)(TileType + 8) - 16; /*0x53ffc2*/
   if ( v10 > 0 ) /*0x53ffc7*/
     memcpy(a3, (const void *)(v9 + 16), v10); /*0x53ffda*/
   *v10 = v10; /*0x53ffea*/
   *a6 = *(unsigned short *)(v9 + 14); /*0x53fff4*/
+  unsigned int *v11; // edx
   v11 = *(unsigned int **)(TileType + 20); /*0x53fff7*/
   *a5 = *v11; /*0x540000*/
   a5[1] = v11[1]; /*0x540005*/
@@ -411,16 +411,16 @@ int TerrainTypeClass::GetTileData(int a2, void * a3, signed int * v10, unsigned 
 // 0x71DDD0
 bool   TerrainTypeClass::GetHeight(int a3, void *a2)
 {
-  TerrainClass *v4; // eax
 
+  TerrainClass *v4; // eax
   v4 = (TerrainClass *)operator new(0xE0u); /*0x71ddd8*/
   return v4 && TerrainClass::Construct(v4, this, this); /*0x71ddf7*/
 }
 // 0x71DE10
 TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void *a4)
 {
-  TerrainClass *v3; // eax
 
+  TerrainClass *v3; // eax
   v3 = (TerrainClass *)operator new(0xE0u); /*0x71de18*/
   if ( v3 ) /*0x71de22*/
     return TerrainClass::Construct(v3, this, (int16_t *)&g_BuildingLoadQueue_Array.ImpactWaterSound); /*0x71de2c*/
@@ -430,16 +430,16 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2, void *a2_2, void *a3, void
 // 0x71E0D0
 unsigned int *   TerrainTypeClass::GetWidth(int * a2, void *a2_1)
 {
-  int GroundHeight; // eax
-  void *v3; // ecx
-  void *v5; // [esp+0h] [ebp-Ch] BYREF
-  void *v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
 
+  void *v5; // [esp+0h] [ebp-Ch] BYREF
   v5 = (void *)*a2; /*0x71e0d9*/
+  void *v6; // [esp+4h] [ebp-8h]
   v6 = (void *)a2[1]; /*0x71e0ea*/
+  int v7; // [esp+8h] [ebp-4h]
   v7 = a2[2]; /*0x71e0f1*/
+  int GroundHeight; // eax
   GroundHeight = Cell::GetGroundHeight(&v5); /*0x71e0f5*/
+  void *v3; // ecx
   v3 = (void *)v7; /*0x71e0fa*/
   if ( v7 < GroundHeight ) /*0x71e100*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
@@ -452,20 +452,20 @@ unsigned int *   TerrainTypeClass::GetWidth(int * a2, void *a2_1)
 int TerrainTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // edx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x71e149*/
   Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
+  int v3; // ecx
   LOBYTE(v3) = this->WaterBound; /*0x71e15c*/
   Power::FlagProcess((Power *)a2, v3); /*0x71e165*/
+  int v4; // edx
   LOBYTE(v4) = this->SpawnsTiberium; /*0x71e16a*/
+  int v5; // eax
   v5 = Power::FlagProcess((Power *)a2, v4); /*0x71e173*/
   LOBYTE(v5) = this->IsFlammable; /*0x71e178*/
   Power::FlagProcess((Power *)a2, v5); /*0x71e181*/
   Power::TimerProcess(this->Foundation); /*0x71e18f*/
+  int v6; // edx
   LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
   Power::FlagProcess((Power *)a2, v6); /*0x71e19d*/
   Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
@@ -475,8 +475,8 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
 // 0x71E1D0
 int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x71e1db*/
   if ( result >= 0 ) /*0x71e1e2*/
   {
@@ -498,8 +498,8 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 // 0x71E240
 int TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x71e24f*/
   if ( result >= 0 ) /*0x71e256*/
     return 0; /*0x71e258*/

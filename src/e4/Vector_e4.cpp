@@ -15,8 +15,8 @@ namespace gamemd {  // G42.18 ns repair
 void Vector::Math_Vector2D_Magnitude()
 {
 
-  double result; // st7
 
+  double result; // st7
   result = (double)this->q004; /*0x4c1b50*/
   Math::Sqrt((double)*(int *)this->Cl_ph * (double)*(int *)this->Cl_ph + result * result); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
@@ -28,8 +28,8 @@ void Vector::Math_Vector2D_Magnitude()
 namespace gamemd {
 int Vector::Cleanup(void *a1, void *a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = *&this->q004; /*0x512d36*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x512d3d*/
   {
@@ -45,8 +45,8 @@ int Vector::Cleanup(void *a1, void *a2)
 namespace gamemd {
 int Vector::Destructor(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   result = *&this->q004; /*0x513106*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x51310d*/
   {
@@ -62,7 +62,6 @@ int Vector::Destructor(void *a1)
 namespace gamemd {
 int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
-  int result; // eax
 
   this->IsInitialized = a3 * this->__pad_010 /*0x5ae8ab*/
                        + a4 * this->m_8
@@ -76,6 +75,7 @@ int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
                         + a3 * this->u32_24
                         + a4 * this->u32_28
                         + this->u32_2C;
+  int result; // eax
   return result; /*0x5ae8ec*/
 }
 }
@@ -83,8 +83,8 @@ int Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 namespace gamemd {
 int Vector::Cleanup2(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   result = *&this->q004; /*0x67abe6*/
   if ( result && (((unsigned char *)&(*&this->u32_D))[1]) ) /*0x67abed*/
   {
@@ -100,11 +100,8 @@ int Vector::Cleanup2(void *a1)
 namespace gamemd {
 unsigned short * Vector::ToFacingMath(unsigned short *a2)
 {
-  int v2; // ecx
-  double v3; // st7
-  double v6; // [esp+0h] [ebp-14h]
-  double v7; // [esp+Ch] [ebp-8h]
 
+  int v2; // ecx
   _ESI = v2; /*0x41c2e4*/
   __asm /*0x41c2e9*/
   {
@@ -119,11 +116,14 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
     fstp st
     fstp st
   }
+  double v6; // [esp+0h] [ebp-14h]
   Math::Sqrt(v6); /*0x41c2ff*/
   __asm { fstp [esp+14h+var_8] } /*0x41c307*/
+  double v7; // [esp+Ch] [ebp-8h]
   Math::CalcAngle(_ESI->uniqueId, v7); /*0x41c31a*/
   __asm { fsub ds:dbl_7E2820 } /*0x41c31f*/
   __asm { fmul ds:dbl_7E2818 }
+  double v3; // st7
   *(unsigned short *)this = Math::RoundToInt(v3); /*0x41c338*/
   return (unsigned short *)((int)this); /*0x41c337*/
 }
@@ -133,8 +133,8 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
 namespace gamemd {
 int Vector::Clear(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = this->m_8; /*0x43ae53*/
   if ( (unsigned char)result ) /*0x43ae58*/
     operator delete((void *)(*(void **)this)); /*0x43ae5d*/
@@ -150,11 +150,10 @@ namespace gamemd {
 int Vector::RemoveAt(int aP1, void *a2)
 {
 
-  char *Vector_field_0x10; // edx
-  int result; // eax
-  char *v4; // edx
 
+  char *Vector_field_0x10; // edx
   Vector_field_0x10 = (char *)this->__pad_010; /*0x45ae10*/
+  int result; // eax
   result = aP1; /*0x45ae13*/
   if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
@@ -162,6 +161,7 @@ int Vector::RemoveAt(int aP1, void *a2)
   }
   else
   {
+  char *v4; // edx
     v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
     this->__pad_010 = (unsigned char)(v4); /*0x45ae1e*/
     if ( aP1 < (int)v4 ) /*0x45ae21*/
@@ -184,17 +184,16 @@ int Vector::RemoveAt(int aP1, void *a2)
 namespace gamemd {
 void Vector::ReallocDynamic(int a2, void *a2_1)
 {
-  char *v3; // edi
-  int i; // ecx
-  int v5; // eax
-  unsigned int *v6; // edx
-  int v7; // eax
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
+  char *v3; // edi
   v3 = (char *)operator new(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
+  int i; // ecx
+  int v5; // eax
+  unsigned int *v6; // edx
   for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
@@ -202,6 +201,7 @@ void Vector::ReallocDynamic(int a2, void *a2_1)
     *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   operator delete((void *)(*(void **)v3)); /*0x4d2e9b*/
+  int v7; // eax
   v7 = a2 + v3->vtable3; /*0x4d2ea6*/
   *(unsigned int *)v3 = (unsigned int)(v3); /*0x4d2ea8*/
   v3->vtable3 = v7; /*0x4d2eaa*/
@@ -214,14 +214,14 @@ void Vector::ReallocDynamic(int a2, void *a2_1)
 namespace gamemd {
 int Vector::Find(unsigned int * a2, void *a2_1)
 {
-  int v2; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int v2; // edx
   v2 = this->__pad_010; /*0x4e0550*/
+  int result; // eax
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
@@ -245,21 +245,21 @@ namespace gamemd {
 char Vector::Grow()
 {
 
-  int v2; // eax
-  int v4; // esi
-  void *v5; // ebp
-  int v6; // [esp+4h] [ebp-4h]
 
+  int v2; // eax
   v2 = *(unsigned int *)this->Cl_ph; /*0x7aeec4*/
   if ( *(unsigned int *)this->Cl_ph < (int)this->q004 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
+  int v4; // esi
   v4 = 2 * v2; /*0x7aeed4*/
+  int v6; // [esp+4h] [ebp-4h]
   v6 = 2 * v2; /*0x7aeedb*/
   if ( 2 * v2 < 10 ) /*0x7aeedf*/
   {
     v6 = 10; /*0x7aeee1*/
     v4 = 10; /*0x7aeee9*/
   }
+  void *v5; // ebp
   v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->m_8 ) /*0x7aef13*/

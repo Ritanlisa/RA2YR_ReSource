@@ -11,14 +11,14 @@
 namespace gamemd {  // G42.18 ns repair
 int Voice::Stop(void *a1, void *a2)
 {
-  int v1; // ecx
-  int result; // eax
 
+  int v1; // ecx
   v1 = v1; /*0x4025b1*/
   (*(void (**)(void))(v1->u32_D4 + 40))(); /*0x4025b9*/
   if ( (v1->u32_A4 & 5) != 0 ) /*0x4025c3*/
     (*(void (**)(int))(v1->u32_D4 + 16))(v1); /*0x4025cd*/
   (*(void (**)(int))(v1->u32_D4 + 44))(v1); /*0x4025d8*/
+  int result; // eax
   result = v1->q0BC; /*0x4025db*/
   if ( result ) /*0x4025e3*/
     result = result(v1); /*0x4025e7*/
@@ -30,13 +30,13 @@ int Voice::Stop(void *a1, void *a2)
 namespace gamemd {
 int Voice::DetachChannel()
 {
-  int v2; // ecx
   int result; // eax
-  Voice *v4; // [esp+0h] [ebp-8h]
 
+  int v2; // ecx
   v2 = this->u32_B0; /*0x404146*/
   if ( v2 && this == *(Voice **)(v2 + 192) ) /*0x404156*/
   {
+  Voice *v4; // [esp+0h] [ebp-8h]
     if ( (this->u32_18 & 2) != 0 ) /*0x40415c*/
       ((Voice *)(v4))->Stop(); /*0x40415e*/
     AudioStream::ReleaseChannel(this->u32_B0); /*0x404169*/

@@ -49,25 +49,10 @@ namespace gamemd {
 UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 
-  unsigned int *i; // edi
-  bool v6; // bl
-  int v7; // eax
-  unsigned int *v8; // eax
-  TechnoClass *v9; // ecx
-  int v10; // ecx
-  unsigned int *v11; // ecx
   unsigned int *v12; // eax
-  int *vtable3; // ecx
-  int v14; // edi
-  void *v15; // eax
-  Cell *v16; // eax
-  TechnoClass *v17; // ecx
-  int v18; // ecx
-  int v19; // eax
-  int v20; // ecx
-  char v22; // [esp+31h] [ebp-5h]
   __int16 v23[2]; // [esp+32h] [ebp-4h] BYREF
 
+  unsigned int *i; // edi
   for ( i = (unsigned int *)Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
     if ( (*(unsigned __int8 (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
@@ -85,6 +70,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         0);
     }
   }
+  char v22; // [esp+31h] [ebp-5h]
   v22 = 0; /*0x718814*/
   if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278) /*0x71885d*/
     && ((Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
@@ -92,12 +78,14 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   {
     v22 = 1; /*0x71885f*/
   }
+  bool v6; // bl
   v6 = 0; /*0x718867*/
   if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1660) == 3 ) /*0x718878*/
   {
     v6 = 1; /*0x71887d*/
     if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1040) ) /*0x718887*/
     {
+  int v7; // eax
       v7 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718896*/
       v6 = (*(HouseClass **)(this->vtable3 + 540))->GainedPoweredCenter(v7); /*0x7188af*/
     }
@@ -111,21 +99,27 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     || (Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
     || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1 )
   {
+  int *vtable3; // ecx
     vtable3 = (int *)this->vtable3; /*0x718a01*/
     v23[0] = a2 / 256; /*0x718a14*/
     v23[1] = a3 / 256; /*0x718a2f*/
+  int v14; // edi
     v14 = *vtable3; /*0x718a3c*/
+  void *v15; // eax
     v15 = ((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718a46*/
     if ( (*(int (**)(int, void *, int, int, unsigned int, int))(v14 + 428))(this->vtable3, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       v23[0] = a2 / 256; /*0x718a80*/
       v23[1] = a3 / 256; /*0x718a95*/
+  Cell *v16; // eax
       v16 = (Cell *)((CellCoord *)&dword_87F7E8)->To_CellObj(v23); /*0x718aa2*/
       if ( !(unsigned __int8)(v16)->IsGroundTypeRange() /*0x718abd*/
         || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
       {
+  int v19; // eax
         v19 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/
+  int v20; // ecx
         v20 = this->vtable3; /*0x718b2f*/
         *(unsigned int *)v23 = *(unsigned int *)(v19 + 160); /*0x718b32*/
         LOBYTE(v12) = (*(char (**)(int, __int16 *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v20 + 364))( /*0x718b53*/
@@ -143,10 +137,12 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         *(unsigned char *)(this->vtable3 + 973) = 1; /*0x718ac2*/
         (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718ace*/
         v12 = (unsigned int *)this->vtable3; /*0x718ad4*/
+  TechnoClass *v17; // ecx
         v17 = v12->threatAvoidValue; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
         {
           TechnoClass::MutateAll(v17, v12->q428, v12->q42C); /*0x718aef*/
+  int v18; // ecx
           v18 = *(unsigned int *)(this->vtable3 + 728); /*0x718af7*/
           if ( v18 ) /*0x718aff*/
             (*(void (**)(int, int))(*(unsigned int *)v18 + 32))(v18, 1); /*0x718b05*/
@@ -160,16 +156,20 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   {
     *(unsigned char *)(this->vtable3 + 973) = 1; /*0x71896b*/
     (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718977*/
+  unsigned int *v8; // eax
     v8 = (unsigned int *)this->vtable3; /*0x71897d*/
+  TechnoClass *v9; // ecx
     v9 = v8->threatAvoidValue; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
+  int v10; // ecx
       v10 = *(unsigned int *)(this->vtable3 + 728); /*0x7189a0*/
       if ( v10 ) /*0x7189a8*/
         (*(void (**)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x7189ae*/
       *(unsigned int *)(this->vtable3 + 728) = 0; /*0x7189b4*/
     }
+  unsigned int *v11; // ecx
     v11 = (unsigned int *)this->vtable3; /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
@@ -190,11 +190,8 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
 namespace gamemd {
 int InitializeCellSpreadTables()
 {
-  int v0; // eax
-  int v1; // edx
-  int v2; // ecx
-  int v4; // [esp+4h] [ebp-4h] BYREF
 
+  int v4; // [esp+4h] [ebp-4h] BYREF
   v4 = 0; /*0x71d582*/
   dword_B0EDC0 = 0; /*0x71d5a2*/
   dword_B0EDC4 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d5b3*/
@@ -214,6 +211,7 @@ int InitializeCellSpreadTables()
   dword_B0EE3C = *(unsigned int *)CellStruct::Set(&v4, 1, 0); /*0x71d6cb*/
   dword_B0EE40 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d6d9*/
   dword_B0EE44 = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d6fa*/
+  int v0; // eax
   v0 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d705*/
   dword_B0EE4C = 0; /*0x71d709*/
   dword_B0EE50 = 0; /*0x71d714*/
@@ -228,6 +226,7 @@ int InitializeCellSpreadTables()
   dword_B0EE6C = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d794*/
   dword_B0EE70 = *(unsigned int *)CellStruct::Set(&v4, 0, 2); /*0x71d7a9*/
   dword_B0EE74 = *(unsigned int *)CellStruct::Set(&v4, 1, 2); /*0x71d7ba*/
+  int v1; // edx
   v1 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d7ce*/
   dword_B0EE7C = 0; /*0x71d7d2*/
   dword_B0EE78 = v1; /*0x71d7d7*/
@@ -240,6 +239,7 @@ int InitializeCellSpreadTables()
   dword_B0EE94 = *(unsigned int *)CellStruct::Set(&v4, 0, 1); /*0x71d849*/
   dword_B0EE98 = *(unsigned int *)CellStruct::Set(&v4, 1, 1); /*0x71d864*/
   dword_B0EE9C = *(unsigned int *)CellStruct::Set(&v4, 2, 1); /*0x71d87f*/
+  int v2; // ecx
   v2 = *(unsigned int *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d889*/
   dword_B0EEA4 = 0; /*0x71d88d*/
   dword_B0EEA8 = 0; /*0x71d89a*/
@@ -274,20 +274,17 @@ int InitializeCellSpreadTables()
 namespace gamemd {
 int ObjectTypeClass_LoadTheaterSHP(int a1)
 {
-  int result; // eax
-  int i; // edi
-  int v4; // esi
-  unsigned int v5[22]; // [esp+Ch] [ebp-26Ch] BYREF
-  unsigned char v6[12]; // [esp+64h] [ebp-214h] BYREF
-  int v7; // [esp+70h] [ebp-208h]
-  char Buffer[512]; // [esp+78h] [ebp-200h] BYREF
 
+  int result; // eax
   result = dword_A8E328; /*0x71dca0*/
+  int i; // edi
   for ( i = 0; i < dword_A8E328; ++i ) /*0x71dcb6*/
   {
+  int v4; // esi
     v4 = *((unsigned int *)dword_A8E31C + i); /*0x71dcc2*/
     if ( *(unsigned char *)(v4 + 556) ) /*0x71dcc5*/
     {
+  char Buffer[512]; // [esp+78h] [ebp-200h] BYREF
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x71dcef*/
       if ( *(unsigned char *)(v4 + 168) ) /*0x71dcf4*/
       {
@@ -296,10 +293,13 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       }
       *(unsigned int *)(v4 + 164) = 0; /*0x71dd18*/
       *(unsigned char *)(v4 + 168) = 0; /*0x71dd23*/
+  unsigned int v5[22]; // [esp+Ch] [ebp-26Ch] BYREF
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
       *(unsigned int *)(v4 + 164) = (unsigned int)((v5)->ReadEntireFile()); /*0x71dd3b*/
       v5[0] = (unsigned int)(&vt_CCFileClass); /*0x71dd41*/
+  int v7; // [esp+70h] [ebp-208h]
       v7 = 0; /*0x71dd49*/
+  unsigned char v6[12]; // [esp+64h] [ebp-214h] BYREF
       Vector::Clear((int)v6); /*0x71dd4d*/
       v5[0] = (unsigned int)&off_7E1668; /*0x71dd56*/
       ((BufferIOFileClass *)(v5))->Dtor(); /*0x71dd5e*/
@@ -313,8 +313,8 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
 namespace gamemd {
 void sub_7108E0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x7108ec*/
   dbl_B0EB60 = Math::Sqrt(v0 + v0); /*0x7108fe*/
 }
@@ -364,10 +364,10 @@ void sub_710990()
 namespace gamemd {
 long long sub_7109B0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0EB40 - dbl_B0EB68); /*0x7109c2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0EB60 * 0.5); /*0x7109d6*/
   dword_B0EBB8 = result; /*0x7109db*/
   return result; /*0x7109e0*/
@@ -394,8 +394,8 @@ void sub_710A20()
 namespace gamemd {
 long long sub_710A50()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0EBB8) + 0.5); /*0x710a6b*/
   dword_B0EBAC = result; /*0x710a70*/
   return result; /*0x710a76*/
@@ -466,8 +466,8 @@ int E4Recv_717A40::ReadPointerFromECX4()
 namespace gamemd {
 void sub_717DF0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x717dfc*/
   dbl_B0EBE0 = Math::Sqrt(v0 + v0); /*0x717e0e*/
 }
@@ -517,10 +517,10 @@ void sub_717EA0()
 namespace gamemd {
 long long sub_717EC0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0EBC0 - dbl_B0EBE8); /*0x717ed2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0EBE0 * 0.5); /*0x717ee6*/
   dword_B0EC38 = result; /*0x717eeb*/
   return result; /*0x717ef0*/
@@ -547,8 +547,8 @@ void sub_717F30()
 namespace gamemd {
 long long sub_717F60()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0EC38) + 0.5); /*0x717f7b*/
   dword_B0EC2C = result; /*0x717f80*/
   return result; /*0x717f86*/
@@ -602,8 +602,8 @@ int sub_717FE0()
 namespace gamemd {
 void sub_71A1C0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x71a1cc*/
   dbl_B0EC78 = Math::Sqrt(v0 + v0); /*0x71a1de*/
 }
@@ -653,10 +653,10 @@ void sub_71A270()
 namespace gamemd {
 long long sub_71A290()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0EC40 - dbl_B0EC80); /*0x71a2a2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0EC78 * 0.5); /*0x71a2b6*/
   dword_B0ECD0 = result; /*0x71a2bb*/
   return result; /*0x71a2c0*/
@@ -683,8 +683,8 @@ void sub_71A300()
 namespace gamemd {
 long long sub_71A330()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0ECD0) + 0.5); /*0x71a34b*/
   dword_B0ECC4 = result; /*0x71a350*/
   return result; /*0x71a356*/
@@ -777,8 +777,8 @@ void nullsub_246()
 namespace gamemd {
 void sub_71B5A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x71b5ac*/
   dbl_B0ECF8 = Math::Sqrt(v0 + v0); /*0x71b5be*/
 }
@@ -828,10 +828,10 @@ void sub_71B650()
 namespace gamemd {
 long long sub_71B670()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0ECD8 - dbl_B0ED00); /*0x71b682*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0ECF8 * 0.5); /*0x71b696*/
   dword_B0ED50 = result; /*0x71b69b*/
   return result; /*0x71b6a0*/
@@ -858,8 +858,8 @@ void sub_71B6E0()
 namespace gamemd {
 long long sub_71B710()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0ED50) + 0.5); /*0x71b72b*/
   dword_B0ED44 = result; /*0x71b730*/
   return result; /*0x71b736*/
@@ -914,15 +914,15 @@ int sub_71B790()
 namespace gamemd {
 char E4Recv_71C8E0::sub_71C8E0()
 {
-  char result; // al
-  int v2; // [esp+4h] [ebp-8h]
 
+  char result; // al
   result = this->M205; /*0x71c8e0*/
   if ( !result ) /*0x71c8eb*/
   {
     this->M205 = 1; /*0x71c8ee*/
     this->M180 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x71c905*/
     this->M192 = 2; /*0x71c90b*/
+  int v2; // [esp+4h] [ebp-8h]
     this->M184 = v2; /*0x71c911*/
     this->M188 = 2; /*0x71c914*/
     this->M172 = 0; /*0x71c917*/
@@ -948,8 +948,8 @@ int sub_71D370()
 namespace gamemd {
 void sub_71D390()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x71d39c*/
   dbl_B0ED80 = Math::Sqrt(v0 + v0); /*0x71d3ae*/
 }
@@ -999,10 +999,10 @@ void sub_71D440()
 namespace gamemd {
 long long sub_71D460()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0ED58 - dbl_B0ED88); /*0x71d472*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0ED80 * 0.5); /*0x71d486*/
   dword_B0F148 = result; /*0x71d48b*/
   return result; /*0x71d490*/
@@ -1029,8 +1029,8 @@ void sub_71D4D0()
 namespace gamemd {
 long long sub_71D500()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0F148) + 0.5); /*0x71d51b*/
   dword_B0F13C = result; /*0x71d520*/
   return result; /*0x71d526*/
@@ -1081,8 +1081,8 @@ void nullsub_247()
 namespace gamemd {
 void sub_71E410()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x71e41c*/
   dbl_B0F170 = Math::Sqrt(v0 + v0); /*0x71e42e*/
 }
@@ -1132,10 +1132,10 @@ void sub_71E4C0()
 namespace gamemd {
 long long sub_71E4E0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0F150 - dbl_B0F178); /*0x71e4f2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0F170 * 0.5); /*0x71e506*/
   dword_B0F1E0 = result; /*0x71e50b*/
   return result; /*0x71e510*/
@@ -1162,8 +1162,8 @@ void sub_71E550()
 namespace gamemd {
 long long sub_71E580()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0F1E0) + 0.5); /*0x71e59b*/
   dword_B0F1D4 = result; /*0x71e5a0*/
   return result; /*0x71e5a6*/
@@ -1270,7 +1270,6 @@ namespace gamemd {
 int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4, int aP5, char a9, ShapeButtonClass * aP9)
 {
 
-  int Instance; // ebx
 
   ToggleClass::Construct((int)this, aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
   this->__pad_0[53] = aP9; /*0x71ff52*/
@@ -1280,6 +1279,7 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   /* X11: vtable install elided (implicit via TextButtonClass virtuals 0x71ff65) */
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
+  int Instance; // ebx
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/
     if ( aP4 == -1 ) /*0x71ff7c*/
       *&this->u32_14 = Text::MeasureWidth(this->field_38, 0) + 8; /*0x71ff8e*/

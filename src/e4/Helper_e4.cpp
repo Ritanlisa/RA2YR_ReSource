@@ -30,10 +30,10 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_6F2040()
 {
-  int result; // eax
-  int i; // esi
 
+  int result; // eax
   result = dword_A8ECB0; /*0x6f2040*/
+  int i; // esi
   for ( i = 0; i < dword_A8ECB0; ++i ) /*0x6f204a*/
   {
     TeamTypeClass::ProcessTaskForce(*((unsigned int *)dword_A8ECA4 + i)); /*0x6f2054*/
@@ -46,27 +46,27 @@ int sub_6F2040()
 namespace gamemd {  // G42.18c ns repair
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
-  int v6; // ebx
-  int v7; // eax
-  int v8; // edx
-  void *v9; // eax
-  void *v10[4]; // [esp+8h] [ebp-30h] BYREF
   XSurface v11; // [esp+18h] [ebp-20h] BYREF
-  int v12; // [esp+28h] [ebp-10h]
-  int v13[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
+  int v6; // ebx
   v6 = *a3; /*0x4371fa*/
+  int v7; // eax
   v7 = (*((int (**)(void **))*a1 + 28))(a1); /*0x4371fc*/
+  int v8; // edx
   v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
   ((unsigned int *)&v11)[0] = *(unsigned int *)(a2 + 8); /*0x437205*/
   ((unsigned int *)&v11)[0] = v8; /*0x437215*/
   v11.LockCount = 0; /*0x437219*/
   *(unsigned int *)v11.Surface = &XSurface_Vtable; /*0x437221*/
+  int v12; // [esp+28h] [ebp-10h]
   v12 = v7; /*0x437229*/
+  int v13[3]; // [esp+2Ch] [ebp-Ch] BYREF
   Buffer::Init((Buffer *)v13, v6, v7 * v8 * ((char *)&v11)); /*0x43722d*/
+  void *v9; // eax
   v9 = *(void **)(a2 + 8); /*0x437235*/
+  void *v10[4]; // [esp+8h] [ebp-30h] BYREF
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
   *(unsigned int *)v11.Surface = &BSurface_Vtable; /*0x43724b*/
   v10[0] = 0; /*0x437253*/
@@ -81,10 +81,10 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
 namespace gamemd {
 char sub_550240()
 {
-  char result; // al
-  int i; // esi
 
+  char result; // al
   result = g_MissionQueueFrame.random[31]; /*0x550240*/
+  int i; // esi
   for ( i = g_MissionQueueFrame.random[31] - 1; i >= 0; --i ) /*0x55024b*/
     result = TacticalClass::RenderCells(*(TacticalClass **)(g_MissionQueueFrame.random[28] + 4 * i)); /*0x550256*/
   return result; /*0x55025e*/
@@ -95,8 +95,8 @@ char sub_550240()
 namespace gamemd {
 unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  unsigned int *v6; // eax
 
+  unsigned int *v6; // eax
   v6 = (unsigned int *)(operator new(0x40u));
   if ( v6 ) /*0x5d81bc*/
     return MPBattleClass::MPManBattleClass((const wchar_t **)(v6), a1, a2, a3, a4, a5, a6); /*0x5d81de*/

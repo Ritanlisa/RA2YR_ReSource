@@ -11,20 +11,18 @@ namespace gamemd {  // G42.18 ns repair
 int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
 {
 
-  int result; // eax
-  int v5; // edi
-  int v6; // edx
-  int v7; // edx
-  int v8; // edx
-  int v9; // edx
-  int v10; // ecx
 
+  int result; // eax
   result = (*((int (**)(ObjectClass *))this->AbstractClass + 2))(this); /*0x7af546*/
   if ( !(unsigned char)result ) /*0x7af54b*/
   {
+  int v5; // edi
     v5 = 0; /*0x7af554*/
     this->M28 = this->M28; /*0x7af556*/
     result = *a3; /*0x7af55d*/
+  int v6; // edx
+  int v7; // edx
+  int v8; // edx
     if ( *a3 >= 16 && result < 364 && (v6 = a3[1], v6 >= 20) && v6 < 136 /*0x7af5bc*/
       || result >= 130 && result < 300 && (v7 = a3[1], v7 >= 100) && v7 < 216
       || result >= 175 && result < 245 && (v8 = a3[1], v8 >= 216) && v8 < 262 )
@@ -33,6 +31,8 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
       v5 = 2; /*0x7af610*/
       this->M28 = result; /*0x7af615*/
     }
+  int v9; // edx
+  int v10; // ecx
     else if ( result >= 252 && result < 466 && (v9 = a3[1], v9 >= 180) && v9 < 382 /*0x7af5fe*/
            || result >= 212 && result < 496 && (v10 = a3[1], v10 >= 262) && v10 < 422 )
     {

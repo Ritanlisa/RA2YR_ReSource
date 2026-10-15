@@ -13,9 +13,8 @@
 namespace gamemd {  // G42.18 ns repair
 bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
 {
-  const HANDLE *v3; // esi
-  BOOL v5; // eax
 
+  const HANDLE *v3; // esi
   v3 = (const HANDLE *)&this->q01C; /*0x664614*/
   Debug::Log(); /*0x66461d*/
   if ( !*v3 ) /*0x664629*/
@@ -29,6 +28,7 @@ bool Process::WaitForExit(DWORD dwMilliseconds, char aP2)
   if ( !aP2 ) /*0x66464c*/
     return 0; /*0x66464e*/
   Debug::Log(); /*0x66465a*/
+  BOOL v5; // eax
   v5 = TerminateProcess(*v3, 0); /*0x664667*/
   if ( v5 ) /*0x664671*/
   {

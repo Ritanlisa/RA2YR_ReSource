@@ -26,8 +26,6 @@ namespace gamemd {  // G42.18 ns repair
 AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
-  int v3; // eax
-  int v4; // eax
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
@@ -62,6 +60,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
          dword_B0E788 + dword_B0E794,
          0) )
   {
+  int v3; // eax
     v3 = g_MultiplayerCleanup++; /*0x6e5c2b*/
     *((unsigned int *)dword_B0E784 + v3) = (unsigned int)(this); /*0x6e5c3a*/
   }
@@ -73,6 +72,7 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
          dword_B0F678 + dword_B0F684,
          0) )
   {
+  int v4; // eax
     v4 = dword_B0F680++; /*0x6e5c7e*/
     *((unsigned int *)dword_B0F674 + v4) = (unsigned int)(this); /*0x6e5c8d*/
   }
@@ -84,20 +84,14 @@ AbstractTypeClass * TagTypeClass::Construct(char *aP1, void *a2, void *a3, void 
 namespace gamemd {
 AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
 {
-  unsigned int *v2; // ecx
   unsigned int *v3; // esi
-  int v4; // esi
-  unsigned int *v5; // eax
-  unsigned int *v6; // ecx
-  int v7; // eax
-  int v8; // eax
-  AbstractTypeClass *v10; // [esp+Ch] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5ca7) */
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cad) */
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cb4) */
   /* X11: vtable install elided (implicit via TagTypeClass virtuals 0x6e5cbb) */
   AbstractClass::AnnounceExpiredPointer(&a1->vfptr, 1); /*0x6e5cc2*/
+  unsigned int *v2; // ecx
   v2 = (unsigned int *)a1->q0A0; /*0x6e5cc7*/
   a1->q0A0 = 0; /*0x6e5ccd*/
   if ( v2 ) /*0x6e5cd9*/
@@ -112,12 +106,15 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v3 ); /*0x6e5cfa*/
   }
+  int v4; // esi
   v4 = 0; /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
+  unsigned int *v5; // eax
     v5 = (unsigned int *)(g_TagClassCount); /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
+  unsigned int *v6; // ecx
       v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
       if ( (AbstractTypeClass *)v6[9] == a1 ) /*0x6e5d12*/
       {
@@ -132,7 +129,9 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
     while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
+  AbstractTypeClass *v10; // [esp+Ch] [ebp-4h] BYREF
   v10 = (gamemd::AbstractTypeClass *)(a1); /*0x6e5d40*/
+  int v7; // eax
   v7 = (*(int (**)(int *, AbstractTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5d44*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v10);
@@ -148,6 +147,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     }
   }
   v10 = (gamemd::AbstractTypeClass *)(a1); /*0x6e5d89*/
+  int v8; // eax
   v8 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0E780 + 16))(&dword_B0E780, &v10); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
@@ -166,8 +166,8 @@ namespace gamemd {
 int TagTypeClass::GetEvent(int a2, int a3)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)(this->q0A0); /*0x6e5e50*/
   if ( result == a2 ) /*0x6e5e5c*/
   {
@@ -183,17 +183,16 @@ namespace gamemd {
 void* TagTypeClass::GetAction(unsigned char *** a2)
 {
 
-  char *v3; // eax
-  char *v4; // eax
   char Destination[48]; // [esp+8h] [ebp-B4h] BYREF
   char v7; // [esp+38h] [ebp-84h]
-  char String[128]; // [esp+3Ch] [ebp-80h] BYREF
 
   INIClass::ResetSection((INIClass *)a2); /*0x6e6093*/
+  char String[128]; // [esp+3Ch] [ebp-80h] BYREF
   if ( !(/*0x6e60b4*/ (INIClass *)a2)->GetString((unsigned __int8 *)&DataGlobal_842C3C, (unsigned __int8 *)&this->arrayIndex, &g_INI_DefaultBuffer, String, 128) )
     return 0; /*0x6e6151*/
   strtok(String, Str); /*0x6e60cb*/
   this->Coord_9C = atoi(String); /*0x6e60e1*/
+  char *v3; // eax
   v3 = strtok(0, Str); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
@@ -209,6 +208,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     memcpy(&this->Name, Destination, 0x30u); /*0x6e6123*/
     this->u32_94 = v7; /*0x6e6125*/
   }
+  char *v4; // eax
   v4 = strtok(0, Str); /*0x6e612d*/
   this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return (void *)(1); /*0x6e6143*/
@@ -220,10 +220,10 @@ namespace gamemd {
 int TagTypeClass::GetParameter(char * a2)
 {
 
-  int v3; // eax
-  CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
+  int v3; // eax
   v3 = (int)(this->q0A0); /*0x6e6169*/
+  CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
   if ( v3 ) /*0x6e6171*/
     wsprintfA(Source, "%d,%s,%s", this->Coord_9C, (const char *)&this->q0A0, (const char *)(v3 + 36)); /*0x6e61b4*/
   else
@@ -320,8 +320,8 @@ int TagTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x6e641b*/
   if ( result >= 0 ) /*0x6e6422*/
   {
@@ -344,8 +344,8 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 namespace gamemd {
 int TagTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6e647f*/
   if ( result >= 0 ) /*0x6e6486*/
     return 0; /*0x6e6488*/

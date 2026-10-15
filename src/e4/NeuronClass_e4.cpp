@@ -34,15 +34,14 @@
 namespace gamemd {  // G42.18c ns repair
 void * NeuronClass::Reset(unsigned int * Block, char a2)
 {
-  int v3; // eax
-  int v4; // eax
-  NeuronClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)Block->tail_0 = &vt_NeuronClass; /*0x43a9cd*/
   Block->__pad_004 = (int)&vt_NeuronClass; /*0x43a9d3*/
   Block->u32_8 = (int)&vt_NeuronClass; /*0x43a9da*/
   Block->u32_C = (int)&vt_NeuronClass; /*0x43a9e1*/
+  NeuronClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::NeuronClass *)(Block); /*0x43a9ef*/
+  int v3; // eax
   v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -58,6 +57,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
     }
   }
   v6 = (gamemd::NeuronClass *)(Block); /*0x43aa38*/
+  int v4; // eax
   v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&DataGlobal_B0F5D8 + 16))( /*0x43aa3c*/
          &DataGlobal_B0F5D8,
          &v6);
@@ -89,18 +89,18 @@ int NeuronClass_25::Update(int a2, void *a2_2, void *a3_1, void *a4_1)
 namespace gamemd {
 char NeuronClass_25::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x43ab32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x43ab3d*/
   {
+  int v3; // edx
     v3 = 0; /*0x43ab3f*/
     if ( m_8 <= 0 ) /*0x43ab43*/
       return 1; /*0x43ab63*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x43ab45*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x43ab4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x43ab54*/
     {
@@ -119,13 +119,11 @@ namespace gamemd {
 char NeuronClass_25::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x43ab7c*/
   {
     LOBYTE(this->m_C) = 0; /*0x43ab86*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x43ab8c*/
       v4 = a3; /*0x43aba2*/
     else
@@ -135,9 +133,11 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x43abb5*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x43abbc*/
         if ( a2 < m_8 ) /*0x43abc1*/
           m_8 = a2; /*0x43abc3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
         if ( BYTE1(this->m_C) ) /*0x43abdb*/
@@ -183,16 +183,16 @@ int NeuronClass_25::ddtor(void *a1)
 namespace gamemd {
 int NeuronClass_25::Activate(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x43ac50*/
     return 0; /*0x43ac58*/
+  int m_8; // edx
   m_8 = this->m_8; /*0x43ac5e*/
+  int result; // eax
   result = 0; /*0x43ac61*/
   if ( m_8 <= 0 ) /*0x43ac65*/
     return -1; /*0x43ac7c*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x43ac6b*/
   {
     if ( ++result >= m_8 ) /*0x43ac7a*/
@@ -217,8 +217,8 @@ unsigned int NeuronClass_25::Fire(int a2)
 namespace gamemd {
 VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x43acb3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x43acb6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x43acc0*/

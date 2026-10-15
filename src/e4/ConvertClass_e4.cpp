@@ -20,30 +20,9 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, void *a6_1, void *a7, void *a8, void *a9)
 {
 
-  int v7; // eax
-  int v8; // edi
-  bool v9; // cc
-  CampaignClass *v10; // eax
-  int v11; // eax
-  __int16 v12; // cx
-  int v13; // eax
-  CampaignClass *v14; // eax
-  CampaignClass *v15; // edi
-  int v16; // eax
-  unsigned char *v17; // edi
-  int i; // ebp
-  int j; // ebp
-  int v20; // eax
-  unsigned __int8 v21; // cl
-  int v22; // eax
   int v23; // ecx
-  CampaignClass *v24; // eax
-  int v25; // edi
-  int v26; // eax
   int v28; // [esp+Ch] [ebp-14h] BYREF
   Color v29; // [esp+10h] [ebp-10h] BYREF
-  int v30; // [esp+14h] [ebp-Ch]
-  int v31; // [esp+1Ah] [ebp-6h]
 
   *&this->__pad_004 = (*(int (**)(int))(*(unsigned int *)a4 + 112))(a4); /*0x48e753*/
   *&this->q008 = 0; /*0x48e756*/
@@ -117,8 +96,11 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   *&this->q118 = 0; /*0x48e894*/
   *&this->q11C = 0; /*0x48e89a*/
   *&this->q120 = 0; /*0x48e8a0*/
+  int v7; // eax
   v7 = a5; /*0x48e8a6*/
+  int v8; // edi
   v8 = 1; /*0x48e8aa*/
+  bool v9; // cc
   v9 = a5 < 1; /*0x48e8af*/
   *&this->q124 = 0; /*0x48e8b1*/
   *&this->q128 = 0; /*0x48e8b7*/
@@ -148,36 +130,46 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
     *&this->q16C = 1; /*0x48e943*/
   if ( *&this->__pad_004 == 1 ) /*0x48e94f*/
   {
+  CampaignClass *v10; // eax
     v10 = (CampaignClass *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
     this->ConvertClass_field_0x178 = v10; /*0x48e95f*/
     LOBYTE(v10->AbstractClass) = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
+  int v11; // eax
       v11 = ComputeColorSaturation(a2 + 2 * (v8 % 256) + v8 % 256, a2 + 2 * (v8 % 256), (int)&a5); /*0x48e98b*/
+  __int16 v12; // cx
       v12 = *(unsigned short *)v11; /*0x48e990*/
       LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
       LOWORD(v29.Color_field_00) = v12; /*0x48e996*/
       BYTE2(v29.Color_field_00) = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
+  int v13; // eax
       v13 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48e9ae*/
       LOWORD(a4) = *(unsigned short *)v13; /*0x48e9b6*/
       BYTE2(a4) = v13->ConvertClass_field_0x2; /*0x48e9c5*/
       *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((char *)a2, (int)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
+  CampaignClass *v14; // eax
     v14 = (CampaignClass *)__2_YAPAXI_Z(*&this->q16C << 8); /*0x48e9eb*/
     this->ConvertClass_field_0x170 = v14; /*0x48e9f0*/
+  CampaignClass *v15; // edi
     v15 = v14; /*0x48e9f6*/
+  int v16; // eax
     v16 = *&this->q16C; /*0x48e9f8*/
     *(unsigned int *)this->__pad_174 = (char *)v15 + 256 * ((v16 - 1) >> 1); /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
       LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
+  unsigned char *v17; // edi
       v17 = &v15->q174 + 1; /*0x48ea1a*/
+  int i; // ebp
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
         *v17++ = Palette::FindClosestColor((char *)a3, a2 + 2 * (i % 256) + i % 256); /*0x48ea40*/
     }
     else
     {
+  int v30; // [esp+14h] [ebp-Ch]
       v30 = 0; /*0x48ea53*/
       if ( v16 - 1 >= 0 ) /*0x48ea57*/
       {
@@ -185,14 +177,19 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
         {
           LOBYTE(v15->AbstractClass) = 0; /*0x48ea5d*/
           v15 = (CampaignClass *)((char *)v15 + 1); /*0x48ea5f*/
+  int j; // ebp
           for ( j = 1; j < 256; ++j ) /*0x48ea60*/
           {
+  int v20; // eax
             v20 = ComputeColorSaturation(a2 + 2 * (j % 256) + j % 256, a2, (int)&a5); /*0x48ea85*/
+  unsigned __int8 v21; // cl
             v21 = *(unsigned char *)(v20 + 2); /*0x48ea8f*/
             LOWORD(v29.Color_field_00) = *(unsigned short *)v20; /*0x48ea92*/
+  int v31; // [esp+1Ah] [ebp-6h]
             LOBYTE(v31) = v21; /*0x48ea97*/
             BYTE2(v29.Color_field_00) = v21; /*0x48eaa4*/
             BYTE2(v29.Color_field_00) = 2 * v30 * v21 / (*&this->q16C - 1); /*0x48eac2*/
+  int v22; // eax
             v22 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48eac6*/
             LOWORD(a4) = *(unsigned short *)v22; /*0x48eace*/
             BYTE2(a4) = v22->u32_2; /*0x48eadf*/
@@ -208,7 +205,9 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
   }
   else
   {
+  CampaignClass *v24; // eax
     v24 = (CampaignClass *)__2_YAPAXI_Z(*&this->q16C << 9); /*0x48eb1c*/
+  int v25; // edi
     v25 = *&this->q16C; /*0x48eb21*/
     this->ConvertClass_field_0x170 = v24; /*0x48eb2a*/
     *(unsigned int *)this->__pad_174 = (char *)v24 + 512 * ((v25 - 1) >> 1); /*0x48eb3a*/
@@ -227,6 +226,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6, 
          dword_89ED0C + dword_89ED00,
          0) )
   {
+  int v26; // eax
     v26 = dword_89ED08++; /*0x48ebc4*/
     *((unsigned int *)dword_89ECFC + v26) = (unsigned int)(this); /*0x48ebd3*/
   }

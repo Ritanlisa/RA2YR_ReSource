@@ -33,45 +33,42 @@ namespace gamemd {  // G42.18 ns repair
 wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
 {
 
-  int v2; // esi
-  int v3; // ebx
-  int v4; // edi
-  char *v5; // edi
-  const wchar_t **v6; // eax
-  int v7; // edi
-  char *v8; // edi
-  const wchar_t **v9; // eax
-  void *v11; // [esp+20h] [ebp-20h] BYREF
-  char *v12; // [esp+24h] [ebp-1Ch]
   void *v13; // [esp+28h] [ebp-18h] BYREF
   void **v14; // [esp+2Ch] [ebp-14h] BYREF
   unsigned int *v15; // [esp+30h] [ebp-10h]
-  void **v16; // [esp+34h] [ebp-Ch] BYREF
-  int *v17; // [esp+38h] [ebp-8h]
-  int v18; // [esp+3Ch] [ebp-4h]
 
+  int v2; // esi
   v2 = 0; /*0x7665db*/
+  char *v12; // [esp+24h] [ebp-1Ch]
   v12 = (char *)(this); /*0x7665e0*/
   if ( !dword_B72770 ) /*0x7665e4*/
     InitWDTGameOptions(); /*0x7665e6*/
+  int v3; // ebx
   v3 = 6; /*0x7665ef*/
+  void *v11; // [esp+20h] [ebp-20h] BYREF
   unknown_libname_74(&v11); /*0x7665f4*/
+  int *v17; // [esp+38h] [ebp-8h]
   v17 = (int *)(&stru_B72760); /*0x7665f9*/
+  int v18; // [esp+3Ch] [ebp-4h]
   v18 = 0; /*0x766601*/
+  void **v16; // [esp+34h] [ebp-Ch] BYREF
   v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x766605*/
   do /*0x7666b0*/
   {
     if ( !((unsigned __int8 (*)(void ***))v16[1])(&v16) ) /*0x76661a*/
       break; /*0x76661f*/
+  int v4; // edi
     v4 = v17[1] + 8 * v18; /*0x766634*/
     ComPtr::Constructor(&v14); /*0x766637*/
     v14 = (void **)(&vt_rc_ptr); /*0x76663c*/
     ComPtr::Set(&v14, *(unsigned int *)(v4 + 4)); /*0x766648*/
     if ( (v2 & v15[2]) == 0 ) /*0x766654*/
     {
+  char *v5; // edi
       v5 = v12 + 8; /*0x76665c*/
       if ( !(*(int (**)(unsigned int *, char *))(*v15 + 12))(v15, v12 + 8) ) /*0x766660*/
       {
+  const wchar_t **v6; // eax
         v6 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x766678*/
                                  v15,
                                  &v13,
@@ -93,15 +90,18 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   {
     if ( !((unsigned __int8 (*)(void ***))v16[1])(&v16) ) /*0x7666ce*/
       break; /*0x7666d3*/
+  int v7; // edi
     v7 = v17[1] + 8 * v18; /*0x7666e8*/
     ComPtr::Constructor(&v14); /*0x7666eb*/
     v14 = (void **)(&vt_rc_ptr); /*0x7666f0*/
     ComPtr::Set(&v14, *(unsigned int *)(v7 + 4)); /*0x7666fc*/
     if ( (v2 & v15[2]) == 0 ) /*0x766708*/
     {
+  char *v8; // edi
       v8 = v12 + 8; /*0x766710*/
       if ( (*(int (**)(unsigned int *, char *))(*v15 + 12))(v15, v12 + 8) != 2 ) /*0x76671a*/
       {
+  const wchar_t **v9; // eax
         v9 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x76672d*/
                                  v15,
                                  &v13,
@@ -129,30 +129,24 @@ namespace gamemd {
 void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
 {
 
-  int v5; // eax
-  int v6; // ebx
-  int v7; // eax
-  int v8; // eax
-  int v9; // edi
   int v10; // edx
-  int vtable0; // ebx
-  int v12; // eax
-  int v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  int v16; // eax
   DeleteAndZero v17; // [esp+Ch] [ebp-10h] BYREF
 
+  int v5; // eax
   v5 = *(unsigned int *)this->isUseless; /*0x7714c4*/
+  int v6; // ebx
   v6 = v5 - 1; /*0x7714c6*/
   if ( v5 > this->targetLaserTimer[0] ) /*0x7714c9*/
   {
     do /*0x77150b*/
     {
+  int v7; // eax
       v7 = *(unsigned int *)this->isUseless; /*0x7714cb*/
       if ( v6 < v7 ) /*0x7714d3*/
       {
+  int v8; // eax
         v8 = v7 - 1; /*0x7714d5*/
+  int v9; // edi
         v9 = v6; /*0x7714d6*/
         for ( *(unsigned int *)this->isUseless = v8; v9 < *(unsigned int *)this->isUseless; ++v9 ) /*0x7714e0*/
           String::Reassign( /*0x7714f0*/
@@ -166,11 +160,14 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   if ( !this->targetLaserTimer[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
   unknown_libname_73(&v17); /*0x771522*/
+  int vtable0; // ebx
   vtable0 = this->vtable0; /*0x77152b*/
   (&v17)->Alt2(); /*0x77153b*/
+  int v12; // eax
   v12 = this->primaryFacing[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
+  int v13; // eax
     v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
     if ( Map_Remove_770CE0(vtable0, *(unsigned int *)(this->barrelFacing[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
@@ -180,7 +177,9 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         this->secondaryFacing[4] = v17.u32_8; /*0x7715a2*/
         this->secondaryFacing[5] = a4; /*0x7715a5*/
       }
+  int v14; // ecx
       v14 = *(unsigned int *)this->unknown_short_3C8; /*0x7715a8*/
+  int v15; // eax
       if ( *(unsigned int *)this->isUseless < v14 /*0x7715d9*/
         || (this->isSinking[0] || !v14)
         && (v15 = *(unsigned int *)this->isALoaner, v15 > 0)
@@ -189,6 +188,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
              v14 + v15,
              0) )
       {
+  int v16; // eax
         v16 = *(unsigned int *)this->isUseless; /*0x7715e0*/
         *(unsigned int *)this->isUseless = v16 + 1; /*0x7715eb*/
         String::Reassign((String *)(this->targetLaserTimer[2] + 4 * v16), (const char **)&v17); /*0x7715f4*/

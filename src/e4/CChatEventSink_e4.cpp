@@ -409,24 +409,24 @@ namespace gamemd {
 int CChatEventSink::GrowBuffer()
 {
 
-  int v2; // eax
-  int CChatEventSink_field_0x04; // ecx
-  int v5; // ebx
-  void *v6; // eax
-  const void *CChatEventSink_field_0x08; // esi
-  int v8; // [esp+8h] [ebp-4h]
 
+  int v2; // eax
   v2 = *(unsigned int *)this->vtable1; /*0x7ad935*/
+  int CChatEventSink_field_0x04; // ecx
   CChatEventSink_field_0x04 = this->__pad_004; /*0x7ad938*/
   if ( 3 * v2 > CChatEventSink_field_0x04 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
+  int v5; // ebx
   v5 = CChatEventSink_field_0x04 / 2; /*0x7ad94f*/
   if ( CChatEventSink_field_0x04 / 2 < 10 ) /*0x7ad954*/
     v5 = 10; /*0x7ad956*/
   if ( v5 >= CChatEventSink_field_0x04 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
+  void *v6; // eax
   v6 = (void *)__2_YAPAXI_Z(268 * v5); /*0x7ad974*/
+  const void *CChatEventSink_field_0x08; // esi
   CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7ad979*/
+  int v8; // [esp+8h] [ebp-4h]
   v8 = (int)v6; /*0x7ad981*/
   if ( CChatEventSink_field_0x08 ) /*0x7ad985*/
     memcpy(v6, CChatEventSink_field_0x08, 268 * *(unsigned int *)this->vtable1); /*0x7ad99f*/
@@ -442,21 +442,21 @@ namespace gamemd {
 int CChatEventSink::ProcessChatEvent()
 {
 
-  int v2; // eax
-  int v4; // ebp
-  void *v5; // edx
-  const void *CChatEventSink_field_0x08; // esi
-  int v7; // [esp+4h] [ebp-4h]
 
+  int v2; // eax
   v2 = *(unsigned int *)this->vtable1; /*0x7aed44*/
   if ( *(unsigned int *)this->vtable1 < this->__pad_004 ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
+  int v4; // ebp
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
     v4 = 10; /*0x7aed5d*/
+  void *v5; // edx
   v5 = (void *)__2_YAPAXI_Z(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
+  int v7; // [esp+4h] [ebp-4h]
   v7 = (int)v5; /*0x7aed87*/
+  const void *CChatEventSink_field_0x08; // esi
   CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7aed8d*/
   if ( CChatEventSink_field_0x08 ) /*0x7aed92*/
     memcpy(v5, CChatEventSink_field_0x08, 248 * *(unsigned int *)this->vtable1); /*0x7aeda7*/
@@ -501,18 +501,12 @@ namespace gamemd {
 char CChatEventSink::EnsureCapacity(int a2)
 {
 
-  int v3; // esi
-  int v5; // ecx
-  int v6; // eax
-  int CChatEventSink_field_0x04; // ecx
-  int v8; // ebp
-  void *v9; // eax
-  const void *CChatEventSink_field_0x08; // esi
-  int v11; // [esp+Ch] [ebp+4h]
 
+  int v3; // esi
   v3 = *(unsigned int *)this->vtable1; /*0x7aedd4*/
   if ( !*(unsigned int *)this->vtable1 ) /*0x7aedd4*/
     return 0; /*0x7aeddb*/
+  int v5; // ecx
   v5 = a2; /*0x7aede1*/
   if ( a2 < 0 ) /*0x7aede7*/
     v5 = 0; /*0x7aede9*/
@@ -522,18 +516,24 @@ char CChatEventSink::EnsureCapacity(int a2)
     (void *)(this->u32_8 + 4 * v5),
     (const void *)(this->u32_8 + 4 * (v5 + 1)),
     4 * (v3 + 0x3FFFFFFF * (v5 + 1)));
+  int v6; // eax
   v6 = *(unsigned int *)this->vtable1 - 1; /*0x7aee1a*/
   *(unsigned int *)this->vtable1 = v6; /*0x7aee1c*/
+  int CChatEventSink_field_0x04; // ecx
   CChatEventSink_field_0x04 = this->__pad_004; /*0x7aee1e*/
   if ( 3 * v6 <= CChatEventSink_field_0x04 ) /*0x7aee26*/
   {
+  int v8; // ebp
     v8 = CChatEventSink_field_0x04 / 2; /*0x7aee2f*/
     if ( CChatEventSink_field_0x04 / 2 < 10 ) /*0x7aee34*/
       v8 = 10; /*0x7aee36*/
     if ( v8 < CChatEventSink_field_0x04 ) /*0x7aee3d*/
     {
+  void *v9; // eax
       v9 = (void *)__2_YAPAXI_Z(4 * v8); /*0x7aee47*/
+  const void *CChatEventSink_field_0x08; // esi
       CChatEventSink_field_0x08 = (const void *)this->u32_8; /*0x7aee4c*/
+  int v11; // [esp+Ch] [ebp+4h]
       v11 = (int)v9; /*0x7aee54*/
       if ( CChatEventSink_field_0x08 ) /*0x7aee58*/
         memcpy(v9, CChatEventSink_field_0x08, 4 * *(unsigned int *)this->vtable1); /*0x7aee66*/
@@ -551,42 +551,42 @@ namespace gamemd {
 char CChatEventSink::EncodeString(char a2, void *a2_1)
 {
 
-  char *v4; // eax
-  char *v5; // eax
-  size_t v6; // esi
-  const char *v7; // edi
-  char *v8; // eax
-  char *v9; // ebp
-  const char *v10; // esi
-  size_t v11; // ecx
-  unsigned char *v12; // eax
 
   if ( !*(unsigned int *)this->vtable1 ) /*0x7b5e33*/
     return 0; /*0x7b5e39*/
+  char *v4; // eax
   v4 = (char *)(strchr(*(const char **)this->vtable1, a2)); /*0x7b5e46*/
   if ( !v4 ) /*0x7b5e50*/
     return 0; /*0x7b5e52*/
+  char *v5; // eax
   v5 = &v4[-*(unsigned int *)this->vtable1]; /*0x7b5e5c*/
+  size_t v6; // esi
   v6 = (size_t)v5; /*0x7b5e5f*/
+  const char *v7; // edi
   v7 = &g_INI_DefaultBuffer; /*0x7b5e63*/
   if ( *(unsigned int *)this->vtable1 ) /*0x7b5e58*/
     v7 = *(const char **)this->vtable1; /*0x7b5e6a*/
+  char *v8; // eax
   v8 = (char *)__2_YAPAXI_Z((size_t)(v5 + 1)); /*0x7b5e70*/
+  char *v9; // ebp
   v9 = v8; /*0x7b5e75*/
   *v8 = 0; /*0x7b5e7c*/
   if ( v7 ) /*0x7b5e80*/
     strncpy(v8, v7, v6); /*0x7b5e85*/
   v9[v6] = 0; /*0x7b5e8d*/
+  const char *v10; // esi
   v10 = &g_INI_DefaultBuffer; /*0x7b5e91*/
   if ( v9 ) /*0x7b5e98*/
     v10 = v9; /*0x7b5e9a*/
   if ( *(unsigned int *)this->vtable1 ) /*0x7b5e9c*/
     __3_YAXPAX_Z(*(void **)this->vtable1); /*0x7b5ea3*/
   *(unsigned int *)this->vtable1 = 0; /*0x7b5ead*/
+  size_t v11; // ecx
   if ( v10 ) /*0x7b5eb3*/
     v11 = strlen(v10) + 1; /*0x7b5ebc*/
   else
     v11 = 1; /*0x7b5ec2*/
+  unsigned char *v12; // eax
   v12 = (unsigned char *)__2_YAPAXI_Z(v11); /*0x7b5ec8*/
   *(unsigned int *)this->vtable1 = (unsigned int)(v12); /*0x7b5ed0*/
   *v12 = 0; /*0x7b5ed4*/

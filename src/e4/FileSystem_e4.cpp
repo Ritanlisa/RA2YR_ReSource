@@ -242,15 +242,13 @@ void FileSystem::InitPipShapes()
 namespace gamemd {
 void FileSystem::CleanupTrees()
 {
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
 
   if ( DataGlobal_B0FBAC ) /*0x72d35a*/
   {
     DataGlobal_B0FBAC = 0; /*0x72d368*/
     if ( DataGlobal_B0FC70 ) /*0x72d36e*/
     {
+  void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FB34; /*0x72d370*/
       if ( *(unsigned int *)&DataGlobal_B0FB34 ) /*0x72d378*/
       {
@@ -262,6 +260,7 @@ void FileSystem::CleanupTrees()
     *(unsigned int *)&DataGlobal_B0FB34 = 0; /*0x72d395*/
     if ( DataGlobal_B0FC71 ) /*0x72d39d*/
     {
+  void *v2; // esi
       v2 = *(void **)&DataGlobal_B0FB00; /*0x72d39f*/
       if ( *(unsigned int *)&DataGlobal_B0FB00 ) /*0x72d3a7*/
       {
@@ -273,6 +272,7 @@ void FileSystem::CleanupTrees()
     *(unsigned int *)&DataGlobal_B0FB00 = 0; /*0x72d3c4*/
     if ( DataGlobal_B0FC72 ) /*0x72d3cc*/
     {
+  void *v3; // esi
       v3 = *(void **)&DataGlobal_B0FB30; /*0x72d3ce*/
       if ( *(unsigned int *)&DataGlobal_B0FB30 ) /*0x72d3d6*/
       {

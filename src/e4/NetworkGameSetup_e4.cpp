@@ -28,8 +28,8 @@ namespace gamemd {  // G42.18 ns repair
 int NetworkGameSetup::ReadRulesUnknown()
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)GetDlgItem(*(HWND *)this->__pad_000, 1363); /*0x5b975b*/
   if ( result ) /*0x5b9763*/
   {
@@ -46,9 +46,6 @@ namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
 
-  char *v3; // eax
-  unsigned int v4; // edi
-  HWND DlgItem; // esi
   int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
@@ -65,9 +62,12 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
     Stream::WriteBlock((int *)&unk_A8EA70, (int)v8, 250, 1); /*0x5ba9f1*/
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5ba9fb*/
+  char *v3; // eax
     v3 = CharToWideString(unk_A8B380); /*0x5baa05*/
+  unsigned int v4; // edi
     v4 = dword_A8B394; /*0x5baa0d*/
     Format = (wchar_t *)v3; /*0x5baa19*/
+  HWND DlgItem; // esi
     DlgItem = GetDlgItem(*(HWND *)this->__pad_000, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/
     {

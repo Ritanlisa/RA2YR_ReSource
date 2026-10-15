@@ -31,8 +31,8 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * AudioQueue::CreateNode()
 {
 
-  DListNode *v2; // esi
 
+  DListNode *v2; // esi
   v2 = (DListNode *)__2_YAPAXI_Z(0x60u); /*0x402afc*/
   memset(v2, 0, 0x60u); /*0x402b07*/
   (v2)->InitEmpty(); /*0x402b0e*/
@@ -63,29 +63,27 @@ unsigned int * AudioQueue::CreateNode()
 namespace gamemd {
 int AudioQueue::FindBestChannel(int a1, int a2)
 {
-  int v2; // ebx
-  int v3; // edi
-  int v4; // ebp
-  unsigned int v5; // esi
-  int result; // eax
-  int v7; // ecx
-  unsigned int v8; // edx
-  int v9; // [esp+10h] [ebp-Ch]
-  int v10; // [esp+14h] [ebp-8h]
-  int v11; // [esp+18h] [ebp-4h]
 
+  int v2; // ebx
   v2 = a2; /*0x4035f4*/
+  int v10; // [esp+14h] [ebp-8h]
   v10 = a2; /*0x4035fc*/
   if ( a2 == -1 ) /*0x403600*/
   {
     v2 = 1; /*0x403602*/
     v10 = 1; /*0x403607*/
   }
+  int v3; // edi
   v3 = 127; /*0x40360b*/
+  int v4; // ebp
   v4 = 0; /*0x403610*/
+  int v9; // [esp+10h] [ebp-Ch]
   v9 = 127; /*0x403618*/
+  int v11; // [esp+18h] [ebp-4h]
   v11 = 0; /*0x40361c*/
+  unsigned int v5; // esi
   v5 = -1; /*0x403620*/
+  int result; // eax
   result = ((AudioQueue *)((int *)(a1 + 248)))->GetNext(); /*0x403623*/
   if ( result ) /*0x40362a*/
   {
@@ -95,6 +93,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
       {
         if ( (result->u8_A4 & 0x15) == 0 ) /*0x40363e*/
           return result; /*0x40363e*/
+  int v7; // ecx
         v7 = result->u32_A0; /*0x403647*/
         if ( (*(unsigned char *)(result + 164) & 1) != 0 ) /*0x40364d*/
         {
@@ -102,6 +101,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
           {
             if ( v7 == v3 ) /*0x40365f*/
             {
+  unsigned int v8; // edx
               v8 = result->u32_DC; /*0x403661*/
               if ( v8 < v5 && v5 - v8 >= 0x666 ) /*0x403675*/
               {
@@ -140,17 +140,16 @@ int AudioQueue::FindBestChannel(int a1, int a2)
 namespace gamemd {
 int AudioQueue::StopAllVoices(void *a1, void *a2)
 {
-  int v1; // edx
-  int v2; // ecx
-  int v3; // ebx
-  int result; // eax
-  AudioQueue *v5; // esi
-  int v6; // edi
-  Voice *v7; // [esp+0h] [ebp-Ch]
 
+  int v1; // edx
+  int v3; // ebx
   v3 = v1; /*0x403733*/
+  int v2; // ecx
+  int result; // eax
   result = ((AudioQueue *)((AudioQueue *)(v2 + 248)))->GetNext(); /*0x40373b*/
+  AudioQueue *v5; // esi
   v5 = (AudioQueue *)result; /*0x403740*/
+  int v6; // edi
   v6 = result; /*0x403744*/
   if ( result ) /*0x403746*/
   {
@@ -158,6 +157,7 @@ int AudioQueue::StopAllVoices(void *a1, void *a2)
     {
       result = ((AudioQueue *)(v5))->GetNextAlt(); /*0x40374a*/
       v5 = (AudioQueue *)result; /*0x403752*/
+  Voice *v7; // [esp+0h] [ebp-Ch]
       if ( v3 == -1 || v6->u32_C == v3 ) /*0x403759*/
         result = ((Voice *)(v7))->Stop(); /*0x40375d*/
       v6 = (int)v5; /*0x403764*/
@@ -288,17 +288,10 @@ int AudioQueue::Update(void *a1, void *a2, void *a3, void *a4)
 namespace gamemd {
 int AudioQueue::Cleanup(void *a1_1, void *a2)
 {
-  int v2; // eax
-  int v3; // eax
-  int v4; // ecx
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int v8; // ecx
-  int v9; // eax
 
   while ( *((unsigned int *)a1_1 + 12) ) /*0x7b1d16*/
   {
+  int v2; // eax
     v2 = **((unsigned int **)a1_1 + 9); /*0x7b1d1e*/
     if ( v2->q016 ) /*0x7b1d20*/
     {
@@ -309,10 +302,13 @@ int AudioQueue::Cleanup(void *a1_1, void *a2)
       v2->u8_15 = 0; /*0x7b1d30*/
       --*((unsigned int *)a1_1 + 64536); /*0x7b1d3a*/
     }
+  int v3; // eax
     v3 = *((unsigned int *)a1_1 + 12); /*0x7b1d40*/
     if ( v3 > 0 ) /*0x7b1d45*/
     {
+  int v4; // ecx
       v4 = v3 - 1; /*0x7b1d47*/
+  int v5; // eax
       v5 = 0; /*0x7b1d4a*/
       for ( *((unsigned int *)a1_1 + 12) = v4; /*0x7b1d51*/
             v5 < *((unsigned int *)a1_1 + 12);
@@ -326,6 +322,7 @@ int AudioQueue::Cleanup(void *a1_1, void *a2)
   *((unsigned int *)a1_1 + 64533) = 0; /*0x7b1d70*/
   while ( *((unsigned int *)a1_1 + 18) ) /*0x7b1d76*/
   {
+  int v6; // eax
     v6 = **((unsigned int **)a1_1 + 15); /*0x7b1d7e*/
     if ( v6->q016 ) /*0x7b1d80*/
     {
@@ -336,10 +333,13 @@ int AudioQueue::Cleanup(void *a1_1, void *a2)
       v6->u8_15 = 0; /*0x7b1d90*/
       --*((unsigned int *)a1_1 + 64537); /*0x7b1d9a*/
     }
+  int v7; // eax
     v7 = *((unsigned int *)a1_1 + 18); /*0x7b1da0*/
     if ( v7 > 0 ) /*0x7b1da5*/
     {
+  int v8; // ecx
       v8 = v7 - 1; /*0x7b1da7*/
+  int v9; // eax
       v9 = 0; /*0x7b1daa*/
       for ( *((unsigned int *)a1_1 + 18) = v8; /*0x7b1db1*/
             v9 < *((unsigned int *)a1_1 + 18);
@@ -357,12 +357,10 @@ int AudioQueue::Cleanup(void *a1_1, void *a2)
 namespace gamemd {
 unsigned char * AudioQueue::AllocBuffer(char aP1)
 {
-  unsigned char *result; // eax
-  int v3; // edi
   int v4; // esi
-  int v5; // edi
   int v6; // esi
 
+  unsigned char *result; // eax
   result = 0; /*0x7b20e7*/
   if ( aP1 ) /*0x7b20ed*/
   {
@@ -374,6 +372,7 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
     }
     else
     {
+  int v5; // edi
       v5 = 0; /*0x7b21b7*/
       while ( 1 ) /*0x7b21b9*/
       {
@@ -406,6 +405,7 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
     }
     else
     {
+  int v3; // edi
       v3 = 0; /*0x7b2116*/
       while ( 1 ) /*0x7b2118*/
       {
@@ -435,17 +435,14 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
 namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6)
 {
-  int v8; // eax
-  unsigned int v9; // ecx
-  int v10; // ecx
-  int v11; // edx
-  int v12; // ecx
 
   (*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x7b22e9*/
   if ( !this->u32_18 ) /*0x7b22ee*/
     return 0; /*0x7b22f5*/
+  int v8; // eax
   v8 = *this->u32_C; /*0x7b2304*/
   memcpy(a2, (const void *)(v8 + 32), v8->uniqueId); /*0x7b2311*/
+  unsigned int v9; // ecx
   v9 = (unsigned int *)(*v9); /*0x7b231e*/
   if ( *v9 > 0x10 ) /*0x7b2323*/
     v9 = (unsigned int *)(16); /*0x7b2325*/
@@ -453,10 +450,13 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
   memcpy(a4, (const void *)v8, v9); /*0x7b2337*/
   *a6 = v8->u8_1A; /*0x7b234c*/
   *(unsigned int *)a3 = v8->uniqueId; /*0x7b2352*/
+  int v10; // ecx
   v10 = this->u32_18; /*0x7b2354*/
   if ( v10 > 0 ) /*0x7b2359*/
   {
+  int v11; // edx
     v11 = v10 - 1; /*0x7b235b*/
+  int v12; // ecx
     v12 = 0; /*0x7b235e*/
     for ( this->u32_18 = v11; /*0x7b2365*/
           v12 < this->u32_18;
@@ -481,18 +481,9 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsi
 namespace gamemd {
 AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
-  unsigned char *v9; // ebp
-  int v10; // ecx
-  int v11; // eax
-  int v12; // eax
-  int v13; // edx
   int v14; // eax
-  int v15; // ecx
-  int v16; // eax
-  int v17; // eax
-  int v18; // edx
-  UINT v19; // eax
 
+  unsigned char *v9; // ebp
   v9 = ((AudioQueue *)this)->AllocBuffer(aP5); /*0x7b23c4*/
   memcpy(v9 + 32, aP1, arg4); /*0x7b23d5*/
   *((unsigned int *)v9 + 4) = arg4; /*0x7b23e6*/
@@ -503,13 +494,17 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   this->vt_slot_84(v9); /*0x7b2411*/
   if ( aP5 ) /*0x7b241a*/
   {
+  int v10; // ecx
     v10 = this->u32_40; /*0x7b241c*/
+  int v11; // eax
     if ( this->u32_48 < v10 /*0x7b2444*/
       || (this->u32_45 || !v10)
       && (v11 = this->u32_4C, v11 > 0)
       && this->u32_38->vt_slot_8this->u32_38, v10 + v11, 0) )
     {
+  int v12; // eax
       v12 = this->u32_48; /*0x7b244b*/
+  int v13; // edx
       v13 = this->u32_3C; /*0x7b244e*/
       this->u32_48 = v12 + 1; /*0x7b2454*/
       *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7b2457*/
@@ -518,19 +513,24 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   }
   else
   {
+  int v15; // ecx
     v15 = this->u32_28; /*0x7b2462*/
+  int v16; // eax
     if ( this->u32_30 < v15 /*0x7b248a*/
       || (this->u32_2D || !v15)
       && (v16 = this->u32_34, v16 > 0)
       && this->u32_20->vt_slot_8this->u32_20, v15 + v16, 0) )
     {
+  int v17; // eax
       v17 = this->u32_30; /*0x7b2491*/
+  int v18; // edx
       v18 = this->u32_24; /*0x7b2494*/
       this->u32_30 = v17 + 1; /*0x7b249a*/
       *(unsigned int *)(v18 + 4 * v17) = (unsigned int)(v9); /*0x7b249d*/
     }
     v14 = this->u32_3F06C; /*0x7b24a0*/
   }
+  UINT v19; // eax
   v19 = this->vt_slot_56(v14); /*0x7b24af*/
   SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return (*(EventQueue **)&g_BinkMoviePlayer)->Process(); /*0x7b24ca*/
@@ -540,15 +540,14 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
 namespace gamemd {
 int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
 {
-  int v4; // edi
-  int *v5; // eax
-  int v6; // eax
 
+  int v4; // edi
   v4 = 0; /*0x403537*/
   do /*0x40359e*/
   {
     if ( a1[12].AudioController_field_00[0] >= (int)a1[12].AudioController_field_04 ) /*0x403547*/
       break; /*0x403547*/
+  int *v5; // eax
     v5 = (a1)->Constructor(); /*0x40354b*/
     if ( !v5 ) /*0x403552*/
       break; /*0x403552*/
@@ -556,6 +555,7 @@ int AudioQueue::PreallocateChannels(unsigned int * a1, int a2)
     ++a1[12].AudioController_field_00[0]; /*0x403561*/
     ++a1[13].AudioController_field_00[0]; /*0x40356e*/
     InsertAfterDListNode((int)&a1[12].AudioController_field_08, v5); /*0x40357c*/
+  int v6; // eax
     v6 = a1[13].AudioController_field_00[0] - 1; /*0x403587*/
     a1[13].AudioController_field_00[0] = v6; /*0x40358a*/
     if ( v6 < 0 ) /*0x403590*/
@@ -573,8 +573,8 @@ namespace gamemd {
 int * AudioQueue::IteratorNext()
 {
 
-  AudioQueue *v2; // ecx
 
+  AudioQueue *v2; // ecx
   v2 = *(AudioQueue **)this->Socket; /*0x4035d3*/
   if ( v2 ) /*0x4035d7*/
     *(unsigned int *)this->Socket = (v2)->GetNextAlt(); /*0x4035de*/
@@ -587,10 +587,10 @@ int * AudioQueue::IteratorNext()
 namespace gamemd {
 int AudioQueue::DeactivateAllMatching(int a1, int a2)
 {
-  int result; // eax
-  int i; // esi
 
+  int result; // eax
   result = ((AudioQueue *)((AudioQueue *)(a1 + 248)))->GetNext(); /*0x40377a*/
+  int i; // esi
   for ( i = result; result; i = result ) /*0x403783*/
   {
     if ( (i->u8_A4 & 1) != 0 && (a2 == -1 || i->u32_C == a2) ) /*0x403796*/
@@ -608,10 +608,10 @@ namespace gamemd {
 int AudioQueue::GetNext()
 {
 
-  int result; // eax
 
   if ( !this ) /*0x4073c2*/
     return 0; /*0x4073c2*/
+  int result; // eax
   result = *(unsigned int *)this->Socket; /*0x4073c4*/
   if ( *(unsigned int *)this->Socket ) /*0x4073c4*/
   {
@@ -628,10 +628,10 @@ namespace gamemd {
 int AudioQueue::GetNextAlt()
 {
 
-  int result; // eax
 
   if ( !this ) /*0x4073e2*/
     return 0; /*0x4073e2*/
+  int result; // eax
   result = *(unsigned int *)this->Socket; /*0x4073e4*/
   if ( *(unsigned int *)this->Socket ) /*0x4073e4*/
   {
@@ -647,8 +647,8 @@ int AudioQueue::GetNextAlt()
 namespace gamemd {
 int AudioQueue::IsEmpty(int a1, int a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = *(unsigned int *)(a1 + 20); /*0x407b40*/
   result->u32_94 = a2; /*0x407b43*/
   return result; /*0x407b49*/
@@ -659,8 +659,8 @@ int AudioQueue::IsEmpty(int a1, int a2)
 namespace gamemd {
 int AudioQueue::IsNotEmpty(int a1, int a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = *(unsigned int *)(a1 + 20); /*0x407b50*/
   result->u32_9C = a2; /*0x407b53*/
   return result; /*0x407b59*/
@@ -671,17 +671,17 @@ int AudioQueue::IsNotEmpty(int a1, int a2)
 namespace gamemd {
 int AudioQueue::HaltVoices(Voice *a1)
 {
-  int result; // eax
-  int v2; // esi
-  Voice *v3; // [esp-8h] [ebp-Ch]
 
+  int result; // eax
   result = *(unsigned int *)&DataGlobal_87E81C; /*0x4081a0*/
   if ( *(unsigned int *)&DataGlobal_87E81C ) /*0x4081a8*/
   {
     result = ((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x4081af*/
+  int v2; // esi
     v2 = result; /*0x4081b4*/
     if ( result ) /*0x4081b8*/
     {
+  Voice *v3; // [esp-8h] [ebp-Ch]
       v3 = a1; /*0x4081c1*/
       do /*0x4081fa*/
       {
@@ -708,8 +708,8 @@ int AudioQueue::HaltVoices(Voice *a1)
 namespace gamemd {
 int * AudioQueue::IncrementPriority()
 {
-  int *result; // eax
 
+  int *result; // eax
   result = (int *)dword_87E81C; /*0x408200*/
   if ( dword_87E81C ) /*0x408207*/
   {
@@ -724,20 +724,20 @@ int * AudioQueue::IncrementPriority()
 namespace gamemd {
 int AudioQueue::ReleaseBuffers()
 {
-  int result; // eax
-  int i; // esi
-  int v2; // eax
 
+  int result; // eax
   result = *(unsigned int *)&DataGlobal_87E81C; /*0x408270*/
   if ( *(unsigned int *)&DataGlobal_87E81C ) /*0x408278*/
   {
     result = ((AudioQueue *)((AudioQueue *)&DataGlobal_87E810))->GetNext(); /*0x40827f*/
+  int i; // esi
     for ( i = result; result; i = result ) /*0x408288*/
     {
       if ( !i->q080 && i->u32_14 ) /*0x4082a2*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x4082ae*/
         (i->u32_14)->DeactivatePlay(); /*0x4082b3*/
+  int v2; // eax
         v2 = i->u32_C; /*0x4082b8*/
         if ( (v2 & 1) != 0 ) /*0x4082bd*/
         {
@@ -758,11 +758,11 @@ int AudioQueue::ReleaseBuffers()
 namespace gamemd {
 int AudioQueue::DrainAll()
 {
-  int result; // eax
-  int *v1; // esi
   int Next_Alt; // edi
 
+  int result; // eax
   result = ((AudioQueue *)(unk_B1D320))->GetNext(); /*0x750fa6*/
+  int *v1; // esi
   v1 = (int *)result; /*0x750fab*/
   if ( result ) /*0x750faf*/
   {

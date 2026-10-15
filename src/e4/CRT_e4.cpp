@@ -10,8 +10,8 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_7C5EE4()
 {
-  uint16_t v1; // [esp+Ah] [ebp-2h]
 
+  uint16_t v1; // [esp+Ah] [ebp-2h]
   dword_822D80 = v1; /*0x7c5ef9*/
   return v1; /*0x7c5efe*/
 }  // G42.18 ns repair

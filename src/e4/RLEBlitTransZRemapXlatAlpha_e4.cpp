@@ -14,8 +14,6 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11)
 {
-  uint16_t *result; // eax
-  int v14; // edx
   RLEBlitTransZRemapXlatAlpha_ushort * v15;
   int v17; // edx
   int v18; // ebx
@@ -26,8 +24,10 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   int v23; // [esp+18h] [ebp+4h]
   uint8_t *v24; // [esp+1Ch] [ebp+8h]
 
+  uint16_t *result; // eax
   result = a7; /*0x497a2c*/
   v24 = *(uint8_t **)*&this->__pad_004; /*0x497a30*/
+  int v14; // edx
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
     v14 = 254; /*0x497a53*/
@@ -159,8 +159,8 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_
 namespace gamemd {
 RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryInterface(unsigned int * Block, char a2)
 {
-  void *m_C; // eax
 
+  void *m_C; // eax
   m_C = (void *)Block->u32_C; /*0x49aa48*/
   *(unsigned int *)Block->tail_0 = &vt_RLEBlitTransZRemapXlatAlpha; /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/

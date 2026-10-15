@@ -18,13 +18,9 @@
 namespace gamemd {  // G42.18 ns repair
 AbstractClass * * sub_777420(ObjectClass *self)
 {
-  int v1; // ecx
-  AsyncIO *v2; // ecx
-  int result; // eax
-  HWND Current; // eax
-  HWND v5; // eax
 
   Debug::Log(); /*0x777425*/
+  int v1; // ecx
   sub_407040(v1); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
   if ( stru_887598.lineTrailer && byte_B73560 == 1 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x77746d*/
@@ -70,13 +66,17 @@ AbstractClass * * sub_777420(ObjectClass *self)
   }
   MapClass::MarkForRedraw((GScreenClass *)&DataGlobal_87F7E8, 2); /*0x77757c*/
   InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
+  AsyncIO *v2; // ecx
   (*((unsigned char *)&(v2))) = 0; /*0x777592*/
   (v2)->Read(); /*0x777594*/
+  int result; // eax
   result = Dialog::GetCurrent(); /*0x777599*/
   if ( result ) /*0x7775a1*/
   {
+  HWND Current; // eax
     Current = (HWND)((gamemd::AbstractClass **)((HWND)Dialog::GetCurrent()));
     SetActiveWindow(Current); /*0x7775a9*/
+  HWND v5; // eax
     v5 = (HWND)Dialog::GetCurrent(); /*0x7775af*/
     return (gamemd::AbstractClass **)((int)SetFocus(v5)); /*0x7775b5*/
   }
@@ -87,10 +87,10 @@ AbstractClass * * sub_777420(ObjectClass *self)
 namespace gamemd {
 int sub_5C09A0()
 {
-  int result; // eax
 
   if ( g_MissionQueueFrame.localVariables[605] ) /*0x5c09a8*/
     return (*(int (**)(int))(*(unsigned int *)g_MissionQueueFrame.localVariables[605] + 40))(g_MissionQueueFrame.localVariables[605]); /*0x5c09ac*/
+  int result; // eax
   return result; /*0x5c09af*/
 }
 }
@@ -107,9 +107,8 @@ namespace gamemd {
 char * E4Recv_724000::sub_724000(int a2)
 {
 
-  char *v3; // ecx
-  int v4; // edx
 
+  char *v3; // ecx
   v3 = (char *)(&this->u8_234); /*0x72400a*/
   this->M4 = 0; /*0x724010*/
   this->M8 = a2; /*0x724013*/
@@ -128,6 +127,7 @@ char * E4Recv_724000::sub_724000(int a2)
   this->M596 = 0; /*0x724056*/
   this->M600 = 0; /*0x72405c*/
   this->M604 = 0; /*0x724062*/
+  int v4; // edx
   v4 = *(unsigned int *)v3; /*0x724068*/
   /* X11: vtable install elided (implicit via ToolTipManager virtuals 0x72406a) */
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/

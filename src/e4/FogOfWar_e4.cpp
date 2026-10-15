@@ -229,58 +229,54 @@ MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
 namespace gamemd {
 int FogOfWar::RenderCell()
 {
-  int v2; // esi
-  int v3; // edi
-  int64_t v4; // rax
-  char *v5; // edi
-  char *v6; // edi
-  unsigned int v7; // ecx
-  int v8; // edx
-  int v9; // eax
-  int v10; // ecx
   int result; // eax
-  unsigned int *v12; // edi
-  unsigned int *v13; // esi
-  int v14; // edx
-  int v15; // eax
-  unsigned char *v16; // edx
-  int BuildingAnimByName; // ebx
-  int v18; // ecx
-  int v19; // ebx
-  int v20; // edx
-  int v21; // eax
-  int v23; // [esp+14h] [ebp-4h]
 
+  int v2; // esi
   v2 = this->u32_121C; /*0x65615f*/
+  int v3; // edi
   v3 = (*(int (**)(int))(*(unsigned int *)v2 + 128))(v2); /*0x65616f*/
+  int64_t v4; // rax
   v4 = v3 * (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2); /*0x65617b*/
+  char *v5; // edi
   v5 = (char *)this->u32_1274; /*0x65617f*/
   (*(((unsigned int *)&(v4)) + 1)) = ((((((unsigned char *)&(v4))[4]) & 7) + (int)v4) >> 3) + 1; /*0x65618f*/
   memset(v5, 0, 4 * ((*(((unsigned int *)&(v4)) + 1)) >> 2)); /*0x656194*/
+  char *v6; // edi
   v6 = &v5[4 * ((*(((unsigned int *)&(v4)) + 1)) >> 2)]; /*0x656194*/
+  unsigned int v7; // ecx
   v7 = (((unsigned char *)&(v4))[4]) & 3; /*0x656198*/
+  int v8; // edx
   v8 = 0; /*0x65619b*/
   memset(v6, 0, v7); /*0x65619d*/
+  int v23; // [esp+14h] [ebp-4h]
   v23 = 0; /*0x65619f*/
   do /*0x6562b5*/
   {
+  int v9; // eax
     v9 = v8 + *this->ptr_1258; /*0x6561ab*/
+  int v10; // ecx
     v10 = *(unsigned int *)(v9 + 16); /*0x6561ad*/
     result = *(unsigned int *)(v9 + 4); /*0x6561b0*/
     if ( v10 > 0 ) /*0x6561b5*/
     {
+  unsigned int *v12; // edi
       v12 = &result->u32_4; /*0x6561bb*/
       v10 = v10; /*0x6561be*/
       do /*0x65629e*/
       {
+  unsigned int *v13; // esi
         v13 = (unsigned int *)*(v12 - 1); /*0x6561c8*/
+  int v14; // edx
         v14 = *v12 /*0x6561d8*/
             + v12[1] * (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C);
+  int v15; // eax
         v15 = 1 << (v14 & 7); /*0x6561e2*/
+  unsigned char *v16; // edx
         v16 = (unsigned char *)(this->u32_1274 + (v14 >> 3)); /*0x6561ed*/
         if ( (*v16 & (uint8_t)v15) == 0 ) /*0x6561f3*/
         {
           *v16 |= v15; /*0x6561fb*/
+  int BuildingAnimByName; // ebx
           BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * *(unsigned int *)(v13[135] + 90196)); /*0x656211*/
           if ( (*(uint8_t (**)(unsigned int *))(*v13 + 196))(v13) ) /*0x656216*/
           {
@@ -294,9 +290,13 @@ int FogOfWar::RenderCell()
             else
               BuildingAnimByName = FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x65625c*/
           }
+  int v18; // ecx
           v18 = *(unsigned int *)(BuildingAnimByName + 816); /*0x65625e*/
+  int v19; // ebx
           v19 = *(unsigned int *)(BuildingAnimByName + 780); /*0x656264*/
+  int v20; // edx
           v20 = *(unsigned int *)(v19 + 372); /*0x65626d*/
+  int v21; // eax
           if ( *(unsigned int *)(v19 + 4) == 1 ) /*0x656276*/
             v21 = *(uint8_t *)(v20 + v18); /*0x65627a*/
           else
@@ -323,32 +323,32 @@ int FogOfWar::RenderCell()
 namespace gamemd {
 void FogOfWar::RevealCell(unsigned int *aP1)
 {
-  int v3; // edx
-  int v4; // eax
-  unsigned char *v5; // edx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edx
 
   if ( (int)*aP1 >= 0 /*0x656310*/
     && *aP1 < (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C)
     && (int)aP1[1] >= 0
     && aP1->u32_4 < (*(int (**)(unsigned int))(*this->u32_121C + 128))(this->u32_121C) )
   {
+  int v3; // edx
     v3 = *aP1 + aP1->u32_4 * (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C); /*0x656329*/
+  int v4; // eax
     v4 = 1 << (v3 & 7); /*0x656333*/
+  unsigned char *v5; // edx
     v5 = (unsigned char *)(this->u32_1274 + (v3 >> 3)); /*0x65633e*/
     if ( (*v5 & (uint8_t)v4) == 0 ) /*0x656344*/
     {
       *v5 |= v4; /*0x65634f*/
+  int v6; // eax
       v6 = this->u32_1264; /*0x656351*/
+  int v7; // ecx
       if ( this->u32_126C < v6 /*0x656376*/
         || (this->u32_1269 || !v6)
         && (v7 = this->u32_1270, v7 > 0)
         && (*(uint8_t (**)(int, int, unsigned int))(this->u32_125C + 8))(&this->u32_125C, v6 + v7, 0) )
       {
+  int v8; // eax
         v8 = this->u32_126C; /*0x65637d*/
+  int v9; // edx
         v9 = this->u32_1260; /*0x656380*/
         this->u32_126C = v8 + 1; /*0x656386*/
         *(unsigned int *)(v9 + 8 * v8) = *aP1; /*0x65638b*/
@@ -363,24 +363,19 @@ void FogOfWar::RevealCell(unsigned int *aP1)
 namespace gamemd {
 int FogOfWar::Render(void *a1, void *a2, void *a3, void *a4)
 {
-  int *v2; // esi
-  int v3; // ebx
-  int v4; // eax
-  int v5; // eax
   int result; // eax
-  int v7; // ebp
-  int v8; // ebx
-  int v9; // esi
   int v11[6]; // [esp+14h] [ebp-20h] BYREF
-  unsigned char v12[8]; // [esp+2Ch] [ebp-8h] BYREF
 
   if ( g_hWnd ) /*0x657cf0*/
   {
+  int v7; // ebp
     v7 = (*(int (**)(unsigned int))(*this->u32_121C + 124))(this->u32_121C); /*0x657d4e*/
     result = (*(int (**)(unsigned int))(*this->u32_121C + 128))(this->u32_121C); /*0x657d52*/
+  int v8; // ebx
     v8 = 0; /*0x657d58*/
     for ( result = result; v8 < result; ++v8 ) /*0x657d60*/
     {
+  int v9; // esi
       v9 = 0; /*0x657d62*/
       if ( v7 > 0 ) /*0x657d66*/
       {
@@ -398,13 +393,18 @@ int FogOfWar::Render(void *a1, void *a2, void *a3, void *a4)
   }
   else
   {
+  int *v2; // esi
     v2 = (int *)this->u32_121C; /*0x657cf2*/
+  int v3; // ebx
     v3 = *v2; /*0x657d06*/
+  int v4; // eax
     v4 = (*(int (**)(unsigned int, int *, unsigned int, int))(**&this->ptr_1220 + 120))( /*0x657d0d*/
            this->ptr_1220,
            v11,
            0,
            1);
+  int v5; // eax
+  unsigned char v12[8]; // [esp+2Ch] [ebp-8h] BYREF
     v5 = (*(int (**)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, this->ptr_1220, v4); /*0x657d21*/
     (*(void (**)(unsigned int, int))(v3 + 8))(this->u32_121C, v5); /*0x657d2b*/
     return FogOfWar::RenderCell(); /*0x657d30*/
@@ -416,27 +416,24 @@ int FogOfWar::Render(void *a1, void *a2, void *a3, void *a4)
 namespace gamemd {
 bool FogOfWar_Get(IUnknown * aP0)
 {
-  int v1; // eax
-  int v2; // ecx
-  unsigned int v3; // eax
-  unsigned int *v4; // eax
   unsigned int *NeighbourContent; // eax
-  unsigned int v6; // eax
-  int16_t v8; // [esp+4h] [ebp-8h]
-  int16_t v9; // [esp+4h] [ebp-8h]
-  int16_t v10; // [esp+6h] [ebp-6h]
-  int v11; // [esp+10h] [ebp+4h]
-  int v12; // [esp+10h] [ebp+4h]
 
+  int v1; // eax
   v1 = aP0[2] / dword_ABDE88; /*0x5864ac*/
   if ( (v1 & 1) != 0 ) /*0x5864b5*/
   {
+  int16_t v8; // [esp+4h] [ebp-8h]
     v8 = *aP0 / 256; /*0x5864cd*/
+  int16_t v10; // [esp+6h] [ebp-6h]
     v10 = aP0[1] / 256; /*0x5864e3*/
+  int v2; // ecx
     v2 = v1 / 2 + 1; /*0x5864f0*/
+  unsigned int v3; // eax
     v3 = (int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9); /*0x586508*/
+  unsigned int *v4; // eax
     if ( v3 >= 0x40000 || (v4 = *(unsigned int **)(dword_87F924 + 4 * v3)) == 0 ) /*0x58651e*/
     {
+  int v11; // [esp+10h] [ebp+4h]
       (*((unsigned short *)&(v11))) = v8 - v2; /*0x5864fa*/
       (*(((unsigned short *)&(v11)) + 1)) = v10 - v2; /*0x5864f5*/
       dword_ABDC74 = v11; /*0x586524*/
@@ -448,9 +445,12 @@ bool FogOfWar_Get(IUnknown * aP0)
   }
   else
   {
+  int16_t v9; // [esp+4h] [ebp-8h]
     v9 = *aP0 / 256; /*0x586559*/
+  int v12; // [esp+10h] [ebp+4h]
     (*(((unsigned short *)&(v12)) + 1)) = aP0[1] / 256 - v1 / 2; /*0x586580*/
     (*((unsigned short *)&(v12))) = v9 - v1 / 2; /*0x586585*/
+  unsigned int v6; // eax
     v6 = (int16_t)v12 + ((*((signed short *)(((unsigned char *)&(v12)) + 2))) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {

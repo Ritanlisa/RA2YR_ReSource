@@ -17,17 +17,8 @@ namespace gamemd {  // G42.18 ns repair
 void MixFileClass::CleanupCache()
 {
 
-  unsigned int *v0; // edi
-  void *v1; // esi
-  int v2; // eax
-  int v3; // eax
-  void *v4; // esi
-  unsigned char *v5; // ebp
-  void *v6; // ecx
-  unsigned int *v7; // edi
-  int v8; // eax
-  int v9; // eax
 
+  unsigned int *v0; // edi
   v0 = (unsigned int *)(dword_B077B0); /*0x69e213*/
   if ( dword_B077B0 ) /*0x69e21d*/
   {
@@ -35,15 +26,18 @@ void MixFileClass::CleanupCache()
     {
       if ( *(unsigned short *)v0 == 0xFFFF && v0->uniqueId ) /*0x69e225*/
       {
+  void *v1; // esi
         v1 = v0->vtable4; /*0x69e22a*/
         if ( v1 ) /*0x69e22f*/
         {
           if ( *(unsigned short *)v1 == 0xFFFF ) /*0x69e235*/
           {
             BTree::DeleteSubtree(v0->vtable4); /*0x69e239*/
+  int v2; // eax
             v2 = v1->u32_18; /*0x69e23e*/
             if ( v2 ) /*0x69e243*/
               *(unsigned int *)(v2 + 28) = v1->u32_1C; /*0x69e248*/
+  int v3; // eax
             v3 = v1->u32_1C; /*0x69e24b*/
             if ( v3 ) /*0x69e250*/
               *(unsigned int *)(v3 + 24) = v1->u32_18; /*0x69e255*/
@@ -64,24 +58,30 @@ void MixFileClass::CleanupCache()
     }
     while ( v0 ); /*0x69e289*/
   }
+  void *v4; // esi
   v4 = (void *)(dword_B077B4); /*0x69e28b*/
   if ( dword_B077B4 ) /*0x69e293*/
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e299*/
     {
+  unsigned char *v5; // ebp
       v5 = (unsigned char *)((char *)dword_B077B4 + 16); /*0x69e29f*/
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e29b*/
       {
+  void *v6; // ecx
         v6 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e2a6*/
+  unsigned int *v7; // edi
         v7 = (unsigned int *)((char *)dword_B077B4 + 12); /*0x69e2a9*/
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
         *v7 = 0; /*0x69e2b7*/
         *v5 = 0; /*0x69e2b9*/
       }
+  int v8; // eax
       v8 = v4->nextArrayIndex; /*0x69e2bc*/
       if ( v8 ) /*0x69e2c2*/
         *(unsigned int *)(v8 + 28) = v4->referenceCount; /*0x69e2c7*/
+  int v9; // eax
       v9 = v4->referenceCount; /*0x69e2ca*/
       if ( v9 ) /*0x69e2cf*/
         *(unsigned int *)(v9 + 24) = v4->nextArrayIndex; /*0x69e2d4*/
@@ -105,12 +105,9 @@ void MixFileClass::CleanupCache()
 namespace gamemd {
 void MixFileClass::DestroyCache()
 {
-  void *v0; // esi
   void *v1; // edi
-  void *v2; // ecx
-  int v3; // eax
-  int v4; // eax
 
+  void *v0; // esi
   v0 = (void *)(dword_B077B0); /*0x69e182*/
   if ( dword_B077B0 ) /*0x69e18c*/
   {
@@ -123,15 +120,18 @@ void MixFileClass::DestroyCache()
         {
           if ( v0->uniqueId ) /*0x69e19c*/
           {
+  void *v2; // ecx
             v2 = (void *)v0->vtable4; /*0x69e1a1*/
             if ( v2 ) /*0x69e1a6*/
               MixFileClass::CacheNode_Dtor(v2, 1); /*0x69e1aa*/
             v0->vtable4 = 0; /*0x69e1af*/
             v0->uniqueId = 0; /*0x69e1b2*/
           }
+  int v3; // eax
           v3 = v0->nextArrayIndex; /*0x69e1b5*/
           if ( v3 ) /*0x69e1ba*/
             *(unsigned int *)(v3 + 28) = v0->referenceCount; /*0x69e1bf*/
+  int v4; // eax
           v4 = v0->referenceCount; /*0x69e1c2*/
           if ( v4 ) /*0x69e1c7*/
             *(unsigned int *)(v4 + 24) = v0->nextArrayIndex; /*0x69e1cc*/

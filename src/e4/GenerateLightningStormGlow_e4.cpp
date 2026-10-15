@@ -9,18 +9,18 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_53D960(int a1, int a2)
 {
-  signed int v3; // ecx
-  signed int v4; // eax
-  int v5; // eax
-  int i; // edx
 
   if ( !a1 && !a2 ) /*0x53d970*/
     return 0; /*0x53d973*/
+  signed int v3; // ecx
   v3 = abs32(a2); /*0x53d982*/
+  signed int v4; // eax
   v4 = abs32(a1); /*0x53d987*/
   if ( v4 > v3 ) /*0x53d98b*/
     v3 = v4; /*0x53d98d*/
+  int v5; // eax
   v5 = 1; /*0x53d98f*/
+  int i; // edx
   for ( i = 1; i < v3; ++i ) /*0x53d998*/
     v5 += 8 * i; /*0x53d99a*/
   if ( a1 == v3 ) /*0x53d9a4*/

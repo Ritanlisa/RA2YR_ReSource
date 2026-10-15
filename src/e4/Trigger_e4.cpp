@@ -46,8 +46,8 @@ namespace gamemd {  // G42.18 ns repair
 int Trigger::EnableOnce(char aP1, void *a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   LOBYTE(result) = this->q048; /*0x554a60*/
   if ( !(unsigned char)result ) /*0x554a65*/
   {
@@ -63,8 +63,6 @@ namespace gamemd {
 MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7)
 {
 
-  int FileClassToBuffer; // eax
-  int v10; // edx
 
   *(unsigned int *)this->__pad_008 = a4; /*0x5cbd2c*/
   this->ptr_4 = (MSAnim *)aP2; /*0x5cbd32*/
@@ -78,9 +76,11 @@ MSShapeAnim * * Trigger::initTrigger(char **aP1, int aP2, int a4, int a5, int a6
   this->__pad_30[4] = 0; /*0x5cbd65*/
   this->u32_3C = 0; /*0x5cbd68*/
   *(unsigned int *)this->__pad_000 = (unsigned int)(&vt_MSShapeAnim); /*0x5cbd6a*/
+  int FileClassToBuffer; // eax
   FileClassToBuffer = LoadFileClassToBuffer(aP1, &this->u32_3C); /*0x5cbd70*/
   *&this->__pad_01C = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
+  int v10; // edx
   v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *&this->u32_44 = aP7; /*0x5cbd84*/
   *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
@@ -95,9 +95,6 @@ namespace gamemd {
 void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6)
 {
 
-  void *inited; // ebx
-  int v7; // eax
-  WDTObject *v8; // eax
   int (***v9)(unsigned int, int); // eax
   int v10; // ecx
   unsigned int v11; // edi
@@ -122,11 +119,14 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   int v30[3]; // [esp+138h] [ebp-14h] BYREF
   int v31; // [esp+144h] [ebp-8h]
 
+  void *inited; // ebx
   inited = 0; /*0x76d4da*/
+  int v7; // eax
   v7 = Count::Get(&this->__pad_458); /*0x76d4e3*/
   ((int)(&v25))->Construct(v7 + 44, 0); /*0x76d4f0*/
   while ( (*(unsigned __int8 (**)(VectorCursor *))(*(unsigned int *)v25.__pad_000 + 4))(&v25) ) /*0x76d4fd*/
   {
+  WDTObject *v8; // eax
     v8 = (WDTObject *)((FileClass *)(*(unsigned int *)(v25.q004 + 4) /*0x76d512*/ + 8 * v25.VectorCursor_field_0x08))->SetState();
     v9 = (int (***)(unsigned int, int))(v8)->GetAndClearFlag(); /*0x76d519*/
     if ( v9 ) /*0x76d520*/

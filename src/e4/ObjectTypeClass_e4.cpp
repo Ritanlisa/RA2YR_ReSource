@@ -75,12 +75,12 @@ LABEL_6:
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_473980()
 {
-  int v2; // edi
-  char **v3; // esi
 
   if ( !this ) /*0x473987*/
     return -1; /*0x4739bd*/
+  int v2; // edi
   v2 = 0; /*0x473989*/
+  char **v3; // esi
   v3 = (char **)(off_81B7C8); /*0x47398b*/
   while ( _strcmpi(v3[1], (char *)this) && _strcmpi(*v3, (char *)this) ) /*0x4739af*/
   {
@@ -96,13 +96,13 @@ int ObjectTypeClass::loadTypeMember_473980()
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
-  int v4; // edi
-  char **v5; // esi
-  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
+  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
   if ( ((INIClass *)this)->GetString(aP1, a2, &g_INI_DefaultBuffer, Destination, 32) <= 0 ) /*0x474962*/
     return a4; /*0x4749a4*/
+  int v4; // edi
   v4 = 0; /*0x474964*/
+  char **v5; // esi
   v5 = (char **)(&off_81B9B0); /*0x474966*/
   while ( _strcmpi(Destination, *v5) ) /*0x47497d*/
   {
@@ -119,11 +119,10 @@ namespace gamemd {
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
   char *v4; // eax
-  char v6; // [esp+0h] [ebp-3Ch] BYREF
-  char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
 
   if ( a4 == -1 ) /*0x474f5a*/
   {
+  char v6; // [esp+0h] [ebp-3Ch] BYREF
     v6 = 0; /*0x474f6a*/
     v4 = &v6; /*0x474f6f*/
   }
@@ -131,6 +130,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   {
     v4 = (char *)(*((unsigned int *)dword_A8E334 + a4) + 36); /*0x474f65*/
   }
+  char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
   INIClass::GetString(a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
 }
@@ -140,15 +140,11 @@ namespace gamemd {
 int ObjectTypeClass::ConstructFull(char *aP1)
 {
 
-  int *v3; // eax
-  int v4; // ecx
-  int *v5; // eax
-  int v6; // ecx
-  int v7; // eax
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
+  int *v3; // eax
   v3 = (int *)(&this->TurretVoxel); /*0x5f70a3*/
   this->u32_98 = 0; /*0x5f70a9*/
   this->__pad_099 = 0; /*0x5f70af*/
@@ -164,6 +160,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
   this->u32_2F = 0; /*0x5f70eb*/
   this->NoSpawnAlt = 0; /*0x5f70f1*/
   this->u32_31 = 0; /*0x5f70f7*/
+  int v4; // ecx
   v4 = 18; /*0x5f70fd*/
   do /*0x5f710b*/
   {
@@ -173,7 +170,9 @@ int ObjectTypeClass::ConstructFull(char *aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
+  int *v5; // eax
   v5 = &this->q056; /*0x5f710d*/
+  int v6; // ecx
   v6 = 18; /*0x5f7113*/
   do /*0x5f7121*/
   {
@@ -258,6 +257,7 @@ int ObjectTypeClass::ConstructFull(char *aP1)
          dword_AC142C + dword_AC1420,
          0) )
   {
+  int v7; // eax
     v7 = dword_AC1428++; /*0x5f72fb*/
     *((unsigned int *)dword_AC141C + v7) = (unsigned int)(this); /*0x5f730a*/
   }
@@ -270,14 +270,12 @@ namespace gamemd {
 BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
-  int *v3; // eax
-  int v4; // edx
-  char *v5; // eax
-  int v6; // edx
 
   AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
+  int *v3; // eax
   v3 = (int *)(&this->ChargerTurrets[3]); /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
+  int v4; // edx
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {
@@ -287,7 +285,9 @@ BulletTypeClass * ObjectTypeClass::Construct(int aP1, void *a2, void *a3, void *
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
+  char *v5; // eax
   v5 = (char *)(&this->u32_158); /*0x5f734b*/
+  int v6; // edx
   v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -330,18 +330,14 @@ namespace gamemd {
 SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
 {
 
-  int v2; // eax
-  ObjectTypeClass *v3; // edi
-  int v4; // ebx
-  ObjectTypeClass *v5; // edi
-  int v6; // ebx
-  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f740b) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7411) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f7418) */
   /* X11: vtable install elided (implicit via ObjectTypeClass virtuals 0x5f741f) */
+  int v8; // [esp+Ch] [ebp-4h] BYREF
   v8 = this; /*0x5f7431*/
+  int v2; // eax
   v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
@@ -383,7 +379,9 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
   this->u32_24C = 0; /*0x5f7532*/
   this->u32_250 = 0; /*0x5f7538*/
   this->q254 = 0; /*0x5f753e*/
+  ObjectTypeClass *v3; // edi
   v3 = &this->NoSpawnAlt_2; /*0x5f7547*/
+  int v4; // ebx
   v4 = 18; /*0x5f754d*/
   do /*0x5f755d*/
   {
@@ -392,7 +390,9 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
     --v4; /*0x5f755c*/
   }
   while ( v4 ); /*0x5f755d*/
+  ObjectTypeClass *v5; // edi
   v5 = &this->u32_158; /*0x5f755f*/
+  int v6; // ebx
   v6 = 18; /*0x5f7565*/
   do /*0x5f7575*/
   {
@@ -412,42 +412,24 @@ SomeVoxelCache * * ObjectTypeClass::Destruct(void *a1)
 namespace gamemd {
 void ObjectTypeClass::UnloadPipsSHP()
 {
-  int v1; // eax
-  void *v2; // ebp
-  int v3; // edx
-  int v4; // eax
-  FileTreeNode *v5; // esi
-  int v6; // edi
-  int v7; // eax
-  void *v8; // ebp
-  int v9; // edx
-  int v10; // eax
-  FileTreeNode *v11; // esi
-  int v12; // edi
-  int v13; // eax
-  void *v14; // ebp
-  int v15; // edx
-  int v16; // eax
-  FileTreeNode *v17; // esi
-  int v18; // edi
-  int v19; // eax
-  void *v20; // ebp
-  int v21; // edx
-  int v22; // eax
-  FileTreeNode *v23; // esi
-  int v24; // edi
 
   if ( byte_AC1488 ) /*0x5f77fd*/
   {
     if ( FileSystem_PIPBRD_SHP ) /*0x5f7807*/
     {
+  int v1; // eax
       v1 = *(unsigned int *)(FileSystem_PIPBRD_SHP - 4); /*0x5f7809*/
+  void *v2; // ebp
       v2 = (void *)(FileSystem_PIPBRD_SHP - 4); /*0x5f780c*/
+  int v3; // edx
       v3 = 9 * v1; /*0x5f780f*/
+  int v4; // eax
       v4 = v1 - 1; /*0x5f7812*/
+  FileTreeNode *v5; // esi
       v5 = (FileTreeNode *)(FileSystem_PIPBRD_SHP + 4 * v3); /*0x5f7813*/
       if ( v4 >= 0 ) /*0x5f7816*/
       {
+  int v6; // edi
         v6 = v4 + 1; /*0x5f7818*/
         do /*0x5f7826*/
         {
@@ -465,13 +447,19 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS_SHP ) /*0x5f7847*/
     {
+  int v7; // eax
       v7 = *(unsigned int *)(FileSystem_PIPS_SHP - 4); /*0x5f7849*/
+  void *v8; // ebp
       v8 = (void *)(FileSystem_PIPS_SHP - 4); /*0x5f784c*/
+  int v9; // edx
       v9 = 9 * v7; /*0x5f784f*/
+  int v10; // eax
       v10 = v7 - 1; /*0x5f7852*/
+  FileTreeNode *v11; // esi
       v11 = (FileTreeNode *)(FileSystem_PIPS_SHP + 4 * v9); /*0x5f7853*/
       if ( v10 >= 0 ) /*0x5f7856*/
       {
+  int v12; // edi
         v12 = v10 + 1; /*0x5f7858*/
         do /*0x5f7866*/
         {
@@ -489,13 +477,19 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS2_SHP ) /*0x5f7887*/
     {
+  int v13; // eax
       v13 = *(unsigned int *)(FileSystem_PIPS2_SHP - 4); /*0x5f7889*/
+  void *v14; // ebp
       v14 = (void *)(FileSystem_PIPS2_SHP - 4); /*0x5f788c*/
+  int v15; // edx
       v15 = 9 * v13; /*0x5f788f*/
+  int v16; // eax
       v16 = v13 - 1; /*0x5f7892*/
+  FileTreeNode *v17; // esi
       v17 = (FileTreeNode *)(FileSystem_PIPS2_SHP + 4 * v15); /*0x5f7893*/
       if ( v16 >= 0 ) /*0x5f7896*/
       {
+  int v18; // edi
         v18 = v16 + 1; /*0x5f7898*/
         do /*0x5f78a6*/
         {
@@ -513,13 +507,19 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_TALKBUBL_SHP ) /*0x5f78c7*/
     {
+  int v19; // eax
       v19 = *(unsigned int *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78c9*/
+  void *v20; // ebp
       v20 = (void *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78cc*/
+  int v21; // edx
       v21 = 9 * v19; /*0x5f78cf*/
+  int v22; // eax
       v22 = v19 - 1; /*0x5f78d2*/
+  FileTreeNode *v23; // esi
       v23 = (FileTreeNode *)(FileSystem_TALKBUBL_SHP + 4 * v21); /*0x5f78d3*/
       if ( v22 >= 0 ) /*0x5f78d6*/
       {
+  int v24; // edi
         v24 = v22 + 1; /*0x5f78d8*/
         do /*0x5f78e6*/
         {
@@ -653,43 +653,12 @@ namespace gamemd {
 void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
 {
 
-  int CrushSound; // edi
-  int Index; // eax
-  int AmbientSound; // edi
-  int v6; // eax
-  char Crushable; // cl
-  char Bool_Overwrite; // al
-  char v9; // al
-  char AlternateArcticArt; // cl
-  char v11; // al
-  char v12; // al
-  char LegalTarget; // cl
-  char v14; // al
-  int Int_Overwrite; // eax
-  char Immune; // cl
-  char v17; // al
-  int Coord; // eax
-  char IgnoresFirestorm; // cl
-  char v20; // al
-  int v21; // eax
-  int v22; // eax
-  char Theater; // cl
-  char v24; // al
-  char v25; // al
-  char Bombable; // [esp-Ch] [ebp-1B8h]
-  char RadarInvisible; // [esp-Ch] [ebp-1B8h]
-  int v29; // [esp-Ch] [ebp-1B8h]
-  char Insignificant; // [esp-Ch] [ebp-1B8h]
-  char UseLineTrail; // [esp-Ch] [ebp-1B8h]
-  int LineTrailColorDecrement; // [esp-Ch] [ebp-1B8h]
-  char NewTheater; // [esp-Ch] [ebp-1B8h]
-  int v34; // [esp+8h] [ebp-1A4h] BYREF
-  char Source[28]; // [esp+Ch] [ebp-1A0h] BYREF
   VocClass Destination; // [esp+28h] [ebp-184h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x5f92e3*/
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x5f92eb*/
     return 0; /*0x5f969e*/
+  char Source[28]; // [esp+Ch] [ebp-1A0h] BYREF
   strcpy(Source, this->ImageFile); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
     (INIClass *)aP1,
@@ -698,8 +667,10 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
     Source,
     this->ImageFile,
     25);
+  int v34; // [esp+8h] [ebp-1A4h] BYREF
   v34 = (int)strcpy(Source, this->AlphaImageFile); /*0x5f9366*/
   ((INIClass *)aP1)->GetString((unsigned __int8 *)this->vtable2, aAlphaimage, Source, this->AlphaImageFile, 25); /*0x5f9386*/
+  int CrushSound; // edi
   CrushSound = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
          (INIClass *)aP1,
@@ -709,12 +680,15 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
          (char *)&Destination,
          128) )
   {
+  int Index; // eax
     Index = VocClass::FindIndex(&Destination); /*0x5f93b5*/
     if ( Index != -1 ) /*0x5f93bd*/
       CrushSound = Index; /*0x5f93bf*/
   }
   this->CrushSound = CrushSound; /*0x5f93d5*/
+  int AmbientSound; // edi
   AmbientSound = this->AmbientSound; /*0x5f93db*/
+  int v6; // eax
   if ( !INIClass::GetString( /*0x5f93f9*/
           (INIClass *)aP1,
           (unsigned __int8 *)this->?,
@@ -726,16 +700,23 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
   {
     v6 = AmbientSound; /*0x5f93fb*/
   }
+  char Crushable; // cl
   Crushable = this->Crushable; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
+  char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aCrushable, Crushable); /*0x5f9412*/
+  char Bombable; // [esp-Ch] [ebp-1B8h]
   Bombable = this->Bombable; /*0x5f941f*/
   this->Crushable = Bool_Overwrite; /*0x5f9426*/
   this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->Bombable_d, aBombable, Bombable); /*0x5f9431*/
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aNospawnalt, this->NoSpawnAlt_2); /*0x5f9446*/
+  char AlternateArcticArt; // cl
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
   this->NoSpawnAlt_2 = v9; /*0x5f9451*/
+  char v11; // al
   v11 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
+  char RadarInvisible; // [esp-Ch] [ebp-1B8h]
   RadarInvisible = this->RadarInvisible; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
   this->RadarInvisible = INIClass::ReadBool_Overwrite( /*0x5f947f*/
@@ -743,17 +724,25 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
                            (unsigned __int8 *)this->?,
                            aRadarinvisible,
                            RadarInvisible);
+  char v12; // al
   v12 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aSelectable, this->Selectable); /*0x5f9494*/
+  char LegalTarget; // cl
   LegalTarget = this->LegalTarget; /*0x5f9499*/
   this->Selectable = v12; /*0x5f949f*/
+  char v14; // al
   v14 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aLegaltarget, LegalTarget); /*0x5f94ae*/
+  int v29; // [esp-Ch] [ebp-1B8h]
   v29 = this->Armor[0]; /*0x5f94bb*/
   this->LegalTarget = v14; /*0x5f94c2*/
   this->Armor[0] = ((ArmorType *)aP1)->FindIndex((unsigned __int8 *)this->Armor, g_INI_Key_Armor, v29); /*0x5f94cd*/
+  int Int_Overwrite; // eax
   Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)aP1, (unsigned __int8 *)this->vtable2, aStrength, this->Strength); /*0x5f94e2*/
+  char Immune; // cl
   Immune = this->Immune; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
+  char v17; // al
   v17 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aImmune, Immune); /*0x5f94fc*/
+  char Insignificant; // [esp-Ch] [ebp-1B8h]
   Insignificant = this->Insignificant; /*0x5f9509*/
   this->Immune = v17; /*0x5f9510*/
   this->Insignificant = INIClass::ReadBool_Overwrite( /*0x5f951b*/
@@ -766,16 +755,20 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
                                (unsigned __int8 *)this->?,
                                aHasradialindic,
                                this->HasRadialIndicator);
+  int Coord; // eax
   Coord = INIClass::GetCoord( /*0x5f954f*/
             (INIClass *)aP1,
             (int)&v34,
             (unsigned __int8 *)this->?,
             aRadialcolor,
             (unsigned __int8 *)this->u32_98);
+  char IgnoresFirestorm; // cl
   IgnoresFirestorm = this->IgnoresFirestorm; /*0x5f9557*/
   *(unsigned short *)this->u32_98 = *(unsigned short *)Coord; /*0x5f955d*/
   this->u32_9A = *(unsigned char *)(Coord + 2); /*0x5f956c*/
+  char v20; // al
   v20 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->vtable2, aIgnoresfiresto, IgnoresFirestorm); /*0x5f956f*/
+  char UseLineTrail; // [esp-Ch] [ebp-1B8h]
   UseLineTrail = this->UseLineTrail; /*0x5f9580*/
   this->IgnoresFirestorm = v20; /*0x5f958c*/
   this->UseLineTrail = INIClass::ReadBool_Overwrite( /*0x5f959d*/
@@ -783,6 +776,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
                          (unsigned __int8 *)this->ImageFile,
                          aUselinetrail,
                          UseLineTrail);
+  int v21; // eax
   v21 = INIClass::GetCoord( /*0x5f95b4*/
           (INIClass *)&DataGlobal_887180,
           (int)&v34,
@@ -790,20 +784,25 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
           aLinetrailcolor,
           (unsigned __int8 *)this->LineTrailColor);
   *(unsigned short *)this->LineTrailColor = *(unsigned short *)v21; /*0x5f95bc*/
+  int LineTrailColorDecrement; // [esp-Ch] [ebp-1B8h]
   LineTrailColorDecrement = this->LineTrailColorDecrement; /*0x5f95cd*/
   this->LineTrailColor[2] = v21->UINameLabel[0x20]; /*0x5f95d4*/
+  int v22; // eax
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (bool *)&DataGlobal_887180,
           (unsigned __int8 *)this->ImageFile,
           aLinetrailcolor_0,
           LineTrailColorDecrement);
+  char Theater; // cl
   Theater = this->Theater; /*0x5f95dc*/
   this->LineTrailColorDecrement = v22; /*0x5f95e2*/
+  char v24; // al
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
           (int *)&DataGlobal_887180,
           (unsigned __int8 *)this->ImageFile,
           (unsigned __int8 *)g_INI_Key_Theater,
           Theater);
+  char NewTheater; // [esp-Ch] [ebp-1B8h]
   NewTheater = this->NewTheater; /*0x5f9604*/
   this->Theater = v24; /*0x5f960b*/
   this->NewTheater = INIClass::ReadBool_Overwrite( /*0x5f9616*/
@@ -811,6 +810,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1, void *a2)
                        (unsigned __int8 *)this->ImageFile,
                        aNewtheater,
                        NewTheater);
+  char v25; // al
   v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
           (int *)&DataGlobal_887180,
           (unsigned __int8 *)this->ImageFile,
@@ -833,9 +833,9 @@ namespace gamemd {
 int ObjectTypeClass::SetRTTI71(void *a1)
 {
 
-  int result; // eax
 
   BYTE1(this->AbstractTypeClass) = 71; /*0x5f9710*/
+  int result; // eax
   return result; /*0x5f9714*/
 
 }
@@ -844,16 +844,6 @@ int ObjectTypeClass::SetRTTI71(void *a1)
 namespace gamemd {
 int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
 {
-  void *v2; // ebp
-  String *v3; // ebp
-  WaveClass *v4; // ebp
-  String *v5; // ebp
-  WaveClass *v6; // ebp
-  String *v7; // ebp
-  int result; // eax
-  int *v9; // eax
-  int v10; // ecx
-  char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
 
   operator delete((void *)((void *)aP0->VoxelCaches[0])); /*0x5f973e*/
   aP0->VoxelCaches[0] = 0; /*0x5f974e*/
@@ -864,12 +854,14 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   ObjectTypeClass::FreeLoaderBuffer(&aP0->vtable2); /*0x5f975c*/
   ObjectTypeClass::FreeLoaderBuffer(&aP0->vtable2); /*0x5f9767*/
   ObjectTypeClass::FreeLoaderBuffer(&aP0->vtable2); /*0x5f9772*/
+  void *v2; // ebp
   v2 = (void *)aP0->MainVoxel[0]; /*0x5f9777*/
   if ( v2 ) /*0x5f977f*/
   {
     WaveClass::Destroy((WaveClass *)aP0->MainVoxel[0]); /*0x5f9783*/
     operator delete((void *)(v2)); /*0x5f9789*/
   }
+  String *v3; // ebp
   v3 = (String *)aP0->TurretVoxel[0]; /*0x5f9791*/
   aP0->MainVoxel[0] = 0; /*0x5f9797*/
   if ( v3 ) /*0x5f979f*/
@@ -877,6 +869,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     ((String *)(v3))->Release(); /*0x5f97a3*/
     operator delete((void *)(v3)); /*0x5f97a9*/
   }
+  WaveClass *v4; // ebp
   v4 = (WaveClass *)aP0->BarrelVoxel[0]; /*0x5f97b1*/
   aP0->TurretVoxel[0] = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
@@ -884,6 +877,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     WaveClass::Destroy(v4); /*0x5f97c3*/
     operator delete((void *)(v4)); /*0x5f97c9*/
   }
+  String *v5; // ebp
   v5 = (String *)aP0->ChargerTurrets[0]; /*0x5f97d1*/
   aP0->BarrelVoxel[0] = 0; /*0x5f97d7*/
   if ( v5 ) /*0x5f97df*/
@@ -891,6 +885,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     ((String *)(v5))->Release(); /*0x5f97e3*/
     operator delete((void *)(v5)); /*0x5f97e9*/
   }
+  WaveClass *v6; // ebp
   v6 = (WaveClass *)aP0->ChargerTurrets[1]; /*0x5f97f1*/
   aP0->ChargerTurrets[0] = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
@@ -898,6 +893,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     WaveClass::Destroy(v6); /*0x5f9803*/
     operator delete((void *)(v6)); /*0x5f9809*/
   }
+  String *v7; // ebp
   v7 = (String *)aP0->ChargerTurrets[2]; /*0x5f9811*/
   aP0->ChargerTurrets[1] = 0; /*0x5f9817*/
   if ( v7 ) /*0x5f981f*/
@@ -907,6 +903,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
   }
   aP0->ChargerTurrets[2] = 0; /*0x5f9833*/
   ((ObjectTypeClass *)((char *)aP0))->CleanupWeapons(); /*0x5f9839*/
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x5f9847*/
   if ( result >= 0 ) /*0x5f984e*/
   {
@@ -951,7 +948,9 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     aP0->ChargerTurrets[0] = 0; /*0x5f98d2*/
     aP0->ChargerTurrets[1] = 0; /*0x5f98d8*/
     aP0->ChargerTurrets[2] = 0; /*0x5f98de*/
+  int *v9; // eax
     v9 = &aP0->ChargerTurrets[4]; /*0x5f98e4*/
+  int v10; // ecx
     v10 = 18; /*0x5f98ea*/
     do /*0x5f9904*/
     {
@@ -965,6 +964,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     while ( v10 ); /*0x5f9904*/
     if ( aP0->AlphaImageFile[0] ) /*0x5f9906*/
     {
+  char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
       _makepath(Buffer, 0, 0, aP0->AlphaImageFile, Ext); /*0x5f9923*/
       aP0->AlphaImage = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x5f9936*/
     }
@@ -978,9 +978,9 @@ namespace gamemd {
 SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 {
 
-  Object *v1; // eax
   int result; // eax
 
+  Object *v1; // eax
   v1 = dword_A83D4C; /*0x712040*/
   if ( !dword_A83D4C ) /*0x71204a*/
     return *&this->u32_6F0; /*0x7120bf*/
@@ -1428,62 +1428,62 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, void * _38C, unsigned char ***
 namespace gamemd {
 int ObjectTypeClass::DeserializeArrays()
 {
+
   int result; // eax
-  int v2; // eax
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int v8; // eax
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // eax
-  int v14; // eax
-  int v15; // eax
-  int v16; // eax
-  int v17; // eax
-  int v18; // eax
   ObjectTypeClass *v19; // [esp+Ch] [ebp+4h]
   int *v20; // [esp+10h] [ebp+8h]
-
   result = COMObject::GetSizeMaxWrapper(v19, v20); /*0x7170ac*/
   if ( result >= 0 ) /*0x7170b3*/
   {
+  int v2; // eax
     v2 = 4 * *(unsigned int *)&v19[1].__pad_14D[67] + 4 + *v20; /*0x7170c8*/
     *v20 = v2; /*0x7170ca*/
+  int v3; // eax
     v3 = v2 + 4 * *(unsigned int *)&v19[1].__pad_14D[95] + 4; /*0x7170d2*/
     *v20 = v3; /*0x7170d6*/
+  int v4; // eax
     v4 = v3 + 4 * *(unsigned int *)&v19[1].__pad_14D[123] + 4; /*0x7170de*/
     *v20 = v4; /*0x7170e2*/
+  int v5; // eax
     v5 = v4 + 4 * *(unsigned int *)&v19[1].__pad_14D[151] + 4; /*0x7170ea*/
     *v20 = v5; /*0x7170ee*/
+  int v6; // eax
     v6 = v5 + 4 * *(unsigned int *)&v19[1].ImageFile[8] + 4; /*0x7170f6*/
     *v20 = v6; /*0x7170fa*/
+  int v7; // eax
     v7 = v6 + 4 * *(unsigned int *)&v19[1].AlphaImageFile[9] + 4; /*0x717102*/
     *v20 = v7; /*0x717106*/
+  int v8; // eax
     v8 = v7 + 4 * *(unsigned int *)&v19[1].HasRadialIndicator + 4; /*0x71710e*/
     *v20 = v8; /*0x717112*/
+  int v9; // eax
     v9 = v8 + 4 * v19[1].VoxelCaches[4] + 4; /*0x71711a*/
     *v20 = v9; /*0x71711e*/
+  int v10; // eax
     v10 = v9 + 4 * v19[1].VoxelCaches[11] + 4; /*0x717126*/
     *v20 = v10; /*0x71712a*/
+  int v11; // eax
     v11 = v10 + 4 * v19[1].VoxelCaches[18] + 4; /*0x717132*/
     *v20 = v11; /*0x717136*/
+  int v12; // eax
     v12 = v11 + 4 * *(unsigned int *)&v19[2].AlphaImageFile[1] + 4; /*0x71713e*/
     *v20 = v12; /*0x717142*/
+  int v13; // eax
     v13 = v12 + 4 * *(unsigned int *)&v19[2].Selectable + 4; /*0x71714a*/
     *v20 = v13; /*0x71714e*/
+  int v14; // eax
     v14 = v13 + 4 * *(unsigned int *)&v19[1].Name[44] + 4; /*0x717156*/
     *v20 = v14; /*0x71715a*/
+  int v15; // eax
     v15 = v14 + 4 * (int)v19[2].AlphaImage + 4; /*0x717162*/
     *v20 = v15; /*0x717166*/
+  int v16; // eax
     v16 = v15 + 4 * *(unsigned int *)&v19[1].__pad_14D[23] + 4; /*0x71716e*/
     *v20 = v16; /*0x717172*/
+  int v17; // eax
     v17 = v16 + 4 * (int)v19[1].AlphaImage + 4; /*0x71717a*/
     *v20 = v17; /*0x71717e*/
+  int v18; // eax
     v18 = v17 + 4 * v19[2].VoxelCaches[7] + 4; /*0x717186*/
     *v20 = v18; /*0x71718a*/
     *v20 = v18 + 4 * v19[2].VoxelCaches[14] + 4; /*0x717196*/
@@ -1497,10 +1497,10 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717820()
 {
 
-  int v2; // eax
-  const char *v3; // ecx
 
+  int v2; // eax
   LOBYTE(v2) = this->__pad_DC8[8]; /*0x717823*/
+  const char *v3; // ecx
   v3 = &this->__pad_DC8[8]; /*0x717829*/
   if ( (unsigned char)v2 ) /*0x717831*/
   {
@@ -1516,14 +1516,11 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 {
 
-  void *v3; // eax
-  void *v4; // eax
-  void *vtable2; // ecx
-  int v6; // eax
 
   if ( this == (ObjectTypeClass *)a2 ) /*0x717c0a*/
     return &this->AbstractTypeClass; /*0x717c0a*/
   (*((void (**)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
+  void *v3; // eax
   v3 = (void *)a2[2]; /*0x717c11*/
   this->vtable3 = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
@@ -1532,11 +1529,14 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     BYTE1(this->u8_D) = 0; /*0x717c61*/
     return &this->AbstractTypeClass; /*0x717c65*/
   }
+  void *v4; // eax
   v4 = (void *)__2_YAPAXI_Z(4 * (unsigned int)v3); /*0x717c23*/
   this->vtable2 = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return &this->AbstractTypeClass; /*0x717c30*/
+  void *vtable2; // ecx
   vtable2 = this->vtable3; /*0x717c32*/
+  int v6; // eax
   v6 = 0; /*0x717c35*/
   BYTE1(this->u8_D) = 1; /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
@@ -1555,8 +1555,8 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 namespace gamemd {
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
-  int v1; // esi
 
+  int v1; // esi
   v1 = 2 * dword_889F58; /*0x41cbfc*/
   *(unsigned int *)a1->vfptr = 256; /*0x41cc07*/
   *(unsigned int *)&a1->vfptr[4] = 256; /*0x41cc09*/
@@ -1578,8 +1578,8 @@ unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 namespace gamemd {
 char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
 {
-  char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
 
+  char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
   sprintf(Buffer, "%d", 360 * a4 / 256); /*0x4746ba*/
   return INIClass::SetString(Block, aP2, Buffer); /*0x4746d8*/
 }
@@ -1588,8 +1588,8 @@ char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
 namespace gamemd {
 int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
 {
-  char String[32]; // [esp+0h] [ebp-20h] BYREF
 
+  char String[32]; // [esp+0h] [ebp-20h] BYREF
   if ( INIClass::GetString((INIClass *)this, a2, a3, &g_INI_DefaultBuffer, String, 32) ) /*0x4746f9*/
     return (atoi(String) << 8) / 360; /*0x474727*/
   else
@@ -1600,8 +1600,8 @@ int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, in
 namespace gamemd {
 unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5)
 {
-  char Buffer[64]; // [esp+0h] [ebp-40h] BYREF
 
+  char Buffer[64]; // [esp+0h] [ebp-40h] BYREF
   if ( INIClass::GetString((INIClass *)this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) ) /*0x474759*/
   {
     sscanf(Buffer, "%d,%d", &a4, &a3); /*0x474776*/
@@ -1620,8 +1620,8 @@ unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned ch
 namespace gamemd {
 char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
 {
-  char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
+  char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x4747dd*/
   return INIClass::SetString(Block, aP2, Buffer); /*0x4747fb*/
 }
@@ -1630,10 +1630,10 @@ char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4)
 {
-  char *v5; // eax
-  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
+  char *v5; // eax
   v5 = sub_473960(a4); /*0x4749f1*/
+  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
   INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x474a03*/
   return ObjectTypeClass::loadTypeMember_473980((ObjectTypeClass *)Destination); /*0x474a11*/
 }
@@ -1642,8 +1642,8 @@ int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2
 namespace gamemd {
 char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4)
 {
-  char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
+  char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
   sprintf(Buffer, "%d,%d,%d", *a4, a4[1], a4[2]); /*0x474d75*/
   return INIClass::SetString(Block, aP2, Buffer); /*0x474d93*/
 }
@@ -1652,12 +1652,12 @@ char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4)
 {
-  int v4; // edi
-  char **v5; // esi
-  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
+  char Destination[32]; // [esp+8h] [ebp-20h] BYREF
   INIClass::GetString(aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
+  int v4; // edi
   v4 = 0; /*0x474e67*/
+  char **v5; // esi
   v5 = &off_81BA88; /*0x474e69*/
   while ( _strcmpi(Destination, *v5) ) /*0x474e80*/
   {
@@ -1673,8 +1673,8 @@ int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, 
 namespace gamemd {
 int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 {
-  char Destination[100]; // [esp+4h] [ebp-64h] BYREF
 
+  char Destination[100]; // [esp+4h] [ebp-64h] BYREF
   INIClass::GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
   if ( strlen(Destination) ) /*0x474fc3*/
     return VocClass::FindByName((VocClass *)Destination); /*0x474fd4*/
@@ -1686,9 +1686,9 @@ int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 namespace gamemd {
 int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 {
-  char *Name; // eax
   StringTable Destination[4]; // [esp+4h] [ebp-20h] BYREF
 
+  char *Name; // eax
   Name = AbstractType::FindName(a4); /*0x475001*/
   INIClass::GetString(aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
   return StringTable::Lookup(Destination); /*0x475021*/
@@ -1698,10 +1698,10 @@ int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 namespace gamemd {
 int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
 {
-  char *v5; // eax
-  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
+  char *v5; // eax
   v5 = sub_45DD20((ObjectClass *)a4); /*0x475071*/
+  char Destination[32]; // [esp+4h] [ebp-20h] BYREF
   INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x475083*/
   return sub_45DD50((ObjectClass *)Destination); /*0x475091*/
 }
@@ -1710,24 +1710,24 @@ int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
 namespace gamemd {
 char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
 {
-  int i; // ebp
-  int v5; // eax
-  int v6; // ecx
-  unsigned char v8[521]; // [esp+Ch] [ebp-20Ch] BYREF
-  int16_t v9; // [esp+215h] [ebp-3h]
-  char v10; // [esp+217h] [ebp-1h]
 
+  unsigned char v8[521]; // [esp+Ch] [ebp-20Ch] BYREF
   *(unsigned int *)&v8[8] = this; /*0x47624d*/
   v8[12] = g_INI_DefaultBuffer; /*0x476252*/
   memset(&v8[13], 0, 0x1FCu); /*0x476268*/
+  int16_t v9; // [esp+215h] [ebp-3h]
   v9 = 0; /*0x47626a*/
+  char v10; // [esp+217h] [ebp-1h]
   v10 = 0; /*0x47626c*/
+  int i; // ebp
   for ( i = 0; i < aP3->uniqueId; ++i ) /*0x476274*/
   {
     if ( v8[12] ) /*0x476281*/
       strcat(&v8[12], Str); /*0x4762a8*/
+  int v5; // eax
     v5 = aP3->vtable2; /*0x4762b1*/
     v8[4] = 0; /*0x4762b4*/
+  int v6; // ecx
     v6 = *(unsigned int *)(v5 + 4 * i); /*0x4762bc*/
     v8[4] = (*(((unsigned char *)&(v6)) + (sizeof(v6) - 1))); /*0x4762c6*/
     *(unsigned int *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
@@ -1740,10 +1740,10 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-  char *v5; // eax
-  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
+  char *v5; // eax
   v5 = sub_48E030(aP3); /*0x476fdd*/
+  char Destination[128]; // [esp+8h] [ebp-80h] BYREF
   if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x476ff5*/
     return ObjectTypeClass::loadTypeMember_48DFF0((ObjectTypeClass *)Destination); /*0x477002*/
   else
@@ -1754,18 +1754,18 @@ int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2,
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-  char *v4; // esi
-  int result; // eax
-  bool v6; // zf
-  char String[128]; // [esp+8h] [ebp-80h] BYREF
 
+  char String[128]; // [esp+8h] [ebp-80h] BYREF
   INIClass::GetString(aP1, a2, (&off_81BABC)[aP3], String, 128); /*0x4775c1*/
+  char *v4; // esi
   v4 = strtok(String, Str); /*0x4775d5*/
+  int result; // eax
   result = _strcmpi(v4, g_INI_Key_None); /*0x4775dd*/
   if ( result ) /*0x4775e7*/
   {
     if ( _strcmpi(v4, (char *)g_INI_Key_Normal) ) /*0x4775fa*/
     {
+  bool v6; // zf
       v6 = _strcmpi(v4, aStrong) == 0; /*0x477624*/
       result = 2; /*0x477626*/
       if ( !v6 ) /*0x47762b*/
@@ -1783,12 +1783,12 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
 namespace gamemd {
 int ObjectTypeClass::loadTypeMember_48DFF0()
 {
-  int v2; // edi
-  char **v3; // esi
 
   if ( !this ) /*0x48dff7*/
     return -1; /*0x48e01c*/
+  int v2; // edi
   v2 = 0; /*0x48dff9*/
+  char **v3; // esi
   v3 = off_81DA58; /*0x48dffb*/
   while ( _strcmpi(*v3, (char *)this) ) /*0x48e00e*/
   {
@@ -1814,15 +1814,15 @@ int ObjectTypeClass::CreateInstance(int aP1, int aP2, void *a3)
 namespace gamemd {
 void ObjectTypeClass::ReleaseWaveAndString(void *a1)
 {
-  void *vtable0; // edi
-  String *vtable1; // edi
 
+  void *vtable0; // edi
   vtable0 = a1->vfptr; /*0x5f61a4*/
   if ( a1->vfptr ) /*0x5f61a4*/
   {
     WaveClass::Destroy((WaveClass *)a1->vfptr); /*0x5f61ac*/
     operator delete((void *)(vtable0)); /*0x5f61b2*/
   }
+  String *vtable1; // edi
   vtable1 = (String *)a1->vfptr1; /*0x5f61ba*/
   a1->vfptr = 0; /*0x5f61bd*/
   if ( vtable1 ) /*0x5f61c5*/
@@ -1847,17 +1847,14 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 namespace gamemd {
 void ObjectTypeClass::CleanupWeapons()
 {
-  char *v1; // esi
-  int v2; // ebp
-  void *v3; // edi
-  void **v4; // edi
-  void *v5; // edi
-  void *v6; // edi
 
+  char *v1; // esi
   v1 = &this->q0CC; /*0x5f8084*/
+  int v2; // ebp
   v2 = 18; /*0x5f808a*/
   do /*0x5f8107*/
   {
+  void *v3; // edi
     v3 = (void *)*((unsigned int *)v1 - 1); /*0x5f8091*/
     if ( v3 ) /*0x5f8096*/
     {
@@ -1865,6 +1862,7 @@ void ObjectTypeClass::CleanupWeapons()
       operator delete((void *)(v3)); /*0x5f80a0*/
       *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
+  void **v4; // edi
     v4 = *(void ***)v1; /*0x5f80ab*/
     if ( *(unsigned int *)v1 ) /*0x5f80ab*/
     {
@@ -1872,6 +1870,7 @@ void ObjectTypeClass::CleanupWeapons()
       operator delete((void *)(v4)); /*0x5f80b9*/
       *(unsigned int *)v1 = 0; /*0x5f80c1*/
     }
+  void *v5; // edi
     v5 = (void *)*((unsigned int *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
@@ -1879,6 +1878,7 @@ void ObjectTypeClass::CleanupWeapons()
       operator delete((void *)(v5)); /*0x5f80d5*/
       *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }
+  void *v6; // edi
     v6 = (void *)*((unsigned int *)v1 + 36); /*0x5f80e3*/
     if ( v6 ) /*0x5f80eb*/
     {
@@ -1921,11 +1921,11 @@ int ObjectTypeClass::FreeLoaderBuffer()
 namespace gamemd {
 int ObjectTypeClass::FindByName(void *a1)
 {
-  int v2; // ebx
   int v3; // esi
 
   if ( !this ) /*0x6e5e77*/
     return 0; /*0x6e5e77*/
+  int v2; // ebx
   v2 = 0; /*0x6e5e7e*/
   if ( g_MultiplayerCleanup <= 0 ) /*0x6e5e82*/
     return 0; /*0x6e5eb8*/
@@ -1977,8 +1977,8 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
@@ -2001,8 +2001,8 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = a2; /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
@@ -2025,8 +2025,8 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = a2; /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
@@ -2067,23 +2067,23 @@ unsigned int * ObjectTypeClass::CheckFlag(int aP1)
 namespace gamemd {
 int ObjectTypeClass::ReadDestroyAnim()
 {
-  int result; // eax
-  int i; // ebx
-  int v4; // esi
-  int v5; // [esp+8h] [ebp-14h]
-  unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
-  char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
 
   INIClass::ClearSection((int)aTerrain, 0); /*0x71cb9f*/
+  int result; // eax
   result = dword_A8E998; /*0x71cba4*/
+  int i; // ebx
   for ( i = 0; i < dword_A8E998; ++i ) /*0x71cbad*/
   {
+  int v4; // esi
     v4 = *((unsigned int *)dword_A8E98C + i); /*0x71cbba*/
     if ( v4 && !*(unsigned char *)(v4 + 129) ) /*0x71cbc1*/
     {
       if ( *(unsigned char *)(v4 + 144) ) /*0x71cbcb*/
       {
+  int v5; // [esp+8h] [ebp-14h]
+  unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
         v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
+  char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
         sprintf(Buffer, "%d", (int16_t)v5 + 1000 * (*((signed short *)(((unsigned char *)&(v5)) + 2)))); /*0x71cc09*/
         INIClass::SetString((uint8_t *)aTerrain, Buffer, (char *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }

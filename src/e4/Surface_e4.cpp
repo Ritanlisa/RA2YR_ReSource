@@ -271,28 +271,20 @@ unsigned int * Surface::CopyRect(int *aP1, void * a1)
 namespace gamemd {
 int sub_626C60()
 {
-  unsigned int *v0; // eax
-  unsigned int *v1; // ebx
-  unsigned int *v2; // eax
-  unsigned int *v3; // esi
-  unsigned int *v4; // eax
-  unsigned int *v5; // esi
-  unsigned int *v6; // eax
-  unsigned int *v7; // esi
-  unsigned int *v8; // eax
   unsigned int *v9; // edi
-  int v10; // ecx
-  int v11; // eax
-  int v12; // ecx
 
   if ( g_FileExtensionState ) /*0x626c68*/
     return *(unsigned int *)(*((unsigned int *)g_FileExtensionState + 1) + 16); /*0x626d93*/
+  unsigned int *v0; // eax
   v0 = (unsigned int *)(operator new(0x10u)); /*0x626c70*/
+  unsigned int *v1; // ebx
   v1 = v0; /*0x626c75*/
   if ( v0 ) /*0x626c7c*/
   {
     *v0 = (unsigned int)((unsigned int *)(-1));
+  unsigned int *v2; // eax
     v2 = (unsigned int *)(operator new(0x18u)); /*0x626c8c*/
+  unsigned int *v3; // esi
     v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
     {
@@ -306,7 +298,9 @@ int sub_626C60()
       v3 = 0; /*0x626cbc*/
     }
     v1[1] = (unsigned int)((unsigned int *)(v3));
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(operator new(0x18u)); /*0x626cc8*/
+  unsigned int *v5; // esi
     v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
@@ -320,13 +314,16 @@ int sub_626C60()
       v5 = 0; /*0x626cf3*/
     }
     v1[2] = (unsigned int)((unsigned int *)(v5));
+  unsigned int *v6; // eax
     v6 = (unsigned int *)(operator new(0x10u)); /*0x626cfa*/
+  unsigned int *v7; // esi
     v7 = v6; /*0x626cff*/
     if ( v6 ) /*0x626d06*/
     {
       v6[1] = (unsigned int)((unsigned int *)(HashStringMod31));
       v6[2] = 31; /*0x626d14*/
       v6[3] = 10; /*0x626d1b*/
+  unsigned int *v8; // eax
       v8 = (unsigned int *)(operator new(0x2ECu)); /*0x626d1e*/
       if ( v8 ) /*0x626d28*/
       {
@@ -338,11 +335,14 @@ int sub_626C60()
       {
         v9 = 0; /*0x626d44*/
       }
+  int v10; // ecx
       v10 = (unsigned int)(v7[2]);
+  int v11; // eax
       v11 = 0; /*0x626d49*/
       *v7 = (unsigned int)(v9); /*0x626d4d*/
       if ( v10 > 0 ) /*0x626d4f*/
       {
+  int v12; // ecx
         v12 = 0; /*0x626d51*/
         do /*0x626d66*/
         {
@@ -643,59 +643,59 @@ namespace gamemd {  // G42.18c ns repair
 int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
 {
 
-  int v5; // ebx
-  int result; // eax
-  int v7; // edi
-  int v8; // eax
-  int v10; // esi
-  int v11; // ecx
-  int v12; // eax
-  int v13; // edx
-  int v14; // ebx
-  int v15; // ecx
-  int v16; // [esp+18h] [ebp-48h]
-  int v17; // [esp+1Ch] [ebp-44h]
-  int v18; // [esp+20h] [ebp-40h]
-  int v19; // [esp+24h] [ebp-3Ch]
-  int v20; // [esp+28h] [ebp-38h]
-  int v21; // [esp+2Ch] [ebp-34h]
-  int v22; // [esp+38h] [ebp-28h]
-  int v23; // [esp+3Ch] [ebp-24h]
-  unsigned char v24[16]; // [esp+40h] [ebp-20h] BYREF
-  unsigned int v25[4]; // [esp+50h] [ebp-10h] BYREF
-  unsigned int *v26; // [esp+64h] [ebp+4h]
-  int v27; // [esp+74h] [ebp+14h]
 
+  int v5; // ebx
   v5 = (int)(aP1); /*0x6ba3e4*/
+  int result; // eax
   result = (*(int (**)(int, unsigned int, unsigned int))(*&aP1->q_170))(aP1, 0, 0); /*0x6ba3f3*/
+  int v20; // [esp+28h] [ebp-38h]
   v20 = result; /*0x6ba3f8*/
   if ( result )
   {
+  int v7; // edi
     v7 = a3; /*0x6ba408*/
+  int v21; // [esp+2Ch] [ebp-34h]
     v21 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba41b*/
     if ( v21 )
     {
+  int v17; // [esp+1Ch] [ebp-44h]
       v17 = (*(int (**)(int))(*&aP1->q_1D0))(aP1) / 2; /*0x6ba442*/
+  int v18; // [esp+20h] [ebp-40h]
       v18 = (*(int (**)(int))(*&a3->u32_1D0))(a3) / 2; /*0x6ba452*/
+  int v8; // eax
+  unsigned char v24[16]; // [esp+40h] [ebp-20h] BYREF
       v8 = (*(int (**)(int, unsigned char *))(*&a3->u32_1E0))(a3, v24); /*0x6ba45d*/
+  int v22; // [esp+38h] [ebp-28h]
       v22 = *(unsigned int *)(v8 + 8); /*0x6ba470*/
+  int v23; // [esp+3Ch] [ebp-24h]
       v23 = *(unsigned int *)(v8 + 12); /*0x6ba480*/
+  unsigned int v25[4]; // [esp+50h] [ebp-10h] BYREF
       (*(void (**)(int, unsigned int *))(*&aP1->q1E0))(aP1, v25); /*0x6ba484*/
+  int v10; // esi
       v10 = (int)(aP0[2]); /*0x6ba48f*/
+  int v11; // ecx
       v11 = (int)(aP0[3]); /*0x6ba492*/
+  int v19; // [esp+24h] [ebp-3Ch]
       v19 = (v22 - v10) / 2 <= 0 ? 0 : (v22 - v10) / 2;
+  int v12; // eax
       v12 = 0; /*0x6ba4bf*/
+  int v16; // [esp+18h] [ebp-48h]
       v16 = 0; /*0x6ba4c3*/
       if ( v11 > 0 )
       {
+  int v13; // edx
         v13 = a5 + ((v23 - v11) / 2 <= 0 ? 0 : (v23 - v11) / 2);
+  int v27; // [esp+74h] [ebp+14h]
         v27 = v13; /*0x6ba4d3*/
         do /*0x6ba558*/
         {
+  unsigned int *v26; // [esp+64h] [ebp+4h]
           v26 = 0; /*0x6ba4d9*/
           if ( v10 > 0 ) /*0x6ba4ee*/
           {
+  int v14; // ebx
             v14 = v19 + a4; /*0x6ba506*/
+  int v15; // ecx
             v15 = v20 + 2 * (*aP0 + v17 * (aP0[1] + v12)); /*0x6ba50d*/
             do /*0x6ba537*/
             {
@@ -739,30 +739,30 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
 namespace gamemd {  // G42.18c ns repair
 int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
 {
+
   int result; // eax
+  result = (*(int (**)(int, unsigned int, unsigned int))(*&aP1->q_170))(aP1, 0, 0); /*0x6ba594*/
+  result = result; /*0x6ba599*/
+  if ( result ) /*0x6ba59d*/
+  {
   int v5; // ebp
+    v5 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba5bb*/
+    if ( v5 ) /*0x6ba5bf*/
+    {
   int v6; // ebx
+      v6 = *a0; /*0x6ba5d8*/
   int v7; // esi
+      v7 = a0[1]; /*0x6ba5da*/
+  int v16; // [esp+1Ch] [ebp-8h]
+      v16 = (*(int (**)(int))(*&a3->u32_1F0))(a3); /*0x6ba5f2*/
   int v8; // edi
+      v8 = (*(int (**)(int))(*&a3->u32_200))(a3); /*0x6ba604*/
   int v9; // eax
   int v10; // edx
   unsigned short *v11; // ebx
   unsigned short *v13; // eax
   unsigned short *v14; // ecx
-  int v16; // [esp+1Ch] [ebp-8h]
   int *v17; // [esp+28h] [ebp+4h]
-
-  result = (*(int (**)(int, unsigned int, unsigned int))(*&aP1->q_170))(aP1, 0, 0); /*0x6ba594*/
-  result = result; /*0x6ba599*/
-  if ( result ) /*0x6ba59d*/
-  {
-    v5 = (*(int (**)(int, unsigned int, unsigned int))(*&a3->u32_170))(a3, 0, 0); /*0x6ba5bb*/
-    if ( v5 ) /*0x6ba5bf*/
-    {
-      v6 = *a0; /*0x6ba5d8*/
-      v7 = a0[1]; /*0x6ba5da*/
-      v16 = (*(int (**)(int))(*&a3->u32_1F0))(a3); /*0x6ba5f2*/
-      v8 = (*(int (**)(int))(*&a3->u32_200))(a3); /*0x6ba604*/
       v9 = (*(int (**)(int))(aP1->isOnMap)(aP1) / 2; /*0x6ba60e*/
       if ( v8 > 0 ) /*0x6ba612*/
       {
@@ -2094,10 +2094,10 @@ int Surface::CommitSurfaceBuffersAudio()
 namespace gamemd {  // G42.18c ns repair
 unsigned int *  Surface::GetRect(unsigned int * a2)
 {
-  int Width; // edi
-  int Height; // ecx
 
+  int Width; // edi
   Width = this->Width; /*0x411517*/
+  int Height; // ecx
   Height = this->Height; /*0x41151a*/
   *a2 = 0; /*0x411523*/
   a2[1] = 0; /*0x411525*/
@@ -2131,31 +2131,31 @@ char Surface::StubReturnFalse()
 namespace gamemd {  // G42.18c ns repair
 LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
 {
-  int result; // eax
   int v3; // edi
-  Surface *v4; // eax
-  char *v5; // ecx
-  int v6; // edx
-  char *v7; // eax
-  int v8; // ebx
-  char v9; // [esp+8h] [ebp-4h]
 
   if ( Src != (Surface *)&unk_89F990 ) /*0x4a478b*/
     memcpy(&unk_89F990, Src, 0x300u); /*0x4a4798*/
+  int result; // eax
   result = (int)g_lpDirectDraw7; /*0x4a47a0*/
   if ( g_lpDirectDraw7 ) /*0x4a47a7*/
   {
     g_DDraw_PrimarySurface = g_DDraw_PrimarySurface; /*0x4a47a9*/
     if ( g_DDraw_PrimarySurface ) /*0x4a47b1*/
     {
+  Surface *v4; // eax
       v4 = Src; /*0x4a47b4*/
+  char *v5; // ecx
       v5 = (char *)&unk_89FC95; /*0x4a47b6*/
       do /*0x4a47e5*/
       {
+  int v6; // edx
         v6 = (uint8_t)v4->vtable1; /*0x4a47bf*/
+  char v9; // [esp+8h] [ebp-4h]
         v9 = v4->__pad_0[1]; /*0x4a47c5*/
+  char *v7; // eax
         v7 = &v4->__pad_0[2]; /*0x4a47c9*/
         v5 += 4; /*0x4a47cc*/
+  int v8; // ebx
         v8 = (uint8_t)*v7; /*0x4a47cf*/
         *(v5 - 5) = v6; /*0x4a47d1*/
         v4 = (Surface *)(v7 + 1); /*0x4a47d8*/

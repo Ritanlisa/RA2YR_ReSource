@@ -17,15 +17,13 @@ namespace gamemd {  // G42.18 ns repair
 int Territory_WorldDominationTour_8::AddRef(char a2)
 {
 
-  int Ticks; // eax
-  int v3; // esi
-  int *v4; // esi
-  int v6; // [esp+4h] [ebp-8h]
 
+  int Ticks; // eax
   LOBYTE(Ticks) = a2; /*0x7718a0*/
   this->q00C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
+  int v3; // esi
     v3 = this->field_1C; /*0x7718af*/
     if ( *(int *)(v3 + 976) > 0 ) /*0x7718ba*/
     {
@@ -33,8 +31,10 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
       (*(void (**)(int))(*(unsigned int *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
     }
     Ticks = Timer::GetTicks(); /*0x7718d6*/
+  int *v4; // esi
     v4 = (int *)(v3 + 940); /*0x7718e1*/
     *v4 = Ticks; /*0x7718e7*/
+  int v6; // [esp+4h] [ebp-8h]
     v4[1] = v6; /*0x7718e9*/
     v4[2] = 0; /*0x7718ec*/
   }
@@ -47,12 +47,12 @@ namespace gamemd {
 signed int Territory_WorldDominationTour_8::Release()
 {
 
-  signed int result; // eax
-  int v3; // edi
 
+  signed int result; // eax
   result = *&this->Ticks; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
+  int v3; // edi
     v3 = this->field_18; /*0x77190c*/
     result = Timer::GetTicks() - *&this->Ticks; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
@@ -123,14 +123,14 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1, void *a2_1, void *a3_1)
 {
 
-  int v2; // [esp+0h] [ebp-10h]
-  int v3; // [esp+4h] [ebp-Ch]
-  int v4; // [esp+8h] [ebp-8h]
-  int v5; // [esp+Ch] [ebp-4h]
 
+  int v2; // [esp+0h] [ebp-10h]
   *(unsigned int *)a1->__pad_0 = v2; /*0x77199d*/
+  int v3; // [esp+4h] [ebp-Ch]
   a1->field_4 = v3; /*0x7719a3*/
+  int v4; // [esp+8h] [ebp-8h]
   a1->field_8 = v4; /*0x7719aa*/
+  int v5; // [esp+Ch] [ebp-4h]
   *(unsigned int *)a1->__pad_C = v5; /*0x7719b1*/
   return a1->__pad_0; /*0x7719b4*/
 

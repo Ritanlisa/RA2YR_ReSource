@@ -19,11 +19,8 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * Isometric::InitTables(unsigned int *aP1, void *a2)
 {
 
-  char v2; // al
-  __int64 result; // rax
-  int v5; // ecx
-  double v6; // st7
 
+  char v2; // al
   v2 = byte_89E770; /*0x47b3a9*/
   if ( (byte_89E770 & 1) == 0 ) /*0x47b3b3*/
   {
@@ -199,10 +196,13 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1, void *a2)
     dword_81CC04 = 0; /*0x47ba79*/
     *(double *)&qword_81CC18 = dbl_89E720 * -0.5; /*0x47ba89*/
   }
+  __int64 result; // rax
   result = Math::RoundToInt((double)(dword_89E7C0 * this->u32_11B) + 0.5); /*0x47bab0*/
   if ( this->u8_11C ) /*0x47bab5*/
   {
+  int v5; // ecx
     v5 = 40 * (*(unsigned __int8 *)(&this->u8_11C) - 1); /*0x47baec*/
+  double v6; // st7
     v6 = (double)(unsigned __int8)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
        + (double)(unsigned __int8)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
        + *(double *)(v5 + 8505616)

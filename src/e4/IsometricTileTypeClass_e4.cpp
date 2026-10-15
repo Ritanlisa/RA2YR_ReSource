@@ -24,10 +24,6 @@
 namespace gamemd {  // G42.18 ns repair
 int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // edx
-  int v6; // eax
 
   ((AbstractTypeClass *)((AbstractTypeClass *)a2_2))->ProcessPower((int *)(a2_2)); /*0x549b79*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 165)); /*0x549b87*/
@@ -35,9 +31,11 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)a2_2 + 167)); /*0x549ba3*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 168)); /*0x549bb1*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 173)); /*0x549bbf*/
+  int v3; // eax
   v3 = *((unsigned int *)a2_2 + 175); /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
+  int v4; // eax
     v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
@@ -46,7 +44,9 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)a2_2 + 181)); /*0x549c05*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 182)); /*0x549c13*/
   Power::TimerProcess(*((unsigned int *)a2_2 + 183)); /*0x549c21*/
+  int v5; // edx
   (*((unsigned char *)&(v5))) = *((unsigned char *)a2_2 + 736); /*0x549c26*/
+  int v6; // eax
   v6 = ((Power *)a2_2)->FlagProcess(v5); /*0x549c2f*/
   (*((unsigned char *)&(v6))) = *((unsigned char *)a2_2 + 737); /*0x549c34*/
   ((Power *)a2_2)->FlagProcess(v6); /*0x549c3d*/
@@ -60,11 +60,11 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
 namespace gamemd {
 AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
-  int i; // esi
   void (***v3)(unsigned int, int); // ecx
   int result; // eax
   int j; // eax
 
+  int i; // esi
   for ( i = 0; i < *(int *)&g_SurfaceAnimState; *(unsigned int *)(*(unsigned int *)&DataGlobal_87F69C + 4 * i - 4) = 0 ) /*0x549c8a*/
   {
     v3 = *(void (****)(unsigned int, int))(*(unsigned int *)&DataGlobal_87F69C + 4 * i); /*0x549c91*/
@@ -100,10 +100,10 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 namespace gamemd {
 int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
-  int result; // eax
 
   if ( this->u32_2BC == a2 ) /*0x549ddc*/
     this->u32_2BC = 0; /*0x549dde*/
+  int result; // eax
   result = this->u32_2C8; /*0x549de8*/
   if ( result != -1 && *(unsigned int *)(FootClass_Array.primaryFacing[3] + 4 * result) == a2 ) /*0x549e02*/
     this->u32_2C8 = -1; /*0x549e04*/
@@ -121,8 +121,8 @@ int IsometricTileTypeClass::GetAuxField()
 namespace gamemd {
 int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x549d7f*/
   if ( result >= 0 ) /*0x549d86*/
     return 0; /*0x549d88*/
@@ -170,8 +170,8 @@ IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, 
 namespace gamemd {
 void IsometricTileTypeClass::ClearBuffer(void *a1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1->vtable2; /*0x54a196*/
   *(unsigned int *)&a1->q010 = 0; /*0x54a199*/
   if ( v2 && (((unsigned char *)&(a1->m_C))[1]) ) /*0x54a1a0*/
@@ -198,14 +198,11 @@ namespace gamemd {
 char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x54a3dc*/
   {
     LOBYTE(this->vtable4) = 0; /*0x54a3e2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
@@ -215,9 +212,11 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x54a47a*/
     if ( *&this->vtable2 ) /*0x54a408*/
     {
+  int m_8; // ecx
       m_8 = (int)(this->vtable3); /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
       if ( BYTE1(this->vtable4) ) /*0x54a42e*/
@@ -234,6 +233,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x54a45e*/
   }
+  int v7; // eax
   v7 = (int)(this->vtable3); /*0x54a461*/
   if ( v7 < this->uniqueId ) /*0x54a469*/
     this->uniqueId = v7; /*0x54a46b*/
@@ -245,14 +245,14 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int IsometricTileTypeClass::FindItem(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = *&this->uniqueId; /*0x54a480*/
+  int result; // eax
   result = 0; /*0x54a483*/
   if ( m_10 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
+  unsigned int *i; // ecx
   for ( i = *&this->vtable2; *i != *a2; ++i ) /*0x54a48e*/
   {
     if ( ++result >= m_10 ) /*0x54a49d*/
@@ -266,8 +266,8 @@ namespace gamemd {
 DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x54a763*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x54a766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/

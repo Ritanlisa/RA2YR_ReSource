@@ -57,29 +57,29 @@ namespace gamemd { int CreateDialog(unsigned __int16 a1, INT_PTR (__stdcall *a2)
 namespace gamemd {  // G42.18 ns repair
 char sub_5F0070()
 {
-  DWORD v0; // eax
-  int v1; // edi
-  int v2; // esi
-  unsigned char v4[108]; // [esp+8h] [ebp-70h] BYREF
-  int16_t v5; // [esp+74h] [ebp-4h]
-  char v6; // [esp+76h] [ebp-2h]
 
+  DWORD v0; // eax
   (*((unsigned char *)&(v0))) = dword_A8D5F8; /*0x5f0073*/
+  unsigned char v4[108]; // [esp+8h] [ebp-70h] BYREF
   v4[0] = 0; /*0x5f007c*/
   if ( (dword_A8D5F8 & 2) == 0 ) /*0x5f0081*/
   {
     memset(v4, 0, sizeof(v4)); /*0x5f0094*/
+  int16_t v5; // [esp+74h] [ebp-4h]
     v5 = 0; /*0x5f0096*/
+  char v6; // [esp+76h] [ebp-2h]
     v6 = 0; /*0x5f0098*/
     v4[0] = 19; /*0x5f00a5*/
     ((int)&unk_A8EA70)->WriteBlock((int)v4, 111, 0); /*0x5f00aa*/
     ((int)&unk_A8EA70)->WriteBlock((int)v4, 111, 0); /*0x5f00bd*/
+  int v1; // edi
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
       v1 += TimerGetTicks() - dword_887338; /*0x5f00e2*/
     while ( 1 ) /*0x5f00e4*/
     {
       (*((unsigned char *)&(v0))) = dword_887338; /*0x5f00e4*/
+  int v2; // esi
       v2 = dword_887340; /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
@@ -345,12 +345,12 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
 namespace gamemd {
 void* sub_5F33B0()
 {
-  uint16_t v0; // ax
-  int v1; // esi
 
   Event::Dispatch(); /*0x5f33b1*/
   MessageLoop(); /*0x5f33b6*/
+  uint16_t v0; // ax
   v0 = EventQueue::Process(dword_87F770); /*0x5f33c1*/
+  int v1; // esi
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
     return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
@@ -365,27 +365,21 @@ void* sub_5F33B0()
 namespace gamemd {
 unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // ebx
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ebp
-  unsigned int *v8; // ebp
-  int *v9; // ebp
-  int v10; // edx
-  int v11; // edi
   bool v12; // zf
-  unsigned int *v14; // [esp+10h] [ebp-28h]
-  int v15; // [esp+14h] [ebp-24h]
 
+  int v2; // edi
   v2 = *(unsigned int *)(a2 + 16); /*0x5f66a7*/
+  int v3; // esi
   v3 = 0; /*0x5f66ae*/
+  int v4; // ebx
   v4 = 0; /*0x5f66b0*/
+  int v5; // ecx
   v5 = 0; /*0x5f66b2*/
+  int v6; // eax
   v6 = 0; /*0x5f66b4*/
   if ( v2 > 0 ) /*0x5f66bc*/
   {
+  int v7; // ebp
     v7 = *(unsigned int *)(a2 + 4); /*0x5f66c2*/
     v3 = *(unsigned int *)(*(unsigned int *)v7 + 156); /*0x5f66d0*/
     v4 = *(unsigned int *)(*(unsigned int *)v7 + 160); /*0x5f66d9*/
@@ -396,13 +390,19 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
     else
     {
       v5 = 0; /*0x5f66f7*/
+  unsigned int *v8; // ebp
       v8 = (unsigned int *)(v7 + 4 * (v2 - 1)); /*0x5f66fb*/
+  unsigned int *v14; // [esp+10h] [ebp-28h]
       v14 = v8; /*0x5f6700*/
+  int v15; // [esp+14h] [ebp-24h]
       v15 = *(unsigned int *)(a2 + 16); /*0x5f6704*/
       do /*0x5f675e*/
       {
+  int *v9; // ebp
         v9 = (int *)(*v8 + 156); /*0x5f6711*/
+  int v10; // edx
         v10 = *v9; /*0x5f6713*/
+  int v11; // edi
         v11 = v9[1]; /*0x5f6718*/
         if ( *v9 < v3 ) /*0x5f6722*/
         {
@@ -437,11 +437,10 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 namespace gamemd {
 char sub_5FBEF0()
 {
-  HWND Dialog; // esi
-  int v1; // ecx
-  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
+  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
   dwNewLong = -1; /*0x5fbefe*/
+  HWND Dialog; // esi
   Dialog = (HWND)CreateDialog(0xA3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
   if ( Dialog ) /*0x5fbf0f*/
   {
@@ -453,6 +452,7 @@ char sub_5FBEF0()
         dwNewLong = 2; /*0x5fbf37*/
       if ( !byte_A8E9A0 ) /*0x5fbf46*/
       {
+  int v1; // ecx
         (*((unsigned char *)&(v1))) = 0; /*0x5fbf48*/
         ScreenSaver::Process(v1); /*0x5fbf4a*/
       }

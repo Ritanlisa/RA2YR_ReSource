@@ -82,25 +82,25 @@ namespace gamemd {  // G42.18 ns repair
 ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
 {
 
-  void *result; // eax
-  AbstractClass *v2; // ebx
-  int v3; // edi
-  int v4; // eax
-  char *v5; // esi
-  int v6; // ecx
   void *v7; // edx
   void *v8; // esi
 
+  void *result; // eax
   result = (void *)(dword_A8B230); /*0x58bb31*/
   if ( dword_A8B230 ) /*0x58bb38*/
   {
     dword_A8B230[122].abstractFlags = g_MissionQueueFrame.localVariables[162]; /*0x58bb45*/
+  AbstractClass *v2; // ebx
     v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58bb4b*/
+  int v3; // edi
     v3 = 0; /*0x58bb52*/
     if ( dword_A8B230[122].abstractFlags > 0 ) /*0x58bb5c*/
     {
+  int v4; // eax
       v4 = 4416; /*0x58bb60*/
+  char *v5; // esi
       v5 = &g_MissionQueueFrame.waypoints[1470]; /*0x58bb6a*/
+  int v6; // ecx
       v6 = 4544; /*0x58bb71*/
       while ( 1 ) /*0x58bb8b*/
       {
@@ -314,19 +314,18 @@ int ScenarioClass::MissionStubReturnZero3()
 namespace gamemd {
 int ScenarioClass::AssignStartPositions(char a1)
 {
-  int i; // edi
-  HouseClass *v2; // ecx
-  int startingAllies; // esi
   Multiplayer v5[4]; // [esp+4h] [ebp-18h] BYREF
   void *Block; // [esp+8h] [ebp-14h]
-  char v7; // [esp+11h] [ebp-Bh]
 
   (v5)->FindStartPositions(); /*0x5d6bec*/
+  int i; // edi
   for ( i = 0; i < stru_A80220.nextArrayIndex; ++i ) /*0x5d6bfa*/
   {
+  HouseClass *v2; // ecx
     v2 = (HouseClass *)*((unsigned int *)stru_A80220.vfptr3 + i); /*0x5d6c02*/
     if ( !*(unsigned char *)(v2->relatedTagsCapacity + 422) ) /*0x5d6c08*/
     {
+  int startingAllies; // esi
       startingAllies = v2->startingAllies; /*0x5d6c12*/
       if ( startingAllies != -2 ) /*0x5d6c1b*/
       {
@@ -336,6 +335,7 @@ int ScenarioClass::AssignStartPositions(char a1)
     }
   }
   *(unsigned int *)v5 = (unsigned int)(&vt_VectorClass); /*0x5d6c45*/
+  char v7; // [esp+11h] [ebp-Bh]
   if ( Block && v7 ) /*0x5d6c58*/
     operator delete((void *)(Block)); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
@@ -487,10 +487,6 @@ namespace gamemd {
 int ScenarioClass::CleanupTemporary()
 {
   AsyncIO *v1; // ecx
-  void **p_vtable2; // esi
-  int Ticks; // eax
-  char *v4; // ecx
-  int v5; // eax
 
   sub_406F00(); /*0x683eb1*/
   dword_83D834 = sub_4072B0(g_MixerState); /*0x683ecc*/
@@ -501,11 +497,15 @@ int ScenarioClass::CleanupTemporary()
       TimerGetTicks(); /*0x683f04*/
     Debug::Log(); /*0x683f13*/
     v1 = (AsyncIO *)dword_A8B230; /*0x683f18*/
+  void **p_vtable2; // esi
     p_vtable2 = &dword_A8B230[43].vfptr2; /*0x683f27*/
     if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x683f31*/
     {
+  int Ticks; // eax
       Ticks = TimerGetTicks(); /*0x683f36*/
+  char *v4; // ecx
       v4 = (char *)((unsigned int *)(p_vtable2))[2]; /*0x683f3d*/
+  int v5; // eax
       v5 = Ticks - (unsigned int)*p_vtable2; /*0x683f40*/
       *p_vtable2 = (void *)-1; /*0x683f42*/
       v1 = (AsyncIO *)&v4[v5]; /*0x683f48*/
@@ -531,8 +531,8 @@ namespace gamemd {
 unsigned char * ScenarioClass::ProcessIntroTimer()
 {
 
-  unsigned char *result; // eax
 
+  unsigned char *result; // eax
   result = dword_A8B230[43].NeedsSaveOrLink; /*0x684186*/
   if ( result ) /*0x68418e*/
   {
@@ -567,13 +567,12 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
 namespace gamemd {
 int ScenarioClass_Construct(void * a2)
 {
-  char result; // al
-  char Map; // bl
   CCINIClass v5; // [esp+10h] [ebp-C4h] BYREF
   CCFileClass v6; // [esp+68h] [ebp-6Ch] BYREF
   int v7[3]; // [esp+C0h] [ebp-14h] BYREF
   int v8; // [esp+CCh] [ebp-8h]
 
+  char result; // al
   result = vt_CD(dword_81C1D0); /*0x68674c*/
   if ( result ) /*0x686754*/
   {
@@ -591,6 +590,7 @@ int ScenarioClass_Construct(void * a2)
     if ( CCINIClass::Load(&v5, (int)&v6, 1, 0) ) /*0x6867be*/
     {
       strcpy((char *)&dword_A8B230[130].abstractFlags, Source); /*0x686836*/
+  char Map; // bl
       Map = ScenarioClass::LoadMap(0, (bool *)v5.vtable1, a2); /*0x686851*/
       /* X11: vtable install elided (implicit via CCFileClass virtuals 0x686853) */
       v8 = 0; /*0x68685b*/
@@ -1192,125 +1192,18 @@ namespace gamemd {
 int ScenarioClass::ReadMapINI(CCINIClass * aP1)
 {
 
-  _VectorClass_PAVTechnoTypeClass *v4; // eax
-  int *v5; // ebx
   int *Point2D_Overwrite; // eax
-  int v7; // ecx
-  int v8; // eax
-  int BuildingTypeByName; // eax
   int v13; // eax
-  _VectorClass_PAVTechnoTypeClass *TechnoTypeList; // eax
   int m_8; // eax
-  int v16; // eax
-  int v17; // ecx
-  int v18; // eax
   int v19; // edx
-  void *v20; // eax
-  _VectorClass_PAVTechnoTypeClass *v21; // ebx
-  _VectorClass_PAVTechnoTypeClass *v22; // ecx
-  _VectorClass_PAVTechnoTypeClass *v24; // ecx
-  _VectorClass_PAVTechnoTypeClass *v26; // ecx
-  int v27; // edx
   int v28; // eax
-  _VectorClass_PAVTechnoTypeClass *IntList; // eax
-  int v30; // eax
-  int v31; // eax
-  int v32; // ecx
-  int v33; // eax
   int v34; // edx
   void *v35; // eax
-  char Bool_Overwrite; // al
-  char v37; // al
-  char v38; // cl
   char v39; // al
-  int Int_Overwrite; // eax
-  int v40; // ecx
-  int v41; // ecx
-  int v42; // eax
-  int v43; // eax
-  int v44; // edx
   int v45; // ecx
-  int v46; // eax
-  int v47; // ecx
-  int v48; // eax
-  int v49; // eax
-  int v50; // edx
   int v51; // ecx
-  int TimeString; // eax
-  CCINIClass *v53; // ecx
-  int v54; // eax
-  double v55; // st7
-  int v56; // eax
-  double v57; // st7
-  double v58; // st7
-  int v59; // eax
-  double v60; // st7
-  double v61; // st7
-  int v62; // eax
-  double v63; // st7
-  double v64; // st7
-  int v65; // eax
-  double v66; // st7
-  double v67; // st7
-  int v68; // eax
-  double v69; // st7
-  double v70; // st7
-  int v71; // eax
-  double v72; // st7
-  double v73; // st7
-  int v74; // eax
-  double v75; // st7
-  double v76; // st7
-  int v77; // eax
-  double v78; // st7
-  double v79; // st7
-  int v80; // eax
-  double v81; // st7
-  double v82; // st7
-  int v83; // eax
-  double v84; // st7
-  double v85; // st7
-  int v86; // eax
-  double v87; // st7
-  double v88; // st7
-  int v89; // eax
-  double v90; // st7
-  double v91; // st7
-  int v92; // eax
-  double v93; // st7
-  double v94; // st7
-  int v95; // eax
-  double v96; // st7
-  double v97; // st7
-  int v98; // eax
-  double v99; // st7
-  double v100; // st7
-  int v101; // eax
-  double v102; // st7
-  double v103; // st7
-  int v104; // eax
-  double v105; // st7
-  double v106; // st7
-  int v107; // eax
-  double v108; // st7
-  double v109; // st7
-  int v110; // eax
-  double v111; // st7
-  double v112; // st7
-  int v113; // eax
-  int v114; // eax
-  void **v116; // [esp-4h] [ebp-5Ch] BYREF
-  unsigned int *var58; // [esp+0h] [ebp-58h]
-  RandomStruct *v115; // [esp+4h] [ebp-54h]
-  int v119; // [esp+8h] [ebp-50h]
-  INIClass *v117; // [esp+Ch] [ebp-4Ch]
-  INIClass *aP3[2]; // [esp+10h] [ebp-48h]
   void ***v122; // [esp+24h] [ebp-34h]
   RandomStruct v123; // [esp+28h] [ebp-30h] BYREF
-  char Buffer[12]; // [esp+30h] [ebp-28h] BYREF
-  char Destination[4]; // [esp+3Ch] [ebp-1Ch] BYREF
-  void *Block; // [esp+40h] [ebp-18h]
-  char v127; // [esp+49h] [ebp-Fh]
 
   INIClass::ResetSection(aP1);
   GameMode::ReadFlagsFromINI(aP1);
@@ -1344,13 +1237,16 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                (uint8_t *)&g_INI_Key_Header,
                                (CCINIClass *)&g_INI_Key_NumCoopHumanStartSpots,
                                *(INIClass **)this->q7280));
+  _VectorClass_PAVTechnoTypeClass *v4; // eax
   v4 = 0;
   if ( this->numberStartingPoints > 0 )
   {
+  int *v5; // ebx
     v5 = (RandomStruct *)this->u8_6E46);
     do
     {
       v122 = (void ***)((char *)v4 + 1);
+  char Buffer[12]; // [esp+30h] [ebp-28h] BYREF
       sprintf(Buffer, &g_Str_Trace_Waypoint_d, (char *)v4 + 1);
       v6 = INIClass::ReadPoint2D_Overwrite(
              aP1,
@@ -1358,7 +1254,9 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
              (INIClass *)&g_INI_Key_Header,
              (CCINIClass *)Buffer,
              v5);
+  int v7; // ecx
       v7 = *v6;
+  int v8; // eax
       v8 = v6[1];
       v5->Min = v7;
       v5->Max = v8;
@@ -1431,13 +1329,16 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
                                (CCINIClass *)&stru_830620.q579C[33660],
                                this->endOfGame);
+  int BuildingTypeByName; // eax
   BuildingTypeByName = Scenario::FindBuildingTypeByName(
                          (uint8_t ***)aP1,
                          (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
                          (uint8_t *)g_INI_Key_Theme,
                          *(CCINIClass **)this->u8_B600));
+  INIClass *aP3[2]; // [esp+10h] [ebp-48h]
   aP3[1] = 0;
   aP3[0] = (INIClass *)&stru_830620.q579C[33644];
+  INIClass *v117; // [esp+Ch] [ebp-4Ch]
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   this->themeIndex = BuildingTypeByName;
   *(unsigned int *)&g_abs_A8D63C = INIClass::ReadInt_Overwrite(
@@ -1506,9 +1407,13 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                 (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
                                 (CCINIClass *)&stru_830620.q579C[33484],
                                 *(INIClass **)this->u8_15200));
+  unsigned int *var58; // [esp+0h] [ebp-58h]
   var58 = 0;
+  RandomStruct *v115; // [esp+4h] [ebp-54h]
   v115 = 0;
+  int v119; // [esp+8h] [ebp-50h]
   (*((unsigned short *)&(v119))) = 1;
+  void **v116; // [esp-4h] [ebp-5Ch] BYREF
   v116 = &vt_VectorClass_TechnoTypeClass;
   if ( &v116 != (void ***)this->u8_15204) )
   {
@@ -1530,6 +1435,8 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       (((v119) >> 8) & 0xFF) = 0;
     }
   }
+  _VectorClass_PAVTechnoTypeClass *TechnoTypeList; // eax
+  char Destination[4]; // [esp+3Ch] [ebp-1Ch] BYREF
   TechnoTypeList = (void ***)INIClass::ReadTechnoTypeList(
                                (uint8_t ***)aP1,
                                (CCINIClass *)Destination,
@@ -1554,6 +1461,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       this->allowableUnitsCount = v15;
       if ( v15 )
       {
+  int v16; // eax
         v16 = *&this->allowableUnitMaximums;
         eax16 = 0;
         this->u32_34E1 = 1;
@@ -1577,13 +1485,19 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   }
   this->dropshipUnitCounts = TechnoTypeList[4];
   this->dropshipCountsCount = TechnoTypeList[5];
+  int v18; // eax
   v18 = TechnoTypeList[6];
+  int v17; // ecx
+  void *Block; // [esp+40h] [ebp-18h]
   v17 = (CCINIClass *)Block;
   this->ambientOriginal = v18;
   *(unsigned int *)Destination = &vt_VectorClass_TechnoTypeClass;
+  char v127; // [esp+49h] [ebp-Fh]
   if ( v17 && v127 )
     RA2_OPDEL(v17);
+  void *v20; // eax
   v20 = (void ***)this->u8_152C2);
+  _VectorClass_PAVTechnoTypeClass *v21; // ebx
   v21 = &v116;
   v122 = &v116;
   var58 = 0;
@@ -1593,17 +1507,21 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   if ( &v116 != (void ***)this->u8_152C2) )
   {
     VectorClass::Destroy((int)&v116);
+  _VectorClass_PAVTechnoTypeClass *v22; // ecx
     v22 = *(void ***)this->u8_15300);
     v122 = v122;
     v122[2] = v22;
     if ( v22 )
     {
+  _VectorClass_PAVTechnoTypeClass *v24; // ecx
       v24 = operator new(4 * (unsigned int)v22);
       v122 = v122;
       v122[1] = (void **)v24;
       if ( v24 )
       {
+  _VectorClass_PAVTechnoTypeClass *v26; // ecx
         v26 = (int)v122[2];
+  int v27; // edx
         v27 = 0;
         *((unsigned char *)v122 + 13) = 1;
         if ( v26 > 0 )
@@ -1627,6 +1545,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v21[4] = *(void ***)this->u8_15308);
   v21[5] = *(void ***)this->u8_15342);
   *v21 = &vt_TypeList_int;
+  _VectorClass_PAVTechnoTypeClass *IntList; // eax
   IntList = (void ***)INIClass::ReadIntList(
                         (uint8_t ***)aP1,
                         (int)Destination,
@@ -1647,10 +1566,12 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     this->red = v29;
     if ( v29 )
     {
+  int v30; // eax
       v30 = operator new(4 * (unsigned int)v29);
       this->ambientTarget = v30;
       if ( v30 )
       {
+  int v31; // eax
         v31 = this->red;
         eax35 = 0;
         this->u32_34FD = 1;
@@ -1674,7 +1595,9 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   }
   this->blue = IntList[4];
   this->ground = IntList[5];
+  int v33; // eax
   v33 = IntList[6];
+  int v32; // ecx
   v32 = (CCINIClass *)Block;
   this->level = v33;
   *(unsigned int *)Destination = &vt_VectorClass_int;
@@ -1685,6 +1608,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
                                (CCINIClass *)&stru_830620.q579C[33420],
                                this->storedTiberium_growth_enabled);
+  char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite(
                      (int)aP1,
                      (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
@@ -1704,8 +1628,10 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
           (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
           (CCINIClass *)&stru_830620.q579C[33352],
           this->storedTiberium_death_to_visceroid);
+  char v37; // al
   v37 = this->freeRadar;
   this->storedTiberium_death_to_visceroid = v36;
+  char v38; // cl
   v38 = INIClass::ReadBool_Overwrite(
           (int)aP1,
           (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
@@ -1716,6 +1642,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   this->freeRadar = v38;
   this->altHomeCell = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)v117, aP3->q000, aP3[1]);
+  int Int_Overwrite; // eax
   Int_Overwrite = INIClass::ReadInt_Overwrite(
                     (int)aP1,
                     (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
@@ -1726,19 +1653,24 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   this->uniqueId = Int_Overwrite;
   INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)v117, aP3->q000, (char)aP3[1]);
+  int v40; // ecx
   v40 = this->dropshipUnitCounts - this->blue;
   v122 = 0;
   if ( v40 > 0 )
   {
     do
     {
+  int v41; // ecx
       v41 = this->red;
+  int v42; // eax
       if ( this->blue < v41
         || (this->u32_34FD || !v41)
         && (v42 = this->ground, v42 > 0)
         && ((uint8_t (*)(int, int, unsigned int))(*v20)[2])this->ambientCurrent, v41 + v42, 0) )
       {
+  int v43; // eax
         v43 = this->blue;
+  int v44; // edx
         v44 = this->ambientTarget;
         this->blue = v43 + 1;
         *(unsigned int *)(v44 + 4 * v43) = -1;
@@ -1748,13 +1680,16 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     }
     while ( (int)v122 < v45 );
   }
+  int v46; // eax
   v46 = this->blue;
   v122 = 0;
   if ( v46 > 0 )
   {
     do
     {
+  int v47; // ecx
       v47 = this->ionGreen;
+  int v48; // eax
       if ( this->ionGround < v47
         || (this->u32_3519 || !v47)
         && (v48 = this->ionLevel, v48 > 0)
@@ -1762,7 +1697,9 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
              v47 + v48,
              0) )
       {
+  int v49; // eax
         v49 = this->ionGround;
+  int v50; // edx
         v50 = this->ionRed;
         this->ionGround = v49 + 1;
         *(unsigned int *)(v50 + 4 * v49) = 0;
@@ -1774,13 +1711,16 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   }
   ScenarioClass::ReadLocalVariables(aP1);
   Event::Dispatch();
+  int TimeString; // eax
   TimeString = INIClass::ReadTimeString(
                  (int)aP1,
                  (uint8_t *)&g_INI_Key_Ranking,
                  (uint8_t *)&stru_830620.q579C[33296],
                  *(CCINIClass **)this->u8_15742));
+  CCINIClass *v53; // ecx
   v53 = *(CCINIClass **)this->u8_15746);
   this->parTimeEasy = TimeString;
+  int v54; // eax
   v54 = INIClass::ReadTimeString(
           (int)aP1,
           (uint8_t *)&g_INI_Key_Ranking,
@@ -1824,180 +1764,239 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     (INIClass *)this->u8_159C7),
     31);
   *(double *)aP3 = (double)this->nukeRed * 0.01;
+  double v55; // st7
   v55 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)&g_INI_Key_Lighting.headNode[2],
           aP3[0]);
+  int v56; // eax
   v56 = Math::RoundToInt(v55 * 100.0 + 0.01);
+  double v57; // st7
   v57 = (double)this->nukeGround;
   this->nukeRed = v56;
   this->nukeGreen = v56;
   this->nukeBlue = v56;
   *(double *)aP3 = v57 * 0.01;
+  double v58; // st7
   v58 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_abs_820538,
           aP3[0]);
+  int v59; // eax
   v59 = Math::RoundToInt(v58 * 100.0 + 0.01);
+  double v60; // st7
   v60 = (double)this->nukeLevel;
   this->nukeGround = v59;
   *(double *)aP3 = v60 * 0.01;
+  double v61; // st7
   v61 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_abs_82053C,
           aP3[0]);
+  int v62; // eax
   v62 = Math::RoundToInt(v61 * 100.0 + 0.01);
+  double v63; // st7
   v63 = (double)this->nukeAmbientChangeRate;
   this->nukeLevel = v62;
   *(double *)aP3 = v63 * 0.01;
+  double v64; // st7
   v64 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_Blue,
           aP3[0]);
+  int v65; // eax
   v65 = Math::RoundToInt(v64 * 100.0 + 0.01);
+  double v66; // st7
   v66 = (double)this->dominatorAmbient;
   this->nukeAmbientChangeRate = v65;
   *(double *)aP3 = v66 * 0.001;
+  double v67; // st7
   v67 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_Ground,
           aP3[0]);
+  int v68; // eax
   v68 = Math::RoundToInt(v67 * 1000.0 + 0.01);
+  double v69; // st7
   v69 = (double)this->dominatorRed;
   this->dominatorAmbient = v68;
   *(double *)aP3 = v69 * 0.001;
+  double v70; // st7
   v70 = INIClass::ReadDouble_Overwrite((int)aP1, (INIClass *)&g_INI_Key_Lighting, (uint8_t *)&aLevel, aP3[0]);
+  int v71; // eax
   v71 = Math::RoundToInt(v70 * 1000.0 + 0.01);
+  double v72; // st7
   v72 = (double)this->dominatorGreen;
   this->dominatorRed = v71;
   *(double *)aP3 = v72 * 0.01;
+  double v73; // st7
   v73 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_IonAmbient,
           aP3[0]);
+  int v74; // eax
   v74 = Math::RoundToInt(v73 * 100.0 + 0.01);
+  double v75; // st7
   v75 = (double)this->dominatorBlue;
   this->dominatorGreen = v74;
   *(double *)aP3 = v75 * 0.01;
+  double v76; // st7
   v76 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_IonRed,
           aP3[0]);
+  int v77; // eax
   v77 = Math::RoundToInt(v76 * 100.0 + 0.01);
+  double v78; // st7
   v78 = (double)this->dominatorGround;
   this->dominatorBlue = v77;
   *(double *)aP3 = v78 * 0.01;
+  double v79; // st7
   v79 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_IonGreen,
           aP3[0]);
+  int v80; // eax
   v80 = Math::RoundToInt(v79 * 100.0 + 0.01);
+  double v81; // st7
   v81 = (double)this->dominatorLevel;
   this->dominatorGround = v80;
   *(double *)aP3 = v81 * 0.01;
+  double v82; // st7
   v82 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_IonBlue,
           aP3[0]);
+  int v83; // eax
   v83 = Math::RoundToInt(v82 * 100.0 + 0.01);
+  double v84; // st7
   v84 = (double)this->dominatorAmbientChangeRate;
   this->dominatorLevel = v83;
   *(double *)aP3 = v84 * 0.001;
+  double v85; // st7
   v85 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_IonGround,
           aP3[0]);
+  int v86; // eax
   v86 = Math::RoundToInt(v85 * 1000.0 + 0.01);
+  double v87; // st7
   v87 = (double)this->unknown3598;
   this->dominatorAmbientChangeRate = v86;
   *(double *)aP3 = v87 * 0.001;
+  double v88; // st7
   v88 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)g_INI_Key_IonLevel,
           aP3[0]);
+  int v89; // eax
   v89 = Math::RoundToInt(v88 * 1000.0 + 0.01);
+  double v90; // st7
   v90 = (double)this->q3578;
   this->unknown3598 = v89;
   *(double *)aP3 = v90;
+  double v91; // st7
   v91 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)&stru_830620.q579C[33084],
           (INIClass *)(*((unsigned int *)&(v90))));
+  int v92; // eax
   v92 = Math::RoundToInt(v91);
+  double v93; // st7
   v93 = (double)this->u32_357C;
   *&this->q3578 = v92;
   *(double *)aP3 = v93 * 0.01;
+  double v94; // st7
   v94 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)&stru_830620.q579C[33064],
           aP3[0]);
+  int v95; // eax
   v95 = Math::RoundToInt(v94 * 100.0 + 0.01);
+  double v96; // st7
   v96 = (double)this->u32_3580;
   *&this->u32_357C = v95;
   *(double *)aP3 = v96 * 0.01;
+  double v97; // st7
   v97 = INIClass::ReadDouble_Overwrite(
           (int)aP1,
           (INIClass *)&g_INI_Key_Lighting,
           (uint8_t *)&stru_830620.q579C[33048],
           aP3[0]);
+  int v98; // eax
   v98 = Math::RoundToInt(v97 * 100.0 + 0.01);
+  double v99; // st7
   v99 = (double)this->u32_3584;
   *&this->u32_3580 = v98;
   *(double *)aP3 = v99 * 0.01;
+  double v100; // st7
   v100 = INIClass::ReadDouble_Overwrite(
            (int)aP1,
            (INIClass *)&g_INI_Key_Lighting,
            (uint8_t *)&stru_830620.q579C[33032],
            aP3[0]);
+  int v101; // eax
   v101 = Math::RoundToInt(v100 * 100.0 + 0.01);
+  double v102; // st7
   v102 = (double)this->u32_3588;
   *&this->u32_3584 = v101;
   *(double *)aP3 = v102 * 0.01;
+  double v103; // st7
   v103 = INIClass::ReadDouble_Overwrite(
            (int)aP1,
            (INIClass *)&g_INI_Key_Lighting,
            (uint8_t *)&stru_830620.q579C[33016],
            aP3[0]);
+  int v104; // eax
   v104 = Math::RoundToInt(v103 * 100.0 + 0.01);
+  double v105; // st7
   v105 = (double)this->u32_358C;
   *&this->u32_3588 = v104;
   *(double *)aP3 = v105 * 0.001;
+  double v106; // st7
   v106 = INIClass::ReadDouble_Overwrite(
            (int)aP1,
            (INIClass *)&g_INI_Key_Lighting,
            (uint8_t *)&stru_830620.q579C[33000],
            aP3[0]);
+  int v107; // eax
   v107 = Math::RoundToInt(v106 * 1000.0 + 0.01);
+  double v108; // st7
   v108 = (double)this->u32_3590;
   *&this->u32_358C = v107;
   *(double *)aP3 = v108 * 0.001;
+  double v109; // st7
   v109 = INIClass::ReadDouble_Overwrite(
            (int)aP1,
            (INIClass *)&g_INI_Key_Lighting,
            (uint8_t *)&stru_830620.q579C[32984],
            aP3[0]);
+  int v110; // eax
   v110 = Math::RoundToInt(v109 * 1000.0 + 0.01);
+  double v111; // st7
   v111 = (double)this->u32_3594;
   *&this->u32_3590 = v110;
   *(double *)aP3 = v111 * 0.001;
+  double v112; // st7
   v112 = INIClass::ReadDouble_Overwrite(
            (int)aP1,
            (INIClass *)&g_INI_Key_Lighting,
            (uint8_t *)&stru_830620.q579C[32956],
            aP3[0]);
+  int v113; // eax
   v113 = Math::RoundToInt(v112 * 1000.0 + 0.01);
   aP3[1] = (INIClass *)55;
   *&this->u32_3594 = v113;
@@ -2016,6 +2015,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       (INIClass *)&g_abs_87F8E4,
       (INIClass *)Destination,
       20);
+  int v114; // eax
     v114 = HouseClass::FindByName(Destination);
     if ( v114 == -1 )
       v114 = 0;
@@ -2251,8 +2251,8 @@ int ScenarioClass::MissionStubReturnZero()
 namespace gamemd {
 char ScenarioClass::MissionStubReturnZero2(MPCooperative * aP0)
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = 1; /*0x5d6310*/
   return result; /*0x5d6312*/
 }
@@ -2286,8 +2286,8 @@ char ScenarioClass::createStartingForces(void *a1)
 namespace gamemd {
 char ScenarioClass::ClearFlag()
 {
-  void *vtable0; // ecx
 
+  void *vtable0; // ecx
   vtable0 = dword_A8B230[0].vfptr; /*0x5d6795*/
   (((unsigned char *)&(vtable0))[1]) = ((uint16_t)dword_A8B230[0].vfptr >> 8) & 0xFB; /*0x5d6797*/
   dword_A8B230[0].vfptr = vtable0; /*0x5d679a*/
@@ -2315,8 +2315,8 @@ char ScenarioClass::processAI()
 namespace gamemd {
 void ScenarioClass::sub_5D80B0()
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = this->Items; /*0x5d80b6*/
   this->Items = 0; /*0x5d80b9*/
   if ( v2 && this->IsAllocated ) /*0x5d80c0*/
@@ -2333,8 +2333,8 @@ void ScenarioClass::sub_5D80B0()
 namespace gamemd {
 unsigned int ScenarioClass::ResetIntroFlags(void *a1)
 {
-  unsigned int result; // eax
 
+  unsigned int result; // eax
   result = a1->nextScenario[0] & 0xFFF80000 | 0x8088; /*0x6b8ae7*/
   a1->nextScenario[0] = result; /*0x6b8aec*/
   return result; /*0x6b8aee*/

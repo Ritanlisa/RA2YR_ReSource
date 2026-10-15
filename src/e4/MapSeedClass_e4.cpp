@@ -541,8 +541,8 @@ MapSeedClass * MapSeedClass::QueryInterface(char a2, int a3)
 namespace gamemd {
 void MapSeedClass_18::ClearBuffer(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->q004; /*0x5ac4c6*/
   a1_1->q010 = 0; /*0x5ac4c9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x5ac4d0*/
@@ -578,18 +578,18 @@ int MapSeedClass_18::GetCell(int a2)
 namespace gamemd {
 char MapSeedClass_18::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->m_8; /*0x5aca62*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x5aca6d*/
   {
+  int v3; // edx
     v3 = 0; /*0x5aca6f*/
     if ( m_8 <= 0 ) /*0x5aca73*/
       return 1; /*0x5aca93*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->q004); /*0x5aca75*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5aca7b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5aca84*/
     {
@@ -608,13 +608,11 @@ namespace gamemd {
 char MapSeedClass_18::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x5acaac*/
   {
     LOBYTE(this->m_C) = 0; /*0x5acab6*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x5acabc*/
       v4 = a3; /*0x5acad2*/
     else
@@ -624,9 +622,11 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x5acae5*/
       {
+  int m_8; // ecx
         m_8 = this->m_8; /*0x5acaec*/
         if ( a2 < m_8 ) /*0x5acaf1*/
           m_8 = a2; /*0x5acaf3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5acaf9*/
           ++i; /*0x5acafe*/
         if ( BYTE1(this->m_C) ) /*0x5acb0b*/
@@ -672,16 +672,16 @@ void MapSeedClass_18::ddtor(void *a1)
 namespace gamemd {  // G42.18c ns repair
 int MapSeedClass::GenerateSeed(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(*&this->m_C))) ) /*0x5acb80*/
     return 0; /*0x5acb88*/
+  int m_8; // edx
   m_8 = *&this->Capacity; /*0x5acb8e*/
+  int result; // eax
   result = 0; /*0x5acb91*/
   if ( m_8 <= 0 ) /*0x5acb95*/
     return -1; /*0x5acbac*/
+  unsigned int *i; // ecx
   for ( i = *&this->mode; *i != *a2; ++i ) /*0x5acb9b*/
   {
     if ( ++result >= m_8 ) /*0x5acbaa*/
@@ -706,14 +706,11 @@ namespace gamemd {
 char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x5acbec*/
   {
     LOBYTE(this->m_C) = 0; /*0x5acbf2*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x5acbf8*/
       v4 = a3; /*0x5acc0e*/
     else
@@ -723,9 +720,11 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x5acc8a*/
     if ( *&this->q004 ) /*0x5acc18*/
     {
+  int m_8; // ecx
       m_8 = this->m_8; /*0x5acc1f*/
       if ( a2 < m_8 ) /*0x5acc24*/
         m_8 = a2; /*0x5acc26*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x5acc2c*/
         ++i; /*0x5acc31*/
       if ( BYTE1(this->m_C) ) /*0x5acc3e*/
@@ -742,6 +741,7 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAU_WIN32_FIND_DATAA *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x5acc6e*/
   }
+  int v7; // eax
   v7 = this->m_8; /*0x5acc71*/
   if ( v7 < this->m_10 ) /*0x5acc79*/
     this->m_10 = v7; /*0x5acc7b*/
@@ -754,14 +754,14 @@ char MapSeedClass_18::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int MapSeedClass_18::FindItem(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x5acc90*/
+  int result; // eax
   result = 0; /*0x5acc93*/
   if ( m_10 <= 0 ) /*0x5acc98*/
     return -1; /*0x5accaf*/
+  unsigned int *i; // ecx
   for ( i = *&this->q004; *i != *a2; ++i ) /*0x5acc9e*/
   {
     if ( ++result >= m_10 ) /*0x5accad*/
@@ -774,8 +774,8 @@ int MapSeedClass_18::FindItem(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x5ad433*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5ad436*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5ad440*/
@@ -795,8 +795,8 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2
 namespace gamemd {
 DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x5ad483*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x5ad486*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x5ad490*/

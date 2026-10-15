@@ -42,11 +42,10 @@
 namespace gamemd {  // G42.18 ns repair
 int EventClass::serializeEvent(void *a1_1)
 {
-  int result; // eax
-  int v2; // esi
-  unsigned int *v3; // edx
 
+  int result; // eax
   result = (int)a1_1->EventClass_field_0x4; /*0x48b390*/
+  int v2; // esi
   v2 = 0; /*0x48b397*/
   a1_1->EventClass_field_0x28 = 0; /*0x48b39b*/
   if ( result > 0 ) /*0x48b39e*/
@@ -56,6 +55,7 @@ int EventClass::serializeEvent(void *a1_1)
     {
       *(unsigned int *)((char *)a1_1->EventClass_field_0x24 + result) &= ~1u; /*0x48b3ad*/
       *(unsigned int *)((char *)a1_1->EventClass_field_0x24 + result) &= ~2u; /*0x48b3b9*/
+  unsigned int *v3; // edx
       v3 = (char *)a1_1->EventClass_field_0x24 + result; /*0x48b3be*/
       result += 36; /*0x48b3c0*/
       ++v2; /*0x48b3c8*/
@@ -314,12 +314,12 @@ namespace gamemd {
 int EventClass::deserializeEvent(int a2, unsigned int *aP2)
 {
 
-  int result; // eax
-  unsigned int *v5; // edx
 
+  int result; // eax
   result = (*(int (**)(EventClass *, int))&this->__pad_000->nextArrayIndex)(this, a2); /*0x54228c*/
   if ( result != -1 && result < (int)this->q044 ) /*0x542297*/
   {
+  unsigned int *v5; // edx
     v5 = (unsigned int *)(this->q028 + result) + 76); /*0x5422a1*/
     *v5 = *aP2; /*0x5422a6*/
     v5[1] = aP2[1]; /*0x5422ab*/
@@ -387,8 +387,8 @@ namespace gamemd {
 int EventClass::CheckFlag(void *a1)
 {
 
-  EventClass **EventClass_field_0x38; // eax
 
+  EventClass **EventClass_field_0x38; // eax
   EventClass_field_0x38 = (EventClass **)this->q038; /*0x5f19c0*/
   if ( EventClass_field_0x38 ) /*0x5f19c5*/
     EventClass::serializeEvent(EventClass_field_0x38[1]); /*0x5f19ca*/
@@ -482,8 +482,8 @@ namespace gamemd {
 void EventClass::initEvent()
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = (void *)(*&this->q004); /*0x40b6a6*/
   this->Count = 0; /*0x40b6a9*/
   if ( v2 && BYTE1(this->q00C) ) /*0x40b6b0*/
@@ -502,13 +502,11 @@ namespace gamemd {
 char EventClass::processEvent(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x40b74c*/
   {
     LOBYTE(this->q00C) = 0; /*0x40b756*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x40b75c*/
       v4 = a3; /*0x40b772*/
     else
@@ -518,9 +516,11 @@ char EventClass::processEvent(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x40b785*/
       {
+  int m_8; // ecx
         m_8 = this->u32_8; /*0x40b78c*/
         if ( a2 < m_8 ) /*0x40b791*/
           m_8 = a2; /*0x40b793*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b799*/
           ++i; /*0x40b79e*/
         if ( BYTE1(this->q00C) ) /*0x40b7ab*/
@@ -553,14 +553,11 @@ namespace gamemd {
 char EventClass::validateEvent(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x40b88c*/
   {
     LOBYTE(this->q00C) = 0; /*0x40b892*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x40b898*/
       v4 = a3; /*0x40b8ae*/
     else
@@ -570,9 +567,11 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
       return 0; /*0x40b92a*/
     if ( *&this->q004 ) /*0x40b8b8*/
     {
+  int m_8; // ecx
       m_8 = this->u32_8; /*0x40b8bf*/
       if ( a2 < m_8 ) /*0x40b8c4*/
         m_8 = a2; /*0x40b8c6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b8cc*/
         ++i; /*0x40b8d1*/
       if ( BYTE1(this->q00C) ) /*0x40b8de*/
@@ -589,6 +588,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x40b90e*/
   }
+  int v7; // eax
   v7 = this->u32_8; /*0x40b911*/
   if ( v7 < this->Count ) /*0x40b919*/
     this->Count = v7; /*0x40b91b*/
@@ -602,13 +602,11 @@ namespace gamemd {
 char EventClass::dispatchEvent(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x40b9ac*/
   {
     LOBYTE(this->q00C) = 0; /*0x40b9b6*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x40b9bc*/
       v4 = a3; /*0x40b9d2*/
     else
@@ -618,9 +616,11 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
     {
       if ( *&this->q004 ) /*0x40b9e5*/
       {
+  int m_8; // ecx
         m_8 = this->u32_8; /*0x40b9ec*/
         if ( a2 < m_8 ) /*0x40b9f1*/
           m_8 = a2; /*0x40b9f3*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40b9f9*/
           ++i; /*0x40b9fe*/
         if ( BYTE1(this->q00C) ) /*0x40ba0b*/
@@ -652,14 +652,11 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
 namespace gamemd {
 char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
 {
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a3_2 ) /*0x40baec*/
   {
     (*((unsigned char *)&(a3_2->q00C))) = 0; /*0x40baf2*/
+  unsigned int *v4; // edi
     if ( a3_2 ) /*0x40baf8*/
       v4 = (unsigned int *)(a3_2); /*0x40bb0e*/
     else
@@ -669,9 +666,11 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
       return 0; /*0x40bb8a*/
     if ( *(unsigned int *)&a3_2->q004 ) /*0x40bb18*/
     {
+  int m_8; // ecx
       m_8 = *(unsigned int *)&a3_2->q008; /*0x40bb1f*/
       if ( a3_2 < m_8 ) /*0x40bb24*/
         m_8 = a3_2; /*0x40bb26*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&a3_2->q004 + 4 * i - 4) ) /*0x40bb2c*/
         ++i; /*0x40bb31*/
       if ( (((unsigned char *)&(a3_2->q00C))[1]) ) /*0x40bb3e*/
@@ -688,6 +687,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
   {
     (*(void (**)(_DynamicVectorClass_PAVTechnoClass *))(*(unsigned int *)a3_2->__pad_0 + 12))(a3_2); /*0x40bb6e*/
   }
+  int v7; // eax
   v7 = *(unsigned int *)&a3_2->q008; /*0x40bb71*/
   if ( v7 < a3_2->Count ) /*0x40bb79*/
     a3_2->Count = v7; /*0x40bb7b*/
@@ -699,8 +699,8 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
 namespace gamemd {
 DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x40bc13*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40bc16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x40bc20*/
@@ -760,8 +760,8 @@ void EventClass::finalizeEvent()
 namespace gamemd {
 VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x40c113*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x40c116*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x40c120*/
@@ -795,14 +795,11 @@ namespace gamemd {
 char EventClass::clearEvents(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x40c41c*/
   {
     LOBYTE(this->q00C) = 0; /*0x40c422*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x40c428*/
       v4 = a3; /*0x40c43e*/
     else
@@ -812,9 +809,11 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
       return 0; /*0x40c4ba*/
     if ( *&this->q004 ) /*0x40c448*/
     {
+  int m_8; // ecx
       m_8 = this->u32_8; /*0x40c44f*/
       if ( a2 < m_8 ) /*0x40c454*/
         m_8 = a2; /*0x40c456*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->q004 + 4 * i - 4) ) /*0x40c45c*/
         ++i; /*0x40c461*/
       if ( BYTE1(this->q00C) ) /*0x40c46e*/
@@ -831,6 +830,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x40c49e*/
   }
+  int v7; // eax
   v7 = this->u32_8; /*0x40c4a1*/
   if ( v7 < this->Count ) /*0x40c4a9*/
     this->Count = v7; /*0x40c4ab*/
@@ -843,8 +843,8 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
 namespace gamemd {
 void EventClass::getEventCount()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x40c59c*/
   dbl_87F6F8 = Math::Sqrt(v0 + v0); /*0x40c5ae*/
 }
@@ -854,8 +854,8 @@ void EventClass::getEventCount()
 namespace gamemd {
 SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 {
-  int result; // eax
 
+  int result; // eax
   (*(((unsigned short *)&(result)) + 1)) = (*(((unsigned short *)&(g_StreamBufferState)) + 1)); /*0x53ec70*/
   if ( g_StreamBufferState ) /*0x53ec77*/
     (*((unsigned short *)&(result))) = word_AA0168[(uint8_t)nVirtKey]; /*0x53ec87*/

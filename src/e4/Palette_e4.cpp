@@ -282,16 +282,16 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
 namespace gamemd {  // G42.18c ns repair
 int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
 {
-  int v2; // esi
-  int v3; // edx
-  int v4; // eax
 
+  int v2; // esi
   v2 = (*((unsigned char *)&(a2_2->u32_8))) - *(unsigned int *)(a2_2); /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
     v2 = *(unsigned int *)(a2_2) - (*((unsigned char *)&((&a2_2->m_Colors)[0]))); /*0x661364*/
+  int v3; // edx
   v3 = (((unsigned char *)&(a2_2->m_Colors[0]))[1]) - a2_2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
     v3 = a2_2[1] - (((unsigned char *)&((&a2_2->m_Colors)[0]))[1]); /*0x661374*/
+  int v4; // eax
   v4 = (((unsigned char *)&(a2_2->m_Colors[0]))[2]) - a2_2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
     v4 = a2_2[2] - (((unsigned char *)&((&a2_2->m_Colors)[0]))[2]); /*0x661386*/
@@ -302,19 +302,19 @@ int Palette::CalcColorDistance(unsigned char * a2, void *a2_2)
 namespace gamemd {  // G42.18c ns repair
 int Palette::FindClosestColor(Palette *a2, void *a2_1)
 {
-  int v2; // ebx
-  int v3; // esi
-  int v5; // eax
-  uint8_t *v7; // [esp-4h] [ebp-18h]
-  int v8; // [esp+10h] [ebp-4h]
 
+  int v2; // ebx
   v2 = 0; /*0x626208*/
+  int v8; // [esp+10h] [ebp-4h]
   v8 = 0; /*0x62620b*/
+  int v3; // esi
   v3 = -1; /*0x62620f*/
   do /*0x626237*/
   {
+  uint8_t *v7; // [esp-4h] [ebp-18h]
     v7 = (uint8_t *)this; /*0x626218*/
     this += 3; /*0x626219*/
+  int v5; // eax
     v5 = Palette::CalcColorDistance((unsigned char *)(a2), v7); /*0x62621c*/
     if ( v3 == -1 || v5 < v3 ) /*0x626228*/
     {
@@ -331,17 +331,17 @@ int Palette::FindClosestColor(Palette *a2, void *a2_1)
 namespace gamemd {  // G42.18c ns repair
 unsigned char * Palette::ConvertIndices(int a2)
 {
-  int v3; // ebx
-  unsigned short *v4; // eax
-  unsigned short *v5; // esi
-  int16_t *v6; // edi
 
   (*((unsigned char *)&(this-((unsigned int *)(>m_Colors))[0]))) = 0; /*0x632be9*/
+  int v3; // ebx
   v3 = Hash_Check_5C61E0(); /*0x632bf1*/
+  unsigned short *v4; // eax
   v4 = (unsigned short *)(Hash_Check()); /*0x632bf3*/
   if ( v3 <= 0 ) /*0x632bfa*/
     return (unsigned char *)(this); /*0x632c31*/
+  unsigned short *v5; // esi
   v5 = v4; /*0x632c02*/
+  int16_t *v6; // edi
   v6 = (int16_t *)this->m_Colors + 1; /*0x632c04*/
   do /*0x632c23*/
   {

@@ -113,38 +113,33 @@ namespace gamemd {
 int AircraftClass::FindLandingCell(int * a2, int a3)
 {
 
-  int *v5; // ebp
-  int v6; // esi
-  unsigned short *v7; // eax
-  int v8; // esi
-  int v9; // ecx
-  __int16 v10; // dx
-  int v11; // esi
-  void *v12; // eax
-  int v13; // edx
-  int v14; // eax
-  int v15; // esi
-  void *v16; // eax
-  int *v18; // [esp+28h] [ebp-18h] BYREF
-  int v19; // [esp+2Ch] [ebp-14h]
-  char v20[4]; // [esp+30h] [ebp-10h] BYREF
-  unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   int *v22; // [esp+44h] [ebp+4h]
 
+  int *v18; // [esp+28h] [ebp-18h] BYREF
   v18 = 0; /*0x415b1f*/
+  int v19; // [esp+2Ch] [ebp-14h]
   v19 = 0; /*0x415b29*/
+  int *v5; // ebp
   v5 = (int *)(dword_817A58); /*0x415b2d*/
   do /*0x415bab*/
   {
+  int v6; // esi
     v6 = *v5; /*0x415b34*/
+  unsigned short *v7; // eax
+  char v20[4]; // [esp+30h] [ebp-10h] BYREF
     v7 = (unsigned short *)(*((int (**)(AircraftClass *, char *))this->FootClass + 110))(this, v20); /*0x415b3e*/
+  int v8; // esi
     v8 = v6 & 7; /*0x415b44*/
+  int v9; // ecx
     v9 = 4 * v8 + 9041544; /*0x415b55*/
+  __int16 v10; // dx
     v10 = *v7 + LOWORD(g_DDrawSurfaceManager.scenario[v8 + 82]); /*0x415b5c*/
+  int v11; // esi
     v11 = *a2; /*0x415b5f*/
     LOWORD(v22) = v10; /*0x415b6b*/
     HIWORD(v22) = v7[1] + *(unsigned short *)(v9 + 2); /*0x415b74*/
     v18 = v22; /*0x415b83*/
+  void *v12; // eax
     v12 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v18); /*0x415b87*/
     if ( !(*(int (**)(int *, void *, int, int, unsigned int, int))(v11 + 428))(a2, v12, -1, -1, 0, 1) ) /*0x415b8f*/
       break; /*0x415b97*/
@@ -153,8 +148,11 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   }
   while ( (int)v5 < (int)dword_817A78 ); /*0x415bab*/
   LOWORD(v22) = (unsigned __int16)dword_817A58[v19] << 13; /*0x415bc3*/
+  int v13; // edx
   v13 = (int)(this->vtable2); /*0x415bc8*/
+  unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   v21[0] = (unsigned int)(this->focus); /*0x415bcb*/
+  int v14; // eax
   v14 = (int)(this->vtable3); /*0x415bd3*/
   v21[1] = v13; /*0x415bd6*/
   v21[2] = v14; /*0x415bda*/
@@ -164,7 +162,9 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
           (unsigned __int8)((((unsigned int)v22 >> 7) + 1) >> 1)) )
     return 0; /*0x415c57*/
   (*(void (**)(int *, int, unsigned int))(*a2 + 488))(a2, 2, 0); /*0x415c05*/
+  int v15; // esi
   v15 = *a2; /*0x415c0b*/
+  void *v16; // eax
   v16 = ((CellCoord *)&DataGlobal_87F7E8)->To_CellObj((__int16 *)&v18); /*0x415c19*/
   (*(void (**)(int *, void *, int))(v15 + 1152))(a2, v16, 1); /*0x415c21*/
   if ( (*((int (**)(AircraftClass *, int, int *))this->FootClass + 158))(this, 2, a2) == 1 ) /*0x415c37*/
@@ -177,14 +177,10 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
 namespace gamemd {
 int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
+
   int v11; // ebp
-  AnimClass *v13; // ebx
-  void *v14; // edi
-  int *v15; // eax
   char v16; // [esp+0h] [ebp-14h]
   int64_t v17; // [esp+4h] [ebp-10h]
-  unsigned char v18[8]; // [esp+Ch] [ebp-8h] BYREF
-
   v11 = FootClass::ProcessDeploy( /*0x4165f1*/
           aP0,
           a1,
@@ -200,13 +196,17 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
     (*(void (**)(AircraftClass *, unsigned int))(aP0->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr + 952))(aP0, 0); /*0x416613*/
     if ( *(int *)(aP0->Type + 1852) > 0 ) /*0x416627*/
     {
+  AnimClass *v13; // ebx
       v13 = (AnimClass *)operator new(0x1C8u); /*0x416633*/
       if ( v13 ) /*0x41663a*/
       {
+  void *v14; // edi
         v14 = *(void **)(aP0->Type->__pad_730 /*0x416671*/
                        + 4
                        * ((unsigned int)Random::State((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink)
                         % *(unsigned int *)(aP0->Type + 1852)));
+  int *v15; // eax
+  unsigned char v18[8]; // [esp+Ch] [ebp-8h] BYREF
         v15 = (int *)(*(int (**)(AircraftClass *, unsigned char *))(aP0->vfptr.vfptr.vfptr.vfptr.vfptr.vfptr.vfptr /*0x41667b*/
                                                                      + 164))(
                        aP0,
@@ -361,11 +361,8 @@ namespace gamemd {
 int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
 {
 
-  TeamClass *team; // ecx
-  int v8; // esi
-  unsigned int *v10; // eax
-  unsigned char v11[12]; // [esp+Ch] [ebp-Ch] BYREF
 
+  TeamClass *team; // ecx
   team = (gamemd::TeamClass *)(this->team); /*0x4196bc*/
   if ( team /*0x4196d7*/
     && (unsigned __int8)TechnoClass::IsWaypointHidden((TechnoClass *)team)
@@ -373,6 +370,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   {
     return 0; /*0x4196d7*/
   }
+  int v8; // esi
   v8 = a2[57]; /*0x4196e4*/
   if ( (!v8 /*0x41974d*/
      || (*(unsigned char *)(v8 + 20) & 1) == 0
@@ -390,6 +388,8 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
     return 0; /*0x41976d*/
   if ( this->isALoaner ) /*0x419777*/
     return 0; /*0x419777*/
+  unsigned int *v10; // eax
+  unsigned char v11[12]; // [esp+Ch] [ebp-Ch] BYREF
   v10 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 72))(a2, v11); /*0x41978a*/
   if ( !(unsigned __int8)Cell::IsPassable(v10) ) /*0x419793*/
     return 0; /*0x4197ac*/
@@ -789,9 +789,9 @@ namespace gamemd {
 char AircraftClass::ValidateMovement(int a2, int * a3, int a4)
 {
 
-  int v5; // eax
   char result; // al
 
+  int v5; // eax
   v5 = ((__int64 (*)(AircraftClass *, int *, int))*((unsigned int *)this->FootClass + 29))(this, a3, a4); /*0x417be1*/
   switch ( v5 ) /*0x417bf4*/
   {
@@ -836,10 +836,10 @@ namespace gamemd {
 int AircraftClass::CanEnterCell(int16_t *a1, char aP2, char aP3)
 {
 
-  int v6; // edi
 
   if ( !(unsigned __int8)House::IsHumanPlayer((House *)this->focus) ) /*0x417f89*/
     return 0; /*0x417f92*/
+  int v6; // edi
   v6 = FootClass::HandleCursorWithCheck((FootClass *)this, a1, aP2, aP3); /*0x417faf*/
   if ( v6 == 5 && !*(unsigned int *)(*((int (**)(AircraftClass *, unsigned int))this->FootClass + 254))(this, 0) ) /*0x417fc2*/
     return 0; /*0x417fc7*/
@@ -853,8 +853,8 @@ namespace gamemd {
 char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 {
 
-  char *result; // eax
 
+  char *result; // eax
   result = MissionClass::GetMissionControl((MissionClass *)this); /*0x41a593*/
   if ( result[9] ) /*0x41a598*/
     return (*((char *(**)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a5a7*/

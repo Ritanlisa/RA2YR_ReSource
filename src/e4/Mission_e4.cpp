@@ -417,8 +417,8 @@ LABEL_55:
 namespace gamemd {
 int Mission_e4::SetAndCall(int a2, int a3, void *a3_2)
 {
-  int MouseClass_field_0x0; // edx
 
+  int MouseClass_field_0x0; // edx
   MouseClass_field_0x0 = a3_2->MouseClass_field_0x0; /*0x5bda84*/
   *((unsigned int *)a3_2 + 5465) = (unsigned int)(a3_2); /*0x5bda8d*/
   return (*(int ((int)(__stdcall **))(int, int))(MouseClass_field_0x0 + 76))(a3_2, a3_2); /*0x5bda96*/
@@ -428,25 +428,12 @@ int Mission_e4::SetAndCall(int a2, int a3, void *a3_2)
 namespace gamemd {
 char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 {
-  int v3; // eax
-  int v4; // ebx
-  int *i; // esi
-  int v7; // eax
-  int v8; // ebp
-  int v9; // eax
-  int v10; // ebp
-  unsigned int *v11; // eax
-  int *v12; // eax
-  int v13; // ebp
-  void *v14; // eax
-  int v17; // [esp+20h] [ebp-24h] BYREF
-  unsigned char v18[4]; // [esp+24h] [ebp-20h] BYREF
-  int v19; // [esp+28h] [ebp-1Ch] BYREF
-  int v20; // [esp+30h] [ebp-14h] BYREF
-  unsigned char v21[12]; // [esp+38h] [ebp-Ch] BYREF
 
+  int v3; // eax
   (*((unsigned char *)&(v3))) = (unsigned char)(aP1); /*0x6ed7e3*/
+  int v4; // ebx
   v4 = (int)(aP1->vtable2); /*0x6ed7e9*/
+  int *i; // esi
   for ( i = this->ptr_54; i; i = i->q5D8 )
   {
     (*((unsigned char *)&(v3))) = i->q090; /*0x6ed801*/
@@ -454,7 +441,10 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
     {
       if ( i->HouseClass_6C && (dword_A8E7AC || !i->q081) && !i->u8_689 ) /*0x6ed831*/
       {
+  int v7; // eax
+  int v19; // [esp+28h] [ebp-1Ch] BYREF
         v7 = *SessionClass::GetEntry((unsigned int *)(*(unsigned int *)this->ptr_54 + 76)), &v19); /*0x6ed848*/
+  int v8; // ebp
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           v8 = ((unsigned int *)&dword_8871E0[1])[1]; /*0x6ed867*/
         else
@@ -483,6 +473,9 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               v3 = i->u32_2B4; /*0x6ed903*/
               if ( !v3 )
               {
+  int v9; // eax
+  int v10; // ebp
+  int v20; // [esp+30h] [ebp-14h] BYREF
                 if ( i->q5A4
                   || ((v9 = *SessionClass::GetEntry((unsigned int *)(*(unsigned int *)this->ptr_54 + 76)), &v20), v9 == 54) || v9 == 53
                     ? (v10 = ((unsigned int *)&dword_8871E0[1])[1])
@@ -514,15 +507,22 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   i->vt_slot_488(2, 0); /*0x6ed97a*/
                   i->vt_slot_1152(this->ptr_34, 1); /*0x6ed98a*/
                   i->vt_slot_488(2, 0); /*0x6ed998*/
+  unsigned int *v11; // eax
+  unsigned char v21[12]; // [esp+38h] [ebp-Ch] BYREF
                   v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*this->ptr_34 + 72))( /*0x6ed9a8*/
                                     this->ptr_34,
                                     v21);
                   (*((unsigned short *)&(v22))) = *v11 / 256; /*0x6ed9bb*/
                   (*(((unsigned short *)&(v22)) + 1)) = v11[1] / 256; /*0x6ed9d7*/
                   v22 = v22; /*0x6ed9e4*/
+  int *v12; // eax
+  unsigned char v18[4]; // [esp+24h] [ebp-20h] BYREF
                   v12 = (int *)globalHelper_0DA020(v18, &v22); /*0x6ed9e8*/
+  int v13; // ebp
                   v13 = *i; /*0x6ed9ef*/
+  int v17; // [esp+20h] [ebp-24h] BYREF
                   v17 = *v12; /*0x6ed9fd*/
+  void *v14; // eax
                   v14 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v17); /*0x6eda01*/
                   (*((unsigned char *)&(v3))) = i->vt_slot_1152(v14, 1); /*0x6eda09*/
                 }
@@ -540,13 +540,12 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 namespace gamemd {
 int Mission_e4::GetMissionDelay(void *a1_1)
 {
-  int Mission_field_0x180; // edx
-  int result; // eax
-  int *p_Mission_field_0x180; // esi
-  int v4; // [esp+8h] [ebp-8h]
 
+  int Mission_field_0x180; // edx
   Mission_field_0x180 = a1_1->Mission_field_0x180; /*0x70f770*/
+  int result; // eax
   result = a1_1->Mission_field_0x188; /*0x70f779*/
+  int *p_Mission_field_0x180; // esi
   p_Mission_field_0x180 = &a1_1->Mission_field_0x180; /*0x70f783*/
   if ( Mission_field_0x180 != -1 ) /*0x70f789*/
   {
@@ -561,6 +560,7 @@ int Mission_e4::GetMissionDelay(void *a1_1)
     {
       result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
       *p_Mission_field_0x180 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x70f7c1*/
+  int v4; // [esp+8h] [ebp-8h]
       p_Mission_field_0x180[1] = v4; /*0x70f7c7*/
       p_Mission_field_0x180[2] = result; /*0x70f7ca*/
     }

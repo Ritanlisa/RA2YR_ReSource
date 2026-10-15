@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int Value::InRange()
 {
-  int v1; // eax
 
+  int v1; // eax
   v1 = this->u32_38; /*0x486730*/
   return v1 >= dword_AA0E20 && v1 < dword_AA0E20 + 14; /*0x486746*/
 }  // G42.18 ns repair

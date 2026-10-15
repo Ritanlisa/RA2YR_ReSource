@@ -33,10 +33,10 @@ namespace gamemd {  // G42.18 ns repair
 char File::IsReady(int a2, void *a2_1)
 {
 
-  int result; // eax
 
   if ( !BYTE1(this->BufferSize) ) /*0x431f10*/
     return FileClass::Open((RawFileClass *)this, 0); /*0x431f1e*/
+  int result; // eax
   LOBYTE(result) = 1; /*0x431f17*/
   return result; /*0x431f19*/
 
@@ -208,16 +208,16 @@ namespace gamemd {
 char File::Dispatch(void *a1, void *a2, void *a3, void *a4)
 {
 
-  __int16 v2; // ax
   u_short v3; // cx
-  unsigned __int16 v4; // ax
-  int v5; // eax
 
+  __int16 v2; // ax
   v2 = ntohs(*(unsigned short *)this->__pad_6); /*0x4cb928*/
   v3 = *&this->q004; /*0x4cb92d*/
   *(unsigned short *)this->__pad_6 = v2; /*0x4cb931*/
+  unsigned __int16 v4; // ax
   v4 = ntohs(v3); /*0x4cb936*/
   *&this->q004 = v4; /*0x4cb93b*/
+  int v5; // eax
   v5 = v4 - 3; /*0x4cb944*/
   switch ( v5 ) /*0x4cb94c*/
   {
@@ -346,44 +346,44 @@ File * * File::LoadPaletteData(unsigned short *aP1)
 
   u_short v3; // cx
   u_short v4; // ax
-  u_short *v5; // esi
-  unsigned __int16 v6; // ax
-  int v7; // eax
-  int v8; // ecx
-  int v9; // ebx
-  unsigned int *v10; // esi
-  size_t v11; // ebp
-  void *v12; // eax
-  int v13; // eax
   u_short *result; // eax
-  int v15; // [esp+8h] [ebp-8h]
-  u_short *v17; // [esp+14h] [ebp+4h]
 
   v3 = *aP1; /*0x625b02*/
   *(unsigned short *)this->__pad_000 = *aP1; /*0x625b05*/
   *(unsigned short *)this->__pad_000 = ntohs(v3); /*0x625b11*/
   v4 = aP1[1]; /*0x625b17*/
   *(unsigned short *)this->File_field_0x2 = v4; /*0x625b1a*/
+  u_short *v5; // esi
   v5 = aP1 + 2; /*0x625b1f*/
   *(unsigned short *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
+  unsigned __int16 v6; // ax
   v6 = *(unsigned short *)this->__pad_000; /*0x625b2d*/
   *&this->q004 = 0; /*0x625b30*/
+  int v15; // [esp+8h] [ebp-8h]
   v15 = v6 - 4; /*0x625b3c*/
   if ( v15 <= 0 ) /*0x625b40*/
     return (gamemd::File **)((u_short *)this); /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
+  int v7; // eax
     v7 = (int)(__2_YAPAXI_Z(0x10u)); /*0x625b50*/
+  int v8; // ecx
     v8 = *(unsigned int *)v5; /*0x625b55*/
+  int v9; // ebx
     v9 = v7; /*0x625b57*/
+  unsigned int *v10; // esi
     v10 = (unsigned int *)(v5 + 4); /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
+  size_t v11; // ebp
     v11 = (unsigned __int16)ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
+  void *v12; // eax
     v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
     v9->ptr_8 = v12; /*0x625b8a*/
     memcpy(v12, v10, v11); /*0x625b90*/
+  int v13; // eax
     v13 = -(ntohs(v9->__pad_6) & 3) & 3; /*0x625baf*/
+  u_short *v17; // [esp+14h] [ebp+4h]
     v17 = (u_short *)((char *)v10 + v13 + v11); /*0x625bbd*/
     v15 += -8 - v13 - v11; /*0x625bcc*/
     File::Dispatch((File *)v9); /*0x625bd0*/
@@ -403,9 +403,9 @@ namespace gamemd {
 int File::FindByPrefix(char *Str1, unsigned char *a3)
 {
 
-  int v3; // esi
   BOOL v4; // eax
 
+  int v3; // esi
   v3 = *&this->q004; /*0x625db1*/
   if ( v3 ) /*0x625db7*/
   {

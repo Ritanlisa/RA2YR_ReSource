@@ -33,20 +33,17 @@ namespace gamemd {  // G42.18 ns repair
 CampaignClass * RadarClass::Destruct(void *a1)
 {
 
-  MapClass **p_RadarClass_field_0x1488; // esi
-  int v3; // ebp
-  void *v4; // eax
-  CampaignClass *RadarClass_field_0x1260; // eax
-  CampaignClass *RadarClass_field_0x1228; // eax
-  int result; // eax
 
   /* X11: vtable install elided (implicit via RadarClass virtuals 0x652c0c) */
   AudioFileClass::Release(&this->RadarSoundChannel); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
+  MapClass **p_RadarClass_field_0x1488; // esi
   p_RadarClass_field_0x1488 = &this->radarSizeFactor; /*0x652c1e*/
+  int v3; // ebp
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
+  void *v4; // eax
     v4 = *(p_RadarClass_field_0x1488 - 5); /*0x652c2b*/
     p_RadarClass_field_0x1488 -= 6; /*0x652c2e*/
     *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x652c33*/
@@ -60,6 +57,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
     p_RadarClass_field_0x1488[2] = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
+  CampaignClass *RadarClass_field_0x1260; // eax
   RadarClass_field_0x1260 = this->ptr_1260; /*0x652c55*/
   this->RadarPoints = (VectorClass *)&vt_VectorClass; /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
@@ -69,6 +67,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
   }
   this->u8_1269 = 0; /*0x652c80*/
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
+  CampaignClass *RadarClass_field_0x1228; // eax
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
   this->RadarCells = (VectorClass *)&vt_VectorClass; /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
@@ -79,6 +78,7 @@ CampaignClass * RadarClass::Destruct(void *a1)
   this->u8_1231 = 0; /*0x652cb9*/
   *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
   ((char *)this)->Destruct(); /*0x652cc5*/
+  int result; // eax
   return result; /*0x652cca*/
 
 }
@@ -87,10 +87,6 @@ CampaignClass * RadarClass::Destruct(void *a1)
 namespace gamemd {
 int RadarClass_RecreateSurface(void * a1, void * a2)
 {
-  unsigned int *v2; // ecx
-  float *v3; // esi
-  int result; // eax
-  int *v5; // edi
   void (***v6)(unsigned int, int); // ecx
   int v7; // eax
   int v8; // ecx
@@ -106,8 +102,12 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
   int v18; // [esp-Ch] [ebp-2Ch]
   int v19[4]; // [esp+10h] [ebp-10h] BYREF
 
+  unsigned int *v2; // ecx
+  float *v3; // esi
   v3 = (float *)v2; /*0x654655*/
+  int result; // eax
   result = v2[1321]; /*0x65465a*/
+  int *v5; // edi
   v5 = (int *)(v2 + 1319); /*0x654660*/
   if ( result > 0 && (int)v2[1322] > 0 ) /*0x654671*/
   {

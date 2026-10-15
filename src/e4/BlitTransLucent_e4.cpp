@@ -34,13 +34,11 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, i
 namespace gamemd {
 unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-  int v11; // edx
-  unsigned short *result; // eax
-  int v16; // edx
   int v17; // edi
-  uint8_t v19; // dl
 
+  int v11; // edx
   v11 = a5; /*0x496250*/
+  unsigned short *result; // eax
   result = a1; /*0x496254*/
   if ( a5 <= 0 ) /*0x496263*/
   {
@@ -56,6 +54,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
         v11 -= *a2++; /*0x496270*/
     }
     while ( v11 > 0 ); /*0x496278*/
+  int v16; // edx
     v16 = -v11; /*0x49627e*/
     v17 = a4 - v16; /*0x496280*/
     result = &a1[v16]; /*0x496282*/
@@ -70,6 +69,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     }
     else
     {
+  uint8_t v19; // dl
       v19 = *a2++; /*0x496296*/
       v17 -= v19; /*0x4962a7*/
       result += v19; /*0x4962a9*/
@@ -136,16 +136,13 @@ int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, i
 namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-  int v11; // edx
-  int result; // eax
-  int v15; // ecx
-  int v17; // edx
   int v18; // edi
-  uint8_t v19; // dl
-  uint8_t v20; // dl
 
+  int v11; // edx
   v11 = a5; /*0x496170*/
+  int result; // eax
   result = arg0; /*0x496175*/
+  int v15; // ecx
   v15 = *(unsigned int *)*&this->Data; /*0x496187*/
   if ( a5 <= 0 ) /*0x496189*/
   {
@@ -161,12 +158,14 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
         v11 -= *a2++; /*0x496196*/
     }
     while ( v11 > 0 ); /*0x49619e*/
+  int v17; // edx
     v17 = -v11; /*0x4961a4*/
     v18 = a4 - v17; /*0x4961a6*/
     result = arg0 + 2 * v17; /*0x4961a8*/
   }
   while ( v18 > 0 ) /*0x4961b3*/
   {
+  uint8_t v19; // dl
     v19 = *a2++; /*0x4961b5*/
     if ( v19 ) /*0x4961be*/
     {
@@ -176,6 +175,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
     }
     else
     {
+  uint8_t v20; // dl
       v20 = *a2++; /*0x4961c0*/
       v18 -= v20; /*0x4961d1*/
       result += 2 * v20; /*0x4961d3*/
@@ -229,8 +229,8 @@ namespace gamemd {
 BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
 
-  void *m_8; // eax
 
+  void *m_8; // eax
   m_8 = (void *)this->ptr_8; /*0x49a348*/
   /* X11: vtable install elided (implicit via BlitTransLucent25Alpha virtuals 0x49a34b) */
   FractalNoise::Dtor(m_8); /*0x49a352*/
@@ -258,8 +258,8 @@ std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 namespace gamemd {
 BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(unsigned int * Block, char a2)
 {
-  void *m_8; // eax
 
+  void *m_8; // eax
   m_8 = (void *)Block->u32_8; /*0x49a728*/
   *(unsigned int *)Block->tail_0 = &vt_BlitTransLucent25AlphaZReadWrite; /*0x49a72b*/
   FractalNoise::Dtor(m_8); /*0x49a732*/

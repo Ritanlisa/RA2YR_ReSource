@@ -22,31 +22,31 @@ namespace gamemd {  // G42.18 ns repair
 void Main::CreateDialog(void *a1, void *a2, void *a3)
 {
 
-  unsigned __int16 v2; // cx
-  HWND Dialog; // eax
-  LONG i; // eax
-  TechnoTypeClass *v5; // ecx
-  int v6; // [esp+0h] [ebp-8h]
-  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
+  LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
   dwNewLong = -1; /*0x4e1d1d*/
   Debug::Log(); /*0x4e1d25*/
+  unsigned __int16 v2; // cx
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
+  HWND Dialog; // eax
   Dialog = (HWND)CreateDialog(v2, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameOptionsDlgProc, 0); /*0x4e1d47*/
   this->Main_field_00 = (int)Dialog; /*0x4e1d4e*/
   if ( Dialog ) /*0x4e1d50*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4e1d5a*/
     Dialog::Show((Dialog *)this->Main_field_00); /*0x4e1d62*/
+  LONG i; // eax
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
       if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
+  TechnoTypeClass *v5; // ecx
         LOBYTE(v5) = 0; /*0x4e1d8a*/
+  int v6; // [esp+0h] [ebp-8h]
         ScreenSaver::Process(v5, v6); /*0x4e1d8c*/
       }
     }

@@ -11,8 +11,8 @@ namespace gamemd {  // G42.18 ns repair
 int DialogControl::Hide()
 {
 
-  int v1; // eax
 
+  int v1; // eax
   v1 = *(unsigned int *)this->Image; /*0x4e1450*/
   this->u32_1E = 0; /*0x4e1452*/
   this->u32_1C = 1; /*0x4e1456*/
@@ -34,13 +34,13 @@ namespace gamemd {
 unsigned int * DialogControl::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
-  unsigned int *v2; // eax
-  unsigned int *v3; // eax
 
   memset(this, 0, 0x200u); /*0x62334d*/
   this->u32_68 = 11; /*0x62334f*/
   this->u32_64 = g_FogOfWarState; /*0x62335d*/
+  unsigned int *v2; // eax
   v2 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x623360*/
+  unsigned int *v3; // eax
   if ( v2 ) /*0x62336c*/
     v3 = (unsigned int *)(unknown_libname_74(v2)); /*0x623370*/
   else

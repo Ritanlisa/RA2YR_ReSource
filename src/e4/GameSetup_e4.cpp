@@ -24,13 +24,12 @@ namespace gamemd {  // G42.18 ns repair
 int GameSetup::LookupDialogHash()
 {
 
-  GameSetup **v1; // eax
-  unsigned int *v3; // eax
-  GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
 
+  GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
   v4 = this; /*0x60d326*/
   if ( !*(unsigned int *)&g_DialogHashMap_Count ) /*0x60d32c*/
     return 0; /*0x60d32c*/
+  GameSetup **v1; // eax
   v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogHashMap_Base /*0x60d34d*/
                       + 4
                       * ((*(int (**)(GameSetup **))&g_DialogHashMap_Hasher)(&v4)
@@ -43,6 +42,7 @@ int GameSetup::LookupDialogHash()
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }
+  unsigned int *v3; // eax
   v3 = (unsigned int *)(v1 + 1); /*0x60d36e*/
   if ( v3 ) /*0x60d373*/
     return v3[27]; /*0x60d375*/
@@ -55,10 +55,7 @@ int GameSetup::LookupDialogHash()
 namespace gamemd {
 AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
-  int v4; // ebp
-  int *v5; // ebx
   int result; // eax
-  char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
   INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(unsigned int *)this, 0); /*0x698fae*/
   INIClass::SetInt(aP1, Block, aScenindex, this->u32_4, 0); /*0x698fc1*/
@@ -70,10 +67,13 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, this->u32_16); /*0x69902d*/
   INIClass::SetBool(aP1, Block, aMcvrepacks, this->u32_17); /*0x69903e*/
   INIClass::SetBool(aP1, Block, aCratesappear, this->u32_18); /*0x69904f*/
+  int v4; // ebp
   v4 = 1; /*0x699054*/
+  int *v5; // ebx
   v5 = (int *)this->q095 + 27); /*0x699059*/
   do /*0x69908e*/
   {
+  char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
     sprintf(Buffer, "Slot%02d", v4); /*0x699067*/
     result = (Block)->FormatToString(Buffer, *(v5 - 1), *v5, v5[1]); /*0x699082*/
     ++v4; /*0x699087*/

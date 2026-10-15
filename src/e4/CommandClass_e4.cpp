@@ -26,40 +26,6 @@ namespace gamemd {  // G42.18 ns repair
 int CommandClass::BuildBar()
 {
 
-  ShapeButtonClass *v2; // esi
-  unsigned int v3; // eax
-  ShapeButtonClass *v4; // esi
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
-  int ShapeButtonClass_field_0x08; // edx
-  unsigned int v9; // eax
-  ShapeButtonClass *v10; // esi
-  int v11; // edx
-  int v12; // eax
-  int v13; // ecx
-  int v14; // edx
-  unsigned int v15; // eax
-  ShapeButtonClass *v16; // esi
-  int v17; // edx
-  int v18; // eax
-  int v19; // ecx
-  int v20; // edx
-  unsigned int v21; // eax
-  ShapeButtonClass *v22; // esi
-  int v23; // edx
-  int v24; // eax
-  int v25; // ecx
-  int v26; // edx
-  unsigned int v27; // eax
-  ShapeButtonClass *v28; // ecx
-  unsigned int v29; // eax
-  ShapeButtonClass *v30; // ecx
-  char *FontClassEntry; // eax
-  char *v32; // eax
-  char *v33; // eax
-  char *v34; // eax
-  char *v35; // eax
   Struct v37; // [esp+8h] [ebp-1Ch] BYREF
   int v38; // [esp+Ch] [ebp-18h]
   int ShapeButtonClass_field_0x04; // [esp+10h] [ebp-14h]
@@ -67,6 +33,7 @@ int CommandClass::BuildBar()
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
 
+  ShapeButtonClass *v2; // esi
   v2 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0); /*0x6d1207*/
   do /*0x6d1224*/
   {
@@ -76,18 +43,24 @@ int CommandClass::BuildBar()
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
   (*(void (**)(CommandClass *, GadgetClass *))(*&this->u32_C0))(this, &stru_B0CCB0); /*0x6d122f*/
+  unsigned int v3; // eax
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
+  ShapeButtonClass *v4; // esi
     v4 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v3); /*0x6d124e*/
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
+  int v5; // edx
       v5 = *(unsigned int *)v4[1].__pad_0; /*0x6d1264*/
+  int v6; // eax
       v6 = *(unsigned int *)v4[3].__pad_0; /*0x6d1267*/
       ShapeButtonClass_field_0x04 = v4[1].ShapeButtonClass_field_0x04; /*0x6d126a*/
+  int v7; // ecx
       v7 = *(unsigned int *)v4[2].__pad_0; /*0x6d126e*/
       v38 = v5; /*0x6d1271*/
+  int ShapeButtonClass_field_0x08; // edx
       ShapeButtonClass_field_0x08 = v4[1].ShapeButtonClass_field_0x08; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37.Struct_field_00 = v6; /*0x6d1283*/
@@ -97,18 +70,24 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d12a3*/
     }
   }
+  unsigned int v9; // eax
   v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
+  ShapeButtonClass *v10; // esi
     v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v9); /*0x6d12c3*/
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
+  int v11; // edx
       v11 = v10[1].ShapeButtonClass_field_0x04; /*0x6d12d9*/
+  int v12; // eax
       v12 = *(unsigned int *)v10[3].__pad_0; /*0x6d12dc*/
       v38 = *(unsigned int *)v10[1].__pad_0; /*0x6d12df*/
+  int v13; // ecx
       v13 = v10[1].ShapeButtonClass_field_0x08; /*0x6d12e3*/
       ShapeButtonClass_field_0x04 = v11; /*0x6d12e6*/
+  int v14; // edx
       v14 = *(unsigned int *)v10[2].__pad_0; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
       v37.Struct_field_00 = v12; /*0x6d12f8*/
@@ -118,18 +97,24 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d1318*/
     }
   }
+  unsigned int v15; // eax
   v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
+  ShapeButtonClass *v16; // esi
     v16 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v15); /*0x6d1339*/
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
+  int v17; // edx
       v17 = *(unsigned int *)v16[1].__pad_0; /*0x6d134f*/
+  int v18; // eax
       v18 = *(unsigned int *)v16[3].__pad_0; /*0x6d1352*/
       ShapeButtonClass_field_0x04 = v16[1].ShapeButtonClass_field_0x04; /*0x6d1355*/
+  int v19; // ecx
       v19 = *(unsigned int *)v16[2].__pad_0; /*0x6d1359*/
       v38 = v17; /*0x6d135c*/
+  int v20; // edx
       v20 = v16[1].ShapeButtonClass_field_0x08; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37.Struct_field_00 = v18; /*0x6d136e*/
@@ -139,18 +124,24 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d138e*/
     }
   }
+  unsigned int v21; // eax
   v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
+  ShapeButtonClass *v22; // esi
     v22 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v21); /*0x6d13ae*/
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
+  int v23; // edx
       v23 = v22[1].ShapeButtonClass_field_0x04; /*0x6d13c4*/
+  int v24; // eax
       v24 = *(unsigned int *)v22[3].__pad_0; /*0x6d13c7*/
       v38 = *(unsigned int *)v22[1].__pad_0; /*0x6d13ca*/
+  int v25; // ecx
       v25 = v22[1].ShapeButtonClass_field_0x08; /*0x6d13ce*/
       ShapeButtonClass_field_0x04 = v23; /*0x6d13d1*/
+  int v26; // edx
       v26 = *(unsigned int *)v22[2].__pad_0; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
       v37.Struct_field_00 = v24; /*0x6d13e3*/
@@ -160,26 +151,35 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&g_TacticalRender, (int)&v37); /*0x6d1403*/
     }
   }
+  unsigned int v27; // eax
   v27 = g_ObjectTrackingPool[dword_B0CB68]; /*0x6d1410*/
+  ShapeButtonClass *v28; // ecx
   if ( v27 > 0x18 ) /*0x6d1419*/
     v28 = 0; /*0x6d142e*/
   else
     v28 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v27); /*0x6d1426*/
   PushCommandClass::Execute(v28, (int)aTipGuard); /*0x6d1435*/
+  unsigned int v29; // eax
   v29 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1440*/
+  ShapeButtonClass *v30; // ecx
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else
     v30 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v29); /*0x6d1456*/
   PushCommandClass::Execute(v30, (int)aTipPlanningmod); /*0x6d1465*/
+  char *FontClassEntry; // eax
   FontClassEntry = GetFontClassEntry(dword_B0CB6C); /*0x6d1470*/
   PushCommandClass::Execute(FontClassEntry, (int)aTipStop); /*0x6d147c*/
+  char *v32; // eax
   v32 = GetFontClassEntry(dword_B0CC20); /*0x6d1487*/
   PushCommandClass::Execute(v32, (int)aTipTeam01); /*0x6d1493*/
+  char *v33; // eax
   v33 = GetFontClassEntry(dword_B0CC28); /*0x6d149e*/
   PushCommandClass::Execute(v33, (int)aTipTeam02); /*0x6d14aa*/
+  char *v34; // eax
   v34 = GetFontClassEntry(dword_B0CD28); /*0x6d14b5*/
   PushCommandClass::Execute(v34, (int)aTipTeam03); /*0x6d14c1*/
+  char *v35; // eax
   v35 = GetFontClassEntry(dword_B0CB38); /*0x6d14cc*/
   PushCommandClass::Execute(v35, (int)aTipTypeselect); /*0x6d14d8*/
   return PushCommandClass::Execute(&stru_B0CCB0, (int)aTipThumbopen); /*0x6d14ec*/

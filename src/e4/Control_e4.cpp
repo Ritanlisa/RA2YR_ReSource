@@ -17,8 +17,8 @@
 namespace gamemd {  // G42.18 ns repair
 int Control::DispatchClick(int aP1, void *a2)
 {
-  int v3; // ecx
 
+  int v3; // ecx
   v3 = this->u32_28; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/

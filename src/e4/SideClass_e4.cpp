@@ -22,97 +22,97 @@ namespace gamemd {  // G42.18 ns repair
 int SideClass::LoadAllFromINI(CCINIClass * aP0)
 {
 
-  int i; // edi
-  int j; // edi
-  int k; // edi
-  int m; // edi
-  int n; // edi
-  int ii; // edi
-  int jj; // edi
-  int kk; // edi
-  int mm; // edi
-  int nn; // edi
-  int i1; // edi
-  int i2; // edi
-  int i3; // edi
-  int i4; // edi
-  int i5; // edi
-  int i6; // edi
-  int i7; // edi
-  int i8; // edi
-  char *v19; // ebx
-  MissionClass *v20; // edi
-  ObjectClass *v22; // [esp+0h] [ebp-Ch]
 
+  int i; // edi
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x679a20*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x679a2d*/
       *((unsigned int *)dword_A83C9C + i),
       aP0);
+  int j; // edi
   for ( j = 0; j < dword_A8E340; ++j ) /*0x679a43*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E334 + j) + 100))( /*0x679a50*/
       *((unsigned int *)dword_A8E334 + j),
       aP0);
+  int k; // edi
   for ( k = 0; k < FootClass_Array; ++k ) /*0x679a66*/
     (*(void (**)(unsigned int, char *))(**(unsigned int **)(FootClass_Array.?[3] + 4 * k) + 100))( /*0x679a77*/
       *(unsigned int *)(FootClass_Array.?[3] + 4 * k),
       &DataGlobal_887180);
+  int m; // edi
   for ( m = 0; m < dword_A83C78; ++m ) /*0x679a8d*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83C6C + m) + 100))( /*0x679a9a*/
       *((unsigned int *)dword_A83C6C + m),
       aP0);
+  int n; // edi
   for ( n = 0; n < dword_A8B228; ++n ) /*0x679ab0*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8B21C + n) + 100))( /*0x679abd*/
       *((unsigned int *)dword_A8B21C + n),
       aP0);
+  int ii; // edi
   for ( ii = 0; ii < dword_A83CF0; ++ii ) /*0x679ad3*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83CE4 + ii) + 100))( /*0x679ae0*/
       *((unsigned int *)dword_A83CE4 + ii),
       aP0);
+  int jj; // edi
   for ( jj = 0; jj < dword_A8E358; ++jj ) /*0x679af6*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E34C + jj) + 100))( /*0x679b03*/
       *((unsigned int *)dword_A8E34C + jj),
       aP0);
+  int kk; // edi
   for ( kk = 0; kk < g_WeaponTypePool; ++kk ) /*0x679b19*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)g_WeaponTypeConfig + kk) + 100))( /*0x679b26*/
       *((unsigned int *)g_WeaponTypeConfig + kk),
       aP0);
+  int mm; // edi
   for ( mm = 0; mm < dword_A83C90; ++mm ) /*0x679b3c*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83C84 + mm) + 100))( /*0x679b49*/
       *((unsigned int *)dword_A83C84 + mm),
       aP0);
+  int nn; // edi
   for ( nn = 0; nn < g_WarheadTypePool; ++nn ) /*0x679b5f*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_8874C4 + nn) + 100))( /*0x679b6c*/
       *((unsigned int *)dword_8874C4 + nn),
       aP0);
+  int i1; // edi
   for ( i1 = 0; i1 < g_WeaponTypePool; ++i1 ) /*0x679b82*/
     (*((WeaponTypeClass **)g_WeaponTypeConfig + i1))->CalculateSpeed(); /*0x679b8c*/
+  int i2; // edi
+  ObjectClass *v22; // [esp+0h] [ebp-Ch]
   for ( i2 = 0; i2 < dword_A83C78; ++i2 ) /*0x679ba4*/
     nullsub_7(v22); /*0x679baf*/
+  int i3; // edi
   for ( i3 = 0; i3 < dword_A8E328; ++i3 ) /*0x679bc7*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E31C + i3) + 100))( /*0x679bd5*/
       *((unsigned int *)dword_A8E31C + i3),
       aP0);
+  int i4; // edi
   for ( i4 = 0; i4 < *(int *)&g_BuildingClass_InstanceCount; ++i4 ) /*0x679beb*/
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A8EB00[284] + 4 * i4) + 100))( /*0x679bf9*/
       *(unsigned int *)(*(unsigned int *)&g_MultiplayerPool + 4 * i4),
       aP0);
+  int i5; // edi
   for ( i5 = 0; i5 < *(int *)&g_ObjectTypeConfig; ++i5 ) /*0x679c0f*/
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * i5) + 100))( /*0x679c1c*/
       *(unsigned int *)(*(unsigned int *)g_BuildingTypeClass_Array + 4 * i5),
       aP0);
+  int i6; // edi
   for ( i6 = 0; i6 < *(int *)&g_BuildingTypeInitState; ++i6 ) /*0x679c32*/
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&g_BuildingProductionQueue + 4 * i6) + 100))( /*0x679c3f*/
       *(unsigned int *)(*(unsigned int *)&g_BuildingProductionQueue + 4 * i6),
       aP0);
+  int i7; // edi
   for ( i7 = 0; i7 < (int)g_InfantryTypeInitState; ++i7 ) /*0x679c55*/
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&DataGlobal_A83D6C + 4 * i7) + 100))( /*0x679c62*/
       *(unsigned int *)(*(unsigned int *)&DataGlobal_A83D6C + 4 * i7),
       aP0);
+  int i8; // edi
   for ( i8 = 0; i8 < stru_A8EB00.ObjectTypeClass[14]; ++i8 ) /*0x679c78*/
     (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8) + 100))( /*0x679c85*/
       *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8),
       aP0);
+  char *v19; // ebx
   v19 = 0; /*0x679c92*/
+  MissionClass *v20; // edi
   v20 = (gamemd::MissionClass *)(&stru_A8E3A8); /*0x679c94*/
   do /*0x679cad*/
   {
@@ -131,7 +131,6 @@ namespace gamemd {
 int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8, void *a9)
 {
 
-  int v3; // eax
 
   AbstractTypeClass::Constructor((int *)aP1, a2); /*0x6a4559*/
   aP1->houseTypesCount = 0; /*0x6a4563*/
@@ -154,6 +153,7 @@ int SideClass::Construct(CCINIClass * aP1, void *a2, void *a3, void *a4, void *a
          FootClass_Array.?[1] + FootClass_Array.?[1],
          0) )
   {
+  int v3; // eax
     v3 = FootClass_Array.?[0]++; /*0x6a45f7*/
     *(unsigned int *)(FootClass_Array.?[0] + 4 * v3) = aP1; /*0x6a4606*/
   }
@@ -174,18 +174,12 @@ namespace gamemd {
 int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
 
-  SideClass *v2; // esi
-  int v3; // edi
-  int result; // eax
-  void **p_houseTypes; // esi
-  int i; // ebp
-  void *v7; // eax
-  int v8; // ecx
-  void *v9; // eax
-  unsigned int *v10; // edx
 
+  SideClass *v2; // esi
   v2 = (gamemd::SideClass *)(a0); /*0x6a4782*/
+  int v3; // edi
   v3 = (int)(aP1); /*0x6a4787*/
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0(a0, aP1); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {
@@ -204,6 +198,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47ee) */
       /* X11: vtable install elided (implicit via SideClass virtuals 0x6a47f5) */
     }
+  void **p_houseTypes; // esi
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
     {
@@ -216,14 +211,17 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *p_houseTypes = &vt_TypeList; /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*&v3->q030))(v3, &aP1, 4, 0); /*0x6a482a*/
+  int i; // ebp
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
       (*(void (**)(int, SideClass **, int, unsigned int))(*&v3->q030))(v3, &a0, 4, 0); /*0x6a4840*/
+  void *v7; // eax
       v7 = p_houseTypes[2]; /*0x6a4843*/
       if ( (int)p_houseTypes[4] >= (int)v7 ) /*0x6a484b*/
       {
         if ( !*((unsigned char *)p_houseTypes + 13) && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
+  int v8; // ecx
         v8 = (int)p_houseTypes[5]; /*0x6a4856*/
         if ( v8 <= 0 /*0x6a4865*/
           || !(*((unsigned __int8 (**)(void **, int, unsigned int))*p_houseTypes + 2))(
@@ -234,7 +232,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4865*/
         }
       }
+  void *v9; // eax
       v9 = p_houseTypes[4]; /*0x6a486c*/
+  unsigned int *v10; // edx
       v10 = (unsigned int *)(p_houseTypes[1]); /*0x6a486f*/
       p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
       v10[(unsigned int)v9] = (unsigned int)(a0); /*0x6a487c*/
@@ -250,16 +250,15 @@ namespace gamemd {
 void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
 
-  int v3; // eax
-  void *houseTypesCount; // eax
-  SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
   Block->? = &vt_SideClass; /*0x6a493c*/
   Block->u32_8 = &vt_SideClass; /*0x6a4943*/
   Block->? = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
+  SideClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::SideClass *)(Block); /*0x6a4966*/
+  int v3; // eax
   v3 = (*(int (**)(int *, SideClass **))(DataGlobal_8B3DC0[864] + 16))(&DataGlobal_8B3DC0[864], &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < FootClass_Array ) /*0x6a497a*/
   {
@@ -271,6 +270,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
       ++v3; /*0x6a498d*/
     }
   }
+  void *houseTypesCount; // eax
   houseTypesCount = (void *)Block->houseTypesCount; /*0x6a499f*/
   Block->houseTypes = &vt_VectorClass; /*0x6a49a5*/
   if ( houseTypesCount && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
@@ -291,18 +291,18 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
 namespace gamemd {
 int SideClass::FindByName(void *a1)
 {
-  int v3; // ebx
-  int v4; // esi
 
   if ( !_strcmpi((char *)a1,(const char *)(g_Str__random_)) ) /*0x49d9fb*/
     return -2; /*0x49da09*/
   if ( !a1 ) /*0x49da12*/
     return -1; /*0x49da12*/
+  int v3; // ebx
   v3 = 0; /*0x49da19*/
   if ( dword_A83CA8 <= 0 ) /*0x49da1d*/
     return -1; /*0x49da53*/
   while ( 1 ) /*0x49da25*/
   {
+  int v4; // esi
     v4 = *((unsigned int *)dword_A83C9C + v3); /*0x49da25*/
     if ( !_strcmpi((char *)(v4 + 100), (char *)a1) || !_strcmpi((char *)(v4 + 36), (char *)a1) ) /*0x49da3d*/
       break; /*0x49da3d*/
@@ -363,16 +363,16 @@ int SideClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
-  int v4; // edx
-  int i; // esi
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6a48b1*/
   if ( result >= 0 ) /*0x6a48b8*/
   {
+  int v4; // edx
     v4 = *a1; /*0x6a48c0*/
     aP2 = aP0->ImageAllocated; /*0x6a48cd*/
     (*(void (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
+  int i; // esi
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, (unsigned int)(aP0->houseTypesCount)+ 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/

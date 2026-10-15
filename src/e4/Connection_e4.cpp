@@ -23,8 +23,8 @@ namespace gamemd {
 int Connection::Close(void *a1, void *a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)this->u32_48; /*0x543090*/
   if ( result ) /*0x543095*/
     result->u8_C8 = 1; /*0x543097*/

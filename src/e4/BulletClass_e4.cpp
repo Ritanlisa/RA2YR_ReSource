@@ -23,7 +23,6 @@ namespace gamemd {  // G42.18 ns repair
 BulletClass::BulletClass()
 {
 
-  int v2; // eax
 
   ((ObjectClass *)this)->ctor(); /*0x466384*/
   this->u32_AC = 0; /*0x466391*/
@@ -68,6 +67,7 @@ BulletClass::BulletClass()
          *(unsigned int *)&DataGlobal_A8EC64 + *(unsigned int *)&DataGlobal_A8EC70,
          0) )
   {
+  int v2; // eax
     v2 = (*(unsigned int *)&DataGlobal_A8EB00[592])++; /*0x4664a8*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[580] + 4 * v2) = this; /*0x4664b7*/
   }
@@ -79,8 +79,6 @@ BulletClass::BulletClass()
 namespace gamemd {
 BulletClass * * BulletClass::Dtor(void *a1)
 {
-  int v2; // eax
-  int v3; // eax
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via BulletClass virtuals 0x466566) */
@@ -91,6 +89,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   if ( a1->q158 ) /*0x466586*/
   {
     v5 = (gamemd::BulletClass *)(a1); /*0x4665a0*/
+  int v2; // eax
     v2 = (*(int (**)(int *, BulletClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x4665a4*/
            g_BuildingLoadQueue_Array.ForbiddenHouses,
            &v5);
@@ -112,6 +111,7 @@ BulletClass * * BulletClass::Dtor(void *a1)
   a1->q_B0 = 0; /*0x4665f3*/
   a1->__pad_154 = 0; /*0x4665fd*/
   v5 = (gamemd::BulletClass *)(a1); /*0x466617*/
+  int v3; // eax
   v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[348] + 16))(&((unsigned int *)&stru_A8EB00)[348], &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < *(int *)&((unsigned int *)&stru_A8EB00)[364] ) /*0x46662b*/
   {
@@ -163,9 +163,9 @@ LONG BulletClass::CheckTargetValidity(int a1)
 namespace gamemd {
 LONG BulletClass::ValidateTarget(volatile LONG * a1)
 {
-  LONG v1; // esi
 
   --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x46b000*/
+  LONG v1; // esi
   v1 = InterlockedDecrement((volatile LONG *)a1->__pad_1C); /*0x46b00d*/
   if ( !v1 && a1 ) /*0x46b015*/
     (*(void (**)(BulletClass *, int))(*(unsigned int *)a1->__pad_0 + 32))(a1, 1); /*0x46b01d*/

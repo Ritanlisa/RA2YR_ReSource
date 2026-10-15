@@ -11,11 +11,10 @@
 namespace gamemd {  // G42.18 ns repair
 int MovementAI::IsPathMovementAllowed()
 {
-  unsigned int *v2; // esi
-  BOOL v3; // eax
 
   if ( !byte_A8E9A0 ) /*0x487e0b*/
     return this->u32_100 != 0; /*0x487e0b*/
+  unsigned int *v2; // esi
   v2 = (unsigned int *)this->u32_E4; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
     return this->u32_100 != 0; /*0x487e15*/
@@ -25,6 +24,7 @@ int MovementAI::IsPathMovementAllowed()
     if ( !v2 ) /*0x487e28*/
       return this->u32_100 != 0; /*0x487e28*/
   }
+  BOOL v3; // eax
   if ( this->u32_100 == 1 ) /*0x487e45*/
     (*((unsigned char *)&(v3))) = 0; /*0x487e48*/
   else
@@ -37,16 +37,16 @@ namespace gamemd {
 int MovementAI::IsProgressAtEnd()
 {
 
-  int MovementAI_field_14; // esi
-  int v2; // edx
-  int MovementAI_field_10; // eax
 
   if ( !LOBYTE(this->MovementAI_field_18) ) /*0x4a5150*/
     return 1; /*0x4a5150*/
+  int MovementAI_field_14; // esi
   MovementAI_field_14 = (int)(this->MovementAI_field_14); /*0x4a515b*/
   if ( !MovementAI_field_14 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
+  int v2; // edx
   v2 = this->m_Target[2]; /*0x4a5166*/
+  int MovementAI_field_10; // eax
   MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
@@ -63,8 +63,8 @@ int MovementAI::IsProgressAtEnd()
 namespace gamemd {
 char MovementAI::Check(void *a1, void *a2, void *a3)
 {
-  char result; // al
 
+  char result; // al
   result = 0; /*0x4a5363*/
   if ( (this->MovementAI_field_18) ) /*0x4a5360*/
   {

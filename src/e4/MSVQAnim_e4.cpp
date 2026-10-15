@@ -21,8 +21,6 @@ namespace gamemd {  // G42.18 ns repair
 void * MSVQAnim::GetFrameRect(int * a2)
 {
 
-  int MSVQAnim_field_0x1C; // eax
-  int *p_parTimeMedium; // ecx
 
   if ( (g_MissionQueueFrame.__pad_3566[58] & 1) == 0 ) /*0x5cd2a0*/
   {
@@ -33,7 +31,9 @@ void * MSVQAnim::GetFrameRect(int * a2)
     *(unsigned int *)&g_MissionQueueFrame.underParTitle[4] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
+  int MSVQAnim_field_0x1C; // eax
   MSVQAnim_field_0x1C = this->q01C; /*0x5cd2d1*/
+  int *p_parTimeMedium; // ecx
   p_parTimeMedium = (int *)(MSVQAnim_field_0x1C + 52); /*0x5cd2d6*/
   if ( !MSVQAnim_field_0x1C ) /*0x5cd2d9*/
     p_parTimeMedium = &g_MissionQueueFrame.parTimeMedium; /*0x5cd2db*/

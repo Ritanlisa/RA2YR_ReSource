@@ -206,9 +206,6 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
 namespace gamemd {
 char sub_610B50()
 {
-  unsigned int v2[2]; // [esp+4h] [ebp-20h] BYREF
-  int64_t v3; // [esp+Ch] [ebp-18h]
-  unsigned long long v4[2]; // [esp+14h] [ebp-10h] BYREF
 
   if ( !*(unsigned int *)&DataGlobal_AC1DCC ) /*0x610b5d*/
     return 0; /*0x610b5f*/
@@ -216,10 +213,13 @@ char sub_610B50()
     return 0; /*0x610b6f*/
   if ( !*(unsigned int *)&DataGlobal_AC1CC8 ) /*0x610b7e*/
     return 0; /*0x610b80*/
+  unsigned int v2[2]; // [esp+4h] [ebp-20h] BYREF
   v2[0] = 0; /*0x610b9e*/
   v2[1] = 0; /*0x610ba2*/
+  unsigned long long v4[2]; // [esp+14h] [ebp-10h] BYREF
   v4[0] = *(unsigned long long *)&DataGlobal_AC1CB8; /*0x610bab*/
   v4[1] = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc4*/
+  int64_t v3; // [esp+Ch] [ebp-18h]
   v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc8*/
   (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary /*0x610bd3*/
    + 2))(
@@ -275,32 +275,25 @@ AbstractClass * * sub_610BF0()
 namespace gamemd {
 void sub_612930()
 {
-  unsigned int v0; // eax
-  unsigned int i; // edi
-  unsigned int *v2; // esi
-  void *v3; // eax
-  unsigned int v4; // ecx
-  int *v5; // ebx
-  int v6; // esi
-  int *v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
   int v12; // eax
 
+  unsigned int v0; // eax
   v0 = dword_AC1860; /*0x612930*/
+  unsigned int i; // edi
   for ( i = 0; i < dword_AC1860; v0 = dword_AC1860 ) /*0x61293d*/
   {
+  unsigned int *v2; // esi
     v2 = (unsigned int *)*((unsigned int *)stru_AC1858 + i); /*0x612944*/
     while ( v2 ) /*0x612949*/
     {
+  void *v3; // eax
       v3 = v2; /*0x61294b*/
       v2 = v2->vtable4; /*0x61294d*/
       operator delete((void *)(v3)); /*0x612951*/
     }
     *((unsigned int *)stru_AC1858 + i++) = 0; /*0x612964*/
   }
+  unsigned int v4; // ecx
   v4 = dword_AC1888; /*0x612975*/
   dword_AC185C = 0; /*0x61297b*/
   if ( v0 > dword_AC1888 ) /*0x612987*/
@@ -309,7 +302,9 @@ void sub_612930()
     {
       if ( byte_AC186C || v0 <= v4 ) /*0x61299d*/
         break; /*0x61299d*/
+  int *v5; // ebx
       v5 = (int *)stru_AC1858; /*0x6129a9*/
+  int v6; // esi
       v6 = v0; /*0x6129af*/
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
@@ -317,16 +312,21 @@ void sub_612930()
       memset(stru_AC1858, 0, 4 * dword_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
+  int *v7; // edi
         v7 = v5; /*0x6129e5*/
+  int v8; // ebp
         v8 = v6; /*0x6129e7*/
         do /*0x612a22*/
         {
+  int v9; // esi
           v9 = *v7; /*0x6129e9*/
           if ( *v7 ) /*0x6129e9*/
           {
             do /*0x612a1c*/
             {
+  int v10; // edx
               v10 = dword_AC1870(v9) & ((1 << dword_AC1864) - 1); /*0x612a05*/
+  int v11; // ecx
               v11 = *((unsigned int *)stru_AC1858 + v10); /*0x612a0c*/
               *((unsigned int *)stru_AC1858 + v10) = v9; /*0x612a0f*/
               v12 = *(unsigned int *)(v9 + 12); /*0x612a12*/
@@ -522,7 +522,6 @@ AbstractClass * * NetworkLobbyPaintProc(HWND v4, unsigned int a2, int a3, unsign
 // 0x61ECA0
 int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-  UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi
   int v6; // eax
   HWND v7; // ecx
@@ -543,6 +542,7 @@ int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
   unsigned int v22[4]; // [esp+4Ch] [ebp-90h] BYREF
   wchar_t String[64]; // [esp+5Ch] [ebp-80h] BYREF
 
+  UINT v4; // edi
   v4 = Msg; /*0x61eca8*/
   switch ( Msg ) /*0x61ecb4*/
   {

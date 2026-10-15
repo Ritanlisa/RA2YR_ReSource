@@ -78,12 +78,12 @@ unsigned int * COMObject::ReturnZeroPos(int a1, unsigned int * a2)
 namespace gamemd {
 unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 {
-  FootClass *Owner; // ecx
-  int v3; // edx
-  int v4; // esi
 
+  FootClass *Owner; // ecx
   Owner = a1->Owner; /*0x55aca6*/
+  int v3; // edx
   v3 = Owner->location[1]; /*0x55acb3*/
+  int v4; // esi
   v4 = Owner->location[2]; /*0x55acb6*/
   *a2 = Owner->location[0]; /*0x55acbf*/
   a2[1] = v3; /*0x55acc1*/
@@ -102,8 +102,8 @@ int COMObject::GetSpecialValue(int a1)
 namespace gamemd {
 int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = ((AbstractClass *)aP0)->GetSizeMax(); /*0x5f997a*/
   if ( result >= 0 ) /*0x5f9981*/
     return 0; /*0x5f9983*/
@@ -114,8 +114,8 @@ int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 namespace gamemd {
 int COMObject::QueryInterface2(const void * a2, unsigned int * a3)
 {
-  const void **v4; // [esp+10h] [ebp+Ch]
 
+  const void **v4; // [esp+10h] [ebp+Ch]
   if ( !v4 ) /*0x6c0057*/
     return -2147467261; /*0x6c0059*/
   *v4 = 0; /*0x6c0076*/

@@ -16,14 +16,14 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_53AB70()
 {
-  char *v0; // edx
-  int v2; // [esp+Ch] [ebp-8h]
 
+  char *v0; // edx
   v0 = &dword_A8B230->ambientTimer; /*0x53ab7b*/
   NukeFlash_Status = 1; /*0x53ab81*/
   NukeFlash_Duration = 30; /*0x53ab8b*/
   NukeFlash_StartTime = (int)dword_A8ED84; /*0x53ab95*/
   dword_A8B230->ambientTimer = dword_A8ED84; /*0x53ab9a*/
+  int v2; // [esp+Ch] [ebp-8h]
   v0->__pad_004 = v2; /*0x53aba8*/
   v0->u32_8 = 1; /*0x53abad*/
   dword_A8B230[378].vfptr2 = dword_A8B230[379].abstractFlags; /*0x53abbd*/
@@ -39,11 +39,11 @@ int sub_53AB70()
 namespace gamemd {
 char sub_5C0080(char ** a1, unsigned char * a2)
 {
-  char result; // al
 
   if ( dword_ABF3F4 ) /*0x5c0087*/
     return 0; /*0x5c0089*/
   dword_ABF3F4 = (int)a1; /*0x5c008c*/
+  char result; // al
   result = (*a1)->AdvanceFrame(a2); /*0x5c0095*/
   dword_ABF3F4 = 0; /*0x5c009a*/
   return result; /*0x5c008b*/

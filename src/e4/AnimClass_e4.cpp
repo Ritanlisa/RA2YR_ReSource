@@ -49,17 +49,6 @@ namespace gamemd {  // G42.18 ns repair
 int AnimClass::Destruct(AnimClass * a2, void *a2_2)
 {
 
-  unsigned char *AnimClass_field_0xCC; // ebp
-  int v3; // ecx
-  char *v4; // edx
-  Coord *AnimClass_field_0xC8; // eax
-  CellClass *v6; // eax
-  int v7; // eax
-  AnimClass *v8; // ecx
-  int v9; // eax
-  int v10; // eax
-  AnimClass *v12; // [esp+10h] [ebp-10h] BYREF
-  unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
 
   /* X11: vtable install elided (implicit via AnimClass virtuals 0x4228eb) */
   a2->AnimClass_field_0x4 = &vt_AnimClass; /*0x4228f1*/
@@ -68,12 +57,15 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   AbstractClass::AnnounceExpiredPointer(&a2->AnimClass_field_0x0, 1); /*0x422906*/
   if ( byte_A8E9A0 ) /*0x422914*/
   {
+  unsigned char *AnimClass_field_0xCC; // ebp
     AnimClass_field_0xCC = a2->AnimClass_field_0xCC; /*0x42291a*/
     if ( AnimClass_field_0xCC ) /*0x422922*/
     {
+  int v3; // ecx
       v3 = 0; /*0x42292a*/
       if ( dword_A8E9B8 > 0 ) /*0x42292e*/
       {
+  char *v4; // edx
         v4 = (char *)dword_A8E9AC; /*0x422930*/
         do /*0x42294a*/
         {
@@ -91,19 +83,24 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       }
       a2->AnimClass_field_0xCC = 0; /*0x422961*/
     }
+  Coord *AnimClass_field_0xC8; // eax
     AnimClass_field_0xC8 = a2->AnimClass_field_0xC8; /*0x422967*/
     if ( AnimClass_field_0xC8 && AnimClass_field_0xC8[2].__pad_C[201] ) /*0x422971*/
     {
+  unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
       v13[0] = a2->Coord_9C; /*0x422985*/
       v13[1] = *(unsigned int *)a2->__pad_A0; /*0x422991*/
       v13[2] = a2->AnimClass_field_0xA4; /*0x422998*/
+  CellClass *v6; // eax
       v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v13)); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (unsigned __int8)((ObjectClass *)a2)->Undeploy() ) /*0x4229bb*/
       RemoveTarget((int)a2); /*0x4229ca*/
   }
+  AnimClass *v12; // [esp+10h] [ebp-10h] BYREF
   v12 = a2; /*0x4229df*/
+  int v7; // eax
   v7 = (*(int (**)(int *, AnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x4229e3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v12);
@@ -118,6 +115,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       ++v7; /*0x422a06*/
     }
   }
+  AnimClass *v8; // ecx
   v8 = (AnimClass *)a2->AnimClass_field_0xC8; /*0x422a18*/
   if ( v8 ) /*0x422a20*/
     AnimClass::FreeRenderBuffer(v8); /*0x422a22*/
@@ -130,6 +128,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   if ( AbstractClass::GetVtable3(&a2->vtable2) == -2 ) /*0x422a67*/
   {
     v12 = a2; /*0x422a79*/
+  int v9; // eax
     v9 = (*((int (**)(void **, AnimClass **))stru_A83D50.SuperClass_field_0xB0 + 4))( /*0x422a7d*/
            &stru_A83D50.SuperClass_field_0xB0,
            &v12);
@@ -148,6 +147,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   else
   {
     v12 = a2; /*0x422ad5*/
+  int v10; // eax
     v10 = (*(int (**)(unsigned int *, AnimClass **))(dword_A8E9A8 + 16))(&dword_A8E9A8, &v12); /*0x422ad9*/
     if ( v10 != -1 && v10 < dword_A8E9B8 && v10 < --dword_A8E9B8 ) /*0x422af4*/
     {
@@ -1158,10 +1158,10 @@ namespace gamemd {
 int AnimClass::InWhichLayer_AttachedObjectLayer()
 {
 
-  Coord *q0C8; // eax
 
   if ( this->AnimClass_field_0xCC ) /*0x424cb0*/
     return 2; /*0x424cba*/
+  Coord *q0C8; // eax
   q0C8 = this->AnimClass_field_0xC8; /*0x424cc0*/
   if ( q0C8 ) /*0x424cc8*/
     return *(unsigned int *)&q0C8[2].q00C[216]; /*0x424cca*/
@@ -1410,12 +1410,6 @@ BuildingTypeClass * * AnimClass::drawFrame(void *a1)
 namespace gamemd {
 int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298F0)
 {
-  int v2; // ecx
-  int v3; // esi
-  int *v4; // eax
-  int GroundHeight; // ebx
-  int v6; // edi
-  int v7; // eax
   void * result;
   int *v9; // eax
   int *v10; // edx
@@ -1429,11 +1423,15 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   int v18; // [esp+1Ch] [ebp-Ch]
   int v19; // [esp+20h] [ebp-8h]
 
+  int v2; // ecx
+  int v3; // esi
   v3 = v2; /*0x7298f5*/
+  int *v4; // eax
   v4 = (int *)(*(unsigned int *)(v2 + 12) + 156); /*0x7298fa*/
   v14 = *v4; /*0x729901*/
   v15 = v4[1]; /*0x72990d*/
   v16 = v4[2]; /*0x729919*/
+  int GroundHeight; // ebx
   GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v14)); /*0x729922*/
   if ( v16 >= GroundHeight ) /*0x72992a*/
   {
@@ -1450,8 +1448,10 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   }
   else
   {
+  int v6; // edi
     v6 = (*(int (**)(unsigned int, int))(*v3->vtable4 + 456))(v3->vtable4, a2); /*0x72993f*/
     v14 = (*(int (**)(unsigned int))(*v3->vtable4 + 1336))(v3->vtable4); /*0x72994f*/
+  int v7; // eax
     (*((unsigned short *)&(v7))) = Math::RoundToInt((double)v14 * *(double *)(*(unsigned int *)&g_RulesClass_Instance + 32)); /*0x72995a*/
     if ( v7 <= 5 ) /*0x729962*/
       v7 = 5; /*0x729964*/
@@ -1497,17 +1497,17 @@ namespace gamemd {
 int AnimClass::ProcessFrame()
 {
 
-  int i; // edi
-  int *Coords; // eax
-  int v4; // eax
-  int v6[3]; // [esp+8h] [ebp-Ch] BYREF
 
   ((int)this)->TransformMatrix(); /*0x761037*/
+  int i; // edi
   for ( i = 0; i < *&this->q_200; ++i ) /*0x761046*/
   {
+  int *Coords; // eax
+  int v6[3]; // [esp+8h] [ebp-Ch] BYREF
     Coords = CellClass::GetCoords(*(CellClass **)(*&this->u32_1F4 + 4 * i), v6); /*0x761056*/
     ((WaveClass *)this)->DamageArea(Coords); /*0x76105e*/
   }
+  int v4; // eax
   v4 = *&this->q130 - 1; /*0x761074*/
   *&this->q130 = v4; /*0x761075*/
   if ( v4 >= 0 ) /*0x76107b*/
@@ -1538,11 +1538,11 @@ int * AnimClass::CheckMirrorFlags(int a1)
 namespace gamemd {
 char AnimClass::ProcessAreaEffect(AnimClass * a1)
 {
-  char v1; // bl
-  CellClass *v2; // esi
   char result; // al
 
+  char v1; // bl
   v1 = ((Input *)a1)->OffsetToDirection(); /*0x426314*/
+  CellClass *v2; // esi
   v2 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, a1); /*0x426321*/
   if ( Cell::GetGroundHeight((unsigned int *)(a1)) + Map_MaxHeight > (int)a1->vtable3 ) /*0x426335*/
   {

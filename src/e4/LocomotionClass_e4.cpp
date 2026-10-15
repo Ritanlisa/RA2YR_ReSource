@@ -26,12 +26,11 @@ namespace gamemd {  // G42.18 ns repair
 int LocomotionClass::Initialize()
 {
 
-  int v2; // ecx
-  int v3; // ecx
 
   LocomotionClass::Init(this); /*0x4af543*/
   this->u32_1C = 0; /*0x4af54d*/
   this->q020 = 0; /*0x4af550*/
+  int v2; // ecx
   v2 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4af553*/
   this->u32_2C = 0; /*0x4af559*/
   this->u32_24 = v2; /*0x4af55c*/
@@ -40,6 +39,7 @@ int LocomotionClass::Initialize()
   *((unsigned long long *)&this->vtable2) = qword_8A0794; /*0x4af570*/
   this->q040 = g_DDraw_ClipRect; /*0x4af585*/
   this->q044 = qword_8A0794; /*0x4af58e*/
+  int v3; // ecx
   v3 = HIDWORD(qword_8A0794); /*0x4af591*/
   this->__pad_50 = 0; /*0x4af597*/
   this->u32_4C = 0; /*0x4af59a*/
@@ -65,13 +65,13 @@ int LocomotionClass::Initialize()
 namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
-  wchar_t *result; // eax
-  int i; // esi
-  unsigned int *v3; // ecx
 
+  wchar_t *result; // eax
   result = (wchar_t *)dword_8A3880; /*0x4c54a0*/
+  int i; // esi
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
+  unsigned int *v3; // ecx
     v3 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
     result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4c54be*/
     if ( *(int *)&((unsigned int *)&stru_A8EB00)[416] >= v3[11] + v3[12] ) /*0x4c54c5*/
@@ -88,15 +88,15 @@ namespace gamemd {
 int LocomotionClass::CheckBridgeBlock()
 {
 
-  int vtable1; // eax
-  FootClass *LinkedTo; // edi
-  Cell *v4; // eax
-  unsigned int *v5; // eax
 
+  int vtable1; // eax
   if ( (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
     || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
   {
     vtable1 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
+  FootClass *LinkedTo; // edi
+  Cell *v4; // eax
+  unsigned int *v5; // eax
     if ( vtable1 == 2 /*0x4cfacc*/
       && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, vtable1->u8_E0D)
       && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
@@ -122,8 +122,8 @@ int LocomotionClass::CheckBridgeBlock()
 namespace gamemd {
 int LocomotionClass::GetSpeedMultiplier()
 {
-  int result; // eax
 
+  int result; // eax
   result = this->u32_5D4; /*0x4dc760*/
   if ( result ) /*0x4dc768*/
     return result->u32_24; /*0x4dc76a*/
@@ -165,12 +165,11 @@ namespace gamemd {
 int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
 {
 
-  int v2; // ecx
-  int v4; // [esp+Ch] [ebp-4h] BYREF
 
   LocomotionClass::Init((LocomotionClass *)a1); /*0x54ac46*/
   a1->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
   a1->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
+  int v2; // ecx
   v2 = dword_ABC5B0; /*0x54ac64*/
   a1->IsMoving = 0; /*0x54ac6a*/
   *(unsigned int *)a1->__pad_50 = 0; /*0x54ac6d*/
@@ -191,6 +190,7 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   a1->LocomotionClass[0] = (int)&vt_JumpjetLocomotionClass; /*0x54acc3*/
   a1->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54acc9*/
   a1->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54acd0*/
+  int v4; // [esp+Ch] [ebp-4h] BYREF
   LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update(&a1->__pad_50[4], &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/

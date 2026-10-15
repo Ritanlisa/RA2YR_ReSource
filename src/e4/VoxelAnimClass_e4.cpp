@@ -47,28 +47,19 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int VoxelAnimClass::ProcessFrame()
 {
 
-  int v1; // esi
-  unsigned int *v2; // edx
-  int v3; // edi
-  double v4; // st7
   double v5; // st7
-  unsigned int v6; // ecx
-  int v7; // eax
-  double v8; // st7
   double v9; // st7
-  unsigned int v10; // ecx
-  int v11; // eax
   unsigned int result; // eax
-  float v13; // [esp+8h] [ebp-4h]
-  float v14; // [esp+8h] [ebp-4h]
-  float v15; // [esp+8h] [ebp-4h]
-  float v16; // [esp+8h] [ebp-4h]
 
+  int v1; // esi
   v1 = 0; /*0x4caf23*/
+  unsigned int *v2; // edx
   v2 = (unsigned int *)(&unk_86D0BC); /*0x4caf25*/
+  int v3; // edi
   v3 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
   {
+  double v4; // st7
     v4 = COERCE_FLOAT((v1 | 0xFE000) << 10); /*0x4caf3d*/
     if ( v4 == 0.0 ) /*0x4caf4c*/
     {
@@ -78,15 +69,20 @@ unsigned int VoxelAnimClass::ProcessFrame()
     {
       if ( v4 <= 0.0 ) /*0x4caf63*/
         v4 = v4 * -1.0; /*0x4caf65*/
+  float v13; // [esp+8h] [ebp-4h]
       v13 = v4; /*0x4caf6b*/
+  unsigned int v6; // ecx
       v6 = (unsigned int)&unk_7FFFFF & LODWORD(v13); /*0x4caf75*/
+  int v7; // eax
       v7 = (LODWORD(v13) >> 23) - 127; /*0x4caf7e*/
       if ( (v7 & 1) != 0 ) /*0x4caf83*/
         v6 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor'; /*0x4caf85*/
       v5 = COERCE_FLOAT(((((__int16)v7 >> 1) + 127) << 23) + dword_8650BC[v6 >> 10]); /*0x4cafa7*/
     }
+  float v14; // [esp+8h] [ebp-4h]
     v14 = v5; /*0x4cafab*/
     *(v2 - 0x2000) = (unsigned int)&unk_7FFFFF & LODWORD(v14); /*0x4cafc7*/
+  double v8; // st7
     v8 = COERCE_FLOAT((v1 | 0x100000) << 10); /*0x4cafcd*/
     if ( v8 == 0.0 ) /*0x4cafdc*/
     {
@@ -96,13 +92,17 @@ unsigned int VoxelAnimClass::ProcessFrame()
     {
       if ( v8 <= 0.0 ) /*0x4caff3*/
         v8 = v8 * -1.0; /*0x4caff5*/
+  float v15; // [esp+8h] [ebp-4h]
       v15 = v8; /*0x4caffb*/
+  unsigned int v10; // ecx
       v10 = (unsigned int)&unk_7FFFFF & LODWORD(v15); /*0x4cb005*/
+  int v11; // eax
       v11 = (LODWORD(v15) >> 23) - 127; /*0x4cb00e*/
       if ( (v11 & 1) != 0 ) /*0x4cb013*/
         v10 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor'; /*0x4cb015*/
       v9 = COERCE_FLOAT(((((__int16)v11 >> 1) + 127) << 23) + dword_8650BC[v10 >> 10]); /*0x4cb037*/
     }
+  float v16; // [esp+8h] [ebp-4h]
     v16 = v9; /*0x4cb03b*/
     ++v2; /*0x4cb043*/
     result = (unsigned int)&unk_7FFFFF & LODWORD(v16); /*0x4cb046*/
@@ -119,17 +119,15 @@ unsigned int VoxelAnimClass::ProcessFrame()
 namespace gamemd {
 int VoxelAnimClass::CleanupMembers(void *a1)
 {
-  int v2; // eax
-  int VoxelAnimClass_field_0x108; // ecx
-  int v4; // eax
-  VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x7499f6) */
   /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x7499fc) */
   /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x749a03) */
   /* X11: vtable install elided (implicit via VoxelAnimClass virtuals 0x749a0a) */
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, 1); /*0x749a11*/
+  VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
   v6 = (gamemd::VoxelAnimClass *)(a1); /*0x749a26*/
+  int v2; // eax
   v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&VoxelAnimClass_Array + 16))( /*0x749a2a*/
          &VoxelAnimClass_Array,
          &v6);
@@ -144,6 +142,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
       ++v2; /*0x749a4d*/
     }
   }
+  int VoxelAnimClass_field_0x108; // ecx
   VoxelAnimClass_field_0x108 = a1->q108; /*0x749a5f*/
   if ( VoxelAnimClass_field_0x108 ) /*0x749a67*/
   {
@@ -157,6 +156,7 @@ int VoxelAnimClass::CleanupMembers(void *a1)
   AudioFileClass::Release(&a1->q114); /*0x749aa9*/
   AudioFileClass::Release(&a1->q128); /*0x749ab0*/
   v6 = (gamemd::VoxelAnimClass *)(a1); /*0x749ac5*/
+  int v4; // eax
   v4 = (*(int (**)(int *, VoxelAnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x749ac9*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
@@ -355,44 +355,6 @@ namespace gamemd {
 int VoxelAnimClass::VoxelAnimClass_Update()
 {
 
-  VoxelAnimClass *v1; // ebx
-  unsigned int *VoxelAnimClass_field_0x104; // eax
-  unsigned int *v3; // eax
-  int VoxelAnimClass_field_0x140; // eax
-  int v6; // ebp
-  int *v7; // esi
-  bool v8; // zf
-  int v9; // edi
-  bool v10; // al
-  AnimClass *v11; // eax
-  int v12; // edx
-  int v13; // ecx
-  int v14; // esi
-  AnimClass *v15; // eax
-  AnimClass *v16; // eax
-  int v17; // edx
-  int v18; // ecx
-  int v19; // esi
-  AnimClass *v20; // esi
-  int v21; // eax
-  double v22; // st7
-  int v23; // eax
-  double v24; // st7
-  int v25; // eax
-  void **v26; // edx
-  unsigned int *v27; // eax
-  int v28; // edi
-  unsigned int *Coords; // eax
-  unsigned int *v30; // eax
-  int v31; // edi
-  int *v32; // eax
-  unsigned char *v33; // eax
-  int *v34; // eax
-  unsigned int *v35; // eax
-  int v36; // eax
-  int v37; // esi
-  int v38; // eax
-  int v39; // esi
   #374 *v40; // eax
   int v41; // edi
   int v42; // edx
@@ -465,73 +427,99 @@ int VoxelAnimClass::VoxelAnimClass_Update()
   int v109; // [esp+70h] [ebp-Ch]
   int v110; // [esp+78h] [ebp-4h]
 
+  VoxelAnimClass *v1; // ebx
   v1 = this; /*0x749f34*/
+  unsigned int *VoxelAnimClass_field_0x104; // eax
   VoxelAnimClass_field_0x104 = (unsigned int *)(this->q104); /*0x749f38*/
   smudgeTypeIndex = this; /*0x749f3f*/
   if ( VoxelAnimClass_field_0x104[183] != -1 ) /*0x749f4a*/
   {
+  unsigned int *v3; // eax
     v3 = (unsigned int *)(*((int (**)(VoxelAnimClass *, int *))this->vtable1 + 18))(this, &v101); /*0x749f5b*/
     StartAudioController(v3, &v1->q114); /*0x749f62*/
   }
   if ( v1->ParticleSystemClass_110 ) /*0x749f67*/
     return (*((int (**)(VoxelAnimClass *))v1->vtable1 + 62))(v1); /*0x749f82*/
+  int VoxelAnimClass_field_0x140; // eax
   VoxelAnimClass_field_0x140 = v1->q140; /*0x749f83*/
+  int v6; // ebp
   v6 = 0; /*0x749f89*/
   if ( VoxelAnimClass_field_0x140 ) /*0x749f8d*/
     v1->q140 = VoxelAnimClass_field_0x140 - 1; /*0x749f90*/
   if ( v1->q140 <= 0 ) /*0x749f9c*/
   {
+  int *v7; // esi
     v7 = (int *)(&v1->location); /*0x749fa2*/
     v97 = (int)(*&v1->location); /*0x749fac*/
     v98 = *&v1->__pad_0A0; /*0x749fbd*/
     v99 = *&v1->q0A4; /*0x749fc4*/
+  bool v8; // zf
     v8 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, &v97)->landType == 2; /*0x749fd5*/
     v101 = (int)(*&v1->location); /*0x749fda*/
     v102 = *&v1->__pad_0A0; /*0x749fe1*/
+  int v9; // edi
     v9 = *&v1->q0A4; /*0x749fe5*/
     v97 = (int)(*&v1->location); /*0x749fea*/
     v98 = *&v1->__pad_0A0; /*0x749ff6*/
     v88 = v8; /*0x74a002*/
     v99 = *&v1->q0A4; /*0x74a007*/
+  bool v10; // al
     v10 = v9 >= (int)(dword_B1D1BC + Cell::GetGroundHeight((unsigned int *)(&v97))); /*0x74a01e*/
     v87 = v10; /*0x74a023*/
     if ( !v88 || v10 ) /*0x74a02f*/
     {
       if ( *((unsigned int *)v1->q104 + 186) ) /*0x74a144*/
       {
+  AnimClass *v20; // esi
         v20 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a15a*/
         if ( v20 ) /*0x74a161*/
         {
+  int v21; // eax
           LOWORD(v21) = Math::RoundToInt(*&v1->u32_C8); /*0x74a169*/
+  double v22; // st7
           v22 = *&v1->q0CC; /*0x74a16e*/
           v97 = v21; /*0x74a174*/
+  int v23; // eax
           LOWORD(v23) = Math::RoundToInt(v22); /*0x74a178*/
+  double v24; // st7
           v24 = *&v1->q0D0; /*0x74a17d*/
           v98 = v23; /*0x74a183*/
+  int v25; // eax
           LOWORD(v25) = Math::RoundToInt(v24); /*0x74a187*/
+  void **v26; // edx
           v26 = (void **)v1->q104; /*0x74a18c*/
           v99 = v25; /*0x74a19a*/
           AnimClass::ctor(v20,(int *)(v26[186]), &v97, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
         }
+  unsigned int *v27; // eax
         v27 = (unsigned int *)(v1->q104); /*0x74a1b4*/
+  int v28; // edi
         v28 = v27[188]; /*0x74a1c9*/
         v84 = v27[190]; /*0x74a1cf*/
+  unsigned int *Coords; // eax
         Coords = (unsigned int *)Coord::GetCoords(&v101, 0); /*0x74a1d8*/
         PlaySoundEffectAt(Coords, v28, v83, v84, 1, 0); /*0x74a1e1*/
+  unsigned int *v30; // eax
         v30 = (unsigned int *)(v1->q104); /*0x74a1e6*/
         v90 = v30[190]; /*0x74a1f6*/
+  int v31; // edi
         v31 = v30[188]; /*0x74a1fa*/
+  int *v32; // eax
         v32 = (int *)Coord::GetCoords(&v101, 0); /*0x74a205*/
         CreateSmokeEffectAt(v31, v90, *v32, v32->vtable2, v32->vtable3, v85, 0); /*0x74a225*/
       }
     }
     else if ( *((unsigned char *)v1->q104 + 720) ) /*0x74a040*/
     {
+  AnimClass *v11; // eax
       v11 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a04a*/
       if ( v11 ) /*0x74a054*/
       {
+  int v12; // edx
         v12 = *v7; /*0x74a05a*/
+  int v13; // ecx
         v13 = *&v1->__pad_0A0; /*0x74a05c*/
+  int v14; // esi
         v14 = *&v1->q0A4; /*0x74a05f*/
         v97 = v12; /*0x74a064*/
         v98 = v13; /*0x74a068*/
@@ -541,6 +529,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     }
     else
     {
+  AnimClass *v15; // eax
       v15 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a0a3*/
       if ( v15 ) /*0x74a0ad*/
       {
@@ -549,11 +538,15 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v99 = *&v1->q0A4; /*0x74a0d0*/
                 AnimClass::ctor( /*0x74a0e3*/           v15,(int *)(*(void **)(*(unsigned int *)&g_RulesClass_Instance + 148)),           &v97,           0,           1,           (void *)0x600,           0,           0);
       }
+  AnimClass *v16; // eax
       v16 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x74a0ed*/
       if ( v16 ) /*0x74a0f7*/
       {
+  int v17; // edx
         v17 = *v7; /*0x74a0fd*/
+  int v18; // ecx
         v18 = *&v1->__pad_0A0; /*0x74a0ff*/
+  int v19; // esi
         v19 = *&v1->q0A4; /*0x74a102*/
         v97 = v17; /*0x74a107*/
         v98 = v18; /*0x74a111*/
@@ -563,23 +556,29 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     }
     if ( !v88 || v87 ) /*0x74a238*/
     {
+  unsigned char *v33; // eax
       v33 = (unsigned char *)(v1->q104); /*0x74a23e*/
       v108 = 0; /*0x74a244*/
       v109 = 0; /*0x74a248*/
       v110 = 0; /*0x74a24c*/
       if ( v33[720] ) /*0x74a250*/
       {
+  int *v34; // eax
         v34 = (int *)Coord::GetCoords(&v101, v86); /*0x74a269*/
         v97 = *v34; /*0x74a270*/
         v98 = v34->vtable2; /*0x74a277*/
         v99 = v34->vtable3; /*0x74a27e*/
+  unsigned int *v35; // eax
         v35 = (unsigned int *)(v1->q104); /*0x74a282*/
         if ( v35[181] ) /*0x74a288*/
         {
+  int v36; // eax
           v36 = v35[182]; /*0x74a290*/
           if ( v36 > 0 ) /*0x74a298*/
           {
+  int v37; // esi
             v37 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v36); /*0x74a2b3*/
+  int v38; // eax
             v38 = v37 /*0x74a2cd*/
                 + Random::Range(
                     (Random *)&dword_A8B230[14].NeedsSaveOrLink,
@@ -587,6 +586,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                     *((unsigned int *)v1->q104 + 182));
             if ( v38 > 0 ) /*0x74a2d1*/
             {
+  int v39; // esi
               v39 = v38; /*0x74a2d3*/
               do /*0x74a301*/
               {
@@ -844,8 +844,8 @@ int VoxelAnimClass::VoxelAnimClass_Update()
 namespace gamemd {
 int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 {
-  int Register; // edi
 
+  int Register; // edi
   Register = ((BuildingClass *)((ObjectClass *)this))->SaveLoad_Register(); /*0x74a981*/
   if ( Register >= 0 ) /*0x74a985*/
   {
@@ -871,26 +871,26 @@ namespace gamemd {
 AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
 {
 
-  int v3; // eax
-  int VoxelAnimClass_field_0x108; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  int v8; // eax
 
   HouseClass::ProcessPower((ObjectClass *)this); /*0x74aa39*/
   Power::TimerProcess(this->u32_100); /*0x74aa47*/
+  int v3; // eax
   v3 = (*(int (**)(char *))(*((unsigned int *)this->q104 + 1) + 16))((char *)this->q104 + 4); /*0x74aa58*/
   Power::TimerProcess(v3); /*0x74aa5e*/
+  int VoxelAnimClass_field_0x108; // eax
   VoxelAnimClass_field_0x108 = this->q108; /*0x74aa63*/
   if ( VoxelAnimClass_field_0x108 ) /*0x74aa6b*/
   {
+  int v5; // eax
     v5 = (*(int (**)(int))(*(unsigned int *)(VoxelAnimClass_field_0x108 + 4) + 16))(VoxelAnimClass_field_0x108 + 4); /*0x74aa74*/
     Power::TimerProcess(v5); /*0x74aa7a*/
   }
+  int v6; // eax
   v6 = (*((int (**)(void **))this->AbstractClass_10C->vtable1 + 4))(&this->AbstractClass_10C->vtable1); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
+  int v7; // edx
   LOBYTE(v7) = this->ParticleSystemClass_110; /*0x74aa96*/
+  int v8; // eax
   v8 = Power::FlagProcess((Power *)a2, v7); /*0x74aa9f*/
   LOBYTE(v8) = this->q13C; /*0x74aaa4*/
   Power::FlagProcess((Power *)a2, v8); /*0x74aaad*/
@@ -935,8 +935,6 @@ namespace gamemd {
 int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
-  int v2; // eax
-  Voxel *v4; // [esp+0h] [ebp-8h]
 
   ObjectClass::ctor((ObjectClass *)a1); /*0x75ebe4*/
   a1->__pad_12C[0] = 1; /*0x75ebeb*/
@@ -977,9 +975,11 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
          *(unsigned int *)&DataGlobal_A8EB00[320] + *(unsigned int *)&DataGlobal_A8EB68,
          0) )
   {
+  int v2; // eax
     v2 = (*(unsigned int *)&DataGlobal_A8EB00[328])++; /*0x75ed08*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[316] + 4 * v2) = a1; /*0x75ed17*/
   }
+  Voxel *v4; // [esp+0h] [ebp-8h]
   if ( !byte_B725CC ) /*0x75ed20*/
     Voxel::InitDistanceTable(v4); /*0x75ed22*/
   return (int)a1; /*0x75ed29*/
@@ -990,9 +990,9 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
 namespace gamemd {
 float * VoxelAnimClass::QuaternionToMatrix(float * a2, void *a2_2)
 {
+
   float *v2; // esi
   float v4[12]; // [esp+8h] [ebp-30h] BYREF
-
   v2 = ToQuaternionMatrix(v4, a2_2 + 12); /*0x4399f1*/
   memcpy(a2_2, v2, 0x30u); /*0x4399fe*/
   return a2_2; /*0x439a00*/
@@ -1004,7 +1004,6 @@ namespace gamemd {
 char VoxelAnimClass::UpdateMatrix()
 {
 
-  int v3; // eax
   int (***v4)(unsigned int, void *, int *); // eax
   int v5; // esi
   int v6; // eax
@@ -1014,6 +1013,7 @@ char VoxelAnimClass::UpdateMatrix()
 
   if ( *&this->objectTypeFlags > Cell::GetGroundHeight(this->referenceCount) + 120 ) /*0x4d02cc*/
     return 1; /*0x4d02d4*/
+  int v3; // eax
   v3 = *(unsigned int *)this->vtable4; /*0x4d02d5*/
   if ( *(unsigned int *)(v3 + 692) && *(unsigned int *)(v3 + 764) ) /*0x4d02e2*/
     return 1; /*0x4d02f2*/
@@ -1057,9 +1057,9 @@ namespace gamemd {
 int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
 {
 
+
   unsigned int *v5; // eax
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
-
   v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->vtable1 + 18))(this, v7); /*0x749b2f*/
   if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->needsRedraw = 1; /*0x749b46*/

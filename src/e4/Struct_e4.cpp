@@ -17,15 +17,10 @@
 namespace gamemd {  // G42.18 ns repair
 int Struct::ClearAllMemberFlags()
 {
-  int v1; // eax
-  int v2; // esi
-  int v3; // eax
-  unsigned int *v4; // edi
-  int result; // eax
-  int v6; // esi
-  unsigned int *v7; // edi
 
+  int v1; // eax
   v1 = this->u32_4; /*0x48b2a0*/
+  int v2; // esi
   v2 = 0; /*0x48b2a7*/
   this->u32_2C = 0; /*0x48b2ac*/
   this->u32_3C = 0; /*0x48b2af*/
@@ -37,11 +32,13 @@ int Struct::ClearAllMemberFlags()
   this->u32_38 = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
   {
+  int v3; // eax
     v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
       *(unsigned int *)(v3 + this->u32_24) &= ~1u; /*0x48b2d2*/
       *(unsigned int *)(v3 + this->u32_24) &= ~2u; /*0x48b2de*/
+  unsigned int *v4; // edi
       v4 = (unsigned int *)(v3 + this->u32_24); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
@@ -56,7 +53,9 @@ int Struct::ClearAllMemberFlags()
     }
     while ( v2 < this->u32_4 ); /*0x48b327*/
   }
+  int result; // eax
   result = this->u32_8; /*0x48b329*/
+  int v6; // esi
   v6 = 0; /*0x48b32c*/
   if ( result > 0 ) /*0x48b330*/
   {
@@ -65,6 +64,7 @@ int Struct::ClearAllMemberFlags()
     {
       *(unsigned int *)(result + this->u32_34) &= ~1u; /*0x48b33e*/
       *(unsigned int *)(result + this->u32_34) &= ~2u; /*0x48b34a*/
+  unsigned int *v7; // edi
       v7 = (unsigned int *)(result + this->u32_34); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
@@ -136,8 +136,8 @@ int Struct::ZeroInitAndSetup_0_0()
 // 0x5F75E0
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {
-  void *v1; // esi
 
+  void *v1; // esi
   v1 = (void *)(2 * dword_AC1474); /*0x5f75ec*/
   a1->vfptr = (void *)256; /*0x5f75f7*/
   a1->vfptr1 = (void *)256; /*0x5f75f9*/

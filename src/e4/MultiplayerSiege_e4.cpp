@@ -31,15 +31,15 @@ namespace gamemd {  // G42.18 ns repair
 char MultiplayerSiege::Read(void *a1, void *a2, void *a3)
 {
 
-  char result; // al
-  int v1; // ecx
 
+  char result; // al
   result = ((gamemd::PlayerClass *)this)->AssignPlayerIndex(); /*0x5ca680*/
   if ( result ) /*0x5ca687*/
   {
     result = 1; /*0x5ca690*/
     if ( Game_PlayerCount > 0 ) /*0x5ca697*/
     {
+  int v1; // ecx
       v1 = 1; /*0x5ca6a1*/
       for ( *(unsigned int *)(*(unsigned int *)Game_PlayerInfoArray + 107) = 1; /*0x5ca6ae*/
             v1 < Game_PlayerCount;
@@ -233,30 +233,17 @@ namespace gamemd {
 char MultiplayerSiege::CheckStatus(int a1)
 {
 
-  MPCombatTeam *v1; // eax
-  wchar_t **v2; // edi
-  int MultiplayerSiege_field_08; // ecx
-  int v4; // eax
-  int MultiplayerSiege_field_10; // eax
-  int MultiplayerSiege_field_04; // edx
-  MPCombatTeam *v7; // eax
-  wchar_t **v8; // edi
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // edx
-  MPCombatTeam *v13; // eax
-  wchar_t **v14; // edi
-  int v15; // ecx
-  int v16; // eax
-  int v17; // edx
 
+  MPCombatTeam *v1; // eax
   v1 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
+  wchar_t **v2; // edi
   if ( v1 ) /*0x5ca9be*/
     v2 = (v1)->Constructor(); /*0x5ca9c7*/
   else
     v2 = 0; /*0x5ca9cb*/
+  int MultiplayerSiege_field_08; // ecx
   MultiplayerSiege_field_08 = a1->MultiplayerSiege_field_08; /*0x5ca9d1*/
+  int v4; // eax
   if ( a1->MultiplayerSiege_field_10 < MultiplayerSiege_field_08 /*0x5ca9f6*/
     || (BYTE1(a1->MultiplayerSiege_field_0C) || !MultiplayerSiege_field_08)
     && (v4 = *((unsigned int *)a1 + 5), v4 > 0)
@@ -265,17 +252,23 @@ char MultiplayerSiege::CheckStatus(int a1)
          MultiplayerSiege_field_08 + v4,
          0) )
   {
+  int MultiplayerSiege_field_10; // eax
     MultiplayerSiege_field_10 = a1->MultiplayerSiege_field_10; /*0x5ca9fd*/
+  int MultiplayerSiege_field_04; // edx
     MultiplayerSiege_field_04 = a1->MultiplayerSiege_field_04; /*0x5caa00*/
     a1->MultiplayerSiege_field_10 = MultiplayerSiege_field_10 + 1; /*0x5caa06*/
     *(unsigned int *)(MultiplayerSiege_field_04 + 4 * MultiplayerSiege_field_10) = (unsigned int)(v2); /*0x5caa09*/
   }
+  MPCombatTeam *v7; // eax
   v7 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
+  wchar_t **v8; // edi
   if ( v7 ) /*0x5caa18*/
     v8 = (v7)->MPTeam(); /*0x5caa21*/
   else
     v8 = 0; /*0x5caa25*/
+  int v9; // ecx
   v9 = a1->MultiplayerSiege_field_08; /*0x5caa27*/
+  int v10; // eax
   if ( a1->MultiplayerSiege_field_10 < v9 /*0x5caa4c*/
     || (BYTE1(a1->MultiplayerSiege_field_0C) || !v9)
     && (v10 = *((unsigned int *)a1 + 5), v10 > 0)
@@ -284,17 +277,23 @@ char MultiplayerSiege::CheckStatus(int a1)
          v9 + v10,
          0) )
   {
+  int v11; // eax
     v11 = a1->MultiplayerSiege_field_10; /*0x5caa53*/
+  int v12; // edx
     v12 = a1->MultiplayerSiege_field_04; /*0x5caa56*/
     a1->MultiplayerSiege_field_10 = v11 + 1; /*0x5caa5c*/
     *(unsigned int *)(v12 + 4 * v11) = (unsigned int)(v8); /*0x5caa5f*/
   }
+  MPCombatTeam *v13; // eax
   v13 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
+  wchar_t **v14; // edi
   if ( v13 ) /*0x5caa6e*/
     v14 = (v13)->Constructor2(); /*0x5caa77*/
   else
     v14 = 0; /*0x5caa7b*/
+  int v15; // ecx
   v15 = a1->MultiplayerSiege_field_08; /*0x5caa7d*/
+  int v16; // eax
   if ( a1->MultiplayerSiege_field_10 < v15 /*0x5caaa7*/
     || ((LOBYTE(v16) = BYTE1(a1->MultiplayerSiege_field_0C), (unsigned char)v16) || !v15)
     && (v16 = *((unsigned int *)a1 + 5), v16 > 0)
@@ -305,6 +304,7 @@ char MultiplayerSiege::CheckStatus(int a1)
         (unsigned char)v16) )
   {
     v16 = a1->MultiplayerSiege_field_10; /*0x5caaa9*/
+  int v17; // edx
     v17 = a1->MultiplayerSiege_field_04; /*0x5caaac*/
     a1->MultiplayerSiege_field_10 = v16 + 1; /*0x5caab2*/
     *(unsigned int *)(v17 + 4 * v16) = (unsigned int)(v14); /*0x5caab5*/
@@ -317,8 +317,6 @@ char MultiplayerSiege::CheckStatus(int a1)
 namespace gamemd {
 char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 {
-  int v2; // eax
-  unsigned int *BuildableFromArray; // esi
   void * v6;
   int *v7; // eax
   int v9; // ebx
@@ -326,6 +324,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   int16_t *CurrentOption; // eax
   unsigned int v12[3]; // [esp+14h] [ebp-Ch] BYREF
 
+  int v2; // eax
   v2 = 0; /*0x5caad2*/
   if ( dword_A8DA84 > 0 ) /*0x5caadf*/
   {
@@ -346,6 +345,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   }
   if ( *(unsigned int *)(((unsigned int *)(dword_A8DA78))[v2] + 107) != 1 ) /*0x5cab1c*/
     return AI::CreateMCV((MultiplayerGameMode *)ppv, a2); /*0x5cab24*/
+  unsigned int *BuildableFromArray; // esi
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x5cab45*/
                          (HouseClass *)ppv,
                          *(unsigned int *)&g_RulesClass_Instance + 2220);

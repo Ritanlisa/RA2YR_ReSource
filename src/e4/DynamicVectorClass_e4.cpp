@@ -36,13 +36,11 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x52511c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x525126*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x52512c*/
       v4 = a3; /*0x525142*/
     else
@@ -52,9 +50,11 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
     {
       if ( *&this->Items ) /*0x525155*/
       {
+  int m_8; // ecx
         m_8 = (int)(this->Capacity); /*0x52515c*/
         if ( a2 < m_8 ) /*0x525161*/
           m_8 = a2; /*0x525163*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x525169*/
           ++i; /*0x52516e*/
         if ( BYTE1(this->IsInitialized) ) /*0x52517b*/
@@ -86,29 +86,21 @@ namespace gamemd {
 AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 {
 
-  int v3; // ebp
-  char *v5; // edi
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edx
-  char *v9; // eax
-  int v10; // ecx
-  int v11; // edx
-  int v12; // ecx
-  int v13; // eax
-  unsigned int *v14; // ebx
-  int v15; // eax
 
+  int v3; // ebp
   v3 = a2; /*0x589192*/
   if ( a2 ) /*0x58919e*/
   {
+  char *v5; // edi
     v5 = a3; /*0x5891a4*/
     LOBYTE(this->IsInitialized) = 0; /*0x5891a8*/
     if ( a3 ) /*0x5891ad*/
     {
+  char *v9; // eax
       v9 = a3; /*0x5891e3*/
       if ( a2 - 1 >= 0 ) /*0x5891e7*/
       {
+  int v10; // ecx
         v10 = a2; /*0x5891e9*/
         do /*0x5891f3*/
         {
@@ -122,12 +114,15 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
     }
     else
     {
+  int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(8 * a2)); /*0x5891b7*/
       if ( v6 ) /*0x5891c1*/
       {
+  int v7; // ecx
         v7 = v6; /*0x5891c6*/
         if ( a2 - 1 >= 0 ) /*0x5891ca*/
         {
+  int v8; // edx
           v8 = a2; /*0x5891cc*/
           do /*0x5891d6*/
           {
@@ -150,15 +145,19 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
       return 0; /*0x589284*/
     if ( *&this->Items ) /*0x589201*/
     {
+  int v11; // edx
       v11 = *&this->Capacity; /*0x589206*/
       if ( a2 < v11 ) /*0x58920b*/
         v11 = a2; /*0x58920d*/
+  int v12; // ecx
       v12 = 0; /*0x58920f*/
       if ( v11 > 0 ) /*0x589213*/
       {
         do /*0x589232*/
         {
+  int v13; // eax
           v13 = 8 * v12; /*0x589218*/
+  unsigned int *v14; // ebx
           v14 = (unsigned int *)(*&this->Items + 8 * v12++); /*0x589221*/
           *(unsigned int *)&v5[v13] = *v14; /*0x589228*/
           *(unsigned int *)&v5[v13 + 4] = v14[1]; /*0x58922e*/
@@ -180,6 +179,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
   {
     (*(void (**)(_DynamicVectorClass_USubzoneConnectionStruct *))(*(unsigned int *)this->vfptr + 12))(this); /*0x589268*/
   }
+  int v15; // eax
   v15 = *&this->Capacity; /*0x58926b*/
   if ( v15 < *(unsigned int *)this->Count ) /*0x589273*/
     *(unsigned int *)this->Count = v15; /*0x589275*/
@@ -201,29 +201,21 @@ namespace gamemd {
 AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
 {
 
-  int v3; // ebp
-  char *v5; // edi
-  int v6; // eax
-  unsigned char *v7; // ecx
-  int v8; // edx
-  char *v9; // eax
-  int v10; // ecx
-  int m_8; // ecx
-  int v12; // eax
-  int v13; // edx
-  char *v14; // ebx
-  int v15; // eax
 
+  int v3; // ebp
   v3 = a2; /*0x6284a2*/
   if ( a2 ) /*0x6284ae*/
   {
+  char *v5; // edi
     v5 = a3; /*0x6284b4*/
     LOBYTE(this->IsInitialized) = 0; /*0x6284b8*/
     if ( a3 ) /*0x6284bd*/
     {
       if ( a2 - 1 >= 0 ) /*0x6284f6*/
       {
+  char *v9; // eax
         v9 = a3 + 2; /*0x6284f8*/
+  int v10; // ecx
         v10 = a2; /*0x6284fb*/
         do /*0x628508*/
         {
@@ -238,12 +230,15 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
     }
     else
     {
+  int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x6284c4*/
       if ( v6 ) /*0x6284ce*/
       {
         if ( a2 - 1 >= 0 ) /*0x6284d5*/
         {
+  unsigned char *v7; // ecx
           v7 = &v6->ptr_2; /*0x6284d7*/
+  int v8; // edx
           v8 = a2; /*0x6284da*/
           do /*0x6284e7*/
           {
@@ -267,15 +262,19 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
       return 0; /*0x628592*/
     if ( *&this->Items ) /*0x628512*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x628517*/
       if ( a2 < m_8 ) /*0x62851c*/
         m_8 = a2; /*0x62851e*/
       if ( m_8 > 0 ) /*0x628522*/
       {
+  int v12; // eax
         v12 = 0; /*0x628524*/
         do /*0x628540*/
         {
+  int v13; // edx
           v13 = (int)(*&this->Items + v12); /*0x62852b*/
+  char *v14; // ebx
           v14 = &v5[v12]; /*0x62852d*/
           v12 += 3; /*0x628530*/
           --m_8; /*0x628533*/
@@ -299,6 +298,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
   {
     (*(void (**)(_DynamicVectorClass_VHSVClass *))(*(unsigned int *)this->vfptr + 12))(this); /*0x628576*/
   }
+  int v15; // eax
   v15 = this->Capacity; /*0x628579*/
   if ( v15 < this->Count ) /*0x628581*/
     this->Count = (void *)(v15); /*0x628583*/
@@ -311,29 +311,20 @@ namespace gamemd {
 AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
 {
 
-  int v3; // edi
-  Byte *v5; // esi
-  int v6; // ebx
-  Byte *v7; // esi
-  int v8; // ebx
-  int m_8; // eax
-  int v10; // ebx
-  char *v11; // edi
-  int v12; // esi
-  int v13; // eax
-  int v15; // [esp+10h] [ebp-8h]
   char *v16; // [esp+10h] [ebp-8h]
-  int v17; // [esp+14h] [ebp-4h]
 
+  int v3; // edi
   v3 = (int)(aP1); /*0x628bb7*/
   if ( aP1 ) /*0x628bbf*/
   {
+  Byte *v5; // esi
     v5 = (Byte *)a2; /*0x628bc5*/
     LOBYTE(this->IsInitialized) = 0; /*0x628bc9*/
     if ( a2 ) /*0x628bcf*/
     {
       if ( aP1 - 1 >= 0 ) /*0x628c25*/
       {
+  int v8; // ebx
         v8 = (int)(aP1); /*0x628c27*/
         do /*0x628c38*/
         {
@@ -347,12 +338,15 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
     }
     else
     {
+  int v6; // ebx
       v6 = __2_YAPAXI_Z(260 * aP1); /*0x628be1*/
       if ( v6 ) /*0x628be8*/
       {
+  Byte *v7; // esi
         v7 = (Byte *)v6; /*0x628bed*/
         if ( aP1 - 1 >= 0 ) /*0x628bf1*/
         {
+  int v15; // [esp+10h] [ebp-8h]
           v15 = (int)(aP1); /*0x628bf4*/
           do /*0x628c0e*/
           {
@@ -374,16 +368,21 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
       return 0; /*0x628cfa*/
     if ( *&this->Items ) /*0x628c52*/
     {
+  int m_8; // eax
       m_8 = this->Capacity; /*0x628c59*/
       if ( aP1 < m_8 ) /*0x628c5e*/
         m_8 = (int)(aP1); /*0x628c60*/
       if ( m_8 > 0 ) /*0x628c64*/
       {
+  int v10; // ebx
         v10 = 0; /*0x628c66*/
+  char *v11; // edi
         v11 = v16; /*0x628c68*/
+  int v17; // [esp+14h] [ebp-4h]
         v17 = m_8; /*0x628c6a*/
         do /*0x628c9c*/
         {
+  int v12; // esi
           v12 = (int)(v10 + *&this->Items); /*0x628c73*/
           String::CopyChecked(v11, (const char *)v12); /*0x628c76*/
           v11->q100 = *(unsigned int *)(v12 + 256); /*0x628c85*/
@@ -408,6 +407,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   {
     (*(void (**)(_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode *))(*(unsigned int *)this->vfptr + 12))(this); /*0x628cdb*/
   }
+  int v13; // eax
   v13 = this->Capacity; /*0x628cde*/
   if ( v13 < this->Count ) /*0x628ce6*/
     this->Count = (void *)(v13); /*0x628ce8*/
@@ -419,8 +419,8 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
 namespace gamemd {
 void DynamicVectorClass_uint::ddtor(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->Items; /*0x42d546*/
   *(unsigned int *)&a1_1->Count = 0; /*0x42d549*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x42d550*/
@@ -445,18 +445,18 @@ int DynamicVectorClass_uint::Clear(int a2)
 namespace gamemd {
 char DynamicVectorClass_uint::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = (int)(*&this->Capacity); /*0x42d602*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x42d60d*/
   {
+  int v3; // edx
     v3 = 0; /*0x42d60f*/
     if ( m_8 <= 0 ) /*0x42d613*/
       return 1; /*0x42d633*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->Items); /*0x42d615*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x42d61b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x42d624*/
     {
@@ -475,13 +475,11 @@ namespace gamemd {
 char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
 
   if ( a2 ) /*0x42d64c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x42d656*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x42d65c*/
       v4 = a3; /*0x42d672*/
     else
@@ -491,9 +489,11 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
     {
       if ( *&this->Items ) /*0x42d685*/
       {
+  int m_8; // ecx
         m_8 = (int)(this->Capacity); /*0x42d68c*/
         if ( a2 < m_8 ) /*0x42d691*/
           m_8 = a2; /*0x42d693*/
+  int i; // eax
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x42d699*/
           ++i; /*0x42d69e*/
         if ( BYTE1(this->IsInitialized) ) /*0x42d6ab*/
@@ -539,16 +539,16 @@ void DynamicVectorClass_uint::Clear_0()
 namespace gamemd {
 int DynamicVectorClass_uint::FindItemIndex(unsigned int * a2)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(this->IsInitialized) ) /*0x42d720*/
     return 0; /*0x42d728*/
+  int m_8; // edx
   m_8 = (int)(*&this->Capacity); /*0x42d72e*/
+  int result; // eax
   result = 0; /*0x42d731*/
   if ( m_8 <= 0 ) /*0x42d735*/
     return -1; /*0x42d74c*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x42d73b*/
   {
     if ( ++result >= m_8 ) /*0x42d74a*/
@@ -574,14 +574,11 @@ namespace gamemd {
 char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x42d78c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x42d792*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x42d798*/
       v4 = a3; /*0x42d7ae*/
     else
@@ -591,9 +588,11 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
       return 0; /*0x42d82a*/
     if ( *&this->Items ) /*0x42d7b8*/
     {
+  int m_8; // ecx
       m_8 = (int)(this->Capacity); /*0x42d7bf*/
       if ( a2 < m_8 ) /*0x42d7c4*/
         m_8 = a2; /*0x42d7c6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x42d7cc*/
         ++i; /*0x42d7d1*/
       if ( BYTE1(this->IsInitialized) ) /*0x42d7de*/
@@ -610,6 +609,7 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_I *))(*(unsigned int *)this->vtable1 + 12))(this); /*0x42d80e*/
   }
+  int v7; // eax
   v7 = (int)(this->Capacity); /*0x42d811*/
   if ( v7 < this->Count ) /*0x42d819*/
     this->Count = (void *)(v7); /*0x42d81b*/
@@ -623,14 +623,14 @@ namespace gamemd {
 int DynamicVectorClass_uint::GetSize(unsigned int * a2)
 {
 
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = (int)(this->Count); /*0x42d880*/
+  int result; // eax
   result = 0; /*0x42d883*/
   if ( m_10 <= 0 ) /*0x42d888*/
     return -1; /*0x42d89f*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x42d88e*/
   {
     if ( ++result >= m_10 ) /*0x42d89d*/
@@ -644,8 +644,8 @@ int DynamicVectorClass_uint::GetSize(unsigned int * a2)
 namespace gamemd {
 VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->u32_8; /*0x42db13*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42db16*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x42db20*/
@@ -666,8 +666,8 @@ namespace gamemd {
 DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x42db63*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x42db66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x42db70*/
@@ -689,10 +689,6 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
 {
 
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   *&aP1->Items = 0; /*0x4779ed*/
   *&aP1->Capacity = 0; /*0x4779f0*/
@@ -702,15 +698,19 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   if ( aP1 != (DynamicVectorClass *)a2 ) /*0x477a00*/
   {
     ((int)aP1)->Destroy(); /*0x477a02*/
+  int v3; // eax
     v3 = a2[2]; /*0x477a08*/
     *&aP1->Capacity = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/
     {
+  int v4; // eax
       v4 = (int)(__2_YAPAXI_Z(4 * v3)); /*0x477a16*/
       *&aP1->Items = (void *)(v4); /*0x477a20*/
       if ( v4 ) /*0x477a23*/
       {
+  int v5; // ecx
         v5 = *&aP1->Capacity; /*0x477a25*/
+  int v6; // eax
         v6 = 0; /*0x477a28*/
         BYTE1(aP1->IsAllocated) = 1; /*0x477a2c*/
         if ( v5 > 0 ) /*0x477a30*/
@@ -768,8 +768,8 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
 namespace gamemd {
 void DynamicVectorClass_PAD::ddtor(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->Items; /*0x49e956*/
   *(unsigned int *)&a1_1->Count = 0; /*0x49e959*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x49e960*/
@@ -806,8 +806,8 @@ namespace gamemd {
 void DynamicVectorClass_PAD::Clear_49E9B0()
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x49e9b6*/
   this->Count = 0; /*0x49e9b9*/
   if ( v2 && BYTE1(this->IsInitialized) ) /*0x49e9c0*/
@@ -846,18 +846,18 @@ int DynamicVectorClass_PAD_16::Get(int a2, void *a2_2)
 namespace gamemd {
 char DynamicVectorClass_PAD::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = (int)(*&this->Capacity); /*0x49ea32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x49ea3d*/
   {
+  int v3; // edx
     v3 = 0; /*0x49ea3f*/
     if ( m_8 <= 0 ) /*0x49ea43*/
       return 1; /*0x49ea63*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->Items); /*0x49ea45*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x49ea4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x49ea54*/
     {
@@ -876,14 +876,11 @@ namespace gamemd {
 char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x49ea7c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x49ea82*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x49ea88*/
       v4 = a3; /*0x49ea9e*/
     else
@@ -893,9 +890,11 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
       return 0; /*0x49eb1a*/
     if ( *&this->Items ) /*0x49eaa8*/
     {
+  int m_8; // ecx
       m_8 = (int)(this->Capacity); /*0x49eaaf*/
       if ( a2 < m_8 ) /*0x49eab4*/
         m_8 = a2; /*0x49eab6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x49eabc*/
         ++i; /*0x49eac1*/
       if ( BYTE1(this->IsInitialized) ) /*0x49eace*/
@@ -912,6 +911,7 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAD *))(*(unsigned int *)this->vfptr + 12))(this); /*0x49eafe*/
   }
+  int v7; // eax
   v7 = (int)(this->Capacity); /*0x49eb01*/
   if ( v7 < this->Count ) /*0x49eb09*/
     this->Count = (void *)(v7); /*0x49eb0b*/
@@ -924,14 +924,14 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
 namespace gamemd {
 int DynamicVectorClass_PAD::GetSize(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = (int)(*&this->Count); /*0x49eb20*/
+  int result; // eax
   result = 0; /*0x49eb23*/
   if ( m_10 <= 0 ) /*0x49eb28*/
     return -1; /*0x49eb3f*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x49eb2e*/
   {
     if ( ++result >= m_10 ) /*0x49eb3d*/
@@ -944,18 +944,18 @@ int DynamicVectorClass_PAD::GetSize(unsigned int * a2)
 namespace gamemd {
 char DynamicVectorClass_PAD_16::Add(int a2, void *a2_2, void *a3_1)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // eax
-  int v5; // ecx
 
+  int m_8; // esi
   m_8 = this->Capacity; /*0x49eb52*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x49eb5d*/
   {
+  int v3; // edx
     v3 = 0; /*0x49eb5f*/
     if ( m_8 <= 0 ) /*0x49eb63*/
       return 1; /*0x49eb83*/
+  unsigned int *v4; // eax
     v4 = (unsigned int *)(*&this->Items); /*0x49eb65*/
+  int v5; // ecx
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x49eb6b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x49eb74*/
     {
@@ -1002,14 +1002,11 @@ namespace gamemd {
 char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x49ed3c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x49ed42*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x49ed48*/
       v4 = a3; /*0x49ed5e*/
     else
@@ -1019,9 +1016,11 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x49edda*/
     if ( *&this->Items ) /*0x49ed68*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x49ed6f*/
       if ( a2 < m_8 ) /*0x49ed74*/
         m_8 = a2; /*0x49ed76*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x49ed7c*/
         ++i; /*0x49ed81*/
       if ( BYTE1(this->IsInitialized) ) /*0x49ed8e*/
@@ -1038,6 +1037,7 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->vfptr + 12))(this); /*0x49edbe*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x49edc1*/
   if ( v7 < this->Count ) /*0x49edc9*/
     this->Count = v7; /*0x49edcb*/
@@ -1050,14 +1050,14 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int DynamicVectorClass_PAD::FindItemIndex(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = *&this->Count; /*0x49ede0*/
+  int result; // eax
   result = 0; /*0x49ede3*/
   if ( m_10 <= 0 ) /*0x49ede8*/
     return -1; /*0x49edff*/
+  unsigned int *i; // ecx
   for ( i = *&this->Items; *i != *a2; ++i ) /*0x49edee*/
   {
     if ( ++result >= m_10 ) /*0x49edfd*/
@@ -1072,8 +1072,8 @@ namespace gamemd {
 DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void *a3_1)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x49ee13*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x49ee16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x49ee20*/
@@ -1094,8 +1094,8 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
 namespace gamemd {
 VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x49eff3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClassDynamicVectorClass; /*0x49eff6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x49f000*/
@@ -1115,8 +1115,8 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
 namespace gamemd {
 DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->u32_8; /*0x49f043*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClassDynamicVectorClass; /*0x49f046*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x49f050*/
@@ -1136,8 +1136,8 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 namespace gamemd {  // G42.18c ns repair
 int DynamicVectorClass_flat::Destroy(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   result = ((unsigned int)(a1->Items)); /*0x50ea06*/
   if ( result && (((unsigned char *)&(*(unsigned int *)&a1->IsAllocated))[1]) ) /*0x50ea0d*/
   {
@@ -1158,8 +1158,8 @@ namespace gamemd {  // G42.18c ns repair
 int DynamicVectorClass_flat::Destroy_Alt()
 {
 
-  int result; // eax
 
+  int result; // eax
   result = *&this->Items; /*0x5251c6*/
   if ( result && BYTE1(this->IsInitialized) ) /*0x5251cd*/
   {
@@ -1274,8 +1274,8 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
 namespace gamemd {
 void DynamicVectorClass_ptr_NodeNameType::ddtor(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->Items; /*0x5c5076*/
   *(unsigned int *)&a1_1->Count = 0; /*0x5c5079*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x5c5080*/
@@ -1311,14 +1311,11 @@ namespace gamemd {
 char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x5c551c*/
   {
     LOBYTE(this->IsInitialized) = 0; /*0x5c5522*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x5c5528*/
       v4 = a3; /*0x5c553e*/
     else
@@ -1328,9 +1325,11 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
       return 0; /*0x5c55ba*/
     if ( *&this->Items ) /*0x5c5548*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x5c554f*/
       if ( a2 < m_8 ) /*0x5c5554*/
         m_8 = a2; /*0x5c5556*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->Items + 4 * i - 4) ) /*0x5c555c*/
         ++i; /*0x5c5561*/
       if ( BYTE1(this->IsInitialized) ) /*0x5c556e*/
@@ -1347,6 +1346,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x5c55a1*/
   if ( v7 < this->Count ) /*0x5c55a9*/
     this->Count = v7; /*0x5c55ab*/
@@ -1384,8 +1384,8 @@ unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destru
 namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D20()
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x627d26*/
   *&this->Count = 0; /*0x627d29*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x627d30*/
@@ -1407,8 +1407,8 @@ namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear_627D80()
 {
 
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->Items; /*0x627d86*/
   this->Count = 0; /*0x627d89*/
   if ( v2 && BYTE1(this->IsInitialized) ) /*0x627d90*/
@@ -1437,8 +1437,8 @@ unsigned int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItemI
 namespace gamemd {
 int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::GetItem(int a2, int a3)
 {
-  int v3; // ecx
 
+  int v3; // ecx
   v3 = *&this->Items + 3 * a3; /*0x627ded*/
   *(unsigned short *)a2 = *(unsigned short *)v3; /*0x627df8*/
   a2->u8_2 = *(unsigned char *)(v3 + 2); /*0x627dff*/
@@ -1459,16 +1459,16 @@ namespace gamemd {
 char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::IsEqualTo(int a2)
 {
 
-  int m_8; // eax
-  int v4; // ebx
-  int i; // esi
 
+  int m_8; // eax
   m_8 = this->Capacity; /*0x6281fd*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x628202*/
   {
+  int v4; // ebx
     v4 = 0; /*0x628204*/
     if ( m_8 <= 0 ) /*0x628208*/
       return 1; /*0x628231*/
+  int i; // esi
     for ( i = 0; /*0x62820a*/
           !((DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode *)(i + *&this->Items))->HashEntryCompare((unsigned char *)(i + *(unsigned int *)(a2 + 4)));
           i += 3 )
@@ -1496,8 +1496,8 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ProcessAll(int a2
 namespace gamemd {
 DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_1(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x628643*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x628646*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x628650*/
@@ -1522,8 +1522,8 @@ namespace gamemd {
 DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_2(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x6287b3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x6287b6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6287c0*/
@@ -1544,8 +1544,8 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 namespace gamemd {
 void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::ddtor(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->Items; /*0x628806*/
   *(unsigned int *)&a1_1->Count = 0; /*0x628809*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x628810*/
@@ -1567,8 +1567,8 @@ namespace gamemd {
 int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear(int a2, int a3)
 {
 
-  int v3; // esi
 
+  int v3; // esi
   v3 = *&this->Items + 260 * a3; /*0x628876*/
   String::Copy((char *)a2, (const char *)v3); /*0x62887a*/
   a2->u32_100 = *(unsigned int *)(v3 + 256); /*0x628887*/

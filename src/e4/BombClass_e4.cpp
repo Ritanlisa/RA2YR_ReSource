@@ -29,7 +29,6 @@ namespace gamemd {  // G42.18 ns repair
 int BombClass::AbstractClass()
 {
 
-  int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
@@ -50,6 +49,7 @@ int BombClass::AbstractClass()
          dword_89C670 + dword_89C67C,
          0) )
   {
+  int v2; // eax
     v2 = dword_89C678++; /*0x438657*/
     *((unsigned int *)dword_89C66C + v2) = (unsigned int)(this); /*0x438666*/
   }
@@ -62,10 +62,10 @@ int BombClass::AbstractClass()
 namespace gamemd {
 void * BombClass::GetCurrentFrame()
 {
-  int v2; // ecx
 
   if ( *&this->audioController == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
+  int v2; // ecx
   v2 = 2 /*0x438a4c*/
      * ((*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - this->audioController[1])
       / (*(unsigned int *)(*(unsigned int *)&(&DSurface_ViewBounds.__pad_FC)[324] + 4048)
@@ -94,33 +94,33 @@ namespace gamemd {
 int BombClass::Stat(int * a2)
 {
 
-  int v3; // edx
-  int BombClass_field_28; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int BombClass_field_2C; // eax
-  int v9; // eax
 
   AbstractClass::ProcessPower((AbstractClass *)this); /*0x438a99*/
+  int BombClass_field_28; // eax
   BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
+  int v5; // eax
     v5 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
+  int v6; // eax
   v6 = *(unsigned int *)this->__pad_024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
+  int v7; // eax
     v7 = (*(int (**)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
     Power::TimerProcess(v7); /*0x438acb*/
   }
+  int BombClass_field_2C; // eax
   BombClass_field_2C = (int)(this->BombClass_field_2C); /*0x438ad0*/
   if ( BombClass_field_2C ) /*0x438ad5*/
   {
+  int v9; // eax
     v9 = (*(int (**)(int))(*(unsigned int *)(BombClass_field_2C + 4) + 16))(BombClass_field_2C + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }
+  int v3; // edx
   LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
   return ((Power *)a2)->FlagProcess(v3); /*0x438af4*/
 
@@ -169,8 +169,8 @@ namespace gamemd {
 int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
 {
 
-  int Prefix_0; // edi
 
+  int Prefix_0; // edi
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP0); /*0x438b51*/
   if ( Prefix_0 >= 0 ) /*0x438b55*/
   {
@@ -206,15 +206,15 @@ namespace gamemd {
 BombClass * BombClass::CopyTo(char a2)
 {
 
-  int v3; // eax
-  BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_BombClass; /*0x4393f7*/
   /* X11: vtable install elided (implicit via BombClass virtuals 0x4393fd) */
   /* X11: vtable install elided (implicit via BombClass virtuals 0x439404) */
   /* X11: vtable install elided (implicit via BombClass virtuals 0x43940b) */
   AudioFileClass::Release(&this->HouseClass_6C); /*0x439412*/
+  BombClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x439427*/
+  int v3; // eax
   v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {

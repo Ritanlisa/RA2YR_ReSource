@@ -9,19 +9,17 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_7AC500(int a1)
 {
-  int v2; // esi
-  int v3; // eax
-  unsigned int *v4; // esi
   unsigned int *v5; // ebp
-  unsigned int v6; // esi
 
   if ( !a1 ) /*0x7ac507*/
     return -2147024809; /*0x7ac509*/
+  int v2; // esi
   v2 = *(unsigned int *)(a1 + 16); /*0x7ac514*/
   if ( v2 && *(unsigned int *)v2 ) /*0x7ac51b*/
   {
     do /*0x7ac546*/
     {
+  int v3; // eax
       v3 = *(unsigned int *)(v2 + 16); /*0x7ac520*/
       if ( v3 ) /*0x7ac525*/
         (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(v2 + 16)); /*0x7ac52a*/
@@ -37,6 +35,7 @@ int sub_7AC500(int a1)
   DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 28)); /*0x7ac555*/
   DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 52)); /*0x7ac55b*/
   DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 76)); /*0x7ac561*/
+  unsigned int *v4; // esi
   v4 = *(unsigned int **)(a1 + 128); /*0x7ac563*/
   if ( v4 ) /*0x7ac56b*/
   {
@@ -53,6 +52,7 @@ int sub_7AC500(int a1)
   {
     if ( *(unsigned int *)(a1 + 120) ) /*0x7ac593*/
     {
+  unsigned int v6; // esi
       v6 = 0; /*0x7ac5a0*/
       do /*0x7ac5b1*/
         HeapDestroy(*(HANDLE *)(*(unsigned int *)(a1 + 120) + 4 * v6++)); /*0x7ac5a9*/

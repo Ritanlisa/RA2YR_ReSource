@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int ColorListClass::SetColor()
 {
-  int v1; // eax
 
+  int v1; // eax
   v1 = this->u32_16C; /*0x557ae0*/
   if ( this->u32_44 > v1 ) /*0x557aeb*/
     return *(unsigned int *)(this->u32_38 + 4 * v1); /*0x557af3*/
@@ -26,9 +26,8 @@ namespace gamemd {
 int ColorListClass::Clear(unsigned int a2)
 {
 
-  int result; // eax
-  int v4; // ecx
 
+  int result; // eax
   result = a2; /*0x557f40*/
   if ( a2 >= this->u32_44 ) /*0x557f4a*/
   {
@@ -40,6 +39,7 @@ int ColorListClass::Clear(unsigned int a2)
     (*(void (**)(ListClass *))(*(unsigned int *)this->vtable1 + 72))(this); /*0x557f56*/
     if ( this->u32_16C < this->u32_170 ) /*0x557f67*/
       (*(void (**)(ListClass *, unsigned int))(*(unsigned int *)this->vtable1 + 192))(this, this->u32_16C); /*0x557f6e*/
+  int v4; // ecx
     v4 = this->u32_50; /*0x557f74*/
     result = this->u32_16C; /*0x557f7d*/
     if ( result >= v4 + this->u32_170 ) /*0x557f87*/
@@ -54,10 +54,10 @@ namespace gamemd {
 void ColorListClass::RemoveColor(wchar_t * String2)
 {
 
-  int v3; // esi
 
   if ( String2 && this->u32_44 > 0 ) /*0x558022*/
   {
+  int v3; // esi
     v3 = 0; /*0x558024*/
     while ( _wcsicmp(*(const wchar_t **)(this->u32_38 + 4 * v3), String2) ) /*0x55803c*/
     {
@@ -82,15 +82,15 @@ int ColorListClass::GetColor(int a2)
 namespace gamemd {
 ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
 {
-  int v3; // eax
-  char *v4; // esi
-  void *v5; // eax
 
+  int v3; // eax
   v3 = *((unsigned int *)Block + 93); /*0x488f05*/
+  char *v4; // esi
   v4 = (char *)Block + 372; /*0x488f0b*/
   *(unsigned int *)Block->tail_0 = &vt_ColorListClass; /*0x488f13*/
   (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
   *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
+  void *v5; // eax
   v5 = (void *)v4->__pad_004; /*0x488f24*/
   *(unsigned int *)v4 = (unsigned int)(&vt_VectorClass); /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/

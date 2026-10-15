@@ -53,45 +53,13 @@ extern unsigned char aVelocitypertur;  // data: 0x836f9c truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
-  int v3; // eax
-  char v4; // cl
-  char Bool_Overwrite; // al
-  int Int_Overwrite; // eax
-  int ParticleSystemTypeClass_field_0x2A8; // ecx
-  int v8; // eax
-  int ParticleSystemTypeClass_field_0x2B8; // edx
-  bool v13; // zf
   int v14; // eax
-  float *XYZFromINI; // eax
-  double v16; // rax
-  unsigned int v18; // ecx
-  unsigned int v19; // edx
-  IUnknown *ParticleSystemTypeClass_field_0x2E4; // eax
-  unsigned int v22; // ecx
-  double v24; // rax
-  unsigned int v26; // ecx
-  unsigned int v27; // edx
-  char ParticleSystemTypeClass_field_0x308_high; // al
-  int Coord; // eax
-  int ParticleSystemTypeClass_field_0x300; // ecx
-  int v33; // eax
-  char v34; // al
-  double v37; // [esp+0h] [ebp-68h]
-  double v38; // [esp+0h] [ebp-68h]
-  double v39; // [esp+0h] [ebp-68h]
-  double v40; // [esp+0h] [ebp-68h]
-  double v41; // [esp+0h] [ebp-68h]
-  int ParticleSystemTypeClass_field_0x29C; // [esp+4h] [ebp-64h]
-  int v43; // [esp+4h] [ebp-64h]
-  int v44; // [esp+14h] [ebp-54h] BYREF
-  int v45; // [esp+18h] [ebp-50h]
-  float v46[3]; // [esp+1Ch] [ebp-4Ch] BYREF
-  char Destination[64]; // [esp+28h] [ebp-40h] BYREF
 
   _ESI = this; /*0x6442de*/
   INIClass::ResetSection((INIClass *)aP1); /*0x6442e3*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)_ESI))->LoadFromINI(aP1) ) /*0x6442eb*/
     return 0; /*0x644622*/
+  char Destination[64]; // [esp+28h] [ebp-40h] BYREF
   INIClass::GetString( /*0x64430f*/
     (INIClass *)aP1,
     &_ESI->BarrelVoxel,
@@ -99,14 +67,18 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &g_INI_DefaultBuffer,
     Destination,
     64);
+  int v3; // eax
   v3 = (int)(((BuildingTypeClass *)(Destination))->FindOrCreateEx()); /*0x644318*/
+  char v4; // cl
   v4 = _ESI->q298; /*0x64431d*/
   _ESI->ParticleSystemTypeClass_field_0x294 = (IUnknown *)v3; /*0x644323*/
+  char Bool_Overwrite; // al
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
                      (int *)aP1,
                      &_ESI->BarrelVoxel,
                      g_INI_Key_Spawns,
                      v4);
+  int ParticleSystemTypeClass_field_0x29C; // [esp+4h] [ebp-64h]
   ParticleSystemTypeClass_field_0x29C = (int)_ESI->ParticleSystemTypeClass_field_0x29C; /*0x64433f*/
   _ESI->q298 = Bool_Overwrite; /*0x644346*/
   _ESI->ParticleSystemTypeClass_field_0x29C = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x644351*/
@@ -114,13 +86,16 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                                                             &_ESI->BarrelVoxel,
                                                             aSpawnframes,
                                                             ParticleSystemTypeClass_field_0x29C);
+  int Int_Overwrite; // eax
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644366*/
                     (bool *)aP1,
                     &_ESI->BarrelVoxel,
                     aParticlecap,
                     (_ESI->q2A4));
+  int ParticleSystemTypeClass_field_0x2A8; // ecx
   ParticleSystemTypeClass_field_0x2A8 = _ESI->ParticleSystemTypeClass_field_0x2A8; /*0x64436b*/
   (_ESI->q2A4) = Int_Overwrite; /*0x644371*/
+  int v8; // eax
   v8 = INIClass::ReadInt_Overwrite( /*0x644380*/
          (bool *)aP1,
          &_ESI->BarrelVoxel,
@@ -129,6 +104,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   __asm { fld dword ptr [esi+2A0h] } /*0x644385*/
   _ESI->ParticleSystemTypeClass_field_0x2A8 = v8; /*0x644390*/
   __asm { fstp [esp+68h+var_68]; double } /*0x644396*/
+  double v37; // [esp+0h] [ebp-68h]
   INIClass::ReadDouble_Overwrite( /*0x64439f*/
     (double *)aP1,
     &_ESI->BarrelVoxel,
@@ -138,6 +114,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   *&_ESI->q2A0 = _ET1; /*0x6443a4*/
   __asm { fld dword ptr [esi+2ACh] } /*0x6443aa*/
   __asm { fstp [esp+68h+var_68]; double }
+  double v38; // [esp+0h] [ebp-68h]
   INIClass::ReadDouble_Overwrite( /*0x6443be*/
     (double *)aP1,
     &_ESI->BarrelVoxel,
@@ -147,11 +124,13 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   *&_ESI->q2AC = _ET1; /*0x6443c3*/
   __asm { fld dword ptr [esi+2B0h] } /*0x6443c9*/
   __asm { fstp [esp+68h+var_68]; double }
+  double v39; // [esp+0h] [ebp-68h]
   INIClass::ReadDouble_Overwrite( /*0x6443dd*/
     (double *)aP1,
     &_ESI->BarrelVoxel,
     aSpawntransluce,
     v39);
+  int ParticleSystemTypeClass_field_0x2B8; // edx
   ParticleSystemTypeClass_field_0x2B8 = _ESI->ParticleTypeClass_2B8; /*0x6443e2*/
   __asm { fstp dword ptr [esi+2B0h] } /*0x6443ea*/
   *&_ESI->DamageDelay = _ET1; /*0x6443ea*/
@@ -167,10 +146,13 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &g_INI_DefaultBuffer,
     Destination,
     64);
+  int v45; // [esp+18h] [ebp-50h]
   v45 = 0; /*0x64441b*/
+  int v44; // [esp+14h] [ebp-54h] BYREF
   v44 = (int)off_836EE0; /*0x644423*/
   while ( 1 ) /*0x64443f*/
   {
+  bool v13; // zf
     v13 = _strcmpi(Destination, *(char **)v44) == 0; /*0x64443f*/
     v14 = v45; /*0x644441*/
     if ( v13 ) /*0x644445*/
@@ -184,6 +166,8 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     }
   }
   _ESI->ParticleSystemTypeClass_field_0x2B4 = v14; /*0x644461*/
+  float *XYZFromINI; // eax
+  float v46[3]; // [esp+1Ch] [ebp-4Ch] BYREF
   XYZFromINI = ParticleSystemTypeClass::ReadXYZFromINI( /*0x64447b*/
                  (ParticleSystemTypeClass *)aP1,
                  v46,
@@ -192,6 +176,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                  &_ESI->ParticleSystemTypeClass_field_2C0);
   _ESI->ParticleSystemTypeClass_field_2C0 = *(int *)XYZFromINI; /*0x644482*/
   _ESI->StartScale = (int)XYZFromINI[1]; /*0x64448b*/
+  double v40; // [esp+0h] [ebp-68h]
   v40 = *&_ESI->Beam; /*0x6444a1*/
   _ESI->ParticleSystemTypeClass_field_2C8 = (int)XYZFromINI[2]; /*0x6444aa*/
   INIClass::ReadDouble_Overwrite( /*0x6444b0*/
@@ -199,6 +184,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &_ESI->BarrelVoxel,
     aParticlesperco,
     v40);
+  double v16; // rax
   v16 = *&_ESI->ParticleSystemTypeClass_field_0x2D0; /*0x6444bb*/
   __asm { fstp qword ptr [esi+2C8h] } /*0x6444c1*/
   *&_ESI->Beam = _RT1; /*0x6444c1*/
@@ -207,7 +193,9 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &_ESI->BarrelVoxel,
     aSpiraldeltaper,
     v16);
+  unsigned int v18; // ecx
   v18 = *&_ESI->q2DC; /*0x6444d6*/
+  unsigned int v19; // edx
   v19 = *(unsigned int *)_ESI->__pad_2D8; /*0x6444dc*/
   __asm { fstp qword ptr [esi+2D0h] } /*0x6444e2*/
   *&_ESI->ParticleSystemTypeClass_field_0x2D0 = _RT1; /*0x6444e2*/
@@ -216,7 +204,9 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &_ESI->BarrelVoxel,
     aSpiralradius,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v19)) | ((unsigned long)(unsigned int)(v18) << 32))));
+  IUnknown *ParticleSystemTypeClass_field_0x2E4; // eax
   ParticleSystemTypeClass_field_0x2E4 = _ESI->ParticleSystemTypeClass_field_0x2E4; /*0x6444f7*/
+  unsigned int v22; // ecx
   v22 = *&_ESI->q2E0; /*0x6444fd*/
   __asm { fstp qword ptr [esi+2D8h] } /*0x644503*/
   *(double *)_ESI->__pad_2D8 = _RT1; /*0x644503*/
@@ -225,6 +215,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &_ESI->BarrelVoxel,
     aPositionpertur,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v22)) | ((unsigned long)(unsigned int)((unsigned int)ParticleSystemTypeClass_field_0x2E4) << 32))));
+  double v24; // rax
   v24 = *&_ESI->ParticleSystemTypeClass_field_0x2E8; /*0x64451e*/
   __asm { fstp qword ptr [esi+2E0h] } /*0x644524*/
   *&_ESI->q2E0 = _RT1; /*0x644524*/
@@ -233,7 +224,9 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &_ESI->BarrelVoxel,
     aMovementpertur,
     v24);
+  unsigned int v26; // ecx
   v26 = *&_ESI->u32_2F4; /*0x644539*/
+  unsigned int v27; // edx
   v27 = *&_ESI->q2F0; /*0x64453f*/
   __asm { fstp qword ptr [esi+2E8h] } /*0x644545*/
   *&_ESI->ParticleSystemTypeClass_field_0x2E8 = _RT1; /*0x644545*/
@@ -242,6 +235,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &_ESI->BarrelVoxel,
     aVelocitypertur,
     COERCE_DOUBLE((((unsigned long)(unsigned int)(v27)) | ((unsigned long)(unsigned int)(v26) << 32))));
+  char ParticleSystemTypeClass_field_0x308_high; // al
   ParticleSystemTypeClass_field_0x308_high = (*(_ESI->ParticleSystemTypeClass_field_0x308 + (sizeof(_ESI->ParticleSystemTypeClass_field_0x308) - 1))); /*0x64455a*/
   __asm { fstp qword ptr [esi+2F0h] } /*0x644562*/
   *&_ESI->q2F0 = _RT1; /*0x644562*/
@@ -250,20 +244,24 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                                                         &_ESI->BarrelVoxel,
                                                         aLaser,
                                                         ParticleSystemTypeClass_field_0x308_high);
+  int Coord; // eax
   Coord = INIClass::GetCoord( /*0x64458e*/
             (INIClass *)aP1,
             (int)&v44,
             &_ESI->BarrelVoxel,
             aLasercolor,
             &_ESI->ParticleSystemTypeClass_field_0x308);
+  int ParticleSystemTypeClass_field_0x300; // ecx
   ParticleSystemTypeClass_field_0x300 = _ESI->ParticleSystemTypeClass_field_0x300; /*0x644596*/
   (_ESI->ParticleSystemTypeClass_field_0x308) = *(unsigned short *)Coord; /*0x64459c*/
   (_ESI->q30A) = *(unsigned char *)(Coord + 2); /*0x6445af*/
+  int v33; // eax
   v33 = INIClass::ReadInt_Overwrite( /*0x6445b5*/
           (bool *)aP1,
           &_ESI->BarrelVoxel,
           aSparkspawnfram,
           ParticleSystemTypeClass_field_0x300);
+  int v43; // [esp+4h] [ebp-64h]
   v43 = *(unsigned int *)_ESI->__pad_304; /*0x6445c2*/
   _ESI->ParticleSystemTypeClass_field_0x300 = v33; /*0x6445c9*/
   *(unsigned int *)_ESI->__pad_304 = INIClass::ReadInt_Overwrite( /*0x6445d4*/
@@ -271,11 +269,13 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                                  &_ESI->BarrelVoxel,
                                  aLightsize,
                                  v43);
+  char v34; // al
   v34 = INIClass::ReadBool_Overwrite( /*0x6445e9*/
           (int *)aP1,
           &_ESI->BarrelVoxel,
           aOneframelight,
           (char)_ESI[1].ParticleSystemTypeClass_field_0x0);
+  double v41; // [esp+0h] [ebp-68h]
   v41 = *&_ESI->u32_2F8; /*0x6445fb*/
   (*((unsigned char *)&(_ESI[1].ParticleSystemTypeClass_field_0x0))) = v34; /*0x644604*/
   INIClass::ReadDouble_Overwrite( /*0x64460a*/
@@ -293,10 +293,10 @@ namespace gamemd {
 void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  int v3; // ecx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x644709*/
   Power::TimerProcess((int)this->q294); /*0x644717*/
+  int v3; // ecx
   LOBYTE(v3) = this->q298; /*0x64471c*/
   Power::FlagProcess((Power *)a2, v3); /*0x644725*/
   Power::TimerProcess((int)this->q29C); /*0x644733*/
@@ -314,15 +314,15 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
 {
-  int v3; // eax
-  ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   Block->tail_0 = &vt_ParticleSystemTypeClass; /*0x644966*/
   Block->__pad_004 = &vt_ParticleSystemTypeClass; /*0x64496c*/
   Block->u32_8 = &vt_ParticleSystemTypeClass; /*0x644973*/
   Block->SpawnCount = &vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(&Block->tail_0, 1); /*0x644981*/
+  ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = Block; /*0x644996*/
+  int v3; // eax
   v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&DataGlobal_A83D68 + 16))( /*0x64499a*/
          &DataGlobal_A83D68,
          &v5);
@@ -348,27 +348,27 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
 namespace gamemd {
 float * ParticleSystemTypeClass::ReadXYZFromINI(float * a2, uint8_t * a3, uint8_t * a4, float * a5)
 {
-  char *v5; // eax
-  char *v6; // eax
-  char *v7; // eax
-  float v9; // [esp+4h] [ebp-20Ch]
-  float v10; // [esp+8h] [ebp-208h]
-  float v11; // [esp+Ch] [ebp-204h]
-  char String[512]; // [esp+10h] [ebp-200h] BYREF
 
+  char String[512]; // [esp+10h] [ebp-200h] BYREF
   if ( INIClass::GetString((INIClass *)this, a3, a4, &g_INI_DefaultBuffer, String, 512) ) /*0x476383*/
   {
+  char *v5; // eax
     v5 = strtok(String, Str); /*0x476396*/
     atof(v5); /*0x47639c*/
     __asm { fstp [esp+21Ch+var_20C] } /*0x4763a1*/
+  char *v6; // eax
     v6 = strtok(0, Str); /*0x4763ac*/
     atof(v6); /*0x4763b2*/
     __asm { fstp [esp+228h+var_208] } /*0x4763b7*/
+  char *v7; // eax
     v7 = strtok(0, Str); /*0x4763c2*/
     atof(v7); /*0x4763c8*/
     __asm { fstp [esp+234h+var_204] } /*0x4763d8*/
+  float v9; // [esp+4h] [ebp-20Ch]
     *a2 = v9; /*0x4763e1*/
+  float v10; // [esp+8h] [ebp-208h]
     a2[1] = v10; /*0x4763e8*/
+  float v11; // [esp+Ch] [ebp-204h]
     a2[2] = v11; /*0x4763ef*/
     return a2; /*0x4763cd*/
   }

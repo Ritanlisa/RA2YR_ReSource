@@ -528,8 +528,8 @@ namespace gamemd {
 char E4Recv_6F03F0::sub_6F03F0()
 {
 
-  int *v1; // esi
 
+  int *v1; // esi
   v1 = (int *)this->customSound_controller[1]; /*0x6f03f2*/
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
@@ -548,8 +548,8 @@ char E4Recv_6F03F0::sub_6F03F0()
 namespace gamemd {
 void sub_6F0470()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6f047c*/
   dbl_B0E9D0 = Math::Sqrt(v0 + v0); /*0x6f048e*/
 }
@@ -599,10 +599,10 @@ void sub_6F0520()
 namespace gamemd {
 long long sub_6F0540()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0E9B0 - dbl_B0E9D8); /*0x6f0552*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0E9D0 * 0.5); /*0x6f0566*/
   dword_B0EA28 = result; /*0x6f056b*/
   return result; /*0x6f0570*/
@@ -629,8 +629,8 @@ void sub_6F05B0()
 namespace gamemd {
 long long sub_6F05E0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0EA28) + 0.5); /*0x6f05fb*/
   dword_B0EA1C = result; /*0x6f0600*/
   return result; /*0x6f0606*/
@@ -692,8 +692,8 @@ void nullsub_240()
 namespace gamemd {
 void sub_6F28A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x6f28ac*/
   dbl_B0EA58 = Math::Sqrt(v0 + v0); /*0x6f28be*/
 }
@@ -743,10 +743,10 @@ void sub_6F2950()
 namespace gamemd {
 long long sub_6F2970()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_B0EA30 - dbl_B0EA60); /*0x6f2982*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_B0EA58 * 0.5); /*0x6f2996*/
   dword_B0EB34 = result; /*0x6f299b*/
   return result; /*0x6f29a0*/
@@ -773,8 +773,8 @@ void sub_6F29E0()
 namespace gamemd {
 long long sub_6F2A10()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_B0EB34) + 0.5); /*0x6f2a2b*/
   dword_B0EB24 = result; /*0x6f2a30*/
   return result; /*0x6f2a36*/
@@ -866,50 +866,50 @@ void sub_6F2B20()
 namespace gamemd {
 int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 {
-  int *v5; // edx
-  int v6; // ebx
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // ecx
-  int v11; // eax
-  int *v12; // eax
-  int v13; // ecx
-  int v14; // edx
-  int v15; // eax
-  struct IPersistStreamVtbl *lpVtbl; // edx
-  struct IPersistStreamVtbl *v17; // edx
-  int v19; // [esp+0h] [ebp-34h]
-  int v20; // [esp+4h] [ebp-30h]
-  unsigned int v21[2]; // [esp+10h] [ebp-24h] BYREF
-  int v22; // [esp+18h] [ebp-1Ch]
-  int v23; // [esp+1Ch] [ebp-18h]
-  int v24; // [esp+20h] [ebp-14h]
-  int v25; // [esp+24h] [ebp-10h] BYREF
-  unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
 
+  int *v5; // edx
+  unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
   v5 = (int *)(((Coord *)(v26))->Subtract((3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
+  int v6; // ebx
   v6 = a1->vtable2; /*0x6f5f47*/
+  int v7; // eax
   v7 = (int)((int *)(*v5)); /*0x6f5f4a*/
+  int v8; // ecx
   v8 = v5[1]; /*0x6f5f4c*/
+  int v9; // edx
   v9 = v5[2]; /*0x6f5f4f*/
+  unsigned int v21[2]; // [esp+10h] [ebp-24h] BYREF
   v21[1] = v8; /*0x6f5f52*/
+  int v10; // ecx
   v10 = a2[1]; /*0x6f5f56*/
   v21[0] = v7; /*0x6f5f59*/
+  int v11; // eax
   v11 = *a2; /*0x6f5f5d*/
+  int v22; // [esp+18h] [ebp-1Ch]
   v22 = v9; /*0x6f5f5f*/
+  int *v12; // eax
   v12 = (int *)(((Coord *)(v26))->Subtract((3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1->vtable3) / 4)); /*0x6f5fa0*/
+  int v13; // ecx
   v13 = v12->u32_4; /*0x6f5fa9*/
+  int v14; // edx
   v14 = (int *)(v12->u32_8); /*0x6f5fac*/
+  int v23; // [esp+1Ch] [ebp-18h]
   v23 = *v12; /*0x6f5faf*/
+  int v24; // [esp+20h] [ebp-14h]
   v24 = v13; /*0x6f5fb3*/
+  int v15; // eax
   v15 = a1->vtable3; /*0x6f5fb7*/
+  int v25; // [esp+24h] [ebp-10h] BYREF
   v25 = v14; /*0x6f5fca*/
+  struct IPersistStreamVtbl *lpVtbl; // edx
   lpVtbl = (gamemd::IPersistStreamVtbl *)(g_TacticalClass_Instance); /*0x6f5fd1*/
+  int v19; // [esp+0h] [ebp-34h]
+  int v20; // [esp+4h] [ebp-30h]
   if ( v15 <= v22 ) /*0x6f5fd3*/
     ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(v21, a1, a3, 0, v19, v20); /*0x6f5fe3*/
   else
     ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(a1, v21, a3, 0, v19, v20); /*0x6f5fdb*/
+  struct IPersistStreamVtbl *v17; // edx
   v17 = (gamemd::IPersistStreamVtbl *)(g_TacticalClass_Instance); /*0x6f5ff8*/
   if ( a2[2] <= v26[1] ) /*0x6f5ffa*/
     return ((int (__stdcall *)(int *, int *))v17[3].QueryInterface)(&v25, a2); /*0x6f6015*/
@@ -922,22 +922,22 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 namespace gamemd {
 int sub_6F6030(int * a1, unsigned int * a2, int a3)
 {
-  int v4; // eax
-  int v5; // edi
-  int v6; // ecx
-  int v7; // edi
-  int v8; // kr00_4
-  struct IPersistStreamVtbl *lpVtbl; // eax
-  unsigned int v11[3]; // [esp+10h] [ebp-Ch] BYREF
 
+  int v4; // eax
   v4 = *a1; /*0x6f603b*/
+  int v5; // edi
   v5 = a1[1]; /*0x6f603d*/
+  int v6; // ecx
   v6 = a1[2]; /*0x6f6040*/
+  int v7; // edi
   v7 = 3 * v5 + a2[1]; /*0x6f6056*/
+  int v8; // kr00_4
   v8 = 3 * v6 + a2[2]; /*0x6f6072*/
+  unsigned int v11[3]; // [esp+10h] [ebp-Ch] BYREF
   v11[0] = (3 * v4 + *a2) / 4; /*0x6f6089*/
   v11[1] = v7 / 4; /*0x6f608d*/
   v11[2] = v8 / 4; /*0x6f6091*/
+  struct IPersistStreamVtbl *lpVtbl; // eax
   lpVtbl = (gamemd::IPersistStreamVtbl *)(g_TacticalClass_Instance); /*0x6f6095*/
   if ( v6 <= v8 / 4 ) /*0x6f6098*/
     return ((int (__stdcall *)(unsigned int *, int *, int, unsigned int))lpVtbl[3].QueryInterface)(v11, a1, a3, 0); /*0x6f60b3*/

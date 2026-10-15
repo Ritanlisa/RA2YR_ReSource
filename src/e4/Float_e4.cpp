@@ -20,19 +20,19 @@ float Float::Accumulate(float value, int index)
 namespace gamemd {
 int Float::SubtractClamped(float aP1, int aP2)
 {
-  int16_t v3; // fps
-  double v4; // st7
-  bool v5; // c0
-  char v6; // c2
-  bool v7; // c3
-  int result; // eax
-  double v9; // st6
 
+  double v4; // st7
   v4 = *((float *)this + aP2); /*0x6c96b4*/
+  bool v5; // c0
   v5 = v4 < aP1; /*0x6c96b7*/
+  char v6; // c2
   v6 = 0; /*0x6c96b7*/
+  bool v7; // c3
   v7 = v4 == aP1; /*0x6c96b7*/
+  int16_t v3; // fps
+  int result; // eax
   (*((unsigned short *)&(result))) = v3; /*0x6c96bb*/
+  double v9; // st6
   if ( v4 >= aP1 ) /*0x6c96c0*/
     v9 = *((float *)this + aP2) - aP1; /*0x6c96d7*/
   else

@@ -11,14 +11,14 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_732210(int a1, const char * a2)
 {
-  int v2; // eax
-  int v3; // edi
-  const char **i; // ebp
 
+  int v2; // eax
   v2 = *(unsigned int *)(a1 + 16); /*0x732211*/
+  int v3; // edi
   v3 = 0; /*0x732218*/
   if ( v2 <= 0 ) /*0x732220*/
     return -1; /*0x732261*/
+  const char **i; // ebp
   for ( i = *(const char ***)(a1 + 4); strcmp(a2, *i); ++i ) /*0x732222*/
   {
     if ( ++v3 >= v2 ) /*0x73225f*/

@@ -12,8 +12,8 @@ namespace gamemd {  // G42.18 ns repair
 wchar_t MSPrintAnim::GetCharAt(size_t a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = wcslen(*(const wchar_t **)this->vtable1); /*0x7b7116*/
   if ( a2 >= result ) /*0x7b7124*/
     LOWORD(result) = 0; /*0x7b7130*/

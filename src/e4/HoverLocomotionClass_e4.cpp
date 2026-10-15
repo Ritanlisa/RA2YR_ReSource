@@ -39,8 +39,8 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int HoverLocomotionClass::BeginMove(int a1, int * a2)
 {
-  int v2; // edi
 
+  int v2; // edi
   v2 = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {

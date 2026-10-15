@@ -13,10 +13,6 @@
 namespace gamemd {  // G42.18 ns repair
 void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8, void *a9)
 {
-  int v10; // ecx
-  int16_t v11; // dx
-  int v13; // [esp+8h] [ebp-8h] BYREF
-  int16_t v14; // [esp+Ch] [ebp-4h]
 
   IPXConnClass::initConnection((int)((ModemConnectionClass *)aP1), aP2, aP3, aP4, a5, 2, -1, 60, a9); /*0x53f458*/
   Waypoint::InitInvalid(&aP1->u32_4C); /*0x53f462*/
@@ -29,8 +25,12 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   }
   aP1->q064 = aP8; /*0x53f494*/
   wcscpy(&aP1->u32_D0,(const wchar_t *)(aP8)); /*0x53f497*/
+  int v13; // [esp+8h] [ebp-8h] BYREF
   (&aP1->u32_4C)->CopyAddress((unsigned int *)(&a9), (int)&v13); /*0x53f4ab*/
+  int v10; // ecx
   v10 = v13; /*0x53f4b0*/
+  int16_t v11; // dx
+  int16_t v14; // [esp+Ch] [ebp-4h]
   v11 = v14; /*0x53f4b4*/
   aP1->q060 = 0; /*0x53f4bc*/
   *((unsigned int *)aP1 + 22) = v10; /*0x53f4c4*/

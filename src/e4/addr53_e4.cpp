@@ -90,16 +90,9 @@ namespace gamemd { int Shutdown(Audio *p_this); }  // x4:ida@0x406d40
 namespace gamemd {  // G42.18 ns repair
 MixFileClass * * sub_530000()
 {
-  HANDLE FirstFileA; // edi
-  MixFileClass *v2; // eax
-  unsigned int *v3; // esi
-  int v4; // eax
-  HANDLE v5; // edi
-  MixFileClass *v6; // eax
-  unsigned int *v7; // esi
-  int v8; // eax
   struct _WIN32_FIND_DATAA FindFileData; // [esp+10h] [ebp-140h] BYREF
 
+  HANDLE FirstFileA; // edi
   FirstFileA = FindFirstFileA(aEcacheMix, &FindFileData); /*0x530022*/
   if ( FirstFileA != (HANDLE)-1 ) /*0x530027*/
   {
@@ -107,9 +100,11 @@ MixFileClass * * sub_530000()
     {
       if ( (FindFileData.dwFileAttributes & 0x116) == 0 ) /*0x530035*/
       {
+  MixFileClass *v2; // eax
         v2 = (MixFileClass *)operator new(0x28u); /*0x53003d*/
         if ( v2 ) /*0x530047*/
         {
+  unsigned int *v3; // esi
           v3 = ((MixFileClass *)(v2))->FromFile(FindFileData.cFileName, (int)dword_886980); /*0x53005a*/
           if ( v3 ) /*0x53005e*/
           {
@@ -121,6 +116,7 @@ MixFileClass * * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
+  int v4; // eax
               v4 = (unsigned int)(g_MixFilePool_Count++);
               *((unsigned int *)g_MixFilePool + v4) = (unsigned int)(v3); /*0x5300b3*/
             }
@@ -132,6 +128,7 @@ MixFileClass * * sub_530000()
     while ( FindNextFileA(FirstFileA, &FindFileData) ); /*0x5300c5*/
     FindClose(FirstFileA); /*0x5300d0*/
   }
+  HANDLE v5; // edi
   v5 = FindFirstFileA(aElocalMix, &FindFileData); /*0x5300e2*/
   if ( v5 != (HANDLE)-1 ) /*0x5300e7*/
   {
@@ -139,9 +136,11 @@ MixFileClass * * sub_530000()
     {
       if ( (FindFileData.dwFileAttributes & 0x116) == 0 ) /*0x5300f5*/
       {
+  MixFileClass *v6; // eax
         v6 = (MixFileClass *)operator new(0x28u); /*0x5300f9*/
         if ( v6 ) /*0x530103*/
         {
+  unsigned int *v7; // esi
           v7 = ((MixFileClass *)(v6))->FromFile(FindFileData.cFileName, (int)dword_886980); /*0x530116*/
           if ( v7 ) /*0x53011a*/
           {
@@ -153,6 +152,7 @@ MixFileClass * * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
+  int v8; // eax
               v8 = (unsigned int)(g_MixFilePool_Count++);
               *((unsigned int *)g_MixFilePool + v8) = (unsigned int)(v7); /*0x53016f*/
             }
@@ -170,73 +170,49 @@ MixFileClass * * sub_530000()
 namespace gamemd {
 int ShowLoadingScreen(void * a1, void * a2, void * a3)
 {
-  int *v3; // ebp
-  int16_t *v4; // esi
-  char *v5; // ebp
-  int i; // edx
-  char *v7; // eax
-  char v8; // cl
-  ConvertClass *v9; // eax
-  char *v10; // ecx
-  int v11; // edx
-  wchar_t *StringCSF; // edi
-  int Instance; // esi
-  int v14; // eax
-  wchar_t *v15; // eax
-  size_t v16; // edi
-  int v17; // eax
-  wchar_t *v18; // eax
-  wchar_t *v19; // eax
-  wchar_t *v20; // eax
-  int64_t v21; // rax
-  void *v22; // esi
-  wchar_t v25; // [esp-10h] [ebp-B8h]
-  wchar_t v26; // [esp-10h] [ebp-B8h]
-  wchar_t v27; // [esp-10h] [ebp-B8h]
-  wchar_t v28; // [esp-10h] [ebp-B8h]
-  int v29; // [esp-10h] [ebp-B8h]
-  int *v31; // [esp-8h] [ebp-B0h]
-  int v32; // [esp+0h] [ebp-A8h] BYREF
-  int v33; // [esp+4h] [ebp-A4h]
-  int v34; // [esp+8h] [ebp-A0h]
   int v35[2]; // [esp+Ch] [ebp-9Ch] BYREF
-  int16_t v36; // [esp+14h] [ebp-94h]
-  void *Block; // [esp+18h] [ebp-90h]
-  int v38[2]; // [esp+1Ch] [ebp-8Ch] BYREF
-  int v39; // [esp+24h] [ebp-84h]
-  int v40; // [esp+28h] [ebp-80h]
   struct tagRECT Rect; // [esp+2Ch] [ebp-7Ch] BYREF
   CCFileClass v42; // [esp+3Ch] [ebp-6Ch] BYREF
-  char v43[12]; // [esp+94h] [ebp-14h] BYREF
-  int v44; // [esp+A0h] [ebp-8h]
 
+  int *v3; // ebp
+  int *v31; // [esp-8h] [ebp-B0h]
   v31 = v3; /*0x5312a7*/
   CCFileClass::Construct(&v42, aGlsmdPal); /*0x5312b3*/
+  int16_t *v4; // esi
   v4 = 0; /*0x5312ba*/
+  char *v5; // ebp
   v5 = 0; /*0x5312c1*/
+  void *Block; // [esp+18h] [ebp-90h]
   Block = 0; /*0x5312c3*/
+  int v34; // [esp+8h] [ebp-A0h]
   v34 = 0; /*0x5312c7*/
   if ( (uint8_t)((CCFileClass *)(&v42))->Open(0) ) /*0x5312cb*/
   {
     v5 = (char *)(&v42)->ReadEntireFile(); /*0x5312e5*/
     CCFileClass::Reset(&v42); /*0x5312e7*/
+  int i; // edx
     for ( i = 0; i < 256; ++i ) /*0x5312ec*/
     {
+  char *v7; // eax
       v7 = &v5[2 * (i % 256) + i % 256]; /*0x531302*/
+  int16_t v36; // [esp+14h] [ebp-94h]
       (*((unsigned char *)&(v36))) = 4 * *v7; /*0x531309*/
       (*(((unsigned char *)&(v36)) + (sizeof(v36) - 1))) = 4 * v7[1]; /*0x531313*/
+  char v8; // cl
       v8 = 4 * v7[2]; /*0x53131f*/
       *(unsigned short *)v7 = v36; /*0x531323*/
       v7[2] = v8; /*0x53132c*/
     }
     if ( v5 ) /*0x531333*/
     {
+  ConvertClass *v9; // eax
       v9 = (ConvertClass *)operator new(0x188u); /*0x53133a*/
       if ( v9 ) /*0x531344*/
       {
         v34 = (int)((ConvertClass *)(v9))->Construct((int)v5, (int)&FileSystem_TEMPERAT_PAL, (int)g_DSurface_Primary, 1, 0); /*0x531363*/
         if ( v34 ) /*0x531367*/
         {
+  char *v10; // ecx
           v10 = (char *)(aGlssmdShp); /*0x53136e*/
           if ( g_DisplayWidth != 640 ) /*0x531378*/
             v10 = (char *)(aGlslmdShp); /*0x53137a*/
@@ -251,53 +227,75 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
     }
   }
   GetClientRect(g_hWnd, &Rect); /*0x531398*/
+  int v38[2]; // [esp+1Ch] [ebp-8Ch] BYREF
   v38[0] = 0; /*0x5313a2*/
   v38[1] = 0; /*0x5313b8*/
+  int v39; // [esp+24h] [ebp-84h]
   v39 = Rect.right - Rect.left; /*0x5313bc*/
+  int v40; // [esp+28h] [ebp-80h]
   v40 = Rect.bottom - Rect.top; /*0x5313c0*/
   if ( v4 ) /*0x5313c4*/
   {
+  int v11; // edx
     v11 = v4[2]; /*0x5313cf*/
     v35[0] = (Rect.right - Rect.left - v4[1]) / 2; /*0x5313d5*/
     v35[1] = (Rect.bottom - Rect.top - v11) / 2; /*0x5313e5*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden, v34, (int)v4, 0, v35, v38, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
   }
+  wchar_t *StringCSF; // edi
   StringCSF = GetStringCSF(aTxtCopyright, 0, g_Str_File_Init_CPP, 4930); /*0x53142e*/
+  int Instance; // esi
   Instance = (int)(TextRenderer::GetInstance()); /*0x531439*/
+  int v32; // [esp+0h] [ebp-A8h] BYREF
   v32 = 0; /*0x53143e*/
+  int v33; // [esp+4h] [ebp-A4h]
   v33 = v40 - 40; /*0x531444*/
   if ( Instance ) /*0x53144d*/
   {
+  int v14; // eax
     v14 = Text::MeasureWidth((int)StringCSF, 0); /*0x531454*/
     v32 = v39 - v14 - 10; /*0x531461*/
   }
   TextRenderer::Printf(v35, (size_t)StringCSF, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, a2); /*0x531485*/
+  wchar_t *v15; // eax
   v15 = GetStringCSF(aGuiWwbrand, 0, g_Str_File_Init_CPP, 4941); /*0x53149e*/
+  size_t v16; // edi
   v16 = (size_t)v15; /*0x5314a5*/
   if ( Instance ) /*0x5314a7*/
   {
+  int v17; // eax
     v17 = Text::MeasureWidth((int)v15, 0); /*0x5314ae*/
     v32 = v39 - v17 - 10; /*0x5314bf*/
     v33 += *(unsigned int *)(Instance + 28) + 3; /*0x5314ca*/
   }
+  wchar_t v25; // [esp-10h] [ebp-B8h]
   TextRenderer::Printf(v35, v16, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v25); /*0x5314ee*/
+  wchar_t *v18; // eax
   v18 = GetStringCSF(aGuiLoadingex, 0, g_Str_File_Init_CPP, 4951); /*0x531507*/
   v32 = 10; /*0x53152c*/
   v33 = 10; /*0x531530*/
+  wchar_t v26; // [esp-10h] [ebp-B8h]
   TextRenderer::Printf(v35, (size_t)v18, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v26); /*0x531534*/
+  wchar_t *v19; // eax
   v19 = GetStringCSF(aGuiTrademarkto, 0, g_Str_File_Init_CPP, 4958); /*0x53154d*/
   v32 = 10; /*0x531556*/
   v33 = v40 - 40; /*0x531565*/
+  wchar_t v27; // [esp-10h] [ebp-B8h]
   TextRenderer::Printf(v35, (size_t)v19, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v27); /*0x531581*/
+  wchar_t *v20; // eax
   v20 = GetStringCSF(aGuiTrademarkbo, 0, g_Str_File_Init_CPP, 4965); /*0x53159a*/
   v32 = 10; /*0x53159f*/
   v33 += *(unsigned int *)(Instance + 28) + 3; /*0x5315bb*/
+  wchar_t v28; // [esp-10h] [ebp-B8h]
   TextRenderer::Printf(v35, (size_t)v20, (int)g_DSurface_Hidden, (int)v38, (int)&v32, 0xFFFF, 0, 22, v28); /*0x5315d2*/
+  int v29; // [esp-10h] [ebp-B8h]
   Frame::Present((int)g_DSurface_Hidden, 10, (int)v5, v16, 0, v29, a3, v31); /*0x5315e4*/
+  int64_t v21; // rax
   (*((unsigned int *)&(v21))) = Audio::Callback(); /*0x5315e9*/
   *(unsigned long long *)&((unsigned int *)&stru_A8EB00)[2980] = v21 + 5000; /*0x5315f6*/
   if ( v5 ) /*0x531603*/
     operator delete((void *)(v5)); /*0x531606*/
+  void *v22; // esi
   v22 = Block; /*0x53160e*/
   if ( Block ) /*0x531614*/
   {
@@ -307,7 +305,9 @@ int ShowLoadingScreen(void * a1, void * a2, void * a3)
   if ( v34 ) /*0x531630*/
     (**(void (***)(int, int))v34)(v34, 1); /*0x531636*/
   /* X11: vtable install elided (implicit via CCFileClass virtuals 0x53163f) */
+  int v44; // [esp+A0h] [ebp-8h]
   v44 = 0; /*0x531647*/
+  char v43[12]; // [esp+94h] [ebp-14h] BYREF
   Vector::Clear((int)v43); /*0x531652*/
   /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x53165b) */
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v42))->Dtor(); /*0x531668*/
@@ -464,28 +464,6 @@ char BulkData_Initialize()
   }
 char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
 {
-  bool v7; // bl
-  char *v8; // eax
-  char *v9; // eax
-  const char *v10; // eax
-  char *v11; // eax
-  char *v12; // eax
-  const char *v13; // eax
-  char *v14; // eax
-  char *v15; // eax
-  const char *v16; // eax
-  char *v17; // eax
-  char *v18; // eax
-  char *v19; // eax
-  char *v20; // eax
-  const char *v21; // eax
-  char *v22; // eax
-  char *v23; // eax
-  const char *v24; // eax
-  char *v25; // eax
-  char *v26; // eax
-  const char *v27; // eax
-  bool v29; // [esp+29h] [ebp-1h]
 
   ((gamemd::Debug*)"Allocating new surfaces\n" /*w16g4 aAllocatingNewS*/)->Log("Allocating new surfaces\n"); /*0x533fdd G57w12: IDA push seq @ 0x533fdd +4 reg-vararg omitted*/
   if ( DSurface_Alternate ) /*0x533fee*/
@@ -523,17 +501,22 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
       (**(void (***)(int, int))DSurface_Sidebar)(DSurface_Sidebar, 1); /*0x5340b7*/
     DSurface_Sidebar = 0; /*0x5340b9*/
   }
+  bool v7; // bl
   v7 = Game_bVideoBackBuffer == 0; /*0x5340d2*/
+  bool v29; // [esp+29h] [ebp-1h]
   v29 = byte_A8EB96 == 0; /*0x5340d7*/
   if ( a5 && a1->Height > 0 && a1->LockCount > 0 ) /*0x5340e8*/
   {
+  char *v8; // eax
     v8 = (char *)operator new(0x24u); /*0x5340ec*/
+  char *v9; // eax
     if ( v8 ) /*0x5340f6*/
       v9 = (char *)((DSurface*)v8)->Construct(a1->Height, a1->LockCount, 0, 0); /*0x534104*/
     else
       v9 = (char *)(0); /*0x53410b*/
     g_DSurface_Hidden = (int)v9; /*0x53410d*/
     (*(void (**)(char *, unsigned int))(v9->nextArrayIndex))( (char *)(v9), 0);  /*0x534117*/
+  const char *v10; // eax
     v10 = (const char *)(g_INI_Key_VRAM); /*0x534122*/
     if ( !*(unsigned char *)(g_DSurface_Hidden + 25) ) /*0x53411f*/
       v10 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x53412b*/
@@ -541,13 +524,16 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
   }
   if ( aP1->vtable3 > 0 && aP1->vtable4 > 0 ) /*0x53414e*/
   {
+  char *v11; // eax
     v11 = (char *)operator new(0x24u); /*0x534152*/
+  char *v12; // eax
     if ( v11 ) /*0x53415c*/
       v12 = (char *)((DSurface*)v11)->Construct(aP1->vtable3, aP1->vtable4, v7, 1); /*0x534172*/
     else
       v12 = (char *)(0); /*0x534179*/
     DSurface_Composite = (int)v12; /*0x53417b*/
     (*(void (**)(char *, unsigned int))(v12->nextArrayIndex))( (char *)(v12), 0);  /*0x534185*/
+  const char *v13; // eax
     v13 = (const char *)(g_INI_Key_VRAM); /*0x534190*/
     if ( !*(unsigned char *)(DSurface_Composite + 25) ) /*0x53418d*/
       v13 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x534199*/
@@ -555,13 +541,16 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
   }
   if ( aP2->vtable3 > 0 && aP2->vtable4 > 0 ) /*0x5341c4*/
   {
+  char *v14; // eax
     v14 = (char *)operator new(0x24u); /*0x5341c8*/
+  char *v15; // eax
     if ( v14 ) /*0x5341d2*/
       v15 = (char *)((DSurface*)v14)->Construct(aP2->vtable3, aP2->vtable4, v7, 1); /*0x5341e8*/
     else
       v15 = (char *)(0); /*0x5341ef*/
     DSurface_Tile = (int)v15; /*0x5341f1*/
     (*(void (**)(char *, unsigned int))(v15->nextArrayIndex))( (char *)(v15), 0);  /*0x5341fc*/
+  const char *v16; // eax
     v16 = (const char *)(g_INI_Key_VRAM); /*0x534207*/
     if ( !*(unsigned char *)(DSurface_Tile + 25) ) /*0x534204*/
       v16 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x534210*/
@@ -574,11 +563,13 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
     if ( DSurface_Tile ) /*0x534266*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53426c*/
     ((Debug *)"Moving TileSurface and CompositeSurface into system memory\n" /*w16g4 aMovingTilesurf*/)->Log("Moving TileSurface and CompositeSurface into system memory\n"); /*0x534273 G57w12: IDA push seq @ 0x534273*/
+  char *v17; // eax
     v17 = (char *)operator new(0x24u); /*0x53427a*/
     if ( v17 ) /*0x534286*/
       DSurface_Composite = (int)((DSurface*)v17)->Construct(aP1->vtable3, aP1->vtable4, 1, 1); /*0x53429b*/
     else
       DSurface_Composite = 0; /*0x5342a2*/
+  char *v18; // eax
     v18 = (char *)operator new(0x24u); /*0x5342aa*/
     if ( v18 ) /*0x5342b4*/
       DSurface_Tile = (int)((DSurface*)v18)->Construct(aP2->vtable3, aP2->vtable4, 1, 1); /*0x5342c9*/
@@ -587,13 +578,16 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
   }
   if ( *(int *)(a4 + 8) > 0 && *(int *)(a4 + 12) > 0 ) /*0x5342e7*/
   {
+  char *v19; // eax
     v19 = (char *)operator new(0x24u); /*0x5342eb*/
+  char *v20; // eax
     if ( v19 ) /*0x5342f5*/
       v20 = (char *)((DSurface*)v19)->Construct(*(unsigned int *)(a4 + 8), *(unsigned int *)(a4 + 12), v29, 0); /*0x53430f*/
     else
       v20 = (char *)(0); /*0x534316*/
     DSurface_Sidebar = (int)v20; /*0x534318*/
     (*(void (**)(char *, unsigned int))(v20->nextArrayIndex))( (char *)(v20), 0);  /*0x534323*/
+  const char *v21; // eax
     v21 = (const char *)(g_INI_Key_VRAM); /*0x53432e*/
     if ( !*(unsigned char *)(DSurface_Sidebar + 25) ) /*0x53432b*/
       v21 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x534337*/
@@ -605,13 +599,16 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
       return 1; /*0x53435f*/
     if ( a1->LockCount > 0 ) /*0x53436a*/
     {
+  char *v22; // eax
       v22 = (char *)operator new(0x24u); /*0x53436e*/
+  char *v23; // eax
       if ( v22 ) /*0x534378*/
         v23 = (char *)((DSurface*)v22)->Construct(a1->Height, a1->LockCount, 0, 0); /*0x534388*/
       else
         v23 = (char *)(0); /*0x53438f*/
       g_DSurface_Hidden = (int)v23; /*0x534391*/
       (*(void (**)(char *, unsigned int))(v23->nextArrayIndex))( (char *)(v23), 0);  /*0x53439c*/
+  const char *v24; // eax
       v24 = (const char *)(g_INI_Key_VRAM); /*0x5343a7*/
       if ( !*(unsigned char *)(g_DSurface_Hidden + 25) ) /*0x5343a4*/
         v24 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x5343b0*/
@@ -620,13 +617,16 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
   }
   if ( a1->Height > 0 && a1->LockCount > 0 ) /*0x5343d7*/
   {
+  char *v25; // eax
     v25 = (char *)operator new(0x24u); /*0x5343db*/
+  char *v26; // eax
     if ( v25 ) /*0x5343e5*/
       v26 = (char *)((DSurface*)v25)->Construct(a1->Height, a1->LockCount, 1, 0); /*0x5343f5*/
     else
       v26 = (char *)(0); /*0x5343fc*/
     DSurface_Alternate = (int)v26; /*0x5343fe*/
     (*(void (**)(char *, unsigned int))(v26->nextArrayIndex))( (char *)(v26), 0);  /*0x534409*/
+  const char *v27; // eax
     v27 = (const char *)(g_INI_Key_VRAM); /*0x534414*/
     if ( !*(unsigned char *)(DSurface_Alternate + 25) ) /*0x534411*/
       v27 = (const char *)(g_Str_SYSTEM_MEMORY); /*0x53441d*/
@@ -639,50 +639,22 @@ char AllocateSurfaceScreenSurfaces(int a1, int a2, int a3, int a4, char a5)
 namespace gamemd {
 void TheaterClass_LoadMIX(int a1)
 {
-  int v2; // esi
-  const char *v3; // ebx
-  unsigned int *v4; // eax
-  unsigned int *v5; // eax
-  unsigned int *v6; // eax
-  unsigned int *v7; // eax
-  unsigned int *v8; // eax
-  unsigned int *v9; // eax
-  unsigned int *v10; // eax
-  unsigned char *v11; // eax
-  int v12; // esi
-  char v13; // dl
-  char v14; // cl
-  unsigned char *v15; // eax
-  char v16; // bl
-  char *v17; // ecx
-  int i; // eax
-  char v19; // dl
-  char *v20; // ecx
-  const void *v21; // esi
-  int j; // esi
-  char *v23; // ecx
-  char v24; // al
-  int v25; // esi
-  int v26; // ebp
-  int k; // ebx
-  int v28; // edi
-  int16_t v29; // [esp+14h] [ebp-5Ch]
-  int16_t v30; // [esp+14h] [ebp-5Ch]
-  int16_t v31; // [esp+14h] [ebp-5Ch]
-  const char *v32; // [esp+18h] [ebp-58h]
-  CHAR Source[16]; // [esp+20h] [ebp-50h] BYREF
-  CHAR v35[16]; // [esp+30h] [ebp-40h] BYREF
-  CHAR v36[16]; // [esp+40h] [ebp-30h] BYREF
-  CHAR v37[16]; // [esp+50h] [ebp-20h] BYREF
-  CHAR v38[16]; // [esp+60h] [ebp-10h] BYREF
 
+  int v2; // esi
   v2 = 112 * a1; /*0x5349e0*/
+  const char *v3; // ebx
   v3 = &aTemperat[112 * a1]; /*0x5349e3*/
+  CHAR Source[16]; // [esp+20h] [ebp-50h] BYREF
   wsprintfA(Source, "%s.MIX", v3); /*0x5349f0*/
+  CHAR v38[16]; // [esp+60h] [ebp-10h] BYREF
   wsprintfA(v38, "%s.MIX", &aIsotemp[v2]); /*0x534a03*/
+  const char *v32; // [esp+18h] [ebp-58h]
   v32 = (char *)&off_7E1BC6 + v2; /*0x534a0b*/
+  CHAR v36[16]; // [esp+40h] [ebp-30h] BYREF
   wsprintfA(v36, "%s.MIX", (const char *)&off_7E1BC6 + v2); /*0x534a1a*/
+  CHAR v37[16]; // [esp+50h] [ebp-20h] BYREF
   wsprintfA(v37, "%sMD.MIX", &aIsotem[v2]); /*0x534a2d*/
+  CHAR v35[16]; // [esp+30h] [ebp-40h] BYREF
   wsprintfA(v35, "%sMD.MIX", v3); /*0x534a3a*/
   Debug::Log(); /*0x534a48*/
   dword_A8B230[130].uniqueId = a1; /*0x534a5d*/
@@ -694,7 +666,9 @@ void TheaterClass_LoadMIX(int a1)
     dword_884E0C = 0; /*0x534a97*/
     if ( dword_A8B230[130].uniqueId == 1 ) /*0x534aa4*/
     {
+  unsigned int *v4; // eax
       v4 = operator new(0x28u); /*0x534aa8*/
+  unsigned int *v5; // eax
       if ( v4 ) /*0x534ab2*/
         v5 = ((MixFileClass *)(v4))->FromFile(v35, (int)&dword_886980); /*0x534ac0*/
       else
@@ -704,6 +678,7 @@ void TheaterClass_LoadMIX(int a1)
     }
     if ( dword_884E08 ) /*0x534ade*/
       (**(void (***)(int, int))dword_884E08)(dword_884E08, 1); /*0x534ae4*/
+  unsigned int *v6; // eax
     v6 = operator new(0x28u); /*0x534ae8*/
     if ( v6 ) /*0x534af2*/
       dword_884E08 = (int)((MixFileClass *)(v6))->FromFile(Source, (int)&dword_886980); /*0x534b05*/
@@ -711,7 +686,9 @@ void TheaterClass_LoadMIX(int a1)
       dword_884E08 = 0; /*0x534b0c*/
     if ( dword_884E10 ) /*0x534b1a*/
       (**(void (***)(int, int))dword_884E10)(dword_884E10, 1); /*0x534b20*/
+  unsigned int *v7; // eax
     v7 = operator new(0x28u); /*0x534b24*/
+  unsigned int *v8; // eax
     if ( v7 ) /*0x534b2e*/
       v8 = ((MixFileClass *)(v7))->FromFile(v36, (int)&dword_886980); /*0x534b3c*/
     else
@@ -722,6 +699,7 @@ void TheaterClass_LoadMIX(int a1)
     Multiplayer::ShowProgress(dword_A8B238, 6); /*0x534b65*/
     if ( dword_884E20 ) /*0x534b72*/
       (**(void (***)(int, int))dword_884E20)(dword_884E20, 1); /*0x534b78*/
+  unsigned int *v9; // eax
     v9 = operator new(0x28u); /*0x534b7c*/
     if ( v9 ) /*0x534b86*/
       dword_884E20 = (int)((MixFileClass *)(v9))->FromFile(v37, (int)&dword_886980); /*0x534b99*/
@@ -729,6 +707,7 @@ void TheaterClass_LoadMIX(int a1)
       dword_884E20 = 0; /*0x534ba0*/
     if ( dword_884E1C ) /*0x534bae*/
       (**(void (***)(int, int))dword_884E1C)(dword_884E1C, 1); /*0x534bb4*/
+  unsigned int *v10; // eax
     v10 = operator new(0x28u); /*0x534bb8*/
     if ( v10 ) /*0x534bc2*/
       dword_884E1C = (int)((MixFileClass *)(v10))->FromFile(v38, (int)&dword_886980); /*0x534bd5*/
@@ -736,18 +715,26 @@ void TheaterClass_LoadMIX(int a1)
       dword_884E1C = 0; /*0x534bdc*/
     Multiplayer::ShowProgress(dword_A8B238, 12); /*0x534be9*/
     wsprintfA(Source, "%s.PAL", v3); /*0x534bf9*/
+  unsigned char *v11; // eax
     v11 = (unsigned char *)SearchMIXFile(Source, 0); /*0x534c04*/
     if ( v11 ) /*0x534c0b*/
     {
+  int v12; // esi
       v12 = 0; /*0x534c0d*/
       do /*0x534c56*/
       {
+  char v13; // dl
         v13 = v11->AbstractClass_1; /*0x534c11*/
+  char v14; // cl
         v14 = 4 * *v11; /*0x534c14*/
+  unsigned char *v15; // eax
         v15 = v11 + 1; /*0x534c17*/
+  int16_t v29; // [esp+14h] [ebp-5Ch]
         (*((unsigned char *)&(v29))) = v14; /*0x534c18*/
+  char v16; // bl
         v16 = 4 * v15[1]; /*0x534c23*/
         v11 = v15 + 2; /*0x534c28*/
+  char *v17; // ecx
         v17 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (v12 % 256); /*0x534c42*/
         ++v12; /*0x534c49*/
         (*(((unsigned char *)&(v29)) + (sizeof(v29) - 1))) = 4 * v13; /*0x534c2f*/
@@ -758,11 +745,15 @@ void TheaterClass_LoadMIX(int a1)
     }
     else
     {
+  int i; // eax
       for ( i = 0; i < 256; ++i ) /*0x534c5a*/
       {
+  int16_t v30; // [esp+14h] [ebp-5Ch]
         (*((unsigned char *)&(v30))) = i; /*0x534c63*/
         (*(((unsigned char *)&(v30)) + (sizeof(v30) - 1))) = -1 - i; /*0x534c67*/
+  char v19; // dl
         v19 = 4 * i; /*0x534c6d*/
+  char *v20; // ecx
         v20 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (i % 256); /*0x534c85*/
         *(unsigned short *)v20 = v30; /*0x534c8d*/
         v20[2] = v19; /*0x534c95*/
@@ -770,24 +761,33 @@ void TheaterClass_LoadMIX(int a1)
     }
     Block::Copy(&stru_885A80, &FileSystem_TEMPERAT_PAL); /*0x534ca4*/
     wsprintfA(Source, "UNIT%s.PAL", v32); /*0x534cb8*/
+  const void *v21; // esi
     v21 = (const void *)SearchMIXFile(Source, 0); /*0x534cc8*/
     Event::Dispatch(); /*0x534cca*/
     if ( v21 ) /*0x534cd1*/
       Block::Copy(stru_886380, v21); /*0x534cd9*/
+  int j; // esi
     for ( j = 0; j < 256; ++j ) /*0x534cde*/
     {
+  char *v23; // ecx
       v23 = &stru_886380[3 * (j % 256)]; /*0x534cf7*/
+  int16_t v31; // [esp+14h] [ebp-5Ch]
       (*((unsigned char *)&(v31))) = 4 * *v23; /*0x534d01*/
+  char v24; // al
       v24 = DataGlobal_886382[3 * (j % 256)]; /*0x534d0c*/
       (*(((unsigned char *)&(v31)) + (sizeof(v31) - 1))) = 4 * DataGlobal_886381[3 * (j % 256)]; /*0x534d16*/
       *(unsigned short *)v23 = v31; /*0x534d23*/
       v23[2] = 4 * v24; /*0x534d2c*/
     }
+  int v25; // esi
     v25 = 0; /*0x534d43*/
+  int v26; // ebp
     v26 = 12; /*0x534d4c*/
+  int k; // ebx
     for ( k = dword_B054E0 / 13; v25 < dword_B054E0; ++v25 ) /*0x534d53*/
     {
       LoadTheaterClassMIX_Load(stru_886380, &FileSystem_TEMPERAT_PAL, 1000, 1000, 1000); /*0x534d77*/
+  int v28; // edi
       v28 = v25 / k + 12; /*0x534d87*/
       if ( v28 >= 25 ) /*0x534d89*/
         v28 = 25; /*0x534d8b*/

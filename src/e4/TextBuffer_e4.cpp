@@ -19,18 +19,18 @@ namespace gamemd {  // G42.18 ns repair
 int TextBuffer::Init(void *a1, void *a2)
 {
 
-  int v1; // edi
-  TextBuffer *v2; // ebx
-  TextBuffer *v3; // edx
-  TextBuffer *v4; // eax
-  int v5; // esi
 
+  int v1; // edi
   v1 = 0; /*0x5bcc93*/
+  TextBuffer *v2; // ebx
   v2 = &this->u32_1F40; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
+  TextBuffer *v3; // edx
     v3 = this + v1; /*0x5bcc9b*/
+  TextBuffer *v4; // eax
     v4 = v2; /*0x5bcc9e*/
+  int v5; // esi
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
     {

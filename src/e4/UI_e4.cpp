@@ -116,18 +116,18 @@ int sub_53E720()
 namespace gamemd {
 int UI_Get(HWND hWnd, unsigned int * a2)
 {
-  HWND Parent; // ebp
-  char GameSpeed; // bl
-  int v6; // ebp
-  int v7; // ecx
   struct tagRECT Rect; // [esp+10h] [ebp-10h] BYREF
 
+  HWND Parent; // ebp
   Parent = GetParent(hWnd); /*0x60af67*/
+  char GameSpeed; // bl
   GameSpeed = SessionClass::GetGameSpeed(dword_A8B238); /*0x60af6e*/
   GetWindowRect(Parent, &Rect); /*0x60af76*/
+  int v6; // ebp
   v6 = 0; /*0x60af7c*/
   if ( !GameSpeed )
     v6 = (Rect.right - Rect.left - 800) / 2 < 0 ? 0 : (Rect.right - Rect.left - 800) / 2;
+  int v7; // ecx
   v7 = 0; /*0x60afb0*/
   if ( !GameSpeed )
     v7 = (Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2;
@@ -139,10 +139,10 @@ int UI_Get(HWND hWnd, unsigned int * a2)
 namespace gamemd {
 int sub_622610()
 {
-  int result; // eax
-  bool v2; // zf
 
+  int result; // eax
   result = dword_AC48EC; /*0x622610*/
+  bool v2; // zf
   v2 = dword_AC48EC == 0; /*0x622615*/
   if ( dword_AC48EC > 0 ) /*0x622617*/
   {
@@ -163,8 +163,6 @@ int sub_622610()
 namespace gamemd {
 char sub_647040()
 {
-  char *v1; // eax
-  char v3[112]; // [esp+0h] [ebp-70h] BYREF
 
   if ( dword_A83D4C->isWinner ) /*0x647048*/
     return 0; /*0x647048*/
@@ -172,6 +170,8 @@ char sub_647040()
     return 0; /*0x647056*/
   if ( dword_A83D4C->isGameOver ) /*0x647060*/
     return 0; /*0x647060*/
+  char *v1; // eax
+  char v3[112]; // [esp+0h] [ebp-70h] BYREF
   v1 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0xCu)); /*0x647074*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647083*/
     return 0; /*0x6470dc*/
@@ -186,8 +186,6 @@ char sub_647040()
 namespace gamemd {
 char sub_6470F0()
 {
-  char *v1; // eax
-  char v3[112]; // [esp+0h] [ebp-70h] BYREF
 
   if ( dword_A83D4C->isWinner ) /*0x6470f8*/
     return 0; /*0x6470f8*/
@@ -195,6 +193,8 @@ char sub_6470F0()
     return 0; /*0x647106*/
   if ( dword_A83D4C->isGameOver ) /*0x647110*/
     return 0; /*0x647110*/
+  char *v1; // eax
+  char v3[112]; // [esp+0h] [ebp-70h] BYREF
   v1 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0x22u)); /*0x647124*/
   if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647133*/
     return 0; /*0x64718c*/
@@ -240,12 +240,12 @@ int sub_725070(int a1, int a2, unsigned int * a3)
 namespace gamemd {
 int sub_6AC430()
 {
-  int v1; // eax
-  unsigned int v2; // eax
 
+  int v1; // eax
   v1 = 26; /*0x6ac43b*/
   if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6ac435*/
     v1 = 18; /*0x6ac444*/
+  unsigned int v2; // eax
   v2 = (int)((uint64_t)(1374389535LL /*0x6ac46c*/
                               * (g_DSurface_ViewBounds - g_SidebarBounds - v1 + g_DSurface_SidebarBounds - 7)) >> 32) >> 4;
   return 2 * ((v2 >> 31) + v2); /*0x6ac478*/
@@ -255,21 +255,21 @@ int sub_6AC430()
 namespace gamemd {
 wchar_t * * sub_730EA0()
 {
-  wchar_t *result; // eax
-  wchar_t *v1; // ebp
-  int v2; // edi
-  char v3; // bl
-  unsigned char *v4; // esi
 
+  wchar_t *result; // eax
   result = (wchar_t *)(dword_A8ECC8);
   if ( (int)dword_A8ECC8 > 0 ) /*0x730eab*/
   {
+  wchar_t *v1; // ebp
     v1 = (wchar_t *)(dword_A8ECC8);
+  int v2; // edi
     v2 = 0; /*0x730eaf*/
+  char v3; // bl
     v3 = 1; /*0x730eb3*/
     while ( 1 ) /*0x730eb7*/
     {
       result = (wchar_t *)dword_A8ECBC; /*0x730eb7*/
+  unsigned char *v4; // esi
       v4 = (unsigned char *)*((unsigned int *)dword_A8ECBC + v2); /*0x730ebc*/
       if ( v4 ) /*0x730ec1*/
       {
@@ -300,16 +300,16 @@ wchar_t * * sub_730EA0()
 namespace gamemd {
 void * sub_730F30()
 {
-  wchar_t *result; // eax
-  char *v2; // eax
-  char v3[112]; // [esp+0h] [ebp-70h] BYREF
 
+  wchar_t *result; // eax
   result = (wchar_t *)((unsigned int *)(dword_A8B538))[0]; /*0x730f30*/
   if ( !((unsigned int *)(dword_A8B538))[0] ) /*0x730f3a*/
   {
     result = *(wchar_t **)&((unsigned int *)&stru_A8EB00)[416]; /*0x730f51*/
     if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 1408) < *(int *)&((unsigned int *)&stru_A8EB00)[416] ) /*0x730f5a*/
     {
+  char *v2; // eax
+  char v3[112]; // [esp+0h] [ebp-70h] BYREF
       v2 = (char *)(((int)(v3))->AddEvent((int)dword_A83D4C->relatedTagsCount, 0x2Du));
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
       {
@@ -329,21 +329,21 @@ void * sub_730F30()
 namespace gamemd {
 void * sub_730FE0()
 {
-  wchar_t *result; // eax
-  wchar_t *v2; // ebp
-  int v3; // edi
-  char v4; // bl
-  unsigned char *v5; // esi
 
+  wchar_t *result; // eax
   result = (wchar_t *)(dword_A8ECC8);
   if ( (int)dword_A8ECC8 > 0 ) /*0x730feb*/
   {
+  wchar_t *v2; // ebp
     v2 = (wchar_t *)(dword_A8ECC8);
+  int v3; // edi
     v3 = 0; /*0x730fef*/
+  char v4; // bl
     v4 = 1; /*0x730ff3*/
     while ( 1 ) /*0x730ff7*/
     {
       result = (wchar_t *)dword_A8ECBC; /*0x730ff7*/
+  unsigned char *v5; // esi
       v5 = (unsigned char *)*((unsigned int *)dword_A8ECBC + v3); /*0x730ffc*/
       if ( v5 ) /*0x731001*/
       {
@@ -374,9 +374,8 @@ void * sub_730FE0()
 namespace gamemd {
 AbstractClass * * sub_7318F0()
 {
-  char *result; // eax
-  char v2[112]; // [esp+0h] [ebp-70h] BYREF
 
+  char *result; // eax
   result = *(char **)&((unsigned int *)&stru_A8EB00)[228]; /*0x7318f0*/
   if ( *(unsigned int *)&((unsigned int *)&stru_A8EB00)[228] ) /*0x7318fa*/
   {
@@ -396,6 +395,7 @@ AbstractClass * * sub_7318F0()
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5301)
               && *(unsigned char *)(*(unsigned int *)&g_RulesClass_Instance + 5307) )
             {
+  char v2[112]; // [esp+0h] [ebp-70h] BYREF
               result = (char *)(((int)(v2))->Add2((int)dword_A83D4C->relatedTagsCount, 3u, (int)result));
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
               {
@@ -418,14 +418,14 @@ AbstractClass * * sub_7318F0()
 namespace gamemd {
 void sub_6D0E60()
 {
-  int v1; // esi
-  int *v2; // eax
-  int v3[2]; // [esp+4h] [ebp-18h] BYREF
-  unsigned char v4[16]; // [esp+Ch] [ebp-10h] BYREF
 
+  int v1; // esi
   v1 = *(unsigned int *)&DataGlobal_B0FB08; /*0x6d0e73*/
+  int v3[2]; // [esp+4h] [ebp-18h] BYREF
   v3[0] = 0; /*0x6d0e7b*/
   v3[1] = 0; /*0x6d0e7f*/
+  int *v2; // eax
+  unsigned char v4[16]; // [esp+Ch] [ebp-10h] BYREF
   v2 = (int *)(*((int (**)(DSurface *, unsigned char *))DSurface_Sidebar + 30))( /*0x6d0e91*/
                 DSurface_Sidebar,
                 v4);
@@ -641,10 +641,10 @@ int UI_Helper_603240(int a1, HWND a2)
 namespace gamemd {
 unsigned int * sub_60D2C0(int a1, int a2)
 {
-  unsigned int *result; // eax
-  int v4; // [esp+4h] [ebp-4h] BYREF
 
+  unsigned int *result; // eax
   result = (unsigned int *)dword_AC1B04; /*0x60d2c1*/
+  int v4; // [esp+4h] [ebp-4h] BYREF
   v4 = a1; /*0x60d2cb*/
   if ( dword_AC1B04 ) /*0x60d2cf*/
   {
@@ -668,7 +668,6 @@ unsigned int * sub_60D2C0(int a1, int a2)
 namespace gamemd {
 void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
 {
-  unsigned int *v4; // esi
   ObjectClass * v5;
   int v6; // ebx
   int16_t v7; // di
@@ -691,6 +690,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   int v24; // [esp+20h] [ebp-10h]
   int v28; // [esp+38h] [ebp+8h]
 
+  unsigned int *v4; // esi
   v4 = (unsigned int *)((int)(aP0));
   v5 = (gamemd::ObjectClass *)((int)(aP1)); /*0x6217ec*/
   v6 = (aP0[2] * a4) >> 16; /*0x6217fa*/

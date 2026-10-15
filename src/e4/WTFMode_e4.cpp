@@ -12,7 +12,6 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_7535D0()
 {
-  int result; // eax
 
   if ( dword_B1D4C4 ) /*0x7535d7*/
   {
@@ -21,6 +20,7 @@ int sub_7535D0()
   }
   if ( g_InfantryDrawState ) /*0x7535f2*/
     Audio::Release(g_InfantryDrawState); /*0x7535f4*/
+  int result; // eax
   result = ThemeClass::ClearQueues(); /*0x7535f9*/
   dword_B1D428 = 0; /*0x7535fe*/
   dword_B1D3D8 = 0; /*0x753608*/

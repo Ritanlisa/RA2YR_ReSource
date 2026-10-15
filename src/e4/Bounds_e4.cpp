@@ -11,16 +11,16 @@ namespace gamemd {  // G42.18 ns repair
 int Bounds::Subtract(IUnknown * aP1, unsigned int * a2, void *a3, void *a4)
 {
 
-  int v3; // edx
-  int Bounds_field_00; // eax
-  int v5; // esi
-  int v6; // ecx
-  int v7; // edx
 
+  int v3; // edx
   v3 = aP1->u32_4; /*0x487ee0*/
+  int Bounds_field_00; // eax
   Bounds_field_00 = aP1->Bounds_field_00; /*0x487ee3*/
+  int v5; // esi
   v5 = aP1->u32_8; /*0x487ef1*/
+  int v6; // ecx
   v6 = aP1->q00C; /*0x487ef4*/
+  int v7; // edx
   v7 = v3 - a3[1]; /*0x487ef7*/
   *a2 = Bounds_field_00 - *a3; /*0x487f01*/
   a2[1] = v7; /*0x487f06*/

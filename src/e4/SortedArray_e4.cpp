@@ -23,12 +23,8 @@ namespace gamemd {  // G42.18 ns repair
 int SortedArray::BinarySearch(int *aP1, void *a2)
 {
 
-  int result; // eax
-  int v4; // edi
-  int v5; // ebx
-  int SortedArray_field_0x04; // ecx
-  int v7; // esi
 
+  int result; // eax
   result = this->u32_4; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
@@ -38,13 +34,17 @@ int SortedArray::BinarySearch(int *aP1, void *a2)
       this->u32_10 = 0; /*0x52b648*/
       LOBYTE(this->u32_C) = 1; /*0x52b64f*/
     }
+  int v4; // edi
     v4 = *(unsigned int *)this->__pad_000; /*0x52b659*/
+  int v5; // ebx
     v5 = *aP1; /*0x52b65b*/
+  int SortedArray_field_0x04; // ecx
     SortedArray_field_0x04 = this->u32_4; /*0x52b65d*/
     if ( SortedArray_field_0x04 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
     {
+  int v7; // esi
       v7 = *(unsigned int *)(v4 + 8 * (SortedArray_field_0x04 / 2)); /*0x52b66b*/
       if ( v7 <= v5 ) /*0x52b673*/
       {

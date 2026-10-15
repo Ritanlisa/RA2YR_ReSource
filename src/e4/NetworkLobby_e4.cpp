@@ -73,22 +73,7 @@ namespace gamemd {  // G42.18 ns repair
 int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int a6)
 {
 
-  int v8; // eax
-  int i; // edi
-  int v10; // edi
-  unsigned short *v11; // eax
-  char *v12; // ecx
-  int v13; // edx
-  wchar_t *v14; // ebx
-  int v15; // eax
-  int v16; // eax
-  int v17; // ecx
   int v18; // eax
-  int v19; // ecx
-  int v20; // ecx
-  int v21; // edi
-  int *v22; // eax
-  int v23; // edx
 
   if ( this->u8_19 ) /*0x5d4213*/
   {
@@ -99,17 +84,23 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
   {
     if ( this->u8_1A ) /*0x5d4228*/
     {
+  int v8; // eax
       v8 = *(unsigned int *)this->__pad_000; /*0x5d4232*/
+  int i; // edi
       for ( i = 0; v8; v8 = (*(int (**)(int))(*(unsigned int *)v8 + 4))(v8) ) /*0x5d4232*/
         ++i; /*0x5d423e*/
       if ( this->u8_19 && this->u8_1A ) /*0x5d424d*/
         ++i; /*0x5d4254*/
       if ( i + 1 > *(unsigned int *)this->q00C ) /*0x5d425b*/
       {
+  int v10; // edi
         v10 = *(unsigned int *)this->__pad_000; /*0x5d425d*/
         *(unsigned int *)this->__pad_000 = (*(int (**)(unsigned int))(**(unsigned int **)this->__pad_000 + 36))(*(unsigned int *)this->__pad_000); /*0x5d4266*/
+  unsigned short *v11; // eax
         v11 = (unsigned short *)(&this->u32_1480); /*0x5d4268*/
+  char *v12; // ecx
         v12 = (char *)(&this->u32_2C8); /*0x5d426e*/
+  int v13; // edx
         v13 = 14; /*0x5d4274*/
         do /*0x5d428d*/
         {
@@ -124,6 +115,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
           (**(void (***)(int, int))v10)(v10, 1); /*0x5d4299*/
       }
     }
+  wchar_t *v14; // ebx
     v14 = aP3; /*0x5d429b*/
     if ( !aP3 ) /*0x5d42a1*/
       v14 = (wchar_t *)(&g_TypeClass_DefaultString); /*0x5d42a3*/
@@ -131,12 +123,15 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     memset(&this->u32_28, 0, 0x144u); /*0x5d42c2*/
     wcscpythis->u32_28, v14); /*0x5d42c5*/
     *&this->u16_16C = 0; /*0x5d42cb*/
+  int v15; // eax
     v15 = wcslen(v14); /*0x5d42d4*/
     *&this->u32_2B4 = v15; /*0x5d42db*/
     *&this->u32_2B0 = v15; /*0x5d42e1*/
+  int v16; // eax
     v16 = (int)(__2_YAPAXI_Z(0x4Cu)); /*0x5d42e7*/
     if ( v16 ) /*0x5d42f1*/
     {
+  int v17; // ecx
       v17 = a3; /*0x5d42f3*/
       BYTE1(v17) = BYTE1(a3) | 0x80; /*0x5d42fb*/
       v18 = (/*0x5d430b*/ v16)->clearMessages((int)&this->u32_28, *&this->u32_1C, *&this->q020, a2, v17);
@@ -145,11 +140,13 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     {
       v18 = 0; /*0x5d4312*/
     }
+  int v19; // ecx
     v19 = a6; /*0x5d4314*/
     *&this->u32_24 = v18; /*0x5d4318*/
     if ( a6 <= 0 ) /*0x5d431d*/
       v19 = *&this->u32_2C4; /*0x5d431f*/
     v18->q038 = v19; /*0x5d4325*/
+  int v20; // ecx
     v20 = *&this->u32_24; /*0x5d4328*/
     if ( v20 ) /*0x5d432d*/
     {
@@ -163,15 +160,18 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
     Network_Append(); /*0x5d433e*/
     if ( this->u8_1A ) /*0x5d4343*/
     {
+  int v21; // edi
       if ( this->u8_19 ) /*0x5d434a*/
         v21 = this->u32_8 + *&this->u32_14; /*0x5d4357*/
       else
         v21 = this->u32_8; /*0x5d435b*/
+  int *v22; // eax
       v22 = *(int **)this->__pad_000; /*0x5d435e*/
       if ( *(unsigned int *)this->__pad_000 ) /*0x5d435e*/
       {
         do /*0x5d4373*/
         {
+  int v23; // edx
           v23 = *v22; /*0x5d4364*/
           v22[4] = v21; /*0x5d4368*/
           v22 = (int *)(*(int (**)(int *))(v23 + 4))(v22); /*0x5d436b*/
@@ -190,21 +190,14 @@ int NetworkLobby::MessageList_Append(int a2, int a3, wchar_t *aP3, char a5, int 
 namespace gamemd {
 int NetworkLobby_UpdatePlayerList()
 {
-  int result; // eax
-  HWND Current; // esi
-  HWND DlgItem; // ebp
-  wchar_t *String; // eax
-  int i; // ebx
-  HWND v5; // esi
-  wchar_t *v6; // [esp-18h] [ebp-BCh]
-  int v7; // [esp-14h] [ebp-B8h]
-  LRESULT wParam; // [esp+0h] [ebp-A4h]
-  wchar_t lParam[80]; // [esp+4h] [ebp-A0h] BYREF
 
+  int result; // eax
   result = Dialog::GetCurrentType(); /*0x5db9b6*/
   if ( result == 187 ) /*0x5db9c0*/
   {
+  HWND Current; // esi
     Current = (HWND)(Dialog::GetCurrent()); /*0x5db9cf*/
+  HWND DlgItem; // ebp
     DlgItem = GetDlgItem(Current, 1353); /*0x5db9e3*/
     if ( (int)g_NetworkSetupConfig >= dword_A8DA6C ) /*0x5db9ec*/
     {
@@ -213,24 +206,31 @@ int NetworkLobby_UpdatePlayerList()
     }
     if ( (g_NetworkSetupConfig & 0x80000000) != 0 ) /*0x5dba0b*/
       g_NetworkSetupConfig = 0; /*0x5dba0d*/
+  LRESULT wParam; // [esp+0h] [ebp-A4h]
     wParam = SendDlgItemMessageA(Current, 1353, 0x18Eu, 0, 0); /*0x5dba3d*/
     SendDlgItemMessageA(Current, 1353, 0x49Du, 0, 1); /*0x5dba41*/
     SendMessageA(DlgItem, 0x184u, 0, 0); /*0x5dba53*/
+  wchar_t *String; // eax
     String = GetStringCSF(aTxtLobby, 0, g_Str_File_netdlg2_cpp, 508); /*0x5dba66*/
     SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)String); /*0x5dba74*/
+  int i; // ebx
     for ( i = 1; i < dword_A8DA6C; ++i ) /*0x5dba82*/
     {
+  int v7; // [esp-14h] [ebp-B8h]
       v7 = *(unsigned int *)(dword_A8DA60 + 4 * i); /*0x5dba8c*/
+  wchar_t *v6; // [esp-18h] [ebp-BCh]
       if ( *(unsigned char *)(v7 + 52) ) /*0x5dba8d*/
         v6 = GetStringCSF(aTxtThatguysGam, 0, g_Str_File_netdlg2_cpp, 514); /*0x5dbaae*/
       else
         v6 = GetStringCSF(aTxtThatguysGam_0, 0, g_Str_File_netdlg2_cpp, 516); /*0x5dbacc*/
+  wchar_t lParam[80]; // [esp+4h] [ebp-A0h] BYREF
       swprintf(lParam, (const size_t)v6, (const wchar_t *const)v7); /*0x5dbab0*/
       SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)lParam); /*0x5dbae3*/
     }
     SendDlgItemMessageA(Current, 1353, 0x186u, g_NetworkSetupConfig, 0); /*0x5dbb07*/
     SendDlgItemMessageA(Current, 1353, 0x197u, wParam, 0); /*0x5dbb1b*/
     SendDlgItemMessageA(Current, 1353, 0x49Du, 0, 0); /*0x5dbb2c*/
+  HWND v5; // esi
     v5 = GetDlgItem(Current, 1353); /*0x5dbb3a*/
     InvalidateRect(v5, 0, 0); /*0x5dbb41*/
     return UpdateWindow(v5); /*0x5dbb48*/

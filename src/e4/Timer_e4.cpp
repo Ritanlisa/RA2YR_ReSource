@@ -26,18 +26,18 @@ namespace gamemd {
 int Timer::StartDouble(double a2)
 {
 
-  int result; // eax
-  int v4; // ecx
-  int v5; // [esp+8h] [ebp-Ch]
 
+  int result; // eax
   if ( LOBYTE(this->m_18) || (LOBYTE(result) = BYTE1(this->m_18), (unsigned char)result) ) /*0x4a5252*/
   {
     LOBYTE(this->m_18) = 1; /*0x4a525e*/
     *(double *)this->q000 = a2 * 900.0; /*0x4a5262*/
     LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
+  int v4; // ecx
     v4 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x4a5269*/
     BYTE1(this->m_18) = 0; /*0x4a5272*/
     *&this->ptr_8 = (gamemd::AbstractClass *)(v4); /*0x4a5276*/
+  int v5; // [esp+8h] [ebp-Ch]
     *&this->u32_C = v5; /*0x4a527c*/
     *&this->u32_10 = result; /*0x4a527f*/
     *&this->u32_14 = result; /*0x4a5282*/
@@ -62,12 +62,12 @@ namespace gamemd {
 int Timer::GetRemainingMs(void *a1)
 {
 
-  int v1; // edi
-  int v2; // ecx
 
+  int v1; // edi
   v1 = *&this->ptr_8; /*0x4f1b26*/
   if ( *(unsigned int *)this->q000 == -1 ) /*0x4f1b2c*/
     return *&this->ptr_8; /*0x4f1b4c*/
+  int v2; // ecx
   v2 = Timer::GetTicks() - *(unsigned int *)this->q000; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
@@ -81,11 +81,11 @@ namespace gamemd {
 DWORD * Timer::PumpMessages(void *a1)
 {
 
-  int v2; // eax
   int result; // eax
 
   if ( (this->u32_318 + 1) % 256 != this->u32_314 ) /*0x54f73e*/
     MessageLoop(); /*0x54f740*/
+  int v2; // eax
   v2 = this->u32_318; /*0x54f745*/
   this->u32_314 = v2; /*0x54f74b*/
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
@@ -106,13 +106,13 @@ DWORD * Timer::PumpMessages(void *a1)
 namespace gamemd {
 int Timer::GetHighPrecision()
 {
-  int result; // eax
-  unsigned int v3; // [esp+4h] [ebp-Ch] BYREF
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
     GetVersionString(&dword_82C24C,(unsigned char *)(unk_ABEED4), 0, 0); /*0x5b1e5e*/
   if ( !*this && this->u32_4 == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return timeGetTime(); /*0x5b1eba*/
+  int result; // eax
+  unsigned int v3; // [esp+4h] [ebp-Ch] BYREF
   result = Timer::ReadTSC(&v3); /*0x5b1e7f*/
   v3 = v3; /*0x5b1e9b*/
   return result; /*0x5b1eb5*/
@@ -123,8 +123,8 @@ namespace gamemd {
 int Timer::GetElapsed()
 {
 
-  int v1; // edi
 
+  int v1; // edi
   v1 = (int)(*&this->ptr_8); /*0x5f1396*/
   if ( *(unsigned int *)this->q000 != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *(unsigned int *)this->q000; /*0x5f13a8*/
@@ -153,11 +153,11 @@ MMRESULT Timer::DisableHighPrecision()
 namespace gamemd {
 int Timer::UpdateDelta()
 {
-  DWORD Ticks; // eax
-  int result; // eax
 
+  DWORD Ticks; // eax
   Ticks = TimerGetTicks(); /*0x6c8825*/
   byte_B0BDB4 = 0; /*0x6c8830*/
+  int result; // eax
   result = Ticks - dword_B0BD28; /*0x6c8837*/
   dword_B0BD48 = result; /*0x6c8839*/
   return result; /*0x6c883e*/
@@ -170,8 +170,8 @@ namespace gamemd {
 char Timer::SetFlag(char a2)
 {
 
-  int result; // eax
 
+  int result; // eax
   LOBYTE(result) = a2; /*0x7500b0*/
   if ( a2 ) /*0x7500b6*/
     *(unsigned int *)this->q000 = 0x40000000; /*0x7500b8*/
@@ -186,8 +186,8 @@ char Timer::SetFlag(char a2)
 namespace gamemd {
 unsigned long long Timer::ReadTSC(unsigned int * a1)
 {
-  uint64_t result; // rax
 
+  uint64_t result; // rax
   result = __rdtsc(); /*0x7c6068*/
   *a1 = (*(((unsigned int *)&(result)) + 1)); /*0x7c606d*/
   return result; /*0x7c606f*/

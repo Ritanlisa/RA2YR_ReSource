@@ -23,20 +23,20 @@ namespace gamemd {  // G42.18 ns repair
 void BulkData::InitMissionHashing(void *a1)
 {
 
-  DWORD v2; // eax
-  char *inited; // eax
-  const char *v4; // esi
-  unsigned int v5; // ebx
-  DWORD Time; // [esp+10h] [ebp-4h] BYREF
 
   ((SessionClass *)this)->LoadMissionList(); /*0x697ad7*/
+  DWORD Time; // [esp+10h] [ebp-4h] BYREF
   Time = timeGetTime(); /*0x697ae2*/
+  DWORD v2; // eax
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash(&Time, v2); /*0x697af1*/
+  char *inited; // eax
   inited = Object_Init_7CBC11(aPath); /*0x697afb*/
+  const char *v4; // esi
   v4 = inited; /*0x697b00*/
   if ( inited ) /*0x697b07*/
   {
+  unsigned int v5; // ebx
     v5 = 0; /*0x697b10*/
     if ( strlen(inited) ) /*0x697b12*/
     {

@@ -11,11 +11,10 @@ namespace gamemd {  // G42.18 ns repair
 void * RadBeam::Create(void *a1, void *a2, void *a3, void *a4)
 {
 
-  RadBeam *v2; // eax
-  double *inited; // edi
-  int v4; // eax
 
+  RadBeam *v2; // eax
   v2 = (RadBeam *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
+  double *inited; // edi
   if ( v2 ) /*0x659124*/
     inited = (double *)RadBeam::InitState(v2, (int)this); /*0x65912e*/
   else
@@ -28,6 +27,7 @@ void * RadBeam::Create(void *a1, void *a2, void *a3, void *a4)
          dword_B04A68 + dword_B04A74,
          0) )
   {
+  int v4; // eax
     v4 = dword_B04A70++; /*0x659177*/
     *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
   }

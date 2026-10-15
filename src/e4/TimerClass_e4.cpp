@@ -12,12 +12,12 @@
 namespace gamemd {  // G42.18 ns repair
 int TimerClass::Active(void *a1)
 {
-  int v1; // edx
-  int v2; // eax
 
   if ( *&this->q028 <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
+  int v1; // edx
   v1 = this->u32_8; /*0x4c9487*/
+  int v2; // eax
   v2 = this->u32_10; /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
@@ -32,12 +32,11 @@ int TimerClass::Active(void *a1)
 namespace gamemd {
 void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
 {
-  unsigned int *v18; // ecx
-  int v20; // eax
 
   *(unsigned int *)this = 0; /*0x54fe6a*/
   this->u32_10 = 0; /*0x54fe6c*/
   this->u32_8 = dword_A8ED84; /*0x54fe75*/
+  unsigned int *v18; // ecx
   v18 = &this->q024; /*0x54fe78*/
   this->u32_10 = 0; /*0x54fe7b*/
   *v18 = a2; /*0x54fe83*/
@@ -88,6 +87,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
          dword_ABC880 + dword_ABC88C,
          0) )
   {
+  int v20; // eax
     v20 = dword_ABC888++; /*0x54ff92*/
     *((unsigned int *)dword_ABC87C + v20) = (unsigned int)(this); /*0x54ffa1*/
   }
@@ -98,12 +98,12 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
 namespace gamemd {
 signed int TimerClass::GetRemaining()
 {
-  signed int result; // eax
-  signed int v3; // edi
 
+  signed int result; // eax
   result = this->u32_4; /*0x5cead3*/
   if ( result != -1 ) /*0x5cead9*/
   {
+  signed int v3; // edi
     v3 = this->u32_18; /*0x5ceadc*/
     result = TimerGetTicks() - this->u32_4; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/

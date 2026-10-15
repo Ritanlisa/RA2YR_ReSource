@@ -195,8 +195,8 @@ LONG Campaign::Screen(char a1)
 namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3, void *a3_2)
 {
-  int v3; // edi
 
+  int v3; // edi
   v3 = *&a3_2->u32_4 + 8 * a3_2; /*0x7656dd*/
   ComPtr::Constructor((ComPtr *)a3_2); /*0x7656e2*/
   *(unsigned int *)(a3_2) = (unsigned int)(&vt_rc_ptr); /*0x7656e7*/
@@ -248,18 +248,18 @@ VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Blo
 namespace gamemd {
 char Campaign_WorldDominationTour_16::AddRef(int a2)
 {
-  int m_8; // esi
-  int v3; // edx
-  unsigned int *v4; // ecx
-  unsigned int *i; // eax
 
+  int m_8; // esi
   m_8 = this->q008; /*0x7657f6*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x7657ff*/
   {
+  int v3; // edx
     v3 = 0; /*0x765801*/
     if ( m_8 <= 0 ) /*0x765805*/
       return 1; /*0x76582b*/
+  unsigned int *v4; // ecx
     v4 = (unsigned int *)(*&this->q004 + 4); /*0x76580d*/
+  unsigned int *i; // eax
     for ( i = (unsigned int *)(*(unsigned int *)(a2 + 4) + 4); *v4 == *i; i += 2 ) /*0x765810*/
     {
       ++v3; /*0x76581b*/
@@ -295,16 +295,16 @@ int Campaign_WorldDominationTour_16::ddtor(void *a1)
 namespace gamemd {
 int Campaign_WorldDominationTour_16::Read(int a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // edx
-  unsigned int *i; // ecx
 
   if ( !(*((unsigned char *)&(a2_2->q00C))) ) /*0x765990*/
     return 0; /*0x765998*/
+  int m_8; // edx
   m_8 = a2_2->q008; /*0x76599e*/
+  int result; // eax
   result = 0; /*0x7659a1*/
   if ( m_8 <= 0 ) /*0x7659a5*/
     return -1; /*0x7659c0*/
+  unsigned int *i; // ecx
   for ( i = (unsigned int *)(*(unsigned int *)&a2_2->q004 + 4); *i != *(unsigned int *)((unsigned int)(a2_2)+ 4); i += 2 ) /*0x7659ae*/
   {
     if ( ++result >= m_8 ) /*0x7659be*/

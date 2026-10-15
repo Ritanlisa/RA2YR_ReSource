@@ -17,8 +17,8 @@ void MSOverlayAnim::StubReturnFalse(int a1)
 namespace gamemd {
 MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 7); /*0x5ceb83*/
   *(unsigned int *)Block->tail_0 = &vt_MSShapeAnim; /*0x5ceb86*/
   if ( v3 && *((unsigned char *)Block + 60) ) /*0x5ceb90*/

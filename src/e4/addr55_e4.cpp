@@ -603,41 +603,11 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
 namespace gamemd {
 int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
 {
-  unsigned int v3; // ebp
-  unsigned int v5; // esi
   uint8_t v6; // al
-  unsigned char *v7; // edi
-  int v8; // ecx
-  int v9; // ecx
-  int v10; // eax
-  uint8_t v11; // al
-  int v12; // edi
-  int v13; // ebp
-  unsigned int v14; // edi
-  unsigned int v15; // edx
-  int v16; // eax
-  unsigned int *v17; // ecx
-  int v18; // edx
-  unsigned int v19; // edi
-  int v20; // eax
-  unsigned int v21; // ecx
-  int v22; // eax
-  int v23; // ecx
-  int v24; // edx
-  unsigned int v25; // edi
-  int v26; // edx
-  unsigned char *v27; // ecx
-  int v28; // edi
-  int v29; // ecx
-  unsigned int v30; // edi
-  unsigned char *v31; // ecx
-  int v32; // edx
-  int v33; // eax
-  int v34; // edi
-  uint8_t v36; // [esp+10h] [ebp-18h]
-  uint8_t *v38; // [esp+20h] [ebp-8h]
 
+  unsigned int v3; // ebp
   v3 = a2; /*0x551c65*/
+  unsigned int v5; // esi
   v5 = a2; /*0x551c6f*/
   while ( 1 ) /*0x551cb9*/
   {
@@ -648,9 +618,11 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
         v6 = *a1++; /*0x551c77*/
         if ( (v6 & 0x80u) != 0 ) /*0x551c80*/
           break; /*0x551c80*/
+  unsigned char *v7; // edi
         v7 = (unsigned char *)(v5 - ((v6 & 0xF) << 8) - *a1++); /*0x551ca1*/
         if ( v6 >> 4 != -3 ) /*0x551ca9*/
         {
+  int v8; // ecx
           v8 = (v6 >> 4) + 3; /*0x551cab*/
           do /*0x551cb3*/
           {
@@ -664,18 +636,26 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
         break; /*0x551cb9*/
       if ( v6 == 0xFE ) /*0x551cdb*/
       {
+  uint8_t v11; // al
         v11 = a1[2]; /*0x551cec*/
+  uint8_t v36; // [esp+10h] [ebp-18h]
         v36 = v11; /*0x551cf2*/
+  int v12; // edi
         v12 = *a1 + (a1[1] << 8); /*0x551cf6*/
         a1 += 3; /*0x551d09*/
+  uint8_t *v38; // [esp+20h] [ebp-8h]
         v38 = a1; /*0x551d11*/
+  int v13; // ebp
         v13 = 16843009 * v11; /*0x551d1d*/
+  unsigned int v14; // edi
         v14 = (v5 & 3) - 4 + v12; /*0x551d2a*/
         if ( v5 < v5 - (v5 & 3) + 4 ) /*0x551d32*/
         {
           (*((unsigned char *)&(a1))) = v11; /*0x551d34*/
           (((unsigned char *)&(a1))[1]) = v11; /*0x551d38*/
+  unsigned int v15; // edx
           v15 = 4 - (v5 & 3); /*0x551d40*/
+  int v16; // eax
           v16 = (unsigned int)a1 << 16; /*0x551d42*/
           (*((unsigned short *)&(v16))) = (unsigned short)a1; /*0x551d47*/
           memset32((void *)v5, v16, v15 >> 2); /*0x551d4d*/
@@ -684,20 +664,25 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
           v5 += v15; /*0x551d60*/
           v11 = v36; /*0x551d62*/
         }
+  unsigned int *v17; // ecx
         v17 = (unsigned int *)v5; /*0x551d68*/
+  int v18; // edx
         (*(((unsigned short *)&(v18)) + 1)) = (*(((unsigned short *)&(v14)) + 1)); /*0x551d6a*/
         for ( v5 += v14 & 0xFFFFFFFC; (unsigned int)v17 < v5; v17 += 2 ) /*0x551d71*/
         {
           *v17 = v13; /*0x551d73*/
           v17[1] = v13; /*0x551d75*/
         }
+  unsigned int v19; // edi
         v19 = v5 + (v14 & 3); /*0x551d82*/
         if ( v5 < v19 ) /*0x551d86*/
         {
           (*((unsigned char *)&(v18))) = v11; /*0x551d8c*/
           (((unsigned char *)&(v18))[1]) = v11; /*0x551d90*/
+  int v20; // eax
           v20 = v18 << 16; /*0x551d98*/
           (*((unsigned short *)&(v20))) = v18; /*0x551da1*/
+  unsigned int v21; // ecx
           v21 = (v19 - v5) >> 2; /*0x551da4*/
           memset32((void *)v5, v20, v21); /*0x551da7*/
           memset((void *)(v5 + 4 * v21), v18, ((unsigned char)v19 - (unsigned char)v5) & 3); /*0x551dae*/
@@ -707,15 +692,22 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
       }
       else if ( v6 == 0xFF ) /*0x551dbb*/
       {
+  int v22; // eax
         v22 = a1[1]; /*0x551dc1*/
+  int v23; // ecx
         v23 = *a1; /*0x551dc4*/
+  int v24; // edx
         v24 = a1[3]; /*0x551dca*/
         a1 += 4; /*0x551dcd*/
+  unsigned int v25; // edi
         v25 = (v24 << 8) + v3; /*0x551ddd*/
+  int v26; // edx
         v26 = v23 + (v22 << 8); /*0x551ddf*/
+  unsigned char *v27; // ecx
         v27 = (unsigned char *)(v25 + *(a1 - 2)); /*0x551de1*/
         if ( v26 ) /*0x551de6*/
         {
+  int v28; // edi
           v28 = v26; /*0x551dec*/
           do /*0x551df6*/
           {
@@ -727,14 +719,20 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
       }
       else
       {
+  int v29; // ecx
         v29 = *a1; /*0x551e0b*/
+  unsigned int v30; // edi
         v30 = (a1[1] << 8) + v3; /*0x551e13*/
         a1 += 2; /*0x551e15*/
+  unsigned char *v31; // ecx
         v31 = (unsigned char *)(v30 + v29); /*0x551e18*/
+  int v32; // edx
         v32 = (v6 & 0x3F) + 3; /*0x551e1a*/
+  int v33; // eax
         v33 = (v6 & 0x3F) + 2; /*0x551e1c*/
         if ( v32 ) /*0x551e1f*/
         {
+  int v34; // edi
           v34 = v33 + 1; /*0x551e25*/
           do /*0x551e2f*/
           {
@@ -747,9 +745,11 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
     }
     if ( v6 == 0x80 ) /*0x551cbb*/
       break; /*0x551cbb*/
+  int v9; // ecx
     v9 = v6 & 0x3F; /*0x551cc6*/
     if ( v9 ) /*0x551ccb*/
     {
+  int v10; // eax
       v10 = v9; /*0x551ccd*/
       do /*0x551cd5*/
       {
@@ -939,41 +939,11 @@ int DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
 namespace gamemd {
 unsigned int sub_552640(unsigned char * a1, unsigned int a2)
 {
-  unsigned int v3; // ebp
-  unsigned int v4; // esi
   uint8_t v5; // al
-  unsigned char *v6; // edi
-  int v7; // ecx
-  int v8; // ecx
-  int v9; // eax
-  uint8_t v10; // al
-  int v11; // edi
-  int v12; // ebp
-  int v13; // ebx
-  int v14; // edi
-  int v15; // eax
-  unsigned int v16; // ecx
-  unsigned int *v17; // ecx
-  int v18; // ebx
-  unsigned int v19; // edi
-  int v20; // eax
-  unsigned int v21; // ecx
-  int v22; // eax
-  int v23; // edi
-  int v24; // ecx
-  unsigned int v25; // ebx
-  int v26; // edi
-  unsigned char *v27; // ecx
-  int v28; // eax
-  int v29; // edi
-  int v30; // ecx
-  unsigned int v31; // ebx
-  unsigned char *v32; // ecx
-  int v33; // edi
-  int v34; // eax
-  int v35; // edi
 
+  unsigned int v3; // ebp
   v3 = a2; /*0x552649*/
+  unsigned int v4; // esi
   v4 = a2; /*0x55264f*/
   while ( 1 ) /*0x552699*/
   {
@@ -984,9 +954,11 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
         v5 = *a1++; /*0x552657*/
         if ( (v5 & 0x80u) != 0 ) /*0x552660*/
           break; /*0x552660*/
+  unsigned char *v6; // edi
         v6 = (unsigned char *)(v4 - ((v5 & 0xF) << 8) - *a1++); /*0x552681*/
         if ( v5 >> 4 != -3 ) /*0x552689*/
         {
+  int v7; // ecx
           v7 = (v5 >> 4) + 3; /*0x55268b*/
           do /*0x552693*/
           {
@@ -1000,38 +972,50 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
         break; /*0x552699*/
       if ( v5 == 0xFE ) /*0x5526bb*/
       {
+  uint8_t v10; // al
         v10 = a1[2]; /*0x5526cc*/
+  int v11; // edi
         v11 = *a1 + (a1[1] << 8); /*0x5526d6*/
         a1 += 3; /*0x5526e9*/
+  int v12; // ebp
         v12 = 16843009 * v10; /*0x5526fd*/
+  int v13; // ebx
         v13 = (v4 & 3) - 4; /*0x552708*/
+  int v14; // edi
         v14 = v13 + v11; /*0x55270a*/
         if ( v4 < v4 - (v4 & 3) + 4 ) /*0x552712*/
         {
           (*((unsigned char *)&(v13))) = v10; /*0x552714*/
           (((unsigned char *)&(v13))[1]) = v10; /*0x552718*/
+  int v15; // eax
           v15 = v13 << 16; /*0x552722*/
           (*((unsigned short *)&(v15))) = v13; /*0x552727*/
+  unsigned int v16; // ecx
           v16 = (4 - (v4 & 3)) >> 2; /*0x55272a*/
           memset32((void *)v4, v15, v16); /*0x55272d*/
           memset((void *)(v4 + 4 * v16), v13, (4 - (v4 & 3)) & 3); /*0x552734*/
           v4 += 4 - (v4 & 3); /*0x552740*/
           v10 = v13; /*0x552742*/
         }
+  unsigned int *v17; // ecx
         v17 = (unsigned int *)v4; /*0x552746*/
+  int v18; // ebx
         (*(((unsigned short *)&(v18)) + 1)) = (*(((unsigned short *)&(v14)) + 1)); /*0x552748*/
         for ( v4 += v14 & 0xFFFFFFFC; (unsigned int)v17 < v4; v17 += 2 ) /*0x55274f*/
         {
           *v17 = v12; /*0x552751*/
           v17[1] = v12; /*0x552753*/
         }
+  unsigned int v19; // edi
         v19 = v4 + (v14 & 3); /*0x552760*/
         if ( v4 < v19 ) /*0x552764*/
         {
           (*((unsigned char *)&(v18))) = v10; /*0x55276a*/
           (((unsigned char *)&(v18))[1]) = v10; /*0x55276e*/
+  int v20; // eax
           v20 = v18 << 16; /*0x552776*/
           (*((unsigned short *)&(v20))) = v18; /*0x55277f*/
+  unsigned int v21; // ecx
           v21 = (v19 - v4) >> 2; /*0x552782*/
           memset32((void *)v4, v20, v21); /*0x552785*/
           memset((void *)(v4 + 4 * v21), v18, ((unsigned char)v19 - (unsigned char)v4) & 3); /*0x55278c*/
@@ -1041,16 +1025,24 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
       }
       else if ( v5 == 0xFF ) /*0x552799*/
       {
+  int v22; // eax
         v22 = *a1 + (a1[1] << 8); /*0x5527a7*/
+  int v23; // edi
         v23 = a1[3]; /*0x5527b0*/
+  int v24; // ecx
         v24 = a1[2]; /*0x5527b4*/
         a1 += 4; /*0x5527b7*/
+  unsigned int v25; // ebx
         v25 = (v23 << 8) + v3; /*0x5527bd*/
+  int v26; // edi
         v26 = v22; /*0x5527bf*/
+  unsigned char *v27; // ecx
         v27 = (unsigned char *)(v25 + v24); /*0x5527c1*/
+  int v28; // eax
         v28 = v22 - 1; /*0x5527c3*/
         if ( v26 ) /*0x5527c6*/
         {
+  int v29; // edi
           v29 = v28 + 1; /*0x5527cc*/
           do /*0x5527d6*/
           {
@@ -1062,14 +1054,20 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
       }
       else
       {
+  int v30; // ecx
         v30 = *a1; /*0x5527eb*/
+  unsigned int v31; // ebx
         v31 = (a1[1] << 8) + v3; /*0x5527f3*/
         a1 += 2; /*0x5527f5*/
+  unsigned char *v32; // ecx
         v32 = (unsigned char *)(v31 + v30); /*0x5527f8*/
+  int v33; // edi
         v33 = (v5 & 0x3F) + 3; /*0x5527fa*/
+  int v34; // eax
         v34 = (v5 & 0x3F) + 2; /*0x5527fc*/
         if ( v33 ) /*0x5527ff*/
         {
+  int v35; // edi
           v35 = v34 + 1; /*0x552805*/
           do /*0x55280f*/
           {
@@ -1082,9 +1080,11 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
     }
     if ( v5 == 0x80 ) /*0x55269b*/
       break; /*0x55269b*/
+  int v8; // ecx
     v8 = v5 & 0x3F; /*0x5526a6*/
     if ( v8 ) /*0x5526ab*/
     {
+  int v9; // eax
       v9 = v8; /*0x5526ad*/
       do /*0x5526b5*/
       {
@@ -1102,10 +1102,10 @@ namespace gamemd {
 ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
 {
 
-  int v3; // eax
 
   if ( a2 != 4526 ) /*0x55440a*/
     return 0; /*0x554428*/
+  int v3; // eax
   v3 = this->customSound_controller[4]; /*0x55440c*/
   if ( v3 ) /*0x554417*/
     (*((void (**)(ObjectClass *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass + 1))( /*0x554420*/
@@ -1121,37 +1121,15 @@ ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
 namespace gamemd {
 void UpdateDeferredLightSurfaces(int a1, char a2)
 {
-  int v4; // eax
-  double v5; // st7
-  void *v6; // eax
-  double v7; // st7
-  double v8; // st7
-  int i; // edi
-  void *v10; // esi
-  void *v11; // eax
-  double v12; // st7
-  double v13; // st7
-  double v14; // st7
-  int64_t v15; // rax
-  int v16; // eax
-  int v17; // [esp-18h] [ebp-4Ch]
-  int v18; // [esp-14h] [ebp-48h]
-  int16_t v19; // [esp-10h] [ebp-44h]
-  int16_t v20; // [esp-Ch] [ebp-40h]
-  int16_t v21; // [esp-8h] [ebp-3Ch]
-  int16_t v22; // [esp-4h] [ebp-38h]
-  int v24; // [esp+10h] [ebp-24h] BYREF
-  int v25; // [esp+14h] [ebp-20h] BYREF
-  int v26; // [esp+18h] [ebp-1Ch] BYREF
-  int v27; // [esp+1Ch] [ebp-18h] BYREF
   double v28; // [esp+20h] [ebp-14h] BYREF
   int v29; // [esp+28h] [ebp-Ch] BYREF
-  double HighPrecisionTimer; // [esp+2Ch] [ebp-8h]
 
+  double HighPrecisionTimer; // [esp+2Ch] [ebp-8h]
   HighPrecisionTimer = (&dbl_884D88)->GetHighPrecision(); /*0x554d6e*/
   ++dword_ABCA74; /*0x554d73*/
   if ( dword_ABCA50 && !byte_ABCA84 ) /*0x554d8e*/
   {
+  int v4; // eax
     v4 = dword_ABCA7C; /*0x554d94*/
     if ( dword_ABCA7C > 0 /*0x554dac*/
       || (dword_ABCA80 = dword_ABCA50, v4 = dword_ABCA50 - 1, dword_ABCA7C = dword_ABCA50 - 1, dword_ABCA50 - 1 >= 0) )
@@ -1160,6 +1138,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       {
         if ( !a2 && (v4 & 0xF) == 0xF ) /*0x554dbe*/
         {
+  double v5; // st7
           v5 = (&dbl_884D88)->GetHighPrecision(); /*0x554dc5*/
           if ( (double)a1 <= v5 - HighPrecisionTimer ) /*0x554dd9*/
             break; /*0x554dd9*/
@@ -1171,7 +1150,12 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         }
         else
         {
+  void *v6; // eax
           v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
+  int v24; // [esp+10h] [ebp-24h] BYREF
+  int v25; // [esp+14h] [ebp-20h] BYREF
+  int v26; // [esp+18h] [ebp-1Ch] BYREF
+  int v27; // [esp+1Ch] [ebp-18h] BYREF
           Tactical::CreateTacticalLightSurface((int)v6, &v24, &v25, &v26, &v27, (int)&v28, (int)&v29); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
@@ -1190,21 +1174,32 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       byte_ABCA84 = 1; /*0x554edf*/
   }
   v28 = (double)a1; /*0x554eef*/
+  double v7; // st7
   v7 = (&dbl_884D88)->GetHighPrecision(); /*0x554ef3*/
+  double v8; // st7
   v8 = v28 - (v7 - HighPrecisionTimer); /*0x554f03*/
   if ( byte_ABCA84 ) /*0x554f07*/
   {
     if ( a2 || (v29 = a1 - 1, v8 >= (double)(a1 - 1)) ) /*0x554f23*/
     {
+  int i; // edi
       for ( i = 0; i < dword_ABCA50; ++i ) /*0x554f36*/
       {
+  void *v10; // esi
         v10 = (void *)*((unsigned int *)dword_ABCA44 + i); /*0x554f42*/
+  int16_t v22; // [esp-4h] [ebp-38h]
         v22 = *((unsigned short *)v10 + 7); /*0x554f53*/
+  int16_t v21; // [esp-8h] [ebp-3Ch]
         v21 = *((unsigned short *)v10 + 6); /*0x554f56*/
+  int16_t v20; // [esp-Ch] [ebp-40h]
         v20 = *((unsigned short *)v10 + 5); /*0x554f5e*/
+  int16_t v19; // [esp-10h] [ebp-44h]
         v19 = *((unsigned short *)v10 + 4); /*0x554f61*/
+  int v18; // [esp-14h] [ebp-48h]
         v18 = *((unsigned int *)v10 + 1); /*0x554f62*/
+  int v17; // [esp-18h] [ebp-4Ch]
         v17 = *(unsigned int *)v10; /*0x554f66*/
+  void *v11; // eax
         v11 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v10 + 8); /*0x554f6d*/
         ((TacticalClass *)((int)v11))->SetView(v17, v18, v19, v20, v21, v22); /*0x554f74*/
         operator delete((void *)(v10)); /*0x554f7a*/
@@ -1221,15 +1216,20 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       MapClass::MarkForRedraw(&dword_87F7E8, 1); /*0x554fdb*/
     }
   }
+  double v12; // st7
   v12 = (&dbl_884D88)->GetHighPrecision(); /*0x554fe9*/
+  double v13; // st7
   v13 = v28 - (v12 - HighPrecisionTimer); /*0x554ff5*/
   if ( v13 > 0.0 && dword_ABCA74 > (unsigned int)(dword_ABCA78 + dword_829AE8) ) /*0x55501a*/
   {
+  double v14; // st7
     v14 = v13 * 0.5; /*0x55501c*/
     if ( v14 >= 1.0 ) /*0x55502d*/
       v14 = 1.0; /*0x555031*/
+  int64_t v15; // rax
     v15 = Math::RoundToInt(v14); /*0x555037*/
     (((unsigned char *)&(v15))[4]) = 0; /*0x55503e*/
+  int v16; // eax
     v16 = -((uint8_t)ReturnFalse2(v15, (*(((unsigned int *)&(v15)) + 1))) != 0); /*0x55504d*/
     dword_ABCA78 = dword_ABCA74; /*0x55504f*/
     (*((unsigned char *)&(v16))) = v16 & 0xCF; /*0x555055*/
@@ -1241,7 +1241,6 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
 namespace gamemd {
 int E4Recv_557380::sub_557380(int a2)
 {
-  int v3; // eax
 
   ControlClass::CtorFromData(a2); /*0x55738b*/
   this->M44 = *(unsigned int *)(a2 + 44); /*0x557396*/
@@ -1303,6 +1302,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->u32_168 = *(unsigned int *)(a2 + 360); /*0x55751c*/
   this->u32_118 = &vt_SliderClass; /*0x55751f*/
   this->M364 = *(unsigned int *)(a2 + 364); /*0x55752c*/
+  int v3; // eax
   v3 = this->M88; /*0x557538*/
   this->M368 = *(unsigned int *)(a2 + 368); /*0x55753c*/
   /* X11: vtable install elided (implicit via ListClass virtuals 0x557542) */
@@ -1317,10 +1317,8 @@ namespace gamemd {
 ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
 {
 
-  char result; // al
-  int v6; // edi
-  int v7; // eax
 
+  char result; // al
   result = a2; /*0x557b10*/
   if ( (a2 & 4) != 0 ) /*0x557b1e*/
   {
@@ -1332,7 +1330,9 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
   }
   if ( a4 == &this->u32_118 ) /*0x557b4f*/
   {
+  int v6; // edi
     v6 = *(unsigned int *)this->vtable1; /*0x557b53*/
+  int v7; // eax
     v7 = (*(int (**)(char *))(this->u32_118 + 144))(&this->u32_118); /*0x557b55*/
     return (*(char (**)(ListClass *, int))(v6 + 192))(this, v7); /*0x557b5e*/
   }
@@ -1344,8 +1344,8 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
 namespace gamemd {
 int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
 {
-  char *p_referenceCount; // eax
 
+  char *p_referenceCount; // eax
   p_referenceCount = a2_1; /*0x558810*/
   aP1->vtable2 = 2; /*0x558814*/
   if ( !a2_1 ) /*0x55881d*/
@@ -2625,73 +2625,22 @@ void GameFrameLoop()
 namespace gamemd {
 BitFont * * DrawHUD()
 {
-  int *result; // eax
-  int Type; // eax
-  AudioStream *v3; // esi
-  int v4; // eax
-  int BuildingAnimByName; // eax
-  unsigned int *v6; // eax
-  int v7; // eax
-  unsigned int *v8; // eax
-  int v9; // eax
-  unsigned int *v10; // eax
-  unsigned int QueueSize; // eax
-  int v12; // eax
-  unsigned int *v13; // eax
-  int v14; // eax
-  unsigned int *v15; // eax
-  int v16; // eax
-  unsigned int *v17; // eax
-  int v18; // eax
-  unsigned int *v19; // eax
-  int v20; // eax
-  unsigned int *v21; // eax
-  int v22; // eax
-  unsigned int *v23; // eax
-  int v24; // [esp-14h] [ebp-264h]
-  int v25; // [esp-10h] [ebp-260h]
-  int v26; // [esp-10h] [ebp-260h]
-  int v27; // [esp-Ch] [ebp-25Ch]
-  int v28; // [esp-Ch] [ebp-25Ch]
-  int v29; // [esp-Ch] [ebp-25Ch]
-  int v30; // [esp-8h] [ebp-258h]
-  int v31; // [esp-8h] [ebp-258h]
-  int v32; // [esp-8h] [ebp-258h]
-  int v33; // [esp-4h] [ebp-254h]
-  int v34; // [esp-4h] [ebp-254h]
-  int v35; // [esp-4h] [ebp-254h]
-  int v36; // [esp+0h] [ebp-250h]
-  int v37; // [esp+0h] [ebp-250h]
-  int v38; // [esp+0h] [ebp-250h]
-  int v39; // [esp+0h] [ebp-250h]
-  int v40; // [esp+4h] [ebp-24Ch]
-  int v41; // [esp+4h] [ebp-24Ch]
-  int v42; // [esp+4h] [ebp-24Ch]
-  int v43; // [esp+4h] [ebp-24Ch]
-  int v44; // [esp+4h] [ebp-24Ch]
-  int v45; // [esp+8h] [ebp-248h] BYREF
-  int v46; // [esp+Ch] [ebp-244h] BYREF
   wchar_t Format[2]; // [esp+10h] [ebp-240h] BYREF
-  int v48; // [esp+14h] [ebp-23Ch] BYREF
-  int v49; // [esp+18h] [ebp-238h] BYREF
-  int v50; // [esp+1Ch] [ebp-234h] BYREF
-  int v51; // [esp+20h] [ebp-230h] BYREF
-  int v52; // [esp+24h] [ebp-22Ch] BYREF
   int v53; // [esp+28h] [ebp-228h] BYREF
   int v54; // [esp+2Ch] [ebp-224h] BYREF
   int v55; // [esp+30h] [ebp-220h] BYREF
-  wchar_t v56; // [esp+34h] [ebp-21Ch] BYREF
   wchar_t v57[2]; // [esp+38h] [ebp-218h] BYREF
   wchar_t v58[2]; // [esp+3Ch] [ebp-214h] BYREF
   wchar_t v59[2]; // [esp+40h] [ebp-210h] BYREF
   wchar_t v60[2]; // [esp+44h] [ebp-20Ch] BYREF
   wchar_t v61[4]; // [esp+48h] [ebp-208h] BYREF
-  wchar_t Buffer[256]; // [esp+50h] [ebp-200h] BYREF
 
+  int *result; // eax
   result = (int *)dword_8373A0; /*0x55f1e0*/
   if ( dword_8373A0 != -1 ) /*0x55f1f2*/
   {
     *(double *)v61 = (double)(unsigned int)dword_8373A0 * 0.001; /*0x55f20a*/
+  int Type; // eax
     Type = BuildingAnim::GetType(); /*0x55f20e*/
     v53 = 100; /*0x55f225*/
     v54 = 0; /*0x55f23a*/
@@ -2717,18 +2666,23 @@ BitFont * * DrawHUD()
     result = *(int **)&dword_A8B238; /*0x55f28c*/
     if ( *(unsigned int *)&dword_A8B238 > 2u ) /*0x55f293*/
     {
+  AudioStream *v3; // esi
       v3 = DSurface_Composite; /*0x55f2b1*/
       (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x55f2b9*/
+  int v4; // eax
       v4 = *(unsigned int *)v3->__pad_0; /*0x55f2bc*/
       *(unsigned int *)v57 = 0; /*0x55f2c6*/
       wcscpy(v58, L"?"); /*0x55f2ca*/
       wcscpy(v59, L"?"); /*0x55f2d2*/
       wcscpy(v60, L"�"); /*0x55f2da*/
       v4->vt_slot_20(v3, v57, 0); /*0x55f2e2*/
+  wchar_t Buffer[256]; // [esp+50h] [ebp-200h] BYREF
       swprintf(Buffer, (const size_t)&off_82A224, *(const wchar_t *const *)&((unsigned int *)&stru_A8EB00)[416]); /*0x55f2f6*/
       v53 = 0; /*0x55f308*/
       v54 = 302; /*0x55f30f*/
+  int BuildingAnimByName; // eax
       BuildingAnimByName = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f317*/
+  unsigned int *v6; // eax
       v6 = (unsigned int *)(*(int (__thiscall **)(AudioStream *, wchar_t *, int *, int, unsigned int, int))(*(unsigned int *)v3->__pad_0 /*0x55f32b*/
                                                                                               + 120))(
                        v3,
@@ -2737,11 +2691,18 @@ BitFont * * DrawHUD()
                        BuildingAnimByName,
                        0,
                        25);
+  int v46; // [esp+Ch] [ebp-244h] BYREF
+  int v48; // [esp+14h] [ebp-23Ch] BYREF
+  int v49; // [esp+18h] [ebp-238h] BYREF
       TextRenderer::DrawText(&v54, (size_t)&v61[2], (int)v3, v6, v46, *(int *)Format, v48, v49); /*0x55f33a*/
       swprintf(&v61[2], (const size_t)&off_82A210, *(const wchar_t *const *)&g_MissionQueueFrame.waypoints[282]); /*0x55f34f*/
+  int v52; // [esp+24h] [ebp-22Ch] BYREF
       v52 = 0; /*0x55f361*/
       v53 = 312; /*0x55f368*/
+  int v7; // eax
       v7 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f370*/
+  unsigned int *v8; // eax
+  wchar_t v56; // [esp+34h] [ebp-21Ch] BYREF
       v8 = (unsigned int *)(*(int (__thiscall **)(AudioStream *, wchar_t *, int *, int, unsigned int, int))(*(unsigned int *)v3->__pad_0 /*0x55f384*/
                                                                                               + 120))(
                        v3,
@@ -2750,19 +2711,28 @@ BitFont * * DrawHUD()
                        v7,
                        0,
                        25);
+  int v45; // [esp+8h] [ebp-248h] BYREF
       TextRenderer::DrawText(&v53, (size_t)v61, (int)v3, v8, v45, v46, *(int *)Format, v48); /*0x55f393*/
       swprintf(v61, (const size_t)&off_82A1F4, dword_A8B550); /*0x55f3a9*/
+  int v51; // [esp+20h] [ebp-230h] BYREF
       v51 = 0; /*0x55f3b1*/
       v52 = 322; /*0x55f3b5*/
+  int v9; // eax
       v9 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f3ca*/
+  unsigned int *v10; // eax
       v10 = (unsigned int *)v3->vt_slot_120(/*0x55f3de*/
                         v3, &v55, &v51, v9, 0, 25);
+  int v40; // [esp+4h] [ebp-24Ch]
       TextRenderer::DrawText(&v52, (size_t)v60, (int)v3, v10, v40, v45, v46, *(int *)Format); /*0x55f3ed*/
+  unsigned int QueueSize; // eax
       QueueSize = IPXManagerClass::GetQueueSize(&unk_A8E9C0); /*0x55f3fa*/
       swprintf(v60, (const size_t)&off_82A1D0, (const wchar_t *const)((int)(1000 * QueueSize) / 60)); /*0x55f429*/
+  int v50; // [esp+1Ch] [ebp-234h] BYREF
       v50 = 0; /*0x55f43b*/
       v51 = 332; /*0x55f442*/
+  int v12; // eax
       v12 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f44a*/
+  unsigned int *v13; // eax
       v13 = (unsigned int *)(*(int (__thiscall **)(AudioStream *, int *, int *, int, unsigned int, wchar_t *))(*(unsigned int *)v3->__pad_0 /*0x55f45e*/
                                                                                                  + 120))(
                         v3,
@@ -2771,25 +2741,40 @@ BitFont * * DrawHUD()
                         v12,
                         0,
                         wcscpy(Format, L"\x19"));
+  int v36; // [esp+0h] [ebp-250h]
+  int v41; // [esp+4h] [ebp-24Ch]
       TextRenderer::DrawText(&v51, (size_t)v59, (int)v3, v13, v36, v41, v45, v46); /*0x55f46d*/
       swprintf(v59, (const size_t)&off_82A1B4, dword_A8B558); /*0x55f483*/
       v49 = 0; /*0x55f495*/
       v50 = 342; /*0x55f49c*/
+  int v14; // eax
       v14 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f4a4*/
+  unsigned int *v15; // eax
       v15 = (unsigned int *)v3->vt_slot_120(/*0x55f4b8*/
                         v3, &v53, &v49, v14, 0, 25);
+  int v33; // [esp-4h] [ebp-254h]
+  int v37; // [esp+0h] [ebp-250h]
+  int v42; // [esp+4h] [ebp-24Ch]
       TextRenderer::DrawText(&v50, (size_t)v58, (int)v3, v15, v33, v37, v42, v45); /*0x55f4c7*/
       swprintf(v58, (const size_t)&off_828788, *(const wchar_t *const *)(*dword_A8DA78 + 115)); /*0x55f4e1*/
       v48 = 0; /*0x55f4f3*/
       v49 = 352; /*0x55f4fa*/
+  int v16; // eax
       v16 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f502*/
+  unsigned int *v17; // eax
       v17 = (unsigned int *)v3->vt_slot_120(/*0x55f516*/
                         v3, &v52, &v48, v16, 0, 25);
+  int v30; // [esp-8h] [ebp-258h]
+  int v34; // [esp-4h] [ebp-254h]
+  int v38; // [esp+0h] [ebp-250h]
+  int v43; // [esp+4h] [ebp-24Ch]
       TextRenderer::DrawText(&v49, (size_t)v57, (int)v3, v17, v30, v34, v38, v43); /*0x55f525*/
       swprintf(v57, (const size_t)&off_828708, (const wchar_t *const)(1000 * dword_A8E2D4 / 0x3Cu)); /*0x55f550*/
       *(unsigned int *)Format = 0; /*0x55f562*/
       v48 = 362; /*0x55f569*/
+  int v18; // eax
       v18 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f571*/
+  unsigned int *v19; // eax
       v19 = (unsigned int *)(*(int (__thiscall **)(AudioStream *, int *, wchar_t *, int, unsigned int, int))(*(unsigned int *)v3->__pad_0 /*0x55f585*/
                                                                                                + 120))(
                         v3,
@@ -2798,6 +2783,10 @@ BitFont * * DrawHUD()
                         v18,
                         0,
                         25);
+  int v27; // [esp-Ch] [ebp-25Ch]
+  int v31; // [esp-8h] [ebp-258h]
+  int v35; // [esp-4h] [ebp-254h]
+  int v39; // [esp+0h] [ebp-250h]
       TextRenderer::DrawText(&v48, (size_t)&v56, (int)v3, v19, v27, v31, v35, v39); /*0x55f594*/
       swprintf( /*0x55f5c2*/
         &v56,
@@ -2807,9 +2796,14 @@ BitFont * * DrawHUD()
         *(unsigned int *)&DataGlobal_887330);
       v46 = 0; /*0x55f5d4*/
       wcscpy(Format, L"?"); /*0x55f5db*/
+  int v20; // eax
       v20 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f5e3*/
+  unsigned int *v21; // eax
       v21 = (unsigned int *)v3->vt_slot_120(/*0x55f5f7*/
                         v3, &v50, &v46, v20);
+  int v25; // [esp-10h] [ebp-260h]
+  int v28; // [esp-Ch] [ebp-25Ch]
+  int v32; // [esp-8h] [ebp-258h]
       TextRenderer::DrawText((int *)Format, (size_t)&v55, (int)v3, v21, v25, v28, v32, 0); /*0x55f606*/
       swprintf( /*0x55f61b*/
         (wchar_t *const)&v55,
@@ -2817,11 +2811,17 @@ BitFont * * DrawHUD()
         *(const wchar_t *const *)&g_MissionQueueFrame.waypoints[474]);
       v45 = 0; /*0x55f62d*/
       v46 = 382; /*0x55f634*/
+  int v22; // eax
       v22 = FindBuildingAnimByName(&stru_822420.TrailerAnim, 1); /*0x55f63c*/
+  unsigned int *v23; // eax
       v23 = (unsigned int *)v3->vt_slot_120(/*0x55f650*/
                         v3, &v49, &v45, v22);
+  int v24; // [esp-14h] [ebp-264h]
+  int v26; // [esp-10h] [ebp-260h]
+  int v29; // [esp-Ch] [ebp-25Ch]
       TextRenderer::DrawText(&v46, (size_t)&v54, (int)v3, v23, v24, v26, v29, 0); /*0x55f65f*/
       ScoreBoard::Render((char *)&unk_A8E9C0); /*0x55f66c*/
+  int v44; // [esp+4h] [ebp-24Ch]
       return (*(int *(__thiscall **)(void *, int, int, int, int, int, unsigned int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer /*0x55f679*/
                                                                                             + 16))(
                stru_887598.lineTrailer,
@@ -2888,63 +2888,23 @@ void* unknown_libname_21()
 namespace gamemd {
 AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
-  int result; // eax
-  HWND v6; // eax
-  HWND v7; // esi
-  LRESULT v8; // eax
-  LRESULT v9; // eax
-  int v10; // ecx
-  int v11; // eax
-  unsigned int v12; // ebx
-  unsigned int v13; // eax
   wchar_t *v14; // edi
   HWND v15; // eax
-  HWND v16; // esi
-  wchar_t *String; // eax
-  HWND DlgItem; // eax
-  HWND v19; // edi
-  unsigned int *v20; // eax
-  LPARAM v21; // edi
-  int *v22; // ebx
-  int v23; // eax
-  int v24; // ecx
-  LRESULT v25; // eax
-  HWND v26; // eax
-  HWND v27; // edi
-  HWND v28; // eax
-  HWND v29; // eax
-  HWND v30; // eax
-  HWND v31; // eax
-  HWND v32; // edi
-  BOOL IsSoundEnabled; // ebx
-  HWND v34; // eax
-  HWND v35; // edi
-  LPARAM v36; // eax
-  HWND v37; // eax
-  HWND v38; // edi
-  LPARAM v39; // eax
-  HWND v40; // eax
-  HWND v41; // edi
-  LPARAM v42; // eax
-  float v43; // [esp+0h] [ebp-58h]
-  float v44; // [esp+0h] [ebp-58h]
-  float v45; // [esp+0h] [ebp-58h]
-  char lParam[64]; // [esp+18h] [ebp-40h] BYREF
-  int wParama; // [esp+60h] [ebp+8h]
-  HWND v48; // [esp+64h] [ebp+Ch]
-  HWND WindowLongA; // [esp+68h] [ebp+10h]
-  HWND v50; // [esp+68h] [ebp+10h]
 
+  int result; // eax
   result = BaseDialogProc(hWnd, wParam, a3, (unsigned int)a4); /*0x55fdcd*/
   if ( !result ) /*0x55fdd4*/
   {
+  HWND WindowLongA; // [esp+68h] [ebp+10h]
     WindowLongA = (HWND)GetWindowLongA(hWnd, 8); /*0x55fde9*/
     if ( wParam > 0x114 ) /*0x55fded*/
     {
       if ( wParam == 1175 ) /*0x560112*/
       {
         byte_ABCF54 = 0; /*0x560124*/
+  HWND DlgItem; // eax
         DlgItem = GetDlgItem(hWnd, 1323); /*0x56012b*/
+  HWND v19; // edi
         v19 = DlgItem; /*0x560133*/
         if ( DlgItem ) /*0x560137*/
         {
@@ -2952,28 +2912,38 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
           SendMessageA(v19, 0x406u, 1u, 0x10000); /*0x560152*/
           SendMessageA(v19, 0x405u, 1u, dword_A8EB78 != 0); /*0x56016a*/
         }
+  HWND v48; // [esp+64h] [ebp+Ch]
         v48 = GetDlgItem(hWnd, 1773); /*0x560176*/
+  unsigned int *v20; // eax
         if ( byte_A8EB95 ) /*0x560181*/
           v20 = (unsigned int *)sub_4A4900(4096, 4096, 16); /*0x56018d*/
         else
           v20 = (unsigned int *)sub_4A4900(1024, 768, 16); /*0x5601a3*/
+  LPARAM v21; // edi
         v21 = 0; /*0x5601a8*/
         dword_ABCF58 = v20; /*0x5601aa*/
+  int *v22; // ebx
         v22 = v20; /*0x5601b1*/
+  int wParama; // [esp+60h] [ebp+8h]
         wParama = -1; /*0x5601b3*/
+  HWND v50; // [esp+68h] [ebp+10h]
         v50 = 0; /*0x5601bb*/
         if ( v20 && *v20 ) /*0x5601c9*/
         {
           do /*0x56024d*/
           {
+  int v23; // eax
             v23 = *v22; /*0x5601d2*/
+  int v24; // ecx
             v24 = v22[1]; /*0x5601d4*/
             v22 += 2; /*0x5601e0*/
             if ( byte_A8EB95 || v23 == 640 || v23 == 800 || v23 == 1024 ) /*0x5601fa*/
             {
               if ( v23 == dword_ABCE94 && v24 == dword_ABCE98 ) /*0x56020a*/
                 wParama = (int)v50; /*0x560210*/
+  char lParam[64]; // [esp+18h] [ebp-40h] BYREF
               sprintf(lParam, "%d x %d x 16", v23, v24); /*0x560220*/
+  LRESULT v25; // eax
               v25 = SendMessageA(v48, 0x4BCu, 0, (LPARAM)lParam); /*0x560239*/
               SendMessageA(v48, 0x151u, v25, v21); /*0x560247*/
               v50 = (HWND)((char *)v50 + 1); /*0x560249*/
@@ -2984,7 +2954,9 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
         }
         SendMessageA(v48, 0x14Eu, wParama, 0); /*0x560269*/
         dword_82A27C = wParama; /*0x56027b*/
+  HWND v26; // eax
         v26 = GetDlgItem(hWnd, 1295); /*0x560280*/
+  HWND v27; // edi
         v27 = v26; /*0x560282*/
         if ( v26 ) /*0x560286*/
         {
@@ -2992,16 +2964,21 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
           SendMessageA(v27, 0x406u, 1u, 0x20000); /*0x5602a1*/
           SendMessageA(v27, 0x405u, 1u, dword_A8EB64); /*0x5602b2*/
         }
+  HWND v28; // eax
         v28 = GetDlgItem(hWnd, 1537); /*0x5602ba*/
         if ( v28 ) /*0x5602be*/
           SendMessageA(v28, 0xF1u, byte_A8EB7E != 0, 0); /*0x5602d6*/
+  HWND v29; // eax
         v29 = GetDlgItem(hWnd, 1540); /*0x5602de*/
         if ( v29 ) /*0x5602e2*/
           SendMessageA(v29, 0xF1u, byte_A8EB7F != 0, 0); /*0x5602fa*/
+  HWND v30; // eax
         v30 = GetDlgItem(hWnd, 1538); /*0x560302*/
         if ( v30 ) /*0x560306*/
           SendMessageA(v30, 0xF1u, byte_A8EB80 != 0, 0); /*0x56031e*/
+  HWND v31; // eax
         v31 = GetDlgItem(hWnd, 1322); /*0x560326*/
+  HWND v32; // edi
         v32 = v31; /*0x560328*/
         if ( v31 ) /*0x56032c*/
         {
@@ -3009,33 +2986,43 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
           SendMessageA(v32, 0x406u, 1u, 393216); /*0x560347*/
           SendMessageA(v32, 0x405u, 1u, 6 - dword_A8EB70); /*0x56035f*/
         }
+  BOOL IsSoundEnabled; // ebx
         IsSoundEnabled = Audio::IsSoundEnabled(); /*0x56036c*/
+  HWND v34; // eax
         v34 = GetDlgItem(hWnd, 1327); /*0x56036e*/
+  HWND v35; // edi
         v35 = v34; /*0x560374*/
         if ( v34 ) /*0x560378*/
         {
           SendMessageA(v34, 0x4AEu, 0, 0); /*0x560384*/
           SendMessageA(v35, 0x406u, 1u, 655360); /*0x560393*/
+  LPARAM v36; // eax
           v36 = Math::RoundToInt(flt_A8EBA0 * 10.0 + 0.5); /*0x5603a7*/
           SendMessageA(v35, 0x405u, 1u, v36); /*0x5603b5*/
           EnableWindow(v35, IsSoundEnabled); /*0x5603b9*/
         }
+  HWND v37; // eax
         v37 = GetDlgItem(hWnd, 1330); /*0x5603c5*/
+  HWND v38; // edi
         v38 = v37; /*0x5603cb*/
         if ( v37 ) /*0x5603cf*/
         {
           SendMessageA(v37, 0x4AEu, 0, 0); /*0x5603db*/
           SendMessageA(v38, 0x406u, 1u, 655360); /*0x5603ea*/
+  LPARAM v39; // eax
           v39 = Math::RoundToInt(flt_A8EB98 * 10.0 + 0.5); /*0x5603fe*/
           SendMessageA(v38, 0x405u, 1u, v39); /*0x56040c*/
           EnableWindow(v38, IsSoundEnabled); /*0x560410*/
         }
+  HWND v40; // eax
         v40 = GetDlgItem(hWnd, 1334); /*0x56041c*/
+  HWND v41; // edi
         v41 = v40; /*0x560422*/
         if ( v40 ) /*0x560426*/
         {
           SendMessageA(v40, 0x4AEu, 0, 0); /*0x560432*/
           SendMessageA(v41, 0x406u, 1u, 655360); /*0x560441*/
+  LPARAM v42; // eax
           v42 = Math::RoundToInt(*(float *)&flt_A8EB9C * 10.0 + 0.5); /*0x560455*/
           SendMessageA(v41, 0x405u, 1u, v42); /*0x560463*/
           EnableWindow(v41, IsSoundEnabled); /*0x560467*/
@@ -3050,9 +3037,11 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
         case 0x114u: /*0x55fdf3*/
           if ( (unsigned short)a3 == 5 ) /*0x55ff6c*/
           {
+  unsigned int v12; // ebx
             v12 = (*(((unsigned short *)&(a3)) + 1)); /*0x55ff75*/
             if ( a4 == GetDlgItem(hWnd, 1323) ) /*0x55ff87*/
             {
+  unsigned int v13; // eax
               v13 = (*(((unsigned short *)&(a3)) + 1)); /*0x55ff8b*/
               if ( v12 ) /*0x55ff8d*/
                 v13 = 2; /*0x55ff8f*/
@@ -3072,6 +3061,7 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
                 {
                   if ( byte_ABCF54 ) /*0x560022*/
                   {
+  float v43; // [esp+0h] [ebp-58h]
                     v43 = (double)SendMessageA(a4, 0x400u, 0, 0) * 0.1; /*0x56004e*/
                     Audio::SetScoreVolume((float *)dword_A8EB60, v43, 1); /*0x560051*/
                     return 0; /*0x56005f*/
@@ -3081,6 +3071,7 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
                 {
                   if ( byte_ABCF54 ) /*0x560075*/
                   {
+  float v44; // [esp+0h] [ebp-58h]
                     v44 = (double)SendMessageA(a4, 0x400u, 0, 0) * 0.1; /*0x5600a1*/
                     Audio::SetSoundVolume((float *)dword_A8EB60, v44, 1); /*0x5600a4*/
                     return 0; /*0x5600b2*/
@@ -3088,6 +3079,7 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
                 }
                 else if ( a4 == GetDlgItem(hWnd, 1334) && byte_ABCF54 ) /*0x5600cc*/
                 {
+  float v45; // [esp+0h] [ebp-58h]
                   v45 = (double)SendMessageA(a4, 0x400u, 0, 0) * 0.1; /*0x5600f8*/
                   Audio::SetVoiceVolume((float *)dword_A8EB60, v45, 1); /*0x5600fb*/
                   return 0; /*0x560109*/
@@ -3097,9 +3089,11 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
               v14 = (wchar_t *)off_82A260[v12]; /*0x560001*/
               v15 = GetDlgItem(hWnd, 1650); /*0x56000d*/
             }
+  HWND v16; // esi
             v16 = v15; /*0x55ffa3*/
             if ( v15 ) /*0x55ffa7*/
             {
+  wchar_t *String; // eax
               String = GetStringCSF(v14, 0, g_Str_File_MainOpt_cpp, 553); /*0x55ffbb*/
               SendMessageA(v16, 0x4B2u, 0, (LPARAM)String); /*0x55ffc9*/
               return 0; /*0x55ffd8*/
@@ -3120,14 +3114,20 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
             if ( (uint16_t)a3 == 1773 && (*(((unsigned short *)&(a3)) + 1)) == 1 ) /*0x55feb5*/
             {
               SetDialogParent(hWnd, g_hWnd); /*0x55fec3*/
+  HWND v6; // eax
               v6 = GetDlgItem(hWnd, 1773); /*0x55feca*/
+  HWND v7; // esi
               v7 = v6; /*0x55fed0*/
               if ( v6 ) /*0x55fed4*/
               {
+  LRESULT v8; // eax
                 v8 = SendMessageA(v6, 0x147u, 0, 0); /*0x55feea*/
+  LRESULT v9; // eax
                 v9 = SendMessageA(v7, 0x150u, v8, 0); /*0x55fef5*/
+  int v10; // ecx
                 v10 = *((unsigned int *)dword_ABCF58 + 2 * v9); /*0x55fefd*/
                 dword_ABCE94 = v10; /*0x55ff00*/
+  int v11; // eax
                 v11 = *((unsigned int *)dword_ABCF58 + 2 * v9 + 1); /*0x55ff06*/
                 dword_ABCE98 = v11; /*0x55ff10*/
                 if ( v10 != dword_A8EB84 || v11 != dword_A8EB88 ) /*0x55ff1f*/
@@ -3178,8 +3178,8 @@ void nullsub_22()
 namespace gamemd {
 void sub_5517A0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x5517ac*/
   dbl_ABC8E0 = Math::Sqrt(v0 + v0); /*0x5517be*/
 }
@@ -3213,10 +3213,10 @@ void sub_551850()
 // 0x551870
 long long sub_551870()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABC8C0 - dbl_ABC8E8); /*0x551882*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABC8E0 * 0.5); /*0x551896*/
   dword_ABC938 = result; /*0x55189b*/
   return result; /*0x5518a0*/
@@ -3234,8 +3234,8 @@ void sub_5518E0()
 // 0x551910
 long long sub_551910()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABC938) + 0.5); /*0x55192b*/
   dword_ABC92C = result; /*0x551930*/
   return result; /*0x551936*/
@@ -3300,8 +3300,8 @@ int sub_552830()
 namespace gamemd {
 void sub_552850()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55285c*/
   dbl_ABC960 = Math::Sqrt(v0 + v0); /*0x55286e*/
 }
@@ -3335,10 +3335,10 @@ void sub_552900()
 // 0x552920
 long long sub_552920()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABC940 - dbl_ABC968); /*0x552932*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABC960 * 0.5); /*0x552946*/
   dword_ABC9B8 = result; /*0x55294b*/
   return result; /*0x552950*/
@@ -3356,8 +3356,8 @@ void sub_552990()
 // 0x5529C0
 long long sub_5529C0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABC9B8) + 0.5); /*0x5529db*/
   dword_ABC9AC = result; /*0x5529e0*/
   return result; /*0x5529e6*/
@@ -3398,8 +3398,8 @@ int sub_552A20()
 namespace gamemd {
 void sub_554430()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55443c*/
   dbl_ABC9E8 = Math::Sqrt(v0 + v0); /*0x55444e*/
 }
@@ -3433,10 +3433,10 @@ void sub_5544E0()
 // 0x554500
 long long sub_554500()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABC9C8 - dbl_ABC9F0); /*0x554512*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABC9E8 * 0.5); /*0x554526*/
   dword_ABCA70 = result; /*0x55452b*/
   return result; /*0x554530*/
@@ -3454,8 +3454,8 @@ void sub_554570()
 // 0x5545A0
 long long sub_5545A0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCA70) + 0.5); /*0x5545bb*/
   dword_ABCA64 = result; /*0x5545c0*/
   return result; /*0x5545c6*/
@@ -3586,20 +3586,20 @@ int sub_5558C0()
 // 0x555AC0
 int * Color_QuantizeRGB(int * a1, int * a2, int * a3)
 {
-  int v4; // eax
-  int v5; // eax
-  int *result; // eax
-  int v7; // ecx
 
+  int v4; // eax
   v4 = *a1; /*0x555ac4*/
   if ( *a1 >= 1000 ) /*0x555acb*/
     v4 = 1000; /*0x555acd*/
   *a1 = v4; /*0x555ad2*/
+  int v5; // eax
   v5 = *a2; /*0x555ad4*/
   if ( *a2 >= 1000 ) /*0x555adb*/
     v5 = 1000; /*0x555add*/
   *a2 = v5; /*0x555ae2*/
+  int *result; // eax
   result = a3; /*0x555ae4*/
+  int v7; // ecx
   v7 = *a3; /*0x555ae8*/
   if ( *a3 >= 1000 ) /*0x555af0*/
     v7 = 1000; /*0x555af2*/
@@ -3646,8 +3646,8 @@ int sub_555B90()
 namespace gamemd {
 void sub_555BB0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x555bbc*/
   dbl_ABCAB8 = Math::Sqrt(v0 + v0); /*0x555bce*/
 }
@@ -3681,10 +3681,10 @@ void sub_555C60()
 // 0x555C80
 long long sub_555C80()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCA98 - dbl_ABCAC0); /*0x555c92*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCAB8 * 0.5); /*0x555ca6*/
   dword_ABCB10 = result; /*0x555cab*/
   return result; /*0x555cb0*/
@@ -3702,8 +3702,8 @@ void sub_555CF0()
 // 0x555D20
 long long sub_555D20()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCB10) + 0.5); /*0x555d3b*/
   dword_ABCB04 = result; /*0x555d40*/
   return result; /*0x555d46*/
@@ -3767,8 +3767,8 @@ LightConvertClass * E4Recv_556520::sub_556520(unsigned int * Block, char a2)
 namespace gamemd {
 void sub_556790()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55679c*/
   dbl_ABCB38 = Math::Sqrt(v0 + v0); /*0x5567ae*/
 }
@@ -3802,10 +3802,10 @@ void sub_556840()
 // 0x556860
 long long sub_556860()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCB18 - dbl_ABCB40); /*0x556872*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCB38 * 0.5); /*0x556886*/
   dword_ABCBA8 = result; /*0x55688b*/
   return result; /*0x556890*/
@@ -3823,8 +3823,8 @@ void sub_5568D0()
 // 0x556900
 long long sub_556900()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCBA8) + 0.5); /*0x55691b*/
   dword_ABCB9C = result; /*0x556920*/
   return result; /*0x556926*/
@@ -3935,14 +3935,14 @@ int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
 namespace gamemd {
 size_t sub_5584F0(char * a1, void * a2)
 {
-  size_t v2; // esi
-  int v3; // eax
-  char *v4; // ecx
 
   if ( !a1 || !a2 ) /*0x5584f6*/
     return 0; /*0x55852a*/
+  size_t v2; // esi
   v2 = *(unsigned int *)(a1 + 2); /*0x5584fc*/
+  int v3; // eax
   v3 = *a1 - 3; /*0x558500*/
+  char *v4; // ecx
   v4 = &a1[*((int16_t *)a1 + 3) + 8]; /*0x558507*/
   if ( v3 ) /*0x55850b*/
   {
@@ -3973,8 +3973,8 @@ int sub_558530()
 namespace gamemd {
 void sub_558550()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55855c*/
   dbl_ABCBE0 = Math::Sqrt(v0 + v0); /*0x55856e*/
 }
@@ -4008,10 +4008,10 @@ void sub_558600()
 // 0x558620
 long long sub_558620()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCBC0 - dbl_ABCBE8); /*0x558632*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCBE0 * 0.5); /*0x558646*/
   dword_ABCC38 = result; /*0x55864b*/
   return result; /*0x558650*/
@@ -4029,8 +4029,8 @@ void sub_558690()
 // 0x5586C0
 long long sub_5586C0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCC38) + 0.5); /*0x5586db*/
   dword_ABCC2C = result; /*0x5586e0*/
   return result; /*0x5586e6*/
@@ -4071,14 +4071,10 @@ int sub_558720()
 namespace gamemd {
 LRESULT sub_5588E0(HWND hDlg, int a2, HWND hWnd, int a4)
 {
-  LRESULT result; // eax
-  LRESULT v7; // ebp
-  HWND DlgItem; // eax
-  HWND v9; // eax
-  HWND v10; // eax
-  LRESULT v11; // [esp+Ch] [ebp-4h]
 
+  LRESULT result; // eax
   result = GetWindowLongA(hDlg, 8); /*0x5588eb*/
+  LRESULT v11; // [esp+Ch] [ebp-4h]
   v11 = result; /*0x5588f9*/
   if ( a2 == 1319 ) /*0x5588fd*/
   {
@@ -4090,14 +4086,18 @@ LRESULT sub_5588E0(HWND hDlg, int a2, HWND hWnd, int a4)
         result = SendMessageA(hWnd, 0x188u, 0, 0); /*0x558973*/
         if ( result != -1 ) /*0x558978*/
         {
+  LRESULT v7; // ebp
           v7 = SendMessageA(hWnd, 0x199u, result, 0); /*0x55898c*/
           if ( *(unsigned char *)(v7 + 436) && !*(unsigned char *)(v7 + 437) || (v7 = *(unsigned int *)(v11 + 12)) != 0 ) /*0x5589ab*/
           {
+  HWND DlgItem; // eax
             DlgItem = GetDlgItem(hDlg, 1318); /*0x5589b3*/
             SendMessageA(DlgItem, 0x4B2u, 0, v7); /*0x5589be*/
           }
+  HWND v9; // eax
           v9 = GetDlgItem(hDlg, 1318); /*0x5589c6*/
           SetFocus(v9); /*0x5589c9*/
+  HWND v10; // eax
           v10 = GetDlgItem(hDlg, 1318); /*0x5589de*/
           return SendMessageA(v10, 0xB1u, 0, -1); /*0x5589e1*/
         }
@@ -4121,11 +4121,8 @@ LRESULT sub_5588E0(HWND hDlg, int a2, HWND hWnd, int a4)
 namespace gamemd {
 int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
-  int result; // eax
-  unsigned int v5; // ebx
-  LONG WindowLongA; // eax
-  LONG v7; // edi
 
+  int result; // eax
   result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x558a4a*/
   if ( !result ) /*0x558a51*/
   {
@@ -4147,9 +4144,12 @@ int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
         case 0xFu: /*0x558a63*/
           Dialog::StopBink(hWnd); /*0x558b0b*/
           return 1; /*0x558b19*/
+  unsigned int v5; // ebx
         case 0x111u: /*0x558a63*/
           v5 = (*(((unsigned short *)&(a3)) + 1)); /*0x558a89*/
+  LONG WindowLongA; // eax
           WindowLongA = GetWindowLongA(hWnd, 8); /*0x558a8c*/
+  LONG v7; // edi
           v7 = WindowLongA; /*0x558a98*/
           switch ( (uint16_t)a3 ) /*0x558a9a*/
           {
@@ -4184,9 +4184,8 @@ int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 namespace gamemd {
 int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
-  int result; // eax
-  HWND DlgItem; // eax
 
+  int result; // eax
   result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x558baa*/
   if ( !result ) /*0x558bb1*/
   {
@@ -4194,6 +4193,7 @@ int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
     {
       if ( a2 == 1175 ) /*0x558c20*/
       {
+  HWND DlgItem; // eax
         DlgItem = GetDlgItem(hWnd, 1318); /*0x558c4f*/
         SendMessageA(DlgItem, 0xC5u, 0x4Fu, 0); /*0x558c56*/
         SendDlgItemMessageA(hWnd, 1319, 0x4A6u, 0xF9u, 2); /*0x558c74*/
@@ -4230,10 +4230,8 @@ int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 namespace gamemd {
 int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
 {
-  int result; // eax
-  unsigned int v5; // ebx
-  LONG WindowLongA; // eax
 
+  int result; // eax
   result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x558cca*/
   if ( !result ) /*0x558cd1*/
   {
@@ -4255,8 +4253,10 @@ int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
         case 0xFu: /*0x558ce3*/
           Dialog::StopBink(hWnd); /*0x558d4d*/
           return 1; /*0x558d5b*/
+  unsigned int v5; // ebx
         case 0x111u: /*0x558ce3*/
           v5 = (*(((unsigned short *)&(a3)) + 1)); /*0x558cfb*/
+  LONG WindowLongA; // eax
           WindowLongA = GetWindowLongA(hWnd, 8); /*0x558cfe*/
           if ( (uint16_t)a3 == 1670 ) /*0x558d10*/
           {
@@ -4285,23 +4285,23 @@ namespace gamemd {
 int E4Recv_5595F0::sub_5595F0(char * Buffer)
 {
 
-  int v3; // eax
-  const char *vtable2; // [esp-4h] [ebp-78h]
   CCFileClass v6; // [esp+8h] [ebp-6Ch] BYREF
-  int v7[3]; // [esp+60h] [ebp-14h] BYREF
-  int v8; // [esp+6Ch] [ebp-8h]
 
   CCFileClass::Construct3((int)&v6); /*0x5595fb*/
   do /*0x559633*/
   {
+  const char *vtable2; // [esp-4h] [ebp-78h]
     vtable2 = (const char *)this->M8; /*0x559607*/
+  int v3; // eax
     v3 = rand(); /*0x559608*/
     sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
     FileClass::SetFileName(&v6, Buffer); /*0x559621*/
   }
   while ( (unsigned __int8)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/
   *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x559639*/
+  int v8; // [esp+6Ch] [ebp-8h]
   v8 = 0; /*0x559641*/
+  int v7[3]; // [esp+60h] [ebp-14h] BYREF
   Vector::Clear((int)v7); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x55965f*/
@@ -4330,8 +4330,8 @@ int sub_55A4B0()
 namespace gamemd {
 void sub_55A4D0()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55a4dc*/
   dbl_ABCC60 = Math::Sqrt(v0 + v0); /*0x55a4ee*/
 }
@@ -4365,10 +4365,10 @@ void sub_55A580()
 // 0x55A5A0
 long long sub_55A5A0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCC40 - dbl_ABCC68); /*0x55a5b2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCC60 * 0.5); /*0x55a5c6*/
   dword_ABCCB8 = result; /*0x55a5cb*/
   return result; /*0x55a5d0*/
@@ -4386,8 +4386,8 @@ void sub_55A610()
 // 0x55A640
 long long sub_55A640()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCCB8) + 0.5); /*0x55a65b*/
   dword_ABCCAC = result; /*0x55a660*/
   return result; /*0x55a666*/
@@ -4428,23 +4428,23 @@ int sub_55A6A0()
 namespace gamemd {
 int IPersistStream_Load(int * a1, int * a2, int a3)
 {
-  int *v3; // esi
-  int result; // eax
-  int v5; // eax
-  int v6; // ebx
-  int v7; // eax
-  int *v8; // [esp-4h] [ebp-18h]
 
+  int *v3; // esi
   v3 = a2; /*0x55aa61*/
   if ( !a2 ) /*0x55aa68*/
     return -2147467261; /*0x55aa6b*/
+  int v5; // eax
   v5 = *a2; /*0x55aa78*/
+  int *v8; // [esp-4h] [ebp-18h]
   v8 = a2; /*0x55aa83*/
   a2 = (int *)a1; /*0x55aa84*/
+  int result; // eax
   result = (*(int (__stdcall **)(int *, int **, int, unsigned int))(v5 + 16))(v8, &a2, 4, 0); /*0x55aa88*/
   if ( result >= 0 ) /*0x55aa8d*/
   {
+  int v6; // ebx
     v6 = *v3; /*0x55aa92*/
+  int v7; // eax
     v7 = a1->vt_slot_36(0); /*0x55aa98*/
     result = (*(int (__stdcall **)(int *, LocomotionClass *, int))(v6 + 16))(v3, a1, v7); /*0x55aa9e*/
     if ( result >= 0 ) /*0x55aaa4*/
@@ -4478,8 +4478,8 @@ int sub_55AD30()
 namespace gamemd {
 void sub_55AD50()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55ad5c*/
   dbl_ABCCE0 = Math::Sqrt(v0 + v0); /*0x55ad6e*/
 }
@@ -4513,10 +4513,10 @@ void sub_55AE00()
 // 0x55AE20
 long long sub_55AE20()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCCC0 - dbl_ABCCE8); /*0x55ae32*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCCE0 * 0.5); /*0x55ae46*/
   dword_ABCD38 = result; /*0x55ae4b*/
   return result; /*0x55ae50*/
@@ -4534,8 +4534,8 @@ void sub_55AE90()
 // 0x55AEC0
 long long sub_55AEC0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCD38) + 0.5); /*0x55aedb*/
   dword_ABCD2C = result; /*0x55aee0*/
   return result; /*0x55aee6*/
@@ -4575,12 +4575,9 @@ int sub_55AF20()
 namespace gamemd {
 int WriteCompressionBlock(Pipe * aP0, unsigned int aP1, CCINIClass * aP2, int *a3, int a5)
 {
-  int result; // eax
   int *v6; // esi
-  unsigned char *v7; // edi
-  int v8; // ecx
-  unsigned char *v9; // ecx
 
+  int result; // eax
   result = 0; /*0x55bb90*/
   if ( aP1 ) /*0x55bb9a*/
   {
@@ -4594,6 +4591,7 @@ int WriteCompressionBlock(Pipe * aP0, unsigned int aP1, CCINIClass * aP2, int *a
     else
     {
       *aP2 = aP1 + 17; /*0x55bbb0*/
+  unsigned char *v7; // edi
       v7 = aP2 + 1; /*0x55bbb3*/
       do /*0x55bbbd*/
       {
@@ -4610,8 +4608,10 @@ int WriteCompressionBlock(Pipe * aP0, unsigned int aP1, CCINIClass * aP2, int *a
     v6 = a3; /*0x55bb9c*/
     *a3 = 0; /*0x55bba0*/
   }
+  int v8; // ecx
   v8 = *v6; /*0x55bbdf*/
   aP2[v8] = 17; /*0x55bbe1*/
+  unsigned char *v9; // ecx
   v9 = &aP2[v8 + 1]; /*0x55bbe7*/
   *v9 = 0; /*0x55bbe8*/
   v9[1] = 0; /*0x55bbeb*/
@@ -4636,8 +4636,8 @@ int sub_55C9E0()
 namespace gamemd {
 void sub_55CA00()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55ca0c*/
   dbl_ABCD80 = Math::Sqrt(v0 + v0); /*0x55ca1e*/
 }
@@ -4671,10 +4671,10 @@ void sub_55CAB0()
 // 0x55CAD0
 long long sub_55CAD0()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCD60 - dbl_ABCD98); /*0x55cae2*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCD80 * 0.5); /*0x55caf6*/
   dword_ABCDF8 = result; /*0x55cafb*/
   return result; /*0x55cb00*/
@@ -4692,8 +4692,8 @@ void sub_55CB40()
 // 0x55CB70
 long long sub_55CB70()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCDF8) + 0.5); /*0x55cb8b*/
   dword_ABCDEC = result; /*0x55cb90*/
   return result; /*0x55cb96*/
@@ -4761,8 +4761,8 @@ int sub_55F760()
 namespace gamemd {
 void sub_55F780()
 {
-  long double v0; // st7
 
+  long double v0; // st7
   v0 = pow(256.0, 2.0); /*0x55f78c*/
   dbl_ABCE40 = Math::Sqrt(v0 + v0); /*0x55f79e*/
 }
@@ -4796,10 +4796,10 @@ void sub_55F830()
 // 0x55F850
 long long sub_55F850()
 {
-  double v0; // st7
-  int64_t result; // rax
 
+  double v0; // st7
   v0 = Math::Sin(dbl_ABCE20 - dbl_ABCE48); /*0x55f862*/
+  int64_t result; // rax
   result = Math::RoundToInt(v0 * dbl_ABCE40 * 0.5); /*0x55f876*/
   dword_ABCF50 = result; /*0x55f87b*/
   return result; /*0x55f880*/
@@ -4817,8 +4817,8 @@ void sub_55F8C0()
 // 0x55F8F0
 long long sub_55F8F0()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABCF50) + 0.5); /*0x55f90b*/
   dword_ABCF44 = result; /*0x55f910*/
   return result; /*0x55f916*/
@@ -4859,14 +4859,12 @@ int sub_55F950()
 namespace gamemd {
 int sub_55F980(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-  int result; // eax
-  unsigned int *WindowLongA; // eax
-  wchar_t *StringCSF; // edi
-  HWND DlgItem; // eax
 
+  int result; // eax
   result = BaseDialogProc(hWnd, a2, a3, a4); /*0x55f999*/
   if ( !result ) /*0x55f9a0*/
   {
+  unsigned int *WindowLongA; // eax
     WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x55f9a9*/
     if ( a2 == 273 ) /*0x55f9b5*/
     {
@@ -4882,7 +4880,9 @@ int sub_55F980(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     }
     else if ( a2 == 1175 ) /*0x55f9bd*/
     {
+  wchar_t *StringCSF; // edi
       StringCSF = GetStringCSF(aTxtAboutToTryM, 0, g_Str_File_MainOpt_cpp, 162); /*0x55f9db*/
+  HWND DlgItem; // eax
       DlgItem = GetDlgItem(hWnd, 1499); /*0x55f9dd*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x55f9ec*/
       return 0; /*0x55f9f7*/

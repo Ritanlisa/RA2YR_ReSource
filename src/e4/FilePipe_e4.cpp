@@ -16,28 +16,21 @@ namespace gamemd {  // G42.18 ns repair
 AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 {
 
-  int v3; // ebp
-  char *v5; // edi
-  int v6; // eax
-  unsigned char *v7; // ecx
-  int v8; // edx
-  char *v9; // eax
-  int v10; // ecx
-  int m_8; // ecx
-  int v13; // eax
-  int v14; // edx
-  char *v15; // ebx
 
+  int v3; // ebp
   v3 = a2; /*0x478342*/
   if ( a2 ) /*0x47834e*/
   {
+  char *v5; // edi
     v5 = a3; /*0x478354*/
     LOBYTE(this->m_C) = 0; /*0x478358*/
     if ( a3 ) /*0x47835d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
       {
+  char *v9; // eax
         v9 = a3 + 2; /*0x478398*/
+  int v10; // ecx
         v10 = a2; /*0x47839b*/
         do /*0x4783a8*/
         {
@@ -52,12 +45,15 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     }
     else
     {
+  int v6; // eax
       v6 = (int)(__2_YAPAXI_Z(3 * a2)); /*0x478364*/
       if ( v6 ) /*0x47836e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
         {
+  unsigned char *v7; // ecx
           v7 = &v6->ptr_2; /*0x478377*/
+  int v8; // edx
           v8 = a2; /*0x47837a*/
           do /*0x478387*/
           {
@@ -81,15 +77,19 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     {
       if ( *&this->Items ) /*0x4783bb*/
       {
+  int m_8; // ecx
         m_8 = this->__pad_008; /*0x4783c0*/
         if ( a2 < m_8 ) /*0x4783c5*/
           m_8 = a2; /*0x4783c7*/
         if ( m_8 > 0 ) /*0x4783cb*/
         {
+  int v13; // eax
           v13 = 0; /*0x4783cd*/
           do /*0x4783e9*/
           {
+  int v14; // edx
             v14 = (int)(*&this->Items + v13); /*0x4783d4*/
+  char *v15; // ebx
             v15 = &v5[v13]; /*0x4783d6*/
             v13 += 3; /*0x4783d9*/
             --m_8; /*0x4783dc*/
@@ -127,8 +127,8 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 namespace gamemd {
 void FilePipe_30::ddtor(void *a1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *&this->u32_4; /*0x4778a6*/
   this->m_10 = 0; /*0x4778a9*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4778b0*/
@@ -156,8 +156,8 @@ unsigned int FilePipe_30::Write(int a2)
 namespace gamemd {
 int FilePipe_38::Seek(int a2, int a3, void *a3_2)
 {
-  int v3; // ecx
 
+  int v3; // ecx
   v3 = ((unsigned int)(a3_2->Items)) + 3 * a3_2; /*0x47796d*/
   *(unsigned short *)a3_2 = *(unsigned short *)v3; /*0x477978*/
   *(unsigned char *)((unsigned int)(a3_2)+ 2) = *(unsigned char *)(v3 + 2); /*0x47797f*/
@@ -169,8 +169,8 @@ int FilePipe_38::Seek(int a2, int a3, void *a3_2)
 namespace gamemd {
 TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477a73*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x477a76) */
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
@@ -191,14 +191,11 @@ namespace gamemd {
 char FilePipe_30::Release(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x47814c*/
   {
     LOBYTE(this->__pad_00C) = 0; /*0x478152*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x478158*/
       v4 = a3; /*0x47816e*/
     else
@@ -208,9 +205,11 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
       return 0; /*0x4781ea*/
     if ( *&this->u32_4 ) /*0x478178*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x47817f*/
       if ( a2 < m_8 ) /*0x478184*/
         m_8 = a2; /*0x478186*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x47818c*/
         ++i; /*0x478191*/
       if ( BYTE1(this->__pad_00C) ) /*0x47819e*/
@@ -227,6 +226,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4781ce*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x4781d1*/
   if ( v7 < this->m_10 ) /*0x4781d9*/
     this->m_10 = v7; /*0x4781db*/
@@ -239,14 +239,14 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int FilePipe_30::Read(unsigned int * a2, void *a2_2, void *a3)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = a2_2->q010; /*0x4781f0*/
+  int result; // eax
   result = 0; /*0x4781f3*/
   if ( m_10 <= 0 ) /*0x4781f8*/
     return -1; /*0x47820f*/
+  unsigned int *i; // ecx
   for ( i = *(unsigned int **)&a2_2->q004; *(unsigned int)(i) != *(unsigned int *)(a2_2); ++i ) /*0x4781fe*/
   {
     if ( ++result >= m_10 ) /*0x47820d*/
@@ -259,22 +259,22 @@ int FilePipe_30::Read(unsigned int * a2, void *a2_2, void *a3)
 namespace gamemd {
 char FilePipe_38::AddRef(int a2)
 {
-  int m_8; // edi
-  int v3; // esi
-  int v4; // edx
-  unsigned char *v5; // eax
-  unsigned char *v6; // ecx
-  int v7; // ebp
 
+  int m_8; // edi
   m_8 = this->__pad_008; /*0x4782eb*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4782f0*/
   {
+  int v3; // esi
     v3 = 0; /*0x4782f2*/
     if ( m_8 <= 0 ) /*0x4782f6*/
       return 1; /*0x478332*/
+  int v4; // edx
     v4 = *(unsigned int *)(a2 + 4); /*0x4782f8*/
+  unsigned char *v5; // eax
     v5 = (unsigned char *)(*&this->Items); /*0x4782fb*/
+  unsigned char *v6; // ecx
     v6 = (unsigned char *)(v4 + 2); /*0x478300*/
+  int v7; // ebp
     v7 = v4 - (unsigned int)v5; /*0x478303*/
     while ( *v5 == v5[v7] && v5[1] == *(v6 - 1) && v5[2] == *v6 ) /*0x47831f*/
     {
@@ -307,16 +307,16 @@ void FilePipe_38::ddtor(void *a1)
 namespace gamemd {
 int FilePipe_38::Read(unsigned char * a2, void *a2_2, void *a3)
 {
-  int result; // eax
-  int m_8; // esi
-  unsigned char *i; // ecx
 
   if ( !(*((unsigned char *)&(a2_2->q00C))) ) /*0x478470*/
     return 0; /*0x47847c*/
+  int m_8; // esi
   m_8 = a2_2->q008; /*0x478482*/
+  int result; // eax
   result = 0; /*0x478485*/
   if ( m_8 <= 0 ) /*0x478489*/
     return -1; /*0x4784b0*/
+  unsigned char *i; // ecx
   for ( i = *(unsigned char **)&a2_2->Items; *(int)(i) != *(unsigned int *)(a2_2) || i[1] != a2_2[1] || i[2] != a2_2[2]; i += 3 ) /*0x47848f*/
   {
     if ( ++result >= m_8 ) /*0x4784ae*/
@@ -341,8 +341,8 @@ unsigned int FilePipe_38::Write(int a2)
 namespace gamemd {
 VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->u32_2; /*0x4786d3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4786d6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_2))[1]) ) /*0x4786e0*/
@@ -362,8 +362,8 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {
 void FilePipe_30::Clear(void *a1_1)
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = *(void **)&a1_1->q004; /*0x4b9be6*/
   a1_1->q010 = 0; /*0x4b9be9*/
   if ( v2 && (((unsigned char *)&(*(unsigned int *)&a1_1->IsAllocated))[1]) ) /*0x4b9bf0*/
@@ -391,8 +391,8 @@ unsigned int FilePipe_30::GetCount(int a2)
 namespace gamemd {
 void FilePipe_30::Clear_0()
 {
-  void *v2; // eax
 
+  void *v2; // eax
   v2 = (void *)(*&this->u32_4); /*0x4b9c46*/
   this->m_10 = 0; /*0x4b9c49*/
   if ( v2 && (((unsigned char *)&(*&this->IsAllocated))[1]) ) /*0x4b9c50*/
@@ -421,14 +421,11 @@ namespace gamemd {
 char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x4b9e2c*/
   {
     LOBYTE(this->__pad_00C) = 0; /*0x4b9e32*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x4b9e38*/
       v4 = a3; /*0x4b9e4e*/
     else
@@ -438,9 +435,11 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4b9eca*/
     if ( *&this->u32_4 ) /*0x4b9e58*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x4b9e5f*/
       if ( a2 < m_8 ) /*0x4b9e64*/
         m_8 = a2; /*0x4b9e66*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4b9e6c*/
         ++i; /*0x4b9e71*/
       if ( BYTE1(this->__pad_00C) ) /*0x4b9e7e*/
@@ -457,6 +456,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4b9eae*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x4b9eb1*/
   if ( v7 < this->m_10 ) /*0x4b9eb9*/
     this->m_10 = v7; /*0x4b9ebb*/
@@ -469,14 +469,14 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int FilePipe_30::FindItemIndex(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x4b9ed0*/
+  int result; // eax
   result = 0; /*0x4b9ed3*/
   if ( m_10 <= 0 ) /*0x4b9ed8*/
     return -1; /*0x4b9eef*/
+  unsigned int *i; // ecx
   for ( i = *&this->u32_4; *i != *a2; ++i ) /*0x4b9ede*/
   {
     if ( ++result >= m_10 ) /*0x4b9eed*/
@@ -490,14 +490,11 @@ namespace gamemd {
 char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
 {
 
-  unsigned int *v4; // edi
-  int m_8; // ecx
-  int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x4ba08c*/
   {
     LOBYTE(this->__pad_00C) = 0; /*0x4ba092*/
+  unsigned int *v4; // edi
     if ( a3 ) /*0x4ba098*/
       v4 = a3; /*0x4ba0ae*/
     else
@@ -507,9 +504,11 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
       return 0; /*0x4ba12a*/
     if ( *&this->u32_4 ) /*0x4ba0b8*/
     {
+  int m_8; // ecx
       m_8 = this->Capacity; /*0x4ba0bf*/
       if ( a2 < m_8 ) /*0x4ba0c4*/
         m_8 = a2; /*0x4ba0c6*/
+  int i; // eax
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*&this->u32_4 + 4 * i - 4) ) /*0x4ba0cc*/
         ++i; /*0x4ba0d1*/
       if ( BYTE1(this->__pad_00C) ) /*0x4ba0de*/
@@ -526,6 +525,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x4ba10e*/
   }
+  int v7; // eax
   v7 = this->Capacity; /*0x4ba111*/
   if ( v7 < this->m_10 ) /*0x4ba119*/
     this->m_10 = v7; /*0x4ba11b*/
@@ -538,14 +538,14 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
 namespace gamemd {
 int FilePipe_30::FindItemIndex_0(unsigned int * a2)
 {
-  int m_10; // edx
-  int result; // eax
-  unsigned int *i; // ecx
 
+  int m_10; // edx
   m_10 = this->m_10; /*0x4ba130*/
+  int result; // eax
   result = 0; /*0x4ba133*/
   if ( m_10 <= 0 ) /*0x4ba138*/
     return -1; /*0x4ba14f*/
+  unsigned int *i; // ecx
   for ( i = *&this->u32_4; *i != *a2; ++i ) /*0x4ba13e*/
   {
     if ( ++result >= m_10 ) /*0x4ba14d*/
@@ -559,8 +559,8 @@ int FilePipe_30::FindItemIndex_0(unsigned int * a2)
 namespace gamemd {
 DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x4ba163*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ba166*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba170*/
@@ -580,8 +580,8 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x4ba203*/
   *(unsigned int *)Block->tail_0 = &off_7E8500; /*0x4ba206*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba210*/
@@ -601,8 +601,8 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
 namespace gamemd {
 DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x4ba2a3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x4ba2a6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_8))[1]) ) /*0x4ba2b0*/

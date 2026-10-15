@@ -225,25 +225,25 @@ namespace gamemd {
 unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, int16_t * a3)
 {
 
-  int v3; // ebx
-  int v4; // ebp
-  int v5; // esi
-  __int16 v6; // di
-  int v7; // eax
-  int v8; // ecx
-  int v9; // ecx
-  __int16 *v11; // [esp+20h] [ebp+8h]
 
+  int v3; // ebx
   v3 = this->u32_F4; /*0x565668*/
+  int v4; // ebp
   v4 = this->u32_FC; /*0x56566f*/
+  int v5; // esi
   v5 = a3[1]; /*0x565676*/
+  __int16 v6; // di
   v6 = *a3; /*0x56567b*/
+  int v7; // eax
   v7 = this->u32_100; /*0x56567e*/
+  int v8; // ecx
   v8 = *a3; /*0x565684*/
+  int v9; // ecx
   if ( (v3 & 1) != 0 ) /*0x56568d*/
     v9 = v8 - v5 + 1; /*0x565691*/
   else
     v9 = v8 - v5; /*0x565694*/
+  __int16 *v11; // [esp+20h] [ebp+8h]
   LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
   HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
   *v11 = (unsigned int)(v11); /*0x5656c2*/

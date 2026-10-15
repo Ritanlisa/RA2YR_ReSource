@@ -11,8 +11,8 @@
 namespace gamemd {  // G42.18 ns repair
 int32_t RefCount::Decrement(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   result = this->u32_C - 1; /*0x401f93*/
   this->u32_C = result; /*0x401f96*/
   if ( result < 0 ) /*0x401f99*/

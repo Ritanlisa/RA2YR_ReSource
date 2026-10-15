@@ -18,8 +18,8 @@
 namespace gamemd {  // G42.18 ns repair
 char sub_72C240()
 {
-  char result; // al
 
+  char result; // al
   result = byte_B0FD21; /*0x72c240*/
   if ( !byte_B0FD21 ) /*0x72c247*/
   {
@@ -36,12 +36,12 @@ char sub_72C240()
 namespace gamemd {
 void sub_72C290()
 {
-  void *v1; // esi
 
   if ( DataGlobal_B0FD21 ) /*0x72c29a*/
   {
     if ( DataGlobal_B0FD20 ) /*0x72c2a2*/
     {
+  void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FA30; /*0x72c2a5*/
       if ( *(unsigned int *)&DataGlobal_B0FA30 ) /*0x72c2ad*/
       {
@@ -72,8 +72,8 @@ void sub_72C290()
 namespace gamemd {
 char sub_72C420()
 {
-  char result; // al
 
+  char result; // al
   result = byte_B0FD15; /*0x72c420*/
   if ( !byte_B0FD15 ) /*0x72c427*/
   {
@@ -90,12 +90,12 @@ char sub_72C420()
 namespace gamemd {
 void sub_72C470()
 {
-  void *v1; // esi
 
   if ( DataGlobal_B0FD15 ) /*0x72c47a*/
   {
     if ( DataGlobal_B0FD14 ) /*0x72c482*/
     {
+  void *v1; // esi
       v1 = *(void **)&DataGlobal_B0FA64; /*0x72c485*/
       if ( *(unsigned int *)&DataGlobal_B0FA64 ) /*0x72c48d*/
       {

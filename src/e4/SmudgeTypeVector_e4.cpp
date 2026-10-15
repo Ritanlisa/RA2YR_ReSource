@@ -10,8 +10,8 @@
 namespace gamemd {  // G42.18 ns repair
 VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x67c0b3*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x67c0b6*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x67c0c0*/

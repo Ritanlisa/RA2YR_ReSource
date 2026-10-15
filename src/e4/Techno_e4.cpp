@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 int Techno::GetOwnerHouse()
 {
-  int result; // eax
 
+  int result; // eax
   result = this->u32_C4; /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
@@ -29,8 +29,8 @@ int Techno::GetOwnerHouse()
 namespace gamemd {
 BuildingTypeClass * Techno::StartInvulnerability(int a2, int aP1, int a1)
 {
-  int v3; // eax
 
+  int v3; // eax
   v3 = TechnoClass::InvulnerabilityIntensity_SetContext(this, a2); /*0x70e368*/
   return (v3)->CalcFlashAlpha(); /*0x70e375*/
 }

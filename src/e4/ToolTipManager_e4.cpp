@@ -25,10 +25,10 @@ namespace gamemd {
 int ToolTipManager::ddtor(char a2)
 {
 
-  int result; // eax
 
   if ( a2 == 1 ) /*0x724b89*/
     ((ToolTipClass *)this)->initString(); /*0x724b8b*/
+  int result; // eax
   result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
     return (*(int (**)(ToolTipManager *, int *))(*&this->Duration + 16))( /*0x724b9f*/
@@ -56,8 +56,8 @@ int ToolTipManager::stubReturnFalse(int a1)
 namespace gamemd {
 DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 {
-  void *v3; // eax
 
+  void *v3; // eax
   v3 = *&Block->__pad_004; /*0x724f43*/
   *(unsigned int *)Block->tail_0 = &vt_VectorClass; /*0x724f46*/
   if ( v3 && (((unsigned char *)&(*&Block->u32_D))[1]) ) /*0x724f50*/

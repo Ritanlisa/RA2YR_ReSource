@@ -96,12 +96,12 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
 namespace gamemd {
 int sub_5E2FA0()
 {
-  int result; // eax
-  HWND Current; // esi
 
+  int result; // eax
   result = Dialog::GetCurrentType(); /*0x5e2fa2*/
   if ( result == 107 ) /*0x5e2faa*/
   {
+  HWND Current; // esi
     Current = (HWND)Dialog::GetCurrent(); /*0x5e2fb7*/
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
@@ -252,45 +252,45 @@ int sub_796960()
 namespace gamemd {
 int sub_7A0F40()
 {
-  int result; // eax
-  signed int v1; // ebp
-  int v2; // ebx
-  unsigned int v3; // edx
-  char *v4; // edi
-  char *v5; // edi
-  char *v6; // esi
-  char v7; // cl
-  int v8; // edx
-  int v9; // [esp+Ch] [ebp-1F4h] BYREF
-  signed int v10; // [esp+10h] [ebp-1F0h]
-  unsigned int v11[27]; // [esp+14h] [ebp-1ECh] BYREF
-  char Source[256]; // [esp+80h] [ebp-180h] BYREF
-  char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
 
+  signed int v10; // [esp+10h] [ebp-1F0h]
   v10 = dword_B77900; /*0x7a0f58*/
+  unsigned int v11[27]; // [esp+14h] [ebp-1ECh] BYREF
   memset(v11, 0, sizeof(v11)); /*0x7a0f5c*/
+  char Source[256]; // [esp+80h] [ebp-180h] BYREF
   Source[0] = 80; /*0x7a0f60*/
   Source[2] = 0; /*0x7a0f67*/
   Source[1] = dword_B77900 + 48; /*0x7a0f6c*/
+  int result; // eax
   result = g_NetworkLobbyState; /*0x7a0f70*/
   if ( !g_NetworkLobbyState ) /*0x7a0f77*/
   {
+  signed int v1; // ebp
     v1 = 0; /*0x7a0f7e*/
     if ( (int)dword_B77900 > 0 ) /*0x7a0f82*/
     {
+  int v2; // ebx
       v2 = 0; /*0x7a0f8a*/
       do /*0x7a102a*/
       {
         if ( v2 >= 0 && v1 < (int)dword_B77900 ) /*0x7a0f96*/
           memcpy(v11, (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
+  int v9; // [esp+Ch] [ebp-1F4h] BYREF
         (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
+  char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
         sprintf(Buffer, ",%s,%d", (const char *)&v11[9], v9); /*0x7a0fd8*/
+  unsigned int v3; // edx
         v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
+  char *v4; // edi
         v4 = &Source[strlen(Source)]; /*0x7a1006*/
         memcpy(v4, Buffer, 4 * (v3 >> 2)); /*0x7a100a*/
+  char *v6; // esi
         v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
+  char *v5; // edi
         v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
+  char v7; // cl
         v7 = v3; /*0x7a100c*/
+  int v8; // edx
         v8 = v9; /*0x7a100e*/
         memcpy(v5, v6, v7 & 3); /*0x7a1015*/
         SetGameOptionsPing((const char *)&v11[9], v8); /*0x7a101b*/
@@ -309,21 +309,21 @@ int sub_7A0F40()
 namespace gamemd {
 int sub_786270()
 {
-  HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
-  BYTE Data[4]; // [esp+8h] [ebp-10Ch] BYREF
-  DWORD cbData; // [esp+Ch] [ebp-108h] BYREF
-  DWORD Type; // [esp+10h] [ebp-104h] BYREF
-  CHAR SubKey[256]; // [esp+14h] [ebp-100h] BYREF
 
+  BYTE Data[4]; // [esp+8h] [ebp-10Ch] BYREF
   *(unsigned int *)Data = 0; /*0x78627e*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x786286*/
   {
     if ( strlen((const char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven)) ) /*0x78628e*/
     {
+  CHAR SubKey[256]; // [esp+14h] [ebp-100h] BYREF
       strcpy((char *)(SubKey), g_Str_SOFTWARE_Westwood_Yuri_s_Reven); /*0x7862b6*/
+  HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
       if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE,(LPCSTR)(SubKey), 0, 0x20019u, &phkResult) ) /*0x7862d5*/
       {
+  DWORD cbData; // [esp+Ch] [ebp-108h] BYREF
         cbData = 4; /*0x7862fb*/
+  DWORD Type; // [esp+10h] [ebp-104h] BYREF
         RegQueryValueExA(phkResult,(LPCSTR)(off_84A940), 0, &Type, Data, &cbData); /*0x786303*/
         RegCloseKey(phkResult); /*0x78630e*/
       }
@@ -433,8 +433,8 @@ char Event_Dispatch::Return0()
 namespace gamemd {
 bool Event::IsValidActionType(void *a1)
 {
-  int result; // eax
 
+  int result; // eax
   (*((unsigned char *)&(result))) = this == 268 /*0x6015d5*/
                 || this == 148
                 || this == 182

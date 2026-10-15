@@ -26,8 +26,6 @@ int EMPulseClass::StubReturn55()
 namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
 {
-  int v3; // eax
-  EMPulseClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)a3->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
   a3->EMPulseClass_field_0x04 = (int)&vt_EMPulseClass; /*0x4c5aca*/
@@ -36,7 +34,9 @@ EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
   if ( byte_A8E9A0 ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
+  EMPulseClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = (gamemd::EMPulseClass *)(a3); /*0x4c5b06*/
+  int v3; // eax
   v3 = (*(int (**)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
   if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
   {

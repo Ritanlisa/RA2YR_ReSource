@@ -10,8 +10,8 @@
 namespace gamemd {  // G42.18 ns repair
 unsigned int MovieClass::ComputeTime()
 {
-  unsigned int v1; // edi
 
+  unsigned int v1; // edi
   v1 = this->u32_78; /*0x7c3995*/
   return 60 * (*((int (__cdecl **)(MovieClass *))&this->q014))(this) / v1 + this->u32_148; /*0x7c39ab*/
 }  // G42.18 ns repair

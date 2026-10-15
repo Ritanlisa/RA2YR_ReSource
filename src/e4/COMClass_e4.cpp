@@ -21,20 +21,20 @@
 namespace gamemd {  // G42.18 ns repair
 void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 {
-  int v3; // eax
-  char *v4; // ebp
-  ComPtr *v5; // esi
-  int v6; // eax
-  int v7; // edi
 
   if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
+  int v3; // eax
     v3 = *((unsigned int *)Block - 1); /*0x76701d*/
+  char *v4; // ebp
     v4 = (char *)Block - 4; /*0x767021*/
+  ComPtr *v5; // esi
     v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x767024*/
+  int v6; // eax
     v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
+  int v7; // edi
       v7 = v6 + 1; /*0x76702b*/
       do /*0x76703f*/
       {

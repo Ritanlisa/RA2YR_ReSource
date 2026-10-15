@@ -212,14 +212,11 @@ LABEL_24:
 namespace gamemd {
 unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1, void *a2)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this == (Multiplayer *)aP1 ) /*0x68c2bb*/
     return (unsigned int *)(this); /*0x68c2bb*/
   (*(void (**)(Multiplayer *))(*(unsigned int *)this->q025 + 11)))(this); /*0x68c2bf*/
+  int v3; // edi
   v3 = aP1->u32_8; /*0x68c2c2*/
   this->u32_8 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
@@ -228,13 +225,16 @@ unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1, void *a2)
     this->u8_D = 0; /*0x68c320*/
     return (unsigned int *)(this); /*0x68c324*/
   }
+  int v4; // eax
   v4 = (int)(operator new(4 * v3)); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   this->u32_4 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return (unsigned int *)(this); /*0x68c2ee*/
+  int v5; // ecx
   v5 = this->u32_8; /*0x68c2f0*/
+  int v6; // eax
   v6 = 0; /*0x68c2f3*/
   this->u8_D = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
@@ -252,25 +252,12 @@ unsigned int * Multiplayer::CopyDataArray(unsigned int *aP1, void *a2)
 namespace gamemd {
 int Multiplayer::ShowProgress(int a2)
 {
-  int result; // eax
-  double v3; // st7
-  int v5; // eax
-  int i; // esi
-  int v8; // esi
-  int v9; // eax
-  int v10; // eax
-  int v11; // esi
-  int v12; // eax
-  int Ticks; // [esp+8h] [ebp-1DCh]
-  int v14; // [esp+14h] [ebp-1D0h]
-  double v15; // [esp+14h] [ebp-1D0h]
-  int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
-  int16_t v17; // [esp+1E0h] [ebp-4h]
-  char v18; // [esp+1E2h] [ebp-2h]
 
+  int result; // eax
   (*((unsigned char *)&(result))) = byte_A8ED6B; /*0x69ae90*/
   if ( !byte_A8ED6B ) /*0x69aea1*/
   {
+  int v14; // [esp+14h] [ebp-1D0h]
     v14 = a2; /*0x69aeb4*/
     if ( (((unsigned char *)&(((unsigned int *)(dword_A8B230))[375].vfptr))[1]) ) /*0x69aeb8*/
       v14 = a2 / 2; /*0x69aec7*/
@@ -283,19 +270,24 @@ int Multiplayer::ShowProgress(int a2)
       fcomp [esp+1E4h+var_1D0]
       fnstsw ax
     }
+  double v15; // [esp+14h] [ebp-1D0h]
     if ( (result & 0x100) != 0 ) /*0x69aef1*/
       result = Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, v15, NAN); /*0x69af0a*/
     if ( this->u32_284C != 1 ) /*0x69af16*/
     {
+  int Ticks; // [esp+8h] [ebp-1DCh]
       Ticks = TimerGetTicks(); /*0x69af26*/
       switch ( *(unsigned int *)this ) /*0x69af3e*/
       {
+  int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
         case 1: /*0x69af3e*/
         case 2: /*0x69af3e*/
           memset(v16, 0, 250); /*0x69b099*/
           v16[0] = 108; /*0x69b0a2*/
           Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69b0aa*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69b0af*/
+  double v3; // st7
+  int v10; // eax
           (*((unsigned short *)&(v10))) = Math::RoundToInt(v3); /*0x69b0b5*/
           *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
           (*((unsigned char *)&(v16[6]))) = dword_A8DB30; /*0x69b0d5*/
@@ -303,9 +295,11 @@ int Multiplayer::ShowProgress(int a2)
           Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
           while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 5 ) /*0x69b0f5*/
           {
+  int v11; // esi
             v11 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
             {
+  int v12; // eax
               v12 = TimerGetTicks() - Ticks; /*0x69b112*/
               if ( v12 >= 240 ) /*0x69b118*/
                 return Event::Dispatch(); /*0x69b118*/
@@ -321,11 +315,14 @@ int Multiplayer::ShowProgress(int a2)
         case 3: /*0x69af3e*/
         case 4: /*0x69af3e*/
           memset(v16, 0, sizeof(v16)); /*0x69af52*/
+  int16_t v17; // [esp+1E0h] [ebp-4h]
           v17 = 0; /*0x69af54*/
+  char v18; // [esp+1E2h] [ebp-2h]
           v18 = 0; /*0x69af56*/
           v16[0] = 15; /*0x69af5c*/
           Progress::GetWeighted((int)&dword_AC4F58, 0); /*0x69af64*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
+  int v5; // eax
           (*((unsigned short *)&(v5))) = Math::RoundToInt(v3); /*0x69af6f*/
           *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/
           strcpy((char *)&v16[1], ToWideStringChar((IUnknown *)((char *)*dword_A8DA78))); /*0x69af9e*/
@@ -341,6 +338,7 @@ int Multiplayer::ShowProgress(int a2)
           }
           else
           {
+  int i; // esi
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
             {
               Debug::Log(); /*0x69afe6*/
@@ -350,9 +348,11 @@ int Multiplayer::ShowProgress(int a2)
           Event::Dispatch(); /*0x69b015*/
           while ( (&unk_A8E9C0)->GetQueueCount() > 5 ) /*0x69b027*/
           {
+  int v8; // esi
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/
             {
+  int v9; // eax
               v9 = TimerGetTicks() - Ticks; /*0x69b048*/
               if ( v9 >= 240 ) /*0x69b04e*/
                 return Event::Dispatch(); /*0x69b04e*/
@@ -378,9 +378,9 @@ int Multiplayer::ShowProgress(int a2)
 namespace gamemd {
 void Multiplayer::Screen()
 {
-  int result; // eax
 
   dword_828140 = (int)this; /*0x53f1f0*/
+  int result; // eax
   return result; /*0x53f1f6*/
 }
 } // namespace gamemd

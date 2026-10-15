@@ -19,7 +19,6 @@ namespace gamemd {  // G42.18 ns repair
 unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, void *a9_1)
 {
 
-  int v10; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x554763*/
   this->LightTint[0] = a7; /*0x554774*/
@@ -44,6 +43,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
   {
+  int v10; // eax
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
@@ -56,8 +56,6 @@ namespace gamemd {
 int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
 {
 
-  int v2; // edx
-  int v3; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x554833*/
   this->LightIntensity = 0; /*0x55483d*/
@@ -66,6 +64,7 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
   this->LightTint[2] = 0; /*0x554846*/
   this->Location[0] = g_MissionQueueFrame.random[125]; /*0x55484f*/
   this->Location[1] = g_MissionQueueFrame.random[126]; /*0x554857*/
+  int v2; // edx
   v2 = g_MissionQueueFrame.random[127]; /*0x55485a*/
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
@@ -82,6 +81,7 @@ int LightSourceClass::Constructor(void *a1, void *a2, void *a3, void *a4)
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
   {
+  int v3; // eax
     v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = this; /*0x5548d2*/
   }
@@ -113,8 +113,8 @@ int LightSourceClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x5550cb*/
   if ( result >= 0 ) /*0x5550d2*/
   {
@@ -135,8 +135,8 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x55511f*/
   if ( result >= 0 ) /*0x555126*/
     return 0; /*0x555128*/
@@ -162,15 +162,15 @@ namespace gamemd {
 LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
 
-  int v3; // eax
-  LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = &vt_LightSourceClass; /*0x555156*/
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55515c) */
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x555163) */
   /* X11: vtable install elided (implicit via LightSourceClass virtuals 0x55516a) */
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
+  LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
   v5 = this; /*0x555186*/
+  int v3; // eax
   v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
          &g_MissionQueueFrame.random[129],
          &v5);

@@ -34,35 +34,30 @@ namespace gamemd {  // G42.18 ns repair
 int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
 {
 
-  double v4; // st7
-  Radar *p_Radar_field_0xC; // edi
-  int i; // esi
-  unsigned int *v7; // eax
-  int v8; // eax
-  bool v9; // sf
-  bool v10; // of
-  double v12; // [esp+0h] [ebp-30h]
-  int v13; // [esp+18h] [ebp-18h]
-  Radar *v14; // [esp+1Ch] [ebp-14h]
-  int v16; // [esp+24h] [ebp-Ch]
-  int v17; // [esp+28h] [ebp-8h]
-  int v18; // [esp+2Ch] [ebp-4h]
 
   if ( this->q060 ) /*0x431099*/
   {
+  Radar *p_Radar_field_0xC; // edi
     p_Radar_field_0xC = this; /*0x4310ab*/
+  int v13; // [esp+18h] [ebp-18h]
     v13 = 0; /*0x4310ad*/
+  Radar *v14; // [esp+1Ch] [ebp-14h]
     v14 = this; /*0x4310b5*/
     while ( 2 ) /*0x4310b9*/
     {
+  int i; // esi
       for ( i = 0; i < 3; ++i ) /*0x4310b9*/
       {
+  unsigned int *v7; // eax
         v7 = *(unsigned int **)p_Radar_field_0xC->__pad_000; /*0x4310bb*/
         if ( *(unsigned int *)p_Radar_field_0xC->__pad_000 ) /*0x4310bb*/
         {
+  int v17; // [esp+28h] [ebp-8h]
           v17 = a3 - v7[1]; /*0x4310d6*/
           __asm { fild [esp+28h+var_8] } /*0x4310dc*/
+  int v18; // [esp+2Ch] [ebp-4h]
           v18 = a4 - v7[2]; /*0x4310e0*/
+  int v16; // [esp+24h] [ebp-Ch]
           v16 = a2 - *v7; /*0x4310e4*/
           __asm /*0x4310e8*/
           {
@@ -84,7 +79,10 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
             fstp st
             fstp st
           }
+  double v12; // [esp+0h] [ebp-30h]
           Math::Sqrt(v12); /*0x43110c*/
+  double v4; // st7
+  int v8; // eax
           LOWORD(v8) = Math::RoundToInt(v4); /*0x431114*/
           if ( v8 < 128 ) /*0x43111e*/
             return *(unsigned int *)&this->__pad_0[8 * v13 + 4 * i + 4 * v13]; /*0x431161*/
@@ -92,7 +90,9 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
         p_Radar_field_0xC = (Radar *)((char *)p_Radar_field_0xC + 4); /*0x431121*/
       }
       p_Radar_field_0xC = (gamemd::Radar *)(&v14->q00C); /*0x431132*/
+  bool v10; // of
       v10 = __OFSUB__(v13 + 1, 8); /*0x431135*/
+  bool v9; // sf
       v9 = v13 - 7 < 0; /*0x431135*/
       ++v13; /*0x431138*/
       v14 = (Radar *)((char *)v14 + 12); /*0x43113c*/
@@ -205,12 +205,12 @@ namespace gamemd {
 int Radar::IsRadarTargetEligible()
 {
 
-  void *Radar_field_0x20C; // eax
-  int v2; // eax
 
+  void *Radar_field_0x20C; // eax
   Radar_field_0x20C = (void *)(this->q20C); /*0x5090f0*/
   if ( (unsigned int)Radar_field_0x20C >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
+  int v2; // eax
   v2 = *((unsigned int *)this + (unsigned int)Radar_field_0x20C + 132); /*0x5090ff*/
   return *(unsigned int *)(v2 + 56) < *(unsigned int *)(*(unsigned int *)&g_RulesClass_Instance + 144) /*0x509126*/
       && *(unsigned int *)(v2 + 36) == -1;
@@ -1324,28 +1324,24 @@ namespace gamemd {
 void * Radar::CopyDataArray(int * a2, void *a2_1)
 {
 
-  int v3; // edi
-  int v4; // eax
-  int v5; // ecx
-  int v6; // edx
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edx
-  int v10; // ecx
 
   if ( this != (Radar *)a2 ) /*0x58abdc*/
   {
     (*(void (**)(Radar *))(*(unsigned int *)this->__pad_000 + 12))(this); /*0x58abe0*/
+  int v3; // edi
     v3 = a2->u32_8; /*0x58abe3*/
     *&this->u32_8 = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
+  int v4; // eax
       v4 = __2_YAPAXI_Z(8 * v3); /*0x58abf7*/
       if ( v4 ) /*0x58ac01*/
       {
+  int v5; // ecx
         v5 = v4; /*0x58ac06*/
         if ( v3 - 1 >= 0 ) /*0x58ac0a*/
         {
+  int v6; // edx
           v6 = v3; /*0x58ac0c*/
           do /*0x58ac16*/
           {
@@ -1364,14 +1360,18 @@ void * Radar::CopyDataArray(int * a2, void *a2_1)
       *&this->q004 = v4; /*0x58ac1e*/
       if ( v4 ) /*0x58ac21*/
       {
+  int v7; // ecx
         v7 = *&this->u32_8; /*0x58ac23*/
+  int v8; // eax
         v8 = 0; /*0x58ac26*/
         BYTE1(this->q00C) = 1; /*0x58ac2a*/
         if ( v7 > 0 ) /*0x58ac2e*/
         {
           do /*0x58ac4a*/
           {
+  int v9; // edx
             v9 = a2->q004; /*0x58ac30*/
+  int v10; // ecx
             v10 = *&this->q004; /*0x58ac33*/
             *(unsigned int *)(v10 + 8 * v8) = *(unsigned int *)(v9 + 8 * v8); /*0x58ac39*/
             *(unsigned int *)(v10 + 8 * v8 + 4) = *(unsigned int *)(v9 + 8 * v8 + 4); /*0x58ac40*/

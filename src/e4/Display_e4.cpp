@@ -12,8 +12,8 @@
 namespace gamemd {  // G42.18 ns repair
 long long Display::CalculateDefaultSize()
 {
-  int64_t result; // rax
 
+  int64_t result; // rax
   result = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5); /*0x5d5a3b*/
   dword_ABFDC4 = result; /*0x5d5a40*/
   return result; /*0x5d5a46*/
@@ -24,16 +24,16 @@ long long Display::CalculateDefaultSize()
 namespace gamemd {
 int Display::GetViewport()
 {
-  int *result; // eax
-  int v2; // ecx
-  int v3; // edx
-  int v4; // esi
 
+  int *result; // eax
   result = (int *)this; /*0x72ad29*/
+  int v2; // ecx
   v2 = 0; /*0x72ad44*/
   if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/
+  int v3; // edx
   v3 = dword_886FB8 - 168; /*0x72ad67*/
+  int v4; // esi
   v4 = dword_886FBC - 32; /*0x72ad6d*/
   *result = v2; /*0x72ad70*/
   result[1] = 0; /*0x72ad72*/

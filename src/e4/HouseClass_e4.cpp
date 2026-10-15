@@ -47,14 +47,14 @@ namespace gamemd { int InitStatArray(int p0); }  // x4:signals@0x749060
 namespace gamemd {  // G42.18 ns repair
 void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
+
   void *v6; // edi
+  v6 = (void *)*((unsigned int *)dword_8B4154 + (a3)->FindIndex()); /*0x43b5fb*/
   int *v7; // eax
   AnimClass *v8; // eax
   void **v9; // esi
   int v11[3]; // [esp+Ch] [ebp-18h] BYREF
   unsigned char v12[12]; // [esp+18h] [ebp-Ch] BYREF
-
-  v6 = (void *)*((unsigned int *)dword_8B4154 + (a3)->FindIndex()); /*0x43b5fb*/
   v7 = (int *)(*(int (__thiscall **)(int, unsigned char *))(a2->RandomLoopDelay)(a2, v12); /*0x43b605*/
   v11[0] = *v7; /*0x43b60a*/
   v11[1] = v7[1]; /*0x43b616*/

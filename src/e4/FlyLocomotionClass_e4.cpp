@@ -26,7 +26,6 @@ namespace gamemd {  // G42.18 ns repair
 int FlyLocomotionClass::LocomotionClass()
 {
 
-  int v2; // edx
 
   LocomotionClass::Init((LocomotionClass *)this); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
@@ -35,6 +34,7 @@ int FlyLocomotionClass::LocomotionClass()
   this->MovingDestination[2] = dword_8B3C80; /*0x4cc9c7*/
   this->XYZ2[0] = dword_8B3C78; /*0x4cc9d3*/
   this->XYZ2[1] = dword_8B3C7C; /*0x4cc9dc*/
+  int v2; // edx
   v2 = dword_8B3C80; /*0x4cc9df*/
   this->TargetSpeed[1] = 0; /*0x4cc9e5*/
   this->CurrentSpeed[1] = 0; /*0x4cc9e8*/
@@ -195,8 +195,8 @@ int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int FlyLocomotionClass::BeginMove(int * a1, int * a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = SwizzleManager::SaveLoad((int *)a1->0, a2); /*0x4cfccb*/
   if ( result >= 0 ) /*0x4cfcd2*/
   {

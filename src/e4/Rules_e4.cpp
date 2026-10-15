@@ -465,12 +465,12 @@ namespace gamemd {
 char * Rules::GetProductionTimeMult(int aP1)
 {
 
-  char *result; // eax
-  int v3; // ecx
 
+  char *result; // eax
   result = (char *)aP1; /*0x5fb2e0*/
   if ( aP1 ) /*0x5fb2e6*/
   {
+  int v3; // ecx
     v3 = *(unsigned int *)this->q000; /*0x5fb2e8*/
     if ( aP1 >= 5 ) /*0x5fb2ed*/
       return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/

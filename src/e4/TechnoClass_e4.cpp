@@ -94,14 +94,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 namespace gamemd {  // G42.18 ns repair
 int TechnoClass_CanFireAtTarget(TechnoClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5)
 {
-  int result; // eax
-  int v7; // edi
 
+  int result; // eax
   result = (int)(TriggerTypeClass::ReadINI((unsigned int *)(a1), a2, a3, a4, a5));
   if ( !result ) /*0x41a9fd*/
   {
         if ( !aP0->Tactical_6C9 || aP0->passengers[1] )
     {
+  int v7; // edi
       v7 = *ProgressTimer::GetValue((ProgressTimer *)a1->secondaryFacing, &a5); /*0x41aa2e*/
       if ( (*(int (__stdcall **)(char *))(*((unsigned int *)a1 + 432) + 28))((char *)a1 + 1728) /*0x41aa6a*/
         || abs16(v7 - *(unsigned short *)((ObjectClass *)a1)->CalcTargetFacing((int *)&a5, (int)a3)) <= 0x800u )
@@ -126,21 +126,13 @@ namespace gamemd {
 TechnoClass::TechnoClass(AbstractClass * aP1)
 {
 
-  int v3; // eax
-  int v4; // edx
-  int v5; // ecx
-  int v6; // ecx
-  int v7; // edx
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
-  int v11; // eax
 
   RadioClass::Release((RadioClass *)this); /*0x6f2b46*/
   this->flashing[0] = 0; /*0x6f2b52*/
   LOBYTE(this->flashing[1]) = 0; /*0x6f2b58*/
   this->animation[0] = 0; /*0x6f2b5e*/
   LOBYTE(this->animation[1]) = 0; /*0x6f2b64*/
+  int v3; // eax
   v3 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2b6a*/
   this->animation[4] = 0; /*0x6f2b6f*/
   this->animation[2] = v3; /*0x6f2b75*/
@@ -167,11 +159,13 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->firepowerMultiplier[1] = 1072693248; /*0x6f2c04*/
   this->idleActionTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c10*/
   this->idleActionTimer[2] = 0; /*0x6f2c16*/
+  int v4; // edx
   v4 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c1c*/
   this->radarFlashTimer[2] = 0; /*0x6f2c22*/
   this->radarFlashTimer[0] = v4; /*0x6f2c28*/
   this->targetingTimer[0] = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c33*/
   this->targetingTimer[2] = 45; /*0x6f2c39*/
+  int v5; // ecx
   v5 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c43*/
   this->ironCurtainTimer[1] = 0; /*0x6f2c49*/
   *(unsigned int *)this->q18C = v5; /*0x6f2c4f*/
@@ -180,6 +174,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->ironTintTimer[2] = 10; /*0x6f2c67*/
   this->ironTintStage = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c76*/
   this->airstrikeTimer[1] = 0; /*0x6f2c7c*/
+  int v6; // ecx
   v6 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2c82*/
   this->airstrikeTintTimer[1] = 0; /*0x6f2c88*/
   this->airstrikeTimer[2] = v6; /*0x6f2c8e*/
@@ -190,6 +185,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->drainAnim = 0; /*0x6f2cac*/
   this->isDisguisedFlag = 0; /*0x6f2cb2*/
   this->disguiseCreationFrame = 0; /*0x6f2cb8*/
+  int v7; // edx
   v7 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2cbe*/
   this->infantryBlinkTimer[2] = 0; /*0x6f2cc4*/
   this->infantryBlinkTimer[0] = v7; /*0x6f2cca*/
@@ -211,6 +207,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->cloakProgress[4] = 0; /*0x6f2d3e*/
   this->cloakProgress[5] = 0; /*0x6f2d44*/
   this->cloakProgress[6] = 1; /*0x6f2d4a*/
+  int v8; // ecx
   v8 = *(unsigned int *)&DataGlobal_A8EB00[644]; /*0x6f2d50*/
   this->cloakDelayTimer[2] = 0; /*0x6f2d56*/
   this->cloakDelayTimer[0] = v8; /*0x6f2d5c*/
@@ -234,6 +231,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->chronoLockRemaining = 0; /*0x6f2dde*/
   this->chronoDestCoords[0] = g_BuildingLoadQueue_Array.?[3]; /*0x6f2dea*/
   this->chronoDestCoords[1] = g_BuildingLoadQueue_Array.?[4]; /*0x6f2df1*/
+  int v9; // edx
   v9 = g_BuildingLoadQueue_Array.?[5]; /*0x6f2df4*/
   this->bunkerLinkedUnit = 0; /*0x6f2dfa*/
   this->pitchAngle = 0.0; /*0x6f2e00*/
@@ -379,6 +377,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
          *(unsigned int *)&dword_A8EBA8 + *(unsigned int *)&DataGlobal_A8EB9C,
          0) )
   {
+  int v10; // eax
     v10 = (*(unsigned int *)&DataGlobal_A8EB00[392])++; /*0x6f31c3*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_A8EB00[380] + 4 * v10) = this; /*0x6f31d2*/
   }
@@ -390,6 +389,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
          *(unsigned int *)&DataGlobal_B0F6DC + *(unsigned int *)&DataGlobal_B0F6D0,
          0) )
   {
+  int v11; // eax
     v11 = (*(unsigned int *)&DataGlobal_B0F6D8)++; /*0x6f3216*/
     *(unsigned int *)(*(unsigned int *)&DataGlobal_B0F6CC + 4 * v11) = (unsigned int)(this); /*0x6f3225*/
   }
@@ -407,24 +407,9 @@ namespace gamemd {
 unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
 {
 
-  int v2; // ecx
-  TechnoClass *v3; // esi
-  Object *v4; // eax
-  unsigned int *result; // eax
-  int v6; // edi
-  int v7; // eax
   int v8; // eax
-  int v9; // edi
-  int v10; // eax
   int v11; // eax
-  int v12; // edi
-  int v13; // edx
-  int v14; // eax
   int v15; // eax
-  int v16; // eax
-  int v17; // eax
-  TemporalClass *v18; // eax
-  TemporalClass *v19; // eax
   int (**vtable0)(TechnoClass *, unsigned int); // edx
   int v21; // eax
   int v22; // eax
@@ -441,10 +426,14 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
   int v33; // [esp-4h] [ebp-8h]
   int v34; // [esp-4h] [ebp-8h]
 
+  int v2; // ecx
+  TechnoClass *v3; // esi
   v3 = (TechnoClass *)v2; /*0x6f3f41*/
+  Object *v4; // eax
   v4 = *(Object **)(v2 + 540); /*0x6f3f43*/
   if ( v4 ) /*0x6f3f4b*/
     *(unsigned char *)(v2 + 1050) = dword_A83D4C == v4; /*0x6f3f55*/
+  unsigned int *result; // eax
   result = (unsigned int *)(*(int (**)(void))(*(unsigned int *)v2 + 132))(); /*0x6f3f69*/
   if ( result ) /*0x6f3f71*/
   {
@@ -452,12 +441,14 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
       TechnoClass::CreatePlanningNode(v3); /*0x6f3f83*/
     if ( *(unsigned int *)((*((int (**)(TechnoClass *, int))v3->RadioClass + 33))(v3, a2) + 3416) ) /*0x6f3f93*/
     {
+  int v6; // edi
       v6 = (int)(__2_YAPAXI_Z(0x74u)); /*0x6f3fa4*/
       if ( v6 ) /*0x6f3fab*/
       {
         v33 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3428); /*0x6f3fbf*/
         v31 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3424); /*0x6f3fd0*/
         v29 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3420); /*0x6f3fe1*/
+  int v7; // eax
         v7 = (*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3); /*0x6f3fe4*/
         v8 = (v6)->SpawnManagerClass((int)v3, *(unsigned int *)(v7 + 3416), v29, v31, v33); /*0x6f3ff4*/
       }
@@ -469,12 +460,14 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
     }
     if ( *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3392) ) /*0x6f400d*/
     {
+  int v9; // edi
       v9 = __2_YAPAXI_Z(0x64u); /*0x6f401e*/
       if ( v9 ) /*0x6f4025*/
       {
         v34 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3404); /*0x6f4039*/
         v32 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3400); /*0x6f404a*/
         v30 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3) + 3396); /*0x6f405b*/
+  int v10; // eax
         v10 = (*((int (**)(TechnoClass *))v3->RadioClass + 33))(v3); /*0x6f405e*/
         v11 = SlaveManagerClass::ctor(v9, (int)v3, *(unsigned int *)(v10 + 3392), v30, v32, v34); /*0x6f406e*/
       }
@@ -489,10 +482,13 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
                               + 172)
                   + 341) )
     {
+  int v12; // edi
       v12 = __2_YAPAXI_Z(0x50u); /*0x6f40b3*/
       if ( v12 ) /*0x6f40ba*/
       {
+  int v13; // edx
         LOBYTE(v13) = *(unsigned char *)(*(unsigned int *)(*((int (**)(TechnoClass *))v3->RadioClass + 254))(v3) + 320); /*0x6f40cc*/
+  int v14; // eax
         v14 = (*((int (**)(TechnoClass *, unsigned int, int))v3->RadioClass + 254))(v3, 0, v13); /*0x6f40d7*/
         v15 = (v12)->CaptureManagerClass((int)v3, *(unsigned int *)(*(unsigned int *)v14 + 164), 0); /*0x6f40e9*/
       }
@@ -508,7 +504,9 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
                               + 172)
                   + 345) )
     {
+  int v16; // eax
       v16 = __2_YAPAXI_Z(0x58u); /*0x6f4136*/
+  int v17; // eax
       if ( v16 ) /*0x6f4140*/
         v17 = (v16)->ParasiteClass((int)v3); /*0x6f4145*/
       else
@@ -520,7 +518,9 @@ unsigned int * TechnoClass::Update(int a2, void *a2_1, void *a3, void *a4)
                               + 172)
                   + 346) )
     {
+  TemporalClass *v18; // eax
       v18 = (TemporalClass *)__2_YAPAXI_Z(0x50u); /*0x6f4185*/
+  TemporalClass *v19; // eax
       if ( v18 ) /*0x6f418f*/
         v19 = (TemporalClass *)TemporalClass::TemporalClass(v18, (int)v3); /*0x6f4194*/
       else
@@ -584,23 +584,8 @@ namespace gamemd {
 int TechnoClass::DTOR(void *a1)
 {
 
-  Sidebar *v2; // ecx
-  int v3; // ecx
-  int v4; // ecx
-  TechnoClass *v5; // ecx
-  int v6; // ecx
-  int v7; // ecx
-  unsigned int *v8; // ecx
-  int v9; // eax
-  int v10; // eax
-  int v11; // ecx
-  int v12; // ecx
-  void *v13; // eax
-  void *v14; // eax
-  void *v15; // eax
-  ObjectClass *v17; // [esp+10h] [ebp-Ch]
-  int v18; // [esp+18h] [ebp-4h] BYREF
 
+  Sidebar *v2; // ecx
   v2 = *&this->planningToken; /*0x6f4507*/
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f450d) */
   /* X11: vtable install elided (implicit via TechnoClass virtuals 0x6f4515) */
@@ -611,33 +596,39 @@ int TechnoClass::DTOR(void *a1)
     Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
     this->planningToken = 0; /*0x6f4531*/
   }
+  int v3; // ecx
   v3 = this->captureManager; /*0x6f4537*/
   if ( v3 ) /*0x6f453f*/
   {
     (*(void (**)(int, int))(*(unsigned int *)v3 + 32))(v3, 1); /*0x6f4545*/
     this->captureManager = 0; /*0x6f4548*/
   }
+  int v4; // ecx
   v4 = this->spawnManager; /*0x6f454e*/
   if ( v4 ) /*0x6f4556*/
   {
     (*(void (**)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x6f455c*/
     this->spawnManager = 0; /*0x6f455f*/
   }
+  TechnoClass *v5; // ecx
   v5 = *&this->slaveManager; /*0x6f4565*/
   if ( v5 ) /*0x6f456d*/
   {
     TechnoClass::MutateAll(v5, 0, 0); /*0x6f4571*/
+  int v6; // ecx
     v6 = this->slaveManager; /*0x6f4576*/
     if ( v6 ) /*0x6f457e*/
       (*(void (**)(int, int))(*(unsigned int *)v6 + 32))(v6, 1); /*0x6f4584*/
     this->slaveManager = 0; /*0x6f4587*/
   }
+  int v7; // ecx
   v7 = this->temporalUsing; /*0x6f458d*/
   if ( v7 ) /*0x6f4595*/
   {
     (*(void (**)(int, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6f459b*/
     this->temporalUsing = 0; /*0x6f459e*/
   }
+  unsigned int *v8; // ecx
   v8 = *&this->airstrike; /*0x6f45a4*/
   if ( v8 && v8[19] == this ) /*0x6f45b1*/
   {
@@ -653,22 +644,27 @@ int TechnoClass::DTOR(void *a1)
   AudioFileClass::Release(&this->queuedVoiceSoundController); /*0x6f4607*/
   this->owner = 0; /*0x6f4610*/
   this->isOwnedByCurrentPlayer = 0; /*0x6f4616*/
+  int v18; // [esp+18h] [ebp-4h] BYREF
   v18 = this; /*0x6f4628*/
+  int v9; // eax
   v9 = (*(int (**)(unsigned char *, int *))(*(unsigned int *)&DataGlobal_A8EB00[376] + 16))(&DataGlobal_A8EB00[376], &v18); /*0x6f462c*/
   if ( v9 != -1 ) /*0x6f4633*/
     FactoryClass::RemoveItem((FactoryClass *)&byte_A8EB94, v9); /*0x6f463b*/
   v18 = this; /*0x6f4650*/
+  int v10; // eax
   v10 = (*(int (**)(char *, int *))(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E88 + 16))( /*0x6f4654*/
           g_BuildingLoadQueue_Array.__pad_E88,
           &v18);
   if ( v10 != -1 ) /*0x6f465a*/
     DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.__pad_E88, v10); /*0x6f4662*/
+  int v11; // ecx
   v11 = this->behindAnim; /*0x6f4667*/
   if ( v11 ) /*0x6f466f*/
   {
     (*(void (**)(int))(*(unsigned int *)v11 + 248))(v11); /*0x6f4673*/
     this->behindAnim = 0; /*0x6f4679*/
   }
+  int v12; // ecx
   v12 = this->deployAnim; /*0x6f467f*/
   if ( v12 ) /*0x6f4687*/
   {
@@ -677,6 +673,7 @@ int TechnoClass::DTOR(void *a1)
   }
   this->__pad_470 = &vt_VectorClass; /*0x6f469d*/
   AbstractClassVector::ddtor(&this->__pad_470); /*0x6f46a3*/
+  void *v13; // eax
   v13 = *&this->attackedTargets; /*0x6f46a8*/
   this->currentTargets = &vt_VectorClass; /*0x6f46ae*/
   if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
@@ -686,6 +683,7 @@ int TechnoClass::DTOR(void *a1)
   }
   this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/
+  void *v14; // eax
   v14 = *&this->vecInt_Items; /*0x6f46df*/
   this->currentTargetThreatValues = &vt_VectorClass; /*0x6f46e5*/
   if ( v14 && this->vecInt_IsAllocated ) /*0x6f46f3*/
@@ -695,11 +693,13 @@ int TechnoClass::DTOR(void *a1)
   }
   this->vecInt_IsAllocated = 0; /*0x6f4710*/
   this->vecInt_Capacity = 0; /*0x6f4716*/
+  ObjectClass *v17; // [esp+10h] [ebp-Ch]
   nullsub_69(v17); /*0x6f471c*/
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4721) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4727) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f472e) */
   /* X11: vtable install elided (implicit via RadioClass virtuals 0x6f4735) */
+  void *v15; // eax
   v15 = *&this->flashing; /*0x6f473c*/
   this->radioLinks = &vt_VectorClass; /*0x6f4742*/
   if ( v15 && this->vecTechno_IsAllocated ) /*0x6f4750*/
@@ -927,58 +927,39 @@ LABEL_67:
 namespace gamemd {
 int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  int v6; // ebp
-  int v7; // ebx
-  int v8; // edx
-  int result; // eax
-  int *v10; // edi
-  int v11; // eax
-  int v12; // eax
-  int v13; // ecx
-  int v14; // esi
-  int v15; // edx
-  int v16; // esi
-  int v17; // ebx
-  int v18; // esi
-  bool v19; // cc
   uint8_t v20; // [esp+30h] [ebp-60h] BYREF
-  int16_t v21; // [esp+31h] [ebp-5Fh]
-  int v22; // [esp+34h] [ebp-5Ch]
-  int v23; // [esp+38h] [ebp-58h]
-  int v24; // [esp+3Ch] [ebp-54h]
   int v25; // [esp+40h] [ebp-50h] BYREF
-  int v26; // [esp+44h] [ebp-4Ch]
-  signed int v27; // [esp+48h] [ebp-48h]
-  signed int v28; // [esp+4Ch] [ebp-44h]
   int v29; // [esp+50h] [ebp-40h] BYREF
-  int v30; // [esp+54h] [ebp-3Ch]
-  int v31; // [esp+58h] [ebp-38h] BYREF
-  int v32; // [esp+5Ch] [ebp-34h]
-  int v33; // [esp+60h] [ebp-30h] BYREF
-  int v34; // [esp+64h] [ebp-2Ch]
-  int v35; // [esp+68h] [ebp-28h] BYREF
-  int v36; // [esp+6Ch] [ebp-24h]
   int v37; // [esp+70h] [ebp-20h] BYREF
   int v38; // [esp+74h] [ebp-1Ch]
   int v39; // [esp+78h] [ebp-18h] BYREF
   int v40; // [esp+7Ch] [ebp-14h]
-  int v41; // [esp+80h] [ebp-10h] BYREF
-  int v42; // [esp+84h] [ebp-Ch]
-  int v43; // [esp+88h] [ebp-8h]
-  int v44; // [esp+8Ch] [ebp-4h]
 
+  int v41; // [esp+80h] [ebp-10h] BYREF
   ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a1, &v41); /*0x705875*/
+  int v31; // [esp+58h] [ebp-38h] BYREF
   ((Coord *)(g_TacticalClass_Instance))->To_Screen(&a4, &v31); /*0x70588a*/
+  int v6; // ebp
   v6 = -32 - ZCoordToScreenY(a3); /*0x7058a4*/
+  int v7; // ebx
   v7 = -32 - ZCoordToScreenY(a6); /*0x7058b4*/
+  signed int v28; // [esp+4Ch] [ebp-44h]
   v28 = abs32(v31 - v41); /*0x7058c5*/
+  int v8; // edx
   v8 = *(unsigned int *)g_DSurface_Hidden_2; /*0x7058da*/
+  signed int v27; // [esp+48h] [ebp-48h]
+  int v32; // [esp+5Ch] [ebp-34h]
+  int v42; // [esp+84h] [ebp-Ch]
   v27 = abs32(v32 - v42); /*0x7058dc*/
+  int result; // eax
   result = (*(int (**)(int))(v8 + 132))(g_DSurface_Hidden_2); /*0x7058e0*/
   if ( (unsigned char)result ) /*0x7058e8*/
   {
+  int *v10; // edi
     v10 = (int *)g_DSurface_Hidden_2; /*0x7058f0*/
+  int v11; // eax
     v11 = Random::Range(Randomizer_Global, 190, 270); /*0x705905*/
+  int16_t v21; // [esp+31h] [ebp-5Fh]
     v21 = 0; /*0x70590c*/
     if ( v11 <= 255 ) /*0x70591c*/
     {
@@ -990,16 +971,22 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
       (*((unsigned char *)&(v21))) = (char)(110 * v11) / 14; /*0x705950*/
       (*(((unsigned char *)&(v21)) + (sizeof(v21) - 1))) = (char)(30 * v11) / 14; /*0x70596c*/
     }
+  int v12; // eax
     v12 = v32; /*0x705976*/
+  int v13; // ecx
     v13 = v42; /*0x70597a*/
     if ( v32 < v42 ) /*0x705980*/
     {
+  int v14; // esi
       v14 = 255 >> g_BitShift_Green_0 << g_BitShift_Red; /*0x7059c5*/
       v29 = v31 + 1; /*0x7059cc*/
       v25 = v31 - 2; /*0x7059d0*/
+  int v26; // [esp+44h] [ebp-4Ch]
       v26 = v32 + 1; /*0x7059d8*/
+  int v30; // [esp+54h] [ebp-3Ch]
       v30 = v32 + 1; /*0x7059dc*/
       v10->ComputeScreenYOffset(&v25, &v29, v14); /*0x7059eb*/
+  int v15; // edx
       v15 = *v10; /*0x7059f2*/
       v25 = v31 - 2; /*0x7059f9*/
       v29 = v31 + 1; /*0x705a01*/
@@ -1019,21 +1006,33 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
       v13 = v42; /*0x705a7f*/
       v12 = v32; /*0x705a83*/
     }
+  int v16; // esi
     v16 = v41; /*0x705a8b*/
+  int v44; // [esp+8Ch] [ebp-4h]
     v44 = v12 - v13; /*0x705a95*/
+  int v43; // [esp+88h] [ebp-8h]
     v43 = v31 - v41; /*0x705a9b*/
     v29 = v7 - v6; /*0x705a9f*/
+  int v24; // [esp+3Ch] [ebp-54h]
     v24 = v7 - v6; /*0x705aa3*/
+  int v17; // ebx
     v17 = 100; /*0x705aab*/
+  int v35; // [esp+68h] [ebp-28h] BYREF
     v35 = v41; /*0x705ab0*/
+  int v36; // [esp+6Ch] [ebp-24h]
     v36 = v13; /*0x705ab4*/
+  int v23; // [esp+38h] [ebp-58h]
     v23 = v12 - v13; /*0x705ab8*/
+  int v22; // [esp+34h] [ebp-5Ch]
     v22 = v31 - v41; /*0x705abc*/
     v25 = 0; /*0x705ac0*/
     while ( 1 ) /*0x705ae1*/
     {
+  int v33; // [esp+60h] [ebp-30h] BYREF
       v33 = v16 + v22 / 4; /*0x705ae1*/
+  int v34; // [esp+64h] [ebp-2Ch]
       v34 = v13 + v23 / 4; /*0x705af8*/
+  int v18; // esi
       v18 = v6 + v24 / 4; /*0x705b15*/
       AudioStream::DrawWaveform(v10, &DSurface_ViewBounds, &v35, &v33, &v20, v25 / 4 + 255, v6, v18); /*0x705b34*/
       if ( v28 <= v27 ) /*0x705b43*/
@@ -1068,6 +1067,7 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
       v23 += v44; /*0x705c6d*/
       result = v25 - 255; /*0x705c75*/
       v17 -= 25; /*0x705c7a*/
+  bool v19; // cc
       v19 = v25 - 255 < -765; /*0x705c7f*/
       v24 += v29; /*0x705c84*/
       v25 -= 255; /*0x705c88*/
@@ -1117,55 +1117,28 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
 namespace gamemd {
 HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
 {
+  int v47; // [esp+40h] [ebp-Ch] BYREF
+
   int *v11; // ecx
   int *v12; // esi
-  unsigned int *v13; // eax
-  CellClass *v14; // eax
-  char v15; // bl
-  unsigned int *v16; // edi
-  int v17; // edi
-  int SHPFrame; // edi
-  int v19; // ebx
-  int v20; // eax
-  int v21; // eax
-  int v22; // ecx
-  int v23; // edx
-  int v24; // eax
-  int v26; // eax
-  int v27; // eax
-  int v28; // [esp-Ch] [ebp-58h]
-  int v29; // [esp-Ch] [ebp-58h]
-  int v30; // [esp-8h] [ebp-54h]
-  int v31; // [esp-8h] [ebp-54h]
-  int v32; // [esp-4h] [ebp-50h]
-  int v33; // [esp-4h] [ebp-50h]
-  int v34; // [esp+0h] [ebp-4Ch]
-  int v35; // [esp+4h] [ebp-48h]
-  int v36; // [esp+14h] [ebp-38h]
-  int v37; // [esp+14h] [ebp-38h]
-  int16_t v38[2]; // [esp+18h] [ebp-34h] BYREF
-  int v39; // [esp+1Ch] [ebp-30h] BYREF
-  int v40; // [esp+20h] [ebp-2Ch] BYREF
-  int v41[2]; // [esp+24h] [ebp-28h] BYREF
-  int v42; // [esp+2Ch] [ebp-20h] BYREF
-  int v43; // [esp+30h] [ebp-1Ch] BYREF
-  int v44; // [esp+34h] [ebp-18h]
-  int v45; // [esp+38h] [ebp-14h]
-  int v46; // [esp+3Ch] [ebp-10h]
-  int v47; // [esp+40h] [ebp-Ch] BYREF
-  int v48; // [esp+44h] [ebp-8h] BYREF
-
   v12 = v11; /*0x73b146*/
+  unsigned int *v13; // eax
+  int v39; // [esp+1Ch] [ebp-30h] BYREF
   v13 = (unsigned int *)(*(int (**)(int *, int *))(*v11 + 72))(v11, &v39); /*0x73b152*/
+  int v36; // [esp+14h] [ebp-38h]
   (*((unsigned short *)&(v36))) = *v13 / 256; /*0x73b165*/
   (*(((unsigned short *)&(v36)) + 1)) = v13[1] / 256; /*0x73b17e*/
+  int16_t v38[2]; // [esp+18h] [ebp-34h] BYREF
   *(unsigned int *)v38 = v36; /*0x73b18b*/
+  CellClass *v14; // eax
   v14 = (CellClass *)((CellCoord *)((CellCoord *)&DataGlobal_87F7E8))->To_CellObj(v38); /*0x73b190*/
   if ( (uint8_t)CellClass::QuickPassable(v14) ) /*0x73b197*/
     aP8 = 0; /*0x73b1a0*/
+  char v15; // bl
   v15 = 0; /*0x73b1ae*/
   if ( *(unsigned char *)(v12[433] + 3606) ) /*0x73b1b0*/
   {
+  unsigned int *v16; // edi
     if ( TechnoClass::CheckTargetCell((TechnoClass *)v12) && !TechnoClass::ScanNeighborCells((TechnoClass *)v12) /*0x73b1fb*/
       || (v16 = (unsigned int *)Array::Get((Array *)v12, 0), v12->q5A4)
       && v16
@@ -1175,7 +1148,9 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
       v15 = 1; /*0x73b205*/
     }
   }
+  int v37; // [esp+14h] [ebp-38h]
   v37 = 0; /*0x73b20f*/
+  int v17; // edi
   v17 = 10240; /*0x73b217*/
   switch ( v12->UpdatePowerDrain_0(0, 0) ) /*0x73b225*/
   {
@@ -1205,34 +1180,54 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   {
     v17 = v12->GetAnimationFlags(v17); /*0x73b2a0*/
   }
+  int SHPFrame; // edi
   SHPFrame = BuildingClass::GetSHPFrame( /*0x73b2d3*/
                *(BuildingClass **)(*(unsigned int *)(*(unsigned int *)&BuildingTypeClass_AnimTable + 4 * v12->owner->startingCell) + 780),
                v17);
+  int v42; // [esp+2Ch] [ebp-20h] BYREF
   v42 = (int)a1 + dword_B1CFC0 - 128; /*0x73b2dd*/
+  int v43; // [esp+30h] [ebp-1Ch] BYREF
   v43 = (int)a2 + dword_B1CFC4 - 128; /*0x73b2eb*/
+  int v44; // [esp+34h] [ebp-18h]
   v44 = dword_B1CFC8; /*0x73b2f6*/
+  int v45; // [esp+38h] [ebp-14h]
   v45 = dword_B1CFCC; /*0x73b2fa*/
   if ( v15 && dword_B1CFCC > 16 ) /*0x73b307*/
   {
+  int v19; // ebx
     v19 = aP7; /*0x73b30d*/
     v39 = dword_B1CFC0; /*0x73b311*/
+  int v41[2]; // [esp+24h] [ebp-28h] BYREF
     v41[0] = dword_B1CFC8; /*0x73b319*/
     v45 = dword_B1CFCC - 16; /*0x73b329*/
     v41[1] = dword_B1CFCC - 16; /*0x73b32d*/
+  int v20; // eax
     v20 = *v12; /*0x73b331*/
+  int v32; // [esp-4h] [ebp-50h]
     v32 = aP8; /*0x73b333*/
+  int v40; // [esp+20h] [ebp-2Ch] BYREF
     v40 = dword_B1CFC4; /*0x73b339*/
+  int v30; // [esp-8h] [ebp-54h]
     v30 = (*(int (**)(int *, unsigned int, int))(v20 + 748))(v12, 0, aP7) - 5; /*0x73b34a*/
+  int v21; // eax
     v21 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2); /*0x73b35a*/
+  int v35; // [esp+4h] [ebp-48h]
+  int v48; // [esp+44h] [ebp-8h] BYREF
     BlitterCopySHP(a1, &aP4, &v43, (int *)g_DSurface_Hidden_2, v21, &v48, v41, SHPFrame, v30, v32, v37, v35); /*0x73b377*/
+  int v22; // ecx
+  int v46; // [esp+3Ch] [ebp-10h]
     v22 = v46 + v44; /*0x73b388*/
+  int v23; // edx
     v23 = v46 + v41[0]; /*0x73b38a*/
     v46 = 16; /*0x73b391*/
     v42 = 16; /*0x73b395*/
     v44 = v22; /*0x73b39d*/
     v41[0] = v23; /*0x73b3a6*/
+  int v34; // [esp+0h] [ebp-4Ch]
     v34 = a10; /*0x73b3ac*/
+  int v28; // [esp-Ch] [ebp-58h]
     v28 = v12->GetDrawHeight(); /*0x73b3be*/
+  int v24; // eax
     v24 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2); /*0x73b3cc*/
     return BlitterCopySHP( /*0x73b3e5*/
              a1,
@@ -1250,10 +1245,15 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   }
   else
   {
+  int v33; // [esp-4h] [ebp-50h]
     v33 = aP8; /*0x73b403*/
+  int v31; // [esp-8h] [ebp-54h]
     v31 = aP7; /*0x73b404*/
+  int v26; // eax
     v26 = v12->MissionStubReturnZero5(); /*0x73b407*/
+  int v29; // [esp-Ch] [ebp-58h]
     v29 = v12->GetDrawHeight(v26); /*0x73b41e*/
+  int v27; // eax
     v27 = (*(int (**)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2); /*0x73b42c*/
     return BlitterCopySHP( /*0x73b446*/
              (int *)a0,

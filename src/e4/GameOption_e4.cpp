@@ -22,7 +22,6 @@ namespace gamemd {
 int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
 {
   wchar_t *result; // eax
-  wchar_t *StringCSF; // eax
 
   if ( aP1 ) /*0x69acd9*/
   {
@@ -31,6 +30,7 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   }
   else
   {
+  wchar_t *StringCSF; // eax
     StringCSF = GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845); /*0x69ad02*/
     return (int)(wcscpy((wchar_t *)Destination, StringCSF)); /*0x69ad09*/
   }
@@ -61,8 +61,8 @@ namespace gamemd {
 char GameOption::CheckDuplicate()
 {
 
-  LPARAM *v0; // eax
 
+  LPARAM *v0; // eax
   v0 = (LPARAM *)(&dword_A8DA90); /*0x5e9566*/
   while ( *v0 != g_Lobby_MaxPlayers ) /*0x5e956d*/
   {

@@ -15,10 +15,10 @@
 namespace gamemd {  // G42.18 ns repair
 int Selection::SetCurrent()
 {
-  int result; // eax
 
   *(unsigned int *)&DataGlobal_B0FE54 = (unsigned int)(this); /*0x731d00*/
   (*((unsigned char *)&(g_BuildingLoadQueue_Array.QueueingCell[0]))) = 0; /*0x731d06*/
+  int result; // eax
   return result; /*0x731d0d*/
 }  // G42.18 ns repair
 } // namespace gamemd
@@ -33,8 +33,8 @@ char Selection_GetFlag(void *a1)
 namespace gamemd {
 int Selection::ClearGlobals()
 {
-  int result; // eax
 
+  int result; // eax
   result = 0; /*0x734270*/
   if ( this ) /*0x734274*/
   {

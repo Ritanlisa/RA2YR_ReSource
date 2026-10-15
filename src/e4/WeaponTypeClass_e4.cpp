@@ -92,7 +92,6 @@ namespace gamemd {
 unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a3, void *a4, void *a5)
 {
 
-  int v3; // eax
 
   AbstractTypeClass::Constructor((int *)aP1, a2); /*0x771c7a*/
   aP1->AmbientDamage = 0; /*0x771c87*/
@@ -186,6 +185,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
          dword_887570 + dword_88757C,
          0) )
   {
+  int v3; // eax
     v3 = g_WeaponTypePool++; /*0x771ed7*/
     *((unsigned int *)g_WeaponTypeConfig + v3) = (unsigned int)(aP1); /*0x771ee6*/
   }
@@ -198,11 +198,6 @@ namespace gamemd {
 int WeaponTypeClass::Destructor(void *a1)
 {
 
-  int v2; // eax
-  void *v3; // eax
-  void *v4; // eax
-  void *v5; // eax
-  WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
   a1->AbstractTypeClass = &vt_WeaponTypeClass; /*0x771f57*/
   a1->? = &vt_WeaponTypeClass; /*0x771f5d*/
@@ -211,7 +206,9 @@ int WeaponTypeClass::Destructor(void *a1)
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, 1); /*0x771f72*/
   a1->Projectile = 0; /*0x771f7d*/
   a1->Warhead = 0; /*0x771f83*/
+  WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   v7 = a1; /*0x771f95*/
+  int v2; // eax
   v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))WeaponTypeClass_Array->?)( /*0x771f99*/
          &WeaponTypeClass_Array,
          &v7);
@@ -224,6 +221,7 @@ int WeaponTypeClass::Destructor(void *a1)
     }
     while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
+  void *v3; // eax
   v3 = (void *)a1->Anim[1]; /*0x771fce*/
   a1->Anim[0] = (int)&vt_VectorClass; /*0x771fd4*/
   if ( v3 && BYTE1(a1->Anim[3]) ) /*0x771fe2*/
@@ -233,6 +231,7 @@ int WeaponTypeClass::Destructor(void *a1)
   }
   BYTE1(a1->Anim[3]) = 0; /*0x771ff9*/
   a1->Anim[2] = 0; /*0x771fff*/
+  void *v4; // eax
   v4 = (void *)a1->DownReport[1]; /*0x772005*/
   a1->DownReport[0] = (int)&vt_VectorClass; /*0x77200b*/
   if ( v4 && BYTE1(a1->DownReport[3]) ) /*0x772019*/
@@ -242,6 +241,7 @@ int WeaponTypeClass::Destructor(void *a1)
   }
   BYTE1(a1->DownReport[3]) = 0; /*0x772030*/
   a1->DownReport[2] = 0; /*0x772036*/
+  void *v5; // eax
   v5 = (void *)a1->Report[1]; /*0x77203c*/
   a1->Report[0] = (int)&vt_VectorClass; /*0x772042*/
   if ( v5 && BYTE1(a1->Report[3]) ) /*0x772050*/
@@ -259,53 +259,43 @@ int WeaponTypeClass::Destructor(void *a1)
 namespace gamemd {
 int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  BulletTypeClass *Projectile; // eax
-  int v10; // eax
-  WarheadTypeClass *Warhead; // eax
-  int v12; // eax
-  int v13; // edx
-  int v14; // eax
-  int v15; // ecx
-  int v16; // edx
-  int v17; // eax
-  int v18; // ecx
-  int v19; // edx
-  int v20; // eax
-  int v21; // ecx
-  int v22; // edx
 
   ((AbstractTypeClass *)((AbstractTypeClass *)a2_2))->ProcessPower((int *)(a2_2)); /*0x772ae9*/
   Power::TimerProcess(a2_2->AmbientDamage); /*0x772af7*/
+  int v3; // ecx
   (*((unsigned char *)&(v3))) = a2_2->IsSonic; /*0x772afc*/
   ((Power *)a2_2)->FlagProcess(v3); /*0x772b05*/
+  int v4; // edx
   (*((unsigned char *)&(v4))) = a2_2->TurboBoost; /*0x772b0a*/
+  int v5; // eax
   v5 = ((Power *)a2_2)->FlagProcess(v4); /*0x772b13*/
   (*((unsigned char *)&(v5))) = a2_2->Supress; /*0x772b18*/
   ((Power *)a2_2)->FlagProcess(v5); /*0x772b21*/
+  int v6; // ecx
   (*((unsigned char *)&(v6))) = a2_2->Camera; /*0x772b26*/
   ((Power *)a2_2)->FlagProcess(v6); /*0x772b2f*/
+  int v7; // edx
   (*((unsigned char *)&(v7))) = a2_2->IsLaser; /*0x772b34*/
+  int v8; // eax
   v8 = ((Power *)a2_2)->FlagProcess(v7); /*0x772b3d*/
   (*((unsigned char *)&(v8))) = a2_2->IsHouseColor; /*0x772b42*/
   ((Power *)a2_2)->FlagProcess(v8); /*0x772b4b*/
   Power::TimerProcess(a2_2->Burst); /*0x772b59*/
+  BulletTypeClass *Projectile; // eax
   Projectile = a2_2->Projectile; /*0x772b5e*/
   if ( Projectile ) /*0x772b66*/
   {
+  int v10; // eax
     v10 = (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)&Projectile->vfptr[4] + 16))(&Projectile->vfptr[4]); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
   Power::TimerProcess(a2_2->Damage); /*0x772b83*/
   Power::TimerProcess(a2_2->Speed); /*0x772b91*/
+  WarheadTypeClass *Warhead; // eax
   Warhead = a2_2->Warhead; /*0x772b96*/
   if ( Warhead ) /*0x772b9e*/
   {
+  int v12; // eax
     v12 = (*((int (__stdcall **)(void **))Warhead->WarheadTypeClass_field_0x4 + 4))(&Warhead->WarheadTypeClass_field_0x4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
@@ -314,24 +304,34 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Power::TimerProcess(a2_2->Report[4]); /*0x772bd7*/
   Power::TimerProcess(a2_2->DownReport[4]); /*0x772be5*/
   Power::TimerProcess(*(unsigned int *)&a2_2->AreaFire); /*0x772bf3*/
+  int v13; // edx
   (*((unsigned char *)&(v13))) = a2_2->UseFireParticles; /*0x772bf8*/
+  int v14; // eax
   v14 = ((Power *)a2_2)->FlagProcess(v13); /*0x772c01*/
   (*((unsigned char *)&(v14))) = a2_2->Lobber; /*0x772c06*/
   ((Power *)a2_2)->FlagProcess(v14); /*0x772c0f*/
+  int v15; // ecx
   (*((unsigned char *)&(v15))) = a2_2->LaserDuration; /*0x772c14*/
   Power::FinalizeDrain((Power *)a2_2, v15); /*0x772c1d*/
+  int v16; // edx
   (*((unsigned char *)&(v16))) = a2_2->IsBigLaser; /*0x772c22*/
+  int v17; // eax
   v17 = ((Power *)a2_2)->FlagProcess(v16); /*0x772c2b*/
   (*((unsigned char *)&(v17))) = a2_2->IsRailgun; /*0x772c30*/
   ((Power *)a2_2)->FlagProcess(v17); /*0x772c39*/
+  int v18; // ecx
   (*((unsigned char *)&(v18))) = a2_2->Charges; /*0x772c3e*/
   ((Power *)a2_2)->FlagProcess(v18); /*0x772c47*/
+  int v19; // edx
   (*((unsigned char *)&(v19))) = a2_2->Bright; /*0x772c4c*/
+  int v20; // eax
   v20 = ((Power *)a2_2)->FlagProcess(v19); /*0x772c55*/
   (*((unsigned char *)&(v20))) = a2_2->UseSparkParticles; /*0x772c5a*/
   ((Power *)a2_2)->FlagProcess(v20); /*0x772c63*/
+  int v21; // ecx
   (*((unsigned char *)&(v21))) = a2_2->OmniFire; /*0x772c68*/
   ((Power *)a2_2)->FlagProcess(v21); /*0x772c71*/
+  int v22; // edx
   (*((unsigned char *)&(v22))) = a2_2->DistributedWeaponFire; /*0x772c76*/
   return ((Power *)a2_2)->FlagProcess(v22); /*0x772c84*/
 }
@@ -340,21 +340,16 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
 namespace gamemd {
 int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5)
 {
-  int v4; // ebx
-  WeaponTypeClass *v5; // edi
-  int *Report; // ebp
-  int *v7; // esi
-  int result; // eax
-  int i; // ebx
-  int j; // ebx
-  int k; // ebx
-  int m; // esi
 
+  WeaponTypeClass *v5; // edi
   v5 = (int *)(aP0);
+  int *Report; // ebp
     Report = (int *)(aP0->Report);
     (*(void (**)(int *))(aP0-((unsigned int *)(>Report))[0] + 12))(aP0->Report);
   (*(void (**)(int *))(v5->DownReport[0] + 12))(v5->DownReport); /*0x772cf4*/
+  int *v7; // esi
   v7 = (int *)(a2); /*0x772cf7*/
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(v5), (int)a2); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/
   {
@@ -365,7 +360,9 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       ((DynamicVectorClass *)v5->Anim)->AnimTypeConstructor(0, 0); /*0x772d2b*/
       v5-((unsigned int *)(>Anim))[0] = (int)&vt_TypeList; /*0x772d30*/
     }
+  int v4; // ebx
     v7->vt_entry_68(&aP0, 4, 0, v4); /*0x772d42*/
+  int i; // ebx
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
       v7->vt_entry_68(&a3, 4, 0); /*0x772d5b*/
@@ -377,6 +374,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
       *Report = (int)&vt_TypeList; /*0x772d84*/
     }
     v7->vt_entry_68(&a2, 4, 0); /*0x772d97*/
+  int j; // ebx
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
       v7->vt_entry_68(&a3, 4, 0); /*0x772db0*/
@@ -385,6 +383,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
     v7->vt_entry_68(&a2, 4); /*0x772de3*/
+  int k; // ebx
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
       v7->vt_entry_68(&a2, 4, 0); /*0x772dfc*/
@@ -396,6 +395,7 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->AssaultAnim); /*0x772e51*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OccupantAnim); /*0x772e62*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->OpenToppedAnim); /*0x772e73*/
+  int m; // esi
     for ( m = 0; m < v5-((unsigned int *)(>Anim))[4]; ++m ) /*0x772e83*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5-((unsigned int *)(>Anim))[1] + 4 * m)); /*0x772e94*/
     return 0; /*0x772ea4*/
@@ -407,31 +407,31 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, WeaponTypeClass *aP0, 
 namespace gamemd {
 int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, unsigned int * a2, void * a3, void * a4, void * a5)
 {
-  int v5; // ebx
-  int result; // eax
-  int v7; // edx
-  int i; // ebx
-  int v9; // edx
-  int j; // ebx
-  int v11; // edx
-  int k; // ebx
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)a1,(int *)(a2), (int)a3); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
+  int v7; // edx
     v7 = *a2; /*0x772ed4*/
     a3 = (int *)a1->Anim[4]; /*0x772ee1*/
+  int v5; // ebx
     (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x772ee5*/
+  int i; // ebx
     for ( i = 0; i < (int)(a4); ++i ) /*0x772ef0*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
+  int v9; // edx
     v9 = *a2; /*0x772f13*/
     a4 = a1->Report[4]; /*0x772f1f*/
     (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x772f23*/
+  int j; // ebx
     for ( j = 0; j < a4; ++j ) /*0x772f2e*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Report[1] + 4 * j, 4, 0); /*0x772f41*/
+  int v11; // edx
     v11 = *a2; /*0x772f51*/
     a4 = a1->DownReport[4]; /*0x772f5d*/
     (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x772f61*/
+  int k; // ebx
     for ( k = 0; k < (int)a3; ++k ) /*0x772f6c*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->DownReport[1] + 4 * k, 4, 0); /*0x772f7f*/
     return 0; /*0x772f89*/
@@ -443,14 +443,9 @@ int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, unsigned int * a2, void * a3, v
 namespace gamemd {  // G42.18c ns repair
 WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
 {
+
   AbstractClass *v2; // ecx
   AbstractClass *v3; // esi
-  int v4; // eax
-  void *NeedsSaveOrLink; // eax
-  void *vtable1; // eax
-  void *vtable3; // eax
-  AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
-
   v3 = v2; /*0x7730f3*/
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x7730f7) */
   /* X11: vtable install elided (implicit via WeaponTypeClass virtuals 0x7730fd) */
@@ -459,7 +454,9 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x773112*/
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
+  AbstractClass *v9; // [esp+8h] [ebp-4h] BYREF
   v9 = v3; /*0x773135*/
+  int v4; // eax
   v4 = ((int (__thiscall *)(WeaponTypeClass **, AbstractClass **))WeaponTypeClass_Array->uniqueId)( /*0x773139*/
          &WeaponTypeClass_Array,
          &v9);
@@ -472,6 +469,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
     }
     while ( v4 < g_WeaponTypePool ); /*0x77316c*/
   }
+  void *NeedsSaveOrLink; // eax
   NeedsSaveOrLink = v3[6].NeedsSaveOrLink; /*0x77316e*/
   v3[6].referenceCount = (int)&vt_VectorClass; /*0x773174*/
   if ( NeedsSaveOrLink && (((unsigned char *)&(v3[7].vfptr1))[1]) ) /*0x773182*/
@@ -481,6 +479,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   (((unsigned char *)&(v3[7].vfptr1))[1]) = 0; /*0x773199*/
   v3[7].vfptr = 0; /*0x77319f*/
+  void *vtable1; // eax
   vtable1 = v3[6].vfptr1; /*0x7731a5*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x7731ab) */
   if ( vtable1 && (((unsigned char *)&(v3[6].vfptr3))[1]) ) /*0x7731b9*/
@@ -490,6 +489,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   }
   (((unsigned char *)&(v3[6].vfptr3))[1]) = 0; /*0x7731d0*/
   v3[6].vfptr2 = 0; /*0x7731d6*/
+  void *vtable3; // eax
   vtable3 = v3[5].vfptr3; /*0x7731dc*/
   /* X11: vtable install elided (implicit via VectorClass virtuals 0x7731e2) */
   if ( vtable3 && (((unsigned char *)&(v3[5].abstractFlags))[1]) ) /*0x7731f0*/
@@ -509,24 +509,24 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
 namespace gamemd {  // G42.18c ns repair
 char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
 {
-  int v4; // eax
-  int v5; // edx
-  char *v6; // ebx
-  unsigned char Source[125]; // [esp+Ch] [ebp-80h] BYREF
-  int16_t v10; // [esp+89h] [ebp-3h]
-  char v11; // [esp+8Bh] [ebp-1h]
 
+  unsigned char Source[125]; // [esp+Ch] [ebp-80h] BYREF
   Source[0] = g_INI_DefaultBuffer; /*0x475b80*/
   memset(&Source[1], 0, 0x7Cu); /*0x475b8f*/
+  int16_t v10; // [esp+89h] [ebp-3h]
   v10 = 0; /*0x475b91*/
+  char v11; // [esp+8Bh] [ebp-1h]
   v11 = 0; /*0x475b93*/
+  int v4; // eax
   v4 = dword_A83C78; /*0x475b94*/
   if ( dword_A83C78 > 32 ) /*0x475b9c*/
     v4 = 32; /*0x475b9e*/
+  int v5; // edx
   v5 = 0; /*0x475ba3*/
   v4 = v4; /*0x475ba5*/
   if ( v4 > 0 ) /*0x475bab*/
   {
+  char *v6; // ebx
     v6 = (char *)dword_A83C6C; /*0x475bb2*/
     do /*0x475c3a*/
     {

@@ -19,8 +19,8 @@
 namespace gamemd {  // G42.18 ns repair
 int sub_53EC40(unsigned char a1, char a2)
 {
-  int result; // eax
 
+  int result; // eax
   result = dword_AA0444; /*0x53ec40*/
   if ( dword_AA0444 )
     ((unsigned int *)(word_AA0168))[a1] = a2 != 0 ? 0 : 0x8000;
@@ -123,15 +123,12 @@ namespace gamemd {  // G42.18 ns repair
 double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 {
   double v3; // st7
-  double v4; // st7
-  char v6; // c0
-  int v8; // [esp+Ch] [ebp-10h]
-  double v9; // [esp+14h] [ebp-8h]
-  int v10; // [esp+24h] [ebp+8h]
-  double v11; // [esp+28h] [ebp+Ch]
 
+  int v8; // [esp+Ch] [ebp-10h]
   v8 = *a1 - *aP0; /*0x58c71d*/
+  int v10; // [esp+24h] [ebp+8h]
   v10 = a1[1] - aP0[1]; /*0x58c725*/
+  double v9; // [esp+14h] [ebp-8h]
   v9 = Math::Sqrt((double)(v8 * v8 + v10 * v10)); /*0x58c735*/
   if ( v8 ) /*0x58c73e*/
   {
@@ -143,8 +140,11 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   {
     v3 = 1.570796326794897; /*0x58c7f4*/
   }
+  double v4; // st7
   v4 = fabs(v3 - a3); /*0x58c76b*/
+  double v11; // [esp+28h] [ebp+Ch]
   v11 = v4; /*0x58c773*/
+  char v6; // c0
   if ( !v6 ) /*0x58c77c*/
   {
     do /*0x58c78f*/

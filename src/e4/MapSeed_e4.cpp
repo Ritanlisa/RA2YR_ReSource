@@ -27,10 +27,10 @@
 namespace gamemd {  // G42.18 ns repair
 int MapSeed::ValidateName(int a2, void *a2_1)
 {
-  int result; // eax
 
   if ( a2 ) /*0x597736*/
     return (*(int (__stdcall **)(int, char *))(*&this->q020))(a2, this->q076 + 2)); /*0x597740*/
+  int result; // eax
   (*((unsigned char *)&(result))) = ShowSaveLoadDialog((void *)((int)this), this->q076 + 2)); /*0x597752*/
   return result; /*0x597744*/
 }  // G42.18 ns repair
@@ -40,12 +40,12 @@ namespace gamemd {
 int MapSeed::IsCellInBounds(void *a1)
 {
 
-  int v1; // edx
-  int result; // eax
-  int v3; // esi
 
+  int v1; // edx
   v1 = *(__int16 *)this->__pad_000; /*0x5ac230*/
+  int result; // eax
   result = *&this->__pad_002; /*0x5ac233*/
+  int v3; // esi
   v3 = result + v1; /*0x5ac23e*/
   LOBYTE(result) = result + v1 > g_MissionQueueFrame.localVariables[160] /*0x5ac261*/
                 && v1 - result < g_MissionQueueFrame.localVariables[160]

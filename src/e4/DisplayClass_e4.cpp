@@ -45,15 +45,15 @@ namespace gamemd {  // G42.18 ns repair
 int DisplayClass::UpdateDisplayTimer(void *a1)
 {
 
-  char *v1; // eax
-  int v2; // edx
-  void *DisplayClass_field_0x12C; // eax
 
   if ( this->q130 == 1 ) /*0x487637*/
     this->q130 = 0; /*0x487639*/
+  char *v1; // eax
   v1 = (char *)this->q130 - 1; /*0x487649*/
   this->q130 = v1; /*0x48764a*/
+  int v2; // edx
   v2 = (int)v1; /*0x487650*/
+  void *DisplayClass_field_0x12C; // eax
   DisplayClass_field_0x12C = this->q12C; /*0x487652*/
   if ( ((unsigned __int8)DisplayClass_field_0x12C & 8) != 0 && ((unsigned __int8)DisplayClass_field_0x12C & 0x10) != 0 ) /*0x48765e*/
   {
@@ -82,17 +82,17 @@ namespace gamemd {  // G42.18c ns repair
 int DisplayClass::AdvanceFrameCounter(void *a1)  // G42.41n: dup head + misplaced close removed
 {
 
-  void *DisplayClass_field_0x130; // esi
-  char *v2; // eax
-  int v3; // edx
-  int result; // eax
 
+  void *DisplayClass_field_0x130; // esi
   DisplayClass_field_0x130 = this->q130; /*0x487691*/
   if ( DisplayClass_field_0x130 == (void *)-1 ) /*0x48769a*/
     this->q130 = 0; /*0x48769c*/
+  char *v2; // eax
   v2 = (char *)this->q130 + 1; /*0x4876ac*/
   this->q130 = v2; /*0x4876ad*/
+  int v3; // edx
   v3 = (int)v2; /*0x4876b3*/
+  int result; // eax
   result = (int)this->q134; /*0x4876b5*/
   if ( v3 > result ) /*0x4876bd*/
     this->q130 = (void *)result; /*0x4876bf*/
@@ -114,8 +114,6 @@ namespace gamemd {
 int DisplayClass::LoadTypeData(void *a1)
 {
 
-  int *Viewport; // eax
-  int v3; // edx
   int (**DisplayClass_field_0x0)(DisplayClass *, unsigned int *); // eax
   unsigned int v6[4]; // [esp+4h] [ebp-20h] BYREF
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
@@ -123,10 +121,12 @@ int DisplayClass::LoadTypeData(void *a1)
   MapClass::Destru_vt05((MapClass *)this); /*0x4a8856*/
   stru_8A0390.health = SearchMIXFile(aPlaceShp, 0); /*0x4a886e*/
   dword_8A072C = SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
+  int *Viewport; // eax
   Viewport = Display::GetViewport(v7); /*0x4a8881*/
   v6[0] = *Viewport; /*0x4a8888*/
   v6[1] = Viewport[1]; /*0x4a888f*/
   v6[2] = Viewport[2]; /*0x4a8896*/
+  int v3; // edx
   v3 = Viewport[3]; /*0x4a889e*/
   DisplayClass_field_0x0 = (int (**)(DisplayClass *, unsigned int *))this->vtable1; /*0x4a88a1*/
   v6[3] = v3; /*0x4a88a6*/
@@ -139,7 +139,6 @@ namespace gamemd {
 int DisplayClass::SetSize()
 {
 
-  LayerClass *v2; // esi
   int result; // eax
 
   MapClass::Destru_vt07((MapClass *)this); /*0x4a88c3*/
@@ -153,6 +152,7 @@ int DisplayClass::SetSize()
   LOBYTE(this->q11D0) = 0; /*0x4a88f7*/
   BYTE1(this->q11B0) = 0; /*0x4a88fd*/
   BYTE2(this->q11B0) = 0; /*0x4a8903*/
+  LayerClass *v2; // esi
   v2 = &stru_8A0360; /*0x4a8909*/
   do /*0x4a891e*/
   {
@@ -168,10 +168,10 @@ int DisplayClass::SetSize()
 namespace gamemd {
 char DisplayClass::ddtor(void *a1)
 {
-  char result; // al
-  GScreenClass *v3; // [esp+0h] [ebp-4h]
 
+  GScreenClass *v3; // [esp+0h] [ebp-4h]
   VectorCursor_uint_DynamicVectorClass_uint____13::Get(v3); /*0x4a8933*/
+  char result; // al
   result = byte_A8ED6B; /*0x4a8938*/
   if ( !byte_A8ED6B ) /*0x4a893f*/
   {
@@ -603,8 +603,8 @@ namespace gamemd {
 int DisplayClass::InitViewBounds(unsigned int * a2)
 {
 
-  void *DisplayClass_field_0x11A8; // eax
 
+  void *DisplayClass_field_0x11A8; // eax
   LOBYTE(DisplayClass_field_0x11A8) = this->q11B0; /*0x4ac310*/
   if ( !(unsigned char)DisplayClass_field_0x11A8 ) /*0x4ac318*/
   {
@@ -635,23 +635,7 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
 namespace gamemd {
 void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8)
 {
-  int v3; // esi
-  void *v4; // edi
-  unsigned int *v5; // eax
-  int v6; // ecx
-  wchar_t *result; // eax
-  int v8; // ecx
   int v9; // esi
-  unsigned int *v10; // eax
-  CellClass *v11; // eax
-  CellClass *v12; // eax
-  void *Object_field_0x30; // [esp-4h] [ebp-38h]
-  bool v14[4]; // [esp+8h] [ebp-2Ch] BYREF
-  int v15; // [esp+Ch] [ebp-28h] BYREF
-  int16_t v16[2]; // [esp+10h] [ebp-24h] BYREF
-  int v17[2]; // [esp+14h] [ebp-20h] BYREF
-  unsigned char v18[12]; // [esp+1Ch] [ebp-18h] BYREF
-  int v19[3]; // [esp+28h] [ebp-Ch] BYREF
 
   if ( a2 < 500 /*0x4ae513*/
     || a2 > 900
@@ -659,14 +643,24 @@ void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   {
     return 0; /*0x4ae513*/
   }
+  int v3; // esi
   v3 = DSurface_ViewBounds.field_0; /*0x4ae524*/
+  void *v4; // edi
   v4 = DSurface_ViewBounds.field_4; /*0x4ae531*/
+  unsigned int *v5; // eax
+  unsigned char v18[12]; // [esp+1Ch] [ebp-18h] BYREF
   v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4ae538*/
                    stru_887598.lineTrailer,
                    v18);
+  int v6; // ecx
   v6 = v5[1]; /*0x4ae54a*/
+  int v17[2]; // [esp+14h] [ebp-20h] BYREF
   v17[0] = *v5 - v3; /*0x4ae54d*/
   v17[1] = v6 - (unsigned int)v4; /*0x4ae557*/
+  bool v14[4]; // [esp+8h] [ebp-2Ch] BYREF
+  int v15; // [esp+Ch] [ebp-28h] BYREF
+  int16_t v16[2]; // [esp+10h] [ebp-24h] BYREF
+  int v19[3]; // [esp+28h] [ebp-Ch] BYREF
   Tactical::MouseOver(v17, v16, v19, &v15, &v14[3], (bool *)&a2); /*0x4ae571*/
   if ( (*((unsigned char *)&(stru_A8EB00.__pad_CD4[1]))) ) /*0x4ae57e*/
   {
@@ -675,6 +669,7 @@ void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   }
   if ( (Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v19)->copyFlags & 8) == 0 && g_hWnd ) /*0x4ae5e0*/
     return GetStringCSF(aTxtShadow, 0, aDRa2mdpostDisp, 5048); /*0x4ae5fd*/
+  int v8; // ecx
   v8 = v15; /*0x4ae600*/
   if ( !v15 ) /*0x4ae606*/
     return 0; /*0x4ae606*/
@@ -685,8 +680,11 @@ void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void
     {
       if ( *(unsigned int *)(v15 + 544) == 2 ) /*0x4ae629*/
       {
+  void *Object_field_0x30; // [esp-4h] [ebp-38h]
         Object_field_0x30 = dword_A83D4C->relatedTagsCount; /*0x4ae635*/
+  unsigned int *v10; // eax
         v10 = (unsigned int *)(*(int (__stdcall **)(unsigned char *))(*(unsigned int *)v15 + 72))(v18); /*0x4ae63b*/
+  CellClass *v11; // eax
         v11 = Coord::To_Cell((Coord *)&DataGlobal_87F7E8, v10); /*0x4ae644*/
         if ( !(uint8_t)Cell::IsPassableOffset((Cell *)v11, (int)Object_field_0x30) ) /*0x4ae64b*/
           return 0; /*0x4ae64b*/
@@ -702,9 +700,11 @@ void * DisplayClass::Draw(int a2, void *a2_1, void *a3, void *a4, void *a5, void
   }
   if ( !v8 ) /*0x4ae66e*/
     return 0; /*0x4ae69b*/
+  wchar_t *result; // eax
   result = (wchar_t *)(*(int (**)(int))(*(unsigned int *)v8 + 144))(v8); /*0x4ae672*/
   if ( !v9 ) /*0x4ae67a*/
   {
+  CellClass *v12; // eax
     v12 = (CellClass *)((CellCoord *)((CellCoord *)this))->To_CellObj(v16); /*0x4ae683*/
     return (wchar_t *)CellClass::GetUIName(v12); /*0x4ae68a*/
   }
@@ -729,18 +729,18 @@ int DisplayClass::ExitMode()
 namespace gamemd {
 int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
 {
-  int v5; // ecx
-  int v6; // eax
   int v7; // eax
   int v8; // edx
 
   if ( a3 ) /*0x5519b9*/
     return DisplayClass::InsertPriorityText((unsigned int *)this, aP1) != 0; /*0x5519ca*/
+  int v5; // ecx
   v5 = this->__pad_008; /*0x5519cf*/
   if ( this->Count >= v5 ) /*0x5519d7*/
   {
     if ( !this->IsAllocated && v5 ) /*0x5519e2*/
       return 0; /*0x5519e2*/
+  int v6; // eax
     v6 = this->CapacityIncrement; /*0x5519e4*/
     if ( v6 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(this->__pad_008)(this, v5 + v6, 0) ) /*0x5519f4*/
       return 0; /*0x551a04*/
@@ -760,7 +760,6 @@ int DisplayClass::InsertPriorityText(int a2)
   int v3; // ecx
   int v4; // eax
   int i; // edi
-  int j; // eax
 
   v3 = *(unsigned int *)this->__pad_008; /*0x551a93*/
   if ( *(unsigned int *)this->Count >= v3 ) /*0x551a9b*/
@@ -782,6 +781,7 @@ int DisplayClass::InsertPriorityText(int a2)
     if ( DisplayClass::checkScreenBounds(this->ptr_4 + i), a2) ) /*0x551adb*/
       break; /*0x551ae2*/
   }
+  int j; // eax
   for ( j = *(unsigned int *)this->Count - 1; /*0x551af2*/
         j >= i;
         this->ptr_4 + j) = this->ptr_4 + j) )
@@ -799,8 +799,8 @@ namespace gamemd {
 int DisplayClass::checkScreenBounds(int a2)
 {
 
-  int v3; // edi
 
+  int v3; // edi
   v3 = (*(int (**)(int))(*(unsigned int *)a2 + 184))(a2); /*0x5f6234*/
   return (*((int (**)(DisplayClass *))this->vtable1 + 46))(this) > v3; /*0x5f623e*/
 
@@ -810,10 +810,6 @@ int DisplayClass::checkScreenBounds(int a2)
 namespace gamemd {
 int DisplayClass::ScrollTacticalView(int aP1, int aP2)
 {
-  int v4; // edx
-  int result; // eax
-  int v6; // eax
-  int v7; // ecx
 
   if ( (byte_B0CDE0 & 1) == 0 ) /*0x6d8541*/
   {
@@ -836,12 +832,16 @@ int DisplayClass::ScrollTacticalView(int aP1, int aP2)
     dword_B0CE74 = -1; /*0x6d85c6*/
     atexit(nullsub_41); /*0x6d85cc*/
   }
+  int v4; // edx
   v4 = *&this->u32_D64; /*0x6d85dc*/
+  int result; // eax
   result = v4 + aP2 * dword_B0CE38[2 * aP1]; /*0x6d85fc*/
   if ( v4 != result /*0x6d8606*/
     || *&this->u32_D68 != *&this->u32_D68 + aP2 * dword_B0CE3C[2 * aP1] )
   {
+  int v6; // eax
     v6 = *&this->u32_D78; /*0x6d8612*/
+  int v7; // ecx
     v7 = aP2 * dword_B0CE3C[2 * aP1]; /*0x6d8618*/
     *&this->u32_D74 += aP2 * dword_B0CE38[2 * aP1]; /*0x6d861a*/
     result = v7 + v6; /*0x6d8620*/
@@ -854,13 +854,6 @@ int DisplayClass::ScrollTacticalView(int aP1, int aP2)
 namespace gamemd {
 int DisplayClass::GetCoordDelta(int aP1)
 {
-  int result; // eax
-  int v4; // ecx
-  int v5; // edx
-  int v6; // esi
-  int v7; // edi
-  int v8; // [esp+Ch] [ebp-8h] BYREF
-  int v9; // [esp+10h] [ebp-4h]
 
   if ( (byte_B0CE00 & 1) == 0 ) /*0x6da244*/
   {
@@ -883,14 +876,21 @@ int DisplayClass::GetCoordDelta(int aP1)
     dword_B0CDD4 = -1; /*0x6da2c6*/
     atexit(nullsub_42); /*0x6da2cc*/
   }
+  int result; // eax
   result = aP1; /*0x6da2d4*/
+  int v4; // ecx
   v4 = *&this->u32_D64; /*0x6da2d8*/
+  int v5; // edx
   v5 = *&this->u32_D68; /*0x6da2de*/
+  int v6; // esi
   v6 = v4 + (&dword_B0CD98)[2 * aP1]; /*0x6da2f2*/
+  int v7; // edi
   v7 = v5 + (&dword_B0CD9C)[2 * aP1]; /*0x6da2f4*/
   if ( v6 != v4 || v7 != v5 ) /*0x6da2fc*/
   {
+  int v8; // [esp+Ch] [ebp-8h] BYREF
     v8 = v4 + dword_B0CD98[2 * aP1]; /*0x6da305*/
+  int v9; // [esp+10h] [ebp-4h]
     v9 = v7; /*0x6da309*/
     if ( ClampCoordMap(&v8) ) /*0x6da30d*/
     {
@@ -913,20 +913,20 @@ int DisplayClass::GetCoordDelta(int aP1)
 namespace gamemd {
 int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
 {
-  int result; // eax
-  int v5; // edx
-  int v6; // eax
-  signed int v7; // edi
-  signed int v8; // eax
 
+  int result; // eax
   result = 0; /*0x7ba4d4*/
+  int v5; // edx
   v5 = this->u32_C; /*0x7ba4d6*/
   if ( v5 && a1 && Size > 0 ) /*0x7ba4eb*/
   {
+  int v6; // eax
     v6 = this->Count; /*0x7ba4ed*/
+  signed int v7; // edi
     v7 = Size; /*0x7ba4f3*/
     if ( v6 ) /*0x7ba4f5*/
     {
+  signed int v8; // eax
       v8 = v6 - this->__pad_018; /*0x7ba4fa*/
       v7 = Size; /*0x7ba4fc*/
       if ( Size >= v8 ) /*0x7ba500*/
@@ -951,8 +951,8 @@ void DisplayClass::Update(PowerClass * aP1, int a3, void *a3_2, void *a4)
 namespace gamemd {
 int DisplayClass::SetCoordVisible(DisplayClass *aP0, unsigned int *aP1, char a3)
 {
-  int result; // eax
 
+  int result; // eax
   result = *aP1; /*0x4a9848*/
   if ( *aP1 ) /*0x4a9848*/
   {
@@ -977,21 +977,17 @@ int DisplayClass::SetCoordVisible(DisplayClass *aP0, unsigned int *aP1, char a3)
 namespace gamemd {
 int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
 {
-  HWND v5; // eax
-  int *v6; // eax
-  bool v8[2]; // [esp+6h] [ebp-2Ah] BYREF
-  int16_t v9[2]; // [esp+8h] [ebp-28h] BYREF
-  int v10; // [esp+Ch] [ebp-24h] BYREF
   unsigned int v11[3]; // [esp+10h] [ebp-20h] BYREF
-  int v12; // [esp+1Ch] [ebp-14h] BYREF
-  HWND v13; // [esp+20h] [ebp-10h]
-  int v14[3]; // [esp+24h] [ebp-Ch] BYREF
 
+  int v10; // [esp+Ch] [ebp-24h] BYREF
   v10 = 0; /*0x4aac1c*/
+  int v12; // [esp+1Ch] [ebp-14h] BYREF
   v12 = 0; /*0x4aac24*/
+  HWND v13; // [esp+20h] [ebp-10h]
   v13 = 0; /*0x4aac2c*/
   if ( (a2 & 0x55) != 0 ) /*0x4aac34*/
   {
+  HWND v5; // eax
     v5 = dword_87F770[1]; /*0x4aac3d*/
     v12 = (int)*dword_87F770; /*0x4aac40*/
     v13 = v5; /*0x4aac44*/
@@ -1000,6 +996,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   {
     (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 44))(dword_887640); /*0x4aac52*/
     (*(void (**)(MouseClass *))(dword_887640->HandleClick_ph + 48))(dword_887640); /*0x4aac5d*/
+  int *v6; // eax
     v6 = (int *)(*(int (**)(MouseClass *, unsigned int *))(dword_887640->HandleClick_ph + 52))( /*0x4aac6d*/
                   dword_887640,
                   v11);
@@ -1009,6 +1006,9 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v11, &v12); /*0x4aac8d*/
   v12 -= DSurface_ViewBounds.field_0; /*0x4aaca3*/
   v13 = (HWND)((char *)v13 - dword_886FA4); /*0x4aacb1*/
+  bool v8[2]; // [esp+6h] [ebp-2Ah] BYREF
+  int16_t v9[2]; // [esp+8h] [ebp-28h] BYREF
+  int v14[3]; // [esp+24h] [ebp-Ch] BYREF
   Tactical::MouseOver(&v12, v9, v14, &v10, &v8[1], &a2); /*0x4aacd4*/
   if ( *(unsigned int *)v9 != dword_88095C ) /*0x4aace5*/
     Tactical::MouseMove((Tactical *)&dword_87F7E8, v11, v9); /*0x4aad04*/
@@ -1019,8 +1019,8 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
 namespace gamemd {
 HWND DisplayClass::Render(void *a1, void *a2, void *a3, void *a4)
 {
-  int result; // eax
 
+  int result; // eax
   result = (int)dword_B73554; /*0x4ae6b0*/
   if ( dword_B73554 ) /*0x4ae6b7*/
   {
@@ -1034,9 +1034,9 @@ HWND DisplayClass::Render(void *a1, void *a2, void *a3, void *a4)
 namespace gamemd {
 int DisplayClass::SetSurface(unsigned int * a1)
 {
-  LayerClass *v1; // esi
   int result; // eax
 
+  LayerClass *v1; // esi
   v1 = &stru_8A0360; /*0x4ae6f6*/
   do /*0x4ae70c*/
   {
@@ -1051,9 +1051,9 @@ int DisplayClass::SetSurface(unsigned int * a1)
 namespace gamemd {
 int DisplayClass::GetSurface(unsigned int * a1)
 {
-  LayerClass *v1; // esi
   int result; // eax
 
+  LayerClass *v1; // esi
   v1 = &stru_8A0360; /*0x4ae726*/
   do /*0x4ae740*/
   {
@@ -1071,8 +1071,8 @@ namespace gamemd {
 unsigned int * DisplayClass::loc_4AEB50(MouseClass * aP1)
 {
 
-  int result; // eax
 
+  int result; // eax
   result = (int)(aP1); /*0x4aeb30*/
   this->u32_11A0 = (unsigned int)(aP1); /*0x4aeb36*/
   (result) = ((result) & ~0xFF) | ((unsigned int)(aP1 != 0) & 0xFF); /*0x4aeb3c*/

@@ -178,8 +178,8 @@ int TriggerClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)(aP0), aP1); /*0x72686b*/
   if ( result >= 0 ) /*0x726872*/
   {
@@ -204,8 +204,8 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int TriggerClass::SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  int result; // eax
 
+  int result; // eax
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x7268df*/
   if ( result >= 0 ) /*0x7268e6*/
     return 0; /*0x7268e8*/

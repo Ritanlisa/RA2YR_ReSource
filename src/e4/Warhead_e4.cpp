@@ -48,8 +48,8 @@
 namespace gamemd {  // G42.18 ns repair
 int Warhead::GetWarheadSound(int a2)
 {
-  int v3; // eax
 
+  int v3; // eax
   if ( (uint8_t)Audio::IsLoud((int *)(this->u32_4C + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
@@ -61,21 +61,18 @@ int Warhead::GetWarheadSound(int a2)
 namespace gamemd {
 int Warhead::RemoveFromDamageList(int a2)
 {
-  Warhead *v2; // esi
-  int v3; // eax
-  int v4; // ecx
-  int v5; // ecx
-  int v6; // ecx
-  int v7; // eax
-  int v8; // edx
 
+  Warhead *v2; // esi
   v2 = (gamemd::Warhead *)(&this->u32_66C); /*0x452827*/
+  int v3; // eax
   v3 = (*(int (**)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
+  int v4; // ecx
     v4 = *(unsigned int *)&v2[16]; /*0x45283c*/
     if ( v3 < v4 ) /*0x452841*/
     {
+  int v5; // ecx
       v5 = v4 - 1; /*0x452843*/
       for ( *(unsigned int *)&v2[16] = v5; /*0x452849*/
             v3 < *(unsigned int *)&v2[16];
@@ -85,7 +82,10 @@ int Warhead::RemoveFromDamageList(int a2)
       }
     }
   }
+  int v6; // ecx
   v6 = *(unsigned int *)&v2[8]; /*0x45285d*/
+  int v7; // eax
+  int v8; // edx
   if ( *(unsigned int *)&v2[16] < v6 /*0x452887*/
     || (((*((unsigned char *)&(v7))) = v2[13], (unsigned char)v7) || !v6)
     && (v7 = *(unsigned int *)&v2[20], v7 > 0)

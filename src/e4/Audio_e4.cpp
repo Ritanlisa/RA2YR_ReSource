@@ -76,8 +76,6 @@ extern unsigned int aTauntStream;  // data: 0x846688 truth(IDA G42.57w9)
 namespace gamemd {  // G42.18 ns repair
 int Audio::GetChannelStatus(void *a1_1)
 {
-  int v3; // edi
-  int v4; // eax
 
   if ( (a1_1->__pad_3C[104] & 5) != 0 ) /*0x40272a*/
     return -2146500608; /*0x40272c*/
@@ -86,9 +84,11 @@ int Audio::GetChannelStatus(void *a1_1)
   Audio::InitChannels(a1_1->__pad_10); /*0x402748*/
   ((ObjectClass *)a1_1)->Cleanup(); /*0x40274f*/
   (*(void (**)(Audio *))(*(unsigned int *)&a1_1->__pad_3C[152] + 40))(a1_1); /*0x40275c*/
+  int v3; // edi
   v3 = (*(int (**)(Audio *))(*(unsigned int *)&a1_1->__pad_3C[152] + 12))(a1_1); /*0x40276a*/
   if ( !v3 ) /*0x40276e*/
   {
+  int v4; // eax
     v4 = *(unsigned int *)&a1_1->__pad_3C[104]; /*0x402770*/
     (*((unsigned char *)&(v4))) = v4 | 1; /*0x402776*/
     *(unsigned int *)&a1_1->__pad_3C[104] = v4; /*0x402778*/
@@ -102,11 +102,10 @@ namespace gamemd {
 int Audio::ReleaseChannelRefs()
 {
 
-  int v2; // ebx
-  int result; // eax
-  RefCount **v4; // esi
 
+  int v2; // ebx
   v2 = 0; /*0x404d84*/
+  int result; // eax
   result = *&this->u32_A8; /*0x404d86*/
   if ( result <= 0 ) /*0x404d8e*/
   {
@@ -114,6 +113,7 @@ int Audio::ReleaseChannelRefs()
   }
   else
   {
+  RefCount **v4; // esi
     v4 = (gamemd::RefCount **)(&this->q028); /*0x404d91*/
     do /*0x404dad*/
     {
@@ -135,24 +135,23 @@ namespace gamemd {
 int Audio::UpdatePlaybackPosition()
 {
 
-  int v2; // ecx
-  unsigned int *v4; // edi
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
 
+  int v2; // ecx
   v2 = *&this->u32_B0; /*0x4054a4*/
   if ( this != *(Audio **)(v2 + 192) ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   ((AudioFile *)v2)->GetCallback(); /*0x4054b7*/
+  unsigned int *v4; // edi
   v4 = (unsigned int *)(*&this->u32_148); /*0x4054bc*/
+  int v5; // eax
   v5 = *(unsigned int *)this->q018; /*0x4054c2*/
   LOBYTE(v5) = v5 | 8; /*0x4054c5*/
   *(unsigned int *)this->q018 = v5; /*0x4054c7*/
   BindChannelAudioStream(*&this->u32_B0, v4); /*0x4054d2*/
   EndBufferMixer((int *)(*&this->u32_B0 + 56), *&this->u32_14C); /*0x4054e6*/
+  int v6; // ecx
   v6 = *&this->q150; /*0x4054eb*/
+  int v7; // edx
   v7 = 0x4000; /*0x4054f1*/
   if ( v6 > 0 ) /*0x4054f8*/
     v7 = 0x4000 - (v6 << 14) / 0x64u; /*0x40550e*/
@@ -164,6 +163,7 @@ int Audio::UpdatePlaybackPosition()
   {
     *&this->u32_1C = 1; /*0x405547*/
     *&this->u32_148 = (unsigned int)(v4); /*0x40554e*/
+  int v8; // eax
     v8 = *(unsigned int *)this->q018; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
     *(unsigned int *)this->q018 = v8; /*0x405559*/
@@ -273,12 +273,12 @@ namespace gamemd {
 int Audio::WaitForCallback()
 {
 
-  int v2; // ebx
-  unsigned __int64 v3; // rax
-  unsigned __int64 v4; // kr00_8
 
+  int v2; // ebx
   v2 = Audio::Callback(); /*0x4070bd*/
+  unsigned __int64 v3; // rax
   LODWORD(v3) = *&this->u32_4; /*0x4070c9*/
+  unsigned __int64 v4; // kr00_8
   v4 = *(unsigned long long *)this->__pad_10 + __PAIR64__(HIDWORD(v3), v2); /*0x4070cc*/
   if ( (unsigned int)v3 != *&this->u32_8 ) /*0x4070d0*/
   {
@@ -301,9 +301,8 @@ namespace gamemd {
 int Audio::Release(void *a1)
 {
 
-  int result; // eax
-  Voice *v2; // [esp+0h] [ebp-4h]
 
+  int result; // eax
   result = *&this->u32_88; /*0x407f43*/
   if ( !result ) /*0x407f4b*/
   {
@@ -311,6 +310,7 @@ int Audio::Release(void *a1)
     if ( result ) /*0x407f52*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407f59*/
+  Voice *v2; // [esp+0h] [ebp-4h]
       (v2)->Stop(); /*0x407f62*/
       LeaveCriticalSection((LPCRITICAL_SECTION)&CriticalSection); /*0x407f6c*/
     }
@@ -350,14 +350,13 @@ int Audio::GetSampleSize(void *a1)
 namespace gamemd {
 void sub_53E1D0()
 {
-  signed int SampleSize; // eax
-  signed int v1; // eax
 
   if ( dword_AA0448 ) /*0x53e1dc*/
   {
     EnterCriticalSection(&unk_AA0418); /*0x53e1ed*/
     if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e210*/
     {
+  signed int SampleSize; // eax
       SampleSize = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e213*/
       WriteAudioStreamToFile(dword_AA0464, dword_AA0468, SampleSize, 0); /*0x53e225*/
       fflush(dword_AA0468); /*0x53e230*/
@@ -371,6 +370,7 @@ void sub_53E1D0()
         EnterCriticalSection(&unk_AA0418); /*0x53e265*/
         if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e288*/
         {
+  signed int v1; // eax
           v1 = ((unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e28b*/
           WriteAudioStreamToFile(dword_AA0464, dword_AA0468, v1, 0); /*0x53e29d*/
           fflush(dword_AA0468); /*0x53e2a9*/
@@ -429,8 +429,6 @@ void sub_53E1D0()
 namespace gamemd {
 ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 {
-  int v4; // ebp
-  int v5; // eax
   String v7; // [esp+4h] [ebp-8h] BYREF
 
   String::Assign(0); /*0x5d0478*/
@@ -440,12 +438,14 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
   if ( (uint8_t)String::NotEquals((String *)a1, 0) && Audio::IsSoundEnabled() ) /*0x5d04a2*/
   {
     unknown_libname_73(&v7.MPGameMode); /*0x5d04b5*/
+  int v4; // ebp
     v4 = String::Tokenize(aP2, 0, Str, (void **)&v7.SessionClass_field_14); /*0x5d04d5*/
     unknown_libname_73(&v7); /*0x5d04d7*/
     String::Tokenize(aP2, v4, Str, (void **)&v7); /*0x5d04e9*/
     if ( (uint8_t)String::NotEquals(&v7, 0) ) /*0x5d04f4*/
     {
       __1_Timevec_std__QAE_XZ((const char **)&v7); /*0x5d0503*/
+  int v5; // eax
       this->u32_C = v5; /*0x5d050b*/
       if ( v5 <= 100 ) /*0x5d050e*/
       {
@@ -639,18 +639,10 @@ int sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int ** a
 namespace gamemd {
 int Audio::LoadWAVFiles(void *a1_1)
 {
-  int IsSoundEnabled; // eax
-  int i; // ebx
-  int v4; // ebp
-  unsigned int *v5; // ebp
-  uint64_t v6; // rax
-  size_t v8[2]; // [esp+8h] [ebp-294h] BYREF
   Struct v9[8]; // [esp+10h] [ebp-28Ch] BYREF
   CCFileClass v10; // [esp+30h] [ebp-26Ch] BYREF
-  int v11[3]; // [esp+88h] [ebp-214h] BYREF
-  int v12; // [esp+94h] [ebp-208h]
-  char Buffer[512]; // [esp+9Ch] [ebp-200h] BYREF
 
+  int IsSoundEnabled; // eax
   (*((unsigned char *)&(IsSoundEnabled))) = ((unsigned int *)&stru_A8EB00)[144]; /*0x7207f0*/
   if ( ((unsigned int *)&stru_A8EB00)[144] ) /*0x720801*/
   {
@@ -661,19 +653,25 @@ int Audio::LoadWAVFiles(void *a1_1)
       if ( !((unsigned int *)&stru_A8EB00)[384] ) /*0x72081b*/
       {
         IsSoundEnabled = *(unsigned int *)&a1_1->__pad_18[12]; /*0x720821*/
+  int i; // ebx
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
+  char Buffer[512]; // [esp+9Ch] [ebp-200h] BYREF
           _makepath(Buffer, 0, 0, (const char *)(*(unsigned int *)(*(unsigned int *)a1_1->__pad_18 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
           CCFileClass::Construct(&v10, Buffer); /*0x720869*/
+  int v4; // ebp
           v4 = 4 * i + *(unsigned int *)a1_1->__pad_18; /*0x720877*/
           *(unsigned char *)(*(unsigned int *)v4 + 650) = ((CCFileClass *)(&v10))->Open(0); /*0x720881*/
           if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)a1_1->__pad_18 + 4 * i) + 650) ) /*0x72088d*/
           {
             ((Struct*)v9)->ZeroInit32(); /*0x72089b*/
             FileClass::Load(&v10, (const CHAR *)1); /*0x7208a6*/
+  size_t v8[2]; // [esp+8h] [ebp-294h] BYREF
             if ( ParseWaveFileHeader((int)&v10, v9, v8) ) /*0x7208b8*/
             {
+  unsigned int *v5; // ebp
               v5 = (unsigned int *)(4 * i + *(unsigned int *)a1_1->__pad_18); /*0x7208cc*/
+  uint64_t v6; // rax
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/
               (*(((unsigned int *)&(v6)) + 1)) = *v5; /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
@@ -681,7 +679,9 @@ int Audio::LoadWAVFiles(void *a1_1)
             }
           }
           /* X11: vtable install elided (implicit via CCFileClass virtuals 0x7208f9) */
+  int v12; // [esp+94h] [ebp-208h]
           v12 = 0; /*0x720901*/
+  int v11[3]; // [esp+88h] [ebp-214h] BYREF
           Vector::Clear((int)v11); /*0x72090c*/
           /* X11: vtable install elided (implicit via off_7E1668 virtuals 0x720915) */
           ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x72091d*/
@@ -824,19 +824,17 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
 namespace gamemd {
 void * Audio::LoadSoundINI()
 {
-  void *v1; // esi
-  int v2; // eax
-  void *result; // eax
-  int Next; // esi
   int NextAlt; // edi
-  int v6; // [esp+4h] [ebp-4h] BYREF
 
   while ( g_VocPlayState > 0 ) /*0x7513f9*/
   {
+  void *v1; // esi
     v1 = *(void **)g_VocAudioConfig; /*0x751400*/
     if ( *(unsigned int *)g_VocAudioConfig ) /*0x751400*/
     {
+  int v6; // [esp+4h] [ebp-4h] BYREF
       v6 = *(unsigned int *)g_VocAudioConfig; /*0x751416*/
+  int v2; // eax
       v2 = (*(int (**)(int *, int *))(dword_B1D378 + 16))(&dword_B1D378, &v6); /*0x75141a*/
       if ( v2 != -1 && v2 < g_VocPlayState && v2 < --g_VocPlayState ) /*0x751435*/
       {
@@ -850,9 +848,11 @@ void * Audio::LoadSoundINI()
       operator delete((void *)(v1)); /*0x751450*/
     }
   }
+  void *result; // eax
   result = (void *)(dword_B1D3A4); /*0x751461*/
   if ( dword_B1D3A4 ) /*0x751468*/
   {
+  int Next; // esi
     Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751474*/
     if ( Next ) /*0x751478*/
     {
@@ -877,8 +877,8 @@ void * Audio::LoadSoundINI()
 namespace gamemd {
 void sub_752590(int a1, int a2, int a3)
 {
-  unsigned int *v5; // esi
 
+  unsigned int *v5; // esi
   v5 = (unsigned int *)(operator new(0x20u)); /*0x75259f*/
   (v5)->InitEmpty(); /*0x7525a6*/
   v5->u32_C = a1; /*0x7525af*/
@@ -916,11 +916,11 @@ void sub_752590(int a1, int a2, int a3)
 namespace gamemd {
 unsigned int Audio::GetSamplePosition(int aP1, int aP2)
 {
-  int v4; // edi
-  int result; // eax
 
+  int v4; // edi
   v4 = (*(int (**)(unsigned int, int, int))(*(unsigned int *)this->u32_14 + 92))(this->u32_14, aP1, aP2); /*0x7bd149*/
   (*(void (**)(unsigned int))(*(unsigned int *)this->u32_14 + 96))(this->u32_14); /*0x7bd14d*/
+  int result; // eax
   result = v4 + this->__pad_10; /*0x7bd156*/
   if ( result >= (unsigned int)this->u32_1C ) /*0x7bd15a*/
     result -= this->u32_20; /*0x7bd15c*/
@@ -1089,23 +1089,18 @@ int sub_7C1F30(int a1, int a2)
 namespace gamemd {
 int sub_7C2250(int a1, int a2)
 {
-  unsigned int v3; // edi
-  unsigned int v5; // eax
-  unsigned int v6; // edi
-  unsigned short *v7; // ebx
-  int v8; // ecx
-  int64_t v9; // rax
-  unsigned short *v10; // ebx
-  int v11; // eax
-  uint16_t v12; // [esp+Ch] [ebp-4h] BYREF
   int16_t v13; // [esp+Eh] [ebp-2h]
 
+  unsigned int v3; // edi
   v3 = (a2 + 1) & 0xFFFFFFFE; /*0x7c225f*/
   if ( (*(unsigned char *)(a1 + 132) & 1) != 0 && *(unsigned int *)(a1 + 1932) ) /*0x7c226a*/
   {
+  uint16_t v12; // [esp+Ch] [ebp-4h] BYREF
     if ( (*(int (__cdecl **)(int, int, uint16_t *, int))(a1 + 64))(a1, 5, &v12, 4) ) /*0x7c2282*/
       return -4; /*0x7c2295*/
+  unsigned int v5; // eax
     v5 = *(unsigned int *)(a1 + 1972); /*0x7c229a*/
+  unsigned int v6; // edi
     v6 = v3 - 4; /*0x7c22a2*/
     if ( v12 <= v5 || *(unsigned int *)(a1 + 1936) ) /*0x7c22b3*/
     {
@@ -1116,6 +1111,7 @@ int sub_7C2250(int a1, int a2)
       }
       else
       {
+  unsigned short *v10; // ebx
         v10 = (unsigned short *)(v5 + *(unsigned int *)(a1 + 1960) - v6); /*0x7c23a6*/
         if ( (*(int (__cdecl **)(int, int, unsigned short *, unsigned int))(a1 + 64))(a1, 5, v10, v6) ) /*0x7c23ac*/
           return -4; /*0x7c23bf*/
@@ -1133,12 +1129,15 @@ int sub_7C2250(int a1, int a2)
       }
       else
       {
+  unsigned short *v7; // ebx
         v7 = (unsigned short *)(*(unsigned int *)(a1 + 1932) + *(unsigned int *)(a1 + 152) - v6); /*0x7c22f6*/
         if ( (*(int (__cdecl **)(int, int, unsigned short *, unsigned int))(a1 + 64))(a1, 5, v7, v6) ) /*0x7c22fc*/
           return -4; /*0x7c230f*/
         Audio_Helper_7C7F20(*(unsigned int *)(a1 + 1932), v7, *(unsigned char **)(a1 + 1932), v12); /*0x7c2323*/
       }
+  int v8; // ecx
       v8 = 0; /*0x7c233a*/
+  int64_t v9; // rax
       v9 = v12; /*0x7c233e*/
       *(unsigned int *)(a1 + 1936) += v12; /*0x7c233f*/
       if ( (int)(v9 / *(int *)(a1 + 156)) > 0 ) /*0x7c234d*/
@@ -1155,6 +1154,7 @@ int sub_7C2250(int a1, int a2)
   }
   else
   {
+  int v11; // eax
     v11 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c2401*/
     (*((unsigned char *)&(v11))) = v11 & 0xFB; /*0x7c2404*/
     return v11 - 1; /*0x7c2407*/
@@ -1165,50 +1165,28 @@ int sub_7C2250(int a1, int a2)
 namespace gamemd {
 int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
 {
-  unsigned int v4; // kr00_4
-  unsigned short *v5; // esi
-  unsigned char *v6; // edi
-  int v7; // ecx
-  int v8; // eax
-  unsigned int v9; // eax
-  int v10; // ebx
-  unsigned int i; // ecx
-  unsigned int v12; // ecx
-  unsigned char *v13; // edi
-  uint8_t v14; // ah
-  char v15; // bl
-  int v16; // ebx
-  unsigned int v17; // kr04_4
   char v18; // cf
-  unsigned int v19; // kr08_4
-  char v20; // ah
-  unsigned int v21; // ebx
-  unsigned int v22; // kr0C_4
-  unsigned int v23; // ebx
-  int v24; // edx
-  unsigned int v25; // kr10_4
-  unsigned int v26; // ebx
-  int v27; // edx
-  unsigned int v28; // kr14_4
-  unsigned int v29; // ebx
-  int v30; // edx
-  unsigned int v31; // kr18_4
-  int v32; // edx
-  int v34; // [esp+4h] [ebp-8h]
 
+  unsigned int v4; // kr00_4
   v4 = __readeflags(); /*0x7c7f2b*/
+  int v34; // [esp+4h] [ebp-8h]
   v34 = 0; /*0x7c7f2d*/
   if ( a2 && a3 && a4 ) /*0x7c7f4c*/
   {
+  unsigned short *v5; // esi
     v5 = a2; /*0x7c7f52*/
+  unsigned char *v6; // edi
     v6 = a3; /*0x7c7f55*/
+  int v7; // ecx
     v7 = a4; /*0x7c7f58*/
     (*((unsigned char *)&(a1))) = 0x80; /*0x7c7f5b*/
     while ( v7 > 0 ) /*0x7c7f60*/
     {
+  int v8; // eax
       v8 = *(uint8_t *)v5; /*0x7c7f68*/
       ++v34; /*0x7c7f6a*/
       v5 = (unsigned short *)((char *)v5 + 1); /*0x7c7f6d*/
+  unsigned int v9; // eax
       v9 = 4 * v8; /*0x7c7f6e*/
       (*((unsigned char *)&(v9))) = (uint8_t)v9 >> 2; /*0x7c7f71*/
       if ( (((unsigned char *)&(v9))[1]) == 2 ) /*0x7c7f77*/
@@ -1222,16 +1200,20 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
         }
         else
         {
+  int v10; // ebx
           v10 = v7; /*0x7c7f8b*/
           (*((unsigned short *)&(v9))) = (uint8_t)(v9 + 1); /*0x7c7f8f*/
+  unsigned int i; // ecx
           for ( i = v9 >> 1; i; --i ) /*0x7c7f93*/
           {
             *(unsigned short *)v6 = *v5++; /*0x7c7f95*/
             v6 += 2; /*0x7c7f95*/
           }
+  unsigned int v12; // ecx
           v12 = v9 & 1; /*0x7c7f98*/
           memcpy(v6, v5, v12); /*0x7c7f9a*/
           v5 = (unsigned short *)((char *)v5 + v12); /*0x7c7f9a*/
+  unsigned char *v13; // edi
           v13 = &v6[v12]; /*0x7c7f9a*/
           v34 += v9; /*0x7c7f9e*/
           v7 = v10 - v9; /*0x7c7fa1*/
@@ -1246,12 +1228,16 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
         {
           do /*0x7c8007*/
           {
+  uint8_t v14; // ah
             v14 = *(unsigned char *)v5; /*0x7c7fb0*/
+  char v15; // bl
             v15 = *(unsigned char *)v5; /*0x7c7fb2*/
             ++v34; /*0x7c7fb4*/
             v5 = (unsigned short *)((char *)v5 + 1); /*0x7c7fb7*/
+  int v16; // ebx
             v16 = v15 & 0xF; /*0x7c7fb8*/
             (*((unsigned char *)&(a1))) = byte_7C80F6[v16] + a1; /*0x7c7fbb*/
+  unsigned int v17; // kr04_4
             v17 = __readeflags(); /*0x7c7fc1*/
             if ( byte_7C80F6[v16] < 0 ) /*0x7c7fc9*/
             {
@@ -1267,6 +1253,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
             }
             (*((unsigned char *)&(v16))) = v14 >> 4; /*0x7c7fdb*/
             (((unsigned char *)&(a1))[1]) = byte_7C80F6[v16] + a1; /*0x7c7fde*/
+  unsigned int v19; // kr08_4
             v19 = __readeflags(); /*0x7c7fe4*/
             if ( byte_7C80F6[v16] < 0 ) /*0x7c7fec*/
             {
@@ -1298,11 +1285,14 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
         {
           do /*0x7c80c9*/
           {
+  char v20; // ah
             v20 = *(unsigned char *)v5; /*0x7c8017*/
             ++v34; /*0x7c8019*/
             v5 = (unsigned short *)((char *)v5 + 1); /*0x7c801c*/
+  unsigned int v21; // ebx
             v21 = v20 & 3; /*0x7c801f*/
             (*((unsigned char *)&(a1))) = byte_7C80F2[v21] + a1; /*0x7c8022*/
+  unsigned int v22; // kr0C_4
             v22 = __readeflags(); /*0x7c8028*/
             if ( byte_7C80F2[v21] < 0 ) /*0x7c8030*/
             {
@@ -1317,11 +1307,14 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 (*((unsigned char *)&(a1))) = -1; /*0x7c8035*/
             }
             (((unsigned char *)&(a1))[1]) = a1; /*0x7c803e*/
+  int v24; // edx
             v24 = __ROR4__(a1, 8); /*0x7c8040*/
             (*((unsigned char *)&(v21))) = v20; /*0x7c8043*/
+  unsigned int v23; // ebx
             v23 = v21 >> 2; /*0x7c8045*/
             (*((unsigned char *)&(v23))) = v23 & 3; /*0x7c8048*/
             (*((unsigned char *)&(v24))) = byte_7C80F2[v23] + v24; /*0x7c804b*/
+  unsigned int v25; // kr10_4
             v25 = __readeflags(); /*0x7c8051*/
             if ( byte_7C80F2[v23] < 0 ) /*0x7c8059*/
             {
@@ -1336,11 +1329,14 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 (*((unsigned char *)&(v24))) = -1; /*0x7c805e*/
             }
             (((unsigned char *)&(v24))[1]) = v24; /*0x7c8067*/
+  int v27; // edx
             v27 = __ROR4__(v24, 8); /*0x7c8069*/
             (*((unsigned char *)&(v23))) = v20; /*0x7c806c*/
+  unsigned int v26; // ebx
             v26 = v23 >> 4; /*0x7c806e*/
             (*((unsigned char *)&(v26))) = v26 & 3; /*0x7c8071*/
             (*((unsigned char *)&(v27))) = byte_7C80F2[v26] + v27; /*0x7c8074*/
+  unsigned int v28; // kr14_4
             v28 = __readeflags(); /*0x7c807a*/
             if ( byte_7C80F2[v26] < 0 ) /*0x7c8082*/
             {
@@ -1355,11 +1351,14 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 (*((unsigned char *)&(v27))) = -1; /*0x7c8087*/
             }
             (((unsigned char *)&(v27))[1]) = v27; /*0x7c8090*/
+  int v30; // edx
             v30 = __ROR4__(v27, 8); /*0x7c8092*/
             (*((unsigned char *)&(v26))) = v20; /*0x7c8095*/
+  unsigned int v29; // ebx
             v29 = v26 >> 6; /*0x7c8097*/
             (*((unsigned char *)&(v29))) = v29 & 3; /*0x7c809a*/
             (*((unsigned char *)&(v30))) = byte_7C80F2[v29] + v30; /*0x7c809d*/
+  unsigned int v31; // kr18_4
             v31 = __readeflags(); /*0x7c80a3*/
             if ( byte_7C80F2[v29] < 0 ) /*0x7c80ab*/
             {
@@ -1373,6 +1372,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
               if ( v18 ) /*0x7c80ae*/
                 (*((unsigned char *)&(v30))) = -1; /*0x7c80b0*/
             }
+  int v32; // edx
             v32 = __ROR4__(v30, 8); /*0x7c80b9*/
             *(unsigned int *)v6 = v32; /*0x7c80bc*/
             v7 -= 4; /*0x7c80be*/
@@ -1393,41 +1393,31 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
 namespace gamemd {
 int sub_7BE830(int a1, int a2)
 {
-  int v3; // ebp
-  int v4; // ebx
-  int *v5; // eax
-  int v6; // ecx
-  int v7; // eax
-  unsigned int *v8; // edi
   bool v9; // zf
-  int result; // eax
-  int v11; // ebp
-  int v12; // ebx
-  int *v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  unsigned int *v16; // edi
-  int v17; // [esp+10h] [ebp-10h]
-  int v18; // [esp+10h] [ebp-10h]
-  int v19; // [esp+14h] [ebp-Ch]
-  int v20; // [esp+14h] [ebp-Ch]
-  int v21; // [esp+18h] [ebp-8h]
-  int v22; // [esp+18h] [ebp-8h]
 
+  int v3; // ebp
   v3 = 0; /*0x7be838*/
   if ( *(unsigned int *)(a1 + 1828) ) /*0x7be83b*/
   {
+  int v17; // [esp+10h] [ebp-10h]
     v17 = 0; /*0x7be849*/
+  int v21; // [esp+18h] [ebp-8h]
     v21 = *(unsigned int *)(a1 + 1828); /*0x7be84d*/
     do /*0x7be8b7*/
     {
+  int v4; // ebx
       v4 = *(unsigned int *)(*(unsigned int *)(a1 + 1844) + v3); /*0x7be861*/
+  int *v5; // eax
       v5 = (int *)(v17 + *(unsigned int *)(a1 + 1848)); /*0x7be864*/
+  int v6; // ecx
       v6 = v5[2]; /*0x7be867*/
+  int v7; // eax
       v7 = *v5; /*0x7be86b*/
       if ( v7 ) /*0x7be86f*/
       {
+  unsigned int *v8; // edi
         v8 = (unsigned int *)(v6 + 4); /*0x7be871*/
+  int v19; // [esp+14h] [ebp-Ch]
         v19 = v7; /*0x7be874*/
         do /*0x7be89e*/
         {
@@ -1445,21 +1435,31 @@ int sub_7BE830(int a1, int a2)
     }
     while ( !v9 ); /*0x7be8b7*/
   }
+  int result; // eax
   result = *(unsigned int *)(a1 + 1852); /*0x7be8b9*/
+  int v11; // ebp
   v11 = 0; /*0x7be8bf*/
   if ( result ) /*0x7be8c3*/
   {
+  int v18; // [esp+10h] [ebp-10h]
     v18 = 0; /*0x7be8c5*/
+  int v20; // [esp+14h] [ebp-Ch]
     v20 = *(unsigned int *)(a1 + 1852); /*0x7be8c9*/
     do /*0x7be933*/
     {
+  int v12; // ebx
       v12 = *(unsigned int *)(*(unsigned int *)(a1 + 1860) + v11); /*0x7be8dd*/
+  int *v13; // eax
       v13 = (int *)(*(unsigned int *)(a1 + 1864) + v18); /*0x7be8e0*/
+  int v14; // ecx
       v14 = v13[2]; /*0x7be8e3*/
+  int v15; // eax
       v15 = *v13; /*0x7be8e7*/
       if ( v15 ) /*0x7be8eb*/
       {
+  unsigned int *v16; // edi
         v16 = (unsigned int *)(v14 + 4); /*0x7be8ed*/
+  int v22; // [esp+18h] [ebp-8h]
         v22 = v15; /*0x7be8f0*/
         do /*0x7be91a*/
         {
@@ -1485,31 +1485,23 @@ int sub_7BE830(int a1, int a2)
 namespace gamemd {
 signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
 {
-  int v5; // ebp
-  signed int v7; // esi
-  signed int result; // eax
-  char v9; // bl
-  int v10; // ecx
-  int v11; // esi
-  int Position; // eax
   bool v13; // zf
-  int v14; // edx
-  int v15; // ecx
-  int v16; // ecx
-  int v17; // ecx
-  int v18; // esi
-  int v19; // ecx
-  signed int v21; // [esp+14h] [ebp-4h]
-  signed int v22; // [esp+20h] [ebp+8h]
 
+  int v5; // ebp
   v5 = *(unsigned int *)(a2 + 48); /*0x7bee25*/
+  signed int v7; // esi
   v7 = *(unsigned int *)(a4 + 28); /*0x7bee37*/
+  signed int result; // eax
   result = a5 * v5 / 0x3Cu; /*0x7bee4b*/
+  signed int v21; // [esp+14h] [ebp-4h]
   v21 = v7; /*0x7bee51*/
   if ( (a3->u8_4 & 2) != 0 ) /*0x7bee58*/
     --result; /*0x7bee5a*/
+  char v9; // bl
   v9 = 0; /*0x7bee61*/
+  signed int v22; // [esp+20h] [ebp+8h]
   v22 = *(unsigned int *)(a1 + 300); /*0x7bee63*/
+  int v10; // ecx
   v10 = *(unsigned int *)(a1 + 336); /*0x7bee67*/
   if ( (v10 & 0x80u) != 0 ) /*0x7bee70*/
   {
@@ -1522,8 +1514,10 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
       {
         break; /*0x7beea1*/
       }
+  int v11; // esi
       v11 = *(unsigned int *)(a1 + 296) - v22 - 1; /*0x7beeb1*/
       Audio_Process_7C3950(a1, 60 * v11 / v5); /*0x7beec0*/
+  int Position; // eax
       Position = ((AudioStream *)a1)->GetPosition(); /*0x7beec7*/
       v9 = 1; /*0x7beeda*/
       v13 = v11 == 0; /*0x7beee6*/
@@ -1532,11 +1526,13 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
     }
     while ( !v13 ); /*0x7beeee*/
   }
+  int v14; // edx
   v14 = a2; /*0x7beef0*/
   if ( (*(unsigned char *)(a2 + 64) & 4) != 0 ) /*0x7beef8*/
   {
     if ( result <= v7 ) /*0x7beefc*/
     {
+  int v16; // ecx
       v16 = *(unsigned int *)(a1 + 336); /*0x7bef3e*/
       (((unsigned char *)&(v16))[1]) &= ~8u; /*0x7bef44*/
       *(unsigned int *)(a1 + 336) = v16; /*0x7bef47*/
@@ -1545,6 +1541,7 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
     {
       if ( (*(unsigned char *)(a1 + 234) & 1) == 0 || (*(unsigned char *)(a2 + 68) & 1) == 0 ) /*0x7bef10*/
         Audio_Process_7C3950(a1, 60 * (v7 - result) / v5); /*0x7bef22*/
+  int v15; // ecx
       v15 = *(unsigned int *)(a1 + 336); /*0x7bef27*/
       v14 = a2; /*0x7bef2d*/
       (((unsigned char *)&(v15))[1]) |= 8u; /*0x7bef31*/
@@ -1556,15 +1553,18 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
   {
     if ( (a3->u8_4 & 2) != 0 && (*(unsigned char *)(v14 + 64) & 4) == 0 && --result < *(unsigned int *)(a1 + 296) ) /*0x7bef6a*/
       result = v22; /*0x7bef6c*/
+  int v17; // ecx
     v17 = *(unsigned int *)(a1 + 312); /*0x7bef70*/
     if ( v17 != -1 ) /*0x7bef7b*/
     {
+  int v18; // esi
       v18 = *(unsigned int *)(a1 + 316); /*0x7bef7d*/
       *(unsigned int *)(a1 + 316) = -1; /*0x7bef83*/
       *(unsigned int *)(a1 + 296) = v18; /*0x7bef89*/
       *(unsigned int *)(a1 + 300) = v17; /*0x7bef8f*/
       *(unsigned int *)(a1 + 312) = -1; /*0x7bef95*/
     }
+  int v19; // ecx
     v19 = *(unsigned int *)(a1 + 336); /*0x7bef9b*/
     if ( (v19 & 0x100) == 0 ) /*0x7befa4*/
     {
@@ -1891,40 +1891,24 @@ BuildingTypeClass * * Audio_Process_7C3270(int a1, int a2, unsigned int a3, Obje
 namespace gamemd {
 int sub_7DF7C0(int * a1)
 {
-  int v1; // ebp
-  int v2; // edx
-  int v3; // ecx
-  int *v4; // edi
-  int v5; // eax
-  int v6; // ebx
-  unsigned short *v7; // edi
-  int *v8; // ebp
-  int v9; // ebx
-  int v10; // edi
   int result; // eax
-  unsigned char *v12; // edi
-  int v13; // ecx
-  int v14; // ebp
-  unsigned int v15; // ebx
-  int v16; // eax
-  unsigned char *v17; // edi
-  char *i; // edi
-  unsigned int v19; // eax
-  char v20; // dl
-  int *v21; // [esp-14h] [ebp-2Ch]
-  int v22; // [esp-10h] [ebp-28h]
-  int v23; // [esp+Ch] [ebp-Ch]
-  int savedregs; // [esp+18h] [ebp+0h] BYREF
 
+  int v1; // ebp
   v1 = *((int16_t *)a1 + 21); /*0x7df7cf*/
+  int v2; // edx
   v2 = *((int16_t *)a1 + 22); /*0x7df7d3*/
+  int v3; // ecx
   v3 = *((uint8_t *)a1 + 50); /*0x7df7d9*/
+  int *v4; // edi
   v4 = g_VoxelOffsetTable; /*0x7df7dc*/
+  int v5; // eax
   v5 = 0; /*0x7df7e1*/
+  int v6; // ebx
   v6 = 0; /*0x7df7e3*/
   do /*0x7df7fb*/
   {
     *(unsigned short *)v4 = v5; /*0x7df7ea*/
+  unsigned short *v7; // edi
     v7 = (unsigned short *)v4 + 1; /*0x7df7ed*/
     v5 += v1; /*0x7df7f0*/
     *v7 = v6; /*0x7df7f2*/
@@ -1933,7 +1917,10 @@ int sub_7DF7C0(int * a1)
     --v3; /*0x7df7fa*/
   }
   while ( v3 ); /*0x7df7fb*/
+  int *v8; // ebp
+  int savedregs; // [esp+18h] [ebp+0h] BYREF
   v8 = &savedregs; /*0x7df7fd*/
+  int v23; // [esp+Ch] [ebp-Ch]
   v23 = a1[6]; /*0x7df806*/
   (((unsigned char *)&(v3))[1]) = *((unsigned char *)a1 + 49); /*0x7df809*/
   do /*0x7df851*/
@@ -1944,28 +1931,41 @@ int sub_7DF7C0(int * a1)
     do /*0x7df83b*/
     {
       a1[6] = *(v8 - 3); /*0x7df81e*/
+  int v9; // ebx
       v9 = *a1; /*0x7df826*/
+  int v10; // edi
       v10 = *(unsigned int *)(*a1 + 4 * a1[3]); /*0x7df828*/
       if ( v10 >= 0 ) /*0x7df82b*/
       {
+  int v22; // [esp-10h] [ebp-28h]
         v22 = v3; /*0x7df861*/
+  int *v21; // [esp-14h] [ebp-2Ch]
         v21 = v8; /*0x7df862*/
+  unsigned char *v12; // edi
         v12 = (unsigned char *)(a1[2] + v10); /*0x7df865*/
+  int v13; // ecx
         v13 = *((uint8_t *)a1 + 50); /*0x7df868*/
         (*((unsigned short *)&(v9))) = *((unsigned short *)a1 + 13); /*0x7df86b*/
+  unsigned int v15; // ebx
         v15 = v9 << 16; /*0x7df86f*/
+  int v14; // ebp
         v14 = *(int *)((char *)a1 + 42); /*0x7df872*/
         (*((unsigned short *)&(v15))) = *((unsigned short *)a1 + 12); /*0x7df875*/
         while ( 1 ) /*0x7df879*/
         {
+  int v16; // eax
           v16 = 0; /*0x7df879*/
           if ( !v13 ) /*0x7df87e*/
             break; /*0x7df87e*/
           (*((unsigned char *)&(v16))) = *v12; /*0x7df880*/
+  unsigned char *v17; // edi
           v17 = v12 + 1; /*0x7df882*/
           (*((unsigned char *)&(v13))) = v13 - v16; /*0x7df883*/
           v15 += g_VoxelOffsetTable[v16]; /*0x7df885*/
           (((unsigned char *)&(v13))[1]) = *v17; /*0x7df88c*/
+  char *i; // edi
+  unsigned int v19; // eax
+  char v20; // dl
           for ( i = v17 + 1; (((unsigned char *)&(v13))[1]); g_VoxelRenderBuffer[v19] = v20 ) /*0x7df891*/
           {
             (*((unsigned char *)&(v13))) = v13 - 1; /*0x7df895*/
@@ -1999,41 +1999,24 @@ int sub_7DF7C0(int * a1)
 namespace gamemd {
 int sub_7DF8C0(int a1)
 {
-  int v1; // ebp
-  int v2; // edx
-  int v3; // ecx
-  int *v4; // edi
-  int v5; // eax
-  int v6; // ebx
-  unsigned short *v7; // edi
-  int *v8; // ebp
-  int v9; // ebx
-  int v10; // edi
   int result; // eax
-  uint8_t *v12; // edi
-  int v13; // ecx
-  int v14; // ebp
-  unsigned int v15; // ebx
-  uint8_t *i; // edi
-  char *v17; // edi
-  unsigned int v18; // eax
-  char v19; // dl
-  uint8_t *v20; // edi
-  int v21; // eax
-  int *v22; // [esp-14h] [ebp-2Ch]
-  int v23; // [esp-10h] [ebp-28h]
-  int v24; // [esp+Ch] [ebp-Ch]
-  int savedregs; // [esp+18h] [ebp+0h] BYREF
 
+  int v1; // ebp
   v1 = *(int16_t *)(a1 + 42); /*0x7df8cf*/
+  int v2; // edx
   v2 = *(int16_t *)(a1 + 44); /*0x7df8d3*/
+  int v3; // ecx
   v3 = *(uint8_t *)(a1 + 50); /*0x7df8d9*/
+  int *v4; // edi
   v4 = g_VoxelOffsetTable; /*0x7df8dc*/
+  int v5; // eax
   v5 = 0; /*0x7df8e1*/
+  int v6; // ebx
   v6 = 0; /*0x7df8e3*/
   do /*0x7df8fb*/
   {
     *(unsigned short *)v4 = v5; /*0x7df8ea*/
+  unsigned short *v7; // edi
     v7 = (unsigned short *)v4 + 1; /*0x7df8ed*/
     v5 += v1; /*0x7df8f0*/
     *v7 = v6; /*0x7df8f2*/
@@ -2042,7 +2025,10 @@ int sub_7DF8C0(int a1)
     --v3; /*0x7df8fa*/
   }
   while ( v3 ); /*0x7df8fb*/
+  int *v8; // ebp
+  int savedregs; // [esp+18h] [ebp+0h] BYREF
   v8 = &savedregs; /*0x7df8fd*/
+  int v24; // [esp+Ch] [ebp-Ch]
   v24 = *(unsigned int *)(a1 + 24); /*0x7df906*/
   (((unsigned char *)&(v3))[1]) = *(unsigned char *)(a1 + 49); /*0x7df909*/
   do /*0x7df952*/
@@ -2053,24 +2039,36 @@ int sub_7DF8C0(int a1)
     do /*0x7df93c*/
     {
       *(unsigned int *)(a1 + 24) = *(v8 - 3); /*0x7df91e*/
+  int v9; // ebx
       v9 = *(unsigned int *)(a1 + 4); /*0x7df926*/
+  int v10; // edi
       v10 = *(unsigned int *)(v9 + 4 * *(unsigned int *)(a1 + 12)); /*0x7df929*/
       if ( v10 >= 0 ) /*0x7df92c*/
       {
+  int v23; // [esp-10h] [ebp-28h]
         v23 = v3; /*0x7df961*/
+  int *v22; // [esp-14h] [ebp-2Ch]
         v22 = v8; /*0x7df962*/
+  uint8_t *v12; // edi
         v12 = (uint8_t *)(*(unsigned int *)(a1 + 8) + v10); /*0x7df965*/
+  int v13; // ecx
         v13 = *(uint8_t *)(a1 + 50); /*0x7df968*/
         (*((unsigned short *)&(v9))) = *(unsigned short *)(a1 + 26); /*0x7df96b*/
+  unsigned int v15; // ebx
         v15 = v9 << 16; /*0x7df96f*/
+  int v14; // ebp
         v14 = *(unsigned int *)(a1 + 42); /*0x7df972*/
         (*((unsigned short *)&(v15))) = *(unsigned short *)(a1 + 24); /*0x7df975*/
         while ( v13 ) /*0x7df97c*/
         {
           (((unsigned char *)&(v13))[1]) = *v12; /*0x7df97e*/
+  uint8_t *i; // edi
+  unsigned int v18; // eax
+  char v19; // dl
           for ( i = v12 - 1; (((unsigned char *)&(v13))[1]); g_VoxelRenderBuffer[v18] = v19 ) /*0x7df983*/
           {
             (*((unsigned char *)&(v13))) = v13 - 1; /*0x7df987*/
+  char *v17; // edi
             v17 = (char *)(i - 1); /*0x7df989*/
             v18 = (*(((unsigned short *)&(v15)) + 1)); /*0x7df98a*/
             v19 = *v17; /*0x7df98d*/
@@ -2079,7 +2077,9 @@ int sub_7DF8C0(int a1)
             v15 += v14; /*0x7df992*/
             --(((unsigned char *)&(v13))[1]); /*0x7df994*/
           }
+  uint8_t *v20; // edi
           v20 = i - 1; /*0x7df99e*/
+  int v21; // eax
           v21 = *v20; /*0x7df9a1*/
           v12 = v20 - 1; /*0x7df9a3*/
           (*((unsigned char *)&(v13))) = v13 - v21; /*0x7df9a4*/
@@ -2106,41 +2106,25 @@ int sub_7DF8C0(int a1)
 namespace gamemd {
 int sub_7DFD00(int a1)
 {
-  int v1; // ebp
-  int v2; // edx
-  int v3; // ecx
-  int *v4; // edi
-  int v5; // eax
-  int v6; // ebx
-  unsigned short *v7; // edi
-  int *v8; // ebp
-  int v9; // ebx
-  int v10; // edi
   int result; // eax
-  uint8_t *v12; // edi
-  int v13; // ecx
-  int v14; // ebp
-  unsigned int v15; // ebx
-  char *i; // edi
-  unsigned int v17; // eax
-  char v18; // dl
-  char *v19; // edi
-  int v20; // eax
-  int *v21; // [esp-14h] [ebp-2Ch]
-  int v22; // [esp-10h] [ebp-28h]
-  int v23; // [esp+Ch] [ebp-Ch]
-  int savedregs; // [esp+18h] [ebp+0h] BYREF
 
+  int v1; // ebp
   v1 = *(int16_t *)(a1 + 42); /*0x7dfd0f*/
+  int v2; // edx
   v2 = *(int16_t *)(a1 + 44); /*0x7dfd13*/
+  int v3; // ecx
   v3 = 255; /*0x7dfd17*/
   (*((unsigned char *)&(v3))) = -1 - *(unsigned char *)(a1 + 50); /*0x7dfd1c*/
+  int *v4; // edi
   v4 = g_VoxelOffsetTable; /*0x7dfd1f*/
+  int v5; // eax
   v5 = 0; /*0x7dfd24*/
+  int v6; // ebx
   v6 = 0; /*0x7dfd26*/
   do /*0x7dfd3e*/
   {
     *(unsigned short *)v4 = v5; /*0x7dfd2d*/
+  unsigned short *v7; // edi
     v7 = (unsigned short *)v4 + 1; /*0x7dfd30*/
     v5 += v1; /*0x7dfd33*/
     *v7 = v6; /*0x7dfd35*/
@@ -2149,7 +2133,10 @@ int sub_7DFD00(int a1)
     --v3; /*0x7dfd3d*/
   }
   while ( v3 ); /*0x7dfd3e*/
+  int *v8; // ebp
+  int savedregs; // [esp+18h] [ebp+0h] BYREF
   v8 = &savedregs; /*0x7dfd40*/
+  int v23; // [esp+Ch] [ebp-Ch]
   v23 = *(unsigned int *)(a1 + 24); /*0x7dfd49*/
   (((unsigned char *)&(v3))[1]) = *(unsigned char *)(a1 + 49); /*0x7dfd4c*/
   do /*0x7dfd95*/
@@ -2160,21 +2147,32 @@ int sub_7DFD00(int a1)
     do /*0x7dfd7f*/
     {
       *(unsigned int *)(a1 + 24) = *(v8 - 3); /*0x7dfd61*/
+  int v9; // ebx
       v9 = *(unsigned int *)(a1 + 4); /*0x7dfd69*/
+  int v10; // edi
       v10 = *(unsigned int *)(v9 + 4 * *(unsigned int *)(a1 + 12)); /*0x7dfd6c*/
       if ( v10 >= 0 ) /*0x7dfd6f*/
       {
+  int v22; // [esp-10h] [ebp-28h]
         v22 = v3; /*0x7dfda1*/
+  int *v21; // [esp-14h] [ebp-2Ch]
         v21 = v8; /*0x7dfda2*/
+  uint8_t *v12; // edi
         v12 = (uint8_t *)(*(unsigned int *)(a1 + 8) + v10); /*0x7dfda5*/
+  int v13; // ecx
         v13 = *(uint8_t *)(a1 + 50); /*0x7dfda8*/
         (*((unsigned short *)&(v9))) = *(unsigned short *)(a1 + 26); /*0x7dfdab*/
+  unsigned int v15; // ebx
         v15 = v9 << 16; /*0x7dfdaf*/
+  int v14; // ebp
         v14 = *(unsigned int *)(a1 + 42); /*0x7dfdb2*/
         (*((unsigned short *)&(v15))) = *(unsigned short *)(a1 + 24); /*0x7dfdb5*/
         while ( v13 ) /*0x7dfdbc*/
         {
           (((unsigned char *)&(v13))[1]) = *v12; /*0x7dfdbe*/
+  char *i; // edi
+  unsigned int v17; // eax
+  char v18; // dl
           for ( i = (char *)(v12 - 1); (((unsigned char *)&(v13))[1]); g_VoxelRenderBuffer[v17] = v18 ) /*0x7dfdc3*/
           {
             (*((unsigned char *)&(v13))) = v13 - 1; /*0x7dfdc7*/
@@ -2185,7 +2183,9 @@ int sub_7DFD00(int a1)
             v15 += v14; /*0x7dfdd1*/
             --(((unsigned char *)&(v13))[1]); /*0x7dfdd3*/
           }
+  char *v19; // edi
           v19 = i - 1; /*0x7dfddd*/
+  int v20; // eax
           v20 = (uint8_t)*v19; /*0x7dfde0*/
           v12 = (uint8_t *)(v19 - 1); /*0x7dfde2*/
           (*((unsigned char *)&(v13))) = v13 - v20; /*0x7dfde3*/
@@ -2212,14 +2212,8 @@ int sub_7DFD00(int a1)
 namespace gamemd {
 AbstractClass * * sub_6C6D00()
 {
-  char *v1; // ecx
-  int v2; // ebx
-  char *v3; // eax
-  char *vtable2; // esi
-  void *v5; // ebp
-  char v6; // dl
-  unsigned int v7; // ecx
 
+  char *v1; // ecx
   v1 = 0; /*0x6c6d08*/
   if ( g_SidebarButtonState.vfptr ) /*0x6c6d0c*/
   {
@@ -2231,17 +2225,23 @@ AbstractClass * * sub_6C6D00()
       32776 * (int)g_SidebarButtonState.vfptr - 32776 * (unsigned int)(v1 + 1));
     if ( 3 * (int)--g_SidebarButtonState.vfptr <= (int)g_SidebarButtonState.vfptr1 ) /*0x6c6d63*/
     {
+  int v2; // ebx
       v2 = (int)g_SidebarButtonState.vfptr1 / 2; /*0x6c6d6c*/
       if ( (int)g_SidebarButtonState.vfptr1 / 2 < 10 ) /*0x6c6d71*/
         v2 = 10; /*0x6c6d73*/
       if ( v2 < (int)g_SidebarButtonState.vfptr1 ) /*0x6c6d7a*/
       {
+  char *v3; // eax
         v3 = (char *)operator new(32776 * v2); /*0x6c6d88*/
+  char *vtable2; // esi
         vtable2 = (char *)g_SidebarButtonState.vfptr2; /*0x6c6d8d*/
+  void *v5; // ebp
         v5 = v3; /*0x6c6d98*/
         if ( g_SidebarButtonState.vfptr2 ) /*0x6c6d9a*/
         {
+  char v6; // dl
           v6 = 8 * (*((unsigned char *)&(g_SidebarButtonState.vfptr))); /*0x6c6dae*/
+  unsigned int v7; // ecx
           v7 = (unsigned int)(32776 * (int)g_SidebarButtonState.vfptr) >> 2; /*0x6c6db0*/
           memcpy(v3, g_SidebarButtonState.vfptr2, 4 * v7); /*0x6c6db3*/
           memcpy(&v3[4 * v7], &vtable2[4 * v7], v6 & 3); /*0x6c6dba*/
@@ -2331,24 +2331,20 @@ AbstractClass * * sub_6C6DE0()
 namespace gamemd {
 int sub_7C2410(int a1, int a2)
 {
-  int v3; // eax
-  int v4; // edi
-  unsigned int v5; // ecx
-  unsigned int v6; // ebp
-  int v7; // esi
-  int v9; // eax
-  unsigned int i; // ecx
-  int v11; // esi
-  int v12; // eax
 
+  int v3; // eax
   v3 = a2 + 1; /*0x7c2418*/
   (*((unsigned char *)&(v3))) = (a2 + 1) & 0xFE; /*0x7c2421*/
+  int v4; // edi
   if ( (*(unsigned char *)(a1 + 132) & 1) != 0 && (v4 = *(unsigned int *)(a1 + 1932)) != 0 ) /*0x7c2434*/
   {
+  unsigned int v5; // ecx
     v5 = *(unsigned int *)(a1 + 1972); /*0x7c2441*/
+  unsigned int v6; // ebp
     v6 = a2 * (*(uint8_t *)(a1 + 63) >> 2); /*0x7c244a*/
     if ( v6 <= v5 || *(unsigned int *)(a1 + 1936) ) /*0x7c2455*/
     {
+  int v11; // esi
       v11 = v5 + *(unsigned int *)(a1 + 1960) - v3; /*0x7c2521*/
       if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v11, v3) ) /*0x7c2527*/
       {
@@ -2369,6 +2365,7 @@ int sub_7C2410(int a1, int a2)
     }
     else
     {
+  int v7; // esi
       v7 = v4 + *(unsigned int *)(a1 + 152) - v3; /*0x7c246c*/
       if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v7, v3) ) /*0x7c2472*/
       {
@@ -2383,6 +2380,7 @@ int sub_7C2410(int a1, int a2)
           *(uint8_t *)(a1 + 62),
           v6,
           a1 + 2000);
+  int v9; // eax
         v9 = *(unsigned int *)(a1 + 1964); /*0x7c24a7*/
         if ( v9 ) /*0x7c24b2*/
         {
@@ -2391,6 +2389,7 @@ int sub_7C2410(int a1, int a2)
           *(unsigned int *)(a1 + 1964) = 0; /*0x7c24cf*/
         }
         *(unsigned int *)(a1 + 1936) += v6; /*0x7c24e5*/
+  unsigned int i; // ecx
         for ( i = 0; i < v6 / *(unsigned int *)(a1 + 156); ++i ) /*0x7c24ed*/
           *(unsigned char *)(i + *(unsigned int *)(a1 + 1940)) = 1; /*0x7c24ff*/
         return -1; /*0x7c2513*/
@@ -2399,6 +2398,7 @@ int sub_7C2410(int a1, int a2)
   }
   else
   {
+  int v12; // eax
     v12 = -((*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 7, 1, v3) != 0); /*0x7c257b*/
     (*((unsigned char *)&(v12))) = v12 & 0xFB; /*0x7c257e*/
     return v12 - 1; /*0x7c2582*/
@@ -2487,16 +2487,15 @@ int Audio::FlushChannel(unsigned int ** Block)
 namespace gamemd {
 int Audio::Audio::Shutdown(void *a1_1)
 {
-  ObjectClass *v1; // ebx
-  int result; // eax
-  AudioQueue *v3; // [esp+0h] [ebp-4h]
 
+  AudioQueue *v3; // [esp+0h] [ebp-4h]
   if ( g_Audio_Enabled ) /*0x406d4b*/
     AudioQueue::StopAllVoices(v3); /*0x406d52*/
   AudioStream::CleanupChannels((AudioStream *)v3); /*0x406d57*/
   AudioQueue::HaltVoices(); /*0x406d5c*/
   Audio_Cleanup(); /*0x406d61*/
   Audio_Cleanup_752B40(); /*0x406d66*/
+  ObjectClass *v1; // ebx
   sub_403FA0(v1); /*0x406d6b*/
   sub_407780(); /*0x406d70*/
   if ( g_AudioFileData ) /*0x406d7d*/
@@ -2520,6 +2519,7 @@ int Audio::Audio::Shutdown(void *a1_1)
     g_Audio_Enabled = 0; /*0x406dc5*/
   }
   sub_402990((ObjectClass *)a1_1); /*0x406dcc*/
+  int result; // eax
   return result; /*0x406dcb*/
 }
 } // namespace gamemd
@@ -2571,11 +2571,11 @@ LPDIRECTSOUND Audio::GetDirectSound()
 namespace gamemd {
 unsigned int sub_5EF240(int a1, int a2)
 {
+
   unsigned int result; // eax
+  result = 0; /*0x5ef242*/
   int i; // edi
   int v4; // esi
-
-  result = 0; /*0x5ef242*/
   for ( i = 0; i < a2; result = v4 + 2 * result ) /*0x5ef24a*/
   {
     v4 = *(uint8_t *)(i + a1) + (result >> 31); /*0x5ef257*/
@@ -2589,12 +2589,10 @@ unsigned int sub_5EF240(int a1, int a2)
 namespace gamemd {
 int sub_752290()
 {
-  char *v0; // esi
-  int result; // eax
-  void *Enabled; // eax
 
   dword_B1D3D8 = 0; /*0x752291*/
   dword_B1D428 = 0; /*0x75229b*/
+  char *v0; // esi
   v0 = stru_B1D450; /*0x7522a5*/
   do /*0x7522ba*/
   {
@@ -2604,9 +2602,11 @@ int sub_752290()
   while ( (int)v0 < (int)&unk_B1D480 ); /*0x7522ba*/
   DListNode::Init(&stru_B1D3F0); /*0x7522c1*/
   DListNode::Init(&stru_B1D3C8); /*0x7522cb*/
+  int result; // eax
   result = (int)g_InfantryDrawState; /*0x7522d0*/
   dword_B1D4B8 = 0; /*0x7522d5*/
   dword_B1D4BC = 1; /*0x7522e1*/
+  void *Enabled; // eax
   if ( g_InfantryDrawState /*0x752307*/
     || (Enabled = Audio::GetEnabled(),
         result = (int)AudioStream::Constructor(Enabled, 0xBB8u),
@@ -2639,7 +2639,6 @@ void sub_752340()
 namespace gamemd {
 int Audio::IsPlaying()
 {
-  char *v0; // eax
 
   UpdateThemes(); /*0x7529e0*/
   if ( !g_InfantryDrawState ) /*0x7529ed*/
@@ -2649,6 +2648,7 @@ int Audio::IsPlaying()
     && (void *)dword_B1D3F4 == &stru_B1D3F0
     && !dword_B1D4B8 )
   {
+  char *v0; // eax
     v0 = stru_B1D450; /*0x752a19*/
     while ( v0->q004 == v0 ) /*0x752a21*/
     {
@@ -2665,10 +2665,10 @@ int Audio::IsPlaying()
 namespace gamemd {
 int sub_752AD0()
 {
-  int result; // eax
-  void *Enabled; // eax
 
+  int result; // eax
   result = (int)dword_B1D4D8; /*0x752ad0*/
+  void *Enabled; // eax
   if ( dword_B1D4D8 /*0x752af2*/
     || (Enabled = Audio::GetEnabled(),
         result = (int)AudioStream::Constructor(Enabled, 0xBB8u),
@@ -2701,32 +2701,32 @@ void sub_752B40()
 namespace gamemd {
 char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, float * a3, float * a4, float * a5, float a7)
 {
-  float *v9; // eax
-  float *v10; // eax
-  int Info; // eax
-  float *v13; // [esp+0h] [ebp-D0h]
-  float *v14; // [esp+0h] [ebp-D0h]
-  int v15[3]; // [esp+10h] [ebp-C0h] BYREF
-  float v16[3]; // [esp+1Ch] [ebp-B4h] BYREF
-  float v17[3]; // [esp+28h] [ebp-A8h] BYREF
-  int v18[3]; // [esp+34h] [ebp-9Ch] BYREF
-  float v19[12]; // [esp+40h] [ebp-90h] BYREF
+
   float v20[12]; // [esp+70h] [ebp-60h] BYREF
   float v21[12]; // [esp+A0h] [ebp-30h] BYREF
-
   memcpy(v20, InvertMatrix3x3Signs(v21, a3), sizeof(v20)); /*0x753d33*/
+  float v19[12]; // [esp+40h] [ebp-90h] BYREF
   memcpy(v19, InvertMatrix3x3Signs(v21, a4), sizeof(v19)); /*0x753d53*/
+  float *v9; // eax
+  float *v13; // [esp+0h] [ebp-D0h]
+  int v15[3]; // [esp+10h] [ebp-C0h] BYREF
   v9 = (float *)Matrix3x3::TransformPoint(v15, a5, v13); /*0x753d5f*/
+  float v17[3]; // [esp+28h] [ebp-A8h] BYREF
   v17[0] = *v9; /*0x753d66*/
   v17[1] = v9[1]; /*0x753d6d*/
   v17[2] = v9[2]; /*0x753d82*/
   v15[0] = 0; /*0x753d86*/
   v15[1] = 0; /*0x753d8e*/
   v15[2] = 1065353216; /*0x753d96*/
+  float *v10; // eax
+  float *v14; // [esp+0h] [ebp-D0h]
+  int v18[3]; // [esp+34h] [ebp-9Ch] BYREF
   v10 = (float *)Matrix3x3::TransformPoint(v18, (float *)v15, v14); /*0x753d9e*/
+  float v16[3]; // [esp+1Ch] [ebp-B4h] BYREF
   v16[0] = *v10; /*0x753da5*/
   v16[1] = v10[1]; /*0x753dac*/
   v16[2] = v10[2]; /*0x753dbe*/
+  int Info; // eax
   Info = VoxelSection::GetInfo(a0, edx0, aP2); /*0x753dc2*/
   return VoxelAnim::ComputeTransform(v17, v16, a7, *(uint8_t *)(Info + 163)); /*0x753de7*/
 }
@@ -2735,12 +2735,12 @@ char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, f
 namespace gamemd {
 rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
 {
-  char *v6; // eax
-  char *v7; // edi
 
   if ( *(unsigned int *)(a3 + 4) ) /*0x764b37*/
   {
+  char *v6; // eax
     v6 = (char *)operator new(0x4Cu); /*0x764b57*/
+  char *v7; // edi
     if ( v6 ) /*0x764b61*/
       v7 = CampaignConstructorWDT(v6, a2, a3); /*0x764b6c*/
     else
@@ -2763,10 +2763,10 @@ rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
 namespace gamemd {
 rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
 {
-  char *v4; // eax
-  char *WDT; // edi
 
+  char *v4; // eax
   v4 = (char *)operator new(0x4Cu); /*0x76aba8*/
+  char *WDT; // edi
   if ( v4 ) /*0x76abb2*/
     WDT = File::LoadWDT(v4, a2); /*0x76abbc*/
   else
@@ -2782,10 +2782,10 @@ rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
 namespace gamemd {
 rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
 {
-  char *v4; // eax
-  char *_76BF00; // edi
 
+  char *v4; // eax
   v4 = (char *)operator new(0x18u); /*0x76be98*/
+  char *_76BF00; // edi
   if ( v4 ) /*0x76bea2*/
     _76BF00 = Audio_Create_76BF00(v4, a2); /*0x76beac*/
   else
@@ -2801,8 +2801,8 @@ rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
 namespace gamemd {
 int sub_7B84D0()
 {
-  int result; // eax
 
+  int result; // eax
   result = dword_B7816C; /*0x7b84d0*/
   if ( !dword_B7816C ) /*0x7b84d7*/
   {
@@ -2816,8 +2816,8 @@ int sub_7B84D0()
 namespace gamemd {
 int sub_7C1130(int a1, int a2)
 {
-  int v2; // eax
 
+  int v2; // eax
   v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c1147*/
   (*((unsigned char *)&(v2))) = v2 & 0xFD; /*0x7c1149*/
   return v2 - 1; /*0x7c114c*/
@@ -2828,8 +2828,8 @@ int sub_7C1130(int a1, int a2)
 namespace gamemd {
 int sub_7C1D40(int a1, int a2)
 {
-  int v2; // eax
 
+  int v2; // eax
   v2 = *(unsigned int *)(a1 + 1892); /*0x7c1d40*/
   if ( v2 ) /*0x7c1d48*/
   {
@@ -2848,15 +2848,15 @@ int sub_7C1D40(int a1, int a2)
 namespace gamemd {
 int sub_7C1D90(int a1, int a2)
 {
-  int v3; // eax
-  unsigned int *v4; // ebp
-  int v5; // edi
-  int v6; // ebx
 
+  int v3; // eax
   v3 = a2 + 1; /*0x7c1d9c*/
+  unsigned int *v4; // ebp
   v4 = *(unsigned int **)(a1 + 356); /*0x7c1d9e*/
   (*((unsigned char *)&(v3))) = (a2 + 1) & 0xFE; /*0x7c1daa*/
+  int v5; // edi
   v5 = *(unsigned int *)(a1 + 1896) - v3; /*0x7c1daf*/
+  int v6; // ebx
   v6 = v5 + *v4; /*0x7c1db1*/
   if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c1db8*/
     return -4; /*0x7c1dc5*/
@@ -2875,22 +2875,19 @@ int sub_7C1D90(int a1, int a2)
 namespace gamemd {
 int sub_7C20B0(int a1, int a2)
 {
-  int v3; // eax
-  int v4; // ebx
-  int v5; // esi
-  int v6; // edi
-  int v8; // edx
-  char *v9; // eax
-  const void *v10; // esi
-  int v11; // eax
 
+  int v3; // eax
   v3 = a2 + 1; /*0x7c20bb*/
+  int v4; // ebx
   v4 = *(unsigned int *)(a1 + 368); /*0x7c20bc*/
   (*((unsigned char *)&(v3))) = (a2 + 1) & 0xFE; /*0x7c20c9*/
+  int v5; // esi
   v5 = *(unsigned int *)(a1 + 1904) - v3; /*0x7c20cf*/
+  int v6; // edi
   v6 = v5 + *(unsigned int *)(v4 + 8); /*0x7c20d2*/
   if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c20d8*/
     return -4; /*0x7c20e5*/
+  int v8; // edx
   v8 = *(unsigned int *)(v4 + 20) | 8; /*0x7c20f4*/
   *(unsigned int *)(v4 + 36) = v5; /*0x7c20f7*/
   *(unsigned int *)(v4 + 20) = v8; /*0x7c20fa*/
@@ -2899,14 +2896,17 @@ int sub_7C20B0(int a1, int a2)
     *(unsigned char *)(v6 + a2 + 1) = 0x80; /*0x7c210a*/
   if ( *(unsigned short *)(a1 + 1880) == 1 ) /*0x7c2117*/
   {
+  char *v9; // eax
     v9 = AudioCodec::Decode( /*0x7c212a*/
            (uint8_t *)(*(unsigned int *)(v4 + 8) + *(unsigned int *)(v4 + 36)),
            *(char **)(v4 + 8),
            *(unsigned int *)(a1 + 1904));
     *(unsigned int *)(v4 + 20) &= ~8u; /*0x7c213d*/
+  const void *v10; // esi
     v10 = *(const void **)(v4 + 8); /*0x7c2140*/
     *(unsigned int *)(v4 + 40) = v9; /*0x7c2146*/
     memcpy((void *)(a1 + 452), v10, (unsigned int)v9); /*0x7c214c*/
+  int v11; // eax
     v11 = *(unsigned int *)(a1 + 420); /*0x7c2155*/
     (*((unsigned char *)&(v11))) = v11 | 1; /*0x7c215e*/
     *(unsigned int *)(a1 + 448) = *(unsigned int *)(v4 + 40); /*0x7c2160*/
@@ -2920,13 +2920,11 @@ int sub_7C20B0(int a1, int a2)
 namespace gamemd {
 int sub_7C2180(int a1, unsigned int a2)
 {
-  unsigned int v4; // eax
-  int v5; // ecx
-  unsigned int v7; // ecx
-  int v8; // eax
 
+  unsigned int v4; // eax
   v4 = a2 + 1; /*0x7c218c*/
   (*((unsigned char *)&(v4))) = (a2 + 1) & 0xFE; /*0x7c218f*/
+  int v5; // ecx
   if ( (*(unsigned char *)(a1 + 132) & 1) != 0 && (v5 = *(unsigned int *)(a1 + 1932)) != 0 ) /*0x7c21a2*/
   {
     if ( v4 <= *(unsigned int *)(a1 + 1972) || *(unsigned int *)(a1 + 1936) ) /*0x7c21b0*/
@@ -2947,6 +2945,7 @@ int sub_7C2180(int a1, unsigned int a2)
     }
     else
     {
+  unsigned int v7; // ecx
       v7 = 0; /*0x7c21db*/
       *(unsigned int *)(a1 + 1936) += a2; /*0x7c21dd*/
       if ( a2 / *(unsigned int *)(a1 + 156) ) /*0x7c21e5*/
@@ -2960,6 +2959,7 @@ int sub_7C2180(int a1, unsigned int a2)
   }
   else
   {
+  int v8; // eax
     v8 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0); /*0x7c2245*/
     (*((unsigned char *)&(v8))) = v8 & 0xFB; /*0x7c2248*/
     return v8 - 1; /*0x7c224b*/
@@ -2971,16 +2971,16 @@ int sub_7C2180(int a1, unsigned int a2)
 namespace gamemd {
 int Audio_Render_7C3430(DSurface * aP0, int a2, int a3, unsigned int a4)
 {
-  int v6; // edx
-  uint16_t v7; // ax
-  int result; // eax
 
   if ( a2 >= aP0->u16_714 || a2 < 0 || (*(unsigned char *)(aP0 + 132) & 1) != 0 && !aP0->u16_714 ) /*0x7c3436*/
     return -23; /*0x7c3498*/
+  int v6; // edx
   v6 = aP0->u32_71C; /*0x7c345b*/
+  uint16_t v7; // ax
   v7 = *(unsigned short *)(v6 + 4 * a2 + 2); /*0x7c3463*/
   (*((unsigned short *)&(v6))) = *(unsigned short *)(v6 + 4 * a2); /*0x7c346d*/
   aP0->q120 = a2; /*0x7c347d*/
+  int result; // eax
   result = SeekAudioStream(aP0, (uint16_t)v6, v7, a3, a4); /*0x7c3483*/
   if ( result == -1 ) /*0x7c348b*/
     aP0->q120 = a2; /*0x7c348d*/
@@ -3012,9 +3012,9 @@ int sub_7C7350(int a1)
 namespace gamemd {
 size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
-  size_t v4; // esi
 
   _lock_file(Stream); /*0x7c94c3*/
+  size_t v4; // esi
   v4 = fread(Buffer, ElementSize, ElementCount, Stream); /*0x7c94dc*/
   _unlock_file(Stream); /*0x7c94de*/
   return v4; /*0x7c94e8*/
@@ -3025,9 +3025,9 @@ size_t sub_7C94BC(void * Buffer, size_t ElementSize, size_t ElementCount, FILE *
 namespace gamemd {
 size_t sub_7C95D3(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
-  size_t v4; // esi
 
   _lock_file(Stream); /*0x7c95da*/
+  size_t v4; // esi
   v4 = fwrite(Buffer, ElementSize, ElementCount, Stream); /*0x7c95f3*/
   _unlock_file(Stream); /*0x7c95f5*/
   return v4; /*0x7c95ff*/

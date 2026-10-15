@@ -30,17 +30,17 @@ namespace gamemd {
 int LinkClass::Destruct(void *a1)
 {
 
-  LinkClass *Prev; // edi
-  int result; // eax
-  LinkClass *m_Prev; // edx
-  LinkClass *m_Next; // edx
 
   /* X11: vtable install elided (implicit via LinkClass virtuals 0x5565a5) */
+  LinkClass *Prev; // edi
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
+  int result; // eax
   result = (*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
+  LinkClass *m_Prev; // edx
   m_Prev = this->m_Prev; /*0x5565ba*/
   if ( m_Prev ) /*0x5565c1*/
     m_Prev->m_Next = this->m_Next; /*0x5565c6*/
+  LinkClass *m_Next; // edx
   m_Next = this->m_Next; /*0x5565c9*/
   if ( m_Next ) /*0x5565ce*/
     m_Next->m_Prev = this->m_Prev; /*0x5565d3*/

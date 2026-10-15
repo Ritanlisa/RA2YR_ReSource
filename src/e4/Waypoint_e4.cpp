@@ -85,16 +85,16 @@ namespace gamemd {
 int Waypoint::FindCell(unsigned int * a2)
 {
 
-  int v3; // ecx
-  unsigned int *i; // edi
-  void *v6; // [esp+10h] [ebp-8h]
-  Waypoint *v7; // [esp+14h] [ebp-4h]
 
+  int v3; // ecx
   v3 = 0; /*0x763a59*/
+  Waypoint *v7; // [esp+14h] [ebp-4h]
   v7 = this; /*0x763a5b*/
+  void *v6; // [esp+10h] [ebp-8h]
   v6 = this->field_38; /*0x763a64*/
   if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
+  unsigned int *i; // edi
   for ( i = (unsigned int *)(*&this->u32_2C); /*0x763a6e*/
         (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);

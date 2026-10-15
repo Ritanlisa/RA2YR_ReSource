@@ -44,11 +44,11 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
 namespace gamemd {
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
 {
-  int v3; // edi
   void (***v4)(unsigned int, int); // ecx
   void (***v5)(unsigned int, int); // ecx
   void *MultiplayerGameMode_field_0x0C; // eax
 
+  int v3; // edi
   v3 = 0; /*0x5d7f24*/
   for ( *(unsigned int *)Block->tail_0 = &vt_MultiplayerGameMode; v3 < Block->u32_18; ++v3 ) /*0x5d7f31*/
   {
